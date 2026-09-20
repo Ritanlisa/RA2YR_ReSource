@@ -3561,21 +3561,21 @@ int __thiscall DropListClass::_vt39(void *this, wchar_t *Source)
 {
   wcsncpy(*((wchar_t **)this + 13), Source, this->DropListClass_field_0x38); /*0x4b4fc1*/
   (*(void (__thiscall **)(void *))(this->DropListClass_field_0x48)(this); /*0x4b4fcd*/
-  return (*(int (__thiscall **)(int, wchar_t *))(this->q0B0 + 136))((int)this + 176, Source); /*0x4b4fe3*/
+  return (*(int (__thiscall **)(int, wchar_t *))(this->List + 136))((int)this + 176, Source); /*0x4b4fe3*/
 }
 
 
 // ==== 0x004B4FF0  DropListClass::KillFocus  this=DropListClass  sig=csp ====
 int __thiscall DropListClass::_vt40(_DWORD *this)
 {
-  return (*(int (__thiscall **)(_DWORD *))(this->q0B0 + 156))(this + 44);
+  return (*(int (__thiscall **)(_DWORD *))(this->List + 156))(this + 44);
 }
 
 
 // ==== 0x004B5010  DropListClass::GetItemData  this=DropListClass  sig=csp ====
 int __thiscall DropListClass::_vt41(_DWORD *this)
 {
-  return (*(int (__thiscall **)(_DWORD *))(this->q0B0 + 152))(this + 44);
+  return (*(int (__thiscall **)(_DWORD *))(this->List + 152))(this + 44);
 }
 
 
@@ -3639,7 +3639,7 @@ __int16 __thiscall DropListClass::_vt19(char *this, char a2, _DWORD *a3, char *a
   {
     if ( this->DropListClass_field_0x48 ) /*0x4b50da*/
     {
-      (*(void (__thiscall **)(char *))(this->q0B0 + 36))(this + 176); /*0x4b50ed*/
+      (*(void (__thiscall **)(char *))(this->List + 36))(this + 176); /*0x4b50ed*/
       v5 = this->DropListClass_field_0x24; /*0x4b50f0*/
       this->DropListClass_field_0x48 = 0; /*0x4b50f3*/
       BYTE1(v5) |= 0x80u; /*0x4b50f7*/
@@ -3649,16 +3649,16 @@ __int16 __thiscall DropListClass::_vt19(char *this, char a2, _DWORD *a3, char *a
     {
       v6 = this->DropListClass_field_0x10; /*0x4b5101*/
       v7 = this->DropListClass_field_0x14; /*0x4b5104*/
-      v8 = this->q0B0; /*0x4b5108*/
-      *((_DWORD *)this + 47) = this->DropListClass_field_0x0C; /*0x4b510e*/
+      v8 = this->List; /*0x4b5108*/
+      this->q0BC = this->DropListClass_field_0x0C; /*0x4b510e*/
       v9 = this->DropListClass_field_0x4C; /*0x4b5114*/
-      *((_DWORD *)this + 48) = v6 + 18; /*0x4b511b*/
+      this->q0C0 = v6 + 18; /*0x4b511b*/
       v10 = *(_DWORD *)this; /*0x4b5121*/
-      *((_DWORD *)this + 50) = v9; /*0x4b5129*/
-      *((_DWORD *)this + 49) = v7; /*0x4b5131*/
+      this->q0C8 = v9; /*0x4b5129*/
+      this->q0C4 = v7; /*0x4b5131*/
       v11 = (*(int (__thiscall **)(char *))(v10 + 24))(this); /*0x4b5137*/
       (*(void (__thiscall **)(char *, int))(v8 + 12))(this + 176, v11); /*0x4b513d*/
-      (*(void (__thiscall **)(char *))(this->q0B0 + 72))(this + 176); /*0x4b5144*/
+      (*(void (__thiscall **)(char *))(this->List + 72))(this + 176); /*0x4b5144*/
       this->DropListClass_field_0x48 = 1; /*0x4b5148*/
     }
   }
@@ -3666,7 +3666,7 @@ __int16 __thiscall DropListClass::_vt19(char *this, char a2, _DWORD *a3, char *a
   if ( a4 == this + 176 ) /*0x4b5159*/
   {
     v15 = this->DropListClass_field_0x38; /*0x4b5160*/
-    v13 = (const wchar_t *)(*(int (__thiscall **)(char *))(this->q0B0 + 156))(this + 176); /*0x4b5161*/
+    v13 = (const wchar_t *)(*(int (__thiscall **)(char *))(this->List + 156))(this + 176); /*0x4b5161*/
     wcsncpy(*((wchar_t **)this + 13), v13, v15); /*0x4b516c*/
     (*(void (__thiscall **)(char *))(this->DropListClass_field_0x48)(this); /*0x4b5178*/
     v12 = this->DropListClass_field_0x24; /*0x4b517b*/
@@ -3789,10 +3789,10 @@ int __thiscall sub_4B53E0(int this, int a2)
 int __thiscall DropListClass::RemoveItem(_DWORD *this, SBGadgetClass_SidebarClass *aP1, int aP2)
 {
   Rect_Point::Set(this, (GadgetClass *)aP1, (GadgetClass *)aP2); /*0x4b54ef*/
-  (*(void (__thiscall **)(_DWORD *, SBGadgetClass_SidebarClass *, int))(this->q0B0 + 100))( /*0x4b550e*/
+  (*(void (__thiscall **)(_DWORD *, SBGadgetClass_SidebarClass *, int))(this->List + 100))( /*0x4b550e*/
     this + 44,
     aP1,
-    aP2 + *(__int16 *)(*(this + 42) + 4));
+    aP2 + *(__int16 *)(this->q0A8 + 4));
   return (*(int (__thiscall **)(_DWORD *, char *, int))(this->DropListClass_field_0x50 + 100))(this + 20, (char *)aP1 + this->DropListClass_field_0x14, aP2); /*0x4b5521*/
 }
 
@@ -3810,7 +3810,7 @@ void __thiscall DropListClass::_vt42(_DWORD *this, wchar_t *String1)
     {
       while ( 1 ) /*0x4b5557*/
       {
-        v4 = (const wchar_t *)(*(int (__thiscall **)(_DWORD *, int))(this->q0B0 + 160))(this + 44, v3); /*0x4b5557*/
+        v4 = (const wchar_t *)(*(int (__thiscall **)(_DWORD *, int))(this->List + 160))(this + 44, v3); /*0x4b5557*/
         if ( !_wcsicmp(String1, v4) ) /*0x4b555f*/
           break; /*0x4b555f*/
         if ( ++v3 >= (*(int (__thiscall **)(_DWORD *))(*this + 176))(this) ) /*0x4b5578*/
@@ -3832,14 +3832,14 @@ int __thiscall DropListClass::_vt35(_DWORD *this)
 // ==== 0x004B55B0  DropListClass::ScrollUp  this=DropListClass  sig=csp ====
 int __thiscall DropListClass::_vt44(_DWORD *this)
 {
-  return (*(int (__thiscall **)(_DWORD *))(this->q0B0 + 148))(this + 44);
+  return (*(int (__thiscall **)(_DWORD *))(this->List + 148))(this + 44);
 }
 
 
 // ==== 0x004B55D0  DropListClass::ScrollDown  this=DropListClass  sig=csp ====
 int __thiscall DropListClass::_vt45(_DWORD *this, int a2)
 {
-  return (*(int (__thiscall **)(_DWORD *, int))(this->q0B0 + 160))(this + 44, a2); /*0x4b55e7*/
+  return (*(int (__thiscall **)(_DWORD *, int))(this->List + 160))(this + 44, a2); /*0x4b55e7*/
 }
 
 
@@ -7528,7 +7528,7 @@ unsigned int __thiscall FilePipe_30_::sub_4B9C10(int this, int a2)
 // ==== 0x004B9C30  _DynamicVectorClass_PAUButtonFadeEffect::GetItem  this=DynamicVector  sig=csp ====
 int __thiscall VectorClass_ptr_CrossDissolveEffect::sub_4B9C30(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(this->q004 + 4 * a2); /*0x4b9c3a*/
+  return *(_DWORD *)(this->Items + 4 * a2); /*0x4b9c3a*/
 }
 
 
@@ -7705,26 +7705,26 @@ char __thiscall FilePipe_30_::sub_4B9E20(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4b9e52*/
     if ( !v4 ) /*0x4b9e56*/
       return 0; /*0x4b9eca*/
-    if ( this->q004 ) /*0x4b9e58*/
+    if ( this->Items ) /*0x4b9e58*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4b9e5f*/
       if ( a2 < v5 ) /*0x4b9e64*/
         v5 = a2; /*0x4b9e66*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4b9e6c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4b9e6c*/
         ++i; /*0x4b9e71*/
       if ( *((_BYTE *)this + 13) ) /*0x4b9e7e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4b9e89*/
-        this->q004 = 0; /*0x4b9e91*/
+        this->Items = 0; /*0x4b9e91*/
       }
     }
-    this->q004 = v4; /*0x4b9e9a*/
+    this->Items = v4; /*0x4b9e9a*/
     this->DynamicVector_field_0x8 = a2; /*0x4b9ea2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4b9ea5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4b9eae*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4b9eae*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4b9eb1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4b9eb9*/
@@ -7740,7 +7740,7 @@ int __thiscall FilePipe_30_::sub_4B9ED0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4b9ed0*/
+  v2 = this->Items; /*0x4b9ed0*/
   result = 0; /*0x4b9ed3*/
   if ( v2 <= 0 ) /*0x4b9ed8*/
     return -1; /*0x4b9eef*/
@@ -7892,26 +7892,26 @@ char __thiscall FilePipe_30_::sub_4BA080(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4ba0b2*/
     if ( !v4 ) /*0x4ba0b6*/
       return 0; /*0x4ba12a*/
-    if ( this->q004 ) /*0x4ba0b8*/
+    if ( this->Items ) /*0x4ba0b8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ba0bf*/
       if ( a2 < v5 ) /*0x4ba0c4*/
         v5 = a2; /*0x4ba0c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ba0cc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ba0cc*/
         ++i; /*0x4ba0d1*/
       if ( *((_BYTE *)this + 13) ) /*0x4ba0de*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ba0e9*/
-        this->q004 = 0; /*0x4ba0f1*/
+        this->Items = 0; /*0x4ba0f1*/
       }
     }
-    this->q004 = v4; /*0x4ba0fa*/
+    this->Items = v4; /*0x4ba0fa*/
     this->DynamicVector_field_0x8 = a2; /*0x4ba102*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ba105*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ba10e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ba10e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ba111*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ba119*/
@@ -7927,7 +7927,7 @@ int __thiscall FilePipe_30_::sub_4BA130(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ba130*/
+  v2 = this->Items; /*0x4ba130*/
   result = 0; /*0x4ba133*/
   if ( v2 <= 0 ) /*0x4ba138*/
     return -1; /*0x4ba14f*/

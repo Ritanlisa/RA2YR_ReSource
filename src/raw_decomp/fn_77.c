@@ -1224,7 +1224,7 @@ DWORD __thiscall sub_7717A0(DWORD *this)
   if ( (int)this->q0F4 > 0 ) /*0x7717ae*/
   {
     StopThemeClass(1); /*0x7717b2*/
-    (*(void (__thiscall **)(DWORD *))(this->__pad_0F0 + 12))(this + 240); /*0x7717c3*/
+    (*(void (__thiscall **)(DWORD *))(this->q0F0 + 12))(this + 240); /*0x7717c3*/
   }
   result = Timer::GetTicks(); /*0x7717ca*/
   v3 = this + 235; /*0x7717d5*/
@@ -1593,8 +1593,8 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   *((_BYTE *)this + 289) = 0; /*0x771d36*/
   *((_BYTE *)this + 290) = 0; /*0x771d3c*/
   *((_BYTE *)this + 291) = 0; /*0x771d42*/
-  *(this + 73) = 0; /*0x771d48*/
-  *(this + 74) = 0; /*0x771d60*/
+  this->q124 = 0; /*0x771d48*/
+  this->q128 = 0; /*0x771d60*/
   *(this + 75) = 0; /*0x771d78*/
   *(this + 76) = 0x1000000; /*0x771d90*/
   *((_BYTE *)this + 308) = 0; /*0x771da9*/
@@ -1631,9 +1631,9 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   this->q158 = 0; /*0x771e6b*/
   *((_BYTE *)this + 348) = 0; /*0x771e71*/
   *this = &WeaponTypeClass::`vftable'; /*0x771e77*/
-  *(this + 1) = &WeaponTypeClass::`vftable'; /*0x771e7d*/
-  *(this + 2) = &WeaponTypeClass::`vftable'; /*0x771e83*/
-  *(this + 3) = &vt_WeaponTypeClass; /*0x771e8a*/
+  this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771e7d*/
+  this->vtable3 = &WeaponTypeClass::`vftable'; /*0x771e83*/
+  this->vtable4 = &vt_WeaponTypeClass; /*0x771e8a*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x771e91*/
   if ( *(int *)&stru_87C374.__pad_579C[23144] < *(int *)&stru_87C374.__pad_579C[23136] /*0x771eca*/
     || (stru_87C374.__pad_579C[23141] || !*(_DWORD *)&stru_87C374.__pad_579C[23136])
@@ -1658,9 +1658,9 @@ _DWORD *__thiscall WeaponTypeClass::loadWeaponProperties(_DWORD *this, AbstractT
   *(this + 54) = &vt_TypeList_int; /*0x771f18*/
   *(this + 61) = &vt_TypeList_AnimTypeClass_const; /*0x771f1e*/
   *this = &WeaponTypeClass::`vftable'; /*0x771f28*/
-  *(this + 1) = &WeaponTypeClass::`vftable'; /*0x771f2e*/
-  *(this + 2) = &WeaponTypeClass::`vftable'; /*0x771f35*/
-  *(this + 3) = &vt_WeaponTypeClass; /*0x771f3c*/
+  this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771f2e*/
+  this->vtable3 = &WeaponTypeClass::`vftable'; /*0x771f35*/
+  this->vtable4 = &vt_WeaponTypeClass; /*0x771f3c*/
   return this; /*0x771f45*/
 }
 
@@ -3271,7 +3271,7 @@ _DWORD *__thiscall WinModemClass::Construct(_DWORD *this)
   *((_BYTE *)this + 80) = 0; /*0x774141*/
   *((_BYTE *)this + 81) = 0; /*0x774144*/
   this->q068 = 0; /*0x774147*/
-  this->q064 = 0; /*0x77414a*/
+  this->Member100 = 0; /*0x77414a*/
   this->WinModemClass_field_0x04 = 0; /*0x77414d*/
   this->WinModemClass_field_0x08 = 0; /*0x774150*/
   this->WinModemClass_field_0x0C = 0; /*0x774153*/
@@ -3519,8 +3519,8 @@ char __thiscall NullModemClass::sendData(int this)
     Debug::Log(); /*0x774717*/
   }
   GetCommMask(*(HANDLE *)(this + 92), &EvtMask); /*0x774728*/
-  (*(void (__thiscall **)(int, int))(this->q010)(this, 1); /*0x774734*/
-  (*(void (__thiscall **)(int))(this->q00C)(this); /*0x77473b*/
+  (*(void (__thiscall **)(int, int))(this->PacketsSent)(this, 1); /*0x774734*/
+  (*(void (__thiscall **)(int))(this->LastPacketTime)(this); /*0x77473b*/
   if ( !EscapeCommFunction(*(HANDLE *)(this + 92), 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
@@ -3577,7 +3577,7 @@ int __thiscall NullModemClass::receiveData(int this)
     if ( !v5 ) /*0x77486f*/
       WinModemClass::LogCommErrors((_DWORD *)this, v2, *(_BYTE *)&Stat, cbInQue, cbOutQue); /*0x774885*/
   }
-  return (*(int (__thiscall **)(int, int))(this->q010)(this, 1); /*0x774893*/
+  return (*(int (__thiscall **)(int, int))(this->PacketsSent)(this, 1); /*0x774893*/
 }
 
 
@@ -4164,7 +4164,7 @@ LABEL_21:
 // ==== 0x007754A0  WinModemClass::ddtor  this=WinModemClass  sig=csp ====
 int __thiscall WinModemClass::_vt08(_DWORD *this, int a2)
 {
-  this->q064 = a2; /*0x7754a4*/
+  this->Member100 = a2; /*0x7754a4*/
   return a2; /*0x7754a7*/
 }
 
@@ -4194,34 +4194,34 @@ int __thiscall WinModemClass::LogCommErrors(_DWORD *this, NullModemClass *aP1, c
     if ( ((unsigned __int8)aP1 & 8) != 0 ) /*0x7754e3*/
     {
       Debug::Log(); /*0x7754ea*/
-      result = this->__pad_004 + 1; /*0x7754f5*/
-      this->__pad_004 = result; /*0x7754f6*/
+      result = this->PlayerIndex + 1; /*0x7754f5*/
+      this->PlayerIndex = result; /*0x7754f6*/
     }
     if ( ((unsigned __int8)aP1 & 0x10) != 0 ) /*0x7754fc*/
       Debug::Log(); /*0x775503*/
     if ( (BYTE1(aP1) & 4) != 0 ) /*0x77550e*/
     {
       Debug::Log(); /*0x775515*/
-      result = this->q008 + 1; /*0x775520*/
-      this->q008 = result; /*0x775521*/
+      result = this->Active + 1; /*0x775520*/
+      this->Active = result; /*0x775521*/
     }
     if ( ((unsigned __int8)aP1 & 2) != 0 ) /*0x775527*/
     {
       Debug::Log(); /*0x77552e*/
-      result = this->q00C + 1; /*0x775539*/
-      this->q00C = result; /*0x77553a*/
+      result = this->LastPacketTime + 1; /*0x775539*/
+      this->LastPacketTime = result; /*0x77553a*/
     }
     if ( ((unsigned __int8)aP1 & 1) != 0 ) /*0x775540*/
     {
       Debug::Log(); /*0x775547*/
-      result = this->q010 + 1; /*0x775552*/
-      this->q010 = result; /*0x775553*/
+      result = this->PacketsSent + 1; /*0x775552*/
+      this->PacketsSent = result; /*0x775553*/
     }
     if ( ((unsigned __int8)aP1 & 4) != 0 ) /*0x775559*/
     {
       Debug::Log(); /*0x775560*/
-      result = this->q014 + 1; /*0x77556b*/
-      this->q014 = result; /*0x77556c*/
+      result = this->PacketsReceived + 1; /*0x77556b*/
+      this->PacketsReceived = result; /*0x77556c*/
     }
     if ( (BYTE1(aP1) & 1) != 0 ) /*0x775572*/
     {

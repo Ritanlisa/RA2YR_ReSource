@@ -343,7 +343,7 @@ unsigned int __thiscall TechnoClass::sub_740B60(_WORD *this, int *a2, int **a3)
   if ( a2 ) /*0x740b71*/
   {
     v6 = (*(int (__thiscall **)(int *))(*a2 + 72))(a2); /*0x740b7c*/
-    v7 = (int *)(*(int (__thiscall **)(_WORD *, int *, int))(*(_DWORD *)this + 72))(this, &v33, v6); /*0x740b89*/
+    v7 = (int *)(*(int (__thiscall **)(_WORD *, int *, int))(this->q048)(this, &v33, v6); /*0x740b89*/
     v8 = *(_DWORD *)Cell::GetHeight(&a2, v7, v35); /*0x740b96*/
   }
   else
@@ -482,7 +482,7 @@ int __thiscall TechnoClass::sub_740EF0(_BYTE *this)
          0,
          0);
   v3 = *(_DWORD *)this; /*0x740f0e*/
-  *(this + 1746) = 0; /*0x740f10*/
+  this->q6D2 = 0; /*0x740f10*/
   if ( !v2 ) /*0x740f19*/
   {
     if ( (*(int (__thiscall **)(_BYTE *, int *, _DWORD, int))(v3 + 1320))( /*0x740f2c*/
@@ -2258,7 +2258,7 @@ bool __thiscall UnitClass::CanCrushTarget(int this, TechnoClass *aP1)
         && aP1
         && ObjectClass::IsCrushable(aP1, (AbstractClass *)this)
         && (v3 = (_DWORD *)(*(int (__thiscall **)(TechnoClass *, _BYTE *))(*(_DWORD *)aP1->__pad_0 + 72))(aP1, v10),
-            v4 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)this + 72))(this, v11),
+            v4 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(this->q048)(this, v11),
             v8 = v4[1] - v3[1],
             v9 = v4[2] - v3[2],
             v5 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
@@ -4588,15 +4588,15 @@ LABEL_30:
     }
     TechLevel = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 4116); /*0x746aed*/
     this->spawnStatus = dword_A8ED54[12]; /*0x746af3*/
-    *(this + 121) = v20[2]; /*0x746af9*/
-    *(this + 122) = TechLevel; /*0x746afc*/
+    this->q079 = v20[2]; /*0x746af9*/
+    this->q07A = TechLevel; /*0x746afc*/
     goto LABEL_30; /*0x746afc*/
   }
 LABEL_16:
   if ( !v17 ) /*0x746a0d*/
     goto LABEL_25; /*0x746a0d*/
   v9 = this->spawnStatus; /*0x746a13*/
-  v10 = *(this + 122); /*0x746a19*/
+  v10 = this->q07A; /*0x746a19*/
   if ( v9 == -1 ) /*0x746a22*/
     goto LABEL_20; /*0x746a22*/
   v11 = (int)v2 - v9; /*0x746a24*/
@@ -4617,22 +4617,22 @@ LABEL_20:
     *(this + 326) = v13; /*0x746a72*/
     *(this + 327) = 0; /*0x746a78*/
     *((_BYTE *)this + 472) = 1; /*0x746a82*/
-    *(this + 119) = dword_A8ED54[12]; /*0x746a90*/
+    this->q077 = dword_A8ED54[12]; /*0x746a90*/
     (*(void (__thiscall **)(int *))(v14 + 1180))(this); /*0x746a96*/
   }
 LABEL_25:
-  result = *(this + 178); /*0x746a9c*/
+  result = this->q0B2; /*0x746a9c*/
   if ( result ) /*0x746aa7*/
   {
     if ( !(*(unsigned __int8 (__thiscall **)(int *))(*this + 196))(this) /*0x746abd*/
       || (unsigned __int8)House::IsHumanPlayer((#375 *)*(this + 135)) )
     {
-      *(_BYTE *)(*(this + 178) + 413) = 0; /*0x746b13*/
+      *(_BYTE *)(this->q0B2 + 413) = 0; /*0x746b13*/
       return 0; /*0x746b11*/
     }
     else
     {
-      *(_BYTE *)(*(this + 178) + 413) = 1; /*0x746ad2*/
+      *(_BYTE *)(this->q0B2 + 413) = 1; /*0x746ad2*/
       return 1; /*0x746acc*/
     }
   }
@@ -4695,7 +4695,7 @@ LABEL_20:
     StringCSF = GetStringCSF(MEMORY[0x845958], 0, MEMORY[0x845964], 11454); /*0x746c3f*/
     goto LABEL_21; /*0x746c50*/
   }
-  result = (*(int (__thiscall **)(int, int))(*(_DWORD *)this + 208))(this, 1); /*0x746b4e*/
+  result = (*(int (__thiscall **)(int, int))(this->q0D0)(this, 1); /*0x746b4e*/
   if ( result ) /*0x746b56*/
     return *(_DWORD *)((*(int (__thiscall **)(int, int))(this->q0CC)(this, 1) + 96); /*0x746b66*/
   return result; /*0x746b58*/
@@ -7164,12 +7164,12 @@ VoxelAnimClass *__thiscall DamageAnimClass::Constructor(void *this, VoxelAnimCla
   int v50; // [esp+40h] [ebp-10h]
 
   ObjectClass::ctor(this); /*0x7493be*/
-  *((_DWORD *)this + 44) = 0; /*0x7493d2*/
-  *((_DWORD *)this + 46) = 0; /*0x7493d4*/
-  *((_DWORD *)this + 48) = 0; /*0x7493d7*/
-  *((_DWORD *)this + 45) = 0; /*0x7493de*/
-  *((_DWORD *)this + 47) = 0; /*0x7493e1*/
-  *((_DWORD *)this + 49) = 0; /*0x7493e4*/
+  this->q0B0 = 0; /*0x7493d2*/
+  this->q0B8 = 0; /*0x7493d4*/
+  this->q0C0 = 0; /*0x7493d7*/
+  this->q0B4 = 0; /*0x7493de*/
+  this->q0BC = 0; /*0x7493e1*/
+  this->q0C4 = 0; /*0x7493e4*/
   Int4::Set((_DWORD *)this + 56, 0, 0, 0, 1065353216); /*0x7493e7*/
   Int4::Set((_DWORD *)this + 60, 0, 0, 0, 1065353216); /*0x7493f7*/
   this->VoxelAnimClass_field_0x104 = aP1; /*0x749402*/
@@ -7182,7 +7182,7 @@ VoxelAnimClass *__thiscall DamageAnimClass::Constructor(void *this, VoxelAnimCla
   *(_DWORD *)this = &VoxelAnimClass::`vftable'; /*0x749434*/
   this->vtable2 = &VoxelAnimClass::`vftable'; /*0x74943a*/
   this->vtable3 = &VoxelAnimClass::`vftable'; /*0x749440*/
-  *((_DWORD *)this + 3) = &vt_VoxelAnimClass; /*0x749447*/
+  this->vtable4 = &vt_VoxelAnimClass; /*0x749447*/
   AbstractClass::GenerateUniqueID((int)this + 4); /*0x74944e*/
   AudioController::Init((_DWORD *)this + 69); /*0x749459*/
   AudioController::Init((_DWORD *)this + 74); /*0x749464*/
@@ -7367,7 +7367,7 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
   *(_DWORD *)this = &VoxelAnimClass::`vftable'; /*0x7499f6*/
   this->vtable2 = &VoxelAnimClass::`vftable'; /*0x7499fc*/
   this->vtable3 = &VoxelAnimClass::`vftable'; /*0x749a03*/
-  *((_DWORD *)this + 3) = &vt_VoxelAnimClass; /*0x749a0a*/
+  this->vtable4 = &vt_VoxelAnimClass; /*0x749a0a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x749a11*/
   v6 = (VoxelAnimClass *)this; /*0x749a26*/
   v2 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(MEMORY[0x887388] + 16))(&MEMORY[0x887388], &v6); /*0x749a2a*/
@@ -7414,7 +7414,7 @@ int __thiscall VoxelAnimClass::DrawVoxelFrame(#374 *this, int a2, int a3, int a4
   _DWORD *v5; // eax
   _BYTE v7[12]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v7); /*0x749b2f*/
+  v5 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(this->q048)(this, v7); /*0x749b2f*/
   if ( (*((_BYTE *)Coord::To_Cell(&MEMORY[0x87F7E8], v5) + 300) & 0x10) != 0 ) /*0x749b44*/
     *((_BYTE *)this + 128) = 1; /*0x749b46*/
   return ObjectClass::CalcDrawRect(this); /*0x749b60*/
@@ -7461,20 +7461,20 @@ char __thiscall VoxelAnimClass::_vt69(int *this, int *a2, _DWORD *a3)
   float v39[12]; // [esp+80h] [ebp-30h] BYREF
 
   if ( (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) == 0 /*0x749bb6*/
-    || (v25 = *(this + 39), v26 = *(this + 40), v27 = *(this + 41), LOBYTE(v4) = Game::Stub3((int)&v25), !(_BYTE)v4) )
+    || (v25 = this->q027, v26 = this->q028, v27 = this->q029, LOBYTE(v4) = Game::Stub3((int)&v25), !(_BYTE)v4) )
   {
     v5 = a2[1]; /*0x749bcb*/
     v34 = *a2; /*0x749bd0*/
     v35 = v5; /*0x749bd4*/
-    v30 = *(this + 39); /*0x749bda*/
-    v31 = *(this + 40); /*0x749beb*/
-    GroundHeight = *(this + 41); /*0x749bf2*/
+    v30 = this->q027; /*0x749bda*/
+    v31 = this->q028; /*0x749beb*/
+    GroundHeight = this->q029; /*0x749bf2*/
     GroundHeight = Cell::GetGroundHeight(&v30); /*0x749c05*/
     if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v30) + 80) & 0x100) == 0 ) /*0x749c1b*/
       goto LABEL_6; /*0x749c1b*/
-    v25 = *(this + 39); /*0x749c1f*/
-    v26 = *(this + 40); /*0x749c26*/
-    if ( *(this + 41) >= MEMORY[0xB1D1BC] + GroundHeight ) /*0x749c38*/
+    v25 = this->q027; /*0x749c1f*/
+    v26 = this->q028; /*0x749c26*/
+    if ( this->q029 >= MEMORY[0xB1D1BC] + GroundHeight ) /*0x749c38*/
     {
       v33 = MEMORY[0xB1D1BC] + GroundHeight; /*0x749c3e*/
       v27 = MEMORY[0xB1D1BC] + GroundHeight + 1; /*0x749c4a*/
@@ -7523,9 +7523,9 @@ LABEL_6:
         v9 = 10240; /*0x749df1*/
         if ( *(_BYTE *)(*(this + 65) + 661) ) /*0x749df6*/
           v9 = 10244; /*0x749e00*/
-        v10 = *(this + 41); /*0x749e0b*/
-        v11 = *(this + 40); /*0x749e11*/
-        v25 = *(this + 39); /*0x749e17*/
+        v10 = this->q029; /*0x749e0b*/
+        v11 = this->q028; /*0x749e11*/
+        v25 = this->q027; /*0x749e17*/
         v27 = v10; /*0x749e1f*/
         v26 = v11; /*0x749e29*/
         v12 = (__int16 *)Coord::To_Cell(&MEMORY[0x87F7E8], &v25); /*0x749e2d*/
@@ -7855,9 +7855,9 @@ _DWORD *__thiscall VoxelAnimTypeClass_Constructor(_DWORD *this, char *Source)
   this->AttachedSystem = 0; /*0x74ae5f*/
   *((_BYTE *)this + 768) = 0; /*0x74ae65*/
   *this = &VoxelAnimTypeClass::`vftable'; /*0x74ae6b*/
-  *(this + 1) = &VoxelAnimTypeClass::`vftable'; /*0x74ae71*/
-  *(this + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ae77*/
-  *(this + 3) = &VoxelAnimTypeClass::`vftable'; /*0x74ae7e*/
+  this->vtable2 = &VoxelAnimTypeClass::`vftable'; /*0x74ae71*/
+  this->vtable3 = &VoxelAnimTypeClass::`vftable'; /*0x74ae77*/
+  this->vtable4 = &VoxelAnimTypeClass::`vftable'; /*0x74ae7e*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x74ae85*/
   *((_BYTE *)this + 561) = 0; /*0x74ae8c*/
   *((_BYTE *)this + 564) = 1; /*0x74ae92*/
@@ -8984,7 +8984,7 @@ _DWORD *__thiscall VeinholeMonsterClass::Construct(_DWORD *this, AbstractClass *
 
   ObjectClass::Init(this, aP1); /*0x74c428*/
   v3 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x74c42d*/
-  *(this + 48) = 0; /*0x74c433*/
+  this->q0C0 = 0; /*0x74c433*/
   this->q0B8 = v3; /*0x74c43d*/
   *this = &VeinholeMonsterClass::`vftable'; /*0x74c443*/
   this->vtable2 = &VeinholeMonsterClass::`vftable'; /*0x74c449*/
@@ -9086,7 +9086,7 @@ VeinholeMonsterClass *__thiscall VeinholeMonsterClass::Constructor(void *this, I
   this->q0B4 = 0; /*0x74c5d0*/
   v4 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 224); /*0x74c5e1*/
   this->q0B8 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x74c5e7*/
-  *((_DWORD *)this + 48) = v4; /*0x74c5ed*/
+  this->q0C0 = v4; /*0x74c5ed*/
   this->q0C4 = 0; /*0x74c5f3*/
   this->q0C8 = 0; /*0x74c5f9*/
   this->q0CC = 0; /*0x74c5ff*/
@@ -9207,7 +9207,7 @@ VeinholeMonsterClass *__thiscall VeinholeMonsterClass::Constructor(void *this, I
     GroundHeight = 0; /*0x74c8cf*/
     GroundHeight = Cell::GetGroundHeight((IUnknown *)&v31); /*0x74c8d8*/
     ObjectClass::Deploy((#374 *)this); /*0x74c8e4*/
-    *((_DWORD *)this + 27) = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4084) + 160); /*0x74c8fb*/
+    this->health = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4084) + 160); /*0x74c8fb*/
     Vtable3 = (MouseClass *)AbstractClass::GetVtable3((AbstractClass *)((char *)this + 4)); /*0x74c90d*/
     if ( *(_DWORD *)&stru_B05488.__pad_579C[15392] + 1 <= *(int *)&stru_B05488.__pad_579C[15396] ) /*0x74c919*/
       goto LABEL_35; /*0x74c919*/
@@ -11455,7 +11455,7 @@ char __thiscall IRTTITypeInfo::sub_74F540(void *this, int a2, _DWORD *a3)
       return 0; /*0x74f5ea*/
     if ( this->q004 ) /*0x74f578*/
     {
-      v5 = this->__pad_008; /*0x74f57f*/
+      v5 = this->q008; /*0x74f57f*/
       if ( a2 < v5 ) /*0x74f584*/
         v5 = a2; /*0x74f586*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x74f58c*/
@@ -11467,14 +11467,14 @@ char __thiscall IRTTITypeInfo::sub_74F540(void *this, int a2, _DWORD *a3)
       }
     }
     this->q004 = v4; /*0x74f5ba*/
-    this->__pad_008 = a2; /*0x74f5c2*/
+    this->q008 = a2; /*0x74f5c2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x74f5c5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x74f5ce*/
   }
-  v7 = this->__pad_008; /*0x74f5d1*/
+  v7 = this->q008; /*0x74f5d1*/
   if ( v7 < this->q010 ) /*0x74f5d9*/
     this->q010 = v7; /*0x74f5db*/
   return 1; /*0x74f5de*/

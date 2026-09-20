@@ -546,8 +546,8 @@ char *__thiscall sub_5408F0(char *this, int a2, int a3, int a4, int a5, __int16 
   *(this + 5) = 0; /*0x54099f*/
   this->q010 = a3; /*0x5409a2*/
   this->__pad_024 = 0; /*0x5409a5*/
-  this->q044 = 0; /*0x5409a8*/
-  this->__pad_054 = 0; /*0x5409ab*/
+  this->connCount = 0; /*0x5409a8*/
+  this->curConnIndex = 0; /*0x5409ab*/
   memset(this + 40, 0, 0x1Cu); /*0x5409ae*/
   this->q048 = 0; /*0x5409b3*/
   this->q0A8 = -1; /*0x5409b6*/
@@ -598,11 +598,11 @@ int __thiscall sub_5409F0(char *this)
     (**v5)(v5, 1); /*0x540a37*/
     this->q050 = 0; /*0x540a39*/
   }
-  result = this->q044; /*0x540a3c*/
+  result = this->connCount; /*0x540a3c*/
   v7 = 0; /*0x540a3f*/
   if ( result <= 0 ) /*0x540a43*/
   {
-    this->q044 = 0; /*0x540a70*/
+    this->connCount = 0; /*0x540a70*/
     *(_DWORD *)this = &vt_ConnManClass; /*0x540a73*/
   }
   else
@@ -613,12 +613,12 @@ int __thiscall sub_5409F0(char *this)
       if ( *v8 ) /*0x540a49*/
         (**(void (__thiscall ***)(_DWORD, int))*v8)(*v8, 1); /*0x540a53*/
       *v8 = 0; /*0x540a55*/
-      result = this->q044; /*0x540a57*/
+      result = this->connCount; /*0x540a57*/
       ++v7; /*0x540a5a*/
       ++v8; /*0x540a5b*/
     }
     while ( v7 < result ); /*0x540a60*/
-    this->q044 = 0; /*0x540a62*/
+    this->connCount = 0; /*0x540a62*/
     *(_DWORD *)this = &vt_ConnManClass; /*0x540a65*/
   }
   return result; /*0x540a6c*/
@@ -1006,14 +1006,14 @@ int __thiscall Network::sendData(int this, AnimClass *aP1)
 // ==== 0x00540F90  IPXManagerClass::GetSendCount  this=IPXManagerClass  sig=csp ====
 int __thiscall Network_GetSendCount(_DWORD *this)
 {
-  return this->q044; /*0x540f93*/
+  return this->connCount; /*0x540f93*/
 }
 
 
 // ==== 0x00540FA0  IPXManagerClass::GetConnectionSpeed  this=IPXManagerClass  sig=csp ====
 int __thiscall Network::GetConnectionSpeed(_DWORD *this, CellStruct *aP1)
 {
-  if ( (int)aP1 < 0 || (int)aP1 >= this->q044 ) /*0x540fab*/
+  if ( (int)aP1 < 0 || (int)aP1 >= this->connCount ) /*0x540fab*/
     return -1; /*0x540fb7*/
   else
     return *(_DWORD *)(*(this + (_DWORD)aP1 + 10) + 100); /*0x540fb1*/
@@ -1087,7 +1087,7 @@ int __thiscall IPXManagerClass::_vt19(_DWORD *this, int a2)
   int result; // eax
   _DWORD *v4; // esi
 
-  v2 = this->q044; /*0x541070*/
+  v2 = this->connCount; /*0x541070*/
   result = 0; /*0x541074*/
   if ( v2 <= 0 ) /*0x54107d*/
   {
@@ -1356,7 +1356,7 @@ int __thiscall IPXManagerClass::_vt02(char *this, int a2, int a3, int a4, int a5
     return 0; /*0x5414c6*/
   if ( !*(this + 5) ) /*0x5414d1*/
     return 0; /*0x5414d1*/
-  v6 = this->q044; /*0x5414dc*/
+  v6 = this->connCount; /*0x5414dc*/
   if ( !v6 ) /*0x5414e1*/
     return 0; /*0x5414e1*/
   if ( a5 != -1 ) /*0x5414ee*/
@@ -1406,7 +1406,7 @@ LABEL_13:
       ++v11; /*0x541582*/
       ++v12; /*0x541583*/
     }
-    while ( v11 < this->q044 ); /*0x541588*/
+    while ( v11 < this->connCount ); /*0x541588*/
   }
   return 1; /*0x541533*/
 }
@@ -1697,7 +1697,7 @@ LABEL_14:
                           (_WORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_430[4 * PlayerName + 36] + 40),
                           (IPXManagerClass *)v43);
                         ebp27 = 0; /*0x541b74*/
-                        if ( (int)this->q044 > 0 ) /*0x541b78*/
+                        if ( (int)this->connCount > 0 ) /*0x541b78*/
                         {
                           v18 = (TechnoTypeClass *)(this + 10); /*0x541b7a*/
                           while ( 1 ) /*0x541b87*/
@@ -1707,7 +1707,7 @@ LABEL_14:
                               break; /*0x541b8d*/
                             ++ebp27; /*0x541b9c*/
                             v18 = (TechnoTypeClass *)((char *)v18 + 4); /*0x541b9d*/
-                            if ( ebp27 >= this->q044 ) /*0x541ba2*/
+                            if ( ebp27 >= this->connCount ) /*0x541ba2*/
                               goto LABEL_33; /*0x541ba2*/
                           }
                           v21 = (_DWORD *)(*(this + ebp27 + 10) + 76); /*0x541bae*/
@@ -1722,7 +1722,7 @@ LABEL_33:
                         }
                         if ( !MEMORY[0xA8D60E] ) /*0x541bfa*/
                         {
-                          if ( this->q044 ) /*0x541c00*/
+                          if ( this->connCount ) /*0x541c00*/
                           {
                             v22 = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_430[12] + 4 * v10); /*0x541c16*/
                             if ( (int)HouseClass_Count > *(_DWORD *)(v22 + 111) ) /*0x541c1c*/
@@ -1810,12 +1810,12 @@ LABEL_91:
             &v50,
             v2);
         }
-        else if ( (int)this->q044 > 0 ) /*0x541dad*/
+        else if ( (int)this->connCount > 0 ) /*0x541dad*/
         {
           Network::FormatAddress((unsigned __int16 *)&aP2, 0); /*0x541e46*/
           Debug::Log(); /*0x541e59*/
-          if ( !(*(int (__thiscall **)(_DWORD, __int16 *, unsigned int))(*(_DWORD *)this->q028 + 12))( /*0x541e6f*/
-                  this->q028,
+          if ( !(*(int (__thiscall **)(_DWORD, __int16 *, unsigned int))(*(_DWORD *)this->connTable + 12))( /*0x541e6f*/
+                  this->connTable,
                   &v50,
                   v2) )
           {
@@ -1827,7 +1827,7 @@ LABEL_91:
         goto LABEL_75; /*0x541da3*/
       }
       v26 = 0; /*0x541e99*/
-      if ( (int)this->q044 <= 0 ) /*0x541e9d*/
+      if ( (int)this->connCount <= 0 ) /*0x541e9d*/
       {
 LABEL_60:
         if ( MEMORY[0xA8B238] == (CellStruct *)4 /*0x541f4a*/
@@ -1882,7 +1882,7 @@ LABEL_86:
 LABEL_59:
         ++v26; /*0x541ef1*/
         v29 = (TechnoTypeClass *)((char *)v29 + 4); /*0x541ef5*/
-        if ( v26 >= this->q044 ) /*0x541efa*/
+        if ( v26 >= this->connCount ) /*0x541efa*/
           goto LABEL_60; /*0x541efa*/
       }
       if ( !GUID::Compare((char *)(*(_DWORD *)v29->vtable0 + 76), (int)&aP2) ) /*0x541edd*/
@@ -1983,7 +1983,7 @@ LABEL_92:
       }
     }
   }
-  if ( *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10204] && (int)this->q044 > 0 ) /*0x54222a*/
+  if ( *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10204] && (int)this->connCount > 0 ) /*0x54222a*/
   {
     v47 = (TechnoTypeClass *)(this + 10); /*0x54222c*/
     do /*0x542260*/
@@ -1997,7 +1997,7 @@ LABEL_92:
       ++v38; /*0x54225a*/
       v47 = (TechnoTypeClass *)((char *)v47 + 4); /*0x54225b*/
     }
-    while ( v38 < this->q044 ); /*0x542260*/
+    while ( v38 < this->connCount ); /*0x542260*/
   }
   result = aP2.field_10; /*0x542262*/
   if ( aP2.field_10 ) /*0x542268*/
@@ -2090,7 +2090,7 @@ int __thiscall IPXManagerClass::_vt09(char *this, int a2)
     return 0; /*0x542353*/
   if ( !*(this + 5) ) /*0x54235a*/
     return 0; /*0x54235a*/
-  v3 = this->q044; /*0x542361*/
+  v3 = this->connCount; /*0x542361*/
   if ( !v3 ) /*0x542366*/
     return 0; /*0x5423af*/
   if ( a2 != -1 ) /*0x54236f*/
@@ -2104,7 +2104,7 @@ int __thiscall IPXManagerClass::_vt09(char *this, int a2)
   if ( v3 > 0 ) /*0x542390*/
   {
     v6 = this + 40; /*0x542392*/
-    v7 = this->q044; /*0x542395*/
+    v7 = this->connCount; /*0x542395*/
     do /*0x5423a9*/
     {
       if ( *(_DWORD *)(*(_DWORD *)(*(_DWORD *)v6 + 4) + 40) > result ) /*0x5423a1*/
@@ -2131,7 +2131,7 @@ int __thiscall IPXManagerClass::_vt10(char *this, int a2)
     return 0; /*0x5423c3*/
   if ( !*(this + 5) ) /*0x5423ca*/
     return 0; /*0x5423ca*/
-  v3 = this->q044; /*0x5423d1*/
+  v3 = this->connCount; /*0x5423d1*/
   if ( !v3 ) /*0x5423d6*/
     return 0; /*0x54241f*/
   if ( a2 != -1 ) /*0x5423df*/
@@ -2145,7 +2145,7 @@ int __thiscall IPXManagerClass::_vt10(char *this, int a2)
   if ( v3 > 0 ) /*0x542400*/
   {
     v6 = this + 40; /*0x542402*/
-    v7 = this->q044; /*0x542405*/
+    v7 = this->connCount; /*0x542405*/
     do /*0x542419*/
     {
       if ( *(_DWORD *)(*(_DWORD *)(*(_DWORD *)v6 + 4) + 56) > result ) /*0x542411*/
@@ -2185,7 +2185,7 @@ unsigned int __thiscall IPXManagerClass::_vt12(_DWORD *this)
 
   v2 = 0; /*0x542455*/
   v3 = 0; /*0x542457*/
-  if ( (int)this->q044 > 0 ) /*0x54245e*/
+  if ( (int)this->connCount > 0 ) /*0x54245e*/
   {
     v4 = this + 10; /*0x542461*/
     do /*0x54247d*/
@@ -2196,7 +2196,7 @@ unsigned int __thiscall IPXManagerClass::_vt12(_DWORD *this)
       ++v3; /*0x542477*/
       ++v4; /*0x542478*/
     }
-    while ( v3 < this->q044 ); /*0x54247d*/
+    while ( v3 < this->connCount ); /*0x54247d*/
   }
   v6 = this->q050; /*0x542480*/
   if ( !v6 ) /*0x542485*/
@@ -3070,7 +3070,7 @@ char __thiscall AbstractClass::ModifyCellTiles(IsometricTileClass *this, int a2)
   _BYTE v39[12]; // [esp+40h] [ebp-Ch] BYREF
 
   v2 = this; /*0x543335*/
-  v30 = (*(int (__thiscall **)(IsometricTileClass *))(*(_DWORD *)this + 108))(this); /*0x543342*/
+  v30 = (*(int (__thiscall **)(IsometricTileClass *))(this->health)(this); /*0x543342*/
   if ( !v30 ) /*0x543346*/
     return 0; /*0x543346*/
   v3 = a2; /*0x54334c*/
@@ -3255,14 +3255,14 @@ IsometricTileClass *__thiscall IsometricTileClass::IsometricTileClass(
   ObjectClass::ctor(this); /*0x543786*/
   *(this + 43) = *(IsometricTileClass *)(*(_DWORD *)&HouseClass_Player.__pad_5568[23160] + 4 * (_DWORD)aP1); /*0x54379c*/
   *this = (IsometricTileClass)&IsometricTileClass::`vftable'; /*0x5437a2*/
-  *((_DWORD *)this + 1) = &IsometricTileClass::`vftable'; /*0x5437a8*/
-  *((_DWORD *)this + 2) = &IsometricTileClass::`vftable'; /*0x5437af*/
-  *((_DWORD *)this + 3) = &vt_IsometricTileClass; /*0x5437b6*/
+  this->vtable2 = &IsometricTileClass::`vftable'; /*0x5437a8*/
+  this->vtable3 = &IsometricTileClass::`vftable'; /*0x5437af*/
+  this->vtable4 = &vt_IsometricTileClass; /*0x5437b6*/
   if ( *(_WORD *)aP2->__tail_0 != unk_AA06D0 || *(_WORD *)&aP2->__tail_0[2] != unk_AA06D2 ) /*0x5437d4*/
   {
     *((_BYTE *)this + 129) = 0; /*0x543805*/
     ObjectClass::SetPosition((#374 *)this); /*0x54380c*/
-    (*(void (__thiscall **)(IsometricTileClass *, int))(*(_DWORD *)this + 292))(this, 1); /*0x543818*/
+    (*(void (__thiscall **)(IsometricTileClass *, int))(this->q124)(this, 1); /*0x543818*/
   }
   if ( *(int *)&stru_87C374.__pad_14B0[7996] < *(int *)&stru_87C374.__pad_14B0[7988] /*0x543855*/
     || (stru_87C374.__pad_14B0[7993] || !*(_DWORD *)&stru_87C374.__pad_14B0[7988])
@@ -3319,22 +3319,22 @@ int __thiscall AbstractClass::_vt54(_BYTE *this, int a2, int a3)
   int v4; // eax
 
   v4 = *(_DWORD *)this; /*0x543a17*/
-  *(this + 129) = 0; /*0x543a1c*/
+  this->q081 = 0; /*0x543a1c*/
   (*(void (__thiscall **)(_BYTE *, int))(v4 + 436))(this, a2); /*0x543a23*/
-  return (*(int (__thiscall **)(_BYTE *, int))(*(_DWORD *)this + 292))(this, 1); /*0x543a35*/
+  return (*(int (__thiscall **)(_BYTE *, int))(this->q124)(this, 1); /*0x543a35*/
 }
 
 
 // ==== 0x00543A40  AbstractClass::COMStub_53  this=IsometricTileClass  sig=csp ====
 char __thiscall AbstractClass::_vt53(_BYTE *this)
 {
-  if ( !MEMORY[0xA8E9A0] || *(this + 129) ) /*0x543a4c*/
+  if ( !MEMORY[0xA8E9A0] || this->q081 ) /*0x543a4c*/
     return 0; /*0x543a88*/
-  (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 336))(this); /*0x543a58*/
-  (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)this + 220))(this, 1); /*0x543a64*/
-  (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)this + 292))(this, 0); /*0x543a70*/
-  *(this + 129) = 1; /*0x543a76*/
-  *(this + 128) = 0; /*0x543a7d*/
+  (*(void (__thiscall **)(_BYTE *))(this->q150)(this); /*0x543a58*/
+  (*(void (__thiscall **)(_BYTE *, int))(this->q0DC)(this, 1); /*0x543a64*/
+  (*(void (__thiscall **)(_BYTE *, _DWORD))(this->q124)(this, 0); /*0x543a70*/
+  this->q081 = 1; /*0x543a76*/
+  this->q080 = 0; /*0x543a7d*/
   return 1; /*0x543a86*/
 }
 
@@ -3369,7 +3369,7 @@ int __stdcall nullsub_0(int a1, _DWORD *a2)
 // ==== 0x00543AF0  IsometricTileClass::nullsub_0_0  this=IsometricTileClass  sig=csp ====
 int __thiscall nullsub_0_0(_DWORD *this)
 {
-  return *(this + 43); /*0x543af6*/
+  return this->q0AC; /*0x543af6*/
 }
 
 
@@ -3673,7 +3673,7 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
   *(this + 165) = a2; /*0x5447d9*/
   *(this + 166) = 0xFFFF; /*0x5447e4*/
   *(this + 167) = 0xFFFF; /*0x5447ea*/
-  *(this + 168) = 0; /*0x5447f0*/
+  this->q0A8 = 0; /*0x5447f0*/
   *(this + 170) = 0; /*0x5447f8*/
   *(this + 171) = 0; /*0x5447fe*/
   *((_BYTE *)this + 688) = 1; /*0x544804*/
@@ -3682,10 +3682,10 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
   *(this + 174) = 10; /*0x54481b*/
   *(this + 173) = 0; /*0x544825*/
   *(this + 179) = 0; /*0x544830*/
-  *(this + 176) = -1; /*0x544836*/
+  this->q0B0 = -1; /*0x544836*/
   *(this + 177) = -1; /*0x54483c*/
   *(this + 178) = -1; /*0x544842*/
-  *(this + 180) = 0; /*0x544848*/
+  this->q0B4 = 0; /*0x544848*/
   *(this + 181) = -1; /*0x544852*/
   *(this + 175) = 0; /*0x544868*/
   *(this + 182) = 0; /*0x54486e*/
@@ -6705,26 +6705,26 @@ char __thiscall IsometricTileTypeClass::sub_54A3D0(void *this, int a2, _DWORD *a
     *((_BYTE *)this + 12) = 1; /*0x54a402*/
     if ( !v4 ) /*0x54a406*/
       return 0; /*0x54a47a*/
-    if ( this->q004 ) /*0x54a408*/
+    if ( this->Items ) /*0x54a408*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x54a40f*/
       if ( a2 < v5 ) /*0x54a414*/
         v5 = a2; /*0x54a416*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x54a41c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x54a41c*/
         ++i; /*0x54a421*/
       if ( *((_BYTE *)this + 13) ) /*0x54a42e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x54a439*/
-        this->q004 = 0; /*0x54a441*/
+        this->Items = 0; /*0x54a441*/
       }
     }
-    this->q004 = v4; /*0x54a44a*/
+    this->Items = v4; /*0x54a44a*/
     this->DynamicVector_field_0x8 = a2; /*0x54a452*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x54a455*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x54a45e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x54a45e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x54a461*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x54a469*/
@@ -6740,7 +6740,7 @@ int __thiscall IsometricTileTypeClass::sub_54A480(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x54a480*/
+  v2 = this->Items; /*0x54a480*/
   result = 0; /*0x54a483*/
   if ( v2 <= 0 ) /*0x54a488*/
     return -1; /*0x54a49f*/
@@ -6892,26 +6892,26 @@ char __thiscall VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::sub_5
     *((_BYTE *)this + 12) = 1; /*0x54a662*/
     if ( !v4 ) /*0x54a666*/
       return 0; /*0x54a6da*/
-    if ( this->q004 ) /*0x54a668*/
+    if ( this->Items ) /*0x54a668*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x54a66f*/
       if ( a2 < v5 ) /*0x54a674*/
         v5 = a2; /*0x54a676*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x54a67c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x54a67c*/
         ++i; /*0x54a681*/
       if ( *((_BYTE *)this + 13) ) /*0x54a68e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x54a699*/
-        this->q004 = 0; /*0x54a6a1*/
+        this->Items = 0; /*0x54a6a1*/
       }
     }
-    this->q004 = v4; /*0x54a6aa*/
+    this->Items = v4; /*0x54a6aa*/
     this->DynamicVector_field_0x8 = a2; /*0x54a6b2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x54a6b5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x54a6be*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x54a6be*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x54a6c1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x54a6c9*/
@@ -6927,7 +6927,7 @@ int __thiscall VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::sub_54
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x54a6e0*/
+  v2 = this->Items; /*0x54a6e0*/
   result = 0; /*0x54a6e3*/
   if ( v2 <= 0 ) /*0x54a6e8*/
     return -1; /*0x54a6ff*/
@@ -10462,26 +10462,26 @@ char __thiscall JumpjetLocomotionClass_26_::sub_54EA70(void *this, int a2, _DWOR
     *((_BYTE *)this + 12) = 1; /*0x54eaa2*/
     if ( !v4 ) /*0x54eaa6*/
       return 0; /*0x54eb1a*/
-    if ( this->q004 ) /*0x54eaa8*/
+    if ( this->Items ) /*0x54eaa8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x54eaaf*/
       if ( a2 < v5 ) /*0x54eab4*/
         v5 = a2; /*0x54eab6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x54eabc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x54eabc*/
         ++i; /*0x54eac1*/
       if ( *((_BYTE *)this + 13) ) /*0x54eace*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x54ead9*/
-        this->q004 = 0; /*0x54eae1*/
+        this->Items = 0; /*0x54eae1*/
       }
     }
-    this->q004 = v4; /*0x54eaea*/
+    this->Items = v4; /*0x54eaea*/
     this->DynamicVector_field_0x8 = a2; /*0x54eaf2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x54eaf5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x54eafe*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x54eafe*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x54eb01*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x54eb09*/
@@ -10497,7 +10497,7 @@ int __thiscall JumpjetLocomotionClass_26_::sub_54EB20(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x54eb20*/
+  v2 = this->Items; /*0x54eb20*/
   result = 0; /*0x54eb23*/
   if ( v2 <= 0 ) /*0x54eb28*/
     return -1; /*0x54eb3f*/
@@ -11436,7 +11436,7 @@ char *__thiscall TimerClass::Construct(
   *(this + 81) = 0; /*0x54feed*/
   this->SlowdownDistance = a14; /*0x54fef0*/
   *(this + 82) = a15; /*0x54fef7*/
-  *((_DWORD *)this + 21) = a16; /*0x54fefe*/
+  this->q054 = a16; /*0x54fefe*/
   *((_DWORD *)this + 22) = a17; /*0x54ff05*/
   *(_DWORD *)this = 0; /*0x54ff08*/
   v19 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x54ff0a*/

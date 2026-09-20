@@ -355,26 +355,26 @@ char __thiscall AbstractClass::sub_4E04A0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4e04d2*/
     if ( !v4 ) /*0x4e04d6*/
       return 0; /*0x4e054a*/
-    if ( this->q004 ) /*0x4e04d8*/
+    if ( this->Items ) /*0x4e04d8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4e04df*/
       if ( a2 < v5 ) /*0x4e04e4*/
         v5 = a2; /*0x4e04e6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4e04ec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4e04ec*/
         ++i; /*0x4e04f1*/
       if ( *((_BYTE *)this + 13) ) /*0x4e04fe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e0509*/
-        this->q004 = 0; /*0x4e0511*/
+        this->Items = 0; /*0x4e0511*/
       }
     }
-    this->q004 = v4; /*0x4e051a*/
+    this->Items = v4; /*0x4e051a*/
     this->DynamicVector_field_0x8 = a2; /*0x4e0522*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4e0525*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4e052e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4e052e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4e0531*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4e0539*/
@@ -390,7 +390,7 @@ int __thiscall Vector_Find(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4e0550*/
+  v2 = this->Items; /*0x4e0550*/
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
@@ -958,7 +958,7 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
     *((_BYTE *)this + 12) = 1; /*0x4e0b83*/
     if ( !v6 ) /*0x4e0b87*/
       return 0; /*0x4e0c27*/
-    if ( this->q004 ) /*0x4e0b8d*/
+    if ( this->Items ) /*0x4e0b8d*/
     {
       v11 = this->DynamicVector_field_0x8; /*0x4e0b94*/
       if ( a2 < v11 ) /*0x4e0b99*/
@@ -968,7 +968,7 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
       {
         do /*0x4e0bb9*/
         {
-          v13 = this->q004; /*0x4e0ba3*/
+          v13 = this->Items; /*0x4e0ba3*/
           ++v12; /*0x4e0ba6*/
           v6[2 * v12 - 2] = *(_DWORD *)(v13 + 8 * v12 - 8); /*0x4e0bad*/
           v6[2 * v12 - 1] = *(_DWORD *)(v13 + 8 * v12 - 4); /*0x4e0bb5*/
@@ -978,7 +978,7 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
       }
       if ( *((_BYTE *)this + 13) ) /*0x4e0bbf*/
       {
-        v14 = this->q004; /*0x4e0bc6*/
+        v14 = this->Items; /*0x4e0bc6*/
         if ( v14 ) /*0x4e0bcb*/
         {
           v15 = (void *)(v14 - 4); /*0x4e0bd0*/
@@ -986,16 +986,16 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
           __3_YAXPAX_Z(v15); /*0x4e0be2*/
           v4 = a3; /*0x4e0be7*/
         }
-        this->q004 = 0; /*0x4e0bee*/
+        this->Items = 0; /*0x4e0bee*/
       }
     }
-    this->q004 = v6; /*0x4e0bf7*/
+    this->Items = v6; /*0x4e0bf7*/
     this->DynamicVector_field_0x8 = a2; /*0x4e0bff*/
     *((_BYTE *)this + 13) = v4 == 0; /*0x4e0c02*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4e0c0b*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4e0c0b*/
   }
   v16 = this->DynamicVector_field_0x8; /*0x4e0c0e*/
   if ( v16 < this->DynamicVector_field_0x10 ) /*0x4e0c16*/
@@ -1046,7 +1046,7 @@ int __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributi
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4e0ca0*/
+  v2 = this->Items; /*0x4e0ca0*/
   result = 0; /*0x4e0ca5*/
   if ( v2 <= 0 ) /*0x4e0cab*/
     return -1; /*0x4e0ccc*/
@@ -1515,7 +1515,7 @@ int __thiscall DialogControl_Show(_BYTE *this)
 {
   *(this + 30) = 1; /*0x4e1462*/
   this->q01C = 1; /*0x4e1465*/
-  return (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 84))(this);
+  return (*(int (__thiscall **)(_BYTE *))(this->q054)(this);
 }
 
 
@@ -2824,7 +2824,7 @@ int __thiscall sub_4E2A50(int this, ControlClass *aP1, int aP2, int aP3, Control
 // ==== 0x004E2AF0  TriColorGaugeClass::Check  this=TriColorGaugeClass  sig=csp ====
 int __thiscall COMObject::Check(TriColorGaugeClass *this, int a2)
 {
-  if ( a2 < 0 || a2 >= *((_DWORD *)this + 12) ) /*0x4e2afb*/
+  if ( a2 < 0 || a2 >= this->q030 ) /*0x4e2afb*/
     return 0; /*0x4e2b0d*/
   *((_DWORD *)this + 15) = a2; /*0x4e2afd*/
   (*((void (__thiscall **)(TriColorGaugeClass *))this->vfptr + 18))(this); /*0x4e2b02*/
@@ -2835,7 +2835,7 @@ int __thiscall COMObject::Check(TriColorGaugeClass *this, int a2)
 // ==== 0x004E2B20  TriColorGaugeClass::SetField  this=TriColorGaugeClass  sig=csp ====
 int __thiscall COMObject::SetField(TriColorGaugeClass *this, int a2)
 {
-  if ( a2 < 0 || a2 >= *((_DWORD *)this + 12) ) /*0x4e2b2b*/
+  if ( a2 < 0 || a2 >= this->q030 ) /*0x4e2b2b*/
     return 0; /*0x4e2b3d*/
   *((_DWORD *)this + 16) = a2; /*0x4e2b2d*/
   (*((void (__thiscall **)(TriColorGaugeClass *))this->vfptr + 18))(this); /*0x4e2b32*/
@@ -2905,15 +2905,15 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
     return 0; /*0x4e3097*/
   (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 32))( /*0x4e2b95*/
     *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228],
-    *((_DWORD *)this + 3),
-    *((_DWORD *)this + 4),
-    *((_DWORD *)this + 5),
-    *((_DWORD *)this + 6));
+    this->Width,
+    this->Height,
+    this->Visible,
+    this->ID);
   v3 = *((_BYTE *)this + 30); /*0x4e2b9b*/
-  v4 = *((_DWORD *)this + 5); /*0x4e2b9e*/
-  v5 = *((_DWORD *)this + 4); /*0x4e2ba1*/
-  v54 = *((_DWORD *)this + 3); /*0x4e2ba4*/
-  v57 = *((_DWORD *)this + 6); /*0x4e2bab*/
+  v4 = this->Visible; /*0x4e2b9e*/
+  v5 = this->Height; /*0x4e2ba1*/
+  v54 = this->Width; /*0x4e2ba4*/
+  v57 = this->ID; /*0x4e2bab*/
   v56 = v4; /*0x4e2bb3*/
   v55 = v5; /*0x4e2bc0*/
   DrawBuildingTilesSHP(&v54, v3 != 0, 1); /*0x4e2bc4*/
@@ -2925,7 +2925,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
   {
     if ( v9 > *((_DWORD *)this + 16) ) /*0x4e2cc9*/
     {
-      if ( v9 <= *((_DWORD *)this + 12) ) /*0x4e2e4b*/
+      if ( v9 <= this->q030 ) /*0x4e2e4b*/
       {
         v34 = *(_DWORD *)&MEMORY[0x87F6C4]->field_2[2]; /*0x4e2e5b*/
         if ( *((_BYTE *)this + 46) ) /*0x4e2e51*/
@@ -2934,11 +2934,11 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
             v35 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 6); /*0x4e2e71*/
           else
             v35 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 12); /*0x4e2e7e*/
-          v36 = *((_DWORD *)this + 3); /*0x4e2e82*/
+          v36 = this->Width; /*0x4e2e82*/
           v54 = v36 + 1; /*0x4e2e8e*/
-          v55 = *((_DWORD *)this + 4) + 1; /*0x4e2e96*/
+          v55 = this->Height + 1; /*0x4e2e96*/
           v37 = v6 - v36; /*0x4e2e9c*/
-          v38 = *((_DWORD *)this + 6) - 2; /*0x4e2ea2*/
+          v38 = this->ID - 2; /*0x4e2ea2*/
           v56 = v37 + 1; /*0x4e2ea5*/
           v57 = v38; /*0x4e2eaf*/
           (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2eb5*/
@@ -2949,9 +2949,9 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
             v39 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 5); /*0x4e2ece*/
           else
             v39 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 10); /*0x4e2eda*/
-          v55 = *((_DWORD *)this + 4) + 1; /*0x4e2ee5*/
-          v40 = v7 - *((_DWORD *)this + 3) + 1; /*0x4e2ef4*/
-          v57 = *((_DWORD *)this + 6) - 2; /*0x4e2ef5*/
+          v55 = this->Height + 1; /*0x4e2ee5*/
+          v40 = v7 - this->Width + 1; /*0x4e2ef4*/
+          v57 = this->ID - 2; /*0x4e2ef5*/
           v54 = v6; /*0x4e2eff*/
           v56 = v40; /*0x4e2f03*/
           (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2f0e*/
@@ -2962,9 +2962,9 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
             v41 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 3); /*0x4e2f24*/
           else
             v41 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 6); /*0x4e2f31*/
-          v42 = v8 - *((_DWORD *)this + 3); /*0x4e2f3c*/
-          v43 = *((_DWORD *)this + 6); /*0x4e2f3e*/
-          v55 = *((_DWORD *)this + 4) + 1; /*0x4e2f41*/
+          v42 = v8 - this->Width; /*0x4e2f3c*/
+          v43 = this->ID; /*0x4e2f3e*/
+          v55 = this->Height + 1; /*0x4e2f41*/
           v54 = v7; /*0x4e2f4f*/
           v56 = v42 + 1; /*0x4e2f53*/
           v57 = v43 - 2; /*0x4e2f57*/
@@ -2976,10 +2976,10 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
             v44 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 6); /*0x4e2f74*/
           else
             v44 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 12); /*0x4e2f81*/
-          v45 = *((_DWORD *)this + 4); /*0x4e2f88*/
-          v54 = *((_DWORD *)this + 3) + 1; /*0x4e2f8d*/
+          v45 = this->Height; /*0x4e2f88*/
+          v54 = this->Width + 1; /*0x4e2f8d*/
           v55 = v45 + 1; /*0x4e2f94*/
-          v56 = *((_DWORD *)this + 5) - 2; /*0x4e2fa2*/
+          v56 = this->Visible - 2; /*0x4e2fa2*/
           v57 = v6 - v45 + 1; /*0x4e2fac*/
           (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2fb8*/
             *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416],
@@ -2989,10 +2989,10 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
             v46 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 5); /*0x4e2fd1*/
           else
             v46 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 10); /*0x4e2fdd*/
-          v47 = *((_DWORD *)this + 5); /*0x4e2fe4*/
-          v48 = *((_DWORD *)this + 3) + 1; /*0x4e2fe7*/
+          v47 = this->Visible; /*0x4e2fe4*/
+          v48 = this->Width + 1; /*0x4e2fe7*/
           v55 = v6; /*0x4e2fe8*/
-          v49 = *((_DWORD *)this + 4); /*0x4e2fec*/
+          v49 = this->Height; /*0x4e2fec*/
           v54 = v48; /*0x4e2fef*/
           v56 = v47 - 2; /*0x4e2ffc*/
           v57 = v7 - v49 + 1; /*0x4e3000*/
@@ -3004,9 +3004,9 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
             v50 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 3); /*0x4e3027*/
           else
             v50 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 6); /*0x4e3034*/
-          v51 = *((_DWORD *)this + 5) - 2; /*0x4e303f*/
-          v54 = *((_DWORD *)this + 3) + 1; /*0x4e3042*/
-          v52 = v8 - *((_DWORD *)this + 4) + 1; /*0x4e3051*/
+          v51 = this->Visible - 2; /*0x4e303f*/
+          v54 = this->Width + 1; /*0x4e3042*/
+          v52 = v8 - this->Height + 1; /*0x4e3051*/
           v55 = v7; /*0x4e3052*/
           v56 = v51; /*0x4e3056*/
           v57 = v52; /*0x4e305a*/
@@ -3023,11 +3023,11 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
           v19 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 6); /*0x4e2cf3*/
         else
           v19 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 12); /*0x4e2d00*/
-        v20 = *((_DWORD *)this + 3); /*0x4e2d04*/
+        v20 = this->Width; /*0x4e2d04*/
         v54 = v20 + 1; /*0x4e2d10*/
-        v55 = *((_DWORD *)this + 4) + 1; /*0x4e2d18*/
+        v55 = this->Height + 1; /*0x4e2d18*/
         v21 = v6 - v20; /*0x4e2d1e*/
-        v22 = *((_DWORD *)this + 6) - 2; /*0x4e2d24*/
+        v22 = this->ID - 2; /*0x4e2d24*/
         v56 = v21 + 1; /*0x4e2d27*/
         v57 = v22; /*0x4e2d31*/
         (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2d37*/
@@ -3038,11 +3038,11 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
           v23 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 5); /*0x4e2d4c*/
         else
           v23 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 10); /*0x4e2d59*/
-        v24 = *((_DWORD *)this + 3); /*0x4e2d5d*/
+        v24 = this->Width; /*0x4e2d5d*/
         v25 = v6 - v24; /*0x4e2d63*/
         v26 = v8 - v24; /*0x4e2d65*/
-        v27 = *((_DWORD *)this + 6); /*0x4e2d67*/
-        v55 = *((_DWORD *)this + 4) + 1; /*0x4e2d6d*/
+        v27 = this->ID; /*0x4e2d67*/
+        v55 = this->Height + 1; /*0x4e2d6d*/
         v54 = v25 + 1; /*0x4e2d7b*/
         v56 = v26 - 1; /*0x4e2d7f*/
         v57 = v27 - 2; /*0x4e2d83*/
@@ -3057,10 +3057,10 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
           v28 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 6); /*0x4e2da2*/
         else
           v28 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 12); /*0x4e2daf*/
-        v54 = *((_DWORD *)this + 3) + 1; /*0x4e2dbc*/
-        v29 = *((_DWORD *)this + 4); /*0x4e2dc0*/
+        v54 = this->Width + 1; /*0x4e2dbc*/
+        v29 = this->Height; /*0x4e2dc0*/
         v55 = v29 + 1; /*0x4e2dc7*/
-        v56 = *((_DWORD *)this + 5) - 2; /*0x4e2dd1*/
+        v56 = this->Visible - 2; /*0x4e2dd1*/
         v57 = v6 - v29 + 1; /*0x4e2dda*/
         (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2de6*/
           *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416],
@@ -3070,11 +3070,11 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
           v30 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 5); /*0x4e2dfb*/
         else
           v30 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 10); /*0x4e2e08*/
-        v31 = *((_DWORD *)this + 3); /*0x4e2e0c*/
+        v31 = this->Width; /*0x4e2e0c*/
         v54 = v31 + 1; /*0x4e2e18*/
-        v32 = *((_DWORD *)this + 4); /*0x4e2e1c*/
+        v32 = this->Height; /*0x4e2e1c*/
         v55 = v6 - v32 + 1; /*0x4e2e2a*/
-        v33 = *((_DWORD *)this + 5); /*0x4e2e2e*/
+        v33 = this->Visible; /*0x4e2e2e*/
         v57 = v8 - v32 + 1; /*0x4e2e36*/
         v56 = v31 + v33 - 2; /*0x4e2e3a*/
         (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2e40*/
@@ -3093,12 +3093,12 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
         v11 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 6); /*0x4e2c23*/
       else
         v11 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 12); /*0x4e2c30*/
-      v12 = *((_DWORD *)this + 3); /*0x4e2c34*/
+      v12 = this->Width; /*0x4e2c34*/
       v13 = v8 - v12; /*0x4e2c38*/
       v14 = v12 + 1; /*0x4e2c3e*/
-      v15 = *((_DWORD *)this + 6); /*0x4e2c41*/
+      v15 = this->ID; /*0x4e2c41*/
       v54 = v14; /*0x4e2c44*/
-      v55 = *((_DWORD *)this + 4) + 1; /*0x4e2c4d*/
+      v55 = this->Height + 1; /*0x4e2c4d*/
       v56 = v13 + 1; /*0x4e2c5a*/
       v57 = v15 - 2; /*0x4e2c5e*/
       (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2c65*/
@@ -3112,10 +3112,10 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
         v16 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 6); /*0x4e2c7a*/
       else
         v16 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 12); /*0x4e2c87*/
-      v54 = *((_DWORD *)this + 3) + 1; /*0x4e2c94*/
-      v17 = *((_DWORD *)this + 4); /*0x4e2c98*/
+      v54 = this->Width + 1; /*0x4e2c94*/
+      v17 = this->Height; /*0x4e2c98*/
       v55 = v17 + 1; /*0x4e2ca1*/
-      v56 = *((_DWORD *)this + 5) - 2; /*0x4e2cac*/
+      v56 = this->Visible - 2; /*0x4e2cac*/
       v57 = v8 - v17 + 1; /*0x4e2cb6*/
       (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2cbc*/
         *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416],
@@ -9254,26 +9254,26 @@ char __thiscall HouseClass::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4e93b2*/
     if ( !v4 ) /*0x4e93b6*/
       return 0; /*0x4e942a*/
-    if ( this->q004 ) /*0x4e93b8*/
+    if ( this->Items ) /*0x4e93b8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4e93bf*/
       if ( a2 < v5 ) /*0x4e93c4*/
         v5 = a2; /*0x4e93c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4e93cc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4e93cc*/
         ++i; /*0x4e93d1*/
       if ( *((_BYTE *)this + 13) ) /*0x4e93de*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e93e9*/
-        this->q004 = 0; /*0x4e93f1*/
+        this->Items = 0; /*0x4e93f1*/
       }
     }
-    this->q004 = v4; /*0x4e93fa*/
+    this->Items = v4; /*0x4e93fa*/
     this->DynamicVector_field_0x8 = a2; /*0x4e9402*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4e9405*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4e940e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4e940e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4e9411*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4e9419*/
@@ -9289,7 +9289,7 @@ int __thiscall HouseClass::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4e9430*/
+  v2 = this->Items; /*0x4e9430*/
   result = 0; /*0x4e9433*/
   if ( v2 <= 0 ) /*0x4e9438*/
     return -1; /*0x4e944f*/
@@ -9441,26 +9441,26 @@ char __thiscall ParticleSystemClass_32_::sub_4E95E0(void *this, int a2, _DWORD *
     *((_BYTE *)this + 12) = 1; /*0x4e9612*/
     if ( !v4 ) /*0x4e9616*/
       return 0; /*0x4e968a*/
-    if ( this->q004 ) /*0x4e9618*/
+    if ( this->Items ) /*0x4e9618*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4e961f*/
       if ( a2 < v5 ) /*0x4e9624*/
         v5 = a2; /*0x4e9626*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4e962c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4e962c*/
         ++i; /*0x4e9631*/
       if ( *((_BYTE *)this + 13) ) /*0x4e963e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9649*/
-        this->q004 = 0; /*0x4e9651*/
+        this->Items = 0; /*0x4e9651*/
       }
     }
-    this->q004 = v4; /*0x4e965a*/
+    this->Items = v4; /*0x4e965a*/
     this->DynamicVector_field_0x8 = a2; /*0x4e9662*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4e9665*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4e966e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4e966e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4e9671*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4e9679*/
@@ -9476,7 +9476,7 @@ int __thiscall ParticleSystemClass_32_::sub_4E9690(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4e9690*/
+  v2 = this->Items; /*0x4e9690*/
   result = 0; /*0x4e9693*/
   if ( v2 <= 0 ) /*0x4e9698*/
     return -1; /*0x4e96af*/
@@ -9628,26 +9628,26 @@ char __thiscall VectorClass_ptr_SuperClass::sub_4E9840(void *this, int a2, _DWOR
     *((_BYTE *)this + 12) = 1; /*0x4e9872*/
     if ( !v4 ) /*0x4e9876*/
       return 0; /*0x4e98ea*/
-    if ( this->q004 ) /*0x4e9878*/
+    if ( this->Items ) /*0x4e9878*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4e987f*/
       if ( a2 < v5 ) /*0x4e9884*/
         v5 = a2; /*0x4e9886*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4e988c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4e988c*/
         ++i; /*0x4e9891*/
       if ( *((_BYTE *)this + 13) ) /*0x4e989e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e98a9*/
-        this->q004 = 0; /*0x4e98b1*/
+        this->Items = 0; /*0x4e98b1*/
       }
     }
-    this->q004 = v4; /*0x4e98ba*/
+    this->Items = v4; /*0x4e98ba*/
     this->DynamicVector_field_0x8 = a2; /*0x4e98c2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4e98c5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4e98ce*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4e98ce*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4e98d1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4e98d9*/
@@ -9663,7 +9663,7 @@ int __thiscall VectorClass_ptr_SuperClass::sub_4E98F0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4e98f0*/
+  v2 = this->Items; /*0x4e98f0*/
   result = 0; /*0x4e98f3*/
   if ( v2 <= 0 ) /*0x4e98f8*/
     return -1; /*0x4e990f*/
@@ -9815,26 +9815,26 @@ char __thiscall VectorClass_ptr_AITriggerTypeClass::sub_4E9AA0(void *this, int a
     *((_BYTE *)this + 12) = 1; /*0x4e9ad2*/
     if ( !v4 ) /*0x4e9ad6*/
       return 0; /*0x4e9b4a*/
-    if ( this->q004 ) /*0x4e9ad8*/
+    if ( this->Items ) /*0x4e9ad8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4e9adf*/
       if ( a2 < v5 ) /*0x4e9ae4*/
         v5 = a2; /*0x4e9ae6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4e9aec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4e9aec*/
         ++i; /*0x4e9af1*/
       if ( *((_BYTE *)this + 13) ) /*0x4e9afe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9b09*/
-        this->q004 = 0; /*0x4e9b11*/
+        this->Items = 0; /*0x4e9b11*/
       }
     }
-    this->q004 = v4; /*0x4e9b1a*/
+    this->Items = v4; /*0x4e9b1a*/
     this->DynamicVector_field_0x8 = a2; /*0x4e9b22*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4e9b25*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4e9b2e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4e9b2e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4e9b31*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4e9b39*/
@@ -9850,7 +9850,7 @@ int __thiscall VectorClass_ptr_AITriggerTypeClass::sub_4E9B50(int *this, _DWORD 
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4e9b50*/
+  v2 = this->Items; /*0x4e9b50*/
   result = 0; /*0x4e9b53*/
   if ( v2 <= 0 ) /*0x4e9b58*/
     return -1; /*0x4e9b6f*/
@@ -10002,26 +10002,26 @@ char __thiscall VectorClass_ptr_BuildingLightClass::sub_4E9D00(void *this, int a
     *((_BYTE *)this + 12) = 1; /*0x4e9d32*/
     if ( !v4 ) /*0x4e9d36*/
       return 0; /*0x4e9daa*/
-    if ( this->q004 ) /*0x4e9d38*/
+    if ( this->Items ) /*0x4e9d38*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4e9d3f*/
       if ( a2 < v5 ) /*0x4e9d44*/
         v5 = a2; /*0x4e9d46*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4e9d4c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4e9d4c*/
         ++i; /*0x4e9d51*/
       if ( *((_BYTE *)this + 13) ) /*0x4e9d5e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9d69*/
-        this->q004 = 0; /*0x4e9d71*/
+        this->Items = 0; /*0x4e9d71*/
       }
     }
-    this->q004 = v4; /*0x4e9d7a*/
+    this->Items = v4; /*0x4e9d7a*/
     this->DynamicVector_field_0x8 = a2; /*0x4e9d82*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4e9d85*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4e9d8e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4e9d8e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4e9d91*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4e9d99*/
@@ -10037,7 +10037,7 @@ int __thiscall VectorClass_ptr_BuildingLightClass::sub_4E9DB0(int *this, _DWORD 
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4e9db0*/
+  v2 = this->Items; /*0x4e9db0*/
   result = 0; /*0x4e9db3*/
   if ( v2 <= 0 ) /*0x4e9db8*/
     return -1; /*0x4e9dcf*/
@@ -10189,26 +10189,26 @@ char __thiscall ParticleSystemClass::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4e9f92*/
     if ( !v4 ) /*0x4e9f96*/
       return 0; /*0x4ea00a*/
-    if ( this->q004 ) /*0x4e9f98*/
+    if ( this->Items ) /*0x4e9f98*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4e9f9f*/
       if ( a2 < v5 ) /*0x4e9fa4*/
         v5 = a2; /*0x4e9fa6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4e9fac*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4e9fac*/
         ++i; /*0x4e9fb1*/
       if ( *((_BYTE *)this + 13) ) /*0x4e9fbe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9fc9*/
-        this->q004 = 0; /*0x4e9fd1*/
+        this->Items = 0; /*0x4e9fd1*/
       }
     }
-    this->q004 = v4; /*0x4e9fda*/
+    this->Items = v4; /*0x4e9fda*/
     this->DynamicVector_field_0x8 = a2; /*0x4e9fe2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4e9fe5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4e9fee*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4e9fee*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4e9ff1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4e9ff9*/
@@ -10224,7 +10224,7 @@ int __thiscall ParticleSystemClass::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ea010*/
+  v2 = this->Items; /*0x4ea010*/
   result = 0; /*0x4ea013*/
   if ( v2 <= 0 ) /*0x4ea018*/
     return -1; /*0x4ea02f*/
@@ -10376,26 +10376,26 @@ char __thiscall VectorClass_ptr_TeamClass::sub_4EA1C0(void *this, int a2, _DWORD
     *((_BYTE *)this + 12) = 1; /*0x4ea1f2*/
     if ( !v4 ) /*0x4ea1f6*/
       return 0; /*0x4ea26a*/
-    if ( this->q004 ) /*0x4ea1f8*/
+    if ( this->Items ) /*0x4ea1f8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ea1ff*/
       if ( a2 < v5 ) /*0x4ea204*/
         v5 = a2; /*0x4ea206*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ea20c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ea20c*/
         ++i; /*0x4ea211*/
       if ( *((_BYTE *)this + 13) ) /*0x4ea21e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea229*/
-        this->q004 = 0; /*0x4ea231*/
+        this->Items = 0; /*0x4ea231*/
       }
     }
-    this->q004 = v4; /*0x4ea23a*/
+    this->Items = v4; /*0x4ea23a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ea242*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ea245*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ea24e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ea24e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ea251*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ea259*/
@@ -10411,7 +10411,7 @@ int __thiscall VectorClass_ptr_TeamClass::sub_4EA270(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ea270*/
+  v2 = this->Items; /*0x4ea270*/
   result = 0; /*0x4ea273*/
   if ( v2 <= 0 ) /*0x4ea278*/
     return -1; /*0x4ea28f*/
@@ -10684,26 +10684,26 @@ char __thiscall VectorClass_ptr_AITriggerTypeClass::sub_4EA5A0(void *this, int a
     *((_BYTE *)this + 12) = 1; /*0x4ea5d2*/
     if ( !v4 ) /*0x4ea5d6*/
       return 0; /*0x4ea64a*/
-    if ( this->q004 ) /*0x4ea5d8*/
+    if ( this->Items ) /*0x4ea5d8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ea5df*/
       if ( a2 < v5 ) /*0x4ea5e4*/
         v5 = a2; /*0x4ea5e6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ea5ec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ea5ec*/
         ++i; /*0x4ea5f1*/
       if ( *((_BYTE *)this + 13) ) /*0x4ea5fe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea609*/
-        this->q004 = 0; /*0x4ea611*/
+        this->Items = 0; /*0x4ea611*/
       }
     }
-    this->q004 = v4; /*0x4ea61a*/
+    this->Items = v4; /*0x4ea61a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ea622*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ea625*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ea62e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ea62e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ea631*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ea639*/
@@ -10719,7 +10719,7 @@ int __thiscall VectorClass_ptr_AITriggerTypeClass::sub_4EA650(int *this, _DWORD 
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ea650*/
+  v2 = this->Items; /*0x4ea650*/
   result = 0; /*0x4ea653*/
   if ( v2 <= 0 ) /*0x4ea658*/
     return -1; /*0x4ea66f*/
@@ -10871,26 +10871,26 @@ char __thiscall VectorClass_ptr_AITriggerTypeClass::sub_4EA800(void *this, int a
     *((_BYTE *)this + 12) = 1; /*0x4ea832*/
     if ( !v4 ) /*0x4ea836*/
       return 0; /*0x4ea8aa*/
-    if ( this->q004 ) /*0x4ea838*/
+    if ( this->Items ) /*0x4ea838*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ea83f*/
       if ( a2 < v5 ) /*0x4ea844*/
         v5 = a2; /*0x4ea846*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ea84c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ea84c*/
         ++i; /*0x4ea851*/
       if ( *((_BYTE *)this + 13) ) /*0x4ea85e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea869*/
-        this->q004 = 0; /*0x4ea871*/
+        this->Items = 0; /*0x4ea871*/
       }
     }
-    this->q004 = v4; /*0x4ea87a*/
+    this->Items = v4; /*0x4ea87a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ea882*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ea885*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ea88e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ea88e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ea891*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ea899*/
@@ -10906,7 +10906,7 @@ int __thiscall VectorClass_ptr_AITriggerTypeClass::sub_4EA8B0(int *this, _DWORD 
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ea8b0*/
+  v2 = this->Items; /*0x4ea8b0*/
   result = 0; /*0x4ea8b3*/
   if ( v2 <= 0 ) /*0x4ea8b8*/
     return -1; /*0x4ea8cf*/
@@ -11058,26 +11058,26 @@ char __thiscall VectorClass_ptr_TubeClass::sub_4EAA60(void *this, int a2, _DWORD
     *((_BYTE *)this + 12) = 1; /*0x4eaa92*/
     if ( !v4 ) /*0x4eaa96*/
       return 0; /*0x4eab0a*/
-    if ( this->q004 ) /*0x4eaa98*/
+    if ( this->Items ) /*0x4eaa98*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4eaa9f*/
       if ( a2 < v5 ) /*0x4eaaa4*/
         v5 = a2; /*0x4eaaa6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4eaaac*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4eaaac*/
         ++i; /*0x4eaab1*/
       if ( *((_BYTE *)this + 13) ) /*0x4eaabe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eaac9*/
-        this->q004 = 0; /*0x4eaad1*/
+        this->Items = 0; /*0x4eaad1*/
       }
     }
-    this->q004 = v4; /*0x4eaada*/
+    this->Items = v4; /*0x4eaada*/
     this->DynamicVector_field_0x8 = a2; /*0x4eaae2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4eaae5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4eaaee*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4eaaee*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4eaaf1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4eaaf9*/
@@ -11093,7 +11093,7 @@ int __thiscall VectorClass_ptr_TubeClass::sub_4EAB10(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4eab10*/
+  v2 = this->Items; /*0x4eab10*/
   result = 0; /*0x4eab13*/
   if ( v2 <= 0 ) /*0x4eab18*/
     return -1; /*0x4eab2f*/
@@ -11245,26 +11245,26 @@ char __thiscall VectorClass_ptr_BuildingLightClass::sub_4EACC0(void *this, int a
     *((_BYTE *)this + 12) = 1; /*0x4eacf2*/
     if ( !v4 ) /*0x4eacf6*/
       return 0; /*0x4ead6a*/
-    if ( this->q004 ) /*0x4eacf8*/
+    if ( this->Items ) /*0x4eacf8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4eacff*/
       if ( a2 < v5 ) /*0x4ead04*/
         v5 = a2; /*0x4ead06*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ead0c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ead0c*/
         ++i; /*0x4ead11*/
       if ( *((_BYTE *)this + 13) ) /*0x4ead1e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ead29*/
-        this->q004 = 0; /*0x4ead31*/
+        this->Items = 0; /*0x4ead31*/
       }
     }
-    this->q004 = v4; /*0x4ead3a*/
+    this->Items = v4; /*0x4ead3a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ead42*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ead45*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ead4e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ead4e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ead51*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ead59*/
@@ -11280,7 +11280,7 @@ int __thiscall VectorClass_ptr_BuildingLightClass::sub_4EAD70(int *this, _DWORD 
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ead70*/
+  v2 = this->Items; /*0x4ead70*/
   result = 0; /*0x4ead73*/
   if ( v2 <= 0 ) /*0x4ead78*/
     return -1; /*0x4ead8f*/
@@ -11432,26 +11432,26 @@ char __thiscall VectorClass_ptr_TubeClass::sub_4EAF20(void *this, int a2, _DWORD
     *((_BYTE *)this + 12) = 1; /*0x4eaf52*/
     if ( !v4 ) /*0x4eaf56*/
       return 0; /*0x4eafca*/
-    if ( this->q004 ) /*0x4eaf58*/
+    if ( this->Items ) /*0x4eaf58*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4eaf5f*/
       if ( a2 < v5 ) /*0x4eaf64*/
         v5 = a2; /*0x4eaf66*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4eaf6c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4eaf6c*/
         ++i; /*0x4eaf71*/
       if ( *((_BYTE *)this + 13) ) /*0x4eaf7e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eaf89*/
-        this->q004 = 0; /*0x4eaf91*/
+        this->Items = 0; /*0x4eaf91*/
       }
     }
-    this->q004 = v4; /*0x4eaf9a*/
+    this->Items = v4; /*0x4eaf9a*/
     this->DynamicVector_field_0x8 = a2; /*0x4eafa2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4eafa5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4eafae*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4eafae*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4eafb1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4eafb9*/
@@ -11467,7 +11467,7 @@ int __thiscall VectorClass_ptr_TubeClass::sub_4EAFD0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4eafd0*/
+  v2 = this->Items; /*0x4eafd0*/
   result = 0; /*0x4eafd3*/
   if ( v2 <= 0 ) /*0x4eafd8*/
     return -1; /*0x4eafef*/
@@ -11619,26 +11619,26 @@ char __thiscall VectorClass_ptr_TubeClass::sub_4EB180(void *this, int a2, _DWORD
     *((_BYTE *)this + 12) = 1; /*0x4eb1b2*/
     if ( !v4 ) /*0x4eb1b6*/
       return 0; /*0x4eb22a*/
-    if ( this->q004 ) /*0x4eb1b8*/
+    if ( this->Items ) /*0x4eb1b8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4eb1bf*/
       if ( a2 < v5 ) /*0x4eb1c4*/
         v5 = a2; /*0x4eb1c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4eb1cc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4eb1cc*/
         ++i; /*0x4eb1d1*/
       if ( *((_BYTE *)this + 13) ) /*0x4eb1de*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb1e9*/
-        this->q004 = 0; /*0x4eb1f1*/
+        this->Items = 0; /*0x4eb1f1*/
       }
     }
-    this->q004 = v4; /*0x4eb1fa*/
+    this->Items = v4; /*0x4eb1fa*/
     this->DynamicVector_field_0x8 = a2; /*0x4eb202*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4eb205*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4eb20e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4eb20e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4eb211*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4eb219*/
@@ -11654,7 +11654,7 @@ int __thiscall VectorClass_ptr_TubeClass::sub_4EB230(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4eb230*/
+  v2 = this->Items; /*0x4eb230*/
   result = 0; /*0x4eb233*/
   if ( v2 <= 0 ) /*0x4eb238*/
     return -1; /*0x4eb24f*/
@@ -11806,26 +11806,26 @@ char __thiscall ParticleSystemClass::sub_4EB3E0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4eb412*/
     if ( !v4 ) /*0x4eb416*/
       return 0; /*0x4eb48a*/
-    if ( this->q004 ) /*0x4eb418*/
+    if ( this->Items ) /*0x4eb418*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4eb41f*/
       if ( a2 < v5 ) /*0x4eb424*/
         v5 = a2; /*0x4eb426*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4eb42c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4eb42c*/
         ++i; /*0x4eb431*/
       if ( *((_BYTE *)this + 13) ) /*0x4eb43e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb449*/
-        this->q004 = 0; /*0x4eb451*/
+        this->Items = 0; /*0x4eb451*/
       }
     }
-    this->q004 = v4; /*0x4eb45a*/
+    this->Items = v4; /*0x4eb45a*/
     this->DynamicVector_field_0x8 = a2; /*0x4eb462*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4eb465*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4eb46e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4eb46e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4eb471*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4eb479*/
@@ -11841,7 +11841,7 @@ int __thiscall ParticleSystemClass::sub_4EB490(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4eb490*/
+  v2 = this->Items; /*0x4eb490*/
   result = 0; /*0x4eb493*/
   if ( v2 <= 0 ) /*0x4eb498*/
     return -1; /*0x4eb4af*/
@@ -11993,26 +11993,26 @@ char __thiscall ParticleSystemClass_32_::sub_4EB640(void *this, int a2, _DWORD *
     *((_BYTE *)this + 12) = 1; /*0x4eb672*/
     if ( !v4 ) /*0x4eb676*/
       return 0; /*0x4eb6ea*/
-    if ( this->q004 ) /*0x4eb678*/
+    if ( this->Items ) /*0x4eb678*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4eb67f*/
       if ( a2 < v5 ) /*0x4eb684*/
         v5 = a2; /*0x4eb686*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4eb68c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4eb68c*/
         ++i; /*0x4eb691*/
       if ( *((_BYTE *)this + 13) ) /*0x4eb69e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb6a9*/
-        this->q004 = 0; /*0x4eb6b1*/
+        this->Items = 0; /*0x4eb6b1*/
       }
     }
-    this->q004 = v4; /*0x4eb6ba*/
+    this->Items = v4; /*0x4eb6ba*/
     this->DynamicVector_field_0x8 = a2; /*0x4eb6c2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4eb6c5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4eb6ce*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4eb6ce*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4eb6d1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4eb6d9*/
@@ -12028,7 +12028,7 @@ int __thiscall ParticleSystemClass_32_::sub_4EB6F0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4eb6f0*/
+  v2 = this->Items; /*0x4eb6f0*/
   result = 0; /*0x4eb6f3*/
   if ( v2 <= 0 ) /*0x4eb6f8*/
     return -1; /*0x4eb70f*/
@@ -12180,26 +12180,26 @@ char __thiscall ParticleSystemClass_32_::sub_4EB8A0(void *this, int a2, _DWORD *
     *((_BYTE *)this + 12) = 1; /*0x4eb8d2*/
     if ( !v4 ) /*0x4eb8d6*/
       return 0; /*0x4eb94a*/
-    if ( this->q004 ) /*0x4eb8d8*/
+    if ( this->Items ) /*0x4eb8d8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4eb8df*/
       if ( a2 < v5 ) /*0x4eb8e4*/
         v5 = a2; /*0x4eb8e6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4eb8ec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4eb8ec*/
         ++i; /*0x4eb8f1*/
       if ( *((_BYTE *)this + 13) ) /*0x4eb8fe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb909*/
-        this->q004 = 0; /*0x4eb911*/
+        this->Items = 0; /*0x4eb911*/
       }
     }
-    this->q004 = v4; /*0x4eb91a*/
+    this->Items = v4; /*0x4eb91a*/
     this->DynamicVector_field_0x8 = a2; /*0x4eb922*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4eb925*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4eb92e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4eb92e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4eb931*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4eb939*/
@@ -12215,7 +12215,7 @@ int __thiscall ParticleSystemClass_32_::sub_4EB950(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4eb950*/
+  v2 = this->Items; /*0x4eb950*/
   result = 0; /*0x4eb953*/
   if ( v2 <= 0 ) /*0x4eb958*/
     return -1; /*0x4eb96f*/
@@ -12367,26 +12367,26 @@ char __thiscall VectorClass_ptr_UnitClass::sub_4EBB00(void *this, int a2, _DWORD
     *((_BYTE *)this + 12) = 1; /*0x4ebb32*/
     if ( !v4 ) /*0x4ebb36*/
       return 0; /*0x4ebbaa*/
-    if ( this->q004 ) /*0x4ebb38*/
+    if ( this->Items ) /*0x4ebb38*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ebb3f*/
       if ( a2 < v5 ) /*0x4ebb44*/
         v5 = a2; /*0x4ebb46*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ebb4c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ebb4c*/
         ++i; /*0x4ebb51*/
       if ( *((_BYTE *)this + 13) ) /*0x4ebb5e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ebb69*/
-        this->q004 = 0; /*0x4ebb71*/
+        this->Items = 0; /*0x4ebb71*/
       }
     }
-    this->q004 = v4; /*0x4ebb7a*/
+    this->Items = v4; /*0x4ebb7a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ebb82*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ebb85*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ebb8e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ebb8e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ebb91*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ebb99*/
@@ -12402,7 +12402,7 @@ int __thiscall VectorClass_ptr_UnitClass::sub_4EBBB0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ebbb0*/
+  v2 = this->Items; /*0x4ebbb0*/
   result = 0; /*0x4ebbb3*/
   if ( v2 <= 0 ) /*0x4ebbb8*/
     return -1; /*0x4ebbcf*/
@@ -12554,26 +12554,26 @@ char __thiscall VectorClass_ptr_UnitClass::sub_4EBD60(void *this, int a2, _DWORD
     *((_BYTE *)this + 12) = 1; /*0x4ebd92*/
     if ( !v4 ) /*0x4ebd96*/
       return 0; /*0x4ebe0a*/
-    if ( this->q004 ) /*0x4ebd98*/
+    if ( this->Items ) /*0x4ebd98*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ebd9f*/
       if ( a2 < v5 ) /*0x4ebda4*/
         v5 = a2; /*0x4ebda6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ebdac*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ebdac*/
         ++i; /*0x4ebdb1*/
       if ( *((_BYTE *)this + 13) ) /*0x4ebdbe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ebdc9*/
-        this->q004 = 0; /*0x4ebdd1*/
+        this->Items = 0; /*0x4ebdd1*/
       }
     }
-    this->q004 = v4; /*0x4ebdda*/
+    this->Items = v4; /*0x4ebdda*/
     this->DynamicVector_field_0x8 = a2; /*0x4ebde2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ebde5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ebdee*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ebdee*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ebdf1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ebdf9*/
@@ -12589,7 +12589,7 @@ int __thiscall VectorClass_ptr_UnitClass::sub_4EBE10(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ebe10*/
+  v2 = this->Items; /*0x4ebe10*/
   result = 0; /*0x4ebe13*/
   if ( v2 <= 0 ) /*0x4ebe18*/
     return -1; /*0x4ebe2f*/
@@ -12741,26 +12741,26 @@ char __thiscall VectorClass_ptr_TeamClass::sub_4EBFC0(void *this, int a2, _DWORD
     *((_BYTE *)this + 12) = 1; /*0x4ebff2*/
     if ( !v4 ) /*0x4ebff6*/
       return 0; /*0x4ec06a*/
-    if ( this->q004 ) /*0x4ebff8*/
+    if ( this->Items ) /*0x4ebff8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ebfff*/
       if ( a2 < v5 ) /*0x4ec004*/
         v5 = a2; /*0x4ec006*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ec00c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ec00c*/
         ++i; /*0x4ec011*/
       if ( *((_BYTE *)this + 13) ) /*0x4ec01e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec029*/
-        this->q004 = 0; /*0x4ec031*/
+        this->Items = 0; /*0x4ec031*/
       }
     }
-    this->q004 = v4; /*0x4ec03a*/
+    this->Items = v4; /*0x4ec03a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ec042*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ec045*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ec04e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ec04e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ec051*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ec059*/
@@ -12776,7 +12776,7 @@ int __thiscall VectorClass_ptr_TeamClass::sub_4EC070(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ec070*/
+  v2 = this->Items; /*0x4ec070*/
   result = 0; /*0x4ec073*/
   if ( v2 <= 0 ) /*0x4ec078*/
     return -1; /*0x4ec08f*/
@@ -12928,26 +12928,26 @@ char __thiscall VectorClass_ptr_TeamClass::sub_4EC220(void *this, int a2, _DWORD
     *((_BYTE *)this + 12) = 1; /*0x4ec252*/
     if ( !v4 ) /*0x4ec256*/
       return 0; /*0x4ec2ca*/
-    if ( this->q004 ) /*0x4ec258*/
+    if ( this->Items ) /*0x4ec258*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ec25f*/
       if ( a2 < v5 ) /*0x4ec264*/
         v5 = a2; /*0x4ec266*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ec26c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ec26c*/
         ++i; /*0x4ec271*/
       if ( *((_BYTE *)this + 13) ) /*0x4ec27e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec289*/
-        this->q004 = 0; /*0x4ec291*/
+        this->Items = 0; /*0x4ec291*/
       }
     }
-    this->q004 = v4; /*0x4ec29a*/
+    this->Items = v4; /*0x4ec29a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ec2a2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ec2a5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ec2ae*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ec2ae*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ec2b1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ec2b9*/
@@ -12963,7 +12963,7 @@ int __thiscall VectorClass_ptr_TeamClass::sub_4EC2D0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ec2d0*/
+  v2 = this->Items; /*0x4ec2d0*/
   result = 0; /*0x4ec2d3*/
   if ( v2 <= 0 ) /*0x4ec2d8*/
     return -1; /*0x4ec2ef*/
@@ -13115,26 +13115,26 @@ char __thiscall VectorClass_ptr_CampaignClass::sub_4EC480(void *this, int a2, _D
     *((_BYTE *)this + 12) = 1; /*0x4ec4b2*/
     if ( !v4 ) /*0x4ec4b6*/
       return 0; /*0x4ec52a*/
-    if ( this->q004 ) /*0x4ec4b8*/
+    if ( this->Items ) /*0x4ec4b8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ec4bf*/
       if ( a2 < v5 ) /*0x4ec4c4*/
         v5 = a2; /*0x4ec4c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ec4cc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ec4cc*/
         ++i; /*0x4ec4d1*/
       if ( *((_BYTE *)this + 13) ) /*0x4ec4de*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec4e9*/
-        this->q004 = 0; /*0x4ec4f1*/
+        this->Items = 0; /*0x4ec4f1*/
       }
     }
-    this->q004 = v4; /*0x4ec4fa*/
+    this->Items = v4; /*0x4ec4fa*/
     this->DynamicVector_field_0x8 = a2; /*0x4ec502*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ec505*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ec50e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ec50e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ec511*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ec519*/
@@ -13150,7 +13150,7 @@ int __thiscall VectorClass_ptr_CampaignClass::sub_4EC530(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ec530*/
+  v2 = this->Items; /*0x4ec530*/
   result = 0; /*0x4ec533*/
   if ( v2 <= 0 ) /*0x4ec538*/
     return -1; /*0x4ec54f*/
@@ -13302,26 +13302,26 @@ char __thiscall VectorClass_ptr_CampaignClass::sub_4EC6E0(void *this, int a2, _D
     *((_BYTE *)this + 12) = 1; /*0x4ec712*/
     if ( !v4 ) /*0x4ec716*/
       return 0; /*0x4ec78a*/
-    if ( this->q004 ) /*0x4ec718*/
+    if ( this->Items ) /*0x4ec718*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ec71f*/
       if ( a2 < v5 ) /*0x4ec724*/
         v5 = a2; /*0x4ec726*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ec72c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ec72c*/
         ++i; /*0x4ec731*/
       if ( *((_BYTE *)this + 13) ) /*0x4ec73e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec749*/
-        this->q004 = 0; /*0x4ec751*/
+        this->Items = 0; /*0x4ec751*/
       }
     }
-    this->q004 = v4; /*0x4ec75a*/
+    this->Items = v4; /*0x4ec75a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ec762*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ec765*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ec76e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ec76e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ec771*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ec779*/
@@ -13337,7 +13337,7 @@ int __thiscall VectorClass_ptr_CampaignClass::sub_4EC790(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ec790*/
+  v2 = this->Items; /*0x4ec790*/
   result = 0; /*0x4ec793*/
   if ( v2 <= 0 ) /*0x4ec798*/
     return -1; /*0x4ec7af*/
@@ -13489,26 +13489,26 @@ char __thiscall VectorClass_ptr_HouseTypeClass::sub_4EC940(void *this, int a2, _
     *((_BYTE *)this + 12) = 1; /*0x4ec972*/
     if ( !v4 ) /*0x4ec976*/
       return 0; /*0x4ec9ea*/
-    if ( this->q004 ) /*0x4ec978*/
+    if ( this->Items ) /*0x4ec978*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ec97f*/
       if ( a2 < v5 ) /*0x4ec984*/
         v5 = a2; /*0x4ec986*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ec98c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ec98c*/
         ++i; /*0x4ec991*/
       if ( *((_BYTE *)this + 13) ) /*0x4ec99e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec9a9*/
-        this->q004 = 0; /*0x4ec9b1*/
+        this->Items = 0; /*0x4ec9b1*/
       }
     }
-    this->q004 = v4; /*0x4ec9ba*/
+    this->Items = v4; /*0x4ec9ba*/
     this->DynamicVector_field_0x8 = a2; /*0x4ec9c2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ec9c5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ec9ce*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ec9ce*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ec9d1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ec9d9*/
@@ -13524,7 +13524,7 @@ int __thiscall VectorClass_ptr_HouseTypeClass::sub_4EC9F0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ec9f0*/
+  v2 = this->Items; /*0x4ec9f0*/
   result = 0; /*0x4ec9f3*/
   if ( v2 <= 0 ) /*0x4ec9f8*/
     return -1; /*0x4eca0f*/
@@ -13676,26 +13676,26 @@ char __thiscall VectorClass_ptr_HouseTypeClass::sub_4ECBA0(void *this, int a2, _
     *((_BYTE *)this + 12) = 1; /*0x4ecbd2*/
     if ( !v4 ) /*0x4ecbd6*/
       return 0; /*0x4ecc4a*/
-    if ( this->q004 ) /*0x4ecbd8*/
+    if ( this->Items ) /*0x4ecbd8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ecbdf*/
       if ( a2 < v5 ) /*0x4ecbe4*/
         v5 = a2; /*0x4ecbe6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ecbec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ecbec*/
         ++i; /*0x4ecbf1*/
       if ( *((_BYTE *)this + 13) ) /*0x4ecbfe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ecc09*/
-        this->q004 = 0; /*0x4ecc11*/
+        this->Items = 0; /*0x4ecc11*/
       }
     }
-    this->q004 = v4; /*0x4ecc1a*/
+    this->Items = v4; /*0x4ecc1a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ecc22*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ecc25*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ecc2e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ecc2e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ecc31*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ecc39*/
@@ -13711,7 +13711,7 @@ int __thiscall VectorClass_ptr_HouseTypeClass::sub_4ECC50(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ecc50*/
+  v2 = this->Items; /*0x4ecc50*/
   result = 0; /*0x4ecc53*/
   if ( v2 <= 0 ) /*0x4ecc58*/
     return -1; /*0x4ecc6f*/
@@ -13863,26 +13863,26 @@ char __thiscall VectorClass_ptr_HouseTypeClass::sub_4ECE00(void *this, int a2, _
     *((_BYTE *)this + 12) = 1; /*0x4ece32*/
     if ( !v4 ) /*0x4ece36*/
       return 0; /*0x4eceaa*/
-    if ( this->q004 ) /*0x4ece38*/
+    if ( this->Items ) /*0x4ece38*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ece3f*/
       if ( a2 < v5 ) /*0x4ece44*/
         v5 = a2; /*0x4ece46*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ece4c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ece4c*/
         ++i; /*0x4ece51*/
       if ( *((_BYTE *)this + 13) ) /*0x4ece5e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ece69*/
-        this->q004 = 0; /*0x4ece71*/
+        this->Items = 0; /*0x4ece71*/
       }
     }
-    this->q004 = v4; /*0x4ece7a*/
+    this->Items = v4; /*0x4ece7a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ece82*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ece85*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ece8e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ece8e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ece91*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ece99*/
@@ -13898,7 +13898,7 @@ int __thiscall VectorClass_ptr_HouseTypeClass::sub_4ECEB0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4eceb0*/
+  v2 = this->Items; /*0x4eceb0*/
   result = 0; /*0x4eceb3*/
   if ( v2 <= 0 ) /*0x4eceb8*/
     return -1; /*0x4ececf*/
@@ -14050,26 +14050,26 @@ char __thiscall VectorClass_ptr_ScriptTypeClass::sub_4ED060(void *this, int a2, 
     *((_BYTE *)this + 12) = 1; /*0x4ed092*/
     if ( !v4 ) /*0x4ed096*/
       return 0; /*0x4ed10a*/
-    if ( this->q004 ) /*0x4ed098*/
+    if ( this->Items ) /*0x4ed098*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ed09f*/
       if ( a2 < v5 ) /*0x4ed0a4*/
         v5 = a2; /*0x4ed0a6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ed0ac*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ed0ac*/
         ++i; /*0x4ed0b1*/
       if ( *((_BYTE *)this + 13) ) /*0x4ed0be*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed0c9*/
-        this->q004 = 0; /*0x4ed0d1*/
+        this->Items = 0; /*0x4ed0d1*/
       }
     }
-    this->q004 = v4; /*0x4ed0da*/
+    this->Items = v4; /*0x4ed0da*/
     this->DynamicVector_field_0x8 = a2; /*0x4ed0e2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ed0e5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ed0ee*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ed0ee*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ed0f1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ed0f9*/
@@ -14085,7 +14085,7 @@ int __thiscall VectorClass_ptr_ScriptTypeClass::sub_4ED110(int *this, _DWORD *a2
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ed110*/
+  v2 = this->Items; /*0x4ed110*/
   result = 0; /*0x4ed113*/
   if ( v2 <= 0 ) /*0x4ed118*/
     return -1; /*0x4ed12f*/
@@ -14237,26 +14237,26 @@ char __thiscall VectorClass_ptr_ScriptTypeClass::sub_4ED2C0(void *this, int a2, 
     *((_BYTE *)this + 12) = 1; /*0x4ed2f2*/
     if ( !v4 ) /*0x4ed2f6*/
       return 0; /*0x4ed36a*/
-    if ( this->q004 ) /*0x4ed2f8*/
+    if ( this->Items ) /*0x4ed2f8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ed2ff*/
       if ( a2 < v5 ) /*0x4ed304*/
         v5 = a2; /*0x4ed306*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ed30c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ed30c*/
         ++i; /*0x4ed311*/
       if ( *((_BYTE *)this + 13) ) /*0x4ed31e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed329*/
-        this->q004 = 0; /*0x4ed331*/
+        this->Items = 0; /*0x4ed331*/
       }
     }
-    this->q004 = v4; /*0x4ed33a*/
+    this->Items = v4; /*0x4ed33a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ed342*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ed345*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ed34e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ed34e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ed351*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ed359*/
@@ -14272,7 +14272,7 @@ int __thiscall VectorClass_ptr_ScriptTypeClass::sub_4ED370(int *this, _DWORD *a2
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ed370*/
+  v2 = this->Items; /*0x4ed370*/
   result = 0; /*0x4ed373*/
   if ( v2 <= 0 ) /*0x4ed378*/
     return -1; /*0x4ed38f*/
@@ -14424,26 +14424,26 @@ char __thiscall VectorClass_ptr_SmudgeTypeClass::sub_4ED520(void *this, int a2, 
     *((_BYTE *)this + 12) = 1; /*0x4ed552*/
     if ( !v4 ) /*0x4ed556*/
       return 0; /*0x4ed5ca*/
-    if ( this->q004 ) /*0x4ed558*/
+    if ( this->Items ) /*0x4ed558*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ed55f*/
       if ( a2 < v5 ) /*0x4ed564*/
         v5 = a2; /*0x4ed566*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ed56c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ed56c*/
         ++i; /*0x4ed571*/
       if ( *((_BYTE *)this + 13) ) /*0x4ed57e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed589*/
-        this->q004 = 0; /*0x4ed591*/
+        this->Items = 0; /*0x4ed591*/
       }
     }
-    this->q004 = v4; /*0x4ed59a*/
+    this->Items = v4; /*0x4ed59a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ed5a2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ed5a5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ed5ae*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ed5ae*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ed5b1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ed5b9*/
@@ -14459,7 +14459,7 @@ int __thiscall VectorClass_ptr_SmudgeTypeClass::sub_4ED5D0(int *this, _DWORD *a2
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ed5d0*/
+  v2 = this->Items; /*0x4ed5d0*/
   result = 0; /*0x4ed5d3*/
   if ( v2 <= 0 ) /*0x4ed5d8*/
     return -1; /*0x4ed5ef*/
@@ -14611,26 +14611,26 @@ char __thiscall VectorClass_ptr_SmudgeTypeClass::sub_4ED780(void *this, int a2, 
     *((_BYTE *)this + 12) = 1; /*0x4ed7b2*/
     if ( !v4 ) /*0x4ed7b6*/
       return 0; /*0x4ed82a*/
-    if ( this->q004 ) /*0x4ed7b8*/
+    if ( this->Items ) /*0x4ed7b8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ed7bf*/
       if ( a2 < v5 ) /*0x4ed7c4*/
         v5 = a2; /*0x4ed7c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ed7cc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ed7cc*/
         ++i; /*0x4ed7d1*/
       if ( *((_BYTE *)this + 13) ) /*0x4ed7de*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed7e9*/
-        this->q004 = 0; /*0x4ed7f1*/
+        this->Items = 0; /*0x4ed7f1*/
       }
     }
-    this->q004 = v4; /*0x4ed7fa*/
+    this->Items = v4; /*0x4ed7fa*/
     this->DynamicVector_field_0x8 = a2; /*0x4ed802*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ed805*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ed80e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ed80e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ed811*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ed819*/
@@ -14646,7 +14646,7 @@ int __thiscall VectorClass_ptr_SmudgeTypeClass::sub_4ED830(int *this, _DWORD *a2
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ed830*/
+  v2 = this->Items; /*0x4ed830*/
   result = 0; /*0x4ed833*/
   if ( v2 <= 0 ) /*0x4ed838*/
     return -1; /*0x4ed84f*/
@@ -14798,26 +14798,26 @@ char __thiscall VectorClass_ptr_SmudgeTypeClass::sub_4ED9E0(void *this, int a2, 
     *((_BYTE *)this + 12) = 1; /*0x4eda12*/
     if ( !v4 ) /*0x4eda16*/
       return 0; /*0x4eda8a*/
-    if ( this->q004 ) /*0x4eda18*/
+    if ( this->Items ) /*0x4eda18*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4eda1f*/
       if ( a2 < v5 ) /*0x4eda24*/
         v5 = a2; /*0x4eda26*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4eda2c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4eda2c*/
         ++i; /*0x4eda31*/
       if ( *((_BYTE *)this + 13) ) /*0x4eda3e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eda49*/
-        this->q004 = 0; /*0x4eda51*/
+        this->Items = 0; /*0x4eda51*/
       }
     }
-    this->q004 = v4; /*0x4eda5a*/
+    this->Items = v4; /*0x4eda5a*/
     this->DynamicVector_field_0x8 = a2; /*0x4eda62*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4eda65*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4eda6e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4eda6e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4eda71*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4eda79*/
@@ -14833,7 +14833,7 @@ int __thiscall VectorClass_ptr_SmudgeTypeClass::sub_4EDA90(int *this, _DWORD *a2
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4eda90*/
+  v2 = this->Items; /*0x4eda90*/
   result = 0; /*0x4eda93*/
   if ( v2 <= 0 ) /*0x4eda98*/
     return -1; /*0x4edaaf*/
@@ -14985,26 +14985,26 @@ char __thiscall VectorClass_ptr_AircraftTypeClass::sub_4EDC40(void *this, int a2
     *((_BYTE *)this + 12) = 1; /*0x4edc72*/
     if ( !v4 ) /*0x4edc76*/
       return 0; /*0x4edcea*/
-    if ( this->q004 ) /*0x4edc78*/
+    if ( this->Items ) /*0x4edc78*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4edc7f*/
       if ( a2 < v5 ) /*0x4edc84*/
         v5 = a2; /*0x4edc86*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4edc8c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4edc8c*/
         ++i; /*0x4edc91*/
       if ( *((_BYTE *)this + 13) ) /*0x4edc9e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4edca9*/
-        this->q004 = 0; /*0x4edcb1*/
+        this->Items = 0; /*0x4edcb1*/
       }
     }
-    this->q004 = v4; /*0x4edcba*/
+    this->Items = v4; /*0x4edcba*/
     this->DynamicVector_field_0x8 = a2; /*0x4edcc2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4edcc5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4edcce*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4edcce*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4edcd1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4edcd9*/
@@ -15020,7 +15020,7 @@ int __thiscall VectorClass_ptr_AircraftTypeClass::sub_4EDCF0(int *this, _DWORD *
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4edcf0*/
+  v2 = this->Items; /*0x4edcf0*/
   result = 0; /*0x4edcf3*/
   if ( v2 <= 0 ) /*0x4edcf8*/
     return -1; /*0x4edd0f*/
@@ -15172,26 +15172,26 @@ char __thiscall VectorClass_ptr_AircraftTypeClass::sub_4EDEA0(void *this, int a2
     *((_BYTE *)this + 12) = 1; /*0x4eded2*/
     if ( !v4 ) /*0x4eded6*/
       return 0; /*0x4edf4a*/
-    if ( this->q004 ) /*0x4eded8*/
+    if ( this->Items ) /*0x4eded8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ededf*/
       if ( a2 < v5 ) /*0x4edee4*/
         v5 = a2; /*0x4edee6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4edeec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4edeec*/
         ++i; /*0x4edef1*/
       if ( *((_BYTE *)this + 13) ) /*0x4edefe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4edf09*/
-        this->q004 = 0; /*0x4edf11*/
+        this->Items = 0; /*0x4edf11*/
       }
     }
-    this->q004 = v4; /*0x4edf1a*/
+    this->Items = v4; /*0x4edf1a*/
     this->DynamicVector_field_0x8 = a2; /*0x4edf22*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4edf25*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4edf2e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4edf2e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4edf31*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4edf39*/
@@ -15207,7 +15207,7 @@ int __thiscall VectorClass_ptr_AircraftTypeClass::sub_4EDF50(int *this, _DWORD *
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4edf50*/
+  v2 = this->Items; /*0x4edf50*/
   result = 0; /*0x4edf53*/
   if ( v2 <= 0 ) /*0x4edf58*/
     return -1; /*0x4edf6f*/
@@ -15359,26 +15359,26 @@ char __thiscall VectorClass_ptr_AnimTypeClass::sub_4EE100(void *this, int a2, _D
     *((_BYTE *)this + 12) = 1; /*0x4ee132*/
     if ( !v4 ) /*0x4ee136*/
       return 0; /*0x4ee1aa*/
-    if ( this->q004 ) /*0x4ee138*/
+    if ( this->Items ) /*0x4ee138*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ee13f*/
       if ( a2 < v5 ) /*0x4ee144*/
         v5 = a2; /*0x4ee146*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ee14c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ee14c*/
         ++i; /*0x4ee151*/
       if ( *((_BYTE *)this + 13) ) /*0x4ee15e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee169*/
-        this->q004 = 0; /*0x4ee171*/
+        this->Items = 0; /*0x4ee171*/
       }
     }
-    this->q004 = v4; /*0x4ee17a*/
+    this->Items = v4; /*0x4ee17a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ee182*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ee185*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ee18e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ee18e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ee191*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ee199*/
@@ -15394,7 +15394,7 @@ int __thiscall VectorClass_ptr_AnimTypeClass::sub_4EE1B0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ee1b0*/
+  v2 = this->Items; /*0x4ee1b0*/
   result = 0; /*0x4ee1b3*/
   if ( v2 <= 0 ) /*0x4ee1b8*/
     return -1; /*0x4ee1cf*/
@@ -15546,26 +15546,26 @@ char __thiscall VectorClass_ptr_AnimTypeClass::sub_4EE360(void *this, int a2, _D
     *((_BYTE *)this + 12) = 1; /*0x4ee392*/
     if ( !v4 ) /*0x4ee396*/
       return 0; /*0x4ee40a*/
-    if ( this->q004 ) /*0x4ee398*/
+    if ( this->Items ) /*0x4ee398*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ee39f*/
       if ( a2 < v5 ) /*0x4ee3a4*/
         v5 = a2; /*0x4ee3a6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ee3ac*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ee3ac*/
         ++i; /*0x4ee3b1*/
       if ( *((_BYTE *)this + 13) ) /*0x4ee3be*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee3c9*/
-        this->q004 = 0; /*0x4ee3d1*/
+        this->Items = 0; /*0x4ee3d1*/
       }
     }
-    this->q004 = v4; /*0x4ee3da*/
+    this->Items = v4; /*0x4ee3da*/
     this->DynamicVector_field_0x8 = a2; /*0x4ee3e2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ee3e5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ee3ee*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ee3ee*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ee3f1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ee3f9*/
@@ -15581,7 +15581,7 @@ int __thiscall VectorClass_ptr_AnimTypeClass::sub_4EE410(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ee410*/
+  v2 = this->Items; /*0x4ee410*/
   result = 0; /*0x4ee413*/
   if ( v2 <= 0 ) /*0x4ee418*/
     return -1; /*0x4ee42f*/
@@ -15733,26 +15733,26 @@ char __thiscall VectorClass_ptr_AnimTypeClass::sub_4EE5C0(void *this, int a2, _D
     *((_BYTE *)this + 12) = 1; /*0x4ee5f2*/
     if ( !v4 ) /*0x4ee5f6*/
       return 0; /*0x4ee66a*/
-    if ( this->q004 ) /*0x4ee5f8*/
+    if ( this->Items ) /*0x4ee5f8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ee5ff*/
       if ( a2 < v5 ) /*0x4ee604*/
         v5 = a2; /*0x4ee606*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ee60c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ee60c*/
         ++i; /*0x4ee611*/
       if ( *((_BYTE *)this + 13) ) /*0x4ee61e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee629*/
-        this->q004 = 0; /*0x4ee631*/
+        this->Items = 0; /*0x4ee631*/
       }
     }
-    this->q004 = v4; /*0x4ee63a*/
+    this->Items = v4; /*0x4ee63a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ee642*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ee645*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ee64e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ee64e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ee651*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ee659*/
@@ -15768,7 +15768,7 @@ int __thiscall VectorClass_ptr_AnimTypeClass::sub_4EE670(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ee670*/
+  v2 = this->Items; /*0x4ee670*/
   result = 0; /*0x4ee673*/
   if ( v2 <= 0 ) /*0x4ee678*/
     return -1; /*0x4ee68f*/
@@ -15920,26 +15920,26 @@ char __thiscall VectorClass_ptr_VoxelAnimTypeClass::sub_4EE820(void *this, int a
     *((_BYTE *)this + 12) = 1; /*0x4ee852*/
     if ( !v4 ) /*0x4ee856*/
       return 0; /*0x4ee8ca*/
-    if ( this->q004 ) /*0x4ee858*/
+    if ( this->Items ) /*0x4ee858*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ee85f*/
       if ( a2 < v5 ) /*0x4ee864*/
         v5 = a2; /*0x4ee866*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ee86c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ee86c*/
         ++i; /*0x4ee871*/
       if ( *((_BYTE *)this + 13) ) /*0x4ee87e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee889*/
-        this->q004 = 0; /*0x4ee891*/
+        this->Items = 0; /*0x4ee891*/
       }
     }
-    this->q004 = v4; /*0x4ee89a*/
+    this->Items = v4; /*0x4ee89a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ee8a2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ee8a5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ee8ae*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ee8ae*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ee8b1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ee8b9*/
@@ -15955,7 +15955,7 @@ int __thiscall VectorClass_ptr_VoxelAnimTypeClass::sub_4EE8D0(int *this, _DWORD 
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ee8d0*/
+  v2 = this->Items; /*0x4ee8d0*/
   result = 0; /*0x4ee8d3*/
   if ( v2 <= 0 ) /*0x4ee8d8*/
     return -1; /*0x4ee8ef*/
@@ -16107,26 +16107,26 @@ char __thiscall VectorClass_ptr_VoxelAnimTypeClass::sub_4EEA80(void *this, int a
     *((_BYTE *)this + 12) = 1; /*0x4eeab2*/
     if ( !v4 ) /*0x4eeab6*/
       return 0; /*0x4eeb2a*/
-    if ( this->q004 ) /*0x4eeab8*/
+    if ( this->Items ) /*0x4eeab8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4eeabf*/
       if ( a2 < v5 ) /*0x4eeac4*/
         v5 = a2; /*0x4eeac6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4eeacc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4eeacc*/
         ++i; /*0x4eead1*/
       if ( *((_BYTE *)this + 13) ) /*0x4eeade*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eeae9*/
-        this->q004 = 0; /*0x4eeaf1*/
+        this->Items = 0; /*0x4eeaf1*/
       }
     }
-    this->q004 = v4; /*0x4eeafa*/
+    this->Items = v4; /*0x4eeafa*/
     this->DynamicVector_field_0x8 = a2; /*0x4eeb02*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4eeb05*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4eeb0e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4eeb0e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4eeb11*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4eeb19*/
@@ -16142,7 +16142,7 @@ int __thiscall VectorClass_ptr_VoxelAnimTypeClass::sub_4EEB30(int *this, _DWORD 
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4eeb30*/
+  v2 = this->Items; /*0x4eeb30*/
   result = 0; /*0x4eeb33*/
   if ( v2 <= 0 ) /*0x4eeb38*/
     return -1; /*0x4eeb4f*/
@@ -16294,26 +16294,26 @@ char __thiscall VectorClass_ptr_ParticleTypeClass::sub_4EECE0(void *this, int a2
     *((_BYTE *)this + 12) = 1; /*0x4eed12*/
     if ( !v4 ) /*0x4eed16*/
       return 0; /*0x4eed8a*/
-    if ( this->q004 ) /*0x4eed18*/
+    if ( this->Items ) /*0x4eed18*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4eed1f*/
       if ( a2 < v5 ) /*0x4eed24*/
         v5 = a2; /*0x4eed26*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4eed2c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4eed2c*/
         ++i; /*0x4eed31*/
       if ( *((_BYTE *)this + 13) ) /*0x4eed3e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eed49*/
-        this->q004 = 0; /*0x4eed51*/
+        this->Items = 0; /*0x4eed51*/
       }
     }
-    this->q004 = v4; /*0x4eed5a*/
+    this->Items = v4; /*0x4eed5a*/
     this->DynamicVector_field_0x8 = a2; /*0x4eed62*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4eed65*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4eed6e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4eed6e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4eed71*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4eed79*/
@@ -16329,7 +16329,7 @@ int __thiscall VectorClass_ptr_ParticleTypeClass::sub_4EED90(int *this, _DWORD *
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4eed90*/
+  v2 = this->Items; /*0x4eed90*/
   result = 0; /*0x4eed93*/
   if ( v2 <= 0 ) /*0x4eed98*/
     return -1; /*0x4eedaf*/
@@ -16481,26 +16481,26 @@ char __thiscall VectorClass_ptr_ParticleTypeClass::sub_4EEF40(void *this, int a2
     *((_BYTE *)this + 12) = 1; /*0x4eef72*/
     if ( !v4 ) /*0x4eef76*/
       return 0; /*0x4eefea*/
-    if ( this->q004 ) /*0x4eef78*/
+    if ( this->Items ) /*0x4eef78*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4eef7f*/
       if ( a2 < v5 ) /*0x4eef84*/
         v5 = a2; /*0x4eef86*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4eef8c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4eef8c*/
         ++i; /*0x4eef91*/
       if ( *((_BYTE *)this + 13) ) /*0x4eef9e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eefa9*/
-        this->q004 = 0; /*0x4eefb1*/
+        this->Items = 0; /*0x4eefb1*/
       }
     }
-    this->q004 = v4; /*0x4eefba*/
+    this->Items = v4; /*0x4eefba*/
     this->DynamicVector_field_0x8 = a2; /*0x4eefc2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4eefc5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4eefce*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4eefce*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4eefd1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4eefd9*/
@@ -16516,7 +16516,7 @@ int __thiscall VectorClass_ptr_ParticleTypeClass::sub_4EEFF0(int *this, _DWORD *
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4eeff0*/
+  v2 = this->Items; /*0x4eeff0*/
   result = 0; /*0x4eeff3*/
   if ( v2 <= 0 ) /*0x4eeff8*/
     return -1; /*0x4ef00f*/
@@ -16668,26 +16668,26 @@ char __thiscall VectorClass_ptr_ParticleTypeClass::sub_4EF1A0(void *this, int a2
     *((_BYTE *)this + 12) = 1; /*0x4ef1d2*/
     if ( !v4 ) /*0x4ef1d6*/
       return 0; /*0x4ef24a*/
-    if ( this->q004 ) /*0x4ef1d8*/
+    if ( this->Items ) /*0x4ef1d8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ef1df*/
       if ( a2 < v5 ) /*0x4ef1e4*/
         v5 = a2; /*0x4ef1e6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ef1ec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ef1ec*/
         ++i; /*0x4ef1f1*/
       if ( *((_BYTE *)this + 13) ) /*0x4ef1fe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ef209*/
-        this->q004 = 0; /*0x4ef211*/
+        this->Items = 0; /*0x4ef211*/
       }
     }
-    this->q004 = v4; /*0x4ef21a*/
+    this->Items = v4; /*0x4ef21a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ef222*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ef225*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ef22e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ef22e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ef231*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ef239*/
@@ -16703,7 +16703,7 @@ int __thiscall VectorClass_ptr_ParticleTypeClass::sub_4EF250(int *this, _DWORD *
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ef250*/
+  v2 = this->Items; /*0x4ef250*/
   result = 0; /*0x4ef253*/
   if ( v2 <= 0 ) /*0x4ef258*/
     return -1; /*0x4ef26f*/
@@ -16855,26 +16855,26 @@ char __thiscall VectorClass_ptr_SuperClass::sub_4EF400(void *this, int a2, _DWOR
     *((_BYTE *)this + 12) = 1; /*0x4ef432*/
     if ( !v4 ) /*0x4ef436*/
       return 0; /*0x4ef4aa*/
-    if ( this->q004 ) /*0x4ef438*/
+    if ( this->Items ) /*0x4ef438*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4ef43f*/
       if ( a2 < v5 ) /*0x4ef444*/
         v5 = a2; /*0x4ef446*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4ef44c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4ef44c*/
         ++i; /*0x4ef451*/
       if ( *((_BYTE *)this + 13) ) /*0x4ef45e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ef469*/
-        this->q004 = 0; /*0x4ef471*/
+        this->Items = 0; /*0x4ef471*/
       }
     }
-    this->q004 = v4; /*0x4ef47a*/
+    this->Items = v4; /*0x4ef47a*/
     this->DynamicVector_field_0x8 = a2; /*0x4ef482*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4ef485*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4ef48e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4ef48e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4ef491*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4ef499*/
@@ -16890,7 +16890,7 @@ int __thiscall VectorClass_ptr_SuperClass::sub_4EF4B0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4ef4b0*/
+  v2 = this->Items; /*0x4ef4b0*/
   result = 0; /*0x4ef4b3*/
   if ( v2 <= 0 ) /*0x4ef4b8*/
     return -1; /*0x4ef4cf*/

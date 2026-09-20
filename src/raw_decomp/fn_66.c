@@ -946,7 +946,7 @@ char __thiscall sub_660F10(_DWORD *this, int a2)
     do /*0x660f34*/
     {
       ++v3; /*0x660f27*/
-      *(_DWORD *)(this->q004 + 4 * v3 - 4) = *(_DWORD *)(this->q004 + 4 * v3); /*0x660f2b*/
+      *(_DWORD *)(this->Items + 4 * v3 - 4) = *(_DWORD *)(this->Items + 4 * v3); /*0x660f2b*/
     }
     while ( v3 < this->DynamicVector_field_0x10 ); /*0x660f34*/
   }
@@ -1073,12 +1073,12 @@ _BYTE *__thiscall Color_ScaleRGB(_BYTE *this, unsigned __int8 *a2, float a3)
   {
     if ( v6 > 255.0 ) /*0x661299*/
       v6 = 255.0; /*0x66129d*/
-    *(this + 2) = Math::RoundToInt(v6); /*0x6612a8*/
+    this->q002 = Math::RoundToInt(v6); /*0x6612a8*/
     return this; /*0x6612ab*/
   }
   else
   {
-    *(this + 2) = Math::RoundToInt(0.0); /*0x661282*/
+    this->q002 = Math::RoundToInt(0.0); /*0x661282*/
     return this; /*0x661285*/
   }
 }
@@ -3093,12 +3093,12 @@ void __cdecl sub_663850()
 // ==== 0x006638E0  ObjectClass::method_6638E0  this=DynamicVector  sig=csp ====
 _DWORD *__thiscall sub_6638E0(_DWORD *this)
 {
-  this->q004 = 0; /*0x6638e4*/
+  this->Items = 0; /*0x6638e4*/
   this->DynamicVector_field_0x8 = 0; /*0x6638e7*/
   *((_BYTE *)this + 12) = 1; /*0x6638ea*/
   *((_BYTE *)this + 13) = 0; /*0x6638ee*/
   *this = &vt_DynamicVectorClass_OwnerTalkClass_ConnectionListStruct; /*0x6638f1*/
-  *(this + 5) = 10; /*0x6638f7*/
+  this->CapacityIncrement = 10; /*0x6638f7*/
   this->DynamicVector_field_0x10 = 0; /*0x6638fe*/
   *((_BYTE *)this + 24) = 0; /*0x663901*/
   this->DynamicVector_field_0x1C = 0; /*0x663904*/
@@ -3265,7 +3265,7 @@ int __thiscall sub_663B40(void *this)
       v4 = 0; /*0x663b63*/
       for ( this->DynamicVector_field_0x10 = v3; /*0x663b6a*/
             v4 < this->DynamicVector_field_0x10;
-            *(_DWORD *)(this->q004 + 4 * v4 - 4) = *(_DWORD *)(this->q004 + 4 * v4) )
+            *(_DWORD *)(this->Items + 4 * v4 - 4) = *(_DWORD *)(this->Items + 4 * v4) )
       {
         ++v4; /*0x663b6f*/
       }
@@ -3303,11 +3303,11 @@ LABEL_15:
       v11 = this->DynamicVector_field_0x8; /*0x663c70*/
       if ( this->DynamicVector_field_0x10 < v11 /*0x663c93*/
         || (*((_BYTE *)this + 13) || !v11)
-        && (v12 = *((_DWORD *)this + 5), v12 > 0)
+        && (v12 = this->CapacityIncrement, v12 > 0)
         && (*(unsigned __int8 (__thiscall **)(void *, int, _DWORD))(this->DynamicVector_field_0x8)(this, v11 + v12, 0) )
       {
         v13 = this->DynamicVector_field_0x10; /*0x663c9a*/
-        v14 = this->q004; /*0x663c9d*/
+        v14 = this->Items; /*0x663c9d*/
         this->DynamicVector_field_0x10 = v13 + 1; /*0x663ca3*/
         *(_DWORD *)(v14 + 4 * v13) = v7; /*0x663ca6*/
       }
@@ -3363,7 +3363,7 @@ char __thiscall Factory::GetLinkedIndex(int *this, DynamicVector *aP1)
 
   if ( aP1 == (DynamicVector *)-1 ) /*0x663d68*/
     return -1; /*0x663d6a*/
-  v3 = this->q004; /*0x663d70*/
+  v3 = this->Items; /*0x663d70*/
   v4 = 0; /*0x663d73*/
   if ( v3 <= 0 ) /*0x663d79*/
     return -1; /*0x663d79*/
@@ -3569,7 +3569,7 @@ int __thiscall NetworkManager::SetPlayerAddress(int *this, DynamicVector *aP1, D
   int v9; // [esp+Ch] [ebp-8h] BYREF
 
   Network::CopyAddress(aP2, &aP2, (int)&v9); /*0x664256*/
-  v4 = this->q004; /*0x66425b*/
+  v4 = this->Items; /*0x66425b*/
   result = 0; /*0x66425e*/
   if ( v4 > 0 ) /*0x664262*/
   {
@@ -3608,14 +3608,14 @@ char *__thiscall Network::processAcknowledgment(_DWORD *this, IUnknown *aP1)
   v3 = 0; /*0x6642fe*/
   if ( (int)this->DynamicVector_field_0x10 > 0 ) /*0x664302*/
   {
-    while ( _strcmpi((char *)(*(_DWORD *)(this->q004 + 4 * v3) + 1), (char *)aP1) ) /*0x66431b*/
+    while ( _strcmpi((char *)(*(_DWORD *)(this->Items + 4 * v3) + 1), (char *)aP1) ) /*0x66431b*/
     {
       if ( ++v3 >= this->DynamicVector_field_0x10 ) /*0x664323*/
         return byte_B052C0; /*0x664330*/
     }
-    v7.Socket = *(_DWORD *)(*(_DWORD *)(this->q004 + 4 * v3) + 33); /*0x664346*/
+    v7.Socket = *(_DWORD *)(*(_DWORD *)(this->Items + 4 * v3) + 33); /*0x664346*/
     Struct::Copy6Bytes(byte_B052C0, &v7); /*0x66434a*/
-    LOWORD(v5) = *(_WORD *)(*(_DWORD *)(this->q004 + 4 * v3) + 37); /*0x664355*/
+    LOWORD(v5) = *(_WORD *)(*(_DWORD *)(this->Items + 4 * v3) + 37); /*0x664355*/
     Network::SetPort(byte_B052C0, v5); /*0x66435f*/
   }
   return byte_B052C0; /*0x664325*/
@@ -3637,12 +3637,12 @@ __int16 __thiscall Network::handleDisconnect(_DWORD *this, IUnknown *aP1)
   v3 = 0; /*0x664395*/
   if ( (int)this->DynamicVector_field_0x10 <= 0 ) /*0x66439c*/
     return 0; /*0x6643bf*/
-  while ( _strcmpi((char *)(*(_DWORD *)(this->q004 + 4 * v3) + 1), (char *)aP1) ) /*0x6643b5*/
+  while ( _strcmpi((char *)(*(_DWORD *)(this->Items + 4 * v3) + 1), (char *)aP1) ) /*0x6643b5*/
   {
     if ( ++v3 >= this->DynamicVector_field_0x10 ) /*0x6643bd*/
       return 0; /*0x6643bd*/
   }
-  return *(_WORD *)(*(_DWORD *)(this->q004 + 4 * v3) + 37); /*0x6643bf*/
+  return *(_WORD *)(*(_DWORD *)(this->Items + 4 * v3) + 37); /*0x6643bf*/
 }
 
 
@@ -3652,7 +3652,7 @@ int __thiscall sub_6643E0(_DWORD *this, int a2)
   if ( a2 >= this->DynamicVector_field_0x10 ) /*0x6643e9*/
     return 0; /*0x6643f5*/
   else
-    return *(_DWORD *)(this->q004 + 4 * a2) + 1; /*0x6643f1*/
+    return *(_DWORD *)(this->Items + 4 * a2) + 1; /*0x6643f1*/
 }
 
 
@@ -3664,7 +3664,7 @@ char *__thiscall Network::reconnect(int *this, DynamicVector *aP1, __int16 a3)
   char **v5; // esi
   char **i; // ecx
 
-  v3 = this->q004; /*0x664400*/
+  v3 = this->Items; /*0x664400*/
   result = 0; /*0x664404*/
   if ( v3 > 0 ) /*0x66440a*/
   {
@@ -3700,7 +3700,7 @@ int __thiscall sub_664440(int *this)
   v1 = MEMORY[0xA8E2CC]; /*0x664444*/
   if ( MEMORY[0xA8E2CC] == -1 ) /*0x664451*/
   {
-    v3 = this->q004; /*0x664453*/
+    v3 = this->Items; /*0x664453*/
     v4 = 0; /*0x664456*/
     if ( v3 > 0 ) /*0x66445a*/
     {
@@ -3714,12 +3714,12 @@ int __thiscall sub_664440(int *this)
         }
         ++v4; /*0x664479*/
       }
-      while ( v4 < this->q004 ); /*0x66447c*/
+      while ( v4 < this->Items ); /*0x66447c*/
     }
   }
   else
   {
-    v6 = this->q004; /*0x664480*/
+    v6 = this->Items; /*0x664480*/
     v7 = 0; /*0x664483*/
     if ( v6 > 0 ) /*0x664487*/
     {
@@ -3729,7 +3729,7 @@ int __thiscall sub_664440(int *this)
         v8[39] = *v8 == v1; /*0x664498*/
         ++v7; /*0x6644a4*/
       }
-      while ( v7 < this->q004 ); /*0x6644a7*/
+      while ( v7 < this->Items ); /*0x6644a7*/
     }
   }
   if ( SessionClass::IsValidHouse((int)MEMORY[0xA8B238], 0) /*0x6644d2*/
@@ -4058,26 +4058,26 @@ char __thiscall RocketLocomotionClass_17_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x6649c2*/
     if ( !v4 ) /*0x6649c6*/
       return 0; /*0x664a3a*/
-    if ( this->q004 ) /*0x6649c8*/
+    if ( this->Items ) /*0x6649c8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x6649cf*/
       if ( a2 < v5 ) /*0x6649d4*/
         v5 = a2; /*0x6649d6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x6649dc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x6649dc*/
         ++i; /*0x6649e1*/
       if ( *((_BYTE *)this + 13) ) /*0x6649ee*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x6649f9*/
-        this->q004 = 0; /*0x664a01*/
+        this->Items = 0; /*0x664a01*/
       }
     }
-    this->q004 = v4; /*0x664a0a*/
+    this->Items = v4; /*0x664a0a*/
     this->DynamicVector_field_0x8 = a2; /*0x664a12*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x664a15*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x664a1e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x664a1e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x664a21*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x664a29*/
@@ -4093,7 +4093,7 @@ int __thiscall RocketLocomotionClass_17_::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x664a40*/
+  v2 = this->Items; /*0x664a40*/
   result = 0; /*0x664a43*/
   if ( v2 <= 0 ) /*0x664a48*/
     return -1; /*0x664a5f*/

@@ -863,17 +863,17 @@ _DWORD *__thiscall sub_5F15C0(_DWORD *this, int a2, int a3, int a4, __int16 a5)
 {
   *(this + 17) = a2; /*0x5f15cc*/
   *(this + 18) = a3; /*0x5f15d3*/
-  this->q008 = a4; /*0x5f15da*/
+  this->Active = a4; /*0x5f15da*/
   *((_WORD *)this + 38) = a5; /*0x5f15e2*/
   *(this + 11) = 60; /*0x5f15eb*/
   this->q05C = 60; /*0x5f15ee*/
   *this = &vt_NullModemClass; /*0x5f15f1*/
   *(this + 16) = -1; /*0x5f15f7*/
-  this->q038 = 0; /*0x5f15fa*/
+  this->linkObject = 0; /*0x5f15fa*/
   this->q050 = 0; /*0x5f15fd*/
-  this->__pad_004 = 0; /*0x5f1600*/
-  this->q010 = 500; /*0x5f1603*/
-  this->q00C = 0; /*0x5f160a*/
+  this->PlayerIndex = 0; /*0x5f1600*/
+  this->PacketsSent = 500; /*0x5f1603*/
+  this->LastPacketTime = 0; /*0x5f160a*/
   *(this + 6) = -1; /*0x5f160d*/
   *(this + 7) = 0; /*0x5f1610*/
   *(this + 8) = 0; /*0x5f1613*/
@@ -883,7 +883,7 @@ _DWORD *__thiscall sub_5F15C0(_DWORD *this, int a2, int a3, int a4, __int16 a5)
   *(this + 26) = 0; /*0x5f1628*/
   *(this + 27) = 0; /*0x5f162b*/
   *(this + 28) = 0; /*0x5f162e*/
-  this->q03C = 0; /*0x5f1631*/
+  this->linkOpen = 0; /*0x5f1631*/
   this->q060 = -1; /*0x5f1634*/
   this->q064 = 1200; /*0x5f1637*/
   this->q034 = 0; /*0x5f163e*/
@@ -1060,7 +1060,7 @@ LABEL_38:
 // ==== 0x005F1950  NullModemClass::COMStub  this=NullModemClass  sig=csp ====
 int __thiscall NullModemClass::_vt04(_DWORD *this)
 {
-  return this->q03C; /*0x5f1953*/
+  return this->linkOpen; /*0x5f1953*/
 }
 
 
@@ -1238,11 +1238,11 @@ int __thiscall NullModemClass::_vt13(_DWORD *this, int a2, int a3, int a4, int a
 
   this->q060 = a3; /*0x5f1bc8*/
   this->q064 = a4; /*0x5f1bcf*/
-  v5 = this->q038; /*0x5f1bd2*/
+  v5 = this->linkObject; /*0x5f1bd2*/
   this->q05C = a2; /*0x5f1bd5*/
   *(_DWORD *)(v5 + 40) = a2; /*0x5f1bd8*/
-  *(_DWORD *)(this->q038 + 44) = this->q060; /*0x5f1be1*/
-  result = this->q038; /*0x5f1be4*/
+  *(_DWORD *)(this->linkObject + 44) = this->q060; /*0x5f1be1*/
+  result = this->linkObject; /*0x5f1be4*/
   *(_DWORD *)(result + 48) = this->q064; /*0x5f1bea*/
   return result; /*0x5f1bed*/
 }
@@ -1411,7 +1411,7 @@ int __thiscall CellClass_GetBridgeIndexThunk(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = this->q038; /*0x5f1ee0*/
+  v1 = this->linkObject; /*0x5f1ee0*/
   if ( v1 ) /*0x5f1ee5*/
     return CellClass::GetBridgeIndex(*(_DWORD **)(v1 + 4)); /*0x5f1eea*/
   else
@@ -2449,7 +2449,7 @@ int __thiscall NullModemClass::_vt07(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = this->q038; /*0x5f35d0*/
+  v1 = this->linkObject; /*0x5f35d0*/
   if ( v1 ) /*0x5f35d5*/
     return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f35da*/
   else
@@ -2462,7 +2462,7 @@ int __thiscall NullModemClass::_vt08(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = this->q038; /*0x5f35f0*/
+  v1 = this->linkObject; /*0x5f35f0*/
   if ( v1 ) /*0x5f35f5*/
     return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 56); /*0x5f35fa*/
   else
@@ -2475,7 +2475,7 @@ int __thiscall NullModemClass::_vt09(_DWORD *this, int a2)
 {
   int v2; // eax
 
-  v2 = this->q038; /*0x5f3610*/
+  v2 = this->linkObject; /*0x5f3610*/
   if ( v2 ) /*0x5f3615*/
     return *(_DWORD *)(*(_DWORD *)(v2 + 4) + 40); /*0x5f361a*/
   else
@@ -2488,7 +2488,7 @@ int __thiscall NullModemClass::_vt10(_DWORD *this, int a2)
 {
   int v2; // eax
 
-  v2 = this->q038; /*0x5f3630*/
+  v2 = this->linkObject; /*0x5f3630*/
   if ( v2 ) /*0x5f3635*/
     return *(_DWORD *)(*(_DWORD *)(v2 + 4) + 56); /*0x5f363a*/
   else
@@ -2970,7 +2970,7 @@ int __thiscall ObjectClass::DetectCloaked(#374 *this)
     v7 = this->fallRate + (*(int (__thiscall **)(#374 *))(this->q1D0)(this); /*0x5f3f3a*/
     if ( *((_BYTE *)this + 116) ) /*0x5f3f37*/
     {
-      (*(void (__thiscall **)(#374 *, _DWORD))(*(_DWORD *)this + 292))(this, 0); /*0x5f3f46*/
+      (*(void (__thiscall **)(#374 *, _DWORD))(this->q124)(this, 0); /*0x5f3f46*/
       v8 = *(ObjectClass **)this; /*0x5f3f4c*/
       this->q0A4 = v7; /*0x5f3f52*/
       ((void (__thiscall *)(#374 *, int))v8[1].spawnStatus)(this, 1); /*0x5f3f58*/
@@ -3036,7 +3036,7 @@ LABEL_19:
       result = (*(int (__thiscall **)(#374 *))(this->fallRate)(this); /*0x5f405f*/
       if ( result == 4 ) /*0x5f4065*/
       {
-        result = this->__pad_0C8; /*0x5f406b*/
+        result = this->q0C8; /*0x5f406b*/
         if ( *(_BYTE *)(result + 852) ) /*0x5f4071*/
         {
           *((_BYTE *)this + 410) = 1; /*0x5f407f*/
@@ -3900,7 +3900,7 @@ int __thiscall ObjectClass::Undeploy(#374 *this)
   {
     (*(void (__thiscall **)(#374 *))(this->q150)(this); /*0x5f4d55*/
     (*(void (__thiscall **)(#374 *, int))(this->q0DC)(this, 1); /*0x5f4d61*/
-    (*(void (__thiscall **)(#374 *, _DWORD))(*(_DWORD *)this + 292))(this, 0); /*0x5f4d6d*/
+    (*(void (__thiscall **)(#374 *, _DWORD))(this->q124)(this, 0); /*0x5f4d6d*/
     RemoveTarget((IUnknown *)this); /*0x5f4d79*/
     AudioController::Stop((_DWORD *)this + 15); /*0x5f4d81*/
     AudioFile::Stop((_DWORD *)this + 20); /*0x5f4d89*/
@@ -3928,7 +3928,7 @@ int __thiscall ObjectClass::Undeploy(#374 *this)
         Cell::CreateCrater(v6, v4, *(__int16 *)(v3 + 2), *(__int16 *)(v3 + 4), 1); /*0x5f4e8f*/
       }
     }
-    result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 284))(this); /*0x5f4e98*/
+    result = (*(int (__thiscall **)(#374 *))(this->q11C)(this); /*0x5f4e98*/
     *((_BYTE *)this + 129) = 1; /*0x5f4e9e*/
     *((_BYTE *)this + 128) = 0; /*0x5f4ea5*/
     LOBYTE(result) = 1; /*0x5f4eac*/
@@ -4014,7 +4014,7 @@ int __thiscall ObjectClass::Deploy(#374 *this)
     v24 = v7[2]; /*0x5f4f9b*/
   }
   (*(void (__thiscall **)(#374 *, int *))(*(_DWORD *)this + 436))(this, &v22); /*0x5f4fa8*/
-  result = (*(int (__thiscall **)(#374 *, int))(*(_DWORD *)this + 292))(this, 1); /*0x5f4fb4*/
+  result = (*(int (__thiscall **)(#374 *, int))(this->q124)(this, 1); /*0x5f4fb4*/
   if ( !(_BYTE)result ) /*0x5f4fbc*/
   {
     *((_BYTE *)this + 129) = 1; /*0x5f521c*/
@@ -4172,7 +4172,7 @@ int __thiscall ObjectClass::ProcessInputKey(#374 *this)
 
   if ( v3 == 13 ) /*0x5f532a*/
   {
-    (*(void (__thiscall **)(#374 *, int))(*(_DWORD *)this + 292))(this, 2); /*0x5f5374*/
+    (*(void (__thiscall **)(#374 *, int))(this->q124)(this, 2); /*0x5f5374*/
   }
   else
   {
@@ -4354,7 +4354,7 @@ int __thiscall TechnoClass::CreateDestructionEffect(#374 *this)
             if ( v30 ) /*0x5f5770*/
               v21 = *(_DWORD *)(v30 + 540); /*0x5f5772*/
             if ( !v33 || v30 && v33 == v21 ) /*0x5f5786*/
-              (*(void (__thiscall **)(#374 *, int))(this->__pad_0E0)(this, v30); /*0x5f579a*/
+              (*(void (__thiscall **)(#374 *, int))(this->q0E0)(this, v30); /*0x5f579a*/
             else
               (*(void (__thiscall **)(#374 *, int))(this->q0E4)(this, v33); /*0x5f578d*/
             v13 = 4; /*0x5f57a2*/
@@ -4384,7 +4384,7 @@ int __thiscall TechnoClass::CreateDestructionEffect(#374 *this)
                 }
               }
               if ( *((_BYTE *)this + 144) && *((_BYTE *)this + 131) ) /*0x5f581a*/
-                (*(void (__thiscall **)(#374 *, int))(*(_DWORD *)this + 292))(this, 2); /*0x5f582a*/
+                (*(void (__thiscall **)(#374 *, int))(this->q124)(this, 2); /*0x5f582a*/
             }
           }
           return v24; /*0x5f582a*/
@@ -5073,7 +5073,7 @@ int __thiscall sub_5F6500(void *this, int *a2)
 
   if ( !a2 ) /*0x5f650a*/
     return 0; /*0x5f650c*/
-  v3 = (int *)(*(int (__thiscall **)(void *, _DWORD *))(*(_DWORD *)this + 72))(this, v8); /*0x5f651e*/
+  v3 = (int *)(*(int (__thiscall **)(void *, _DWORD *))(this->q048)(this, v8); /*0x5f651e*/
   v4 = *v3; /*0x5f6521*/
   v5 = *a2; /*0x5f6523*/
   v6 = v3[1]; /*0x5f6527*/
@@ -5092,7 +5092,7 @@ int __thiscall Math::DistSq2D(void *this, TechnoClass *aP1)
   _BYTE v6[8]; // [esp+4h] [ebp-Ch] BYREF
   int v7; // [esp+Ch] [ebp-4h]
 
-  v2 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 72))(this, v6); /*0x5f656e*/
+  v2 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(this->q048)(this, v6); /*0x5f656e*/
   v3 = *v2; /*0x5f6574*/
   v4 = v2[1]; /*0x5f6576*/
   v7 = v2[2]; /*0x5f657c*/
@@ -5514,8 +5514,8 @@ int __thiscall ObjectClass::IsPlayerOwnedAndCheck(#374 *this)
 {
   int result; // eax
 
-  if ( !(*(unsigned __int8 (__thiscall **)(#374 *, #375 *))(this->__pad_0C8)(this, HouseClass_Player) /*0x5f6c56*/
-    || (result = (*(int (__thiscall **)(#374 *, int))(this->__pad_0D0)(this, 1)) != 0 )
+  if ( !(*(unsigned __int8 (__thiscall **)(#374 *, #375 *))(this->q0C8)(this, HouseClass_Player) /*0x5f6c56*/
+    || (result = (*(int (__thiscall **)(#374 *, int))(this->q0D0)(this, 1)) != 0 )
   {
     result = (*(int (__thiscall **)(#374 *))(this->parachute)(this); /*0x5f6c60*/
     LOBYTE(result) = *(_BYTE *)(result + 560); /*0x5f6c66*/
@@ -8007,26 +8007,26 @@ char __thiscall VectorClass_ptr_ObjectTypeClass::sub_5F9D00(void *this, int a2, 
     *((_BYTE *)this + 12) = 1; /*0x5f9d32*/
     if ( !v4 ) /*0x5f9d36*/
       return 0; /*0x5f9daa*/
-    if ( this->q004 ) /*0x5f9d38*/
+    if ( this->Items ) /*0x5f9d38*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x5f9d3f*/
       if ( a2 < v5 ) /*0x5f9d44*/
         v5 = a2; /*0x5f9d46*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5f9d4c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x5f9d4c*/
         ++i; /*0x5f9d51*/
       if ( *((_BYTE *)this + 13) ) /*0x5f9d5e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5f9d69*/
-        this->q004 = 0; /*0x5f9d71*/
+        this->Items = 0; /*0x5f9d71*/
       }
     }
-    this->q004 = v4; /*0x5f9d7a*/
+    this->Items = v4; /*0x5f9d7a*/
     this->DynamicVector_field_0x8 = a2; /*0x5f9d82*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5f9d85*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x5f9d8e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x5f9d8e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x5f9d91*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x5f9d99*/
@@ -8042,7 +8042,7 @@ int __thiscall VectorClass_ptr_ObjectTypeClass::sub_5F9DB0(int *this, _DWORD *a2
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x5f9db0*/
+  v2 = this->Items; /*0x5f9db0*/
   result = 0; /*0x5f9db3*/
   if ( v2 <= 0 ) /*0x5f9db8*/
     return -1; /*0x5f9dcf*/
@@ -9903,9 +9903,9 @@ OverlayClass *__thiscall Object::SpawnAtCell(void *this, IUnknown *aP1, IUnknown
   v5 = aP1; /*0x5fc38b*/
   *(_DWORD *)this = &OverlayClass::`vftable'; /*0x5fc38f*/
   this->Type = v5; /*0x5fc395*/
-  *((_DWORD *)this + 2) = &OverlayClass::`vftable'; /*0x5fc39f*/
-  *((_DWORD *)this + 1) = &OverlayClass::`vftable'; /*0x5fc3a6*/
-  *((_DWORD *)this + 3) = &vt_OverlayClass; /*0x5fc3ac*/
+  this->vtable3 = &OverlayClass::`vftable'; /*0x5fc39f*/
+  this->vtable2 = &OverlayClass::`vftable'; /*0x5fc3a6*/
+  this->vtable4 = &vt_OverlayClass; /*0x5fc3ac*/
   AbstractClass::GenerateUniqueID((int)this + 4); /*0x5fc3b3*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22956] < *(int *)&HouseClass_Player.__pad_5568[22948] /*0x5fc3ef*/
     || (HouseClass_Player.__pad_5568[22953] || !*(_DWORD *)&HouseClass_Player.__pad_5568[22948])
@@ -10834,7 +10834,7 @@ _DWORD *__thiscall OverlayTypeClass::OverlayTypeClass(_DWORD *this, ObjectClass 
   *this = &OverlayTypeClass::`vftable'; /*0x5fe2f1*/
   this->vtable2 = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
   this->vtable3 = &OverlayTypeClass::`vftable'; /*0x5fe2fd*/
-  this->__pad_00C = &vt_OverlayTypeClass; /*0x5fe304*/
+  this->vtable4 = &vt_OverlayTypeClass; /*0x5fe304*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x5fe30b*/
   *((_BYTE *)this + 559) = 1; /*0x5fe310*/
   *((_BYTE *)this + 560) = 0; /*0x5fe317*/

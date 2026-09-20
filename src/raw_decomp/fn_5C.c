@@ -700,26 +700,26 @@ char __thiscall TacticalClass::ReallocVector(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5c0c82*/
     if ( !v4 ) /*0x5c0c86*/
       return 0; /*0x5c0cfa*/
-    if ( this->q004 ) /*0x5c0c88*/
+    if ( this->Items ) /*0x5c0c88*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x5c0c8f*/
       if ( a2 < v5 ) /*0x5c0c94*/
         v5 = a2; /*0x5c0c96*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5c0c9c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x5c0c9c*/
         ++i; /*0x5c0ca1*/
       if ( *((_BYTE *)this + 13) ) /*0x5c0cae*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5c0cb9*/
-        this->q004 = 0; /*0x5c0cc1*/
+        this->Items = 0; /*0x5c0cc1*/
       }
     }
-    this->q004 = v4; /*0x5c0cca*/
+    this->Items = v4; /*0x5c0cca*/
     this->DynamicVector_field_0x8 = a2; /*0x5c0cd2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5c0cd5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x5c0cde*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x5c0cde*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x5c0ce1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x5c0ce9*/
@@ -735,7 +735,7 @@ int __thiscall TacticalClass::FindInVector(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x5c0d00*/
+  v2 = this->Items; /*0x5c0d00*/
   result = 0; /*0x5c0d03*/
   if ( v2 <= 0 ) /*0x5c0d08*/
     return -1; /*0x5c0d1f*/
@@ -4684,26 +4684,26 @@ char __thiscall MPCooperative::sub_5C52B0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5c52e2*/
     if ( !v4 ) /*0x5c52e6*/
       return 0; /*0x5c535a*/
-    if ( this->q004 ) /*0x5c52e8*/
+    if ( this->Items ) /*0x5c52e8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x5c52ef*/
       if ( a2 < v5 ) /*0x5c52f4*/
         v5 = a2; /*0x5c52f6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5c52fc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x5c52fc*/
         ++i; /*0x5c5301*/
       if ( *((_BYTE *)this + 13) ) /*0x5c530e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5c5319*/
-        this->q004 = 0; /*0x5c5321*/
+        this->Items = 0; /*0x5c5321*/
       }
     }
-    this->q004 = v4; /*0x5c532a*/
+    this->Items = v4; /*0x5c532a*/
     this->DynamicVector_field_0x8 = a2; /*0x5c5332*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5c5335*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x5c533e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x5c533e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x5c5341*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x5c5349*/
@@ -4719,7 +4719,7 @@ int __thiscall MPCooperative::sub_5C5360(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x5c5360*/
+  v2 = this->Items; /*0x5c5360*/
   result = 0; /*0x5c5363*/
   if ( v2 <= 0 ) /*0x5c5368*/
     return -1; /*0x5c537f*/
@@ -4871,26 +4871,26 @@ char __thiscall DynamicVectorClass_ptr_NodeNameType::Remove(void *this, int a2, 
     *((_BYTE *)this + 12) = 1; /*0x5c5542*/
     if ( !v4 ) /*0x5c5546*/
       return 0; /*0x5c55ba*/
-    if ( this->q004 ) /*0x5c5548*/
+    if ( this->Items ) /*0x5c5548*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x5c554f*/
       if ( a2 < v5 ) /*0x5c5554*/
         v5 = a2; /*0x5c5556*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5c555c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x5c555c*/
         ++i; /*0x5c5561*/
       if ( *((_BYTE *)this + 13) ) /*0x5c556e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5c5579*/
-        this->q004 = 0; /*0x5c5581*/
+        this->Items = 0; /*0x5c5581*/
       }
     }
-    this->q004 = v4; /*0x5c558a*/
+    this->Items = v4; /*0x5c558a*/
     this->DynamicVector_field_0x8 = a2; /*0x5c5592*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5c5595*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x5c559e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x5c559e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x5c55a1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x5c55a9*/
@@ -4906,7 +4906,7 @@ int __thiscall DynamicVectorClass_ptr_NodeNameType::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x5c55c0*/
+  v2 = this->Items; /*0x5c55c0*/
   result = 0; /*0x5c55c3*/
   if ( v2 <= 0 ) /*0x5c55c8*/
     return -1; /*0x5c55df*/
@@ -5058,26 +5058,26 @@ char __thiscall MPCooperative::sub_5C5770(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5c57a2*/
     if ( !v4 ) /*0x5c57a6*/
       return 0; /*0x5c581a*/
-    if ( this->q004 ) /*0x5c57a8*/
+    if ( this->Items ) /*0x5c57a8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x5c57af*/
       if ( a2 < v5 ) /*0x5c57b4*/
         v5 = a2; /*0x5c57b6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5c57bc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x5c57bc*/
         ++i; /*0x5c57c1*/
       if ( *((_BYTE *)this + 13) ) /*0x5c57ce*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5c57d9*/
-        this->q004 = 0; /*0x5c57e1*/
+        this->Items = 0; /*0x5c57e1*/
       }
     }
-    this->q004 = v4; /*0x5c57ea*/
+    this->Items = v4; /*0x5c57ea*/
     this->DynamicVector_field_0x8 = a2; /*0x5c57f2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5c57f5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x5c57fe*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x5c57fe*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x5c5801*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x5c5809*/
@@ -5093,7 +5093,7 @@ int __thiscall MPCooperative::sub_5C5820(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x5c5820*/
+  v2 = this->Items; /*0x5c5820*/
   result = 0; /*0x5c5823*/
   if ( v2 <= 0 ) /*0x5c5828*/
     return -1; /*0x5c583f*/
@@ -14597,12 +14597,12 @@ char *__thiscall sub_5CEDD0(char *this)
   void **v2; // ebp
 
   v2 = (void **)(this + 40); /*0x5cedd8*/
-  this->q004 = 0; /*0x5ceddb*/
+  this->Items = 0; /*0x5ceddb*/
   this->DynamicVector_field_0x8 = 0; /*0x5cede0*/
-  this->__pad_00C = 1; /*0x5cede3*/
-  *(this + 13) = 0; /*0x5cede7*/
+  this->IsInitialized = 1; /*0x5cede3*/
+  this->IsAllocated = 0; /*0x5cede7*/
   *(_DWORD *)this = &DynamicVectorClass<MapStage *>::`vftable'; /*0x5cedea*/
-  *((_DWORD *)this + 5) = 10; /*0x5cedf0*/
+  this->CapacityIncrement = 10; /*0x5cedf0*/
   this->DynamicVector_field_0x10 = 0; /*0x5cedf7*/
   unknown_libname_73(this + 40); /*0x5cedfa*/
   *((_DWORD *)this + 12) = 0; /*0x5cee09*/
@@ -14619,7 +14619,7 @@ char *__thiscall sub_5CEDD0(char *this)
   *((_DWORD *)this + 17) = &DynamicVectorClass<MSSfxEntry *>::`vftable'; /*0x5cee2f*/
   *((_DWORD *)this + 22) = 10; /*0x5cee36*/
   *((_DWORD *)this + 21) = 0; /*0x5cee39*/
-  (*(void (__thiscall **)(char *))(this->__pad_00C)(this); /*0x5cee3e*/
+  (*(void (__thiscall **)(char *))(this->IsInitialized)(this); /*0x5cee3e*/
   DeleteAndZero::Alt2(v2); /*0x5cee43*/
   (*(void (__thiscall **)(char *))(*((_DWORD *)this + 11) + 12))(this + 44); /*0x5cee4c*/
   return this; /*0x5cee51*/
@@ -15022,16 +15022,16 @@ int __thiscall StringTable::Find(MapSelect *this, const char **a1)
   {
     String::AssignFromPtr((char **)&v7, (const char **)v2); /*0x5cf6d5*/
     String::ToLower((const char **)&v7); /*0x5cf6de*/
-    String::AssignFromPtr((char **)&a1, *(const char ***)(*((_DWORD *)this + 1) + 4 * v4)); /*0x5cf6ee*/
+    String::AssignFromPtr((char **)&a1, *(const char ***)(this->Items + 4 * v4)); /*0x5cf6ee*/
     String::ToLower((const char **)&a1); /*0x5cf6f7*/
     if ( String::Compare((const char **)&v7, (const char **)&a1) ) /*0x5cf705*/
       break; /*0x5cf705*/
     DeleteAndZero((void **)&a1); /*0x5cf712*/
     DeleteAndZero(&v7); /*0x5cf71b*/
-    if ( ++v4 >= *((_DWORD *)this + 4) ) /*0x5cf726*/
+    if ( ++v4 >= this->Count ) /*0x5cf726*/
       return 0; /*0x5cf726*/
   }
-  v6 = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * v4); /*0x5cf738*/
+  v6 = *(_DWORD *)(this->Items + 4 * v4); /*0x5cf738*/
   DeleteAndZero((void **)&a1); /*0x5cf73b*/
   DeleteAndZero(&v7); /*0x5cf744*/
   return v6; /*0x5cf728*/
@@ -15056,16 +15056,16 @@ int __thiscall CampaignClass::DeleteAndZero(MapSelect *this, MSFont *aP1)
   {
     String::AssignFromPtr((char **)&v7, (const char **)v2); /*0x5cf785*/
     String::ToLower((const char **)&v7); /*0x5cf78e*/
-    String::AssignFromPtr((char **)&aP1, (const char **)(*(_DWORD *)(*((_DWORD *)this + 1) + 4 * v4) + 4)); /*0x5cf7a1*/
+    String::AssignFromPtr((char **)&aP1, (const char **)(*(_DWORD *)(this->Items + 4 * v4) + 4)); /*0x5cf7a1*/
     String::ToLower((const char **)&aP1); /*0x5cf7aa*/
     if ( String::Compare((const char **)&v7, (const char **)&aP1) ) /*0x5cf7b8*/
       break; /*0x5cf7b8*/
     DeleteAndZero((void **)&aP1); /*0x5cf7c5*/
     DeleteAndZero(&v7); /*0x5cf7ce*/
-    if ( ++v4 >= *((_DWORD *)this + 4) ) /*0x5cf7d9*/
+    if ( ++v4 >= this->Count ) /*0x5cf7d9*/
       return 0; /*0x5cf7d9*/
   }
-  v6 = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * v4); /*0x5cf7eb*/
+  v6 = *(_DWORD *)(this->Items + 4 * v4); /*0x5cf7eb*/
   DeleteAndZero((void **)&aP1); /*0x5cf7ee*/
   DeleteAndZero(&v7); /*0x5cf7f7*/
   return v6; /*0x5cf7db*/

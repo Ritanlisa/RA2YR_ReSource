@@ -5495,7 +5495,7 @@ char *__thiscall ScenarioClass::SetFileName(char *this, ObjectClass *aP1)
   if ( aP1 ) /*0x686709*/
   {
     result = (ObjectClass *)strncpy(this + 4700, aP1->__pad_0, 0x104u); /*0x686718*/
-    *(this + 4959) = 0; /*0x686720*/
+    this->q135F = 0; /*0x686720*/
   }
   return result->__pad_0; /*0x686727*/
 }

@@ -10,13 +10,13 @@ char __thiscall sub_5200B0(int *this)
   int v4; // eax
   int v5; // eax
 
-  if ( *(this + 437) > 0 )
+  if ( this->q1B5 > 0 )
   {
-    if ( !*(_BYTE *)(*(this + 432) + 3772) )
-      --*(this + 437);
-    if ( !*(this + 437) && !*(this + 191) && (*(unsigned __int8 (__thiscall **)(int *))(*this + 684))(this) )
-      *(this + 191) = *(_DWORD *)(*(this + 432) + 1668);
-    v2 = *(this + 437);
+    if ( !*(_BYTE *)(this->q1B0 + 3772) )
+      --this->q1B5;
+    if ( !this->q1B5 && !*(this + 191) && (*(unsigned __int8 (__thiscall **)(int *))(*this + 684))(this) )
+      *(this + 191) = *(_DWORD *)(this->q1B0 + 1668);
+    v2 = this->q1B5;
     if ( *((_BYTE *)this + 1755) )
     {
       if ( v2 < 50 )
@@ -40,17 +40,17 @@ char __thiscall sub_5200B0(int *this)
           if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) )
           {
 LABEL_42:
-            if ( !*(_BYTE *)(*(this + 432) + 3775) )
+            if ( !*(_BYTE *)(this->q1B0 + 3775) )
               (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1368))(this, 5, 0, 0);
           }
         }
       }
     }
   }
-  LOBYTE(v5) = *(_BYTE *)(*(this + 432) + 3775);
+  LOBYTE(v5) = *(_BYTE *)(this->q1B0 + 3775);
   if ( (_BYTE)v5 )
   {
-    if ( *(this + 437) > 50 )
+    if ( this->q1B5 > 50 )
     {
       v5 = *(this + 433);
       if ( v5 != 27 && v5 != 28 && v5 != 29 && v5 != 30 )
@@ -146,7 +146,7 @@ char __thiscall ProcessTechnoSquadResponse(FootClass **this)
   _BYTE v41[12]; // [esp+40h] [ebp-18h] BYREF
   _DWORD v42[3]; // [esp+4Ch] [ebp-Ch] BYREF
 
-  if ( !BYTE1((*(this + 432))[2].gattlingStage) ) /*0x5202ff*/
+  if ( !BYTE1((this->q1B0)[2].gattlingStage) ) /*0x5202ff*/
     return 0; /*0x5202ff*/
   v2 = *(this + 361); /*0x52030d*/
   if ( !v2 ) /*0x520315*/
@@ -258,7 +258,7 @@ char __thiscall ProcessTechnoSquadResponse(FootClass **this)
       ObjectClass::SetReference(v3, (int)*(this + 13)); /*0x52043f*/
   }
   (*(void (__thiscall **)(FootClass *, _DWORD, int))(*(_DWORD *)v3->__pad_0 + 980))(v3, *(this + 135), 1); /*0x520451*/
-  v3->waveEffect = (void *)(*(this + 432))[2].spawnStatus; /*0x520465*/
+  v3->waveEffect = (void *)(this->q1B0)[2].spawnStatus; /*0x520465*/
   ((void (__thiscall *)(FootClass **))(*this)->passengers[1])(this); /*0x52046d*/
   return 1; /*0x520473*/
 }
@@ -1206,7 +1206,7 @@ bool __thiscall InfantryClass::CanInitiateDeploy(_DWORD *this)
   if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 128))(this->Locomotor) /*0x521be7*/
     && (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) != 5
     && (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) != 15
-    && ((*(int (__thiscall **)(_DWORD *))(*this + 388))(this) != 1 || this->q2B4) )
+    && ((*(int (__thiscall **)(_DWORD *))(*this + 388))(this) != 1 || this->target) )
   {
     return 0; /*0x521be7*/
   }
@@ -1472,7 +1472,7 @@ LABEL_36:
     return 0; /*0x5220e2*/
   }
   v11 = *v5; /*0x522043*/
-  this->q5E0 = -1; /*0x522046*/
+  this->pathDirections = -1; /*0x522046*/
   (*(void (__stdcall **)(int, int))(*(_DWORD *)v10 + 12))(v10, v11); /*0x522054*/
   InfantryClass::checkBridgeClearance(ppv); /*0x52205e*/
   v12 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)this->Archive + 72))(this->Archive, v17); /*0x522070*/
@@ -2224,7 +2224,7 @@ char __thiscall InfantryClass::_vt322(_BYTE *this, int a2, int a3, int a4)
   if ( !this->Locomotor ) /*0x52303a*/
     WinAPI::Wrapper(-2147467261); /*0x523049*/
   (*(void (__stdcall **)(_DWORD, _DWORD))(**((_DWORD **)this + 413) + 156))(this->Locomotor, 0); /*0x523059*/
-  (*(void (__thiscall **)(_BYTE *, int *))(*(_DWORD *)this + 244))(this, &a2); /*0x523068*/
+  (*(void (__thiscall **)(_BYTE *, int *))(this->q0F4)(this, &a2); /*0x523068*/
   v5 = *(_DWORD *)this; /*0x52306e*/
   this->FootClass_field_6B6 = 1; /*0x52307c*/
   v6 = Coord::To_Cell(&MEMORY[0x87F7E8], &a2); /*0x523083*/
@@ -2716,9 +2716,9 @@ _DWORD *__thiscall InfantryTypeClass::Constructor_523980(_DWORD *this, ObjectTyp
   *(this + 923) = &vt_TypeList_AnimTypeClass_const; /*0x523998*/
   *(this + 930) = &vt_TypeList_int; /*0x52399e*/
   *this = &InfantryTypeClass::`vftable'; /*0x5239a8*/
-  *(this + 1) = &InfantryTypeClass::`vftable'; /*0x5239ae*/
-  *(this + 2) = &InfantryTypeClass::`vftable'; /*0x5239b5*/
-  *(this + 3) = &vt_InfantryTypeClass; /*0x5239bc*/
+  this->vtable2 = &InfantryTypeClass::`vftable'; /*0x5239ae*/
+  this->vtable3 = &InfantryTypeClass::`vftable'; /*0x5239b5*/
+  this->vtable4 = &vt_InfantryTypeClass; /*0x5239bc*/
   return this; /*0x5239c5*/
 }
 
@@ -3766,10 +3766,10 @@ _DWORD *__thiscall InfantryTypeClass::CopyDataArray(_DWORD *this, DynamicVector 
     goto LABEL_8; /*0x524f2a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x524f2e*/
   v3 = aP1->field_8; /*0x524f31*/
-  *(this + 2) = v3; /*0x524f36*/
+  this->Capacity = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/
   {
-    *(this + 1) = 0; /*0x524f86*/
+    this->Items = 0; /*0x524f86*/
     *((_BYTE *)this + 13) = 0; /*0x524f8d*/
 LABEL_8:
     this->Count = aP1->field_10; /*0x524f91*/
@@ -3777,20 +3777,20 @@ LABEL_8:
     return this; /*0x524f9d*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x524f43*/
-  *(this + 1) = v4; /*0x524f4b*/
+  this->Items = v4; /*0x524f4b*/
   if ( !v4 ) /*0x524f50*/
     goto LABEL_8; /*0x524f50*/
-  v5 = *(this + 2); /*0x524f52*/
+  v5 = this->Capacity; /*0x524f52*/
   v6 = 0; /*0x524f55*/
   *((_BYTE *)this + 13) = 1; /*0x524f59*/
   if ( v5 <= 0 ) /*0x524f5d*/
     goto LABEL_8; /*0x524f5d*/
   do /*0x524f71*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x524f68*/
+    *(_DWORD *)(this->Items + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x524f68*/
     ++v6; /*0x524f6e*/
   }
-  while ( v6 < *(this + 2) ); /*0x524f71*/
+  while ( v6 < this->Capacity ); /*0x524f71*/
   this->Count = aP1->field_10; /*0x524f76*/
   this->CapacityIncrement = *(_DWORD *)aP1->__pad_14; /*0x524f7c*/
   return this; /*0x524f81*/
@@ -3856,28 +3856,28 @@ _DWORD *__thiscall VectorClass::CopyDefault(_DWORD *this, VectorClass *aP1)
     return this; /*0x52506a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x52506e*/
   v3 = aP1->field_8; /*0x525071*/
-  *(this + 2) = v3; /*0x525076*/
+  this->Capacity = v3; /*0x525076*/
   if ( !v3 ) /*0x525079*/
   {
-    *(this + 1) = 0; /*0x5250ba*/
+    this->Items = 0; /*0x5250ba*/
     *((_BYTE *)this + 13) = 0; /*0x5250c1*/
     return this; /*0x5250c5*/
   }
   v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x525083*/
-  *(this + 1) = v4; /*0x52508b*/
+  this->Items = v4; /*0x52508b*/
   if ( !v4 ) /*0x525090*/
     return this; /*0x525090*/
-  v5 = *(this + 2); /*0x525092*/
+  v5 = this->Capacity; /*0x525092*/
   v6 = 0; /*0x525095*/
   *((_BYTE *)this + 13) = 1; /*0x525099*/
   if ( v5 <= 0 ) /*0x52509d*/
     return this; /*0x52509d*/
   do /*0x5250b1*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x5250a8*/
+    *(_DWORD *)(this->Items + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x5250a8*/
     ++v6; /*0x5250ae*/
   }
-  while ( v6 < *(this + 2) ); /*0x5250b1*/
+  while ( v6 < this->Capacity ); /*0x5250b1*/
   return this; /*0x5250b5*/
 }
 
@@ -4068,26 +4068,26 @@ char __thiscall WarheadTypeClass::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x525332*/
     if ( !v4 ) /*0x525336*/
       return 0; /*0x5253aa*/
-    if ( this->q004 ) /*0x525338*/
+    if ( this->Items ) /*0x525338*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x52533f*/
       if ( a2 < v5 ) /*0x525344*/
         v5 = a2; /*0x525346*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x52534c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x52534c*/
         ++i; /*0x525351*/
       if ( *((_BYTE *)this + 13) ) /*0x52535e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x525369*/
-        this->q004 = 0; /*0x525371*/
+        this->Items = 0; /*0x525371*/
       }
     }
-    this->q004 = v4; /*0x52537a*/
+    this->Items = v4; /*0x52537a*/
     this->DynamicVector_field_0x8 = a2; /*0x525382*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x525385*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x52538e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x52538e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x525391*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x525399*/
@@ -4128,7 +4128,7 @@ int __thiscall WarheadTypeClass::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x525400*/
+  v2 = this->Items; /*0x525400*/
   result = 0; /*0x525403*/
   if ( v2 <= 0 ) /*0x525408*/
     return -1; /*0x52541f*/

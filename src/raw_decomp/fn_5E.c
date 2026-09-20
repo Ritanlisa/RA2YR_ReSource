@@ -11823,26 +11823,26 @@ char __thiscall VectorClass_cptr_MultiMission::sub_5EED90(void *this, int a2, _D
     *((_BYTE *)this + 12) = 1; /*0x5eedc2*/
     if ( !v4 ) /*0x5eedc6*/
       return 0; /*0x5eee3a*/
-    if ( this->q004 ) /*0x5eedc8*/
+    if ( this->Items ) /*0x5eedc8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x5eedcf*/
       if ( a2 < v5 ) /*0x5eedd4*/
         v5 = a2; /*0x5eedd6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5eeddc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x5eeddc*/
         ++i; /*0x5eede1*/
       if ( *((_BYTE *)this + 13) ) /*0x5eedee*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5eedf9*/
-        this->q004 = 0; /*0x5eee01*/
+        this->Items = 0; /*0x5eee01*/
       }
     }
-    this->q004 = v4; /*0x5eee0a*/
+    this->Items = v4; /*0x5eee0a*/
     this->DynamicVector_field_0x8 = a2; /*0x5eee12*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x5eee15*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x5eee1e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x5eee1e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x5eee21*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x5eee29*/
@@ -11883,7 +11883,7 @@ int __thiscall VectorClass_cptr_MultiMission::sub_5EEE90(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x5eee90*/
+  v2 = this->Items; /*0x5eee90*/
   result = 0; /*0x5eee93*/
   if ( v2 <= 0 ) /*0x5eee98*/
     return -1; /*0x5eeeaf*/

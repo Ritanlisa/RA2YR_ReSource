@@ -3929,7 +3929,7 @@ int __thiscall BufferIOFileClass_Destructor(_DWORD *this)
 int __thiscall CCFileClass_Destructor(_DWORD *this)
 {
   *this = &CCFileClass::`vftable'; /*0x535a76*/
-  *(this + 25) = 0; /*0x535a7c*/
+  this->q064 = 0; /*0x535a7c*/
   Vector::Clear((int)(this + 22)); /*0x535a83*/
   *this = &off_7E1668; /*0x535a8a*/
   return BufferIOFileClass::Dtor(this); /*0x535a95*/
@@ -7023,26 +7023,26 @@ char __thiscall CreateTeamCommand::sub_5386A0(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x5386d2*/
     if ( !v4 ) /*0x5386d6*/
       return 0; /*0x53874a*/
-    if ( this->q004 ) /*0x5386d8*/
+    if ( this->Items ) /*0x5386d8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x5386df*/
       if ( a2 < v5 ) /*0x5386e4*/
         v5 = a2; /*0x5386e6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5386ec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x5386ec*/
         ++i; /*0x5386f1*/
       if ( *((_BYTE *)this + 13) ) /*0x5386fe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x538709*/
-        this->q004 = 0; /*0x538711*/
+        this->Items = 0; /*0x538711*/
       }
     }
-    this->q004 = v4; /*0x53871a*/
+    this->Items = v4; /*0x53871a*/
     this->DynamicVector_field_0x8 = a2; /*0x538722*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x538725*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x53872e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x53872e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x538731*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x538739*/
@@ -7058,7 +7058,7 @@ int __thiscall CreateTeamCommand::sub_538750(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x538750*/
+  v2 = this->Items; /*0x538750*/
   result = 0; /*0x538753*/
   if ( v2 <= 0 ) /*0x538758*/
     return -1; /*0x53876f*/
@@ -10423,26 +10423,26 @@ char __thiscall DeleteCommandClass_28_::sub_53C6A0(void *this, int a2, _DWORD *a
     *((_BYTE *)this + 12) = 1; /*0x53c6d2*/
     if ( !v4 ) /*0x53c6d6*/
       return 0; /*0x53c74a*/
-    if ( this->q004 ) /*0x53c6d8*/
+    if ( this->Items ) /*0x53c6d8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x53c6df*/
       if ( a2 < v5 ) /*0x53c6e4*/
         v5 = a2; /*0x53c6e6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x53c6ec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x53c6ec*/
         ++i; /*0x53c6f1*/
       if ( *((_BYTE *)this + 13) ) /*0x53c6fe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x53c709*/
-        this->q004 = 0; /*0x53c711*/
+        this->Items = 0; /*0x53c711*/
       }
     }
-    this->q004 = v4; /*0x53c71a*/
+    this->Items = v4; /*0x53c71a*/
     this->DynamicVector_field_0x8 = a2; /*0x53c722*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x53c725*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x53c72e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x53c72e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x53c731*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x53c739*/
@@ -10458,7 +10458,7 @@ int __thiscall DeleteCommandClass_28_::sub_53C750(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x53c750*/
+  v2 = this->Items; /*0x53c750*/
   result = 0; /*0x53c753*/
   if ( v2 <= 0 ) /*0x53c758*/
     return -1; /*0x53c76f*/
@@ -11602,26 +11602,26 @@ char __thiscall VectorClass_ptr_IonBlastClass::sub_53DC20(void *this, int a2, _D
     *((_BYTE *)this + 12) = 1; /*0x53dc52*/
     if ( !v4 ) /*0x53dc56*/
       return 0; /*0x53dcca*/
-    if ( this->q004 ) /*0x53dc58*/
+    if ( this->Items ) /*0x53dc58*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x53dc5f*/
       if ( a2 < v5 ) /*0x53dc64*/
         v5 = a2; /*0x53dc66*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x53dc6c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x53dc6c*/
         ++i; /*0x53dc71*/
       if ( *((_BYTE *)this + 13) ) /*0x53dc7e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x53dc89*/
-        this->q004 = 0; /*0x53dc91*/
+        this->Items = 0; /*0x53dc91*/
       }
     }
-    this->q004 = v4; /*0x53dc9a*/
+    this->Items = v4; /*0x53dc9a*/
     this->DynamicVector_field_0x8 = a2; /*0x53dca2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x53dca5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x53dcae*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x53dcae*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x53dcb1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x53dcb9*/
@@ -11637,7 +11637,7 @@ int __thiscall VectorClass_ptr_IonBlastClass::sub_53DCD0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x53dcd0*/
+  v2 = this->Items; /*0x53dcd0*/
   result = 0; /*0x53dcd3*/
   if ( v2 <= 0 ) /*0x53dcd8*/
     return -1; /*0x53dcef*/
@@ -11710,7 +11710,7 @@ char __thiscall sub_53DDA0(_DWORD *this, int a2)
     do /*0x53ddc4*/
     {
       ++v3; /*0x53ddb7*/
-      *(_DWORD *)(this->q004 + 4 * v3 - 4) = *(_DWORD *)(this->q004 + 4 * v3); /*0x53ddbb*/
+      *(_DWORD *)(this->Items + 4 * v3 - 4) = *(_DWORD *)(this->Items + 4 * v3); /*0x53ddbb*/
     }
     while ( v3 < this->DynamicVector_field_0x10 ); /*0x53ddc4*/
   }

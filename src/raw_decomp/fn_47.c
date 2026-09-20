@@ -1840,26 +1840,26 @@ char __thiscall CaptureManagerClass::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x472cf2*/
     if ( !v4 ) /*0x472cf6*/
       return 0; /*0x472d6a*/
-    if ( this->q004 ) /*0x472cf8*/
+    if ( this->Items ) /*0x472cf8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x472cff*/
       if ( a2 < v5 ) /*0x472d04*/
         v5 = a2; /*0x472d06*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x472d0c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x472d0c*/
         ++i; /*0x472d11*/
       if ( *((_BYTE *)this + 13) ) /*0x472d1e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x472d29*/
-        this->q004 = 0; /*0x472d31*/
+        this->Items = 0; /*0x472d31*/
       }
     }
-    this->q004 = v4; /*0x472d3a*/
+    this->Items = v4; /*0x472d3a*/
     this->DynamicVector_field_0x8 = a2; /*0x472d42*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x472d45*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x472d4e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x472d4e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x472d51*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x472d59*/
@@ -1875,7 +1875,7 @@ int __thiscall CaptureManagerClass::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x472d70*/
+  v2 = this->Items; /*0x472d70*/
   result = 0; /*0x472d73*/
   if ( v2 <= 0 ) /*0x472d78*/
     return -1; /*0x472d8f*/
@@ -2027,26 +2027,26 @@ char __thiscall VectorClass_ptr_CaptureManagerClass::sub_472F20(void *this, int 
     *((_BYTE *)this + 12) = 1; /*0x472f52*/
     if ( !v4 ) /*0x472f56*/
       return 0; /*0x472fca*/
-    if ( this->q004 ) /*0x472f58*/
+    if ( this->Items ) /*0x472f58*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x472f5f*/
       if ( a2 < v5 ) /*0x472f64*/
         v5 = a2; /*0x472f66*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x472f6c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x472f6c*/
         ++i; /*0x472f71*/
       if ( *((_BYTE *)this + 13) ) /*0x472f7e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x472f89*/
-        this->q004 = 0; /*0x472f91*/
+        this->Items = 0; /*0x472f91*/
       }
     }
-    this->q004 = v4; /*0x472f9a*/
+    this->Items = v4; /*0x472f9a*/
     this->DynamicVector_field_0x8 = a2; /*0x472fa2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x472fa5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x472fae*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x472fae*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x472fb1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x472fb9*/
@@ -2062,7 +2062,7 @@ int __thiscall VectorClass_ptr_CaptureManagerClass::sub_472FD0(int *this, _DWORD
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x472fd0*/
+  v2 = this->Items; /*0x472fd0*/
   result = 0; /*0x472fd3*/
   if ( v2 <= 0 ) /*0x472fd8*/
     return -1; /*0x472fef*/
@@ -2682,9 +2682,9 @@ _DWORD *__thiscall CCFileClass::Construct(_DWORD *this, char *Source)
 {
   BufferIOFile::Init(this); /*0x4739f3*/
   Buffer::Init(this + 22, 0, 0); /*0x4739ff*/
-  *(this + 25) = 0; /*0x473a0b*/
+  this->q064 = 0; /*0x473a0b*/
   *this = &CCFileClass::`vftable'; /*0x473a12*/
-  *(this + 26) = 0; /*0x473a18*/
+  this->q068 = 0; /*0x473a18*/
   FileClass::OpenWithCDSearch(this, Source); /*0x473a1f*/
   return this; /*0x473a26*/
 }
@@ -2697,11 +2697,11 @@ CCFileClass *__thiscall CCFileClass::Construct2(_DWORD *this, char **a2)
 
   BufferIOFile::Init(this); /*0x473a33*/
   Buffer::Init(this + 22, 0, 0); /*0x473a3f*/
-  *(this + 25) = 0; /*0x473a48*/
+  this->q064 = 0; /*0x473a48*/
   *this = &vt_CCFileClass; /*0x473a4f*/
-  *(this + 26) = 0; /*0x473a55*/
+  this->q068 = 0; /*0x473a55*/
   v3 = String::GetOrEmpty_Alt(a2); /*0x473a5c*/
-  *(this + 26) = 0; /*0x473a64*/
+  this->q068 = 0; /*0x473a64*/
   FileClass::OpenWithCDSearch(this, (IUnknown *)v3); /*0x473a6b*/
   return (CCFileClass *)this; /*0x473a72*/
 }
@@ -2724,7 +2724,7 @@ char __thiscall CCFileClass::Destru_vt16(_BYTE *this, int a2, int a3, int a4)
 {
   char result; // al
 
-  result = this->q004; /*0x473ab0*/
+  result = this->FilePointer; /*0x473ab0*/
   if ( !result ) /*0x473ab8*/
     return CD::`vftable'(dword_81C1D0); /*0x473acc*/
   return result; /*0x473ad2*/
@@ -2737,7 +2737,7 @@ int __thiscall FileClass::Write(_DWORD *this, CCFileClass *aP1, DWORD nNumberOfB
   int v4; // edi
   int v5; // eax
 
-  if ( this->q058 ) /*0x473ae3*/
+  if ( this->FileBuffer ) /*0x473ae3*/
   {
     v4 = *this; /*0x473aeb*/
     v5 = (*(int (__thiscall **)(_DWORD *))(*this + 4))(this); /*0x473aed*/
@@ -2758,17 +2758,17 @@ size_t __thiscall CCFileClass::Read(_DWORD *this, CampaignScore *aP1, signed int
   v4 = 0; /*0x473b15*/
   if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 24))(this) ) /*0x473b19*/
     v4 = (*(int (__thiscall **)(_DWORD *, int))(*this + 28))(this, 1) != 0; /*0x473b2d*/
-  v5 = this->q058; /*0x473b2f*/
+  v5 = this->FileBuffer; /*0x473b2f*/
   if ( v5 ) /*0x473b34*/
   {
-    v6 = *(this + 25); /*0x473b36*/
+    v6 = this->q064; /*0x473b36*/
     v7 = Size; /*0x473b3c*/
-    if ( *(this + 23) - v6 < Size ) /*0x473b44*/
-      v7 = *(this + 23) - v6; /*0x473b46*/
+    if ( this->q05C - v6 < Size ) /*0x473b44*/
+      v7 = this->q05C - v6; /*0x473b46*/
     if ( v7 ) /*0x473b4a*/
     {
       memcpy(aP1, (const void *)(v5 + v6), v7); /*0x473b55*/
-      *(this + 25) += v7; /*0x473b62*/
+      this->q064 += v7; /*0x473b62*/
     }
     if ( v4 ) /*0x473b67*/
     {
@@ -2794,26 +2794,26 @@ int __thiscall BufferIOFileClass_Seek(_DWORD *this, LONG lDistanceToMove, DWORD 
   int v5; // eax
   int result; // eax
 
-  if ( !this->q058 ) /*0x473ba0*/
+  if ( !this->FileBuffer ) /*0x473ba0*/
     return BufferIOFileClass::SeekInternal(lDistanceToMove, dwMoveMethod); /*0x473bf3*/
   if ( dwMoveMethod ) /*0x473bae*/
   {
     if ( dwMoveMethod == 2 ) /*0x473bb3*/
-      *(this + 25) = *(this + 23); /*0x473bb8*/
+      this->q064 = this->q05C; /*0x473bb8*/
   }
   else
   {
-    *(this + 25) = 0; /*0x473bbd*/
+    this->q064 = 0; /*0x473bbd*/
   }
-  v3 = *(this + 25); /*0x473bc8*/
+  v3 = this->q064; /*0x473bc8*/
   v4 = lDistanceToMove + v3 < 0; /*0x473bcb*/
   v5 = lDistanceToMove + v3; /*0x473bcb*/
-  *(this + 25) = v5; /*0x473bd6*/
+  this->q064 = v5; /*0x473bd6*/
   result = v4 ? 0 : v5;
-  *(this + 25) = result; /*0x473bdb*/
-  if ( result > *(this + 23) ) /*0x473be3*/
-    result = *(this + 23); /*0x473be5*/
-  *(this + 25) = result; /*0x473be7*/
+  this->q064 = result; /*0x473bdb*/
+  if ( result > this->q05C ) /*0x473be3*/
+    result = this->q05C; /*0x473be5*/
+  this->q064 = result; /*0x473be7*/
   return result; /*0x473bea*/
 }
 
@@ -2824,7 +2824,7 @@ int __thiscall CCFileClass_GetSize(int *this)
   int v3; // edx
   int v4; // [esp+4h] [ebp-4h] BYREF
 
-  if ( *(this + 22) ) /*0x473c04*/
+  if ( this->FileTimeDateHi ) /*0x473c04*/
     return *(this + 23); /*0x473c0b*/
   if ( File::IsReady(this, 0) ) /*0x473c15*/
     return BufferIOFileClass::SetSize(this); /*0x473c48*/
@@ -2839,11 +2839,11 @@ int __thiscall CCFileClass_GetSize(int *this)
 // ==== 0x00473C50  CCFileClass::Open  this=CCFileClass  sig=csp ====
 char __thiscall sub_473C50(_DWORD *this, int a2)
 {
-  if ( *(this + 26) == 1 ) /*0x473c5c*/
+  if ( this->q068 == 1 ) /*0x473c5c*/
     return 1; /*0x473c5e*/
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 24))(this) ) /*0x473c69*/
   {
-    *(this + 26) = 1; /*0x473c70*/
+    this->q068 = 1; /*0x473c70*/
     return 1; /*0x473c73*/
   }
   else
@@ -2851,17 +2851,17 @@ char __thiscall sub_473C50(_DWORD *this, int a2)
     (*(void (__thiscall **)(_DWORD *))(*this + 4))(this); /*0x473c84*/
     if ( (unsigned __int8)LookupFileInfoCache(0, 0, 0) ) /*0x473c8b*/
     {
-      *(this + 26) = 1; /*0x473c94*/
+      this->q068 = 1; /*0x473c94*/
       return 1; /*0x473c97*/
     }
     else if ( (unsigned __int8)File::IsReady(0) ) /*0x473ca2*/
     {
-      *(this + 26) = 1; /*0x473cab*/
+      this->q068 = 1; /*0x473cab*/
       return 1; /*0x473cae*/
     }
     else
     {
-      *(this + 26) = 2; /*0x473cb5*/
+      this->q068 = 2; /*0x473cb5*/
       return 0; /*0x473cbd*/
     }
   }
@@ -2883,7 +2883,7 @@ int __thiscall CCFileClass_Reset(_DWORD *this)
   v2 = this + 22; /*0x473ce3*/
   if ( v2 ) /*0x473ce8*/
     Buffer::Init(v2, 0, 0); /*0x473cee*/
-  *(this + 25) = 0; /*0x473cf5*/
+  this->q064 = 0; /*0x473cf5*/
   return CCFileClass::Close(this); /*0x473d01*/
 }
 
@@ -3018,7 +3018,7 @@ char __thiscall CCFileClass::Destru_vt15(HANDLE *this, int wFatTime)
 // ==== 0x00473FC0  CCFileClass::SetFileName  this=CCFileClass  sig=csp ====
 int __thiscall FileClass::SetFileName(_DWORD *this, IUnknown *aP1)
 {
-  *(this + 26) = 0; /*0x473fc4*/
+  this->q068 = 0; /*0x473fc4*/
   return FileClass::OpenWithCDSearch(this, aP1); /*0x473fd1*/
 }
 
@@ -6036,26 +6036,26 @@ char __thiscall VectorClass_Resize(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x477e42*/
     if ( !v4 ) /*0x477e46*/
       return 0; /*0x477eba*/
-    if ( this->q004 ) /*0x477e48*/
+    if ( this->Items ) /*0x477e48*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x477e4f*/
       if ( a2 < v5 ) /*0x477e54*/
         v5 = a2; /*0x477e56*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x477e5c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x477e5c*/
         ++i; /*0x477e61*/
       if ( *((_BYTE *)this + 13) ) /*0x477e6e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x477e79*/
-        this->q004 = 0; /*0x477e81*/
+        this->Items = 0; /*0x477e81*/
       }
     }
-    this->q004 = v4; /*0x477e8a*/
+    this->Items = v4; /*0x477e8a*/
     this->DynamicVector_field_0x8 = a2; /*0x477e92*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x477e95*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x477e9e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x477e9e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x477ea1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x477ea9*/
@@ -6096,7 +6096,7 @@ int __thiscall TypeList::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x477f10*/
+  v2 = this->Items; /*0x477f10*/
   result = 0; /*0x477f13*/
   if ( v2 <= 0 ) /*0x477f18*/
     return -1; /*0x477f2f*/
@@ -6291,26 +6291,26 @@ char __thiscall FilePipe_30_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x478172*/
     if ( !v4 ) /*0x478176*/
       return 0; /*0x4781ea*/
-    if ( this->q004 ) /*0x478178*/
+    if ( this->Items ) /*0x478178*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x47817f*/
       if ( a2 < v5 ) /*0x478184*/
         v5 = a2; /*0x478186*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x47818c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x47818c*/
         ++i; /*0x478191*/
       if ( *((_BYTE *)this + 13) ) /*0x47819e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4781a9*/
-        this->q004 = 0; /*0x4781b1*/
+        this->Items = 0; /*0x4781b1*/
       }
     }
-    this->q004 = v4; /*0x4781ba*/
+    this->Items = v4; /*0x4781ba*/
     this->DynamicVector_field_0x8 = a2; /*0x4781c2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4781c5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4781ce*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4781ce*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4781d1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4781d9*/
@@ -6326,7 +6326,7 @@ int __thiscall FilePipe_30_::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4781f0*/
+  v2 = this->Items; /*0x4781f0*/
   result = 0; /*0x4781f3*/
   if ( v2 <= 0 ) /*0x4781f8*/
     return -1; /*0x47820f*/
@@ -6668,7 +6668,7 @@ char __thiscall ParticleTypeClass::_vt02(void *this, int a2, char *a3)
     *((_BYTE *)this + 12) = 1; /*0x47855c*/
     if ( !v5 ) /*0x478560*/
       return 0; /*0x4785e2*/
-    if ( this->q004 ) /*0x478562*/
+    if ( this->Items ) /*0x478562*/
     {
       v11 = this->DynamicVector_field_0x8; /*0x478567*/
       if ( a2 < v11 ) /*0x47856c*/
@@ -6678,7 +6678,7 @@ char __thiscall ParticleTypeClass::_vt02(void *this, int a2, char *a3)
         v12 = 0; /*0x478574*/
         do /*0x478590*/
         {
-          v13 = this->q004 + v12; /*0x47857b*/
+          v13 = this->Items + v12; /*0x47857b*/
           v14 = &v5[v12]; /*0x47857d*/
           v12 += 3; /*0x478580*/
           --v11; /*0x478583*/
@@ -6691,16 +6691,16 @@ char __thiscall ParticleTypeClass::_vt02(void *this, int a2, char *a3)
       if ( *((_BYTE *)this + 13) ) /*0x478598*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4785a1*/
-        this->q004 = 0; /*0x4785a9*/
+        this->Items = 0; /*0x4785a9*/
       }
     }
-    this->q004 = v5; /*0x4785b4*/
+    this->Items = v5; /*0x4785b4*/
     this->DynamicVector_field_0x8 = v3; /*0x4785ba*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4785bd*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4785c6*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4785c6*/
   }
   v15 = this->DynamicVector_field_0x8; /*0x4785c9*/
   if ( v15 < this->DynamicVector_field_0x10 ) /*0x4785d1*/
@@ -6716,7 +6716,7 @@ int __thiscall ParticleTypeClass::_vt04(int *this, _BYTE *a2)
   int result; // eax
   _BYTE *i; // ecx
 
-  v2 = this->q004; /*0x4785f2*/
+  v2 = this->Items; /*0x4785f2*/
   result = 0; /*0x4785f5*/
   if ( v2 <= 0 ) /*0x4785fa*/
     return -1; /*0x478621*/
@@ -8408,7 +8408,7 @@ LABEL_5:
 CDFileClass *__thiscall BufferIOFile::Constructor(_BYTE *this, char *Source)
 {
   BufferIOFileClass::Constructor(this); /*0x47a9d3*/
-  *(this + 84) = 0; /*0x47a9df*/
+  this->q054 = 0; /*0x47a9df*/
   *(_DWORD *)this = &off_7E1668; /*0x47a9e3*/
   FileClass::OpenWithCDSearch(this, (IUnknown *)Source); /*0x47a9e9*/
   return (CDFileClass *)this; /*0x47a9f0*/
@@ -8421,7 +8421,7 @@ CDFileClass *__thiscall sub_47AA00(_BYTE *this, char **a2)
   char *v3; // eax
 
   BufferIOFileClass::Constructor(this); /*0x47aa03*/
-  *(this + 84) = 0; /*0x47aa0c*/
+  this->q054 = 0; /*0x47aa0c*/
   *(_DWORD *)this = &off_7E1668; /*0x47aa10*/
   v3 = String::GetOrEmpty_Alt(a2); /*0x47aa16*/
   FileClass::OpenWithCDSearch(this, (IUnknown *)v3); /*0x47aa1e*/
@@ -8433,7 +8433,7 @@ CDFileClass *__thiscall sub_47AA00(_BYTE *this, char **a2)
 _BYTE *__thiscall BufferIOFile_Init(_BYTE *this)
 {
   BufferIOFileClass::Constructor(); /*0x47aa33*/
-  *(this + 84) = 0; /*0x47aa38*/
+  this->q054 = 0; /*0x47aa38*/
   *(_DWORD *)this = &off_7E1668; /*0x47aa3c*/
   return this; /*0x47aa44*/
 }
@@ -8625,8 +8625,8 @@ int __thiscall FileClass::OpenWithCDSearch(_BYTE *this, IUnknown *aP1)
   char v5[260]; // [esp+10h] [ebp-104h] BYREF
 
   CCFileClass::SetName(this, aP1); /*0x47ae21*/
-  if ( *(this + 84) || !MEMORY[0x89E410] || File::IsReady(this, 0) ) /*0x47ae42*/
-    return (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 4))(this); /*0x47aef4*/
+  if ( this->q054 || !MEMORY[0x89E410] || File::IsReady(this, 0) ) /*0x47ae42*/
+    return (*(int (__thiscall **)(_BYTE *))(this->FilePointer)(this); /*0x47aef4*/
   v3 = (const char *)MEMORY[0x89E410]; /*0x47ae4f*/
   if ( MEMORY[0x89E410] ) /*0x47ae57*/
   {
@@ -8647,7 +8647,7 @@ int __thiscall FileClass::OpenWithCDSearch(_BYTE *this, IUnknown *aP1)
 LABEL_7:
     CCFileClass::SetName(this, aP1); /*0x47aecd*/
   }
-  return (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 4))(this); /*0x47aee3*/
+  return (*(int (__thiscall **)(_BYTE *))(this->FilePointer)(this); /*0x47aee3*/
 }
 
 
@@ -8656,15 +8656,15 @@ BOOL __thiscall CCFileClass::Reopen(_BYTE *this, char *Source, CDFileClass *aP1)
 {
   CCFileClass::Close(this); /*0x47af15*/
   if ( !Source ) /*0x47af20*/
-    (*(void (__thiscall **)(_BYTE *, int, _DWORD, _DWORD))(*(_DWORD *)this + 64))(this, 2, 0, 0); /*0x47af2a*/
-  if ( *(this + 84) || aP1 == (CDFileClass *)2 ) /*0x47af3b*/
+    (*(void (__thiscall **)(_BYTE *, int, _DWORD, _DWORD))(this->BufferCursor)(this, 2, 0, 0); /*0x47af2a*/
+  if ( this->q054 || aP1 == (CDFileClass *)2 ) /*0x47af3b*/
   {
     CCFileClass::SetName(this, (IUnknown *)Source); /*0x47af56*/
     return BufferIOFileClass::Open((int)this, aP1); /*0x47af5e*/
   }
   else
   {
-    (*(void (__thiscall **)(_BYTE *, char *))(*(_DWORD *)this + 8))(this, Source); /*0x47af42*/
+    (*(void (__thiscall **)(_BYTE *, char *))(this->FileSize)(this, Source); /*0x47af42*/
     return BufferIOFileClass::Open((int)this, aP1); /*0x47af48*/
   }
 }
@@ -9078,7 +9078,7 @@ void __thiscall CellClass::DTOR(_DWORD *this)
   void (__thiscall ***v3)(_DWORD, int); // ecx
   int v4; // eax
 
-  v2 = (void (__thiscall ***)(_DWORD, int))this->q028; /*0x47bb66*/
+  v2 = (void (__thiscall ***)(_DWORD, int))this->attached1; /*0x47bb66*/
   *this = &CellClass::`vftable'; /*0x47bb69*/
   this->vtable2 = &CellClass::`vftable'; /*0x47bb71*/
   this->vtable3 = &CellClass::`vftable'; /*0x47bb78*/
@@ -9086,7 +9086,7 @@ void __thiscall CellClass::DTOR(_DWORD *this)
   if ( v2 ) /*0x47bb86*/
   {
     (**v2)(v2, 1); /*0x47bb8c*/
-    this->q028 = 0; /*0x47bb8e*/
+    this->attached1 = 0; /*0x47bb8e*/
   }
   v3 = (void (__thiscall ***)(_DWORD, int))this->CellClass_field_FC; /*0x47bb91*/
   if ( v3 ) /*0x47bb99*/
@@ -9097,12 +9097,12 @@ void __thiscall CellClass::DTOR(_DWORD *this)
   this->firstObject = 0; /*0x47bba7*/
   if ( this->smudgeTypeIndex != MEMORY[0x89E748] ) /*0x47bbb8*/
   {
-    v4 = this->q034; /*0x47bbc7*/
+    v4 = this->attached3; /*0x47bbc7*/
     if ( v4 ) /*0x47bbcc*/
     {
       if ( MEMORY[0xA8E9A0] ) /*0x47bbd4*/
         --*(_DWORD *)(v4 + 404); /*0x47bbd6*/
-      this->q034 = 0; /*0x47bbdc*/
+      this->attached3 = 0; /*0x47bbdc*/
     }
   }
   AbstractClass::DTOR(this); /*0x47bbe1*/
@@ -9117,15 +9117,15 @@ _DWORD *__thiscall sub_47BBF0(_DWORD *this)
 
   AbstractClass::Constructor((int)this); /*0x47bbf6*/
   this->smudgeTypeIndex = MEMORY[0x89E748]; /*0x47bc02*/
-  this->q028 = 0; /*0x47bc05*/
-  this->__pad_02C = 0; /*0x47bc08*/
+  this->attached1 = 0; /*0x47bc05*/
+  this->q02C = 0; /*0x47bc08*/
   this->q030 = 0; /*0x47bc0b*/
-  this->q034 = 0; /*0x47bc0e*/
+  this->attached3 = 0; /*0x47bc0e*/
   this->q038 = 0xFFFF; /*0x47bc11*/
-  *(this + 15) = 0; /*0x47bc18*/
-  *(this + 16) = 0; /*0x47bc1e*/
+  this->q03C = 0; /*0x47bc18*/
+  this->q040 = 0; /*0x47bc1e*/
   this->q044 = -1; /*0x47bc21*/
-  this->__pad_048 = -1; /*0x47bc24*/
+  this->q048 = -1; /*0x47bc24*/
   this->CellClass_field_4C = 0; /*0x47bc27*/
   this->wallOwnerIndex = -1; /*0x47bc2a*/
   this->infantryOwnerIndex = -1; /*0x47bc2d*/

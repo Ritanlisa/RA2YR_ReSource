@@ -987,6 +987,182 @@ def tool_get_build_errors(file=None):
     return data
 
 
+# ---------------- step-6 mechanical-rebuild tools (wrappers, no new logic) --
+
+CSP_EXPORT = PROJECT_ROOT / "tools" / "csp_export"
+CANON_MANIFEST = PROJECT_ROOT / "anchors" / "csp_canon_manifest.json"
+CANON_MEMBERS = PROJECT_ROOT / "anchors" / "csp_canon_members.json"
+BACKFILL_MANIFEST = PROJECT_ROOT / "anchors" / "backfill_manifest.json"
+COMPARISON_LOG = PROJECT_ROOT / "injectFunctionTest" / "comparisonResult.log"
+
+
+def tool_sig_lookup(target):
+    """CSP canon manifest query: sig source + class anchor for a function."""
+    addr = _norm_addr_str(target)
+    if addr is None:
+        return {"error": "need 0xADDR"}
+    man = json.loads(CANON_MANIFEST.read_text(encoding="utf-8"))
+    e = man.get(addr) or man.get(addr.lower()) or {}
+    if not e:
+        return {"addr": addr, "found": False,
+                "note": "not in csp_canon_manifest (19,078 keyed by %08X form)"}
+    return {"addr": addr, "found": True, "name": e.get("name"),
+            "sig": e.get("sig"), "cls": e.get("cls"),
+            "note": ("sig=csp -> CSP anchored; sig=ida-proto -> unanchored, "
+                     "run csp_anchor first")}
+
+
+def _norm_addr_str(target):
+    if not isinstance(target, str):
+        return None
+    m = re.search(r"0x([0-9A-Fa-f]{6,8})", target)
+    if not m:
+        return None
+    return "0x%08X" % int(m.group(1), 16)
+
+
+def tool_backfill_accounts():
+    """Step-6 backfill ledger: status counts + actionable lists."""
+    man = json.loads(BACKFILL_MANIFEST.read_text(encoding="utf-8"))
+    counts = {}
+    needs = []
+    downgraded = 0
+    no_cls = []
+    for a, e in man.items():
+        st = e.get("status", "?")
+        counts[st] = counts.get(st, 0) + 1
+        if st == "needs-retranslation":
+            needs.append({"addr": a, "cls": e.get("cls"),
+                          "residual": e.get("residual_tokens")})
+        elif st == "downgrade":
+            downgraded += 1
+        elif st == "no-cls" and len(no_cls) < 5:
+            no_cls.append(a)
+    return {"total": len(man), "counts": counts,
+            "needs_retranslation": needs[:50],
+            "needs_retranslation_total": len(needs),
+            "downgrade_total": downgraded,
+            "no_cls_sample": no_cls,
+            "note": ("downgrade/no-cls = signature gaps -> run csp_anchor; "
+                     "needs-retranslation -> RA2MCP retranslate")}
+
+
+def tool_backfill_get(target):
+    """Fetch a backfilled body (from bodies/*.inc) + its ledger entry."""
+    addr = _norm_addr_str(target)
+    if addr is None:
+        return {"error": "need 0xADDR"}
+    ai = int(addr, 16)
+    man = json.loads(BACKFILL_MANIFEST.read_text(encoding="utf-8"))
+    e = man.get(addr) or {}
+    bucket = PROJECT_ROOT / "src" / "csp_canon" / "bodies" / (
+        "fn_%02X.inc" % ((ai >> 16) & 0xFF))
+    body = None
+    if bucket.exists():
+        text = bucket.read_text(encoding="utf-8", errors="replace")
+        i = text.find("// ==== BACKFILL %s " % addr)
+        if i < 0:
+            i = text.find("// ==== BACKFILL 0x%08X " % ai)
+        if i >= 0:
+            j = text.find("// ==== BACKFILL", i + 10)
+            body = text[i:j if j > 0 else len(text)]
+    return {"addr": addr, "entry": {k: v for k, v in e.items()
+                                    if k != "renames"},
+            "renames": e.get("renames", {}), "body": body,
+            "ok": body is not None}
+
+
+def tool_canon_regen():
+    """Regenerate the mechanical foundation after renames/anchors:
+    gen_cpp_canon -> rewrite_member_refs -> backfill_completed. Returns
+    per-stage summaries. All three are deterministic re-runnable scripts."""
+    stages = []
+    for script in ("gen_cpp_canon.py", "rewrite_member_refs.py",
+                   "backfill_completed.py"):
+        proc = subprocess.run(
+            [sys.executable, str(CSP_EXPORT / script)],
+            capture_output=True, text=True, encoding="utf-8",
+            errors="replace", timeout=1200, cwd=str(PROJECT_ROOT))
+        out = (proc.stdout or "") + (proc.stderr or "")
+        stages.append({"script": script, "ok": proc.returncode == 0,
+                       "exit": proc.returncode,
+                       "tail": out[-800:]})
+        if proc.returncode != 0:
+            return {"ok": False, "stages": stages,
+                    "error": "%s failed" % script}
+    return {"ok": True, "stages": stages,
+            "note": ("foundation regenerated; classes.hpp/members/raw_decomp/"
+                     "bodies all re-synced to CSP layer")}
+
+
+def tool_csp_anchor(addrs, timeout=900):
+    """Run CSP incremental solver for function addresses, then report the
+    canon manifest/type_map anchor state per address. Mechanical wrapper."""
+    if isinstance(addrs, str):
+        addrs = [addrs]
+    norm = []
+    for x in addrs or []:
+        n = _norm_addr_str(x)
+        if n:
+            norm.append("0x%08X" % int(n, 16))
+    if not norm:
+        return {"error": "need addrs like ['0x004011C0']"}
+    proc = subprocess.run(
+        [sys.executable, "-m", "tools.type_infer.incremental"] + norm,
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+        timeout=timeout, cwd=str(PROJECT_ROOT))
+    out = (proc.stdout or "") + (proc.stderr or "")
+    man = json.loads(CANON_MANIFEST.read_text(encoding="utf-8"))
+    report = []
+    for n in norm:
+        e = man.get(n) or {}
+        report.append({"addr": n, "name": e.get("name"),
+                       "sig_before": e.get("sig"), "cls": e.get("cls")})
+    return {"ok": proc.returncode == 0, "exit": proc.returncode,
+            "addresses": report, "output": out[-3000:],
+            "note": ("after solver, re-run canon_regen to re-sync manifest; "
+                     "sig flips to csp when CSP solves the signature")}
+
+
+def tool_compare_parse(path=None):
+    """Parse comparisonResult.log (REVERSE comparison) into accounts."""
+    p = pathlib.Path(path) if path else COMPARISON_LOG
+    if not p.exists():
+        return {"ok": False, "error": "log not found: %s" % p,
+                "hint": "run the game with hooks (15s+) first"}
+    section = None
+    counts = {"Different": 0, "Same": 0, "NoneCalls": 0, "Captures": 0}
+    diff_funcs = []
+    same_funcs = []
+    cur = None
+    for line in p.read_text(encoding="utf-8", errors="replace").split("\n"):
+        if "Different Compares" in line:
+            section = "diff"
+        elif "Same Compares" in line:
+            section = "same"
+        elif "None Calls" in line:
+            section = "none"
+        elif "Captures" in line and "====" in line:
+            section = "captures"
+        m = re.match(r"\s*\[([\w:]+)-(0x[0-9a-fA-F]+)\]", line)
+        if m:
+            cur = m.group(1)
+            if section == "diff":
+                counts["Different"] += 1
+                if len(diff_funcs) < 100:
+                    diff_funcs.append({"name": m.group(1), "addr": m.group(2)})
+            elif section == "same":
+                counts["Same"] += 1
+                if len(same_funcs) < 100:
+                    same_funcs.append({"name": m.group(1), "addr": m.group(2)})
+            elif section == "none":
+                counts["NoneCalls"] += 1
+    return {"ok": True, "log": str(p), "counts": counts,
+            "different_sample": diff_funcs, "same_sample": same_funcs,
+            "note": ("Same = behaviorally verified vs original; "
+                     "Different = fix and re-run")}
+
+
 def tool_issues_add(description, target=None, kind="debt"):
     st = load_state()
     iss = {"id": st["next_issue_id"], "description": description,
@@ -1207,6 +1383,36 @@ TOOLS = [
                      "properties": {"id": {"type": "integer"},
                                     "resolution": {"type": "string"}},
                      "required": ["id"]}},
+    {"name": "sig_lookup",
+     "description": "CSP 规范 manifest 查询：函数签名的锚定来源（sig=csp 已锚定 / sig=ida-proto 未锚定）与类锚。第 6 步准入判定用。",
+     "inputSchema": {"type": "object",
+                     "properties": {"target": {"type": "string",
+                                               "description": "0xADDR"}},
+                     "required": ["target"]}},
+    {"name": "backfill_accounts",
+     "description": "第 6 步回填账：direct/renamed/needs-retranslation/downgrade/no-cls/no-body 计数 + 可行动清单（补锚/重翻队列）。",
+     "inputSchema": {"type": "object", "properties": {}, "required": []}},
+    {"name": "backfill_get",
+     "description": "取某函数的回填体（bodies/*.inc）+ 账目条目（含 residual 令牌与改名映射）。",
+     "inputSchema": {"type": "object",
+                     "properties": {"target": {"type": "string"}},
+                     "required": ["target"]}},
+    {"name": "canon_regen",
+     "description": "改名/补锚后重生成机械地基：gen_cpp_canon -> rewrite_member_refs -> backfill_completed 三段顺序执行（确定性、可重跑），返回逐段摘要。",
+     "inputSchema": {"type": "object", "properties": {}, "required": []}},
+    {"name": "csp_anchor",
+     "description": "对未锚定函数地址跑 CSP 增量求解器（tools.type_infer.incremental），返回逐地址锚定状态。补 downgrade/no-cls 签名缺口的主通道。",
+     "inputSchema": {"type": "object",
+                     "properties": {"addrs": {"type": "array",
+                                              "items": {"type": "string"}},
+                                    "timeout": {"type": "integer",
+                                                "default": 900}},
+                     "required": ["addrs"]}},
+    {"name": "compare_parse",
+     "description": "解析 comparisonResult.log（REVERSE 对拍）为 Different/Same/NoneCalls 账 + 差异函数清单。Same=行为已对原版验证。",
+     "inputSchema": {"type": "object",
+                     "properties": {"path": {"type": "string"}},
+                     "required": []}},
     {"name": "stats",
      "description": "工作台统计：待翻译数/分布、completed 集、issue 计数、最近构建状态。",
      "inputSchema": {"type": "object", "properties": {}, "required": []}},
@@ -1264,6 +1470,18 @@ def dispatch_tool(name, a):
         return tool_issues_list(a.get("include_resolved", False))
     if name == "issues_resolve":
         return tool_issues_resolve(a["id"], a.get("resolution", ""))
+    if name == "sig_lookup":
+        return tool_sig_lookup(a["target"])
+    if name == "backfill_accounts":
+        return tool_backfill_accounts()
+    if name == "backfill_get":
+        return tool_backfill_get(a["target"])
+    if name == "canon_regen":
+        return tool_canon_regen()
+    if name == "csp_anchor":
+        return tool_csp_anchor(a.get("addrs"), a.get("timeout", 900))
+    if name == "compare_parse":
+        return tool_compare_parse(a.get("path"))
     if name == "stats":
         return tool_stats()
     raise ValueError(f"unknown tool: {name}")

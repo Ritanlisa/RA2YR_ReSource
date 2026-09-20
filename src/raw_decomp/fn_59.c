@@ -4154,8 +4154,8 @@ void __thiscall PlaceRandomWaypoints(int *this, int a2)
   {
     if ( (int)v21 >= 300 ) /*0x594918*/
       break; /*0x594918*/
-    v6 = *(this + 14) - 1; /*0x594925*/
-    v22 = (unsigned int)*(this + 14); /*0x594929*/
+    v6 = this->tail_E - 1; /*0x594925*/
+    v22 = (unsigned int)this->tail_E; /*0x594929*/
     v24 = (double)v22; /*0x594931*/
     do /*0x59495c*/
     {

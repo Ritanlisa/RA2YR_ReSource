@@ -2444,26 +2444,26 @@ char __thiscall HouseClass_24_::sub_4F2A60(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x4f2a92*/
     if ( !v4 ) /*0x4f2a96*/
       return 0; /*0x4f2b0a*/
-    if ( this->q004 ) /*0x4f2a98*/
+    if ( this->Items ) /*0x4f2a98*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x4f2a9f*/
       if ( a2 < v5 ) /*0x4f2aa4*/
         v5 = a2; /*0x4f2aa6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4f2aac*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4f2aac*/
         ++i; /*0x4f2ab1*/
       if ( *((_BYTE *)this + 13) ) /*0x4f2abe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4f2ac9*/
-        this->q004 = 0; /*0x4f2ad1*/
+        this->Items = 0; /*0x4f2ad1*/
       }
     }
-    this->q004 = v4; /*0x4f2ada*/
+    this->Items = v4; /*0x4f2ada*/
     this->DynamicVector_field_0x8 = a2; /*0x4f2ae2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4f2ae5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x4f2aee*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4f2aee*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x4f2af1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x4f2af9*/
@@ -2479,7 +2479,7 @@ int __thiscall HouseClass_24_::sub_4F2B10(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x4f2b10*/
+  v2 = this->Items; /*0x4f2b10*/
   result = 0; /*0x4f2b13*/
   if ( v2 <= 0 ) /*0x4f2b18*/
     return -1; /*0x4f2b2f*/
@@ -6388,7 +6388,7 @@ int __thiscall sub_4F9670(int *this)
   v2 = 0; /*0x4f9678*/
   v3 = 0; /*0x4f967a*/
   v7 = 0.0; /*0x4f967f*/
-  v9 = *(this + 30); /*0x4f9685*/
+  v9 = this->q01E; /*0x4f9685*/
   if ( v9 <= 0 ) /*0x4f9689*/
     return 0; /*0x4f96f5*/
   do /*0x4f96e8*/
@@ -7515,10 +7515,10 @@ char __thiscall SuperWeapon::SelectSuperWeaponTarget(_DWORD *this, AbstractClass
         v7 = (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 60))(v6); /*0x4fad68*/
         if ( !v7
           || (_DWORD *)v7 != this
-          && ((v8 = *(_DWORD *)(v7 + 48), v8 != *(this + 12))
+          && ((v8 = *(_DWORD *)(v7 + 48), v8 != this->q030)
             ? (v8 == -1
              ? (v9 = 0)
-             : (v9 = ((1 << v8) & *(this + 5602)) != 0))
+             : (v9 = ((1 << v8) & this->q5788) != 0))
             : (v9 = 1),
               !v9) )
         {

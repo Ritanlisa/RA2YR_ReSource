@@ -148,26 +148,26 @@ char __thiscall VectorClass_ptr_SpotLightClass::sub_6001A0(void *this, int a2, _
     *((_BYTE *)this + 12) = 1; /*0x6001d2*/
     if ( !v4 ) /*0x6001d6*/
       return 0; /*0x60024a*/
-    if ( this->q004 ) /*0x6001d8*/
+    if ( this->Items ) /*0x6001d8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x6001df*/
       if ( a2 < v5 ) /*0x6001e4*/
         v5 = a2; /*0x6001e6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x6001ec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x6001ec*/
         ++i; /*0x6001f1*/
       if ( *((_BYTE *)this + 13) ) /*0x6001fe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x600209*/
-        this->q004 = 0; /*0x600211*/
+        this->Items = 0; /*0x600211*/
       }
     }
-    this->q004 = v4; /*0x60021a*/
+    this->Items = v4; /*0x60021a*/
     this->DynamicVector_field_0x8 = a2; /*0x600222*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x600225*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x60022e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x60022e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x600231*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x600239*/
@@ -183,7 +183,7 @@ int __thiscall VectorClass_ptr_SpotLightClass::sub_600250(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x600250*/
+  v2 = this->Items; /*0x600250*/
   result = 0; /*0x600253*/
   if ( v2 <= 0 ) /*0x600258*/
     return -1; /*0x60026f*/

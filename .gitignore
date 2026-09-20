@@ -143,3 +143,6 @@ Testing/
 # signals.json is the CANONICAL symbol file — tracked in git (NOT a build artifact).
 # Do NOT ignore it: build_signals.py now updates it INCREMENTALLY (preserving the
 # completed/done/idempotent flags), so it must persist across clones/branch switches.
+
+# CSP mechanical-rebuild generators (foundation source of truth)
+!tools/csp_export/

@@ -2725,9 +2725,9 @@ int __thiscall sub_7C35C0(int this)
 // ==== 0x007C3670  ObjectClass::method_7C3670  this=ObjectClass  sig=csp ====
 int __thiscall sub_7C3670(_DWORD *this)
 {
-  *(this + 452) = -1; /*0x7c3673*/
-  *(this + 450) = -1; /*0x7c3679*/
-  *(this + 451) = -1; /*0x7c367f*/
+  this->q710 = -1; /*0x7c3673*/
+  this->q708 = -1; /*0x7c3679*/
+  this->q70C = -1; /*0x7c367f*/
   return -1; /*0x7c3685*/
 }
 

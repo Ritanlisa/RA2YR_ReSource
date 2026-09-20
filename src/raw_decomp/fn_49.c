@@ -125,362 +125,362 @@ int __thiscall COMClass_RegisterAll(_DWORD *this)
   int (__thiscall ***v90)(_DWORD, int); // ecx
   int (__thiscall ***v91)(_DWORD, int); // ecx
 
-  v2 = (int (__thiscall ***)(_DWORD, int))*(this + 2); /*0x490496*/
+  v2 = (int (__thiscall ***)(_DWORD, int))this->q008; /*0x490496*/
   if ( v2 ) /*0x49049b*/
     result = (**v2)(v2, 1); /*0x4904a1*/
-  *(this + 2) = 0; /*0x4904a3*/
-  v4 = (int (__thiscall ***)(_DWORD, int))*(this + 3); /*0x4904a6*/
+  this->q008 = 0; /*0x4904a3*/
+  v4 = (int (__thiscall ***)(_DWORD, int))this->q00C; /*0x4904a6*/
   if ( v4 ) /*0x4904ab*/
     result = (**v4)(v4, 1); /*0x4904b1*/
-  *(this + 3) = 0; /*0x4904b3*/
-  v5 = (int (__thiscall ***)(_DWORD, int))*(this + 4); /*0x4904b6*/
+  this->q00C = 0; /*0x4904b3*/
+  v5 = (int (__thiscall ***)(_DWORD, int))this->q010; /*0x4904b6*/
   if ( v5 ) /*0x4904bb*/
     result = (**v5)(v5, 1); /*0x4904c1*/
-  *(this + 4) = 0; /*0x4904c3*/
-  v6 = (int (__thiscall ***)(_DWORD, int))*(this + 5); /*0x4904c6*/
+  this->q010 = 0; /*0x4904c3*/
+  v6 = (int (__thiscall ***)(_DWORD, int))this->q014; /*0x4904c6*/
   if ( v6 ) /*0x4904cb*/
     result = (**v6)(v6, 1); /*0x4904d1*/
-  *(this + 5) = 0; /*0x4904d3*/
-  v7 = (int (__thiscall ***)(_DWORD, int))*(this + 6); /*0x4904d6*/
+  this->q014 = 0; /*0x4904d3*/
+  v7 = (int (__thiscall ***)(_DWORD, int))this->q018; /*0x4904d6*/
   if ( v7 ) /*0x4904db*/
     result = (**v7)(v7, 1); /*0x4904e1*/
-  *(this + 6) = 0; /*0x4904e3*/
-  v8 = (int (__thiscall ***)(_DWORD, int))*(this + 7); /*0x4904e6*/
+  this->q018 = 0; /*0x4904e3*/
+  v8 = (int (__thiscall ***)(_DWORD, int))this->q01C; /*0x4904e6*/
   if ( v8 ) /*0x4904eb*/
     result = (**v8)(v8, 1); /*0x4904f1*/
-  *(this + 7) = 0; /*0x4904f3*/
-  v9 = (int (__thiscall ***)(_DWORD, int))*(this + 8); /*0x4904f6*/
+  this->q01C = 0; /*0x4904f3*/
+  v9 = (int (__thiscall ***)(_DWORD, int))this->q020; /*0x4904f6*/
   if ( v9 ) /*0x4904fb*/
     result = (**v9)(v9, 1); /*0x490501*/
-  *(this + 8) = 0; /*0x490503*/
-  v10 = (int (__thiscall ***)(_DWORD, int))*(this + 9); /*0x490506*/
+  this->q020 = 0; /*0x490503*/
+  v10 = (int (__thiscall ***)(_DWORD, int))this->q024; /*0x490506*/
   if ( v10 ) /*0x49050b*/
     result = (**v10)(v10, 1); /*0x490511*/
-  *(this + 9) = 0; /*0x490513*/
-  v11 = (int (__thiscall ***)(_DWORD, int))*(this + 10); /*0x490516*/
+  this->q024 = 0; /*0x490513*/
+  v11 = (int (__thiscall ***)(_DWORD, int))this->q028; /*0x490516*/
   if ( v11 ) /*0x49051b*/
     result = (**v11)(v11, 1); /*0x490521*/
-  *(this + 10) = 0; /*0x490523*/
-  v12 = (int (__thiscall ***)(_DWORD, int))*(this + 11); /*0x490526*/
+  this->q028 = 0; /*0x490523*/
+  v12 = (int (__thiscall ***)(_DWORD, int))this->q02C; /*0x490526*/
   if ( v12 ) /*0x49052b*/
     result = (**v12)(v12, 1); /*0x490531*/
-  *(this + 11) = 0; /*0x490533*/
-  v13 = (int (__thiscall ***)(_DWORD, int))*(this + 12); /*0x490536*/
+  this->q02C = 0; /*0x490533*/
+  v13 = (int (__thiscall ***)(_DWORD, int))this->q030; /*0x490536*/
   if ( v13 ) /*0x49053b*/
     result = (**v13)(v13, 1); /*0x490541*/
-  *(this + 12) = 0; /*0x490543*/
-  v14 = (int (__thiscall ***)(_DWORD, int))*(this + 13); /*0x490546*/
+  this->q030 = 0; /*0x490543*/
+  v14 = (int (__thiscall ***)(_DWORD, int))this->q034; /*0x490546*/
   if ( v14 ) /*0x49054b*/
     result = (**v14)(v14, 1); /*0x490551*/
-  *(this + 13) = 0; /*0x490553*/
-  v15 = (int (__thiscall ***)(_DWORD, int))*(this + 14); /*0x490556*/
+  this->q034 = 0; /*0x490553*/
+  v15 = (int (__thiscall ***)(_DWORD, int))this->q038; /*0x490556*/
   if ( v15 ) /*0x49055b*/
     result = (**v15)(v15, 1); /*0x490561*/
-  *(this + 14) = 0; /*0x490563*/
-  v16 = (int (__thiscall ***)(_DWORD, int))*(this + 15); /*0x490566*/
+  this->q038 = 0; /*0x490563*/
+  v16 = (int (__thiscall ***)(_DWORD, int))this->q03C; /*0x490566*/
   if ( v16 ) /*0x49056b*/
     result = (**v16)(v16, 1); /*0x490571*/
-  *(this + 15) = 0; /*0x490573*/
-  v17 = (int (__thiscall ***)(_DWORD, int))*(this + 16); /*0x490576*/
+  this->q03C = 0; /*0x490573*/
+  v17 = (int (__thiscall ***)(_DWORD, int))this->q040; /*0x490576*/
   if ( v17 ) /*0x49057b*/
     result = (**v17)(v17, 1); /*0x490581*/
-  *(this + 16) = 0; /*0x490583*/
-  v18 = (int (__thiscall ***)(_DWORD, int))*(this + 17); /*0x490586*/
+  this->q040 = 0; /*0x490583*/
+  v18 = (int (__thiscall ***)(_DWORD, int))this->q044; /*0x490586*/
   if ( v18 ) /*0x49058b*/
     result = (**v18)(v18, 1); /*0x490591*/
-  *(this + 17) = 0; /*0x490593*/
-  v19 = (int (__thiscall ***)(_DWORD, int))*(this + 18); /*0x490596*/
+  this->q044 = 0; /*0x490593*/
+  v19 = (int (__thiscall ***)(_DWORD, int))this->q048; /*0x490596*/
   if ( v19 ) /*0x49059b*/
     result = (**v19)(v19, 1); /*0x4905a1*/
-  *(this + 18) = 0; /*0x4905a3*/
-  v20 = (int (__thiscall ***)(_DWORD, int))*(this + 19); /*0x4905a6*/
+  this->q048 = 0; /*0x4905a3*/
+  v20 = (int (__thiscall ***)(_DWORD, int))this->q04C; /*0x4905a6*/
   if ( v20 ) /*0x4905ab*/
     result = (**v20)(v20, 1); /*0x4905b1*/
-  *(this + 19) = 0; /*0x4905b3*/
-  v21 = (int (__thiscall ***)(_DWORD, int))*(this + 20); /*0x4905b6*/
+  this->q04C = 0; /*0x4905b3*/
+  v21 = (int (__thiscall ***)(_DWORD, int))this->q050; /*0x4905b6*/
   if ( v21 ) /*0x4905bb*/
     result = (**v21)(v21, 1); /*0x4905c1*/
-  *(this + 20) = 0; /*0x4905c3*/
-  v22 = (int (__thiscall ***)(_DWORD, int))*(this + 21); /*0x4905c6*/
+  this->q050 = 0; /*0x4905c3*/
+  v22 = (int (__thiscall ***)(_DWORD, int))this->q054; /*0x4905c6*/
   if ( v22 ) /*0x4905cb*/
     result = (**v22)(v22, 1); /*0x4905d1*/
-  *(this + 21) = 0; /*0x4905d3*/
-  v23 = (int (__thiscall ***)(_DWORD, int))*(this + 22); /*0x4905d6*/
+  this->q054 = 0; /*0x4905d3*/
+  v23 = (int (__thiscall ***)(_DWORD, int))this->q058; /*0x4905d6*/
   if ( v23 ) /*0x4905db*/
     result = (**v23)(v23, 1); /*0x4905e1*/
-  *(this + 22) = 0; /*0x4905e3*/
-  v24 = (int (__thiscall ***)(_DWORD, int))*(this + 23); /*0x4905e6*/
+  this->q058 = 0; /*0x4905e3*/
+  v24 = (int (__thiscall ***)(_DWORD, int))this->q05C; /*0x4905e6*/
   if ( v24 ) /*0x4905eb*/
     result = (**v24)(v24, 1); /*0x4905f1*/
-  *(this + 23) = 0; /*0x4905f3*/
-  v25 = (int (__thiscall ***)(_DWORD, int))*(this + 24); /*0x4905f6*/
+  this->q05C = 0; /*0x4905f3*/
+  v25 = (int (__thiscall ***)(_DWORD, int))this->q060; /*0x4905f6*/
   if ( v25 ) /*0x4905fb*/
     result = (**v25)(v25, 1); /*0x490601*/
-  *(this + 24) = 0; /*0x490603*/
-  v26 = (int (__thiscall ***)(_DWORD, int))*(this + 25); /*0x490606*/
+  this->q060 = 0; /*0x490603*/
+  v26 = (int (__thiscall ***)(_DWORD, int))this->q064; /*0x490606*/
   if ( v26 ) /*0x49060b*/
     result = (**v26)(v26, 1); /*0x490611*/
-  *(this + 25) = 0; /*0x490613*/
-  v27 = (int (__thiscall ***)(_DWORD, int))*(this + 26); /*0x490616*/
+  this->q064 = 0; /*0x490613*/
+  v27 = (int (__thiscall ***)(_DWORD, int))this->q068; /*0x490616*/
   if ( v27 ) /*0x49061b*/
     result = (**v27)(v27, 1); /*0x490621*/
-  *(this + 26) = 0; /*0x490623*/
-  v28 = (int (__thiscall ***)(_DWORD, int))*(this + 27); /*0x490626*/
+  this->q068 = 0; /*0x490623*/
+  v28 = (int (__thiscall ***)(_DWORD, int))this->q06C; /*0x490626*/
   if ( v28 ) /*0x49062b*/
     result = (**v28)(v28, 1); /*0x490631*/
-  *(this + 27) = 0; /*0x490633*/
-  v29 = (int (__thiscall ***)(_DWORD, int))*(this + 28); /*0x490636*/
+  this->q06C = 0; /*0x490633*/
+  v29 = (int (__thiscall ***)(_DWORD, int))this->q070; /*0x490636*/
   if ( v29 ) /*0x49063b*/
     result = (**v29)(v29, 1); /*0x490641*/
-  *(this + 28) = 0; /*0x490643*/
-  v30 = (int (__thiscall ***)(_DWORD, int))*(this + 29); /*0x490646*/
+  this->q070 = 0; /*0x490643*/
+  v30 = (int (__thiscall ***)(_DWORD, int))this->q074; /*0x490646*/
   if ( v30 ) /*0x49064b*/
     result = (**v30)(v30, 1); /*0x490651*/
-  *(this + 29) = 0; /*0x490653*/
-  v31 = (int (__thiscall ***)(_DWORD, int))*(this + 30); /*0x490656*/
+  this->q074 = 0; /*0x490653*/
+  v31 = (int (__thiscall ***)(_DWORD, int))this->q078; /*0x490656*/
   if ( v31 ) /*0x49065b*/
     result = (**v31)(v31, 1); /*0x490661*/
-  *(this + 30) = 0; /*0x490663*/
-  v32 = (int (__thiscall ***)(_DWORD, int))*(this + 31); /*0x490666*/
+  this->q078 = 0; /*0x490663*/
+  v32 = (int (__thiscall ***)(_DWORD, int))this->q07C; /*0x490666*/
   if ( v32 ) /*0x49066b*/
     result = (**v32)(v32, 1); /*0x490671*/
-  *(this + 31) = 0; /*0x490673*/
-  v33 = (int (__thiscall ***)(_DWORD, int))*(this + 35); /*0x490676*/
+  this->q07C = 0; /*0x490673*/
+  v33 = (int (__thiscall ***)(_DWORD, int))this->q08C; /*0x490676*/
   if ( v33 ) /*0x49067e*/
     result = (**v33)(v33, 1); /*0x490684*/
-  *(this + 35) = 0; /*0x490686*/
-  v34 = (int (__thiscall ***)(_DWORD, int))*(this + 36); /*0x49068c*/
+  this->q08C = 0; /*0x490686*/
+  v34 = (int (__thiscall ***)(_DWORD, int))this->q090; /*0x49068c*/
   if ( v34 ) /*0x490694*/
     result = (**v34)(v34, 1); /*0x49069a*/
-  *(this + 36) = 0; /*0x49069c*/
-  v35 = (int (__thiscall ***)(_DWORD, int))*(this + 32); /*0x4906a2*/
+  this->q090 = 0; /*0x49069c*/
+  v35 = (int (__thiscall ***)(_DWORD, int))this->q080; /*0x4906a2*/
   if ( v35 ) /*0x4906aa*/
     result = (**v35)(v35, 1); /*0x4906b0*/
-  *(this + 32) = 0; /*0x4906b2*/
-  v36 = (int (__thiscall ***)(_DWORD, int))*(this + 33); /*0x4906b8*/
+  this->q080 = 0; /*0x4906b2*/
+  v36 = (int (__thiscall ***)(_DWORD, int))this->q084; /*0x4906b8*/
   if ( v36 ) /*0x4906c0*/
     result = (**v36)(v36, 1); /*0x4906c6*/
-  *(this + 33) = 0; /*0x4906c8*/
-  v37 = (int (__thiscall ***)(_DWORD, int))*(this + 34); /*0x4906ce*/
+  this->q084 = 0; /*0x4906c8*/
+  v37 = (int (__thiscall ***)(_DWORD, int))this->q088; /*0x4906ce*/
   if ( v37 ) /*0x4906d6*/
     result = (**v37)(v37, 1); /*0x4906dc*/
-  *(this + 34) = 0; /*0x4906de*/
-  v38 = (int (__thiscall ***)(_DWORD, int))*(this + 37); /*0x4906e4*/
+  this->q088 = 0; /*0x4906de*/
+  v38 = (int (__thiscall ***)(_DWORD, int))this->q094; /*0x4906e4*/
   if ( v38 ) /*0x4906ec*/
     result = (**v38)(v38, 1); /*0x4906f2*/
-  *(this + 37) = 0; /*0x4906f4*/
-  v39 = (int (__thiscall ***)(_DWORD, int))*(this + 38); /*0x4906fa*/
+  this->q094 = 0; /*0x4906f4*/
+  v39 = (int (__thiscall ***)(_DWORD, int))this->q098; /*0x4906fa*/
   if ( v39 ) /*0x490702*/
     result = (**v39)(v39, 1); /*0x490708*/
-  *(this + 38) = 0; /*0x49070a*/
-  v40 = (int (__thiscall ***)(_DWORD, int))*(this + 39); /*0x490710*/
+  this->q098 = 0; /*0x49070a*/
+  v40 = (int (__thiscall ***)(_DWORD, int))this->q09C; /*0x490710*/
   if ( v40 ) /*0x490718*/
     result = (**v40)(v40, 1); /*0x49071e*/
-  *(this + 39) = 0; /*0x490720*/
-  v41 = (int (__thiscall ***)(_DWORD, int))*(this + 40); /*0x490726*/
+  this->q09C = 0; /*0x490720*/
+  v41 = (int (__thiscall ***)(_DWORD, int))this->q0A0; /*0x490726*/
   if ( v41 ) /*0x49072e*/
     result = (**v41)(v41, 1); /*0x490734*/
-  *(this + 40) = 0; /*0x490736*/
-  v42 = (int (__thiscall ***)(_DWORD, int))*(this + 41); /*0x49073c*/
+  this->q0A0 = 0; /*0x490736*/
+  v42 = (int (__thiscall ***)(_DWORD, int))this->q0A4; /*0x49073c*/
   if ( v42 ) /*0x490744*/
     result = (**v42)(v42, 1); /*0x49074a*/
-  *(this + 41) = 0; /*0x49074c*/
-  v43 = (int (__thiscall ***)(_DWORD, int))*(this + 42); /*0x490752*/
+  this->q0A4 = 0; /*0x49074c*/
+  v43 = (int (__thiscall ***)(_DWORD, int))this->q0A8; /*0x490752*/
   if ( v43 ) /*0x49075a*/
     result = (**v43)(v43, 1); /*0x490760*/
-  *(this + 42) = 0; /*0x490762*/
-  v44 = (int (__thiscall ***)(_DWORD, int))*(this + 43); /*0x490768*/
+  this->q0A8 = 0; /*0x490762*/
+  v44 = (int (__thiscall ***)(_DWORD, int))this->q0AC; /*0x490768*/
   if ( v44 ) /*0x490770*/
     result = (**v44)(v44, 1); /*0x490776*/
-  *(this + 43) = 0; /*0x490778*/
-  v45 = (int (__thiscall ***)(_DWORD, int))*(this + 44); /*0x49077e*/
+  this->q0AC = 0; /*0x490778*/
+  v45 = (int (__thiscall ***)(_DWORD, int))this->q0B0; /*0x49077e*/
   if ( v45 ) /*0x490786*/
     result = (**v45)(v45, 1); /*0x49078c*/
-  *(this + 44) = 0; /*0x49078e*/
-  v46 = (int (__thiscall ***)(_DWORD, int))*(this + 45); /*0x490794*/
+  this->q0B0 = 0; /*0x49078e*/
+  v46 = (int (__thiscall ***)(_DWORD, int))this->q0B4; /*0x490794*/
   if ( v46 ) /*0x49079c*/
     result = (**v46)(v46, 1); /*0x4907a2*/
-  *(this + 45) = 0; /*0x4907a4*/
-  v47 = (int (__thiscall ***)(_DWORD, int))*(this + 46); /*0x4907aa*/
+  this->q0B4 = 0; /*0x4907a4*/
+  v47 = (int (__thiscall ***)(_DWORD, int))this->q0B8; /*0x4907aa*/
   if ( v47 ) /*0x4907b2*/
     result = (**v47)(v47, 1); /*0x4907b8*/
-  *(this + 46) = 0; /*0x4907ba*/
-  v48 = (int (__thiscall ***)(_DWORD, int))*(this + 47); /*0x4907c0*/
+  this->q0B8 = 0; /*0x4907ba*/
+  v48 = (int (__thiscall ***)(_DWORD, int))this->q0BC; /*0x4907c0*/
   if ( v48 ) /*0x4907c8*/
     result = (**v48)(v48, 1); /*0x4907ce*/
-  *(this + 47) = 0; /*0x4907d0*/
-  v49 = (int (__thiscall ***)(_DWORD, int))*(this + 48); /*0x4907d6*/
+  this->q0BC = 0; /*0x4907d0*/
+  v49 = (int (__thiscall ***)(_DWORD, int))this->q0C0; /*0x4907d6*/
   if ( v49 ) /*0x4907de*/
     result = (**v49)(v49, 1); /*0x4907e4*/
-  *(this + 48) = 0; /*0x4907e6*/
-  v50 = (int (__thiscall ***)(_DWORD, int))*(this + 49); /*0x4907ec*/
+  this->q0C0 = 0; /*0x4907e6*/
+  v50 = (int (__thiscall ***)(_DWORD, int))this->q0C4; /*0x4907ec*/
   if ( v50 ) /*0x4907f4*/
     result = (**v50)(v50, 1); /*0x4907fa*/
-  *(this + 49) = 0; /*0x4907fc*/
-  v51 = (int (__thiscall ***)(_DWORD, int))*(this + 50); /*0x490802*/
+  this->q0C4 = 0; /*0x4907fc*/
+  v51 = (int (__thiscall ***)(_DWORD, int))this->q0C8; /*0x490802*/
   if ( v51 ) /*0x49080a*/
     result = (**v51)(v51, 1); /*0x490810*/
-  *(this + 50) = 0; /*0x490812*/
-  v52 = (int (__thiscall ***)(_DWORD, int))*(this + 51); /*0x490818*/
+  this->q0C8 = 0; /*0x490812*/
+  v52 = (int (__thiscall ***)(_DWORD, int))this->q0CC; /*0x490818*/
   if ( v52 ) /*0x490820*/
     result = (**v52)(v52, 1); /*0x490826*/
-  *(this + 51) = 0; /*0x490828*/
-  v53 = (int (__thiscall ***)(_DWORD, int))*(this + 52); /*0x49082e*/
+  this->q0CC = 0; /*0x490828*/
+  v53 = (int (__thiscall ***)(_DWORD, int))this->q0D0; /*0x49082e*/
   if ( v53 ) /*0x490836*/
     result = (**v53)(v53, 1); /*0x49083c*/
-  *(this + 52) = 0; /*0x49083e*/
-  v54 = (int (__thiscall ***)(_DWORD, int))*(this + 53); /*0x490844*/
+  this->q0D0 = 0; /*0x49083e*/
+  v54 = (int (__thiscall ***)(_DWORD, int))this->q0D4; /*0x490844*/
   if ( v54 ) /*0x49084c*/
     result = (**v54)(v54, 1); /*0x490852*/
-  *(this + 53) = 0; /*0x490854*/
-  v55 = (int (__thiscall ***)(_DWORD, int))*(this + 54); /*0x49085a*/
+  this->q0D4 = 0; /*0x490854*/
+  v55 = (int (__thiscall ***)(_DWORD, int))this->q0D8; /*0x49085a*/
   if ( v55 ) /*0x490862*/
     result = (**v55)(v55, 1); /*0x490868*/
-  *(this + 54) = 0; /*0x49086a*/
-  v56 = (int (__thiscall ***)(_DWORD, int))*(this + 55); /*0x490870*/
+  this->q0D8 = 0; /*0x49086a*/
+  v56 = (int (__thiscall ***)(_DWORD, int))this->q0DC; /*0x490870*/
   if ( v56 ) /*0x490878*/
     result = (**v56)(v56, 1); /*0x49087e*/
-  *(this + 55) = 0; /*0x490880*/
-  v57 = (int (__thiscall ***)(_DWORD, int))*(this + 56); /*0x490886*/
+  this->q0DC = 0; /*0x490880*/
+  v57 = (int (__thiscall ***)(_DWORD, int))this->q0E0; /*0x490886*/
   if ( v57 ) /*0x49088e*/
     result = (**v57)(v57, 1); /*0x490894*/
-  *(this + 56) = 0; /*0x490896*/
-  v58 = (int (__thiscall ***)(_DWORD, int))*(this + 57); /*0x49089c*/
+  this->q0E0 = 0; /*0x490896*/
+  v58 = (int (__thiscall ***)(_DWORD, int))this->q0E4; /*0x49089c*/
   if ( v58 ) /*0x4908a4*/
     result = (**v58)(v58, 1); /*0x4908aa*/
-  *(this + 57) = 0; /*0x4908ac*/
-  v59 = (int (__thiscall ***)(_DWORD, int))*(this + 58); /*0x4908b2*/
+  this->q0E4 = 0; /*0x4908ac*/
+  v59 = (int (__thiscall ***)(_DWORD, int))this->q0E8; /*0x4908b2*/
   if ( v59 ) /*0x4908ba*/
     result = (**v59)(v59, 1); /*0x4908c0*/
-  *(this + 58) = 0; /*0x4908c2*/
-  v60 = (int (__thiscall ***)(_DWORD, int))*(this + 59); /*0x4908c8*/
+  this->q0E8 = 0; /*0x4908c2*/
+  v60 = (int (__thiscall ***)(_DWORD, int))this->q0EC; /*0x4908c8*/
   if ( v60 ) /*0x4908d0*/
     result = (**v60)(v60, 1); /*0x4908d6*/
-  v61 = (int (__thiscall ***)(_DWORD, int))*(this + 60); /*0x4908d8*/
-  *(this + 59) = 0; /*0x4908de*/
+  v61 = (int (__thiscall ***)(_DWORD, int))this->q0F0; /*0x4908d8*/
+  this->q0EC = 0; /*0x4908de*/
   if ( v61 ) /*0x4908e6*/
     result = (**v61)(v61, 1); /*0x4908ec*/
-  v62 = (int (__thiscall ***)(_DWORD, int))*(this + 61); /*0x4908ee*/
-  *(this + 60) = 0; /*0x4908f4*/
+  v62 = (int (__thiscall ***)(_DWORD, int))this->q0F4; /*0x4908ee*/
+  this->q0F0 = 0; /*0x4908f4*/
   if ( v62 ) /*0x4908fc*/
     result = (**v62)(v62, 1); /*0x490902*/
-  v63 = (int (__thiscall ***)(_DWORD, int))*(this + 62); /*0x490904*/
-  *(this + 61) = 0; /*0x49090a*/
+  v63 = (int (__thiscall ***)(_DWORD, int))this->q0F8; /*0x490904*/
+  this->q0F4 = 0; /*0x49090a*/
   if ( v63 ) /*0x490912*/
     result = (**v63)(v63, 1); /*0x490918*/
-  v64 = (int (__thiscall ***)(_DWORD, int))*(this + 63); /*0x49091a*/
-  *(this + 62) = 0; /*0x490920*/
+  v64 = (int (__thiscall ***)(_DWORD, int))this->q0FC; /*0x49091a*/
+  this->q0F8 = 0; /*0x490920*/
   if ( v64 ) /*0x490928*/
     result = (**v64)(v64, 1); /*0x49092e*/
-  v65 = (int (__thiscall ***)(_DWORD, int))*(this + 64); /*0x490930*/
-  *(this + 63) = 0; /*0x490936*/
+  v65 = (int (__thiscall ***)(_DWORD, int))this->q100; /*0x490930*/
+  this->q0FC = 0; /*0x490936*/
   if ( v65 ) /*0x49093e*/
     result = (**v65)(v65, 1); /*0x490944*/
-  v66 = (int (__thiscall ***)(_DWORD, int))*(this + 65); /*0x490946*/
-  *(this + 64) = 0; /*0x49094c*/
+  v66 = (int (__thiscall ***)(_DWORD, int))this->q104; /*0x490946*/
+  this->q100 = 0; /*0x49094c*/
   if ( v66 ) /*0x490954*/
     result = (**v66)(v66, 1); /*0x49095a*/
-  v67 = (int (__thiscall ***)(_DWORD, int))*(this + 66); /*0x49095c*/
-  *(this + 65) = 0; /*0x490962*/
+  v67 = (int (__thiscall ***)(_DWORD, int))this->q108; /*0x49095c*/
+  this->q104 = 0; /*0x490962*/
   if ( v67 ) /*0x49096a*/
     result = (**v67)(v67, 1); /*0x490970*/
-  v68 = (int (__thiscall ***)(_DWORD, int))*(this + 67); /*0x490972*/
-  *(this + 66) = 0; /*0x490978*/
+  v68 = (int (__thiscall ***)(_DWORD, int))this->q10C; /*0x490972*/
+  this->q108 = 0; /*0x490978*/
   if ( v68 ) /*0x490980*/
     result = (**v68)(v68, 1); /*0x490986*/
-  v69 = (int (__thiscall ***)(_DWORD, int))*(this + 68); /*0x490988*/
-  *(this + 67) = 0; /*0x49098e*/
+  v69 = (int (__thiscall ***)(_DWORD, int))this->q110; /*0x490988*/
+  this->q10C = 0; /*0x49098e*/
   if ( v69 ) /*0x490996*/
     result = (**v69)(v69, 1); /*0x49099c*/
-  v70 = (int (__thiscall ***)(_DWORD, int))*(this + 69); /*0x49099e*/
-  *(this + 68) = 0; /*0x4909a4*/
+  v70 = (int (__thiscall ***)(_DWORD, int))this->q114; /*0x49099e*/
+  this->q110 = 0; /*0x4909a4*/
   if ( v70 ) /*0x4909ac*/
     result = (**v70)(v70, 1); /*0x4909b2*/
-  v71 = (int (__thiscall ***)(_DWORD, int))*(this + 70); /*0x4909b4*/
-  *(this + 69) = 0; /*0x4909ba*/
+  v71 = (int (__thiscall ***)(_DWORD, int))this->q118; /*0x4909b4*/
+  this->q114 = 0; /*0x4909ba*/
   if ( v71 ) /*0x4909c2*/
     result = (**v71)(v71, 1); /*0x4909c8*/
-  v72 = (int (__thiscall ***)(_DWORD, int))*(this + 71); /*0x4909ca*/
-  *(this + 70) = 0; /*0x4909d0*/
+  v72 = (int (__thiscall ***)(_DWORD, int))this->q11C; /*0x4909ca*/
+  this->q118 = 0; /*0x4909d0*/
   if ( v72 ) /*0x4909d8*/
     result = (**v72)(v72, 1); /*0x4909de*/
-  v73 = (int (__thiscall ***)(_DWORD, int))*(this + 72); /*0x4909e0*/
-  *(this + 71) = 0; /*0x4909e6*/
+  v73 = (int (__thiscall ***)(_DWORD, int))this->q120; /*0x4909e0*/
+  this->q11C = 0; /*0x4909e6*/
   if ( v73 ) /*0x4909ee*/
     result = (**v73)(v73, 1); /*0x4909f4*/
-  v74 = (int (__thiscall ***)(_DWORD, int))*(this + 73); /*0x4909f6*/
-  *(this + 72) = 0; /*0x4909fc*/
+  v74 = (int (__thiscall ***)(_DWORD, int))this->q124; /*0x4909f6*/
+  this->q120 = 0; /*0x4909fc*/
   if ( v74 ) /*0x490a04*/
     result = (**v74)(v74, 1); /*0x490a0a*/
-  v75 = (int (__thiscall ***)(_DWORD, int))*(this + 74); /*0x490a0c*/
-  *(this + 73) = 0; /*0x490a12*/
+  v75 = (int (__thiscall ***)(_DWORD, int))this->q128; /*0x490a0c*/
+  this->q124 = 0; /*0x490a12*/
   if ( v75 ) /*0x490a1a*/
     result = (**v75)(v75, 1); /*0x490a20*/
-  v76 = (int (__thiscall ***)(_DWORD, int))*(this + 75); /*0x490a22*/
-  *(this + 74) = 0; /*0x490a28*/
+  v76 = (int (__thiscall ***)(_DWORD, int))this->q12C; /*0x490a22*/
+  this->q128 = 0; /*0x490a28*/
   if ( v76 ) /*0x490a30*/
     result = (**v76)(v76, 1); /*0x490a36*/
-  v77 = (int (__thiscall ***)(_DWORD, int))*(this + 76); /*0x490a38*/
-  *(this + 75) = 0; /*0x490a3e*/
+  v77 = (int (__thiscall ***)(_DWORD, int))this->q130; /*0x490a38*/
+  this->q12C = 0; /*0x490a3e*/
   if ( v77 ) /*0x490a46*/
     result = (**v77)(v77, 1); /*0x490a4c*/
-  v78 = (int (__thiscall ***)(_DWORD, int))*(this + 77); /*0x490a4e*/
-  *(this + 76) = 0; /*0x490a54*/
+  v78 = (int (__thiscall ***)(_DWORD, int))this->q134; /*0x490a4e*/
+  this->q130 = 0; /*0x490a54*/
   if ( v78 ) /*0x490a5c*/
     result = (**v78)(v78, 1); /*0x490a62*/
-  v79 = (int (__thiscall ***)(_DWORD, int))*(this + 78); /*0x490a64*/
-  *(this + 77) = 0; /*0x490a6a*/
+  v79 = (int (__thiscall ***)(_DWORD, int))this->q138; /*0x490a64*/
+  this->q134 = 0; /*0x490a6a*/
   if ( v79 ) /*0x490a72*/
     result = (**v79)(v79, 1); /*0x490a78*/
-  v80 = (int (__thiscall ***)(_DWORD, int))*(this + 79); /*0x490a7a*/
-  *(this + 78) = 0; /*0x490a80*/
+  v80 = (int (__thiscall ***)(_DWORD, int))this->q13C; /*0x490a7a*/
+  this->q138 = 0; /*0x490a80*/
   if ( v80 ) /*0x490a88*/
     result = (**v80)(v80, 1); /*0x490a8e*/
-  v81 = (int (__thiscall ***)(_DWORD, int))*(this + 80); /*0x490a90*/
-  *(this + 79) = 0; /*0x490a96*/
+  v81 = (int (__thiscall ***)(_DWORD, int))this->q140; /*0x490a90*/
+  this->q13C = 0; /*0x490a96*/
   if ( v81 ) /*0x490a9e*/
     result = (**v81)(v81, 1); /*0x490aa4*/
-  v82 = (int (__thiscall ***)(_DWORD, int))*(this + 81); /*0x490aa6*/
-  *(this + 80) = 0; /*0x490aac*/
+  v82 = (int (__thiscall ***)(_DWORD, int))this->q144; /*0x490aa6*/
+  this->q140 = 0; /*0x490aac*/
   if ( v82 ) /*0x490ab4*/
     result = (**v82)(v82, 1); /*0x490aba*/
-  v83 = (int (__thiscall ***)(_DWORD, int))*(this + 82); /*0x490abc*/
-  *(this + 81) = 0; /*0x490ac2*/
+  v83 = (int (__thiscall ***)(_DWORD, int))this->q148; /*0x490abc*/
+  this->q144 = 0; /*0x490ac2*/
   if ( v83 ) /*0x490aca*/
     result = (**v83)(v83, 1); /*0x490ad0*/
-  v84 = (int (__thiscall ***)(_DWORD, int))*(this + 83); /*0x490ad2*/
-  *(this + 82) = 0; /*0x490ad8*/
+  v84 = (int (__thiscall ***)(_DWORD, int))this->q14C; /*0x490ad2*/
+  this->q148 = 0; /*0x490ad8*/
   if ( v84 ) /*0x490ae0*/
     result = (**v84)(v84, 1); /*0x490ae6*/
-  v85 = (int (__thiscall ***)(_DWORD, int))*(this + 84); /*0x490ae8*/
-  *(this + 83) = 0; /*0x490aee*/
+  v85 = (int (__thiscall ***)(_DWORD, int))this->q150; /*0x490ae8*/
+  this->q14C = 0; /*0x490aee*/
   if ( v85 ) /*0x490af6*/
     result = (**v85)(v85, 1); /*0x490afc*/
-  v86 = (int (__thiscall ***)(_DWORD, int))*(this + 85); /*0x490afe*/
-  *(this + 84) = 0; /*0x490b04*/
+  v86 = (int (__thiscall ***)(_DWORD, int))this->q154; /*0x490afe*/
+  this->q150 = 0; /*0x490b04*/
   if ( v86 ) /*0x490b0c*/
     result = (**v86)(v86, 1); /*0x490b12*/
-  v87 = (int (__thiscall ***)(_DWORD, int))*(this + 86); /*0x490b14*/
-  *(this + 85) = 0; /*0x490b1a*/
+  v87 = (int (__thiscall ***)(_DWORD, int))this->q158; /*0x490b14*/
+  this->q154 = 0; /*0x490b1a*/
   if ( v87 ) /*0x490b22*/
     result = (**v87)(v87, 1); /*0x490b28*/
-  v88 = (int (__thiscall ***)(_DWORD, int))*(this + 87); /*0x490b2a*/
-  *(this + 86) = 0; /*0x490b30*/
+  v88 = (int (__thiscall ***)(_DWORD, int))this->q15C; /*0x490b2a*/
+  this->q158 = 0; /*0x490b30*/
   if ( v88 ) /*0x490b38*/
     result = (**v88)(v88, 1); /*0x490b3e*/
-  v89 = (int (__thiscall ***)(_DWORD, int))*(this + 88); /*0x490b40*/
-  *(this + 87) = 0; /*0x490b46*/
+  v89 = (int (__thiscall ***)(_DWORD, int))this->q160; /*0x490b40*/
+  this->q15C = 0; /*0x490b46*/
   if ( v89 ) /*0x490b4e*/
     result = (**v89)(v89, 1); /*0x490b54*/
-  v90 = (int (__thiscall ***)(_DWORD, int))*(this + 89); /*0x490b56*/
-  *(this + 88) = 0; /*0x490b5c*/
+  v90 = (int (__thiscall ***)(_DWORD, int))this->q164; /*0x490b56*/
+  this->q160 = 0; /*0x490b5c*/
   if ( v90 ) /*0x490b64*/
     result = (**v90)(v90, 1); /*0x490b6a*/
-  v91 = (int (__thiscall ***)(_DWORD, int))*(this + 90); /*0x490b6c*/
-  *(this + 89) = 0; /*0x490b72*/
+  v91 = (int (__thiscall ***)(_DWORD, int))this->q168; /*0x490b6c*/
+  this->q164 = 0; /*0x490b72*/
   if ( v91 ) /*0x490b7a*/
     result = (**v91)(v91, 1); /*0x490b80*/
-  *(this + 90) = 0; /*0x490b82*/
+  this->q168 = 0; /*0x490b82*/
   return result; /*0x490b88*/
 }
 
@@ -488,31 +488,31 @@ int __thiscall COMClass_RegisterAll(_DWORD *this)
 // ==== 0x00490B90  BuildingClass::GetSHPFrame  this=ConvertClass  sig=csp ====
 int __thiscall BuildingClass::GetSHPFrame(_DWORD *this, ConvertClass *aP1)
 {
-  if ( !*(this + 2) ) /*0x490b93*/
+  if ( !this->q008 ) /*0x490b93*/
     ConvertClass::InitTables((int)this); /*0x490b9a*/
   if ( ((unsigned __int8)aP1 & 0x10) != 0 ) /*0x490ba5*/
   {
     if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490baa*/
     {
       if ( (BYTE1(aP1) & 8) != 0 ) /*0x490baf*/
-        return *(this + 48); /*0x490bb1*/
+        return this->q0C0; /*0x490bb1*/
       else
-        return *(this + 22); /*0x490bbb*/
+        return this->q058; /*0x490bbb*/
     }
     else if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[1]) != 0 ) /*0x490bc8*/
     {
       if ( (BYTE1(aP1) & 8) != 0 ) /*0x490bcd*/
-        return *(this + 39); /*0x490bcf*/
+        return this->q09C; /*0x490bcf*/
       else
-        return *(this + 12); /*0x490bd9*/
+        return this->q030; /*0x490bd9*/
     }
     else if ( (BYTE1(aP1) & 8) != 0 ) /*0x490be3*/
     {
-      return *(this + 28); /*0x490be5*/
+      return this->q070; /*0x490be5*/
     }
     else
     {
-      return *(this + 5); /*0x490bec*/
+      return this->q014; /*0x490bec*/
     }
   }
   switch ( (unsigned __int8)aP1 & 6 ) /*0x490bfb*/
@@ -521,176 +521,176 @@ int __thiscall BuildingClass::GetSHPFrame(_DWORD *this, ConvertClass *aP1)
       if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490de4*/
       {
         if ( (BYTE1(aP1) & 8) != 0 ) /*0x490de9*/
-          return *(this + 51); /*0x490deb*/
+          return this->q0CC; /*0x490deb*/
         else
-          return *(this + 25); /*0x490df5*/
+          return this->q064; /*0x490df5*/
       }
       else if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[1]) != 0 ) /*0x490e02*/
       {
         if ( ((unsigned __int8)aP1 & 8) != 0 ) /*0x490e06*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490e0b*/
-            return *(this + 45); /*0x490e0d*/
+            return this->q0B4; /*0x490e0d*/
           else
-            return *(this + 18); /*0x490e17*/
+            return this->q048; /*0x490e17*/
         }
         else if ( (BYTE1(aP1) & 8) != 0 ) /*0x490e21*/
         {
-          return *(this + 42); /*0x490e23*/
+          return this->q0A8; /*0x490e23*/
         }
         else
         {
-          return *(this + 15); /*0x490e2d*/
+          return this->q03C; /*0x490e2d*/
         }
       }
       else if ( (BYTE1(aP1) & 8) != 0 ) /*0x490e37*/
       {
-        return *(this + 31); /*0x490e39*/
+        return this->q07C; /*0x490e39*/
       }
       else
       {
-        return *(this + 8); /*0x490e40*/
+        return this->q020; /*0x490e40*/
       }
     case 4: /*0x490bfb*/
       if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490d5c*/
       {
         if ( (BYTE1(aP1) & 8) != 0 ) /*0x490d61*/
-          return *(this + 50); /*0x490d63*/
+          return this->q0C8; /*0x490d63*/
         else
-          return *(this + 24); /*0x490d6d*/
+          return this->q060; /*0x490d6d*/
       }
       else if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[1]) != 0 ) /*0x490d7a*/
       {
         if ( ((unsigned __int8)aP1 & 8) != 0 ) /*0x490d7e*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490d83*/
-            return *(this + 44); /*0x490d85*/
+            return this->q0B0; /*0x490d85*/
           else
-            return *(this + 17); /*0x490d8f*/
+            return this->q044; /*0x490d8f*/
         }
         else if ( (BYTE1(aP1) & 8) != 0 ) /*0x490d99*/
         {
-          return *(this + 41); /*0x490d9b*/
+          return this->q0A4; /*0x490d9b*/
         }
         else
         {
-          return *(this + 14); /*0x490da5*/
+          return this->q038; /*0x490da5*/
         }
       }
       else if ( (BYTE1(aP1) & 8) != 0 ) /*0x490daf*/
       {
-        return *(this + 30); /*0x490db1*/
+        return this->q078; /*0x490db1*/
       }
       else if ( ((unsigned int)aP1 & 0x10000) != 0 ) /*0x490dbd*/
       {
-        return *(this + 36); /*0x490dbf*/
+        return this->q090; /*0x490dbf*/
       }
       else if ( ((unsigned int)aP1 & 0x20000) != 0 ) /*0x490dce*/
       {
-        return *(this + 35); /*0x490dd0*/
+        return this->q08C; /*0x490dd0*/
       }
       else
       {
-        return *(this + 7); /*0x490dda*/
+        return this->q01C; /*0x490dda*/
       }
     case 6: /*0x490bfb*/
       if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490cf6*/
       {
         if ( (BYTE1(aP1) & 8) != 0 ) /*0x490cfb*/
-          return *(this + 49); /*0x490cfd*/
+          return this->q0C4; /*0x490cfd*/
         else
-          return *(this + 23); /*0x490d07*/
+          return this->q05C; /*0x490d07*/
       }
       else if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[1]) != 0 ) /*0x490d14*/
       {
         if ( ((unsigned __int8)aP1 & 8) != 0 ) /*0x490d18*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490d1d*/
-            return *(this + 43); /*0x490d1f*/
+            return this->q0AC; /*0x490d1f*/
           else
-            return *(this + 16); /*0x490d29*/
+            return this->q040; /*0x490d29*/
         }
         else if ( (BYTE1(aP1) & 8) != 0 ) /*0x490d33*/
         {
-          return *(this + 40); /*0x490d35*/
+          return this->q0A0; /*0x490d35*/
         }
         else
         {
-          return *(this + 13); /*0x490d3f*/
+          return this->q034; /*0x490d3f*/
         }
       }
       else if ( (BYTE1(aP1) & 8) != 0 ) /*0x490d49*/
       {
-        return *(this + 29); /*0x490d4b*/
+        return this->q074; /*0x490d4b*/
       }
       else
       {
-        return *(this + 6); /*0x490d52*/
+        return this->q018; /*0x490d52*/
       }
     default:
       if ( ((unsigned __int8)aP1 & 1) != 0 ) /*0x490c15*/
       {
         if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490c1a*/
-          return *(this + 21); /*0x490c1c*/
+          return this->q054; /*0x490c1c*/
         if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[1]) != 0 ) /*0x490c29*/
-          return *(this + 11); /*0x490c2b*/
-        return *(this + 4); /*0x490c20*/
+          return this->q02C; /*0x490c2b*/
+        return this->q010; /*0x490c20*/
       }
       if ( ((unsigned __int8)aP1 & 0x20) != 0 ) /*0x490c3b*/
       {
         if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490c40*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490c45*/
-            return *(this + 47); /*0x490c4e*/
-          return *(this + 20); /*0x490c93*/
+            return this->q0BC; /*0x490c4e*/
+          return this->q050; /*0x490c93*/
         }
         if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[1]) != 0 ) /*0x490c57*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490c5c*/
-            return *(this + 38); /*0x490c65*/
-          return *(this + 10); /*0x490cb1*/
+            return this->q098; /*0x490c65*/
+          return this->q028; /*0x490cb1*/
         }
         if ( (BYTE1(aP1) & 8) != 0 ) /*0x490c6b*/
-          return *(this + 26); /*0x490c6d*/
+          return this->q068; /*0x490c6d*/
         else
-          return *(this + 2); /*0x490c74*/
+          return this->q008; /*0x490c74*/
       }
       else
       {
         if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490c7e*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490c83*/
-            return *(this + 47); /*0x490c8c*/
-          return *(this + 20); /*0x490c83*/
+            return this->q0BC; /*0x490c8c*/
+          return this->q050; /*0x490c83*/
         }
         if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[1]) != 0 ) /*0x490c9c*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490ca1*/
-            return *(this + 38); /*0x490caa*/
-          return *(this + 10); /*0x490ca1*/
+            return this->q098; /*0x490caa*/
+          return this->q028; /*0x490ca1*/
         }
         if ( SBYTE1(aP1) >= 0 ) /*0x490cb7*/
         {
           if ( (BYTE1(aP1) & 1) != 0 ) /*0x490cc6*/
           {
-            return *(this + 33); /*0x490cc8*/
+            return this->q084; /*0x490cc8*/
           }
           else if ( ((unsigned __int8)aP1 & 0x40) != 0 ) /*0x490cd4*/
           {
-            return *(this + 34); /*0x490cd6*/
+            return this->q088; /*0x490cd6*/
           }
           else if ( (BYTE1(aP1) & 8) != 0 ) /*0x490ce3*/
           {
-            return *(this + 27); /*0x490ce5*/
+            return this->q06C; /*0x490ce5*/
           }
           else
           {
-            return *(this + 3); /*0x490cec*/
+            return this->q00C; /*0x490cec*/
           }
         }
         else
         {
-          return *(this + 32); /*0x490cb9*/
+          return this->q080; /*0x490cb9*/
         }
       }
   }
@@ -14524,26 +14524,26 @@ char __thiscall VectorClass_ptr_ConvertClass::sub_49B000(void *this, int a2, _DW
     *((_BYTE *)this + 12) = 1; /*0x49b032*/
     if ( !v4 ) /*0x49b036*/
       return 0; /*0x49b0aa*/
-    if ( this->q004 ) /*0x49b038*/
+    if ( this->Items ) /*0x49b038*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x49b03f*/
       if ( a2 < v5 ) /*0x49b044*/
         v5 = a2; /*0x49b046*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x49b04c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x49b04c*/
         ++i; /*0x49b051*/
       if ( *((_BYTE *)this + 13) ) /*0x49b05e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x49b069*/
-        this->q004 = 0; /*0x49b071*/
+        this->Items = 0; /*0x49b071*/
       }
     }
-    this->q004 = v4; /*0x49b07a*/
+    this->Items = v4; /*0x49b07a*/
     this->DynamicVector_field_0x8 = a2; /*0x49b082*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x49b085*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x49b08e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x49b08e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x49b091*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x49b099*/
@@ -14559,7 +14559,7 @@ int __thiscall VectorClass_ptr_ConvertClass::sub_49B0B0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x49b0b0*/
+  v2 = this->Items; /*0x49b0b0*/
   result = 0; /*0x49b0b3*/
   if ( v2 <= 0 ) /*0x49b0b8*/
     return -1; /*0x49b0cf*/
@@ -14785,20 +14785,20 @@ _DWORD *__thiscall MissionClass_Init(_DWORD *this)
   *(this + 13) = -2; /*0x49b622*/
   *(_BYTE *)this = 0; /*0x49b628*/
   *((_BYTE *)this + 28) = 0; /*0x49b62a*/
-  *(this + 15) = 0; /*0x49b62d*/
+  this->q03C = 0; /*0x49b62d*/
   this->q044 = -1; /*0x49b630*/
   *((_BYTE *)this + 108) = 0; /*0x49b633*/
   *(this + 16) = 0; /*0x49b636*/
-  *(this + 14) = -1; /*0x49b639*/
+  this->q038 = -1; /*0x49b639*/
   this->q048 = 0; /*0x49b63c*/
   this->q04C = 0; /*0x49b63f*/
-  *(this + 20) = 0; /*0x49b642*/
+  this->q050 = 0; /*0x49b642*/
   this->q054 = 0; /*0x49b645*/
   this->q058 = 0; /*0x49b648*/
   this->q05C = 0; /*0x49b64b*/
-  *(this + 26) = 0; /*0x49b64e*/
+  this->q068 = 0; /*0x49b64e*/
   this->q060 = 0; /*0x49b651*/
-  this->q064 = 0; /*0x49b654*/
+  this->Name = 0; /*0x49b654*/
   return this; /*0x49b657*/
 }
 
@@ -15555,7 +15555,7 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   int v38; // [esp+1A0h] [ebp-28h]
   char Buffer[32]; // [esp+1A8h] [ebp-20h] BYREF
 
-  if ( !*(this + 108) ) /*0x49c5ac*/
+  if ( !this->q06C ) /*0x49c5ac*/
     return 0; /*0x49c5ac*/
   if ( !*this ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
@@ -15568,7 +15568,7 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   if ( v3 < 0 || v3 >= MEMORY[0x89F574] ) /*0x49c5f5*/
     return 0; /*0x49cae5*/
   v27 = MEMORY[0x89F570] + 76 * v3; /*0x49c60d*/
-  if ( *((_DWORD *)this + 16) == *((_DWORD *)this + 14) ) /*0x49c616*/
+  if ( *((_DWORD *)this + 16) == this->q038 ) /*0x49c616*/
     return 1; /*0x49c61b*/
   CCFileClass::Construct(v36, MEMORY[0x81F0F8]); /*0x49c631*/
   v28[1] = 0; /*0x49c63a*/
@@ -15654,11 +15654,11 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   (*(void (__thiscall **)(_DWORD *, char *))(v33[0] + 8))(v33, MEMORY[0x81F0F8]); /*0x49c807*/
   (*(void (__thiscall **)(_DWORD *, int))(v33[0] + 28))(v33, 2); /*0x49c81a*/
   INIClass::ClearSection((int)v28, (int)Block, 0); /*0x49c828*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F19C, *((_DWORD *)this + 14), 0); /*0x49c841*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F19C, this->q038, 0); /*0x49c841*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F184, this->q044, 0); /*0x49c85a*/
   for ( j = 0; /*0x49c863*/
         j < *(char *)(v27 + 8);
-        INIClass::SetString((char *)v28, (unsigned __int8 *)Block, Buffer, *(char **)(*((_DWORD *)this + 15) + 4 * j++)) )
+        INIClass::SetString((char *)v28, (unsigned __int8 *)Block, Buffer, *(char **)(this->q03C + 4 * j++)) )
   {
     sprintf(Buffer, MEMORY[0x81F114], j + 1); /*0x49c87d*/
   }
@@ -15688,15 +15688,15 @@ char __thiscall CampaignClass_SaveProgress(char *this)
     INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F164, v26, 0); /*0x49c95d*/
   }
 LABEL_47:
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F11C], *((_DWORD *)this + 26), 0); /*0x49c962*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F11C], this->q068, 0); /*0x49c962*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F15C, this->q048, 0); /*0x49c98f*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F154, this->q04C, 0); /*0x49c9a8*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F14C], *((_DWORD *)this + 20), 0); /*0x49c9c1*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F14C], this->q050, 0); /*0x49c9c1*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F144], this->q054, 0); /*0x49c9da*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F13C], this->q058, 0); /*0x49c9f3*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F134], this->q05C, 0); /*0x49ca0c*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F12C], this->q060, 0); /*0x49ca25*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F124], this->q064, 0); /*0x49ca3e*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F124], this->Name, 0); /*0x49ca3e*/
   INIClass::WriteDigest(v28, (int)v33, 0); /*0x49ca51*/
   CCFileClass::Reset(v33); /*0x49ca5d*/
   v33[0] = &vt_CCFileClass; /*0x49ca67*/
@@ -15710,7 +15710,7 @@ LABEL_47:
   Vector::Clear((int)v37); /*0x49cab9*/
   v36[0] = &off_7E1668; /*0x49cac5*/
   BufferIOFileClass::Dtor(v36); /*0x49cacc*/
-  *(this + 108) = 1; /*0x49cad2*/
+  this->q06C = 1; /*0x49cad2*/
   return 1; /*0x49c618*/
 }
 
@@ -17613,26 +17613,26 @@ char __thiscall DynamicVectorClass_PAD::Remove(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x49eaa2*/
     if ( !v4 ) /*0x49eaa6*/
       return 0; /*0x49eb1a*/
-    if ( this->q004 ) /*0x49eaa8*/
+    if ( this->Items ) /*0x49eaa8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x49eaaf*/
       if ( a2 < v5 ) /*0x49eab4*/
         v5 = a2; /*0x49eab6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x49eabc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x49eabc*/
         ++i; /*0x49eac1*/
       if ( *((_BYTE *)this + 13) ) /*0x49eace*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x49ead9*/
-        this->q004 = 0; /*0x49eae1*/
+        this->Items = 0; /*0x49eae1*/
       }
     }
-    this->q004 = v4; /*0x49eaea*/
+    this->Items = v4; /*0x49eaea*/
     this->DynamicVector_field_0x8 = a2; /*0x49eaf2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x49eaf5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x49eafe*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x49eafe*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x49eb01*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x49eb09*/
@@ -17648,7 +17648,7 @@ int __thiscall DynamicVectorClass_PAD::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x49eb20*/
+  v2 = this->Items; /*0x49eb20*/
   result = 0; /*0x49eb23*/
   if ( v2 <= 0 ) /*0x49eb28*/
     return -1; /*0x49eb3f*/
@@ -17827,26 +17827,26 @@ char __thiscall DynamicVectorClass_PAD::sub_49ED30(void *this, int a2, _DWORD *a
     *((_BYTE *)this + 12) = 1; /*0x49ed62*/
     if ( !v4 ) /*0x49ed66*/
       return 0; /*0x49edda*/
-    if ( this->q004 ) /*0x49ed68*/
+    if ( this->Items ) /*0x49ed68*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x49ed6f*/
       if ( a2 < v5 ) /*0x49ed74*/
         v5 = a2; /*0x49ed76*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x49ed7c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x49ed7c*/
         ++i; /*0x49ed81*/
       if ( *((_BYTE *)this + 13) ) /*0x49ed8e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x49ed99*/
-        this->q004 = 0; /*0x49eda1*/
+        this->Items = 0; /*0x49eda1*/
       }
     }
-    this->q004 = v4; /*0x49edaa*/
+    this->Items = v4; /*0x49edaa*/
     this->DynamicVector_field_0x8 = a2; /*0x49edb2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x49edb5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x49edbe*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x49edbe*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x49edc1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x49edc9*/
@@ -17862,7 +17862,7 @@ int __thiscall DynamicVectorClass_PAD::sub_49EDE0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x49ede0*/
+  v2 = this->Items; /*0x49ede0*/
   result = 0; /*0x49ede3*/
   if ( v2 <= 0 ) /*0x49ede8*/
     return -1; /*0x49edff*/
@@ -18457,11 +18457,11 @@ bool sub_49F920()
 _DWORD *__thiscall CounterClass_Constructor(_DWORD *this)
 {
   this->count = 0; /*0x49f9b4*/
-  this->q008 = 0; /*0x49f9b7*/
+  this->Capacity = 0; /*0x49f9b7*/
   *((_BYTE *)this + 12) = 1; /*0x49f9ba*/
   *((_BYTE *)this + 13) = 0; /*0x49f9be*/
   *this = &CounterClass::`vftable'; /*0x49f9c1*/
-  this->q010 = 0; /*0x49f9c7*/
+  this->Count = 0; /*0x49f9c7*/
   return this; /*0x49f9ca*/
 }
 
@@ -18543,12 +18543,12 @@ int __thiscall DynamicVector::GetOrGrow(_DWORD *this, DynamicVector *aP1)
 
   v3 = this->DynamicVector_field_0x8; /*0x49fae9*/
   if ( (int)aP1 < v3 ) /*0x49faee*/
-    return *(_DWORD *)(this->q004 + 4 * (_DWORD)aP1); /*0x49fb26*/
+    return *(_DWORD *)(this->Items + 4 * (_DWORD)aP1); /*0x49fb26*/
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)&aP1->field_8 + 2, 0) ) /*0x49fafa*/
   {
-    for ( i = v3; i < this->DynamicVector_field_0x8; *(_DWORD *)(this->q004 + 4 * i - 4) = 0 ) /*0x49fb08*/
+    for ( i = v3; i < this->DynamicVector_field_0x8; *(_DWORD *)(this->Items + 4 * i - 4) = 0 ) /*0x49fb08*/
       ++i; /*0x49fb0d*/
-    return *(_DWORD *)(this->q004 + 4 * (_DWORD)aP1); /*0x49fb1b*/
+    return *(_DWORD *)(this->Items + 4 * (_DWORD)aP1); /*0x49fb1b*/
   }
   return 0; /*0x49fb20*/
 }
@@ -18559,9 +18559,9 @@ int __thiscall CounterClass::_vt03(_DWORD *this)
 {
   int result; // eax
 
-  for ( result = 0; result < this->q008; this->Items[result - 1] = 0 ) /*0x49fb4a*/
+  for ( result = 0; result < this->Capacity; this->Items[result - 1] = 0 ) /*0x49fb4a*/
     ++result; /*0x49fb4f*/
-  this->q010 = 0; /*0x49fb5b*/
+  this->Count = 0; /*0x49fb5b*/
   return result; /*0x49fb5e*/
 }
 
@@ -18622,11 +18622,11 @@ int __thiscall CounterClass::Load(_DWORD *this, AbstractClass *aP1)
   if ( this ) /*0x49fbea*/
   {
     this->count = 0; /*0x49fbec*/
-    this->q008 = 0; /*0x49fbef*/
+    this->Capacity = 0; /*0x49fbef*/
     *((_BYTE *)this + 12) = 1; /*0x49fbf2*/
     *((_BYTE *)this + 13) = 0; /*0x49fbf6*/
     *this = &CounterClass::`vftable'; /*0x49fbf9*/
-    this->q010 = 0; /*0x49fbff*/
+    this->Count = 0; /*0x49fbff*/
   }
   v3 = aP1; /*0x49fc02*/
   result = (*(int (__stdcall **)(AbstractClass *, _DWORD *, int, _DWORD))(*(_DWORD *)aP1->__pad_0 + 12))( /*0x49fc10*/

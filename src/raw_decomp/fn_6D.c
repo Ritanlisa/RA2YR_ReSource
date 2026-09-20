@@ -78,7 +78,7 @@ int __thiscall SidebarClass_LoadButtonSHPs(_DWORD *this)
   MEMORY[0xB0CD10] = result - MEMORY[0xB0CD38]; /*0x6d0370*/
   MEMORY[0xB0CC24] = v8; /*0x6d0377*/
   MEMORY[0xB0CC38] = result; /*0x6d037d*/
-  *(this + 5448) = 0; /*0x6d0382*/
+  this->q5520 = 0; /*0x6d0382*/
   return result; /*0x6d030f*/
 }
 
@@ -127,7 +127,7 @@ int __thiscall sub_6D04D0(void *this)
   v2 = (int *)&MEMORY[0xB0C1C0]; /*0x6d04d4*/
   do /*0x6d04ea*/
   {
-    result = (*(int (__thiscall **)(void *, int *))(*(_DWORD *)this + 52))(this, v2); /*0x6d04de*/
+    result = (*(int (__thiscall **)(void *, int *))(this->MovementZones)(this, v2); /*0x6d04de*/
     v2 += 24; /*0x6d04e1*/
   }
   while ( (int)v2 < (int)&MEMORY[0xB0CB20] ); /*0x6d04ea*/
@@ -894,11 +894,11 @@ char __thiscall CommandClass_BuildBar(void *this)
   do /*0x6d1224*/
   {
     (*(void (__thiscall **)(int *))(*v2 + 32))(v2); /*0x6d1210*/
-    (*(void (__thiscall **)(void *, int *))(*(_DWORD *)this + 48))(this, v2); /*0x6d1218*/
+    (*(void (__thiscall **)(void *, int *))(this->q030)(this, v2); /*0x6d1218*/
     v2 += 24; /*0x6d121b*/
   }
   while ( (int)v2 < (int)&MEMORY[0xB0CB20] ); /*0x6d1224*/
-  (*(void (__thiscall **)(void *, _DWORD *))(*(_DWORD *)this + 48))(this, MEMORY[0xB0CCB0]); /*0x6d122f*/
+  (*(void (__thiscall **)(void *, _DWORD *))(this->q030)(this, MEMORY[0xB0CCB0]); /*0x6d122f*/
   v3 = MEMORY[0xB0CB78][MEMORY[0xB0CD24]]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
@@ -1042,7 +1042,7 @@ char __thiscall sub_6D1610(_BYTE *this)
   result = *(this + 21828); /*0x6d1613*/
   if ( !result ) /*0x6d161b*/
   {
-    (*(void (__thiscall **)(_BYTE *, _DWORD *))(*(_DWORD *)this + 52))(this, MEMORY[0xB0CC40]); /*0x6d1624*/
+    (*(void (__thiscall **)(_BYTE *, _DWORD *))(this->MovementZones)(this, MEMORY[0xB0CC40]); /*0x6d1624*/
     HashTable::Remove((int *)MEMORY[0x887368], 241); /*0x6d1632*/
     *(this + 21828) = 1; /*0x6d1639*/
     CommandClass::BuildBar(this); /*0x6d1640*/
@@ -9436,26 +9436,26 @@ char __thiscall VectorClass_UDirtyAreaStruct::sub_6DCB50(void *this, int a2, _DW
     *((_BYTE *)this + 12) = 1; /*0x6dcb82*/
     if ( !v4 ) /*0x6dcb86*/
       return 0; /*0x6dcbfa*/
-    if ( this->q004 ) /*0x6dcb88*/
+    if ( this->Items ) /*0x6dcb88*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x6dcb8f*/
       if ( a2 < v5 ) /*0x6dcb94*/
         v5 = a2; /*0x6dcb96*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x6dcb9c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x6dcb9c*/
         ++i; /*0x6dcba1*/
       if ( *((_BYTE *)this + 13) ) /*0x6dcbae*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x6dcbb9*/
-        this->q004 = 0; /*0x6dcbc1*/
+        this->Items = 0; /*0x6dcbc1*/
       }
     }
-    this->q004 = v4; /*0x6dcbca*/
+    this->Items = v4; /*0x6dcbca*/
     this->DynamicVector_field_0x8 = a2; /*0x6dcbd2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x6dcbd5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x6dcbde*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x6dcbde*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x6dcbe1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x6dcbe9*/
@@ -9471,7 +9471,7 @@ int __thiscall VectorClass_UDirtyAreaStruct::sub_6DCC00(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x6dcc00*/
+  v2 = this->Items; /*0x6dcc00*/
   result = 0; /*0x6dcc03*/
   if ( v2 <= 0 ) /*0x6dcc08*/
     return -1; /*0x6dcc1f*/

@@ -36,7 +36,7 @@ _DWORD *__thiscall BuildingTypeClass::GetSizeInLeptons(_DWORD *this, _DWORD *a2)
   int v4; // edx
   int v5; // eax
 
-  v2 = this->DeployingAnim; /*0x464af0*/
+  v2 = this->qEF0; /*0x464af0*/
   v3 = unk_89DDB8 * this->DeployingAnimLoaded; /*0x464afc*/
   v2 *= 4; /*0x464b03*/
   v4 = *(int *)((char *)dword_8192B8 + v2); /*0x464b0b*/
@@ -119,7 +119,7 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
   Power::TimerProcess(this->BuildingAnimFrame_6); /*0x464be8*/
   Power::TimerProcess(this->BuildingAnim_0x15); /*0x464bf6*/
   Power::TimerProcess(this->Upgrades); /*0x464c04*/
-  Power::TimerProcess(this->DeployingAnim); /*0x464c12*/
+  Power::TimerProcess(this->qEF0); /*0x464c12*/
   Power::TimerProcess(this->DeployingAnimLoaded); /*0x464c20*/
   Power::TimerProcess(this->UnderDoorAnim); /*0x464c2e*/
   Power::TimerProcess(this->UnderDoorAnimLoaded); /*0x464c3c*/
@@ -910,7 +910,7 @@ BOOL __thiscall BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable(_DWOR
   result = 0; /*0x465d68*/
   if ( this->VoiceMove ) /*0x465d40*/
   {
-    v1 = this->DeployingAnim; /*0x465d55*/
+    v1 = this->qEF0; /*0x465d55*/
     if ( dword_8192B8[v1] == 1 && dword_819310[v1] == 1 ) /*0x465d66*/
       return 1; /*0x465d48*/
   }
@@ -1440,7 +1440,7 @@ int __thiscall BulletClass::Dtor(#374 *this)
   *(_DWORD *)this = &BulletClass::`vftable'; /*0x466566*/
   this->vtable2 = &BulletClass::`vftable'; /*0x46656c*/
   this->vtable3 = &BulletClass::`vftable'; /*0x466573*/
-  *((_DWORD *)this + 3) = &vt_BulletClass; /*0x46657a*/
+  this->vtable4 = &vt_BulletClass; /*0x46657a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
   if ( *((_BYTE *)this + 344) ) /*0x466586*/
   {
@@ -1749,7 +1749,7 @@ LABEL_23:
       v11 = *((double *)this + 29);
       v12 = (double *)(this + 58);
       v13 = *((double *)this + 31) * *((double *)this + 31);
-      a1 = *(this + 68);
+      a1 = this->q044;
       v14 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(v11 * v11 + v10 * v10 + v13));
       v15 = *(this + 43);
       v16 = *(_DWORD *)(v15 + 736);
@@ -1764,7 +1764,7 @@ LABEL_23:
             goto LABEL_31;
         }
       }
-      else if ( *(this + 68) >= 40 || (double)(int)a1 <= v171[0] + 0.5 )
+      else if ( this->q044 >= 40 || (double)(int)a1 <= v171[0] + 0.5 )
       {
 LABEL_31:
         *((_BYTE *)this + 261) = 0;
@@ -1799,10 +1799,10 @@ LABEL_49:
           *((double *)this + 31) = v22 * *((double *)this + 31);
 LABEL_50:
           v172 = *v12;
-          LODWORD(v173) = *(this + 60);
+          LODWORD(v173) = this->q03C;
           v23 = *(this + 63);
           v24 = *(this + 62);
-          HIDWORD(v173) = *(this + 61);
+          HIDWORD(v173) = this->q03D;
           v25 = *(this + 67);
           v174 = COERCE_DOUBLE(__PAIR64__(v23, v24));
           if ( v25 )
@@ -1981,9 +1981,9 @@ LABEL_184:
             (*(void (__thiscall **)(int *, CoordStruct *))(*this + 436))(this, &aP2);
             if ( (_BYTE)v160 )
               goto LABEL_187;
-            v165[0] = *(this + 39);
-            v165[1] = *(this + 40);
-            Z = *(this + 41);
+            v165[0] = this->q027;
+            v165[1] = this->q028;
+            Z = this->q029;
             v115 = BulletClass::CheckBulletCollision(this, (IUnknown *)v165);
             v116 = *this;
             v117 = v115;
@@ -2000,7 +2000,7 @@ LABEL_187:
               v119 = BulletClass::CheckProximityDetonation(this + 46, &aP2);
             else
               v119 = 0;
-            v120 = *(this + 44);
+            v120 = this->q02C;
             v168 = v119;
             if ( v120 && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v120 + 132))(v120) + 3476) && v119 == 2 )
             {
@@ -2084,7 +2084,7 @@ LABEL_187:
                   if ( v141 )
                   {
                     v167 = *(CoordStruct *)((_BYTE *)this + 13);
-                    eax222a = (void *)Return::HRESULT_Fail((BulletClass *)*(this + 39), *(this + 40), *(this + 41));
+                    eax222a = (void *)Return::HRESULT_Fail((BulletClass *)this->q027, this->q028, this->q029);
                     v142 = AnimClass::ctor((void **)v141, v140, &v167, 0, (CoordStruct *)1, (void *)0x2600, eax222a, 0);
                   }
                   else
@@ -2135,8 +2135,8 @@ LABEL_233:
     v62 = (double *)(this + 58);
     v63 = *((double *)this + 31);
     v170[0] = *((double *)this + 29);
-    v64 = *(this + 61);
-    LODWORD(v170[1]) = *(this + 60);
+    v64 = this->q03D;
+    LODWORD(v170[1]) = this->q03C;
     v170[2] = v63;
     HIDWORD(v170[1]) = v64;
     qmemcpy(v178, v170, sizeof(v178));
@@ -2159,7 +2159,7 @@ LABEL_233:
                                         + *((double *)this + 30) * *((double *)this + 30)
                                         + *((double *)this + 31) * *((double *)this + 31)));
       v69 = Math::RoundToInt(v68);
-      if ( v69 < *(this + 68) )
+      if ( v69 < this->q044 )
       {
         a1 = v69 + *(_DWORD *)(*(this + 43) + 720);
         *(double *)&v167.X = (double)(int)a1;
@@ -2179,8 +2179,8 @@ LABEL_233:
       }
       v72 = *((double *)this + 31);
       v179[0] = *v62;
-      v73 = *(this + 61);
-      LODWORD(v179[1]) = *(this + 60);
+      v73 = this->q03D;
+      LODWORD(v179[1]) = this->q03C;
       HIDWORD(v179[1]) = v73;
       v74 = Math::RoundToInt(v72);
       v75 = Math::RoundToInt(v72);
@@ -2227,7 +2227,7 @@ LABEL_233:
         LOBYTE(v160) = 1;
       }
 LABEL_152:
-      v97 = *(this + 80);
+      v97 = this->q050;
       LOWORD(a1) = aP2.X / 256;
       HIWORD(a1) = aP2.Y / 256;
       v180 = a1;
@@ -2258,7 +2258,7 @@ LABEL_152:
       v167.Y = 0;
       v104 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&aP2);
       ClosestObject = (IUnknown *)Object::FindClosestObjectCell(v104, (IUnknown *)&v167, 0, 0);
-      v106 = *(this + 44);
+      v106 = this->q02C;
       if ( !v106 || (HIBYTE(v159) = 1, ClosestObject != (IUnknown *)v106) )
         HIBYTE(v159) = 0;
       if ( !ClosestObject
@@ -2325,7 +2325,7 @@ LABEL_152:
     }
     v79 = *(_DWORD *)(v67 + 712);
     v80 = *(IUnknown **)(v67 + 716);
-    v81 = (IUnknown *)*(this + 44);
+    v81 = (IUnknown *)this->q02C;
     v167.X = v79;
     v169 = v81;
     v167.Y = (int)v80;
@@ -2535,8 +2535,8 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
   float v32[12]; // [esp+A0h] [ebp-30h] BYREF
 
   if ( (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) == 0 /*0x4680d5*/
-    || (v25 = *((_DWORD *)this + 39), v26 = *((_DWORD *)this + 40),
-                                      v27 = *((_DWORD *)this + 41),
+    || (v25 = this->q09C, v26 = this->q0A0,
+                                      v27 = this->q0A4,
                                       !Game::Stub3((int)&v25)) )
   {
     v4 = this->BulletClass_field_0xAC; /*0x4680e2*/
@@ -2568,20 +2568,20 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
       }
       else
       {
-        v24 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 108))(this); /*0x468261*/
+        v24 = (*(int (__thiscall **)(void *))(this->health)(this); /*0x468261*/
         if ( v24 ) /*0x468265*/
         {
           v29 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 488))(this); /*0x468275*/
           v9 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 456))(this); /*0x468289*/
-          v25 = *((_DWORD *)this + 39); /*0x46828f*/
-          v26 = *((_DWORD *)this + 40); /*0x46829b*/
-          v27 = *((_DWORD *)this + 41); /*0x4682a2*/
+          v25 = this->q09C; /*0x46828f*/
+          v26 = this->q0A0; /*0x46829b*/
+          v27 = this->q0A4; /*0x4682a2*/
           GroundHeight = Cell::GetGroundHeight(&v25); /*0x4682b0*/
           if ( !*((_BYTE *)this + 140) ) /*0x4682b4*/
           {
-            v10 = *((_DWORD *)this + 40); /*0x4682c0*/
-            v11 = *((_DWORD *)this + 41); /*0x4682c3*/
-            v25 = *((_DWORD *)this + 39); /*0x4682c6*/
+            v10 = this->q0A0; /*0x4682c0*/
+            v11 = this->q0A4; /*0x4682c3*/
+            v25 = this->q09C; /*0x4682c6*/
             v26 = v10; /*0x4682ce*/
             v27 = v11; /*0x4682d8*/
             if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v25) + 80) & 0x100) != 0 && v9 >= unk_89DE64 ) /*0x4682f3*/
@@ -2623,7 +2623,7 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
           }
           else if ( *(_BYTE *)(v15 + 681) ) /*0x468397*/
           {
-            v17 = *((_DWORD *)this + 69); /*0x4683a1*/
+            v17 = this->InheritedColor; /*0x4683a1*/
             if ( v17 == -1 ) /*0x4683aa*/
               v16 = *(_DWORD *)(*((_DWORD *)MEMORY[0xB054D4] + *((_DWORD *)HouseClass_Player + 22549)) + 780); /*0x4683d1*/
             else
@@ -2786,12 +2786,12 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
   if ( !(unsigned __int8)ObjectClass::Deploy((#374 *)this) ) /*0x468684*/
     return 0; /*0x468b7f*/
   qmemcpy(this + 58, a2, 0x18u); /*0x4686a0*/
-  *(this + 77) = aP1->field_0; /*0x4686b1*/
-  *(this + 78) = aP1->field_4; /*0x4686b6*/
-  *(this + 79) = aP1->field_8; /*0x4686bc*/
-  LOWORD(v31) = *(this + 77) / 256; /*0x4686cd*/
-  HIWORD(v31) = *(this + 78) / 256; /*0x4686e6*/
-  this->q14C = v31; /*0x4686ef*/
+  this->q134 = aP1->field_0; /*0x4686b1*/
+  this->TargetCoords = aP1->field_4; /*0x4686b6*/
+  this->q13C = aP1->field_8; /*0x4686bc*/
+  LOWORD(v31) = this->q134 / 256; /*0x4686cd*/
+  HIWORD(v31) = this->TargetCoords / 256; /*0x4686e6*/
+  this->NextAnim = v31; /*0x4686ef*/
   RemoveTarget((IUnknown *)this); /*0x4686f5*/
   v4 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->BulletClass_field_0x10C + 88))(this->BulletClass_field_0x10C, &v37[1]); /*0x46870a*/
   v5 = *v4; /*0x468712*/
@@ -2801,8 +2801,8 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
   v7 = v4[2]; /*0x46871f*/
   this->BulletClass_field_0x140 = v5; /*0x468722*/
   v41 = v7; /*0x468724*/
-  *(this + 81) = v6; /*0x468728*/
-  *(this + 82) = v7; /*0x46872b*/
+  this->q144 = v6; /*0x468728*/
+  this->DamageMultiplier = v7; /*0x46872b*/
   v8 = this->BulletClass_field_0xAC; /*0x46872e*/
   if ( *(_BYTE *)(v8 + 675) && *(_BYTE *)(v8 + 670) ) /*0x468741*/
   {
@@ -2859,11 +2859,11 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
         (*(void (__thiscall **)(_DWORD *, int *))(*this + 436))(this, &a1); /*0x468977*/
       }
       (*(void (__thiscall **)(_DWORD *, int *))(*this + 436))(this, &a1); /*0x468986*/
-      *(this + 68) = 0; /*0x46898c*/
+      this->q110 = 0; /*0x46898c*/
       if ( *((double *)this + 29) == 0.0 && *((double *)this + 30) == 0.0 && *((double *)this + 31) == 0.0 ) /*0x4689c9*/
       {
-        *(this + 58) = 0; /*0x4689cb*/
-        *(this + 59) = 1079574528; /*0x4689d1*/
+        this->q0E8 = 0; /*0x4689cb*/
+        this->q0EC = 1079574528; /*0x4689d1*/
       }
       v26 = 0.0 /*0x468a0e*/
           / Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
@@ -2887,16 +2887,16 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
     v28 = 0; /*0x468a53*/
   else
     v28 = *(_DWORD *)(this->BulletClass_field_0xAC + 752); /*0x468a5d*/
-  v37[1] = *(this + 39); /*0x468a75*/
-  v37[2] = *(this + 40); /*0x468a7c*/
-  v38 = *(this + 41); /*0x468a88*/
+  v37[1] = this->q09C; /*0x468a75*/
+  v37[2] = this->q0A0; /*0x468a7c*/
+  v38 = this->q0A4; /*0x468a88*/
   BulletClass::InitDetonationTimer(this + 46, &v37[1], &a1, v28, 0x7FFFFFFF); /*0x468a93*/
   if ( *(int *)(this->BulletClass_field_0xAC + 732) > 0 ) /*0x468aa6*/
   {
     if ( *((double *)this + 29) == 0.0 && *((double *)this + 30) == 0.0 && *((double *)this + 31) == 0.0 ) /*0x468ae3*/
     {
-      *(this + 58) = 0; /*0x468ae5*/
-      *(this + 59) = 1079574528; /*0x468aef*/
+      this->q0E8 = 0; /*0x468ae5*/
+      this->q0EC = 1079574528; /*0x468aef*/
     }
     v29 = 1.0 /*0x468b2c*/
         / Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
@@ -2941,9 +2941,9 @@ bool __thiscall BulletClass::CheckBulletCollision(_DWORD *this, IUnknown *aP1)
   _DWORD v15[3]; // [esp+10h] [ebp-Ch] BYREF
   IUnknown *aP1a; // [esp+20h] [ebp+4h]
 
-  aP1->field_0 = *(this + 39); /*0x468bc8*/
-  aP1->field_4 = *(this + 40); /*0x468bcd*/
-  aP1->field_8 = *(this + 41); /*0x468bd3*/
+  aP1->field_0 = this->q09C; /*0x468bc8*/
+  aP1->field_4 = this->q0A0; /*0x468bcd*/
+  aP1->field_8 = this->q0A4; /*0x468bd3*/
   v4 = (IUnknown *)Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x468be0*/
   v5 = this->BulletClass_field_0xAC; /*0x468be2*/
   aP1a = v4; /*0x468be8*/
@@ -2976,9 +2976,9 @@ bool __thiscall BulletClass::CheckBulletCollision(_DWORD *this, IUnknown *aP1)
   {
     if ( *(_BYTE *)(this->BulletClass_field_0xAC + 675) ) /*0x468cbb*/
     {
-      v12 = *(this + 39); /*0x468ccb*/
-      v13 = *(this + 41); /*0x468cd1*/
-      v15[1] = *(this + 40); /*0x468cd7*/
+      v12 = this->q09C; /*0x468ccb*/
+      v13 = this->q0A4; /*0x468cd1*/
+      v15[1] = this->q0A0; /*0x468cd7*/
       v15[0] = v12; /*0x468cdb*/
       if ( v13 < *(_DWORD *)((*(int (__thiscall **)(AbstractClass *, _DWORD *))(*(_DWORD *)v11->__pad_0 + 88))(v11, v15) /*0x468cfa*/
                            + 8)
@@ -3328,14 +3328,14 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
 
   v144 = 1;
   v130 = 0;
-  v3 = *((_DWORD *)this + 74);
+  v3 = this->q128;
   v4 = *(IUnknown **)(v3 + 380);
   if ( v4 || *(_DWORD *)(v3 + 384) )
     MEMORY[0x87F7EC] = (TechnoTypeClass *)Random::Range(
                                             &MEMORY[0x87F8E4].__pad_5568[7484],
                                             v4,
                                             *(IUnknown **)(v3 + 384));
-  v5 = *((_DWORD *)this + 74);
+  v5 = this->q128;
   v6 = *(IUnknown **)(v5 + 388);
   if ( v6 || *(_DWORD *)(v5 + 392) )
     MEMORY[0x87F7F0] = (TechnoTypeClass *)Random::Range(
@@ -3373,7 +3373,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
       }
     }
   }
-  v13 = (_BYTE *)*((_DWORD *)this + 74);
+  v13 = (_BYTE *)this->q128;
   if ( v13[341] )
   {
     v14 = (TechnoClass *)this->q0B0;
@@ -3550,8 +3550,8 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
                   (int)&savedregs,
                   v40,
                   (_DWORD *)v40,
-                  *(IID *)(*((_DWORD *)this + 74) + 348),
-                  *(_DWORD *)(*((_DWORD *)this + 74) + 360));
+                  *(IID *)(this->q128 + 348),
+                  *(_DWORD *)(this->q128 + 360));
               }
             }
           }
@@ -3645,7 +3645,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
   }
   else
   {
-    v59 = (_BYTE *)*((_DWORD *)this + 74);
+    v59 = (_BYTE *)this->q128;
     if ( v59[366] )
     {
       v60 = this->q10C;
@@ -3681,7 +3681,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
                    aP1,
                    (this->health * this->q150) >> 8,
                    v63,
-                   *((_DWORD *)this + 74),
+                   this->q128,
                    1,
                    (int)focus);
       v66 = *(this + 144);
@@ -3732,15 +3732,15 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
   LODWORD(v141) = *((_DWORD *)this + 39);
   v75 = this->health;
   HIDWORD(v141) = this->q0A0;
-  v76 = *((_DWORD *)this + 74);
+  v76 = this->q128;
   LODWORD(v142) = this->q0A4;
   WarheadVersusMultiplier = (CoordStruct *)GetWarheadVersusMultiplier(v75, v76, v70, &v141);
   LOBYTE(Instance) = v130;
-  if ( this->__pad_0E0 )
+  if ( this->q0E0 )
   {
     if ( !v130 )
     {
-      v78 = (_BYTE *)*((_DWORD *)this + 74);
+      v78 = (_BYTE *)this->q128;
       v79 = 0;
       if ( v78[337] )
         v79 = 2;
@@ -3771,7 +3771,7 @@ LABEL_158:
                eax160,
                SBYTE4(Z))) )
       {
-        if ( *((_DWORD *)this + 74) == *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3980) )
+        if ( this->q128 == *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3980) )
         {
           v83 = (TechnoClass *)this->q0B0;
           ecx162 = -1;
@@ -3784,7 +3784,7 @@ LABEL_158:
         }
       }
     }
-    v84 = *((_DWORD *)this + 74);
+    v84 = this->q128;
     v85 = *(_DWORD *)(v84 + 452);
     if ( v85 > 0 )
     {
@@ -3792,7 +3792,7 @@ LABEL_158:
                                  &MEMORY[0xA8B230]->random[1],
                                  *(IUnknown **)(v84 + 456),
                                  (IUnknown *)(v85 - 1));
-      eax166 = *((_DWORD *)this + 74);
+      eax166 = this->q128;
       ppv[1] = v87;
       if ( *(int *)(eax166 + 412) > 0 )
       {
@@ -3816,7 +3816,7 @@ LABEL_158:
               v91 = (VoxelAnimClass *)__2_YAPAXI_Z(0x148u);
               if ( v91 )
               {
-                edi173 = (int *)(4 * (_DWORD)v139 + *(_DWORD *)(*((_DWORD *)this + 74) + 400));
+                edi173 = (int *)(4 * (_DWORD)v139 + *(_DWORD *)(this->q128 + 400));
                 v92 = (int *)(*(int (__thiscall **)(char *, double *))(this->q048)(this, &v141);
                 DamageAnimClass::Constructor((#374 *)v91, *edi173, v92, 0);
               }
@@ -3825,7 +3825,7 @@ LABEL_158:
             while ( v144 );
           }
           v87 = (TechnoTypeClass *)((char *)ppv[1] - (char *)v152);
-          eax166 = *((_DWORD *)this + 74);
+          eax166 = this->q128;
           v88 = (TechnoClass *)&v139->__pad_0[1];
           ppv[1] = (char *)ppv[1] - (int)v152;
           v139 = v88;
@@ -3836,7 +3836,7 @@ LABEL_158:
           }
         }
       }
-      if ( !*(_DWORD *)(*((_DWORD *)this + 74) + 412) && (int)v87 > 0 )
+      if ( !*(_DWORD *)(this->q128 + 412) && (int)v87 > 0 )
       {
         do
         {
@@ -4122,10 +4122,10 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
     v4 = (int *)this->fallRate; /*0x46a336*/
     if ( v4 ) /*0x46a33e*/
     {
-      v5 = *(this + 39); /*0x46a353*/
+      v5 = this->q027; /*0x46a353*/
       v6 = this->owningHouseIndex; /*0x46a359*/
       v7 = *v4; /*0x46a35f*/
-      v92 = *(this + 41); /*0x46a361*/
+      v92 = this->q029; /*0x46a361*/
       v8 = (_DWORD *)(*(int (__thiscall **)(int *, int *))(v7 + 72))(v4, &v93); /*0x46a370*/
       v9 = Coord::Subtract(&v90, *v8 - v5, v8[1] - v6, v8[2] - v92); /*0x46a392*/
       v84 = *v9; /*0x46a399*/
@@ -4203,12 +4203,12 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
                       v29 = this + 39; /*0x46a5b2*/
                       v73 = 0.0; /*0x46a5b8*/
                       v74 = 0.0; /*0x46a5ca*/
-                      v30 = *(this + 39); /*0x46a5da*/
+                      v30 = this->q027; /*0x46a5da*/
                       v75 = 0.0; /*0x46a5dc*/
                       v93 = v30; /*0x46a5ec*/
                       v94 = this->owningHouseIndex; /*0x46a5f8*/
                       v31 = *(_DWORD *)v23; /*0x46a5ff*/
-                      v95 = *(this + 41); /*0x46a605*/
+                      v95 = this->q029; /*0x46a605*/
                       v32 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _BYTE *))(v31 + 72))(v23, v103); /*0x46a614*/
                       LODWORD(v77) = *v32; /*0x46a61c*/
                       v33 = Math::CalcAngle((double)v94 - (double)(int)v32[1], (double)SLODWORD(v77) - (double)v93); /*0x46a63f*/
@@ -4259,13 +4259,13 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
                       v40 = v77 / v39; /*0x46a828*/
                       v90 = *v29; /*0x46a830*/
                       v91 = this->owningHouseIndex; /*0x46a837*/
-                      v92 = *(this + 41); /*0x46a842*/
+                      v92 = this->q029; /*0x46a842*/
                       v73 = v40 * v73; /*0x46a859*/
                       v74 = v74 * v40; /*0x46a863*/
                       v75 = v75 * v40; /*0x46a86d*/
                       (*(void (__thiscall **)(LPVOID, int *, double *))(*(_DWORD *)v82 + 496))(v82, &v90, &v73); /*0x46a875*/
                       v41 = this->owningHouseIndex; /*0x46a87d*/
-                      v42 = *(this + 41); /*0x46a880*/
+                      v42 = this->q029; /*0x46a880*/
                       v84 = *v29; /*0x46a883*/
                       v43 = *(_BYTE *)(v13 + 329); /*0x46a887*/
                       v85 = v41; /*0x46a88d*/
@@ -4336,10 +4336,10 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
               v75 = 0.0; /*0x46aa51*/
               v53 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v76); /*0x46aa61*/
               v54 = this + 39; /*0x46aa66*/
-              v84 = *(this + 39); /*0x46aa70*/
+              v84 = this->q027; /*0x46aa70*/
               v85 = this->owningHouseIndex; /*0x46aa77*/
               v55 = *v53; /*0x46aa7b*/
-              v86 = *(this + 41); /*0x46aa80*/
+              v86 = this->q029; /*0x46aa80*/
               v56 = (_DWORD *)(*(int (__thiscall **)(int *, _BYTE *))(v55 + 72))(v53, v103); /*0x46aa8e*/
               LODWORD(v78) = *v56; /*0x46aa96*/
               v57 = Math::CalcAngle((double)v85 - (double)(int)v56[1], (double)SLODWORD(v78) - (double)v84); /*0x46aab3*/
@@ -4378,12 +4378,12 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
               v90 = *v54; /*0x46ad00*/
               v66 = this->owningHouseIndex; /*0x46ad04*/
               v75 = v65 * v87; /*0x46ad07*/
-              v67 = *(this + 41); /*0x46ad0b*/
+              v67 = this->q029; /*0x46ad0b*/
               v91 = v66; /*0x46ad0e*/
               v92 = v67; /*0x46ad16*/
               (*(void (__thiscall **)(int, int *, double *))(*(_DWORD *)v80 + 496))(v80, &v90, &v73); /*0x46ad29*/
               v68 = this->owningHouseIndex; /*0x46ad31*/
-              v69 = *(this + 41); /*0x46ad34*/
+              v69 = this->q029; /*0x46ad34*/
               v93 = *v54; /*0x46ad37*/
               v70 = *(_BYTE *)(v13 + 329); /*0x46ad3e*/
               v94 = v68; /*0x46ad44*/
@@ -5232,7 +5232,7 @@ _BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
   *(_DWORD *)this = &BulletTypeClass::`vftable'; /*0x46bce6*/
   this->vtable2 = &BulletTypeClass::`vftable'; /*0x46bcec*/
   this->vtable3 = &BulletTypeClass::`vftable'; /*0x46bcf2*/
-  this->__pad_00C = &vt_BulletTypeClass; /*0x46bcf9*/
+  this->vtable4 = &vt_BulletTypeClass; /*0x46bcf9*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x46bd00*/
   *(this + 564) = 1; /*0x46bd05*/
   *(this + 559) = 1; /*0x46bd0c*/

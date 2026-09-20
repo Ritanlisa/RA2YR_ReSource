@@ -2902,7 +2902,7 @@ void __thiscall Terrain::RecursiveModify(_DWORD *this, IUnknown *aP1)
     *(_DWORD *)v87 = v24; /*0x57386b*/
     VectorClass::CellConstructor(&v92, 0, 0); /*0x57386f*/
     v37 = *(ObjectClass **)v87; /*0x573874*/
-    v39 = *(this + 73); /*0x57387f*/
+    v39 = this->q124; /*0x57387f*/
     v92 = &vt_DynamicVectorClass_Cell; /*0x573885*/
     v97 = 10; /*0x57388f*/
     v96 = 0; /*0x573897*/
@@ -2913,11 +2913,11 @@ void __thiscall Terrain::RecursiveModify(_DWORD *this, IUnknown *aP1)
     {
       if ( (__int16)v37 > v39 + this->q12C ) /*0x5738bb*/
         goto LABEL_141; /*0x5738bb*/
-      v40 = *(this + 74); /*0x5738ca*/
+      v40 = this->q128; /*0x5738ca*/
       if ( v87[1] < v40 || v87[1] > v40 + this->q130 ) /*0x5738e6*/
         goto LABEL_141; /*0x5738e6*/
       v41 = (__int16)v37 + (v87[1] << 9); /*0x5738ef*/
-      if ( *(_DWORD *)(this->__pad_13C + 4 * v41) ) /*0x5738fb*/
+      if ( *(_DWORD *)(this->q13C + 4 * v41) ) /*0x5738fb*/
       {
         if ( v41 < 0x40000 && (v42 = *(_DWORD **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_3C[4] + 4 * v41)) != 0 ) /*0x57391b*/
         {
@@ -3062,7 +3062,7 @@ LABEL_111:
         }
       }
       v37 = (ObjectClass *)CellStruct::Add(v87, (IUnknown *)&v86, (IUnknown *)(4 * (esi46 & 7) + 9041544))->field_0; /*0x5739fb*/
-      v39 = *(this + 73); /*0x5739fd*/
+      v39 = this->q124; /*0x5739fd*/
       *(_DWORD *)v87 = v37; /*0x573a03*/
       if ( (__int16)v37 < v39 ) /*0x573a0c*/
         goto LABEL_141; /*0x573a0c*/
@@ -6773,7 +6773,7 @@ bool __thiscall Type_CheckAmbiguity(_DWORD *this, int a2, char a3)
   if ( v3 + v5 > v4 + v6 + 2 * this->q100 && v3 + v5 <= v4 + v6 + 2 * (this->q100 + this->q108) + 2 ) /*0x5785b6*/
   {
     v7 = this->q0FC; /*0x5785b8*/
-    if ( v5 - v3 < 2 * (v7 + this->__pad_104) - v6 && v3 - v5 < v6 - 2 * v7 ) /*0x5785db*/
+    if ( v5 - v3 < 2 * (v7 + this->q104) - v6 && v3 - v5 < v6 - 2 * v7 ) /*0x5785db*/
       return 1; /*0x57859b*/
   }
   return result; /*0x5785dd*/
@@ -6845,43 +6845,43 @@ _DWORD *__thiscall MapClass::SpiralSearch(_DWORD *this)
 
   v2 = this->q0F4; /*0x578723*/
   v3 = this->q120; /*0x578729*/
-  v4 = *(this + 71); /*0x57872f*/
+  v4 = this->q11C; /*0x57872f*/
   if ( v4 + v3 > v2 + 2 * (this->q108 + this->q100) + 12 ) /*0x578740*/
     return 0; /*0x57880b*/
   while ( 1 ) /*0x578746*/
   {
-    v5 = this->__pad_104; /*0x578746*/
+    v5 = this->q104; /*0x578746*/
     v6 = 2 * (v5 + this->q0FC) - v2 - 2; /*0x57875c*/
     LOWORD(v13) = v4; /*0x57875f*/
     HIWORD(v13) = v3; /*0x578766*/
     if ( v4 - v3 < v6 ) /*0x57876b*/
     {
-      *(this + 71) = v4 + 1; /*0x5787be*/
+      this->q11C = v4 + 1; /*0x5787be*/
       this->q120 = v3 - 1; /*0x5787c4*/
     }
     else
     {
       v7 = (((_BYTE)v4 - (_BYTE)v2 + (_BYTE)v3 - 1) & 1) == 1; /*0x578785*/
       v8 = v5 - (v7 + 1); /*0x578790*/
-      v9 = *(this + 71) - v8; /*0x578792*/
+      v9 = this->q11C - v8; /*0x578792*/
       v10 = v8 + this->q120; /*0x578794*/
-      *(this + 71) = v9; /*0x578798*/
+      this->q11C = v9; /*0x578798*/
       this->q120 = v10; /*0x5787a0*/
       if ( v7 ) /*0x5787a8*/
         this->q120 = v10 + 1; /*0x5787ab*/
       else
-        *(this + 71) = v9 + 1; /*0x5787b4*/
+        this->q11C = v9 + 1; /*0x5787b4*/
     }
     if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&v13, (TechnoClass *)1) ) /*0x5787d3*/
       break; /*0x5787d3*/
     v2 = this->q0F4; /*0x5787e8*/
     v3 = this->q120; /*0x5787ee*/
-    v4 = *(this + 71); /*0x5787f4*/
+    v4 = this->q11C; /*0x5787f4*/
     if ( v4 + v3 > v2 + 2 * (this->q108 + this->q100) + 12 ) /*0x578805*/
       return 0; /*0x578805*/
   }
   v12 = (__int16)v13 + (SHIWORD(v13) << 9); /*0x578820*/
-  if ( v12 >= 0x40000 || (result = *(_DWORD **)(this->__pad_13C + 4 * v12)) == 0 ) /*0x578836*/
+  if ( v12 >= 0x40000 || (result = *(_DWORD **)(this->q13C + 4 * v12)) == 0 ) /*0x578836*/
   {
     g_Map_GlobalCellIndex = v13; /*0x57883f*/
     return g_CellClassArray; /*0x578845*/
@@ -7068,7 +7068,7 @@ int __thiscall sub_578B70(_DWORD *this, __int16 *a2)
   v3 = this->q0FC; /*0x578b80*/
   v4 = v2 + this->q0F4 - v3; /*0x578b89*/
   v5 = v2 + v3 + 1; /*0x578b8b*/
-  v6 = this->__pad_104; /*0x578b8f*/
+  v6 = this->q104; /*0x578b8f*/
   v7 = this->q108; /*0x578b95*/
   v8 = *a2; /*0x578bac*/
   v9 = a2[1]; /*0x578baf*/
@@ -7094,7 +7094,7 @@ _DWORD *__thiscall sub_578C50(_DWORD *this, _DWORD *a2, int a3)
   __int16 v8; // [esp+12h] [ebp-Eh]
   int v9; // [esp+28h] [ebp+8h]
 
-  v3 = ((2 * this->__pad_104 - 1) % 3 != 0) + (2 * this->__pad_104 - 1) / 3 * ((a3 - 1) % 3); /*0x578ca4*/
+  v3 = ((2 * this->q104 - 1) % 3 != 0) + (2 * this->q104 - 1) / 3 * ((a3 - 1) % 3); /*0x578ca4*/
   v4 = this->q100; /*0x578ccc*/
   v5 = ((2 * this->q108 - 1) % 3 != 0) + (a3 - 1) / 3 * ((2 * this->q108 - 1) / 3); /*0x578cd8*/
   v6 = this->q0FC; /*0x578cda*/

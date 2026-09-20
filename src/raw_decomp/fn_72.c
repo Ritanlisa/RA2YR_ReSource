@@ -1094,26 +1094,26 @@ char __thiscall VectorClass_ptr_ThemeControl::sub_721300(void *this, int a2, _DW
     *((_BYTE *)this + 12) = 1; /*0x721332*/
     if ( !v4 ) /*0x721336*/
       return 0; /*0x7213aa*/
-    if ( this->q004 ) /*0x721338*/
+    if ( this->Items ) /*0x721338*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x72133f*/
       if ( a2 < v5 ) /*0x721344*/
         v5 = a2; /*0x721346*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x72134c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x72134c*/
         ++i; /*0x721351*/
       if ( *((_BYTE *)this + 13) ) /*0x72135e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x721369*/
-        this->q004 = 0; /*0x721371*/
+        this->Items = 0; /*0x721371*/
       }
     }
-    this->q004 = v4; /*0x72137a*/
+    this->Items = v4; /*0x72137a*/
     this->DynamicVector_field_0x8 = a2; /*0x721382*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x721385*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x72138e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x72138e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x721391*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x721399*/
@@ -1129,7 +1129,7 @@ int __thiscall VectorClass_ptr_ThemeControl::sub_7213B0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x7213b0*/
+  v2 = this->Items; /*0x7213b0*/
   result = 0; /*0x7213b3*/
   if ( v2 <= 0 ) /*0x7213b8*/
     return -1; /*0x7213cf*/
@@ -1325,10 +1325,10 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
   this->Spread = -1717986918; /*0x7216e7*/
   *(this + 38) = -1; /*0x7216f1*/
   *(this + 39) = 0; /*0x7216fb*/
-  *(this + 41) = 1069128089; /*0x721701*/
+  this->q0A4 = 1069128089; /*0x721701*/
   this->lineTrailer = 0; /*0x721707*/
   *(this + 45) = 1069128089; /*0x72170d*/
-  *(this + 46) = 0; /*0x721713*/
+  this->q0B8 = 0; /*0x721713*/
   this->Growth = 0; /*0x721719*/
   *(this + 48) = 0; /*0x72171f*/
   AnimTypeVector::Constructor(this + 49, 0, 0); /*0x721725*/
@@ -1336,26 +1336,26 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
   this->Debris = 0; /*0x721731*/
   this->q0C4 = &vt_TypeList_AnimTypeClass_const; /*0x721734*/
   this->NumImages = 0; /*0x72173a*/
-  *(this + 57) = 0; /*0x721740*/
-  *(this + 58) = 0; /*0x721746*/
+  this->q0E4 = 0; /*0x721740*/
+  this->q0E8 = 0; /*0x721746*/
   this->TiberiumClass_field_EC = 0; /*0x72174c*/
   this->TiberiumClass_field_F0 = 0; /*0x721752*/
   this->q0F4 = 0; /*0x721758*/
   this->q0F8 = 0; /*0x72175e*/
   this->q0FC = 0; /*0x721764*/
   *(this + 64) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x721770*/
-  *(this + 66) = 0; /*0x721776*/
+  this->q108 = 0; /*0x721776*/
   this->q10C = 0; /*0x72177c*/
   this->q110 = 0; /*0x721782*/
   this->q114 = 0; /*0x721788*/
   this->TiberiumClass_field_118 = 0; /*0x72178e*/
   v3 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x721794*/
-  *(this + 73) = 0; /*0x72179a*/
+  this->q124 = 0; /*0x72179a*/
   *(this + 71) = v3; /*0x7217a0*/
   *this = &TiberiumClass::`vftable'; /*0x7217a6*/
   this->vtable2 = &TiberiumClass::`vftable'; /*0x7217ac*/
-  *(this + 2) = &TiberiumClass::`vftable'; /*0x7217b3*/
-  *(this + 3) = &vt_TiberiumClass; /*0x7217ba*/
+  this->vtable3 = &TiberiumClass::`vftable'; /*0x7217b3*/
+  this->vtable4 = &vt_TiberiumClass; /*0x7217ba*/
   *(this + 38) = *(_DWORD *)&stru_B05488.__pad_579C[18644]; /*0x7217c6*/
   if ( *(int *)&stru_B05488.__pad_579C[18644] < *(int *)&stru_B05488.__pad_579C[18636] /*0x7217fe*/
     || (stru_B05488.__pad_579C[18641] || !*(_DWORD *)&stru_B05488.__pad_579C[18636])
@@ -2382,7 +2382,7 @@ int __thiscall BuildingClass_RebuildOccupancy(int **this)
   result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x72290b*/
   for ( j = (_DWORD *)result; result; j = (_DWORD *)result ) /*0x722914*/
   {
-    if ( (int *)BuildingClass::FindByCellHash(j) == *(this + 38) /*0x722931*/
+    if ( (int *)BuildingClass::FindByCellHash(j) == this->q026 /*0x722931*/
       && (unsigned __int8)BuildingClass::IsTiberiumSiloEligible(j) )
     {
       v7 = (__int16 *)(j + 9); /*0x72294a*/
@@ -3061,7 +3061,7 @@ int __thiscall BuildingClass_RebuildOccupancy2(int **this)
   result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x7233fb*/
   for ( j = (_DWORD *)result; result; j = (_DWORD *)result ) /*0x723404*/
   {
-    if ( (int *)BuildingClass::FindByCellHash(j) == *(this + 38) /*0x723421*/
+    if ( (int *)BuildingClass::FindByCellHash(j) == this->q026 /*0x723421*/
       && (unsigned __int8)BuildingClass::IsTiberiumCollectorEligible(j) )
     {
       v7 = (__int16 *)(j + 9); /*0x72343a*/
@@ -3425,26 +3425,26 @@ char __thiscall VectorClass_ptr_TiberiumClass::sub_723910(void *this, int a2, _D
     *((_BYTE *)this + 12) = 1; /*0x723942*/
     if ( !v4 ) /*0x723946*/
       return 0; /*0x7239ba*/
-    if ( this->q004 ) /*0x723948*/
+    if ( this->Items ) /*0x723948*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x72394f*/
       if ( a2 < v5 ) /*0x723954*/
         v5 = a2; /*0x723956*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x72395c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x72395c*/
         ++i; /*0x723961*/
       if ( *((_BYTE *)this + 13) ) /*0x72396e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x723979*/
-        this->q004 = 0; /*0x723981*/
+        this->Items = 0; /*0x723981*/
       }
     }
-    this->q004 = v4; /*0x72398a*/
+    this->Items = v4; /*0x72398a*/
     this->DynamicVector_field_0x8 = a2; /*0x723992*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x723995*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x72399e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x72399e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x7239a1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x7239a9*/
@@ -3460,7 +3460,7 @@ int __thiscall VectorClass_ptr_TiberiumClass::sub_7239C0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x7239c0*/
+  v2 = this->Items; /*0x7239c0*/
   result = 0; /*0x7239c3*/
   if ( v2 <= 0 ) /*0x7239c8*/
     return -1; /*0x7239df*/
@@ -3733,10 +3733,10 @@ int __thiscall GadgetClass::ProcessMouseOver(_DWORD *this, int a2, ControlClass 
   char v14; // [esp+Bh] [ebp-1h]
 
   if ( (unsigned int)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 44))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228]) /*0x723ef6*/
-                    - *(this + 3)) >= *(this + 5)
+                    - this->Width) >= this->Visible
     || (v14 = 1,
         (unsigned int)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 48))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228])
-                     - *(this + 4)) >= *(this + 6)) )
+                     - this->Height) >= this->ID) )
   {
     v14 = 0; /*0x723ef8*/
   }
@@ -3779,7 +3779,7 @@ int __thiscall GadgetClass::ProcessMouseOver(_DWORD *this, int a2, ControlClass 
     }
     if ( v14 ) /*0x723f7f*/
     {
-      v11 = *(this + 12); /*0x723f81*/
+      v11 = this->q030; /*0x723f81*/
       if ( v11 == 1 ) /*0x723f87*/
       {
         v12 = *this; /*0x723f8c*/
@@ -4743,26 +4743,26 @@ char __thiscall ToolTipManager_7_::_vt02(void *this, int a2, _DWORD *a3)
     *((_BYTE *)this + 12) = 1; /*0x724e42*/
     if ( !v4 ) /*0x724e46*/
       return 0; /*0x724eba*/
-    if ( this->q004 ) /*0x724e48*/
+    if ( this->Items ) /*0x724e48*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x724e4f*/
       if ( a2 < v5 ) /*0x724e54*/
         v5 = a2; /*0x724e56*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x724e5c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x724e5c*/
         ++i; /*0x724e61*/
       if ( *((_BYTE *)this + 13) ) /*0x724e6e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x724e79*/
-        this->q004 = 0; /*0x724e81*/
+        this->Items = 0; /*0x724e81*/
       }
     }
-    this->q004 = v4; /*0x724e8a*/
+    this->Items = v4; /*0x724e8a*/
     this->DynamicVector_field_0x8 = a2; /*0x724e92*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x724e95*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x724e9e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x724e9e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x724ea1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x724ea9*/
@@ -4778,7 +4778,7 @@ int __thiscall ToolTipManager_7_::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x724ec0*/
+  v2 = this->Items; /*0x724ec0*/
   result = 0; /*0x724ec3*/
   if ( v2 <= 0 ) /*0x724ec8*/
     return -1; /*0x724edf*/
@@ -5899,8 +5899,8 @@ int __thiscall BuildingClass_ProcessUpgradeEffects(int *this)
       *(this + 13) = (int)MEMORY[0xA8ED84]; /*0x726431*/
       *(this + 14) = v8; /*0x72643a*/
       *(this + 15) = 5 * v5; /*0x72643f*/
-      result = ~(1 << v2) & *(this + 16); /*0x72644e*/
-      *(this + 16) = result; /*0x726450*/
+      result = ~(1 << v2) & this->uniqueId; /*0x72644e*/
+      this->uniqueId = result; /*0x726450*/
     }
     if ( i[11] == 51 ) /*0x726457*/
     {
@@ -5910,7 +5910,7 @@ int __thiscall BuildingClass_ProcessUpgradeEffects(int *this)
       *(this + 14) = v8; /*0x72648e*/
       *(this + 15) = 15 * (v6 + v7 / 2); /*0x726494*/
       result = ~(1 << v2); /*0x7264a3*/
-      *(this + 16) &= result; /*0x7264a7*/
+      this->uniqueId &= result; /*0x7264a7*/
     }
     i = (_DWORD *)i[10]; /*0x7264aa*/
   }
@@ -6403,9 +6403,9 @@ _DWORD *__thiscall TriggerTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
   this->firstEvent = 0; /*0x726cc6*/
   this->firstAction = 0; /*0x726ccc*/
   *this = &TriggerTypeClass::`vftable'; /*0x726cd2*/
-  *(this + 1) = &TriggerTypeClass::`vftable'; /*0x726cd8*/
-  *(this + 2) = &TriggerTypeClass::`vftable'; /*0x726cdf*/
-  *(this + 3) = &vt_TriggerTypeClass; /*0x726ce6*/
+  this->vtable2 = &TriggerTypeClass::`vftable'; /*0x726cd8*/
+  this->vtable3 = &TriggerTypeClass::`vftable'; /*0x726cdf*/
+  this->vtable4 = &vt_TriggerTypeClass; /*0x726ce6*/
   if ( *(int *)&stru_B05488.__pad_579C[19012] < *(int *)&stru_B05488.__pad_579C[19004] /*0x726d21*/
     || (stru_B05488.__pad_579C[19009] || !*(_DWORD *)&stru_B05488.__pad_579C[19004])
     && *(int *)&stru_B05488.__pad_579C[19016] > 0
@@ -7474,14 +7474,14 @@ int sub_727FB0()
   #373 **v7; // edi
 
   AbstractClass::Constructor(this); /*0x727fd5*/
-  this->q024 = *(_DWORD *)a2; /*0x727fe4*/
-  *((_DWORD *)this + 10) = *(_DWORD *)a2; /*0x727fec*/
-  *((_DWORD *)this + 11) = a3; /*0x727ff0*/
-  *((_DWORD *)this + 112) = 0; /*0x727ff3*/
+  this->objectTypeFlags = *(_DWORD *)a2; /*0x727fe4*/
+  this->owningHouseIndex = *(_DWORD *)a2; /*0x727fec*/
+  this->fallRate = a3; /*0x727ff0*/
+  this->q1C0 = 0; /*0x727ff3*/
   *(_DWORD *)this = &TubeClass::`vftable'; /*0x727ffd*/
-  *((_DWORD *)this + 1) = &TubeClass::`vftable'; /*0x728003*/
-  *((_DWORD *)this + 2) = &TubeClass::`vftable'; /*0x728009*/
-  *((_DWORD *)this + 3) = &TubeClass::`vftable'; /*0x728010*/
+  this->vtable2 = &TubeClass::`vftable'; /*0x728003*/
+  this->vtable3 = &TubeClass::`vftable'; /*0x728009*/
+  this->vtable4 = &TubeClass::`vftable'; /*0x728010*/
   AbstractClass::GenerateUniqueID((int)this + 4); /*0x728017*/
   memset((char *)this + 48, 0xFFu, 0x190u); /*0x728027*/
   if ( MEMORY[0x87F7E8][53848] < MEMORY[0x87F7E8][53846] /*0x72805f*/

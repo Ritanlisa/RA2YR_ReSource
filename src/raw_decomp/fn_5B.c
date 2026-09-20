@@ -1442,7 +1442,7 @@ LABEL_5:
         break; /*0x5b31b5*/
       case 5: /*0x5b30c1*/
       case 6: /*0x5b30c1*/
-        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 540))(this); /*0x5b32ec*/
+        v2 = (*(int (__thiscall **)(int))(this->q21C)(this); /*0x5b32ec*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b32f9*/
         *(_DWORD *)(this + 204) = v6; /*0x5b32ff*/
         *(_DWORD *)(this + 208) = v2; /*0x5b3302*/
@@ -1455,13 +1455,13 @@ LABEL_5:
         break; /*0x5b312d*/
       case 8: /*0x5b30c1*/
       case 0x11: /*0x5b30c1*/
-        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 532))(this); /*0x5b330e*/
+        v2 = (*(int (__thiscall **)(int))(this->q214)(this); /*0x5b330e*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b331b*/
         *(_DWORD *)(this + 204) = v6; /*0x5b3321*/
         *(_DWORD *)(this + 208) = v2; /*0x5b3324*/
         break; /*0x5b332b*/
       case 9: /*0x5b30c1*/
-        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 536))(this); /*0x5b3330*/
+        v2 = (*(int (__thiscall **)(int))(this->__pad_218)(this); /*0x5b3330*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b333d*/
         *(_DWORD *)(this + 204) = v6; /*0x5b3343*/
         *(_DWORD *)(this + 208) = v2; /*0x5b3346*/
@@ -1581,7 +1581,7 @@ LABEL_5:
         *(_DWORD *)(this + 208) = v2; /*0x5b3434*/
         break; /*0x5b343b*/
       case 0x1F: /*0x5b30c1*/
-        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 624))(this); /*0x5b3440*/
+        v2 = (*(int (__thiscall **)(int))(this->q270)(this); /*0x5b3440*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b344d*/
         *(_DWORD *)(this + 204) = v6; /*0x5b3453*/
         *(_DWORD *)(this + 208) = v2; /*0x5b3456*/
@@ -1617,8 +1617,8 @@ int __thiscall MissionClass::AdvanceState(#377 *this)
     v2 = MEMORY[0xA8ED84]; /*0x5b358f*/
     this->missionStatus = 0; /*0x5b359c*/
     *((_DWORD *)this + 50) = v2; /*0x5b35a2*/
-    *((_DWORD *)this + 51) = v3; /*0x5b35a8*/
-    *((_DWORD *)this + 52) = 0; /*0x5b35ab*/
+    this->q0CC = v3; /*0x5b35a8*/
+    this->q0D0 = 0; /*0x5b35ab*/
     result = (int)MEMORY[0xA8ED84]; /*0x5b35ae*/
     this->missionStartTime = MEMORY[0xA8ED84]; /*0x5b35b3*/
     this->missionData = 0; /*0x5b35b9*/
@@ -1653,7 +1653,7 @@ int __thiscall BuildingClass::MissionDispatch(#377 *this)
     LOBYTE(result) = v6; /*0x5b3621*/
     if ( v6 ) /*0x5b3627*/
     {
-      result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 512))(this); /*0x5b362d*/
+      result = (*(int (__thiscall **)(#377 *))(this->q200)(this); /*0x5b362d*/
       if ( (_BYTE)result ) /*0x5b3635*/
         return (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 492))(this); /*0x5b363b*/
     }
@@ -2033,7 +2033,7 @@ _DWORD *__thiscall MixFileClass::FromFile(_DWORD *this, MixFileClass *aP1, int a
   *((_BYTE *)this + 18) = 0; /*0x5b3c40*/
   this->FileStartOffset = 0; /*0x5b3c43*/
   this->Headers = 0; /*0x5b3c46*/
-  this->__pad_01C = 0; /*0x5b3c49*/
+  this->q01C = 0; /*0x5b3c49*/
   this->q020 = 0; /*0x5b3c4c*/
   this->MixFileClass_field_24 = 0; /*0x5b3c4f*/
   *this = &vt_MixFileClass; /*0x5b3c52*/
@@ -2084,7 +2084,7 @@ _DWORD *__thiscall MixFileClass::FromFile(_DWORD *this, MixFileClass *aP1, int a
   {
     (*(void (__thiscall **)(int *, int, int))(*v4 + 8))(v4, v9, 12 * this->FileStartOffset); /*0x5b3dc8*/
     v10 = BufferIOFileClass::Seek(v21, 0, 1u); /*0x5b3dd2*/
-    this->__pad_01C = v21[3] + v10; /*0x5b3ddf*/
+    this->q01C = v21[3] + v10; /*0x5b3ddf*/
     v11 = (int)*(&g_MatrixTransformState + 120); /*0x5b3de2*/
     MixFileClass::LinkIntoPool(this); /*0x5b3de8*/
     v12 = *(_DWORD *)(v11 + 4); /*0x5b3ded*/
@@ -8467,7 +8467,7 @@ _BYTE *__thiscall sub_5BDA40(_BYTE *this)
   this->q555C = 0; /*0x5bda50*/
   this->q5560 = 0; /*0x5bda56*/
   this->q5564 = 0; /*0x5bda5c*/
-  *((_DWORD *)this + 5466) = 0; /*0x5bda62*/
+  this->q5568 = 0; /*0x5bda62*/
   *((_DWORD *)this + 5446) = &vt_MouseClass; /*0x5bda68*/
   return this; /*0x5bda74*/
 }
@@ -8831,9 +8831,9 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
     {
       dword_822CF8 = -1; /*0x5bdfc3*/
       (*(void (__thiscall **)(int *))(*this + 92))(this); /*0x5bdfd2*/
-      __3_YAXPAX_Z((void *)*(this + 28)); /*0x5bdfd9*/
+      __3_YAXPAX_Z((void *)this->q01C); /*0x5bdfd9*/
       v5 = (void *)*(this + 26); /*0x5bdfde*/
-      *(this + 28) = 0; /*0x5bdfe1*/
+      this->q01C = 0; /*0x5bdfe1*/
       __3_YAXPAX_Z(v5); /*0x5bdfe5*/
       v6 = (_DWORD *)*(this + 5); /*0x5bdfea*/
       *(this + 26) = 0; /*0x5bdff2*/
@@ -8921,13 +8921,13 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
         (*(void (__thiscall **)(int *))(*this + 88))(this); /*0x5be12d*/
         (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x5be135*/
         v17 = *this; /*0x5be138*/
-        *(this + 28) = 0; /*0x5be14a*/
+        this->q01C = 0; /*0x5be14a*/
         *(this + 26) = 0; /*0x5be14d*/
         (*(void (__thiscall **)(int *, int *, int, _DWORD, _DWORD))(v17 + 112))(this, this + 59, 1, 0, 0); /*0x5be150*/
-        if ( *(this + 28) ) /*0x5be153*/
+        if ( this->q01C ) /*0x5be153*/
         {
-          __3_YAXPAX_Z((void *)*(this + 28)); /*0x5be15b*/
-          *(this + 28) = 0; /*0x5be163*/
+          __3_YAXPAX_Z((void *)this->q01C); /*0x5be15b*/
+          this->q01C = 0; /*0x5be163*/
         }
         if ( *(this + 26) ) /*0x5be166*/
         {
@@ -8936,7 +8936,7 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
         }
         v18 = (void *)__2_YAPAXI_Z(10 * *(this + 27)); /*0x5be182*/
         v19 = *(this + 27); /*0x5be187*/
-        *(this + 28) = (int)v18; /*0x5be18a*/
+        this->q01C = (int)v18; /*0x5be18a*/
         v20 = (_BYTE *)__2_YAPAXI_Z(4 * v19); /*0x5be195*/
         if ( v20 ) /*0x5be19f*/
         {
@@ -9110,7 +9110,7 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
                 if ( v75 <= 0 ) /*0x5be3df*/
                 {
 LABEL_72:
-                  for ( i = 0; i < *(this + 80); ++i ) /*0x5be492*/
+                  for ( i = 0; i < this->q050; ++i ) /*0x5be492*/
                   {
                     v60 = *(_DWORD *)(*(this + 79) + 4 * i); /*0x5be49a*/
                     if ( v60 ) /*0x5be49f*/
@@ -9245,7 +9245,7 @@ LABEL_99:
                     if ( result < 0 ) /*0x5be416*/
                       break; /*0x5be416*/
                     v54 = *(this + 22); /*0x5be41c*/
-                    if ( *(this + 24) < v54 /*0x5be440*/
+                    if ( this->q018 < v54 /*0x5be440*/
                       || (*((_BYTE *)this + 93) || !v54)
                       && (v55 = *(this + 25), v55 > 0)
                       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(this->MouseClass_field_0x14 + 8))(
@@ -9253,9 +9253,9 @@ LABEL_99:
                            v55 + v54,
                            0) )
                     {
-                      v56 = *(this + 24); /*0x5be447*/
+                      v56 = this->q018; /*0x5be447*/
                       v57 = v80; /*0x5be44a*/
-                      *(this + 24) = v56 + 1; /*0x5be451*/
+                      this->q018 = v56 + 1; /*0x5be451*/
                       v58 = (_DWORD *)(*(this + 21) + 16 * v56); /*0x5be45a*/
                       *v58 = v57; /*0x5be45c*/
                       v58[1] = v81; /*0x5be462*/
@@ -9342,7 +9342,7 @@ HRESULT __thiscall MouseClass::DrawCursor(int *this, LPSTREAM pStm)
             if ( v6 >= 13 ) /*0x5be767*/
             {
               v8 = *(_DWORD *)v2->__pad_0; /*0x5be76c*/
-              v20 = *(this + 24); /*0x5be778*/
+              v20 = this->q018; /*0x5be778*/
               result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(v8 + 16))(v2, &v20, 4, 0); /*0x5be77c*/
               if ( result >= 0 ) /*0x5be781*/
               {

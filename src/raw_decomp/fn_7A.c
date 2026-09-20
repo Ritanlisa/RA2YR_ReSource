@@ -9155,26 +9155,26 @@ char __thiscall WonlineStringDialogControl_12_::sub_7AD210(void *this, int a2, _
     *((_BYTE *)this + 12) = 1; /*0x7ad242*/
     if ( !v4 ) /*0x7ad246*/
       return 0; /*0x7ad2ba*/
-    if ( this->q004 ) /*0x7ad248*/
+    if ( this->Items ) /*0x7ad248*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x7ad24f*/
       if ( a2 < v5 ) /*0x7ad254*/
         v5 = a2; /*0x7ad256*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x7ad25c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x7ad25c*/
         ++i; /*0x7ad261*/
       if ( *((_BYTE *)this + 13) ) /*0x7ad26e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x7ad279*/
-        this->q004 = 0; /*0x7ad281*/
+        this->Items = 0; /*0x7ad281*/
       }
     }
-    this->q004 = v4; /*0x7ad28a*/
+    this->Items = v4; /*0x7ad28a*/
     this->DynamicVector_field_0x8 = a2; /*0x7ad292*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x7ad295*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x7ad29e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x7ad29e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x7ad2a1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x7ad2a9*/
@@ -9190,7 +9190,7 @@ int __thiscall WonlineStringDialogControl_12_::sub_7AD2C0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x7ad2c0*/
+  v2 = this->Items; /*0x7ad2c0*/
   result = 0; /*0x7ad2c3*/
   if ( v2 <= 0 ) /*0x7ad2c8*/
     return -1; /*0x7ad2df*/

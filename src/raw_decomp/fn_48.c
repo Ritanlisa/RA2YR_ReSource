@@ -4970,7 +4970,7 @@ bool __thiscall Value_InRange(int *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x486730*/
+  v1 = this->tail_E; /*0x486730*/
   return v1 >= unk_AA0E20 && v1 < unk_AA0E20 + 14; /*0x486746*/
 }
 
@@ -5076,7 +5076,7 @@ int __thiscall CellClass::_vt22(#378 *this)
   if ( (this->flags & 0x100) != 0 ) /*0x48689d*/
   {
     v1 = MEMORY[0x89E7B4]; /*0x4868a1*/
-    v2 = (int *)(*(int (__thiscall **)(#378 *, _BYTE *))(this->__pad_048)(this, v8); /*0x4868ad*/
+    v2 = (int *)(*(int (__thiscall **)(#378 *, _BYTE *))(this->q048)(this, v8); /*0x4868ad*/
     v3 = *v2; /*0x4868b0*/
     v4 = v2[1]; /*0x4868b2*/
     v5 = v1 + v2[2]; /*0x4868b8*/
@@ -5087,7 +5087,7 @@ int __thiscall CellClass::_vt22(#378 *this)
   }
   else
   {
-    v7 = (_DWORD *)(*(int (__thiscall **)(#378 *, _BYTE *))(this->__pad_048)(this, v8); /*0x4868dc*/
+    v7 = (_DWORD *)(*(int (__thiscall **)(#378 *, _BYTE *))(this->q048)(this, v8); /*0x4868dc*/
     *v9 = *v7; /*0x4868e6*/
     v9[1] = v7[1]; /*0x4868eb*/
     v9[2] = v7[2]; /*0x4868f2*/
@@ -6374,12 +6374,12 @@ char __thiscall CellClass_AttachObject(_DWORD *this, int a2)
 {
   int v3; // eax
 
-  v3 = this->__pad_0E0; /*0x487d77*/
+  v3 = this->q0E0; /*0x487d77*/
   if ( a2 ) /*0x487d7f*/
   {
     if ( !v3 || v3 == a2 ) /*0x487dc0*/
     {
-      this->__pad_0E0 = a2; /*0x487dc8*/
+      this->q0E0 = a2; /*0x487dc8*/
       if ( (*(_BYTE *)(a2 + 20) & 4) != 0 ) /*0x487dd3*/
         FootClass::Jumpjet_OccupyCell(this->objectTypeFlags); /*0x487dd9*/
       return 1; /*0x487dde*/
@@ -6396,7 +6396,7 @@ char __thiscall CellClass_AttachObject(_DWORD *this, int a2)
       if ( (*(_BYTE *)(v3 + 20) & 4) != 0 ) /*0x487d89*/
         FootClass::Jumpjet_OccupyCell(MEMORY[0x89E748]); /*0x487da5*/
     }
-    this->__pad_0E0 = 0; /*0x487daa*/
+    this->q0E0 = 0; /*0x487daa*/
     return 1; /*0x487db4*/
   }
 }
@@ -6738,7 +6738,7 @@ CheckListClass *__thiscall sub_488280(
         int a9)
 {
   ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x4882ad*/
-  *(this + 372) = 0; /*0x4882b2*/
+  this->q174 = 0; /*0x4882b2*/
   *(_DWORD *)this = &vt_CheckListClass; /*0x4882b9*/
   return (CheckListClass *)this; /*0x4882c1*/
 }
@@ -6979,7 +6979,7 @@ char __thiscall ObjectClass_GetStateFlag(_BYTE *this)
 // ==== 0x004886B0  ListClass::COMStub  this=ListClass  sig=csp ====
 int __thiscall CheckListClass::_vt37(_DWORD *this)
 {
-  return *(this + 17); /*0x4886b3*/
+  return this->q044; /*0x4886b3*/
 }
 
 
@@ -7061,7 +7061,7 @@ int __thiscall sub_4887F0(_DWORD *this)
   _DWORD *v3; // esi
   void *v4; // eax
 
-  v2 = *(this + 93); /*0x4887f5*/
+  v2 = this->__pad_174; /*0x4887f5*/
   v3 = this + 93; /*0x4887fb*/
   *this = &vt_ColorListClass; /*0x488803*/
   (*(void (__thiscall **)(_DWORD *))(v2 + 12))(this + 93); /*0x488809*/
@@ -8861,26 +8861,26 @@ char __thiscall VectorClass_ptr_DamageGroup::sub_48AEF0(void *this, int a2, _DWO
     *((_BYTE *)this + 12) = 1; /*0x48af22*/
     if ( !v4 ) /*0x48af26*/
       return 0; /*0x48af9a*/
-    if ( this->q004 ) /*0x48af28*/
+    if ( this->Items ) /*0x48af28*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x48af2f*/
       if ( a2 < v5 ) /*0x48af34*/
         v5 = a2; /*0x48af36*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x48af3c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x48af3c*/
         ++i; /*0x48af41*/
       if ( *((_BYTE *)this + 13) ) /*0x48af4e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x48af59*/
-        this->q004 = 0; /*0x48af61*/
+        this->Items = 0; /*0x48af61*/
       }
     }
-    this->q004 = v4; /*0x48af6a*/
+    this->Items = v4; /*0x48af6a*/
     this->DynamicVector_field_0x8 = a2; /*0x48af72*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x48af75*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x48af7e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x48af7e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x48af81*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x48af89*/
@@ -8896,7 +8896,7 @@ int __thiscall VectorClass_ptr_DamageGroup::sub_48AFA0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x48afa0*/
+  v2 = this->Items; /*0x48afa0*/
   result = 0; /*0x48afa3*/
   if ( v2 <= 0 ) /*0x48afa8*/
     return -1; /*0x48afbf*/
@@ -11725,7 +11725,7 @@ _DWORD *__thiscall ControlClass::CtorFromData(_DWORD *this, EditClass *aP1)
 {
   ControlClass::Constructor(this, aP1); /*0x48e579*/
   this->q024 = aP1[9]; /*0x48e581*/
-  *(this + 10) = aP1[10]; /*0x48e587*/
+  this->__pad_028 = aP1[10]; /*0x48e587*/
   *this = &ControlClass::`vftable'; /*0x48e58a*/
   return this; /*0x48e592*/
 }
@@ -11765,7 +11765,7 @@ int __thiscall CellClass_Draw(int this, int a2, _DWORD *a3, int a4)
 // ==== 0x0048E600  ControlClass::SetMember10  this=ControlClass  sig=csp ====
 int __thiscall MiniStub_48e600(_DWORD *this, int a2)
 {
-  *(this + 10) = a2; /*0x48e604*/
+  this->__pad_028 = a2; /*0x48e604*/
   return a2; /*0x48e607*/
 }
 
@@ -11782,7 +11782,7 @@ int __thiscall Control::DispatchClick(_DWORD *this, ControlClass *aP1)
 {
   int v3; // ecx
 
-  v3 = *(this + 10); /*0x48e623*/
+  v3 = this->__pad_028; /*0x48e623*/
   if ( v3 ) /*0x48e628*/
     (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v3 + 108))(v3, 0); /*0x48e62e*/
   return GadgetClass::ClearState(this, aP1); /*0x48e63d*/
@@ -11884,98 +11884,98 @@ int *__thiscall ConvertClass::Construct(int *this, char *a2, char *a3, int a4, i
   *(this + 1) = (*(int (__thiscall **)(int))(*(_DWORD *)a4 + 112))(a4); /*0x48e753*/
   *(this + 2) = 0; /*0x48e756*/
   *(this + 3) = 0; /*0x48e759*/
-  *(this + 4) = 0; /*0x48e75c*/
+  this->q004 = 0; /*0x48e75c*/
   *(this + 5) = 0; /*0x48e75f*/
   *(this + 6) = 0; /*0x48e762*/
   *(this + 7) = 0; /*0x48e765*/
-  *(this + 8) = 0; /*0x48e768*/
+  this->q008 = 0; /*0x48e768*/
   *(this + 9) = 0; /*0x48e76b*/
   *(this + 10) = 0; /*0x48e76e*/
   *(this + 11) = 0; /*0x48e771*/
-  *(this + 12) = 0; /*0x48e774*/
+  this->q00C = 0; /*0x48e774*/
   *(this + 13) = 0; /*0x48e777*/
   *(this + 14) = 0; /*0x48e77a*/
   *(this + 15) = 0; /*0x48e77d*/
-  *(this + 16) = 0; /*0x48e780*/
+  this->q010 = 0; /*0x48e780*/
   *(this + 17) = 0; /*0x48e783*/
   *(this + 18) = 0; /*0x48e786*/
   *(this + 19) = 0; /*0x48e789*/
-  *(this + 20) = 0; /*0x48e78c*/
+  this->q014 = 0; /*0x48e78c*/
   *(this + 21) = 0; /*0x48e78f*/
   *(this + 22) = 0; /*0x48e792*/
   *(this + 23) = 0; /*0x48e795*/
-  *(this + 24) = 0; /*0x48e798*/
+  this->q018 = 0; /*0x48e798*/
   *(this + 25) = 0; /*0x48e79b*/
   *(this + 26) = 0; /*0x48e79e*/
   *(this + 27) = 0; /*0x48e7a1*/
-  *(this + 28) = 0; /*0x48e7a4*/
+  this->q01C = 0; /*0x48e7a4*/
   *(this + 29) = 0; /*0x48e7a7*/
   *(this + 30) = 0; /*0x48e7aa*/
   *(this + 31) = 0; /*0x48e7ad*/
-  *(this + 32) = 0; /*0x48e7b0*/
+  this->q020 = 0; /*0x48e7b0*/
   *(this + 33) = 0; /*0x48e7b6*/
   *(this + 34) = 0; /*0x48e7bc*/
   *(this + 35) = 0; /*0x48e7c2*/
-  *(this + 36) = 0; /*0x48e7c8*/
+  this->q024 = 0; /*0x48e7c8*/
   *(this + 37) = 0; /*0x48e7ce*/
   *(this + 38) = 0; /*0x48e7d4*/
   *(this + 39) = 0; /*0x48e7da*/
-  *(this + 40) = 0; /*0x48e7e0*/
+  this->q028 = 0; /*0x48e7e0*/
   *(this + 41) = 0; /*0x48e7e6*/
   *(this + 42) = 0; /*0x48e7ec*/
   *(this + 43) = 0; /*0x48e7f2*/
-  *(this + 44) = 0; /*0x48e7f8*/
+  this->q02C = 0; /*0x48e7f8*/
   *(this + 45) = 0; /*0x48e7fe*/
   *(this + 46) = 0; /*0x48e804*/
   *(this + 47) = 0; /*0x48e80a*/
-  *(this + 48) = 0; /*0x48e810*/
+  this->q030 = 0; /*0x48e810*/
   *(this + 49) = 0; /*0x48e816*/
   *(this + 50) = 0; /*0x48e81c*/
   *(this + 51) = 0; /*0x48e822*/
-  *(this + 52) = 0; /*0x48e828*/
+  this->q034 = 0; /*0x48e828*/
   *(this + 53) = 0; /*0x48e82e*/
   *(this + 54) = 0; /*0x48e834*/
   *(this + 55) = 0; /*0x48e83a*/
-  *(this + 56) = 0; /*0x48e840*/
+  this->q038 = 0; /*0x48e840*/
   *(this + 57) = 0; /*0x48e846*/
   *(this + 58) = 0; /*0x48e84c*/
   *(this + 59) = 0; /*0x48e852*/
-  *(this + 60) = 0; /*0x48e858*/
+  this->q03C = 0; /*0x48e858*/
   *(this + 61) = 0; /*0x48e85e*/
   *(this + 62) = 0; /*0x48e864*/
   *(this + 63) = 0; /*0x48e86a*/
-  *(this + 64) = 0; /*0x48e870*/
+  this->q040 = 0; /*0x48e870*/
   *(this + 65) = 0; /*0x48e876*/
   *(this + 66) = 0; /*0x48e87c*/
   *(this + 67) = 0; /*0x48e882*/
-  *(this + 68) = 0; /*0x48e888*/
+  this->q044 = 0; /*0x48e888*/
   *(this + 69) = 0; /*0x48e88e*/
   *(this + 70) = 0; /*0x48e894*/
   *(this + 71) = 0; /*0x48e89a*/
-  *(this + 72) = 0; /*0x48e8a0*/
+  this->q048 = 0; /*0x48e8a0*/
   v7 = a5; /*0x48e8a6*/
   v8 = 1; /*0x48e8aa*/
   v9 = a5 < 1; /*0x48e8af*/
   *(this + 73) = 0; /*0x48e8b1*/
   *(this + 74) = 0; /*0x48e8b7*/
   *(this + 75) = 0; /*0x48e8bd*/
-  *(this + 76) = 0; /*0x48e8c3*/
+  this->q04C = 0; /*0x48e8c3*/
   *(this + 77) = 0; /*0x48e8c9*/
   *(this + 78) = 0; /*0x48e8cf*/
   *(this + 79) = 0; /*0x48e8d5*/
-  *(this + 80) = 0; /*0x48e8db*/
+  this->q050 = 0; /*0x48e8db*/
   *(this + 81) = 0; /*0x48e8e1*/
   *(this + 82) = 0; /*0x48e8e7*/
   *(this + 83) = 0; /*0x48e8ed*/
-  *(this + 84) = 0; /*0x48e8f3*/
+  this->q054 = 0; /*0x48e8f3*/
   *(this + 85) = 0; /*0x48e8f9*/
   *(this + 86) = 0; /*0x48e8ff*/
   *(this + 87) = 0; /*0x48e905*/
-  *(this + 88) = 0; /*0x48e90b*/
+  this->q058 = 0; /*0x48e90b*/
   *(this + 89) = 0; /*0x48e911*/
   *(this + 90) = 0; /*0x48e917*/
   *(this + 91) = v7; /*0x48e91d*/
-  *(this + 92) = 0; /*0x48e923*/
+  this->q05C = 0; /*0x48e923*/
   *(this + 93) = 0; /*0x48e929*/
   *(this + 94) = 0; /*0x48e92f*/
   *(this + 95) = 0; /*0x48e935*/
@@ -12002,7 +12002,7 @@ int *__thiscall ConvertClass::Construct(int *this, char *a2, char *a3, int a4, i
     }
     while ( v8 < 256 ); /*0x48e9df*/
     v14 = (_BYTE *)__2_YAPAXI_Z(*(this + 91) << 8); /*0x48e9eb*/
-    *(this + 92) = (int)v14; /*0x48e9f0*/
+    this->q05C = (int)v14; /*0x48e9f0*/
     v15 = v14; /*0x48e9f6*/
     v16 = *(this + 91); /*0x48e9f8*/
     *(this + 93) = (int)&v15[256 * ((v16 - 1) >> 1)]; /*0x48ea10*/
@@ -12045,11 +12045,11 @@ int *__thiscall ConvertClass::Construct(int *this, char *a2, char *a3, int a4, i
   {
     v24 = __2_YAPAXI_Z(*(this + 91) << 9); /*0x48eb1c*/
     v25 = *(this + 91); /*0x48eb21*/
-    *(this + 92) = v24; /*0x48eb2a*/
+    this->q05C = v24; /*0x48eb2a*/
     *(this + 93) = v24 + ((v25 - 1) >> 1 << 9); /*0x48eb3a*/
     if ( !a6 ) /*0x48eb46*/
       DSurface::BlitStretch(v24, v25, (int)a2); /*0x48eb51*/
-    *(this + 96) = LOWORD(MEMORY[0x87F7E8][34176]); /*0x48eb60*/
+    this->q060 = LOWORD(MEMORY[0x87F7E8][34176]); /*0x48eb60*/
     *(this + 97) = HIWORD(MEMORY[0x87F7E8][34176]); /*0x48eb6d*/
   }
   if ( !a6 ) /*0x48eb7a*/

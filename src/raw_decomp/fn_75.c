@@ -1526,26 +1526,26 @@ char __thiscall VectorClass_ptr_VocClass::sub_751AB0(void *this, int a2, _DWORD 
     *((_BYTE *)this + 12) = 1; /*0x751ae2*/
     if ( !v4 ) /*0x751ae6*/
       return 0; /*0x751b5a*/
-    if ( this->q004 ) /*0x751ae8*/
+    if ( this->Items ) /*0x751ae8*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x751aef*/
       if ( a2 < v5 ) /*0x751af4*/
         v5 = a2; /*0x751af6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x751afc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x751afc*/
         ++i; /*0x751b01*/
       if ( *((_BYTE *)this + 13) ) /*0x751b0e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x751b19*/
-        this->q004 = 0; /*0x751b21*/
+        this->Items = 0; /*0x751b21*/
       }
     }
-    this->q004 = v4; /*0x751b2a*/
+    this->Items = v4; /*0x751b2a*/
     this->DynamicVector_field_0x8 = a2; /*0x751b32*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x751b35*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x751b3e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x751b3e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x751b41*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x751b49*/
@@ -1561,7 +1561,7 @@ int __thiscall VectorClass_ptr_VocClass::sub_751B60(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x751b60*/
+  v2 = this->Items; /*0x751b60*/
   result = 0; /*0x751b63*/
   if ( v2 <= 0 ) /*0x751b68*/
     return -1; /*0x751b7f*/
@@ -3106,26 +3106,26 @@ char __thiscall VectorClass_ptr_VoxClass::sub_753830(void *this, int a2, _DWORD 
     *((_BYTE *)this + 12) = 1; /*0x753862*/
     if ( !v4 ) /*0x753866*/
       return 0; /*0x7538da*/
-    if ( this->q004 ) /*0x753868*/
+    if ( this->Items ) /*0x753868*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x75386f*/
       if ( a2 < v5 ) /*0x753874*/
         v5 = a2; /*0x753876*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x75387c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x75387c*/
         ++i; /*0x753881*/
       if ( *((_BYTE *)this + 13) ) /*0x75388e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x753899*/
-        this->q004 = 0; /*0x7538a1*/
+        this->Items = 0; /*0x7538a1*/
       }
     }
-    this->q004 = v4; /*0x7538aa*/
+    this->Items = v4; /*0x7538aa*/
     this->DynamicVector_field_0x8 = a2; /*0x7538b2*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x7538b5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x7538be*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x7538be*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x7538c1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x7538c9*/
@@ -3141,7 +3141,7 @@ int __thiscall VectorClass_ptr_VoxClass::sub_7538E0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x7538e0*/
+  v2 = this->Items; /*0x7538e0*/
   result = 0; /*0x7538e3*/
   if ( v2 <= 0 ) /*0x7538e8*/
     return -1; /*0x7538ff*/
@@ -8346,7 +8346,7 @@ BOOL __thiscall MovieClass::RenderLoop(char *this, int a2, char a3)
 
   v9 = 0; /*0x759951*/
   v8 = 0; /*0x759955*/
-  Render_Render_7C3690(*((_DWORD *)this + 128)); /*0x759970*/
+  Render_Render_7C3690(this->q200); /*0x759970*/
   if ( this->q510 != -1 ) /*0x75997c*/
   {
     Render_Render_7C3710(v10, &a2); /*0x759996*/
@@ -8381,7 +8381,7 @@ BOOL __thiscall MovieClass::RenderLoop(char *this, int a2, char a3)
       if ( MEMORY[0xA8ED80] ) /*0x759a89*/
       {
         v8 = 0; /*0x759a99*/
-        *(this + 1360) = 0; /*0x759a9d*/
+        this->q550 = 0; /*0x759a9d*/
         Debug::Log(); /*0x759aa3*/
         goto LABEL_23; /*0x759aa3*/
       }
@@ -8390,17 +8390,17 @@ BOOL __thiscall MovieClass::RenderLoop(char *this, int a2, char a3)
     else
     {
 LABEL_23:
-      if ( MEMORY[0xA8ED80] != 1 || *(this + 1360) ) /*0x759ab4*/
+      if ( MEMORY[0xA8ED80] != 1 || this->q550 ) /*0x759ab4*/
       {
         v8 = 1; /*0x759b2a*/
-        if ( *(this + 1300) && !*(this + 1360) ) /*0x759b33*/
-          ProcessAudioStreamPipeline(*((_DWORD *)this + 128), 2, 0); /*0x759b47*/
-        *(this + 1360) = 1; /*0x759b51*/
+        if ( this->q514 && !this->q550 ) /*0x759b33*/
+          ProcessAudioStreamPipeline(this->q200, 2, 0); /*0x759b47*/
+        this->q550 = 1; /*0x759b51*/
         Debug::Log(); /*0x759b58*/
       }
       else
       {
-        v4 = ProcessAudioStreamPipeline(*((_DWORD *)this + 128), 1, 0); /*0x759acd*/
+        v4 = ProcessAudioStreamPipeline(this->q200, 1, 0); /*0x759acd*/
         if ( v4 >= 0 ) /*0x759ad1*/
         {
           if ( *(this + 1320) ) /*0x759ad7*/
@@ -8410,13 +8410,13 @@ LABEL_23:
           }
           if ( *(_DWORD *)this ) /*0x759af0*/
           {
-            v5 = MovieClass::ComputeTime(*((_DWORD *)this + 128)); /*0x759afa*/
+            v5 = MovieClass::ComputeTime(this->q200); /*0x759afa*/
             BinkMovie::CheckKeyframeTransition(*(_DWORD **)this, v5); /*0x759b02*/
           }
           v6 = (void (*)(void))*((_DWORD *)this + 338); /*0x759b07*/
           if ( v6 ) /*0x759b0f*/
             v6(); /*0x759b11*/
-          *((_DWORD *)this + 321) = v4 + 1; /*0x759b16*/
+          this->q504 = v4 + 1; /*0x759b16*/
         }
       }
       if ( !a3 && EventQueue::Process(MEMORY[0x87F770]) && EventQueue::Read(MEMORY[0x87F770]) == 2075 ) /*0x759b8d*/
@@ -8465,7 +8465,7 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
   *a2 = 0; /*0x759c3b*/
   if ( !*(this + 1361) ) /*0x759c40*/
   {
-    Render_Render_7C3690(*((_DWORD *)this + 128), *((_DWORD *)this + 322)); /*0x759c56*/
+    Render_Render_7C3690(this->q200, *((_DWORD *)this + 322)); /*0x759c56*/
     if ( this->q510 != -1 ) /*0x759c62*/
     {
       Render_Render_7C3710(*((unsigned __int8 **)this + 128), &v10, &v9, &a2); /*0x759c78*/
@@ -8473,22 +8473,22 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
       {
         Voxel::BuildIndexTable(*((void **)this + 324)); /*0x759c91*/
         if ( a2 == (_BYTE *)1 ) /*0x759c9b*/
-          Render_Render_7C3230(*((_DWORD *)this + 128), (int)sub_7C6B70, (int)CopySHPFrameToSurface); /*0x759cad*/
+          Render_Render_7C3230(this->q200, (int)sub_7C6B70, (int)CopySHPFrameToSurface); /*0x759cad*/
       }
     }
     Debug::Log(); /*0x759cb7*/
     *(this + 1361) = 1; /*0x759cbf*/
   }
-  if ( *(this + 1360) == 1 && (MEMORY[0xA8D5F8] & 2) == 0 && !MEMORY[0xA8EDA0] ) /*0x759cdf*/
+  if ( this->q550 == 1 && (MEMORY[0xA8D5F8] & 2) == 0 && !MEMORY[0xA8EDA0] ) /*0x759cdf*/
   {
     if ( MEMORY[0xA8ED80] != 1 ) /*0x759ce8*/
       goto LABEL_28; /*0x759ce8*/
-    *(this + 1360) = 0; /*0x759cf3*/
+    this->q550 = 0; /*0x759cf3*/
     Debug::Log(); /*0x759cfa*/
   }
-  if ( MEMORY[0xA8ED80] == 1 && !*(this + 1360) ) /*0x759d0f*/
+  if ( MEMORY[0xA8ED80] == 1 && !this->q550 ) /*0x759d0f*/
   {
-    v4 = ProcessAudioStreamPipeline(*((_DWORD *)this + 128), 1, 0); /*0x759d2a*/
+    v4 = ProcessAudioStreamPipeline(this->q200, 1, 0); /*0x759d2a*/
     v5 = v4; /*0x759d2f*/
     if ( v4 < 0 ) /*0x759d33*/
     {
@@ -8512,22 +8512,22 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
       }
       if ( *(_DWORD *)this ) /*0x759d51*/
       {
-        v6 = MovieClass::ComputeTime(*((_DWORD *)this + 128)); /*0x759d5c*/
+        v6 = MovieClass::ComputeTime(this->q200); /*0x759d5c*/
         BinkMovie::CheckKeyframeTransition(*(_DWORD **)this, v6); /*0x759d64*/
       }
       v7 = (void (*)(void))*((_DWORD *)this + 338); /*0x759d69*/
       if ( v7 ) /*0x759d71*/
         v7(); /*0x759d73*/
-      *((_DWORD *)this + 321) = v5 + 1; /*0x759d78*/
+      this->q504 = v5 + 1; /*0x759d78*/
       return 1; /*0x759d76*/
     }
   }
 LABEL_28:
   if ( !byte_B45BA4 ) /*0x759dbb*/
   {
-    if ( *(this + 1300) && !*(this + 1360) ) /*0x759dc7*/
-      ProcessAudioStreamPipeline(*((_DWORD *)this + 128), 2, 0); /*0x759dde*/
-    *(this + 1360) = 1; /*0x759de3*/
+    if ( this->q514 && !this->q550 ) /*0x759dc7*/
+      ProcessAudioStreamPipeline(this->q200, 2, 0); /*0x759dde*/
+    this->q550 = 1; /*0x759de3*/
     byte_B45BA4 = 1; /*0x759def*/
     Debug::Log(); /*0x759df6*/
   }
@@ -9065,26 +9065,26 @@ char __thiscall VectorClass_ptr_MovieHandle::sub_75A610(void *this, int a2, _DWO
     *((_BYTE *)this + 12) = 1; /*0x75a642*/
     if ( !v4 ) /*0x75a646*/
       return 0; /*0x75a6ba*/
-    if ( this->q004 ) /*0x75a648*/
+    if ( this->Items ) /*0x75a648*/
     {
       v5 = this->DynamicVector_field_0x8; /*0x75a64f*/
       if ( a2 < v5 ) /*0x75a654*/
         v5 = a2; /*0x75a656*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x75a65c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x75a65c*/
         ++i; /*0x75a661*/
       if ( *((_BYTE *)this + 13) ) /*0x75a66e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x75a679*/
-        this->q004 = 0; /*0x75a681*/
+        this->Items = 0; /*0x75a681*/
       }
     }
-    this->q004 = v4; /*0x75a68a*/
+    this->Items = v4; /*0x75a68a*/
     this->DynamicVector_field_0x8 = a2; /*0x75a692*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x75a695*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->__pad_00C)(this); /*0x75a69e*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x75a69e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x75a6a1*/
   if ( v7 < this->DynamicVector_field_0x10 ) /*0x75a6a9*/
@@ -9100,7 +9100,7 @@ int __thiscall VectorClass_ptr_MovieHandle::sub_75A6C0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->q004; /*0x75a6c0*/
+  v2 = this->Items; /*0x75a6c0*/
   result = 0; /*0x75a6c3*/
   if ( v2 <= 0 ) /*0x75a6c8*/
     return -1; /*0x75a6df*/
@@ -12602,9 +12602,9 @@ int __thiscall sub_75F140(_DWORD *this)
   this->q1C4 = -1; /*0x75f1a9*/
   this->q1C8 = v4; /*0x75f1b3*/
   *(this + 132) = *v5; /*0x75f1bb*/
-  *(this + 133) = *v5; /*0x75f1c3*/
-  *(this + 134) = *v5; /*0x75f1cb*/
-  *(this + 135) = *v5; /*0x75f1d3*/
+  this->q214 = *v5; /*0x75f1c3*/
+  this->__pad_218 = *v5; /*0x75f1cb*/
+  this->q21C = *v5; /*0x75f1d3*/
   *(this + 136) = *v5; /*0x75f1db*/
   *(this + 137) = 2 * *v5; /*0x75f1e5*/
   *(this + 138) = 2 * *v5; /*0x75f1ef*/
