@@ -136,81 +136,75 @@ int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
 namespace gamemd {
 int sub_4D2370()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4D2370()
 {
-  int result; // eax
-  int v1; // esi
-  int v2; // edi
-  _WORD *v3; // esi
-  int v4; // edi
-  _DWORD *v5; // eax
-  _DWORD *v6; // edi
-  _DWORD *v7; // eax
-  int v8; // [esp+8h] [ebp-1Ch]
-  int i; // [esp+Ch] [ebp-18h]
-  int v10; // [esp+10h] [ebp-14h] BYREF
-  _BYTE v11[4]; // [esp+14h] [ebp-10h] BYREF
-  _DWORD v12[3]; // [esp+18h] [ebp-Ch] BYREF
+      int result;
+      int v1;
+      int v2;
+      _WORD *v3;
+      int v4;
+      _DWORD *v5;
+      _DWORD *v6;
+      _DWORD *v7;
+      int v8;
+      int i;
+      int v10;
+      _BYTE v11[4];
+      _DWORD v12[3];
 
-  result = MEMORY[0x8B3D20]; /*0x4d2373*/
-  v1 = 0; /*0x4d2379*/
-  for ( i = 0; v1 < MEMORY[0x8B3D20]; i = v1 ) /*0x4d2381*/
-  {
-    v2 = *((_DWORD *)MEMORY[0x8B3D14] + v1); /*0x4d2399*/
-    if ( *(_DWORD *)(v2 + 48) == 6 /*0x4d23ae*/
-      && (*(int (__thiscall **)(_DWORD, _DWORD))(***(_DWORD ***)(v2 + 96) + 144))(**(_DWORD **)(v2 + 96), 0) )
-    {
-      if ( *(_DWORD *)(v2 + 48) == 6 ) /*0x4d23bf*/
-        v3 = (_WORD *)(*(int (__thiscall **)(_DWORD, _DWORD))(***(_DWORD ***)(v2 + 96) + 144))( /*0x4d23d0*/
-                        **(_DWORD **)(v2 + 96),
-                        0);
-      else
-        v3 = 0; /*0x4d23d4*/
-      v4 = *(_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v2 + 96))(v2, v11); /*0x4d23e2*/
-      v10 = v4; /*0x4d23e4*/
-      while ( *v3 != 0x7FFF || v3[1] != 0x7FFF ) /*0x4d23f9*/
+      result = g_FootClassConfig;
+      v1 = 0;
+      for ( i = 0; v1 < g_FootClassConfig; i = v1 )
       {
-        LOWORD(v8) = v4 + *v3; /*0x4d2408*/
-        HIWORD(v8) = HIWORD(v4) + v3[1]; /*0x4d240d*/
-        v10 = v8; /*0x4d241c*/
-        v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v10); /*0x4d2420*/
-        v3 += 2; /*0x4d2436*/
-        v5[80] |= 0x400000u; /*0x4d2439*/
+        v2 = *((_DWORD *)DataGlobal_8B3D14 + v1);
+        if ( *(_DWORD *)(v2 + 48) == 6
+          && (*(int (__thiscall **)(_DWORD, _DWORD))(***(_DWORD ***)(v2 + 96) + 144))(**(_DWORD **)(v2 + 96), 0) )
+        {
+          if ( *(_DWORD *)(v2 + 48) == 6 )
+            v3 = (_WORD *)(*(int (__thiscall **)(_DWORD, _DWORD))(***(_DWORD ***)(v2 + 96) + 144))(
+                            **(_DWORD **)(v2 + 96),
+                            0);
+          else
+            v3 = 0;
+          v4 = *(_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v2 + 96))(v2, v11);
+          v10 = v4;
+          while ( *v3 != 0x7FFF || v3[1] != 0x7FFF )
+          {
+            LOWORD(v8) = v4 + *v3;
+            HIWORD(v8) = HIWORD(v4) + v3[1];
+            v10 = v8;
+            v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v10);
+            v3 += 2;
+            v5[80] |= 0x400000u;
+          }
+          v1 = i;
+        }
+        else
+        {
+          v6 = (_DWORD *)(v2 + 52);
+          v12[0] = *v6;
+          v12[1] = v6[1];
+          v12[2] = v6[2];
+          v7 = Coord::To_Cell(&DataGlobal_87F7E8, v12);
+          v7[80] |= 0x400000u;
+        }
+        result = g_FootClassConfig;
+        ++v1;
       }
-      v1 = i; /*0x4d2478*/
-    }
-    else
-    {
-      v6 = (_DWORD *)(v2 + 52); /*0x4d243d*/
-      v12[0] = *v6; /*0x4d2442*/
-      v12[1] = v6[1]; /*0x4d244e*/
-      v12[2] = v6[2]; /*0x4d2455*/
-      v7 = Coord::To_Cell(&MEMORY[0x87F7E8], v12); /*0x4d245e*/
-      v7[80] |= 0x400000u; /*0x4d2474*/
-    }
-    result = MEMORY[0x8B3D20]; /*0x4d247c*/
-    ++v1; /*0x4d2481*/
-  }
-  return result; /*0x4d2491*/
+      return result;
 }
-}
-} // namespace gamemd
+} }
 
 // 0x4D2ED0
 namespace gamemd {
 int globalHelper_0D2ED0(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl globalHelper_0D2ED0(_DWORD *a1, _DWORD *a2)
 {
-  if ( *a1 == *a2 )
-    return 0; /*0x4d2ee0*/
-  else
-    return *a1 >= *a2 ? 1 : -1;
+      if ( *a1 == *a2 )
+        return 0;
+      else
+        return *a1 > = (-1) + ((1) - (-1)) * (int)(*a2);
 }
-}
-} // namespace gamemd
+} }
 
 // 0x4D2F00
 namespace gamemd {

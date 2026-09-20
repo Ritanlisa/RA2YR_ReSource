@@ -1,5 +1,18 @@
 # CSP 机械重建：1-6 步计划与实际执行记录
 
+## ⚠️ 新 Agent 接手指令（先读这节）
+
+1. **当前阶段 = 第 6 步后半（RA2MCP/LLM 阶段）**：在 `src/csp_canon/` +
+   `bodies/*.inc` 基底上工作——补锚 7,131 签名缺口（downgrade 4,875 +
+   no-cls 2,256，通道 = CSP 增量求解器）、重命名、优化实现、对拍、complete。
+2. **禁止**：恢复旧 fleet/H5/吞吐配额管线（docs/g26_prep.md 已作废）；
+   以旧 completed 计数（12,794）报进度；手动改 `src/csp_canon/`、
+   `src/raw_decomp/`、`anchors/csp_canon_*.json`（全是机械生成物，
+   要改就改生成器 `tools/csp_export/*.py` 后重跑）。
+3. **进度口径**：manifest sig=csp 占比 + 对拍 Same 数，替代旧 completed 计数。
+4. 旧树（src/ 既有 hpp/cpp）仍是唯一编译体；回填体接管后再切编译目标。
+
+
 > 日期：2026-09-20。原则：1-5 步 + 第 6 步回填**纯机械算法**，零人工逐函数处理。
 > 归档点：tag `archive/pre-mech-rebuild`（5b9b2531，completed 12,793 时点全量快照）。
 > 完成点：commit 84f44ed4，tag `auto-fill-baseline` 重锚（门控 diff 归零）。

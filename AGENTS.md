@@ -177,6 +177,21 @@ cmake --build build_linux
 | fild vs fld (int vs double) | 坐标类型不同 | 查 IDA 指令确认 |
 | gen/re_impl.cpp 被覆盖 | 手动编辑后 regen 覆盖 | 改 gen_re_impl.py 模板 |
 
+## ⚠️ 当前活跃方向：CSP 机械重建（2026-09-20 定案，覆盖旧管线）
+
+**用户已定案六步机械重建计划，1-5 步 + 第 6 步回填已全部机械完成**（见
+`docs/mech_rebuild_plan.md`，commit 6502f94d）。**旧 fleet/H5/吞吐配额管线
+（含 docs/g26_prep.md）已被此方向取代，不要顺着 G26 继续跑。**
+
+- 新地基：`src/csp_canon/`（1,597 类/19,078 签名溯源 manifest/成员唯一权威表）
+  + `src/raw_decomp/`（19,056 函数机械重写反编译）+ `bodies/*.inc`（回填体）
+- 回填三账：direct 4,894 / renamed 420 / **downgrade 4,875 + no-cls 2,256
+  （签名缺口 7,131 = 第 6 步 RA2MCP 阶段准入底数）** / no-body 349
+- 下一步（第 6 步后半，LLM/RA2MCP 阶段）：在 csp_canon 基底上补锚/重命名/
+  优化/对拍/complete；**不再以旧 completed 计数（12,794）为进度口径**，
+  以 manifest sig=csp + 对拍 Same 为准。
+- 归档：tag `archive/pre-mech-rebuild`（旧树全量快照，completed 12,793）。
+
 ## 当前状态
 
 | 指标 | 数值 |
@@ -1149,6 +1164,8 @@ python tools/type_infer/auto_name.py
 - symbols-locked-v2 已创建 tag（全部 19,067 函数 1:1:1 IDA↔signals↔hpp），后续命名变更需同步更新 signals.json 和 IDA
 
 ## 下一会话快速接手指引
+
+0. **【最高优先】先读 `docs/mech_rebuild_plan.md`——机械重建 1-5 步 + 回填已完成，当前阶段 = 第 6 步 RA2MCP（在 csp_canon 基底上补锚 7,131 签名缺口/重命名/对拍）。G26 及此前 fleet/H5 配额管线已被取代，不要恢复执行。**
 
 1. 看 `docs/coverage.md` 了解整体进度（**1,120 IDA 类全部完成 header，0 unknown_**）
 2. 看 **`docs/branch_A_plan.md`+`docs/branch_B_plan.md`（已合并执行：单代理按 甲段→乙段 时间盒轮转，全部 pending 7,267→0）** + **`docs/master_plan.md`（总计划·单一权威：pending 全景 / 七族 22 线 / Phase α-ε / M0-M4 / 验收门）** + `docs/roadmap_post_csp.md` **G25 执行日志（文末）** + **`docs/g26_prep.md`（G26 准备工作包：①收割续跑 522 件（g25_pending_reverify.py 断点）②globals 1,367 证据同步（g25_globals_sync.py --apply + 0x674000 复测 + 三轮收割）③#135 0x76df50 体提取二分 ④#134 幻影族 signals 注册 ⑤B 族双解引用派发（先修 0x5233d0 误归属）⑥no_def ~46 与 #134 合并）**——配额制延续（每会话首要产出 = ≥1 条批量解锁线）。全池基线：**12,793（G25 末；验证器三层词汇解锁——裸名全局/伪码局部遮蔽/ternary 扁平化——+ 全池重验证收割 370 新 PASS；#133 定案 mbn 1,835 str→int，G24 真基线 12,431；余 522 pending 断点续跑）**
