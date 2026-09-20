@@ -1163,6 +1163,113 @@ def tool_compare_parse(path=None):
                      "Different = fix and re-run")}
 
 
+def tool_member_set(cls, offset, name, mtype, size=4, evidence="manual",
+                    overwrite=False):
+    """Mechanical evidence entry into the CSP member layer. Writes
+    anchors/member_types.json (authoritative anchor, consumed by
+    gen_cpp_canon as override) + tools/member_lookup.json + signals
+    _member_by_name sync. Run canon_regen afterwards."""
+    if not cls or not name:
+        return {"error": "need cls and name"}
+    try:
+        off = int(str(offset), 0)
+    except ValueError:
+        return {"error": "offset must be int/0xNN"}
+    mt_p = PROJECT_ROOT / "anchors" / "member_types.json"
+    ml_p = PROJECT_ROOT / "tools" / "member_lookup.json"
+    sp = PROJECT_ROOT / "signals.json"
+    mt = json.loads(mt_p.read_text(encoding="utf-8"))
+    key = "%s+0x%X" % (cls, off)
+    if key in mt and not overwrite:
+        return {"error": "entry exists", "key": key, "existing": mt[key],
+                "hint": "pass overwrite=true to replace (evidence beats stale)"}
+    entry = {"name": name, "type": mtype or "void*", "size": size,
+             "confidence": "ANCHORED", "evidence": evidence}
+    mt[key] = entry
+    mt_p.write_text(json.dumps(mt, indent=1, ensure_ascii=False) + chr(10),
+                    encoding="utf-8")
+    ml = json.loads(ml_p.read_text(encoding="utf-8"))
+    ml.setdefault(cls, {})[str(off)] = {"name": name, "type": mtype or "void*",
+                                        "size": size, "src": evidence}
+    ml_p.write_text(json.dumps(ml, indent=1, ensure_ascii=False) + chr(10),
+                    encoding="utf-8")
+    sig = json.loads(sp.read_text(encoding="utf-8"))
+    mbn = sig.setdefault("_member_by_name", {}).setdefault(cls, {})
+    mbn[name] = off
+    sp.write_text(json.dumps(sig, indent=2, ensure_ascii=False) + chr(10),
+                  encoding="utf-8")
+    return {"ok": True, "key": key, "entry": entry,
+            "note": "run canon_regen to propagate into classes.hpp/members/"
+                    "raw_decomp/bodies"}
+
+
+def tool_reopen(target):
+    """Step-6 retranslation entry: completed -> pending. Restores the IDA
+    pseudocode block (from ida_cache) as the pending body and clears the
+    completed flag. Pair with replace_body -> verify_function ->
+    mark_completed."""
+    addr = _norm_addr_str(target)
+    if not addr:
+        return {"ok": False, "error": "need 0xADDR"}
+    ai = int(addr, 16)
+    cache = (PROJECT_ROOT / ".omo" / "ida_cache" / ("func_0x%X.json" % ai))
+    if not cache.exists():
+        return {"ok": False, "error": "no ida_cache for %s" % addr}
+    pseudo = json.loads(cache.read_text(encoding="utf-8")).get("decompiled", "")
+    if not pseudo.strip():
+        return {"ok": False, "error": "cache pseudocode empty"}
+    sys.path.insert(0, str(PROJECT_ROOT / "tools"))
+    import verify_execution_flow as V
+    body = V.find_cpp_function_by_addr(ai)
+    if not body:
+        return {"ok": False, "error": "no cpp body in tree"}
+    path = pathlib.Path(body["file"])
+    old_text = "".join(body["lines"])
+    # replace the whole def block with a pending block (def line + marker +
+    # pseudocode), brace-matched from the first '{' of the captured text
+    first = old_text.find("{")
+    name = (man := json.loads((PROJECT_ROOT / "anchors"
+                               / "csp_canon_manifest.json")
+                              .read_text(encoding="utf-8"))).get(addr, {})
+    fname = (man and name.get("name")) or body.get("function") or addr
+    defline = old_text.split("{", 1)[0].rstrip()
+    nl = chr(10)
+    pending_block = (defline + nl + "{" + nl
+                     + "// [IDA decompile] original pseudocode - translation "
+                       "pending (final goal)" + nl + pseudo + nl + "}" + nl)
+    # locate old_text inside the file (it is a contiguous capture)
+    ftext = path.read_text(encoding="utf-8", errors="replace")
+    i = ftext.find(old_text)
+    if i < 0:
+        return {"ok": False,
+                "error": "def block not found verbatim in file",
+                "file": str(path.relative_to(PROJECT_ROOT))}
+    ftext = ftext[:i] + pending_block + ftext[i + len(old_text):]
+    path.write_text(ftext, encoding="utf-8", newline=chr(10))
+    sp = PROJECT_ROOT / "signals.json"
+    sig = json.loads(sp.read_text(encoding="utf-8"))
+    sym = None
+    for k in (addr, addr.lower(), "0x%X" % ai):
+        sym = sig["symbols"].get(k)
+        if sym is not None:
+            addr = k
+            break
+    was = bool(sym and sym.get("completed"))
+    if sym is not None:
+        sym["completed"] = False
+        sym["translated"] = False
+        sym["reopened_from"] = "needs-retranslation"
+    sp.write_text(json.dumps(sig, indent=2, ensure_ascii=False) + chr(10),
+                  encoding="utf-8")
+    rel = str(path)
+    if path.is_absolute():
+        rel = str(path.relative_to(PROJECT_ROOT))
+    return {"ok": True, "addr": addr, "file": rel,
+            "was_completed": was,
+            "note": "now pending; use replace_body -> verify_function -> "
+                    "mark_completed"}
+
+
 def tool_issues_add(description, target=None, kind="debt"):
     st = load_state()
     iss = {"id": st["next_issue_id"], "description": description,
@@ -1413,6 +1520,24 @@ TOOLS = [
      "inputSchema": {"type": "object",
                      "properties": {"path": {"type": "string"}},
                      "required": []}},
+    {"name": "member_set",
+     "description": "Member evidence entry (ctor write-map / xref proof): writes member_types authoritative anchor + member_lookup + mbn sync. Run canon_regen to propagate.",
+     "inputSchema": {"type": "object",
+                     "properties": {"cls": {"type": "string"},
+                                    "offset": {"type": "string"},
+                                    "name": {"type": "string"},
+                                    "mtype": {"type": "string",
+                                              "default": "void*"},
+                                    "size": {"type": "integer", "default": 4},
+                                    "evidence": {"type": "string"},
+                                    "overwrite": {"type": "boolean",
+                                                  "default": False}},
+                     "required": ["cls", "offset", "name"]}},
+    {"name": "reopen",
+     "description": "Step-6 retranslation entry: completed -> pending. Restores IDA pseudocode block from ida_cache and clears completed. Pair with replace_body/verify_function/mark_completed.",
+     "inputSchema": {"type": "object",
+                     "properties": {"target": {"type": "string"}},
+                     "required": ["target"]}},
     {"name": "stats",
      "description": "工作台统计：待翻译数/分布、completed 集、issue 计数、最近构建状态。",
      "inputSchema": {"type": "object", "properties": {}, "required": []}},
@@ -1482,6 +1607,13 @@ def dispatch_tool(name, a):
         return tool_csp_anchor(a.get("addrs"), a.get("timeout", 900))
     if name == "compare_parse":
         return tool_compare_parse(a.get("path"))
+    if name == "member_set":
+        return tool_member_set(a["cls"], a["offset"], a["name"],
+                               a.get("mtype", "void*"),
+                               a.get("size", 4), a.get("evidence", "manual"),
+                               a.get("overwrite", False))
+    if name == "reopen":
+        return tool_reopen(a["target"])
     if name == "stats":
         return tool_stats()
     raise ValueError(f"unknown tool: {name}")

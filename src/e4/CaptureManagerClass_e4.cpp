@@ -1388,21 +1388,21 @@ namespace game {
 unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 {
 {
-    this->vtable1 = 0;
-    this->vtable2 = a2;
-    this->vtable3 = 1;
+    this->Items = 0;
+    this->Capacity = a2;
+    this->IsInitialized = 1;
     this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_ControlNode;
+    *(void **)this = &vt_VectorClass_ControlNode;
     if ( a2 )
-  {
-    if ( a3 )
     {
-    this->vtable1 = a3;
-    return this;
+        if ( a3 )
+        {
+            this->Items = a3;
+            return this;
+        }
+        this->Items = OperatorNew(4 * a2);
+        this->IsAllocated = 1;
     }
-    this->vtable1 = __2_YAPAXI_Z(4 * a2);
-    this->IsAllocated = 1;
-  }
     return this;
 }
 }

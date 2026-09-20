@@ -261,8 +261,19 @@ def build_members(cc):
     total = lay.get('size') or e.get('size') or 0
     out = []
     used = set()
+    mt_override = mt_by_cls.get(cc, {})
     for o in sorted(members):
         m = members[o]
+        if o in mt_override and mt_override[o].get('name'):
+            # evidence channel (member_set/ctor write-map) is authoritative:
+            # binary truth outranks vote-derived vtable attributions
+            mo = mt_override[o]
+            n = mo['name']
+            n = n if n not in used else n + '_e'
+            used.add(n)
+            t = cpptype(mo.get('type') or '', size_type(m.get('size') or 4))
+            out.append((o, t, n, mo.get('size') or m.get('size') or 4, m.get('name') or ''))
+            continue
         if in_vptr(o):
             k = vptr_offs.index(o) if o in vptr_offs else None
             if k is None:
