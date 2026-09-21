@@ -1244,7 +1244,7 @@ python tools/type_infer/auto_name.py
 
 ## 下一会话快速接手指引
 
-0. **【最高优先】先读 `docs/mech_rebuild_plan.md`——机械重建 1-5 步 + 回填已完成，当前阶段 = 第 6 步 RA2MCP。G29 基建+翻译轮已完成（G29.1 工具 bug #146-148 闭环 + signals 原子写 + harvest async；G29.2 e4_globals 11,977 重复声明清偿、classes.hpp+e4_globals 同 TU 0 error = e4 类形态载体就绪；翻译轮 sweep 206 块 + 9 件收割，净增 +13 → completed 12,680 / pending 3,927）——执行记录 = mech_rebuild_plan.md「G29 翻译轮执行记录」+「G29.1/G29.2」节。下一步按 docs/g30_prep.md 收割（harvest async 批量 → e4 类形态试点 → #150/#151 归属裁决）。G26 及此前 fleet/H5 配额管线已被取代，不要恢复执行。**
+0. **【最高优先】先读 `docs/mech_rebuild_plan.md`——机械重建 1-5 步 + 回填已完成，当前阶段 = 第 6 步 RA2MCP。G29 基建+翻译轮已完成（G29.1 工具 bug #146-148 闭环 + signals 原子写 + harvest async；G29.2 e4_globals 11,977 重复声明清偿、classes.hpp+e4_globals 同 TU 0 error = e4 类形态载体就绪；翻译轮 sweep 206 块 + 9 件收割，净增 +13 → completed 12,680 / pending 3,927）——执行记录 = mech_rebuild_plan.md「G29 翻译轮执行记录」+「G29.1/G29.2」节。下一步按 docs/g30_prep.md 执行，【用户指令：先修第 0 优先缺口总账】（缺口 A e4 自由函数词汇 = A1 补锚→类形态试点 10 件 → 缺口 B/C = #150/#151 归属裁决 → 缺口 D/E），修完再放量收割（harvest async 批量）。G26 及此前 fleet/H5 配额管线已被取代，不要恢复执行。**
 
 1. 看 `docs/coverage.md` 了解整体进度（**1,120 IDA 类全部完成 header，0 unknown_**）
 2. 看 **`docs/master_plan.md`（总计划·单一权威）** + **`docs/mech_rebuild_plan.md`（六步机械重建 + 第 6 步 RA2MCP 执行记录——当前权威工作文档）** + **`docs/g30_prep.md`（下一步工作包）**。全池基线：**12,680（G29 末；并行会话并行推进，接手先 stats 复核），pending 3,927**
