@@ -7970,7 +7970,7 @@ bool BuildingClass::CheckOverlapWithOthers() {
     v2 = *(int *)this->SetZ(&v8);
     v3 = (short *)this->CheckPlayerOwned(0);
     v6 = 0;
-    LABEL_2: while ( *v3 != 0x7FFF || v3[1] != 0x7FFF )
+    while ( *v3 != 0x7FFF || v3[1] != 0x7FFF )
   {
     LOWORD(v7) = v2 + *v3;
     HIWORD(v7) = HIWORD(v2) + v3[1];
@@ -7983,9 +7983,9 @@ bool BuildingClass::CheckOverlapWithOthers() {
       {
     v4 = (int *)v4[12];
     if ( !v4 )
-    goto LABEL_2;
+        break;
       }
-    v6 = 1;
+      v6 = v6 || v4 != 0;
     }
   }
     return v6;
