@@ -8230,19 +8230,19 @@ double __thiscall TechnoTypeClass::Dispatch(_DWORD *this, TechnoTypeClass *aP1)
   switch ( (*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)aP1->vtable0 + 44))(aP1) ) /*0x50be0f*/
   {
     case 3: /*0x50be0f*/
-      result = *(float *)(*(this + 13) + 284); /*0x50be37*/
+      result = *(float *)(this->q034 + 284); /*0x50be37*/
       break; /*0x50be3d*/
     case 7: /*0x50be0f*/
       if ( aP1[4].VoxelCaches[5] == 5 ) /*0x50be47*/
-        result = *(float *)(*(this + 13) + 292); /*0x50be4e*/
+        result = *(float *)(this->q034 + 292); /*0x50be4e*/
       else
-        result = *(float *)(*(this + 13) + 288); /*0x50be5c*/
+        result = *(float *)(this->q034 + 288); /*0x50be5c*/
       break; /*0x50be54*/
     case 16: /*0x50be0f*/
-      result = *(float *)(*(this + 13) + 276); /*0x50be1b*/
+      result = *(float *)(this->q034 + 276); /*0x50be1b*/
       break; /*0x50be21*/
     case 40: /*0x50be0f*/
-      result = *(float *)(*(this + 13) + 280); /*0x50be29*/
+      result = *(float *)(this->q034 + 280); /*0x50be29*/
       break; /*0x50be2f*/
     default:
       result = 1.0; /*0x50be65*/
@@ -9673,7 +9673,7 @@ BOOL __thiscall sub_50D9D0(_DWORD *this)
 // ==== 0x0050D9E0  HouseClass::GetInfSelfHealStep  this=HouseClass  sig=csp ====
 int __thiscall HouseClass::GetInfSelfHealStep(_DWORD *this)
 {
-  return *(this + 89) * MEMORY[0x8871E0]->SelfHealInfantryAmount; /*0x50d9ef*/
+  return this->q059 * MEMORY[0x8871E0]->SelfHealInfantryAmount; /*0x50d9ef*/
 }
 
 

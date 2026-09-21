@@ -1370,8 +1370,8 @@ _DWORD *__thiscall sub_6616B0(_DWORD *this)
   this->Straw_field_0x04 = 0; /*0x6616bd*/
   this->__pad_008 = 0; /*0x6616c0*/
   *this = &vt_Straw; /*0x6616c3*/
-  *(this + 3) = 0; /*0x6616c9*/
-  this->Straw_field_0x04 = 0; /*0x6616cc*/
+  this->q00C = 0; /*0x6616c9*/
+  this->__pad_010 = 0; /*0x6616cc*/
   v3 = this + 5; /*0x6616cf*/
   do /*0x6616df*/
   {
@@ -1380,8 +1380,8 @@ _DWORD *__thiscall sub_6616B0(_DWORD *this)
     --v2; /*0x6616de*/
   }
   while ( v2 ); /*0x6616df*/
-  *(this + 3) = 0; /*0x6616e1*/
-  this->Straw_field_0x04 = 0; /*0x6616e4*/
+  this->q00C = 0; /*0x6616e1*/
+  this->__pad_010 = 0; /*0x6616e4*/
   *this = &vt_RandomStraw; /*0x6616f1*/
   memset(this + 5, 0, 0x100u); /*0x6616f7*/
   return this; /*0x6616fb*/
@@ -1408,14 +1408,14 @@ void *__thiscall SHA1TickRNG(_DWORD *this, Straw *aP1)
   int v17; // [esp+44h] [ebp-48h]
   int v18; // [esp+48h] [ebp-44h]
 
-  v3 = *(this + 3); /*0x661779*/
+  v3 = this->q00C; /*0x661779*/
   if ( ((unsigned __int8)aP1 & 1) != 0 ) /*0x66179a*/
   {
     v4 = (char *)this + (unsigned __int8)(v3 / 8) + 20; /*0x661796*/
     *v4 ^= 1 << (v3 & 7); /*0x6617a3*/
   }
-  result = (void *)(*(this + 3) + 1); /*0x6617a9*/
-  *(this + 3) = result; /*0x6617ab*/
+  result = (void *)(this->q00C + 1); /*0x6617a9*/
+  this->q00C = result; /*0x6617ab*/
   if ( result == (void *)2048 ) /*0x6617b3*/
   {
     v6 = (SHAPipe *)(this + 5); /*0x6617bc*/
@@ -1465,11 +1465,11 @@ int __thiscall Random::AdvanceRandomBytes(char *this, char a2)
   {
     if ( (a2 & 1) != 0 ) /*0x661885*/
     {
-      v3 = this + (unsigned __int8)(*((_DWORD *)this + 3) / 8) + 20; /*0x661881*/
-      *v3 ^= 1 << (*((_DWORD *)this + 3) & 7); /*0x66188e*/
+      v3 = this + (unsigned __int8)(this->q00C / 8) + 20; /*0x661881*/
+      *v3 ^= 1 << (this->q00C & 7); /*0x66188e*/
     }
-    v4 = *((_DWORD *)this + 3) + 1; /*0x661894*/
-    *((_DWORD *)this + 3) = v4; /*0x661896*/
+    v4 = this->q00C + 1; /*0x661894*/
+    this->q00C = v4; /*0x661896*/
     if ( v4 == 2048 ) /*0x66189e*/
     {
       v5 = 0; /*0x6618a4*/
@@ -1671,11 +1671,11 @@ Straw *__thiscall RandomStraw::Release(_DWORD *this, _BYTE *a2, Straw *aP2)
     return (Straw *)Delegate::Invoke(this, (int)a2, aP2); /*0x661c5d*/
   do /*0x661c4d*/
   {
-    v6 = this->RandomStraw_field_0x04; /*0x661c30*/
-    this->RandomStraw_field_0x04 = v6 + 1; /*0x661c38*/
+    v6 = this->__pad_010; /*0x661c30*/
+    this->__pad_010 = v6 + 1; /*0x661c38*/
     *v4++ = RandomStraw::AdvanceState(this + 2 * v6 + 5); /*0x661c40*/
     v3 = (Straw *)((char *)v3 - 1); /*0x661c49*/
-    this->RandomStraw_field_0x04 &= 0x1Fu; /*0x661c4a*/
+    this->__pad_010 &= 0x1Fu; /*0x661c4a*/
   }
   while ( v3 ); /*0x661c4d*/
   return aP2; /*0x661c53*/

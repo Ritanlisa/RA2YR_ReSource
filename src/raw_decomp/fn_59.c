@@ -6988,8 +6988,8 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
   TypeList::Copy(this + 119, IntList); /*0x59852f*/
   v13 = IntList; /*0x598534*/
   this->q07B = IntList[4]; /*0x59853b*/
-  *(this + 124) = v13[5]; /*0x598541*/
-  this->q07D = v13[6]; /*0x59854b*/
+  this->q1F0 = v13[5]; /*0x598541*/
+  this->__pad_1F4 = v13[6]; /*0x59854b*/
   v32 = (int)&vt_VectorClass_int; /*0x59854e*/
   VectorClass::Destroy((int)&v32); /*0x598552*/
   IntList = &v24; /*0x598563*/

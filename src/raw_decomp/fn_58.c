@@ -11911,7 +11911,7 @@ _DWORD *__thiscall RandomMap_TerrainTileData_Constructor(_DWORD *this, int a2)
   this->LineTrailColorDecrement = 0; /*0x58bfcd*/
   this->ChargerBarrels_0x12 = 0; /*0x58bfd0*/
   this->TargetSpecialThreatCoefficient = 0; /*0x58bfd3*/
-  *((_BYTE *)this + 52) = 1; /*0x58bfd6*/
+  this->q034 = 1; /*0x58bfd6*/
   *((_BYTE *)this + 53) = 0; /*0x58bfd9*/
   this->TargetEffectivenessCoefficient = &vt_DynamicVectorClass_Cell; /*0x58bfdc*/
   this->zero_3C = 10; /*0x58bfe3*/

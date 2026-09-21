@@ -6474,12 +6474,12 @@ LABEL_115:
       *(_DWORD *)this = v16; /*0x6a8cb6*/
       v57 = 1; /*0x6a8cc4*/
       *v14 = MEMORY[0xA8ED84]; /*0x6a8cc9*/
-      this->IsInitialized = v61; /*0x6a8cd0*/
+      this->q00C = v61; /*0x6a8cd0*/
       this->SidebarClass_field_0x4 = v15; /*0x6a8cd3*/
       if ( v16 >= 7 ) /*0x6a8cd6*/
       {
         *v14 = MEMORY[0xA8ED84]; /*0x6a8ce3*/
-        this->IsInitialized = v61; /*0x6a8ce5*/
+        this->q00C = v61; /*0x6a8ce5*/
         this->SidebarClass_field_0x4 = 0; /*0x6a8ce8*/
         this->q005 = 0; /*0x6a8ceb*/
         *(_DWORD *)this = 0; /*0x6a8cee*/

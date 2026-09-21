@@ -2419,7 +2419,7 @@ _DWORD *__thiscall HouseTypeClass::readStartInfantry(_DWORD *this, InfantryTypeC
   if ( !v3 ) /*0x512be9*/
   {
     this->vtable2 = 0; /*0x512c2a*/
-    *((_BYTE *)this + 13) = 0; /*0x512c31*/
+    this->q034 = 0; /*0x512c31*/
     return this; /*0x512c35*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x512bf3*/
@@ -2428,7 +2428,7 @@ _DWORD *__thiscall HouseTypeClass::readStartInfantry(_DWORD *this, InfantryTypeC
     return this; /*0x512c00*/
   v5 = this->vtable3; /*0x512c02*/
   v6 = 0; /*0x512c05*/
-  *((_BYTE *)this + 13) = 1; /*0x512c09*/
+  this->q034 = 1; /*0x512c09*/
   if ( v5 <= 0 ) /*0x512c0d*/
     return this; /*0x512c0d*/
   do /*0x512c21*/

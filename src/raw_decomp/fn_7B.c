@@ -8925,7 +8925,7 @@ int __thiscall DisplayClass::ReadFromBuffer(BufferStraw *this, void *a1, signed 
   signed int v8; // eax
 
   result = 0; /*0x7ba4d4*/
-  v5 = *((_DWORD *)this + 3); /*0x7ba4d6*/
+  v5 = this->q00C; /*0x7ba4d6*/
   if ( v5 && a1 && Size > 0 ) /*0x7ba4eb*/
   {
     v6 = *((_DWORD *)this + 4); /*0x7ba4ed*/

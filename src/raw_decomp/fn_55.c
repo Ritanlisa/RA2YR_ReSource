@@ -1441,7 +1441,7 @@ int __thiscall sub_551A90(_DWORD *this, int a2)
   int i; // edi
   int j; // eax
 
-  v3 = this->Capacity; /*0x551a93*/
+  v3 = this->q008; /*0x551a93*/
   if ( this->Count >= v3 ) /*0x551a9b*/
   {
     if ( !this->MovementZones && v3 ) /*0x551aa6*/
@@ -1917,7 +1917,7 @@ _DWORD *__thiscall LCWPipe_Constructor(_DWORD *this, int a2, int a3)
   void *v5; // eax
   size_t v6; // edx
 
-  *(this + 3) = a2; /*0x551ff9*/
+  this->q00C = a2; /*0x551ff9*/
   this->LCWPipe_field_0x04 = 0; /*0x552000*/
   this->q008 = 0; /*0x552003*/
   this->q010 = 0; /*0x552006*/
@@ -2151,9 +2151,9 @@ _DWORD *__thiscall LCWStraw_Constructor(_DWORD *this, int a2, int a3)
   this->LCWStraw_field_0x04 = 0; /*0x5523f5*/
   this->__pad_008 = 0; /*0x5523fa*/
   v4 = a3 / 128 + 1; /*0x552400*/
-  *(this + 3) = a2; /*0x552401*/
+  this->q00C = a2; /*0x552401*/
   this->__pad_008 = v4; /*0x552404*/
-  this->LCWStraw_field_0x04 = 0; /*0x55240a*/
+  this->__pad_010 = 0; /*0x55240a*/
   this->q014 = 0; /*0x55240d*/
   this->q018 = 0; /*0x552410*/
   this->q01C = a3; /*0x552413*/
@@ -11221,8 +11221,8 @@ _DWORD *__thiscall LZOStraw_Constructor(_DWORD *this, int a2, int a3)
   this->__pad_008 = a3; /*0x55c732*/
   this->LZOStraw_field_0x04 = 0; /*0x55c737*/
   this->__pad_008 = 0; /*0x55c73b*/
-  *(this + 3) = a2; /*0x55c73e*/
-  this->LZOStraw_field_0x04 = 0; /*0x55c741*/
+  this->q00C = a2; /*0x55c73e*/
+  this->__pad_010 = 0; /*0x55c741*/
   this->q014 = 0; /*0x55c744*/
   this->q018 = 0; /*0x55c747*/
   *this = &LZOStraw::`vftable'; /*0x55c74a*/

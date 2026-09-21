@@ -9402,8 +9402,8 @@ _DWORD *__thiscall GenericList_Constructor(_DWORD *this)
 
   result = this; /*0x52ace0*/
   v2 = this + 4; /*0x52ace9*/
-  *(this + 2) = 0; /*0x52acef*/
-  *(this + 3) = 0; /*0x52acf2*/
+  this->q008 = 0; /*0x52acef*/
+  this->q00C = 0; /*0x52acf2*/
   this->q004 = &vt_GenericNode; /*0x52acf5*/
   this->q005 = 0; /*0x52acfb*/
   this->q006 = 0; /*0x52acfe*/
@@ -9424,13 +9424,13 @@ _DWORD *__thiscall GenericList_Constructor(_DWORD *this)
       }
     }
   }
-  v5 = *(this + 2); /*0x52ad2f*/
+  v5 = this->q008; /*0x52ad2f*/
   this->q006 = this + 1; /*0x52ad32*/
   this->q005 = v5; /*0x52ad35*/
-  v6 = *(this + 2); /*0x52ad38*/
+  v6 = this->q008; /*0x52ad38*/
   if ( v6 ) /*0x52ad3d*/
     *(_DWORD *)(v6 + 8) = v2; /*0x52ad3f*/
-  *(this + 2) = v2; /*0x52ad42*/
+  this->q008 = v2; /*0x52ad42*/
   return result; /*0x52ad45*/
 }
 
@@ -9604,8 +9604,8 @@ _DWORD *__thiscall sub_52AF50(_DWORD *this)
 
   result = this; /*0x52af50*/
   v2 = this + 4; /*0x52af59*/
-  *(this + 2) = 0; /*0x52af5f*/
-  *(this + 3) = 0; /*0x52af62*/
+  this->q008 = 0; /*0x52af5f*/
+  this->q00C = 0; /*0x52af62*/
   this->q004 = &vt_GenericNode; /*0x52af65*/
   this->q005 = 0; /*0x52af6b*/
   this->q006 = 0; /*0x52af6e*/
@@ -9626,13 +9626,13 @@ _DWORD *__thiscall sub_52AF50(_DWORD *this)
       }
     }
   }
-  v5 = *(this + 2); /*0x52af9f*/
+  v5 = this->q008; /*0x52af9f*/
   this->q006 = this + 1; /*0x52afa2*/
   this->q005 = v5; /*0x52afa5*/
-  v6 = *(this + 2); /*0x52afa8*/
+  v6 = this->q008; /*0x52afa8*/
   if ( v6 ) /*0x52afad*/
     *(_DWORD *)(v6 + 8) = v2; /*0x52afaf*/
-  *(this + 2) = v2; /*0x52afb2*/
+  this->q008 = v2; /*0x52afb2*/
   *this = &List<INIClass::INIEntry *>::`vftable'; /*0x52afb7*/
   return result; /*0x52afb5*/
 }

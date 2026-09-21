@@ -976,7 +976,7 @@ char __thiscall sub_4912B0(_DWORD *this, int a2, _BYTE *a3, int a4, int a5, int 
   _WORD *v11; // edi
   int v13; // eax
 
-  v9 = *(this + 1); /*0x4912c5*/
+  v9 = this->q004; /*0x4912c5*/
   v10 = a4 + 1; /*0x4912cb*/
   v11 = (_WORD *)(a2 - 2); /*0x4912cf*/
   v13 = 0; /*0x4912d5*/
@@ -994,7 +994,7 @@ char __thiscall sub_4912B0(_DWORD *this, int a2, _BYTE *a3, int a4, int a5, int 
 // ==== 0x00491300  _BlitTransXlat_G::method  this=BlitTransXlat  sig=csp ====
 int __thiscall sub_491300(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49132a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49132a*/
            this,
            a2,
            a3,
@@ -1010,7 +1010,7 @@ int __thiscall sub_491300(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x00491330  _BlitTransXlat_G::method  this=BlitTransXlat  sig=csp ====
 int __thiscall sub_491330(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49135a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49135a*/
            this,
            a2,
            a3,
@@ -1026,7 +1026,7 @@ int __thiscall sub_491330(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x00491360  _BlitTransXlat_G::method  this=BlitTransXlat  sig=csp ====
 int __thiscall sub_491360(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49138a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49138a*/
            this,
            a2,
            a3,
@@ -1096,7 +1096,7 @@ void __thiscall ConvertClass::_vt01(
       v12 = *a3++; /*0x49140a*/
       ++a2; /*0x491419*/
       --v9; /*0x49141a*/
-      *(_BYTE *)(a2 - 1) = *(_BYTE *)(v12 + *(this + 1)); /*0x49141e*/
+      *(_BYTE *)(a2 - 1) = *(_BYTE *)(v12 + this->q004); /*0x49141e*/
     }
     while ( v9 ); /*0x491421*/
   }
@@ -1106,7 +1106,7 @@ void __thiscall ConvertClass::_vt01(
 // ==== 0x00491430  _BlitPlainXlat_E::ddtor  this=BlitPlainXlat  sig=csp ====
 int __thiscall ConvertClass::_vt03(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49145a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49145a*/
            this,
            a2,
            a3,
@@ -1122,7 +1122,7 @@ int __thiscall ConvertClass::_vt03(void *this, int a2, int a3, int a4, int a5, i
 // ==== 0x00491460  _BlitPlainXlat_E::Release  this=BlitPlainXlat  sig=csp ====
 int __thiscall ConvertClass::_vt02(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49148a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49148a*/
            this,
            a2,
            a3,
@@ -1138,7 +1138,7 @@ int __thiscall ConvertClass::_vt02(void *this, int a2, int a3, int a4, int a5, i
 // ==== 0x00491490  _BlitPlainXlat_E::Convert  this=BlitPlainXlat  sig=csp ====
 int __thiscall ConvertClass::_vt04(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4914ba*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4914ba*/
            this,
            a2,
            a3,
@@ -1175,7 +1175,7 @@ unsigned __int8 __thiscall AbstractClass::sub_4914C0(
       result = *a3++; /*0x4914d5*/
       if ( result ) /*0x4914de*/
       {
-        result = *(_BYTE *)(*(this + 1) + result); /*0x4914ec*/
+        result = *(_BYTE *)(this->q004 + result); /*0x4914ec*/
         *a2 = result; /*0x4914ef*/
       }
       ++a2; /*0x4914f1*/
@@ -1190,7 +1190,7 @@ unsigned __int8 __thiscall AbstractClass::sub_4914C0(
 // ==== 0x00491500  ?$BlitTransXlat@E::getFactoryIndex  this=BlitTransXlat  sig=csp ====
 int __thiscall AbstractClass::sub_491500(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49152a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49152a*/
            this,
            a2,
            a3,
@@ -1216,7 +1216,7 @@ int __thiscall AbstractClass::sub_491530(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49155a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49155a*/
            this,
            a2,
            a3,
@@ -1232,7 +1232,7 @@ int __thiscall AbstractClass::sub_491530(
 // ==== 0x00491560  ?$BlitTransXlat@E::checkFactoryQueue  this=BlitTransXlat  sig=csp ====
 int __thiscall AbstractClass::sub_491560(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49158a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49158a*/
            this,
            a2,
            a3,
@@ -1592,7 +1592,7 @@ int __thiscall sub_491820(
     v18 = v17; /*0x491863*/
     if ( v17 ) /*0x491867*/
     {
-      result = *(this + 1); /*0x491883*/
+      result = this->q004; /*0x491883*/
       ++v13; /*0x49188c*/
       --v16; /*0x49188d*/
       *(_BYTE *)(v13 - 1) = *(_BYTE *)(result + v18); /*0x491891*/
@@ -1624,7 +1624,7 @@ int __thiscall sub_4918A0(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x4918d7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x4918d7*/
            this,
            a2,
            a3,
@@ -1970,7 +1970,7 @@ int __thiscall sub_491B40(
       v15 += 2; /*0x491bcf*/
       v21 = a6 - *a11++; /*0x491bd2*/
       if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x491bdd*/
-        *v14 = *(_BYTE *)(v19 + *(this + 1)); /*0x491bf2*/
+        *v14 = *(_BYTE *)(v19 + this->q004); /*0x491bf2*/
       ++v14; /*0x491bf4*/
       --v18; /*0x491bf5*/
     }
@@ -2005,7 +2005,7 @@ int __thiscall sub_491C10(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x491c47*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x491c47*/
            this,
            a2,
            a3,
@@ -2846,7 +2846,7 @@ void __thiscall sub_4924C0(_DWORD *this, int a2, unsigned __int8 *a3, int a4, in
       v12 = *a3++; /*0x4924da*/
       a2 += 2; /*0x4924e3*/
       --v9; /*0x4924ec*/
-      *(_WORD *)(a2 - 2) = *(_WORD *)(*(this + 1) + 2 * v12); /*0x4924f1*/
+      *(_WORD *)(a2 - 2) = *(_WORD *)(this->q004 + 2 * v12); /*0x4924f1*/
     }
     while ( v9 ); /*0x4924f5*/
   }
@@ -2856,7 +2856,7 @@ void __thiscall sub_4924C0(_DWORD *this, int a2, unsigned __int8 *a3, int a4, in
 // ==== 0x00492500  _BlitPlainXlat_G::method  this=BlitPlainXlat  sig=csp ====
 int __thiscall sub_492500(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49252a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49252a*/
            this,
            a2,
            a3,
@@ -2872,7 +2872,7 @@ int __thiscall sub_492500(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x00492530  _BlitPlainXlat_G::method  this=BlitPlainXlat  sig=csp ====
 int __thiscall sub_492530(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49255a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49255a*/
            this,
            a2,
            a3,
@@ -2888,7 +2888,7 @@ int __thiscall sub_492530(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x00492560  _BlitPlainXlat_G::method  this=BlitPlainXlat  sig=csp ====
 int __thiscall sub_492560(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49258a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49258a*/
            this,
            a2,
            a3,
@@ -3012,7 +3012,7 @@ char __thiscall sub_492670(_WORD *this, _WORD *a2, _BYTE *a3, int a4, int a5, in
       LOBYTE(v9) = *a3++; /*0x492684*/
       if ( (_BYTE)v9 ) /*0x492689*/
       {
-        v9 = *(this + 2) & (*a2 >> 1); /*0x492691*/
+        v9 = this->q008 & (*a2 >> 1); /*0x492691*/
         *a2 = v9; /*0x492695*/
       }
       ++a2; /*0x492698*/
@@ -3433,7 +3433,7 @@ unsigned __int16 *__thiscall sub_492B00(
       v14 = *result++; /*0x492b22*/
       if ( a5 < v14 && *a3 ) /*0x492b32*/
       {
-        *a2 = *(_WORD *)(*(this + 1) + 2 * (unsigned __int8)*a3); /*0x492b49*/
+        *a2 = *(_WORD *)(this->q004 + 2 * (unsigned __int8)*a3); /*0x492b49*/
         v11 = MEMORY[0x887644]; /*0x492b4c*/
       }
       ++a3; /*0x492b55*/
@@ -3451,7 +3451,7 @@ unsigned __int16 *__thiscall sub_492B00(
 // ==== 0x00492B70  _BlitTransXlatZRead_G::method_492B70  this=BlitTransXlatZRead  sig=csp ====
 int __thiscall sub_492B70(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492b9a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x492b9a*/
            this,
            a2,
            a3,
@@ -3467,7 +3467,7 @@ int __thiscall sub_492B70(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x00492BA0  _BlitTransXlatZRead_G::method_492BA0  this=BlitTransXlatZRead  sig=csp ====
 int __thiscall sub_492BA0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492bca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x492bca*/
            this,
            a2,
            a3,
@@ -3483,7 +3483,7 @@ int __thiscall sub_492BA0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x00492BD0  _BlitTransXlatZRead_G::method_492BD0  this=BlitTransXlatZRead  sig=csp ====
 int __thiscall sub_492BD0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492bfa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x492bfa*/
            this,
            a2,
            a3,
@@ -4505,7 +4505,7 @@ _WORD *__thiscall sub_493600(_DWORD *this, _WORD *a2, _BYTE *a3, int a4, int a5,
     {
       if ( a5 < (unsigned __int16)*result && *a3 ) /*0x493633*/
       {
-        *a2 = *(_WORD *)(*(this + 1) + 2 * (unsigned __int8)*a3); /*0x49364a*/
+        *a2 = *(_WORD *)(this->q004 + 2 * (unsigned __int8)*a3); /*0x49364a*/
         *result = a5; /*0x49364d*/
         v10 = MEMORY[0x887644]; /*0x493650*/
       }
@@ -4525,7 +4525,7 @@ _WORD *__thiscall sub_493600(_DWORD *this, _WORD *a2, _BYTE *a3, int a4, int a5,
 // ==== 0x00493680  _BlitTransXlatZReadWrite_G::method  this=BlitTransXlatZReadWrite  sig=csp ====
 int __thiscall sub_493680(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4936aa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4936aa*/
            this,
            a2,
            a3,
@@ -4541,7 +4541,7 @@ int __thiscall sub_493680(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x004936B0  _BlitTransXlatZReadWrite_G::method_4936B0  this=BlitTransXlatZReadWrite  sig=csp ====
 int __thiscall sub_4936B0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4936da*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4936da*/
            this,
            a2,
            a3,
@@ -4557,7 +4557,7 @@ int __thiscall sub_4936B0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x004936E0  _BlitTransXlatZReadWrite_G::method_4936E0  this=BlitTransXlatZReadWrite  sig=csp ====
 int __thiscall sub_4936E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49370a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49370a*/
            this,
            a2,
            a3,
@@ -8390,7 +8390,7 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::sub_4960A0(
     {
       result += 2; /*0x49610f*/
       --v17; /*0x496112*/
-      *(_WORD *)(result - 2) = *(_WORD *)(*(this + 1) + 2 * v18); /*0x496117*/
+      *(_WORD *)(result - 2) = *(_WORD *)(this->q004 + 2 * v18); /*0x496117*/
     }
     else
     {
@@ -8418,7 +8418,7 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::sub_496130(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x496167*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x496167*/
            this,
            a2,
            a3,
@@ -8970,7 +8970,7 @@ int __thiscall sub_4965B0(
       v12 += 2; /*0x496641*/
       v21 = a6 - *a10++; /*0x496644*/
       if ( v21 < *(unsigned __int16 *)(v12 - 2) ) /*0x49664f*/
-        *v15 = *(_WORD *)(*(this + 1) + 2 * v19); /*0x496665*/
+        *v15 = *(_WORD *)(this->q004 + 2 * v19); /*0x496665*/
       ++v15; /*0x496668*/
       --v18; /*0x49666b*/
     }
@@ -9006,7 +9006,7 @@ int __thiscall sub_496690(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x4966c7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x4966c7*/
            this,
            a2,
            a3,
@@ -17453,8 +17453,8 @@ _DWORD *__thiscall INISectionList_Constructor(_DWORD *this)
 
   result = this; /*0x49e8e0*/
   v2 = this + 4; /*0x49e8e9*/
-  *(this + 2) = 0; /*0x49e8ef*/
-  *(this + 3) = 0; /*0x49e8f2*/
+  this->q008 = 0; /*0x49e8ef*/
+  this->q00C = 0; /*0x49e8f2*/
   this->q004 = &vt_GenericNode; /*0x49e8f5*/
   this->q005 = 0; /*0x49e8fb*/
   this->q006 = 0; /*0x49e8fe*/
@@ -17475,13 +17475,13 @@ _DWORD *__thiscall INISectionList_Constructor(_DWORD *this)
       }
     }
   }
-  v5 = *(this + 2); /*0x49e92f*/
+  v5 = this->q008; /*0x49e92f*/
   this->q006 = this + 1; /*0x49e932*/
   this->q005 = v5; /*0x49e935*/
-  v6 = *(this + 2); /*0x49e938*/
+  v6 = this->q008; /*0x49e938*/
   if ( v6 ) /*0x49e93d*/
     *(_DWORD *)(v6 + 8) = v2; /*0x49e93f*/
-  *(this + 2) = v2; /*0x49e942*/
+  this->q008 = v2; /*0x49e942*/
   *this = &vt_List_INIClass_INISection; /*0x49e947*/
   return result; /*0x49e945*/
 }

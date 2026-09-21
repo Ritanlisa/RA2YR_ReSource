@@ -2600,22 +2600,22 @@ _DWORD *__thiscall sub_473750(_DWORD *this, _DWORD *a2)
 
   v3 = a2; /*0x473754*/
   this->q004 = 0; /*0x47375a*/
-  *(this + 2) = 0; /*0x47375d*/
-  *(this + 3) = 0; /*0x473760*/
+  this->q008 = 0; /*0x47375d*/
+  this->q00C = 0; /*0x473760*/
   *((_WORD *)this + 10) = 0; /*0x473763*/
-  this->__pad_00B = 0; /*0x473767*/
+  *((_WORD *)this + 11) = 0; /*0x473767*/
   this->q006 = 0; /*0x47376d*/
   this->q007 = -1; /*0x473770*/
   *this = &vt_CarryoverClass; /*0x473777*/
   if ( v3 ) /*0x47377d*/
   {
     v4 = (*(int (__thiscall **)(_DWORD *))(*v3 + 44))(v3); /*0x473783*/
-    *(this + 3) = v4; /*0x473786*/
+    this->q00C = v4; /*0x473786*/
     v5 = v4 - 1; /*0x473789*/
     if ( !v5 || (v6 = v5 - 5) == 0 || v6 == 9 ) /*0x473794*/
     {
       v7 = (*(int (__thiscall **)(_DWORD *))(*v3 + 132))(v3); /*0x4737a6*/
-      this->q004 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 64))(v7); /*0x4737b3*/
+      this->__pad_010 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 64))(v7); /*0x4737b3*/
     }
     this->q007 = *(_DWORD *)(*(_DWORD *)(v3[135] + 52) + 184); /*0x4737c7*/
     this->q006 = v3[27]; /*0x4737cd*/

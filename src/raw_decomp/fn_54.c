@@ -11419,7 +11419,7 @@ char *__thiscall TimerClass::Construct(
   *((_DWORD *)v18 + 2) = aP3; /*0x54fe9c*/
   this->q021 = 0; /*0x54fea6*/
   this->vtable4 = a5; /*0x54fea9*/
-  *((_DWORD *)this + 13) = a6; /*0x54feaf*/
+  this->q034 = a6; /*0x54feaf*/
   this->TargetStrengthCoefficient = a7; /*0x54feb6*/
   this->zero_3C = a8; /*0x54febd*/
   this->TargetDistanceCoefficient = a9; /*0x54fec4*/

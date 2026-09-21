@@ -12366,7 +12366,7 @@ size_t __thiscall BitmapClass::ProcessFrame(Base64Straw *this, char *a1, signed 
 
   result = 0; /*0x42df98*/
   v16 = 0; /*0x42df9e*/
-  if ( *((_DWORD *)this + 3) ) /*0x42df9b*/
+  if ( this->q00C ) /*0x42df9b*/
   {
     v18 = (BlowStraw *)4; /*0x42dfc2*/
     v17 = this + 5; /*0x42dfca*/
@@ -12407,7 +12407,7 @@ size_t __thiscall BitmapClass::ProcessFrame(Base64Straw *this, char *a1, signed 
       if ( !v8 ) /*0x42e03c*/
         break; /*0x42e03c*/
       v14 = Delegate::Invoke(this, (int)v5, (Straw *)v18); /*0x42e04b*/
-      v15 = *((_DWORD *)this + 3)
+      v15 = this->q00C
           ? DecodeBitmapRGB((unsigned __int8 *)v5, v14, v6, v7)
           : EncodeBitmapRGB((char *)v5, v14, v6, v7);
       this->q004 = v15; /*0x42e066*/

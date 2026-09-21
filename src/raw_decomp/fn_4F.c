@@ -3771,14 +3771,14 @@ void VectorCursor_uint_DynamicVectorClass_uint____13_::_vt05()
 int __thiscall COMObject_DtorSequence(void *this, int a2)
 {
   (*(void (__thiscall **)(void *))(*(_DWORD *)this + 28))(this); /*0x4f42b5*/
-  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 32))(this); /*0x4f42bf*/
+  return (*(int (__thiscall **)(void *))(this->q008)(this); /*0x4f42bf*/
 }
 
 
 // ==== 0x004F42D0  GScreenClass::Remove  this=GScreenClass  sig=csp ====
 void __thiscall VectorCursor_uint_DynamicVectorClass_uint____13_::_vt07(_DWORD *this)
 {
-  *(this + 3) = 2; /*0x4f42d0*/
+  this->q00C = 2; /*0x4f42d0*/
 }
 
 
@@ -3799,8 +3799,8 @@ int __thiscall MapClass_MarkForRedraw(_DWORD *this, int a2)
   result = a2; /*0x4f4300*/
   if ( a2 ) /*0x4f4306*/
   {
-    if ( *(this + 3) != 2 ) /*0x4f430c*/
-      *(this + 3) = a2; /*0x4f430e*/
+    if ( this->q00C != 2 ) /*0x4f430c*/
+      this->q00C = a2; /*0x4f430e*/
     return MapClass::IncrementRedrawCounter(&MEMORY[0x87F7E8]); /*0x4f4316*/
   }
   return result; /*0x4f431b*/
@@ -3892,8 +3892,8 @@ int __thiscall sub_4F4480(_DWORD *this)
   v1 = MEMORY[0x887314]; /*0x4f4489*/
   MEMORY[0x887314] = MEMORY[0x88731C]; /*0x4f4492*/
   (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)MEMORY[0x887640] + 64))(MEMORY[0x887640], MEMORY[0x88731C], 0); /*0x4f44a2*/
-  v3 = *(this + 3); /*0x4f44a5*/
-  *(this + 3) = 0; /*0x4f44a8*/
+  v3 = this->q00C; /*0x4f44a5*/
+  this->q00C = 0; /*0x4f44a8*/
   LOBYTE(v6) = v3 != 0; /*0x4f44b7*/
   v7 = v3 == 2; /*0x4f44be*/
   if ( !(unsigned __int8)UI_Helper() ) /*0x4f44c2*/
@@ -4249,7 +4249,7 @@ void __thiscall VectorCursor_uint_DynamicVectorClass_uint____13_::_vt10(int *thi
 
   if ( ((unsigned __int8)MEMORY[0xA8ED84] & 1) == 0 ) /*0x4f4bb7*/
   {
-    v3 = *(this + 1); /*0x4f4bb9*/
+    v3 = this->q004; /*0x4f4bb9*/
     if ( v3 >= 0 ) /*0x4f4bbe*/
     {
       if ( v3 <= 0 ) /*0x4f4bc5*/
@@ -4260,17 +4260,17 @@ void __thiscall VectorCursor_uint_DynamicVectorClass_uint____13_::_vt10(int *thi
     {
       v4 = -1; /*0x4f4bc0*/
     }
-    *(this + 1) = v4 - v3; /*0x4f4bce*/
+    this->q004 = v4 - v3; /*0x4f4bce*/
 LABEL_7:
-    v5 = *(this + 2); /*0x4f4bd1*/
+    v5 = this->q008; /*0x4f4bd1*/
     if ( v5 >= 0 ) /*0x4f4bd6*/
     {
       if ( v5 > 0 ) /*0x4f4be3*/
-        *(this + 2) = 1 - v5; /*0x4f4bec*/
+        this->q008 = 1 - v5; /*0x4f4bec*/
     }
     else
     {
-      *(this + 2) = -1 - v5; /*0x4f4bdd*/
+      this->q008 = -1 - v5; /*0x4f4bdd*/
     }
   }
 }

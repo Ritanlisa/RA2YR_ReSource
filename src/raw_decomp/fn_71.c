@@ -669,7 +669,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->DebrisTypes = &vt_TypeList_VoxelAnimTypeClass_const; /*0x710bfe*/
   VectorClass::Construct((_DWORD *)this + 204, 0, 0); /*0x710c0f*/
   *((_DWORD *)this + 209) = 10; /*0x710c14*/
-  *((_DWORD *)this + 208) = 0; /*0x710c17*/
+  this->q034 = 0; /*0x710c17*/
   this->DebrisMaximums = &vt_TypeList_int; /*0x710c1a*/
   this->Locomotor = 1247291207; /*0x710c2d*/
   this->SuppressionThreshold = 298948665; /*0x710c39*/
@@ -977,8 +977,8 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->qCCC = 1; /*0x711454*/
   this->qCCD = 0; /*0x71145a*/
   this->qCCE = 0; /*0x711460*/
-  *(this + 3279) = 0; /*0x711466*/
-  this->IntList_A_Items = 0; /*0x71146c*/
+  this->q333C = 0; /*0x711466*/
+  this->__pad_3340 = 0; /*0x71146c*/
   this->Naval = 0; /*0x711472*/
   this->Remapable = 0; /*0x711478*/
   this->Cloakable = 0; /*0x71147e*/

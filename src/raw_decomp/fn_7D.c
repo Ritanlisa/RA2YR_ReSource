@@ -2982,7 +2982,7 @@ LABEL_13:
 _DWORD *__thiscall sub_7D2E6E(_DWORD *this)
 {
   this->q004 = 0; /*0x7d2e70*/
-  *(this + 2) = 0; /*0x7d2e74*/
+  this->q008 = 0; /*0x7d2e74*/
   *this = &vt_exception; /*0x7d2e78*/
   return this; /*0x7d2e7e*/
 }
@@ -3010,7 +3010,7 @@ exception *__thiscall __0exception_QAE_ABQBD_Z(exception *this, const char **a2)
   this->q004 = v4; /*0x7d2eb8*/
   if ( v4 ) /*0x7d2ebe*/
     strcpy(v4, *a2); /*0x7d2ec3*/
-  *((_DWORD *)this + 2) = 1; /*0x7d2eca*/
+  this->q008 = 1; /*0x7d2eca*/
   return this; /*0x7d2ed3*/
 }
 
@@ -3024,7 +3024,7 @@ exception *__thiscall __0exception_QAE_ABV0__Z(exception *this, const struct exc
 
   *(_DWORD *)this = &vt_exception; /*0x7d2ee0*/
   v3 = *((_DWORD *)a2 + 2); /*0x7d2ee6*/
-  *((_DWORD *)this + 2) = v3; /*0x7d2eeb*/
+  this->q008 = v3; /*0x7d2eeb*/
   if ( v3 ) /*0x7d2eee*/
   {
     v4 = strlen(*((const char **)a2 + 1)); /*0x7d2ef3*/
@@ -3058,7 +3058,7 @@ void __thiscall sub_7D2F41(void *this)
 {
   bool v1; // zf
 
-  v1 = *((_DWORD *)this + 2) == 0; /*0x7d2f41*/
+  v1 = this->q008 == 0; /*0x7d2f41*/
   *(_DWORD *)this = &vt_exception; /*0x7d2f45*/
   if ( !v1 ) /*0x7d2f4b*/
     __3_YAXPAX_Z(*((void **)this + 1)); /*0x7d2f50*/

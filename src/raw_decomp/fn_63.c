@@ -1963,7 +1963,7 @@ void __thiscall LinkedList_RelinkNode(_DWORD *this, int a2)
     if ( a2 ) /*0x632d49*/
       *(_DWORD *)(a2 + 8) = this + 5; /*0x632d4e*/
     this->q01C = this; /*0x632d54*/
-    *(this + 1) = this + 5; /*0x632d57*/
+    this->q004 = this + 5; /*0x632d57*/
   }
 }
 
