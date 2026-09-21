@@ -486,3 +486,24 @@ this-relative 访问**，参数型 receiver（`a1->X`）架构上不产事件。
 - **修复**：生成器 refresh 改按名去重（新run优先）+ 逐名唯一兜底；现存文件外科去重 + 1 处 `_DWORD*` IDA-ism 修正。
 - **结果**：`csp_canon/classes.hpp` + `e4/e4_globals.hpp` **同 TU 编译 0 error / exit 0**（探针产出 .obj）——e4 类形态迁转的 include 策略不再有障碍。
 - 另：_generated 六个 core 文件 33K 行死存根删除经事后审计 **206/206 地址全部满足 sweep 语义**（completed 或非 stub 文件有真体注解）——并行会话合法产物，一并入库；本会话 sweep_stubs 实跑清除剩余 128 块，dry 复查 0 残留。
+
+## G29 翻译轮执行记录（2026-09-21，sweep+harness+next_batch 循环）
+
+### 账目
+
+| 项 | 值 |
+|---|---|
+| 净增 completed | **+13 → 12,680**（本会话显式 verify+mark 9 件 + 并行会话/harness 收尾 4 件；pending 3,927；reconcile 0 幻影） |
+| sweep_stubs 实跑 | 58 文件 / **206 死块 / 33,027 行**清除（_generated 死存根；并行会话 84c50f46 事后审计 206/206 合规入库 + 本会话续清 128 块，dry 复查 0 残留） |
+| harness 收割 | 6 件 COM thunk/CRT 委托件（GetCurrentProcessId/Thread/ThreadId、AbstractClass::COMStub_143、PostMessageA、__getmbcp）全部 verify PASS |
+| next_batch 循环 | 3 件（processPointerInvalid + InputThunkA/B），全部 PASS |
+| 事故 | **#149 signals.json 并发损坏**：harvest_loop 同步调用超 30s MCP 客户端超时后服务器继续执行，重入双写交错撕裂——已由 G29.1 原子写+async 修复闭环 |
+| 挂账新增 | #150（0x50d9c0/0d9d0 归属错位）、#151（0x449A40 vt 槽 136 thunk 名义冲突） |
+
+### 本轮新机制/教训
+
+1. **虚方法 thunk 必须限定名直接调用**：`this->GetHeight()`（虚）产生虚派发事件 vs IDA 侧直接 call → FAIL；`ObjectClass::GetHeight()` 作用域限定 = 直接调用事件 → PASS。失败链完整走了一遍 `verify FAIL → reopen → replace 限定名 → PASS`（G27 机制 6 实战确认）。
+2. **"e4 5 行件"前提修正**（g29_prep 原判定）：addr40_e4 的 class="" 件实测最小 56 行（LoadAudioFile 127 行/CreateAudioChannel 114 行），真正的 5-16 行小件在**类形态桶**（next_batch core-small-first 的 ObjectClass_e4/aircraft/building 等）。e4 自由函数试点对象应按 next_batch 的 class="" 排序取，而非按文件顺序。
+3. **归属错位件识别法**：伪码 5 行 getter 但调用方 `mov ecx,[ebp+21Ch]`（=this->owner @540 G16 终审）——canon cls 锚是 TechnoClass、真 receiver 是 owner 指向的 HouseClass。翻译前必须 xrefs_to 抽查调用方 receiver 来源（#150 记录全过程）。
+4. **canon vt 槽标注可自相矛盾**：0x449A40 同一函数 canon 同时标 `vt+540`（错，实为槽 136 = +544）且作为槽 135 别名 thunk 存在；vtable_offsets 又给槽 136 = HasValidWeapon。槽位三角互证（IDA 内存直读 vtable + vtable_offsets + 树内 hpp）不一致时挂账，不硬翻（#151）。
+5. **harvest_loop/harness 语义**：30s MCP 客户端超时 ≠ 服务器中止——超时后禁止立即重调同一工具（重入双写）；等 G29.1 async 模式或改用小 count。
