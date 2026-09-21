@@ -901,7 +901,7 @@ char __thiscall VectorClass_PushBack_2(_DWORD *this, _DWORD *a2)
   {
     if ( !this->__pad_034 && v3 ) /*0x691176*/
       return 0; /*0x691176*/
-    v4 = *(this + 5); /*0x691178*/
+    v4 = this->q005; /*0x691178*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x691188*/
       return 0; /*0x69118f*/
   }
@@ -5585,7 +5585,7 @@ char *__thiscall sub_6970A0(char *this)
   this->WOLPreferences = 0; /*0x69716a*/
   *((_DWORD *)this + 162) = 0; /*0x697170*/
   *((_DWORD *)this + 163) = 1; /*0x697176*/
-  *((_DWORD *)this + 164) = 10000; /*0x69717c*/
+  this->q029 = 10000; /*0x69717c*/
   *((_DWORD *)this + 165) = 10; /*0x697182*/
   this->q298 = 1; /*0x697188*/
   this->q299 = 1; /*0x69718f*/
@@ -5623,7 +5623,7 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 573) = 0; /*0x697227*/
   *((_DWORD *)this + 574) = 0; /*0x69722d*/
   this->q8FC = 1; /*0x697233*/
-  *(this + 2301) = 0; /*0x69723a*/
+  this->q8FD = 0; /*0x69723a*/
   *((_DWORD *)this + 572) = &vt_DynamicVectorClass_GlobalPacketType; /*0x697240*/
   *((_DWORD *)this + 577) = 10; /*0x69724a*/
   *((_DWORD *)this + 576) = 0; /*0x697250*/
@@ -5634,43 +5634,43 @@ char *__thiscall sub_6970A0(char *this)
   Waypoint::InitInvalid(this + 9676); /*0x697282*/
   *((_DWORD *)this + 2564) = 0; /*0x69728c*/
   *((_DWORD *)this + 2565) = 0; /*0x697292*/
-  *(this + 10264) = 1; /*0x697298*/
-  *(this + 10265) = 0; /*0x69729f*/
+  this->q2818 = 1; /*0x697298*/
+  this->q2819 = 0; /*0x69729f*/
   this->UnknownVector_280C = &vt_DynamicVectorClass_NodeNameType; /*0x6972a5*/
   *((_DWORD *)this + 2568) = 10; /*0x6972ab*/
   *((_DWORD *)this + 2567) = 0; /*0x6972b1*/
   this->StartSpots = 0; /*0x6972b7*/
   *((_DWORD *)this + 2571) = 0; /*0x6972bd*/
-  *(this + 10288) = 1; /*0x6972c3*/
-  *(this + 10289) = 0; /*0x6972ca*/
+  this->q2830 = 1; /*0x6972c3*/
+  this->q2831 = 0; /*0x6972ca*/
   this->UnknownVector_2824 = &vt_DynamicVectorClass_NodeNameType; /*0x6972d0*/
   *((_DWORD *)this + 2574) = 10; /*0x6972d6*/
   *((_DWORD *)this + 2573) = 0; /*0x6972dc*/
   this->WOLPreferences = 0; /*0x6972e2*/
   *((_DWORD *)this + 2577) = 0; /*0x6972e8*/
-  *(this + 10312) = 1; /*0x6972ee*/
-  *(this + 10313) = 0; /*0x6972f5*/
+  this->q2848 = 1; /*0x6972ee*/
+  this->q2849 = 0; /*0x6972f5*/
   this->q283C = &vt_DynamicVectorClass_NodeNameType; /*0x6972fb*/
   *((_DWORD *)this + 2580) = 10; /*0x697301*/
   this->qA13 = 0; /*0x697307*/
   *((_DWORD *)this + 2624) = 0; /*0x69730d*/
   *((_DWORD *)this + 2625) = 0; /*0x697313*/
-  *(this + 10504) = 1; /*0x697319*/
-  *(this + 10505) = 0; /*0x697320*/
+  this->q2908 = 1; /*0x697319*/
+  this->q2909 = 0; /*0x697320*/
   *((_DWORD *)this + 2623) = &off_7F11B4; /*0x697326*/
   *((_DWORD *)this + 2628) = 10; /*0x697330*/
   *((_DWORD *)this + 2627) = 0; /*0x697336*/
   *((_DWORD *)this + 2630) = 0; /*0x69733c*/
   *((_DWORD *)this + 2631) = 0; /*0x697342*/
-  *(this + 10528) = 1; /*0x697348*/
-  *(this + 10529) = 0; /*0x69734f*/
+  this->q2920 = 1; /*0x697348*/
+  this->q2921 = 0; /*0x69734f*/
   *((_DWORD *)this + 2629) = &vt_DynamicVectorClass_char; /*0x697355*/
   *((_DWORD *)this + 2634) = 10; /*0x69735f*/
   *((_DWORD *)this + 2633) = 0; /*0x697365*/
   *((_DWORD *)this + 2636) = 0; /*0x697371*/
   *((_DWORD *)this + 2637) = 0; /*0x697377*/
-  *(this + 10552) = 1; /*0x69737d*/
-  *(this + 10553) = 0; /*0x697384*/
+  this->q2938 = 1; /*0x69737d*/
+  this->q2939 = 0; /*0x697384*/
   *((_DWORD *)this + 2635) = &vt_DynamicVectorClass_unsigned_short_const; /*0x69738a*/
   *((_DWORD *)this + 2640) = 10; /*0x697394*/
   *((_DWORD *)this + 2639) = 0; /*0x69739a*/
@@ -5696,29 +5696,29 @@ char *__thiscall sub_6970A0(char *this)
     --v12; /*0x6973ee*/
   }
   while ( v12 ); /*0x6973ef*/
-  *(this + 12488) = 0; /*0x6973f1*/
+  this->q30C8 = 0; /*0x6973f1*/
   *(_DWORD *)this = 0; /*0x6973fc*/
   this->SessionClass_field_14 = 2; /*0x6973ff*/
   this->q007 = 0; /*0x697402*/
   this->SessionClass_field_08 = 1; /*0x697405*/
   this->q024 = 0; /*0x697409*/
   this->q028 = 0; /*0x69740c*/
-  *(this + 41) = 0; /*0x69740f*/
-  *(this + 53) = 0; /*0x697412*/
+  this->q029 = 0; /*0x69740f*/
+  this->q035 = 0; /*0x697412*/
   this->Handle = 0; /*0x697415*/
-  *(this + 42) = 0; /*0x697418*/
+  this->q02A = 0; /*0x697418*/
   this->q0AC = 0; /*0x69741b*/
   this->q02C = 0; /*0x69741e*/
   this->SessionClass_field_0C = 0; /*0x697421*/
   this->UniqueID = 0; /*0x697424*/
-  *(this + 228) = 0; /*0x697427*/
-  *(this + 229) = 0; /*0x69742d*/
-  *(this + 230) = 0; /*0x697433*/
-  *(this + 231) = 0; /*0x697439*/
-  *(this + 232) = 0; /*0x69743f*/
+  this->q0E4 = 0; /*0x697427*/
+  this->q0E5 = 0; /*0x69742d*/
+  this->q0E6 = 0; /*0x697433*/
+  this->q0E7 = 0; /*0x697439*/
+  this->q0E8 = 0; /*0x69743f*/
   this->SessionClass_field_10 = 1; /*0x697445*/
   *((_DWORD *)this + 81) = 0; /*0x69744c*/
-  *(this + 328) = 0; /*0x697452*/
+  this->q148 = 0; /*0x697452*/
   this->idxSide = 0; /*0x69745b*/
   this->idxSide2 = -1; /*0x697461*/
   this->q057 = 2; /*0x697467*/
@@ -5727,22 +5727,22 @@ char *__thiscall sub_6970A0(char *this)
   this->Side2 = this->idxSide2; /*0x697485*/
   this->q05F = this->q057; /*0x697491*/
   this->Color2 = this->q058; /*0x69749d*/
-  *(this + 7897) = 1; /*0x6974a3*/
-  *(this + 7896) = 1; /*0x6974aa*/
-  *(this + 8129) = 1; /*0x6974b1*/
-  *(this + 8128) = 1; /*0x6974ba*/
+  this->q1ED9 = 1; /*0x6974a3*/
+  this->q1ED8 = 1; /*0x6974aa*/
+  this->q1FC1 = 1; /*0x6974b1*/
+  this->q1FC0 = 1; /*0x6974ba*/
   *(_DWORD *)(this + 12410) = 0; /*0x6974c1*/
   *(_DWORD *)(this + 12414) = 0; /*0x6974c9*/
   *(_DWORD *)(this + 12418) = 0; /*0x6974d4*/
   *(_DWORD *)(this + 12422) = 0; /*0x6974da*/
-  *(this + 12408) = 0; /*0x6974e0*/
-  *(this + 12396) = 0; /*0x6974e6*/
+  this->q3078 = 0; /*0x6974e0*/
+  this->q306C = 0; /*0x6974e6*/
   *((_WORD *)this + 6199) = 0; /*0x6974ec*/
   *((_WORD *)this + 6200) = 0; /*0x6974f3*/
   *((_DWORD *)this + 3068) = 1250; /*0x6974fa*/
   *((_DWORD *)this + 3069) = 0; /*0x697504*/
-  *(this + 12312) = 1; /*0x69750a*/
-  *(this + 12104) = 0; /*0x697511*/
+  this->q3018 = 1; /*0x69750a*/
+  this->q2F48 = 0; /*0x697511*/
   this->q301C = 0; /*0x69751c*/
   memset(MEMORY[0xB73E44], 0, 0x2000u); /*0x697522*/
   memset(dword_B76338, 0, sizeof(dword_B76338)); /*0x69752e*/
@@ -5750,22 +5750,22 @@ char *__thiscall sub_6970A0(char *this)
   this->SessionClass_field_304 = 0; /*0x697536*/
   this->LastNickSlot = -1; /*0x69753c*/
   this->WOLLimitResolution = 0; /*0x697542*/
-  *(this + 10600) = 0; /*0x697548*/
+  this->q2968 = 0; /*0x697548*/
   this->q3074 = -1; /*0x697559*/
   memset(this + 12320, 0, 0x28u); /*0x69755f*/
   *((_WORD *)this + 6180) = 0; /*0x697561*/
   *((_DWORD *)this + 3107) = 0; /*0x697563*/
-  *(this + 12432) = 1; /*0x697569*/
+  this->q3090 = 1; /*0x697569*/
   *((_DWORD *)this + 3109) = -1; /*0x697570*/
-  *(this + 12440) = 0; /*0x697576*/
+  this->q3098 = 0; /*0x697576*/
   *((_DWORD *)this + 3111) = 20; /*0x69757c*/
   *((_DWORD *)this + 3112) = 0; /*0x697586*/
   *((_DWORD *)this + 3113) = 0; /*0x69758c*/
   *((_DWORD *)this + 3114) = -1; /*0x697592*/
   *((_WORD *)this + 5314) = 0; /*0x697598*/
   this->q1A2 = 0; /*0x69759f*/
-  *(this + 1673) = 0; /*0x6975a5*/
-  *(this + 1674) = 0; /*0x6975b0*/
+  this->q689 = 0; /*0x6975a5*/
+  this->q68A = 0; /*0x6975b0*/
   this->SessionClass_field_310 = 8; /*0x6975b6*/
   *((_DWORD *)this + 198) = 15; /*0x6975c0*/
   *((_DWORD *)this + 204) = 15; /*0x6975c6*/
@@ -5777,8 +5777,8 @@ char *__thiscall sub_6970A0(char *this)
   LOBYTE(v13) = v13 & 0xFE; /*0x6975fd*/
   *((_DWORD *)this + 205) = 0; /*0x697604*/
   *((_DWORD *)this + 206) = 0; /*0x69760a*/
-  *(this + 1660) = 0; /*0x697610*/
-  *(this + 1661) = 0; /*0x697616*/
+  this->q67C = 0; /*0x697610*/
+  this->q67D = 0; /*0x697616*/
   this->q1A0 = 0; /*0x69761c*/
   this->q1A1 = 0; /*0x697622*/
   *((_WORD *)this + 3949) = 0; /*0x697628*/
@@ -5786,9 +5786,9 @@ char *__thiscall sub_6970A0(char *this)
   (*(void (__thiscall **)(char *, char *))(v14 + 8))(this + 9044, MEMORY[0x83EEAC]); /*0x697635*/
   *((_DWORD *)this + 2288) &= 0xFFFFFFF8; /*0x697648*/
   *((_DWORD *)this + 2289) = 0; /*0x697659*/
-  *(this + 9172) = 0; /*0x69765f*/
-  *(this + 9173) = 1; /*0x697665*/
-  *(this + 9174) = 0; /*0x69766c*/
+  this->q23D4 = 0; /*0x69765f*/
+  this->q23D5 = 1; /*0x697665*/
+  this->q23D6 = 0; /*0x69766c*/
   *((_WORD *)this + 4588) = 0; /*0x697672*/
   *((_WORD *)this + 4844) = 0; /*0x697679*/
   *((_DWORD *)this + 2591) = 0; /*0x697680*/
@@ -5813,11 +5813,11 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 3119) = MEMORY[0xB07744]; /*0x697745*/
   v15 = this + 132; /*0x69774e*/
   this->LastNickSlot = MEMORY[0xB07748]; /*0x697754*/
-  *(this + 12488) = 0; /*0x697757*/
+  this->q30C8 = 0; /*0x697757*/
   *((_DWORD *)this + 3123) = 0; /*0x69775d*/
   *((_DWORD *)this + 3124) = 0; /*0x697763*/
   *((_DWORD *)this + 3125) = 0; /*0x697769*/
-  *(this + 10360) = 0; /*0x69776f*/
+  this->q2878 = 0; /*0x69776f*/
   *((_DWORD *)this + 15) = 0; /*0x697775*/
   v16 = 8; /*0x697778*/
   do /*0x69778e*/
@@ -5831,7 +5831,7 @@ char *__thiscall sub_6970A0(char *this)
   this->MPGameMode = 0; /*0x697793*/
   this->ScenarioFilename = 0; /*0x697796*/
   *((_DWORD *)this + 563) = 0; /*0x69779c*/
-  *(this + 2256) = 0; /*0x6977a2*/
+  this->q8D0 = 0; /*0x6977a2*/
   *((_DWORD *)this + 565) = 0; /*0x6977a9*/
   return this; /*0x6977a8*/
 }
@@ -6115,7 +6115,7 @@ int __thiscall SessionClass_CreateConnections(void *this)
   while ( (int)v9 < (int)&MEMORY[0xA8E2A4] ); /*0x697d79*/
   if ( *(_DWORD *)this != 4 ) /*0x697d7e*/
     goto LABEL_22; /*0x697d7e*/
-  if ( !*((_BYTE *)this + 12432) ) /*0x697d84*/
+  if ( !this->q3090 ) /*0x697d84*/
     goto LABEL_22; /*0x697d84*/
   v12 = 0; /*0x697da0*/
   v14[0] = 0; /*0x697db0*/
@@ -6125,7 +6125,7 @@ int __thiscall SessionClass_CreateConnections(void *this)
   v14[4] = 0; /*0x697dc0*/
   v14[5] = 0; /*0x697dc4*/
   NetworkID::Assign(&MEMORY[0xA8DBB0], &v12, (int)v14, 0); /*0x697dc8*/
-  *((_BYTE *)this + 10600) = 1; /*0x697dd2*/
+  this->q2968 = 1; /*0x697dd2*/
   *((_DWORD *)this + 3107) = 0; /*0x697dd9*/
   *((_DWORD *)this + 3111) = 20; /*0x697ddf*/
   *((_DWORD *)this + 3109) = -1; /*0x697de9*/

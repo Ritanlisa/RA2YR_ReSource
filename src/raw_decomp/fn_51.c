@@ -1250,7 +1250,7 @@ _BYTE *__thiscall SuperWeaponTypeClass::Construct(_BYTE *this, AbstractClass *aP
   this->__pad_198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
   this->q184 = &vt_TypeList_AircraftTypeClass_const; /*0x51154c*/
-  *(this + 420) = 65; /*0x511552*/
+  this->q1A4 = 65; /*0x511552*/
   this->q1A5 = 0; /*0x511559*/
   this->q1A6 = 0; /*0x51155f*/
   this->q1A7 = 1; /*0x511565*/
@@ -2583,7 +2583,7 @@ _DWORD *__thiscall InfantryTypeVector_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_InfantryTypeClass_const; /*0x512e03*/
-  *(this + 5) = 10; /*0x512e09*/
+  this->q005 = 10; /*0x512e09*/
   this->q010 = 0; /*0x512e10*/
   return this; /*0x512e19*/
 }
@@ -2668,7 +2668,7 @@ char __thiscall InfantryTypeVector::Add(_DWORD *this, InfantryTypeClass *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x512f36*/
       return 0; /*0x512f36*/
-    v4 = *(this + 5); /*0x512f38*/
+    v4 = this->q005; /*0x512f38*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x512f48*/
       return 0; /*0x512f4f*/
   }
@@ -2880,7 +2880,7 @@ _DWORD *__thiscall UnitTypeVector_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<UnitTypeClass const *>::`vftable'; /*0x5131d3*/
-  *(this + 5) = 10; /*0x5131d9*/
+  this->q005 = 10; /*0x5131d9*/
   this->q010 = 0; /*0x5131e0*/
   return this; /*0x5131e9*/
 }
@@ -2965,7 +2965,7 @@ char __thiscall VectorClass::PushBack(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x513306*/
       return 0; /*0x513306*/
-    v4 = *(this + 5); /*0x513308*/
+    v4 = this->q005; /*0x513308*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x513318*/
       return 0; /*0x51331f*/
   }
@@ -3177,7 +3177,7 @@ _DWORD *__thiscall sub_513560(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_AircraftTypeClass_const; /*0x5135a3*/
-  *(this + 5) = 10; /*0x5135a9*/
+  this->q005 = 10; /*0x5135a9*/
   this->q010 = 0; /*0x5135b0*/
   return this; /*0x5135b9*/
 }
@@ -3339,7 +3339,7 @@ _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x5137b1*/
-  *(this + 5) = aP1[1].Items; /*0x5137b7*/
+  this->q005 = aP1[1].Items; /*0x5137b7*/
   *this = &vt_TypeList_UnitTypeClass_const; /*0x5137ba*/
   return this; /*0x5137c2*/
 }
@@ -3390,7 +3390,7 @@ _DWORD *__thiscall HouseTypeClass::readParaDropTypes(_DWORD *this, VectorClass *
     }
   }
   this->q010 = aP1[1].vtable0; /*0x513841*/
-  *(this + 5) = aP1[1].Items; /*0x513847*/
+  this->q005 = aP1[1].Items; /*0x513847*/
   *this = &vt_TypeList_AircraftTypeClass_const; /*0x51384a*/
   return this; /*0x513852*/
 }
@@ -3441,7 +3441,7 @@ _DWORD *__thiscall HouseTypeClass::readAllowedUnits(_DWORD *this, InfantryTypeCl
     }
   }
   this->q010 = aP1->uniqueId; /*0x5138d1*/
-  *(this + 5) = aP1->abstractFlags; /*0x5138d7*/
+  this->q005 = aP1->abstractFlags; /*0x5138d7*/
   *this = &vt_DynamicVectorClass_InfantryTypeClass_const; /*0x5138da*/
   return this; /*0x5138e2*/
 }

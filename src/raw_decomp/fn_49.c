@@ -17803,7 +17803,7 @@ _DWORD *__thiscall sub_49ECD0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49ed13*/
-  *(this + 5) = 10; /*0x49ed19*/
+  this->q005 = 10; /*0x49ed19*/
   this->q010 = 0; /*0x49ed20*/
   return this; /*0x49ed29*/
 }

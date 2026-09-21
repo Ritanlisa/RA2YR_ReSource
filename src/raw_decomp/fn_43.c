@@ -10401,10 +10401,10 @@ int __thiscall BuildingClass::Dtor(void **this)
   (*((void (__thiscall **)(void **))this->Overpowerers + 3))(this + 411); /*0x43c03d*/
   (*((void (__thiscall **)(void **, int, _DWORD))this->Overpowerers + 2))(this + 411, v25, 0); /*0x43c048*/
   v26 = (int)this->Audio8; /*0x43c051*/
-  (*((void (__thiscall **)(void **))this->q684 + 3))(this + 417); /*0x43c05f*/
-  (*((void (__thiscall **)(void **, int, _DWORD))this->q684 + 2))(this + 417, v26, 0); /*0x43c069*/
+  (*((void (__thiscall **)(void **))this->q1A1 + 3))(this + 417); /*0x43c05f*/
+  (*((void (__thiscall **)(void **, int, _DWORD))this->q1A1 + 2))(this + 417, v26, 0); /*0x43c069*/
   v27 = this->q1A2; /*0x43c06c*/
-  this->q684 = &VectorClass<InfantryClass *>::`vftable'; /*0x43c073*/
+  this->q1A1 = &VectorClass<InfantryClass *>::`vftable'; /*0x43c073*/
   if ( v27 && this->q691 ) /*0x43c07b*/
   {
     __3_YAXPAX_Z(v27); /*0x43c083*/

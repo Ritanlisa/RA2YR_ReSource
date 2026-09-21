@@ -8312,7 +8312,7 @@ _DWORD *__thiscall sub_589100(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_SubzoneConnectionStruct; /*0x589178*/
-  *(this + 5) = 10; /*0x58917e*/
+  this->q005 = 10; /*0x58917e*/
   this->q010 = 0; /*0x589185*/
   return this; /*0x58918a*/
 }

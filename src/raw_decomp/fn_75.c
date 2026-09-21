@@ -8047,9 +8047,9 @@ LABEL_14:
   *((_DWORD *)this + 106) = a7; /*0x7593b0*/
   *((_DWORD *)this + 107) = a8; /*0x7593b6*/
   if ( TestBitArray(3) ) /*0x7593bc*/
-    *((_DWORD *)this + 112) = 1; /*0x7593c5*/
+    this->q070 = 1; /*0x7593c5*/
   else
-    *((_DWORD *)this + 112) = 14; /*0x7593cd*/
+    this->q070 = 14; /*0x7593cd*/
   v17 = this->q52C; /*0x7593d7*/
   *((_DWORD *)this + 113) = -1; /*0x7593dd*/
   if ( (v17 & 1) != 0 ) /*0x7593e5*/
@@ -8076,18 +8076,18 @@ LABEL_14:
   *((_DWORD *)this + 322) = 0; /*0x759483*/
   strcpy(this + 113, a1); /*0x75949f*/
   *((_DWORD *)this + 338) = aP5; /*0x7594b0*/
-  *((_DWORD *)this + 326) = 0; /*0x7594b7*/
+  this->__pad_518 = 0; /*0x7594b7*/
   *((_DWORD *)this + 327) = 0; /*0x7594bd*/
   *((_DWORD *)this + 328) = 0; /*0x7594c3*/
   *((_DWORD *)this + 329) = 0; /*0x7594c9*/
   *((_DWORD *)this + 324) = -1; /*0x7594cf*/
-  *(this + 1320) = 0; /*0x7594d9*/
+  this->q528 = 0; /*0x7594d9*/
   *((_DWORD *)this + 336) = a4; /*0x7594df*/
   *((_DWORD *)this + 337) = a5; /*0x7594e5*/
-  *(this + 112) = 0; /*0x7594eb*/
-  *(this + 1300) = 0; /*0x7594ee*/
-  *(this + 1360) = 0; /*0x7594f4*/
-  *(this + 1361) = 0; /*0x7594fa*/
+  this->q070 = 0; /*0x7594eb*/
+  this->q514 = 0; /*0x7594ee*/
+  this->q550 = 0; /*0x7594f4*/
+  this->q551 = 0; /*0x7594fa*/
   *(_DWORD *)this = 0; /*0x759500*/
   return this; /*0x7594b6*/
 }
@@ -12141,7 +12141,7 @@ _DWORD *__thiscall sub_75E6B0(_DWORD *this, _DWORD *a2)
     }
   }
   this->q010 = a2[4]; /*0x75e721*/
-  *(this + 5) = a2[5]; /*0x75e727*/
+  this->q005 = a2[5]; /*0x75e727*/
   *this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const; /*0x75e72a*/
   return this; /*0x75e732*/
 }

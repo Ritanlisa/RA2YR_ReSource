@@ -5837,7 +5837,7 @@ int __thiscall TechnoClass::ScanForEnemies(#377 *this)
         this->isInLogic = v6; /*0x70b0d4*/
         result = this->owningHouseIndex; /*0x70b0da*/
         this->q096 = result; /*0x70b0dd*/
-        *((_DWORD *)this + 151) = this->q029; /*0x70b0e3*/
+        this->q097 = this->q029; /*0x70b0e3*/
         if ( !v6 ) /*0x70b0e6*/
           return result; /*0x70b0e6*/
         if ( !v18 || !v19 ) /*0x70b0fa*/

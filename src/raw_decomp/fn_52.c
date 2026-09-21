@@ -4024,7 +4024,7 @@ _DWORD *__thiscall DynamicVectorClass::AnimTypeConstructor(_DWORD *this, Dynamic
     }
   }
   *this = &vt_DynamicVectorClass_AnimTypeClass_const; /*0x525293*/
-  *(this + 5) = 10; /*0x525299*/
+  this->q005 = 10; /*0x525299*/
   this->q010 = 0; /*0x5252a0*/
   return this; /*0x5252a9*/
 }
@@ -4109,7 +4109,7 @@ char __thiscall DynamicVector::Add_Alt4(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x5253c6*/
       return 0; /*0x5253c6*/
-    v4 = *(this + 5); /*0x5253c8*/
+    v4 = this->q005; /*0x5253c8*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x5253d8*/
       return 0; /*0x5253df*/
   }
@@ -4284,7 +4284,7 @@ _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x525661*/
-  *(this + 5) = aP1[1].Items; /*0x525667*/
+  this->q005 = aP1[1].Items; /*0x525667*/
   *this = &vt_TypeList_AnimTypeClass_const; /*0x52566a*/
   return this; /*0x525672*/
 }

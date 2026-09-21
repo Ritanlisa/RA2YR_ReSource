@@ -2558,7 +2558,7 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
   (*(void (__thiscall **)(int *))(this->q3E4 + 12))(this + 249);
   (*(void (__thiscall **)(int *))(this->HealCrateSound + 12))(this + 435);
   (*(void (__thiscall **)(int *))(this->q734 + 12))(this + 461);
-  (*(void (__thiscall **)(int *))(*(this + 497) + 12))(this + 497);
+  (*(void (__thiscall **)(int *))(this->q1F1 + 12))(this + 497);
   (*(void (__thiscall **)(int *))(this->Dig + 12))(this + 504);
   (*(void (__thiscall **)(int *))(this->Parachute + 12))(this + 511);
   (*(void (__thiscall **)(int *))(this->ChronoReinfDelay + 12))(this + 518);
@@ -2568,7 +2568,7 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
   (*(void (__thiscall **)(int *))(this->IonCannonWarhead + 12))(this + 555);
   (*(void (__thiscall **)(int *))(this->CHRONOSK_SHP + 12))(this + 562);
   (*(void (__thiscall **)(int *))(this->q8E4 + 12))(this + 569);
-  (*(void (__thiscall **)(int *))(this->__pad_240 + 12))(this + 576);
+  (*(void (__thiscall **)(int *))(this->q900 + 12))(this + 576);
   (*(void (__thiscall **)(int *))(this->q91C + 12))(this + 583);
   (*(void (__thiscall **)(int *))(this->q938 + 12))(this + 590);
   (*(void (__thiscall **)(int *))(this->q954 + 12))(this + 597);
@@ -2587,7 +2587,7 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
   (*(void (__thiscall **)(int *))(this->TiberiumGrows + 12))(this + 695);
   (*(void (__thiscall **)(int *))(this->qB58 + 12))(this + 726);
   (*(void (__thiscall **)(int *))(this->qB74 + 12))(this + 733);
-  (*(void (__thiscall **)(int *))(this->__pad_2E4 + 12))(this + 740);
+  (*(void (__thiscall **)(int *))(this->qB90 + 12))(this + 740);
   (*(void (__thiscall **)(int *))(this->qBC0 + 12))(this + 752);
   (*(void (__thiscall **)(int *))(this->__pad_2C8 + 12))(this + 712);
   (*(void (__thiscall **)(int *))(this->qFF8 + 12))(this + 1022);
@@ -3577,16 +3577,16 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
   ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 62);
   ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 63);
   ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 64);
-  *(this + 1016) = SearchMIXFile(MEMORY[0x83B0F0], 0);
-  *(this + 1017) = SearchMIXFile(MEMORY[0x83B0E0], 0);
+  this->q3F8 = SearchMIXFile(MEMORY[0x83B0F0], 0);
+  this->q3F9 = SearchMIXFile(MEMORY[0x83B0E0], 0);
   for ( i97 = 0; i97 < this->DropPodPuff; ++i97 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RadarEventMinRadius + 4 * i97));
-  for ( i98 = 0; i98 < *(this + 737); ++i98 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 734) + 4 * i98));
-  for ( i99 = 0; i99 < *(this + 744); ++i99 )
+  for ( i98 = 0; i98 < this->q2E1; ++i98 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2DE + 4 * i98));
+  for ( i99 = 0; i99 < this->q2E8; ++i99 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2E5 + 4 * i99));
-  for ( i100 = 0; i100 < *(this + 756); ++i100 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 753) + 4 * i100));
+  for ( i100 = 0; i100 < this->q2F4; ++i100 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2F1 + 4 * i100));
   for ( i101 = 0; i101 < this->MaximumBaseDefenseValue; ++i101 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->GDIBaseDefenseCoefficient + 4 * i101));
   for ( i102 = 0; i102 < this->IonBlast; ++i102 )
@@ -3597,54 +3597,54 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->ChronoDistanceFactor + 4 * i104));
   for ( i105 = 0; i105 < this->AIMinorSuperReadyPercent; ++i105 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->SpyPowerBlackout + 4 * i105));
-  for ( i106 = 0; i106 < *(this + 716); ++i106 )
+  for ( i106 = 0; i106 < this->q2CC; ++i106 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2C9 + 4 * i106));
-  for ( i107 = 0; i107 < *(this + 1026); ++i107 )
+  for ( i107 = 0; i107 < this->q402; ++i107 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_FFC + 4 * i107));
   for ( i108 = 0; i108 < this->Easy; ++i108 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->HarvesterDumpRate + 4 * i108));
-  for ( i109 = 0; i109 < *(this + 836); ++i109 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_D04 + 4 * i109));
-  for ( i110 = 0; i110 < *(this + 843); ++i110 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_D20 + 4 * i110));
-  for ( i111 = 0; i111 < *(this + 850); ++i111 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_D3C + 4 * i111));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_2D0 + 4 * i108));
+  for ( i109 = 0; i109 < this->q344; ++i109 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_341 + 4 * i109));
+  for ( i110 = 0; i110 < this->q34B; ++i110 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_348 + 4 * i110));
+  for ( i111 = 0; i111 < this->q352; ++i111 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_34F + 4 * i111));
   for ( i112 = 0; i112 < this->AlliedCrew; ++i112 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->Technician + 4 * i112));
   for ( i113 = 0; i113 < this->TiberiumExplosionDamage; ++i113 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MutateExplosionWarhead + 4 * i113));
   for ( i114 = 0; i114 < this->IvanIconFlickerRate; ++i114 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MinLowPowerProductionSpeed + 4 * i114));
-  for ( i115 = 0; i115 < *(this + 566); ++i115 )
+  for ( i115 = 0; i115 < this->q236; ++i115 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->IronCurtainDuration + 4 * i115));
-  for ( i116 = 0; i116 < *(this + 573); ++i116 )
+  for ( i116 = 0; i116 < this->q23D; ++i116 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q8E8 + 4 * i116));
-  for ( i117 = 0; i117 < *(this + 580); ++i117 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q904 + 4 * i117));
-  for ( i118 = 0; i118 < *(this + 587); ++i118 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q920 + 4 * i118));
-  for ( i119 = 0; i119 < *(this + 594); ++i119 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->CMisl + 4 * i119));
-  for ( i120 = 0; i120 < *(this + 601); ++i120 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q958 + 4 * i120));
+  for ( i117 = 0; i117 < this->q244; ++i117 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_241 + 4 * i117));
+  for ( i118 = 0; i118 < this->q24B; ++i118 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_248 + 4 * i118));
+  for ( i119 = 0; i119 < this->q252; ++i119 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_24F + 4 * i119));
+  for ( i120 = 0; i120 < this->q259; ++i120 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_256 + 4 * i120));
   for ( i121 = 0; i121 < this->TargetSpecialThreatCoefficientDefault; ++i121 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q974 + 4 * i121));
-  for ( i122 = 0; i122 < *(this + 615); ++i122 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_25D + 4 * i121));
+  for ( i122 = 0; i122 < this->q267; ++i122 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->TargetDistanceCoefficientDefault + 4 * i122));
   for ( i123 = 0; i123 < this->HelipadLimit; ++i123 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->AirstripLimit + 4 * i123));
   for ( i124 = 0; i124 < this->DefenseRatio; ++i124 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->AARatio + 4 * i124));
-  for ( i125 = 0; i125 < *(this + 643); ++i125 )
+  for ( i125 = 0; i125 < this->q283; ++i125 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_0A0 + 4 * i125));
   for ( i126 = 0; i126 < this->InfantryReserve; ++i126 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->qA1C + 4 * i126));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_287 + 4 * i126));
   for ( i127 = 0; i127 < this->CloakDelay; ++i127 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->UnitCrateType + 4 * i127));
-  for ( i128 = 0; i128 < *(this + 664); ++i128 )
+  for ( i128 = 0; i128 < this->q298; ++i128 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->BaseBias + 4 * i128));
   for ( i129 = 0; i129 < this->AutoCrush; ++i129 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->Production + 4 * i129));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_29C + 4 * i129));
   for ( i130 = 0; i130 < this->SilverCrate; ++i130 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->Harvester + 4 * i130));
   for ( i131 = 0; i131 < this->q2AD; ++i131 )
@@ -3653,8 +3653,8 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_2B1 + 4 * i132));
   for ( i133 = 0; i133 < this->MessageDelay; ++i133 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MultiEngineer + 4 * i133));
-  for ( i134 = 0; i134 < *(this + 730); ++i134 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 727) + 4 * i134));
+  for ( i134 = 0; i134 < this->q2DA; ++i134 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2D7 + 4 * i134));
   for ( i135 = 0; i135 < this->YuriMindControlSound; ++i135 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RevealTriggerRadius + 4 * i135));
   for ( i136 = 0; i136 < this->FlashFrameTime; ++i136 )
@@ -3665,25 +3665,25 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RadarCombatFlashTime + 4 * i138));
   for ( i139 = 0; i139 < this->CrateUnitSound; ++i139 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->CrateFireSound + 4 * i139));
-  v155 = *(this + 179);
+  v155 = this->q0B3;
   for ( i140 = 0; i140 < v155; ++i140 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_0B0 + 4 * i140));
-  v157 = *(this + 186);
+  v157 = this->q0BA;
   for ( i141 = 0; i141 < v157; ++i141 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2DC + 4 * i141));
-  for ( i142 = 0; i142 < *(this + 773); ++i142 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 770) + 4 * i142));
-  for ( i143 = 0; i143 < *(this + 787); ++i143 )
+  for ( i142 = 0; i142 < this->q305; ++i142 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q302 + 4 * i142));
+  for ( i143 = 0; i143 < this->q313; ++i143 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q0C4 + 4 * i143));
-  for ( i144 = 0; i144 < *(this + 801); ++i144 )
+  for ( i144 = 0; i144 < this->q321; ++i144 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_C78 + 4 * i144));
-  for ( i145 = 0; i145 < *(this + 815); ++i145 )
+  for ( i145 = 0; i145 < this->q32F; ++i145 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_CB0 + 4 * i145));
-  result = *(this + 829);
+  result = this->q33D;
   for ( i146 = 0; i146 < result; ++i146 )
   {
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_CE8 + 4 * i146));
-    result = *(this + 829);
+    result = this->q33D;
   }
   v165 = this->q0AC;
   v166 = 0;
@@ -5253,7 +5253,7 @@ int *__thiscall TypeList::CopyFull(int *this, VectorClass *aP1)
     }
   }
   this->Items = (int)aP1[1].vtable0; /*0x67a0f3*/
-  *(this + 5) = (int)aP1[1].Items; /*0x67a0f9*/
+  this->q005 = (int)aP1[1].Items; /*0x67a0f9*/
   this->q006 = aP1[1].Capacity; /*0x67a0ff*/
   return this; /*0x67a104*/
 }
@@ -5299,7 +5299,7 @@ int *__thiscall TypeList::CopyAircraft(int *this, VectorClass *aP1)
     }
   }
   this->Items = (int)aP1[1].vtable0; /*0x67a173*/
-  *(this + 5) = (int)aP1[1].Items; /*0x67a179*/
+  this->q005 = (int)aP1[1].Items; /*0x67a179*/
   this->q006 = aP1[1].Capacity; /*0x67a17f*/
   return this; /*0x67a184*/
 }
@@ -5437,7 +5437,7 @@ int *__thiscall TypeList::CopyInfantry(int *this, CCINIClass *aP1)
     }
   }
   this->Items = aP1->sectionHead[0]; /*0x67a2f3*/
-  this->CapacityIncrement = aP1->sectionHead[1]; /*0x67a2f9*/
+  this->q005 = aP1->sectionHead[1]; /*0x67a2f9*/
   this->q006 = aP1->sectionHead[2]; /*0x67a2ff*/
   return this; /*0x67a304*/
 }
@@ -6218,7 +6218,7 @@ _DWORD *__thiscall sub_67AC70(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const; /*0x67acb3*/
-  *(this + 5) = 10; /*0x67acb9*/
+  this->q005 = 10; /*0x67acb9*/
   this->q010 = 0; /*0x67acc0*/
   return this; /*0x67acc9*/
 }
@@ -6495,7 +6495,7 @@ _DWORD *__thiscall SmudgeTypeVector_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x67b033*/
-  *(this + 5) = 10; /*0x67b039*/
+  this->q005 = 10; /*0x67b039*/
   this->q010 = 0; /*0x67b040*/
   return this; /*0x67b049*/
 }
@@ -6772,7 +6772,7 @@ _DWORD *__thiscall sub_67B370(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<TerrainTypeClass const *>::`vftable'; /*0x67b3b3*/
-  *(this + 5) = 10; /*0x67b3b9*/
+  this->q005 = 10; /*0x67b3b9*/
   this->q010 = 0; /*0x67b3c0*/
   return this; /*0x67b3c9*/
 }
@@ -7698,7 +7698,7 @@ _DWORD *__thiscall TypeList::CopyVoxelAnim(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x67c261*/
-  *(this + 5) = aP1[1].Items; /*0x67c267*/
+  this->q005 = aP1[1].Items; /*0x67c267*/
   *this = &vt_TypeList_VoxelAnimTypeClass_const; /*0x67c26a*/
   return this; /*0x67c272*/
 }
@@ -7749,7 +7749,7 @@ _DWORD *__thiscall SmudgeTypeList::Copy(_DWORD *this, CCINIClass *aP1)
     }
   }
   this->q010 = aP1->sectionHead[0]; /*0x67c2f1*/
-  *(this + 5) = aP1->sectionHead[1]; /*0x67c2f7*/
+  this->q005 = aP1->sectionHead[1]; /*0x67c2f7*/
   *this = &vt_TypeList_SmudgeTypeClass_const; /*0x67c2fa*/
   return this; /*0x67c302*/
 }

@@ -696,7 +696,7 @@ int *__thiscall CalculateBuildingFoundationBounds(int *this, BuildingTypeClass *
           }
         }
       }
-      if ( *(this + 1350) ) /*0x465824*/
+      if ( this->q546 ) /*0x465824*/
       {
         v33 = Building::GetFoundationSize(v41, 0); /*0x46583e*/
         v20 = *v33; /*0x465842*/

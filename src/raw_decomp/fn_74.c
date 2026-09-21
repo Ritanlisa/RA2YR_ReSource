@@ -1278,7 +1278,7 @@ LABEL_90:
               *(_DWORD *)this->q16C = v3; /*0x741f91*/
               ++this->q5BC; /*0x741f97*/
             }
-            (*(void (__thiscall **)(_DWORD *))(*(this + 354) + 12))(this + 354); /*0x741fa6*/
+            (*(void (__thiscall **)(_DWORD *))(this->q162 + 12))(this + 354); /*0x741fa6*/
             v28 = (*(int (__thiscall **)(_DWORD *))(*this + 452))(this); /*0x741fae*/
             v3 = (__int16 *)v28; /*0x741fb4*/
             BYTE4(a2) = 0; /*0x741fb6*/
@@ -1325,7 +1325,7 @@ LABEL_90:
       v125 = 0; /*0x74208c*/
       if ( !v3 ) /*0x742091*/
       {
-        (*(void (__thiscall **)(_DWORD *))(*(this + 354) + 12))(this + 354); /*0x7423ca*/
+        (*(void (__thiscall **)(_DWORD *))(this->q162 + 12))(this + 354); /*0x7423ca*/
         goto LABEL_143; /*0x7423ca*/
       }
       if ( !*(_BYTE *)(this->__pad_6C4 + 3372) ) /*0x7420a5*/
@@ -1393,7 +1393,7 @@ LABEL_130:
           if ( this->__pad_598 < v41 /*0x742353*/
             || (this->__pad_1654 || !v41)
             && (v42 = this->q59C, v42 > 0)
-            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*(this + 354) + 8))(this + 354, v42 + v41, 0) )
+            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(this->q162 + 8))(this + 354, v42 + v41, 0) )
           {
             v43 = this->__pad_598; /*0x74235a*/
             if ( v43 ) /*0x74235f*/
@@ -1695,7 +1695,7 @@ LABEL_318:
                 if ( v100 != CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v138) ) /*0x742dfd*/
                 {
                   (*(void (__thiscall **)(_DWORD *))(this->__pad_16B0 + 12))(this + 363); /*0x742e0b*/
-                  (*(void (__thiscall **)(_DWORD *))(*(this + 354) + 12))(this + 354); /*0x742e1a*/
+                  (*(void (__thiscall **)(_DWORD *))(this->q162 + 12))(this + 354); /*0x742e1a*/
                   if ( v100 ) /*0x742e1f*/
                     BuildingClass::AddToProductionQueue((int)this, (int)v100); /*0x742e28*/
                   return; /*0x742e37*/
@@ -1956,7 +1956,7 @@ LABEL_179:
 LABEL_128:
       if ( !BYTE4(a2) ) /*0x7422e2*/
         goto LABEL_143; /*0x7422e2*/
-      (*(void (__thiscall **)(_DWORD *))(*(this + 354) + 12))(this + 354); /*0x7422f4*/
+      (*(void (__thiscall **)(_DWORD *))(this->q162 + 12))(this + 354); /*0x7422f4*/
       goto LABEL_130; /*0x7422f4*/
     }
 LABEL_49:

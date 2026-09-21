@@ -7889,7 +7889,7 @@ _DWORD *__thiscall sub_628240(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_HSVClass; /*0x6282bc*/
-  *(this + 5) = 10; /*0x6282c2*/
+  this->q005 = 10; /*0x6282c2*/
   this->q010 = 0; /*0x6282c9*/
   return this; /*0x6282ce*/
 }
@@ -8266,7 +8266,7 @@ int __thiscall FileSystem::readFile(_BYTE *this)
   this->DynamicVector_field_0x8 = 0; /*0x628749*/
   this->IsAllocated = 0; /*0x62874c*/
   *(_DWORD *)this = &vt_DynamicVectorClass_HashObject_HashString_SchemeNode; /*0x62874f*/
-  this->CapacityIncrement = 10; /*0x628755*/
+  this->q005 = 10; /*0x628755*/
   this->Items = 0; /*0x62875c*/
   return 0; /*0x62875f*/
 }
@@ -8567,7 +8567,7 @@ _DWORD *__thiscall sub_628B00(_DWORD *this, int a2, _BYTE *a3)
     }
   }
   *this = &vt_DynamicVectorClass_HashObject_HashString_SchemeNode; /*0x628b8f*/
-  *(this + 5) = 10; /*0x628b95*/
+  this->q005 = 10; /*0x628b95*/
   this->q010 = 0; /*0x628b9c*/
   return this; /*0x628ba5*/
 }

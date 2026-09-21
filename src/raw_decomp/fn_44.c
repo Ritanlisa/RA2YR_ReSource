@@ -7532,7 +7532,7 @@ LABEL_34:
     result = MEMORY[0x87F7E8][539633]; /*0x44eab8*/
     if ( MEMORY[0x87F7E8][539633] ) /*0x44eac0*/
     {
-      v16 = this->q684; /*0x44eac2*/
+      v16 = this->q1A1; /*0x44eac2*/
       v17 = (char *)this + 1668; /*0x44eac8*/
       v21 = (_BYTE *)v20; /*0x44ead2*/
       result = (*(int (__thiscall **)(char *, _BYTE **))(v16 + 16))(v17, &v21); /*0x44ead9*/

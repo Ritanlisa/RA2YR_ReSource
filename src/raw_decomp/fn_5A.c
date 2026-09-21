@@ -9203,7 +9203,7 @@ _DWORD *__thiscall DynamicVector::Copy(_DWORD *this, VectorClass *aP1)
     this->__pad_034 = 0; /*0x5ac49d*/
 LABEL_8:
     this->q010 = aP1[1].vtable0; /*0x5ac4a1*/
-    *(this + 5) = aP1[1].Items; /*0x5ac4aa*/
+    this->q005 = aP1[1].Items; /*0x5ac4aa*/
     return this; /*0x5ac4ad*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x5ac453*/
@@ -9222,7 +9222,7 @@ LABEL_8:
   }
   while ( v6 < this->Capacity ); /*0x5ac481*/
   this->q010 = aP1[1].vtable0; /*0x5ac486*/
-  *(this + 5) = aP1[1].Items; /*0x5ac48c*/
+  this->q005 = aP1[1].Items; /*0x5ac48c*/
   return this; /*0x5ac491*/
 }
 
@@ -9591,7 +9591,7 @@ _DWORD *__thiscall DynamicVectorClass_BuildingType_Constructor(_DWORD *this, int
     }
   }
   *this = &vt_DynamicVectorClass_BuildingTypeClass_const; /*0x5ac943*/
-  *(this + 5) = 10; /*0x5ac949*/
+  this->q005 = 10; /*0x5ac949*/
   this->q010 = 0; /*0x5ac950*/
   return this; /*0x5ac959*/
 }
@@ -10603,7 +10603,7 @@ _DWORD *__thiscall TypeList::BuildingTypeCopy(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x5ad6d1*/
-  *(this + 5) = aP1[1].Items; /*0x5ad6d7*/
+  this->q005 = aP1[1].Items; /*0x5ad6d7*/
   *this = &vt_TypeList_BuildingTypeClass_const; /*0x5ad6da*/
   return this; /*0x5ad6e2*/
 }

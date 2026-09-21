@@ -9570,7 +9570,7 @@ _DWORD *__thiscall sub_5BEA30(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_HashObject_unsigned_int_unsigned_int; /*0x5bea8a*/
-  *(this + 5) = 10; /*0x5bea90*/
+  this->q005 = 10; /*0x5bea90*/
   this->q010 = 0; /*0x5bea97*/
   return this; /*0x5beaa0*/
 }

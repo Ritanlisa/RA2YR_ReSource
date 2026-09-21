@@ -7557,7 +7557,7 @@ char __thiscall VectorClass::AppendCopy(_DWORD *this, DynamicVector *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x4a7ff6*/
       return 0; /*0x4a7ff6*/
-    v4 = *(this + 5); /*0x4a7ff8*/
+    v4 = this->q005; /*0x4a7ff8*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x4a8008*/
       return 0; /*0x4a800f*/
   }
@@ -8014,7 +8014,7 @@ _DWORD *__thiscall sub_4A8730(_DWORD *this)
   *((_WORD *)this + 2237) = 0; /*0x4a874c*/
   this->q117C = 0; /*0x4a8753*/
   this->__pad_1180 = 0; /*0x4a8759*/
-  *((_BYTE *)this + 4481) = 0; /*0x4a875f*/
+  this->q1181 = 0; /*0x4a875f*/
   *(_DWORD *)((char *)this + 4482) = MEMORY[0x8A03F8]; /*0x4a876b*/
   *((_WORD *)this + 2243) = 0; /*0x4a8774*/
   *((_WORD *)this + 2244) = 0; /*0x4a877b*/
@@ -10862,7 +10862,7 @@ LABEL_121:
   {
     this->__pad_1180 = 1; /*0x4aba9d*/
   }
-  if ( !this->__pad_1180 || !*(this + 4481) ) /*0x4abab2*/
+  if ( !this->__pad_1180 || !this->q1181 ) /*0x4abab2*/
   {
     VoxClass::FindAndPlay(g_Str_EVA_CannotDeployHere, -1, -1); /*0x4abc80*/
     TechnoClass::GetField(); /*0x4abc85*/

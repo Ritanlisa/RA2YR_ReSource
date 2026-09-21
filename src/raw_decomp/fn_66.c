@@ -3303,7 +3303,7 @@ LABEL_15:
       v11 = this->DynamicVector_field_0x8; /*0x663c70*/
       if ( this->Items < v11 /*0x663c93*/
         || (this->IsAllocated || !v11)
-        && (v12 = this->CapacityIncrement, v12 > 0)
+        && (v12 = this->q005, v12 > 0)
         && (*(unsigned __int8 (__thiscall **)(void *, int, _DWORD))(this->DynamicVector_field_0x8)(this, v11 + v12, 0) )
       {
         v13 = this->Items; /*0x663c9a*/
@@ -4322,137 +4322,137 @@ _DWORD *__thiscall sub_664D20(_DWORD *this, int a2)
   SmudgeTypeVector::Construct(this + 504, 0, 0); /*0x664f27*/
   this->isLoser = &vt_TypeList_SmudgeTypeClass_const; /*0x664f2c*/
   SmudgeTypeVector::Construct(this + 511, 0, 0); /*0x664f3e*/
-  *(this + 511) = &vt_TypeList_SmudgeTypeClass_const; /*0x664f43*/
+  this->q1FF = &vt_TypeList_SmudgeTypeClass_const; /*0x664f43*/
   SmudgeTypeVector::Construct(this + 518, 0, 0); /*0x664f55*/
-  *(this + 518) = &vt_TypeList_SmudgeTypeClass_const; /*0x664f5a*/
+  this->q206 = &vt_TypeList_SmudgeTypeClass_const; /*0x664f5a*/
   SmudgeTypeVector::Construct(this + 525, 0, 0); /*0x664f6c*/
-  *(this + 525) = &vt_TypeList_SmudgeTypeClass_const; /*0x664f71*/
+  this->q20D = &vt_TypeList_SmudgeTypeClass_const; /*0x664f71*/
   DynamicVectorClass::BuildingTypeConstructor(this + 532, 0, 0); /*0x664f83*/
   this->q214 = &vt_TypeList_BuildingTypeClass_const; /*0x664f88*/
   DynamicVectorClass::BuildingTypeConstructor(this + 544, 0, 0); /*0x664f9a*/
   this->occupiablesCapacity = &vt_TypeList_BuildingTypeClass_const; /*0x664f9f*/
   DynamicVectorClass::BuildingTypeConstructor(this + 555, 0, 0); /*0x664fb1*/
-  *(this + 555) = &vt_TypeList_BuildingTypeClass_const; /*0x664fb6*/
+  this->q22B = &vt_TypeList_BuildingTypeClass_const; /*0x664fb6*/
   DynamicVectorClass::BuildingTypeConstructor(this + 562, 0, 0); /*0x664fc8*/
-  *(this + 562) = &vt_TypeList_BuildingTypeClass_const; /*0x664fcd*/
+  this->q232 = &vt_TypeList_BuildingTypeClass_const; /*0x664fcd*/
   DynamicVectorClass::BuildingTypeConstructor(this + 569, 0, 0); /*0x664fdf*/
-  *(this + 569) = &vt_TypeList_BuildingTypeClass_const; /*0x664fe4*/
+  this->q239 = &vt_TypeList_BuildingTypeClass_const; /*0x664fe4*/
   DynamicVectorClass::BuildingTypeConstructor(this + 576, 0, 0); /*0x664ff6*/
   this->visionary = &vt_TypeList_BuildingTypeClass_const; /*0x664ffb*/
   DynamicVectorClass::BuildingTypeConstructor(this + 583, 0, 0); /*0x66500d*/
   this->unknownBool247 = &vt_TypeList_BuildingTypeClass_const; /*0x665012*/
   DynamicVectorClass::BuildingTypeConstructor(this + 590, 0, 0); /*0x665024*/
-  *(this + 590) = &vt_TypeList_BuildingTypeClass_const; /*0x665029*/
+  this->q24E = &vt_TypeList_BuildingTypeClass_const; /*0x665029*/
   DynamicVectorClass::BuildingTypeConstructor(this + 597, 0, 0); /*0x66503b*/
-  *(this + 597) = &vt_TypeList_BuildingTypeClass_const; /*0x665040*/
+  this->q255 = &vt_TypeList_BuildingTypeClass_const; /*0x665040*/
   DynamicVectorClass::BuildingTypeConstructor(this + 604, 0, 0); /*0x665052*/
   this->supersCapacity = &vt_TypeList_BuildingTypeClass_const; /*0x665057*/
   DynamicVectorClass::BuildingTypeConstructor(this + 611, 0, 0); /*0x665069*/
-  *(this + 611) = &vt_TypeList_BuildingTypeClass_const; /*0x66506e*/
+  this->q263 = &vt_TypeList_BuildingTypeClass_const; /*0x66506e*/
   DynamicVectorClass::Construct(this + 618, 0, 0); /*0x665080*/
-  *(this + 618) = &vt_TypeList_int; /*0x665085*/
+  this->q26A = &vt_TypeList_int; /*0x665085*/
   DynamicVectorClass::BuildingTypeConstructor(this + 625, 0, 0); /*0x665097*/
-  *(this + 625) = &vt_TypeList_BuildingTypeClass_const; /*0x66509c*/
+  this->q271 = &vt_TypeList_BuildingTypeClass_const; /*0x66509c*/
   DynamicVectorClass::BuildingTypeConstructor(this + 632, 0, 0); /*0x6650ae*/
   this->q278 = &vt_TypeList_BuildingTypeClass_const; /*0x6650b3*/
   DynamicVectorClass::BuildingTypeConstructor(this + 639, 0, 0); /*0x6650c5*/
-  *(this + 639) = &vt_TypeList_BuildingTypeClass_const; /*0x6650ca*/
+  this->q27F = &vt_TypeList_BuildingTypeClass_const; /*0x6650ca*/
   DynamicVectorClass::BuildingTypeConstructor(this + 646, 0, 0); /*0x6650dc*/
-  *(this + 646) = &vt_TypeList_BuildingTypeClass_const; /*0x6650e1*/
+  this->q286 = &vt_TypeList_BuildingTypeClass_const; /*0x6650e1*/
   DynamicVectorClass::BuildingTypeConstructor(this + 653, 0, 0); /*0x6650f3*/
-  *(this + 653) = &vt_TypeList_BuildingTypeClass_const; /*0x6650f8*/
+  this->q28D = &vt_TypeList_BuildingTypeClass_const; /*0x6650f8*/
   DynamicVectorClass::BuildingTypeConstructor(this + 660, 0, 0); /*0x66510a*/
   this->q294 = &vt_TypeList_BuildingTypeClass_const; /*0x66510f*/
   DynamicVectorClass::BuildingTypeConstructor(this + 667, 0, 0); /*0x665121*/
-  *(this + 667) = &vt_TypeList_BuildingTypeClass_const; /*0x665126*/
+  this->q29B = &vt_TypeList_BuildingTypeClass_const; /*0x665126*/
   DynamicVectorClass::BuildingTypeConstructor(this + 674, 0, 0); /*0x665138*/
-  *(this + 674) = &vt_TypeList_BuildingTypeClass_const; /*0x66513d*/
+  this->q2A2 = &vt_TypeList_BuildingTypeClass_const; /*0x66513d*/
   DynamicVectorClass::BuildingTypeConstructor(this + 681, 0, 0); /*0x66514f*/
-  *(this + 681) = &vt_TypeList_BuildingTypeClass_const; /*0x665154*/
+  this->q2A9 = &vt_TypeList_BuildingTypeClass_const; /*0x665154*/
   DynamicVectorClass::BuildingTypeConstructor(this + 688, 0, 0); /*0x665166*/
   this->radarBlackoutTimer = &vt_TypeList_BuildingTypeClass_const; /*0x66516b*/
   DynamicVectorClass::BuildingTypeConstructor(this + 695, 0, 0); /*0x66517d*/
-  *(this + 695) = &vt_TypeList_BuildingTypeClass_const; /*0x665182*/
+  this->q2B7 = &vt_TypeList_BuildingTypeClass_const; /*0x665182*/
   UnitTypeVector::Construct(this + 712, 0, 0); /*0x665194*/
   this->unitAltOwner = &vt_TypeList_UnitTypeClass_const; /*0x665199*/
   UnitTypeVector::Construct(this + 719, 0, 0); /*0x6651ab*/
-  *(this + 719) = &vt_TypeList_UnitTypeClass_const; /*0x6651b0*/
+  this->q2CF = &vt_TypeList_UnitTypeClass_const; /*0x6651b0*/
   HouseTypeClass::readDefaultAlly(0, 0); /*0x6651c2*/
-  *(this + 726) = &vt_TypeList_AircraftTypeClass_const; /*0x6651c7*/
+  this->q2D6 = &vt_TypeList_AircraftTypeClass_const; /*0x6651c7*/
   DynamicVectorClass::AnimTypeConstructor(this + 733, 0, 0); /*0x6651d9*/
-  *(this + 733) = &vt_TypeList_AnimTypeClass_const; /*0x6651de*/
+  this->q2DD = &vt_TypeList_AnimTypeClass_const; /*0x6651de*/
   DynamicVectorClass::AnimTypeConstructor(this + 740, 0, 0); /*0x6651f0*/
   this->HouseClass_field_2E4 = &vt_TypeList_AnimTypeClass_const; /*0x6651f5*/
   DynamicVectorClass::AnimTypeConstructor(this + 752, 0, 0); /*0x665207*/
   this->ownedBuildings = &vt_TypeList_AnimTypeClass_const; /*0x66520c*/
   InfantryTypeVector::Construct(this + 769, 0, 0); /*0x66521e*/
-  *(this + 769) = &vt_TypeList_InfantryTypeClass_const; /*0x665223*/
+  this->q301 = &vt_TypeList_InfantryTypeClass_const; /*0x665223*/
   DynamicVectorClass::Construct(this + 776, 0, 0); /*0x665235*/
-  *(this + 776) = &vt_TypeList_int; /*0x66523a*/
+  this->q308 = &vt_TypeList_int; /*0x66523a*/
   InfantryTypeVector::Construct(this + 783, 0, 0); /*0x66524c*/
-  *(this + 783) = &vt_TypeList_InfantryTypeClass_const; /*0x665251*/
+  this->q30F = &vt_TypeList_InfantryTypeClass_const; /*0x665251*/
   DynamicVectorClass::Construct(this + 790, 0, 0); /*0x665263*/
-  *(this + 790) = &vt_TypeList_int; /*0x665268*/
+  this->q316 = &vt_TypeList_int; /*0x665268*/
   InfantryTypeVector::Construct(this + 797, 0, 0); /*0x66527a*/
-  *(this + 797) = &vt_TypeList_InfantryTypeClass_const; /*0x66527f*/
+  this->q31D = &vt_TypeList_InfantryTypeClass_const; /*0x66527f*/
   DynamicVectorClass::Construct(this + 804, 0, 0); /*0x665291*/
   this->unknown324 = &vt_TypeList_int; /*0x665296*/
   InfantryTypeVector::Construct(this + 811, 0, 0); /*0x6652a8*/
-  *(this + 811) = &vt_TypeList_InfantryTypeClass_const; /*0x6652ad*/
+  this->q32B = &vt_TypeList_InfantryTypeClass_const; /*0x6652ad*/
   DynamicVectorClass::Construct(this + 818, 0, 0); /*0x6652bf*/
-  *(this + 818) = &vt_TypeList_int; /*0x6652c4*/
+  this->q332 = &vt_TypeList_int; /*0x6652c4*/
   InfantryTypeVector::Construct(this + 825, 0, 0); /*0x6652d6*/
-  *(this + 825) = &vt_TypeList_InfantryTypeClass_const; /*0x6652db*/
+  this->q339 = &vt_TypeList_InfantryTypeClass_const; /*0x6652db*/
   InfantryTypeVector::Construct(this + 832, 0, 0); /*0x6652ed*/
   this->startingUnits = &vt_TypeList_InfantryTypeClass_const; /*0x6652f2*/
   UnitTypeVector::Construct(this + 839, 0, 0); /*0x665304*/
-  *(this + 839) = &vt_TypeList_UnitTypeClass_const; /*0x665309*/
+  this->q347 = &vt_TypeList_UnitTypeClass_const; /*0x665309*/
   DynamicVectorClass::BuildingTypeConstructor(this + 846, 0, 0); /*0x66531b*/
-  *(this + 846) = &vt_TypeList_BuildingTypeClass_const; /*0x665320*/
+  this->q34E = &vt_TypeList_BuildingTypeClass_const; /*0x665320*/
   DynamicVectorClass::Construct(this + 864, 0, 0); /*0x665332*/
   this->startingUnitsCapacity = &vt_TypeList_int; /*0x665337*/
   DynamicVectorClass::Construct(this + 871, 0, 0); /*0x665349*/
-  *(this + 871) = &vt_TypeList_int; /*0x66534e*/
+  this->q367 = &vt_TypeList_int; /*0x66534e*/
   DynamicVectorClass::Construct(this + 878, 0, 0); /*0x665360*/
-  *(this + 878) = &vt_TypeList_int; /*0x665365*/
+  this->q36E = &vt_TypeList_int; /*0x665365*/
   DynamicVectorClass::Construct(this + 885, 0, 0); /*0x665377*/
-  *(this + 885) = &vt_TypeList_int; /*0x66537c*/
+  this->q375 = &vt_TypeList_int; /*0x66537c*/
   DynamicVectorClass::Construct(this + 900, 0, 0); /*0x66538e*/
-  *(this + 900) = &vt_TypeList_int; /*0x665393*/
+  this->q384 = &vt_TypeList_int; /*0x665393*/
   DynamicVectorClass::Construct(this + 907, 0, 0); /*0x6653a5*/
-  *(this + 907) = &vt_TypeList_int; /*0x6653aa*/
+  this->q38B = &vt_TypeList_int; /*0x6653aa*/
   DynamicVectorClass::Construct(this + 915, 0, 0); /*0x6653bc*/
-  *(this + 915) = &vt_TypeList_int; /*0x6653c1*/
+  this->q393 = &vt_TypeList_int; /*0x6653c1*/
   DynamicVectorClass::Construct(this + 922, 0, 0); /*0x6653d3*/
-  *(this + 922) = &vt_TypeList_int; /*0x6653d8*/
+  this->q39A = &vt_TypeList_int; /*0x6653d8*/
   DynamicVectorClass::Construct(this + 929, 0, 0); /*0x6653ea*/
-  *(this + 929) = &vt_TypeList_int; /*0x6653ef*/
+  this->q3A1 = &vt_TypeList_int; /*0x6653ef*/
   DynamicVectorClass::Construct(this + 936, 0, 0); /*0x665401*/
   this->qEA0 = &vt_TypeList_int; /*0x665406*/
   DynamicVectorClass::Construct(this + 945, 0, 0); /*0x665418*/
-  *(this + 945) = &vt_TypeList_int; /*0x66541d*/
+  this->q3B1 = &vt_TypeList_int; /*0x66541d*/
   DynamicVectorClass::Construct(this + 954, 0, 0); /*0x66542f*/
-  *(this + 954) = &vt_TypeList_int; /*0x665434*/
+  this->q3BA = &vt_TypeList_int; /*0x665434*/
   DynamicVectorClass::Construct(this + 961, 0, 0); /*0x665446*/
   this->qF04 = &vt_TypeList_int; /*0x66544b*/
   DynamicVectorClass::Construct(this + 968, 0, 0); /*0x66545d*/
   this->q0F2 = &vt_TypeList_int; /*0x665462*/
   TerrainTypeVector::Construct(0, 0); /*0x665474*/
-  *(this + 1022) = &vt_TypeList_TerrainTypeClass_const; /*0x665479*/
+  this->q3FE = &vt_TypeList_TerrainTypeClass_const; /*0x665479*/
   DynamicVectorClass::Construct(this + 1110, 0, 0); /*0x66548b*/
-  *(this + 1110) = &vt_TypeList_int; /*0x665490*/
+  this->q456 = &vt_TypeList_int; /*0x665490*/
   DynamicVectorClass::Construct(this + 1117, 0, 0); /*0x6654a2*/
-  *(this + 1117) = &vt_TypeList_int; /*0x6654a7*/
+  this->q45D = &vt_TypeList_int; /*0x6654a7*/
   DynamicVectorClass::Construct(this + 1125, 0, 0); /*0x6654b9*/
-  *(this + 1125) = &vt_TypeList_int; /*0x6654be*/
+  this->q465 = &vt_TypeList_int; /*0x6654be*/
   DynamicVectorClass::Construct(this + 1132, 0, 0); /*0x6654d0*/
   this->q11B = &vt_TypeList_int; /*0x6654d5*/
   DynamicVectorClass::Construct(this + 1139, 0, 0); /*0x6654e7*/
-  *(this + 1139) = &vt_TypeList_int; /*0x6654ec*/
+  this->q473 = &vt_TypeList_int; /*0x6654ec*/
   DynamicVectorClass::Construct(this + 1146, 0, 0); /*0x6654fe*/
-  *(this + 1146) = &vt_TypeList_int; /*0x665503*/
+  this->q47A = &vt_TypeList_int; /*0x665503*/
   DynamicVectorClass::Construct(this + 1153, 0, 0); /*0x665515*/
-  *(this + 1153) = &vt_TypeList_int; /*0x66551a*/
+  this->q481 = &vt_TypeList_int; /*0x66551a*/
   DynamicVectorClass::Construct(this + 1160, 0, 0); /*0x66552c*/
   this->q488 = &vt_TypeList_int; /*0x665531*/
   DynamicVectorClass::Construct(this + 1167, 0, 0); /*0x665543*/
@@ -4462,9 +4462,9 @@ _DWORD *__thiscall sub_664D20(_DWORD *this, int a2)
   DynamicVectorClass::Construct(this + 1181, 0, 0); /*0x665571*/
   this->q49D = &vt_TypeList_int; /*0x665576*/
   DynamicVectorClass::Construct(this + 1188, 0, 0); /*0x665588*/
-  *(this + 1188) = &vt_TypeList_int; /*0x66558d*/
+  this->q4A4 = &vt_TypeList_int; /*0x66558d*/
   DynamicVectorClass::Construct(this + 1195, 0, 0); /*0x66559f*/
-  *(this + 1195) = &vt_TypeList_int; /*0x6655aa*/
+  this->q4AB = &vt_TypeList_int; /*0x6655aa*/
   TypeList::Construct(this + 1202); /*0x6655b0*/
   TypeList::Construct(this + 1209); /*0x6655bb*/
   TypeList::Construct(this + 1217); /*0x6655c6*/

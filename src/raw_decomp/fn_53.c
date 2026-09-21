@@ -12366,13 +12366,13 @@ IPXManagerClass *__thiscall Waypoint::InitInvalid(_BYTE *this)
   *this = -1; /*0x53ecb4*/
   this->Initialized = -1; /*0x53ecb6*/
   this->q008 = -1; /*0x53ecb9*/
-  this->__pad_00C = -1; /*0x53ecbc*/
+  this->q030 = -1; /*0x53ecbc*/
   this->Initialized = -1; /*0x53ecbf*/
   this->Active = -1; /*0x53ecc2*/
   this->tail_6 = -1; /*0x53ecc5*/
   this->q007 = -1; /*0x53ecc8*/
   this->q008 = -1; /*0x53eccb*/
-  *(this + 9) = -1; /*0x53ecce*/
+  this->q009 = -1; /*0x53ecce*/
   return (IPXManagerClass *)this; /*0x53ecd1*/
 }
 

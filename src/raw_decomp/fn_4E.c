@@ -853,7 +853,7 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
     }
   }
   *this = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a8a*/
-  *(this + 5) = 10; /*0x4e0a90*/
+  this->q005 = 10; /*0x4e0a90*/
   this->q010 = 0; /*0x4e0a97*/
   return this; /*0x4e0aa0*/
 }

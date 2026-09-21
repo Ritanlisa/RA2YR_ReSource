@@ -778,11 +778,11 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->VoiceHarvest = -1; /*0x710f4f*/
   this->VoicePrimaryWeaponAttack = -1; /*0x710f55*/
   this->VoicePrimaryEliteWeaponAttack = -1; /*0x710f5b*/
-  this->VoiceSecondaryWeaponAttack = -1; /*0x710f61*/
+  this->q162 = -1; /*0x710f61*/
   this->VoiceSecondaryEliteWeaponAttack = -1; /*0x710f68*/
   this->VoiceDeploy = -1; /*0x710f75*/
   this->VoiceUndeploy = -1; /*0x710f7b*/
-  this->EnterGrinderSound = -1; /*0x710f81*/
+  this->__pad_166 = -1; /*0x710f81*/
   this->LeaveGrinderSound = -1; /*0x710f87*/
   this->EnterBioReactorSound = -1; /*0x710f8d*/
   this->q169 = -1; /*0x710f93*/
@@ -835,7 +835,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->Speed = 0; /*0x7110da*/
   this->SpeedType = a3; /*0x7110e0*/
   this->InitialAmmo = -1; /*0x7110e6*/
-  this->Ammo = -1; /*0x7110ec*/
+  this->q1A1 = -1; /*0x7110ec*/
   this->q1A2 = 0; /*0x7110f2*/
   this->AirRangeBonus = 0; /*0x7110f8*/
   this->BerserkFriendly = 0; /*0x7110fe*/
@@ -869,7 +869,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   if ( &MEMORY[0x889F64] ) /*0x7111b9*/
   {
     strncpy(this + 1750, &MEMORY[0x889F64], 0x18u); /*0x7111c7*/
-    *(this + 1774) = 0; /*0x7111cf*/
+    this->q6EE = 0; /*0x7111cf*/
   }
   else
   {
@@ -880,7 +880,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   if ( &MEMORY[0x889F64] ) /*0x7111ee*/
   {
     strncpy(this + 1781, &MEMORY[0x889F64], 0x18u); /*0x7111fc*/
-    *(this + 1805) = 0; /*0x711204*/
+    this->q70D = 0; /*0x711204*/
   }
   else
   {
@@ -974,48 +974,48 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->DebrisMaximums = 1; /*0x711442*/
   *((_DWORD *)this + 817) = 1; /*0x711448*/
   this->unknown_bool_CC8 = 0; /*0x71144e*/
-  *(this + 3276) = 1; /*0x711454*/
-  *(this + 3277) = 0; /*0x71145a*/
-  *(this + 3278) = 0; /*0x711460*/
-  this->__pad_CCF = 0; /*0x711466*/
+  this->qCCC = 1; /*0x711454*/
+  this->qCCD = 0; /*0x71145a*/
+  this->qCCE = 0; /*0x711460*/
+  *(this + 3279) = 0; /*0x711466*/
   this->IntList_A_Items = 0; /*0x71146c*/
   this->Naval = 0; /*0x711472*/
   this->Remapable = 0; /*0x711478*/
   this->Cloakable = 0; /*0x71147e*/
   this->__pad_CD4 = 0; /*0x711484*/
-  *(this + 3285) = 0; /*0x71148a*/
+  this->qCD5 = 0; /*0x71148a*/
   *((_DWORD *)this + 822) = 0; /*0x711490*/
   *((_DWORD *)this + 835) = 0; /*0x711496*/
   *((_DWORD *)this + 836) = 0; /*0x71149c*/
-  *(this + 3348) = 0; /*0x7114a2*/
-  *(this + 3349) = 0; /*0x7114a8*/
+  this->qD14 = 0; /*0x7114a2*/
+  this->qD15 = 0; /*0x7114a8*/
   this->SlavesNumber = 0; /*0x7114ae*/
   this->SlaveRegenRate = 1065353216; /*0x7114b4*/
   this->__pad_D20 = 0; /*0x7114be*/
-  *(this + 3361) = 0; /*0x7114c4*/
-  *(this + 3362) = 0; /*0x7114ca*/
-  *(this + 3363) = 0; /*0x7114d0*/
-  *(this + 3364) = 0; /*0x7114d6*/
-  *(this + 3365) = 0; /*0x7114dc*/
-  *(this + 3366) = 0; /*0x7114e2*/
-  *(this + 3367) = 0; /*0x7114e8*/
-  *(this + 3368) = 0; /*0x7114ee*/
-  *(this + 3369) = 0; /*0x7114f4*/
-  *(this + 3370) = 0; /*0x7114fa*/
-  *(this + 3371) = 1; /*0x711500*/
-  *(this + 3372) = 0; /*0x711506*/
-  *(this + 3373) = 0; /*0x71150c*/
-  *(this + 3375) = 0; /*0x711512*/
+  this->qD21 = 0; /*0x7114c4*/
+  this->qD22 = 0; /*0x7114ca*/
+  this->qD23 = 0; /*0x7114d0*/
+  this->qD24 = 0; /*0x7114d6*/
+  this->qD25 = 0; /*0x7114dc*/
+  this->qD26 = 0; /*0x7114e2*/
+  this->qD27 = 0; /*0x7114e8*/
+  this->qD28 = 0; /*0x7114ee*/
+  this->qD29 = 0; /*0x7114f4*/
+  this->qD2A = 0; /*0x7114fa*/
+  this->qD2B = 1; /*0x711500*/
+  this->qD2C = 0; /*0x711506*/
+  this->qD2D = 0; /*0x71150c*/
+  this->qD2F = 0; /*0x711512*/
   this->Locomotor = 0; /*0x711518*/
-  *(this + 3377) = 0; /*0x71151e*/
-  *(this + 3378) = 0; /*0x711524*/
-  *(this + 3379) = 1; /*0x71152a*/
-  *(this + 3380) = 1; /*0x711530*/
-  *(this + 3383) = 0; /*0x711536*/
-  *(this + 3385) = 0; /*0x71153c*/
-  *(this + 3386) = 1; /*0x711542*/
-  *(this + 3388) = 0; /*0x711548*/
-  *(this + 3389) = 0; /*0x71154e*/
+  this->qD31 = 0; /*0x71151e*/
+  this->qD32 = 0; /*0x711524*/
+  this->qD33 = 1; /*0x71152a*/
+  this->qD34 = 1; /*0x711530*/
+  this->qD37 = 0; /*0x711536*/
+  this->qD39 = 0; /*0x71153c*/
+  this->qD3A = 1; /*0x711542*/
+  this->qD3C = 0; /*0x711548*/
+  this->qD3D = 0; /*0x71154e*/
   this->BalloonHover = 0; /*0x711554*/
   this->SuppressionThreshold = 0; /*0x71155a*/
   this->JumpjetTurnRate = 0; /*0x711560*/
@@ -1028,8 +1028,8 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->qD60 = 0; /*0x71158a*/
   this->JumpjetDeviation = 0; /*0x711590*/
   this->__pad_D68 = 0; /*0x711596*/
-  *(this + 3433) = 0; /*0x71159c*/
-  *(this + 3434) = 0; /*0x7115a2*/
+  this->qD69 = 0; /*0x71159c*/
+  this->qD6A = 0; /*0x7115a2*/
   this->qD6C = 0; /*0x7115a8*/
   this->align_35C = 4; /*0x7115ae*/
   this->RequiredHouses = 14; /*0x7115b8*/
@@ -1038,24 +1038,24 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->unknown_double_360 = 500; /*0x7115d3*/
   this->SecondSpawnOffset = 0x40000000; /*0x7115dd*/
   *((_DWORD *)this + 866) = 1041865114; /*0x7115e7*/
-  *(this + 3468) = 0; /*0x7115f1*/
+  this->qD8C = 0; /*0x7115f1*/
   this->q364 = 40; /*0x7115f7*/
   this->JumpJet = 0; /*0x711601*/
   this->Crashable = 0; /*0x711607*/
   this->q366 = 0; /*0x71160d*/
-  *(this + 3481) = 1; /*0x711613*/
-  *(this + 3482) = 1; /*0x71161a*/
-  *(this + 3483) = 0; /*0x711621*/
-  *(this + 3484) = 0; /*0x711627*/
-  *(this + 3485) = 0; /*0x71162d*/
+  this->qD99 = 1; /*0x711613*/
+  this->qD9A = 1; /*0x71161a*/
+  this->qD9B = 0; /*0x711621*/
+  this->qD9C = 0; /*0x711627*/
+  this->qD9D = 0; /*0x71162d*/
   this->unknown_double_368 = -1; /*0x711633*/
   this->PaletteFile = -1; /*0x711639*/
   *((_DWORD *)this + 874) = -1; /*0x71163f*/
-  *(this + 3500) = 0; /*0x711645*/
-  *(this + 3516) = 0; /*0x71164b*/
-  *(this + 3517) = 1; /*0x711651*/
-  *(this + 3518) = 0; /*0x711658*/
-  *(this + 3519) = 0; /*0x71165e*/
+  this->qDAC = 0; /*0x711645*/
+  this->qDBC = 0; /*0x71164b*/
+  this->qDBD = 1; /*0x711651*/
+  this->qDBE = 0; /*0x711658*/
+  this->qDBF = 0; /*0x71165e*/
   this->Weight = 10; /*0x711664*/
   this->Palette = 5; /*0x71166a*/
   this->qDC8 = 10; /*0x711674*/
@@ -5581,7 +5581,7 @@ int __thiscall ObjectClass_GetModeSpecificValue(int *this)
   switch ( this->PipScale )
   {
     case 1:
-      result = this->Ammo; /*0x7162a9*/
+      result = this->q1A1; /*0x7162a9*/
       break; /*0x7162af*/
     case 2:
       result = (*(int (__thiscall **)(int *))(*this + 44))(this) != 16 ? 5 : 3;
@@ -6754,7 +6754,7 @@ _DWORD *__thiscall TypeList_Particle_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_ParticleSystemTypeClass_const; /*0x717cb3*/
-  *(this + 5) = 10; /*0x717cb9*/
+  this->q005 = 10; /*0x717cb9*/
   this->q010 = 0; /*0x717cc0*/
   return this; /*0x717cc9*/
 }
@@ -6830,7 +6830,7 @@ _DWORD *__thiscall VectorClass::CopyParticle(_DWORD *this, DynamicVector *aP1)
     }
   }
   this->q010 = aP1->field_10; /*0x717d91*/
-  *(this + 5) = *(_DWORD *)aP1->__pad_14; /*0x717d97*/
+  this->q005 = *(_DWORD *)aP1->__pad_14; /*0x717d97*/
   *this = &vt_TypeList_ParticleSystemTypeClass_const; /*0x717d9a*/
   return this; /*0x717da2*/
 }

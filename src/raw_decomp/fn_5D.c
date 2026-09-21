@@ -8519,7 +8519,7 @@ _DWORD *__thiscall sub_5D86D0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d8713*/
-  *(this + 5) = 10; /*0x5d8719*/
+  this->q005 = 10; /*0x5d8719*/
   this->q010 = 0; /*0x5d8720*/
   return this; /*0x5d8729*/
 }

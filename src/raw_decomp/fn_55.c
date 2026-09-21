@@ -1919,7 +1919,7 @@ _DWORD *__thiscall LCWPipe_Constructor(_DWORD *this, int a2, int a3)
 
   *(this + 3) = a2; /*0x551ff9*/
   this->LCWPipe_field_0x04 = 0; /*0x552000*/
-  *(this + 2) = 0; /*0x552003*/
+  this->q008 = 0; /*0x552003*/
   this->q010 = 0; /*0x552006*/
   this->q014 = 0; /*0x552009*/
   this->q018 = 0; /*0x55200c*/
@@ -1928,9 +1928,9 @@ _DWORD *__thiscall LCWPipe_Constructor(_DWORD *this, int a2, int a3)
   v4 = a3 / 128 + 1; /*0x552023*/
   if ( v4 < 128 ) /*0x552029*/
     v4 = 128; /*0x55202b*/
-  *(this + 8) = v4; /*0x552030*/
+  this->q008 = v4; /*0x552030*/
   v5 = __2_YAPAXI_Z(a3 + v4); /*0x552036*/
-  v6 = this->__pad_01C + *(this + 8); /*0x552041*/
+  v6 = this->__pad_01C + this->q008; /*0x552041*/
   this->q014 = v5; /*0x552043*/
   this->q018 = __2_YAPAXI_Z(v6); /*0x55204f*/
   *((_WORD *)this + 18) = -1; /*0x552052*/
@@ -8514,10 +8514,10 @@ void __thiscall LoadSaveDialog::FillList(int *this, HWND hWnd)
     if ( v31 == 1 ) /*0x559b9e*/
     {
       v32 = 0; /*0x559bb9*/
-      v33 = *(this + 12); /*0x559bbb*/
+      v33 = this->q00C; /*0x559bbb*/
       if ( v33 > 0 ) /*0x559bc0*/
       {
-        v34 = *(this + 9); /*0x559bc2*/
+        v34 = this->q009; /*0x559bc2*/
         while ( !*(_BYTE *)(*(_DWORD *)v34 + 436) || *(_BYTE *)(*(_DWORD *)v34 + 437) ) /*0x559bd5*/
         {
           ++v32; /*0x559bd7*/
@@ -10948,18 +10948,18 @@ _DWORD *__thiscall LZOPipe::Constructor(_DWORD *this, int a2, TechnoTypeClass *a
   int v5; // ecx
 
   this->LZOPipe_field_0x04 = 0; /*0x55c2b9*/
-  *(this + 2) = 0; /*0x55c2bc*/
+  this->q008 = 0; /*0x55c2bc*/
   this->q010 = 0; /*0x55c2bf*/
   this->q014 = 0; /*0x55c2c2*/
   this->q018 = 0; /*0x55c2c5*/
   this->q00C = a2; /*0x55c2cc*/
   this->__pad_01C = aP2; /*0x55c2cf*/
   *this = &LZOPipe::`vftable'; /*0x55c2d5*/
-  *(this + 8) = aP2; /*0x55c2dc*/
+  this->q008 = aP2; /*0x55c2dc*/
   v4 = __2_YAPAXI_Z(2 * (_DWORD)aP2); /*0x55c2df*/
   v5 = this->__pad_01C; /*0x55c2e4*/
   this->q014 = v4; /*0x55c2e7*/
-  this->q018 = __2_YAPAXI_Z(v5 + *(this + 8)); /*0x55c2f8*/
+  this->q018 = __2_YAPAXI_Z(v5 + this->q008); /*0x55c2f8*/
   *((_WORD *)this + 18) = -1; /*0x55c2fb*/
   return this; /*0x55c303*/
 }

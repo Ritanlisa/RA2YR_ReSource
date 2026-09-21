@@ -4703,7 +4703,7 @@ LABEL_39:
       MEMORY[0x87F8E4].__pad_125C[16463] = 1; /*0x6a65bf*/
       Tactical::UpdateUIVisibility(this); /*0x6a65c6*/
       v13 = v24; /*0x6a65cb*/
-      *((_BYTE *)this + 21415) = 1; /*0x6a65cf*/
+      this->q53A7 = 1; /*0x6a65cf*/
     }
   }
   v21 = *this; /*0x6a65d6*/
@@ -5496,7 +5496,7 @@ LABEL_11:
         }
         MEMORY[0x87F8E4].__pad_125C[16463] = 1; /*0x6a7a53*/
         Tactical::UpdateUIVisibility(this); /*0x6a7a5a*/
-        *(this + 21415) = 1; /*0x6a7a5f*/
+        this->q53A7 = 1; /*0x6a7a5f*/
       }
       goto LABEL_31; /*0x6a7a5f*/
     }
@@ -9412,7 +9412,7 @@ _DWORD *__thiscall sub_6AC8D0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<Point2D>::`vftable'; /*0x6ac92a*/
-  *(this + 5) = 10; /*0x6ac930*/
+  this->q005 = 10; /*0x6ac930*/
   this->q010 = 0; /*0x6ac937*/
   return this; /*0x6ac940*/
 }

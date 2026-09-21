@@ -634,7 +634,7 @@ LABEL_29:
     }
     else
     {
-      *(this + 21830) = 0; /*0x6d0e28*/
+      this->q5546 = 0; /*0x6d0e28*/
     }
   }
   return SidebarClass::Redraw(a2); /*0x6d0e3d*/

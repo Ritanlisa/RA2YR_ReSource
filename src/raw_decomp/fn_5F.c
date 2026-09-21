@@ -5936,17 +5936,17 @@ _DWORD *__thiscall ObjectTypeClass::Construct(_DWORD *this, ObjectTypeClass *aP1
   this->q258 = 0; /*0x5f737f*/
   this->q25C = 0; /*0x5f7385*/
   this->q260 = 0; /*0x5f738b*/
-  *((_BYTE *)this + 612) = 0; /*0x5f7391*/
+  this->q264 = 0; /*0x5f7391*/
   this->q268 = 0; /*0x5f7397*/
   this->q26C = 0; /*0x5f739d*/
   this->q270 = 0; /*0x5f73a3*/
   this->q274 = 0; /*0x5f73a9*/
-  *((_BYTE *)this + 632) = 0; /*0x5f73af*/
+  this->q278 = 0; /*0x5f73af*/
   this->q27C = 0; /*0x5f73b5*/
   this->q280 = 0; /*0x5f73bb*/
   this->q284 = 0; /*0x5f73c1*/
   this->q288 = 0; /*0x5f73c7*/
-  *((_BYTE *)this + 652) = 0; /*0x5f73cd*/
+  this->q28C = 0; /*0x5f73cd*/
   this->q290 = 0; /*0x5f73d3*/
   *this = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
   this->vtable2 = &ObjectTypeClass::`vftable'; /*0x5f73df*/
@@ -6730,11 +6730,11 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
   {
     v50 = 1; /*0x5f8272*/
   }
-  if ( (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) != 40 || *(this + 3233) ) /*0x5f8287*/
+  if ( (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) != 40 || this->qCA1 ) /*0x5f8287*/
   {
     if ( (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) != 40 /*0x5f8657*/
       || !HouseClass::HasPower(this)
-      || *(this + 3285) )
+      || this->qCD5 )
     {
       sprintf(Filename, MEMORY[0x832ABC], v2); /*0x5f86a4*/
       _makepath(Buffer, 0, 0, Filename, g_Str_File__VXL); /*0x5f86c0*/
@@ -6918,11 +6918,11 @@ LABEL_92:
     }
   }
 LABEL_93:
-  if ( (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) != 40 || *(this + 3233) ) /*0x5f8850*/
+  if ( (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) != 40 || this->qCA1 ) /*0x5f8850*/
   {
     if ( (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) == 40 /*0x5f8873*/
       && HouseClass::HasPower(this)
-      && !*(this + 3285) )
+      && !this->qCD5 )
     {
       v33 = this->Insignificant; /*0x5f887b*/
       v34 = 0; /*0x5f8881*/
@@ -7014,7 +7014,7 @@ LABEL_123:
     }
     if ( (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) == 40 /*0x5f8ac1*/
       && HouseClass::HasPower(this)
-      && !*(this + 3285) )
+      && !this->qCD5 )
     {
       ObjectTypeClass::CleanupWeapons(this); /*0x5f8acb*/
     }
@@ -7068,19 +7068,19 @@ LABEL_123:
   this->q258 = 0; /*0x5f8c26*/
   this->q25C = 0; /*0x5f8c2c*/
   this->q098 = 0; /*0x5f8c32*/
-  *(this + 612) = 0; /*0x5f8c38*/
+  this->q264 = 0; /*0x5f8c38*/
   this->q268 = 0; /*0x5f8c3e*/
   __3_YAXPAX_Z(*((void **)this + 155)); /*0x5f8c4b*/
   this->unused_9B = 0; /*0x5f8c50*/
   this->Armor = 0; /*0x5f8c56*/
   this->q274 = 0; /*0x5f8c5c*/
-  *(this + 632) = 0; /*0x5f8c62*/
+  this->q278 = 0; /*0x5f8c62*/
   this->q27C = 0; /*0x5f8c68*/
   __3_YAXPAX_Z(*((void **)this + 160)); /*0x5f8c75*/
   this->Strength = 0; /*0x5f8c7d*/
   this->q284 = 0; /*0x5f8c83*/
   this->q288 = 0; /*0x5f8c89*/
-  *(this + 652) = 0; /*0x5f8c8f*/
+  this->q28C = 0; /*0x5f8c8f*/
   this->Image = 0; /*0x5f8c95*/
 LABEL_146:
   v58[0] = &vt_CCFileClass; /*0x5f8c9b*/
@@ -7536,7 +7536,7 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
           (Color *)(this + 571));
   *(_WORD *)(this + 571) = *(_WORD *)v21; /*0x5f95bc*/
   v32 = (CCINIClass *)this->LineTrailColorDecrement; /*0x5f95cd*/
-  *(this + 573) = *(_BYTE *)(v21 + 2); /*0x5f95d4*/
+  this->q23D = *(_BYTE *)(v21 + 2); /*0x5f95d4*/
   v22 = INIClass::ReadInt_Overwrite( /*0x5f95d7*/
           (int)&MEMORY[0x87F8E4].__pad_5568[9012],
           (unsigned __int8 *)this + 504,
@@ -8538,9 +8538,9 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
          (int)&MEMORY[0x87F7E8][7734],
          (unsigned __int8 *)g_INI_Key_Video,
          (unsigned __int8 *)g_INI_Key_ScreenWidth,
-         *((_DWORD *)this + 9));
+         this->q024);
   v6 = *((_DWORD *)this + 10); /*0x5fa8c2*/
-  *((_DWORD *)this + 9) = v5; /*0x5fa8c5*/
+  this->q024 = v5; /*0x5fa8c5*/
   *((_DWORD *)this + 10) = INIClass::ReadInt_Overwrite( /*0x5fa8e7*/
                              (int)&MEMORY[0x87F7E8][7734],
                              (unsigned __int8 *)g_INI_Key_Video,
@@ -8668,19 +8668,19 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
   v26 = *((_DWORD *)this + 20); /*0x5fac45*/
   if ( v26 < -1 || v26 >= 8 ) /*0x5fac4f*/
     *((_DWORD *)this + 20) = -1; /*0x5fac51*/
-  *(this + 36) = INIClass::ReadInt_Overwrite( /*0x5fac6f*/
+  this->q024 = INIClass::ReadInt_Overwrite( /*0x5fac6f*/
                    (int)&MEMORY[0x87F7E8][7734],
                    (unsigned __int8 *)g_INI_Key_Audio,
                    (unsigned __int8 *)aSoundlatency,
-                   *(this + 36));
+                   this->q024);
   Debug::Log(); /*0x5fac7e*/
   v27 = INIClass::ReadInt_Overwrite( /*0x5fac9c*/
           (int)&MEMORY[0x87F7E8][7734],
           (unsigned __int8 *)g_INI_Key_Network,
           (unsigned __int8 *)g_INI_Key_Socket,
-          *(this + 37));
+          this->q025);
   v31 = *((_DWORD *)this + 21); /*0x5faca9*/
-  *(this + 37) = v27; /*0x5facb4*/
+  this->q025 = v27; /*0x5facb4*/
   *((_DWORD *)this + 21) = INIClass::ReadInt_Overwrite( /*0x5facbd*/
                              (int)&MEMORY[0x87F7E8][7734],
                              (unsigned __int8 *)g_INI_Key_Network,

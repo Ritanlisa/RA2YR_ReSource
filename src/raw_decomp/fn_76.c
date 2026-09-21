@@ -1839,7 +1839,7 @@ _DWORD *__thiscall sub_7632D0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_CellClass; /*0x763313*/
-  *(this + 5) = 10; /*0x763319*/
+  this->q005 = 10; /*0x763319*/
   this->q010 = 0; /*0x763320*/
   return this; /*0x763329*/
 }
@@ -3486,7 +3486,7 @@ char *__thiscall WDT_Campaign_Constructor(char *this, const char **a2, int a3)
             Team_Create_765F60(v27, v25); /*0x764d11*/
             v12 = this->q008; /*0x764d16*/
             if ( this->q028 < v12 /*0x764d3b*/
-              || (*(this + 37) || !v12)
+              || (this->q025 || !v12)
               && (v13 = this->q02C, v13 > 0)
               && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(this->q018 + 8))(
                    this + 24,

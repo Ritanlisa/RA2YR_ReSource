@@ -535,7 +535,7 @@ char *__thiscall sub_5408F0(char *this, int a2, int a3, int a4, int a5, __int16 
     (**(void (__thiscall ***)(int, int))MEMORY[0x887628])(MEMORY[0x887628], 1); /*0x540956*/
   MEMORY[0x887628] = 0; /*0x540960*/
   this->q008 = a2; /*0x540966*/
-  this->__pad_00C = a4; /*0x540969*/
+  this->q030 = a4; /*0x540969*/
   this->tail_6 = a2; /*0x540970*/
   this->Active = a5; /*0x54097c*/
   this->q007 = a5; /*0x54097f*/
@@ -545,7 +545,7 @@ char *__thiscall sub_5408F0(char *this, int a2, int a3, int a4, int a5, __int16 
   this->connCount = v10; /*0x540996*/
   this->Active = 0; /*0x54099f*/
   this->Initialized = a3; /*0x5409a2*/
-  *((_DWORD *)this + 9) = 0; /*0x5409a5*/
+  this->q009 = 0; /*0x5409a5*/
   this->connCount = 0; /*0x5409a8*/
   this->curConnIndex = 0; /*0x5409ab*/
   memset(this + 40, 0, 0x1Cu); /*0x5409ae*/
@@ -3697,8 +3697,8 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
   this->q0B9 = 0; /*0x544893*/
   this->q2E8 = 0; /*0x544899*/
   this->__pad_2EC = a4; /*0x54489f*/
-  *(this + 188) = 1; /*0x5448a5*/
-  this->__pad_0BD = 0; /*0x5448af*/
+  this->q0BC = 1; /*0x5448a5*/
+  *((_BYTE *)this + 756) = 0; /*0x5448af*/
   *((_BYTE *)this + 773) = 1; /*0x5448b5*/
   *((_BYTE *)this + 774) = 0; /*0x5448bc*/
   this->MapClass_field_0x308 = 0; /*0x5448c2*/

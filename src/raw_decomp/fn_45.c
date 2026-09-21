@@ -4159,10 +4159,10 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
     *((_BYTE *)this + 1634) = 0; /*0x454b2a*/
     HouseClass::LostPoweredCenter(v14, *(_DWORD *)(v3 + 1036)); /*0x454b38*/
   }
-  v15 = (_DWORD *)*(this + 175); /*0x454b3d*/
+  v15 = (_DWORD *)this->q0AF; /*0x454b3d*/
   if ( v15 ) /*0x454b45*/
     CaptureManager::FreeAll(v15); /*0x454b47*/
-  if ( *(this + 171) ) /*0x454b4c*/
+  if ( this->q0AB ) /*0x454b4c*/
     TechnoClass::EjectPassengers(this, 1); /*0x454b5a*/
   v16 = this->q148; /*0x454b5f*/
   if ( *(_BYTE *)(v16 + 5831) && *((char *)this + 1771) >= 0 && *((_BYTE *)this + 1772) ) /*0x454b79*/
@@ -4182,7 +4182,7 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
         *((_BYTE *)this + 1641) = 0; /*0x454bc6*/
         *(_BYTE *)(v17 + 22392) = 1; /*0x454bcd*/
         v18 = *this; /*0x454bda*/
-        *(this + 155) = *(char *)(this->q148 + 3282); /*0x454be5*/
+        this->q09B = *(char *)(this->q148 + 3282); /*0x454be5*/
         (*(void (__thiscall **)(int *))(v18 + 1044))(this); /*0x454beb*/
       }
     }
@@ -7050,8 +7050,8 @@ LABEL_19:
     }
     --*(_DWORD *)&HouseClass_Player.__pad_5568[21752]; /*0x4581b2*/
     v43 = (int)this->q68C; /*0x4581b9*/
-    ((void (__thiscall *)(BuildingTypeClass **))(*(this + 417))->vtable3)(this + 417); /*0x4581bc*/
-    ((void (__thiscall *)(BuildingTypeClass **, int, _DWORD))(*(this + 417))->vtable2)(this + 417, v43, 0); /*0x4581c6*/
+    ((void (__thiscall *)(BuildingTypeClass **))(this->q1A1)->vtable3)(this + 417); /*0x4581bc*/
+    ((void (__thiscall *)(BuildingTypeClass **, int, _DWORD))(this->q1A1)->vtable2)(this + 417, v43, 0); /*0x4581c6*/
     v44 = (_DWORD *)(*(int (__thiscall **)(BuildingTypeClass **))&(*this)->__pad_14D[111])(this); /*0x4581cd*/
     BuildingClass::UpdateThreatBounds(this, v44); /*0x4581d6*/
   }
@@ -7233,7 +7233,7 @@ int *__thiscall PlayHealthDependentBuildingAnim(int *this)
     if ( v21 && *(_BYTE *)v21 ) /*0x458523*/
       BuildingClass::PlayAnim((ObjectClass *)this, v20, v21, (IUnknown *)5, (IUnknown *)v18, v28, 0); /*0x458535*/
   }
-  result = (int *)*(this + 349); /*0x45853a*/
+  result = (int *)this->q15D; /*0x45853a*/
   if ( result ) /*0x458542*/
   {
     v24 = BuildingClass::GetHealthRatio(this) <= *(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5888); /*0x45855c*/
@@ -7349,8 +7349,8 @@ int __thiscall BuildingClass::AnimateUnloadUnits(_DWORD *this, CoordStruct *aP1)
     }
   }
   v19 = (AudioController *)this->q68C; /*0x45870a*/
-  (*(void (__thiscall **)(_DWORD *))(*(this + 417) + 12))(this + 417); /*0x458718*/
-  (*(void (__thiscall **)(_DWORD *, AudioController *, _DWORD))(*(this + 417) + 8))(this + 417, v19, 0); /*0x458722*/
+  (*(void (__thiscall **)(_DWORD *))(this->q1A1 + 12))(this + 417); /*0x458718*/
+  (*(void (__thiscall **)(_DWORD *, AudioController *, _DWORD))(this->q1A1 + 8))(this + 417, v19, 0); /*0x458722*/
   v20 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 444))(this); /*0x458729*/
   BuildingClass::UpdateThreatBounds(this, v20); /*0x458732*/
   return result; /*0x458737*/

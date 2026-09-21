@@ -1598,7 +1598,7 @@ int __thiscall sub_681200(_DWORD *this, _DWORD *a2)
 {
   int result; // eax
 
-  *(this + 246) = *a2; /*0x681206*/
+  this->q0F6 = *a2; /*0x681206*/
   result = a2[1]; /*0x68120c*/
   this->q0F7 = result; /*0x68120f*/
   return result; /*0x681215*/
@@ -1608,7 +1608,7 @@ int __thiscall sub_681200(_DWORD *this, _DWORD *a2)
 // ==== 0x00681220  ObjectClass::method  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_681220(_DWORD *this, _DWORD *a2)
 {
-  *a2 = *(this + 246); /*0x68122a*/
+  *a2 = this->q0F6; /*0x68122a*/
   a2[1] = this->q0F7; /*0x681232*/
   return a2; /*0x681235*/
 }
@@ -9537,7 +9537,7 @@ _DWORD *__thiscall sub_68C200(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_TechnoTypeClass; /*0x68c243*/
-  *(this + 5) = 10; /*0x68c249*/
+  this->q005 = 10; /*0x68c249*/
   this->q010 = 0; /*0x68c250*/
   return this; /*0x68c259*/
 }
@@ -9556,7 +9556,7 @@ char __thiscall DynamicVector_PushBack(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x68c276*/
       return 0; /*0x68c276*/
-    v4 = *(this + 5); /*0x68c278*/
+    v4 = this->q005; /*0x68c278*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x68c288*/
       return 0; /*0x68c28f*/
   }
@@ -10472,7 +10472,7 @@ int __thiscall ScoreScreen::Display(int *this)
   aP4[0] = (ConvertClass *)CCFileClass::ReadEntireFile(aP4_28);
   CCFileClass::Reset(aP4_28);
   v13 = this + 13;
-  (*(void (__thiscall **)(int *))(*(this + 13) + 12))(this + 13);
+  (*(void (__thiscall **)(int *))(this->q00D + 12))(this + 13);
   v14 = __2_YAPAXI_Z(0xCu);
   v15 = (char **)v14;
   if ( v14 )
@@ -10494,7 +10494,7 @@ int __thiscall ScoreScreen::Display(int *this)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v17 + v16, 0) )
   {
     v18 = (AbstractClass *)this->q011;
-    v19 = *(this + 14);
+    v19 = this->q00E;
     this->q011 = (int)&v18->__pad_0[1];
     *(_DWORD *)(v19 + 4 * (_DWORD)v18) = v15;
   }
@@ -10519,7 +10519,7 @@ int __thiscall ScoreScreen::Display(int *this)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v23 + v22, 0) )
   {
     v24 = (AbstractClass *)this->q011;
-    v25 = *(this + 14);
+    v25 = this->q00E;
     this->q011 = (int)&v24->__pad_0[1];
     *(_DWORD *)(v25 + 4 * (_DWORD)v24) = v21;
   }
@@ -10544,7 +10544,7 @@ int __thiscall ScoreScreen::Display(int *this)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v29 + v28, 0) )
   {
     v30 = (AbstractClass *)this->q011;
-    v31 = *(this + 14);
+    v31 = this->q00E;
     this->q011 = (int)&v30->__pad_0[1];
     *(_DWORD *)(v31 + 4 * (_DWORD)v30) = v27;
   }
@@ -10569,7 +10569,7 @@ int __thiscall ScoreScreen::Display(int *this)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v35 + v34, 0) )
   {
     v36 = (AbstractClass *)this->q011;
-    v37 = *(this + 14);
+    v37 = this->q00E;
     this->q011 = (int)&v36->__pad_0[1];
     *(_DWORD *)(v37 + 4 * (_DWORD)v36) = v33;
   }
@@ -10594,7 +10594,7 @@ int __thiscall ScoreScreen::Display(int *this)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v41 + v40, 0) )
   {
     v42 = (AbstractClass *)this->q011;
-    v43 = *(this + 14);
+    v43 = this->q00E;
     this->q011 = (int)&v42->__pad_0[1];
     *(_DWORD *)(v43 + 4 * (_DWORD)v42) = v39;
   }
@@ -10619,7 +10619,7 @@ int __thiscall ScoreScreen::Display(int *this)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v47 + v46, 0) )
   {
     v48 = (AbstractClass *)this->q011;
-    v49 = *(this + 14);
+    v49 = this->q00E;
     this->q011 = (int)&v48->__pad_0[1];
     *(_DWORD *)(v49 + 4 * (_DWORD)v48) = v45;
   }
@@ -10644,7 +10644,7 @@ int __thiscall ScoreScreen::Display(int *this)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v53 + v52, 0) )
   {
     v54 = (AbstractClass *)this->q011;
-    v55 = *(this + 14);
+    v55 = this->q00E;
     this->q011 = (int)&v54->__pad_0[1];
     *(_DWORD *)(v55 + 4 * (_DWORD)v54) = v51;
   }
@@ -10670,7 +10670,7 @@ int __thiscall ScoreScreen::Display(int *this)
     {
       for ( i = 0; i < this->q011; ++i )
       {
-        if ( !_strcmpi(&stru_830620.__pad_579C[34396], **(const void ***)(*(this + 14) + 4 * i)) )
+        if ( !_strcmpi(&stru_830620.__pad_579C[34396], **(const void ***)(this->q00E + 4 * i)) )
           break;
       }
     }
@@ -10726,7 +10726,7 @@ int __thiscall ScoreScreen::Display(int *this)
     {
       for ( j = 0; j < this->q011; ++j )
       {
-        if ( !_strcmpi(&stru_830620.__pad_579C[34368], **(const void ***)(*(this + 14) + 4 * j)) )
+        if ( !_strcmpi(&stru_830620.__pad_579C[34368], **(const void ***)(this->q00E + 4 * j)) )
           break;
       }
     }
@@ -11088,7 +11088,7 @@ int __thiscall ScoreScreen::Display(int *this)
     {
       for ( ii = 0; ii < this->q011; ++ii )
       {
-        if ( !_strcmpi(&stru_830620.__pad_579C[34388], **(const void ***)(*(this + 14) + 4 * ii)) )
+        if ( !_strcmpi(&stru_830620.__pad_579C[34388], **(const void ***)(this->q00E + 4 * ii)) )
           break;
       }
     }
@@ -11395,7 +11395,7 @@ int __thiscall ScoreScreen::Display(int *this)
     {
       for ( kk = 0; kk < this->q011; ++kk )
       {
-        if ( !_strcmpi(&stru_830620.__pad_579C[34380], **(const void ***)(*(this + 14) + 4 * kk)) )
+        if ( !_strcmpi(&stru_830620.__pad_579C[34380], **(const void ***)(this->q00E + 4 * kk)) )
           break;
       }
     }
@@ -11753,7 +11753,7 @@ LABEL_222:
   Theme::Stop(&g_BuildingTypeClass_Count, (ObjectClass *)1);
   for ( nn = 0; nn < this->q011; ++nn )
   {
-    v271 = *(CCINIClass **)(*(this + 14) + 4 * nn);
+    v271 = *(CCINIClass **)(this->q00E + 4 * nn);
     if ( v271 )
     {
       if ( *(_DWORD *)v271->__pad_0 )
@@ -11761,7 +11761,7 @@ LABEL_222:
       __3_YAXPAX_Z(v271);
     }
   }
-  (*(void (__thiscall **)(int *))(*(this + 13) + 12))(this + 13);
+  (*(void (__thiscall **)(int *))(this->q00D + 12))(this + 13);
   for ( i1 = 0; i1 < this->q00B; ++i1 )
   {
     v276 = *(void (__thiscall ****)(_DWORD, int))(this->ScoreScreen_field_0x08 + 4 * i1);
@@ -12219,7 +12219,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     {
       v59 = *(_DWORD *)&stru_87C374.__pad_579C[22524]; /*0x68f414*/
       swprintf(v84, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v17, v53); /*0x68f418*/
-      v28 = (_DWORD *)*(this + 3); /*0x68f41d*/
+      v28 = (_DWORD *)this->q003; /*0x68f41d*/
       v29 = (CampaignScore *)(v7 - v28[2] - v66); /*0x68f430*/
       (*(void (__thiscall **)(_DWORD *, int, wchar_t *, int, CampaignScore *, int))(*v28 + 12))( /*0x68f443*/
         v28,
@@ -12228,7 +12228,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
         v6,
         v29,
         2);
-      v30 = (int *)*(this + 3); /*0x68f446*/
+      v30 = (int *)this->q003; /*0x68f446*/
       v31 = *v30; /*0x68f44c*/
       v59 = v30[2]; /*0x68f44e*/
       v75 = (*(int (__thiscall **)(int *, wchar_t *))(v31 + 8))(v30, v84); /*0x68f45d*/
@@ -12256,7 +12256,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
       if ( (int)v80 / v65 >= (int)v17 ) /*0x68f397*/
         v22 = v17; /*0x68f399*/
       swprintf(Buffer, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v22, v53); /*0x68f3a9*/
-      v23 = (_DWORD *)*(this + 3); /*0x68f3ae*/
+      v23 = (_DWORD *)this->q003; /*0x68f3ae*/
       v24 = (CampaignScore *)(v58 - v23[2]); /*0x68f3c2*/
       (*(void (__thiscall **)(_DWORD *, int, wchar_t *, int, CampaignScore *, int))(*v23 + 12))( /*0x68f3d0*/
         v23,
@@ -12265,7 +12265,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
         v6,
         v24,
         2);
-      v25 = (int *)*(this + 3); /*0x68f3d3*/
+      v25 = (int *)this->q003; /*0x68f3d3*/
       v26 = *v25; /*0x68f3d9*/
       v59 = v25[2]; /*0x68f3db*/
       v27 = (*(int (__thiscall **)(int *, wchar_t *))(v26 + 8))(v25, Buffer); /*0x68f3e7*/
@@ -12287,10 +12287,10 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     {
       v59 = *(_DWORD *)&stru_87C374.__pad_579C[22524]; /*0x68f585*/
       swprintf(v81, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)aP2, v54); /*0x68f589*/
-      v41 = (_DWORD *)*(this + 3); /*0x68f58e*/
+      v41 = (_DWORD *)this->q003; /*0x68f58e*/
       v42 = v7 - v41[2] - v64; /*0x68f5a3*/
       (*(void (__thiscall **)(_DWORD *, int, wchar_t *, wchar_t *, int, int))(*v41 + 12))(v41, v59, v81, v62, v42, 2); /*0x68f5b5*/
-      v43 = (int *)*(this + 3); /*0x68f5b8*/
+      v43 = (int *)this->q003; /*0x68f5b8*/
       v44 = *v43; /*0x68f5be*/
       v59 = v43[2]; /*0x68f5c0*/
       v45 = (*(int (__thiscall **)(int *, wchar_t *))(v44 + 8))(v43, v81); /*0x68f5c9*/
@@ -12320,10 +12320,10 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
       if ( (int)v79 / v65 >= (int)aP2 ) /*0x68f505*/
         v34 = aP2; /*0x68f507*/
       swprintf(v83, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v34, v54); /*0x68f517*/
-      v35 = (_DWORD *)*(this + 3); /*0x68f51c*/
+      v35 = (_DWORD *)this->q003; /*0x68f51c*/
       v36 = v32 - v35[2]; /*0x68f529*/
       (*(void (__thiscall **)(_DWORD *, int, wchar_t *, wchar_t *, int, int))(*v35 + 12))(v35, v59, v83, v62, v36, 2); /*0x68f53e*/
-      v37 = (int *)*(this + 3); /*0x68f541*/
+      v37 = (int *)this->q003; /*0x68f541*/
       v38 = *v37; /*0x68f547*/
       v59 = v37[2]; /*0x68f549*/
       v39 = (*(int (__thiscall **)(int *, wchar_t *))(v38 + 8))(v37, v83); /*0x68f555*/
@@ -12337,9 +12337,9 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     {
       if ( Audio::IsSoundEnabled() ) /*0x68f5ed*/
       {
-        for ( i = 0; i < *(this + 17); ++i ) /*0x68f5fd*/
+        for ( i = 0; i < this->q011; ++i ) /*0x68f5fd*/
         {
-          if ( !_strcmpi(&stru_830620.__pad_579C[34356], **(const void ***)(*(this + 14) + 4 * i)) ) /*0x68f60d*/
+          if ( !_strcmpi(&stru_830620.__pad_579C[34356], **(const void ***)(this->q00E + 4 * i)) ) /*0x68f60d*/
             break; /*0x68f617*/
         }
       }
@@ -12378,23 +12378,23 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     1);
   v59 = *(_DWORD *)&stru_87C374.__pad_579C[22524]; /*0x68f6f2*/
   swprintf(v81, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v17, v53); /*0x68f6f6*/
-  (*(void (__thiscall **)(_DWORD, int, wchar_t *, int, int, int))(*(_DWORD *)*(this + 3) + 12))( /*0x68f71f*/
-    *(this + 3),
+  (*(void (__thiscall **)(_DWORD, int, wchar_t *, int, int, int))(*(_DWORD *)this->q003 + 12))( /*0x68f71f*/
+    this->q003,
     v59,
     v81,
     v6,
-    v7 - *(_DWORD *)(*(this + 3) + 8) - v66,
+    v7 - *(_DWORD *)(this->q003 + 8) - v66,
     2);
-  (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)*(this + 3) + 8))(*(this + 3), v81); /*0x68f72c*/
+  (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)this->q003 + 8))(this->q003, v81); /*0x68f72c*/
   v59 = *(_DWORD *)&stru_87C374.__pad_579C[22528]; /*0x68f740*/
   swprintf(v81, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v17, v55); /*0x68f744*/
-  (*(void (__stdcall **)(int, wchar_t *, int, int, int))(*(_DWORD *)*(this + 3) + 12))( /*0x68f76c*/
+  (*(void (__stdcall **)(int, wchar_t *, int, int, int))(*(_DWORD *)this->q003 + 12))( /*0x68f76c*/
     v59,
     v81,
     v6,
-    v7 - *(_DWORD *)(*(this + 3) + 8) - v66,
+    v7 - *(_DWORD *)(this->q003 + 8) - v66,
     2);
-  (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)*(this + 3) + 8))(*(this + 3), v81); /*0x68f779*/
+  (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)this->q003 + 8))(this->q003, v81); /*0x68f779*/
   if ( v71 > 0 && v72 > 0 ) /*0x68f78a*/
     (*(void (__thiscall **)(_DWORD, wchar_t **, _DWORD, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22524] /*0x68f7a9*/
                                                                                 + 8))(
@@ -12420,23 +12420,23 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     1);
   v50 = *(ObjectClass **)&stru_87C374.__pad_579C[22524]; /*0x68f7f0*/
   swprintf(v81, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)aP2, v56); /*0x68f801*/
-  (*(void (__thiscall **)(_DWORD, ObjectClass *, wchar_t *, wchar_t *, int, int))(*(_DWORD *)*(this + 3) + 12))( /*0x68f821*/
-    *(this + 3),
+  (*(void (__thiscall **)(_DWORD, ObjectClass *, wchar_t *, wchar_t *, int, int))(*(_DWORD *)this->q003 + 12))( /*0x68f821*/
+    this->q003,
     v50,
     v81,
     v48,
-    v7 - *(_DWORD *)(*(this + 3) + 8) - v64,
+    v7 - *(_DWORD *)(this->q003 + 8) - v64,
     2);
-  (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)*(this + 3) + 8))(*(this + 3), v81); /*0x68f82e*/
+  (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)this->q003 + 8))(this->q003, v81); /*0x68f82e*/
   v51 = *(ObjectClass **)&stru_87C374.__pad_579C[22528]; /*0x68f838*/
   swprintf(v81, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)aP2, v57); /*0x68f849*/
-  (*(void (__stdcall **)(ObjectClass *, wchar_t *, wchar_t *, int, int))(*(_DWORD *)*(this + 3) + 12))( /*0x68f86b*/
+  (*(void (__stdcall **)(ObjectClass *, wchar_t *, wchar_t *, int, int))(*(_DWORD *)this->q003 + 12))( /*0x68f86b*/
     v51,
     v81,
     v48,
-    v7 - *(_DWORD *)(*(this + 3) + 8) - v64,
+    v7 - *(_DWORD *)(this->q003 + 8) - v64,
     2);
-  (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)*(this + 3) + 8))(*(this + 3), v81); /*0x68f878*/
+  (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)this->q003 + 8))(this->q003, v81); /*0x68f878*/
   return Screen::TransitionLoop((MPCooperative *)this, 20); /*0x68f884*/
 }
 

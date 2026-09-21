@@ -3882,7 +3882,7 @@ int __thiscall JumpjetLocomotionClass::FindClosestOccupiableCell(_DWORD *this)
   v6 = 128; /*0x48508f*/
   v7 = 128; /*0x485097*/
   inited = Isometric::InitTables((int)this, (IUnknown *)&v6); /*0x4850a3*/
-  if ( MEMORY[0xA8D63C].__pad_1258[268] && (v3 = *(this + 57)) != 0 ) /*0x4850b6*/
+  if ( MEMORY[0xA8D63C].__pad_1258[268] && (v3 = this->q039) != 0 ) /*0x4850b6*/
   {
     while ( (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) != 6 ) /*0x4850c2*/
     {

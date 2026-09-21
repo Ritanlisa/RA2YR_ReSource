@@ -1401,7 +1401,7 @@ int __thiscall sub_7719E0(_BYTE *this)
   this->Capacity = 0; /*0x7719e9*/
   this->IsAllocated = 0; /*0x7719ec*/
   *(_DWORD *)this = &vt_DynamicVectorClass_unsigned_int; /*0x7719ef*/
-  this->CapacityIncrement = 10; /*0x7719f5*/
+  this->q005 = 10; /*0x7719f5*/
   this->Items = 0; /*0x7719fc*/
   return 0; /*0x7719ff*/
 }

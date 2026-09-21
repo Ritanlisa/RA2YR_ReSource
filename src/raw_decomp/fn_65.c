@@ -7107,7 +7107,7 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
     }
   }
   *this = &vt_DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658e5e*/
-  *(this + 5) = 10; /*0x658e64*/
+  this->q005 = 10; /*0x658e64*/
   this->q010 = 0; /*0x658e6b*/
   return this; /*0x658e70*/
 }

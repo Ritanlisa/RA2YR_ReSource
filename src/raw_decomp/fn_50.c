@@ -3543,7 +3543,7 @@ void __thiscall HouseClass::GenerateAIBuildListEnsureSanity(_DWORD *this)
   unsigned int v113; // [esp+ECh] [ebp-8h]
 
   v2 = (VectorClass *)this->attachedTag; /*0x5054bb*/
-  v3 = *(this + 5569); /*0x5054be*/
+  v3 = this->q15C1; /*0x5054be*/
   v96 = this; /*0x5054c5*/
   v111 = *(_DWORD *)&v2[11].IsInitialized; /*0x5054cf*/
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(this + 5569); /*0x5054dc*/
@@ -5308,17 +5308,17 @@ void __thiscall HouseClass_FindAutoBuildLocation(_DWORD *this)
   int v130; // [esp+118h] [ebp-8h]
 
   v115 = this + 5589; /*0x5082cf*/
-  v1 = *(this + 5589) - 1; /*0x5082d9*/
+  v1 = this->q15D5 - 1; /*0x5082d9*/
   v2 = this->teamDelayTimer; /*0x5082da*/
   v107 = this; /*0x5082dd*/
   --v2; /*0x5082e1*/
-  v3 = *(this + 5591) + 2; /*0x5082e9*/
-  v4 = *(this + 5592); /*0x5082ec*/
+  v3 = this->q15D7 + 2; /*0x5082e9*/
+  v4 = this->q15D8; /*0x5082ec*/
   v114 = this + 5593; /*0x5082f5*/
   v4 += 2; /*0x5082fc*/
   this->HouseClass_field_timer_A = v1; /*0x5082ff*/
-  *(this + 5594) = v2; /*0x508305*/
-  *(this + 5595) = v3; /*0x508308*/
+  this->q15DA = v2; /*0x508305*/
+  this->q15DB = v3; /*0x508308*/
   this->HouseClass_field_timer_B = v4; /*0x50830b*/
   BaseNodeClass::Vector_Constructor(&v99, 0, 0); /*0x50830e*/
   v99 = &vt_DynamicVectorClass_BaseNodeClass; /*0x50831b*/
@@ -9673,7 +9673,7 @@ BOOL __thiscall sub_50D9D0(_DWORD *this)
 // ==== 0x0050D9E0  HouseClass::GetInfSelfHealStep  this=HouseClass  sig=csp ====
 int __thiscall HouseClass::GetInfSelfHealStep(_DWORD *this)
 {
-  return this->__pad_164 * MEMORY[0x8871E0]->SelfHealInfantryAmount; /*0x50d9ef*/
+  return *(this + 89) * MEMORY[0x8871E0]->SelfHealInfantryAmount; /*0x50d9ef*/
 }
 
 
@@ -10706,7 +10706,7 @@ _DWORD *__thiscall sub_50E830(_DWORD *this, _DWORD *a2)
     }
   }
   this->q010 = a2[4]; /*0x50e8a1*/
-  *(this + 5) = a2[5]; /*0x50e8a7*/
+  this->q005 = a2[5]; /*0x50e8a7*/
   *this = &DynamicVectorClass<TeamTypeClass const *>::`vftable'; /*0x50e8aa*/
   return this; /*0x50e8b2*/
 }
@@ -10932,7 +10932,7 @@ char __thiscall VectorClass::InsertAt(_DWORD *this, IUnknown *aP1, int a3)
   {
     if ( !this->__pad_034 && v4 ) /*0x50eb86*/
       return 0; /*0x50eb86*/
-    v5 = *(this + 5); /*0x50eb88*/
+    v5 = this->q005; /*0x50eb88*/
     if ( v5 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v4 + v5, 0) ) /*0x50eb98*/
       return 0; /*0x50eb9f*/
   }

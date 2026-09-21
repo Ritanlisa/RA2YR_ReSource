@@ -327,7 +327,7 @@ _DWORD *__thiscall TechnoTypeClass::LoadBase(_DWORD *this, ObjectClass *aP1)
   this->TeamTypeClass_field_2C = 0; /*0x6f0753*/
   this->q0B4 = 7; /*0x6f076b*/
   this->q0B8 = -1; /*0x6f0775*/
-  *(this + 47) = 0; /*0x6f077b*/
+  this->q02F = 0; /*0x6f077b*/
   this->q0C0 = 0; /*0x6f0781*/
   this->q0C4 = 0; /*0x6f0787*/
   this->q0C8 = -1; /*0x6f078d*/
@@ -1941,7 +1941,7 @@ _DWORD *__thiscall sub_6F2230(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<TeamTypeClass const *>::`vftable'; /*0x6f2273*/
-  *(this + 5) = 10; /*0x6f2279*/
+  this->q005 = 10; /*0x6f2279*/
   this->q010 = 0; /*0x6f2280*/
   return this; /*0x6f2289*/
 }
@@ -2709,13 +2709,13 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->q238 = 0; /*0x6f2d44*/
   this->warpFactor = 1; /*0x6f2d4a*/
   v8 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2d50*/
-  *(this + 146) = 0; /*0x6f2d56*/
+  this->q092 = 0; /*0x6f2d56*/
   this->warpFactor_e = v8; /*0x6f2d5c*/
   this->q24C = 0; /*0x6f2d62*/
   this->isChronosphereImmune = 0; /*0x6f2d68*/
   this->lastSightCoords = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6908]; /*0x6f2d79*/
   this->q096 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2d85*/
-  *(this + 151) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6916]; /*0x6f2d93*/
+  this->q097 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6916]; /*0x6f2d93*/
   this->lastSightRange = 0; /*0x6f2d96*/
   this->lastSightHeight = 0; /*0x6f2d9c*/
   this->gapSuperCharged = 0; /*0x6f2da2*/
@@ -7599,7 +7599,7 @@ void __thiscall FootClass::UpdateLocomotion(_DWORD *this, int a2)
           v17 = v31; /*0x6fb9f4*/
           this->warpFactor_e = v15; /*0x6fba00*/
           this->alignmentPadding91 = v17; /*0x6fba02*/
-          *(this + 146) = v16; /*0x6fba07*/
+          this->q092 = v16; /*0x6fba07*/
           (*(void (__thiscall **)(_DWORD *, int))(*this + 292))(this, 2); /*0x6fba0c*/
         }
         break;
@@ -7741,7 +7741,7 @@ LABEL_19:
   if ( (*(int (__thiscall **)(void *))(this->fallRate)(this) != 6 && this->owner ) /*0x6fbf18*/
     return 0; /*0x6fbf2a*/
   v9 = this->isAliveFlag; /*0x6fbf2b*/
-  v10 = *((_DWORD *)this + 146); /*0x6fbf31*/
+  v10 = this->q092; /*0x6fbf31*/
   if ( v9 != -1 ) /*0x6fbf3a*/
   {
     if ( (int)MEMORY[0xA8ED84] - v9 >= v10 ) /*0x6fbf46*/
@@ -9450,7 +9450,7 @@ LABEL_37:
       {
         return 4; /*0x700169*/
       }
-      if ( (*(int (__thiscall **)(_BYTE *))(this->fallRate)(this) == 2 && *(this + 1737) ) /*0x700178*/
+      if ( (*(int (__thiscall **)(_BYTE *))(this->fallRate)(this) == 2 && this->q6C9 ) /*0x700178*/
         return 4; /*0x70018e*/
     }
   }

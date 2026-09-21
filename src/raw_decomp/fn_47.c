@@ -5561,7 +5561,7 @@ _DWORD *__thiscall VectorClass::Copy(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x477821*/
-  *(this + 5) = aP1[1].Items; /*0x477827*/
+  this->q005 = aP1[1].Items; /*0x477827*/
   *this = &vt_TypeList_int; /*0x47782a*/
   return this; /*0x477832*/
 }
@@ -5739,7 +5739,7 @@ _DWORD *__thiscall DynamicVectorClass::Copy(_DWORD *this, DynamicVector *aP1)
     }
   }
   this->q010 = aP1->field_10; /*0x477a51*/
-  *(this + 5) = *(_DWORD *)aP1->__pad_14; /*0x477a57*/
+  this->q005 = *(_DWORD *)aP1->__pad_14; /*0x477a57*/
   *this = &vt_DynamicVectorClass_int; /*0x477a5a*/
   return this; /*0x477a62*/
 }
@@ -6012,7 +6012,7 @@ _DWORD *__thiscall DynamicVectorClass_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_int; /*0x477df3*/
-  *(this + 5) = 10; /*0x477df9*/
+  this->q005 = 10; /*0x477df9*/
   this->q010 = 0; /*0x477e00*/
   return this; /*0x477e09*/
 }
@@ -6077,7 +6077,7 @@ char __thiscall DynamicVector::Add_Alt(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x477ed6*/
       return 0; /*0x477ed6*/
-    v4 = *(this + 5); /*0x477ed8*/
+    v4 = this->q005; /*0x477ed8*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x477ee8*/
       return 0; /*0x477eef*/
   }

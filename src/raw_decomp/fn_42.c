@@ -10805,7 +10805,7 @@ LABEL_6:
             if ( v36 < 0 ) /*0x42c64d*/
             {
 LABEL_49:
-              v38 = *(this + 25); /*0x42c666*/
+              v38 = this->q019; /*0x42c666*/
               *(_DWORD *)(v38 + v71 + 4) = v25; /*0x42c671*/
               v39 = v38 + v71; /*0x42c675*/
               *(_DWORD *)v39 = ((int)v62 - v38) >> 4; /*0x42c687*/
@@ -13797,7 +13797,7 @@ _DWORD *__thiscall DynamicVector::Constructor_Cell(_DWORD *this, ObjectClass *aP
     }
   }
   *this = &vt_DynamicVectorClass_Cell; /*0x42f6ca*/
-  *(this + 5) = 10; /*0x42f6d0*/
+  this->q005 = 10; /*0x42f6d0*/
   this->q010 = 0; /*0x42f6d7*/
   return this; /*0x42f6e0*/
 }

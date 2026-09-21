@@ -5870,10 +5870,10 @@ LABEL_5:
       if ( v11 ) /*0x416f31*/
       {
         v12 = (_DWORD *)(*(int (__thiscall **)(FootClass *, _BYTE *))(*(_DWORD *)v11->__pad_0 + 72))(v11, v29); /*0x416f54*/
-        if ( !*(this + 413) ) /*0x416f5f*/
+        if ( !this->q19D ) /*0x416f5f*/
           WinAPI::Wrapper(-2147467261); /*0x416f6e*/
-        (*(void (__stdcall **)(_DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)(*(this + 413))->__pad_0 + 68))( /*0x416f89*/
-          *(this + 413),
+        (*(void (__stdcall **)(_DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)(this->q19D)->__pad_0 + 68))( /*0x416f89*/
+          this->q19D,
           *v12,
           v12[1],
           v12[2]);
@@ -5903,17 +5903,17 @@ LABEL_5:
         this->q0BC = 0; /*0x417012*/
         return 1; /*0x417024*/
       }
-      if ( !*(this + 413) ) /*0x417025*/
+      if ( !this->q19D ) /*0x417025*/
         WinAPI::Wrapper(-2147467261); /*0x417032*/
-      if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)(*(this + 413))->__pad_0 + 144))(*(this + 413)) != 1 ) /*0x417049*/
+      if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)(this->q19D)->__pad_0 + 144))(this->q19D) != 1 ) /*0x417049*/
         goto LABEL_44; /*0x417049*/
       Debug::Log(); /*0x417054*/
       v15 = this->q5A4; /*0x417059*/
       if ( !v15 /*0x4170e9*/
         || (*(int (__thiscall **)(FootClass *))(*(_DWORD *)v15->__pad_0 + 44))(v15) != 1
-        || (v16 = (int)*(this + 39),
-            v17 = (int)*(this + 40),
-            v30 = (int)*(this + 41),
+        || (v16 = (int)this->q027,
+            v17 = (int)this->q028,
+            v30 = (int)this->q029,
             v18 = v16 / 256,
             v19 = (this->q5A4)->location[0],
             v20 = (this->q5A4)->location[1],
@@ -5923,9 +5923,9 @@ LABEL_5:
       {
         *((_BYTE *)this + 1748) = 0; /*0x41710f*/
 LABEL_44:
-        if ( !*(this + 413) ) /*0x417116*/
+        if ( !this->q19D ) /*0x417116*/
           WinAPI::Wrapper(-2147467261); /*0x417125*/
-        if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)(*(this + 413))->__pad_0 + 16))(*(this + 413)) ) /*0x417133*/
+        if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)(this->q19D)->__pad_0 + 16))(this->q19D) ) /*0x417133*/
         {
           Debug::Log(); /*0x41713f*/
           this->q0BC = (FootClass *)3; /*0x417147*/
@@ -5942,7 +5942,7 @@ LABEL_44:
       Debug::Log(); /*0x417163*/
       if ( this->q046 ) /*0x417168*/
       {
-        if ( *(this + 320) ) /*0x417177*/
+        if ( this->q140 ) /*0x417177*/
         {
           *((_BYTE *)this + 1748) = 1; /*0x41717f*/
         }
@@ -5959,13 +5959,13 @@ LABEL_44:
       {
         Debug::Log(); /*0x4171cd*/
         (*(void (__thiscall **)(FootClass **, _DWORD))&(*this)->__pad_115[15])(this, 0); /*0x4171da*/
-        v27[0] = *(this + 39); /*0x4171ea*/
-        v27[1] = *(this + 40); /*0x4171f1*/
-        v21 = (int)*(this + 41); /*0x4171f7*/
-        v28[0] = *(this + 39); /*0x4171fa*/
-        v22 = (int)*(this + 41); /*0x4171fe*/
+        v27[0] = this->q027; /*0x4171ea*/
+        v27[1] = this->q028; /*0x4171f1*/
+        v21 = (int)this->q029; /*0x4171f7*/
+        v28[0] = this->q027; /*0x4171fa*/
+        v22 = (int)this->q029; /*0x4171fe*/
         v27[2] = v21; /*0x417201*/
-        v28[1] = *(this + 40); /*0x41720c*/
+        v28[1] = this->q028; /*0x41720c*/
         v28[2] = v22; /*0x417216*/
         v26 = BYTE1(*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v27) + 80)) & 1; /*0x41722f*/
         v23 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v28); /*0x417236*/

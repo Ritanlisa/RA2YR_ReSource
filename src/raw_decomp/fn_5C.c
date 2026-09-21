@@ -4417,7 +4417,7 @@ _DWORD *__thiscall sub_5C4F30(_DWORD *this, _DWORD *a2)
     }
   }
   this->q010 = a2[4]; /*0x5c4fa1*/
-  *(this + 5) = a2[5]; /*0x5c4fa7*/
+  this->q005 = a2[5]; /*0x5c4fa7*/
   *this = &vt_DynamicVectorClass_MPlayerScoreType; /*0x5c4faa*/
   return this; /*0x5c4fb2*/
 }
@@ -11148,7 +11148,7 @@ void *__thiscall MSShapeAnim::Constructor(
 
   this->q008 = a4; /*0x5cb6db*/
   this->MSShapeAnim_field_0x04 = aP2; /*0x5cb6e1*/
-  *((_BYTE *)this + 12) = 1; /*0x5cb6e4*/
+  this->q030 = 1; /*0x5cb6e4*/
   this->MSShapeAnim_field_0x04 = Timer::GetTicks(); /*0x5cb6f5*/
   this->q006 = 0; /*0x5cb6fc*/
   this->q008 = aP4; /*0x5cb703*/
@@ -11161,7 +11161,7 @@ void *__thiscall MSShapeAnim::Constructor(
   FileClassToBuffer = LoadFileClassToBuffer((char **)aP1, (bool *)this + 60); /*0x5cb72a*/
   this->q01C = FileClassToBuffer; /*0x5cb72f*/
   *((_DWORD *)this + 11) = 0; /*0x5cb732*/
-  *((_DWORD *)this + 12) = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cb73e*/
+  this->q030 = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cb73e*/
   return this; /*0x5cb743*/
 }
 
@@ -11567,7 +11567,7 @@ void *__thiscall Trigger::initTrigger(
 
   this->q008 = a4; /*0x5cbd2c*/
   this->MSShapeAnim_field_0x04 = aP2; /*0x5cbd32*/
-  *((_BYTE *)this + 12) = 1; /*0x5cbd35*/
+  this->q030 = 1; /*0x5cbd35*/
   this->MSShapeAnim_field_0x04 = Timer::GetTicks(); /*0x5cbd48*/
   this->q006 = 0; /*0x5cbd4f*/
   this->q008 = a5; /*0x5cbd52*/
@@ -11582,7 +11582,7 @@ void *__thiscall Trigger::initTrigger(
   *((_DWORD *)this + 11) = 0; /*0x5cbd78*/
   v10 = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
   *((_DWORD *)this + 17) = aP7; /*0x5cbd84*/
-  *((_DWORD *)this + 12) = v10; /*0x5cbd87*/
+  this->q030 = v10; /*0x5cbd87*/
   this->q010 = 0; /*0x5cbd8a*/
   *(_DWORD *)this = &vt_MSFadeAnim; /*0x5cbd8d*/
   return this; /*0x5cbd95*/
@@ -11722,7 +11722,7 @@ LABEL_6:
       v18 = *((_DWORD *)this + 17); /*0x5cbed7*/
     }
   }
-  v21 = *((_DWORD *)this + 12); /*0x5cbee5*/
+  v21 = this->q030; /*0x5cbee5*/
   v22 = this->q00A + 1; /*0x5cbee9*/
   this->q00A = v22; /*0x5cbeeb*/
   if ( v22 > v21 ) /*0x5cbef0*/
@@ -11949,7 +11949,7 @@ void *__thiscall MSOverlayAnim::Init(
 
   this->q008 = a4; /*0x5cc25c*/
   this->MSShapeAnim_field_0x04 = a3; /*0x5cc262*/
-  *((_BYTE *)this + 12) = 1; /*0x5cc265*/
+  this->q030 = 1; /*0x5cc265*/
   this->MSShapeAnim_field_0x04 = Timer::GetTicks(); /*0x5cc278*/
   this->q006 = 0; /*0x5cc27f*/
   this->q008 = a5; /*0x5cc282*/
@@ -11964,7 +11964,7 @@ void *__thiscall MSOverlayAnim::Init(
   *((_DWORD *)this + 11) = 0; /*0x5cc2a4*/
   v12 = *(__int16 *)(FileClassToBuffer + 6); /*0x5cc2a7*/
   *((_BYTE *)this + 72) = a8; /*0x5cc2b4*/
-  *((_DWORD *)this + 12) = v12 - 1; /*0x5cc2bb*/
+  this->q030 = v12 - 1; /*0x5cc2bb*/
   this->q010 = 0; /*0x5cc2c4*/
   *((_DWORD *)this + 17) = aP6; /*0x5cc2c7*/
   *(_DWORD *)this = &MSOverlayAnim::`vftable'; /*0x5cc2ca*/
@@ -12966,7 +12966,7 @@ void *__thiscall MSBitPrintAnim::Construct(void *this, const wchar_t **a1, MSAni
 // ==== 0x005CD3C0  ScoreClass::SetState  this=MSShapeAnim  sig=csp ====
 char __thiscall ScoreClass_SetState(_BYTE *this, char a2)
 {
-  *(this + 48) = a2; /*0x5cd3c4*/
+  this->q030 = a2; /*0x5cd3c4*/
   return a2; /*0x5cd3c7*/
 }
 
@@ -14602,14 +14602,14 @@ char *__thiscall sub_5CEDD0(char *this)
   this->IsInitialized = 1; /*0x5cede3*/
   this->IsAllocated = 0; /*0x5cede7*/
   *(_DWORD *)this = &DynamicVectorClass<MapStage *>::`vftable'; /*0x5cedea*/
-  this->CapacityIncrement = 10; /*0x5cedf0*/
+  this->q005 = 10; /*0x5cedf0*/
   this->Items = 0; /*0x5cedf7*/
   unknown_libname_73(this + 40); /*0x5cedfa*/
   this->IsInitialized = 0; /*0x5cee09*/
   this->IsAllocated = 0; /*0x5cee0c*/
   this->tail_E = 1; /*0x5cee0f*/
   this->q039 = 0; /*0x5cee13*/
-  *((_DWORD *)this + 11) = &DynamicVectorClass<MSAnimEntry *>::`vftable'; /*0x5cee16*/
+  this->q00B = &DynamicVectorClass<MSAnimEntry *>::`vftable'; /*0x5cee16*/
   this->DynamicVector_field_0x10 = 10; /*0x5cee1c*/
   *((_DWORD *)this + 15) = 0; /*0x5cee1f*/
   *((_DWORD *)this + 18) = 0; /*0x5cee22*/
@@ -14621,7 +14621,7 @@ char *__thiscall sub_5CEDD0(char *this)
   *((_DWORD *)this + 21) = 0; /*0x5cee39*/
   (*(void (__thiscall **)(char *))(this->IsInitialized)(this); /*0x5cee3e*/
   DeleteAndZero::Alt2(v2); /*0x5cee43*/
-  (*(void (__thiscall **)(char *))(*((_DWORD *)this + 11) + 12))(this + 44); /*0x5cee4c*/
+  (*(void (__thiscall **)(char *))(this->q00B + 12))(this + 44); /*0x5cee4c*/
   return this; /*0x5cee51*/
 }
 

@@ -15460,7 +15460,7 @@ _DWORD *__thiscall TabClass::Constructor(_DWORD *this)
   this->q1546 = &TabClass::`vftable'; /*0x6cfe6e*/
   this->q5544 = 1; /*0x6cfe74*/
   this->q5545 = 1; /*0x6cfe7a*/
-  *((_BYTE *)this + 21830) = 1; /*0x6cfe80*/
+  this->q5546 = 1; /*0x6cfe80*/
   *this = &TabClass::`vftable'; /*0x6cfe86*/
   v3 = 0; /*0x6cfe8c*/
   v4 = (const char **)MEMORY[0x8427D0]; /*0x6cfe8e*/

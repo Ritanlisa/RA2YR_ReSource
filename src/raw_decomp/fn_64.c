@@ -4378,7 +4378,7 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_RGBClass; /*0x645aec*/
-  *(this + 5) = 10; /*0x645af2*/
+  this->q005 = 10; /*0x645af2*/
   this->q010 = 0; /*0x645af9*/
   return this; /*0x645afe*/
 }

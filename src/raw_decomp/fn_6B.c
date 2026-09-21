@@ -7495,7 +7495,7 @@ _DWORD *__thiscall SpawnManagerClass::Constructor_6B83A0(_DWORD *this, DynamicVe
     }
   }
   *this = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b83e3*/
-  *(this + 5) = 10; /*0x6b83e9*/
+  this->q005 = 10; /*0x6b83e9*/
   this->q010 = 0; /*0x6b83f0*/
   return this; /*0x6b83f9*/
 }

@@ -145,7 +145,7 @@ char __thiscall VectorClass::PushBackCopy(_DWORD *this, AbstractClass *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x630266*/
       return 0; /*0x630266*/
-    v4 = *(this + 5); /*0x630268*/
+    v4 = this->q005; /*0x630268*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x630278*/
       return 0; /*0x63027f*/
   }
@@ -4211,7 +4211,7 @@ int __thiscall FactoryClass_ClearObjects(int *this)
   if ( v4 <= 0 ) /*0x635155*/
   {
     this->q02A = 0; /*0x63517d*/
-    *(this + 44) = -1; /*0x635183*/
+    this->q02C = -1; /*0x635183*/
   }
   else
   {
@@ -4224,7 +4224,7 @@ int __thiscall FactoryClass_ClearObjects(int *this)
     }
     while ( result < v4 ); /*0x63516a*/
     this->q02A = 0; /*0x63516c*/
-    *(this + 44) = -1; /*0x635172*/
+    this->q02C = -1; /*0x635172*/
   }
   return result; /*0x635178*/
 }
@@ -4239,7 +4239,7 @@ int __thiscall ScriptAction::DecrementRefCount(_DWORD *this, int a2)
   result = this->q02A - 1; /*0x6351ee*/
   this->q02A = result; /*0x6351ef*/
   if ( !result ) /*0x6351f5*/
-    *(this + 44) = -1; /*0x6351f7*/
+    this->q02C = -1; /*0x6351f7*/
   return result; /*0x635201*/
 }
 
@@ -12245,7 +12245,7 @@ _DWORD *__thiscall sub_63DEC0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<PlanningMemberClass *>::`vftable'; /*0x63df03*/
-  *(this + 5) = 10; /*0x63df09*/
+  this->q005 = 10; /*0x63df09*/
   this->q010 = 0; /*0x63df10*/
   return this; /*0x63df19*/
 }
@@ -12479,7 +12479,7 @@ _DWORD *__thiscall sub_63E1D0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<PlanningBranchClass *>::`vftable'; /*0x63e213*/
-  *(this + 5) = 10; /*0x63e219*/
+  this->q005 = 10; /*0x63e219*/
   this->q010 = 0; /*0x63e220*/
   return this; /*0x63e229*/
 }
@@ -12731,7 +12731,7 @@ char __thiscall VectorClass::Append(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x63e556*/
       return 0; /*0x63e556*/
-    v4 = *(this + 5); /*0x63e558*/
+    v4 = this->q005; /*0x63e558*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x63e568*/
       return 0; /*0x63e56f*/
   }

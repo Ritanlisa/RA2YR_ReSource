@@ -4163,7 +4163,7 @@ void __thiscall PlaceRandomWaypoints(int *this, int a2)
       v7 = Math::RoundToInt((double)v23 * v24 * 2.328306437080797e-10); /*0x594955*/
     }
     while ( v7 > v6 ); /*0x59495c*/
-    v20 = *(_DWORD *)(*(this + 11) + 4 * v7); /*0x594967*/
+    v20 = *(_DWORD *)(this->q00B + 4 * v7); /*0x594967*/
     v25[0] = (__int16)v20 - 3; /*0x594979*/
     v25[1] = SHIWORD(v20) - 3; /*0x59497d*/
     v25[2] = 6; /*0x59498a*/
@@ -5827,11 +5827,11 @@ int __thiscall Skirmish::ReadSettings(HWND *this, HWND hDlg)
   this->__pad_048 = v11; /*0x596d79*/
   if ( v21 != v11 ) /*0x596d7e*/
     byte_ABE2D8 = 1; /*0x596d80*/
-  v22 = *(this + 25); /*0x596d90*/
+  v22 = this->q019; /*0x596d90*/
   hDlge = GetDlgItem(hDlg, 1030); /*0x596da2*/
   v12 = SendMessageA(hDlge, 0x147u, 0, 0); /*0x596da6*/
   v13 = (HWND)SendMessageA(hDlge, 0x150u, v12, 0); /*0x596db3*/
-  *(this + 25) = v13; /*0x596db9*/
+  this->q019 = v13; /*0x596db9*/
   this->q01A = v13; /*0x596dbe*/
   if ( v22 != v13 ) /*0x596dc1*/
     byte_ABE2D8 = 1; /*0x596dc3*/
@@ -5936,7 +5936,7 @@ LRESULT __thiscall RandomMap_SetupDialog(_DWORD *this, HWND hDlg)
     ++v10; /*0x596f82*/
   }
   while ( (int)v11 < (int)&dword_82B080 ); /*0x596f89*/
-  v14 = GetStringCSF((&off_82B070)[*(this + 25)], 0, g_Str_File_MapGen_cpp, 4902); /*0x596fa5*/
+  v14 = GetStringCSF((&off_82B070)[this->q019], 0, g_Str_File_MapGen_cpp, 4902); /*0x596fa5*/
   v15 = SendMessageA(j, 0x4BEu, 0, (LPARAM)v14); /*0x596fb3*/
   SendMessageA(j, 0x14Eu, v15, 0); /*0x596fbe*/
   for ( k = GetDlgItem(hDlg, 1029); SendMessageA(k, 0x146u, 0, 0) > 0; SendMessageA(k, 0x144u, 0, 0) ) /*0x596fd2*/
@@ -6094,16 +6094,16 @@ _DWORD *__thiscall sub_597430(_DWORD *this)
     switch ( *(_BYTE *)(v3 + 18) ) /*0x5974d1*/
     {
       case 0: /*0x5974d1*/
-        *(this + 25) = 0; /*0x5974d8*/
+        this->q019 = 0; /*0x5974d8*/
         break; /*0x5974df*/
       case 2: /*0x5974d1*/
-        *(this + 25) = 2; /*0x5974e1*/
+        this->q019 = 2; /*0x5974e1*/
         break; /*0x5974e4*/
       case 3: /*0x5974d1*/
-        *(this + 25) = 3; /*0x5974e6*/
+        this->q019 = 3; /*0x5974e6*/
         break; /*0x5974e9*/
       default:
-        *(this + 25) = 1; /*0x5974eb*/
+        this->q019 = 1; /*0x5974eb*/
         break; /*0x5974eb*/
     }
     switch ( *(_BYTE *)(v3 + 19) ) /*0x5974f7*/
@@ -6273,15 +6273,15 @@ int __thiscall SettingsClass_ClampValues(int *this)
   {
     this->q060 = 100; /*0x5976b6*/
   }
-  v11 = *(this + 25); /*0x5976c2*/
+  v11 = this->q019; /*0x5976c2*/
   if ( v11 < 4 ) /*0x5976c8*/
   {
     if ( v11 < 0 ) /*0x5976d1*/
-      *(this + 25) = 0; /*0x5976d3*/
+      this->q019 = 0; /*0x5976d3*/
   }
   else
   {
-    *(this + 25) = 3; /*0x5976ca*/
+    this->q019 = 3; /*0x5976ca*/
   }
   v12 = this->q01A; /*0x5976d6*/
   if ( v12 < 4 ) /*0x5976dc*/
@@ -6877,8 +6877,8 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
                         v30);
   TypeList::Copy(this + 98, IntList); /*0x598332*/
   v8 = IntList; /*0x598337*/
-  *(this + 102) = IntList[4]; /*0x59833e*/
-  *(this + 103) = v8[5]; /*0x598344*/
+  this->q066 = IntList[4]; /*0x59833e*/
+  this->q067 = v8[5]; /*0x598344*/
   this->q01A = v8[6]; /*0x59834a*/
   v32 = (int)&vt_VectorClass_int; /*0x598356*/
   VectorClass::Destroy((int)&v32); /*0x59835a*/
@@ -6899,9 +6899,9 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
                         v30);
   TypeList::Copy(this + 161, IntList); /*0x598397*/
   v9 = IntList; /*0x59839c*/
-  *(this + 165) = IntList[4]; /*0x5983a3*/
-  *(this + 166) = v9[5]; /*0x5983a9*/
-  *(this + 167) = v9[6]; /*0x5983b3*/
+  this->q0A5 = IntList[4]; /*0x5983a3*/
+  this->q0A6 = v9[5]; /*0x5983a9*/
+  this->q0A7 = v9[6]; /*0x5983b3*/
   v32 = (int)&vt_VectorClass_int; /*0x5983b6*/
   VectorClass::Destroy((int)&v32); /*0x5983ba*/
   IntList = &v24; /*0x5983cb*/
@@ -6921,9 +6921,9 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
                         v30);
   TypeList::Copy(this + 168, IntList); /*0x5983fd*/
   v10 = IntList; /*0x598402*/
-  *(this + 172) = IntList[4]; /*0x598409*/
-  *(this + 173) = v10[5]; /*0x59840f*/
-  *(this + 174) = v10[6]; /*0x598419*/
+  this->q0AC = IntList[4]; /*0x598409*/
+  this->q0AD = v10[5]; /*0x59840f*/
+  this->q0AE = v10[6]; /*0x598419*/
   v32 = (int)&vt_VectorClass_int; /*0x59841c*/
   VectorClass::Destroy((int)&v32); /*0x598420*/
   IntList = &v24; /*0x598431*/
@@ -6943,9 +6943,9 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
                         v30);
   TypeList::Copy(this + 105, IntList); /*0x598463*/
   v11 = IntList; /*0x598468*/
-  *(this + 109) = IntList[4]; /*0x59846f*/
-  *(this + 110) = v11[5]; /*0x598475*/
-  *(this + 111) = v11[6]; /*0x59847b*/
+  this->q06D = IntList[4]; /*0x59846f*/
+  this->q06E = v11[5]; /*0x598475*/
+  this->q06F = v11[6]; /*0x59847b*/
   v32 = (int)&vt_VectorClass_int; /*0x59847e*/
   VectorClass::Destroy((int)&v32); /*0x598486*/
   IntList = &v24; /*0x598497*/
@@ -6966,8 +6966,8 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
   TypeList::Copy(this + 112, IntList); /*0x5984c9*/
   v12 = IntList; /*0x5984ce*/
   this->q074 = IntList[4]; /*0x5984d5*/
-  *(this + 117) = v12[5]; /*0x5984db*/
-  *(this + 118) = v12[6]; /*0x5984e5*/
+  this->q075 = v12[5]; /*0x5984db*/
+  this->q076 = v12[6]; /*0x5984e5*/
   v32 = (int)&vt_VectorClass_int; /*0x5984e8*/
   VectorClass::Destroy((int)&v32); /*0x5984ec*/
   IntList = &v24; /*0x5984fd*/
@@ -6987,9 +6987,9 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
                         v30);
   TypeList::Copy(this + 119, IntList); /*0x59852f*/
   v13 = IntList; /*0x598534*/
-  *(this + 123) = IntList[4]; /*0x59853b*/
-  this->__pad_07C = v13[5]; /*0x598541*/
-  *(this + 125) = v13[6]; /*0x59854b*/
+  this->q07B = IntList[4]; /*0x59853b*/
+  *(this + 124) = v13[5]; /*0x598541*/
+  this->q07D = v13[6]; /*0x59854b*/
   v32 = (int)&vt_VectorClass_int; /*0x59854e*/
   VectorClass::Destroy((int)&v32); /*0x598552*/
   IntList = &v24; /*0x598563*/
@@ -7009,9 +7009,9 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
                         v30);
   TypeList::Copy(this + 126, IntList); /*0x598595*/
   v14 = IntList; /*0x59859a*/
-  *(this + 130) = IntList[4]; /*0x5985a1*/
-  *(this + 131) = v14[5]; /*0x5985a7*/
-  *(this + 132) = v14[6]; /*0x5985b1*/
+  this->q082 = IntList[4]; /*0x5985a1*/
+  this->q083 = v14[5]; /*0x5985a7*/
+  this->q084 = v14[6]; /*0x5985b1*/
   v32 = (int)&vt_VectorClass_int; /*0x5985b4*/
   VectorClass::Destroy((int)&v32); /*0x5985b8*/
   IntList = &v24; /*0x5985c9*/
@@ -7031,9 +7031,9 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
                         v30);
   TypeList::Copy(this + 133, IntList); /*0x5985fb*/
   v15 = IntList; /*0x598600*/
-  *(this + 137) = IntList[4]; /*0x598607*/
-  *(this + 138) = v15[5]; /*0x59860d*/
-  *(this + 139) = v15[6]; /*0x598617*/
+  this->q089 = IntList[4]; /*0x598607*/
+  this->q08A = v15[5]; /*0x59860d*/
+  this->q08B = v15[6]; /*0x598617*/
   v32 = (int)&vt_VectorClass_int; /*0x59861a*/
   VectorClass::Destroy((int)&v32); /*0x59861e*/
   IntList = &v24; /*0x59862f*/
@@ -7053,9 +7053,9 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
                         v30);
   TypeList::Copy(this + 140, IntList); /*0x598661*/
   v16 = IntList; /*0x598666*/
-  *(this + 144) = IntList[4]; /*0x59866d*/
-  *(this + 145) = v16[5]; /*0x598673*/
-  *(this + 146) = v16[6]; /*0x59867d*/
+  this->q090 = IntList[4]; /*0x59866d*/
+  this->q091 = v16[5]; /*0x598673*/
+  this->q092 = v16[6]; /*0x59867d*/
   v32 = (int)&vt_VectorClass_int; /*0x598680*/
   VectorClass::Destroy((int)&v32); /*0x598684*/
   IntList = &v24; /*0x598695*/
@@ -7075,9 +7075,9 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
                         v30);
   TypeList::Copy(this + 147, IntList); /*0x5986c7*/
   v17 = IntList; /*0x5986cc*/
-  *(this + 151) = IntList[4]; /*0x5986d3*/
-  *(this + 152) = v17[5]; /*0x5986d9*/
-  *(this + 153) = v17[6]; /*0x5986df*/
+  this->q097 = IntList[4]; /*0x5986d3*/
+  this->q098 = v17[5]; /*0x5986d9*/
+  this->q099 = v17[6]; /*0x5986df*/
   v32 = (int)&vt_VectorClass_int; /*0x5986e8*/
   if ( Block && v34 ) /*0x5986f4*/
     __3_YAXPAX_Z(Block); /*0x5986f7*/
@@ -7098,12 +7098,12 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
                         v30);
   TypeList::Copy(this + 154, IntList); /*0x59873d*/
   v18 = IntList; /*0x598742*/
-  *(this + 158) = IntList[4]; /*0x598749*/
-  *(this + 159) = v18[5]; /*0x59874f*/
+  this->q09E = IntList[4]; /*0x598749*/
+  this->q09F = v18[5]; /*0x59874f*/
   this->q028 = v18[6]; /*0x598759*/
   v32 = (int)&vt_VectorClass_int; /*0x59875c*/
   VectorClass::Destroy((int)&v32); /*0x598760*/
-  *(this + 191) = INIClass::ReadInt_Overwrite(off_82B134, stru_82BCAC, *(this + 191)); /*0x59877f*/
+  this->q0BF = INIClass::ReadInt_Overwrite(off_82B134, stru_82BCAC, this->q0BF); /*0x59877f*/
   if ( INIClass::GetString( /*0x5987a5*/
          (unsigned __int8 ***)v3,
          (unsigned __int8 *)off_82B134,
@@ -7738,7 +7738,7 @@ char *__thiscall RandomMap::SetupTheater(int *this, char a2)
   int v83[3]; // [esp+BCh] [ebp-Ch] BYREF
 
   v74 = (MapResourceClass *)this;
-  *(float *)&v72 = (double)*(this + 25) * 0.33333334;
+  *(float *)&v72 = (double)this->q019 * 0.33333334;
   v68 = (double)this->q01A * 0.33333334;
   RandomMap::LoadConfig(this);
   v3 = this->__pad_03C;
