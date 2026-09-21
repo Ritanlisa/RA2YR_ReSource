@@ -28,8 +28,13 @@
   铺平 classes.hpp + e4_globals.hpp 同 TU 编译 0 error）> set_signature 挂类。
 - 试点 10 件 → 通过率报告 → 批量判定写入 mech 计划。
 
-### 3. 归属裁决两件（G29 新挂账）
+### 3. 归属裁决（G29 新挂账）
 
+- **0x77D200 j_Game_ProcessIdle**（G29 门控扫描发现的既有 stub 债，非新回归）：
+  jmp thunk 转发 this 给 `Game::ProcessIdle`(0x77F900)，Hex-Rays receiver
+  类型（SimpleWonlineDialogControl/CreateGameDialogControl cast）为垃圾猜测。
+  需先定 receiver 真型（是否 Game*）→ set_signature 归属 + include Game_e4.hpp
+  后再翻；强翻会引入 illegal-ptr-cast 或新增编译错误。
 - **#150** 0x50d9c0/0x50d9d0：canon cls=TechnoClass 错位，真 receiver = owner
   （HouseClass）。需 HouseClass@356/360 补锚（member_set 带证据）+ set_signature
   归属改名 + 语义命名（DrawPips 门控 veterancy pip）。
