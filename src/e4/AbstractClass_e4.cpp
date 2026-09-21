@@ -95,12 +95,7 @@ void __thiscall AbstractClass::Initialize(_DWORD *this, TechnoClass *aP1, Techno
 namespace gamemd {
 int AbstractClass_COMStub_133()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall AbstractClass::COMStub_133(#377 *this)
-{
   return IPersistStream::StubReturn450();
-}
 }
 } // namespace gamemd
 
@@ -108,12 +103,7 @@ int __thiscall AbstractClass::COMStub_133(#377 *this)
 namespace gamemd {
 int AbstractClass_COMStub_137()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall AbstractClass::COMStub_137(#377 *this)
-{
   return AircraftClass::CheckMissionStatus();
-}
 }
 } // namespace gamemd
 

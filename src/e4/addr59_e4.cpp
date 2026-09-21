@@ -1209,14 +1209,9 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
 
 // 0x597D40
 namespace gamemd {
-int j_Options_GetValue()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-bool __thiscall j_Options::GetValue(const char **dwNewLong)
+int j_Options_GetValue(const char ** dwNewLong)
 {
   return Options::PrepareSaveLoadDlg(dwNewLong);
-}
 }
 }
 // 0x598000
