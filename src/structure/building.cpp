@@ -6309,13 +6309,13 @@ void BuildingClass::FindPlacementCells2(int* outCell, int inCell) {
             typedOccupant = ((*(int (__thiscall **)(_DWORD))(*(_DWORD *)occupant2->__pad_0 + 44))((int*)this->objectTypeFlags) == 6 ? occupant2 : 0);
         else
             typedOccupant = 0;
-        width = BuildingTypeClass::GetFoundationWidth((BuildingTypeClass*)*(int*)((char*)typedOccupant + 1312));
+        width = BuildingTypeClass::GetFoundationWidth((BuildingTypeClass*)((BuildingClass*)typedOccupant)->q520);
         TechnoClass* occupant3 = (TechnoClass*)this->objectTypeFlags;
         if ( occupant3 )
         {
             int whatAmI = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)occupant3->__pad_0 + 44))((int*)this->objectTypeFlags);
             height = BuildingTypeClass::GetFoundationHeight(
-                (BuildingTypeClass*)(whatAmI == 6 ? *(int*)((char*)occupant3 + 1312) : *(_DWORD *)0x520),
+                (BuildingTypeClass*)(whatAmI == 6 ? ((BuildingClass*)occupant3)->q520 : *(_DWORD *)0x520),
                 0);
         }
         else
