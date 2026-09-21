@@ -41,19 +41,19 @@ unsigned int AbstractClass::queueMission(int a2)
 }
 }
 
-// ==== BACKFILL 0x004E01F0  FoggedObjectClass_42::ClearBuffer  cls=FoggedObjectClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x004E01F0  FoggedObjectClass_42::ClearBuffer  cls=FoggedObjectClass  sig=csp  renamed_refs=3  residual=IsAllocated ====
 void FoggedObjectClass_42::ClearBuffer()
 {
 {
-    void *v2 = this->Items;
+    void *v2 = this->vtable2;
     this->Count = 0;
     if ( v2 && this->IsAllocated )
     {
         OperatorDelete(v2);
-        this->Items = 0;
+        this->vtable2 = 0;
     }
     this->IsAllocated = 0;
-    this->Capacity = 0;
+    this->vtable3 = 0;
 }
 }
 
@@ -156,42 +156,42 @@ namespace ra2 { namespace game { int AbstractClass::completeMission(int a2, void
 }
 } } }
 
-// ==== BACKFILL 0x004E0700  FoggedObjectClass_42::SetCapacity  cls=FoggedObjectClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x004E0700  FoggedObjectClass_42::SetCapacity  cls=FoggedObjectClass  sig=csp  renamed_refs=10  residual=IsAllocated ====
 char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
 {
 {
     if ( a2 )
     {
-        this->IsInitialized = 0;
+        this->vtable4 = 0;
         unsigned int *v4 = a3;
         if ( !a3 )
             v4 = (unsigned int *)OperatorNew(4 * a2);
-        this->IsInitialized = 1;
+        this->vtable4 = 1;
         if ( !v4 )
             return 0;
-        if ( this->Items )
+        if ( this->vtable2 )
         {
-            int v5 = this->Capacity;
+            int v5 = this->vtable3;
             if ( a2 < v5 )
                 v5 = a2;
             int i;
-            for ( i = 0; i < v5; v4[i - 1] = this->Items[i - 1] )
+            for ( i = 0; i < v5; v4[i - 1] = this->vtable2[i - 1] )
                 ++i;
             if ( this->IsAllocated )
             {
-                OperatorDelete(this->Items);
-                this->Items = 0;
+                OperatorDelete(this->vtable2);
+                this->vtable2 = 0;
             }
         }
-        this->Items = v4;
-        this->Capacity = a2;
+        this->vtable2 = v4;
+        this->vtable3 = a2;
         this->IsAllocated = a3 == 0;
     }
     else
     {
         this->GetClassIdentifier();
     }
-    int v7 = this->Capacity;
+    int v7 = this->vtable3;
     if ( v7 < this->Count )
         this->Count = v7;
     return 1;
@@ -202,19 +202,19 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
 unsigned int * AbstractClassVector::Construct(IUnknown * aP1, IUnknown * aP2)
 {
 {
-    this->AbstractClassVector_field_0x04 = 0;
-    this->AbstractClassVector_field_0x08 = aP1;
-    this->AbstractClassVector_field_0x0C = 1;
+    this->q004 = 0;
+    this->q008 = aP1;
+    this->q00C = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_AbstractClass;
     if ( aP1 )
   {
     if ( aP2 )
     {
-    this->AbstractClassVector_field_0x04 = aP2;
+    this->q004 = aP2;
     return this;
     }
-    this->AbstractClassVector_field_0x04 = __2_YAPAXI_Z(4 * (int)aP1);
+    this->q004 = __2_YAPAXI_Z(4 * (int)aP1);
     this->IsAllocated = 1;
   }
     return this;
@@ -228,7 +228,7 @@ namespace gamemd { void* BulletClass::ResetDetonationTimer() {
     this->vtable3 = 0;
     this->vtable4 = g_CurrentFrame;
     this->q014 = 0;
-    this->BulletClass_field_0x18 = 0;
+    this->q018 = 0;
     this->q01C = 0;
     this->q020 = 0;
     this->q024 = 0;
@@ -236,7 +236,7 @@ namespace gamemd { void* BulletClass::ResetDetonationTimer() {
 }
 } }
 
-// ==== BACKFILL 0x004E1130  BulletClass::InitDetonationTimer  cls=BulletClass  sig=csp  renamed_refs=4  residual=- ====
+// ==== BACKFILL 0x004E1130  BulletClass::InitDetonationTimer  cls=BulletClass  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { int BulletClass::InitDetonationTimer(void* a1, void* a2, int a3, int a4) {
 {
       int v6;
@@ -255,7 +255,7 @@ namespace gamemd { int BulletClass::InitDetonationTimer(void* a1, void* a2, int 
       this->vtable4 = g_CurrentFrame;
       this->q010 = v9;
       this->q014 = a4;
-      this->BulletClass_field_0x18 = *a3;
+      this->q018 = *a3;
       this->q01C = a3[1];
       this->q020 = a3[2];
       v10 = a2[1] - a3[1];

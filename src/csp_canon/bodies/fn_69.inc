@@ -1062,19 +1062,19 @@ int VectorClass_ptr_GlobalPacketType::FindItemIndex_1(unsigned int * a2)
 unsigned int * MapFile::Constructor(int a2, int a3)
 {
 {
-    this->MapFile_field_0x04 = 0;
-    this->MapFile_field_0x08 = a2;
-    this->MapFile_field_0x0C = 1;
+    this->q004 = 0;
+    this->q008 = a2;
+    this->q00C = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_enum_DiskID;
     if ( a2 )
   {
     if ( a3 )
     {
-    this->MapFile_field_0x04 = a3;
+    this->q004 = a3;
     return this;
     }
-    this->MapFile_field_0x04 = __2_YAPAXI_Z(4 * a2);
+    this->q004 = __2_YAPAXI_Z(4 * a2);
     this->IsAllocated = 1;
   }
     return this;
@@ -1183,19 +1183,19 @@ namespace gamemd { void ScenarioClass::FreeConfig() {
 }
 } }
 
-// ==== BACKFILL 0x0069DFC0  SidebarClass::startButtonFlash  cls=SidebarClass  sig=csp  renamed_refs=4  residual=- ====
+// ==== BACKFILL 0x0069DFC0  SidebarClass::startButtonFlash  cls=SidebarClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int SidebarClass::startButtonFlash(int a1, int a2, int a3) {
 {
-      if ( this->SidebarClass_field_0x38 )
+      if ( this->q038 )
         return 0;
-      this->SidebarClass_field_0x38 = a2;
-      this->SidebarClass_field_0x3C = a3 + a2;
-      this->SidebarClass_field_0x34 = a4;
+      this->q038 = a2;
+      this->q03C = a3 + a2;
+      this->q034 = a4;
       return 1;
 }
 } }
 
-// ==== BACKFILL 0x0069E010  SidebarClass::updateFlashTimer  cls=SidebarClass  sig=csp  renamed_refs=10  residual=- ====
+// ==== BACKFILL 0x0069E010  SidebarClass::updateFlashTimer  cls=SidebarClass  sig=csp  renamed_refs=3  residual=q01E ====
 namespace gamemd { int SidebarClass::updateFlashTimer() {
 {
       int v2;
@@ -1204,26 +1204,26 @@ namespace gamemd { int SidebarClass::updateFlashTimer() {
 
       if ( this->q01E )
       {
-        if ( this->SidebarClass_field_0x38 )
+        if ( this->q038 )
         {
-          this->SidebarClass_field_0x34 = 0;
-          this->SidebarClass_field_0x3C = 0;
-          this->SidebarClass_field_0x38 = 0;
+          this->q034 = 0;
+          this->q03C = 0;
+          this->q038 = 0;
           return 1;
         }
       }
       else
       {
-        v2 = this->SidebarClass_field_0x3C;
+        v2 = this->q03C;
         if ( v2 )
         {
           v3 = v2 - 1;
-          this->SidebarClass_field_0x3C = v3;
+          this->q03C = v3;
           if ( !v3 )
           {
-            v4 = this->SidebarClass_field_0x38;
-            this->SidebarClass_field_0x34 = this->SidebarClass_field_0x34 == 0;
-            this->SidebarClass_field_0x3C = v4;
+            v4 = this->q038;
+            this->q034 = this->q034 == 0;
+            this->q03C = v4;
             return 1;
           }
         }

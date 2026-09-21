@@ -1552,7 +1552,7 @@ int __thiscall sub_681120(_DWORD *this)
 // ==== 0x00681130  ObjectClass::Map_Save  this=ObjectClass  sig=csp ====
 int __thiscall sub_681130(_DWORD *this, int a2)
 {
-  this->__pad_18C = a2; /*0x681134*/
+  this->q18C = a2; /*0x681134*/
   return a2; /*0x68113a*/
 }
 
@@ -1640,7 +1640,7 @@ int __thiscall sub_681280(_DWORD *this, _DWORD *a2)
 {
   int result; // eax
 
-  this->q0FA = *a2; /*0x681286*/
+  *(this + 250) = *a2; /*0x681286*/
   result = a2[1]; /*0x68128c*/
   this->q0FB = result; /*0x68128f*/
   return result; /*0x681295*/
@@ -1650,7 +1650,7 @@ int __thiscall sub_681280(_DWORD *this, _DWORD *a2)
 // ==== 0x006812A0  ObjectClass::method_6812A0  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_6812A0(_DWORD *this, _DWORD *a2)
 {
-  *a2 = this->q0FA; /*0x6812aa*/
+  *a2 = *(this + 250); /*0x6812aa*/
   a2[1] = this->q0FB; /*0x6812b2*/
   return a2; /*0x6812b5*/
 }
@@ -9522,7 +9522,7 @@ _DWORD *__thiscall sub_68C200(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x68c209*/
   this->Capacity = a2; /*0x68c210*/
   this->q030 = 1; /*0x68c213*/
-  this->__pad_034 = 0; /*0x68c217*/
+  this->q034 = 0; /*0x68c217*/
   *this = &vt_VectorClass_TechnoTypeClass; /*0x68c21b*/
   if ( a2 ) /*0x68c221*/
   {
@@ -9533,7 +9533,7 @@ _DWORD *__thiscall sub_68C200(_DWORD *this, int a2, int a3)
     else
     {
       this->Items = __2_YAPAXI_Z(4 * a2); /*0x68c23c*/
-      this->__pad_034 = 1; /*0x68c23f*/
+      this->q034 = 1; /*0x68c23f*/
     }
   }
   *this = &vt_DynamicVectorClass_TechnoTypeClass; /*0x68c243*/
@@ -9554,7 +9554,7 @@ char __thiscall DynamicVector_PushBack(_DWORD *this, VectorClass *aP1)
   v3 = (MapClass *)this->Capacity; /*0x68c263*/
   if ( this->q010 >= (int)v3 ) /*0x68c26b*/
   {
-    if ( !this->__pad_034 && v3 ) /*0x68c276*/
+    if ( !this->q034 && v3 ) /*0x68c276*/
       return 0; /*0x68c276*/
     v4 = this->q005; /*0x68c278*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x68c288*/
@@ -10374,7 +10374,7 @@ int __thiscall ScoreScreen::Display(int *this)
   *this = ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 124))(*(_DWORD *)&stru_87C374.__pad_579C[22524])
          - 640)
         / 2;
-  this->ScoreScreen_field_0x04 = ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 128))(*(_DWORD *)&stru_87C374.__pad_579C[22524])
+  this->q004 = ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 128))(*(_DWORD *)&stru_87C374.__pad_579C[22524])
                - 400)
               / 2;
   (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[23344] + 12))(*(_DWORD *)&stru_87C374.__pad_579C[23344]);
@@ -10401,7 +10401,7 @@ int __thiscall ScoreScreen::Display(int *this)
     v8[2] = 4 * v7;
   }
   while ( v4 < 256 );
-  this->ScoreScreen_field_0x18 = ((4 * LOBYTE(EntireFile[2].sectionCount)) >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120])
+  this->q018 = ((4 * LOBYTE(EntireFile[2].sectionCount)) >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120])
               | ((4 * BYTE1(EntireFile[2].sectionCount)) >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136])
               | ((4 * BYTE2(EntireFile[2].sectionCount)) >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128]);
   __3_YAXPAX_Z(EntireFile);
@@ -10427,11 +10427,11 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v12 = 0;
   }
-  this->ScoreScreen_field_0x08 = (int)v12;
+  this->q008 = (int)v12;
   (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)v12 + 24))(v12, 0);
   ScoreScreen::DrawSHPBackground(
     &stru_830620.__pad_579C[34500],
-    (IUnknown *)this->ScoreScreen_field_0x08,
+    (IUnknown *)this->q008,
     (int)EntireFile,
     (int)this,
     (int)&stru_87C374.__pad_579C[17776],
@@ -10653,16 +10653,16 @@ int __thiscall ScoreScreen::Display(int *this)
     v56 = (ScoreFontClass *)ScoreScreen::LoadScoreFont(eax79, aP4_24);
   else
     v56 = 0;
-  this->ScoreScreen_field_0x0C = (int)v56;
+  this->q00C = (int)v56;
   v58 = (_DWORD *)__2_YAPAXI_Z(0x18u);
   if ( v58 )
     v57 = (ScoreFontClass *)ScoreScreen::LoadCountryFlags(v58, (int)aP4_24);
   else
     v57 = 0;
-  this->ScoreScreen_field_0x04 = (int)v57;
+  this->q004 = (int)v57;
   Event::Dispatch();
   ebx85 = (AbstractClass **)(this + 7);
-  (*(void (__thiscall **)(int *))(this->ScoreScreen_field_0x1C + 12))(this + 7);
+  (*(void (__thiscall **)(int *))(this->q01C + 12))(this + 7);
   Timer::PumpMessages(*(HWND **)&stru_87C374.__pad_14B0[8012]);
   if ( &stru_830620 != (IUnknown *)-56824 )
   {
@@ -10678,12 +10678,12 @@ int __thiscall ScoreScreen::Display(int *this)
   Movie::Play(0, 0, (CCINIClass *)1, 0, v286, v289, v290);
   (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 4))(
     *(_DWORD *)&stru_87C374.__pad_579C[22524],
-    this->ScoreScreen_field_0x08,
+    this->q008,
     0,
     1);
   (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22528] + 4))(
     *(_DWORD *)&stru_87C374.__pad_579C[22528],
-    this->ScoreScreen_field_0x08,
+    this->q008,
     0,
     1);
   v62 = (_DWORD *)__2_YAPAXI_Z(0x188u);
@@ -10697,12 +10697,12 @@ int __thiscall ScoreScreen::Display(int *this)
                             0);
   else
     v60 = 0;
-  this->ScoreScreen_field_0x14 = (int)v60;
+  this->q014 = (int)v60;
   v64 = (_DWORD *)__2_YAPAXI_Z(0x2Cu);
   if ( v64 )
   {
-    v65 = this->ScoreScreen_field_0x14;
-    v66 = this->ScoreScreen_field_0x04 + 6;
+    v65 = this->q014;
+    v66 = this->q004 + 6;
     v64[1] = *this + 7;
     v64[2] = v66;
     Timer::Init(v64 + 3, 0);
@@ -10734,14 +10734,14 @@ int __thiscall ScoreScreen::Display(int *this)
   for ( k = 0; k < 10; ++k )
   {
     v70 = *this;
-    Rect.top = this->ScoreScreen_field_0x04 + 23;
+    Rect.top = this->q004 + 23;
     Rect.left = v70 + 480;
     v71 = (ConvertClass *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 120))(
                             *(_DWORD *)&stru_87C374.__pad_579C[22524],
                             aP4_152);
     DrawToSurfaceSHP(
       *(int *)&stru_87C374.__pad_579C[22524],
-      this->ScoreScreen_field_0x14,
+      this->q014,
       aP2,
       k,
       (ConvertClass *)&Rect,
@@ -10758,10 +10758,10 @@ int __thiscall ScoreScreen::Display(int *this)
       0);
     Screen::TransitionLoop((MPCooperative *)this, 4);
   }
-  v72 = this->ScoreScreen_field_0x04;
+  v72 = this->q004;
   v294 = *this + 480;
   v295 = v72 + 23;
-  v73 = this->ScoreScreen_field_0x08;
+  v73 = this->q008;
   v296 = 160;
   v297 = 120;
   (*(void (__thiscall **)(int, int *, _DWORD, int *, _DWORD, int))(*(_DWORD *)v73 + 8))(
@@ -10779,16 +10779,16 @@ int __thiscall ScoreScreen::Display(int *this)
     0,
     1);
   StringCSF = (char *)GetStringCSF((wchar_t *)&stru_830620.__pad_579C[34288], 0, &stru_830620.__pad_579C[34312], 506);
-  v75 = this->ScoreScreen_field_0x0C;
+  v75 = this->q00C;
   v76 = StringCSF;
   Buffer = StringCSF;
   (*(void (__thiscall **)(int, char *))(*(_DWORD *)v75 + 8))(v75, StringCSF);
-  v77 = *this - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->ScoreScreen_field_0x0C + 8))(this->ScoreScreen_field_0x0C, v76) / 2 + 552;
+  v77 = *this - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->q00C + 8))(this->q00C, v76) / 2 + 552;
   v78 = __2_YAPAXI_Z(0x2Cu);
   if ( v78 )
   {
-    eax104 = this->ScoreScreen_field_0x04;
-    Rect.left = this->ScoreScreen_field_0x0C;
+    eax104 = this->q004;
+    Rect.left = this->q00C;
     *(_DWORD *)(v78 + 4) = v77;
     *(_DWORD *)(v78 + 8) = eax104 + 13;
     Timer::Init((DWORD *)(v78 + 12), 0);
@@ -10825,8 +10825,8 @@ int __thiscall ScoreScreen::Display(int *this)
   edi108 = __2_YAPAXI_Z(0x2Cu);
   if ( edi108 )
   {
-    esi109 = this->ScoreScreen_field_0x04;
-    v86 = this->ScoreScreen_field_0x04 + 60;
+    esi109 = this->q004;
+    v86 = this->q004 + 60;
     *(_DWORD *)(edi108 + 4) = *this + 520;
     *(_DWORD *)(edi108 + 8) = v86;
     Timer::Init((DWORD *)(edi108 + 12), 0);
@@ -10857,7 +10857,7 @@ int __thiscall ScoreScreen::Display(int *this)
   }
   for ( m = 0; m < 10; ++m )
   {
-    v90 = this->ScoreScreen_field_0x04;
+    v90 = this->q004;
     aP2 = (ConvertClass *)(*this + 481);
     v292 = v90 + 148;
     v91 = (ConvertClass *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 120))(
@@ -10865,7 +10865,7 @@ int __thiscall ScoreScreen::Display(int *this)
                             aP4_152);
     DrawToSurfaceSHP(
       *(int *)&stru_87C374.__pad_579C[22524],
-      this->ScoreScreen_field_0x14,
+      this->q014,
       aP4[0],
       m,
       (ConvertClass *)&aP2,
@@ -10883,8 +10883,8 @@ int __thiscall ScoreScreen::Display(int *this)
     Screen::TransitionLoop((MPCooperative *)this, 4);
   }
   v92 = *this;
-  v93 = this->ScoreScreen_field_0x08;
-  v295 = this->ScoreScreen_field_0x04 + 148;
+  v93 = this->q008;
+  v295 = this->q004 + 148;
   v294 = v92 + 481;
   v296 = 144;
   v297 = 86;
@@ -10903,16 +10903,16 @@ int __thiscall ScoreScreen::Display(int *this)
     0,
     1);
   v94 = (char *)GetStringCSF((wchar_t *)&stru_830620.__pad_579C[34260], 0, &stru_830620.__pad_579C[34312], 543);
-  v95 = this->ScoreScreen_field_0x0C;
+  v95 = this->q00C;
   v96 = v94;
   Buffer = v94;
   (*(void (__thiscall **)(int, char *))(*(_DWORD *)v95 + 8))(v95, v94);
-  v97 = *this - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->ScoreScreen_field_0x0C + 8))(this->ScoreScreen_field_0x0C, v96) / 2 + 560;
+  v97 = *this - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->q00C + 8))(this->q00C, v96) / 2 + 560;
   v98 = __2_YAPAXI_Z(0x2Cu);
   if ( v98 )
   {
-    eax116 = this->ScoreScreen_field_0x04;
-    aP2 = (ConvertClass *)this->ScoreScreen_field_0x0C;
+    eax116 = this->q004;
+    aP2 = (ConvertClass *)this->q00C;
     *(_DWORD *)(v98 + 4) = v97;
     *(_DWORD *)(v98 + 8) = eax116 + 193;
     Timer::Init((DWORD *)(v98 + 12), 0);
@@ -10944,9 +10944,9 @@ int __thiscall ScoreScreen::Display(int *this)
     while ( ((int (__thiscall *)(int *, ConvertClass **))v100->uniqueId)(this + 7, &aP2) != -1 );
   }
   v104 = *this;
-  v295 = this->ScoreScreen_field_0x04 + 148;
+  v295 = this->q004 + 148;
   v294 = v104 + 481;
-  ecx120a = this->ScoreScreen_field_0x08;
+  ecx120a = this->q008;
   v296 = 150;
   v297 = 120;
   (*(void (__thiscall **)(int, int *, _DWORD, int *, _DWORD, int))(*(_DWORD *)ecx120a + 8))(
@@ -10969,8 +10969,8 @@ int __thiscall ScoreScreen::Display(int *this)
   v105 = (ScoreAnimClass *)__2_YAPAXI_Z(0x2Cu);
   if ( v105 )
   {
-    v109 = this->ScoreScreen_field_0x04;
-    aP2 = (ConvertClass *)this->ScoreScreen_field_0x0C;
+    v109 = this->q004;
+    aP2 = (ConvertClass *)this->q00C;
     ScoreScreen::Constructor(v105, (ScoreAnimClass *)(590 - 12 * (v107 - 1) + *this), v109 + 214, (int)aP4_168);
     v110 = aP2;
     v105->ScoreAnimClass_field_0x1C = 0;
@@ -10989,7 +10989,7 @@ int __thiscall ScoreScreen::Display(int *this)
     Screen::TransitionLoop((MPCooperative *)this, 1);
   for ( n = 0; n < 10; ++n )
   {
-    v112 = this->ScoreScreen_field_0x04;
+    v112 = this->q004;
     aP2 = (ConvertClass *)(*this + 444);
     v292 = v112 + 273;
     v113 = (ConvertClass *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 120))(
@@ -10997,7 +10997,7 @@ int __thiscall ScoreScreen::Display(int *this)
                              aP4_152);
     DrawToSurfaceSHP(
       *(int *)&stru_87C374.__pad_579C[22524],
-      this->ScoreScreen_field_0x14,
+      this->q014,
       v298,
       n,
       (ConvertClass *)&aP2,
@@ -11015,8 +11015,8 @@ int __thiscall ScoreScreen::Display(int *this)
     Screen::TransitionLoop((MPCooperative *)this, 4);
   }
   v114 = *this;
-  v115 = this->ScoreScreen_field_0x08;
-  v295 = this->ScoreScreen_field_0x04 + 273;
+  v115 = this->q008;
+  v295 = this->q004 + 273;
   v294 = v114 + 444;
   v296 = 196;
   v297 = 118;
@@ -11035,16 +11035,16 @@ int __thiscall ScoreScreen::Display(int *this)
     0,
     1);
   v116 = (char *)GetStringCSF((wchar_t *)&stru_830620.__pad_579C[34236], 0, &stru_830620.__pad_579C[34312], 571);
-  v117 = this->ScoreScreen_field_0x0C;
+  v117 = this->q00C;
   v118 = v116;
   Buffer = v116;
   (*(void (__thiscall **)(int, char *))(*(_DWORD *)v117 + 8))(v117, v116);
-  v119 = *this - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->ScoreScreen_field_0x0C + 8))(this->ScoreScreen_field_0x0C, v118) / 2 + 542;
+  v119 = *this - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->q00C + 8))(this->q00C, v118) / 2 + 542;
   v120 = __2_YAPAXI_Z(0x2Cu);
   if ( v120 )
   {
-    eax128 = this->ScoreScreen_field_0x04;
-    aP2 = (ConvertClass *)this->ScoreScreen_field_0x0C;
+    eax128 = this->q004;
+    aP2 = (ConvertClass *)this->q00C;
     *(_DWORD *)(v120 + 4) = v119;
     *(_DWORD *)(v120 + 8) = eax128 + 366;
     Timer::Init((DWORD *)(v120 + 12), 0);
@@ -11095,7 +11095,7 @@ int __thiscall ScoreScreen::Display(int *this)
   }
   for ( jj = 0; jj < 10; ++jj )
   {
-    v130 = this->ScoreScreen_field_0x04;
+    v130 = this->q004;
     aP2 = (ConvertClass *)(*this + 186);
     v292 = v130 + 54;
     v131 = (ConvertClass *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 120))(
@@ -11103,7 +11103,7 @@ int __thiscall ScoreScreen::Display(int *this)
                              aP4_152);
     DrawToSurfaceSHP(
       *(int *)&stru_87C374.__pad_579C[22524],
-      this->ScoreScreen_field_0x14,
+      this->q014,
       aP4_136,
       jj,
       (ConvertClass *)&aP2,
@@ -11119,14 +11119,14 @@ int __thiscall ScoreScreen::Display(int *this)
       0,
       0);
     v132 = *this;
-    aP4[1] = (ConvertClass *)(this->ScoreScreen_field_0x04 + 254);
+    aP4[1] = (ConvertClass *)(this->q004 + 254);
     aP4[0] = (ConvertClass *)(v132 + 186);
     v133 = (ConvertClass *)(*(int (__thiscall **)(_DWORD, char *))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 120))(
                              *(_DWORD *)&stru_87C374.__pad_579C[22524],
                              aP4_168);
     DrawToSurfaceSHP(
       *(int *)&stru_87C374.__pad_579C[22524],
-      this->ScoreScreen_field_0x14,
+      this->q014,
       aP4_8,
       jj,
       (ConvertClass *)aP4,
@@ -11143,10 +11143,10 @@ int __thiscall ScoreScreen::Display(int *this)
       0);
     Screen::TransitionLoop((MPCooperative *)this, 4);
   }
-  v134 = this->ScoreScreen_field_0x04;
+  v134 = this->q004;
   v294 = *this + 186;
   v295 = v134 + 54;
-  v135 = this->ScoreScreen_field_0x08;
+  v135 = this->q008;
   v296 = 262;
   v297 = 326;
   (*(void (__thiscall **)(int, int *, _DWORD, int *, _DWORD, int))(*(_DWORD *)v135 + 8))(
@@ -11164,16 +11164,16 @@ int __thiscall ScoreScreen::Display(int *this)
     0,
     1);
   v136 = (char *)GetStringCSF((wchar_t *)&stru_830620.__pad_579C[34220], 0, &stru_830620.__pad_579C[34312], 601);
-  v137 = this->ScoreScreen_field_0x0C;
+  v137 = this->q00C;
   v138 = v136;
   Buffer = v136;
   (*(void (__thiscall **)(int, char *))(*(_DWORD *)v137 + 8))(v137, v136);
-  v139 = *this - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->ScoreScreen_field_0x0C + 8))(this->ScoreScreen_field_0x0C, v138) / 2 + 316;
+  v139 = *this - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->q00C + 8))(this->q00C, v138) / 2 + 316;
   v140 = __2_YAPAXI_Z(0x2Cu);
   if ( v140 )
   {
-    v141 = this->ScoreScreen_field_0x04;
-    aP4_8 = (ConvertClass *)this->ScoreScreen_field_0x0C;
+    v141 = this->q004;
+    aP4_8 = (ConvertClass *)this->q00C;
     *(_DWORD *)(v140 + 4) = v139;
     *(_DWORD *)(v140 + 8) = v141 + 300;
     Ticks = Timer::GetTicks();
@@ -11192,14 +11192,14 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v140 = 0;
   }
-  v145 = this->ScoreScreen_field_0x24;
+  v145 = this->q024;
   if ( this->q00B < v145
     || (*((_BYTE *)this + 41) || !v145)
-    && (eax147 = this->ScoreScreen_field_0x0C, eax147 > 0)
+    && (eax147 = this->q00C, eax147 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v145 + eax147, 0) )
   {
     v144 = (AbstractClass *)this->q00B;
-    v148 = this->ScoreScreen_field_0x08;
+    v148 = this->q008;
     this->q00B = (int)&v144->__pad_0[1];
     *(_DWORD *)(v148 + 4 * (_DWORD)v144) = v140;
   }
@@ -11222,8 +11222,8 @@ int __thiscall ScoreScreen::Display(int *this)
   v154 = __2_YAPAXI_Z(0x2Cu);
   if ( v154 )
   {
-    v155 = this->ScoreScreen_field_0x04;
-    aP4_8 = (ConvertClass *)this->ScoreScreen_field_0x0C;
+    v155 = this->q004;
+    aP4_8 = (ConvertClass *)this->q00C;
     *(_DWORD *)(v154 + 4) = v153;
     *(_DWORD *)(v154 + 8) = v155 + 247;
     v156 = Timer::GetTicks();
@@ -11242,14 +11242,14 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v154 = 0;
   }
-  v159 = this->ScoreScreen_field_0x24;
+  v159 = this->q024;
   if ( this->q00B < v159
     || (*((_BYTE *)this + 41) || !v159)
-    && (v160 = this->ScoreScreen_field_0x0C, v160 > 0)
+    && (v160 = this->q00C, v160 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v159 + v160, 0) )
   {
     v158 = (AbstractClass *)this->q00B;
-    v162 = this->ScoreScreen_field_0x08;
+    v162 = this->q008;
     this->q00B = (int)&v158->__pad_0[1];
     *(_DWORD *)(v162 + 4 * (_DWORD)v158) = v154;
   }
@@ -11257,8 +11257,8 @@ int __thiscall ScoreScreen::Display(int *this)
   v161 = (AbstractClass *)__2_YAPAXI_Z(0x2Cu);
   if ( v161 )
   {
-    aP4_8 = (ConvertClass *)this->ScoreScreen_field_0x0C;
-    v165 = this->ScoreScreen_field_0x04 + 247;
+    aP4_8 = (ConvertClass *)this->q00C;
+    v165 = this->q004 + 247;
     *(_DWORD *)&v161->__pad_0[4] = v163;
     *(_DWORD *)&v161->__pad_0[8] = v165;
     v166 = Timer::GetTicks();
@@ -11277,14 +11277,14 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v161 = 0;
   }
-  v169 = this->ScoreScreen_field_0x24;
+  v169 = this->q024;
   if ( this->q00B < v169
     || (*((_BYTE *)this + 41) || !v169)
-    && (eax167 = this->ScoreScreen_field_0x0C, eax167 > 0)
+    && (eax167 = this->q00C, eax167 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v169 + eax167, 0) )
   {
     v168 = (AbstractClass *)this->q00B;
-    v172 = this->ScoreScreen_field_0x08;
+    v172 = this->q008;
     this->q00B = (int)&v168->__pad_0[1];
     *(_DWORD *)(v172 + 4 * (_DWORD)v168) = v161;
   }
@@ -11301,14 +11301,14 @@ int __thiscall ScoreScreen::Display(int *this)
     while ( ((int (__thiscall *)(int *, ConvertClass **))v171->uniqueId)(this + 7, &aP2) != -1 );
   }
   v175 = (char *)GetStringCSF((wchar_t *)&stru_830620.__pad_579C[34192], 0, &stru_830620.__pad_579C[34312], 628);
-  v176 = this->ScoreScreen_field_0x0C;
+  v176 = this->q00C;
   Buffer = v175;
   v177 = *this - (*(int (__thiscall **)(int, char *))(*(_DWORD *)v176 + 8))(v176, v175) / 2 + 290;
   v178 = __2_YAPAXI_Z(0x2Cu);
   if ( v178 )
   {
-    aP4_8 = (ConvertClass *)this->ScoreScreen_field_0x0C;
-    v179 = this->ScoreScreen_field_0x04 + 247;
+    aP4_8 = (ConvertClass *)this->q00C;
+    v179 = this->q004 + 247;
     *(_DWORD *)(v178 + 4) = v177;
     *(_DWORD *)(v178 + 8) = v179;
     v180 = Timer::GetTicks();
@@ -11327,23 +11327,23 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v178 = 0;
   }
-  v183 = this->ScoreScreen_field_0x24;
+  v183 = this->q024;
   if ( this->q00B < v183
     || (*((_BYTE *)this + 41) || !v183)
-    && (v184 = this->ScoreScreen_field_0x0C, v184 > 0)
+    && (v184 = this->q00C, v184 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v183 + v184, 0) )
   {
     v182 = (AbstractClass *)this->q00B;
-    v186 = this->ScoreScreen_field_0x08;
+    v186 = this->q008;
     this->q00B = (int)&v182->__pad_0[1];
     *(_DWORD *)(v186 + 4 * (_DWORD)v182) = v178;
   }
-  v187 = *this - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->ScoreScreen_field_0x0C + 8))(this->ScoreScreen_field_0x0C, Buffer) / 2 + 422;
+  v187 = *this - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->q00C + 8))(this->q00C, Buffer) / 2 + 422;
   v188 = __2_YAPAXI_Z(0x2Cu);
   if ( v188 )
   {
-    aP4_8 = (ConvertClass *)this->ScoreScreen_field_0x0C;
-    v189 = this->ScoreScreen_field_0x04 + 247;
+    aP4_8 = (ConvertClass *)this->q00C;
+    v189 = this->q004 + 247;
     *(_DWORD *)(v188 + 4) = v187;
     *(_DWORD *)(v188 + 8) = v189;
     v190 = Timer::GetTicks();
@@ -11362,14 +11362,14 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v188 = 0;
   }
-  v193 = this->ScoreScreen_field_0x24;
+  v193 = this->q024;
   if ( this->q00B < v193
     || (*((_BYTE *)this + 41) || !v193)
-    && (eax187 = this->ScoreScreen_field_0x0C, eax187 > 0)
+    && (eax187 = this->q00C, eax187 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v193 + eax187, 0) )
   {
     v192 = (AbstractClass *)this->q00B;
-    v196 = this->ScoreScreen_field_0x08;
+    v196 = this->q008;
     this->q00B = (int)&v192->__pad_0[1];
     *(_DWORD *)(v196 + 4 * (_DWORD)v192) = v188;
   }
@@ -11402,7 +11402,7 @@ int __thiscall ScoreScreen::Display(int *this)
   }
   for ( mm = 0; mm < 10; ++mm )
   {
-    v201 = this->ScoreScreen_field_0x04;
+    v201 = this->q004;
     aP4_8 = (ConvertClass *)*this;
     aP4_12 = v201 + 188;
     v202 = (ConvertClass *)(*(int (__thiscall **)(_DWORD, char *))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 120))(
@@ -11410,7 +11410,7 @@ int __thiscall ScoreScreen::Display(int *this)
                              aP4_168);
     DrawToSurfaceSHP(
       *(int *)&stru_87C374.__pad_579C[22524],
-      this->ScoreScreen_field_0x14,
+      this->q014,
       v300,
       mm,
       (ConvertClass *)&aP4_8,
@@ -11426,14 +11426,14 @@ int __thiscall ScoreScreen::Display(int *this)
       0,
       0);
     v203 = (ConvertClass *)*this;
-    aP4_140 = this->ScoreScreen_field_0x04 + 388;
+    aP4_140 = this->q004 + 388;
     aP4_136 = v203;
     v204 = (ConvertClass *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 120))(
                              *(_DWORD *)&stru_87C374.__pad_579C[22524],
                              aP4_152);
     DrawToSurfaceSHP(
       *(int *)&stru_87C374.__pad_579C[22524],
-      this->ScoreScreen_field_0x14,
+      this->q014,
       v299,
       mm,
       (ConvertClass *)&aP4_136,
@@ -11450,10 +11450,10 @@ int __thiscall ScoreScreen::Display(int *this)
       0);
     Screen::TransitionLoop((MPCooperative *)this, 4);
   }
-  v205 = this->ScoreScreen_field_0x04;
+  v205 = this->q004;
   v294 = *this;
   v295 = v205 + 188;
-  v206 = this->ScoreScreen_field_0x08;
+  v206 = this->q008;
   v296 = 182;
   v297 = 212;
   (*(void (__thiscall **)(int, int *, _DWORD, int *, _DWORD, int))(*(_DWORD *)v206 + 8))(
@@ -11471,18 +11471,18 @@ int __thiscall ScoreScreen::Display(int *this)
     0,
     1);
   eax201 = (char *)GetStringCSF((wchar_t *)&stru_830620.__pad_579C[34176], 0, &stru_830620.__pad_579C[34312], 669);
-  v208 = this->ScoreScreen_field_0x0C;
+  v208 = this->q00C;
   v209 = eax201;
   Buffer = eax201;
   (*(void (__thiscall **)(int, char *))(*(_DWORD *)v208 + 8))(v208, eax201);
   v299 = (ConvertClass *)(*this
-                        - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->ScoreScreen_field_0x0C + 8))(this->ScoreScreen_field_0x0C, v209) / 2
+                        - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->q00C + 8))(this->q00C, v209) / 2
                         + 84);
   v207 = (TechnoTypeClass *)__2_YAPAXI_Z(0x2Cu);
   if ( v207 )
   {
-    v211 = (ConvertClass *)this->ScoreScreen_field_0x0C;
-    eax202 = this->ScoreScreen_field_0x04 + 217;
+    v211 = (ConvertClass *)this->q00C;
+    eax202 = this->q004 + 217;
     *(_DWORD *)&v207->vtable0[4] = v299;
     v300 = v211;
     *(_DWORD *)&v207->vtable0[8] = eax202;
@@ -11502,14 +11502,14 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v207 = 0;
   }
-  v216 = this->ScoreScreen_field_0x24;
+  v216 = this->q024;
   if ( this->q00B < v216
     || (*((_BYTE *)this + 41) || !v216)
-    && (v217 = this->ScoreScreen_field_0x0C, v217 > 0)
+    && (v217 = this->q00C, v217 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v216 + v217, 0) )
   {
     v215 = (AbstractClass *)this->q00B;
-    v219 = this->ScoreScreen_field_0x08;
+    v219 = this->q008;
     this->q00B = (int)&v215->__pad_0[1];
     *(_DWORD *)(v219 + 4 * (_DWORD)v215) = v207;
   }
@@ -11564,8 +11564,8 @@ LABEL_222:
     v228 = __2_YAPAXI_Z(0x2Cu);
     if ( v228 )
     {
-      v229 = this->ScoreScreen_field_0x0C;
-      v230 = &aP4[0]->__pad_6[this->ScoreScreen_field_0x04 + 236];
+      v229 = this->q00C;
+      v230 = &aP4[0]->__pad_6[this->q004 + 236];
       *(_DWORD *)(v228 + 4) = *this + 7;
       *(_DWORD *)(v228 + 8) = v230;
       v231 = Timer::GetTicks();
@@ -11583,14 +11583,14 @@ LABEL_222:
     {
       v228 = 0;
     }
-    v233 = this->ScoreScreen_field_0x24;
+    v233 = this->q024;
     if ( this->q00B < v233
       || (*((_BYTE *)this + 41) || !v233)
-      && (eax229 = this->ScoreScreen_field_0x0C, eax229 > 0)
+      && (eax229 = this->q00C, eax229 > 0)
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, eax229 + v233, 0) )
     {
       v232 = (AbstractClass *)this->q00B;
-      v236 = this->ScoreScreen_field_0x08;
+      v236 = this->q008;
       this->q00B = (int)&v232->__pad_0[1];
       *(_DWORD *)(v236 + 4 * (_DWORD)v232) = v228;
     }
@@ -11600,8 +11600,8 @@ LABEL_222:
       v234 = (INIClass *)__2_YAPAXI_Z(0x2Cu);
       if ( v234 )
       {
-        v238 = this->ScoreScreen_field_0x0C;
-        v239 = &aP4[0]->__pad_6[this->ScoreScreen_field_0x04 + 236];
+        v238 = this->q00C;
+        v239 = &aP4[0]->__pad_6[this->q004 + 236];
         v234->headNode[0] = *this + 109;
         v234->headNode[1] = (int)v239;
         v240 = Timer::GetTicks();
@@ -11619,14 +11619,14 @@ LABEL_222:
       {
         v234 = 0;
       }
-      v242 = this->ScoreScreen_field_0x24;
+      v242 = this->q024;
       if ( this->q00B < v242
         || (*((_BYTE *)this + 41) || !v242)
-        && (eax239 = this->ScoreScreen_field_0x0C, eax239 > 0)
+        && (eax239 = this->q00C, eax239 > 0)
         && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, eax239 + v242, 0) )
       {
         v241 = (AbstractClass *)this->q00B;
-        v245 = this->ScoreScreen_field_0x08;
+        v245 = this->q008;
         this->q00B = (int)&v241->__pad_0[1];
         *(_DWORD *)(v245 + 4 * (_DWORD)v241) = v234;
       }
@@ -11635,8 +11635,8 @@ LABEL_222:
       v247 = __2_YAPAXI_Z(0x2Cu);
       if ( v247 )
       {
-        v248 = this->ScoreScreen_field_0x04;
-        v299 = (ConvertClass *)this->ScoreScreen_field_0x0C;
+        v248 = this->q004;
+        v299 = (ConvertClass *)this->q00C;
         v249 = &aP4[0]->__pad_6[v248 + 236];
         v250 = *this + 151;
         *(_DWORD *)(v247 + 8) = v249;
@@ -11656,14 +11656,14 @@ LABEL_222:
       {
         v247 = 0;
       }
-      v253 = this->ScoreScreen_field_0x24;
+      v253 = this->q024;
       if ( this->q00B < v253
         || (*((_BYTE *)this + 41) || !v253)
-        && (eax248 = this->ScoreScreen_field_0x0C, eax248 > 0)
+        && (eax248 = this->q00C, eax248 > 0)
         && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, eax248 + v253, 0) )
       {
         v252 = (AbstractClass *)this->q00B;
-        v256 = this->ScoreScreen_field_0x08;
+        v256 = this->q008;
         this->q00B = (int)&v252->__pad_0[1];
         *(_DWORD *)(v256 + 4 * (_DWORD)v252) = v247;
       }
@@ -11694,16 +11694,16 @@ LABEL_222:
   if ( (int)aP2 >= 9 )
   {
     v260 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[34132], 0, &stru_830620.__pad_579C[34312], 749);
-    ecx258 = this->ScoreScreen_field_0x0C;
+    ecx258 = this->q00C;
     v300 = (ConvertClass *)v260;
     v262 = *this + (640 - (*(int (__thiscall **)(int, wchar_t *))(*(_DWORD *)ecx258 + 8))(ecx258, v260)) / 2;
-    v263 = *(int *)(this->ScoreScreen_field_0x0C + 8);
-    v299 = (ConvertClass *)(this->ScoreScreen_field_0x04 - (((int)v263 - HIDWORD(v263)) >> 1) + 357);
+    v263 = *(int *)(this->q00C + 8);
+    v299 = (ConvertClass *)(this->q004 - (((int)v263 - HIDWORD(v263)) >> 1) + 357);
     v261 = (TechnoTypeClass *)__2_YAPAXI_Z(0x2Cu);
     if ( v261 )
     {
       v265 = v299;
-      aP4_8 = (ConvertClass *)this->ScoreScreen_field_0x0C;
+      aP4_8 = (ConvertClass *)this->q00C;
       *(_DWORD *)&v261->vtable0[4] = v262;
       *(_DWORD *)&v261->vtable0[8] = v265;
       v266 = Timer::GetTicks();
@@ -11722,14 +11722,14 @@ LABEL_222:
     {
       v261 = 0;
     }
-    v269 = this->ScoreScreen_field_0x24;
+    v269 = this->q024;
     if ( this->q00B < v269
       || (*((_BYTE *)this + 41) || !v269)
-      && (v270 = this->ScoreScreen_field_0x0C, v270 > 0)
+      && (v270 = this->q00C, v270 > 0)
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v270 + v269, 0) )
     {
       v268 = (AbstractClass *)this->q00B;
-      v272 = this->ScoreScreen_field_0x08;
+      v272 = this->q008;
       this->q00B = (int)&v268->__pad_0[1];
       *(_DWORD *)(v272 + 4 * (_DWORD)v268) = v261;
     }
@@ -11741,7 +11741,7 @@ LABEL_222:
       (int)this,
       (int)&aP4_316[116 * (_DWORD)aP2],
       *this + 7,
-      (ScoreScreen *)(16 * (_DWORD)aP2 + this->ScoreScreen_field_0x04 + 242));
+      (ScoreScreen *)(16 * (_DWORD)aP2 + this->q004 + 242));
   }
   Timer::PumpMessages(*(HWND **)&stru_87C374.__pad_14B0[8012]);
   (*(void (__thiscall **)(_DWORD *, char *))(aP4_28[0] + 8))(aP4_28, &stru_830620.__pad_579C[34160]);
@@ -11764,34 +11764,34 @@ LABEL_222:
   (*(void (__thiscall **)(int *))(this->q00D + 12))(this + 13);
   for ( i1 = 0; i1 < this->q00B; ++i1 )
   {
-    v276 = *(void (__thiscall ****)(_DWORD, int))(this->ScoreScreen_field_0x08 + 4 * i1);
+    v276 = *(void (__thiscall ****)(_DWORD, int))(this->q008 + 4 * i1);
     if ( v276 )
       (**v276)(v276, 1);
   }
   (*(void (__thiscall **)(int *))&(*ebx85)->__pad_0[12])(this + 7);
-  v277 = (void (__thiscall ***)(_DWORD, int))this->ScoreScreen_field_0x14;
+  v277 = (void (__thiscall ***)(_DWORD, int))this->q014;
   if ( v277 )
   {
     (**v277)(v277, 1);
-    this->ScoreScreen_field_0x14 = 0;
+    this->q014 = 0;
   }
-  v278 = (void (__thiscall ***)(_DWORD, int))this->ScoreScreen_field_0x0C;
+  v278 = (void (__thiscall ***)(_DWORD, int))this->q00C;
   if ( v278 )
   {
     (**v278)(v278, 1);
-    this->ScoreScreen_field_0x0C = 0;
+    this->q00C = 0;
   }
-  v279 = (void (__thiscall ***)(_DWORD, int))this->ScoreScreen_field_0x04;
+  v279 = (void (__thiscall ***)(_DWORD, int))this->q004;
   if ( v279 )
   {
     (**v279)(v279, 1);
-    this->ScoreScreen_field_0x04 = 0;
+    this->q004 = 0;
   }
-  v280 = (void (__thiscall ***)(_DWORD, int))this->ScoreScreen_field_0x08;
+  v280 = (void (__thiscall ***)(_DWORD, int))this->q008;
   if ( v280 )
   {
     (**v280)(v280, 1);
-    this->ScoreScreen_field_0x08 = 0;
+    this->q008 = 0;
   }
   if ( aP4_24 )
     (**(void (__thiscall ***)(ScoreFontClass *, int))aP4_24->__pad_0)(aP4_24, 1);
@@ -11801,7 +11801,7 @@ LABEL_222:
   GetClientRect(g_hWnd, &Rect);
   ClientToScreen(g_hWnd, (LPPOINT)&Rect);
   v281 = (ConvertClass *)*this;
-  v282 = this->ScoreScreen_field_0x04;
+  v282 = this->q004;
   aP4_8 = v281;
   aP4_136 = (ConvertClass *)((char *)v281 + Rect.left);
   aP4_12 = v282;
@@ -11841,7 +11841,7 @@ LABEL_222:
 // ==== 0x0068EC00  ScoreScreen::Check  this=ScoreScreen  sig=csp ====
 bool __thiscall sub_68EC00(_DWORD *this, char a2)
 {
-  return (*(int (__thiscall **)(_DWORD *, char *))(this->ScoreScreen_field_0x1C + 16))(this + 7, &a2) == -1; /*0x68ec14*/
+  return (*(int (__thiscall **)(_DWORD *, char *))(this->q01C + 16))(this + 7, &a2) == -1; /*0x68ec14*/
 }
 
 
@@ -12920,7 +12920,7 @@ signed int __thiscall Render_Render_68FFE0(_DWORD *this, int a2, ScoreScreen *aP
   if ( MEMORY[0xB05560] ) /*0x69007b*/
   {
     v8[0] = a2 + 10; /*0x690086*/
-    v7 = this->ScoreScreen_field_0x18; /*0x69008d*/
+    v7 = this->q018; /*0x69008d*/
     v8[1] = (char *)&aP2->ScoreScreen_field_0x0C + 2; /*0x690093*/
     v9 = a2; /*0x690097*/
     v10 = (char *)&aP2->ScoreScreen_field_0x0C + 2; /*0x69009b*/
@@ -12932,7 +12932,7 @@ signed int __thiscall Render_Render_68FFE0(_DWORD *this, int a2, ScoreScreen *aP
   }
   else
   {
-    v6 = this->ScoreScreen_field_0x08; /*0x6900bd*/
+    v6 = this->q008; /*0x6900bd*/
     v11 = a2; /*0x6900be*/
     v12 = (char *)&aP2->ScoreScreen_field_0x0C + 2; /*0x6900c2*/
     v13 = 11; /*0x6900c6*/

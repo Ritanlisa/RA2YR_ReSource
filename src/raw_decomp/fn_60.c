@@ -150,7 +150,7 @@ char __thiscall VectorClass_ptr_SpotLightClass::sub_6001A0(void *this, int a2, _
       return 0; /*0x60024a*/
     if ( this->Items ) /*0x6001d8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x6001df*/
+      v5 = this->q008; /*0x6001df*/
       if ( a2 < v5 ) /*0x6001e4*/
         v5 = a2; /*0x6001e6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x6001ec*/
@@ -162,14 +162,14 @@ char __thiscall VectorClass_ptr_SpotLightClass::sub_6001A0(void *this, int a2, _
       }
     }
     this->Items = v4; /*0x60021a*/
-    this->DynamicVector_field_0x8 = a2; /*0x600222*/
+    this->q008 = a2; /*0x600222*/
     this->IsAllocated = a3 == 0; /*0x600225*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x60022e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x600231*/
+  v7 = this->q008; /*0x600231*/
   if ( v7 < this->Items ) /*0x600239*/
     this->Items = v7; /*0x60023b*/
   return 1; /*0x60023e*/
@@ -400,7 +400,7 @@ ObjectClass *__thiscall ReadPointerFromECX(void *this)
 // ==== 0x00600670  ComboBoxOwnerDraw::GetWidthHeight  this=ComboBoxOwnerDraw  sig=csp ====
 int __thiscall sub_600670(_DWORD *this)
 {
-  return *this * this->ComboBoxOwnerDraw_field_0x04; /*0x600676*/
+  return *this * this->q004; /*0x600676*/
 }
 
 

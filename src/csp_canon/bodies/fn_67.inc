@@ -1912,7 +1912,7 @@ DynamicVector * TypeList::Construct()
 }
 }
 
-// ==== BACKFILL 0x0067A520  DynamicVector::Read  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x0067A520  DynamicVector::Read  cls=DynamicVector  sig=csp  renamed_refs=3  residual=- ====
 int DynamicVector::Read(TechnoTypeClass * aP1)
 {
 {
@@ -1921,7 +1921,7 @@ int DynamicVector::Read(TechnoTypeClass * aP1)
     int i;
     int v6;
     v3 = *(int *)aP1->vtable1;
-    v6 = this->DynamicVector_field_0x10;
+    v6 = this->q010;
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
     result = v6;
     for ( i = 0; i < v6; ++i )
@@ -1969,7 +1969,7 @@ int VectorClass::LoadStream(TechnoTypeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0067A6E0  DynamicVector::Read_Alt  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x0067A6E0  DynamicVector::Read_Alt  cls=DynamicVector  sig=csp  renamed_refs=3  residual=- ====
 int DynamicVector::Read_Alt(TechnoTypeClass * aP1)
 {
 {
@@ -1978,7 +1978,7 @@ int DynamicVector::Read_Alt(TechnoTypeClass * aP1)
     int i;
     int v6;
     v3 = *(int *)aP1->vtable1;
-    v6 = this->DynamicVector_field_0x10;
+    v6 = this->q010;
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
     result = v6;
     for ( i = 0; i < v6; ++i )
@@ -2124,12 +2124,12 @@ while ( i < this->Capacity );
 return (unsigned int *)this;
 }
 
-// ==== BACKFILL 0x0067AC70  DynamicVector::Constructor_VoxelAnim  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0067AC70  DynamicVector::Constructor_VoxelAnim  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
 {
 {
     this->Items = 0;
-    this->DynamicVector_field_0x8 = a2;
+    this->q008 = a2;
     this->IsInitialized = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_VoxelAnimTypeClass_const;
@@ -2147,12 +2147,12 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
   }
     *(void**)this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const;
     this->CapacityIncrement = 10;
-    this->DynamicVector_field_0x10 = 0;
+    this->q010 = 0;
     return this;
 }
 }
 
-// ==== BACKFILL 0x0067AD80  DynamicVector::Add2  cls=DynamicVector  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x0067AD80  DynamicVector::Add2  cls=DynamicVector  sig=csp  renamed_refs=5  residual=- ====
 char DynamicVector::Add2(VectorClass * aP1)
 {
 {
@@ -2160,8 +2160,8 @@ char DynamicVector::Add2(VectorClass * aP1)
     int v4;
     int v6;
     int v7;
-    v3 = this->DynamicVector_field_0x8;
-    if ( this->DynamicVector_field_0x10 >= v3 )
+    v3 = this->q008;
+    if ( this->q010 >= v3 )
   {
     if ( !this->IsAllocated && v3 )
     return 0;
@@ -2169,9 +2169,9 @@ char DynamicVector::Add2(VectorClass * aP1)
     if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
     return 0;
   }
-    v6 = this->DynamicVector_field_0x10;
+    v6 = this->q010;
     v7 = this->Items;
-    this->DynamicVector_field_0x10 = v6 + 1;
+    this->q010 = v6 + 1;
     *(int *)(v7 + 4 * v6) = *(int *)aP1->vtable1;
     return 1;
 }
@@ -2365,19 +2365,19 @@ unsigned int * TypeList::CopyVoxelAnim(VectorClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0067C360  DynamicVector::RemoveAt  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0067C360  DynamicVector::RemoveAt  cls=DynamicVector  sig=csp  renamed_refs=3  residual=- ====
 char DynamicVector::RemoveAt(int a2)
 {
 {
     int v2;
     int v3;
     int v4;
-    v2 = this->DynamicVector_field_0x10;
+    v2 = this->q010;
     v3 = a2;
     if ( a2 >= v2 )
     return 0;
     v4 = v2 - 1;
-    this->DynamicVector_field_0x10 = v4;
+    this->q010 = v4;
     if ( a2 < v4 )
   {
     do
@@ -2385,25 +2385,25 @@ char DynamicVector::RemoveAt(int a2)
     ++v3;
     *(int *)(this->Items + 4 * v3 - 4) = *(int *)(this->Items + 4 * v3);
     }
-    while ( v3 < this->DynamicVector_field_0x10 );
+    while ( v3 < this->q010 );
   }
     return 1;
 }
 }
 
-// ==== BACKFILL 0x0067C3F0  DynamicVector::RemoveAt2  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0067C3F0  DynamicVector::RemoveAt2  cls=DynamicVector  sig=csp  renamed_refs=3  residual=- ====
 char DynamicVector::RemoveAt2(int a2)
 {
 {
     int v2;
     int v3;
     int v4;
-    v2 = this->DynamicVector_field_0x10;
+    v2 = this->q010;
     v3 = a2;
     if ( a2 >= v2 )
     return 0;
     v4 = v2 - 1;
-    this->DynamicVector_field_0x10 = v4;
+    this->q010 = v4;
     if ( a2 < v4 )
   {
     do
@@ -2411,7 +2411,7 @@ char DynamicVector::RemoveAt2(int a2)
     ++v3;
     *(int *)(this->Items + 4 * v3 - 4) = *(int *)(this->Items + 4 * v3);
     }
-    while ( v3 < this->DynamicVector_field_0x10 );
+    while ( v3 < this->q010 );
   }
     return 1;
 }

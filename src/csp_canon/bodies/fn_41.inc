@@ -1037,7 +1037,7 @@ int SaveGame::SaveIteratedData(int a2)
 }
 }
 
-// ==== BACKFILL 0x00413A70  DynamicVector::AddItem  cls=DynamicVector  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x00413A70  DynamicVector::AddItem  cls=DynamicVector  sig=csp  renamed_refs=5  residual=- ====
 char DynamicVector::AddItem(VectorClass * aP1)
 {
 {
@@ -1045,8 +1045,8 @@ char DynamicVector::AddItem(VectorClass * aP1)
     int v4;
     int v6;
     int v7;
-    v3 = this->DynamicVector_field_0x8;
-    if ( this->DynamicVector_field_0x10 >= v3 )
+    v3 = this->q008;
+    if ( this->q010 >= v3 )
   {
     if ( !this->IsAllocated && v3 )
     return 0;
@@ -1054,9 +1054,9 @@ char DynamicVector::AddItem(VectorClass * aP1)
     if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
     return 0;
   }
-    v6 = this->DynamicVector_field_0x10;
+    v6 = this->q010;
     v7 = this->Items;
-    this->DynamicVector_field_0x10 = v6 + 1;
+    this->q010 = v6 + 1;
     *(int *)(v7 + 4 * v6) = *(int *)aP1->vtable1;
     return 1;
 }
@@ -1529,12 +1529,12 @@ void TacticalClass::StubReturnTrue2()
   ;
 }
 
-// ==== BACKFILL 0x0041C020  AircraftClass::CheckReloadTimer  cls=TechnoClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x0041C020  AircraftClass::CheckReloadTimer  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::CheckReloadTimer()
 {
 {
     int result;
-    LOBYTE(result) = (unsigned char)this->drainTarget;
+    LOBYTE(result) = (unsigned char)this->drainAnim;
     return result;
 }
 }
@@ -1650,8 +1650,8 @@ unsigned short * Vector::ToFacingMath(unsigned short * a2)
 {
     double v3;
     double v5;
-    v5 = Math::Sqrt(*(void**)this * *(void**)(this) + this->Vector_field_0x4 *(void**)this->Vector_field_0x4);
-    v3 = Math::CalcAngle(this->Vector_field_0x8, v5);
+    v5 = Math::Sqrt(*(void**)this * *(void**)(this) + this->q004 *(void**)this->q004);
+    v3 = Math::CalcAngle(this->q008, v5);
     *a2 = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427);
     return a2;
 }

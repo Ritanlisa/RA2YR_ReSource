@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00652960  RadarClass::Construct  cls=RadarClass  sig=csp  renamed_refs=32  residual=- ====
+// ==== BACKFILL 0x00652960  RadarClass::Construct  cls=RadarClass  sig=csp  renamed_refs=1  residual=q14D9,q14DA ====
 namespace gamemd { void* RadarClass::Construct() {
 {
       int v2;
@@ -23,38 +23,38 @@ namespace gamemd { void* RadarClass::Construct() {
 
       RadarClass::RenderSpySatellite();
       v2 = 0;
-      this->RadarClass_field_0x11E8 = 0;
-      this->RadarClass_field_0x11EC = 0;
-      this->RadarClass_field_0x11F0 = 0;
-      this->RadarClass_field_0x11F4 = 0;
-      this->RadarClass_field_0x11F8 = 0;
-      this->RadarClass_field_0x11FC = 0;
-      this->RadarClass_field_0x1200 = 0;
-      this->RadarClass_field_0x1204 = 0;
+      this->q11E8 = 0;
+      this->q11EC = 0;
+      this->q11F0 = 0;
+      this->q11F4 = 0;
+      this->q11F8 = 0;
+      this->q11FC = 0;
+      this->q1200 = 0;
+      this->q1204 = 0;
       this->q120C = DataGlobal_B048B0;
       this->q1210 = DataGlobal_B048B4;
       this->q1214 = DataGlobal_B048B8;
       v3 = DataGlobal_B048BC;
-      this->RadarClass_field_0x121C = 0;
+      this->q121C = 0;
       this->q1218 = v3;
-      this->RadarClass_field_0x1220 = 0;
+      this->q1220 = 0;
       VectorClass::CellConstructor(this + 1161, 0, 0);
       *(this + 1161) = &vt_DynamicVectorClass_Cell;
       this->q1238 = 10;
       this->q1234 = 0;
-      this->RadarClass_field_0x123C = 0;
-      this->RadarClass_field_0x1240 = 0;
-      this->RadarClass_field_0x1244 = 0;
-      this->RadarClass_field_0x1248 = 0;
-      this->RadarClass_field_0x124C = 0;
-      this->RadarClass_field_0x1250 = 0;
-      this->RadarClass_field_0x1254 = 0;
-      this->RadarClass_field_0x1258 = 0;
+      this->q123C = 0;
+      this->q1240 = 0;
+      this->q1244 = 0;
+      this->q1248 = 0;
+      this->q124C = 0;
+      this->q1250 = 0;
+      this->q1254 = 0;
+      this->q1258 = 0;
       VectorClass::PointConstructor(0, 0);
       *(this + 1175) = &DynamicVectorClass<Point2D>::`vftable';
       this->q1270 = 10;
       this->q126C = 0;
-      this->RadarClass_field_0x1274 = 0;
+      this->q1274 = 0;
       v4 = this + 1182;
       v5 = 22;
       do
@@ -67,33 +67,33 @@ namespace gamemd { void* RadarClass::Construct() {
         --v5;
       }
       while ( v5 );
-      this->RadarClass_field_0x1488 = 0;
+      this->q1488 = 0;
       this->q148C = 1;
-      this->RadarClass_field_0x1490 = 0;
-      this->RadarClass_field_0x1494 = 0;
-      this->RadarClass_field_0x1498 = 0;
-      this->RadarClass_field_0x149C = DataGlobal_B048B0;
+      this->q1490 = 0;
+      this->q1494 = 0;
+      this->q1498 = 0;
+      this->q149C = DataGlobal_B048B0;
       this->q14A0 = DataGlobal_B048B4;
-      this->RadarClass_field_0x14A4 = DataGlobal_B048B8;
+      this->q14A4 = DataGlobal_B048B8;
       v6 = DataGlobal_B048BC;
-      this->RadarClass_field_0x14AC = 0;
-      this->RadarClass_field_0x14B0 = 0;
+      this->q14AC = 0;
+      this->q14B0 = 0;
       this->q14A8 = v6;
-      this->RadarClass_field_0x14B4 = 0;
+      this->q14B4 = 0;
       this->q14BC = 0;
       this->q14BD = 0;
       this->q14D4 = -1;
       this->IsAvailableNow = 0;
-      this->RadarClass_field_0x14D9 = 0;
+      this->q14D9 = 0;
       this->q14DA = 0;
       this->q14DC = DataGlobal_B048B0;
       this->q14E0 = DataGlobal_B048B4;
       this->q14E4 = DataGlobal_B048B8;
       v7 = DataGlobal_B048BC;
-      this->RadarClass_field_0x14FC = 0;
+      this->q14FC = 0;
       this->q14E8 = v7;
       this->q1500 = Timer::GetTicks();
-      this->RadarClass_field_0x1508 = 0;
+      this->q1508 = 0;
       *this = &vt_RadarClass;
       v8 = __2_YAPAXI_Z(0x10u);
       v9 = v8;
@@ -140,7 +140,7 @@ namespace gamemd { void* RadarClass::Construct() {
       {
         v9 = 0;
       }
-      this->RadarClass_field_0x1258 = v9;
+      this->q1258 = v9;
       this->q1270 = 500;
       AudioController::Init(this + 1328);
       return this;
@@ -175,23 +175,23 @@ void RadarClass::Destru_vt50()
 }
 }
 
-// ==== BACKFILL 0x00652DE0  RadarClass::Destru_vt07  cls=RadarClass  sig=csp  renamed_refs=6  residual=- ====
+// ==== BACKFILL 0x00652DE0  RadarClass::Destru_vt07  cls=RadarClass  sig=csp  renamed_refs=0  residual=q14D9 ====
 namespace gamemd { void RadarClass::Destru_vt07() {
 {
       int v2;
 
       DisplayClass::SetSize(this);
       Debug::Log();
-      this->RadarClass_field_0x14AC = 0;
-      this->RadarClass_field_0x14B0 = 0;
+      this->q14AC = 0;
+      this->q14B0 = 0;
       this->q14BD = 0;
       this->q14BC = 0;
-      this->RadarClass_field_0x14FC = 0;
+      this->q14FC = 0;
       this->IsAvailableNow = 0;
-      v2 = this->RadarClass_field_0x1224;
-      this->RadarClass_field_0x14D9 = 1;
+      v2 = this->q1224;
+      this->q14D9 = 1;
       (*(void (**)(void))(v2 + 12))();
-      (*(void (__thiscall **)(int))(this->RadarClass_field_0x125C + 12))(this + 4700);
+      (*(void (__thiscall **)(int))(this->q125C + 12))(this + 4700);
       Debug::Log();
 }
 } }
@@ -368,7 +368,7 @@ namespace gamemd { int RadarClass::UpdateBlips(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x00655990  RadarClass::Process  cls=RadarClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x00655990  RadarClass::Process  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RadarClass::Process() {
 {
       int v1;
@@ -386,7 +386,7 @@ namespace gamemd { int RadarClass::Process() {
       int result;
 
       v1 = (int)this;
-      v2 = (_DWORD *)this->RadarClass_field_0x1258;
+      v2 = (_DWORD *)this->q1258;
       if ( v2 )
       {
         if ( *v2 )
@@ -489,7 +489,7 @@ namespace gamemd { void TacticalClass::FreeResources() {
 }
 } }
 
-// ==== BACKFILL 0x00655B20  RadarClass::InitializeHashTable  cls=RadarClass  sig=csp  renamed_refs=9  residual=- ====
+// ==== BACKFILL 0x00655B20  RadarClass::InitializeHashTable  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void RadarClass::InitializeHashTable() {
 {
       _DWORD *v2;
@@ -505,11 +505,11 @@ namespace gamemd { void RadarClass::InitializeHashTable() {
       int v12;
       _DWORD *v13;
 
-      this->RadarClass_field_0x121C = 0;
-      this->RadarClass_field_0x1220 = 0;
-      this->RadarClass_field_0x123C = 0;
-      this->RadarClass_field_0x1258 = 0;
-      this->RadarClass_field_0x1274 = 0;
+      this->q121C = 0;
+      this->q1220 = 0;
+      this->q123C = 0;
+      this->q1258 = 0;
+      this->q1274 = 0;
       v2 = __2_YAPAXI_Z(0x10u);
       v3 = v2;
       if ( v2 )
@@ -556,15 +556,15 @@ namespace gamemd { void RadarClass::InitializeHashTable() {
       {
         v3 = 0;
       }
-      this->RadarClass_field_0x1258 = (int)v3;
+      this->q1258 = (int)v3;
       Shroud::ProcessCellVisibility(&DataGlobal_87F7E8, (int)&DataGlobal_87F8E4);
       RadarClass::RecreateSurface((int)this, (int)this);
       for ( i = 0; i < g_SidebarState; *(_BYTE *)(*((_DWORD *)g_TechnoClass_Count + i - 1) + 1059) = 0 )
         ++i;
-      if ( this->RadarClass_field_0x14B0 == 3 )
+      if ( this->q14B0 == 3 )
       {
-        v12 = this->RadarClass_field_0x14B4;
-        this->RadarClass_field_0x14AC = 5;
+        v12 = this->q14B4;
+        this->q14AC = 5;
         RadarClass::SetViewMode((int)this, v12, 0);
         RadarClass::SetGlobal((void *)g_RulesClass_Instance->DetailMinFrameRateNormal);
       }
@@ -622,13 +622,13 @@ namespace gamemd { int RadarClass::UpdateFoundationShapesCustom() {
         }
         if ( v4 == 1 )
         {
-          v8 = this->RadarClass_field_0x1488 + 0.5;
+          v8 = this->q1488 + 0.5;
           if ( v8 < 1.0 )
             v8 = 1.0;
         }
         else
         {
-          v8 = (double)v4 * this->RadarClass_field_0x1488 + 0.5;
+          v8 = (double)v4 * this->q1488 + 0.5;
           if ( v8 < 2.0 )
             v8 = 2.0;
         }
@@ -717,21 +717,21 @@ namespace gamemd { void HouseClass::SetRadarVisibility(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00656E50  RadarClass::IsActiveMode  cls=RadarClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x00656E50  RadarClass::IsActiveMode  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RadarClass::IsActiveMode() {
 {
       int result;
 
-      if ( this->RadarClass_field_0x14B0 != 2 )
+      if ( this->q14B0 != 2 )
         return 0;
       result = 1;
-      if ( this->RadarClass_field_0x14AC != 1 )
+      if ( this->q14AC != 1 )
         return 0;
       return result;
 }
 } }
 
-// ==== BACKFILL 0x00656E90  RadarClass::SetFlag  cls=RadarClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x00656E90  RadarClass::SetFlag  cls=RadarClass  sig=csp  renamed_refs=0  residual=q14D9,q14DA ====
 namespace gamemd { bool RadarClass::SetFlag() {
 {
       char v2;
@@ -739,7 +739,7 @@ namespace gamemd { bool RadarClass::SetFlag() {
 
       v2 = this->q14DA;
       result = 1;
-      this->RadarClass_field_0x14D9 = 1;
+      this->q14D9 = 1;
       if ( !v2 )
         result = a2 != 0;
       this->q14DA = result;
@@ -1520,23 +1520,23 @@ retn
 */
 } }
 
-// ==== BACKFILL 0x0065D480  ComPtr::Set  cls=ComPtr  sig=csp  renamed_refs=4  residual=- ====
+// ==== BACKFILL 0x0065D480  ComPtr::Set  cls=ComPtr  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ComPtr::Set(int a2) {
 {
       int v3;
       int result;
 
-      if ( a2 != this->ComPtr_field_0x04 )
+      if ( a2 != this->q004 )
       {
         if ( a2 )
           ++*(_DWORD *)(a2 + 4);
-        v3 = this->ComPtr_field_0x04;
+        v3 = this->q004;
         if ( v3 )
         {
-          this->ComPtr_field_0x04 = 0;
+          this->q004 = 0;
           result = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 8))(v3);
         }
-        this->ComPtr_field_0x04 = a2;
+        this->q004 = a2;
       }
       return result;
 }

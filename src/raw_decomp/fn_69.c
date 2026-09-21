@@ -228,13 +228,13 @@ char *__thiscall sub_6905F0(_DWORD *this)
   void *v2; // eax
   char *result; // eax
 
-  v2 = (void *)this->ScoreFontClass_field_0x0C; /*0x6905f6*/
+  v2 = (void *)this->q00C; /*0x6905f6*/
   *this = &vt_ScoreFontClass; /*0x6905f9*/
-  if ( v2 && this->ScoreFontClass_field_0x04 == 1 ) /*0x690607*/
+  if ( v2 && this->q004 == 1 ) /*0x690607*/
   {
     __3_YAXPAX_Z(v2); /*0x69060a*/
-    this->ScoreFontClass_field_0x0C = 0; /*0x690612*/
-    this->ScoreFontClass_field_0x04 = 0; /*0x690615*/
+    this->q00C = 0; /*0x690612*/
+    this->q004 = 0; /*0x690615*/
   }
   result = (char *)--MEMORY[0xB0558C]; /*0x69061d*/
   if ( !MEMORY[0xB0558C] ) /*0x690623*/
@@ -316,7 +316,7 @@ int __thiscall ScoreFontClass::_vt02(void *this, __int16 *a2)
   for ( i = *a2; *v2; i = *v2 ) /*0x6907ab*/
   {
     ++v2; /*0x6907b8*/
-    v3 += (*(int (__thiscall **)(void *, __int16))(this->ScoreFontClass_field_0x04)(this, i) + 1; /*0x6907be*/
+    v3 += (*(int (__thiscall **)(void *, __int16))(this->q004)(this, i) + 1; /*0x6907be*/
   }
   return v3; /*0x6907cc*/
 }
@@ -373,7 +373,7 @@ void __thiscall BuildingClass_DrawFoundationChar2(int *this, int a2, CHAR szSrc,
     v12[1] = a5; /*0x6908cc*/
     v12[0] = a4 - v10; /*0x6908d1*/
     v11 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a2 + 120))(a2, v14); /*0x6908e4*/
-    DrawToSurfaceSHP(a2, this->q005, this->ScoreFontClass_field_0x0C, a6 + v9, v12, v11, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6908fd*/
+    DrawToSurfaceSHP(a2, this->q005, this->q00C, a6 + v9, v12, v11, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6908fd*/
   }
 }
 
@@ -421,7 +421,7 @@ __int16 __thiscall BuildingClass_DrawFoundationChar(int *this, int szSrc, _WORD 
         v18[1] = a5; /*0x69098b*/
         v18[0] = a4 - v12; /*0x6909a0*/
         v13 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v9 + 120))(v9, v20); /*0x6909b2*/
-        DrawToSurfaceSHP(v9, this->q005, this->ScoreFontClass_field_0x0C, a6 + v11, v18, v13, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6909cb*/
+        DrawToSurfaceSHP(v9, this->q005, this->q00C, a6 + v11, v18, v13, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6909cb*/
         v6 = a3; /*0x6909d0*/
       }
       v14 = (*(int (__thiscall **)(int *, _WORD))(*this + 4))(this, *v6++); /*0x6909dc*/
@@ -446,23 +446,23 @@ _DWORD *__thiscall ScoreScreen::LoadScoreFont(_DWORD *this, ScoreFontClass *aP1)
   _BYTE v7[12]; // [esp+60h] [ebp-14h] BYREF
   int v8; // [esp+6Ch] [ebp-8h]
 
-  this->ScoreFontClass_field_0x04 = 0; /*0x690a19*/
-  this->ScoreFontClass_field_0x08 = 0; /*0x690a1c*/
-  this->ScoreFontClass_field_0x0C = 0; /*0x690a1f*/
+  this->q004 = 0; /*0x690a19*/
+  this->q008 = 0; /*0x690a1c*/
+  this->q00C = 0; /*0x690a1f*/
   this->q005 = 0; /*0x690a22*/
   *this = &vt_ScoreFontClass; /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   v3 = (IUnknown *)++*(_DWORD *)&stru_B05488.__pad_FC[8]; /*0x690a3b*/
   LOBYTE(v3) = 0; /*0x690a42*/
   *this = &vt_ScoreFullFontClass; /*0x690a44*/
-  this->ScoreFontClass_field_0x04 = 0; /*0x690a4a*/
+  this->q004 = 0; /*0x690a4a*/
   v4 = SearchMIXFile((char *)&stru_830620.field_44, v3); /*0x690a4d*/
-  this->ScoreFontClass_field_0x0C = v4; /*0x690a54*/
+  this->q00C = v4; /*0x690a54*/
   if ( !v4 ) /*0x690a57*/
   {
     CCFileClass::Construct(v6, (char *)&stru_830620.field_44); /*0x690a62*/
-    this->ScoreFontClass_field_0x0C = CCFileClass::ReadEntireFile(v6); /*0x690a74*/
-    this->ScoreFontClass_field_0x04 = 1; /*0x690a77*/
+    this->q00C = CCFileClass::ReadEntireFile(v6); /*0x690a74*/
+    this->q004 = 1; /*0x690a77*/
     CCFileClass::Reset(v6); /*0x690a7b*/
     Debug::Log(); /*0x690a85*/
     v6[0] = &vt_CCFileClass; /*0x690a91*/
@@ -471,9 +471,9 @@ _DWORD *__thiscall ScoreScreen::LoadScoreFont(_DWORD *this, ScoreFontClass *aP1)
     v6[0] = &off_7E1668; /*0x690aa6*/
     BufferIOFileClass::Dtor(v6); /*0x690aae*/
   }
-  this->ScoreFontClass_field_0x04 = 11; /*0x690ab7*/
+  this->q004 = 11; /*0x690ab7*/
   this->q005 = aP1; /*0x690abe*/
-  this->ScoreFontClass_field_0x08 = 21; /*0x690ac1*/
+  this->q008 = 21; /*0x690ac1*/
   return this; /*0x690aca*/
 }
 
@@ -486,22 +486,22 @@ _DWORD *__thiscall sub_690AE0(_DWORD *this, int a2)
   _BYTE v6[12]; // [esp+60h] [ebp-14h] BYREF
   int v7; // [esp+6Ch] [ebp-8h]
 
-  this->ScoreFontClass_field_0x04 = 0; /*0x690ae9*/
-  this->ScoreFontClass_field_0x08 = 0; /*0x690aec*/
-  this->ScoreFontClass_field_0x0C = 0; /*0x690aef*/
+  this->q004 = 0; /*0x690ae9*/
+  this->q008 = 0; /*0x690aec*/
+  this->q00C = 0; /*0x690aef*/
   this->q005 = 0; /*0x690af2*/
   *this = &vt_ScoreFontClass; /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
   ++MEMORY[0xB0558C]; /*0x690b0c*/
   *this = &vt_ScoreBigFontClass; /*0x690b14*/
-  this->ScoreFontClass_field_0x04 = 0; /*0x690b1a*/
+  this->q004 = 0; /*0x690b1a*/
   v3 = SearchMIXFile(MEMORY[0x83E6DC], 0); /*0x690b1d*/
-  this->ScoreFontClass_field_0x0C = v3; /*0x690b24*/
+  this->q00C = v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
   {
     CCFileClass::Construct(v5, MEMORY[0x83E6DC]); /*0x690b32*/
-    this->ScoreFontClass_field_0x0C = CCFileClass::ReadEntireFile(v5); /*0x690b44*/
-    this->ScoreFontClass_field_0x04 = 1; /*0x690b47*/
+    this->q00C = CCFileClass::ReadEntireFile(v5); /*0x690b44*/
+    this->q004 = 1; /*0x690b47*/
     CCFileClass::Reset(v5); /*0x690b4b*/
     Debug::Log(); /*0x690b55*/
     v5[0] = &vt_CCFileClass; /*0x690b61*/
@@ -510,9 +510,9 @@ _DWORD *__thiscall sub_690AE0(_DWORD *this, int a2)
     v5[0] = &off_7E1668; /*0x690b76*/
     BufferIOFileClass::Dtor(v5); /*0x690b7e*/
   }
-  this->ScoreFontClass_field_0x04 = 20; /*0x690b87*/
+  this->q004 = 20; /*0x690b87*/
   this->q005 = a2; /*0x690b8e*/
-  this->ScoreFontClass_field_0x08 = 35; /*0x690b91*/
+  this->q008 = 35; /*0x690b91*/
   return this; /*0x690b9a*/
 }
 
@@ -721,11 +721,11 @@ LABEL_5:
 // ==== 0x00690F30  ScoreScreen::Constructor  this=ScoreAnimClass  sig=csp ====
 _DWORD *__thiscall ScoreScreen::Constructor(_DWORD *this, ScoreAnimClass *aP1, int a3, int a4)
 {
-  this->ScoreAnimClass_field_0x08 = a3; /*0x690f3b*/
-  this->ScoreAnimClass_field_0x04 = aP1; /*0x690f41*/
-  this->ScoreAnimClass_field_0x0C = Timer::GetTicks(); /*0x690f4d*/
-  this->ScoreAnimClass_field_0x14 = 0; /*0x690f50*/
-  this->ScoreAnimClass_field_0x18 = a4; /*0x690f57*/
+  this->q008 = a3; /*0x690f3b*/
+  this->q004 = aP1; /*0x690f41*/
+  this->q00C = Timer::GetTicks(); /*0x690f4d*/
+  this->q014 = 0; /*0x690f50*/
+  this->q018 = a4; /*0x690f57*/
   *this = &vt_ScoreAnimClass; /*0x690f5a*/
   return this; /*0x690f62*/
 }
@@ -737,20 +737,20 @@ signed int __thiscall ScoreAnimClass::_vt01(signed int *this)
   signed int result; // eax
   signed int v3; // edi
 
-  result = this->ScoreAnimClass_field_0x0C; /*0x690f73*/
+  result = this->q00C; /*0x690f73*/
   if ( result != -1 ) /*0x690f79*/
   {
-    v3 = this->ScoreAnimClass_field_0x14; /*0x690f7c*/
-    result = Timer::GetTicks() - this->ScoreAnimClass_field_0x0C; /*0x690f8c*/
+    v3 = this->q014; /*0x690f7c*/
+    result = Timer::GetTicks() - this->q00C; /*0x690f8c*/
     if ( result >= v3 ) /*0x690f91*/
     {
-      this->ScoreAnimClass_field_0x14 = 0; /*0x690fa4*/
-      this->ScoreAnimClass_field_0x0C = -1; /*0x690fa7*/
+      this->q014 = 0; /*0x690fa4*/
+      this->q00C = -1; /*0x690fa7*/
     }
     else
     {
-      this->ScoreAnimClass_field_0x0C = -1; /*0x690f95*/
-      this->ScoreAnimClass_field_0x14 = v3 - result; /*0x690f9c*/
+      this->q00C = -1; /*0x690f95*/
+      this->q014 = v3 - result; /*0x690f9c*/
     }
   }
   return result; /*0x690fa0*/
@@ -760,8 +760,8 @@ signed int __thiscall ScoreAnimClass::_vt01(signed int *this)
 // ==== 0x00690FC0  ScoreAnimClass::Release  this=ScoreAnimClass  sig=csp ====
 void __thiscall ScoreAnimClass::_vt02(_DWORD *this)
 {
-  if ( this->ScoreAnimClass_field_0x0C == -1 ) /*0x690fc7*/
-    this->ScoreAnimClass_field_0x0C = Timer::GetTicks(); /*0x690fd1*/
+  if ( this->q00C == -1 ) /*0x690fc7*/
+    this->q00C = Timer::GetTicks(); /*0x690fd1*/
 }
 
 
@@ -899,7 +899,7 @@ char __thiscall VectorClass_PushBack_2(_DWORD *this, _DWORD *a2)
   v3 = this->Capacity; /*0x691163*/
   if ( this->q010 >= v3 ) /*0x69116b*/
   {
-    if ( !this->__pad_034 && v3 ) /*0x691176*/
+    if ( !this->q034 && v3 ) /*0x691176*/
       return 0; /*0x691176*/
     v4 = this->q005; /*0x691178*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x691188*/
@@ -2352,7 +2352,7 @@ void __thiscall sub_692B60(_BYTE *this, _DWORD *a2)
   int v32; // [esp+30h] [ebp-8h]
   char v33; // [esp+3Ch] [ebp+4h]
 
-  if ( this->q555A == 1 ) /*0x692b70*/
+  if ( *(this + 21850) == 1 ) /*0x692b70*/
     return; /*0x692b70*/
   v3 = MEMORY[0x886FA0] + *a2; /*0x692b92*/
   v32 = MEMORY[0x886FA4] + a2[1]; /*0x692b94*/
@@ -5540,11 +5540,11 @@ char *__thiscall sub_6970A0(char *this)
   int v18; // [esp+10h] [ebp-4h]
 
   this->MPGameMode = 0; /*0x6970b8*/
-  this->q063 = 0; /*0x6970bb*/
+  this->SkirmishPreferences = 0; /*0x6970bb*/
   *((_DWORD *)this + 100) = 0; /*0x6970c1*/
   *((_DWORD *)this + 101) = 1; /*0x6970c7*/
   *((_DWORD *)this + 102) = 10000; /*0x6970cd*/
-  this->q067 = 10; /*0x6970d3*/
+  *((_DWORD *)this + 103) = 10; /*0x6970d3*/
   this->q1A0 = 1; /*0x6970d9*/
   this->q1A1 = 1; /*0x6970df*/
   this->q1A2 = 1; /*0x6970e5*/
@@ -5721,11 +5721,11 @@ char *__thiscall sub_6970A0(char *this)
   this->q148 = 0; /*0x697452*/
   this->idxSide = 0; /*0x69745b*/
   this->idxSide2 = -1; /*0x697461*/
-  this->q057 = 2; /*0x697467*/
+  *((_DWORD *)this + 87) = 2; /*0x697467*/
   this->q058 = -1; /*0x69746d*/
   this->Side = this->idxSide; /*0x697479*/
   this->Side2 = this->idxSide2; /*0x697485*/
-  this->q05F = this->q057; /*0x697491*/
+  this->Color = *((_DWORD *)this + 87); /*0x697491*/
   this->Color2 = this->q058; /*0x69749d*/
   this->q1ED9 = 1; /*0x6974a3*/
   this->q1ED8 = 1; /*0x6974aa*/
@@ -8049,12 +8049,12 @@ char __thiscall ScenarioClass_CheckExists(int *this, int a2)
     RawFileClass::Dtor(v11); /*0x69ac5b*/
     return v3; /*0x69ac68*/
   }
-  v5 = this->__pad_198; /*0x69ac6b*/
+  v5 = this->q198; /*0x69ac6b*/
   v6 = 0; /*0x69ac71*/
   if ( v5 <= 0 ) /*0x69ac75*/
   {
 LABEL_7:
-    v8 = this->__pad_198; /*0x69ac8a*/
+    v8 = this->q198; /*0x69ac8a*/
     v9 = 0; /*0x69ac90*/
     if ( v8 <= 0 ) /*0x69ac94*/
       return 0; /*0x69acb0*/
@@ -8152,7 +8152,7 @@ bool __thiscall sub_69AE10(int *this, const char **a2)
   v5 = 0; /*0x69ae33*/
   if ( v3 <= 0 ) /*0x69ae37*/
     return 0; /*0x69ae5d*/
-  while ( !String::Compare(a2, (const char **)(this->__pad_6A0 + 4 * v5)) ) /*0x69ae50*/
+  while ( !String::Compare(a2, (const char **)(this->q6A0 + 4 * v5)) ) /*0x69ae50*/
   {
     if ( ++v5 >= this->q6D0 ) /*0x69ae5b*/
       return 0; /*0x69ae5b*/
@@ -8318,7 +8318,7 @@ void __thiscall ParseAndApplyAlliances(_BYTE *this)
   int v41; // [esp+44h] [ebp-4h]
 
   v1 = *(_DWORD *)this == 4; /*0x69b176*/
-  this->__pad_688 = 0; /*0x69b17d*/
+  this->q688 = 0; /*0x69b17d*/
   if ( v1 ) /*0x69b184*/
   {
     v2 = *(_DWORD *)MEMORY[0xA8B230]; /*0x69b199*/
@@ -8448,7 +8448,7 @@ void __thiscall ParseAndApplyAlliances(_BYTE *this)
           while ( v22 < v20 ); /*0x69b4be*/
         }
         __3_YAXPAX_Z(v4); /*0x69b4c1*/
-        this->__pad_688 = 1; /*0x69b4d4*/
+        this->q688 = 1; /*0x69b4d4*/
         v27 = *(_DWORD *)MEMORY[0xA8B230]; /*0x69b4e0*/
         BYTE1(v27) = BYTE1(*(_DWORD *)MEMORY[0xA8B230]) | 4; /*0x69b4e2*/
         *(_DWORD *)MEMORY[0xA8B230] = v27; /*0x69b4e5*/
@@ -8531,7 +8531,7 @@ bool __thiscall sub_69B5B0(_DWORD *this, int a2)
     if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, &a2, 4, 0) >= 0 && a2 == 300 ) /*0x69b5d7*/
     {
       v4 = (*(int (__stdcall **)(int, _DWORD *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, this, 300, 0); /*0x69b5e4*/
-      this->LoadGame_field_0x04 = -1; /*0x69b5e9*/
+      this->q004 = -1; /*0x69b5e9*/
       if ( v4 >= 0 ) /*0x69b5f0*/
         return 1; /*0x69b5ba*/
     }
@@ -8770,7 +8770,7 @@ LABEL_15:
     this->Color2 = -1; /*0x69b886*/
   }
   v12 = this->Color2; /*0x69b896*/
-  this->q057 = this->Color; /*0x69b89c*/
+  *(this + 87) = this->Color; /*0x69b89c*/
   this->SessionClass_field_160 = v12; /*0x69b8a2*/
   return result; /*0x69b8a8*/
 }
@@ -10114,8 +10114,8 @@ char __thiscall MapFile::_vt02(void *this, int a2, _DWORD *a3)
       return 0; /*0x69ccf2*/
     if ( this->Items ) /*0x69cc55*/
     {
-      if ( a2 >= this->DynamicVector_field_0x8 ) /*0x69cc61*/
-        v3 = this->DynamicVector_field_0x8; /*0x69cc63*/
+      if ( a2 >= this->q008 ) /*0x69cc61*/
+        v3 = this->q008; /*0x69cc63*/
       for ( i = 0; i < v3; ++i ) /*0x69cc69*/
         String::Reassign((char **)&v6[i], (const char **)(4 * i + this->Items)); /*0x69cc7b*/
       if ( this->IsAllocated ) /*0x69cc85*/
@@ -10132,14 +10132,14 @@ char __thiscall MapFile::_vt02(void *this, int a2, _DWORD *a3)
       v3 = a2; /*0x69ccb7*/
     }
     this->Items = v6; /*0x69ccc6*/
-    this->DynamicVector_field_0x8 = v3; /*0x69ccc9*/
+    this->q008 = v3; /*0x69ccc9*/
     this->IsAllocated = a3 == 0; /*0x69cccc*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x69ccd5*/
   }
-  v12 = this->DynamicVector_field_0x8; /*0x69ccd8*/
+  v12 = this->q008; /*0x69ccd8*/
   if ( v12 < this->Items ) /*0x69cce0*/
     this->Items = v12; /*0x69cce2*/
   return 1; /*0x69cce5*/
@@ -10152,11 +10152,11 @@ int __thiscall MapFile::_vt04(_DWORD *this, const char **a2)
   int v3; // esi
 
   v3 = 0; /*0x69cd05*/
-  if ( (int)this->DynamicVector_field_0x10 <= 0 ) /*0x69cd0c*/
+  if ( (int)this->q010 <= 0 ) /*0x69cd0c*/
     return -1; /*0x69cd2a*/
   while ( !String::Compare((const char **)(this->Items + 4 * v3), a2) ) /*0x69cd20*/
   {
-    if ( ++v3 >= this->DynamicVector_field_0x10 ) /*0x69cd28*/
+    if ( ++v3 >= this->q010 ) /*0x69cd28*/
       return -1; /*0x69cd28*/
   }
   return v3; /*0x69cd2a*/
@@ -10304,7 +10304,7 @@ char __thiscall VectorClass_ptr_GlobalPacketType::sub_69CEC0(void *this, int a2,
       return 0; /*0x69cf6a*/
     if ( this->Items ) /*0x69cef8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x69ceff*/
+      v5 = this->q008; /*0x69ceff*/
       if ( a2 < v5 ) /*0x69cf04*/
         v5 = a2; /*0x69cf06*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x69cf0c*/
@@ -10316,14 +10316,14 @@ char __thiscall VectorClass_ptr_GlobalPacketType::sub_69CEC0(void *this, int a2,
       }
     }
     this->Items = v4; /*0x69cf3a*/
-    this->DynamicVector_field_0x8 = a2; /*0x69cf42*/
+    this->q008 = a2; /*0x69cf42*/
     this->IsAllocated = a3 == 0; /*0x69cf45*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x69cf4e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x69cf51*/
+  v7 = this->q008; /*0x69cf51*/
   if ( v7 < this->Items ) /*0x69cf59*/
     this->Items = v7; /*0x69cf5b*/
   return 1; /*0x69cf5e*/
@@ -10491,7 +10491,7 @@ char __thiscall VectorClass_ptr_GlobalPacketType::sub_69D120(void *this, int a2,
       return 0; /*0x69d1ca*/
     if ( this->Items ) /*0x69d158*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x69d15f*/
+      v5 = this->q008; /*0x69d15f*/
       if ( a2 < v5 ) /*0x69d164*/
         v5 = a2; /*0x69d166*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x69d16c*/
@@ -10503,14 +10503,14 @@ char __thiscall VectorClass_ptr_GlobalPacketType::sub_69D120(void *this, int a2,
       }
     }
     this->Items = v4; /*0x69d19a*/
-    this->DynamicVector_field_0x8 = a2; /*0x69d1a2*/
+    this->q008 = a2; /*0x69d1a2*/
     this->IsAllocated = a3 == 0; /*0x69d1a5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x69d1ae*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x69d1b1*/
+  v7 = this->q008; /*0x69d1b1*/
   if ( v7 < this->Items ) /*0x69d1b9*/
     this->Items = v7; /*0x69d1bb*/
   return 1; /*0x69d1be*/
@@ -10952,7 +10952,7 @@ _DWORD *__thiscall sub_69D770(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x69d77b*/
   this->Capacity = a2; /*0x69d77e*/
   this->q030 = 1; /*0x69d781*/
-  this->__pad_034 = 0; /*0x69d785*/
+  this->q034 = 0; /*0x69d785*/
   *this = &vt_VectorClass_enum_DiskID; /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
@@ -10962,7 +10962,7 @@ _DWORD *__thiscall sub_69D770(_DWORD *this, int a2, int a3)
       return this; /*0x69d79e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x69d7ad*/
-    this->__pad_034 = 1; /*0x69d7b0*/
+    this->q034 = 1; /*0x69d7b0*/
   }
   return this; /*0x69d79d*/
 }
@@ -10981,7 +10981,7 @@ _DWORD *__thiscall VectorClass_Wstring_Constructor(_DWORD *this, int a2, _DWORD 
   this->Items = 0; /*0x69d7cc*/
   this->Capacity = a2; /*0x69d7d3*/
   this->q030 = 1; /*0x69d7d6*/
-  this->__pad_034 = 0; /*0x69d7da*/
+  this->q034 = 0; /*0x69d7da*/
   *this = &vt_VectorClass_Wstring; /*0x69d7de*/
   if ( !a2 ) /*0x69d7e4*/
     return this; /*0x69d7e4*/
@@ -11002,7 +11002,7 @@ _DWORD *__thiscall VectorClass_Wstring_Constructor(_DWORD *this, int a2, _DWORD 
         }
         while ( v3 ); /*0x69d848*/
         this->Items = v8; /*0x69d84a*/
-        this->__pad_034 = 1; /*0x69d84d*/
+        this->q034 = 1; /*0x69d84d*/
         return this; /*0x69d857*/
       }
     }
@@ -11011,7 +11011,7 @@ _DWORD *__thiscall VectorClass_Wstring_Constructor(_DWORD *this, int a2, _DWORD 
       v8 = 0; /*0x69d85a*/
     }
     this->Items = v8; /*0x69d85c*/
-    this->__pad_034 = 1; /*0x69d85f*/
+    this->q034 = 1; /*0x69d85f*/
     return this; /*0x69d863*/
   }
   *a3 = a2; /*0x69d7ee*/
@@ -11036,7 +11036,7 @@ _DWORD *__thiscall sub_69D870(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x69d87b*/
   this->Capacity = a2; /*0x69d87e*/
   this->q030 = 1; /*0x69d881*/
-  this->__pad_034 = 0; /*0x69d885*/
+  this->q034 = 0; /*0x69d885*/
   *this = &vt_VectorClass_HouseClass; /*0x69d888*/
   if ( a2 ) /*0x69d88e*/
   {
@@ -11046,7 +11046,7 @@ _DWORD *__thiscall sub_69D870(_DWORD *this, int a2, int a3)
       return this; /*0x69d89e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x69d8ad*/
-    this->__pad_034 = 1; /*0x69d8b0*/
+    this->q034 = 1; /*0x69d8b0*/
   }
   return this; /*0x69d89d*/
 }
@@ -11325,16 +11325,16 @@ int sub_69DCD0()
 _BYTE *__thiscall ShapeButtonClass_Init(_BYTE *this)
 {
   ToggleClass::Construct(0, 0, 0, 0, 0); /*0x69dcfb*/
-  this->__pad_034 = 0; /*0x69dd00*/
+  this->q034 = 0; /*0x69dd00*/
   this->q038 = 0; /*0x69dd03*/
   this->q03C = 0; /*0x69dd06*/
-  this->__pad_040 = 0; /*0x69dd09*/
+  this->q040 = 0; /*0x69dd09*/
   this->q044 = 0; /*0x69dd0c*/
   this->q048 = 0; /*0x69dd0f*/
-  this->__pad_04C = 0; /*0x69dd12*/
+  this->q04C = 0; /*0x69dd12*/
   this->Visible = MEMORY[0x87F6C4]; /*0x69dd1a*/
   this->q055 = 0; /*0x69dd1d*/
-  this->__pad_05C = 0; /*0x69dd20*/
+  this->q05C = 0; /*0x69dd20*/
   *(_DWORD *)this = &vt_ShapeButtonClass; /*0x69dd23*/
   return this; /*0x69dd2b*/
 }
@@ -11352,15 +11352,15 @@ ShapeButtonClass *__thiscall ShapeButtonClass::Constructor(
         char a8)
 {
   ToggleClass::Construct((int)this, aP1, (ControlClass *)aP3, aP4, 0, 0); /*0x69dd49*/
-  this->__pad_034 = 0; /*0x69dd52*/
+  this->q034 = 0; /*0x69dd52*/
   this->q038 = 0; /*0x69dd55*/
-  this->__pad_040 = 0; /*0x69dd58*/
+  this->q040 = 0; /*0x69dd58*/
   this->q044 = 0; /*0x69dd5b*/
   this->q048 = 0; /*0x69dd5e*/
-  this->__pad_04C = 0; /*0x69dd61*/
+  this->q04C = 0; /*0x69dd61*/
   this->Visible = *(_DWORD *)&stru_87C374.__pad_14B0[7840]; /*0x69dd69*/
   this->q055 = a8; /*0x69dd72*/
-  this->__pad_05C = 0; /*0x69dd75*/
+  this->q05C = 0; /*0x69dd75*/
   *(_DWORD *)this = &vt_ShapeButtonClass; /*0x69dd78*/
   this->q058 = aP2; /*0x69dd7e*/
   if ( aP2 ) /*0x69dd81*/
@@ -11453,7 +11453,7 @@ void __thiscall ScenarioClass_FreeConfig(int this)
 // ==== 0x0069DEA0  ButtonClass::SetState  this=ShapeButtonClass  sig=csp ====
 char __thiscall ButtonClass::SetState(_BYTE *this, ShapeButtonClass *aP1)
 {
-  this->__pad_05C = (_BYTE)aP1; /*0x69dea4*/
+  this->q05C = (_BYTE)aP1; /*0x69dea4*/
   return (char)aP1; /*0x69dea7*/
 }
 
@@ -11605,11 +11605,11 @@ void __thiscall sub_69E090(char **this)
 
   if ( *(_WORD *)this == 0xFFFF && !this->q004 ) /*0x69e09c*/
   {
-    CCFileClass::Construct(v3, this->House_field_0x2); /*0x69e0ab*/
+    CCFileClass::Construct(v3, this->q008); /*0x69e0ab*/
     EntireFile = (char *)CCFileClass::ReadEntireFile(v3); /*0x69e0b4*/
     if ( EntireFile ) /*0x69e0bb*/
     {
-      this->__pad_00C = EntireFile; /*0x69e0bd*/
+      this->q00C = EntireFile; /*0x69e0bd*/
       this->q004 = 1; /*0x69e0c0*/
     }
     v3[0] = &vt_CCFileClass; /*0x69e0c8*/

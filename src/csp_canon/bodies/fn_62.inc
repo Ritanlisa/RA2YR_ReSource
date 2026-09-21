@@ -393,7 +393,7 @@ namespace gamemd { void* Struct::WideStringCopy(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00624810  DynamicVector::GrowCapacity  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00624810  DynamicVector::GrowCapacity  cls=DynamicVector  sig=csp  renamed_refs=3  residual=- ====
 char DynamicVector::GrowCapacity()
 {
 {
@@ -411,12 +411,12 @@ char DynamicVector::GrowCapacity()
     v5 = __2_YAPAXI_Z(24 * v4);
     memset(v5, 0, 4 * ((unsigned int)(24 * v4) >> 2));
     v7 = (int)v5;
-    v6 = (const void *)this->DynamicVector_field_0x8;
+    v6 = (const void *)this->q008;
     if ( v6 )
     qmemcpy(v5, v6, 24 * *(void**)this);
-    __3_YAXPAX_Z((void *)this->DynamicVector_field_0x8);
+    __3_YAXPAX_Z((void *)this->q008);
     this->Items = v4;
-    this->DynamicVector_field_0x8 = v7;
+    this->q008 = v7;
     return 1;
 }
 }
@@ -429,7 +429,7 @@ int HashTable::ComputeHash(int a2)
 }
 }
 
-// ==== BACKFILL 0x00625990  ComboBoxOwnerDraw::GrowBuffer  cls=ComboBoxOwnerDraw  sig=csp  renamed_refs=6  residual=- ====
+// ==== BACKFILL 0x00625990  ComboBoxOwnerDraw::GrowBuffer  cls=ComboBoxOwnerDraw  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ComboBoxOwnerDraw::GrowBuffer() {
 {
       int v2;
@@ -438,7 +438,7 @@ namespace gamemd { int ComboBoxOwnerDraw::GrowBuffer() {
       int v6;
 
       v2 = *this;
-      if ( *this < this->ComboBoxOwnerDraw_field_0x04 )
+      if ( *this < this->q004 )
         return 0;
       v4 = 2 * v2;
       v6 = 2 * v2;
@@ -449,14 +449,14 @@ namespace gamemd { int ComboBoxOwnerDraw::GrowBuffer() {
       }
       v5 = __2_YAPAXI_Z(4 * v4);
       memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2));
-      if ( this->ComboBoxOwnerDraw_field_0x08 )
+      if ( this->q008 )
       {
-        qmemcpy(v5, (const void *)this->ComboBoxOwnerDraw_field_0x08, 4 * *this);
+        qmemcpy(v5, (const void *)this->q008, 4 * *this);
         v4 = v6;
       }
-      __3_YAXPAX_Z((void *)this->ComboBoxOwnerDraw_field_0x08);
-      this->ComboBoxOwnerDraw_field_0x04 = v4;
-      this->ComboBoxOwnerDraw_field_0x08 = (int)v5;
+      __3_YAXPAX_Z((void *)this->q008);
+      this->q004 = v4;
+      this->q008 = (int)v5;
       return 1;
 }
 } }
@@ -883,7 +883,7 @@ int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x00628740  FileSystem::readFile  cls=FileSystem  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00628740  FileSystem::readFile  cls=FileSystem  sig=csp  renamed_refs=0  residual=q00D ====
 namespace gamemd { int FileSystem::readFile() {
 {
       this->q00C = 1;
@@ -1022,7 +1022,7 @@ unsigned int * VectorClass::ConstructHSV(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00628ED0  FileSystem::writeFile  cls=FileSystem  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00628ED0  FileSystem::writeFile  cls=FileSystem  sig=csp  renamed_refs=0  residual=q00D ====
 namespace gamemd { void* FileSystem::writeFile(int a1, void* a2) {
 {
       int v3;
@@ -1251,7 +1251,7 @@ int ParasiteClass::StubReturn88() const { return 88; }
 // ==== BACKFILL 0x0062AF60  ParasiteClass::StubReturn67  cls=ParasiteClass  sig=csp  renamed_refs=0  residual=- ====
 int ParasiteClass::StubReturn67() const { return 67; }
 
-// ==== BACKFILL 0x0062B5E0  ParticleClass::Construct  cls=ParticleClass  sig=csp  renamed_refs=30  residual=- ====
+// ==== BACKFILL 0x0062B5E0  ParticleClass::Construct  cls=ParticleClass  sig=csp  renamed_refs=19  residual=- ====
 namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
 {
       BuildingTypeClass *v6;
@@ -1283,24 +1283,24 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
       float aP1a;
 
       ObjectClass::ctor((_DWORD *)this);
-      this->ParticleClass_field_0xAC = aP1;
+      this->q0AC = aP1;
       this->q0B0 = 0;
       this->q0B1 = 0;
       this->q0B2 = 0;
-      this->ParticleClass_field_0xB8 = 0;
-      this->ParticleClass_field_0xB4 = 0;
-      this->ParticleClass_field_0xBC = 0;
+      this->q0B8 = 0;
+      this->q0B4 = 0;
+      this->q0BC = 0;
       v6 = (BuildingTypeClass *)aP3;
-      this->ParticleClass_field_0xC0 = 0;
-      this->ParticleClass_field_0xC4 = 0;
-      this->ParticleClass_field_0xC8 = 0;
-      this->ParticleClass_field_0xCC = 0;
-      this->ParticleClass_field_0xD0 = 0;
+      this->q0C0 = 0;
+      this->q0C4 = 0;
+      this->q0C8 = 0;
+      this->q0CC = 0;
+      this->q0D0 = 0;
       this->q0D4 = -1082130432;
-      this->ParticleClass_field_0xD8 = 0;
-      this->ParticleClass_field_0xDC = 0;
-      this->ParticleClass_field_0xE0 = 0;
-      this->q0E4 = *(_DWORD *)(this->ParticleClass_field_0xAC + 764);
+      this->q0D8 = 0;
+      this->q0DC = 0;
+      this->q0E0 = 0;
+      this->q0E4 = *(_DWORD *)(this->q0AC + 764);
       this->q0E8 = *(_DWORD *)v6->vtable1;
       this->q0EC = *(_DWORD *)&v6->vtable1[4];
       this->q0F0 = *(_DWORD *)&v6->vtable1[8];
@@ -1321,7 +1321,7 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
       this->StateAIAdvance = (float)*(int *)aP2->__pad_0;
       this->q11C = v12;
       this->q120 = v11;
-      this->ParticleClass_field_0x124 = v10;
+      this->q124 = v10;
       v13 = *(_BYTE **)(this + 172);
       LOBYTE(v8) = v13[779];
       this->q12D = 0;
@@ -1346,19 +1346,19 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
         v14 = (*(_DWORD *)&HouseClass_Player.__pad_74[24])++;
         *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_74[12] + 4 * v14) = this;
       }
-      if ( *(_DWORD *)(this->ParticleClass_field_0xAC + 788) == 1 )
+      if ( *(_DWORD *)(this->q0AC + 788) == 1 )
         this->q0E4 = (double)(Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536)) % 2)
                                + this->q0E4;
-      v15 = this->ParticleClass_field_0xAC;
+      v15 = this->q0AC;
       this->q12A = *(_WORD *)(v15 + 732);
       if ( *(_DWORD *)(v15 + 788) == 4 )
-        v16 = *(_WORD *)(this->ParticleClass_field_0xAC + 736)
+        v16 = *(_WORD *)(this->q0AC + 736)
             + abs32(Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536)) % 10);
       else
-        v16 = *(_WORD *)(this->ParticleClass_field_0xAC + 736)
+        v16 = *(_WORD *)(this->q0AC + 736)
             + abs32(
                 Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536))
-              % *(_DWORD *)(this->ParticleClass_field_0xAC + 736));
+              % *(_DWORD *)(this->q0AC + 736));
       this->q128 = v16;
       v28 = aP2->field_8;
       if ( (int)v28 <= Cell::GetGroundHeight((IUnknown *)aP2) )
@@ -1386,7 +1386,7 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
       *v9 = v18;
       this->ParticleSystem = v19;
       this->RemainingEC = v20;
-      if ( *(_BYTE *)(this->ParticleClass_field_0xAC + 783) )
+      if ( *(_BYTE *)(this->q0AC + 783) )
       {
         v30 = *(_DWORD *)aP2->__pad_0 - *(_DWORD *)aP3->__pad_0;
         v21 = *(_DWORD *)&aP2->field_2[2] - *(_DWORD *)&aP3->__pad_0[4];
@@ -1401,10 +1401,10 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
           if ( v22 >= *(float *)&aP3 )
             v22 = *(float *)&aP3;
         }
-        aP3 = (AbstractClass *)(*(char *)(this->ParticleClass_field_0xAC + 780) + 1);
+        aP3 = (AbstractClass *)(*(char *)(this->q0AC + 780) + 1);
         this->q12C = Math::RoundToInt(v22);
       }
-      v23 = this->ParticleClass_field_0xAC;
+      v23 = this->q0AC;
       if ( *(int *)(v23 + 712) > 0 )
       {
         if ( *(_BYTE *)(v23 + 724)
@@ -1419,7 +1419,7 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
                                      0,
                                      (IUnknown *)0x7FFFFFFE)
                          * 4.656612877414201e-10;
-          v25 = Color::Lerp2(&aP3, this->ParticleClass_field_0xAC + 724, this->ParticleClass_field_0xAC + 727, *(float *)&v27);
+          v25 = Color::Lerp2(&aP3, this->q0AC + 724, this->q0AC + 727, *(float *)&v27);
           this->q0B0 = *(_WORD *)v25;
           this->q0B2 = v25[2];
         }
@@ -1499,7 +1499,7 @@ namespace ra2 { namespace game { int ObjectClass::ProcessUpdate() {
 }
 } } }
 
-// ==== BACKFILL 0x0062C3A0  ParticleClass::UpdateParticlePhysics  cls=ParticleClass  sig=csp  renamed_refs=7  residual=- ====
+// ==== BACKFILL 0x0062C3A0  ParticleClass::UpdateParticlePhysics  cls=ParticleClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { void ParticleClass::UpdateParticlePhysics() {
 {
       double v2;
@@ -1547,28 +1547,28 @@ namespace gamemd { void ParticleClass::UpdateParticlePhysics() {
       v19 = v8;
       (*(void (__thiscall **)(void *, int *))(LODWORD(v9) + 436))(this, &v17);
       v13 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646);
-      v10 = this->ParticleClass_field_0xAC;
+      v10 = this->q0AC;
       v11 = (double)v13 * 4.656612877414201e-10 * 0.05 + *(double *)(v10 + 688) + *((double *)this + 23);
       *((double *)this + 23) = v11;
       if ( v11 > 1.0 )
       {
-        v12 = this->ParticleClass_field_0xB4;
+        v12 = this->q0B4;
         if ( v12 >= *(_DWORD *)(v10 + 712) - 2 )
         {
-          this->ParticleClass_field_0xB8 = 0;
-          this->ParticleClass_field_0xBC = 1072693248;
+          this->q0B8 = 0;
+          this->q0BC = 1072693248;
         }
         else
         {
-          this->ParticleClass_field_0xB8 = 0;
-          this->ParticleClass_field_0xB4 = v12 + 1;
-          this->ParticleClass_field_0xBC = 0;
+          this->q0B8 = 0;
+          this->q0B4 = v12 + 1;
+          this->q0BC = 0;
         }
       }
 }
 } }
 
-// ==== BACKFILL 0x0062C540  ParticleClass::UpdateAnimationDrift  cls=ParticleClass  sig=csp  renamed_refs=14  residual=- ====
+// ==== BACKFILL 0x0062C540  ParticleClass::UpdateAnimationDrift  cls=ParticleClass  sig=csp  renamed_refs=8  residual=- ====
 namespace gamemd { void ParticleClass::UpdateAnimationDrift() {
 {
       int v2;
@@ -1593,36 +1593,36 @@ namespace gamemd { void ParticleClass::UpdateAnimationDrift() {
             v3 = (int)abs32(Random::State(v5)) % 3 - 1;
           else
             v2 = (int)abs32(Random::State(v5)) % 3 - 1;
-          v6 = v2 + this->ParticleClass_field_0xC0;
-          v7 = v3 + this->ParticleClass_field_0xC4;
-          this->ParticleClass_field_0xC0 = v6;
-          this->ParticleClass_field_0xC4 = v7;
+          v6 = v2 + this->q0C0;
+          v7 = v3 + this->q0C4;
+          this->q0C0 = v6;
+          this->q0C4 = v7;
           if ( v6 >= -5 )
           {
             if ( v6 > 5 )
-              this->ParticleClass_field_0xC0 = 5;
+              this->q0C0 = 5;
           }
           else
           {
-            this->ParticleClass_field_0xC0 = -5;
+            this->q0C0 = -5;
           }
-          v8 = this->ParticleClass_field_0xC4;
+          v8 = this->q0C4;
           if ( v8 >= -5 )
           {
             if ( v8 > 5 )
-              this->ParticleClass_field_0xC4 = 5;
+              this->q0C4 = 5;
           }
           else
           {
-            this->ParticleClass_field_0xC4 = -5;
+            this->q0C4 = -5;
           }
         }
-        this->ParticleClass_field_0xC8 = 0;
+        this->q0C8 = 0;
       }
-      v9 = this->ParticleClass_field_0xAC;
+      v9 = this->q0AC;
       if ( this->StartStateAI < *(_BYTE *)(v9 + 777) )
       {
-        v10 = *(_DWORD *)(this->ParticleClass_field_0xAC + 736)
+        v10 = *(_DWORD *)(this->q0AC + 736)
             - *(unsigned __int16 *)(this + 296)
             + (*(int (__stdcall **)(int))(this->vtable2 + 16))(this + 4);
         if ( !(v10 % (*(char *)(v9 + 779) + ((*(int (__stdcall **)(int))(this->vtable2 + 16))(this + 4) & 1))) )
@@ -1640,7 +1640,7 @@ namespace gamemd { int ParticleClass::Dispatch() {
 {
       int result;
 
-      result = *(_DWORD *)(this->ParticleClass_field_0xAC + 788);
+      result = *(_DWORD *)(this->q0AC + 788);
       switch ( result )
       {
         case 0:
@@ -1786,7 +1786,7 @@ namespace gamemd { int ParticleClass::vt_entry_1E8() {
     int v3;
     int v5[2];
     int v6[2];
-    v2 = *(int *)(this->ParticleClass_field_0xAC + 788);
+    v2 = *(int *)(this->q0AC + 788);
     if ( v2 >= 0 )
   {
     if ( v2 <= 1 )
@@ -1797,13 +1797,13 @@ namespace gamemd { int ParticleClass::vt_entry_1E8() {
     Coord::To_Screen(g_TacticalClass_Instance, (int *)(this + 232), v5);
     v3 = CalcMathFacing8(v6, v5);
     if ( v3 == 2 || v3 == 6 )
-    return this->StartStateAI + 2 * *(char *)(this->ParticleClass_field_0xAC + 777);
+    return this->StartStateAI + 2 * *(char *)(this->q0AC + 777);
     if ( v3 != 4 && v3 )
       {
     if ( v3 == 1 || v3 == 5 )
-    return this->StartStateAI + *(char *)(this->ParticleClass_field_0xAC + 777);
+    return this->StartStateAI + *(char *)(this->q0AC + 777);
     if ( v3 == 3 || v3 == 7 )
-    return this->StartStateAI + 3 * *(char *)(this->ParticleClass_field_0xAC + 777);
+    return this->StartStateAI + 3 * *(char *)(this->q0AC + 777);
     return 0;
       }
     return this->StartStateAI;
@@ -1840,7 +1840,7 @@ return 22;
 // ==== BACKFILL 0x0062D990  ParticleClass::Stub  cls=ParticleClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int ParticleClass::Stub() {
 {
-    return this->ParticleClass_field_0xAC;
+    return this->q0AC;
 }
 } }
 
@@ -1858,7 +1858,7 @@ namespace gamemd { void* ParticleClass::UpdateParticle(int a1) {
       ObjectClass::Undeploy((#374 *)this);
       LOBYTE(v3) = 1;
       AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, v3);
-      this->ParticleClass_field_0xAC = 0;
+      this->q0AC = 0;
       v6 = this;
       v4 = (*(int (__thiscall **)(char *, void ***))(*(_DWORD *)&HouseClass_Player.__pad_74[8] + 16))(
              &HouseClass_Player.__pad_74[8],
@@ -2157,7 +2157,7 @@ namespace gamemd { int ParticleSystemClass::CreateParticle(void* a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x0062E4C0  ParticleClass::CreateInstance  cls=ParticleClass  sig=csp  renamed_refs=9  residual=- ====
+// ==== BACKFILL 0x0062E4C0  ParticleClass::CreateInstance  cls=ParticleClass  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { int ParticleClass::CreateInstance(void* a1, float a2, int a3) {
 {
       int v5;
@@ -2175,14 +2175,14 @@ namespace gamemd { int ParticleClass::CreateInstance(void* a1, float a2, int a3)
       int *v17;
       int v18;
 
-      if ( *(_DWORD *)(this->ParticleClass_field_0xAC + 660) == -1 )
+      if ( *(_DWORD *)(this->q0AC + 660) == -1 )
         return 0;
       v5 = __2_YAPAXI_Z(0x138u);
       if ( !v5 )
         return 0;
       v6 = ParticleClass::Construct(
              v5,
-             *(ParticleClass **)(*(_DWORD *)&HouseClass_Player.__pad_3C[20] + 4 * *(_DWORD *)(this->ParticleClass_field_0xAC + 660)),
+             *(ParticleClass **)(*(_DWORD *)&HouseClass_Player.__pad_3C[20] + 4 * *(_DWORD *)(this->q0AC + 660)),
              (ParticleClass *)aP1,
              (AbstractClass *)LODWORD(aP3),
              (IUnknown *)this);
@@ -2191,15 +2191,15 @@ namespace gamemd { int ParticleClass::CreateInstance(void* a1, float a2, int a3)
       v7 = (TechnoClass *)a4;
       if ( a4 <= 0 )
         return 0;
-      v8 = this->ParticleClass_field_0xC4;
-      if ( this->ParticleClass_field_0xCC < v8
+      v8 = this->q0C4;
+      if ( this->q0CC < v8
         || (this->q0C9 || !v8)
-        && (v9 = this->ParticleClass_field_0xD0, v9 > 0)
-        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->ParticleClass_field_0xBC + 8))(this + 188, v8 + v9, 0) )
+        && (v9 = this->q0D0, v9 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->q0BC + 8))(this + 188, v8 + v9, 0) )
       {
-        v10 = this->ParticleClass_field_0xCC;
-        v11 = this->ParticleClass_field_0xC0;
-        this->ParticleClass_field_0xCC = v10 + 1;
+        v10 = this->q0CC;
+        v11 = this->q0C0;
+        this->q0CC = v10 + 1;
         *(_DWORD *)(v11 + 4 * v10) = v6;
       }
       v12 = *(TechnoClass **)(this + 204);

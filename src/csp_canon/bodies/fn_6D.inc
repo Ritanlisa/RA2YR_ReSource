@@ -140,7 +140,7 @@ namespace gamemd { void* HouseClass::updateFactoryQueue() {
 }
 } }
 
-// ==== BACKFILL 0x006D0F00  ObjectClass::PreDraw  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x006D0F00  ObjectClass::PreDraw  cls=ObjectClass  sig=csp  renamed_refs=0  residual=q5545 ====
 namespace ra2 { namespace game { int ObjectClass::PreDraw() {
 {
       int v1;
@@ -592,7 +592,7 @@ namespace gamemd { int TacticalClass::ClickFindOverlay(void* a1, void* a2, int a
 }
 } }
 
-// ==== BACKFILL 0x006D4DB0  HouseClass::SetOwnerName  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x006D4DB0  HouseClass::SetOwnerName  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { void* HouseClass::SetOwnerName(void* a1, int a2) {
 {
       CampaignScore *result;
@@ -604,7 +604,7 @@ namespace gamemd { void* HouseClass::SetOwnerName(void* a1, int a2) {
       }
       else
       {
-        this->arrayIndex = 0;
+        this->vtable5 = 0;
         this->psychicDetectionBuildings = -1;
         this->psychicDetectionBuildings = a3;
         return (wchar_t *)a3;
@@ -622,7 +622,7 @@ void E4Recv_6D4E00::sub_6D4E00()
 }
 }
 
-// ==== BACKFILL 0x006D5030  RadarClass::DrawBlips  cls=RadarClass  sig=csp  renamed_refs=3  residual=- ====
+// ==== BACKFILL 0x006D5030  RadarClass::DrawBlips  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RadarClass::DrawBlips(int a1) {
 {
       AbstractClass *v3;
@@ -736,7 +736,7 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
               v57 = v54;
               v58 = GroundHeight;
               v11 = Coord::To_ScreenRaw(v52, &v56);
-              v12 = this->RadarClass_field_0xB0;
+              v12 = this->q0B0;
               v13 = this->q0B4;
               v48 = (IUnknown *)*v11;
               v51 = v11[1] - v13;
@@ -797,7 +797,7 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
             *(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3796],
             &v53);
           v17 = Coord::To_ScreenRaw(v52, &v53);
-          v18 = this->RadarClass_field_0xB0;
+          v18 = this->q0B0;
           v19 = this->q0B4;
           v48 = (IUnknown *)*v17;
           v20 = v17[1];
@@ -889,7 +889,7 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
                 v36 = v35 - HIDWORD(v35);
                 v37 = 7680 * ((((__int16)v49 << 8) + 128) / 256);
                 v53 = -15360 * (((SHIWORD(v49) << 8) + 128) / 256) / 2 + (v36 >> 1);
-                v38 = v53 / 256 - this->RadarClass_field_0xB0;
+                v38 = v53 / 256 - this->q0B0;
                 v52[1] = (7680 * (((SHIWORD(v49) << 8) + 128) / 256) / 2 + (((int)v37 - HIDWORD(v37)) >> 1)) / 256
                        - this->q0B4;
                 v52[0] = v38 - 30;

@@ -868,7 +868,7 @@ char Vector::Grow()
     void *v5;
     int v6;
     v2 = *(void**)this;
-    if ( *(void**)this < this->Vector_field_0x4 )
+    if ( *(void**)this < this->q004 )
     return 0;
     v4 = 2 * v2;
     v6 = 2 * v2;
@@ -879,19 +879,19 @@ char Vector::Grow()
   }
     v5 = __2_YAPAXI_Z(4 * v4);
     memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2));
-    if ( this->Vector_field_0x8 )
+    if ( this->q008 )
   {
-    qmemcpy(v5, (const void *)this->Vector_field_0x8, 4 * *(void**)this);
+    qmemcpy(v5, (const void *)this->q008, 4 * *(void**)this);
     v4 = v6;
   }
-    __3_YAXPAX_Z((void *)this->Vector_field_0x8);
-    this->Vector_field_0x4 = v4;
-    this->Vector_field_0x8 = (int)v5;
+    __3_YAXPAX_Z((void *)this->q008);
+    this->q004 = v4;
+    this->q008 = (int)v5;
     return 1;
 }
 }
 
-// ==== BACKFILL 0x007AF000  DynamicVector::EnsureCapacity  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x007AF000  DynamicVector::EnsureCapacity  cls=DynamicVector  sig=csp  renamed_refs=4  residual=- ====
 char DynamicVector::EnsureCapacity()
 {
 {
@@ -911,14 +911,14 @@ char DynamicVector::EnsureCapacity()
   }
     v5 = __2_YAPAXI_Z(4 * v4);
     memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2));
-    if ( this->DynamicVector_field_0x8 )
+    if ( this->q008 )
   {
-    qmemcpy(v5, (const void *)this->DynamicVector_field_0x8, 4 * *(void**)this);
+    qmemcpy(v5, (const void *)this->q008, 4 * *(void**)this);
     v4 = v6;
   }
-    __3_YAXPAX_Z((void *)this->DynamicVector_field_0x8);
+    __3_YAXPAX_Z((void *)this->q008);
     this->Items = v4;
-    this->DynamicVector_field_0x8 = (int)v5;
+    this->q008 = (int)v5;
     return 1;
 }
 }

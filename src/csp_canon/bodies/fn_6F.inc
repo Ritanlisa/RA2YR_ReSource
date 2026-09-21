@@ -392,7 +392,7 @@ namespace ra2 { namespace game { void* TechnoClass::GetTurretOffset(void* a1, in
 }
 } } }
 
-// ==== BACKFILL 0x006F4500  TechnoClass::DTOR  cls=TechnoClass  sig=csp  renamed_refs=20  residual=- ====
+// ==== BACKFILL 0x006F4500  TechnoClass::DTOR  cls=TechnoClass  sig=csp  renamed_refs=7  residual=- ====
 int TechnoClass::DTOR()
 {
     PlanningTokenClass *v2 = this->planningToken;
@@ -402,28 +402,28 @@ int TechnoClass::DTOR()
         Sidebar::CancelSidebarProductionQueue(v2);
         this->planningToken = 0;
     }
-    CaptureManagerClass *v3 = this->rockerLinkedUnit;
+    CaptureManagerClass *v3 = this->captureManager;
     if ( v3 )
     {
         v3->vtRel32(1);
-        this->rockerLinkedUnit = 0;
+        this->captureManager = 0;
     }
-    SpawnManagerClass *v4 = this->captureManager;
+    SpawnManagerClass *v4 = this->spawnManager;
     if ( v4 )
     {
         v4->vtRel32(1);
-        this->captureManager = 0;
+        this->spawnManager = 0;
     }
-    SlaveManagerClass *v5 = this->mindControlledBy_a_unit;
+    SlaveManagerClass *v5 = this->slaveManager;
     if ( v5 )
     {
         TechnoClass::MutateAll(v5, 0, 0);
-        SlaveManagerClass *v6 = this->mindControlledBy_a_unit;
+        SlaveManagerClass *v6 = this->slaveManager;
         if ( v6 )
         {
             v6->vtRel32(1);
         }
-        this->mindControlledBy_a_unit = 0;
+        this->slaveManager = 0;
     }
     TemporalClass *v7 = this->temporalUsing;
     if ( v7 )
@@ -431,20 +431,20 @@ int TechnoClass::DTOR()
         v7->vtRel248();
         this->temporalUsing = 0;
     }
-    AirstrikeClass *v8 = this->owningHouseIndex0;
+    AirstrikeClass *v8 = this->airstrike;
     if ( v8 && v8[19] == this )
     {
         v8->vtRel32(1);
-        this->owningHouseIndex0 = 0;
+        this->airstrike = 0;
     }
     AudioFile::Stop(&this->turretRotateSoundController);
     AudioFileClass::Release(&this->turretRotateSoundController);
     AudioFile::Stop(&this->gattlingSoundController);
     AudioFileClass::Release(&this->gattlingSoundController);
-    AudioFile::Stop(&this->audioController5);
-    AudioFileClass::Release(&this->audioController5);
-    AudioFileClass::Release(&this->audioController6);
-    this->Owner = 0;
+    AudioFile::Stop(&this->unusedGattlingSoundController);
+    AudioFileClass::Release(&this->unusedGattlingSoundController);
+    AudioFileClass::Release(&this->queuedVoiceSoundController);
+    this->owner = 0;
     this->isOwnedByCurrentPlayer = 0;
     TechnoClass* v17 = this;
     TechnoClass_Array;
@@ -578,17 +578,17 @@ int sub_6F6030(int * a1, unsigned int * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x006F9DB0  TechnoClass::GetID  cls=TechnoClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x006F9DB0  TechnoClass::GetID  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::GetID() const {
-return this->Owner->relatedTagsCount;
+return this->owner->relatedTagsCount;
 }
 
-// ==== BACKFILL 0x006F9DC0  TechnoClass::GetTarget  cls=TechnoClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x006F9DC0  TechnoClass::GetTarget  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::GetTarget() const {
-return this->Owner;
+return this->owner;
 }
 
-// ==== BACKFILL 0x006FBFA0  TechnoClass::ExecuteMoveCommand  cls=TechnoClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x006FBFA0  TechnoClass::ExecuteMoveCommand  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int TechnoClass::ExecuteMoveCommand() {
 {
     ScreenCaptureCommandClass *result;
@@ -598,7 +598,7 @@ namespace ra2 { namespace game { int TechnoClass::ExecuteMoveCommand() {
     v3 = (void **)this->attachedTag;
     if ( v3 )
     TeamClass::Update_0(v3, 33, (AbstractClass *)this, *(IUnknown **)&g_OverlayTypeConfig.__pad_579C[6844], 0, 0);
-    if ( (unsigned char)House::IsHumanPlayer(*((HouseClass **)(this) + 135)) || *(char *)(*(int *)(this->Owner + 52) + 422) )
+    if ( (unsigned char)House::IsHumanPlayer(*((HouseClass **)(this) + 135)) || *(char *)(*(int *)(this->owner + 52) + 422) )
     {
     if ( g_MoveFeedback )
     this->SelectRandomTarget();

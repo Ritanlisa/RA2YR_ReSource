@@ -211,7 +211,7 @@ void E4Recv_431D90::sub_431D90()
 }
 }
 
-// ==== BACKFILL 0x00431E80  CCFileClass::SetName  cls=BufferIOFileClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00431E80  CCFileClass::SetName  cls=BufferIOFileClass  sig=csp  renamed_refs=0  residual=q029 ====
 namespace gamemd { int CCFileClass::SetName(void* a1) {
 {
       if ( this->vt1() && this->q029 )
@@ -259,7 +259,7 @@ namespace gamemd { bool BufferIOFileClass::Write() {
 }
 } }
 
-// ==== BACKFILL 0x004324B0  BufferIOFileClass::SeekInternal  cls=BufferIOFileClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x004324B0  BufferIOFileClass::SeekInternal  cls=BufferIOFileClass  sig=csp  renamed_refs=0  residual=q029 ====
 namespace gamemd { int BufferIOFileClass::SeekInternal() {
 {
       int v4;
@@ -339,7 +339,7 @@ namespace gamemd { int BufferIOFileClass::SeekInternal() {
 }
 } }
 
-// ==== BACKFILL 0x004325A0  BufferIOFileClass::SetSize  cls=BufferIOFileClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x004325A0  BufferIOFileClass::SetSize  cls=BufferIOFileClass  sig=csp  renamed_refs=0  residual=q025,q029 ====
 namespace gamemd { int BufferIOFileClass::SetSize() {
 {
       if ( this->q025 && this->q029 )
@@ -1464,7 +1464,7 @@ float * VoxelAnimClass::QuaternionToMatrix(float * a2)
 }
 }
 
-// ==== BACKFILL 0x00439A10  JumpjetLocomotionClass::ComputeVectorLengthMetric  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=7  residual=- ====
+// ==== BACKFILL 0x00439A10  JumpjetLocomotionClass::ComputeVectorLengthMetric  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=1  residual=- ====
 double JumpjetLocomotionClass::ComputeVectorLengthMetric()
 {
 {
@@ -1481,20 +1481,20 @@ double JumpjetLocomotionClass::ComputeVectorLengthMetric()
     int v13;
     int v14[3];
     v2 = Math::RoundToInt(this->vtable3);
-    v3 = this->TurnRate;
+    v3 = this->Speed;
     v14[0] = v2;
     v4 = Math::RoundToInt(v3);
-    v5 = this->Speed;
+    v5 = this->Climb;
     v14[1] = v4;
     v14[2] = Math::RoundToInt(v5);
     GroundHeight = Cell::GetGroundHeight(v14);
-    v7 = Math::RoundToInt(this->Speed - (double)GroundHeight);
+    v7 = Math::RoundToInt(this->Climb - (double)GroundHeight);
     v10 = v7;
     if ( (*((int *)Coord::To_Cell(&DataGlobal_87F7E8, v14) + 80) & 0x100) != 0 && v7 >= DataGlobal_89C76C )
     v10 = v7 - DataGlobal_89C76C;
-    v11 = Math::RoundToInt(this->Climb);
-    v12 = Math::RoundToInt(this->Crash);
-    v13 = Math::RoundToInt((double)v10 * *(double *)(this + 8) + this->Height);
+    v11 = Math::RoundToInt(this->Crash);
+    v12 = Math::RoundToInt(this->Height);
+    v13 = Math::RoundToInt((double)v10 * *(double *)(this + 8) + this->Accel);
     v8 = Math::Sqrt((double)v13 * (double)v13 + (double)v11 * (double)v11 + (double)v12 * (double)v12);
     return (double)(int)Math::RoundToInt(v8);
 }
@@ -1662,7 +1662,7 @@ void Vector::Clear()
     __3_YAXPAX_Z(*(void **)this);
     *(int *)this = 0;
     this->Vector_field_0x4 = 0;
-    this->Vector_field_0x8 = 0;
+    this->q008 = 0;
 }
 }
 

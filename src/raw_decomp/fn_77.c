@@ -176,11 +176,11 @@ char *__thiscall sub_770270(char *this, int a2)
   *((_DWORD *)this + 235) = Timer::GetTicks(); /*0x7702f6*/
   *((_DWORD *)this + 237) = 0; /*0x7702fc*/
   this->q3B8 = 1; /*0x770305*/
-  this->__pad_3BC = 0; /*0x77030c*/
+  this->q3BC = 0; /*0x77030c*/
   VectorClass::WstringConstructor((_DWORD *)this + 240, 0, 0); /*0x770312*/
   this->q3C0 = &vt_DynamicVectorClass_Wstring; /*0x770317*/
   *((_DWORD *)this + 245) = 10; /*0x77031d*/
-  this->__pad_03D = 0; /*0x770324*/
+  this->q03D = 0; /*0x770324*/
   *((_DWORD *)this + 246) = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
   String::Assign((char **)&a2, MEMORY[0x8491C4]); /*0x77033b*/
@@ -1060,7 +1060,7 @@ void __thiscall sub_7714B0(_DWORD *this, int a2, char a3, int a4)
         v8 = v7 - 1; /*0x7714d5*/
         v9 = v6; /*0x7714d6*/
         for ( this->q0F4 = v8; v9 < this->q0F4; ++v9 ) /*0x7714e0*/
-          String::Reassign((char **)(this->__pad_3C4 + 4 * v9), (const char **)(this->__pad_3C4 + 4 * v9 + 4)); /*0x7714f0*/
+          String::Reassign((char **)(this->q3C4 + 4 * v9), (const char **)(this->q3C4 + 4 * v9 + 4)); /*0x7714f0*/
       }
       v10 = v6--; /*0x771506*/
     }
@@ -1091,7 +1091,7 @@ void __thiscall sub_7714B0(_DWORD *this, int a2, char a3, int a4)
       {
         v16 = this->q0F4; /*0x7715e0*/
         this->q0F4 = v16 + 1; /*0x7715eb*/
-        String::Reassign((char **)(this->__pad_3C4 + 4 * v16), (const char **)v17); /*0x7715f4*/
+        String::Reassign((char **)(this->q3C4 + 4 * v16), (const char **)v17); /*0x7715f4*/
       }
       if ( a3 ) /*0x7715ff*/
         ++this->q3BC; /*0x771601*/
@@ -1564,19 +1564,19 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   WeaponTypeClass *v3; // eax
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x771c7a*/
-  this->Burst = 0; /*0x771c87*/
-  this->Projectile = 1; /*0x771c8d*/
-  this->Damage = 0; /*0x771c97*/
-  this->Speed = 0; /*0x771c9d*/
-  this->Warhead = 0; /*0x771ca3*/
-  this->ROF = 0; /*0x771ca9*/
-  this->Range = 0; /*0x771caf*/
-  this->MinimumRange = 0; /*0x771cb6*/
-  this->Report = 0; /*0x771cbf*/
+  this->AmbientDamage = 0; /*0x771c87*/
+  this->Burst = 1; /*0x771c8d*/
+  this->Projectile = 0; /*0x771c97*/
+  this->Damage = 0; /*0x771c9d*/
+  this->Speed = 0; /*0x771ca3*/
+  this->Warhead = 0; /*0x771ca9*/
+  this->ROF = 0; /*0x771caf*/
+  this->Range = 0; /*0x771cb6*/
+  this->MinimumRange = 0; /*0x771cbf*/
   VectorClass::Construct(this + 47, 0, 0); /*0x771cc5*/
   this->AttachedParticleSystem = 10; /*0x771cca*/
   this->OpenToppedAnim = 0; /*0x771cd1*/
-  this->DownReport = &vt_TypeList_int; /*0x771cd4*/
+  this->Report = &vt_TypeList_int; /*0x771cd4*/
   VectorClass::Construct(this + 54, 0, 0); /*0x771ce4*/
   this->TerrainFire = 10; /*0x771ce9*/
   this->CellRangefinding = 0; /*0x771cf0*/
@@ -1584,15 +1584,15 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   AnimTypeVector::Constructor(this + 61, 0, 0); /*0x771d03*/
   this->IsRadBeam = 10; /*0x771d08*/
   this->AreaFire = 0; /*0x771d0f*/
-  this->InfiniteMindControl = &vt_TypeList_AnimTypeClass_const; /*0x771d12*/
-  this->IsMagBeam = 0; /*0x771d18*/
+  this->q0F4 = &vt_TypeList_AnimTypeClass_const; /*0x771d12*/
+  this->q110 = 0; /*0x771d18*/
   this->q114 = 0; /*0x771d1e*/
   this->q118 = 0; /*0x771d24*/
   this->q11C = 0; /*0x771d2a*/
   this->q120 = 0; /*0x771d30*/
   *((_BYTE *)this + 289) = 0; /*0x771d36*/
   this->q488 = 0; /*0x771d3c*/
-  this->__pad_48C = 0; /*0x771d42*/
+  this->q48C = 0; /*0x771d42*/
   this->q124 = 0; /*0x771d48*/
   this->q128 = 0; /*0x771d60*/
   this->q12C = 0; /*0x771d78*/
@@ -1608,11 +1608,11 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   this->q13C = 0; /*0x771dda*/
   this->q140 = 0; /*0x771de0*/
   this->q504 = 1; /*0x771de6*/
-  this->__pad_508 = 0; /*0x771ded*/
+  this->q508 = 0; /*0x771ded*/
   this->q143 = 1; /*0x771df3*/
   this->q144 = 0; /*0x771dfa*/
   this->q514 = 0; /*0x771e00*/
-  this->__pad_518 = 0; /*0x771e06*/
+  this->q518 = 0; /*0x771e06*/
   this->q147 = 0; /*0x771e0f*/
   this->q148 = 0; /*0x771e16*/
   this->q149 = 0; /*0x771e1c*/
@@ -1627,7 +1627,7 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   this->q152 = 0; /*0x771e53*/
   this->q153 = 0; /*0x771e59*/
   this->q550 = 0; /*0x771e5f*/
-  this->__pad_554 = 0; /*0x771e65*/
+  this->q554 = 0; /*0x771e65*/
   this->q158 = 0; /*0x771e6b*/
   this->q15C = 0; /*0x771e71*/
   *this = &WeaponTypeClass::`vftable'; /*0x771e77*/
@@ -1654,9 +1654,9 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
 _DWORD *__thiscall WeaponTypeClass::loadWeaponProperties(_DWORD *this, AbstractTypeClass *aP1)
 {
   AbstractTypeClass::Init((int)this, aP1); /*0x771f08*/
-  this->DownReport = &vt_TypeList_int; /*0x771f12*/
+  this->Report = &vt_TypeList_int; /*0x771f12*/
   this->q0D8 = &vt_TypeList_int; /*0x771f18*/
-  this->InfiniteMindControl = &vt_TypeList_AnimTypeClass_const; /*0x771f1e*/
+  this->q0F4 = &vt_TypeList_AnimTypeClass_const; /*0x771f1e*/
   *this = &WeaponTypeClass::`vftable'; /*0x771f28*/
   this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771f2e*/
   this->vtable3 = &WeaponTypeClass::`vftable'; /*0x771f35*/
@@ -2236,14 +2236,14 @@ int __thiscall WeaponTypeClass::CalculateSpeed(_DWORD *this)
   int result; // eax
   double WeatherConBoltExplosion; // [esp+4h] [ebp-8h]
 
-  result = this->Damage; /*0x7729f6*/
+  result = this->Projectile; /*0x7729f6*/
   if ( result && !*(_DWORD *)(result + 732) ) /*0x772a00*/
   {
     WeatherConBoltExplosion = (double)MEMORY[0x8871E0][1].?; /*0x772a1e*/
     if ( *(_BYTE *)(result + 661) ) /*0x772a16*/
       WeatherConBoltExplosion = RulesClass::GetFiringDistance(); /*0x772a29*/
-    result = TechnoClass::ComputeScanRange((void *)this->MinimumRange, WeatherConBoltExplosion); /*0x772a3d*/
-    this->Warhead = result; /*0x772a42*/
+    result = TechnoClass::ComputeScanRange((void *)this->Range, WeatherConBoltExplosion); /*0x772a3d*/
+    this->Speed = result; /*0x772a42*/
   }
   return result; /*0x772a48*/
 }
@@ -3265,19 +3265,19 @@ int sub_774100()
 _DWORD *__thiscall WinModemClass::Construct(_DWORD *this)
 {
   *this = &WinModemClass::`vftable'; /*0x774128*/
-  this->WinModemClass_field_0x24 = __2_YAPAXI_Z(0x2000); /*0x774133*/
+  this->q024 = __2_YAPAXI_Z(0x2000); /*0x774133*/
   this->q015 = 0; /*0x77413b*/
   this->q016 = 0; /*0x77413e*/
-  this->WinModemClass_field_0x14 = 0; /*0x774141*/
+  this->q014 = 0; /*0x774141*/
   *((_BYTE *)this + 81) = 0; /*0x774144*/
   this->q068 = 0; /*0x774147*/
   this->Member100 = 0; /*0x77414a*/
-  this->WinModemClass_field_0x04 = 0; /*0x77414d*/
-  this->WinModemClass_field_0x08 = 0; /*0x774150*/
-  this->WinModemClass_field_0x0C = 0; /*0x774153*/
-  this->WinModemClass_field_0x10 = 0; /*0x774156*/
-  this->WinModemClass_field_0x14 = 0; /*0x774159*/
-  this->WinModemClass_field_0x18 = 0; /*0x77415c*/
+  this->q004 = 0; /*0x77414d*/
+  this->q008 = 0; /*0x774150*/
+  this->q00C = 0; /*0x774153*/
+  this->q010 = 0; /*0x774156*/
+  this->q014 = 0; /*0x774159*/
+  this->q018 = 0; /*0x77415c*/
   this->q05C = -1; /*0x77415f*/
   return this; /*0x774168*/
 }
@@ -3462,7 +3462,7 @@ int __thiscall WinModemClass::AddRef(int this, const char *a2, DWORD a3, BYTE a4
     CommTimeouts.WriteTotalTimeoutConstant = 1000; /*0x7745f0*/
     if ( !SetCommTimeouts(FileA, &CommTimeouts) ) /*0x7745f4*/
       Debug::Log(); /*0x774604*/
-    (*(void (__thiscall **)(int, int))(this->WinModemClass_field_0x10)(this, 1); /*0x774612*/
+    (*(void (__thiscall **)(int, int))(this->q010)(this, 1); /*0x774612*/
     if ( ClearCommError(*(HANDLE *)(this + 92), &Errors, &Stat) ) /*0x774623*/
     {
       v9 = (NullModemClass *)Errors; /*0x77462d*/
@@ -3773,11 +3773,11 @@ int __thiscall WinModemClass::ReadBytes(void (**this)(), WinModemClass *aP1, Win
     v8 = this->Member100; /*0x774b65*/
     if ( v8 ) /*0x774b6a*/
     {
-      if ( *((_BYTE *)this->WinModemClass_field_0x24 + (_DWORD)this->q015) != 13 ) /*0x774b78*/
+      if ( *((_BYTE *)this->q024 + (_DWORD)this->q015) != 13 ) /*0x774b78*/
         v8(); /*0x774b7a*/
     }
     aP1 = (WinModemClass *)((char *)aP1 + 1); /*0x774b82*/
-    HIBYTE(aP1[-1].WinModemClass_field_0x38) = *((_BYTE *)this->WinModemClass_field_0x24 + (_DWORD)this->q015); /*0x774b86*/
+    HIBYTE(aP1[-1].WinModemClass_field_0x38) = *((_BYTE *)this->q024 + (_DWORD)this->q015); /*0x774b86*/
     v7 = (WinModemClass *)((char *)v7 - 1); /*0x774b92*/
     this->q015 = (void (*)())(((unsigned __int16)this->q015 + 1) & 0x1FFF); /*0x774b93*/
   }
@@ -4120,7 +4120,7 @@ LABEL_16:
     }
 LABEL_21:
     memset(Str, 0, sizeof(Str)); /*0x7752cf*/
-    (*(void (__thiscall **)(int, int, char *, int, int))(this->WinModemClass_field_0x14)(this, v11, Str, 80, a8); /*0x7752e6*/
+    (*(void (__thiscall **)(int, int, char *, int, int))(this->q014)(this, v11, Str, 80, a8); /*0x7752e6*/
     if ( !strcmp(Str, &g_INI_Key_Lighting.__pad_20[4]) ) /*0x77531d*/
       return 3; /*0x775437*/
     if ( strstr(Str, MEMORY[0x81FD14]) ) /*0x77532d*/
@@ -4226,8 +4226,8 @@ int __thiscall WinModemClass::LogCommErrors(_DWORD *this, NullModemClass *aP1, c
     if ( (BYTE1(aP1) & 1) != 0 ) /*0x775572*/
     {
       Debug::Log(); /*0x775579*/
-      result = this->__pad_018 + 1; /*0x775584*/
-      this->__pad_018 = result; /*0x775585*/
+      result = this->q018 + 1; /*0x775584*/
+      this->q018 = result; /*0x775585*/
     }
   }
   if ( (a3 & 1) != 0 ) /*0x77558f*/
@@ -7120,10 +7120,10 @@ void *__thiscall LoadAccountInfoWOL_Load(
   this->q024 = aP7; /*0x7796d6*/
   this->q008 = aP6; /*0x7796dd*/
   this->q028 = aP8; /*0x7796e4*/
-  this->__pad_00C = aP10; /*0x7796eb*/
+  this->q00C = aP10; /*0x7796eb*/
   this->q02C = aP9; /*0x7796f2*/
   this->q034 = aP11; /*0x7796f9*/
-  this->__pad_038 = (_BYTE)aP12; /*0x779700*/
+  this->q038 = (_BYTE)aP12; /*0x779700*/
   WideString::AssignFromPtr((wchar_t **)this + 15, (const wchar_t **)aP14); /*0x779703*/
   WideString::AssignFromPtr((wchar_t **)this + 16, (const wchar_t **)aP13); /*0x779710*/
   *(_DWORD *)this = &PlayerProfile::`vftable'; /*0x779715*/

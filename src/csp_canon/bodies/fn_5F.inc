@@ -2363,13 +2363,13 @@ void VectorClass::Destructor()
 {
     void *v2;
     v2 = this->Items;
-    this->DynamicVector_field_0x10 = 0;
+    this->q010 = 0;
     if ( v2 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v2);
     this->Items = (void*)(0);
   }
     this->IsAllocated = 0;
-    this->DynamicVector_field_0x8 = 0;
+    this->q008 = 0;
 }
 }

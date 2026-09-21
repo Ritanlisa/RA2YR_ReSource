@@ -571,7 +571,7 @@ bool __thiscall sub_660840(void *this)
     }
     while ( v2 >= 0 ); /*0x6608cb*/
   }
-  if ( (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->LoadGame_field_0x0C)(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
+  if ( (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q00C)(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
     return 0; /*0x6608e8*/
   v9 = 0; /*0x6608ed*/
   if ( v13 > 0 ) /*0x6608f1*/
@@ -588,14 +588,14 @@ bool __thiscall sub_660840(void *this)
       {
         v11 = 0; /*0x66091b*/
       }
-      if ( (*(int (__stdcall **)(void *, _DWORD *, int, _DWORD))(this->LoadGame_field_0x0C)(this, v11, 64, 0) < 0 ) /*0x660929*/
+      if ( (*(int (__stdcall **)(void *, _DWORD *, int, _DWORD))(this->q00C)(this, v11, 64, 0) < 0 ) /*0x660929*/
         break; /*0x660929*/
       if ( ++v9 >= v13 ) /*0x660932*/
-        return (*(int (__stdcall **)(void *, __int16 *, int, _DWORD))(this->LoadGame_field_0x0C)(this, &word_B04D78, 4, 0) >= 0; /*0x660932*/
+        return (*(int (__stdcall **)(void *, __int16 *, int, _DWORD))(this->q00C)(this, &word_B04D78, 4, 0) >= 0; /*0x660932*/
     }
     return 0; /*0x660929*/
   }
-  return (*(int (__stdcall **)(void *, __int16 *, int, _DWORD))(this->LoadGame_field_0x0C)(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
+  return (*(int (__stdcall **)(void *, __int16 *, int, _DWORD))(this->q00C)(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
 }
 
 
@@ -935,12 +935,12 @@ char __thiscall sub_660F10(_DWORD *this, int a2)
   int v3; // eax
   int v4; // edx
 
-  v2 = this->DynamicVector_field_0x10; /*0x660f10*/
+  v2 = this->q010; /*0x660f10*/
   v3 = a2; /*0x660f13*/
   if ( a2 >= v2 ) /*0x660f19*/
     return 0; /*0x660f3c*/
   v4 = v2 - 1; /*0x660f1b*/
-  this->DynamicVector_field_0x10 = v4; /*0x660f1e*/
+  this->q010 = v4; /*0x660f1e*/
   if ( a2 < v4 ) /*0x660f21*/
   {
     do /*0x660f34*/
@@ -948,7 +948,7 @@ char __thiscall sub_660F10(_DWORD *this, int a2)
       ++v3; /*0x660f27*/
       *(_DWORD *)(this->Items + 4 * v3 - 4) = *(_DWORD *)(this->Items + 4 * v3); /*0x660f2b*/
     }
-    while ( v3 < this->DynamicVector_field_0x10 ); /*0x660f34*/
+    while ( v3 < this->q010 ); /*0x660f34*/
   }
   return 1; /*0x660f39*/
 }
@@ -1022,18 +1022,18 @@ _BYTE *__thiscall sub_661020(_BYTE *this, int a2, int a3, float a4)
 
   v4 = 1.0 - a4; /*0x661028*/
   *this = Math::RoundToInt(v4); /*0x66109d*/
-  this->q001 = Math::RoundToInt(v4); /*0x661105*/
+  this->q004 = Math::RoundToInt(v4); /*0x661105*/
   v6 = v4 * (double)*(unsigned __int8 *)(a2 + 2) + (double)*(unsigned __int8 *)(a3 + 2) * a4; /*0x661124*/
   if ( v6 > 255.0 || v6 >= 0.0 ) /*0x661142*/
   {
     if ( v6 > 255.0 ) /*0x661169*/
       v6 = 255.0; /*0x66116d*/
-    this->q002 = Math::RoundToInt(v6); /*0x661178*/
+    this->q008 = Math::RoundToInt(v6); /*0x661178*/
     return this; /*0x66117b*/
   }
   else
   {
-    this->q002 = Math::RoundToInt(0.0); /*0x661151*/
+    this->q008 = Math::RoundToInt(0.0); /*0x661151*/
     return this; /*0x661154*/
   }
 }
@@ -1113,12 +1113,12 @@ int __thiscall sub_661350(unsigned __int8 *this, unsigned __int8 *a2)
   v2 = *this - *a2; /*0x661360*/
   if ( v2 < 0 ) /*0x661362*/
     v2 = *a2 - *this; /*0x661364*/
-  v3 = this->q001 - a2[1]; /*0x661370*/
+  v3 = *(this + 1) - a2[1]; /*0x661370*/
   if ( v3 < 0 ) /*0x661372*/
-    v3 = a2[1] - this->q001; /*0x661374*/
-  v4 = this->q002 - a2[2]; /*0x661382*/
+    v3 = a2[1] - *(this + 1); /*0x661374*/
+  v4 = *(this + 2) - a2[2]; /*0x661382*/
   if ( v4 < 0 ) /*0x661384*/
-    v4 = a2[2] - this->q002; /*0x661386*/
+    v4 = a2[2] - *(this + 2); /*0x661386*/
   return 3 * v4 + 2 * (v2 + 2 * v3); /*0x66138e*/
 }
 
@@ -1367,11 +1367,11 @@ _DWORD *__thiscall sub_6616B0(_DWORD *this)
   _DWORD *v3; // ebx
 
   v2 = 32; /*0x6616b8*/
-  this->Straw_field_0x04 = 0; /*0x6616bd*/
-  this->__pad_008 = 0; /*0x6616c0*/
+  this->q004 = 0; /*0x6616bd*/
+  this->q008 = 0; /*0x6616c0*/
   *this = &vt_Straw; /*0x6616c3*/
   this->q00C = 0; /*0x6616c9*/
-  this->__pad_010 = 0; /*0x6616cc*/
+  this->q010 = 0; /*0x6616cc*/
   v3 = this + 5; /*0x6616cf*/
   do /*0x6616df*/
   {
@@ -1381,7 +1381,7 @@ _DWORD *__thiscall sub_6616B0(_DWORD *this)
   }
   while ( v2 ); /*0x6616df*/
   this->q00C = 0; /*0x6616e1*/
-  this->__pad_010 = 0; /*0x6616e4*/
+  this->q010 = 0; /*0x6616e4*/
   *this = &vt_RandomStraw; /*0x6616f1*/
   memset(this + 5, 0, 0x100u); /*0x6616f7*/
   return this; /*0x6616fb*/
@@ -1671,11 +1671,11 @@ Straw *__thiscall RandomStraw::Release(_DWORD *this, _BYTE *a2, Straw *aP2)
     return (Straw *)Delegate::Invoke(this, (int)a2, aP2); /*0x661c5d*/
   do /*0x661c4d*/
   {
-    v6 = this->__pad_010; /*0x661c30*/
-    this->__pad_010 = v6 + 1; /*0x661c38*/
+    v6 = this->q010; /*0x661c30*/
+    this->q010 = v6 + 1; /*0x661c38*/
     *v4++ = RandomStraw::AdvanceState(this + 2 * v6 + 5); /*0x661c40*/
     v3 = (Straw *)((char *)v3 - 1); /*0x661c49*/
-    this->__pad_010 &= 0x1Fu; /*0x661c4a*/
+    this->q010 &= 0x1Fu; /*0x661c4a*/
   }
   while ( v3 ); /*0x661c4d*/
   return aP2; /*0x661c53*/
@@ -1851,7 +1851,7 @@ int __thiscall RocketLocomotionClass::RocketLocomotionClass(int this)
 void __thiscall sub_661F30(_DWORD *this)
 {
   *this = &RocketLocomotionClass::`vftable'; /*0x661f30*/
-  this->Powered = &vt_RocketLocomotionClass; /*0x661f36*/
+  this->__pad_004 = &vt_RocketLocomotionClass; /*0x661f36*/
   LocomotionClass::Construct(this); /*0x661f3d*/
 }
 
@@ -3094,14 +3094,14 @@ void __cdecl sub_663850()
 _DWORD *__thiscall sub_6638E0(_DWORD *this)
 {
   this->Items = 0; /*0x6638e4*/
-  this->DynamicVector_field_0x8 = 0; /*0x6638e7*/
+  this->q008 = 0; /*0x6638e7*/
   this->IsInitialized = 1; /*0x6638ea*/
   this->IsAllocated = 0; /*0x6638ee*/
   *this = &vt_DynamicVectorClass_OwnerTalkClass_ConnectionListStruct; /*0x6638f1*/
   this->CapacityIncrement = 10; /*0x6638f7*/
-  this->DynamicVector_field_0x10 = 0; /*0x6638fe*/
-  this->__pad_018 = 0; /*0x663901*/
-  this->DynamicVector_field_0x1C = 0; /*0x663904*/
+  this->q010 = 0; /*0x6638fe*/
+  this->q018 = 0; /*0x663901*/
+  this->q01C = 0; /*0x663904*/
   return this; /*0x663907*/
 }
 
@@ -3300,11 +3300,11 @@ LABEL_15:
       v7[41] = 1; /*0x663c50*/
       v7[39] = MEMORY[0xA8E2AC] == *(_DWORD *)(v6 + 48); /*0x663c6a*/
       v7[40] = 1 << i; /*0x663c6d*/
-      v11 = this->DynamicVector_field_0x8; /*0x663c70*/
+      v11 = this->q008; /*0x663c70*/
       if ( this->Items < v11 /*0x663c93*/
         || (this->IsAllocated || !v11)
         && (v12 = this->q005, v12 > 0)
-        && (*(unsigned __int8 (__thiscall **)(void *, int, _DWORD))(this->DynamicVector_field_0x8)(this, v11 + v12, 0) )
+        && (*(unsigned __int8 (__thiscall **)(void *, int, _DWORD))(this->q008)(this, v11 + v12, 0) )
       {
         v13 = this->Items; /*0x663c9a*/
         v14 = this->Items; /*0x663c9d*/
@@ -3606,11 +3606,11 @@ char *__thiscall Network::processAcknowledgment(_DWORD *this, IUnknown *aP1)
   Struct::Copy6Bytes(byte_B052C0, &v6); /*0x6642ea*/
   Network::SetPort(byte_B052C0, 0); /*0x6642f6*/
   v3 = 0; /*0x6642fe*/
-  if ( (int)this->DynamicVector_field_0x10 > 0 ) /*0x664302*/
+  if ( (int)this->q010 > 0 ) /*0x664302*/
   {
     while ( _strcmpi((char *)(*(_DWORD *)(this->Items + 4 * v3) + 1), (char *)aP1) ) /*0x66431b*/
     {
-      if ( ++v3 >= this->DynamicVector_field_0x10 ) /*0x664323*/
+      if ( ++v3 >= this->q010 ) /*0x664323*/
         return byte_B052C0; /*0x664330*/
     }
     v7.Socket = *(_DWORD *)(*(_DWORD *)(this->Items + 4 * v3) + 33); /*0x664346*/
@@ -3635,11 +3635,11 @@ __int16 __thiscall Network::handleDisconnect(_DWORD *this, IUnknown *aP1)
   int v3; // esi
 
   v3 = 0; /*0x664395*/
-  if ( (int)this->DynamicVector_field_0x10 <= 0 ) /*0x66439c*/
+  if ( (int)this->q010 <= 0 ) /*0x66439c*/
     return 0; /*0x6643bf*/
   while ( _strcmpi((char *)(*(_DWORD *)(this->Items + 4 * v3) + 1), (char *)aP1) ) /*0x6643b5*/
   {
-    if ( ++v3 >= this->DynamicVector_field_0x10 ) /*0x6643bd*/
+    if ( ++v3 >= this->q010 ) /*0x6643bd*/
       return 0; /*0x6643bd*/
   }
   return *(_WORD *)(*(_DWORD *)(this->Items + 4 * v3) + 37); /*0x6643bf*/
@@ -3649,7 +3649,7 @@ __int16 __thiscall Network::handleDisconnect(_DWORD *this, IUnknown *aP1)
 // ==== 0x006643E0  Network::checkTimeout  this=DynamicVector  sig=csp ====
 int __thiscall sub_6643E0(_DWORD *this, int a2)
 {
-  if ( a2 >= this->DynamicVector_field_0x10 ) /*0x6643e9*/
+  if ( a2 >= this->q010 ) /*0x6643e9*/
     return 0; /*0x6643f5*/
   else
     return *(_DWORD *)(this->Items + 4 * a2) + 1; /*0x6643f1*/
@@ -4060,7 +4060,7 @@ char __thiscall RocketLocomotionClass_17_::_vt02(void *this, int a2, _DWORD *a3)
       return 0; /*0x664a3a*/
     if ( this->Items ) /*0x6649c8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x6649cf*/
+      v5 = this->q008; /*0x6649cf*/
       if ( a2 < v5 ) /*0x6649d4*/
         v5 = a2; /*0x6649d6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x6649dc*/
@@ -4072,14 +4072,14 @@ char __thiscall RocketLocomotionClass_17_::_vt02(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x664a0a*/
-    this->DynamicVector_field_0x8 = a2; /*0x664a12*/
+    this->q008 = a2; /*0x664a12*/
     this->IsAllocated = a3 == 0; /*0x664a15*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x664a1e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x664a21*/
+  v7 = this->q008; /*0x664a21*/
   if ( v7 < this->Items ) /*0x664a29*/
     this->Items = v7; /*0x664a2b*/
   return 1; /*0x664a2e*/
@@ -4446,7 +4446,7 @@ _DWORD *__thiscall sub_664D20(_DWORD *this, int a2)
   DynamicVectorClass::Construct(this + 1125, 0, 0); /*0x6654b9*/
   this->q465 = &vt_TypeList_int; /*0x6654be*/
   DynamicVectorClass::Construct(this + 1132, 0, 0); /*0x6654d0*/
-  this->q11B = &vt_TypeList_int; /*0x6654d5*/
+  *(this + 1132) = &vt_TypeList_int; /*0x6654d5*/
   DynamicVectorClass::Construct(this + 1139, 0, 0); /*0x6654e7*/
   this->q473 = &vt_TypeList_int; /*0x6654ec*/
   DynamicVectorClass::Construct(this + 1146, 0, 0); /*0x6654fe*/
@@ -5370,7 +5370,7 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
   this->q1458 = 3;
   this->q145C = 2;
   this->q1460 = 1;
-  this->__pad_1464 = 2;
+  this->q1464 = 2;
   *((_DWORD *)this + 1306) = 0;
   *((_DWORD *)this + 1307) = 0;
   *((_DWORD *)this + 1308) = 1;
@@ -5410,7 +5410,7 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
   *((_DWORD *)this + 1347) = 1068079513;
   this->q1510 = 0;
   this->q1514 = 1075052544;
-  this->__pad_1518 = -1717986918;
+  this->q1518 = -1717986918;
   *((_DWORD *)this + 1351) = 1068079513;
   *((_DWORD *)this + 1352) = 2;
   *((_DWORD *)this + 1354) = -755914244;
@@ -10330,11 +10330,11 @@ int __thiscall sub_66CF70(RulesClass *this)
   result = INIClass::BinarySearchSection((int)v18, (unsigned __int8 *)MEMORY[0x839E80]); /*0x66cf89*/
   if ( result ) /*0x66cf95*/
   {
-    this->__pad_1804 = INIClass::ReadInt_Overwrite( /*0x66cfb6*/
+    this->q1804 = INIClass::ReadInt_Overwrite( /*0x66cfb6*/
                                  (int)v18,
                                  (unsigned __int8 *)MEMORY[0x839E80],
                                  (unsigned __int8 *)MEMORY[0x83B330],
-                                 this->__pad_1804);
+                                 this->q1804);
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x66cfd1*/
                       (int)v18,
                       (unsigned __int8 *)MEMORY[0x839E80],
@@ -10436,9 +10436,9 @@ int __thiscall sub_66D150(RulesClass *this)
                       v9,
                       (unsigned __int8 *)MEMORY[0x839E70],
                       (unsigned __int8 *)MEMORY[0x83B370],
-                      this->__pad_1838);
+                      this->q1838);
     v4 = this->q610; /*0x66d188*/
-    this->__pad_1838 = Int_Overwrite; /*0x66d18e*/
+    this->q1838 = Int_Overwrite; /*0x66d18e*/
     HIDWORD(v8) = this->q1844; /*0x66d1a0*/
     LODWORD(v8) = v4; /*0x66d1a1*/
     Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x66d1aa*/
@@ -10447,7 +10447,7 @@ int __thiscall sub_66D150(RulesClass *this)
                          (unsigned __int8 *)MEMORY[0x83B358],
                          v8);
     v6 = this->q184C; /*0x66d1af*/
-    v7 = this->__pad_1848; /*0x66d1b5*/
+    v7 = this->q1848; /*0x66d1b5*/
     *((double *)this + 776) = Double_Overwrite; /*0x66d1bb*/
     *((double *)this + 777) = INIClass::ReadDouble_Overwrite( /*0x66d1d6*/
                                 v9,
@@ -10480,9 +10480,9 @@ int __thiscall sub_66D1F0(RulesClass *this)
                        v6,
                        (unsigned __int8 *)MEMORY[0x839E64],
                        (unsigned __int8 *)MEMORY[0x83B39C],
-                       this->__pad_1850);
+                       this->q1850);
     v4 = *((_DWORD *)this + 1558); /*0x66d228*/
-    this->__pad_1850 = Bool_Overwrite; /*0x66d22e*/
+    this->q1850 = Bool_Overwrite; /*0x66d22e*/
     HIDWORD(v5) = this->q185C; /*0x66d240*/
     LODWORD(v5) = v4; /*0x66d241*/
     *((double *)this + 779) = INIClass::ReadDouble_Overwrite( /*0x66d24f*/

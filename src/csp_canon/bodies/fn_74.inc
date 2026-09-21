@@ -143,13 +143,13 @@ namespace ra2 { namespace game { int TechnoClass::updateParasiteState(int a1) {
 }
 } } }
 
-// ==== BACKFILL 0x007465F0  TechnoClass::detachParasites  cls=TechnoClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x007465F0  TechnoClass::detachParasites  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int TechnoClass::detachParasites(int a1) {
 {
       if ( !(unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(this + 540), HouseClass_Player) || a2 )
-        return this->isDisguisedFlag_as_house;
+        return this->disguisedAsHouse;
       else
-        return this->Owner;
+        return this->owner;
 }
 } } }
 
@@ -160,7 +160,7 @@ namespace ra2 { namespace game { bool TechnoClass::checkSpawnState() {
 }
 } } }
 
-// ==== BACKFILL 0x00746DB0  TechnoClass::HasDeployFlags  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00746DB0  TechnoClass::HasDeployFlags  cls=TechnoClass  sig=csp  renamed_refs=0  residual=q6E1,q6E2 ====
 int TechnoClass::HasDeployFlags() const {
 return this->q6E1 || this->q6E2;
 }
@@ -385,13 +385,13 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
     Power::FlagProcess(a2, v6);
     LOBYTE(v7) = this->UnitTypeClass_field_E10;
     v8 = Power::FlagProcess(a2, v7);
-    LOBYTE(v8) = this->HasTurret_e;
+    LOBYTE(v8) = this->qE11;
     Power::FlagProcess(a2, v8);
     LOBYTE(v9) = this->IsTilter;
     Power::FlagProcess(a2, v9);
-    LOBYTE(v10) = this->IsSimpleDeployer_e;
+    LOBYTE(v10) = this->qE13;
     v11 = Power::FlagProcess(a2, v10);
-    LOBYTE(v11) = this->UseTurretShadow_e;
+    LOBYTE(v11) = this->qE15;
     return Power::FlagProcess(a2, v11);
 }
 }

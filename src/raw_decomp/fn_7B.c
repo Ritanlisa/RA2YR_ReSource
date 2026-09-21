@@ -123,7 +123,7 @@ _DWORD *__thiscall sub_7B0220(int *this)
   _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
   _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set(&stru_B77F58, this->ComStreamClass_field_0x04); /*0x7b022f*/
+  ComPtr::Set(&stru_B77F58, this->q004); /*0x7b022f*/
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b0249*/
   ComPtr::Set(&stru_B77F68, v3[1]); /*0x7b0257*/
@@ -149,7 +149,7 @@ _DWORD *__thiscall sub_7B02A0(int *this)
   _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
   _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set(&stru_B77F70, this->ComStreamClass_field_0x04); /*0x7b02af*/
+  ComPtr::Set(&stru_B77F70, this->q004); /*0x7b02af*/
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b02c9*/
   ComPtr::Set(&stru_B77F78, v3[1]); /*0x7b02d7*/
@@ -1191,7 +1191,7 @@ LABEL_6:
     return 0; /*0x7b1717*/
   v18 = (CCINIClass *)IPXInterfaceClass::processPacket(this); /*0x7b1633*/
   v18->sectionHead[0] = v26 - 4; /*0x7b1646*/
-  v18->sectionCount = this->__pad_FC1D; /*0x7b1651*/
+  v18->sectionCount = this->qFC1D; /*0x7b1651*/
   qmemcpy(v18->__pad_20, this + 129084, v26 - 4); /*0x7b1657*/
   if ( (*(unsigned __int8 (__thiscall **)(u_short *, CCINIClass *))(*(_DWORD *)this + 88))(this, v18) ) /*0x7b1665*/
   {
@@ -1418,13 +1418,13 @@ char *__thiscall sub_7B19C0(char *this)
 
   this->q00C = 0; /*0x7b19d2*/
   this->Initialized = 0; /*0x7b19d5*/
-  this->__pad_005 = 1; /*0x7b19d8*/
+  this->q005 = 1; /*0x7b19d8*/
   this->q015 = 0; /*0x7b19db*/
   this->LocalAddress = &vt_DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b19de*/
   *((_DWORD *)this + 7) = 10; /*0x7b19e1*/
   this->BoundPort = 0; /*0x7b19e4*/
   this->q024 = 0; /*0x7b19e7*/
-  this->__pad_028 = 0; /*0x7b19ea*/
+  this->q028 = 0; /*0x7b19ea*/
   this->q02C = 1; /*0x7b19ed*/
   this->q02D = 0; /*0x7b19f0*/
   this->LocalAddress = &vt_DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b19f3*/
@@ -1432,7 +1432,7 @@ char *__thiscall sub_7B19C0(char *this)
   this->q00C = 0; /*0x7b19f9*/
   *((_DWORD *)this + 19) = 10; /*0x7b19fc*/
   this->q03C = 0; /*0x7b1a02*/
-  this->__pad_010 = 0; /*0x7b1a05*/
+  this->q010 = 0; /*0x7b1a05*/
   this->q044 = 1; /*0x7b1a08*/
   this->q045 = 0; /*0x7b1a0b*/
   *((_DWORD *)this + 14) = &vt_DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1a0e*/
@@ -2478,7 +2478,7 @@ char __thiscall IPXInterfaceClass::sub_7B2A20(void *this, int a2, _DWORD *a3)
       return 0; /*0x7b2aca*/
     if ( this->Items ) /*0x7b2a58*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x7b2a5f*/
+      v5 = this->q008; /*0x7b2a5f*/
       if ( a2 < v5 ) /*0x7b2a64*/
         v5 = a2; /*0x7b2a66*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x7b2a6c*/
@@ -2490,14 +2490,14 @@ char __thiscall IPXInterfaceClass::sub_7B2A20(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x7b2a9a*/
-    this->DynamicVector_field_0x8 = a2; /*0x7b2aa2*/
+    this->q008 = a2; /*0x7b2aa2*/
     this->IsAllocated = a3 == 0; /*0x7b2aa5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x7b2aae*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x7b2ab1*/
+  v7 = this->q008; /*0x7b2ab1*/
   if ( v7 < this->Items ) /*0x7b2ab9*/
     this->Items = v7; /*0x7b2abb*/
   return 1; /*0x7b2abe*/
@@ -3513,7 +3513,7 @@ LABEL_71:
         return 0; /*0x7b3f76*/
       v13 = (_DWORD *)IPXInterfaceClass::processPacket(this); /*0x7b3f80*/
       v13[4] = v27 - 4; /*0x7b3f8f*/
-      v13[7] = this->__pad_FC1D; /*0x7b3f98*/
+      v13[7] = this->qFC1D; /*0x7b3f98*/
       *((_BYTE *)v13 + 23) = v39; /*0x7b3fa0*/
       *((_BYTE *)v13 + 24) = 0; /*0x7b3fa6*/
       qmemcpy(v13 + 8, this + 258168, v27 - 4); /*0x7b3fab*/
@@ -3989,7 +3989,7 @@ char __thiscall UDPInterfaceClass_Destru::sub_7B44A0(void *this, int a2, _DWORD 
       return 0; /*0x7b454a*/
     if ( this->Items ) /*0x7b44d8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x7b44df*/
+      v5 = this->q008; /*0x7b44df*/
       if ( a2 < v5 ) /*0x7b44e4*/
         v5 = a2; /*0x7b44e6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x7b44ec*/
@@ -4001,14 +4001,14 @@ char __thiscall UDPInterfaceClass_Destru::sub_7B44A0(void *this, int a2, _DWORD 
       }
     }
     this->Items = v4; /*0x7b451a*/
-    this->DynamicVector_field_0x8 = a2; /*0x7b4522*/
+    this->q008 = a2; /*0x7b4522*/
     this->IsAllocated = a3 == 0; /*0x7b4525*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x7b452e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x7b4531*/
+  v7 = this->q008; /*0x7b4531*/
   if ( v7 < this->Items ) /*0x7b4539*/
     this->Items = v7; /*0x7b453b*/
   return 1; /*0x7b453e*/
@@ -7250,15 +7250,15 @@ _DWORD *__thiscall MouseClass::Construct(_DWORD *this, ObjectClass *aP1, IUnknow
   v4 = this + 11; /*0x7b8742*/
   this->q024 = aP1; /*0x7b8745*/
   *this = &vt_Mouse; /*0x7b8748*/
-  this->MouseClass_field_0x4 = 0; /*0x7b874e*/
-  this->MouseClass_field_0x8 = 0; /*0x7b8751*/
-  this->MouseClass_field_0xC = -1; /*0x7b8754*/
+  this->q004 = 0; /*0x7b874e*/
+  this->q008 = 0; /*0x7b8751*/
+  this->q00C = -1; /*0x7b8754*/
   this->q040 = 0; /*0x7b8757*/
-  this->MouseClass_field_0x14 = 0; /*0x7b875a*/
+  this->q014 = 0; /*0x7b875a*/
   this->q018 = 0; /*0x7b875d*/
   this->q01C = 0; /*0x7b8760*/
   this->q020 = 0; /*0x7b8763*/
-  this->MouseClass_field_0x28 = aP2; /*0x7b8766*/
+  this->q028 = aP2; /*0x7b8766*/
   v5 = this + 11; /*0x7b876f*/
   *v5 = dword_B78128; /*0x7b8776*/
   v5[1] = dword_B7812C; /*0x7b877e*/
@@ -7279,8 +7279,8 @@ _DWORD *__thiscall MouseClass::Construct(_DWORD *this, ObjectClass *aP1, IUnknow
   this->q064 = dword_B78130; /*0x7b87e1*/
   v8 = dword_B78134; /*0x7b87e4*/
   this->q06C = 0; /*0x7b87ea*/
-  this->MouseClass_field_0x68 = v8; /*0x7b87ed*/
-  this->MouseClass_field_0x70 = dword_B78128; /*0x7b87f9*/
+  this->q068 = v8; /*0x7b87ed*/
+  this->q070 = dword_B78128; /*0x7b87f9*/
   this->q074 = dword_B7812C; /*0x7b8802*/
   this->q078 = dword_B78130; /*0x7b880b*/
   this->q07C = dword_B78134; /*0x7b8814*/
@@ -7298,7 +7298,7 @@ _DWORD *__thiscall MouseClass::Construct(_DWORD *this, ObjectClass *aP1, IUnknow
   v10 = *v4; /*0x7b888a*/
   v11 = this->q030; /*0x7b888f*/
   this->q03C = v10 + this->q034 / 2; /*0x7b8896*/
-  this->q040 = v11 + this->MouseClass_field_0x38 / 2; /*0x7b88a3*/
+  this->q040 = v11 + this->q038 / 2; /*0x7b88a3*/
   dword_B78164 = (MouseClass *)this; /*0x7b88ad*/
   ReleaseMutex(hMutex); /*0x7b88b3*/
   ShowCursor(0); /*0x7b88ba*/
@@ -7320,23 +7320,23 @@ int __thiscall WWMouseClass::loadCursorImages(_DWORD *this)
   if ( (_DWORD *)dword_A8ED54[238852] == this ) /*0x7b8912*/
     dword_A8ED54[238852] = 0; /*0x7b8914*/
   result = ((int (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]); /*0x7b8921*/
-  v3 = (int (__thiscall ***)(_DWORD, int))this->WWMouseClass_field_0x44; /*0x7b8927*/
+  v3 = (int (__thiscall ***)(_DWORD, int))this->q044; /*0x7b8927*/
   if ( v3 ) /*0x7b892c*/
   {
     result = (**v3)(v3, 1); /*0x7b8932*/
-    this->WWMouseClass_field_0x44 = 0; /*0x7b8934*/
+    this->q044 = 0; /*0x7b8934*/
   }
-  v4 = (int (__thiscall ***)(_DWORD, int))this->WWMouseClass_field_0x58; /*0x7b8937*/
+  v4 = (int (__thiscall ***)(_DWORD, int))this->q058; /*0x7b8937*/
   if ( v4 ) /*0x7b893c*/
   {
     result = (**v4)(v4, 1); /*0x7b8942*/
-    this->WWMouseClass_field_0x58 = 0; /*0x7b8944*/
+    this->q058 = 0; /*0x7b8944*/
   }
-  v5 = (int (__thiscall ***)(_DWORD, int))this->WWMouseClass_field_0x6C; /*0x7b8947*/
+  v5 = (int (__thiscall ***)(_DWORD, int))this->q06C; /*0x7b8947*/
   if ( v5 ) /*0x7b894c*/
   {
     result = (**v5)(v5, 1); /*0x7b8952*/
-    this->WWMouseClass_field_0x6C = 0; /*0x7b8954*/
+    this->q06C = 0; /*0x7b8954*/
   }
   *this = &Mouse::`vftable'; /*0x7b8957*/
   return result; /*0x7b895d*/
@@ -7357,7 +7357,7 @@ void __thiscall MouseClass_CalcConfiningRect(HWND *this)
   struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
 
   v1 = this; /*0x7b8964*/
-  GetClientRect(this->MouseClass_field_0x28, &Rect); /*0x7b8970*/
+  GetClientRect(this->q028, &Rect); /*0x7b8970*/
   Point.x = Rect.left; /*0x7b8984*/
   v6 = (HWND)v1[10]; /*0x7b8990*/
   Point.y = Rect.top; /*0x7b8991*/
@@ -7381,7 +7381,7 @@ void __thiscall MouseClass_CalcConfiningRect(HWND *this)
 // ==== 0x007B89F0  WWMouseClass::COMStub  this=WWMouseClass  sig=csp ====
 int __thiscall WWMouseClass::_vt10(_DWORD *this)
 {
-  return this->WWMouseClass_field_0xC; /*0x7b89f3*/
+  return this->q00C; /*0x7b89f3*/
 }
 
 
@@ -7430,17 +7430,17 @@ void __thiscall WWMouseClass::AddRef(IUnknown **this, IUnknown **a2, IUnknown *a
           Debug::Log(); /*0x7b8a86*/
         if ( (int)this->q014 > 0 && (int)this->q054 > 0 ) /*0x7b8a9a*/
         {
-          v7 = this->WWMouseClass_field_0x24; /*0x7b8a9c*/
+          v7 = this->q024; /*0x7b8a9c*/
           if ( v7 ) /*0x7b8aa1*/
           {
-            v8 = (int)this->WWMouseClass_field_0x44; /*0x7b8aa3*/
+            v8 = (int)this->q044; /*0x7b8aa3*/
             if ( v8 ) /*0x7b8aa8*/
             {
               v9 = (int)this->q04C; /*0x7b8aad*/
               v10 = (unsigned int)this->q014; /*0x7b8ab3*/
               v11 = (unsigned int)this->q054; /*0x7b8ab6*/
-              v24 = (unsigned int)this->q012 + (_DWORD)this->WWMouseClass_field_0x2C; /*0x7b8abb*/
-              v12 = (char *)this->WWMouseClass_field_0xC + v9; /*0x7b8ac2*/
+              v24 = (unsigned int)this->q012 + (_DWORD)this->q02C; /*0x7b8abb*/
+              v12 = (char *)this->q00C + v9; /*0x7b8ac2*/
               v20 = 0; /*0x7b8ac6*/
               v21 = 0; /*0x7b8aca*/
               v26 = v10; /*0x7b8ad4*/
@@ -7463,18 +7463,18 @@ void __thiscall WWMouseClass::AddRef(IUnknown **this, IUnknown **a2, IUnknown *a
         v13 = (void (__stdcall *)(HANDLE))ReleaseMutex; /*0x7b8b03*/
         ReleaseMutex(hMutex); /*0x7b8b0a*/
       }
-      this->WWMouseClass_field_0x4 = (IUnknown *)v4; /*0x7b8b1c*/
-      this->WWMouseClass_field_0x8 = a4; /*0x7b8b1f*/
+      this->q004 = (IUnknown *)v4; /*0x7b8b1c*/
+      this->q008 = a4; /*0x7b8b1f*/
       this->q03C = *a2; /*0x7b8b24*/
       v14 = *this; /*0x7b8b2a*/
-      this->WWMouseClass_field_0x10 = a2[1]; /*0x7b8b2e*/
+      this->q010 = a2[1]; /*0x7b8b2e*/
       if ( !((unsigned __int8 (__thiscall *)(IUnknown **))v14->field_8)(this) ) /*0x7b8b31*/
       {
         if ( v6(hMutex, 0x2710u) == 258 ) /*0x7b8b4f*/
           Debug::Log(); /*0x7b8b60*/
         if ( BSurface::CreateTripleBuffer((int)this) ) /*0x7b8b6a*/
         {
-          if ( this->WWMouseClass_field_0x24 ) /*0x7b8b77*/
+          if ( this->q024 ) /*0x7b8b77*/
           {
             inited = WWMouseClass::initCursorState((unsigned int *)this, &v24); /*0x7b8b87*/
             this->q012 = (IUnknown *)*inited; /*0x7b8b96*/
@@ -7482,14 +7482,14 @@ void __thiscall WWMouseClass::AddRef(IUnknown **this, IUnknown **a2, IUnknown *a
             this->q014 = (IUnknown *)inited[2]; /*0x7b8ba1*/
             this->q054 = (IUnknown *)inited[3]; /*0x7b8ba7*/
             v20 = *inited; /*0x7b8bac*/
-            v16 = (char *)this->WWMouseClass_field_0x2C + v20; /*0x7b8bb3*/
+            v16 = (char *)this->q02C + v20; /*0x7b8bb3*/
             v21 = inited[1]; /*0x7b8bb6*/
             v22 = inited[2]; /*0x7b8bbd*/
             v17 = inited[3]; /*0x7b8bc1*/
             v20 = (unsigned int)v16; /*0x7b8bc4*/
-            v18 = (int)this->WWMouseClass_field_0x44; /*0x7b8bcd*/
-            v21 += (unsigned int)this->WWMouseClass_field_0xC; /*0x7b8bd0*/
-            v19 = (int)this->WWMouseClass_field_0x24; /*0x7b8bdc*/
+            v18 = (int)this->q044; /*0x7b8bcd*/
+            v21 += (unsigned int)this->q00C; /*0x7b8bd0*/
+            v19 = (int)this->q024; /*0x7b8bdc*/
             v23 = v17; /*0x7b8bdd*/
             v24 = 0; /*0x7b8be1*/
             v25 = 0; /*0x7b8be5*/
@@ -7504,15 +7504,15 @@ void __thiscall WWMouseClass::AddRef(IUnknown **this, IUnknown **a2, IUnknown *a
               1);
           }
         }
-        Mouse::DrawCursor(this, this->WWMouseClass_field_0x24, 0, 0); /*0x7b8c05*/
+        Mouse::DrawCursor(this, this->q024, 0, 0); /*0x7b8c05*/
         v13(hMutex); /*0x7b8c11*/
       }
       v13(hMutex); /*0x7b8c1a*/
     }
     else
     {
-      this->WWMouseClass_field_0x4 = a3; /*0x7b8c2a*/
-      this->WWMouseClass_field_0x8 = a4; /*0x7b8c2d*/
+      this->q004 = a3; /*0x7b8c2a*/
+      this->q008 = a4; /*0x7b8c2d*/
       *(_QWORD *)(this + 15) = *(_QWORD *)a2; /*0x7b8c36*/
     }
   }
@@ -7669,7 +7669,7 @@ _DWORD *__thiscall sub_7B8E80(unsigned int *this, _DWORD *a2)
   int v15; // [esp+1Ch] [ebp-4h]
 
   v3 = 0; /*0x7b8e89*/
-  v4 = this->WWMouseClass_field_0x4; /*0x7b8e8b*/
+  v4 = this->q004; /*0x7b8e8b*/
   v5 = 0; /*0x7b8e8e*/
   v6 = 0; /*0x7b8e90*/
   v7 = 0; /*0x7b8e92*/
@@ -7677,7 +7677,7 @@ _DWORD *__thiscall sub_7B8E80(unsigned int *this, _DWORD *a2)
   {
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b8eae*/
       Debug::Log(); /*0x7b8ebf*/
-    FoundationSize = Building::GetFoundationSize(v14, this->WWMouseClass_field_0x8); /*0x7b8ed3*/
+    FoundationSize = Building::GetFoundationSize(v14, this->q008); /*0x7b8ed3*/
     v9 = *FoundationSize; /*0x7b8ed8*/
     v10 = this->q005; /*0x7b8eda*/
     v11 = this->q018; /*0x7b8edd*/
@@ -7685,7 +7685,7 @@ _DWORD *__thiscall sub_7B8E80(unsigned int *this, _DWORD *a2)
     v6 = FoundationSize[2]; /*0x7b8ee3*/
     v15 = FoundationSize[3]; /*0x7b8ee9*/
     v3 = v10 - this->q03C + v9; /*0x7b8efd*/
-    v5 = v11 - this->WWMouseClass_field_0x10 + v12; /*0x7b8eff*/
+    v5 = v11 - this->q010 + v12; /*0x7b8eff*/
     ReleaseMutex(hMutex); /*0x7b8f01*/
     v7 = v15; /*0x7b8f07*/
   }
@@ -7859,13 +7859,13 @@ int __thiscall WWMouseClass::DrawCursorBuffered(int *this, IUnknown *aP1, char a
       result = 0; /*0x7b90e9*/
       if ( aP1 ) /*0x7b90ed*/
       {
-        if ( aP1 != (IUnknown *)this->WWMouseClass_field_0x24 ) /*0x7b90f6*/
+        if ( aP1 != (IUnknown *)this->q024 ) /*0x7b90f6*/
         {
           if ( a3 ) /*0x7b9108*/
           {
             if ( MEMORY[0xA8D63C].__pad_14B0[144] ) /*0x7b910c*/
               result = -*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8540]; /*0x7b9113*/
-            v6 = (int *)this->WWMouseClass_field_0x6C; /*0x7b9115*/
+            v6 = (int *)this->q06C; /*0x7b9115*/
             aP1a = (IUnknown *)result; /*0x7b9118*/
             v7 = this + 28; /*0x7b911c*/
           }
@@ -7881,11 +7881,11 @@ int __thiscall WWMouseClass::DrawCursorBuffered(int *this, IUnknown *aP1, char a
               else
                 result = -(*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9396] + 124))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9396]); /*0x7b9153*/
             }
-            v6 = (int *)this->WWMouseClass_field_0x58; /*0x7b9165*/
+            v6 = (int *)this->q058; /*0x7b9165*/
             aP1a = (IUnknown *)result; /*0x7b9168*/
             v7 = this + 23; /*0x7b916c*/
           }
-          if ( v6 && (result = this->WWMouseClass_field_0x44) != 0 ) /*0x7b917c*/
+          if ( v6 && (result = this->q044) != 0 ) /*0x7b917c*/
           {
             if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9198*/
               Debug::Log(); /*0x7b91a9*/
@@ -7904,10 +7904,10 @@ int __thiscall WWMouseClass::DrawCursorBuffered(int *this, IUnknown *aP1, char a
             (*(void (__thiscall **)(int *, int *, IUnknown *, int *, _DWORD, int))(v11 + 8))(v6, &v20, aP1, v7, 0, 1); /*0x7b91fc*/
             if ( a3 /*0x7b921b*/
               && (v12 = *v7, *v7 < 0)
-              && (v13 = -v12, -v12 < (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->WWMouseClass_field_0x44 + 124))(this->WWMouseClass_field_0x44)) )
+              && (v13 = -v12, -v12 < (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q044 + 124))(this->q044)) )
             {
               v14 = v7[1]; /*0x7b921d*/
-              v15 = this->WWMouseClass_field_0x44; /*0x7b9220*/
+              v15 = this->q044; /*0x7b9220*/
               v20 = 0; /*0x7b9227*/
               v21 = v14; /*0x7b922b*/
               v16 = v7[2]; /*0x7b922f*/
@@ -7930,7 +7930,7 @@ int __thiscall WWMouseClass::DrawCursorBuffered(int *this, IUnknown *aP1, char a
             {
               v18 = v7[3]; /*0x7b9263*/
               v26 = v7[2]; /*0x7b9268*/
-              v19 = this->WWMouseClass_field_0x44; /*0x7b926c*/
+              v19 = this->q044; /*0x7b926c*/
               v24 = 0; /*0x7b9271*/
               v25 = 0; /*0x7b9275*/
               v27 = v18; /*0x7b927a*/
@@ -7977,12 +7977,12 @@ int __thiscall WWMouseClass::_vt16(int *this, int *a2, char a3)
     {
       if ( a2 ) /*0x7b92fa*/
       {
-        if ( a2 != (int *)this->WWMouseClass_field_0x24 ) /*0x7b9303*/
+        if ( a2 != (int *)this->q024 ) /*0x7b9303*/
         {
-          v5 = this->WWMouseClass_field_0x58; /*0x7b9309*/
+          v5 = this->q058; /*0x7b9309*/
           if ( v5 ) /*0x7b930e*/
           {
-            result = this->WWMouseClass_field_0x6C; /*0x7b9314*/
+            result = this->q06C; /*0x7b9314*/
             if ( result ) /*0x7b9319*/
             {
               if ( a3 ) /*0x7b9325*/
@@ -8145,17 +8145,17 @@ BOOL __thiscall WWMouseClass::RenderDragSelectionRect(_DWORD *this)
     Debug::Log(); /*0x7b96be*/
   if ( (int)this->q050 > 0 && (int)this->q054 > 0 ) /*0x7b96d2*/
   {
-    v2 = this->WWMouseClass_field_0x24; /*0x7b96d4*/
+    v2 = this->q024; /*0x7b96d4*/
     if ( v2 ) /*0x7b96d9*/
     {
-      v3 = this->WWMouseClass_field_0x44; /*0x7b96db*/
+      v3 = this->q044; /*0x7b96db*/
       if ( v3 ) /*0x7b96e0*/
       {
         v4 = this->q04C; /*0x7b96e5*/
         v5 = this->q054; /*0x7b96ec*/
         v6 = this->q050; /*0x7b96f0*/
-        v10[0] = this->WWMouseClass_field_0x2C + this->q048; /*0x7b96f3*/
-        v7 = this->WWMouseClass_field_0x30; /*0x7b96f7*/
+        v10[0] = this->q02C + this->q048; /*0x7b96f3*/
+        v7 = this->q030; /*0x7b96f7*/
         v9[0] = 0; /*0x7b9700*/
         v9[1] = 0; /*0x7b9704*/
         v10[2] = v6; /*0x7b970e*/
@@ -8205,7 +8205,7 @@ int __thiscall WWMouseClass::showCursor(int this)
     *(_DWORD *)(this + 12) = v3; /*0x7b979e*/
     if ( !v3 ) /*0x7b97a1*/
     {
-      if ( (*(unsigned __int8 (__thiscall **)(int))(this->WWMouseClass_field_0x1C)(this) ) /*0x7b97ab*/
+      if ( (*(unsigned __int8 (__thiscall **)(int))(this->q01C)(this) ) /*0x7b97ab*/
       {
         if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b97c8*/
           Debug::Log(); /*0x7b97d9*/
@@ -8284,7 +8284,7 @@ BOOL __thiscall WWMouseClass::_vt03(_DWORD *this)
 
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b994f*/
     Debug::Log(); /*0x7b9960*/
-  if ( !this->WWMouseClass_field_0xC ) /*0x7b9968*/
+  if ( !this->q00C ) /*0x7b9968*/
   {
     if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 28))(this) ) /*0x7b9977*/
     {
@@ -8292,17 +8292,17 @@ BOOL __thiscall WWMouseClass::_vt03(_DWORD *this)
         Debug::Log(); /*0x7b99a5*/
       if ( (int)this->q050 > 0 && (int)this->q054 > 0 ) /*0x7b99ba*/
       {
-        v2 = this->WWMouseClass_field_0x24; /*0x7b99bc*/
+        v2 = this->q024; /*0x7b99bc*/
         if ( v2 ) /*0x7b99c1*/
         {
-          v3 = this->WWMouseClass_field_0x44; /*0x7b99c3*/
+          v3 = this->q044; /*0x7b99c3*/
           if ( v3 ) /*0x7b99c8*/
           {
             v4 = this->q04C; /*0x7b99cd*/
             v5 = this->q050; /*0x7b99d3*/
             v6 = this->q054; /*0x7b99d7*/
-            v10[0] = this->WWMouseClass_field_0x2C + this->q048; /*0x7b99da*/
-            v7 = this->WWMouseClass_field_0x30 + v4; /*0x7b99e1*/
+            v10[0] = this->q02C + this->q048; /*0x7b99da*/
+            v7 = this->q030 + v4; /*0x7b99e1*/
             v9[0] = 0; /*0x7b99e7*/
             v9[1] = 0; /*0x7b99eb*/
             v10[2] = v5; /*0x7b99f4*/
@@ -8328,7 +8328,7 @@ BOOL __thiscall WWMouseClass::_vt03(_DWORD *this)
         ; /*0x7b9a33*/
     }
   }
-  --this->WWMouseClass_field_0xC; /*0x7b9a3f*/
+  --this->q00C; /*0x7b9a3f*/
   return ReleaseMutex(hMutex); /*0x7b9a4f*/
 }
 
@@ -8363,25 +8363,25 @@ void __thiscall WWMouseClass::captureMouse(int *this)
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9aa3*/
       Debug::Log(); /*0x7b9ab4*/
     v2 = *this; /*0x7b9abc*/
-    this->WWMouseClass_field_0x10 = 1; /*0x7b9ac0*/
+    this->q010 = 1; /*0x7b9ac0*/
     if ( !(*(unsigned __int8 (__thiscall **)(int *))(v2 + 8))(this) ) /*0x7b9ac4*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9ae7*/
         Debug::Log(); /*0x7b9af8*/
-      if ( BSurface::CreateTripleBuffer((int)this) && this->WWMouseClass_field_0x24 ) /*0x7b9b0f*/
+      if ( BSurface::CreateTripleBuffer((int)this) && this->q024 ) /*0x7b9b0f*/
       {
         Rect::Set(&v16, 0, 0, 0, 0); /*0x7b9b26*/
-        if ( this->WWMouseClass_field_0x4 ) /*0x7b9b2b*/
+        if ( this->q004 ) /*0x7b9b2b*/
         {
           UI_Helper_7BA2C0(); /*0x7b9b32*/
-          FoundationSize = Building::GetFoundationSize(v21, this->WWMouseClass_field_0x8); /*0x7b9b43*/
+          FoundationSize = Building::GetFoundationSize(v21, this->q008); /*0x7b9b43*/
           v16 = *FoundationSize; /*0x7b9b4c*/
           v17 = FoundationSize[1]; /*0x7b9b53*/
           v18 = FoundationSize[2]; /*0x7b9b5a*/
           v4 = this->q03C; /*0x7b9b5e*/
           v19 = FoundationSize[3]; /*0x7b9b64*/
           v5 = this->q005 - v4; /*0x7b9b6b*/
-          v6 = this->WWMouseClass_field_0x10; /*0x7b9b6d*/
+          v6 = this->q010; /*0x7b9b6d*/
           v16 += v5; /*0x7b9b72*/
           v17 += this->q018 - v6; /*0x7b9b7d*/
           ReleaseMutex(hMutex); /*0x7b9b88*/
@@ -8397,22 +8397,22 @@ void __thiscall WWMouseClass::captureMouse(int *this)
         this->q04C = v8; /*0x7b9bb1*/
         this->q014 = v9; /*0x7b9bb6*/
         this->q054 = v10; /*0x7b9bb9*/
-        v11 = v7 + this->WWMouseClass_field_0x2C; /*0x7b9bbf*/
-        v12 = (int *)this->WWMouseClass_field_0x44; /*0x7b9bc1*/
+        v11 = v7 + this->q02C; /*0x7b9bbf*/
+        v12 = (int *)this->q044; /*0x7b9bc1*/
         v20[0] = v11; /*0x7b9bc4*/
-        v20[1] = this->WWMouseClass_field_0xC + v8; /*0x7b9bcd*/
+        v20[1] = this->q00C + v8; /*0x7b9bcd*/
         v13 = *v12; /*0x7b9bd1*/
-        v15 = this->WWMouseClass_field_0x24; /*0x7b9bdb*/
+        v15 = this->q024; /*0x7b9bdb*/
         v14 = (IUnknown *)Rect::Set(v21, 0, 0, v9, v10); /*0x7b9be6*/
         (*(void (__thiscall **)(_DWORD, IUnknown *, int, _DWORD *, _DWORD, int))(v13 + 8))( /*0x7b9bef*/
-          this->WWMouseClass_field_0x44,
+          this->q044,
           v14,
           v15,
           v20,
           0,
           1);
       }
-      Mouse::DrawCursor(this, (IUnknown *)this->WWMouseClass_field_0x24, 0, 0); /*0x7b9bfd*/
+      Mouse::DrawCursor(this, (IUnknown *)this->q024, 0, 0); /*0x7b9bfd*/
       ReleaseMutex(hMutex); /*0x7b9c09*/
     }
     ShowCursor(0); /*0x7b9c0d*/
@@ -8434,30 +8434,30 @@ void __thiscall WWMouseClass::_vt05(_BYTE *this)
   _DWORD v9[4]; // [esp+4h] [ebp-20h] BYREF
   _DWORD v10[4]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( this && (*(unsigned __int8 (__thiscall **)(_BYTE *))(this->WWMouseClass_field_0x1C)(this) ) /*0x7b9c40*/
+  if ( this && (*(unsigned __int8 (__thiscall **)(_BYTE *))(this->q01C)(this) ) /*0x7b9c40*/
   {
     Debug::Log(); /*0x7b9c51*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9c72*/
       Debug::Log(); /*0x7b9c83*/
     v2 = *(_DWORD *)this; /*0x7b9c8b*/
-    this->WWMouseClass_field_0x10 = 0; /*0x7b9c8f*/
+    this->q010 = 0; /*0x7b9c8f*/
     if ( !(*(unsigned __int8 (__thiscall **)(_BYTE *))(v2 + 8))(this) ) /*0x7b9c93*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9cb0*/
         Debug::Log(); /*0x7b9cc1*/
       if ( *((int *)this + 20) > 0 && *((int *)this + 21) > 0 ) /*0x7b9cd6*/
       {
-        v3 = this->WWMouseClass_field_0x24; /*0x7b9cd8*/
+        v3 = this->q024; /*0x7b9cd8*/
         if ( v3 ) /*0x7b9cdd*/
         {
-          v4 = this->WWMouseClass_field_0x44; /*0x7b9cdf*/
+          v4 = this->q044; /*0x7b9cdf*/
           if ( v4 ) /*0x7b9ce4*/
           {
             v5 = this->q04C; /*0x7b9ce9*/
             v6 = this->q014; /*0x7b9cef*/
             v7 = this->q054; /*0x7b9cf3*/
-            v10[0] = this->WWMouseClass_field_0x2C + this->q012; /*0x7b9cf6*/
-            v8 = this->WWMouseClass_field_0xC + v5; /*0x7b9cfd*/
+            v10[0] = this->q02C + this->q012; /*0x7b9cf6*/
+            v8 = this->q00C + v5; /*0x7b9cfd*/
             v9[0] = 0; /*0x7b9d03*/
             v9[1] = 0; /*0x7b9d07*/
             v10[2] = v6; /*0x7b9d10*/
@@ -8487,14 +8487,14 @@ void __thiscall WWMouseClass::_vt05(_BYTE *this)
 // ==== 0x007B9D70  WWMouseClass::checkStatus  this=WWMouseClass  sig=csp ====
 int __thiscall WWMouseClass::_vt08(void *this, int a2, int a3, int a4, int a5)
 {
-  return (*(int (__thiscall **)(void *))(this->WWMouseClass_field_0xC)(this); /*0x7b9d75*/
+  return (*(int (__thiscall **)(void *))(this->q00C)(this); /*0x7b9d75*/
 }
 
 
 // ==== 0x007B9D80  WWMouseClass::checkVisible  this=WWMouseClass  sig=csp ====
 int __thiscall WWMouseClass::_vt09(void *this)
 {
-  return (*(int (__thiscall **)(void *))(this->WWMouseClass_field_0x10)(this);
+  return (*(int (__thiscall **)(void *))(this->q010)(this);
 }
 
 
@@ -8505,8 +8505,8 @@ int __thiscall WWMouseClass::_vt17(int *this, int *a2, int *a3)
   int v4; // ecx
   int result; // eax
 
-  *a2 -= this->WWMouseClass_field_0x2C; /*0x7b9da1*/
-  *a3 -= this->WWMouseClass_field_0xC; /*0x7b9daa*/
+  *a2 -= this->q02C; /*0x7b9da1*/
+  *a3 -= this->q00C; /*0x7b9daa*/
   if ( *a2 < 0 ) /*0x7b9db0*/
     *a2 = 0; /*0x7b9db2*/
   if ( *a3 < 0 && !byte_B78160 ) /*0x7b9dc7*/
@@ -8514,7 +8514,7 @@ int __thiscall WWMouseClass::_vt17(int *this, int *a2, int *a3)
   v3 = this->IsAllocated; /*0x7b9dcf*/
   if ( *a2 >= v3 ) /*0x7b9dd6*/
     *a2 = v3 - 1; /*0x7b9dd9*/
-  v4 = this->WWMouseClass_field_0x38; /*0x7b9ddb*/
+  v4 = this->q038; /*0x7b9ddb*/
   result = *a3; /*0x7b9dde*/
   if ( *a3 >= v4 ) /*0x7b9de4*/
     *a3 = v4 - 1; /*0x7b9de7*/
@@ -8576,17 +8576,17 @@ BOOL __thiscall WWMouseClass::FlipCursorBuffer(IUnknown **this, IUnknown *a2, IU
         Debug::Log(); /*0x7b9eda*/
       if ( (int)this->q014 > 0 && (int)this->q054 > 0 ) /*0x7b9eee*/
       {
-        v6 = this->WWMouseClass_field_0x24; /*0x7b9ef0*/
+        v6 = this->q024; /*0x7b9ef0*/
         if ( v6 ) /*0x7b9ef5*/
         {
-          v7 = (int)this->WWMouseClass_field_0x44; /*0x7b9ef7*/
+          v7 = (int)this->q044; /*0x7b9ef7*/
           if ( v7 ) /*0x7b9efc*/
           {
             v8 = (int)this->q04C; /*0x7b9f01*/
             v9 = this->q014; /*0x7b9f07*/
             v10 = this->q054; /*0x7b9f0a*/
-            v25 = (int)this->q012 + (_DWORD)this->WWMouseClass_field_0x2C; /*0x7b9f0f*/
-            v11 = (char *)this->WWMouseClass_field_0xC + v8; /*0x7b9f16*/
+            v25 = (int)this->q012 + (_DWORD)this->q02C; /*0x7b9f0f*/
+            v11 = (char *)this->q00C + v8; /*0x7b9f16*/
             v21 = 0; /*0x7b9f1a*/
             v22 = 0; /*0x7b9f1e*/
             v27 = v9; /*0x7b9f28*/
@@ -8616,10 +8616,10 @@ BOOL __thiscall WWMouseClass::FlipCursorBuffer(IUnknown **this, IUnknown *a2, IU
     {
       if ( v4(hMutex, 0x2710u) == 258 ) /*0x7b9fa6*/
         Debug::Log(); /*0x7b9fb7*/
-      if ( BSurface::CreateTripleBuffer((int)this) && this->WWMouseClass_field_0x24 ) /*0x7b9fce*/
+      if ( BSurface::CreateTripleBuffer((int)this) && this->q024 ) /*0x7b9fce*/
       {
         inited = (IUnknown **)WWMouseClass::initCursorState((unsigned int *)this, &v25); /*0x7b9fde*/
-        v14 = (int)this->WWMouseClass_field_0x2C; /*0x7b9fe8*/
+        v14 = (int)this->q02C; /*0x7b9fe8*/
         this->q012 = *inited; /*0x7b9ff0*/
         this->q04C = inited[1]; /*0x7b9ff5*/
         this->q014 = inited[2]; /*0x7b9ffb*/
@@ -8627,14 +8627,14 @@ BOOL __thiscall WWMouseClass::FlipCursorBuffer(IUnknown **this, IUnknown *a2, IU
         v21 = *inited; /*0x7ba006*/
         v22 = inited[1]; /*0x7ba00d*/
         v15 = (IUnknown *)((char *)v21 + v14); /*0x7ba014*/
-        v16 = (int)this->WWMouseClass_field_0xC; /*0x7ba016*/
+        v16 = (int)this->q00C; /*0x7ba016*/
         v23 = inited[2]; /*0x7ba019*/
         v17 = inited[3]; /*0x7ba01d*/
         v21 = v15; /*0x7ba022*/
-        v18 = (int)this->WWMouseClass_field_0x44; /*0x7ba026*/
+        v18 = (int)this->q044; /*0x7ba026*/
         v22 = (IUnknown *)((char *)v22 + v16); /*0x7ba029*/
         v24 = v17; /*0x7ba031*/
-        v20 = (int)this->WWMouseClass_field_0x24; /*0x7ba039*/
+        v20 = (int)this->q024; /*0x7ba039*/
         v25 = 0; /*0x7ba03a*/
         v26 = 0; /*0x7ba03e*/
         v27 = v23; /*0x7ba042*/
@@ -8647,7 +8647,7 @@ BOOL __thiscall WWMouseClass::FlipCursorBuffer(IUnknown **this, IUnknown *a2, IU
           0,
           1);
       }
-      Mouse::DrawCursor(this, this->WWMouseClass_field_0x24, 0, 0); /*0x7ba05e*/
+      Mouse::DrawCursor(this, this->q024, 0, 0); /*0x7ba05e*/
       ReleaseMutex(hMutex); /*0x7ba06a*/
     }
   }
@@ -8671,15 +8671,15 @@ int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
   LONG x; // [esp+14h] [ebp-Ch] BYREF
   struct tagPOINT Point; // [esp+18h] [ebp-8h] BYREF
 
-  result = this->WWMouseClass_field_0x24; /*0x7ba096*/
+  result = this->q024; /*0x7ba096*/
   if ( result ) /*0x7ba09b*/
   {
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba0b7*/
       Debug::Log(); /*0x7ba0c8*/
     if ( UI_Update() ) /*0x7ba0d0*/
     {
-      v3 = this->WWMouseClass_field_0x8; /*0x7ba0dc*/
-      x = this->WWMouseClass_field_0x1C; /*0x7ba0df*/
+      v3 = this->q008; /*0x7ba0dc*/
+      x = this->q01C; /*0x7ba0df*/
       y = v3; /*0x7ba0e3*/
     }
     else
@@ -8690,10 +8690,10 @@ int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
       y = Point.y; /*0x7ba102*/
       (*(void (__thiscall **)(LONG *, LONG *, LONG *))(v4 + 68))(this, &x, &y); /*0x7ba112*/
       v5 = y; /*0x7ba119*/
-      this->WWMouseClass_field_0x1C = x; /*0x7ba11d*/
-      this->WWMouseClass_field_0x8 = v5; /*0x7ba120*/
+      this->q01C = x; /*0x7ba11d*/
+      this->q008 = v5; /*0x7ba120*/
     }
-    if ( (*(unsigned __int8 (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)this->WWMouseClass_field_0x24 + 104))(this->WWMouseClass_field_0x24, 0, 0) /*0x7ba13d*/
+    if ( (*(unsigned __int8 (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)this->q024 + 104))(this->q024, 0, 0) /*0x7ba13d*/
       || byte_B78170 )
     {
       v7 = y; /*0x7ba16d*/
@@ -8722,7 +8722,7 @@ int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
           if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba253*/
             Debug::Log(); /*0x7ba264*/
           WWMouseClass::updateCursorRect((unsigned int *)this); /*0x7ba26e*/
-          Mouse::DrawCursor(this, (IUnknown *)this->WWMouseClass_field_0x24, 0, 0); /*0x7ba27d*/
+          Mouse::DrawCursor(this, (IUnknown *)this->q024, 0, 0); /*0x7ba27d*/
           ReleaseMutex(hMutex); /*0x7ba289*/
         }
       }
@@ -8771,28 +8771,28 @@ MouseClass *__thiscall WWMouseClass::updateHotspot(_DWORD *Block, char a2)
 // ==== 0x007BA320  WWMouseClass::drawCursor  this=WWMouseClass  sig=csp ====
 BOOL __thiscall WWMouseClass::_vt02(int *this)
 {
-  return this->WWMouseClass_field_0xC < 0; /*0x7ba32a*/
+  return this->q00C < 0; /*0x7ba32a*/
 }
 
 
 // ==== 0x007BA330  WWMouseClass::checkCapture  this=WWMouseClass  sig=csp ====
 char __thiscall WWMouseClass::_vt07(_BYTE *this)
 {
-  return this->WWMouseClass_field_0x10; /*0x7ba333*/
+  return this->q010; /*0x7ba333*/
 }
 
 
 // ==== 0x007BA340  WWMouseClass::checkRegion  this=WWMouseClass  sig=csp ====
 int __thiscall WWMouseClass::_vt11(_DWORD *this)
 {
-  return this->WWMouseClass_field_0x1C; /*0x7ba343*/
+  return this->q01C; /*0x7ba343*/
 }
 
 
 // ==== 0x007BA350  WWMouseClass::checkBounds  this=WWMouseClass  sig=csp ====
 int __thiscall WWMouseClass::_vt12(_DWORD *this)
 {
-  return this->WWMouseClass_field_0x20; /*0x7ba353*/
+  return this->q020; /*0x7ba353*/
 }
 
 
@@ -8802,8 +8802,8 @@ _DWORD *__thiscall WWMouseClass::_vt13(_DWORD *this, _DWORD *a2)
   int v3; // edx
   int v4; // ecx
 
-  v3 = this->WWMouseClass_field_0x1C; /*0x7ba364*/
-  v4 = this->WWMouseClass_field_0x20; /*0x7ba367*/
+  v3 = this->q01C; /*0x7ba364*/
+  v4 = this->q020; /*0x7ba367*/
   *a2 = v3; /*0x7ba36a*/
   a2[1] = v4; /*0x7ba36c*/
   return a2; /*0x7ba36f*/
@@ -8813,8 +8813,8 @@ _DWORD *__thiscall WWMouseClass::_vt13(_DWORD *this, _DWORD *a2)
 // ==== 0x007BA380  WWMouseClass::checkHotspot  this=WWMouseClass  sig=csp ====
 int __thiscall WWMouseClass::_vt14(_DWORD *this, int a2, int a3)
 {
-  this->WWMouseClass_field_0x1C = a2; /*0x7ba388*/
-  this->WWMouseClass_field_0x20 = a3; /*0x7ba38b*/
+  this->q01C = a2; /*0x7ba388*/
+  this->q020 = a3; /*0x7ba38b*/
   return a2; /*0x7ba38e*/
 }
 
@@ -8885,11 +8885,11 @@ int __thiscall FilePipe::_vt02(_DWORD *this)
   int v4; // edi
 
   v2 = (*(int (__thiscall **)(_DWORD *))(*this + 4))(this); /*0x7ba456*/
-  v3 = this->FilePipe_field_0x0C; /*0x7ba459*/
+  v3 = this->q00C; /*0x7ba459*/
   v4 = v2; /*0x7ba45c*/
-  if ( v3 && this->FilePipe_field_0x04 ) /*0x7ba462*/
+  if ( v3 && this->q004 ) /*0x7ba462*/
   {
-    this->FilePipe_field_0x04 = 0; /*0x7ba469*/
+    this->q004 = 0; /*0x7ba469*/
     (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 52))(v3); /*0x7ba46f*/
   }
   return v4; /*0x7ba474*/
@@ -10945,7 +10945,7 @@ BlitTrans *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_151(_DWORD *Block, char a2
 // ==== 0x007BC6C0  _BlitTrans_E::method_7BC6C0  this=BlitTrans  sig=csp ====
 int __thiscall sub_7BC6C0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x7bc6ea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x7bc6ea*/
            this,
            a2,
            a3,
@@ -10961,7 +10961,7 @@ int __thiscall sub_7BC6C0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x007BC6F0  _BlitTrans_E::method_7BC6F0  this=BlitTrans  sig=csp ====
 int __thiscall sub_7BC6F0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x7bc71a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x7bc71a*/
            this,
            a2,
            a3,
@@ -10977,7 +10977,7 @@ int __thiscall sub_7BC6F0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x007BC720  _BlitTrans_E::method_7BC720  this=BlitTrans  sig=csp ====
 int __thiscall sub_7BC720(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x7bc74a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x7bc74a*/
            this,
            a2,
            a3,
@@ -11086,7 +11086,7 @@ __int16 __stdcall sub_7BC890(_WORD *a1, __int16 *a2, int a3, int a4, int a5, int
 // ==== 0x007BC8C0  _BlitTrans_G::method_7BC8C0  this=BlitTrans  sig=csp ====
 int __thiscall sub_7BC8C0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x7bc8ea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x7bc8ea*/
            this,
            a2,
            a3,
@@ -11102,7 +11102,7 @@ int __thiscall sub_7BC8C0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x007BC8F0  _BlitTrans_G::method_7BC8F0  this=BlitTrans  sig=csp ====
 int __thiscall sub_7BC8F0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x7bc91a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x7bc91a*/
            this,
            a2,
            a3,
@@ -11118,7 +11118,7 @@ int __thiscall sub_7BC8F0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x007BC920  _BlitTrans_G::method_7BC920  this=BlitTrans  sig=csp ====
 int __thiscall sub_7BC920(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x7bc94a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x7bc94a*/
            this,
            a2,
            a3,
@@ -11357,8 +11357,8 @@ char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, Mou
   int aP2a; // [esp+2Ch] [ebp+8h]
   char *v58; // [esp+30h] [ebp+Ch]
 
-  v5 = this->MouseClass_field_0x28; /*0x7bcb60*/
-  v52 = this->MouseClass_field_0x4 / 2 % v5; /*0x7bcb72*/
+  v5 = this->q028; /*0x7bcb60*/
+  v52 = this->q004 / 2 % v5; /*0x7bcb72*/
   if ( (int)abs32(a2) > v5 || (result = (char *)abs32((int)aP2), (int)result > this->q02C) ) /*0x7bcb8e*/
   {
     v50 = this->q02C; /*0x7bcf06*/
@@ -11371,18 +11371,18 @@ char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, Mou
     this->q024 = 0x8000; /*0x7bcf32*/
     return result; /*0x7bcf32*/
   }
-  v8 = a2 + this->MouseClass_field_0x4 / 2 % v5; /*0x7bcb98*/
+  v8 = a2 + this->q004 / 2 % v5; /*0x7bcb98*/
   if ( a2 ) /*0x7bcb9c*/
   {
     v9 = this->q018; /*0x7bcba5*/
-    v10 = this->MouseClass_field_0x4 + 2 * a2; /*0x7bcba8*/
-    this->MouseClass_field_0x4 = v10; /*0x7bcbab*/
+    v10 = this->q004 + 2 * a2; /*0x7bcba8*/
+    this->q004 = v10; /*0x7bcbab*/
     v11 = v9 + v10; /*0x7bcbae*/
     if ( v11 < v9 ) /*0x7bcbb2*/
-      v11 += this->MouseClass_field_0x8; /*0x7bcbb4*/
+      v11 += this->q008; /*0x7bcbb4*/
     if ( v11 >= this->q01C ) /*0x7bcbba*/
-      v11 -= this->MouseClass_field_0x8; /*0x7bcbbc*/
-    this->MouseClass_field_0x4 = v11 - this->q018; /*0x7bcbc4*/
+      v11 -= this->q008; /*0x7bcbbc*/
+    this->q004 = v11 - this->q018; /*0x7bcbc4*/
     if ( a2 >= 0 ) /*0x7bcbc7*/
     {
       v53 = v52; /*0x7bcc6e*/
@@ -11402,7 +11402,7 @@ char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, Mou
         v19 = this->q005; /*0x7bcc7d*/
         v56 = v18; /*0x7bcc82*/
         (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v19 + 20))(v19, &v53, a4); /*0x7bcc94*/
-        v20 = v8 - this->MouseClass_field_0x28; /*0x7bcc9e*/
+        v20 = v8 - this->q028; /*0x7bcc9e*/
         v21 = this->q02C; /*0x7bcca0*/
         v54 = 0; /*0x7bcca3*/
         v22 = this->q005; /*0x7bcca7*/
@@ -11432,7 +11432,7 @@ char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, Mou
       v13 = this->q005; /*0x7bcbe8*/
       v56 = v12; /*0x7bcbed*/
       (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v13 + 20))(v13, &v53, a4); /*0x7bcbff*/
-      v14 = this->MouseClass_field_0x28; /*0x7bcc02*/
+      v14 = this->q028; /*0x7bcc02*/
       v15 = this->q02C; /*0x7bcc05*/
       v16 = v14 + v8; /*0x7bcc08*/
       v54 = 0; /*0x7bcc0e*/
@@ -11445,27 +11445,27 @@ char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, Mou
   }
   if ( aP2 ) /*0x7bccf8*/
   {
-    v24 = this->MouseClass_field_0x4; /*0x7bccfe*/
-    v25 = this->MouseClass_field_0x28; /*0x7bcd01*/
+    v24 = this->q004; /*0x7bccfe*/
+    v25 = this->q028; /*0x7bcd01*/
     this->q024 -= (int)aP2; /*0x7bcd16*/
     v26 = v24 + 2 * (_DWORD)aP2 * v25; /*0x7bcd19*/
-    this->MouseClass_field_0x4 = v26; /*0x7bcd1c*/
+    this->q004 = v26; /*0x7bcd1c*/
     v27 = (char *)aP2 + v24 / 2 / v25; /*0x7bcd1f*/
     v28 = (unsigned __int16 *)this->q018; /*0x7bcd21*/
     v29 = (unsigned int)v28 + v26; /*0x7bcd24*/
     v58 = v27; /*0x7bcd26*/
     if ( v29 < (unsigned int)v28 ) /*0x7bcd2c*/
-      v29 += this->MouseClass_field_0x8; /*0x7bcd2e*/
+      v29 += this->q008; /*0x7bcd2e*/
     if ( v29 >= this->q01C ) /*0x7bcd34*/
-      v29 -= this->MouseClass_field_0x8; /*0x7bcd36*/
+      v29 -= this->q008; /*0x7bcd36*/
     v30 = v29 - (_DWORD)v28; /*0x7bcd3f*/
-    this->MouseClass_field_0x4 = v29 - (_DWORD)v28; /*0x7bcd43*/
+    this->q004 = v29 - (_DWORD)v28; /*0x7bcd43*/
     if ( (int)aP2 >= 0 ) /*0x7bcd46*/
     {
       v44 = this->q02C; /*0x7bce1d*/
       if ( (int)v58 >= v44 ) /*0x7bce26*/
       {
-        v45 = 2 * this->MouseClass_field_0x28 * v44 - v24; /*0x7bce34*/
+        v45 = 2 * this->q028 * v44 - v24; /*0x7bce34*/
         LODWORD(v45) = v45 - HIDWORD(v45); /*0x7bce35*/
         v46 = (unsigned __int16 *)((char *)v28 + v24); /*0x7bce37*/
         v47 = (int)v45 >> 1; /*0x7bce3c*/
@@ -11483,7 +11483,7 @@ char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, Mou
         if ( (v47 & 1) != 0 && v48 ) /*0x7bce80*/
           *v48 = a4; /*0x7bce82*/
         v37 = (unsigned __int16 *)this->q018; /*0x7bce8b*/
-        v38 = this->MouseClass_field_0x4 / 2; /*0x7bce90*/
+        v38 = this->q004 / 2; /*0x7bce90*/
         if ( ((unsigned __int8)v37 & 2) != 0 && v38 ) /*0x7bce99*/
         {
           *v37++ = a4; /*0x7bce9b*/
@@ -11552,8 +11552,8 @@ LABEL_55:
       }
       if ( (v32 & 1) != 0 && v33 ) /*0x7bcda2*/
         *v33 = a4; /*0x7bcda4*/
-      v35 = this->MouseClass_field_0x4; /*0x7bcdaa*/
-      v36 = 2 * this->MouseClass_field_0x28 * this->q02C - v35; /*0x7bcdb5*/
+      v35 = this->q004; /*0x7bcdaa*/
+      v36 = 2 * this->q028 * this->q02C - v35; /*0x7bcdb5*/
       LODWORD(v36) = v36 - HIDWORD(v36); /*0x7bcdb6*/
       v37 = (unsigned __int16 *)(v35 + this->q018); /*0x7bcdbd*/
       v38 = (int)v36 >> 1; /*0x7bcdbf*/
@@ -11584,8 +11584,8 @@ int __thiscall sub_7BCF50(_DWORD *this, unsigned __int16 a2)
   v5[3] = this->q02C; /*0x7bcf58*/
   v5[0] = 0; /*0x7bcf60*/
   v5[1] = 0; /*0x7bcf64*/
-  v2 = this->MouseClass_field_0x28; /*0x7bcf68*/
-  v3 = this->MouseClass_field_0x14; /*0x7bcf6b*/
+  v2 = this->q028; /*0x7bcf68*/
+  v3 = this->q014; /*0x7bcf6b*/
   v5[2] = v2; /*0x7bcf74*/
   return (*(int (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v3 + 20))(v3, v5, a2); /*0x7bcf83*/
 }

@@ -570,9 +570,9 @@ int TechnoClass::vt_entry_4AC() {
 return this->q5C4 != -1;
 }
 
-// ==== BACKFILL 0x004DF1D0  TechnoClass::vt_entry_4B0  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x004DF1D0  TechnoClass::vt_entry_4B0  cls=TechnoClass  sig=csp  renamed_refs=1  residual=- ====
 int TechnoClass::vt_entry_4B0() {
-return this->q5D1;
+return this->__pad_5D1;
 }
 
 // ==== BACKFILL 0x004DF1E0  TechnoClass::vt_entry_4B4  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====

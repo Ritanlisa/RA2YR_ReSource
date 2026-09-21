@@ -1274,7 +1274,7 @@ namespace gamemd { void MouseClass::CalcConfiningRect() {
 int WWMouseClass::COMStub()
 {
 {
-    return this->WWMouseClass_field_0xC;
+    return this->q00C;
 }
 }
 
@@ -1295,7 +1295,7 @@ namespace gamemd { void* WWMouseClass::initCursorState(void* a1) {
       int v15;
 
       v3 = 0;
-      v4 = this->WWMouseClass_field_0x4;
+      v4 = this->q004;
       v5 = 0;
       v6 = 0;
       v7 = 0;
@@ -1303,7 +1303,7 @@ namespace gamemd { void* WWMouseClass::initCursorState(void* a1) {
       {
         if ( WaitForSingleObject(hMutex, 0x2710u) == 258 )
           Debug::Log();
-        FoundationSize = Building::GetFoundationSize(v14, this->WWMouseClass_field_0x8);
+        FoundationSize = Building::GetFoundationSize(v14, this->q008);
         v9 = *FoundationSize;
         v10 = this->q014;
         v11 = this->q018;
@@ -1323,7 +1323,7 @@ namespace gamemd { void* WWMouseClass::initCursorState(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x007B8F30  WWMouseClass::updateCursorRect  cls=WWMouseClass  sig=csp  renamed_refs=7  residual=- ====
+// ==== BACKFILL 0x007B8F30  WWMouseClass::updateCursorRect  cls=WWMouseClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { int WWMouseClass::updateCursorRect() {
 {
       int v2;
@@ -1348,18 +1348,18 @@ namespace gamemd { int WWMouseClass::updateCursorRect() {
       LOBYTE(v2) = BSurface::CreateTripleBuffer((int)this);
       if ( (_BYTE)v2 )
       {
-        v2 = this->WWMouseClass_field_0x24;
+        v2 = this->q024;
         if ( v2 )
         {
           v3 = 0;
           v4 = 0;
           v5 = 0;
           v6 = 0;
-          if ( this->WWMouseClass_field_0x4 )
+          if ( this->q004 )
           {
             if ( WaitForSingleObject(hMutex, 0x2710u) == 258 )
               Debug::Log();
-            FoundationSize = Building::GetFoundationSize(v20, this->WWMouseClass_field_0x8);
+            FoundationSize = Building::GetFoundationSize(v20, this->q008);
             v8 = *FoundationSize;
             v9 = this->q014;
             v10 = this->q018;
@@ -1371,17 +1371,17 @@ namespace gamemd { int WWMouseClass::updateCursorRect() {
             ReleaseMutex(hMutex);
             v6 = v19;
           }
-          v12 = v3 + this->WWMouseClass_field_0x2C;
+          v12 = v3 + this->q02C;
           this->q048 = v3;
           v17[0] = v12;
           this->q04C = v4;
           v18[0] = 0;
           v18[1] = 0;
           this->q050 = v5;
-          v13 = this->WWMouseClass_field_0x24;
+          v13 = this->q024;
           this->q054 = v6;
-          v14 = this->WWMouseClass_field_0x30 + v4;
-          v15 = this->WWMouseClass_field_0x44;
+          v14 = this->q030 + v4;
+          v15 = this->q044;
           v17[2] = v5;
           v17[3] = v6;
           v17[1] = v14;
@@ -1400,7 +1400,7 @@ namespace gamemd { int WWMouseClass::updateCursorRect() {
 }
 } }
 
-// ==== BACKFILL 0x007B9690  WWMouseClass::renderDragSelectionRect  cls=WWMouseClass  sig=csp  renamed_refs=4  residual=- ====
+// ==== BACKFILL 0x007B9690  WWMouseClass::renderDragSelectionRect  cls=WWMouseClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { bool WWMouseClass::renderDragSelectionRect() {
 {
       int v2;
@@ -1416,17 +1416,17 @@ namespace gamemd { bool WWMouseClass::renderDragSelectionRect() {
         Debug::Log();
       if ( (int)this->q050 > 0 && (int)this->q054 > 0 )
       {
-        v2 = this->WWMouseClass_field_0x24;
+        v2 = this->q024;
         if ( v2 )
         {
-          v3 = this->WWMouseClass_field_0x44;
+          v3 = this->q044;
           if ( v3 )
           {
             v4 = this->q04C;
             v5 = this->q054;
             v6 = this->q050;
-            v10[0] = this->WWMouseClass_field_0x2C + this->q048;
-            v7 = this->WWMouseClass_field_0x30;
+            v10[0] = this->q02C + this->q048;
+            v7 = this->q030;
             v9[0] = 0;
             v9[1] = 0;
             v10[2] = v6;
@@ -1442,7 +1442,7 @@ namespace gamemd { bool WWMouseClass::renderDragSelectionRect() {
 }
 } }
 
-// ==== BACKFILL 0x007B9750  WWMouseClass::showCursor  cls=WWMouseClass  sig=csp  renamed_refs=12  residual=- ====
+// ==== BACKFILL 0x007B9750  WWMouseClass::showCursor  cls=WWMouseClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { int WWMouseClass::showCursor() {
 {
       int result;
@@ -1467,26 +1467,26 @@ namespace gamemd { int WWMouseClass::showCursor() {
       _DWORD v21[4];
       _DWORD v22[4];
 
-      result = this->WWMouseClass_field_0xC;
+      result = this->q00C;
       if ( result )
       {
         if ( WaitForSingleObject(hMutex, 0x2710u) == 258 )
           Debug::Log();
-        v3 = this->WWMouseClass_field_0xC + 1;
-        this->WWMouseClass_field_0xC = v3;
+        v3 = this->q00C + 1;
+        this->q00C = v3;
         if ( !v3 )
         {
           if ( this->vt7() )
           {
             if ( WaitForSingleObject(hMutex, 0x2710u) == 258 )
               Debug::Log();
-            if ( BSurface::CreateTripleBuffer(this) && this->WWMouseClass_field_0x24 )
+            if ( BSurface::CreateTripleBuffer(this) && this->q024 )
             {
               Rect::Set(&v17, 0, 0, 0, 0);
-              if ( this->WWMouseClass_field_0x4 )
+              if ( this->q004 )
               {
                 UI_Helper_7BA2C0();
-                FoundationSize = Building::GetFoundationSize(v22, this->WWMouseClass_field_0x8);
+                FoundationSize = Building::GetFoundationSize(v22, this->q008);
                 v17 = *FoundationSize;
                 v18 = FoundationSize[1];
                 v19 = FoundationSize[2];
@@ -1509,15 +1509,15 @@ namespace gamemd { int WWMouseClass::showCursor() {
               this->q04C = v9;
               this->q050 = v10;
               this->q054 = v11;
-              v12 = v8 + this->WWMouseClass_field_0x2C;
+              v12 = v8 + this->q02C;
               v13 = *(int **)(this + 68);
               v21[0] = v12;
-              v21[1] = this->WWMouseClass_field_0x30 + v9;
+              v21[1] = this->q030 + v9;
               v14 = *v13;
-              v16 = this->WWMouseClass_field_0x24;
+              v16 = this->q024;
               v15 = (IUnknown *)Rect::Set(v22, 0, 0, v10, v11);
               (*(void (__thiscall **)(_DWORD, IUnknown *, int, _DWORD *, _DWORD, int))(v14 + 8))(
-                this->WWMouseClass_field_0x44,
+                this->q044,
                 v15,
                 v16,
                 v21,
@@ -1533,8 +1533,8 @@ namespace gamemd { int WWMouseClass::showCursor() {
               ;
           }
         }
-        if ( this->WWMouseClass_field_0xC > 0 )
-          this->WWMouseClass_field_0xC = 0;
+        if ( this->q00C > 0 )
+          this->q00C = 0;
         return ReleaseMutex(hMutex);
       }
       return result;
@@ -1556,23 +1556,23 @@ int WWMouseClass::checkVisible()
 }
 }
 
-// ==== BACKFILL 0x007B9D90  WWMouseClass::processFrame  cls=WWMouseClass  sig=csp  renamed_refs=4  residual=- ====
+// ==== BACKFILL 0x007B9D90  WWMouseClass::processFrame  cls=WWMouseClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { void WWMouseClass::processFrame() {
 {
       int v3;
       int v4;
       int result;
 
-      *a2 -= this->WWMouseClass_field_0x2C;
-      *a3 -= this->WWMouseClass_field_0x30;
+      *a2 -= this->q02C;
+      *a3 -= this->q030;
       if ( *a2 < 0 )
         *a2 = 0;
       if ( *a3 < 0 && !DataGlobal_B78160 )
         *a3 = 0;
-      v3 = this->WWMouseClass_field_0x34;
+      v3 = this->q034;
       if ( *a2 >= v3 )
         *a2 = v3 - 1;
-      v4 = this->WWMouseClass_field_0x38;
+      v4 = this->q038;
       result = *a3;
       if ( *a3 >= v4 )
         *a3 = v4 - 1;
@@ -1594,7 +1594,7 @@ int E4Recv_7B9DF0::sub_7B9DF0(LONG * a2, LONG * a3)
 }
 }
 
-// ==== BACKFILL 0x007B9E30  WWMouseClass::FlipCursorBuffer  cls=WWMouseClass  sig=csp  renamed_refs=10  residual=- ====
+// ==== BACKFILL 0x007B9E30  WWMouseClass::FlipCursorBuffer  cls=WWMouseClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
 {
       DWORD (__stdcall *v4)(HANDLE, DWORD); // edi
@@ -1634,17 +1634,17 @@ namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
             Debug::Log();
           if ( (int)this->q050 > 0 && (int)this->q054 > 0 )
           {
-            v6 = this->WWMouseClass_field_0x24;
+            v6 = this->q024;
             if ( v6 )
             {
-              v7 = (int)this->WWMouseClass_field_0x44;
+              v7 = (int)this->q044;
               if ( v7 )
               {
                 v8 = (int)this->q04C;
                 v9 = this->q050;
                 v10 = this->q054;
-                v25 = (int)this->q048 + (_DWORD)this->WWMouseClass_field_0x2C;
-                v11 = (char *)this->WWMouseClass_field_0x30 + v8;
+                v25 = (int)this->q048 + (_DWORD)this->q02C;
+                v11 = (char *)this->q030 + v8;
                 v21 = 0;
                 v22 = 0;
                 v27 = v9;
@@ -1674,10 +1674,10 @@ namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
         {
           if ( v4(hMutex, 0x2710u) == 258 )
             Debug::Log();
-          if ( BSurface::CreateTripleBuffer((int)this) && this->WWMouseClass_field_0x24 )
+          if ( BSurface::CreateTripleBuffer((int)this) && this->q024 )
           {
             inited = (IUnknown **)WWMouseClass::initCursorState((unsigned int *)this, &v25);
-            v14 = (int)this->WWMouseClass_field_0x2C;
+            v14 = (int)this->q02C;
             this->q048 = *inited;
             this->q04C = inited[1];
             this->q050 = inited[2];
@@ -1685,14 +1685,14 @@ namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
             v21 = *inited;
             v22 = inited[1];
             v15 = (IUnknown *)((char *)v21 + v14);
-            v16 = (int)this->WWMouseClass_field_0x30;
+            v16 = (int)this->q030;
             v23 = inited[2];
             v17 = inited[3];
             v21 = v15;
-            v18 = (int)this->WWMouseClass_field_0x44;
+            v18 = (int)this->q044;
             v22 = (IUnknown *)((char *)v22 + v16);
             v24 = v17;
-            v20 = (int)this->WWMouseClass_field_0x24;
+            v20 = (int)this->q024;
             v25 = 0;
             v26 = 0;
             v27 = v23;
@@ -1705,7 +1705,7 @@ namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
               0,
               1);
           }
-          Mouse::DrawCursor(this, this->WWMouseClass_field_0x24, 0, 0);
+          Mouse::DrawCursor(this, this->q024, 0, 0);
           ReleaseMutex(hMutex);
         }
       }
@@ -1728,7 +1728,7 @@ MouseClass * WWMouseClass::updateHotspot(char a2)
 char WWMouseClass::checkCapture()
 {
 {
-    return this->WWMouseClass_field_0x10;
+    return this->q010;
 }
 }
 
@@ -1736,15 +1736,15 @@ char WWMouseClass::checkCapture()
 int WWMouseClass::checkBounds()
 {
 {
-    return this->WWMouseClass_field_0x20;
+    return this->q020;
 }
 }
 
-// ==== BACKFILL 0x007BA380  WWMouseClass::checkHotspot  cls=WWMouseClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x007BA380  WWMouseClass::checkHotspot  cls=WWMouseClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int WWMouseClass::checkHotspot(int a1, int a2) {
 {
-      this->WWMouseClass_field_0x1C = a2;
-      this->WWMouseClass_field_0x20 = a3;
+      this->q01C = a2;
+      this->q020 = a3;
       return a2;
 }
 } }

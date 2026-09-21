@@ -942,7 +942,7 @@ retn    4
 */
 }
 
-// ==== BACKFILL 0x00522780  InfantryClass::InitProductionLimits  cls=InfantryClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x00522780  InfantryClass::InitProductionLimits  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::InitProductionLimits()
 {
     int result;
@@ -956,7 +956,7 @@ int InfantryClass::InitProductionLimits()
     if (*(_BYTE *)((char *)v1 + 3376))
     {
         v2 = this->owner;
-        this->q1D8 = 1;
+        this->isDisguisedFlag = 1;
         this->isDisguisedFlag_as_house = v2;
         v3 = *(_DWORD *)((char *)v2 + 488);
         if (v3)
@@ -977,7 +977,7 @@ int InfantryClass::InitProductionLimits()
     }
     else
     {
-        this->q1D8 = 0;
+        this->isDisguisedFlag = 0;
     }
     return result;
 }
@@ -1452,7 +1452,7 @@ unsigned int * DynamicVectorClass::AnimTypeConstructor(DynamicVector * aP1, Dyna
 }
 }
 
-// ==== BACKFILL 0x005253B0  DynamicVector::Add_Alt4  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x005253B0  DynamicVector::Add_Alt4  cls=DynamicVector  sig=csp  renamed_refs=6  residual=- ====
 char DynamicVector::Add_Alt4(VectorClass * aP1)
 {
 {
@@ -1460,8 +1460,8 @@ char DynamicVector::Add_Alt4(VectorClass * aP1)
     int v4;
     int v6;
     VectorClass *v7;
-    v3 = (MapClass *)this->DynamicVector_field_0x8;
-    if ( this->DynamicVector_field_0x10 >= (int)v3 )
+    v3 = (MapClass *)this->q008;
+    if ( this->q010 >= (int)v3 )
   {
     if ( !this->IsAllocated && v3 )
     return 0;
@@ -1469,9 +1469,9 @@ char DynamicVector::Add_Alt4(VectorClass * aP1)
     if ( v4 <= 0 || !this->SetCapacity((char *)(v3) + v4, 0) )
     return 0;
   }
-    v6 = this->DynamicVector_field_0x10;
+    v6 = this->q010;
     v7 = (VectorClass *)this->Items;
-    this->DynamicVector_field_0x10 = v6 + 1;
+    this->q010 = v6 + 1;
     *(int *)&v7->vtable1[4 * v6] = *(int *)aP1->vtable1;
     return 1;
 }

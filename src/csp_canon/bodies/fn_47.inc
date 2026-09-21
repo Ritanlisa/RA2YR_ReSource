@@ -92,7 +92,7 @@ int CaptureManagerClass::GetOriginalOwner(int a2)
 }
 }
 
-// ==== BACKFILL 0x00472330  HouseClass::AssignCivilianToLowPowerTargets  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00472330  HouseClass::AssignCivilianToLowPowerTargets  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int HouseClass::AssignCivilianToLowPowerTargets(int a2) {
 {
       int v2;
@@ -120,7 +120,7 @@ namespace gamemd { int HouseClass::AssignCivilianToLowPowerTargets(int a2) {
         return 0;
       for ( j = this->relatedTagsCapacity - 1; j >= 0; --j )
       {
-        v10 = *(_DWORD **)(this->buildingType + 4 * j);
+        v10 = *(_DWORD **)(this->vtable6 + 4 * j);
         if ( *v10 == a2 )
           v10[1] = v8;
       }
@@ -208,23 +208,23 @@ CaptureManagerClass * CaptureManagerClass::ddtor(char a2)
 }
 }
 
-// ==== BACKFILL 0x00473140  CaptureManagerClass::Constructor_473140  cls=CaptureManagerClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00473140  CaptureManagerClass::Constructor_473140  cls=CaptureManagerClass  sig=csp  renamed_refs=5  residual=IsAllocated ====
 unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 {
 {
-    this->Items = 0;
-    this->Capacity = a2;
-    this->IsInitialized = 1;
+    this->vtable2 = 0;
+    this->vtable3 = a2;
+    this->vtable4 = 1;
     this->IsAllocated = 0;
     *(void **)this = &vt_VectorClass_ControlNode;
     if ( a2 )
     {
         if ( a3 )
         {
-            this->Items = a3;
+            this->vtable2 = a3;
             return this;
         }
-        this->Items = OperatorNew(4 * a2);
+        this->vtable2 = OperatorNew(4 * a2);
         this->IsAllocated = 1;
     }
     return this;
@@ -951,7 +951,7 @@ namespace gamemd { int HouseClass::ReadHouseNamesToBitmask(void* a1, void* a2, i
 }
 } }
 
-// ==== BACKFILL 0x004752E0  HouseClass::WriteHouseListToINI  cls=HouseClass  sig=csp  renamed_refs=36  residual=IsAllocated,q00D ====
+// ==== BACKFILL 0x004752E0  HouseClass::WriteHouseListToINI  cls=HouseClass  sig=csp  renamed_refs=37  residual=IsAllocated,q00D ====
 namespace gamemd { int HouseClass::WriteHouseListToINI(void* aP1, void* a2, int a4) {
 {
     char v4;
@@ -1199,7 +1199,7 @@ namespace gamemd { void* HouseClass::initDropshipData() {
     this->vtable3 = 0x7FFFFFFF;
     this->vtable4 = 0;
     this->uniqueId = 0;
-    this->buildingType = 0;
+    this->vtable6 = 0;
     return this;
 }
 } }
@@ -5780,7 +5780,7 @@ unsigned int * DynamicVectorClass::Construct(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00477EC0  DynamicVector::Add_Alt  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x00477EC0  DynamicVector::Add_Alt  cls=DynamicVector  sig=csp  renamed_refs=6  residual=- ====
 char DynamicVector::Add_Alt(VectorClass * aP1)
 {
 {
@@ -5788,8 +5788,8 @@ char DynamicVector::Add_Alt(VectorClass * aP1)
     int v4;
     int v6;
     VectorClass *v7;
-    v3 = (MapClass *)this->DynamicVector_field_0x8;
-    if ( this->DynamicVector_field_0x10 >= (int)v3 )
+    v3 = (MapClass *)this->q008;
+    if ( this->q010 >= (int)v3 )
   {
     if ( !this->IsAllocated && v3 )
     return 0;
@@ -5797,9 +5797,9 @@ char DynamicVector::Add_Alt(VectorClass * aP1)
     if ( v4 <= 0 || !this->SetCapacity((char *)(v3) + v4, 0) )
     return 0;
   }
-    v6 = this->DynamicVector_field_0x10;
+    v6 = this->q010;
     v7 = (VectorClass *)this->Items;
-    this->DynamicVector_field_0x10 = v6 + 1;
+    this->q010 = v6 + 1;
     *(int *)&v7->vtable1[4 * v6] = *(int *)aP1->vtable1;
     return 1;
 }
@@ -6381,7 +6381,7 @@ namespace gamemd { void* CellClass::FindInfantry(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0047DD70  CellClass::UpdateAnimations  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0047DD70  CellClass::UpdateAnimations  cls=CellClass  sig=csp  renamed_refs=0  residual=q026 ====
 namespace gamemd { void CellClass::UpdateAnimations() {
 {
       _DWORD *v2;

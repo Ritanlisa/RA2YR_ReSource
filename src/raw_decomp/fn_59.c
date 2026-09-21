@@ -758,7 +758,7 @@ int __thiscall RandomMap::CheckNeighborhoodCompatibility(
   v15 = (DynamicVector *)Math::RoundToInt((15.0 - 5.0) * (1.0 - *(float *)&aP4) + 5.0); /*0x591000*/
   v6 = a1[1] - 2; /*0x591010*/
   v7 = (DynamicVector *)(__int16)(*a1 - 2); /*0x591014*/
-  v8 = this->DynamicVector_field_0x8; /*0x59101a*/
+  v8 = this->q008; /*0x59101a*/
   v14 = v6; /*0x59101d*/
   v17 = v6; /*0x591021*/
   v18 = 5; /*0x59102a*/
@@ -778,7 +778,7 @@ int __thiscall RandomMap::CheckNeighborhoodCompatibility(
         if ( v10 != 1 || v11 != 1 ) /*0x591076*/
         {
           v16 = v12; /*0x59107c*/
-          v13 = this->DynamicVector_field_0x8; /*0x591088*/
+          v13 = this->q008; /*0x591088*/
           v18 = 5; /*0x591094*/
           v19 = 5; /*0x591098*/
           v17 = v10 + v14 + 4 * v10 - 5; /*0x5910a0*/
@@ -998,8 +998,8 @@ char __thiscall MapSeed_PlaceCityBlock(_DWORD *this, __int16 *a2, __int16 *a3, v
               HIWORD(v59) = v60; /*0x591348*/
               if ( MapSeed::IsCellInBounds((__int16 *)&v59) ) /*0x591351*/
               {
-                SetLayerDataMap((__int16 *)&v59, this->MapSeed_field_0x08); /*0x591365*/
-                *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v59) + 283) = this->MapSeed_field_0x10; /*0x591380*/
+                SetLayerDataMap((__int16 *)&v59, this->q008); /*0x591365*/
+                *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v59) + 283) = this->q010; /*0x591380*/
               }
               ++v28; /*0x59138a*/
             }
@@ -1031,10 +1031,10 @@ char __thiscall MapSeed_PlaceCityBlock(_DWORD *this, __int16 *a2, __int16 *a3, v
               HIWORD(v59) = v60; /*0x5913ec*/
               if ( MapSeed::IsCellInBounds((__int16 *)&v59) ) /*0x5913f1*/
               {
-                SetLayerDataMap((__int16 *)&v59, this->MapSeed_field_0x08); /*0x591405*/
+                SetLayerDataMap((__int16 *)&v59, this->q008); /*0x591405*/
                 v36 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v59); /*0x591414*/
                 v34 = v64; /*0x59141c*/
-                v36[283] = this->MapSeed_field_0x10; /*0x591420*/
+                v36[283] = this->q010; /*0x591420*/
               }
               ++v35; /*0x591426*/
             }
@@ -1046,11 +1046,11 @@ char __thiscall MapSeed_PlaceCityBlock(_DWORD *this, __int16 *a2, __int16 *a3, v
         while ( v60 < (int)v33 ); /*0x59143a*/
         v4 = a3; /*0x59143c*/
       }
-      PlaceMapSeedClassBuildings(g_TerrainTypeTable2, a2, (int)a4, this->MapSeed_field_0x10); /*0x591455*/
+      PlaceMapSeedClassBuildings(g_TerrainTypeTable2, a2, (int)a4, this->q010); /*0x591455*/
       v37 = *v4 - 2; /*0x591461*/
       HIWORD(v61) = v4[1]; /*0x591465*/
       LOWORD(v61) = v37; /*0x591470*/
-      v38 = this->MapSeed_field_0x10; /*0x591479*/
+      v38 = this->q010; /*0x591479*/
       v64 = v61; /*0x59147c*/
       PlaceMapSeedClassBuildings(g_TerrainTypeTable2 + 1, &v64, (int)a4, v38); /*0x591487*/
       v39 = v65; /*0x59148c*/
@@ -1102,7 +1102,7 @@ char __thiscall MapSeed_PlaceCityBlock(_DWORD *this, __int16 *a2, __int16 *a3, v
               v48 = *v44; /*0x5915d5*/
               v44 += 4; /*0x5915d7*/
               v45 += 4; /*0x5915da*/
-              v47[283] = this->MapSeed_field_0x10 + v48 - 4; /*0x5915e3*/
+              v47[283] = this->q010 + v48 - 4; /*0x5915e3*/
               v49 = *(_BYTE *)(v45 - 4); /*0x5915e9*/
               v47[284] = v49; /*0x5915ec*/
               v50 = g_CellTileLookup; /*0x5915f2*/
@@ -1144,7 +1144,7 @@ char __thiscall MapSeed_PlaceCityBlock(_DWORD *this, __int16 *a2, __int16 *a3, v
             if ( g_MapTileArray ) /*0x5916b3*/
               *((_DWORD *)g_MapTileArray + 20 * v55 + 20 * unk_89C2DC * (__int16)(i + v71 + v52) + 14) = a4; /*0x5916ce*/
             v56 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v65); /*0x5916dc*/
-            v57 = this->MapSeed_field_0x10; /*0x5916e5*/
+            v57 = this->q010; /*0x5916e5*/
             v56[284] = 4; /*0x5916e8*/
             v56[283] = v57 - i - 1; /*0x5916f3*/
             *((_DWORD *)v56 + 14) = g_CellTileLookup + 3; /*0x591706*/
@@ -1749,10 +1749,10 @@ char __thiscall sub_591D80(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
               HIWORD(v63) = v64; /*0x591fd8*/
               if ( MapSeed::IsCellInBounds((__int16 *)&v63) ) /*0x591fdd*/
               {
-                SetLayerDataMap((__int16 *)&v63, this->MapSeed_field_0x08); /*0x591ff1*/
+                SetLayerDataMap((__int16 *)&v63, this->q008); /*0x591ff1*/
                 v29 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v63); /*0x592000*/
                 v26 = v77; /*0x592008*/
-                v29[283] = this->MapSeed_field_0x10; /*0x59200c*/
+                v29[283] = this->q010; /*0x59200c*/
               }
               ++v28; /*0x592012*/
               v27 = v26 + v17 - 2; /*0x592013*/
@@ -1786,10 +1786,10 @@ char __thiscall sub_591D80(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
               HIWORD(v63) = v64; /*0x592072*/
               if ( MapSeed::IsCellInBounds((__int16 *)&v63) ) /*0x592077*/
               {
-                SetLayerDataMap((__int16 *)&v63, this->MapSeed_field_0x08); /*0x59208b*/
+                SetLayerDataMap((__int16 *)&v63, this->q008); /*0x59208b*/
                 v35 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v63); /*0x59209a*/
                 v33 = v68[0]; /*0x5920a2*/
-                v35[283] = this->MapSeed_field_0x10; /*0x5920a6*/
+                v35[283] = this->q010; /*0x5920a6*/
               }
               ++v34; /*0x5920ac*/
             }
@@ -1803,19 +1803,19 @@ char __thiscall sub_591D80(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
       }
       v36 = a3[1] - 3; /*0x5920d8*/
       LOWORD(v65) = *a3; /*0x5920dc*/
-      v37 = this->MapSeed_field_0x10; /*0x5920e1*/
+      v37 = this->q010; /*0x5920e1*/
       HIWORD(v65) = v36; /*0x5920e4*/
       v68[0] = v65; /*0x5920f2*/
       PlaceMapSeedClassBuildings(g_TerrainTypeTable2 + 4, v68, (int)a4, v37); /*0x5920ff*/
       v38 = v4[1] - 3; /*0x59210f*/
       LOWORD(v65) = *v4 - 2; /*0x592113*/
-      v39 = this->MapSeed_field_0x10; /*0x592118*/
+      v39 = this->q010; /*0x592118*/
       HIWORD(v65) = v38; /*0x59211b*/
       v68[0] = v65; /*0x592124*/
       PlaceMapSeedClassBuildings(g_TerrainTypeTable2 + 5, v68, (int)a4, v39); /*0x592136*/
       v40 = v4[1] - 1; /*0x592144*/
       LOWORD(v65) = *v4 - 1; /*0x592146*/
-      v41 = this->MapSeed_field_0x10; /*0x59214b*/
+      v41 = this->q010; /*0x59214b*/
       HIWORD(v65) = v40; /*0x59214e*/
       v68[0] = v65; /*0x592157*/
       PlaceMapSeedClassBuildings(g_TerrainTypeTable2 + 6, v68, (int)a4, v41); /*0x592169*/
@@ -1869,7 +1869,7 @@ char __thiscall sub_591D80(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
               v51 = *v47; /*0x5922c5*/
               v47 += 4; /*0x5922c7*/
               v48 += 4; /*0x5922ca*/
-              v50[283] = this->MapSeed_field_0x10 + v51 - 4; /*0x5922d3*/
+              v50[283] = this->q010 + v51 - 4; /*0x5922d3*/
               v52 = *(_BYTE *)(v48 - 4); /*0x5922d9*/
               v50[284] = v52; /*0x5922dc*/
               v53 = g_CellTileLookup; /*0x5922e2*/
@@ -1913,7 +1913,7 @@ char __thiscall sub_591D80(_DWORD *this, __int16 *a2, __int16 *a3, void *a4)
             if ( g_MapTileArray ) /*0x5923ae*/
               *((_DWORD *)g_MapTileArray + 20 * (__int16)(LOWORD(v68[0]) + v54 + v58) + 20 * unk_89C2DC * v59 + 14) = a4; /*0x5923cc*/
             v60 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v69); /*0x5923da*/
-            v61 = this->MapSeed_field_0x10; /*0x5923e3*/
+            v61 = this->q010; /*0x5923e3*/
             v60[284] = 2; /*0x5923e6*/
             v60[283] = v61 - i - 1; /*0x5923f1*/
             *((_DWORD *)v60 + 14) = g_CellTileLookup + 1; /*0x592402*/
@@ -2132,10 +2132,10 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
               HIWORD(v66) = v67; /*0x592680*/
               if ( MapSeed::IsCellInBounds((__int16 *)&v66) ) /*0x592689*/
               {
-                SetLayerDataMap((__int16 *)&v66, this->RandomMap_field_0x8); /*0x59269d*/
+                SetLayerDataMap((__int16 *)&v66, this->q008); /*0x59269d*/
                 v29 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v66); /*0x5926ac*/
                 v26 = v70; /*0x5926b4*/
-                v29[283] = this->RandomMap_field_0x40; /*0x5926b8*/
+                v29[283] = this->q040; /*0x5926b8*/
               }
               ++v28; /*0x5926c2*/
             }
@@ -2167,8 +2167,8 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
               HIWORD(v66) = v67; /*0x592725*/
               if ( MapSeed::IsCellInBounds((__int16 *)&v66) ) /*0x59272a*/
               {
-                SetLayerDataMap((__int16 *)&v66, this->RandomMap_field_0x8); /*0x59273e*/
-                *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v66) + 283) = this->RandomMap_field_0x40; /*0x592759*/
+                SetLayerDataMap((__int16 *)&v66, this->q008); /*0x59273e*/
+                *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v66) + 283) = this->q040; /*0x592759*/
               }
               ++v34; /*0x592763*/
             }
@@ -2182,18 +2182,18 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
       v35 = *a2 - 3; /*0x592788*/
       HIWORD(v68) = a2[1]; /*0x59278c*/
       LOWORD(v68) = v35; /*0x592796*/
-      v36 = this->RandomMap_field_0x10; /*0x59279f*/
+      v36 = this->q010; /*0x59279f*/
       v70 = (int)v68; /*0x5927a2*/
       PlaceMapSeedClassBuildings((int)g_TerrainTypeTable2->headNode + 3, &v70, (int)aP2, v36); /*0x5927af*/
       v37 = a3[1] - 2; /*0x5927c0*/
       LOWORD(v68) = *a3 - 3; /*0x5927c4*/
-      v38 = this->RandomMap_field_0x10; /*0x5927c9*/
+      v38 = this->q010; /*0x5927c9*/
       HIWORD(v68) = v37; /*0x5927cc*/
       v70 = (int)v68; /*0x5927d5*/
       PlaceMapSeedClassBuildings((int)&g_TerrainTypeTable2->headNode[1], &v70, (int)aP2, v38); /*0x5927e7*/
       v39 = a3[1] - 1; /*0x5927f6*/
       LOWORD(v68) = *a3 - 1; /*0x5927f8*/
-      v40 = this->RandomMap_field_0x10; /*0x5927fd*/
+      v40 = this->q010; /*0x5927fd*/
       HIWORD(v68) = v39; /*0x592800*/
       v70 = (int)v68; /*0x592809*/
       PlaceMapSeedClassBuildings((int)&g_TerrainTypeTable2->headNode[1] + 1, &v70, (int)aP2, v40); /*0x59281b*/
@@ -2251,7 +2251,7 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
               v53 = *v46; /*0x592969*/
               v46 += 4; /*0x59296b*/
               v47 += 4; /*0x59296e*/
-              v52[283] = this->RandomMap_field_0x40 + v53 - 4; /*0x592977*/
+              v52[283] = this->q040 + v53 - 4; /*0x592977*/
               v54 = *(_BYTE *)(v47 - 4); /*0x59297d*/
               v52[284] = v54; /*0x592980*/
               v55 = g_CellTileLookup; /*0x592986*/
@@ -2294,7 +2294,7 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
             if ( g_MapTileArray ) /*0x592a58*/
               *((_DWORD *)g_MapTileArray + 20 * (__int16)(v73 + v59 - v42) + 20 * unk_89C2DC * v61 + 14) = aP2; /*0x592a73*/
             v62 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v71); /*0x592a81*/
-            v63 = this->RandomMap_field_0x40; /*0x592a8a*/
+            v63 = this->q040; /*0x592a8a*/
             v62[284] = 1; /*0x592a8d*/
             v64 = v63 - v42++ - 1; /*0x592a96*/
             v62[283] = v64; /*0x592a99*/
@@ -4148,7 +4148,7 @@ void __thiscall PlaceRandomWaypoints(int *this, int a2)
     v3 = Math::RoundToInt((double)v21 * 6.984919311242392e-10); /*0x5948e9*/
   }
   while ( v3 > 2 ); /*0x5948f1*/
-  v4 = this->DynamicVector_field_0x8; /*0x5948f3*/
+  v4 = this->q008; /*0x5948f3*/
   LODWORD(v21) = 0; /*0x5948f6*/
   for ( i = v3 + 12 * v4 + 3 * v4; v31 < i; LODWORD(v21) = v21 + 1 ) /*0x59490a*/
   {
@@ -4185,7 +4185,7 @@ void __thiscall PlaceRandomWaypoints(int *this, int a2)
     for ( j = 4544; j < 4576; j += 4 ) /*0x594a58*/
       *(_DWORD *)((char *)MEMORY[0xA8B230] + j) = dword_ABE300; /*0x594a69*/
     v11 = 0; /*0x594a79*/
-    if ( this->DynamicVector_field_0x8 > 0 ) /*0x594a7d*/
+    if ( this->q008 > 0 ) /*0x594a7d*/
     {
       v12 = a2; /*0x594a7f*/
       do /*0x594add*/
@@ -4198,9 +4198,9 @@ void __thiscall PlaceRandomWaypoints(int *this, int a2)
         ++v12; /*0x594acc*/
         *((_DWORD *)MEMORY[0xA8B230] + v11 + 1135) = *(_DWORD *)(v9[1] + 4 * v11 - 4); /*0x594ad1*/
       }
-      while ( v11 < this->DynamicVector_field_0x8 ); /*0x594add*/
+      while ( v11 < this->q008 ); /*0x594add*/
     }
-    for ( k = 0; k < this->DynamicVector_field_0x8; ++k ) /*0x594ae8*/
+    for ( k = 0; k < this->q008; ++k ) /*0x594ae8*/
     {
       v16 = v9[4]; /*0x594aea*/
       if ( v16 > 0 ) /*0x594aef*/
@@ -4469,7 +4469,7 @@ _DWORD *__thiscall BuildingPlacement_SelectCells(int *this, int a2)
   double v49; // [esp+40h] [ebp-8h]
   double v50; // [esp+40h] [ebp-8h]
 
-  v2 = this->DynamicVector_field_0x8; /*0x594f51*/
+  v2 = this->q008; /*0x594f51*/
   v49 = -1.0; /*0x594f5f*/
   v41 = -1; /*0x594f6f*/
   v3 = Math::RoundToInt(((double)dword_ABE030 * 0.01 * 12.0 / (double)dword_ABE028 + 2.0) * (double)v2); /*0x594f8d*/
@@ -5799,11 +5799,11 @@ int __thiscall Skirmish::ReadSettings(HWND *this, HWND hDlg)
   HWND hDlge; // [esp+18h] [ebp+4h]
   HWND hDlgf; // [esp+18h] [ebp+4h]
 
-  v18 = this->__pad_03C; /*0x596c8a*/
+  v18 = this->q03C; /*0x596c8a*/
   hDlga = GetDlgItem(hDlg, 1029); /*0x596ca2*/
   v4 = SendMessageA(hDlga, 0x147u, 0, 0); /*0x596ca6*/
   v5 = (HWND)SendMessageA(hDlga, 0x150u, v4, 0); /*0x596cb3*/
-  this->__pad_03C = v5; /*0x596cb9*/
+  this->q03C = v5; /*0x596cb9*/
   if ( v18 != v5 ) /*0x596cbe*/
     byte_ABE2D8 = 1; /*0x596cc0*/
   v19 = this->q038; /*0x596cd0*/
@@ -5820,11 +5820,11 @@ int __thiscall Skirmish::ReadSettings(HWND *this, HWND hDlg)
   this->q004 = v9; /*0x596d39*/
   if ( v20 != v9 ) /*0x596d3e*/
     byte_ABE2D8 = 1; /*0x596d40*/
-  v21 = this->__pad_048; /*0x596d50*/
+  v21 = this->q048; /*0x596d50*/
   hDlgd = GetDlgItem(hDlg, 1002); /*0x596d62*/
   v10 = SendMessageA(hDlgd, 0x147u, 0, 0); /*0x596d66*/
   v11 = (HWND)SendMessageA(hDlgd, 0x150u, v10, 0); /*0x596d73*/
-  this->__pad_048 = v11; /*0x596d79*/
+  this->q048 = v11; /*0x596d79*/
   if ( v21 != v11 ) /*0x596d7e*/
     byte_ABE2D8 = 1; /*0x596d80*/
   v22 = this->q019; /*0x596d90*/
@@ -5848,7 +5848,7 @@ int __thiscall Skirmish::ReadSettings(HWND *this, HWND hDlg)
   {
     byte_ABE2D8 = 1; /*0x596df0*/
   }
-  Skirmish::RandomizeSettings(this, (ObjectClass *)this->__pad_03C); /*0x596e08*/
+  Skirmish::RandomizeSettings(this, (ObjectClass *)this->q03C); /*0x596e08*/
   v16 = g_Map_TiberiumConfig; /*0x596e0d*/
   if ( g_Map_TiberiumConfig ) /*0x596e15*/
   {
@@ -5920,7 +5920,7 @@ LRESULT __thiscall RandomMap_SetupDialog(_DWORD *this, HWND hDlg)
     ++v3; /*0x596ed4*/
   }
   while ( (int)v4 < (int)&off_82B070 ); /*0x596edb*/
-  v7 = GetStringCSF((&off_82B060)[this->__pad_048], 0, g_Str_File_MapGen_cpp, 4887); /*0x596ef7*/
+  v7 = GetStringCSF((&off_82B060)[this->q048], 0, g_Str_File_MapGen_cpp, 4887); /*0x596ef7*/
   v8 = SendMessageA(i, 0x4BEu, 0, (LPARAM)v7); /*0x596f05*/
   SendMessageA(i, 0x14Eu, v8, 0); /*0x596f10*/
   for ( j = GetDlgItem(hDlg, 1030); SendMessageA(j, 0x146u, 0, 0) > 0; SendMessageA(j, 0x144u, 0, 0) ) /*0x596f24*/
@@ -5952,7 +5952,7 @@ LRESULT __thiscall RandomMap_SetupDialog(_DWORD *this, HWND hDlg)
     ++v17; /*0x597033*/
   }
   while ( (int)v18 < (int)&off_82B048 ); /*0x59703a*/
-  v21 = GetStringCSF((&off_82B034)[this->__pad_03C], 0, g_Str_File_MapGen_cpp, 4918); /*0x597056*/
+  v21 = GetStringCSF((&off_82B034)[this->q03C], 0, g_Str_File_MapGen_cpp, 4918); /*0x597056*/
   v22 = SendMessageA(k, 0x4BEu, 0, (LPARAM)v21); /*0x597064*/
   SendMessageA(k, 0x14Eu, v22, 0); /*0x59706f*/
   for ( m = GetDlgItem(hDlg, 1031); SendMessageA(m, 0x146u, 0, 0) > 0; SendMessageA(m, 0x144u, 0, 0) ) /*0x597083*/
@@ -6121,23 +6121,23 @@ _DWORD *__thiscall sub_597430(_DWORD *this)
         this->q01A = 1; /*0x597511*/
         break; /*0x597511*/
     }
-    this->__pad_050 = 4; /*0x597516*/
+    this->q050 = 4; /*0x597516*/
     switch ( *(_BYTE *)(v3 + 30) ) /*0x597524*/
     {
       case 1: /*0x597524*/
-        this->__pad_048 = 2; /*0x597534*/
+        this->q048 = 2; /*0x597534*/
         break; /*0x597537*/
       case 2: /*0x597524*/
-        this->__pad_048 = 0; /*0x59752b*/
+        this->q048 = 0; /*0x59752b*/
         break; /*0x597532*/
       case 3: /*0x597524*/
-        this->__pad_048 = 3; /*0x597539*/
+        this->q048 = 3; /*0x597539*/
         break; /*0x59753c*/
       default:
-        this->__pad_048 = 1; /*0x59753e*/
+        this->q048 = 1; /*0x59753e*/
         break; /*0x59753e*/
     }
-    this->__pad_03C = *(unsigned __int8 *)(v3 + 28); /*0x59754d*/
+    this->q03C = *(unsigned __int8 *)(v3 + 28); /*0x59754d*/
     this->q038 = *(unsigned __int8 *)(v3 + 29); /*0x597555*/
     this->q070 = *(unsigned __int8 *)(v3 + 33); /*0x59755d*/
     this->q06C = *(unsigned __int8 *)(v3 + 36); /*0x597565*/
@@ -6183,25 +6183,25 @@ int __thiscall SettingsClass_ClampValues(int *this)
   {
     this->q004 = 3; /*0x5975f1*/
   }
-  v2 = this->__pad_03C; /*0x5975fd*/
+  v2 = this->q03C; /*0x5975fd*/
   if ( v2 < 5 ) /*0x597603*/
   {
     if ( v2 < 0 ) /*0x597610*/
-      this->__pad_03C = 0; /*0x597612*/
+      this->q03C = 0; /*0x597612*/
   }
   else
   {
-    this->__pad_03C = 4; /*0x597605*/
+    this->q03C = 4; /*0x597605*/
   }
-  v3 = this->__pad_048; /*0x597615*/
+  v3 = this->q048; /*0x597615*/
   if ( v3 < 4 ) /*0x59761b*/
   {
     if ( v3 < 0 ) /*0x597624*/
-      this->__pad_048 = 0; /*0x597626*/
+      this->q048 = 0; /*0x597626*/
   }
   else
   {
-    this->__pad_048 = 3; /*0x59761d*/
+    this->q048 = 3; /*0x59761d*/
   }
   v4 = this->q044; /*0x597629*/
   if ( v4 <= 100 ) /*0x597633*/
@@ -6762,7 +6762,7 @@ double __thiscall Random_Gaussian(double *this)
   if ( *(_BYTE *)this ) /*0x5980cc*/
   {
     *(_BYTE *)this = 0; /*0x5980d1*/
-    return this->Random_field_0x04; /*0x5980d4*/
+    return this->q004; /*0x5980d4*/
   }
   else
   {
@@ -6770,9 +6770,9 @@ double __thiscall Random_Gaussian(double *this)
     {
       do /*0x598115*/
       {
-        v3 = ((double (*)(void))this->Random_field_0x04)(); /*0x5980de*/
+        v3 = ((double (*)(void))this->q004)(); /*0x5980de*/
         v8 = v3 + v3 - 1.0; /*0x5980e9*/
-        v4 = ((double (*)(void))this->Random_field_0x04)(); /*0x5980ed*/
+        v4 = ((double (*)(void))this->q004)(); /*0x5980ed*/
         v9 = v4 + v4 - 1.0; /*0x5980f8*/
         v5 = v9 * v9 + v8 * v8; /*0x598108*/
       }
@@ -6782,7 +6782,7 @@ double __thiscall Random_Gaussian(double *this)
     v6 = __FYL2X__(v5, 0.6931471805599453094); /*0x59812d*/
     v7 = Math::Sqrt((-v6 - v6) / v5); /*0x59813e*/
     *(_BYTE *)this = 1; /*0x59814c*/
-    this->Random_field_0x04 = v7 * v9; /*0x59814f*/
+    this->q004 = v7 * v9; /*0x59814f*/
     return v7 * v8; /*0x598153*/
   }
 }
@@ -6989,7 +6989,7 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
   v13 = IntList; /*0x598534*/
   this->q07B = IntList[4]; /*0x59853b*/
   this->q1F0 = v13[5]; /*0x598541*/
-  this->__pad_1F4 = v13[6]; /*0x59854b*/
+  this->q1F4 = v13[6]; /*0x59854b*/
   v32 = (int)&vt_VectorClass_int; /*0x59854e*/
   VectorClass::Destroy((int)&v32); /*0x598552*/
   IntList = &v24; /*0x598563*/
@@ -7253,7 +7253,7 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
     off_82AF14(); /*0x598ada*/
   RandomMap::LoadConfig(this); /*0x598ade*/
   Debug::Log(); /*0x598ae8*/
-  v5 = this->__pad_03C; /*0x598aed*/
+  v5 = this->q03C; /*0x598aed*/
   if ( v5 == 3 || v5 == 4 ) /*0x598afb*/
   {
     if ( this->q04C ) /*0x598b06*/
@@ -7605,8 +7605,8 @@ int __thiscall sub_599530(_DWORD *this)
   void *v4; // eax
   _DWORD *v6; // [esp+8h] [ebp-4h] BYREF
 
-  this->MapClass_field_0x304 = 0; /*0x599534*/
-  this->MapClass_field_0x308 = 0; /*0x59953a*/
+  this->q304 = 0; /*0x599534*/
+  this->q308 = 0; /*0x59953a*/
   if ( g_MapTileArray ) /*0x599548*/
   {
     __3_YAXPAX_Z(g_MapTileArray); /*0x59954b*/
@@ -7741,7 +7741,7 @@ char *__thiscall RandomMap::SetupTheater(int *this, char a2)
   *(float *)&v72 = (double)this->q019 * 0.33333334;
   v68 = (double)this->q01A * 0.33333334;
   RandomMap::LoadConfig(this);
-  v3 = this->__pad_03C;
+  v3 = this->q03C;
   if ( v3 == 3 || v3 == 4 )
   {
     v5 = v68;
@@ -7795,10 +7795,10 @@ char *__thiscall RandomMap::SetupTheater(int *this, char a2)
     MEMORY[0x82BFA4],
     (char *)(*(_DWORD *)g_SuperWeaponTypeCount + 36));
   if ( this->q038 )
-    v8 = this->__pad_1C4;
+    v8 = this->q1C4;
   else
-    v8 = this->__pad_1A8;
-  v73[0] = (double)*(int *)(v8 + 4 * this->__pad_048) * 0.01;
+    v8 = this->q1A8;
+  v73[0] = (double)*(int *)(v8 + 4 * this->q048) * 0.01;
   v9 = v73[0];
   INIClass::SetDouble((char *)v79, (unsigned __int8 *)g_INI_Key_Lighting, MEMORY[0x82BF94], v73[0]);
   INIClass::SetDouble((char *)v79, (unsigned __int8 *)g_INI_Key_Lighting, aRedtint, 1.0);
@@ -8275,7 +8275,7 @@ int __thiscall RandomMap::FinalizeMapData(int *this)
   LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x59a6cc*/
   for ( i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); i; i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x59a6dd*/
     *(_DWORD *)(i + 56) = dword_AA0738; /*0x59a6e5*/
-  v3 = this->__pad_03C; /*0x59a6f6*/
+  v3 = this->q03C; /*0x59a6f6*/
   if ( v3 ) /*0x59a6fc*/
   {
     v4 = v3 - 1; /*0x59a6fe*/
@@ -9772,7 +9772,7 @@ char __thiscall RandomMap::GrowTiberium(int *this)
   char result; // al
   MapResourceClass aP1; // [esp+Ch] [ebp-4h] BYREF
 
-  v2 = this->__pad_03C; /*0x59c594*/
+  v2 = this->q03C; /*0x59c594*/
   ++this->q308; /*0x59c59b*/
   if ( (v2 == 3 || v2 == 4) && this->q04C > 20 ) /*0x59c5ac*/
   {

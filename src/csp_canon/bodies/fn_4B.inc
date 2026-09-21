@@ -300,10 +300,10 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
 }
 }
 
-// ==== BACKFILL 0x004B4FB0  DropListClass::SetFocus  cls=DropListClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x004B4FB0  DropListClass::SetFocus  cls=DropListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int DropListClass::SetFocus(void* a1) {
 {
-      wcsncpy(*((wchar_t **)this + 13), Source, this->DropListClass_field_0x38);
+      wcsncpy(*((wchar_t **)this + 13), Source, this->q038);
       this->vt18();
       return (*(int (__thiscall **)(int, wchar_t *))(this->List + 136))((int)this + 176, Source);
 }
@@ -323,16 +323,16 @@ namespace gamemd { int DropListClass::GetItemData() {
 }
 } }
 
-// ==== BACKFILL 0x004B50A0  DropListClass::AddItem  cls=DropListClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x004B50A0  DropListClass::AddItem  cls=DropListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int DropListClass::AddItem() {
 {
       char result;
 
-      result = this->DropListClass_field_0x48;
+      result = this->q048;
       if ( result )
       {
         result = (*(int (__thiscall **)(int))(this->List + 36))(this + 176);
-        this->DropListClass_field_0x48 = 0;
+        this->q048 = 0;
       }
       return result;
 }
@@ -381,7 +381,7 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
 }
 }
 
-// ==== BACKFILL 0x004B54E0  DropListClass::RemoveItem  cls=DropListClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x004B54E0  DropListClass::RemoveItem  cls=DropListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int DropListClass::RemoveItem(int a1, int a2) {
 {
       Rect_Point::Set(this, (GadgetClass *)aP1, (GadgetClass *)aP2);
@@ -389,7 +389,7 @@ namespace gamemd { int DropListClass::RemoveItem(int a1, int a2) {
         this + 44,
         aP1,
         aP2 + *(__int16 *)(this->q0A8 + 4));
-      return (*(int (__thiscall **)(_DWORD *, char *, int))(this->DropListClass_field_0x50 + 100))(this + 20, (char *)aP1 + this->DropListClass_field_0x14, aP2);
+      return (*(int (__thiscall **)(_DWORD *, char *, int))(this->q050 + 100))(this + 20, (char *)aP1 + this->q014, aP2);
 }
 } }
 

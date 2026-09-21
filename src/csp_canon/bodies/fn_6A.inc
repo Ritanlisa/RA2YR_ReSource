@@ -514,7 +514,7 @@ namespace gamemd { int HouseClass::UpdateAllProductionTabs() {
 }
 } }
 
-// ==== BACKFILL 0x006A80A0  TabClass::updateTabProduction  cls=TabClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x006A80A0  TabClass::updateTabProduction  cls=TabClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* TabClass::updateTabProduction(int a1) {
 {
       _BYTE *result;
@@ -528,7 +528,7 @@ namespace gamemd { void* TabClass::updateTabProduction(int a1) {
 
       result = this;
       *(_DWORD *)this = 0;
-      this->TabClass_field_0x4 = 0;
+      this->q004 = 0;
       v3 = g_CurrentFrame;
       *((_DWORD *)result + 4) = 0;
       *((_DWORD *)result + 2) = v3;
@@ -583,7 +583,7 @@ namespace gamemd { void* TabClass::updateTabProduction(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x006A81B0  HouseClass::ClearProductionQueue  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x006A81B0  HouseClass::ClearProductionQueue  cls=HouseClass  sig=csp  renamed_refs=0  residual=q03D,q03E,q03F ====
 namespace gamemd { void* HouseClass::ClearProductionQueue() {
 {
       _DWORD *result;
@@ -638,7 +638,7 @@ namespace gamemd { int SidebarClass::InitCameoGrid(int a1) {
       int v10;
       int i;
 
-      this->SidebarClass_field_0x38 = a2;
+      this->q038 = a2;
       v2 = 26;
       if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) )
         v2 = 18;
@@ -651,11 +651,11 @@ namespace gamemd { int SidebarClass::InitCameoGrid(int a1) {
         v7 = 2 * result;
         do
         {
-          v8 = (_DWORD *)(56 * (v7 + 60 * this->SidebarClass_field_0x38) + 11566720);
+          v8 = (_DWORD *)(56 * (v7 + 60 * this->q038) + 11566720);
           v8[9] = 202;
-          v8[3] = v6 * DataGlobal_B0B4FC + DataGlobal_880D4C[997 * this->SidebarClass_field_0x38];
+          v8[3] = v6 * DataGlobal_B0B4FC + DataGlobal_880D4C[997 * this->q038];
           v9 = i * DataGlobal_B0B500;
-          v10 = DataGlobal_880D50[997 * this->SidebarClass_field_0x38];
+          v10 = DataGlobal_880D50[997 * this->q038];
           v8[12] = v7;
           ++v6;
           ++v7;
@@ -691,8 +691,8 @@ namespace gamemd { int SidebarClass::RefreshCameoGrid() {
       {
         do
         {
-          Hash::Reset((_DWORD *)(56 * (v3 + 60 * this->SidebarClass_field_0x38) + 11566720));
-          LOBYTE(v5) = Hash::InsertOrdered(&DataGlobal_87F7E8, 56 * (v3 + 60 * this->SidebarClass_field_0x38) + 11566720);
+          Hash::Reset((_DWORD *)(56 * (v3 + 60 * this->q038) + 11566720));
+          LOBYTE(v5) = Hash::InsertOrdered(&DataGlobal_87F7E8, 56 * (v3 + 60 * this->q038) + 11566720);
           ++v3;
         }
         while ( v3 < v6 );
@@ -708,7 +708,7 @@ namespace gamemd { int SidebarClass::sortCameoList() {
     int i;
     char result;
     for ( i = 0; i < 60; ++i )
-    result = Tactical::SelectObject(&DataGlobal_87F7E8, 56 * (i + 60 *(void**)this->SidebarClass_field_0x38) + 11566720);
+    result = Tactical::SelectObject(&DataGlobal_87F7E8, 56 * (i + 60 *(void**)this->q038) + 11566720);
     return result;
 }
 } }
@@ -805,16 +805,16 @@ unsigned int * ObjectClass::updateAnimation(char a2)
 }
 }
 
-// ==== BACKFILL 0x006AC7C0  TabClass::drawTabBackground  cls=TabClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x006AC7C0  TabClass::drawTabBackground  cls=TabClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TabClass::drawTabBackground() {
 {
       IUnknown *v2;
 
-      this->TabClass_field_0x14 = 0;
+      this->q014 = 0;
       this->q018 = 0;
       v2 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
       this->q024 = 0;
-      this->TabClass_field_0x1C = v2;
+      this->q01C = v2;
       this->q028 = 0;
       this->q02C = 1;
       return (TabClass *)this;
@@ -842,17 +842,17 @@ namespace ra2 { namespace game { void* ObjectClass::DestructWithRadar(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x006AC870  SidebarClass::initButtons  cls=SidebarClass  sig=csp  renamed_refs=3  residual=- ====
+// ==== BACKFILL 0x006AC870  SidebarClass::initButtons  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* SidebarClass::initButtons() {
 {
       wchar_t *v2;
 
       *(_DWORD *)this = 0;
-      this->SidebarClass_field_0x4 = 0;
+      this->q004 = 0;
       v2 = g_CurrentFrame;
       this->q010 = 0;
-      this->SidebarClass_field_0x8 = v2;
-      this->SidebarClass_field_0x14 = 0;
+      this->q008 = v2;
+      this->q014 = 0;
       this->q018 = 1;
       return this;
 }

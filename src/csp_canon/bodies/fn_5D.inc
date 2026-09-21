@@ -94,7 +94,7 @@ short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
         {
             if ( (unsigned short)u8 == 10 )
             {
-                u8 = this->MSFont_field_0x08 + a5;
+                u8 = this->q008 + a5;
                 v16 = a4;
                 a5 = u8;
             }
@@ -120,7 +120,7 @@ short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
                     v17[1] = a5;
                     v17[0] = v16 - v11;
                     v12 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a2 + 120))(a2, v19);
-                    DrawToSurfaceSHP(a2, this->texHeight, this->MSFont_field_0x14, a6 + v10, v17, v12, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+                    DrawToSurfaceSHP(a2, this->texHeight, this->q014, a6 + v10, v17, v12, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
                     v6 = a3;
                 }
                 u8 = *v6;
@@ -450,14 +450,14 @@ void ScenarioClass::sub_5D80B0()
 {
     void *v2;
     v2 = *(void **)(this + 4);
-    this->DynamicVector_field_0x10 = 0;
+    this->q010 = 0;
     if ( v2 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v2);
     this->Items = 0;
   }
     this->IsAllocated = 0;
-    this->DynamicVector_field_0x8 = 0;
+    this->q008 = 0;
 }
 }
 
@@ -476,14 +476,14 @@ namespace gamemd { void ScenarioClass::resetScenarioData() {
 {
     void *v2;
     v2 = *(void **)(this + 4);
-    this->DynamicVector_field_0x10 = 0;
+    this->q010 = 0;
     if ( v2 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v2);
     this->Items = 0;
   }
     this->IsAllocated = 0;
-    this->DynamicVector_field_0x8 = 0;
+    this->q008 = 0;
 }
 } }
 

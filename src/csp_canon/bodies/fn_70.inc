@@ -68,7 +68,7 @@ namespace ra2 { namespace game { int MissionClass::OverrideMission_SyncLog() {
       int v4;
       TechnoClass *aP3;
 
-      this->isUncrushable_e = this->sprayOffsetIndex_e;
+      this->lastTarget = this->target;
       AbstractClass::COMStub_125((int)this, v3, v4, aP3);
       return this->vt242(v4);
 }
@@ -241,7 +241,7 @@ namespace ra2 { namespace game { int ObjectClass::GetShroudByte() {
 }
 } } }
 
-// ==== BACKFILL 0x0070C5C0  ObjectClass::GetFogByte  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0070C5C0  ObjectClass::GetFogByte  cls=ObjectClass  sig=csp  renamed_refs=0  residual=q271 ====
 namespace ra2 { namespace game { int ObjectClass::GetFogByte() {
 {
       int result;
@@ -262,7 +262,7 @@ namespace ra2 { namespace game { int ObjectClass::HasSubObject() {
 }
 } } }
 
-// ==== BACKFILL 0x0070C5F0  ObjectClass::IsNotShrouded  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0070C5F0  ObjectClass::IsNotShrouded  cls=ObjectClass  sig=csp  renamed_refs=0  residual=q271 ====
 namespace ra2 { namespace game { int ObjectClass::IsNotShrouded() {
 {
       int result;

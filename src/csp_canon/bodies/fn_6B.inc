@@ -309,7 +309,7 @@ namespace ra2 { namespace game { void* AbstractClass::checkAIResources(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x006B1E50  SliderClass::Draw  cls=SliderClass  sig=csp  renamed_refs=5  residual=- ====
+// ==== BACKFILL 0x006B1E50  SliderClass::Draw  cls=SliderClass  sig=csp  renamed_refs=0  residual=q02E ====
 namespace gamemd { int SliderClass::Draw(int a1) {
 {
       SliderClass *v3;
@@ -321,15 +321,15 @@ namespace gamemd { int SliderClass::Draw(int a1) {
 
       v3 = aP1;
       v4 = this->q048;
-      if ( (int)aP1 >= this->SliderClass_field_0x30 - v4 )
-        v3 = (SliderClass *)(this->SliderClass_field_0x30 - v4);
+      if ( (int)aP1 >= this->q030 - v4 )
+        v3 = (SliderClass *)(this->q030 - v4);
       if ( !GaugeClass::GetValue((int *)this, v3) )
         return 0;
       if ( this->q02E )
-        v5 = this->SliderClass_field_0x14;
+        v5 = this->q014;
       else
-        v5 = this->SliderClass_field_0x18;
-      v6 = (double)this->SliderClass_field_0x30;
+        v5 = this->q018;
+      v6 = (double)this->q030;
       v7 = Math::RoundToInt(v6);
       if ( v7 <= 4 )
         v7 = 4;
@@ -368,7 +368,7 @@ long long E4Recv_6B1EE0::sub_6B1EE0()
 }
 }
 
-// ==== BACKFILL 0x006B1F50  SliderClass::SetValue  cls=SliderClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x006B1F50  SliderClass::SetValue  cls=SliderClass  sig=csp  renamed_refs=0  residual=q02E ====
 namespace gamemd { int SliderClass::SetValue(int a1, void* a2, int a3) {
 {
       int v5;
@@ -382,12 +382,12 @@ namespace gamemd { int SliderClass::SetValue(int a1, void* a2, int a3) {
       if ( this->q02E )
       {
         v5 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance);
-        v6 = this->SliderClass_field_0x0C;
+        v6 = this->q00C;
       }
       else
       {
         v5 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
-        v6 = this->SliderClass_field_0x10;
+        v6 = this->q010;
       }
       v7 = this->q050;
       v8 = v6 + 1;
@@ -444,7 +444,7 @@ namespace gamemd { int SliderClass::OnRelease(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x006B2070  SliderClass::HitTest  cls=SliderClass  sig=csp  renamed_refs=6  residual=- ====
+// ==== BACKFILL 0x006B2070  SliderClass::HitTest  cls=SliderClass  sig=csp  renamed_refs=0  residual=q02E ====
 namespace gamemd { int SliderClass::HitTest() {
 {
       int v1;
@@ -460,10 +460,10 @@ namespace gamemd { int SliderClass::HitTest() {
 
       if ( this->q02E )
       {
-        v1 = this->SliderClass_field_0x10;
-        v8 = this->SliderClass_field_0x0C + this->q050;
+        v1 = this->q010;
+        v8 = this->q00C + this->q050;
         v2 = this->q04C;
-        v3 = this->SliderClass_field_0x18;
+        v3 = this->q018;
         v9 = v1;
         v11 = v3;
         v10 = v2;
@@ -471,9 +471,9 @@ namespace gamemd { int SliderClass::HitTest() {
       else
       {
         v5 = this->q050;
-        v8 = this->SliderClass_field_0x0C;
-        v6 = this->SliderClass_field_0x14;
-        v9 = this->SliderClass_field_0x10 + v5;
+        v8 = this->q00C;
+        v6 = this->q014;
+        v9 = this->q010 + v5;
         v7 = this->q04C;
         v10 = v6;
         v11 = v7;
@@ -482,7 +482,7 @@ namespace gamemd { int SliderClass::HitTest() {
 }
 } }
 
-// ==== BACKFILL 0x006B20F0  SliderClass::GetRange  cls=SliderClass  sig=csp  renamed_refs=4  residual=- ====
+// ==== BACKFILL 0x006B20F0  SliderClass::GetRange  cls=SliderClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SliderClass::GetRange(int a1) {
 {
       int v3;
@@ -492,10 +492,10 @@ namespace gamemd { int SliderClass::GetRange(int a1) {
 
       if ( !this->q044 || !Control::DispatchClick((_DWORD *)this, a2) )
         return BuildingPlacement::HandleClick(this, a2);
-      v3 = this->SliderClass_field_0x10;
-      v4 = this->SliderClass_field_0x14;
-      v7[0] = this->SliderClass_field_0x0C;
-      v5 = this->SliderClass_field_0x18;
+      v3 = this->q010;
+      v4 = this->q014;
+      v7[0] = this->q00C;
+      v5 = this->q018;
       v7[1] = v3;
       v7[2] = v4;
       v7[3] = v5;
@@ -632,20 +632,20 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
 }
 }
 
-// ==== BACKFILL 0x006B57F0  SmudgeTypeClass::PowerDrainUpdate  cls=SmudgeTypeClass  sig=csp  renamed_refs=5  residual=- ====
+// ==== BACKFILL 0x006B57F0  SmudgeTypeClass::PowerDrainUpdate  cls=SmudgeTypeClass  sig=csp  renamed_refs=2  residual=- ====
 int SmudgeTypeClass::PowerDrainUpdate(int * a2)
 {
 {
     int v3;
     int v4;
     AbstractTypeClass::ProcessPower((char *)this, a2);
-    Power::TimerProcess(this->Width);
+    Power::TimerProcess(this->ArrayIndex);
     LOBYTE(v3) = this->q2A0;
     Power::FlagProcess(a2, v3);
     LOBYTE(v4) = this->q2A1;
     Power::FlagProcess(a2, v4);
-    Power::TimerProcess(this->Height);
-    return Power::TimerProcess(this->Crater);
+    Power::TimerProcess(this->Width);
+    return Power::TimerProcess(this->Height);
 }
 }
 
@@ -709,11 +709,11 @@ int SmudgeTypeClass::GetObjectSize()
 return 676;
 }
 
-// ==== BACKFILL 0x006B6150  SmudgeTypeClass::GetAuxField  cls=SmudgeTypeClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x006B6150  SmudgeTypeClass::GetAuxField  cls=SmudgeTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int SmudgeTypeClass::GetAuxField()
 {
 {
-    return this->Height;
+    return this->Width;
 }
 }
 

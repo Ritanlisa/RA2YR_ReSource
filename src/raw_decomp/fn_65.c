@@ -1417,38 +1417,38 @@ _DWORD *__thiscall RadarClass_Constructor(_DWORD *this)
 
   RadarClass::RenderSpySatellite(); /*0x652969*/
   v2 = 0; /*0x65296e*/
-  this->RadarClass_field_0x11E8 = 0; /*0x652976*/
-  this->RadarClass_field_0x11EC = 0; /*0x65297c*/
-  this->RadarClass_field_0x11F0 = 0; /*0x652982*/
-  this->RadarClass_field_0x11F4 = 0; /*0x652988*/
-  this->RadarClass_field_0x11F8 = 0; /*0x65298e*/
-  this->RadarClass_field_0x11FC = 0; /*0x652994*/
-  this->RadarClass_field_0x1200 = 0; /*0x65299a*/
-  this->RadarClass_field_0x1204 = 0; /*0x6529a0*/
+  this->q11E8 = 0; /*0x652976*/
+  this->q11EC = 0; /*0x65297c*/
+  this->q11F0 = 0; /*0x652982*/
+  this->q11F4 = 0; /*0x652988*/
+  this->q11F8 = 0; /*0x65298e*/
+  this->q11FC = 0; /*0x652994*/
+  this->q1200 = 0; /*0x65299a*/
+  this->q1204 = 0; /*0x6529a0*/
   this->q120C = dword_B048B0; /*0x6529b2*/
   this->q1210 = dword_B048B4; /*0x6529bc*/
   this->q1214 = dword_B048B8; /*0x6529c5*/
   v3 = dword_B048BC; /*0x6529c8*/
-  this->RadarClass_field_0x121C = 0; /*0x6529d0*/
+  this->q121C = 0; /*0x6529d0*/
   this->q1218 = v3; /*0x6529d6*/
-  this->RadarClass_field_0x1220 = 0; /*0x6529d9*/
+  this->q1220 = 0; /*0x6529d9*/
   VectorClass::CellConstructor(this + 1161, 0, 0); /*0x6529df*/
-  this->RadarClass_field_0x1224 = &vt_DynamicVectorClass_Cell; /*0x6529e9*/
+  this->q1224 = &vt_DynamicVectorClass_Cell; /*0x6529e9*/
   this->q1238 = 10; /*0x6529ef*/
   this->q1234 = 0; /*0x6529f2*/
-  this->RadarClass_field_0x123C = 0; /*0x6529fb*/
-  this->RadarClass_field_0x1240 = 0; /*0x652a01*/
-  this->RadarClass_field_0x1244 = 0; /*0x652a07*/
-  this->RadarClass_field_0x1248 = 0; /*0x652a0e*/
-  this->RadarClass_field_0x124C = 0; /*0x652a14*/
-  this->RadarClass_field_0x1250 = 0; /*0x652a1a*/
-  this->RadarClass_field_0x1254 = 0; /*0x652a20*/
-  this->RadarClass_field_0x1258 = 0; /*0x652a29*/
+  this->q123C = 0; /*0x6529fb*/
+  this->q1240 = 0; /*0x652a01*/
+  this->q1244 = 0; /*0x652a07*/
+  this->q1248 = 0; /*0x652a0e*/
+  this->q124C = 0; /*0x652a14*/
+  this->q1250 = 0; /*0x652a1a*/
+  this->q1254 = 0; /*0x652a20*/
+  this->q1258 = 0; /*0x652a29*/
   VectorClass::PointConstructor(0, 0); /*0x652a2f*/
-  this->RadarClass_field_0x125C = &DynamicVectorClass<Point2D>::`vftable'; /*0x652a34*/
+  this->q125C = &DynamicVectorClass<Point2D>::`vftable'; /*0x652a34*/
   this->q1270 = 10; /*0x652a3a*/
   this->q126C = 0; /*0x652a3d*/
-  this->RadarClass_field_0x1274 = 0; /*0x652a40*/
+  this->q1274 = 0; /*0x652a40*/
   v4 = this + 1182; /*0x652a46*/
   v5 = 22; /*0x652a4c*/
   do /*0x652a6e*/
@@ -1461,33 +1461,33 @@ _DWORD *__thiscall RadarClass_Constructor(_DWORD *this)
     --v5; /*0x652a6d*/
   }
   while ( v5 ); /*0x652a6e*/
-  this->RadarClass_field_0x1488 = 0; /*0x652a70*/
+  this->q1488 = 0; /*0x652a70*/
   this->q148C = 1; /*0x652a76*/
-  this->RadarClass_field_0x1490 = 0; /*0x652a80*/
-  this->RadarClass_field_0x1494 = 0; /*0x652a86*/
-  this->RadarClass_field_0x1498 = 0; /*0x652a8c*/
-  this->RadarClass_field_0x149C = dword_B048B0; /*0x652a9e*/
+  this->q1490 = 0; /*0x652a80*/
+  this->q1494 = 0; /*0x652a86*/
+  this->q1498 = 0; /*0x652a8c*/
+  this->q149C = dword_B048B0; /*0x652a9e*/
   this->q14A0 = dword_B048B4; /*0x652aaa*/
-  this->RadarClass_field_0x14A4 = dword_B048B8; /*0x652ab3*/
+  this->q14A4 = dword_B048B8; /*0x652ab3*/
   v6 = dword_B048BC; /*0x652ab6*/
-  this->RadarClass_field_0x14AC = 0; /*0x652abc*/
-  this->RadarClass_field_0x14B0 = 0; /*0x652ac2*/
+  this->q14AC = 0; /*0x652abc*/
+  this->q14B0 = 0; /*0x652ac2*/
   this->q14A8 = v6; /*0x652ac8*/
-  this->RadarClass_field_0x14B4 = 0; /*0x652acb*/
+  this->q14B4 = 0; /*0x652acb*/
   this->q14BC = 0; /*0x652ad1*/
   this->q14BD = 0; /*0x652ad7*/
   this->q14D4 = -1; /*0x652add*/
   this->IsAvailableNow = 0; /*0x652ae7*/
-  this->RadarClass_field_0x14D9 = 0; /*0x652aed*/
-  this->q14DA = 0; /*0x652af3*/
+  *((_BYTE *)this + 5337) = 0; /*0x652aed*/
+  *((_BYTE *)this + 5338) = 0; /*0x652af3*/
   this->q14DC = dword_B048B0; /*0x652b05*/
   this->q14E0 = dword_B048B4; /*0x652b11*/
   this->q14E4 = dword_B048B8; /*0x652b1a*/
   v7 = dword_B048BC; /*0x652b1d*/
-  this->RadarClass_field_0x14FC = 0; /*0x652b29*/
+  this->q14FC = 0; /*0x652b29*/
   this->q14E8 = v7; /*0x652b2f*/
   this->q1500 = Timer::GetTicks(); /*0x652b37*/
-  this->RadarClass_field_0x1508 = 0; /*0x652b3d*/
+  this->q1508 = 0; /*0x652b3d*/
   *this = &vt_RadarClass; /*0x652b45*/
   v8 = __2_YAPAXI_Z(0x10u); /*0x652b4b*/
   v9 = v8; /*0x652b50*/
@@ -1534,7 +1534,7 @@ _DWORD *__thiscall RadarClass_Constructor(_DWORD *this)
   {
     v9 = 0; /*0x652bd7*/
   }
-  this->RadarClass_field_0x1258 = v9; /*0x652bd9*/
+  this->q1258 = v9; /*0x652bd9*/
   this->q1270 = 500; /*0x652be5*/
   AudioController::Init(this + 1328); /*0x652bef*/
   return this; /*0x652bf6*/
@@ -1570,24 +1570,24 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
     *((_DWORD *)v2 + 2) = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
-  v5 = (void *)this->RadarClass_field_0x1260; /*0x652c55*/
-  this->RadarClass_field_0x125C = &vt_VectorClass_Point2D; /*0x652c5b*/
+  v5 = (void *)this->q1260; /*0x652c55*/
+  this->q125C = &vt_VectorClass_Point2D; /*0x652c5b*/
   if ( v5 && *((_BYTE *)this + 4713) ) /*0x652c69*/
   {
     __3_YAXPAX_Z(v5); /*0x652c72*/
-    this->RadarClass_field_0x1260 = 0; /*0x652c7a*/
+    this->q1260 = 0; /*0x652c7a*/
   }
   *((_BYTE *)this + 4713) = 0; /*0x652c80*/
-  this->__pad_1264 = 0; /*0x652c86*/
-  v6 = (void *)this->RadarClass_field_0x1228; /*0x652c8c*/
-  this->RadarClass_field_0x1224 = &vt_VectorClass_Cell; /*0x652c92*/
+  this->q1264 = 0; /*0x652c86*/
+  v6 = (void *)this->q1228; /*0x652c8c*/
+  this->q1224 = &vt_VectorClass_Cell; /*0x652c92*/
   if ( v6 && *((_BYTE *)this + 4657) ) /*0x652ca0*/
   {
     __3_YAXPAX_Z(v6); /*0x652ca9*/
-    this->RadarClass_field_0x1228 = 0; /*0x652cb1*/
+    this->q1228 = 0; /*0x652cb1*/
   }
   *((_BYTE *)this + 4657) = 0; /*0x652cb9*/
-  this->__pad_122C = 0; /*0x652cbf*/
+  this->q122C = 0; /*0x652cbf*/
   return MapClass::Destruct(this); /*0x652cca*/
 }
 
@@ -1606,18 +1606,18 @@ int __thiscall RadarClass::Destru_vt05(int *this)
   int result; // eax
 
   Debug::Log(); /*0x652cf8*/
-  this->RadarClass_field_0x1200 = 140; /*0x652d07*/
-  this->RadarClass_field_0x11F8 = 140; /*0x652d0d*/
+  this->q1200 = 140; /*0x652d07*/
+  this->q11F8 = 140; /*0x652d0d*/
   this->q11E4 = 0; /*0x652d18*/
-  this->RadarClass_field_0x11E8 = 16; /*0x652d22*/
-  this->RadarClass_field_0x11EC = 48; /*0x652d2c*/
-  this->RadarClass_field_0x1204 = 108; /*0x652d36*/
-  this->RadarClass_field_0x11FC = 108; /*0x652d3c*/
-  this->RadarClass_field_0x11F4 = 49; /*0x652d42*/
+  this->q11E8 = 16; /*0x652d22*/
+  this->q11EC = 48; /*0x652d2c*/
+  this->q1204 = 108; /*0x652d36*/
+  this->q11FC = 108; /*0x652d3c*/
+  this->q11F4 = 49; /*0x652d42*/
   DisplayClass::LoadTypeData(this); /*0x652d4c*/
-  MEMORY[0xB04A20] = this->RadarClass_field_0x11F4; /*0x652d57*/
-  MEMORY[0xB04A24] = this->RadarClass_field_0x1200; /*0x652d62*/
-  MEMORY[0xB04A28] = this->RadarClass_field_0x1204; /*0x652d73*/
+  MEMORY[0xB04A20] = this->q11F4; /*0x652d57*/
+  MEMORY[0xB04A24] = this->q1200; /*0x652d62*/
+  MEMORY[0xB04A28] = this->q1204; /*0x652d73*/
   MEMORY[0xB04A30] = 223; /*0x652d79*/
   result = VocClass::FindByName(MEMORY[0x8392C0]); /*0x652d83*/
   this->q14D4 = result; /*0x652d88*/
@@ -1695,23 +1695,23 @@ int __thiscall RadarClass::Destru_vt53(_DWORD *this)
   (*(void (__thiscall **)(_DWORD *))(*this + 200))(this); /*0x652ea5*/
   if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x652eb1*/
   {
-    this->RadarClass_field_0x11F0 = 16; /*0x652f13*/
+    this->q11F0 = 16; /*0x652f13*/
     MEMORY[0xB04A00] = this->q11E4 + 14; /*0x652f22*/
-    v2 = this->RadarClass_field_0x11E8 + 5; /*0x652f2d*/
+    v2 = this->q11E8 + 5; /*0x652f2d*/
     MEMORY[0xB04A04] = v2; /*0x652f30*/
     v3 = this->q11E4 + 86; /*0x652f3b*/
   }
   else
   {
-    this->RadarClass_field_0x11F0 = 16; /*0x652ecf*/
+    this->q11F0 = 16; /*0x652ecf*/
     MEMORY[0xB04A00] = this->q11E4 + 11; /*0x652ede*/
-    v2 = this->RadarClass_field_0x11E8 + 4; /*0x652ee9*/
+    v2 = this->q11E8 + 4; /*0x652ee9*/
     MEMORY[0xB04A04] = v2; /*0x652eec*/
     v3 = this->q11E4 + 83; /*0x652ef7*/
   }
   dword_B048C8 = v3; /*0x652f3e*/
   dword_B048CC = v2; /*0x652f4a*/
-  MEMORY[0xB04A1C] = this->RadarClass_field_0x11F0; /*0x652f55*/
+  MEMORY[0xB04A1C] = this->q11F0; /*0x652f55*/
   dword_B048E0 = LoadFileSHP(MEMORY[0x8391F4], (bool *)&MEMORY[0xB048F9]); /*0x652f70*/
   dword_B048AC = LoadFileSHP(MEMORY[0x8391F8], (bool *)&stru_B048F8); /*0x652f80*/
   MEMORY[0xB04A08] = *((__int16 *)dword_B048E0 + 1); /*0x652f89*/
@@ -2175,15 +2175,15 @@ int __thiscall TacticalClass_MouseInput(_DWORD *this, _DWORD *a2, _DWORD *a3)
   }
   if ( MEMORY[0xB45B68] > 0 ) /*0x65396a*/
   {
-    v7 = this->RadarClass_field_0x14B0; /*0x65396c*/
+    v7 = this->q14B0; /*0x65396c*/
     if ( v7 != 3 && v7 != 4 ) /*0x65397a*/
     {
-      this->RadarClass_field_0x14B4 = v7; /*0x653982*/
+      this->q14B4 = v7; /*0x653982*/
       RadarClass::SetViewMode(4, 0); /*0x653988*/
-      this->__pad_14B8 = 0; /*0x65398d*/
+      this->q14B8 = 0; /*0x65398d*/
     }
   }
-  if ( this->RadarClass_field_0x14B0 == 4 ) /*0x65399e*/
+  if ( this->q14B0 == 4 ) /*0x65399e*/
     return TacticalClass::ProcessChronoEffect(this); /*0x6539a2*/
   result = UI_Helper(); /*0x6539ae*/
   if ( !(_BYTE)result ) /*0x6539b5*/
@@ -2781,14 +2781,14 @@ int __thiscall Shroud::ProcessCellVisibility(_DWORD *this, MouseClass *aP1)
   v4 = this->q100; /*0x6544a8*/
   this->q14A8 = 0; /*0x6544b3*/
   this->q14A0 = 10000; /*0x6544bd*/
-  this->RadarClass_field_0x149C = 10000; /*0x6544c3*/
+  this->q149C = 10000; /*0x6544c3*/
   v5 = v3 + v4 + 1; /*0x6544cf*/
   v6 = v4 + this->q0F4 - v3; /*0x6544da*/
   v7 = this->q104; /*0x6544dc*/
-  this->RadarClass_field_0x14A4 = 0; /*0x6544e7*/
-  this->RadarClass_field_0x1498 = -1; /*0x6544f4*/
-  this->RadarClass_field_0x1494 = (__int16)(v7 - 1 + v5) - (__int16)(1 - v7 + v6); /*0x654533*/
-  this->RadarClass_field_0x1490 = v6 - v5; /*0x65453e*/
+  this->q14A4 = 0; /*0x6544e7*/
+  this->q1498 = -1; /*0x6544f4*/
+  this->q1494 = (__int16)(v7 - 1 + v5) - (__int16)(1 - v7 + v6); /*0x654533*/
+  this->q1490 = v6 - v5; /*0x65453e*/
   LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x654544*/
   result = LayerClass::CellIteratorNext(this); /*0x65454b*/
   v9 = result; /*0x654550*/
@@ -2805,10 +2805,10 @@ LABEL_17:
       if ( !result ) /*0x654637*/
         return result; /*0x654637*/
     }
-    if ( this->RadarClass_field_0x1498 == -1 ) /*0x65457f*/
-      this->RadarClass_field_0x1498 = *(__int16 *)(v9 + 36) + *(__int16 *)(v9 + 38); /*0x65458b*/
-    v10 = this->RadarClass_field_0x1490; /*0x654594*/
-    v11 = this->RadarClass_field_0x1498; /*0x65459a*/
+    if ( this->q1498 == -1 ) /*0x65457f*/
+      this->q1498 = *(__int16 *)(v9 + 36) + *(__int16 *)(v9 + 38); /*0x65458b*/
+    v10 = this->q1490; /*0x654594*/
+    v11 = this->q1498; /*0x65459a*/
     aP1 = *(MouseClass **)(v9 + 36); /*0x6545a0*/
     v12 = (__int16)aP1 + v10 - SHIWORD(aP1); /*0x6545b0*/
     v13 = (__int16)aP1 + SHIWORD(aP1) - v11; /*0x6545b2*/
@@ -2820,15 +2820,15 @@ LABEL_17:
     else if ( v12 != 2 * this->q104 - 1 ) /*0x6545ce*/
     {
 LABEL_9:
-      v15 = this->RadarClass_field_0x149C; /*0x6545d5*/
+      v15 = this->q149C; /*0x6545d5*/
       if ( v12 >= v15 ) /*0x6545dd*/
       {
-        if ( v14 + v12 > v15 + this->RadarClass_field_0x14A4 ) /*0x6545f4*/
-          this->RadarClass_field_0x14A4 = v12 + v14 - v15; /*0x6545fa*/
+        if ( v14 + v12 > v15 + this->q14A4 ) /*0x6545f4*/
+          this->q14A4 = v12 + v14 - v15; /*0x6545fa*/
       }
       else
       {
-        this->RadarClass_field_0x149C = v12; /*0x6545df*/
+        this->q149C = v12; /*0x6545df*/
       }
       v16 = this->q14A0; /*0x654600*/
       if ( v13 >= v16 ) /*0x654608*/
@@ -3449,7 +3449,7 @@ _DWORD *__thiscall sub_655050(_DWORD *this, _DWORD *a2, __int16 *a3)
 
   v3 = *a3; /*0x655063*/
   v4 = a3[1]; /*0x655066*/
-  v5 = v3 + this->__pad_524 - v4; /*0x65506e*/
+  v5 = v3 + this->q524 - v4; /*0x65506e*/
   v6 = v3 + v4 - this->q526; /*0x655075*/
   v7 = 2; /*0x655077*/
   if ( v5 == -1 ) /*0x65507c*/
@@ -3600,21 +3600,21 @@ int __thiscall Surface::RenderRadar(_DWORD *this)
   {
     while ( 1 ) /*0x65528b*/
     {
-      v35 = *(_DWORD *)(this->RadarClass_field_0x1228 + 4 * v4); /*0x65528b*/
+      v35 = *(_DWORD *)(this->q1228 + 4 * v4); /*0x65528b*/
       if ( !LayerClass::IsWithinUsableArea(this, (IUnknown *)&v35, (TechnoClass *)1) ) /*0x655298*/
         goto LABEL_32; /*0x655298*/
-      v5 = (__int16)v35 + this->RadarClass_field_0x1490 - SHIWORD(v35); /*0x6552b8*/
+      v5 = (__int16)v35 + this->q1490 - SHIWORD(v35); /*0x6552b8*/
       v6 = 2; /*0x6552bf*/
       if ( v5 == -1 ) /*0x6552c4*/
         break; /*0x6552c4*/
       if ( v5 == 2 * this->q104 - 1 ) /*0x6552d6*/
         goto LABEL_6; /*0x6552d6*/
 LABEL_7:
-      v40 = (__int16)v35 + SHIWORD(v35) - this->RadarClass_field_0x1498; /*0x6552dd*/
+      v40 = (__int16)v35 + SHIWORD(v35) - this->q1498; /*0x6552dd*/
       v41 = v6; /*0x6552e8*/
-      v7 = (RadarClass *)this->RadarClass_field_0x1240; /*0x6552ec*/
+      v7 = (RadarClass *)this->q1240; /*0x6552ec*/
       v42 = 1; /*0x6552f2*/
-      v8 = this->RadarClass_field_0x1244; /*0x6552f6*/
+      v8 = this->q1244; /*0x6552f6*/
       v47[0] = 0; /*0x6552fd*/
       v47[1] = 0; /*0x655301*/
       v47[2] = (int)v7; /*0x65530a*/
@@ -3633,13 +3633,13 @@ LABEL_7:
         v31 = 0; /*0x65536d*/
         v32 = 0; /*0x655377*/
         v11 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v35); /*0x65537c*/
-        v12 = v39 + v40 * this->RadarClass_field_0x1240; /*0x655390*/
+        v12 = v39 + v40 * this->q1240; /*0x655390*/
         GetCellRadarColors((int)v11, (int)&v33, (int)&v31); /*0x65539e*/
         if ( v5 ) /*0x6553ab*/
         {
           if ( v41 != 1 ) /*0x6553d2*/
             goto LABEL_14; /*0x6553d2*/
-          v14 = 3 * v12 + this->RadarClass_field_0x123C; /*0x6553de*/
+          v14 = 3 * v12 + this->q123C; /*0x6553de*/
           *(_WORD *)v14 = v33; /*0x6553e5*/
           v15 = v34; /*0x6553e8*/
         }
@@ -3647,23 +3647,23 @@ LABEL_7:
         {
           if ( v41 == 1 ) /*0x6553b0*/
           {
-            v13 = this->RadarClass_field_0x123C + 3 * v12 + 3; /*0x6553bc*/
+            v13 = this->q123C + 3 * v12 + 3; /*0x6553bc*/
             *(_WORD *)v13 = v31; /*0x6553c3*/
             *(_BYTE *)(v13 + 2) = v32; /*0x6553ca*/
             goto LABEL_16; /*0x6553cd*/
           }
 LABEL_14:
-          v16 = this->RadarClass_field_0x123C + 3 * v12; /*0x6553ee*/
+          v16 = this->q123C + 3 * v12; /*0x6553ee*/
           *(_WORD *)v16 = v33; /*0x6553ff*/
           *(_BYTE *)(v16 + 2) = v34; /*0x655406*/
-          v14 = this->RadarClass_field_0x123C + 3 * v12 + 3; /*0x655413*/
+          v14 = this->q123C + 3 * v12 + 3; /*0x655413*/
           *(_WORD *)v14 = v31; /*0x65541a*/
           v15 = v32; /*0x65541d*/
         }
         *(_BYTE *)(v14 + 2) = v15; /*0x655421*/
 LABEL_16:
-        v17 = (RadarClass *)this->RadarClass_field_0x1240; /*0x655424*/
-        v18 = this->RadarClass_field_0x1244; /*0x65542a*/
+        v17 = (RadarClass *)this->q1240; /*0x655424*/
+        v18 = this->q1244; /*0x65542a*/
         v48[0] = 0; /*0x655430*/
         v48[1] = 0; /*0x655434*/
         v48[2] = v17; /*0x655439*/
@@ -3731,7 +3731,7 @@ LABEL_6:
     goto LABEL_7; /*0x6552d8*/
   }
 LABEL_33:
-  (*(void (__thiscall **)(_DWORD *))(this->RadarClass_field_0x1224 + 12))(this + 1161); /*0x655528*/
+  (*(void (__thiscall **)(_DWORD *))(this->q1224 + 12))(this + 1161); /*0x655528*/
   result = v36; /*0x655537*/
   v28 = v37; /*0x65553b*/
   v29 = this + 1170; /*0x65553f*/
@@ -4076,7 +4076,7 @@ int __thiscall sub_655990(_DWORD *this)
   int result; // eax
 
   v1 = (int)this; /*0x655992*/
-  v2 = (_DWORD *)this->RadarClass_field_0x1258; /*0x655999*/
+  v2 = (_DWORD *)this->q1258; /*0x655999*/
   if ( v2 ) /*0x6559a1*/
   {
     if ( *v2 ) /*0x6559a3*/
@@ -4667,13 +4667,13 @@ char __thiscall RadarClass::UpdateFoundationShapesCustom(float *this)
     }
     if ( v4 == 1 ) /*0x656454*/
     {
-      v8 = this->RadarClass_field_0x1488 + 0.5; /*0x656460*/
+      v8 = this->q1488 + 0.5; /*0x656460*/
       if ( v8 < 1.0 ) /*0x656473*/
         v8 = 1.0; /*0x656477*/
     }
     else
     {
-      v8 = (double)v4 * this->RadarClass_field_0x1488 + 0.5; /*0x65648d*/
+      v8 = (double)v4 * this->q1488 + 0.5; /*0x65648d*/
       if ( v8 < 2.0 ) /*0x6564a0*/
         v8 = 2.0; /*0x6564a4*/
     }
@@ -5110,7 +5110,7 @@ LABEL_10:
             {
               result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))( /*0x656b63*/
                          v2,
-                         this->RadarClass_field_0x1228 + 4 * v8,
+                         this->q1228 + 4 * v8,
                          4,
                          0);
               if ( result < 0 ) /*0x656b68*/
@@ -5125,7 +5125,7 @@ LABEL_10:
       {
         while ( 1 ) /*0x656b13*/
         {
-          result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this->RadarClass_field_0x1260 + 8 * v6, 8, 0); /*0x656b13*/
+          result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this->q1260 + 8 * v6, 8, 0); /*0x656b13*/
           if ( result < 0 ) /*0x656b18*/
             break; /*0x656b18*/
           if ( ++v6 >= a2 ) /*0x656b25*/
@@ -5247,10 +5247,10 @@ int __thiscall RadarClass_IsActiveMode(_DWORD *this)
 {
   int result; // eax
 
-  if ( this->RadarClass_field_0x14B0 != 2 ) /*0x656e57*/
+  if ( this->q14B0 != 2 ) /*0x656e57*/
     return 0; /*0x656e57*/
   result = 1; /*0x656e5f*/
-  if ( this->RadarClass_field_0x14AC != 1 ) /*0x656e66*/
+  if ( this->q14AC != 1 ) /*0x656e66*/
     return 0; /*0x656e68*/
   return result; /*0x656e6a*/
 }
@@ -5262,12 +5262,12 @@ BOOL __thiscall RadarClass_SetFlag(_BYTE *this, char a2)
   char v2; // dl
   BOOL result; // eax
 
-  v2 = this->q14DA; /*0x656e90*/
+  v2 = *(this + 5338); /*0x656e90*/
   result = 1; /*0x656e96*/
-  this->RadarClass_field_0x14D9 = 1; /*0x656e9d*/
+  *(this + 5337) = 1; /*0x656e9d*/
   if ( !v2 ) /*0x656ea3*/
     result = a2 != 0; /*0x656ead*/
-  this->q14DA = result; /*0x656eaf*/
+  *(this + 5338) = result; /*0x656eaf*/
   return result; /*0x656eb5*/
 }
 
@@ -6872,7 +6872,7 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
       return 0; /*0x658c11*/
     if ( this->Items ) /*0x658b87*/
     {
-      v11 = this->DynamicVector_field_0x8; /*0x658b8c*/
+      v11 = this->q008; /*0x658b8c*/
       if ( a2 < v11 ) /*0x658b91*/
         v11 = a2; /*0x658b93*/
       if ( v11 > 0 ) /*0x658b97*/
@@ -6899,14 +6899,14 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
       }
     }
     this->Items = v5; /*0x658be3*/
-    this->DynamicVector_field_0x8 = v3; /*0x658be9*/
+    this->q008 = v3; /*0x658be9*/
     this->IsAllocated = a3 == 0; /*0x658bec*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x658bf5*/
   }
-  v15 = this->DynamicVector_field_0x8; /*0x658bf8*/
+  v15 = this->q008; /*0x658bf8*/
   if ( v15 < this->Items ) /*0x658c00*/
     this->Items = v15; /*0x658c02*/
   return 1; /*0x658c05*/
@@ -7021,7 +7021,7 @@ _DWORD *__thiscall VectorClass::PointConstructor(_DWORD *this, MapClass *aP1, Ma
   this->Items = 0; /*0x658d6a*/
   this->Capacity = aP1; /*0x658d71*/
   this->q030 = 1; /*0x658d74*/
-  this->__pad_034 = 0; /*0x658d78*/
+  this->q034 = 0; /*0x658d78*/
   *this = &vt_VectorClass_Point2D; /*0x658d7c*/
   if ( aP1 ) /*0x658d82*/
   {
@@ -7034,10 +7034,10 @@ _DWORD *__thiscall VectorClass::PointConstructor(_DWORD *this, MapClass *aP1, Ma
     if ( v5 ) /*0x658dad*/
     {
       this->Items = v5; /*0x658db0*/
-      this->__pad_034 = 1; /*0x658db7*/
+      this->q034 = 1; /*0x658db7*/
       return this; /*0x658dbf*/
     }
-    this->__pad_034 = 1; /*0x658dc4*/
+    this->q034 = 1; /*0x658dc4*/
     this->Items = 0; /*0x658dc8*/
   }
   return this; /*0x658d96*/
@@ -7056,7 +7056,7 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
   this->Items = 0; /*0x658ded*/
   this->Capacity = aP1; /*0x658df0*/
   this->q030 = 1; /*0x658df3*/
-  this->__pad_034 = 0; /*0x658df7*/
+  this->q034 = 0; /*0x658df7*/
   *this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658dfa*/
   if ( aP1 ) /*0x658e00*/
   {
@@ -7103,7 +7103,7 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
         v6 = 0; /*0x658e55*/
       }
       this->Items = v6; /*0x658e57*/
-      this->__pad_034 = 1; /*0x658e5a*/
+      this->q034 = 1; /*0x658e5a*/
     }
   }
   *this = &vt_DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658e5e*/
@@ -7436,7 +7436,7 @@ _DWORD *__thiscall RadBeam::InitState(_DWORD *this, rc_ptr_base *aP1)
 {
   this->nextArrayIndex = 0; /*0x6593fe*/
   *this = 0; /*0x659401*/
-  this->__pad_004 = 0; /*0x659403*/
+  this->q004 = 0; /*0x659403*/
   this->NeedsSaveOrLink = 0; /*0x659406*/
   this->range = 1; /*0x659409*/
   this->memberAtOffset12 = 0; /*0x65940c*/
@@ -8313,7 +8313,7 @@ char __thiscall VectorClass_ptr_RadBeam::sub_65A3C0(void *this, int a2, _DWORD *
       return 0; /*0x65a46a*/
     if ( this->Items ) /*0x65a3f8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x65a3ff*/
+      v5 = this->q008; /*0x65a3ff*/
       if ( a2 < v5 ) /*0x65a404*/
         v5 = a2; /*0x65a406*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x65a40c*/
@@ -8325,14 +8325,14 @@ char __thiscall VectorClass_ptr_RadBeam::sub_65A3C0(void *this, int a2, _DWORD *
       }
     }
     this->Items = v4; /*0x65a43a*/
-    this->DynamicVector_field_0x8 = a2; /*0x65a442*/
+    this->q008 = a2; /*0x65a442*/
     this->IsAllocated = a3 == 0; /*0x65a445*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x65a44e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x65a451*/
+  v7 = this->q008; /*0x65a451*/
   if ( v7 < this->Items ) /*0x65a459*/
     this->Items = v7; /*0x65a45b*/
   return 1; /*0x65a45e*/
@@ -8719,7 +8719,7 @@ LABEL_9:
       }
     }
   }
-  (*(void (__thiscall **)(#377 *, int, _DWORD))(this->__pad_278)(this, 3, **((_DWORD **)this + 57)); /*0x65aa1f*/
+  (*(void (__thiscall **)(#377 *, int, _DWORD))(this->q278)(this, 3, **((_DWORD **)this + 57)); /*0x65aa1f*/
   v12 = 0; /*0x65aa34*/
 LABEL_20:
   v15 = *v1; /*0x65aa36*/
@@ -9662,7 +9662,7 @@ LABEL_9:
   TacticalClass::UpdateScrollTarget( /*0x65b871*/
     this->LightSource,
     *(_DWORD *)(this->LightSource + 36) - this->q01A,
-    this->referenceCount * this->IntensitySteps / this->RadDuration,
+    this->referenceCount * this->Tint / this->RadDuration,
     this->referenceCount * this->q017 / this->RadDuration,
     this->referenceCount * this->nextArrayIndex / this->RadDuration,
     0);
@@ -10015,7 +10015,7 @@ char __thiscall RadSiteClass::DecreaseLight(int *this)
   return TacticalClass::UpdateScrollTarget( /*0x65becc*/
            this->LightSource,
            *(_DWORD *)(this->LightSource + 36) - this->q01A,
-           this->referenceCount * this->IntensitySteps / this->RadDuration,
+           this->referenceCount * this->Tint / this->RadDuration,
            this->referenceCount * this->q017 / this->RadDuration,
            this->referenceCount * this->nextArrayIndex / this->RadDuration,
            0);
@@ -10207,7 +10207,7 @@ char __thiscall VectorClass_ptr_RadSiteClass::sub_65C0D0(void *this, int a2, _DW
       return 0; /*0x65c17a*/
     if ( this->Items ) /*0x65c108*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x65c10f*/
+      v5 = this->q008; /*0x65c10f*/
       if ( a2 < v5 ) /*0x65c114*/
         v5 = a2; /*0x65c116*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x65c11c*/
@@ -10219,14 +10219,14 @@ char __thiscall VectorClass_ptr_RadSiteClass::sub_65C0D0(void *this, int a2, _DW
       }
     }
     this->Items = v4; /*0x65c14a*/
-    this->DynamicVector_field_0x8 = a2; /*0x65c152*/
+    this->q008 = a2; /*0x65c152*/
     this->IsAllocated = a3 == 0; /*0x65c155*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x65c15e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x65c161*/
+  v7 = this->q008; /*0x65c161*/
   if ( v7 < this->Items ) /*0x65c169*/
     this->Items = v7; /*0x65c16b*/
   return 1; /*0x65c16e*/
@@ -10302,7 +10302,7 @@ _BYTE *__thiscall WinMain_Helper_65C250(RAMFileClass *this, int a2, MixFileClass
   this->field_10 = (int)aP2; /*0x65c268*/
   this->q014 = 0; /*0x65c26b*/
   this->q018 = 1; /*0x65c26e*/
-  this->__pad_01C = 0; /*0x65c275*/
+  this->q01C = 0; /*0x65c275*/
   *((_BYTE *)this + 29) = 0; /*0x65c278*/
   *(_DWORD *)this->__pad_0 = &vt_RAMFileClass; /*0x65c27b*/
   if ( !a2 && (int)aP2 > 0 ) /*0x65c285*/
@@ -10321,7 +10321,7 @@ void __thiscall WinMain_Helper_65C2A0(RAMFileClass *this)
 
   v2 = *((_BYTE *)this + 29); /*0x65c2a3*/
   *(_DWORD *)this->__pad_0 = &vt_RAMFileClass; /*0x65c2a6*/
-  this->__pad_01C = 0; /*0x65c2ae*/
+  this->q01C = 0; /*0x65c2ae*/
   if ( v2 ) /*0x65c2b2*/
   {
     __3_YAXPAX_Z((void *)this->field_8); /*0x65c2b8*/
@@ -10362,7 +10362,7 @@ char __thiscall AbstractClass::updateTeamState(RAMFileClass *this)
 // ==== 0x0065C330  RAMFileClass::processTeamOrder  this=RAMFileClass  sig=csp ====
 char __thiscall AbstractClass::processTeamOrder(RAMFileClass *this)
 {
-  return this->__pad_01C; /*0x65c333*/
+  return this->q01C; /*0x65c333*/
 }
 
 
@@ -10380,7 +10380,7 @@ int __thiscall nullsub_0_2(RAMFileClass *this, int a2)
     return 0; /*0x65c391*/
   this->q014 = 0; /*0x65c367*/
   this->q018 = a2; /*0x65c36e*/
-  this->__pad_01C = 1; /*0x65c374*/
+  this->q01C = 1; /*0x65c374*/
   if ( a2 == 2 ) /*0x65c378*/
     this->field_10 = 0; /*0x65c37a*/
   return (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this); /*0x65c38d*/
@@ -10512,7 +10512,7 @@ LABEL_7:
 // ==== 0x0065C540  RAMFileClass::resetTeamState  this=RAMFileClass  sig=csp ====
 void __thiscall AbstractClass::resetTeamState(RAMFileClass *this)
 {
-  this->__pad_01C = 0; /*0x65c540*/
+  this->q01C = 0; /*0x65c540*/
 }
 
 
@@ -10558,7 +10558,7 @@ void *__thiscall nullsub_0_10(RAMFileClass *this, char a2)
 
   v3 = *((_BYTE *)this + 29); /*0x65c5a3*/
   *(_DWORD *)this->__pad_0 = &vt_RAMFileClass; /*0x65c5a6*/
-  this->__pad_01C = 0; /*0x65c5ae*/
+  this->q01C = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {
     __3_YAXPAX_Z((void *)this->field_8); /*0x65c5b8*/
@@ -10664,16 +10664,16 @@ int __thiscall Random_State(_DWORD *this)
 
   if ( *(_BYTE *)this ) /*0x65c780*/
     return 0; /*0x65c785*/
-  *(this + this->Random_field_0x04 + 3) ^= *(this + this->Random_field_0x08 + 3); /*0x65c79d*/
-  v2 = this->Random_field_0x04; /*0x65c79f*/
+  *(this + this->q004 + 3) ^= *(this + this->q008 + 3); /*0x65c79d*/
+  v2 = this->q004; /*0x65c79f*/
   result = *(this + v2++ + 3); /*0x65c7a5*/
-  v3 = this->Random_field_0x08 + 1; /*0x65c7aa*/
-  this->Random_field_0x04 = v2; /*0x65c7b1*/
-  this->Random_field_0x08 = v3; /*0x65c7b4*/
+  v3 = this->q008 + 1; /*0x65c7aa*/
+  this->q004 = v2; /*0x65c7b1*/
+  this->q008 = v3; /*0x65c7b4*/
   if ( v2 >= 250 ) /*0x65c7b7*/
-    this->Random_field_0x04 = 0; /*0x65c7b9*/
+    this->q004 = 0; /*0x65c7b9*/
   if ( v3 >= 250 ) /*0x65c7c7*/
-    this->Random_field_0x08 = 0; /*0x65c7c9*/
+    this->q008 = 0; /*0x65c7c9*/
   return result; /*0x65c787*/
 }
 
@@ -10726,16 +10726,16 @@ int __thiscall Random::Range(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
       }
       else
       {
-        *(this + this->Random_field_0x04 + 3) ^= *(this + this->Random_field_0x08 + 3); /*0x65c84b*/
-        v13 = this->Random_field_0x04; /*0x65c84d*/
+        *(this + this->q004 + 3) ^= *(this + this->q008 + 3); /*0x65c84b*/
+        v13 = this->q004; /*0x65c84d*/
         v14 = *(this + v13++ + 3); /*0x65c853*/
-        v15 = this->Random_field_0x08 + 1; /*0x65c858*/
-        this->Random_field_0x04 = v13; /*0x65c85e*/
-        this->Random_field_0x08 = v15; /*0x65c861*/
+        v15 = this->q008 + 1; /*0x65c858*/
+        this->q004 = v13; /*0x65c85e*/
+        this->q008 = v15; /*0x65c861*/
         if ( v13 >= 250 ) /*0x65c864*/
-          this->Random_field_0x04 = 0; /*0x65c866*/
+          this->q004 = 0; /*0x65c866*/
         if ( v15 >= 250 ) /*0x65c873*/
-          this->Random_field_0x08 = 0; /*0x65c875*/
+          this->q008 = 0; /*0x65c875*/
         v12 = v14; /*0x65c87c*/
       }
     }
@@ -10749,7 +10749,7 @@ int __thiscall Random::Range(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
 _DWORD *__thiscall sub_65C890(_DWORD *this, int a2, int a3)
 {
   *this = a2; /*0x65c89a*/
-  this->BlowStraw_field_0x04 = a3; /*0x65c89c*/
+  this->q004 = a3; /*0x65c89c*/
   return this; /*0x65c89f*/
 }
 
@@ -10763,9 +10763,9 @@ int __thiscall sub_65C8B0(int *this)
   int v4; // ebx
   int v5; // ecx
 
-  result = this->RandomStraw_field_0x04; /*0x65c8b0*/
+  result = this->q004; /*0x65c8b0*/
   v2 = *this; /*0x65c8ba*/
-  this->RandomStraw_field_0x04 = result + 1; /*0x65c8bc*/
+  this->q004 = result + 1; /*0x65c8bc*/
   v3 = 0; /*0x65c8bf*/
   do /*0x65c907*/
   {
@@ -10919,7 +10919,7 @@ _DWORD *__thiscall RawFileClass::Construct(_DWORD *this, RawFileClass *aP1)
   this->FileSize = 0; /*0x65ca94*/
   this->Handle = 0; /*0x65ca97*/
   this->FileNameAllocated = aP1; /*0x65ca9a*/
-  this->__pad_038 = 0; /*0x65ca9d*/
+  this->q038 = 0; /*0x65ca9d*/
   *((_WORD *)this + 15) = 0; /*0x65caa1*/
   this->q020 = 0; /*0x65caa5*/
   *this = &vt_RawFileClass; /*0x65caa8*/

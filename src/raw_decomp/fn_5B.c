@@ -1461,7 +1461,7 @@ LABEL_5:
         *(_DWORD *)(this + 208) = v2; /*0x5b3324*/
         break; /*0x5b332b*/
       case 9: /*0x5b30c1*/
-        v2 = (*(int (__thiscall **)(int))(this->__pad_218)(this); /*0x5b3330*/
+        v2 = (*(int (__thiscall **)(int))(this->q218)(this); /*0x5b3330*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b333d*/
         *(_DWORD *)(this + 204) = v6; /*0x5b3343*/
         *(_DWORD *)(this + 208) = v2; /*0x5b3346*/
@@ -1473,7 +1473,7 @@ LABEL_5:
         *(_DWORD *)(this + 208) = v2; /*0x5b31d0*/
         break; /*0x5b31d7*/
       case 0xB: /*0x5b30c1*/
-        v2 = (*(int (__thiscall **)(int))(this->__pad_220)(this); /*0x5b31dc*/
+        v2 = (*(int (__thiscall **)(int))(this->q220)(this); /*0x5b31dc*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b31e9*/
         *(_DWORD *)(this + 204) = v6; /*0x5b31ef*/
         *(_DWORD *)(this + 208) = v2; /*0x5b31f2*/
@@ -6976,25 +6976,25 @@ void __thiscall sub_5BBEE0(void **this)
     __3_YAXPAX_Z(*this); /*0x5bbeed*/
     *this = 0; /*0x5bbef5*/
   }
-  if ( this->FileFind_field_0x04 ) /*0x5bbef7*/
+  if ( this->q004 ) /*0x5bbef7*/
   {
-    __3_YAXPAX_Z(this->FileFind_field_0x04); /*0x5bbeff*/
-    this->FileFind_field_0x04 = 0; /*0x5bbf07*/
+    __3_YAXPAX_Z(this->q004); /*0x5bbeff*/
+    this->q004 = 0; /*0x5bbf07*/
   }
-  if ( this->FileFind_field_0x08 ) /*0x5bbf0a*/
+  if ( this->q008 ) /*0x5bbf0a*/
   {
-    __3_YAXPAX_Z(this->FileFind_field_0x08); /*0x5bbf12*/
-    this->FileFind_field_0x08 = 0; /*0x5bbf1a*/
+    __3_YAXPAX_Z(this->q008); /*0x5bbf12*/
+    this->q008 = 0; /*0x5bbf1a*/
   }
-  if ( this->FileFind_field_0x0C ) /*0x5bbf1d*/
+  if ( this->q00C ) /*0x5bbf1d*/
   {
-    __3_YAXPAX_Z(this->FileFind_field_0x0C); /*0x5bbf25*/
-    this->FileFind_field_0x0C = 0; /*0x5bbf2d*/
+    __3_YAXPAX_Z(this->q00C); /*0x5bbf25*/
+    this->q00C = 0; /*0x5bbf2d*/
   }
-  if ( this->FileFind_field_0x04 ) /*0x5bbf30*/
+  if ( this->q004 ) /*0x5bbf30*/
   {
-    __3_YAXPAX_Z(this->FileFind_field_0x04); /*0x5bbf38*/
-    this->FileFind_field_0x04 = 0; /*0x5bbf40*/
+    __3_YAXPAX_Z(this->q004); /*0x5bbf38*/
+    this->q004 = 0; /*0x5bbf40*/
   }
   if ( this->q014 ) /*0x5bbf43*/
   {
@@ -8036,7 +8036,7 @@ char __thiscall sub_5BD2E0(_DWORD *this, ObjectClass *aP1, int a3, int a4, int a
     this->q9C7 = a3; /*0x5bd300*/
     this->q9C8 = a4; /*0x5bd306*/
     if ( *((_BYTE *)&(&g_MatrixTransformState)[22] + 10) ) /*0x5bd313*/
-      this->q271 = a5; /*0x5bd31c*/
+      *(this + 2500) = a5; /*0x5bd31c*/
     sprintf((char *const)&Buffer, &stru_82D020, (INIClass *)aP1); /*0x5bd334*/
     return Debug::ScrollText((int)this, &Buffer); /*0x5bd343*/
   }
@@ -8303,13 +8303,13 @@ unsigned int __thiscall Matrix_Scale(unsigned int *this, float a2)
   result = this->q008; /*0x5bd730*/
   for ( i = 0; i < result; ++i ) /*0x5bd738*/
   {
-    v4 = this->Matrix_field_0x04; /*0x5bd73b*/
-    for ( j = 0; j < v4; v4 = this->Matrix_field_0x04 ) /*0x5bd742*/
+    v4 = this->q004; /*0x5bd73b*/
+    for ( j = 0; j < v4; v4 = this->q004 ) /*0x5bd742*/
     {
       *(float *)(48 * (j + i * v4) + this->q00C + 12) = a2 * *(float *)(48 * (j + i * v4) + this->q00C + 12); /*0x5bd75e*/
-      v6 = 48 * (j + this->Matrix_field_0x04 * i); /*0x5bd772*/
+      v6 = 48 * (j + this->q004 * i); /*0x5bd772*/
       *(float *)(v6 + this->q00C + 28) = a2 * *(float *)(v6 + this->q00C + 28); /*0x5bd77d*/
-      v7 = 48 * (j + this->Matrix_field_0x04 * i); /*0x5bd791*/
+      v7 = 48 * (j + this->q004 * i); /*0x5bd791*/
       ++j; /*0x5bd794*/
       *(float *)(v7 + this->q00C + 44) = a2 * *(float *)(v7 + this->q00C + 44); /*0x5bd79d*/
     }
@@ -9105,7 +9105,7 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
               result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(v52 + 12))(v48, &v75, 4, 0); /*0x5be3bd*/
               if ( result >= 0 ) /*0x5be3c4*/
               {
-                (*(void (__thiscall **)(int *))(this->MouseClass_field_0x14 + 12))(this + 20); /*0x5be3d2*/
+                (*(void (__thiscall **)(int *))(this->q014 + 12))(this + 20); /*0x5be3d2*/
                 pStm = 0; /*0x5be3d9*/
                 if ( v75 <= 0 ) /*0x5be3df*/
                 {
@@ -9248,7 +9248,7 @@ LABEL_99:
                     if ( this->q018 < v54 /*0x5be440*/
                       || (this->q05D || !v54)
                       && (v55 = this->q064, v55 > 0)
-                      && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(this->MouseClass_field_0x14 + 8))(
+                      && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(this->q014 + 8))(
                            this + 20,
                            v55 + v54,
                            0) )
@@ -9552,7 +9552,7 @@ _DWORD *__thiscall sub_5BEA30(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x5bea3a*/
   this->Capacity = a2; /*0x5bea41*/
   this->q030 = 1; /*0x5bea44*/
-  this->__pad_034 = 0; /*0x5bea48*/
+  this->q034 = 0; /*0x5bea48*/
   *this = &vt_VectorClass_HashObject_unsigned_int_unsigned_int; /*0x5bea4c*/
   if ( a2 ) /*0x5bea52*/
   {
@@ -9566,7 +9566,7 @@ _DWORD *__thiscall sub_5BEA30(_DWORD *this, int a2, int a3)
       if ( !v4 ) /*0x5bea78*/
         v4 = 0; /*0x5bea81*/
       this->Items = v4; /*0x5bea83*/
-      this->__pad_034 = 1; /*0x5bea86*/
+      this->q034 = 1; /*0x5bea86*/
     }
   }
   *this = &vt_DynamicVectorClass_HashObject_unsigned_int_unsigned_int; /*0x5bea8a*/

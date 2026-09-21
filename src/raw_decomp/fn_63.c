@@ -143,7 +143,7 @@ char __thiscall VectorClass::PushBackCopy(_DWORD *this, AbstractClass *aP1)
   v3 = this->Capacity; /*0x630253*/
   if ( this->q010 >= v3 ) /*0x63025b*/
   {
-    if ( !this->__pad_034 && v3 ) /*0x630266*/
+    if ( !this->q034 && v3 ) /*0x630266*/
       return 0; /*0x630266*/
     v4 = this->q005; /*0x630268*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x630278*/
@@ -163,7 +163,7 @@ _DWORD *__thiscall sub_6302A0(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x6302ab*/
   this->Capacity = a2; /*0x6302ae*/
   this->q030 = 1; /*0x6302b1*/
-  this->__pad_034 = 0; /*0x6302b5*/
+  this->q034 = 0; /*0x6302b5*/
   *this = &vt_VectorClass_ParticleClass; /*0x6302b8*/
   if ( a2 ) /*0x6302be*/
   {
@@ -173,7 +173,7 @@ _DWORD *__thiscall sub_6302A0(_DWORD *this, int a2, int a3)
       return this; /*0x6302ce*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x6302dd*/
-    this->__pad_034 = 1; /*0x6302e0*/
+    this->q034 = 1; /*0x6302e0*/
   }
   return this; /*0x6302cd*/
 }
@@ -1473,15 +1473,15 @@ int __thiscall Pipe_Dtor(int *this)
   int result; // eax
   int v3; // ecx
 
-  result = this->Pipe_field_0x04; /*0x631c86*/
+  result = this->q004; /*0x631c86*/
   *this = (int)&vt_Pipe; /*0x631c89*/
   if ( result ) /*0x631c91*/
-    *(_DWORD *)(result + 8) = this->Pipe_field_0x08; /*0x631c96*/
-  v3 = this->Pipe_field_0x08; /*0x631c99*/
+    *(_DWORD *)(result + 8) = this->q008; /*0x631c96*/
+  v3 = this->q008; /*0x631c99*/
   if ( v3 ) /*0x631c9e*/
-    result = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v3 + 12))(v3, this->Pipe_field_0x04); /*0x631ca6*/
-  this->Pipe_field_0x08 = 0; /*0x631ca9*/
-  this->Pipe_field_0x04 = 0; /*0x631cac*/
+    result = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v3 + 12))(v3, this->q004); /*0x631ca6*/
+  this->q008 = 0; /*0x631ca9*/
+  this->q004 = 0; /*0x631cac*/
   return result; /*0x631caf*/
 }
 
@@ -1492,7 +1492,7 @@ void __thiscall Pipe_SetDelegate(_DWORD *this, int a2)
   int v3; // ecx
   int v4; // eax
 
-  if ( this->Pipe_field_0x04 != a2 ) /*0x631ccb*/
+  if ( this->q004 != a2 ) /*0x631ccb*/
   {
     if ( a2 ) /*0x631ccf*/
     {
@@ -1503,13 +1503,13 @@ void __thiscall Pipe_SetDelegate(_DWORD *this, int a2)
         *(_DWORD *)(a2 + 8) = 0; /*0x631cdf*/
       }
     }
-    v4 = this->Pipe_field_0x04; /*0x631ce6*/
+    v4 = this->q004; /*0x631ce6*/
     if ( v4 ) /*0x631ceb*/
     {
       *(_DWORD *)(v4 + 8) = 0; /*0x631ced*/
-      (*(void (__thiscall **)(_DWORD))(*(_DWORD *)this->Pipe_field_0x04 + 4))(this->Pipe_field_0x04); /*0x631cf9*/
+      (*(void (__thiscall **)(_DWORD))(*(_DWORD *)this->q004 + 4))(this->q004); /*0x631cf9*/
     }
-    this->Pipe_field_0x04 = a2; /*0x631cfe*/
+    this->q004 = a2; /*0x631cfe*/
     if ( a2 ) /*0x631d01*/
       *(_DWORD *)(a2 + 8) = this; /*0x631d03*/
   }
@@ -1521,7 +1521,7 @@ Pipe *__thiscall Delegate::Dispatch(_DWORD *this, Pipe *aP1, Pipe *aP2)
 {
   Pipe *v3; // ecx
 
-  v3 = (Pipe *)this->Pipe_field_0x04; /*0x631d10*/
+  v3 = (Pipe *)this->q004; /*0x631d10*/
   if ( v3 ) /*0x631d15*/
     return (*(Pipe *(__thiscall **)(Pipe *, Pipe *, Pipe *))(*(_DWORD *)v3->__pad_0 + 16))(v3, aP1, aP2); /*0x631d23*/
   else
@@ -1534,7 +1534,7 @@ int __thiscall GameClass_GetRelatedObject(_DWORD *this)
 {
   int v1; // ecx
 
-  v1 = this->Pipe_field_0x04; /*0x631d30*/
+  v1 = this->q004; /*0x631d30*/
   if ( v1 ) /*0x631d35*/
     return (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 4))(v1); /*0x631d39*/
   else
@@ -2133,7 +2133,7 @@ void __thiscall GameClass::sub_6330C0(_DWORD *this, int a2)
   int v3; // ecx
   int v4; // eax
 
-  if ( this->__pad_018 != a2 ) /*0x6330cb*/
+  if ( this->q018 != a2 ) /*0x6330cb*/
   {
     if ( a2 ) /*0x6330cf*/
     {
@@ -2144,12 +2144,12 @@ void __thiscall GameClass::sub_6330C0(_DWORD *this, int a2)
         *(_DWORD *)(a2 + 8) = 0; /*0x6330df*/
       }
     }
-    v4 = this->__pad_018; /*0x6330e6*/
+    v4 = this->q018; /*0x6330e6*/
     if ( v4 ) /*0x6330eb*/
       *(_DWORD *)(v4 + 8) = 0; /*0x6330ed*/
-    this->__pad_018 = a2; /*0x6330f7*/
+    this->q018 = a2; /*0x6330f7*/
     this->q01C = this; /*0x6330fc*/
-    this->PKStrawClass_field_0x04 = this + 5; /*0x6330ff*/
+    this->q004 = this + 5; /*0x6330ff*/
     if ( a2 ) /*0x633102*/
       *(_DWORD *)(a2 + 8) = this; /*0x633104*/
   }
@@ -2252,7 +2252,7 @@ int __thiscall GameClass::ReadEncryptedStream(int this, char *a2, signed int Siz
 // ==== 0x00633360  PKStraw::parseGameOptions  this=PKStrawClass  sig=csp ====
 int __thiscall GameClass::sub_633360(void *this, int a2)
 {
-  return (*(int (__thiscall **)(void *, int))(this->PKStrawClass_field_0x04)(this, a2); /*0x63336a*/
+  return (*(int (__thiscall **)(void *, int))(this->q004)(this, a2); /*0x63336a*/
 }
 
 
@@ -2625,7 +2625,7 @@ int __thiscall TeamClass_GetLeaderIndex(_DWORD *this)
   int v1; // ecx
   int v2; // esi
 
-  v1 = this->focus; /*0x6339b0*/
+  v1 = this->owner; /*0x6339b0*/
   v2 = *(_DWORD *)(v1 + 48); /*0x6339b7*/
   if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v1) && HouseClass_Player ) /*0x6339ca*/
     return *((_DWORD *)HouseClass_Player + 12); /*0x6339cc*/
@@ -3468,11 +3468,11 @@ _DWORD *__thiscall sub_6346B0(int *this, int a2)
   _DWORD **v4; // esi
   _DWORD **i; // ecx
 
-  v2 = this->ScriptAction_field_0x4; /*0x6346b0*/
+  v2 = this->q004; /*0x6346b0*/
   v3 = 0; /*0x6346b4*/
   if ( v2 <= 0 ) /*0x6346ba*/
     return 0; /*0x6346ba*/
-  v4 = (_DWORD **)this->ScriptAction_field_0x4; /*0x6346bc*/
+  v4 = (_DWORD **)this->q004; /*0x6346bc*/
   for ( i = v4; **i != a2; ++i ) /*0x6346c3*/
   {
     if ( ++v3 >= v2 ) /*0x6346d1*/
@@ -5329,9 +5329,9 @@ BOOL __thiscall sub_636570(int *this)
   BOOL result; // eax
 
   result = 0; /*0x636586*/
-  if ( this->ScriptAction_field_0x14 > 0 ) /*0x636575*/
+  if ( this->q014 > 0 ) /*0x636575*/
   {
-    v1 = this->ScriptAction_field_0x8C; /*0x636577*/
+    v1 = this->q08C; /*0x636577*/
     if ( v1 == -1 || v1 > 0 ) /*0x636584*/
       return 1; /*0x636575*/
   }
@@ -7030,7 +7030,7 @@ char __thiscall DispatchBuildingScriptAction(char *this)
   v2 = *this; /*0x637e09*/
   if ( *this == 43 ) /*0x637e0d*/
   {
-    v32 = this->EventClass_field_0x8; /*0x637e17*/
+    v32 = this->q008; /*0x637e17*/
     LOBYTE(BuildingLoadQueue) = MEMORY[0xA8EC88]; /*0x637e1b*/
     v4 = 0; /*0x637e20*/
     for ( v33[0] = MEMORY[0xA8EC88]; v4 < v33[0]; ++v4 ) /*0x637e28*/
@@ -7073,7 +7073,7 @@ char __thiscall DispatchBuildingScriptAction(char *this)
                                         &v37);
         v12 = *BuildingLoadQueue; /*0x637ed7*/
         v13 = 0; /*0x637ed9*/
-        v14 = (_DWORD *)this->EventClass_field_0x8; /*0x637edb*/
+        v14 = (_DWORD *)this->q008; /*0x637edb*/
         v34 = BuildingLoadQueue[1]; /*0x637ee2*/
         v35 = BuildingLoadQueue[2]; /*0x637ee9*/
         LOBYTE(BuildingLoadQueue) = MEMORY[0xAC4B40]; /*0x637eed*/
@@ -7138,7 +7138,7 @@ char __thiscall DispatchBuildingScriptAction(char *this)
                                         v40);
         v21 = *BuildingLoadQueue; /*0x63802c*/
         v22 = 0; /*0x63802e*/
-        v23 = (_DWORD *)this->EventClass_field_0x8; /*0x638030*/
+        v23 = (_DWORD *)this->q008; /*0x638030*/
         v38 = BuildingLoadQueue[1]; /*0x638037*/
         v39 = BuildingLoadQueue[2]; /*0x63803e*/
         LOBYTE(BuildingLoadQueue) = MEMORY[0xAC4B40]; /*0x638042*/
@@ -10549,7 +10549,7 @@ LABEL_55:
 bool __thiscall sub_63BE10(_BYTE *this)
 {
   return (*(int (__thiscall **)(_BYTE *))(this->q184)(this) == 11 /*0x63be4a*/
-      && (!this || (this->abstractFlags & 4) == 0 || !this->q169 && !this->q2B4);
+      && (!this || (this->abstractFlags & 4) == 0 || !this->q169 && !this->target);
 }
 
 
@@ -11334,7 +11334,7 @@ int __thiscall sub_63CE40(_DWORD *this)
   v12[1] = Viewport[1]; /*0x63ce60*/
   v12[2] = Viewport[2]; /*0x63ce67*/
   v4 = Viewport[3]; /*0x63ce6b*/
-  v5 = this->ScriptAction_field_0x4; /*0x63ce6e*/
+  v5 = this->q004; /*0x63ce6e*/
   v12[3] = v4; /*0x63ce71*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(_BYTE **)(*(_DWORD *)v5 + 4)); /*0x63ce7e*/
   v9[0] = *ScenarioClassActionCoords; /*0x63ce85*/
@@ -12230,7 +12230,7 @@ _DWORD *__thiscall sub_63DEC0(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x63dec9*/
   this->Capacity = a2; /*0x63ded0*/
   this->q030 = 1; /*0x63ded3*/
-  this->__pad_034 = 0; /*0x63ded7*/
+  this->q034 = 0; /*0x63ded7*/
   *this = &vt_VectorClass_PlanningMemberClass; /*0x63dedb*/
   if ( a2 ) /*0x63dee1*/
   {
@@ -12241,7 +12241,7 @@ _DWORD *__thiscall sub_63DEC0(_DWORD *this, int a2, int a3)
     else
     {
       this->Items = __2_YAPAXI_Z(4 * a2); /*0x63defc*/
-      this->__pad_034 = 1; /*0x63deff*/
+      this->q034 = 1; /*0x63deff*/
     }
   }
   *this = &DynamicVectorClass<PlanningMemberClass *>::`vftable'; /*0x63df03*/
@@ -12271,7 +12271,7 @@ char __thiscall VectorClass_ptr_PlanningMemberClass::sub_63DF20(void *this, int 
       return 0; /*0x63dfca*/
     if ( this->Items ) /*0x63df58*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x63df5f*/
+      v5 = this->q008; /*0x63df5f*/
       if ( a2 < v5 ) /*0x63df64*/
         v5 = a2; /*0x63df66*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x63df6c*/
@@ -12283,14 +12283,14 @@ char __thiscall VectorClass_ptr_PlanningMemberClass::sub_63DF20(void *this, int 
       }
     }
     this->Items = v4; /*0x63df9a*/
-    this->DynamicVector_field_0x8 = a2; /*0x63dfa2*/
+    this->q008 = a2; /*0x63dfa2*/
     this->IsAllocated = a3 == 0; /*0x63dfa5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x63dfae*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x63dfb1*/
+  v7 = this->q008; /*0x63dfb1*/
   if ( v7 < this->Items ) /*0x63dfb9*/
     this->Items = v7; /*0x63dfbb*/
   return 1; /*0x63dfbe*/
@@ -12464,7 +12464,7 @@ _DWORD *__thiscall sub_63E1D0(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x63e1d9*/
   this->Capacity = a2; /*0x63e1e0*/
   this->q030 = 1; /*0x63e1e3*/
-  this->__pad_034 = 0; /*0x63e1e7*/
+  this->q034 = 0; /*0x63e1e7*/
   *this = &vt_VectorClass_PlanningBranchClass; /*0x63e1eb*/
   if ( a2 ) /*0x63e1f1*/
   {
@@ -12475,7 +12475,7 @@ _DWORD *__thiscall sub_63E1D0(_DWORD *this, int a2, int a3)
     else
     {
       this->Items = __2_YAPAXI_Z(4 * a2); /*0x63e20c*/
-      this->__pad_034 = 1; /*0x63e20f*/
+      this->q034 = 1; /*0x63e20f*/
     }
   }
   *this = &DynamicVectorClass<PlanningBranchClass *>::`vftable'; /*0x63e213*/
@@ -12505,7 +12505,7 @@ char __thiscall VectorClass_ptr_PlanningMemberClass::sub_63E230(void *this, int 
       return 0; /*0x63e2da*/
     if ( this->Items ) /*0x63e268*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x63e26f*/
+      v5 = this->q008; /*0x63e26f*/
       if ( a2 < v5 ) /*0x63e274*/
         v5 = a2; /*0x63e276*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x63e27c*/
@@ -12517,14 +12517,14 @@ char __thiscall VectorClass_ptr_PlanningMemberClass::sub_63E230(void *this, int 
       }
     }
     this->Items = v4; /*0x63e2aa*/
-    this->DynamicVector_field_0x8 = a2; /*0x63e2b2*/
+    this->q008 = a2; /*0x63e2b2*/
     this->IsAllocated = a3 == 0; /*0x63e2b5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x63e2be*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x63e2c1*/
+  v7 = this->q008; /*0x63e2c1*/
   if ( v7 < this->Items ) /*0x63e2c9*/
     this->Items = v7; /*0x63e2cb*/
   return 1; /*0x63e2ce*/
@@ -12692,7 +12692,7 @@ char __thiscall BlowPipe_31_::_vt02(void *this, int a2, _DWORD *a3)
       return 0; /*0x63e53a*/
     if ( this->Items ) /*0x63e4c8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x63e4cf*/
+      v5 = this->q008; /*0x63e4cf*/
       if ( a2 < v5 ) /*0x63e4d4*/
         v5 = a2; /*0x63e4d6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x63e4dc*/
@@ -12704,14 +12704,14 @@ char __thiscall BlowPipe_31_::_vt02(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x63e50a*/
-    this->DynamicVector_field_0x8 = a2; /*0x63e512*/
+    this->q008 = a2; /*0x63e512*/
     this->IsAllocated = a3 == 0; /*0x63e515*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x63e51e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x63e521*/
+  v7 = this->q008; /*0x63e521*/
   if ( v7 < this->Items ) /*0x63e529*/
     this->Items = v7; /*0x63e52b*/
   return 1; /*0x63e52e*/
@@ -12729,7 +12729,7 @@ char __thiscall VectorClass::Append(_DWORD *this, VectorClass *aP1)
   v3 = this->Capacity; /*0x63e543*/
   if ( this->q010 >= v3 ) /*0x63e54b*/
   {
-    if ( !this->__pad_034 && v3 ) /*0x63e556*/
+    if ( !this->q034 && v3 ) /*0x63e556*/
       return 0; /*0x63e556*/
     v4 = this->q005; /*0x63e558*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x63e568*/
@@ -12950,7 +12950,7 @@ char __thiscall BlowPipe_23_::sub_63E7D0(void *this, int a2, _DWORD *a3)
       return 0; /*0x63e87a*/
     if ( this->Items ) /*0x63e808*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x63e80f*/
+      v5 = this->q008; /*0x63e80f*/
       if ( a2 < v5 ) /*0x63e814*/
         v5 = a2; /*0x63e816*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x63e81c*/
@@ -12962,14 +12962,14 @@ char __thiscall BlowPipe_23_::sub_63E7D0(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x63e84a*/
-    this->DynamicVector_field_0x8 = a2; /*0x63e852*/
+    this->q008 = a2; /*0x63e852*/
     this->IsAllocated = a3 == 0; /*0x63e855*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x63e85e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x63e861*/
+  v7 = this->q008; /*0x63e861*/
   if ( v7 < this->Items ) /*0x63e869*/
     this->Items = v7; /*0x63e86b*/
   return 1; /*0x63e86e*/
@@ -12984,17 +12984,17 @@ char __thiscall SidebarClass::addToList(_DWORD *this, DynamicVector *aP1)
   int v6; // eax
   int v7; // edx
 
-  v3 = this->SidebarClass_field_0x8; /*0x63e883*/
+  v3 = this->q008; /*0x63e883*/
   if ( this->q010 >= v3 ) /*0x63e88b*/
   {
-    if ( !this->SidebarClass_field_0x34 && v3 ) /*0x63e896*/
+    if ( !this->q034 && v3 ) /*0x63e896*/
       return 0; /*0x63e896*/
-    v4 = this->SidebarClass_field_0x14; /*0x63e898*/
+    v4 = this->q014; /*0x63e898*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x63e8a8*/
       return 0; /*0x63e8af*/
   }
   v6 = this->q010; /*0x63e8b5*/
-  v7 = this->SidebarClass_field_0x4; /*0x63e8b8*/
+  v7 = this->q004; /*0x63e8b8*/
   this->q010 = v6 + 1; /*0x63e8be*/
   *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x63e8c8*/
   return 1; /*0x63e8b1*/
@@ -13182,7 +13182,7 @@ char __thiscall BlowPipe_23_::sub_63EAD0(void *this, int a2, _DWORD *a3)
       return 0; /*0x63eb7a*/
     if ( this->Items ) /*0x63eb08*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x63eb0f*/
+      v5 = this->q008; /*0x63eb0f*/
       if ( a2 < v5 ) /*0x63eb14*/
         v5 = a2; /*0x63eb16*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x63eb1c*/
@@ -13194,14 +13194,14 @@ char __thiscall BlowPipe_23_::sub_63EAD0(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x63eb4a*/
-    this->DynamicVector_field_0x8 = a2; /*0x63eb52*/
+    this->q008 = a2; /*0x63eb52*/
     this->IsAllocated = a3 == 0; /*0x63eb55*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x63eb5e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x63eb61*/
+  v7 = this->q008; /*0x63eb61*/
   if ( v7 < this->Items ) /*0x63eb69*/
     this->Items = v7; /*0x63eb6b*/
   return 1; /*0x63eb6e*/
@@ -13243,11 +13243,11 @@ char __thiscall PlanningNodeClass::RemoveFromArray(int *this, DynamicVector *aP1
   v3 = (*(int (__thiscall **)(int *, DynamicVector *))(*this + 16))(this, aP1); /*0x63ebdc*/
   if ( v3 == -1 ) /*0x63ebe2*/
     return 0; /*0x63ebe2*/
-  v4 = this->PlanningNodeClass_field_0x04; /*0x63ebe4*/
+  v4 = this->q004; /*0x63ebe4*/
   if ( v3 >= v4 ) /*0x63ebe9*/
     return 0; /*0x63ec0b*/
   v5 = v4 - 1; /*0x63ebeb*/
-  for ( this->PlanningNodeClass_field_0x04 = v5; v3 < this->PlanningNodeClass_field_0x04; *(_DWORD *)(this->PlanningNodeClass_field_0x04 + 4 * v3 - 4) = *(_DWORD *)(this->PlanningNodeClass_field_0x04 + 4 * v3) ) /*0x63ebf1*/
+  for ( this->q004 = v5; v3 < this->q004; *(_DWORD *)(this->q004 + 4 * v3 - 4) = *(_DWORD *)(this->q004 + 4 * v3) ) /*0x63ebf1*/
     ++v3; /*0x63ebf6*/
   return 1; /*0x63ec07*/
 }
@@ -13509,7 +13509,7 @@ _DWORD *__thiscall sub_63EFB0(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x63efbb*/
   this->Capacity = a2; /*0x63efbe*/
   this->q030 = 1; /*0x63efc1*/
-  this->__pad_034 = 0; /*0x63efc5*/
+  this->q034 = 0; /*0x63efc5*/
   *this = &vt_VectorClass_PlanningNodeClass; /*0x63efc8*/
   if ( a2 ) /*0x63efce*/
   {
@@ -13519,7 +13519,7 @@ _DWORD *__thiscall sub_63EFB0(_DWORD *this, int a2, int a3)
       return this; /*0x63efde*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x63efed*/
-    this->__pad_034 = 1; /*0x63eff0*/
+    this->q034 = 1; /*0x63eff0*/
   }
   return this; /*0x63efdd*/
 }
@@ -13558,20 +13558,20 @@ char __thiscall sub_63F040(_DWORD *this, int a2)
   int v3; // eax
   int v4; // edx
 
-  v2 = this->Sidebar_field_0x10; /*0x63f040*/
+  v2 = this->q010; /*0x63f040*/
   v3 = a2; /*0x63f043*/
   if ( a2 >= v2 ) /*0x63f049*/
     return 0; /*0x63f06c*/
   v4 = v2 - 1; /*0x63f04b*/
-  this->Sidebar_field_0x10 = v4; /*0x63f04e*/
+  this->q010 = v4; /*0x63f04e*/
   if ( a2 < v4 ) /*0x63f051*/
   {
     do /*0x63f064*/
     {
       ++v3; /*0x63f057*/
-      *(_DWORD *)(this->Sidebar_field_0x4 + 4 * v3 - 4) = *(_DWORD *)(this->Sidebar_field_0x4 + 4 * v3); /*0x63f05b*/
+      *(_DWORD *)(this->q004 + 4 * v3 - 4) = *(_DWORD *)(this->q004 + 4 * v3); /*0x63f05b*/
     }
-    while ( v3 < this->Sidebar_field_0x10 ); /*0x63f064*/
+    while ( v3 < this->q010 ); /*0x63f064*/
   }
   return 1; /*0x63f069*/
 }

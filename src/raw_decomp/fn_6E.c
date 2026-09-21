@@ -742,7 +742,7 @@ char __thiscall ObjectClass::ReadINIEntry(const char *this, int a2, int a3, Obje
   char v10[32]; // [esp+2Ch] [ebp-20h] BYREF
 
   v5 = (RandomStruct *)(this + 109); /*0x6e15f8*/
-  if ( this->q06D && this != (const char *)-109 ) /*0x6e1604*/
+  if ( *(this + 109) && this != (const char *)-109 ) /*0x6e1604*/
   {
     strncpy(Destination, this + 109, 0x1Fu); /*0x6e1631*/
     Destination[31] = 0; /*0x6e163d*/
@@ -973,11 +973,11 @@ char __thiscall sub_6E1C40(int *this, int a2, int a3, int a4, int a5)
 {
   int Status; // eax
 
-  SuperClass::StartTimer(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * this->SuperClass_field_0x24), 0, 0, 0); /*0x6e1c5d*/
-  *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * this->SuperClass_field_0x24) + 96) = 0; /*0x6e1c71*/
+  SuperClass::StartTimer(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * this->q024), 0, 0, 0); /*0x6e1c5d*/
+  *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * this->q024) + 96) = 0; /*0x6e1c71*/
   if ( HouseClass_Player == (#375 *)a2 ) /*0x6e1c7c*/
   {
-    SidebarClass::AddCameo((int *)&MEMORY[0x87F7E8], 31, this->SuperClass_field_0x24); /*0x6e1c8c*/
+    SidebarClass::AddCameo((int *)&MEMORY[0x87F7E8], 31, this->q024); /*0x6e1c8c*/
     Status = HouseClass::GetStatus((void *)0x1F, 0); /*0x6e1c9e*/
     Sidebar::ActivateTab((int)&MEMORY[0x87F7E8], Status); /*0x6e1ca9*/
   }
@@ -3978,7 +3978,7 @@ char *__thiscall TagTypeClass::Construct(char *this, ObjectClass *aP1)
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6e5b6c*/
   this->q098 = -1; /*0x6e5b78*/
-  this->__pad_09C = 0; /*0x6e5b82*/
+  this->q09C = 0; /*0x6e5b82*/
   this->q028 = 0; /*0x6e5b88*/
   *(_DWORD *)this = &TagTypeClass::`vftable'; /*0x6e5b8e*/
   this->vtable2 = &TagTypeClass::`vftable'; /*0x6e5b95*/
@@ -4687,7 +4687,7 @@ char __thiscall VectorClass_ptr_TagTypeClass::sub_6E66C0(void *this, int a2, _DW
       return 0; /*0x6e676a*/
     if ( this->Items ) /*0x6e66f8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x6e66ff*/
+      v5 = this->q008; /*0x6e66ff*/
       if ( a2 < v5 ) /*0x6e6704*/
         v5 = a2; /*0x6e6706*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x6e670c*/
@@ -4699,14 +4699,14 @@ char __thiscall VectorClass_ptr_TagTypeClass::sub_6E66C0(void *this, int a2, _DW
       }
     }
     this->Items = v4; /*0x6e673a*/
-    this->DynamicVector_field_0x8 = a2; /*0x6e6742*/
+    this->q008 = a2; /*0x6e6742*/
     this->IsAllocated = a3 == 0; /*0x6e6745*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x6e674e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x6e6751*/
+  v7 = this->q008; /*0x6e6751*/
   if ( v7 < this->Items ) /*0x6e6759*/
     this->Items = v7; /*0x6e675b*/
   return 1; /*0x6e675e*/
@@ -4964,7 +4964,7 @@ void *__thiscall BuildingLoadQueue_Get(_BYTE *this)
   int v6; // ecx
   __int16 v7[4]; // [esp+4h] [ebp-8h] BYREF
 
-  v2 = this->BuildingLoadQueue_field_0x04; /*0x6e6e26*/
+  v2 = this->q004; /*0x6e6e26*/
   if ( v2 == 52 ) /*0x6e6e2b*/
   {
     if ( MEMORY[0xB0E844] ) /*0x6e6e39*/
@@ -5022,7 +5022,7 @@ void *__thiscall BuildingLoadQueue_Find(_BYTE *this)
   _DWORD *v5; // edi
   int v6; // esi
 
-  if ( this->BuildingLoadQueue_field_0x04 != 52 ) /*0x6e6f27*/
+  if ( this->q004 != 52 ) /*0x6e6f27*/
     return 0; /*0x6e6fe0*/
   v2 = MEMORY[0xB0E844]; /*0x6e6f2d*/
   if ( !MEMORY[0xB0E844] ) /*0x6e6f37*/
@@ -5077,7 +5077,7 @@ int __thiscall BuildingLoadQueue_FindObject(_BYTE *this)
   int v6; // esi
   void ***v7; // eax
 
-  if ( this->BuildingLoadQueue_field_0x04 != 52 ) /*0x6e6ff7*/
+  if ( this->q004 != 52 ) /*0x6e6ff7*/
     return 0; /*0x6e70b8*/
   v2 = MEMORY[0xB0E844]; /*0x6e6ffd*/
   if ( !MEMORY[0xB0E844] ) /*0x6e7007*/
@@ -5199,7 +5199,7 @@ int __thiscall BuildingLoadQueue_FindBuilding(_BYTE *this)
   int v6; // esi
   void ***v7; // eax
 
-  if ( this->BuildingLoadQueue_field_0x04 != 52 ) /*0x6e7a87*/
+  if ( this->q004 != 52 ) /*0x6e7a87*/
     return 0; /*0x6e7b48*/
   v2 = MEMORY[0xB0E844]; /*0x6e7a8d*/
   if ( !MEMORY[0xB0E844] ) /*0x6e7a97*/
@@ -5397,9 +5397,9 @@ _DWORD *__thiscall TaskForceClass::Construct(_DWORD *this, ObjectClass *aP1)
   int v5; // ecx
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6e7e8a*/
-  this->TaskForceClass_field_0x98 = -1; /*0x6e7e8f*/
-  this->TaskForceClass_field_0x9C = 0; /*0x6e7e99*/
-  this->__pad_0A0 = 0; /*0x6e7ea3*/
+  this->q098 = -1; /*0x6e7e8f*/
+  this->q09C = 0; /*0x6e7e99*/
+  this->q0A0 = 0; /*0x6e7ea3*/
   *this = &TaskForceClass::`vftable'; /*0x6e7ead*/
   this->vtable2 = &TaskForceClass::`vftable'; /*0x6e7eb3*/
   this->vtable3 = &TaskForceClass::`vftable'; /*0x6e7eba*/
@@ -11156,7 +11156,7 @@ int __thiscall HouseClass_UpdateProductionQueue(_DWORD *this, int a2)
 
   v3 = a2; /*0x6ef4d4*/
   v4 = 0; /*0x6ef4dc*/
-  result = *(_DWORD *)(this->arrayIndex + 228); /*0x6ef4de*/
+  result = *(_DWORD *)(this->vtable5 + 228); /*0x6ef4de*/
   if ( *(int *)(result + 156) > 0 ) /*0x6ef4ec*/
   {
     do /*0x6ef55b*/
@@ -11184,7 +11184,7 @@ int __thiscall HouseClass_UpdateProductionQueue(_DWORD *this, int a2)
         while ( a2 ); /*0x6ef549*/
       }
       ++v4; /*0x6ef54e*/
-      result = *(_DWORD *)(this->arrayIndex + 228); /*0x6ef54f*/
+      result = *(_DWORD *)(this->vtable5 + 228); /*0x6ef54f*/
     }
     while ( v4 < *(_DWORD *)(result + 156) ); /*0x6ef55b*/
   }

@@ -499,32 +499,32 @@ char * E4Recv_724000::sub_724000(int a2)
 }
 }
 
-// ==== BACKFILL 0x00724520  SidebarClass::initializeStrip  cls=SidebarClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x00724520  SidebarClass::initializeStrip  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SidebarClass::initializeStrip(int a1) {
 {
-      this->SidebarClass_field_0x228 = a2;
+      this->q228 = a2;
       return a2;
 }
 } }
 
-// ==== BACKFILL 0x00724530  SidebarClass::updateStripVisibility  cls=SidebarClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x00724530  SidebarClass::updateStripVisibility  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SidebarClass::updateStripVisibility() {
 {
       int result;
 
-      result = this->SidebarClass_field_0x228;
-      this->SidebarClass_field_0x22C = result;
+      result = this->q228;
+      this->q22C = result;
       return result;
 }
 } }
 
-// ==== BACKFILL 0x00724540  SidebarClass::updateStripPosition  cls=SidebarClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x00724540  SidebarClass::updateStripPosition  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SidebarClass::updateStripPosition() {
 {
       int result;
 
-      result = this->SidebarClass_field_0x22C;
-      this->SidebarClass_field_0x228 = result;
+      result = this->q22C;
+      this->q228 = result;
       return result;
 }
 } }
@@ -875,7 +875,7 @@ int TriggerClass::StubReturn38()
 return 38;
 }
 
-// ==== BACKFILL 0x00726C80  TriggerTypeClass::Construct  cls=TriggerTypeClass  sig=csp  renamed_refs=4  residual=- ====
+// ==== BACKFILL 0x00726C80  TriggerTypeClass::Construct  cls=TriggerTypeClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* TriggerTypeClass::Construct(void* a1) {
 {
       int v3;
@@ -889,10 +889,10 @@ namespace gamemd { void* TriggerTypeClass::Construct(void* a1) {
       this->q09E = 1;
       this->Enabled = 1;
       this->MustTransfer = 0;
-      this->house = 0;
-      this->nextTrigger = 0;
-      this->firstEvent = 0;
-      this->firstAction = 0;
+      this->House = 0;
+      this->NextTrigger = 0;
+      this->FirstEvent = 0;
+      this->FirstAction = 0;
       *this = &TriggerTypeClass::`vftable';
       *(this + 1) = &TriggerTypeClass::`vftable';
       *(this + 2) = &TriggerTypeClass::`vftable';
@@ -1093,7 +1093,7 @@ ObjectClass * E4Recv_727190::sub_727190()
 }
 }
 
-// ==== BACKFILL 0x007276A0  TriggerTypeClass::GetParameter  cls=TriggerTypeClass  sig=csp  renamed_refs=5  residual=- ====
+// ==== BACKFILL 0x007276A0  TriggerTypeClass::GetParameter  cls=TriggerTypeClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TriggerTypeClass::GetParameter(void* a1) {
 {
       int v3;
@@ -1110,11 +1110,11 @@ namespace gamemd { int TriggerTypeClass::GetParameter(void* a1) {
       char *v15;
       char Buffer[512];
 
-      v3 = this->nextTrigger;
+      v3 = this->NextTrigger;
       v4 = (const char *)(v3 + 36);
       if ( !v3 )
         v4 = g_Str__none_;
-      v5 = this->house;
+      v5 = this->House;
       if ( v5 )
         v6 = (const char *)(v5 + 36);
       else
@@ -1133,7 +1133,7 @@ namespace gamemd { int TriggerTypeClass::GetParameter(void* a1) {
       v7 = (char *)(this + 36);
       v15 = (char *)(this + 36);
       INIClass::SetString(a2, (unsigned __int8 *)DataGlobal_844A3C, (char *)(this + 36), Buffer);
-      v8 = this->firstEvent;
+      v8 = this->FirstEvent;
       for ( i = 0; v8; ++i )
         v8 = *(_DWORD *)(v8 + 40);
       sprintf(Buffer, g_Str_Trace__d, i);
@@ -1150,11 +1150,11 @@ namespace gamemd { int TriggerTypeClass::GetParameter(void* a1) {
         v7 = (char *)(this + 36);
       }
       INIClass::SetString(a2, (unsigned __int8 *)DataGlobal_844A2C, v7, Buffer);
-      v11 = this->firstAction;
+      v11 = this->FirstAction;
       for ( j = 0; v11; ++j )
         v11 = *(_DWORD *)(v11 + 40);
       sprintf(Buffer, g_Str_Trace__d, j);
-      v13 = this->firstAction;
+      v13 = this->FirstAction;
       if ( v13 )
       {
         do

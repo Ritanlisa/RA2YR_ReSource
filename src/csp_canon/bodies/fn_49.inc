@@ -3059,18 +3059,18 @@ LSTATUS WinMain::CleanupResource()
 }
 }
 
-// ==== BACKFILL 0x0049FAE0  DynamicVector::GetOrGrow  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0049FAE0  DynamicVector::GetOrGrow  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 int DynamicVector::GetOrGrow(DynamicVector * aP1)
 {
 {
     int v3;
     int i;
-    v3 = this->DynamicVector_field_0x8;
+    v3 = this->q008;
     if ( (int)aP1 < v3 )
     return *(int *)(this->Items + 4 * (int)aP1);
     if ( this->SetCapacity((char *)&aP1->field_8 + 2, 0) )
   {
-    for ( i = v3; i < this->DynamicVector_field_0x8; *(int *)(this->Items + 4 * i - 4) = 0 )
+    for ( i = v3; i < this->q008; *(int *)(this->Items + 4 * i - 4) = 0 )
     ++i;
     return *(int *)(this->Items + 4 * (int)aP1);
   }

@@ -204,7 +204,7 @@ int __thiscall ObjectClass::FreeCaptureManager(#377 *this)
   _DWORD *v1; // ecx
   int result; // eax
 
-  v1 = (_DWORD *)this->rockerLinkedUnit; /*0x710460*/
+  v1 = (_DWORD *)this->captureManager; /*0x710460*/
   if ( v1 ) /*0x710468*/
     return CaptureManager::FreeAll(v1); /*0x71046a*/
   return result; /*0x71046f*/
@@ -635,7 +635,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->weaponCount = 0; /*0x710b0e*/
   this->weapon1 = 0; /*0x710b14*/
   this->ImageAllocated = 0; /*0x710b1c*/
-  this->align_A9 = 0; /*0x710b28*/
+  this->q0A9 = 0; /*0x710b28*/
   this->q0AA = 0; /*0x710b2f*/
   this->VoiceEnter = 0; /*0x710b36*/
   *(_DWORD *)(this + 686) = 0; /*0x710b3d*/
@@ -757,14 +757,14 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->q144 = &vt_TypeList_int; /*0x710ecd*/
   this->AuxSound1 = -1; /*0x710ed7*/
   this->NoSpawnAlt = -1; /*0x710edd*/
-  this->__pad_14D = -1; /*0x710ee3*/
+  this->q14D = -1; /*0x710ee3*/
   this->DamageSound = -1; /*0x710ee9*/
   this->ImpactWaterSound = -1; /*0x710eef*/
   this->q150 = -1; /*0x710ef5*/
   this->CrashingSound = -1; /*0x710efb*/
   this->SinkingSound = -1; /*0x710f01*/
   this->VoiceFalling = -1; /*0x710f07*/
-  this->__pad_154 = -1; /*0x710f0d*/
+  this->q154 = -1; /*0x710f0d*/
   this->VoiceSinking = -1; /*0x710f13*/
   this->VoiceEnter = -1; /*0x710f19*/
   this->VoiceCapture = -1; /*0x710f1f*/
@@ -782,7 +782,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->VoiceSecondaryEliteWeaponAttack = -1; /*0x710f68*/
   this->VoiceDeploy = -1; /*0x710f75*/
   this->VoiceUndeploy = -1; /*0x710f7b*/
-  this->__pad_166 = -1; /*0x710f81*/
+  this->q166 = -1; /*0x710f81*/
   this->LeaveGrinderSound = -1; /*0x710f87*/
   this->EnterBioReactorSound = -1; /*0x710f8d*/
   this->q169 = -1; /*0x710f93*/
@@ -831,7 +831,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->q199 = 0; /*0x7110be*/
   this->PrerequisiteOverride = &vt_TypeList_int; /*0x7110c4*/
   this->ThreatPosed = 0; /*0x7110ce*/
-  this->__pad_19D = 0; /*0x7110d4*/
+  this->q19D = 0; /*0x7110d4*/
   this->Speed = 0; /*0x7110da*/
   this->SpeedType = a3; /*0x7110e0*/
   this->InitialAmmo = -1; /*0x7110e6*/
@@ -912,7 +912,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->DamageParticleSystems = &vt_TypeList_ParticleSystemTypeClass_const; /*0x7112ba*/
   VectorClass::ConstructorWithVtable(0, 0); /*0x7112c4*/
   *((_DWORD *)this + 490) = 10; /*0x7112c9*/
-  this->align_1E9 = 0; /*0x7112cf*/
+  this->q1E9 = 0; /*0x7112cf*/
   this->DestroyParticleSystems = &vt_TypeList_ParticleSystemTypeClass_const; /*0x7112d5*/
   this->MaxDimension = 0; /*0x7112df*/
   *((_DWORD *)this + 493) = 0; /*0x7112e5*/
@@ -940,7 +940,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->HasTurretTooltips = 0; /*0x711369*/
   this->Insignificant = 0; /*0x71136f*/
   this->IsChargeTurret = 0; /*0x711375*/
-  this->__pad_A90 = 0; /*0x71137b*/
+  this->qA90 = 0; /*0x71137b*/
   this->TypeImmune = 0; /*0x711381*/
   this->MoveToShroud = 1; /*0x711387*/
   this->Trainable = 1; /*0x71138e*/
@@ -978,11 +978,11 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->qCCD = 0; /*0x71145a*/
   this->qCCE = 0; /*0x711460*/
   this->q333C = 0; /*0x711466*/
-  this->__pad_3340 = 0; /*0x71146c*/
+  this->q3340 = 0; /*0x71146c*/
   this->Naval = 0; /*0x711472*/
   this->Remapable = 0; /*0x711478*/
   this->Cloakable = 0; /*0x71147e*/
-  this->__pad_CD4 = 0; /*0x711484*/
+  this->qCD4 = 0; /*0x711484*/
   this->qCD5 = 0; /*0x71148a*/
   *((_DWORD *)this + 822) = 0; /*0x711490*/
   *((_DWORD *)this + 835) = 0; /*0x711496*/
@@ -991,7 +991,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->qD15 = 0; /*0x7114a8*/
   this->SlavesNumber = 0; /*0x7114ae*/
   this->SlaveRegenRate = 1065353216; /*0x7114b4*/
-  this->__pad_D20 = 0; /*0x7114be*/
+  this->qD20 = 0; /*0x7114be*/
   this->qD21 = 0; /*0x7114c4*/
   this->qD22 = 0; /*0x7114ca*/
   this->qD23 = 0; /*0x7114d0*/
@@ -1022,16 +1022,16 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->JumpjetSpeed = 0; /*0x711566*/
   this->JumpjetClimb = 0; /*0x71156c*/
   this->JumpjetCrash = -1; /*0x711572*/
-  this->__pad_D54 = 0; /*0x711578*/
+  this->qD54 = 0; /*0x711578*/
   this->JumpjetAccel = 0; /*0x71157e*/
   this->JumpjetWobbles = 0; /*0x711584*/
   this->qD60 = 0; /*0x71158a*/
   this->JumpjetDeviation = 0; /*0x711590*/
-  this->__pad_D68 = 0; /*0x711596*/
+  this->qD68 = 0; /*0x711596*/
   this->qD69 = 0; /*0x71159c*/
   this->qD6A = 0; /*0x7115a2*/
   this->qD6C = 0; /*0x7115a8*/
-  this->align_35C = 4; /*0x7115ae*/
+  this->q35C = 4; /*0x7115ae*/
   this->RequiredHouses = 14; /*0x7115b8*/
   this->ForbiddenHouses = 1084227584; /*0x7115c7*/
   this->SecretHouses = 1084227584; /*0x7115cd*/
@@ -1065,7 +1065,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->vtable2 = &TechnoTypeClass::`vftable'; /*0x71168c*/
   this->vtable3 = &TechnoTypeClass::`vftable'; /*0x711693*/
   this->vtable4 = &vt_TechnoTypeClass; /*0x71169a*/
-  this->__pad_DD0 = 0; /*0x7116a7*/
+  this->qDD0 = 0; /*0x7116a7*/
   this->q234 = 1; /*0x7116ad*/
   (*(void (__thiscall **)(char *))(this->DebrisTypes + 12))(this + 788); /*0x7116b6*/
   (*(void (__thiscall **)(char *))(this->DebrisAnims + 12))(this + 1476); /*0x7116c5*/
@@ -6739,7 +6739,7 @@ _DWORD *__thiscall TypeList_Particle_Constructor(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x717c79*/
   this->Capacity = a2; /*0x717c80*/
   this->q030 = 1; /*0x717c83*/
-  this->__pad_034 = 0; /*0x717c87*/
+  this->q034 = 0; /*0x717c87*/
   *this = &vt_VectorClass_ParticleSystemTypeClass_const; /*0x717c8b*/
   if ( a2 ) /*0x717c91*/
   {
@@ -6750,7 +6750,7 @@ _DWORD *__thiscall TypeList_Particle_Constructor(_DWORD *this, int a2, int a3)
     else
     {
       this->Items = __2_YAPAXI_Z(4 * a2); /*0x717cac*/
-      this->__pad_034 = 1; /*0x717caf*/
+      this->q034 = 1; /*0x717caf*/
     }
   }
   *this = &vt_DynamicVectorClass_ParticleSystemTypeClass_const; /*0x717cb3*/
@@ -6796,7 +6796,7 @@ _DWORD *__thiscall VectorClass::CopyParticle(_DWORD *this, DynamicVector *aP1)
   this->Items = 0; /*0x717d2d*/
   this->Capacity = 0; /*0x717d30*/
   this->q030 = 1; /*0x717d33*/
-  this->__pad_034 = 0; /*0x717d37*/
+  this->q034 = 0; /*0x717d37*/
   *this = &vt_VectorClass_ParticleSystemTypeClass_const; /*0x717d3a*/
   if ( this != (_DWORD *)aP1 ) /*0x717d40*/
   {
@@ -6811,7 +6811,7 @@ _DWORD *__thiscall VectorClass::CopyParticle(_DWORD *this, DynamicVector *aP1)
       {
         v5 = this->Capacity; /*0x717d65*/
         v6 = 0; /*0x717d68*/
-        this->__pad_034 = 1; /*0x717d6c*/
+        this->q034 = 1; /*0x717d6c*/
         if ( v5 > 0 ) /*0x717d70*/
         {
           do /*0x717d84*/
@@ -6826,7 +6826,7 @@ _DWORD *__thiscall VectorClass::CopyParticle(_DWORD *this, DynamicVector *aP1)
     else
     {
       this->Items = 0; /*0x717d88*/
-      this->__pad_034 = 0; /*0x717d8b*/
+      this->q034 = 0; /*0x717d8b*/
     }
   }
   this->q010 = aP1->field_10; /*0x717d91*/
@@ -9670,7 +9670,7 @@ char __thiscall VectorClass_ptr_TemporalClass::sub_71B420(void *this, int a2, _D
       return 0; /*0x71b4ca*/
     if ( this->Items ) /*0x71b458*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x71b45f*/
+      v5 = this->q008; /*0x71b45f*/
       if ( a2 < v5 ) /*0x71b464*/
         v5 = a2; /*0x71b466*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x71b46c*/
@@ -9682,14 +9682,14 @@ char __thiscall VectorClass_ptr_TemporalClass::sub_71B420(void *this, int a2, _D
       }
     }
     this->Items = v4; /*0x71b49a*/
-    this->DynamicVector_field_0x8 = a2; /*0x71b4a2*/
+    this->q008 = a2; /*0x71b4a2*/
     this->IsAllocated = a3 == 0; /*0x71b4a5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x71b4ae*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x71b4b1*/
+  v7 = this->q008; /*0x71b4b1*/
   if ( v7 < this->Items ) /*0x71b4b9*/
     this->Items = v7; /*0x71b4bb*/
   return 1; /*0x71b4be*/
@@ -11451,20 +11451,20 @@ _DWORD *__thiscall TerrainTypeClass::TerrainTypeClass(_DWORD *this, ObjectClass 
   CCINIClass *v6; // edx
 
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x71da89*/
-  this->Foundation = -1; /*0x71da90*/
-  this->RadarColor = 0; /*0x71da9a*/
-  this->AnimationRate = 0; /*0x71daa5*/
+  this->ArrayIndex = -1; /*0x71da90*/
+  this->Foundation = 0; /*0x71da9a*/
+  this->RadarColor = 0; /*0x71daa5*/
   this->q29D = 0; /*0x71daab*/
   this->q29E = 0; /*0x71dab1*/
-  this->SnowOccupationBits = 7; /*0x71dab7*/
-  this->WaterBound = 7; /*0x71dabd*/
-  this->AnimationProbability = 0; /*0x71dac7*/
-  this->TemperateOccupationBits = 0; /*0x71dacd*/
-  this->IsVeinhole = 0; /*0x71dad3*/
+  this->TemperateOccupationBits = 7; /*0x71dab7*/
+  this->SnowOccupationBits = 7; /*0x71dabd*/
+  this->AnimationRate = 0; /*0x71dac7*/
+  this->AnimationProbability = 0; /*0x71dacd*/
+  this->WaterBound = 0; /*0x71dad3*/
   this->q2B1 = 0; /*0x71dad9*/
   this->q2B2 = 0; /*0x71dadf*/
   this->q2B3 = 0; /*0x71dae5*/
-  this->FoundationData = 0; /*0x71daeb*/
+  this->IsVeinhole = 0; /*0x71daeb*/
   this->q2B8 = 0; /*0x71daf1*/
   *this = &TerrainTypeClass::`vftable'; /*0x71daf7*/
   this->vtable2 = &TerrainTypeClass::`vftable'; /*0x71dafd*/
@@ -11508,7 +11508,7 @@ LABEL_11:
         goto LABEL_11; /*0x71dba1*/
     }
   }
-  this->Foundation = v5; /*0x71dba6*/
+  this->ArrayIndex = v5; /*0x71dba6*/
   this->Strength = -1; /*0x71dbac*/
   this->Armor = 6; /*0x71dbb6*/
   return this; /*0x71dbc2*/
@@ -11885,7 +11885,7 @@ int TerrainTypeClass::_vt12()
 // ==== 0x0071E350  TerrainTypeClass::GetAuxField  this=TerrainTypeClass  sig=csp ====
 int __thiscall TerrainTypeClass::_vt16(_DWORD *this)
 {
-  return this->Foundation; /*0x71e356*/
+  return this->ArrayIndex; /*0x71e356*/
 }
 
 
@@ -13318,7 +13318,7 @@ char __thiscall VectorClass_ptr_TEventClass::sub_71FD80(void *this, int a2, _DWO
       return 0; /*0x71fe2a*/
     if ( this->Items ) /*0x71fdb8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x71fdbf*/
+      v5 = this->q008; /*0x71fdbf*/
       if ( a2 < v5 ) /*0x71fdc4*/
         v5 = a2; /*0x71fdc6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x71fdcc*/
@@ -13330,14 +13330,14 @@ char __thiscall VectorClass_ptr_TEventClass::sub_71FD80(void *this, int a2, _DWO
       }
     }
     this->Items = v4; /*0x71fdfa*/
-    this->DynamicVector_field_0x8 = a2; /*0x71fe02*/
+    this->q008 = a2; /*0x71fe02*/
     this->IsAllocated = a3 == 0; /*0x71fe05*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x71fe0e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x71fe11*/
+  v7 = this->q008; /*0x71fe11*/
   if ( v7 < this->Items ) /*0x71fe19*/
     this->Items = v7; /*0x71fe1b*/
   return 1; /*0x71fe1e*/

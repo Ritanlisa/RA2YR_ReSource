@@ -311,7 +311,7 @@ _DWORD *__thiscall sub_510500(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x51050b*/
   this->Capacity = a2; /*0x51050e*/
   this->q030 = 1; /*0x510511*/
-  this->__pad_034 = 0; /*0x510515*/
+  this->q034 = 0; /*0x510515*/
   *this = &vt_VectorClass_SuperClass; /*0x510518*/
   if ( a2 ) /*0x51051e*/
   {
@@ -321,7 +321,7 @@ _DWORD *__thiscall sub_510500(_DWORD *this, int a2, int a3)
       return this; /*0x51052e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x51053d*/
-    this->__pad_034 = 1; /*0x510540*/
+    this->q034 = 1; /*0x510540*/
   }
   return this; /*0x51052d*/
 }
@@ -333,7 +333,7 @@ _DWORD *__thiscall VectorClass_Building_Constructor(_DWORD *this, int a2, int a3
   this->Items = 0; /*0x51055b*/
   this->Capacity = a2; /*0x51055e*/
   this->q030 = 1; /*0x510561*/
-  this->__pad_034 = 0; /*0x510565*/
+  this->q034 = 0; /*0x510565*/
   *this = &vt_VectorClass_BuildingClass; /*0x510568*/
   if ( a2 ) /*0x51056e*/
   {
@@ -343,7 +343,7 @@ _DWORD *__thiscall VectorClass_Building_Constructor(_DWORD *this, int a2, int a3
       return this; /*0x51057e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x51058d*/
-    this->__pad_034 = 1; /*0x510590*/
+    this->q034 = 1; /*0x510590*/
   }
   return this; /*0x51057d*/
 }
@@ -355,7 +355,7 @@ _DWORD *__thiscall VectorClass::BuildingTypeConstructor(_DWORD *this, TechnoType
   this->Items = 0; /*0x5105ab*/
   this->Capacity = aP1; /*0x5105ae*/
   this->q030 = 1; /*0x5105b1*/
-  this->__pad_034 = 0; /*0x5105b5*/
+  this->q034 = 0; /*0x5105b5*/
   *this = &vt_VectorClass_BuildingTypeClass_const; /*0x5105b8*/
   if ( aP1 ) /*0x5105be*/
   {
@@ -365,7 +365,7 @@ _DWORD *__thiscall VectorClass::BuildingTypeConstructor(_DWORD *this, TechnoType
       return this; /*0x5105ce*/
     }
     this->Items = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x5105dd*/
-    this->__pad_034 = 1; /*0x5105e0*/
+    this->q034 = 1; /*0x5105e0*/
   }
   return this; /*0x5105cd*/
 }
@@ -377,7 +377,7 @@ _DWORD *__thiscall sub_5105F0(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x5105fb*/
   this->Capacity = a2; /*0x5105fe*/
   this->q030 = 1; /*0x510601*/
-  this->__pad_034 = 0; /*0x510605*/
+  this->q034 = 0; /*0x510605*/
   *this = &vt_VectorClass_IConnectionPoint; /*0x510608*/
   if ( a2 ) /*0x51060e*/
   {
@@ -387,7 +387,7 @@ _DWORD *__thiscall sub_5105F0(_DWORD *this, int a2, int a3)
       return this; /*0x51061e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x51062d*/
-    this->__pad_034 = 1; /*0x510630*/
+    this->q034 = 1; /*0x510630*/
   }
   return this; /*0x51061d*/
 }
@@ -399,7 +399,7 @@ _DWORD *__thiscall sub_510640(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x51064b*/
   this->Capacity = a2; /*0x51064e*/
   this->q030 = 1; /*0x510651*/
-  this->__pad_034 = 0; /*0x510655*/
+  this->q034 = 0; /*0x510655*/
   *this = &vt_VectorClass_TagClass; /*0x510658*/
   if ( a2 ) /*0x51065e*/
   {
@@ -409,7 +409,7 @@ _DWORD *__thiscall sub_510640(_DWORD *this, int a2, int a3)
       return this; /*0x51066e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x51067d*/
-    this->__pad_034 = 1; /*0x510680*/
+    this->q034 = 1; /*0x510680*/
   }
   return this; /*0x51066d*/
 }
@@ -421,7 +421,7 @@ _DWORD *__thiscall sub_510690(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x51069b*/
   this->Capacity = a2; /*0x51069e*/
   this->q030 = 1; /*0x5106a1*/
-  this->__pad_034 = 0; /*0x5106a5*/
+  this->q034 = 0; /*0x5106a5*/
   *this = &vt_VectorClass_HouseClass_StartingTechnoStruct; /*0x5106a8*/
   if ( a2 ) /*0x5106ae*/
   {
@@ -431,7 +431,7 @@ _DWORD *__thiscall sub_510690(_DWORD *this, int a2, int a3)
       return this; /*0x5106be*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x5106cd*/
-    this->__pad_034 = 1; /*0x5106d0*/
+    this->q034 = 1; /*0x5106d0*/
   }
   return this; /*0x5106bd*/
 }
@@ -449,7 +449,7 @@ _DWORD *__thiscall sub_5106E0(_DWORD *this, int a2, _DWORD *a3)
   this->Items = 0; /*0x5106ed*/
   this->Capacity = a2; /*0x5106f0*/
   this->q030 = 1; /*0x5106f3*/
-  this->__pad_034 = 0; /*0x5106f7*/
+  this->q034 = 0; /*0x5106f7*/
   *this = &vt_VectorClass_AngerStruct; /*0x5106fa*/
   if ( !a2 ) /*0x510700*/
     return this; /*0x510700*/
@@ -471,7 +471,7 @@ _DWORD *__thiscall sub_5106E0(_DWORD *this, int a2, _DWORD *a3)
         }
         while ( v9 ); /*0x510751*/
         this->Items = v7; /*0x510753*/
-        this->__pad_034 = 1; /*0x510756*/
+        this->q034 = 1; /*0x510756*/
         return this; /*0x51075f*/
       }
     }
@@ -480,7 +480,7 @@ _DWORD *__thiscall sub_5106E0(_DWORD *this, int a2, _DWORD *a3)
       v7 = 0; /*0x510762*/
     }
     this->Items = v7; /*0x510764*/
-    this->__pad_034 = 1; /*0x510767*/
+    this->q034 = 1; /*0x510767*/
     return this; /*0x51076b*/
   }
   v4 = a3; /*0x51070d*/
@@ -513,7 +513,7 @@ _DWORD *__thiscall sub_510780(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x51078d*/
   this->Capacity = a2; /*0x510790*/
   this->q030 = 1; /*0x510793*/
-  this->__pad_034 = 0; /*0x510797*/
+  this->q034 = 0; /*0x510797*/
   *this = &vt_VectorClass_ScoutStruct; /*0x51079a*/
   if ( !a2 ) /*0x5107a0*/
     return this; /*0x5107a0*/
@@ -535,7 +535,7 @@ _DWORD *__thiscall sub_510780(_DWORD *this, int a2, int a3)
         }
         while ( v9 ); /*0x5107f1*/
         this->Items = v7; /*0x5107f3*/
-        this->__pad_034 = 1; /*0x5107f6*/
+        this->q034 = 1; /*0x5107f6*/
         return this; /*0x5107ff*/
       }
     }
@@ -544,7 +544,7 @@ _DWORD *__thiscall sub_510780(_DWORD *this, int a2, int a3)
       v7 = 0; /*0x510802*/
     }
     this->Items = v7; /*0x510804*/
-    this->__pad_034 = 1; /*0x510807*/
+    this->q034 = 1; /*0x510807*/
     return this; /*0x51080b*/
   }
   v4 = a3; /*0x5107ad*/
@@ -572,12 +572,12 @@ char __thiscall HouseClass::processAIEvents(_DWORD *this, AbstractClass *aP1)
   BuildingClass *v3; // eax
   int v4; // edx
 
-  v2 = this->DynamicVector_field_0x10; /*0x510820*/
+  v2 = this->q010; /*0x510820*/
   v3 = (BuildingClass *)aP1; /*0x510823*/
   if ( (int)aP1 >= v2 ) /*0x510829*/
     return 0; /*0x51084c*/
   v4 = v2 - 1; /*0x51082b*/
-  this->DynamicVector_field_0x10 = v4; /*0x51082e*/
+  this->q010 = v4; /*0x51082e*/
   if ( (int)aP1 < v4 ) /*0x510831*/
   {
     do /*0x510844*/
@@ -585,7 +585,7 @@ char __thiscall HouseClass::processAIEvents(_DWORD *this, AbstractClass *aP1)
       v3 = (BuildingClass *)((char *)v3 + 1); /*0x510837*/
       *(_DWORD *)(this->Items + 4 * (_DWORD)v3 - 4) = *(_DWORD *)(this->Items + 4 * (_DWORD)v3); /*0x51083b*/
     }
-    while ( (int)v3 < this->DynamicVector_field_0x10 ); /*0x510844*/
+    while ( (int)v3 < this->q010 ); /*0x510844*/
   }
   return 1; /*0x510849*/
 }
@@ -636,7 +636,7 @@ _DWORD *__thiscall BoolVector::Construct(_DWORD *this, MapClass *aP1, MapClass *
   this->Items = 0; /*0x51092b*/
   this->Capacity = aP1; /*0x51092e*/
   this->q030 = 1; /*0x510931*/
-  this->__pad_034 = 0; /*0x510935*/
+  this->q034 = 0; /*0x510935*/
   *this = &vt_VectorClass_bool; /*0x510938*/
   if ( aP1 ) /*0x51093e*/
   {
@@ -646,7 +646,7 @@ _DWORD *__thiscall BoolVector::Construct(_DWORD *this, MapClass *aP1, MapClass *
       return this; /*0x51094e*/
     }
     this->Items = __2_YAPAXI_Z((size_t)aP1); /*0x51095a*/
-    this->__pad_034 = 1; /*0x51095d*/
+    this->q034 = 1; /*0x51095d*/
   }
   return this; /*0x51094d*/
 }
@@ -665,7 +665,7 @@ _DWORD *__thiscall sub_510970(_DWORD *this, int a2, _DWORD *a3)
   this->Items = 0; /*0x51097a*/
   this->Capacity = a2; /*0x510981*/
   this->q030 = 1; /*0x510984*/
-  this->__pad_034 = 0; /*0x510988*/
+  this->q034 = 0; /*0x510988*/
   *this = &vt_VectorClass_DiscreteDistributionClass_BuildingTypeClass_DistributionObject_BuildingTypeClass; /*0x51098c*/
   if ( !a2 ) /*0x510992*/
     return this; /*0x510992*/
@@ -690,7 +690,7 @@ _DWORD *__thiscall sub_510970(_DWORD *this, int a2, _DWORD *a3)
   v7 = __2_YAPAXI_Z(8 * a2 + 4); /*0x5109ca*/
   if ( !v7 ) /*0x5109d4*/
   {
-    this->__pad_034 = 1; /*0x510a04*/
+    this->q034 = 1; /*0x510a04*/
     this->Items = 0; /*0x510a08*/
     return this; /*0x510a0b*/
   }
@@ -708,7 +708,7 @@ _DWORD *__thiscall sub_510970(_DWORD *this, int a2, _DWORD *a3)
     }
     while ( v10 ); /*0x5109f0*/
   }
-  this->__pad_034 = 1; /*0x5109f4*/
+  this->q034 = 1; /*0x5109f4*/
   this->Items = v8; /*0x5109f8*/
   return this; /*0x5109bd*/
 }
@@ -1203,51 +1203,51 @@ _BYTE *__thiscall SuperWeaponTypeClass::Construct(_BYTE *this, AbstractClass *aP
   this->buildtimeBuildingsMult = 0; /*0x511404*/
   this->veteranAircraft = -1; /*0x51140a*/
   this->veteranAircraftCount = -1; /*0x511410*/
-  this->suffix[4] = -1; /*0x511416*/
+  this->suffix_4 = -1; /*0x511416*/
   this->airspeedMult = 0; /*0x51141c*/
   this->firepowerMult = 0; /*0x511427*/
   this->q033 = 1072693248; /*0x51142d*/
-  this->groundspeedMult_e = 0; /*0x511433*/
+  this->q0D0 = 0; /*0x511433*/
   *((_DWORD *)this + 53) = 1072693248; /*0x511439*/
-  this->airspeedMult_e = 0; /*0x51143f*/
+  this->q0D8 = 0; /*0x51143f*/
   this->q037 = 1072693248; /*0x511445*/
   this->armorMult = 0; /*0x51144b*/
   this->q0E4 = 1072693248; /*0x511451*/
   this->q03A = 0; /*0x511457*/
   this->m_zero_3C = 0; /*0x51145d*/
-  this->buildtimeMult_e = 0; /*0x511463*/
+  this->q0F8 = 0; /*0x511463*/
   this->q03B = 1072693248; /*0x511469*/
   this->uiNameLabel = 1072693248; /*0x51146f*/
   this->q0FC = 1072693248; /*0x511475*/
   this->rofMult = 1065353216; /*0x51148a*/
-  this->armorUnitsMult_e = 1065353216; /*0x511490*/
+  this->q104 = 1065353216; /*0x511490*/
   this->q042 = 1065353216; /*0x511496*/
   this->q043 = 1065353216; /*0x51149c*/
   this->q044 = 1065353216; /*0x5114a2*/
-  this->costInfantryMult_e = 1065353216; /*0x5114a8*/
-  this->costUnitsMult_e = 1065353216; /*0x5114ae*/
-  this->costAircraftMult_e = 1065353216; /*0x5114b4*/
+  this->q114 = 1065353216; /*0x5114a8*/
+  this->q118 = 1065353216; /*0x5114ae*/
+  this->q11C = 1065353216; /*0x5114b4*/
   this->costMult = 1065353216; /*0x5114ba*/
   this->q049 = 1065353216; /*0x5114c0*/
   this->q04A = 1065353216; /*0x5114c6*/
-  this->currentSpeed_units_mult_e = 1065353216; /*0x5114cc*/
+  this->q12C = 1065353216; /*0x5114cc*/
   this->q04C = 1065353216; /*0x5114d2*/
-  this->buildtimeInfantryMult_e = 1065353216; /*0x5114d8*/
-  this->buildtimeUnitsMult_e = 1065353216; /*0x5114de*/
+  this->q134 = 1065353216; /*0x5114d8*/
+  this->q138 = 1065353216; /*0x5114de*/
   this->q04F = 1065353216; /*0x5114e4*/
   this->buildtimeMult = 1065353216; /*0x5114ea*/
-  this->buildtimeDefensesMult_e = 1065353216; /*0x5114f0*/
-  this->incomeMult_e = 1065353216; /*0x5114f6*/
+  this->q144 = 1065353216; /*0x5114f0*/
+  this->q148 = 1065353216; /*0x5114f6*/
   InfantryTypeVector::Construct2((_DWORD *)this + 83, 0, 0); /*0x5114fc*/
   this->armorInfantryMult = 10; /*0x511501*/
-  this->veteranAircraft_e = 0; /*0x511508*/
-  this->veteranInfantry_e = &vt_TypeList_InfantryTypeClass_const; /*0x51150b*/
+  this->q15C = 0; /*0x511508*/
+  this->q14C = &vt_TypeList_InfantryTypeClass_const; /*0x51150b*/
   UnitTypeVector::ConstructUnitTypeVectorClass((_DWORD *)this + 90, 0, 0); /*0x51151b*/
   *((_DWORD *)this + 95) = 10; /*0x511520*/
   *((_DWORD *)this + 94) = 0; /*0x511527*/
-  this->prefix_e = &vt_TypeList_UnitTypeClass_const; /*0x51152a*/
+  this->q168 = &vt_TypeList_UnitTypeClass_const; /*0x51152a*/
   AircraftTypeVector::Constructor((_DWORD *)this + 97, 0, 0); /*0x51153a*/
-  this->__pad_198 = 10; /*0x511542*/
+  this->q198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
   this->q184 = &vt_TypeList_AircraftTypeClass_const; /*0x51154c*/
   this->q1A4 = 65; /*0x511552*/
@@ -1320,8 +1320,8 @@ LABEL_16:
 _DWORD *__thiscall HouseTypeClass::loadVeteranWeapons(_DWORD *this, HouseTypeClass *aP1)
 {
   AbstractTypeClass::Init((int)this, (AbstractTypeClass *)aP1); /*0x511658*/
-  this->veteranInfantry_e = &vt_TypeList_InfantryTypeClass_const; /*0x51165d*/
-  this->prefix_e = &vt_TypeList_UnitTypeClass_const; /*0x511667*/
+  this->q14C = &vt_TypeList_InfantryTypeClass_const; /*0x51165d*/
+  this->q168 = &vt_TypeList_UnitTypeClass_const; /*0x511667*/
   this->q184 = &vt_TypeList_AircraftTypeClass_const; /*0x511671*/
   *this = &HouseTypeClass::`vftable'; /*0x51167b*/
   this->vtable2 = &HouseTypeClass::`vftable'; /*0x511681*/
@@ -2568,7 +2568,7 @@ _DWORD *__thiscall InfantryTypeVector_Constructor(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x512dc9*/
   this->Capacity = a2; /*0x512dd0*/
   this->q030 = 1; /*0x512dd3*/
-  this->__pad_034 = 0; /*0x512dd7*/
+  this->q034 = 0; /*0x512dd7*/
   *this = &vt_VectorClass_InfantryTypeClass_const; /*0x512ddb*/
   if ( a2 ) /*0x512de1*/
   {
@@ -2579,7 +2579,7 @@ _DWORD *__thiscall InfantryTypeVector_Constructor(_DWORD *this, int a2, int a3)
     else
     {
       this->Items = __2_YAPAXI_Z(4 * a2); /*0x512dfc*/
-      this->__pad_034 = 1; /*0x512dff*/
+      this->q034 = 1; /*0x512dff*/
     }
   }
   *this = &vt_DynamicVectorClass_InfantryTypeClass_const; /*0x512e03*/
@@ -2629,7 +2629,7 @@ char __thiscall TypeList_Infantry::Remove(void *this, int a2, _DWORD *a3)
       return 0; /*0x512f1a*/
     if ( this->Items ) /*0x512ea8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x512eaf*/
+      v5 = this->q008; /*0x512eaf*/
       if ( a2 < v5 ) /*0x512eb4*/
         v5 = a2; /*0x512eb6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x512ebc*/
@@ -2641,14 +2641,14 @@ char __thiscall TypeList_Infantry::Remove(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x512eea*/
-    this->DynamicVector_field_0x8 = a2; /*0x512ef2*/
+    this->q008 = a2; /*0x512ef2*/
     this->IsAllocated = a3 == 0; /*0x512ef5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x512efe*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x512f01*/
+  v7 = this->q008; /*0x512f01*/
   if ( v7 < this->Items ) /*0x512f09*/
     this->Items = v7; /*0x512f0b*/
   return 1; /*0x512f0e*/
@@ -2666,7 +2666,7 @@ char __thiscall InfantryTypeVector::Add(_DWORD *this, InfantryTypeClass *aP1)
   v3 = this->Capacity; /*0x512f23*/
   if ( this->q010 >= v3 ) /*0x512f2b*/
   {
-    if ( !this->__pad_034 && v3 ) /*0x512f36*/
+    if ( !this->q034 && v3 ) /*0x512f36*/
       return 0; /*0x512f36*/
     v4 = this->q005; /*0x512f38*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x512f48*/
@@ -2716,7 +2716,7 @@ _DWORD *__thiscall VectorClass::CopyConstructor(_DWORD *this, InfantryTypeClass 
   if ( !v3 ) /*0x512fb9*/
   {
     this->Items = 0; /*0x512ffa*/
-    this->__pad_034 = 0; /*0x513001*/
+    this->q034 = 0; /*0x513001*/
     return this; /*0x513005*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x512fc3*/
@@ -2725,7 +2725,7 @@ _DWORD *__thiscall VectorClass::CopyConstructor(_DWORD *this, InfantryTypeClass 
     return this; /*0x512fd0*/
   v5 = this->Capacity; /*0x512fd2*/
   v6 = 0; /*0x512fd5*/
-  this->__pad_034 = 1; /*0x512fd9*/
+  this->q034 = 1; /*0x512fd9*/
   if ( v5 <= 0 ) /*0x512fdd*/
     return this; /*0x512fdd*/
   do /*0x512ff1*/
@@ -2865,7 +2865,7 @@ _DWORD *__thiscall UnitTypeVector_Constructor(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x513199*/
   this->Capacity = a2; /*0x5131a0*/
   this->q030 = 1; /*0x5131a3*/
-  this->__pad_034 = 0; /*0x5131a7*/
+  this->q034 = 0; /*0x5131a7*/
   *this = &vt_VectorClass_UnitTypeClass_const; /*0x5131ab*/
   if ( a2 ) /*0x5131b1*/
   {
@@ -2876,7 +2876,7 @@ _DWORD *__thiscall UnitTypeVector_Constructor(_DWORD *this, int a2, int a3)
     else
     {
       this->Items = __2_YAPAXI_Z(4 * a2); /*0x5131cc*/
-      this->__pad_034 = 1; /*0x5131cf*/
+      this->q034 = 1; /*0x5131cf*/
     }
   }
   *this = &DynamicVectorClass<UnitTypeClass const *>::`vftable'; /*0x5131d3*/
@@ -2926,7 +2926,7 @@ char __thiscall HouseTypeClass_36_::_vt02(void *this, int a2, _DWORD *a3)
       return 0; /*0x5132ea*/
     if ( this->Items ) /*0x513278*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x51327f*/
+      v5 = this->q008; /*0x51327f*/
       if ( a2 < v5 ) /*0x513284*/
         v5 = a2; /*0x513286*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x51328c*/
@@ -2938,14 +2938,14 @@ char __thiscall HouseTypeClass_36_::_vt02(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x5132ba*/
-    this->DynamicVector_field_0x8 = a2; /*0x5132c2*/
+    this->q008 = a2; /*0x5132c2*/
     this->IsAllocated = a3 == 0; /*0x5132c5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x5132ce*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x5132d1*/
+  v7 = this->q008; /*0x5132d1*/
   if ( v7 < this->Items ) /*0x5132d9*/
     this->Items = v7; /*0x5132db*/
   return 1; /*0x5132de*/
@@ -2963,7 +2963,7 @@ char __thiscall VectorClass::PushBack(_DWORD *this, VectorClass *aP1)
   v3 = (MapClass *)this->Capacity; /*0x5132f3*/
   if ( this->q010 >= (int)v3 ) /*0x5132fb*/
   {
-    if ( !this->__pad_034 && v3 ) /*0x513306*/
+    if ( !this->q034 && v3 ) /*0x513306*/
       return 0; /*0x513306*/
     v4 = this->q005; /*0x513308*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x513318*/
@@ -3013,7 +3013,7 @@ _DWORD *__thiscall HouseTypeClass::readBaseDefense(_DWORD *this, VectorClass *aP
   if ( !v3 ) /*0x513389*/
   {
     this->Items = 0; /*0x5133ca*/
-    this->__pad_034 = 0; /*0x5133d1*/
+    this->q034 = 0; /*0x5133d1*/
     return this; /*0x5133d5*/
   }
   v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x513393*/
@@ -3022,7 +3022,7 @@ _DWORD *__thiscall HouseTypeClass::readBaseDefense(_DWORD *this, VectorClass *aP
     return this; /*0x5133a0*/
   v5 = this->Capacity; /*0x5133a2*/
   v6 = 0; /*0x5133a5*/
-  this->__pad_034 = 1; /*0x5133a9*/
+  this->q034 = 1; /*0x5133a9*/
   if ( v5 <= 0 ) /*0x5133ad*/
     return this; /*0x5133ad*/
   do /*0x5133c1*/
@@ -3162,7 +3162,7 @@ _DWORD *__thiscall sub_513560(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x513569*/
   this->Capacity = a2; /*0x513570*/
   this->q030 = 1; /*0x513573*/
-  this->__pad_034 = 0; /*0x513577*/
+  this->q034 = 0; /*0x513577*/
   *this = &vt_VectorClass_AircraftTypeClass_const; /*0x51357b*/
   if ( a2 ) /*0x513581*/
   {
@@ -3173,7 +3173,7 @@ _DWORD *__thiscall sub_513560(_DWORD *this, int a2, int a3)
     else
     {
       this->Items = __2_YAPAXI_Z(4 * a2); /*0x51359c*/
-      this->__pad_034 = 1; /*0x51359f*/
+      this->q034 = 1; /*0x51359f*/
     }
   }
   *this = &vt_DynamicVectorClass_AircraftTypeClass_const; /*0x5135a3*/
@@ -3223,7 +3223,7 @@ char __thiscall HouseTypeClass_28_::_vt02(void *this, int a2, _DWORD *a3)
       return 0; /*0x5136ba*/
     if ( this->Items ) /*0x513648*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x51364f*/
+      v5 = this->q008; /*0x51364f*/
       if ( a2 < v5 ) /*0x513654*/
         v5 = a2; /*0x513656*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x51365c*/
@@ -3235,14 +3235,14 @@ char __thiscall HouseTypeClass_28_::_vt02(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x51368a*/
-    this->DynamicVector_field_0x8 = a2; /*0x513692*/
+    this->q008 = a2; /*0x513692*/
     this->IsAllocated = a3 == 0; /*0x513695*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x51369e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x5136a1*/
+  v7 = this->q008; /*0x5136a1*/
   if ( v7 < this->Items ) /*0x5136a9*/
     this->Items = v7; /*0x5136ab*/
   return 1; /*0x5136ae*/
@@ -3305,7 +3305,7 @@ _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
   this->Items = 0; /*0x51374d*/
   this->Capacity = 0; /*0x513750*/
   this->q030 = 1; /*0x513753*/
-  this->__pad_034 = 0; /*0x513757*/
+  this->q034 = 0; /*0x513757*/
   *this = &vt_VectorClass_UnitTypeClass_const; /*0x51375a*/
   if ( this != (_DWORD *)aP1 ) /*0x513760*/
   {
@@ -3320,7 +3320,7 @@ _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
       {
         v5 = this->Capacity; /*0x513785*/
         v6 = 0; /*0x513788*/
-        this->__pad_034 = 1; /*0x51378c*/
+        this->q034 = 1; /*0x51378c*/
         if ( v5 > 0 ) /*0x513790*/
         {
           do /*0x5137a4*/
@@ -3335,7 +3335,7 @@ _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
     else
     {
       this->Items = 0; /*0x5137a8*/
-      this->__pad_034 = 0; /*0x5137ab*/
+      this->q034 = 0; /*0x5137ab*/
     }
   }
   this->q010 = aP1[1].vtable0; /*0x5137b1*/
@@ -3356,7 +3356,7 @@ _DWORD *__thiscall HouseTypeClass::readParaDropTypes(_DWORD *this, VectorClass *
   this->Items = 0; /*0x5137dd*/
   this->Capacity = 0; /*0x5137e0*/
   this->q030 = 1; /*0x5137e3*/
-  this->__pad_034 = 0; /*0x5137e7*/
+  this->q034 = 0; /*0x5137e7*/
   *this = &vt_VectorClass_AircraftTypeClass_const; /*0x5137ea*/
   if ( this != (_DWORD *)aP1 ) /*0x5137f0*/
   {
@@ -3371,7 +3371,7 @@ _DWORD *__thiscall HouseTypeClass::readParaDropTypes(_DWORD *this, VectorClass *
       {
         v5 = this->Capacity; /*0x513815*/
         v6 = 0; /*0x513818*/
-        this->__pad_034 = 1; /*0x51381c*/
+        this->q034 = 1; /*0x51381c*/
         if ( v5 > 0 ) /*0x513820*/
         {
           do /*0x513834*/
@@ -3386,7 +3386,7 @@ _DWORD *__thiscall HouseTypeClass::readParaDropTypes(_DWORD *this, VectorClass *
     else
     {
       this->Items = 0; /*0x513838*/
-      this->__pad_034 = 0; /*0x51383b*/
+      this->q034 = 0; /*0x51383b*/
     }
   }
   this->q010 = aP1[1].vtable0; /*0x513841*/
@@ -3407,7 +3407,7 @@ _DWORD *__thiscall HouseTypeClass::readAllowedUnits(_DWORD *this, InfantryTypeCl
   this->Items = 0; /*0x51386d*/
   this->Capacity = 0; /*0x513870*/
   this->q030 = 1; /*0x513873*/
-  this->__pad_034 = 0; /*0x513877*/
+  this->q034 = 0; /*0x513877*/
   *this = &vt_VectorClass_InfantryTypeClass_const; /*0x51387a*/
   if ( this != (_DWORD *)aP1 ) /*0x513880*/
   {
@@ -3422,7 +3422,7 @@ _DWORD *__thiscall HouseTypeClass::readAllowedUnits(_DWORD *this, InfantryTypeCl
       {
         v5 = this->Capacity; /*0x5138a5*/
         v6 = 0; /*0x5138a8*/
-        this->__pad_034 = 1; /*0x5138ac*/
+        this->q034 = 1; /*0x5138ac*/
         if ( v5 > 0 ) /*0x5138b0*/
         {
           do /*0x5138c4*/
@@ -3437,7 +3437,7 @@ _DWORD *__thiscall HouseTypeClass::readAllowedUnits(_DWORD *this, InfantryTypeCl
     else
     {
       this->Items = 0; /*0x5138c8*/
-      this->__pad_034 = 0; /*0x5138cb*/
+      this->q034 = 0; /*0x5138cb*/
     }
   }
   this->q010 = aP1->uniqueId; /*0x5138d1*/
@@ -3453,7 +3453,7 @@ _DWORD *__thiscall InfantryTypeVector_Constructor2(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x5138fb*/
   this->Capacity = a2; /*0x5138fe*/
   this->q030 = 1; /*0x513901*/
-  this->__pad_034 = 0; /*0x513905*/
+  this->q034 = 0; /*0x513905*/
   *this = &vt_VectorClass_InfantryTypeClass_const; /*0x513908*/
   if ( a2 ) /*0x51390e*/
   {
@@ -3463,7 +3463,7 @@ _DWORD *__thiscall InfantryTypeVector_Constructor2(_DWORD *this, int a2, int a3)
       return this; /*0x51391e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x51392d*/
-    this->__pad_034 = 1; /*0x513930*/
+    this->q034 = 1; /*0x513930*/
   }
   return this; /*0x51391d*/
 }
@@ -3475,7 +3475,7 @@ _DWORD *__thiscall VectorClass_Constructor_UnitType(_DWORD *this, int a2, int a3
   this->Items = 0; /*0x51394b*/
   this->Capacity = a2; /*0x51394e*/
   this->q030 = 1; /*0x513951*/
-  this->__pad_034 = 0; /*0x513955*/
+  this->q034 = 0; /*0x513955*/
   *this = &vt_VectorClass_UnitTypeClass_const; /*0x513958*/
   if ( a2 ) /*0x51395e*/
   {
@@ -3485,7 +3485,7 @@ _DWORD *__thiscall VectorClass_Constructor_UnitType(_DWORD *this, int a2, int a3
       return this; /*0x51396e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x51397d*/
-    this->__pad_034 = 1; /*0x513980*/
+    this->q034 = 1; /*0x513980*/
   }
   return this; /*0x51396d*/
 }
@@ -3497,7 +3497,7 @@ _DWORD *__thiscall AircraftTypeVector::Constructor(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x51399b*/
   this->Capacity = a2; /*0x51399e*/
   this->q030 = 1; /*0x5139a1*/
-  this->__pad_034 = 0; /*0x5139a5*/
+  this->q034 = 0; /*0x5139a5*/
   *this = &vt_VectorClass_AircraftTypeClass_const; /*0x5139a8*/
   if ( a2 ) /*0x5139ae*/
   {
@@ -3507,7 +3507,7 @@ _DWORD *__thiscall AircraftTypeVector::Constructor(_DWORD *this, int a2, int a3)
       return this; /*0x5139be*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x5139cd*/
-    this->__pad_034 = 1; /*0x5139d0*/
+    this->q034 = 1; /*0x5139d0*/
   }
   return this; /*0x5139bd*/
 }
@@ -6099,7 +6099,7 @@ int __thiscall Color_ConvertToRGB(unsigned __int8 *this, int a2)
 // ==== 0x00517590  DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare  this=DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode  sig=csp ====
 BOOL __thiscall sub_517590(_BYTE *this, _BYTE *a2)
 {
-  return *this != *a2 || this->q001 != a2[1] || this->q002 != a2[2]; /*0x5175bd*/
+  return *this != *a2 || this->Items != a2[1] || this->Capacity != a2[2]; /*0x5175bd*/
 }
 
 
@@ -7300,7 +7300,7 @@ int __thiscall CalculateLocomotionFrameIndex(int *this)
   v15 = (AbstractClass *)(this->q0F8 % v7); /*0x518e2f*/
   if ( !*(_BYTE *)(this->q1B0 + 3476) ) /*0x518e33*/
     goto LABEL_25; /*0x518e33*/
-  v8 = this->__pad_19D; /*0x518e39*/
+  v8 = this->q19D; /*0x518e39*/
   v16 = 0; /*0x518e47*/
   if ( !v8 ) /*0x518e4f*/
     goto LABEL_16; /*0x518e4f*/
@@ -8472,7 +8472,7 @@ char __thiscall InfantryClass::Update(int this)
     return v2; /*0x51bad9*/
   }
   if ( ((*(unsigned __int8 (__thiscall **)(int))(this->q1D4)(this) /*0x51bb01*/
-     || (*(unsigned __int8 (__thiscall **)(int))(this->q1D8)(this))
+     || (*(unsigned __int8 (__thiscall **)(int))(this->isDisguisedFlag)(this))
     && !(dword_A8ED54[12] % 24) )
   {
     if ( *(_DWORD *)(MEMORY[0x87F7E8][7806] + 836) ) /*0x51bb0d*/
@@ -8492,7 +8492,7 @@ char __thiscall InfantryClass::Update(int this)
   v6 = *(_DWORD *)(this + 632); /*0x51bb6e*/
   if ( v6 ) /*0x51bb76*/
     (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 92))(v6); /*0x51bb7a*/
-  if ( !(*(unsigned __int8 (__thiscall **)(int))(this->q1D8)(this) /*0x51bb99*/
+  if ( !(*(unsigned __int8 (__thiscall **)(int))(this->isDisguisedFlag)(this) /*0x51bb99*/
     && (!(*(unsigned __int8 (__thiscall **)(int))(this->q1D4)(this) || !*(_BYTE *)(this + 636)) )
   {
     goto LABEL_98; /*0x51bb99*/
@@ -9639,7 +9639,7 @@ LABEL_12:
     v6 = (__int16 *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 440))(this, &a2); /*0x51d7b0*/
     v7 = *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v6) + 59); /*0x51d7c1*/
     v8 = 1; /*0x51d7c7*/
-    if ( (v7 == 6 || v7 == 2) && !this->__pad_230 ) /*0x51d7d6*/
+    if ( (v7 == 6 || v7 == 2) && !this->q230 ) /*0x51d7d6*/
     {
       v8 = 0; /*0x51d7e0*/
       switch ( v4 ) /*0x51d7ea*/
@@ -9670,7 +9670,7 @@ LABEL_12:
           break;
       }
     }
-    v9 = this->InfantryClass_field_int_6E8; /*0x51d842*/
+    v9 = this->waterState; /*0x51d842*/
     if ( v9 || v8 != 1 ) /*0x51d84f*/
     {
       if ( v9 == 1 && !v8 ) /*0x51d886*/
@@ -9690,10 +9690,10 @@ LABEL_12:
       v26 = this->q0A4; /*0x51d873*/
       StartAudioControllerAt(*(_DWORD *)(v10 + 3752), (int)&v24, 0); /*0x51d87d*/
     }
-    this->InfantryClass_field_int_6E8 = v8; /*0x51d8b8*/
+    this->waterState = v8; /*0x51d8b8*/
   }
   if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 84))(this) /*0x51d8ec*/
-    || this->__pad_230
+    || this->q230
     || *(int *)(*(_DWORD *)(this->Type + 3644) + 828) <= 0
     || v4 )
   {
@@ -10256,7 +10256,7 @@ int __thiscall InfantryClass::EnterBuilding(float *this)
           || (v7[3764] || v7[3765]) && BuildingClass::CanRepair(*((_DWORD **)this + 173), (int)this)) )
   {
     (*(void (__thiscall **)(float *, _DWORD, int))(this->turretChargeTimer)(this, this->target, 1);
-    (*(void (__thiscall **)(float *, int))(this->__pad_7C0)(this, 8);
+    (*(void (__thiscall **)(float *, int))(this->q7C0)(this, 8);
     return 1;
   }
   else if ( (unsigned __int8)House::IsCurrentPlayer(*((#375 **)this + 135))

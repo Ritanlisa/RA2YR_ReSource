@@ -851,6 +851,55 @@ bool BuildingClass::SWAvailable()
     return false;
 }
 
+// ==== BACKFILL 0x004578C0  BuildingClass::IsFootprintBlocked  cls=BuildingClass  sig=csp  renamed_refs=2  residual=- ====
+bool BuildingClass::IsFootprintBlocked() {
+    bool result = true;
+    if (!TechnoClass::ShouldNotBeCloaked(this)) {
+        result = false;
+        int coordBuf[2];
+        int* coords = this->SetZ(coordBuf);
+        int originPacked = coords[0];
+        int width = BuildingTypeClass::GetFoundationWidth(this->Type);
+        int height = BuildingTypeClass::GetFoundationHeight(this->Type, false);
+        int row = -1, rowCache = -1;
+        int col = -1, colCache = -1;
+        if (width < -1) return false;
+        while (true) {
+            col = -1;
+            colCache = -1;
+            if (height >= -1) {
+                int rowBase = originPacked + row;
+                while (true) {
+                    int objectBuf[2] = { 0, 0 };
+                    int cellY = (originPacked >> 16) + col;
+                    int cellKey = (rowBase & 0xFFFF) | (cellY << 16);
+                    void* cell = CellCoord::To_CellObj(&DataGlobal_87F7E8[0], (short*)&cellKey);
+                    ObjectClass* closest = Object::FindClosestObjectCell(cell, objectBuf, 0, 0);
+                    if (closest == this) {
+                        int homeKey = (rowBase & 0xFFFF) | (cellY << 16);
+                        void* homeCell = CellCoord::To_CellObj(&DataGlobal_87F7E8[0], (short*)&homeKey);
+                        closest = WTFMode::FindObjectByType(homeCell, 0);
+                    }
+                    if (closest) {
+                        if (closest->owner != this->owner) {
+                            int closestOwner = closest->vt33();
+                            if (*(unsigned char*)(closestOwner + 3229))
+                                return true;
+                        }
+                    }
+                    col = ++colCache;
+                    if (colCache > height)
+                        break;
+                }
+            }
+            rowCache = ++row;
+            if (row > width)
+                break;
+        }
+    }
+    return result;
+}
+
 // ==== BACKFILL 0x00457A10  sub_457A10  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_457A10::sub_457A10()
 {
@@ -1282,19 +1331,19 @@ unsigned int * VectorClass::ConstructorWithVtable(TechnoTypeClass * aP1, TechnoT
 }
 }
 
-// ==== BACKFILL 0x0045ADD0  DynamicVector::RemoveItem  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0045ADD0  DynamicVector::RemoveItem  cls=DynamicVector  sig=csp  renamed_refs=3  residual=- ====
 char DynamicVector::RemoveItem(IUnknown * aP1)
 {
 {
     int v2;
     IUnknown *v3;
     int v4;
-    v2 = this->DynamicVector_field_0x10;
+    v2 = this->q010;
     v3 = aP1;
     if ( (int)aP1 >= v2 )
     return 0;
     v4 = v2 - 1;
-    this->DynamicVector_field_0x10 = v4;
+    this->q010 = v4;
     if ( (int)aP1 < v4 )
   {
     do
@@ -1302,7 +1351,7 @@ char DynamicVector::RemoveItem(IUnknown * aP1)
     v3 = (IUnknown *)((char *)(v3) + 1);
     *(int *)(this->Items + 4 * (int)v3 - 4) = *(int *)(this->Items + 4 * (int)v3);
     }
-    while ( (int)v3 < this->DynamicVector_field_0x10 );
+    while ( (int)v3 < this->q010 );
   }
     return 1;
 }
@@ -1315,20 +1364,20 @@ char Vector::RemoveAt(AbstractClass * aP1)
     int v2;
     AbstractClass *v3;
     int v4;
-    v2 = this->Vector_field_0x10;
+    v2 = this->q010;
     v3 = aP1;
     if ( (int)aP1 >= v2 )
     return 0;
     v4 = v2 - 1;
-    this->Vector_field_0x10 = v4;
+    this->q010 = v4;
     if ( (int)aP1 < v4 )
   {
     do
     {
     v3 = (AbstractClass *)((char *)(v3) + 1);
-    *(int *)(this->Vector_field_0x4 + 4 * (int)v3 - 4) = *(int *)(this->Vector_field_0x4 + 4 * (int)v3);
+    *(int *)(this->q004 + 4 * (int)v3 - 4) = *(int *)(this->q004 + 4 * (int)v3);
     }
-    while ( (int)v3 < this->Vector_field_0x10 );
+    while ( (int)v3 < this->q010 );
   }
     return 1;
 }
@@ -1489,7 +1538,7 @@ namespace ra2 { namespace game { void* AbstractClass::validatePointer(int a1) {
 // ==== BACKFILL 0x0045EC90  BuildingTypeClass::GetFoundationWidth  cls=BuildingTypeClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
 {
-    return DataGlobal_8192B8[this->DeployingAnim_e];
+    return DataGlobal_8192B8[this->qEF0];
 }
 } }
 
@@ -1497,9 +1546,9 @@ namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
 namespace gamemd { short BuildingTypeClass::GetFoundationHeight(IUnknown * aP1) const {
 {
     if ( (char)aP1 && this->Bib )
-    return DataGlobal_819310[this->DeployingAnim_e] + 1;
+    return DataGlobal_819310[this->qEF0] + 1;
     else
-    return DataGlobal_819310[this->DeployingAnim_e];
+    return DataGlobal_819310[this->qEF0];
 }
 } }
 
@@ -1510,7 +1559,7 @@ int BuildingTypeClass::GetMaxPips()
     int result;
     int v2;
     int v3;
-    result = 60 * DataGlobal_8192B8[this->DeployingAnim_e] / 8;
+    result = 60 * DataGlobal_8192B8[this->qEF0] / 8;
     if ( this->PipScale == 2 )
   {
     if ( this->Weeder )

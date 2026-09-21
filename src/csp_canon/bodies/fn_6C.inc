@@ -1224,7 +1224,7 @@ int E4Recv_6C6050::CreateTClassFactory_AlphaShapeClass()
 }
 }
 
-// ==== BACKFILL 0x006C6400  DynamicVector::Add  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x006C6400  DynamicVector::Add  cls=DynamicVector  sig=csp  renamed_refs=4  residual=- ====
 char DynamicVector::Add(DynamicVector * aP1)
 {
 {
@@ -1232,8 +1232,8 @@ char DynamicVector::Add(DynamicVector * aP1)
     int v4;
     int v6;
     int v7;
-    v3 = this->DynamicVector_field_0x8;
-    if ( this->DynamicVector_field_0x10 >= v3 )
+    v3 = this->q008;
+    if ( this->q010 >= v3 )
   {
     if ( !this->IsAllocated && v3 )
     return 0;
@@ -1241,9 +1241,9 @@ char DynamicVector::Add(DynamicVector * aP1)
     if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
     return 0;
   }
-    v6 = this->DynamicVector_field_0x10;
+    v6 = this->q010;
     v7 = this->Items;
-    this->DynamicVector_field_0x10 = v6 + 1;
+    this->q010 = v6 + 1;
     *(int *)(v7 + 4 * v6) = *(int *)aP1->__pad_0;
     return 1;
 }
@@ -1806,7 +1806,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     v7 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 16))( &DataGlobal_B05488.__pad_579C[18836], &v9);
     if ( v7 != (IUnknown *)-1 )
     DynamicVector::RemoveItem(&DataGlobal_B05488.__pad_579C[18836], v7);
-    this->SuperClass_field_0x6C = 0;
+    this->q06C = 0;
   }
     result = (void **)__2_YAPAXI_Z(0x1C8u);
     if ( result )
@@ -1858,10 +1858,10 @@ char SuperClass::SetOnHold(CoordStruct * aP1)
     else if ( this->SuperClass_field_0x30 == -1 )
   {
     this->SuperClass_field_0x30 = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664];
-    this->SuperClass_field_0x70 = 0;
+    this->q070 = 0;
     return 1;
   }
-    this->SuperClass_field_0x70 = (char)aP1;
+    this->q070 = (char)aP1;
     return 1;
 }
 }
@@ -2010,7 +2010,7 @@ void nullsub_231()
 int SuperClass::SetRechargeTime(int a2)
 {
 {
-    this->SuperClass_field_0x24 = a2;
+    this->q024 = a2;
     return a2;
 }
 }
@@ -2019,7 +2019,7 @@ int SuperClass::SetRechargeTime(int a2)
 void SuperClass::ResetRechargeTime()
 {
 {
-    this->SuperClass_field_0x24 = -1;
+    this->q024 = -1;
 }
 }
 
@@ -2158,7 +2158,7 @@ long long SuperClass::ExecuteAction(unsigned int a2, int a3)
     if ( a2 == this->SuperClass_field_0x68 )
   {
     this->SuperClass_field_0x68 = 0;
-    this->SuperClass_field_0x6C = 1;
+    this->q06C = 1;
   }
     return result;
 }
@@ -2321,19 +2321,19 @@ char VectorClass::RemoveAt(int a2)
 }
 }
 
-// ==== BACKFILL 0x006CE320  SuperClass::RemoveFromPointerArray  cls=SuperClass  sig=csp  renamed_refs=5  residual=- ====
+// ==== BACKFILL 0x006CE320  SuperClass::RemoveFromPointerArray  cls=SuperClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int SuperClass::RemoveFromPointerArray(int a1) {
 {
       int v2;
       int v3;
       int v4;
 
-      v2 = this->SuperClass_field_0x10;
+      v2 = this->q010;
       v3 = a2;
       if ( a2 >= v2 )
         return 0;
       v4 = v2 - 1;
-      this->SuperClass_field_0x10 = v4;
+      this->q010 = v4;
       if ( a2 < v4 )
       {
         do
@@ -2341,7 +2341,7 @@ namespace gamemd { int SuperClass::RemoveFromPointerArray(int a1) {
           ++v3;
           *(_DWORD *)(this->vtable2 + 4 * v3 - 4) = *(_DWORD *)(this->vtable2 + 4 * v3);
         }
-        while ( v3 < this->SuperClass_field_0x10 );
+        while ( v3 < this->q010 );
       }
       return 1;
 }

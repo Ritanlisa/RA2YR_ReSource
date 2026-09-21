@@ -2927,7 +2927,7 @@ char E4Recv_6EF450::sub_6EF450(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x006EF4D0  HouseClass::UpdateProductionQueue  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x006EF4D0  HouseClass::UpdateProductionQueue  cls=HouseClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int HouseClass::UpdateProductionQueue(int a1) {
 {
       int v3;
@@ -2945,7 +2945,7 @@ namespace gamemd { int HouseClass::UpdateProductionQueue(int a1) {
 
       v3 = a2;
       v4 = 0;
-      result = *(_DWORD *)(this->arrayIndex + 228);
+      result = *(_DWORD *)(this->vtable5 + 228);
       if ( *(int *)(result + 156) > 0 )
       {
         do
@@ -2973,7 +2973,7 @@ namespace gamemd { int HouseClass::UpdateProductionQueue(int a1) {
             while ( a2 );
           }
           ++v4;
-          result = *(_DWORD *)(this->arrayIndex + 228);
+          result = *(_DWORD *)(this->vtable5 + 228);
         }
         while ( v4 < *(_DWORD *)(result + 156) );
       }
@@ -3038,5 +3038,5 @@ namespace gamemd { void TeamClass::PlayMemberAnimation(ScriptClass * aP1, char a
 
 // ==== BACKFILL 0x006EF9E0  TechnoClass::IsDeployed  cls=TechnoClass  sig=csp  renamed_refs=1  residual=- ====
 int TechnoClass::IsDeployed() const {
-return this && this->warpFactor_e && this->airstrikeTimer && (g_IKnowWhatImDoing || !this->q204);
+return this && this->q240 && this->airstrikeTimer && (g_IKnowWhatImDoing || !this->q204);
 }

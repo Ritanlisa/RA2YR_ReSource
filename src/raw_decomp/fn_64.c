@@ -1777,14 +1777,14 @@ int __thiscall ProgressAnim::Init(ProgressScreenClass *this, ProgressScreenClass
 // ==== 0x00642AD0  Scenario::SetByte96  this=Scenario  sig=csp ====
 void __thiscall Scenario::SetByte96(ProgressScreenClass *this)
 {
-  this->Scenario_field_0x60 = 0; /*0x642ad0*/
+  this->q060 = 0; /*0x642ad0*/
 }
 
 
 // ==== 0x00642B10  Scenario::SetDword32  this=Scenario  sig=csp ====
 int __thiscall Scenario::SetDword32(ProgressScreenClass *this, int a2)
 {
-  this->Scenario_field_0x20 = a2; /*0x642b14*/
+  this->q020 = a2; /*0x642b14*/
   return a2; /*0x642b1a*/
 }
 
@@ -1792,14 +1792,14 @@ int __thiscall Scenario::SetDword32(ProgressScreenClass *this, int a2)
 // ==== 0x00642B20  LoadingScreen::GetValue  this=LoadingScreen  sig=csp ====
 int __thiscall LoadingScreen::GetValue(ProgressScreenClass *this)
 {
-  return this->LoadingScreen_field_0x20; /*0x642b26*/
+  return this->q020; /*0x642b26*/
 }
 
 
 // ==== 0x00642B30  LoadingScreen::FindLoadScreenAnim  this=LoadingScreen  sig=csp ====
 int __thiscall LoadingScreen::FindLoadScreenAnim(ProgressScreenClass *this)
 {
-  if ( this->LoadingScreen_field_0x20 ) /*0x642b30*/
+  if ( this->q020 ) /*0x642b30*/
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4344], 1); /*0x642b4e*/
   else
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4356], 1); /*0x642b44*/
@@ -1814,7 +1814,7 @@ int __thiscall LoadingScreen::GetColorScheme(ProgressScreenClass *this)
   {
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4368], 1); /*0x642b86*/
   }
-  if ( this->LoadingScreen_field_0x20 ) /*0x642b8b*/
+  if ( this->q020 ) /*0x642b8b*/
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4344], 1); /*0x642ba9*/
   return FindBuildingAnimByName(&stru_830620.__pad_579C[4356], 1);
 }
@@ -1962,7 +1962,7 @@ char __thiscall TextRenderer::MeasureBuilding(
 // ==== 0x00642DF0  Scenario::SetDword30  this=Scenario  sig=csp ====
 int __thiscall Scenario::SetDword30(ProgressScreenClass *this, int a2)
 {
-  this->Scenario_field_0x78 = a2; /*0x642df4*/
+  this->q078 = a2; /*0x642df4*/
   return a2; /*0x642df7*/
 }
 
@@ -2691,7 +2691,7 @@ char __thiscall LoadScreen::Render(ProgressScreenClass *this)
   __int64 a3; // [esp+24h] [ebp+4h]
   double a3a; // [esp+24h] [ebp+4h]
 
-  LOBYTE(v2) = this->__pad_018; /*0x643ae7*/
+  LOBYTE(v2) = this->q018; /*0x643ae7*/
   if ( (_BYTE)v2 ) /*0x643aec*/
   {
     v2 = this->field_54; /*0x643af2*/
@@ -2722,7 +2722,7 @@ char __thiscall LoadScreen::Render(ProgressScreenClass *this)
         if ( a3 == __PAIR64__(a3, -1) ) /*0x643b83*/
         {
           v6 = (Frame *)*((_DWORD *)this + 27); /*0x643b8c*/
-          LODWORD(v13) = this->__pad_068; /*0x643b8f*/
+          LODWORD(v13) = this->q068; /*0x643b8f*/
           HIDWORD(v13) = v6; /*0x643b93*/
         }
         v7 = *((_BYTE *)this + 97); /*0x643b97*/
@@ -2739,7 +2739,7 @@ char __thiscall LoadScreen::Render(ProgressScreenClass *this)
           {
             if ( !v8 ) /*0x643bac*/
               v8 = (ProgressScreenClass *)&MEMORY[0x87F8E4].__pad_5568[10472]; /*0x643bae*/
-            if ( this->LoadScreen_field_0x08 ) /*0x643bb3*/
+            if ( this->q008 ) /*0x643bb3*/
               BuildingAnimByName = FindBuildingAnimByName(&stru_830620.__pad_579C[4344], 1); /*0x643bd3*/
             else
               BuildingAnimByName = FindBuildingAnimByName(&stru_830620.__pad_579C[4356], 1); /*0x643bc7*/
@@ -2842,9 +2842,9 @@ void __thiscall Network::UpdateLatencyDisplay(
     v14 = Math::RoundToInt(v12); /*0x643cff*/
     v15 = *(void (__thiscall ****)(_DWORD, int, _DWORD *))&this->__pad_0[4]; /*0x643d04*/
     v17[1] = v14; /*0x643d07*/
-    if ( v15 && this->Network_field_0x60 ) /*0x643d11*/
+    if ( v15 && this->q060 ) /*0x643d11*/
       (**v15)(v15, 4526, v17); /*0x643d24*/
-    v16 = (HWND)this->__pad_064; /*0x643d26*/
+    v16 = (HWND)this->q064; /*0x643d26*/
     if ( v16 ) /*0x643d2b*/
       SendMessageA(v16, 0xFu, 0, 0); /*0x643d34*/
     else
@@ -2870,7 +2870,7 @@ void __thiscall VtableStub::643E70(_DWORD *this)
 // ==== 0x00643E80  Function::643E80  this=Function  sig=csp ====
 int __thiscall Function::643E80(_DWORD *this, int a2)
 {
-  this->Function_field_0x04 = a2; /*0x643e84*/
+  this->q004 = a2; /*0x643e84*/
   return a2; /*0x643e87*/
 }
 
@@ -3003,36 +3003,36 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
   ParticleSystemTypeClass *v3; // eax
 
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x6440a9*/
-  this->ParticleSystemTypeClass_field_0x294 = -1; /*0x6440b3*/
-  this->ParticleSystemTypeClass_field_0x2B4 = -1; /*0x6440b9*/
-  this->ParticleSystemTypeClass_field_0x2B8 = -1; /*0x6440bf*/
-  this->__pad_298 = 0; /*0x6440c5*/
-  this->ParticleSystemTypeClass_field_0x29C = 1; /*0x6440cb*/
-  this->ParticleSystemTypeClass_field_0x2A0 = 0; /*0x6440d5*/
-  this->ParticleSystemTypeClass_field_0x2A4 = 50; /*0x6440db*/
-  this->ParticleSystemTypeClass_field_0x2A8 = 0; /*0x6440e5*/
-  this->ParticleSystemTypeClass_field_0x2AC = 0; /*0x6440eb*/
+  this->q294 = -1; /*0x6440b3*/
+  this->q2B4 = -1; /*0x6440b9*/
+  this->q2B8 = -1; /*0x6440bf*/
+  this->q298 = 0; /*0x6440c5*/
+  this->q29C = 1; /*0x6440cb*/
+  this->q2A0 = 0; /*0x6440d5*/
+  this->q2A4 = 50; /*0x6440db*/
+  this->q2A8 = 0; /*0x6440e5*/
+  this->q2AC = 0; /*0x6440eb*/
   this->DamageDelay = 0; /*0x6440f1*/
   this->ParticleSystemTypeClass_field_2C0 = 0; /*0x6440fc*/
   this->StartScale = 0; /*0x644102*/
   this->ParticleSystemTypeClass_field_2C8 = 0; /*0x644108*/
   this->Beam = -1717986918; /*0x64410e*/
-  this->ParticleSystemTypeClass_field_0x2D0 = -1717986918; /*0x644114*/
+  this->q2D0 = -1717986918; /*0x644114*/
   this->q0B6 = 0; /*0x64411a*/
   this->q0B8 = 0; /*0x644120*/
-  this->ParticleSystemTypeClass_field_0x2E8 = 0; /*0x644126*/
-  this->__pad_2F0 = 0; /*0x64412c*/
+  this->q2E8 = 0; /*0x644126*/
+  this->q2F0 = 0; /*0x64412c*/
   this->q0BE = 0; /*0x644132*/
-  this->ParticleSystemTypeClass_field_0x2CC = 1069128089; /*0x64413b*/
+  this->q2CC = 1069128089; /*0x64413b*/
   this->ParticleSystemTypeClass_field_bool_2D4 = 1067030937; /*0x644145*/
   this->q0B7 = 1077477376; /*0x64414f*/
-  this->ParticleSystemTypeClass_field_0x2E4 = 0; /*0x644159*/
+  this->q2E4 = 0; /*0x644159*/
   this->q2EC = 0; /*0x64415f*/
   this->q0BD = 0; /*0x644165*/
   this->q0BF = 0; /*0x64416b*/
-  this->ParticleSystemTypeClass_field_0x300 = 0; /*0x644171*/
+  this->q300 = 0; /*0x644171*/
   this->q304 = 0; /*0x644177*/
-  this->ParticleSystemTypeClass_field_0x308 = 0; /*0x64417d*/
+  this->q308 = 0; /*0x64417d*/
   this->q0C3 = 0; /*0x644196*/
   *this = &ParticleSystemTypeClass::`vftable'; /*0x64419c*/
   this->vtable2 = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
@@ -3589,40 +3589,40 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
   this->q0A5 = 0; /*0x644bf8*/
   this->q0A6 = 0; /*0x644bfe*/
   this->q0A7 = 0; /*0x644c04*/
-  this->ParticleTypeClass_field_0x2B0 = 0; /*0x644c10*/
-  this->ParticleTypeClass_field_0x2A0 = 1; /*0x644c19*/
-  this->ParticleTypeClass_field_0x2A4 = 1; /*0x644c1f*/
-  this->ParticleTypeClass_field_0x2A8 = 0; /*0x644c25*/
-  this->ParticleTypeClass_field_0x2AC = 1; /*0x644c2b*/
-  this->ParticleTypeClass_field_0x2B4 = 0; /*0x644c31*/
+  this->q2B0 = 0; /*0x644c10*/
+  this->q2A0 = 1; /*0x644c19*/
+  this->q2A4 = 1; /*0x644c1f*/
+  this->q2A8 = 0; /*0x644c25*/
+  this->q2AC = 1; /*0x644c2b*/
+  this->q2B4 = 0; /*0x644c31*/
   BuildingTypeClass::loadBuildingProperty_b_5478850(this + 174, 0, 0); /*0x644c37*/
-  this->ParticleTypeClass_field_0x2CC = 10; /*0x644c3c*/
-  this->ParticleTypeClass_field_0x2C8 = 0; /*0x644c43*/
-  this->ParticleTypeClass_field_0x2B8 = &vt_TypeList_RGBClass; /*0x644c46*/
-  this->ParticleTypeClass_field_0x2D4 = 0; /*0x644c4c*/
+  this->q2CC = 10; /*0x644c3c*/
+  this->q2C8 = 0; /*0x644c43*/
+  this->q2B8 = &vt_TypeList_RGBClass; /*0x644c46*/
+  this->q2D4 = 0; /*0x644c4c*/
   *((_BYTE *)this + 728) = 0; /*0x644c66*/
   *((_BYTE *)this + 729) = 0; /*0x644c6c*/
   *((_BYTE *)this + 781) = -1; /*0x644c72*/
-  this->__pad_30E = -1; /*0x644c78*/
-  this->ParticleTypeClass_field_0x2DC = 0; /*0x644c81*/
-  this->ParticleTypeClass_field_0x2E0 = 1; /*0x644c87*/
-  this->ParticleTypeClass_field_0x2E4 = 0; /*0x644c8d*/
-  this->ParticleTypeClass_field_0x2E8 = 0; /*0x644c93*/
-  this->ParticleTypeClass_field_0x2EC = 0; /*0x644c99*/
-  this->ParticleTypeClass_field_0x2F0 = 1; /*0x644c9f*/
-  this->ParticleTypeClass_field_0x2F4 = 0; /*0x644ca5*/
-  this->ParticleTypeClass_field_0x2F8 = 0; /*0x644cab*/
+  this->q30E = -1; /*0x644c78*/
+  this->q2DC = 0; /*0x644c81*/
+  this->q2E0 = 1; /*0x644c87*/
+  this->q2E4 = 0; /*0x644c8d*/
+  this->q2E8 = 0; /*0x644c93*/
+  this->q2EC = 0; /*0x644c99*/
+  this->q2F0 = 1; /*0x644c9f*/
+  this->q2F4 = 0; /*0x644ca5*/
+  this->q2F8 = 0; /*0x644cab*/
   this->q0BF = 0; /*0x644cb1*/
-  this->ParticleTypeClass_field_0x300 = 0; /*0x644cb7*/
-  this->ParticleTypeClass_field_0x304 = 0; /*0x644cbd*/
+  this->q300 = 0; /*0x644cb7*/
+  this->q304 = 0; /*0x644cbd*/
   *((_BYTE *)this + 776) = 0; /*0x644cc3*/
   *((_BYTE *)this + 777) = 0; /*0x644cc9*/
   this->q30A = 0; /*0x644ccf*/
   *((_BYTE *)this + 779) = 4; /*0x644cd5*/
   this->q0C3 = 0; /*0x644cdc*/
   *((_BYTE *)this + 783) = 0; /*0x644ce2*/
-  this->ParticleTypeClass_field_0x310 = -1; /*0x644ce8*/
-  this->ParticleTypeClass_field_0x314 = -1; /*0x644cee*/
+  this->q310 = -1; /*0x644ce8*/
+  this->q314 = -1; /*0x644cee*/
   *this = &ParticleTypeClass::`vftable'; /*0x644cf4*/
   this->vtable2 = &ParticleTypeClass::`vftable'; /*0x644cfa*/
   this->vtable3 = &ParticleTypeClass::`vftable'; /*0x644d01*/
@@ -4210,9 +4210,9 @@ int __thiscall ParticleTypeClass::_vt10(_DWORD *this, int a2, int a3)
 {
   int result; // eax
 
-  result = this->ParticleTypeClass_field_0x2E4; /*0x6458b0*/
+  result = this->q2E4; /*0x6458b0*/
   if ( result == a2 ) /*0x6458bc*/
-    this->ParticleTypeClass_field_0x2E4 = 0; /*0x6458be*/
+    this->q2E4 = 0; /*0x6458be*/
   return result; /*0x6458c8*/
 }
 
@@ -4327,7 +4327,7 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x645a7d*/
   this->Capacity = a2; /*0x645a80*/
   this->q030 = 1; /*0x645a83*/
-  this->__pad_034 = 0; /*0x645a87*/
+  this->q034 = 0; /*0x645a87*/
   *this = &vt_VectorClass_RGBClass; /*0x645a8a*/
   if ( a2 ) /*0x645a90*/
   {
@@ -4374,7 +4374,7 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
         v6 = 0; /*0x645ae3*/
       }
       this->Items = v6; /*0x645ae5*/
-      this->__pad_034 = 1; /*0x645ae8*/
+      this->q034 = 1; /*0x645ae8*/
     }
   }
   *this = &vt_DynamicVectorClass_RGBClass; /*0x645aec*/
@@ -4476,7 +4476,7 @@ int __thiscall GetSuperWeaponTypeFlag(void *this)
 _DWORD *__thiscall Int4::Set(_DWORD *this, IUnknown *aP1, IUnknown *aP2, IUnknown *aP3, int a5)
 {
   *this = aP1; /*0x645c3a*/
-  this->Int4_field_0x04 = aP2; /*0x645c40*/
+  this->q004 = aP2; /*0x645c40*/
   this->q008 = aP3; /*0x645c47*/
   this->q00C = a5; /*0x645c4a*/
   return this; /*0x645c4d*/
@@ -4487,7 +4487,7 @@ _DWORD *__thiscall Int4::Set(_DWORD *this, IUnknown *aP1, IUnknown *aP2, IUnknow
 int __thiscall Int4_Set2(_DWORD *this, int a2, int a3, int a4, int a5)
 {
   *this = a2; /*0x645c58*/
-  this->Int4_field_0x04 = a3; /*0x645c5e*/
+  this->q004 = a3; /*0x645c5e*/
   this->q008 = a4; /*0x645c65*/
   this->q00C = a5; /*0x645c68*/
   return a4; /*0x645c6b*/

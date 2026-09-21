@@ -100,7 +100,7 @@ namespace gamemd { void* CellClass::ScanOccupiers(void* a1) {
         v9 = Building;
         if ( Building && !Building->Name[29] )
         {
-          v10 = (*(int (__thiscall **)(InfantryTypeClass *))(*(_DWORD *)Building->mapCoords + 60))(Building);
+          v10 = (*(int (__thiscall **)(InfantryTypeClass *))(*(_DWORD *)Building->vtable1 + 60))(Building);
           if ( !v10
             || (_DWORD *)v10 != v3
             && ((v11 = *(_DWORD *)(v10 + 48), v11 != v3[12])
@@ -111,12 +111,12 @@ namespace gamemd { void* CellClass::ScanOccupiers(void* a1) {
                 !v12) )
           {
             v13 = *(AbstractClass **)&v9->AlphaImageFile[9];
-            v14 = (ObjectClass *)(*(int (__thiscall **)(InfantryTypeClass *, char *))(*(_DWORD *)v9->mapCoords + 72))(v9, v30);
+            v14 = (ObjectClass *)(*(int (__thiscall **)(InfantryTypeClass *, char *))(*(_DWORD *)v9->vtable1 + 72))(v9, v30);
             if ( PathfindingClass::FindPath(v13, v14) == -1
-              && (*(int (__thiscall **)(InfantryTypeClass *))(*(_DWORD *)v9->mapCoords + 456))(v9) >= -20
+              && (*(int (__thiscall **)(InfantryTypeClass *))(*(_DWORD *)v9->vtable1 + 456))(v9) >= -20
               && *(_DWORD *)&v9->AlphaImageFile[13] != 2 )
             {
-              v15 = (_DWORD *)(*(int (__thiscall **)(InfantryTypeClass *, char *))(*(_DWORD *)v9->mapCoords + 72))(v9, v31);
+              v15 = (_DWORD *)(*(int (__thiscall **)(InfantryTypeClass *, char *))(*(_DWORD *)v9->vtable1 + 72))(v9, v31);
               v16 = *(_DWORD *)&aP1->__pad_0[4];
               v27 = *(_DWORD *)aP1->__pad_0 - *v15;
               v17 = *(_DWORD *)&aP1->__pad_0[8];
@@ -139,7 +139,7 @@ namespace gamemd { void* CellClass::ScanOccupiers(void* a1) {
         LOWORD(v5) = aP1_2;
         LOWORD(v4) = aP1a;
       }
-      result = v25->mapCoords;
+      result = v25->vtable1;
       if ( !v25 )
         return 0;
       return result;
@@ -173,7 +173,7 @@ namespace gamemd { int HouseClass::GetBuildLimit(int a1, int a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x00500700  SidebarClass::getTypeProductionCount  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00500700  SidebarClass::getTypeProductionCount  cls=SidebarClass  sig=csp  renamed_refs=0  residual=q53D1,q53D2,q53D3 ====
 namespace gamemd { int SidebarClass::getTypeProductionCount(int a1, int a2, int a3) {
 {
       char result;
@@ -1331,7 +1331,7 @@ void nullsub_144(int a1)
   ;
 }
 
-// ==== BACKFILL 0x00509CD0  HouseClass::Fire_ParaDrop  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00509CD0  HouseClass::Fire_ParaDrop  cls=HouseClass  sig=csp  renamed_refs=0  residual=q5496 ====
 namespace gamemd { int HouseClass::Fire_ParaDrop(int a2) {
 {
       HouseClass *v2;
@@ -2051,7 +2051,7 @@ unsigned int FootClass::checkTurning()
 }
 }
 
-// ==== BACKFILL 0x0050DEF0  HouseClass::GetCurrentOption  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0050DEF0  HouseClass::GetCurrentOption  cls=HouseClass  sig=csp  renamed_refs=0  residual=q5496 ====
 namespace gamemd { void* HouseClass::GetCurrentOption(void* aP1) {
 {
       if ( this->baseCenter == *(_WORD *)&HouseClass_Player.__pad_5568[23780]
@@ -2068,7 +2068,7 @@ namespace gamemd { void* HouseClass::GetCurrentOption(void* aP1) {
 }
 } }
 
-// ==== BACKFILL 0x0050DF30  HouseClass::GetStartCoords  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0050DF30  HouseClass::GetStartCoords  cls=HouseClass  sig=csp  renamed_refs=0  residual=q5496 ====
 namespace gamemd { void* HouseClass::GetStartCoords(void* aP1) {
 {
       ObjectClass *v2;

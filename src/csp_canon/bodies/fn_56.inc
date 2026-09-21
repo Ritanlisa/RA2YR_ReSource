@@ -39,7 +39,7 @@ int sub_561350(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 }
 
-// ==== BACKFILL 0x00565090  RadarClass::RenderMapPreview  cls=MapClass  sig=csp  renamed_refs=3  residual=- ====
+// ==== BACKFILL 0x00565090  RadarClass::RenderMapPreview  cls=MapClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RadarClass::RenderMapPreview() {
 {
       _DWORD *v2;
@@ -83,20 +83,20 @@ namespace gamemd { int RadarClass::RenderMapPreview() {
         --v5;
       }
       while ( v5 );
-      this->MapClass_field_0x1160 = 0;
-      this->MapClass_field_0x1164 = 0;
+      this->q1160 = 0;
+      this->q1164 = 0;
       this->q1168 = 1;
       this->q1169 = 0;
       *(_DWORD *)(this + 4444) = &vt_DynamicVectorClass_Cell;
       this->q1170 = 10;
-      this->MapClass_field_0x116C = 0;
+      this->q116C = 0;
       *(_DWORD *)this = &vt_MapClass;
       this->q148 = 13;
       return this;
 }
 } }
 
-// ==== BACKFILL 0x00565190  RadarClass::Render  cls=RadarClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x00565190  RadarClass::Render  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* RadarClass::Render(int a1) {
 {
       _DWORD *v3;
@@ -110,7 +110,7 @@ namespace gamemd { void* RadarClass::Render(int a1) {
 
       v3 = this + 80;
       *(_DWORD *)this = &off_7EA6FC;
-      this->RadarClass_field_0x10 = 0;
+      this->q010 = 0;
       this->q014 = 0;
       RadarClass::drawRadarTerrain((_DWORD *)this + 20, 0, 0);
       *v3 = &DynamicVectorClass<ZoneConnectionClass>::`vftable';
@@ -270,7 +270,7 @@ int MapClass::FreeAllCells()
     int j;
     int v5;
     int result;
-    for ( i = 0; i < this->MapClass_field_0x13C; ++i )
+    for ( i = 0; i < this->q13C; ++i )
   {
     v3 = *(int *)(this->MaxLevel + 4 * i);
     if ( v3 )
@@ -279,7 +279,7 @@ int MapClass::FreeAllCells()
     *(int *)(v3 + 48) = 0;
     }
   }
-    for ( j = 0; j < this->MapClass_field_0x13C; ++j )
+    for ( j = 0; j < this->q13C; ++j )
   {
     v5 = *(int *)(this->MaxLevel + 4 * j);
     if ( v5 )
@@ -289,11 +289,11 @@ int MapClass::FreeAllCells()
     }
   }
     ReturnFalse2(0, 1);
-    result = this->MapClass_field_0x13C;
+    result = this->q13C;
     if ( result < 0x40000 )
   {
     (*(void (__thiscall **)(int *, int, int))(this->TotalValue + 8))(this + 78, 0x40000, 0);
-    for ( result = 0; result < this->MapClass_field_0x13C; *(int *)(this->MaxLevel + 4 * result - 4) = 0 )
+    for ( result = 0; result < this->q13C; *(int *)(this->MaxLevel + 4 * result - 4) = 0 )
     ++result;
   }
     return result;

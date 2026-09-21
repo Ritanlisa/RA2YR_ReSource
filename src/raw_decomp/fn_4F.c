@@ -2291,7 +2291,7 @@ int __thiscall HouseClass_24_::_vt06(_DWORD *this, int a2)
 // ==== 0x004F28B0  _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem::CanScroll  this=VectorCursor  sig=csp ====
 BOOL __thiscall Map_CanScroll(_DWORD *this)
 {
-  return this->VectorCursor_field_0x08 < *(_DWORD *)(this->VectorCursor_field_0x04 + 16); /*0x4f28bd*/
+  return this->q008 < *(_DWORD *)(this->q004 + 16); /*0x4f28bd*/
 }
 
 
@@ -2446,7 +2446,7 @@ char __thiscall HouseClass_24_::sub_4F2A60(void *this, int a2, _DWORD *a3)
       return 0; /*0x4f2b0a*/
     if ( this->Items ) /*0x4f2a98*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x4f2a9f*/
+      v5 = this->q008; /*0x4f2a9f*/
       if ( a2 < v5 ) /*0x4f2aa4*/
         v5 = a2; /*0x4f2aa6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4f2aac*/
@@ -2458,14 +2458,14 @@ char __thiscall HouseClass_24_::sub_4F2A60(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x4f2ada*/
-    this->DynamicVector_field_0x8 = a2; /*0x4f2ae2*/
+    this->q008 = a2; /*0x4f2ae2*/
     this->IsAllocated = a3 == 0; /*0x4f2ae5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4f2aee*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x4f2af1*/
+  v7 = this->q008; /*0x4f2af1*/
   if ( v7 < this->Items ) /*0x4f2af9*/
     this->Items = v7; /*0x4f2afb*/
   return 1; /*0x4f2afe*/
@@ -2495,7 +2495,7 @@ int __thiscall HouseClass_24_::sub_4F2B10(int *this, _DWORD *a2)
 // ==== 0x004F2B40  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::vt_placeholder_09  this=VectorCursor  sig=csp ====
 _DWORD *__thiscall HouseClass_24_::sub_4F2B40(_DWORD *this)
 {
-  ++this->VectorCursor_field_0x08; /*0x4f2b42*/
+  ++this->q008; /*0x4f2b42*/
   return this; /*0x4f2b45*/
 }
 
@@ -2503,7 +2503,7 @@ _DWORD *__thiscall HouseClass_24_::sub_4F2B40(_DWORD *this)
 // ==== 0x004F2B50  ?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@::vt_placeholder_10  this=VectorCursor  sig=csp ====
 _DWORD *__thiscall HouseClass_24_::sub_4F2B50(_DWORD *this)
 {
-  --this->VectorCursor_field_0x08; /*0x4f2b52*/
+  --this->q008; /*0x4f2b52*/
   return this; /*0x4f2b55*/
 }
 
@@ -2554,7 +2554,7 @@ _DWORD *__thiscall sub_4F2C00(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x4f2c0b*/
   this->Capacity = a2; /*0x4f2c0e*/
   this->q030 = 1; /*0x4f2c11*/
-  this->__pad_034 = 0; /*0x4f2c15*/
+  this->q034 = 0; /*0x4f2c15*/
   *this = &vt_VectorClass_GraphicMenuItem; /*0x4f2c18*/
   if ( a2 ) /*0x4f2c1e*/
   {
@@ -2564,7 +2564,7 @@ _DWORD *__thiscall sub_4F2C00(_DWORD *this, int a2, int a3)
       return this; /*0x4f2c2e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x4f2c3d*/
-    this->__pad_034 = 1; /*0x4f2c40*/
+    this->q034 = 1; /*0x4f2c40*/
   }
   return this; /*0x4f2c2d*/
 }
@@ -2745,13 +2745,13 @@ int *__thiscall sub_4F2F10(
   int v21; // [esp+E4h] [ebp-8h]
 
   GraphicMenuItem::Constructor(this, aP1); /*0x4f2f21*/
-  this->GraphicMenuAnimItem_field_0x04 = *a4; /*0x4f2f3c*/
-  this->GraphicMenuAnimItem_field_0x14 = a4[1]; /*0x4f2f41*/
+  this->q004 = *a4; /*0x4f2f3c*/
+  this->q014 = a4[1]; /*0x4f2f41*/
   this->q018 = a4[2]; /*0x4f2f47*/
   v10 = a4[3]; /*0x4f2f4a*/
-  this->GraphicMenuAnimItem_field_0x08 = 0; /*0x4f2f4d*/
+  this->q008 = 0; /*0x4f2f4d*/
   this->q01C = v10; /*0x4f2f50*/
-  this->q009 = 0; /*0x4f2f5a*/
+  this->q024 = 0; /*0x4f2f5a*/
   *this = (int)&vt_GraphicMenuAnimItem; /*0x4f2f5d*/
   CCFileClass::Construct2(v19, (char **)aP5); /*0x4f2f63*/
   CCFileClass::Construct2(v16, a6); /*0x4f2f74*/
@@ -2761,7 +2761,7 @@ int *__thiscall sub_4F2F10(
     {
       v11 = String::GetOrEmpty_Alt(a6); /*0x4f2f9a*/
       String::Assign((char **)&v15, v11); /*0x4f2fa4*/
-      this->q009 = (int)PaletteClass::Load((const char **)&v15); /*0x4f2fb6*/
+      this->q024 = (int)PaletteClass::Load((const char **)&v15); /*0x4f2fb6*/
       DeleteAndZero((int)&v15); /*0x4f2fb9*/
       v12 = (void *)__2_YAPAXI_Z(0x40u); /*0x4f2fc0*/
       if ( v12 ) /*0x4f2fca*/
@@ -2771,7 +2771,7 @@ int *__thiscall sub_4F2F10(
                                (MSShapeAnim *)aP5,
                                *(MSShapeAnim **)aP3->__pad_0,
                                aP3->GraphicMenuAnimItem_field_0x04,
-                               (MSShapeAnim *)this->q009,
+                               (MSShapeAnim *)this->q024,
                                (int)aP7,
                                (MSShapeAnim *)aP8,
                                0);
@@ -3245,8 +3245,8 @@ int __thiscall sub_4F3AB0(_BYTE *this, int a2)
 // ==== 0x004F3A50  GraphicMenuItem::Constructor  this=GraphicMenuItem  sig=csp ====
 _DWORD *__thiscall GraphicMenuItem::Constructor(_DWORD *this, GraphicMenuAnimItem *aP1)
 {
-  this->GraphicMenuItem_field_0x04 = aP1; /*0x4f3a56*/
-  this->__pad_008 = 0; /*0x4f3a5b*/
+  this->q004 = aP1; /*0x4f3a56*/
+  this->q008 = 0; /*0x4f3a5b*/
   *((_BYTE *)this + 9) = 1; /*0x4f3a5e*/
   this->q00C = 0; /*0x4f3a62*/
   *this = &vt_GraphicMenuItem; /*0x4f3a65*/
@@ -3539,7 +3539,7 @@ char __thiscall GraphicMenuShortcutItem::_vt01(_BYTE *this, int a2)
   _BYTE *v4; // [esp+4h] [ebp-8h]
   int v5; // [esp+8h] [ebp-4h]
 
-  if ( !this->q009 ) /*0x4f3ee0*/
+  if ( !this->__pad_009 ) /*0x4f3ee0*/
     return 0; /*0x4f3eea*/
   v4 = this + 16; /*0x4f3ef6*/
   v5 = 0; /*0x4f3efe*/
@@ -3583,7 +3583,7 @@ GraphicMenuShortcutItem *__thiscall GraphicMenuShortcutItem::QueryInterface(_DWO
 // ==== 0x004F3FC0  _VectorCursor_IV_DynamicVectorClass_I::AddRef  this=VectorCursor  sig=csp ====
 BOOL __thiscall VectorCursor_uint_DynamicVectorClass_uint::_vt01(_DWORD *this)
 {
-  return this->VectorCursor_field_0x08 < *(_DWORD *)(this->VectorCursor_field_0x04 + 16); /*0x4f3fcd*/
+  return this->q008 < *(_DWORD *)(this->q004 + 16); /*0x4f3fcd*/
 }
 
 
@@ -3600,7 +3600,7 @@ VectorCursor *__thiscall GraphicMenuAnimItem::Constructor(std::locale::facet *th
 // ==== 0x004F3FF0  _VectorCursor_IV_DynamicVectorClass_I::Release  this=VectorCursor  sig=csp ====
 _DWORD *__thiscall VectorCursor_uint_DynamicVectorClass_uint::_vt02(_DWORD *this)
 {
-  ++this->VectorCursor_field_0x08; /*0x4f3ff2*/
+  ++this->q008; /*0x4f3ff2*/
   return this; /*0x4f3ff5*/
 }
 
@@ -3608,7 +3608,7 @@ _DWORD *__thiscall VectorCursor_uint_DynamicVectorClass_uint::_vt02(_DWORD *this
 // ==== 0x004F4000  _VectorCursor_IV_DynamicVectorClass_I::ddtor  this=VectorCursor  sig=csp ====
 _DWORD *__thiscall VectorCursor_uint_DynamicVectorClass_uint::_vt03(_DWORD *this)
 {
-  --this->VectorCursor_field_0x08; /*0x4f4002*/
+  --this->q008; /*0x4f4002*/
   return this; /*0x4f4005*/
 }
 
@@ -3739,8 +3739,8 @@ int sub_4F4200()
 // ==== 0x004F4220  RadarClass::initRadarSurface  this=RadarClass  sig=csp ====
 _DWORD *__thiscall sub_4F4220(_DWORD *this)
 {
-  this->RadarClass_field_0x4 = 0; /*0x4f4224*/
-  this->RadarClass_field_0x8 = 0; /*0x4f4227*/
+  this->q004 = 0; /*0x4f4224*/
+  this->q008 = 0; /*0x4f4227*/
   this->q00C = 2; /*0x4f422a*/
   *this = &off_7EA6FC; /*0x4f4231*/
   return this; /*0x4f4237*/
@@ -6649,7 +6649,7 @@ bool __thiscall Object::IsAlliedWithObjectHouse(_DWORD *this, IUnknown *aP1)
   if ( v3 == this ) /*0x4f9aa6*/
     return 1; /*0x4f9aab*/
   v5 = v3[12]; /*0x4f9aae*/
-  if ( v5 == this->Object_field_0x30 ) /*0x4f9ab6*/
+  if ( v5 == this->q030 ) /*0x4f9ab6*/
     return 1; /*0x4f9abb*/
   return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9ad5*/
 }
@@ -8428,7 +8428,7 @@ char __thiscall HouseClass::DroppedFlag(int *this, UnitClass *aP1, int a3)
   v3 = (MouseClass *)aP1; /*0x4fbf63*/
   if ( !LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (IUnknown *)aP1) ) /*0x4fbf6f*/
     return 0; /*0x4fc055*/
-  HouseClass::IsCellOccupied((int)this, (IUnknown *)this->__pad_53DC, a3); /*0x4fbf8b*/
+  HouseClass::IsCellOccupied((int)this, (IUnknown *)this->q53DC, a3); /*0x4fbf8b*/
   v5 = (HouseClass *)this->q034; /*0x4fbf92*/
   aP1 = (UnitClass *)v3->field_0; /*0x4fbf95*/
   productionFactory_plants_capacity = v5->productionFactory_plants_capacity; /*0x4fbfa3*/
@@ -8459,7 +8459,7 @@ char __thiscall HouseClass::DroppedFlag(int *this, UnitClass *aP1, int a3)
         v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1),
         (v7 = HouseClass::MarkCellBuildable((int)v8, v11)) != 0) )
   {
-    this->__pad_53DC = (int)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1); /*0x4fc045*/
+    this->q53DC = (int)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1); /*0x4fc045*/
   }
   return v7; /*0x4fc04e*/
 }
@@ -8470,9 +8470,9 @@ char __thiscall HouseClass::PickedUpFlag(int *this, ObjectClass *aP1, char a3)
 {
   if ( !aP1 || aP1->inLimbo ) /*0x4fc06c*/
     return 0; /*0x4fc0a8*/
-  HouseClass::IsCellOccupied((int)this, (IUnknown *)this->__pad_53DC, a3); /*0x4fc084*/
+  HouseClass::IsCellOccupied((int)this, (IUnknown *)this->q53DC, a3); /*0x4fc084*/
   HouseClass::SetPrimaryFactory(aP1, *(_DWORD *)(this->q034 + 184)); /*0x4fc095*/
-  this->__pad_53DC = (int)aP1; /*0x4fc09a*/
+  this->q53DC = (int)aP1; /*0x4fc09a*/
   return 1; /*0x4fc0a0*/
 }
 
@@ -9363,7 +9363,7 @@ int __thiscall HouseClass::FindBuildingOfType(int *this, DynamicVector *aP1, int
   if ( DynamicVector::GetOrGrow(this + 5440, aP1) <= 0 ) /*0x4fd07b*/
     return 0; /*0x4fd07b*/
   v4 = 0; /*0x4fd080*/
-  v11 = (ObjectClass *)this->__pad_078; /*0x4fd084*/
+  v11 = (ObjectClass *)this->q078; /*0x4fd084*/
   if ( (int)v11 <= 0 ) /*0x4fd088*/
     return 0; /*0x4fd104*/
   v5 = g_TriggerClassCount; /*0x4fd08a*/
@@ -9477,7 +9477,7 @@ int __thiscall BuildingClass_CalcExitCoords(int *this)
   while ( v3 ); /*0x4fd189*/
   if ( this->qBC0 > 0 ) /*0x4fd191*/
   {
-    v5 = this->__pad_078; /*0x4fd197*/
+    v5 = this->q078; /*0x4fd197*/
     v6 = 0; /*0x4fd19a*/
     v7 = 0; /*0x4fd19c*/
     result = 0; /*0x4fd19e*/
@@ -9546,7 +9546,7 @@ LABEL_39:
     }
     else
     {
-      v11 = this->__pad_078; /*0x4fd2da*/
+      v11 = this->q078; /*0x4fd2da*/
       v12 = 0; /*0x4fd2dd*/
       v35 = 0; /*0x4fd2e1*/
       v36[0] = v11; /*0x4fd2e5*/
@@ -9602,7 +9602,7 @@ LABEL_39:
       if ( v35 / v7 <= 512 ) /*0x4fd422*/
         v26 = 512; /*0x4fd424*/
       this->q1526 = v26; /*0x4fd429*/
-      result = this->__pad_078; /*0x4fd42f*/
+      result = this->q078; /*0x4fd42f*/
       v27 = 0; /*0x4fd432*/
       v36[0] = result; /*0x4fd434*/
       for ( i = 0; v27 < v36[0]; i = ++v27 ) /*0x4fd43e*/
@@ -11150,7 +11150,7 @@ LABEL_6:
             v31 = (*(int (__thiscall **)(_DWORD, AbstractClass *))(**(_DWORD **)&g_UnitTypeCount2->__pad_0[4 * v27] + 132))( /*0x4fedde*/
                     *(_DWORD *)&g_UnitTypeCount2->__pad_0[4 * v27],
                     this);
-            if ( v31 <= (*(int (__stdcall **)(_DWORD *))(this->arrayIndex + 24))((_DWORD *)this + 9) ) /*0x4fedeb*/
+            if ( v31 <= (*(int (__stdcall **)(_DWORD *))(this->vtable5 + 24))((_DWORD *)this + 9) ) /*0x4fedeb*/
             {
               if ( v34 == -1 || v34 < v28 ) /*0x4fedf8*/
               {
@@ -11299,7 +11299,7 @@ int __thiscall HouseClass::AIInfantryProduction(AbstractClass *this)
                                                                + 132))(
                   *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[336] + 4 * v15),
                   this);
-          if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->arrayIndex + 24))((_DWORD *)this + 9) ) /*0x4ff115*/
+          if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->vtable5 + 24))((_DWORD *)this + 9) ) /*0x4ff115*/
           {
             if ( v22 == -1 || v22 < v16 ) /*0x4ff122*/
             {
@@ -11448,7 +11448,7 @@ int __thiscall HouseClass::AIAircraftProduction(AbstractClass *this)
           v20 = (*(int (__thiscall **)(_DWORD, AbstractClass *))(**(_DWORD **)&MEMORY[0xA8B21C]->__pad_0[4 * v15] + 132))( /*0x4ff438*/
                   *(_DWORD *)&MEMORY[0xA8B21C]->__pad_0[4 * v15],
                   this);
-          if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->arrayIndex + 24))((_DWORD *)this + 9) ) /*0x4ff445*/
+          if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->vtable5 + 24))((_DWORD *)this + 9) ) /*0x4ff445*/
           {
             if ( v22 == -1 || v22 < v16 ) /*0x4ff452*/
             {

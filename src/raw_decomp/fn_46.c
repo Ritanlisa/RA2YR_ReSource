@@ -36,7 +36,7 @@ _DWORD *__thiscall BuildingTypeClass::GetSizeInLeptons(_DWORD *this, _DWORD *a2)
   int v4; // edx
   int v5; // eax
 
-  v2 = this->DeployingAnim_e; /*0x464af0*/
+  v2 = this->qEF0; /*0x464af0*/
   v3 = unk_89DDB8 * this->DeployingAnimLoaded; /*0x464afc*/
   v2 *= 4; /*0x464b03*/
   v4 = *(int *)((char *)dword_8192B8 + v2); /*0x464b0b*/
@@ -106,7 +106,7 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
 
   BuildingTypeClass::ProcessPower((int)this, v54); /*0x464b39*/
   Checksummer::Add_double(this->GateCloseDelay, this->qE2C); /*0x464b4e*/
-  Power::TimerProcess(this->__pad_38C); /*0x464b5c*/
+  Power::TimerProcess(this->q38C); /*0x464b5c*/
   Power::TimerProcess(this->LightIntensity); /*0x464b6a*/
   Power::TimerProcess(this->LightRedTint); /*0x464b78*/
   Power::TimerProcess(this->LightGreenTint); /*0x464b86*/
@@ -116,8 +116,8 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
   Power::TimerProcess(this->FoundationOutside); /*0x464bbe*/
   Power::TimerProcess(this->BuildingTypeClass_field_ED8); /*0x464bcc*/
   Power::TimerProcess(this->BuildLimit); /*0x464bda*/
-  Power::TimerProcess(this->BuildingAnimFrame[6]); /*0x464be8*/
-  Power::TimerProcess(this->BuildingAnim[0x15]); /*0x464bf6*/
+  Power::TimerProcess(this->BuildingAnimFrame_6); /*0x464be8*/
+  Power::TimerProcess(this->BuildingAnim_0x15); /*0x464bf6*/
   Power::TimerProcess(this->Upgrades); /*0x464c04*/
   Power::TimerProcess(this->Category); /*0x464c12*/
   Power::TimerProcess(this->DeployingAnimLoaded); /*0x464c20*/
@@ -910,7 +910,7 @@ BOOL __thiscall BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable(_DWOR
   result = 0; /*0x465d68*/
   if ( this->VoiceMove ) /*0x465d40*/
   {
-    v1 = this->DeployingAnim_e; /*0x465d55*/
+    v1 = this->qEF0; /*0x465d55*/
     if ( dword_8192B8[v1] == 1 && dword_819310[v1] == 1 ) /*0x465d66*/
       return 1; /*0x465d48*/
   }
@@ -1460,7 +1460,7 @@ int __thiscall BulletClass::Dtor(#374 *this)
     ObjectClass::Undeploy(this); /*0x4665e4*/
   this->q02B = 0; /*0x4665e9*/
   this->q02C = 0; /*0x4665f3*/
-  this->BulletClass_field_0x154 = 0; /*0x4665fd*/
+  this->q154 = 0; /*0x4665fd*/
   v5 = this; /*0x466617*/
   v3 = (*(int (__thiscall **)(int *, #374 **))(MEMORY[0xA8ED40] + 16))(&MEMORY[0xA8ED40], &v5); /*0x46661b*/
   if ( v3 != -1 && v3 < MEMORY[0xA8ED50] && v3 < --MEMORY[0xA8ED50] ) /*0x466636*/
@@ -2091,7 +2091,7 @@ LABEL_187:
                   {
                     v142 = 0;
                   }
-                  this->BulletClass_field_0x154 = (int)v142;
+                  this->q154 = (int)v142;
                   this->q158 = 1;
                   if ( *(int *)&stru_B05488.__pad_579C[18852] < *(int *)&stru_B05488.__pad_579C[18844]
                     || (stru_B05488.__pad_579C[18849] || !*(_DWORD *)&stru_B05488.__pad_579C[18844])
@@ -2453,7 +2453,7 @@ LABEL_151:
     v84 = v168;
     goto LABEL_134;
   }
-  v2 = this->BulletClass_field_0x154;
+  v2 = this->q154;
   if ( !v2 )
   {
     a1 = (unsigned int)this;
@@ -2793,17 +2793,17 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
   HIWORD(v31) = this->TargetCoords / 256; /*0x4686e6*/
   this->NextAnim = v31; /*0x4686ef*/
   RemoveTarget((IUnknown *)this); /*0x4686f5*/
-  v4 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->BulletClass_field_0x10C + 88))(this->BulletClass_field_0x10C, &v37[1]); /*0x46870a*/
+  v4 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->q10C + 88))(this->q10C, &v37[1]); /*0x46870a*/
   v5 = *v4; /*0x468712*/
   a1 = v5; /*0x468714*/
   v40 = v4[1]; /*0x46871b*/
   v6 = v40; /*0x468718*/
   v7 = v4[2]; /*0x46871f*/
-  this->BulletClass_field_0x140 = v5; /*0x468722*/
+  this->q140 = v5; /*0x468722*/
   v41 = v7; /*0x468724*/
   this->q144 = v6; /*0x468728*/
   this->DamageMultiplier = v7; /*0x46872b*/
-  v8 = this->BulletClass_field_0xAC; /*0x46872e*/
+  v8 = this->q0AC; /*0x46872e*/
   if ( *(_BYTE *)(v8 + 675) && *(_BYTE *)(v8 + 670) ) /*0x468741*/
   {
     v32 = v6 - aP1->field_4; /*0x468762*/
@@ -2818,7 +2818,7 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
                                (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
                                0,
                                (IUnknown *)(2 * *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5940)));
-    a0 = (int)(Math::RoundToInt(v33) * (_DWORD)v10) / *(_DWORD *)(this->BulletClass_field_0x130 + 180); /*0x4687fe*/
+    a0 = (int)(Math::RoundToInt(v33) * (_DWORD)v10) / *(_DWORD *)(this->q130 + 180); /*0x4687fe*/
     v11 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)0x7FFFFFFE); /*0x468802*/
     v12 = Math::RoundToInt(((double)v11 * 4.656612877414201e-10 * 6.283185307179586 - 1.570796326794897) * -10430.06004058427); /*0x468827*/
     v13 = v41; /*0x468834*/
@@ -2832,9 +2832,9 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
     v40 = a0; /*0x4688a1*/
     v41 = v13; /*0x4688a5*/
   }
-  if ( *(_BYTE *)(this->BulletClass_field_0xAC + 670) ) /*0x4688af*/
+  if ( *(_BYTE *)(this->q0AC + 670) ) /*0x4688af*/
   {
-    v16 = this->BulletClass_field_0xB0; /*0x4688bd*/
+    v16 = this->q0B0; /*0x4688bd*/
     if ( v16 ) /*0x4688c5*/
       v17 = *(void **)(v16 + 540); /*0x4688c7*/
     else
@@ -2847,7 +2847,7 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
     v38 = v20; /*0x4688ff*/
     if ( v37[1] == dword_89DE30 && __PAIR64__(v20, v19) == qword_89DE34 ) /*0x46890b*/
     {
-      FirstObstacle = TrajectoryHelper::FindFirstObstacle(aP1, &a1, this->BulletClass_field_0xAC, v17); /*0x46894a*/
+      FirstObstacle = TrajectoryHelper::FindFirstObstacle(aP1, &a1, this->q0AC, v17); /*0x46894a*/
       if ( FirstObstacle ) /*0x468953*/
       {
         v24 = *this; /*0x468957*/
@@ -2882,16 +2882,16 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
       (*(void (__thiscall **)(_DWORD *, _DWORD *))(v22 + 436))(this, &v37[1]); /*0x468931*/
     }
   }
-  v27 = this->BulletClass_field_0x10C; /*0x468a3f*/
+  v27 = this->q10C; /*0x468a3f*/
   if ( v27 && (*(int (__thiscall **)(int))(*(_DWORD *)v27 + 44))(v27) == 2 ) /*0x468a51*/
     v28 = 0; /*0x468a53*/
   else
-    v28 = *(_DWORD *)(this->BulletClass_field_0xAC + 752); /*0x468a5d*/
+    v28 = *(_DWORD *)(this->q0AC + 752); /*0x468a5d*/
   v37[1] = this->q09C; /*0x468a75*/
   v37[2] = this->q0A0; /*0x468a7c*/
   v38 = this->q0A4; /*0x468a88*/
   BulletClass::InitDetonationTimer(this + 46, &v37[1], &a1, v28, 0x7FFFFFFF); /*0x468a93*/
-  if ( *(int *)(this->BulletClass_field_0xAC + 732) > 0 ) /*0x468aa6*/
+  if ( *(int *)(this->q0AC + 732) > 0 ) /*0x468aa6*/
   {
     if ( *((double *)this + 29) == 0.0 && *((double *)this + 30) == 0.0 && *((double *)this + 31) == 0.0 ) /*0x468ae3*/
     {
@@ -2918,7 +2918,7 @@ int __thiscall BulletClass::_vt30(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = -(*(_BYTE *)(this->BulletClass_field_0xAC + 759) != 0); /*0x468b9e*/
+  v1 = -(*(_BYTE *)(this->q0AC + 759) != 0); /*0x468b9e*/
   LOBYTE(v1) = v1 & 0xFE; /*0x468ba0*/
   return v1 + 3; /*0x468ba5*/
 }
@@ -2945,14 +2945,14 @@ bool __thiscall BulletClass::CheckBulletCollision(_DWORD *this, IUnknown *aP1)
   aP1->field_4 = this->q0A0; /*0x468bcd*/
   aP1->field_8 = this->q0A4; /*0x468bd3*/
   v4 = (IUnknown *)Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x468be0*/
-  v5 = this->BulletClass_field_0xAC; /*0x468be2*/
+  v5 = this->q0AC; /*0x468be2*/
   aP1a = v4; /*0x468be8*/
   if ( *(_BYTE *)(v5 + 662) || *(_BYTE *)(v5 + 664) ) /*0x468bf6*/
   {
     v6 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)(this + 77)); /*0x468c21*/
     v7 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)(this + 80)); /*0x468c28*/
     v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)this + 166); /*0x468c36*/
-    v9 = this->BulletClass_field_0xB0; /*0x468c3b*/
+    v9 = this->q0B0; /*0x468c3b*/
     if ( v9 ) /*0x468c43*/
       v9 = *(_DWORD *)(v9 + 540); /*0x468c45*/
     if ( TrajectoryHelper::GetObstacle( /*0x468c6d*/
@@ -2962,7 +2962,7 @@ bool __thiscall BulletClass::CheckBulletCollision(_DWORD *this, IUnknown *aP1)
            aP1->field_0,
            aP1->field_4,
            aP1->field_8,
-           this->BulletClass_field_0xAC,
+           this->q0AC,
            (#375 *)v9) )
     {
       return 1; /*0x468c7f*/
@@ -2971,10 +2971,10 @@ bool __thiscall BulletClass::CheckBulletCollision(_DWORD *this, IUnknown *aP1)
   }
   if ( (*(int (__thiscall **)(_DWORD *))(*this + 456))(this) <= -4 * unk_89DE70 ) /*0x468c9d*/
     return 1; /*0x468c9f*/
-  v11 = (AbstractClass *)this->BulletClass_field_0x10C; /*0x468cab*/
+  v11 = (AbstractClass *)this->q10C; /*0x468cab*/
   if ( v11 ) /*0x468cb3*/
   {
-    if ( *(_BYTE *)(this->BulletClass_field_0xAC + 675) ) /*0x468cbb*/
+    if ( *(_BYTE *)(this->q0AC + 675) ) /*0x468cbb*/
     {
       v12 = this->q09C; /*0x468ccb*/
       v13 = this->q0A4; /*0x468cd1*/
@@ -2988,16 +2988,16 @@ bool __thiscall BulletClass::CheckBulletCollision(_DWORD *this, IUnknown *aP1)
       }
     }
   }
-  if ( *(_BYTE *)(this->BulletClass_field_0xAC + 669) && (*(unsigned __int8 (__thiscall **)(IUnknown *))(v4->field_0 + 80))(v4) ) /*0x468d1c*/
+  if ( *(_BYTE *)(this->q0AC + 669) && (*(unsigned __int8 (__thiscall **)(IUnknown *))(v4->field_0 + 80))(v4) ) /*0x468d1c*/
     return 1; /*0x468d23*/
   result = 0; /*0x468d67*/
-  if ( *(_BYTE *)(this->BulletClass_field_0xAC + 676) ) /*0x468d35*/
+  if ( *(_BYTE *)(this->q0AC + 676) ) /*0x468d35*/
   {
-    v14 = (AbstractClass *)this->BulletClass_field_0x10C; /*0x468d3f*/
+    v14 = (AbstractClass *)this->q10C; /*0x468d3f*/
     if ( v14 ) /*0x468d47*/
     {
       if ( (*(unsigned __int8 (__thiscall **)(AbstractClass *))(*(_DWORD *)v14->__pad_0 + 84))(v14) /*0x468d65*/
-        && ObjectClass::DistanceTo(this, (AbstractClass *)this->BulletClass_field_0x10C) < 128 )
+        && ObjectClass::DistanceTo(this, (AbstractClass *)this->q10C) < 128 )
       {
         return 1; /*0x468d3d*/
       }
@@ -4740,7 +4740,7 @@ int __stdcall BulletClass::_vt03(int a1, _DWORD *a2)
 // ==== 0x0046B5A0  BulletClass::CheckEndOfSequence  this=BulletClass  sig=csp ====
 int __thiscall BulletClass::_vt123(_DWORD *this, int a2)
 {
-  this->BulletClass_field_0x10C = a2; /*0x46b5a4*/
+  this->q10C = a2; /*0x46b5a4*/
   return a2; /*0x46b5aa*/
 }
 
@@ -4748,7 +4748,7 @@ int __thiscall BulletClass::_vt123(_DWORD *this, int a2)
 // ==== 0x0046B5B0  BulletClass::CheckMissionAbort  this=BulletClass  sig=csp ====
 int __thiscall BulletClass::_vt34(_DWORD *this)
 {
-  return this->BulletClass_field_0xAC; /*0x46b5b6*/
+  return this->q0AC; /*0x46b5b6*/
 }
 
 
@@ -5186,44 +5186,44 @@ _BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
   int v4; // eax
 
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x46bbc9*/
-  this->Floater = 0; /*0x46bbd5*/
-  this->SubjectToCliffs = 0; /*0x46bbdb*/
-  this->SubjectToElevation = 0; /*0x46bbe1*/
-  this->SubjectToWalls = 0; /*0x46bbe7*/
-  this->VeryHigh = 0; /*0x46bbed*/
-  this->Shadow = 0; /*0x46bbf3*/
-  this->Arcing = 1; /*0x46bbf9*/
-  this->Dropping = 0; /*0x46bc00*/
-  this->Level = 0; /*0x46bc06*/
-  this->Inviso = 0; /*0x46bc0c*/
-  this->Proximity = 0; /*0x46bc12*/
-  this->Ranged = 0; /*0x46bc18*/
-  this->NoRotate = 0; /*0x46bc1e*/
-  this->Inaccurate = 1; /*0x46bc24*/
-  this->FlakScatter = 0; /*0x46bc2b*/
-  this->AA = 0; /*0x46bc31*/
-  this->AG_e = 0; /*0x46bc37*/
-  this->Degenerates_e = 1; /*0x46bc3d*/
+  this->airburst = 0; /*0x46bbd5*/
+  this->floater = 0; /*0x46bbdb*/
+  this->subjectToCliffs = 0; /*0x46bbe1*/
+  this->subjectToElevation = 0; /*0x46bbe7*/
+  this->subjectToWalls = 0; /*0x46bbed*/
+  this->veryHigh = 0; /*0x46bbf3*/
+  this->shadow = 1; /*0x46bbf9*/
+  this->arcing = 0; /*0x46bc00*/
+  this->dropping = 0; /*0x46bc06*/
+  this->level = 0; /*0x46bc0c*/
+  this->inviso = 0; /*0x46bc12*/
+  this->proximity = 0; /*0x46bc18*/
+  this->ranged = 0; /*0x46bc1e*/
+  this->noRotate = 1; /*0x46bc24*/
+  this->inaccurate = 0; /*0x46bc2b*/
+  this->flakScatter = 0; /*0x46bc31*/
+  this->AA = 0; /*0x46bc37*/
+  this->q2A5 = 1; /*0x46bc3d*/
   this->TurretVoxel = 3; /*0x46bc44*/
   this->q0B9 = 3; /*0x46bc4a*/
-  this->Bouncy_e = 0; /*0x46bc50*/
-  this->AnimPalette = 0; /*0x46bc59*/
-  this->FirersPalette_e = 0; /*0x46bc5f*/
+  this->degenerates = 0; /*0x46bc50*/
+  this->bouncy = 0; /*0x46bc59*/
+  this->animPalette = 0; /*0x46bc5f*/
   this->elasticity = 0; /*0x46bc65*/
   this->firersPalette = 0; /*0x46bc6c*/
   this->q0AB = 1; /*0x46bc72*/
   this->AlphaImage = 0; /*0x46bc7c*/
-  this->ShrapnelWeapon = 0; /*0x46bc82*/
-  this->ShrapnelCount_e = 0; /*0x46bc88*/
-  this->DetonationAltitude = 0; /*0x46bc8e*/
-  this->Vertical = 0; /*0x46bc94*/
+  this->shrapnelWeapon = 0; /*0x46bc82*/
+  this->shrapnelCount = 0; /*0x46bc88*/
+  this->detonationAltitude = 0; /*0x46bc8e*/
+  this->vertical = 0; /*0x46bc94*/
   this->Acceleration = 1072168960; /*0x46bc9a*/
-  this->Trailer_e = 0; /*0x46bca4*/
-  this->ROT_e = 0; /*0x46bcaa*/
-  this->CourseLockDuration_e = 0; /*0x46bcb0*/
+  this->Color = 0; /*0x46bca4*/
+  this->trailer = 0; /*0x46bcaa*/
+  this->rot = 0; /*0x46bcb0*/
   this->BarrelVoxel = 0; /*0x46bcb6*/
-  this->Scalable_e = 0; /*0x46bcbc*/
-  this->Arm_e = 0; /*0x46bcc2*/
+  this->scaledSpawnDelay = 0; /*0x46bcbc*/
+  this->scalable = 0; /*0x46bcc2*/
   this->ChargerTurrets = 0; /*0x46bcc8*/
   this->animLow = 0; /*0x46bcce*/
   this->animHigh = 0; /*0x46bcd4*/
@@ -5716,8 +5716,8 @@ int __thiscall BulletTypeClass::_vt10(_DWORD *this, int a2, int a3)
   int result; // eax
 
   result = a2; /*0x46c820*/
-  if ( a2 == this->ROT_e ) /*0x46c82c*/
-    this->ROT_e = 0; /*0x46c82e*/
+  if ( a2 == this->trailer ) /*0x46c82c*/
+    this->trailer = 0; /*0x46c82e*/
   return result; /*0x46c838*/
 }
 
@@ -5725,7 +5725,7 @@ int __thiscall BulletTypeClass::_vt10(_DWORD *this, int a2, int a3)
 // ==== 0x0046C840  BulletTypeClass::SetScaledSpawnDelay  this=BulletTypeClass  sig=csp ====
 int __thiscall BulletTypeClass::SetScaledSpawnDelay(_DWORD *this, int a2)
 {
-  this->Scalable_e = a2; /*0x46c844*/
+  this->scaledSpawnDelay = a2; /*0x46c844*/
   return a2; /*0x46c84a*/
 }
 
@@ -6302,7 +6302,7 @@ int sub_46D310()
 _DWORD *__thiscall sub_46D330(_DWORD *this)
 {
   *this = &vt_CampaignScoreClass; /*0x46d334*/
-  this->CampaignScore_field_0x04 = 0; /*0x46d33a*/
+  this->q004 = 0; /*0x46d33a*/
   unk_89E050 = 0; /*0x46d33d*/
   MEMORY[0x81B1E8] = -1; /*0x46d343*/
   return this; /*0x46d34d*/

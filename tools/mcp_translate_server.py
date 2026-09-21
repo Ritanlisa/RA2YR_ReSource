@@ -203,6 +203,18 @@ def resolve_target(target):
                            int(ea, 16) == ti):
                 return e
         ent = signals()["symbols"].get(t)
+        if ent is None:
+            # int-normalized fallback: signals keys are 0x%08X, callers send
+            # 0x%X (or vice versa)
+            try:
+                ai = int(t, 16)
+            except ValueError:
+                ai = None
+            if ai is not None:
+                for k in ("0x%X" % ai, "0x%08X" % ai, "0x0%07X" % ai):
+                    ent = signals()["symbols"].get(k)
+                    if ent is not None:
+                        break
         if ent:
             return {"target": t, "address": t, "function": ent.get("name", t),
                     "class": ent.get("name", "").split("::")[0],
@@ -391,16 +403,18 @@ def compile_single_file(cpp_rel):
             "log": str(BUILD_LOG.relative_to(PROJECT_ROOT))}
 
 
-def run_verify(addr):
-    proc = subprocess.run(
-        [sys.executable, "tools/verify_execution_flow.py", addr],
-        capture_output=True, text=True, encoding="utf-8", errors="replace",
-        timeout=900, cwd=str(PROJECT_ROOT))
+def run_verify(addr, verbose=False):
+    cmd = [sys.executable, "tools/verify_execution_flow.py", addr]
+    if verbose:
+        cmd.append("--verbose")
+    proc = subprocess.run(cmd, capture_output=True, text=True,
+                          encoding="utf-8", errors="replace",
+                          timeout=900, cwd=str(PROJECT_ROOT))
     out = (proc.stdout or "") + (proc.stderr or "")
     reason = ""
     for ln in out.split("\n"):
         s = ln.strip()
-        if s.startswith(("FAIL:", "missing:", "SKIP")):
+        if s.startswith(("FAIL:", "missing:", "SKIP", "GUARD")):
             reason += s + " | "
     if proc.returncode == 0:
         try:
@@ -416,9 +430,44 @@ def run_verify(addr):
                           encoding="utf-8")
         except Exception:
             pass
-    return {"verdict": "PASS" if proc.returncode == 0 else "FAIL",
-            "detail": reason[:500], "exit": proc.returncode,
-            "output_tail": "\n".join(out.split("\n")[-12:])}
+    result = {"verdict": "PASS" if proc.returncode == 0 else "FAIL",
+              "detail": reason[:500], "exit": proc.returncode,
+              "output_tail": "\n".join(out.split("\n")[-12:])}
+    if verbose:
+        result["blocks"] = _parse_verify_verbose(out)
+    return result
+
+
+def _parse_verify_verbose(out):
+    """Parse `--verbose` output into a block-level diff: the IDA and C++ CFG
+    dumps (`--- <label> CFG: ...` / `blk ... -> succ : events`) plus the
+    STEP3(0) missing-event list, so shape-mismatch diagnosis stays inside the
+    MCP loop instead of a separate Bash run."""
+    blocks = {"ida": [], "cpp": [], "step3_missing": [], "header": []}
+    side = None
+    for ln in out.split("\n"):
+        s = ln.rstrip()
+        if "--- IDA CFG:" in s:
+            side = "ida"
+            blocks["header"].append(s.strip())
+            continue
+        if "--- C++ CFG:" in s:
+            side = "cpp"
+            blocks["header"].append(s.strip())
+            continue
+        if s.strip().startswith("missing:"):
+            blocks["step3_missing"].append(s.strip()[len("missing:"):].strip())
+            continue
+        if side and s.strip().startswith("blk "):
+            blocks[side].append(s.strip())
+        elif side and s.strip() and not s.startswith("  ---"):
+            if s.strip().startswith(("STEP3", "C++ source", "this type",
+                                     "GUARD", "REJECT", "WARNING")):
+                blocks["header"].append(s.strip())
+    # cap the dumps: a huge CFG is unreadable in one MCP response anyway
+    blocks["ida"] = blocks["ida"][:200]
+    blocks["cpp"] = blocks["cpp"][:200]
+    return blocks
 
 
 def run_gates():
@@ -837,6 +886,109 @@ def tool_next_batch(count=10, strategy="core-small-first"):
             "total_pending": len(idx)}
 
 
+# ============================================================================
+# context helpers: global-name resolution + canon method index
+# ============================================================================
+_glob_hpp_index_cache = None
+_glob_reverse_cache = None
+_canon_methods_cache = None
+_canon_methods_stamp = None
+
+
+def glob_hpp_index():
+    """addr(int) -> {"name","file","line"} from `// data: 0xADDR` declarations
+    in src/**/*.hpp (the extern-decl homes an agent would otherwise grep for)."""
+    global _glob_hpp_index_cache
+    if _glob_hpp_index_cache is not None:
+        return _glob_hpp_index_cache
+    idx = {}
+    for p in sorted(SRC.rglob("*.hpp")):
+        rel = str(p.relative_to(PROJECT_ROOT)).replace("\\", "/")
+        try:
+            lines = _read_latin1(p).split("\n")
+        except OSError:
+            continue
+        for i, ln in enumerate(lines):
+            m = re.search(r'//\s*data:\s*0x([0-9A-Fa-f]{6,8})', ln)
+            if not m:
+                continue
+            # the decl usually shares the annotation line; a trailing-line
+            # annotation takes the previous line instead
+            decl = ln.strip()
+            md = re.match(r'(?:extern\s+)?[\w:<>\*&\s]+?[\s\*]([A-Za-z_]\w+)'
+                          r'\s*(?:=|;|\[)', decl)
+            if not md and i:
+                decl = lines[i - 1].strip()
+                md = re.match(r'(?:extern\s+)?[\w:<>\*&\s]+?[\s\*]([A-Za-z_]\w+)'
+                              r'\s*(?:=|;|\[)', decl)
+            try:
+                a = int(m.group(1), 16)
+            except ValueError:
+                continue
+            idx.setdefault(a, {"name": md.group(1) if md else None,
+                               "file": rel, "line": i,
+                               "decl": decl[:120]})
+    _glob_hpp_index_cache = idx
+    return idx
+
+
+def glob_reverse_index():
+    """addr-int -> [global names] (from signals.json globals)."""
+    global _glob_reverse_cache
+    if _glob_reverse_cache is not None:
+        return _glob_reverse_cache
+    rev = {}
+    for name, addr in (signals().get("globals") or {}).items():
+        if isinstance(addr, str) and addr.lower().startswith("0x"):
+            try:
+                rev.setdefault(int(addr, 16), []).append(name)
+            except ValueError:
+                continue
+    _glob_reverse_cache = rev
+    return rev
+
+
+def canon_method_index():
+    """addr(int) -> {"class","decl","line"} for every method declared in
+    src/csp_canon/classes.hpp (`// 0xADDR` comment per decl)."""
+    global _canon_methods_cache, _canon_methods_stamp
+    p = PROJECT_ROOT / "src" / "csp_canon" / "classes.hpp"
+    try:
+        stamp = p.stat().st_mtime
+    except OSError:
+        return {}
+    if _canon_methods_cache is not None and stamp == _canon_methods_stamp:
+        return _canon_methods_cache
+    idx = {}
+    cur_cls = None
+    try:
+        text = p.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return {}
+    for i, ln in enumerate(text.split("\n")):
+        m = re.match(r'^struct (\w+)', ln)
+        if m:
+            cur_cls = m.group(1)
+            continue
+        m = re.search(r'//\s*0x([0-9A-Fa-f]{6,8})\b', ln)
+        if m and cur_cls and "(" in ln:
+            try:
+                a = int(m.group(1), 16)
+            except ValueError:
+                continue
+            idx.setdefault(a, {"class": cur_cls, "decl": ln.strip(),
+                               "line": i + 1})
+    _canon_methods_cache = idx
+    _canon_methods_stamp = stamp
+    return idx
+
+
+_GLOBAL_TOKEN_RE = re.compile(
+    r'MEMORY\[\s*(0x[0-9A-Fa-f]+)\s*\]'
+    r'|\b(?:dword|byte|word|flt|dbl|qword|unk)_([0-9A-Fa-f]{5,8})\b'
+    r'|\b(g_[A-Za-z0-9_]+)\b')
+
+
 def tool_get_context(target):
     entry = resolve_target(target)
     if entry is None:
@@ -925,6 +1077,66 @@ def tool_get_context(target):
         if s:
             result["signals"] = {k: s.get(k) for k in
                                  ("completed", "done", "translated", "name")}
+    # ---- globals referenced by the pseudocode -> names + hpp decl homes ----
+    if code:
+        rev = glob_reverse_index()
+        hpp = glob_hpp_index()
+        gidx = _glob_addr_index()
+        gmap = {}
+        for m in _GLOBAL_TOKEN_RE.finditer(code):
+            a = None
+            if m.group(1):
+                a = int(m.group(1), 16)
+            elif m.group(2):
+                a = int(m.group(2), 16)
+            elif m.group(3):
+                ga = gidx.get(m.group(3))
+                if ga and ga.startswith("0x"):
+                    a = int(ga, 16)
+            if a is None:
+                continue
+            key = "0x%08X" % a
+            if key not in gmap:
+                gmap[key] = {"names": rev.get(a, []),
+                             "decl": hpp.get(a)}
+        if gmap:
+            result["globals_map"] = gmap
+    # ---- receiver guidance (member-form path for free-form pendings) ----
+    # primary anchor: the snapshot's til-typed `T *this` (post-cleanup IDA
+    # renders typed receivers; the canon manifest cls has ~0 pending coverage).
+    # Fires only when member_lookup can resolve names for that class, i.e. the
+    # translation can be verified in member form.
+    if entry.get("address") and not entry.get("class"):
+        rc = None
+        til_t = None
+        if code:
+            mt = re.search(r'\(\s*([A-Za-z_]\w*)\s*\*\s*this\b', code)
+            if mt:
+                til_t = mt.group(1)
+        if til_t and til_t not in ("int", "_DWORD", "_BYTE", "_WORD", "char",
+                                   "void", "unsigned __int8", "__int16",
+                                   "unsigned __int16", "__int64", "_QWORD",
+                                   "float", "double", "BOOL"):
+            if til_t in member_lookup():
+                rc = til_t
+        if rc is None:
+            rc = (result.get("canon") or {}).get("cls")
+        if rc:
+            mi = canon_method_index()
+            try:
+                ai = int(entry["address"], 16)
+            except (TypeError, ValueError):
+                ai = None
+            mrec = mi.get(ai) if ai is not None else None
+            result["receiver"] = {
+                "class": (mrec["class"] if mrec else rc),
+                "til_this_type": til_t,
+                "canon_decl": (mrec or {}).get("decl"),
+                "note": ("typed receiver on the IDA side renders this->Name; "
+                         "translate in member form '<ret> %s::Name(...)' "
+                         "(first param -> implicit this); use set_signature "
+                         "to rewrite the def line (auto-includes the carrier)"
+                         % (mrec["class"] if mrec else rc))}
     return result
 
 
@@ -936,17 +1148,27 @@ def tool_replace_body(target, new_body, dry_run):
     return replace_pseudocode(entry, new_body, dry_run)
 
 
-def tool_verify(target, async_mode=False):
+def tool_verify(target, async_mode=False, verbose=False, auto_mark=False,
+                note=""):
     entry = resolve_target(target)
     if entry is None:
         return {"ok": False, "error": f"target not found: {target}"}
     if async_mode:
-        jid = submit_job("verify", lambda: tool_verify(target, False))
+        jid = submit_job("verify", lambda: tool_verify(target, False,
+                                                       verbose, auto_mark,
+                                                       note))
         return {"ok": True, "job_id": jid, "note": "poll with job_status"}
     addr = entry.get("address")
     if not addr:
         return {"ok": False, "error": "no address; verify needs 0xADDR"}
-    return run_verify(addr)
+    result = run_verify(addr, verbose=verbose)
+    if result["verdict"] == "PASS" and auto_mark:
+        mark = tool_mark_completed(target, note or "auto_mark: verify PASS")
+        result["auto_mark"] = mark
+    elif result["verdict"] == "FAIL" and auto_mark:
+        result["auto_mark"] = {"ok": False,
+                               "skipped": "verify FAIL; not marked"}
+    return result
 
 
 def tool_mark_completed(target, note=""):
@@ -1414,6 +1636,320 @@ def tool_reopen(target):
                     "mark_completed"}
 
 
+def tool_set_signature(target, signature, sync_hpp=True, dry_run=False):
+    """Rewrite a function's definition line in its .cpp and (optionally) the
+    matching declaration in a non-generated .hpp (located by its // 0xADDR
+    annotation). Member-form conversion ('RetType Cls::Name(...)') also
+    auto-includes the class carrier: 'csp_canon/classes.hpp' for e4/gap2 TUs,
+    the per-function 'e4/classes/E4Recv_XXXXXX_e4.hpp' for E4Recv receivers.
+    Name changes are NOT this tool's job (rename_symbol handles those).
+    csp_canon/*.hpp are generated and never hand-edited."""
+    entry = resolve_target(target)
+    if entry is None or not entry.get("file"):
+        return {"ok": False,
+                "error": f"target not resolvable to a file function: {target}"}
+    sig_line = signature.strip()
+    while sig_line.endswith("{"):
+        sig_line = sig_line[:-1].strip()
+    if "(" not in sig_line or ")" not in sig_line:
+        return {"ok": False,
+                "error": "signature must look like 'RetType [Cls::]Name(params)'"}
+    p = PROJECT_ROOT / entry["file"]
+    lines = _read_latin1(p).split("\n")
+    di = entry["line"] - 1
+    old = lines[di].rstrip("\r")
+    mns = re.match(r'^(\s*namespace\s+\w+\s*\{\s*)(.*)$', old)
+    if mns:
+        prefix, body_old = mns.group(1), mns.group(2)
+    else:
+        prefix, body_old = "", old
+    indent = re.match(r"\s*", body_old).group(0)
+    new_line = prefix + indent + sig_line + " {"
+    if dry_run:
+        return {"ok": True, "dry_run": True, "file": entry["file"],
+                "old_def": old.strip(), "new_def": new_line.strip()}
+    lines[di] = new_line
+    # ---- carrier include automation (e4/gap2 member-form TUs) ----
+    includes_added = []
+    mem = re.search(r'([A-Za-z_]\w*)::[~A-Za-z_]\w*\s*\(', sig_line)
+    if mem:
+        cls = mem.group(1)
+        want = None
+        if cls.startswith("E4Recv_"):
+            want = 'e4/classes/%s_e4.hpp' % cls
+        elif "/e4/" in entry["file"] or "gap2" in entry["file"]:
+            want = 'csp_canon/classes.hpp'
+        if want and not any(('#include "%s"' % want) in ln for ln in lines[:60]):
+            last_inc = max((i for i, ln in enumerate(lines[:80])
+                            if ln.strip().startswith("#include")), default=-1)
+            lines.insert(last_inc + 1, '#include "%s"' % want)
+            includes_added.append(want)
+    p.write_bytes("\n".join(lines).encode("latin-1"))
+    global _pending_index
+    _pending_index = None
+    out = {"ok": True, "file": entry["file"], "line": entry["line"],
+           "old_def": old.strip(), "new_def": new_line.strip(),
+           "includes_added": includes_added}
+    # ---- hpp declaration sync (by // 0xADDR annotation, generated files
+    # excluded -- csp_canon/raw_decomp are regenerable, never hand-edited) ----
+    out["hpp"] = {"synced": False, "reason": "sync_hpp disabled"}
+    if sync_hpp:
+        out["hpp"] = _sync_hpp_decl(entry, sig_line)
+    return out
+
+
+def _sync_hpp_decl(entry, sig_line):
+    addr = entry.get("address")
+    name_m = re.match(r'^(.*?)([A-Za-z_]\w*)\s*\(', sig_line)
+    fname = name_m.group(2) if name_m else None
+    if not addr or not fname:
+        return {"synced": False, "reason": "no addr or name parsed"}
+    ai = int(addr, 16) if addr.startswith("0x") else None
+    ann_re = re.compile(r'//\s*(?:IDA\s+)?0x([0-9A-Fa-f]{6,8})')
+    for p in sorted(SRC.rglob("*.hpp")):
+        rel = str(p.relative_to(PROJECT_ROOT)).replace("\\", "/")
+        if rel.startswith(("src/csp_canon/", "src/raw_decomp/")):
+            continue
+        try:
+            hlines = _read_latin1(p).split("\n")
+        except OSError:
+            continue
+        for i, ln in enumerate(hlines):
+            m = ann_re.search(ln)
+            if not m:
+                continue
+            try:
+                if int(m.group(1), 16) != ai:
+                    continue
+            except ValueError:
+                continue
+            if fname not in ln:
+                continue
+            # strip the class qualifier for the in-class declaration
+            hpp_sig = re.sub(r'([A-Za-z_]\w*)::(?=[~A-Za-z_]\w*\s*\()',
+                             '', sig_line)
+            head = ln[:m.start()].rstrip()
+            cmt = ln[m.start():].rstrip("\r")
+            if head.endswith("{"):
+                head = head[:-1].rstrip()
+            new_ln = (head + " " if head else "") + hpp_sig + "  " + cmt
+            hlines[i] = new_ln
+            p.write_bytes("\n".join(hlines).encode("latin-1"))
+            return {"synced": True, "file": rel, "line": i + 1,
+                    "decl": new_ln.strip()[:160]}
+    return {"synced": False,
+            "reason": "no hpp decl with // %s annotation + name %s" % (addr, fname)}
+
+
+def tool_sweep_stubs(file_filter=None, dry_run=True, limit=200):
+    """Remove dead stub blocks from stub files (src/_generated/, subs*.cpp,
+    *stub*.cpp): any stub function whose // 0xADDR annotation names an address
+    that (a) is completed in signals or (b) has an annotation in a non-stub
+    file, is a misdirection hazard for by_addr lookup (46D350 precedent) and
+    is removed whole (annotation line + def block)."""
+    stub_files = []
+    for p in sorted(SRC.rglob("*.cpp")):
+        rel = str(p.relative_to(PROJECT_ROOT)).replace("\\", "/")
+        name = p.name.lower()
+        if ("_generated" in rel or name.startswith("subs")
+                or "stub" in name):
+            if not file_filter or file_filter in rel:
+                stub_files.append((p, rel))
+    real_anns = set()
+    for p in sorted(SRC.rglob("*.cpp")):
+        rel = str(p.relative_to(PROJECT_ROOT)).replace("\\", "/")
+        name = p.name.lower()
+        if "_generated" in rel or name.startswith("subs") or "stub" in name:
+            continue
+        try:
+            txt = _read_latin1(p)
+        except OSError:
+            continue
+        for m in re.finditer(r'//\s*(?:IDA\s+)?0x([0-9A-Fa-f]{6,8})', txt):
+            try:
+                real_anns.add(int(m.group(1), 16))
+            except ValueError:
+                continue
+    sig = signals()
+    ann_re = re.compile(r'//\s*(?:IDA\s+)?0x([0-9A-Fa-f]{6,8})')
+    removed, errors = [], []
+    for p, rel in stub_files:
+        try:
+            lines = _read_latin1(p).split("\n")
+        except OSError:
+            continue
+        kill_spans = []
+        for i, ln in enumerate(lines):
+            m = ann_re.search(ln)
+            if not m:
+                continue
+            try:
+                a = int(m.group(1), 16)
+            except ValueError:
+                continue
+            sym = sig["symbols"].get("0x%x" % a) or sig["symbols"].get("0x%08x" % a)
+            is_done = bool(isinstance(sym, dict) and sym.get("completed"))
+            if not is_done and a not in real_anns:
+                continue
+            # find the def line below the annotation, then brace-match
+            j = i + 1
+            while j < len(lines) and not lines[j].strip():
+                j += 1
+            if j >= len(lines) or "{" not in lines[j]:
+                continue
+            depth, started, k = 0, False, j
+            while k < len(lines):
+                if "{" in lines[k]:
+                    started = True
+                if started:
+                    depth += lines[k].count("{") - lines[k].count("}")
+                    if depth <= 0:
+                        break
+                k += 1
+            if not started or depth > 0:
+                errors.append({"file": rel, "line": i + 1,
+                               "error": "unbounded stub block"})
+                continue
+            kill_spans.append((i, k))
+        if not kill_spans:
+            continue
+        kill_spans.sort(reverse=True)
+        if not dry_run:
+            for (i, k) in kill_spans:
+                del lines[i:k + 1]
+            p.write_bytes("\n".join(lines).encode("latin-1"))
+        for (i, k) in kill_spans[:limit]:
+            removed.append({"file": rel, "lines": [i + 1, k + 1]})
+        if len(removed) >= limit:
+            break
+    return {"ok": True, "dry_run": dry_run, "stub_files": len(stub_files),
+            "blocks_removed": len(removed), "sample": removed[:20],
+            "errors": errors[:10],
+            "note": "dry_run=true previews; run again with dry_run=false"}
+
+
+def tool_harvest_loop(count=20, max_lines=8, file_filter=None,
+                      dry_run=False):
+    """Mechanical trivial-bucket harvest: pending functions whose rewritten
+    raw_decomp body is a single `return <expr>;` (no `this`) are translated
+    verbatim, verified, and marked on PASS / rolled back on FAIL. Returns a
+    per-function ledger. Non-trivial candidates are reported for the agent."""
+    idx = build_pending_index()
+    pool = [e for e in idx
+            if (e.get("pseudocode_lines") or 999) <= max_lines
+            and (not file_filter or file_filter in e["file"])
+            and not (signals()["symbols"].get(e.get("address") or "")
+                     or {}).get("completed")]
+    attempted = passed = failed = skipped = 0
+    ledger = []
+    for entry in pool:
+        if attempted >= count:
+            break
+        addr = entry.get("address")
+        if not addr:
+            skipped += 1
+            continue
+        body = _raw_decomp_trivial_return(addr)
+        if body is None:
+            ledger.append({"addr": addr, "skipped": "not trivial-return"})
+            skipped += 1
+            continue
+        attempted += 1
+        r = _harvest_one(entry, body, dry_run)
+        if r.get("skipped"):
+            skipped += 1
+        elif r["verdict"] == "PASS":
+            passed += 1
+        elif r["verdict"] == "FAIL":
+            failed += 1  # DRY neither passes nor fails
+        ledger.append({"addr": addr, **{k: v for k, v in r.items()
+                                        if k in ("verdict", "marked",
+                                                 "rolled_back", "skipped",
+                                                 "detail", "body")}})
+    return {"ok": True, "dry_run": dry_run, "pool": len(pool),
+            "attempted": attempted, "passed": passed, "failed": failed,
+            "skipped": skipped, "ledger": ledger[:40]}
+
+
+_RAWDEC_RE = re.compile(
+    r'^// ==== 0x([0-9A-Fa-f]{8})\s+.*====\s*$', re.M)
+
+
+def _raw_decomp_trivial_return(addr):
+    """Fetch the raw_decomp rewritten body for addr; return the single return
+    statement if the body is exactly one `return <expr>;` with no `this`
+    reference (the mechanical trivial template), else None."""
+    try:
+        ai = int(addr, 16)
+    except (TypeError, ValueError):
+        return None
+    bucket = (PROJECT_ROOT / "src" / "raw_decomp" /
+              ("fn_%02X.c" % ((ai >> 16) & 0xFF)))
+    if not bucket.exists():
+        return None
+    text = bucket.read_text(encoding="utf-8", errors="replace")
+    m = re.search(r'^// ==== 0x%08X\s.*$' % ai, text, re.M)
+    if not m:
+        return None
+    nxt = text.find("\n// ==== 0x", m.end())
+    seg = text[m.end():nxt if nxt > 0 else len(text)]
+    b = seg.find("{")
+    e = seg.rfind("}")
+    if b < 0 or e <= b:
+        return None
+    body = seg[b + 1:e]
+    stmts = [ln.strip() for ln in body.split("\n") if ln.strip()]
+    if len(stmts) != 1 or not stmts[0].startswith("return") \
+            or not stmts[0].endswith(";") or "this" in stmts[0]:
+        return None
+    return stmts[0]
+
+
+def _harvest_one(entry, ret_stmt, dry_run):
+    """Replace a pending pseudocode block with one return statement, verify,
+    mark on PASS, roll the file back on FAIL. The def line is kept as-is."""
+    p = PROJECT_ROOT / entry["file"]
+    lines = _read_latin1(p).split("\n")
+    marker_idx = None
+    for i in range(entry["line"] - 1, min(entry["line"] + 40, len(lines))):
+        if lines[i].rstrip("\r") == INSIDE_MARKER:
+            marker_idx = i
+            break
+    if marker_idx is None:
+        return {"skipped": "marker not found"}
+    depth = started = 0
+    end = marker_idx
+    for k in range(marker_idx + 1, len(lines)):
+        if "{" in lines[k]:
+            started = 1
+        if started:
+            depth += lines[k].count("{") - lines[k].count("}")
+            if depth <= 0:
+                end = k
+                break
+    if not started or depth > 0:
+        return {"skipped": "pseudocode span unbounded"}
+    if dry_run:
+        return {"verdict": "DRY", "body": ret_stmt,
+                "would_replace_lines": [entry["line"], end + 1]}
+    old = lines[marker_idx:end + 1]
+    lines[marker_idx:end + 1] = ["  " + ret_stmt]
+    p.write_bytes("\n".join(lines).encode("latin-1"))
+    global _pending_index
+    _pending_index = None
+    addr = entry.get("address")
+    result = run_verify(addr)
+    if result["verdict"] == "PASS":
+        mark = tool_mark_completed(addr, "harvest_loop: trivial-return")
+        return {"verdict": "PASS", "marked": mark.get("ok", True)}
+    # rollback
+    lines[marker_idx:end + 1] = old
+    p.write_bytes("\n".join(lines).encode("latin-1"))
+    _pending_index = None
+    return {"verdict": "FAIL", "rolled_back": True,
+            "detail": result.get("detail", "")[:200]}
+
+
 def tool_reconcile_accounts(dry_run=True, limit=100):
     """Marker&completed reconciliation: find functions marked completed but
     still carrying a pending pseudocode block in the tree (phantom
@@ -1590,11 +2126,16 @@ TOOLS = [
                                                 "default": False}},
                      "required": ["target", "new_body"]}},
     {"name": "verify_function",
-     "description": "对单个函数运行 exec-flow CFG 校验（需地址）。返回 PASS/FAIL 与缺失事件。async=true 时后台执行返回 job_id。",
+     "description": "对单个函数运行 exec-flow CFG 校验（需地址）。verbose=true 返回双侧 CFG 块级转储 + STEP3(0) 缺失事件；auto_mark=true 时 PASS 即写 completed。async=true 后台执行返回 job_id。",
      "inputSchema": {"type": "object",
                      "properties": {"target": {"type": "string"},
                                     "async": {"type": "boolean",
-                                              "default": False}},
+                                              "default": False},
+                                    "verbose": {"type": "boolean",
+                                                "default": False},
+                                    "auto_mark": {"type": "boolean",
+                                                  "default": False},
+                                    "note": {"type": "string"}},
                      "required": ["target"]}},
     {"name": "job_status",
      "description": "查询异步任务（build/verify/canon_regen/csp_anchor 的 async 模式）状态与结果。",
@@ -1773,6 +2314,37 @@ TOOLS = [
     {"name": "stats",
      "description": "工作台统计：待翻译数/分布、completed 集、issue 计数、最近构建状态。",
      "inputSchema": {"type": "object", "properties": {}, "required": []}},
+    {"name": "set_signature",
+     "description": "改写函数定义行（cpp）并同步 hpp 声明（按 // 0xADDR 注解定位，生成目录除外）。成员形态（Cls::Name）自动补载体 include（e4/gap2 用 csp_canon/classes.hpp，E4Recv 用对应 _e4.hpp）。改名走 rename_symbol。",
+     "inputSchema": {"type": "object",
+                     "properties": {"target": {"type": "string"},
+                                    "signature": {"type": "string",
+                                                  "description": "RetType [Cls::]Name(params)，不带 '{'"},
+                                    "sync_hpp": {"type": "boolean",
+                                                 "default": True},
+                                    "dry_run": {"type": "boolean",
+                                                "default": False}},
+                     "required": ["target", "signature"]}},
+    {"name": "sweep_stubs",
+     "description": "批量清扫死存根：stub 文件（_generated/subs*/stub*）中 // 0xADDR 指向已完成函数或在非 stub 文件有真体注解的存根块整体移除（46D350 误命中治理）。默认 dry_run。",
+     "inputSchema": {"type": "object",
+                     "properties": {"file_filter": {"type": "string"},
+                                    "dry_run": {"type": "boolean",
+                                                "default": True},
+                                    "limit": {"type": "integer",
+                                              "default": 200}},
+                     "required": []}},
+    {"name": "harvest_loop",
+     "description": "琐碎桶机械收割：pending 且 raw_decomp 重写体为单条 return <expr>;（无 this）的函数逐个 replace→verify→PASS 标记/FAIL 回滚。返回逐函数账目。",
+     "inputSchema": {"type": "object",
+                     "properties": {"count": {"type": "integer",
+                                              "default": 20},
+                                    "max_lines": {"type": "integer",
+                                                  "default": 8},
+                                    "file_filter": {"type": "string"},
+                                    "dry_run": {"type": "boolean",
+                                                "default": False}},
+                     "required": []}},
 ]
 
 
@@ -1789,7 +2361,9 @@ def dispatch_tool(name, a):
         return tool_replace_body(a["target"], a["new_body"],
                                  a.get("dry_run", False))
     if name == "verify_function":
-        return tool_verify(a["target"], a.get("async", False))
+        return tool_verify(a["target"], a.get("async", False),
+                           a.get("verbose", False), a.get("auto_mark", False),
+                           a.get("note", ""))
     if name == "job_status":
         return tool_job_status(a.get("job_id"))
     if name == "mark_completed":
@@ -1869,6 +2443,16 @@ def dispatch_tool(name, a):
                                        a.get("limit", 100))
     if name == "stats":
         return tool_stats()
+    if name == "set_signature":
+        return tool_set_signature(a["target"], a["signature"],
+                                  a.get("sync_hpp", True),
+                                  a.get("dry_run", False))
+    if name == "sweep_stubs":
+        return tool_sweep_stubs(a.get("file_filter"), a.get("dry_run", True),
+                                a.get("limit", 200))
+    if name == "harvest_loop":
+        return tool_harvest_loop(a.get("count", 20), a.get("max_lines", 8),
+                                 a.get("file_filter"), a.get("dry_run", False))
     raise ValueError(f"unknown tool: {name}")
 
 

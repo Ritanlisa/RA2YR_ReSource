@@ -194,7 +194,7 @@ int __thiscall BuildingClass::GetBoundingSizeExt(#377 *this)
        + ObjectClass::GetBoundingSize(this);
 }
 
-// ==== BACKFILL 0x004494C0  BuildingClass::CanBeSold  cls=BuildingClass  sig=csp  renamed_refs=5  residual=- ====
+// ==== BACKFILL 0x004494C0  BuildingClass::CanBeSold  cls=BuildingClass  sig=csp  renamed_refs=4  residual=- ====
 bool BuildingClass::CanBeSold()
 {
 bool result;
@@ -212,7 +212,7 @@ if (ObjectClass::HasLocation(this)) {
                 }
             }
         }
-        if (!this->Type->FirestormWall || this->focus->firestormActive)
+        if (!this->Type->FirestormWall || this->owner->firestormActive)
             result = false;
         else
             result = true;
@@ -221,16 +221,16 @@ if (ObjectClass::HasLocation(this)) {
 return result;
 }
 
-// ==== BACKFILL 0x0044D5D0  BuildingClass::CaptureBuilding  cls=BuildingClass  sig=csp  renamed_refs=4  residual=- ====
+// ==== BACKFILL 0x0044D5D0  BuildingClass::CaptureBuilding  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
 bool BuildingClass::CaptureBuilding(HouseClass* newOwner)
 {
 bool result;
 if (TechnoClass::SetHouseFlag(this, newOwner)) {
     if (!g_IKnowWhatImDoing) {
-        this->focus->lastBuiltVehicleType = this->Type->ArrayIndex;
-        this->focus->unknownBool246 = 1;
+        this->owner->lastBuiltVehicleType = this->Type->ArrayIndex;
+        this->owner->unknownBool246 = 1;
     }
-    HouseClass* ownerHouse = this->focus;
+    HouseClass* ownerHouse = this->owner;
     ownerHouse->recheckTechTree = 1;
     if (!Team::AllMembersValid(this)
         && House::IsCurrentPlayer(ownerHouse)
@@ -288,6 +288,111 @@ namespace gamemd { int BuildingClass::PushScriptAction() {
     return result;
 }
 } }
+
+// ==== BACKFILL 0x0044E3A0  BuildingClass::CheckOverlapWithOthers  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
+bool BuildingClass::CheckOverlapWithOthers() {
+{
+    int v2;
+    short *v3;
+    int *v4;
+    char v6;
+    int v7;
+    int v8;
+    v2 = *(int *)this->SetZ(&v8);
+    v3 = (short *)this->CheckPlayerOwned(0);
+    v6 = 0;
+    while ( *v3 != 0x7FFF || v3[1] != 0x7FFF )
+  {
+    LOWORD(v7) = v2 + *v3;
+    HIWORD(v7) = HIWORD(v2) + v3[1];
+    v8 = v7;
+    v3 += 2;
+    v4 = (int *)*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v8) + 57);
+    if ( v4 )
+    {
+    while ( this == v4 )
+      {
+    v4 = (int *)v4[12];
+    if ( !v4 )
+        break;
+      }
+      v6 = v6 || v4 != 0;
+    }
+  }
+    return v6;
+}
+
+/* ASM:
+sub     esp, 0Ch
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     edi, ecx
+lea     ecx, [esp+1Ch+var_4]
+mov     eax, [edi]
+push    ecx
+mov     ecx, edi
+call    dword ptr [eax+1B8h]
+mov     ebp, [eax]
+mov     edx, [edi]
+push    0
+mov     ecx, edi
+mov     [esp+20h+var_8], ebp
+call    dword ptr [edx+108h]
+mov     bx, word ptr [esp+1Ch+var_8+2]
+mov     esi, eax
+mov     byte ptr [esp+1Ch+var_C+3], 0
+
+loc_44E3D6:                             ; CODE XREF: BuildingClass__CheckOverlapWithOthers+7A↓j
+; BuildingClass__CheckOverlapWithOthers+87↓j ...
+mov     ax, [esi]
+cmp     ax, 7FFFh
+jnz     short loc_44E3E5
+cmp     [esi+2], ax
+jz      short loc_44E430
+
+loc_44E3E5:                             ; CODE XREF: BuildingClass__CheckOverlapWithOthers+3D↑j
+add     eax, ebp
+lea     edx, [esp+1Ch+var_4]
+mov     word ptr [esp+1Ch+var_8], ax
+mov     ax, [esi+2]
+add     ax, bx
+push    edx
+mov     word ptr [esp+20h+var_8+2], ax
+mov     ecx, [esp+20h+var_8]
+mov     [esp+20h+var_4], ecx
+mov     ecx, 87F7E8h
+add     esi, 4
+call    CellCoord__To_CellObj
+mov     eax, [eax+0E4h]
+test    eax, eax
+jz      short loc_44E3D6
+
+loc_44E41C:                             ; CODE XREF: BuildingClass__CheckOverlapWithOthers+85↓j
+cmp     edi, eax
+jnz     short loc_44E429
+mov     eax, [eax+30h]
+test    eax, eax
+jnz     short loc_44E41C
+jmp     short loc_44E3D6
+; ---------------------------------------------------------------------------
+
+loc_44E429:                             ; CODE XREF: BuildingClass__CheckOverlapWithOthers+7E↑j
+mov     byte ptr [esp+1Ch+var_C+3], 1
+jmp     short loc_44E3D6
+; ---------------------------------------------------------------------------
+
+loc_44E430:                             ; CODE XREF: BuildingClass__CheckOverlapWithOthers+43↑j
+mov     al, byte ptr [esp+1Ch+var_C+3]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+add     esp, 0Ch
+retn
+*/
+}
 
 // ==== BACKFILL 0x0044F640  BuildingClass::GetFactoryPosition  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 CoordStruct* BuildingClass::GetFactoryPosition(CoordStruct* out) const {

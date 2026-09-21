@@ -692,7 +692,7 @@ namespace gamemd { int GadgetClass::InitControls() {
       this->q054 = 1;
       (*(void (**)(void))(v2 + 72))();
       v3 = this->q058;
-      this->ListClass_field_0x14 -= this->q12C;
+      this->q014 -= this->q12C;
       (*(void (__thiscall **)(_BYTE *, _BYTE *))(v3 + 132))(this + 88, this);
       (*(void (__thiscall **)(_BYTE *, _BYTE *))(this->q0B8 + 132))(this + 184, this);
       (*(void (__thiscall **)(_BYTE *, _BYTE *))(this->q118 + 132))(this + 280, this);

@@ -60,7 +60,7 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[12] = &vt_AlphaShapeClass;
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    aP0[1].AlphaShapeClass_field_0x14 = 0;
+    aP0[1].q014 = 0;
   }
     return (int)Prefix_0->__pad_0;
 }
@@ -190,33 +190,33 @@ int VectorClass_ptr_AlphaShapeClass::FindItemIndex(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00422720  AnimClass::SimpleCtor  cls=AnimClass  sig=csp  renamed_refs=15  residual=- ====
+// ==== BACKFILL 0x00422720  AnimClass::SimpleCtor  cls=AnimClass  sig=csp  renamed_refs=6  residual=- ====
 namespace gamemd { int AnimClass::SimpleCtor() {
 {
       wchar_t *v2;
       int v3;
 
       ObjectClass::ctor((_DWORD *)this);
-      this->AnimClass_field_0xAC = 0;
+      this->q0AC = 0;
       this->q0B0 = 0;
       v2 = g_CurrentFrame;
-      this->AnimClass_field_0xBC = 0;
-      this->AnimClass_field_0xB4 = v2;
-      this->AnimClass_field_0xC0 = 0;
+      this->q0BC = 0;
+      this->q0B4 = v2;
+      this->q0C0 = 0;
       this->q0C4 = 1;
-      this->AnimClass_field_0xC8 = 0;
-      this->AnimClass_field_0xCC = 0;
-      this->AnimClass_field_0xD0 = -1;
-      this->AnimClass_field_0xD4 = 0;
+      this->q0C8 = 0;
+      this->q0CC = 0;
+      this->q0D0 = -1;
+      this->q0D4 = 0;
       this->q0D8 = -1;
-      this->AnimClass_field_0xFC = 1000;
-      this->AnimClass_field_0x100 = 0;
-      this->AnimClass_field_0x104 = 0;
+      this->q0FC = 1000;
+      this->q100 = 0;
+      this->q104 = 0;
       this->q118 = 0;
       this->q119 = 0;
       this->q11A = 0;
       this->q11B = 0;
-      this->AnimClass_field_0x11C = 0;
+      this->q11C = 0;
       this->q120 = 0;
       this->q128 = 0;
       this->q130 = 0;
@@ -226,9 +226,9 @@ namespace gamemd { int AnimClass::SimpleCtor() {
       this->q13C = 0;
       Int4::Set(0, 0, 0, 1065353216);
       Int4::Set(0, 0, 0, 1065353216);
-      this->AnimClass_field_0x188 = 0;
+      this->q188 = 0;
       this->q179 = 0;
-      this->AnimClass_field_0x184 = 0;
+      this->q184 = 0;
       this->q18C = 0;
       this->q194 = 0;
       this->q195 = 1;
@@ -281,11 +281,11 @@ namespace gamemd { void TerrainClass::ClearAnimationLinkFlags() {
 // ==== BACKFILL 0x00422BC0  AnimClass::SetAnimSpeed  cls=AnimClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int AnimClass::SetAnimSpeed() {
 {
-    return this->AnimClass_field_0x104 + ObjectClass::GetBoundingSize((AnimClass *)this);
+    return this->q104 + ObjectClass::GetBoundingSize((AnimClass *)this);
 }
 } }
 
-// ==== BACKFILL 0x00422BE0  AnimClass::UpdateZAdjust  cls=AnimClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x00422BE0  AnimClass::UpdateZAdjust  cls=AnimClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* AnimClass::UpdateZAdjust(void* a1) {
 {
       _DWORD *Coords;
@@ -298,11 +298,11 @@ namespace gamemd { void* AnimClass::UpdateZAdjust(void* a1) {
       int *v11;
       CoordStruct v12;
 
-      if ( this->AnimClass_field_0xCC )
+      if ( this->q0CC )
       {
         Coords = (_DWORD *)ObjectClass::GetCoords(this);
         v4 = (_DWORD *)(*(int (__thiscall **)(_DWORD, CoordStruct *))(**((_DWORD **)this + 51) + 72))(
-                         this->AnimClass_field_0xCC,
+                         this->q0CC,
                          &v12);
         v5 = *Coords + *v4;
         v6 = Coords[1];
@@ -325,10 +325,10 @@ namespace gamemd { void* AnimClass::UpdateZAdjust(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x00422C70  AnimClass::CheckLayerFlags  cls=AnimClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x00422C70  AnimClass::CheckLayerFlags  cls=AnimClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int AnimClass::CheckLayerFlags(int a1, int a2, int a3) {
 {
-    if ( this->AnimClass_field_0x184 )
+    if ( this->q184 )
     return 0;
     else
     return ObjectClass::CalcDrawRect((AnimClass *)this);
@@ -356,7 +356,7 @@ int * AnimClass::CheckMirrorFlags(int a1)
 }
 }
 
-// ==== BACKFILL 0x00423930  AnimClass::UpdateProjectileTrajectory  cls=AnimClass  sig=csp  renamed_refs=4  residual=- ====
+// ==== BACKFILL 0x00423930  AnimClass::UpdateProjectileTrajectory  cls=AnimClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int AnimClass::UpdateProjectileTrajectory() {
 {
       float *v2;
@@ -386,19 +386,19 @@ namespace gamemd { int AnimClass::UpdateProjectileTrajectory() {
 
       v2 = (float *)(this + 296);
       v3 = JumpjetLocomotionClass::Update2(this + 296);
-      v4 = this->AnimClass_field_0xC8;
+      v4 = this->q0C8;
       v22 = v3;
       if ( *(_BYTE *)(v4 + 854) )
         v2[11] = v2[11] + *((double *)v2 + 1);
       if ( v3 == 1 )
       {
-        if ( *(_DWORD *)(this->AnimClass_field_0xC8 + 768) )
+        if ( *(_DWORD *)(this->q0C8 + 768) )
         {
           v5 = (void **)__2_YAPAXI_Z(0x1C8u);
           if ( v5 )
           {
             v6 = (int *)this->vt18(v23);
-            AnimClass::ctor(v5, *(void **)(this->AnimClass_field_0xC8 + 768), v6, 0, 1, (void *)0x600, 0, 0);
+            AnimClass::ctor(v5, *(void **)(this->q0C8 + 768), v6, 0, 1, (void *)0x600, 0, 0);
           }
         }
         Coords = Coord::GetCoords(v2, v24);
@@ -409,7 +409,7 @@ namespace gamemd { int AnimClass::UpdateProjectileTrajectory() {
           {
             v9 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v8 + 72))(v8, v25);
             v10 = Coord::GetCoords((float *)this + 74, v26);
-            v11 = this->AnimClass_field_0xC8;
+            v11 = this->q0C8;
             v12 = abs32(v10[1] - v9[1]) + abs32(*v10 - *v9);
             if ( v12 <= *(_DWORD *)(v11 + 820) )
             {
@@ -486,14 +486,14 @@ namespace gamemd { int AnimClass::SaveLoad_Prefix(int a1, int a2) {
           (MouseClass *)&aP1[1].NeedsSaveOrLink);
         ObjectPtr::RegisterForTracking(
           (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-          (MouseClass *)&aP1[2].AnimClass_field_0x24);
+          (MouseClass *)&aP1[2].q024);
         ObjectPtr::RegisterForTracking(
           (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
           (MouseClass *)&aP1[2].q028);
         fallRate = aP1[1].q02C;
         if ( fallRate <= -1 )
         {
-          if ( LOBYTE(aP1[1].AnimClass_field_0x30) )
+          if ( LOBYTE(aP1[1].q030) )
           {
             v6 = FileExtension::MapHandler((ObjectClass *)((char *)aP1 + 220));
             if ( v6 )
@@ -518,7 +518,7 @@ namespace gamemd { int AnimClass::SaveLoad_Prefix(int a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00425410  AnimClass::ProcessPower  cls=AnimClass  sig=csp  renamed_refs=8  residual=- ====
+// ==== BACKFILL 0x00425410  AnimClass::ProcessPower  cls=AnimClass  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { int AnimClass::ProcessPower(void* a1) {
 {
       int v3;
@@ -531,19 +531,19 @@ namespace gamemd { int AnimClass::ProcessPower(void* a1) {
       int v10;
 
       HouseClass::ProcessPower((#374 *)this);
-      v3 = this->AnimClass_field_0xCC;
+      v3 = this->q0CC;
       if ( v3 )
       {
         v4 = (*(int (__stdcall **)(int))(*(_DWORD *)(v3 + 4) + 16))(v3 + 4);
         Power::TimerProcess(v4);
       }
-      Power::TimerProcess(this->AnimClass_field_0xD0);
-      Power::TimerProcess(this->AnimClass_field_0xFC);
-      Power::TimerProcess(this->AnimClass_field_0x100);
-      Power::TimerProcess(this->AnimClass_field_0x104);
-      Power::TimerProcess(this->AnimClass_field_0x184);
-      Checksummer::Add_double(this->AnimClass_field_0x188, this->q18C);
-      Power::TimerProcess(this->AnimClass_field_0x190);
+      Power::TimerProcess(this->q0D0);
+      Power::TimerProcess(this->q0FC);
+      Power::TimerProcess(this->q100);
+      Power::TimerProcess(this->q104);
+      Power::TimerProcess(this->q184);
+      Checksummer::Add_double(this->q188, this->q18C);
+      Power::TimerProcess(this->q190);
       LOBYTE(v5) = this->q194;
       Power::FlagProcess(a2, v5);
       v6 = Power::TimerProcess(*(unsigned __int8 *)(this + 405));
@@ -560,10 +560,10 @@ namespace gamemd { int AnimClass::ProcessPower(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x00425510  AnimClass::CheckEndOfSequence  cls=AnimClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x00425510  AnimClass::CheckEndOfSequence  cls=AnimClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int AnimClass::CheckEndOfSequence() {
 {
-      return *(_DWORD *)(this->AnimClass_field_0xC8 + 704);
+      return *(_DWORD *)(this->q0C8 + 704);
 }
 } }
 
@@ -575,19 +575,19 @@ unsigned int AbstractClass::updateLayer()
 }
 }
 
-// ==== BACKFILL 0x00425530  AnimClass::Undeploy  cls=AnimClass  sig=csp  renamed_refs=3  residual=- ====
+// ==== BACKFILL 0x00425530  AnimClass::Undeploy  cls=AnimClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int AnimClass::Undeploy() {
 {
       CoordStruct *v2;
       _DWORD *v3;
       _DWORD v5[3];
 
-      v2 = (CoordStruct *)this->AnimClass_field_0xC8;
+      v2 = (CoordStruct *)this->q0C8;
       if ( v2 && BYTE1(v2[71].X) )
       {
-        v5[0] = this->AnimClass_field_0x9C;
+        v5[0] = this->q09C;
         v5[1] = this->q0A0;
-        v5[2] = this->AnimClass_field_0xA4;
+        v5[2] = this->q0A4;
         v3 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v5);
         v3[80] &= ~0x20000u;
       }
@@ -598,7 +598,7 @@ namespace gamemd { int AnimClass::Undeploy() {
 }
 } }
 
-// ==== BACKFILL 0x00425630  AnimClass::CheckDamageFlags  cls=AnimClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x00425630  AnimClass::CheckDamageFlags  cls=AnimClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int AnimClass::CheckDamageFlags() {
 {
       _DWORD *v1;
@@ -606,7 +606,7 @@ namespace gamemd { int AnimClass::CheckDamageFlags() {
       int result;
 
       v1 = this + 39;
-      v2 = this->AnimClass_field_0xCC;
+      v2 = this->q0CC;
       result = v1[2];
       if ( v2 )
         result += *(_DWORD *)(v2 + 164);
@@ -1513,7 +1513,7 @@ int E4Recv_429550::COMStub_429550()
 }
 }
 
-// ==== BACKFILL 0x0042A5B0  CellClass::ClearOccupancyGrid  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0042A5B0  CellClass::ClearOccupancyGrid  cls=CellClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int CellClass::ClearOccupancyGrid() {
 {
       _DWORD *v1;
@@ -1532,7 +1532,7 @@ namespace gamemd { int CellClass::ClearOccupancyGrid() {
       int v14;
       int v15;
 
-      *(_DWORD *)(this->unknown30 + 1572864) = 0;
+      *(_DWORD *)(this->vtable4 + 1572864) = 0;
       *(_DWORD *)(this->lightConvert + 0x100000) = 0;
       v1 = (_DWORD *)this->isoTileTypeIndex;
       for ( i = 0; i <= *v1; *(_DWORD *)(v1[2] + 4 * i - 4) = 0 )
@@ -1675,10 +1675,10 @@ char sub_42E6C0(int a1)
 return 1;
 }
 
-// ==== BACKFILL 0x0042E6D0  CellClass::setTileIndex  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0042E6D0  CellClass::setTileIndex  cls=CellClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int CellClass::setTileIndex(int a1) {
 {
-    this->foggedObjects += a2;
+    this->vtable2 += a2;
     *(this + 3) += HIWORD(a2);
     return a2;
 }
@@ -1895,13 +1895,13 @@ int HouseClass::FailedToPlaceNode(int a1)
 }
 }
 
-// ==== BACKFILL 0x0042F670  DynamicVector::Constructor_Cell  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0042F670  DynamicVector::Constructor_Cell  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2)
 {
 {
     int v4;
     this->Items = 0;
-    this->DynamicVector_field_0x8 = aP1;
+    this->q008 = aP1;
     this->IsInitialized = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_Cell;
@@ -1922,7 +1922,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
   }
     *(void**)this = &vt_DynamicVectorClass_Cell;
     this->CapacityIncrement = 10;
-    this->DynamicVector_field_0x10 = 0;
+    this->q010 = 0;
     return this;
 }
 }
@@ -1951,7 +1951,7 @@ if ( a2 )
         return 0;
     if ( this->Items )
     {
-        int copyCount = this->DynamicVector_field_0x8;
+        int copyCount = this->q008;
         if ( a2 < copyCount )
             copyCount = a2;
         int i = 0;
@@ -1967,16 +1967,16 @@ if ( a2 )
         }
     }
     this->Items = (decltype(this->Items))newItems;
-    this->DynamicVector_field_0x8 = a2;
+    this->q008 = a2;
     this->IsAllocated = (a3 == 0);
 }
 else
 {
     this->Clear();
 }
-int capacity = this->DynamicVector_field_0x8;
-if ( capacity < this->DynamicVector_field_0x10 )
-    this->DynamicVector_field_0x10 = capacity;
+int capacity = this->q008;
+if ( capacity < this->q010 )
+    this->q010 = capacity;
 return 1;
 }
 

@@ -275,7 +275,7 @@ this->IsAllocated = 0;
 this->Capacity = 0;
 }
 
-// ==== BACKFILL 0x004A1750  CellClass::Cleanup  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x004A1750  CellClass::Cleanup  cls=CellClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { int CellClass::Cleanup() {
 {
     short *v2;
@@ -283,22 +283,22 @@ namespace gamemd { int CellClass::Cleanup() {
     int v4;
     char *v5;
     v2 = this + 6;
-    if ( this->unknown30 == DataGlobal_89F7F8 )
+    if ( this->vtable4 == DataGlobal_89F7F8 )
     return 0;
     CellClass::DestroyOverlay(v2);
     *(int *)v2 = DataGlobal_89F7F8;
     v3 = *(int *)this;
     if ( *(int *)this != -1 )
   {
-    v4 = this->bridgeOwnerCell;
+    v4 = this->vtable3;
     v5 = (char *)g_CurrentFrame - v3;
     if ( (int)g_CurrentFrame - v3 < v4 )
     {
     *(int *)this = -1;
-    this->bridgeOwnerCell = v4 - (int)v5;
+    this->vtable3 = v4 - (int)v5;
     return 1;
     }
-    this->bridgeOwnerCell = 0;
+    this->vtable3 = 0;
     *(int *)this = -1;
   }
     return 1;

@@ -1528,7 +1528,7 @@ char __thiscall VectorClass_ptr_VocClass::sub_751AB0(void *this, int a2, _DWORD 
       return 0; /*0x751b5a*/
     if ( this->Items ) /*0x751ae8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x751aef*/
+      v5 = this->q008; /*0x751aef*/
       if ( a2 < v5 ) /*0x751af4*/
         v5 = a2; /*0x751af6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x751afc*/
@@ -1540,14 +1540,14 @@ char __thiscall VectorClass_ptr_VocClass::sub_751AB0(void *this, int a2, _DWORD 
       }
     }
     this->Items = v4; /*0x751b2a*/
-    this->DynamicVector_field_0x8 = a2; /*0x751b32*/
+    this->q008 = a2; /*0x751b32*/
     this->IsAllocated = a3 == 0; /*0x751b35*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x751b3e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x751b41*/
+  v7 = this->q008; /*0x751b41*/
   if ( v7 < this->Items ) /*0x751b49*/
     this->Items = v7; /*0x751b4b*/
   return 1; /*0x751b4e*/
@@ -2811,22 +2811,22 @@ int __thiscall sub_7533F0(void *this)
   if ( MEMORY[0xB1D4CC] ) /*0x753418*/
     Audio::Release(MEMORY[0xB1D4CC]); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
-  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->LoadGame_field_0x0C)(this, &v3, 4, 0); /*0x753430*/
+  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q00C)(this, &v3, 4, 0); /*0x753430*/
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
   {
-    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->LoadGame_field_0x0C)(this, &v3, 4, 0); /*0x753455*/
+    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q00C)(this, &v3, 4, 0); /*0x753455*/
     if ( result >= 0 ) /*0x75345a*/
     {
       while ( v3 != 1450145861 ) /*0x753466*/
       {
         if ( v3 != 1450145865 ) /*0x75346e*/
           return -2147467259; /*0x7534cb*/
-        result = (*(int (__stdcall **)(void *, _DWORD *, int, _DWORD))(this->LoadGame_field_0x0C)(this, v4, 12, 0); /*0x75347c*/
+        result = (*(int (__stdcall **)(void *, _DWORD *, int, _DWORD))(this->q00C)(this, v4, 12, 0); /*0x75347c*/
         if ( result >= 0 ) /*0x753481*/
         {
           if ( MEMORY[0xB1D4CC] && v4[0] >= 0 && v4[0] < MEMORY[0xB1D4B0] ) /*0x75349a*/
             Audio_Load(*((_DWORD *)MEMORY[0xB1D4A4] + v4[0]), v4[1], v4[2]); /*0x7534ae*/
-          result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->LoadGame_field_0x0C)(this, &v3, 4, 0); /*0x7534bf*/
+          result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q00C)(this, &v3, 4, 0); /*0x7534bf*/
           if ( result >= 0 ) /*0x7534c4*/
             continue; /*0x7534c4*/
         }
@@ -3108,7 +3108,7 @@ char __thiscall VectorClass_ptr_VoxClass::sub_753830(void *this, int a2, _DWORD 
       return 0; /*0x7538da*/
     if ( this->Items ) /*0x753868*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x75386f*/
+      v5 = this->q008; /*0x75386f*/
       if ( a2 < v5 ) /*0x753874*/
         v5 = a2; /*0x753876*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x75387c*/
@@ -3120,14 +3120,14 @@ char __thiscall VectorClass_ptr_VoxClass::sub_753830(void *this, int a2, _DWORD 
       }
     }
     this->Items = v4; /*0x7538aa*/
-    this->DynamicVector_field_0x8 = a2; /*0x7538b2*/
+    this->q008 = a2; /*0x7538b2*/
     this->IsAllocated = a3 == 0; /*0x7538b5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x7538be*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x7538c1*/
+  v7 = this->q008; /*0x7538c1*/
   if ( v7 < this->Items ) /*0x7538c9*/
     this->Items = v7; /*0x7538cb*/
   return 1; /*0x7538ce*/
@@ -5313,7 +5313,7 @@ int __thiscall Voxel_ProcessColor(_DWORD *this, _DWORD *a2, float *a3)
   int v35; // [esp+58h] [ebp+4h]
   float v36; // [esp+5Ch] [ebp+8h]
 
-  v4 = this->Voxel_field_0x14 + 164 * (a2[2] + *(_DWORD *)(this->Voxel_field_0x10 + 12 * a2[1])); /*0x7565b8*/
+  v4 = this->q014 + 164 * (a2[2] + *(_DWORD *)(this->q010 + 12 * a2[1])); /*0x7565b8*/
   v5 = 9 * a2[3]; /*0x7565be*/
   v16 = *(_BYTE *)(v4 + 161); /*0x7565cd*/
   v6 = *(_BYTE *)(v4 + 162); /*0x7565d1*/
@@ -7475,12 +7475,12 @@ _DWORD *__thiscall VoxelPalette_Init(_DWORD *this, int a2, int a3)
 {
   if ( a2 ) /*0x758959*/
   {
-    this->VoxelPalette_field_0x04 = a2; /*0x758974*/
+    this->q004 = a2; /*0x758974*/
     this->q006 = 0; /*0x758977*/
   }
   else
   {
-    this->VoxelPalette_field_0x04 = __2_YAPAXI_Z(0x300u); /*0x758968*/
+    this->q004 = __2_YAPAXI_Z(0x300u); /*0x758968*/
     this->q006 = 1; /*0x75896b*/
   }
   if ( a3 ) /*0x758984*/
@@ -7768,14 +7768,14 @@ char __thiscall sub_758EA0(int *this, float a2, float a3, float a4, char a5)
     v9 = *this; /*0x758ed1*/
     if ( a5 ) /*0x758ed3*/
     {
-      if ( v7 < v9 || v7 > this->q001 ) /*0x758edc*/
+      if ( v7 < v9 || v7 > this->__pad_001 ) /*0x758edc*/
         goto LABEL_13; /*0x758edc*/
     }
-    else if ( v7 >= v9 && v7 <= this->q001 ) /*0x758ee7*/
+    else if ( v7 >= v9 && v7 <= this->__pad_001 ) /*0x758ee7*/
     {
       goto LABEL_13; /*0x758ee7*/
     }
-    v10 = (unsigned __int8 *)(i + this->VoxelRenderer_field_0x04); /*0x758eee*/
+    v10 = (unsigned __int8 *)(i + this->q004); /*0x758eee*/
     v11 = a3 - (double)v10[1]; /*0x758f14*/
     v12 = a4 - (double)v10[2]; /*0x758f1c*/
     v13 = v12 * v12 + v11 * v11 + (a2 - (double)*v10) * (a2 - (double)*v10); /*0x758f2e*/
@@ -7987,26 +7987,26 @@ char *__thiscall Stream::InitializeBinkAudio(
   this->q52C = aP2; /*0x759282*/
   *((_DWORD *)this + 121) = this; /*0x759288*/
   *((_DWORD *)this + 101) = &v19; /*0x75928e*/
-  this->__pad_1B8 = 0; /*0x75929b*/
+  this->q1B8 = 0; /*0x75929b*/
   if ( !TestBitArray(15) ) /*0x7592a1*/
-    this->__pad_1B8 |= 1u; /*0x7592af*/
+    this->q1B8 |= 1u; /*0x7592af*/
   if ( !TestBitArray(1) ) /*0x7592b7*/
   {
-    v9 = this->__pad_1B8; /*0x7592c0*/
+    v9 = this->q1B8; /*0x7592c0*/
     LOBYTE(v9) = v9 | 4; /*0x7592c6*/
-    this->__pad_1B8 = v9; /*0x7592c8*/
+    this->q1B8 = v9; /*0x7592c8*/
   }
   if ( TestBitArray(10) ) /*0x7592d3*/
   {
-    v10 = this->__pad_1B8; /*0x7592dc*/
+    v10 = this->q1B8; /*0x7592dc*/
     LOBYTE(v10) = v10 | 0x40; /*0x7592e2*/
-    this->__pad_1B8 = v10; /*0x7592e4*/
+    this->q1B8 = v10; /*0x7592e4*/
   }
   if ( TestBitArray(12) ) /*0x7592ef*/
   {
-    v11 = this->__pad_1B8; /*0x7592f8*/
+    v11 = this->q1B8; /*0x7592f8*/
     LOBYTE(v11) = v11 | 0x80; /*0x7592fe*/
-    this->__pad_1B8 = v11; /*0x759300*/
+    this->q1B8 = v11; /*0x759300*/
   }
   v12 = *((_DWORD *)this + 111) | 8; /*0x75930c*/
   *((_DWORD *)this + 111) = v12; /*0x75930f*/
@@ -8057,16 +8057,16 @@ LABEL_14:
   else
     *((_DWORD *)this + 94) = sub_75A100; /*0x7593f3*/
   *((_DWORD *)this + 95) = sub_75A2F0; /*0x759402*/
-  this->__pad_018 = sub_75A350; /*0x75940c*/
+  this->q018 = sub_75A350; /*0x75940c*/
   if ( TestBitArray(4) ) /*0x759416*/
   {
     *((_DWORD *)this + 98) = j_Time_GetElapsedMS; /*0x75941f*/
-    this->__pad_06C = 60; /*0x759429*/
+    this->q06C = 60; /*0x759429*/
   }
   else
   {
     *((_DWORD *)this + 98) = sub_4116A0; /*0x759435*/
-    this->__pad_06C = 60; /*0x75943f*/
+    this->q06C = 60; /*0x75943f*/
     *((_DWORD *)this + 127) = *(unsigned __int16 *)&MEMORY[0xA8D63C].__pad_14B0[188]; /*0x759455*/
   }
   *((_DWORD *)this + 100) = ManageMultimediaTimer; /*0x759463*/
@@ -8076,7 +8076,7 @@ LABEL_14:
   *((_DWORD *)this + 322) = 0; /*0x759483*/
   strcpy(this + 113, a1); /*0x75949f*/
   *((_DWORD *)this + 338) = aP5; /*0x7594b0*/
-  this->__pad_518 = 0; /*0x7594b7*/
+  this->q518 = 0; /*0x7594b7*/
   *((_DWORD *)this + 327) = 0; /*0x7594bd*/
   *((_DWORD *)this + 328) = 0; /*0x7594c3*/
   *((_DWORD *)this + 329) = 0; /*0x7594c9*/
@@ -8098,7 +8098,7 @@ int __thiscall CCFileClass_Cleanup(_DWORD *this)
 {
   System_Cleanup(); /*0x759513*/
   *++this = &vt_CCFileClass; /*0x75951e*/
-  this->__pad_064 = 0; /*0x759524*/
+  this->q064 = 0; /*0x759524*/
   Vector::Clear((int)(this + 22)); /*0x75952b*/
   *this = &off_7E1668; /*0x759532*/
   return BufferIOFileClass::Dtor(this); /*0x75953d*/
@@ -8313,11 +8313,11 @@ bool __thiscall sub_759880(int *this, int a2, int a3, int a4)
   int v6; // esi
 
   v4 = a2; /*0x759880*/
-  if ( a2 < 0 || a2 >= this->__pad_508 ) /*0x75988e*/
+  if ( a2 < 0 || a2 >= this->q508 ) /*0x75988e*/
     v4 = 0; /*0x759890*/
   v5 = a3; /*0x759892*/
-  if ( a3 < 0 || a3 >= this->__pad_508 ) /*0x7598a1*/
-    v5 = this->__pad_508 - 1; /*0x7598a9*/
+  if ( a3 < 0 || a3 >= this->q508 ) /*0x7598a1*/
+    v5 = this->q508 - 1; /*0x7598a9*/
   v6 = a4; /*0x7598aa*/
   if ( a4 < 0 ) /*0x7598b0*/
     v6 = -1; /*0x7598b2*/
@@ -8465,7 +8465,7 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
   *a2 = 0; /*0x759c3b*/
   if ( !this->q551 ) /*0x759c40*/
   {
-    Render_Render_7C3690(this->needsRedraw, this->__pad_508); /*0x759c56*/
+    Render_Render_7C3690(this->needsRedraw, this->q508); /*0x759c56*/
     if ( this->q144 != -1 ) /*0x759c62*/
     {
       Render_Render_7C3710(*((unsigned __int8 **)this + 128), &v10, &v9, &a2); /*0x759c78*/
@@ -8606,14 +8606,14 @@ bool __thiscall sub_759EB0(int *this, int a2, unsigned int a3, unsigned int a4, 
 
   v6 = a3; /*0x759eb2*/
   if ( a3 == -1 ) /*0x759eb9*/
-    v6 = this->__pad_148; /*0x759ebb*/
+    v6 = this->q148; /*0x759ebb*/
   else
-    this->__pad_148 = a3; /*0x759ec3*/
+    this->q148 = a3; /*0x759ec3*/
   v7 = a4; /*0x759ec9*/
   if ( a4 == -1 ) /*0x759ed0*/
-    v7 = this->__pad_524; /*0x759ed2*/
+    v7 = this->q524; /*0x759ed2*/
   else
-    this->__pad_524 = a4; /*0x759eda*/
+    this->q524 = a4; /*0x759eda*/
   v8 = a5; /*0x759ee0*/
   if ( a5 == -1 ) /*0x759ee7*/
     v8 = 0; /*0x759ee9*/
@@ -8635,7 +8635,7 @@ int __thiscall sub_759F20(_DWORD *this, int a2)
 // ==== 0x00759F70  MovieClass::GetWidth  this=AbstractClass  sig=csp ====
 int __thiscall MovieClass_GetWidth(_DWORD *this)
 {
-  return this->__pad_518; /*0x759f76*/
+  return this->q518; /*0x759f76*/
 }
 
 
@@ -9067,7 +9067,7 @@ char __thiscall VectorClass_ptr_MovieHandle::sub_75A610(void *this, int a2, _DWO
       return 0; /*0x75a6ba*/
     if ( this->Items ) /*0x75a648*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x75a64f*/
+      v5 = this->q008; /*0x75a64f*/
       if ( a2 < v5 ) /*0x75a654*/
         v5 = a2; /*0x75a656*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x75a65c*/
@@ -9079,14 +9079,14 @@ char __thiscall VectorClass_ptr_MovieHandle::sub_75A610(void *this, int a2, _DWO
       }
     }
     this->Items = v4; /*0x75a68a*/
-    this->DynamicVector_field_0x8 = a2; /*0x75a692*/
+    this->q008 = a2; /*0x75a692*/
     this->IsAllocated = a3 == 0; /*0x75a695*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x75a69e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x75a6a1*/
+  v7 = this->q008; /*0x75a6a1*/
   if ( v7 < this->Items ) /*0x75a6a9*/
     this->Items = v7; /*0x75a6ab*/
   return 1; /*0x75a6ae*/
@@ -10426,11 +10426,11 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
   char aP1a; // [esp+2Ch] [ebp+4h]
 
   v3 = (IUnknown *)CONTAINING_RECORD(this, IUnknown, field_0)->__pad_28; /*0x75c251*/
-  if ( this->Voxel_field_0x28 == g_AsyncMovieState.field_0 /*0x75c26e*/
-    && this->Voxel_field_0x2C == g_AsyncMovieState.field_4
-    && this->__pad_030 == g_AsyncMovieState.field_8 )
+  if ( this->q028 == g_AsyncMovieState.field_0 /*0x75c26e*/
+    && this->q02C == g_AsyncMovieState.field_4
+    && this->q030 == g_AsyncMovieState.field_8 )
   {
-    v4 = (BuildingTypeClass *)this->Voxel_field_0xC; /*0x75c278*/
+    v4 = (BuildingTypeClass *)this->q00C; /*0x75c278*/
     a1 = v4->Armor[0]; /*0x75c287*/
     Strength = v4->Strength; /*0x75c28e*/
     v34 = (IUnknown *)v4->Image; /*0x75c295*/
@@ -10438,7 +10438,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
   }
   else
   {
-    (*(void (__stdcall **)(_DWORD *))(*(_DWORD *)this->Voxel_field_0xC + 244))(this + 10); /*0x75c276*/
+    (*(void (__stdcall **)(_DWORD *))(*(_DWORD *)this->q00C + 244))(this + 10); /*0x75c276*/
   }
   aP1a = 0; /*0x75c2aa*/
   v38[0] = aP1->field_0; /*0x75c2b3*/
@@ -10450,18 +10450,18 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     && aP1->field_8 == g_AsyncMovieState.field_8 )
   {
     v3->field_0 = aP1->field_0; /*0x75c5b7*/
-    this->Voxel_field_0x2C = aP1->field_4; /*0x75c5bc*/
-    this->__pad_030 = aP1->field_8; /*0x75c5c2*/
+    this->q02C = aP1->field_4; /*0x75c5bc*/
+    this->q030 = aP1->field_8; /*0x75c5c2*/
   }
   else
   {
-    if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 8 /*0x75c33c*/
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 9
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 7
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 11
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 25 )
+    if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 8 /*0x75c33c*/
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 9
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 7
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 11
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 25 )
     {
-      v7 = (BuildingTypeClass *)this->Voxel_field_0xC; /*0x75c342*/
+      v7 = (BuildingTypeClass *)this->q00C; /*0x75c342*/
       v8 = *(_DWORD *)&v7->DebrisTypes[656]; /*0x75c345*/
       if ( v8 ) /*0x75c34d*/
       {
@@ -10474,7 +10474,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
             aP1a = 1; /*0x75c39e*/
         }
       }
-      v11 = *(_DWORD *)(this->Voxel_field_0xC + 1444); /*0x75c3a6*/
+      v11 = *(_DWORD *)(this->q00C + 1444); /*0x75c3a6*/
       *(_DWORD *)v32 = v11; /*0x75c3ae*/
       if ( v11 ) /*0x75c3b2*/
       {
@@ -10487,7 +10487,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
             aP1a = 1; /*0x75c3fb*/
         }
       }
-      v15 = (BuildingTypeClass *)this->Voxel_field_0xC; /*0x75c400*/
+      v15 = (BuildingTypeClass *)this->q00C; /*0x75c400*/
       v16 = *(_DWORD **)&v15->DebrisTypes[656]; /*0x75c403*/
       if ( v16 ) /*0x75c40b*/
       {
@@ -10499,12 +10499,12 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
         }
       }
     }
-    v18 = *(IUnknown **)(this->Voxel_field_0xC + 732); /*0x75c439*/
+    v18 = *(IUnknown **)(this->q00C + 732); /*0x75c439*/
     if ( v18 )
     {
       if ( *(_DWORD *)&v18->__pad_2B8[32] )
       {
-        v19 = (_DWORD *)this->Voxel_field_0xC; /*0x75c44b*/
+        v19 = (_DWORD *)this->q00C; /*0x75c44b*/
         a1 = 0; /*0x75c44f*/
         Strength = 0; /*0x75c453*/
         v20 = Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x75c463*/
@@ -10512,13 +10512,13 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
         {
           v21 = v19 ? ((*(int (__thiscall **)(_DWORD *))(*v19 + 44))(v19) == 15 ? (ObjectClass *)v19 : 0) : 0;
           v22 = (IUnknown *)Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x75c49a*/
-          if ( BuildingClass::CheckBridge(*(_DWORD **)(*(_DWORD *)(this->Voxel_field_0xC + 732) + 728), v21, v22) ) /*0x75c4b0*/
+          if ( BuildingClass::CheckBridge(*(_DWORD **)(*(_DWORD *)(this->q00C + 732) + 728), v21, v22) ) /*0x75c4b0*/
             aP1a = 1; /*0x75c4b9*/
         }
       }
     }
     if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v38) + 80) & 0x100) == 0 /*0x75c513*/
-      || (v23 = (int *)(this->Voxel_field_0xC + 156),
+      || (v23 = (int *)(this->q00C + 156),
           a1 = *v23,
           Strength = v23[1],
           v24 = v23[2],
@@ -10530,19 +10530,19 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     eax39 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v38); /*0x75c53a*/
     v26 = ObjectPlacement::CalcPosition(eax39, &a1, (IUnknown *)v38, aP1a, v33, 0); /*0x75c541*/
     v3 = (IUnknown *)(this + 10); /*0x75c548*/
-    this->Voxel_field_0x28 = *v26; /*0x75c54d*/
-    this->Voxel_field_0x2C = v26[1]; /*0x75c552*/
-    v31 = (AbstractClass *)this->Voxel_field_0xC; /*0x75c55b*/
-    this->__pad_030 = v26[2]; /*0x75c562*/
+    this->q028 = *v26; /*0x75c54d*/
+    this->q02C = v26[1]; /*0x75c552*/
+    v31 = (AbstractClass *)this->q00C; /*0x75c55b*/
+    this->q030 = v26[2]; /*0x75c562*/
     eax39b = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)(this + 10)); /*0x75c565*/
     if ( !CrateClass::ProcessPickup(eax39b, v31) ) /*0x75c56c*/
     {
-      v25 = (BuildingTypeClass *)this->Voxel_field_0xC; /*0x75c575*/
+      v25 = (BuildingTypeClass *)this->q00C; /*0x75c575*/
       if ( !v25->Name[29] ) /*0x75c578*/
       {
         v3->field_0 = g_AsyncMovieState.field_0; /*0x75c58a*/
-        this->Voxel_field_0x2C = g_AsyncMovieState.field_4; /*0x75c592*/
-        this->__pad_030 = g_AsyncMovieState.field_8; /*0x75c59b*/
+        this->q02C = g_AsyncMovieState.field_4; /*0x75c592*/
+        this->q030 = g_AsyncMovieState.field_8; /*0x75c59b*/
         if ( !v25->Name[44] ) /*0x75c59e*/
           return 0; /*0x75c5b0*/
       }
@@ -10552,7 +10552,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     && v3->field_4 == g_AsyncMovieState.field_4
     && v3->field_8 == g_AsyncMovieState.field_8 )
   {
-    v27 = (BuildingTypeClass *)this->Voxel_field_0xC; /*0x75c602*/
+    v27 = (BuildingTypeClass *)this->q00C; /*0x75c602*/
     a1 = v27->Armor[0]; /*0x75c611*/
     Strength = v27->Strength; /*0x75c618*/
     v34 = (IUnknown *)v27->Image; /*0x75c61f*/
@@ -10561,7 +10561,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
   }
   else
   {
-    (*(void (__thiscall **)(_DWORD, IUnknown *))(*(_DWORD *)this->Voxel_field_0xC + 240))(this->Voxel_field_0xC, v3); /*0x75c5f1*/
+    (*(void (__thiscall **)(_DWORD, IUnknown *))(*(_DWORD *)this->q00C + 240))(this->q00C, v3); /*0x75c5f1*/
     return 1; /*0x75c5f9*/
   }
 }
@@ -11959,11 +11959,11 @@ int __thiscall WarheadTypeClass::_vt10(_DWORD *this, int a2, int a3)
   int v7; // ecx
 
   v3 = a2; /*0x75e440*/
-  if ( a2 == this->WarheadTypeClass_field_0x140 ) /*0x75e44c*/
-    this->WarheadTypeClass_field_0x140 = 0; /*0x75e44e*/
+  if ( a2 == this->q140 ) /*0x75e44c*/
+    this->q140 = 0; /*0x75e44e*/
   v4 = this + 65; /*0x75e459*/
   a2 = v3; /*0x75e463*/
-  result = (*(int (__thiscall **)(_DWORD *, int *))(this->__pad_104 + 16))(this + 65, &a2); /*0x75e46c*/
+  result = (*(int (__thiscall **)(_DWORD *, int *))(this->q104 + 16))(this + 65, &a2); /*0x75e46c*/
   if ( result != -1 ) /*0x75e472*/
   {
     v6 = v4[4]; /*0x75e474*/
@@ -12107,7 +12107,7 @@ _DWORD *__thiscall sub_75E6B0(_DWORD *this, _DWORD *a2)
   this->Items = 0; /*0x75e6bd*/
   this->Capacity = 0; /*0x75e6c0*/
   this->q030 = 1; /*0x75e6c3*/
-  this->__pad_034 = 0; /*0x75e6c7*/
+  this->q034 = 0; /*0x75e6c7*/
   *this = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x75e6ca*/
   if ( this != a2 ) /*0x75e6d0*/
   {
@@ -12122,7 +12122,7 @@ _DWORD *__thiscall sub_75E6B0(_DWORD *this, _DWORD *a2)
       {
         v5 = this->Capacity; /*0x75e6f5*/
         v6 = 0; /*0x75e6f8*/
-        this->__pad_034 = 1; /*0x75e6fc*/
+        this->q034 = 1; /*0x75e6fc*/
         if ( v5 > 0 ) /*0x75e700*/
         {
           do /*0x75e714*/
@@ -12137,7 +12137,7 @@ _DWORD *__thiscall sub_75E6B0(_DWORD *this, _DWORD *a2)
     else
     {
       this->Items = 0; /*0x75e718*/
-      this->__pad_034 = 0; /*0x75e71b*/
+      this->q034 = 0; /*0x75e71b*/
     }
   }
   this->q010 = a2[4]; /*0x75e721*/
@@ -12288,17 +12288,17 @@ WaveClass *__thiscall WaveClass::Constructor(
   int v14; // edx
 
   ObjectClass::ctor(this); /*0x75e956*/
-  this->WaveClass_field_138_e = 0; /*0x75e969*/
+  this->q138 = 0; /*0x75e969*/
   this->WaveClass_field_FC = 0; /*0x75e96f*/
   this->q02B = aP5; /*0x75e975*/
   this->WaveClass_field_D8 = a4; /*0x75e97b*/
   this->Facing = 1; /*0x75e981*/
-  this->WaveClass_field_12D_e = 0; /*0x75e988*/
+  this->q12D = 0; /*0x75e988*/
   this->WaveClass_field_F8 = (void *)100; /*0x75e98e*/
-  this->WaveClass_field_134_e = 0; /*0x75e998*/
+  this->q134 = 0; /*0x75e998*/
   this->q04F = 0; /*0x75e99e*/
   this->alignmentPadding75_3 = 0; /*0x75e9a4*/
-  this->WaveClass_field_148_e = 0; /*0x75e9aa*/
+  this->q148 = 0; /*0x75e9aa*/
   this->q053 = 0; /*0x75e9b0*/
   this->WaveClass_field_114 = 0; /*0x75e9b6*/
   this->q069 = 0; /*0x75e9bc*/
@@ -12342,14 +12342,14 @@ WaveClass *__thiscall WaveClass::Constructor(
     else
       Voxel::SectionProject(this, a1, (int)aP2); /*0x75eb29*/
     this->wasFallingDown = 0; /*0x75eb3c*/
-    this->WaveClass_field_1CC_e = (void *)CalcMathFacing8(this + 51, this + 57); /*0x75eb51*/
+    this->q1CC = (void *)CalcMathFacing8(this + 51, this + 57); /*0x75eb51*/
     WaveClass::DrawWave(this, (WaveClass *)(this + 45), 0); /*0x75eb57*/
     v10 = (int)this->WaveClass_field_D8; /*0x75eb5c*/
     if ( v10 > 0 && v10 <= 2 ) /*0x75eb69*/
     {
       v11 = this->q053; /*0x75eb6b*/
       v12 = (int)this->q037; /*0x75eb71*/
-      this->WaveClass_field_138_e = 0; /*0x75eb77*/
+      this->q138 = 0; /*0x75eb77*/
       this->q04F = (void *)1072693248; /*0x75eb7d*/
       this->WaveClass_field_120 = (void *)160; /*0x75eb87*/
       *v11 = v12; /*0x75eb91*/
@@ -12588,24 +12588,24 @@ int __thiscall sub_75F140(_DWORD *this)
   int result; // eax
 
   v2 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887314] + 116))(MEMORY[0x887314]) >> 1; /*0x75f14e*/
-  this->WaveClass_field_1AC_e = -v2; /*0x75f159*/
-  this->WaveClass_field_1B0_e = 1 - v2; /*0x75f164*/
-  this->WaveClass_field_1B8_e = v2 + 1; /*0x75f16a*/
-  this->WaveClass_field_1BC_e = v2; /*0x75f176*/
-  this->WaveClass_field_1C0_e = v2 - 1; /*0x75f17c*/
-  v3 = this->WaveClass_field_1CC_e; /*0x75f182*/
+  this->q1AC = -v2; /*0x75f159*/
+  this->q1B0 = 1 - v2; /*0x75f164*/
+  this->q1B8 = v2 + 1; /*0x75f16a*/
+  this->q1BC = v2; /*0x75f176*/
+  this->q1C0 = v2 - 1; /*0x75f17c*/
+  v3 = this->q1CC; /*0x75f182*/
   v4 = -1 - v2; /*0x75f188*/
-  this->__pad_208 = 0; /*0x75f18c*/
+  this->q208 = 0; /*0x75f18c*/
   this->WaveClass_field_12F = 0; /*0x75f192*/
   v5 = this + v3 + 107; /*0x75f198*/
-  this->WaveClass_field_1B4_e = 1; /*0x75f19f*/
-  this->WaveClass_field_1C4_e = -1; /*0x75f1a9*/
-  this->WaveClass_field_1C8_e = v4; /*0x75f1b3*/
+  this->q1B4 = 1; /*0x75f19f*/
+  this->q1C4 = -1; /*0x75f1a9*/
+  this->q1C8 = v4; /*0x75f1b3*/
   this->WaveIntensity = *v5; /*0x75f1bb*/
   this->q214 = *v5; /*0x75f1c3*/
-  this->__pad_218 = *v5; /*0x75f1cb*/
+  this->q218 = *v5; /*0x75f1cb*/
   this->q21C = *v5; /*0x75f1d3*/
-  this->__pad_220 = *v5; /*0x75f1db*/
+  this->q220 = *v5; /*0x75f1db*/
   this->q089 = 2 * *v5; /*0x75f1e5*/
   this->q08A = 2 * *v5; /*0x75f1ef*/
   this->q08B = 2 * *v5; /*0x75f1f9*/
@@ -12750,7 +12750,7 @@ char __thiscall Voxel::renderSection(_DWORD *this, ObjectClass *aP1)
   ObjectClass *v8; // edx
 
   v3 = (ObjectClass *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)aP1->__pad_0); /*0x75f4cd*/
-  v4 = this->__pad_7C0; /*0x75f4d2*/
+  v4 = this->q7C0; /*0x75f4d2*/
   v5 = this + 124; /*0x75f4d8*/
   aP1 = v3; /*0x75f4de*/
   v6 = (*(int (__thiscall **)(_DWORD *, ObjectClass **))(v4 + 16))(v5, &aP1); /*0x75f4e9*/

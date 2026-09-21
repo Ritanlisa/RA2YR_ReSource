@@ -2878,7 +2878,7 @@ int __thiscall ComStreamClass::ddtor(CNetUtilEventSink *this)
 // ==== 0x007A41A0  CChatEventSink::System_Init_7A41A0  this=CChatEventSink  sig=csp ====
 char *__thiscall sub_7A41A0(char *this)
 {
-  this->CChatEventSink_field_0x04 = 0; /*0x7a41a6*/
+  this->q004 = 0; /*0x7a41a6*/
   InitializeCriticalSection((LPCRITICAL_SECTION)(this + 8)); /*0x7a41ae*/
   *(_DWORD *)this = &CChatEventSink::`vftable'; /*0x7a41b4*/
   return this; /*0x7a41bc*/
@@ -8626,7 +8626,7 @@ char __thiscall DynamicClass::Insert(int *this, HashTable *aP1, IUnknown *aP2)
   v5 = *this; /*0x7aca09*/
   if ( (int)aP2 > v5 ) /*0x7aca0f*/
     v4 = v5; /*0x7aca11*/
-  v6 = this->HashTable_field_0x04; /*0x7aca13*/
+  v6 = this->q004; /*0x7aca13*/
   if ( v4 >= v6 && v5 >= v6 ) /*0x7aca20*/
   {
     v7 = 2 * v5; /*0x7aca22*/
@@ -8640,14 +8640,14 @@ char __thiscall DynamicClass::Insert(int *this, HashTable *aP1, IUnknown *aP2)
     v9 = (CCINIClass *)__2_YAPAXI_Z(108 * v7); /*0x7aca49*/
     memset(v9, 0, (unsigned int)v8); /*0x7aca54*/
     v17 = (int)v9; /*0x7aca5e*/
-    v10 = (CCINIClass *)this->HashTable_field_0x08; /*0x7aca64*/
+    v10 = (CCINIClass *)this->q008; /*0x7aca64*/
     if ( v10 ) /*0x7aca69*/
       qmemcpy(v9, v10, 108 * *this); /*0x7aca7d*/
-    __3_YAXPAX_Z((void *)this->HashTable_field_0x08); /*0x7aca8a*/
-    this->HashTable_field_0x08 = v17; /*0x7aca9a*/
-    this->HashTable_field_0x04 = aP2a; /*0x7aca9d*/
+    __3_YAXPAX_Z((void *)this->q008); /*0x7aca8a*/
+    this->q008 = v17; /*0x7aca9a*/
+    this->q004 = aP2a; /*0x7aca9d*/
   }
-  if ( *this >= this->HashTable_field_0x04 ) /*0x7acaa7*/
+  if ( *this >= this->q004 ) /*0x7acaa7*/
   {
     v11 = 2 * *this; /*0x7acaa9*/
     aP2b = v11; /*0x7acaae*/
@@ -8660,16 +8660,16 @@ char __thiscall DynamicClass::Insert(int *this, HashTable *aP1, IUnknown *aP2)
     v13 = (CCINIClass *)__2_YAPAXI_Z(108 * v11); /*0x7acacf*/
     memset(v13, 0, (unsigned int)v12); /*0x7acada*/
     v18 = (int)v13; /*0x7acae4*/
-    v14 = (CCINIClass *)this->HashTable_field_0x08; /*0x7acaea*/
+    v14 = (CCINIClass *)this->q008; /*0x7acaea*/
     if ( v14 ) /*0x7acaef*/
       qmemcpy(v13, v14, 108 * *this); /*0x7acb03*/
-    __3_YAXPAX_Z((void *)this->HashTable_field_0x08); /*0x7acb10*/
-    this->HashTable_field_0x08 = v18; /*0x7acb20*/
-    this->HashTable_field_0x04 = aP2b; /*0x7acb23*/
+    __3_YAXPAX_Z((void *)this->q008); /*0x7acb10*/
+    this->q008 = v18; /*0x7acb20*/
+    this->q004 = aP2b; /*0x7acb23*/
   }
   if ( v4 < *this ) /*0x7acb2a*/
-    memcpy((void *)(this->HashTable_field_0x08 + 36 * (3 * v4 + 3)), (const void *)(this->HashTable_field_0x08 + 108 * v4), 108 * *this - 108 * v4); /*0x7acb53*/
-  v15 = (HashTable *)(this->HashTable_field_0x08 + 108 * v4); /*0x7acb65*/
+    memcpy((void *)(this->q008 + 36 * (3 * v4 + 3)), (const void *)(this->q008 + 108 * v4), 108 * *this - 108 * v4); /*0x7acb53*/
+  v15 = (HashTable *)(this->q008 + 108 * v4); /*0x7acb65*/
   if ( v15 ) /*0x7acb6a*/
     qmemcpy(v15, aP1, 0x6Cu); /*0x7acb75*/
   ++*this; /*0x7acb7c*/
@@ -8783,7 +8783,7 @@ int __thiscall WOL_CleanupArray(int *this)
 
   for ( i = 0; i < *this; ++i ) /*0x7acd39*/
   {
-    DeleteAndZero((void **)(this->__pad_008 + 4 * i)); /*0x7acd41*/
+    DeleteAndZero((void **)(this->q008 + 4 * i)); /*0x7acd41*/
     result = *this; /*0x7acd46*/
   }
   *this = 0; /*0x7acd4d*/
@@ -8811,14 +8811,14 @@ char __thiscall DynamicArray_Remove(void *this, int a2)
     v5 = 0; /*0x7acd7a*/
   if ( v5 >= v3 ) /*0x7acd7e*/
     v5 = v3 - 1; /*0x7acd80*/
-  DeleteAndZero((void **)(4 * v5 + this->DynamicArray_field_0x08)); /*0x7acd8f*/
+  DeleteAndZero((void **)(4 * v5 + this->q008)); /*0x7acd8f*/
   memcpy( /*0x7acdb0*/
-    (void *)(this->DynamicArray_field_0x08 + 4 * v5),
-    (const void *)(this->DynamicArray_field_0x08 + 4 * (v5 + 1)),
+    (void *)(this->q008 + 4 * v5),
+    (const void *)(this->q008 + 4 * (v5 + 1)),
     4 * (*(_DWORD *)this + 0x3FFFFFFF * (v5 + 1)));
   v6 = *(_DWORD *)this - 1; /*0x7acdbb*/
   *(_DWORD *)this = v6; /*0x7acdbd*/
-  v7 = this->DynamicArray_field_0x04; /*0x7acdbf*/
+  v7 = this->q004; /*0x7acdbf*/
   if ( 3 * v6 <= v7 ) /*0x7acdc7*/
   {
     v8 = v7 / 2; /*0x7acdd0*/
@@ -8827,13 +8827,13 @@ char __thiscall DynamicArray_Remove(void *this, int a2)
     if ( v8 < v7 ) /*0x7acdde*/
     {
       v9 = __2_YAPAXI_Z(4 * v8); /*0x7acde8*/
-      v10 = (const void *)this->DynamicArray_field_0x08; /*0x7acded*/
+      v10 = (const void *)this->q008; /*0x7acded*/
       v11 = v9; /*0x7acdf5*/
       if ( v10 ) /*0x7acdf9*/
         qmemcpy(v9, v10, 4 * *(_DWORD *)this); /*0x7ace07*/
       __3_YAXPAX_Z(*((void **)this + 2)); /*0x7ace14*/
-      this->DynamicArray_field_0x08 = v11; /*0x7ace20*/
-      this->DynamicArray_field_0x04 = v8; /*0x7ace23*/
+      this->q008 = v11; /*0x7ace20*/
+      this->q004 = v8; /*0x7ace23*/
     }
   }
   return 1; /*0x7acd6b*/
@@ -8870,7 +8870,7 @@ unsigned int __thiscall HashTable_CleanupAndResize(_DWORD *this)
   int v16; // eax
   int *v17; // [esp+10h] [ebp-4h]
 
-  for ( i = 0; i < this->HashTable_field_0x08; *(_DWORD *)(*this + 4 * i - 4) = 0 ) /*0x7ace67*/
+  for ( i = 0; i < this->q008; *(_DWORD *)(*this + 4 * i - 4) = 0 ) /*0x7ace67*/
   {
     v3 = *(_DWORD *)(*this + 4 * i); /*0x7ace72*/
     while ( v3 ) /*0x7ace77*/
@@ -8882,21 +8882,21 @@ unsigned int __thiscall HashTable_CleanupAndResize(_DWORD *this)
     }
     ++i; /*0x7ace98*/
   }
-  result = this->HashTable_field_0x30; /*0x7acea8*/
-  v6 = this->HashTable_field_0x08; /*0x7aceab*/
-  for ( this->HashTable_field_0x04 = 0; v6 > result; v6 = this->HashTable_field_0x08 ) /*0x7aceb7*/
+  result = this->q030; /*0x7acea8*/
+  v6 = this->q008; /*0x7aceab*/
+  for ( this->q004 = 0; v6 > result; v6 = this->q008 ) /*0x7aceb7*/
   {
-    if ( this->HashTable_field_0x50 ) /*0x7acebd*/
+    if ( this->q050 ) /*0x7acebd*/
       break; /*0x7acec2*/
     if ( v6 > result ) /*0x7aceca*/
     {
-      v7 = this->HashTable_field_0x0C; /*0x7aced0*/
+      v7 = this->q00C; /*0x7aced0*/
       v8 = (int *)*this; /*0x7aced3*/
       v17 = (int *)*this; /*0x7aced7*/
-      this->HashTable_field_0x08 = v6 >> 1; /*0x7acede*/
-      this->HashTable_field_0x0C = v7 - 1; /*0x7acee8*/
+      this->q008 = v6 >> 1; /*0x7acede*/
+      this->q00C = v7 - 1; /*0x7acee8*/
       v9 = __2_YAPAXI_Z(4 * (v6 >> 1)); /*0x7acef4*/
-      v10 = 4 * this->HashTable_field_0x08; /*0x7acef9*/
+      v10 = 4 * this->q008; /*0x7acef9*/
       *this = v9; /*0x7acf00*/
       memset(v9, 0, v10); /*0x7acf05*/
       if ( (int)v6 > 0 ) /*0x7acf10*/
@@ -8910,7 +8910,7 @@ unsigned int __thiscall HashTable_CleanupAndResize(_DWORD *this)
           {
             do /*0x7acf42*/
             {
-              v14 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v13) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7acf2c*/
+              v14 = ((int (__thiscall *)(int))this->q018)(v13) & ((1 << this->q00C) - 1); /*0x7acf2c*/
               v15 = *(_DWORD *)(*this + 4 * v14); /*0x7acf30*/
               *(_DWORD *)(*this + 4 * v14) = v13; /*0x7acf36*/
               v16 = *(_DWORD *)(v13 + 8); /*0x7acf38*/
@@ -8927,7 +8927,7 @@ unsigned int __thiscall HashTable_CleanupAndResize(_DWORD *this)
       }
       __3_YAXPAX_Z(v8); /*0x7acf4f*/
     }
-    result = this->HashTable_field_0x30; /*0x7acf57*/
+    result = this->q030; /*0x7acf57*/
   }
   return result; /*0x7acf65*/
 }
@@ -8953,7 +8953,7 @@ unsigned int __thiscall HashTable_Rebuild(_DWORD *this)
   int v16; // eax
   int *v17; // [esp+10h] [ebp-4h]
 
-  for ( i = 0; i < this->HashTable_field_0x08; *(_DWORD *)(*this + 4 * i - 4) = 0 ) /*0x7acf77*/
+  for ( i = 0; i < this->q008; *(_DWORD *)(*this + 4 * i - 4) = 0 ) /*0x7acf77*/
   {
     v3 = *(_DWORD *)(*this + 4 * i); /*0x7acf82*/
     while ( v3 ) /*0x7acf87*/
@@ -8965,21 +8965,21 @@ unsigned int __thiscall HashTable_Rebuild(_DWORD *this)
     }
     ++i; /*0x7acfab*/
   }
-  result = this->HashTable_field_0x30; /*0x7acfbb*/
-  v6 = this->HashTable_field_0x08; /*0x7acfbe*/
-  for ( this->HashTable_field_0x04 = 0; v6 > result; v6 = this->HashTable_field_0x08 ) /*0x7acfca*/
+  result = this->q030; /*0x7acfbb*/
+  v6 = this->q008; /*0x7acfbe*/
+  for ( this->q004 = 0; v6 > result; v6 = this->q008 ) /*0x7acfca*/
   {
-    if ( this->HashTable_field_0x50 ) /*0x7acfd0*/
+    if ( this->q050 ) /*0x7acfd0*/
       break; /*0x7acfd5*/
     if ( v6 > result ) /*0x7acfdd*/
     {
-      v7 = this->HashTable_field_0x0C; /*0x7acfe3*/
+      v7 = this->q00C; /*0x7acfe3*/
       v8 = (int *)*this; /*0x7acfe6*/
       v17 = (int *)*this; /*0x7acfea*/
-      this->HashTable_field_0x08 = v6 >> 1; /*0x7acff1*/
-      this->HashTable_field_0x0C = v7 - 1; /*0x7acffb*/
+      this->q008 = v6 >> 1; /*0x7acff1*/
+      this->q00C = v7 - 1; /*0x7acffb*/
       v9 = __2_YAPAXI_Z(4 * (v6 >> 1)); /*0x7ad007*/
-      v10 = 4 * this->HashTable_field_0x08; /*0x7ad00c*/
+      v10 = 4 * this->q008; /*0x7ad00c*/
       *this = v9; /*0x7ad013*/
       memset(v9, 0, v10); /*0x7ad018*/
       if ( (int)v6 > 0 ) /*0x7ad023*/
@@ -8993,7 +8993,7 @@ unsigned int __thiscall HashTable_Rebuild(_DWORD *this)
           {
             do /*0x7ad05b*/
             {
-              v14 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v13) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7ad03f*/
+              v14 = ((int (__thiscall *)(int))this->q018)(v13) & ((1 << this->q00C) - 1); /*0x7ad03f*/
               v15 = *(_DWORD *)(*this + 4 * v14); /*0x7ad043*/
               *(_DWORD *)(*this + 4 * v14) = v13; /*0x7ad049*/
               v16 = *(_DWORD *)(v13 + 272); /*0x7ad04b*/
@@ -9010,7 +9010,7 @@ unsigned int __thiscall HashTable_Rebuild(_DWORD *this)
       }
       __3_YAXPAX_Z(v8); /*0x7ad068*/
     }
-    result = this->HashTable_field_0x30; /*0x7ad070*/
+    result = this->q030; /*0x7ad070*/
   }
   return result; /*0x7ad07e*/
 }
@@ -9157,7 +9157,7 @@ char __thiscall WonlineStringDialogControl_12_::sub_7AD210(void *this, int a2, _
       return 0; /*0x7ad2ba*/
     if ( this->Items ) /*0x7ad248*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x7ad24f*/
+      v5 = this->q008; /*0x7ad24f*/
       if ( a2 < v5 ) /*0x7ad254*/
         v5 = a2; /*0x7ad256*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x7ad25c*/
@@ -9169,14 +9169,14 @@ char __thiscall WonlineStringDialogControl_12_::sub_7AD210(void *this, int a2, _
       }
     }
     this->Items = v4; /*0x7ad28a*/
-    this->DynamicVector_field_0x8 = a2; /*0x7ad292*/
+    this->q008 = a2; /*0x7ad292*/
     this->IsAllocated = a3 == 0; /*0x7ad295*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x7ad29e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x7ad2a1*/
+  v7 = this->q008; /*0x7ad2a1*/
   if ( v7 < this->Items ) /*0x7ad2a9*/
     this->Items = v7; /*0x7ad2ab*/
   return 1; /*0x7ad2ae*/
@@ -9483,7 +9483,7 @@ char __thiscall Array::InsertElement(int *this, const void *a1, ObjectClass *aP2
     aP2 = (ObjectClass *)v5; /*0x7ad7a0*/
     v4 = v5; /*0x7ad7a4*/
   }
-  v6 = this->Array_field_0x4; /*0x7ad7a6*/
+  v6 = this->q004; /*0x7ad7a6*/
   if ( v4 >= v6 && v5 >= v6 ) /*0x7ad7b4*/
   {
     v7 = 2 * v5; /*0x7ad7b6*/
@@ -9492,16 +9492,16 @@ char __thiscall Array::InsertElement(int *this, const void *a1, ObjectClass *aP2
     v8 = (CCINIClass *)__2_YAPAXI_Z(268 * v7); /*0x7ad7d7*/
     memset(v8, 0, 4 * ((unsigned int)(268 * v7) >> 2)); /*0x7ad7e2*/
     v16 = (int)v8; /*0x7ad7ec*/
-    v9 = (CCINIClass *)this->__pad_008; /*0x7ad7f2*/
+    v9 = (CCINIClass *)this->q008; /*0x7ad7f2*/
     if ( v9 ) /*0x7ad7f7*/
       qmemcpy(v8, v9, 268 * *this); /*0x7ad80f*/
-    __3_YAXPAX_Z((void *)this->__pad_008); /*0x7ad81c*/
+    __3_YAXPAX_Z((void *)this->q008); /*0x7ad81c*/
     v4 = (int)aP2; /*0x7ad825*/
-    this->__pad_008 = v16; /*0x7ad82c*/
-    this->Array_field_0x4 = v7; /*0x7ad82f*/
+    this->q008 = v16; /*0x7ad82c*/
+    this->q004 = v7; /*0x7ad82f*/
   }
   v10 = *this; /*0x7ad832*/
-  if ( *this >= this->Array_field_0x4 ) /*0x7ad839*/
+  if ( *this >= this->q004 ) /*0x7ad839*/
   {
     v11 = 2 * v10; /*0x7ad83b*/
     if ( 2 * v10 < 10 ) /*0x7ad841*/
@@ -9509,17 +9509,17 @@ char __thiscall Array::InsertElement(int *this, const void *a1, ObjectClass *aP2
     v12 = (CCINIClass *)__2_YAPAXI_Z(268 * v11); /*0x7ad85c*/
     memset(v12, 0, 4 * ((unsigned int)(268 * v11) >> 2)); /*0x7ad867*/
     v17 = (int)v12; /*0x7ad871*/
-    v13 = (CCINIClass *)this->__pad_008; /*0x7ad877*/
+    v13 = (CCINIClass *)this->q008; /*0x7ad877*/
     if ( v13 ) /*0x7ad87c*/
       qmemcpy(v12, v13, 268 * *this); /*0x7ad894*/
-    __3_YAXPAX_Z((void *)this->__pad_008); /*0x7ad8a1*/
+    __3_YAXPAX_Z((void *)this->q008); /*0x7ad8a1*/
     v4 = (int)aP2; /*0x7ad8aa*/
-    this->__pad_008 = v17; /*0x7ad8b1*/
-    this->Array_field_0x4 = v11; /*0x7ad8b4*/
+    this->q008 = v17; /*0x7ad8b1*/
+    this->q004 = v11; /*0x7ad8b4*/
   }
   if ( v4 < *this ) /*0x7ad8bc*/
-    memcpy((void *)(this->__pad_008 + 268 * (v4 + 1)), (const void *)(this->__pad_008 + 268 * v4), 268 * *this - 268 * v4); /*0x7ad8f2*/
-  v14 = (void *)(this->__pad_008 + 268 * v4); /*0x7ad907*/
+    memcpy((void *)(this->q008 + 268 * (v4 + 1)), (const void *)(this->q008 + 268 * v4), 268 * *this - 268 * v4); /*0x7ad8f2*/
+  v14 = (void *)(this->q008 + 268 * v4); /*0x7ad907*/
   if ( v14 ) /*0x7ad90c*/
     qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
   ++*this; /*0x7ad91e*/
@@ -9538,7 +9538,7 @@ char __thiscall sub_7AD930(int *this)
   int v8; // [esp+8h] [ebp-4h]
 
   v2 = *this; /*0x7ad935*/
-  v3 = this->CChatEventSink_field_0x04; /*0x7ad938*/
+  v3 = this->q004; /*0x7ad938*/
   if ( 3 * v2 > v3 ) /*0x7ad940*/
     return 0; /*0x7ad943*/
   v5 = v3 / 2; /*0x7ad94f*/
@@ -9547,13 +9547,13 @@ char __thiscall sub_7AD930(int *this)
   if ( v5 >= v3 ) /*0x7ad95d*/
     return 0; /*0x7ad960*/
   v6 = __2_YAPAXI_Z(268 * v5); /*0x7ad974*/
-  v7 = (const void *)this->CChatEventSink_field_0x08; /*0x7ad979*/
+  v7 = (const void *)this->q008; /*0x7ad979*/
   v8 = (int)v6; /*0x7ad981*/
   if ( v7 ) /*0x7ad985*/
     qmemcpy(v6, v7, 268 * *this); /*0x7ad99f*/
-  __3_YAXPAX_Z((void *)this->CChatEventSink_field_0x08); /*0x7ad9ad*/
-  this->CChatEventSink_field_0x08 = v8; /*0x7ad9b9*/
-  this->CChatEventSink_field_0x04 = v5; /*0x7ad9bc*/
+  __3_YAXPAX_Z((void *)this->q008); /*0x7ad9ad*/
+  this->q008 = v8; /*0x7ad9b9*/
+  this->q004 = v5; /*0x7ad9bc*/
   return 1; /*0x7ad942*/
 }
 
@@ -9567,7 +9567,7 @@ char __thiscall DynamicArray_Grow(void *this)
   const void *v6; // esi
   int v7; // [esp+4h] [ebp-4h]
 
-  if ( *(_DWORD *)this < this->DynamicArray_field_0x04 ) /*0x7ad9db*/
+  if ( *(_DWORD *)this < this->q004 ) /*0x7ad9db*/
     return 0; /*0x7ad9dd*/
   v3 = 2 * *(_DWORD *)this; /*0x7ad9e2*/
   v7 = v3; /*0x7ad9e7*/
@@ -9579,12 +9579,12 @@ char __thiscall DynamicArray_Grow(void *this)
   v4 = 108 * v3; /*0x7ada02*/
   v5 = __2_YAPAXI_Z(108 * v3); /*0x7ada0d*/
   memset(v5, 0, v4); /*0x7ada1b*/
-  v6 = (const void *)this->DynamicArray_field_0x08; /*0x7ada24*/
+  v6 = (const void *)this->q008; /*0x7ada24*/
   if ( v6 ) /*0x7ada29*/
     qmemcpy(v5, v6, 108 * *(_DWORD *)this); /*0x7ada3d*/
   __3_YAXPAX_Z(*((void **)this + 2)); /*0x7ada4a*/
-  this->DynamicArray_field_0x08 = v5; /*0x7ada56*/
-  this->DynamicArray_field_0x04 = v7; /*0x7ada59*/
+  this->q008 = v5; /*0x7ada56*/
+  this->q004 = v7; /*0x7ada59*/
   return 1; /*0x7ad9df*/
 }
 
@@ -9600,7 +9600,7 @@ char __thiscall sub_7ADA70(int *this)
   int v8; // [esp+8h] [ebp-4h]
 
   v2 = *this; /*0x7ada75*/
-  v3 = this->WOLGameList_field_0x04; /*0x7ada78*/
+  v3 = this->q004; /*0x7ada78*/
   if ( 3 * v2 > v3 ) /*0x7ada80*/
     return 0; /*0x7ada83*/
   v5 = v3 / 2; /*0x7ada8f*/
@@ -9609,13 +9609,13 @@ char __thiscall sub_7ADA70(int *this)
   if ( v5 >= v3 ) /*0x7ada9d*/
     return 0; /*0x7adaa0*/
   v6 = __2_YAPAXI_Z(108 * v5); /*0x7adab0*/
-  v7 = (const void *)this->WOLGameList_field_0x08; /*0x7adab5*/
+  v7 = (const void *)this->q008; /*0x7adab5*/
   v8 = (int)v6; /*0x7adabd*/
   if ( v7 ) /*0x7adac1*/
     qmemcpy(v6, v7, 108 * *this); /*0x7adad7*/
-  __3_YAXPAX_Z((void *)this->WOLGameList_field_0x08); /*0x7adae5*/
-  this->WOLGameList_field_0x08 = v8; /*0x7adaf1*/
-  this->WOLGameList_field_0x04 = v5; /*0x7adaf4*/
+  __3_YAXPAX_Z((void *)this->q008); /*0x7adae5*/
+  this->q008 = v8; /*0x7adaf1*/
+  this->q004 = v5; /*0x7adaf4*/
   return 1; /*0x7ada82*/
 }
 
@@ -9702,9 +9702,9 @@ bool __thiscall HashTable_LookupString(_DWORD *this, const char **a2, _DWORD *a3
   bool result; // al
   int v4; // esi
 
-  if ( !this->HashTable_field_0x04 ) /*0x7adc64*/
+  if ( !this->q004 ) /*0x7adc64*/
     return 0; /*0x7adc6c*/
-  v4 = *(_DWORD *)(*this + 4 * (((int (__thiscall *)(const char **))this->HashTable_field_0x18)(a2) & ((1 << this->HashTable_field_0x0C) - 1))); /*0x7adc8a*/
+  v4 = *(_DWORD *)(*this + 4 * (((int (__thiscall *)(const char **))this->q018)(a2) & ((1 << this->q00C) - 1))); /*0x7adc8a*/
   if ( !v4 ) /*0x7adc8f*/
     return 0; /*0x7adc92*/
   while ( 1 ) /*0x7adc9b*/
@@ -9760,11 +9760,11 @@ char __thiscall HashTable::Insert(_DWORD *this, ObjectClass *aP1, void *a2)
   AbstractClass *a2a; // [esp+24h] [ebp+8h]
   AbstractClass *a2b; // [esp+24h] [ebp+8h]
 
-  v4 = this->HashTable_field_0x04; /*0x7adcdb*/
+  v4 = this->q004; /*0x7adcdb*/
   if ( !v4 ) /*0x7adce0*/
     return 0; /*0x7adce5*/
-  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->HashTable_field_0x08; /*0x7add10*/
-  v7 = ((int (__thiscall *)(ObjectClass *))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7add25*/
+  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->q008; /*0x7add10*/
+  v7 = ((int (__thiscall *)(ObjectClass *))this->q018)(aP1) & ((1 << this->q00C) - 1); /*0x7add25*/
   v8 = *(_DWORD *)(*this + 4 * v7); /*0x7add27*/
   v36 = (ObjectClass *)v8; /*0x7add2c*/
   if ( !v8 ) /*0x7add30*/
@@ -9782,19 +9782,19 @@ char __thiscall HashTable::Insert(_DWORD *this, ObjectClass *aP1, void *a2)
     *(_DWORD *)(*this + 4 * v7) = v10; /*0x7add80*/
     v11 = v37 < *((double *)this + 4); /*0x7add86*/
     v12 = v37 == *((double *)this + 4); /*0x7add86*/
-    --this->HashTable_field_0x04; /*0x7add8a*/
+    --this->q004; /*0x7add8a*/
     if ( v11 || v12 ) /*0x7add8f*/
     {
-      v13 = this->HashTable_field_0x08; /*0x7add98*/
-      if ( v13 > this->HashTable_field_0x30 && this->HashTable_field_0x50 != 1 ) /*0x7addaa*/
+      v13 = this->q008; /*0x7add98*/
+      if ( v13 > this->q030 && this->q050 != 1 ) /*0x7addaa*/
       {
         v14 = (AbstractClass *)*this; /*0x7addb3*/
         a2a = (AbstractClass *)*this; /*0x7addb8*/
-        v15 = this->HashTable_field_0x0C - 1; /*0x7addbe*/
-        this->HashTable_field_0x08 = v13 >> 1; /*0x7addbf*/
-        this->HashTable_field_0x0C = v15; /*0x7addc9*/
+        v15 = this->q00C - 1; /*0x7addbe*/
+        this->q008 = v13 >> 1; /*0x7addbf*/
+        this->q00C = v15; /*0x7addc9*/
         v16 = (void *)__2_YAPAXI_Z(4 * (v13 >> 1)); /*0x7addd5*/
-        v17 = 4 * this->HashTable_field_0x08; /*0x7addda*/
+        v17 = 4 * this->q008; /*0x7addda*/
         *this = v16; /*0x7adde1*/
         memset(v16, 0, v17); /*0x7adde7*/
         if ( (int)v13 > 0 ) /*0x7addf2*/
@@ -9808,7 +9808,7 @@ char __thiscall HashTable::Insert(_DWORD *this, ObjectClass *aP1, void *a2)
             {
               do /*0x7ade25*/
               {
-                v21 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v20) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7ade0e*/
+                v21 = ((int (__thiscall *)(int))this->q018)(v20) & ((1 << this->q00C) - 1); /*0x7ade0e*/
                 v22 = *(_DWORD *)(*this + 4 * v21); /*0x7ade13*/
                 *(_DWORD *)(*this + 4 * v21) = v20; /*0x7ade19*/
                 v23 = *(_DWORD *)(v20 + 112); /*0x7ade1b*/
@@ -9843,7 +9843,7 @@ char __thiscall HashTable::Insert(_DWORD *this, ObjectClass *aP1, void *a2)
       }
       qmemcpy(a2, &v24->__pad_0[4], 0x6Cu); /*0x7ade7b*/
       v36->estimatedHealth = v24->estimatedHealth; /*0x7ade80*/
-      --this->HashTable_field_0x04; /*0x7ade89*/
+      --this->q004; /*0x7ade89*/
       DeleteAndZero((void **)v24); /*0x7ade90*/
       __3_YAXPAX_Z(v24); /*0x7ade96*/
       aP1a = 1; /*0x7ade9e*/
@@ -9851,16 +9851,16 @@ char __thiscall HashTable::Insert(_DWORD *this, ObjectClass *aP1, void *a2)
 LABEL_24:
     if ( v37 <= *((double *)this + 4) ) /*0x7adeaf*/
     {
-      v25 = this->HashTable_field_0x08; /*0x7adeb5*/
-      if ( v25 > this->HashTable_field_0x30 && this->HashTable_field_0x50 != 1 ) /*0x7adec7*/
+      v25 = this->q008; /*0x7adeb5*/
+      if ( v25 > this->q030 && this->q050 != 1 ) /*0x7adec7*/
       {
-        v26 = this->HashTable_field_0x0C; /*0x7adecd*/
+        v26 = this->q00C; /*0x7adecd*/
         v27 = (AbstractClass *)*this; /*0x7aded0*/
         a2b = (AbstractClass *)*this; /*0x7aded5*/
-        this->HashTable_field_0x08 = v25 >> 1; /*0x7adedb*/
-        this->HashTable_field_0x0C = v26 - 1; /*0x7adee3*/
+        this->q008 = v25 >> 1; /*0x7adedb*/
+        this->q00C = v26 - 1; /*0x7adee3*/
         v28 = (AbstractClass *)__2_YAPAXI_Z(4 * (v25 >> 1)); /*0x7adeee*/
-        v29 = 4 * this->HashTable_field_0x08; /*0x7adef3*/
+        v29 = 4 * this->q008; /*0x7adef3*/
         *this = v28; /*0x7adefa*/
         memset(v28, 0, v29); /*0x7adf00*/
         if ( (int)v25 > 0 ) /*0x7adf0b*/
@@ -9874,7 +9874,7 @@ LABEL_24:
             {
               do /*0x7adf3e*/
               {
-                v33 = ((int (__thiscall *)(ObjectClass *))this->HashTable_field_0x18)(v32) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7adf27*/
+                v33 = ((int (__thiscall *)(ObjectClass *))this->q018)(v32) & ((1 << this->q00C) - 1); /*0x7adf27*/
                 v34 = *(_DWORD *)(*this + 4 * v33); /*0x7adf2c*/
                 *(_DWORD *)(*this + 4 * v33) = v32; /*0x7adf32*/
                 v35 = (ObjectClass *)v32->estimatedHealth; /*0x7adf34*/
@@ -9913,16 +9913,16 @@ void __thiscall HashMap_Shrink2(_DWORD *this)
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = this->HashMap_field_0x08; /*0x7adf75*/
-  if ( v2 > this->HashMap_field_0x0C && *((_BYTE *)this + 20) != 1 ) /*0x7adf87*/
+  v2 = this->q008; /*0x7adf75*/
+  if ( v2 > this->q00C && *((_BYTE *)this + 20) != 1 ) /*0x7adf87*/
   {
     v3 = (int *)*this; /*0x7adf90*/
-    v4 = this->HashMap_field_0x0C; /*0x7adf93*/
+    v4 = this->q00C; /*0x7adf93*/
     v13 = (int *)*this; /*0x7adf96*/
-    this->HashMap_field_0x08 = v2 >> 1; /*0x7adf9c*/
-    this->HashMap_field_0x0C = v4 - 1; /*0x7adfa4*/
+    this->q008 = v2 >> 1; /*0x7adf9c*/
+    this->q00C = v4 - 1; /*0x7adfa4*/
     v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7adfaf*/
-    v6 = 4 * this->HashMap_field_0x08; /*0x7adfb4*/
+    v6 = 4 * this->q008; /*0x7adfb4*/
     *this = v5; /*0x7adfbb*/
     memset(v5, 0, v6); /*0x7adfc0*/
     if ( (int)v2 > 0 ) /*0x7adfcb*/
@@ -9936,7 +9936,7 @@ void __thiscall HashMap_Shrink2(_DWORD *this)
         {
           do /*0x7adffd*/
           {
-            v10 = ((int (__thiscall *)(int))this->q006)(v9) & ((1 << this->HashMap_field_0x0C) - 1); /*0x7adfe7*/
+            v10 = ((int (__thiscall *)(int))this->q006)(v9) & ((1 << this->q00C) - 1); /*0x7adfe7*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x7adfeb*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7adff1*/
             v12 = *(_DWORD *)(v9 + 112); /*0x7adff3*/
@@ -9972,16 +9972,16 @@ void __thiscall sub_7AE020(_DWORD *this)
   int v12; // eax
   _DWORD *v13; // [esp+4h] [ebp-4h]
 
-  if ( this->__pad_014 != 1 ) /*0x7ae028*/
+  if ( this->q014 != 1 ) /*0x7ae028*/
   {
-    v2 = this->WOLGameList_field_0x08; /*0x7ae030*/
+    v2 = this->q008; /*0x7ae030*/
     v3 = (_DWORD *)*this; /*0x7ae033*/
-    v4 = this->WOLGameList_field_0x0C + 1; /*0x7ae03c*/
-    this->WOLGameList_field_0x08 = 2 * v2; /*0x7ae03d*/
+    v4 = this->q00C + 1; /*0x7ae03c*/
+    this->q008 = 2 * v2; /*0x7ae03d*/
     v13 = v3; /*0x7ae040*/
-    this->WOLGameList_field_0x0C = v4; /*0x7ae048*/
+    this->q00C = v4; /*0x7ae048*/
     v5 = __2_YAPAXI_Z(8 * v2); /*0x7ae053*/
-    v6 = 4 * this->WOLGameList_field_0x08; /*0x7ae058*/
+    v6 = 4 * this->q008; /*0x7ae058*/
     *this = v5; /*0x7ae05f*/
     memset(v5, 0, v6); /*0x7ae064*/
     if ( v2 > 0 ) /*0x7ae06f*/
@@ -9995,7 +9995,7 @@ void __thiscall sub_7AE020(_DWORD *this)
         {
           do /*0x7ae0a1*/
           {
-            v10 = ((int (__thiscall *)(int))this->q006)(v9) & ((1 << this->WOLGameList_field_0x0C) - 1); /*0x7ae08b*/
+            v10 = ((int (__thiscall *)(int))this->q006)(v9) & ((1 << this->q00C) - 1); /*0x7ae08b*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x7ae08f*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7ae095*/
             v12 = *(_DWORD *)(v9 + 112); /*0x7ae097*/
@@ -10038,16 +10038,16 @@ void __thiscall sub_7AE0E0(_DWORD *this)
   int v12; // eax
   _DWORD *v13; // [esp+4h] [ebp-4h]
 
-  if ( this->ComStreamClass_field_0x14 != 1 ) /*0x7ae0e8*/
+  if ( this->q014 != 1 ) /*0x7ae0e8*/
   {
-    v2 = this->ComStreamClass_field_0x08; /*0x7ae0f0*/
+    v2 = this->q008; /*0x7ae0f0*/
     v3 = (_DWORD *)*this; /*0x7ae0f3*/
-    v4 = this->ComStreamClass_field_0x0C + 1; /*0x7ae0fc*/
-    this->ComStreamClass_field_0x08 = 2 * v2; /*0x7ae0fd*/
+    v4 = this->q00C + 1; /*0x7ae0fc*/
+    this->q008 = 2 * v2; /*0x7ae0fd*/
     v13 = v3; /*0x7ae100*/
-    this->ComStreamClass_field_0x0C = v4; /*0x7ae108*/
+    this->q00C = v4; /*0x7ae108*/
     v5 = __2_YAPAXI_Z(8 * v2); /*0x7ae113*/
-    v6 = 4 * this->ComStreamClass_field_0x08; /*0x7ae118*/
+    v6 = 4 * this->q008; /*0x7ae118*/
     *this = v5; /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
     if ( v2 > 0 ) /*0x7ae12f*/
@@ -10061,7 +10061,7 @@ void __thiscall sub_7AE0E0(_DWORD *this)
         {
           do /*0x7ae161*/
           {
-            v10 = ((int (__thiscall *)(int))this->ComStreamClass_field_0x18)(v9) & ((1 << this->ComStreamClass_field_0x0C) - 1); /*0x7ae14b*/
+            v10 = ((int (__thiscall *)(int))this->q018)(v9) & ((1 << this->q00C) - 1); /*0x7ae14b*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x7ae14f*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7ae155*/
             v12 = *(_DWORD *)(v9 + 72); /*0x7ae157*/
@@ -10422,7 +10422,7 @@ char __thiscall StringVector_Insert(int *this, const char **a2, int a3)
     a3 = v5; /*0x7ae5df*/
     v4 = v5; /*0x7ae5e3*/
   }
-  v6 = this->StringVector_field_0x04; /*0x7ae5e5*/
+  v6 = this->q004; /*0x7ae5e5*/
   if ( v4 >= v6 && v5 >= v6 ) /*0x7ae5f0*/
   {
     v7 = 2 * v5; /*0x7ae5f2*/
@@ -10435,15 +10435,15 @@ char __thiscall StringVector_Insert(int *this, const char **a2, int a3)
     v8 = 4 * v7; /*0x7ae60a*/
     v9 = __2_YAPAXI_Z(4 * v7); /*0x7ae619*/
     memset(v9, 0, v8); /*0x7ae627*/
-    v10 = (const void *)this->StringVector_field_0x08; /*0x7ae630*/
+    v10 = (const void *)this->q008; /*0x7ae630*/
     if ( v10 ) /*0x7ae635*/
       qmemcpy(v9, v10, 4 * *this); /*0x7ae643*/
-    __3_YAXPAX_Z((void *)this->StringVector_field_0x08); /*0x7ae650*/
+    __3_YAXPAX_Z((void *)this->q008); /*0x7ae650*/
     v4 = a3; /*0x7ae659*/
-    this->StringVector_field_0x08 = (int)v9; /*0x7ae660*/
-    this->StringVector_field_0x04 = v17; /*0x7ae663*/
+    this->q008 = (int)v9; /*0x7ae660*/
+    this->q004 = v17; /*0x7ae663*/
   }
-  if ( *this >= this->StringVector_field_0x04 ) /*0x7ae66d*/
+  if ( *this >= this->q004 ) /*0x7ae66d*/
   {
     v11 = 2 * *this; /*0x7ae66f*/
     v18 = v11; /*0x7ae674*/
@@ -10455,17 +10455,17 @@ char __thiscall StringVector_Insert(int *this, const char **a2, int a3)
     v12 = 4 * v11; /*0x7ae686*/
     v13 = __2_YAPAXI_Z(4 * v11); /*0x7ae695*/
     memset(v13, 0, v12); /*0x7ae6a3*/
-    v14 = (const void *)this->StringVector_field_0x08; /*0x7ae6ac*/
+    v14 = (const void *)this->q008; /*0x7ae6ac*/
     if ( v14 ) /*0x7ae6b1*/
       qmemcpy(v13, v14, 4 * *this); /*0x7ae6bf*/
-    __3_YAXPAX_Z((void *)this->StringVector_field_0x08); /*0x7ae6cc*/
+    __3_YAXPAX_Z((void *)this->q008); /*0x7ae6cc*/
     v4 = a3; /*0x7ae6d5*/
-    this->StringVector_field_0x08 = (int)v13; /*0x7ae6dc*/
-    this->StringVector_field_0x04 = v18; /*0x7ae6df*/
+    this->q008 = (int)v13; /*0x7ae6dc*/
+    this->q004 = v18; /*0x7ae6df*/
   }
   if ( v4 < *this ) /*0x7ae6e8*/
-    memcpy((void *)(this->StringVector_field_0x08 + 4 * v4 + 4), (const void *)(this->StringVector_field_0x08 + 4 * v4), 4 * (*this + 0x3FFFFFFF * v4)); /*0x7ae703*/
-  v15 = (char **)(this->StringVector_field_0x08 + 4 * v4); /*0x7ae70e*/
+    memcpy((void *)(this->q008 + 4 * v4 + 4), (const void *)(this->q008 + 4 * v4), 4 * (*this + 0x3FFFFFFF * v4)); /*0x7ae703*/
+  v15 = (char **)(this->q008 + 4 * v4); /*0x7ae70e*/
   if ( v15 ) /*0x7ae713*/
     String::AssignFromPtr(v15, a2); /*0x7ae71a*/
   ++*this; /*0x7ae723*/
@@ -10652,11 +10652,11 @@ char __thiscall FindWOLHashTableEntry(_DWORD *this, const char **a2, void *a3)
   int *v39; // [esp+24h] [ebp+8h]
   int *v40; // [esp+24h] [ebp+8h]
 
-  v4 = this->HashTable_field_0x04; /*0x7ae95b*/
+  v4 = this->q004; /*0x7ae95b*/
   if ( !v4 ) /*0x7ae960*/
     return 0; /*0x7ae965*/
-  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->HashTable_field_0x08; /*0x7ae990*/
-  v7 = ((int (__thiscall *)(const char **))this->HashTable_field_0x18)(a2) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7ae9a5*/
+  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->q008; /*0x7ae990*/
+  v7 = ((int (__thiscall *)(const char **))this->q018)(a2) & ((1 << this->q00C) - 1); /*0x7ae9a5*/
   v8 = *(_DWORD *)(*this + 4 * v7); /*0x7ae9a7*/
   v36 = v8; /*0x7ae9ac*/
   if ( !v8 ) /*0x7ae9b0*/
@@ -10674,19 +10674,19 @@ char __thiscall FindWOLHashTableEntry(_DWORD *this, const char **a2, void *a3)
     *(_DWORD *)(*this + 4 * v7) = v10; /*0x7aea03*/
     v11 = v37 < *((double *)this + 4); /*0x7aea09*/
     v12 = v37 == *((double *)this + 4); /*0x7aea09*/
-    --this->HashTable_field_0x04; /*0x7aea0d*/
+    --this->q004; /*0x7aea0d*/
     if ( v11 || v12 ) /*0x7aea12*/
     {
-      v13 = this->HashTable_field_0x08; /*0x7aea1b*/
-      if ( v13 > this->HashTable_field_0x30 && this->HashTable_field_0x50 != 1 ) /*0x7aea2d*/
+      v13 = this->q008; /*0x7aea1b*/
+      if ( v13 > this->q030 && this->q050 != 1 ) /*0x7aea2d*/
       {
         v14 = (int *)*this; /*0x7aea36*/
         v39 = (int *)*this; /*0x7aea3b*/
-        v15 = this->HashTable_field_0x0C - 1; /*0x7aea41*/
-        this->HashTable_field_0x08 = v13 >> 1; /*0x7aea42*/
-        this->HashTable_field_0x0C = v15; /*0x7aea4c*/
+        v15 = this->q00C - 1; /*0x7aea41*/
+        this->q008 = v13 >> 1; /*0x7aea42*/
+        this->q00C = v15; /*0x7aea4c*/
         v16 = __2_YAPAXI_Z(4 * (v13 >> 1)); /*0x7aea58*/
-        v17 = 4 * this->HashTable_field_0x08; /*0x7aea5d*/
+        v17 = 4 * this->q008; /*0x7aea5d*/
         *this = v16; /*0x7aea64*/
         memset(v16, 0, v17); /*0x7aea6a*/
         if ( (int)v13 > 0 ) /*0x7aea75*/
@@ -10700,7 +10700,7 @@ char __thiscall FindWOLHashTableEntry(_DWORD *this, const char **a2, void *a3)
             {
               do /*0x7aeaae*/
               {
-                v21 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v20) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7aea91*/
+                v21 = ((int (__thiscall *)(int))this->q018)(v20) & ((1 << this->q00C) - 1); /*0x7aea91*/
                 v22 = *(_DWORD *)(*this + 4 * v21); /*0x7aea96*/
                 *(_DWORD *)(*this + 4 * v21) = v20; /*0x7aea9c*/
                 v23 = *(_DWORD *)(v20 + 272); /*0x7aea9e*/
@@ -10735,7 +10735,7 @@ char __thiscall FindWOLHashTableEntry(_DWORD *this, const char **a2, void *a3)
       }
       qmemcpy(a3, (const void *)(v24 + 4), 0x10Cu); /*0x7aeb0a*/
       *(_DWORD *)(v36 + 272) = *(_DWORD *)(v24 + 272); /*0x7aeb12*/
-      --this->HashTable_field_0x04; /*0x7aeb1e*/
+      --this->q004; /*0x7aeb1e*/
       DeleteAndZero((void **)v24); /*0x7aeb25*/
       __3_YAXPAX_Z((void *)v24); /*0x7aeb2b*/
       v38 = 1; /*0x7aeb33*/
@@ -10743,16 +10743,16 @@ char __thiscall FindWOLHashTableEntry(_DWORD *this, const char **a2, void *a3)
 LABEL_24:
     if ( v37 <= *((double *)this + 4) ) /*0x7aeb44*/
     {
-      v25 = this->HashTable_field_0x08; /*0x7aeb4a*/
-      if ( v25 > this->HashTable_field_0x30 && this->HashTable_field_0x50 != 1 ) /*0x7aeb5c*/
+      v25 = this->q008; /*0x7aeb4a*/
+      if ( v25 > this->q030 && this->q050 != 1 ) /*0x7aeb5c*/
       {
-        v26 = this->HashTable_field_0x0C; /*0x7aeb62*/
+        v26 = this->q00C; /*0x7aeb62*/
         v27 = (int *)*this; /*0x7aeb65*/
         v40 = (int *)*this; /*0x7aeb6a*/
-        this->HashTable_field_0x08 = v25 >> 1; /*0x7aeb70*/
-        this->HashTable_field_0x0C = v26 - 1; /*0x7aeb78*/
+        this->q008 = v25 >> 1; /*0x7aeb70*/
+        this->q00C = v26 - 1; /*0x7aeb78*/
         v28 = __2_YAPAXI_Z(4 * (v25 >> 1)); /*0x7aeb83*/
-        v29 = 4 * this->HashTable_field_0x08; /*0x7aeb88*/
+        v29 = 4 * this->q008; /*0x7aeb88*/
         *this = v28; /*0x7aeb8f*/
         memset(v28, 0, v29); /*0x7aeb95*/
         if ( (int)v25 > 0 ) /*0x7aeba0*/
@@ -10766,7 +10766,7 @@ LABEL_24:
             {
               do /*0x7aebd9*/
               {
-                v33 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v32) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7aebbc*/
+                v33 = ((int (__thiscall *)(int))this->q018)(v32) & ((1 << this->q00C) - 1); /*0x7aebbc*/
                 v34 = *(_DWORD *)(*this + 4 * v33); /*0x7aebc1*/
                 *(_DWORD *)(*this + 4 * v33) = v32; /*0x7aebc7*/
                 v35 = *(_DWORD *)(v32 + 272); /*0x7aebc9*/
@@ -10805,16 +10805,16 @@ void __thiscall sub_7AEC00(_DWORD *this)
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = this->HashTable_field_0x08; /*0x7aec05*/
-  if ( v2 > this->HashTable_field_0x30 && this->HashTable_field_0x50 != 1 ) /*0x7aec17*/
+  v2 = this->q008; /*0x7aec05*/
+  if ( v2 > this->q030 && this->q050 != 1 ) /*0x7aec17*/
   {
     v3 = (int *)*this; /*0x7aec20*/
-    v4 = this->HashTable_field_0x0C; /*0x7aec23*/
+    v4 = this->q00C; /*0x7aec23*/
     v13 = (int *)*this; /*0x7aec26*/
-    this->HashTable_field_0x08 = v2 >> 1; /*0x7aec2c*/
-    this->HashTable_field_0x0C = v4 - 1; /*0x7aec34*/
+    this->q008 = v2 >> 1; /*0x7aec2c*/
+    this->q00C = v4 - 1; /*0x7aec34*/
     v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7aec3f*/
-    v6 = 4 * this->HashTable_field_0x08; /*0x7aec44*/
+    v6 = 4 * this->q008; /*0x7aec44*/
     *this = v5; /*0x7aec4b*/
     memset(v5, 0, v6); /*0x7aec50*/
     if ( (int)v2 > 0 ) /*0x7aec5b*/
@@ -10828,7 +10828,7 @@ void __thiscall sub_7AEC00(_DWORD *this)
         {
           do /*0x7aec93*/
           {
-            v10 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v9) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7aec77*/
+            v10 = ((int (__thiscall *)(int))this->q018)(v9) & ((1 << this->q00C) - 1); /*0x7aec77*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x7aec7b*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7aec81*/
             v12 = *(_DWORD *)(v9 + 272); /*0x7aec83*/
@@ -10861,7 +10861,7 @@ _DWORD *__thiscall sub_7AECD0(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x7aecdb*/
   this->Capacity = a2; /*0x7aecde*/
   this->q030 = 1; /*0x7aece1*/
-  this->__pad_034 = 0; /*0x7aece5*/
+  this->q034 = 0; /*0x7aece5*/
   *this = &vt_VectorClass_tConnInfoStruct; /*0x7aece8*/
   if ( a2 ) /*0x7aecee*/
   {
@@ -10871,7 +10871,7 @@ _DWORD *__thiscall sub_7AECD0(_DWORD *this, int a2, int a3)
       return this; /*0x7aecfe*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x7aed0d*/
-    this->__pad_034 = 1; /*0x7aed10*/
+    this->q034 = 1; /*0x7aed10*/
   }
   return this; /*0x7aecfd*/
 }
@@ -10897,7 +10897,7 @@ char __thiscall sub_7AED40(int *this)
   int v7; // [esp+4h] [ebp-4h]
 
   v2 = *this; /*0x7aed44*/
-  if ( *this < this->CChatEventSink_field_0x04 ) /*0x7aed4b*/
+  if ( *this < this->q004 ) /*0x7aed4b*/
     return 0; /*0x7aed4d*/
   v4 = 2 * v2; /*0x7aed53*/
   if ( 2 * v2 < 10 ) /*0x7aed5b*/
@@ -10905,12 +10905,12 @@ char __thiscall sub_7AED40(int *this)
   v5 = __2_YAPAXI_Z(248 * v4); /*0x7aed72*/
   memset(v5, 0, 4 * ((unsigned int)(248 * v4) >> 2)); /*0x7aed7d*/
   v7 = (int)v5; /*0x7aed87*/
-  v6 = (const void *)this->CChatEventSink_field_0x08; /*0x7aed8d*/
+  v6 = (const void *)this->q008; /*0x7aed8d*/
   if ( v6 ) /*0x7aed92*/
     qmemcpy(v5, v6, 248 * *this); /*0x7aeda7*/
-  __3_YAXPAX_Z((void *)this->CChatEventSink_field_0x08); /*0x7aedb4*/
-  this->CChatEventSink_field_0x04 = v4; /*0x7aedc0*/
-  this->CChatEventSink_field_0x08 = v7; /*0x7aedc3*/
+  __3_YAXPAX_Z((void *)this->q008); /*0x7aedb4*/
+  this->q004 = v4; /*0x7aedc0*/
+  this->q008 = v7; /*0x7aedc3*/
   return 1; /*0x7aed4f*/
 }
 
@@ -10936,12 +10936,12 @@ char __thiscall sub_7AEDD0(void *this, int a2)
   if ( v5 >= v3 ) /*0x7aeded*/
     v5 = v3 - 1; /*0x7aedef*/
   memcpy( /*0x7aee0f*/
-    (void *)(this->CChatEventSink_field_0x08 + 4 * v5),
-    (const void *)(this->CChatEventSink_field_0x08 + 4 * (v5 + 1)),
+    (void *)(this->q008 + 4 * v5),
+    (const void *)(this->q008 + 4 * (v5 + 1)),
     4 * (v3 + 0x3FFFFFFF * (v5 + 1)));
   v6 = *(_DWORD *)this - 1; /*0x7aee1a*/
   *(_DWORD *)this = v6; /*0x7aee1c*/
-  v7 = this->CChatEventSink_field_0x04; /*0x7aee1e*/
+  v7 = this->q004; /*0x7aee1e*/
   if ( 3 * v6 <= v7 ) /*0x7aee26*/
   {
     v8 = v7 / 2; /*0x7aee2f*/
@@ -10950,13 +10950,13 @@ char __thiscall sub_7AEDD0(void *this, int a2)
     if ( v8 < v7 ) /*0x7aee3d*/
     {
       v9 = __2_YAPAXI_Z(4 * v8); /*0x7aee47*/
-      v10 = (const void *)this->CChatEventSink_field_0x08; /*0x7aee4c*/
+      v10 = (const void *)this->q008; /*0x7aee4c*/
       v11 = v9; /*0x7aee54*/
       if ( v10 ) /*0x7aee58*/
         qmemcpy(v9, v10, 4 * *(_DWORD *)this); /*0x7aee66*/
       __3_YAXPAX_Z(*((void **)this + 2)); /*0x7aee73*/
-      this->CChatEventSink_field_0x08 = v11; /*0x7aee7f*/
-      this->CChatEventSink_field_0x04 = v8; /*0x7aee82*/
+      this->q008 = v11; /*0x7aee7f*/
+      this->q004 = v8; /*0x7aee82*/
     }
   }
   return 1; /*0x7aedda*/
@@ -10968,7 +10968,7 @@ char __thiscall sub_7AEE90(int *this, _DWORD *a2, int a3)
 {
   if ( a3 < 0 || a3 >= *this ) /*0x7aee9a*/
     return 0; /*0x7aeead*/
-  *a2 = *(_DWORD *)(this->CChatEventSink_field_0x08 + 4 * a3); /*0x7aeea6*/
+  *a2 = *(_DWORD *)(this->q008 + 4 * a3); /*0x7aeea6*/
   return 1; /*0x7aeeaa*/
 }
 
@@ -10982,7 +10982,7 @@ char __thiscall Vector_Grow(int *this)
   int v6; // [esp+4h] [ebp-4h]
 
   v2 = *this; /*0x7aeec4*/
-  if ( *this < this->Vector_field_0x4 ) /*0x7aeecb*/
+  if ( *this < this->q004 ) /*0x7aeecb*/
     return 0; /*0x7aeecd*/
   v4 = 2 * v2; /*0x7aeed4*/
   v6 = 2 * v2; /*0x7aeedb*/
@@ -10993,14 +10993,14 @@ char __thiscall Vector_Grow(int *this)
   }
   v5 = __2_YAPAXI_Z(4 * v4); /*0x7aeefc*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
-  if ( this->Vector_field_0x8 ) /*0x7aef13*/
+  if ( this->q008 ) /*0x7aef13*/
   {
-    qmemcpy(v5, (const void *)this->Vector_field_0x8, 4 * *this); /*0x7aef28*/
+    qmemcpy(v5, (const void *)this->q008, 4 * *this); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
-  __3_YAXPAX_Z((void *)this->Vector_field_0x8); /*0x7aef39*/
-  this->Vector_field_0x4 = v4; /*0x7aef41*/
-  this->Vector_field_0x8 = (int)v5; /*0x7aef44*/
+  __3_YAXPAX_Z((void *)this->q008); /*0x7aef39*/
+  this->q004 = v4; /*0x7aef41*/
+  this->q008 = (int)v5; /*0x7aef44*/
   return 1; /*0x7aeecf*/
 }
 
@@ -11021,16 +11021,16 @@ void __thiscall sub_7AEF50(_DWORD *this)
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = this->ComStreamClass_field_0x08; /*0x7aef55*/
-  if ( v2 > this->ComStreamClass_field_0x30 && this->ComStreamClass_field_0x14 != 1 ) /*0x7aef67*/
+  v2 = this->q008; /*0x7aef55*/
+  if ( v2 > this->q030 && this->q014 != 1 ) /*0x7aef67*/
   {
     v3 = (int *)*this; /*0x7aef70*/
-    v4 = this->ComStreamClass_field_0x0C; /*0x7aef73*/
+    v4 = this->q00C; /*0x7aef73*/
     v13 = (int *)*this; /*0x7aef76*/
-    this->ComStreamClass_field_0x08 = v2 >> 1; /*0x7aef7c*/
-    this->ComStreamClass_field_0x0C = v4 - 1; /*0x7aef84*/
+    this->q008 = v2 >> 1; /*0x7aef7c*/
+    this->q00C = v4 - 1; /*0x7aef84*/
     v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7aef8f*/
-    v6 = 4 * this->ComStreamClass_field_0x08; /*0x7aef94*/
+    v6 = 4 * this->q008; /*0x7aef94*/
     *this = v5; /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
     if ( (int)v2 > 0 ) /*0x7aefab*/
@@ -11044,7 +11044,7 @@ void __thiscall sub_7AEF50(_DWORD *this)
         {
           do /*0x7aefdd*/
           {
-            v10 = ((int (__thiscall *)(int))this->ComStreamClass_field_0x18)(v9) & ((1 << this->ComStreamClass_field_0x0C) - 1); /*0x7aefc7*/
+            v10 = ((int (__thiscall *)(int))this->q018)(v9) & ((1 << this->q00C) - 1); /*0x7aefc7*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x7aefcb*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7aefd1*/
             v12 = *(_DWORD *)(v9 + 72); /*0x7aefd3*/
@@ -11084,14 +11084,14 @@ char __thiscall DynamicVector_EnsureCapacity(int *this)
   }
   v5 = __2_YAPAXI_Z(4 * v4); /*0x7af03c*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7af04a*/
-  if ( this->DynamicVector_field_0x8 ) /*0x7af053*/
+  if ( this->q008 ) /*0x7af053*/
   {
-    qmemcpy(v5, (const void *)this->DynamicVector_field_0x8, 4 * *this); /*0x7af068*/
+    qmemcpy(v5, (const void *)this->q008, 4 * *this); /*0x7af068*/
     v4 = v6; /*0x7af071*/
   }
-  __3_YAXPAX_Z((void *)this->DynamicVector_field_0x8); /*0x7af079*/
+  __3_YAXPAX_Z((void *)this->q008); /*0x7af079*/
   this->Items = v4; /*0x7af081*/
-  this->DynamicVector_field_0x8 = (int)v5; /*0x7af084*/
+  this->q008 = (int)v5; /*0x7af084*/
   return 1; /*0x7af00f*/
 }
 

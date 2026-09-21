@@ -76,12 +76,48 @@ PRIM = {'_DWORD':'unsigned int','_WORD':'unsigned short','_BYTE':'unsigned char'
         'float':'float','double':'double','_BOOL':'bool','unsigned char':'unsigned char',
         'short':'short','long long':'long long','uint8_t':'unsigned char',
         'uint16_t':'unsigned short','uint32_t':'unsigned int','ULONG':'unsigned long',
-        'DWORD':'unsigned long','WORD':'unsigned short','BYTE':'unsigned char'}
+        'DWORD':'unsigned long','WORD':'unsigned short','BYTE':'unsigned char',
+        'byte':'unsigned char',
+        # Windows/CRT handles and scalar typedefs -> concrete C types (the
+        # headers pulled in below define the original names; mapping keeps
+        # member/param emission compilable without relying on include order)
+        'HANDLE':'void*','HWND':'void*','HIMC':'void*','HDC':'void*','HBITMAP':'void*',
+        'HICON':'void*','HINSTANCE':'void*','HMODULE':'void*','HCURSOR':'void*',
+        'HPALETTE':'void*','HRGN':'void*','HFONT':'void*','HACCEL':'void*',
+        'HKL':'void*','HGDIOBJ':'void*','HGLOBAL':'void*','HRSRC':'void*',
+        'HMENU':'void*','HBRUSH':'void*','HPEN':'void*','FILE':'void',
+        'LONG':'long','LONGLONG':'long long','ULONG':'unsigned long',
+        'ULONGLONG':'unsigned long long','HRESULT':'long','ATOM':'unsigned short',
+        'COLORREF':'unsigned int','WPARAM':'unsigned int','LPARAM':'long',
+        'LRESULT':'long','SIZE_T':'unsigned int','PVOID':'void*','LPVOID':'void*'}
+
+# Windows/CRT names provided by <unknwn.h>'s include chain -- never forward-
+# declare these as structs (C2371 typedef redefinition), and trust completeness.
+EXTERN_TYPE_NAMES = {'GUID', '_GUID', 'LARGE_INTEGER', 'ULARGE_INTEGER', 'VARIANT',
+                     'BSTR', 'FILE', 'va_list', 'IUnknown', 'IClassFactory',
+                     'IMalloc', 'ISMalloc'}
+
+# Win32 text macros that would expand inside member/method names and wreck the
+# declaration (CreateDialog -> CreateDialogA extraction etc.)
+WIN32_MACROS = {'CreateDialog', 'DialogBox', 'DrawText', 'DrawTextEx', 'GetObject',
+                'SendMessage', 'LoadIcon', 'LoadCursor', 'LoadBitmap', 'LoadImage',
+                'LoadLibrary', 'GetMessage', 'PeekMessage', 'DispatchMessage',
+                'PostMessage', 'SetWindowText', 'GetWindowText', 'GetClassName',
+                'DeleteFile', 'CopyFile', 'MoveFile', 'SetProp', 'GetProp',
+                'RemoveProp', 'FindResource', 'LoadResource', 'LockResource',
+                'GetWindowLong', 'SetWindowLong', 'GetWindowWord', 'MessageBeep',
+                'ExitWindows', 'Yield', 'SelectObject', 'NULL'}
+WIN32_MACRO_PREFIXES = ('CreateDialog', 'DialogBox', 'DrawText', 'GetMessage',
+                        'PeekMessage', 'PostMessage', 'SendMessage', 'LoadIcon',
+                        'LoadCursor', 'LoadBitmap', 'LoadImage', 'SetProp',
+                        'GetProp', 'FindResource', 'SetWindowLong')
 
 def cpptype(t, default='void*'):
     if not t:
         return default
     t = t.strip()
+    if t in ('unknown', 'unknown *', 'void *unknown'):
+        return 'void*'
     if t in PRIM:
         return PRIM[t]
     m = re.match(r'^(.*?)\s*\*+$', t)
@@ -208,6 +244,18 @@ for ai, s in func_sig.items():
             continue
     free_funcs[ai] = s
 
+PLACEHOLDER_RE = re.compile(r'^(vtable\d*|vt_?\d+|.*_field_0x[0-9A-Fa-f]+.*|field_.*|__pad.*|__align.*|align_.*|q[0-9A-F]{3}.*)$')
+# member_lookup src markers written by later evidence campaigns (ctor write-map
+# adjudications, e.g. G16 focus/owner) -- these OUTRANK no-evidence member_types
+# names, which are CSP-era bulk-sync residue (audit 2026-09-21: 8,771 no-evidence
+# mt offsets, 453 name conflicts, 176 sitting on adjudicated offsets).
+ADJUDICATED_SRC_RE = re.compile(r'adjudic|ctor[-_]adjud|g1[5-9]|write[-_]map', re.I)
+
+
+def _is_placeholder(n):
+    return bool(PLACEHOLDER_RE.match(n or ''))
+
+
 def build_members(cc):
     src_cls = canon_of.get(cc, cc)
     e = db.get(src_cls, {})
@@ -248,7 +296,8 @@ def build_members(cc):
         if isinstance(o, int) and o in members and not members[o]['name']:
             members[o]['name'] = n
     # UNION old member_lookup chain offsets (offset completeness; no silent gaps)
-    for o, m in ml_chain_offsets(cc).items():
+    mlc = ml_chain_offsets(cc)
+    for o, m in mlc.items():
         if o in members:
             cur = members[o]
             if not cur['name'] and m.get('name'):
@@ -264,15 +313,30 @@ def build_members(cc):
     mt_override = mt_by_cls.get(cc, {})
     for o in sorted(members):
         m = members[o]
-        if o in mt_override and mt_override[o].get('name'):
-            # evidence channel (member_set/ctor write-map) is authoritative:
-            # binary truth outranks vote-derived vtable attributions
-            mo = mt_override[o]
-            n = mo['name']
-            n = n if n not in used else n + '_e'
-            used.add(n)
-            t = cpptype(mo.get('type') or '', size_type(m.get('size') or 4))
-            out.append((o, t, n, mo.get('size') or m.get('size') or 4, m.get('name') or ''))
+        mo = mt_override.get(o) or {}
+        mlm = mlc.get(o) or {}
+        mt_has_ev = bool(mo.get('evidence'))
+        ml_adjudicated = bool(ADJUDICATED_SRC_RE.match(mlm.get('src') or ''))
+        # ---- name adjudication (4-tier precedence, mechanical) ----
+        # 1. member_types WITH evidence  = binary truth (member_set channel)
+        # 2. member_lookup ADJUDICATED   = later evidence campaign result
+        # 3. semantic name beats placeholder (either direction)
+        # 4. fill order (db > til layouts > mt > mbn > ml) stands on ties
+        nm = m['name']
+        if mo.get('name') and mt_has_ev:
+            nm = mo['name']
+        elif ml_adjudicated and mlm.get('name'):
+            nm = mlm['name']
+        elif mo.get('name'):
+            if _is_placeholder(nm) and not _is_placeholder(mo['name']):
+                nm = mo['name']
+            elif not _is_placeholder(mo['name']) and not _is_placeholder(nm):
+                nm = mo['name']  # both semantic: mt (CSP base) stands
+        # ---- byte-noise filter: unnamed/unadjudicated unaligned offsets are
+        # type_map byte-granularity observation residue, never a real member;
+        # the padding fill reconstructs the gap ----
+        if (o % 4 and (not nm or _is_placeholder(nm)) and not mt_has_ev
+                and not ml_adjudicated and not in_vptr(o)):
             continue
         if in_vptr(o):
             k = vptr_offs.index(o) if o in vptr_offs else None
@@ -283,8 +347,9 @@ def build_members(cc):
                 used.add(n)
                 out.append((o, 'void*', n, 4, ''))
             continue
-        m = members[o]
-        t = m['type']
+        t = mo.get('type') if (mo.get('type') and mt_has_ev) else ''
+        if not t:
+            t = m['type']
         if not t and m['obs']:
             clsobs = [x for x in m['obs'] if re.match(r'^[A-Za-z_]\w*$', x or '')]
             if clsobs:
@@ -292,8 +357,8 @@ def build_members(cc):
         if not t:
             t = size_type(m['size'])
         t = cpptype(t, size_type(m['size']))
-        n = m['name'] or ''
-        if n and not re.match(r'^(vtable\d*|vt_?\d+|field_.*|__pad.*)$', n):
+        n = nm or ''
+        if n and not PLACEHOLDER_RE.match(n):
             n = ident(n, '')
         else:
             n = ''
@@ -304,8 +369,17 @@ def build_members(cc):
                 n2 = base + '_' + str(i)
                 i += 1
             n = n2
+        sz = mo.get('size') if mt_has_ev else m['size']
+        if n in {e[2] for e in out}:
+            base = n
+            n2, i = base + '_d', 2
+            allnames = used | {e[2] for e in out}
+            while n2 in allnames:
+                n2 = '%s_%d' % (base, i)
+                i += 1
+            n = n2
         used.add(n)
-        out.append((o, t, n, m['size'], m['name'] or ''))
+        out.append((o, t, n, sz, m['name'] or ''))
     padded = []
     prev_end = 0
     for (o, t, n, sz, orig) in out:
@@ -320,30 +394,239 @@ def build_members(cc):
     return padded, total
 
 print('emitting classes...', flush=True)
+canon_keys = sorted(canon_of)
+by_ident = {}
+for _cc in canon_keys:
+    _src = canon_of.get(_cc, _cc)
+    by_ident[ident(_src, _src)] = _cc
+
+# names owned by the repo's gamemd math/enum headers (authoritative defs) and
+# by system headers -- canon classes colliding with them are suppressed.
+mathenums_names = set()
+for _h in ('src/core/math.hpp', 'src/core/enums.hpp'):
+    try:
+        for _ln in (ROOT / _h).read_text(encoding='utf-8', errors='replace').splitlines():
+            _m = re.match(r'\s*(?:struct|enum class)\s+(\w+)', _ln)
+            if _m:
+                mathenums_names.add(_m.group(1))
+            _m = re.match(r'\s*using\s+(\w+)\s*=', _ln)
+            if _m:
+                mathenums_names.add(_m.group(1))
+    except OSError:
+        pass
+emitted_ident = {}
+_ident_counts = {}
+for cc in canon_keys:
+    _n = ident(canon_of.get(cc, cc), canon_of.get(cc, cc))
+    if _n in mathenums_names:
+        emitted_ident[cc] = None  # math/enums headers own the name
+        continue
+    _c = _ident_counts.get(_n, 0)
+    _ident_counts[_n] = _c + 1
+    emitted_ident[cc] = _n if _c == 0 else '%s_%d' % (_n, _c + 1)
+for cc in [c for c, v in emitted_ident.items() if v in EXTERN_TYPE_NAMES]:
+    emitted_ident[cc] = None  # Windows/CRT headers own the name (GUID etc.)
+all_idents = {v for v in emitted_ident.values() if v}
+
+# base resolution, computed ONCE and shared by the topo graph and the emitter
+# (split resolution was the C2504 root cause: the graph and the emitter
+# disagreed on transformed names, so base edges went missing)
+DROP_BASES = {'IUnknown'}  # real COM root: pure virtuals -> abstract C2259 /
+                           # AddRef/Release override-mismatch C2555
+bases_map = {}
+for cc in canon_keys:
+    if emitted_ident.get(cc) is None:
+        continue
+    _e = db.get(canon_of.get(cc, cc), {})
+    bs = []
+    for b in (_e.get('direct_bases') or []):
+        cb = canon(b) or b
+        dep = by_ident.get(ident(cb, cb))
+        bn = (emitted_ident.get(dep) if dep else None) or ident(cb, cb)
+        if bn in DROP_BASES or cb in DROP_BASES:
+            continue
+        if dep is not None and emitted_ident.get(dep) is None:
+            continue  # suppressed base (system-header-owned name)
+        if bn not in all_idents and bn not in mathenums_names \
+                and ident(cb, cb) not in all_idents and cb not in mathenums_names:
+            continue  # unresolvable base: ref edges are not load-bearing here
+        bs.append(bn)
+    bases_map[cc] = bs
+
+# undefined bases referenced by emittable classes -> minimal vfptr holders
+# (t14 minimal-struct precedent: offset 0 of a polymorphic object is provably
+# a vptr; nothing else is invented)
+undefined_refs = set()
+for cc, bs in bases_map.items():
+    for bn in bs:
+        if bn not in all_idents and bn not in mathenums_names:
+            undefined_refs.add(bn)
+minimal_defs = sorted(undefined_refs)
+
+# Topological order (Kahn, sorted-name tiebreak for determinism): every base
+# must be COMPLETE at its derived class's definition point.
+name2cc = {}
+for cc, nm in emitted_ident.items():
+    if nm:
+        name2cc[nm] = cc
+deps = {}
+for cc, bs in bases_map.items():
+    ds = set()
+    for bn in bs:
+        dep = name2cc.get(bn)
+        if dep and dep != cc:
+            ds.add(dep)
+    deps[cc] = ds
+emis_order = []
+ready = sorted(cc for cc in canon_keys
+               if emitted_ident.get(cc) and not deps.get(cc))
+scheduled = set(ready)
+emitted_set = set()  # POPPED only; the heap pops in name order, so gating on
+                     # scheduled-instead-of-popped lets a late-named base be
+                     # emitted after an early-named dependent (C2504)
+import heapq as _heapq
+_heapq.heapify(ready)
+dependents = {}
+for cc, ds in deps.items():
+    for d in ds:
+        dependents.setdefault(d, []).append(cc)
+while ready:
+    cc = _heapq.heappop(ready)
+    emis_order.append(cc)
+    emitted_set.add(cc)
+    for nxt in sorted(dependents.get(cc, [])):
+        if nxt not in scheduled and deps[nxt] <= emitted_set:
+            scheduled.add(nxt)
+            _heapq.heappush(ready, nxt)
+for cc in canon_keys:
+    if emitted_ident.get(cc) and cc not in emitted_set:
+        emis_order.append(cc)  # defensive: cycles fall back to name order
+
+# ---- unknown-type handling (mechanical, zero-invention) ----
+# classes.hpp includes the repo's gamemd math/enum headers (non-generated),
+# forward-declares every unresolved referenced type as `struct X;`
+# (sufficient for pointers/params/returns), and degrades by-value members of
+# unresolved types to size-faithful char arrays (member NAME + offset kept;
+# semantic type stays in csp_canon_members.json).
+def base_of(t):
+    t = t.strip().split('<')[0]
+    return re.sub(r'\*+$', '', t).strip()
+
+known_names = set(PRIM.values()) | {'IUnknown', '_GUID', 'LARGE_INTEGER',
+                                    'wchar_t', 'va_list', 'string'}
+for _h in ('src/core/math.hpp', 'src/core/enums.hpp'):
+    try:
+        for _ln in (ROOT / _h).read_text(encoding='utf-8', errors='replace').splitlines():
+            _m = re.match(r'\s*(?:struct|enum class)\s+(\w+)', _ln)
+            if _m:
+                known_names.add(_m.group(1))
+            _m = re.match(r'\s*using\s+(\w+)\s*=', _ln)
+            if _m:
+                known_names.add(_m.group(1))
+    except OSError:
+        pass
+for _cc in canon_keys:
+    known_names.add(ident(canon_of.get(_cc, _cc), canon_of.get(_cc, _cc)))
+
+def _collect_type_tokens(type_str, sink):
+    for piece in str(type_str or '').split(','):
+        b = base_of(piece)
+        if b and b not in known_names and re.match(r'^[A-Za-z_]\w*$', b):
+            sink.add(b)
+
+fwd_decls = set()
+for _cc in emis_order:
+    _members, _ = build_members(_cc)
+    for (_o, _t, _n, _sz, _orig) in _members:
+        _collect_type_tokens(_t, fwd_decls)
+    for _ai in sorted(cls_methods.get(_cc, {})):
+        _s = cls_methods[_cc][_ai]
+        _collect_type_tokens(_s['ret'], fwd_decls)
+        for (_pt, _pn) in _s['params']:
+            _collect_type_tokens(_pt, fwd_decls)
+for _ai in sorted(free_funcs):
+    _s = free_funcs[_ai]
+    _collect_type_tokens(_s['ret'], fwd_decls)
+    for (_pt, _pn) in _s['params']:
+        _collect_type_tokens(_pt, fwd_decls)
+fwd_decls -= known_names
+fwd_decls -= EXTERN_TYPE_NAMES
+
 lines = ['// GENERATED by tools/csp_export/gen_cpp_canon.py - mechanical CSP->C++ transcription.',
          '// Source of truth: CSP outputs (class_db/class_layouts/member_types/csp_functions).',
          '// DO NOT hand-edit; regenerate instead. Non-virtual decls with // vt+NNN slot comments.',
-         '#pragma once', '', 'namespace gamemd {', '']
+         '#pragma once', '',
+         '#include <cstdint>',
+         '#include <unknwn.h>',
+         '#include "core/math.hpp"',
+         '#include "core/enums.hpp"', '']
+# forward-declare canon classes ONLY (references -- not just inheritance -- may
+# point at a later-defined class; topo order covers base edges only). Windows/
+# CRT typedef names (GUID/UINT/LCID/...) must NEVER be forward-declared as
+# structs (C2371): they are used verbatim and resolved by the include chain.
+lines.append('// forward declarations (mechanical: all canon classes + unresolved types)')
+for _n in sorted(all_idents):
+    lines.append('struct %s;' % _n)
+lines.append('')
+if minimal_defs:
+    lines.append('// minimal vfptr-holder definitions for referenced-but-undefined bases')
+    lines.append('// (mechanical, t14 minimal-struct precedent)')
+    for _n in minimal_defs:
+        lines.append('struct %s { void* vfptr; };' % _n)
+    lines.append('')
+lines.append('namespace gamemd {')
+lines.append('')
+
+# completeness at emission point: primitives + math/enums names + classes whose
+# FULL definition has already been emitted (fwd decls are incomplete types).
+complete_names = (set(PRIM.values()) | mathenums_names | set(EXTERN_TYPE_NAMES) | {
+    '_GUID', 'LARGE_INTEGER', 'wchar_t', 'va_list'})
+# COM interfaces are abstract: a by-value member can never be emitted (C2259)
+# -- exclude from completeness so the char-array fallback handles them.
+complete_names -= {'IUnknown', 'IClassFactory', 'IMalloc', 'ISMalloc'}
+defined_idents = set()
+emittable = complete_names | all_idents | set(minimal_defs)
+
+
+def safe_type(t, byval_default='int'):
+    """Degrade referenced-but-unknown types at the use site: pointers -> void*,
+    values -> byval_default. Unknown names include Windows/CRT typedefs that
+    must not be forward-declared, so this is the compile-safe fallback."""
+    tb = base_of(t)
+    if not tb:
+        return t
+    if tb in emittable or tb in defined_idents:
+        return t
+    return 'void*' if '*' in t else byval_default
 emitted = 0
 method_names = {}
-for cc in sorted(canon_of):
+for cc in emis_order:
+    if emitted_ident.get(cc) is None:
+        continue  # collides with authoritative math/enums names
     src_cls = canon_of.get(cc, cc)
     e = db.get(src_cls, {})
     lay = layouts.get(src_cls, {})
-    bases = []
-    for b in (e.get('direct_bases') or []):
-        cb = canon(b) or b
-        bases.append(ident(cb, cb))
+    bases = bases_map.get(cc, [])
     total = lay.get('size') or e.get('size') or 0
     members, _ = build_members(cc)
     lines.append('// === %s  size=%s  src=%s ===' % (cc, total or '?', src_cls))
-    hdr = 'struct ' + ident(cc, cc)
+    hdr = 'struct ' + emitted_ident[cc]
     if bases:
         hdr += ' : ' + ', '.join('public ' + b for b in bases)
     lines.append(hdr + ' {')
     for (o, t, n, sz, orig) in members:
         cmt = '  // 0x%X' % o + (' (was %s)' % orig if orig and orig != n else '')
-        lines.append('    %s %s;%s' % (t, n, cmt))
+        if n in known_names or n in WIN32_MACROS:
+            n = n + '_m'  # member/type or Win32-macro name collision
+        tb = base_of(t)
+        if '*' not in t and '<' not in t and tb not in complete_names \
+                and tb not in defined_idents:
+            # by-value member of a not-yet-defined (fwd-declared only) type:
+            # size-faithful char-array fallback (member NAME/offset preserved;
+            # semantic type lives in csp_canon_members.json).
+            lines.append('    char %s[%d];%s' % (n, sz or 1, cmt))
+        else:
+            lines.append('    %s %s;%s' % (safe_type(t, 'int'), n, cmt))
     for ai in sorted(cls_methods.get(cc, {})):
         s = cls_methods[cc][ai]
         raw = s['name'] or 'vtfn'
@@ -354,11 +637,18 @@ for cc in sorted(canon_of):
         method_names[key] = cnt + 1
         if cnt:
             mn = '%s_%d' % (mn, cnt + 1)
-        ps = ', '.join('%s %s' % (t, n) for t, n in s['params'])
+        if mn in WIN32_MACROS or mn.startswith(WIN32_MACRO_PREFIXES):
+            mn = mn + '_f'
+        ps = ', '.join('%s %s' % (safe_type(t, 'int'), n) for t, n in s['params'])
         slots = e.get('methods', {}).get('0x%08X' % ai, {}).get('vtable_slots') or []
         sc = '  // 0x%X' % ai + (' vt+%d' % (slots[0]['slot'] * 4) if slots else '') + ' sig=' + s['src']
-        lines.append('    %s %s(%s);%s' % (s['ret'], mn, ps, sc))
+        if mn == emitted_ident[cc]:
+            # constructor-shaped entry: no return type (C2533)
+            lines.append('    %s(%s);%s' % (mn, ps, sc))
+        else:
+            lines.append('    %s %s(%s);%s' % (safe_type(s['ret'], 'int'), mn, ps, sc))
     lines.append('};')
+    defined_idents.add(emitted_ident[cc])
     lines.append('')
     emitted += 1
 lines.append('} // namespace gamemd')

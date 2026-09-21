@@ -409,12 +409,12 @@ BOOL sub_733C60(int a1, const char * a2)
 }
 }
 
-// ==== BACKFILL 0x00734250  SidebarClass::registerBuildingType  cls=SidebarClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x00734250  SidebarClass::registerBuildingType  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SidebarClass::registerBuildingType() {
 {
       int result;
 
-      result = this->SidebarClass_field_0x520;
+      result = this->q520;
       if ( *(_DWORD *)(result + 3592) == 5 )
         DataGlobal_B0FE60 = (int)this;
       else
@@ -449,12 +449,12 @@ int Selection::ClearGlobals()
 }
 }
 
-// ==== BACKFILL 0x007342D0  DynamicVector::Constructor_Techno  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x007342D0  DynamicVector::Constructor_Techno  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
 {
 {
     this->Items = 0;
-    this->DynamicVector_field_0x8 = a2;
+    this->q008 = a2;
     this->IsInitialized = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_TechnoClass;
@@ -472,7 +472,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
   }
     *(void**)this = &vt_DynamicVectorClass_TechnoClass;
     this->CapacityIncrement = 10;
-    this->DynamicVector_field_0x10 = 0;
+    this->q010 = 0;
     return this;
 }
 }

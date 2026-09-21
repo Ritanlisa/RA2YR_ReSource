@@ -572,14 +572,14 @@ void E4Recv_771A00::sub_771A00()
 }
 }
 
-// ==== BACKFILL 0x00771F00  WeaponTypeClass::loadWeaponProperties  cls=WeaponTypeClass  sig=csp  renamed_refs=6  residual=- ====
+// ==== BACKFILL 0x00771F00  WeaponTypeClass::loadWeaponProperties  cls=WeaponTypeClass  sig=csp  renamed_refs=5  residual=- ====
 unsigned int * WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
 {
 {
     AbstractTypeClass::Init((int)this, aP1);
-    this->DownReport = &vt_TypeList_int;
+    this->Report = &vt_TypeList_int;
     this->q0D8 = &vt_TypeList_int;
-    this->InfiniteMindControl = &vt_TypeList_AnimTypeClass_const;
+    this->q0F4 = &vt_TypeList_AnimTypeClass_const;
     *(void**)this = vt_WeaponTypeClass;
     this->vtable2 = (unsigned int)vt_WeaponTypeClass;
     this->vtable3 = (unsigned int)vt_WeaponTypeClass;
@@ -588,20 +588,20 @@ unsigned int * WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x007729F0  WeaponTypeClass::CalculateSpeed  cls=WeaponTypeClass  sig=csp  renamed_refs=3  residual=- ====
+// ==== BACKFILL 0x007729F0  WeaponTypeClass::CalculateSpeed  cls=WeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int WeaponTypeClass::CalculateSpeed()
 {
 {
     int result;
     double WeatherConBoltExplosion;
-    result = this->Damage;
+    result = this->Projectile;
     if ( result && !*(int *)(result + 732) )
   {
     WeatherConBoltExplosion = (double)g_RulesClass_Instance[1].?;
     if ( *(char *)(result + 661) )
     WeatherConBoltExplosion = RulesClass::GetFiringDistance();
-    result = TechnoClass::ComputeScanRange((void *)this->MinimumRange, WeatherConBoltExplosion);
-    this->Warhead = result;
+    result = TechnoClass::ComputeScanRange((void *)this->Range, WeatherConBoltExplosion);
+    this->Speed = result;
   }
     return result;
 }

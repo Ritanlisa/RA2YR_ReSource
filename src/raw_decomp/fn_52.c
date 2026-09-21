@@ -35,9 +35,9 @@ char __thiscall sub_5200B0(int *this)
           goto LABEL_42;
         if ( !this->q169 )
         {
-          if ( !this->__pad_19D )
+          if ( !this->q19D )
             WinAPI::Wrapper(-2147467261);
-          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->__pad_19D + 16))(this->__pad_19D) )
+          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q19D + 16))(this->q19D) )
           {
 LABEL_42:
             if ( !*(_BYTE *)(this->q1B0 + 3775) )
@@ -58,9 +58,9 @@ LABEL_42:
         LOBYTE(v5) = this->isFallingDown;
         if ( !(_BYTE)v5 )
         {
-          if ( !this->__pad_19D )
+          if ( !this->q19D )
             WinAPI::Wrapper(-2147467261);
-          LOBYTE(v5) = (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->__pad_19D + 16))(this->__pad_19D);
+          LOBYTE(v5) = (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q19D + 16))(this->q19D);
           if ( !(_BYTE)v5 )
           {
             v5 = this->q169;
@@ -180,13 +180,13 @@ char __thiscall ProcessTechnoSquadResponse(FootClass **this)
     v38 = v16->field_4; /*0x5204c6*/
     v39 = v16->field_8; /*0x5204cd*/
     v17 = (int)Coord::Length(&v37) < 512; /*0x5204d6*/
-    v18 = (int)this->__pad_19D; /*0x5204db*/
+    v18 = (int)this->q19D; /*0x5204db*/
     if ( v17 ) /*0x5204e1*/
     {
       if ( !v18 ) /*0x5204e9*/
         WinAPI::Wrapper(-2147467261); /*0x5204f0*/
-      v19 = (int *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->__pad_19D)->__pad_0 + 20))( /*0x520503*/
-                     this->__pad_19D,
+      v19 = (int *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->q19D)->__pad_0 + 20))( /*0x520503*/
+                     this->q19D,
                      v42);
       v20 = *v19; /*0x520506*/
       v21 = v19[1]; /*0x52050e*/
@@ -195,10 +195,10 @@ char __thiscall ProcessTechnoSquadResponse(FootClass **this)
         || v21 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1816]
         || v22 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1820] )
       {
-        if ( !this->__pad_19D ) /*0x52052c*/
+        if ( !this->q19D ) /*0x52052c*/
           WinAPI::Wrapper(-2147467261); /*0x52053b*/
-        v23 = (int *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->__pad_19D)->__pad_0 + 20))( /*0x52054e*/
-                       this->__pad_19D,
+        v23 = (int *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->q19D)->__pad_0 + 20))( /*0x52054e*/
+                       this->q19D,
                        v42);
         v24 = *v23; /*0x520551*/
         v25 = v23[1]; /*0x520553*/
@@ -218,8 +218,8 @@ char __thiscall ProcessTechnoSquadResponse(FootClass **this)
     {
       if ( !v18 ) /*0x5205c9*/
         WinAPI::Wrapper(-2147467261); /*0x5205d0*/
-      v29 = (int *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->__pad_19D)->__pad_0 + 20))( /*0x5205e3*/
-                     this->__pad_19D,
+      v29 = (int *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->q19D)->__pad_0 + 20))( /*0x5205e3*/
+                     this->q19D,
                      v42);
       v30 = *v29; /*0x5205e6*/
       v31 = v29[1]; /*0x5205ee*/
@@ -228,10 +228,10 @@ char __thiscall ProcessTechnoSquadResponse(FootClass **this)
         || v31 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1816]
         || v32 != *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1820] )
       {
-        if ( !this->__pad_19D ) /*0x52060c*/
+        if ( !this->q19D ) /*0x52060c*/
           WinAPI::Wrapper(-2147467261); /*0x52061b*/
-        v33 = (_DWORD *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->__pad_19D)->__pad_0 + 20))( /*0x52062e*/
-                          this->__pad_19D,
+        v33 = (_DWORD *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->q19D)->__pad_0 + 20))( /*0x52062e*/
+                          this->q19D,
                           v42);
         v34 = *v33 / 256; /*0x52065a*/
         v35 = v33[1] / 256; /*0x52065d*/
@@ -298,7 +298,7 @@ void __thiscall FireTechnoAtTarget(int this)
     *(_BYTE *)(this + 1677) = 0; /*0x520ad2*/
     return; /*0x520ad2*/
   }
-  v3 = (ObjectClass *)(*(int (__thiscall **)(int, TechnoClass *))(this->__pad_2E4)(this, v2); /*0x5206d0*/
+  v3 = (ObjectClass *)(*(int (__thiscall **)(int, TechnoClass *))(this->q2E4)(this, v2); /*0x5206d0*/
   v4 = *(_BYTE *)(this + 1677); /*0x5206d2*/
   v22 = v3; /*0x5206da*/
   if ( !v4 ) /*0x5206de*/
@@ -327,7 +327,7 @@ void __thiscall FireTechnoAtTarget(int this)
       }
       else if ( v5 == 9 ) /*0x520709*/
       {
-        (*(void (__thiscall **)(int, _DWORD))(this->__pad_45C)(this, 0); /*0x520716*/
+        (*(void (__thiscall **)(int, _DWORD))(this->q45C)(this, 0); /*0x520716*/
       }
       goto LABEL_46; /*0x52071c*/
     }
@@ -416,7 +416,7 @@ LABEL_46:
   }
   if ( *(_BYTE *)(this + 1677) && *(_DWORD *)(this + 248) == v14 ) /*0x5209b5*/
   {
-    v15 = (ObjectClass *)(*(int (__thiscall **)(int, _DWORD))(this->__pad_2E4)(this, *(_DWORD *)(this + 692)); /*0x5209d0*/
+    v15 = (ObjectClass *)(*(int (__thiscall **)(int, _DWORD))(this->q2E4)(this, *(_DWORD *)(this + 692)); /*0x5209d0*/
     if ( (*(int (__thiscall **)(int, _DWORD, ObjectClass *, int))(this->q3C0)( /*0x5209de*/
            this,
            *(_DWORD *)(this + 692),
@@ -563,9 +563,9 @@ LABEL_20:
             FacingClass::Set_SyncLog(&v18); /*0x520d16*/
           }
         }
-        if ( !this->__pad_19D ) /*0x520d1b*/
+        if ( !this->q19D ) /*0x520d1b*/
           WinAPI::Wrapper(-2147467261); /*0x520d2a*/
-        if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->__pad_19D + 16))(this->__pad_19D) /*0x520d50*/
+        if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q19D + 16))(this->q19D) /*0x520d50*/
           && *((double *)this + 175) > 0.1 )
         {
           if ( *((_BYTE *)this + 1755) ) /*0x520d52*/
@@ -578,9 +578,9 @@ LABEL_20:
           v11 = this->q6C4; /*0x520d7e*/
           if ( v11 != 40 && v11 != 41 || !this->q294 || !this->q2B4 ) /*0x520d98*/
             goto LABEL_44; /*0x520d98*/
-          if ( !this->__pad_19D ) /*0x520da2*/
+          if ( !this->q19D ) /*0x520da2*/
             WinAPI::Wrapper(-2147467261); /*0x520db1*/
-          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->__pad_19D + 16))(this->__pad_19D) ) /*0x520dbf*/
+          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q19D + 16))(this->q19D) ) /*0x520dbf*/
           {
             if ( *((_BYTE *)this + 1755) ) /*0x520dc6*/
               (*(void (__thiscall **)(_DWORD *, int, int, _DWORD))(*this + 1368))(this, 41, 1, 0); /*0x520dda*/
@@ -672,9 +672,9 @@ char __thiscall ProcessUnitMissionAI(_DWORD *this)
 
   if ( (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) == 2 ) /*0x520f53*/
   {
-    if ( !this->__pad_19D ) /*0x520f55*/
+    if ( !this->q19D ) /*0x520f55*/
       WinAPI::Wrapper(-2147467261); /*0x520f64*/
-    if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->__pad_19D + 16))(this->__pad_19D) ) /*0x520f72*/
+    if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q19D + 16))(this->q19D) ) /*0x520f72*/
     {
       v2 = this->q5A4; /*0x520f79*/
       v3 = *this; /*0x520f7f*/
@@ -702,9 +702,9 @@ char __thiscall ProcessUnitMissionAI(_DWORD *this)
           v7 = (*(int (__thiscall **)(_DWORD *, int, int, _DWORD, int))(*this + 452))(this, -1, -1, 0, 1),
           (*(int (__thiscall **)(_DWORD *, int))(v6 + 428))(this, v7) != 7) )
     {
-      if ( !this->__pad_19D ) /*0x521028*/
+      if ( !this->q19D ) /*0x521028*/
         WinAPI::Wrapper(-2147467261); /*0x521037*/
-      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->__pad_19D + 16))(this->__pad_19D) /*0x521050*/
+      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q19D + 16))(this->q19D) /*0x521050*/
         && !*((_BYTE *)this + 1048) )
       {
         if ( this->q5A4 ) /*0x52105e*/
@@ -738,13 +738,13 @@ char __thiscall ProcessUnitMissionAI(_DWORD *this)
       }
     }
   }
-  if ( !this->__pad_19D ) /*0x521144*/
+  if ( !this->q19D ) /*0x521144*/
     WinAPI::Wrapper(-2147467261); /*0x521153*/
-  if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->__pad_19D + 168))(this->__pad_19D) ) /*0x521161*/
+  if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q19D + 168))(this->q19D) ) /*0x521161*/
   {
     if ( !*(_BYTE *)(this->q6C0 + 3476) ) /*0x521175*/
       goto LABEL_55; /*0x521175*/
-    v12 = (int (__stdcall ***)(_DWORD, void *, int *))this->__pad_19D; /*0x521183*/
+    v12 = (int (__stdcall ***)(_DWORD, void *, int *))this->q19D; /*0x521183*/
     v22 = 0; /*0x52118d*/
     if ( !v12 ) /*0x521195*/
       goto LABEL_33; /*0x521195*/
@@ -1508,7 +1508,7 @@ bool __thiscall sub_522100(_DWORD *this)
 
   if ( !*(_BYTE *)(this->q6C0 + 3476) ) /*0x522109*/
     return 0; /*0x522113*/
-  v2 = (int (__stdcall ***)(_DWORD, void *, int *))this->__pad_19D; /*0x522119*/
+  v2 = (int (__stdcall ***)(_DWORD, void *, int *))this->q19D; /*0x522119*/
   v7 = 0; /*0x522124*/
   if ( !v2 ) /*0x52212c*/
     goto LABEL_11; /*0x52212c*/
@@ -1967,7 +1967,7 @@ char __thiscall TechnoClass::sub_522A60(_DWORD *this, int a2, int a3)
     && (v5 = this - 2, Team::AllMembersValid(this - 2)) )
   {
     (*(void (__thiscall **)(_DWORD *, int))(*v5 + 628))(this - 2, 8); /*0x522aa2*/
-    v6 = this->currentBurstCount_e; /*0x522aa8*/
+    v6 = this->displayProductionTo; /*0x522aa8*/
     if ( !v6 || v6 == this->q167 ) /*0x522ab8*/
     {
       FootClass::ClearPathIndex(this - 2); /*0x522ad4*/
@@ -2217,7 +2217,7 @@ char __thiscall InfantryClass::_vt322(_BYTE *this, int a2, int a3, int a4)
     || (*(unsigned __int8 (__thiscall **)(_BYTE *))(this->firepowerMultiplier)(this)
     || this->firingParticles
     || (*(unsigned __int8 (__thiscall **)(_BYTE *))(this->q1D4)(this)
-    || (*(unsigned __int8 (__thiscall **)(_BYTE *))(this->q1D8)(this) )
+    || (*(unsigned __int8 (__thiscall **)(_BYTE *))(this->isDisguisedFlag)(this) )
   {
     return 0; /*0x523239*/
   }
@@ -3860,7 +3860,7 @@ _DWORD *__thiscall VectorClass::CopyDefault(_DWORD *this, VectorClass *aP1)
   if ( !v3 ) /*0x525079*/
   {
     this->Items = 0; /*0x5250ba*/
-    this->__pad_034 = 0; /*0x5250c1*/
+    this->q034 = 0; /*0x5250c1*/
     return this; /*0x5250c5*/
   }
   v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x525083*/
@@ -3869,7 +3869,7 @@ _DWORD *__thiscall VectorClass::CopyDefault(_DWORD *this, VectorClass *aP1)
     return this; /*0x525090*/
   v5 = this->Capacity; /*0x525092*/
   v6 = 0; /*0x525095*/
-  this->__pad_034 = 1; /*0x525099*/
+  this->q034 = 1; /*0x525099*/
   if ( v5 <= 0 ) /*0x52509d*/
     return this; /*0x52509d*/
   do /*0x5250b1*/
@@ -4009,7 +4009,7 @@ _DWORD *__thiscall DynamicVectorClass::AnimTypeConstructor(_DWORD *this, Dynamic
   this->Items = 0; /*0x525259*/
   this->Capacity = aP1; /*0x525260*/
   this->q030 = 1; /*0x525263*/
-  this->__pad_034 = 0; /*0x525267*/
+  this->q034 = 0; /*0x525267*/
   *this = &vt_VectorClass_AnimTypeClass_const; /*0x52526b*/
   if ( aP1 ) /*0x525271*/
   {
@@ -4020,7 +4020,7 @@ _DWORD *__thiscall DynamicVectorClass::AnimTypeConstructor(_DWORD *this, Dynamic
     else
     {
       this->Items = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x52528c*/
-      this->__pad_034 = 1; /*0x52528f*/
+      this->q034 = 1; /*0x52528f*/
     }
   }
   *this = &vt_DynamicVectorClass_AnimTypeClass_const; /*0x525293*/
@@ -4070,7 +4070,7 @@ char __thiscall WarheadTypeClass::_vt02(void *this, int a2, _DWORD *a3)
       return 0; /*0x5253aa*/
     if ( this->Items ) /*0x525338*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x52533f*/
+      v5 = this->q008; /*0x52533f*/
       if ( a2 < v5 ) /*0x525344*/
         v5 = a2; /*0x525346*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x52534c*/
@@ -4082,14 +4082,14 @@ char __thiscall WarheadTypeClass::_vt02(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x52537a*/
-    this->DynamicVector_field_0x8 = a2; /*0x525382*/
+    this->q008 = a2; /*0x525382*/
     this->IsAllocated = a3 == 0; /*0x525385*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x52538e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x525391*/
+  v7 = this->q008; /*0x525391*/
   if ( v7 < this->Items ) /*0x525399*/
     this->Items = v7; /*0x52539b*/
   return 1; /*0x52539e*/
@@ -4107,7 +4107,7 @@ char __thiscall DynamicVector::Add_Alt4(_DWORD *this, VectorClass *aP1)
   v3 = (MapClass *)this->Capacity; /*0x5253b3*/
   if ( this->q010 >= (int)v3 ) /*0x5253bb*/
   {
-    if ( !this->__pad_034 && v3 ) /*0x5253c6*/
+    if ( !this->q034 && v3 ) /*0x5253c6*/
       return 0; /*0x5253c6*/
     v4 = this->q005; /*0x5253c8*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x5253d8*/
@@ -4250,7 +4250,7 @@ _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
   this->Items = 0; /*0x5255fd*/
   this->Capacity = 0; /*0x525600*/
   this->q030 = 1; /*0x525603*/
-  this->__pad_034 = 0; /*0x525607*/
+  this->q034 = 0; /*0x525607*/
   *this = &vt_VectorClass_AnimTypeClass_const; /*0x52560a*/
   if ( this != (_DWORD *)aP1 ) /*0x525610*/
   {
@@ -4265,7 +4265,7 @@ _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
       {
         v5 = this->Capacity; /*0x525635*/
         v6 = 0; /*0x525638*/
-        this->__pad_034 = 1; /*0x52563c*/
+        this->q034 = 1; /*0x52563c*/
         if ( v5 > 0 ) /*0x525640*/
         {
           do /*0x525654*/
@@ -4280,7 +4280,7 @@ _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
     else
     {
       this->Items = 0; /*0x525658*/
-      this->__pad_034 = 0; /*0x52565b*/
+      this->q034 = 0; /*0x52565b*/
     }
   }
   this->q010 = aP1[1].vtable0; /*0x525661*/
@@ -4296,7 +4296,7 @@ _DWORD *__thiscall AnimTypeVector::Constructor(_DWORD *this, TechnoTypeClass *aP
   this->Items = 0; /*0x52568b*/
   this->Capacity = aP1; /*0x52568e*/
   this->q030 = 1; /*0x525691*/
-  this->__pad_034 = 0; /*0x525695*/
+  this->q034 = 0; /*0x525695*/
   *this = &vt_VectorClass_AnimTypeClass_const; /*0x525698*/
   if ( aP1 ) /*0x52569e*/
   {
@@ -4306,7 +4306,7 @@ _DWORD *__thiscall AnimTypeVector::Constructor(_DWORD *this, TechnoTypeClass *aP
       return this; /*0x5256ae*/
     }
     this->Items = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x5256bd*/
-    this->__pad_034 = 1; /*0x5256c0*/
+    this->q034 = 1; /*0x5256c0*/
   }
   return this; /*0x5256ad*/
 }
@@ -4533,7 +4533,7 @@ int __thiscall FileStraw_Open(_DWORD *this, int a2, char a3)
   _DWORD v5[4]; // [esp+4h] [ebp-14h] BYREF
   char v6; // [esp+14h] [ebp-4h]
 
-  this->FileStraw_field_0x04 = 0; /*0x525a19*/
+  this->q004 = 0; /*0x525a19*/
   this->q008 = 0; /*0x525a1c*/
   v5[1] = 0; /*0x525a1f*/
   v5[2] = 0; /*0x525a23*/
@@ -9552,7 +9552,7 @@ _DWORD *__thiscall KeyValuePair::Init(_DWORD *this, INIClass *aP1)
 {
   *this = aP1; /*0x52aec6*/
   this->q004 = 0; /*0x52aeca*/
-  this->q002 = 0; /*0x52aecd*/
+  *(this + 2) = 0; /*0x52aecd*/
   return this; /*0x52aed0*/
 }
 
@@ -10071,18 +10071,18 @@ size_t __thiscall HashTable::BinarySearchAlt(char **this, CCINIClass *aP1)
   int v6; // ecx
   ObjectClass *v7; // esi
 
-  result = (size_t)this->HashTable_field_0x04; /*0x52b4f3*/
+  result = (size_t)this->q004; /*0x52b4f3*/
   if ( result ) /*0x52b4f8*/
   {
-    if ( !this->HashTable_field_0x0C ) /*0x52b4fe*/
+    if ( !this->q00C ) /*0x52b4fe*/
     {
       qsort(*this, result, 8u, CompareFunc3Int); /*0x52b510*/
-      this->HashTable_field_0x04 = 0; /*0x52b518*/
-      this->HashTable_field_0x0C = 1; /*0x52b51f*/
+      this->q004 = 0; /*0x52b518*/
+      this->q00C = 1; /*0x52b51f*/
     }
     v4 = (ObjectClass *)*this; /*0x52b529*/
     v5 = *(ObjectClass **)aP1->__pad_0; /*0x52b52b*/
-    v6 = (int)this->HashTable_field_0x04; /*0x52b52d*/
+    v6 = (int)this->q004; /*0x52b52d*/
     if ( v6 <= 0 ) /*0x52b532*/
       return 0; /*0x52b55e*/
     while ( 1 ) /*0x52b53b*/

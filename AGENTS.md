@@ -198,6 +198,21 @@ cmake --build build_linux
   **生成器在 `tools/csp_export/*.py`（已入库）——禁止手改生成物，改生成器
   后 `canon_regen` 重跑。**
 
+- **✅ G29 基建轮（2026-09-21）：RA2MCP 扩到 35 个 + canon 溯源修复**。
+  ①工具五件套：`verify_function` verbose（双侧 CFG 块级转储+STEP3(0) 缺失
+  事件）+auto_mark；`get_context` globals_map（全局名+hpp file:line）+
+  receiver（til 类型化 this→成员形态指引）；`set_signature`（cpp def+hpp
+  同步+成员形态自动 include 载体）；`sweep_stubs`（死存根清扫，dry 实测
+  58 文件/46 死块）；`harvest_loop`（单 return 琐碎桶 replace→verify→
+  mark/回滚，pool 345）。②**canon 溯源审计**（回应「canon 来源是否可信」）：
+  member_types 83.3% 有证据可信；16.7%（8,771 条）无证据旧纪元残留且
+  **压过了 G16 裁定真值**（focus@536/owner@540 曾被旧名覆盖）——已修为
+  四层优先级（evidence>裁定 src>语义名>填充序）+字节噪声过滤，canon 表
+  已吸收 G16。③**csp_canon/classes.hpp 首次编译 0 error**（拓扑排序+
+  基类解析单源化+math/enums 重名抑制+Windows typedef/宏消歧+minimal-
+  vfptr 缺定义基类）——e4 成员形态翻译的类载体就绪。详见
+  `docs/mech_rebuild_plan.md`「G29 基建轮」节。
+
 - **✅ 第 6 步 RA2MCP 首轮已完成（2026-09-20 G26）**：纯 RA2MCP 循环
   （next_batch→get_context→翻译→replace_body→verify_function→mark_completed）
   18 函数全 PASS，**净增 +8 → completed 12,856**，~10 件 HEAD 假完成修复为真体，
@@ -1217,7 +1232,7 @@ python tools/type_infer/auto_name.py
 
 ## 下一会话快速接手指引
 
-0. **【最高优先】先读 `docs/mech_rebuild_plan.md`——机械重建 1-5 步 + 回填已完成，当前阶段 = 第 6 步 RA2MCP。G28 第三轮已执行（5 件净增 verify 全 PASS、IsFootprintBlocked 定性 #145 = 验证器 RET 合并词汇缺口、新机制七条含 e4 自由函数词汇缺口 ≈2,900 件，执行记录 = mech_rebuild_plan.md「G28 新增机制结论」节）。G29 计划 = `docs/g29_prep.md`（e4 自由函数词汇试点 → 存根清扫批 → RET 合并词汇裁决 → 挂账裁决 → 三大件）。G26 及此前 fleet/H5 配额管线已被取代，不要恢复执行。**
+0. **【最高优先】先读 `docs/mech_rebuild_plan.md`——机械重建 1-5 步 + 回填已完成，当前阶段 = 第 6 步 RA2MCP。G28 第三轮已执行（5 件净增 verify 全 PASS、IsFootprintBlocked 定性 #145 = 验证器 RET 合并词汇缺口、新机制七条含 e4 自由函数词汇缺口 ≈2,900 件，执行记录 = mech_rebuild_plan.md「G28 新增机制结论」节）。G29 基建轮已完成（MCP 35 工具：verify verbose+auto_mark / globals_map+receiver / set_signature / sweep_stubs / harvest_loop；canon 溯源修复吸收 G16；csp_canon/classes.hpp 首次编译 0 error，e4 成员形态载体就绪）——执行记录 = mech_rebuild_plan.md「G29 基建轮」节；下一步按 docs/g29_prep.md 收割。G26 及此前 fleet/H5 配额管线已被取代，不要恢复执行。**
 
 1. 看 `docs/coverage.md` 了解整体进度（**1,120 IDA 类全部完成 header，0 unknown_**）
 2. 看 **`docs/master_plan.md`（总计划·单一权威）** + **`docs/mech_rebuild_plan.md`（六步机械重建 + 第 6 步 RA2MCP 执行记录——当前权威工作文档）** + **`docs/g29_prep.md`（下一步工作包）**。全池基线：**12,662（G28 末；并行会话并行推进，接手先 stats 复核），pending 3,946**

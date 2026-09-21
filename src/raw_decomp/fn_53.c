@@ -4075,7 +4075,7 @@ char __stdcall Game_Stub(int a1)
 // ==== 0x00535C00  CreateTeamCommand::Construct  this=CreateTeamCommand  sig=csp ====
 _DWORD *__thiscall CreateTeamCommand_Constructor(_DWORD *this, int a2)
 {
-  this->CreateTeamCommand_field_0x4 = a2; /*0x535c06*/
+  this->q004 = a2; /*0x535c06*/
   *this = &vt_CreateTeamCommandClass; /*0x535c09*/
   return this; /*0x535c0f*/
 }
@@ -4084,7 +4084,7 @@ _DWORD *__thiscall CreateTeamCommand_Constructor(_DWORD *this, int a2)
 // ==== 0x00535C20  CreateTeamCommandClass::AddRef  this=CreateTeamCommand  sig=csp ====
 ObjectClass *__thiscall CreateTeamCommand::AddRef(_DWORD *this)
 {
-  sprintf(&HouseClass_Player.__pad_5568[25344], &stru_826F84, (INIClass *)this->CreateTeamCommand_field_0x4); /*0x535c2e*/
+  sprintf(&HouseClass_Player.__pad_5568[25344], &stru_826F84, (INIClass *)this->q004); /*0x535c2e*/
   return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x535c3b*/
 }
 
@@ -4095,7 +4095,7 @@ wchar_t *__thiscall CreateTeamCommand::_vt02(const wchar_t **this)
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = this->CreateTeamCommand_field_0x4; /*0x535c45*/
+  v3 = this->q004; /*0x535c45*/
   StringCSF = GetStringCSF(MEMORY[0x826F94], 0, g_Str_File_Init_CPP, 6165); /*0x535c55*/
   swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x535c60*/
   return &MEMORY[0xA8F654]; /*0x535c6d*/
@@ -4115,7 +4115,7 @@ wchar_t *__thiscall CreateTeamCommand::_vt04(const wchar_t **this)
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = this->CreateTeamCommand_field_0x4; /*0x535c95*/
+  v3 = this->q004; /*0x535c95*/
   StringCSF = GetStringCSF(MEMORY[0x826FB0], 0, g_Str_File_Init_CPP, 6169); /*0x535ca5*/
   swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x535cb0*/
   return &MEMORY[0xA8F654]; /*0x535cbd*/
@@ -4125,7 +4125,7 @@ wchar_t *__thiscall CreateTeamCommand::_vt04(const wchar_t **this)
 // ==== 0x00535CC0  CreateTeamCommandClass::Undo  this=CreateTeamCommand  sig=csp ====
 void __thiscall CreateTeamCommand::_vt08(char **this, int a2)
 {
-  CreateTeamCommand::performAction_246(this->CreateTeamCommand_field_0x4); /*0x535cc3*/
+  CreateTeamCommand::performAction_246(this->q004); /*0x535cc3*/
 }
 
 
@@ -7025,7 +7025,7 @@ char __thiscall CreateTeamCommand::sub_5386A0(void *this, int a2, _DWORD *a3)
       return 0; /*0x53874a*/
     if ( this->Items ) /*0x5386d8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x5386df*/
+      v5 = this->q008; /*0x5386df*/
       if ( a2 < v5 ) /*0x5386e4*/
         v5 = a2; /*0x5386e6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x5386ec*/
@@ -7037,14 +7037,14 @@ char __thiscall CreateTeamCommand::sub_5386A0(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x53871a*/
-    this->DynamicVector_field_0x8 = a2; /*0x538722*/
+    this->q008 = a2; /*0x538722*/
     this->IsAllocated = a3 == 0; /*0x538725*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x53872e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x538731*/
+  v7 = this->q008; /*0x538731*/
   if ( v7 < this->Items ) /*0x538739*/
     this->Items = v7; /*0x53873b*/
   return 1; /*0x53873e*/
@@ -7079,8 +7079,8 @@ char __thiscall DynamicVector::Add_Alt2(_DWORD *this, DynamicVector *aP1)
   int v6; // eax
   int v7; // edx
 
-  v3 = this->DynamicVector_field_0x8; /*0x538783*/
-  if ( this->DynamicVector_field_0x10 >= v3 ) /*0x53878b*/
+  v3 = this->q008; /*0x538783*/
+  if ( this->q010 >= v3 ) /*0x53878b*/
   {
     if ( !this->IsAllocated && v3 ) /*0x538796*/
       return 0; /*0x538796*/
@@ -7088,9 +7088,9 @@ char __thiscall DynamicVector::Add_Alt2(_DWORD *this, DynamicVector *aP1)
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x5387a8*/
       return 0; /*0x5387af*/
   }
-  v6 = this->DynamicVector_field_0x10; /*0x5387b5*/
+  v6 = this->q010; /*0x5387b5*/
   v7 = this->Items; /*0x5387b8*/
-  this->DynamicVector_field_0x10 = v6 + 1; /*0x5387be*/
+  this->q010 = v6 + 1; /*0x5387be*/
   *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x5387c8*/
   return 1; /*0x5387b1*/
 }
@@ -7357,7 +7357,7 @@ _DWORD *__thiscall sub_538B30(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x538b3b*/
   this->Capacity = a2; /*0x538b3e*/
   this->q030 = 1; /*0x538b41*/
-  this->__pad_034 = 0; /*0x538b45*/
+  this->q034 = 0; /*0x538b45*/
   *this = &vt_VectorClass_CCINIClass; /*0x538b48*/
   if ( a2 ) /*0x538b4e*/
   {
@@ -7367,7 +7367,7 @@ _DWORD *__thiscall sub_538B30(_DWORD *this, int a2, int a3)
       return this; /*0x538b5e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x538b6d*/
-    this->__pad_034 = 1; /*0x538b70*/
+    this->q034 = 1; /*0x538b70*/
   }
   return this; /*0x538b5d*/
 }
@@ -10425,7 +10425,7 @@ char __thiscall DeleteCommandClass_28_::sub_53C6A0(void *this, int a2, _DWORD *a
       return 0; /*0x53c74a*/
     if ( this->Items ) /*0x53c6d8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x53c6df*/
+      v5 = this->q008; /*0x53c6df*/
       if ( a2 < v5 ) /*0x53c6e4*/
         v5 = a2; /*0x53c6e6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x53c6ec*/
@@ -10437,14 +10437,14 @@ char __thiscall DeleteCommandClass_28_::sub_53C6A0(void *this, int a2, _DWORD *a
       }
     }
     this->Items = v4; /*0x53c71a*/
-    this->DynamicVector_field_0x8 = a2; /*0x53c722*/
+    this->q008 = a2; /*0x53c722*/
     this->IsAllocated = a3 == 0; /*0x53c725*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x53c72e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x53c731*/
+  v7 = this->q008; /*0x53c731*/
   if ( v7 < this->Items ) /*0x53c739*/
     this->Items = v7; /*0x53c73b*/
   return 1; /*0x53c73e*/
@@ -10691,9 +10691,9 @@ _DWORD *__thiscall ActionQueue::PushEntry(_DWORD *this, int a2, int a3, int a4)
 
   *this = a2; /*0x53cb1d*/
   this->q004 = a3; /*0x53cb23*/
-  this->__pad_00C = 0; /*0x53cb28*/
+  this->q00C = 0; /*0x53cb28*/
   this->q004 = 0; /*0x53cb2b*/
-  this->Coord_field_0x8 = a4; /*0x53cb2e*/
+  this->q008 = a4; /*0x53cb2e*/
   if ( unk_AA0128 < unk_AA0120 /*0x53cb63*/
     || (unk_AA0125 || !unk_AA0120)
     && unk_AA012C > 0
@@ -11604,7 +11604,7 @@ char __thiscall VectorClass_ptr_IonBlastClass::sub_53DC20(void *this, int a2, _D
       return 0; /*0x53dcca*/
     if ( this->Items ) /*0x53dc58*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x53dc5f*/
+      v5 = this->q008; /*0x53dc5f*/
       if ( a2 < v5 ) /*0x53dc64*/
         v5 = a2; /*0x53dc66*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x53dc6c*/
@@ -11616,14 +11616,14 @@ char __thiscall VectorClass_ptr_IonBlastClass::sub_53DC20(void *this, int a2, _D
       }
     }
     this->Items = v4; /*0x53dc9a*/
-    this->DynamicVector_field_0x8 = a2; /*0x53dca2*/
+    this->q008 = a2; /*0x53dca2*/
     this->IsAllocated = a3 == 0; /*0x53dca5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x53dcae*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x53dcb1*/
+  v7 = this->q008; /*0x53dcb1*/
   if ( v7 < this->Items ) /*0x53dcb9*/
     this->Items = v7; /*0x53dcbb*/
   return 1; /*0x53dcbe*/
@@ -11699,12 +11699,12 @@ char __thiscall sub_53DDA0(_DWORD *this, int a2)
   int v3; // eax
   int v4; // edx
 
-  v2 = this->DynamicVector_field_0x10; /*0x53dda0*/
+  v2 = this->q010; /*0x53dda0*/
   v3 = a2; /*0x53dda3*/
   if ( a2 >= v2 ) /*0x53dda9*/
     return 0; /*0x53ddcc*/
   v4 = v2 - 1; /*0x53ddab*/
-  this->DynamicVector_field_0x10 = v4; /*0x53ddae*/
+  this->q010 = v4; /*0x53ddae*/
   if ( a2 < v4 ) /*0x53ddb1*/
   {
     do /*0x53ddc4*/
@@ -11712,7 +11712,7 @@ char __thiscall sub_53DDA0(_DWORD *this, int a2)
       ++v3; /*0x53ddb7*/
       *(_DWORD *)(this->Items + 4 * v3 - 4) = *(_DWORD *)(this->Items + 4 * v3); /*0x53ddbb*/
     }
-    while ( v3 < this->DynamicVector_field_0x10 ); /*0x53ddc4*/
+    while ( v3 < this->q010 ); /*0x53ddc4*/
   }
   return 1; /*0x53ddc9*/
 }
@@ -12486,25 +12486,25 @@ int __thiscall Network_IsBroadcastAddr(_BYTE *this)
   if ( dword_828140 == 1 ) /*0x53ee0a*/
   {
     if ( *this == 0xFF /*0x53ee3b*/
-      && this->WinModemClass_field_0x04 == 0xFF
-      && this->WinModemClass_field_0x08 == 0xFF
-      && this->WinModemClass_field_0x0C == 0xFF
-      && this->WinModemClass_field_0x04 == 0xFF
-      && this->WinModemClass_field_0x14 == 0xFF
-      && this->WinModemClass_field_0x18 == 0xFF
-      && this->WinModemClass_field_0x1C == 0xFF
-      && this->WinModemClass_field_0x08 == 0xFF
-      && this->WinModemClass_field_0x24 == 0xFF )
+      && this->q004 == 0xFF
+      && this->q008 == 0xFF
+      && this->q00C == 0xFF
+      && this->q004 == 0xFF
+      && this->q014 == 0xFF
+      && this->q018 == 0xFF
+      && this->q01C == 0xFF
+      && this->q008 == 0xFF
+      && this->q024 == 0xFF )
     {
       return 1; /*0x53ee42*/
     }
   }
-  else if ( this->WinModemClass_field_0x04 == 0xFF /*0x53ee5f*/
-         && this->WinModemClass_field_0x14 == 0xFF
-         && this->WinModemClass_field_0x18 == 0xFF
-         && this->WinModemClass_field_0x1C == 0xFF
-         && this->WinModemClass_field_0x08 == 0xFF
-         && this->WinModemClass_field_0x24 == 0xFF )
+  else if ( this->q004 == 0xFF /*0x53ee5f*/
+         && this->q014 == 0xFF
+         && this->q018 == 0xFF
+         && this->q01C == 0xFF
+         && this->q008 == 0xFF
+         && this->q024 == 0xFF )
   {
     return 1; /*0x53ee66*/
   }
@@ -13217,11 +13217,11 @@ int *__thiscall Network_Init_53FA90(
   *this = (int)&vt_IPXGlobalConnClass; /*0x53facc*/
   *((_WORD *)this + 92) = (_WORD)aP4; /*0x53fad2*/
   this->q0C4 = 0; /*0x53fad9*/
-  this->__pad_0C8 = 1; /*0x53fadf*/
+  this->q0C8 = 1; /*0x53fadf*/
   this->q035 = (int)aP2; /*0x53fae6*/
   v7 = __2_YAPAXI_Z(4 * (_DWORD)aP2); /*0x53faec*/
   v8 = this->q035; /*0x53faf1*/
-  this->IPXGlobalConnClass_field_0x34 = v7; /*0x53faf7*/
+  this->q034 = v7; /*0x53faf7*/
   v9 = (IPXManagerClass *)__2_YAPAXI_Z(12 * v8); /*0x53fb09*/
   if ( v9 ) /*0x53fb10*/
   {
@@ -13249,7 +13249,7 @@ int *__thiscall Network_Init_53FA90(
     do /*0x53fb5a*/
     {
       ++v12; /*0x53fb49*/
-      *(_DWORD *)(this->IPXGlobalConnClass_field_0x34 + 4 * v12 - 4) = -1; /*0x53fb4a*/
+      *(_DWORD *)(this->q034 + 4 * v12 - 4) = -1; /*0x53fb4a*/
     }
     while ( v12 < this->q035 ); /*0x53fb5a*/
   }
@@ -13340,7 +13340,7 @@ LABEL_24:
       *v14 = v20; /*0x53fe38*/
       v14[1] = v21; /*0x53fe3e*/
       v14[2] = v22; /*0x53fe45*/
-      *(_DWORD *)(this->IPXGlobalConnClass_field_0x34 + 4 * this->q036) = *((_DWORD *)a2 + 1); /*0x53fe57*/
+      *(_DWORD *)(this->q034 + 4 * this->q036) = *((_DWORD *)a2 + 1); /*0x53fe57*/
       v15 = this->q035; /*0x53fe60*/
       v16 = this->q036 + 1; /*0x53fe67*/
       this->q036 = v16; /*0x53fe69*/
@@ -13352,14 +13352,14 @@ LABEL_24:
       v13 = 0; /*0x53fdc5*/
       while ( 1 ) /*0x53fdc7*/
       {
-        if ( v12 >= *(_DWORD *)(this->IPXGlobalConnClass_field_0x04 + 60) ) /*0x53fdcd*/
+        if ( v12 >= *(_DWORD *)(this->q004 + 60) ) /*0x53fdcd*/
         {
 LABEL_23:
           v11 = a5; /*0x53fe05*/
           goto LABEL_24; /*0x53fe05*/
         }
         if ( GUID::Compare((char *)&v20, v13 + this->q0CC) /*0x53fdf1*/
-          && *((_DWORD *)a2 + 1) == *(_DWORD *)(this->IPXGlobalConnClass_field_0x34 + 4 * v12) )
+          && *((_DWORD *)a2 + 1) == *(_DWORD *)(this->q034 + 4 * v12) )
         {
           break; /*0x53fdf1*/
         }
@@ -13380,7 +13380,7 @@ LABEL_23:
     Debug::Log(); /*0x53febe*/
     v19 = MEMORY[0xA8EA0C]; /*0x53fec3*/
     LOBYTE(v19) = this == (void *)MEMORY[0xA8EA0C]; /*0x53fed3*/
-    if ( (*(int (__thiscall **)(void *, __int16 *, int, int *, int, int, int))(this->IPXGlobalConnClass_field_0x24)( /*0x53fee4*/
+    if ( (*(int (__thiscall **)(void *, __int16 *, int, int *, int, int, int))(this->q024)( /*0x53fee4*/
            this,
            &v23,
            16,
@@ -13407,7 +13407,7 @@ LABEL_30:
   }
   if ( *((_BYTE *)a2 + 2) != 2 ) /*0x53fce3*/
     return 1; /*0x53fce3*/
-  v7 = (_DWORD *)this->IPXGlobalConnClass_field_0x04; /*0x53fce9*/
+  v7 = (_DWORD *)this->q004; /*0x53fce9*/
   v8 = 0; /*0x53fcec*/
   if ( (int)v7[10] <= 0 ) /*0x53fcf3*/
     return 1; /*0x53fefb*/
@@ -13417,7 +13417,7 @@ LABEL_30:
     v10 = TileIndex[5]; /*0x53fcff*/
     if ( *((_DWORD *)a2 + 1) == *(_DWORD *)(v10 + 4) && !*(_BYTE *)(v10 + 2) ) /*0x53fd0a*/
       break; /*0x53fd0a*/
-    v7 = (_DWORD *)this->IPXGlobalConnClass_field_0x04; /*0x53fd11*/
+    v7 = (_DWORD *)this->q004; /*0x53fd11*/
     if ( ++v8 >= v7[10] ) /*0x53fd18*/
       return 1; /*0x53fd26*/
   }
@@ -13435,7 +13435,7 @@ int __thiscall IPXGlobalConnClass::_vt13(_DWORD *this, void *a2, signed int *a3,
   int v8; // ebx
   _DWORD *v9; // edx
 
-  v5 = (_DWORD *)this->IPXGlobalConnClass_field_0x04; /*0x53ff10*/
+  v5 = (_DWORD *)this->q004; /*0x53ff10*/
   if ( !v5[14] ) /*0x53ff13*/
     return 0; /*0x53ff13*/
   TileType = (_DWORD *)Terrain::GetTileType(v5, 0); /*0x53ff1c*/
@@ -13472,7 +13472,7 @@ int __thiscall TerrainTypeClass_GetTileData(
   signed int v10; // edx
   _DWORD *v11; // edx
 
-  v7 = (_DWORD *)this->IPXGlobalConnClass_field_0x04; /*0x53ffa0*/
+  v7 = (_DWORD *)this->q004; /*0x53ffa0*/
   if ( v7[14] < a2 ) /*0x53ffaa*/
     return 0; /*0x53ffaa*/
   TileType = Terrain::GetTileType(v7, a2); /*0x53ffad*/

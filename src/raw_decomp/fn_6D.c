@@ -692,7 +692,7 @@ int __thiscall ObjectClass_PreDraw(_BYTE *this)
   int v1; // eax
 
   v1 = *(_DWORD *)this; /*0x6d0f00*/
-  this->q5545 = 1; /*0x6d0f04*/
+  *(this + 21829) = 1; /*0x6d0f04*/
   return (*(int (__stdcall **)(_DWORD))(v1 + 56))(0); /*0x6d0f0e*/
 }
 
@@ -1487,7 +1487,7 @@ int __thiscall TacticalMap_Constructor(int this)
 _DWORD *__thiscall SmallFunc_6D1E30(_DWORD *this, AbstractClass *aP1)
 {
   AbstractClass::InitVtables(this, (int)aP1); /*0x6d1e38*/
-  this->Tactical_field_0xDA4 = Timer::GetTicks(); /*0x6d1e48*/
+  this->qDA4 = Timer::GetTicks(); /*0x6d1e48*/
   this->q36B = 0; /*0x6d1e4e*/
   *this = &Tactical::`vftable'; /*0x6d1e58*/
   this->vtable2 = &Tactical::`vftable'; /*0x6d1e5e*/
@@ -1728,7 +1728,7 @@ int __thiscall TacticalClass::SetPosition(_DWORD *this, IUnknown *aP1, AbstractC
   result = this->qD64; /*0x6d250b*/
   v10 = v7 + v8; /*0x6d2511*/
   v11 = (IUnknown *)this->qD68; /*0x6d2513*/
-  this->__pad_0D0 = v4; /*0x6d2519*/
+  this->q0D0 = v4; /*0x6d2519*/
   this->q0D4 = v10; /*0x6d251f*/
   this->q0C8 = result; /*0x6d2525*/
   this->q0CC = v11; /*0x6d252b*/
@@ -7780,8 +7780,8 @@ int __userpurge RenderRallyPointLines@<eax>(_DWORD *this@<ecx>, CampaignScore *a
   v41 = (0x7FFFFFFF - *(_DWORD *)&HouseClass_Player.__pad_5568[23248]) % 15; /*0x6dad8b*/
   v5 = Render_Render_5BE970(60); /*0x6dad9b*/
   v6 = Render_Render_5BE990(60); /*0x6dad9d*/
-  v7 = this->__pad_DA0 % v6; /*0x6dadab*/
-  result = this->__pad_DA0 / v6; /*0x6dadab*/
+  v7 = this->qDA0 % v6; /*0x6dadab*/
+  result = this->qDA0 / v6; /*0x6dadab*/
   LOBYTE(result) = HouseClass_Player.__pad_5568[23223]; /*0x6dadad*/
   v42 = v5 + v7; /*0x6dadb6*/
   if ( !HouseClass_Player.__pad_5568[23223] )
@@ -8882,9 +8882,9 @@ _DWORD *__thiscall Vector2_Subtract(_DWORD *this, _DWORD *a2)
 {
   int v3; // edx
 
-  v3 = this->Vector2_field_0x04; /*0x6dc4cd*/
+  v3 = this->q004; /*0x6dc4cd*/
   *this -= *a2; /*0x6dc4d0*/
-  this->Vector2_field_0x04 = v3 - a2[1]; /*0x6dc4d8*/
+  this->q004 = v3 - a2[1]; /*0x6dc4d8*/
   return this; /*0x6dc4d7*/
 }
 
@@ -9438,7 +9438,7 @@ char __thiscall VectorClass_UDirtyAreaStruct::sub_6DCB50(void *this, int a2, _DW
       return 0; /*0x6dcbfa*/
     if ( this->Items ) /*0x6dcb88*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x6dcb8f*/
+      v5 = this->q008; /*0x6dcb8f*/
       if ( a2 < v5 ) /*0x6dcb94*/
         v5 = a2; /*0x6dcb96*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x6dcb9c*/
@@ -9450,14 +9450,14 @@ char __thiscall VectorClass_UDirtyAreaStruct::sub_6DCB50(void *this, int a2, _DW
       }
     }
     this->Items = v4; /*0x6dcbca*/
-    this->DynamicVector_field_0x8 = a2; /*0x6dcbd2*/
+    this->q008 = a2; /*0x6dcbd2*/
     this->IsAllocated = a3 == 0; /*0x6dcbd5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x6dcbde*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x6dcbe1*/
+  v7 = this->q008; /*0x6dcbe1*/
   if ( v7 < this->Items ) /*0x6dcbe9*/
     this->Items = v7; /*0x6dcbeb*/
   return 1; /*0x6dcbee*/

@@ -1687,29 +1687,29 @@ TabClass * BlowStraw_29::Read(char a2)
 namespace gamemd { void* MouseClass::loadCursor(int a2, int a3) {
 {
     void *v4;
-    this->MouseClass_field_0x4 = 0;
-    this->MouseClass_field_0x8 = a2;
-    this->MouseClass_field_0xC = 1;
+    this->q004 = 0;
+    this->q008 = a2;
+    this->q00C = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_HashObject_unsigned_int_unsigned_int;
     if ( a2 )
   {
     if ( a3 )
     {
-    this->MouseClass_field_0x4 = a3;
+    this->q004 = a3;
     }
     else
     {
     v4 = __2_YAPAXI_Z(8 * a2);
     if ( !v4 )
     v4 = 0;
-    this->MouseClass_field_0x4 = v4;
+    this->q004 = v4;
     this->IsAllocated = 1;
     }
   }
     *(void**)this = &vt_DynamicVectorClass_HashObject_unsigned_int_unsigned_int;
-    this->MouseClass_field_0x14 = 10;
-    this->MouseClass_field_0x10 = 0;
+    this->q014 = 10;
+    this->q010 = 0;
     return this;
 }
 } }

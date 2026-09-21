@@ -25,7 +25,7 @@ namespace ra2 { namespace game { int ObjectClass::FreeCaptureManager() {
       _DWORD *v1;
       int result;
 
-      v1 = (_DWORD *)this->rockerLinkedUnit;
+      v1 = (_DWORD *)this->captureManager;
       if ( v1 )
         return CaptureManager::FreeAll(v1);
       return result;
@@ -1937,7 +1937,7 @@ unsigned int * TerrainTypeClass::GetWidth(unsigned int * a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x0071E140  TerrainTypeClass::PowerDrainUpdate  cls=TerrainTypeClass  sig=csp  renamed_refs=8  residual=- ====
+// ==== BACKFILL 0x0071E140  TerrainTypeClass::PowerDrainUpdate  cls=TerrainTypeClass  sig=csp  renamed_refs=3  residual=- ====
 int TerrainTypeClass::PowerDrainUpdate(int * a2)
 {
 {
@@ -1946,18 +1946,18 @@ int TerrainTypeClass::PowerDrainUpdate(int * a2)
     int v5;
     int v6;
     AbstractTypeClass::ProcessPower((char *)this, a2);
-    Power::TimerProcess(this->Foundation);
-    LOBYTE(v3) = this->IsVeinhole;
+    Power::TimerProcess(this->ArrayIndex);
+    LOBYTE(v3) = this->WaterBound;
     Power::FlagProcess(a2, v3);
     LOBYTE(v4) = this->q2B1;
     v5 = Power::FlagProcess(a2, v4);
     LOBYTE(v5) = this->q2B2;
     Power::FlagProcess(a2, v5);
-    Power::TimerProcess(this->RadarColor);
+    Power::TimerProcess(this->Foundation);
     LOBYTE(v6) = this->q2B3;
     Power::FlagProcess(a2, v6);
-    Power::TimerProcess(this->AnimationProbability);
-    return Checksummer::Add_float((unsigned int *)a2, this->TemperateOccupationBits);
+    Power::TimerProcess(this->AnimationRate);
+    return Checksummer::Add_float((unsigned int *)a2, this->AnimationProbability);
 }
 }
 
@@ -2022,11 +2022,11 @@ int TerrainTypeClass::GetObjectSize()
 return 700;
 }
 
-// ==== BACKFILL 0x0071E350  TerrainTypeClass::GetAuxField  cls=TerrainTypeClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x0071E350  TerrainTypeClass::GetAuxField  cls=TerrainTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int TerrainTypeClass::GetAuxField()
 {
 {
-    return this->RadarColor;
+    return this->Foundation;
 }
 }
 

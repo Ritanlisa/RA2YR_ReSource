@@ -57,7 +57,7 @@ return 0;
 unsigned int * CreateTeamCommand::Construct(int a2)
 {
 {
-    this->CreateTeamCommand_field_0x4 = a2;
+    this->q004 = a2;
     *(void**)this = &vt_CreateTeamCommandClass;
     return this;
 }
@@ -67,7 +67,7 @@ unsigned int * CreateTeamCommand::Construct(int a2)
 ObjectClass * CreateTeamCommand::AddRef()
 {
 {
-    sprintf(&HouseClass_Player.__pad_5568[25344], &DataGlobal_826F84, (INIClass *)this->CreateTeamCommand_field_0x4);
+    sprintf(&HouseClass_Player.__pad_5568[25344], &DataGlobal_826F84, (INIClass *)this->q004);
     return (ObjectClass *)&HouseClass_Player.__pad_5568[25344];
 }
 }
@@ -2515,7 +2515,7 @@ void CreateTeamCommand::performAction_239()
     this->CreateTeamCommand_field_0x4 = 0;
   }
     this->IsAllocated = 0;
-    this->DynamicVector_field_0x8 = 0;
+    this->q008 = 0;
 }
 }
 
@@ -2530,7 +2530,7 @@ unsigned int CreateTeamCommand::performAction_240(int a2)
 }
 }
 
-// ==== BACKFILL 0x00538780  DynamicVector::Add_Alt2  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00538780  DynamicVector::Add_Alt2  cls=DynamicVector  sig=csp  renamed_refs=4  residual=- ====
 char DynamicVector::Add_Alt2(DynamicVector * aP1)
 {
 {
@@ -2538,8 +2538,8 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
     int v4;
     int v6;
     int v7;
-    v3 = this->DynamicVector_field_0x8;
-    if ( this->DynamicVector_field_0x10 >= v3 )
+    v3 = this->q008;
+    if ( this->q010 >= v3 )
   {
     if ( !this->IsAllocated && v3 )
     return 0;
@@ -2547,9 +2547,9 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
     if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
     return 0;
   }
-    v6 = this->DynamicVector_field_0x10;
+    v6 = this->q010;
     v7 = this->Items;
-    this->DynamicVector_field_0x10 = v6 + 1;
+    this->q010 = v6 + 1;
     *(int *)(v7 + 4 * v6) = *(int *)aP1->__pad_0;
     return 1;
 }

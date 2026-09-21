@@ -280,8 +280,8 @@ _DWORD *__thiscall sub_720440(_DWORD *this)
   this->q0A0 = 0; /*0x720444*/
   this->qA10 = 0; /*0x72044a*/
   *((_BYTE *)this + 648) = 1; /*0x720450*/
-  this->__pad_2890 = 0; /*0x720457*/
-  this->__pad_28A0 = 0; /*0x72045d*/
+  this->q2890 = 0; /*0x720457*/
+  this->q28A0 = 0; /*0x72045d*/
   this->q0A3 = -1; /*0x720463*/
   *(_BYTE *)this = 0; /*0x72046d*/
   this->q100 = 0; /*0x72046f*/
@@ -518,17 +518,17 @@ char __thiscall Audio::LoadWAVFiles(_DWORD *this)
         IsSoundEnabled = this->q009; /*0x720821*/
         for ( i = 0; i < IsSoundEnabled; ++i ) /*0x720828*/
         {
-          _makepath(Buffer, 0, 0, (const char *)(*(_DWORD *)(this->__pad_018 + 4 * i) + 256), g_Str_File__WAV); /*0x720855*/
+          _makepath(Buffer, 0, 0, (const char *)(*(_DWORD *)(this->q018 + 4 * i) + 256), g_Str_File__WAV); /*0x720855*/
           CCFileClass::Construct(v10, Buffer); /*0x720869*/
-          v4 = 4 * i + this->__pad_018; /*0x720877*/
+          v4 = 4 * i + this->q018; /*0x720877*/
           *(_BYTE *)(*(_DWORD *)v4 + 650) = CCFileClass::Open(v10, 0); /*0x720881*/
-          if ( *(_BYTE *)(*(_DWORD *)(this->__pad_018 + 4 * i) + 650) ) /*0x72088d*/
+          if ( *(_BYTE *)(*(_DWORD *)(this->q018 + 4 * i) + 650) ) /*0x72088d*/
           {
             Struct::ZeroInit32(v9); /*0x72089b*/
             FileClass::Load(v10, 1); /*0x7208a6*/
             if ( ParseWaveFileHeader((int)v10, v9, (#247 *)v8) ) /*0x7208b8*/
             {
-              v5 = (_DWORD *)(4 * i + this->__pad_018); /*0x7208cc*/
+              v5 = (_DWORD *)(4 * i + this->q018); /*0x7208cc*/
               v6 = sub_408560((int)v9, v8[0]) / 0x3E8; /*0x7208dc*/
               HIDWORD(v6) = *v5; /*0x7208e1*/
               v8[1] = v6; /*0x7208e4*/
@@ -754,9 +754,9 @@ int __thiscall ThemeClass::Play(int *this, Movie *aP1)
     v3 = this->q00B; /*0x720bdc*/
     if ( !v3 ) /*0x720be5*/
       goto LABEL_13; /*0x720be5*/
-    if ( this->Movie_field_0x44 && !AudioSample::IsBuffering(v3) ) /*0x720bee*/
+    if ( this->q044 && !AudioSample::IsBuffering(v3) ) /*0x720bee*/
       Audio::Release((_DWORD *)this->q00B); /*0x720bfa*/
-    if ( !Audio::IsSoundPlaying((_DWORD *)this->q00B) || (Movie *)this->Movie_field_0x4 != aP1 )
+    if ( !Audio::IsSoundPlaying((_DWORD *)this->q00B) || (Movie *)this->q004 != aP1 )
     {
 LABEL_13:
       if ( MEMORY[0xA8D63C].__pad_14B0[392] /*0x720c37*/
@@ -769,20 +769,20 @@ LABEL_13:
         if ( v4 ) /*0x720c4f*/
           Audio::Release(v4); /*0x720c51*/
         *this = -1; /*0x720c56*/
-        this->Movie_field_0x4 = -1; /*0x720c5c*/
-        this->Movie_field_0x8 = -1; /*0x720c63*/
+        this->q004 = -1; /*0x720c5c*/
+        this->q008 = -1; /*0x720c63*/
       }
-      this->Movie_field_0x44 = 0; /*0x720c6d*/
+      this->q044 = 0; /*0x720c6d*/
       if ( aP1 != (Movie *)-1 && aP1 != (Movie *)-3 )
       {
-        if ( (int)aP1 <= -1 || this->Movie_field_0xC <= 0 ) /*0x720c8e*/
+        if ( (int)aP1 <= -1 || this->q00C <= 0 ) /*0x720c8e*/
           goto LABEL_47; /*0x720c8e*/
-        this->Movie_field_0x4 = (int)aP1; /*0x720c94*/
+        this->q004 = (int)aP1; /*0x720c94*/
         v5 = MEMORY[0x89E3A0] ? 0 : Game::CheckForGameCD(0);
         v6 = this->q00B; /*0x720cab*/
         if ( v6 && v5 > -1 ) /*0x720cba*/
         {
-          if ( (unsigned int)aP1 >= this->Movie_field_0x24 ) /*0x720cbf*/
+          if ( (unsigned int)aP1 >= this->q024 ) /*0x720cbf*/
           {
             ThreadAudioMixerMain((_DWORD *)this->q00B, (RawFileClass *)&MEMORY[0x87F8E4].__pad_5568[20760], 1); /*0x720d02*/
           }
@@ -803,7 +803,7 @@ LABEL_13:
           *this = -1; /*0x720d10*/
           if ( v6 ) /*0x720d16*/
           {
-            if ( v5 <= -1 && this->Movie_field_0x8 == -1 ) /*0x720d29*/
+            if ( v5 <= -1 && this->q008 == -1 ) /*0x720d29*/
             {
               if ( MEMORY[0xA8D63C].__pad_14B0[392] ) /*0x720d36*/
               {
@@ -834,9 +834,9 @@ LABEL_13:
           }
         }
         Debug::Log(); /*0x720de8*/
-        if ( this->__pad_010 == 1 || *(_BYTE *)(*(_DWORD *)(this->q006 + 4 * (_DWORD)aP1) + 649) == 1 ) /*0x720e03*/
+        if ( this->q010 == 1 || *(_BYTE *)(*(_DWORD *)(this->q006 + 4 * (_DWORD)aP1) + 649) == 1 ) /*0x720e03*/
 LABEL_47:
-          this->Movie_field_0x8 = (int)aP1; /*0x720e05*/
+          this->q008 = (int)aP1; /*0x720e05*/
       }
     }
   }
@@ -989,7 +989,7 @@ bool __thiscall RulesClass::IsTypeBuildable(_DWORD *this, TechnoTypeClass *aP1)
 
   if ( aP1 == (TechnoTypeClass *)-3 || aP1 == (TechnoTypeClass *)-2 ) /*0x721150*/
     return 1; /*0x721150*/
-  if ( (unsigned int)aP1 >= this->Movie_field_0x24 ) /*0x721155*/
+  if ( (unsigned int)aP1 >= this->q024 ) /*0x721155*/
     return 0; /*0x721159*/
   v3 = *(_DWORD *)(this->q006 + 4 * (_DWORD)aP1); /*0x72115f*/
   if ( !*(_BYTE *)(v3 + 650) ) /*0x721162*/
@@ -1030,10 +1030,10 @@ int __thiscall StringList_Find(_DWORD *this, const char *a2)
 // ==== 0x00721270  ScriptAction::GetArgumentString  this=ScriptAction  sig=csp ====
 ObjectClass *__thiscall ScriptAction::GetArgumentString(_DWORD *this, int a2)
 {
-  if ( a2 < 0 || a2 >= this->ScriptAction_field_0x24 ) /*0x72127b*/
+  if ( a2 < 0 || a2 >= this->q024 ) /*0x72127b*/
     return (ObjectClass *)g_Str_none; /*0x721286*/
   else
-    return *(ObjectClass **)(this->ScriptAction_field_0x18 + 4 * a2); /*0x721280*/
+    return *(ObjectClass **)(this->q018 + 4 * a2); /*0x721280*/
 }
 
 
@@ -1096,7 +1096,7 @@ char __thiscall VectorClass_ptr_ThemeControl::sub_721300(void *this, int a2, _DW
       return 0; /*0x7213aa*/
     if ( this->Items ) /*0x721338*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x72133f*/
+      v5 = this->q008; /*0x72133f*/
       if ( a2 < v5 ) /*0x721344*/
         v5 = a2; /*0x721346*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x72134c*/
@@ -1108,14 +1108,14 @@ char __thiscall VectorClass_ptr_ThemeControl::sub_721300(void *this, int a2, _DW
       }
     }
     this->Items = v4; /*0x72137a*/
-    this->DynamicVector_field_0x8 = a2; /*0x721382*/
+    this->q008 = a2; /*0x721382*/
     this->IsAllocated = a3 == 0; /*0x721385*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x72138e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x721391*/
+  v7 = this->q008; /*0x721391*/
   if ( v7 < this->Items ) /*0x721399*/
     this->Items = v7; /*0x72139b*/
   return 1; /*0x72139e*/
@@ -1340,14 +1340,14 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
   this->q0E8 = 0; /*0x721746*/
   this->TiberiumClass_field_EC = 0; /*0x72174c*/
   this->TiberiumClass_field_F0 = 0; /*0x721752*/
-  this->TiberiumClass_field_F4_e = 0; /*0x721758*/
-  this->TiberiumClass_field_F8_e = 0; /*0x72175e*/
-  this->TiberiumClass_field_FC_e = 0; /*0x721764*/
-  this->SpreadTimer_e = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x721770*/
+  this->q0F4 = 0; /*0x721758*/
+  this->q0F8 = 0; /*0x72175e*/
+  this->q0FC = 0; /*0x721764*/
+  this->q100 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x721770*/
   this->q108 = 0; /*0x721776*/
-  this->TiberiumClass_field_10C_e = 0; /*0x72177c*/
-  this->TiberiumClass_field_110_e = 0; /*0x721782*/
-  this->TiberiumClass_field_114_e = 0; /*0x721788*/
+  this->q10C = 0; /*0x72177c*/
+  this->q110 = 0; /*0x721782*/
+  this->q114 = 0; /*0x721788*/
   this->TiberiumClass_field_118 = 0; /*0x72178e*/
   v3 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x721794*/
   this->q124 = 0; /*0x72179a*/
@@ -3427,7 +3427,7 @@ char __thiscall VectorClass_ptr_TiberiumClass::sub_723910(void *this, int a2, _D
       return 0; /*0x7239ba*/
     if ( this->Items ) /*0x723948*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x72394f*/
+      v5 = this->q008; /*0x72394f*/
       if ( a2 < v5 ) /*0x723954*/
         v5 = a2; /*0x723956*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x72395c*/
@@ -3439,14 +3439,14 @@ char __thiscall VectorClass_ptr_TiberiumClass::sub_723910(void *this, int a2, _D
       }
     }
     this->Items = v4; /*0x72398a*/
-    this->DynamicVector_field_0x8 = a2; /*0x723992*/
+    this->q008 = a2; /*0x723992*/
     this->IsAllocated = a3 == 0; /*0x723995*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x72399e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x7239a1*/
+  v7 = this->q008; /*0x7239a1*/
   if ( v7 < this->Items ) /*0x7239a9*/
     this->Items = v7; /*0x7239ab*/
   return 1; /*0x7239ae*/
@@ -3714,7 +3714,7 @@ int __thiscall GadgetClass_Hide(_BYTE *this)
   int v1; // eax
 
   v1 = *(_DWORD *)this; /*0x723eb0*/
-  this->q02D = 0; /*0x723eb2*/
+  this->q0B4 = 0; /*0x723eb2*/
   return (*(int (**)(void))(v1 + 72))();
 }
 
@@ -3817,7 +3817,7 @@ char *__thiscall sub_724000(char *this, int a2)
   int v4; // edx
 
   v3 = this + 564; /*0x72400a*/
-  this->__pad_001 = 0; /*0x724010*/
+  this->Position = 0; /*0x724010*/
   this->q008 = a2; /*0x724013*/
   this->ToolTipText = 0; /*0x724016*/
   this->q08A = 1000; /*0x724019*/
@@ -3832,7 +3832,7 @@ char *__thiscall sub_724000(char *this, int a2)
   this->q24C = 0; /*0x72404a*/
   this->q250 = 0; /*0x724050*/
   this->q254 = 0; /*0x724056*/
-  this->__pad_258 = 0; /*0x72405c*/
+  this->q258 = 0; /*0x72405c*/
   this->q25C = 0; /*0x724062*/
   v4 = *(_DWORD *)v3; /*0x724068*/
   *(_DWORD *)this = &vt_ToolTipManager; /*0x72406a*/
@@ -3841,7 +3841,7 @@ char *__thiscall sub_724000(char *this, int a2)
   this->q24C = 0; /*0x724082*/
   this->q250 = 0; /*0x724088*/
   this->q254 = 0; /*0x72408e*/
-  this->__pad_258 = 0; /*0x724094*/
+  this->q258 = 0; /*0x724094*/
   this->q25C = 0; /*0x72409a*/
   return this; /*0x7240a2*/
 }
@@ -3858,13 +3858,13 @@ void __thiscall ToolTipClass::updateString(char *this)
   v2 = this->q008; /*0x7240ba*/
   *(_DWORD *)this = &ToolTipManager::`vftable'; /*0x7240bd*/
   ((void (__stdcall *)(int, int))KillTimer)(v2, 1414809936); /*0x7240c4*/
-  if ( this->__pad_001 ) /*0x7240ca*/
+  if ( this->Position ) /*0x7240ca*/
     (*(void (__thiscall **)(char *, char *))(this->q008)(this, this + 24); /*0x7240db*/
   __3_YAXPAX_Z(*((void **)this + 147)); /*0x7240e5*/
   this->q24C = 0; /*0x7240ea*/
   this->q250 = 0; /*0x7240f0*/
   this->q254 = 0; /*0x7240f6*/
-  this->__pad_258 = 0; /*0x7240fc*/
+  this->q258 = 0; /*0x7240fc*/
   this->q25C = 0; /*0x724102*/
   for ( i = 0; i < this->q091; ++i ) /*0x724115*/
   {
@@ -3877,7 +3877,7 @@ void __thiscall ToolTipClass::updateString(char *this)
   this->q24C = 0; /*0x724155*/
   this->q250 = 0; /*0x72415b*/
   this->q254 = 0; /*0x724161*/
-  this->__pad_258 = 0; /*0x724167*/
+  this->q258 = 0; /*0x724167*/
   this->q25C = 0; /*0x72416d*/
   v5 = (void *)this->q08E; /*0x724173*/
   this->q08D = &VectorClass<ToolTip const *>::`vftable'; /*0x72417b*/
@@ -3904,7 +3904,7 @@ char __thiscall Tooltip_Enable(void *this, char a2)
     if ( !a2 ) /*0x7241b1*/
     {
       KillTimer(*((HWND *)this + 2), 0x54544950u); /*0x7241bc*/
-      if ( this->__pad_001 ) /*0x7241c2*/
+      if ( this->Position ) /*0x7241c2*/
         (*(void (__thiscall **)(void *, int))(this->q008)(this, (int)this + 24); /*0x7241d1*/
     }
     v4 = (const char *)&MEMORY[0x8394E8]; /*0x7241d9*/
@@ -4252,7 +4252,7 @@ LABEL_11:
   v8 = (void **)&unk_B78820; /*0x7247a6*/
 LABEL_13:
   v9 = *v8; /*0x7247ab*/
-  v10 = (void *)this->__pad_001; /*0x7247ad*/
+  v10 = (void *)this->Position; /*0x7247ad*/
   Block = v9; /*0x7247b2*/
   if ( v10 == v9 && v10 ) /*0x7247ba*/
   {
@@ -4487,41 +4487,41 @@ BOOL __thiscall ToolTipClass_InitString(wchar_t *this)
   const wchar_t *v5; // edi
   int v6; // edx
 
-  v2 = (_DWORD *)this->ToolTipClass_field_0x04; /*0x724ad7*/
+  v2 = (_DWORD *)this->q004; /*0x724ad7*/
   if ( v2 ) /*0x724adc*/
   {
     v3 = (wchar_t *)v2[5]; /*0x724ae2*/
     if ( v3 ) /*0x724ae7*/
       String = GetStringCSF(v3, 0, MEMORY[0x8449CC], 563); /*0x724b01*/
     else
-      String = (wchar_t *)(*(int (__thiscall **)(wchar_t *, _DWORD))(this->ToolTipClass_field_0x14)(this, *v2); /*0x724af0*/
+      String = (wchar_t *)(*(int (__thiscall **)(wchar_t *, _DWORD))(this->q014)(this, *v2); /*0x724af0*/
     v5 = String; /*0x724b06*/
     if ( String && wcslen(String) ) /*0x724b0d*/
     {
       wcsncpy(this + 20, v5, 0x100u); /*0x724b23*/
-      v6 = this->ToolTipClass_field_0x04; /*0x724b28*/
-      this->ToolTipClass_field_0x1C = this->ToolTipClass_field_0x14; /*0x724b36*/
-      this->ToolTipClass_field_0x18 = v6; /*0x724b39*/
-      if ( !(*(unsigned __int8 (__thiscall **)(wchar_t *, _DWORD *))(this->ToolTipClass_field_0x04)(this, (_DWORD *)this + 6) ) /*0x724b3e*/
+      v6 = this->q004; /*0x724b28*/
+      this->q01C = this->q014; /*0x724b36*/
+      this->q018 = v6; /*0x724b39*/
+      if ( !(*(unsigned __int8 (__thiscall **)(wchar_t *, _DWORD *))(this->q004)(this, (_DWORD *)this + 6) ) /*0x724b3e*/
       {
-        this->ToolTipClass_field_0x18 = 0; /*0x724b47*/
-        this->ToolTipClass_field_0x1C = 0; /*0x724b49*/
-        this->ToolTipClass_field_0x08 = 0; /*0x724b4c*/
-        this->ToolTipClass_field_0x24 = 0; /*0x724b4f*/
-        this->ToolTipClass_field_0x04 = 0; /*0x724b54*/
+        this->q018 = 0; /*0x724b47*/
+        this->q01C = 0; /*0x724b49*/
+        this->q008 = 0; /*0x724b4c*/
+        this->q024 = 0; /*0x724b4f*/
+        this->q004 = 0; /*0x724b54*/
         return 0; /*0x724b5f*/
       }
     }
     else
     {
-      this->ToolTipClass_field_0x18 = 0; /*0x724b60*/
-      this->ToolTipClass_field_0x1C = 0; /*0x724b63*/
-      this->ToolTipClass_field_0x08 = 0; /*0x724b66*/
-      this->ToolTipClass_field_0x24 = 0; /*0x724b69*/
-      this->ToolTipClass_field_0x04 = 0; /*0x724b6c*/
+      this->q018 = 0; /*0x724b60*/
+      this->q01C = 0; /*0x724b63*/
+      this->q008 = 0; /*0x724b66*/
+      this->q024 = 0; /*0x724b69*/
+      this->q004 = 0; /*0x724b6c*/
     }
   }
-  return this->ToolTipClass_field_0x04 != 0; /*0x724b59*/
+  return this->q004 != 0; /*0x724b59*/
 }
 
 
@@ -4745,7 +4745,7 @@ char __thiscall ToolTipManager_7_::_vt02(void *this, int a2, _DWORD *a3)
       return 0; /*0x724eba*/
     if ( this->Items ) /*0x724e48*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x724e4f*/
+      v5 = this->q008; /*0x724e4f*/
       if ( a2 < v5 ) /*0x724e54*/
         v5 = a2; /*0x724e56*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x724e5c*/
@@ -4757,14 +4757,14 @@ char __thiscall ToolTipManager_7_::_vt02(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x724e8a*/
-    this->DynamicVector_field_0x8 = a2; /*0x724e92*/
+    this->q008 = a2; /*0x724e92*/
     this->IsAllocated = a3 == 0; /*0x724e95*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x724e9e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x724ea1*/
+  v7 = this->q008; /*0x724ea1*/
   if ( v7 < this->Items ) /*0x724ea9*/
     this->Items = v7; /*0x724eab*/
   return 1; /*0x724eae*/
@@ -6398,10 +6398,10 @@ _DWORD *__thiscall TriggerTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
   this->q09E = 1; /*0x726ca8*/
   this->Enabled = 1; /*0x726cae*/
   this->MustTransfer = 0; /*0x726cb4*/
-  this->house = 0; /*0x726cba*/
-  this->nextTrigger = 0; /*0x726cc0*/
-  this->firstEvent = 0; /*0x726cc6*/
-  this->firstAction = 0; /*0x726ccc*/
+  this->House = 0; /*0x726cba*/
+  this->NextTrigger = 0; /*0x726cc0*/
+  this->FirstEvent = 0; /*0x726cc6*/
+  this->FirstAction = 0; /*0x726ccc*/
   *this = &TriggerTypeClass::`vftable'; /*0x726cd2*/
   this->vtable2 = &TriggerTypeClass::`vftable'; /*0x726cd8*/
   this->vtable3 = &TriggerTypeClass::`vftable'; /*0x726cdf*/
@@ -6622,7 +6622,7 @@ char __thiscall HouseClass_FindType27_28(_DWORD *this, int a2)
   char result; // al
   int v4; // edx
 
-  v2 = (_DWORD *)this->firstEvent; /*0x727010*/
+  v2 = (_DWORD *)this->FirstEvent; /*0x727010*/
   result = 0; /*0x727016*/
   if ( v2 ) /*0x72701b*/
   {
@@ -6648,7 +6648,7 @@ char __thiscall TriggerTypeClass::HasLocalSetOrClearedEvent(_DWORD *this, int a2
   char result; // al
   int v4; // edx
 
-  v2 = (_DWORD *)this->firstEvent; /*0x727050*/
+  v2 = (_DWORD *)this->FirstEvent; /*0x727050*/
   result = 0; /*0x727056*/
   if ( v2 ) /*0x72705b*/
   {
@@ -6676,21 +6676,21 @@ int __thiscall TriggerTypeClass::_vt10(_DWORD *this, int a2, int a3)
   _DWORD *j; // esi
   int result; // eax
 
-  v4 = this->nextTrigger; /*0x727098*/
+  v4 = this->NextTrigger; /*0x727098*/
   if ( v4 && v4 == a2 ) /*0x7270a4*/
-    this->nextTrigger = *(_DWORD *)(v4 + 168); /*0x7270ac*/
-  for ( i = (_DWORD *)this->firstAction; i; i = (_DWORD *)i[10] ) /*0x7270bb*/
+    this->NextTrigger = *(_DWORD *)(v4 + 168); /*0x7270ac*/
+  for ( i = (_DWORD *)this->FirstAction; i; i = (_DWORD *)i[10] ) /*0x7270bb*/
     (*(void (__thiscall **)(_DWORD *, int, int))(*i + 40))(i, a2, 1); /*0x7270c4*/
-  v6 = this->firstAction; /*0x7270ce*/
+  v6 = this->FirstAction; /*0x7270ce*/
   if ( v6 == a2 ) /*0x7270d6*/
-    this->firstAction = *(_DWORD *)(v6 + 40); /*0x7270db*/
-  for ( j = (_DWORD *)this->firstEvent; j; j = (_DWORD *)j[10] ) /*0x7270e9*/
+    this->FirstAction = *(_DWORD *)(v6 + 40); /*0x7270db*/
+  for ( j = (_DWORD *)this->FirstEvent; j; j = (_DWORD *)j[10] ) /*0x7270e9*/
     (*(void (__thiscall **)(_DWORD *, int, int))(*j + 40))(j, a2, 1); /*0x7270f2*/
-  result = this->firstEvent; /*0x7270fc*/
+  result = this->FirstEvent; /*0x7270fc*/
   if ( result == a2 ) /*0x727105*/
   {
     result = *(_DWORD *)(result + 40); /*0x727107*/
-    this->firstEvent = result; /*0x72710a*/
+    this->FirstEvent = result; /*0x72710a*/
   }
   return result; /*0x727110*/
 }
@@ -6732,18 +6732,18 @@ int __thiscall TriggerTypeClass::GetFlags(_DWORD *this)
   int v6; // eax
   int v7; // ecx
 
-  v2 = this->firstEvent; /*0x7271e5*/
+  v2 = this->FirstEvent; /*0x7271e5*/
   for ( i = 0; v2; i |= v4 ) /*0x7271ef*/
   {
     v4 = TriggerTypeClass::GetActionCategoryFlags(*(void **)(v2 + 44)); /*0x7271f4*/
     v2 = *(_DWORD *)(v2 + 40); /*0x7271f9*/
   }
-  for ( j = this->firstAction; j; i |= v6 ) /*0x72720a*/
+  for ( j = this->FirstAction; j; i |= v6 ) /*0x72720a*/
   {
     v6 = TriggerTypeClass::Dispatch(*(void **)(j + 44)); /*0x72720f*/
     j = *(_DWORD *)(j + 40); /*0x727214*/
   }
-  v7 = this->nextTrigger; /*0x72721d*/
+  v7 = this->NextTrigger; /*0x72721d*/
   if ( v7 ) /*0x727225*/
     return i | TriggerTypeClass::GetFlags(v7); /*0x72722c*/
   else

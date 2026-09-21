@@ -408,3 +408,43 @@ csp_anchor(async) / compare_parse / member_set(批量) / reopen / job_status
 **新技巧（sticky-or）**：`goto X`（提前退出跳过置位）可用「循环条件自终止 + 出口 `v = v || cond` 永或」消除——CheckOverlapWithOthers 的 `while(this==v4){v4=v4[12]; if(!v4)break;} v6=v6||v4!=0` 7 块全同构。适用于同款"链条遍历+粘性标志"形状。
 
 **工具面确认**：`addr_lookup` 支持全局变量反查（G28 时用 grep 绕远，以后先用它）。
+
+## G29 基建轮（2026-09-21，canon 溯源审计 + MCP 工具五件套）
+
+### canon 溯源审计（用户质询「canon 的来源是否可信」的定量回答）
+
+| 层 | 结论 |
+|---|---|
+| member_types 证据层 | 52,656 偏移中 **83.3%（43,885）带 evidence 字段**（member_set/ctor 写图/xref 证明）——可信 |
+| member_types 无证据层 | **8,771 条（16.7%）** 为 CSP 纪元批量同步残留，跨 1,003 类 |
+| 命名冲突 | 无证据条目与 member_lookup 现名冲突 **453 处**；其中 **176 处** member_lookup 带裁定 src（g16-ctor-adjudicated 等） |
+| **实锤案例** | TechnoClass@536/@540：member_types=`displayProductionTo`/`Owner`（旧、无证据）vs member_lookup=`focus`/`owner`（G16 ctor 写图终审）——**canon 链未吸收 G16** |
+| 字节噪声 | class_db 观察并集含字节粒度噪声（ObjectClass 171 成员中 31 个非 4 对齐无名条目）→ 生成为 qXXX 占位符 |
+
+**修复（全部机械，gen_cpp_canon.py）**：
+
+1. **四层命名优先级**：①member_types 带 evidence（二进制真值）②member_lookup 带裁定 src（`adjudic|g1[5-9]|write-map|ctor-adjud` 正则）③语义名胜占位名（`field_0x`/`qXXX` 模式判定）④原填充序兜底。修复后 canon 成员表 @536=focus/@540=owner/@532=controlGroup/@544=cloakState（G16 真值全吸收）。
+2. **字节噪声过滤**：无证据/无裁定/无名/非 4 对齐的偏移不再发射（padding 补洞）。
+3. **编译修复九连**（classes.hpp 从未编译过的欠账一次清偿）：
+   - 类拓扑排序（基类先于派生；Kahn + 弹出门控——scheduled≠popped，堆按字母序弹出会让晚名字基类排在早名字派生类后，两轮才抓到）
+   - 基类解析单源化（bases_map 一次解析，拓扑图与发射共用——分离解析曾致错边）
+   - canon 类与 math/enums 头重名 → 数学/枚举头获胜（CellStruct/ColorStruct/GameMode）
+   - Windows/CRT typedef 名（GUID/UINT/LCID…）永不前置声明、缺定义基类走 minimal-vfptr（t14 先例）、Win32 宏名消歧（CreateDialog* 族）、成员/方法重名去重、模板名不与 struct 冲突
+   - 探针 `_canon_probe.cpp`（含 classes.hpp + main）**MSVC /std:c++20 0 error**
+4. **canon_regen 三段重跑**：rewrite 4,588 函数/29,614 处；backfill 账目重收敛（direct 4,836/renamed 293/downgrade 4,887/no-cls 2,244/no-body 352/needs-retranslation 52）。
+
+### MCP 工具五件套（29→35，用户点名的卡手点全部落地）
+
+| 工具 | 能力 |
+|---|---|
+| `verify_function` +verbose/+auto_mark | verbose 返回双侧 CFG 块级转储 + STEP3(0) 缺失事件（不再逃出 MCP 跑 --verbose）；auto_mark PASS 即写 completed+note，FAIL 跳过 |
+| `get_context` +globals_map | MEMORY[0x]/dword_XXX/g_Name → 名字 + `// data: 0xADDR` 的 hpp 声明位置（file:line），不用再 grep |
+| `get_context` +receiver | til 类型化 `T *this` → member_lookup 可解析的类 → 成员形态翻译指引（e4 自由函数 a1 词汇缺口的主通道） |
+| `set_signature`（新） | cpp def 行改写 + hpp 声明同步（按 // 0xADDR 定位，跳过生成目录）；成员形态自动补载体 include（e4/gap2 → csp_canon/classes.hpp；E4Recv → 对应 _e4.hpp）；改名仍走 rename_symbol |
+| `sweep_stubs`（新） | 死存根批量清扫：stub 文件中 // 0xADDR 指向 completed 或非 stub 文件有真体注解的块整体移除（46D350 误命中治理）；dry_run 实测 58 文件/46 死块 |
+| `harvest_loop`（新） | 琐碎桶机械收割：pending 且 raw_decomp 重写体=单条 return（无 this）→ replace→verify→PASS 标记/FAIL 回滚；dry_run 实测 pool 345/试 12 全 DRY |
+| `resolve_target` 修复 | 0x%X vs 0x%08X int 归一兜底（旧版只精确匹配必 miss） |
+
+### e4 词汇缺口的最终答案
+
+`a1[3]` 零事件的解 = **成员形态翻译**（E4Recv 先例的推广）：def 改 `Cls::Name()`、a1→隐式 this、体内 this->Name——验证器 class_name→member_name_to_off 全链已通。载体：csp_canon/classes.hpp 现已编译干净（本节），set_signature 自动 include，get_context 给 receiver 指引。canon 表给成员名，载体给类型化 receiver——缺口闭合。

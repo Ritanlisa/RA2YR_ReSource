@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00480110  BuildingClass::CalcDrawPos  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x00480110  BuildingClass::CalcDrawPos  cls=BuildingClass  sig=csp  renamed_refs=1  residual=q11B ====
 Point2D* BuildingClass::CalcDrawPos(Point2D* out) const
 {
 Point2D out;
@@ -458,7 +458,7 @@ char sub_484F10(int a1)
 return 1;
 }
 
-// ==== BACKFILL 0x00484F20  InfantryClass::GetType  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00484F20  InfantryClass::GetType  cls=InfantryClass  sig=csp  renamed_refs=0  residual=q116 ====
 namespace gamemd { int InfantryClass::GetType() {
 {
       __int16 v1;
@@ -708,7 +708,7 @@ namespace gamemd { int CellClass::GetCellType() {
 }
 } }
 
-// ==== BACKFILL 0x00486840  CellClass::GetOccupier  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00486840  CellClass::GetOccupier  cls=CellClass  sig=csp  renamed_refs=0  residual=q026 ====
 namespace gamemd { int CellClass::GetOccupier() {
 {
       int v1;
@@ -1574,19 +1574,19 @@ unsigned int * Coord_Neighbor(unsigned int * a1, unsigned short * a2, char a3)
 // ==== BACKFILL 0x00488080  CellClass::clearOccupationFlags  cls=CellClass  sig=csp  renamed_refs=5  residual=IsAllocated ====
 namespace gamemd { void* CellClass::clearOccupationFlags(int a2, int a3) {
 {
-    this->foggedObjects = 0;
-    this->bridgeOwnerCell = a2;
-    this->unknown30 = 1;
+    this->vtable2 = 0;
+    this->vtable3 = a2;
+    this->vtable4 = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_FoggedObjectClass;
     if ( a2 )
   {
     if ( a3 )
     {
-    this->foggedObjects = a3;
+    this->vtable2 = a3;
     return this;
     }
-    this->foggedObjects = __2_YAPAXI_Z(4 * a2);
+    this->vtable2 = __2_YAPAXI_Z(4 * a2);
     this->IsAllocated = 1;
   }
     return this;

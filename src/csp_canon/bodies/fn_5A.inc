@@ -509,7 +509,7 @@ int MapClass::updatePathfindingGrid(unsigned int * a2)
     int v2;
     int result;
     int *i;
-    v2 = this->DynamicVector_field_0x10;
+    v2 = this->q010;
     result = 0;
     if ( v2 <= 0 )
     return -1;
@@ -574,29 +574,29 @@ unsigned int * TypeList::BuildingTypeCopy(VectorClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x005AD6F0  StringVector::Construct  cls=StringVector  sig=csp  renamed_refs=5  residual=- ====
+// ==== BACKFILL 0x005AD6F0  StringVector::Construct  cls=StringVector  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { void* StringVector::Construct(int a1, int a2) {
 {
-      this->StringVector_field_0x04 = 0;
-      this->StringVector_field_0x08 = a2;
-      this->StringVector_field_0x0C = 1;
+      this->q004 = 0;
+      this->q008 = a2;
+      this->q00C = 1;
       this->IsAllocated = 0;
       *this = &vt_VectorClass_char;
       if ( a2 )
       {
         if ( a3 )
         {
-          this->StringVector_field_0x04 = a3;
+          this->q004 = a3;
           return this;
         }
-        this->StringVector_field_0x04 = __2_YAPAXI_Z(4 * a2);
+        this->q004 = __2_YAPAXI_Z(4 * a2);
         this->IsAllocated = 1;
       }
       return this;
 }
 } }
 
-// ==== BACKFILL 0x005AD7D0  DynamicVector::Add_Alt3  cls=DynamicVector  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x005AD7D0  DynamicVector::Add_Alt3  cls=DynamicVector  sig=csp  renamed_refs=5  residual=- ====
 char DynamicVector::Add_Alt3(VectorClass * aP1)
 {
 {
@@ -604,8 +604,8 @@ char DynamicVector::Add_Alt3(VectorClass * aP1)
     int v4;
     int v6;
     int v7;
-    v3 = this->DynamicVector_field_0x8;
-    if ( this->DynamicVector_field_0x10 >= v3 )
+    v3 = this->q008;
+    if ( this->q010 >= v3 )
   {
     if ( !this->IsAllocated && v3 )
     return 0;
@@ -613,9 +613,9 @@ char DynamicVector::Add_Alt3(VectorClass * aP1)
     if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
     return 0;
   }
-    v6 = this->DynamicVector_field_0x10;
+    v6 = this->q010;
     v7 = this->Items;
-    this->DynamicVector_field_0x10 = v6 + 1;
+    this->q010 = v6 + 1;
     *(int *)(v7 + 4 * v6) = *(int *)aP1->vtable1;
     return 1;
 }
@@ -626,8 +626,8 @@ unsigned int * RandomMap::Constructor(int a2, int a3)
 {
 {
     this->Items = 0;
-    this->RandomMap_field_0x8 = a2;
-    this->RandomMap_field_0xC = 1;
+    this->q008 = a2;
+    this->q00C = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_CellClass;
     if ( a2 )
@@ -650,8 +650,8 @@ unsigned int * RandomMap::Constructor_0(int a2, int a3)
 {
     void *v5;
     this->Items = 0;
-    this->RandomMap_field_0x8 = a2;
-    this->RandomMap_field_0xC = 1;
+    this->q008 = a2;
+    this->q00C = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_TRect_int;
     if ( a2 )
@@ -680,8 +680,8 @@ unsigned int * RandomMap::Constructor_1(int a2, int a3)
 {
 {
     this->Items = 0;
-    this->RandomMap_field_0x8 = a2;
-    this->RandomMap_field_0xC = 1;
+    this->q008 = a2;
+    this->q00C = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_double;
     if ( a2 )

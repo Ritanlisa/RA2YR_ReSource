@@ -212,7 +212,7 @@ namespace gamemd { int LayerClass::AssignCellOwnership() {
         v5 = *(_DWORD *)(i + 68);
         if ( v5 != -1 )
         {
-          if ( *(_BYTE *)(*(_DWORD *)&g_BuildingTypeClass_Array->items[4 * v5] + 680) )
+          if ( *(_BYTE *)(*(_DWORD *)&g_BuildingTypeClass_Array->vtable1[4 * v5] + 680) )
           {
             v6 = -1;
             v7 = 0;
@@ -675,14 +675,14 @@ void VectorClass::CleanupSubzone()
 {
     void *v2;
     v2 = this->Items;
-    this->DynamicVector_field_0x10 = 0;
+    this->q010 = 0;
     if ( v2 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v2);
     this->Items = (void*)(0);
   }
     this->IsAllocated = 0;
-    this->DynamicVector_field_0x8 = 0;
+    this->q008 = 0;
 }
 }
 
@@ -988,7 +988,7 @@ unsigned int * VectorClass_USubzoneTrackingStruct::SetCapacity(unsigned int * a2
 }
 }
 
-// ==== BACKFILL 0x0058ADB0  RadarClass::drawRadarTerrain  cls=RadarClass  sig=csp  renamed_refs=4  residual=- ====
+// ==== BACKFILL 0x0058ADB0  RadarClass::drawRadarTerrain  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* RadarClass::drawRadarTerrain(int a1, int a2) {
 {
       int v4;
@@ -999,8 +999,8 @@ namespace gamemd { void* RadarClass::drawRadarTerrain(int a1, int a2) {
       int v10;
 
       v4 = 0;
-      this->RadarClass_field_0x4 = 0;
-      this->RadarClass_field_0x8 = aP1;
+      this->q004 = 0;
+      this->q008 = aP1;
       this->q00C = 1;
       this->q00D = 0;
       *this = &vt_VectorClass_ZoneConnectionClass;
@@ -1030,7 +1030,7 @@ namespace gamemd { void* RadarClass::drawRadarTerrain(int a1, int a2) {
           }
           v4 = v8;
         }
-        this->RadarClass_field_0x4 = v4;
+        this->q004 = v4;
         this->q00D = 1;
         return this;
       }
@@ -1051,12 +1051,12 @@ namespace gamemd { void* RadarClass::drawRadarTerrain(int a1, int a2) {
         }
         while ( v5 );
       }
-      this->RadarClass_field_0x4 = aP2;
+      this->q004 = aP2;
       return this;
 }
 } }
 
-// ==== BACKFILL 0x0058AE60  RadarClass::RenderJammerRadius  cls=RadarClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x0058AE60  RadarClass::RenderJammerRadius  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* RadarClass::RenderJammerRadius(int a1, void* a2) {
 {
       _DWORD *v3;
@@ -1072,8 +1072,8 @@ namespace gamemd { void* RadarClass::RenderJammerRadius(int a1, void* a2) {
 
       v3 = this;
       v4 = 0;
-      this->RadarClass_field_0x4 = 0;
-      this->RadarClass_field_0x8 = aP1;
+      this->q004 = 0;
+      this->q008 = aP1;
       this->q00C = 1;
       this->q00D = 0;
       *this = &vt_VectorClass_SubzoneTrackingStruct;
@@ -1150,7 +1150,7 @@ namespace gamemd { void* RadarClass::RenderJammerRadius(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x0058AF80  RadarClass::drawRadarEvents  cls=RadarClass  sig=csp  renamed_refs=5  residual=- ====
+// ==== BACKFILL 0x0058AF80  RadarClass::drawRadarEvents  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RadarClass::drawRadarEvents(void* a1) {
 {
       int v3;
@@ -1161,8 +1161,8 @@ namespace gamemd { int RadarClass::drawRadarEvents(void* a1) {
       int v9;
       _DWORD *v10;
 
-      v3 = this->RadarClass_field_0x8;
-      if ( this->RadarClass_field_0x10 >= v3 )
+      v3 = this->q008;
+      if ( this->q010 >= v3 )
       {
         if ( !this->q00D && v3 )
           return 0;
@@ -1170,11 +1170,11 @@ namespace gamemd { int RadarClass::drawRadarEvents(void* a1) {
         if ( v4 <= 0 || !this->vt2(v3 + v4, 0) )
           return 0;
       }
-      v6 = this->RadarClass_field_0x10;
+      v6 = this->q010;
       v7 = v6 + 1;
       v8 = 3 * v6;
-      v9 = this->RadarClass_field_0x4;
-      this->RadarClass_field_0x10 = v7;
+      v9 = this->q004;
+      this->q010 = v7;
       v10 = (_DWORD *)(v9 + 4 * v8);
       *v10 = *a2;
       v10[1] = a2[1];

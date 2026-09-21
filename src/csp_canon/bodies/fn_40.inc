@@ -2339,19 +2339,19 @@ VectorClass * VectorClass::QueryInterface(unsigned int * Block, char a2)
 unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2)
 {
 {
-    this->EventClass_field_0x4 = 0;
-    this->EventClass_field_0x8 = aP1;
-    this->EventClass_field_0xC = 1;
+    this->q004 = 0;
+    this->q008 = aP1;
+    this->q00C = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_TechnoClass;
     if ( aP1 )
   {
     if ( aP2 )
     {
-    this->EventClass_field_0x4 = aP2;
+    this->q004 = aP2;
     return this;
     }
-    this->EventClass_field_0x4 = __2_YAPAXI_Z(4 * (int)aP1);
+    this->q004 = __2_YAPAXI_Z(4 * (int)aP1);
     this->IsAllocated = 1;
   }
     return this;
@@ -2397,14 +2397,14 @@ void VectorClass_ptr_IsometricTileClass::TryFreeAndClear()
 {
     void *v2;
     v2 = this->Items;
-    this->DynamicVector_field_0x10 = 0;
+    this->q010 = 0;
     if ( v2 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v2);
     this->Items = (void*)(0);
   }
     this->IsAllocated = 0;
-    this->DynamicVector_field_0x8 = 0;
+    this->q008 = 0;
 }
 }
 
@@ -2432,7 +2432,7 @@ int VectorClass_ptr_IsometricTileClass::FindValue(unsigned int * a2)
     int v2;
     int result;
     int *i;
-    v2 = this->DynamicVector_field_0x10;
+    v2 = this->q010;
     result = 0;
     if ( v2 <= 0 )
     return -1;

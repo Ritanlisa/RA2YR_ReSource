@@ -10,7 +10,7 @@ unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
     int v3;
     int v4;
     int v5;
-    v2 = this->DeployingAnim_e;
+    v2 = this->qEF0;
     v3 = DataGlobal_89DDB8 *(void**)this->DeployingAnimLoaded;
     v2 *= 4;
     v4 = *(int *)((char *)(DataGlobal_8192B8) + v2);
@@ -262,7 +262,7 @@ namespace gamemd { void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
                                           v27 = this->q0A4,
                                           !Game::Stub3((int)&v25)) )
       {
-        v4 = this->BulletClass_field_0xAC;
+        v4 = this->q0AC;
         if ( !*(_BYTE *)(v4 + 670) && !this->q158 )
         {
           if ( *(_BYTE *)(v4 + 566) )
@@ -281,7 +281,7 @@ namespace gamemd { void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
             inited = (float *)AudioConfig::InitDefault(v31);
             v8 = MultiplyMatrix3x4(v32, inited, v30);
             ((void (__stdcall *)(int, float *, int *, int *, _DWORD, int, int))BulletClass::RenderVoxelBullet)(
-              this->BulletClass_field_0xAC + 176,
+              this->q0AC + 176,
               v8,
               a2,
               a3,
@@ -313,7 +313,7 @@ namespace gamemd { void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
                   GroundHeight += DataGlobal_89DE64;
                 }
               }
-              if ( v9 > 0 && *(_BYTE *)(this->BulletClass_field_0xAC + 666) )
+              if ( v9 > 0 && *(_BYTE *)(this->q0AC + 666) )
               {
                 v12 = ZCoordToScreenY(v9);
                 v13 = *a2;
@@ -338,7 +338,7 @@ namespace gamemd { void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
                   0,
                   0);
               }
-              v15 = this->BulletClass_field_0xAC;
+              v15 = this->q0AC;
               v16 = g_FileSystem_THEATER_PAL;
               if ( *(_BYTE *)(v15 + 680) )
               {
@@ -369,25 +369,25 @@ namespace gamemd { int BulletClass::LoseTarget() {
     int v4;
     int v5;
     char v6[12];
-    v2 = (int *)(*(int (__thiscall **)(int, char *))(*(void**)this->BulletClass_field_0x10C + 72))(this->BulletClass_field_0x10C, v6);
+    v2 = (int *)(*(int (__thiscall **)(int, char *))(*(void**)this->q10C + 72))(this->q10C, v6);
     LOWORD(v5) = *v2 / 256;
     HIWORD(v5) = v2[1] / 256;
     v4 = v5;
     LOWORD(v2) = IKnowWhatImDoing;
-    if ( IKnowWhatImDoing || (LOWORD(v2) = (*(int (__thiscall **)(int))(*(void**)this->BulletClass_field_0x10C + 84))(this->BulletClass_field_0x10C), (char)v2) || (LOWORD(v2) = v4, v4 == DataGlobal_89DDF0) )
+    if ( IKnowWhatImDoing || (LOWORD(v2) = (*(int (__thiscall **)(int))(*(void**)this->q10C + 84))(this->q10C), (char)v2) || (LOWORD(v2) = v4, v4 == DataGlobal_89DDF0) )
   {
-    this->BulletClass_field_0x10C = 0;
+    this->q10C = 0;
   }
     else
   {
     v2 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v4);
-    this->BulletClass_field_0x10C = v2;
+    this->q10C = v2;
   }
     return (short)v2;
 }
 } }
 
-// ==== BACKFILL 0x004684E0  BulletClass::ProcessImpact  cls=BulletClass  sig=csp  renamed_refs=7  residual=- ====
+// ==== BACKFILL 0x004684E0  BulletClass::ProcessImpact  cls=BulletClass  sig=csp  renamed_refs=6  residual=- ====
 namespace gamemd { int BulletClass::ProcessImpact(void* a1, void* a2) {
 {
       char *v3;
@@ -402,7 +402,7 @@ namespace gamemd { int BulletClass::ProcessImpact(void* a1, void* a2) {
       Object::Unlink((#374 *)this);
       v5 = *(char **)(this + 176);
       if ( v5 == v3 )
-        this->BulletClass_field_0xB0 = 0;
+        this->q0B0 = 0;
       v6 = *(char **)(this + 268);
       if ( v6 == v3 )
       {
@@ -410,24 +410,24 @@ namespace gamemd { int BulletClass::ProcessImpact(void* a1, void* a2) {
         a2 = *(char **)CellStruct::Set(&v10, *v7 / 256, v7[1] / 256);
         LOWORD(v5) = g_IKnowWhatImDoing;
         if ( g_IKnowWhatImDoing
-          || (LOWORD(v5) = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 268) + 84))(this->BulletClass_field_0x10C),
+          || (LOWORD(v5) = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 268) + 84))(this->q10C),
               (_BYTE)v5)
           || (LOWORD(v5) = (_WORD)a2, a2 == (char *)DataGlobal_89DDF0) )
         {
-          this->BulletClass_field_0x10C = 0;
+          this->q10C = 0;
         }
         else
         {
           v5 = (char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
-          this->BulletClass_field_0x10C = v5;
+          this->q10C = v5;
         }
       }
       if ( *(char **)(this + 172) == v3 )
-        this->BulletClass_field_0xAC = 0;
+        this->q0AC = 0;
       if ( *(char **)(this + 304) == v3 )
-        this->BulletClass_field_0x130 = 0;
+        this->q130 = 0;
       if ( *(char **)(this + 340) == v3 )
-        this->BulletClass_field_0x154 = 0;
+        this->q154 = 0;
       if ( (_BYTE)a3 )
       {
         v5 = (char *)(*(int (__thiscall **)(char *))(*(_DWORD *)v3 + 44))(v3);
@@ -466,7 +466,7 @@ namespace gamemd { int BulletClass::ProcessImpact(void* a1, void* a2) {
 namespace gamemd { int BulletClass::UpdateFlightPath() {
 {
     int v1;
-    v1 = -(*(char *)(this->BulletClass_field_0xAC + 759) != 0);
+    v1 = -(*(char *)(this->q0AC + 759) != 0);
     LOBYTE(v1) = v1 & 0xFE;
     return v1 + 3;
 }
@@ -650,7 +650,7 @@ namespace gamemd { int BulletClass::InitScalable() {
     v3 = DataGlobal_89DE28 - 5;
     if ( DataGlobal_89DE28 - 5 < 0 )
     v3 = 0;
-    return BulletTypeClass::SetScaledSpawnDelay(this->BulletClass_field_0xAC, v3 / 3 + (this->BulletClass_field_0xAC)[185]);
+    return BulletTypeClass::SetScaledSpawnDelay(this->q0AC, v3 / 3 + (this->q0AC)[185]);
 }
 } }
 
@@ -763,7 +763,7 @@ int BulletClass::PowerDrainProcess(int a1, unsigned int * a2)
 // ==== BACKFILL 0x0046B5A0  BulletClass::CheckEndOfSequence  cls=BulletClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int BulletClass::CheckEndOfSequence(int a1) {
 {
-      this->BulletClass_field_0x10C = a2;
+      this->q10C = a2;
       return a2;
 }
 } }
@@ -771,7 +771,7 @@ namespace gamemd { int BulletClass::CheckEndOfSequence(int a1) {
 // ==== BACKFILL 0x0046B5B0  BulletClass::CheckMissionAbort  cls=BulletClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int BulletClass::CheckMissionAbort() {
 {
-    return this->BulletClass_field_0xAC;
+    return this->q0AC;
 }
 } }
 
@@ -979,13 +979,13 @@ int BulletTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x0046C820  BulletTypeClass::GetWarhead  cls=BulletTypeClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x0046C820  BulletTypeClass::GetWarhead  cls=BulletTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BulletTypeClass::GetWarhead(int a2, int a3)
 {
     int result;
     result = a2;
-    if ( a2 == (int)this->ROT_e )
-        this->ROT_e = 0;
+    if ( a2 == (int)this->trailer )
+        this->trailer = 0;
     return result;
 }
 
@@ -1192,7 +1192,7 @@ unsigned int * MPCooperative::initGame()
 {
 {
     *(void**)this = &vt_CampaignScoreClass;
-    this->MPCooperative_field_0x4 = 0;
+    this->q004 = 0;
     DataGlobal_89E050 = 0;
     DataGlobal_81B1E8 = -1;
     return this;

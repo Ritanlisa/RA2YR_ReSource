@@ -3027,7 +3027,7 @@ char __thiscall sub_492670(_WORD *this, _WORD *a2, _BYTE *a3, int a4, int a5, in
 // ==== 0x004926B0  _BlitTransDarken_G::method_4926B0  this=BlitTransDarken  sig=csp ====
 int __thiscall sub_4926B0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4926da*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x4926da*/
            this,
            a2,
            a3,
@@ -3043,7 +3043,7 @@ int __thiscall sub_4926B0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x004926E0  _BlitTransDarken_G::method_4926E0  this=BlitTransDarken  sig=csp ====
 int __thiscall sub_4926E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49270a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x49270a*/
            this,
            a2,
            a3,
@@ -3059,7 +3059,7 @@ int __thiscall sub_4926E0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x00492710  _BlitTransDarken_G::method  this=BlitTransDarken  sig=csp ====
 int __thiscall sub_492710(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49273a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x49273a*/
            this,
            a2,
            a3,
@@ -3111,7 +3111,7 @@ char __fastcall sub_492740(int a1, int a2, _WORD *a3, _BYTE *a4, int a5, int a6,
 // ==== 0x004927A0  _BlitTransLucent75_G::method_4927A0  this=BlitTransLucent75  sig=csp ====
 int __thiscall sub_4927A0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4927ca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x4927ca*/
            this,
            a2,
            a3,
@@ -3127,7 +3127,7 @@ int __thiscall sub_4927A0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x004927D0  _BlitTransLucent75_G::method_4927D0  this=BlitTransLucent75  sig=csp ====
 int __thiscall sub_4927D0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4927fa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x4927fa*/
            this,
            a2,
            a3,
@@ -3143,7 +3143,7 @@ int __thiscall sub_4927D0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x00492800  _BlitTransLucent75_G::method  this=BlitTransLucent75  sig=csp ====
 int __thiscall sub_492800(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49282a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x49282a*/
            this,
            a2,
            a3,
@@ -3185,7 +3185,7 @@ unsigned int __thiscall sub_492830(int this, _WORD *a2, _BYTE *a3, int a4, int a
 // ==== 0x00492890  _BlitTransLucent50_G::method  this=BlitTransLucent50  sig=csp ====
 int __thiscall sub_492890(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4928ba*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x4928ba*/
            this,
            a2,
            a3,
@@ -3201,7 +3201,7 @@ int __thiscall sub_492890(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x004928C0  _BlitTransLucent50_G::method_4928C0  this=BlitTransLucent50  sig=csp ====
 int __thiscall sub_4928C0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4928ea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x4928ea*/
            this,
            a2,
            a3,
@@ -3217,7 +3217,7 @@ int __thiscall sub_4928C0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x004928F0  _BlitTransLucent50_G::method_4928F0  this=BlitTransLucent50  sig=csp ====
 int __thiscall sub_4928F0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49291a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x49291a*/
            this,
            a2,
            a3,
@@ -3261,7 +3261,7 @@ char __thiscall sub_492920(int this, _WORD *a2, _BYTE *a3, int a4, int a5, int a
 // ==== 0x00492980  _BlitTransLucent25_G::method  this=BlitTransLucent25  sig=csp ====
 int __thiscall sub_492980(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4929aa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x4929aa*/
            this,
            a2,
            a3,
@@ -3277,7 +3277,7 @@ int __thiscall sub_492980(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x004929B0  _BlitTransLucent25_G::method_4929B0  this=BlitTransLucent25  sig=csp ====
 int __thiscall sub_4929B0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4929da*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x4929da*/
            this,
            a2,
            a3,
@@ -3293,7 +3293,7 @@ int __thiscall sub_4929B0(void *this, int a2, int a3, int a4, int a5, int a6, in
 // ==== 0x004929E0  _BlitTransLucent25_G::method_4929E0  this=BlitTransLucent25  sig=csp ====
 int __thiscall sub_4929E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492a0a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->__pad_004)( /*0x492a0a*/
            this,
            a2,
            a3,
@@ -5201,7 +5201,7 @@ int __thiscall BlitPlainXlatAlpha_ushort::_vt01(
   v10 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v10 > 254 ) /*0x493ce7*/
     v10 = 254; /*0x493ce9*/
-  v11 = this->BlitPlainXlatAlpha_ushort_field_0x08 + (v10 << 9); /*0x493cf6*/
+  v11 = this->q008 + (v10 << 9); /*0x493cf6*/
   result = a4; /*0x493cf8*/
   if ( a4 > 0 ) /*0x493cfe*/
   {
@@ -5212,7 +5212,7 @@ int __thiscall BlitPlainXlatAlpha_ushort::_vt01(
       v15 = *a7++; /*0x493d17*/
       ++a3; /*0x493d1d*/
       a2 += 2; /*0x493d1e*/
-      *(_WORD *)(a2 - 2) = *(_WORD *)(this->BlitPlainXlatAlpha_ushort_field_0x04 + 2 * (v17 | *(unsigned __int16 *)(v11 + 2 * v15))); /*0x493d38*/
+      *(_WORD *)(a2 - 2) = *(_WORD *)(this->q004 + 2 * (v17 | *(unsigned __int16 *)(v11 + 2 * v15))); /*0x493d38*/
       if ( (unsigned int)a7 >= *((_DWORD *)MEMORY[0x87E8A4] + 7) ) /*0x493d45*/
         a7 = (unsigned __int16 *)((char *)a7 - *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x493d47*/
       result = --v16; /*0x493d4e*/
@@ -5226,7 +5226,7 @@ int __thiscall BlitPlainXlatAlpha_ushort::_vt01(
 // ==== 0x00493D60  _BlitPlainXlatAlpha_G::ddtor  this=BlitPlainXlatAlpha_ushort  sig=csp ====
 int __thiscall BlitPlainXlatAlpha_ushort::_vt03(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitPlainXlatAlpha_ushort_field_0x04)( /*0x493d8a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493d8a*/
            this,
            a2,
            a3,
@@ -5252,7 +5252,7 @@ int __thiscall BlitPlainXlatAlpha_ushort::_vt02(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitPlainXlatAlpha_ushort_field_0x04)( /*0x493dba*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493dba*/
            this,
            a2,
            a3,
@@ -5277,7 +5277,7 @@ int __thiscall BlitPlainXlatAlpha_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitPlainXlatAlpha_ushort_field_0x04)( /*0x493dea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493dea*/
            this,
            a2,
            a3,
@@ -5311,7 +5311,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt01(
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x493e18*/
     v11 = 254; /*0x493e1a*/
-  result = this->BlitTransXlatAlpha_ushort_field_0x8 + (v11 << 9); /*0x493e25*/
+  result = this->q008 + (v11 << 9); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
     v14 = MEMORY[0x87E8A4]; /*0x493e35*/
@@ -5321,7 +5321,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt01(
       v16 = *a3++; /*0x493e43*/
       if ( v16 ) /*0x493e4c*/
       {
-        *a2 = *(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (v16 | *(unsigned __int16 *)(result + 2 * *a7))); /*0x493e6c*/
+        *a2 = *(_WORD *)(this->q004 + 2 * (v16 | *(unsigned __int16 *)(result + 2 * *a7))); /*0x493e6c*/
         v14 = MEMORY[0x87E8A4]; /*0x493e6f*/
       }
       ++a7; /*0x493e78*/
@@ -5339,7 +5339,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt01(
 // ==== 0x00493EA0  _BlitTransXlatAlpha_G::ddtor  this=BlitTransXlatAlpha_ushort  sig=csp ====
 int __thiscall BlitTransXlatAlpha_ushort::_vt03(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransXlatAlpha_ushort_field_0x4)( /*0x493eca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493eca*/
            this,
            a2,
            a3,
@@ -5365,7 +5365,7 @@ int __thiscall BlitTransXlatAlpha_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransXlatAlpha_ushort_field_0x4)( /*0x493efa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493efa*/
            this,
            a2,
            a3,
@@ -5390,7 +5390,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransXlatAlpha_ushort_field_0x4)( /*0x493f2a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493f2a*/
            this,
            a2,
            a3,
@@ -5467,7 +5467,7 @@ int __thiscall BlitTransZRemapXlatAlpha_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransZRemapXlatAlpha_ushort_field_0x04)( /*0x49401a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49401a*/
            this,
            a2,
            a3,
@@ -5493,7 +5493,7 @@ int __thiscall BlitTransZRemapXlatAlpha_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransZRemapXlatAlpha_ushort_field_0x04)( /*0x49404a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49404a*/
            this,
            a2,
            a3,
@@ -5518,7 +5518,7 @@ int __thiscall BlitTransZRemapXlatAlpha_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransZRemapXlatAlpha_ushort_field_0x04)( /*0x49407a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49407a*/
            this,
            a2,
            a3,
@@ -5588,7 +5588,7 @@ int __thiscall BlitTransLucent75Alpha_ushort::_vt01(
 // ==== 0x00494150  _BlitTransLucent75Alpha_G::ddtor  this=BlitTransLucent75Alpha_ushort  sig=csp ====
 int __thiscall BlitTransLucent75Alpha_ushort::_vt03(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75Alpha_ushort_field_0x04)( /*0x49417a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49417a*/
            this,
            a2,
            a3,
@@ -5614,7 +5614,7 @@ int __thiscall BlitTransLucent75Alpha_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75Alpha_ushort_field_0x04)( /*0x4941aa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4941aa*/
            this,
            a2,
            a3,
@@ -5639,7 +5639,7 @@ int __thiscall BlitTransLucent75Alpha_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75Alpha_ushort_field_0x04)( /*0x4941da*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4941da*/
            this,
            a2,
            a3,
@@ -5707,7 +5707,7 @@ int __thiscall BlitTransLucent50Alpha_ushort::_vt01(
 // ==== 0x004942A0  _BlitTransLucent50Alpha_G::ddtor  this=BlitTransLucent50Alpha_ushort  sig=csp ====
 int __thiscall BlitTransLucent50Alpha_ushort::_vt03(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50Alpha_ushort_field_0x04)( /*0x4942ca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4942ca*/
            this,
            a2,
            a3,
@@ -5733,7 +5733,7 @@ int __thiscall BlitTransLucent50Alpha_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50Alpha_ushort_field_0x04)( /*0x4942fa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4942fa*/
            this,
            a2,
            a3,
@@ -5758,7 +5758,7 @@ int __thiscall BlitTransLucent50Alpha_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50Alpha_ushort_field_0x04)( /*0x49432a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49432a*/
            this,
            a2,
            a3,
@@ -5829,7 +5829,7 @@ int __thiscall BlitTransLucent25Alpha_ushort::_vt01(
 // ==== 0x00494400  _BlitTransLucent25Alpha_G::ddtor  this=BlitTransLucent25Alpha_ushort  sig=csp ====
 int __thiscall BlitTransLucent25Alpha_ushort::_vt03(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25Alpha_ushort_field_0x04)( /*0x49442a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49442a*/
            this,
            a2,
            a3,
@@ -5855,7 +5855,7 @@ int __thiscall BlitTransLucent25Alpha_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__stdcall **)(int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25Alpha_ushort_field_0x04)( /*0x49445a*/
+  return (*(int (__stdcall **)(int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49445a*/
            a2,
            a3,
            a4,
@@ -5879,7 +5879,7 @@ int __thiscall BlitTransLucent25Alpha_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25Alpha_ushort_field_0x04)( /*0x49448a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49448a*/
            this,
            a2,
            a3,
@@ -6551,7 +6551,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt01(
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x494b8b*/
     v11 = 254; /*0x494b8d*/
-  result = this->BlitTransXlatAlphaZRead_ushort_field_0x08 + (v11 << 9); /*0x494b98*/
+  result = this->q008 + (v11 << 9); /*0x494b98*/
   v17 = result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
@@ -6562,7 +6562,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt01(
       v15 = *a6++; /*0x494bbf*/
       if ( a5 < v15 && *a3 ) /*0x494bd1*/
       {
-        *a2 = *(_WORD *)(this->BlitTransXlatAlphaZRead_ushort_field_0x04 + 2 * ((unsigned __int8)*a3 | *(unsigned __int16 *)(v17 + 2 * *a7))); /*0x494bf9*/
+        *a2 = *(_WORD *)(this->q004 + 2 * ((unsigned __int8)*a3 | *(unsigned __int16 *)(v17 + 2 * *a7))); /*0x494bf9*/
         v13 = MEMORY[0x887644]; /*0x494bfc*/
       }
       ++a2; /*0x494c06*/
@@ -6602,7 +6602,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::BlitRect(
   v12 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v12 > 254 ) /*0x494c6b*/
     v12 = 254; /*0x494c6d*/
-  result = this->BlitTransXlatAlphaZRead_ushort_field_0x08 + (v12 << 9); /*0x494c78*/
+  result = this->q008 + (v12 << 9); /*0x494c78*/
   v18 = result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
@@ -6613,7 +6613,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::BlitRect(
       v16 = *a6++; /*0x494c9f*/
       if ( a5 < v16 && *a3 ) /*0x494cb1*/
       {
-        *a2 = a10 | *(_WORD *)(this->BlitTransXlatAlphaZRead_ushort_field_0x04 + 2 * ((unsigned __int8)*a3 | *(unsigned __int16 *)(v18 + 2 * *a7))); /*0x494cde*/
+        *a2 = a10 | *(_WORD *)(this->q004 + 2 * ((unsigned __int8)*a3 | *(unsigned __int16 *)(v18 + 2 * *a7))); /*0x494cde*/
         v14 = MEMORY[0x887644]; /*0x494ce1*/
       }
       ++a2; /*0x494ceb*/
@@ -6641,7 +6641,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransXlatAlphaZRead_ushort_field_0x04)( /*0x494d4a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x494d4a*/
            this,
            a2,
            a3,
@@ -6666,7 +6666,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD, int))(this->BlitTransXlatAlphaZRead_ushort_field_0x08)( /*0x494d7f*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD, int))(this->q008)( /*0x494d7f*/
            this,
            a2,
            a3,
@@ -6745,7 +6745,7 @@ int __thiscall BlitTransZRemapXlatAlphaZRead_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransZRemapXlatAlphaZRead_ushort_field_0x04)( /*0x494eba*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x494eba*/
            this,
            a2,
            a3,
@@ -6771,7 +6771,7 @@ int __thiscall BlitTransZRemapXlatAlphaZRead_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransZRemapXlatAlphaZRead_ushort_field_0x04)( /*0x494eea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x494eea*/
            this,
            a2,
            a3,
@@ -6796,7 +6796,7 @@ int __thiscall BlitTransZRemapXlatAlphaZRead_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransZRemapXlatAlphaZRead_ushort_field_0x04)( /*0x494f1a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x494f1a*/
            this,
            a2,
            a3,
@@ -6883,7 +6883,7 @@ int __thiscall BlitTransLucent75AlphaZRead_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75AlphaZRead_ushort_field_0x04)( /*0x49505a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49505a*/
            this,
            a2,
            a3,
@@ -6909,7 +6909,7 @@ int __thiscall BlitTransLucent75AlphaZRead_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75AlphaZRead_ushort_field_0x04)( /*0x49508a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49508a*/
            this,
            a2,
            a3,
@@ -6934,7 +6934,7 @@ int __thiscall BlitTransLucent75AlphaZRead_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75AlphaZRead_ushort_field_0x04)( /*0x4950ba*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4950ba*/
            this,
            a2,
            a3,
@@ -6973,7 +6973,7 @@ int __thiscall BlitTransLucent50AlphaZRead_ushort::AddRef(
   v12 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v12 > 254 ) /*0x4950f2*/
     v12 = 254; /*0x4950f4*/
-  a6a = (unsigned __int16 *)(this->BlitTransLucent50AlphaZRead_ushort_field_0x08 + (v12 << 9)); /*0x495101*/
+  a6a = (unsigned __int16 *)(this->q008 + (v12 << 9)); /*0x495101*/
   result = (int)aP3; /*0x495105*/
   if ( (int)aP3 > 0 ) /*0x49510b*/
   {
@@ -6986,7 +6986,7 @@ int __thiscall BlitTransLucent50AlphaZRead_ushort::AddRef(
       {
         v17 = *((_WORD *)v9 + 6); /*0x49513e*/
         v9 = this; /*0x495156*/
-        *a1 = (v17 & (*a1 >> 1)) + (v17 & (*(_WORD *)(this->BlitTransLucent50AlphaZRead_ushort_field_0x04 + 2 * ((unsigned __int8)*a2 | a6a[*a6])) >> 1)); /*0x495178*/
+        *a1 = (v17 & (*a1 >> 1)) + (v17 & (*(_WORD *)(this->q004 + 2 * ((unsigned __int8)*a2 | a6a[*a6])) >> 1)); /*0x495178*/
         v14 = *(TacticalMap **)&stru_87C374.__pad_579C[23348]; /*0x49517b*/
       }
       ++a1; /*0x495185*/
@@ -7017,7 +7017,7 @@ int __thiscall BlitTransLucent50AlphaZRead_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50AlphaZRead_ushort_field_0x04)( /*0x4951ea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4951ea*/
            this,
            a2,
            a3,
@@ -7043,7 +7043,7 @@ int __thiscall BlitTransLucent50AlphaZRead_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50AlphaZRead_ushort_field_0x04)( /*0x49521a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49521a*/
            this,
            a2,
            a3,
@@ -7068,7 +7068,7 @@ int __thiscall BlitTransLucent50AlphaZRead_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50AlphaZRead_ushort_field_0x04)( /*0x49524a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49524a*/
            this,
            a2,
            a3,
@@ -7155,7 +7155,7 @@ int __thiscall BlitTransLucent25AlphaZRead_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25AlphaZRead_ushort_field_0x04)( /*0x49538a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49538a*/
            this,
            a2,
            a3,
@@ -7181,7 +7181,7 @@ int __thiscall BlitTransLucent25AlphaZRead_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25AlphaZRead_ushort_field_0x04)( /*0x4953ba*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4953ba*/
            this,
            a2,
            a3,
@@ -7206,7 +7206,7 @@ int __thiscall BlitTransLucent25AlphaZRead_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25AlphaZRead_ushort_field_0x04)( /*0x4953ea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4953ea*/
            this,
            a2,
            a3,
@@ -7297,7 +7297,7 @@ int __thiscall BlitTransLucent75AlphaZReadWarp_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75AlphaZReadWarp_ushort_field_0x04)( /*0x49552a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49552a*/
            this,
            a2,
            a3,
@@ -7323,7 +7323,7 @@ int __thiscall BlitTransLucent75AlphaZReadWarp_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75AlphaZReadWarp_ushort_field_0x04)( /*0x49555a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49555a*/
            this,
            a2,
            a3,
@@ -7348,7 +7348,7 @@ int __thiscall BlitTransLucent75AlphaZReadWarp_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75AlphaZReadWarp_ushort_field_0x04)( /*0x49558a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49558a*/
            this,
            a2,
            a3,
@@ -7432,7 +7432,7 @@ int __thiscall BlitTransLucent50AlphaZReadWarp_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50AlphaZReadWarp_ushort_field_0x04)( /*0x4956ca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4956ca*/
            this,
            a2,
            a3,
@@ -7458,7 +7458,7 @@ int __thiscall BlitTransLucent50AlphaZReadWarp_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50AlphaZReadWarp_ushort_field_0x04)( /*0x4956fa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4956fa*/
            this,
            a2,
            a3,
@@ -7483,7 +7483,7 @@ int __thiscall BlitTransLucent50AlphaZReadWarp_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50AlphaZReadWarp_ushort_field_0x04)( /*0x49572a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49572a*/
            this,
            a2,
            a3,
@@ -7577,7 +7577,7 @@ int __thiscall BlitTransLucent25AlphaZReadWarp_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25AlphaZReadWarp_ushort_field_0x04)( /*0x49586a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49586a*/
            this,
            a2,
            a3,
@@ -7603,7 +7603,7 @@ int __thiscall BlitTransLucent25AlphaZReadWarp_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25AlphaZReadWarp_ushort_field_0x04)( /*0x49589a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49589a*/
            this,
            a2,
            a3,
@@ -7628,7 +7628,7 @@ int __thiscall BlitTransLucent25AlphaZReadWarp_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25AlphaZReadWarp_ushort_field_0x04)( /*0x4958ca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4958ca*/
            this,
            a2,
            a3,
@@ -7662,7 +7662,7 @@ _DWORD *__thiscall BlitTransXlatAlphaZReadWrite_ushort::_vt01(
   v12 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v12 > 254 ) /*0x4958fd*/
     v12 = 254; /*0x4958ff*/
-  result = (_DWORD *)(this->BlitTransXlatAlphaZReadWrite_ushort_field_0x08 + (v12 << 9)); /*0x49590e*/
+  result = (_DWORD *)(this->q008 + (v12 << 9)); /*0x49590e*/
   v17 = result; /*0x495912*/
   if ( a4 > 0 ) /*0x495916*/
   {
@@ -7673,7 +7673,7 @@ _DWORD *__thiscall BlitTransXlatAlphaZReadWrite_ushort::_vt01(
     {
       if ( v14 < (unsigned __int16)*a6 && *a3 ) /*0x49593f*/
       {
-        *a2 = *(_WORD *)(this->BlitTransXlatAlphaZReadWrite_ushort_field_0x04 + 2 * ((unsigned __int8)*a3 | *((unsigned __int16 *)v17 + *a7))); /*0x495966*/
+        *a2 = *(_WORD *)(this->q004 + 2 * ((unsigned __int8)*a3 | *((unsigned __int16 *)v17 + *a7))); /*0x495966*/
         v14 = a5; /*0x495969*/
         *a6 = a5; /*0x49596d*/
         result = MEMORY[0x887644]; /*0x495970*/
@@ -7704,7 +7704,7 @@ int __thiscall BlitTransXlatAlphaZReadWrite_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransXlatAlphaZReadWrite_ushort_field_0x04)( /*0x4959ea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4959ea*/
            this,
            a2,
            a3,
@@ -7730,7 +7730,7 @@ int __thiscall BlitTransXlatAlphaZReadWrite_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransXlatAlphaZReadWrite_ushort_field_0x04)( /*0x495a1a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x495a1a*/
            this,
            a2,
            a3,
@@ -7755,7 +7755,7 @@ int __thiscall BlitTransXlatAlphaZReadWrite_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransXlatAlphaZReadWrite_ushort_field_0x04)( /*0x495a4a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x495a4a*/
            this,
            a2,
            a3,
@@ -7833,7 +7833,7 @@ int __thiscall BlitTransZRemapXlatAlphaZReadWrite_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransZRemapXlatAlphaZReadWrite_ushort_field_0x04)( /*0x495b5a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x495b5a*/
            this,
            a2,
            a3,
@@ -7859,7 +7859,7 @@ int __thiscall BlitTransZRemapXlatAlphaZReadWrite_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransZRemapXlatAlphaZReadWrite_ushort_field_0x04)( /*0x495b8a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x495b8a*/
            this,
            a2,
            a3,
@@ -7884,7 +7884,7 @@ int __thiscall BlitTransZRemapXlatAlphaZReadWrite_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransZRemapXlatAlphaZReadWrite_ushort_field_0x04)( /*0x495bba*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x495bba*/
            this,
            a2,
            a3,
@@ -7982,7 +7982,7 @@ int __thiscall BlitTransLucent75AlphaZReadWrite_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75AlphaZReadWrite_ushort_field_0x04)( /*0x495cfa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x495cfa*/
            this,
            a2,
            a3,
@@ -8008,7 +8008,7 @@ int __thiscall BlitTransLucent75AlphaZReadWrite_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75AlphaZReadWrite_ushort_field_0x04)( /*0x495d2a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x495d2a*/
            this,
            a2,
            a3,
@@ -8033,7 +8033,7 @@ int __thiscall BlitTransLucent75AlphaZReadWrite_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent75AlphaZReadWrite_ushort_field_0x04)( /*0x495d5a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x495d5a*/
            this,
            a2,
            a3,
@@ -8126,7 +8126,7 @@ int __thiscall BlitTransLucent50AlphaZReadWrite_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50AlphaZReadWrite_ushort_field_0x04)( /*0x495e9a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x495e9a*/
            this,
            a2,
            a3,
@@ -8152,7 +8152,7 @@ int __thiscall BlitTransLucent50AlphaZReadWrite_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50AlphaZReadWrite_ushort_field_0x04)( /*0x495eca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x495eca*/
            this,
            a2,
            a3,
@@ -8177,7 +8177,7 @@ int __thiscall BlitTransLucent50AlphaZReadWrite_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent50AlphaZReadWrite_ushort_field_0x04)( /*0x495efa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x495efa*/
            this,
            a2,
            a3,
@@ -8278,7 +8278,7 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::_vt03(
         int a7,
         int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25AlphaZReadWrite_ushort_field_0x04)( /*0x49603a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49603a*/
            this,
            a2,
            a3,
@@ -8304,7 +8304,7 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25AlphaZReadWrite_ushort_field_0x04)( /*0x49606a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49606a*/
            this,
            a2,
            a3,
@@ -8329,7 +8329,7 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->BlitTransLucent25AlphaZReadWrite_ushort_field_0x04)( /*0x49609a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49609a*/
            this,
            a2,
            a3,
@@ -10646,7 +10646,7 @@ unsigned __int16 *__thiscall RLEBlitTransXlatAlpha_ushort::AddRef(
   if ( v14 > 254 ) /*0x4978f8*/
     v14 = 254; /*0x4978fa*/
   v15 = aP4; /*0x497902*/
-  a2a = (unsigned __int8 *)(this->RLEBlitTransXlatAlpha_ushort_field_0x08 + (v14 << 9)); /*0x49790b*/
+  a2a = (unsigned __int8 *)(this->q008 + (v14 << 9)); /*0x49790b*/
   v16 = *(TacticalClass **)&stru_87C374.__pad_14B0[4224]; /*0x49790f*/
   if ( (int)aP4 <= 0 ) /*0x497917*/
   {
@@ -10678,7 +10678,7 @@ unsigned __int16 *__thiscall RLEBlitTransXlatAlpha_ushort::AddRef(
       v23 = v20 | *(unsigned __int16 *)&a2a[2 * *result]; /*0x49799a*/
       --v19; /*0x4979a0*/
       ++result; /*0x4979a1*/
-      *(_WORD *)(v13 - 2) = *(_WORD *)(this->RLEBlitTransXlatAlpha_ushort_field_0x04 + 2 * v23); /*0x4979ab*/
+      *(_WORD *)(v13 - 2) = *(_WORD *)(this->q004 + 2 * v23); /*0x4979ab*/
       v16 = *(TacticalClass **)&stru_87C374.__pad_14B0[4224]; /*0x4979af*/
     }
     else
@@ -10711,7 +10711,7 @@ int __thiscall RLEBlitTransXlatAlpha_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransXlatAlpha_ushort_field_0x04)( /*0x497a07*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x497a07*/
            this,
            a2,
            a3,
@@ -10821,7 +10821,7 @@ int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransZRemapXlatAlpha_ushort_field_0x04)( /*0x497b77*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x497b77*/
            this,
            a2,
            a3,
@@ -10910,7 +10910,7 @@ int __thiscall RLEBlitTransLucent75Alpha_ushort::AddRef(
       v13 += 2; /*0x497c4f*/
       v11 = this; /*0x497c5b*/
       v24 = v21 | *(unsigned __int16 *)&a2a[2 * *v12]; /*0x497c65*/
-      v25 = *(_WORD *)(this->RLEBlitTransLucent75Alpha_ushort_field_0x04 + 2 * v24); /*0x497c6a*/
+      v25 = *(_WORD *)(this->q004 + 2 * v24); /*0x497c6a*/
       LOWORD(v24) = *(_WORD *)(v13 - 2) >> 2; /*0x497c72*/
       v26 = (unsigned int)v22 & v24; /*0x497c76*/
       v27 = (unsigned __int16)v22 & (v25 >> 2); /*0x497c7c*/
@@ -10952,7 +10952,7 @@ int __thiscall RLEBlitTransLucent75Alpha_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent75Alpha_ushort_field_0x04)( /*0x497ce7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x497ce7*/
            this,
            a2,
            a3,
@@ -11068,7 +11068,7 @@ int __thiscall RLEBlitTransLucent50Alpha_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent50Alpha_ushort_field_0x04)( /*0x497e57*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x497e57*/
            this,
            a2,
            a3,
@@ -11157,7 +11157,7 @@ int __thiscall RLEBlitTransLucent25Alpha_ushort::AddRef(
       v13 += 2; /*0x497f2f*/
       v11 = this; /*0x497f3b*/
       v24 = v21 | *(unsigned __int16 *)&a2a[2 * *v12]; /*0x497f45*/
-      v25 = this->RLEBlitTransLucent25Alpha_ushort_field_0x04; /*0x497f47*/
+      v25 = this->q004; /*0x497f47*/
       LOWORD(v24) = *(_WORD *)(v25 + 2 * v24) >> 2; /*0x497f52*/
       LOWORD(v25) = *(_WORD *)(v13 - 2) >> 2; /*0x497f58*/
       v26 = 3 * ((unsigned int)v22 & v24); /*0x497f5c*/
@@ -11200,7 +11200,7 @@ int __thiscall RLEBlitTransLucent25Alpha_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent25Alpha_ushort_field_0x04)( /*0x497fc7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x497fc7*/
            this,
            a2,
            a3,
@@ -11252,7 +11252,7 @@ int __thiscall RLEBlitTransXlatAlphaZRead_ushort::AddRef(
   if ( v15 > 254 ) /*0x498013*/
     v15 = 254; /*0x498015*/
   v16 = aP4; /*0x49801d*/
-  a10a = (char *)(this->RLEBlitTransXlatAlphaZRead_ushort_field_0x08 + (v15 << 9)); /*0x49802e*/
+  a10a = (char *)(this->q008 + (v15 << 9)); /*0x49802e*/
   if ( (int)aP4 <= 0 ) /*0x498032*/
   {
     result = a4; /*0x498082*/
@@ -11293,7 +11293,7 @@ int __thiscall RLEBlitTransXlatAlphaZRead_ushort::AddRef(
         v12 += 2; /*0x4980f1*/
         --result; /*0x498108*/
         if ( v25 < *(unsigned __int16 *)(v13 - 2) ) /*0x4980e4*/
-          *(_WORD *)(v12 - 2) = *(_WORD *)(this->RLEBlitTransXlatAlphaZRead_ushort_field_0x04 + 2 * (v22 | *(unsigned __int16 *)&a10a[2 * *v14])); /*0x498114*/
+          *(_WORD *)(v12 - 2) = *(_WORD *)(this->q004 + 2 * (v22 | *(unsigned __int16 *)&a10a[2 * *v14])); /*0x498114*/
         ++v14; /*0x49811e*/
       }
       else
@@ -11357,7 +11357,7 @@ int __thiscall RLEBlitTransXlatAlphaZRead_ushort::Release(
   if ( v16 > 254 ) /*0x498193*/
     v16 = 254; /*0x498195*/
   v17 = aP4; /*0x49819d*/
-  a10a = (char *)(this->RLEBlitTransXlatAlphaZRead_ushort_field_0x08 + (v16 << 9)); /*0x4981ae*/
+  a10a = (char *)(this->q008 + (v16 << 9)); /*0x4981ae*/
   if ( (int)aP4 <= 0 ) /*0x4981b2*/
   {
     result = a4; /*0x498202*/
@@ -11398,7 +11398,7 @@ int __thiscall RLEBlitTransXlatAlphaZRead_ushort::Release(
         v13 += 2; /*0x498271*/
         --result; /*0x498298*/
         if ( v26 < *(unsigned __int16 *)(v14 - 2) ) /*0x498264*/
-          *(_WORD *)(v13 - 2) = a12 | *(_WORD *)(this->RLEBlitTransXlatAlphaZRead_ushort_field_0x04 + 2 * (v23 | *(unsigned __int16 *)&a10a[2 * *v15])); /*0x498299*/
+          *(_WORD *)(v13 - 2) = a12 | *(_WORD *)(this->q004 + 2 * (v23 | *(unsigned __int16 *)&a10a[2 * *v15])); /*0x498299*/
         ++v15; /*0x4982a3*/
       }
       else
@@ -11533,7 +11533,7 @@ int __thiscall RLEBlitTransZRemapXlatAlphaZRead_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransZRemapXlatAlphaZRead_ushort_field_0x04)( /*0x4984c7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x4984c7*/
            this,
            a2,
            a3,
@@ -11654,7 +11654,7 @@ int __thiscall RLEBlitTransLucent75AlphaZRead_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent75AlphaZRead_ushort_field_0x04)( /*0x4986c7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x4986c7*/
            this,
            a2,
            a3,
@@ -11782,7 +11782,7 @@ int __thiscall RLEBlitTransLucent50AlphaZRead_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent50AlphaZRead_ushort_field_0x04)( /*0x4988b7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x4988b7*/
            this,
            a2,
            a3,
@@ -11904,7 +11904,7 @@ int __thiscall RLEBlitTransLucent25AlphaZRead_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent25AlphaZRead_ushort_field_0x04)( /*0x498ab7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x498ab7*/
            this,
            a2,
            a3,
@@ -12035,7 +12035,7 @@ int __thiscall RLEBlitTransLucent75AlphaZReadWarp_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent75AlphaZReadWarp_ushort_field_0x04)( /*0x498cc7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x498cc7*/
            this,
            a2,
            a3,
@@ -12163,7 +12163,7 @@ int __thiscall RLEBlitTransLucent50AlphaZReadWarp_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent50AlphaZReadWarp_ushort_field_0x04)( /*0x498ec7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x498ec7*/
            this,
            a2,
            a3,
@@ -12295,7 +12295,7 @@ int __thiscall RLEBlitTransLucent25AlphaZReadWarp_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent25AlphaZReadWarp_ushort_field_0x04)( /*0x4990d7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x4990d7*/
            this,
            a2,
            a3,
@@ -12342,7 +12342,7 @@ unsigned __int16 *__thiscall RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef(
   if ( v16 > 254 ) /*0x49911e*/
     v16 = 254; /*0x499120*/
   v17 = a5; /*0x49912f*/
-  a2a = (unsigned __int8 *)(this->RLEBlitTransXlatAlphaZReadWrite_ushort_field_0x08 + (v16 << 9)); /*0x499135*/
+  a2a = (unsigned __int8 *)(this->q008 + (v16 << 9)); /*0x499135*/
   if ( a5 > 0 ) /*0x49913f*/
   {
     do /*0x499154*/
@@ -12379,7 +12379,7 @@ unsigned __int16 *__thiscall RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef(
       {
         v12 += 2; /*0x4991f9*/
         ++result; /*0x4991fc*/
-        *(_WORD *)(v12 - 2) = *(_WORD *)(this->RLEBlitTransXlatAlphaZReadWrite_ushort_field_0x04 + 2 * (v21 | *(unsigned __int16 *)&a2a[2 * *v15])); /*0x499222*/
+        *(_WORD *)(v12 - 2) = *(_WORD *)(this->q004 + 2 * (v21 | *(unsigned __int16 *)&a2a[2 * *v15])); /*0x499222*/
         *(result - 1) = arg10 - *a10++; /*0x499230*/
       }
       aP3 = (RLEBlitTransXlatAlphaZReadWrite_ushort *)((char *)aP3 - 1); /*0x499236*/
@@ -12437,7 +12437,7 @@ unsigned __int16 *__thiscall RLEBlitTransXlatAlphaZReadWrite_ushort::Release(
   if ( v17 > 254 ) /*0x4992be*/
     v17 = 254; /*0x4992c0*/
   v18 = a5; /*0x4992cf*/
-  a2a = (unsigned __int8 *)(this->RLEBlitTransXlatAlphaZReadWrite_ushort_field_0x08 + (v17 << 9)); /*0x4992d5*/
+  a2a = (unsigned __int8 *)(this->q008 + (v17 << 9)); /*0x4992d5*/
   if ( a5 > 0 ) /*0x4992df*/
   {
     do /*0x4992f4*/
@@ -12474,7 +12474,7 @@ unsigned __int16 *__thiscall RLEBlitTransXlatAlphaZReadWrite_ushort::Release(
       {
         v13 += 2; /*0x499399*/
         ++result; /*0x49939c*/
-        *(_WORD *)(v13 - 2) = a12 | *(_WORD *)(this->RLEBlitTransXlatAlphaZReadWrite_ushort_field_0x04 + 2 * (v22 | *(unsigned __int16 *)&a2a[2 * *v16])); /*0x4993c7*/
+        *(_WORD *)(v13 - 2) = a12 | *(_WORD *)(this->q004 + 2 * (v22 | *(unsigned __int16 *)&a2a[2 * *v16])); /*0x4993c7*/
         *(result - 1) = arg10 - *a10++; /*0x4993d5*/
       }
       aP3 = (RLEBlitTransXlatAlphaZReadWrite_ushort *)((char *)aP3 - 1); /*0x4993db*/
@@ -12624,7 +12624,7 @@ int __thiscall RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransZRemapXlatAlphaZReadWrite_ushort_field_0x04)( /*0x499647*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x499647*/
            this,
            a2,
            a3,
@@ -12759,7 +12759,7 @@ int __thiscall RLEBlitTransLucent75AlphaZReadWrite_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent75AlphaZReadWrite_ushort_field_0x04)( /*0x499857*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x499857*/
            this,
            a2,
            a3,
@@ -12906,7 +12906,7 @@ int __thiscall RLEBlitTransLucent50AlphaZReadWrite_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent50AlphaZReadWrite_ushort_field_0x04)( /*0x499a87*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x499a87*/
            this,
            a2,
            a3,
@@ -13042,7 +13042,7 @@ int __thiscall RLEBlitTransLucent25AlphaZReadWrite_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->RLEBlitTransLucent25AlphaZReadWrite_ushort_field_0x04)( /*0x499c97*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x499c97*/
            this,
            a2,
            a3,
@@ -14526,7 +14526,7 @@ char __thiscall VectorClass_ptr_ConvertClass::sub_49B000(void *this, int a2, _DW
       return 0; /*0x49b0aa*/
     if ( this->Items ) /*0x49b038*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x49b03f*/
+      v5 = this->q008; /*0x49b03f*/
       if ( a2 < v5 ) /*0x49b044*/
         v5 = a2; /*0x49b046*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x49b04c*/
@@ -14538,14 +14538,14 @@ char __thiscall VectorClass_ptr_ConvertClass::sub_49B000(void *this, int a2, _DW
       }
     }
     this->Items = v4; /*0x49b07a*/
-    this->DynamicVector_field_0x8 = a2; /*0x49b082*/
+    this->q008 = a2; /*0x49b082*/
     this->IsAllocated = a3 == 0; /*0x49b085*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x49b08e*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x49b091*/
+  v7 = this->q008; /*0x49b091*/
   if ( v7 < this->Items ) /*0x49b099*/
     this->Items = v7; /*0x49b09b*/
   return 1; /*0x49b09e*/
@@ -15225,7 +15225,7 @@ char __thiscall MPCooperative::WriteCoopSaveINI(char *this)
   if ( !*this ) /*0x49be4d*/
     return 1; /*0x49be4d*/
   v2 = this + 28; /*0x49be58*/
-  if ( !this->__pad_070 ) /*0x49be55*/
+  if ( !this->q070 ) /*0x49be55*/
     return 1; /*0x49c0c5*/
   CCFileClass::Construct(v22, MEMORY[0x81F0F8]); /*0x49be70*/
   v15[1] = 0; /*0x49be79*/
@@ -15851,19 +15851,19 @@ char __thiscall sub_49CC50(
 {
   int v59; // esi
 
-  if ( a2 < 0 || a2 >= this->MPCooperative_field_0x10 ) /*0x49cc5f*/
+  if ( a2 < 0 || a2 >= this->q010 ) /*0x49cc5f*/
     return 0; /*0x49ccde*/
-  v59 = this->MPCooperative_field_0x48; /*0x49cc66*/
-  this->MPCooperative_field_0x38 = a2; /*0x49cc69*/
-  this->MPCooperative_field_0x48 = a20 + v59; /*0x49cc75*/
-  this->MPCooperative_field_0x4C += a48; /*0x49cc81*/
-  this->MPCooperative_field_0x14 += a24; /*0x49cc90*/
-  this->MPCooperative_field_0x54 += a52; /*0x49cc9c*/
-  this->MPCooperative_field_0x58 += a16; /*0x49ccab*/
-  this->MPCooperative_field_0x5C += a44; /*0x49ccb7*/
-  this->__pad_018 += a28; /*0x49ccc6*/
-  this->MPCooperative_field_0x64 += a56; /*0x49ccd2*/
-  this->MPCooperative_field_0x68 = a3; /*0x49ccd5*/
+  v59 = this->q048; /*0x49cc66*/
+  this->q038 = a2; /*0x49cc69*/
+  this->q048 = a20 + v59; /*0x49cc75*/
+  this->q04C += a48; /*0x49cc81*/
+  this->q014 += a24; /*0x49cc90*/
+  this->q054 += a52; /*0x49cc9c*/
+  this->q058 += a16; /*0x49ccab*/
+  this->q05C += a44; /*0x49ccb7*/
+  this->q018 += a28; /*0x49ccc6*/
+  this->q064 += a56; /*0x49ccd2*/
+  this->q068 = a3; /*0x49ccd5*/
   return 1; /*0x49ccdb*/
 }
 
@@ -16188,7 +16188,7 @@ bool __thiscall MPCooperative::ReadCoopSaveINI(char *this)
   if ( !*this ) /*0x49d12b*/
     return 0; /*0x49d12b*/
   v2 = this + 28; /*0x49d137*/
-  if ( !this->__pad_070 ) /*0x49d134*/
+  if ( !this->q070 ) /*0x49d134*/
     return 0; /*0x49d13c*/
   CCFileClass::Construct(v16, MEMORY[0x81F0F8]); /*0x49d14b*/
   v19[1] = 0; /*0x49d159*/
@@ -17615,7 +17615,7 @@ char __thiscall DynamicVectorClass_PAD::Remove(void *this, int a2, _DWORD *a3)
       return 0; /*0x49eb1a*/
     if ( this->Items ) /*0x49eaa8*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x49eaaf*/
+      v5 = this->q008; /*0x49eaaf*/
       if ( a2 < v5 ) /*0x49eab4*/
         v5 = a2; /*0x49eab6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x49eabc*/
@@ -17627,14 +17627,14 @@ char __thiscall DynamicVectorClass_PAD::Remove(void *this, int a2, _DWORD *a3)
       }
     }
     this->Items = v4; /*0x49eaea*/
-    this->DynamicVector_field_0x8 = a2; /*0x49eaf2*/
+    this->q008 = a2; /*0x49eaf2*/
     this->IsAllocated = a3 == 0; /*0x49eaf5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x49eafe*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x49eb01*/
+  v7 = this->q008; /*0x49eb01*/
   if ( v7 < this->Items ) /*0x49eb09*/
     this->Items = v7; /*0x49eb0b*/
   return 1; /*0x49eb0e*/
@@ -17788,7 +17788,7 @@ _DWORD *__thiscall sub_49ECD0(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x49ecd9*/
   this->Capacity = a2; /*0x49ece0*/
   this->q030 = 1; /*0x49ece3*/
-  this->__pad_034 = 0; /*0x49ece7*/
+  this->q034 = 0; /*0x49ece7*/
   *this = &vt_VectorClass_DynamicVectorClass_char; /*0x49eceb*/
   if ( a2 ) /*0x49ecf1*/
   {
@@ -17799,7 +17799,7 @@ _DWORD *__thiscall sub_49ECD0(_DWORD *this, int a2, int a3)
     else
     {
       this->Items = __2_YAPAXI_Z(4 * a2); /*0x49ed0c*/
-      this->__pad_034 = 1; /*0x49ed0f*/
+      this->q034 = 1; /*0x49ed0f*/
     }
   }
   *this = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49ed13*/
@@ -17829,7 +17829,7 @@ char __thiscall DynamicVectorClass_PAD::sub_49ED30(void *this, int a2, _DWORD *a
       return 0; /*0x49edda*/
     if ( this->Items ) /*0x49ed68*/
     {
-      v5 = this->DynamicVector_field_0x8; /*0x49ed6f*/
+      v5 = this->q008; /*0x49ed6f*/
       if ( a2 < v5 ) /*0x49ed74*/
         v5 = a2; /*0x49ed76*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x49ed7c*/
@@ -17841,14 +17841,14 @@ char __thiscall DynamicVectorClass_PAD::sub_49ED30(void *this, int a2, _DWORD *a
       }
     }
     this->Items = v4; /*0x49edaa*/
-    this->DynamicVector_field_0x8 = a2; /*0x49edb2*/
+    this->q008 = a2; /*0x49edb2*/
     this->IsAllocated = a3 == 0; /*0x49edb5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x49edbe*/
   }
-  v7 = this->DynamicVector_field_0x8; /*0x49edc1*/
+  v7 = this->q008; /*0x49edc1*/
   if ( v7 < this->Items ) /*0x49edc9*/
     this->Items = v7; /*0x49edcb*/
   return 1; /*0x49edce*/
@@ -18054,7 +18054,7 @@ _DWORD *__thiscall sub_49F090(_DWORD *this, int a2, int a3)
   this->Items = 0; /*0x49f09b*/
   this->Capacity = a2; /*0x49f09e*/
   this->q030 = 1; /*0x49f0a1*/
-  this->__pad_034 = 0; /*0x49f0a5*/
+  this->q034 = 0; /*0x49f0a5*/
   *this = &vt_VectorClass_DynamicVectorClass_char; /*0x49f0a8*/
   if ( a2 ) /*0x49f0ae*/
   {
@@ -18064,7 +18064,7 @@ _DWORD *__thiscall sub_49F090(_DWORD *this, int a2, int a3)
       return this; /*0x49f0be*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x49f0cd*/
-    this->__pad_034 = 1; /*0x49f0d0*/
+    this->q034 = 1; /*0x49f0d0*/
   }
   return this; /*0x49f0bd*/
 }
@@ -18386,11 +18386,11 @@ LABEL_9:
 // ==== 0x0049F740  Dialog::MapDialogResource  this=Dialog  sig=csp ====
 void __thiscall Dialog::MapDialogResource(_DWORD *this)
 {
-  if ( this->__pad_010 == 48879 ) /*0x49f74a*/
+  if ( this->q010 == 48879 ) /*0x49f74a*/
   {
     Debug::Log(); /*0x49f751*/
     MEMORY[0x87F7E8][32733] = ((int (__stdcall *)(_DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD))MapViewOfFileEx)( /*0x49f772*/
-                                this->Dialog_field_0xC,
+                                this->q00C,
                                 983071,
                                 0,
                                 0,
@@ -18473,12 +18473,12 @@ void __thiscall IntVector_Destructor(_DWORD *this)
 
   v2 = (void *)this->Items; /*0x49f9d6*/
   *this = &vt_VectorClass_int; /*0x49f9d9*/
-  if ( v2 && this->__pad_034 ) /*0x49f9e3*/
+  if ( v2 && this->q034 ) /*0x49f9e3*/
   {
     __3_YAXPAX_Z(v2); /*0x49f9e9*/
     this->Items = 0; /*0x49f9f1*/
   }
-  this->__pad_034 = 0; /*0x49f9f4*/
+  this->q034 = 0; /*0x49f9f4*/
   this->Capacity = 0; /*0x49f9f7*/
 }
 
@@ -18490,7 +18490,7 @@ int __thiscall RefCount_Increment(_DWORD *this, int a2)
   int i; // eax
   int v5; // ecx
 
-  v3 = this->__pad_008; /*0x49fa09*/
+  v3 = this->q008; /*0x49fa09*/
   if ( a2 < v3 ) /*0x49fa0e*/
   {
 LABEL_5:
@@ -18501,7 +18501,7 @@ LABEL_5:
   }
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, a2 + 10, 0) ) /*0x49fa1a*/
   {
-    for ( i = v3; i < this->__pad_008; *(_DWORD *)(this->RefCount_field_04 + 4 * i - 4) = 0 ) /*0x49fa28*/
+    for ( i = v3; i < this->q008; *(_DWORD *)(this->RefCount_field_04 + 4 * i - 4) = 0 ) /*0x49fa28*/
       ++i; /*0x49fa2d*/
     goto LABEL_5; /*0x49fa3b*/
   }
@@ -18541,12 +18541,12 @@ int __thiscall DynamicVector::GetOrGrow(_DWORD *this, DynamicVector *aP1)
   int v3; // edi
   int i; // eax
 
-  v3 = this->DynamicVector_field_0x8; /*0x49fae9*/
+  v3 = this->q008; /*0x49fae9*/
   if ( (int)aP1 < v3 ) /*0x49faee*/
     return *(_DWORD *)(this->Items + 4 * (_DWORD)aP1); /*0x49fb26*/
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)&aP1->field_8 + 2, 0) ) /*0x49fafa*/
   {
-    for ( i = v3; i < this->DynamicVector_field_0x8; *(_DWORD *)(this->Items + 4 * i - 4) = 0 ) /*0x49fb08*/
+    for ( i = v3; i < this->q008; *(_DWORD *)(this->Items + 4 * i - 4) = 0 ) /*0x49fb08*/
       ++i; /*0x49fb0d*/
     return *(_DWORD *)(this->Items + 4 * (_DWORD)aP1); /*0x49fb1b*/
   }

@@ -751,7 +751,7 @@ char MPCooperative::Write(int a2)
     char *v2;
     if ( Game_PlayerCount == 2 )
   {
-    v2 = this->MPCooperative_field_0x40;
+    v2 = this->q040;
     if ( v2 )
     String::AssignWideToChar(v2, *(char **)Game_PlayerInfoArray, *(char **)(Game_PlayerInfoArray + 4));
   }
@@ -958,14 +958,14 @@ int MPCooperative::checkVictory()
     int v6;
     int v7;
     v2 = 0;
-    v3 = this->MPCooperative_field_0x40;
+    v3 = this->q040;
     if ( !v3 )
     return 0;
     MPCooperative::GetMovieScore(v3, &v5);
-    Movie::GetState(this->MPCooperative_field_0x40, &v6);
+    Movie::GetState(this->q040, &v6);
     if ( v5 == v6 )
   {
-    Movie::GetSectionID(this->MPCooperative_field_0x40, &v7);
+    Movie::GetSectionID(this->q040, &v7);
     v2 = 1 << v7;
     Debug::Log();
   }
@@ -978,7 +978,7 @@ char MPCooperative::spawnUnits(int a2, void * Block, int a4, short a5, int a6, i
 {
 {
     *a8 = 0;
-    if ( this->MPCooperative_field_0x40 )
+    if ( this->q040 )
   {
     if ( Block )
     {
@@ -1238,7 +1238,7 @@ int MPCooperative::validatePlayerAction(unsigned int * a2)
     int v2;
     int result;
     int *i;
-    v2 = this->DynamicVector_field_0x10;
+    v2 = this->q010;
     result = 0;
     if ( v2 <= 0 )
     return -1;
@@ -1399,7 +1399,7 @@ int MPCooperative::handlePlayerReady(unsigned int * a2)
     int v2;
     int result;
     int *i;
-    v2 = this->DynamicVector_field_0x10;
+    v2 = this->q010;
     result = 0;
     if ( v2 <= 0 )
     return -1;
@@ -1476,19 +1476,19 @@ DynamicVector * MPCooperative::tallyVotes(char a2)
 unsigned int * MPCooperative::applyVoteResult(int a2, int a3)
 {
 {
-    this->MPCooperative_field_0x4 = 0;
-    this->MPCooperative_field_0x8 = a2;
-    this->MPCooperative_field_0xC = 1;
+    this->q004 = 0;
+    this->q008 = a2;
+    this->q00C = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_MPlayerScoreType;
     if ( a2 )
   {
     if ( a3 )
     {
-    this->MPCooperative_field_0x4 = a3;
+    this->q004 = a3;
     return this;
     }
-    this->MPCooperative_field_0x4 = __2_YAPAXI_Z(4 * a2);
+    this->q004 = __2_YAPAXI_Z(4 * a2);
     this->IsAllocated = 1;
   }
     return this;
@@ -1521,19 +1521,19 @@ namespace ra2 { namespace game { void* AbstractClass::updateAnimationState(int a
 unsigned int * CoopCampaignVector::Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2)
 {
 {
-    this->CoopCampaignVector_field_0x04 = 0;
-    this->CoopCampaignVector_field_0x08 = aP1;
-    this->CoopCampaignVector_field_0x0C = 1;
+    this->q004 = 0;
+    this->q008 = aP1;
+    this->q00C = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_CoopCampaignClass;
     if ( aP1 )
   {
     if ( aP2 )
     {
-    this->CoopCampaignVector_field_0x04 = aP2;
+    this->q004 = aP2;
     return this;
     }
-    this->CoopCampaignVector_field_0x04 = __2_YAPAXI_Z(4 * (int)aP1);
+    this->q004 = __2_YAPAXI_Z(4 * (int)aP1);
     this->IsAllocated = 1;
   }
     return this;

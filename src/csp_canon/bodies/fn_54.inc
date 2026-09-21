@@ -9,14 +9,14 @@ int IPXGlobalConnClass::CheckStatus()
     int v2;
     int *v3;
     v2 = 0;
-    v3 = (int *)this->IPXGlobalConnClass_field_0x04;
+    v3 = (int *)this->q004;
     if ( (int)v3[14] > 0 )
   {
     do
     {
     if ( (*(char *)Terrain::GetTileType(v3, v2) & 2) != 0 )
-    PacketQueue::ReleaseEntry((int *)this->IPXGlobalConnClass_field_0x04, 0, 0, v2--, 0, 0);
-    v3 = (int *)this->IPXGlobalConnClass_field_0x04;
+    PacketQueue::ReleaseEntry((int *)this->q004, 0, 0, v2--, 0, 0);
+    v3 = (int *)this->q004;
     ++v2;
     }
     while ( v2 < v3[14] );
@@ -40,7 +40,7 @@ int IPXGlobalConnClass::Send()
     char v11[1024];
     v2 = 0;
     v3 = 0;
-    v4 = (int *)this->IPXGlobalConnClass_field_0x04;
+    v4 = (int *)this->q004;
     if ( (int)v4[10] > 0 )
   {
     do
@@ -49,12 +49,12 @@ int IPXGlobalConnClass::Send()
     if ( (v5 & 4) != 0 && (v5 & 2) == 0 )
       {
     Waypoint::InitInvalid(v10);
-    v6 = (int *)this->IPXGlobalConnClass_field_0x04;
+    v6 = (int *)this->q004;
     v8 = 12;
     PacketQueue::ExtractEntry(v6, v11, &v9, v3--, v10, &v8, 0);
     ++v2;
       }
-    v4 = (int *)this->IPXGlobalConnClass_field_0x04;
+    v4 = (int *)this->q004;
     ++v3;
     }
     while ( v3 < v4[10] );
@@ -77,7 +77,7 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
     int v12;
     char v13[12];
     char v14[1024];
-    v4 = (int *)this->IPXGlobalConnClass_field_0x04;
+    v4 = (int *)this->q004;
     v5 = 0;
     v6 = 0;
     if ( (int)v4[10] <= 0 )
@@ -89,12 +89,12 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
     if ( (*(char *)TileIndex & 2) == 0 && *(int *)(TileIndex + 24) && NetworkID::Compare(*(int *)(TileIndex + 28), a2) && *(short *)(v8 + 32) == a3 )
     {
     Waypoint::InitInvalid(v13);
-    v9 = (int *)this->IPXGlobalConnClass_field_0x04;
+    v9 = (int *)this->q004;
     v11 = 12;
     PacketQueue::ExtractEntry(v9, v14, &v12, v6--, v13, &v11, 0);
     ++v5;
     }
-    v4 = (int *)this->IPXGlobalConnClass_field_0x04;
+    v4 = (int *)this->q004;
     ++v6;
   }
     while ( v6 < v4[10] );
@@ -2824,19 +2824,19 @@ IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2)
 unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
 {
 {
-    this->IsometricTileTypeClass_field_0x04 = 0;
-    this->IsometricTileTypeClass_field_0x08 = a2;
-    this->IsometricTileTypeClass_field_0x0C = 1;
+    this->vtable2 = 0;
+    this->vtable3 = a2;
+    this->vtable4 = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_unsigned_short;
     if ( a2 )
   {
     if ( a3 )
     {
-    this->IsometricTileTypeClass_field_0x04 = a3;
+    this->vtable2 = a3;
     return this;
     }
-    this->IsometricTileTypeClass_field_0x04 = __2_YAPAXI_Z(4 * a2);
+    this->vtable2 = __2_YAPAXI_Z(4 * a2);
     this->IsAllocated = 1;
   }
     return this;
@@ -3122,7 +3122,7 @@ int JumpjetLocomotionClass::ConvertCoordToCell_0(int a1)
 }
 }
 
-// ==== BACKFILL 0x0054B980  HouseClass::Set  cls=HouseClass  sig=csp  renamed_refs=5  residual=- ====
+// ==== BACKFILL 0x0054B980  HouseClass::Set  cls=HouseClass  sig=csp  renamed_refs=6  residual=- ====
 char HouseClass::Set()
 {
 {
@@ -3136,7 +3136,7 @@ char HouseClass::Set()
     (*(void (__thiscall **)(int, int, int))(**(int **)(this + 12) + 1348))( this->vtable4, 0, 1072693248);
     Value = ProgressTimer::GetValue((short *)(this->vtable4 + 904), &v6);
     FacingClass::Set_SyncLog((char *)(this + 84), Value);
-    v4 = this->relatedTags;
+    v4 = this->vtable7;
     this->absorbersCapacity = 0;
     this->bunkersCount = 0;
     this->bunkers = 0;

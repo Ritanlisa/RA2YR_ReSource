@@ -13,7 +13,7 @@ int __thiscall sub_7C0490(_DWORD *this)
     result = FillAudioStreamBuffer((int)this, 32); /*0x7c04a7*/
     if ( result == -1 ) /*0x7c04af*/
     {
-      ++this->DSurface_field_0x14; /*0x7c04b1*/
+      ++this->q014; /*0x7c04b1*/
     }
     else if ( result != -9 && result != -11 ) /*0x7c04be*/
     {
