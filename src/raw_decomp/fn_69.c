@@ -112,7 +112,7 @@ int __thiscall Screen::TransitionLoop(MPCooperative *this, int a2)
 }
 
 
-// ==== 0x00690360  Screen::CleanupTransitionObjects  this=MPCooperative  sig=csp ====
+// ==== 0x00690360  Screen::CleanupTransitionObjects  this=MultiplayerGameMode  sig=csp ====
 int __thiscall Screen::CleanupTransitionObjects(MPCooperative *this)
 {
   int result; // eax
@@ -5439,7 +5439,7 @@ int __thiscall SessionClass_GetOption2(int this)
 }
 
 
-// ==== 0x00696F90  SessionClass::SetPlayerOption  this=SessionClass  sig=csp ====
+// ==== 0x00696F90  SessionClass::SetPlayerOption  this=CampaignClass  sig=csp ====
 int __thiscall SessionClass::SetPlayerOption(int this, SkirmishDialog *aP1)
 {
   SkirmishDialog *result; // eax
@@ -5459,7 +5459,7 @@ int __thiscall SessionClass::SetPlayerOption(int this, SkirmishDialog *aP1)
 }
 
 
-// ==== 0x00696FC0  SessionClass::SetPlayerColor  this=SessionClass  sig=csp ====
+// ==== 0x00696FC0  SessionClass::SetPlayerColor  this=CampaignClass  sig=csp ====
 int __thiscall SessionClass_SetPlayerColor(int this, int a2)
 {
   int result; // eax
@@ -5479,7 +5479,7 @@ int __thiscall SessionClass_SetPlayerColor(int this, int a2)
 }
 
 
-// ==== 0x00696FF0  SessionClass::SetOption  this=SessionClass  sig=csp ====
+// ==== 0x00696FF0  SessionClass::SetOption  this=CampaignClass  sig=csp ====
 int __thiscall SessionClass::SetOption(int this, SessionClass *aP1)
 {
   SessionClass *result; // eax
@@ -5499,7 +5499,7 @@ int __thiscall SessionClass::SetOption(int this, SessionClass *aP1)
 }
 
 
-// ==== 0x00697020  SessionClass::SetOption2  this=SessionClass  sig=csp ====
+// ==== 0x00697020  SessionClass::SetOption2  this=CampaignClass  sig=csp ====
 int __thiscall SessionClass::SetOption2(int this, SessionClass *aP1)
 {
   SessionClass *result; // eax
@@ -7646,7 +7646,7 @@ DWORD sub_69A340()
 }
 
 
-// ==== 0x0069A3B0  MapFile::LoadDescription  this=MapFile  sig=csp ====
+// ==== 0x0069A3B0  MapFile::LoadDescription  this=AbstractClass  sig=csp ====
 VectorClass *__thiscall MapFile::LoadDescription(wchar_t *String, unsigned __int8 ***a2, INIClass *aP1)
 {
   wchar_t *v4; // ebp
@@ -8029,7 +8029,7 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
 }
 
 
-// ==== 0x0069AC30  ScenarioClass::CheckExists  this=ScenarioClass  sig=csp ====
+// ==== 0x0069AC30  ScenarioClass::CheckExists  this=AbstractClass  sig=csp ====
 char __thiscall ScenarioClass_CheckExists(int *this, int a2)
 {
   _DWORD *v2; // eax
@@ -8049,16 +8049,16 @@ char __thiscall ScenarioClass_CheckExists(int *this, int a2)
     RawFileClass::Dtor(v11); /*0x69ac5b*/
     return v3; /*0x69ac68*/
   }
-  v5 = this->q198; /*0x69ac6b*/
+  v5 = this->__pad_198; /*0x69ac6b*/
   v6 = 0; /*0x69ac71*/
   if ( v5 <= 0 ) /*0x69ac75*/
   {
 LABEL_7:
-    v8 = this->q198; /*0x69ac8a*/
+    v8 = this->__pad_198; /*0x69ac8a*/
     v9 = 0; /*0x69ac90*/
     if ( v8 <= 0 ) /*0x69ac94*/
       return 0; /*0x69acb0*/
-    for ( i = (_DWORD *)this->q18C; *i != a2; ++i ) /*0x69ac96*/
+    for ( i = (_DWORD *)this->q630; *i != a2; ++i ) /*0x69ac96*/
     {
       if ( ++v9 >= v8 ) /*0x69aca6*/
         return 0; /*0x69aca6*/
@@ -8066,7 +8066,7 @@ LABEL_7:
   }
   else
   {
-    v7 = (_DWORD *)this->q18C; /*0x69ac77*/
+    v7 = (_DWORD *)this->q630; /*0x69ac77*/
     while ( *v7 != -1 ) /*0x69ac80*/
     {
       ++v6; /*0x69ac82*/
@@ -8079,10 +8079,10 @@ LABEL_7:
 }
 
 
-// ==== 0x0069ACC0  GameOption::GetField  this=ObjectClass  sig=csp ====
+// ==== 0x0069ACC0  GameOption::GetField  this=AbstractClass  sig=csp ====
 int __thiscall GameOption::GetField(_DWORD **this)
 {
-  return *this->__pad_18C; /*0x69acc8*/
+  return *this->q630; /*0x69acc8*/
 }
 
 
@@ -8133,28 +8133,28 @@ char __thiscall sub_69ADE0(_BYTE *this, char a2)
 }
 
 
-// ==== 0x0069ADF0  IsRandMap::Sed  this=IsRandMap  sig=csp ====
+// ==== 0x0069ADF0  IsRandMap::Sed  this=AbstractClass  sig=csp ====
 BOOL __thiscall IsRandMap_Sed(int this)
 {
   return _strcmpi((const void *)(this + 88), aRandmapSed) == 0; /*0x69ae06*/
 }
 
 
-// ==== 0x0069AE10  GameClass::initPlayerData  this=GameClass  sig=csp ====
+// ==== 0x0069AE10  GameClass::initPlayerData  this=AbstractClass  sig=csp ====
 bool __thiscall sub_69AE10(int *this, const char **a2)
 {
   int v3; // eax
   int v5; // esi
 
-  v3 = this->q06D; /*0x69ae15*/
+  v3 = this->q6D0; /*0x69ae15*/
   if ( !v3 ) /*0x69ae1d*/
     return String::Equals_Alt(a2, MEMORY[0x83F668]); /*0x69ae28*/
   v5 = 0; /*0x69ae33*/
   if ( v3 <= 0 ) /*0x69ae37*/
     return 0; /*0x69ae5d*/
-  while ( !String::Compare(a2, (const char **)(this->q06A + 4 * v5)) ) /*0x69ae50*/
+  while ( !String::Compare(a2, (const char **)(this->__pad_6A0 + 4 * v5)) ) /*0x69ae50*/
   {
-    if ( ++v5 >= this->q06D ) /*0x69ae5b*/
+    if ( ++v5 >= this->q6D0 ) /*0x69ae5b*/
       return 0; /*0x69ae5b*/
   }
   return 1; /*0x69ae2d*/
@@ -11052,7 +11052,7 @@ _DWORD *__thiscall sub_69D870(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x0069D8C0  SHA1::ProcessBlock  this=Pipe  sig=csp ====
+// ==== 0x0069D8C0  SHA1::ProcessBlock  this=SHA1  sig=csp ====
 int *__thiscall sub_69D8C0(_DWORD *this, const void **a2, int *a3)
 {
   int *result; // eax
@@ -11067,7 +11067,7 @@ int *__thiscall sub_69D8C0(_DWORD *this, const void **a2, int *a3)
   {
     if ( *a2 ) /*0x69d8d3*/
     {
-      v6 = this->Pipe_field_0x0C; /*0x69d8da*/
+      v6 = this->q030; /*0x69d8da*/
       if ( v6 || v5 < 64 ) /*0x69d8e4*/
       {
         v7 = 64 - v6; /*0x69d8eb*/
@@ -11075,16 +11075,16 @@ int *__thiscall sub_69D8C0(_DWORD *this, const void **a2, int *a3)
           v7 = *a3; /*0x69d8f1*/
         qmemcpy((char *)this + v6 + 52, *a2, v7); /*0x69d8ff*/
         *a2 = (char *)*a2 + v7; /*0x69d911*/
-        this->Pipe_field_0x0C += v7; /*0x69d91a*/
+        this->q030 += v7; /*0x69d91a*/
         *a3 -= v7; /*0x69d926*/
-        result = (int *)this->Pipe_field_0x0C; /*0x69d928*/
+        result = (int *)this->q030; /*0x69d928*/
         if ( result == (int *)64 ) /*0x69d92d*/
         {
           SHA1::Transform(this + 13, this + 6); /*0x69d939*/
-          v8 = this->q00B; /*0x69d93e*/
-          this->Pipe_field_0x0C = 0; /*0x69d941*/
+          v8 = this->q02C; /*0x69d93e*/
+          this->q030 = 0; /*0x69d941*/
           result = (int *)(v8 + 64); /*0x69d948*/
-          this->q00B = result; /*0x69d94a*/
+          this->q02C = result; /*0x69d94a*/
         }
       }
     }
@@ -11180,7 +11180,7 @@ int __thiscall SHA1_Compute(_DWORD *this, char *a2)
 }
 
 
-// ==== 0x0069DB30  SHA1::Transform  this=Pipe  sig=csp ====
+// ==== 0x0069DB30  SHA1::Transform  this=SHA1  sig=csp ====
 unsigned int __thiscall SHA1::Transform(Pipe *this)
 {
   Pipe *v2; // ecx
@@ -11887,7 +11887,7 @@ void __fastcall sub_69E320(unsigned int a1)
 }
 
 
-// ==== 0x0069E430  ObjectClass::LoadSHPFile  this=ObjectTypeClass  sig=csp ====
+// ==== 0x0069E430  ObjectClass::LoadSHPFile  this=AbstractClass  sig=csp ====
 CampaignScore *__thiscall LoadSHPFile(void *lpBuffer, char *Source)
 {
   char *v3; // eax
@@ -12094,7 +12094,7 @@ int __thiscall MixFileClass_GetSubFile(char **this, unsigned int a2)
 }
 
 
-// ==== 0x0069E7E0  Building::GetFoundationSize  this=Building  sig=csp ====
+// ==== 0x0069E7E0  Building::GetFoundationSize  this=IUnknown  sig=csp ====
 _DWORD *__stdcall Building_GetFoundationSize(_DWORD *a1, unsigned int a2)
 {
   int v2; // eax
@@ -12159,7 +12159,7 @@ int __thiscall MixFileClass_GetPixelData(char **this, int a2, unsigned int a3)
 }
 
 
-// ==== 0x0069E900  ObjectClass::Helper_69E900  this=ObjectClass  sig=csp ====
+// ==== 0x0069E900  ObjectClass::Helper_69E900  this=AbstractClass  sig=csp ====
 char __thiscall sub_69E900(char **this, unsigned int a2)
 {
   char **SubFile; // eax

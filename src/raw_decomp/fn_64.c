@@ -359,7 +359,7 @@ int __thiscall Skirmish::RenderPreview(_DWORD *this, SkirmishDialog *aP1)
 }
 
 
-// ==== 0x00640A40  Tactical::Radar_Render  this=CampaignClass  sig=csp ====
+// ==== 0x00640A40  Tactical::Radar_Render  this=AbstractClass  sig=csp ====
 int *__userpurge Tactical_Radar_Render@<eax>(
         int **a1@<ecx>,
         int a2@<ebx>,
@@ -605,7 +605,7 @@ int *__userpurge Tactical_Radar_Render@<eax>(
 }
 
 
-// ==== 0x00641140  MiniMap::Render  this=IUnknown  sig=csp ====
+// ==== 0x00641140  MiniMap::Render  this=AbstractClass  sig=csp ====
 int __thiscall MiniMap_Render(char **this)
 {
   char **v1; // edi
@@ -1083,7 +1083,7 @@ LABEL_12:
 }
 
 
-// ==== 0x00641DB0  Surface::LoadToSurfaceSHP  this=CampaignClass  sig=csp ====
+// ==== 0x00641DB0  Surface::LoadToSurfaceSHP  this=AbstractClass  sig=csp ====
 char __thiscall SHP_LoadToSurface(char **this, char *Source)
 {
   _DWORD *v3; // esi
@@ -1141,7 +1141,7 @@ LABEL_11:
 }
 
 
-// ==== 0x00641EE0  PreviewClass::ReadPreview  this=CampaignClass  sig=csp ====
+// ==== 0x00641EE0  PreviewClass::ReadPreview  this=IUnknown  sig=csp ====
 char __thiscall PreviewClass::ReadPreview(char **this, char *Source)
 {
   int v2; // ebp
@@ -1231,7 +1231,7 @@ LABEL_11:
 }
 
 
-// ==== 0x00642130  Palette::Preview_Generate  this=Palette  sig=csp ====
+// ==== 0x00642130  Palette::Preview_Generate  this=IUnknown  sig=csp ====
 int *__userpurge Palette::Preview_Generate@<eax>(int *a1@<ecx>, char a2@<sil>, int a3, AbstractClass **a4)
 {
   int v6; // esi
@@ -1555,14 +1555,14 @@ int __thiscall ModemGame::RenderPaletteImage(char **this, CCINIClass *aP1)
 }
 
 
-// ==== 0x00642740  CoordStruct::Set2  this=IUnknown  sig=csp ====
+// ==== 0x00642740  CoordStruct::Set2  this=ParticleSystemClass  sig=csp ====
 _DWORD *__thiscall CoordStruct::Set2(_DWORD *this, IUnknown *aP1, AbstractClass *aP2)
 {
   int v4; // edx
 
   v4 = SLOWORD(aP1->field_0) << 8; /*0x642756*/
-  this->q004 = (SHIWORD(aP1->field_0) << 8) + 128; /*0x642759*/
-  this->q008 = aP2; /*0x642766*/
+  this->vtable2 = (SHIWORD(aP1->field_0) << 8) + 128; /*0x642759*/
+  this->vtable3 = aP2; /*0x642766*/
   *this = v4 + 128; /*0x642769*/
   return this; /*0x64276b*/
 }
@@ -3268,7 +3268,7 @@ char __thiscall ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP
 }
 
 
-// ==== 0x00644630  WarheadTypeClass::applyDamage  this=AbstractClass  sig=csp ====
+// ==== 0x00644630  WarheadTypeClass::applyDamage  this=IUnknown  sig=csp ====
 int __thiscall WarheadTypeClass::applyDamage(ObjectClass *Source)
 {
   int v2; // esi
@@ -3384,7 +3384,7 @@ ObjectClass *__thiscall sub_644850(void *this)
 }
 
 
-// ==== 0x00644890  BuildingTypeClass::LoadOrGet  this=CampaignClass  sig=csp ====
+// ==== 0x00644890  BuildingTypeClass::LoadOrGet  this=AbstractClass  sig=csp ====
 ParticleSystemTypeClass *__thiscall BuildingTypeClass::LoadOrGet(ObjectClass *Source)
 {
   int v2; // esi

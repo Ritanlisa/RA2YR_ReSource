@@ -10008,7 +10008,7 @@ MMRESULT __stdcall timeBeginPeriod(UINT uPeriod)
 }
 
 
-// ==== 0x007C8962  htonl  this=-  sig=csp ====
+// ==== 0x007C8962  htonl  this=AbstractClass  sig=csp ====
 // attributes: thunk
 u_long __stdcall htonl(IUnknown *aP0)
 {
@@ -10072,7 +10072,7 @@ int __stdcall getsockopt(AnimClass *aP0, int level, int optname, char *optval, i
 }
 
 
-// ==== 0x007C8992  closesocket  this=Game  sig=csp ====
+// ==== 0x007C8992  closesocket  this=IPXInterfaceClass  sig=csp ====
 // attributes: thunk
 int __thiscall closesocket(Color *this)
 {
@@ -10082,7 +10082,7 @@ int __thiscall closesocket(Color *this)
 }
 
 
-// ==== 0x007C8998  bind  this=Game  sig=csp ====
+// ==== 0x007C8998  bind  this=IPXInterfaceClass  sig=csp ====
 // attributes: thunk
 int __stdcall bind(IUnknown *aP0, IUnknown *aP1, int namelen)
 {
@@ -10098,7 +10098,7 @@ SOCKET __stdcall socket(int af, int type, int protocol)
 }
 
 
-// ==== 0x007C89A4  setsockopt  this=Game  sig=csp ====
+// ==== 0x007C89A4  setsockopt  this=IPXInterfaceClass  sig=csp ====
 // attributes: thunk
 int __stdcall setsockopt(IUnknown *aP0, int level, int optname, IUnknown *aP3, int optlen)
 {
@@ -10814,7 +10814,7 @@ unsigned __int64 __stdcall _allmul(__int64 a1, __int64 a2)
 }
 
 
-// ==== 0x007C8EF4  _sprintf  this=-  sig=csp ====
+// ==== 0x007C8EF4  _sprintf  this=AbstractClass  sig=csp ====
 int sprintf(char *const Buffer, ObjectClass *aP1, INIClass *aP2)
 {
   int v3; // eax
@@ -11034,7 +11034,7 @@ void __usercall CIpow_Helper_Helper(double a1@<st0>)
 }
 
 
-// ==== 0x007C91D0  _strncpy  this=-  sig=csp ====
+// ==== 0x007C91D0  _strncpy  this=AbstractClass  sig=csp ====
 char *__cdecl strncpy(char *Destination, const char *Source, IUnknown *aP2)
 {
   INIClass *v3; // ecx
@@ -11542,7 +11542,7 @@ LABEL_6:
 }
 
 
-// ==== 0x007C978A  _atexit  this=IUnknown  sig=csp ====
+// ==== 0x007C978A  _atexit  this=-  sig=csp ====
 int __cdecl atexit(void (__cdecl *Func)())
 {
   return (_onexit((_onexit_t)Func) != 0) - 1; /*0x7c979b*/
@@ -11876,7 +11876,7 @@ __int64 __cdecl _atoi64(const char *String)
 }
 
 
-// ==== 0x007C9CC2  _strtok  this=ObjectTypeClass  sig=csp ====
+// ==== 0x007C9CC2  _strtok  this=IUnknown  sig=csp ====
 char *__cdecl strtok(char *String, ObjectClass *aP1)
 {
   char v3; // dl
@@ -12327,7 +12327,7 @@ wchar_t *__cdecl wcsrchr(const wchar_t *Str, wchar_t Ch)
 }
 
 
-// ==== 0x007CA405  _wcslen  this=ObjectClass  sig=csp ====
+// ==== 0x007CA405  _wcslen  this=AbstractClass  sig=csp ====
 size_t __cdecl wcslen(const wchar_t *String)
 {
   const wchar_t *v1; // eax
@@ -12496,7 +12496,7 @@ first_char_found:
 }
 
 
-// ==== 0x007CA530  _sscanf  this=-  sig=csp ====
+// ==== 0x007CA530  _sscanf  this=AbstractClass  sig=csp ====
 int sscanf(const char *const Buffer, const char *const Format, ...)
 {
   FILE Stream; // [esp+0h] [ebp-20h] BYREF
@@ -14509,7 +14509,7 @@ void _lockexit()
 }
 
 
-// ==== 0x007CBECA  __unlockexit  this=AbstractTypeClass  sig=ida-proto ====
+// ==== 0x007CBECA  __unlockexit  this=-  sig=ida-proto ====
 int _unlockexit()
 {
   return _unlock(13); /*0x7cbed2*/
@@ -16255,7 +16255,7 @@ char *__cdecl unknown_libname_75(CampaignScore *aP0)
 }
 
 
-// ==== 0x007CD680  __strnicmp  this=ObjectClass  sig=csp ====
+// ==== 0x007CD680  __strnicmp  this=AbstractClass  sig=csp ====
 int __cdecl _strnicmp(const char *String1, const char *String2, size_t MaxCount)
 {
   size_t v3; // ecx

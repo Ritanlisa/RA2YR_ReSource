@@ -1773,7 +1773,7 @@ int Dialog_FindGameUI()
 }
 
 
-// ==== 0x005E2700  Dialog::ShowMessage  this=ObjectClass  sig=csp ====
+// ==== 0x005E2700  Dialog::ShowMessage  this=AbstractClass  sig=csp ====
 void *Dialog::ShowMessage(int a1, int BufferCount, ...)
 {
   void *result; // eax
@@ -1812,7 +1812,7 @@ void *Dialog::ShowMessage(int a1, int BufferCount, ...)
 }
 
 
-// ==== 0x005E2790  Dialog::ShowStatusText  this=ObjectClass  sig=csp ====
+// ==== 0x005E2790  Dialog::ShowStatusText  this=AbstractClass  sig=csp ====
 int Dialog::ShowStatusText(int a1, int BufferCount, ...)
 {
   int result; // eax
@@ -2599,7 +2599,7 @@ int __thiscall Network::SendOptionsGame(char *Source)
 }
 
 
-// ==== 0x005E3850  WOLobby_Play  this=INIClass  sig=csp ====
+// ==== 0x005E3850  WOLobby_Play  this=AbstractClass  sig=csp ====
 int __thiscall WOLobby_Play(INIClass *this)
 {
   const char *v1; // edx
@@ -4820,7 +4820,7 @@ LABEL_30:
 }
 
 
-// ==== 0x005E64C0  SessionClass::initPlayers  this=CampaignClass  sig=csp ====
+// ==== 0x005E64C0  SessionClass::initPlayers  this=AbstractClass  sig=csp ====
 unsigned int __thiscall sub_5E64C0(void *this)
 {
   int PlayerCountMap; // esi
@@ -4846,7 +4846,7 @@ unsigned int __thiscall sub_5E64C0(void *this)
 }
 
 
-// ==== 0x005E6520  ReadPlayerCountMap  this=CampaignClass  sig=csp ====
+// ==== 0x005E6520  ReadPlayerCountMap  this=AbstractClass  sig=csp ====
 int __fastcall Map_ReadPlayerCount(int a1)
 {
   int Int_Overwrite; // edi
@@ -5396,7 +5396,7 @@ WPARAM __fastcall SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2)
 }
 
 
-// ==== 0x005E7160  ObjectClass::HandleMultiplayerMapSelection  this=ObjectClass  sig=csp ====
+// ==== 0x005E7160  ObjectClass::HandleMultiplayerMapSelection  this=SkirmishDialog  sig=csp ====
 char __thiscall HandleMultiplayerMapSelection(HWND this)
 {
   LRESULT v1; // eax
@@ -5555,7 +5555,7 @@ LABEL_32:
 }
 
 
-// ==== 0x005E7460  Scenario::PreGameInit  this=Scenario  sig=ida-proto ====
+// ==== 0x005E7460  Scenario::PreGameInit  this=AbstractClass  sig=ida-proto ====
 int __thiscall Scenario::PreGameInit(CellStruct *this)
 {
   ObjectClass *v0; // edx
@@ -5888,7 +5888,7 @@ void ExchangeMultiplayerGameInfo()
 }
 
 
-// ==== 0x005E7BF0  LoadScenarioClassByIndex  this=CampaignClass  sig=ida-proto ====
+// ==== 0x005E7BF0  LoadScenarioClassByIndex  this=-  sig=ida-proto ====
 char __fastcall LoadScenarioClassByIndex(int a1)
 {
   char result; // al
@@ -6717,7 +6717,7 @@ int __fastcall NetworkShare::GetField(int a1)
 }
 
 
-// ==== 0x005E8DC0  Player::BuildListString  this=CampaignScore  sig=csp ====
+// ==== 0x005E8DC0  Player::BuildListString  this=char*  sig=csp ====
 void __thiscall Player::BuildListString(wchar_t *Destination)
 {
   SessionClass *v2; // edi
@@ -6763,7 +6763,7 @@ void __thiscall Player::BuildListString(wchar_t *Destination)
 }
 
 
-// ==== 0x005E8EA0  NetworkLobby::SetupPlayers  this=ObjectClass  sig=csp ====
+// ==== 0x005E8EA0  NetworkLobby::SetupPlayers  this=AbstractClass  sig=csp ====
 void __thiscall NetworkLobby::SetupPlayers(wchar_t *Source)
 {
   CCINIClass *v2; // edi
@@ -7126,7 +7126,7 @@ BOOL __thiscall Player::IsObserver(void *this)
 }
 
 
-// ==== 0x005E9470  NetworkLobby::IsValidPlayerName  this=SessionClass  sig=csp ====
+// ==== 0x005E9470  NetworkLobby::IsValidPlayerName  this=NetworkLobby  sig=csp ====
 BOOL __thiscall NetworkLobby::IsValidPlayerName(wchar_t *this)
 {
   return this /*0x5e9499*/
@@ -7318,7 +7318,7 @@ char __thiscall sub_5E96A0(void *this)
 }
 
 
-// ==== 0x005E9720  NetworkLobby::CheckPlayerNames  this=AbstractTypeClass  sig=csp ====
+// ==== 0x005E9720  NetworkLobby::CheckPlayerNames  this=Coord  sig=csp ====
 char __thiscall sub_5E9720(void *this)
 {
   wchar_t **v2; // esi
@@ -7401,7 +7401,7 @@ int Game_ResetReadyStates()
 }
 
 
-// ==== 0x005E98F0  PlayerSlot::IndexToDlgID  this=PlayerSlot  sig=csp ====
+// ==== 0x005E98F0  PlayerSlot::IndexToDlgID  this=AbstractClass  sig=csp ====
 int __thiscall PlayerSlot_IndexToDlgID(void *this)
 {
   if ( !this ) /*0x5e98f4*/
@@ -7504,7 +7504,7 @@ LRESULT __fastcall GetComboBoxSelectedDefault(SkirmishDialog *aP0, int nIDDlgIte
 }
 
 
-// ==== 0x005E9B60  SelectLobbyCountry  this=SkirmishDialog  sig=csp ====
+// ==== 0x005E9B60  SelectLobbyCountry  this=-  sig=csp ====
 int __fastcall Lobby_SelectCountry(HWND a1, void *a2)
 {
   LRESULT Selected; // edi
@@ -7538,7 +7538,7 @@ int __fastcall Lobby_SelectCountry(HWND a1, void *a2)
 }
 
 
-// ==== 0x005E9C00  AssignPlayerColor  this=-  sig=csp ====
+// ==== 0x005E9C00  AssignPlayerColor  this=CampaignClass  sig=csp ====
 int __fastcall Player_AssignColor(HWND hDlg, void *nIDDlgItem)
 {
   LRESULT SelectedRaw; // ebx
@@ -7599,7 +7599,7 @@ LABEL_19:
 }
 
 
-// ==== 0x005E9CE0  AssignPlayerSide  this=SkirmishDialog  sig=csp ====
+// ==== 0x005E9CE0  AssignPlayerSide  this=CampaignClass  sig=csp ====
 int __fastcall Player_AssignSide(HWND hDlg, int nIDDlgItem)
 {
   LRESULT v4; // ebx
@@ -7659,7 +7659,7 @@ LABEL_19:
 }
 
 
-// ==== 0x005E9DB0  ProcessNetworkLobbyOption  this=SkirmishDialog  sig=csp ====
+// ==== 0x005E9DB0  ProcessNetworkLobbyOption  this=CampaignClass  sig=csp ====
 int __fastcall ProcessNetworkLobbyOption(SessionClass *hDlg, void *nIDDlgItem)
 {
   SessionClass *ComboBoxSelectedRaw2; // ebx
@@ -7682,7 +7682,7 @@ int __fastcall ProcessNetworkLobbyOption(SessionClass *hDlg, void *nIDDlgItem)
 }
 
 
-// ==== 0x005E9E00  NetworkLobby::InitLobbyDropdowns  this=NetworkLobby  sig=csp ====
+// ==== 0x005E9E00  NetworkLobby::InitLobbyDropdowns  this=AbstractClass  sig=csp ====
 int __thiscall NetworkLobby::InitLobbyDropdowns(SessionClass *hDlg)
 {
   int i; // ebp
@@ -8309,7 +8309,7 @@ int __fastcall sub_5EA920(int a1)
 }
 
 
-// ==== 0x005EA9B0  RefreshLobbyAll_Play  this=-  sig=ida-proto ====
+// ==== 0x005EA9B0  RefreshLobbyAll_Play  this=CampaignClass  sig=ida-proto ====
 int __fastcall sub_5EA9B0(int a1)
 {
   wchar_t *v1; // eax
@@ -8537,7 +8537,7 @@ int __thiscall sub_5EACD0(char *this)
 }
 
 
-// ==== 0x005EADA0  ObjectClass::RefreshLobbyAll_Get_5EADA0  this=ObjectClass  sig=csp ====
+// ==== 0x005EADA0  ObjectClass::RefreshLobbyAll_Get_5EADA0  this=AbstractClass  sig=csp ====
 char __thiscall RefreshLobbyAll_Get_5EADA0(SessionClass *hDlg)
 {
   SessionClass *v2; // edi
@@ -9399,7 +9399,7 @@ void __thiscall Lobby::SetupPlayerWidgets(HWND hDlg)
 }
 
 
-// ==== 0x005EBC00  DisableCampaignSlots  this=SkirmishDialog  sig=csp ====
+// ==== 0x005EBC00  DisableCampaignSlots  this=-  sig=csp ====
 void __fastcall DisableCampaignSlots(HWND hDlg, int a2)
 {
   int i; // ebp
@@ -9542,7 +9542,7 @@ void __fastcall UI_Setup_5EBDD0(SkirmishDialog *aP0, int a2, int a3, int a4)
 }
 
 
-// ==== 0x005EBEC0  SetupMultiplayerLobbyScreen_Setup  this=SkirmishDialog  sig=csp ====
+// ==== 0x005EBEC0  SetupMultiplayerLobbyScreen_Setup  this=-  sig=csp ====
 char __fastcall SetupMultiplayerLobbyScreen_Setup(SkirmishDialog *hDlg, char *a2, int nIDDlgItem)
 {
   char *v3; // ebx
@@ -10249,7 +10249,7 @@ LABEL_39:
 }
 
 
-// ==== 0x005EC9F0  PlayerSkirmishSlotHandler  this=SkirmishDialog  sig=csp ====
+// ==== 0x005EC9F0  PlayerSkirmishSlotHandler  this=-  sig=csp ====
 char __fastcall sub_5ED270(SkirmishDialog *hDlg, int nIDDlgItem, LPARAM a3)
 {
   CCINIClass *v5; // edx
@@ -10379,7 +10379,7 @@ int __thiscall Session::StartGame(HWND hWnd)
 }
 
 
-// ==== 0x005ED400  SaveMultiplayerLobbySettings  this=SkirmishDialog  sig=csp ====
+// ==== 0x005ED400  SaveMultiplayerLobbySettings  this=-  sig=csp ====
 char __fastcall SaveMultiplayerLobbySettings(ReferenceCounted *hDlg, int a2)
 {
   int i; // edi
@@ -10896,7 +10896,7 @@ wchar_t **__fastcall ReadChatMessage(wchar_t **a1, HWND a2)
 }
 
 
-// ==== 0x005EDDE0  EnablePlayerSlotControls  this=ObjectClass  sig=csp ====
+// ==== 0x005EDDE0  EnablePlayerSlotControls  this=-  sig=csp ====
 void __fastcall EnablePlayerSlotControls(HWND hDlg, bool a2)
 {
   int v3; // esi
@@ -12835,7 +12835,7 @@ int __stdcall sub_5EFF00(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
 }
 
 
-// ==== 0x005EFF70  Network::handleTimeout  this=AbstractClass  sig=csp ====
+// ==== 0x005EFF70  Network::handleTimeout  this=IUnknown  sig=csp ====
 HWND __thiscall Network::handleTimeout(HWND hDlg)
 {
   HWND DlgItem; // eax

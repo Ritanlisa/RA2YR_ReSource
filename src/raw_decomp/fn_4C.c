@@ -3164,7 +3164,7 @@ void __cdecl sub_4C3C50()
 }
 
 
-// ==== 0x004C3C90  ObjectClass::method_4C3C90  this=ObjectClass  sig=csp ====
+// ==== 0x004C3C90  ObjectClass::method_4C3C90  this=AbstractClass  sig=csp ====
 wchar_t **__thiscall sub_4C3C90(wchar_t **this, wchar_t *a2, wchar_t *a3, wchar_t *String, wchar_t *a5)
 {
   size_t v6; // eax
@@ -3181,7 +3181,7 @@ wchar_t **__thiscall sub_4C3C90(wchar_t **this, wchar_t *a2, wchar_t *a3, wchar_
 }
 
 
-// ==== 0x004C3D00  CreditsPower::DrawCreditsTextLine  this=CampaignClass  sig=csp ====
+// ==== 0x004C3D00  CreditsPower::DrawCreditsTextLine  this=AbstractClass  sig=csp ====
 char __thiscall sub_4C3D00(int this, char a2)
 {
   int v3; // esi
@@ -4879,43 +4879,43 @@ int sub_4C6550()
 }
 
 
-// ==== 0x004C65E0  EventClass::Add  this=IUnknown  sig=csp ====
+// ==== 0x004C65E0  EventClass::Add  this=EventClass  sig=csp ====
 char *__thiscall EventClass::Add(char *this, AbstractClass *aP1, unsigned __int8 a3, int a4, char a5)
 {
   Debug::Log(); /*0x4c65fc*/
   if ( (int)aP1 < 0 ) /*0x4c660a*/
   {
-    this->q008 = -1; /*0x4c6631*/
+    this->EventClass_field_0x8 = -1; /*0x4c6631*/
     *this = 0; /*0x4c6635*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c663d*/
     return this; /*0x4c6640*/
   }
   else
   {
-    this->q008 = (char)aP1; /*0x4c6610*/
+    this->EventClass_field_0x8 = (char)aP1; /*0x4c6610*/
     *this = a3; /*0x4c661a*/
     *(_DWORD *)(this + 7) = a4; /*0x4c661c*/
-    this->q02C = a5; /*0x4c6620*/
+    this->q00B = a5; /*0x4c6620*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6629*/
     return this; /*0x4c661e*/
   }
 }
 
 
-// ==== 0x004C6650  PlayerClass::SetTargetOrClear  this=IUnknown  sig=csp ====
+// ==== 0x004C6650  PlayerClass::SetTargetOrClear  this=PlayerClass  sig=csp ====
 char *__thiscall PlayerClass::SetTargetOrClear(char *this, AbstractClass *aP1, char arg4, _WORD *a3)
 {
   Debug::Log(); /*0x4c666c*/
   if ( (int)aP1 < 0 ) /*0x4c667a*/
   {
-    this->q008 = -1; /*0x4c66a4*/
+    this->PlayerClass_field_0x08 = -1; /*0x4c66a4*/
     *this = 0; /*0x4c66a8*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c66b3*/
     return this; /*0x4c66b1*/
   }
   else
   {
-    this->q008 = (char)aP1; /*0x4c667c*/
+    this->PlayerClass_field_0x08 = (char)aP1; /*0x4c667c*/
     *this = arg4; /*0x4c6683*/
     *(_WORD *)(this + 7) = *a3; /*0x4c6688*/
     *(_WORD *)(this + 9) = a3[1]; /*0x4c6690*/
@@ -4925,20 +4925,20 @@ char *__thiscall PlayerClass::SetTargetOrClear(char *this, AbstractClass *aP1, c
 }
 
 
-// ==== 0x004C66C0  EventClass::AddEvent  this=IUnknown  sig=csp ====
+// ==== 0x004C66C0  EventClass::AddEvent  this=EventClass  sig=csp ====
 char *__thiscall EventClass_AddEvent(char *this, int a2, unsigned __int8 a3)
 {
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c66dc*/
   if ( a2 < 0 ) /*0x4c66ea*/
   {
-    this->q008 = -1; /*0x4c6701*/
+    this->EventClass_field_0x8 = -1; /*0x4c6701*/
     *this = 0; /*0x4c6705*/
     *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c670d*/
     return this; /*0x4c6710*/
   }
   else
   {
-    this->q008 = a2; /*0x4c66ec*/
+    this->EventClass_field_0x8 = a2; /*0x4c66ec*/
     *this = a3; /*0x4c66ef*/
     *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c66f9*/
     return this; /*0x4c66f7*/
@@ -4946,20 +4946,20 @@ char *__thiscall EventClass_AddEvent(char *this, int a2, unsigned __int8 a3)
 }
 
 
-// ==== 0x004C6720  EventClass::Add2  this=IUnknown  sig=csp ====
+// ==== 0x004C6720  EventClass::Add2  this=EventClass  sig=csp ====
 char *__thiscall EventClass::Add2(char *this, AnimClass *aP1, unsigned __int8 a3, IUnknown *aP3)
 {
   Debug::Log(); /*0x4c673c*/
   if ( (int)aP1 < 0 ) /*0x4c674a*/
   {
-    this->q008 = -1; /*0x4c6767*/
+    this->EventClass_field_0x8 = -1; /*0x4c6767*/
     *this = 0; /*0x4c676b*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6776*/
     return this; /*0x4c6774*/
   }
   else
   {
-    this->q008 = (char)aP1; /*0x4c6750*/
+    this->EventClass_field_0x8 = (char)aP1; /*0x4c6750*/
     *this = a3; /*0x4c6753*/
     *(_DWORD *)(this + 7) = aP3; /*0x4c6755*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c675d*/
@@ -4968,23 +4968,23 @@ char *__thiscall EventClass::Add2(char *this, AnimClass *aP1, unsigned __int8 a3
 }
 
 
-// ==== 0x004C6780  ScenarioClass::SetEvent  this=IUnknown  sig=csp ====
+// ==== 0x004C6780  ScenarioClass::SetEvent  this=ScenarioClass  sig=csp ====
 char *__thiscall ScenarioClass::SetEvent(char *this, IUnknown *aP1, char a3, int a4, char a5, int a6, char a7)
 {
   Debug::Log(); /*0x4c679c*/
   if ( (int)aP1 < 0 ) /*0x4c67aa*/
   {
-    this->q008 = -1; /*0x4c67e2*/
+    this->q002 = -1; /*0x4c67e2*/
     *this = 0; /*0x4c67e6*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c67ee*/
     return this; /*0x4c67f1*/
   }
   else
   {
-    this->q008 = (char)aP1; /*0x4c67b0*/
+    this->q002 = (char)aP1; /*0x4c67b0*/
     *this = a3; /*0x4c67ba*/
     *(_DWORD *)(this + 7) = a4; /*0x4c67bc*/
-    this->q02C = a5; /*0x4c67c2*/
+    this->q00B = a5; /*0x4c67c2*/
     this->q003 = a6; /*0x4c67cc*/
     this->q010 = a7; /*0x4c67d1*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c67da*/
@@ -4993,7 +4993,7 @@ char *__thiscall ScenarioClass::SetEvent(char *this, IUnknown *aP1, char a3, int
 }
 
 
-// ==== 0x004C6860  ScriptAction::InitActionFields  this=IUnknown  sig=csp ====
+// ==== 0x004C6860  ScriptAction::InitActionFields  this=ScriptAction  sig=csp ====
 IUnknown *__thiscall ScriptAction::InitActionFields(
         char *this,
         int a2,
@@ -5012,30 +5012,30 @@ IUnknown *__thiscall ScriptAction::InitActionFields(
   result = (IUnknown *)this; /*0x4c6860*/
   if ( a2 < 0 ) /*0x4c6868*/
   {
-    this->q008 = -1; /*0x4c68ca*/
+    this->ScriptAction_field_0x8 = -1; /*0x4c68ca*/
     *this = 0; /*0x4c68ce*/
   }
   else
   {
-    this->q008 = a2; /*0x4c686e*/
+    this->ScriptAction_field_0x8 = a2; /*0x4c686e*/
     *this = 4; /*0x4c6874*/
-    this->q01D = 0; /*0x4c6877*/
+    this->ScriptAction_field_0x74 = 0; /*0x4c6877*/
     *(_DWORD *)(this + 7) = a3; /*0x4c687b*/
-    this->q02C = a4; /*0x4c6881*/
-    this->q00C = a5; /*0x4c6888*/
+    this->ScriptAction_field_0xB0 = a4; /*0x4c6881*/
+    this->__pad_00C = a5; /*0x4c6888*/
     *(_DWORD *)(this + 14) = a6; /*0x4c6892*/
-    this->q012 = a7; /*0x4c6899*/
+    this->q048 = a7; /*0x4c6899*/
     *(_DWORD *)(this + 19) = a8; /*0x4c68a3*/
-    this->q017 = a9; /*0x4c68aa*/
-    this->q018 = a10; /*0x4c68b4*/
-    this->q070 = a11; /*0x4c68bb*/
+    *(this + 23) = a9; /*0x4c68aa*/
+    this->ScriptAction_field_0x18 = a10; /*0x4c68b4*/
+    this->__pad_01C = a11; /*0x4c68bb*/
   }
   *(_DWORD *)(this + 3) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x4c68c4*/
   return result; /*0x4c68c7*/
 }
 
 
-// ==== 0x004C68E0  ObjectClass::method_4C68E0  this=AnimClass  sig=csp ====
+// ==== 0x004C68E0  ObjectClass::method_4C68E0  this=AbstractClass  sig=csp ====
 char *__thiscall sub_4C68E0(
         AnimClass *this,
         int a2,
@@ -5076,7 +5076,7 @@ char *__thiscall sub_4C68E0(
 }
 
 
-// ==== 0x004C6970  EventClass::AddEventEx  this=EventClass  sig=csp ====
+// ==== 0x004C6970  EventClass::AddEventEx  this=SelectClass@StripClass@SidebarClass  sig=csp ====
 char *__thiscall EventClass::AddEventEx(
         char *this,
         SelectClass_StripClass_SidebarClass *aP1,
@@ -5088,14 +5088,14 @@ char *__thiscall EventClass::AddEventEx(
   Debug::Log(); /*0x4c698c*/
   if ( (int)aP1 < 0 ) /*0x4c699a*/
   {
-    this->EventClass_field_0x8 = -1; /*0x4c69c6*/
+    this->Y = -1; /*0x4c69c6*/
     *this = 0; /*0x4c69ca*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c69d2*/
     return this; /*0x4c69d5*/
   }
   else
   {
-    this->EventClass_field_0x8 = (char)aP1; /*0x4c69a4*/
+    this->Y = (char)aP1; /*0x4c69a4*/
     *this = a3; /*0x4c69ab*/
     *(_DWORD *)(this + 7) = aP3; /*0x4c69ad*/
     *(_DWORD *)(this + 11) = aP4; /*0x4c69b0*/
@@ -5158,20 +5158,20 @@ char *__thiscall sub_4C6A60(char *this, int a2, char a3, int a4, int a5, _WORD *
 }
 
 
-// ==== 0x004C6AE0  EventClass::Init  this=IUnknown  sig=csp ====
+// ==== 0x004C6AE0  EventClass::Init  this=EventClass  sig=csp ====
 char *__thiscall EventClass::Init(char *this, IUnknown *aP1, char a3, int a4, int a5, int arg10, _WORD *a6)
 {
   Debug::Log(); /*0x4c6afc*/
   if ( (int)aP1 < 0 ) /*0x4c6b0a*/
   {
-    this->q008 = -1; /*0x4c6b49*/
+    this->EventClass_field_0x8 = -1; /*0x4c6b49*/
     *this = 0; /*0x4c6b4d*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6b58*/
     return this; /*0x4c6b56*/
   }
   else
   {
-    this->q008 = (char)aP1; /*0x4c6b14*/
+    this->EventClass_field_0x8 = (char)aP1; /*0x4c6b14*/
     *(_DWORD *)(this + 11) = a5; /*0x4c6b1b*/
     *this = a3; /*0x4c6b22*/
     *(_DWORD *)(this + 7) = a4; /*0x4c6b24*/
@@ -6711,7 +6711,7 @@ _WORD *__thiscall FrameSnapshot_Init(_WORD *this)
 }
 
 
-// ==== 0x004C91E0  FrameSnapshot::InitMax  this=FrameSnapshot  sig=csp ====
+// ==== 0x004C91E0  FrameSnapshot::InitMax  this=TechnoClass  sig=csp ====
 _WORD *__thiscall FrameSnapshot_InitMax(_WORD *this, int a2)
 {
   _WORD *result; // eax
@@ -6721,11 +6721,11 @@ _WORD *__thiscall FrameSnapshot_InitMax(_WORD *this, int a2)
 
   result = this; /*0x4c91e0*/
   *this = 0; /*0x4c91e4*/
-  this->q002 = 0; /*0x4c91e7*/
+  this->vtable3 = 0; /*0x4c91e7*/
   v3 = MEMORY[0xA8ED84]; /*0x4c91eb*/
-  this->FrameSnapshot_field_0x04 = 0; /*0x4c91f1*/
-  this->q002 = v3; /*0x4c91f4*/
-  this->q00A = 0; /*0x4c91f7*/
+  this->vtable2 = 0; /*0x4c91f1*/
+  this->vtable3 = v3; /*0x4c91f4*/
+  this->owningHouseIndex = 0; /*0x4c91f7*/
   v4 = a2; /*0x4c91fb*/
   if ( a2 >= 127 ) /*0x4c9202*/
     v4 = 127; /*0x4c9204*/
@@ -6736,7 +6736,7 @@ _WORD *__thiscall FrameSnapshot_InitMax(_WORD *this, int a2)
 }
 
 
-// ==== 0x004C9220  FacingClass::Update  this=ObjectClass  sig=csp ====
+// ==== 0x004C9220  FacingClass::Update  this=FacingClass  sig=csp ====
 char __thiscall FacingClass::Update(FacingClass *this, DirStruct *desiredFacing)
 {
   __int16 v2; // ax
@@ -6812,7 +6812,7 @@ LABEL_16:
 }
 
 
-// ==== 0x004C9300  FacingClass::Set_SyncLog  this=ObjectClass  sig=csp ====
+// ==== 0x004C9300  FacingClass::Set_SyncLog  this=TechnoClass  sig=csp ====
 char __thiscall FacingClass::Set_SyncLog(FacingClass *this, DirStruct *desiredFacing)
 {
   TerrainTypeClass *v3; // ebx
@@ -6879,7 +6879,7 @@ LABEL_12:
 }
 
 
-// ==== 0x004C93D0  ProgressTimer::GetValue  this=ObjectClass  sig=csp ====
+// ==== 0x004C93D0  ProgressTimer::GetValue  this=FacingStruct  sig=csp ====
 _DWORD *__thiscall ProgressTimer::GetValue(_WORD *this, IUnknown *aP1)
 {
   __int16 v2; // bx
@@ -6893,11 +6893,11 @@ _DWORD *__thiscall ProgressTimer::GetValue(_WORD *this, IUnknown *aP1)
   __int16 v10; // cx
   ObjectClass *v12; // [esp+Ch] [ebp-4h]
 
-  v2 = this->owningHouseIndex; /*0x4c93d2*/
+  v2 = *(this + 10); /*0x4c93d2*/
   if ( v2 <= 0 ) /*0x4c93db*/
     goto LABEL_14; /*0x4c93db*/
-  v3 = this->vtable3; /*0x4c93dd*/
-  v4 = this->vtable2; /*0x4c93e0*/
+  v3 = *((_DWORD *)this + 2); /*0x4c93dd*/
+  v4 = *((_DWORD *)this + 4); /*0x4c93e0*/
   if ( v3 != -1 ) /*0x4c93ec*/
   {
     if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v3 >= v4 ) /*0x4c93f4*/
@@ -6906,8 +6906,8 @@ _DWORD *__thiscall ProgressTimer::GetValue(_WORD *this, IUnknown *aP1)
   }
   if ( v4 ) /*0x4c93fa*/
   {
-    v5 = (ObjectClass *)(__int16)(*this - this->vtable3); /*0x4c9406*/
-    v6 = (__int16)(*this - this->vtable3); /*0x4c940b*/
+    v5 = (ObjectClass *)(__int16)(*this - *(this + 2)); /*0x4c9406*/
+    v6 = (__int16)(*this - *(this + 2)); /*0x4c940b*/
     v7 = (int)((HIDWORD(v6) ^ v6) - HIDWORD(v6)) / v2; /*0x4c9411*/
     v12 = *(ObjectClass **)this; /*0x4c9415*/
     if ( (__int16)v7 <= 0 ) /*0x4c941c*/
@@ -6916,8 +6916,8 @@ LABEL_12:
       aP1->field_0 = (int)v12; /*0x4c9445*/
       return &aP1->field_0; /*0x4c9453*/
     }
-    v8 = this->vtable2; /*0x4c941e*/
-    v9 = this->vtable3; /*0x4c9421*/
+    v8 = *((_DWORD *)this + 4); /*0x4c941e*/
+    v9 = *((_DWORD *)this + 2); /*0x4c9421*/
     if ( v9 != -1 ) /*0x4c9427*/
     {
       if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v9 >= v8 ) /*0x4c942f*/
@@ -6938,7 +6938,7 @@ LABEL_14:
 }
 
 
-// ==== 0x004C9470  TechnoClass::GetWeaponType  this=ObjectClass  sig=csp ====
+// ==== 0x004C9470  TechnoClass::GetWeaponType  this=TechnoClass  sig=csp ====
 _DWORD *__thiscall TechnoClass::GetWeaponType(_DWORD *this, ObjectClass *aP1)
 {
   *(_DWORD *)aP1->__pad_0 = *this; /*0x4c9476*/
@@ -6946,7 +6946,7 @@ _DWORD *__thiscall TechnoClass::GetWeaponType(_DWORD *this, ObjectClass *aP1)
 }
 
 
-// ==== 0x004C9480  TimerClass::Active  this=ObjectClass  sig=csp ====
+// ==== 0x004C9480  TimerClass::Active  this=FacingStruct  sig=csp ====
 BOOL __thiscall TimerClass_Active(int this)
 {
   int v1; // edx
@@ -6966,15 +6966,15 @@ BOOL __thiscall TimerClass_Active(int this)
 }
 
 
-// ==== 0x004C94B0  JumpjetLocomotionClass::StubReturnZero_5  this=ObjectClass  sig=csp ====
+// ==== 0x004C94B0  JumpjetLocomotionClass::StubReturnZero_5  this=JumpjetLocomotionClass  sig=csp ====
 bool __thiscall sub_4C94B0(__int16 *this)
 {
   int v1; // esi
   int v2; // eax
 
-  if ( this->owningHouseIndex <= 0 ) /*0x4c94b6*/
+  if ( this->Crash <= 0 ) /*0x4c94b6*/
     return 0; /*0x4c94b6*/
-  v1 = this->vtable3; /*0x4c94b8*/
+  v1 = this->Owner; /*0x4c94b8*/
   v2 = this->vtable2; /*0x4c94bb*/
   if ( v1 != -1 ) /*0x4c94c1*/
   {
@@ -6983,20 +6983,20 @@ bool __thiscall sub_4C94B0(__int16 *this)
     v2 -= (int)MEMORY[0xA8ED84] - v1; /*0x4c94cf*/
   }
   if ( v2 ) /*0x4c94d3*/
-    return (__int16)(*this - this->vtable3) > 0; /*0x4c94e7*/
+    return (__int16)(*this - this->Owner) > 0; /*0x4c94e7*/
   return 0; /*0x4c94d8*/
 }
 
 
-// ==== 0x004C94F0  JumpjetLocomotionClass::StubReturnZero_6  this=ObjectClass  sig=csp ====
+// ==== 0x004C94F0  JumpjetLocomotionClass::StubReturnZero_6  this=JumpjetLocomotionClass  sig=csp ====
 bool __thiscall sub_4C94F0(__int16 *this)
 {
   int v1; // esi
   int v2; // eax
 
-  if ( this->owningHouseIndex <= 0 ) /*0x4c94f6*/
+  if ( this->Crash <= 0 ) /*0x4c94f6*/
     return 0; /*0x4c94f6*/
-  v1 = this->vtable3; /*0x4c94f8*/
+  v1 = this->Owner; /*0x4c94f8*/
   v2 = this->vtable2; /*0x4c94fb*/
   if ( v1 != -1 ) /*0x4c9501*/
   {
@@ -7005,7 +7005,7 @@ bool __thiscall sub_4C94F0(__int16 *this)
     v2 -= (int)MEMORY[0xA8ED84] - v1; /*0x4c950f*/
   }
   if ( v2 ) /*0x4c9513*/
-    return (__int16)(*this - this->vtable3) < 0; /*0x4c9525*/
+    return (__int16)(*this - this->Owner) < 0; /*0x4c9525*/
   return 0; /*0x4c9518*/
 }
 
@@ -7135,7 +7135,7 @@ LABEL_15:
 }
 
 
-// ==== 0x004C9680  BuildingTypeClass::GetPowerOutput  this=ObjectClass  sig=csp ====
+// ==== 0x004C9680  BuildingTypeClass::GetPowerOutput  this=FacingStruct  sig=csp ====
 int __thiscall BuildingTypeClass::GetPowerOutput(_WORD *this, ObjectClass *aP1)
 {
   ObjectClass *result; // eax
@@ -7146,7 +7146,7 @@ int __thiscall BuildingTypeClass::GetPowerOutput(_WORD *this, ObjectClass *aP1)
     result = (ObjectClass *)127; /*0x4c9689*/
   LOBYTE(v3) = 0; /*0x4c968e*/
   HIBYTE(v3) = (_BYTE)result; /*0x4c9690*/
-  this->owningHouseIndex = v3; /*0x4c9692*/
+  *(this + 10) = v3; /*0x4c9692*/
   return (int)result->__pad_0; /*0x4c9696*/
 }
 
@@ -7441,13 +7441,13 @@ char __thiscall sub_4C9C50(_BYTE *this)
 }
 
 
-// ==== 0x004C9C60  FactoryClass::HasProgressChanged  this=AbstractClass  sig=csp ====
+// ==== 0x004C9C60  FactoryClass::HasProgressChanged  this=IUnknown  sig=csp ====
 char __thiscall FactoryClass::HasProgressChanged(_BYTE *this)
 {
   char result; // al
 
-  result = this->__pad_174; /*0x4c9c60*/
-  this->__pad_174 = 0; /*0x4c9c63*/
+  result = *(this + 93); /*0x4c9c60*/
+  *(this + 93) = 0; /*0x4c9c63*/
   return result; /*0x4c9c67*/
 }
 
@@ -7723,26 +7723,26 @@ int __thiscall ObjectClass_GetMember09(_DWORD *this)
 }
 
 
-// ==== 0x004CA130  ObjectClass::IsCliffWall  this=AbstractClass  sig=csp ====
+// ==== 0x004CA130  ObjectClass::IsCliffWall  this=IUnknown  sig=csp ====
 bool __thiscall ObjectClass_IsCliffWall(_DWORD *this)
 {
-  if ( this->q058 && this->q024 == 54 ) /*0x4ca13f*/
+  if ( this->q160 && this->q024 == 54 ) /*0x4ca13f*/
     return 1; /*0x4ca141*/
-  return this->q068 != -1 && this->q024 == 54; /*0x4ca14d*/
+  return this->q01A != -1 && this->q024 == 54; /*0x4ca14d*/
 }
 
 
-// ==== 0x004CA160  AbstractClass::GetType  this=AbstractClass  sig=csp ====
+// ==== 0x004CA160  AbstractClass::GetType  this=IUnknown  sig=csp ====
 int __thiscall AbstractClass_GetType(_DWORD *this)
 {
-  return this->q058; /*0x4ca163*/
+  return this->q160; /*0x4ca163*/
 }
 
 
-// ==== 0x004CA170  SidebarClass::draw2  this=AbstractClass  sig=csp ====
+// ==== 0x004CA170  SidebarClass::draw2  this=IUnknown  sig=csp ====
 int __thiscall sub_4CA170(_DWORD *this)
 {
-  return this->q068; /*0x4ca173*/
+  return this->q01A; /*0x4ca173*/
 }
 
 
@@ -8475,7 +8475,7 @@ _DWORD *__thiscall TechnoTypeVector::Constructor(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x004CAC40  Math::Sqrt  this=IUnknown  sig=csp ====
+// ==== 0x004CAC40  Math::Sqrt  this=Math  sig=csp ====
 // local variable allocation has failed, the output may be wrong!
 double __cdecl Math::Sqrt(AbstractClass *aP0)
 {
@@ -8517,7 +8517,7 @@ double __cdecl Math::SinCos(IUnknown *aP0)
 }
 
 
-// ==== 0x004CAD00  Math::ArcTan2  this=ObjectClass  sig=csp ====
+// ==== 0x004CAD00  Math::ArcTan2  this=RecoilData  sig=csp ====
 // local variable allocation has failed, the output may be wrong!
 double __cdecl Math::ArcTan2(IUnknown *aP0)
 {
@@ -8584,7 +8584,7 @@ double __cdecl Math_ArcTan(double a1)
 }
 
 
-// ==== 0x004CAE30  Math::CalcAngle  this=IUnknown  sig=csp ====
+// ==== 0x004CAE30  Math::CalcAngle  this=Math  sig=csp ====
 // local variable allocation has failed, the output may be wrong!
 double __cdecl Math::CalcAngle(AbstractClass *aP0, double a2)
 {
@@ -8923,7 +8923,7 @@ ObjectClass *__thiscall sub_4CB6A0(char *Destination, RandomStruct *aP1, int a3)
 }
 
 
-// ==== 0x004CB700  NetMessage::Pack4  this=IUnknown  sig=csp ====
+// ==== 0x004CB700  NetMessage::Pack4  this=ObjectClass  sig=csp ====
 char *__thiscall NetMessage::Pack4(char *Destination, RandomStruct *aP1, int a3)
 {
   int *v4; // eax
@@ -8940,7 +8940,7 @@ char *__thiscall NetMessage::Pack4(char *Destination, RandomStruct *aP1, int a3)
 }
 
 
-// ==== 0x004CB760  ObjectClass::TerrainInitMap  this=IUnknown  sig=csp ====
+// ==== 0x004CB760  ObjectClass::TerrainInitMap  this=ObjectClass  sig=csp ====
 char *__thiscall TerrainInitMap(char *Destination, RandomStruct *aP1, IUnknown *aP2)
 {
   IUnknown **v4; // eax
@@ -8984,7 +8984,7 @@ char *__thiscall BuildResultPacket(char *Destination, char *Source, IUnknown *aP
 }
 
 
-// ==== 0x004CB830  NetMessage::Pack  this=ObjectClass  sig=csp ====
+// ==== 0x004CB830  NetMessage::Pack  this=AbstractClass  sig=csp ====
 char *__thiscall NetMessage::Pack(char *Destination, char *Source, IUnknown *aP2, IUnknown *aP3)
 {
   char *v5; // eax
@@ -9005,7 +9005,7 @@ char *__thiscall NetMessage::Pack(char *Destination, char *Source, IUnknown *aP2
 }
 
 
-// ==== 0x004CB890  ResultNode::Init  this=CampaignClass  sig=csp ====
+// ==== 0x004CB890  ResultNode::Init  this=AbstractClass  sig=csp ====
 void __thiscall ResultNode::Init(CCINIClass *this)
 {
   __3_YAXPAX_Z((void *)this->headNode[1]); /*0x4cb897*/
@@ -9218,7 +9218,7 @@ void *__thiscall FootClass::FindPathWithRetry(int *this, __int16 *a1, int a3, in
 }
 
 
-// ==== 0x004CBC40  ObjectClass::WalkPathfindingLine  this=ObjectClass  sig=csp ====
+// ==== 0x004CBC40  ObjectClass::WalkPathfindingLine  this=IUnknown  sig=csp ====
 int *__thiscall WalkPathfindingLine(int *this, int *a2, int a3, int *a4, int a5, int a6)
 {
   int v6; // eax
@@ -9585,7 +9585,7 @@ _DWORD *__fastcall TrajectoryHelper::FindFirstObstacle(IUnknown *aP0, int *a1, i
 }
 
 
-// ==== 0x004CC310  TrajectoryHelper::FindFirstImpenetrableObstacle  this=IUnknown  sig=csp ====
+// ==== 0x004CC310  TrajectoryHelper::FindFirstImpenetrableObstacle  this=TrajectoryHelper  sig=csp ====
 _DWORD *__fastcall TrajectoryHelper::FindFirstImpenetrableObstacle(IUnknown *aP0, int *a1, int arg0, void *a3)
 {
   IUnknown *FirstObstacle; // eax

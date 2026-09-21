@@ -317,7 +317,7 @@ void __thiscall sub_430610(_BYTE *this)
 }
 
 
-// ==== 0x00430650  BuildingPlacement::RenderBuildingPlacementShadow  this=CampaignClass  sig=csp ====
+// ==== 0x00430650  BuildingPlacement::RenderBuildingPlacementShadow  this=AbstractClass  sig=csp ====
 int __thiscall BuildingPlacement::RenderBuildingPlacementShadow(
         MouseClass *this,
         int a2,
@@ -3423,13 +3423,13 @@ LABEL_24:
 }
 
 
-// ==== 0x00433C70  Property::Set  this=AbstractClass  sig=csp ====
+// ==== 0x00433C70  Property::Set  this=BitFont  sig=csp ====
 __int16 __thiscall Property::Set(_WORD *this, AbstractClass *aP1)
 {
   __int16 result; // ax
 
-  result = this->q012; /*0x433c75*/
-  this->q012 = (_WORD)aP1; /*0x433c79*/
+  result = *(this + 18); /*0x433c75*/
+  *(this + 18) = (_WORD)aP1; /*0x433c79*/
   return result; /*0x433c7d*/
 }
 
@@ -3442,18 +3442,18 @@ __int16 __thiscall sub_433C80(_WORD *this, __int16 a2)
 }
 
 
-// ==== 0x00433C90  Char::Swap  this=AbstractClass  sig=csp ====
+// ==== 0x00433C90  Char::Swap  this=BitFont  sig=csp ====
 char __thiscall Char::Swap(_BYTE *this, ObjectClass *aP1)
 {
   char result; // al
 
-  result = this->q041; /*0x433c94*/
-  this->q041 = (_BYTE)aP1; /*0x433c97*/
+  result = *(this + 65); /*0x433c94*/
+  *(this + 65) = (_BYTE)aP1; /*0x433c97*/
   return result; /*0x433c9a*/
 }
 
 
-// ==== 0x00433CA0  TextGroup::SetRect  this=AbstractClass  sig=csp ====
+// ==== 0x00433CA0  TextGroup::SetRect  this=BitFont  sig=csp ====
 _DWORD *__thiscall TextGroup::SetRect(_DWORD *this, AbstractClass *aP1)
 {
   AbstractClass *result; // eax
@@ -3461,18 +3461,18 @@ _DWORD *__thiscall TextGroup::SetRect(_DWORD *this, AbstractClass *aP1)
   result = aP1; /*0x433ca0*/
   if ( aP1 ) /*0x433ca8*/
   {
-    this->q030 = *(_DWORD *)aP1->__pad_0; /*0x433cac*/
-    this->q034 = *(_DWORD *)&aP1->__pad_0[4]; /*0x433cb2*/
-    this->q038 = *(_DWORD *)&aP1->__pad_0[8]; /*0x433cb8*/
+    *(this + 12) = *(_DWORD *)aP1->__pad_0; /*0x433cac*/
+    *(this + 13) = *(_DWORD *)&aP1->__pad_0[4]; /*0x433cb2*/
+    *(this + 14) = *(_DWORD *)&aP1->__pad_0[8]; /*0x433cb8*/
     result = *(AbstractClass **)&aP1->__pad_0[12]; /*0x433cbb*/
-    this->q03C = result; /*0x433cbe*/
+    *(this + 15) = result; /*0x433cbe*/
   }
   else
   {
-    this->q03C = 0; /*0x433cc4*/
-    this->q038 = 0; /*0x433cc7*/
-    this->q034 = 0; /*0x433cca*/
-    this->q030 = 0; /*0x433ccd*/
+    *(this + 15) = 0; /*0x433cc4*/
+    *(this + 14) = 0; /*0x433cc7*/
+    *(this + 13) = 0; /*0x433cca*/
+    *(this + 12) = 0; /*0x433ccd*/
   }
   return result->__pad_0; /*0x433cc1*/
 }
@@ -3489,7 +3489,7 @@ char __thiscall sub_433CE0(_BYTE *this, char a2)
 }
 
 
-// ==== 0x00433CF0  Text::Layout  this=AbstractClass  sig=csp ====
+// ==== 0x00433CF0  Text::Layout  this=Text  sig=csp ====
 char __thiscall Text::Layout(
         _DWORD *this,
         unsigned __int16 *a1,
@@ -3516,7 +3516,7 @@ char __thiscall Text::Layout(
 
   v5 = 0; /*0x433cf6*/
   v18 = 0; /*0x433cff*/
-  v17 = (_DWORD *)this->vtable2; /*0x433d03*/
+  v17 = (_DWORD *)this->q004; /*0x433d03*/
   if ( v17 && a1 ) /*0x433d13*/
   {
     v6 = *a1; /*0x433d1f*/
@@ -3524,7 +3524,7 @@ char __thiscall Text::Layout(
     v8 = 0; /*0x433d24*/
     v9 = a1 + 1; /*0x433d26*/
     a1a = 0; /*0x433d2c*/
-    v19 = (AbstractClass *)this->referenceCount; /*0x433d30*/
+    v19 = (AbstractClass *)this->q01C; /*0x433d30*/
     v15 = v19; /*0x433d34*/
     v16 = 0; /*0x433d38*/
     for ( i = v6; v6; i = v6 ) /*0x433d40*/
@@ -3532,7 +3532,7 @@ char __thiscall Text::Layout(
       switch ( v6 ) /*0x433d5c*/
       {
         case 9u: /*0x433d5c*/
-          v7 = this->q028 + v7 - (this->q028 + v7) % this->q028; /*0x433d92*/
+          v7 = *(this + 10) + v7 - (*(this + 10) + v7) % *(this + 10); /*0x433d92*/
           break; /*0x433d94*/
         case 0xAu: /*0x433d5c*/
         case 0xDu: /*0x433d5c*/
@@ -3556,10 +3556,10 @@ LABEL_9:
             if ( (_WORD)v11 ) /*0x433dba*/
               v10 = (unsigned __int8 *)(v17[7] + (v11 - 1) * v17[5]); /*0x433dc7*/
           }
-          if ( v10 || (v10 = (unsigned __int8 *)this->vtable3) != 0 ) /*0x433dd7*/
+          if ( v10 || (v10 = (unsigned __int8 *)this->__pad_008) != 0 ) /*0x433dd7*/
           {
             ++v8; /*0x433de1*/
-            v12 = this->q02C; /*0x433de2*/
+            v12 = *(this + 11); /*0x433de2*/
             v13 = *v10; /*0x433de5*/
             v7 += v12 + v13; /*0x433dea*/
             if ( aP4 && v7 > (int)aP4 ) /*0x433df6*/
@@ -3615,7 +3615,7 @@ LABEL_9:
 }
 
 
-// ==== 0x00433ED0  Text::MeasureWidth  this=Text  sig=csp ====
+// ==== 0x00433ED0  Text::MeasureWidth  this=CampaignScore  sig=csp ====
 int __stdcall Text::MeasureWidth(CampaignScore *aP0, int aP2)
 {
   _DWORD *v2; // ecx
@@ -3718,15 +3718,15 @@ int __thiscall sub_434100(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00434110  Field::Int_Set  this=AbstractClass  sig=csp ====
+// ==== 0x00434110  Field::Int_Set  this=BitFont  sig=csp ====
 int __thiscall Field::Int_Set(_DWORD *this, AbstractClass *aP1)
 {
-  this->needsSave = aP1; /*0x434114*/
+  this->q008 = aP1; /*0x434114*/
   return (int)aP1->__pad_0; /*0x434117*/
 }
 
 
-// ==== 0x00434120  FontClass::RenderGlyph  this=AbstractClass  sig=csp ====
+// ==== 0x00434120  FontClass::RenderGlyph  this=BitFont  sig=csp ====
 int __thiscall FontClass::RenderGlyph(
         int this,
         AbstractClass *aP1,
@@ -4049,7 +4049,7 @@ LABEL_69:
 }
 
 
-// ==== 0x00434500  FontClass::RenderText  this=AbstractClass  sig=csp ====
+// ==== 0x00434500  FontClass::RenderText  this=BitFont  sig=csp ====
 int __thiscall FontClass::RenderText(int this, AbstractClass *aP1, int xLeft, int yTop, AbstractClass *aP4, int a6)
 {
   AbstractClass *v6; // esi
@@ -4129,14 +4129,14 @@ LABEL_8:
 }
 
 
-// ==== 0x004346C0  Font::GetGlyphDataForChar  this=AbstractClass  sig=csp ====
+// ==== 0x004346C0  Font::GetGlyphDataForChar  this=BitFont  sig=csp ====
 int __thiscall Font::GetGlyphDataForChar(_DWORD *this, AbstractClass *aP1)
 {
   AbstractClass *v2; // ecx
   int result; // eax
   int v4; // edx
 
-  v2 = (AbstractClass *)this->vtable2; /*0x4346c0*/
+  v2 = (AbstractClass *)this->q004; /*0x4346c0*/
   result = 0; /*0x4346c3*/
   if ( v2 ) /*0x4346c7*/
   {
@@ -4233,7 +4233,7 @@ char __stdcall sub_434840(_DWORD *a1, _DWORD *a2, _DWORD *a3)
 }
 
 
-// ==== 0x004348F0  FontRenderer::InitContext  this=AbstractClass  sig=csp ====
+// ==== 0x004348F0  FontRenderer::InitContext  this=BitFont  sig=csp ====
 int __thiscall FontRenderer_InitContext(_DWORD *this, int *a2)
 {
   int v3; // edx
@@ -4248,47 +4248,47 @@ int __thiscall FontRenderer_InitContext(_DWORD *this, int *a2)
   int v12; // [esp+10h] [ebp-8h]
   int v13; // [esp+14h] [ebp-4h]
 
-  this->vtable4 = (*(int (__thiscall **)(int *, _DWORD, _DWORD))(*a2 + 92))(a2, 0, 0); /*0x434908*/
-  this->uniqueId = (unsigned int)(*(int (__thiscall **)(int *))(*a2 + 116))(a2) >> 1; /*0x434914*/
+  *(this + 3) = (*(int (__thiscall **)(int *, _DWORD, _DWORD))(*a2 + 92))(a2, 0, 0); /*0x434908*/
+  this->q004 = (unsigned int)(*(int (__thiscall **)(int *))(*a2 + 116))(a2) >> 1; /*0x434914*/
   v3 = *a2; /*0x434917*/
   v10 = 0; /*0x43491b*/
   v11 = 0; /*0x434923*/
   v12 = (*(int (__thiscall **)(int *))(v3 + 124))(a2) - 1; /*0x434931*/
   v4 = (*(int (__thiscall **)(int *))(*a2 + 128))(a2); /*0x434937*/
-  v5 = this->q034 | this->q03C | this->q038; /*0x43494b*/
+  v5 = *(this + 13) | *(this + 15) | *(this + 14); /*0x43494b*/
   result = v4 - 1; /*0x43494d*/
-  v7 = this->q030; /*0x43494e*/
+  v7 = *(this + 12); /*0x43494e*/
   v13 = result; /*0x434950*/
   if ( v7 | v5 ) /*0x434954*/
     return sub_434840(this + 12, this + 12, &v10); /*0x434980*/
   v8 = v10; /*0x434958*/
-  this->q03C = result; /*0x43495c*/
-  this->q030 = v8; /*0x43495f*/
+  *(this + 15) = result; /*0x43495c*/
+  *(this + 12) = v8; /*0x43495f*/
   v9 = v12; /*0x434965*/
-  this->q034 = v11; /*0x434969*/
-  this->q038 = v9; /*0x43496c*/
+  *(this + 13) = v11; /*0x434969*/
+  *(this + 14) = v9; /*0x43496c*/
   return result; /*0x43496f*/
 }
 
 
-// ==== 0x00434990  BufferIO::Cleanup  this=AbstractClass  sig=csp ====
+// ==== 0x00434990  BufferIO::Cleanup  this=BitFont  sig=csp ====
 int __thiscall BufferIO::Cleanup(_DWORD *this, AbstractClass *aP1)
 {
   (*(void (__thiscall **)(AbstractClass *))(*(_DWORD *)aP1->__pad_0 + 96))(aP1); /*0x434999*/
-  this->vtable4 = 0; /*0x43499e*/
-  this->uniqueId = 0; /*0x4349a1*/
+  *(this + 3) = 0; /*0x43499e*/
+  this->q004 = 0; /*0x4349a1*/
   return 0; /*0x4349a4*/
 }
 
 
-// ==== 0x004349B0  FontClass::GetPixelData  this=AbstractClass  sig=csp ====
+// ==== 0x004349B0  FontClass::GetPixelData  this=CampaignScore  sig=csp ====
 int __thiscall FontClass_GetPixelData(_DWORD *this, unsigned __int16 a2)
 {
   _DWORD *v2; // ecx
   int v3; // eax
   unsigned __int8 *v4; // eax
 
-  v2 = (_DWORD *)this->vtable2; /*0x4349b0*/
+  v2 = (_DWORD *)this->CampaignScore_field_0x04; /*0x4349b0*/
   if ( v2 /*0x4349dc*/
     && (v3 = *(unsigned __int16 *)(v2[6] + 2 * a2), (_WORD)v3)
     && (v4 = (unsigned __int8 *)(v2[7] + (v3 - 1) * v2[5])) != 0 )
@@ -4400,7 +4400,7 @@ int __stdcall sub_434B40(AbstractClass *aP0, int *a1, unsigned __int16 aP1, int 
 }
 
 
-// ==== 0x00434B90  FontRenderer::DrawText  this=FontRenderer  sig=csp ====
+// ==== 0x00434B90  FontRenderer::DrawText  this=AbstractClass  sig=csp ====
 int __stdcall FontRenderer::DrawText(
         AbstractClass *aP0,
         int *a1,
@@ -4457,7 +4457,7 @@ int __stdcall sub_434BF0(int a1, int *a2, unsigned __int16 *a3, int xLeft, int y
 }
 
 
-// ==== 0x00434CD0  Font::Print  this=Font  sig=csp ====
+// ==== 0x00434CD0  Font::Print  this=AbstractClass  sig=csp ====
 char __stdcall Font::Print(
         AbstractClass *aP0,
         AbstractClass *aP1,
@@ -6090,12 +6090,12 @@ char __thiscall BuildingLightClass::SD_vt54(#374 *this, int a2, int a3)
 }
 
 
-// ==== 0x00437090  Coord3D::Set  this=IUnknown  sig=csp ====
+// ==== 0x00437090  Coord3D::Set  this=BuildingClass  sig=csp ====
 _DWORD *__thiscall Coord3D::Set(_DWORD *this, IUnknown *aP1, MouseClass *aP2, int a4)
 {
   *this = aP1; /*0x43709a*/
-  this->q004 = aP2; /*0x4370a0*/
-  this->q008 = a4; /*0x4370a3*/
+  this->vtable2 = aP2; /*0x4370a0*/
+  this->vtable3 = a4; /*0x4370a3*/
   return this; /*0x4370a6*/
 }
 
@@ -7003,7 +7003,7 @@ LABEL_5:
 }
 
 
-// ==== 0x00437FC0  COMObject::Release  this=CampaignClass  sig=csp ====
+// ==== 0x00437FC0  COMObject::Release  this=AbstractClass  sig=csp ====
 int __thiscall COMObject_Release(int *this)
 {
   int result; // eax
@@ -7582,12 +7582,12 @@ int __thiscall BombClass::IsDeathBomb(_DWORD *this)
 }
 
 
-// ==== 0x00438A00  BombClass::GetCurrentFrame  this=BombClass  sig=csp ====
+// ==== 0x00438A00  BombClass::GetCurrentFrame  this=IUnknown  sig=csp ====
 Iostream_init *__thiscall BombClass::GetCurrentFrame(_DWORD *this)
 {
   int v2; // ecx
 
-  if ( this->audioController == 1 ) /*0x438a04*/
+  if ( this->q030 == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
   v2 = 2 * (((int)MEMORY[0xA8ED84] - this->q034) / (MEMORY[0x8871E0]->?[1] / 6)); /*0x438a4c*/
   if ( (int)MEMORY[0xA8ED84] % (2 * MEMORY[0x8871E0]->?[3]) >= MEMORY[0x8871E0]->?[3] ) /*0x438a53*/
@@ -8827,12 +8827,12 @@ IUnknown *__thiscall Triple::Set(_DWORD *this, IUnknown *aP1, IUnknown *aP2, IUn
 }
 
 
-// ==== 0x0043A0D0  Coord::Scale  this=BuildingTypeClass  sig=csp ====
+// ==== 0x0043A0D0  Coord::Scale  this=Coord  sig=csp ====
 float *__thiscall Coord::Scale(float *this, IUnknown *aP1)
 {
   *this = *(float *)&aP1 * *this; /*0x43a0d8*/
-  this->vtable2 = *(float *)&aP1 * this->vtable2; /*0x43a0e1*/
-  this->vtable3 = *(float *)&aP1 * this->vtable3; /*0x43a0eb*/
+  this->q004 = *(float *)&aP1 * this->q004; /*0x43a0e1*/
+  this->Coord_field_0x2 = *(float *)&aP1 * this->Coord_field_0x2; /*0x43a0eb*/
   return this; /*0x43a0ee*/
 }
 
@@ -8847,10 +8847,10 @@ float *__thiscall Vector3::AddAssign(float *this, MouseClass *aP1)
 }
 
 
-// ==== 0x0043A130  JumpjetLocomotionClass::ComputeVectorLengthMetric_0  this=JumpjetLocomotionClass  sig=csp ====
+// ==== 0x0043A130  JumpjetLocomotionClass::ComputeVectorLengthMetric_0  this=Tactical  sig=csp ====
 void __thiscall sub_43A130(float *this)
 {
-  Math::Sqrt(*this * *this + this->vtable2 * this->vtable2 + this->Owner * this->Owner); /*0x43a154*/
+  Math::Sqrt(*this * *this + this->vtable2 * this->vtable2 + this->vtable3 * this->vtable3); /*0x43a154*/
 }
 
 

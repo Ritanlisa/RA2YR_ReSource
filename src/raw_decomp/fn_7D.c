@@ -5709,7 +5709,7 @@ int __cdecl _access(const char *FileName, int AccessMode)
 }
 
 
-// ==== 0x007D5408  __strdup  this=-  sig=csp ====
+// ==== 0x007D5408  __strdup  this=CellStruct  sig=csp ====
 char *__cdecl _strdup(INIClass *aP0)
 {
   size_t v1; // eax
@@ -6074,7 +6074,7 @@ _BYTE *__cdecl store_dt(_BYTE *a1, int a2)
 }
 
 
-// ==== 0x007D58F0  __XcptFilter  this=ObjectClass  sig=csp ====
+// ==== 0x007D58F0  __XcptFilter  this=AbstractClass  sig=csp ====
 LONG __cdecl _XcptFilter(ObjectClass *aP0, struct _EXCEPTION_POINTERS *ExceptionInfo)
 {
   ObjectClass *v2; // esi

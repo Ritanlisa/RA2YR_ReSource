@@ -5491,7 +5491,7 @@ _DWORD *__stdcall globalHelper_0A7070(MapSeedClass *aP0, __int16 *a1, MapSeedCla
 }
 
 
-// ==== 0x005A7250  IsAreaClearMap  this=CellStruct  sig=csp ====
+// ==== 0x005A7250  IsAreaClearMap  this=-  sig=csp ====
 char __fastcall IsAreaClearMap(MapClass *aP0, char a2, char a3)
 {
   int v4; // eax
@@ -9119,7 +9119,7 @@ _DWORD *__thiscall RandomMap::Constructor_VectorClass_Cell_(_DWORD *Block, char 
 }
 
 
-// ==== 0x005AC340  Scalar::Dtor  this=Scalar  sig=csp ====
+// ==== 0x005AC340  Scalar::Dtor  this=AbstractClass  sig=csp ====
 void **__thiscall Scalar::Dtor(void **Block, char a2)
 {
   __3_YAXPAX_Z(*(Block + 2)); /*0x5ac347*/
@@ -9184,7 +9184,7 @@ CCINIClass *__thiscall TypeList::BuildingTypeConstructor(_DWORD *this)
 }
 
 
-// ==== 0x005AC430  DynamicVector::Copy  this=VectorClass  sig=csp ====
+// ==== 0x005AC430  DynamicVector::Copy  this=WeaponStruct  sig=csp ====
 _DWORD *__thiscall DynamicVector::Copy(_DWORD *this, VectorClass *aP1)
 {
   int v3; // eax
@@ -9196,33 +9196,33 @@ _DWORD *__thiscall DynamicVector::Copy(_DWORD *this, VectorClass *aP1)
     goto LABEL_8; /*0x5ac43a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x5ac43e*/
   v3 = aP1->Capacity; /*0x5ac441*/
-  this->Capacity = v3; /*0x5ac446*/
+  *(this + 2) = v3; /*0x5ac446*/
   if ( !v3 ) /*0x5ac449*/
   {
-    this->Items = 0; /*0x5ac496*/
-    this->__pad_034 = 0; /*0x5ac49d*/
+    this->FLH = 0; /*0x5ac496*/
+    *((_BYTE *)this + 13) = 0; /*0x5ac49d*/
 LABEL_8:
-    this->q010 = aP1[1].vtable0; /*0x5ac4a1*/
-    this->q005 = aP1[1].Items; /*0x5ac4aa*/
+    this->BarrelLength = aP1[1].vtable0; /*0x5ac4a1*/
+    this->BarrelThickness = aP1[1].Items; /*0x5ac4aa*/
     return this; /*0x5ac4ad*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x5ac453*/
-  this->Items = v4; /*0x5ac45b*/
+  this->FLH = v4; /*0x5ac45b*/
   if ( !v4 ) /*0x5ac460*/
     goto LABEL_8; /*0x5ac460*/
-  v5 = this->Capacity; /*0x5ac462*/
+  v5 = *(this + 2); /*0x5ac462*/
   v6 = 0; /*0x5ac465*/
-  this->__pad_034 = 1; /*0x5ac469*/
+  *((_BYTE *)this + 13) = 1; /*0x5ac469*/
   if ( v5 <= 0 ) /*0x5ac46d*/
     goto LABEL_8; /*0x5ac46d*/
   do /*0x5ac481*/
   {
-    *(_DWORD *)(this->Items + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x5ac478*/
+    *(_DWORD *)(this->FLH + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x5ac478*/
     ++v6; /*0x5ac47e*/
   }
-  while ( v6 < this->Capacity ); /*0x5ac481*/
-  this->q010 = aP1[1].vtable0; /*0x5ac486*/
-  this->q005 = aP1[1].Items; /*0x5ac48c*/
+  while ( v6 < *(this + 2) ); /*0x5ac481*/
+  this->BarrelLength = aP1[1].vtable0; /*0x5ac486*/
+  this->BarrelThickness = aP1[1].Items; /*0x5ac48c*/
   return this; /*0x5ac491*/
 }
 
@@ -9597,7 +9597,7 @@ _DWORD *__thiscall DynamicVectorClass_BuildingType_Constructor(_DWORD *this, int
 }
 
 
-// ==== 0x005AC960  PriorityQueue::Pop  this=CampaignClass  sig=csp ====
+// ==== 0x005AC960  PriorityQueue::Pop  this=AbstractClass  sig=csp ====
 int __thiscall PriorityQueue_Pop(int *this)
 {
   int v2; // eax
@@ -10726,7 +10726,7 @@ _DWORD *__thiscall sub_5AD820(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x005AD870  Heap::SiftDown  this=CampaignClass  sig=csp ====
+// ==== 0x005AD870  Heap::SiftDown  this=AbstractClass  sig=csp ====
 void __thiscall Heap_SiftDown(int *this, int a2)
 {
   int v2; // esi
@@ -11457,7 +11457,7 @@ ObjectClass *__thiscall Matrix3D::Constructor(float *this, AbstractClass *a2, Ab
 }
 
 
-// ==== 0x005AE750  Math::BuildRotationMatrix  this=ObjectClass  sig=csp ====
+// ==== 0x005AE750  Math::BuildRotationMatrix  this=RecoilData  sig=csp ====
 float *__thiscall Math_BuildRotationMatrix(float *this, float *a2, float a3)
 {
   double v3; // kr00_8
@@ -11478,23 +11478,23 @@ float *__thiscall Math_BuildRotationMatrix(float *this, float *a2, float a3)
   v7 = *a2 * *a2; /*0x5ae787*/
   *this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
   v8 = 1.0 - v16; /*0x5ae7a1*/
-  this->vtable2 = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
+  *(this + 1) = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
   v9 = a2[2] * *a2 * v8; /*0x5ae7bb*/
   v10 = v5 * a2[1]; /*0x5ae7bf*/
-  this->vtable4 = 0.0; /*0x5ae7c2*/
-  this->vtable3 = v9 + v10; /*0x5ae7c7*/
-  this->vtable2 = *a2 * a2[1] * v8 + v5 * a2[2]; /*0x5ae7d8*/
+  *(this + 3) = 0.0; /*0x5ae7c2*/
+  *(this + 2) = v9 + v10; /*0x5ae7c7*/
+  *(this + 4) = *a2 * a2[1] * v8 + v5 * a2[2]; /*0x5ae7d8*/
   v11 = a2[1] * a2[1]; /*0x5ae7e0*/
-  this->abstractFlags = (1.0 - v11) * v16 + v11; /*0x5ae7f0*/
+  *(this + 5) = (1.0 - v11) * v16 + v11; /*0x5ae7f0*/
   v12 = a2[2] * a2[1] * v8; /*0x5ae7fb*/
   v13 = v5 * *a2; /*0x5ae7ff*/
-  this->referenceCount = 0.0; /*0x5ae801*/
-  this->nextArrayIndex = v12 - v13; /*0x5ae806*/
-  this->vtable3 = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
-  this->objectTypeFlags = a2[2] * a2[1] * v8 + v5 * *a2; /*0x5ae82b*/
+  *(this + 7) = 0.0; /*0x5ae801*/
+  *(this + 6) = v12 - v13; /*0x5ae806*/
+  *(this + 8) = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
+  *(this + 9) = a2[2] * a2[1] * v8 + v5 * *a2; /*0x5ae82b*/
   v14 = a2[2] * a2[2]; /*0x5ae835*/
-  this->fallRate = 0.0; /*0x5ae83f*/
-  this->owningHouseIndex = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
+  *(this + 11) = 0.0; /*0x5ae83f*/
+  *(this + 10) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
   return this; /*0x5ae851*/
 }
 
@@ -11809,7 +11809,7 @@ void __thiscall sub_5AF000(float *this, ObjectClass *aP1, ObjectClass *aP2)
 }
 
 
-// ==== 0x005AF080  Matrix3D::RotateZ  this=ObjectClass  sig=csp ====
+// ==== 0x005AF080  Matrix3D::RotateZ  this=RecoilData  sig=csp ====
 void __thiscall Matrix3D::RotateZ(float *this, AbstractClass *aP1)
 {
   double v2; // kr00_8
@@ -11826,17 +11826,17 @@ void __thiscall Matrix3D::RotateZ(float *this, AbstractClass *aP1)
   aP1a = Math::SinCos((IUnknown *)COERCE_UNSIGNED_INT64(*(float *)&aP1)); /*0x5af09f*/
   v4 = Math::ArcTan2((IUnknown *)LODWORD(v2)); /*0x5af0a5*/
   v5 = *this; /*0x5af0aa*/
-  v6 = this->vtable3; /*0x5af0ac*/
+  v6 = *(this + 2); /*0x5af0ac*/
   *this = v5 * v4 - v6 * aP1a; /*0x5af0bf*/
-  this->vtable3 = v6 * v4 + v5 * aP1a; /*0x5af0cb*/
-  v7 = this->vtable2; /*0x5af0ce*/
-  v8 = this->nextArrayIndex; /*0x5af0d1*/
-  this->vtable2 = v7 * v4 - v8 * aP1a; /*0x5af0e0*/
-  this->nextArrayIndex = v8 * v4 + v7 * aP1a; /*0x5af0ed*/
-  v9 = this->vtable3; /*0x5af0f0*/
-  v10 = this->owningHouseIndex; /*0x5af0f3*/
-  this->vtable3 = v9 * v4 - v10 * aP1a; /*0x5af102*/
-  this->owningHouseIndex = v10 * v4 + v9 * aP1a; /*0x5af10f*/
+  *(this + 2) = v6 * v4 + v5 * aP1a; /*0x5af0cb*/
+  v7 = *(this + 4); /*0x5af0ce*/
+  v8 = *(this + 6); /*0x5af0d1*/
+  *(this + 4) = v7 * v4 - v8 * aP1a; /*0x5af0e0*/
+  *(this + 6) = v8 * v4 + v7 * aP1a; /*0x5af0ed*/
+  v9 = *(this + 8); /*0x5af0f0*/
+  v10 = *(this + 10); /*0x5af0f3*/
+  *(this + 8) = v9 * v4 - v10 * aP1a; /*0x5af102*/
+  *(this + 10) = v10 * v4 + v9 * aP1a; /*0x5af10f*/
 }
 
 

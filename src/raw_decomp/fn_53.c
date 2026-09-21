@@ -8558,7 +8558,7 @@ void __fastcall sub_539EA0(char a1)
 }
 
 
-// ==== 0x00539EB0  LightningStorm::Start  this=AbstractClass  sig=csp ====
+// ==== 0x00539EB0  LightningStorm::Start  this=RandomStruct  sig=csp ====
 int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
 {
   int result; // eax
@@ -9546,7 +9546,7 @@ int sub_53B410()
 }
 
 
-// ==== 0x0053B460  globalHelper_03B460  this=-  sig=ida-proto ====
+// ==== 0x0053B460  globalHelper_03B460  this=RandomStruct  sig=ida-proto ====
 void __fastcall sub_53B460(int a1)
 {
   char *v2; // esi
@@ -10684,16 +10684,16 @@ void __cdecl sub_53CAB0()
 }
 
 
-// ==== 0x0053CB10  ActionQueue::PushEntry  this=IUnknown  sig=csp ====
+// ==== 0x0053CB10  ActionQueue::PushEntry  this=Coord  sig=csp ====
 _DWORD *__thiscall ActionQueue::PushEntry(_DWORD *this, int a2, int a3, int a4)
 {
   int v5; // eax
 
   *this = a2; /*0x53cb1d*/
   this->q004 = a3; /*0x53cb23*/
-  this->q00C = 0; /*0x53cb28*/
-  this->q010 = 0; /*0x53cb2b*/
-  this->q008 = a4; /*0x53cb2e*/
+  this->__pad_00C = 0; /*0x53cb28*/
+  this->q004 = 0; /*0x53cb2b*/
+  this->Coord_field_0x8 = a4; /*0x53cb2e*/
   if ( unk_AA0128 < unk_AA0120 /*0x53cb63*/
     || (unk_AA0125 || !unk_AA0120)
     && unk_AA012C > 0
@@ -10709,7 +10709,7 @@ _DWORD *__thiscall ActionQueue::PushEntry(_DWORD *this, int a2, int a3, int a4)
 }
 
 
-// ==== 0x0053CBE0  ExplosionClass::ProcessFrame  this=CampaignClass  sig=csp ====
+// ==== 0x0053CBE0  ExplosionClass::ProcessFrame  this=AbstractClass  sig=csp ====
 void __thiscall ExplosionClass::ProcessFrame(int Block)
 {
   int v2; // eax
@@ -11145,7 +11145,7 @@ int sub_53D550()
 }
 
 
-// ==== 0x0053D580  ZBuffer::RenderSprite  this=CampaignClass  sig=csp ====
+// ==== 0x0053D580  ZBuffer::RenderSprite  this=AbstractClass  sig=csp ====
 char __thiscall ZBuffer::RenderSprite(IUnknown **this)
 {
   char result; // al
@@ -12419,13 +12419,13 @@ __int16 __thiscall NetworkID::Assign(_DWORD *this, IPXManagerClass *aP1, int a3,
 }
 
 
-// ==== 0x0053ED60  Network::GetAddress  this=Network  sig=csp ====
+// ==== 0x0053ED60  Network::GetAddress  this=IPXInterfaceClass  sig=csp ====
 __int16 __thiscall Network::GetAddress(_DWORD *this, _DWORD *a1, ObjectClass *aP2, _WORD *a3)
 {
   __int16 result; // ax
 
-  *(_DWORD *)aP2->__pad_0 = this->Network_field_0x4; /*0x53ed6a*/
-  *(_WORD *)&aP2->__pad_0[4] = this->Network_field_0x10; /*0x53ed71*/
+  *(_DWORD *)aP2->__pad_0 = this->Initialized; /*0x53ed6a*/
+  *(_WORD *)&aP2->__pad_0[4] = this->Count; /*0x53ed71*/
   result = dword_828140; /*0x53ed75*/
   if ( dword_828140 == 1 ) /*0x53ed7d*/
   {
@@ -12440,14 +12440,14 @@ __int16 __thiscall Network::GetAddress(_DWORD *this, _DWORD *a1, ObjectClass *aP
 }
 
 
-// ==== 0x0053EDA0  Network::CopyAddress  this=Network  sig=csp ====
+// ==== 0x0053EDA0  Network::CopyAddress  this=IPXManagerClass  sig=csp ====
 char *__thiscall Network_CopyAddress(_DWORD *this, _DWORD *a2, int a3)
 {
   char *result; // eax
 
   result = (char *)(this + 1); /*0x53eda4*/
-  *(_DWORD *)a3 = this->Network_field_0x4; /*0x53edaa*/
-  LOWORD(result) = this->Network_field_0x10; /*0x53edad*/
+  *(_DWORD *)a3 = this->Initialized; /*0x53edaa*/
+  LOWORD(result) = this->q010; /*0x53edad*/
   *(_WORD *)(a3 + 4) = (_WORD)result; /*0x53edb1*/
   *a2 = *this; /*0x53edbb*/
   return result; /*0x53edac*/
@@ -12480,31 +12480,31 @@ __int16 __thiscall Struct::Copy6Bytes(char *this, IPXManagerClass *aP1)
 }
 
 
-// ==== 0x0053EE00  Network::IsBroadcastAddr  this=Network  sig=csp ====
+// ==== 0x0053EE00  Network::IsBroadcastAddr  this=WinModemClass  sig=csp ====
 int __thiscall Network_IsBroadcastAddr(_BYTE *this)
 {
   if ( dword_828140 == 1 ) /*0x53ee0a*/
   {
     if ( *this == 0xFF /*0x53ee3b*/
-      && this->q001 == 0xFF
-      && this->q002 == 0xFF
-      && this->q003 == 0xFF
-      && this->Network_field_0x4 == 0xFF
-      && this->q005 == 0xFF
-      && this->q006 == 0xFF
-      && this->q007 == 0xFF
-      && this->Network_field_0x8 == 0xFF
-      && this->q009 == 0xFF )
+      && this->WinModemClass_field_0x04 == 0xFF
+      && this->WinModemClass_field_0x08 == 0xFF
+      && this->WinModemClass_field_0x0C == 0xFF
+      && this->WinModemClass_field_0x04 == 0xFF
+      && this->WinModemClass_field_0x14 == 0xFF
+      && this->WinModemClass_field_0x18 == 0xFF
+      && this->WinModemClass_field_0x1C == 0xFF
+      && this->WinModemClass_field_0x08 == 0xFF
+      && this->WinModemClass_field_0x24 == 0xFF )
     {
       return 1; /*0x53ee42*/
     }
   }
-  else if ( this->Network_field_0x4 == 0xFF /*0x53ee5f*/
-         && this->q005 == 0xFF
-         && this->q006 == 0xFF
-         && this->q007 == 0xFF
-         && this->Network_field_0x8 == 0xFF
-         && this->q009 == 0xFF )
+  else if ( this->WinModemClass_field_0x04 == 0xFF /*0x53ee5f*/
+         && this->WinModemClass_field_0x14 == 0xFF
+         && this->WinModemClass_field_0x18 == 0xFF
+         && this->WinModemClass_field_0x1C == 0xFF
+         && this->WinModemClass_field_0x08 == 0xFF
+         && this->WinModemClass_field_0x24 == 0xFF )
   {
     return 1; /*0x53ee66*/
   }
@@ -12645,7 +12645,7 @@ bool __thiscall sub_53F0B0(const char *this, const char *a2)
 }
 
 
-// ==== 0x0053F0E0  Network::FormatAddress  this=IPXManagerClass  sig=csp ====
+// ==== 0x0053F0E0  Network::FormatAddress  this=Network  sig=csp ====
 char *__thiscall Network::FormatAddress(unsigned __int16 *this, IUnknown *aP1)
 {
   IUnknown *v2; // edx

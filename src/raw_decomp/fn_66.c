@@ -5620,7 +5620,7 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
 }
 
 
-// ==== 0x00667A30  RulesClass::DTOR  this=CampaignClass  sig=csp ====
+// ==== 0x00667A30  RulesClass::DTOR  this=AbstractClass  sig=csp ====
 int __thiscall RulesClass::DTOR(RulesClass *this)
 {
   int *v2; // ecx
@@ -10500,7 +10500,7 @@ int __thiscall sub_66D1F0(RulesClass *this)
 }
 
 
-// ==== 0x0066D270  INIClass::ReadDifficultyModifiers  this=ObjectTypeClass  sig=csp ====
+// ==== 0x0066D270  INIClass::ReadDifficultyModifiers  this=ObjectClass  sig=csp ====
 int __thiscall INIClass::ReadDifficultyModifiers(RulesClass *this)
 {
   CCINIClass *v1; // edx
@@ -10613,7 +10613,7 @@ int __thiscall sub_66D3A0(#381 *this)
 }
 
 
-// ==== 0x0066D480  RulesClass::ReadColorAdd  this=AbstractClass  sig=csp ====
+// ==== 0x0066D480  RulesClass::ReadColorAdd  this=ObjectClass  sig=csp ====
 int __thiscall sub_66D480(#381 *this)
 {
   char *v1; // edi

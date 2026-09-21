@@ -2052,12 +2052,12 @@ BOOL __thiscall sub_522CB0(_DWORD *this)
 }
 
 
-// ==== 0x00522D00  SlaveManagerClass::Check  this=TechnoClass  sig=csp ====
+// ==== 0x00522D00  SlaveManagerClass::Check  this=IUnknown  sig=csp ====
 int __thiscall sub_522D00(_DWORD *this)
 {
   int result; // eax
 
-  if ( this->currentMission != 10 ) /*0x522d07*/
+  if ( this->q02B != 10 ) /*0x522d07*/
     return (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*this + 488))(this, 10, 0); /*0x522d0f*/
   return result; /*0x522d15*/
 }
@@ -2070,14 +2070,14 @@ int __thiscall sub_522D20(void *this)
 }
 
 
-// ==== 0x00522D30  SlaveManagerClass::CheckIsOne  this=TechnoClass  sig=csp ====
+// ==== 0x00522D30  SlaveManagerClass::CheckIsOne  this=IUnknown  sig=csp ====
 bool __thiscall sub_522D30(void *this)
 {
-  return ((double (__thiscall *)(void *))*(_DWORD *)(this->sprayOffsetIndex_e)(this) == 1.0; /*0x522d47*/
+  return ((double (__thiscall *)(void *))*(_DWORD *)(this->q2B4)(this) == 1.0; /*0x522d47*/
 }
 
 
-// ==== 0x00522D50  InfantryClass::SlaveGiveMoney_RecordBalanceBefore  this=TechnoClass  sig=csp ====
+// ==== 0x00522D50  InfantryClass::SlaveGiveMoney_RecordBalanceBefore  this=IUnknown  sig=csp ====
 int __thiscall InfantryClass::SlaveGiveMoney_RecordBalanceBefore(float *this, TechnoClass *aP1)
 {
   float *v2; // ebp
@@ -2352,7 +2352,7 @@ InfantryClass *__thiscall InfantryClass::ScalarDtor(void **Block, char a2)
 }
 
 
-// ==== 0x00523370  InfantryClass::checkBridgeClearance  this=IUnknown  sig=csp ====
+// ==== 0x00523370  InfantryClass::checkBridgeClearance  this=ILocomotion  sig=csp ====
 int *__thiscall sub_523370(int *this, int a2)
 {
   int v3; // edi
@@ -3754,7 +3754,7 @@ unsigned int __thiscall WarheadTypeClass::_vt05(int this, int a2)
 }
 
 
-// ==== 0x00524F20  InfantryTypeClass::CopyDataArray  this=DynamicVectorClass  sig=csp ====
+// ==== 0x00524F20  InfantryTypeClass::CopyDataArray  this=WeaponStruct  sig=csp ====
 _DWORD *__thiscall InfantryTypeClass::CopyDataArray(_DWORD *this, DynamicVector *aP1)
 {
   int v3; // eax
@@ -3766,33 +3766,33 @@ _DWORD *__thiscall InfantryTypeClass::CopyDataArray(_DWORD *this, DynamicVector 
     goto LABEL_8; /*0x524f2a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x524f2e*/
   v3 = aP1->field_8; /*0x524f31*/
-  this->Capacity = v3; /*0x524f36*/
+  *(this + 2) = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/
   {
-    this->Items = 0; /*0x524f86*/
-    this->IsAllocated = 0; /*0x524f8d*/
+    this->FLH = 0; /*0x524f86*/
+    *((_BYTE *)this + 13) = 0; /*0x524f8d*/
 LABEL_8:
-    this->Count = aP1->field_10; /*0x524f91*/
-    this->CapacityIncrement = *(_DWORD *)aP1->__pad_14; /*0x524f9a*/
+    this->BarrelLength = aP1->field_10; /*0x524f91*/
+    this->BarrelThickness = *(_DWORD *)aP1->__pad_14; /*0x524f9a*/
     return this; /*0x524f9d*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x524f43*/
-  this->Items = v4; /*0x524f4b*/
+  this->FLH = v4; /*0x524f4b*/
   if ( !v4 ) /*0x524f50*/
     goto LABEL_8; /*0x524f50*/
-  v5 = this->Capacity; /*0x524f52*/
+  v5 = *(this + 2); /*0x524f52*/
   v6 = 0; /*0x524f55*/
-  this->IsAllocated = 1; /*0x524f59*/
+  *((_BYTE *)this + 13) = 1; /*0x524f59*/
   if ( v5 <= 0 ) /*0x524f5d*/
     goto LABEL_8; /*0x524f5d*/
   do /*0x524f71*/
   {
-    *(_DWORD *)(this->Items + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x524f68*/
+    *(_DWORD *)(this->FLH + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x524f68*/
     ++v6; /*0x524f6e*/
   }
-  while ( v6 < this->Capacity ); /*0x524f71*/
-  this->Count = aP1->field_10; /*0x524f76*/
-  this->CapacityIncrement = *(_DWORD *)aP1->__pad_14; /*0x524f7c*/
+  while ( v6 < *(this + 2) ); /*0x524f71*/
+  this->BarrelLength = aP1->field_10; /*0x524f76*/
+  this->BarrelThickness = *(_DWORD *)aP1->__pad_14; /*0x524f7c*/
   return this; /*0x524f81*/
 }
 
@@ -3844,7 +3844,7 @@ VectorClass *__thiscall DynamicVectorClass_AnimType::Add(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x00525060  VectorClass::CopyDefault  this=DynamicVectorClass  sig=csp ====
+// ==== 0x00525060  VectorClass::CopyDefault  this=VectorClass  sig=csp ====
 _DWORD *__thiscall VectorClass::CopyDefault(_DWORD *this, VectorClass *aP1)
 {
   void *v3; // eax
@@ -3860,7 +3860,7 @@ _DWORD *__thiscall VectorClass::CopyDefault(_DWORD *this, VectorClass *aP1)
   if ( !v3 ) /*0x525079*/
   {
     this->Items = 0; /*0x5250ba*/
-    this->IsAllocated = 0; /*0x5250c1*/
+    this->__pad_034 = 0; /*0x5250c1*/
     return this; /*0x5250c5*/
   }
   v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x525083*/
@@ -3869,7 +3869,7 @@ _DWORD *__thiscall VectorClass::CopyDefault(_DWORD *this, VectorClass *aP1)
     return this; /*0x525090*/
   v5 = this->Capacity; /*0x525092*/
   v6 = 0; /*0x525095*/
-  this->IsAllocated = 1; /*0x525099*/
+  this->__pad_034 = 1; /*0x525099*/
   if ( v5 <= 0 ) /*0x52509d*/
     return this; /*0x52509d*/
   do /*0x5250b1*/
@@ -4400,7 +4400,7 @@ char *__thiscall INIClass_DestroyHashTable(void **this)
 }
 
 
-// ==== 0x005257C0  INIClass::ClearSection  this=AbstractClass  sig=csp ====
+// ==== 0x005257C0  INIClass::ClearSection  this=IUnknown  sig=csp ====
 char __thiscall INIClass::ClearSection(int this, INIClass *aP1, AbstractClass *aP2)
 {
   INIClass *v3; // edx
@@ -5209,7 +5209,7 @@ int __thiscall INIClass_SaveToPipe(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00526470  INIClass::WriteToString  this=AbstractClass  sig=csp ====
+// ==== 0x00526470  INIClass::WriteToString  this=IUnknown  sig=csp ====
 int __thiscall INIClass::WriteToString(_DWORD *this, CCINIClass *aP1)
 {
   CCINIClass *v2; // edx
@@ -5244,9 +5244,9 @@ int __thiscall INIClass::WriteToString(_DWORD *this, CCINIClass *aP1)
 
   v2 = (CCINIClass *)this; /*0x526478*/
   v3 = 0; /*0x52647a*/
-  this->vtable2 = 0; /*0x526485*/
-  this->vtable3 = 0; /*0x526488*/
-  v4 = this->abstractFlags; /*0x52648b*/
+  this->q004 = 0; /*0x526485*/
+  this->q008 = 0; /*0x526488*/
+  v4 = this->q005; /*0x52648b*/
   memset(v32, 0x20u, sizeof(v32)); /*0x52649e*/
   v32[511] = 0; /*0x5264a4*/
   v31 = v4; /*0x5264ac*/
@@ -5563,7 +5563,7 @@ LABEL_14:
 }
 
 
-// ==== 0x00526A30  INIClass::FindKey  this=ObjectClass  sig=csp ====
+// ==== 0x00526A30  INIClass::FindKey  this=AbstractClass  sig=csp ====
 int __thiscall INIClass::FindKey(char *this, AbstractClass *aP1)
 {
   unsigned __int8 *v3; // eax
@@ -5630,7 +5630,7 @@ int __thiscall INIClass_ResetSection(_DWORD *this)
 }
 
 
-// ==== 0x00526B10  HashTableSection::FindSection  this=IUnknown  sig=csp ====
+// ==== 0x00526B10  HashTableSection::FindSection  this=HashTableSection  sig=csp ====
 int __thiscall HashTableSection::FindSection(int this, CCINIClass *aP1, CCINIClass *aP2)
 {
   CCINIClass *v3; // ebx
@@ -5785,7 +5785,7 @@ int __thiscall INIClass::GetStringByIndex(char *this, CCINIClass *aP1, CCINIClas
 }
 
 
-// ==== 0x00526D90  INIClass::GetStringByIndexEx  this=ObjectClass  sig=csp ====
+// ==== 0x00526D90  INIClass::GetStringByIndexEx  this=AbstractClass  sig=csp ====
 char **__thiscall INIClass::GetStringByIndexEx(void *this, ObjectClass *aP1, ObjectClass *aP2, ObjectClass *aP3)
 {
   ObjectClass *v4; // ebp
@@ -6245,7 +6245,7 @@ LABEL_33:
 }
 
 
-// ==== 0x005275C0  INIClass::SetInt  this=AbstractClass  sig=csp ====
+// ==== 0x005275C0  INIClass::SetInt  this=IUnknown  sig=csp ====
 char __thiscall INIClass::SetInt(char *this, INIClass *aP1, CCINIClass *aP2, INIClass *aP3, int a5)
 {
   ObjectClass *v7; // [esp-8h] [ebp-20Ch]
@@ -6588,7 +6588,7 @@ char __thiscall INIClass::ReadDouble(char *this, INIClass *Block, INIClass *aP2,
 }
 
 
-// ==== 0x00527C10  INIClass::SetRect  this=AbstractClass  sig=csp ====
+// ==== 0x00527C10  INIClass::SetRect  this=INIClass  sig=csp ====
 char __thiscall INIClass::SetRect(char *this, INIClass *aP1, char *a2, CCINIClass *aP3)
 {
   INIClass Buffer; // [esp+4h] [ebp-40h] BYREF
@@ -7165,7 +7165,7 @@ LABEL_27:
 }
 
 
-// ==== 0x005285B0  INIClass::SetDouble  this=AbstractTypeClass  sig=csp ====
+// ==== 0x005285B0  INIClass::SetDouble  this=IUnknown  sig=csp ====
 char __thiscall INIClass::SetDouble(char *this, CCINIClass *aP1, char *a2, double a4)
 {
   INIClass Buffer[8]; // [esp+Ch] [ebp-200h] BYREF
@@ -7189,7 +7189,7 @@ char __thiscall INIClass::GetString2(char *this, char **a2, char **a3, double a4
 }
 
 
-// ==== 0x00528660  INIClass::SetString  this=INIClass  sig=csp ====
+// ==== 0x00528660  INIClass::SetString  this=IUnknown  sig=csp ====
 char __thiscall INIClass::SetString(char *this, INIClass *aP1, INIClass *aP2, INIClass *aP3)
 {
   int v5; // esi
@@ -7392,7 +7392,7 @@ LABEL_28:
 }
 
 
-// ==== 0x005289E0  INIClass::SetStringOrEmpty  this=ObjectClass  sig=csp ====
+// ==== 0x005289E0  INIClass::SetStringOrEmpty  this=INIClass  sig=csp ====
 char __thiscall INIClass::SetStringOrEmpty(char *this, char **a1, char **a2, ObjectClass *aP3)
 {
   INIClass *v5; // eax
@@ -7559,7 +7559,7 @@ LABEL_36:
 }
 
 
-// ==== 0x00528C00  INIClass::ReadString  this=IUnknown  sig=csp ====
+// ==== 0x00528C00  INIClass::ReadString  this=AbstractClass  sig=csp ====
 unsigned int __thiscall INIClass::ReadString(
         ObjectClass *this,
         ObjectClass *aP1,
@@ -7689,7 +7689,7 @@ LABEL_31:
 }
 
 
-// ==== 0x00528E00  INIClass::SetWideAsHex  this=AbstractTypeClass  sig=csp ====
+// ==== 0x00528E00  INIClass::SetWideAsHex  this=IUnknown  sig=csp ====
 char __thiscall INIClass::SetWideAsHex(char *this, INIClass *aP1, CCINIClass *aP2, CCINIClass *aP3)
 {
   char v4; // bl
@@ -7857,7 +7857,7 @@ LABEL_12:
 }
 
 
-// ==== 0x00529160  INIClass::GetStringEx  this=IUnknown  sig=csp ====
+// ==== 0x00529160  INIClass::GetStringEx  this=AbstractTypeClass  sig=csp ====
 size_t __thiscall INIClass::GetStringEx(int this, INIClass *aP1, CCINIClass *aP2, CCINIClass *aP3, size_t Count)
 {
   CCINIClass *v6; // edx
@@ -8099,7 +8099,7 @@ LABEL_29:
 }
 
 
-// ==== 0x00529560  INIClass::SetBool  this=AbstractClass  sig=csp ====
+// ==== 0x00529560  INIClass::SetBool  this=IUnknown  sig=csp ====
 char __thiscall INIClass::SetBool(char *this, INIClass *aP1, char *a2, INIClass *aP3)
 {
   if ( (_BYTE)aP3 ) /*0x529566*/
@@ -8254,7 +8254,7 @@ LABEL_30:
 }
 
 
-// ==== 0x005297E0  INIEntry::Write2Integers  this=ObjectTypeClass  sig=csp ====
+// ==== 0x005297E0  INIEntry::Write2Integers  this=IUnknown  sig=csp ====
 char __thiscall INIEntry::Write2Integers(char *this, unsigned __int8 *Block, char *a2, CCINIClass *aP3)
 {
   char Buffer[56]; // [esp+4h] [ebp-38h] BYREF
@@ -9154,7 +9154,7 @@ LABEL_30:
 }
 
 
-// ==== 0x0052A940  INIClass::SaveTimeField  this=INIClass  sig=csp ====
+// ==== 0x0052A940  INIClass::SaveTimeField  this=IUnknown  sig=csp ====
 char __thiscall INIClass::SaveTimeField(char *this, unsigned __int8 *Block, char *a2, CCINIClass *aP3)
 {
   char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
@@ -9547,7 +9547,7 @@ int *__thiscall Delegate::DestroyStraw(Base64Straw *this, char a2)
 }
 
 
-// ==== 0x0052AEC0  KeyValuePair::Init  this=KeyValuePair  sig=csp ====
+// ==== 0x0052AEC0  KeyValuePair::Init  this=CellStruct  sig=csp ====
 _DWORD *__thiscall KeyValuePair::Init(_DWORD *this, INIClass *aP1)
 {
   *this = aP1; /*0x52aec6*/
@@ -9824,7 +9824,7 @@ LABEL_12:
 }
 
 
-// ==== 0x0052B210  SortedArray::BinarySearch2  this=AbstractClass  sig=csp ====
+// ==== 0x0052B210  SortedArray::BinarySearch2  this=ObjectClass  sig=csp ====
 void *__thiscall SortedArray::BinarySearch2(int this, Color *aP1)
 {
   size_t v3; // ecx
@@ -9946,7 +9946,7 @@ LABEL_9:
 }
 
 
-// ==== 0x0052B390  HashTable::BinarySearch  this=AbstractClass  sig=csp ====
+// ==== 0x0052B390  HashTable::BinarySearch  this=VoxelStruct  sig=csp ====
 char __thiscall HashTable::BinarySearch(int this, ObjectClass *aP1)
 {
   size_t v3; // ecx
@@ -9998,7 +9998,7 @@ LABEL_12:
 }
 
 
-// ==== 0x0052B430  SortedArray::FindValue  this=AbstractClass  sig=csp ====
+// ==== 0x0052B430  SortedArray::FindValue  this=VoxelStruct  sig=csp ====
 void *__thiscall SortedArray::FindValue(int this, INIClass *aP1)
 {
   size_t v3; // ecx
@@ -10052,12 +10052,12 @@ LABEL_11:
 }
 
 
-// ==== 0x0052B4D0  INIClass::deleteKey  this=AbstractTypeClass  sig=csp ====
+// ==== 0x0052B4D0  INIClass::deleteKey  this=IPXInterfaceClass  sig=csp ====
 bool __thiscall INIClass::deleteKey(_DWORD *this, ObjectClass *aP1)
 {
   _DWORD *v2; // eax
 
-  v2 = (_DWORD *)this->uniqueId; /*0x52b4d0*/
+  v2 = (_DWORD *)this->Count; /*0x52b4d0*/
   return v2 && *v2 == *(_DWORD *)aP1->__pad_0; /*0x52b4e3*/
 }
 
@@ -10107,7 +10107,7 @@ size_t __thiscall HashTable::BinarySearchAlt(char **this, CCINIClass *aP1)
 }
 
 
-// ==== 0x0052B570  INIClass::mergeSection  this=INIClass  sig=csp ====
+// ==== 0x0052B570  INIClass::mergeSection  this=VoxelStruct  sig=csp ====
 char __thiscall sub_52B570(int this, int a2)
 {
   char *v3; // edi
@@ -10136,17 +10136,17 @@ char __thiscall sub_52B570(int this, int a2)
 }
 
 
-// ==== 0x0052B600  SortedArray::CheckCache  this=AbstractTypeClass  sig=csp ====
+// ==== 0x0052B600  SortedArray::CheckCache  this=VoxelStruct  sig=csp ====
 bool __thiscall SortedArray_CheckCache(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v2; // eax
 
-  v2 = (_DWORD *)this->uniqueId; /*0x52b600*/
+  v2 = (_DWORD *)*(this + 4); /*0x52b600*/
   return v2 && *v2 == *a2; /*0x52b613*/
 }
 
 
-// ==== 0x0052B620  SortedArray::BinarySearch  this=AbstractClass  sig=csp ====
+// ==== 0x0052B620  SortedArray::BinarySearch  this=VoxelStruct  sig=csp ====
 size_t __thiscall SortedArray::BinarySearch(char **this, CCINIClass *aP1)
 {
   size_t result; // eax
@@ -10155,18 +10155,18 @@ size_t __thiscall SortedArray::BinarySearch(char **this, CCINIClass *aP1)
   int v6; // ecx
   ObjectClass *v7; // esi
 
-  result = (size_t)this->vtable2; /*0x52b623*/
+  result = (size_t)*(this + 1); /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
-    if ( !this->vtable4 ) /*0x52b62e*/
+    if ( !*((_BYTE *)this + 12) ) /*0x52b62e*/
     {
       qsort(*this, result, 8u, CompareFunc4Int); /*0x52b640*/
-      this->vtable2 = 0; /*0x52b648*/
-      this->vtable4 = 1; /*0x52b64f*/
+      *(this + 4) = 0; /*0x52b648*/
+      *((_BYTE *)this + 12) = 1; /*0x52b64f*/
     }
     v4 = (ObjectClass *)*this; /*0x52b659*/
     v5 = *(ObjectClass **)aP1->__pad_0; /*0x52b65b*/
-    v6 = (int)this->vtable2; /*0x52b65d*/
+    v6 = (int)*(this + 1); /*0x52b65d*/
     if ( v6 <= 0 ) /*0x52b662*/
       return 0; /*0x52b68e*/
     while ( 1 ) /*0x52b66b*/
@@ -10201,7 +10201,7 @@ int __cdecl CompareFunc3Int(_DWORD *a1, _DWORD *a2)
 }
 
 
-// ==== 0x0052B6D0  UI_Find  this=INIClass  sig=csp ====
+// ==== 0x0052B6D0  UI_Find  this=AbstractTypeClass  sig=csp ====
 int __fastcall sub_52B6D0(int a1, int a2, int *a3)
 {
   int v3; // esi
@@ -10396,7 +10396,7 @@ int sub_52B990()
 }
 
 
-// ==== 0x0052B9B0  BINK::Background_Setup  this=AbstractClass  sig=csp ====
+// ==== 0x0052B9B0  BINK::Background_Setup  this=IUnknown  sig=csp ====
 HWND __thiscall BINK::Background_Setup(HWND hDlg)
 {
   HWND result; // eax
@@ -12896,7 +12896,7 @@ LABEL_86:
 }
 
 
-// ==== 0x0052F3F0  Network::Init  this=Network  sig=csp ====
+// ==== 0x0052F3F0  Network::Init  this=IPXInterfaceClass  sig=csp ====
 char Network_Init()
 {
   int v0; // ecx

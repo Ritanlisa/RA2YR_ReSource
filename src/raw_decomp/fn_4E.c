@@ -2152,7 +2152,7 @@ void __thiscall sub_4E1D00(HWND *this)
 }
 
 
-// ==== 0x004E1DE0  GameOptions::GameSpeedChanged  this=AbstractClass  sig=csp ====
+// ==== 0x004E1DE0  GameOptions::GameSpeedChanged  this=IUnknown  sig=csp ====
 char __thiscall GameOptions::GameSpeedChanged(HWND *this)
 {
   HWND (__stdcall *v2)(HWND, int); // edi
@@ -3295,7 +3295,7 @@ int sub_4E3300()
 }
 
 
-// ==== 0x004E3320  ObjectClass::GetResourceIDHardcodedCSF  this=ObjectClass  sig=csp ====
+// ==== 0x004E3320  ObjectClass::GetResourceIDHardcodedCSF  this=AbstractClass  sig=csp ====
 int __thiscall sub_4E3320(void *this)
 {
   if ( !this ) /*0x4e3324*/
@@ -3383,7 +3383,7 @@ HWND *__fastcall UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
 }
 
 
-// ==== 0x004E3560  BuildingType::FindDefault  this=BuildingType  sig=csp ====
+// ==== 0x004E3560  BuildingType::FindDefault  this=CampaignClass  sig=csp ====
 int __thiscall BuildingType::FindDefault(void *this)
 {
   int result; // eax
@@ -3631,7 +3631,7 @@ bool __fastcall FillComboBoxRandomOnly(HWND hDlg, int nIDDlgItem)
 }
 
 
-// ==== 0x004E3B00  SetupComboBoxObserver  this=SkirmishDialog  sig=csp ====
+// ==== 0x004E3B00  SetupComboBoxObserver  this=AbstractClass  sig=csp ====
 LRESULT __fastcall SetupComboBoxObserver(HWND hDlg, int nIDDlgItem)
 {
   HWND DlgItem; // esi
@@ -3898,7 +3898,7 @@ LABEL_23:
 }
 
 
-// ==== 0x004E3F70  SetupLobbyCountryCombo  this=SkirmishDialog  sig=csp ====
+// ==== 0x004E3F70  SetupLobbyCountryCombo  this=AbstractClass  sig=csp ====
 HWND *__fastcall SetupLobbyCountryCombo(SkirmishDialog *aP0, int nIDDlgItem, int a3)
 {
   LRESULT v5; // ebx
@@ -4014,7 +4014,7 @@ LABEL_6:
 }
 
 
-// ==== 0x004E4170  GetComboBoxSelected  this=SkirmishDialog  sig=csp ====
+// ==== 0x004E4170  GetComboBoxSelected  this=-  sig=csp ====
 LRESULT __fastcall GetComboBoxSelected(ReferenceCounted *aP0, int nIDDlgItem, WPARAM wParam)
 {
   ReferenceCounted *v3; // eax
@@ -4223,7 +4223,7 @@ bool __fastcall FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
 }
 
 
-// ==== 0x004E4770  FillListBox  this=SkirmishDialog  sig=csp ====
+// ==== 0x004E4770  FillListBox  this=-  sig=csp ====
 LRESULT __fastcall FillListBox(HWND hDlg, int nIDDlgItem)
 {
   HWND DlgItem; // esi
@@ -4355,7 +4355,7 @@ int __fastcall SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 }
 
 
-// ==== 0x004E49A0  SetupSkirmishSpawnLocations  this=-  sig=csp ====
+// ==== 0x004E49A0  SetupSkirmishSpawnLocations  this=AbstractClass  sig=csp ====
 char __fastcall SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
 {
   HWND v4; // ebp
@@ -4515,7 +4515,7 @@ LABEL_44:
 }
 
 
-// ==== 0x004E4C20  FillColorComboBoxUI  this=-  sig=csp ====
+// ==== 0x004E4C20  FillColorComboBoxUI  this=AbstractClass  sig=csp ====
 char __fastcall FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
 {
   int v4; // eax
@@ -4649,7 +4649,7 @@ LABEL_22:
 }
 
 
-// ==== 0x004E4E20  GetComboBoxSelectedRaw  this=SkirmishDialog  sig=csp ====
+// ==== 0x004E4E20  GetComboBoxSelectedRaw  this=-  sig=csp ====
 LRESULT __fastcall GetComboBoxSelectedRaw(ReferenceCounted *aP0, int nIDDlgItem, WPARAM wParam)
 {
   ReferenceCounted *v3; // eax
@@ -4739,7 +4739,7 @@ char *_cfltcvt_init()
 }
 
 
-// ==== 0x004E4FC0  ResetLobbyFactionTable  this=CampaignClass  sig=ida-proto ====
+// ==== 0x004E4FC0  ResetLobbyFactionTable  this=AbstractClass  sig=ida-proto ====
 void __fastcall Lobby_ResetFactionTable(int a1)
 {
   int *v1; // eax
@@ -4984,7 +4984,7 @@ int __fastcall Lobby_FillFactionComboBox(HWND a1, int a2)
 }
 
 
-// ==== 0x004E5480  SetupLobbyFactionSlots  this=-  sig=csp ====
+// ==== 0x004E5480  SetupLobbyFactionSlots  this=AbstractClass  sig=csp ====
 char __fastcall SetupLobbyFactionSlots(SessionClass *aP0, int nIDDlgItem, int a3)
 {
   SessionClass *v4; // ebp
@@ -5146,7 +5146,7 @@ LABEL_44:
 }
 
 
-// ==== 0x004E5700  FillComboBoxSides  this=SkirmishDialog  sig=csp ====
+// ==== 0x004E5700  FillComboBoxSides  this=-  sig=csp ====
 char __fastcall FillComboBoxSides(HWND hDlg, int nIDDlgItem)
 {
   int v4; // eax
@@ -5280,7 +5280,7 @@ LABEL_22:
 }
 
 
-// ==== 0x004E5900  SetComboBoxSelection  this=SkirmishDialog  sig=csp ====
+// ==== 0x004E5900  SetComboBoxSelection  this=-  sig=csp ====
 LRESULT __fastcall SetComboBoxSelection(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 {
   LRESULT v3; // eax
@@ -5500,7 +5500,7 @@ int __thiscall Lobby_InvalidatePlayerSlots(HWND hDlg)
 }
 
 
-// ==== 0x004E5E20  SetupLobbyPlayerSlotDialog  this=SkirmishDialog  sig=csp ====
+// ==== 0x004E5E20  SetupLobbyPlayerSlotDialog  this=-  sig=csp ====
 bool __fastcall Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 {
   int v2; // edi
@@ -5549,7 +5549,7 @@ bool __fastcall Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 }
 
 
-// ==== 0x004E5ED0  SetupLobbyPlayerSlots  this=SkirmishDialog  sig=csp ====
+// ==== 0x004E5ED0  SetupLobbyPlayerSlots  this=AbstractClass  sig=csp ====
 bool __fastcall SetupLobbyPlayerSlots(SessionClass *aP0, int nIDDlgItem, int a3)
 {
   WPARAM v5; // ebp
@@ -5625,7 +5625,7 @@ LABEL_22:
 }
 
 
-// ==== 0x004E6030  GetComboBoxSelectedRaw2  this=-  sig=csp ====
+// ==== 0x004E6030  GetComboBoxSelectedRaw2  this=AbstractClass  sig=csp ====
 LRESULT __fastcall GetComboBoxSelectedRaw2(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 {
   LRESULT v3; // eax

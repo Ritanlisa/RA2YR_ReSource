@@ -2,7 +2,7 @@
 // by tools/csp_export/rewrite_member_refs.py (mechanical, CSP member table).
 // REFERENCE ONLY - not compiled. Width-matched rewrites; unmatched kept raw.
 
-// ==== 0x006A01A0  WalkLocomotion::MoveTo  this=ObjectClass  sig=csp ====
+// ==== 0x006A01A0  WalkLocomotion::MoveTo  this=IUnknown  sig=csp ====
 char __thiscall WalkLocomotion::MoveTo(int this, IUnknown *aP1, int aP3)
 {
   IUnknown *v3; // edx
@@ -2667,7 +2667,7 @@ void nullsub_230()
 }
 
 
-// ==== 0x006A3DB0  WalkLocomotion::TransformCoords  this=ObjectClass  sig=csp ====
+// ==== 0x006A3DB0  WalkLocomotion::TransformCoords  this=IUnknown  sig=csp ====
 _DWORD *__thiscall WalkLocomotion::TransformCoords(_DWORD *this, ObjectClass *aP1, IUnknown *aP2, ObjectClass *aP3)
 {
   int v4; // eax
@@ -2678,7 +2678,7 @@ _DWORD *__thiscall WalkLocomotion::TransformCoords(_DWORD *this, ObjectClass *aP
   int v9; // ecx
 
   v4 = *(_DWORD *)aP3->__pad_0; /*0x6a3dbd*/
-  v5 = dword_7F2A48[3 * this->q058]; /*0x6a3dc1*/
+  v5 = dword_7F2A48[3 * this->q160]; /*0x6a3dc1*/
   v6 = aP2->field_0; /*0x6a3dcf*/
   v7 = aP2->field_4; /*0x6a3dd1*/
   if ( (v5 & 1) != 0 ) /*0x6a3dd4*/
@@ -2698,7 +2698,7 @@ _DWORD *__thiscall WalkLocomotion::TransformCoords(_DWORD *this, ObjectClass *aP
     v4 = (unsigned __int8)(0x80 - v4); /*0x6a3e0d*/
   }
   *(_DWORD *)aP3->__pad_0 = v4; /*0x6a3e0f*/
-  v8 = this->q040; /*0x6a3e12*/
+  v8 = this->q010; /*0x6a3e12*/
   v9 = this->q044; /*0x6a3e15*/
   *(_DWORD *)aP1->__pad_0 = v6 + v8; /*0x6a3e22*/
   *(_DWORD *)&aP1->__pad_0[4] = v7 + v9; /*0x6a3e25*/
@@ -3149,7 +3149,7 @@ _DWORD *__thiscall SideClass::Construct(_DWORD *this, CCINIClass *aP1)
 }
 
 
-// ==== 0x006A46D0  HouseTypeClass::Find  this=ObjectTypeClass  sig=csp ====
+// ==== 0x006A46D0  HouseTypeClass::Find  this=IUnknown  sig=csp ====
 int __thiscall HouseTypeClass_Find(void *this)
 {
   int v1; // esi
@@ -5768,7 +5768,7 @@ unsigned __int8 ObjectClass::ToggleSidebarDisplay(
 }
 
 
-// ==== 0x006A80A0  TabClass::updateTabProduction  this=TabClass  sig=csp ====
+// ==== 0x006A80A0  TabClass::updateTabProduction  this=HouseClass  sig=csp ====
 _BYTE *__thiscall sub_6A80A0(_BYTE *this, int a2)
 {
   _BYTE *result; // eax
@@ -5782,7 +5782,7 @@ _BYTE *__thiscall sub_6A80A0(_BYTE *this, int a2)
 
   result = this; /*0x6a80a0*/
   *(_DWORD *)this = 0; /*0x6a80aa*/
-  this->TabClass_field_0x4 = 0; /*0x6a80ac*/
+  this->vtable2 = 0; /*0x6a80ac*/
   v3 = MEMORY[0xA8ED84]; /*0x6a80af*/
   *((_DWORD *)result + 4) = 0; /*0x6a80b5*/
   *((_DWORD *)result + 2) = v3; /*0x6a80b8*/
@@ -6314,7 +6314,7 @@ char __thiscall sub_6A89E0(_DWORD *this, char a2)
 }
 
 
-// ==== 0x006A8B30  SidebarClass::UpdateCameos  this=SidebarClass  sig=csp ====
+// ==== 0x006A8B30  SidebarClass::UpdateCameos  this=HouseClass  sig=csp ====
 char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
 {
   int v4; // edi
@@ -6376,7 +6376,7 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
   int v61; // [esp+20h] [ebp-78h]
 
   v57 = 0; /*0x6a8b45*/
-  if ( this->VisibleRect ) /*0x6a8b3b*/
+  if ( this->q03F ) /*0x6a8b3b*/
     goto LABEL_115; /*0x6a8b3b*/
   v4 = this->q012; /*0x6a8b50*/
   if ( v4 ) /*0x6a8b55*/
@@ -6384,7 +6384,7 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
     v5 = 26; /*0x6a8b66*/
     if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x6a8b60*/
       v5 = 18; /*0x6a8b6f*/
-    v6 = this->SidebarClass_field_0x54; /*0x6a8b9f*/
+    v6 = this->repairStationsCount; /*0x6a8b9f*/
     v7 = (MEMORY[0x886F9C] - v5 - MEMORY[0xB0B4F8] + MEMORY[0x886F94] - 7) / 50; /*0x6a8bad*/
     v8 = 2; /*0x6a8baf*/
     v9 = 2 * v7; /*0x6a8bb4*/
@@ -6399,12 +6399,12 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
     {
       if ( v4 >= 0 ) /*0x6a8bdc*/
       {
-        if ( v8 * (v7 + this->CellIterator_NextY) < v6 ) /*0x6a8c09*/
+        if ( v8 * (v7 + this->q011) < v6 ) /*0x6a8c09*/
         {
           this->q012 = v4 - 1; /*0x6a8c11*/
-          *((_DWORD *)this + 19) = MEMORY[0xB0B500]; /*0x6a8c1a*/
-          this->q0F8 = 1; /*0x6a8c1d*/
-          this->VisibleRect = 1; /*0x6a8c21*/
+          this->buildingsCapacity = MEMORY[0xB0B500]; /*0x6a8c1a*/
+          this->q03E = 1; /*0x6a8c1d*/
+          this->q03F = 1; /*0x6a8c21*/
         }
         else
         {
@@ -6413,14 +6413,14 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
       }
       else
       {
-        v10 = this->CellIterator_NextY; /*0x6a8bde*/
+        v10 = this->q011; /*0x6a8bde*/
         if ( v10 ) /*0x6a8be3*/
         {
           this->q012 = v4 + 1; /*0x6a8bec*/
-          this->q0F8 = 0; /*0x6a8bef*/
-          this->VisibleRect = 1; /*0x6a8bf3*/
-          this->CellIterator_NextY = v10 - 1; /*0x6a8bf7*/
-          *((_DWORD *)this + 19) = 0; /*0x6a8bfa*/
+          this->q03E = 0; /*0x6a8bef*/
+          this->q03F = 1; /*0x6a8bf3*/
+          this->q011 = v10 - 1; /*0x6a8bf7*/
+          this->buildingsCapacity = 0; /*0x6a8bfa*/
         }
         else
         {
@@ -6433,63 +6433,63 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
       this->q012 = 0; /*0x6a8bcf*/
     }
   }
-  if ( this->VisibleRect ) /*0x6a8c25*/
+  if ( this->q03F ) /*0x6a8c25*/
   {
 LABEL_115:
-    if ( this->q0F8 ) /*0x6a8c2c*/
+    if ( this->q03E ) /*0x6a8c2c*/
     {
-      v11 = *((_DWORD *)this + 19) - MEMORY[0xB0B514]; /*0x6a8c3e*/
-      *((_DWORD *)this + 19) = v11; /*0x6a8c40*/
+      v11 = this->buildingsCapacity - MEMORY[0xB0B514]; /*0x6a8c3e*/
+      this->buildingsCapacity = v11; /*0x6a8c40*/
       if ( v11 <= 0 ) /*0x6a8c45*/
       {
-        v12 = this->CellIterator_NextY; /*0x6a8c47*/
-        this->VisibleRect = 0; /*0x6a8c4a*/
-        *((_DWORD *)this + 19) = 0; /*0x6a8c4f*/
-        this->CellIterator_NextY = v12 + 1; /*0x6a8c56*/
+        v12 = this->q011; /*0x6a8c47*/
+        this->q03F = 0; /*0x6a8c4a*/
+        this->buildingsCapacity = 0; /*0x6a8c4f*/
+        this->q011 = v12 + 1; /*0x6a8c56*/
       }
     }
     else
     {
-      v13 = MEMORY[0xB0B514] + *((_DWORD *)this + 19); /*0x6a8c63*/
-      *((_DWORD *)this + 19) = v13; /*0x6a8c65*/
+      v13 = MEMORY[0xB0B514] + this->buildingsCapacity; /*0x6a8c63*/
+      this->buildingsCapacity = v13; /*0x6a8c65*/
       if ( v13 >= MEMORY[0xB0B500] ) /*0x6a8c72*/
       {
-        this->VisibleRect = 0; /*0x6a8c74*/
-        *((_DWORD *)this + 19) = 0; /*0x6a8c78*/
+        this->q03F = 0; /*0x6a8c74*/
+        this->buildingsCapacity = 0; /*0x6a8c78*/
       }
     }
     v57 = 1; /*0x6a8c7f*/
   }
-  if ( this->q010 != -1 ) /*0x6a8c8c*/
+  if ( this->uniqueId != -1 ) /*0x6a8c8c*/
   {
     v14 = this + 8; /*0x6a8c8e*/
-    if ( CDTimerClass::TimeRemaining((int *)this + 2) || (v15 = this->q005) == 0 ) /*0x6a8ca5*/
+    if ( CDTimerClass::TimeRemaining((int *)this + 2) || (v15 = this->abstractFlags) == 0 ) /*0x6a8ca5*/
     {
-      this->SidebarClass_field_0x4 = 0; /*0x6a8d4d*/
+      this->vtable2 = 0; /*0x6a8d4d*/
     }
     else
     {
-      v16 = this->q006 + *(_DWORD *)this; /*0x6a8cb0*/
-      this->SidebarClass_field_0x4 = 1; /*0x6a8cb2*/
+      v16 = this->nextArrayIndex + *(_DWORD *)this; /*0x6a8cb0*/
+      this->vtable2 = 1; /*0x6a8cb2*/
       *(_DWORD *)this = v16; /*0x6a8cb6*/
       v57 = 1; /*0x6a8cc4*/
       *v14 = MEMORY[0xA8ED84]; /*0x6a8cc9*/
-      this->q00C = v61; /*0x6a8cd0*/
-      this->SidebarClass_field_0x4 = v15; /*0x6a8cd3*/
+      this->vtable4 = v61; /*0x6a8cd0*/
+      this->vtable2 = v15; /*0x6a8cd3*/
       if ( v16 >= 7 ) /*0x6a8cd6*/
       {
         *v14 = MEMORY[0xA8ED84]; /*0x6a8ce3*/
-        this->q00C = v61; /*0x6a8ce5*/
-        this->SidebarClass_field_0x4 = 0; /*0x6a8ce8*/
-        this->q005 = 0; /*0x6a8ceb*/
+        this->vtable4 = v61; /*0x6a8ce5*/
+        this->vtable2 = 0; /*0x6a8ce8*/
+        this->abstractFlags = 0; /*0x6a8ceb*/
         *(_DWORD *)this = 0; /*0x6a8cee*/
-        this->q010 = -1; /*0x6a8cf0*/
+        this->uniqueId = -1; /*0x6a8cf0*/
       }
     }
   }
   if ( MEMORY[0x884B88] > (int)MEMORY[0xA8ED84] ) /*0x6a8d00*/
     v57 = 1; /*0x6a8d02*/
-  if ( this->SidebarClass_field_0x38 <= 1u ) /*0x6a8d0c*/
+  if ( this->conYards <= 1u ) /*0x6a8d0c*/
   {
     v17 = 0; /*0x6a8d1a*/
     if ( *((int *)this + 21) > 0 ) /*0x6a8d1e*/
@@ -6533,9 +6533,9 @@ LABEL_53:
         ++v17; /*0x6a8d83*/
         v18 += 13; /*0x6a8d84*/
       }
-      while ( v17 < this->SidebarClass_field_0x54 ); /*0x6a8d23*/
+      while ( v17 < this->repairStationsCount ); /*0x6a8d23*/
     }
-    SHA1::Reset((int)&MEMORY[0xB07C48] + 96 * this->SidebarClass_field_0x38); /*0x6a8d8b*/
+    SHA1::Reset((int)&MEMORY[0xB07C48] + 96 * this->conYards); /*0x6a8d8b*/
   }
 LABEL_44:
   if ( this->q03D )
@@ -6590,7 +6590,7 @@ LABEL_44:
         v21 += 13; /*0x6a8f49*/
         ++v58; /*0x6a8f58*/
       }
-      while ( v58 < this->SidebarClass_field_0x54 );
+      while ( v58 < this->repairStationsCount );
     }
   }
   v27 = this; /*0x6a8f64*/
@@ -6637,7 +6637,7 @@ LABEL_44:
       ++v28; /*0x6a901e*/
       v29 += 13; /*0x6a901f*/
     }
-    while ( v28 < this->SidebarClass_field_0x54 ); /*0x6a9025*/
+    while ( v28 < this->repairStationsCount ); /*0x6a9025*/
     v27 = this; /*0x6a902b*/
   }
   if ( v27[28] && HouseClass_Player == (#375 *)MEMORY[0xAC1198] )
@@ -6764,7 +6764,7 @@ LABEL_97:
     MEMORY[0x884B8E] = 1; /*0x6a926b*/
     MEMORY[0x880D68][3988 * MEMORY[0x884B84]] = 1; /*0x6a9283*/
     MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a928b*/
-    this->SidebarClass_field_0x3C = 1; /*0x6a929a*/
+    this->conYardsCount = 1; /*0x6a929a*/
     MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a929e*/
     MEMORY[0x884B8F] = 1; /*0x6a92a7*/
     MEMORY[0xB0B518] = 1; /*0x6a92ae*/
@@ -9597,7 +9597,7 @@ char __fastcall sub_6ACCA0(int a1)
 }
 
 
-// ==== 0x006ACD60  Skirmish::EnableSpawnButtons  this=SkirmishDialog  sig=csp ====
+// ==== 0x006ACD60  Skirmish::EnableSpawnButtons  this=Skirmish  sig=csp ====
 HWND __thiscall Skirmish::EnableSpawnButtons(HWND hDlg)
 {
   HWND v1; // ebp
@@ -10886,7 +10886,7 @@ int __stdcall Skirmish::Setup_DlgProc(void *hDlg, unsigned int a2, unsigned int 
 }
 
 
-// ==== 0x006AE6E0  Skirmish::SetupGame  this=SkirmishDialog  sig=csp ====
+// ==== 0x006AE6E0  Skirmish::SetupGame  this=Skirmish  sig=csp ====
 int __thiscall Skirmish::SetupGame(SkirmishDialog *hWnd, int a2)
 {
   HWND DlgItem; // eax

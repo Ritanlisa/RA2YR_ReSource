@@ -2595,7 +2595,7 @@ int __thiscall ShroudClass::UpdateVisibility(int *this, MouseClass *aP1)
 }
 
 
-// ==== 0x005673A0  MapClass::RevealArea0  this=BuildingTypeClass  sig=csp ====
+// ==== 0x005673A0  MapClass::RevealArea0  this=IUnknown  sig=csp ====
 int __thiscall MapClass::RevealArea0(
         int *this,
         IUnknown *aP1,
@@ -2670,7 +2670,7 @@ int __thiscall MapClass::RevealArea0(
   v46 = v42 - v44[0] - 2; /*0x56749b*/
   v47 = v43 - v44[1] - 2; /*0x5674a7*/
   result = v43; /*0x5674af*/
-  v14 = this->UINameLabel; /*0x5674b2*/
+  v14 = this->q03D; /*0x5674b2*/
   v15 = v43 + v42; /*0x5674b8*/
   if ( v15 <= v14 ) /*0x5674bd*/
     return result; /*0x5674bd*/
@@ -2679,7 +2679,7 @@ int __thiscall MapClass::RevealArea0(
   result = v43 - v42; /*0x5674cf*/
   if ( result >= v14 ) /*0x5674d3*/
     return result; /*0x5674d3*/
-  result = this->PixelSelectionBracketDelta; /*0x5674d9*/
+  result = this->q0F8; /*0x5674d9*/
   if ( v15 > v14 + 2 * result ) /*0x5674e4*/
     return result; /*0x5674e4*/
   result = (int)aP2; /*0x5674ea*/
@@ -2747,7 +2747,7 @@ LABEL_22:
       v23 = v43 + HIWORD(v21->field_0); /*0x56762d*/
       LOWORD(v45) = v22; /*0x567635*/
       aP1b = (IUnknown *)((char *)aP1b + 4); /*0x56763a*/
-      v24 = this->UINameLabel; /*0x56763e*/
+      v24 = this->q03D; /*0x56763e*/
       HIWORD(v45) = v23; /*0x567644*/
       *(_DWORD *)v44 = v45; /*0x567653*/
       v25 = v23 + v22; /*0x567657*/
@@ -2759,7 +2759,7 @@ LABEL_22:
           continue; /*0x5678a3*/
         }
         LOWORD(v12) = v42; /*0x56767e*/
-        if ( v25 > v24 + 2 * this->PixelSelectionBracketDelta ) /*0x567688*/
+        if ( v25 > v24 + 2 * this->q0F8 ) /*0x567688*/
           continue; /*0x567688*/
         if ( (int)abs32(v22 - v42) > (int)aP2 ) /*0x56769e*/
           continue; /*0x56769e*/
@@ -2821,15 +2821,15 @@ LABEL_54:
         }
         if ( v32 == 7 ) /*0x5677d7*/
         {
-          if ( v33 == this->UINameLabel + 5 ) /*0x5677e4*/
+          if ( v33 == this->q03D + 5 ) /*0x5677e4*/
             continue; /*0x5677e4*/
         }
-        else if ( v32 == 13 && v33 == this->UINameLabel + 11 ) /*0x5677fc*/
+        else if ( v32 == 13 && v33 == this->q03D + 11 ) /*0x5677fc*/
         {
           continue; /*0x5677fc*/
         }
-        v34 = this->PixelSelectionBracketDelta; /*0x567802*/
-        if ( v32 != v34 + 13 || v33 != this->UINameLabel + v34 - 15 ) /*0x56781b*/
+        v34 = this->q0F8; /*0x567802*/
+        if ( v32 != v34 + 13 || v33 != this->q03D + v34 - 15 ) /*0x56781b*/
           goto LABEL_54; /*0x56781b*/
       }
     }
@@ -3078,7 +3078,7 @@ LABEL_61:
 }
 
 
-// ==== 0x00567DA0  MapClass::RevealArea2  this=BuildingTypeClass  sig=csp ====
+// ==== 0x00567DA0  MapClass::RevealArea2  this=IUnknown  sig=csp ====
 int __thiscall MapClass::RevealArea2(_DWORD *this, IUnknown *aP1, MouseClass *aP2, MouseClass *aP3, IUnknown *aP4)
 {
   MouseClass *v5; // eax
@@ -3163,7 +3163,7 @@ LABEL_10:
       v22 = (__int16)v28 + v21 < 0; /*0x567ed7*/
       v23 = (__int16)v28 + v21; /*0x567ed7*/
       aP4 = (IUnknown *)v28; /*0x567ed9*/
-      if ( v22 || v23 >= 0x40000 || (v24 = *(IUnknown **)(this->q13C + 4 * v23)) == 0 ) /*0x567ef5*/
+      if ( v22 || v23 >= 0x40000 || (v24 = *(IUnknown **)(this->q04F + 4 * v23)) == 0 ) /*0x567ef5*/
       {
         g_Map_GlobalCellIndex = (IUnknown *)v28; /*0x567f0f*/
         v25 = (IUnknown *)g_CellClassArray; /*0x567f15*/

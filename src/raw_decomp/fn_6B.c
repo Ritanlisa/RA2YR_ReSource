@@ -5056,7 +5056,7 @@ int __stdcall SmudgeTypeClass::_vt03(int a1, _DWORD *a2)
 }
 
 
-// ==== 0x006B5910  FactoryClass::FindOrCreate  this=ObjectTypeClass  sig=csp ====
+// ==== 0x006B5910  FactoryClass::FindOrCreate  this=ObjectClass  sig=csp ====
 SmudgeTypeClass *__thiscall FactoryClass::FindOrCreate(ObjectClass *Source)
 {
   int v2; // esi
@@ -5244,7 +5244,7 @@ LABEL_37:
 }
 
 
-// ==== 0x006B5C90  TimedCreateUnitAtCoords  this=-  sig=csp ====
+// ==== 0x006B5C90  TimedCreateUnitAtCoords  this=AbstractClass  sig=csp ====
 char __fastcall TimedCreateUnitAtCoords(_DWORD *a0, IUnknown *aP1, int a3, char a4)
 {
   IUnknown *v4; // ebp

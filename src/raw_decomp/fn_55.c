@@ -1213,7 +1213,7 @@ DynamicVector *__thiscall VectorClass_ptr_LaserDrawClass::Constructor_VectorClas
 }
 
 
-// ==== 0x00551630  WebBrowser::OpenURL  this=WebBrowser  sig=csp ====
+// ==== 0x00551630  WebBrowser::OpenURL  this=INIClass  sig=csp ====
 bool __thiscall WebBrowser::OpenURL(INIClass *this)
 {
   HANDLE FileA; // esi
@@ -3562,7 +3562,7 @@ int __fastcall Render_Render_5541C0(
 }
 
 
-// ==== 0x00554280  Render_Render  this=AbstractClass  sig=csp ====
+// ==== 0x00554280  Render_Render  this=-  sig=csp ====
 int __fastcall Render_Render_554280(unsigned __int16 *a0, AbstractClass *aP1, int *a2, unsigned __int16 a4, char a5)
 {
   int v5; // esi
@@ -5851,7 +5851,7 @@ void __cdecl sub_5569E0()
 }
 
 
-// ==== 0x00556A20  ObjectClass::checkLimbo  this=ObjectClass  sig=csp ====
+// ==== 0x00556A20  ObjectClass::checkLimbo  this=AbstractClass  sig=csp ====
 char *__thiscall sub_556A20(char *this)
 {
   char *v2; // eax
@@ -7503,7 +7503,7 @@ VectorClass *__thiscall VectorClass_PBG::QueryInterface(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x005584F0  sub_5584F0  this=BlowStraw  sig=csp ====
+// ==== 0x005584F0  sub_5584F0  this=EditClass  sig=csp ====
 size_t __fastcall sub_5584F0(char *a1, void *a2)
 {
   size_t v2; // esi
@@ -9708,7 +9708,7 @@ int sub_55AF20()
 }
 
 
-// ==== 0x0055AF40  RadarClass::SetGlobal  this=ObjectClass  sig=csp ====
+// ==== 0x0055AF40  RadarClass::SetGlobal  this=AbstractClass  sig=csp ====
 void __thiscall RadarClass_SetGlobal(void *this)
 {
   dword_829FF4 = (int)this; /*0x55af40*/
@@ -13252,7 +13252,7 @@ int __stdcall sub_55F980(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 
 
-// ==== 0x0055FAA0  Options::Screen_Save  this=AbstractClass  sig=csp ====
+// ==== 0x0055FAA0  Options::Screen_Save  this=IUnknown  sig=csp ====
 void __thiscall Options::Screen_Save(void *this)
 {
   int v2; // eax

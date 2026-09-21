@@ -1519,7 +1519,7 @@ const char *__thiscall _raw_name_type_info__QBEPBDXZ(type_info *this)
 }
 
 
-// ==== 0x006810D0  ObjectClass::Map_Save_6810D0  this=IUnknown  sig=csp ====
+// ==== 0x006810D0  ObjectClass::Map_Save_6810D0  this=ObjectClass  sig=csp ====
 wchar_t *__thiscall sub_6810D0(wchar_t *this, wchar_t *Source)
 {
   this->q0C3 = 0; /*0x6810d4*/
@@ -3637,7 +3637,7 @@ int __thiscall ScenarioClass::ReadINIEntry(int this, ScenarioClass *aP1)
 }
 
 
-// ==== 0x00683AB0  ScenarioClass::LoadScenarioAndStart  this=CampaignClass  sig=csp ====
+// ==== 0x00683AB0  ScenarioClass::LoadScenarioAndStart  this=AbstractClass  sig=csp ====
 char __fastcall ScenarioClass::LoadScenarioAndStart(AnimClass *Source, char a2, int a3)
 {
   AnimClass *v3; // ebp
@@ -3853,7 +3853,7 @@ int sub_683FB0()
 }
 
 
-// ==== 0x00684060  SetScenarioClassTimer  this=-  sig=ida-proto ====
+// ==== 0x00684060  SetScenarioClassTimer  this=RandomStruct  sig=ida-proto ====
 void *__fastcall ScenarioClass_SetTimer(int a1)
 {
   DWORD Ticks; // eax
@@ -4113,7 +4113,7 @@ LABEL_18:
 }
 
 
-// ==== 0x00684620  Scenario::LoadWithProgress  this=AnimClass  sig=csp ====
+// ==== 0x00684620  Scenario::LoadWithProgress  this=AbstractClass  sig=csp ====
 char __thiscall Scenario::LoadWithProgress(AnimClass *this)
 {
   double v1; // st7
@@ -5670,7 +5670,7 @@ int __thiscall ScenarioClass::SetupAlliances(void *this)
 }
 
 
-// ==== 0x00686B20  ScenarioClass::LoadMap  this=ScenarioClass  sig=csp ====
+// ==== 0x00686B20  ScenarioClass::LoadMap  this=IUnknown  sig=csp ====
 char __usercall ScenarioClass::LoadMap@<al>(char a1@<dl>, CCINIClass *a2@<ecx>, double a3@<st0>)
 {
   CCINIClass *v3; // ebp
@@ -9845,7 +9845,7 @@ int __thiscall ColorScheme_Destructor(int this)
 }
 
 
-// ==== 0x0068C9C0  System_Read_68C9C0  this=char*  sig=csp ====
+// ==== 0x0068C9C0  System_Read_68C9C0  this=INIClass  sig=csp ====
 int __fastcall System_Read_68C9C0(BlowStraw *aP0, ObjectClass *a1, ObjectClass *aP3, int a4, int a5)
 {
   int v6; // esi

@@ -133,7 +133,7 @@ void __thiscall sub_4802A0(int this, int *a2, int *a3)
 }
 
 
-// ==== 0x00480350  TacticalClass::CheckCellVisibility  this=TacticalClass  sig=csp ====
+// ==== 0x00480350  TacticalClass::CheckCellVisibility  this=IUnknown  sig=csp ====
 char __thiscall sub_480350(int this, _DWORD *a2, _DWORD *a3, char a4)
 {
   int v4; // eax
@@ -290,7 +290,7 @@ char __thiscall BuildingPlacement::ValidateType(_DWORD *this, AbstractClass *aP1
 }
 
 
-// ==== 0x00480630  BuildingClass::ValidatePlacement  this=BuildingClass  sig=csp ====
+// ==== 0x00480630  BuildingClass::ValidatePlacement  this=IUnknown  sig=csp ====
 void __thiscall BuildingClass_ValidatePlacement(void **this, char a2)
 {
   int *v2; // edi
@@ -361,7 +361,7 @@ void __thiscall BuildingClass_ValidatePlacement(void **this, char a2)
     v3 = *v2; /*0x48064d*/
     if ( (unsigned int)*v2 < 8 ) /*0x480652*/
     {
-      v43 = (int)this->objectTypeFlags; /*0x48065e*/
+      v43 = (int)this->q024; /*0x48065e*/
       v44 = *CellStruct::Add(&v43, &v49, (_WORD *)(4 * (v3 & 7) + 9041544)); /*0x480684*/
       v4 = (void **)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v44); /*0x48068d*/
     }
@@ -515,7 +515,7 @@ void __thiscall BuildingClass_ValidatePlacement(void **this, char a2)
 }
 
 
-// ==== 0x00480A30  CellClass::GetCoords  this=IUnknown  sig=csp ====
+// ==== 0x00480A30  CellClass::GetCoords  this=CellClass  sig=csp ====
 int *__thiscall CellClass::GetCoords(_DWORD *this, IUnknown *aP1)
 {
   ObjectClass *v2; // eax
@@ -524,7 +524,7 @@ int *__thiscall CellClass::GetCoords(_DWORD *this, IUnknown *aP1)
   int inited; // eax
   _DWORD v7[2]; // [esp+8h] [ebp-8h] BYREF
 
-  v2 = (ObjectClass *)this->q024; /*0x480a33*/
+  v2 = (ObjectClass *)this->smudgeTypeIndex; /*0x480a33*/
   v3 = ((__int16)v2 << 8) + 128; /*0x480a4f*/
   v4 = (AbstractClass *)((SHIWORD(v2) << 8) + 128); /*0x480a51*/
   v7[0] = 128; /*0x480a53*/
@@ -537,7 +537,7 @@ int *__thiscall CellClass::GetCoords(_DWORD *this, IUnknown *aP1)
 }
 
 
-// ==== 0x00480A80  CellClass::ReduceTiberium  this=CellClass  sig=csp ====
+// ==== 0x00480A80  CellClass::ReduceTiberium  this=IUnknown  sig=csp ====
 int __thiscall CellClass::ReduceTiberium(int this, InfantryTypeClass *aP1)
 {
   IUnknown *v3; // edi
@@ -663,7 +663,7 @@ int __thiscall CellClass::ReduceTiberium(int this, InfantryTypeClass *aP1)
 }
 
 
-// ==== 0x00480CB0  BuildingClass::SellEffects  this=BuildingClass  sig=csp ====
+// ==== 0x00480CB0  BuildingClass::SellEffects  this=AbstractClass  sig=csp ====
 int __thiscall BuildingClass_SellEffects(int this, int a2)
 {
   int v3; // eax
@@ -865,7 +865,7 @@ int __thiscall BuildingClass_SellEffects(int this, int a2)
 }
 
 
-// ==== 0x004810A0  Input::OffsetToDirection  this=IUnknown  sig=csp ====
+// ==== 0x004810A0  Input::OffsetToDirection  this=Coord  sig=csp ====
 char __thiscall Input_OffsetToDirection(_DWORD *this)
 {
   int v1; // edi
@@ -907,7 +907,7 @@ bool __thiscall BuildingPlacement::IsPlacementFlagSet(unsigned __int8 *this, Vec
 }
 
 
-// ==== 0x00481180  ObjectPlacement::CalcPosition  this=IUnknown  sig=csp ====
+// ==== 0x00481180  ObjectPlacement::CalcPosition  this=ObjectPlacement  sig=csp ====
 int *__thiscall ObjectPlacement::CalcPosition(_DWORD *this, int *a1, IUnknown *aP2, char a4, char a5, char a6)
 {
   int v7; // ecx
@@ -980,9 +980,9 @@ int *__thiscall ObjectPlacement::CalcPosition(_DWORD *this, int *a1, IUnknown *a
   v37 = v15; /*0x48126b*/
   v38 = v14; /*0x48126f*/
   if ( a5 ) /*0x481273*/
-    v17 = this->q04A; /*0x481275*/
+    v17 = *(this + 74); /*0x481275*/
   else
-    v17 = this->q049; /*0x48127d*/
+    v17 = *(this + 73); /*0x48127d*/
   v18 = (v17 & 0x20) != 0; /*0x48128a*/
   if ( !a4 )
   {
@@ -1026,12 +1026,12 @@ LABEL_30:
         {
           if ( a5 ) /*0x481379*/
           {
-            LOBYTE(v25) = this->q04A; /*0x48137b*/
+            LOBYTE(v25) = *((_BYTE *)this + 296); /*0x48137b*/
             v26 = 1 << v24; /*0x481386*/
           }
           else
           {
-            LOBYTE(v26) = this->q049; /*0x4813a8*/
+            LOBYTE(v26) = *((_BYTE *)this + 292); /*0x4813a8*/
             v25 = 1 << v24; /*0x4813b3*/
           }
           if ( ((unsigned __int8)v25 & (unsigned __int8)v26) == 0 ) /*0x4813bc*/
@@ -1072,7 +1072,7 @@ LABEL_43:
 }
 
 
-// ==== 0x004814F0  CellClass::InitRandomOffsets  this=CellClass  sig=csp ====
+// ==== 0x004814F0  CellClass::InitRandomOffsets  this=IUnknown  sig=csp ====
 int __thiscall CellClass::InitRandomOffsets(int this, BombClass *aP1, IUnknown *aP2)
 {
   int v4; // esi
@@ -1295,7 +1295,7 @@ int __thiscall CellClass::SetThreatBounds(_DWORD *this, BuildingTypeClass *aP1, 
 }
 
 
-// ==== 0x004818E0  ObjectClass::UpdateTiberiumGrowth  this=IUnknown  sig=csp ====
+// ==== 0x004818E0  ObjectClass::UpdateTiberiumGrowth  this=ObjectClass  sig=csp ====
 int __thiscall sub_4818E0(int this, char a2)
 {
   int v3; // ecx
@@ -1352,7 +1352,7 @@ int __thiscall sub_4818E0(int this, char a2)
 }
 
 
-// ==== 0x00481A00  CrateClass::ProcessPickup  this=IUnknown  sig=csp ====
+// ==== 0x00481A00  CrateClass::ProcessPickup  this=CrateClass  sig=csp ====
 char __thiscall CrateClass::ProcessPickup(_DWORD *this, AbstractClass *aP1)
 {
   int v3; // eax
@@ -1511,7 +1511,7 @@ char __thiscall CrateClass::ProcessPickup(_DWORD *this, AbstractClass *aP1)
 
   if ( aP1 )
   {
-    v3 = this->q044;
+    v3 = *(this + 17);
     if ( v3 != -1 )
     {
       if ( *(_BYTE *)(*(_DWORD *)(HouseClass_Player.field_38 + 4 * v3) + 682) )
@@ -1599,7 +1599,7 @@ LABEL_35:
                   v120 = 0;
                 }
 LABEL_36:
-                v16 = this->q03B;
+                v16 = *(this + 59);
                 if ( v16 == 2 || v16 == 6 )
                 {
                   v11 = 0;
@@ -1657,7 +1657,7 @@ LABEL_36:
                 v14 = aP1;
                 break;
             }
-            if ( this->q03B == 2 && !stru_89E138.__pad_71C[v11 + 1132] )
+            if ( *(this + 59) == 2 && !stru_89E138.__pad_71C[v11 + 1132] )
             {
               v11 = 0;
               v120 = 0;
@@ -1667,7 +1667,7 @@ LABEL_36:
           }
           else if ( !*((_BYTE *)this + 286) )
           {
-            v12 = this->q044;
+            v12 = *(this + 17);
             v121 = *(BuildingTypeClass **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4416);
             ecx20 = *(_DWORD *)(HouseClass_Player.field_38 + 4 * v12);
             if ( ecx20 == *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 252) )
@@ -1686,7 +1686,7 @@ LABEL_36:
               v120 = v11;
             }
           }
-          v129 = this->q024;
+          v129 = *(this + 9);
           CellClass::CreateBuildingCrater((__int16 *)&stru_87C374.__pad_14B0[8132], (MouseClass *)&v129);
           if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] && HouseClass_Player.__pad_5568[8109] )
             CrateClass::FindPlacement(&stru_87C374.__pad_14B0[8132]);
@@ -1794,7 +1794,7 @@ LABEL_111:
                                      *(_DWORD *)v27[15].__pad_0);
               if ( !v33 )
                 goto LABEL_221;
-              v126 = this->q024;
+              v126 = *(this + 9);
               Coord::Subtract(
                 &v132,
                 (IUnknown *)(((__int16)v126 << 8) + 128),
@@ -1814,7 +1814,7 @@ LABEL_111:
               {
                 if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)aP1[15].__pad_0) )
                 {
-                  v126 = this->q024;
+                  v126 = *(this + 9);
                   Coord::Subtract(
                     &v132,
                     (IUnknown *)(((__int16)v126 << 8) + 128),
@@ -1833,7 +1833,7 @@ LABEL_111:
                 }
                 return 0;
               }
-              var11C = this->q024;
+              var11C = *(this + 9);
               v129 = 0;
               v36 = (BuildingTypeClass *)*LayerClass::Pathfinding_Find(
                                             (IUnknown *)&stru_87C374.__pad_14B0[8132],
@@ -1866,7 +1866,7 @@ LABEL_111:
                 {
                   if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)aP1[15].__pad_0) )
                   {
-                    v126 = this->q024;
+                    v126 = *(this + 9);
                     v44 = ((__int16)v126 << 8) + 128;
                     v45 = (SHIWORD(v126) << 8) + 128;
                     v119 = 0x8000000080LL;
@@ -1906,7 +1906,7 @@ LABEL_121:
               }
               if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)aP1[15].__pad_0) )
               {
-                v126 = this->q024;
+                v126 = *(this + 9);
                 Coord::Subtract(
                   &v132,
                   (IUnknown *)(((__int16)v126 << 8) + 128),
@@ -1927,7 +1927,7 @@ LABEL_121:
               Debug::Log();
               if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)aP1[15].__pad_0) )
               {
-                v124 = this->q024;
+                v124 = *(this + 9);
                 edi164 = ((__int16)v124 << 8) + 128;
                 v80 = (SHIWORD(v124) << 8) + 128;
                 v119 = 0x8000000080LL;
@@ -1974,7 +1974,7 @@ LABEL_121:
                   {
                     if ( (v118[1]->__pad_10[4] & 1) != 0 )
                     {
-                      v124 = this->q024;
+                      v124 = *(this + 9);
                       v67 = ((__int16)v124 << 8) + 128;
                       v68 = (SHIWORD(v124) << 8) + 128;
                       v119 = 0x8000000080LL;
@@ -2017,7 +2017,7 @@ LABEL_121:
                          (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
                          0,
                          (IUnknown *)0x200);
-                v126 = this->q024;
+                v126 = *(this + 9);
                 v50 = ((__int16)v126 << 8) + 128;
                 v51 = (SHIWORD(v126) << 8) + 128;
                 v119 = 0x8000000080LL;
@@ -2070,7 +2070,7 @@ LABEL_121:
               goto LABEL_221;
             case 5:
               Debug::Log();
-              v57 = this->q024;
+              v57 = *(this + 9);
               edi134 = ((__int16)v57 << 8) + 128;
               v59 = (SHIWORD(v57) << 8) + 128;
               v124 = 128;
@@ -2121,7 +2121,7 @@ LABEL_121:
             case 8:
               Debug::Log();
               LayerClass::Reveal(&stru_87C374.__pad_14B0[8132], *(_DWORD *)aP1[15].__pad_0);
-              v126 = this->q024;
+              v126 = *(this + 9);
               Coord::Subtract(
                 &v132,
                 (IUnknown *)(((__int16)v126 << 8) + 128),
@@ -2149,7 +2149,7 @@ LABEL_121:
                   {
                     if ( (v121->abstractFlags & 1) != 0 )
                     {
-                      v124 = this->q024;
+                      v124 = *(this + 9);
                       v126 = 128;
                       v127 = 128;
                       v131 = Isometric::InitTables((int)this, (IUnknown *)&v126);
@@ -2184,7 +2184,7 @@ LABEL_121:
               }
               if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)aP1[15].__pad_0) )
               {
-                v124 = this->q024;
+                v124 = *(this + 9);
                 v95 = ((__int16)v124 << 8) + 128;
                 v96 = (SHIWORD(v124) << 8) + 128;
                 v119 = 0x8000000080LL;
@@ -2209,7 +2209,7 @@ LABEL_121:
                   {
                     if ( (v121->abstractFlags & 4) != 0 )
                     {
-                      v124 = this->q024;
+                      v124 = *(this + 9);
                       v126 = 128;
                       v127 = 128;
                       v131 = Isometric::InitTables((int)this, (IUnknown *)&v126);
@@ -2245,7 +2245,7 @@ LABEL_121:
               }
               if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)aP1[15].__pad_0) )
               {
-                v124 = this->q024;
+                v124 = *(this + 9);
                 v101 = ((__int16)v124 << 8) + 128;
                 v102 = (SHIWORD(v124) << 8) + 128;
                 v119 = 0x8000000080LL;
@@ -2270,7 +2270,7 @@ LABEL_121:
                   {
                     if ( (v121->abstractFlags & 1) != 0 )
                     {
-                      v124 = this->q024;
+                      v124 = *(this + 9);
                       v126 = 128;
                       v127 = 128;
                       v131 = Isometric::InitTables((int)this, (IUnknown *)&v126);
@@ -2305,7 +2305,7 @@ LABEL_121:
               }
               if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)aP1[15].__pad_0) )
               {
-                v124 = this->q024;
+                v124 = *(this + 9);
                 v108 = ((__int16)v124 << 8) + 128;
                 v109 = (SHIWORD(v124) << 8) + 128;
                 v119 = 0x8000000080LL;
@@ -2342,7 +2342,7 @@ LABEL_121:
                   {
                     if ( (v118[1]->__pad_10[4] & 1) != 0 )
                     {
-                      v124 = this->q024;
+                      v124 = *(this + 9);
                       v126 = 128;
                       v127 = 128;
                       v131 = Isometric::InitTables((int)this, (IUnknown *)&v126);
@@ -2383,7 +2383,7 @@ LABEL_121:
               }
               if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)aP1[15].__pad_0) )
               {
-                v124 = this->q024;
+                v124 = *(this + 9);
                 v77 = ((__int16)v124 << 8) + 128;
                 v78 = (SHIWORD(v124) << 8) + 128;
                 v119 = 0x8000000080LL;
@@ -2411,7 +2411,7 @@ LABEL_121:
               {
                 if ( v24 )
                 {
-                  v121 = (BuildingTypeClass *)this->q024;
+                  v121 = (BuildingTypeClass *)*(this + 9);
                   v126 = *NeighborCoord(&v124, &v121, edi70);
                   v20 = (IUnknown *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v126);
                 }
@@ -2478,7 +2478,7 @@ LABEL_121:
 LABEL_221:
           if ( dword_81DAD8[v120] != -1 )
           {
-            v124 = this->q024;
+            v124 = *(this + 9);
             v110 = ((__int16)v124 << 8) + 128;
             v111 = (SHIWORD(v124) << 8) + 128;
             v119 = 0x8000000080LL;
@@ -2522,22 +2522,22 @@ char __thiscall sub_483410(int this, int a2)
 }
 
 
-// ==== 0x00483460  HouseClass::checkAutoProduction  this=CellStruct  sig=csp ====
+// ==== 0x00483460  HouseClass::checkAutoProduction  this=HouseClass  sig=csp ====
 char __thiscall sub_483460(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = this->q050; /*0x483460*/
+  v1 = this->q140; /*0x483460*/
   if ( (v1 & 0x10) == 0 ) /*0x483468*/
     return 0; /*0x48347c*/
   LOBYTE(v1) = v1 & 0xEF; /*0x48346a*/
-  this->q050 = -1; /*0x48346c*/
-  this->q050 = v1; /*0x483473*/
+  this->unitRepairStations = -1; /*0x48346c*/
+  this->q140 = v1; /*0x483473*/
   return 1; /*0x48347b*/
 }
 
 
-// ==== 0x00483480  CellClass::DamageAllObjects  this=IUnknown  sig=csp ====
+// ==== 0x00483480  CellClass::DamageAllObjects  this=AbstractClass  sig=csp ====
 int __thiscall CellClass_DamageAllObjects(_DWORD *this)
 {
   _DWORD *i; // esi
@@ -2769,7 +2769,7 @@ char __thiscall CellClass::SpawnTiberiumTree(int this, char a2)
 }
 
 
-// ==== 0x004838E0  ObjectClass::IsCoordValidMap  this=ObjectClass  sig=csp ====
+// ==== 0x004838E0  ObjectClass::IsCoordValidMap  this=IUnknown  sig=csp ====
 char __thiscall IsCoordValidMap(int this, ObjectClass *aP1)
 {
   _DWORD *v3; // esi
@@ -3099,7 +3099,7 @@ LABEL_7:
 }
 
 
-// ==== 0x00483E30  TacticalClass::SetView  this=TacticalClass  sig=csp ====
+// ==== 0x00483E30  TacticalClass::SetView  this=IUnknown  sig=csp ====
 __int16 __thiscall TacticalClass_SetView(int this, int a2, int a3, __int16 a4, __int16 a5, __int16 a6, __int16 a7)
 {
   int v7; // eax
@@ -3826,7 +3826,7 @@ int __thiscall sub_484F50(int this)
 }
 
 
-// ==== 0x00484FF0  CellClass::GetUIName  this=CellStruct  sig=csp ====
+// ==== 0x00484FF0  CellClass::GetUIName  this=CellClass  sig=csp ====
 int __thiscall CellClass::GetUIName(int *this)
 {
   int BuildingByTiberiumType; // eax
@@ -3839,7 +3839,7 @@ int __thiscall CellClass::GetUIName(int *this)
 }
 
 
-// ==== 0x00485010  BuildingClass::FindByCellHash  this=IUnknown  sig=csp ====
+// ==== 0x00485010  BuildingClass::FindByCellHash  this=BuildingClass  sig=csp ====
 int __thiscall BuildingClass_FindByCellHash(_DWORD *this)
 {
   return FindBuildingByTiberiumType(this->q044);
@@ -3988,7 +3988,7 @@ _DWORD *__thiscall ObjectClass_SetMember09(_DWORD *this, _DWORD *a2)
 }
 
 
-// ==== 0x00485250  ObjectClass::SetTriggerTarget  this=IUnknown  sig=csp ====
+// ==== 0x00485250  ObjectClass::SetTriggerTarget  this=AbstractClass  sig=csp ====
 int __thiscall ObjectClass::SetTriggerTarget(_DWORD *this, int a2)
 {
   int v3; // eax
@@ -4038,7 +4038,7 @@ char __thiscall sub_4852D0(int this)
 }
 
 
-// ==== 0x00485390  CellClass::GetBridgeBitfield  this=AbstractClass  sig=csp ====
+// ==== 0x00485390  CellClass::GetBridgeBitfield  this=VectorClass  sig=csp ====
 int __thiscall CellClass_GetBridgeBitfield(_DWORD *this)
 {
   _DWORD *v1; // edx
@@ -4087,7 +4087,7 @@ LABEL_12:
 }
 
 
-// ==== 0x00485460  BuildingClass::CheckAdjacentCells  this=AbstractClass  sig=csp ====
+// ==== 0x00485460  BuildingClass::CheckAdjacentCells  this=BuildingClass  sig=csp ====
 char __thiscall BuildingClass_CheckAdjacentCells(int this)
 {
   int v2; // eax
@@ -4160,7 +4160,7 @@ char __thiscall BuildingClass_CheckAdjacentCells(int this)
 }
 
 
-// ==== 0x00485590  CellClass::ProcessBridgeRepair  this=CellClass  sig=csp ====
+// ==== 0x00485590  CellClass::ProcessBridgeRepair  this=VectorClass  sig=csp ====
 void __thiscall CellClass::ProcessBridgeRepair(_DWORD *this)
 {
   _DWORD *v1; // ebp
@@ -4463,7 +4463,7 @@ LABEL_17:
 }
 
 
-// ==== 0x00485AF0  BuildingClass::VisualizePlacement  this=BuildingClass  sig=csp ====
+// ==== 0x00485AF0  BuildingClass::VisualizePlacement  this=AbstractClass  sig=csp ====
 void __thiscall BuildingClass::VisualizePlacement(_BYTE *this)
 {
   _BYTE *v1; // ebp
@@ -4786,22 +4786,22 @@ LABEL_62:
 }
 
 
-// ==== 0x00486380  Cell::IsEmpty  this=Cell  sig=csp ====
+// ==== 0x00486380  Cell::IsEmpty  this=VectorClass  sig=csp ====
 bool __thiscall Cell_IsEmpty(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = this->Cell_field_0x38; /*0x486380*/
+  v1 = this->tail_E; /*0x486380*/
   return v1 == 0xFFFF || !v1; /*0x486390*/
 }
 
 
-// ==== 0x004863A0  ObjectClass::method_4863A0  this=ObjectClass  sig=csp ====
+// ==== 0x004863A0  ObjectClass::method_4863A0  this=VectorClass  sig=csp ====
 bool __thiscall sub_4863A0(int *this)
 {
   int v1; // eax
 
-  v1 = this->attachedBomb; /*0x4863a0*/
+  v1 = this->tail_E; /*0x4863a0*/
   return v1 >= g_CellTileLookup && v1 < g_CellTileLookup + 20 || v1 >= unk_AA1058 && v1 < unk_AA1058 + 12; /*0x4863c7*/
 }
 
@@ -5019,12 +5019,12 @@ bool __thiscall sub_486790(int *this)
 }
 
 
-// ==== 0x004867B0  Cell::IsShore  this=Cell  sig=csp ====
+// ==== 0x004867B0  Cell::IsShore  this=RandomMap  sig=csp ====
 bool __thiscall Cell_IsShore(int *this)
 {
   int v1; // eax
 
-  v1 = this->Cell_field_0x38; /*0x4867b0*/
+  v1 = this->RandomMap_field_0x38; /*0x4867b0*/
   return v1 == unk_AA0E18 || v1 >= unk_AA0748 && v1 < unk_AA0748 + 16; /*0x4867d0*/
 }
 
@@ -5359,7 +5359,7 @@ int __thiscall sub_486C50(int *this)
 }
 
 
-// ==== 0x00486D90  ObjectClass::method_486D90  this=IUnknown  sig=csp ====
+// ==== 0x00486D90  ObjectClass::method_486D90  this=SpeedType  sig=csp ====
 int __thiscall sub_486D90(_DWORD *this, char a2)
 {
   int v3; // ebx
@@ -5372,7 +5372,7 @@ int __thiscall sub_486D90(_DWORD *this, char a2)
   int v11; // [esp+10h] [ebp+4h]
 
   v3 = 1 << a2; /*0x486da4*/
-  if ( (this->q037 & (1 << a2)) == 0 ) /*0x486da8*/
+  if ( (*(this + 55) & (1 << a2)) == 0 ) /*0x486da8*/
     return -1; /*0x486dab*/
   v5 = 0; /*0x486db5*/
   v6 = 0; /*0x486db7*/
@@ -5382,7 +5382,7 @@ int __thiscall sub_486D90(_DWORD *this, char a2)
     if ( v7 ) /*0x486dbc*/
     {
       v9 = v5 & 7; /*0x486dc7*/
-      v10 = this->q024; /*0x486dca*/
+      v10 = *(this + 9); /*0x486dca*/
       LOWORD(v11) = LOWORD(MEMORY[0x89F688][v9]) + v10; /*0x486dee*/
       HIWORD(v11) = HIWORD(v10) + HIWORD(MEMORY[0x89F688][v9]); /*0x486df3*/
       v10 = v11; /*0x486e02*/
@@ -5401,7 +5401,7 @@ int __thiscall sub_486D90(_DWORD *this, char a2)
 }
 
 
-// ==== 0x00486E30  ObjectClass::Helper_486E30  this=IUnknown  sig=csp ====
+// ==== 0x00486E30  ObjectClass::Helper_486E30  this=ObjectClass  sig=csp ====
 int __thiscall Helper_486E30(__int16 *this)
 {
   __int16 *v2; // edi
@@ -5596,7 +5596,7 @@ BOOL __thiscall Cell::IsPassableOffset(_WORD *this, IUnknown *aP1)
 }
 
 
-// ==== 0x004870F0  HouseClass::HasType  this=CellStruct  sig=csp ====
+// ==== 0x004870F0  HouseClass::HasType  this=HouseClass  sig=csp ====
 BOOL __thiscall HouseClass_HasType(_WORD *this, int a2)
 {
   return *(this + a2 + 86) > 0; /*0x487101*/
@@ -5619,7 +5619,7 @@ _DWORD *__thiscall sub_487130(_DWORD *this, char a2)
 }
 
 
-// ==== 0x00487150  FootClass::checkTerrainSpeed  this=FootClass  sig=csp ====
+// ==== 0x00487150  FootClass::checkTerrainSpeed  this=IUnknown  sig=csp ====
 int __thiscall sub_487150(_WORD *this, int a2)
 {
   ++*(this + a2 + 62); /*0x487154*/
@@ -5635,7 +5635,7 @@ int __thiscall FootClass::updateLocomotion(_WORD *this, IUnknown *aP1)
 }
 
 
-// ==== 0x00487170  BuildingClass::processGarrison  this=CellStruct  sig=csp ====
+// ==== 0x00487170  BuildingClass::processGarrison  this=BuildingClass  sig=csp ====
 int __thiscall sub_487170(_WORD *this, int a2)
 {
   ++*(this + a2 + 86); /*0x487174*/
@@ -6316,7 +6316,7 @@ int __thiscall TerrainClass::SetFieldF8(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00487C80  ObjectClass::?GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ  this=CellStruct  sig=csp ====
+// ==== 0x00487C80  ObjectClass::?GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ  this=ObjectClass  sig=csp ====
 unsigned int __thiscall _GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ(
         Concurrency::details::SchedulerBase *this)
 {
@@ -6369,7 +6369,7 @@ int __thiscall Cell_GetSlopeIndex(int this)
 }
 
 
-// ==== 0x00487D70  CellClass::AttachObject  this=ObjectClass  sig=csp ====
+// ==== 0x00487D70  CellClass::AttachObject  this=AbstractClass  sig=csp ====
 char __thiscall CellClass_AttachObject(_DWORD *this, int a2)
 {
   int v3; // eax
@@ -6381,7 +6381,7 @@ char __thiscall CellClass_AttachObject(_DWORD *this, int a2)
     {
       this->q0E0 = a2; /*0x487dc8*/
       if ( (*(_BYTE *)(a2 + 20) & 4) != 0 ) /*0x487dd3*/
-        FootClass::Jumpjet_OccupyCell(this->objectTypeFlags); /*0x487dd9*/
+        FootClass::Jumpjet_OccupyCell(this->q024); /*0x487dd9*/
       return 1; /*0x487dde*/
     }
     else
@@ -6402,10 +6402,10 @@ char __thiscall CellClass_AttachObject(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00487DF0  Cell::IsBridge2  this=Cell  sig=csp ====
+// ==== 0x00487DF0  Cell::IsBridge2  this=Building  sig=csp ====
 bool __thiscall Cell_IsBridge2(_DWORD *this)
 {
-  return this->q03B == 5; /*0x487dfa*/
+  return *(this + 59) == 5; /*0x487dfa*/
 }
 
 
@@ -7629,7 +7629,7 @@ void CellChainReact()
 }
 
 
-// ==== 0x00489280  PlaySoundEffectAt  this=IUnknown  sig=csp ====
+// ==== 0x00489280  PlaySoundEffectAt  this=AbstractClass  sig=csp ====
 int __fastcall PlaySoundEffectAt(TechnoClass *aP0, IUnknown *aP1, _DWORD *a2, ObjectClass *aP3, char a5, int aP6)
 {
   ObjectClass *v8; // esi
@@ -8460,7 +8460,7 @@ LABEL_213:
 }
 
 
-// ==== 0x0048A4F0  GetWarheadVersusMultiplier  this=-  sig=csp ====
+// ==== 0x0048A4F0  GetWarheadVersusMultiplier  this=Coord  sig=csp ====
 int __fastcall GetWarheadVersusMultiplier(CoordStruct *aP0, BuildingTypeClass *aP1, CoordStruct *aP2, BulletClass *aP3)
 {
   CoordStruct *v4; // edi
@@ -8506,7 +8506,7 @@ int __fastcall GetWarheadVersusMultiplier(CoordStruct *aP0, BuildingTypeClass *a
 }
 
 
-// ==== 0x0048A620  CreateSmokeEffectAt  this=IUnknown  sig=csp ====
+// ==== 0x0048A620  CreateSmokeEffectAt  this=BulletClass  sig=csp ====
 char __fastcall CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7)
 {
   unsigned int v7; // eax
@@ -8633,7 +8633,7 @@ char __fastcall Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5,
 }
 
 
-// ==== 0x0048AB90  TechnoClass::ComputeScanRange  this=AbstractClass  sig=csp ====
+// ==== 0x0048AB90  TechnoClass::ComputeScanRange  this=TechnoClass  sig=csp ====
 __int64 __thiscall TechnoClass_ComputeScanRange(void *this, double a2)
 {
   double v2; // st7
@@ -8674,7 +8674,7 @@ bool __fastcall globalHelper_08ABC0(IUnknown *aP0, int a2, int a3, double a4)
 }
 
 
-// ==== 0x0048ACE0  Return::HRESULT_Fail  this=Coord  sig=csp ====
+// ==== 0x0048ACE0  Return::HRESULT_Fail  this=RecoilData  sig=csp ====
 int __stdcall Return::HRESULT_Fail(BulletClass *aP0, int a2, int a3)
 {
   return -15; /*0x48ace5*/

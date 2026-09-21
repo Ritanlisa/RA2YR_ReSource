@@ -14867,7 +14867,7 @@ void __thiscall String::AssignWideToChar(char *this, CampaignScore *aP1, Campaig
 }
 
 
-// ==== 0x0049B7E0  FillScoreScreenStats  this=-  sig=csp ====
+// ==== 0x0049B7E0  FillScoreScreenStats  this=WinModemClass  sig=csp ====
 void __fastcall FillScoreScreenStats(IUnknown *Destination, char a2)
 {
   IUnknown *v2; // ebp
@@ -16573,7 +16573,7 @@ char __thiscall SerializeCampaignOptions(char *this)
 }
 
 
-// ==== 0x0049D9F0  SideClass::FindByName  this=SideClass  sig=csp ====
+// ==== 0x0049D9F0  SideClass::FindByName  this=CampaignClass  sig=csp ====
 int __thiscall SideClass::FindByName(void *this)
 {
   int v3; // ebx
@@ -18231,7 +18231,7 @@ int sub_49F3A0()
 }
 
 
-// ==== 0x0049F420  RandomCoordScatter  this=-  sig=csp ====
+// ==== 0x0049F420  RandomCoordScatter  this=RecoilData  sig=csp ====
 int *__fastcall RandomCoordScatter(int *a0, IUnknown *aP1, int aP2, ScenarioClass *aP3)
 {
   char v5; // al
@@ -18408,7 +18408,7 @@ char CopyProtection::CheckProtectedData()
 }
 
 
-// ==== 0x0049F8B0  WinMain::CleanupResource  this=AnimClass  sig=csp ====
+// ==== 0x0049F8B0  WinMain::CleanupResource  this=AbstractClass  sig=csp ====
 LSTATUS __thiscall WinMain::CleanupResource(AnimClass *this)
 {
   LSTATUS result; // eax

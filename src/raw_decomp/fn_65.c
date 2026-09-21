@@ -991,7 +991,7 @@ char __stdcall Network_RecordEvent(
 }
 
 
-// ==== 0x00652230  ObjectClass::Render_Show  this=CampaignClass  sig=csp ====
+// ==== 0x00652230  ObjectClass::Render_Show  this=AbstractClass  sig=csp ====
 char Render_Show(CCINIClass *aP0, int a2)
 {
   int v2; // ecx
@@ -8976,7 +8976,7 @@ int __thiscall Array_Get(_DWORD *this, int a2)
 }
 
 
-// ==== 0x0065AD50  Array::Contains  this=AbstractClass  sig=csp ====
+// ==== 0x0065AD50  Array::Contains  this=IUnknown  sig=csp ====
 bool __thiscall Array::Contains(int *this, IUnknown *aP1)
 {
   int v2; // edx
@@ -9025,7 +9025,7 @@ int __thiscall RadioClass::FindLinkIndex(int *this, int a2)
 }
 
 
-// ==== 0x0065ADC0  RadioClass::HasFreeLink  this=TechnoClass  sig=csp ====
+// ==== 0x0065ADC0  RadioClass::HasFreeLink  this=AbstractClass  sig=csp ====
 char __thiscall RadioClass::HasFreeLink(int *this)
 {
   int v1; // edx
@@ -9036,7 +9036,7 @@ char __thiscall RadioClass::HasFreeLink(int *this)
   v2 = 0; /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
-  for ( i = (_DWORD *)this->flashing; *i; ++i ) /*0x65adcc*/
+  for ( i = (_DWORD *)this->q0E4; *i; ++i ) /*0x65adcc*/
   {
     if ( ++v2 >= v1 ) /*0x65addd*/
       return 0; /*0x65addd*/
@@ -9476,14 +9476,14 @@ int __thiscall RadSiteClass::SetRadLevel(_DWORD *this, int a2)
 }
 
 
-// ==== 0x0065B510  CellClass::GetOccupiedRatio  this=CellStruct  sig=csp ====
+// ==== 0x0065B510  CellClass::GetOccupiedRatio  this=CellClass  sig=csp ====
 int __thiscall sub_65B510(int *this)
 {
   int v1; // esi
 
-  v1 = this->q01B; /*0x65b511*/
+  v1 = this->CellClass_field_6C; /*0x65b511*/
   if ( v1 > 0 ) /*0x65b516*/
-    return this->q013 * this->q01C / v1; /*0x65b524*/
+    return this->CellClass_field_4C * this->rubble / v1; /*0x65b524*/
   else
     return 0; /*0x65b518*/
 }
@@ -10745,11 +10745,11 @@ int __thiscall Random::Range(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
 }
 
 
-// ==== 0x0065C890  ObjectClass::method_65C890  this=ObjectClass  sig=csp ====
+// ==== 0x0065C890  ObjectClass::method_65C890  this=BlowStraw  sig=csp ====
 _DWORD *__thiscall sub_65C890(_DWORD *this, int a2, int a3)
 {
   *this = a2; /*0x65c89a*/
-  this->vtable2 = a3; /*0x65c89c*/
+  this->BlowStraw_field_0x04 = a3; /*0x65c89c*/
   return this; /*0x65c89f*/
 }
 
@@ -13768,7 +13768,7 @@ void ScreenEffect::StubReturn()
 }
 
 
-// ==== 0x0065FA70  CreateTriggerClassIfFarEnough  this=-  sig=csp ====
+// ==== 0x0065FA70  CreateTriggerClassIfFarEnough  this=RandomStruct  sig=csp ====
 char __fastcall CreateTriggerClassIfFarEnough(IUnknown *aP0, int a2, IUnknown *aP2)
 {
   IUnknown *v3; // edi

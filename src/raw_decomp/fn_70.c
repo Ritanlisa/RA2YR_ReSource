@@ -1409,7 +1409,7 @@ int __thiscall TechnoClass::UpdatePowerDrain(char *this, TechnoClass *aP1, int a
 }
 
 
-// ==== 0x00703B10  TechnoClass::CheckTargetCell  this=AbstractClass  sig=csp ====
+// ==== 0x00703B10  TechnoClass::CheckTargetCell  this=ObjectClass  sig=csp ====
 char __thiscall TechnoClass_CheckTargetCell(_BYTE *this)
 {
   _DWORD *v2; // esi
@@ -1429,7 +1429,7 @@ char __thiscall TechnoClass_CheckTargetCell(_BYTE *this)
 
   v12 = *(_DWORD *)(*(int (__thiscall **)(_BYTE *, int *))(this->q6E0)(this, &v16); /*0x703b34*/
   v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x703b3d*/
-  if ( !v2 || this->q08C ) /*0x703b47*/
+  if ( !v2 || this->onBridge ) /*0x703b47*/
     return 0; /*0x703b47*/
   LOWORD(v13) = v12 + MEMORY[0x89F698]; /*0x703b6c*/
   HIWORD(v13) = HIWORD(v12) + HIWORD(MEMORY[0x89F698]); /*0x703b71*/
@@ -4182,7 +4182,7 @@ int __thiscall BuildingClass::_vt179(#377 *this)
 }
 
 
-// ==== 0x00708080  TechnoClass::EvaluateMission  this=AbstractClass  sig=csp ====
+// ==== 0x00708080  TechnoClass::EvaluateMission  this=IUnknown  sig=csp ====
 char __thiscall TechnoClass::EvaluateMission(void *this, TechnoClass *aP1)
 {
   int v3; // ebp
@@ -4273,7 +4273,7 @@ char __thiscall TechnoClass::EvaluateMission(void *this, TechnoClass *aP1)
             if ( (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)aP1->__pad_0 + 44))(aP1) == 15 /*0x708144*/
               || (v4 = (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)aP1->__pad_0 + 44))(aP1), v4 == 1) )
             {
-              v4 = (*(int (__thiscall **)(void *))(this->__pad_210)(this); /*0x70814e*/
+              v4 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 132))(this); /*0x70814e*/
               if ( !*(_BYTE *)(v4 + 562) ) /*0x708154*/
               {
                 if ( (aP1->abstractFlags & 4) == 0 ) /*0x70816f*/
@@ -4530,7 +4530,7 @@ LABEL_112:
                               v26 = TechnoClass::ComputeThreatLevel((AbstractClass **)v19, (AbstractClass *)aP1); /*0x7085a4*/
                               if ( v26 ) /*0x7085ab*/
                               {
-                                if ( !this->q2DC ) /*0x7085ad*/
+                                if ( !*((_DWORD *)this + 183) ) /*0x7085ad*/
                                 {
                                   v27 = v26 < 0; /*0x7085b7*/
                                   if ( v26 > 0 ) /*0x7085b9*/
@@ -4603,7 +4603,7 @@ LABEL_110:
 }
 
 
-// ==== 0x007087C0  ObjectClass::ValidateAttackTarget  this=AbstractClass  sig=csp ====
+// ==== 0x007087C0  ObjectClass::ValidateAttackTarget  this=IUnknown  sig=csp ====
 bool __thiscall ValidateAttackTarget(int this, TechnoClass *aP1, int a3)
 {
   int v4; // ecx
@@ -4619,7 +4619,7 @@ bool __thiscall ValidateAttackTarget(int this, TechnoClass *aP1, int a3)
   double v15; // [esp+10h] [ebp-8h]
 
   if ( !aP1 /*0x708817*/
-    || !*(_BYTE *)((*(int (__thiscall **)(int))(this->__pad_210)(this) + 3482)
+    || !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)this + 132))(this) + 3482)
     || *(_DWORD *)(this + 732)
     || *(_DWORD *)(this + 728)
     || *(_DWORD *)(this + 460) && !*(_BYTE *)(*(_DWORD *)(this + 540) + 492) )
@@ -4651,7 +4651,7 @@ bool __thiscall ValidateAttackTarget(int this, TechnoClass *aP1, int a3)
     return 0; /*0x7088b2*/
   if ( !(*(unsigned __int8 (__thiscall **)(int))(this->q0AB)(this) ) /*0x7088bc*/
     return 0; /*0x7088bc*/
-  v5 = (*(int (__thiscall **)(int))(this->__pad_210)(this); /*0x7088d9*/
+  v5 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 132))(this); /*0x7088d9*/
   v6 = (*(int (__thiscall **)(int, TechnoClass *))(this->q0B9)(this, aP1); /*0x7088e1*/
   v7 = (*(int (__thiscall **)(int, TechnoClass *, int))(this->q3BC)(this, aP1, v6); /*0x7088ed*/
   if ( v7 == 5 || v7 == 6 ) /*0x7088ff*/
@@ -4663,7 +4663,7 @@ bool __thiscall ValidateAttackTarget(int this, TechnoClass *aP1, int a3)
       return 0; /*0x708935*/
     if ( VeterancyStruct::IsVeteran((float *)(this + 336)) || VeterancyStruct::IsElite((float *)(this + 336)) ) /*0x708956*/
     {
-      v8 = (*(int (__thiscall **)(int))(this->__pad_210)(this); /*0x70896b*/
+      v8 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 132))(this); /*0x70896b*/
       if ( VeterancyStruct::IsVeteran((float *)(this + 336)) ) /*0x70896d*/
       {
         if ( *(_BYTE *)(v8 + 682) ) /*0x708976*/
@@ -5084,7 +5084,7 @@ int __thiscall TechnoClass::VoiceAttack(#377 *this)
 }
 
 
-// ==== 0x007091D0  FootClass::CanEnterBuilding  this=AbstractClass  sig=csp ====
+// ==== 0x007091D0  FootClass::CanEnterBuilding  this=IUnknown  sig=csp ====
 bool __thiscall sub_7091D0(int *this)
 {
   int v2; // ecx
@@ -5093,13 +5093,13 @@ bool __thiscall sub_7091D0(int *this)
 
   result = 0; /*0x70927e*/
   if ( !(*(unsigned __int8 (__thiscall **)(int *))(*this + 476))(this) /*0x709226*/
-    && !this->q2DC
+    && !*(this + 183)
     && *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3481)
     && ((*(int (__thiscall **)(int *))(*this + 44))(this) != 6
-     || !*(_BYTE *)(this->__pad_148 + 5499)
+     || !*(_BYTE *)(this->q520 + 5499)
      || (*(int (__thiscall **)(int *))(*this + 1032))(this)) )
   {
-    v2 = this->q2BC; /*0x709230*/
+    v2 = *(this + 175); /*0x709230*/
     v3 = v2 && CaptureManagerClass::CannotControlAnyMore(v2); /*0x709243*/
     if ( (!(*(unsigned __int8 (__thiscall **)(int *))(*this + 816))(this) /*0x70926e*/
        || !(unsigned __int8)House::IsCurrentPlayer((#375 *)this->q21C))
@@ -7196,7 +7196,7 @@ void __thiscall TechnoClass_RevealOwnCell(_DWORD *this)
 }
 
 
-// ==== 0x0070CD10  TechnoClass::ComputeDamage  this=AbstractClass  sig=csp ====
+// ==== 0x0070CD10  TechnoClass::ComputeDamage  this=IUnknown  sig=csp ====
 double __thiscall TechnoClass::ComputeDamage(_DWORD *this, ObjectClass *aP1, _DWORD *a2)
 {
   _DWORD *v4; // ebx
@@ -8068,7 +8068,7 @@ int __thiscall sub_70DDC0(_DWORD *this)
 }
 
 
-// ==== 0x0070DDD0  TechnoClass::SetSpread  this=AbstractClass  sig=csp ====
+// ==== 0x0070DDD0  TechnoClass::SetSpread  this=IUnknown  sig=csp ====
 int __thiscall TechnoClass::SetSpread(_DWORD *this, BuildingTypeClass *aP1)
 {
   BuildingTypeClass *result; // eax
@@ -8087,14 +8087,14 @@ int __thiscall TechnoClass_GetMember81(_DWORD *this)
 }
 
 
-// ==== 0x0070DE00  TechnoClass::SetMember81  this=AbstractClass  sig=csp ====
+// ==== 0x0070DE00  TechnoClass::SetMember81  this=IUnknown  sig=csp ====
 int __thiscall TechnoClass::SetMember81(_DWORD *this, BuildingTypeClass *aP1)
 {
   BuildingTypeClass *result; // eax
 
   result = aP1; /*0x70de00*/
   if ( (int)aP1 >= 0 ) /*0x70de06*/
-    this->q144 = aP1; /*0x70de08*/
+    *(this + 81) = aP1; /*0x70de08*/
   return (int)result->vtable0; /*0x70de0e*/
 }
 
@@ -9671,14 +9671,14 @@ int __thiscall sub_70F770(_DWORD *this)
 }
 
 
-// ==== 0x0070F7E0  FootClass::updateThreat  this=AbstractClass  sig=csp ====
+// ==== 0x0070F7E0  FootClass::updateThreat  this=IUnknown  sig=csp ====
 bool __thiscall sub_70F7E0(_DWORD *this)
 {
   int v1; // edx
   int v2; // eax
 
-  v1 = this->q600; /*0x70f7e0*/
-  v2 = this->q620; /*0x70f7e6*/
+  v1 = this->q018; /*0x70f7e0*/
+  v2 = *(this + 98); /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
     if ( (int)MEMORY[0xA8ED84] - v1 < v2 ) /*0x70f7fb*/
@@ -9848,21 +9848,21 @@ int __thiscall BuildingClass::FindBridgeCell(#377 *this)
 }
 
 
-// ==== 0x0070FB50  TechnoClass::CanSelfRepair  this=TechnoClass  sig=csp ====
+// ==== 0x0070FB50  TechnoClass::CanSelfRepair  this=IUnknown  sig=csp ====
 bool __thiscall TechnoClass::CanSelfRepair(_BYTE *this)
 {
   _DWORD *v3; // eax
 
-  if ( !*(_BYTE *)((*(int (__thiscall **)(_BYTE *))(this->hasParachute)(this) + 3374) ) /*0x70fb5b*/
+  if ( !*(_BYTE *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 132))(this) + 3374) ) /*0x70fb5b*/
     return 0; /*0x70fb65*/
-  if ( !*(_BYTE *)((*(int (__thiscall **)(_BYTE *))(this->hasParachute)(this) + 3233) ) /*0x70fb73*/
+  if ( !*(_BYTE *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 132))(this) + 3233) ) /*0x70fb73*/
     return 0; /*0x70fb7d*/
-  v3 = (_DWORD *)(*(int (__thiscall **)(_BYTE *))(this->isChronoImmuneFlag)(this); /*0x70fb85*/
+  v3 = (_DWORD *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 1012))(this); /*0x70fb85*/
   if ( !v3 || !*v3 ) /*0x70fb8f*/
     return 0; /*0x70fb94*/
-  if ( *(_DWORD *)((*(int (__thiscall **)(_BYTE *))(this->hasParachute)(this) + 1660) == 3 ) /*0x70fba9*/
+  if ( *(_DWORD *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 132))(this) + 1660) == 3 ) /*0x70fba9*/
     return 0; /*0x70fbab*/
-  return !this || (this->abstractFlags & 4) == 0 || !this->q1A5; /*0x70fbb9*/
+  return !this || (this->q005 & 4) == 0 || !this->q1A5; /*0x70fbb9*/
 }
 
 
@@ -10046,10 +10046,10 @@ BOOL __thiscall sub_70FEB0(_DWORD *this)
 }
 
 
-// ==== 0x0070FEC0  ObjectClass::HasLocation  this=ObjectClass  sig=csp ====
+// ==== 0x0070FEC0  ObjectClass::HasLocation  this=IUnknown  sig=csp ====
 BOOL __thiscall ObjectClass_HasLocation(_DWORD *this)
 {
-  return this->q1D0 != 0; /*0x70fecd*/
+  return this->q01D != 0; /*0x70fecd*/
 }
 
 

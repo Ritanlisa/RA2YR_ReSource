@@ -954,7 +954,7 @@ int *__thiscall sub_5B2970(__int16 *this, int *a2, int a3)
 }
 
 
-// ==== 0x005B2990  Math::Abs16Cmp  this=AbstractClass  sig=csp ====
+// ==== 0x005B2990  Math::Abs16Cmp  this=RecoilData  sig=csp ====
 bool __thiscall Math::Abs16Cmp(_WORD *this, IUnknown *aP1, IUnknown *aP2)
 {
   return abs16(aP2->field_0) >= (int)abs16(*this - LOWORD(aP1->field_0)); /*0x5b29b3*/
@@ -987,7 +987,7 @@ char __thiscall sub_5B29C0(__int16 *this, __int16 *a2, __int16 *a3)
 }
 
 
-// ==== 0x005B2A30  Movement::UpdateLocomotion  this=AbstractClass  sig=csp ====
+// ==== 0x005B2A30  Movement::UpdateLocomotion  this=RecoilData  sig=csp ====
 void __thiscall Movement::UpdateLocomotion(double *this, IUnknown *aP1)
 {
   double v3; // st7
@@ -995,19 +995,19 @@ void __thiscall Movement::UpdateLocomotion(double *this, IUnknown *aP1)
   double v5; // [esp+18h] [ebp-10h]
   double v6; // [esp+20h] [ebp-8h]
 
-  v3 = Math::Sqrt(*this * *this + this->vtable2 * this->vtable2); /*0x5b2a57*/
-  v4 = Math::CalcAngle(this->vtable3, v3); /*0x5b2a72*/
+  v3 = Math::Sqrt(*this * *this + *(this + 1) * *(this + 1)); /*0x5b2a57*/
+  v4 = Math::CalcAngle(*(this + 2), v3); /*0x5b2a72*/
   v5 = (double)((__int16)Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427) - 0x3FFF) /*0x5b2aa2*/
      * -0.00009587672516830327;
-  v6 = Math::Sqrt(this->vtable3 * this->vtable3 + *this * *this + this->vtable2 * this->vtable2); /*0x5b2acc*/
+  v6 = Math::Sqrt(*(this + 2) * *(this + 2) + *this * *this + *(this + 1) * *(this + 1)); /*0x5b2acc*/
   if ( v5 != 0.0 ) /*0x5b2ae2*/
   {
     *this = *this / Math::ArcTan2(v5); /*0x5b2af7*/
-    this->vtable2 = this->vtable2 / Math::ArcTan2(v5); /*0x5b2b04*/
+    *(this + 1) = *(this + 1) / Math::ArcTan2(v5); /*0x5b2b04*/
   }
   *this = Math::ArcTan2((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * *this; /*0x5b2b2e*/
-  this->vtable2 = Math::ArcTan2((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * this->vtable2; /*0x5b2b51*/
-  this->vtable3 = Math::SinCos((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * v6; /*0x5b2b7b*/
+  *(this + 1) = Math::ArcTan2((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * *(this + 1); /*0x5b2b51*/
+  *(this + 2) = Math::SinCos((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * v6; /*0x5b2b7b*/
 }
 
 
@@ -1836,7 +1836,7 @@ char __thiscall MissionClass::LoadFromINI(int *this, _DWORD *a2)
 }
 
 
-// ==== 0x005B3910  ObjectClass::LookupWaypointName  this=ObjectTypeClass  sig=csp ====
+// ==== 0x005B3910  ObjectClass::LookupWaypointName  this=Coord  sig=csp ====
 int __thiscall LookupWaypointName(void *this)
 {
   int v2; // edi
@@ -2210,7 +2210,7 @@ void __thiscall sub_5B3F50(void *this)
 }
 
 
-// ==== 0x005B3FF0  InsertIntoHashTree  this=-  sig=csp ====
+// ==== 0x005B3FF0  InsertIntoHashTree  this=AbstractClass  sig=csp ====
 _DWORD *__fastcall sub_5B3FF0(_DWORD *a1, _DWORD *a2)
 {
   _DWORD *result; // eax
@@ -2242,7 +2242,7 @@ void __thiscall Tree_Destructor(_DWORD *this)
 }
 
 
-// ==== 0x005B40B0  SearchMIXFile  this=ObjectClass  sig=csp ====
+// ==== 0x005B40B0  SearchMIXFile  this=char*  sig=csp ====
 void *__fastcall SearchMIXFile(char *Source, char a2)
 {
   int v3; // edi
@@ -2444,7 +2444,7 @@ void __thiscall sub_5B4400(int this)
 }
 
 
-// ==== 0x005B4430  LookupFileInfoCache  this=ObjectClass  sig=csp ====
+// ==== 0x005B4430  LookupFileInfoCache  this=AbstractClass  sig=csp ====
 char __fastcall FileInfoCache_Lookup(const char *a1, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5)
 {
   int v5; // eax
@@ -6729,7 +6729,7 @@ HKEY __fastcall sub_5BB580(HKEY a1, const CHAR *a2, const char *a3)
 }
 
 
-// ==== 0x005BB6E0  Modem::EnumerateDevices  this=ObjectClass  sig=csp ====
+// ==== 0x005BB6E0  Modem::EnumerateDevices  this=AbstractClass  sig=csp ====
 int __thiscall Modem::EnumerateDevices(int this, WinModemClass *aP1)
 {
   BYTE *v4; // eax
@@ -7986,7 +7986,7 @@ char __thiscall Debug::ScrollText(int this, CellStruct *aP1)
 }
 
 
-// ==== 0x005BD1F0  Debug::Printf  this=IUnknown  sig=csp ====
+// ==== 0x005BD1F0  Debug::Printf  this=AbstractClass  sig=csp ====
 char __thiscall Debug::Printf(IUnknown *this)
 {
   char result; // al
@@ -8184,25 +8184,25 @@ _DWORD *__thiscall sub_5BD560(_DWORD *this)
 }
 
 
-// ==== 0x005BD570  File::LoadFileHVA  this=AbstractClass  sig=csp ====
+// ==== 0x005BD570  File::LoadFileHVA  this=IUnknown  sig=csp ====
 _DWORD *__thiscall HVA_LoadFile(_DWORD *this, int a2)
 {
   *(_BYTE *)this = 0; /*0x5bd575*/
-  this->vtable2 = 0; /*0x5bd577*/
-  this->vtable3 = 0; /*0x5bd57a*/
-  this->vtable4 = 0; /*0x5bd57d*/
+  this->q004 = 0; /*0x5bd577*/
+  this->q008 = 0; /*0x5bd57a*/
+  this->q00C = 0; /*0x5bd57d*/
   if ( !File::ParseFileHVA(a2) ) /*0x5bd585*/
     *(_BYTE *)this = 1; /*0x5bd58e*/
   return this; /*0x5bd593*/
 }
 
 
-// ==== 0x005BD5A0  String::Release  this=CampaignClass  sig=csp ====
+// ==== 0x005BD5A0  String::Release  this=String  sig=csp ====
 void __thiscall String_Release(void **this)
 {
-  if ( this->vtable4 ) /*0x5bd5a3*/
-    __3_YAXPAX_Z(this->vtable4); /*0x5bd5ab*/
-  this->vtable4 = 0; /*0x5bd5b3*/
+  if ( *(this + 3) ) /*0x5bd5a3*/
+    __3_YAXPAX_Z(*(this + 3)); /*0x5bd5ab*/
+  *(this + 3) = 0; /*0x5bd5b3*/
 }
 
 
@@ -9902,7 +9902,7 @@ void Movie::Play(CCINIClass *aP0, int a2, CCINIClass *aP2, IUnknown *aP3, char a
 }
 
 
-// ==== 0x005BF260  Movie::PlayWrapper  this=Movie  sig=csp ====
+// ==== 0x005BF260  Movie::PlayWrapper  this=RandomStruct  sig=csp ====
 char __thiscall Movie::Update(int this)
 {
   int IsSoundEnabled; // eax
@@ -9968,7 +9968,7 @@ int __thiscall sub_5BF360(int this)
 }
 
 
-// ==== 0x005BF390  EnqueueAsyncIOMovie  this=-  sig=ida-proto ====
+// ==== 0x005BF390  EnqueueAsyncIOMovie  this=RandomStruct  sig=ida-proto ====
 void __fastcall sub_5BF390(int a1, char a2)
 {
   int v3; // ecx

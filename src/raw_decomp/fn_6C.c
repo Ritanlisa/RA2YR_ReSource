@@ -9193,13 +9193,13 @@ int sub_6C95C0()
 }
 
 
-// ==== 0x006C95E0  Delegate::GetField  this=IUnknown  sig=csp ====
+// ==== 0x006C95E0  Delegate::GetField  this=Delegate  sig=csp ====
 _DWORD *__thiscall Delegate::GetField(_DWORD *this)
 {
   *this = 0; /*0x6c95e6*/
-  this->q004 = 0; /*0x6c95e8*/
-  this->q008 = 0; /*0x6c95eb*/
-  this->q00C = 0; /*0x6c95ee*/
+  this->m_count = 0; /*0x6c95e8*/
+  this->Delegate_field_08 = 0; /*0x6c95eb*/
+  this->m_allocated = 0; /*0x6c95ee*/
   return this; /*0x6c95f1*/
 }
 
@@ -9503,7 +9503,7 @@ _DWORD *__thiscall sub_6C9900(_DWORD *this)
 }
 
 
-// ==== 0x006C9930  BinkMovie::Destroy  this=CampaignClass  sig=csp ====
+// ==== 0x006C9930  BinkMovie::Destroy  this=AbstractClass  sig=csp ====
 void __thiscall sub_6C9930(void **this)
 {
   if ( this->abstractFlags ) /*0x6c9930*/
@@ -9558,7 +9558,7 @@ int sub_6C99B0()
 }
 
 
-// ==== 0x006C99D0  BinkMovie::CreateSurfaceTracker  this=char*  sig=csp ====
+// ==== 0x006C99D0  BinkMovie::CreateSurfaceTracker  this=AbstractClass  sig=csp ====
 int *__thiscall BinkMovie::CreateSurfaceTracker(char *FullPath)
 {
   int *v2; // esi
@@ -9618,7 +9618,7 @@ _DWORD *__thiscall sub_6C9AC0(_DWORD *this)
 }
 
 
-// ==== 0x006C9AE0  BinkMovie::FreeSurfaceTracker  this=CampaignClass  sig=csp ====
+// ==== 0x006C9AE0  BinkMovie::FreeSurfaceTracker  this=AbstractClass  sig=csp ====
 int __thiscall BinkMovie_FreeSurfaceTracker(int *this)
 {
   int result; // eax
@@ -13609,7 +13609,7 @@ SuperClass *__thiscall SuperClass::ProcessEvent(void *Block, char a2)
 }
 
 
-// ==== 0x006CE240  Coord3D::Add  this=BuildingTypeClass  sig=csp ====
+// ==== 0x006CE240  Coord3D::Add  this=AbstractClass  sig=csp ====
 _DWORD *__thiscall Coord3D::Add(_DWORD *this, IUnknown *aP1, AnimClass *aP2)
 {
   char *v3; // esi
@@ -14318,7 +14318,7 @@ int __thiscall ObjectTypeClass_Read(void *this)
 }
 
 
-// ==== 0x006CEEB0  SuperWeaponTypeClass::FindFirstOfAction  this=SuperWeaponTypeClass  sig=csp ====
+// ==== 0x006CEEB0  SuperWeaponTypeClass::FindFirstOfAction  this=AbstractClass  sig=csp ====
 int __thiscall SuperWeaponTypeClass::FindFirstOfAction(void *this)
 {
   int v1; // eax
@@ -15322,7 +15322,7 @@ void __cdecl sub_6CFC60()
 }
 
 
-// ==== 0x006CFCC0  SidebarClass::findEntryIndexByName  this=char*  sig=csp ====
+// ==== 0x006CFCC0  SidebarClass::findEntryIndexByName  this=Coord  sig=csp ====
 int __thiscall sub_6CFCC0(const char *this)
 {
   int v1; // ebp
@@ -15341,7 +15341,7 @@ int __thiscall sub_6CFCC0(const char *this)
 }
 
 
-// ==== 0x006CFD20  globalHelper_0CFD20  this=char*  sig=csp ====
+// ==== 0x006CFD20  globalHelper_0CFD20  this=Coord  sig=csp ====
 void __fastcall sub_6CFD20(int a1, int a2)
 {
   MEMORY[0xB0CB78][a1] = a2; /*0x6cfd20*/

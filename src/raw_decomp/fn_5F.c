@@ -90,7 +90,7 @@ LABEL_3:
 }
 
 
-// ==== 0x005F0180  HandlePlayerDisconnection  this=-  sig=ida-proto ====
+// ==== 0x005F0180  HandlePlayerDisconnection  this=AbstractClass  sig=ida-proto ====
 char __fastcall HandlePlayerDisconnection(int a1, int a2)
 {
   char result; // al
@@ -891,7 +891,7 @@ _DWORD *__thiscall sub_5F15C0(_DWORD *this, int a2, int a3, int a4, __int16 a5)
 }
 
 
-// ==== 0x005F16E0  NullModemClass::Init  this=AnimClass  sig=csp ====
+// ==== 0x005F16E0  NullModemClass::Init  this=AbstractClass  sig=csp ====
 int __thiscall NullModemClass::Init(
         AnimClass *this,
         int a2,
@@ -4586,7 +4586,7 @@ LABEL_19:
 }
 
 
-// ==== 0x005F5B50  ObjectClass::SetReference  this=IUnknown  sig=csp ====
+// ==== 0x005F5B50  ObjectClass::SetReference  this=AbstractClass  sig=csp ====
 char __thiscall ObjectClass_SetReference(_DWORD *this, int a2)
 {
   int v2; // eax
@@ -4657,14 +4657,14 @@ double __thiscall BuildingClass_GetHealthRatio(int *this)
 }
 
 
-// ==== 0x005F5CD0  BuildingClass::IsHealthLow  this=IUnknown  sig=csp ====
+// ==== 0x005F5CD0  BuildingClass::IsHealthLow  this=TechnoClass  sig=csp ====
 BOOL __thiscall BuildingClass::IsHealthLow(int *this)
 {
   double v3; // [esp+4h] [ebp-8h]
 
-  v3 = (double)this->q06C; /*0x5f5cdb*/
+  v3 = (double)this->health; /*0x5f5cdb*/
   return v3 / (double)*(int *)((*(int (__thiscall **)(int *))(*this + 136))(this) + 160) <= *(double *)(MEMORY[0x87F7E8][7806] + 5896) /*0x5f5d0e*/
-      && this->q06C > 0;
+      && this->health > 0;
 }
 
 
@@ -4697,7 +4697,7 @@ BOOL __thiscall ObjectClass::IsGreenHP(int *this)
 }
 
 
-// ==== 0x005F5DD0  BuildingClass::GetSellPriority  this=ObjectClass  sig=csp ====
+// ==== 0x005F5DD0  BuildingClass::GetSellPriority  this=BuildingClass  sig=csp ====
 int __thiscall BuildingClass_GetSellPriority(int *this)
 {
   int result; // eax
@@ -4750,10 +4750,10 @@ int __thiscall BuildingClass::SaveLoad_Register(#374 *this)
 }
 
 
-// ==== 0x005F5F00  ObjectClass::GetLandHeight  this=TechnoClass  sig=csp ====
+// ==== 0x005F5F00  ObjectClass::GetLandHeight  this=AbstractClass  sig=csp ====
 int __thiscall ObjectClass_GetLandHeight(_BYTE *this)
 {
-  return *(char *)((*(int (__thiscall **)(_BYTE *))(this->q1BC)(this) + 283) + (this->onBridge != 0 ? 4 : 0);
+  return *(char *)((*(int (__thiscall **)(_BYTE *))(this->q6F0)(this) + 283) + (this->q08C != 0 ? 4 : 0);
 }
 
 
@@ -5550,7 +5550,7 @@ int __thiscall ObjectClass::GetCoords_Alt(#374 *this)
 }
 
 
-// ==== 0x005F6CB0  ObjectClass::CheckFlagD0  this=ObjectClass  sig=csp ====
+// ==== 0x005F6CB0  ObjectClass::CheckFlagD0  this=ParticleSystemClass  sig=csp ====
 int __thiscall ObjectClass::CheckFlagD0(_DWORD *this, IUnknown *aP1)
 {
   IUnknown *result; // eax
@@ -8097,7 +8097,7 @@ DynamicVector *__thiscall VectorClass_ptr_ObjectTypeClass::Constructor_VectorCla
 }
 
 
-// ==== 0x005F9E80  Checksummer::HashString  this=ObjectTypeClass  sig=csp ====
+// ==== 0x005F9E80  Checksummer::HashString  this=AbstractClass  sig=csp ====
 int __thiscall Checksummer::HashString(char *Source)
 {
   int v1; // ebp
@@ -11617,7 +11617,7 @@ _DWORD *__thiscall ObjectClass::RegisterInArray(_DWORD *this, AbstractClass *aP1
 }
 
 
-// ==== 0x005FF2D0  BuildingLightQueue::RemoveEntry  this=AbstractTypeClass  sig=csp ====
+// ==== 0x005FF2D0  BuildingLightQueue::RemoveEntry  this=AbstractClass  sig=csp ====
 int __thiscall BuildingLightQueue::RemoveEntry(void *this)
 {
   int result; // eax
@@ -11874,7 +11874,7 @@ void sub_5FF800()
 }
 
 
-// ==== 0x005FF850  BuildingLight::CalculateShading  this=AbstractTypeClass  sig=csp ====
+// ==== 0x005FF850  BuildingLight::CalculateShading  this=BuildingLight  sig=csp ====
 char __thiscall BuildingLight::CalculateShading(IUnknown *this)
 {
   int ebx1; // ebx

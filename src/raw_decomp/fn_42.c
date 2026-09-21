@@ -1117,7 +1117,7 @@ int __fastcall UpdateSpotlightsFoo(int *a1, int *a2)
 }
 
 
-// ==== 0x00421350  ObjectClass::RenderAlphaShapes  this=AbstractClass  sig=csp ====
+// ==== 0x00421350  ObjectClass::RenderAlphaShapes  this=IUnknown  sig=csp ====
 int __thiscall RenderAlphaShapes(int *this)
 {
   int result; // eax
@@ -2357,7 +2357,7 @@ void __fastcall AnimClass::Destruct(#374 *this, AbstractClass *a2)
 }
 
 
-// ==== 0x00422B20  GlobalArray::FindString  this=char*  sig=csp ====
+// ==== 0x00422B20  GlobalArray::FindString  this=INIClass  sig=csp ====
 int __thiscall GlobalArray::FindString(void *this)
 {
   int v2; // esi
@@ -3903,7 +3903,7 @@ LABEL_187:
 }
 
 
-// ==== 0x00424B50  BuildingClass::AimTurret  this=AnimClass  sig=csp ====
+// ==== 0x00424B50  BuildingClass::AimTurret  this=AbstractClass  sig=csp ====
 void __thiscall BuildingClass::AimTurret(_DWORD *this, IUnknown *aP1)
 {
   _BYTE *v3; // ebp
@@ -3927,10 +3927,10 @@ void __thiscall BuildingClass::AimTurret(_DWORD *this, IUnknown *aP1)
   int v21; // [esp+24h] [ebp-10h]
   _BYTE v22[12]; // [esp+28h] [ebp-Ch] BYREF
 
-  v3 = (_BYTE *)this->AnimClass_field_0xCC; /*0x424b59*/
+  v3 = (_BYTE *)this->q0CC; /*0x424b59*/
   if ( v3 ) /*0x424b61*/
   {
-    v4 = this->isOnMap; /*0x424b67*/
+    v4 = this->q074; /*0x424b67*/
     if ( v4 ) /*0x424b6c*/
       RemoveTarget((IUnknown *)this); /*0x424b74*/
     v5 = 0; /*0x424b7f*/
@@ -3939,7 +3939,7 @@ void __thiscall BuildingClass::AimTurret(_DWORD *this, IUnknown *aP1)
       v6 = *(AudioController **)&HouseClass_Player.__pad_5568[22264]; /*0x424b85*/
       do /*0x424ba5*/
       {
-        if ( *(_DWORD **)v6->__pad_0 != this && *(_DWORD *)(*(_DWORD *)v6->__pad_0 + 204) == this->AnimClass_field_0xCC ) /*0x424b9d*/
+        if ( *(_DWORD **)v6->__pad_0 != this && *(_DWORD *)(*(_DWORD *)v6->__pad_0 + 204) == this->q0CC ) /*0x424b9d*/
           break; /*0x424b9d*/
         ++v5; /*0x424b9f*/
         v6 = (AudioController *)((char *)v6 + 4); /*0x424ba0*/
@@ -3957,7 +3957,7 @@ void __thiscall BuildingClass::AimTurret(_DWORD *this, IUnknown *aP1)
     v8 = v7[2]; /*0x424bda*/
     v9 = *this; /*0x424bdd*/
     v19 = v8; /*0x424be2*/
-    this->AnimClass_field_0xCC = 0; /*0x424be6*/
+    this->q0CC = 0; /*0x424be6*/
     (*(void (__thiscall **)(_DWORD *, int *))(v9 + 436))(this, &v17); /*0x424bf0*/
     if ( v4 ) /*0x424bf8*/
       Targeting::Readd((IUnknown *)this); /*0x424c00*/
@@ -3970,7 +3970,7 @@ void __thiscall BuildingClass::AimTurret(_DWORD *this, IUnknown *aP1)
     v21 = v10[2]; /*0x424c22*/
     RemoveTarget((IUnknown *)this); /*0x424c2b*/
     aP1->__pad_68[28] = 1; /*0x424c30*/
-    this->AnimClass_field_0xCC = aP1; /*0x424c37*/
+    this->q0CC = aP1; /*0x424c37*/
     v13 = (_DWORD *)(*(int (__thiscall **)(IUnknown *, _BYTE *))(aP1->field_0 + 72))(aP1, v22); /*0x424c46*/
     v14 = v11 - *v13; /*0x424c51*/
     v15 = *this; /*0x424c5d*/
@@ -5347,7 +5347,7 @@ _WORD *__thiscall Cell::GetHeight(_WORD *this, BuildingTypeClass *aP1, int *a2)
 }
 
 
-// ==== 0x00426620  ??4type_info_AAEAAV0_ABV0__Z  this=IUnknown  sig=csp ====
+// ==== 0x00426620  ??4type_info_AAEAAV0_ABV0__Z  this=-  sig=csp ====
 void *__thiscall __4type_info_AAEAAV0_ABV0__Z(void *this, int a2)
 {
   return this; /*0x426622*/
@@ -11554,7 +11554,7 @@ LABEL_18:
 }
 
 
-// ==== 0x0042D470  CellStruct::Set  this=CellStruct  sig=csp ====
+// ==== 0x0042D470  CellStruct::Set  this=rc_ptr_base  sig=csp ====
 _WORD *__thiscall CellStruct::Set(rc_ptr_base *this, __int16 a2, __int16 a3)
 {
   LOWORD(this->vfptr) = a2; /*0x42d47c*/
@@ -13044,7 +13044,7 @@ LABEL_11:
 }
 
 
-// ==== 0x0042EBE0  BuildingPrerequisiteClass::ReadNodeGraph  this=IUnknown  sig=csp ====
+// ==== 0x0042EBE0  BuildingPrerequisiteClass::ReadNodeGraph  this=BuildingPrerequisiteClass  sig=csp ====
 int __thiscall BuildingPrerequisiteClass::ReadNodeGraph(int *this, CCINIClass *aP1, unsigned __int8 *a2)
 {
   INIClass *v4; // edi
@@ -13070,11 +13070,11 @@ int __thiscall BuildingPrerequisiteClass::ReadNodeGraph(int *this, CCINIClass *a
 
   INIClass::ResetSection(aP1); /*0x42ebf4*/
   v4 = (INIClass *)a2; /*0x42ebfc*/
-  this->q070 = INIClass::ReadInt_Overwrite( /*0x42ec1b*/
+  *(this + 7) = INIClass::ReadInt_Overwrite( /*0x42ec1b*/
                   (int)aP1,
                   a2,
                   (CCINIClass *)&MEMORY[0x818994].headNode[2],
-                  (INIClass *)this->q070);
+                  (INIClass *)*(this + 7));
   result = INIClass::ReadInt_Overwrite((int)aP1, a2, &MEMORY[0x818994], 0); /*0x42ec1e*/
   v19 = result; /*0x42ec25*/
   v17 = 0; /*0x42ec29*/
@@ -14250,7 +14250,7 @@ _DWORD *__thiscall VectorClass::CellConstructor(_DWORD *this, IUnknown *aP1, IUn
 }
 
 
-// ==== 0x0042FD30  EncodeBitmapRGB  this=BombClass  sig=csp ====
+// ==== 0x0042FD30  EncodeBitmapRGB  this=AbstractClass  sig=csp ====
 int __fastcall EncodeBitmapRGB(Pipe *aP0, int edx0, _BYTE *a2, int a4)
 {
   int v4; // eax
@@ -14339,7 +14339,7 @@ LABEL_19:
 }
 
 
-// ==== 0x0042FE50  DecodeBitmapRGB  this=BombClass  sig=csp ====
+// ==== 0x0042FE50  DecodeBitmapRGB  this=AbstractClass  sig=csp ====
 int __fastcall DecodeBitmapRGB(Pipe *aP0, BombClass *aP1, _BYTE *a2, int a4)
 {
   _BYTE *v4; // esi

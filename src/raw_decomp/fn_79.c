@@ -2,7 +2,7 @@
 // by tools/csp_export/rewrite_member_refs.py (mechanical, CSP member table).
 // REFERENCE ONLY - not compiled. Width-matched rewrites; unmatched kept raw.
 
-// ==== 0x00791AA0  ObjectClass::UI_Setup_791AA0  this=SkirmishDialog  sig=csp ====
+// ==== 0x00791AA0  ObjectClass::UI_Setup_791AA0  this=ObjectClass  sig=csp ====
 void __thiscall sub_791AA0(HWND this)
 {
   wchar_t *StringCSF; // eax
@@ -2706,7 +2706,7 @@ LABEL_97:
 }
 
 
-// ==== 0x00795650  ObjectClass::QueryNATPortWOL  this=ObjectClass  sig=csp ====
+// ==== 0x00795650  ObjectClass::QueryNATPortWOL  this=IPXInterfaceClass  sig=csp ====
 char __thiscall WOL_QueryNATPort(unsigned __int16 *this)
 {
   char *v1; // edx
@@ -6356,7 +6356,7 @@ int __stdcall sub_79AE00(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 
 
-// ==== 0x0079AF10  ObjectClass::FillBuddyListWOL  this=Game  sig=csp ====
+// ==== 0x0079AF10  ObjectClass::FillBuddyListWOL  this=ObjectClass  sig=csp ====
 void __thiscall FillBuddyListWOL(CCINIClass *hDlg)
 {
   LRESULT (__stdcall *v1)(HWND, UINT, WPARAM, LPARAM); // ebp
@@ -6797,7 +6797,7 @@ LABEL_88:
 }
 
 
-// ==== 0x0079BA60  ValidateGameJoinWOL  this=-  sig=csp ====
+// ==== 0x0079BA60  ValidateGameJoinWOL  this=AbstractClass  sig=csp ====
 char __fastcall ValidateGameJoinWOL(BlowStraw *aP0, ObjectClass *aP1, char a3)
 {
   int BlowStraw_field_0x08; // eax

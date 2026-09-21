@@ -2581,7 +2581,7 @@ int sub_4F2C50()
 }
 
 
-// ==== 0x004F2C70  ParseINIAnimGadgetDefinition  this=ObjectClass  sig=csp ====
+// ==== 0x004F2C70  ParseINIAnimGadgetDefinition  this=-  sig=csp ====
 int *__userpurge ParseINIAnimGadgetDefinition@<eax>(
         ObjectClass *Source@<ecx>,
         ObjectClass *edx0@<edx>,
@@ -2845,7 +2845,7 @@ int sub_4F3120()
 }
 
 
-// ==== 0x004F3140  ParseINIGadgetDefinition  this=ObjectClass  sig=csp ====
+// ==== 0x004F3140  ParseINIGadgetDefinition  this=-  sig=csp ====
 int ParseINIGadgetDefinition(ObjectClass *aP0, ObjectClass *edx0, _DWORD *a2, ObjectClass a4)
 {
   ObjectClass *v4; // edx
@@ -3225,7 +3225,7 @@ int sub_4F3890()
 }
 
 
-// ==== 0x004F38B0  sub_4F38B0  this=-  sig=csp ====
+// ==== 0x004F38B0  sub_4F38B0  this=char*  sig=csp ====
 int __thiscall sub_4F3AB0(_BYTE *this, int a2)
 {
   int result; // eax
@@ -3371,7 +3371,7 @@ int sub_4F3B60()
 }
 
 
-// ==== 0x004F3B80  sub_4F3B80  this=ObjectClass  sig=csp ====
+// ==== 0x004F3B80  sub_4F3B80  this=-  sig=csp ====
 _DWORD *__fastcall sub_4F3B80(ObjectClass *a1, ObjectClass *edx0)
 {
   ReferenceCounted *v4; // eax
@@ -4294,7 +4294,7 @@ _BYTE *__thiscall Byte_Zero(_BYTE *this)
 }
 
 
-// ==== 0x004F4C30  String::CopyUpper  this=ObjectTypeClass  sig=csp ====
+// ==== 0x004F4C30  String::CopyUpper  this=String  sig=csp ====
 char *__thiscall String::CopyUpper(char *String, ObjectClass *aP1)
 {
   strcpy(String, aP1->__pad_0); /*0x4f4c4e*/
@@ -5199,7 +5199,7 @@ void nullsub_15()
 }
 
 
-// ==== 0x004F6EC0  HouseClass::SetCombatPower  this=IUnknown  sig=csp ====
+// ==== 0x004F6EC0  HouseClass::SetCombatPower  this=HouseClass  sig=csp ====
 int __thiscall HouseClass::SetCombatPower(int this, IUnknown *aP1)
 {
   double *v2; // edi
@@ -5622,7 +5622,7 @@ _DWORD *__thiscall sub_4F7850(_DWORD *this)
 }
 
 
-// ==== 0x004F7870  HouseClass::CanBuild  this=IUnknown  sig=csp ====
+// ==== 0x004F7870  HouseClass::CanBuild  this=AbstractClass  sig=csp ====
 int __thiscall HouseClass::CanBuild(_DWORD *this, IUnknown *aP1, AbstractClass *aP2, AbstractClass *aP3)
 {
   _DWORD *v4; // ebp
@@ -6545,10 +6545,10 @@ LABEL_16:
 }
 
 
-// ==== 0x004F9950  HouseClass::AddPower  this=IUnknown  sig=csp ====
+// ==== 0x004F9950  HouseClass::AddPower  this=AbstractClass  sig=csp ====
 int __thiscall HouseClass::AddPower(_DWORD *this, IUnknown *aP1)
 {
-  this->q0C3 += aP1; /*0x4f995c*/
+  this->q30C += aP1; /*0x4f995c*/
   return (int)aP1; /*0x4f9962*/
 }
 
@@ -6595,14 +6595,14 @@ char __thiscall HouseClass::UpdateAllSilos(int this, int a2, int a3)
 }
 
 
-// ==== 0x004F9A10  HouseClass::IsAllied  this=IUnknown  sig=csp ====
+// ==== 0x004F9A10  HouseClass::IsAllied  this=HouseClass  sig=csp ====
 bool __thiscall HouseClass::IsAllied(_DWORD *this, IUnknown *aP1)
 {
-  if ( aP1 == (IUnknown *)this->q030 ) /*0x4f9a19*/
+  if ( aP1 == (IUnknown *)this->relatedTagsCount ) /*0x4f9a19*/
     return 1; /*0x4f9a1b*/
   if ( aP1 == (IUnknown *)-1 ) /*0x4f9a23*/
     return 0; /*0x4f9a3d*/
-  return ((1 << (char)aP1) & this->q15E2) != 0; /*0x4f9a1d*/
+  return ((1 << (char)aP1) & this->HouseClass_field_timer_D) != 0; /*0x4f9a1d*/
 }
 
 
@@ -6635,7 +6635,7 @@ LABEL_8:
 }
 
 
-// ==== 0x004F9A90  Object::IsAlliedWithObjectHouse  this=IUnknown  sig=csp ====
+// ==== 0x004F9A90  Object::IsAlliedWithObjectHouse  this=Object  sig=csp ====
 bool __thiscall Object::IsAlliedWithObjectHouse(_DWORD *this, IUnknown *aP1)
 {
   _DWORD *v3; // eax
@@ -6649,9 +6649,9 @@ bool __thiscall Object::IsAlliedWithObjectHouse(_DWORD *this, IUnknown *aP1)
   if ( v3 == this ) /*0x4f9aa6*/
     return 1; /*0x4f9aab*/
   v5 = v3[12]; /*0x4f9aae*/
-  if ( v5 == this->q030 ) /*0x4f9ab6*/
+  if ( v5 == this->Object_field_0x30 ) /*0x4f9ab6*/
     return 1; /*0x4f9abb*/
-  return v5 != -1 && (this->q15E2 & (1 << v5)) != 0; /*0x4f9ad5*/
+  return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9ad5*/
 }
 
 
@@ -8000,7 +8000,7 @@ char __thiscall sub_4FB6B0(int this, _DWORD *a2)
 }
 
 
-// ==== 0x004FB840  BuildingPlacement::Activate  this=IUnknown  sig=csp ====
+// ==== 0x004FB840  BuildingPlacement::Activate  this=BuildingPlacement  sig=csp ====
 char __thiscall BuildingPlacement_Activate(int this, int a2, _DWORD *a3)
 {
   int v4; // edi
@@ -8413,7 +8413,7 @@ LABEL_10:
 }
 
 
-// ==== 0x004FBF60  HouseClass::DroppedFlag  this=HouseClass  sig=csp ====
+// ==== 0x004FBF60  HouseClass::DroppedFlag  this=AbstractClass  sig=csp ====
 char __thiscall HouseClass::DroppedFlag(int *this, UnitClass *aP1, int a3)
 {
   MouseClass *v3; // edi
@@ -8428,8 +8428,8 @@ char __thiscall HouseClass::DroppedFlag(int *this, UnitClass *aP1, int a3)
   v3 = (MouseClass *)aP1; /*0x4fbf63*/
   if ( !LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (IUnknown *)aP1) ) /*0x4fbf6f*/
     return 0; /*0x4fc055*/
-  HouseClass::IsCellOccupied((int)this, (IUnknown *)this->ourFlagCoords, a3); /*0x4fbf8b*/
-  v5 = (HouseClass *)this->relatedTagsCapacity; /*0x4fbf92*/
+  HouseClass::IsCellOccupied((int)this, (IUnknown *)this->__pad_53DC, a3); /*0x4fbf8b*/
+  v5 = (HouseClass *)this->q034; /*0x4fbf92*/
   aP1 = (UnitClass *)v3->field_0; /*0x4fbf95*/
   productionFactory_plants_capacity = v5->productionFactory_plants_capacity; /*0x4fbfa3*/
   v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1); /*0x4fbfaa*/
@@ -8455,24 +8455,24 @@ char __thiscall HouseClass::DroppedFlag(int *this, UnitClass *aP1, int a3)
                               0,
                               0),
         aP1 != *(UnitClass **)&MEMORY[0xA8D63C].__pad_14B0[1196])
-    && (v11 = *(_DWORD *)(this->relatedTagsCapacity + 184),
+    && (v11 = *(_DWORD *)(this->q034 + 184),
         v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1),
         (v7 = HouseClass::MarkCellBuildable((int)v8, v11)) != 0) )
   {
-    this->ourFlagCoords = (int)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1); /*0x4fc045*/
+    this->__pad_53DC = (int)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1); /*0x4fc045*/
   }
   return v7; /*0x4fc04e*/
 }
 
 
-// ==== 0x004FC060  HouseClass::PickedUpFlag  this=ObjectClass  sig=csp ====
+// ==== 0x004FC060  HouseClass::PickedUpFlag  this=AbstractClass  sig=csp ====
 char __thiscall HouseClass::PickedUpFlag(int *this, ObjectClass *aP1, char a3)
 {
   if ( !aP1 || aP1->inLimbo ) /*0x4fc06c*/
     return 0; /*0x4fc0a8*/
-  HouseClass::IsCellOccupied((int)this, (IUnknown *)this->q14F7, a3); /*0x4fc084*/
-  HouseClass::SetPrimaryFactory(aP1, *(_DWORD *)(this->attachedTag + 184)); /*0x4fc095*/
-  this->q14F7 = (int)aP1; /*0x4fc09a*/
+  HouseClass::IsCellOccupied((int)this, (IUnknown *)this->__pad_53DC, a3); /*0x4fc084*/
+  HouseClass::SetPrimaryFactory(aP1, *(_DWORD *)(this->q034 + 184)); /*0x4fc095*/
+  this->__pad_53DC = (int)aP1; /*0x4fc09a*/
   return 1; /*0x4fc0a0*/
 }
 
@@ -11859,7 +11859,7 @@ int __thiscall sub_4FFD50(_DWORD *this, int a2)
 }
 
 
-// ==== 0x004FFD90  ObjectClass::method_4FFD90  this=ObjectClass  sig=csp ====
+// ==== 0x004FFD90  ObjectClass::method_4FFD90  this=AbstractClass  sig=csp ====
 int __thiscall sub_4FFD90(_DWORD *this, __int16 *a2)
 {
   int v2; // eax

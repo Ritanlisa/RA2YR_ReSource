@@ -1577,7 +1577,7 @@ _DWORD *__thiscall World::ToScreen(float *this, AbstractClass *aP1, AbstractClas
 }
 
 
-// ==== 0x006D20E0  ZCoordToScreenY  this=-  sig=csp ====
+// ==== 0x006D20E0  ZCoordToScreenY  this=IUnknown  sig=csp ====
 __int64 __fastcall Coord_ZToScreenY(int a1)
 {
   return Math::RoundToInt((double)a1 * MEMORY[0xB0CD48] + (double)(a1 >= 728) + 0.5); /*0x6d2118*/

@@ -1937,7 +1937,7 @@ char __thiscall CellClass::DestroyOverlay(IUnknown *this)
 }
 
 
-// ==== 0x004A1C10  Power::FinalizeDrain  this=AbstractClass  sig=csp ====
+// ==== 0x004A1C10  Power::FinalizeDrain  this=IUnknown  sig=csp ====
 int __thiscall Power::FinalizeDrain(AbstractClass *this, int a2)
 {
   int v2; // eax
@@ -1977,7 +1977,7 @@ int __thiscall Power::FinalizeDrain(AbstractClass *this, int a2)
 }
 
 
-// ==== 0x004A1CA0  Power::FlagProcess  this=AbstractClass  sig=csp ====
+// ==== 0x004A1CA0  Power::FlagProcess  this=IUnknown  sig=csp ====
 int __thiscall Power::FlagProcess(AbstractClass *this, int a2)
 {
   int v2; // eax
@@ -2017,14 +2017,14 @@ int __thiscall Power::FlagProcess(AbstractClass *this, int a2)
 }
 
 
-// ==== 0x004A1D30  Checksummer::Add_WORD  this=AbstractClass  sig=csp ====
+// ==== 0x004A1D30  Checksummer::Add_WORD  this=IUnknown  sig=csp ====
 int __thiscall Checksummer::Add_WORD(unsigned int *this, AbstractClass *aP1)
 {
   return Checksummer::Add_Buffer(this, (unsigned __int8 *)&aP1, (IUnknown *)2); /*0x4a1d46*/
 }
 
 
-// ==== 0x004A1D50  Power::TimerProcess  this=AbstractClass  sig=csp ====
+// ==== 0x004A1D50  Power::TimerProcess  this=IUnknown  sig=csp ====
 int __thiscall Power::TimerProcess(AbstractClass *this)
 {
   int v2; // [esp+4h] [ebp+4h] BYREF
@@ -2033,21 +2033,21 @@ int __thiscall Power::TimerProcess(AbstractClass *this)
 }
 
 
-// ==== 0x004A1D70  Checksummer::Add_float  this=AbstractClass  sig=csp ====
+// ==== 0x004A1D70  Checksummer::Add_float  this=IUnknown  sig=csp ====
 int __thiscall Checksummer::Add_float(unsigned int *this, ParticleSystemClass *aP1)
 {
   return Checksummer::Add_Buffer(this, (unsigned __int8 *)&aP1, (IUnknown *)4); /*0x4a1d84*/
 }
 
 
-// ==== 0x004A1D90  Checksummer::Add_double  this=AbstractClass  sig=csp ====
+// ==== 0x004A1D90  Checksummer::Add_double  this=IUnknown  sig=csp ====
 int __thiscall Checksummer::Add_double(AbstractClass *this, AbstractClass *aP1, AbstractClass *aP2)
 {
   return Checksummer::Add_Buffer((unsigned int *)this, (unsigned __int8 *)&aP1, (IUnknown *)8); /*0x4a1dac*/
 }
 
 
-// ==== 0x004A1DB0  Checksum::AddString  this=AbstractClass  sig=csp ====
+// ==== 0x004A1DB0  Checksum::AddString  this=IUnknown  sig=csp ====
 int __thiscall Checksum::AddString(unsigned int *this, AbstractClass *aP1)
 {
   int result; // eax
@@ -3233,7 +3233,7 @@ int *__thiscall sub_4A3270(int *this, int a2, int a3, int a4)
 }
 
 
-// ==== 0x004A3370  DDraw::ReleaseSurfaces  this=CampaignClass  sig=csp ====
+// ==== 0x004A3370  DDraw::ReleaseSurfaces  this=AbstractClass  sig=csp ====
 int __thiscall DDraw::ReleaseSurfaces(int *this)
 {
   int v2; // eax
@@ -3255,7 +3255,7 @@ int __thiscall DDraw::ReleaseSurfaces(int *this)
 }
 
 
-// ==== 0x004A33A0  AudioStream::ReadSamples  this=CampaignClass  sig=csp ====
+// ==== 0x004A33A0  AudioStream::ReadSamples  this=AbstractClass  sig=csp ====
 int __thiscall AudioStream_ReadSamples(_DWORD *this, const void *a2)
 {
   _DWORD *v2; // ebx
@@ -3274,7 +3274,7 @@ int __thiscall AudioStream_ReadSamples(_DWORD *this, const void *a2)
   _DWORD v17[25]; // [esp+9Ch] [ebp-64h] BYREF
 
   v2 = this; /*0x4a33a7*/
-  v3 = this->q070; /*0x4a33ac*/
+  v3 = this->__pad_070; /*0x4a33ac*/
   if ( !v3 ) /*0x4a33b7*/
     return -1; /*0x4a33b7*/
   if ( *this == 2 )
@@ -3390,7 +3390,7 @@ int __thiscall ColorStruct_SetRGB(_DWORD *this, unsigned __int8 a2, unsigned __i
 }
 
 
-// ==== 0x004A35F0  Tactical::SetCellTransform  this=CellStruct  sig=csp ====
+// ==== 0x004A35F0  Tactical::SetCellTransform  this=IUnknown  sig=csp ====
 char *__thiscall Tactical::SetCellTransform(
         char *this,
         int a2,
@@ -3421,10 +3421,10 @@ _DWORD *__thiscall sub_4A3630(_DWORD *this)
 }
 
 
-// ==== 0x004A3640  DDraw::Init  this=CampaignClass  sig=csp ====
+// ==== 0x004A3640  DDraw::Init  this=AbstractClass  sig=csp ====
 void __thiscall sub_4A3640(_DWORD *this)
 {
-  this->q6000 = 0; /*0x4a3640*/
+  this->q1800 = 0; /*0x4a3640*/
 }
 
 
@@ -3435,7 +3435,7 @@ void nullsub_115()
 }
 
 
-// ==== 0x004A3660  ObjectClass::RenderTactical3DScene  this=CampaignClass  sig=csp ====
+// ==== 0x004A3660  ObjectClass::RenderTactical3DScene  this=AbstractClass  sig=csp ====
 int __thiscall sub_4A3660(_DWORD *this, int a2)
 {
   int v2; // esi
@@ -3459,8 +3459,8 @@ int __thiscall sub_4A3660(_DWORD *this, int a2)
   v2 = a2; /*0x4a3663*/
   v3 = this; /*0x4a3668*/
   v4 = a2 == 0; /*0x4a366a*/
-  v5 = this->q6000; /*0x4a366c*/
-  this->q6000 = 0; /*0x4a3672*/
+  v5 = this->q1800; /*0x4a366c*/
+  this->q1800 = 0; /*0x4a3672*/
   v18 = v5; /*0x4a367c*/
   if ( v4 ) /*0x4a3680*/
     return -1; /*0x4a3680*/
@@ -3558,16 +3558,16 @@ LABEL_13:
 }
 
 
-// ==== 0x004A3840  StructTable::Append  this=CampaignClass  sig=csp ====
+// ==== 0x004A3840  StructTable::Append  this=AbstractClass  sig=csp ====
 int __thiscall StructTable::Append(_DWORD *this, CCINIClass *aP1)
 {
   int v3; // ecx
 
-  v3 = this->q6000; /*0x4a3842*/
+  v3 = this->q1800; /*0x4a3842*/
   if ( v3 == 1024 ) /*0x4a384e*/
     return 1; /*0x4a3850*/
   qmemcpy(this + 24 * v3, aP1, 0x60u); /*0x4a386b*/
-  ++this->q6000; /*0x4a3876*/
+  ++this->q1800; /*0x4a3876*/
   return 0; /*0x4a3855*/
 }
 
@@ -3631,7 +3631,7 @@ LABEL_6:
 }
 
 
-// ==== 0x004A3970  LoadFileClassToBuffer  this=MSShapeAnim  sig=csp ====
+// ==== 0x004A3970  LoadFileClassToBuffer  this=MSAnim  sig=csp ====
 int __fastcall FileClass_LoadToBuffer(char **a1, bool *a2)
 {
   char *v3; // esi
@@ -4388,7 +4388,7 @@ char sub_4A4700()
 }
 
 
-// ==== 0x004A4780  Surface::CreateSurfacePalette  this=BombClass  sig=csp ====
+// ==== 0x004A4780  Surface::CreateSurfacePalette  this=AbstractClass  sig=csp ====
 LPDIRECTDRAW __thiscall Surface::CreateSurfacePalette(AbstractClass *Src)
 {
   LPDIRECTDRAW result; // eax
@@ -4578,7 +4578,7 @@ LABEL_13:
 }
 
 
-// ==== 0x004A4AC0  Debug::Log_0  this=CampaignClass  sig=csp ====
+// ==== 0x004A4AC0  Debug::Log_0  this=AbstractClass  sig=csp ====
 void Debug::Log_0()
 {
   ; /*0x4a4ac0*/
@@ -5813,7 +5813,7 @@ int __thiscall sub_4A5E50(unsigned __int16 *this, int a2, AbstractClass *aP2, Ab
 }
 
 
-// ==== 0x004A5EB0  RenderTextLabel  this=AbstractClass  sig=csp ====
+// ==== 0x004A5EB0  RenderTextLabel  this=IUnknown  sig=csp ====
 int *__fastcall sub_4A5EB0(int *a1, int a2, int a3, _DWORD *a4, int a5, __int16 a6, int a7, int a8, int a9)
 {
   _DWORD *v9; // edi
@@ -6006,7 +6006,7 @@ AbstractClass *TextRenderer::GetInstance()
 }
 
 
-// ==== 0x004A60E0  TextRenderer::Printf  this=ObjectClass  sig=csp ====
+// ==== 0x004A60E0  TextRenderer::Printf  this=AbstractClass  sig=csp ====
 _DWORD *__cdecl TextRenderer::Printf(
         ConvertClass *aP0,
         size_t BufferCount,
@@ -6052,7 +6052,7 @@ _DWORD *__cdecl TextRenderer::Printf(
 }
 
 
-// ==== 0x004A61C0  TextRenderer::DrawText  this=AbstractClass  sig=csp ====
+// ==== 0x004A61C0  TextRenderer::DrawText  this=TextRenderer  sig=csp ====
 int *TextRenderer::DrawText(
         int *a0,
         size_t BufferCount,
@@ -7155,15 +7155,15 @@ LABEL_2:
 }
 
 
-// ==== 0x004A7900  DiskLaserClass::PointerGotInvalid  this=CampaignClass  sig=csp ====
+// ==== 0x004A7900  DiskLaserClass::PointerGotInvalid  this=AbstractClass  sig=csp ====
 void __thiscall DiskLaserClass::PointerGotInvalid(_DWORD *this, AbstractClass *aP1)
 {
   AbstractClass *v3; // eax
   AbstractClass *v4; // eax
 
-  if ( aP1 == (AbstractClass *)this->idxCd ) /*0x4a790b*/
+  if ( aP1 == (AbstractClass *)this->q024 ) /*0x4a790b*/
   {
-    this->q0C0 = -1; /*0x4a790d*/
+    this->q030 = -1; /*0x4a790d*/
     if ( *(int *)&MEMORY[0xB077F8].__pad_579C[10004] < *(int *)&MEMORY[0xB077F8].__pad_579C[9996] /*0x4a7948*/
       || (MEMORY[0xB077F8].__pad_579C[10001] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9996])
       && *(int *)&MEMORY[0xB077F8].__pad_579C[10008] > 0
@@ -7176,9 +7176,9 @@ void __thiscall DiskLaserClass::PointerGotInvalid(_DWORD *this, AbstractClass *a
       *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9992] + 4 * (_DWORD)v3) = this; /*0x4a7964*/
     }
   }
-  if ( aP1 == (AbstractClass *)this->scenario ) /*0x4a796a*/
+  if ( aP1 == (AbstractClass *)this->q028 ) /*0x4a796a*/
   {
-    this->q0C0 = -1; /*0x4a796c*/
+    this->q030 = -1; /*0x4a796c*/
     if ( *(int *)&MEMORY[0xB077F8].__pad_579C[10004] < *(int *)&MEMORY[0xB077F8].__pad_579C[9996] /*0x4a79a8*/
       || (MEMORY[0xB077F8].__pad_579C[10001] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9996])
       && *(int *)&MEMORY[0xB077F8].__pad_579C[10008] > 0
@@ -13027,7 +13027,7 @@ int sub_4AED50()
 }
 
 
-// ==== 0x004AED70  DrawToSurfaceSHP  this=AbstractClass  sig=csp ====
+// ==== 0x004AED70  DrawToSurfaceSHP  this=-  sig=csp ====
 void __fastcall DrawToSurfaceSHP(
         int a1,
         int a2,

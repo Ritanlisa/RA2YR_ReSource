@@ -5645,7 +5645,7 @@ LABEL_17:
 }
 
 
-// ==== 0x00547370  InitCoordinateOffsetsMap  this=CellStruct  sig=ida-proto ====
+// ==== 0x00547370  InitCoordinateOffsetsMap  this=-  sig=ida-proto ====
 int __fastcall Map_InitCoordinateOffsets(int a1)
 {
   int v1; // edx
@@ -5923,7 +5923,7 @@ void __cdecl nullsub_20()
 }
 
 
-// ==== 0x00547CF0  TerrainClass::GenerateTexture  this=CampaignClass  sig=csp ====
+// ==== 0x00547CF0  TerrainClass::GenerateTexture  this=AbstractClass  sig=csp ====
 void __thiscall TerrainClass::GenerateTexture(
         _DWORD *this,
         int a2,
@@ -10718,22 +10718,22 @@ _DWORD *__thiscall sub_54EE60(_DWORD *this)
 }
 
 
-// ==== 0x0054F000  EventQueue::Process  this=CampaignClass  sig=csp ====
+// ==== 0x0054F000  EventQueue::Process  this=AbstractClass  sig=csp ====
 __int16 __thiscall EventQueue::Process(_DWORD *this)
 {
   int v2; // eax
 
-  if ( (this->q0C6 + 1) % 256 != this->q0C5 ) /*0x54f01e*/
+  if ( (*(this + 198) + 1) % 256 != *(this + 197) ) /*0x54f01e*/
     MessageLoop(); /*0x54f020*/
-  v2 = this->q0C5; /*0x54f025*/
-  if ( v2 == this->q0C6 ) /*0x54f033*/
+  v2 = *(this + 197); /*0x54f025*/
+  if ( v2 == *(this + 198) ) /*0x54f033*/
     return 0; /*0x54f035*/
   else
     return *((_WORD *)this + v2 + 138); /*0x54f03a*/
 }
 
 
-// ==== 0x0054F050  EventQueue::Read  this=CampaignClass  sig=csp ====
+// ==== 0x0054F050  EventQueue::Read  this=AbstractClass  sig=csp ====
 __int16 __thiscall EventQueue_Read(_DWORD *this)
 {
   int v2; // eax
@@ -10749,41 +10749,41 @@ __int16 __thiscall EventQueue_Read(_DWORD *this)
 
   do /*0x54f086*/
   {
-    if ( (this->q0C6 + 1) % 256 != this->q0C5 ) /*0x54f06f*/
+    if ( (*(this + 198) + 1) % 256 != *(this + 197) ) /*0x54f06f*/
       MessageLoop(); /*0x54f071*/
-    v2 = this->q0C5; /*0x54f076*/
+    v2 = *(this + 197); /*0x54f076*/
   }
-  while ( v2 == this->q0C6 || !*((_WORD *)this + v2 + 138) ); /*0x54f086*/
+  while ( v2 == *(this + 198) || !*((_WORD *)this + v2 + 138) ); /*0x54f086*/
   do /*0x54f0b3*/
   {
     if ( !(unsigned __int8)EventQueue::CheckPosition(this) ) /*0x54f093*/
       MessageLoop(); /*0x54f09c*/
   }
-  while ( this->q0C5 == this->q0C6 || !(unsigned __int16)EventQueue::Check(this) ); /*0x54f0b3*/
-  v3 = this->q0C5; /*0x54f0bd*/
-  v4 = this->q0C6; /*0x54f0c3*/
+  while ( *(this + 197) == *(this + 198) || !(unsigned __int16)EventQueue::Check(this) ); /*0x54f0b3*/
+  v3 = *(this + 197); /*0x54f0bd*/
+  v4 = *(this + 198); /*0x54f0c3*/
   result = 0; /*0x54f0c9*/
   if ( v3 != v4 ) /*0x54f0cd*/
   {
     result = *((_WORD *)this + v3 + 138); /*0x54f0cf*/
-    this->q0C5 = (v3 + 1) % 256; /*0x54f0e8*/
+    *(this + 197) = (v3 + 1) % 256; /*0x54f0e8*/
   }
   if ( (unsigned __int8)result == 1 || (unsigned __int8)result == 4 || (unsigned __int8)result == 2 ) /*0x54f106*/
   {
-    v6 = this->q0C5; /*0x54f108*/
+    v6 = *(this + 197); /*0x54f108*/
     v7 = 0; /*0x54f10e*/
     if ( v6 != v4 ) /*0x54f112*/
     {
       v7 = *((_WORD *)this + v6 + 138); /*0x54f114*/
-      this->q0C5 = (v6 + 1) % 256; /*0x54f12d*/
+      *(this + 197) = (v6 + 1) % 256; /*0x54f12d*/
     }
-    v8 = this->q0C5; /*0x54f134*/
+    v8 = *(this + 197); /*0x54f134*/
     v9 = 0; /*0x54f140*/
     *this = v7; /*0x54f144*/
     if ( v8 != v4 ) /*0x54f146*/
     {
       v9 = *((_WORD *)this + v8 + 138); /*0x54f148*/
-      this->q0C5 = (v8 + 1) % 256; /*0x54f161*/
+      *(this + 197) = (v8 + 1) % 256; /*0x54f161*/
     }
     this->vtable4 = v7; /*0x54f16d*/
     this->vtable2 = v9; /*0x54f171*/
@@ -10791,12 +10791,12 @@ __int16 __thiscall EventQueue_Read(_DWORD *this)
   }
   else if ( (unsigned __int8)result == 10 ) /*0x54f17e*/
   {
-    v10 = this->q0C5; /*0x54f180*/
+    v10 = *(this + 197); /*0x54f180*/
     v11 = 0; /*0x54f186*/
     if ( v10 != v4 ) /*0x54f18a*/
     {
       v11 = *((_WORD *)this + v10 + 138); /*0x54f18c*/
-      this->q0C5 = (v10 + 1) % 256; /*0x54f1a5*/
+      *(this + 197) = (v10 + 1) % 256; /*0x54f1a5*/
     }
     this->uniqueId = v11; /*0x54f1ab*/
   }
@@ -10804,23 +10804,23 @@ __int16 __thiscall EventQueue_Read(_DWORD *this)
 }
 
 
-// ==== 0x0054F1C0  EventBuffer::Enqueue  this=CampaignClass  sig=csp ====
+// ==== 0x0054F1C0  EventBuffer::Enqueue  this=AbstractClass  sig=csp ====
 char __thiscall EventBuffer_Enqueue(_DWORD *this, __int16 a2)
 {
   int v2; // edx
   int v3; // eax
 
-  v2 = this->q0C6; /*0x54f1c0*/
+  v2 = *(this + 198); /*0x54f1c0*/
   v3 = (v2 + 1) % 256; /*0x54f1d7*/
-  if ( v3 == this->q0C5 ) /*0x54f1de*/
+  if ( v3 == *(this + 197) ) /*0x54f1de*/
     return 0; /*0x54f1f9*/
   *((_WORD *)this + v2 + 138) = a2; /*0x54f1e5*/
-  this->q0C6 = v3; /*0x54f1ed*/
+  *(this + 198) = v3; /*0x54f1ed*/
   return 1; /*0x54f1f5*/
 }
 
 
-// ==== 0x0054F200  EventClass::Enqueue  this=CampaignClass  sig=csp ====
+// ==== 0x0054F200  EventClass::Enqueue  this=AbstractClass  sig=csp ====
 char __thiscall EventClass_Enqueue(_DWORD *this, unsigned __int16 a2, char a3)
 {
   int v4; // edx
@@ -10853,19 +10853,19 @@ char __thiscall EventClass_Enqueue(_DWORD *this, unsigned __int16 a2, char a3)
   }
   if ( a3 ) /*0x54f2a2*/
     v5 |= 0x800u; /*0x54f2a4*/
-  v6 = this->q0C6; /*0x54f2aa*/
+  v6 = *(this + 198); /*0x54f2aa*/
   v7 = (v6 + 1) % 256; /*0x54f2c0*/
-  if ( v7 != this->q0C5 ) /*0x54f2c7*/
+  if ( v7 != *(this + 197) ) /*0x54f2c7*/
   {
     *((_WORD *)this + v6 + 138) = v5; /*0x54f2c9*/
-    this->q0C6 = v7; /*0x54f2d1*/
+    *(this + 198) = v7; /*0x54f2d1*/
     return 1; /*0x54f2d1*/
   }
   return 0; /*0x54f2d7*/
 }
 
 
-// ==== 0x0054F2F0  InputManager::EnqueueInputEvent  this=CampaignClass  sig=csp ====
+// ==== 0x0054F2F0  InputManager::EnqueueInputEvent  this=AbstractClass  sig=csp ====
 char __thiscall InputManager::EnqueueInputEvent(
         _DWORD *this,
         unsigned __int16 a2,
@@ -10881,32 +10881,32 @@ char __thiscall InputManager::EnqueueInputEvent(
 
   if ( MEMORY[0xA8D63C].__pad_14B0[688] ) /*0x54f2fa*/
     return 1; /*0x54f2fc*/
-  v7 = this->q0C6 - this->q0C5; /*0x54f315*/
+  v7 = *(this + 198) - *(this + 197); /*0x54f315*/
   if ( (int)(256 - ((HIDWORD(v7) ^ v7) - HIDWORD(v7))) < 3 /*0x54f343*/
     || (unsigned __int8)a2 != 1 && (unsigned __int8)a2 != 4 && (unsigned __int8)a2 != 2 )
   {
     return 0; /*0x54f3bc*/
   }
   EventClass::Enqueue(this, a2, a5); /*0x54f34d*/
-  v8 = this->q0C6; /*0x54f352*/
+  v8 = *(this + 198); /*0x54f352*/
   v9 = (v8 + 1) % 256; /*0x54f368*/
-  if ( v9 != this->q0C5 ) /*0x54f36f*/
+  if ( v9 != *(this + 197) ) /*0x54f36f*/
   {
     *((_WORD *)this + v8 + 138) = (_WORD)aP2; /*0x54f376*/
-    this->q0C6 = v9; /*0x54f37e*/
+    *(this + 198) = v9; /*0x54f37e*/
   }
-  v10 = this->q0C6; /*0x54f384*/
+  v10 = *(this + 198); /*0x54f384*/
   v11 = (v10 + 1) % 256; /*0x54f39a*/
-  if ( v11 != this->q0C5 ) /*0x54f3a1*/
+  if ( v11 != *(this + 197) ) /*0x54f3a1*/
   {
     *((_WORD *)this + v10 + 138) = a4; /*0x54f3a8*/
-    this->q0C6 = v11; /*0x54f3b0*/
+    *(this + 198) = v11; /*0x54f3b0*/
   }
   return 1; /*0x54f2fe*/
 }
 
 
-// ==== 0x0054F450  Keyboard::MapKey  this=CampaignClass  sig=csp ====
+// ==== 0x0054F450  Keyboard::MapKey  this=AbstractClass  sig=csp ====
 char __thiscall Keyboard_MapKey(int this, unsigned __int16 a2)
 {
   __int16 v5; // di
@@ -10941,7 +10941,7 @@ char __thiscall Keyboard_MapKey(int this, unsigned __int16 a2)
 }
 
 
-// ==== 0x0054F530  ObjectClass::Event_Process  this=CampaignClass  sig=csp ====
+// ==== 0x0054F530  ObjectClass::Event_Process  this=AbstractClass  sig=csp ====
 char __thiscall Event_Process(_BYTE *this, CCINIClass *aP1)
 {
   char result; // al
@@ -10974,7 +10974,7 @@ char __thiscall Event_Process(_BYTE *this, CCINIClass *aP1)
 }
 
 
-// ==== 0x0054F5C0  Mouse::IsButtonDown  this=CampaignClass  sig=csp ====
+// ==== 0x0054F5C0  Mouse::IsButtonDown  this=AbstractClass  sig=csp ====
 BOOL __stdcall Mouse_IsButtonDown(unsigned __int8 a1)
 {
   unsigned __int16 v1; // si
@@ -10986,39 +10986,39 @@ BOOL __stdcall Mouse_IsButtonDown(unsigned __int8 a1)
 }
 
 
-// ==== 0x0054F650  EventQueue::Check  this=CampaignClass  sig=csp ====
+// ==== 0x0054F650  EventQueue::Check  this=AbstractClass  sig=csp ====
 __int16 __thiscall sub_54F650(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = this->q0C5; /*0x54f650*/
-  if ( v1 == this->q0C6 ) /*0x54f65e*/
+  v1 = *(this + 197); /*0x54f650*/
+  if ( v1 == *(this + 198) ) /*0x54f65e*/
     return 0; /*0x54f669*/
   else
     return *((_WORD *)this + v1 + 138); /*0x54f660*/
 }
 
 
-// ==== 0x0054F670  InputManager::PushInputEvent  this=CampaignClass  sig=csp ====
+// ==== 0x0054F670  InputManager::PushInputEvent  this=AbstractClass  sig=csp ====
 char __thiscall sub_54F670(_DWORD *this, __int16 a2)
 {
   int v2; // edx
   int v3; // eax
 
-  v2 = this->q0C6; /*0x54f670*/
+  v2 = *(this + 198); /*0x54f670*/
   v3 = (v2 + 1) % 256; /*0x54f687*/
-  if ( v3 == this->q0C5 ) /*0x54f68e*/
+  if ( v3 == *(this + 197) ) /*0x54f68e*/
     return 0; /*0x54f6a9*/
   *((_WORD *)this + v2 + 138) = a2; /*0x54f695*/
-  this->q0C6 = v3; /*0x54f69d*/
+  *(this + 198) = v3; /*0x54f69d*/
   return 1; /*0x54f6a5*/
 }
 
 
-// ==== 0x0054F6B0  EventQueue::CheckPosition  this=CampaignClass  sig=csp ====
+// ==== 0x0054F6B0  EventQueue::CheckPosition  this=AbstractClass  sig=csp ====
 bool __thiscall EventQueue_CheckPosition(_DWORD *this)
 {
-  return (this->q0C6 + 1) % 256 == this->q0C5; /*0x54f6ce*/
+  return (*(this + 198) + 1) % 256 == *(this + 197); /*0x54f6ce*/
 }
 
 
@@ -11029,31 +11029,31 @@ bool __thiscall sub_54F6D0(_DWORD *this)
 }
 
 
-// ==== 0x0054F720  Timer::PumpMessages  this=CampaignClass  sig=csp ====
+// ==== 0x0054F720  Timer::PumpMessages  this=AbstractClass  sig=csp ====
 int __thiscall Timer::PumpMessages(int *this)
 {
   int v2; // eax
   int result; // eax
 
-  if ( (this->q0C6 + 1) % 256 != this->q0C5 ) /*0x54f73e*/
+  if ( (*(this + 198) + 1) % 256 != *(this + 197) ) /*0x54f73e*/
     MessageLoop(); /*0x54f740*/
-  v2 = this->q0C6; /*0x54f745*/
-  this->q0C5 = v2; /*0x54f74b*/
+  v2 = *(this + 198); /*0x54f745*/
+  *(this + 197) = v2; /*0x54f74b*/
   if ( (v2 + 1) % 256 == v2 ) /*0x54f766*/
   {
-    result = this->q0C6; /*0x54f77b*/
-    this->q0C5 = result; /*0x54f781*/
+    result = *(this + 198); /*0x54f77b*/
+    *(this + 197) = result; /*0x54f781*/
   }
   else
   {
     result = MessageLoop(); /*0x54f768*/
-    this->q0C5 = this->q0C6; /*0x54f773*/
+    *(this + 197) = *(this + 198); /*0x54f773*/
   }
   return result; /*0x54f779*/
 }
 
 
-// ==== 0x0054F790  InputManager::WndProc  this=CampaignClass  sig=csp ====
+// ==== 0x0054F790  InputManager::WndProc  this=AbstractClass  sig=csp ====
 int __thiscall InputManager::WndProc(_DWORD *this, HWND hWnd, UINT Msg, CCINIClass *aP3, unsigned int lParam)
 {
   CCINIClass *x; // edi
@@ -11093,7 +11093,7 @@ int __thiscall InputManager::WndProc(_DWORD *this, HWND hWnd, UINT Msg, CCINICla
       case 0x202u: /*0x54f916*/
         if ( MEMORY[0xA8D63C].__pad_14B0[688] ) /*0x54f924*/
           goto LABEL_45; /*0x54f924*/
-        v10 = this->q0C6 - this->q0C5; /*0x54f938*/
+        v10 = *(this + 198) - *(this + 197); /*0x54f938*/
         if ( (int)(256 - ((HIDWORD(v10) ^ v10) - HIDWORD(v10))) < 3 ) /*0x54f947*/
           goto LABEL_45; /*0x54f947*/
         EventClass::Enqueue(this, 1u, 1); /*0x54f94f*/
@@ -11101,7 +11101,7 @@ int __thiscall InputManager::WndProc(_DWORD *this, HWND hWnd, UINT Msg, CCINICla
       case 0x203u: /*0x54f916*/
         if ( MEMORY[0xA8D63C].__pad_14B0[688] ) /*0x54f958*/
           goto LABEL_45; /*0x54f958*/
-        v11 = this->q0C6 - this->q0C5; /*0x54f971*/
+        v11 = *(this + 198) - *(this + 197); /*0x54f971*/
         if ( (int)(256 - ((HIDWORD(v11) ^ v11) - HIDWORD(v11))) >= 3 ) /*0x54f97b*/
         {
           EventClass::Enqueue(this, 1u, 0); /*0x54f983*/
@@ -11113,7 +11113,7 @@ int __thiscall InputManager::WndProc(_DWORD *this, HWND hWnd, UINT Msg, CCINICla
         }
         if ( MEMORY[0xA8D63C].__pad_14B0[688] ) /*0x54f9b2*/
           goto LABEL_45; /*0x54f9b2*/
-        v12 = this->q0C6 - this->q0C5; /*0x54f9c6*/
+        v12 = *(this + 198) - *(this + 197); /*0x54f9c6*/
         if ( (int)(256 - ((HIDWORD(v12) ^ v12) - HIDWORD(v12))) < 3 ) /*0x54f9d5*/
           goto LABEL_45; /*0x54f9d5*/
         EventClass::Enqueue(this, 1u, 1); /*0x54f9e1*/
@@ -11133,7 +11133,7 @@ int __thiscall InputManager::WndProc(_DWORD *this, HWND hWnd, UINT Msg, CCINICla
       case 0x207u: /*0x54f916*/
         if ( !MEMORY[0xA8D63C].__pad_14B0[688] ) /*0x54fa0d*/
         {
-          v13 = this->q0C6 - this->q0C5; /*0x54fa26*/
+          v13 = *(this + 198) - *(this + 197); /*0x54fa26*/
           if ( (int)(256 - ((HIDWORD(v13) ^ v13) - HIDWORD(v13))) >= 3 ) /*0x54fa30*/
           {
             EventClass::Enqueue(this, 4u, 0); /*0x54fa3c*/
@@ -11147,7 +11147,7 @@ int __thiscall InputManager::WndProc(_DWORD *this, HWND hWnd, UINT Msg, CCINICla
       case 0x209u: /*0x54f916*/
         if ( MEMORY[0xA8D63C].__pad_14B0[688] ) /*0x54fa5d*/
           goto LABEL_45; /*0x54fa5d*/
-        v14 = this->q0C6 - this->q0C5; /*0x54fa76*/
+        v14 = *(this + 198) - *(this + 197); /*0x54fa76*/
         if ( (int)(256 - ((HIDWORD(v14) ^ v14) - HIDWORD(v14))) >= 3 ) /*0x54fa80*/
         {
           EventClass::Enqueue(this, 4u, 0); /*0x54fa88*/
@@ -11159,7 +11159,7 @@ int __thiscall InputManager::WndProc(_DWORD *this, HWND hWnd, UINT Msg, CCINICla
 LABEL_39:
         if ( !MEMORY[0xA8D63C].__pad_14B0[688] ) /*0x54faac*/
         {
-          v15 = this->q0C6 - this->q0C5; /*0x54fabc*/
+          v15 = *(this + 198) - *(this + 197); /*0x54fabc*/
           if ( (int)(256 - ((HIDWORD(v15) ^ v15) - HIDWORD(v15))) >= 3 ) /*0x54facb*/
           {
             EventClass::Enqueue(this, 4u, 1); /*0x54fad3*/
@@ -11190,7 +11190,7 @@ LABEL_39:
         {
           if ( !MEMORY[0xA8D63C].__pad_14B0[688] ) /*0x54f870*/
           {
-            v8 = this->q0C6 - this->q0C5; /*0x54f889*/
+            v8 = *(this + 198) - *(this + 197); /*0x54f889*/
             if ( (int)(256 - ((HIDWORD(v8) ^ v8) - HIDWORD(v8))) >= 2 ) /*0x54f893*/
             {
               EventClass::Enqueue(this, 0xAu, 0); /*0x54f89f*/
@@ -11205,7 +11205,7 @@ LABEL_39:
   }
   if ( !MEMORY[0xA8D63C].__pad_14B0[688] ) /*0x54f8c0*/
   {
-    v9 = this->q0C6 - this->q0C5; /*0x54f8d9*/
+    v9 = *(this + 198) - *(this + 197); /*0x54f8d9*/
     if ( (int)(256 - ((HIDWORD(v9) ^ v9) - HIDWORD(v9))) >= 3 ) /*0x54f8e3*/
     {
       EventClass::Enqueue(this, 1u, 0); /*0x54f8ef*/

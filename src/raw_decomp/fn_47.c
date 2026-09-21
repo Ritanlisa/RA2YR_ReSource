@@ -2302,7 +2302,7 @@ int sub_473380()
 }
 
 
-// ==== 0x004733A0  CellClass::AddObject  this=TechnoClass  sig=csp ====
+// ==== 0x004733A0  CellClass::AddObject  this=PassengersClass  sig=csp ====
 void __thiscall CellClass::AddObject(_DWORD *this, IUnknown *aP1)
 {
   IUnknown *v2; // esi
@@ -2326,14 +2326,14 @@ void __thiscall CellClass::AddObject(_DWORD *this, IUnknown *aP1)
           goto LABEL_8; /*0x4733e4*/
         v4 = *(IUnknown **)&v4->__pad_28[8]; /*0x4733e6*/
       }
-      *(_DWORD *)&v4->__pad_28[8] = this->vtable2; /*0x4733f5*/
+      *(_DWORD *)&v4->__pad_28[8] = *(this + 1); /*0x4733f5*/
     }
     else
     {
 LABEL_8:
-      *(_DWORD *)&aP1->__pad_28[8] = this->vtable2; /*0x4733fa*/
+      *(_DWORD *)&aP1->__pad_28[8] = *(this + 1); /*0x4733fa*/
     }
-    this->vtable2 = aP1; /*0x473400*/
+    *(this + 1) = aP1; /*0x473400*/
     *this = 0; /*0x473403*/
     while ( 1 ) /*0x47340c*/
     {
@@ -2347,15 +2347,15 @@ LABEL_8:
 }
 
 
-// ==== 0x00473430  LinkedList::Pop  this=TechnoClass  sig=csp ====
+// ==== 0x00473430  LinkedList::Pop  this=PassengersClass  sig=csp ====
 int __thiscall LinkedList_Pop(_DWORD *this)
 {
   int result; // eax
 
-  result = this->vtable2; /*0x473430*/
+  result = *(this + 1); /*0x473430*/
   if ( result ) /*0x473435*/
   {
-    this->vtable2 = *(_DWORD *)(result + 48); /*0x47343b*/
+    *(this + 1) = *(_DWORD *)(result + 48); /*0x47343b*/
     *(_DWORD *)(result + 48) = 0; /*0x47343e*/
     --*this; /*0x473445*/
   }
@@ -2363,7 +2363,7 @@ int __thiscall LinkedList_Pop(_DWORD *this)
 }
 
 
-// ==== 0x00473450  CCINIClass::GetDB  this=TechnoClass  sig=csp ====
+// ==== 0x00473450  CCINIClass::GetDB  this=CampaignClass  sig=csp ====
 int __thiscall CCINIClass_GetDB(_DWORD *this)
 {
   return this->vtable2; /*0x473453*/
@@ -2402,7 +2402,7 @@ int __thiscall HouseClass_SumPowerDrain(int *this)
 }
 
 
-// ==== 0x004734B0  FootClass::updateMovementAnimation  this=FootClass  sig=csp ====
+// ==== 0x004734B0  FootClass::updateMovementAnimation  this=PassengersClass  sig=csp ====
 void __thiscall FootClass::updateMovementAnimation(_DWORD *this, TimerStruct *aP1)
 {
   TimerStruct *v2; // edx
@@ -2410,13 +2410,13 @@ void __thiscall FootClass::updateMovementAnimation(_DWORD *this, TimerStruct *aP
 
   if ( aP1 ) /*0x4734b7*/
   {
-    v2 = (TimerStruct *)this->vtable2; /*0x4734b9*/
+    v2 = (TimerStruct *)*(this + 1); /*0x4734b9*/
     if ( v2 ) /*0x4734be*/
     {
       StartTime = (TimerStruct *)v2[4].StartTime; /*0x4734c0*/
       if ( v2 == aP1 ) /*0x4734c5*/
       {
-        this->vtable2 = StartTime; /*0x4734c7*/
+        *(this + 1) = StartTime; /*0x4734c7*/
         --*this; /*0x4734ce*/
       }
       else if ( StartTime ) /*0x4734d5*/
@@ -3404,7 +3404,7 @@ char __thiscall ObjectTypeClass::ReadBool2(char *this, INIClass *Block, INIClass
 }
 
 
-// ==== 0x00474810  WarheadTypeClass::loadWarheadINI  this=AbstractTypeClass  sig=csp ====
+// ==== 0x00474810  WarheadTypeClass::loadWarheadINI  this=IUnknown  sig=csp ====
 int __thiscall sub_474810(void *this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
   int Int_Overwrite; // eax
@@ -3931,7 +3931,7 @@ int __thiscall SuperWeaponTypeClass::FindOrCreate(
 }
 
 
-// ==== 0x00475610  INIClass::SetHouseName  this=AbstractTypeClass  sig=csp ====
+// ==== 0x00475610  INIClass::SetHouseName  this=IUnknown  sig=csp ====
 char __thiscall INIClass::SetHouseName(char *this, INIClass *aP1, char *a2, INIClass *aP3)
 {
   const char *v5; // edi
@@ -4018,7 +4018,7 @@ int __thiscall INIClass::GetBool(unsigned __int8 ***this, INIClass *aP1, unsigne
 }
 
 
-// ==== 0x00475820  INIClass::SetStringByIndex  this=INIClass  sig=csp ====
+// ==== 0x00475820  INIClass::SetStringByIndex  this=IUnknown  sig=csp ====
 char __thiscall INIClass::SetStringByIndex(char *this, INIClass *aP1, char *a2, CCINIClass *aP3)
 {
   if ( aP3 < (CCINIClass *)*(&g_MatrixTransformState + 356) ) /*0x47582c*/
@@ -4044,7 +4044,7 @@ int __thiscall sub_475870(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
 }
 
 
-// ==== 0x004758C0  MapClass::loadTheaterINI  this=ObjectClass  sig=csp ====
+// ==== 0x004758C0  MapClass::loadTheaterINI  this=MapClass  sig=csp ====
 char __thiscall MapClass::loadTheaterINI(char *this, INIClass *aP1, char *a2, int a4)
 {
   return INIClass::SetString(this, aP1, (INIClass *)a2, (INIClass *)&Theater_Array[112 * a4]); /*0x4758e6*/
@@ -4067,7 +4067,7 @@ int __thiscall Scenario::FindBuildingTypeByName(
 }
 
 
-// ==== 0x00475950  ScenarioClass::loadMapData  this=ScenarioClass  sig=csp ====
+// ==== 0x00475950  ScenarioClass::loadMapData  this=IUnknown  sig=csp ====
 char __thiscall ScenarioClass::loadMapData(char *this, CCINIClass *aP1, char *a2, int aP1a)
 {
   INIClass *v5; // eax
@@ -4096,7 +4096,7 @@ char __thiscall HouseClass::updateBuildingProduction(char *this, INIClass *aP1, 
 }
 
 
-// ==== 0x004759F0  INIClass::ReadStringValue  this=ObjectTypeClass  sig=csp ====
+// ==== 0x004759F0  INIClass::ReadStringValue  this=IUnknown  sig=csp ====
 int __thiscall INIClass::ReadStringValue(
         unsigned __int8 ***this,
         CCINIClass *aP1,
@@ -4326,7 +4326,7 @@ LABEL_19:
 }
 
 
-// ==== 0x00475F30  ScenarioClass::SaveIntListToINI  this=ScenarioClass  sig=csp ====
+// ==== 0x00475F30  ScenarioClass::SaveIntListToINI  this=IUnknown  sig=csp ====
 char __thiscall ScenarioClass::SaveIntListToINI(char *this, INIClass *aP1, char *a2, CCINIClass *aP3)
 {
   int i; // ebx
@@ -4699,7 +4699,7 @@ LABEL_23:
 }
 
 
-// ==== 0x004766F0  ScenarioClass::SaveTypeNameListToINI  this=ScenarioClass  sig=csp ====
+// ==== 0x004766F0  ScenarioClass::SaveTypeNameListToINI  this=IUnknown  sig=csp ====
 char __thiscall ScenarioClass::SaveTypeNameListToINI(char *this, INIClass *aP1, char *a2, int a4)
 {
   int v4; // edx
@@ -7442,7 +7442,7 @@ int __thiscall CD_CheckForGame(void *this)
 }
 
 
-// ==== 0x004790B0  SetSoundWarning  this=-  sig=csp ====
+// ==== 0x004790B0  SetSoundWarning  this=AbstractClass  sig=csp ====
 void __fastcall SoundWarning_Set(int a1)
 {
   if ( MEMORY[0x89E3A0] == 1 ) /*0x4790b7*/
@@ -8487,7 +8487,7 @@ BOOL sub_47AAC0()
 }
 
 
-// ==== 0x0047AB10  Game::FindGameDirectoryCD  this=Game  sig=csp ====
+// ==== 0x0047AB10  Game::FindGameDirectoryCD  this=CellStruct  sig=csp ====
 BOOL __thiscall Game::FindGameDirectoryCD(char *Source)
 {
   char v1; // bl
@@ -8715,7 +8715,7 @@ LABEL_6:
 }
 
 
-// ==== 0x0047B0C0  FileFind::Next  this=CampaignClass  sig=csp ====
+// ==== 0x0047B0C0  FileFind::Next  this=AbstractClass  sig=csp ====
 char __thiscall FileFind_Next(char *this)
 {
   struct _WIN32_FIND_DATAA FindFileData; // [esp+4h] [ebp-140h] BYREF
@@ -9493,14 +9493,14 @@ int __thiscall Object::FindClosestObjectCell(_DWORD *this, IUnknown *aP1, IUnkno
 }
 
 
-// ==== 0x0047C4D0  PlacementList::FindByID  this=IUnknown  sig=csp ====
+// ==== 0x0047C4D0  PlacementList::FindByID  this=PlacementList  sig=csp ====
 _DWORD *__thiscall PlacementList::FindByID(_DWORD *this, int a2, TechnoClass *aP2)
 {
   _DWORD *v3; // esi
 
   if ( !MEMORY[0xA8D63C].__pad_1258[268] ) /*0x47c4d9*/
     return 0; /*0x47c4d9*/
-  v3 = (_DWORD *)((_BYTE)aP2 ? this->q03A : this->q0E4);
+  v3 = (_DWORD *)((_BYTE)aP2 ? this->q0E8 : this->q0E4);
   if ( !v3 ) /*0x47c4f3*/
     return 0; /*0x47c50b*/
   while ( (*(int (__thiscall **)(_DWORD *))(*v3 + 44))(v3) != a2 ) /*0x47c502*/
@@ -9513,14 +9513,14 @@ _DWORD *__thiscall PlacementList::FindByID(_DWORD *this, int a2, TechnoClass *aP
 }
 
 
-// ==== 0x0047C520  Cell::IsBridge  this=Cell  sig=csp ====
+// ==== 0x0047C520  Cell::IsBridge  this=IUnknown  sig=csp ====
 _DWORD *__thiscall Cell_IsBridge(_DWORD *this)
 {
   _DWORD *v1; // esi
 
   if ( !MEMORY[0xA8E9A0] ) /*0x47c528*/
     return 0; /*0x47c528*/
-  v1 = (_DWORD *)this->Cell_field_0xE4; /*0x47c52a*/
+  v1 = (_DWORD *)this->q0E4; /*0x47c52a*/
   if ( !v1 ) /*0x47c532*/
     return 0; /*0x47c547*/
   while ( (*(int (__thiscall **)(_DWORD *))(*v1 + 44))(v1) != 6 ) /*0x47c53e*/
@@ -9553,7 +9553,7 @@ _DWORD *__thiscall CellClass_FindInfantry(_DWORD *this, char a2)
 }
 
 
-// ==== 0x0047C5A0  Object::FindObjectCell  this=Object  sig=csp ====
+// ==== 0x0047C5A0  Object::FindObjectCell  this=IUnknown  sig=csp ====
 int __thiscall Object::FindObjectCell(_DWORD *this, TechnoClass *aP1, char aP2)
 {
   _DWORD *v4; // esi
@@ -9561,7 +9561,7 @@ int __thiscall Object::FindObjectCell(_DWORD *this, TechnoClass *aP1, char aP2)
 
   if ( MEMORY[0xA8D63C].__pad_1258[268] ) /*0x47c5ab*/
   {
-    v4 = (_DWORD *)this->Object_field_0xE4; /*0x47c5ad*/
+    v4 = (_DWORD *)this->q0E4; /*0x47c5ad*/
     if ( v4 ) /*0x47c5b5*/
     {
       while ( (*(int (__thiscall **)(_DWORD *))(*v4 + 44))(v4) != 2 ) /*0x47c5c1*/
@@ -9579,7 +9579,7 @@ LABEL_5:
   {
     if ( MEMORY[0xA8D63C].__pad_1258[268] ) /*0x47c5e8*/
     {
-      v4 = (_DWORD *)this->Object_field_0xE4; /*0x47c5ea*/
+      v4 = (_DWORD *)this->q0E4; /*0x47c5ea*/
       if ( v4 ) /*0x47c5f2*/
       {
         while ( (*(int (__thiscall **)(_DWORD *))(*v4 + 44))(v4) != 36 ) /*0x47c5fe*/
@@ -9597,7 +9597,7 @@ LABEL_5:
 }
 
 
-// ==== 0x0047C620  CellClass::IsPassable  this=CellClass  sig=csp ====
+// ==== 0x0047C620  CellClass::IsPassable  this=IUnknown  sig=csp ====
 char __thiscall CellClass::IsPassable(int this, IUnknown *aP1, IUnknown *aP2, IUnknown *aP3)
 {
   _DWORD *v5; // esi
@@ -10706,7 +10706,7 @@ void __thiscall CellClass_UpdateAnimations(int this)
 }
 
 
-// ==== 0x0047E040  UpdateCellClassNeighborTerrain  this=CellStruct  sig=csp ====
+// ==== 0x0047E040  UpdateCellClassNeighborTerrain  this=-  sig=csp ====
 char __fastcall CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
 {
   _DWORD *v4; // esi
@@ -10918,7 +10918,7 @@ char __fastcall CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3,
 }
 
 
-// ==== 0x0047E470  SetCellClassOccupancyFlags  this=CellStruct  sig=csp ====
+// ==== 0x0047E470  SetCellClassOccupancyFlags  this=-  sig=csp ====
 char __fastcall CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
 {
   _DWORD *v4; // esi
@@ -11333,7 +11333,7 @@ _DWORD *__thiscall PlacementList_FindByType(_DWORD *this, char a2)
 }
 
 
-// ==== 0x0047EC40  WTFMode::FindObjectByType  this=WTFMode  sig=csp ====
+// ==== 0x0047EC40  WTFMode::FindObjectByType  this=AbstractClass  sig=csp ====
 _DWORD *__thiscall WTFMode_FindObjectByType(_DWORD *this, char a2)
 {
   _DWORD *v2; // esi
@@ -11353,7 +11353,7 @@ _DWORD *__thiscall WTFMode_FindObjectByType(_DWORD *this, char a2)
 }
 
 
-// ==== 0x0047EC90  BuildingPlacement::RenderBuildingPlacementPreview  this=BuildingPlacement  sig=csp ====
+// ==== 0x0047EC90  BuildingPlacement::RenderBuildingPlacementPreview  this=IUnknown  sig=csp ====
 char __thiscall BuildingPlacement::RenderBuildingPlacementPreview(
         int this,
         IUnknown *aP1,

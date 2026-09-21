@@ -376,7 +376,7 @@ wchar_t **__fastcall WOL_FormatLocaleString(wchar_t **a1, int a2)
 }
 
 
-// ==== 0x00780A90  FormatWOLPlayerInfo  this=CampaignScore  sig=csp ====
+// ==== 0x00780A90  FormatWOLPlayerInfo  this=-  sig=csp ====
 wchar_t **__fastcall FormatWOLPlayerInfo(wchar_t **a1, const char *a2)
 {
   wchar_t **v4; // eax
@@ -7577,7 +7577,7 @@ LABEL_71:
 }
 
 
-// ==== 0x0078A470  ObjectClass::HandleOnlineWOL  this=ObjectClass  sig=csp ====
+// ==== 0x0078A470  ObjectClass::HandleOnlineWOL  this=AbstractClass  sig=csp ====
 int __thiscall HandleOnlineWOL(wchar_t *String1)
 {
   wchar_t *StringCSF; // eax

@@ -9145,7 +9145,7 @@ void RandomMap::PlaceShoreObjects()
 }
 
 
-// ==== 0x0059B940  Map_Helper_59B940  this=-  sig=csp ====
+// ==== 0x0059B940  Map_Helper_59B940  this=MapResourceClass  sig=csp ====
 double __stdcall Map_Helper_59B940(
         MapResourceClass *aP0,
         __int16 *a1,

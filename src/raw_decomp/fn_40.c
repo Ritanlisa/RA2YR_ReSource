@@ -2682,7 +2682,7 @@ int __thiscall AudioStream_SetupPlayback(int this)
 }
 
 
-// ==== 0x004047B0  AudioStream::SelectRandom  this=Voice  sig=csp ====
+// ==== 0x004047B0  AudioStream::SelectRandom  this=Coord  sig=csp ====
 int __thiscall AudioStream_SelectRandom(int this)
 {
   _DWORD *v2; // ecx
@@ -3491,7 +3491,7 @@ int __thiscall sub_405490(_DWORD *this)
 }
 
 
-// ==== 0x004054A0  Audio::UpdatePlaybackPosition  this=Voice  sig=csp ====
+// ==== 0x004054A0  Audio::UpdatePlaybackPosition  this=ObjectClass  sig=csp ====
 int __thiscall sub_4054A0(int *this)
 {
   _DWORD *v2; // ecx
@@ -3501,37 +3501,37 @@ int __thiscall sub_4054A0(int *this)
   int v7; // edx
   int v8; // eax
 
-  v2 = (_DWORD *)this->q02C; /*0x4054a4*/
+  v2 = (_DWORD *)this->fallRate; /*0x4054a4*/
   if ( this != (int *)v2[48] ) /*0x4054b0*/
     return 0; /*0x4054b3*/
   AudioFile::GetCallback(v2); /*0x4054b7*/
-  v4 = (_DWORD *)this->q052; /*0x4054bc*/
-  v5 = this->q006; /*0x4054c2*/
+  v4 = (_DWORD *)this->__pad_148; /*0x4054bc*/
+  v5 = this->nextArrayIndex; /*0x4054c2*/
   LOBYTE(v5) = v5 | 8; /*0x4054c5*/
-  this->q006 = v5; /*0x4054c7*/
-  BindChannelAudioStream((_DWORD *)this->q02C, v4); /*0x4054d2*/
-  EndBufferMixer((int *)(this->q02C + 56), this->q053); /*0x4054e6*/
+  this->nextArrayIndex = v5; /*0x4054c7*/
+  BindChannelAudioStream((_DWORD *)this->fallRate, v4); /*0x4054d2*/
+  EndBufferMixer((int *)(this->fallRate + 56), this->q053); /*0x4054e6*/
   v6 = this->q054; /*0x4054eb*/
   v7 = 0x4000; /*0x4054f1*/
   if ( v6 > 0 ) /*0x4054f8*/
     v7 = 0x4000 - (v6 << 14) / 0x64u; /*0x40550e*/
-  EndBufferMixer((int *)(this->q02C + 16), v7); /*0x405519*/
-  this->q007 = 3; /*0x40551e*/
-  this->q006 |= 2u; /*0x40552b*/
-  this->q052 = 0; /*0x40552e*/
-  if ( Audio::GetChannelStatus(this->q02C) ) /*0x40553e*/
+  EndBufferMixer((int *)(this->fallRate + 16), v7); /*0x405519*/
+  this->referenceCount = 3; /*0x40551e*/
+  this->nextArrayIndex |= 2u; /*0x40552b*/
+  this->__pad_148 = 0; /*0x40552e*/
+  if ( Audio::GetChannelStatus(this->fallRate) ) /*0x40553e*/
   {
-    this->q007 = 1; /*0x405547*/
-    this->q052 = (int)v4; /*0x40554e*/
-    v8 = this->q006; /*0x405554*/
+    this->referenceCount = 1; /*0x405547*/
+    this->__pad_148 = (int)v4; /*0x40554e*/
+    v8 = this->nextArrayIndex; /*0x405554*/
     LOBYTE(v8) = v8 & 0xFD; /*0x405557*/
-    this->q006 = v8; /*0x405559*/
-    AudioStream::Stop((_DWORD *)this->q02C); /*0x405562*/
+    this->nextArrayIndex = v8; /*0x405559*/
+    AudioStream::Stop((_DWORD *)this->fallRate); /*0x405562*/
     return 0; /*0x405567*/
   }
   else
   {
-    AudioStream::Stop((_DWORD *)this->q02C); /*0x405572*/
+    AudioStream::Stop((_DWORD *)this->fallRate); /*0x405572*/
     return 1; /*0x405577*/
   }
 }
@@ -4298,7 +4298,7 @@ int __thiscall sub_406310(_DWORD *this)
 }
 
 
-// ==== 0x004063B0  Audio::ProcessMixerOutput  this=CampaignClass  sig=csp ====
+// ==== 0x004063B0  Audio::ProcessMixerOutput  this=AbstractClass  sig=csp ====
 ObjectClass *__thiscall Audio::ProcessMixerOutput(char *Source)
 {
   int *Next; // esi
@@ -4725,7 +4725,7 @@ void Debug_Log()
 }
 
 
-// ==== 0x004068F0  Array::ForEach  this=IUnknown  sig=csp ====
+// ==== 0x004068F0  Array::ForEach  this=Array  sig=csp ====
 int __stdcall Array_ForEach(int a1, int a2, int a3, int (__thiscall *a4)(int))
 {
   int result; // eax
@@ -5507,7 +5507,7 @@ int __thiscall AudioQueue_GetNext(int *this)
 }
 
 
-// ==== 0x004073E0  AudioQueue::GetNextAlt  this=CampaignClass  sig=csp ====
+// ==== 0x004073E0  AudioQueue::GetNextAlt  this=AbstractClass  sig=csp ====
 int __thiscall AudioQueue_GetNext_Alt(int *this)
 {
   int result; // eax
@@ -6667,7 +6667,7 @@ void __thiscall AudioNode_Release(_DWORD *this)
 }
 
 
-// ==== 0x00408610  ParseWaveFileHeader  this=-  sig=csp ====
+// ==== 0x00408610  ParseWaveFileHeader  this=AbstractClass  sig=csp ====
 int __fastcall sub_408610(int a1, _DWORD *a2, size_t *a3)
 {
   unsigned __int16 *v3; // esi

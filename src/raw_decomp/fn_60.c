@@ -404,7 +404,7 @@ int __thiscall sub_600670(_DWORD *this)
 }
 
 
-// ==== 0x00600680  ComboBoxOwnerDraw::MatchDimensions  this=CampaignClass  sig=csp ====
+// ==== 0x00600680  ComboBoxOwnerDraw::MatchDimensions  this=AbstractClass  sig=csp ====
 bool __thiscall ComboBoxOwnerDraw::MatchDimensions(_DWORD *this, CCINIClass *aP1)
 {
   return aP1->headNode[0] == this->vtable2 && *(_DWORD *)aP1->__pad_0 == *this; /*0x60068d*/
@@ -746,7 +746,7 @@ void __cdecl sub_600AF0()
 }
 
 
-// ==== 0x00600C70  NavigateDialogTab  this=-  sig=csp ====
+// ==== 0x00600C70  NavigateDialogTab  this=ObjectClass  sig=csp ====
 char __fastcall NavigateDialogTab(HWND hCtl, bool a2)
 {
   HWND Parent; // eax
@@ -2292,7 +2292,7 @@ LABEL_37:
 }
 
 
-// ==== 0x00603D30  CacheDialogInvalidate  this=-  sig=csp ====
+// ==== 0x00603D30  CacheDialogInvalidate  this=AbstractClass  sig=csp ====
 HWND *__fastcall CacheDialogInvalidate(HWND hWnd, HWND a2)
 {
   HWND *result; // eax
@@ -2337,7 +2337,7 @@ LRESULT __fastcall globalHelper_003DD0(HWND hWnd, unsigned __int8 a2)
 }
 
 
-// ==== 0x00603E40  sub_603E40  this=-  sig=ida-proto ====
+// ==== 0x00603E40  sub_603E40  this=ObjectClass  sig=ida-proto ====
 _DWORD *__fastcall sub_603E40(int a1, int a2)
 {
   _DWORD *result; // eax
@@ -4105,7 +4105,7 @@ LABEL_208:
 }
 
 
-// ==== 0x006071E0  RenderGadgetClassAnimation  this=SkirmishDialog  sig=csp ====
+// ==== 0x006071E0  RenderGadgetClassAnimation  this=-  sig=csp ====
 LRESULT __fastcall GadgetClass_RenderAnimation(HWND a1, char a2)
 {
   int v2; // esi
@@ -4742,7 +4742,7 @@ char __thiscall Dialog::StopBink(void *this)
 }
 
 
-// ==== 0x00608070  Dialog::IdleProcess  this=Dialog  sig=csp ====
+// ==== 0x00608070  Dialog::IdleProcess  this=SkirmishDialog  sig=csp ====
 char __thiscall Dialog::IdleProcess(void *this)
 {
   _DWORD *v2; // eax
@@ -4873,7 +4873,7 @@ char __thiscall SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
 }
 
 
-// ==== 0x00608380  SaveLoadDialog::LookupDialogHash  this=AbstractClass  sig=csp ====
+// ==== 0x00608380  SaveLoadDialog::LookupDialogHash  this=IUnknown  sig=csp ====
 int __thiscall sub_608380(void *this)
 {
   int result; // eax
@@ -4901,7 +4901,7 @@ int __thiscall sub_608380(void *this)
 }
 
 
-// ==== 0x006083E0  SaveLoadDialog::FindDialogTemplate  this=AbstractClass  sig=csp ====
+// ==== 0x006083E0  SaveLoadDialog::FindDialogTemplate  this=IUnknown  sig=csp ====
 int __thiscall sub_6083E0(void *this)
 {
   int result; // eax
@@ -4929,7 +4929,7 @@ int __thiscall sub_6083E0(void *this)
 }
 
 
-// ==== 0x00608440  HashTable::LookupAndMark  this=HashTable  sig=csp ====
+// ==== 0x00608440  HashTable::LookupAndMark  this=ObjectClass  sig=csp ====
 int __thiscall HashTable_LookupAndMark(void *this)
 {
   int result; // eax
@@ -6550,7 +6550,7 @@ BOOL __stdcall sub_60AA60(HWND hWnd, LPARAM a2)
 }
 
 
-// ==== 0x0060AAA0  Dialog::EnumAndCleanup  this=Dialog  sig=csp ====
+// ==== 0x0060AAA0  Dialog::EnumAndCleanup  this=ObjectClass  sig=csp ====
 int __thiscall Dialog::EnumAndCleanup(void *this)
 {
   return ((int (__stdcall *)(void *, int (__stdcall *)(int, int), _DWORD))EnumChildWindows)(this, sub_60AA60, 0); /*0x60aaae*/
@@ -8197,7 +8197,7 @@ _DWORD *__fastcall sub_60D2C0(int a1, int a2)
 }
 
 
-// ==== 0x0060D320  GameSetup::LookupDialogHash  this=Game  sig=csp ====
+// ==== 0x0060D320  GameSetup::LookupDialogHash  this=GameSetup  sig=csp ====
 int __thiscall sub_60D320(void *this)
 {
   _DWORD *v1; // eax

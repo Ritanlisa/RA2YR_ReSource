@@ -2880,7 +2880,7 @@ int __fastcall InfantryClass::ScanTarget_0(int *a1)
 }
 
 
-// ==== 0x007447B0  BuildingClass::FindPlacementCells  this=TechnoClass  sig=csp ====
+// ==== 0x007447B0  BuildingClass::FindPlacementCells  this=IUnknown  sig=csp ====
 int __thiscall BuildingClass_FindPlacementCells(_DWORD *this, int a2)
 {
   _DWORD **v2; // edi
@@ -3000,7 +3000,7 @@ int __thiscall BuildingClass_FindPlacementCells(_DWORD *this, int a2)
   v2 = (_DWORD **)this; /*0x7447b7*/
   v108 = (_DWORD **)this; /*0x7447b9*/
   v3 = this + 354; /*0x7447c3*/
-  (*(void (__thiscall **)(_DWORD *))(this->q162 + 12))(this + 354); /*0x7447cb*/
+  (*(void (__thiscall **)(_DWORD *))(*(this + 354) + 12))(this + 354); /*0x7447cb*/
   v105 = ((int (__thiscall *)(_DWORD **, _DWORD))(*v2)[47])(v2, 0); /*0x7447df*/
   v4 = (_DWORD *)((int (__thiscall *)(_DWORD **, _DWORD *, _DWORD))(*v2)[19])(v2, v114, 0); /*0x7447e9*/
   LOWORD(v111) = *v4 / 256; /*0x7447fc*/
@@ -4072,14 +4072,14 @@ LABEL_40:
 }
 
 
-// ==== 0x00746000  BuildingTypeClass::IsPlacementValid  this=TechnoClass  sig=csp ====
+// ==== 0x00746000  BuildingTypeClass::IsPlacementValid  this=IUnknown  sig=csp ====
 bool __thiscall BuildingTypeClass::IsPlacementValid(void *this, IUnknown *aP1, IUnknown *aP2)
 {
   signed int v4; // ecx
   int v5; // eax
   IUnknown *v6; // eax
 
-  if ( (*(int (__fastcall **)(void *))(this->airstrikeTintStage_e)(this) < 0 /*0x746030*/
+  if ( (*(int (__fastcall **)(void *))(*(_DWORD *)this + 456))(this) < 0 /*0x746030*/
     || !MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)aP1, (__int16 *)aP2, 0, 0, 0, 0) )
   {
     return 1; /*0x746030*/
@@ -9708,7 +9708,7 @@ CoordStruct *__thiscall VeinholeMonsterClass::ProcessExpansion(
 }
 
 
-// ==== 0x0074D670  ObjectClass::IsCellSuitableForPlacement  this=IUnknown  sig=csp ====
+// ==== 0x0074D670  ObjectClass::IsCellSuitableForPlacement  this=AbstractClass  sig=csp ====
 char __thiscall sub_74D670(__int16 *this)
 {
   int v2; // edi
@@ -9737,7 +9737,7 @@ LABEL_10:
       while ( 1 ) /*0x74d708*/
       {
         LOWORD(v11) = v9 + *this; /*0x74d708*/
-        HIWORD(v11) = v8 + this->q004; /*0x74d70d*/
+        HIWORD(v11) = v8 + this->vtable2; /*0x74d70d*/
         v12 = v11; /*0x74d71a*/
         v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x74d724*/
         if ( v10[284] || *((_DWORD *)v10 + 59) || (char)v10[283] != v6 ) /*0x74d746*/
@@ -9759,7 +9759,7 @@ LABEL_10:
       v4 = *this - *(__int16 *)(*(_DWORD *)v3 + 248); /*0x74d6ab*/
       if ( (int)((HIDWORD(v4) ^ v4) - HIDWORD(v4)) < 3 ) /*0x74d6b3*/
       {
-        v5 = this->q004 - *(__int16 *)(*(_DWORD *)v3 + 250); /*0x74d6c2*/
+        v5 = this->vtable2 - *(__int16 *)(*(_DWORD *)v3 + 250); /*0x74d6c2*/
         if ( (int)((HIDWORD(v5) ^ v5) - HIDWORD(v5)) < 3 ) /*0x74d6ca*/
           break; /*0x74d6ca*/
       }
@@ -12009,7 +12009,7 @@ char *sub_74FDC0()
 }
 
 
-// ==== 0x0074FEF0  INIEntry::LookupByName  this=AbstractClass  sig=csp ====
+// ==== 0x0074FEF0  INIEntry::LookupByName  this=IUnknown  sig=csp ====
 ObjectClass *__thiscall INIEntry::LookupByName(void *this)
 {
   ObjectClass *v2; // edi

@@ -571,7 +571,7 @@ int sub_4107E0()
 }
 
 
-// ==== 0x00410800  AbstractTypeClass::Constructor  this=AbstractTypeClass  sig=csp ====
+// ==== 0x00410800  AbstractTypeClass::Constructor  this=INIClass  sig=csp ====
 int __thiscall AbstractTypeClass::Constructor(int this, AbstractClass *aP1)
 {
   RandomStruct *v3; // ebx
@@ -828,7 +828,7 @@ int sub_410CC0()
 }
 
 
-// ==== 0x00410CE0  BSurface::Construct  this=IUnknown  sig=csp ====
+// ==== 0x00410CE0  BSurface::Construct  this=MouseClass  sig=csp ====
 _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, int a5)
 {
   int v6; // edi
@@ -852,15 +852,15 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
   this->q02C = a5; /*0x410cf3*/
   *this = v6; /*0x410cf8*/
   v9 = a3; /*0x410cfa*/
-  this->q028 = v7; /*0x410cfe*/
-  this->q004 = v9; /*0x410d01*/
-  this->q008 = v7; /*0x410d04*/
-  this->q00C = v8; /*0x410d07*/
-  this->q008 = 2 * v7 * v8; /*0x410d0f*/
+  this->MouseClass_field_0x28 = v7; /*0x410cfe*/
+  this->MouseClass_field_0x4 = v9; /*0x410d01*/
+  this->MouseClass_field_0x8 = v7; /*0x410d04*/
+  this->MouseClass_field_0xC = v8; /*0x410d07*/
+  this->q020 = 2 * v7 * v8; /*0x410d0f*/
   v10 = __2_YAPAXI_Z(0x20u); /*0x410d17*/
   if ( v10 ) /*0x410d20*/
   {
-    v11 = this->q028; /*0x410d22*/
+    v11 = this->MouseClass_field_0x28; /*0x410d22*/
     v12 = this->q02C; /*0x410d25*/
     v10[1] = v11; /*0x410d28*/
     v10[2] = v12; /*0x410d30*/
@@ -875,22 +875,22 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
   {
     v13 = 0; /*0x410d57*/
   }
-  v14 = this->q028; /*0x410d5c*/
+  v14 = this->MouseClass_field_0x28; /*0x410d5c*/
   a5 = this->q02C; /*0x410d5f*/
-  this->q005 = v13; /*0x410d63*/
+  this->MouseClass_field_0x14 = v13; /*0x410d63*/
   a2 = 0; /*0x410d66*/
   a3 = 0; /*0x410d6a*/
   a4 = v14; /*0x410d6e*/
   (*(void (__thiscall **)(_DWORD *, int *, int))(*v13 + 20))(v13, &a2, 127); /*0x410d7b*/
-  v15 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)this->q005 + 92))(this->q005, 0, 0); /*0x410d89*/
+  v15 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)this->MouseClass_field_0x14 + 92))(this->MouseClass_field_0x14, 0, 0); /*0x410d89*/
   v16 = this->q02C; /*0x410d8c*/
   this->q018 = v15; /*0x410d8f*/
-  v17 = this->q028 * v16; /*0x410d92*/
-  this->q010 = 0; /*0x410d96*/
+  v17 = this->MouseClass_field_0x28 * v16; /*0x410d92*/
+  this->MouseClass_field_0x10 = 0; /*0x410d96*/
   this->q024 = 0x8000; /*0x410d99*/
   v18 = v15 + 2 * v17; /*0x410da0*/
-  v19 = this->q005; /*0x410da3*/
-  this->q070 = v18; /*0x410da6*/
+  v19 = this->MouseClass_field_0x14; /*0x410da3*/
+  this->q01C = v18; /*0x410da6*/
   (*(void (__thiscall **)(int))(*(_DWORD *)v19 + 96))(v19); /*0x410dab*/
   return this; /*0x410db0*/
 }
@@ -987,7 +987,7 @@ char *__stdcall sub_410E70(char *a1, int a2, unsigned __int16 a3)
 }
 
 
-// ==== 0x00410ED0  Buffer::FillCircularBufferScroll  this=IUnknown  sig=csp ====
+// ==== 0x00410ED0  Buffer::FillCircularBufferScroll  this=MouseClass  sig=csp ====
 char *__thiscall CircularBuffer_ScrollFill(signed int *this, int a2, int a3, unsigned __int16 a4)
 {
   signed int v5; // ebx
@@ -1044,8 +1044,8 @@ char *__thiscall CircularBuffer_ScrollFill(signed int *this, int a2, int a3, uns
   int v57; // [esp+2Ch] [ebp+8h]
   int v58; // [esp+30h] [ebp+Ch]
 
-  v5 = this->q028; /*0x410ee0*/
-  v52 = this->q004 / 2 % v5; /*0x410ef2*/
+  v5 = this->MouseClass_field_0x28; /*0x410ee0*/
+  v52 = this->MouseClass_field_0x4 / 2 % v5; /*0x410ef2*/
   if ( (int)abs32(a2) > v5 || (result = (char *)abs32(a3), (int)result > this->q02C) ) /*0x410f0e*/
   {
     v50 = this->q02C; /*0x411286*/
@@ -1058,18 +1058,18 @@ char *__thiscall CircularBuffer_ScrollFill(signed int *this, int a2, int a3, uns
     this->q024 = 0x8000; /*0x4112b2*/
     return result; /*0x4112b2*/
   }
-  v8 = a2 + this->q004 / 2 % v5; /*0x410f18*/
+  v8 = a2 + this->MouseClass_field_0x4 / 2 % v5; /*0x410f18*/
   if ( a2 ) /*0x410f1c*/
   {
     v9 = this->q018; /*0x410f25*/
-    v10 = this->q004 + 2 * a2; /*0x410f28*/
-    this->q004 = v10; /*0x410f2b*/
+    v10 = this->MouseClass_field_0x4 + 2 * a2; /*0x410f28*/
+    this->MouseClass_field_0x4 = v10; /*0x410f2b*/
     v11 = v9 + v10; /*0x410f2e*/
     if ( v11 < v9 ) /*0x410f32*/
-      v11 += this->q008; /*0x410f34*/
-    if ( v11 >= this->q070 ) /*0x410f3a*/
-      v11 -= this->q008; /*0x410f3c*/
-    this->q004 = v11 - this->q018; /*0x410f44*/
+      v11 += this->MouseClass_field_0x8; /*0x410f34*/
+    if ( v11 >= this->q01C ) /*0x410f3a*/
+      v11 -= this->MouseClass_field_0x8; /*0x410f3c*/
+    this->MouseClass_field_0x4 = v11 - this->q018; /*0x410f44*/
     if ( a2 >= 0 ) /*0x410f47*/
     {
       v53 = v52; /*0x410fee*/
@@ -1089,7 +1089,7 @@ char *__thiscall CircularBuffer_ScrollFill(signed int *this, int a2, int a3, uns
         v19 = this->q005; /*0x410ffd*/
         v56 = v18; /*0x411002*/
         (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v19 + 20))(v19, &v53, a4); /*0x411014*/
-        v20 = v8 - this->q028; /*0x41101e*/
+        v20 = v8 - this->MouseClass_field_0x28; /*0x41101e*/
         v21 = this->q02C; /*0x411020*/
         v54 = 0; /*0x411023*/
         v22 = this->q005; /*0x411027*/
@@ -1119,7 +1119,7 @@ char *__thiscall CircularBuffer_ScrollFill(signed int *this, int a2, int a3, uns
       v13 = this->q005; /*0x410f68*/
       v56 = v12; /*0x410f6d*/
       (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v13 + 20))(v13, &v53, a4); /*0x410f7f*/
-      v14 = this->q028; /*0x410f82*/
+      v14 = this->MouseClass_field_0x28; /*0x410f82*/
       v15 = this->q02C; /*0x410f85*/
       v16 = v14 + v8; /*0x410f88*/
       v54 = 0; /*0x410f8e*/
@@ -1132,27 +1132,27 @@ char *__thiscall CircularBuffer_ScrollFill(signed int *this, int a2, int a3, uns
   }
   if ( a3 ) /*0x411078*/
   {
-    v24 = this->q004; /*0x41107e*/
-    v25 = this->q028; /*0x411081*/
+    v24 = this->MouseClass_field_0x4; /*0x41107e*/
+    v25 = this->MouseClass_field_0x28; /*0x411081*/
     this->q024 -= a3; /*0x411096*/
     v26 = v24 + 2 * a3 * v25; /*0x411099*/
-    this->q004 = v26; /*0x41109c*/
+    this->MouseClass_field_0x4 = v26; /*0x41109c*/
     v27 = a3 + v24 / 2 / v25; /*0x41109f*/
     v28 = (char *)this->q018; /*0x4110a1*/
     v29 = &v28[v26]; /*0x4110a4*/
     v58 = v27; /*0x4110a6*/
     if ( v29 < v28 ) /*0x4110ac*/
-      v29 += this->q008; /*0x4110ae*/
-    if ( (unsigned int)v29 >= this->q070 ) /*0x4110b4*/
-      v29 -= this->q008; /*0x4110b6*/
+      v29 += this->MouseClass_field_0x8; /*0x4110ae*/
+    if ( (unsigned int)v29 >= this->q01C ) /*0x4110b4*/
+      v29 -= this->MouseClass_field_0x8; /*0x4110b6*/
     v30 = v29 - v28; /*0x4110bf*/
-    this->q004 = v29 - v28; /*0x4110c3*/
+    this->MouseClass_field_0x4 = v29 - v28; /*0x4110c3*/
     if ( a3 >= 0 ) /*0x4110c6*/
     {
       v44 = this->q02C; /*0x41119d*/
       if ( v58 >= v44 ) /*0x4111a6*/
       {
-        v45 = 2 * this->q028 * v44 - v24; /*0x4111b4*/
+        v45 = 2 * this->MouseClass_field_0x28 * v44 - v24; /*0x4111b4*/
         LODWORD(v45) = v45 - HIDWORD(v45); /*0x4111b5*/
         v46 = &v28[v24]; /*0x4111b7*/
         v47 = (int)v45 >> 1; /*0x4111bc*/
@@ -1171,7 +1171,7 @@ char *__thiscall CircularBuffer_ScrollFill(signed int *this, int a2, int a3, uns
         if ( (v47 & 1) != 0 && v48 ) /*0x411200*/
           *v48 = a4; /*0x411202*/
         v37 = (char *)this->q018; /*0x41120b*/
-        v38 = this->q004 / 2; /*0x411210*/
+        v38 = this->MouseClass_field_0x4 / 2; /*0x411210*/
         if ( ((unsigned __int8)v37 & 2) != 0 && v38 ) /*0x411219*/
         {
           *(_WORD *)v37 = a4; /*0x41121b*/
@@ -1242,8 +1242,8 @@ LABEL_55:
       }
       if ( (v32 & 1) != 0 && v33 ) /*0x411122*/
         *(_WORD *)v33 = a4; /*0x411124*/
-      v35 = this->q004; /*0x41112a*/
-      v36 = 2 * this->q028 * this->q02C - v35; /*0x411135*/
+      v35 = this->MouseClass_field_0x4; /*0x41112a*/
+      v36 = 2 * this->MouseClass_field_0x28 * this->q02C - v35; /*0x411135*/
       LODWORD(v36) = v36 - HIDWORD(v36); /*0x411136*/
       v37 = (char *)(v35 + this->q018); /*0x41113d*/
       v38 = (int)v36 >> 1; /*0x41113f*/
@@ -1265,7 +1265,7 @@ LABEL_60:
 }
 
 
-// ==== 0x004112D0  MapClass::isLocationShrouded  this=IUnknown  sig=csp ====
+// ==== 0x004112D0  MapClass::isLocationShrouded  this=MouseClass  sig=csp ====
 int __thiscall sub_4112D0(_DWORD *this, unsigned __int16 a2)
 {
   int v2; // eax
@@ -1275,14 +1275,14 @@ int __thiscall sub_4112D0(_DWORD *this, unsigned __int16 a2)
   v5[3] = this->q02C; /*0x4112d8*/
   v5[0] = 0; /*0x4112e0*/
   v5[1] = 0; /*0x4112e4*/
-  v2 = this->q028; /*0x4112e8*/
-  v3 = this->q005; /*0x4112eb*/
+  v2 = this->MouseClass_field_0x28; /*0x4112e8*/
+  v3 = this->MouseClass_field_0x14; /*0x4112eb*/
   v5[2] = v2; /*0x4112f4*/
   return (*(int (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v3 + 20))(v3, v5, a2); /*0x411303*/
 }
 
 
-// ==== 0x00411310  StreamClass::WriteBytes  this=IUnknown  sig=csp ====
+// ==== 0x00411310  StreamClass::WriteBytes  this=MouseClass  sig=csp ====
 int __thiscall StreamClass_WriteBytes(_DWORD **this, unsigned __int16 a2, char a3, int a4, int a5, int a6)
 {
   return (*(int (__thiscall **)(_DWORD, char *, _DWORD))(*this->q005 + 20))(this->q005, &a3, a2); /*0x411328*/
@@ -1404,7 +1404,7 @@ unsigned int __thiscall sub_411330(int this, int a2, int a3, int a4, int a5)
 }
 
 
-// ==== 0x004114B0  StreamClass::ReadAndSeek  this=IUnknown  sig=csp ====
+// ==== 0x004114B0  StreamClass::ReadAndSeek  this=StreamClass  sig=csp ====
 unsigned int __thiscall StreamClass::ReadAndSeek(int this, MouseClass *aP1, MouseClass *aP2)
 {
   int v4; // edi
@@ -2253,7 +2253,7 @@ int sub_412600()
 }
 
 
-// ==== 0x00412610  ObjectClass::method  this=char*  sig=csp ====
+// ==== 0x00412610  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_412610(char *this)
 {
   char *v1; // edi
@@ -6833,7 +6833,7 @@ LABEL_108:
 }
 
 
-// ==== 0x00418E20  InfantryClass::FindNearbyCell  this=TechnoClass  sig=csp ====
+// ==== 0x00418E20  InfantryClass::FindNearbyCell  this=IUnknown  sig=csp ====
 void *__thiscall InfantryClass_FindNearbyCell(_DWORD *this, int a2)
 {
   int v2; // esi
@@ -6862,7 +6862,7 @@ void *__thiscall InfantryClass_FindNearbyCell(_DWORD *this, int a2)
 
   v2 = a2; /*0x418e2b*/
   v22 = this; /*0x418e35*/
-  if ( a2 && (!this->q175 || !(unsigned __int8)TechnoClass::IsWaypointHidden()) ) /*0x418e49*/
+  if ( a2 && (!*(this + 373) || !(unsigned __int8)TechnoClass::IsWaypointHidden()) ) /*0x418e49*/
   {
     if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, int))(*this + 1360))(this, a2) /*0x418eab*/
       || (v4 = (_DWORD *)(*(int (__thiscall **)(int, double *, _DWORD))(*(_DWORD *)a2 + 76))(a2, &v25, 0),
@@ -7335,7 +7335,7 @@ LABEL_27:
 }
 
 
-// ==== 0x00419B00  Cell::IsOccupied  this=TechnoClass  sig=csp ====
+// ==== 0x00419B00  Cell::IsOccupied  this=IUnknown  sig=csp ====
 char __thiscall Cell_IsOccupied(void **this, __int16 *a2, char a3)
 {
   _DWORD *v5; // eax
@@ -7628,7 +7628,7 @@ LABEL_24:
 }
 
 
-// ==== 0x0041A160  TechnoClass::FindClosestPlacementCell  this=TechnoClass  sig=csp ====
+// ==== 0x0041A160  TechnoClass::FindClosestPlacementCell  this=IUnknown  sig=csp ====
 void *__thiscall TechnoClass_FindClosestPlacementCell(int *this)
 {
   int v2; // eax
@@ -7680,12 +7680,12 @@ void *__thiscall TechnoClass_FindClosestPlacementCell(int *this)
   {
     v2 = 0; /*0x41a1a3*/
     v30 = 0; /*0x41a1a5*/
-    v36 = *(_DWORD *)(this->Owner + 120); /*0x41a1ae*/
+    v36 = *(_DWORD *)(this->q21C + 120); /*0x41a1ae*/
     if ( v36 > 0 ) /*0x41a1b2*/
     {
       do /*0x41a2f9*/
       {
-        v3 = *(_DWORD *)(*(_DWORD *)(this->Owner + 108) + 4 * v2); /*0x41a1c1*/
+        v3 = *(_DWORD *)(*(_DWORD *)(this->q21C + 108) + 4 * v2); /*0x41a1c1*/
         if ( v3 && !*(_BYTE *)(v3 + 129) ) /*0x41a1cc*/
         {
           v4 = (_DWORD *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v3 + 72))(v3, v42); /*0x41a1e6*/
@@ -7776,7 +7776,7 @@ void *__thiscall TechnoClass_FindClosestPlacementCell(int *this)
       v16 = v15; /*0x41a3c6*/
       if ( v15 ) /*0x41a3ca*/
       {
-        if ( !*((_BYTE *)v15 + 129) && v15[135] == this->Owner && v15 != this ) /*0x41a3f2*/
+        if ( !*((_BYTE *)v15 + 129) && v15[135] == this->q21C && v15 != this ) /*0x41a3f2*/
         {
           v17 = (_DWORD *)(*(int (__thiscall **)(int *, _DWORD *))(*v15 + 72))(v15, v44); /*0x41a406*/
           v18 = (_DWORD *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 72))(this, v43); /*0x41a40f*/
@@ -9551,27 +9551,27 @@ int __thiscall CreateInstanceCOM(LPVOID *ppv, IID *rclsid, ILocomotion *aP2, DWO
 }
 
 
-// ==== 0x0041C2E0  Vector::ToFacingMath  this=BuildingTypeClass  sig=csp ====
+// ==== 0x0041C2E0  Vector::ToFacingMath  this=Vector  sig=csp ====
 _WORD *__thiscall Math_VectorToFacing(double *this, _WORD *a2)
 {
   double v3; // st7
   double v5; // [esp+Ch] [ebp-8h]
 
-  v5 = Math::Sqrt(*this * *this + this->vtable2 * this->vtable2); /*0x41c307*/
-  v3 = Math::CalcAngle(this->vtable3, v5); /*0x41c31a*/
+  v5 = Math::Sqrt(*this * *this + this->Vector_field_0x4 * this->Vector_field_0x4); /*0x41c307*/
+  v3 = Math::CalcAngle(this->Vector_field_0x8, v5); /*0x41c31a*/
   *a2 = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427); /*0x41c338*/
   return a2; /*0x41c337*/
 }
 
 
-// ==== 0x0041C350  Math::Hypotenuse2D  this=IUnknown  sig=csp ====
+// ==== 0x0041C350  Math::Hypotenuse2D  this=RecoilData  sig=csp ====
 void __thiscall Math_Hypotenuse2D(double *this)
 {
-  Math::Sqrt(*this * *this + this->q004 * this->q004); /*0x41c369*/
+  Math::Sqrt(*this * *this + *(this + 1) * *(this + 1)); /*0x41c369*/
 }
 
 
-// ==== 0x0041C380  Coord::Length  this=IUnknown  sig=csp ====
+// ==== 0x0041C380  Coord::Length  this=Coord  sig=csp ====
 double __thiscall Coord::Length(int *this)
 {
   double result; // st7
@@ -9579,20 +9579,20 @@ double __thiscall Coord::Length(int *this)
   result = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( /*0x41c3a4*/
                                          (double)*this * (double)*this
                                        + (double)this->q004 * (double)this->q004
-                                       + (double)this->q008 * (double)this->q008));
+                                       + (double)this->Coord_field_0x2 * (double)this->Coord_field_0x2));
   Math::RoundToInt(result); /*0x41c3ac*/
   return result; /*0x41c3a9*/
 }
 
 
-// ==== 0x0041C3C0  Vector3::Magnitude  this=BuildingTypeClass  sig=csp ====
+// ==== 0x0041C3C0  Vector3::Magnitude  this=Vector3  sig=csp ====
 void __thiscall Vector3::Magnitude(double *this)
 {
-  Math::Sqrt(*this * *this + this->vtable2 * this->vtable2 + this->vtable3 * this->vtable3); /*0x41c3e4*/
+  Math::Sqrt(*this * *this + this->Vector3_field_0x04 * this->Vector3_field_0x04 + this->Vector3_field_0x08 * this->Vector3_field_0x08); /*0x41c3e4*/
 }
 
 
-// ==== 0x0041C3F0  BulletClass::NormalizeZeroVector  this=BuildingTypeClass  sig=csp ====
+// ==== 0x0041C3F0  BulletClass::NormalizeZeroVector  this=BulletClass  sig=csp ====
 void __thiscall sub_41C3F0(double *this)
 {
   if ( *this == 0.0 && this->vtable2 == 0.0 && this->vtable3 == 0.0 ) /*0x41c41d*/
@@ -9603,20 +9603,20 @@ void __thiscall sub_41C3F0(double *this)
 }
 
 
-// ==== 0x0041C430  Function::41C430  this=AbstractClass  sig=csp ====
+// ==== 0x0041C430  Function::41C430  this=RecoilData  sig=csp ====
 void __thiscall Function::41C430(double *this)
 {
-  Math::Sqrt(*this * *this + this->vtable2 * this->vtable2); /*0x41c449*/
+  Math::Sqrt(*this * *this + *(this + 1) * *(this + 1)); /*0x41c449*/
 }
 
 
-// ==== 0x0041C460  Vector2::NormalizeNonZero  this=AbstractClass  sig=csp ====
+// ==== 0x0041C460  Vector2::NormalizeNonZero  this=RecoilData  sig=csp ====
 void __thiscall Vector2::NormalizeNonZero(double *this)
 {
-  if ( *this == 0.0 && this->vtable2 == 0.0 ) /*0x41c47d*/
+  if ( *this == 0.0 && *(this + 1) == 0.0 ) /*0x41c47d*/
   {
     *(_DWORD *)this = 0; /*0x41c47f*/
-    this->vtable2 = 1079574528; /*0x41c485*/
+    *((_DWORD *)this + 1) = 1079574528; /*0x41c485*/
   }
 }
 

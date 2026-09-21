@@ -5101,7 +5101,7 @@ int ArtINI_Load()
 }
 
 
-// ==== 0x00679F40  INIEntry::Exists  this=ObjectTypeClass  sig=csp ====
+// ==== 0x00679F40  INIEntry::Exists  this=INIEntry  sig=csp ====
 BOOL __thiscall INIEntry::Exists(void *this, unsigned __int8 *a2, unsigned __int8 *a3)
 {
   if ( a3 ) /*0x679f46*/
@@ -5259,7 +5259,7 @@ int *__thiscall TypeList::CopyFull(int *this, VectorClass *aP1)
 }
 
 
-// ==== 0x0067A110  TypeList::CopyAircraft  this=VectorClass  sig=csp ====
+// ==== 0x0067A110  TypeList::CopyAircraft  this=TypeList  sig=csp ====
 int *__thiscall TypeList::CopyAircraft(int *this, VectorClass *aP1)
 {
   int v3; // eax
@@ -6038,7 +6038,7 @@ TypeList *__thiscall TypeList_cptr_TerrainTypeClass::Add(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x0067AA80  VectorClass::CopyAssign  this=VectorClass  sig=csp ====
+// ==== 0x0067AA80  VectorClass::CopyAssign  this=WeaponStruct  sig=csp ====
 _DWORD *__thiscall VectorClass::CopyAssign(_DWORD *this, VectorClass *aP1)
 {
   void *v3; // eax
@@ -6050,28 +6050,28 @@ _DWORD *__thiscall VectorClass::CopyAssign(_DWORD *this, VectorClass *aP1)
     return this; /*0x67aa8a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x67aa8e*/
   v3 = aP1->field_8; /*0x67aa91*/
-  this->Capacity = v3; /*0x67aa96*/
+  *(this + 2) = v3; /*0x67aa96*/
   if ( !v3 ) /*0x67aa99*/
   {
-    this->Items = 0; /*0x67aada*/
-    this->__pad_034 = 0; /*0x67aae1*/
+    this->FLH = 0; /*0x67aada*/
+    *((_BYTE *)this + 13) = 0; /*0x67aae1*/
     return this; /*0x67aae5*/
   }
   v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x67aaa3*/
-  this->Items = v4; /*0x67aaab*/
+  this->FLH = v4; /*0x67aaab*/
   if ( !v4 ) /*0x67aab0*/
     return this; /*0x67aab0*/
-  v5 = this->Capacity; /*0x67aab2*/
+  v5 = *(this + 2); /*0x67aab2*/
   v6 = 0; /*0x67aab5*/
-  this->__pad_034 = 1; /*0x67aab9*/
+  *((_BYTE *)this + 13) = 1; /*0x67aab9*/
   if ( v5 <= 0 ) /*0x67aabd*/
     return this; /*0x67aabd*/
   do /*0x67aad1*/
   {
-    *(_DWORD *)(this->Items + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x67aac8*/
+    *(_DWORD *)(this->FLH + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x67aac8*/
     ++v6; /*0x67aace*/
   }
-  while ( v6 < this->Capacity ); /*0x67aad1*/
+  while ( v6 < *(this + 2) ); /*0x67aad1*/
   return this; /*0x67aad5*/
 }
 
@@ -6315,7 +6315,7 @@ int __thiscall TypeList_VoxelAnim::_vt04(int *this, _DWORD *a2)
 }
 
 
-// ==== 0x0067AE00  VectorClass::CopySmudge  this=VectorClass  sig=csp ====
+// ==== 0x0067AE00  VectorClass::CopySmudge  this=WeaponStruct  sig=csp ====
 _DWORD *__thiscall VectorClass::CopySmudge(_DWORD *this, CCINIClass *aP1)
 {
   int v3; // eax
@@ -6327,28 +6327,28 @@ _DWORD *__thiscall VectorClass::CopySmudge(_DWORD *this, CCINIClass *aP1)
     return this; /*0x67ae0a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x67ae0e*/
   v3 = aP1->headNode[1]; /*0x67ae11*/
-  this->Capacity = v3; /*0x67ae16*/
+  *(this + 2) = v3; /*0x67ae16*/
   if ( !v3 ) /*0x67ae19*/
   {
-    this->Items = 0; /*0x67ae5a*/
-    this->__pad_034 = 0; /*0x67ae61*/
+    this->FLH = 0; /*0x67ae5a*/
+    *((_BYTE *)this + 13) = 0; /*0x67ae61*/
     return this; /*0x67ae65*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x67ae23*/
-  this->Items = v4; /*0x67ae2b*/
+  this->FLH = v4; /*0x67ae2b*/
   if ( !v4 ) /*0x67ae30*/
     return this; /*0x67ae30*/
-  v5 = this->Capacity; /*0x67ae32*/
+  v5 = *(this + 2); /*0x67ae32*/
   v6 = 0; /*0x67ae35*/
-  this->__pad_034 = 1; /*0x67ae39*/
+  *((_BYTE *)this + 13) = 1; /*0x67ae39*/
   if ( v5 <= 0 ) /*0x67ae3d*/
     return this; /*0x67ae3d*/
   do /*0x67ae51*/
   {
-    *(_DWORD *)(this->Items + 4 * v6) = *(_DWORD *)(aP1->headNode[0] + 4 * v6); /*0x67ae48*/
+    *(_DWORD *)(this->FLH + 4 * v6) = *(_DWORD *)(aP1->headNode[0] + 4 * v6); /*0x67ae48*/
     ++v6; /*0x67ae4e*/
   }
-  while ( v6 < this->Capacity ); /*0x67ae51*/
+  while ( v6 < *(this + 2) ); /*0x67ae51*/
   return this; /*0x67ae55*/
 }
 
@@ -9242,7 +9242,7 @@ char __thiscall SaveGame::Start(LPSTREAM pStm)
 }
 
 
-// ==== 0x0067E440  Game::LoadSaved  this=AnimClass  sig=csp ====
+// ==== 0x0067E440  Game::LoadSaved  this=AbstractClass  sig=csp ====
 char __thiscall Game::LoadSaved(AnimClass *this)
 {
   int COM; // eax

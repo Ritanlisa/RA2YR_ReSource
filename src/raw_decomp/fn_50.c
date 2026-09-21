@@ -163,7 +163,7 @@ _DWORD *__thiscall CellClass::ScanOccupiers(_DWORD *this, HouseClass *aP1)
 }
 
 
-// ==== 0x005004E0  GetHouseTechLevel  this=IUnknown  sig=ida-proto ====
+// ==== 0x005004E0  GetHouseTechLevel  this=-  sig=ida-proto ====
 int __fastcall House_GetTechLevel(int a1, int a2)
 {
   int v4; // eax
@@ -178,7 +178,7 @@ int __fastcall House_GetTechLevel(int a1, int a2)
 }
 
 
-// ==== 0x00500510  HouseClass::GetBuildLimit  this=IUnknown  sig=csp ====
+// ==== 0x00500510  HouseClass::GetBuildLimit  this=HouseClass  sig=csp ====
 int __thiscall HouseClass::GetBuildLimit(_DWORD *this, int a2, IUnknown *aP2, ControlClass *aP3)
 {
   int result; // eax
@@ -188,24 +188,24 @@ int __thiscall HouseClass::GetBuildLimit(_DWORD *this, int a2, IUnknown *aP2, Co
     case 1: /*0x500522*/
     case 40: /*0x500522*/
       if ( (_BYTE)aP2 ) /*0x500538*/
-        result = this->q14EE; /*0x50053a*/
+        result = this->primaryForShips; /*0x50053a*/
       else
-        result = this->q14ED; /*0x500543*/
+        result = this->primaryForVehicles; /*0x500543*/
       break; /*0x500540*/
     case 2: /*0x500522*/
     case 3: /*0x500522*/
-      result = this->q14EB; /*0x500565*/
+      result = this->primaryForAircraft; /*0x500565*/
       break; /*0x50056b*/
     case 6: /*0x500522*/
     case 7: /*0x500522*/
       if ( aP3 == (ControlClass *)5 ) /*0x500551*/
-        result = this->q14F3; /*0x500553*/
+        result = this->primaryForDefenses; /*0x500553*/
       else
-        result = this->q14EF; /*0x50055c*/
+        result = this->primaryForBuildings; /*0x50055c*/
       break; /*0x500559*/
     case 15: /*0x500522*/
     case 16: /*0x500522*/
-      result = this->q14EC; /*0x500529*/
+      result = this->primaryForInfantry; /*0x500529*/
       break; /*0x50052f*/
     default:
       result = 0; /*0x50056e*/
@@ -215,7 +215,7 @@ int __thiscall HouseClass::GetBuildLimit(_DWORD *this, int a2, IUnknown *aP2, Co
 }
 
 
-// ==== 0x005005B0  SidebarClass::MarkTabForRebuild  this=IUnknown  sig=csp ====
+// ==== 0x005005B0  SidebarClass::MarkTabForRebuild  this=SidebarClass  sig=csp ====
 char __thiscall SidebarClass::MarkTabForRebuild(_BYTE *this, int a2, IUnknown *aP2, ControlClass *aP3)
 {
   char result; // al
@@ -254,7 +254,7 @@ LABEL_3:
 }
 
 
-// ==== 0x00500700  SidebarClass::getTypeProductionCount  this=IUnknown  sig=csp ====
+// ==== 0x00500700  SidebarClass::getTypeProductionCount  this=SidebarClass  sig=csp ====
 char __thiscall sub_500700(_BYTE *this, int a2, char a3, int a4)
 {
   char result; // al
@@ -690,7 +690,7 @@ LABEL_11:
 }
 
 
-// ==== 0x00501160  CCINIClass::WriteHouses  this=CCINIClass  sig=csp ====
+// ==== 0x00501160  CCINIClass::WriteHouses  this=AbstractTypeClass  sig=csp ====
 IUnknown *__thiscall CCINIClass::WriteHouses(INIClass *this)
 {
   IUnknown *result; // eax
@@ -1130,7 +1130,7 @@ _DWORD *__stdcall sub_501AA0(_DWORD *a1, int a2, int a3)
 }
 
 
-// ==== 0x00501AC0  HouseClass::GenerateAttackCoords  this=HouseClass  sig=csp ====
+// ==== 0x00501AC0  HouseClass::GenerateAttackCoords  this=AbstractClass  sig=csp ====
 _DWORD *__thiscall HouseClass::GenerateAttackCoords(int *this, MouseClass *aP1, int a3)
 {
   int v4; // eax
@@ -1504,7 +1504,7 @@ LABEL_13:
 }
 
 
-// ==== 0x005023B0  Waypoint::FindByCell  this=IUnknown  sig=csp ====
+// ==== 0x005023B0  Waypoint::FindByCell  this=Waypoint  sig=csp ====
 _DWORD *__thiscall Waypoint::FindByCell(char *this, IUnknown *aP1)
 {
   signed int v2; // esi
@@ -1557,7 +1557,7 @@ LABEL_12:
 }
 
 
-// ==== 0x00502460  WaypointClass::FindOrCreate  this=IUnknown  sig=csp ====
+// ==== 0x00502460  WaypointClass::FindOrCreate  this=WaypointClass  sig=csp ====
 char __thiscall WaypointClass::FindOrCreate(char *this, MouseClass *aP1, IUnknown *aP2, IUnknown *aP3)
 {
   unsigned int v4; // edi
@@ -3110,7 +3110,7 @@ LABEL_187:
 
 
 
-// ==== 0x00504740  HouseClass::EnsurePlanningPathExists  this=IUnknown  sig=csp ====
+// ==== 0x00504740  HouseClass::EnsurePlanningPathExists  this=HouseClass  sig=csp ====
 int __thiscall HouseClass::EnsurePlanningPathExists(_DWORD *this, unsigned int a2)
 {
   int result; // eax
@@ -3320,7 +3320,7 @@ LABEL_16:
 }
 
 
-// ==== 0x00505310  BuildingClass::FindBySWType  this=ObjectClass  sig=csp ====
+// ==== 0x00505310  BuildingClass::FindBySWType  this=AbstractClass  sig=csp ====
 int __thiscall BuildingClass_FindBySWType(_DWORD *this, int a2)
 {
   char v2; // cl
@@ -3329,7 +3329,7 @@ int __thiscall BuildingClass_FindBySWType(_DWORD *this, int a2)
   int v5; // ecx
   int i; // esi
 
-  v2 = SuperWeaponTypeClass::FindByName((void *)(this->attachedTag + 152)); /*0x50532a*/
+  v2 = SuperWeaponTypeClass::FindByName((void *)(this->q034 + 152)); /*0x50532a*/
   v3 = 0; /*0x50532c*/
   v4 = 1 << v2; /*0x50532e*/
   v5 = *(_DWORD *)(a2 + 16); /*0x505330*/
@@ -5879,7 +5879,7 @@ LABEL_16:
 }
 
 
-// ==== 0x005090A0  TacticalClass::updateVisibility  this=IUnknown  sig=csp ====
+// ==== 0x005090A0  TacticalClass::updateVisibility  this=TacticalClass  sig=csp ====
 int __thiscall TacticalClass::updateVisibility(int *this)
 {
   int v1; // esi
@@ -7753,7 +7753,7 @@ LABEL_16:
 }
 
 
-// ==== 0x0050B370  HouseClass::ShouldDisableCameo  this=IUnknown  sig=csp ====
+// ==== 0x0050B370  HouseClass::ShouldDisableCameo  this=HouseClass  sig=csp ====
 char __thiscall HouseClass::ShouldDisableCameo(_DWORD *this, int a2)
 {
   _DWORD *v3; // ebp
@@ -8729,7 +8729,7 @@ LABEL_8:
 }
 
 
-// ==== 0x0050C8C0  HouseClass::NotifyImpactWater  this=AnimClass  sig=csp ====
+// ==== 0x0050C8C0  HouseClass::NotifyImpactWater  this=AbstractClass  sig=csp ====
 int __thiscall HouseClass::NotifyImpactWater(AnimClass *this)
 {
   int v1; // edi
@@ -9966,24 +9966,24 @@ LABEL_24:
 }
 
 
-// ==== 0x0050DEF0  HouseClass::GetCurrentOption  this=IUnknown  sig=csp ====
+// ==== 0x0050DEF0  HouseClass::GetCurrentOption  this=AbstractClass  sig=csp ====
 ObjectClass *__thiscall HouseClass::GetCurrentOption(_DWORD *this, IUnknown *aP1)
 {
   if ( *((_WORD *)this + 10826) == *(_WORD *)&HouseClass_Player.__pad_5568[23780] /*0x50df0e*/
     && *((_WORD *)this + 10827) == *(_WORD *)&HouseClass_Player.__pad_5568[23782] )
   {
-    aP1->field_0 = this->q1524; /*0x50df1a*/
+    aP1->field_0 = this->q5490; /*0x50df1a*/
     return (ObjectClass *)aP1; /*0x50df10*/
   }
   else
   {
-    aP1->field_0 = this->q1525; /*0x50df29*/
+    aP1->field_0 = this->__pad_5494; /*0x50df29*/
     return (ObjectClass *)aP1; /*0x50df1f*/
   }
 }
 
 
-// ==== 0x0050DF30  HouseClass::GetStartCoords  this=IUnknown  sig=csp ====
+// ==== 0x0050DF30  HouseClass::GetStartCoords  this=AbstractClass  sig=csp ====
 _DWORD *__thiscall HouseClass::GetStartCoords(_DWORD *this, AbstractClass *aP1)
 {
   ObjectClass *v2; // ecx
@@ -9995,11 +9995,11 @@ _DWORD *__thiscall HouseClass::GetStartCoords(_DWORD *this, AbstractClass *aP1)
   if ( *((_WORD *)this + 10826) == *(_WORD *)&MEMORY[0xA8D63C].__pad_14B0[1196] /*0x50df4f*/
     && *((_WORD *)this + 10827) == *(_WORD *)&MEMORY[0xA8D63C].__pad_14B0[1198] )
   {
-    v2 = (ObjectClass *)this->q1524; /*0x50df51*/
+    v2 = (ObjectClass *)this->q5490; /*0x50df51*/
   }
   else
   {
-    v2 = (ObjectClass *)this->q1525; /*0x50df59*/
+    v2 = (ObjectClass *)this->__pad_5494; /*0x50df59*/
   }
   v6 = v2; /*0x50df66*/
   if ( v2 == *(ObjectClass **)&MEMORY[0xA8D63C].__pad_14B0[1196] ) /*0x50df6a*/

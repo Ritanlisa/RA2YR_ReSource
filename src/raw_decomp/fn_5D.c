@@ -149,7 +149,7 @@ LABEL_5:
 }
 
 
-// ==== 0x005D0290  MSChoiceClass::DeleteAndZero  this=ObjectClass  sig=csp ====
+// ==== 0x005D0290  MSChoiceClass::DeleteAndZero  this=AbstractClass  sig=csp ====
 char *__thiscall MSChoiceClass::DeleteAndZero(char *this, ObjectClass *aP1)
 {
   void **v3; // ebp
@@ -181,7 +181,7 @@ char *__thiscall MSChoiceClass::DeleteAndZero(char *this, ObjectClass *aP1)
 }
 
 
-// ==== 0x005D0380  String::SplitComma  this=ObjectClass  sig=csp ====
+// ==== 0x005D0380  String::SplitComma  this=AbstractClass  sig=csp ====
 int __thiscall String::SplitComma(int this, ObjectClass *aP1)
 {
   ObjectClass *v3; // ebx
@@ -3986,7 +3986,7 @@ int __thiscall sub_5D3A40(_DWORD *this)
 }
 
 
-// ==== 0x005D3A60  MessageListClass::Init  this=CellStruct  sig=csp ====
+// ==== 0x005D3A60  MessageListClass::Init  this=MessageListClass  sig=csp ====
 int __thiscall MessageListClass::Init(
         _DWORD *this,
         int a2,
@@ -4017,54 +4017,54 @@ int __thiscall MessageListClass::Init(
   memset32(this + 1312, 65537, 7u); /*0x5d3ab3*/
   if ( this->q019 ) /*0x5d3ab5*/
   {
-    v14 = (void (__thiscall ***)(_DWORD, int))this->q009; /*0x5d3aba*/
+    v14 = (void (__thiscall ***)(_DWORD, int))this->q024; /*0x5d3aba*/
     if ( v14 ) /*0x5d3abf*/
       (**v14)(v14, 1); /*0x5d3ac5*/
-    this->q009 = 0; /*0x5d3ac7*/
+    this->q024 = 0; /*0x5d3ac7*/
   }
   *this = 0; /*0x5d3ad9*/
-  this->q004 = a2; /*0x5d3adb*/
+  this->MaxMessageCount = a2; /*0x5d3adb*/
   this->q002 = a3; /*0x5d3ade*/
-  this->q030 = a4; /*0x5d3ae1*/
+  this->TextColorIndex = a4; /*0x5d3ae1*/
   if ( a4 > 14 ) /*0x5d3ae4*/
-    this->q030 = 14; /*0x5d3ae6*/
-  this->q004 = a5; /*0x5d3af4*/
+    this->TextColorIndex = 14; /*0x5d3ae6*/
+  this->MaxMessageCount = a5; /*0x5d3af4*/
   if ( a5 > 112 ) /*0x5d3af7*/
-    this->q004 = 112; /*0x5d3af9*/
-  this->q005 = 19; /*0x5d3b04*/
+    this->MaxMessageCount = 112; /*0x5d3af9*/
+  this->MessageTimer = 19; /*0x5d3b04*/
   this->q018 = a9; /*0x5d3b0b*/
   this->q019 = 0; /*0x5d3b15*/
   if ( a7 == -1 || a8 == -1 ) /*0x5d3b21*/
   {
     this->q01A = 1; /*0x5d3b2e*/
-    this->q007 = a2; /*0x5d3b32*/
-    this->q002 = a3; /*0x5d3b35*/
+    this->q01C = a2; /*0x5d3b32*/
+    this->ScrollOffset = a3; /*0x5d3b35*/
   }
   else
   {
     this->q01A = 0; /*0x5d3b23*/
-    this->q007 = a7; /*0x5d3b26*/
-    this->q002 = a8; /*0x5d3b29*/
+    this->q01C = a7; /*0x5d3b26*/
+    this->ScrollOffset = a8; /*0x5d3b29*/
   }
-  v15 = this->q004; /*0x5d3b3c*/
-  this->q009 = 0; /*0x5d3b45*/
-  this->q014 = 0; /*0x5d3b48*/
+  v15 = this->MaxMessageCount; /*0x5d3b3c*/
+  this->q024 = 0; /*0x5d3b45*/
+  this->MessageTimer = 0; /*0x5d3b48*/
   *((_WORD *)this + 182) = 0; /*0x5d3b4c*/
   this->q2B0 = 0; /*0x5d3b53*/
   this->q2B4 = 0; /*0x5d3b59*/
   *((_WORD *)this + 348) = 0; /*0x5d3b5f*/
-  this->q0AF = a10; /*0x5d3b66*/
-  this->q0B0 = a11; /*0x5d3b6c*/
+  this->q2BC = a10; /*0x5d3b66*/
+  this->q2C0 = a11; /*0x5d3b6c*/
   if ( a11 >= v15 ) /*0x5d3b72*/
-    this->q0B0 = v15 - 1; /*0x5d3b75*/
-  result = this->q0B0; /*0x5d3b7b*/
+    this->q2C0 = v15 - 1; /*0x5d3b75*/
+  result = this->q2C0; /*0x5d3b7b*/
   if ( a10 >= result ) /*0x5d3b83*/
-    this->q0AF = --result; /*0x5d3b86*/
+    this->q2BC = --result; /*0x5d3b86*/
   return result; /*0x5d3b8c*/
 }
 
 
-// ==== 0x005D3BA0  MessageListClass::AddMessage  this=MessageListClass  sig=csp ====
+// ==== 0x005D3BA0  MessageListClass::AddMessage  this=IUnknown  sig=csp ====
 int __thiscall MessageListClass::AddMessage(
         _DWORD *this,
         IUnknown *aP1,
@@ -4117,24 +4117,24 @@ int __thiscall MessageListClass::AddMessage(
   v11 = (ObjectClass *)wcslen(String); /*0x5d3c23*/
   v12 = Text::MeasureWidth((int)String, 0); /*0x5d3c3a*/
   v34 = wcslen((const wchar_t *)aP3); /*0x5d3c42*/
-  if ( this->q2C4 - v12 - 8 <= 0 ) /*0x5d3c56*/
+  if ( *(this + 177) - v12 - 8 <= 0 ) /*0x5d3c56*/
     return 0; /*0x5d3c64*/
-  v13 = MessageListClass::CountCharsInWidth(Instance, aP3, this->q2C4 - v12 - 8, 111, 1); /*0x5d3c76*/
+  v13 = MessageListClass::CountCharsInWidth(Instance, aP3, *(this + 177) - v12 - 8, 111, 1); /*0x5d3c76*/
   v14 = v13; /*0x5d3c7b*/
   v35 = v13; /*0x5d3c7f*/
   if ( v13 < 0 ) /*0x5d3c83*/
     return 0; /*0x5d3c91*/
   wcsncat(String, (const wchar_t *)aP3, v13); /*0x5d3c9b*/
-  v15 = this->TextColorIndex; /*0x5d3ca0*/
+  v15 = this->q003; /*0x5d3ca0*/
   String[(_DWORD)v11 + v14] = 0; /*0x5d3caa*/
   if ( v15 > 0 ) /*0x5d3cb1*/
   {
     v16 = *this; /*0x5d3cb3*/
     for ( i = 0; v16; v16 = (*(int (__thiscall **)(int))(*(_DWORD *)v16 + 4))(v16) ) /*0x5d3cb3*/
       ++i; /*0x5d3cbf*/
-    if ( this->q019 && this->q01A ) /*0x5d3cce*/
+    if ( this->q064 && this->q01A ) /*0x5d3cce*/
       ++i; /*0x5d3cd5*/
-    if ( i + 1 > this->TextColorIndex ) /*0x5d3cdc*/
+    if ( i + 1 > this->q003 ) /*0x5d3cdc*/
     {
       v18 = (_DWORD *)*this; /*0x5d3cde*/
       if ( !*this ) /*0x5d3cde*/
@@ -4160,7 +4160,7 @@ int __thiscall MessageListClass::AddMessage(
   {
     ecx26 = aP5; /*0x5d3d39*/
     BYTE1(ecx26) = BYTE1(aP5) | 0x80; /*0x5d3d47*/
-    v23 = (TextLabelClass *)MessageListClass::clearMessages(v22, (int)String, this->MaxMessageCount, this->q002, a5, (int)ecx26); /*0x5d3d60*/
+    v23 = (TextLabelClass *)MessageListClass::clearMessages(v22, (int)String, this->q004, this->q008, a5, (int)ecx26); /*0x5d3d60*/
   }
   else
   {
@@ -4202,7 +4202,7 @@ LABEL_38:
     v23->field_24 = a7 + v25; /*0x5d3df9*/
   }
   v23->field_28 = (int)aP2; /*0x5d3e03*/
-  *(_DWORD *)&v23->__pad_2C[12] = this->q2C4; /*0x5d3e0c*/
+  *(_DWORD *)&v23->__pad_2C[12] = *(this + 177); /*0x5d3e0c*/
   v26 = 0; /*0x5d3e0f*/
   for ( j = this + 1312; !*j; ++j ) /*0x5d3e11*/
   {
@@ -4225,10 +4225,10 @@ LABEL_38:
     (*(void (__thiscall **)(TextLabelClass *, _DWORD))(*(_DWORD *)v23->__pad_0 + 16))(v23, *this); /*0x5d3ea8*/
   else
     *this = v23; /*0x5d3ead*/
-  if ( this->q019 && this->q01A ) /*0x5d3eb6*/
-    v29 = this->q002 + this->MessageTimer; /*0x5d3ec3*/
+  if ( this->q064 && this->q01A ) /*0x5d3eb6*/
+    v29 = this->q008 + this->q005; /*0x5d3ec3*/
   else
-    v29 = this->q002; /*0x5d3ec7*/
+    v29 = this->q008; /*0x5d3ec7*/
   v30 = (int *)*this; /*0x5d3eca*/
   if ( *this ) /*0x5d3eca*/
   {
@@ -4237,7 +4237,7 @@ LABEL_38:
       v31 = *v30; /*0x5d3ed0*/
       v30[4] = v29; /*0x5d3ed4*/
       v30 = (int *)(*(int (__thiscall **)(int *))(v31 + 4))(v30); /*0x5d3ed7*/
-      v29 += this->MessageTimer; /*0x5d3eda*/
+      v29 += this->q005; /*0x5d3eda*/
     }
     while ( v30 ); /*0x5d3edf*/
   }
@@ -4257,7 +4257,7 @@ LABEL_38:
 }
 
 
-// ==== 0x005D3FC0  ScrollingText::AddLine  this=CellStruct  sig=csp ====
+// ==== 0x005D3FC0  ScrollingText::AddLine  this=ScrollingText  sig=csp ====
 int __thiscall ScrollingText::AddLine(_BYTE *this, wchar_t *String, CellStruct *aP2, CellStruct *aP3, int a5)
 {
   wchar_t *v5; // edi
@@ -4280,7 +4280,7 @@ int __thiscall ScrollingText::AddLine(_BYTE *this, wchar_t *String, CellStruct *
     return 0; /*0x5d3fcd*/
   if ( !aP3 ) /*0x5d3fd5*/
     return 0; /*0x5d3fd5*/
-  if ( !this->q018 ) /*0x5d3fd7*/
+  if ( !*(this + 24) ) /*0x5d3fd7*/
     return 0; /*0x5d3fd7*/
   v7 = *(CampaignScore **)this; /*0x5d3fde*/
   if ( !*(_DWORD *)this ) /*0x5d3fde*/
@@ -4299,11 +4299,11 @@ LABEL_8:
   }
   v18 = v7; /*0x5d402d*/
   v9 = (CampaignScore *)(v7[1].CampaignScore_field_0x0C + 2 * wcslen(String) + 2); /*0x5d403a*/
-  Stringa = (wchar_t *)this->q004; /*0x5d4042*/
+  Stringa = (wchar_t *)*((_DWORD *)this + 4); /*0x5d4042*/
   v10 = wcslen((const wchar_t *)v9); /*0x5d404f*/
   if ( wcslen((const wchar_t *)aP3) + v10 >= (unsigned int)Stringa ) /*0x5d4062*/
   {
-    v14 = wcslen((const wchar_t *)v9) - this->q004; /*0x5d4150*/
+    v14 = wcslen((const wchar_t *)v9) - *((_DWORD *)this + 4); /*0x5d4150*/
     v15 = wcslen((const wchar_t *)aP3) + v14; /*0x5d4158*/
     v16 = wcslen((const wchar_t *)v9); /*0x5d415a*/
     if ( v16 < v15 ) /*0x5d4164*/
@@ -4319,7 +4319,7 @@ LABEL_8:
     v12 = Text::MeasureWidth(v7[1].CampaignScore_field_0x0C, 0) - (_DWORD)v20; /*0x5d40aa*/
     wcscpy((wchar_t *)v11, (const wchar_t *)v9); /*0x5d40ac*/
     wcscat((wchar_t *)v11, (const wchar_t *)aP3); /*0x5d40b7*/
-    while ( v12 + Text::MeasureWidth((int)v11, 0) >= this->q2C4 ) /*0x5d40d5*/
+    while ( v12 + Text::MeasureWidth((int)v11, 0) >= *((_DWORD *)this + 177) ) /*0x5d40d5*/
     {
       v13 = wcslen((const wchar_t *)v9); /*0x5d40d8*/
       if ( v13 < 10 ) /*0x5d40e3*/
@@ -4348,7 +4348,7 @@ LABEL_8:
 }
 
 
-// ==== 0x005D4210  NetworkLobby::MessageList_Append  this=CellStruct  sig=csp ====
+// ==== 0x005D4210  NetworkLobby::MessageList_Append  this=NetworkLobby  sig=csp ====
 int __thiscall NetworkLobby::MessageList_Append(_DWORD *this, int a2, int a3, CellStruct *aP3, char a5, int a6)
 {
   int v8; // eax
@@ -4368,21 +4368,21 @@ int __thiscall NetworkLobby::MessageList_Append(_DWORD *this, int a2, int a3, Ce
   int *v22; // eax
   int v23; // edx
 
-  if ( this->q019 ) /*0x5d4213*/
+  if ( *((_BYTE *)this + 25) ) /*0x5d4213*/
   {
-    (*(void (__thiscall **)(_DWORD))(*(_DWORD *)this->q009 + 80))(this->q009); /*0x5d421f*/
+    (*(void (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 9) + 80))(*(this + 9)); /*0x5d421f*/
     return 0; /*0x5d4222*/
   }
   else
   {
-    if ( this->q01A ) /*0x5d4228*/
+    if ( *((_BYTE *)this + 26) ) /*0x5d4228*/
     {
       v8 = *this; /*0x5d4232*/
       for ( i = 0; v8; v8 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 4))(v8) ) /*0x5d4232*/
         ++i; /*0x5d423e*/
-      if ( this->q019 && this->q01A ) /*0x5d424d*/
+      if ( *((_BYTE *)this + 25) && *((_BYTE *)this + 26) ) /*0x5d424d*/
         ++i; /*0x5d4254*/
-      if ( i + 1 > this->q030 ) /*0x5d425b*/
+      if ( i + 1 > this->__pad_00C ) /*0x5d425b*/
       {
         v10 = *this; /*0x5d425d*/
         *this = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*this + 36))(*this); /*0x5d4266*/
@@ -4410,41 +4410,41 @@ int __thiscall NetworkLobby::MessageList_Append(_DWORD *this, int a2, int a3, Ce
     wcscpy((wchar_t *)this + 20, (const wchar_t *)v14); /*0x5d42c5*/
     *((_WORD *)this + 182) = 0; /*0x5d42cb*/
     v15 = wcslen((const wchar_t *)v14); /*0x5d42d4*/
-    this->q2B4 = v15; /*0x5d42db*/
-    this->q2B0 = v15; /*0x5d42e1*/
+    *(this + 173) = v15; /*0x5d42db*/
+    *(this + 172) = v15; /*0x5d42e1*/
     v16 = (TextLabelClass *)__2_YAPAXI_Z(0x4Cu); /*0x5d42e7*/
     if ( v16 ) /*0x5d42f1*/
     {
       v17 = a3; /*0x5d42f3*/
       BYTE1(v17) = BYTE1(a3) | 0x80; /*0x5d42fb*/
-      v18 = MessageListClass::clearMessages(v16, (int)(this + 10), this->q01C, this->q002, a2, v17); /*0x5d430b*/
+      v18 = MessageListClass::clearMessages(v16, (int)(this + 10), *(this + 7), this->NetworkLobby_field_0x8, a2, v17); /*0x5d430b*/
     }
     else
     {
       v18 = 0; /*0x5d4312*/
     }
     v19 = a6; /*0x5d4314*/
-    this->q009 = v18; /*0x5d4318*/
+    *(this + 9) = v18; /*0x5d4318*/
     if ( a6 <= 0 ) /*0x5d431d*/
-      v19 = this->q2C4; /*0x5d431f*/
+      v19 = *(this + 177); /*0x5d431f*/
     *(_DWORD *)(v18 + 56) = v19; /*0x5d4325*/
-    v20 = this->q009; /*0x5d4328*/
+    v20 = *(this + 9); /*0x5d4328*/
     if ( v20 ) /*0x5d432d*/
     {
-      this->q019 = 1; /*0x5d432f*/
+      *((_BYTE *)this + 25) = 1; /*0x5d432f*/
       (*(void (__thiscall **)(int))(*(_DWORD *)v20 + 80))(v20); /*0x5d4335*/
     }
     else
     {
-      this->q019 = 0; /*0x5d433a*/
+      *((_BYTE *)this + 25) = 0; /*0x5d433a*/
     }
     Network_Append(); /*0x5d433e*/
-    if ( this->q01A ) /*0x5d4343*/
+    if ( *((_BYTE *)this + 26) ) /*0x5d4343*/
     {
-      if ( this->q019 ) /*0x5d434a*/
-        v21 = this->q002 + this->q014; /*0x5d4357*/
+      if ( *((_BYTE *)this + 25) ) /*0x5d434a*/
+        v21 = this->NetworkLobby_field_0x8 + *(this + 5); /*0x5d4357*/
       else
-        v21 = this->q002; /*0x5d435b*/
+        v21 = this->NetworkLobby_field_0x8; /*0x5d435b*/
       v22 = (int *)*this; /*0x5d435e*/
       if ( *this ) /*0x5d435e*/
       {
@@ -4453,18 +4453,18 @@ int __thiscall NetworkLobby::MessageList_Append(_DWORD *this, int a2, int a3, Ce
           v23 = *v22; /*0x5d4364*/
           v22[4] = v21; /*0x5d4368*/
           v22 = (int *)(*(int (__thiscall **)(int *))(v23 + 4))(v22); /*0x5d436b*/
-          v21 += this->q014; /*0x5d436e*/
+          v21 += *(this + 5); /*0x5d436e*/
         }
         while ( v22 ); /*0x5d4373*/
       }
-      --this->q030; /*0x5d4375*/
+      --this->__pad_00C; /*0x5d4375*/
     }
-    return this->q009; /*0x5d4378*/
+    return *(this + 9); /*0x5d4378*/
   }
 }
 
 
-// ==== 0x005D4390  Chat::RefreshMessagePositions  this=CellStruct  sig=csp ====
+// ==== 0x005D4390  Chat::RefreshMessagePositions  this=Chat  sig=csp ====
 char __thiscall sub_5D4390(void *this)
 {
   int v2; // eax
@@ -4474,21 +4474,21 @@ char __thiscall sub_5D4390(void *this)
   int v6; // edx
 
   DisableIME(); /*0x5d4393*/
-  LOBYTE(v2) = this->q019; /*0x5d4398*/
+  LOBYTE(v2) = *((_BYTE *)this + 25); /*0x5d4398*/
   if ( (_BYTE)v2 ) /*0x5d439d*/
   {
-    v3 = (void (__thiscall ***)(_DWORD, int))this->q009; /*0x5d439f*/
-    this->q019 = 0; /*0x5d43a2*/
+    v3 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 9); /*0x5d439f*/
+    *((_BYTE *)this + 25) = 0; /*0x5d43a2*/
     if ( v3 ) /*0x5d43a8*/
       (**v3)(v3, 1); /*0x5d43ae*/
     nullsub_48(); /*0x5d43b0*/
-    LOBYTE(v2) = this->q01A; /*0x5d43b5*/
+    LOBYTE(v2) = *((_BYTE *)this + 26); /*0x5d43b5*/
     if ( (_BYTE)v2 ) /*0x5d43ba*/
     {
-      if ( this->q019 ) /*0x5d43bc*/
-        v4 = this->q002 + this->q005; /*0x5d43ca*/
+      if ( *((_BYTE *)this + 25) ) /*0x5d43bc*/
+        v4 = this->__pad_008 + *((_DWORD *)this + 5); /*0x5d43ca*/
       else
-        v4 = this->q002; /*0x5d43ce*/
+        v4 = this->__pad_008; /*0x5d43ce*/
       v5 = *(int **)this; /*0x5d43d1*/
       if ( *(_DWORD *)this ) /*0x5d43d1*/
       {
@@ -4497,7 +4497,7 @@ char __thiscall sub_5D4390(void *this)
           v6 = *v5; /*0x5d43d7*/
           v5[4] = v4; /*0x5d43db*/
           v5 = (int *)(*(int (__thiscall **)(int *))(v6 + 4))(v5); /*0x5d43de*/
-          v4 += this->q005; /*0x5d43e1*/
+          v4 += *((_DWORD *)this + 5); /*0x5d43e1*/
         }
         while ( v5 ); /*0x5d43e6*/
       }
@@ -4509,14 +4509,14 @@ char __thiscall sub_5D4390(void *this)
 }
 
 
-// ==== 0x005D4400  PriQueue::GetItemPtr  this=CellStruct  sig=csp ====
+// ==== 0x005D4400  PriQueue::GetItemPtr  this=PriQueue  sig=csp ====
 int __thiscall PriQueue_GetItemPtr(_DWORD *this)
 {
   return (int)this + 2 * this->q2B4 + 40; /*0x5d440a*/
 }
 
 
-// ==== 0x005D4430  ObjectClass::SyncFrameCounter  this=CellStruct  sig=csp ====
+// ==== 0x005D4430  ObjectClass::SyncFrameCounter  this=ObjectClass  sig=csp ====
 int __thiscall sub_5D4430(char *this)
 {
   int v2; // ebp
@@ -4571,10 +4571,10 @@ LABEL_13:
     while ( v3 ); /*0x5d44c9*/
     if ( v2 ) /*0x5d44d2*/
     {
-      if ( this->q019 && this->q01A ) /*0x5d44db*/
-        v9 = this->q002 + this->q005; /*0x5d44e8*/
+      if ( this->customSound && this->q01A ) /*0x5d44db*/
+        v9 = this->vtable3 + this->abstractFlags; /*0x5d44e8*/
       else
-        v9 = this->q002; /*0x5d44ec*/
+        v9 = this->vtable3; /*0x5d44ec*/
       v10 = *(int **)this; /*0x5d44ef*/
       if ( *(_DWORD *)this ) /*0x5d44ef*/
       {
@@ -4583,7 +4583,7 @@ LABEL_13:
           v11 = *v10; /*0x5d44f5*/
           v10[4] = v9; /*0x5d44f9*/
           v10 = (int *)(*(int (__thiscall **)(int *))(v11 + 4))(v10); /*0x5d44fc*/
-          v9 += this->q005; /*0x5d44ff*/
+          v9 += this->abstractFlags; /*0x5d44ff*/
         }
         while ( v10 ); /*0x5d4504*/
       }
@@ -4593,7 +4593,7 @@ LABEL_13:
 }
 
 
-// ==== 0x005D4510  ProcessEditControlKey  this=CellStruct  sig=csp ====
+// ==== 0x005D4510  ProcessEditControlKey  this=-  sig=csp ====
 int __fastcall ProcessEditControlKey(CellStruct *aP0, int edx0, int *a2, unsigned __int16 a4)
 {
   int v4; // edi
@@ -4901,7 +4901,7 @@ LABEL_76:
 }
 
 
-// ==== 0x005D49A0  TacticalMap::DrawCursor  this=CellStruct  sig=csp ====
+// ==== 0x005D49A0  TacticalMap::DrawCursor  this=TacticalMap  sig=csp ====
 char __thiscall sub_5D49A0(_DWORD *this)
 {
   char result; // al
@@ -4917,19 +4917,19 @@ char __thiscall sub_5D49A0(_DWORD *this)
   _BYTE v12[16]; // [esp+1Ch] [ebp-10h] BYREF
 
   v9 = 0; /*0x5d49a6*/
-  result = this->q019; /*0x5d49b4*/
+  result = *((_BYTE *)this + 25); /*0x5d49b4*/
   if ( result ) /*0x5d49b9*/
   {
     (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x5d49c8*/
-    (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)this->q009 + 108))(this->q009, 1); /*0x5d49d2*/
+    (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)this->__pad_024 + 108))(this->__pad_024, 1); /*0x5d49d2*/
     TextRenderer::GetInstance(); /*0x5d49db*/
-    v3 = Text::MeasureWidth(*(_DWORD *)(this->q009 + 48), 0); /*0x5d49f8*/
+    v3 = Text::MeasureWidth(*(_DWORD *)(this->__pad_024 + 48), 0); /*0x5d49f8*/
     if ( *((_WORD *)this + 348) /*0x5d4a1b*/
-      && this->q2B0 - this->q2B4 < this->q004 - 1
-      && (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)this->q009 + 88))(this->q009) )
+      && *(this + 172) - *(this + 173) < this->TacticalMap_field_10 - 1
+      && (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)this->__pad_024 + 88))(this->__pad_024) )
     {
       LOWORD(v9) = *((_WORD *)this + 348); /*0x5d4a29*/
-      v4 = (_DWORD *)this->q009; /*0x5d4a2e*/
+      v4 = (_DWORD *)this->__pad_024; /*0x5d4a2e*/
       v5 = v4[3]; /*0x5d4a31*/
       v10[1] = v4[4]; /*0x5d4a39*/
       v10[0] = v3 + v5; /*0x5d4a3d*/
@@ -4946,7 +4946,7 @@ char __thiscall sub_5D49A0(_DWORD *this)
 }
 
 
-// ==== 0x005D4AD0  TacticalClass::processInput  this=TacticalClass  sig=csp ====
+// ==== 0x005D4AD0  TacticalClass::processInput  this=Game  sig=csp ====
 char __thiscall TacticalClass::processInput(int **this, CellStruct *aP1)
 {
   AnimClass *v2; // esi
@@ -4955,17 +4955,17 @@ char __thiscall TacticalClass::processInput(int **this, CellStruct *aP1)
   int v6; // eax
 
   v2 = (AnimClass *)&aP1[-1].__pad_2BC[4]; /*0x5d4ad6*/
-  this->q2C4 = (int *)&aP1[-1].__pad_2BC[4]; /*0x5d4ae1*/
+  *(this + 177) = (int *)&aP1[-1].__pad_2BC[4]; /*0x5d4ae1*/
   Debug::Log(); /*0x5d4ae7*/
   for ( i = *this; i; i = (int *)(*(int (__thiscall **)(int *))(v5 + 4))(i) ) /*0x5d4aec*/
   {
     v5 = *i; /*0x5d4af5*/
     i[14] = (int)v2; /*0x5d4af9*/
   }
-  LOBYTE(v6) = this->q019; /*0x5d4b03*/
+  LOBYTE(v6) = *((_BYTE *)this + 25); /*0x5d4b03*/
   if ( (_BYTE)v6 ) /*0x5d4b08*/
   {
-    v6 = (int)this->field24; /*0x5d4b0a*/
+    v6 = (int)this->Game_field_0x24; /*0x5d4b0a*/
     *(_DWORD *)(v6 + 56) = v2; /*0x5d4b0d*/
   }
   return v6; /*0x5d4b10*/
@@ -5887,7 +5887,7 @@ char **__thiscall sub_5D5820(char **this, char *Source, int a3)
 }
 
 
-// ==== 0x005D5850  MSEngine::DestroyData  this=CampaignClass  sig=csp ====
+// ==== 0x005D5850  MSEngine::DestroyData  this=AbstractClass  sig=csp ====
 void __thiscall sub_5D5850(void **this)
 {
   if ( *this ) /*0x5d5850*/
@@ -6548,11 +6548,11 @@ LABEL_8:
 }
 
 
-// ==== 0x005D63E0  MapPreview::Check  this=ObjectClass  sig=csp ====
+// ==== 0x005D63E0  MapPreview::Check  this=AbstractClass  sig=csp ====
 char __thiscall MapPreview_Check(char *this, int a2)
 {
   if ( IsRandMap::Sed(a2) ) /*0x5d63ea*/
-    return (*(int (__thiscall **)(char *))(this->ambientSoundController)(this); /*0x5d63f7*/
+    return (*(int (__thiscall **)(char *))(this->q03C)(this); /*0x5d63f7*/
   if ( *(_BYTE *)(a2 + 380) || !Network::IsMultiplayerActive() ) /*0x5d6409*/
     return GameClass::initPlayerData(this + 48); /*0x5d641f*/
   return 0; /*0x5d63fa*/
@@ -10327,7 +10327,7 @@ int Network::ShutdownInterface()
 }
 
 
-// ==== 0x005DA750  HandleNetworkPlayerDisconnect  this=-  sig=ida-proto ====
+// ==== 0x005DA750  HandleNetworkPlayerDisconnect  this=AbstractClass  sig=ida-proto ====
 void __fastcall HandleNetworkPlayerDisconnect(wchar_t *a1, int a2)
 {
   wchar_t *v2; // ebp
@@ -10540,7 +10540,7 @@ int __thiscall sub_5DAB80(const char *this)
 }
 
 
-// ==== 0x005DAC00  WideString::Hash  this=CampaignScore  sig=csp ====
+// ==== 0x005DAC00  WideString::Hash  this=WinModemClass  sig=csp ====
 int __thiscall WideString::Hash(wchar_t *Source)
 {
   size_t v1; // esi
@@ -12989,7 +12989,7 @@ int __stdcall NetworkSettings_DlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 }
 
 
-// ==== 0x005DE360  SendNetworkLobbyChatMessage  this=ObjectClass  sig=csp ====
+// ==== 0x005DE360  SendNetworkLobbyChatMessage  this=AbstractClass  sig=csp ====
 char __fastcall SendNetworkLobbyChatMessage(HWND hWnd, LPARAM a2, int a3)
 {
   HWND DlgItem; // eax
@@ -13605,7 +13605,7 @@ int __stdcall SkirmishDialogProc(SkirmishDialog *aP0, int a2, unsigned __int16 a
 }
 
 
-// ==== 0x005DF410  SendNetworkJoinRequest  this=ObjectClass  sig=ida-proto ====
+// ==== 0x005DF410  SendNetworkJoinRequest  this=IUnknown  sig=ida-proto ====
 int __fastcall Network_SendJoinRequest(int a1, unsigned __int8 a2)
 {
   wchar_t *String; // eax
@@ -13684,7 +13684,7 @@ int __fastcall Network_SendJoinRequest(int a1, unsigned __int8 a2)
 }
 
 
-// ==== 0x005DF8C0  BroadcastNetworkMessage  this=ObjectClass  sig=ida-proto ====
+// ==== 0x005DF8C0  BroadcastNetworkMessage  this=IUnknown  sig=ida-proto ====
 int __fastcall Network_BroadcastMessage(int a1)
 {
   int i; // esi

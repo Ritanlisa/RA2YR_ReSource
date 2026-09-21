@@ -531,7 +531,7 @@ int __thiscall sub_730A10(char *this)
 }
 
 
-// ==== 0x00730A90  AddMessageListPlayerMessage  this=IUnknown  sig=csp ====
+// ==== 0x00730A90  AddMessageListPlayerMessage  this=AbstractClass  sig=csp ====
 int __fastcall AddMessageListPlayerMessage(CellStruct *a1, int a2)
 {
   int v2; // eax
@@ -1297,7 +1297,7 @@ LABEL_32:
 }
 
 
-// ==== 0x00731840  SquadClass::ProcessMove  this=IUnknown  sig=csp ====
+// ==== 0x00731840  SquadClass::ProcessMove  this=SquadClass  sig=csp ====
 CellStruct *__thiscall SquadClass::ProcessMove(IUnknown *this)
 {
   CellStruct *result; // eax
@@ -1562,14 +1562,14 @@ char sub_731BF0()
 }
 
 
-// ==== 0x00731CB0  Map_Handle_731CB0  this=-  sig=csp ====
+// ==== 0x00731CB0  Map_Handle_731CB0  this=IUnknown  sig=csp ====
 int sub_731CB0()
 {
   return 71; /*0x731cb5*/
 }
 
 
-// ==== 0x00731CC0  Map_Handle_731CC0  this=-  sig=csp ====
+// ==== 0x00731CC0  Map_Handle_731CC0  this=IUnknown  sig=csp ====
 int sub_731CC0()
 {
   return 22; /*0x731cc5*/
@@ -1590,7 +1590,7 @@ int Memory_Alloc76()
 }
 
 
-// ==== 0x00731CF0  TechnoClass::GetField  this=TechnoClass  sig=ida-proto ====
+// ==== 0x00731CF0  TechnoClass::GetField  this=AbstractClass  sig=ida-proto ====
 void TechnoClass::GetField()
 {
   MEMORY[0xB0FE58] = 0; /*0x731cf0*/
@@ -4482,7 +4482,7 @@ void __fastcall WideToChar_Copy(_BYTE *a1, char *a2, int a3)
 }
 
 
-// ==== 0x007350C0  ToWideStringChar  this=-  sig=csp ====
+// ==== 0x007350C0  ToWideStringChar  this=WinModemClass  sig=csp ====
 char *__fastcall ToWideStringChar(IUnknown *aP0)
 {
   char *result; // eax
@@ -5821,7 +5821,7 @@ LABEL_52:
 }
 
 
-// ==== 0x00737180  ObjectClass::UpdateInfantryIdleWander  this=TechnoClass  sig=csp ====
+// ==== 0x00737180  ObjectClass::UpdateInfantryIdleWander  this=IUnknown  sig=csp ====
 int __thiscall UpdateInfantryIdleWander(int *this)
 {
   int v2; // edx
@@ -5858,24 +5858,24 @@ int __thiscall UpdateInfantryIdleWander(int *this)
     if ( v5 == 4 ) /*0x7371b4*/
     {
       this->q0F8 = 30 * Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2); /*0x7371e3*/
-      this->q040 = (int)MEMORY[0xA8ED84]; /*0x7371ee*/
+      this->q010 = (int)MEMORY[0xA8ED84]; /*0x7371ee*/
       result = v24; /*0x7371f0*/
       this->q043 = 1; /*0x7371f4*/
-      this->currentTurretNumber = result; /*0x7371fb*/
+      this->q041 = result; /*0x7371fb*/
       this->q042 = 1; /*0x737200*/
     }
     return result; /*0x737206*/
   }
   if ( v3 % 30 == 29 ) /*0x737211*/
     this->q0F8 = 30 * Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2); /*0x737230*/
-  this->q040 = (int)MEMORY[0xA8ED84]; /*0x737246*/
+  this->q010 = (int)MEMORY[0xA8ED84]; /*0x737246*/
   v6 = v24; /*0x737248*/
   this->q043 = 1; /*0x73724c*/
-  this->currentTurretNumber = v6; /*0x737252*/
+  this->q041 = v6; /*0x737252*/
   this->q042 = 1; /*0x737255*/
-  if ( !this->q674 ) /*0x737258*/
+  if ( !*(this + 413) ) /*0x737258*/
     WinAPI::Wrapper(-2147467261); /*0x737267*/
-  result = (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q674 + 16))(this->q674); /*0x737275*/
+  result = (*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)); /*0x737275*/
   if ( !(_BYTE)result ) /*0x73727a*/
   {
     if ( *(_BYTE *)(this->q1B1 + 3608) ) /*0x737286*/
@@ -5908,7 +5908,7 @@ int __thiscall UpdateInfantryIdleWander(int *this)
         {
           result = (*(int (__thiscall **)(_DWORD *, int *, int))(*v12 + 1152))(v12, this, 1); /*0x737366*/
 LABEL_23:
-          this->q1B5 = -1; /*0x73736c*/
+          *(this + 437) = -1; /*0x73736c*/
         }
       }
     }
@@ -5918,17 +5918,17 @@ LABEL_15:
       result = this->q169; /*0x73730e*/
       if ( !result ) /*0x737316*/
       {
-        result = this->sprayOffsetIndex_e; /*0x737318*/
+        result = this->q2B4; /*0x737318*/
         if ( !result ) /*0x737320*/
         {
-          if ( this->q1B5 == -1 || !Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2) ) /*0x73733a*/
+          if ( *(this + 437) == -1 || !Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2) ) /*0x73733a*/
           {
             v13 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 7); /*0x737393*/
-            this->q1B5 = v13; /*0x737395*/
+            *(this + 437) = v13; /*0x737395*/
           }
           else
           {
-            v13 = this->q1B5; /*0x737343*/
+            v13 = *(this + 437); /*0x737343*/
           }
           v14 = v13 & 7; /*0x7373a2*/
           v15 = LOWORD(MEMORY[0x89F688][v14]) + v21; /*0x7373a5*/
@@ -6663,7 +6663,7 @@ LABEL_93:
 }
 
 
-// ==== 0x00738680  TechnoClass::CreateDeathAnim  this=ObjectClass  sig=csp ====
+// ==== 0x00738680  TechnoClass::CreateDeathAnim  this=AbstractClass  sig=csp ====
 AnimClass *__thiscall TechnoClass::CreateDeathAnim(int this)
 {
   unsigned int v2; // eax
@@ -9893,7 +9893,7 @@ LABEL_39:
 }
 
 
-// ==== 0x0073D450  UnitClass::ProcessResourceHarvesting  this=TechnoClass  sig=csp ====
+// ==== 0x0073D450  UnitClass::ProcessResourceHarvesting  this=IUnknown  sig=csp ====
 char __thiscall sub_73D450(void *this)
 {
   __int16 *v2; // ebp
@@ -9911,14 +9911,14 @@ char __thiscall sub_73D450(void *this)
   int v15; // [esp+20h] [ebp-8h]
   int v16; // [esp+24h] [ebp-4h]
 
-  v14 = this->q027; /*0x73d465*/
-  v15 = this->owningHouseIndex; /*0x73d476*/
-  v16 = this->q029; /*0x73d47d*/
+  v14 = this->q09C; /*0x73d465*/
+  v15 = this->q028; /*0x73d476*/
+  v16 = this->q0A4; /*0x73d47d*/
   v2 = (__int16 *)Coord::To_Cell(MEMORY[0x87F7E8], &v14); /*0x73d486*/
   if ( this->q169 ) /*0x73d488*/
     return 1; /*0x73d49d*/
   if ( *(_BYTE *)(this->q1B1 + 3598) /*0x73d4d4*/
-    && ((double (__thiscall *)(void *))*(_DWORD *)(this->sprayOffsetIndex_e)(this) < 1.0
+    && ((double (__thiscall *)(void *))*(_DWORD *)(this->q2B4)(this) < 1.0
     && *((_DWORD *)v2 + 59) == 5 )
   {
     if ( *(_BYTE *)(this->q1B1 + 3599) ) /*0x73d4e0*/
@@ -9927,9 +9927,9 @@ char __thiscall sub_73D450(void *this)
       Float::Accumulate((float *)this + 207, 1.0, 0); /*0x73d4fd*/
       this->q0F8 = 0; /*0x73d502*/
       v4 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5408); /*0x73d515*/
-      this->q040 = dword_A8ED54[12]; /*0x73d523*/
+      this->q010 = dword_A8ED54[12]; /*0x73d523*/
       v4 *= 3; /*0x73d529*/
-      this->currentTurretNumber = v15; /*0x73d52c*/
+      this->q041 = v15; /*0x73d52c*/
       this->q042 = v4; /*0x73d52f*/
       this->q043 = v4; /*0x73d532*/
       return 1; /*0x73d540*/
@@ -9953,8 +9953,8 @@ char __thiscall sub_73D450(void *this)
       Float::Accumulate((float *)this + 207, v10, v5); /*0x73d5b9*/
       this->q0F8 = 0; /*0x73d5be*/
       v8 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5408); /*0x73d5d5*/
-      this->q040 = dword_A8ED54[12]; /*0x73d5e1*/
-      this->currentTurretNumber = v15; /*0x73d5e9*/
+      this->q010 = dword_A8ED54[12]; /*0x73d5e1*/
+      this->q041 = v15; /*0x73d5e9*/
       this->q042 = v8; /*0x73d5ec*/
       this->q043 = v8; /*0x73d5ef*/
       return 1; /*0x73d5fd*/
@@ -9965,8 +9965,8 @@ char __thiscall sub_73D450(void *this)
     this->q0F8 = 0; /*0x73d5fe*/
     v9 = (#72 *)dword_A8ED54[12]; /*0x73d604*/
     this->q043 = 0; /*0x73d611*/
-    this->q040 = v9; /*0x73d617*/
-    this->currentTurretNumber = v15; /*0x73d61d*/
+    this->q010 = v9; /*0x73d617*/
+    this->q041 = v15; /*0x73d61d*/
     this->q042 = 0; /*0x73d620*/
   }
   return 0; /*0x73d494*/

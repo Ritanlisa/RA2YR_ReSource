@@ -1406,7 +1406,7 @@ INT_PTR __stdcall sub_7A2110(HWND hWnd, UINT a2, WPARAM a3, char *a4)
 }
 
 
-// ==== 0x007A2230  Game_Setup  this=ObjectTypeClass  sig=csp ====
+// ==== 0x007A2230  Game_Setup  this=-  sig=csp ====
 void __fastcall Game_Setup(CCINIClass *aP0, CCINIClass *aP1, char *Buffera, char *a3)
 {
   Color *v5; // edi
@@ -1461,7 +1461,7 @@ void __fastcall Game_Setup(CCINIClass *aP0, CCINIClass *aP1, char *Buffera, char
 }
 
 
-// ==== 0x007A2330  Game::SetupWOLTournament  this=char*  sig=csp ====
+// ==== 0x007A2330  Game::SetupWOLTournament  this=Coord  sig=csp ====
 char __thiscall SetupWOLTournamentGame(const char *this)
 {
   char *v1; // esi

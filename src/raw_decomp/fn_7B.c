@@ -309,7 +309,7 @@ int sub_7B05A0()
 }
 
 
-// ==== 0x007B05C0  CompressScreenshot  this=IUnknown  sig=csp ====
+// ==== 0x007B05C0  CompressScreenshot  this=AbstractClass  sig=csp ====
 char __fastcall Screenshot_Compress(int *a1, int *a2, void *Src)
 {
   int v5; // ebx
@@ -916,7 +916,7 @@ int __thiscall IPXInterfaceClass::initSocket(_DWORD *this, IUnknown *aP1, Color 
 }
 
 
-// ==== 0x007B0F50  NetworkOptions::ApplySettings  this=AbstractClass  sig=csp ====
+// ==== 0x007B0F50  NetworkOptions::ApplySettings  this=IPXInterfaceClass  sig=csp ====
 int __thiscall NetworkOptions::ApplySettings(Color *this, IUnknown *aP1, Color *aP2, signed int a4)
 {
   Color *inited; // eax
@@ -932,7 +932,7 @@ int __thiscall NetworkOptions::ApplySettings(Color *this, IUnknown *aP1, Color *
   int v15; // [esp+13h] [ebp-105h]
   char Buffer[256]; // [esp+18h] [ebp-100h] BYREF
 
-  if ( !*((_BYTE *)this + 258152) ) /*0x7b0f50*/
+  if ( !this->q3F068 ) /*0x7b0f50*/
     return 0; /*0x7b0f6c*/
   inited = (Color *)IPXInterfaceClass::initSocket(this, aP1, &aP2a); /*0x7b0f7c*/
   v6 = inited; /*0x7b0f81*/
@@ -1708,7 +1708,7 @@ void __thiscall AudioQueue_Cleanup(int this)
 }
 
 
-// ==== 0x007B1DE0  WinsockInterface::Init  this=WinsockInterface  sig=csp ====
+// ==== 0x007B1DE0  WinsockInterface::Init  this=IPXInterfaceClass  sig=csp ====
 char __thiscall WinsockInterface::Init(_DWORD *this)
 {
   _WORD *v3; // eax
@@ -1725,7 +1725,7 @@ char __thiscall WinsockInterface::Init(_DWORD *this)
   char v14; // [esp+28h] [ebp-FE8h] BYREF
 
   Debug::Log(); /*0x7b1df3*/
-  if ( *((_BYTE *)this + 258152) ) /*0x7b1df8*/
+  if ( this->q3F068 ) /*0x7b1df8*/
   {
     Debug::Log(); /*0x7b1e0a*/
     return 1; /*0x7b1e12*/
@@ -1741,7 +1741,7 @@ char __thiscall WinsockInterface::Init(_DWORD *this)
     v4 = *this; /*0x7b1e58*/
     v5 = v3; /*0x7b1e5a*/
     v11 = v3; /*0x7b1e61*/
-    *(this + 64539) = -1; /*0x7b1e65*/
+    this->q3F06C = -1; /*0x7b1e65*/
     (*(void (__thiscall **)(_DWORD *))(v4 + 20))(this); /*0x7b1e6f*/
     (*(void (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x7b1e76*/
     Debug::Log(); /*0x7b1e7e*/
@@ -1763,7 +1763,7 @@ char __thiscall WinsockInterface::Init(_DWORD *this)
       else
       {
         Debug::Log(); /*0x7b1efa*/
-        *(this + 1) = 546; /*0x7b1f0a*/
+        this->Initialized = 546; /*0x7b1f0a*/
         dwBufferLength = 4096; /*0x7b1f18*/
         v6 = EnumProtocolsA(&iProtocols, ProtocolBuffer, &dwBufferLength); /*0x7b1f20*/
         if ( v6 == -1 ) /*0x7b1f28*/
@@ -1788,11 +1788,11 @@ char __thiscall WinsockInterface::Init(_DWORD *this)
             }
             while ( v9 ); /*0x7b1f63*/
             if ( v7 != 0x7FFFFFFF && v7 > 400 ) /*0x7b1f74*/
-              *(this + 1) = v7; /*0x7b1f76*/
+              this->Initialized = v7; /*0x7b1f76*/
             v5 = v11; /*0x7b1f79*/
           }
         }
-        *((_BYTE *)this + 258152) = 1; /*0x7b1f7e*/
+        this->q3F068 = 1; /*0x7b1f7e*/
         __3_YAXPAX_Z(v5); /*0x7b1f85*/
         return 1; /*0x7b1f8d*/
       }
@@ -4075,7 +4075,7 @@ DynamicVector *__thiscall UDPInterfaceClass::receivePacket(_DWORD *Block, char a
 }
 
 
-// ==== 0x007B4620  ObjectClass::unknown_libname_73  this=ObjectClass  sig=csp ====
+// ==== 0x007B4620  ObjectClass::unknown_libname_73  this=HashTable  sig=csp ====
 // Microsoft VisualC 2-14/net runtime
 _DWORD *__thiscall unknown_libname_73(_DWORD *this)
 {
@@ -4104,7 +4104,7 @@ char **__thiscall String_Assign(char **this, const char *a2)
 }
 
 
-// ==== 0x007B4690  String::AssignFromPtr  this=ObjectClass  sig=csp ====
+// ==== 0x007B4690  String::AssignFromPtr  this=AbstractClass  sig=csp ====
 char **__thiscall String_AssignFromPtr(char **this, const char **a2)
 {
   char *v3; // edx
@@ -4143,7 +4143,7 @@ bool __thiscall String_Equals_Alt(const char **this, const char *a2)
 }
 
 
-// ==== 0x007B4780  String::Compare  this=String  sig=csp ====
+// ==== 0x007B4780  String::Compare  this=HashTable  sig=csp ====
 bool __thiscall String_Compare(const char **this, const char **a2)
 {
   const char *v2; // eax
@@ -4185,7 +4185,7 @@ bool __thiscall sub_7B4860(const char **this, const char **a2)
 }
 
 
-// ==== 0x007B48D0  String::Assign_Alt  this=ObjectClass  sig=csp ====
+// ==== 0x007B48D0  String::Assign_Alt  this=HashTable  sig=csp ====
 void **__thiscall String::Assign_Alt(void **this, CCINIClass *aP1)
 {
   size_t v3; // ecx
@@ -4207,7 +4207,7 @@ void **__thiscall String::Assign_Alt(void **this, CCINIClass *aP1)
 }
 
 
-// ==== 0x007B4940  String::Reassign  this=AbstractClass  sig=csp ====
+// ==== 0x007B4940  String::Reassign  this=String  sig=csp ====
 char **__thiscall String::Reassign(char **this, AbstractClass *aP1)
 {
   CCINIClass *v3; // edi
@@ -4699,7 +4699,7 @@ void __thiscall String::TrimRight(const char **this, ObjectClass *aP1)
 }
 
 
-// ==== 0x007B5340  DeleteAndZero::Alt2  this=DeleteAndZero  sig=csp ====
+// ==== 0x007B5340  DeleteAndZero::Alt2  this=HashTable  sig=csp ====
 void __thiscall DeleteAndZero_Alt2(void **this)
 {
   if ( *this ) /*0x7b5343*/
@@ -5057,7 +5057,7 @@ void __thiscall String_ToLower(const char **this)
 }
 
 
-// ==== 0x007B5B80  String::ToLowerCopy  this=ObjectClass  sig=csp ====
+// ==== 0x007B5B80  String::ToLowerCopy  this=String  sig=csp ====
 char **__thiscall String::ToLowerCopy(const char **this, ObjectClass *aP1)
 {
   char *v3; // ebx
@@ -5226,7 +5226,7 @@ char __thiscall sub_7B5E30(const char **this, char a2)
 }
 
 
-// ==== 0x007B5F10  String::Tokenize  this=ObjectClass  sig=csp ====
+// ==== 0x007B5F10  String::Tokenize  this=String  sig=csp ====
 int __thiscall String::Tokenize(const char **this, int a2, ObjectClass *aP2, ObjectClass *aP3)
 {
   int v4; // esi
@@ -5579,7 +5579,7 @@ _DWORD *__thiscall unknown_libname_74(_DWORD *this)
 }
 
 
-// ==== 0x007B66D0  WideString::Assign  this=WideString  sig=csp ====
+// ==== 0x007B66D0  WideString::Assign  this=MultiplayerGameMode  sig=csp ====
 wchar_t **__thiscall WideString::Assign(wchar_t **this, CampaignScore *aP1)
 {
   size_t v3; // eax
@@ -5599,7 +5599,7 @@ wchar_t **__thiscall WideString::Assign(wchar_t **this, CampaignScore *aP1)
 }
 
 
-// ==== 0x007B6720  WideString::AssignFromPtr  this=WideString  sig=csp ====
+// ==== 0x007B6720  WideString::AssignFromPtr  this=MultiplayerGameMode  sig=csp ====
 wchar_t **__thiscall WideString_AssignFromPtr(wchar_t **this, const wchar_t **a2)
 {
   size_t v3; // eax
@@ -5617,7 +5617,7 @@ wchar_t **__thiscall WideString_AssignFromPtr(wchar_t **this, const wchar_t **a2
 }
 
 
-// ==== 0x007B6760  DeleteAndZero::Alt  this=CampaignClass  sig=csp ====
+// ==== 0x007B6760  DeleteAndZero::Alt  this=AbstractClass  sig=csp ====
 void __thiscall DeleteAndZero_Alt(void **this)
 {
   if ( *this ) /*0x7b6763*/
@@ -5654,7 +5654,7 @@ bool __thiscall sub_7B67C0(const wchar_t **this, const wchar_t **a2)
 }
 
 
-// ==== 0x007B6880  WideString::Assign_Alt  this=MPCooperative  sig=csp ====
+// ==== 0x007B6880  WideString::Assign_Alt  this=GameSetup  sig=csp ====
 void **__thiscall WideString_Assign_Alt(void **this, wchar_t *String)
 {
   size_t v3; // eax
@@ -5676,7 +5676,7 @@ void **__thiscall WideString_Assign_Alt(void **this, wchar_t *String)
 }
 
 
-// ==== 0x007B68E0  WideString::Reassign_Alt  this=MPCooperative  sig=csp ====
+// ==== 0x007B68E0  WideString::Reassign_Alt  this=MultiplayerGameMode  sig=csp ====
 void **__thiscall WideString_Reassign_Alt(void **this, const wchar_t **a2)
 {
   const wchar_t *v3; // eax
@@ -5844,7 +5844,7 @@ wchar_t **__thiscall WideString::Append(wchar_t **this, CampaignScore *aP1)
 }
 
 
-// ==== 0x007B6BE0  WideString::AssignConcat  this=ObjectClass  sig=csp ====
+// ==== 0x007B6BE0  WideString::AssignConcat  this=AbstractClass  sig=csp ====
 wchar_t **__thiscall WideString_AssignConcat(const wchar_t **this, wchar_t **a2, wchar_t *String)
 {
   wchar_t *v4; // esi
@@ -5891,7 +5891,7 @@ wchar_t **__thiscall WideString_AssignConcat(const wchar_t **this, wchar_t **a2,
 }
 
 
-// ==== 0x007B6CB0  WideString::ConcatAlloc  this=WideString  sig=csp ====
+// ==== 0x007B6CB0  WideString::ConcatAlloc  this=IUnknown  sig=csp ====
 wchar_t **__thiscall WideString::ConcatAlloc(const wchar_t **this, wchar_t **a1, ObjectClass *aP2)
 {
   wchar_t *v4; // esi
@@ -6164,7 +6164,7 @@ wchar_t __thiscall sub_7B7110(const wchar_t **this, size_t a2)
 }
 
 
-// ==== 0x007B7140  WideString::GetOrEmpty_Alt  this=Game  sig=csp ====
+// ==== 0x007B7140  WideString::GetOrEmpty_Alt  this=ReferenceCounted  sig=csp ====
 CampaignScore *__thiscall WideString::GetOrEmpty_Alt(wchar_t **this)
 {
   CampaignScore *result; // eax
@@ -6186,7 +6186,7 @@ wchar_t __thiscall WideString::GetChar(const wchar_t **this, ObjectClass *aP1)
 }
 
 
-// ==== 0x007B71B0  WideString::Length  this=GameSetup  sig=csp ====
+// ==== 0x007B71B0  WideString::Length  this=MultiplayerGameMode  sig=csp ====
 const wchar_t *__thiscall WideString_Length(const wchar_t **this)
 {
   const wchar_t *result; // eax
@@ -6445,7 +6445,7 @@ __int16 __thiscall WideString_Reassign(void **this, wchar_t *String)
 }
 
 
-// ==== 0x007B7660  ObjectClass::String_Helper_7B7660  this=MPCooperative  sig=csp ====
+// ==== 0x007B7660  ObjectClass::String_Helper_7B7660  this=MultiplayerGameMode  sig=csp ====
 char __thiscall sub_7B7660(const wchar_t **this, wchar_t a2, size_t a3)
 {
   if ( a3 >= wcslen(*this) ) /*0x7b7674*/

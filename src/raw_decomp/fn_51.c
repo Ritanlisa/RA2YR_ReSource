@@ -1387,7 +1387,7 @@ int __thiscall sub_5116A0(int this)
 }
 
 
-// ==== 0x005117D0  SuperWeaponTypeClass::FindByName  this=AbstractClass  sig=csp ====
+// ==== 0x005117D0  SuperWeaponTypeClass::FindByName  this=IUnknown  sig=csp ====
 int __thiscall SuperWeaponTypeClass::FindByName(void *this)
 {
   int v3; // ebx
@@ -6060,7 +6060,7 @@ int __thiscall sub_5173F0(unsigned __int8 *this, unsigned __int8 *a2)
 }
 
 
-// ==== 0x00517440  Color::ConvertToRGB  this=IUnknown  sig=csp ====
+// ==== 0x00517440  Color::ConvertToRGB  this=AbstractClass  sig=csp ====
 int __thiscall Color_ConvertToRGB(unsigned __int8 *this, int a2)
 {
   int v2; // esi
@@ -6074,8 +6074,8 @@ int __thiscall Color_ConvertToRGB(unsigned __int8 *this, int a2)
   int v11; // [esp+28h] [ebp-8h]
   unsigned int v12; // [esp+2Ch] [ebp-4h]
 
-  v2 = this->q008; /*0x51744b*/
-  v3 = this->q004; /*0x517453*/
+  v2 = this->vtable3; /*0x51744b*/
+  v3 = this->vtable2; /*0x517453*/
   v4 = 3 * *this; /*0x51745c*/
   v10[2] = v2; /*0x51745f*/
   v4 *= 2; /*0x517463*/

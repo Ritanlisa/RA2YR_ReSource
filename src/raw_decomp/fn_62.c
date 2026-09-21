@@ -841,7 +841,7 @@ LABEL_9:
 }
 
 
-// ==== 0x006211D0  DrawTextRendererTextAligned  this=-  sig=csp ====
+// ==== 0x006211D0  DrawTextRendererTextAligned  this=CampaignClass  sig=csp ====
 int __fastcall DrawTextRendererTextAligned(
         int ecx0,
         _DWORD *a1,
@@ -2461,7 +2461,7 @@ char Dialog_PumpMessages()
 }
 
 
-// ==== 0x00623170  UI_Connect  this=AbstractClass  sig=csp ====
+// ==== 0x00623170  UI_Connect  this=IUnknown  sig=csp ====
 BOOL __fastcall UI_Connect(HWND hWnd, LONG a2, LONG a3)
 {
   LONG v5; // ecx
@@ -2492,7 +2492,7 @@ BOOL __fastcall UI_Connect(HWND hWnd, LONG a2, LONG a3)
 }
 
 
-// ==== 0x00623230  CreateMessageBox  this=AbstractClass  sig=ida-proto ====
+// ==== 0x00623230  CreateMessageBox  this=IUnknown  sig=ida-proto ====
 HWND __fastcall CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong)
 {
   HWND Dialog; // esi
@@ -2541,7 +2541,7 @@ int __stdcall sub_6232B0(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 
 
-// ==== 0x00623310  Network_Start  this=AbstractClass  sig=csp ====
+// ==== 0x00623310  Network_Start  this=IUnknown  sig=csp ====
 BOOL __fastcall Network_Start(HWND hWnd, LPARAM lParam)
 {
   HWND DlgItem; // eax
@@ -2641,7 +2641,7 @@ void __thiscall LinkedList_Remove(_DWORD *this, _DWORD *a2)
 }
 
 
-// ==== 0x006234B0  SymbolTable::Rebuild  this=CampaignClass  sig=csp ====
+// ==== 0x006234B0  SymbolTable::Rebuild  this=AbstractClass  sig=csp ====
 void __thiscall SymbolTable_Rebuild(_DWORD *this, int **a2)
 {
   _DWORD *i; // ecx
@@ -2651,7 +2651,7 @@ void __thiscall SymbolTable_Rebuild(_DWORD *this, int **a2)
   size_t v7; // eax
   char *v8; // eax
 
-  for ( i = (_DWORD *)this->q0D0; i; i = (_DWORD *)this->q0D0 ) /*0x6234b9*/
+  for ( i = (_DWORD *)this->q034; i; i = (_DWORD *)this->q034 ) /*0x6234b9*/
   {
     v4 = i; /*0x6234bb*/
     v5 = 0; /*0x6234bd*/
@@ -2665,7 +2665,7 @@ void __thiscall SymbolTable_Rebuild(_DWORD *this, int **a2)
     if ( v5 ) /*0x6234d7*/
       *v5 = *v4; /*0x6234db*/
     else
-      this->q0D0 = *v4; /*0x6234e1*/
+      this->q034 = *v4; /*0x6234e1*/
     __3_YAXPAX_Z(v4); /*0x6234e5*/
 LABEL_10:
     ; /*0x6234ed*/
@@ -2677,9 +2677,9 @@ LABEL_10:
     if ( v8 ) /*0x623514*/
     {
       *((_DWORD *)v8 + 2) = v8 + 16; /*0x623519*/
-      *(_DWORD *)v8 = this->q0D0; /*0x62351f*/
+      *(_DWORD *)v8 = this->q034; /*0x62351f*/
       *((_DWORD *)v8 + 1) = 0; /*0x623521*/
-      this->q0D0 = v8; /*0x623528*/
+      this->q034 = v8; /*0x623528*/
     }
     *((_DWORD *)v8 + 3) = j[3]; /*0x62352e*/
     *((_DWORD *)v8 + 1) = j[1]; /*0x623534*/
@@ -2688,16 +2688,16 @@ LABEL_10:
 }
 
 
-// ==== 0x00623560  GadgetClass::SetTooltip  this=CampaignClass  sig=csp ====
+// ==== 0x00623560  GadgetClass::SetTooltip  this=AbstractClass  sig=csp ====
 void __thiscall GadgetClass::SetTooltip(void **this, #72 *String)
 {
   int v3; // eax
   void *v4; // eax
 
-  if ( this->scenario ) /*0x623564*/
+  if ( this->q028 ) /*0x623564*/
   {
-    __3_YAXPAX_Z(this->scenario); /*0x62356c*/
-    this->scenario = 0; /*0x623574*/
+    __3_YAXPAX_Z(this->q028); /*0x62356c*/
+    this->q028 = 0; /*0x623574*/
   }
   if ( String ) /*0x623581*/
   {
@@ -2705,7 +2705,7 @@ void __thiscall GadgetClass::SetTooltip(void **this, #72 *String)
     {
       v3 = wcslen(String); /*0x62358a*/
       v4 = (void *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
-      this->scenario = v4; /*0x62359b*/
+      this->q028 = v4; /*0x62359b*/
       wcscpy((#72 *)v4, String); /*0x62359e*/
     }
   }
@@ -2734,7 +2734,7 @@ void __thiscall sub_6235B0(void **this, wchar_t *Format)
 }
 
 
-// ==== 0x00623610  DialogClass::CopyTemplateStruct  this=CampaignClass  sig=csp ====
+// ==== 0x00623610  DialogClass::CopyTemplateStruct  this=AbstractClass  sig=csp ====
 _DWORD *__thiscall DialogClass::CopyTemplateStruct(_DWORD *this, _DWORD *a2)
 {
   int v3; // edx
@@ -2750,30 +2750,30 @@ _DWORD *__thiscall DialogClass::CopyTemplateStruct(_DWORD *this, _DWORD *a2)
   int v14; // eax
   int v15; // [esp+8h] [ebp-4h]
 
-  v3 = this->q0D0; /*0x62361c*/
-  v4 = (void *)this->scenario; /*0x62361f*/
+  v3 = this->q034; /*0x62361c*/
+  v4 = (void *)this->q028; /*0x62361f*/
   v15 = this->q03C; /*0x623624*/
   if ( this == a2 ) /*0x623628*/
     return this; /*0x62362a*/
   qmemcpy(this, a2, 0x200u); /*0x62363d*/
-  this->scenario = v4; /*0x623645*/
+  this->q028 = v4; /*0x623645*/
   this->q03C = v15; /*0x623648*/
-  this->q0D0 = v3; /*0x62364b*/
+  this->q034 = v3; /*0x62364b*/
   v6 = (const #72 *)a2[10]; /*0x62364e*/
   if ( v4 ) /*0x623653*/
   {
     __3_YAXPAX_Z(v4); /*0x623656*/
-    this->scenario = 0; /*0x62365e*/
+    this->q028 = 0; /*0x62365e*/
   }
   if ( v6 && *(_WORD *)v6 ) /*0x623665*/
   {
     v7 = wcslen(v6); /*0x62366b*/
     v8 = (#72 *)__2_YAPAXI_Z(2 * v7 + 2); /*0x623675*/
-    this->scenario = v8; /*0x62367c*/
+    this->q028 = v8; /*0x62367c*/
     wcscpy(v8, v6); /*0x62367f*/
   }
-  v9 = (_DWORD *)this->q0D0; /*0x623687*/
-  for ( i = (int **)a2[13]; v9; v9 = (_DWORD *)this->q0D0 ) /*0x62368f*/
+  v9 = (_DWORD *)this->q034; /*0x623687*/
+  for ( i = (int **)a2[13]; v9; v9 = (_DWORD *)this->q034 ) /*0x62368f*/
   {
     v11 = v9; /*0x623691*/
     v12 = 0; /*0x623693*/
@@ -2787,7 +2787,7 @@ _DWORD *__thiscall DialogClass::CopyTemplateStruct(_DWORD *this, _DWORD *a2)
     if ( v12 ) /*0x6236ad*/
       *v12 = *v11; /*0x6236b1*/
     else
-      this->q0D0 = *v11; /*0x6236b7*/
+      this->q034 = *v11; /*0x6236b7*/
     __3_YAXPAX_Z(v11); /*0x6236bb*/
 LABEL_17:
     ; /*0x6236c3*/
@@ -2799,9 +2799,9 @@ LABEL_17:
     if ( v14 ) /*0x6236e6*/
     {
       *(_DWORD *)(v14 + 8) = v14 + 16; /*0x6236eb*/
-      *(_DWORD *)v14 = this->q0D0; /*0x6236f1*/
+      *(_DWORD *)v14 = this->q034; /*0x6236f1*/
       *(_DWORD *)(v14 + 4) = 0; /*0x6236f3*/
-      this->q0D0 = v14; /*0x6236f6*/
+      this->q034 = v14; /*0x6236f6*/
     }
     *(_DWORD *)(v14 + 12) = i[3]; /*0x6236fc*/
     *(_DWORD *)(v14 + 4) = i[1]; /*0x623702*/
@@ -3299,7 +3299,7 @@ LRESULT __fastcall GetEditControlText(HWND hWnd, void **a2)
 }
 
 
-// ==== 0x00623F00  GetListBoxItemText  this=ObjectClass  sig=csp ====
+// ==== 0x00623F00  GetListBoxItemText  this=-  sig=csp ====
 LRESULT __fastcall GetListBoxItemText(ObjectClass *aP0, WPARAM wParam, void **a2)
 {
   LRESULT v5; // esi
@@ -5061,7 +5061,7 @@ char __thiscall sub_625A20(int *this)
 }
 
 
-// ==== 0x00625AB0  ResultNode::CleanupList  this=CampaignClass  sig=csp ====
+// ==== 0x00625AB0  ResultNode::CleanupList  this=AbstractClass  sig=csp ====
 void __thiscall ResultNode::CleanupList(_DWORD *this)
 {
   _DWORD *v1; // esi
@@ -5217,7 +5217,7 @@ u_short *__thiscall Event_Process_625C00(int this, ObjectClass *aP1)
 }
 
 
-// ==== 0x00625DB0  File::FindByPrefix  this=CampaignClass  sig=csp ====
+// ==== 0x00625DB0  File::FindByPrefix  this=AbstractClass  sig=csp ====
 bool __thiscall sub_625DB0(_DWORD *this, char *Str1, _BYTE *a3)
 {
   int v3; // esi
@@ -5236,7 +5236,7 @@ bool __thiscall sub_625DB0(_DWORD *this, char *Str1, _BYTE *a3)
 }
 
 
-// ==== 0x00625F60  HashTable::FindString  this=CampaignClass  sig=csp ====
+// ==== 0x00625F60  HashTable::FindString  this=AbstractClass  sig=csp ====
 bool __thiscall HashTable::FindString(_DWORD *this, char *Str1, IUnknown *aP2)
 {
   int v3; // esi
@@ -5262,7 +5262,7 @@ bool __thiscall HashTable::FindString(_DWORD *this, char *Str1, IUnknown *aP2)
 }
 
 
-// ==== 0x00625FB0  HashTable::FindChunk  this=CampaignClass  sig=csp ====
+// ==== 0x00625FB0  HashTable::FindChunk  this=AbstractClass  sig=csp ====
 bool __thiscall HashTable::FindChunk(_DWORD *this, char *Str1, void *a2, CCINIClass *aP3)
 {
   int v4; // ebx
@@ -5354,7 +5354,7 @@ bool __thiscall sub_6260A0(const void *this, const void *a2)
 }
 
 
-// ==== 0x006260D0  Block::Copy  this=BlowStraw  sig=csp ====
+// ==== 0x006260D0  Block::Copy  this=EditClass  sig=csp ====
 void *__thiscall Block_Copy(void *this, const void *a2)
 {
   void *result; // eax
@@ -5541,7 +5541,7 @@ int __thiscall sub_6262F0(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00626370  FileSystem::mountDrive  this=CampaignClass  sig=csp ====
+// ==== 0x00626370  FileSystem::mountDrive  this=AbstractClass  sig=csp ====
 void __thiscall sub_626370(_DWORD *this)
 {
   int v2; // eax
@@ -5551,13 +5551,13 @@ void __thiscall sub_626370(_DWORD *this)
   void *v6; // esi
   void (__thiscall ***v7)(_DWORD, int); // ecx
 
-  v2 = this->uniqueId; /*0x626373*/
+  v2 = this->q040; /*0x626373*/
   if ( v2 ) /*0x62637b*/
   {
     v3 = *(_DWORD *)(v2 + 16); /*0x62637e*/
     for ( i = 0; i < v3; ++i ) /*0x626386*/
     {
-      v5 = *(_DWORD *)(this->uniqueId + 4); /*0x62638f*/
+      v5 = *(_DWORD *)(this->q040 + 4); /*0x62638f*/
       v6 = *(void **)(v5 + 4 * i); /*0x626392*/
       if ( v6 ) /*0x626397*/
       {
@@ -5565,10 +5565,10 @@ void __thiscall sub_626370(_DWORD *this)
         __3_YAXPAX_Z(v6); /*0x6263a1*/
       }
     }
-    v7 = (void (__thiscall ***)(_DWORD, int))this->uniqueId; /*0x6263af*/
+    v7 = (void (__thiscall ***)(_DWORD, int))this->q040; /*0x6263af*/
     if ( v7 ) /*0x6263b9*/
       (**v7)(v7, 1); /*0x6263bf*/
-    this->uniqueId = 0; /*0x6263c1*/
+    this->q040 = 0; /*0x6263c1*/
   }
 }
 
@@ -6066,7 +6066,7 @@ int sub_6269A0()
 }
 
 
-// ==== 0x00626AB0  System_Read  this=char*  sig=csp ====
+// ==== 0x00626AB0  System_Read  this=INIClass  sig=csp ====
 char __fastcall sub_626AB0(const char *a1, int a2)
 {
   _DWORD *v2; // eax
@@ -6677,7 +6677,7 @@ _DWORD *__thiscall sub_627170(_DWORD *this)
 }
 
 
-// ==== 0x006272A0  FileSystem::FlushTempFiles  this=CampaignClass  sig=csp ====
+// ==== 0x006272A0  FileSystem::FlushTempFiles  this=AbstractClass  sig=csp ====
 void __thiscall FileSystem::FlushTempFiles(_DWORD *this)
 {
   _DWORD *v1; // ebp
@@ -9658,7 +9658,7 @@ LABEL_47:
 }
 
 
-// ==== 0x00629E90  FootClass::CreateWakes  this=ObjectClass  sig=csp ====
+// ==== 0x00629E90  FootClass::CreateWakes  this=FootClass  sig=csp ====
 int __thiscall FootClass::CreateWakes(_WORD *this, TechnoTypeClass *aP1, int a3, int a4)
 {
   double v4; // rdi

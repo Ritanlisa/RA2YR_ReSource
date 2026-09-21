@@ -5667,7 +5667,7 @@ int __stdcall sub_5C6080(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 
 
-// ==== 0x005C60D0  ShowConfirmDialog  this=IUnknown  sig=csp ====
+// ==== 0x005C60D0  ShowConfirmDialog  this=-  sig=csp ====
 BOOL __thiscall ShowConfirmDialog(_WORD *lParam)
 {
   wchar_t *v3; // eax
@@ -12963,7 +12963,7 @@ void *__thiscall MSBitPrintAnim::Construct(void *this, const wchar_t **a1, MSAni
 }
 
 
-// ==== 0x005CD3C0  ScoreClass::SetState  this=MSShapeAnim  sig=csp ====
+// ==== 0x005CD3C0  ScoreClass::SetState  this=MSAnim  sig=csp ====
 char __thiscall ScoreClass_SetState(_BYTE *this, char a2)
 {
   this->q030 = a2; /*0x5cd3c4*/

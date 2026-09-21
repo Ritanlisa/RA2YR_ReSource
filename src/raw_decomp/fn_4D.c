@@ -6363,7 +6363,7 @@ _DWORD *__thiscall FootClass::vt_entry_4F0(void *this, _DWORD *a2)
 }
 
 
-// ==== 0x004DA020  globalHelper_0DA020  this=AbstractClass  sig=csp ====
+// ==== 0x004DA020  globalHelper_0DA020  this=IUnknown  sig=csp ====
 _DWORD *__stdcall globalHelper_0DA020(_DWORD *a0, AbstractClass *aP1)
 {
   *a0 = *(_DWORD *)aP1->__pad_0; /*0x4da02a*/
@@ -6483,7 +6483,7 @@ LABEL_14:
 }
 
 
-// ==== 0x004DA1C0  FootClass::ClearSomeVector  this=ObjectClass  sig=csp ====
+// ==== 0x004DA1C0  FootClass::ClearSomeVector  this=IUnknown  sig=csp ====
 int __thiscall FootClass::ClearSomeVector(_DWORD *this)
 {
   return (*(int (__thiscall **)(_DWORD *))(this->q16B + 12))(this + 363);
@@ -8596,7 +8596,7 @@ bool __thiscall Cell_IsValidDestination(_BYTE *this, __int16 *a2)
 }
 
 
-// ==== 0x004DCFE0  FootClass::MoveToTiberium  this=TechnoClass  sig=csp ====
+// ==== 0x004DCFE0  FootClass::MoveToTiberium  this=IUnknown  sig=csp ====
 char __thiscall FootClass::MoveToTiberium(_DWORD *this, int a2, TechnoClass *aP2)
 {
   _DWORD *v4; // eax
@@ -8604,7 +8604,7 @@ char __thiscall FootClass::MoveToTiberium(_DWORD *this, int a2, TechnoClass *aP2
   void *v7; // eax
   _BYTE v8[12]; // [esp+Ch] [ebp-Ch] BYREF
 
-  if ( !this->__pad_5A4 ) /*0x4dcfe7*/
+  if ( !this->q169 ) /*0x4dcfe7*/
   {
     aP2 = *(TechnoClass **)(*(int (__thiscall **)(_DWORD *, int *, int, TechnoClass *))(*this + 824))( /*0x4dd017*/
                              this,
@@ -8751,7 +8751,7 @@ int *__thiscall FootClass_FindMoveTarget(_BYTE *this, int *a2, int a3, int a4)
 }
 
 
-// ==== 0x004DD890  BuildingClass::Validate  this=TechnoClass  sig=csp ====
+// ==== 0x004DD890  BuildingClass::Validate  this=IUnknown  sig=csp ====
 int *__thiscall BuildingClass::Validate(_BYTE *this, TechnoClass *aP1, int a3)
 {
   _DWORD *v4; // eax
@@ -8764,7 +8764,7 @@ int *__thiscall BuildingClass::Validate(_BYTE *this, TechnoClass *aP1, int a3)
   char v12[12]; // [esp+10h] [ebp-Ch] BYREF
 
   v10 = *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61276]; /*0x4dd89b*/
-  v4 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, char *))(this->q048)(this, v12); /*0x4dd8a6*/
+  v4 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, char *))(this->q012)(this, v12); /*0x4dd8a6*/
   LOWORD(v9) = *v4 / 256; /*0x4dd8bd*/
   HIWORD(v9) = v4[1] / 256; /*0x4dd8d5*/
   v11 = v9; /*0x4dd8de*/
@@ -8809,7 +8809,7 @@ int *__thiscall BuildingClass::Validate(_BYTE *this, TechnoClass *aP1, int a3)
 }
 
 
-// ==== 0x004DD9F0  BuildingClass::ValidateCell  this=TechnoClass  sig=csp ====
+// ==== 0x004DD9F0  BuildingClass::ValidateCell  this=IUnknown  sig=csp ====
 bool __thiscall BuildingClass_ValidateCell(_BYTE *this, __int16 *a2, int a3, int a4)
 {
   __int16 *v4; // edi
@@ -8836,7 +8836,7 @@ bool __thiscall BuildingClass_ValidateCell(_BYTE *this, __int16 *a2, int a3, int
   *(_DWORD *)v4 = a2; /*0x4dda3b*/
   if ( !MEMORY[0xA8B238][0] ) /*0x4dda44*/
   {
-    if ( this->isOwnedByCurrentPlayer ) /*0x4dda46*/
+    if ( *(this + 1050) ) /*0x4dda46*/
     {
       v8 = (v4[1] << 8) + 128; /*0x4dda67*/
       v17[0] = (v7 << 8) + 128; /*0x4dda72*/
@@ -8857,11 +8857,11 @@ bool __thiscall BuildingClass_ValidateCell(_BYTE *this, __int16 *a2, int a3, int
   v12 = *(_DWORD *)this; /*0x4ddb06*/
   a4 = a3; /*0x4ddb08*/
   v13 = (*(int (__thiscall **)(_BYTE *))(v12 + 188))(this); /*0x4ddb0c*/
-  v14 = (*(int (__thiscall **)(_BYTE *, int))(this->hasParachute)(this, v13); /*0x4ddb17*/
+  v14 = (*(int (__thiscall **)(_BYTE *, int))(*(_DWORD *)this + 132))(this, v13); /*0x4ddb17*/
   if ( !MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)&a4, v4, *(_DWORD *)(v14 + 1460), 0, 0, 0) ) /*0x4ddb2f*/
     return 0; /*0x4ddb2f*/
   v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v4); /*0x4ddb49*/
-  return !(*(int (__thiscall **)(_BYTE *, _DWORD *, int, int, _DWORD, int))(this->ironTintStage_e)( /*0x4ddb6f*/
+  return !(*(int (__thiscall **)(_BYTE *, _DWORD *, int, int, _DWORD, int))(*(_DWORD *)this + 428))( /*0x4ddb6f*/
             this,
             v15,
             -1,
@@ -8873,7 +8873,7 @@ bool __thiscall BuildingClass_ValidateCell(_BYTE *this, __int16 *a2, int a3, int
 }
 
 
-// ==== 0x004DDB90  FootClass::MoveToWeed  this=TechnoClass  sig=csp ====
+// ==== 0x004DDB90  FootClass::MoveToWeed  this=IUnknown  sig=csp ====
 char __thiscall FootClass::MoveToWeed(int *this, int a2)
 {
   _DWORD *v3; // eax
@@ -9333,7 +9333,7 @@ int __thiscall FootClass::RemovePassenger(_DWORD *this, int a2)
 }
 
 
-// ==== 0x004DE710  FootClass::PopAndProcess  this=ObjectClass  sig=csp ====
+// ==== 0x004DE710  FootClass::PopAndProcess  this=AbstractClass  sig=csp ====
 int __thiscall FootClass_PopAndProcess(_DWORD *this)
 {
   _DWORD *v2; // edi
@@ -9800,11 +9800,11 @@ int __thiscall TechnoClass_FindBestMatch(int *this, int a2, int a3, int a4)
 }
 
 
-// ==== 0x004DF0D0  FootClass::ClearPathIndex  this=AbstractClass  sig=csp ====
+// ==== 0x004DF0D0  FootClass::ClearPathIndex  this=IUnknown  sig=csp ====
 int __thiscall FootClass_ClearPathIndex(_DWORD *this)
 {
-  this->__pad_5A0 = 0; /*0x4df0d2*/
-  this->q5A4 = 0; /*0x4df0d8*/
+  *(this + 360) = 0; /*0x4df0d2*/
+  this->q169 = 0; /*0x4df0d8*/
   return 0; /*0x4df0de*/
 }
 

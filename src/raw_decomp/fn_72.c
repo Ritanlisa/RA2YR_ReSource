@@ -290,7 +290,7 @@ _DWORD *__thiscall sub_720440(_DWORD *this)
 }
 
 
-// ==== 0x00720480  ThemeClass::ReadThemeEntry  this=AbstractTypeClass  sig=csp ====
+// ==== 0x00720480  ThemeClass::ReadThemeEntry  this=ThemeClass  sig=csp ====
 char __thiscall ThemeClass::ReadThemeEntry(int this, unsigned __int8 ***a2)
 {
   CCINIClass *v3; // edi
@@ -3697,13 +3697,13 @@ int __thiscall ToggleClass::Construct(
 }
 
 
-// ==== 0x00723EA0  GadgetClass::Show  this=GadgetClass  sig=csp ====
+// ==== 0x00723EA0  GadgetClass::Show  this=AbstractClass  sig=csp ====
 int __thiscall GadgetClass_Show(_BYTE *this)
 {
   int v1; // eax
 
   v1 = *(_DWORD *)this; /*0x723ea0*/
-  this->q02D = 1; /*0x723ea2*/
+  this->q0B4 = 1; /*0x723ea2*/
   return (*(int (**)(void))(v1 + 72))();
 }
 
@@ -7040,7 +7040,7 @@ char __thiscall TriggerTypeClass::_vt26(int this, char *a2)
 }
 
 
-// ==== 0x00727880  ObjectClass::ReadAudioEventINI  this=ObjectTypeClass  sig=csp ====
+// ==== 0x00727880  ObjectClass::ReadAudioEventINI  this=ObjectClass  sig=csp ====
 TriggerTypeClass *__thiscall ReadAudioEventINI(char *this)
 {
   CCINIClass *KeyCount; // ebx
@@ -7110,7 +7110,7 @@ TriggerTypeClass *__thiscall ReadAudioEventINI(char *this)
 }
 
 
-// ==== 0x00727AA0  TagTypeClass::FindOrCreateTriggerType  this=ObjectClass  sig=csp ====
+// ==== 0x00727AA0  TagTypeClass::FindOrCreateTriggerType  this=Coord  sig=csp ====
 TriggerTypeClass *__thiscall TagTypeClass::FindOrCreateTriggerType(ObjectClass *Source)
 {
   int v2; // esi
@@ -7260,7 +7260,7 @@ TriggerTypeClass *__thiscall TextRenderer::Destructor(void *Block, char a2)
 }
 
 
-// ==== 0x00727CF0  String::Trim  this=ObjectClass  sig=csp ====
+// ==== 0x00727CF0  String::Trim  this=Coord  sig=csp ====
 char *__thiscall String_Trim(char *this)
 {
   char v2; // al
@@ -9755,7 +9755,7 @@ int __fastcall sub_72A9D0(int *a1, int *a2)
 }
 
 
-// ==== 0x0072A9E0  Rect::Inflate  this=AbstractClass  sig=csp ====
+// ==== 0x0072A9E0  Rect::Inflate  this=ObjectClass  sig=csp ====
 BOOL __stdcall Rect::Inflate(LPRECT lprc, int dx, int dy)
 {
   int v3; // edx
@@ -9904,7 +9904,7 @@ int *__thiscall sub_72AD90(int *this)
 }
 
 
-// ==== 0x0072ADE0  LoadPaletteSimple  this=AbstractClass  sig=csp ====
+// ==== 0x0072ADE0  LoadPaletteSimple  this=BitFont  sig=csp ====
 int __fastcall Palette_LoadSimple(char *Source, _DWORD *a2, _DWORD *a3)
 {
   _DWORD *v3; // ebx
@@ -10147,7 +10147,7 @@ void sub_72B230()
 }
 
 
-// ==== 0x0072B2F0  LoadingScreen::GetBackgroundImage  this=ObjectClass  sig=csp ====
+// ==== 0x0072B2F0  LoadingScreen::GetBackgroundImage  this=AbstractClass  sig=csp ====
 char *__thiscall LoadingScreen::GetBackgroundImage(void *this, ScenarioClass *aP1)
 {
   char *result; // eax
@@ -10159,7 +10159,7 @@ char *__thiscall LoadingScreen::GetBackgroundImage(void *this, ScenarioClass *aP
 }
 
 
-// ==== 0x0072B310  LoadingScreen::GetOverlayImage  this=ObjectClass  sig=csp ====
+// ==== 0x0072B310  LoadingScreen::GetOverlayImage  this=AbstractClass  sig=csp ====
 char *__thiscall LoadingScreen::GetOverlayImage(void *this, ScenarioClass *aP1)
 {
   char *result; // eax
@@ -10478,7 +10478,7 @@ LABEL_26:
 }
 
 
-// ==== 0x0072B820  Palette::LoadFile  this=AbstractClass  sig=csp ====
+// ==== 0x0072B820  Palette::LoadFile  this=BitFont  sig=csp ====
 int __thiscall Palette_LoadFile(char *Source)
 {
   if ( MEMORY[0xB0FBA0] ) /*0x72b82b*/
@@ -11339,7 +11339,7 @@ int sub_72CE50()
 }
 
 
-// ==== 0x0072CF40  LoadingScreen::Init  this=LoadingScreen  sig=ida-proto ====
+// ==== 0x0072CF40  LoadingScreen::Init  this=WinModemClass  sig=ida-proto ====
 char LoadingScreen_Init()
 {
   char result; // al
@@ -12044,7 +12044,7 @@ LABEL_3:
 }
 
 
-// ==== 0x0072E1B0  ChangeVideoMode_Setup  this=ObjectClass  sig=ida-proto ====
+// ==== 0x0072E1B0  ChangeVideoMode_Setup  this=AbstractClass  sig=ida-proto ====
 int *__fastcall sub_72E1B0(int a1, int a2)
 {
   __3_YAXPAX_Z(MEMORY[0xB0FC10]); /*0x72e1bd*/
@@ -12198,7 +12198,7 @@ int __fastcall DrawScoreScreenStats(ConvertClass *aP0, int a2)
 }
 
 
-// ==== 0x0072E450  RenderScoreScreen  this=-  sig=csp ====
+// ==== 0x0072E450  RenderScoreScreen  this=MSShapeAnim  sig=csp ====
 void __fastcall RenderScoreScreen(ConvertClass *a1, int *a2, char a3)
 {
   int v5; // ecx
@@ -12587,7 +12587,7 @@ void __fastcall sub_72E990(int a1, ConvertClass *a2)
 }
 
 
-// ==== 0x0072E9F0  Map_Load_72E9F0  this=ObjectClass  sig=csp ====
+// ==== 0x0072E9F0  Map_Load_72E9F0  this=AbstractClass  sig=csp ====
 void __fastcall Map_Load_72E9F0(ConvertClass *a1, int *a2)
 {
   int v4; // [esp+8h] [ebp-8h] BYREF
@@ -12649,7 +12649,7 @@ void __fastcall sub_72EA70(int a1, ConvertClass *a2)
 }
 
 
-// ==== 0x0072EAD0  Map_Load_72EAD0  this=ObjectClass  sig=csp ====
+// ==== 0x0072EAD0  Map_Load_72EAD0  this=AbstractClass  sig=csp ====
 void __fastcall Map_Load_72EAD0(ConvertClass *a1, int *a2)
 {
   int v4; // [esp+8h] [ebp-8h] BYREF
@@ -12701,7 +12701,7 @@ void *sub_72EB50()
 }
 
 
-// ==== 0x0072EC70  SetupMouseClassResources  this=ObjectClass  sig=ida-proto ====
+// ==== 0x0072EC70  SetupMouseClassResources  this=AbstractClass  sig=ida-proto ====
 int *__fastcall MouseClass_SetupResources(int a1, int a2)
 {
   int v2; // edi

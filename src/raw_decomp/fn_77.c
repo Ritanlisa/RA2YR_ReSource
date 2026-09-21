@@ -2782,7 +2782,7 @@ _DWORD *__fastcall sub_773450(int a1, int a2)
 }
 
 
-// ==== 0x00773590  ObjectClass::method  this=AnimClass  sig=csp ====
+// ==== 0x00773590  ObjectClass::method  this=AbstractClass  sig=csp ====
 char __thiscall sub_773590(AnimClass *this, int a2, int a3)
 {
   void **v4; // esi
@@ -5334,7 +5334,7 @@ char __stdcall Window_ClampToScreen(int *a1)
 }
 
 
-// ==== 0x00776E10  FindListBoxItem  this=ObjectClass  sig=csp ====
+// ==== 0x00776E10  FindListBoxItem  this=AbstractClass  sig=csp ====
 LRESULT __fastcall FindListBoxItem(HWND hWnd, LRESULT wParam, int a3)
 {
   LRESULT v6; // [esp+10h] [ebp-4h]
@@ -5885,7 +5885,7 @@ int __thiscall Time::FormatDate(char *Buffer)
 }
 
 
-// ==== 0x00777B30  String::FormatDword  this=ObjectClass  sig=csp ====
+// ==== 0x00777B30  String::FormatDword  this=AbstractClass  sig=csp ====
 ObjectClass *__thiscall String::FormatDword(char *Buffer)
 {
   sprintf(Buffer, (ObjectClass *)&stru_817F40.fallRate, dword_822D1C); /*0x777b3f*/
@@ -10753,7 +10753,7 @@ void __cdecl unknown_libname_60()
 }
 
 
-// ==== 0x0077DA50  SidebarClass::FindProductionData  this=SidebarClass  sig=csp ====
+// ==== 0x0077DA50  SidebarClass::FindProductionData  this=WinModemClass  sig=csp ====
 void *__thiscall sub_77DA50(void *this)
 {
   char *v1; // eax

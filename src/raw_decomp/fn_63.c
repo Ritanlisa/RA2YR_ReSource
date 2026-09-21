@@ -2817,7 +2817,7 @@ _DWORD *__thiscall ScenarioClass::GetActionCoordsCopy(_BYTE *this, BombClass *aP
 }
 
 
-// ==== 0x00633BC0  GetScenarioClassActionCoords  this=IUnknown  sig=csp ====
+// ==== 0x00633BC0  GetScenarioClassActionCoords  this=AbstractClass  sig=csp ====
 _DWORD *__fastcall ScenarioClass_GetActionCoords(_DWORD *a1, _BYTE *a2)
 {
   int *v3; // eax
@@ -3259,7 +3259,7 @@ int __thiscall Function::6342D0(_DWORD *this, int a2)
 }
 
 
-// ==== 0x006342E0  ObjectClass::Team_Helper_6342E0  this=ObjectClass  sig=csp ====
+// ==== 0x006342E0  ObjectClass::Team_Helper_6342E0  this=AbstractClass  sig=csp ====
 int __thiscall Team_Helper_6342E0(_DWORD *this, TechnoClass *aP1, int a3)
 {
   _BYTE *v4; // esi
@@ -3273,7 +3273,7 @@ int __thiscall Team_Helper_6342E0(_DWORD *this, TechnoClass *aP1, int a3)
 }
 
 
-// ==== 0x00634310  BuildingClass::CopyTypeDataForRender  this=Tactical  sig=csp ====
+// ==== 0x00634310  BuildingClass::CopyTypeDataForRender  this=BuildingClass  sig=csp ====
 int __thiscall sub_634310(int *this, int a2, int a3)
 {
   int v3; // edx
@@ -3365,7 +3365,7 @@ _DWORD *__thiscall ScriptAction_GetCoords(_DWORD **this, _DWORD *a2)
 }
 
 
-// ==== 0x00634400  ScriptAction::GetScreenPos  this=ObjectClass  sig=csp ====
+// ==== 0x00634400  ScriptAction::GetScreenPos  this=AbstractClass  sig=csp ====
 _DWORD *__thiscall ScriptAction_GetScreenPos(_DWORD **this, _DWORD *a2)
 {
   _DWORD *ActionCoords; // eax
@@ -3436,7 +3436,7 @@ BOOL __thiscall sub_634550(_DWORD **this, int a2, int a3, int a4)
 }
 
 
-// ==== 0x006345A0  ObjectClass::Render_Render_6345A0  this=ObjectClass  sig=csp ====
+// ==== 0x006345A0  ObjectClass::Render_Render_6345A0  this=AbstractClass  sig=csp ====
 _DWORD *__thiscall sub_6345A0(_DWORD **this, _DWORD *a2)
 {
   _DWORD *ScenarioClassActionCoords; // eax
@@ -5908,7 +5908,7 @@ int __thiscall FactoryClass::GetState(_DWORD *this)
 }
 
 
-// ==== 0x00636E60  ArrayClass::GetAt_Wrap  this=ObjectClass  sig=csp ====
+// ==== 0x00636E60  ArrayClass::GetAt_Wrap  this=AbstractClass  sig=csp ====
 int __thiscall ArrayClass_GetAt_Wrap(int *this, int a2)
 {
   int v2; // edi
@@ -5924,7 +5924,7 @@ int __thiscall ArrayClass_GetAt_Wrap(int *this, int a2)
     v4 = this->q025; /*0x636e71*/
     if ( v4 < 0 ) /*0x636e79*/
       return 0; /*0x636e79*/
-    v3 = v4 + (a2 - v4) % this->objectTypeFlags; /*0x636e88*/
+    v3 = v4 + (a2 - v4) % this->q024; /*0x636e88*/
   }
   if ( v3 >= 0 && v3 < v2 ) /*0x636e90*/
     return *(_DWORD *)(this->vtable3 + 4 * v3); /*0x636e9a*/
@@ -7187,7 +7187,7 @@ char __thiscall DispatchBuildingScriptAction(char *this)
 }
 
 
-// ==== 0x00638120  ExecuteActionPlanManager  this=IUnknown  sig=csp ====
+// ==== 0x00638120  ExecuteActionPlanManager  this=-  sig=csp ====
 char __fastcall ExecuteActionPlanManager(IUnknown *a1, char *a2)
 {
   char *v2; // edi
@@ -11802,7 +11802,7 @@ char __fastcall DrawTacticalLine2D(int a1, ObjectClass *aP1, int aP0, int aP0_4,
 }
 
 
-// ==== 0x0063D910  DrawTacticalFillScanline  this=Tactical  sig=csp ====
+// ==== 0x0063D910  DrawTacticalFillScanline  this=-  sig=csp ====
 char __fastcall DrawTacticalFillScanline(
         AbstractClass *aP0,
         BuildingClass *aP1,
@@ -11828,7 +11828,7 @@ char __fastcall DrawTacticalFillScanline(
 }
 
 
-// ==== 0x0063D960  globalHelper_03D960  this=Tactical  sig=csp ====
+// ==== 0x0063D960  globalHelper_03D960  this=-  sig=csp ====
 char __fastcall globalHelper_03D960(Tactical *aP0, int a2, int a3, int a4, int a5, int a6)
 {
   int v6; // ecx

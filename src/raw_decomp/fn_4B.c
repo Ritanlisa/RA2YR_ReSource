@@ -303,7 +303,7 @@ LABEL_39:
 }
 
 
-// ==== 0x004B0AD0  JumpjetLocomotion::MoveTo  this=ObjectClass  sig=csp ====
+// ==== 0x004B0AD0  JumpjetLocomotion::MoveTo  this=IUnknown  sig=csp ====
 char __thiscall JumpjetLocomotion::MoveTo(int this, IUnknown *aP1, int aP3)
 {
   IUnknown *v3; // edx
@@ -3024,7 +3024,7 @@ void nullsub_118()
 }
 
 
-// ==== 0x004B4780  JumpjetLocomotion::TransformCoords  this=ObjectClass  sig=csp ====
+// ==== 0x004B4780  JumpjetLocomotion::TransformCoords  this=IUnknown  sig=csp ====
 _DWORD *__thiscall JumpjetLocomotion::TransformCoords(_DWORD *this, IUnknown *aP1, IUnknown *aP2, ObjectClass *aP3)
 {
   int v4; // eax
@@ -3035,7 +3035,7 @@ _DWORD *__thiscall JumpjetLocomotion::TransformCoords(_DWORD *this, IUnknown *aP
   int v9; // ecx
 
   v4 = *(_DWORD *)aP3->__pad_0; /*0x4b478d*/
-  v5 = dword_7E7B30[3 * this->q058]; /*0x4b4791*/
+  v5 = dword_7E7B30[3 * this->q160]; /*0x4b4791*/
   v6 = aP2->field_0; /*0x4b479f*/
   v7 = aP2->field_4; /*0x4b47a1*/
   if ( (v5 & 1) != 0 ) /*0x4b47a4*/
@@ -3055,7 +3055,7 @@ _DWORD *__thiscall JumpjetLocomotion::TransformCoords(_DWORD *this, IUnknown *aP
     v4 = (unsigned __int8)(0x80 - v4); /*0x4b47dd*/
   }
   *(_DWORD *)aP3->__pad_0 = v4; /*0x4b47df*/
-  v8 = this->q040; /*0x4b47e2*/
+  v8 = this->q010; /*0x4b47e2*/
   v9 = this->q044; /*0x4b47e5*/
   aP1->field_0 = v6 + v8; /*0x4b47f2*/
   aP1->field_4 = v7 + v9; /*0x4b47f5*/
@@ -9251,7 +9251,7 @@ char __userpurge DSurface_FillRectWithFlags@<al>(int a1@<ecx>, int a2@<ebx>, int
 }
 
 
-// ==== 0x004BBB00  DSurface::BlitStretch  this=DSurface  sig=csp ====
+// ==== 0x004BBB00  DSurface::BlitStretch  this=CampaignClass  sig=csp ====
 void __fastcall sub_4BBB00(int a1, int a2, int a3)
 {
   int v3; // esi

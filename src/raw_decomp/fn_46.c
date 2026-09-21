@@ -4592,7 +4592,7 @@ char __thiscall sub_46B0C0(void *this, int a2, float *a3, _DWORD *a4, _DWORD *a5
 }
 
 
-// ==== 0x0046B260  Function::46B260  this=IUnknown  sig=csp ====
+// ==== 0x0046B260  Function::46B260  this=Function  sig=csp ====
 int __thiscall MiniStub_46b260(_DWORD *this, int a2)
 {
   this->q130 = a2; /*0x46b264*/
@@ -4607,7 +4607,7 @@ int __thiscall sub_46B270(_DWORD *this)
 }
 
 
-// ==== 0x0046B280  BulletClass::InitScalable  this=SlaveManagerClass  sig=csp ====
+// ==== 0x0046B280  BulletClass::InitScalable  this=BulletClass  sig=csp ====
 int __thiscall BulletClass::InitScalable(_DWORD **this)
 {
   int v2; // eax
@@ -4796,11 +4796,11 @@ int __thiscall VectorClass_ptr_BulletClass::Get(_DWORD *this, int a2)
 }
 
 
-// ==== 0x0046B640  Timer::Start  this=IUnknown  sig=csp ====
+// ==== 0x0046B640  Timer::Start  this=Timer  sig=csp ====
 DynamicVector *__thiscall Timer::Start(_DWORD *this, DynamicVector *aP1)
 {
   *this = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x46b64c*/
-  this->q008 = aP1; /*0x46b64e*/
+  *(this + 2) = aP1; /*0x46b64e*/
   return (DynamicVector *)this; /*0x46b651*/
 }
 
@@ -6765,7 +6765,7 @@ BOOL __fastcall sub_46DCC0(HWND hDlg, bool a2)
 }
 
 
-// ==== 0x0046DD70  EnableGameModeControls  this=AbstractClass  sig=csp ====
+// ==== 0x0046DD70  EnableGameModeControls  this=IUnknown  sig=csp ====
 HWND __fastcall EnableGameModeControls(HWND hDlg, bool a2)
 {
   int v4; // eax
@@ -6914,7 +6914,7 @@ HWND __fastcall sub_46DE20(HWND hDlg, int nCmdShow)
 }
 
 
-// ==== 0x0046F5E0  ErrorCode::Map  this=ErrorCode  sig=csp ====
+// ==== 0x0046F5E0  ErrorCode::Map  this=AbstractClass  sig=csp ====
 int __thiscall ErrorCode_Map(void *this)
 {
   if ( this )
@@ -6924,7 +6924,7 @@ int __thiscall ErrorCode_Map(void *this)
 }
 
 
-// ==== 0x0046F600  Skirmish::FillPlayerNames  this=Skirmish  sig=csp ====
+// ==== 0x0046F600  Skirmish::FillPlayerNames  this=AbstractClass  sig=csp ====
 int __thiscall Skirmish_FillPlayerNames(HWND this)
 {
   int result; // eax
@@ -6969,7 +6969,7 @@ LABEL_9:
 }
 
 
-// ==== 0x0046F6D0  Count::SetupAllCountriesLobby  this=ObjectClass  sig=csp ====
+// ==== 0x0046F6D0  Count::SetupAllCountriesLobby  this=AbstractClass  sig=csp ====
 BOOL __thiscall Lobby_SetupAllCountries(HWND this)
 {
   void *v1; // ecx
@@ -7050,7 +7050,7 @@ BOOL __thiscall Lobby_SetupAllCountries(HWND this)
 }
 
 
-// ==== 0x0046F810  GetLobbyPlayerColor  this=-  sig=ida-proto ====
+// ==== 0x0046F810  GetLobbyPlayerColor  this=SkirmishDialog  sig=ida-proto ====
 int __fastcall Lobby_GetPlayerColor(int a1)
 {
   wchar_t *v2; // esi
@@ -7090,7 +7090,7 @@ int __fastcall HouseClass_GetSideIndex(int a1)
 }
 
 
-// ==== 0x0046F8F0  Skirmish::SetupAllSpawnLocations  this=ObjectClass  sig=csp ====
+// ==== 0x0046F8F0  Skirmish::SetupAllSpawnLocations  this=AbstractClass  sig=csp ====
 void __thiscall Skirmish::SetupAllSpawnLocations(HWND hDlg)
 {
   int v1; // ebp
@@ -7182,7 +7182,7 @@ void __thiscall Skirmish::SetupAllSpawnLocations(HWND hDlg)
 }
 
 
-// ==== 0x0046FA20  Lobby::UpdateReadyIcons  this=ObjectClass  sig=csp ====
+// ==== 0x0046FA20  Lobby::UpdateReadyIcons  this=AbstractClass  sig=csp ====
 HWND __thiscall Lobby::UpdateReadyIcons(HWND hDlg)
 {
   int v2; // ebp
@@ -7241,7 +7241,7 @@ LABEL_15:
 }
 
 
-// ==== 0x0046FAC0  Lobby::SetupAllFactionSlots  this=ObjectClass  sig=csp ====
+// ==== 0x0046FAC0  Lobby::SetupAllFactionSlots  this=AbstractClass  sig=csp ====
 int __thiscall Lobby_SetupAllFactionSlots(HWND this)
 {
   char *v1; // ebx
@@ -7292,7 +7292,7 @@ int __thiscall Lobby_SetupAllFactionSlots(HWND this)
 }
 
 
-// ==== 0x0046FB50  Lobby::EnableStartButton  this=ObjectClass  sig=csp ====
+// ==== 0x0046FB50  Lobby::EnableStartButton  this=AbstractClass  sig=csp ====
 HWND __thiscall Lobby::EnableStartButton(HWND hDlg)
 {
   HWND DlgItem; // esi

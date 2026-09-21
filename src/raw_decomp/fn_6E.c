@@ -819,7 +819,7 @@ char __thiscall TActionClass::PlayAudioAtRandomWP(int *this, int a2, int a3, int
 }
 
 
-// ==== 0x006E1830  ScriptAction::ReadParameter  this=IUnknown  sig=csp ====
+// ==== 0x006E1830  ScriptAction::ReadParameter  this=ParticleSystemClass  sig=csp ====
 _DWORD *__thiscall sub_6E1830(_DWORD *this)
 {
   int v1; // esi
@@ -829,7 +829,7 @@ _DWORD *__thiscall sub_6E1830(_DWORD *this)
   __int16 v5[2]; // [esp+4h] [ebp-4h] BYREF
 
   v1 = *this / 256; /*0x6e184b*/
-  v2 = this->q004 / 256; /*0x6e184e*/
+  v2 = this->vtable2 / 256; /*0x6e184e*/
   v5[0] = v1; /*0x6e1851*/
   v5[1] = v2; /*0x6e1856*/
   if ( __PAIR32__(v2, v1) == MEMORY[0xB0E680] ) /*0x6e186c*/
@@ -2643,7 +2643,7 @@ TActionClass *__thiscall TActionClass::Destructor(void **Block, char a2)
 }
 
 
-// ==== 0x006E4790  ScriptAction::CopyStringField  this=IUnknown  sig=csp ====
+// ==== 0x006E4790  ScriptAction::CopyStringField  this=ScriptAction  sig=csp ====
 IUnknown *__thiscall ScriptAction::CopyStringField(char *Destination, char *Source)
 {
   if ( Source ) /*0x6e4799*/
@@ -3388,7 +3388,7 @@ char __thiscall sub_6E5290(_BYTE *this)
 }
 
 
-// ==== 0x006E52A0  TeamClass::FindOrCreate  this=IUnknown  sig=csp ====
+// ==== 0x006E52A0  TeamClass::FindOrCreate  this=TeamClass  sig=csp ====
 TagClass *__thiscall TeamClass::FindOrCreate(TeamTypeClass *this)
 {
   int v2; // ecx
@@ -3576,10 +3576,10 @@ LABEL_14:
 }
 
 
-// ==== 0x006E5560  ScenarioClass::checkMissionObjectives  this=IUnknown  sig=csp ====
+// ==== 0x006E5560  ScenarioClass::checkMissionObjectives  this=SpeedType  sig=csp ====
 int __thiscall sub_6E5560(_DWORD *this, int a2)
 {
-  this->q030 = a2; /*0x6e5564*/
+  *(this + 12) = a2; /*0x6e5564*/
   return a2; /*0x6e5567*/
 }
 
@@ -4117,7 +4117,7 @@ int __thiscall TagTypeClass::_vt10(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x006E5E70  ObjectTypeClass::FindByName  this=AbstractClass  sig=csp ====
+// ==== 0x006E5E70  ObjectTypeClass::FindByName  this=Coord  sig=csp ====
 int __thiscall ObjectTypeClass::FindByName(void *this)
 {
   int v2; // ebx
@@ -4215,7 +4215,7 @@ LABEL_12:
 }
 
 
-// ==== 0x006E5FE0  ObjectClass::SaveTriggerTagsToINI  this=ObjectTypeClass  sig=csp ====
+// ==== 0x006E5FE0  ObjectClass::SaveTriggerTagsToINI  this=ObjectClass  sig=csp ====
 AbstractTypeClass *__thiscall SaveTriggerTagsToINI(char *this)
 {
   ObjectClass *KeyCount; // ebx
@@ -4397,7 +4397,7 @@ char __thiscall TagTypeClass::HasZoneEntryByEvent(_DWORD *this)
 }
 
 
-// ==== 0x006E6310  TagTypeClass::FindOrCreate  this=ObjectClass  sig=csp ====
+// ==== 0x006E6310  TagTypeClass::FindOrCreate  this=Coord  sig=csp ====
 char *__thiscall TagTypeClass::FindOrCreate(ObjectClass *Source)
 {
   int v2; // esi

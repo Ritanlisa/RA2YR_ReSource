@@ -5495,7 +5495,7 @@ LABEL_9:
 }
 
 
-// ==== 0x00586360  Cell::IsPassable  this=IUnknown  sig=csp ====
+// ==== 0x00586360  Cell::IsPassable  this=Cell  sig=csp ====
 bool __stdcall Cell::IsPassable(IUnknown *aP0)
 {
   int v1; // eax
@@ -7846,7 +7846,7 @@ int __thiscall sub_588C10(int this, int a2)
 }
 
 
-// ==== 0x00588C40  CellClass::initCellData  this=CampaignClass  sig=csp ====
+// ==== 0x00588C40  CellClass::initCellData  this=AbstractClass  sig=csp ====
 _WORD *__thiscall CellClass::initCellData(_WORD *this, MouseClass *aP1)
 {
   *this += LOWORD(aP1->field_0); /*0x588c49*/
@@ -11937,7 +11937,7 @@ _DWORD *__thiscall RandomMap_TerrainTileData_Constructor(_DWORD *this, int a2)
 }
 
 
-// ==== 0x0058C070  TileNode::Cleanup  this=CampaignClass  sig=csp ====
+// ==== 0x0058C070  TileNode::Cleanup  this=AbstractClass  sig=csp ====
 void __thiscall sub_58C070(_DWORD *this)
 {
   void (__thiscall ***v2)(_DWORD, int); // ecx
@@ -11963,14 +11963,14 @@ void __thiscall sub_58C070(_DWORD *this)
     while ( v3 < g_RandomMap_TileData ); /*0x58c0cc*/
   }
   v4 = (void *)this->q02C; /*0x58c0ce*/
-  this->scenario = &vt_VectorClass_Cell; /*0x58c0d1*/
+  this->q028 = &vt_VectorClass_Cell; /*0x58c0d1*/
   if ( v4 && this->q0D4 ) /*0x58c0dc*/
   {
     __3_YAXPAX_Z(v4); /*0x58c0e2*/
     this->q02C = 0; /*0x58c0ea*/
   }
   this->q0D4 = 0; /*0x58c0ed*/
-  this->q0C0 = 0; /*0x58c0f0*/
+  this->q030 = 0; /*0x58c0f0*/
 }
 
 

@@ -481,7 +481,7 @@ char __thiscall LoadVocFromINI(char **this, CCINIClass *aP1)
 }
 
 
-// ==== 0x00750920  PlayVocClass  this=Movie  sig=csp ====
+// ==== 0x00750920  PlayVocClass  this=RandomStruct  sig=csp ====
 int __fastcall VocClass_Play(int a1, int a2, float a3, int a4)
 {
   int v5; // ebx
@@ -525,7 +525,7 @@ int __fastcall VocClass_Play(int a1, int a2, float a3, int a4)
 }
 
 
-// ==== 0x007509E0  StartAudioControllerAt  this=-  sig=csp ====
+// ==== 0x007509E0  StartAudioControllerAt  this=AnimClass  sig=csp ====
 int __fastcall StartAudioControllerAt(AudioController *aP0, int a2, int a1)
 {
   int *v5; // esi
@@ -670,7 +670,7 @@ LABEL_7:
 }
 
 
-// ==== 0x00750D40  StartAudioController  this=IUnknown  sig=ida-proto ====
+// ==== 0x00750D40  StartAudioController  this=AbstractClass  sig=ida-proto ====
 int *__fastcall StartAudioController(AudioMixer *ecx0, int **a2)
 {
   int *result; // eax
@@ -729,7 +729,7 @@ LABEL_10:
 }
 
 
-// ==== 0x00750E20  PlayAudioAt2  this=-  sig=csp ====
+// ==== 0x00750E20  PlayAudioAt2  this=RandomStruct  sig=csp ====
 int __fastcall PlayAudioAt2(IUnknown *aP0, _DWORD *a1, int a3)
 {
   int result; // eax
@@ -1130,7 +1130,7 @@ int __thiscall VocClass::FindIndex(void *this)
 }
 
 
-// ==== 0x00751520  ObjectClass::System_Get  this=ObjectTypeClass  sig=csp ====
+// ==== 0x00751520  ObjectClass::System_Get  this=IUnknown  sig=csp ====
 int __thiscall System_Get_751520(void *this)
 {
   int v2; // esi
@@ -1172,7 +1172,7 @@ char *__fastcall VocClass::GetSampleNameByIndex(int a1)
 }
 
 
-// ==== 0x007515C0  ObjectClass::System_Get_7515C0  this=ObjectTypeClass  sig=csp ====
+// ==== 0x007515C0  ObjectClass::System_Get_7515C0  this=IUnknown  sig=csp ====
 int __thiscall sub_7515C0(void *this)
 {
   int result; // eax
@@ -2044,7 +2044,7 @@ void __fastcall ThemeManager_Update(int a1, int a2, int a3)
 }
 
 
-// ==== 0x00752590  Audio_Load  this=CampaignClass  sig=csp ====
+// ==== 0x00752590  Audio_Load  this=AbstractClass  sig=csp ====
 void __fastcall sub_752590(int a1, int a2, int a3)
 {
   _DWORD *v5; // esi
@@ -2320,7 +2320,7 @@ int Audio_IsPlaying()
 }
 
 
-// ==== 0x00752A40  ClearThemeQueuePlaylist  this=IUnknown  sig=ida-proto ====
+// ==== 0x00752A40  ClearThemeQueuePlaylist  this=AnimClass  sig=ida-proto ====
 void __fastcall ThemeQueue_ClearPlaylist(int a1)
 {
   int i; // esi
@@ -2342,7 +2342,7 @@ void __fastcall ThemeQueue_ClearPlaylist(int a1)
 }
 
 
-// ==== 0x00752AB0  ThemeClass::GetField  this=AnimClass  sig=ida-proto ====
+// ==== 0x00752AB0  ThemeClass::GetField  this=AbstractClass  sig=ida-proto ====
 void __fastcall ThemeClass::GetField(int a1)
 {
   MEMORY[0x846614] = a1; /*0x752ab6*/
@@ -2751,7 +2751,7 @@ int __thiscall VocClass::FindByName(void *this)
 }
 
 
-// ==== 0x007532A0  globalHelper_0532A0  this=-  sig=csp ====
+// ==== 0x007532A0  globalHelper_0532A0  this=RandomStruct  sig=csp ====
 bool __fastcall sub_7532A0(std::codecvt_base *a1)
 {
   if ( (int)a1 < 0 || (int)a1 >= MEMORY[0xB1D4B0] ) /*0x7532aa*/
@@ -4751,16 +4751,16 @@ _DWORD *__thiscall sub_755CB0(_DWORD *this)
 }
 
 
-// ==== 0x00755CD0  File::LoadFileVXL  this=AbstractClass  sig=csp ====
+// ==== 0x00755CD0  File::LoadFileVXL  this=IUnknown  sig=csp ====
 _DWORD *__thiscall VXL_LoadFile(_DWORD *this, int a2, int a3)
 {
   *(_BYTE *)this = 0; /*0x755cd9*/
-  this->vtable2 = 0; /*0x755cdb*/
-  this->vtable3 = 0; /*0x755cde*/
-  this->vtable4 = 0; /*0x755ce1*/
-  this->uniqueId = 0; /*0x755ce4*/
-  this->abstractFlags = 0; /*0x755ce7*/
-  this->nextArrayIndex = 0; /*0x755cea*/
+  this->q004 = 0; /*0x755cdb*/
+  this->q008 = 0; /*0x755cde*/
+  this->q00C = 0; /*0x755ce1*/
+  this->q010 = 0; /*0x755ce4*/
+  this->q005 = 0; /*0x755ce7*/
+  this->q018 = 0; /*0x755cea*/
   if ( !Voxel::SortDepth(a2, a3) ) /*0x755cf5*/
     *(_BYTE *)this = 1; /*0x755cfe*/
   return this; /*0x755d03*/
@@ -4787,7 +4787,7 @@ void __thiscall WaveClass_Destroy(int this)
 }
 
 
-// ==== 0x00755DB0  Voxel::SortDepth  this=AbstractClass  sig=csp ====
+// ==== 0x00755DB0  Voxel::SortDepth  this=IUnknown  sig=csp ====
 int __thiscall Voxel::SortDepth(ObjectClass *this, ObjectClass *aP1, int a3)
 {
   unsigned int v4; // edi
@@ -8093,12 +8093,12 @@ LABEL_14:
 }
 
 
-// ==== 0x00759510  CCFileClass::Cleanup  this=CCFileClass  sig=csp ====
+// ==== 0x00759510  CCFileClass::Cleanup  this=AbstractClass  sig=csp ====
 int __thiscall CCFileClass_Cleanup(_DWORD *this)
 {
   System_Cleanup(); /*0x759513*/
   *++this = &vt_CCFileClass; /*0x75951e*/
-  this->q064 = 0; /*0x759524*/
+  this->__pad_064 = 0; /*0x759524*/
   Vector::Clear((int)(this + 22)); /*0x75952b*/
   *this = &off_7E1668; /*0x759532*/
   return BufferIOFileClass::Dtor(this); /*0x75953d*/
@@ -12617,7 +12617,7 @@ int __thiscall sub_75F140(_DWORD *this)
 }
 
 
-// ==== 0x0075F230  CalcMathFacing8  this=-  sig=csp ====
+// ==== 0x0075F230  CalcMathFacing8  this=RecoilData  sig=csp ====
 int __fastcall sub_75F230(_DWORD *a1, _DWORD *a2)
 {
   int v2; // esi

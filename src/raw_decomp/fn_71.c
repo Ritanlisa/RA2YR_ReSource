@@ -228,7 +228,7 @@ char __stdcall TechnoClass::EnteredOpenTopped(ObjectClass *aP0)
 }
 
 
-// ==== 0x007104A0  TechnoClass::ExitedOpenTopped  this=TechnoClass  sig=csp ====
+// ==== 0x007104A0  TechnoClass::ExitedOpenTopped  this=AbstractClass  sig=csp ====
 int __stdcall TechnoClass::ExitedOpenTopped(TechnoClass *aP0)
 {
   TechnoClass *result; // eax
@@ -240,7 +240,7 @@ int __stdcall TechnoClass::ExitedOpenTopped(TechnoClass *aP0)
 }
 
 
-// ==== 0x007104C0  TechnoClass::MarkPassengersAsExited  this=ObjectClass  sig=csp ====
+// ==== 0x007104C0  TechnoClass::MarkPassengersAsExited  this=AbstractClass  sig=csp ====
 int __thiscall TechnoClass::MarkPassengersAsExited(_DWORD *this)
 {
   int result; // eax
@@ -286,7 +286,7 @@ int __thiscall FootClass::UpdatePassengerCoords(int *this)
 }
 
 
-// ==== 0x00710550  CCINIClass::IterateNodes  this=AbstractClass  sig=csp ====
+// ==== 0x00710550  CCINIClass::IterateNodes  this=IUnknown  sig=csp ====
 int __thiscall CCINIClass::IterateNodes(_DWORD *this, IUnknown *aP1)
 {
   int result; // eax
@@ -351,7 +351,7 @@ TechnoClass *__thiscall TechnoClass::ScalarDtor(void *Block, char a2)
 }
 
 
-// ==== 0x00710700  Coord::Divide  this=BuildingTypeClass  sig=csp ====
+// ==== 0x00710700  Coord::Divide  this=AbstractClass  sig=csp ====
 int *__thiscall Coord_Divide(_DWORD *this, int *a2, int a3)
 {
   int v4; // ebx
@@ -6502,7 +6502,7 @@ void nullsub_86()
 }
 
 
-// ==== 0x007179D0  ObjectTypeClass::loadTypeMember_57179D0  this=WeaponTypeClass  sig=csp ====
+// ==== 0x007179D0  ObjectTypeClass::loadTypeMember_57179D0  this=ObjectTypeClass  sig=csp ====
 int __thiscall ObjectTypeClass::loadTypeMember_57179D0(_DWORD *this, WeaponTypeClass *aP1, CCINIClass *aP2)
 {
   if ( this != (_DWORD *)aP2 ) /*0x7179d7*/
@@ -6522,7 +6522,7 @@ int __thiscall ObjectTypeClass::loadTypeMember_57179D0(_DWORD *this, WeaponTypeC
 }
 
 
-// ==== 0x00717A30  ObjectTypeClass::loadTypeMember_5717A30  this=ObjectTypeClass  sig=csp ====
+// ==== 0x00717A30  ObjectTypeClass::loadTypeMember_5717A30  this=Turret  sig=csp ====
 int __thiscall sub_717A30(_DWORD *this, int a2)
 {
   *this = a2; /*0x717a34*/
@@ -6530,14 +6530,14 @@ int __thiscall sub_717A30(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00717A40  ObjectClass::ReadPointerFromECX4  this=ObjectClass  sig=csp ====
+// ==== 0x00717A40  ObjectClass::ReadPointerFromECX4  this=Turret  sig=csp ====
 int __thiscall ReadPointerFromECX4(void *this)
 {
   return *(_DWORD *)this; /*0x717a42*/
 }
 
 
-// ==== 0x00717A50  ObjectTypeClass::loadTypeMember_5717A50  this=ObjectTypeClass  sig=csp ====
+// ==== 0x00717A50  ObjectTypeClass::loadTypeMember_5717A50  this=Turret  sig=csp ====
 int __thiscall sub_717A50(_DWORD *this, int a2)
 {
   int result; // eax
@@ -6545,19 +6545,19 @@ int __thiscall sub_717A50(_DWORD *this, int a2)
   result = a2; /*0x717a50*/
   if ( a2 <= 0 ) /*0x717a56*/
     result = 1; /*0x717a58*/
-  this->vtable2 = result; /*0x717a5d*/
+  *(this + 1) = result; /*0x717a5d*/
   return result; /*0x717a60*/
 }
 
 
-// ==== 0x00717A70  ObjectTypeClass::loadTypeMember_5717A70  this=ObjectTypeClass  sig=csp ====
+// ==== 0x00717A70  ObjectTypeClass::loadTypeMember_5717A70  this=Turret  sig=csp ====
 int __thiscall sub_717A70(_DWORD *this)
 {
-  return this->vtable2; /*0x717a73*/
+  return *(this + 1); /*0x717a73*/
 }
 
 
-// ==== 0x00717A80  ObjectTypeClass::loadTypeMember_5717A80  this=ObjectTypeClass  sig=csp ====
+// ==== 0x00717A80  ObjectTypeClass::loadTypeMember_5717A80  this=Turret  sig=csp ====
 int __thiscall sub_717A80(_DWORD *this, int a2)
 {
   int result; // eax
@@ -6565,19 +6565,19 @@ int __thiscall sub_717A80(_DWORD *this, int a2)
   result = a2; /*0x717a80*/
   if ( a2 <= 0 ) /*0x717a86*/
     result = 1; /*0x717a88*/
-  this->vtable3 = result; /*0x717a8d*/
+  *(this + 2) = result; /*0x717a8d*/
   return result; /*0x717a90*/
 }
 
 
-// ==== 0x00717AA0  ObjectTypeClass::loadTypeMember_5717AA0  this=ObjectTypeClass  sig=csp ====
+// ==== 0x00717AA0  ObjectTypeClass::loadTypeMember_5717AA0  this=Turret  sig=csp ====
 int __thiscall sub_717AA0(_DWORD *this)
 {
-  return this->vtable3; /*0x717aa3*/
+  return *(this + 2); /*0x717aa3*/
 }
 
 
-// ==== 0x00717AB0  ObjectTypeClass::loadTypeMember_5717AB0  this=ObjectTypeClass  sig=csp ====
+// ==== 0x00717AB0  ObjectTypeClass::loadTypeMember_5717AB0  this=Turret  sig=csp ====
 int __thiscall sub_717AB0(_DWORD *this, int a2)
 {
   int result; // eax
@@ -6585,15 +6585,15 @@ int __thiscall sub_717AB0(_DWORD *this, int a2)
   result = a2; /*0x717ab0*/
   if ( a2 <= 0 ) /*0x717ab6*/
     result = 1; /*0x717ab8*/
-  this->vtable4 = result; /*0x717abd*/
+  *(this + 3) = result; /*0x717abd*/
   return result; /*0x717ac0*/
 }
 
 
-// ==== 0x00717AD0  ObjectTypeClass::loadTypeMember_5717AD0  this=ObjectTypeClass  sig=csp ====
+// ==== 0x00717AD0  ObjectTypeClass::loadTypeMember_5717AD0  this=Turret  sig=csp ====
 int __thiscall sub_717AD0(_DWORD *this)
 {
-  return this->vtable4; /*0x717ad3*/
+  return *(this + 3); /*0x717ad3*/
 }
 
 
@@ -7359,7 +7359,7 @@ char __thiscall ObjectClass_FindPlacementPosition(_DWORD *this, int a2, int a3, 
 }
 
 
-// ==== 0x007187A0  ObjectClass::ProcessUnitDeploymentAtCell  this=BuildingTypeClass  sig=csp ====
+// ==== 0x007187A0  ObjectClass::ProcessUnitDeploymentAtCell  this=RecoilData  sig=csp ====
 char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
 {
   _DWORD *i; // edi
@@ -7385,9 +7385,9 @@ char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
   {
     if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*i + 352))(i) ) /*0x7187c5*/
     {
-      v23 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(*this->vtable4 + 132))(this->vtable4) + 160); /*0x7187e7*/
-      (*(void (__thiscall **)(_DWORD, int *, _DWORD, int, _DWORD, int, _DWORD, _DWORD))(*this->vtable4 + 364))( /*0x718804*/
-        this->vtable4,
+      v23 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)) + 160); /*0x7187e7*/
+      (*(void (__thiscall **)(_DWORD, int *, _DWORD, int, _DWORD, int, _DWORD, _DWORD))(**(this + 3) + 364))( /*0x718804*/
+        *(this + 3),
         &v23,
         0,
         MEMORY[0x8871E0]->?[5],
@@ -7398,19 +7398,19 @@ char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
     }
   }
   v22 = 0; /*0x718814*/
-  if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->vtable4 + 132))(this->vtable4) + 3278) /*0x71885d*/
+  if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)) + 3278) /*0x71885d*/
     && ((*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 80) & 0x100) != 0
      || *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 59) == 1) )
   {
     v22 = 1; /*0x71885f*/
   }
   v6 = 0; /*0x718867*/
-  if ( *(_DWORD *)((*(int (__thiscall **)(_DWORD))(*this->vtable4 + 132))(this->vtable4) + 1660) == 3 ) /*0x718878*/
+  if ( *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)) + 1660) == 3 ) /*0x718878*/
   {
     v6 = 1; /*0x71887d*/
-    if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->vtable4 + 132))(this->vtable4) + 1040) ) /*0x718887*/
+    if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)) + 1040) ) /*0x718887*/
     {
-      v7 = (*(int (__thiscall **)(_DWORD))(*this->vtable4 + 132))(this->vtable4); /*0x718896*/
+      v7 = (*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)); /*0x718896*/
       v6 = (unsigned __int8)HouseClass::GainedPoweredCenter(v7) != 0; /*0x7188af*/
     }
   }
@@ -7418,26 +7418,26 @@ char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
   HIWORD(v23) = a3 / 256; /*0x7188da*/
   if ( *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23) + 59) != 2 /*0x718962*/
     || v6
-    || *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->vtable4 + 132))(this->vtable4) + 3278)
-    || (*(int (__thiscall **)(_DWORD))(*this->vtable4 + 44))(this->vtable4) == 15
+    || *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)) + 3278)
+    || (*(int (__thiscall **)(_DWORD))(**(this + 3) + 44))(*(this + 3)) == 15
     || (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 80) & 0x100) != 0
     || *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 59) == 1 )
   {
-    v13 = this->vtable4; /*0x718a01*/
+    v13 = *(this + 3); /*0x718a01*/
     LOWORD(v23) = a2 / 256; /*0x718a14*/
     HIWORD(v23) = a3 / 256; /*0x718a2f*/
     v14 = *v13; /*0x718a3c*/
     v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23); /*0x718a46*/
-    if ( (*(int (__thiscall **)(_DWORD, void *, int, int, _DWORD, int))(v14 + 428))(this->vtable4, v15, -1, -1, 0, 1) == 7 /*0x718a60*/
+    if ( (*(int (__thiscall **)(_DWORD, void *, int, int, _DWORD, int))(v14 + 428))(*(this + 3), v15, -1, -1, 0, 1) == 7 /*0x718a60*/
       || (LOBYTE(v12) = v22) != 0 )
     {
       LOWORD(v23) = a2 / 256; /*0x718a80*/
       HIWORD(v23) = a3 / 256; /*0x718a95*/
       v16 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23); /*0x718aa2*/
-      if ( !Cell::IsGroundTypeRange(v16) || (*(int (__thiscall **)(_DWORD))(*this->vtable4 + 44))(this->vtable4) == 15 ) /*0x718abd*/
+      if ( !Cell::IsGroundTypeRange(v16) || (*(int (__thiscall **)(_DWORD))(**(this + 3) + 44))(*(this + 3)) == 15 ) /*0x718abd*/
       {
-        v19 = (*(int (__thiscall **)(_DWORD))(*this->vtable4 + 132))(this->vtable4); /*0x718b23*/
-        v20 = (int)this->vtable4; /*0x718b2f*/
+        v19 = (*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)); /*0x718b23*/
+        v20 = (int)*(this + 3); /*0x718b2f*/
         v23 = *(_DWORD *)(v19 + 160); /*0x718b32*/
         LOBYTE(v12) = (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, _DWORD, _DWORD))(*(_DWORD *)v20 + 364))( /*0x718b53*/
                         v20,
@@ -7451,17 +7451,17 @@ char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
       }
       else
       {
-        *((_BYTE *)this->vtable4 + 973) = 1; /*0x718ac2*/
-        (*(void (__thiscall **)(_DWORD))(*this->vtable4 + 928))(this->vtable4); /*0x718ace*/
-        v12 = this->vtable4; /*0x718ad4*/
+        *((_BYTE *)*(this + 3) + 973) = 1; /*0x718ac2*/
+        (*(void (__thiscall **)(_DWORD))(**(this + 3) + 928))(*(this + 3)); /*0x718ace*/
+        v12 = *(this + 3); /*0x718ad4*/
         v17 = (_DWORD *)v12[182]; /*0x718ad7*/
         if ( v17 ) /*0x718adf*/
         {
           TechnoClass::MutateAll(v17, v12[266], v12[267]); /*0x718aef*/
-          v18 = (this->vtable4)[182]; /*0x718af7*/
+          v18 = (*(this + 3))[182]; /*0x718af7*/
           if ( v18 ) /*0x718aff*/
             (*(void (__thiscall **)(int, int))(*(_DWORD *)v18 + 32))(v18, 1); /*0x718b05*/
-          v12 = this->vtable4; /*0x718b08*/
+          v12 = *(this + 3); /*0x718b08*/
           v12[182] = 0; /*0x718b0e*/
         }
       }
@@ -7469,19 +7469,19 @@ char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
   }
   else
   {
-    *((_BYTE *)this->vtable4 + 973) = 1; /*0x71896b*/
-    (*(void (__thiscall **)(_DWORD))(*this->vtable4 + 928))(this->vtable4); /*0x718977*/
-    v8 = this->vtable4; /*0x71897d*/
+    *((_BYTE *)*(this + 3) + 973) = 1; /*0x71896b*/
+    (*(void (__thiscall **)(_DWORD))(**(this + 3) + 928))(*(this + 3)); /*0x718977*/
+    v8 = *(this + 3); /*0x71897d*/
     v9 = (_DWORD *)v8[182]; /*0x718980*/
     if ( v9 ) /*0x718988*/
     {
       TechnoClass::MutateAll(v9, v8[266], v8[267]); /*0x718998*/
-      v10 = (this->vtable4)[182]; /*0x7189a0*/
+      v10 = (*(this + 3))[182]; /*0x7189a0*/
       if ( v10 ) /*0x7189a8*/
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v10 + 32))(v10, 1); /*0x7189ae*/
-      (this->vtable4)[182] = 0; /*0x7189b4*/
+      (*(this + 3))[182] = 0; /*0x7189b4*/
     }
-    v11 = this->vtable4; /*0x7189be*/
+    v11 = *(this + 3); /*0x7189be*/
     if ( v11[266] ) /*0x7189c1*/
     {
       LOBYTE(v12) = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/
