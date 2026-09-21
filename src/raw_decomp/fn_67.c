@@ -162,7 +162,7 @@ int __thiscall sub_672280(RulesClass *this)
 }
 
 
-// ==== 0x006722F0  RulesClass::LoadCountries  this=int  sig=csp ====
+// ==== 0x006722F0  RulesClass::LoadCountries  this=RulesClass  sig=csp ====
 int __thiscall RulesClass::LoadCountries(RulesClass *this)
 {
   int KeyCount; // ebx
@@ -1927,7 +1927,7 @@ int __thiscall sub_674500(RulesClass *this)
 }
 
 
-// ==== 0x00674550  RulesClass::ReadMovies  this=int  sig=csp ====
+// ==== 0x00674550  RulesClass::ReadMovies  this=RulesClass  sig=csp ====
 int __thiscall sub_674550(#381 *this)
 {
   int result; // eax
@@ -2038,7 +2038,7 @@ int __thiscall SidebarClass::ReadButtonList(RulesClass *this)
 }
 
 
-// ==== 0x00674730  RulesClass::SaveLoad_Prefix  this=int  sig=csp ====
+// ==== 0x00674730  RulesClass::SaveLoad_Prefix  this=RulesClass  sig=csp ====
 int __thiscall RulesClass::SaveLoad_Prefix(_DWORD *this, int *a2)
 {
   int *v2; // esi
@@ -2105,145 +2105,145 @@ int __thiscall RulesClass::SaveLoad_Prefix(_DWORD *this, int *a2)
   v2 = a2; /*0x674732*/
   (*(void (__stdcall **)(int *, _DWORD *, int, _DWORD))(*a2 + 16))(a2, this, 6336, 0); /*0x674744*/
   v4 = *v2; /*0x67474d*/
-  a2 = (int *)*(this + 1129); /*0x674759*/
+  a2 = (int *)this->q11A4; /*0x674759*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v4 + 16))(v2, &a2, 4, 0); /*0x67475d*/
   for ( i = 0; i < (int)a2; ++i ) /*0x674768*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1126) + 4 * i, 4, 0); /*0x67477b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1198 + 4 * i, 4, 0); /*0x67477b*/
   v6 = *v2; /*0x67478d*/
-  a2 = (int *)*(this + 1136); /*0x674799*/
+  a2 = (int *)this->q11C0; /*0x674799*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v6 + 16))(v2, &a2, 4, 0); /*0x67479d*/
   for ( j = 0; j < (int)a2; ++j ) /*0x6747a8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1133) + 4 * j, 4, 0); /*0x6747bb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q11B4 + 4 * j, 4, 0); /*0x6747bb*/
   v8 = *v2; /*0x6747cd*/
-  a2 = (int *)*(this + 1143); /*0x6747d9*/
+  a2 = (int *)this->q11DC; /*0x6747d9*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v8 + 16))(v2, &a2, 4, 0); /*0x6747dd*/
   for ( k = 0; k < (int)a2; ++k ) /*0x6747e8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1140) + 4 * k, 4, 0); /*0x6747fb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q11D0 + 4 * k, 4, 0); /*0x6747fb*/
   v10 = *v2; /*0x67480d*/
-  a2 = (int *)*(this + 1150); /*0x674819*/
+  a2 = (int *)this->q11F8; /*0x674819*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v10 + 16))(v2, &a2, 4, 0); /*0x67481d*/
   for ( m = 0; m < (int)a2; ++m ) /*0x674828*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1147) + 4 * m, 4, 0); /*0x67483b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q11EC + 4 * m, 4, 0); /*0x67483b*/
   v12 = *v2; /*0x67484d*/
-  a2 = (int *)*(this + 1157); /*0x674859*/
+  a2 = (int *)this->q1214; /*0x674859*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v12 + 16))(v2, &a2, 4, 0); /*0x67485d*/
   for ( n = 0; n < (int)a2; ++n ) /*0x674868*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1154) + 4 * n, 4, 0); /*0x67487b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1208 + 4 * n, 4, 0); /*0x67487b*/
   v14 = *v2; /*0x67488d*/
-  a2 = (int *)*(this + 1164); /*0x674899*/
+  a2 = (int *)this->q1230; /*0x674899*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v14 + 16))(v2, &a2, 4, 0); /*0x67489d*/
   for ( ii = 0; ii < (int)a2; ++ii ) /*0x6748a8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1161) + 4 * ii, 4, 0); /*0x6748bb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1224 + 4 * ii, 4, 0); /*0x6748bb*/
   v16 = *v2; /*0x6748cd*/
-  a2 = (int *)*(this + 1171); /*0x6748d9*/
+  a2 = (int *)this->q124C; /*0x6748d9*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v16 + 16))(v2, &a2, 4, 0); /*0x6748dd*/
   for ( jj = 0; jj < (int)a2; ++jj ) /*0x6748e8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1168) + 4 * jj, 4, 0); /*0x6748fb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1240 + 4 * jj, 4, 0); /*0x6748fb*/
   v18 = *v2; /*0x67490d*/
-  a2 = (int *)*(this + 1178); /*0x674919*/
+  a2 = (int *)this->q1268; /*0x674919*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v18 + 16))(v2, &a2, 4, 0); /*0x67491d*/
   for ( kk = 0; kk < (int)a2; ++kk ) /*0x674928*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1175) + 4 * kk, 4, 0); /*0x67493b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q125C + 4 * kk, 4, 0); /*0x67493b*/
   v20 = *v2; /*0x67494d*/
-  a2 = (int *)*(this + 1185); /*0x674959*/
+  a2 = (int *)this->q1284; /*0x674959*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v20 + 16))(v2, &a2, 4, 0); /*0x67495d*/
   for ( mm = 0; mm < (int)a2; ++mm ) /*0x674968*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1182) + 4 * mm, 4, 0); /*0x67497b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1278 + 4 * mm, 4, 0); /*0x67497b*/
   v22 = *v2; /*0x67498d*/
-  a2 = (int *)*(this + 1192); /*0x674999*/
+  a2 = (int *)this->q12A0; /*0x674999*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v22 + 16))(v2, &a2, 4, 0); /*0x67499d*/
   for ( nn = 0; nn < (int)a2; ++nn ) /*0x6749a8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1189) + 4 * nn, 4, 0); /*0x6749bb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1294 + 4 * nn, 4, 0); /*0x6749bb*/
   v24 = *v2; /*0x6749cd*/
-  a2 = (int *)*(this + 1199); /*0x6749d9*/
+  a2 = (int *)this->q12BC; /*0x6749d9*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v24 + 16))(v2, &a2, 4, 0); /*0x6749dd*/
   for ( i1 = 0; i1 < (int)a2; ++i1 ) /*0x6749e8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1196) + 4 * i1, 4, 0); /*0x6749fb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q12B0 + 4 * i1, 4, 0); /*0x6749fb*/
   v26 = *v2; /*0x674a0d*/
-  a2 = (int *)*(this + 1206); /*0x674a19*/
+  a2 = (int *)this->q12D8; /*0x674a19*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v26 + 16))(v2, &a2, 4, 0); /*0x674a1d*/
   for ( i2 = 0; i2 < (int)a2; ++i2 ) /*0x674a28*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1203) + 4 * i2, 4, 0); /*0x674a3b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q12CC + 4 * i2, 4, 0); /*0x674a3b*/
   v28 = *v2; /*0x674a4d*/
-  a2 = (int *)*(this + 1213); /*0x674a59*/
+  a2 = (int *)this->q12F4; /*0x674a59*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v28 + 16))(v2, &a2, 4, 0); /*0x674a5d*/
   for ( i3 = 0; i3 < (int)a2; ++i3 ) /*0x674a68*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1210) + 4 * i3, 4, 0); /*0x674a7b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q12E8 + 4 * i3, 4, 0); /*0x674a7b*/
   v30 = *v2; /*0x674a8d*/
-  a2 = (int *)*(this + 1280); /*0x674a99*/
+  a2 = (int *)this->q1400; /*0x674a99*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v30 + 16))(v2, &a2, 4, 0); /*0x674a9d*/
   for ( i4 = 0; i4 < (int)a2; ++i4 ) /*0x674aa8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1277) + 4 * i4, 4, 0); /*0x674abb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q13F4 + 4 * i4, 4, 0); /*0x674abb*/
   v32 = *v2; /*0x674acd*/
-  a2 = (int *)*(this + 1114); /*0x674ad9*/
+  a2 = (int *)this->q1168; /*0x674ad9*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v32 + 16))(v2, &a2, 4, 0); /*0x674add*/
   for ( i5 = 0; i5 < (int)a2; ++i5 ) /*0x674ae8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1111) + 4 * i5, 4, 0); /*0x674afb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q115C + 4 * i5, 4, 0); /*0x674afb*/
   v34 = *v2; /*0x674b0d*/
-  a2 = (int *)*(this + 622); /*0x674b19*/
+  a2 = (int *)this->PowerEmergency; /*0x674b19*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v34 + 16))(v2, &a2, 4, 0); /*0x674b1d*/
   for ( i6 = 0; i6 < (int)a2; ++i6 ) /*0x674b28*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 619) + 4 * i6, 4, 0); /*0x674b3b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q9AC + 4 * i6, 4, 0); /*0x674b3b*/
   v36 = *v2; /*0x674b4d*/
-  a2 = (int *)*(this + 868); /*0x674b59*/
+  a2 = (int *)this->qD90; /*0x674b59*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v36 + 16))(v2, &a2, 4, 0); /*0x674b5d*/
   for ( i7 = 0; i7 < (int)a2; ++i7 ) /*0x674b68*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 865) + 4 * i7, 4, 0); /*0x674b7b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qD84 + 4 * i7, 4, 0); /*0x674b7b*/
   v38 = *v2; /*0x674b8d*/
-  a2 = (int *)*(this + 875); /*0x674b99*/
+  a2 = (int *)this->qDAC; /*0x674b99*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v38 + 16))(v2, &a2, 4, 0); /*0x674b9d*/
   for ( i8 = 0; i8 < (int)a2; ++i8 ) /*0x674ba8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 872) + 4 * i8, 4, 0); /*0x674bbb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qDA0 + 4 * i8, 4, 0); /*0x674bbb*/
   v40 = *v2; /*0x674bcd*/
-  a2 = (int *)*(this + 882); /*0x674bd9*/
+  a2 = (int *)this->qDC8; /*0x674bd9*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v40 + 16))(v2, &a2, 4, 0); /*0x674bdd*/
   for ( i9 = 0; i9 < (int)a2; ++i9 ) /*0x674be8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 879) + 4 * i9, 4, 0); /*0x674bfb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qDBC + 4 * i9, 4, 0); /*0x674bfb*/
   v42 = *v2; /*0x674c0d*/
-  a2 = (int *)*(this + 958); /*0x674c19*/
+  a2 = (int *)this->qEF8; /*0x674c19*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v42 + 16))(v2, &a2, 4, 0); /*0x674c1d*/
   for ( i10 = 0; i10 < (int)a2; ++i10 ) /*0x674c28*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 955) + 4 * i10, 4, 0); /*0x674c3b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qEEC + 4 * i10, 4, 0); /*0x674c3b*/
   v44 = *v2; /*0x674c4d*/
-  a2 = (int *)*(this + 965); /*0x674c59*/
+  a2 = (int *)this->qF14; /*0x674c59*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v44 + 16))(v2, &a2, 4, 0); /*0x674c5d*/
   for ( i11 = 0; i11 < (int)a2; ++i11 ) /*0x674c68*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 962) + 4 * i11, 4, 0); /*0x674c7b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qF08 + 4 * i11, 4, 0); /*0x674c7b*/
   v46 = *v2; /*0x674c8d*/
-  a2 = (int *)*(this + 972); /*0x674c99*/
+  a2 = (int *)this->qF30; /*0x674c99*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v46 + 16))(v2, &a2, 4, 0); /*0x674c9d*/
   for ( i12 = 0; i12 < (int)a2; ++i12 ) /*0x674ca8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 969) + 4 * i12, 4, 0); /*0x674cbb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qF24 + 4 * i12, 4, 0); /*0x674cbb*/
   v48 = *v2; /*0x674ccd*/
-  a2 = (int *)*(this + 904); /*0x674cd9*/
+  a2 = (int *)this->qE20; /*0x674cd9*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v48 + 16))(v2, &a2, 4, 0); /*0x674cdd*/
   for ( i13 = 0; i13 < (int)a2; ++i13 ) /*0x674ce8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 901) + 4 * i13, 4, 0); /*0x674cfb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qE14 + 4 * i13, 4, 0); /*0x674cfb*/
   v50 = *v2; /*0x674d0d*/
-  a2 = (int *)*(this + 949); /*0x674d19*/
+  a2 = (int *)this->qED4; /*0x674d19*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v50 + 16))(v2, &a2, 4, 0); /*0x674d1d*/
   for ( i14 = 0; i14 < (int)a2; ++i14 ) /*0x674d28*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 946) + 4 * i14, 4, 0); /*0x674d3b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qEC8 + 4 * i14, 4, 0); /*0x674d3b*/
   v52 = *v2; /*0x674d4d*/
-  a2 = (int *)*(this + 911); /*0x674d59*/
+  a2 = (int *)this->qE3C; /*0x674d59*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v52 + 16))(v2, &a2, 4, 0); /*0x674d5d*/
   for ( i15 = 0; i15 < (int)a2; ++i15 ) /*0x674d68*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 908) + 4 * i15, 4, 0); /*0x674d7b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qE30 + 4 * i15, 4, 0); /*0x674d7b*/
   v54 = *v2; /*0x674d8d*/
-  a2 = (int *)*(this + 889); /*0x674d99*/
+  a2 = (int *)this->qDE4; /*0x674d99*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v54 + 16))(v2, &a2, 4, 0); /*0x674d9d*/
   for ( i16 = 0; i16 < (int)a2; ++i16 ) /*0x674da8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 886) + 4 * i16, 4, 0); /*0x674dbb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qDD8 + 4 * i16, 4, 0); /*0x674dbb*/
   v56 = *v2; /*0x674dcd*/
-  a2 = (int *)*(this + 1256); /*0x674dd9*/
+  a2 = (int *)this->q13A0; /*0x674dd9*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v56 + 16))(v2, &a2, 4, 0); /*0x674ddd*/
   for ( i17 = 0; i17 < (int)a2; ++i17 ) /*0x674de8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1253) + 4 * i17, 4, 0); /*0x674dfb*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1394 + 4 * i17, 4, 0); /*0x674dfb*/
   v58 = *v2; /*0x674e0d*/
-  a2 = (int *)*(this + 1263); /*0x674e19*/
+  a2 = (int *)this->q13BC; /*0x674e19*/
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(v58 + 16))(v2, &a2, 4, 0); /*0x674e1d*/
   for ( i18 = 0; i18 < (int)a2; ++i18 ) /*0x674e28*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1260) + 4 * i18, 4, 0); /*0x674e3b*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q13B0 + 4 * i18, 4, 0); /*0x674e3b*/
   DynamicVector::Read(this + 915, v2); /*0x674e4e*/
   DynamicVector::Read(this + 922, v2); /*0x674e5a*/
   DynamicVector::Read(this + 929, v2); /*0x674e66*/
@@ -2335,7 +2335,7 @@ int __thiscall RulesClass::SaveLoad_Prefix(_DWORD *this, int *a2)
 }
 
 
-// ==== 0x00675210  RulesClass::SaveLoad_Prefix_0  this=int  sig=csp ====
+// ==== 0x00675210  RulesClass::SaveLoad_Prefix_0  this=RulesClass  sig=csp ====
 int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
 {
   _DWORD *v3; // ebx
@@ -2507,104 +2507,104 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
   int v169; // [esp+D50h] [ebp-4h] BYREF
 
   v3 = this + 1125;
-  (*(void (__thiscall **)(int *))(*(this + 1125) + 12))(this + 1125);
-  (*(void (__thiscall **)(int *))(*(this + 1132) + 12))(this + 1132);
-  (*(void (__thiscall **)(int *))(*(this + 1139) + 12))(this + 1139);
-  (*(void (__thiscall **)(int *))(*(this + 1146) + 12))(this + 1146);
-  (*(void (__thiscall **)(int *))(*(this + 1153) + 12))(this + 1153);
-  (*(void (__thiscall **)(int *))(*(this + 1160) + 12))(this + 1160);
-  (*(void (__thiscall **)(int *))(*(this + 1167) + 12))(this + 1167);
-  (*(void (__thiscall **)(int *))(*(this + 1174) + 12))(this + 1174);
-  (*(void (__thiscall **)(int *))(*(this + 1181) + 12))(this + 1181);
-  (*(void (__thiscall **)(int *))(*(this + 1188) + 12))(this + 1188);
-  (*(void (__thiscall **)(int *))(*(this + 1195) + 12))(this + 1195);
-  (*(void (__thiscall **)(int *))(*(this + 1202) + 12))(this + 1202);
-  (*(void (__thiscall **)(int *))(*(this + 1209) + 12))(this + 1209);
-  (*(void (__thiscall **)(int *))(*(this + 1276) + 12))(this + 1276);
-  (*(void (__thiscall **)(int *))(*(this + 1110) + 12))(this + 1110);
-  (*(void (__thiscall **)(int *))(*(this + 618) + 12))(this + 618);
-  (*(void (__thiscall **)(int *))(*(this + 864) + 12))(this + 864);
-  (*(void (__thiscall **)(int *))(*(this + 871) + 12))(this + 871);
-  (*(void (__thiscall **)(int *))(*(this + 878) + 12))(this + 878);
-  (*(void (__thiscall **)(int *))(*(this + 954) + 12))(this + 954);
-  (*(void (__thiscall **)(int *))(*(this + 961) + 12))(this + 961);
-  (*(void (__thiscall **)(int *))(*(this + 968) + 12))(this + 968);
-  (*(void (__thiscall **)(int *))(*(this + 900) + 12))(this + 900);
-  (*(void (__thiscall **)(int *))(*(this + 945) + 12))(this + 945);
-  (*(void (__thiscall **)(int *))(*(this + 907) + 12))(this + 907);
-  (*(void (__thiscall **)(int *))(*(this + 885) + 12))(this + 885);
-  (*(void (__thiscall **)(int *))(*(this + 1252) + 12))(this + 1252);
-  (*(void (__thiscall **)(int *))(*(this + 1259) + 12))(this + 1259);
-  (*(void (__thiscall **)(int *))(*(this + 915) + 12))(this + 915);
-  (*(void (__thiscall **)(int *))(*(this + 922) + 12))(this + 922);
-  (*(void (__thiscall **)(int *))(*(this + 929) + 12))(this + 929);
-  (*(void (__thiscall **)(int *))(*(this + 936) + 12))(this + 936);
-  (*(void (__thiscall **)(int *))(*(this + 1217) + 12))(this + 1217);
-  (*(void (__thiscall **)(int *))(*(this + 1224) + 12))(this + 1224);
-  (*(void (__thiscall **)(int *))(*(this + 1231) + 12))(this + 1231);
-  (*(void (__thiscall **)(int *))(*(this + 1238) + 12))(this + 1238);
-  (*(void (__thiscall **)(int *))(*(this + 1245) + 12))(this + 1245);
-  (*(void (__thiscall **)(int *))(*(this + 1266) + 12))(this + 1266);
-  (*(void (__thiscall **)(int *))(*(this + 1117) + 12))(this + 1117);
-  (*(void (__thiscall **)(int *))(*(this + 271) + 12))(this + 271);
-  (*(void (__thiscall **)(int *))(*(this + 278) + 12))(this + 278);
-  (*(void (__thiscall **)(int *))(*(this + 285) + 12))(this + 285);
-  (*(void (__thiscall **)(int *))(*(this + 384) + 12))(this + 384);
-  (*(void (__thiscall **)(int *))(*(this + 214) + 12))(this + 214);
-  (*(void (__thiscall **)(int *))(*(this + 221) + 12))(this + 221);
-  (*(void (__thiscall **)(int *))(*(this + 228) + 12))(this + 228);
-  (*(void (__thiscall **)(int *))(*(this + 235) + 12))(this + 235);
-  (*(void (__thiscall **)(int *))(*(this + 242) + 12))(this + 242);
-  (*(void (__thiscall **)(int *))(*(this + 249) + 12))(this + 249);
-  (*(void (__thiscall **)(int *))(*(this + 435) + 12))(this + 435);
-  (*(void (__thiscall **)(int *))(*(this + 461) + 12))(this + 461);
+  (*(void (__thiscall **)(int *))(this->q465 + 12))(this + 1125);
+  (*(void (__thiscall **)(int *))(this->q11B0 + 12))(this + 1132);
+  (*(void (__thiscall **)(int *))(this->q11CC + 12))(this + 1139);
+  (*(void (__thiscall **)(int *))(this->q11E8 + 12))(this + 1146);
+  (*(void (__thiscall **)(int *))(this->q481 + 12))(this + 1153);
+  (*(void (__thiscall **)(int *))(this->q1220 + 12))(this + 1160);
+  (*(void (__thiscall **)(int *))(this->q123C + 12))(this + 1167);
+  (*(void (__thiscall **)(int *))(this->q1258 + 12))(this + 1174);
+  (*(void (__thiscall **)(int *))(this->q1274 + 12))(this + 1181);
+  (*(void (__thiscall **)(int *))(this->q1290 + 12))(this + 1188);
+  (*(void (__thiscall **)(int *))(this->q12AC + 12))(this + 1195);
+  (*(void (__thiscall **)(int *))(this->q12C8 + 12))(this + 1202);
+  (*(void (__thiscall **)(int *))(this->q12E4 + 12))(this + 1209);
+  (*(void (__thiscall **)(int *))(this->q13F0 + 12))(this + 1276);
+  (*(void (__thiscall **)(int *))(this->q1158 + 12))(this + 1110);
+  (*(void (__thiscall **)(int *))(this->AttackInterval + 12))(this + 618);
+  (*(void (__thiscall **)(int *))(this->q360 + 12))(this + 864);
+  (*(void (__thiscall **)(int *))(this->qD9C + 12))(this + 871);
+  (*(void (__thiscall **)(int *))(this->qDB8 + 12))(this + 878);
+  (*(void (__thiscall **)(int *))(this->qEE8 + 12))(this + 954);
+  (*(void (__thiscall **)(int *))(this->qF04 + 12))(this + 961);
+  (*(void (__thiscall **)(int *))(this->q3C8 + 12))(this + 968);
+  (*(void (__thiscall **)(int *))(this->qE10 + 12))(this + 900);
+  (*(void (__thiscall **)(int *))(this->qEC4 + 12))(this + 945);
+  (*(void (__thiscall **)(int *))(this->qE2C + 12))(this + 907);
+  (*(void (__thiscall **)(int *))(this->qDD4 + 12))(this + 885);
+  (*(void (__thiscall **)(int *))(this->q1390 + 12))(this + 1252);
+  (*(void (__thiscall **)(int *))(this->q13AC + 12))(this + 1259);
+  (*(void (__thiscall **)(int *))(this->qE4C + 12))(this + 915);
+  (*(void (__thiscall **)(int *))(this->qE68 + 12))(this + 922);
+  (*(void (__thiscall **)(int *))(this->__pad_3A1 + 12))(this + 929);
+  (*(void (__thiscall **)(int *))(this->qEA0 + 12))(this + 936);
+  (*(void (__thiscall **)(int *))(this->q1304 + 12))(this + 1217);
+  (*(void (__thiscall **)(int *))(this->q1320 + 12))(this + 1224);
+  (*(void (__thiscall **)(int *))(this->q133C + 12))(this + 1231);
+  (*(void (__thiscall **)(int *))(this->q1358 + 12))(this + 1238);
+  (*(void (__thiscall **)(int *))(this->q1374 + 12))(this + 1245);
+  (*(void (__thiscall **)(int *))(this->q13C8 + 12))(this + 1266);
+  (*(void (__thiscall **)(int *))(this->q1174 + 12))(this + 1117);
+  (*(void (__thiscall **)(int *))(this->q43C + 12))(this + 271);
+  (*(void (__thiscall **)(int *))(this->q458 + 12))(this + 278);
+  (*(void (__thiscall **)(int *))(this->q474 + 12))(this + 285);
+  (*(void (__thiscall **)(int *))(this->BombAttachSound + 12))(this + 384);
+  (*(void (__thiscall **)(int *))(this->q358 + 12))(this + 214);
+  (*(void (__thiscall **)(int *))(this->q374 + 12))(this + 221);
+  (*(void (__thiscall **)(int *))(this->CreateUnitSound + 12))(this + 228);
+  (*(void (__thiscall **)(int *))(this->q3AC + 12))(this + 235);
+  (*(void (__thiscall **)(int *))(this->q3C8 + 12))(this + 242);
+  (*(void (__thiscall **)(int *))(this->q3E4 + 12))(this + 249);
+  (*(void (__thiscall **)(int *))(this->HealCrateSound + 12))(this + 435);
+  (*(void (__thiscall **)(int *))(this->q734 + 12))(this + 461);
   (*(void (__thiscall **)(int *))(*(this + 497) + 12))(this + 497);
-  (*(void (__thiscall **)(int *))(*(this + 504) + 12))(this + 504);
-  (*(void (__thiscall **)(int *))(*(this + 511) + 12))(this + 511);
-  (*(void (__thiscall **)(int *))(*(this + 518) + 12))(this + 518);
-  (*(void (__thiscall **)(int *))(*(this + 525) + 12))(this + 525);
-  (*(void (__thiscall **)(int *))(*(this + 532) + 12))(this + 532);
-  (*(void (__thiscall **)(int *))(*(this + 544) + 12))(this + 544);
-  (*(void (__thiscall **)(int *))(*(this + 555) + 12))(this + 555);
-  (*(void (__thiscall **)(int *))(*(this + 562) + 12))(this + 562);
-  (*(void (__thiscall **)(int *))(*(this + 569) + 12))(this + 569);
-  (*(void (__thiscall **)(int *))(*(this + 576) + 12))(this + 576);
-  (*(void (__thiscall **)(int *))(*(this + 583) + 12))(this + 583);
-  (*(void (__thiscall **)(int *))(*(this + 590) + 12))(this + 590);
-  (*(void (__thiscall **)(int *))(*(this + 597) + 12))(this + 597);
-  (*(void (__thiscall **)(int *))(*(this + 604) + 12))(this + 604);
-  (*(void (__thiscall **)(int *))(*(this + 611) + 12))(this + 611);
-  (*(void (__thiscall **)(int *))(*(this + 625) + 12))(this + 625);
-  (*(void (__thiscall **)(int *))(*(this + 632) + 12))(this + 632);
-  (*(void (__thiscall **)(int *))(*(this + 639) + 12))(this + 639);
-  (*(void (__thiscall **)(int *))(*(this + 646) + 12))(this + 646);
-  (*(void (__thiscall **)(int *))(*(this + 653) + 12))(this + 653);
-  (*(void (__thiscall **)(int *))(*(this + 660) + 12))(this + 660);
-  (*(void (__thiscall **)(int *))(*(this + 667) + 12))(this + 667);
-  (*(void (__thiscall **)(int *))(*(this + 674) + 12))(this + 674);
-  (*(void (__thiscall **)(int *))(*(this + 681) + 12))(this + 681);
-  (*(void (__thiscall **)(int *))(*(this + 688) + 12))(this + 688);
-  (*(void (__thiscall **)(int *))(*(this + 695) + 12))(this + 695);
-  (*(void (__thiscall **)(int *))(*(this + 726) + 12))(this + 726);
-  (*(void (__thiscall **)(int *))(*(this + 733) + 12))(this + 733);
-  (*(void (__thiscall **)(int *))(*(this + 740) + 12))(this + 740);
-  (*(void (__thiscall **)(int *))(*(this + 752) + 12))(this + 752);
-  (*(void (__thiscall **)(int *))(*(this + 712) + 12))(this + 712);
-  (*(void (__thiscall **)(int *))(*(this + 1022) + 12))(this + 1022);
-  (*(void (__thiscall **)(int *))(*(this + 719) + 12))(this + 719);
-  (*(void (__thiscall **)(int *))(*(this + 832) + 12))(this + 832);
-  (*(void (__thiscall **)(int *))(*(this + 839) + 12))(this + 839);
-  (*(void (__thiscall **)(int *))(*(this + 846) + 12))(this + 846);
-  (*(void (__thiscall **)(int *))(*(this + 402) + 12))(this + 402);
-  (*(void (__thiscall **)(int *))(*(this + 769) + 12))(this + 769);
-  (*(void (__thiscall **)(int *))(*(this + 776) + 12))(this + 776);
-  (*(void (__thiscall **)(int *))(*(this + 783) + 12))(this + 783);
-  (*(void (__thiscall **)(int *))(*(this + 790) + 12))(this + 790);
-  (*(void (__thiscall **)(int *))(*(this + 797) + 12))(this + 797);
-  (*(void (__thiscall **)(int *))(*(this + 804) + 12))(this + 804);
-  (*(void (__thiscall **)(int *))(*(this + 811) + 12))(this + 811);
-  (*(void (__thiscall **)(int *))(*(this + 818) + 12))(this + 818);
-  (*(void (__thiscall **)(int *))(*(this + 825) + 12))(this + 825);
+  (*(void (__thiscall **)(int *))(this->Dig + 12))(this + 504);
+  (*(void (__thiscall **)(int *))(this->Parachute + 12))(this + 511);
+  (*(void (__thiscall **)(int *))(this->ChronoReinfDelay + 12))(this + 518);
+  (*(void (__thiscall **)(int *))(this->ThirdDisguise + 12))(this + 525);
+  (*(void (__thiscall **)(int *))(this->ConditionRedSparkingProbability + 12))(this + 532);
+  (*(void (__thiscall **)(int *))(this->MutateWarhead + 12))(this + 544);
+  (*(void (__thiscall **)(int *))(this->IonCannonWarhead + 12))(this + 555);
+  (*(void (__thiscall **)(int *))(this->CHRONOSK_SHP + 12))(this + 562);
+  (*(void (__thiscall **)(int *))(this->q8E4 + 12))(this + 569);
+  (*(void (__thiscall **)(int *))(this->__pad_240 + 12))(this + 576);
+  (*(void (__thiscall **)(int *))(this->q91C + 12))(this + 583);
+  (*(void (__thiscall **)(int *))(this->q938 + 12))(this + 590);
+  (*(void (__thiscall **)(int *))(this->q954 + 12))(this + 597);
+  (*(void (__thiscall **)(int *))(this->MyEffectivenessCoefficientDefault + 12))(this + 604);
+  (*(void (__thiscall **)(int *))(this->q98C + 12))(this + 611);
+  (*(void (__thiscall **)(int *))(this->q9C4 + 12))(this + 625);
+  (*(void (__thiscall **)(int *))(this->TeslaLimit + 12))(this + 632);
+  (*(void (__thiscall **)(int *))(this->WarRatio + 12))(this + 639);
+  (*(void (__thiscall **)(int *))(this->RefineryRatio + 12))(this + 646);
+  (*(void (__thiscall **)(int *))(this->TreeStrength + 12))(this + 653);
+  (*(void (__thiscall **)(int *))(this->qA50 + 12))(this + 660);
+  (*(void (__thiscall **)(int *))(this->SuperWeapons + 12))(this + 667);
+  (*(void (__thiscall **)(int *))(this->Aircraft + 12))(this + 674);
+  (*(void (__thiscall **)(int *))(this->CrateMinimum + 12))(this + 681);
+  (*(void (__thiscall **)(int *))(this->MinUnitCount + 12))(this + 688);
+  (*(void (__thiscall **)(int *))(this->TiberiumGrows + 12))(this + 695);
+  (*(void (__thiscall **)(int *))(this->qB58 + 12))(this + 726);
+  (*(void (__thiscall **)(int *))(this->qB74 + 12))(this + 733);
+  (*(void (__thiscall **)(int *))(this->__pad_2E4 + 12))(this + 740);
+  (*(void (__thiscall **)(int *))(this->qBC0 + 12))(this + 752);
+  (*(void (__thiscall **)(int *))(this->__pad_2C8 + 12))(this + 712);
+  (*(void (__thiscall **)(int *))(this->qFF8 + 12))(this + 1022);
+  (*(void (__thiscall **)(int *))(this->HarvesterLoadRate + 12))(this + 719);
+  (*(void (__thiscall **)(int *))(this->qD00 + 12))(this + 832);
+  (*(void (__thiscall **)(int *))(this->qD1C + 12))(this + 839);
+  (*(void (__thiscall **)(int *))(this->qD38 + 12))(this + 846);
+  (*(void (__thiscall **)(int *))(this->VeteranROF + 12))(this + 402);
+  (*(void (__thiscall **)(int *))(this->qC04 + 12))(this + 769);
+  (*(void (__thiscall **)(int *))(this->qC20 + 12))(this + 776);
+  (*(void (__thiscall **)(int *))(this->__pad_C3C + 12))(this + 783);
+  (*(void (__thiscall **)(int *))(this->qC58 + 12))(this + 790);
+  (*(void (__thiscall **)(int *))(this->qC74 + 12))(this + 797);
+  (*(void (__thiscall **)(int *))(this->qC90 + 12))(this + 804);
+  (*(void (__thiscall **)(int *))(this->qCAC + 12))(this + 811);
+  (*(void (__thiscall **)(int *))(this->qCC8 + 12))(this + 818);
+  (*(void (__thiscall **)(int *))(this->qCE4 + 12))(this + 825);
   v4 = i;
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)i + 12))(i, this, 6336, 0);
   if ( this )
@@ -3579,113 +3579,113 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
   ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 64);
   *(this + 1016) = SearchMIXFile(MEMORY[0x83B0F0], 0);
   *(this + 1017) = SearchMIXFile(MEMORY[0x83B0E0], 0);
-  for ( i97 = 0; i97 < *(this + 26); ++i97 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 23) + 4 * i97));
+  for ( i97 = 0; i97 < this->DropPodPuff; ++i97 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RadarEventMinRadius + 4 * i97));
   for ( i98 = 0; i98 < *(this + 737); ++i98 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 734) + 4 * i98));
   for ( i99 = 0; i99 < *(this + 744); ++i99 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 741) + 4 * i99));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2E5 + 4 * i99));
   for ( i100 = 0; i100 < *(this + 756); ++i100 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 753) + 4 * i100));
-  for ( i101 = 0; i101 < *(this + 501); ++i101 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 498) + 4 * i101));
-  for ( i102 = 0; i102 < *(this + 508); ++i102 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 505) + 4 * i102));
-  for ( i103 = 0; i103 < *(this + 515); ++i103 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 512) + 4 * i103));
-  for ( i104 = 0; i104 < *(this + 522); ++i104 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 519) + 4 * i104));
-  for ( i105 = 0; i105 < *(this + 529); ++i105 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 526) + 4 * i105));
+  for ( i101 = 0; i101 < this->MaximumBaseDefenseValue; ++i101 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->GDIBaseDefenseCoefficient + 4 * i101));
+  for ( i102 = 0; i102 < this->IonBlast; ++i102 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->OnFire + 4 * i102));
+  for ( i103 = 0; i103 < this->Paratrooper; ++i103 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->IonBeam + 4 * i103));
+  for ( i104 = 0; i104 < this->ChronoRangeMinimum; ++i104 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->ChronoDistanceFactor + 4 * i104));
+  for ( i105 = 0; i105 < this->AIMinorSuperReadyPercent; ++i105 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->SpyPowerBlackout + 4 * i105));
   for ( i106 = 0; i106 < *(this + 716); ++i106 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 713) + 4 * i106));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2C9 + 4 * i106));
   for ( i107 = 0; i107 < *(this + 1026); ++i107 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 1023) + 4 * i107));
-  for ( i108 = 0; i108 < *(this + 723); ++i108 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 720) + 4 * i108));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_FFC + 4 * i107));
+  for ( i108 = 0; i108 < this->Easy; ++i108 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->HarvesterDumpRate + 4 * i108));
   for ( i109 = 0; i109 < *(this + 836); ++i109 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 833) + 4 * i109));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_D04 + 4 * i109));
   for ( i110 = 0; i110 < *(this + 843); ++i110 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 840) + 4 * i110));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_D20 + 4 * i110));
   for ( i111 = 0; i111 < *(this + 850); ++i111 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 847) + 4 * i111));
-  for ( i112 = 0; i112 < *(this + 536); ++i112 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 533) + 4 * i112));
-  for ( i113 = 0; i113 < *(this + 548); ++i113 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 545) + 4 * i113));
-  for ( i114 = 0; i114 < *(this + 559); ++i114 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 556) + 4 * i114));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_D3C + 4 * i111));
+  for ( i112 = 0; i112 < this->AlliedCrew; ++i112 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->Technician + 4 * i112));
+  for ( i113 = 0; i113 < this->TiberiumExplosionDamage; ++i113 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MutateExplosionWarhead + 4 * i113));
+  for ( i114 = 0; i114 < this->IvanIconFlickerRate; ++i114 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MinLowPowerProductionSpeed + 4 * i114));
   for ( i115 = 0; i115 < *(this + 566); ++i115 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 563) + 4 * i115));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->IronCurtainDuration + 4 * i115));
   for ( i116 = 0; i116 < *(this + 573); ++i116 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 570) + 4 * i116));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q8E8 + 4 * i116));
   for ( i117 = 0; i117 < *(this + 580); ++i117 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 577) + 4 * i117));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q904 + 4 * i117));
   for ( i118 = 0; i118 < *(this + 587); ++i118 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 584) + 4 * i118));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q920 + 4 * i118));
   for ( i119 = 0; i119 < *(this + 594); ++i119 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 591) + 4 * i119));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->CMisl + 4 * i119));
   for ( i120 = 0; i120 < *(this + 601); ++i120 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 598) + 4 * i120));
-  for ( i121 = 0; i121 < *(this + 608); ++i121 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 605) + 4 * i121));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q958 + 4 * i120));
+  for ( i121 = 0; i121 < this->TargetSpecialThreatCoefficientDefault; ++i121 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q974 + 4 * i121));
   for ( i122 = 0; i122 < *(this + 615); ++i122 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 612) + 4 * i122));
-  for ( i123 = 0; i123 < *(this + 629); ++i123 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 626) + 4 * i123));
-  for ( i124 = 0; i124 < *(this + 636); ++i124 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 633) + 4 * i124));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->TargetDistanceCoefficientDefault + 4 * i122));
+  for ( i123 = 0; i123 < this->HelipadLimit; ++i123 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->AirstripLimit + 4 * i123));
+  for ( i124 = 0; i124 < this->DefenseRatio; ++i124 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->AARatio + 4 * i124));
   for ( i125 = 0; i125 < *(this + 643); ++i125 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 640) + 4 * i125));
-  for ( i126 = 0; i126 < *(this + 650); ++i126 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 647) + 4 * i126));
-  for ( i127 = 0; i127 < *(this + 657); ++i127 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 654) + 4 * i127));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_0A0 + 4 * i125));
+  for ( i126 = 0; i126 < this->InfantryReserve; ++i126 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->qA1C + 4 * i126));
+  for ( i127 = 0; i127 < this->CloakDelay; ++i127 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->UnitCrateType + 4 * i127));
   for ( i128 = 0; i128 < *(this + 664); ++i128 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 661) + 4 * i128));
-  for ( i129 = 0; i129 < *(this + 671); ++i129 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 668) + 4 * i129));
-  for ( i130 = 0; i130 < *(this + 678); ++i130 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 675) + 4 * i130));
-  for ( i131 = 0; i131 < *(this + 685); ++i131 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 682) + 4 * i131));
-  for ( i132 = 0; i132 < *(this + 692); ++i132 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 689) + 4 * i132));
-  for ( i133 = 0; i133 < *(this + 699); ++i133 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 696) + 4 * i133));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->BaseBias + 4 * i128));
+  for ( i129 = 0; i129 < this->AutoCrush; ++i129 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->Production + 4 * i129));
+  for ( i130 = 0; i130 < this->SilverCrate; ++i130 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->Harvester + 4 * i130));
+  for ( i131 = 0; i131 < this->q2AD; ++i131 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->CrateMaximum + 4 * i131));
+  for ( i132 = 0; i132 < this->AIPlayers; ++i132 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_2B1 + 4 * i132));
+  for ( i133 = 0; i133 < this->MessageDelay; ++i133 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MultiEngineer + 4 * i133));
   for ( i134 = 0; i134 < *(this + 730); ++i134 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 727) + 4 * i134));
-  for ( i135 = 0; i135 < *(this + 388); ++i135 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 385) + 4 * i135));
-  for ( i136 = 0; i136 < *(this + 76); ++i136 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 73) + 4 * i136));
-  for ( i137 = 0; i137 < *(this + 69); ++i137 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 66) + 4 * i137));
-  for ( i138 = 0; i138 < *(this + 83); ++i138 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 80) + 4 * i138));
-  for ( i139 = 0; i139 < *(this + 90); ++i139 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 87) + 4 * i139));
+  for ( i135 = 0; i135 < this->YuriMindControlSound; ++i135 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RevealTriggerRadius + 4 * i135));
+  for ( i136 = 0; i136 < this->FlashFrameTime; ++i136 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->IFVTransformSound + 4 * i136));
+  for ( i137 = 0; i137 < this->GUIComboOpenSound; ++i137 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_042 + 4 * i137));
+  for ( i138 = 0; i138 < this->ExecutePlanSound; ++i138 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RadarCombatFlashTime + 4 * i138));
+  for ( i139 = 0; i139 < this->CrateUnitSound; ++i139 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->CrateFireSound + 4 * i139));
   v155 = *(this + 179);
   for ( i140 = 0; i140 < v155; ++i140 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 176) + 4 * i140));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_0B0 + 4 * i140));
   v157 = *(this + 186);
   for ( i141 = 0; i141 < v157; ++i141 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 183) + 4 * i141));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2DC + 4 * i141));
   for ( i142 = 0; i142 < *(this + 773); ++i142 )
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 770) + 4 * i142));
   for ( i143 = 0; i143 < *(this + 787); ++i143 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 784) + 4 * i143));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q0C4 + 4 * i143));
   for ( i144 = 0; i144 < *(this + 801); ++i144 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 798) + 4 * i144));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_C78 + 4 * i144));
   for ( i145 = 0; i145 < *(this + 815); ++i145 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 812) + 4 * i145));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_CB0 + 4 * i145));
   result = *(this + 829);
   for ( i146 = 0; i146 < result; ++i146 )
   {
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 826) + 4 * i146));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->__pad_CE8 + 4 * i146));
     result = *(this + 829);
   }
-  v165 = *(this + 172);
+  v165 = this->q0AC;
   v166 = 0;
   if ( v165 > 0 )
   {
@@ -3698,7 +3698,7 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
 }
 
 
-// ==== 0x00678850  ObjectClass::InitInterfaceStubsCOM  this=int  sig=csp ====
+// ==== 0x00678850  ObjectClass::InitInterfaceStubsCOM  this=ObjectClass  sig=csp ====
 int __thiscall InitInterfaceStubsCOM(RulesClass *this)
 {
   int v2; // edi
@@ -3963,8 +3963,8 @@ int __thiscall InitInterfaceStubsCOM(RulesClass *this)
     this->?[4] = 0;
   if ( v2 == this->? )
     this->? = 0;
-  if ( v2 == *((_DWORD *)this + 1533) )
-    *((_DWORD *)this + 1533) = 0;
+  if ( v2 == this->q17F4 )
+    this->q17F4 = 0;
   if ( v2 == this->? )
     this->? = 0;
   if ( v2 == this->? )
@@ -5012,7 +5012,7 @@ int sub_679CC0()
 }
 
 
-// ==== 0x00679D90  GameConfig::ComputeHash  this=int  sig=csp ====
+// ==== 0x00679D90  GameConfig::ComputeHash  this=GameConfig  sig=csp ====
 int GameConfig_ComputeHash()
 {
   int v0; // edi
@@ -5305,7 +5305,7 @@ int *__thiscall TypeList::CopyAircraft(int *this, VectorClass *aP1)
 }
 
 
-// ==== 0x0067A190  RulesClass::readAircraftTypes  this=int  sig=csp ====
+// ==== 0x0067A190  RulesClass::readAircraftTypes  this=RulesClass  sig=csp ====
 int *__thiscall sub_67A190(int *this, int *a2)
 {
   int v3; // eax
@@ -5317,41 +5317,41 @@ int *__thiscall sub_67A190(int *this, int *a2)
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a19e*/
     v3 = a2[2]; /*0x67a1a1*/
-    *(this + 2) = v3; /*0x67a1a6*/
+    this->q002 = v3; /*0x67a1a6*/
     if ( v3 ) /*0x67a1a9*/
     {
       v4 = __2_YAPAXI_Z(4 * v3); /*0x67a1b3*/
-      *(this + 1) = (int)v4; /*0x67a1bb*/
+      this->DetailMinFrameRateMovie = (int)v4; /*0x67a1bb*/
       if ( v4 ) /*0x67a1c0*/
       {
-        v5 = *(this + 2); /*0x67a1c2*/
+        v5 = this->q002; /*0x67a1c2*/
         v6 = 0; /*0x67a1c5*/
-        *((_BYTE *)this + 13) = 1; /*0x67a1c9*/
+        this->SelfHealInfantryAmount = 1; /*0x67a1c9*/
         if ( v5 > 0 ) /*0x67a1cd*/
         {
           do /*0x67a1e1*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a1d8*/
+            *(_DWORD *)(this->DetailMinFrameRateMovie + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a1d8*/
             ++v6; /*0x67a1de*/
           }
-          while ( v6 < *(this + 2) ); /*0x67a1e1*/
+          while ( v6 < this->q002 ); /*0x67a1e1*/
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x67a1e5*/
-      *((_BYTE *)this + 13) = 0; /*0x67a1ec*/
+      this->DetailMinFrameRateMovie = 0; /*0x67a1e5*/
+      this->SelfHealInfantryAmount = 0; /*0x67a1ec*/
     }
   }
-  *(this + 4) = a2[4]; /*0x67a1f3*/
-  *(this + 5) = a2[5]; /*0x67a1f9*/
-  *(this + 6) = a2[6]; /*0x67a1ff*/
+  this->DetailMinFrameRateMovie = a2[4]; /*0x67a1f3*/
+  this->SmallVisceroid = a2[5]; /*0x67a1f9*/
+  this->AttackingAircraftSightRange = a2[6]; /*0x67a1ff*/
   return this; /*0x67a204*/
 }
 
 
-// ==== 0x0067A210  RulesClass::readSuperWeaponTypes  this=int  sig=csp ====
+// ==== 0x0067A210  RulesClass::readSuperWeaponTypes  this=RulesClass  sig=csp ====
 int *__thiscall sub_67A210(int *this, int *a2)
 {
   int v3; // eax
@@ -5363,41 +5363,41 @@ int *__thiscall sub_67A210(int *this, int *a2)
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a21e*/
     v3 = a2[2]; /*0x67a221*/
-    *(this + 2) = v3; /*0x67a226*/
+    this->q002 = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
     {
       v4 = __2_YAPAXI_Z(4 * v3); /*0x67a233*/
-      *(this + 1) = (int)v4; /*0x67a23b*/
+      this->DetailMinFrameRateMovie = (int)v4; /*0x67a23b*/
       if ( v4 ) /*0x67a240*/
       {
-        v5 = *(this + 2); /*0x67a242*/
+        v5 = this->q002; /*0x67a242*/
         v6 = 0; /*0x67a245*/
-        *((_BYTE *)this + 13) = 1; /*0x67a249*/
+        this->SelfHealInfantryAmount = 1; /*0x67a249*/
         if ( v5 > 0 ) /*0x67a24d*/
         {
           do /*0x67a261*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a258*/
+            *(_DWORD *)(this->DetailMinFrameRateMovie + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a258*/
             ++v6; /*0x67a25e*/
           }
-          while ( v6 < *(this + 2) ); /*0x67a261*/
+          while ( v6 < this->q002 ); /*0x67a261*/
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x67a265*/
-      *((_BYTE *)this + 13) = 0; /*0x67a26c*/
+      this->DetailMinFrameRateMovie = 0; /*0x67a265*/
+      this->SelfHealInfantryAmount = 0; /*0x67a26c*/
     }
   }
-  *(this + 4) = a2[4]; /*0x67a273*/
-  *(this + 5) = a2[5]; /*0x67a279*/
-  *(this + 6) = a2[6]; /*0x67a27f*/
+  this->DetailMinFrameRateMovie = a2[4]; /*0x67a273*/
+  this->SmallVisceroid = a2[5]; /*0x67a279*/
+  this->AttackingAircraftSightRange = a2[6]; /*0x67a27f*/
   return this; /*0x67a284*/
 }
 
 
-// ==== 0x0067A290  TypeList::CopyInfantry  this=int  sig=csp ====
+// ==== 0x0067A290  TypeList::CopyInfantry  this=TypeList  sig=csp ====
 int *__thiscall TypeList::CopyInfantry(int *this, CCINIClass *aP1)
 {
   int v3; // eax
@@ -5409,41 +5409,41 @@ int *__thiscall TypeList::CopyInfantry(int *this, CCINIClass *aP1)
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a29e*/
     v3 = aP1->headNode[1]; /*0x67a2a1*/
-    *(this + 2) = v3; /*0x67a2a6*/
+    this->Capacity = v3; /*0x67a2a6*/
     if ( v3 ) /*0x67a2a9*/
     {
       v4 = __2_YAPAXI_Z(4 * v3); /*0x67a2b3*/
-      *(this + 1) = v4; /*0x67a2bb*/
+      this->Items = v4; /*0x67a2bb*/
       if ( v4 ) /*0x67a2c0*/
       {
-        v5 = *(this + 2); /*0x67a2c2*/
+        v5 = this->Capacity; /*0x67a2c2*/
         v6 = 0; /*0x67a2c5*/
-        *((_BYTE *)this + 13) = 1; /*0x67a2c9*/
+        this->IsAllocated = 1; /*0x67a2c9*/
         if ( v5 > 0 ) /*0x67a2cd*/
         {
           do /*0x67a2e1*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(aP1->headNode[0] + 4 * v6); /*0x67a2d8*/
+            *(_DWORD *)(this->Items + 4 * v6) = *(_DWORD *)(aP1->headNode[0] + 4 * v6); /*0x67a2d8*/
             ++v6; /*0x67a2de*/
           }
-          while ( v6 < *(this + 2) ); /*0x67a2e1*/
+          while ( v6 < this->Capacity ); /*0x67a2e1*/
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x67a2e5*/
-      *((_BYTE *)this + 13) = 0; /*0x67a2ec*/
+      this->Items = 0; /*0x67a2e5*/
+      this->IsAllocated = 0; /*0x67a2ec*/
     }
   }
-  *(this + 4) = aP1->sectionHead[0]; /*0x67a2f3*/
-  *(this + 5) = aP1->sectionHead[1]; /*0x67a2f9*/
-  *(this + 6) = aP1->sectionHead[2]; /*0x67a2ff*/
+  this->Items = aP1->sectionHead[0]; /*0x67a2f3*/
+  this->CapacityIncrement = aP1->sectionHead[1]; /*0x67a2f9*/
+  this->unknown_18 = aP1->sectionHead[2]; /*0x67a2ff*/
   return this; /*0x67a304*/
 }
 
 
-// ==== 0x0067A310  RulesClass::readBuildingTypes  this=int  sig=csp ====
+// ==== 0x0067A310  RulesClass::readBuildingTypes  this=RulesClass  sig=csp ====
 int *__thiscall sub_67A310(int *this, int *a2)
 {
   int v3; // eax
@@ -5455,36 +5455,36 @@ int *__thiscall sub_67A310(int *this, int *a2)
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a31e*/
     v3 = a2[2]; /*0x67a321*/
-    *(this + 2) = v3; /*0x67a326*/
+    this->q002 = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
     {
       v4 = __2_YAPAXI_Z(4 * v3); /*0x67a333*/
-      *(this + 1) = (int)v4; /*0x67a33b*/
+      this->DetailMinFrameRateMovie = (int)v4; /*0x67a33b*/
       if ( v4 ) /*0x67a340*/
       {
-        v5 = *(this + 2); /*0x67a342*/
+        v5 = this->q002; /*0x67a342*/
         v6 = 0; /*0x67a345*/
-        *((_BYTE *)this + 13) = 1; /*0x67a349*/
+        this->SelfHealInfantryAmount = 1; /*0x67a349*/
         if ( v5 > 0 ) /*0x67a34d*/
         {
           do /*0x67a361*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a358*/
+            *(_DWORD *)(this->DetailMinFrameRateMovie + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a358*/
             ++v6; /*0x67a35e*/
           }
-          while ( v6 < *(this + 2) ); /*0x67a361*/
+          while ( v6 < this->q002 ); /*0x67a361*/
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x67a365*/
-      *((_BYTE *)this + 13) = 0; /*0x67a36c*/
+      this->DetailMinFrameRateMovie = 0; /*0x67a365*/
+      this->SelfHealInfantryAmount = 0; /*0x67a36c*/
     }
   }
-  *(this + 4) = a2[4]; /*0x67a373*/
-  *(this + 5) = a2[5]; /*0x67a379*/
-  *(this + 6) = a2[6]; /*0x67a37f*/
+  this->DetailMinFrameRateMovie = a2[4]; /*0x67a373*/
+  this->SmallVisceroid = a2[5]; /*0x67a379*/
+  this->AttackingAircraftSightRange = a2[6]; /*0x67a37f*/
   return this; /*0x67a384*/
 }
 
@@ -5503,7 +5503,7 @@ CCINIClass *__thiscall TypeList::VoxelAnimConstructor(_DWORD *this)
 }
 
 
-// ==== 0x0067A3C0  RulesClass::readTerrainTypes  this=VOID_PTR  sig=csp ====
+// ==== 0x0067A3C0  RulesClass::readTerrainTypes  this=RulesClass  sig=csp ====
 int __thiscall RulesClass::readTerrainTypes(_DWORD *this, TechnoTypeClass *aP1)
 {
   int v3; // ecx
@@ -5512,14 +5512,14 @@ int __thiscall RulesClass::readTerrainTypes(_DWORD *this, TechnoTypeClass *aP1)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *(_DWORD *)aP1->vtable0; /*0x67a3cc*/
-  v6 = *(this + 4); /*0x67a3d9*/
+  v6 = this->LargeVisceroid; /*0x67a3d9*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a3dd*/
   result = v6; /*0x67a3e0*/
   for ( i = 0; i < v6; ++i ) /*0x67a3e8*/
   {
     (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a3f8*/
       aP1,
-      *(this + 1) + 4 * i,
+      this->DetailMinFrameRateMovie + 4 * i,
       4,
       0);
     result = v6; /*0x67a3fb*/
@@ -5576,7 +5576,7 @@ CCINIClass *__thiscall AnimTypeList::Constructor(_DWORD *this)
 }
 
 
-// ==== 0x0067A4A0  Stream::WriteIntArray  this=VOID_PTR  sig=csp ====
+// ==== 0x0067A4A0  Stream::WriteIntArray  this=Stream  sig=csp ====
 int __thiscall Stream::WriteIntArray(_DWORD *this, TechnoTypeClass *aP1)
 {
   int v3; // ecx
@@ -5585,14 +5585,14 @@ int __thiscall Stream::WriteIntArray(_DWORD *this, TechnoTypeClass *aP1)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *(_DWORD *)aP1->vtable0; /*0x67a4ac*/
-  v6 = *(this + 4); /*0x67a4b9*/
+  v6 = this->Stream_field_10; /*0x67a4b9*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a4bd*/
   result = v6; /*0x67a4c0*/
   for ( i = 0; i < v6; ++i ) /*0x67a4c8*/
   {
     (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a4d8*/
       aP1,
-      *(this + 1) + 4 * i,
+      this->Stream_field_04 + 4 * i,
       4,
       0);
     result = v6; /*0x67a4db*/
@@ -5615,7 +5615,7 @@ DynamicVector *__thiscall TypeList::Construct(_DWORD *this)
 }
 
 
-// ==== 0x0067A520  DynamicVector::Read  this=VOID_PTR  sig=csp ====
+// ==== 0x0067A520  DynamicVector::Read  this=DynamicVector  sig=csp ====
 int __thiscall DynamicVector::Read(_DWORD *this, TechnoTypeClass *aP1)
 {
   int v3; // ecx
@@ -5624,14 +5624,14 @@ int __thiscall DynamicVector::Read(_DWORD *this, TechnoTypeClass *aP1)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *(_DWORD *)aP1->vtable0; /*0x67a52c*/
-  v6 = *(this + 4); /*0x67a539*/
+  v6 = this->DynamicVector_field_0x10; /*0x67a539*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a53d*/
   result = v6; /*0x67a540*/
   for ( i = 0; i < v6; ++i ) /*0x67a548*/
   {
     (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a558*/
       aP1,
-      *(this + 1) + 4 * i,
+      this->Items + 4 * i,
       4,
       0);
     result = v6; /*0x67a55b*/
@@ -5697,7 +5697,7 @@ CCINIClass *__thiscall TypeList::ConstructSmudge(_DWORD *this)
 }
 
 
-// ==== 0x0067A630  VectorClass::LoadStream  this=VOID_PTR  sig=csp ====
+// ==== 0x0067A630  VectorClass::LoadStream  this=VectorClass  sig=csp ====
 int __thiscall VectorClass::LoadStream(_DWORD *this, TechnoTypeClass *aP1)
 {
   int v3; // ecx
@@ -5706,14 +5706,14 @@ int __thiscall VectorClass::LoadStream(_DWORD *this, TechnoTypeClass *aP1)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *(_DWORD *)aP1->vtable0; /*0x67a63c*/
-  v6 = *(this + 4); /*0x67a649*/
+  v6 = this->q010; /*0x67a649*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a64d*/
   result = v6; /*0x67a650*/
   for ( i = 0; i < v6; ++i ) /*0x67a658*/
   {
     (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a668*/
       aP1,
-      *(this + 1) + 4 * i,
+      this->Items + 4 * i,
       4,
       0);
     result = v6; /*0x67a66b*/
@@ -5756,7 +5756,7 @@ int __thiscall TypeList::_vt06(_DWORD *this, int a2)
 }
 
 
-// ==== 0x0067A6E0  DynamicVector::Read_Alt  this=VOID_PTR  sig=csp ====
+// ==== 0x0067A6E0  DynamicVector::Read_Alt  this=DynamicVector  sig=csp ====
 int __thiscall DynamicVector::Read_Alt(_DWORD *this, TechnoTypeClass *aP1)
 {
   int v3; // ecx
@@ -5765,14 +5765,14 @@ int __thiscall DynamicVector::Read_Alt(_DWORD *this, TechnoTypeClass *aP1)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *(_DWORD *)aP1->vtable0; /*0x67a6ec*/
-  v6 = *(this + 4); /*0x67a6f9*/
+  v6 = this->DynamicVector_field_0x10; /*0x67a6f9*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a6fd*/
   result = v6; /*0x67a700*/
   for ( i = 0; i < v6; ++i ) /*0x67a708*/
   {
     (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a718*/
       aP1,
-      *(this + 1) + 4 * i,
+      this->Items + 4 * i,
       4,
       0);
     result = v6; /*0x67a71b*/
@@ -5781,10 +5781,10 @@ int __thiscall DynamicVector::Read_Alt(_DWORD *this, TechnoTypeClass *aP1)
 }
 
 
-// ==== 0x0067A730  RulesClass::readSmudgeTypes  this=VOID_PTR  sig=csp ====
+// ==== 0x0067A730  RulesClass::readSmudgeTypes  this=RulesClass  sig=csp ====
 int __thiscall sub_67A730(_DWORD *this)
 {
-  return *(this + 4); /*0x67a733*/
+  return this->LargeVisceroid; /*0x67a733*/
 }
 
 
@@ -5802,7 +5802,7 @@ CCINIClass *__thiscall UnitTypeList::Constructor(_DWORD *this)
 }
 
 
-// ==== 0x0067A770  SaveLoad::StreamVector  this=VOID_PTR  sig=csp ====
+// ==== 0x0067A770  SaveLoad::StreamVector  this=SaveLoad  sig=csp ====
 int __thiscall SaveLoad::StreamVector(_DWORD *this, TechnoTypeClass *aP1)
 {
   int v3; // ecx
@@ -5827,14 +5827,14 @@ int __thiscall SaveLoad::StreamVector(_DWORD *this, TechnoTypeClass *aP1)
 }
 
 
-// ==== 0x0067A7C0  RulesClass::readOverlayTypes  this=VOID_PTR  sig=csp ====
+// ==== 0x0067A7C0  RulesClass::readOverlayTypes  this=RulesClass  sig=csp ====
 int __thiscall sub_67A7C0(_DWORD *this)
 {
-  return *(this + 4); /*0x67a7c3*/
+  return this->LargeVisceroid; /*0x67a7c3*/
 }
 
 
-// ==== 0x0067A7D0  RulesClass::readAnimations  this=VOID_PTR  sig=csp ====
+// ==== 0x0067A7D0  RulesClass::readAnimations  this=RulesClass  sig=csp ====
 int __thiscall RulesClass::readAnimations(_DWORD *this, TechnoTypeClass *aP1)
 {
   int v3; // ecx
@@ -5843,14 +5843,14 @@ int __thiscall RulesClass::readAnimations(_DWORD *this, TechnoTypeClass *aP1)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *(_DWORD *)aP1->vtable0; /*0x67a7dc*/
-  v6 = *(this + 4); /*0x67a7e9*/
+  v6 = this->LargeVisceroid; /*0x67a7e9*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a7ed*/
   result = v6; /*0x67a7f0*/
   for ( i = 0; i < v6; ++i ) /*0x67a7f8*/
   {
     (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a808*/
       aP1,
-      *(this + 1) + 4 * i,
+      this->DetailMinFrameRateMovie + 4 * i,
       4,
       0);
     result = v6; /*0x67a80b*/
@@ -5873,7 +5873,7 @@ _DWORD *__thiscall sub_67A820(_DWORD *this)
 }
 
 
-// ==== 0x0067A850  VectorClass::SaveLoad  this=VOID_PTR  sig=csp ====
+// ==== 0x0067A850  VectorClass::SaveLoad  this=VectorClass  sig=csp ====
 int __thiscall VectorClass::SaveLoad(_DWORD *this, TechnoTypeClass *aP1)
 {
   int v3; // ecx
@@ -5882,14 +5882,14 @@ int __thiscall VectorClass::SaveLoad(_DWORD *this, TechnoTypeClass *aP1)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *(_DWORD *)aP1->vtable0; /*0x67a85c*/
-  v6 = *(this + 4); /*0x67a869*/
+  v6 = this->q010; /*0x67a869*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a86d*/
   result = v6; /*0x67a870*/
   for ( i = 0; i < v6; ++i ) /*0x67a878*/
   {
     (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a888*/
       aP1,
-      *(this + 1) + 4 * i,
+      this->Items + 4 * i,
       4,
       0);
     result = v6; /*0x67a88b*/
@@ -5898,10 +5898,10 @@ int __thiscall VectorClass::SaveLoad(_DWORD *this, TechnoTypeClass *aP1)
 }
 
 
-// ==== 0x0067A8A0  RulesClass::readWarheads  this=int  sig=csp ====
+// ==== 0x0067A8A0  RulesClass::readWarheads  this=RulesClass  sig=csp ====
 int __thiscall sub_67A8A0(_DWORD *this)
 {
-  return *(this + 4); /*0x67a8a3*/
+  return this->LargeVisceroid; /*0x67a8a3*/
 }
 
 
@@ -5919,7 +5919,7 @@ _DWORD *__thiscall sub_67A8B0(_DWORD *this)
 }
 
 
-// ==== 0x0067A8E0  RulesClass::readParticleSystems  this=VOID_PTR  sig=csp ====
+// ==== 0x0067A8E0  RulesClass::readParticleSystems  this=RulesClass  sig=csp ====
 int __thiscall RulesClass::readParticleSystems(_DWORD *this, TechnoTypeClass *aP1)
 {
   int v3; // ecx
@@ -5928,14 +5928,14 @@ int __thiscall RulesClass::readParticleSystems(_DWORD *this, TechnoTypeClass *aP
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *(_DWORD *)aP1->vtable0; /*0x67a8ec*/
-  v6 = *(this + 4); /*0x67a8f9*/
+  v6 = this->LargeVisceroid; /*0x67a8f9*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a8fd*/
   result = v6; /*0x67a900*/
   for ( i = 0; i < v6; ++i ) /*0x67a908*/
   {
     (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a918*/
       aP1,
-      *(this + 1) + 4 * i,
+      this->DetailMinFrameRateMovie + 4 * i,
       4,
       0);
     result = v6; /*0x67a91b*/
@@ -6038,7 +6038,7 @@ TypeList *__thiscall TypeList_cptr_TerrainTypeClass::Add(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x0067AA80  VectorClass::CopyAssign  this=int  sig=csp ====
+// ==== 0x0067AA80  VectorClass::CopyAssign  this=VectorClass  sig=csp ====
 _DWORD *__thiscall VectorClass::CopyAssign(_DWORD *this, VectorClass *aP1)
 {
   void *v3; // eax
@@ -6050,28 +6050,28 @@ _DWORD *__thiscall VectorClass::CopyAssign(_DWORD *this, VectorClass *aP1)
     return this; /*0x67aa8a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x67aa8e*/
   v3 = aP1->field_8; /*0x67aa91*/
-  *(this + 2) = v3; /*0x67aa96*/
+  this->Capacity = v3; /*0x67aa96*/
   if ( !v3 ) /*0x67aa99*/
   {
-    *(this + 1) = 0; /*0x67aada*/
-    *((_BYTE *)this + 13) = 0; /*0x67aae1*/
+    this->Items = 0; /*0x67aada*/
+    this->__pad_034 = 0; /*0x67aae1*/
     return this; /*0x67aae5*/
   }
   v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x67aaa3*/
-  *(this + 1) = v4; /*0x67aaab*/
+  this->Items = v4; /*0x67aaab*/
   if ( !v4 ) /*0x67aab0*/
     return this; /*0x67aab0*/
-  v5 = *(this + 2); /*0x67aab2*/
+  v5 = this->Capacity; /*0x67aab2*/
   v6 = 0; /*0x67aab5*/
-  *((_BYTE *)this + 13) = 1; /*0x67aab9*/
+  this->__pad_034 = 1; /*0x67aab9*/
   if ( v5 <= 0 ) /*0x67aabd*/
     return this; /*0x67aabd*/
   do /*0x67aad1*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x67aac8*/
+    *(_DWORD *)(this->Items + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x67aac8*/
     ++v6; /*0x67aace*/
   }
-  while ( v6 < *(this + 2) ); /*0x67aad1*/
+  while ( v6 < this->Capacity ); /*0x67aad1*/
   return this; /*0x67aad5*/
 }
 
@@ -6315,7 +6315,7 @@ int __thiscall TypeList_VoxelAnim::_vt04(int *this, _DWORD *a2)
 }
 
 
-// ==== 0x0067AE00  VectorClass::CopySmudge  this=int  sig=csp ====
+// ==== 0x0067AE00  VectorClass::CopySmudge  this=VectorClass  sig=csp ====
 _DWORD *__thiscall VectorClass::CopySmudge(_DWORD *this, CCINIClass *aP1)
 {
   int v3; // eax
@@ -6327,28 +6327,28 @@ _DWORD *__thiscall VectorClass::CopySmudge(_DWORD *this, CCINIClass *aP1)
     return this; /*0x67ae0a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x67ae0e*/
   v3 = aP1->headNode[1]; /*0x67ae11*/
-  *(this + 2) = v3; /*0x67ae16*/
+  this->Capacity = v3; /*0x67ae16*/
   if ( !v3 ) /*0x67ae19*/
   {
-    *(this + 1) = 0; /*0x67ae5a*/
-    *((_BYTE *)this + 13) = 0; /*0x67ae61*/
+    this->Items = 0; /*0x67ae5a*/
+    this->__pad_034 = 0; /*0x67ae61*/
     return this; /*0x67ae65*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x67ae23*/
-  *(this + 1) = v4; /*0x67ae2b*/
+  this->Items = v4; /*0x67ae2b*/
   if ( !v4 ) /*0x67ae30*/
     return this; /*0x67ae30*/
-  v5 = *(this + 2); /*0x67ae32*/
+  v5 = this->Capacity; /*0x67ae32*/
   v6 = 0; /*0x67ae35*/
-  *((_BYTE *)this + 13) = 1; /*0x67ae39*/
+  this->__pad_034 = 1; /*0x67ae39*/
   if ( v5 <= 0 ) /*0x67ae3d*/
     return this; /*0x67ae3d*/
   do /*0x67ae51*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(aP1->headNode[0] + 4 * v6); /*0x67ae48*/
+    *(_DWORD *)(this->Items + 4 * v6) = *(_DWORD *)(aP1->headNode[0] + 4 * v6); /*0x67ae48*/
     ++v6; /*0x67ae4e*/
   }
-  while ( v6 < *(this + 2) ); /*0x67ae51*/
+  while ( v6 < this->Capacity ); /*0x67ae51*/
   return this; /*0x67ae55*/
 }
 
@@ -7777,27 +7777,27 @@ _DWORD *__thiscall VoxelAnimTypeVector::Constructor(_DWORD *this, TechnoTypeClas
 }
 
 
-// ==== 0x0067C360  DynamicVector::RemoveAt  this=int  sig=csp ====
+// ==== 0x0067C360  DynamicVector::RemoveAt  this=DynamicVector  sig=csp ====
 char __thiscall DynamicVector::RemoveAt(_DWORD *this, int a2)
 {
   int v2; // edx
   int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x67c360*/
+  v2 = this->DynamicVector_field_0x10; /*0x67c360*/
   v3 = a2; /*0x67c363*/
   if ( a2 >= v2 ) /*0x67c369*/
     return 0; /*0x67c38c*/
   v4 = v2 - 1; /*0x67c36b*/
-  *(this + 4) = v4; /*0x67c36e*/
+  this->DynamicVector_field_0x10 = v4; /*0x67c36e*/
   if ( a2 < v4 ) /*0x67c371*/
   {
     do /*0x67c384*/
     {
       ++v3; /*0x67c377*/
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x67c37b*/
+      *(_DWORD *)(this->Items + 4 * v3 - 4) = *(_DWORD *)(this->Items + 4 * v3); /*0x67c37b*/
     }
-    while ( v3 < *(this + 4) ); /*0x67c384*/
+    while ( v3 < this->DynamicVector_field_0x10 ); /*0x67c384*/
   }
   return 1; /*0x67c389*/
 }
@@ -7825,27 +7825,27 @@ _DWORD *__thiscall Game::LockMutex(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
 }
 
 
-// ==== 0x0067C3F0  DynamicVector::RemoveAt2  this=int  sig=csp ====
+// ==== 0x0067C3F0  DynamicVector::RemoveAt2  this=DynamicVector  sig=csp ====
 char __thiscall DynamicVector::RemoveAt2(_DWORD *this, int a2)
 {
   int v2; // edx
   int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x67c3f0*/
+  v2 = this->DynamicVector_field_0x10; /*0x67c3f0*/
   v3 = a2; /*0x67c3f3*/
   if ( a2 >= v2 ) /*0x67c3f9*/
     return 0; /*0x67c41c*/
   v4 = v2 - 1; /*0x67c3fb*/
-  *(this + 4) = v4; /*0x67c3fe*/
+  this->DynamicVector_field_0x10 = v4; /*0x67c3fe*/
   if ( a2 < v4 ) /*0x67c401*/
   {
     do /*0x67c414*/
     {
       ++v3; /*0x67c407*/
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x67c40b*/
+      *(_DWORD *)(this->Items + 4 * v3 - 4) = *(_DWORD *)(this->Items + 4 * v3); /*0x67c40b*/
     }
-    while ( v3 < *(this + 4) ); /*0x67c414*/
+    while ( v3 < this->DynamicVector_field_0x10 ); /*0x67c414*/
   }
   return 1; /*0x67c419*/
 }
@@ -7996,7 +7996,7 @@ int sub_67C670()
 }
 
 
-// ==== 0x0067C690  Stream::ReadOLEObjects  this=VOID_PTR  sig=csp ====
+// ==== 0x0067C690  Stream::ReadOLEObjects  this=Stream  sig=csp ====
 HRESULT __thiscall Stream::ReadOLEObjects(LPSTREAM pStm)
 {
   HRESULT result; // eax
@@ -8415,7 +8415,7 @@ LABEL_9:
 }
 
 
-// ==== 0x0067D300  SaveGame::Start  this=int  sig=csp ====
+// ==== 0x0067D300  SaveGame::Start  this=SaveGame  sig=csp ====
 char __thiscall SaveGame::Start(LPSTREAM pStm)
 {
   int v2; // ecx
@@ -9348,7 +9348,7 @@ LABEL_6:
 }
 
 
-// ==== 0x0067E730  LoadGame::Start  this=VOID_PTR  sig=csp ====
+// ==== 0x0067E730  LoadGame::Start  this=LoadGame  sig=csp ====
 char __thiscall LoadGame::Start(LPSTREAM pStm)
 {
   char result; // al
@@ -10220,7 +10220,7 @@ LABEL_222:
 }
 
 
-// ==== 0x0067F7E0  SaveGame::LoadMainGameState  this=int  sig=csp ====
+// ==== 0x0067F7E0  SaveGame::LoadMainGameState  this=SaveGame  sig=csp ====
 int __thiscall sub_67F7E0(int *this)
 {
   int result; // eax
@@ -10378,7 +10378,7 @@ LABEL_17:
 }
 
 
-// ==== 0x0067F9C0  Game::SerializeGameSaveState  this=int  sig=csp ====
+// ==== 0x0067F9C0  Game::SerializeGameSaveState  this=Game  sig=csp ====
 int __thiscall SerializeGameSaveState(void *this)
 {
   int result; // eax
@@ -10395,22 +10395,22 @@ int __thiscall SerializeGameSaveState(void *this)
   int v13; // [esp+B8h] [ebp-8h] BYREF
   int v14; // [esp+BCh] [ebp-4h] BYREF
 
-  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &MEMORY[0xA8ED78], 4, 0); /*0x67f9d3*/
+  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &MEMORY[0xA8ED78], 4, 0); /*0x67f9d3*/
   if ( result >= 0 )
   {
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], &MEMORY[0xA8ED78]); /*0x67f9e8*/
-    result = (*(int (__stdcall **)(void *, #375 **, int, _DWORD))(*(_DWORD *)this + 12))(this, &HouseClass_Player, 4, 0); /*0x67f9f9*/
+    result = (*(int (__stdcall **)(void *, #375 **, int, _DWORD))(this->q003)(this, &HouseClass_Player, 4, 0); /*0x67f9f9*/
     if ( result >= 0 )
     {
       ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)&HouseClass_Player); /*0x67fa0e*/
-      result = (*(int (__stdcall **)(void *, wchar_t **, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fa1f*/
+      result = (*(int (__stdcall **)(void *, wchar_t **, int, _DWORD))(this->q003)( /*0x67fa1f*/
                  this,
                  &MEMORY[0xA8ED84],
                  4,
                  0);
       if ( result >= 0 )
       {
-        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v13, 4, 0); /*0x67fa36*/
+        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v13, 4, 0); /*0x67fa36*/
         if ( result >= 0 )
         {
           v3 = 0; /*0x67fa45*/
@@ -10419,7 +10419,7 @@ int __thiscall SerializeGameSaveState(void *this)
 LABEL_14:
             for ( i = 0; i < (int)MEMORY[0xA8ECC8]; ++i ) /*0x67face*/
               ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)MEMORY[0xA8ECBC] + i); /*0x67fade*/
-            result = (*(int (__stdcall **)(void *, float *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fafc*/
+            result = (*(int (__stdcall **)(void *, float *, int, _DWORD))(this->q003)( /*0x67fafc*/
                        this,
                        MEMORY[0x89EA40],
                        432,
@@ -10427,7 +10427,7 @@ LABEL_14:
             if ( result >= 0 )
             {
               SuperWeapon::SerializeSuperWeaponState(this); /*0x67fb09*/
-              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v13, 4, 0); /*0x67fb1a*/
+              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v13, 4, 0); /*0x67fb1a*/
               if ( result >= 0 )
               {
                 v6 = 0; /*0x67fb29*/
@@ -10436,7 +10436,7 @@ LABEL_14:
 LABEL_27:
                   for ( j = 0; j < MEMORY[0x8B40D8]; ++j ) /*0x67fbb2*/
                     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)MEMORY[0x8B40CC] + j); /*0x67fbc2*/
-                  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v13, 4, 0); /*0x67fbdd*/
+                  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v13, 4, 0); /*0x67fbdd*/
                   if ( result >= 0 )
                   {
                     v9 = 0; /*0x67fbec*/
@@ -10445,42 +10445,42 @@ LABEL_27:
 LABEL_39:
                       for ( k = 0; k < dword_8B41B8; ++k ) /*0x67fc74*/
                         ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)unk_8B41AC + k); /*0x67fc84*/
-                      result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fc9f*/
+                      result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)( /*0x67fc9f*/
                                  this,
                                  &dword_81DA8C,
                                  76,
                                  0);
                       if ( result >= 0 )
                       {
-                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fcb2*/
+                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)( /*0x67fcb2*/
                                    this,
                                    dword_81DAD8,
                                    76,
                                    0);
                         if ( result >= 0 )
                         {
-                          result = (*(int (__stdcall **)(void *, double *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fcc8*/
+                          result = (*(int (__stdcall **)(void *, double *, int, _DWORD))(this->q003)( /*0x67fcc8*/
                                      this,
                                      MEMORY[0x89EC28],
                                      152,
                                      0);
                           if ( result >= 0 )
                           {
-                            result = (*(int (__stdcall **)(void *, char *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fcdb*/
+                            result = (*(int (__stdcall **)(void *, char *, int, _DWORD))(this->q003)( /*0x67fcdb*/
                                        this,
                                        MEMORY[0x89ECC0],
                                        19,
                                        0);
                             if ( result >= 0 )
                             {
-                              result = (*(int (__stdcall **)(void *, void *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fcf1*/
+                              result = (*(int (__stdcall **)(void *, void *, int, _DWORD))(this->q003)( /*0x67fcf1*/
                                          this,
                                          &MEMORY[0xA8E3A8],
                                          1024,
                                          0);
                               if ( result >= 0 )
                               {
-                                v12 = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fd04*/
+                                v12 = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)( /*0x67fd04*/
                                         this,
                                         &MEMORY[0xB07784],
                                         4,
@@ -10496,7 +10496,7 @@ LABEL_39:
                     {
                       while ( 1 ) /*0x67fbfe*/
                       {
-                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fbfe*/
+                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)( /*0x67fbfe*/
                                    this,
                                    &v14,
                                    4,
@@ -10524,7 +10524,7 @@ LABEL_39:
                 {
                   while ( 1 ) /*0x67fb3b*/
                   {
-                    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v14, 4, 0); /*0x67fb3b*/
+                    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v14, 4, 0); /*0x67fb3b*/
                     if ( result < 0 ) /*0x67fb40*/
                       break; /*0x67fb40*/
                     if ( MEMORY[0x8B40D8] < MEMORY[0x8B40D0] /*0x67fb7d*/
@@ -10549,7 +10549,7 @@ LABEL_39:
           {
             while ( 1 ) /*0x67fa57*/
             {
-              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v14, 4, 0); /*0x67fa57*/
+              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v14, 4, 0); /*0x67fa57*/
               if ( result < 0 ) /*0x67fa5c*/
                 break; /*0x67fa5c*/
               if ( (int)MEMORY[0xA8ECC8] < MEMORY[0xA8ECC0] /*0x67fa99*/
@@ -10576,7 +10576,7 @@ LABEL_39:
 }
 
 
-// ==== 0x0067FD20  LoadOptions_Load  this=int  sig=csp ====
+// ==== 0x0067FD20  LoadOptions_Load  this=-  sig=csp ====
 char __fastcall LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
 {
   IStorage *v3; // eax
@@ -10611,7 +10611,7 @@ void nullsub_225()
 }
 
 
-// ==== 0x0067FDD0  ComPtr::ReleaseSimple  this=VOID_PTR  sig=csp ====
+// ==== 0x0067FDD0  ComPtr::ReleaseSimple  this=ComPtr  sig=csp ====
 int __thiscall ComPtr_ReleaseSimple(int *this)
 {
   int result; // eax
@@ -10623,7 +10623,7 @@ int __thiscall ComPtr_ReleaseSimple(int *this)
 }
 
 
-// ==== 0x0067FDE0  Game::readIniSettings  this=VOID_PTR  sig=csp ====
+// ==== 0x0067FDE0  Game::readIniSettings  this=Game  sig=csp ====
 int __thiscall sub_67FDE0(int *this)
 {
   int result; // eax
@@ -10635,7 +10635,7 @@ int __thiscall sub_67FDE0(int *this)
 }
 
 
-// ==== 0x0067FDF0  SaveGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x0067FDF0  SaveGame_Start  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -10682,7 +10682,7 @@ HRESULT __fastcall SaveGame_Start(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x0067FE70  SaveGame_Start_67FE70  this=VOID_PTR  sig=csp ====
+// ==== 0x0067FE70  SaveGame_Start_67FE70  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_67FE70(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -10729,7 +10729,7 @@ HRESULT __fastcall SaveGame_Start_67FE70(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x0067FEF0  SaveGame_Start_67FEF0  this=VOID_PTR  sig=csp ====
+// ==== 0x0067FEF0  SaveGame_Start_67FEF0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_67FEF0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -10776,7 +10776,7 @@ HRESULT __fastcall SaveGame_Start_67FEF0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x0067FF70  SaveGame_Start_67FF70  this=VOID_PTR  sig=csp ====
+// ==== 0x0067FF70  SaveGame_Start_67FF70  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_67FF70(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -10823,7 +10823,7 @@ HRESULT __fastcall SaveGame_Start_67FF70(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x0067FFF0  SaveGame_Start_67FFF0  this=VOID_PTR  sig=csp ====
+// ==== 0x0067FFF0  SaveGame_Start_67FFF0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_67FFF0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx

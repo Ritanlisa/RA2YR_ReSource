@@ -869,7 +869,7 @@ int __thiscall MiniMap_Render(char **this)
 }
 
 
-// ==== 0x006418B0  MiniMap::SavePreviewToINI  this=VOID_PTR  sig=csp ====
+// ==== 0x006418B0  MiniMap::SavePreviewToINI  this=MiniMap  sig=csp ====
 bool __thiscall MiniMap::SavePreviewToINI(char **this, char *a2)
 {
   _DWORD *v3; // eax
@@ -1231,7 +1231,7 @@ LABEL_11:
 }
 
 
-// ==== 0x00642130  Palette::Preview_Generate  this=int  sig=csp ====
+// ==== 0x00642130  Palette::Preview_Generate  this=Palette  sig=csp ====
 int *__userpurge Palette::Preview_Generate@<eax>(int *a1@<ecx>, char a2@<sil>, int a3, AbstractClass **a4)
 {
   int v6; // esi
@@ -1482,7 +1482,7 @@ LABEL_38:
 }
 
 
-// ==== 0x006425F0  ModemGame::RenderPaletteImage  this=int  sig=csp ====
+// ==== 0x006425F0  ModemGame::RenderPaletteImage  this=ModemGame  sig=csp ====
 int __thiscall ModemGame::RenderPaletteImage(char **this, CCINIClass *aP1)
 {
   DSurface *v4; // ebx
@@ -1737,7 +1737,7 @@ _DWORD *__thiscall sub_6429E0(ProgressScreenClass *this)
 }
 
 
-// ==== 0x00642A60  ProgressAnim::Init  this=int  sig=csp ====
+// ==== 0x00642A60  ProgressAnim::Init  this=ProgressAnim  sig=csp ====
 int __thiscall ProgressAnim::Init(ProgressScreenClass *this, ProgressScreenClass *aP1, int a3, char a4, int a5)
 {
   int v6; // ecx
@@ -1774,39 +1774,39 @@ int __thiscall ProgressAnim::Init(ProgressScreenClass *this, ProgressScreenClass
 }
 
 
-// ==== 0x00642AD0  Scenario::SetByte96  this=VOID_PTR  sig=csp ====
+// ==== 0x00642AD0  Scenario::SetByte96  this=Scenario  sig=csp ====
 void __thiscall Scenario::SetByte96(ProgressScreenClass *this)
 {
-  *((_BYTE *)this + 96) = 0; /*0x642ad0*/
+  this->Scenario_field_0x60 = 0; /*0x642ad0*/
 }
 
 
-// ==== 0x00642B10  Scenario::SetDword32  this=VOID_PTR  sig=csp ====
+// ==== 0x00642B10  Scenario::SetDword32  this=Scenario  sig=csp ====
 int __thiscall Scenario::SetDword32(ProgressScreenClass *this, int a2)
 {
-  *((_DWORD *)this + 32) = a2; /*0x642b14*/
+  this->Scenario_field_0x20 = a2; /*0x642b14*/
   return a2; /*0x642b1a*/
 }
 
 
-// ==== 0x00642B20  LoadingScreen::GetValue  this=VOID_PTR  sig=csp ====
+// ==== 0x00642B20  LoadingScreen::GetValue  this=LoadingScreen  sig=csp ====
 int __thiscall LoadingScreen::GetValue(ProgressScreenClass *this)
 {
-  return *((_DWORD *)this + 32); /*0x642b26*/
+  return this->LoadingScreen_field_0x20; /*0x642b26*/
 }
 
 
-// ==== 0x00642B30  LoadingScreen::FindLoadScreenAnim  this=VOID_PTR  sig=csp ====
+// ==== 0x00642B30  LoadingScreen::FindLoadScreenAnim  this=LoadingScreen  sig=csp ====
 int __thiscall LoadingScreen::FindLoadScreenAnim(ProgressScreenClass *this)
 {
-  if ( *((_DWORD *)this + 32) ) /*0x642b30*/
+  if ( this->LoadingScreen_field_0x20 ) /*0x642b30*/
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4344], 1); /*0x642b4e*/
   else
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4356], 1); /*0x642b44*/
 }
 
 
-// ==== 0x00642B60  LoadingScreen::GetColorScheme  this=VOID_PTR  sig=csp ====
+// ==== 0x00642B60  LoadingScreen::GetColorScheme  this=LoadingScreen  sig=csp ====
 int __thiscall LoadingScreen::GetColorScheme(ProgressScreenClass *this)
 {
   if ( (MEMORY[0xA8B238] == (CellStruct *)3 || MEMORY[0xA8B238] == (CellStruct *)4) /*0x642b7a*/
@@ -1814,13 +1814,13 @@ int __thiscall LoadingScreen::GetColorScheme(ProgressScreenClass *this)
   {
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4368], 1); /*0x642b86*/
   }
-  if ( *((_DWORD *)this + 32) ) /*0x642b8b*/
+  if ( this->LoadingScreen_field_0x20 ) /*0x642b8b*/
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4344], 1); /*0x642ba9*/
   return FindBuildingAnimByName(&stru_830620.__pad_579C[4356], 1);
 }
 
 
-// ==== 0x00642BB0  Render_Render_642BB0  this=int  sig=csp ====
+// ==== 0x00642BB0  Render_Render_642BB0  this=-  sig=csp ====
 int __stdcall sub_642BB0(unsigned int a1)
 {
   int result; // eax
@@ -1841,7 +1841,7 @@ int __stdcall sub_642BB0(unsigned int a1)
 }
 
 
-// ==== 0x00642C20  SHPClass::Load  this=VOID_PTR  sig=csp ====
+// ==== 0x00642C20  SHPClass::Load  this=SHPClass  sig=csp ====
 void __thiscall SHPClass::Load(
         ProgressScreenClass *this,
         char *Source,
@@ -1877,7 +1877,7 @@ void __thiscall SHPClass::Load(
 }
 
 
-// ==== 0x00642C80  TextRenderer::MeasureBuilding  this=int  sig=csp ====
+// ==== 0x00642C80  TextRenderer::MeasureBuilding  this=TextRenderer  sig=csp ====
 char __thiscall TextRenderer::MeasureBuilding(
         ProgressScreenClass *this,
         int a2,
@@ -1959,15 +1959,15 @@ char __thiscall TextRenderer::MeasureBuilding(
 }
 
 
-// ==== 0x00642DF0  Scenario::SetDword30  this=VOID_PTR  sig=csp ====
+// ==== 0x00642DF0  Scenario::SetDword30  this=Scenario  sig=csp ====
 int __thiscall Scenario::SetDword30(ProgressScreenClass *this, int a2)
 {
-  *((_DWORD *)this + 30) = a2; /*0x642df4*/
+  this->Scenario_field_0x78 = a2; /*0x642df4*/
   return a2; /*0x642df7*/
 }
 
 
-// ==== 0x00642E00  UI_Render  this=int  sig=csp ====
+// ==== 0x00642E00  UI_Render  this=-  sig=csp ====
 _DWORD *__thiscall UI_Render(ProgressScreenClass *this)
 {
   _DWORD *FoundationSize; // eax
@@ -1984,7 +1984,7 @@ _DWORD *__thiscall UI_Render(ProgressScreenClass *this)
 }
 
 
-// ==== 0x00642E40  UI_Render_642E40  this=int  sig=csp ====
+// ==== 0x00642E40  UI_Render_642E40  this=-  sig=csp ====
 int __thiscall UI_Render_642E40(ProgressScreenClass *this)
 {
   int Default; // eax
@@ -2011,7 +2011,7 @@ int __thiscall UI_Render_642E40(ProgressScreenClass *this)
 }
 
 
-// ==== 0x00642E80  UI_Render_642E80  this=unknown  sig=csp ====
+// ==== 0x00642E80  UI_Render_642E80  this=-  sig=csp ====
 int __fastcall sub_642E80(int *a1, _DWORD *a2)
 {
   int Instance; // ebx
@@ -2038,7 +2038,7 @@ int __fastcall sub_642E80(int *a1, _DWORD *a2)
 }
 
 
-// ==== 0x00642EF0  TextRenderer::MeasureBuilding2  this=int  sig=csp ====
+// ==== 0x00642EF0  TextRenderer::MeasureBuilding2  this=TextRenderer  sig=csp ====
 int *__thiscall TextRenderer::MeasureBuilding2(ProgressScreenClass *this)
 {
   _DWORD *FoundationSize; // eax
@@ -2107,7 +2107,7 @@ int *__thiscall TextRenderer::MeasureBuilding2(ProgressScreenClass *this)
 }
 
 
-// ==== 0x00642FF0  sub_642FF0  this=unknown  sig=csp ====
+// ==== 0x00642FF0  sub_642FF0  this=-  sig=csp ====
 int __stdcall sub_642FF0(int a1, int a2, char a3)
 {
   int v3; // ebx
@@ -2153,7 +2153,7 @@ int __stdcall sub_642FF0(int a1, int a2, char a3)
 }
 
 
-// ==== 0x006430C0  sub_6430C0  this=unknown  sig=csp ====
+// ==== 0x006430C0  sub_6430C0  this=-  sig=csp ====
 int __stdcall sub_6430C0(char a1)
 {
   int v1; // ebx
@@ -2201,7 +2201,7 @@ int __stdcall sub_6430C0(char a1)
 }
 
 
-// ==== 0x006431C0  sub_6431C0  this=unknown  sig=csp ====
+// ==== 0x006431C0  sub_6431C0  this=-  sig=csp ====
 int __stdcall sub_6431C0(char a1)
 {
   int v1; // edi
@@ -2254,7 +2254,7 @@ int __stdcall sub_6431C0(char a1)
 }
 
 
-// ==== 0x006432C0  sub_6432C0  this=unknown  sig=csp ====
+// ==== 0x006432C0  sub_6432C0  this=-  sig=csp ====
 int __stdcall sub_6432C0(char a1)
 {
   int v1; // ebx
@@ -2341,7 +2341,7 @@ double __thiscall Progress_GetAverage(int this)
 }
 
 
-// ==== 0x00643400  LoadScreen::RenderProgressBackground  this=int  sig=csp ====
+// ==== 0x00643400  LoadScreen::RenderProgressBackground  this=LoadScreen  sig=csp ====
 // local variable allocation has failed, the output may be wrong!
 void __thiscall LoadScreen::RenderProgressBackground(
         ProgressScreenClass *this,
@@ -2419,7 +2419,7 @@ void __thiscall LoadScreen::RenderProgressBackground(
 }
 
 
-// ==== 0x006435B0  sub_6435B0  this=unknown  sig=csp ====
+// ==== 0x006435B0  sub_6435B0  this=-  sig=csp ====
 char __stdcall sub_6435B0(int a1, int a2, int a3)
 {
   int Default; // eax
@@ -2456,7 +2456,7 @@ char __stdcall sub_6435B0(int a1, int a2, int a3)
 }
 
 
-// ==== 0x00643670  UI_Render  this=int  sig=csp ====
+// ==== 0x00643670  UI_Render  this=-  sig=csp ====
 int *__thiscall UI_Render_643670(ProgressScreenClass *this)
 {
   AbstractClass *Instance; // ebx
@@ -2496,7 +2496,7 @@ int *__thiscall UI_Render_643670(ProgressScreenClass *this)
 }
 
 
-// ==== 0x00643720  ObjectClass::RenderBuildingProductionButton  this=int  sig=csp ====
+// ==== 0x00643720  ObjectClass::RenderBuildingProductionButton  this=ObjectClass  sig=csp ====
 int __thiscall RenderBuildingProductionButton(
         int this,
         int a2,
@@ -2673,7 +2673,7 @@ int __thiscall RenderBuildingProductionButton(
 }
 
 
-// ==== 0x00643AE0  LoadScreen::Render  this=int  sig=csp ====
+// ==== 0x00643AE0  LoadScreen::Render  this=LoadScreen  sig=csp ====
 char __thiscall LoadScreen::Render(ProgressScreenClass *this)
 {
   int v2; // eax
@@ -2691,13 +2691,13 @@ char __thiscall LoadScreen::Render(ProgressScreenClass *this)
   __int64 a3; // [esp+24h] [ebp+4h]
   double a3a; // [esp+24h] [ebp+4h]
 
-  LOBYTE(v2) = *((_BYTE *)this + 96); /*0x643ae7*/
+  LOBYTE(v2) = this->__pad_018; /*0x643ae7*/
   if ( (_BYTE)v2 ) /*0x643aec*/
   {
     v2 = this->field_54; /*0x643af2*/
     if ( v2 ) /*0x643af7*/
     {
-      v3 = (HWND)*((_DWORD *)this + 25); /*0x643afd*/
+      v3 = (HWND)this->q064; /*0x643afd*/
       if ( v3 ) /*0x643b02*/
       {
         DlgItem = GetDlgItem(v3, 1593); /*0x643b0a*/
@@ -2722,7 +2722,7 @@ char __thiscall LoadScreen::Render(ProgressScreenClass *this)
         if ( a3 == __PAIR64__(a3, -1) ) /*0x643b83*/
         {
           v6 = (Frame *)*((_DWORD *)this + 27); /*0x643b8c*/
-          LODWORD(v13) = *((_DWORD *)this + 26); /*0x643b8f*/
+          LODWORD(v13) = this->__pad_068; /*0x643b8f*/
           HIDWORD(v13) = v6; /*0x643b93*/
         }
         v7 = *((_BYTE *)this + 97); /*0x643b97*/
@@ -2739,7 +2739,7 @@ char __thiscall LoadScreen::Render(ProgressScreenClass *this)
           {
             if ( !v8 ) /*0x643bac*/
               v8 = (ProgressScreenClass *)&MEMORY[0x87F8E4].__pad_5568[10472]; /*0x643bae*/
-            if ( *((_DWORD *)this + 32) ) /*0x643bb3*/
+            if ( this->LoadScreen_field_0x08 ) /*0x643bb3*/
               BuildingAnimByName = FindBuildingAnimByName(&stru_830620.__pad_579C[4344], 1); /*0x643bd3*/
             else
               BuildingAnimByName = FindBuildingAnimByName(&stru_830620.__pad_579C[4356], 1); /*0x643bc7*/
@@ -2781,7 +2781,7 @@ char __thiscall LoadScreen::Render(ProgressScreenClass *this)
 }
 
 
-// ==== 0x00643C50  Network::UpdateLatencyDisplay  this=VOID_PTR  sig=csp ====
+// ==== 0x00643C50  Network::UpdateLatencyDisplay  this=Network  sig=csp ====
 // local variable allocation has failed, the output may be wrong!
 void __thiscall Network::UpdateLatencyDisplay(
         ProgressScreenClass *this,
@@ -2842,9 +2842,9 @@ void __thiscall Network::UpdateLatencyDisplay(
     v14 = Math::RoundToInt(v12); /*0x643cff*/
     v15 = *(void (__thiscall ****)(_DWORD, int, _DWORD *))&this->__pad_0[4]; /*0x643d04*/
     v17[1] = v14; /*0x643d07*/
-    if ( v15 && *((_BYTE *)this + 96) ) /*0x643d11*/
+    if ( v15 && this->Network_field_0x60 ) /*0x643d11*/
       (**v15)(v15, 4526, v17); /*0x643d24*/
-    v16 = (HWND)*((_DWORD *)this + 25); /*0x643d26*/
+    v16 = (HWND)this->__pad_064; /*0x643d26*/
     if ( v16 ) /*0x643d2b*/
       SendMessageA(v16, 0xFu, 0, 0); /*0x643d34*/
     else
@@ -2853,29 +2853,29 @@ void __thiscall Network::UpdateLatencyDisplay(
 }
 
 
-// ==== 0x00643E60  LoadScreen::IsActive  this=VOID_PTR  sig=csp ====
+// ==== 0x00643E60  LoadScreen::IsActive  this=LoadScreen  sig=csp ====
 BOOL __thiscall LoadScreen::IsActive(ProgressScreenClass *this)
 {
-  return *((_DWORD *)this + 25) != 0; /*0x643e6a*/
+  return this->q064 != 0; /*0x643e6a*/
 }
 
 
-// ==== 0x00643E70  VtableStub::643E70  this=VOID_PTR  sig=csp ====
+// ==== 0x00643E70  VtableStub::643E70  this=VtableStub  sig=csp ====
 void __thiscall VtableStub::643E70(_DWORD *this)
 {
-  *(this + 25) = 0; /*0x643e70*/
+  this->q064 = 0; /*0x643e70*/
 }
 
 
-// ==== 0x00643E80  Function::643E80  this=VOID_PTR  sig=csp ====
+// ==== 0x00643E80  Function::643E80  this=Function  sig=csp ====
 int __thiscall Function::643E80(_DWORD *this, int a2)
 {
-  *(this + 1) = a2; /*0x643e84*/
+  this->Function_field_0x04 = a2; /*0x643e84*/
   return a2; /*0x643e87*/
 }
 
 
-// ==== 0x00643E90  Progress::GetWeighted  this=VOID_PTR  sig=csp ====
+// ==== 0x00643E90  Progress::GetWeighted  this=Progress  sig=csp ====
 double __thiscall Progress::GetWeighted(ProgressScreenClass *this, int a2)
 {
   if ( a2 < *((char *)this + 97) ) /*0x643e9a*/
@@ -3969,7 +3969,7 @@ LABEL_17:
 }
 
 
-// ==== 0x00645430  BuildingTypeClass::FindOrCreateEx  this=int  sig=csp ====
+// ==== 0x00645430  BuildingTypeClass::FindOrCreateEx  this=BuildingTypeClass  sig=csp ====
 int __thiscall BuildingTypeClass::FindOrCreateEx(AbstractClass *Source)
 {
   int v2; // esi
@@ -4430,7 +4430,7 @@ char *__fastcall sub_645BA0(int a1)
 }
 
 
-// ==== 0x00645BB0  ObjectClass::GetSuperWeaponTypeFlag  this=VOID_PTR  sig=csp ====
+// ==== 0x00645BB0  ObjectClass::GetSuperWeaponTypeFlag  this=ObjectClass  sig=csp ====
 int __thiscall GetSuperWeaponTypeFlag(void *this)
 {
   int result; // eax
@@ -4472,24 +4472,24 @@ int __thiscall GetSuperWeaponTypeFlag(void *this)
 }
 
 
-// ==== 0x00645C30  Int4::Set  this=int  sig=csp ====
+// ==== 0x00645C30  Int4::Set  this=Int4  sig=csp ====
 _DWORD *__thiscall Int4::Set(_DWORD *this, IUnknown *aP1, IUnknown *aP2, IUnknown *aP3, int a5)
 {
   *this = aP1; /*0x645c3a*/
-  *(this + 1) = aP2; /*0x645c40*/
-  *(this + 2) = aP3; /*0x645c47*/
-  *(this + 3) = a5; /*0x645c4a*/
+  this->Int4_field_0x04 = aP2; /*0x645c40*/
+  this->q008 = aP3; /*0x645c47*/
+  this->q00C = a5; /*0x645c4a*/
   return this; /*0x645c4d*/
 }
 
 
-// ==== 0x00645C50  Int4::Set2  this=int  sig=csp ====
+// ==== 0x00645C50  Int4::Set2  this=Int4  sig=csp ====
 int __thiscall Int4_Set2(_DWORD *this, int a2, int a3, int a4, int a5)
 {
   *this = a2; /*0x645c58*/
-  *(this + 1) = a3; /*0x645c5e*/
-  *(this + 2) = a4; /*0x645c65*/
-  *(this + 3) = a5; /*0x645c68*/
+  this->Int4_field_0x04 = a3; /*0x645c5e*/
+  this->q008 = a4; /*0x645c65*/
+  this->q00C = a5; /*0x645c68*/
   return a4; /*0x645c6b*/
 }
 
@@ -4504,7 +4504,7 @@ void __thiscall sub_645CD0(float *this, float a2)
 }
 
 
-// ==== 0x00645D00  Function::645D00  this=int  sig=csp ====
+// ==== 0x00645D00  Function::645D00  this=Function  sig=csp ====
 char *__thiscall Function::645D00(char *this, int a2)
 {
   return this + 4 * a2; /*0x645d07*/
@@ -4599,7 +4599,7 @@ float *__thiscall sub_645D60(float *this, float *a2)
 }
 
 
-// ==== 0x00645ED0  QuaternionMathMultiply  this=float  sig=csp ====
+// ==== 0x00645ED0  QuaternionMathMultiply  this=-  sig=csp ====
 float *__fastcall QuaternionMathMultiply(ObjectClass *aP0, float *a1, float *a2)
 {
   double v4; // st6
@@ -4681,7 +4681,7 @@ _DWORD *__fastcall sub_646040(ObjectClass *aP0, float *a1, float *a2)
 }
 
 
-// ==== 0x006460C0  sub_6460C0  this=int  sig=csp ====
+// ==== 0x006460C0  sub_6460C0  this=-  sig=csp ====
 float *__fastcall sub_6460C0(float *a0, ObjectClass *aP1)
 {
   float v3; // [esp+0h] [ebp-10h]
@@ -4785,7 +4785,7 @@ float *__fastcall Quaternion_FromAxisAngle(float *a1, float *a2, float a3)
 }
 
 
-// ==== 0x00646590  Math::QuaternionSlerp  this=unknown  sig=csp ====
+// ==== 0x00646590  Math::QuaternionSlerp  this=Math  sig=csp ====
 _DWORD *__fastcall sub_646590(_DWORD *a1, float *a2, float *a3, float a4)
 {
   double v6; // st7
@@ -4871,7 +4871,7 @@ _DWORD *__fastcall sub_646590(_DWORD *a1, float *a2, float *a3, float a4)
 }
 
 
-// ==== 0x00646730  ConvertMatrixToQuaternion  this=unknown  sig=csp ====
+// ==== 0x00646730  ConvertMatrixToQuaternion  this=-  sig=csp ====
 float *__fastcall ConvertMatrixToQuaternion(float *a1, float *a2)
 {
   double v3; // st7
@@ -4993,7 +4993,7 @@ float *__fastcall ConvertMatrixToQuaternion(float *a1, float *a2)
 }
 
 
-// ==== 0x00646980  ToQuaternionMatrix  this=unknown  sig=csp ====
+// ==== 0x00646980  ToQuaternionMatrix  this=-  sig=csp ====
 float *__fastcall Quaternion_ToMatrix(float *a1, float *a2)
 {
   double v2; // st7
@@ -5244,7 +5244,7 @@ _DWORD *sub_646DC0()
 }
 
 
-// ==== 0x00646DF0  Network_Helper_646DF0  this=int  sig=ida-proto ====
+// ==== 0x00646DF0  Network_Helper_646DF0  this=-  sig=ida-proto ====
 DWORD __fastcall sub_646DF0(int a1)
 {
   DWORD result; // eax
@@ -5255,7 +5255,7 @@ DWORD __fastcall sub_646DF0(int a1)
 }
 
 
-// ==== 0x00646E90  Object_Init  this=int  sig=ida-proto ====
+// ==== 0x00646E90  Object_Init  this=-  sig=ida-proto ====
 char __fastcall Object_Init(char a1, int a2, int a3, char a4, int a5)
 {
   IUnknown *v5; // eax
@@ -7312,7 +7312,7 @@ LABEL_116:
 }
 
 
-// ==== 0x00649CA0  BuildNetworkEventPacket  this=int  sig=csp ====
+// ==== 0x00649CA0  BuildNetworkEventPacket  this=-  sig=csp ====
 int __fastcall BuildNetworkEventPacket(int a1, int a2, int a3, int a4, __int16 a5)
 {
   int v6; // ecx
@@ -7457,7 +7457,7 @@ int __fastcall BuildNetworkEventPacket(int a1, int a2, int a3, int a4, __int16 a
 }
 
 
-// ==== 0x0064A000  SendNetworkFrameSync  this=int  sig=csp ====
+// ==== 0x0064A000  SendNetworkFrameSync  this=-  sig=csp ====
 int __fastcall Network_SendFrameSync(int *a1, __int16 a2)
 {
   char v3; // dl
@@ -7488,7 +7488,7 @@ int __fastcall Network_SendFrameSync(int *a1, __int16 a2)
 }
 
 
-// ==== 0x0064A0C0  ProcessNetworkFrameSync  this=int  sig=csp ====
+// ==== 0x0064A0C0  ProcessNetworkFrameSync  this=-  sig=csp ====
 int __fastcall Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int a4, int a5, _DWORD *a6)
 {
   int v6; // edi
@@ -7742,7 +7742,7 @@ LABEL_59:
 }
 
 
-// ==== 0x0064A630  ProcessNetworkMessage  this=int  sig=ida-proto ====
+// ==== 0x0064A630  ProcessNetworkMessage  this=-  sig=ida-proto ====
 int __fastcall Network_ProcessMessage(int a1, int a2)
 {
   int v2; // esi
@@ -7816,7 +7816,7 @@ LABEL_7:
 }
 
 
-// ==== 0x0064A7B0  ObjectClass::RenderPlayerLatencyBars  this=int  sig=csp ====
+// ==== 0x0064A7B0  ObjectClass::RenderPlayerLatencyBars  this=ObjectClass  sig=csp ====
 int __thiscall RenderPlayerLatencyBars(HWND this)
 {
   int result; // eax
@@ -7936,7 +7936,7 @@ LRESULT __thiscall sub_64AAA0(HWND hWnd)
 }
 
 
-// ==== 0x0064AAE0  KickNetworkPlayer  this=int  sig=csp ====
+// ==== 0x0064AAE0  KickNetworkPlayer  this=-  sig=csp ====
 void __fastcall KickNetworkPlayer(HWND hDlg, LPARAM lParam)
 {
   HWND DlgItem; // eax
@@ -8009,7 +8009,7 @@ LABEL_10:
 }
 
 
-// ==== 0x0064AC90  Network::syncGameState  this=int  sig=csp ====
+// ==== 0x0064AC90  Network::syncGameState  this=Network  sig=csp ====
 int __thiscall sub_64AC90(_BYTE *this)
 {
   void *v2; // ebx
@@ -8019,7 +8019,7 @@ int __thiscall sub_64AC90(_BYTE *this)
   qmemcpy(v2, this, 0x1C4u); /*0x64acab*/
   this += 452; /*0x64acab*/
   *((_WORD *)v2 + 226) = *(_WORD *)this; /*0x64acad*/
-  *((_BYTE *)v2 + 454) = *(this + 2); /*0x64acaf*/
+  *((_BYTE *)v2 + 454) = this->q002; /*0x64acaf*/
   result = MEMORY[0xA8BB30]; /*0x64acb0*/
   if ( MEMORY[0xA8BB38] < MEMORY[0xA8BB30] /*0x64aceb*/
     || (MEMORY[0xA8BB35] || !MEMORY[0xA8BB30])
@@ -8037,7 +8037,7 @@ int __thiscall sub_64AC90(_BYTE *this)
 }
 
 
-// ==== 0x0064AD10  Network_Process_64AD10  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0064AD10  Network_Process_64AD10  this=-  sig=ida-proto ====
 LRESULT __fastcall sub_64AD10(int a1, int a2)
 {
   LRESULT v3; // edi
@@ -8108,7 +8108,7 @@ int sub_64AE30()
 }
 
 
-// ==== 0x0064AE50  NetworkScore::DlgProc  this=VOID_PTR  sig=csp ====
+// ==== 0x0064AE50  NetworkScore::DlgProc  this=NetworkScore  sig=csp ====
 INT_PTR __stdcall NetworkScore::DlgProc(HWND hWnd, UINT a2, HWND a3, char *a4)
 {
   HWND v4; // ebp
@@ -8297,7 +8297,7 @@ LABEL_6:
 }
 
 
-// ==== 0x0064B240  KickNetworkPlayerNow  this=int  sig=csp ====
+// ==== 0x0064B240  KickNetworkPlayerNow  this=-  sig=csp ====
 void __fastcall Network_KickPlayerNow(int a1, int a2, int a3, unsigned __int8 a4)
 {
   int v6; // edi
@@ -8366,7 +8366,7 @@ void __fastcall Network_KickPlayerNow(int a1, int a2, int a3, unsigned __int8 a4
 }
 
 
-// ==== 0x0064B410  Network_Process_64B410  this=int  sig=csp ====
+// ==== 0x0064B410  Network_Process_64B410  this=-  sig=csp ====
 int __fastcall sub_64B410(int a1, int *a2)
 {
   int *v2; // ebp
@@ -8414,7 +8414,7 @@ int __fastcall sub_64B410(int a1, int *a2)
 }
 
 
-// ==== 0x0064B4D0  DictionaryCompressLookup  this=int  sig=csp ====
+// ==== 0x0064B4D0  DictionaryCompressLookup  this=-  sig=csp ====
 char __fastcall Compress_DictionaryLookup(unsigned __int8 *a1, _DWORD *a2, _BYTE *a3, const void *a4, char a5)
 {
   unsigned __int8 v5; // dl
@@ -8504,7 +8504,7 @@ LABEL_21:
 }
 
 
-// ==== 0x0064B660  CompressNetworkMegaMission  this=int  sig=csp ====
+// ==== 0x0064B660  CompressNetworkMegaMission  this=-  sig=csp ====
 int __fastcall Network_CompressMegaMission(int a1, int a2, int a3, int a4, int a5, _DWORD *a6)
 {
   int v7; // ecx
@@ -8729,7 +8729,7 @@ LABEL_47:
 }
 
 
-// ==== 0x0064BDD0  DecodeNetworkEvents  this=int  sig=csp ====
+// ==== 0x0064BDD0  DecodeNetworkEvents  this=-  sig=csp ====
 int __fastcall Network_DecodeEvents(char *a1, unsigned int a2)
 {
   char *v2; // esi
@@ -8998,7 +8998,7 @@ LABEL_48:
 }
 
 
-// ==== 0x0064C380  Network::ProcessEventList  this=int  sig=csp ====
+// ==== 0x0064C380  Network::ProcessEventList  this=Network  sig=csp ====
 int __stdcall Network::ProcessEventList(int a1, int *a2, int a3)
 {
   IUnknown *v3; // ebx
@@ -9449,7 +9449,7 @@ void __fastcall sub_64CD30(int a1, int a2, int a3, char a4, int a5)
 }
 
 
-// ==== 0x0064CDA0  ProcessNetworkMapEvent  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0064CDA0  ProcessNetworkMapEvent  this=-  sig=ida-proto ====
 void __fastcall Network_ProcessMapEvent(int a1, int a2)
 {
   int v2; // ebx
@@ -10212,7 +10212,7 @@ int ComputeNetworkFrameCRC()
 }
 
 
-// ==== 0x0064DE80  ComputeHash  this=int  sig=csp ====
+// ==== 0x0064DE80  ComputeHash  this=-  sig=csp ====
 int __fastcall Hash_Compute(_DWORD *a1, int a2)
 {
   int result; // eax
@@ -10223,7 +10223,7 @@ int __fastcall Hash_Compute(_DWORD *a1, int a2)
 }
 
 
-// ==== 0x0064DEA0  Multiplay::LogToSYNC_NOMPDEBUG  this=int  sig=csp ====
+// ==== 0x0064DEA0  Multiplay::LogToSYNC_NOMPDEBUG  this=Multiplay  sig=csp ====
 void __thiscall Multiplay::LogToSYNC_NOMPDEBUG(unsigned __int8 *this)
 {
   FILE *v1; // eax

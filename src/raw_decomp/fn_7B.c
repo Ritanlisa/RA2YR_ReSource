@@ -108,14 +108,14 @@ void __cdecl sub_7B01F0()
 }
 
 
-// ==== 0x007B0210  FindLobbyIDWOL_Find  this=int  sig=ida-proto ====
+// ==== 0x007B0210  FindLobbyIDWOL_Find  this=-  sig=ida-proto ====
 int *sub_7B0210()
 {
   return &stru_B77F58; /*0x7b0215*/
 }
 
 
-// ==== 0x007B0220  ComStreamClass::seekToPosition  this=VOID_PTR  sig=csp ====
+// ==== 0x007B0220  ComStreamClass::seekToPosition  this=ComStreamClass  sig=csp ====
 _DWORD *__thiscall sub_7B0220(int *this)
 {
   _DWORD *v2; // eax
@@ -123,7 +123,7 @@ _DWORD *__thiscall sub_7B0220(int *this)
   _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
   _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set(&stru_B77F58, *(this + 1)); /*0x7b022f*/
+  ComPtr::Set(&stru_B77F58, this->ComStreamClass_field_0x04); /*0x7b022f*/
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b0249*/
   ComPtr::Set(&stru_B77F68, v3[1]); /*0x7b0257*/
@@ -141,7 +141,7 @@ int *sub_7B0290()
 }
 
 
-// ==== 0x007B02A0  ComStreamClass::getStreamSize  this=VOID_PTR  sig=csp ====
+// ==== 0x007B02A0  ComStreamClass::getStreamSize  this=ComStreamClass  sig=csp ====
 _DWORD *__thiscall sub_7B02A0(int *this)
 {
   _DWORD *v2; // eax
@@ -149,7 +149,7 @@ _DWORD *__thiscall sub_7B02A0(int *this)
   _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
   _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set(&stru_B77F70, *(this + 1)); /*0x7b02af*/
+  ComPtr::Set(&stru_B77F70, this->ComStreamClass_field_0x04); /*0x7b02af*/
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b02c9*/
   ComPtr::Set(&stru_B77F78, v3[1]); /*0x7b02d7*/
@@ -649,7 +649,7 @@ LABEL_33:
 }
 
 
-// ==== 0x007B0B00  EncodeScreenshotRLE  this=int  sig=csp ====
+// ==== 0x007B0B00  EncodeScreenshotRLE  this=-  sig=csp ====
 int __fastcall Screenshot_EncodeRLE(int a1, char *a2, int a3)
 {
   int result; // eax
@@ -1708,7 +1708,7 @@ void __thiscall AudioQueue_Cleanup(int this)
 }
 
 
-// ==== 0x007B1DE0  WinsockInterface::Init  this=int  sig=csp ====
+// ==== 0x007B1DE0  WinsockInterface::Init  this=WinsockInterface  sig=csp ====
 char __thiscall WinsockInterface::Init(_DWORD *this)
 {
   _WORD *v3; // eax
@@ -1952,7 +1952,7 @@ _BYTE *__thiscall AudioQueue::AllocBuffer(_DWORD *this, WinsockInterfaceClass *a
 }
 
 
-// ==== 0x007B2240  IPXInterfaceClass::processPacket  this=int  sig=csp ====
+// ==== 0x007B2240  IPXInterfaceClass::processPacket  this=IPXInterfaceClass  sig=csp ====
 _BYTE *__thiscall sub_7B2240(_DWORD *this)
 {
   _BYTE *result; // eax
@@ -1960,7 +1960,7 @@ _BYTE *__thiscall sub_7B2240(_DWORD *this)
   int v3; // esi
 
   result = 0; /*0x7b2249*/
-  if ( *(this + 64535) == 128 ) /*0x7b2253*/
+  if ( this->q3F05C == 128 ) /*0x7b2253*/
   {
     result = __2_YAPAXI_Z(0x2A0u); /*0x7b225a*/
     result[22] = 1; /*0x7b2264*/
@@ -1971,10 +1971,10 @@ _BYTE *__thiscall sub_7B2240(_DWORD *this)
     v2 = 0; /*0x7b226c*/
     while ( 1 ) /*0x7b226e*/
     {
-      v3 = *(this + 64532); /*0x7b226e*/
-      *(this + 64532) = v3 + 1; /*0x7b227a*/
+      v3 = this->q3F050; /*0x7b226e*/
+      this->q3F050 = v3 + 1; /*0x7b227a*/
       if ( v3 + 1 > 127 ) /*0x7b2280*/
-        *(this + 64532) = 0; /*0x7b2282*/
+        this->q3F050 = 0; /*0x7b2282*/
       if ( !*((_BYTE *)this + 672 * v3 + 101) ) /*0x7b2297*/
         break; /*0x7b2297*/
       if ( ++v2 >= 128 ) /*0x7b22a4*/
@@ -1982,7 +1982,7 @@ _BYTE *__thiscall sub_7B2240(_DWORD *this)
     }
     result = this + 168 * v3 + 20; /*0x7b22b9*/
     *((_BYTE *)this + 672 * v3 + 101) = 1; /*0x7b22bd*/
-    ++*(this + 64535); /*0x7b22c8*/
+    ++this->q3F05C; /*0x7b22c8*/
   }
   if ( result ) /*0x7b22d0*/
   {
@@ -2211,7 +2211,7 @@ char __stdcall IPXInterfaceClass::ReceivePacket(char *name, AnimClass *aP1)
 }
 
 
-// ==== 0x007B2720  SessionClass::SetInstance  this=int  sig=csp ====
+// ==== 0x007B2720  SessionClass::SetInstance  this=SessionClass  sig=csp ====
 void __thiscall sub_7B2720(void *this)
 {
   MEMORY[0xB780A0] = (int)this; /*0x7b2720*/
@@ -4075,7 +4075,7 @@ DynamicVector *__thiscall UDPInterfaceClass::receivePacket(_DWORD *Block, char a
 }
 
 
-// ==== 0x007B4620  ObjectClass::unknown_libname_73  this=VOID_PTR  sig=csp ====
+// ==== 0x007B4620  ObjectClass::unknown_libname_73  this=ObjectClass  sig=csp ====
 // Microsoft VisualC 2-14/net runtime
 _DWORD *__thiscall unknown_libname_73(_DWORD *this)
 {
@@ -4120,7 +4120,7 @@ char **__thiscall String_AssignFromPtr(char **this, const char **a2)
 }
 
 
-// ==== 0x007B46F0  ObjectClass::DeleteAndZero  this=VOID_PTR  sig=csp ====
+// ==== 0x007B46F0  ObjectClass::DeleteAndZero  this=ObjectClass  sig=csp ====
 void __thiscall DeleteAndZero(void **this)
 {
   if ( *this ) /*0x7b46f3*/
@@ -4143,7 +4143,7 @@ bool __thiscall String_Equals_Alt(const char **this, const char *a2)
 }
 
 
-// ==== 0x007B4780  String::Compare  this=VOID_PTR  sig=csp ====
+// ==== 0x007B4780  String::Compare  this=String  sig=csp ====
 bool __thiscall String_Compare(const char **this, const char **a2)
 {
   const char *v2; // eax
@@ -4171,7 +4171,7 @@ bool __thiscall String_NotEquals(const char **this, const char *a2)
 }
 
 
-// ==== 0x007B4860  VectorClass_Wstring::SetCapacity  this=VOID_PTR  sig=csp ====
+// ==== 0x007B4860  VectorClass_Wstring::SetCapacity  this=VectorClass_Wstring  sig=csp ====
 bool __thiscall sub_7B4860(const char **this, const char **a2)
 {
   const char *v2; // eax
@@ -4239,7 +4239,7 @@ char **__thiscall String::Reassign(char **this, AbstractClass *aP1)
 }
 
 
-// ==== 0x007B4A10  ObjectClass::String_Process_7B4A10  this=int  sig=csp ====
+// ==== 0x007B4A10  ObjectClass::String_Process_7B4A10  this=ObjectClass  sig=csp ====
 char __thiscall sub_7B4A10(const char **this, const char *a2)
 {
   const char *v2; // esi
@@ -4347,7 +4347,7 @@ char __thiscall sub_7B4B50(const char **this, char **a2)
 }
 
 
-// ==== 0x007B4C20  String::Append  this=int  sig=csp ====
+// ==== 0x007B4C20  String::Append  this=String  sig=csp ====
 const char **__thiscall String::Append(const char **this, CCINIClass *aP1)
 {
   CCINIClass *v2; // esi
@@ -4383,7 +4383,7 @@ const char **__thiscall String::Append(const char **this, CCINIClass *aP1)
 }
 
 
-// ==== 0x007B4CD0  String::Append2  this=int  sig=csp ====
+// ==== 0x007B4CD0  String::Append2  this=String  sig=csp ====
 const char **__thiscall String::Append2(const char **this, IUnknown *aP1)
 {
   ObjectClass *v2; // eax
@@ -4431,7 +4431,7 @@ const char **__thiscall String::Append2(const char **this, IUnknown *aP1)
 }
 
 
-// ==== 0x007B4DA0  String::Concat2  this=int  sig=csp ====
+// ==== 0x007B4DA0  String::Concat2  this=String  sig=csp ====
 char **__thiscall String_Concat2(const char **this, char **a2, const char *a3)
 {
   char *v4; // ebx
@@ -4547,7 +4547,7 @@ char **__thiscall String::Concat(const char **this, char **a1, IUnknown *aP2)
 }
 
 
-// ==== 0x007B5020  String::Erase  this=int  sig=csp ====
+// ==== 0x007B5020  String::Erase  this=String  sig=csp ====
 char __thiscall String::Erase(const char **this, MPCooperative *aP1, int a3)
 {
   int v4; // ebp
@@ -4613,7 +4613,7 @@ char __thiscall sub_7B50F0(const char **this, char a2)
 }
 
 
-// ==== 0x007B51D0  String::TrimLeft  this=int  sig=csp ====
+// ==== 0x007B51D0  String::TrimLeft  this=String  sig=csp ====
 void __thiscall String::TrimLeft(const char **this, ObjectClass *aP1)
 {
   int i; // esi
@@ -4636,7 +4636,7 @@ void __thiscall String::TrimLeft(const char **this, ObjectClass *aP1)
 }
 
 
-// ==== 0x007B5230  String::TrimRight  this=int  sig=csp ====
+// ==== 0x007B5230  String::TrimRight  this=String  sig=csp ====
 void __thiscall String::TrimRight(const char **this, ObjectClass *aP1)
 {
   unsigned int v3; // esi
@@ -4699,7 +4699,7 @@ void __thiscall String::TrimRight(const char **this, ObjectClass *aP1)
 }
 
 
-// ==== 0x007B5340  DeleteAndZero::Alt2  this=VOID_PTR  sig=csp ====
+// ==== 0x007B5340  DeleteAndZero::Alt2  this=DeleteAndZero  sig=csp ====
 void __thiscall DeleteAndZero_Alt2(void **this)
 {
   if ( *this ) /*0x7b5343*/
@@ -4744,7 +4744,7 @@ unsigned int __thiscall sub_7B53B0(const char **this, ObjectClass *aP1, size_t C
 }
 
 
-// ==== 0x007B5400  String::GetOrEmpty  this=VOID_PTR  sig=csp ====
+// ==== 0x007B5400  String::GetOrEmpty  this=String  sig=csp ====
 char *__thiscall String_GetOrEmpty(char **this)
 {
   char *result; // eax
@@ -4756,7 +4756,7 @@ char *__thiscall String_GetOrEmpty(char **this)
 }
 
 
-// ==== 0x007B5410  ObjectClass::method_7B5410  this=int  sig=csp ====
+// ==== 0x007B5410  ObjectClass::method_7B5410  this=ObjectClass  sig=csp ====
 char __thiscall sub_7B5410(const char **this, unsigned int a2)
 {
   const char *v2; // edx
@@ -4883,7 +4883,7 @@ char __thiscall sub_7B5640(const char **this, char a2, unsigned int a3)
 }
 
 
-// ==== 0x007B57A0  String::Replace  this=int  sig=csp ====
+// ==== 0x007B57A0  String::Replace  this=String  sig=csp ====
 char __thiscall String_Replace(char **this, char *SubStr, const char *a3)
 {
   void **v3; // edi
@@ -5020,7 +5020,7 @@ LABEL_35:
 }
 
 
-// ==== 0x007B5A40  String::Assign_Bool  this=int  sig=csp ====
+// ==== 0x007B5A40  String::Assign_Bool  this=String  sig=csp ====
 char __thiscall String_Assign_Bool(void **this, const char *a2)
 {
   size_t v3; // ecx
@@ -5042,7 +5042,7 @@ char __thiscall String_Assign_Bool(void **this, const char *a2)
 }
 
 
-// ==== 0x007B5B30  String::ToLower  this=int  sig=csp ====
+// ==== 0x007B5B30  String::ToLower  this=String  sig=csp ====
 void __thiscall String_ToLower(const char **this)
 {
   unsigned int i; // esi
@@ -5136,7 +5136,7 @@ char **__thiscall sub_7B5CA0(const char **this, char **a2)
 }
 
 
-// ==== 0x007B5D70  String::CopyTruncated  this=int  sig=csp ====
+// ==== 0x007B5D70  String::CopyTruncated  this=String  sig=csp ====
 char __thiscall String_CopyTruncated(void **this, size_t Count)
 {
   const char *v3; // esi
@@ -5176,7 +5176,7 @@ char __thiscall String_CopyTruncated(void **this, size_t Count)
 }
 
 
-// ==== 0x007B5E30  CChatEventSink::EncodeString  this=int  sig=csp ====
+// ==== 0x007B5E30  CChatEventSink::EncodeString  this=CChatEventSink  sig=csp ====
 char __thiscall sub_7B5E30(const char **this, char a2)
 {
   char *v4; // eax
@@ -5398,14 +5398,14 @@ int __thiscall sub_7B60E0(const char **this, signed int a2, void **a3)
 }
 
 
-// ==== 0x007B6280  ObjectClass::??1_Timevec_std__QAE_XZ  this=VOID_PTR  sig=csp ====
+// ==== 0x007B6280  ObjectClass::??1_Timevec_std__QAE_XZ  this=ObjectClass  sig=csp ====
 void __thiscall __1_Timevec_std__QAE_XZ(const char **this)
 {
   atoi(*this); /*0x7b6283*/
 }
 
 
-// ==== 0x007B6290  FromStringInt  this=unknown  sig=csp ====
+// ==== 0x007B6290  FromStringInt  this=-  sig=csp ====
 char **__fastcall FromStringInt(IUnknown *aP0, int a2)
 {
   size_t v3; // ecx
@@ -5427,7 +5427,7 @@ char **__fastcall FromStringInt(IUnknown *aP0, int a2)
 }
 
 
-// ==== 0x007B6320  FormatStringInt  this=unknown  sig=csp ====
+// ==== 0x007B6320  FormatStringInt  this=-  sig=csp ====
 char **__fastcall FormatStringInt(INIClass *aP0, MPCooperative *aP1, ObjectClass *aP2)
 {
   size_t v5; // ecx
@@ -5450,7 +5450,7 @@ char **__fastcall FormatStringInt(INIClass *aP0, MPCooperative *aP1, ObjectClass
 }
 
 
-// ==== 0x007B63C0  ProcessStringAndCopy  this=unknown  sig=csp ====
+// ==== 0x007B63C0  ProcessStringAndCopy  this=-  sig=csp ====
 char **__fastcall ProcessStringAndCopy(AbstractClass *aP0, CCINIClass *aP1, char **a2)
 {
   size_t v5; // ecx
@@ -5496,7 +5496,7 @@ char **__fastcall ProcessStringAndCopy(AbstractClass *aP0, CCINIClass *aP1, char
 }
 
 
-// ==== 0x007B64E0  ConcatStringAlloc  this=unknown  sig=csp ====
+// ==== 0x007B64E0  ConcatStringAlloc  this=-  sig=csp ====
 char **__fastcall ConcatStringAlloc(ObjectClass *aP0, const char **a1, char **a2)
 {
   char **v4; // ebp
@@ -5579,7 +5579,7 @@ _DWORD *__thiscall unknown_libname_74(_DWORD *this)
 }
 
 
-// ==== 0x007B66D0  WideString::Assign  this=VOID_PTR  sig=csp ====
+// ==== 0x007B66D0  WideString::Assign  this=WideString  sig=csp ====
 wchar_t **__thiscall WideString::Assign(wchar_t **this, CampaignScore *aP1)
 {
   size_t v3; // eax
@@ -5599,7 +5599,7 @@ wchar_t **__thiscall WideString::Assign(wchar_t **this, CampaignScore *aP1)
 }
 
 
-// ==== 0x007B6720  WideString::AssignFromPtr  this=VOID_PTR  sig=csp ====
+// ==== 0x007B6720  WideString::AssignFromPtr  this=WideString  sig=csp ====
 wchar_t **__thiscall WideString_AssignFromPtr(wchar_t **this, const wchar_t **a2)
 {
   size_t v3; // eax
@@ -5626,7 +5626,7 @@ void __thiscall DeleteAndZero_Alt(void **this)
 }
 
 
-// ==== 0x007B6780  ObjectClass::String_Helper  this=VOID_PTR  sig=csp ====
+// ==== 0x007B6780  ObjectClass::String_Helper  this=ObjectClass  sig=csp ====
 bool __thiscall sub_7B6780(const wchar_t **this, wchar_t *String2)
 {
   const wchar_t *v2; // eax
@@ -5787,7 +5787,7 @@ char __thiscall sub_7B6A60(wchar_t **this, ObjectClass *aP1)
 }
 
 
-// ==== 0x007B6AE0  WideString::Append2  this=int  sig=csp ====
+// ==== 0x007B6AE0  WideString::Append2  this=WideString  sig=csp ====
 wchar_t **__thiscall WideString::Append2(wchar_t **this, CampaignScore *aP1)
 {
   CampaignScore *v3; // esi
@@ -5814,7 +5814,7 @@ wchar_t **__thiscall WideString::Append2(wchar_t **this, CampaignScore *aP1)
 }
 
 
-// ==== 0x007B6B60  WideString::Append  this=VOID_PTR  sig=csp ====
+// ==== 0x007B6B60  WideString::Append  this=WideString  sig=csp ====
 wchar_t **__thiscall WideString::Append(wchar_t **this, CampaignScore *aP1)
 {
   const wchar_t *v2; // ebp
@@ -5891,7 +5891,7 @@ wchar_t **__thiscall WideString_AssignConcat(const wchar_t **this, wchar_t **a2,
 }
 
 
-// ==== 0x007B6CB0  WideString::ConcatAlloc  this=VOID_PTR  sig=csp ====
+// ==== 0x007B6CB0  WideString::ConcatAlloc  this=WideString  sig=csp ====
 wchar_t **__thiscall WideString::ConcatAlloc(const wchar_t **this, wchar_t **a1, ObjectClass *aP2)
 {
   wchar_t *v4; // esi
@@ -5974,7 +5974,7 @@ __int16 __thiscall WideString_Erase(const wchar_t **this, int a2, int a3)
 }
 
 
-// ==== 0x007B6E20  WideString::RemoveChar  this=int  sig=csp ====
+// ==== 0x007B6E20  WideString::RemoveChar  this=WideString  sig=csp ====
 char __thiscall WideString_RemoveChar(const wchar_t **this, wchar_t a2)
 {
   char v3; // bl
@@ -6038,7 +6038,7 @@ __int16 __thiscall sub_7B6EE0(const wchar_t **this, const wchar_t **a2)
 }
 
 
-// ==== 0x007B6F40  WString::TrimRight  this=VOID_PTR  sig=csp ====
+// ==== 0x007B6F40  WString::TrimRight  this=WString  sig=csp ====
 void __thiscall WString_TrimRight(const wchar_t **this, const wchar_t **a2)
 {
   size_t v3; // esi
@@ -6142,7 +6142,7 @@ size_t __thiscall sub_7B70B0(const wchar_t **this, ObjectClass *aP1, size_t Coun
 }
 
 
-// ==== 0x007B7100  WideString::GetOrEmpty  this=VOID_PTR  sig=csp ====
+// ==== 0x007B7100  WideString::GetOrEmpty  this=WideString  sig=csp ====
 CampaignScore *__thiscall WideString::GetOrEmpty(wchar_t **this)
 {
   CampaignScore *result; // eax
@@ -6198,7 +6198,7 @@ const wchar_t *__thiscall WideString_Length(const wchar_t **this)
 }
 
 
-// ==== 0x007B71D0  ObjectClass::Render_Helper_7B71D0  this=int  sig=csp ====
+// ==== 0x007B71D0  ObjectClass::Render_Helper_7B71D0  this=ObjectClass  sig=csp ====
 char __thiscall Render_Helper_7B71D0(const wchar_t **this, CampaignScore *aP1, size_t a3)
 {
   size_t v4; // eax
@@ -6247,7 +6247,7 @@ char __thiscall Render_Helper_7B71D0(const wchar_t **this, CampaignScore *aP1, s
 }
 
 
-// ==== 0x007B72F0  EditControl::GrowBuffer  this=VOID_PTR  sig=csp ====
+// ==== 0x007B72F0  EditControl::GrowBuffer  this=EditControl  sig=csp ====
 char __thiscall sub_7B72F0(const wchar_t **this, wchar_t a2, size_t a3)
 {
   size_t v4; // eax
@@ -6494,7 +6494,7 @@ wchar_t **__thiscall sub_7B7740(const wchar_t **this, wchar_t **a2)
 }
 
 
-// ==== 0x007B78D0  String::TruncateTo  this=VOID_PTR  sig=csp ====
+// ==== 0x007B78D0  String::TruncateTo  this=String  sig=csp ====
 char __thiscall String_TruncateTo(void **this, size_t Count)
 {
   const wchar_t *v3; // esi
@@ -6534,7 +6534,7 @@ char __thiscall String_TruncateTo(void **this, size_t Count)
 }
 
 
-// ==== 0x007B7980  ObjectClass::UI_Helper_7B7980  this=VOID_PTR  sig=csp ====
+// ==== 0x007B7980  ObjectClass::UI_Helper_7B7980  this=ObjectClass  sig=csp ====
 char __thiscall sub_7B7980(const wchar_t **this, wchar_t a2)
 {
   wchar_t *v4; // eax
@@ -6584,7 +6584,7 @@ char __thiscall sub_7B7980(const wchar_t **this, wchar_t a2)
 }
 
 
-// ==== 0x007B7A60  String::Tokenize2  this=int  sig=csp ====
+// ==== 0x007B7A60  String::Tokenize2  this=String  sig=csp ====
 int __thiscall String_Tokenize2(const wchar_t **this, int a2, wchar_t *Str, void **a4)
 {
   int v4; // esi
@@ -6767,14 +6767,14 @@ int __thiscall sub_7B7C00(const wchar_t **this, int a2, void **a3)
 }
 
 
-// ==== 0x007B7D80  Pipe::GetField  this=VOID_PTR  sig=csp ====
+// ==== 0x007B7D80  Pipe::GetField  this=Pipe  sig=csp ====
 int __thiscall Pipe::GetField(const wchar_t **this)
 {
   return wcstol(*this, 0, 10); /*0x7b7d8f*/
 }
 
 
-// ==== 0x007B7D90  WideString::IsASCII  this=int  sig=csp ====
+// ==== 0x007B7D90  WideString::IsASCII  this=WideString  sig=csp ====
 char __thiscall WideString_IsASCII(const wchar_t **this)
 {
   signed int v2; // eax
@@ -6796,7 +6796,7 @@ char __thiscall WideString_IsASCII(const wchar_t **this)
 }
 
 
-// ==== 0x007B7DD0  FormatWideString  this=unknown  sig=csp ====
+// ==== 0x007B7DD0  FormatWideString  this=-  sig=csp ====
 CampaignScore *__fastcall FormatWideString(wchar_t **a1, const wchar_t *a2)
 {
   size_t v3; // eax
@@ -6819,7 +6819,7 @@ CampaignScore *__fastcall FormatWideString(wchar_t **a1, const wchar_t *a2)
 }
 
 
-// ==== 0x007B7E40  WDTGame_Helper  this=unknown  sig=csp ====
+// ==== 0x007B7E40  WDTGame_Helper  this=-  sig=csp ====
 wchar_t **__fastcall WDTGame_Helper(CampaignScore *aP0, const wchar_t *a1, wchar_t *Format)
 {
   size_t v5; // eax
@@ -6844,7 +6844,7 @@ wchar_t **__fastcall WDTGame_Helper(CampaignScore *aP0, const wchar_t *a1, wchar
 }
 
 
-// ==== 0x007B7ED0  CharStringToWide  this=unknown  sig=csp ====
+// ==== 0x007B7ED0  CharStringToWide  this=-  sig=csp ====
 wchar_t **__fastcall CharStringToWide(ObjectClass *aP0, const char **a1)
 {
   int v4; // esi
@@ -6888,7 +6888,7 @@ wchar_t **__fastcall CharStringToWide(ObjectClass *aP0, const char **a1)
 }
 
 
-// ==== 0x007B7F90  ToWideStringCharAlt  this=VOID_PTR  sig=csp ====
+// ==== 0x007B7F90  ToWideStringCharAlt  this=-  sig=csp ====
 char **__fastcall sub_7B7F90(char **a1, const wchar_t **a2)
 {
   char **v3; // esi
@@ -6932,7 +6932,7 @@ char **__fastcall sub_7B7F90(char **a1, const wchar_t **a2)
 }
 
 
-// ==== 0x007B8090  FormatWideStringPrefix  this=unknown  sig=csp ====
+// ==== 0x007B8090  FormatWideStringPrefix  this=-  sig=csp ====
 wchar_t **__fastcall FormatWideStringPrefix(CampaignScore *aP0, const wchar_t *a1, wchar_t **a2)
 {
   size_t v5; // eax
@@ -6982,7 +6982,7 @@ wchar_t **__fastcall FormatWideStringPrefix(CampaignScore *aP0, const wchar_t *a
 }
 
 
-// ==== 0x007B8170  ConcatWString  this=unknown  sig=csp ====
+// ==== 0x007B8170  ConcatWString  this=-  sig=csp ====
 wchar_t **__fastcall ConcatWString(GameSetup *aP0, const wchar_t **a1, const wchar_t **a2)
 {
   wchar_t **v4; // ebx
@@ -7046,7 +7046,7 @@ bool __thiscall sub_7B8250(const wchar_t **this, wchar_t *Control)
 }
 
 
-// ==== 0x007B82E0  Game_Set  this=unknown  sig=csp ====
+// ==== 0x007B82E0  Game_Set  this=-  sig=csp ====
 char **__fastcall sub_7B82E0(char **a1, const wchar_t **a2)
 {
   const wchar_t *v3; // eax
@@ -7087,7 +7087,7 @@ char **__fastcall sub_7B82E0(char **a1, const wchar_t **a2)
 }
 
 
-// ==== 0x007B83E0  UI_Setup_7B83E0  this=unknown  sig=csp ====
+// ==== 0x007B83E0  UI_Setup_7B83E0  this=-  sig=csp ====
 wchar_t **__fastcall sub_7B83E0(wchar_t **a1, const char **a2)
 {
   unsigned int v4; // ecx
@@ -7206,7 +7206,7 @@ HANDLE sub_7B84F0()
 }
 
 
-// ==== 0x007B8610  sub_7B8610  this=unknown  sig=csp ====
+// ==== 0x007B8610  sub_7B8610  this=-  sig=csp ====
 DWORD __stdcall sub_7B8610(_DWORD *lpThreadParameter)
 {
   lpThreadParameter[6] = 1; /*0x7b861a*/
@@ -8655,7 +8655,7 @@ BOOL __thiscall WWMouseClass::FlipCursorBuffer(IUnknown **this, IUnknown *a2, IU
 }
 
 
-// ==== 0x007BA090  WWMouseClass::UpdateCursorMovement  this=VOID_PTR  sig=csp ====
+// ==== 0x007BA090  WWMouseClass::UpdateCursorMovement  this=WWMouseClass  sig=csp ====
 int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
 {
   int result; // eax
@@ -8671,15 +8671,15 @@ int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
   LONG x; // [esp+14h] [ebp-Ch] BYREF
   struct tagPOINT Point; // [esp+18h] [ebp-8h] BYREF
 
-  result = *(this + 9); /*0x7ba096*/
+  result = this->WWMouseClass_field_0x24; /*0x7ba096*/
   if ( result ) /*0x7ba09b*/
   {
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba0b7*/
       Debug::Log(); /*0x7ba0c8*/
     if ( UI_Update() ) /*0x7ba0d0*/
     {
-      v3 = *(this + 8); /*0x7ba0dc*/
-      x = *(this + 7); /*0x7ba0df*/
+      v3 = this->WWMouseClass_field_0x8; /*0x7ba0dc*/
+      x = this->WWMouseClass_field_0x1C; /*0x7ba0df*/
       y = v3; /*0x7ba0e3*/
     }
     else
@@ -8690,10 +8690,10 @@ int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
       y = Point.y; /*0x7ba102*/
       (*(void (__thiscall **)(LONG *, LONG *, LONG *))(v4 + 68))(this, &x, &y); /*0x7ba112*/
       v5 = y; /*0x7ba119*/
-      *(this + 7) = x; /*0x7ba11d*/
-      *(this + 8) = v5; /*0x7ba120*/
+      this->WWMouseClass_field_0x1C = x; /*0x7ba11d*/
+      this->WWMouseClass_field_0x8 = v5; /*0x7ba120*/
     }
-    if ( (*(unsigned __int8 (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)*(this + 9) + 104))(*(this + 9), 0, 0) /*0x7ba13d*/
+    if ( (*(unsigned __int8 (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)this->WWMouseClass_field_0x24 + 104))(this->WWMouseClass_field_0x24, 0, 0) /*0x7ba13d*/
       || byte_B78170 )
     {
       v7 = y; /*0x7ba16d*/
@@ -8701,7 +8701,7 @@ int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
       v9 = byte_B78170; /*0x7ba17d*/
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba18a*/
         Debug::Log(); /*0x7ba19b*/
-      if ( v8 != *(this + 5) || v7 != *(this + 6) || v9 ) /*0x7ba1af*/
+      if ( v8 != this->q014 || v7 != this->q018 || v9 ) /*0x7ba1af*/
       {
         if ( (*(unsigned __int8 (__thiscall **)(LONG *))(*this + 28))(this) /*0x7ba1d2*/
           && !(*(unsigned __int8 (__thiscall **)(LONG *))(*this + 8))(this)
@@ -8713,8 +8713,8 @@ int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
           ReleaseMutex(hMutex); /*0x7ba212*/
         }
         v10 = *this; /*0x7ba218*/
-        *(this + 5) = v8; /*0x7ba21c*/
-        *(this + 6) = v7; /*0x7ba21f*/
+        this->q014 = v8; /*0x7ba21c*/
+        this->q018 = v7; /*0x7ba21f*/
         if ( (*(unsigned __int8 (__thiscall **)(LONG *))(v10 + 28))(this) /*0x7ba23b*/
           && !(*(unsigned __int8 (__thiscall **)(LONG *))(*this + 8))(this)
           && MEMORY[0xA8D63C].__pad_14B0[660] )
@@ -8722,7 +8722,7 @@ int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
           if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba253*/
             Debug::Log(); /*0x7ba264*/
           WWMouseClass::updateCursorRect((unsigned int *)this); /*0x7ba26e*/
-          Mouse::DrawCursor(this, (IUnknown *)*(this + 9), 0, 0); /*0x7ba27d*/
+          Mouse::DrawCursor(this, (IUnknown *)this->WWMouseClass_field_0x24, 0, 0); /*0x7ba27d*/
           ReleaseMutex(hMutex); /*0x7ba289*/
         }
       }
@@ -8733,8 +8733,8 @@ int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
     else
     {
       v6 = y; /*0x7ba143*/
-      *(this + 5) = x; /*0x7ba147*/
-      *(this + 6) = v6; /*0x7ba14a*/
+      this->q014 = x; /*0x7ba147*/
+      this->q018 = v6; /*0x7ba14a*/
       byte_B78170 = 1; /*0x7ba153*/
       return ReleaseMutex(hMutex); /*0x7ba15b*/
     }
@@ -10234,7 +10234,7 @@ int __thiscall XSurface_DrawEllipseOutline(
 }
 
 
-// ==== 0x007BB920  Draw::Ellipse  this=int  sig=csp ====
+// ==== 0x007BB920  Draw::Ellipse  this=Draw  sig=csp ====
 int __thiscall Draw_Ellipse(int *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   int v10; // ebp
@@ -10674,7 +10674,7 @@ char __fastcall CalcSurfaceBlitRects(int a1, int *a2, int *a3, int a4, int *a5, 
 }
 
 
-// ==== 0x007BC1F0  sub_7BC1F0  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x007BC1F0  sub_7BC1F0  this=-  sig=ida-proto ====
 char __fastcall sub_7BC1F0(XSurface *a1, XSurface *a2, XSurface *aP2, int arg4)
 {
   int a4; // [esp+8h] [ebp-4h] BYREF
@@ -10692,7 +10692,7 @@ char __fastcall sub_7BC1F0(XSurface *a1, XSurface *a2, XSurface *aP2, int arg4)
 }
 
 
-// ==== 0x007BC250  sub_7BC250  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x007BC250  sub_7BC250  this=-  sig=ida-proto ====
 char __fastcall sub_7BC250(XSurface *a1, XSurface *a2, XSurface *aP2, int arg4)
 {
   int a4; // [esp+8h] [ebp-4h] BYREF
@@ -11142,7 +11142,7 @@ int sub_7BC950()
 }
 
 
-// ==== 0x007BC970  BSurface::ConstructEx  this=int  sig=csp ====
+// ==== 0x007BC970  BSurface::ConstructEx  this=BSurface  sig=csp ====
 _DWORD *__thiscall BSurface_ConstructorEx(_DWORD *this, int a2, int a3, int a4, int a5)
 {
   int v6; // edi
@@ -11167,10 +11167,10 @@ _DWORD *__thiscall BSurface_ConstructorEx(_DWORD *this, int a2, int a3, int a4, 
   *this = v6; /*0x7bc988*/
   v9 = a3; /*0x7bc98a*/
   *(this + 10) = v7; /*0x7bc98e*/
-  *(this + 1) = v9; /*0x7bc991*/
-  *(this + 2) = v7; /*0x7bc994*/
-  *(this + 3) = v8; /*0x7bc997*/
-  *(this + 8) = 2 * v7 * v8; /*0x7bc99f*/
+  this->Width = v9; /*0x7bc991*/
+  this->Height = v7; /*0x7bc994*/
+  this->LockCount = v8; /*0x7bc997*/
+  this->Height = 2 * v7 * v8; /*0x7bc99f*/
   v10 = __2_YAPAXI_Z(0x20u); /*0x7bc9a7*/
   if ( v10 ) /*0x7bc9b0*/
   {
@@ -11191,19 +11191,19 @@ _DWORD *__thiscall BSurface_ConstructorEx(_DWORD *this, int a2, int a3, int a4, 
   }
   v14 = *(this + 10); /*0x7bc9ec*/
   a5 = *(this + 11); /*0x7bc9ef*/
-  *(this + 5) = v13; /*0x7bc9f3*/
+  this->Buffer = v13; /*0x7bc9f3*/
   a2 = 0; /*0x7bc9f6*/
   a3 = 0; /*0x7bc9fa*/
   a4 = v14; /*0x7bc9fe*/
   (*(void (__thiscall **)(_DWORD *, int *, int))(*v13 + 20))(v13, &a2, 0xFFFF); /*0x7bca0e*/
-  v15 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)*(this + 5) + 92))(*(this + 5), 0, 0); /*0x7bca1c*/
+  v15 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)this->Buffer + 92))(this->Buffer, 0, 0); /*0x7bca1c*/
   v16 = *(this + 11); /*0x7bca1f*/
   *(this + 6) = v15; /*0x7bca22*/
   v17 = *(this + 10) * v16; /*0x7bca25*/
-  *(this + 4) = 0; /*0x7bca29*/
+  this->BytesPerPixel = 0; /*0x7bca29*/
   *(this + 9) = 0x8000; /*0x7bca2c*/
   v18 = v15 + 2 * v17; /*0x7bca33*/
-  v19 = *(this + 5); /*0x7bca36*/
+  v19 = this->Buffer; /*0x7bca36*/
   *(this + 7) = v18; /*0x7bca39*/
   (*(void (__thiscall **)(int))(*(_DWORD *)v19 + 96))(v19); /*0x7bca3e*/
   return this; /*0x7bca43*/
@@ -11268,7 +11268,7 @@ int __thiscall Stream::GetField(_DWORD *this)
 }
 
 
-// ==== 0x007BCAF0  sub_7BCAF0  this=unknown  sig=csp ====
+// ==== 0x007BCAF0  sub_7BCAF0  this=-  sig=csp ====
 char *__stdcall sub_7BCAF0(char *a1, int a2, unsigned __int16 a3)
 {
   char *v3; // edx
@@ -12806,7 +12806,7 @@ LABEL_15:
 }
 
 
-// ==== 0x007BE5D0  AllocCallback::Dispatch  this=unknown  sig=csp ====
+// ==== 0x007BE5D0  AllocCallback::Dispatch  this=AllocCallback  sig=csp ====
 _DWORD *__cdecl AllocCallback_Dispatch(int a1, int a2, _DWORD *Block, size_t Size)
 {
   _DWORD *result; // eax
@@ -12836,7 +12836,7 @@ LABEL_6:
 }
 
 
-// ==== 0x007BE640  Stream::CopyFromTemplate  this=int  sig=csp ====
+// ==== 0x007BE640  Stream::CopyFromTemplate  this=Stream  sig=csp ====
 void __thiscall sub_7BE640(void *this)
 {
   qmemcpy(this, &MEMORY[0x84E738], 0x88u); /*0x7be64e*/
@@ -13126,7 +13126,7 @@ int __thiscall sub_7BEA40(int this)
 }
 
 
-// ==== 0x007BEA80  AudioStream::ProcessStream  this=int  sig=csp ====
+// ==== 0x007BEA80  AudioStream::ProcessStream  this=AudioStream  sig=csp ====
 int __thiscall AudioStream_ProcessStream(int this)
 {
   int v1; // esi

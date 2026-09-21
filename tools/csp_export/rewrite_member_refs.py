@@ -47,14 +47,27 @@ def mem_of(cls, off, width=None):
             return m['name']
     return None
 
+NOT_A_CLASS = {'int', 'VOID_PTR', 'unknown', 'float', 'char', 'uint64_t',
+               'wchar_t', 'unsigned int', 'unsigned char', 'unsigned short',
+               'long', 'double', 'long long', 'bool', '_BOOL'}
+
 def this_class(addr, sig_line):
     k = '0x%08X:this' % addr
     v = tmap.get(k)
-    if v and v.get('type'):
+    if v and v.get('type') and v['type'] not in NOT_A_CLASS:
         return v['type']
+    # type_map returned primitive or missing → try manifest cls
     m = man.get('0x%08X' % addr)
-    if m and m.get('cls'):
+    if m and m.get('cls') and m['cls'] not in NOT_A_CLASS:
         return m['cls']
+    # try parsing class from function name (Class::Method)
+    if m and m.get('name') and '::' in m['name']:
+        return m['name'].split('::')[0]
+    # try IDA signature line (void __thiscall Cls::Method)
+    if sig_line:
+        sm = re.search(r'__thiscall\s+(\w+)::', sig_line)
+        if sm:
+            return sm.group(1)
     return None
 
 PATTERNS = [

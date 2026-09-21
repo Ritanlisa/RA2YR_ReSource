@@ -665,7 +665,7 @@ void sub_6D0E60()
 }
 
 
-// ==== 0x006D0EC0  HouseClass::updateFactoryQueue  this=int  sig=csp ====
+// ==== 0x006D0EC0  HouseClass::updateFactoryQueue  this=HouseClass  sig=csp ====
 wchar_t *__thiscall sub_6D0EC0(_DWORD *this)
 {
   _DWORD *v1; // esi
@@ -675,7 +675,7 @@ wchar_t *__thiscall sub_6D0EC0(_DWORD *this)
 
   v1 = this; /*0x6d0ec4*/
   v2 = *this; /*0x6d0ec8*/
-  *((_BYTE *)this + 21829) = 1; /*0x6d0eca*/
+  this->q5545 = 1; /*0x6d0eca*/
   (*(void (__stdcall **)(_DWORD))(v2 + 56))(0); /*0x6d0ed1*/
   result = MEMORY[0xA8ED84]; /*0x6d0ed4*/
   v1 += 5454; /*0x6d0edd*/
@@ -686,13 +686,13 @@ wchar_t *__thiscall sub_6D0EC0(_DWORD *this)
 }
 
 
-// ==== 0x006D0F00  ObjectClass::PreDraw  this=VOID_PTR  sig=csp ====
+// ==== 0x006D0F00  ObjectClass::PreDraw  this=ObjectClass  sig=csp ====
 int __thiscall ObjectClass_PreDraw(_BYTE *this)
 {
   int v1; // eax
 
   v1 = *(_DWORD *)this; /*0x6d0f00*/
-  *(this + 21829) = 1; /*0x6d0f04*/
+  this->q5545 = 1; /*0x6d0f04*/
   return (*(int (__stdcall **)(_DWORD))(v1 + 56))(0); /*0x6d0f0e*/
 }
 
@@ -1054,7 +1054,7 @@ char __thiscall sub_6D1610(_BYTE *this)
 }
 
 
-// ==== 0x006D1660  ObjectClass::House_Play_6D1660  this=VOID_PTR  sig=csp ====
+// ==== 0x006D1660  ObjectClass::House_Play_6D1660  this=ObjectClass  sig=csp ====
 char __usercall sub_6D1660@<al>(_BYTE *a1@<ecx>, int a2@<esi>)
 {
   char result; // al
@@ -1115,7 +1115,7 @@ char __usercall sub_6D1660@<al>(_BYTE *a1@<ecx>, int a2@<esi>)
 }
 
 
-// ==== 0x006D1770  MouseClass::ToggleContextGadget  this=unknown  sig=csp ====
+// ==== 0x006D1770  MouseClass::ToggleContextGadget  this=MouseClass  sig=csp ====
 char __stdcall MouseClass::sub_6D1770(int a1, int a2)
 {
   unsigned int v2; // eax
@@ -1167,16 +1167,16 @@ int __stdcall CursorAnim::Load(MouseClass *aP0)
 }
 
 
-// ==== 0x006D1810  Struct::Zero25  this=int  sig=csp ====
+// ==== 0x006D1810  Struct::Zero25  this=Struct  sig=csp ====
 _DWORD *__thiscall Struct_Zero25(_DWORD *this)
 {
   *this = 0; /*0x6d1814*/
-  *(this + 1) = 0; /*0x6d1816*/
-  *(this + 2) = 0; /*0x6d1819*/
-  *(this + 3) = 0; /*0x6d181c*/
-  *(this + 4) = 0; /*0x6d181f*/
-  *(this + 5) = 0; /*0x6d1822*/
-  *((_BYTE *)this + 24) = 0; /*0x6d1825*/
+  this->q004 = 0; /*0x6d1816*/
+  this->q008 = 0; /*0x6d1819*/
+  this->q00C = 0; /*0x6d181c*/
+  this->q010 = 0; /*0x6d181f*/
+  this->q014 = 0; /*0x6d1822*/
+  this->q018 = 0; /*0x6d1825*/
   return this; /*0x6d1828*/
 }
 
@@ -1577,14 +1577,14 @@ _DWORD *__thiscall World::ToScreen(float *this, AbstractClass *aP1, AbstractClas
 }
 
 
-// ==== 0x006D20E0  ZCoordToScreenY  this=VOID_PTR  sig=csp ====
+// ==== 0x006D20E0  ZCoordToScreenY  this=-  sig=csp ====
 __int64 __fastcall Coord_ZToScreenY(int a1)
 {
   return Math::RoundToInt((double)a1 * MEMORY[0xB0CD48] + (double)(a1 >= 728) + 0.5); /*0x6d2118*/
 }
 
 
-// ==== 0x006D2120  Coord::ScaleToScreenY  this=int  sig=csp ====
+// ==== 0x006D2120  Coord::ScaleToScreenY  this=Coord  sig=csp ====
 __int64 __thiscall Coord::ScaleToScreenY(void *this)
 {
   return Math::RoundToInt(((double)(int)this - 0.5) * MEMORY[0xB0CDD8]); /*0x6d213b*/
@@ -2061,7 +2061,7 @@ LABEL_43:
 }
 
 
-// ==== 0x006D2B50  nullsub_238  this=unknown  sig=csp ====
+// ==== 0x006D2B50  nullsub_238  this=-  sig=csp ====
 void __stdcall nullsub_238(int a1, int a2)
 {
   ; /*0x6d2b50*/
@@ -4663,7 +4663,7 @@ _DWORD *__thiscall Tactical::PixelToCell(int this, AbstractClass *aP1, IUnknown 
 }
 
 
-// ==== 0x006D6A90  sub_6D6A90  this=unknown  sig=csp ====
+// ==== 0x006D6A90  sub_6D6A90  this=-  sig=csp ====
 __int64 __stdcall sub_6D6A90(_DWORD *a1)
 {
   void *v1; // eax
@@ -4685,7 +4685,7 @@ int __stdcall CellClass::GetByte284(IUnknown *aP0)
 }
 
 
-// ==== 0x006D6BB0  sub_6D6BB0  this=unknown  sig=csp ====
+// ==== 0x006D6BB0  sub_6D6BB0  this=-  sig=csp ====
 _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
 {
   _WORD *v1; // edi
@@ -5889,7 +5889,7 @@ unsigned int __thiscall MapClass::TransformCoordToScreen(int this, int a2, _DWOR
 }
 
 
-// ==== 0x006D84D0  sub_6D84D0  this=unknown  sig=csp ====
+// ==== 0x006D84D0  sub_6D84D0  this=-  sig=csp ====
 int *__stdcall sub_6D84D0(int *a1, int *a2)
 {
   int v2; // edx
@@ -7097,13 +7097,13 @@ int __thiscall sub_6DA080(int *this)
 }
 
 
-// ==== 0x006DA160  TacticalClass::ResetScrollBounds  this=VOID_PTR  sig=csp ====
+// ==== 0x006DA160  TacticalClass::ResetScrollBounds  this=TacticalClass  sig=csp ====
 int __thiscall sub_6DA160(_DWORD *this)
 {
-  *(this + 868) = 0; /*0x6da164*/
-  *(this + 870) = 0; /*0x6da16a*/
-  *(this + 869) = 0; /*0x6da170*/
-  *(this + 871) = 0; /*0x6da176*/
+  this->TacticalClass_field_D90 = 0; /*0x6da164*/
+  this->TacticalClass_field_D98 = 0; /*0x6da16a*/
+  this->TacticalClass_field_D94 = 0; /*0x6da170*/
+  this->TacticalClass_field_D9C = 0; /*0x6da176*/
   return 0; /*0x6da17c*/
 }
 
@@ -7232,7 +7232,7 @@ _DWORD *__stdcall UI_Move(_DWORD *a0, MouseClass *aP1, int a3)
 }
 
 
-// ==== 0x006DA370  nullsub_239  this=unknown  sig=csp ====
+// ==== 0x006DA370  nullsub_239  this=-  sig=csp ====
 void __stdcall nullsub_239(int a1)
 {
   ; /*0x6da370*/
@@ -8877,14 +8877,14 @@ Tactical *__thiscall Tactical::UpdateView(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x006DC4C0  Vector2::Subtract  this=float  sig=csp ====
+// ==== 0x006DC4C0  Vector2::Subtract  this=Vector2  sig=csp ====
 _DWORD *__thiscall Vector2_Subtract(_DWORD *this, _DWORD *a2)
 {
   int v3; // edx
 
-  v3 = *(this + 1); /*0x6dc4cd*/
+  v3 = this->Vector2_field_0x04; /*0x6dc4cd*/
   *this -= *a2; /*0x6dc4d0*/
-  *(this + 1) = v3 - a2[1]; /*0x6dc4d8*/
+  this->Vector2_field_0x04 = v3 - a2[1]; /*0x6dc4d8*/
   return this; /*0x6dc4d7*/
 }
 
@@ -9504,7 +9504,7 @@ VectorClass *__thiscall VectorClass_UDirtyAreaStruct::QueryInterface(_DWORD *Blo
 }
 
 
-// ==== 0x006DCC80  VectorClass_UDirtyAreaStruct::loc_6DCC80  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x006DCC80  VectorClass_UDirtyAreaStruct::loc_6DCC80  this=VectorClass_UDirtyAreaStruct  sig=ida-proto ====
 _DWORD *__thiscall VectorClass_UDirtyAreaStruct::loc_6DCC80(_DWORD *Block, char a2)
 {
   void *v3; // eax
@@ -10178,7 +10178,7 @@ const char *__thiscall ParseScriptActionParams(int this)
 }
 
 
-// ==== 0x006DD8B0  TerrainClass::ProcessUpdate  this=int  sig=csp ====
+// ==== 0x006DD8B0  TerrainClass::ProcessUpdate  this=TerrainClass  sig=csp ====
 char __userpurge TerrainClass::ProcessUpdate@<al>(
         int a1@<ecx>,
         _DWORD *a2@<edi>,

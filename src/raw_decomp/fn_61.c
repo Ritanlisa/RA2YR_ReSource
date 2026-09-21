@@ -97,7 +97,7 @@ LABEL_22:
 }
 
 
-// ==== 0x00610570  DestroyDialogChildWindow  this=unknown  sig=csp ====
+// ==== 0x00610570  DestroyDialogChildWindow  this=-  sig=csp ====
 BOOL __stdcall DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
 {
   void *v2; // eax
@@ -243,7 +243,7 @@ _DWORD *__thiscall sub_6107E0(_DWORD *this)
 }
 
 
-// ==== 0x00610810  sub_610810  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00610810  sub_610810  this=-  sig=ida-proto ====
 char __fastcall sub_610810(int a1, const wchar_t *a2, CoordStruct *a3)
 {
   wchar_t *StringCSF; // eax
@@ -300,7 +300,7 @@ LABEL_8:
 }
 
 
-// ==== 0x00610950  TriggerClass::FindByEventType  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00610950  TriggerClass::FindByEventType  this=TriggerClass  sig=ida-proto ====
 char __fastcall sub_610950(char a1)
 {
   _DWORD *v2; // esi
@@ -438,7 +438,7 @@ LABEL_6:
 }
 
 
-// ==== 0x00610CA0  ComboBoxOwnerDraw::DlgProc  this=VOID_PTR  sig=csp ====
+// ==== 0x00610CA0  ComboBoxOwnerDraw::DlgProc  this=ComboBoxOwnerDraw  sig=csp ====
 LRESULT __stdcall ComboBoxOwnerDraw_DlgProc(HWND hWnd, UINT Msg, HWND wParam, unsigned int lParam)
 {
   UINT v4; // ebp
@@ -1835,7 +1835,7 @@ void __cdecl sub_612930()
 }
 
 
-// ==== 0x00612A60  sub_612A60  this=unknown  sig=csp ====
+// ==== 0x00612A60  sub_612A60  this=-  sig=csp ====
 HGDIOBJ __stdcall sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // esi
@@ -1895,7 +1895,7 @@ LABEL_10:
 }
 
 
-// ==== 0x006137D0  Dialog::TabControlPaint  this=VOID_PTR  sig=csp ====
+// ==== 0x006137D0  Dialog::TabControlPaint  this=Dialog  sig=csp ====
 int __stdcall Dialog::TabControlPaint(int hWnd, int Msg, int wParam, int lParam)
 {
   int v4; // edi
@@ -2318,7 +2318,7 @@ LABEL_43:
 }
 
 
-// ==== 0x00614190  ListBox::EditSubclassProc  this=unknown  sig=csp ====
+// ==== 0x00614190  ListBox::EditSubclassProc  this=ListBox  sig=csp ====
 unsigned int __stdcall ListBox_EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t *lParam)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // esi
@@ -2590,7 +2590,7 @@ LABEL_70:
 }
 
 
-// ==== 0x006149B0  Memory_Helper_6149B0  this=unknown  sig=csp ====
+// ==== 0x006149B0  Memory_Helper_6149B0  this=-  sig=csp ====
 size_t __fastcall Memory_Helper_6149B0(HWND hWnd, WCHAR *a2, int cchWideChar, size_t *a4)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // ebx
@@ -2681,7 +2681,7 @@ LABEL_8:
 }
 
 
-// ==== 0x00614B30  EditControl::WndProc  this=unknown  sig=csp ====
+// ==== 0x00614B30  EditControl::WndProc  this=EditControl  sig=csp ====
 size_t __stdcall EditControl_WndProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t *lParam)
 {
   UINT v4; // ebp
@@ -3022,7 +3022,7 @@ LABEL_70:
 }
 
 
-// ==== 0x006153E0  BinkMovie::WndProc  this=VOID_PTR  sig=csp ====
+// ==== 0x006153E0  BinkMovie::WndProc  this=BinkMovie  sig=csp ====
 int __stdcall BinkMovie_WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
 {
   HWND v4; // ecx
@@ -3730,7 +3730,7 @@ LABEL_34:
 }
 
 
-// ==== 0x006163A0  Checkbox::WndProc  this=VOID_PTR  sig=csp ====
+// ==== 0x006163A0  Checkbox::WndProc  this=Checkbox  sig=csp ====
 LRESULT __stdcall Checkbox_WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lParam)
 {
   _DWORD *v4; // ebp
@@ -3953,7 +3953,7 @@ LABEL_53:
 }
 
 
-// ==== 0x00616980  ButtonOwnerDraw::DlgProc  this=VOID_PTR  sig=csp ====
+// ==== 0x00616980  ButtonOwnerDraw::DlgProc  this=ButtonOwnerDraw  sig=csp ====
 LRESULT __stdcall sub_616980(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
   HWND *v4; // eax
@@ -4358,7 +4358,7 @@ LABEL_80:
 }
 
 
-// ==== 0x00617250  ComboBoxDropDown::WndProc  this=VOID_PTR  sig=csp ====
+// ==== 0x00617250  ComboBoxDropDown::WndProc  this=ComboBoxDropDown  sig=csp ====
 WPARAM __stdcall ComboBoxDropDown::WndProc(HWND hWnd, UINT Msg, signed int wParam, _WORD *lParam)
 {
   signed int v4; // edi
@@ -5688,7 +5688,7 @@ LABEL_289:
 
 
 
-// ==== 0x00618D40  Options::DialogProc  this=VOID_PTR  sig=csp ====
+// ==== 0x00618D40  Options::DialogProc  this=Options  sig=csp ====
 int __stdcall Options::DialogProc(CCINIClass hWnd)
 {
   _DWORD *v1; // eax
@@ -8476,7 +8476,7 @@ LABEL_394:
 
 
 
-// ==== 0x0061D6D0  NetworkLobbyPaintProc  this=VOID_PTR  sig=csp ====
+// ==== 0x0061D6D0  NetworkLobbyPaintProc  this=-  sig=csp ====
 int __stdcall NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   HWND v4; // ebp
@@ -8835,7 +8835,7 @@ int __userpurge GroupLabel::WndProc@<eax>(int a1@<ebx>, int hWnd, int Msg, int w
 }
 
 
-// ==== 0x0061ECA0  RenderDialogSurface  this=VOID_PTR  sig=csp ====
+// ==== 0x0061ECA0  RenderDialogSurface  this=-  sig=csp ====
 int __stdcall RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
   UINT v4; // edi
@@ -8970,7 +8970,7 @@ int __stdcall RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lPa
 }
 
 
-// ==== 0x0061EF70  FormatHotkeyDisplayString  this=int  sig=csp ====
+// ==== 0x0061EF70  FormatHotkeyDisplayString  this=-  sig=csp ====
 int __fastcall FormatHotkeyDisplayString(__int16 a1, #72 *a2)
 {
   int result; // eax

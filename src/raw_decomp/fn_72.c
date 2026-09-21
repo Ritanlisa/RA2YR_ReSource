@@ -491,7 +491,7 @@ void __thiscall ThemeManager::Cleanup(int this)
 }
 
 
-// ==== 0x007207F0  Audio::LoadWAVFiles  this=VOID_PTR  sig=csp ====
+// ==== 0x007207F0  Audio::LoadWAVFiles  this=Audio  sig=csp ====
 char __thiscall Audio::LoadWAVFiles(_DWORD *this)
 {
   int IsSoundEnabled; // eax
@@ -518,17 +518,17 @@ char __thiscall Audio::LoadWAVFiles(_DWORD *this)
         IsSoundEnabled = *(this + 9); /*0x720821*/
         for ( i = 0; i < IsSoundEnabled; ++i ) /*0x720828*/
         {
-          _makepath(Buffer, 0, 0, (const char *)(*(_DWORD *)(*(this + 6) + 4 * i) + 256), g_Str_File__WAV); /*0x720855*/
+          _makepath(Buffer, 0, 0, (const char *)(*(_DWORD *)(this->__pad_018 + 4 * i) + 256), g_Str_File__WAV); /*0x720855*/
           CCFileClass::Construct(v10, Buffer); /*0x720869*/
-          v4 = 4 * i + *(this + 6); /*0x720877*/
+          v4 = 4 * i + this->__pad_018; /*0x720877*/
           *(_BYTE *)(*(_DWORD *)v4 + 650) = CCFileClass::Open(v10, 0); /*0x720881*/
-          if ( *(_BYTE *)(*(_DWORD *)(*(this + 6) + 4 * i) + 650) ) /*0x72088d*/
+          if ( *(_BYTE *)(*(_DWORD *)(this->__pad_018 + 4 * i) + 650) ) /*0x72088d*/
           {
             Struct::ZeroInit32(v9); /*0x72089b*/
             FileClass::Load(v10, 1); /*0x7208a6*/
             if ( ParseWaveFileHeader((int)v10, v9, (#247 *)v8) ) /*0x7208b8*/
             {
-              v5 = (_DWORD *)(4 * i + *(this + 6)); /*0x7208cc*/
+              v5 = (_DWORD *)(4 * i + this->__pad_018); /*0x7208cc*/
               v6 = sub_408560((int)v9, v8[0]) / 0x3E8; /*0x7208dc*/
               HIDWORD(v6) = *v5; /*0x7208e1*/
               v8[1] = v6; /*0x7208e4*/
@@ -549,45 +549,45 @@ char __thiscall Audio::LoadWAVFiles(_DWORD *this)
 }
 
 
-// ==== 0x00720940  ScenarioClass::processEndgame  this=VOID_PTR  sig=csp ====
+// ==== 0x00720940  ScenarioClass::processEndgame  this=ScenarioClass  sig=csp ====
 char *__thiscall ScenarioClass::processEndgame(_DWORD *this, INIClass *aP1)
 {
-  if ( (unsigned int)aP1 >= *(this + 9) ) /*0x720949*/
+  if ( (unsigned int)aP1 >= this->q024 ) /*0x720949*/
     return &stru_830620.__pad_579C[59828]; /*0x720954*/
   else
-    return *(char **)(*(this + 6) + 4 * (_DWORD)aP1); /*0x72094e*/
+    return *(char **)(this->q018 + 4 * (_DWORD)aP1); /*0x72094e*/
 }
 
 
-// ==== 0x00720960  ObjectClass::method  this=int  sig=csp ====
+// ==== 0x00720960  ObjectClass::method  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_720960(_DWORD *this)
 {
   *this = -1; /*0x720965*/
-  *(this + 1) = -1; /*0x720967*/
-  *(this + 2) = -1; /*0x72096a*/
-  *(this + 3) = 255; /*0x72096f*/
-  *((_BYTE *)this + 16) = 0; /*0x720976*/
-  *((_BYTE *)this + 17) = 0; /*0x720979*/
-  *((_BYTE *)this + 18) = 0; /*0x72097c*/
-  *(this + 6) = 0; /*0x72097f*/
-  *(this + 7) = 0; /*0x720982*/
-  *((_BYTE *)this + 32) = 1; /*0x720985*/
-  *((_BYTE *)this + 33) = 0; /*0x720989*/
-  *(this + 5) = &vt_DynamicVectorClass_ThemeControl; /*0x72098c*/
-  *(this + 10) = 10; /*0x720993*/
-  *(this + 9) = 0; /*0x72099a*/
-  *(this + 11) = 0; /*0x72099d*/
+  this->vtable2 = -1; /*0x720967*/
+  this->vtable3 = -1; /*0x72096a*/
+  this->vtable4 = 255; /*0x72096f*/
+  this->q040 = 0; /*0x720976*/
+  this->q044 = 0; /*0x720979*/
+  this->q048 = 0; /*0x72097c*/
+  this->nextArrayIndex = 0; /*0x72097f*/
+  this->referenceCount = 0; /*0x720982*/
+  this->needsRedraw = 1; /*0x720985*/
+  this->hasParachute = 0; /*0x720989*/
+  this->abstractFlags = &vt_DynamicVectorClass_ThemeControl; /*0x72098c*/
+  this->owningHouseIndex = 10; /*0x720993*/
+  this->objectTypeFlags = 0; /*0x72099a*/
+  this->fallRate = 0; /*0x72099d*/
   return this; /*0x7209a0*/
 }
 
 
-// ==== 0x007209B0  AudioSettings::Check  this=VOID_PTR  sig=csp ====
+// ==== 0x007209B0  AudioSettings::Check  this=AudioSettings  sig=csp ====
 int __thiscall sub_7209B0(_DWORD *this, unsigned int a2)
 {
-  if ( a2 >= *(this + 9) ) /*0x7209b9*/
+  if ( a2 >= this->q024 ) /*0x7209b9*/
     return 0; /*0x7209c9*/
   else
-    return *(_DWORD *)(*(this + 6) + 4 * a2) + 512; /*0x7209c1*/
+    return *(_DWORD *)(this->q018 + 4 * a2) + 512; /*0x7209c1*/
 }
 
 
@@ -698,7 +698,7 @@ unsigned int __thiscall Movie::SelectNextBuildableType(int this, AnimClass *aP1)
 }
 
 
-// ==== 0x00720B20  Theme::QueueSong  this=VOID_PTR  sig=csp ====
+// ==== 0x00720B20  Theme::QueueSong  this=Theme  sig=csp ====
 char __thiscall Theme::QueueSong(int this, IUnknown *aP1)
 {
   int IsSoundEnabled; // eax
@@ -844,17 +844,17 @@ LABEL_47:
 }
 
 
-// ==== 0x00720E50  AudioSettings::ComputeTransform  this=VOID_PTR  sig=csp ====
+// ==== 0x00720E50  AudioSettings::ComputeTransform  this=AudioSettings  sig=csp ====
 int __thiscall sub_720E50(_DWORD *this, unsigned int a2)
 {
-  if ( a2 >= *(this + 9) ) /*0x720e59*/
+  if ( a2 >= this->q024 ) /*0x720e59*/
     return 0; /*0x720e6f*/
   else
-    return Math::RoundToInt(*(float *)(*(_DWORD *)(*(this + 6) + 4 * a2) + 644)); /*0x720e67*/
+    return Math::RoundToInt(*(float *)(*(_DWORD *)(this->q018 + 4 * a2) + 644)); /*0x720e67*/
 }
 
 
-// ==== 0x00720EA0  Theme::Stop  this=VOID_PTR  sig=csp ====
+// ==== 0x00720EA0  Theme::Stop  this=Theme  sig=csp ====
 char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
 {
   int IsSoundEnabled; // eax
@@ -873,15 +873,15 @@ char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
       {
         if ( !(_BYTE)aP1 ) /*0x720ed9*/
           goto LABEL_14; /*0x720ed9*/
-        v4 = *(this + 11); /*0x720edb*/
+        v4 = this->audioSample; /*0x720edb*/
         if ( !v4 ) /*0x720ee0*/
           goto LABEL_14; /*0x720ee0*/
         if ( *((_BYTE *)this + 17) && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
-          Audio::Release((_DWORD *)*(this + 11)); /*0x720ef5*/
-        if ( Audio::IsSoundPlaying((_DWORD *)*(this + 11)) != 0 ) /*0x720f04*/
+          Audio::Release((_DWORD *)this->audioSample); /*0x720ef5*/
+        if ( Audio::IsSoundPlaying((_DWORD *)this->audioSample) != 0 ) /*0x720f04*/
         {
           Debug::Log(); /*0x720f14*/
-          v5 = (_DWORD *)*(this + 11); /*0x720f19*/
+          v5 = (_DWORD *)this->audioSample; /*0x720f19*/
           if ( v5 ) /*0x720f21*/
             LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(v5); /*0x720f23*/
           *((_BYTE *)this + 17) = 1; /*0x720f28*/
@@ -890,7 +890,7 @@ char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
         {
 LABEL_14:
           Debug::Log(); /*0x720f37*/
-          v6 = (_DWORD *)*(this + 11); /*0x720f3c*/
+          v6 = (_DWORD *)this->audioSample; /*0x720f3c*/
           if ( v6 ) /*0x720f44*/
             Audio::Release(v6); /*0x720f46*/
         }
@@ -918,7 +918,7 @@ bool __thiscall Theme_IsPlaying(int this)
 }
 
 
-// ==== 0x00721010  SaveGame::VtableDispatch  this=VOID_PTR  sig=csp ====
+// ==== 0x00721010  SaveGame::VtableDispatch  this=SaveGame  sig=csp ====
 int __thiscall sub_721010(void *this, int a2)
 {
   int result; // eax
@@ -930,7 +930,7 @@ int __thiscall sub_721010(void *this, int a2)
 }
 
 
-// ==== 0x00721040  LoadGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x00721040  LoadGame_Start  this=-  sig=csp ====
 int __stdcall sub_721040(int a1)
 {
   int v1; // esi
@@ -1006,7 +1006,7 @@ bool __thiscall RulesClass::IsTypeBuildable(_DWORD *this, TechnoTypeClass *aP1)
 }
 
 
-// ==== 0x00721210  StringList::Find  this=int  sig=csp ====
+// ==== 0x00721210  StringList::Find  this=StringList  sig=csp ====
 int __thiscall StringList_Find(_DWORD *this, const char *a2)
 {
   int v3; // esi
@@ -1027,17 +1027,17 @@ int __thiscall StringList_Find(_DWORD *this, const char *a2)
 }
 
 
-// ==== 0x00721270  ScriptAction::GetArgumentString  this=VOID_PTR  sig=csp ====
+// ==== 0x00721270  ScriptAction::GetArgumentString  this=ScriptAction  sig=csp ====
 ObjectClass *__thiscall ScriptAction::GetArgumentString(_DWORD *this, int a2)
 {
-  if ( a2 < 0 || a2 >= *(this + 9) ) /*0x72127b*/
+  if ( a2 < 0 || a2 >= this->ScriptAction_field_0x24 ) /*0x72127b*/
     return (ObjectClass *)g_Str_none; /*0x721286*/
   else
-    return *(ObjectClass **)(*(this + 6) + 4 * a2); /*0x721280*/
+    return *(ObjectClass **)(this->ScriptAction_field_0x18 + 4 * a2); /*0x721280*/
 }
 
 
-// ==== 0x00721290  TechnoTypeClass::CheckFlag  this=VOID_PTR  sig=csp ====
+// ==== 0x00721290  TechnoTypeClass::CheckFlag  this=TechnoTypeClass  sig=csp ====
 void __thiscall GameSettings::SetScoreVolume(GameSettings *this, int volume)
 {
   MouseClass *result; // eax
@@ -1045,7 +1045,7 @@ void __thiscall GameSettings::SetScoreVolume(GameSettings *this, int volume)
   result = (MouseClass *)volume; /*0x721290*/
   if ( volume >= 255 ) /*0x721299*/
     result = (MouseClass *)255; /*0x72129b*/
-  *((_DWORD *)this + 3) = result; /*0x7212a0*/
+  this->vtable4 = result; /*0x7212a0*/
 }
 
 
@@ -2466,7 +2466,7 @@ void __thiscall sub_722A20(int this)
 }
 
 
-// ==== 0x00722AB0  CellClass::ClearCrateStateForAll  this=int  sig=csp ====
+// ==== 0x00722AB0  CellClass::ClearCrateStateForAll  this=CellClass  sig=csp ====
 int __thiscall sub_722AB0(__int16 *this)
 {
   int result; // eax
@@ -3638,7 +3638,7 @@ int sub_723C80()
 }
 
 
-// ==== 0x00723CA0  ScriptTypeClass::SetField  this=VOID_PTR  sig=csp ====
+// ==== 0x00723CA0  ScriptTypeClass::SetField  this=ScriptTypeClass  sig=csp ====
 char *__thiscall ScriptTypeClass::SetField(_DWORD *this, Color *aP1)
 {
   Color *result; // eax
@@ -3652,7 +3652,7 @@ char *__thiscall ScriptTypeClass::SetField(_DWORD *this, Color *aP1)
     result = aP1; /*0x723cc1*/
     v4 = v5; /*0x723cc5*/
     *this = aP1; /*0x723ccc*/
-    *(this + 1) = v4; /*0x723cce*/
+    this->vtable2 = v4; /*0x723cce*/
   }
   return (char *)result; /*0x723cd1*/
 }
@@ -3697,24 +3697,24 @@ int __thiscall ToggleClass::Construct(
 }
 
 
-// ==== 0x00723EA0  GadgetClass::Show  this=int  sig=csp ====
+// ==== 0x00723EA0  GadgetClass::Show  this=GadgetClass  sig=csp ====
 int __thiscall GadgetClass_Show(_BYTE *this)
 {
   int v1; // eax
 
   v1 = *(_DWORD *)this; /*0x723ea0*/
-  *(this + 45) = 1; /*0x723ea2*/
+  this->q02D = 1; /*0x723ea2*/
   return (*(int (**)(void))(v1 + 72))();
 }
 
 
-// ==== 0x00723EB0  GadgetClass::Hide  this=VOID_PTR  sig=csp ====
+// ==== 0x00723EB0  GadgetClass::Hide  this=GadgetClass  sig=csp ====
 int __thiscall GadgetClass_Hide(_BYTE *this)
 {
   int v1; // eax
 
   v1 = *(_DWORD *)this; /*0x723eb0*/
-  *(this + 45) = 0; /*0x723eb2*/
+  this->q02D = 0; /*0x723eb2*/
   return (*(int (**)(void))(v1 + 72))();
 }
 
@@ -3916,7 +3916,7 @@ char __thiscall Tooltip_Enable(void *this, char a2)
 }
 
 
-// ==== 0x00724200  ObjectClass::HandleToolTipMessage  this=VOID_PTR  sig=csp ====
+// ==== 0x00724200  ObjectClass::HandleToolTipMessage  this=ObjectClass  sig=csp ====
 void __thiscall HandleToolTipMessage(int this, int a2)
 {
   int v3; // edi
@@ -4027,7 +4027,7 @@ LABEL_31:
 LABEL_7:
         if ( *(_DWORD *)(this + 4) ) /*0x724281*/
 LABEL_8:
-          (*(void (__thiscall **)(int, int))(*(_DWORD *)this + 8))(this, this + 24); /*0x72428c*/
+          (*(void (__thiscall **)(int, int))(this->vtable3)(this, this + 24); /*0x72428c*/
         break; /*0x72429b*/
       default:
         return;
@@ -4080,10 +4080,10 @@ int __thiscall sub_724550(_DWORD *this)
 }
 
 
-// ==== 0x00724560  ObjectClass::method  this=VOID_PTR  sig=csp ====
+// ==== 0x00724560  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_724560(_DWORD *this, int a2)
 {
-  *(this + 140) = a2; /*0x724564*/
+  this->onBridge = a2; /*0x724564*/
   return a2; /*0x72456a*/
 }
 
@@ -4478,7 +4478,7 @@ int __thiscall ToolTipManager::_vt02(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00724AD0  ToolTipClass::initString  this=VOID_PTR  sig=csp ====
+// ==== 0x00724AD0  ToolTipClass::initString  this=ToolTipClass  sig=csp ====
 BOOL __thiscall ToolTipClass_InitString(wchar_t *this)
 {
   _DWORD *v2; // eax
@@ -4487,41 +4487,41 @@ BOOL __thiscall ToolTipClass_InitString(wchar_t *this)
   const wchar_t *v5; // edi
   int v6; // edx
 
-  v2 = (_DWORD *)*((_DWORD *)this + 1); /*0x724ad7*/
+  v2 = (_DWORD *)this->ToolTipClass_field_0x04; /*0x724ad7*/
   if ( v2 ) /*0x724adc*/
   {
     v3 = (wchar_t *)v2[5]; /*0x724ae2*/
     if ( v3 ) /*0x724ae7*/
       String = GetStringCSF(v3, 0, MEMORY[0x8449CC], 563); /*0x724b01*/
     else
-      String = (wchar_t *)(*(int (__thiscall **)(wchar_t *, _DWORD))(*(_DWORD *)this + 20))(this, *v2); /*0x724af0*/
+      String = (wchar_t *)(*(int (__thiscall **)(wchar_t *, _DWORD))(this->ToolTipClass_field_0x14)(this, *v2); /*0x724af0*/
     v5 = String; /*0x724b06*/
     if ( String && wcslen(String) ) /*0x724b0d*/
     {
       wcsncpy(this + 20, v5, 0x100u); /*0x724b23*/
-      v6 = *((_DWORD *)this + 4); /*0x724b28*/
-      *((_DWORD *)this + 7) = *((_DWORD *)this + 5); /*0x724b36*/
-      *((_DWORD *)this + 6) = v6; /*0x724b39*/
-      if ( !(*(unsigned __int8 (__thiscall **)(wchar_t *, _DWORD *))(*(_DWORD *)this + 4))(this, (_DWORD *)this + 6) ) /*0x724b3e*/
+      v6 = this->ToolTipClass_field_0x04; /*0x724b28*/
+      this->ToolTipClass_field_0x1C = this->ToolTipClass_field_0x14; /*0x724b36*/
+      this->ToolTipClass_field_0x18 = v6; /*0x724b39*/
+      if ( !(*(unsigned __int8 (__thiscall **)(wchar_t *, _DWORD *))(this->ToolTipClass_field_0x04)(this, (_DWORD *)this + 6) ) /*0x724b3e*/
       {
-        *((_DWORD *)this + 6) = 0; /*0x724b47*/
-        *((_DWORD *)this + 7) = 0; /*0x724b49*/
-        *((_DWORD *)this + 8) = 0; /*0x724b4c*/
-        *((_DWORD *)this + 9) = 0; /*0x724b4f*/
-        *((_DWORD *)this + 1) = 0; /*0x724b54*/
+        this->ToolTipClass_field_0x18 = 0; /*0x724b47*/
+        this->ToolTipClass_field_0x1C = 0; /*0x724b49*/
+        this->ToolTipClass_field_0x08 = 0; /*0x724b4c*/
+        this->ToolTipClass_field_0x24 = 0; /*0x724b4f*/
+        this->ToolTipClass_field_0x04 = 0; /*0x724b54*/
         return 0; /*0x724b5f*/
       }
     }
     else
     {
-      *((_DWORD *)this + 6) = 0; /*0x724b60*/
-      *((_DWORD *)this + 7) = 0; /*0x724b63*/
-      *((_DWORD *)this + 8) = 0; /*0x724b66*/
-      *((_DWORD *)this + 9) = 0; /*0x724b69*/
-      *((_DWORD *)this + 1) = 0; /*0x724b6c*/
+      this->ToolTipClass_field_0x18 = 0; /*0x724b60*/
+      this->ToolTipClass_field_0x1C = 0; /*0x724b63*/
+      this->ToolTipClass_field_0x08 = 0; /*0x724b66*/
+      this->ToolTipClass_field_0x24 = 0; /*0x724b69*/
+      this->ToolTipClass_field_0x04 = 0; /*0x724b6c*/
     }
   }
-  return *((_DWORD *)this + 1) != 0; /*0x724b59*/
+  return this->ToolTipClass_field_0x04 != 0; /*0x724b59*/
 }
 
 
@@ -4553,10 +4553,10 @@ int __stdcall ToolTipManager::_vt05(int a1)
 }
 
 
-// ==== 0x00724C00  Frame::Init  this=VOID_PTR  sig=csp ====
+// ==== 0x00724C00  Frame::Init  this=Frame  sig=csp ====
 BOOL __thiscall sub_724C00(_DWORD *this)
 {
-  return *(this + 1) != 0; /*0x724c0a*/
+  return this->q004 != 0; /*0x724c0a*/
 }
 
 
@@ -5824,31 +5824,31 @@ int __thiscall TriggerClass::Construct(int this, TriggerClass *aP1)
 }
 
 
-// ==== 0x00726250  TriggerClass::HasCrossesHorizontalLineEvent  this=VOID_PTR  sig=csp ====
+// ==== 0x00726250  TriggerClass::HasCrossesHorizontalLineEvent  this=TriggerClass  sig=csp ====
 char __thiscall TriggerClass::HasCrossesHorizontalLineEvent(_DWORD *this)
 {
   int v2; // eax
   _DWORD *v3; // ecx
 
-  v2 = *(this + 10); /*0x726253*/
-  v3 = (_DWORD *)*(this + 9); /*0x726256*/
+  v2 = this->nextTrigger; /*0x726253*/
+  v3 = (_DWORD *)this->buildingType; /*0x726256*/
   if ( !v2 ) /*0x72625b*/
     return HouseClass::HasType25Building(v3); /*0x72627d*/
-  return HouseClass::HasType25Building(v3) || (unsigned __int8)TriggerClass::HasCrossesHorizontalLineEvent(*(this + 10)); /*0x726274*/
+  return HouseClass::HasType25Building(v3) || (unsigned __int8)TriggerClass::HasCrossesHorizontalLineEvent(this->nextTrigger); /*0x726274*/
 }
 
 
-// ==== 0x00726290  TriggerClass::HasCrossesVerticalLineEvent  this=VOID_PTR  sig=csp ====
+// ==== 0x00726290  TriggerClass::HasCrossesVerticalLineEvent  this=TriggerClass  sig=csp ====
 char __thiscall TriggerClass::HasCrossesVerticalLineEvent(_DWORD *this)
 {
   int v2; // eax
   _DWORD *v3; // ecx
 
-  v2 = *(this + 10); /*0x726293*/
-  v3 = (_DWORD *)*(this + 9); /*0x726296*/
+  v2 = this->nextTrigger; /*0x726293*/
+  v3 = (_DWORD *)this->buildingType; /*0x726296*/
   if ( !v2 ) /*0x72629b*/
     return HouseClass::HasType26Building(v3); /*0x7262bd*/
-  return HouseClass::HasType26Building(v3) || (unsigned __int8)TriggerClass::HasCrossesVerticalLineEvent(*(this + 10)); /*0x7262b4*/
+  return HouseClass::HasType26Building(v3) || (unsigned __int8)TriggerClass::HasCrossesVerticalLineEvent(this->nextTrigger); /*0x7262b4*/
 }
 
 
@@ -6164,32 +6164,32 @@ int __stdcall TriggerClass::SaveTrigger(TechnoTypeClass *aP0, int *a1, int aP2)
 }
 
 
-// ==== 0x007268F0  TActionClass::executeAirstrikeAction  this=VOID_PTR  sig=csp ====
+// ==== 0x007268F0  TActionClass::executeAirstrikeAction  this=TActionClass  sig=csp ====
 int __thiscall sub_7268F0(int *this)
 {
-  *((_BYTE *)this + 68) = 1; /*0x7268f0*/
+  this->TActionClass_field_44 = 1; /*0x7268f0*/
   return BuildingClass::ProcessUpgradeEffects(this);
 }
 
 
-// ==== 0x00726900  TActionClass::executeDetonateAction  this=VOID_PTR  sig=csp ====
+// ==== 0x00726900  TActionClass::executeDetonateAction  this=TActionClass  sig=csp ====
 void __thiscall sub_726900(_BYTE *this)
 {
-  *(this + 68) = 0; /*0x726900*/
+  this->TActionClass_field_44 = 0; /*0x726900*/
 }
 
 
-// ==== 0x00726910  Property::GetField11  this=VOID_PTR  sig=csp ====
+// ==== 0x00726910  Property::GetField11  this=Property  sig=csp ====
 int __thiscall Property_GetField11(_DWORD *this)
 {
-  return *(this + 11); /*0x726913*/
+  return this->q02C; /*0x726913*/
 }
 
 
-// ==== 0x00726920  ObjectClass::method  this=VOID_PTR  sig=csp ====
+// ==== 0x00726920  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_726920(_DWORD *this, int a2)
 {
-  *(this + 11) = a2; /*0x726924*/
+  this->fallRate = a2; /*0x726924*/
   return a2; /*0x726927*/
 }
 
@@ -6522,13 +6522,13 @@ int __thiscall sub_726E00(int this)
 }
 
 
-// ==== 0x00726F50  HouseClass::HasType26Building  this=int  sig=csp ====
+// ==== 0x00726F50  HouseClass::HasType26Building  this=HouseClass  sig=csp ====
 char __thiscall HouseClass::HasType26Building(_DWORD *this)
 {
   int v1; // ecx
   char result; // al
 
-  v1 = *(this + 43); /*0x726f50*/
+  v1 = this->psychicDetectionCapacity; /*0x726f50*/
   result = 0; /*0x726f56*/
   if ( v1 ) /*0x726f5a*/
   {
@@ -6544,13 +6544,13 @@ char __thiscall HouseClass::HasType26Building(_DWORD *this)
 }
 
 
-// ==== 0x00726F80  HouseClass::HasType25Building  this=VOID_PTR  sig=csp ====
+// ==== 0x00726F80  HouseClass::HasType25Building  this=HouseClass  sig=csp ====
 char __thiscall HouseClass::HasType25Building(_DWORD *this)
 {
   int v1; // ecx
   char result; // al
 
-  v1 = *(this + 43); /*0x726f80*/
+  v1 = this->psychicDetectionCapacity; /*0x726f80*/
   result = 0; /*0x726f86*/
   if ( v1 ) /*0x726f8a*/
   {
@@ -6566,13 +6566,13 @@ char __thiscall HouseClass::HasType25Building(_DWORD *this)
 }
 
 
-// ==== 0x00726FB0  HouseClass::FindType24  this=int  sig=csp ====
+// ==== 0x00726FB0  HouseClass::FindType24  this=HouseClass  sig=csp ====
 bool __thiscall HouseClass_FindType24(std::codecvt_base **this)
 {
   std::codecvt_base *v1; // ecx
   bool result; // al
 
-  v1 = *(this + 43); /*0x726fb0*/
+  v1 = this->psychicDetectionCapacity; /*0x726fb0*/
   result = 0; /*0x726fb6*/
   if ( !v1 ) /*0x726fba*/
     JUMPOUT(0x726FD0); /*0x726fd0*/
@@ -6593,13 +6593,13 @@ char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_20(std::codecvt_base
 }
 
 
-// ==== 0x00726FE0  HouseClass::FindType15  this=int  sig=csp ====
+// ==== 0x00726FE0  HouseClass::FindType15  this=HouseClass  sig=csp ====
 char __thiscall HouseClass_FindType15(_DWORD *this)
 {
   int v1; // ecx
   char result; // al
 
-  v1 = *(this + 44); /*0x726fe0*/
+  v1 = this->productionFactory_plants; /*0x726fe0*/
   result = 0; /*0x726fe6*/
   if ( v1 ) /*0x726fea*/
   {
@@ -6722,7 +6722,7 @@ char *__fastcall sub_7271D0(int a1)
 }
 
 
-// ==== 0x007271E0  TriggerTypeClass::GetFlags  this=int  sig=csp ====
+// ==== 0x007271E0  TriggerTypeClass::GetFlags  this=TriggerTypeClass  sig=csp ====
 int __thiscall TriggerTypeClass::GetFlags(_DWORD *this)
 {
   int v2; // esi
@@ -6732,18 +6732,18 @@ int __thiscall TriggerTypeClass::GetFlags(_DWORD *this)
   int v6; // eax
   int v7; // ecx
 
-  v2 = *(this + 43); /*0x7271e5*/
+  v2 = this->firstEvent; /*0x7271e5*/
   for ( i = 0; v2; i |= v4 ) /*0x7271ef*/
   {
     v4 = TriggerTypeClass::GetActionCategoryFlags(*(void **)(v2 + 44)); /*0x7271f4*/
     v2 = *(_DWORD *)(v2 + 40); /*0x7271f9*/
   }
-  for ( j = *(this + 44); j; i |= v6 ) /*0x72720a*/
+  for ( j = this->firstAction; j; i |= v6 ) /*0x72720a*/
   {
     v6 = TriggerTypeClass::Dispatch(*(void **)(j + 44)); /*0x72720f*/
     j = *(_DWORD *)(j + 40); /*0x727214*/
   }
-  v7 = *(this + 42); /*0x72721d*/
+  v7 = this->nextTrigger; /*0x72721d*/
   if ( v7 ) /*0x727225*/
     return i | TriggerTypeClass::GetFlags(v7); /*0x72722c*/
   else
@@ -7586,7 +7586,7 @@ void sub_728200()
 }
 
 
-// ==== 0x00728280  InfantryClass::SetMission  this=int  sig=csp ====
+// ==== 0x00728280  InfantryClass::SetMission  this=InfantryClass  sig=csp ====
 int __thiscall sub_728280(char *this)
 {
   int v1; // ebp
@@ -9726,7 +9726,7 @@ char sub_72A9A0()
 }
 
 
-// ==== 0x0072A9C0  Copy8Bytes  this=int  sig=csp ====
+// ==== 0x0072A9C0  Copy8Bytes  this=-  sig=csp ====
 _DWORD *__thiscall Copy8Bytes(AbstractClass *this)
 {
   int *v1; // edx
@@ -9769,7 +9769,7 @@ BOOL __stdcall Rect::Inflate(LPRECT lprc, int dx, int dy)
 }
 
 
-// ==== 0x0072AA10  CubicBezierAdvance  this=unknown  sig=csp ====
+// ==== 0x0072AA10  CubicBezierAdvance  this=-  sig=csp ====
 int __fastcall CubicBezierAdvance(_DWORD *a1, int a2, int a3)
 {
   int v3; // esi
@@ -9882,7 +9882,7 @@ int *__thiscall Display_GetViewport(int *this)
 }
 
 
-// ==== 0x0072AD90  SidebarClass::calcSidebarRect  this=int  sig=csp ====
+// ==== 0x0072AD90  SidebarClass::calcSidebarRect  this=SidebarClass  sig=csp ====
 int *__thiscall sub_72AD90(int *this)
 {
   int *result; // eax
@@ -10034,7 +10034,7 @@ int sub_72B050()
 }
 
 
-// ==== 0x0072B130  WinMainSetup_Setup_72AC40_Setup  this=unknown  sig=csp ====
+// ==== 0x0072B130  WinMainSetup_Setup_72AC40_Setup  this=-  sig=csp ====
 void sub_72B130()
 {
   void *v0; // esi
@@ -10213,7 +10213,7 @@ int sub_72B380()
 }
 
 
-// ==== 0x0072B390  LoadingScreen::ReleaseAnimObjects  this=int  sig=csp ====
+// ==== 0x0072B390  LoadingScreen::ReleaseAnimObjects  this=LoadingScreen  sig=csp ====
 int __thiscall sub_72B390(char *Source)
 {
   if ( MEMORY[0xB0FB88] ) /*0x72b39b*/
@@ -11339,7 +11339,7 @@ int sub_72CE50()
 }
 
 
-// ==== 0x0072CF40  LoadingScreen::Init  this=int  sig=ida-proto ====
+// ==== 0x0072CF40  LoadingScreen::Init  this=LoadingScreen  sig=ida-proto ====
 char LoadingScreen_Init()
 {
   char result; // al
@@ -11481,7 +11481,7 @@ int sub_72D210()
 }
 
 
-// ==== 0x0072D300  CampaignScore::LoadCampaignScoreAssetsGame  this=int  sig=csp ====
+// ==== 0x0072D300  CampaignScore::LoadCampaignScoreAssetsGame  this=CampaignScore  sig=csp ====
 char __thiscall CampaignScore::LoadCampaignScoreAssetsGame(void *this)
 {
   char result; // al
@@ -11586,7 +11586,7 @@ int VtableStub_72D450()
 }
 
 
-// ==== 0x0072D460  CampaignScore::LoadScreenAssets  this=VOID_PTR  sig=csp ====
+// ==== 0x0072D460  CampaignScore::LoadScreenAssets  this=CampaignScore  sig=csp ====
 void *__thiscall sub_72D460(void *this)
 {
   void *result; // eax
@@ -11646,7 +11646,7 @@ void *__thiscall sub_72D460(void *this)
 }
 
 
-// ==== 0x0072D730  Game::LoadMultiplayerScoreAssets  this=int  sig=csp ====
+// ==== 0x0072D730  Game::LoadMultiplayerScoreAssets  this=Game  sig=csp ====
 char __thiscall Game::LoadMultiplayerScoreAssets(void *this)
 {
   char result; // al
@@ -11727,7 +11727,7 @@ int sub_72D820()
 }
 
 
-// ==== 0x0072D830  Game::shutdownGame  this=VOID_PTR  sig=csp ====
+// ==== 0x0072D830  Game::shutdownGame  this=Game  sig=csp ====
 void *__thiscall sub_72D830(void *this)
 {
   void *result; // eax
@@ -12116,7 +12116,7 @@ int sub_72E2C0()
 }
 
 
-// ==== 0x0072E2D0  DrawScoreScreenStats  this=int  sig=csp ====
+// ==== 0x0072E2D0  DrawScoreScreenStats  this=-  sig=csp ====
 int __fastcall DrawScoreScreenStats(ConvertClass *aP0, int a2)
 {
   ObjectClass *result; // eax
@@ -12198,7 +12198,7 @@ int __fastcall DrawScoreScreenStats(ConvertClass *aP0, int a2)
 }
 
 
-// ==== 0x0072E450  RenderScoreScreen  this=int  sig=csp ====
+// ==== 0x0072E450  RenderScoreScreen  this=-  sig=csp ====
 void __fastcall RenderScoreScreen(ConvertClass *a1, int *a2, char a3)
 {
   int v5; // ecx
@@ -12384,7 +12384,7 @@ void __fastcall RenderScoreScreen(ConvertClass *a1, int *a2, char a3)
 }
 
 
-// ==== 0x0072E730  UI_Draw_72E730  this=int  sig=csp ====
+// ==== 0x0072E730  UI_Draw_72E730  this=-  sig=csp ====
 void __fastcall UI_Draw_72E730(ConvertClass *aP0, int *a1, int a3, int aP2, int a5)
 {
   int v5; // esi
@@ -12450,7 +12450,7 @@ void __fastcall UI_Draw_72E730(ConvertClass *aP0, int *a1, int a3, int aP2, int 
 }
 
 
-// ==== 0x0072E820  Render_Draw  this=int  sig=csp ====
+// ==== 0x0072E820  Render_Draw  this=-  sig=csp ====
 void __fastcall Render_Draw(ConvertClass *a1, int *a2, char a3)
 {
   RenderScoreScreen(a1, a2, a3); /*0x72e82b*/
@@ -12463,7 +12463,7 @@ void __fastcall Render_Draw(ConvertClass *a1, int *a2, char a3)
 }
 
 
-// ==== 0x0072E860  UI_Draw_72E860  this=int  sig=csp ====
+// ==== 0x0072E860  UI_Draw_72E860  this=-  sig=csp ====
 void __fastcall UI_Draw_72E860(int a1, ConvertClass *a2)
 {
   int v2; // [esp+8h] [ebp-8h] BYREF
@@ -12493,7 +12493,7 @@ void __fastcall UI_Draw_72E860(int a1, ConvertClass *a2)
 }
 
 
-// ==== 0x0072E8C0  UI_Draw_72E8C0  this=int  sig=csp ====
+// ==== 0x0072E8C0  UI_Draw_72E8C0  this=-  sig=csp ====
 void __fastcall UI_Draw_72E8C0(int a1, ConvertClass *a2)
 {
   int v2; // [esp+8h] [ebp-8h] BYREF
@@ -12523,7 +12523,7 @@ void __fastcall UI_Draw_72E8C0(int a1, ConvertClass *a2)
 }
 
 
-// ==== 0x0072E920  UI_Draw_72E920  this=int  sig=csp ====
+// ==== 0x0072E920  UI_Draw_72E920  this=-  sig=csp ====
 void __fastcall UI_Draw_72E920(int a1, ConvertClass *a2)
 {
   int v2; // edi
@@ -13100,7 +13100,7 @@ char sub_72F430()
 }
 
 
-// ==== 0x0072F440  Game::InitializeToolTipColor  this=VOID_PTR  sig=csp ====
+// ==== 0x0072F440  Game::InitializeToolTipColor  this=Game  sig=csp ====
 char __thiscall Game::InitializeToolTipColor(void *this)
 {
   char result; // al
@@ -13199,7 +13199,7 @@ int sub_72F530()
 }
 
 
-// ==== 0x0072F540  RenderCreditsScreen  this=int  sig=csp ====
+// ==== 0x0072F540  RenderCreditsScreen  this=-  sig=csp ====
 void __fastcall RenderCreditsScreen(int a1, ConvertClass *a2, char a3)
 {
   int v5; // ebp
@@ -13603,7 +13603,7 @@ int Sides::MixFileYuriFiles3()
 }
 
 
-// ==== 0x0072FC60  SetupScreenBuffers  this=int  sig=ida-proto ====
+// ==== 0x0072FC60  SetupScreenBuffers  this=-  sig=ida-proto ====
 _DWORD *__fastcall Screen_SetupBuffers(int a1, int a2)
 {
   __int16 *v3; // eax

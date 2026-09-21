@@ -135,14 +135,14 @@ LABEL_14:
 }
 
 
-// ==== 0x005402B0  ObjectClass::Network_Init_5402B0  this=VOID_PTR  sig=csp ====
+// ==== 0x005402B0  ObjectClass::Network_Init_5402B0  this=ObjectClass  sig=csp ====
 int __thiscall sub_5402B0(_DWORD *this, int a2)
 {
   int result; // eax
 
   result = unk_AA05A4; /*0x5402b0*/
   if ( unk_AA05A4 ) /*0x5402b7*/
-    *(this + 49) = 0; /*0x5402b9*/
+    this->q0C4 = 0; /*0x5402b9*/
   return result; /*0x5402c3*/
 }
 
@@ -872,7 +872,7 @@ int __thiscall IPXManagerClass::_vt18(_DWORD *this, int a2, int a3, int a4)
 }
 
 
-// ==== 0x00540DC0  SessionClass::initLAN  this=VOID_PTR  sig=csp ====
+// ==== 0x00540DC0  SessionClass::initLAN  this=SessionClass  sig=csp ====
 int __thiscall SessionClass::initLAN(int this, int a2, #72 *Source, _DWORD *a4)
 {
   void *v6; // eax
@@ -954,7 +954,7 @@ int __thiscall sub_540E70(int this)
 }
 
 
-// ==== 0x00540F00  Network::sendData  this=VOID_PTR  sig=csp ====
+// ==== 0x00540F00  Network::sendData  this=Network  sig=csp ====
 int __thiscall Network::sendData(int this, AnimClass *aP1)
 {
   int v3; // ecx
@@ -1020,14 +1020,14 @@ int __thiscall Network::GetConnectionSpeed(_DWORD *this, CellStruct *aP1)
 }
 
 
-// ==== 0x00540FC0  Network::GetClass  this=VOID_PTR  sig=csp ====
+// ==== 0x00540FC0  Network::GetClass  this=Network  sig=csp ====
 int __thiscall Network_GetClass(int *this, int a2)
 {
   int v2; // esi
   int v3; // eax
   _DWORD *i; // edx
 
-  v2 = *(this + 17); /*0x540fc2*/
+  v2 = this->Network_field_0x44; /*0x540fc2*/
   v3 = 0; /*0x540fc5*/
   if ( v2 <= 0 ) /*0x540fca*/
     return 0; /*0x540fe2*/
@@ -1040,14 +1040,14 @@ int __thiscall Network_GetClass(int *this, int a2)
 }
 
 
-// ==== 0x00541000  Network::FindPlayerByID  this=VOID_PTR  sig=csp ====
+// ==== 0x00541000  Network::FindPlayerByID  this=Network  sig=csp ====
 int __thiscall Network::FindPlayerByID(int *this, DynamicVector *aP1)
 {
   int v2; // esi
   int v3; // eax
   int *i; // edx
 
-  v2 = *(this + 17); /*0x541002*/
+  v2 = this->Network_field_0x44; /*0x541002*/
   v3 = 0; /*0x541005*/
   if ( v2 <= 0 ) /*0x54100a*/
     return 0; /*0x541022*/
@@ -1120,7 +1120,7 @@ LABEL_5:
 }
 
 
-// ==== 0x005410F0  Network::SendMessage  this=VOID_PTR  sig=csp ====
+// ==== 0x005410F0  Network::SendMessage  this=Network  sig=csp ====
 int __thiscall Network_SendMessage(int this, int a2, int a3, int a4, int a5, int a6, int a7)
 {
   int v8; // edi
@@ -1202,7 +1202,7 @@ int __thiscall sub_541170(int this, int a2, int a3, int a4, int a5)
 }
 
 
-// ==== 0x00541260  Network::SendToPlayer  this=VOID_PTR  sig=csp ====
+// ==== 0x00541260  Network::SendToPlayer  this=Network  sig=csp ====
 int __thiscall Network_SendToPlayer(int this, int a2, int a3, int a4, wchar_t *String2)
 {
   int v6; // esi
@@ -1254,7 +1254,7 @@ int __thiscall Network_SendToPlayer(int this, int a2, int a3, int a4, wchar_t *S
 }
 
 
-// ==== 0x00541370  Network::Send  this=VOID_PTR  sig=csp ====
+// ==== 0x00541370  Network::Send  this=Network  sig=csp ====
 int __thiscall Network::Send(int this, int a2, int a3, TechnoTypeClass *aP3, int a5)
 {
   if ( *(_BYTE *)(this + 4) && *(_BYTE *)(this + 5) ) /*0x541377*/
@@ -1269,7 +1269,7 @@ int __thiscall Network::Send(int this, int a2, int a3, TechnoTypeClass *aP3, int
 }
 
 
-// ==== 0x005413B0  Network::SendPacketThunk  this=VOID_PTR  sig=csp ====
+// ==== 0x005413B0  Network::SendPacketThunk  this=Network  sig=csp ====
 int __thiscall Network::SendPacketThunk(int this, int a2, int a3, int a4, int a5, int a6, int a7)
 {
   if ( *(_BYTE *)(this + 4) && *(_BYTE *)(this + 5) ) /*0x5413b7*/
@@ -1286,7 +1286,7 @@ int __thiscall Network::SendPacketThunk(int this, int a2, int a3, int a4, int a5
 }
 
 
-// ==== 0x005413F0  Network::receiveData  this=VOID_PTR  sig=csp ====
+// ==== 0x005413F0  Network::receiveData  this=Network  sig=csp ====
 char __thiscall sub_5413F0(int this, int a2)
 {
   char result; // al
@@ -1302,7 +1302,7 @@ char __thiscall sub_5413F0(int this, int a2)
 }
 
 
-// ==== 0x00541410  Network::SendPacket  this=VOID_PTR  sig=csp ====
+// ==== 0x00541410  Network::SendPacket  this=Network  sig=csp ====
 int __thiscall Network_SendPacket(int this, int a2, int a3, unsigned __int8 a4)
 {
   int v5; // ecx
@@ -1325,7 +1325,7 @@ int __thiscall Network_SendPacket(int this, int a2, int a3, unsigned __int8 a4)
 }
 
 
-// ==== 0x00541480  Network::SendPacketThunk2  this=VOID_PTR  sig=csp ====
+// ==== 0x00541480  Network::SendPacketThunk2  this=Network  sig=csp ====
 int __thiscall Network::SendPacketThunk2(int this, int a2, int a3, int a4, int a5)
 {
   if ( *(_BYTE *)(this + 4) && *(_BYTE *)(this + 5) ) /*0x541487*/
@@ -2006,14 +2006,14 @@ LABEL_92:
 }
 
 
-// ==== 0x00542280  EventClass::deserializeEvent  this=VOID_PTR  sig=csp ====
+// ==== 0x00542280  EventClass::deserializeEvent  this=EventClass  sig=csp ====
 int __thiscall EventClass::deserializeEvent(_DWORD *this, int a2, IUnknown *aP2)
 {
   int result; // eax
   int *v5; // edx
 
   result = (*(int (__thiscall **)(_DWORD *, int))(*this + 24))(this, a2); /*0x54228c*/
-  if ( result != -1 && result < *(this + 17) ) /*0x542297*/
+  if ( result != -1 && result < this->EventClass_field_0x44 ) /*0x542297*/
   {
     v5 = (int *)(*(this + result + 10) + 76); /*0x5422a1*/
     *v5 = aP2->field_0; /*0x5422a6*/
@@ -2159,7 +2159,7 @@ int __thiscall IPXManagerClass::_vt10(char *this, int a2)
 }
 
 
-// ==== 0x00542430  Network::GetField  this=VOID_PTR  sig=csp ====
+// ==== 0x00542430  Network::GetField  this=Network  sig=csp ====
 int __thiscall Network::GetField(_WORD *this, __int16 a2)
 {
   int result; // eax
@@ -2168,7 +2168,7 @@ int __thiscall Network::GetField(_WORD *this, __int16 a2)
   LOWORD(result) = a2; /*0x542430*/
   LOBYTE(v3) = HIBYTE(a2); /*0x542437*/
   HIBYTE(v3) = a2; /*0x542439*/
-  *(this + 17) = v3; /*0x54243b*/
+  this->Network_field_0x44 = v3; /*0x54243b*/
   return result; /*0x54243f*/
 }
 
@@ -2215,12 +2215,12 @@ int __thiscall IPXManagerClass::_vt22(_DWORD *this, int a2)
 }
 
 
-// ==== 0x005424C0  Network::GetLobbyStatus  this=VOID_PTR  sig=csp ====
+// ==== 0x005424C0  Network::GetLobbyStatus  this=Network  sig=csp ====
 int __thiscall Network_GetLobbyStatus(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 18); /*0x5424c0*/
+  v1 = this->Network_field_0x48; /*0x5424c0*/
   if ( v1 ) /*0x5424c5*/
     return CellClass::GetBridgeIndex(*(_DWORD *)(v1 + 4)); /*0x5424ca*/
   else
@@ -2228,12 +2228,12 @@ int __thiscall Network_GetLobbyStatus(_DWORD *this)
 }
 
 
-// ==== 0x00542500  Network::updateLatency  this=int  sig=csp ====
+// ==== 0x00542500  Network::updateLatency  this=Network  sig=csp ====
 int __thiscall sub_542500(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 20); /*0x542500*/
+  v1 = this->Network_field_0x50; /*0x542500*/
   if ( v1 ) /*0x542505*/
     return CellClass::GetBridgeIndex(*(_DWORD **)(v1 + 4)); /*0x54250a*/
   else
@@ -2299,7 +2299,7 @@ int __thiscall IPXManagerClass::_vt23(int *this)
 }
 
 
-// ==== 0x00542620  ScoreBoard::Render  this=int  sig=csp ====
+// ==== 0x00542620  ScoreBoard::Render  this=ScoreBoard  sig=csp ====
 int __thiscall ScoreBoard::Render(CampaignScore *this)
 {
   CampaignScore *v1; // edi
@@ -2799,13 +2799,13 @@ LABEL_12:
 }
 
 
-// ==== 0x00542FC0  ObjectClass::Network_Init_542FC0  this=VOID_PTR  sig=csp ====
+// ==== 0x00542FC0  ObjectClass::Network_Init_542FC0  this=ObjectClass  sig=csp ====
 int __thiscall sub_542FC0(_DWORD *this, int a2)
 {
   _DWORD *v2; // ecx
   int result; // eax
 
-  v2 = (_DWORD *)*(this + 18); /*0x542fc0*/
+  v2 = (_DWORD *)this->q048; /*0x542fc0*/
   if ( v2 ) /*0x542fc5*/
     return Network_Init_5402B0(v2, a2); /*0x542fcc*/
   return result; /*0x542fd1*/
@@ -2833,12 +2833,12 @@ void __stdcall IPXManagerClass::StubReturnFalse(int a1, int a2)
 }
 
 
-// ==== 0x00543050  Network::SetPlayerCoords  this=VOID_PTR  sig=csp ====
+// ==== 0x00543050  Network::SetPlayerCoords  this=Network  sig=csp ====
 _DWORD *__thiscall Network::SetPlayerCoords(_DWORD *this, IPXManagerClass *aP1)
 {
   _DWORD *result; // eax
 
-  result = (_DWORD *)*(this + 19); /*0x543050*/
+  result = (_DWORD *)this->Network_field_0x4C; /*0x543050*/
   if ( result ) /*0x543055*/
   {
     result += 19; /*0x54305b*/
@@ -2849,37 +2849,37 @@ _DWORD *__thiscall Network::SetPlayerCoords(_DWORD *this, IPXManagerClass *aP1)
 }
 
 
-// ==== 0x00543080  Network::Disconnect  this=VOID_PTR  sig=csp ====
+// ==== 0x00543080  Network::Disconnect  this=Network  sig=csp ====
 int __thiscall Network_Disconnect(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 18); /*0x543080*/
+  result = this->Network_field_0x48; /*0x543080*/
   if ( result ) /*0x543085*/
     *(_BYTE *)(result + 200) = 0; /*0x543087*/
   return result; /*0x54308e*/
 }
 
 
-// ==== 0x00543090  Connection::Close  this=VOID_PTR  sig=csp ====
+// ==== 0x00543090  Connection::Close  this=Connection  sig=csp ====
 int __thiscall Connection_Close(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 18); /*0x543090*/
+  result = this->Connection_field_0x48; /*0x543090*/
   if ( result ) /*0x543095*/
     *(_BYTE *)(result + 200) = 1; /*0x543097*/
   return result; /*0x54309e*/
 }
 
 
-// ==== 0x005430C0  ObjectClass::StartGameWOL_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x005430C0  ObjectClass::StartGameWOL_Start  this=ObjectClass  sig=csp ====
 int __thiscall sub_5430C0(_DWORD *this, int a2)
 {
   int v2; // ecx
   int result; // eax
 
-  v2 = *(this + 18); /*0x5430c0*/
+  v2 = this->q048; /*0x5430c0*/
   if ( v2 ) /*0x5430c5*/
     return (*(int (__thiscall **)(int, int))(*(_DWORD *)v2 + 68))(v2, a2); /*0x5430ce*/
   return result; /*0x5430d1*/
@@ -3830,7 +3830,7 @@ int __thiscall sub_544A70(int this)
 }
 
 
-// ==== 0x00544BE0  House::LookupObject  this=int  sig=csp ====
+// ==== 0x00544BE0  House::LookupObject  this=House  sig=csp ====
 int __thiscall sub_544BE0(void *this, int a2)
 {
   _DWORD *v2; // eax
@@ -3844,12 +3844,12 @@ int __thiscall sub_544BE0(void *this, int a2)
 }
 
 
-// ==== 0x00544C20  House::LoadMapFileData  this=int  sig=csp ====
+// ==== 0x00544C20  House::LoadMapFileData  this=House  sig=csp ====
 bool __thiscall sub_544C20(_DWORD *this, int a2, char a3)
 {
   _DWORD *v4; // eax
 
-  if ( a3 && !*(this + 41) && *((_BYTE *)this + 756) ) /*0x544c35*/
+  if ( a3 && !this->House_field_0x29 && *((_BYTE *)this + 756) ) /*0x544c35*/
     MapClass::LoadFileData((int)this); /*0x544c3f*/
   v4 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 156))(this); /*0x544c48*/
   return v4 && a2 < *v4 * v4[1] && v4[a2 + 4]; /*0x544c50*/
@@ -3909,14 +3909,14 @@ void nullsub_155()
 }
 
 
-// ==== 0x00544E00  ObjectClass::Map_Get  this=int  sig=csp ====
+// ==== 0x00544E00  ObjectClass::Map_Get  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_544E00(_DWORD *this, int a2)
 {
   int v2; // esi
   int v3; // edx
   _DWORD *result; // eax
 
-  v2 = *(this + 188); /*0x544e05*/
+  v2 = this->__pad_BC0; /*0x544e05*/
   v3 = a2; /*0x544e0c*/
   if ( a2 > v2 - 1 ) /*0x544e13*/
     v3 = a2 % v2; /*0x544e16*/
@@ -3957,7 +3957,7 @@ int __fastcall MIXFile_AccumulateIndex(int a1)
 }
 
 
-// ==== 0x00544E70  CreateSurfaceClassPrimary  this=int  sig=csp ====
+// ==== 0x00544E70  CreateSurfaceClassPrimary  this=-  sig=csp ====
 int __fastcall SurfaceClass_CreatePrimary(int a1, int a2, int a3)
 {
   int result; // eax
@@ -4023,14 +4023,14 @@ LABEL_14:
 }
 
 
-// ==== 0x00544FF0  ReturnFalse2  this=int  sig=ida-proto ====
+// ==== 0x00544FF0  ReturnFalse2  this=-  sig=ida-proto ====
 char ReturnFalse2()
 {
   return 0; /*0x544ff2*/
 }
 
 
-// ==== 0x00545000  TheatreClass::InitView  this=VOID_PTR  sig=csp ====
+// ==== 0x00545000  TheatreClass::InitView  this=TheatreClass  sig=csp ====
 int TheatreClass_InitView()
 {
   int v0; // edx
@@ -4109,7 +4109,7 @@ int TheatreClass_InitView()
 }
 
 
-// ==== 0x00545150  LoadTerrainTypeClassTheatre  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00545150  LoadTerrainTypeClassTheatre  this=-  sig=ida-proto ====
 char *__fastcall LoadTerrainTypeClassTheatre(AbstractClass *a1, char a2)
 {
   _DWORD *v3; // ebp
@@ -5500,14 +5500,14 @@ int ResetAllTechnoField776()
 }
 
 
-// ==== 0x00547150  TechnoClass::GetTileAnimationData  this=int  sig=csp ====
+// ==== 0x00547150  TechnoClass::GetTileAnimationData  this=TechnoClass  sig=csp ====
 char __thiscall sub_547150(void *this, int a2, _DWORD *a3, _DWORD *a4)
 {
   _DWORD *v4; // eax
   int v5; // edx
   int v6; // ecx
 
-  v4 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this); /*0x547152*/
+  v4 = (_DWORD *)(*(int (__thiscall **)(void *))(this->location)(this); /*0x547152*/
   if ( !v4 ) /*0x54715c*/
     return 0; /*0x5471a0*/
   v5 = v4[a2 % (*v4 * v4[1]) + 4]; /*0x547174*/
@@ -5523,13 +5523,13 @@ char __thiscall sub_547150(void *this, int a2, _DWORD *a3, _DWORD *a4)
 }
 
 
-// ==== 0x005471B0  HouseClass::GetCameoTypeIndex  this=int  sig=csp ====
+// ==== 0x005471B0  HouseClass::GetCameoTypeIndex  this=HouseClass  sig=csp ====
 int __thiscall HouseClass::GetCameoTypeIndex(void *this, int a2)
 {
   _DWORD *v2; // eax
   int v3; // ecx
 
-  v2 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this); /*0x5471b2*/
+  v2 = (_DWORD *)(*(int (__thiscall **)(void *))(this->secretLabsCount)(this); /*0x5471b2*/
   if ( v2 && (v3 = v2[a2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x5471d3*/
     return *(char *)(v3 + 42); /*0x5471d5*/
   else
@@ -5537,7 +5537,7 @@ int __thiscall HouseClass::GetCameoTypeIndex(void *this, int a2)
 }
 
 
-// ==== 0x005471F0  CellClass::GetTerrainFlag  this=int  sig=csp ====
+// ==== 0x005471F0  CellClass::GetTerrainFlag  this=CellClass  sig=csp ====
 char __thiscall CellClass_GetTerrainFlag(void *this, int a2)
 {
   _DWORD *v2; // eax
@@ -5553,7 +5553,7 @@ char __thiscall CellClass_GetTerrainFlag(void *this, int a2)
 }
 
 
-// ==== 0x00547230  TacticalClass::DrawCellOverlay  this=int  sig=csp ====
+// ==== 0x00547230  TacticalClass::DrawCellOverlay  this=TacticalClass  sig=csp ====
 void __thiscall TacticalClass::DrawCellOverlay(
         int this,
         int a2,
@@ -6291,7 +6291,7 @@ int __thiscall IsometricTileTypeClass::_vt10(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x00549E50  ObjectClass::Map_Get_549E50  this=int  sig=csp ====
+// ==== 0x00549E50  ObjectClass::Map_Get_549E50  this=ObjectClass  sig=csp ====
 int __thiscall sub_549E50(int this, int a2, int a3)
 {
   if ( !*(_DWORD *)(this + 164) && *(_BYTE *)(this + 756) ) /*0x549e5d*/
@@ -6456,13 +6456,13 @@ int __thiscall TerrainClass_InitTheatre(int *this)
 }
 
 
-// ==== 0x0054A120  Rect::Set4  this=VOID_PTR  sig=csp ====
+// ==== 0x0054A120  Rect::Set4  this=Rect  sig=csp ====
 _DWORD *__thiscall sub_54A120(_DWORD *this, int a2, int a3, int a4, int a5)
 {
   *this = a2; /*0x54a12a*/
-  *(this + 1) = a3; /*0x54a130*/
-  *(this + 2) = a4; /*0x54a137*/
-  *(this + 3) = a5; /*0x54a13a*/
+  this->Y = a3; /*0x54a130*/
+  this->Width = a4; /*0x54a137*/
+  this->Height = a5; /*0x54a13a*/
   return this; /*0x54a13d*/
 }
 
@@ -7057,7 +7057,7 @@ int sub_54A8A0()
 }
 
 
-// ==== 0x0054A900  SetBitfieldBit  this=VOID_PTR  sig=csp ====
+// ==== 0x0054A900  SetBitfieldBit  this=-  sig=csp ====
 _BYTE *__fastcall Bitfield_SetBit(int a1, int a2, int a3)
 {
   char v3; // bl
@@ -7075,7 +7075,7 @@ _BYTE *__fastcall Bitfield_SetBit(int a1, int a2, int a3)
 }
 
 
-// ==== 0x0054A950  BitArray::TestBit  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0054A950  BitArray::TestBit  this=BitArray  sig=ida-proto ====
 BOOL __fastcall BitArray::TestBit(int a1, int a2)
 {
   return (*(_BYTE *)(a2 / 8 + a1) & (unsigned __int8)(1 << (a2 % 8))) != 0; /*0x54a975*/
@@ -9332,7 +9332,7 @@ LABEL_50:
 }
 
 
-// ==== 0x0054D6D0  JumpjetLocomotionClass::ProcessLanding  this=VOID_PTR  sig=csp ====
+// ==== 0x0054D6D0  JumpjetLocomotionClass::ProcessLanding  this=JumpjetLocomotionClass  sig=csp ====
 int *__thiscall sub_54D6D0(_DWORD *this, int *a2, _DWORD *a3)
 {
   int v3; // ecx
@@ -9348,7 +9348,7 @@ int *__thiscall sub_54D6D0(_DWORD *this, int *a2, _DWORD *a3)
   int GroundHeight; // [esp+Ch] [ebp-10h]
   int v15[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  v3 = *(this + 3); /*0x54d6d0*/
+  v3 = this->LinkedTo; /*0x54d6d0*/
   if ( v3 && (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) == 1 ) /*0x54d6e7*/
   {
     v4 = Coord::To_Cell(&MEMORY[0x87F7E8], a3); /*0x54d6f7*/
@@ -9756,7 +9756,7 @@ LONG __stdcall JumpjetLocomotionClass::_vt02(volatile LONG *a1)
 }
 
 
-// ==== 0x0054DF70  JumpjetLocomotionClass::ShortFunc_54DF70  this=VOID_PTR  sig=csp ====
+// ==== 0x0054DF70  JumpjetLocomotionClass::ShortFunc_54DF70  this=JumpjetLocomotionClass  sig=csp ====
 BOOL __stdcall JumpjetLocomotionClass::sub_54DF70(int a1)
 {
   return *(_DWORD *)(a1 + 124) != 0; /*0x54df7e*/
@@ -9788,42 +9788,42 @@ JumpjetLocomotionClass *__thiscall JumpjetLocomotionClass::ProcessAttach(int *Bl
 }
 
 
-// ==== 0x0054DFF0  JumpjetLocomotionClass::SmallStub_54DFF0  this=unknown  sig=csp ====
+// ==== 0x0054DFF0  JumpjetLocomotionClass::SmallStub_54DFF0  this=JumpjetLocomotionClass  sig=csp ====
 int __stdcall JumpjetLocomotionClass::sub_54DFF0(int a1, const void *a2, int *a3)
 {
   return JumpjetLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 }
 
 
-// ==== 0x0054E000  JumpjetLocomotionClass::SmallStub_54E000  this=unknown  sig=csp ====
+// ==== 0x0054E000  JumpjetLocomotionClass::SmallStub_54E000  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_54E000(int a1)
 {
   return JumpjetLocomotionClass::AddRef(a1 - 4);
 }
 
 
-// ==== 0x0054E010  JumpjetLocomotionClass::SmallStub_54E010  this=unknown  sig=csp ====
+// ==== 0x0054E010  JumpjetLocomotionClass::SmallStub_54E010  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_54E010(int a1)
 {
   return JumpjetLocomotionClass::Release((volatile LONG *)(a1 - 4));
 }
 
 
-// ==== 0x0054E020  JumpjetLocomotionClass::SmallStub_54E020  this=unknown  sig=csp ====
+// ==== 0x0054E020  JumpjetLocomotionClass::SmallStub_54E020  this=JumpjetLocomotionClass  sig=csp ====
 int __stdcall JumpjetLocomotionClass::sub_54E020(int a1, const void *a2, int *a3)
 {
   return JumpjetLocomotionClass::QueryInterface(a1 - 24, a2, a3);
 }
 
 
-// ==== 0x0054E030  JumpjetLocomotionClass::SmallStub_54E030  this=unknown  sig=csp ====
+// ==== 0x0054E030  JumpjetLocomotionClass::SmallStub_54E030  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_54E030(int a1)
 {
   return JumpjetLocomotionClass::AddRef(a1 - 24);
 }
 
 
-// ==== 0x0054E040  JumpjetLocomotionClass::SmallStub_54E040  this=unknown  sig=csp ====
+// ==== 0x0054E040  JumpjetLocomotionClass::SmallStub_54E040  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_54E040(int a1)
 {
   return JumpjetLocomotionClass::Release((volatile LONG *)(a1 - 24));
@@ -10704,13 +10704,13 @@ void nullsub_157()
 }
 
 
-// ==== 0x0054EE60  NetworkSession::ResetState  this=int  sig=csp ====
+// ==== 0x0054EE60  NetworkSession::ResetState  this=NetworkSession  sig=csp ====
 _DWORD *__thiscall sub_54EE60(_DWORD *this)
 {
   *this = 0; /*0x54ee6a*/
-  *(this + 1) = 0; /*0x54ee6c*/
+  this->NetworkSession_field_0x04 = 0; /*0x54ee6c*/
   *(this + 3) = 0; /*0x54ee6f*/
-  *(this + 4) = 0; /*0x54ee72*/
+  this->NetworkSession_field_0x04 = 0; /*0x54ee72*/
   *(this + 197) = 0; /*0x54ee78*/
   *(this + 198) = 0; /*0x54ee7e*/
   memset(this + 5, 0, 0x100u); /*0x54ee84*/

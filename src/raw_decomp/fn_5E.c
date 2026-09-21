@@ -1565,27 +1565,27 @@ LRESULT sub_5E23A0()
 }
 
 
-// ==== 0x005E23D0  ObjectClass::Network_Check  this=int  sig=csp ====
+// ==== 0x005E23D0  ObjectClass::Network_Check  this=ObjectClass  sig=csp ====
 char __thiscall sub_5E23D0(_DWORD *this, int a2)
 {
   int v2; // edx
   int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x5e23d0*/
+  v2 = this->uniqueId; /*0x5e23d0*/
   v3 = a2; /*0x5e23d3*/
   if ( a2 >= v2 ) /*0x5e23d9*/
     return 0; /*0x5e23fc*/
   v4 = v2 - 1; /*0x5e23db*/
-  *(this + 4) = v4; /*0x5e23de*/
+  this->uniqueId = v4; /*0x5e23de*/
   if ( a2 < v4 ) /*0x5e23e1*/
   {
     do /*0x5e23f4*/
     {
       ++v3; /*0x5e23e7*/
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x5e23eb*/
+      *(_DWORD *)(this->vtable2 + 4 * v3 - 4) = *(_DWORD *)(this->vtable2 + 4 * v3); /*0x5e23eb*/
     }
-    while ( v3 < *(this + 4) ); /*0x5e23f4*/
+    while ( v3 < this->uniqueId ); /*0x5e23f4*/
   }
   return 1; /*0x5e23f9*/
 }
@@ -1753,7 +1753,7 @@ const wchar_t *__thiscall GameSetup::CompareWideString(const wchar_t **this)
 }
 
 
-// ==== 0x005E26C0  Dialog::FindGameUI  this=VOID_PTR  sig=csp ====
+// ==== 0x005E26C0  Dialog::FindGameUI  this=Dialog  sig=csp ====
 int Dialog_FindGameUI()
 {
   int result; // eax
@@ -1945,7 +1945,7 @@ LABEL_23:
 }
 
 
-// ==== 0x005E29A0  UI_Draw  this=VOID_PTR  sig=csp ====
+// ==== 0x005E29A0  UI_Draw  this=-  sig=csp ====
 LRESULT __fastcall UI_Draw(HWND hWnd, wchar_t *Source, DropListClass *Count, LPARAM lParam)
 {
   wchar_t *v5; // eax
@@ -2122,7 +2122,7 @@ LABEL_20:
 }
 
 
-// ==== 0x005E2CD0  ShowDialogConfirm  this=VOID_PTR  sig=csp ====
+// ==== 0x005E2CD0  ShowDialogConfirm  this=-  sig=csp ====
 int __fastcall ShowDialogConfirm(CampaignScore *aP0, int nIDDlgItem, unsigned __int8 (*a3)(), char a4)
 {
   CampaignScore *v4; // ebp
@@ -2200,7 +2200,7 @@ LABEL_18:
 }
 
 
-// ==== 0x005E2E40  sub_5E2E40  this=unknown  sig=csp ====
+// ==== 0x005E2E40  sub_5E2E40  this=-  sig=csp ====
 INT_PTR __stdcall sub_5E2E40(HWND hWnd, UINT a2, WPARAM a3, char *a4)
 {
   INT_PTR result; // eax
@@ -2265,7 +2265,7 @@ int __thiscall Dialog::ShowPlayerName(void *this)
 }
 
 
-// ==== 0x005E2F80  Skirmish_Setup  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x005E2F80  Skirmish_Setup  this=-  sig=ida-proto ====
 int sub_5E2F80()
 {
   int result; // eax
@@ -2653,7 +2653,7 @@ int __thiscall WOLobby_Play(INIClass *this)
 }
 
 
-// ==== 0x005E39C0  ValidateNetworkLobbyHostMap  this=int  sig=csp ====
+// ==== 0x005E39C0  ValidateNetworkLobbyHostMap  this=-  sig=csp ====
 int SendMultiplayerStartSignal()
 {
   int started; // esi
@@ -4534,7 +4534,7 @@ LABEL_13:
 
 
 
-// ==== 0x005E5F10  RehashGenericHashMap  this=int  sig=csp ====
+// ==== 0x005E5F10  RehashGenericHashMap  this=-  sig=csp ====
 void __fastcall RehashGenericHashMap(HWND hWnd, int a2)
 {
   void *v4; // edi
@@ -5396,7 +5396,7 @@ WPARAM __fastcall SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2)
 }
 
 
-// ==== 0x005E7160  ObjectClass::HandleMultiplayerMapSelection  this=VOID_PTR  sig=csp ====
+// ==== 0x005E7160  ObjectClass::HandleMultiplayerMapSelection  this=ObjectClass  sig=csp ====
 char __thiscall HandleMultiplayerMapSelection(HWND this)
 {
   LRESULT v1; // eax
@@ -5555,7 +5555,7 @@ LABEL_32:
 }
 
 
-// ==== 0x005E7460  Scenario::PreGameInit  this=int  sig=ida-proto ====
+// ==== 0x005E7460  Scenario::PreGameInit  this=Scenario  sig=ida-proto ====
 int __thiscall Scenario::PreGameInit(CellStruct *this)
 {
   ObjectClass *v0; // edx
@@ -5578,7 +5578,7 @@ int __thiscall Scenario::PreGameInit(CellStruct *this)
 }
 
 
-// ==== 0x005E74E0  Session::PrepareGame  this=VOID_PTR  sig=csp ====
+// ==== 0x005E74E0  Session::PrepareGame  this=Session  sig=csp ====
 int __thiscall Session::PrepareGame(HWND hWnd)
 {
   ObjectClass *v1; // esi
@@ -6237,7 +6237,7 @@ LABEL_48:
 }
 
 
-// ==== 0x005E84D0  GameConfig::ComputeCRC  this=unknown  sig=csp ====
+// ==== 0x005E84D0  GameConfig::ComputeCRC  this=GameConfig  sig=csp ====
 char *GameConfig_ComputeCRC()
 {
   unsigned int v0; // ebx
@@ -6388,7 +6388,7 @@ LABEL_18:
 }
 
 
-// ==== 0x005E8740  Render_Setup  this=int  sig=ida-proto ====
+// ==== 0x005E8740  Render_Setup  this=-  sig=ida-proto ====
 BOOL __fastcall sub_5E8740(int a1)
 {
   return wcscmp(*(const wchar_t **)(MEMORY[0xA8DA78] + 4 * a1), MEMORY[0xA8D610]) == 0; /*0x5e875b*/
@@ -6405,7 +6405,7 @@ BOOL Settings_CheckString()
 }
 
 
-// ==== 0x005E87A0  LoadNetworkShareStrings  this=unknown  sig=csp ====
+// ==== 0x005E87A0  LoadNetworkShareStrings  this=-  sig=csp ====
 wchar_t *LoadNetworkShareStrings()
 {
   wchar_t *v0; // eax
@@ -6516,7 +6516,7 @@ wchar_t *LoadNetworkShareStrings()
 }
 
 
-// ==== 0x005E8A20  WinMainSetup_Setup_5DB6F0_Setup  this=unknown  sig=csp ====
+// ==== 0x005E8A20  WinMainSetup_Setup_5DB6F0_Setup  this=-  sig=csp ====
 int sub_5E8A20()
 {
   if ( MEMORY[0xAC119C] ) /*0x5e8a2a*/
@@ -6619,7 +6619,7 @@ int Network_InitPlayerSlots()
 }
 
 
-// ==== 0x005E8BF0  Player::FindByName  this=VOID_PTR  sig=csp ====
+// ==== 0x005E8BF0  Player::FindByName  this=Player  sig=csp ====
 wchar_t *__thiscall Player::FindByName(wchar_t *String2)
 {
   int v3; // ebp
@@ -6698,14 +6698,14 @@ int sub_5E8D40()
 }
 
 
-// ==== 0x005E8D90  Network_Handle_5E8D90  this=int  sig=ida-proto ====
+// ==== 0x005E8D90  Network_Handle_5E8D90  this=-  sig=ida-proto ====
 void __fastcall sub_5E8D90(int a1, LPARAM a2)
 {
   *(&MEMORY[0xA8DA90] + a1) = a2; /*0x5e8d90*/
 }
 
 
-// ==== 0x005E8DA0  NetworkShare::GetField  this=int  sig=ida-proto ====
+// ==== 0x005E8DA0  NetworkShare::GetField  this=NetworkShare  sig=ida-proto ====
 int __fastcall NetworkShare::GetField(int a1)
 {
   int result; // eax
@@ -7102,7 +7102,7 @@ INIClass *__thiscall Audio_Helper(void *this)
 }
 
 
-// ==== 0x005E93F0  ObjectClass::IsKnownPointer  this=VOID_PTR  sig=csp ====
+// ==== 0x005E93F0  ObjectClass::IsKnownPointer  this=ObjectClass  sig=csp ====
 BOOL __thiscall IsKnownPointer(wchar_t *this)
 {
   return this /*0x5e9431*/
@@ -7137,7 +7137,7 @@ BOOL __thiscall NetworkLobby::IsValidPlayerName(wchar_t *this)
 }
 
 
-// ==== 0x005E94D0  Hash_Check_5E94D0  this=unknown  sig=csp ====
+// ==== 0x005E94D0  Hash_Check_5E94D0  this=-  sig=csp ====
 int sub_5E94D0()
 {
   int result; // eax
@@ -7182,7 +7182,7 @@ bool NetworkLobby_CheckMinPlayers()
 }
 
 
-// ==== 0x005E9560  GameOption::CheckDuplicate  this=int  sig=csp ====
+// ==== 0x005E9560  GameOption::CheckDuplicate  this=GameOption  sig=csp ====
 char GameOption_CheckDuplicate()
 {
   LPARAM *v0; // eax
@@ -7197,7 +7197,7 @@ char GameOption_CheckDuplicate()
 }
 
 
-// ==== 0x005E9580  ObjectClass::Hash_Check_5E9580  this=VOID_PTR  sig=csp ====
+// ==== 0x005E9580  ObjectClass::Hash_Check_5E9580  this=ObjectClass  sig=csp ====
 char sub_5E9580()
 {
   int v0; // edx
@@ -7276,7 +7276,7 @@ LABEL_13:
 }
 
 
-// ==== 0x005E96A0  NetworkLobby::CheckPlayerNameValid  this=int  sig=csp ====
+// ==== 0x005E96A0  NetworkLobby::CheckPlayerNameValid  this=NetworkLobby  sig=csp ====
 char __thiscall sub_5E96A0(void *this)
 {
   wchar_t **v2; // esi
@@ -7401,7 +7401,7 @@ int Game_ResetReadyStates()
 }
 
 
-// ==== 0x005E98F0  PlayerSlot::IndexToDlgID  this=VOID_PTR  sig=csp ====
+// ==== 0x005E98F0  PlayerSlot::IndexToDlgID  this=PlayerSlot  sig=csp ====
 int __thiscall PlayerSlot_IndexToDlgID(void *this)
 {
   if ( !this ) /*0x5e98f4*/
@@ -7422,7 +7422,7 @@ int __thiscall PlayerSlot_IndexToDlgID(void *this)
 }
 
 
-// ==== 0x005E9950  Dialog::MapPlayerIDToIndex  this=int  sig=csp ====
+// ==== 0x005E9950  Dialog::MapPlayerIDToIndex  this=Dialog  sig=csp ====
 int __thiscall Dialog_MapPlayerIDToIndex(void *this)
 {
   int v2; // eax
@@ -7538,7 +7538,7 @@ int __fastcall Lobby_SelectCountry(HWND a1, void *a2)
 }
 
 
-// ==== 0x005E9C00  AssignPlayerColor  this=int  sig=csp ====
+// ==== 0x005E9C00  AssignPlayerColor  this=-  sig=csp ====
 int __fastcall Player_AssignColor(HWND hDlg, void *nIDDlgItem)
 {
   LRESULT SelectedRaw; // ebx
@@ -7682,7 +7682,7 @@ int __fastcall ProcessNetworkLobbyOption(SessionClass *hDlg, void *nIDDlgItem)
 }
 
 
-// ==== 0x005E9E00  NetworkLobby::InitLobbyDropdowns  this=int  sig=csp ====
+// ==== 0x005E9E00  NetworkLobby::InitLobbyDropdowns  this=NetworkLobby  sig=csp ====
 int __thiscall NetworkLobby::InitLobbyDropdowns(SessionClass *hDlg)
 {
   int i; // ebp
@@ -8269,7 +8269,7 @@ LABEL_40:
 }
 
 
-// ==== 0x005EA8E0  RefreshLobbyAll_Helper_5EA8E0  this=int  sig=ida-proto ====
+// ==== 0x005EA8E0  RefreshLobbyAll_Helper_5EA8E0  this=-  sig=ida-proto ====
 int __fastcall sub_5EA8E0(int a1)
 {
   int v1; // ecx
@@ -8283,7 +8283,7 @@ int __fastcall sub_5EA8E0(int a1)
 }
 
 
-// ==== 0x005EA920  GetPlayerSide  this=int  sig=ida-proto ====
+// ==== 0x005EA920  GetPlayerSide  this=-  sig=ida-proto ====
 int __fastcall sub_5EA920(int a1)
 {
   int result; // eax
@@ -8309,7 +8309,7 @@ int __fastcall sub_5EA920(int a1)
 }
 
 
-// ==== 0x005EA9B0  RefreshLobbyAll_Play  this=int  sig=ida-proto ====
+// ==== 0x005EA9B0  RefreshLobbyAll_Play  this=-  sig=ida-proto ====
 int __fastcall sub_5EA9B0(int a1)
 {
   wchar_t *v1; // eax
@@ -8331,7 +8331,7 @@ int __fastcall sub_5EA9B0(int a1)
 }
 
 
-// ==== 0x005EAA10  RefreshLobbyAll_Get  this=int  sig=ida-proto ====
+// ==== 0x005EAA10  RefreshLobbyAll_Get  this=-  sig=ida-proto ====
 int __fastcall sub_5EAA10(int a1)
 {
   wchar_t *v1; // eax
@@ -8353,7 +8353,7 @@ int __fastcall sub_5EAA10(int a1)
 }
 
 
-// ==== 0x005EAA70  RefreshLobbyAll_Get_5EAA70  this=int  sig=ida-proto ====
+// ==== 0x005EAA70  RefreshLobbyAll_Get_5EAA70  this=-  sig=ida-proto ====
 int __fastcall sub_5EAA70(int a1)
 {
   wchar_t *v1; // eax
@@ -8375,7 +8375,7 @@ int __fastcall sub_5EAA70(int a1)
 }
 
 
-// ==== 0x005EAAD0  ObjectClass::RefreshLobbyAll_Helper_5EAAD0  this=int  sig=csp ====
+// ==== 0x005EAAD0  ObjectClass::RefreshLobbyAll_Helper_5EAAD0  this=ObjectClass  sig=csp ====
 int __thiscall sub_5EAAD0(void *this)
 {
   if ( !this ) /*0x5eaad4*/
@@ -8396,7 +8396,7 @@ int __thiscall sub_5EAAD0(void *this)
 }
 
 
-// ==== 0x005EAB30  ObjectClass::RefreshLobbyAll_Play_5EAB30  this=int  sig=csp ====
+// ==== 0x005EAB30  ObjectClass::RefreshLobbyAll_Play_5EAB30  this=ObjectClass  sig=csp ====
 int __thiscall sub_5EAB30(char *this)
 {
   int *v2; // ebx
@@ -8443,7 +8443,7 @@ int __thiscall sub_5EAB30(char *this)
 }
 
 
-// ==== 0x005EAC00  ObjectClass::RefreshLobbyAll_Get_5EAC00  this=int  sig=csp ====
+// ==== 0x005EAC00  ObjectClass::RefreshLobbyAll_Get_5EAC00  this=ObjectClass  sig=csp ====
 int __thiscall sub_5EAC00(char *this)
 {
   int *v2; // ebx
@@ -8490,7 +8490,7 @@ int __thiscall sub_5EAC00(char *this)
 }
 
 
-// ==== 0x005EACD0  ObjectClass::RefreshLobbyAll_Get_5EACD0  this=int  sig=csp ====
+// ==== 0x005EACD0  ObjectClass::RefreshLobbyAll_Get_5EACD0  this=ObjectClass  sig=csp ====
 int __thiscall sub_5EACD0(char *this)
 {
   int *v2; // ebx
@@ -8537,7 +8537,7 @@ int __thiscall sub_5EACD0(char *this)
 }
 
 
-// ==== 0x005EADA0  ObjectClass::RefreshLobbyAll_Get_5EADA0  this=int  sig=csp ====
+// ==== 0x005EADA0  ObjectClass::RefreshLobbyAll_Get_5EADA0  this=ObjectClass  sig=csp ====
 char __thiscall RefreshLobbyAll_Get_5EADA0(SessionClass *hDlg)
 {
   SessionClass *v2; // edi
@@ -8589,7 +8589,7 @@ char __thiscall RefreshLobbyAll_Get_5EADA0(SessionClass *hDlg)
 }
 
 
-// ==== 0x005EAE40  ObjectClass::RefreshLobbyAll_Setup  this=int  sig=csp ====
+// ==== 0x005EAE40  ObjectClass::RefreshLobbyAll_Setup  this=ObjectClass  sig=csp ====
 bool __thiscall RefreshLobbyAll_Setup(SessionClass *hDlg)
 {
   char *v2; // edi
@@ -8641,7 +8641,7 @@ bool __thiscall RefreshLobbyAll_Setup(SessionClass *hDlg)
 }
 
 
-// ==== 0x005EAEE0  ObjectClass::RefreshLobbyAll_Play_5EAEE0  this=int  sig=csp ====
+// ==== 0x005EAEE0  ObjectClass::RefreshLobbyAll_Play_5EAEE0  this=ObjectClass  sig=csp ====
 const wchar_t *__thiscall sub_5EAEE0(HWND this)
 {
   const wchar_t *result; // eax
@@ -8766,7 +8766,7 @@ LABEL_8:
 }
 
 
-// ==== 0x005EB060  Lobby::UpdatePlayerLabels  this=int  sig=csp ====
+// ==== 0x005EB060  Lobby::UpdatePlayerLabels  this=Lobby  sig=csp ====
 void __thiscall Lobby_UpdatePlayerLabels(HWND this)
 {
   int v1; // esi
@@ -9147,7 +9147,7 @@ char __thiscall NetworkLobby::SetupPlayerSlotControls(HWND hDlg)
 }
 
 
-// ==== 0x005EB7B0  UpdateMultiplayerLobbySlots  this=int  sig=csp ====
+// ==== 0x005EB7B0  UpdateMultiplayerLobbySlots  this=-  sig=csp ====
 int __fastcall UpdateMultiplayerLobbySlots(HWND hDlg, char *a2, int nIDDlgItem)
 {
   int result; // eax
@@ -9489,7 +9489,7 @@ void __fastcall DisableCampaignSlots(HWND hDlg, int a2)
 }
 
 
-// ==== 0x005EBDD0  UI_Setup_5EBDD0  this=int  sig=csp ====
+// ==== 0x005EBDD0  UI_Setup_5EBDD0  this=-  sig=csp ====
 void __fastcall UI_Setup_5EBDD0(SkirmishDialog *aP0, int a2, int a3, int a4)
 {
   int v6; // eax
@@ -10161,7 +10161,7 @@ LABEL_43:
 }
 
 
-// ==== 0x005EC880  Map_Handle_5EC880  this=int  sig=csp ====
+// ==== 0x005EC880  Map_Handle_5EC880  this=-  sig=csp ====
 char __fastcall Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
 {
   HWND v4; // ebx
@@ -10852,7 +10852,7 @@ LABEL_121:
 }
 
 
-// ==== 0x005EDD00  ReadChatMessage  this=unknown  sig=csp ====
+// ==== 0x005EDD00  ReadChatMessage  this=-  sig=csp ====
 wchar_t **__fastcall ReadChatMessage(wchar_t **a1, HWND a2)
 {
   size_t v4; // esi
@@ -10963,7 +10963,7 @@ void __fastcall EnablePlayerSlotControls(HWND hDlg, bool a2)
 }
 
 
-// ==== 0x005EDEF0  GetPlayerTypeString  this=unknown  sig=csp ====
+// ==== 0x005EDEF0  GetPlayerTypeString  this=-  sig=csp ====
 char **__fastcall Player_GetTypeString(char **a1, wchar_t *a2)
 {
   if ( a2 == (wchar_t *)MEMORY[0xAC119C] ) /*0x5edefa*/
@@ -11007,7 +11007,7 @@ char **__fastcall Player_GetTypeString(char **a1, wchar_t *a2)
 }
 
 
-// ==== 0x005EDFC0  NetworkLobby::DeleteAndZero  this=VOID_PTR  sig=csp ====
+// ==== 0x005EDFC0  NetworkLobby::DeleteAndZero  this=NetworkLobby  sig=csp ====
 wchar_t *__thiscall sub_5EDFC0(const wchar_t **this)
 {
   LPARAM v2; // esi
@@ -11100,7 +11100,7 @@ void Config_SaveObserverMode()
 }
 
 
-// ==== 0x005EE200  ObjectClass::UpdateObserveButtonWOL  this=int  sig=csp ====
+// ==== 0x005EE200  ObjectClass::UpdateObserveButtonWOL  this=ObjectClass  sig=csp ====
 void __thiscall UpdateObserveButtonWOL(HWND hDlg)
 {
   HWND DlgItem; // eax
@@ -11156,7 +11156,7 @@ void __thiscall UpdateObserveButtonWOL(HWND hDlg)
 }
 
 
-// ==== 0x005EE350  Dialog::RefreshDialogsGame  this=int  sig=csp ====
+// ==== 0x005EE350  Dialog::RefreshDialogsGame  this=Dialog  sig=csp ====
 void __thiscall Dialog::RefreshDialogsGame(void *this)
 {
   void *v1; // eax
@@ -11258,7 +11258,7 @@ LABEL_19:
 }
 
 
-// ==== 0x005EE510  RefreshLobbyPlayerSlots  this=int  sig=ida-proto ====
+// ==== 0x005EE510  RefreshLobbyPlayerSlots  this=-  sig=ida-proto ====
 int __fastcall Lobby_RefreshPlayerSlots(unsigned int a1)
 {
   HWND v2; // ebx
@@ -11364,7 +11364,7 @@ void __thiscall sub_5EE6A0(HWND hDlg)
 }
 
 
-// ==== 0x005EE6F0  AssignRandomMapStartPositions  this=unknown  sig=csp ====
+// ==== 0x005EE6F0  AssignRandomMapStartPositions  this=-  sig=csp ====
 _DWORD *__fastcall AssignRandomMapStartPositions(MouseClass *aP0, IUnknown *aP1, int a3, int a4, char a5)
 {
   int v6; // ecx
@@ -11851,7 +11851,7 @@ char __thiscall VectorClass_cptr_MultiMission::sub_5EED90(void *this, int a2, _D
 }
 
 
-// ==== 0x005EEE40  SkirmishVector::PushBack  this=VOID_PTR  sig=csp ====
+// ==== 0x005EEE40  SkirmishVector::PushBack  this=SkirmishVector  sig=csp ====
 char __thiscall SkirmishVector::PushBack(_DWORD *this, _DWORD *a2)
 {
   int v3; // ecx
@@ -11936,7 +11936,7 @@ DynamicVector *__thiscall VectorClass_cptr_MultiMission::Constructor(_DWORD *Blo
 }
 
 
-// ==== 0x005EEF60  ObjectClass::String_Process  this=int  sig=csp ====
+// ==== 0x005EEF60  ObjectClass::String_Process  this=ObjectClass  sig=csp ====
 void __thiscall sub_5EEF60(_DWORD *this)
 {
   unsigned int v2; // esi
@@ -11952,16 +11952,16 @@ void __thiscall sub_5EEF60(_DWORD *this)
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = *(this + 2); /*0x5eef65*/
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x5eef77*/
+  v2 = this->vtable3; /*0x5eef65*/
+  if ( v2 > this->nextObject && this->customSound_controller != 1 ) /*0x5eef77*/
   {
     v3 = (int *)*this; /*0x5eef80*/
-    v4 = *(this + 3); /*0x5eef83*/
+    v4 = this->vtable4; /*0x5eef83*/
     v13 = (int *)*this; /*0x5eef86*/
-    *(this + 2) = v2 >> 1; /*0x5eef8c*/
-    *(this + 3) = v4 - 1; /*0x5eef94*/
+    this->vtable3 = v2 >> 1; /*0x5eef8c*/
+    this->vtable4 = v4 - 1; /*0x5eef94*/
     v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x5eef9f*/
-    v6 = 4 * *(this + 2); /*0x5eefa4*/
+    v6 = 4 * this->vtable3; /*0x5eefa4*/
     *this = v5; /*0x5eefab*/
     memset(v5, 0, v6); /*0x5eefb0*/
     if ( (int)v2 > 0 ) /*0x5eefbb*/
@@ -11975,7 +11975,7 @@ void __thiscall sub_5EEF60(_DWORD *this)
         {
           do /*0x5eefed*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x5eefd7*/
+            v10 = ((int (__thiscall *)(int))this->nextArrayIndex)(v9) & ((1 << this->vtable4) - 1); /*0x5eefd7*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x5eefdb*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x5eefe1*/
             v12 = *(_DWORD *)(v9 + 8); /*0x5eefe3*/
@@ -12809,7 +12809,7 @@ LABEL_121:
 }
 
 
-// ==== 0x005EFF00  sub_5EFF00  this=unknown  sig=csp ====
+// ==== 0x005EFF00  sub_5EFF00  this=-  sig=csp ====
 int __stdcall sub_5EFF00(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax

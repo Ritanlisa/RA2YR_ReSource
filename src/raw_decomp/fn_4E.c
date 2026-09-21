@@ -9,7 +9,7 @@ BOOL __thiscall sub_4E0080(_BYTE *this)
 }
 
 
-// ==== 0x004E00B0  FootClass::Jumpjet_OccupyCell  this=VOID_PTR  sig=csp ====
+// ==== 0x004E00B0  FootClass::Jumpjet_OccupyCell  this=FootClass  sig=csp ====
 _DWORD *__thiscall FootClass::Jumpjet_OccupyCell(__int16 *this, TagClass *aP1)
 {
   TagClass *result; // eax
@@ -184,7 +184,7 @@ DynamicVector *__thiscall AbstractClass::processMissionQueue(_DWORD *Block, char
 }
 
 
-// ==== 0x004E02C0  ObjectClass::updateStateFlags  this=int  sig=csp ====
+// ==== 0x004E02C0  ObjectClass::updateStateFlags  this=ObjectClass  sig=csp ====
 int __thiscall sub_4E02C0(int *this)
 {
   int result; // eax
@@ -1004,7 +1004,7 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
 }
 
 
-// ==== 0x004E0C30  nullsub_138  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x004E0C30  nullsub_138  this=-  sig=ida-proto ====
 void __thiscall nullsub_138(void *this)
 {
   ; /*0x4e0c30*/
@@ -1079,7 +1079,7 @@ VectorClass *__thiscall FoggedObjectClass_42_::QueryInterface(_DWORD *Block, cha
 }
 
 
-// ==== 0x004E0D30    this=VOID_PTR  sig=? ====
+// ==== 0x004E0D30    this=FoggedObjectClass_42_  sig=? ====
 _DWORD *__thiscall FoggedObjectClass_42_::loc_4E0D30(_DWORD *Block, char a2)
 {
   void *v3; // eax
@@ -1165,27 +1165,27 @@ _DWORD *__thiscall AbstractClassVector::Construct(_DWORD *this, IUnknown *aP1, I
 }
 
 
-// ==== 0x004E0ED0  FootClass::RemoveFromPointerArray  this=VOID_PTR  sig=csp ====
+// ==== 0x004E0ED0  FootClass::RemoveFromPointerArray  this=FootClass  sig=csp ====
 char __thiscall sub_4E0ED0(_DWORD *this, int a2)
 {
   int v2; // edx
   int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x4e0ed0*/
+  v2 = this->uniqueId; /*0x4e0ed0*/
   v3 = a2; /*0x4e0ed3*/
   if ( a2 >= v2 ) /*0x4e0ed9*/
     return 0; /*0x4e0efc*/
   v4 = v2 - 1; /*0x4e0edb*/
-  *(this + 4) = v4; /*0x4e0ede*/
+  this->uniqueId = v4; /*0x4e0ede*/
   if ( a2 < v4 ) /*0x4e0ee1*/
   {
     do /*0x4e0ef4*/
     {
       ++v3; /*0x4e0ee7*/
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x4e0eeb*/
+      *(_DWORD *)(this->vtable2 + 4 * v3 - 4) = *(_DWORD *)(this->vtable2 + 4 * v3); /*0x4e0eeb*/
     }
-    while ( v3 < *(this + 4) ); /*0x4e0ef4*/
+    while ( v3 < this->uniqueId ); /*0x4e0ef4*/
   }
   return 1; /*0x4e0ef9*/
 }
@@ -1303,22 +1303,22 @@ int sub_4E10E0()
 }
 
 
-// ==== 0x004E1100  BulletClass::ResetDetonationTimer  this=int  sig=csp ====
+// ==== 0x004E1100  BulletClass::ResetDetonationTimer  this=BulletClass  sig=csp ====
 _DWORD *__thiscall sub_4E1100(_DWORD *this)
 {
   *this = MEMORY[0xA8ED84]; /*0x4e1108*/
-  *(this + 2) = 0; /*0x4e110c*/
-  *(this + 3) = MEMORY[0xA8ED84]; /*0x4e1115*/
-  *(this + 5) = 0; /*0x4e1118*/
-  *(this + 6) = 0; /*0x4e111b*/
-  *(this + 7) = 0; /*0x4e111e*/
-  *(this + 8) = 0; /*0x4e1121*/
-  *(this + 9) = 0; /*0x4e1124*/
+  this->vtable3 = 0; /*0x4e110c*/
+  this->vtable4 = MEMORY[0xA8ED84]; /*0x4e1115*/
+  this->q014 = 0; /*0x4e1118*/
+  this->BulletClass_field_0x18 = 0; /*0x4e111b*/
+  this->q01C = 0; /*0x4e111e*/
+  this->q020 = 0; /*0x4e1121*/
+  this->q024 = 0; /*0x4e1124*/
   return this; /*0x4e1127*/
 }
 
 
-// ==== 0x004E1130  BulletClass::InitDetonationTimer  this=VOID_PTR  sig=csp ====
+// ==== 0x004E1130  BulletClass::InitDetonationTimer  this=BulletClass  sig=csp ====
 __int64 __thiscall sub_4E1130(_DWORD *this, _DWORD *a2, _DWORD *a3, int a4, int a5)
 {
   int v6; // ecx
@@ -1332,24 +1332,24 @@ __int64 __thiscall sub_4E1130(_DWORD *this, _DWORD *a2, _DWORD *a3, int a4, int 
   if ( a5 <= a4 ) /*0x4e1141*/
     v6 = a4; /*0x4e1143*/
   *this = MEMORY[0xA8ED84]; /*0x4e114f*/
-  *(this + 1) = v9; /*0x4e1155*/
-  *(this + 2) = v6; /*0x4e1158*/
-  *(this + 3) = MEMORY[0xA8ED84]; /*0x4e1163*/
-  *(this + 4) = v9; /*0x4e116a*/
-  *(this + 5) = a4; /*0x4e1171*/
-  *(this + 6) = *a3; /*0x4e117b*/
-  *(this + 7) = a3[1]; /*0x4e1180*/
-  *(this + 8) = a3[2]; /*0x4e1186*/
+  this->vtable2 = v9; /*0x4e1155*/
+  this->vtable3 = v6; /*0x4e1158*/
+  this->vtable4 = MEMORY[0xA8ED84]; /*0x4e1163*/
+  this->q010 = v9; /*0x4e116a*/
+  this->q014 = a4; /*0x4e1171*/
+  this->BulletClass_field_0x18 = *a3; /*0x4e117b*/
+  this->q01C = a3[1]; /*0x4e1180*/
+  this->q020 = a3[2]; /*0x4e1186*/
   v10 = a2[1] - a3[1]; /*0x4e11a2*/
   v11 = a2[2] - a3[2]; /*0x4e11af*/
   v7 = Math::Sqrt((double)(*a2 - *a3) * (double)(*a2 - *a3) + (double)v11 * (double)v11 + (double)v10 * (double)v10); /*0x4e11d4*/
   result = Math::RoundToInt(v7); /*0x4e11dc*/
-  *(this + 9) = result; /*0x4e11e1*/
+  this->q024 = result; /*0x4e11e1*/
   return result; /*0x4e11e4*/
 }
 
 
-// ==== 0x004E11F0  BulletClass::CheckProximityDetonation  this=VOID_PTR  sig=csp ====
+// ==== 0x004E11F0  BulletClass::CheckProximityDetonation  this=BulletClass  sig=csp ====
 int __thiscall sub_4E11F0(_DWORD *this, _DWORD *a2)
 {
   int v3; // edx
@@ -1359,8 +1359,8 @@ int __thiscall sub_4E11F0(_DWORD *this, _DWORD *a2)
   int v8; // [esp+10h] [ebp-8h]
   int v9; // [esp+14h] [ebp-4h]
 
-  v3 = *(this + 3); /*0x4e11f6*/
-  v4 = *(this + 5); /*0x4e11f9*/
+  v3 = this->vtable4; /*0x4e11f6*/
+  v4 = this->q014; /*0x4e11f9*/
   if ( v3 == -1 ) /*0x4e11ff*/
   {
 LABEL_4:
@@ -1374,15 +1374,15 @@ LABEL_4:
     goto LABEL_4; /*0x4e120d*/
   }
 LABEL_5:
-  v8 = a2[1] - *(this + 7); /*0x4e1217*/
-  v9 = a2[2] - *(this + 8); /*0x4e123d*/
-  v5 = Math::Sqrt((double)(*a2 - *(this + 6)) * (double)(*a2 - *(this + 6)) + (double)v8 * (double)v8 + (double)v9 * (double)v9); /*0x4e1266*/
+  v8 = a2[1] - this->q01C; /*0x4e1217*/
+  v9 = a2[2] - this->q020; /*0x4e123d*/
+  v5 = Math::Sqrt((double)(*a2 - this->BulletClass_field_0x18) * (double)(*a2 - this->BulletClass_field_0x18) + (double)v8 * (double)v8 + (double)v9 * (double)v9); /*0x4e1266*/
   v6 = (int)Math::RoundToInt(v5) / 2; /*0x4e1276*/
   if ( v6 < 32 ) /*0x4e127b*/
     return 1; /*0x4e1286*/
-  if ( v6 < 256 && v6 > *(this + 9) ) /*0x4e1293*/
+  if ( v6 < 256 && v6 > this->q024 ) /*0x4e1293*/
     return 2; /*0x4e129e*/
-  *(this + 9) = v6; /*0x4e12a1*/
+  this->q024 = v6; /*0x4e12a1*/
   return 0; /*0x4e1282*/
 }
 
@@ -1398,7 +1398,7 @@ int sub_4E12B0()
 }
 
 
-// ==== 0x004E12D0  BuildingAnim::GetType  this=unknown  sig=csp ====
+// ==== 0x004E12D0  BuildingAnim::GetType  this=BuildingAnim  sig=csp ====
 int BuildingAnim_GetType()
 {
   int v0; // eax
@@ -2111,7 +2111,7 @@ int sub_4E1CE0()
 }
 
 
-// ==== 0x004E1D00  Main::CreateDialog  this=int  sig=csp ====
+// ==== 0x004E1D00  Main::CreateDialog  this=Main  sig=csp ====
 void __thiscall sub_4E1D00(HWND *this)
 {
   unsigned __int16 v2; // cx
@@ -2244,7 +2244,7 @@ LABEL_10:
 }
 
 
-// ==== 0x004E1FE0  GameOptionsDlgProc  this=unknown  sig=csp ====
+// ==== 0x004E1FE0  GameOptionsDlgProc  this=-  sig=csp ====
 int __stdcall GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
   int result; // eax
@@ -2450,7 +2450,7 @@ DWORD sub_4E2440()
 }
 
 
-// ==== 0x004E24A0  Time::GetElapsedMS  this=unknown  sig=csp ====
+// ==== 0x004E24A0  Time::GetElapsedMS  this=Time  sig=csp ====
 unsigned int Time_GetElapsedMS()
 {
   DWORD Time; // eax
@@ -3295,7 +3295,7 @@ int sub_4E3300()
 }
 
 
-// ==== 0x004E3320  ObjectClass::GetResourceIDHardcodedCSF  this=int  sig=csp ====
+// ==== 0x004E3320  ObjectClass::GetResourceIDHardcodedCSF  this=ObjectClass  sig=csp ====
 int __thiscall sub_4E3320(void *this)
 {
   if ( !this ) /*0x4e3324*/
@@ -3316,7 +3316,7 @@ int __thiscall sub_4E3320(void *this)
 }
 
 
-// ==== 0x004E34A0  UpdateLobbyGraphicsWOL  this=int  sig=csp ====
+// ==== 0x004E34A0  UpdateLobbyGraphicsWOL  this=-  sig=csp ====
 HWND *__fastcall UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
 {
   int v3; // edx
@@ -3383,7 +3383,7 @@ HWND *__fastcall UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
 }
 
 
-// ==== 0x004E3560  BuildingType::FindDefault  this=int  sig=csp ====
+// ==== 0x004E3560  BuildingType::FindDefault  this=BuildingType  sig=csp ====
 int __thiscall BuildingType::FindDefault(void *this)
 {
   int result; // eax
@@ -3417,7 +3417,7 @@ int __thiscall BuildingType::FindDefault(void *this)
 }
 
 
-// ==== 0x004E3690  sub_4E3690  this=int  sig=csp ====
+// ==== 0x004E3690  sub_4E3690  this=-  sig=csp ====
 HWND *__fastcall sub_4E3690(HWND hDlg, int a2)
 {
   int v4; // eax
@@ -3504,7 +3504,7 @@ HWND *__fastcall sub_4E3690(HWND hDlg, int a2)
 }
 
 
-// ==== 0x004E37D0  ObjectClass::GetResourceID2CSF  this=VOID_PTR  sig=csp ====
+// ==== 0x004E37D0  ObjectClass::GetResourceID2CSF  this=ObjectClass  sig=csp ====
 int __thiscall sub_4E37D0(void *this)
 {
   if ( !this ) /*0x4e37d4*/
@@ -4035,7 +4035,7 @@ LRESULT __fastcall GetComboBoxSelected(ReferenceCounted *aP0, int nIDDlgItem, WP
 }
 
 
-// ==== 0x004E41D0  ObjectClass::GetResourceIDCSF  this=VOID_PTR  sig=csp ====
+// ==== 0x004E41D0  ObjectClass::GetResourceIDCSF  this=ObjectClass  sig=csp ====
 int __thiscall CSF_GetResourceID(void *this)
 {
   if ( !this ) /*0x4e41d4*/
@@ -4355,7 +4355,7 @@ int __fastcall SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 }
 
 
-// ==== 0x004E49A0  SetupSkirmishSpawnLocations  this=VOID_PTR  sig=csp ====
+// ==== 0x004E49A0  SetupSkirmishSpawnLocations  this=-  sig=csp ====
 char __fastcall SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
 {
   HWND v4; // ebp
@@ -4515,7 +4515,7 @@ LABEL_44:
 }
 
 
-// ==== 0x004E4C20  FillColorComboBoxUI  this=int  sig=csp ====
+// ==== 0x004E4C20  FillColorComboBoxUI  this=-  sig=csp ====
 char __fastcall FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
 {
   int v4; // eax
@@ -4661,7 +4661,7 @@ LRESULT __fastcall GetComboBoxSelectedRaw(ReferenceCounted *aP0, int nIDDlgItem,
 }
 
 
-// ==== 0x004E4E60  ObjectClass::GetResourceID3CSF  this=VOID_PTR  sig=csp ====
+// ==== 0x004E4E60  ObjectClass::GetResourceID3CSF  this=ObjectClass  sig=csp ====
 int __thiscall CSF_GetResourceID3(void *this)
 {
   if ( !this ) /*0x4e4e64*/
@@ -4984,7 +4984,7 @@ int __fastcall Lobby_FillFactionComboBox(HWND a1, int a2)
 }
 
 
-// ==== 0x004E5480  SetupLobbyFactionSlots  this=VOID_PTR  sig=csp ====
+// ==== 0x004E5480  SetupLobbyFactionSlots  this=-  sig=csp ====
 char __fastcall SetupLobbyFactionSlots(SessionClass *aP0, int nIDDlgItem, int a3)
 {
   SessionClass *v4; // ebp
@@ -5292,7 +5292,7 @@ LRESULT __fastcall SetComboBoxSelection(HWND hDlg, int nIDDlgItem, WPARAM wParam
 }
 
 
-// ==== 0x004E5940  ObjectClass::GetResourceID4CSF  this=VOID_PTR  sig=csp ====
+// ==== 0x004E5940  ObjectClass::GetResourceID4CSF  this=ObjectClass  sig=csp ====
 int __thiscall CSF_GetResourceID4(void *this)
 {
   if ( !this ) /*0x4e5944*/
@@ -5313,7 +5313,7 @@ int __thiscall CSF_GetResourceID4(void *this)
 }
 
 
-// ==== 0x004E59A0  Dialog::OptionIDToIndex  this=int  sig=csp ====
+// ==== 0x004E59A0  Dialog::OptionIDToIndex  this=Dialog  sig=csp ====
 int __thiscall Dialog_OptionIDToIndex(void *this)
 {
   int v2; // eax
@@ -5338,7 +5338,7 @@ int __thiscall Dialog_OptionIDToIndex(void *this)
 }
 
 
-// ==== 0x004E5AC0  GDlg::LoadLetterStrings  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x004E5AC0  GDlg::LoadLetterStrings  this=GDlg  sig=ida-proto ====
 wchar_t *GDlg_LoadLetterStrings()
 {
   wchar_t *result; // eax
@@ -5625,7 +5625,7 @@ LABEL_22:
 }
 
 
-// ==== 0x004E6030  GetComboBoxSelectedRaw2  this=int  sig=csp ====
+// ==== 0x004E6030  GetComboBoxSelectedRaw2  this=-  sig=csp ====
 LRESULT __fastcall GetComboBoxSelectedRaw2(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 {
   LRESULT v3; // eax
@@ -5658,7 +5658,7 @@ void nullsub_54()
 }
 
 
-// ==== 0x004E6150  GetVersionString  this=VOID_PTR  sig=csp ====
+// ==== 0x004E6150  GetVersionString  this=-  sig=csp ====
 char *__fastcall Version_GetString(_DWORD *a1, _BYTE *a2, char *Destination, size_t Count)
 {
   char *result; // eax
@@ -5673,7 +5673,7 @@ char *__fastcall Version_GetString(_DWORD *a1, _BYTE *a2, char *Destination, siz
 }
 
 
-// ==== 0x004E6190  DetectProcessorType  this=unknown  sig=csp ====
+// ==== 0x004E6190  DetectProcessorType  this=-  sig=csp ====
 int sub_4E6190()
 {
   int v0; // esi
@@ -5720,7 +5720,7 @@ int sub_4E6190()
 }
 
 
-// ==== 0x004E62B0  PlayerType::GetName  this=unknown  sig=csp ====
+// ==== 0x004E62B0  PlayerType::GetName  this=PlayerType  sig=csp ====
 char *PlayerType_GetName()
 {
   unsigned int v0; // eax

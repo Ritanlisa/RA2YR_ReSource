@@ -812,7 +812,7 @@ LABEL_55:
 }
 
 
-// ==== 0x00521320  InfantryClass::GetIdleTimer  this=int  sig=csp ====
+// ==== 0x00521320  InfantryClass::GetIdleTimer  this=InfantryClass  sig=csp ====
 int __thiscall InfantryClass_GetIdleTimer(int *this)
 {
   int v2; // eax
@@ -842,43 +842,43 @@ int __thiscall InfantryClass_GetIdleTimer(int *this)
   _BYTE v27[12]; // [esp+10h] [ebp-18h] BYREF
   _BYTE v28[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = *(this + 433); /*0x521328*/
+  v2 = this->SequenceAnim; /*0x521328*/
   if ( v2 != 27 && v2 != 28 && v2 != 29 && v2 != 30 ) /*0x521340*/
   {
     v16 = (#375 *)(*(int (__thiscall **)(int *))(*this + 60))(this); /*0x5214fb*/
     if ( !(unsigned __int8)House::IsCurrentPlayer(v16) ) /*0x521500*/
     {
-      v17 = *(this + 432); /*0x52150d*/
+      v17 = this->animation; /*0x52150d*/
       if ( *(_BYTE *)(v17 + 3784) ) /*0x521513*/
       {
         if ( *(_BYTE *)(v17 + 1708) ) /*0x521521*/
         {
           if ( *(int *)(v17 + 1732) <= -1 /*0x521574*/
-            && !*(this + 361)
-            && *(this + 48) + *(_DWORD *)(*((_DWORD *)MEMORY[0x8871E0] + 908) + 4 * *(_DWORD *)(*(this + 135) + 388)) < (int)MEMORY[0xA8ED84] )
+            && !this->Archive
+            && this->nextObject + *(_DWORD *)(*((_DWORD *)MEMORY[0x8871E0] + 908) + 4 * *(_DWORD *)(this->owner + 388)) < (int)MEMORY[0xA8ED84] )
           {
-            if ( !*(this + 134) /*0x5215f3*/
+            if ( !this->focus /*0x5215f3*/
               || (v18 = (_DWORD *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 72))(this, v27),
                   v19 = *v18 / 256,
                   v20 = v18[1] / 256,
-                  v21 = (int *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)*(this + 134) + 72))(
-                                 *(this + 134),
+                  v21 = (int *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)this->focus + 72))(
+                                 this->focus,
                                  v28),
                   v22 = *v21,
                   v23 = v21[1] / 256,
                   (unsigned __int16)(v22 / 256) == (_WORD)v19)
               && (_WORD)v23 == (_WORD)v20 )
             {
-              if ( !*(_BYTE *)(*(this + 432) + 3383) ) /*0x5215ff*/
+              if ( !*(_BYTE *)(this->animation + 3383) ) /*0x5215ff*/
               {
-                if ( !*(this + 413) ) /*0x52160d*/
+                if ( !this->Locomotor ) /*0x52160d*/
                   WinAPI::Wrapper(-2147467261); /*0x52161c*/
-                if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) ) /*0x52162a*/
+                if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))(this->Locomotor) ) /*0x52162a*/
                 {
-                  if ( !*(this + 413) ) /*0x52165a*/
+                  if ( !this->Locomotor ) /*0x52165a*/
                     WinAPI::Wrapper(-2147467261); /*0x521669*/
-                  (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 72))(*(this + 413)); /*0x521677*/
-                  *((_BYTE *)this + 1764) = 1; /*0x52167c*/
+                  (*(void (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 72))(this->Locomotor); /*0x521677*/
+                  this->ShouldDeploy = 1; /*0x52167c*/
                   MissionControl = MissionClass::GetMissionControl(this); /*0x521683*/
                   v25 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x5216a0*/
                   return v25 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2); /*0x5216ad*/
@@ -886,7 +886,7 @@ int __thiscall InfantryClass_GetIdleTimer(int *this)
                 else
                 {
                   (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1368))(this, 27, 0, 0); /*0x52163b*/
-                  return *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 976); /*0x521650*/
+                  return *(_DWORD *)(*(_DWORD *)(this->animation + 3644) + 976); /*0x521650*/
                 }
               }
             }
@@ -896,11 +896,11 @@ int __thiscall InfantryClass_GetIdleTimer(int *this)
     }
     return -1; /*0x5216b8*/
   }
-  v3 = *(this + 432); /*0x521346*/
+  v3 = this->animation; /*0x521346*/
   if ( *(int *)(v3 + 1732) > -1 ) /*0x521353*/
   {
     (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1368))(this, 31, 0, 0); /*0x52135f*/
-    return *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 1120); /*0x52137d*/
+    return *(_DWORD *)(*(_DWORD *)(this->animation + 3644) + 1120); /*0x52137d*/
   }
   if ( !*(_BYTE *)(v3 + 1708) ) /*0x521386*/
     return -1; /*0x521386*/
@@ -916,12 +916,12 @@ int __thiscall InfantryClass_GetIdleTimer(int *this)
       v10 = (__int16 *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 440))(this, v26); /*0x5213fd*/
       v11 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v10); /*0x521409*/
       (*(void (__thiscall **)(int *, void *))(v9 + 968))(this, v11); /*0x521411*/
-      if ( !(*(int (__thiscall **)(int *, _DWORD, int, int))(*this + 960))(this, *(this + 173), 1, 1) ) /*0x521426*/
+      if ( !(*(int (__thiscall **)(int *, _DWORD, int, int))(*this + 960))(this, this->target, 1, 1) ) /*0x521426*/
       {
-        (*(void (__thiscall **)(int *, _DWORD, int))(*this + 972))(this, *(this + 173), 1); /*0x52143d*/
+        (*(void (__thiscall **)(int *, _DWORD, int))(*this + 972))(this, this->target, 1); /*0x52143d*/
         (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0); /*0x521449*/
         (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1368))(this, 29, 0, 0); /*0x521459*/
-        return *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 1048); /*0x521477*/
+        return *(_DWORD *)(*(_DWORD *)(this->animation + 3644) + 1048); /*0x521477*/
       }
       (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0); /*0x52147e*/
     }
@@ -1942,7 +1942,7 @@ void __thiscall TechnoClass::GarrisonBuilding(InfantryTypeClass **this, _DWORD *
 }
 
 
-// ==== 0x00522A50  nullsub_146  this=unknown  sig=csp ====
+// ==== 0x00522A50  nullsub_146  this=-  sig=csp ====
 void __stdcall nullsub_146(int a1)
 {
   ; /*0x522a50*/
@@ -2033,12 +2033,12 @@ int __thiscall InfantryClass::StartBombDeploy(void *this, char a2)
 }
 
 
-// ==== 0x00522CB0  TechnoClass::IsEnteringOrCapturingStructure  this=int  sig=csp ====
+// ==== 0x00522CB0  TechnoClass::IsEnteringOrCapturingStructure  this=TechnoClass  sig=csp ====
 BOOL __thiscall sub_522CB0(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 433); /*0x522cb0*/
+  v1 = this->q6C4; /*0x522cb0*/
   return v1 == 11 /*0x522cea*/
       || v1 == 12
       || v1 == 13
@@ -2063,10 +2063,10 @@ int __thiscall sub_522D00(_DWORD *this)
 }
 
 
-// ==== 0x00522D20  SlaveManagerClass::VtableDispatch  this=VOID_PTR  sig=csp ====
+// ==== 0x00522D20  SlaveManagerClass::VtableDispatch  this=SlaveManagerClass  sig=csp ====
 int __thiscall sub_522D20(void *this)
 {
-  return (*(int (__thiscall **)(void *, int, _DWORD))(*(_DWORD *)this + 488))(this, 5, 0); /*0x522d2c*/
+  return (*(int (__thiscall **)(void *, int, _DWORD))(this->q7A0)(this, 5, 0); /*0x522d2c*/
 }
 
 
@@ -2189,7 +2189,7 @@ int __thiscall InfantryClass::ProcessTiberiumHarvest(int *this)
 }
 
 
-// ==== 0x00522FC0  SlaveManagerClass::IsMasterHarvester  this=int  sig=csp ====
+// ==== 0x00522FC0  SlaveManagerClass::IsMasterHarvester  this=SlaveManagerClass  sig=csp ====
 bool __thiscall sub_522FC0(void *this)
 {
   return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 388))(this) == 10; /*0x522fd2*/
@@ -2370,7 +2370,7 @@ int *__thiscall sub_523370(int *this, int a2)
 }
 
 
-// ==== 0x005233A0  COMObject::SwapReference  this=VOID_PTR  sig=csp ====
+// ==== 0x005233A0  COMObject::SwapReference  this=COMObject  sig=csp ====
 int *__thiscall COMObject::SwapReference(int *this, int a2)
 {
   int v3; // edi
@@ -2388,7 +2388,7 @@ int *__thiscall COMObject::SwapReference(int *this, int a2)
 }
 
 
-// ==== 0x005233D0  InfantryClass::updateOccupiedBuilding  this=VOID_PTR  sig=csp ====
+// ==== 0x005233D0  InfantryClass::updateOccupiedBuilding  this=InfantryClass  sig=csp ====
 _DWORD *__thiscall InfantryClass::updateOccupiedBuilding(_DWORD *this, IUnknown *aP1)
 {
   IUnknown *v2; // eax
@@ -2864,7 +2864,7 @@ void __cdecl nullsub_147()
 }
 
 
-// ==== 0x00523C90  Factory::FindExitCellByName  this=VOID_PTR  sig=csp ====
+// ==== 0x00523C90  Factory::FindExitCellByName  this=Factory  sig=csp ====
 int __thiscall Factory::FindExitCellByName(void *this)
 {
   int v2; // esi
@@ -3720,7 +3720,7 @@ InfantryTypeClass *__thiscall InfantryTypeClass::ddtor(int Block, char a2)
 }
 
 
-// ==== 0x00524EC0  ObjectClass::??0Iostream_init_QAE_XZ_4  this=VOID_PTR  sig=csp ====
+// ==== 0x00524EC0  ObjectClass::??0Iostream_init_QAE_XZ_4  this=ObjectClass  sig=csp ====
 Iostream_init *__thiscall __0Iostream_init_QAE_XZ_4(Iostream_init *this)
 {
   return this; /*0x524ec2*/
@@ -4526,15 +4526,15 @@ char __thiscall INIClass::ClearSection(int this, INIClass *aP1, AbstractClass *a
 }
 
 
-// ==== 0x00525A10  FileStraw::Open  this=VOID_PTR  sig=csp ====
+// ==== 0x00525A10  FileStraw::Open  this=FileStraw  sig=csp ====
 int __thiscall FileStraw_Open(_DWORD *this, int a2, char a3)
 {
   int v3; // esi
   _DWORD v5[4]; // [esp+4h] [ebp-14h] BYREF
   char v6; // [esp+14h] [ebp-4h]
 
-  *(this + 1) = 0; /*0x525a19*/
-  *(this + 2) = 0; /*0x525a1c*/
+  this->FileStraw_field_0x04 = 0; /*0x525a19*/
+  this->q008 = 0; /*0x525a1c*/
   v5[1] = 0; /*0x525a1f*/
   v5[2] = 0; /*0x525a23*/
   v6 = 0; /*0x525a27*/
@@ -5189,15 +5189,15 @@ LABEL_143:
 }
 
 
-// ==== 0x00526420  INIClass::SaveToPipe  this=VOID_PTR  sig=csp ====
+// ==== 0x00526420  INIClass::SaveToPipe  this=INIClass  sig=csp ====
 int __thiscall INIClass_SaveToPipe(_DWORD *this, int a2)
 {
   int v2; // esi
   _DWORD v4[4]; // [esp+4h] [ebp-14h] BYREF
   char v5; // [esp+14h] [ebp-4h]
 
-  *(this + 1) = 0; /*0x526429*/
-  *(this + 2) = 0; /*0x52642c*/
+  this->headNode = 0; /*0x526429*/
+  this->q008 = 0; /*0x52642c*/
   v4[1] = 0; /*0x52642f*/
   v4[2] = 0; /*0x526433*/
   v5 = 0; /*0x526437*/
@@ -6267,7 +6267,7 @@ char __thiscall INIClass::SetInt(char *this, INIClass *aP1, CCINIClass *aP2, INI
 }
 
 
-// ==== 0x00527640  INIClass::SetIntFormat  this=VOID_PTR  sig=csp ====
+// ==== 0x00527640  INIClass::SetIntFormat  this=INIClass  sig=csp ====
 char __thiscall INIClass::SetIntFormat(char *this, char **a1, ObjectClass *aP2, int a4, GenericNode *aP4)
 {
   INIClass *v6; // edi
@@ -6429,7 +6429,7 @@ LABEL_27:
 }
 
 
-// ==== 0x005278F0  INIClass::ReadInt  this=VOID_PTR  sig=csp ====
+// ==== 0x005278F0  INIClass::ReadInt  this=INIClass  sig=csp ====
 int __thiscall INIClass::ReadInt(void *this, ObjectClass *aP1, ReferenceCounted *aP2, INIClass *aP3)
 {
   unsigned __int8 *eax1a; // eax
@@ -7189,7 +7189,7 @@ char __thiscall INIClass::GetString2(char *this, char **a2, char **a3, double a4
 }
 
 
-// ==== 0x00528660  INIClass::SetString  this=VOID_PTR  sig=csp ====
+// ==== 0x00528660  INIClass::SetString  this=INIClass  sig=csp ====
 char __thiscall INIClass::SetString(char *this, INIClass *aP1, INIClass *aP2, INIClass *aP3)
 {
   int v5; // esi
@@ -8109,7 +8109,7 @@ char __thiscall INIClass::SetBool(char *this, INIClass *aP1, char *a2, INIClass 
 }
 
 
-// ==== 0x005295A0  INIClass::ReadBool3  this=int  sig=csp ====
+// ==== 0x005295A0  INIClass::ReadBool3  this=INIClass  sig=csp ====
 char __thiscall INIClass::ReadBool3(char *this, char **a1, char **a2, ObjectClass *aP3)
 {
   INIClass *v5; // edi
@@ -8264,7 +8264,7 @@ char __thiscall INIEntry::Write2Integers(char *this, unsigned __int8 *Block, cha
 }
 
 
-// ==== 0x00529820  INIClass::GetInt  this=int  sig=csp ====
+// ==== 0x00529820  INIClass::GetInt  this=INIClass  sig=csp ====
 char __thiscall INIClass::GetInt(char *this, char **a2, char **a3, _DWORD *a4)
 {
   INIClass *v5; // edi
@@ -9005,7 +9005,7 @@ char __thiscall sub_52A610(char *this, void *a2)
 }
 
 
-// ==== 0x0052A670  ObjectClass::WinMain_Init  this=int  sig=csp ====
+// ==== 0x0052A670  ObjectClass::WinMain_Init  this=ObjectClass  sig=csp ====
 void *__thiscall sub_52A670(void *this, void *a2, char a3)
 {
   _DWORD v5[129]; // [esp+8h] [ebp-504h] BYREF
@@ -9154,7 +9154,7 @@ LABEL_30:
 }
 
 
-// ==== 0x0052A940  INIClass::SaveTimeField  this=int  sig=csp ====
+// ==== 0x0052A940  INIClass::SaveTimeField  this=INIClass  sig=csp ====
 char __thiscall INIClass::SaveTimeField(char *this, unsigned __int8 *Block, char *a2, CCINIClass *aP3)
 {
   char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
@@ -9164,7 +9164,7 @@ char __thiscall INIClass::SaveTimeField(char *this, unsigned __int8 *Block, char
 }
 
 
-// ==== 0x0052A9E0  System_Load  this=unknown  sig=csp ====
+// ==== 0x0052A9E0  System_Load  this=-  sig=csp ====
 _BYTE *__fastcall sub_52A9E0(unsigned __int8 *a1, unsigned int *a2, unsigned int *a3, unsigned int *a4)
 {
   _BYTE *result; // eax
@@ -9547,7 +9547,7 @@ int *__thiscall Delegate::DestroyStraw(Base64Straw *this, char a2)
 }
 
 
-// ==== 0x0052AEC0  KeyValuePair::Init  this=uint64_t  sig=csp ====
+// ==== 0x0052AEC0  KeyValuePair::Init  this=KeyValuePair  sig=csp ====
 _DWORD *__thiscall KeyValuePair::Init(_DWORD *this, INIClass *aP1)
 {
   *this = aP1; /*0x52aec6*/
@@ -9707,19 +9707,19 @@ GenericList *__thiscall WarheadTypeClass::ReadParticleSystems(_DWORD *Block, cha
 }
 
 
-// ==== 0x0052B080  INIClass::getValue  this=int  sig=csp ====
+// ==== 0x0052B080  INIClass::getValue  this=INIClass  sig=csp ====
 _DWORD *__thiscall sub_52B080(_DWORD *this)
 {
   *this = 0; /*0x52b084*/
-  *(this + 1) = 0; /*0x52b086*/
-  *(this + 2) = 0; /*0x52b089*/
-  *((_BYTE *)this + 12) = 0; /*0x52b08c*/
-  *(this + 4) = 0; /*0x52b08f*/
+  this->headNode = 0; /*0x52b086*/
+  this->q008 = 0; /*0x52b089*/
+  this->unknown30 = 0; /*0x52b08c*/
+  this->sectionHead = 0; /*0x52b08f*/
   return this; /*0x52b092*/
 }
 
 
-// ==== 0x0052B0A0  INIClass::setValue  this=int  sig=csp ====
+// ==== 0x0052B0A0  INIClass::setValue  this=INIClass  sig=csp ====
 char __thiscall INIClass::setValue(int this, _DWORD *a1, CCINIClass *aP2)
 {
   int v4; // eax
@@ -9772,7 +9772,7 @@ LABEL_9:
 }
 
 
-// ==== 0x0052B170  SortedArray::Find  this=VOID_PTR  sig=csp ====
+// ==== 0x0052B170  SortedArray::Find  this=SortedArray  sig=csp ====
 char __thiscall SortedArray::Find(int this, CCINIClass *aP1)
 {
   size_t v3; // ecx
@@ -9878,7 +9878,7 @@ LABEL_11:
 }
 
 
-// ==== 0x0052B2B0  INIClass::deleteSection  this=int  sig=csp ====
+// ==== 0x0052B2B0  INIClass::deleteSection  this=INIClass  sig=csp ====
 char __thiscall sub_52B2B0(int this, int *a2)
 {
   size_t v3; // eax
@@ -10062,7 +10062,7 @@ bool __thiscall INIClass::deleteKey(_DWORD *this, ObjectClass *aP1)
 }
 
 
-// ==== 0x0052B4F0  HashTable::BinarySearchAlt  this=VOID_PTR  sig=csp ====
+// ==== 0x0052B4F0  HashTable::BinarySearchAlt  this=HashTable  sig=csp ====
 size_t __thiscall HashTable::BinarySearchAlt(char **this, CCINIClass *aP1)
 {
   size_t result; // eax
@@ -10071,18 +10071,18 @@ size_t __thiscall HashTable::BinarySearchAlt(char **this, CCINIClass *aP1)
   int v6; // ecx
   ObjectClass *v7; // esi
 
-  result = (size_t)*(this + 1); /*0x52b4f3*/
+  result = (size_t)this->HashTable_field_0x04; /*0x52b4f3*/
   if ( result ) /*0x52b4f8*/
   {
-    if ( !*((_BYTE *)this + 12) ) /*0x52b4fe*/
+    if ( !this->HashTable_field_0x0C ) /*0x52b4fe*/
     {
       qsort(*this, result, 8u, CompareFunc3Int); /*0x52b510*/
-      *(this + 4) = 0; /*0x52b518*/
-      *((_BYTE *)this + 12) = 1; /*0x52b51f*/
+      this->HashTable_field_0x04 = 0; /*0x52b518*/
+      this->HashTable_field_0x0C = 1; /*0x52b51f*/
     }
     v4 = (ObjectClass *)*this; /*0x52b529*/
     v5 = *(ObjectClass **)aP1->__pad_0; /*0x52b52b*/
-    v6 = (int)*(this + 1); /*0x52b52d*/
+    v6 = (int)this->HashTable_field_0x04; /*0x52b52d*/
     if ( v6 <= 0 ) /*0x52b532*/
       return 0; /*0x52b55e*/
     while ( 1 ) /*0x52b53b*/
@@ -10107,7 +10107,7 @@ size_t __thiscall HashTable::BinarySearchAlt(char **this, CCINIClass *aP1)
 }
 
 
-// ==== 0x0052B570  INIClass::mergeSection  this=int  sig=csp ====
+// ==== 0x0052B570  INIClass::mergeSection  this=INIClass  sig=csp ====
 char __thiscall sub_52B570(int this, int a2)
 {
   char *v3; // edi
@@ -10242,7 +10242,7 @@ int __cdecl Int_CompareFunc4(_DWORD *a1, _DWORD *a2)
 }
 
 
-// ==== 0x0052B750  System_Search  this=VOID_PTR  sig=csp ====
+// ==== 0x0052B750  System_Search  this=-  sig=csp ====
 int __fastcall System_Search(ObjectClass *aP0, int edx0, int *a2)
 {
   int v3; // esi
@@ -10427,7 +10427,7 @@ HWND __thiscall BINK::Background_Setup(HWND hDlg)
 }
 
 
-// ==== 0x0052BA60  ObjectClass::InitGame  this=int  sig=csp ====
+// ==== 0x0052BA60  ObjectClass::InitGame  this=ObjectClass  sig=csp ====
 int InitGame()
 {
   int v0; // eax
@@ -11503,7 +11503,7 @@ LABEL_36:
 }
 
 
-// ==== 0x0052D430  ReadModConfigINI  this=unknown  sig=csp ====
+// ==== 0x0052D430  ReadModConfigINI  this=-  sig=csp ====
 INT_PTR __stdcall ReadModConfigINI(HWND hDlg, UINT a2, WPARAM a3, int *a4)
 {
   HWND v5; // ebx
@@ -11583,7 +11583,7 @@ void nullsub_150()
 }
 
 
-// ==== 0x0052D640  CampaignMenu::DlgProc  this=unknown  sig=csp ====
+// ==== 0x0052D640  CampaignMenu::DlgProc  this=CampaignMenu  sig=csp ====
 int __stdcall Dialog_Init(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
@@ -11652,7 +11652,7 @@ int __stdcall Dialog_Init(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 
 
-// ==== 0x0052D790  sub_52D790  this=unknown  sig=csp ====
+// ==== 0x0052D790  sub_52D790  this=-  sig=csp ====
 int __stdcall sub_52D790(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
@@ -11696,7 +11696,7 @@ int __stdcall sub_52D790(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 
 
-// ==== 0x0052D870  sub_52D870  this=unknown  sig=csp ====
+// ==== 0x0052D870  sub_52D870  this=-  sig=csp ====
 int __stdcall sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   HWND DlgItem; // esi
@@ -12581,7 +12581,7 @@ LABEL_116:
 }
 
 
-// ==== 0x0052EC00  CampaignSelect::DlgProc  this=unknown  sig=csp ====
+// ==== 0x0052EC00  CampaignSelect::DlgProc  this=CampaignSelect  sig=csp ====
 int __stdcall CampaignSelect_DlgProc(HWND hDlg, unsigned int a2, WPARAM wParam, unsigned int a4)
 {
   int result; // eax
@@ -12896,7 +12896,7 @@ LABEL_86:
 }
 
 
-// ==== 0x0052F3F0  Network::Init  this=int  sig=csp ====
+// ==== 0x0052F3F0  Network::Init  this=Network  sig=csp ====
 char Network_Init()
 {
   int v0; // ecx
@@ -12984,7 +12984,7 @@ char Network_Init()
 }
 
 
-// ==== 0x0052F620  ParseCommandLine  this=int  sig=ida-proto ====
+// ==== 0x0052F620  ParseCommandLine  this=-  sig=ida-proto ====
 char __fastcall ParseCommandLine(int a1, int a2)
 {
   char **v4; // esi
@@ -13262,7 +13262,7 @@ void InitRandomSeed()
 }
 
 
-// ==== 0x0052FEC0  Screen::Capture  this=VOID_PTR  sig=csp ====
+// ==== 0x0052FEC0  Screen::Capture  this=Screen  sig=csp ====
 char __usercall Screen::Capture@<al>(char a1@<dl>, int a2@<ecx>, int a3@<ebx>, int a4@<ebp>)
 {
   int v4; // edi

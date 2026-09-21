@@ -954,7 +954,7 @@ int __thiscall BuildingClass::ProductionCheck(#377 *this)
 }
 
 
-// ==== 0x00451400  UpdateBuildingActiveAnim  this=int  sig=ida-proto ====
+// ==== 0x00451400  UpdateBuildingActiveAnim  this=-  sig=ida-proto ====
 char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
 {
   int v3; // eax
@@ -1812,14 +1812,14 @@ int __thiscall BuildingClass::DisableTemporal(int *this)
 }
 
 
-// ==== 0x00452210  BuildingClass::EnableTogglePower  this=int  sig=csp ====
+// ==== 0x00452210  BuildingClass::EnableTogglePower  this=BuildingClass  sig=csp ====
 _BYTE *__thiscall BuildingClass::EnableTogglePower(_BYTE *this)
 {
   _DWORD *v1; // ecx
   int v2; // edx
   _BYTE *result; // eax
 
-  *(this + 1632) = 1; /*0x452210*/
+  this->HasPower = 1; /*0x452210*/
   v1 = this + 1372; /*0x452218*/
   v2 = 21; /*0x45221e*/
   do /*0x452242*/
@@ -2203,7 +2203,7 @@ LABEL_2:
 }
 
 
-// ==== 0x00452820  Warhead::RemoveFromDamageList  this=VOID_PTR  sig=csp ====
+// ==== 0x00452820  Warhead::RemoveFromDamageList  this=Warhead  sig=csp ====
 char __thiscall sub_452820(_DWORD *this, int a2)
 {
   _DWORD *v2; // esi
@@ -2215,7 +2215,7 @@ char __thiscall sub_452820(_DWORD *this, int a2)
   int v8; // edx
 
   v2 = this + 411; /*0x452827*/
-  v3 = (*(int (__thiscall **)(_DWORD *, int *))(*(this + 411) + 16))(this + 411, &a2); /*0x452834*/
+  v3 = (*(int (__thiscall **)(_DWORD *, int *))(this->q66C + 16))(this + 411, &a2); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/
   {
     v4 = v2[4]; /*0x45283c*/
@@ -3250,7 +3250,7 @@ LABEL_4:
 }
 
 
-// ==== 0x00453BF0  BuildingClass::CalcBarrelFlashPosition  this=int  sig=csp ====
+// ==== 0x00453BF0  BuildingClass::CalcBarrelFlashPosition  this=BuildingClass  sig=csp ====
 _DWORD *__thiscall BuildingClass::CalcBarrelFlashPosition(int *this, Tactical *aP1, int a3, char a4)
 {
   int v5; // eax
@@ -3280,7 +3280,7 @@ _DWORD *__thiscall BuildingClass::CalcBarrelFlashPosition(int *this, Tactical *a
   v5 = *(_DWORD *)(*(int (__thiscall **)(int *, int))(*this + 1016))(this, a3); /*0x453c0c*/
   if ( a4 ) /*0x453c10*/
   {
-    v6 = *(this + 238); /*0x453c12*/
+    v6 = this->currentBurstIndex; /*0x453c12*/
     if ( v6 ) /*0x453c1a*/
       v7 = v6 - 1; /*0x453c25*/
     else
@@ -3288,20 +3288,20 @@ _DWORD *__thiscall BuildingClass::CalcBarrelFlashPosition(int *this, Tactical *a
   }
   else
   {
-    v7 = *(this + 238); /*0x453c2a*/
+    v7 = this->currentBurstIndex; /*0x453c2a*/
   }
   if ( v7 ) /*0x453c32*/
   {
     if ( v7 == 1 ) /*0x453c49*/
-      v28 = -*(_DWORD *)(*(this + 328) + 5976); /*0x453c59*/
+      v28 = -*(_DWORD *)(this->gattlingValue + 5976); /*0x453c59*/
     else
       v28 = 0; /*0x453c5f*/
   }
   else
   {
-    v28 = *(_DWORD *)(*(this + 328) + 5976); /*0x453c40*/
+    v28 = *(_DWORD *)(this->gattlingValue + 5976); /*0x453c40*/
   }
-  v8 = *(this + 328); /*0x453c67*/
+  v8 = this->gattlingValue; /*0x453c67*/
   v9 = (double)*(int *)(v8 + 5980); /*0x453c71*/
   *(float *)&aP2.abstractFlags = (float)*(int *)(v8 + 5972); /*0x453c83*/
   *(float *)&aP2.nextArrayIndex = (float)v28; /*0x453c90*/
@@ -3320,7 +3320,7 @@ _DWORD *__thiscall BuildingClass::CalcBarrelFlashPosition(int *this, Tactical *a
                     this,
                     HIDWORD(v15),
                     &aP2.NeedsSaveOrLink);
-  v17 = *(this + 328); /*0x453cfc*/
+  v17 = this->gattlingValue; /*0x453cfc*/
   v18 = v14 + v16[1]; /*0x453d04*/
   v19 = (void *)(aP2.uniqueId + v16[2]); /*0x453d06*/
   v20 = *(_DWORD *)(v17 + 4576); /*0x453d0e*/
@@ -5110,7 +5110,7 @@ int __thiscall BuildingClass::_vt161(#377 *this)
 }
 
 
-// ==== 0x00455DD0  globalHelper_055DD0  this=unknown  sig=csp ====
+// ==== 0x00455DD0  globalHelper_055DD0  this=-  sig=csp ====
 _DWORD *__fastcall sub_455DD0(int a1, _DWORD *a2)
 {
   int v2; // esi
@@ -5807,7 +5807,7 @@ void __cdecl nullsub_103()
 }
 
 
-// ==== 0x00456980  DrawTechnoDeployCircle  this=int  sig=csp ====
+// ==== 0x00456980  DrawTechnoDeployCircle  this=-  sig=csp ====
 char __fastcall DrawTechnoDeployCircle(
         IUnknown *aP0,
         IUnknown *aP1,
@@ -6198,7 +6198,7 @@ LABEL_22:
 }
 
 
-// ==== 0x004571E0  BuildingClass::Infiltrate  this=int  sig=csp ====
+// ==== 0x004571E0  BuildingClass::Infiltrate  this=BuildingClass  sig=csp ====
 void __thiscall BuildingClass::Infiltrate(#375 **this, #375 *a2)
 {
   #375 *v3; // edi
@@ -6215,7 +6215,7 @@ void __thiscall BuildingClass::Infiltrate(#375 **this, #375 *a2)
   char v14; // [esp+Bh] [ebp-1h]
 
   v3 = a2; /*0x4571e5*/
-  v4 = *(this + 135); /*0x4571e9*/
+  v4 = this->focus; /*0x4571e9*/
   v14 = 0; /*0x4571ef*/
   if ( v4 != a2 ) /*0x4571f6*/
   {
@@ -6225,13 +6225,13 @@ void __thiscall BuildingClass::Infiltrate(#375 **this, #375 *a2)
       if ( CreateTriggerClassIfFarEnough(9, *v5, *v5) ) /*0x45722f*/
         v14 = 1; /*0x457238*/
     }
-    v6 = (int)*(this + 328); /*0x45723c*/
+    v6 = (int)this->gattlingValue; /*0x45723c*/
     if ( *(_BYTE *)(v6 + 5796) ) /*0x457242*/
     {
-      HouseClass::ReshroudMap(*(this + 135)); /*0x457252*/
-      if ( (unsigned __int8)House::IsHumanPlayer(*(this + 135)) && !*((_BYTE *)*(this + 135) + 22394) && v14 ) /*0x45727c*/
+      HouseClass::ReshroudMap(this->focus); /*0x457252*/
+      if ( (unsigned __int8)House::IsHumanPlayer(this->focus) && !*((_BYTE *)this->focus + 22394) && v14 ) /*0x45727c*/
         VoxClass::FindAndPlay(aEvaRadarsabota, -1); /*0x457288*/
-      if ( (unsigned __int8)House::IsHumanPlayer(v3) && !*((_BYTE *)*(this + 135) + 22394) ) /*0x4572a2*/
+      if ( (unsigned __int8)House::IsHumanPlayer(v3) && !*((_BYTE *)this->focus + 22394) ) /*0x4572a2*/
       {
         if ( v14 ) /*0x4572b6*/
           VoxClass::FindAndPlay(aEvaBuildinginf, -1); /*0x4572c6*/
@@ -6240,8 +6240,8 @@ void __thiscall BuildingClass::Infiltrate(#375 **this, #375 *a2)
     }
     if ( *(int *)(v6 + 3808) > 0 ) /*0x4572d9*/
     {
-      HouseClass::CreatePowerOutage((int)*(this + 135), *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3428)); /*0x4572e8*/
-      if ( (unsigned __int8)House::IsHumanPlayer(*(this + 135)) && v14 ) /*0x457302*/
+      HouseClass::CreatePowerOutage((int)this->focus, *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3428)); /*0x4572e8*/
+      if ( (unsigned __int8)House::IsHumanPlayer(this->focus) && v14 ) /*0x457302*/
       {
         VoxClass::FindAndPlay(aEvaPowersabota, -1); /*0x45730e*/
       }
@@ -6260,18 +6260,18 @@ LABEL_26:
       v10 = *(_DWORD *)(v6 + 5872); /*0x45736a*/
       if ( v10 != -1 ) /*0x457373*/
       {
-        SuperClass::Reset(*(_DWORD *)(*((_DWORD *)*(this + 135) + 150) + 4 * v10)); /*0x457388*/
-        if ( (unsigned __int8)House::IsHumanPlayer(*(this + 135)) || (unsigned __int8)House::IsHumanPlayer(v3) && v14 ) /*0x4573b1*/
+        SuperClass::Reset(*(_DWORD *)(*((_DWORD *)this->focus + 150) + 4 * v10)); /*0x457388*/
+        if ( (unsigned __int8)House::IsHumanPlayer(this->focus) || (unsigned __int8)House::IsHumanPlayer(v3) && v14 ) /*0x4573b1*/
           VoxClass::FindAndPlay(g_Str_EVA_BuildingInfiltrated, -1); /*0x4573c1*/
         goto LABEL_64; /*0x4573c1*/
       }
       if ( *(int *)(v6 + 2048) > 0 ) /*0x45741c*/
       {
-        a2 = (#375 *)(*(int (__stdcall **)(char *))(*((_DWORD *)*(this + 135) + 9) + 24))((char *)*(this + 135) + 36); /*0x457437*/
+        a2 = (#375 *)(*(int (__stdcall **)(char *))(*((_DWORD *)this->focus + 9) + 24))((char *)this->focus + 36); /*0x457437*/
         v12 = Math::RoundToInt((double)(int)a2 * *(float *)(MEMORY[0x87F7E8][7806] + 3432)); /*0x457450*/
-        HouseClass::ProcessPowerDrain((int)*(this + 135), v12); /*0x457453*/
+        HouseClass::ProcessPowerDrain((int)this->focus, v12); /*0x457453*/
         HouseClass::AddPower(v3, v12); /*0x45745b*/
-        if ( (unsigned __int8)House::IsHumanPlayer(*(this + 135)) && v14 ) /*0x457475*/
+        if ( (unsigned __int8)House::IsHumanPlayer(this->focus) && v14 ) /*0x457475*/
           VoxClass::FindAndPlay(aEvaCashstolen, -1); /*0x457481*/
         if ( (unsigned __int8)House::IsHumanPlayer(v3) && v14 ) /*0x45749b*/
           VoxClass::FindAndPlay(aEvaBuildinginf_1, -1); /*0x4574ab*/
@@ -6286,7 +6286,7 @@ LABEL_26:
         *((_BYTE *)v3 + 508) = 1; /*0x457524*/
         if ( (unsigned __int8)House::IsHumanPlayer(v3) ) /*0x45752a*/
           BYTE2(MEMORY[0x87F7E8][5353]) = 1; /*0x457533*/
-        if ( (unsigned __int8)House::IsHumanPlayer(*(this + 135)) && v14 ) /*0x45754e*/
+        if ( (unsigned __int8)House::IsHumanPlayer(this->focus) && v14 ) /*0x45754e*/
           VoxClass::FindAndPlay(aEvaTechnologys, -1); /*0x45755a*/
         if ( !(unsigned __int8)House::IsHumanPlayer(v3) || !v14 ) /*0x457570*/
           goto LABEL_64; /*0x457570*/
@@ -6301,7 +6301,7 @@ LABEL_64:
       *((_BYTE *)v3 + 508) = 1; /*0x4574c3*/
       if ( (unsigned __int8)House::IsHumanPlayer(v3) ) /*0x4574c9*/
         BYTE2(MEMORY[0x87F7E8][5353]) = 1; /*0x4574d2*/
-      if ( (unsigned __int8)House::IsHumanPlayer(*(this + 135)) && v14 ) /*0x4574ed*/
+      if ( (unsigned __int8)House::IsHumanPlayer(this->focus) && v14 ) /*0x4574ed*/
         goto LABEL_51; /*0x4574ed*/
     }
     else
@@ -6327,7 +6327,7 @@ LABEL_64:
         *((_BYTE *)v3 + 702) = 1; /*0x4573d0*/
       }
       *((_BYTE *)v3 + 508) = 1; /*0x4573ea*/
-      if ( (unsigned __int8)House::IsHumanPlayer(*(this + 135)) && v14 ) /*0x457409*/
+      if ( (unsigned __int8)House::IsHumanPlayer(this->focus) && v14 ) /*0x457409*/
 LABEL_51:
         VoxClass::FindAndPlay(aEvaTechnologys, -1); /*0x4574ef*/
     }
@@ -6365,35 +6365,35 @@ int __thiscall BuildingClass::IsFactorySelectable(#377 *this)
 }
 
 
-// ==== 0x00457630  BuildingClass::SWAvailable  this=int  sig=csp ====
+// ==== 0x00457630  BuildingClass::SWAvailable  this=BuildingClass  sig=csp ====
 int __thiscall BuildingClass::SWAvailable(_DWORD *this)
 {
   int v2; // eax
   int v3; // eax
 
-  v2 = *(_DWORD *)(*(this + 328) + 5872); /*0x457639*/
+  v2 = *(_DWORD *)(this->Type + 5872); /*0x457639*/
   if ( v2 == -1 ) /*0x457642*/
-    return *(_DWORD *)(*(this + 328) + 5872); /*0x457642*/
+    return *(_DWORD *)(this->Type + 5872); /*0x457642*/
   v3 = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)MEMORY[0xA83CBC] + v2) + 40) + 200); /*0x457650*/
-  if ( !v3 || DynamicVector::GetOrGrow((_DWORD *)(*(this + 135) + 21840), *(_DWORD *)(v3 + 3576)) ) /*0x45766d*/
-    return *(_DWORD *)(*(this + 328) + 5872); /*0x457682*/
+  if ( !v3 || DynamicVector::GetOrGrow((_DWORD *)(this->focus + 21840), *(_DWORD *)(v3 + 3576)) ) /*0x45766d*/
+    return *(_DWORD *)(this->Type + 5872); /*0x457682*/
   else
     return -1; /*0x457676*/
 }
 
 
-// ==== 0x00457690  BuildingClass::SW2Available  this=int  sig=csp ====
+// ==== 0x00457690  BuildingClass::SW2Available  this=BuildingClass  sig=csp ====
 int __thiscall BuildingClass::SW2Available(_DWORD *this)
 {
   int v2; // eax
   int v3; // eax
 
-  v2 = *(_DWORD *)(*(this + 328) + 5876); /*0x457699*/
+  v2 = *(_DWORD *)(this->Type + 5876); /*0x457699*/
   if ( v2 == -1 ) /*0x4576a2*/
-    return *(_DWORD *)(*(this + 328) + 5876); /*0x4576a2*/
+    return *(_DWORD *)(this->Type + 5876); /*0x4576a2*/
   v3 = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)dword_A83CBC + v2) + 40) + 200); /*0x4576b0*/
-  if ( !v3 || DynamicVector::GetOrGrow((_DWORD *)(*(this + 135) + 21840), *(_DWORD *)(v3 + 3576)) ) /*0x4576cd*/
-    return *(_DWORD *)(*(this + 328) + 5876); /*0x4576e2*/
+  if ( !v3 || DynamicVector::GetOrGrow((_DWORD *)(this->focus + 21840), *(_DWORD *)(v3 + 3576)) ) /*0x4576cd*/
+    return *(_DWORD *)(this->Type + 5876); /*0x4576e2*/
   else
     return -1; /*0x4576d6*/
 }
@@ -7386,7 +7386,7 @@ char __thiscall sub_458750(int *this)
 }
 
 
-// ==== 0x00458810  BuildingClass::BuildTurretTransform  this=int  sig=csp ====
+// ==== 0x00458810  BuildingClass::BuildTurretTransform  this=BuildingClass  sig=csp ====
 float *__thiscall sub_458810(int this, float *a2)
 {
   float v4; // [esp+0h] [ebp-44h]
@@ -7975,7 +7975,7 @@ void __thiscall BuildingClass_RemoveLimpet(_DWORD *this)
 }
 
 
-// ==== 0x00459470  BuildingClass::UpdateDamageAnim  this=int  sig=csp ====
+// ==== 0x00459470  BuildingClass::UpdateDamageAnim  this=BuildingClass  sig=csp ====
 int __thiscall BuildingClass::UpdateDamageAnim(int *this)
 {
   int result; // eax
@@ -7989,25 +7989,25 @@ int __thiscall BuildingClass::UpdateDamageAnim(int *this)
 
   BuildingClass::ClearAnims(this, (TechnoClass *)0xA); /*0x459478*/
   BuildingClass::ClearAnims(this, (TechnoClass *)0xB); /*0x459481*/
-  result = *(this + 185); /*0x459486*/
+  result = this->alignmentPaddingB9; /*0x459486*/
   if ( result ) /*0x45948e*/
   {
     if ( *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 580) != -1 ) /*0x4594a0*/
     {
-      v9[0] = *(this + 39); /*0x4594ac*/
-      v9[1] = *(this + 40); /*0x4594b3*/
-      v9[2] = *(this + 41); /*0x4594be*/
+      v9[0] = this->q027; /*0x4594ac*/
+      v9[1] = this->owningHouseIndex; /*0x4594b3*/
+      v9[2] = this->q029; /*0x4594be*/
       StartAudioControllerAt(*(AudioController **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 580), (int)v9, 0); /*0x4594c8*/
     }
     if ( BuildingClass::GetHealthRatio(this) > *(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5888) ) /*0x4594e5*/
     {
       v3 = 0; /*0x4594ff*/
-      v4 = (_BYTE *)(*(this + 328) + 4732); /*0x459501*/
+      v4 = (_BYTE *)(this->gattlingValue + 4732); /*0x459501*/
     }
     else
     {
       v3 = 1; /*0x4594ed*/
-      v4 = (_BYTE *)(*(this + 328) + 4748); /*0x4594f2*/
+      v4 = (_BYTE *)(this->gattlingValue + 4748); /*0x4594f2*/
     }
     if ( v4 && *v4 ) /*0x45950a*/
       BuildingClass::PlayAnim( /*0x459519*/
@@ -8021,12 +8021,12 @@ int __thiscall BuildingClass::UpdateDamageAnim(int *this)
     if ( BuildingClass::GetHealthRatio(this) > *(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5888) ) /*0x459535*/
     {
       v6 = 0; /*0x45954f*/
-      v7 = (_BYTE *)(*(this + 328) + 4800); /*0x459551*/
+      v7 = (_BYTE *)(this->gattlingValue + 4800); /*0x459551*/
     }
     else
     {
       v6 = 1; /*0x45953d*/
-      v7 = (_BYTE *)(*(this + 328) + 4816); /*0x459542*/
+      v7 = (_BYTE *)(this->gattlingValue + 4816); /*0x459542*/
     }
     if ( v7 ) /*0x459558*/
     {
@@ -8034,10 +8034,10 @@ int __thiscall BuildingClass::UpdateDamageAnim(int *this)
         BuildingClass::PlayAnim((ObjectClass *)this, v5, v7, (IUnknown *)0xD, (IUnknown *)v6, 0, 0); /*0x459569*/
     }
     (*(void (__thiscall **)(int *, int))(*this + 628))(this, 3); /*0x459574*/
-    *(_DWORD *)(*(this + 185) + 740) = 0; /*0x459586*/
+    *(_DWORD *)(this->alignmentPaddingB9 + 740) = 0; /*0x459586*/
     v8 = *this; /*0x459590*/
-    *(this + 185) = 0; /*0x459592*/
-    *(this + 454) = 0; /*0x45959c*/
+    this->alignmentPaddingB9 = 0; /*0x459592*/
+    this->BunkerState = 0; /*0x45959c*/
     return (*(int (__thiscall **)(int *, int, _DWORD))(v8 + 488))(this, 5, 0); /*0x4595a6*/
   }
   return result; /*0x4595ac*/
@@ -8185,13 +8185,13 @@ int __thiscall BuildingClass::EmptyBunker(ObjectClass *this)
 }
 
 
-// ==== 0x00459840  HouseClass::GetRepairStepAmount  this=VOID_PTR  sig=csp ====
+// ==== 0x00459840  HouseClass::GetRepairStepAmount  this=HouseClass  sig=csp ====
 int __thiscall sub_459840(_DWORD *this)
 {
   _DWORD *v1; // edx
   int result; // eax
 
-  v1 = (_DWORD *)*(this + 328); /*0x459840*/
+  v1 = (_DWORD *)this->q520; /*0x459840*/
   result = v1[937]; /*0x459846*/
   if ( !result ) /*0x45984e*/
   {
@@ -8200,7 +8200,7 @@ int __thiscall sub_459840(_DWORD *this)
     {
       result = v1[939]; /*0x45985a*/
       if ( !result ) /*0x459862*/
-        return *(this + 445); /*0x459864*/
+        return this->q6F4; /*0x459864*/
     }
   }
   return result; /*0x45986a*/
@@ -8715,12 +8715,12 @@ int __fastcall ObjectType_IsBuildingType(int a1)
 }
 
 
-// ==== 0x00459F60  Coord3D::Equals  this=float  sig=csp ====
+// ==== 0x00459F60  Coord3D::Equals  this=Coord3D  sig=csp ====
 BOOL __thiscall Coord3D::Equals(_DWORD *this, BuildingClass *aP1)
 {
   return *this == *(_DWORD *)aP1->__pad_0 /*0x459f84*/
-      && *(this + 1) == *(_DWORD *)&aP1->__pad_0[4]
-      && *(this + 2) == *(_DWORD *)&aP1->__pad_0[8];
+      && this->Coord3D_field_0x04 == *(_DWORD *)&aP1->__pad_0[4]
+      && this->Coord3D_field_0x08 == *(_DWORD *)&aP1->__pad_0[8];
 }
 
 
@@ -8880,7 +8880,7 @@ AbstractClass *__thiscall Rect::Construct(_DWORD *this, IUnknown *aP1, AbstractC
 }
 
 
-// ==== 0x0045A160  ObjectClass::Release2COM  this=VOID_PTR  sig=csp ====
+// ==== 0x0045A160  ObjectClass::Release2COM  this=ObjectClass  sig=csp ====
 int __thiscall COM_Release2(int *this)
 {
   int result; // eax
@@ -8892,7 +8892,7 @@ int __thiscall COM_Release2(int *this)
 }
 
 
-// ==== 0x0045A170  CellClass::SetField2C  this=VOID_PTR  sig=csp ====
+// ==== 0x0045A170  CellClass::SetField2C  this=CellClass  sig=csp ====
 int __thiscall CellClass::SetField2C(int *this)
 {
   int result; // eax
@@ -9910,7 +9910,7 @@ _DWORD *__thiscall VectorClass_ReestablishPtr::Construct(_DWORD *this, BuildingC
 }
 
 
-// ==== 0x0045AEA0  StreamClass::Set2  this=VOID_PTR  sig=csp ====
+// ==== 0x0045AEA0  StreamClass::Set2  this=StreamClass  sig=csp ====
 int __thiscall StreamClass_Set2(_DWORD *this, _DWORD *a2)
 {
   int v3; // edi
@@ -10469,7 +10469,7 @@ int Map_InitCellOffsets()
 }
 
 
-// ==== 0x0045DD20  ObjectClass::method_45DD20  this=VOID_PTR  sig=csp ====
+// ==== 0x0045DD20  ObjectClass::method_45DD20  this=ObjectClass  sig=csp ====
 char *__thiscall sub_45DD20(void *this)
 {
   int v1; // edx
@@ -11045,7 +11045,7 @@ int __thiscall sub_45E8B0(_DWORD *this, int a2, int a3, int a4, int a5)
 }
 
 
-// ==== 0x0045E8F0  ObjectClass::ProcessDataCCFileClass  this=int  sig=csp ====
+// ==== 0x0045E8F0  ObjectClass::ProcessDataCCFileClass  this=ObjectClass  sig=csp ====
 char sub_45E8F0()
 {
   int SubFile; // eax
@@ -11087,7 +11087,7 @@ char sub_45E8F0()
 }
 
 
-// ==== 0x0045E970  BuildingTypeClass::LoadRepairAnimations  this=int  sig=csp ====
+// ==== 0x0045E970  BuildingTypeClass::LoadRepairAnimations  this=BuildingTypeClass  sig=csp ====
 void BuildingTypeClass::LoadRepairAnimations(#376 *this)
 {
   ObjectTypeClass *v1; // ecx
@@ -11365,7 +11365,7 @@ int __thiscall AbstractClass::sub_45EDD0(_DWORD *this, int a2)
 }
 
 
-// ==== 0x0045EE70  BuildingClass::ApplyFoundationDamage  this=VOID_PTR  sig=csp ====
+// ==== 0x0045EE70  BuildingClass::ApplyFoundationDamage  this=BuildingClass  sig=csp ====
 int __thiscall BuildingClass::ApplyFoundationDamage(void *this, _WORD *a1, HouseClass *aP2)
 {
   _WORD *v4; // edi
@@ -11383,7 +11383,7 @@ int __thiscall BuildingClass::ApplyFoundationDamage(void *this, _WORD *a1, House
   v12 = 0; /*0x45ee81*/
   if ( *a1 == unk_89C8B0 && a1[1] == unk_89C8B2 ) /*0x45ee9a*/
     return 0; /*0x45ee9a*/
-  v4 = (_WORD *)(*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 144))(this, 1); /*0x45eeac*/
+  v4 = (_WORD *)(*(int (__thiscall **)(void *, int))(this->isAliveFlag)(this, 1); /*0x45eeac*/
   while ( *v4 != 0x7FFF || v4[1] != 0x7FFF ) /*0x45eebb*/
   {
     v5 = v4; /*0x45eec5*/
@@ -11490,15 +11490,15 @@ int __thiscall AbstractClass::sub_45F040(int this)
 }
 
 
-// ==== 0x0045F160  BuildingClass::GetPlacementCoords  this=VOID_PTR  sig=csp ====
+// ==== 0x0045F160  BuildingClass::GetPlacementCoords  this=BuildingClass  sig=csp ====
 char __thiscall BuildingClass::GetPlacementCoords(int *this, int *a2, _DWORD *a3)
 {
   int v3; // eax
   int v4; // eax
 
-  if ( *((_BYTE *)this + 5992) && a2 ) /*0x45f171*/
+  if ( this->q1768 && a2 ) /*0x45f171*/
   {
-    v3 = *(this + 1341); /*0x45f173*/
+    v3 = this->q14F4; /*0x45f173*/
     if ( v3 ) /*0x45f17b*/
     {
       *a2 = v3; /*0x45f1ad*/
@@ -11517,16 +11517,16 @@ char __thiscall BuildingClass::GetPlacementCoords(int *this, int *a2, _DWORD *a3
 }
 
 
-// ==== 0x0045F1D0  TacticalClass::initTacticalMap  this=VOID_PTR  sig=csp ====
+// ==== 0x0045F1D0  TacticalClass::initTacticalMap  this=TacticalClass  sig=csp ====
 char __thiscall sub_45F1D0(int *this, int *a2, int *a3)
 {
   int v3; // eax
   int v4; // eax
   int v5; // eax
 
-  if ( *((_BYTE *)this + 5992) && a2 ) /*0x45f1e1*/
+  if ( this->q1768 && a2 ) /*0x45f1e1*/
   {
-    v3 = *(this + 1341); /*0x45f1e3*/
+    v3 = this->q14F4; /*0x45f1e3*/
     if ( v3 ) /*0x45f1eb*/
     {
       *a2 = v3; /*0x45f218*/

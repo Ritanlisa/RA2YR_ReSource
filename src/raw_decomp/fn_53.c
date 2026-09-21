@@ -202,7 +202,7 @@ char MixFileClass::Bootstrap()
 }
 
 
-// ==== 0x00530460  MixFile::LoadAll  this=int  sig=csp ====
+// ==== 0x00530460  MixFile::LoadAll  this=MixFile  sig=csp ====
 bool MixFile::LoadAll()
 {
   _DWORD *v0; // eax
@@ -701,7 +701,7 @@ LABEL_149:
 }
 
 
-// ==== 0x005312A0  ObjectClass::ShowLoadingScreen  this=int  sig=csp ====
+// ==== 0x005312A0  ObjectClass::ShowLoadingScreen  this=ObjectClass  sig=csp ====
 int __usercall ShowLoadingScreen@<eax>(int *a1@<ebp>, __int16 a2@<di>, int a3@<esi>)
 {
   __int16 *v3; // esi
@@ -941,7 +941,7 @@ LABEL_16:
 }
 
 
-// ==== 0x00531A00  CreditsScreen::DlgProc  this=unknown  sig=csp ====
+// ==== 0x00531A00  CreditsScreen::DlgProc  this=CreditsScreen  sig=csp ====
 int __stdcall CreditsScreen_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
@@ -1118,7 +1118,7 @@ LABEL_27:
 }
 
 
-// ==== 0x00531F60  MainMenu::DlgProc  this=unknown  sig=csp ====
+// ==== 0x00531F60  MainMenu::DlgProc  this=MainMenu  sig=csp ====
 int __stdcall MainMenu::DlgProc(int hWnd, int a2, int a3, int a4)
 {
   int result; // eax
@@ -1186,7 +1186,7 @@ int __stdcall MainMenu::DlgProc(int hWnd, int a2, int a3, int a4)
 }
 
 
-// ==== 0x00532100  ScreenSaver::Process  this=int  sig=csp ====
+// ==== 0x00532100  ScreenSaver::Process  this=ScreenSaver  sig=csp ====
 char __usercall ScreenSaver::Process@<al>(char a1@<cl>, int a2@<ebx>, int a3@<ebp>)
 {
   char result; // al
@@ -2709,7 +2709,7 @@ int __thiscall Sidebar::ScrollSidebarSkipGame(const char *this)
 }
 
 
-// ==== 0x00533FD0  AllocateSurfaceScreenSurfaces  this=int  sig=csp ====
+// ==== 0x00533FD0  AllocateSurfaceScreenSurfaces  this=-  sig=csp ====
 char __fastcall AllocateSurfaceScreenSurfaces(int a1, ObjectClass *aP1, ObjectClass *aP2, int a4, char a5)
 {
   bool v7; // bl
@@ -2900,7 +2900,7 @@ char __fastcall AllocateSurfaceScreenSurfaces(int a1, ObjectClass *aP1, ObjectCl
 }
 
 
-// ==== 0x00534450  Game::DestroyAllObjects  this=VOID_PTR  sig=csp ====
+// ==== 0x00534450  Game::DestroyAllObjects  this=Game  sig=csp ====
 int sub_534450()
 {
   size_t i; // eax
@@ -3118,7 +3118,7 @@ int sub_534450()
 }
 
 
-// ==== 0x005349C0  LoadTheaterClassMIX  this=int  sig=ida-proto ====
+// ==== 0x005349C0  LoadTheaterClassMIX  this=-  sig=ida-proto ====
 void __fastcall TheaterClass_LoadMIX(int a1)
 {
   int v2; // esi
@@ -3396,7 +3396,7 @@ LABEL_15:
 }
 
 
-// ==== 0x00534FA0  MixFile::LoadSide  this=int  sig=csp ====
+// ==== 0x00534FA0  MixFile::LoadSide  this=MixFile  sig=csp ====
 char __thiscall MixFile_LoadSide(int this)
 {
   unsigned int v2; // ebx
@@ -3993,7 +3993,7 @@ _DWORD *__thiscall INIClass_Constructor(_DWORD *this)
 }
 
 
-// ==== 0x00535B30  CCINIClass::CCINIClass  this=VOID_PTR  sig=csp ====
+// ==== 0x00535B30  CCINIClass::CCINIClass  this=CCINIClass  sig=csp ====
 _DWORD *__thiscall CCINIClass::Constructor(_DWORD *this)
 {
   _DWORD *result; // eax
@@ -7071,7 +7071,7 @@ int __thiscall CreateTeamCommand::sub_538750(int *this, _DWORD *a2)
 }
 
 
-// ==== 0x00538780  DynamicVector::Add_Alt2  this=int  sig=csp ====
+// ==== 0x00538780  DynamicVector::Add_Alt2  this=DynamicVector  sig=csp ====
 char __thiscall DynamicVector::Add_Alt2(_DWORD *this, DynamicVector *aP1)
 {
   int v3; // ecx
@@ -7079,24 +7079,24 @@ char __thiscall DynamicVector::Add_Alt2(_DWORD *this, DynamicVector *aP1)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x538783*/
-  if ( *(this + 4) >= v3 ) /*0x53878b*/
+  v3 = this->DynamicVector_field_0x8; /*0x538783*/
+  if ( this->DynamicVector_field_0x10 >= v3 ) /*0x53878b*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x538796*/
+    if ( !this->IsAllocated && v3 ) /*0x538796*/
       return 0; /*0x538796*/
-    v4 = *(this + 5); /*0x538798*/
+    v4 = this->CapacityIncrement; /*0x538798*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x5387a8*/
       return 0; /*0x5387af*/
   }
-  v6 = *(this + 4); /*0x5387b5*/
-  v7 = *(this + 1); /*0x5387b8*/
-  *(this + 4) = v6 + 1; /*0x5387be*/
+  v6 = this->DynamicVector_field_0x10; /*0x5387b5*/
+  v7 = this->Items; /*0x5387b8*/
+  this->DynamicVector_field_0x10 = v6 + 1; /*0x5387be*/
   *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x5387c8*/
   return 1; /*0x5387b1*/
 }
 
 
-// ==== 0x005387D0  SortedArray::Append  this=int  sig=csp ====
+// ==== 0x005387D0  SortedArray::Append  this=SortedArray  sig=csp ====
 char __thiscall SortedArray::Append(int this, DynamicVector *aP1, _DWORD *a2)
 {
   int v4; // eax
@@ -7149,7 +7149,7 @@ LABEL_9:
 }
 
 
-// ==== 0x005388A0  SortedArray::RemoveByKey  this=int  sig=csp ====
+// ==== 0x005388A0  SortedArray::RemoveByKey  this=SortedArray  sig=csp ====
 char __thiscall SortedArray::RemoveByKey(int this, DynamicVector *aP1)
 {
   size_t v3; // eax
@@ -7217,7 +7217,7 @@ LABEL_9:
 }
 
 
-// ==== 0x00538980  SortedArray::FindPair  this=int  sig=csp ====
+// ==== 0x00538980  SortedArray::FindPair  this=SortedArray  sig=csp ====
 char __thiscall SortedArray_FindPair(int this, int *a2)
 {
   size_t v3; // ecx
@@ -7373,7 +7373,7 @@ _DWORD *__thiscall sub_538B30(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x00538B80  KeyboardConfig::ReleaseBuffer  this=int  sig=csp ====
+// ==== 0x00538B80  KeyboardConfig::ReleaseBuffer  this=KeyboardConfig  sig=csp ====
 char __thiscall sub_538B80(int this, int a2)
 {
   char *v3; // edi
@@ -7603,7 +7603,7 @@ __int16 __thiscall sub_538E70(void *this, double a2)
 }
 
 
-// ==== 0x00538F20  sub_538F20  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00538F20  sub_538F20  this=-  sig=ida-proto ====
 char __fastcall sub_538F20(int a1, int a2, char *Source)
 {
   int *v5; // ebx
@@ -8120,7 +8120,7 @@ int sub_539760()
 }
 
 
-// ==== 0x00539890  SuperWeaponClass::LoadFromSaveStream  this=int  sig=csp ====
+// ==== 0x00539890  SuperWeaponClass::LoadFromSaveStream  this=SuperWeaponClass  sig=csp ====
 int __thiscall SuperWeaponClass::LoadFromSaveStream(int *this)
 {
   int result; // eax
@@ -8286,7 +8286,7 @@ LABEL_23:
 }
 
 
-// ==== 0x00539AE0  SuperWeapon::SerializeSuperWeaponState  this=int  sig=csp ====
+// ==== 0x00539AE0  SuperWeapon::SerializeSuperWeaponState  this=SuperWeapon  sig=csp ====
 int __thiscall SerializeSuperWeaponState(void *this)
 {
   int result; // eax
@@ -8306,46 +8306,46 @@ int __thiscall SerializeSuperWeaponState(void *this)
   int v16; // [esp+158h] [ebp-8h] BYREF
   int v17; // [esp+15Ch] [ebp-4h] BYREF
 
-  result = (*(int (__stdcall **)(void *, char *, int, _DWORD))(*(_DWORD *)this + 12))(this, &unk_A9FAB4, 1, 0); /*0x539af4*/
+  result = (*(int (__stdcall **)(void *, char *, int, _DWORD))(this->q030)(this, &unk_A9FAB4, 1, 0); /*0x539af4*/
   if ( result >= 0 ) /*0x539af9*/
   {
-    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &unk_827FC0, 4, 0); /*0x539b0b*/
+    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)(this, &unk_827FC0, 4, 0); /*0x539b0b*/
     if ( result >= 0 ) /*0x539b10*/
     {
-      result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &unk_827FC4, 4, 0); /*0x539b22*/
+      result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)(this, &unk_827FC4, 4, 0); /*0x539b22*/
       if ( result >= 0 ) /*0x539b27*/
       {
-        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &unk_A9FAB8, 4, 0); /*0x539b39*/
+        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)(this, &unk_A9FAB8, 4, 0); /*0x539b39*/
         if ( result >= 0 ) /*0x539b3e*/
         {
-          result = (*(int (__stdcall **)(void *, char *, int, _DWORD))(*(_DWORD *)this + 12))(this, &unk_A9FAD0, 1, 0); /*0x539b50*/
+          result = (*(int (__stdcall **)(void *, char *, int, _DWORD))(this->q030)(this, &unk_A9FAD0, 1, 0); /*0x539b50*/
           if ( result >= 0 ) /*0x539b55*/
           {
-            result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &unk_827FC8, 4, 0); /*0x539b67*/
+            result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)(this, &unk_827FC8, 4, 0); /*0x539b67*/
             if ( result >= 0 ) /*0x539b6c*/
             {
-              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539b7e*/
+              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539b7e*/
                          this,
                          &unk_827FCC,
                          4,
                          0);
               if ( result >= 0 ) /*0x539b83*/
               {
-                result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539b95*/
+                result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539b95*/
                            this,
                            &unk_A9FABC,
                            4,
                            0);
                 if ( result >= 0 ) /*0x539b9a*/
                 {
-                  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539bac*/
+                  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539bac*/
                              this,
                              &unk_A9FAC0,
                              4,
                              0);
                   if ( result >= 0 ) /*0x539bb1*/
                   {
-                    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539bc3*/
+                    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539bc3*/
                                this,
                                &unk_A9FAC4,
                                4,
@@ -8353,21 +8353,21 @@ int __thiscall SerializeSuperWeaponState(void *this)
                     if ( result >= 0 ) /*0x539bc8*/
                     {
                       ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], &unk_A9FAC4); /*0x539bd8*/
-                      result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539be9*/
+                      result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539be9*/
                                  this,
                                  &unk_A9F9CC,
                                  4,
                                  0);
                       if ( result >= 0 ) /*0x539bee*/
                       {
-                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539c00*/
+                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539c00*/
                                    this,
                                    &word_A9FA48,
                                    4,
                                    0);
                         if ( result >= 0 ) /*0x539c05*/
                         {
-                          result = (*(int (__stdcall **)(void *, #375 **, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539c17*/
+                          result = (*(int (__stdcall **)(void *, #375 **, int, _DWORD))(this->q030)( /*0x539c17*/
                                      this,
                                      &unk_A9FACC,
                                      4,
@@ -8375,7 +8375,7 @@ int __thiscall SerializeSuperWeaponState(void *this)
                           if ( result >= 0 ) /*0x539c1c*/
                           {
                             ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)&unk_A9FACC); /*0x539c2c*/
-                            result = (*(int (__stdcall **)(void *, #375 **, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539c3d*/
+                            result = (*(int (__stdcall **)(void *, #375 **, int, _DWORD))(this->q030)( /*0x539c3d*/
                                        this,
                                        &unk_A9FAC8,
                                        4,
@@ -8383,7 +8383,7 @@ int __thiscall SerializeSuperWeaponState(void *this)
                             if ( result >= 0 ) /*0x539c42*/
                             {
                               ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)&unk_A9FAC8); /*0x539c52*/
-                              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539c63*/
+                              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539c63*/
                                          this,
                                          &v16,
                                          4,
@@ -8402,7 +8402,7 @@ LABEL_25:
                                       ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)unk_A9FA64 + v6++); /*0x539d05*/
                                     while ( v6 < v16 ); /*0x539d0f*/
                                   }
-                                  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539d1d*/
+                                  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539d1d*/
                                              this,
                                              &v16,
                                              4,
@@ -8423,7 +8423,7 @@ LABEL_37:
                                             (int *)unk_A9F9D4 + v10++);
                                         while ( v10 < v16 ); /*0x539dc9*/
                                       }
-                                      v11 = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539dda*/
+                                      v11 = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539dda*/
                                               this,
                                               &v16,
                                               4,
@@ -8450,7 +8450,7 @@ LABEL_49:
                                         {
                                           while ( 1 ) /*0x539dfd*/
                                           {
-                                            v11 = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539dfd*/
+                                            v11 = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539dfd*/
                                                     this,
                                                     &v17,
                                                     4,
@@ -8480,7 +8480,7 @@ LABEL_49:
                                     {
                                       while ( 1 ) /*0x539d3e*/
                                       {
-                                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539d3e*/
+                                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539d3e*/
                                                    this,
                                                    &v17,
                                                    4,
@@ -8509,7 +8509,7 @@ LABEL_49:
                                 {
                                   while ( 1 ) /*0x539c84*/
                                   {
-                                    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x539c84*/
+                                    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q030)( /*0x539c84*/
                                                this,
                                                &v17,
                                                4,
@@ -8673,7 +8673,7 @@ char ReturnFalse()
 }
 
 
-// ==== 0x0053A140  LightningStorm::Strike  this=VOID_PTR  sig=csp ====
+// ==== 0x0053A140  LightningStorm::Strike  this=LightningStorm  sig=csp ====
 int __stdcall LightningStorm::Strike(IUnknown *aP0)
 {
   _DWORD *v1; // esi
@@ -8735,7 +8735,7 @@ int __stdcall LightningStorm::Strike(IUnknown *aP0)
 }
 
 
-// ==== 0x0053A300  LightningStorm::Strike2  this=VOID_PTR  sig=csp ====
+// ==== 0x0053A300  LightningStorm::Strike2  this=LightningStorm  sig=csp ====
 char __stdcall LightningStorm::Strike2(int a1, int a2, int a3)
 {
   _DWORD *v3; // esi
@@ -9163,7 +9163,7 @@ int sub_53AB70()
 }
 
 
-// ==== 0x0053AC80  sub_53AC80  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0053AC80  sub_53AC80  this=-  sig=ida-proto ====
 int __fastcall sub_53AC80(int a1, int a2, int a3, int a4)
 {
   int result; // eax
@@ -9262,7 +9262,7 @@ int sub_53AE00()
 }
 
 
-// ==== 0x0053AE50  SuperClass::LaunchPsychicDominator  this=int  sig=csp ====
+// ==== 0x0053AE50  SuperClass::LaunchPsychicDominator  this=SuperClass  sig=csp ====
 #381 *__thiscall SuperClass::LaunchPsychicDominator(#375 *this, int a2)
 {
   #381 *result; // eax
@@ -9525,7 +9525,7 @@ void nullsub_152()
 }
 
 
-// ==== 0x0053B400  PsyDom::IsActive  this=unknown  sig=csp ====
+// ==== 0x0053B400  PsyDom::IsActive  this=PsyDom  sig=csp ====
 bool PsyDom_IsActive()
 {
   return unk_A9FAC0 != 0; /*0x53b40a*/
@@ -9546,7 +9546,7 @@ int sub_53B410()
 }
 
 
-// ==== 0x0053B460  globalHelper_03B460  this=int  sig=ida-proto ====
+// ==== 0x0053B460  globalHelper_03B460  this=-  sig=ida-proto ====
 void __fastcall sub_53B460(int a1)
 {
   char *v2; // esi
@@ -9820,7 +9820,7 @@ int __thiscall ApplyChronoScreenColorShift(void *this)
 }
 
 
-// ==== 0x0053BAD0  ChronoScreen::IsActive  this=unknown  sig=csp ====
+// ==== 0x0053BAD0  ChronoScreen::IsActive  this=ChronoScreen  sig=csp ====
 BOOL ChronoScreen_IsActive()
 {
   return unk_A9FAB0 != 0; /*0x53badd*/
@@ -9834,7 +9834,7 @@ BOOL sub_53BAE0()
 }
 
 
-// ==== 0x0053BBA0  RenderChronosphereScreenEffect  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0053BBA0  RenderChronosphereScreenEffect  this=-  sig=ida-proto ====
 int __fastcall RenderChronosphereScreenEffect(char a1)
 {
   int v1; // ebx
@@ -10096,7 +10096,7 @@ int __fastcall RenderChronosphereScreenEffect(char a1)
 }
 
 
-// ==== 0x0053C0A0  Render_Render  this=int  sig=csp ====
+// ==== 0x0053C0A0  Render_Render  this=-  sig=csp ====
 int __fastcall sub_53C0A0(_WORD *a1, int a2, unsigned __int16 a3, int a4, int a5, int a6, int a7)
 {
   int v7; // ebx
@@ -10195,7 +10195,7 @@ int __fastcall sub_53C0A0(_WORD *a1, int a2, unsigned __int16 a3, int a4, int a5
 }
 
 
-// ==== 0x0053C280  ScenarioClass::UpdateLighting  this=int  sig=ida-proto ====
+// ==== 0x0053C280  ScenarioClass::UpdateLighting  this=ScenarioClass  sig=ida-proto ====
 int ScenarioClass::UpdateLighting()
 {
   if ( unk_A9FABC == 1 || unk_A9FAB0 ) /*0x53c297*/
@@ -10233,20 +10233,20 @@ int ScenarioClass::UpdateLighting()
 }
 
 
-// ==== 0x0053C450  TechnoClass::CanBePermaMC  this=int  sig=csp ====
+// ==== 0x0053C450  TechnoClass::CanBePermaMC  this=TechnoClass  sig=csp ====
 bool __thiscall TechnoClass::CanBePermaMC(void *this)
 {
   if ( !this ) /*0x53c455*/
     return 0; /*0x53c457*/
-  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 44))(this) == 6 ) /*0x53c465*/
+  if ( (*(int (__thiscall **)(void *))(this->fallRate)(this) == 6 ) /*0x53c465*/
     return 0; /*0x53c467*/
-  if ( *(_BYTE *)((*(int (__thiscall **)(void *))(*(_DWORD *)this + 132))(this) + 3381) ) /*0x53c475*/
+  if ( *(_BYTE *)((*(int (__thiscall **)(void *))(this->hasParachute)(this) + 3381) ) /*0x53c475*/
     return 0; /*0x53c47f*/
-  if ( (*(unsigned __int8 (__thiscall **)(void *))(*(_DWORD *)this + 352))(this) ) /*0x53c487*/
+  if ( (*(unsigned __int8 (__thiscall **)(void *))(this->q160)(this) ) /*0x53c487*/
     return 0; /*0x53c491*/
-  if ( *(_BYTE *)((*(int (__thiscall **)(void *))(*(_DWORD *)this + 132))(this) + 3434) ) /*0x53c49f*/
+  if ( *(_BYTE *)((*(int (__thiscall **)(void *))(this->hasParachute)(this) + 3434) ) /*0x53c49f*/
     return 0; /*0x53c4a9*/
-  return (*(unsigned __int8 (__thiscall **)(void *))(*(_DWORD *)this + 84))(this) == 0; /*0x53c459*/
+  return (*(unsigned __int8 (__thiscall **)(void *))(this->q054)(this) == 0; /*0x53c459*/
 }
 
 
@@ -11321,7 +11321,7 @@ char sub_53D850()
 }
 
 
-// ==== 0x0053D8E0  ComputeSpiralOffset  this=unknown  sig=csp ====
+// ==== 0x0053D8E0  ComputeSpiralOffset  this=-  sig=csp ====
 int *__fastcall ComputeSpiralOffset(int *a1, int a2)
 {
   int v2; // edx
@@ -11376,7 +11376,7 @@ int *__fastcall ComputeSpiralOffset(int *a1, int a2)
 }
 
 
-// ==== 0x0053D960  GenerateLightningStormGlow_Helper  this=unknown  sig=csp ====
+// ==== 0x0053D960  GenerateLightningStormGlow_Helper  this=-  sig=csp ====
 int __stdcall sub_53D960(int a1, int a2)
 {
   signed int v3; // ecx
@@ -11826,7 +11826,7 @@ LABEL_8:
 }
 
 
-// ==== 0x0053E070  sub_53E070  this=unknown  sig=csp ====
+// ==== 0x0053E070  sub_53E070  this=-  sig=csp ====
 DWORD __stdcall sub_53E070(_DWORD *lpThreadParameter)
 {
   _DWORD *v1; // esi
@@ -11968,7 +11968,7 @@ void sub_53E1D0()
 }
 
 
-// ==== 0x0053E3C0  TimerPool::AllocSlot  this=int  sig=csp ====
+// ==== 0x0053E3C0  TimerPool::AllocSlot  this=TimerPool  sig=csp ====
 _DWORD *__thiscall TimerPool_AllocSlot(void *this)
 {
   _DWORD *result; // eax
@@ -12043,7 +12043,7 @@ void **__thiscall Array_RemoveObject(void *this)
 }
 
 
-// ==== 0x0053E4F0  ObjectClass::WinMain_Helper_53E4F0  this=int  sig=csp ====
+// ==== 0x0053E4F0  ObjectClass::WinMain_Helper_53E4F0  this=ObjectClass  sig=csp ====
 BOOL __thiscall WinMain_Helper_53E4F0(char *FileName)
 {
   if ( !unk_AA0448 || unk_AA0468 ) /*0x53e503*/
@@ -12057,7 +12057,7 @@ BOOL __thiscall WinMain_Helper_53E4F0(char *FileName)
 }
 
 
-// ==== 0x0053E550  ObjectClass::WinMain_Write  this=int  sig=csp ====
+// ==== 0x0053E550  ObjectClass::WinMain_Write  this=ObjectClass  sig=csp ====
 BOOL __thiscall WinMain_Write(char *FileName)
 {
   signed int SampleSize; // eax
@@ -12079,7 +12079,7 @@ BOOL __thiscall WinMain_Write(char *FileName)
 }
 
 
-// ==== 0x0053E6B0  WinMain_Write_53E6B0  this=unknown  sig=csp ====
+// ==== 0x0053E6B0  WinMain_Write_53E6B0  this=-  sig=csp ====
 void sub_53E6B0()
 {
   signed int SampleSize; // eax
@@ -12108,7 +12108,7 @@ int sub_53E720()
 }
 
 
-// ==== 0x0053E730  IsMessageDialog  this=unknown  sig=csp ====
+// ==== 0x0053E730  IsMessageDialog  this=-  sig=csp ====
 BOOL __fastcall Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax)
 {
   BOOL result; // eax
@@ -12122,7 +12122,7 @@ BOOL __fastcall Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT 
 }
 
 
-// ==== 0x0053E770  GameLoopMessagePump  this=int  sig=csp ====
+// ==== 0x0053E770  GameLoopMessagePump  this=-  sig=csp ====
 BOOL __fastcall GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg)
 {
   void (__stdcall *v6)(LPCRITICAL_SECTION); // edi
@@ -12328,7 +12328,7 @@ LABEL_65:
 }
 
 
-// ==== 0x0053EC40  Memory_Helper  this=int  sig=ida-proto ====
+// ==== 0x0053EC40  Memory_Helper  this=-  sig=ida-proto ====
 int __fastcall sub_53EC40(unsigned __int8 a1, char a2)
 {
   int result; // eax
@@ -12377,7 +12377,7 @@ IPXManagerClass *__thiscall Waypoint::InitInvalid(_BYTE *this)
 }
 
 
-// ==== 0x0053ECE0  NetworkAddress::Assign  this=int  sig=csp ====
+// ==== 0x0053ECE0  NetworkAddress::Assign  this=NetworkAddress  sig=csp ====
 _DWORD *__thiscall NetworkAddress::Assign(_DWORD *this, _DWORD *a1, IUnknown *aP2, __int16 a4)
 {
   _DWORD *result; // eax
@@ -12419,13 +12419,13 @@ __int16 __thiscall NetworkID::Assign(_DWORD *this, IPXManagerClass *aP1, int a3,
 }
 
 
-// ==== 0x0053ED60  Network::GetAddress  this=int  sig=csp ====
+// ==== 0x0053ED60  Network::GetAddress  this=Network  sig=csp ====
 __int16 __thiscall Network::GetAddress(_DWORD *this, _DWORD *a1, ObjectClass *aP2, _WORD *a3)
 {
   __int16 result; // ax
 
-  *(_DWORD *)aP2->__pad_0 = *(this + 1); /*0x53ed6a*/
-  *(_WORD *)&aP2->__pad_0[4] = *((_WORD *)this + 4); /*0x53ed71*/
+  *(_DWORD *)aP2->__pad_0 = this->Network_field_0x4; /*0x53ed6a*/
+  *(_WORD *)&aP2->__pad_0[4] = this->Network_field_0x10; /*0x53ed71*/
   result = dword_828140; /*0x53ed75*/
   if ( dword_828140 == 1 ) /*0x53ed7d*/
   {
@@ -12440,21 +12440,21 @@ __int16 __thiscall Network::GetAddress(_DWORD *this, _DWORD *a1, ObjectClass *aP
 }
 
 
-// ==== 0x0053EDA0  Network::CopyAddress  this=VOID_PTR  sig=csp ====
+// ==== 0x0053EDA0  Network::CopyAddress  this=Network  sig=csp ====
 char *__thiscall Network_CopyAddress(_DWORD *this, _DWORD *a2, int a3)
 {
   char *result; // eax
 
   result = (char *)(this + 1); /*0x53eda4*/
-  *(_DWORD *)a3 = *(this + 1); /*0x53edaa*/
-  LOWORD(result) = *((_WORD *)this + 4); /*0x53edad*/
+  *(_DWORD *)a3 = this->Network_field_0x4; /*0x53edaa*/
+  LOWORD(result) = this->Network_field_0x10; /*0x53edad*/
   *(_WORD *)(a3 + 4) = (_WORD)result; /*0x53edb1*/
   *a2 = *this; /*0x53edbb*/
   return result; /*0x53edac*/
 }
 
 
-// ==== 0x0053EDC0  Network::CopyAddress_Small  this=int  sig=csp ====
+// ==== 0x0053EDC0  Network::CopyAddress_Small  this=Network  sig=csp ====
 int __thiscall Network::CopyAddress_Small(char *this, IPXManagerClass *aP1)
 {
   char *v3; // ecx
@@ -12480,31 +12480,31 @@ __int16 __thiscall Struct::Copy6Bytes(char *this, IPXManagerClass *aP1)
 }
 
 
-// ==== 0x0053EE00  Network::IsBroadcastAddr  this=int  sig=csp ====
+// ==== 0x0053EE00  Network::IsBroadcastAddr  this=Network  sig=csp ====
 int __thiscall Network_IsBroadcastAddr(_BYTE *this)
 {
   if ( dword_828140 == 1 ) /*0x53ee0a*/
   {
     if ( *this == 0xFF /*0x53ee3b*/
-      && *(this + 1) == 0xFF
-      && *(this + 2) == 0xFF
-      && *(this + 3) == 0xFF
-      && *(this + 4) == 0xFF
-      && *(this + 5) == 0xFF
-      && *(this + 6) == 0xFF
-      && *(this + 7) == 0xFF
-      && *(this + 8) == 0xFF
-      && *(this + 9) == 0xFF )
+      && this->q001 == 0xFF
+      && this->q002 == 0xFF
+      && this->q003 == 0xFF
+      && this->Network_field_0x4 == 0xFF
+      && this->q005 == 0xFF
+      && this->q006 == 0xFF
+      && this->q007 == 0xFF
+      && this->Network_field_0x8 == 0xFF
+      && this->q009 == 0xFF )
     {
       return 1; /*0x53ee42*/
     }
   }
-  else if ( *(this + 4) == 0xFF /*0x53ee5f*/
-         && *(this + 5) == 0xFF
-         && *(this + 6) == 0xFF
-         && *(this + 7) == 0xFF
-         && *(this + 8) == 0xFF
-         && *(this + 9) == 0xFF )
+  else if ( this->Network_field_0x4 == 0xFF /*0x53ee5f*/
+         && this->q005 == 0xFF
+         && this->q006 == 0xFF
+         && this->q007 == 0xFF
+         && this->Network_field_0x8 == 0xFF
+         && this->q009 == 0xFF )
   {
     return 1; /*0x53ee66*/
   }
@@ -12566,7 +12566,7 @@ bool __thiscall NetworkID_Compare(int this, int a2)
 }
 
 
-// ==== 0x0053EF60  Network::processPacket  this=int  sig=csp ====
+// ==== 0x0053EF60  Network::processPacket  this=Network  sig=csp ====
 bool __thiscall Network::processPacket(char *this, TechnoTypeClass *aP1)
 {
   char *v4; // edi
@@ -12579,8 +12579,8 @@ bool __thiscall Network::processPacket(char *this, TechnoTypeClass *aP1)
   bool v11; // zf
 
   if ( dword_828140 == 2 ) /*0x53ef6d*/
-    return *((_DWORD *)this + 1) != *(_DWORD *)&aP1->vtable0[4] || *(_WORD *)this != *(_WORD *)aP1->vtable0; /*0x53ef8d*/
-  if ( (*this || *(this + 1) || *(this + 2) || *(this + 3)) /*0x53efc8*/
+    return this->q001 != *(_DWORD *)&aP1->vtable0[4] || *(_WORD *)this != *(_WORD *)aP1->vtable0; /*0x53ef8d*/
+  if ( (*this || this->q001 || this->q002 || this->q003) /*0x53efc8*/
     && (aP1->vtable0[0] || aP1->vtable0[1] || aP1->vtable0[2] || aP1->vtable0[3]) )
   {
     v8 = 3; /*0x53efe8*/
@@ -12682,7 +12682,7 @@ char *__thiscall Network::FormatAddress(unsigned __int16 *this, IUnknown *aP1)
 }
 
 
-// ==== 0x0053F1F0  Multiplayer::Screen  this=int  sig=csp ====
+// ==== 0x0053F1F0  Multiplayer::Screen  this=Multiplayer  sig=csp ====
 void __thiscall Multiplayer_Screen(void *this)
 {
   dword_828140 = (int)this; /*0x53f1f0*/
@@ -12881,7 +12881,7 @@ int __thiscall Struct::ZeroInitAndSetup_0(_DWORD *this)
 }
 
 
-// ==== 0x0053F4F0  Network_Init_53F4F0  this=VOID_PTR  sig=csp ====
+// ==== 0x0053F4F0  Network_Init_53F4F0  this=-  sig=csp ====
 int __fastcall sub_53F4F0(__int16 a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
   LOWORD(unk_AA0568) = a1; /*0x53f4f4*/
@@ -13046,7 +13046,7 @@ LABEL_27:
 }
 
 
-// ==== 0x0053F830  Network_Get  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0053F830  Network_Get  this=-  sig=ida-proto ====
 int __fastcall sub_53F830(int a1, int a2)
 {
   (*(void (__thiscall **)(int, int, int, _DWORD))(*(_DWORD *)MEMORY[0x887628] + 16))(MEMORY[0x887628], a1, a2, 0); /*0x53f83f*/

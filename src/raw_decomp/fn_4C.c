@@ -1325,7 +1325,7 @@ char __thiscall DSurface_IsDSurface(std::codecvt_base *this)
 }
 
 
-// ==== 0x004C1AC0    this=VOID_PTR  sig=? ====
+// ==== 0x004C1AC0    this=DSurface  sig=? ====
 void *__thiscall DSurface::loc_4C1AC0(void *Block, char a2)
 {
   char v3; // al
@@ -1522,26 +1522,26 @@ void __cdecl sub_4C1DD0()
 }
 
 
-// ==== 0x004C1E10  TechnoClass::ResetDamageAccumulator  this=int  sig=csp ====
+// ==== 0x004C1E10  TechnoClass::ResetDamageAccumulator  this=TechnoClass  sig=csp ====
 _DWORD *__thiscall sub_4C1E10(_DWORD *this)
 {
   *this = 0; /*0x4c1e1a*/
-  *(this + 6) = 0; /*0x4c1e1e*/
-  *(this + 10) = 0x10000; /*0x4c1e21*/
-  *(this + 1) = 0; /*0x4c1e28*/
-  *((_BYTE *)this + 44) = 0; /*0x4c1e2b*/
-  *(this + 7) = 0; /*0x4c1e2e*/
-  *(this + 8) = 0; /*0x4c1e31*/
-  *(this + 2) = 0; /*0x4c1e34*/
-  *(this + 9) = 0; /*0x4c1e3a*/
-  *(this + 3) = 0; /*0x4c1e3d*/
-  *(this + 4) = 0; /*0x4c1e3f*/
-  *(this + 5) = 0; /*0x4c1e42*/
+  this->nextArrayIndex = 0; /*0x4c1e1e*/
+  this->owningHouseIndex = 0x10000; /*0x4c1e21*/
+  this->vtable2 = 0; /*0x4c1e28*/
+  this->suspendedMission = 0; /*0x4c1e2b*/
+  this->referenceCount = 0; /*0x4c1e2e*/
+  this->NeedsSaveOrLink = 0; /*0x4c1e31*/
+  this->vtable3 = 0; /*0x4c1e34*/
+  this->objectTypeFlags = 0; /*0x4c1e3a*/
+  this->vtable4 = 0; /*0x4c1e3d*/
+  this->uniqueId = 0; /*0x4c1e3f*/
+  this->abstractFlags = 0; /*0x4c1e42*/
   return this; /*0x4c1e45*/
 }
 
 
-// ==== 0x004C1E70  sub_4C1E70  this=unknown  sig=csp ====
+// ==== 0x004C1E70  sub_4C1E70  this=-  sig=csp ====
 int __stdcall sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   int v9; // eax
@@ -2154,7 +2154,7 @@ _DWORD *__thiscall sub_4C2B40(_DWORD *this, _DWORD *a2)
 }
 
 
-// ==== 0x004C2BD0  TechnoClass::updateSightRange  this=int  sig=csp ====
+// ==== 0x004C2BD0  TechnoClass::updateSightRange  this=TechnoClass  sig=csp ====
 void __thiscall TechnoClass::updateSightRange(_DWORD *this, IUnknown *aP1, int a3)
 {
   if ( aP1 /*0x4c2bf2*/
@@ -2162,22 +2162,22 @@ void __thiscall TechnoClass::updateSightRange(_DWORD *this, IUnknown *aP1, int a
     && aP1->__pad_8C[4]
     && !aP1->__pad_68[25] )
   {
-    *(this + 8) = aP1; /*0x4c2c00*/
-    *(this + 9) = a3; /*0x4c2c03*/
+    this->NeedsSaveOrLink = aP1; /*0x4c2c00*/
+    this->objectTypeFlags = a3; /*0x4c2c03*/
   }
 }
 
 
-// ==== 0x004C2C10  UnitClass::updateHarvesting  this=VOID_PTR  sig=csp ====
+// ==== 0x004C2C10  UnitClass::updateHarvesting  this=UnitClass  sig=csp ====
 int __thiscall sub_4C2C10(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 8); /*0x4c2c10*/
+  result = this->needsSave; /*0x4c2c10*/
   if ( result ) /*0x4c2c17*/
   {
     *(_DWORD *)(result + 1756) = 0; /*0x4c2c19*/
-    *(this + 8) = 0; /*0x4c2c1f*/
+    this->needsSave = 0; /*0x4c2c1f*/
   }
   return result; /*0x4c2c22*/
 }
@@ -2909,7 +2909,7 @@ int sub_4C37B0()
 }
 
 
-// ==== 0x004C37D0  sub_4C37D0  this=int  sig=csp ====
+// ==== 0x004C37D0  sub_4C37D0  this=-  sig=csp ====
 _BYTE *__fastcall sub_4C37D0(int a1, _BYTE *a2, int a3, unsigned __int8 a4)
 {
   int v5; // eax
@@ -3164,15 +3164,15 @@ void __cdecl sub_4C3C50()
 }
 
 
-// ==== 0x004C3C90  ObjectClass::method_4C3C90  this=int  sig=csp ====
+// ==== 0x004C3C90  ObjectClass::method_4C3C90  this=ObjectClass  sig=csp ====
 wchar_t **__thiscall sub_4C3C90(wchar_t **this, wchar_t *a2, wchar_t *a3, wchar_t *String, wchar_t *a5)
 {
   size_t v6; // eax
   wchar_t *v7; // eax
 
-  *(this + 1) = a2; /*0x4c3ca5*/
-  *(this + 2) = a3; /*0x4c3ca8*/
-  *(this + 3) = a5; /*0x4c3cab*/
+  this->vtable2 = a2; /*0x4c3ca5*/
+  this->vtable3 = a3; /*0x4c3ca8*/
+  this->vtable4 = a5; /*0x4c3cab*/
   v6 = wcslen(String); /*0x4c3cae*/
   v7 = (wchar_t *)__2_YAPAXI_Z(2 * v6 + 2); /*0x4c3cb8*/
   *this = v7; /*0x4c3cbf*/
@@ -3621,7 +3621,7 @@ int sub_4C4ED0()
 }
 
 
-// ==== 0x004C4EF0  TaskForceClass::ParseUnitCountAndType  this=int  sig=csp ====
+// ==== 0x004C4EF0  TaskForceClass::ParseUnitCountAndType  this=TaskForceClass  sig=csp ====
 _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
 {
   int ExitCellByName; // eax
@@ -3634,7 +3634,7 @@ _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
 
   v9 = Buffer; /*0x4c4f09*/
   *this = 0; /*0x4c4f0a*/
-  *(this + 1) = 0; /*0x4c4f10*/
+  this->vtable2 = 0; /*0x4c4f10*/
   sscanf(v9, MEMORY[0x82085C], &Buffer, v10); /*0x4c4f17*/
   *this = Buffer; /*0x4c4f27*/
   ExitCellByName = Factory::FindExitCellByName(v10); /*0x4c4f29*/
@@ -3645,20 +3645,20 @@ _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
     {
       v8 = TypeClass::FindByName(v10); /*0x4c4f6f*/
       if ( v8 != -1 ) /*0x4c4f77*/
-        *(this + 1) = *((_DWORD *)MEMORY[0xA8B21C] + v8); /*0x4c4f82*/
+        this->vtable2 = *((_DWORD *)MEMORY[0xA8B21C] + v8); /*0x4c4f82*/
       return this; /*0x4c4f85*/
     }
     else
     {
       v7 = *((_DWORD *)g_UnitTypeCount2 + Index); /*0x4c4f5c*/
-      *(this + 1) = v7; /*0x4c4f61*/
+      this->vtable2 = v7; /*0x4c4f61*/
       return this; /*0x4c4f5f*/
     }
   }
   else
   {
     v4 = *((_DWORD *)MEMORY[0xA8E34C] + ExitCellByName); /*0x4c4f39*/
-    *(this + 1) = v4; /*0x4c4f3e*/
+    this->vtable2 = v4; /*0x4c4f3e*/
     return this; /*0x4c4f3c*/
   }
 }
@@ -4743,14 +4743,14 @@ _WORD *__thiscall GameResult_CalcScore(int this)
 }
 
 
-// ==== 0x004C6320  LoadGame::LoadBlock68  this=VOID_PTR  sig=csp ====
+// ==== 0x004C6320  LoadGame::LoadBlock68  this=LoadGame  sig=csp ====
 int __thiscall sub_4C6320(void *this, int a2)
 {
   return (*(int (__stdcall **)(int, void *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, this, 68, 0); /*0x4c632f*/
 }
 
 
-// ==== 0x004C6340  SaveGame::SaveBlock68  this=VOID_PTR  sig=csp ====
+// ==== 0x004C6340  SaveGame::SaveBlock68  this=SaveGame  sig=csp ====
 int __thiscall sub_4C6340(void *this, int a2)
 {
   return (*(int (__stdcall **)(int, void *, int, _DWORD))(*(_DWORD *)a2 + 16))(a2, this, 68, 0); /*0x4c634f*/
@@ -5076,7 +5076,7 @@ char *__thiscall sub_4C68E0(
 }
 
 
-// ==== 0x004C6970  EventClass::AddEventEx  this=VOID_PTR  sig=csp ====
+// ==== 0x004C6970  EventClass::AddEventEx  this=EventClass  sig=csp ====
 char *__thiscall EventClass::AddEventEx(
         char *this,
         SelectClass_StripClass_SidebarClass *aP1,
@@ -5088,14 +5088,14 @@ char *__thiscall EventClass::AddEventEx(
   Debug::Log(); /*0x4c698c*/
   if ( (int)aP1 < 0 ) /*0x4c699a*/
   {
-    *(this + 2) = -1; /*0x4c69c6*/
+    this->EventClass_field_0x8 = -1; /*0x4c69c6*/
     *this = 0; /*0x4c69ca*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c69d2*/
     return this; /*0x4c69d5*/
   }
   else
   {
-    *(this + 2) = (char)aP1; /*0x4c69a4*/
+    this->EventClass_field_0x8 = (char)aP1; /*0x4c69a4*/
     *this = a3; /*0x4c69ab*/
     *(_DWORD *)(this + 7) = aP3; /*0x4c69ad*/
     *(_DWORD *)(this + 11) = aP4; /*0x4c69b0*/
@@ -5229,7 +5229,7 @@ char *__thiscall sub_4C6BE0(char *this, int a2, char a3, int a4, int a5)
 }
 
 
-// ==== 0x004C6C50  Network::initConnection  this=VOID_PTR  sig=csp ====
+// ==== 0x004C6C50  Network::initConnection  this=Network  sig=csp ====
 char *__thiscall sub_4C6C50(char *this, int a2, _DWORD *a3, char a4)
 {
   _DWORD *v5; // ecx
@@ -5238,20 +5238,20 @@ char *__thiscall sub_4C6C50(char *this, int a2, _DWORD *a3, char a4)
 
   if ( a2 < 0 ) /*0x4c6c5c*/
   {
-    *(this + 2) = -1; /*0x4c6c97*/
+    this->q002 = -1; /*0x4c6c97*/
     *this = 0; /*0x4c6c9b*/
     *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c6ca6*/
     return this; /*0x4c6ca4*/
   }
   else
   {
-    *(this + 2) = a2; /*0x4c6c5e*/
+    this->q002 = a2; /*0x4c6c5e*/
     v5 = a3; /*0x4c6c6b*/
     *this = 41; /*0x4c6c6f*/
     Network::CopyAddress(v5, &a2, (int)&v8); /*0x4c6c72*/
     v6 = a4; /*0x4c6c7b*/
-    *((_DWORD *)this + 2) = v8; /*0x4c6c7f*/
-    *(this + 7) = v6; /*0x4c6c82*/
+    this->q002 = v8; /*0x4c6c7f*/
+    this->q007 = v6; /*0x4c6c82*/
     *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c6c8d*/
     return this; /*0x4c6c8b*/
   }
@@ -6208,7 +6208,7 @@ int sub_4C83C0()
 }
 
 
-// ==== 0x004C83E0  DialogFunc  this=unknown  sig=csp ====
+// ==== 0x004C83E0  DialogFunc  this=-  sig=csp ====
 INT_PTR __stdcall DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
 {
   if ( a2 > 0x111 ) /*0x4c83ea*/
@@ -6663,7 +6663,7 @@ LABEL_24:
 }
 
 
-// ==== 0x004C9150  XSurface::vt_entry_68  this=VOID_PTR  sig=csp ====
+// ==== 0x004C9150  XSurface::vt_entry_68  this=XSurface  sig=csp ====
 int __thiscall XSurface::vt_entry_68(#374 *this)
 {
   return 0; /*0x4c9152*/
@@ -6696,7 +6696,7 @@ char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_5(std::codecvt_base 
 }
 
 
-// ==== 0x004C91C0  FrameSnapshot::Init  this=int  sig=csp ====
+// ==== 0x004C91C0  FrameSnapshot::Init  this=FrameSnapshot  sig=csp ====
 _WORD *__thiscall FrameSnapshot_Init(_WORD *this)
 {
   wchar_t *v2; // edx
@@ -6704,14 +6704,14 @@ _WORD *__thiscall FrameSnapshot_Init(_WORD *this)
   *this = 0; /*0x4c91c4*/
   *(this + 2) = 0; /*0x4c91c7*/
   v2 = MEMORY[0xA8ED84]; /*0x4c91cb*/
-  *((_DWORD *)this + 4) = 0; /*0x4c91d1*/
+  this->FrameSnapshot_field_0x04 = 0; /*0x4c91d1*/
   *((_DWORD *)this + 2) = v2; /*0x4c91d4*/
   *(this + 10) = 0; /*0x4c91d7*/
   return this; /*0x4c91db*/
 }
 
 
-// ==== 0x004C91E0  FrameSnapshot::InitMax  this=int  sig=csp ====
+// ==== 0x004C91E0  FrameSnapshot::InitMax  this=FrameSnapshot  sig=csp ====
 _WORD *__thiscall FrameSnapshot_InitMax(_WORD *this, int a2)
 {
   _WORD *result; // eax
@@ -6723,7 +6723,7 @@ _WORD *__thiscall FrameSnapshot_InitMax(_WORD *this, int a2)
   *this = 0; /*0x4c91e4*/
   *(this + 2) = 0; /*0x4c91e7*/
   v3 = MEMORY[0xA8ED84]; /*0x4c91eb*/
-  *((_DWORD *)this + 4) = 0; /*0x4c91f1*/
+  this->FrameSnapshot_field_0x04 = 0; /*0x4c91f1*/
   *((_DWORD *)this + 2) = v3; /*0x4c91f4*/
   *(this + 10) = 0; /*0x4c91f7*/
   v4 = a2; /*0x4c91fb*/
@@ -7434,10 +7434,10 @@ char __thiscall FactoryClass::UpdateProduction(int this)
 }
 
 
-// ==== 0x004C9C50  SidebarClass::draw  this=VOID_PTR  sig=csp ====
+// ==== 0x004C9C50  SidebarClass::draw  this=SidebarClass  sig=csp ====
 char __thiscall sub_4C9C50(_BYTE *this)
 {
-  return *(this + 92); /*0x4c9c53*/
+  return this->SidebarClass_field_0x5C; /*0x4c9c53*/
 }
 
 
@@ -7452,7 +7452,7 @@ char __thiscall FactoryClass::HasProgressChanged(_BYTE *this)
 }
 
 
-// ==== 0x004C9C70  FactoryClass::DemandProduction  this=int  sig=csp ====
+// ==== 0x004C9C70  FactoryClass::DemandProduction  this=FactoryClass  sig=csp ====
 bool __thiscall FactoryClass::DemandProduction(int this, int a2, #375 *a3, char a4)
 {
   int v5; // ecx
@@ -7639,7 +7639,7 @@ char __thiscall ProductionClass_StartTimer(int this, char a2)
 }
 
 
-// ==== 0x004C9FB0  FactoryClass::GetBuildTimeFrames  this=int  sig=csp ====
+// ==== 0x004C9FB0  FactoryClass::GetBuildTimeFrames  this=FactoryClass  sig=csp ====
 int __thiscall FactoryClass::GetBuildTimeFrames(_DWORD *this)
 {
   _DWORD *v1; // ecx
@@ -7647,7 +7647,7 @@ int __thiscall FactoryClass::GetBuildTimeFrames(_DWORD *this)
   int v3; // edx
   int result; // eax
 
-  v1 = (_DWORD *)*(this + 22); /*0x4c9fb0*/
+  v1 = (_DWORD *)this->q058; /*0x4c9fb0*/
   v2 = 0; /*0x4c9fb3*/
   if ( v1 ) /*0x4c9fb7*/
     v2 = HouseClass::CalcProductionSpeed(v1); /*0x4c9fbe*/
@@ -7716,10 +7716,10 @@ char __thiscall BuildingClass_AbandonProduction(int this)
 }
 
 
-// ==== 0x004CA120  ObjectClass::GetMember09  this=VOID_PTR  sig=csp ====
+// ==== 0x004CA120  ObjectClass::GetMember09  this=ObjectClass  sig=csp ====
 int __thiscall ObjectClass_GetMember09(_DWORD *this)
 {
-  return *(this + 9); /*0x4ca123*/
+  return this->objectTypeFlags; /*0x4ca123*/
 }
 
 
@@ -8037,7 +8037,7 @@ char __thiscall FactoryClass::RemoveOneFromQueue(_DWORD *this, char a2)
 }
 
 
-// ==== 0x004CA670  FactoryClass::CountType  this=int  sig=csp ====
+// ==== 0x004CA670  FactoryClass::CountType  this=FactoryClass  sig=csp ====
 int __thiscall FactoryClass::CountType(int *this, IUnknown *aP1)
 {
   int v3; // edi
@@ -8046,13 +8046,13 @@ int __thiscall FactoryClass::CountType(int *this, IUnknown *aP1)
   IUnknown **v6; // esi
 
   v3 = 0; /*0x4ca679*/
-  v4 = *(this + 22); /*0x4ca67b*/
+  v4 = this->q058; /*0x4ca67b*/
   if ( v4 ) /*0x4ca680*/
     v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 132))(v4) == (_DWORD)aP1; /*0x4ca68e*/
-  v5 = *(this + 20); /*0x4ca693*/
+  v5 = this->abstractFlags; /*0x4ca693*/
   if ( v5 > 0 ) /*0x4ca698*/
   {
-    v6 = (IUnknown **)*(this + 17); /*0x4ca69a*/
+    v6 = (IUnknown **)this->q011; /*0x4ca69a*/
     do /*0x4ca6a6*/
     {
       if ( *v6 == aP1 ) /*0x4ca69f*/
@@ -8498,7 +8498,7 @@ double __cdecl Math::Sqrt(AbstractClass *aP0)
 }
 
 
-// ==== 0x004CACB0  Math::SinCos  this=VOID_PTR  sig=csp ====
+// ==== 0x004CACB0  Math::SinCos  this=Math  sig=csp ====
 // local variable allocation has failed, the output may be wrong!
 double __cdecl Math::SinCos(IUnknown *aP0)
 {
@@ -8539,7 +8539,7 @@ double __cdecl Math::ArcTan2(IUnknown *aP0)
 }
 
 
-// ==== 0x004CAD50  Math::Sin  this=VOID_PTR  sig=csp ====
+// ==== 0x004CAD50  Math::Sin  this=Math  sig=csp ====
 double __cdecl Math_Sin(double a1)
 {
   signed int v1; // eax
@@ -8551,21 +8551,21 @@ double __cdecl Math_Sin(double a1)
 }
 
 
-// ==== 0x004CAD80  BuildingLight::CalcIntensity  this=unknown  sig=csp ====
+// ==== 0x004CAD80  BuildingLight::CalcIntensity  this=BuildingLight  sig=csp ====
 double __cdecl BuildingLight_CalcIntensity(double a1)
 {
   return *((float *)&MEMORY[0x859094] - Math::RoundToInt((a1 + 1.0) * -2048.0)); /*0x4cada1*/
 }
 
 
-// ==== 0x004CADB0  Math::ArcTan2_Table  this=float  sig=csp ====
+// ==== 0x004CADB0  Math::ArcTan2_Table  this=Math  sig=csp ====
 double __cdecl Math_ArcTan2_Table(double a1)
 {
   return 1.570796326794897 - *((float *)&MEMORY[0x859094] - Math::RoundToInt((a1 + 1.0) * -2048.0)); /*0x4cadd7*/
 }
 
 
-// ==== 0x004CADE0  Math::ArcTan  this=unknown  sig=csp ====
+// ==== 0x004CADE0  Math::ArcTan  this=Math  sig=csp ====
 double __cdecl Math_ArcTan(double a1)
 {
   int v2; // eax
@@ -8722,7 +8722,7 @@ unsigned int sub_4CAF20()
 }
 
 
-// ==== 0x004CB150  ComputeDistortionVariant  this=unknown  sig=csp ====
+// ==== 0x004CB150  ComputeDistortionVariant  this=-  sig=csp ====
 double __stdcall ComputeDistortionVariant(float a1)
 {
   int v1; // eax
@@ -8741,7 +8741,7 @@ double __stdcall ComputeDistortionVariant(float a1)
 }
 
 
-// ==== 0x004CB1A0  ComputeChronosphereDistortion  this=float  sig=csp ====
+// ==== 0x004CB1A0  ComputeChronosphereDistortion  this=-  sig=csp ====
 double __stdcall ComputeChronosphereDistortion(float a1)
 {
   int v1; // eax
@@ -8763,7 +8763,7 @@ double __stdcall ComputeChronosphereDistortion(float a1)
 }
 
 
-// ==== 0x004CB3D0  globalHelper_0CB3D0  this=unknown  sig=csp ====
+// ==== 0x004CB3D0  globalHelper_0CB3D0  this=-  sig=csp ====
 double __stdcall globalHelper_0CB3D0(AbstractClass *aP0, AbstractClass *aP1)
 {
   double v3; // st7
@@ -9218,7 +9218,7 @@ void *__thiscall FootClass::FindPathWithRetry(int *this, __int16 *a1, int a3, in
 }
 
 
-// ==== 0x004CBC40  ObjectClass::WalkPathfindingLine  this=int  sig=csp ====
+// ==== 0x004CBC40  ObjectClass::WalkPathfindingLine  this=ObjectClass  sig=csp ====
 int *__thiscall WalkPathfindingLine(int *this, int *a2, int a3, int *a4, int a5, int a6)
 {
   int v6; // eax
@@ -9606,7 +9606,7 @@ _DWORD *__fastcall TrajectoryHelper::FindFirstImpenetrableObstacle(IUnknown *aP0
 }
 
 
-// ==== 0x004CC360  TrajectoryHelper::GetObstacle  this=int  sig=csp ====
+// ==== 0x004CC360  TrajectoryHelper::GetObstacle  this=TrajectoryHelper  sig=csp ====
 _DWORD *__fastcall TrajectoryHelper::GetObstacle(
         _BYTE *a1,
         _BYTE *a2,
@@ -9786,7 +9786,7 @@ int sub_4CC750()
 }
 
 
-// ==== 0x004CC770  TechnoClass::UpdateThunk  this=int  sig=csp ====
+// ==== 0x004CC770  TechnoClass::UpdateThunk  this=TechnoClass  sig=csp ====
 char __thiscall TechnoClass::UpdateThunk(_BYTE *this)
 {
   int v1; // eax
@@ -9794,10 +9794,10 @@ char __thiscall TechnoClass::UpdateThunk(_BYTE *this)
   if ( !*(_DWORD *)this ) /*0x4cc770*/
     return 0; /*0x4cc788*/
   v1 = *(_DWORD *)this - 1; /*0x4cc776*/
-  *(this + 4) = 0; /*0x4cc777*/
+  this->vtable2 = 0; /*0x4cc777*/
   *(_DWORD *)this = v1; /*0x4cc77d*/
   if ( (v1 & 1) != 0 ) /*0x4cc77f*/
-    *(this + 4) = 1; /*0x4cc781*/
+    this->vtable2 = 1; /*0x4cc781*/
   return 1; /*0x4cc787*/
 }
 

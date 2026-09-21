@@ -2168,7 +2168,7 @@ char __stdcall DrawTacticalMapLine(
 }
 
 
-// ==== 0x00704E40  DrawTacticalLaserLine  this=VOID_PTR  sig=csp ====
+// ==== 0x00704E40  DrawTacticalLaserLine  this=-  sig=csp ====
 // local variable allocation has failed, the output may be wrong!
 int __stdcall TacticalMap_DrawLaserLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
@@ -2305,7 +2305,7 @@ int __stdcall TacticalMap_DrawLaserLine(int a1, int a2, int a3, int a4, int a5, 
 }
 
 
-// ==== 0x00705270  Render::DrawLine  this=VOID_PTR  sig=csp ====
+// ==== 0x00705270  Render::DrawLine  this=Render  sig=csp ====
 int __stdcall Render_DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
 {
   int v8; // esi
@@ -2487,7 +2487,7 @@ int __stdcall Render_DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, in
 }
 
 
-// ==== 0x00705860  TechnoClass::DrawAirstrikeFlare_SetContext  this=int  sig=csp ====
+// ==== 0x00705860  TechnoClass::DrawAirstrikeFlare_SetContext  this=TechnoClass  sig=csp ====
 int __stdcall TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6)
 {
   int v6; // ebp
@@ -3260,7 +3260,7 @@ LABEL_16:
 }
 
 
-// ==== 0x00706ED0  RenderTechnoClassVoxel  this=int  sig=csp ====
+// ==== 0x00706ED0  RenderTechnoClassVoxel  this=-  sig=csp ====
 void *__fastcall TechnoClass_RenderVoxel(
         int *a1,
         int a2,
@@ -5202,7 +5202,7 @@ bool __usercall sub_709290@<al>(int a1@<ecx>, int a2@<ebx>)
 }
 
 
-// ==== 0x00709480  JumpjetLocomotionClass::StubReturnZero_16  this=VOID_PTR  sig=csp ====
+// ==== 0x00709480  JumpjetLocomotionClass::StubReturnZero_16  this=JumpjetLocomotionClass  sig=csp ====
 char __thiscall sub_709480(_DWORD *this)
 {
   int v2; // ebx
@@ -5213,14 +5213,14 @@ char __thiscall sub_709480(_DWORD *this)
 
   if ( !FootClass::CanEnterCell((int)this, 0) ) /*0x709489*/
     return 0; /*0x7094d5*/
-  v2 = *(this + 173); /*0x709497*/
+  v2 = this->q2B4; /*0x709497*/
   v3 = *this; /*0x70949e*/
   *(this + 319) = MEMORY[0xA8ED84]; /*0x7094a9*/
   v4 = (*(int (__thiscall **)(_DWORD *, _BYTE *, int))(v3 + 72))(this, v6, 1); /*0x7094af*/
   result = (*(int (__thiscall **)(_DWORD *, int))(v3 + 924))(this, v4); /*0x7094b5*/
   if ( result ) /*0x7094be*/
   {
-    if ( *(this + 173) != v2 ) /*0x7094c6*/
+    if ( this->q2B4 != v2 ) /*0x7094c6*/
       *((_BYTE *)this + 1292) = 1; /*0x7094c8*/
   }
   return result; /*0x7094cf*/
@@ -7643,7 +7643,7 @@ int __thiscall TechnoClass::DecCounter(#377 *this)
 }
 
 
-// ==== 0x0070D690  TechnoClass::ComputeCombatDamage  this=int  sig=csp ====
+// ==== 0x0070D690  TechnoClass::ComputeCombatDamage  this=TechnoClass  sig=csp ====
 AbstractClass *__thiscall TechnoClass::ComputeCombatDamage(BulletClass **this, int a2)
 {
   int v3; // eax
@@ -8917,7 +8917,7 @@ LABEL_50:
 }
 
 
-// ==== 0x0070ECE0  TechnoClass::Fire  this=VOID_PTR  sig=csp ====
+// ==== 0x0070ECE0  TechnoClass::Fire  this=TechnoClass  sig=csp ====
 int __thiscall TechnoClass::Fire(int *this)
 {
   int result; // eax
@@ -8927,18 +8927,18 @@ int __thiscall TechnoClass::Fire(int *this)
   v2 = *this; /*0x70ece5*/
   if ( *this ) /*0x70ece5*/
   {
-    result = *(this + 1); /*0x70eceb*/
-    *(this + 6) = 1; /*0x70ecf5*/
-    *(this + 7) = result; /*0x70ecf8*/
+    result = this->vtable2; /*0x70eceb*/
+    this->nextArrayIndex = 1; /*0x70ecf5*/
+    this->referenceCount = result; /*0x70ecf8*/
     if ( result < 1 ) /*0x70ecfb*/
-      *(this + 7) = 1; /*0x70ecfd*/
-    *((float *)this + 4) = (double)v2 / (double)*(this + 7); /*0x70ed07*/
+      this->referenceCount = 1; /*0x70ecfd*/
+    *((float *)this + 4) = (double)v2 / (double)this->referenceCount; /*0x70ed07*/
   }
   return result; /*0x70ed0b*/
 }
 
 
-// ==== 0x0070ED10  TechnoClass::Update2  this=VOID_PTR  sig=csp ====
+// ==== 0x0070ED10  TechnoClass::Update2  this=TechnoClass  sig=csp ====
 int __thiscall TechnoClass::Update2(_DWORD *this)
 {
   int result; // eax
@@ -8947,12 +8947,12 @@ int __thiscall TechnoClass::Update2(_DWORD *this)
   int v4; // eax
   int v5; // eax
 
-  result = *(this + 6); /*0x70ed10*/
+  result = this->nextArrayIndex; /*0x70ed10*/
   if ( result ) /*0x70ed17*/
   {
     v2 = *((float *)this + 4) + *((float *)this + 5); /*0x70ed1c*/
-    v3 = *(this + 7) - 1; /*0x70ed23*/
-    *(this + 7) = v3; /*0x70ed24*/
+    v3 = this->referenceCount - 1; /*0x70ed23*/
+    this->referenceCount = v3; /*0x70ed24*/
     *((float *)this + 5) = v2; /*0x70ed29*/
     if ( v3 <= 0 ) /*0x70ed2d*/
     {
@@ -8965,27 +8965,27 @@ int __thiscall TechnoClass::Update2(_DWORD *this)
           result = v5 - 1; /*0x70ed35*/
           if ( !result ) /*0x70ed36*/
           {
-            *(this + 6) = 0; /*0x70ed38*/
-            *(this + 5) = 0; /*0x70ed3b*/
+            this->nextArrayIndex = 0; /*0x70ed38*/
+            this->abstractFlags = 0; /*0x70ed3b*/
           }
           return result; /*0x70ed3e*/
         }
       }
       else
       {
-        result = *(this + 3); /*0x70ed3f*/
-        *(this + 6) = 2; /*0x70ed42*/
-        *(this + 7) = result; /*0x70ed4c*/
-        *(this + 4) = 0; /*0x70ed4f*/
+        result = this->vtable4; /*0x70ed3f*/
+        this->nextArrayIndex = 2; /*0x70ed42*/
+        this->referenceCount = result; /*0x70ed4c*/
+        this->uniqueId = 0; /*0x70ed4f*/
         if ( result > 1 ) /*0x70ed52*/
           return result; /*0x70ed52*/
       }
-      result = *(this + 2); /*0x70ed54*/
-      *(this + 6) = 3; /*0x70ed57*/
-      *(this + 7) = result; /*0x70ed61*/
+      result = this->vtable3; /*0x70ed54*/
+      this->nextArrayIndex = 3; /*0x70ed57*/
+      this->referenceCount = result; /*0x70ed61*/
       if ( result < 1 ) /*0x70ed64*/
-        *(this + 7) = 1; /*0x70ed66*/
-      *((float *)this + 4) = -((double)(int)*this / (double)(int)*(this + 7)); /*0x70ed74*/
+        this->referenceCount = 1; /*0x70ed66*/
+      *((float *)this + 4) = -((double)(int)*this / (double)(int)this->referenceCount); /*0x70ed74*/
     }
   }
   return result; /*0x70ed3e*/
@@ -9242,7 +9242,7 @@ int __thiscall ObjectClass::GetTypeVt41(#377 *this)
 }
 
 
-// ==== 0x0070F0B0  TacticalClass::MapSpecialDrawMode  this=int  sig=csp ====
+// ==== 0x0070F0B0  TacticalClass::MapSpecialDrawMode  this=TacticalClass  sig=csp ====
 int __thiscall TacticalClass::MapSpecialDrawMode(void *this, MouseClass *aP1)
 {
   char v3; // al
@@ -9305,7 +9305,7 @@ int __thiscall BuildingClass::_vt308(#377 *this)
 }
 
 
-// ==== 0x0070F120  RevealTechnoClassRadarEvent  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0070F120  RevealTechnoClassRadarEvent  this=-  sig=ida-proto ====
 DWORD __fastcall TechnoClass_RevealRadarEvent(int a1, int a2)
 {
   int v3; // edi
@@ -9689,14 +9689,14 @@ bool __thiscall sub_70F7E0(_DWORD *this)
 }
 
 
-// ==== 0x0070F820  ObjectClass::GetPriorityTarget  this=int  sig=csp ====
+// ==== 0x0070F820  ObjectClass::GetPriorityTarget  this=ObjectClass  sig=csp ====
 int __thiscall ObjectClass_GetPriorityTarget(_DWORD *this)
 {
-  if ( *(this + 176) ) /*0x70f820*/
+  if ( this->q2C0 ) /*0x70f820*/
     return CaptureManagerClass::GetOriginalOwner(this); /*0x70f831*/
-  if ( *(this + 179) ) /*0x70f837*/
-    return *(this + 184); /*0x70f841*/
-  return *(this + 135); /*0x70f836*/
+  if ( this->q2CC ) /*0x70f837*/
+    return this->q2E0; /*0x70f841*/
+  return this->q21C; /*0x70f836*/
 }
 
 
@@ -10006,10 +10006,10 @@ void __thiscall TechnoClass::LinkToBridge(IUnknown *this, _DWORD *a2)
 }
 
 
-// ==== 0x0070FE40  ObjectClass::method_70FE40  this=VOID_PTR  sig=csp ====
+// ==== 0x0070FE40  ObjectClass::method_70FE40  this=ObjectClass  sig=csp ====
 int __thiscall sub_70FE40(_DWORD *this, int a2)
 {
-  *(this + 116) = a2; /*0x70fe44*/
+  this->q1D0 = a2; /*0x70fe44*/
   return a2; /*0x70fe4a*/
 }
 

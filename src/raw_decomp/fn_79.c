@@ -20,7 +20,7 @@ void __thiscall sub_791AA0(HWND this)
 }
 
 
-// ==== 0x00791B10  WOLobby::ChatDlgProc  this=VOID_PTR  sig=csp ====
+// ==== 0x00791B10  WOLobby::ChatDlgProc  this=WOLobby  sig=csp ====
 int __stdcall WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
 {
   int result; // eax
@@ -701,7 +701,7 @@ LABEL_33:
 }
 
 
-// ==== 0x00792BE0  ShowUIMessage  this=int  sig=csp ====
+// ==== 0x00792BE0  ShowUIMessage  this=-  sig=csp ====
 char __fastcall ShowUIMessage(MPCooperative *a1, wchar_t **a2, char a3)
 {
   DLGTEMPLATE *DialogIndirect; // esi
@@ -749,7 +749,7 @@ char __fastcall ShowUIMessage(MPCooperative *a1, wchar_t **a2, char a3)
 }
 
 
-// ==== 0x00792CF0  sub_792CF0  this=unknown  sig=csp ====
+// ==== 0x00792CF0  sub_792CF0  this=-  sig=csp ====
 INT_PTR __stdcall sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char *a4)
 {
   INT_PTR result; // eax
@@ -993,7 +993,7 @@ char *GameSettings_FindFlagged()
 }
 
 
-// ==== 0x00793280  sub_793280  this=unknown  sig=csp ====
+// ==== 0x00793280  sub_793280  this=-  sig=csp ====
 INT_PTR __stdcall sub_793280(HWND hWnd, UINT a2, WPARAM a3, char *a4)
 {
   INT_PTR result; // eax
@@ -1247,7 +1247,7 @@ __int16 __fastcall sub_793710(int a1, int a2, int a3, int a4)
 }
 
 
-// ==== 0x007937B0  CComObject_CChatEventSink___ATL::DispatchConnectionPairs  this=int  sig=csp ====
+// ==== 0x007937B0  CComObject_CChatEventSink___ATL::DispatchConnectionPairs  this=CComObject_CChatEventSink___ATL  sig=csp ====
 int __thiscall sub_7937B0(char *this)
 {
   int v1; // edi
@@ -1359,7 +1359,7 @@ int __thiscall sub_7937B0(char *this)
 }
 
 
-// ==== 0x00793930  UI_Setup  this=int  sig=csp ====
+// ==== 0x00793930  UI_Setup  this=-  sig=csp ====
 ObjectClass *__fastcall UI_Setup_793930(void *a1, void *a2, int a3)
 {
   int v5; // edi
@@ -1416,7 +1416,7 @@ ObjectClass *__fastcall UI_Setup_793930(void *a1, void *a2, int a3)
 }
 
 
-// ==== 0x00793A10  UI_Setup_793A10  this=int  sig=csp ====
+// ==== 0x00793A10  UI_Setup_793A10  this=-  sig=csp ====
 ObjectClass *__fastcall UI_Setup_793A10(void *a1, __int16 a2)
 {
   int v4; // edi
@@ -1485,7 +1485,7 @@ int __fastcall sub_793A70(void *a1, unsigned __int16 a2)
 }
 
 
-// ==== 0x00793B30  sub_793B30  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00793B30  sub_793B30  this=-  sig=ida-proto ====
 int __fastcall sub_793B30(char a1, const char *a2)
 {
   _BYTE v3[3]; // [esp+0h] [ebp-100h] BYREF
@@ -1575,7 +1575,7 @@ int __thiscall sub_793CD0(void *this)
 }
 
 
-// ==== 0x00793D20  NegotiateNetworkConnection  this=int  sig=csp ====
+// ==== 0x00793D20  NegotiateNetworkConnection  this=-  sig=csp ====
 char __fastcall NegotiateNetworkConnection(IUnknown *aP0, int a2, int a3)
 {
   IUnknown *v3; // ebp
@@ -2706,7 +2706,7 @@ LABEL_97:
 }
 
 
-// ==== 0x00795650  ObjectClass::QueryNATPortWOL  this=int  sig=csp ====
+// ==== 0x00795650  ObjectClass::QueryNATPortWOL  this=ObjectClass  sig=csp ====
 char __thiscall WOL_QueryNATPort(unsigned __int16 *this)
 {
   char *v1; // edx
@@ -3652,7 +3652,7 @@ int sub_796B30()
 }
 
 
-// ==== 0x00796B90  LobbyDlgProcWOL  this=VOID_PTR  sig=csp ====
+// ==== 0x00796B90  LobbyDlgProcWOL  this=-  sig=csp ====
 int __stdcall WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
 {
   HWND v4; // ebp
@@ -4564,7 +4564,7 @@ void __cdecl sub_798120()
 }
 
 
-// ==== 0x007982A0  Network_Delete  this=unknown  sig=csp ====
+// ==== 0x007982A0  Network_Delete  this=-  sig=csp ====
 void __stdcall Network_Delete(int a1, int a2, SessionClass *aP2)
 {
   int v3; // edi
@@ -4654,7 +4654,7 @@ char sub_798360()
 }
 
 
-// ==== 0x007983E0  Setup2DlgProcMultiplayer  this=VOID_PTR  sig=csp ====
+// ==== 0x007983E0  Setup2DlgProcMultiplayer  this=-  sig=csp ====
 int __stdcall Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
@@ -4836,7 +4836,7 @@ int __stdcall Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, uns
 }
 
 
-// ==== 0x007988C0  GameModeDlgProcMultiplayer  this=VOID_PTR  sig=csp ====
+// ==== 0x007988C0  GameModeDlgProcMultiplayer  this=-  sig=csp ====
 int __stdcall Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
@@ -5095,7 +5095,7 @@ BOOL __usercall sub_798DE0@<eax>(int a1@<ebx>, int a2@<ebp>)
 }
 
 
-// ==== 0x00798F50  ObjectClass::MainLobbyDlgProcWOL_Read  this=int  sig=csp ====
+// ==== 0x00798F50  ObjectClass::MainLobbyDlgProcWOL_Read  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall MainLobbyDlgProcWOL_Read(HWND hWnd)
 {
   _DWORD *PlayerProfile; // eax
@@ -5151,7 +5151,7 @@ _DWORD *__thiscall MainLobbyDlgProcWOL_Read(HWND hWnd)
 }
 
 
-// ==== 0x00799080  MainLobbyDlgProcWOL  this=VOID_PTR  sig=csp ====
+// ==== 0x00799080  MainLobbyDlgProcWOL  this=-  sig=csp ====
 int __stdcall MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
 {
   unsigned int v3; // ebx
@@ -5680,7 +5680,7 @@ int sub_799D30()
 }
 
 
-// ==== 0x00799EA0  OptionsDlgProcWOL  this=VOID_PTR  sig=csp ====
+// ==== 0x00799EA0  OptionsDlgProcWOL  this=-  sig=csp ====
 int __stdcall WOL_OptionsDlgProc(HWND hWnd, const char *lParam, int a3, int hCtl)
 {
   HWND v4; // ebp
@@ -6300,7 +6300,7 @@ LABEL_44:
 }
 
 
-// ==== 0x0079AE00  sub_79AE00  this=unknown  sig=csp ====
+// ==== 0x0079AE00  sub_79AE00  this=-  sig=csp ====
 int __stdcall sub_79AE00(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
@@ -6797,7 +6797,7 @@ LABEL_88:
 }
 
 
-// ==== 0x0079BA60  ValidateGameJoinWOL  this=int  sig=csp ====
+// ==== 0x0079BA60  ValidateGameJoinWOL  this=-  sig=csp ====
 char __fastcall ValidateGameJoinWOL(BlowStraw *aP0, ObjectClass *aP1, char a3)
 {
   int BlowStraw_field_0x08; // eax
@@ -7030,7 +7030,7 @@ LABEL_12:
 }
 
 
-// ==== 0x0079C040  ObjectClass::ShowUserProfileWOL  this=int  sig=csp ====
+// ==== 0x0079C040  ObjectClass::ShowUserProfileWOL  this=ObjectClass  sig=csp ====
 void __thiscall ShowUserProfileWOL(HWND hDlg)
 {
   HWND DlgItem; // ebx
@@ -7518,7 +7518,7 @@ LABEL_34:
 }
 
 
-// ==== 0x0079CBA0  RemoveWOLPlayerLogin  this=unknown  sig=csp ====
+// ==== 0x0079CBA0  RemoveWOLPlayerLogin  this=-  sig=csp ====
 void __fastcall RemoveWOLPlayerLogin(const char **a1)
 {
   const char **v1; // ebp
@@ -8037,7 +8037,7 @@ void CleanupWOLSession()
 }
 
 
-// ==== 0x0079D720  WOLLoginDialogProc  this=unknown  sig=csp ====
+// ==== 0x0079D720  WOLLoginDialogProc  this=-  sig=csp ====
 int __stdcall WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
 {
   HWND v4; // ebp
@@ -8165,7 +8165,7 @@ int __stdcall WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
 }
 
 
-// ==== 0x0079DA90  ExtractChatCommand  this=unknown  sig=csp ====
+// ==== 0x0079DA90  ExtractChatCommand  this=-  sig=csp ====
 char **__fastcall ExtractChatCommand(char **a1, HWND a2)
 {
   LRESULT v4; // esi
@@ -8204,7 +8204,7 @@ LABEL_7:
 }
 
 
-// ==== 0x0079DB50  ChatDialog::DlgProc  this=VOID_PTR  sig=csp ====
+// ==== 0x0079DB50  ChatDialog::DlgProc  this=ChatDialog  sig=csp ====
 int __stdcall ChatDialog_DlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND a4)
 {
   int result; // eax
@@ -8369,7 +8369,7 @@ int __stdcall ChatDialog_DlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND a4)
 }
 
 
-// ==== 0x0079DFE0  GameSetupDlgProcWOL  this=VOID_PTR  sig=csp ====
+// ==== 0x0079DFE0  GameSetupDlgProcWOL  this=-  sig=csp ====
 int __stdcall WOL_GameSetup_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
@@ -8582,7 +8582,7 @@ LABEL_50:
 }
 
 
-// ==== 0x0079E520  PlayerOptionsDlgProcWOL  this=unknown  sig=csp ====
+// ==== 0x0079E520  PlayerOptionsDlgProcWOL  this=-  sig=csp ====
 int __stdcall WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWND a4)
 {
   int result; // eax

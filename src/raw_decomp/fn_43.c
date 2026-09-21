@@ -133,7 +133,7 @@ void __cdecl sub_4301C0()
 }
 
 
-// ==== 0x00430250  ObjectClass::RenderBuildingTag  this=int  sig=csp ====
+// ==== 0x00430250  ObjectClass::RenderBuildingTag  this=ObjectClass  sig=csp ====
 char __thiscall RenderBuildingTag(int this, int a2, int a3, int a4, int a5, int a6)
 {
   size_t v7; // eax
@@ -263,14 +263,14 @@ LABEL_11:
 }
 
 
-// ==== 0x00430580  nullsub_97  this=unknown  sig=csp ====
+// ==== 0x00430580  nullsub_97  this=-  sig=csp ====
 void __stdcall nullsub_97(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
   ; /*0x430580*/
 }
 
 
-// ==== 0x00430590  ObjectClass::method  this=VOID_PTR  sig=csp ====
+// ==== 0x00430590  ObjectClass::method  this=ObjectClass  sig=csp ====
 char __thiscall sub_430590(_DWORD *this, int a2, int a3, int a4, int a5)
 {
   char result; // al
@@ -278,27 +278,27 @@ char __thiscall sub_430590(_DWORD *this, int a2, int a3, int a4, int a5)
   if ( a2 != unk_89C430 || a3 != unk_89C434 || a4 != unk_89C438 ) /*0x4305b6*/
   {
     *this = a2; /*0x4305ba*/
-    *(this + 1) = a3; /*0x4305bc*/
-    *(this + 2) = a4; /*0x4305bf*/
+    this->vtable2 = a3; /*0x4305bc*/
+    this->vtable3 = a4; /*0x4305bf*/
   }
   result = a5; /*0x4305c2*/
   if ( a5 < 8 ) /*0x4305cb*/
   {
-    *(this + 68) = a5; /*0x4305cd*/
-    result = *((_BYTE *)this + 12) | 1; /*0x4305d6*/
-    *((_BYTE *)this + 12) = result; /*0x4305d8*/
+    this->q110 = a5; /*0x4305cd*/
+    result = this->nextObject | 1; /*0x4305d6*/
+    this->nextObject = result; /*0x4305d8*/
   }
   return result; /*0x4305c6*/
 }
 
 
-// ==== 0x004305E0  ObjectClass::method_4305E0  this=VOID_PTR  sig=csp ====
+// ==== 0x004305E0  ObjectClass::method_4305E0  this=ObjectClass  sig=csp ====
 char __thiscall sub_4305E0(_BYTE *this, char a2)
 {
   char result; // al
 
-  result = *(this + 12) & 0xFD | (2 * (a2 & 1)); /*0x4305ee*/
-  *(this + 12) = result; /*0x4305f0*/
+  result = this->vtable4 & 0xFD | (2 * (a2 & 1)); /*0x4305ee*/
+  this->vtable4 = result; /*0x4305f0*/
   return result; /*0x4305f3*/
 }
 
@@ -475,14 +475,14 @@ int __thiscall BuildingPlacement::RenderBuildingPlacementShadow(
 }
 
 
-// ==== 0x00430980  Game::initScenario  this=int  sig=csp ====
+// ==== 0x00430980  Game::initScenario  this=Game  sig=csp ====
 void __thiscall sub_430980(void **this)
 {
   void **v2; // esi
   int v3; // ebx
   int v4; // edi
 
-  if ( *(this + 24) ) /*0x430983*/
+  if ( this->__pad_180 ) /*0x430983*/
   {
     v2 = this; /*0x43098d*/
     v3 = 8; /*0x43098f*/
@@ -503,12 +503,12 @@ void __thiscall sub_430980(void **this)
       --v3; /*0x4309b4*/
     }
     while ( v3 ); /*0x4309b5*/
-    *(this + 24) = 0; /*0x4309b9*/
+    this->__pad_180 = 0; /*0x4309b9*/
   }
 }
 
 
-// ==== 0x004309D0  CCFileClass::Create  this=int  sig=csp ====
+// ==== 0x004309D0  CCFileClass::Create  this=CCFileClass  sig=csp ====
 void __thiscall sub_4309D0(_DWORD *this)
 {
   __int16 *EntireFile; // eax
@@ -522,9 +522,9 @@ void __thiscall sub_4309D0(_DWORD *this)
   dword_89C474 = (int)EntireFile; /*0x4309ef*/
   if ( EntireFile || (EntireFile = (__int16 *)SearchMIXFile(stru_818A5C, 0), (dword_89C474 = (int)EntireFile) != 0) ) /*0x430a09*/
   {
-    *(this + 25) = EntireFile[1]; /*0x430a0f*/
-    *(this + 26) = *(__int16 *)(dword_89C474 + 4); /*0x430a1c*/
-    *(this + 27) = *(__int16 *)(dword_89C474 + 6); /*0x430a28*/
+    this->q064 = EntireFile[1]; /*0x430a0f*/
+    this->q068 = *(__int16 *)(dword_89C474 + 4); /*0x430a1c*/
+    this->q06C = *(__int16 *)(dword_89C474 + 6); /*0x430a28*/
   }
   else
   {
@@ -535,11 +535,11 @@ void __thiscall sub_4309D0(_DWORD *this)
   dword_89C478 = (int)v3; /*0x430a53*/
   if ( v3 || (v3 = (__int16 *)SearchMIXFile(MEMORY[0x818A30], 0), (dword_89C478 = (int)v3) != 0) ) /*0x430a6d*/
   {
-    *(this + 28) = v3[1]; /*0x430a73*/
-    *(this + 29) = *(__int16 *)(dword_89C478 + 4); /*0x430a7f*/
+    this->q070 = v3[1]; /*0x430a73*/
+    this->q074 = *(__int16 *)(dword_89C478 + 4); /*0x430a7f*/
     v4 = *(__int16 *)(dword_89C478 + 6); /*0x430a88*/
-    *(this + 30) = v4; /*0x430a8c*/
-    *(this + 31) = 4 * v4; /*0x430a92*/
+    this->q078 = v4; /*0x430a8c*/
+    this->q07C = 4 * v4; /*0x430a92*/
   }
   else
   {
@@ -550,7 +550,7 @@ void __thiscall sub_4309D0(_DWORD *this)
 }
 
 
-// ==== 0x00430AC0  ObjectClass::RenderAlliedBuildingTags  this=int  sig=csp ====
+// ==== 0x00430AC0  ObjectClass::RenderAlliedBuildingTags  this=ObjectClass  sig=csp ====
 int __thiscall RenderAlliedBuildingTags(int *this, int a2, int a3, int a4, int a5, int a6)
 {
   int result; // eax
@@ -559,7 +559,7 @@ int __thiscall RenderAlliedBuildingTags(int *this, int a2, int a3, int a4, int a
   int v9; // [esp+10h] [ebp-8h]
   int v10; // [esp+14h] [ebp-4h]
 
-  result = *(this + 24); /*0x430ac0*/
+  result = this->nextArrayIndex; /*0x430ac0*/
   if ( result ) /*0x430acc*/
   {
     v7 = this; /*0x430ada*/
@@ -592,7 +592,7 @@ int __thiscall RenderAlliedBuildingTags(int *this, int a2, int a3, int a4, int a
 }
 
 
-// ==== 0x00430BA0  ObjectClass::PlacePlayerBeacon  this=int  sig=csp ====
+// ==== 0x00430BA0  ObjectClass::PlacePlayerBeacon  this=ObjectClass  sig=csp ====
 void __thiscall PlacePlayerBeacon(_DWORD *this, int a2, int a3, int a4, int a5, int a6)
 {
   _DWORD *v7; // edi
@@ -668,7 +668,7 @@ void __thiscall PlacePlayerBeacon(_DWORD *this, int a2, int a3, int a4, int a5, 
     if ( *v19 ) /*0x430e64*/
     {
       __3_YAXPAX_Z((void *)*(this + v18)); /*0x430e71*/
-      --*(this + 24); /*0x430e7d*/
+      --this->q060; /*0x430e7d*/
     }
     *v19 = v11; /*0x430e80*/
   }
@@ -684,7 +684,7 @@ void __thiscall PlacePlayerBeacon(_DWORD *this, int a2, int a3, int a4, int a5, 
     v11[68] = a2; /*0x430cbe*/
     *((_BYTE *)v11 + 12) = v14 | 1; /*0x430cc6*/
   }
-  ++*(this + 24); /*0x430cd1*/
+  ++this->q060; /*0x430cd1*/
   if ( MEMORY[0xA8B238][0] && MEMORY[0xA8B238][0] != 5 ) /*0x430ce4*/
   {
     if ( a2 == *((_DWORD *)HouseClass_Player + 12) ) /*0x430cf3*/
@@ -736,7 +736,7 @@ void __thiscall PlacePlayerBeacon(_DWORD *this, int a2, int a3, int a4, int a5, 
 }
 
 
-// ==== 0x00430F30  MapClass::isCellAccessible  this=int  sig=csp ====
+// ==== 0x00430F30  MapClass::isCellAccessible  this=MapClass  sig=csp ====
 char __thiscall sub_430F30(char *this, int a2)
 {
   int v2; // eax
@@ -752,7 +752,7 @@ char __thiscall sub_430F30(char *this, int a2)
 }
 
 
-// ==== 0x00430F60  sub_430F60  this=unknown  sig=csp ====
+// ==== 0x00430F60  sub_430F60  this=-  sig=csp ====
 _DWORD *__stdcall sub_430F60(_DWORD *a1)
 {
   *a1 = 0; /*0x430f68*/
@@ -761,7 +761,7 @@ _DWORD *__stdcall sub_430F60(_DWORD *a1)
 }
 
 
-// ==== 0x00430F70  PlayerClass::FindNearestWaypoint  this=int  sig=csp ====
+// ==== 0x00430F70  PlayerClass::FindNearestWaypoint  this=PlayerClass  sig=csp ====
 char __thiscall sub_430F70(_DWORD *this, int a2, int a3, int a4)
 {
   _DWORD **v4; // edi
@@ -773,7 +773,7 @@ char __thiscall sub_430F70(_DWORD *this, int a2, int a3, int a4)
   int v11; // [esp+18h] [ebp-18h]
   _DWORD *v12; // [esp+1Ch] [ebp-14h]
 
-  if ( !*(this + 24) ) /*0x430f79*/
+  if ( !this->q060 ) /*0x430f79*/
     return 0; /*0x431026*/
   v4 = (_DWORD **)this; /*0x430f8b*/
   v11 = 0; /*0x430f8d*/
@@ -813,7 +813,7 @@ LABEL_3:
 }
 
 
-// ==== 0x00431090  Radar::FindNearestRadarTarget  this=int  sig=csp ====
+// ==== 0x00431090  Radar::FindNearestRadarTarget  this=Radar  sig=csp ====
 int __thiscall sub_431090(_DWORD *this, int a2, int a3, int a4)
 {
   _DWORD **v4; // edi
@@ -824,7 +824,7 @@ int __thiscall sub_431090(_DWORD *this, int a2, int a3, int a4)
   int v10; // [esp+18h] [ebp-18h]
   _DWORD *v11; // [esp+1Ch] [ebp-14h]
 
-  if ( *(this + 24) ) /*0x431099*/
+  if ( this->Radar_field_0x60 ) /*0x431099*/
   {
     v4 = (_DWORD **)this; /*0x4310ab*/
     v10 = 0; /*0x4310ad*/
@@ -857,7 +857,7 @@ int __thiscall sub_431090(_DWORD *this, int a2, int a3, int a4)
 }
 
 
-// ==== 0x00431170  BufferIO::FindActiveChannel  this=int  sig=csp ====
+// ==== 0x00431170  BufferIO::FindActiveChannel  this=BufferIO  sig=csp ====
 int __thiscall BufferIO::FindActiveChannel(int *this, CampaignScore *aP1)
 {
   int v2; // ebp
@@ -866,7 +866,7 @@ int __thiscall BufferIO::FindActiveChannel(int *this, CampaignScore *aP1)
   int *v5; // ecx
   int result; // eax
 
-  if ( !*(this + 24) ) /*0x431170*/
+  if ( !this->q060 ) /*0x431170*/
     return 0; /*0x4311b3*/
   v2 = 0; /*0x43117f*/
   v3 = this; /*0x431181*/
@@ -898,7 +898,7 @@ LABEL_3:
 }
 
 
-// ==== 0x004311C0  Network::SendBeaconDelete  this=int  sig=csp ====
+// ==== 0x004311C0  Network::SendBeaconDelete  this=Network  sig=csp ====
 char __thiscall Network_SendBeaconDelete(int *this, int a2, int a3)
 {
   int v4; // eax
@@ -916,7 +916,7 @@ char __thiscall Network_SendBeaconDelete(int *this, int a2, int a3)
   int v17; // [esp+28h] [ebp-1C8h] BYREF
   char v18[452]; // [esp+2Ch] [ebp-1C4h] BYREF
 
-  v4 = *(this + 24); /*0x4311cc*/
+  v4 = this->q018; /*0x4311cc*/
   if ( v4 ) /*0x4311d1*/
   {
     if ( a2 == -1 && a3 == -1 ) /*0x4311ed*/
@@ -989,7 +989,7 @@ LABEL_5:
             return v4; /*0x43130c*/
         }
         *(this + 2 * v15 + v11 + v15) = 0; /*0x431322*/
-        --*(this + 24); /*0x43132e*/
+        --this->q018; /*0x43132e*/
         LOBYTE(v4) = MEMORY[0xA8B238][0]; /*0x431331*/
         if ( MEMORY[0xA8B238][0] ) /*0x431338*/
         {
@@ -1034,14 +1034,14 @@ LABEL_5:
 }
 
 
-// ==== 0x00431410  HouseClass::createStartingUnits  this=int  sig=csp ====
+// ==== 0x00431410  HouseClass::createStartingUnits  this=HouseClass  sig=csp ====
 char __thiscall sub_431410(int *this, int a2)
 {
   int v3; // eax
   int v4; // esi
   int *v5; // edi
 
-  v3 = *(this + 24); /*0x431413*/
+  v3 = this->nextArrayIndex; /*0x431413*/
   if ( v3 ) /*0x431418*/
   {
     LOBYTE(v3) = 3 * a2; /*0x431421*/
@@ -1060,7 +1060,7 @@ char __thiscall sub_431410(int *this, int a2)
 }
 
 
-// ==== 0x00431450  Network::SendBeacon  this=int  sig=csp ====
+// ==== 0x00431450  Network::SendBeacon  this=Network  sig=csp ====
 char __thiscall Network::SendBeacon(int *this, CellStruct *aP1, int a3, int a4, char a5)
 {
   int v5; // eax
@@ -1086,7 +1086,7 @@ char __thiscall Network::SendBeacon(int *this, CellStruct *aP1, int a3, int a4, 
 
   if ( a3 == -1 && a4 == -1 ) /*0x431474*/
   {
-    v5 = *(this + 24); /*0x431476*/
+    v5 = this->q018; /*0x431476*/
     v19 = 1; /*0x431479*/
     if ( !v5 ) /*0x431480*/
       return v5; /*0x431480*/
@@ -1210,7 +1210,7 @@ LABEL_5:
 }
 
 
-// ==== 0x00431700  HouseClass::Render  this=int  sig=csp ====
+// ==== 0x00431700  HouseClass::Render  this=HouseClass  sig=csp ====
 int __thiscall sub_431700(int *this, int a2, int a3, int a4, int a5, int a6)
 {
   int result; // eax
@@ -1219,11 +1219,11 @@ int __thiscall sub_431700(int *this, int a2, int a3, int a4, int a5, int a6)
   int v9; // [esp+10h] [ebp-8h]
   int v10; // [esp+14h] [ebp-4h]
 
-  result = *(this + 24); /*0x431700*/
+  result = this->nextArrayIndex; /*0x431700*/
   if ( result ) /*0x43170c*/
   {
     result = dword_89C428 + 1; /*0x431720*/
-    if ( (int)MEMORY[0xA8ED84] % *(this + 31) < dword_89C428 + 1 ) /*0x431723*/
+    if ( (int)MEMORY[0xA8ED84] % this->bunkersCapacity < dword_89C428 + 1 ) /*0x431723*/
     {
       result = (int)this; /*0x431731*/
       v10 = 8; /*0x431733*/
@@ -1258,7 +1258,7 @@ int __thiscall sub_431700(int *this, int a2, int a3, int a4, int a5, int a6)
 }
 
 
-// ==== 0x00431800  HouseClass::ProcessData  this=int  sig=csp ====
+// ==== 0x00431800  HouseClass::ProcessData  this=HouseClass  sig=csp ====
 bool __thiscall sub_431800(int *this)
 {
   int *v1; // ebx
@@ -1268,7 +1268,7 @@ bool __thiscall sub_431800(int *this)
   char v6; // [esp+3h] [ebp-9h]
   int v7; // [esp+4h] [ebp-8h]
 
-  if ( !*(this + 24) ) /*0x431803*/
+  if ( !this->nextArrayIndex ) /*0x431803*/
     return 0; /*0x431803*/
   v6 = 0; /*0x431816*/
   v1 = this; /*0x43181b*/
@@ -1303,7 +1303,7 @@ LABEL_12:
     --v7; /*0x43189a*/
   }
   while ( v7 ); /*0x43189e*/
-  return v6 && (int)MEMORY[0xA8ED84] % *(this + 31) < dword_89C428 + 1; /*0x4318c3*/
+  return v6 && (int)MEMORY[0xA8ED84] % this->bunkersCapacity < dword_89C428 + 1; /*0x4318c3*/
 }
 
 
@@ -2177,13 +2177,13 @@ int sub_432670()
 }
 
 
-// ==== 0x00432690  BinkMovie::Close  this=int  sig=csp ====
+// ==== 0x00432690  BinkMovie::Close  this=BinkMovie  sig=csp ====
 _DWORD *__thiscall BinkMovie_Close(_DWORD *this, char *FullPath)
 {
   *(_BYTE *)this = 0; /*0x432695*/
-  *(this + 1) = 0; /*0x432697*/
-  *(this + 3) = 0; /*0x43269a*/
-  *(this + 8) = 0; /*0x43269d*/
+  this->BinkMovie_field_0x4 = 0; /*0x432697*/
+  this->BinkMovie_field_0xC = 0; /*0x43269a*/
+  this->BinkMovie_field_0x20 = 0; /*0x43269d*/
   *((_BYTE *)this + 45) = 0; /*0x4326a0*/
   *(this + 10) = -1; /*0x4326a8*/
   *((_BYTE *)this + 44) = 1; /*0x4326af*/
@@ -2192,13 +2192,13 @@ _DWORD *__thiscall BinkMovie_Close(_DWORD *this, char *FullPath)
 }
 
 
-// ==== 0x004326C0  BinkMovie::Open  this=int  sig=csp ====
+// ==== 0x004326C0  BinkMovie::Open  this=BinkMovie  sig=csp ====
 _DWORD *__thiscall BinkMovie_Open(_DWORD *this, char *FullPath, int a3)
 {
-  *(this + 3) = a3; /*0x4326ce*/
+  this->BinkMovie_field_0xC = a3; /*0x4326ce*/
   *(_BYTE *)this = 0; /*0x4326d3*/
-  *(this + 1) = 0; /*0x4326d5*/
-  *(this + 8) = 0; /*0x4326d8*/
+  this->BinkMovie_field_0x4 = 0; /*0x4326d5*/
+  this->BinkMovie_field_0x20 = 0; /*0x4326d8*/
   *(this + 10) = -1; /*0x4326db*/
   *((_BYTE *)this + 44) = 1; /*0x4326e2*/
   *((_BYTE *)this + 45) = 0; /*0x4326e6*/
@@ -2235,7 +2235,7 @@ int __thiscall BinkMovie_Stop(int this)
 }
 
 
-// ==== 0x00432750  BinkMovie::InitFromFile  this=int  sig=csp ====
+// ==== 0x00432750  BinkMovie::InitFromFile  this=BinkMovie  sig=csp ====
 char __thiscall sub_432750(int this, LPCSTR *FullPath)
 {
   int v3; // ebp
@@ -2416,7 +2416,7 @@ LABEL_40:
 }
 
 
-// ==== 0x00432AB0  BinkMovieHandle::RenderFrameClipped  this=int  sig=csp ====
+// ==== 0x00432AB0  BinkMovieHandle::RenderFrameClipped  this=BinkMovieHandle  sig=csp ====
 int __thiscall sub_432AB0(int this, int a2, int a3)
 {
   int *v3; // eax
@@ -2494,50 +2494,50 @@ LABEL_18:
 }
 
 
-// ==== 0x00432BD0  BinkMovieHandle::Check  this=VOID_PTR  sig=csp ====
+// ==== 0x00432BD0  BinkMovieHandle::Check  this=BinkMovieHandle  sig=csp ====
 int __thiscall sub_432BD0(_DWORD *this, int a2)
 {
   int result; // eax
 
-  result = BinkGoto(*(this + 1), a2, 1); /*0x432bde*/
-  *(this + 12) = 0; /*0x432be4*/
+  result = BinkGoto(this->tempPath, a2, 1); /*0x432bde*/
+  this->memoryBuffer = 0; /*0x432be4*/
   return result; /*0x432beb*/
 }
 
 
-// ==== 0x00432C10  WeaponTypeClass::COMStub_432C10  this=VOID_PTR  sig=csp ====
+// ==== 0x00432C10  WeaponTypeClass::COMStub_432C10  this=WeaponTypeClass  sig=csp ====
 int __thiscall sub_432C10(_DWORD *this, int a2)
 {
   _DWORD *v2; // ecx
   int result; // eax
 
-  v2 = (_DWORD *)*(this + 8); /*0x432c10*/
+  v2 = (_DWORD *)this->NeedsSaveOrLink; /*0x432c10*/
   if ( v2 ) /*0x432c15*/
     return AbstractClass::getTotalValue(v2, a2); /*0x432c1c*/
   return result; /*0x432c21*/
 }
 
 
-// ==== 0x00432C30  BinkMovie::Pause  this=VOID_PTR  sig=csp ====
+// ==== 0x00432C30  BinkMovie::Pause  this=BinkMovie  sig=csp ====
 int __thiscall BinkMovie_Pause(_DWORD *this, unsigned __int8 a2)
 {
-  return BinkPause(*(this + 1), a2); /*0x432c44*/
+  return BinkPause(this->BinkMovie_field_0x4, a2); /*0x432c44*/
 }
 
 
-// ==== 0x00432C50  BinkMovieHandle::IsAtEnd  this=VOID_PTR  sig=csp ====
+// ==== 0x00432C50  BinkMovieHandle::IsAtEnd  this=BinkMovieHandle  sig=csp ====
 BOOL __thiscall BinkMovie_IsAtEnd(_DWORD *this)
 {
   int v1; // eax
   unsigned int v2; // edx
 
-  v1 = *(this + 1); /*0x432c50*/
+  v1 = this->tempPath; /*0x432c50*/
   v2 = *(_DWORD *)(v1 + 12); /*0x432c54*/
-  return v2 >= *(_DWORD *)(v1 + 8) || v2 < *(this + 12); /*0x432c5c*/
+  return v2 >= *(_DWORD *)(v1 + 8) || v2 < this->memoryBuffer; /*0x432c5c*/
 }
 
 
-// ==== 0x00432C70  BinkMovie::Play  this=VOID_PTR  sig=csp ====
+// ==== 0x00432C70  BinkMovie::Play  this=BinkMovie  sig=csp ====
 int __thiscall BinkMovie_Play(_BYTE *this)
 {
   const char *Error; // eax
@@ -2553,7 +2553,7 @@ int __thiscall BinkMovie_Play(_BYTE *this)
   struct tagRECT v13; // [esp+24h] [ebp-2Ch] BYREF
   MSG Msg; // [esp+34h] [ebp-1Ch] BYREF
 
-  if ( *((_DWORD *)this + 1) )
+  if ( this->BinkMovie_field_0x4 )
   {
     Timer::PumpMessages(MEMORY[0x87F770]); /*0x432c9f*/
     v4 = (void (__stdcall *)(HWND, LPPOINT))ClientToScreen; /*0x432caa*/
@@ -2561,9 +2561,9 @@ int __thiscall BinkMovie_Play(_BYTE *this)
     *(this + 45) = 0; /*0x432cb4*/
     while ( 1 ) /*0x432cb8*/
     {
-      v5 = *((_DWORD *)this + 1); /*0x432cb8*/
+      v5 = this->BinkMovie_field_0x4; /*0x432cb8*/
       v6 = *(_DWORD *)(v5 + 12); /*0x432cbb*/
-      if ( v6 >= *(_DWORD *)(v5 + 8) || v6 < *((_DWORD *)this + 12) ) /*0x432ccc*/
+      if ( v6 >= *(_DWORD *)(v5 + 8) || v6 < this->BinkMovie_field_0xC ) /*0x432ccc*/
         break; /*0x432ccc*/
       ++unk_AA0430; /*0x432cdd*/
       if ( GameLoopMessagePump(&Msg, 0, 0, 0, 0) ) /*0x432ceb*/
@@ -2577,25 +2577,25 @@ int __thiscall BinkMovie_Play(_BYTE *this)
       {
         if ( !*(this + 44) ) /*0x432d23*/
           Sleep(0x21u); /*0x432d2c*/
-        v7 = *((_DWORD *)this + 3); /*0x432d32*/
+        v7 = this->BinkMovie_field_0xC; /*0x432d32*/
         if ( v7 == MEMORY[0x887308] ) /*0x432d3d*/
         {
           GetClientRect(g_hWnd, &Rect); /*0x432d4a*/
           v4(g_hWnd, (LPPOINT)&Rect); /*0x432d58*/
           BinkMovie::RenderLoop( /*0x432d74*/
-            *((_DWORD *)this + 3),
-            Rect.left + *((_DWORD *)this + 4),
-            Rect.top + *((_DWORD *)this + 5));
+            this->BinkMovie_field_0xC,
+            Rect.left + this->BinkMovie_field_0x4,
+            Rect.top + this->BinkMovie_field_0x14);
         }
-        else if ( (unsigned __int8)BinkMovie::RenderLoop(v7, *((_DWORD *)this + 4), *((_DWORD *)this + 5)) ) /*0x432d89*/
+        else if ( (unsigned __int8)BinkMovie::RenderLoop(v7, this->BinkMovie_field_0x4, this->BinkMovie_field_0x14) ) /*0x432d89*/
         {
           GetClientRect(g_hWnd, &v13); /*0x432d9e*/
           v4(g_hWnd, (LPPOINT)&v13); /*0x432dab*/
-          v8 = *((_DWORD *)this + 4); /*0x432db4*/
-          v9 = *((_DWORD *)this + 5); /*0x432db6*/
-          v11[2] = *((_DWORD *)this + 6); /*0x432dbc*/
+          v8 = this->BinkMovie_field_0x4; /*0x432db4*/
+          v9 = this->BinkMovie_field_0x14; /*0x432db6*/
+          v11[2] = this->__pad_018; /*0x432dbc*/
           v11[3] = *((_DWORD *)this + 7); /*0x432dc9*/
-          v10 = *((_DWORD *)this + 3); /*0x432dd3*/
+          v10 = this->BinkMovie_field_0xC; /*0x432dd3*/
           v11[1] = v13.top + v9; /*0x432dd6*/
           v11[0] = v13.left + v8; /*0x432de1*/
           (*(void (__thiscall **)(int, _DWORD *, int, _BYTE *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x432dec*/
@@ -2625,7 +2625,7 @@ int __thiscall BinkMovie_Play(_BYTE *this)
 }
 
 
-// ==== 0x00432E40  BinkMovie::RenderLoop  this=int  sig=csp ====
+// ==== 0x00432E40  BinkMovie::RenderLoop  this=BinkMovie  sig=csp ====
 bool __thiscall BinkMovie::RenderLoop(int this, DSurface *aP1, int a3, int a4)
 {
   int v5; // eax
@@ -2722,10 +2722,10 @@ bool __thiscall BinkMovie::RenderLoop(int this, DSurface *aP1, int a3, int a4)
 }
 
 
-// ==== 0x00433040  BinkMovieHandle::RenderFrameToSurface  this=VOID_PTR  sig=csp ====
+// ==== 0x00433040  BinkMovieHandle::RenderFrameToSurface  this=BinkMovieHandle  sig=csp ====
 bool __thiscall BinkMovie_RenderFrameToSurface(int *this)
 {
-  return BinkMovie::RenderLoop((int)this, *(this + 3), *(this + 4), *(this + 5)); /*0x433051*/
+  return BinkMovie::RenderLoop((int)this, this->width, this->tempPath, this->currentFrame); /*0x433051*/
 }
 
 
@@ -2802,7 +2802,7 @@ _DWORD *__thiscall BinkMovieClass::SetPosition(int *this, DSurface *aP1, int a3,
 }
 
 
-// ==== 0x004331F0  BinkMovie::RenderSingleFrame  this=int  sig=csp ====
+// ==== 0x004331F0  BinkMovie::RenderSingleFrame  this=BinkMovie  sig=csp ====
 _DWORD *__thiscall BinkMovie::RenderSingleFrame(int *this, DSurface *aP1, int a3, int a4, char a5)
 {
   int v6; // ebx
@@ -2817,17 +2817,17 @@ _DWORD *__thiscall BinkMovie::RenderSingleFrame(int *this, DSurface *aP1, int a3
   {
     v7 = (*(int (__thiscall **)(DSurface *))(aP1->field_0 + 116))(aP1); /*0x433226*/
     v8 = (*(int (__thiscall **)(DSurface *))(aP1->field_0 + 128))(aP1); /*0x433228*/
-    v9 = *(this + 2); /*0x433232*/
+    v9 = this->BinkMovie_field_0x8; /*0x433232*/
     if ( a5 ) /*0x433237*/
       v9 |= 0x80000000; /*0x433239*/
-    BinkCopyToBuffer(*(this + 1), v6, v7, v8, a3, a4, v9); /*0x433251*/
+    BinkCopyToBuffer(this->BinkMovie_field_0x4, v6, v7, v8, a3, a4, v9); /*0x433251*/
     (*(void (__thiscall **)(DSurface *))(aP1->field_0 + 96))(aP1); /*0x43325b*/
   }
   return BinkMovie::BlitToTarget(this, aP1); /*0x433267*/
 }
 
 
-// ==== 0x00433270  BinkMovie::BlitToTarget  this=VOID_PTR  sig=csp ====
+// ==== 0x00433270  BinkMovie::BlitToTarget  this=BinkMovie  sig=csp ====
 _DWORD *__thiscall BinkMovie::BlitToTarget(_DWORD *this, DSurface *aP1)
 {
   _DWORD *result; // eax
@@ -2845,7 +2845,7 @@ _DWORD *__thiscall BinkMovie::BlitToTarget(_DWORD *this, DSurface *aP1)
   _DWORD v15[4]; // [esp+18h] [ebp-20h] BYREF
   _BYTE v16[16]; // [esp+28h] [ebp-10h] BYREF
 
-  result = (_DWORD *)*(this + 8); /*0x433277*/
+  result = (_DWORD *)this->BinkMovie_field_0x20; /*0x433277*/
   if ( result ) /*0x43327c*/
   {
     if ( *result ) /*0x433282*/
@@ -2860,12 +2860,12 @@ _DWORD *__thiscall BinkMovie::BlitToTarget(_DWORD *this, DSurface *aP1)
         v14 = *(_DWORD *)(v6 + 12); /*0x4332d6*/
         v8 = v4[1]; /*0x4332da*/
         v15[2] = v4[2]; /*0x4332e0*/
-        v9 = *(this + 6); /*0x4332e4*/
+        v9 = this->__pad_018; /*0x4332e4*/
         v15[3] = v4[3]; /*0x4332ea*/
         v10 = (v9 - v13) / 2 + v7; /*0x4332fd*/
         v11 = *(this + 7) - v14 + v8; /*0x433309*/
-        v12 = *(this + 5); /*0x43330b*/
-        v15[0] = *(this + 4) + v10; /*0x43330e*/
+        v12 = this->BinkMovie_field_0x14; /*0x43330b*/
+        v15[0] = this->BinkMovie_field_0x10 + v10; /*0x43330e*/
         v15[1] = v12 + v11; /*0x43331c*/
         return (_DWORD *)(*(int (__thiscall **)(DSurface *, _DWORD *, int, int *, int, int))(aP1->field_0 + 8))( /*0x433323*/
                            aP1,
@@ -3138,7 +3138,7 @@ unsigned int __fastcall sub_4336C0(unsigned __int8 *a1, _BYTE *a2, int a3)
 }
 
 
-// ==== 0x00433770  BinkMovieClass::OpenFile  this=int  sig=csp ====
+// ==== 0x00433770  BinkMovieClass::OpenFile  this=BinkMovieClass  sig=csp ====
 unsigned int __fastcall sub_433770(unsigned __int8 *a1, _BYTE *a2, unsigned int a3)
 {
   unsigned __int8 *v3; // esi
@@ -3262,7 +3262,7 @@ int __thiscall sub_433880(int this, char *Source)
 }
 
 
-// ==== 0x00433990  File::LoadFont  this=int  sig=csp ====
+// ==== 0x00433990  File::LoadFont  this=File  sig=csp ====
 _DWORD *__thiscall LoadFontFile(char *Source)
 {
   unsigned int v2; // ebp
@@ -3478,13 +3478,13 @@ _DWORD *__thiscall TextGroup::SetRect(_DWORD *this, AbstractClass *aP1)
 }
 
 
-// ==== 0x00433CE0  ObjectClass::method_433CE0  this=VOID_PTR  sig=csp ====
+// ==== 0x00433CE0  ObjectClass::method_433CE0  this=ObjectClass  sig=csp ====
 char __thiscall sub_433CE0(_BYTE *this, char a2)
 {
   char result; // al
 
-  result = *(this + 64); /*0x433ce4*/
-  *(this + 64) = a2; /*0x433ce7*/
+  result = this->q040; /*0x433ce4*/
+  this->q040 = a2; /*0x433ce7*/
   return result; /*0x433cea*/
 }
 
@@ -3615,7 +3615,7 @@ LABEL_9:
 }
 
 
-// ==== 0x00433ED0  Text::MeasureWidth  this=VOID_PTR  sig=csp ====
+// ==== 0x00433ED0  Text::MeasureWidth  this=Text  sig=csp ====
 int __stdcall Text::MeasureWidth(CampaignScore *aP0, int aP2)
 {
   _DWORD *v2; // ecx
@@ -3625,7 +3625,7 @@ int __stdcall Text::MeasureWidth(CampaignScore *aP0, int aP2)
 }
 
 
-// ==== 0x00433F50  MessageListClass::CountCharsInWidth  this=int  sig=csp ====
+// ==== 0x00433F50  MessageListClass::CountCharsInWidth  this=MessageListClass  sig=csp ====
 int __thiscall sub_433F50(_DWORD *this, _WORD *a2, int a3, int a4, int a5)
 {
   _DWORD *v5; // edx
@@ -3643,7 +3643,7 @@ int __thiscall sub_433F50(_DWORD *this, _WORD *a2, int a3, int a4, int a5)
 
   v5 = this; /*0x433f53*/
   v6 = 0; /*0x433f57*/
-  v7 = (_DWORD *)*(this + 1); /*0x433f59*/
+  v7 = (_DWORD *)this->MaxMessageCount; /*0x433f59*/
   v17 = 0; /*0x433f62*/
   if ( !v7 ) /*0x433f66*/
     return 0; /*0x433f66*/
@@ -3666,8 +3666,8 @@ int __thiscall sub_433F50(_DWORD *this, _WORD *a2, int a3, int a4, int a5)
         if ( (_WORD)v11 ) /*0x433fb4*/
           v10 = (unsigned __int8 *)(v7[7] + (v11 - 1) * v7[5]); /*0x433fbd*/
         v8 = a2; /*0x433fc0*/
-        if ( v10 || (v10 = (unsigned __int8 *)*(this + 2)) != 0 ) /*0x433fd1*/
-          v6 += *v10 + *(this + 11); /*0x433fe0*/
+        if ( v10 || (v10 = (unsigned __int8 *)this->ScrollOffset) != 0 ) /*0x433fd1*/
+          v6 += *v10 + this->q02C; /*0x433fe0*/
       }
       v12 = ++v17; /*0x433ff8*/
       if ( v6 > a3 ) /*0x433fff*/
@@ -3707,13 +3707,13 @@ int __thiscall sub_433F50(_DWORD *this, _WORD *a2, int a3, int a4, int a5)
 }
 
 
-// ==== 0x00434100  ObjectClass::method  this=VOID_PTR  sig=csp ====
+// ==== 0x00434100  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_434100(_DWORD *this, int a2)
 {
   int result; // eax
 
-  result = *(this + 10); /*0x434104*/
-  *(this + 10) = a2; /*0x434107*/
+  result = this->owningHouseIndex; /*0x434104*/
+  this->owningHouseIndex = a2; /*0x434107*/
   return result; /*0x43410a*/
 }
 
@@ -4196,7 +4196,7 @@ _BYTE *__thiscall sub_434700(_DWORD *this)
 }
 
 
-// ==== 0x00434840  sub_434840  this=int  sig=csp ====
+// ==== 0x00434840  sub_434840  this=-  sig=csp ====
 char __stdcall sub_434840(_DWORD *a1, _DWORD *a2, _DWORD *a3)
 {
   int v3; // ecx
@@ -4380,7 +4380,7 @@ _DWORD *__thiscall BitTextClass::LoadFont(_DWORD *this)
 }
 
 
-// ==== 0x00434B40  sub_434B40  this=unknown  sig=csp ====
+// ==== 0x00434B40  sub_434B40  this=-  sig=csp ====
 int __stdcall sub_434B40(AbstractClass *aP0, int *a1, unsigned __int16 aP1, int xLeft, int yTop)
 {
   int v5; // edi
@@ -4400,7 +4400,7 @@ int __stdcall sub_434B40(AbstractClass *aP0, int *a1, unsigned __int16 aP1, int 
 }
 
 
-// ==== 0x00434B90  FontRenderer::DrawText  this=int  sig=csp ====
+// ==== 0x00434B90  FontRenderer::DrawText  this=FontRenderer  sig=csp ====
 int __stdcall FontRenderer::DrawText(
         AbstractClass *aP0,
         int *a1,
@@ -4422,7 +4422,7 @@ int __stdcall FontRenderer::DrawText(
 }
 
 
-// ==== 0x00434BF0  sub_434BF0  this=unknown  sig=csp ====
+// ==== 0x00434BF0  sub_434BF0  this=-  sig=csp ====
 int __stdcall sub_434BF0(int a1, int *a2, unsigned __int16 *a3, int xLeft, int yTop, int a6)
 {
   int result; // eax
@@ -4457,7 +4457,7 @@ int __stdcall sub_434BF0(int a1, int *a2, unsigned __int16 *a3, int xLeft, int y
 }
 
 
-// ==== 0x00434CD0  Font::Print  this=int  sig=csp ====
+// ==== 0x00434CD0  Font::Print  this=Font  sig=csp ====
 char __stdcall Font::Print(
         AbstractClass *aP0,
         AbstractClass *aP1,
@@ -4796,7 +4796,7 @@ LABEL_73:
 }
 
 
-// ==== 0x00435340  sub_435340  this=unknown  sig=csp ====
+// ==== 0x00435340  sub_435340  this=-  sig=csp ====
 char __stdcall sub_435340(int a1, int a2, _WORD *a3, int a4, int yTop, int a6, int a7, char a8, int a9, int a10)
 {
   __int16 v11; // bp
@@ -4811,7 +4811,7 @@ char __stdcall sub_435340(int a1, int a2, _WORD *a3, int a4, int yTop, int a6, i
 }
 
 
-// ==== 0x004353F0  sub_4353F0  this=unknown  sig=csp ====
+// ==== 0x004353F0  sub_4353F0  this=-  sig=csp ====
 char __stdcall sub_4353F0(int a1, int a2, _WORD *a3, int a4, int yTop, int a6, int a7, char a8, int a9, int a10)
 {
   char result; // al
@@ -4856,7 +4856,7 @@ _BYTE *__thiscall Palette_6BitTo16Bit(_BYTE *this, char a2, char a3, char a4)
 }
 
 
-// ==== 0x004355D0  PackRGB565  this=unknown  sig=csp ====
+// ==== 0x004355D0  PackRGB565  this=-  sig=csp ====
 int __fastcall PackRGB565(int a1, int a2, int a3)
 {
   return (a1 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x43560b*/
@@ -6979,7 +6979,7 @@ _DWORD *__thiscall CellStruct::Copy(int *this, IUnknown *aP1)
 }
 
 
-// ==== 0x00437F50  ObjectClass::method_437F50  this=int  sig=csp ====
+// ==== 0x00437F50  ObjectClass::method_437F50  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_437F50(_DWORD *this)
 {
   HRESULT v2; // esi
@@ -7015,7 +7015,7 @@ int __thiscall COMObject_Release(int *this)
 }
 
 
-// ==== 0x00437FD0  GameClass::initGameMode  this=VOID_PTR  sig=csp ====
+// ==== 0x00437FD0  GameClass::initGameMode  this=GameClass  sig=csp ====
 int __thiscall sub_437FD0(_DWORD *this, int a2, int a3)
 {
   if ( !*this ) /*0x437fd3*/
@@ -7024,7 +7024,7 @@ int __thiscall sub_437FD0(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x00438000  BlowPipe::Draw  this=VOID_PTR  sig=csp ====
+// ==== 0x00438000  BlowPipe::Draw  this=BlowPipe  sig=csp ====
 int __thiscall BlowPipe::Draw(_DWORD *this, int a2, int a3, int a4)
 {
   if ( !*this ) /*0x438003*/
@@ -7034,7 +7034,7 @@ int __thiscall BlowPipe::Draw(_DWORD *this, int a2, int a3, int a4)
 }
 
 
-// ==== 0x00438030  BlowPipe::DrawAlt  this=VOID_PTR  sig=csp ====
+// ==== 0x00438030  BlowPipe::DrawAlt  this=BlowPipe  sig=csp ====
 int __thiscall BlowPipe::DrawAlt(_DWORD *this, int a2, int a3, int a4)
 {
   if ( !*this ) /*0x438033*/
@@ -7134,7 +7134,7 @@ char *__thiscall BlowPipe::Read(_DWORD *this, BombClass *aP1, signed int Size)
 }
 
 
-// ==== 0x004381D0  GameClass::processFrame  this=VOID_PTR  sig=csp ====
+// ==== 0x004381D0  GameClass::processFrame  this=GameClass  sig=csp ====
 _DWORD *__thiscall sub_4381D0(_DWORD *this, int a2, int a3)
 {
   _DWORD *result; // eax
@@ -7224,7 +7224,7 @@ size_t __thiscall BlowStraw::Get(int *this, Straw *aP1, signed int Size)
 }
 
 
-// ==== 0x00438300  GameClass::updateUI  this=VOID_PTR  sig=csp ====
+// ==== 0x00438300  GameClass::updateUI  this=GameClass  sig=csp ====
 _DWORD *__thiscall sub_438300(_DWORD *this, int a2, int a3)
 {
   _DWORD *result; // eax
@@ -7575,21 +7575,21 @@ int __thiscall ObjectClass_CleanupAudioAndRefs(int this)
 }
 
 
-// ==== 0x004389F0  BombClass::IsDeathBomb  this=VOID_PTR  sig=csp ====
+// ==== 0x004389F0  BombClass::IsDeathBomb  this=BombClass  sig=csp ====
 int __thiscall BombClass::IsDeathBomb(_DWORD *this)
 {
-  return *(this + 12); /*0x4389f3*/
+  return this->audioController; /*0x4389f3*/
 }
 
 
-// ==== 0x00438A00  BombClass::GetCurrentFrame  this=int  sig=csp ====
+// ==== 0x00438A00  BombClass::GetCurrentFrame  this=BombClass  sig=csp ====
 Iostream_init *__thiscall BombClass::GetCurrentFrame(_DWORD *this)
 {
   int v2; // ecx
 
-  if ( *(this + 12) == 1 ) /*0x438a04*/
+  if ( this->audioController == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
-  v2 = 2 * (((int)MEMORY[0xA8ED84] - *(this + 13)) / (MEMORY[0x8871E0]->?[1] / 6)); /*0x438a4c*/
+  v2 = 2 * (((int)MEMORY[0xA8ED84] - this->q034) / (MEMORY[0x8871E0]->?[1] / 6)); /*0x438a4c*/
   if ( (int)MEMORY[0xA8ED84] % (2 * MEMORY[0x8871E0]->?[3]) >= MEMORY[0x8871E0]->?[3] ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
@@ -7698,7 +7698,7 @@ int __stdcall BombClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 }
 
 
-// ==== 0x00438BF0  ObjectClass::DispatchBuildingAudioEvents  this=int  sig=csp ====
+// ==== 0x00438BF0  ObjectClass::DispatchBuildingAudioEvents  this=ObjectClass  sig=csp ====
 int __thiscall DispatchBuildingAudioEvents(int *this)
 {
   int i; // esi
@@ -7738,22 +7738,22 @@ int __thiscall DispatchBuildingAudioEvents(int *this)
   _DWORD v36[3]; // [esp+3Ch] [ebp-18h] BYREF
   char v37[12]; // [esp+48h] [ebp-Ch] BYREF
 
-  for ( i = *(this + 4) - 1; i >= 0; --i ) /*0x438c03*/
+  for ( i = this->vtable2 - 1; i >= 0; --i ) /*0x438c03*/
   {
-    v3 = *(_DWORD **)(*(this + 1) + 4 * i); /*0x438c08*/
+    v3 = *(_DWORD **)(this->vtable2 + 4 * i); /*0x438c08*/
     if ( v3 ) /*0x438c0d*/
     {
       if ( !v3[11] ) /*0x438c36*/
       {
         (*(void (__thiscall **)(_DWORD *, int))(*v3 + 32))(v3, 1); /*0x438c41*/
-        v7 = *(this + 4); /*0x438c44*/
+        v7 = this->vtable2; /*0x438c44*/
         if ( i < v7 ) /*0x438c49*/
         {
           v8 = v7 - 1; /*0x438c4b*/
           v9 = i; /*0x438c4e*/
-          for ( *(this + 4) = v8; /*0x438c55*/
-                v9 < *(this + 4);
-                *(_DWORD *)(*(this + 1) + 4 * v9 - 4) = *(_DWORD *)(*(this + 1) + 4 * v9) )
+          for ( this->vtable2 = v8; /*0x438c55*/
+                v9 < this->vtable2;
+                *(_DWORD *)(this->vtable2 + 4 * v9 - 4) = *(_DWORD *)(this->vtable2 + 4 * v9) )
           {
             ++v9; /*0x438c5a*/
           }
@@ -7762,19 +7762,19 @@ int __thiscall DispatchBuildingAudioEvents(int *this)
     }
     else
     {
-      v4 = *(this + 4); /*0x438c0f*/
+      v4 = this->vtable2; /*0x438c0f*/
       if ( i < v4 ) /*0x438c14*/
       {
         v5 = v4 - 1; /*0x438c16*/
         v6 = i; /*0x438c19*/
-        for ( *(this + 4) = v5; v6 < *(this + 4); *(_DWORD *)(*(this + 1) + 4 * v6 - 4) = *(_DWORD *)(*(this + 1) + 4 * v6) ) /*0x438c20*/
+        for ( this->vtable2 = v5; v6 < this->vtable2; *(_DWORD *)(this->vtable2 + 4 * v6 - 4) = *(_DWORD *)(this->vtable2 + 4 * v6) ) /*0x438c20*/
           ++v6; /*0x438c25*/
       }
     }
   }
-  for ( j = *(this + 4) - 1; j >= 0; --j ) /*0x438c70*/
+  for ( j = this->vtable2 - 1; j >= 0; --j ) /*0x438c70*/
   {
-    v11 = *(_DWORD **)(*(this + 1) + 4 * j); /*0x438c79*/
+    v11 = *(_DWORD **)(this->vtable2 + 4 * j); /*0x438c79*/
     v12 = v11[20]; /*0x438c7c*/
     if ( v12 != -1 ) /*0x438c82*/
     {
@@ -7805,15 +7805,15 @@ int __thiscall DispatchBuildingAudioEvents(int *this)
       }
     }
   }
-  v15 = *(this + 12); /*0x438d04*/
+  v15 = this->vtable4; /*0x438d04*/
   if ( v15 > 0 ) /*0x438d09*/
   {
     result = v15 - 1; /*0x438d0b*/
-    *(this + 12) = result; /*0x438d0c*/
+    this->vtable4 = result; /*0x438d0c*/
     return result; /*0x438d16*/
   }
-  v17 = *(this + 4); /*0x438d17*/
-  *(this + 12) = 45; /*0x438d1a*/
+  v17 = this->vtable2; /*0x438d17*/
+  this->vtable4 = 45; /*0x438d1a*/
   result = v17 - 1; /*0x438d21*/
   v32 = result; /*0x438d22*/
   if ( result >= 0 ) /*0x438d26*/
@@ -7821,7 +7821,7 @@ int __thiscall DispatchBuildingAudioEvents(int *this)
     while ( 1 ) /*0x438d2f*/
     {
       v29 = 0; /*0x438d2f*/
-      v18 = *(_DWORD *)(*(this + 1) + 4 * result); /*0x438d34*/
+      v18 = *(_DWORD *)(this->vtable2 + 4 * result); /*0x438d34*/
       v30 = *(_BYTE *)(*(_DWORD *)(v18 + 44) + 104); /*0x438d40*/
       if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)(v18 + 40)) ) /*0x438d44*/
       {
@@ -7830,17 +7830,17 @@ int __thiscall DispatchBuildingAudioEvents(int *this)
       }
       v20 = 0; /*0x438d57*/
       v31 = 0; /*0x438d5b*/
-      if ( *(this + 10) <= 0 ) /*0x438d5f*/
+      if ( this->owningHouseIndex <= 0 ) /*0x438d5f*/
         goto LABEL_32; /*0x438d5f*/
       while ( 1 ) /*0x438d68*/
       {
-        v21 = *(_DWORD *)(*(this + 7) + 4 * v20); /*0x438d68*/
+        v21 = *(_DWORD *)(this->referenceCount + 4 * v20); /*0x438d68*/
         v22 = (#375 *)(*(int (__thiscall **)(int))(*(_DWORD *)v21 + 60))(v21); /*0x438d6f*/
         if ( (unsigned __int8)House::IsHumanPlayer(v22) ) /*0x438d74*/
           break; /*0x438d74*/
 LABEL_29:
         v31 = ++v20; /*0x438e17*/
-        if ( v20 >= *(this + 10) ) /*0x438e1b*/
+        if ( v20 >= this->owningHouseIndex ) /*0x438e1b*/
           goto LABEL_32; /*0x438e1b*/
       }
       v23 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(v18 + 44) + 72))( /*0x438d92*/
@@ -7881,7 +7881,7 @@ void nullsub_99()
 }
 
 
-// ==== 0x00438E70  AbstractClass::Initialize  this=int  sig=csp ====
+// ==== 0x00438E70  AbstractClass::Initialize  this=AbstractClass  sig=csp ====
 void __thiscall AbstractClass::Initialize(_DWORD *this, TechnoClass *aP1, TechnoClass *aP2)
 {
   AbstractClass *v4; // eax
@@ -7938,18 +7938,18 @@ void __thiscall AbstractClass::Initialize(_DWORD *this, TechnoClass *aP1, Techno
     *(_DWORD *)&v5[1].__pad_0[12] = 0; /*0x438f89*/
     v5[1].abstractFlags = v7; /*0x438f8c*/
     aP2->attachedBomb = v5; /*0x438f8f*/
-    v8 = *(this + 2); /*0x438f92*/
-    if ( *(this + 4) < v8 /*0x438fb4*/
-      || (*((_BYTE *)this + 13) || !v8)
-      && (v9 = *(this + 5), v9 > 0)
+    v8 = this->vtable3; /*0x438f92*/
+    if ( this->uniqueId < v8 /*0x438fb4*/
+      || (this->q034 || !v8)
+      && (v9 = this->abstractFlags, v9 > 0)
       && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v8 + v9, 0) )
     {
-      v10 = *(this + 4); /*0x438fbb*/
-      v11 = *(this + 1); /*0x438fbe*/
-      *(this + 4) = v10 + 1; /*0x438fc4*/
+      v10 = this->uniqueId; /*0x438fbb*/
+      v11 = this->vtable2; /*0x438fbe*/
+      this->uniqueId = v10 + 1; /*0x438fc4*/
       *(_DWORD *)(v11 + 4 * v10) = v5; /*0x438fc7*/
     }
-    *(this + 12) = 1; /*0x438fca*/
+    this->q030 = 1; /*0x438fca*/
     if ( *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 528) != -1 ) /*0x438fde*/
     {
       if ( (unsigned __int8)House::IsHumanPlayer((#375 *)aP1->focus) ) /*0x438fe6*/
@@ -7964,7 +7964,7 @@ void __thiscall AbstractClass::Initialize(_DWORD *this, TechnoClass *aP1, Techno
 }
 
 
-// ==== 0x00439080  TechnoClass::checkRange  this=int  sig=csp ====
+// ==== 0x00439080  TechnoClass::checkRange  this=TechnoClass  sig=csp ====
 char __thiscall TechnoClass::checkRange(_DWORD *this, TechnoClass *aP1)
 {
   HashTable *v2; // eax
@@ -7973,9 +7973,9 @@ char __thiscall TechnoClass::checkRange(_DWORD *this, TechnoClass *aP1)
   int v5; // eax
   int v6; // edx
 
-  v2 = (HashTable *)*(this + 10); /*0x439080*/
+  v2 = (HashTable *)this->owningHouseIndex; /*0x439080*/
   v3 = this + 6; /*0x439084*/
-  v4 = *(this + 8); /*0x439087*/
+  v4 = this->NeedsSaveOrLink; /*0x439087*/
   if ( (int)v2 < v4 /*0x4390ae*/
     || ((LOBYTE(v5) = *((_BYTE *)v3 + 13), (_BYTE)v5) || !v4)
     && (v5 = v3[5], v5 > 0)
@@ -7990,7 +7990,7 @@ char __thiscall TechnoClass::checkRange(_DWORD *this, TechnoClass *aP1)
 }
 
 
-// ==== 0x004390D0  TechnoClass::RemoveFromDynamicVector  this=int  sig=csp ====
+// ==== 0x004390D0  TechnoClass::RemoveFromDynamicVector  this=TechnoClass  sig=csp ====
 int __thiscall TechnoClass::RemoveFromDynamicVector(_DWORD *this, TechnoClass *aP1)
 {
   _DWORD *v2; // esi
@@ -7999,7 +7999,7 @@ int __thiscall TechnoClass::RemoveFromDynamicVector(_DWORD *this, TechnoClass *a
   int v5; // ecx
 
   v2 = this + 6; /*0x4390d4*/
-  result = (*(int (__thiscall **)(_DWORD *, TechnoClass **))(*(this + 6) + 16))(this + 6, &aP1); /*0x4390de*/
+  result = (*(int (__thiscall **)(_DWORD *, TechnoClass **))(this->nextArrayIndex + 16))(this + 6, &aP1); /*0x4390de*/
   if ( result != -1 ) /*0x4390e4*/
   {
     v4 = v2[4]; /*0x4390e6*/
@@ -8014,7 +8014,7 @@ int __thiscall TechnoClass::RemoveFromDynamicVector(_DWORD *this, TechnoClass *a
 }
 
 
-// ==== 0x00439110  Stream::FlushAndReset  this=int  sig=csp ====
+// ==== 0x00439110  Stream::FlushAndReset  this=Stream  sig=csp ====
 int __thiscall Stream::FlushAndReset(_DWORD *this)
 {
   _DWORD *v1; // esi
@@ -8025,8 +8025,8 @@ int __thiscall Stream::FlushAndReset(_DWORD *this)
 
   v1 = this; /*0x439111*/
   v2 = *this; /*0x439114*/
-  v3 = *(this + 2); /*0x439116*/
-  *(this + 12) = 45; /*0x439119*/
+  v3 = this->Stream_field_08; /*0x439116*/
+  this->Stream_field_0C = 45; /*0x439119*/
   (*(void (**)(void))(v2 + 12))(); /*0x439120*/
   (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v1 + 8))(v1, v3, 0); /*0x43912a*/
   v4 = v1[6]; /*0x43912d*/
@@ -8037,7 +8037,7 @@ int __thiscall Stream::FlushAndReset(_DWORD *this)
 }
 
 
-// ==== 0x00439150  AbstractClass::processDetection  this=int  sig=csp ====
+// ==== 0x00439150  AbstractClass::processDetection  this=AbstractClass  sig=csp ====
 int __thiscall AbstractClass::processDetection(int *this, AbstractClass *aP1)
 {
   AbstractClass *v3; // edi
@@ -8052,30 +8052,30 @@ int __thiscall AbstractClass::processDetection(int *this, AbstractClass *aP1)
   v4 = (*(int (__thiscall **)(int *, AbstractClass **))(*this + 16))(this, &aP1); /*0x439165*/
   if ( v4 != -1 ) /*0x43916b*/
   {
-    v5 = *(this + 4); /*0x43916d*/
+    v5 = this->vtable2; /*0x43916d*/
     if ( v4 < v5 ) /*0x439172*/
     {
       v6 = v5 - 1; /*0x439174*/
-      for ( *(this + 4) = v6; v4 < *(this + 4); *(_DWORD *)(*(this + 1) + 4 * v4 - 4) = *(_DWORD *)(*(this + 1) + 4 * v4) ) /*0x43917a*/
+      for ( this->vtable2 = v6; v4 < this->vtable2; *(_DWORD *)(this->vtable2 + 4 * v4 - 4) = *(_DWORD *)(this->vtable2 + 4 * v4) ) /*0x43917a*/
         ++v4; /*0x43917f*/
     }
   }
-  result = *(this + 4); /*0x43918e*/
+  result = this->vtable2; /*0x43918e*/
   for ( i = 0; i < result; ++i ) /*0x439197*/
   {
-    v9 = *(_DWORD *)(*(this + 1) + 4 * i); /*0x43919c*/
+    v9 = *(_DWORD *)(this->vtable2 + 4 * i); /*0x43919c*/
     if ( v9 ) /*0x4391a1*/
     {
       if ( *(AbstractClass **)(v9 + 36) == v3 ) /*0x4391a6*/
         *(_DWORD *)(v9 + 36) = 0; /*0x4391a8*/
     }
-    result = *(this + 4); /*0x4391ab*/
+    result = this->vtable2; /*0x4391ab*/
   }
   return result; /*0x4391b3*/
 }
 
 
-// ==== 0x004391C0  SaveGame::LoadArrayData  this=int  sig=csp ====
+// ==== 0x004391C0  SaveGame::LoadArrayData  this=SaveGame  sig=csp ====
 int __thiscall sub_4391C0(int *this, int *a2)
 {
   int v3; // ecx
@@ -8123,7 +8123,7 @@ LABEL_5:
 }
 
 
-// ==== 0x00439260  LoadGame::DeserializePointerArrays  this=int  sig=csp ====
+// ==== 0x00439260  LoadGame::DeserializePointerArrays  this=LoadGame  sig=csp ====
 int __thiscall sub_439260(_DWORD *this, int a2)
 {
   int v2; // ebx
@@ -8159,7 +8159,7 @@ LABEL_11:
       if ( v5 > 0 ) /*0x4392f1*/
       {
         do /*0x43930b*/
-          ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 1) + 4 * v11++)); /*0x4392ff*/
+          ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->LoadGame_field_0x04 + 4 * v11++)); /*0x4392ff*/
         while ( v11 < a2 ); /*0x43930b*/
       }
       v12 = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0); /*0x43931c*/
@@ -8174,7 +8174,7 @@ LABEL_23:
           if ( v13 > 0 ) /*0x4393a2*/
           {
             do /*0x4393bc*/
-              ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 7) + 4 * v18++)); /*0x4393b0*/
+              ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->LoadGame_field_0x1C + 4 * v18++)); /*0x4393b0*/
             while ( v18 < a2 ); /*0x4393bc*/
           }
         }
@@ -8185,15 +8185,15 @@ LABEL_23:
             v12 = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v21, 4, 0); /*0x439345*/
             if ( v12 < 0 ) /*0x439349*/
               break; /*0x439349*/
-            v14 = *(this + 8); /*0x43934b*/
-            if ( *(this + 10) < v14 /*0x439373*/
+            v14 = this->LoadGame_field_0x20; /*0x43934b*/
+            if ( this->LoadGame_field_0x28 < v14 /*0x439373*/
               || (*((_BYTE *)this + 37) || !v14)
-              && (v15 = *(this + 11), v15 > 0)
-              && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*(this + 6) + 8))(this + 6, v14 + v15, 0) )
+              && (v15 = this->LoadGame_field_0x2C, v15 > 0)
+              && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(this->LoadGame_field_0x18 + 8))(this + 6, v14 + v15, 0) )
             {
-              v16 = *(this + 10); /*0x43937a*/
-              v17 = *(this + 7); /*0x43937d*/
-              *(this + 10) = v16 + 1; /*0x439383*/
+              v16 = this->LoadGame_field_0x28; /*0x43937a*/
+              v17 = this->LoadGame_field_0x1C; /*0x43937d*/
+              this->LoadGame_field_0x28 = v16 + 1; /*0x439383*/
               *(_DWORD *)(v17 + 4 * v16) = v21; /*0x43938a*/
             }
             v13 = a2; /*0x439391*/
@@ -8211,15 +8211,15 @@ LABEL_23:
         result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v20, 4, 0); /*0x43929a*/
         if ( result < 0 ) /*0x43929f*/
           break; /*0x43929f*/
-        v7 = *(this + 2); /*0x4392a5*/
-        if ( *(this + 4) < v7 /*0x4392ca*/
+        v7 = this->LoadGame_field_0x08; /*0x4392a5*/
+        if ( this->LoadGame_field_0x10 < v7 /*0x4392ca*/
           || (*((_BYTE *)this + 13) || !v7)
-          && (v8 = *(this + 5), v8 > 0)
+          && (v8 = this->LoadGame_field_0x14, v8 > 0)
           && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v7 + v8, 0) )
         {
-          v9 = *(this + 4); /*0x4392d1*/
-          v10 = *(this + 1); /*0x4392d4*/
-          *(this + 4) = v9 + 1; /*0x4392da*/
+          v9 = this->LoadGame_field_0x10; /*0x4392d1*/
+          v10 = this->LoadGame_field_0x04; /*0x4392d4*/
+          this->LoadGame_field_0x10 = v9 + 1; /*0x4392da*/
           *(_DWORD *)(v10 + 4 * v9) = v20; /*0x4392e1*/
         }
         v5 = a2; /*0x4392e4*/
@@ -8475,7 +8475,7 @@ _DWORD *__thiscall AnimClass::InitRotation(
 }
 
 
-// ==== 0x004399A0  Coord::GetCoords  this=int  sig=csp ====
+// ==== 0x004399A0  Coord::GetCoords  this=Coord  sig=csp ====
 _DWORD *__thiscall Coord::GetCoords(float *this, int *outCoords)
 {
   int v3; // edi
@@ -8484,7 +8484,7 @@ _DWORD *__thiscall Coord::GetCoords(float *this, int *outCoords)
 
   v3 = Math::RoundToInt(*(this + 6)); /*0x4399b0*/
   v4 = Math::RoundToInt(*(this + 7)); /*0x4399ba*/
-  v5 = Math::RoundToInt(*(this + 8)); /*0x4399bc*/
+  v5 = Math::RoundToInt(this->Coord_field_0x8); /*0x4399bc*/
   *outCoords = v3; /*0x4399c7*/
   outCoords[1] = v4; /*0x4399cb*/
   outCoords[2] = v5; /*0x4399cf*/
@@ -8492,7 +8492,7 @@ _DWORD *__thiscall Coord::GetCoords(float *this, int *outCoords)
 }
 
 
-// ==== 0x004399E0  VoxelAnimClass::QuaternionToMatrix  this=int  sig=csp ====
+// ==== 0x004399E0  VoxelAnimClass::QuaternionToMatrix  this=VoxelAnimClass  sig=csp ====
 float *__thiscall sub_4399E0(float *this, float *a2)
 {
   float *v2; // esi
@@ -8540,7 +8540,7 @@ double __thiscall sub_439A10(int this)
 }
 
 
-// ==== 0x00439B00  JumpjetLocomotionClass::Update2  this=int  sig=csp ====
+// ==== 0x00439B00  JumpjetLocomotionClass::Update2  this=JumpjetLocomotionClass  sig=csp ====
 int __thiscall JumpjetLocomotionClass_Update2(char *this)
 {
   float *v1; // esi
@@ -8634,8 +8634,8 @@ int __thiscall JumpjetLocomotionClass_Update2(char *this)
   v4 = this + 36; /*0x439b1d*/
   v64 = v6; /*0x439b3a*/
   v65 = v8; /*0x439b3e*/
-  v66 = *((_DWORD *)this + 9); /*0x439b44*/
-  v9 = *((_DWORD *)this + 10); /*0x439b4a*/
+  v66 = this->Climb; /*0x439b44*/
+  v9 = this->Crash; /*0x439b4a*/
   LODWORD(v72) = *(_DWORD *)this; /*0x439b4d*/
   v67 = v9; /*0x439b51*/
   v10 = *((float *)this + 11); /*0x439b58*/
@@ -8817,7 +8817,7 @@ LABEL_43:
 }
 
 
-// ==== 0x0043A0B0  Triple::Set  this=int  sig=csp ====
+// ==== 0x0043A0B0  Triple::Set  this=Triple  sig=csp ====
 IUnknown *__thiscall Triple::Set(_DWORD *this, IUnknown *aP1, IUnknown *aP2, IUnknown *aP3)
 {
   *this = aP1; /*0x43a0ba*/
@@ -8837,20 +8837,20 @@ float *__thiscall Coord::Scale(float *this, IUnknown *aP1)
 }
 
 
-// ==== 0x0043A100  Vector3::AddAssign  this=int  sig=csp ====
+// ==== 0x0043A100  Vector3::AddAssign  this=Vector3  sig=csp ====
 float *__thiscall Vector3::AddAssign(float *this, MouseClass *aP1)
 {
   *this = *(float *)&aP1->field_0 + *this; /*0x43a10a*/
-  *(this + 1) = *(float *)&aP1->field_4 + *(this + 1); /*0x43a112*/
-  *(this + 2) = *(float *)&aP1->field_8 + *(this + 2); /*0x43a11b*/
+  this->Vector3_field_0x04 = *(float *)&aP1->field_4 + this->Vector3_field_0x04; /*0x43a112*/
+  this->Vector3_field_0x08 = *(float *)&aP1->field_8 + this->Vector3_field_0x08; /*0x43a11b*/
   return this; /*0x43a11e*/
 }
 
 
-// ==== 0x0043A130  JumpjetLocomotionClass::ComputeVectorLengthMetric_0  this=int  sig=csp ====
+// ==== 0x0043A130  JumpjetLocomotionClass::ComputeVectorLengthMetric_0  this=JumpjetLocomotionClass  sig=csp ====
 void __thiscall sub_43A130(float *this)
 {
-  Math::Sqrt(*this * *this + *(this + 1) * *(this + 1) + *(this + 2) * *(this + 2)); /*0x43a154*/
+  Math::Sqrt(*this * *this + this->vtable2 * this->vtable2 + this->Owner * this->Owner); /*0x43a154*/
 }
 
 
@@ -9557,16 +9557,16 @@ _DWORD *__thiscall Buffer::Init(_DWORD *this, int a2, AbstractClass *aP2)
 }
 
 
-// ==== 0x0043ADC0  INIClass::loadFile  this=int  sig=csp ====
+// ==== 0x0043ADC0  INIClass::loadFile  this=INIClass  sig=csp ====
 _DWORD *__thiscall INIClass::loadFile(_DWORD *this, AbstractClass *aP1)
 {
   *this = 0; /*0x43adc9*/
-  *(this + 1) = aP1; /*0x43adcf*/
-  *((_BYTE *)this + 8) = 0; /*0x43add2*/
+  this->headNode = aP1; /*0x43adcf*/
+  this->__pad_020 = 0; /*0x43add2*/
   if ( (int)aP1 > 0 ) /*0x43add6*/
   {
     *this = __2_YAPAXI_Z((size_t)aP1); /*0x43ade1*/
-    *((_BYTE *)this + 8) = 1; /*0x43ade3*/
+    this->__pad_020 = 1; /*0x43ade3*/
   }
   return this; /*0x43ade9*/
 }
@@ -9582,7 +9582,7 @@ ObjectClass *__thiscall sub_43ADF0(_BYTE *this, _DWORD *a1)
 }
 
 
-// ==== 0x0043AE10  StaticButtonClass::ReleaseBuffer  this=VOID_PTR  sig=csp ====
+// ==== 0x0043AE10  StaticButtonClass::ReleaseBuffer  this=StaticButtonClass  sig=csp ====
 int __thiscall sub_43AE10(int this, _DWORD *a2)
 {
   if ( a2 != (_DWORD *)this ) /*0x43ae1a*/
@@ -9597,7 +9597,7 @@ int __thiscall sub_43AE10(int this, _DWORD *a2)
 }
 
 
-// ==== 0x0043AE50  Vector::Clear  this=VOID_PTR  sig=csp ====
+// ==== 0x0043AE50  Vector::Clear  this=Vector  sig=csp ====
 void __thiscall Vector_Clear(int this)
 {
   if ( *(_BYTE *)(this + 8) ) /*0x43ae53*/
@@ -9740,7 +9740,7 @@ int sub_43B130()
 }
 
 
-// ==== 0x0043B150  ObjectClass::DetectNearbyAlliedThreat  this=int  sig=csp ====
+// ==== 0x0043B150  ObjectClass::DetectNearbyAlliedThreat  this=ObjectClass  sig=csp ====
 bool __thiscall DetectNearbyAlliedThreat(#375 **this)
 {
   #375 **v1; // ebx
@@ -9797,7 +9797,7 @@ bool __thiscall DetectNearbyAlliedThreat(#375 **this)
   int v53[3]; // [esp+114h] [ebp-Ch] BYREF
 
   v1 = this; /*0x43b15d*/
-  if ( !(unsigned __int8)HouseClass::IsAlliedWith(HouseClass_Player, *(this + 135)) )
+  if ( !(unsigned __int8)HouseClass::IsAlliedWith(HouseClass_Player, this->q21C) )
   {
     v2 = 0; /*0x43b18b*/
     v34 = *((_DWORD *)HouseClass_Player + 78); /*0x43b18f*/
@@ -9894,7 +9894,7 @@ LABEL_23:
 }
 
 
-// ==== 0x0043B4C0  Cell::CanPlaceBuilding  this=VOID_PTR  sig=csp ====
+// ==== 0x0043B4C0  Cell::CanPlaceBuilding  this=Cell  sig=csp ====
 char __fastcall Cell::CanPlaceBuilding(IUnknown *this, _DWORD *a2)
 {
   int v2; // esi
@@ -9948,7 +9948,7 @@ LABEL_6:
 }
 
 
-// ==== 0x0043B5E0  HouseClass::PsiWarn  this=unknown  sig=csp ====
+// ==== 0x0043B5E0  HouseClass::PsiWarn  this=HouseClass  sig=csp ====
 void **__fastcall HouseClass::PsiWarn(InfantryClass *aP0, int a2, int arg0, void *a3)
 {
   CoordStruct *v6; // edi
@@ -12164,7 +12164,7 @@ LABEL_31:
 }
 
 
-// ==== 0x0043E7B0  BuildingClass::DrawVisible  this=int  sig=csp ====
+// ==== 0x0043E7B0  BuildingClass::DrawVisible  this=BuildingClass  sig=csp ====
 void __thiscall BuildingClass::DrawVisible(void *this, int *a1, IUnknown *aP2)
 {
   int v4; // eax
@@ -12176,27 +12176,27 @@ void __thiscall BuildingClass::DrawVisible(void *this, int *a1, IUnknown *aP2)
   int v10; // eax
   _DWORD v11[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  (*(void (__thiscall **)(void *, _DWORD *))(*(_DWORD *)this + 440))(this, v11); /*0x43e7c1*/
-  if ( *((_BYTE *)this + 131) /*0x43e80c*/
+  (*(void (__thiscall **)(void *, _DWORD *))(this->airstrikeTintTimer)(this, v11); /*0x43e7c1*/
+  if ( this->isSelected /*0x43e80c*/
     && ((unsigned __int8)HouseClass::IsAlliedWith(*((void **)this + 135), HouseClass_Player)
-     || ((1 << *(_DWORD *)(HouseClass_Player->field_34 + 184)) & *((_DWORD *)this + 132)) != 0) )
+     || ((1 << *(_DWORD *)(HouseClass_Player->field_34 + 184)) & this->hasParachute) != 0) )
   {
     v4 = *a1 - 10; /*0x43e816*/
     v11[1] = a1[1] + 10; /*0x43e819*/
     v11[0] = v4; /*0x43e822*/
-    (*(void (__thiscall **)(void *, _DWORD *, int *, IUnknown *))(*(_DWORD *)this + 1112))(this, v11, a1, aP2); /*0x43e82c*/
+    (*(void (__thiscall **)(void *, _DWORD *, int *, IUnknown *))(this->currentTargets)(this, v11, a1, aP2); /*0x43e82c*/
   }
-  if ( ((1 << *(_DWORD *)(HouseClass_Player->field_34 + 184)) & *((_DWORD *)this + 132)) != 0 && *((_BYTE *)this + 131) ) /*0x43e856*/
+  if ( ((1 << *(_DWORD *)(HouseClass_Player->field_34 + 184)) & this->hasParachute) != 0 && this->isSelected ) /*0x43e856*/
   {
     if ( (unsigned __int8)House::IsCurrentPlayer(*((#375 **)this + 135)) ) /*0x43e86a*/
     {
-      v6 = *((_DWORD *)this + 328); /*0x43e873*/
+      v6 = this->gattlingValue; /*0x43e873*/
       LOBYTE(v5) = *(_BYTE *)(v6 + 3278); /*0x43e87b*/
       BuildLimit = (_DWORD *)HouseClass::GetBuildLimit(*((_DWORD **)this + 135), *(_DWORD *)(v6 + 3768), v5, 0); /*0x43e88f*/
     }
     else
     {
-      BuildLimit = (_DWORD *)*((_DWORD *)this + 329); /*0x43e896*/
+      BuildLimit = (_DWORD *)this->Factory; /*0x43e896*/
     }
     if ( BuildLimit ) /*0x43e89e*/
     {

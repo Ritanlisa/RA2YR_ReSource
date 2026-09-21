@@ -230,7 +230,7 @@ int __thiscall sub_6B04C0(_DWORD *this)
 }
 
 
-// ==== 0x006B0690  BuildingClass::GetRallyPointCoord  this=VOID_PTR  sig=csp ====
+// ==== 0x006B0690  BuildingClass::GetRallyPointCoord  this=BuildingClass  sig=csp ====
 _DWORD *__thiscall sub_6B0690(_DWORD *this, _DWORD *a2)
 {
   int v3; // ecx
@@ -242,17 +242,17 @@ _DWORD *__thiscall sub_6B0690(_DWORD *this, _DWORD *a2)
   int v10; // [esp+4h] [ebp-8h]
   _BYTE v11[4]; // [esp+8h] [ebp-4h] BYREF
 
-  v3 = *(this + 9); /*0x6b0696*/
+  v3 = this->objectTypeFlags; /*0x6b0696*/
   if ( v3 && (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) == 6 )
   {
-    v4 = *(this + 9); /*0x6b06ad*/
+    v4 = this->objectTypeFlags; /*0x6b06ad*/
     if ( v4 )
-      v5 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v4 + 44))(*(this + 9)) == 6 ? v4 : 0;
+      v5 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v4 + 44))(this->objectTypeFlags) == 6 ? v4 : 0;
     else
       v5 = 0; /*0x6b06b4*/
     v6 = BuildingTypeClass::GetFoundationWidth(*(_DWORD **)(v5 + 1312)) - 1; /*0x6b06df*/
     v7 = BuildingTypeClass::GetFoundationHeight(*(_DWORD *)(v5 + 1312), 0) / 2; /*0x6b06f6*/
-    v8 = (_WORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)*(this + 9) + 440))(*(this + 9), v11); /*0x6b06f8*/
+    v8 = (_WORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)this->objectTypeFlags + 440))(this->objectTypeFlags, v11); /*0x6b06f8*/
     HIWORD(v10) = v7 + v8[1]; /*0x6b0708*/
     LOWORD(v10) = *v8 + v6; /*0x6b0711*/
     *a2 = v10; /*0x6b071c*/
@@ -260,7 +260,7 @@ _DWORD *__thiscall sub_6B0690(_DWORD *this, _DWORD *a2)
   }
   else
   {
-    *a2 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)*(this + 9) + 440))(*(this + 9), v11); /*0x6b073c*/
+    *a2 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)this->objectTypeFlags + 440))(this->objectTypeFlags, v11); /*0x6b073c*/
     return a2; /*0x6b0737*/
   }
 }
@@ -334,7 +334,7 @@ _DWORD *__thiscall sub_6B0750(_DWORD *this, _DWORD *a2)
 }
 
 
-// ==== 0x006B0880  BuildingClass::CheckBridge  this=VOID_PTR  sig=csp ====
+// ==== 0x006B0880  BuildingClass::CheckBridge  this=BuildingClass  sig=csp ====
 bool __thiscall BuildingClass::CheckBridge(_DWORD *this, ObjectClass *aP1, IUnknown *aP2)
 {
   int v4; // ecx
@@ -359,28 +359,28 @@ bool __thiscall BuildingClass::CheckBridge(_DWORD *this, ObjectClass *aP1, IUnkn
   int v24; // [esp+18h] [ebp-8h] BYREF
   int v25; // [esp+1Ch] [ebp-4h] BYREF
 
-  v4 = *(this + 9); /*0x6b0887*/
+  v4 = this->objectTypeFlags; /*0x6b0887*/
   if ( v4 && (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 6 )
   {
-    v5 = *(this + 9); /*0x6b0899*/
+    v5 = this->objectTypeFlags; /*0x6b0899*/
     if ( v5 )
-      v6 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v5 + 44))(*(this + 9)) == 6 ? v5 : 0;
+      v6 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v5 + 44))(this->objectTypeFlags) == 6 ? v5 : 0;
     else
       v6 = 0; /*0x6b08a0*/
     FoundationWidth = BuildingTypeClass::GetFoundationWidth(*(_DWORD **)(v6 + 1312)); /*0x6b08be*/
     v8 = *(_DWORD *)(v6 + 1312); /*0x6b08c3*/
     LOWORD(v20) = FoundationWidth - 1; /*0x6b08cc*/
     FoundationHeight = BuildingTypeClass::GetFoundationHeight(v8, 0); /*0x6b08d1*/
-    v10 = *(this + 9); /*0x6b08d7*/
+    v10 = this->objectTypeFlags; /*0x6b08d7*/
     HIWORD(v20) = FoundationHeight / 2; /*0x6b08de*/
     v11 = (_WORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v10 + 440))(v10, &v24); /*0x6b08f4*/
     v12 = CellStruct::Add(v11, (IUnknown *)&v22, (IUnknown *)&v20)->field_0; /*0x6b0901*/
   }
   else
   {
-    v12 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 9) + 440))(*(this + 9), &v25); /*0x6b0916*/
+    v12 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->objectTypeFlags + 440))(this->objectTypeFlags, &v25); /*0x6b0916*/
   }
-  v13 = *(this + 9); /*0x6b0918*/
+  v13 = this->objectTypeFlags; /*0x6b0918*/
   v23 = v12; /*0x6b091b*/
   if ( !v13 /*0x6b0985*/
     || (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13) != 6
@@ -388,7 +388,7 @@ bool __thiscall BuildingClass::CheckBridge(_DWORD *this, ObjectClass *aP1, IUnkn
         v22 = -65536,
         v20 = (IUnknown *)CellStruct::Add(&v20, (IUnknown *)&v24, (IUnknown *)&v22)->field_0,
         v14 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v20),
-        v15 = Cell::IsBridge(v14) == (_DWORD *)*(this + 9),
+        v15 = Cell::IsBridge(v14) == (_DWORD *)this->objectTypeFlags,
         v16 = v20,
         !v15) )
   {
@@ -401,10 +401,10 @@ bool __thiscall BuildingClass::CheckBridge(_DWORD *this, ObjectClass *aP1, IUnkn
   {
     return 0; /*0x6b09d7*/
   }
-  v18 = *(this + 18) - 1; /*0x6b09e3*/
+  v18 = this->q048 - 1; /*0x6b09e3*/
   if ( v18 < 0 ) /*0x6b09e4*/
     return 0; /*0x6b09e4*/
-  for ( i = (ObjectClass ***)(*(this + 15) + 4 * v18); **i != aP1; --i ) /*0x6b09ed*/
+  for ( i = (ObjectClass ***)(this->ambientSoundController + 4 * v18); **i != aP1; --i ) /*0x6b09ed*/
   {
     if ( --v18 < 0 ) /*0x6b09fc*/
       return 0; /*0x6b0a05*/
@@ -413,7 +413,7 @@ bool __thiscall BuildingClass::CheckBridge(_DWORD *this, ObjectClass *aP1, IUnkn
 }
 
 
-// ==== 0x006B0A20  SlaveManagerClass::LostSlave  this=int  sig=csp ====
+// ==== 0x006B0A20  SlaveManagerClass::LostSlave  this=SlaveManagerClass  sig=csp ====
 int __thiscall SlaveManagerClass::LostSlave(_DWORD *this, ObjectClass *aP1)
 {
   int result; // eax
@@ -423,10 +423,10 @@ int __thiscall SlaveManagerClass::LostSlave(_DWORD *this, ObjectClass *aP1)
   int v6; // ecx
   int v7; // [esp+10h] [ebp-8h]
 
-  result = *(this + 18) - 1; /*0x6b0a26*/
+  result = this->q048 - 1; /*0x6b0a26*/
   if ( result >= 0 ) /*0x6b0a2a*/
   {
-    v3 = *(this + 15); /*0x6b0a2c*/
+    v3 = this->slaveVectorCount; /*0x6b0a2c*/
     for ( i = (ObjectClass ***)(v3 + 4 * result); **i != aP1; --i ) /*0x6b0a33*/
     {
       if ( --result < 0 ) /*0x6b0a42*/
@@ -437,7 +437,7 @@ int __thiscall SlaveManagerClass::LostSlave(_DWORD *this, ObjectClass *aP1)
       *(_DWORD *)(*v5 + 732) = 0; /*0x6b0a56*/
     *v5 = 0; /*0x6b0a60*/
     v5[1] = 6; /*0x6b0a66*/
-    v6 = *(this + 12); /*0x6b0a73*/
+    v6 = this->slaveType; /*0x6b0a73*/
     result = (int)(v5 + 2); /*0x6b0a76*/
     *(_DWORD *)result = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b0a79*/
     *(_DWORD *)(result + 4) = v7; /*0x6b0a7f*/
@@ -469,7 +469,7 @@ _DWORD *__thiscall sub_6B0A90(_DWORD *this, int a2)
 }
 
 
-// ==== 0x006B0AE0  TechnoClass::MutateAll  this=int  sig=csp ====
+// ==== 0x006B0AE0  TechnoClass::MutateAll  this=TechnoClass  sig=csp ====
 char __thiscall TechnoClass::MutateAll(_DWORD *this, TechnoClass *aP1, CoordStruct *aP2)
 {
   _DWORD *v3; // ebx
@@ -490,7 +490,7 @@ char __thiscall TechnoClass::MutateAll(_DWORD *this, TechnoClass *aP1, CoordStru
   _DWORD v20[3]; // [esp+20h] [ebp-Ch] BYREF
 
   v3 = this; /*0x6b0ae4*/
-  v4 = *(this + 9); /*0x6b0aea*/
+  v4 = this->objectTypeFlags; /*0x6b0aea*/
   if ( v4 ) /*0x6b0aef*/
   {
     v5 = HouseClass_Count; /*0x6b0af7*/
@@ -517,7 +517,7 @@ LABEL_8:
       v11 = aP1; /*0x6b0b48*/
       while ( 1 ) /*0x6b0b56*/
       {
-        v12 = **(int ***)(*(this + 15) + 4 * v10); /*0x6b0b56*/
+        v12 = **(int ***)(this->ambientSoundController + 4 * v10); /*0x6b0b56*/
         if ( v12 && MEMORY[0xA8D63C].__pad_1258[268] ) /*0x6b0b67*/
         {
           v13 = *((_BYTE *)v12 + 129); /*0x6b0b6d*/
@@ -596,19 +596,19 @@ LABEL_21:
 }
 
 
-// ==== 0x006B0C80  FactoryClass::ResetProductionTimers  this=int  sig=csp ====
+// ==== 0x006B0C80  FactoryClass::ResetProductionTimers  this=FactoryClass  sig=csp ====
 wchar_t *__thiscall FactoryClass::ResetProductionTimers(_DWORD *this)
 {
   wchar_t *result; // eax
   int i; // esi
   int v4; // ecx
 
-  *(this + 23) = 0; /*0x6b0c84*/
+  this->q05C = 0; /*0x6b0c84*/
   result = MEMORY[0xA8ED84]; /*0x6b0c8b*/
-  *(this + 24) = MEMORY[0xA8ED84]; /*0x6b0c90*/
-  for ( i = *(this + 18) - 1; i >= 0; --i ) /*0x6b0c97*/
+  this->balance = MEMORY[0xA8ED84]; /*0x6b0c90*/
+  for ( i = this->q048 - 1; i >= 0; --i ) /*0x6b0c97*/
   {
-    result = *(wchar_t **)(*(this + 15) + 4 * i); /*0x6b0c9c*/
+    result = *(wchar_t **)(this->object + 4 * i); /*0x6b0c9c*/
     v4 = *(_DWORD *)result; /*0x6b0ca2*/
     if ( *((_DWORD *)result + 1) != 6 ) /*0x6b0ca7*/
     {
@@ -806,23 +806,23 @@ _DWORD *__thiscall BuildingClass::ProcessEnterUnit(_DWORD *this)
 }
 
 
-// ==== 0x006B1020  SlaveManagerClass::ShouldWakeUpNow  this=VOID_PTR  sig=csp ====
+// ==== 0x006B1020  SlaveManagerClass::ShouldWakeUpNow  this=SlaveManagerClass  sig=csp ====
 bool __thiscall SlaveManagerClass::ShouldWakeUpNow(_DWORD *this)
 {
   _DWORD *v2; // ecx
   int v4; // [esp+Ch] [ebp-4h] BYREF
 
-  v2 = (_DWORD *)*(this + 9); /*0x6b1024*/
-  if ( !v2 || *(this + 23) ) /*0x6b102f*/
+  v2 = (_DWORD *)this->master; /*0x6b1024*/
+  if ( !v2 || this->SlaveManagerClass_field_5C ) /*0x6b102f*/
     return 0; /*0x6b102f*/
   if ( !*(_BYTE *)(v2[135] + 492) ) /*0x6b1040*/
     return 1; /*0x6b104e*/
   if ( *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v2 + 444))(v2) + 236) == 5 ) /*0x6b105e*/
     return 1; /*0x6b1064*/
-  if ( *(this + 24) + *(_DWORD *)MEMORY[0x8871E0][1].? >= (int)MEMORY[0xA8ED84] ) /*0x6b107d*/
+  if ( this->SlaveManagerClass_field_60 + *(_DWORD *)MEMORY[0x8871E0][1].? >= (int)MEMORY[0xA8ED84] ) /*0x6b107d*/
     return 0; /*0x6b107d*/
-  v4 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int *, int, _DWORD))(*(_DWORD *)*(this + 9) + 824))( /*0x6b10ad*/
-                    *(this + 9),
+  v4 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int *, int, _DWORD))(*(_DWORD *)this->master + 824))( /*0x6b10ad*/
+                    this->master,
                     &v4,
                     MEMORY[0x8871E0][1].? / 256,
                     0);
@@ -1539,12 +1539,12 @@ DynamicVector *__thiscall VectorClass_ptr_SlaveManagerClass::Constructor_VectorC
 }
 
 
-// ==== 0x006B1A70  SlaveManagerClass::Calc2DDistance  this=int  sig=csp ====
+// ==== 0x006B1A70  SlaveManagerClass::Calc2DDistance  this=SlaveManagerClass  sig=csp ====
 __int64 __thiscall sub_6B1A70(__int16 *this)
 {
   double v1; // st7
 
-  v1 = Math::Sqrt((double)*this * (double)*this + (double)*(this + 1) * (double)*(this + 1)); /*0x6b1a9c*/
+  v1 = Math::Sqrt((double)*this * (double)*this + (double)this->vtable2 * (double)this->vtable2); /*0x6b1a9c*/
   return Math::RoundToInt(v1); /*0x6b1aa9*/
 }
 
@@ -2269,7 +2269,7 @@ LABEL_6:
 }
 
 
-// ==== 0x006B2700  InitializeBuildabilityGrid  this=unknown  sig=csp ====
+// ==== 0x006B2700  InitializeBuildabilityGrid  this=-  sig=csp ====
 int __stdcall InitializeBuildabilityGrid(int a1)
 {
   int v1; // esi
@@ -2639,7 +2639,7 @@ int SlaveManager_InitGrid()
 }
 
 
-// ==== 0x006B2F30  ProcessBuildingClassConstruction  this=VOID_PTR  sig=csp ====
+// ==== 0x006B2F30  ProcessBuildingClassConstruction  this=-  sig=csp ====
 char __fastcall sub_6B2F30(char a1, int a2, int a3)
 {
   int v3; // esi
@@ -3299,7 +3299,7 @@ LABEL_36:
 }
 
 
-// ==== 0x006B3A80  FlowTerrainCompute  this=int  sig=csp ====
+// ==== 0x006B3A80  FlowTerrainCompute  this=-  sig=csp ====
 char __fastcall Terrain_FlowCompute(int a1, char a2, int a3, int a4)
 {
   int v4; // eax
@@ -3501,7 +3501,7 @@ LABEL_20:
 }
 
 
-// ==== 0x006B3E60  ComputeTerrainFlowField  this=int  sig=csp ====
+// ==== 0x006B3E60  ComputeTerrainFlowField  this=-  sig=csp ====
 char __fastcall ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int a4)
 {
   int v4; // ebx
@@ -4433,7 +4433,7 @@ char __thiscall UnitClass::UnloadPassengers(int *this, int a2)
 }
 
 
-// ==== 0x006B4C70  nullsub_232  this=unknown  sig=csp ====
+// ==== 0x006B4C70  nullsub_232  this=-  sig=csp ====
 void __stdcall nullsub_232(int a1)
 {
   ; /*0x6b4c70*/
@@ -4498,7 +4498,7 @@ int __thiscall UnitClass::ReadINI(char *this)
 }
 
 
-// ==== 0x006B4DD0  UnitTypeClass::ReadINIEntry  this=int  sig=csp ====
+// ==== 0x006B4DD0  UnitTypeClass::ReadINIEntry  this=UnitTypeClass  sig=csp ====
 char __thiscall sub_6B4DD0(char *this)
 {
   int v1; // ebp
@@ -4845,7 +4845,7 @@ int __thiscall Object_Read_6B5440(void *this)
 }
 
 
-// ==== 0x006B5490  LoadFactoryClassTheaterSHP  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x006B5490  LoadFactoryClassTheaterSHP  this=-  sig=ida-proto ====
 int __fastcall FactoryClass_LoadTheaterSHP(int a1)
 {
   int result; // eax
@@ -5082,7 +5082,7 @@ LABEL_6:
 }
 
 
-// ==== 0x006B59A0  StandardCreateUnitAtCoords  this=int  sig=csp ====
+// ==== 0x006B59A0  StandardCreateUnitAtCoords  this=-  sig=csp ====
 char __fastcall StandardCreateUnitAtCoords(_DWORD *a0, IUnknown *aP1, int a3, char a4)
 {
   IUnknown *v4; // ebp
@@ -5244,7 +5244,7 @@ LABEL_37:
 }
 
 
-// ==== 0x006B5C90  TimedCreateUnitAtCoords  this=int  sig=csp ====
+// ==== 0x006B5C90  TimedCreateUnitAtCoords  this=-  sig=csp ====
 char __fastcall TimedCreateUnitAtCoords(_DWORD *a0, IUnknown *aP1, int a3, char a4)
 {
   IUnknown *v4; // ebp
@@ -5600,7 +5600,7 @@ void sub_6B6230()
 }
 
 
-// ==== 0x006B6300  AudioSettings::DlgProc  this=unknown  sig=csp ====
+// ==== 0x006B6300  AudioSettings::DlgProc  this=AudioSettings  sig=csp ====
 int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
   int result; // eax
@@ -6952,18 +6952,18 @@ LABEL_10:
 }
 
 
-// ==== 0x006B7D30  SpawnManagerClass::CountAliveSpawns  this=VOID_PTR  sig=csp ====
+// ==== 0x006B7D30  SpawnManagerClass::CountAliveSpawns  this=SpawnManagerClass  sig=csp ====
 int __thiscall SpawnManagerClass::CountAliveSpawns(int *this)
 {
   int v1; // edx
   int result; // eax
   int v3; // ecx
 
-  v1 = *(this + 18); /*0x6b7d30*/
+  v1 = this->q048; /*0x6b7d30*/
   result = 0; /*0x6b7d33*/
   if ( v1 > 0 ) /*0x6b7d37*/
   {
-    v3 = *(this + 15); /*0x6b7d39*/
+    v3 = this->spawnVectorCount; /*0x6b7d39*/
     do /*0x6b7d4a*/
     {
       if ( *(_DWORD *)(*(_DWORD *)v3 + 4) != 7 ) /*0x6b7d43*/
@@ -6977,7 +6977,7 @@ int __thiscall SpawnManagerClass::CountAliveSpawns(int *this)
 }
 
 
-// ==== 0x006B7D50  SpawnManagerClass::CountDockedSpawns  this=VOID_PTR  sig=csp ====
+// ==== 0x006B7D50  SpawnManagerClass::CountDockedSpawns  this=SpawnManagerClass  sig=csp ====
 int __thiscall SpawnManagerClass::CountDockedSpawns(int *this)
 {
   int v1; // esi
@@ -6985,11 +6985,11 @@ int __thiscall SpawnManagerClass::CountDockedSpawns(int *this)
   int v3; // edx
   int v4; // ecx
 
-  v1 = *(this + 18); /*0x6b7d51*/
+  v1 = this->q048; /*0x6b7d51*/
   result = 0; /*0x6b7d54*/
   if ( v1 > 0 ) /*0x6b7d58*/
   {
-    v3 = *(this + 15); /*0x6b7d5a*/
+    v3 = this->spawnVectorCount; /*0x6b7d5a*/
     do /*0x6b7d70*/
     {
       v4 = *(_DWORD *)(*(_DWORD *)v3 + 4); /*0x6b7d5f*/
@@ -7992,7 +7992,7 @@ unsigned int __thiscall sub_6B8AE0(unsigned int *this)
 }
 
 
-// ==== 0x006B8AF0  ObjectClass::ApplyGameOptions_Helper  this=VOID_PTR  sig=csp ====
+// ==== 0x006B8AF0  ObjectClass::ApplyGameOptions_Helper  this=ObjectClass  sig=csp ====
 bool __thiscall sub_6B8AF0(_DWORD *this, _DWORD *a2)
 {
   int v2; // eax
@@ -8243,7 +8243,7 @@ int sub_6B8EE0()
 }
 
 
-// ==== 0x006B8F00  DrawAffineTexture  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x006B8F00  DrawAffineTexture  this=-  sig=ida-proto ====
 int __fastcall Texture_DrawAffine(int a1, _DWORD *a2, int *a3, int a4, unsigned __int8 a5)
 {
   int v6; // eax
@@ -8542,7 +8542,7 @@ int sub_6B9350()
 }
 
 
-// ==== 0x006B93E0  ObjectClass::method_6B93E0  this=VOID_PTR  sig=csp ====
+// ==== 0x006B93E0  ObjectClass::method_6B93E0  this=ObjectClass  sig=csp ====
 int __thiscall sub_6B93E0(unsigned __int8 *this)
 {
   unsigned __int8 *v1; // ecx
@@ -8573,7 +8573,7 @@ int __thiscall sub_6B93E0(unsigned __int8 *this)
 }
 
 
-// ==== 0x006B9450  ObjectClass::method_6B9450  this=int  sig=csp ====
+// ==== 0x006B9450  ObjectClass::method_6B9450  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_6B9450(_DWORD *this)
 {
   int v2; // ecx
@@ -8582,14 +8582,14 @@ _DWORD *__thiscall sub_6B9450(_DWORD *this)
   void *v5; // edi
   unsigned int v6; // edx
 
-  *(this + 8) = -1717986918; /*0x6b945a*/
-  *(this + 10) = -1717986918; /*0x6b945d*/
-  *(this + 9) = 1070176665; /*0x6b9466*/
-  *(this + 11) = 1072273817; /*0x6b946d*/
-  *(this + 12) = 128; /*0x6b9474*/
-  *(this + 4) = 128; /*0x6b9477*/
-  *(this + 2) = 128; /*0x6b947a*/
-  *(this + 3) = 0; /*0x6b947d*/
+  this->NeedsSaveOrLink = -1717986918; /*0x6b945a*/
+  this->owningHouseIndex = -1717986918; /*0x6b945d*/
+  this->objectTypeFlags = 1070176665; /*0x6b9466*/
+  this->fallRate = 1072273817; /*0x6b946d*/
+  this->nextObject = 128; /*0x6b9474*/
+  this->uniqueId = 128; /*0x6b9477*/
+  this->vtable3 = 128; /*0x6b947a*/
+  this->vtable4 = 0; /*0x6b947d*/
   v2 = 0; /*0x6b9480*/
   v3 = 128; /*0x6b9482*/
   do /*0x6b9489*/
@@ -8598,18 +8598,18 @@ _DWORD *__thiscall sub_6B9450(_DWORD *this)
     v3 >>= 1; /*0x6b9485*/
   }
   while ( v3 ); /*0x6b9489*/
-  *(this + 3) = v2; /*0x6b948b*/
-  *(this + 4) = 0; /*0x6b9496*/
+  this->vtable4 = v2; /*0x6b948b*/
+  this->uniqueId = 0; /*0x6b9496*/
   v4 = 1 << (v2 - 1); /*0x6b9499*/
-  *(this + 3) = v2 - 1; /*0x6b949b*/
-  *(this + 1) = 0; /*0x6b949e*/
-  *((_BYTE *)this + 20) = 0; /*0x6b94a1*/
-  *(this + 2) = v4; /*0x6b94a4*/
+  this->vtable4 = v2 - 1; /*0x6b949b*/
+  this->vtable2 = 0; /*0x6b949e*/
+  this->customSound_controller = 0; /*0x6b94a1*/
+  this->vtable3 = v4; /*0x6b94a4*/
   v5 = __2_YAPAXI_Z(4 * v4); /*0x6b94b3*/
-  v6 = 4 * *(this + 2); /*0x6b94b8*/
+  v6 = 4 * this->vtable3; /*0x6b94b8*/
   *this = v5; /*0x6b94bf*/
   memset(v5, 0, v6); /*0x6b94c4*/
-  *(this + 6) = sub_6B94E0; /*0x6b94cd*/
+  this->nextArrayIndex = sub_6B94E0; /*0x6b94cd*/
   return this; /*0x6b94d6*/
 }
 
@@ -9124,7 +9124,7 @@ LABEL_40:
 }
 
 
-// ==== 0x006B9D00  LoadPaletteFromFile  this=int  sig=csp ====
+// ==== 0x006B9D00  LoadPaletteFromFile  this=-  sig=csp ====
 char __fastcall Palette_LoadFromFile(int a1, int a2, char *Source, int a4, int a5)
 {
   int v5; // ebx
@@ -9365,14 +9365,14 @@ LABEL_31:
 }
 
 
-// ==== 0x006BA120  UI_Init_6BA120  this=int  sig=csp ====
+// ==== 0x006BA120  UI_Init_6BA120  this=-  sig=csp ====
 char __fastcall sub_6BA120(int a1, int a2, char *Source)
 {
   return LoadPaletteFromFile(a1, a2, Source, 1, 1); /*0x6ba12e*/
 }
 
 
-// ==== 0x006BA140  HashTable::Find  this=int  sig=csp ====
+// ==== 0x006BA140  HashTable::Find  this=HashTable  sig=csp ====
 int __thiscall HashTable::Find(_DWORD *this, const char *a1, ConvertClass *aP2)
 {
   ObjectClass *v4; // esi
@@ -9387,9 +9387,9 @@ int __thiscall HashTable::Find(_DWORD *this, const char *a1, ConvertClass *aP2)
     atexit(nullsub_39); /*0x6ba174*/
   }
   *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[11424] = 0; /*0x6ba17c*/
-  if ( *(this + 1) /*0x6ba1a8*/
+  if ( this->HashTable_field_0x04 /*0x6ba1a8*/
     && (v4 = *(ObjectClass **)(*this
-                             + 4 * (((int (__thiscall *)(const char **))*(this + 6))(&a1) & ((1 << *(this + 3)) - 1)))) != 0 )
+                             + 4 * (((int (__thiscall *)(const char **))this->HashTable_field_0x18)(&a1) & ((1 << this->HashTable_field_0x0C) - 1)))) != 0 )
   {
     while ( !String::Compare((const char **)v4, &a1) ) /*0x6ba1b8*/
     {
@@ -9519,7 +9519,7 @@ LABEL_24:
 }
 
 
-// ==== 0x006BA3E0  Surface::TileBlit  this=int  sig=csp ====
+// ==== 0x006BA3E0  Surface::TileBlit  this=Surface  sig=csp ====
 char __stdcall Surface::TileBlit(INIClass *aP0, ObjectClass *aP1, int a3, int a4, int a5)
 {
   ObjectClass *v5; // ebx
@@ -9606,7 +9606,7 @@ char __stdcall Surface::TileBlit(INIClass *aP0, ObjectClass *aP1, int a3, int a4
 }
 
 
-// ==== 0x006BA580  Surface::BlitTransparent  this=int  sig=csp ====
+// ==== 0x006BA580  Surface::BlitTransparent  this=Surface  sig=csp ====
 char __stdcall Surface::BlitTransparent(int *a0, ObjectClass *aP1, int a3, ObjectClass *aP3)
 {
   int v5; // ebp
@@ -9675,14 +9675,14 @@ char __stdcall Surface::BlitTransparent(int *a0, ObjectClass *aP1, int a3, Objec
 }
 
 
-// ==== 0x006BA680  sub_6BA680  this=unknown  sig=csp ====
+// ==== 0x006BA680  sub_6BA680  this=-  sig=csp ====
 char __stdcall sub_6BA680(int a1, int a2, int a3)
 {
   return 0; /*0x6ba682*/
 }
 
 
-// ==== 0x006BA690  Surface::AlphaBlend  this=int  sig=csp ====
+// ==== 0x006BA690  Surface::AlphaBlend  this=Surface  sig=csp ====
 char __stdcall Surface_AlphaBlend(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
   int v8; // eax
@@ -9985,7 +9985,7 @@ LABEL_43:
 }
 
 
-// ==== 0x006BAC40  HashTable::RemoveHashTableEntry  this=int  sig=csp ====
+// ==== 0x006BAC40  HashTable::RemoveHashTableEntry  this=HashTable  sig=csp ====
 char __thiscall HashTable::RemoveHashTableEntry(_DWORD *this, ObjectClass *aP1, void *a2)
 {
   int v4; // eax
@@ -10024,11 +10024,11 @@ char __thiscall HashTable::RemoveHashTableEntry(_DWORD *this, ObjectClass *aP1, 
   AbstractClass *a2a; // [esp+24h] [ebp+8h]
   AbstractClass *a2b; // [esp+24h] [ebp+8h]
 
-  v4 = *(this + 1); /*0x6bac4b*/
+  v4 = this->HashTable_field_0x04; /*0x6bac4b*/
   if ( !v4 ) /*0x6bac50*/
     return 0; /*0x6bac55*/
-  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)*(this + 2); /*0x6bac80*/
-  v7 = ((int (__thiscall *)(ObjectClass *))*(this + 6))(aP1) & ((1 << *(this + 3)) - 1); /*0x6bac95*/
+  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->HashTable_field_0x08; /*0x6bac80*/
+  v7 = ((int (__thiscall *)(ObjectClass *))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6bac95*/
   v8 = *(_DWORD *)(*this + 4 * v7); /*0x6bac97*/
   v36 = (ObjectClass *)v8; /*0x6bac9c*/
   if ( !v8 ) /*0x6baca0*/
@@ -10046,19 +10046,19 @@ char __thiscall HashTable::RemoveHashTableEntry(_DWORD *this, ObjectClass *aP1, 
     *(_DWORD *)(*this + 4 * v7) = v10; /*0x6bacf3*/
     v11 = v37 < *((double *)this + 4); /*0x6bacf9*/
     v12 = v37 == *((double *)this + 4); /*0x6bacf9*/
-    --*(this + 1); /*0x6bacfd*/
+    --this->HashTable_field_0x04; /*0x6bacfd*/
     if ( v11 || v12 ) /*0x6bad02*/
     {
-      v13 = *(this + 2); /*0x6bad0b*/
-      if ( v13 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x6bad1d*/
+      v13 = this->HashTable_field_0x08; /*0x6bad0b*/
+      if ( v13 > this->HashTable_field_0x30 && this->HashTable_field_0x50 != 1 ) /*0x6bad1d*/
       {
         v14 = (AbstractClass *)*this; /*0x6bad26*/
         a2a = (AbstractClass *)*this; /*0x6bad2b*/
-        v15 = *(this + 3) - 1; /*0x6bad31*/
-        *(this + 2) = v13 >> 1; /*0x6bad32*/
-        *(this + 3) = v15; /*0x6bad3c*/
+        v15 = this->HashTable_field_0x0C - 1; /*0x6bad31*/
+        this->HashTable_field_0x08 = v13 >> 1; /*0x6bad32*/
+        this->HashTable_field_0x0C = v15; /*0x6bad3c*/
         v16 = (void *)__2_YAPAXI_Z(4 * (v13 >> 1)); /*0x6bad48*/
-        v17 = 4 * *(this + 2); /*0x6bad4d*/
+        v17 = 4 * this->HashTable_field_0x08; /*0x6bad4d*/
         *this = v16; /*0x6bad54*/
         memset(v16, 0, v17); /*0x6bad5a*/
         if ( (int)v13 > 0 ) /*0x6bad65*/
@@ -10072,7 +10072,7 @@ char __thiscall HashTable::RemoveHashTableEntry(_DWORD *this, ObjectClass *aP1, 
             {
               do /*0x6bad9e*/
               {
-                v21 = ((int (__thiscall *)(int))*(this + 6))(v20) & ((1 << *(this + 3)) - 1); /*0x6bad81*/
+                v21 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v20) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6bad81*/
                 v22 = *(_DWORD *)(*this + 4 * v21); /*0x6bad86*/
                 *(_DWORD *)(*this + 4 * v21) = v20; /*0x6bad8c*/
                 v23 = *(_DWORD *)(v20 + 776); /*0x6bad8e*/
@@ -10107,7 +10107,7 @@ char __thiscall HashTable::RemoveHashTableEntry(_DWORD *this, ObjectClass *aP1, 
       }
       qmemcpy(a2, &v24->__pad_0[4], 0x304u); /*0x6badfa*/
       v36[4].customSound_controller[2] = v24[4].customSound_controller[2]; /*0x6bae02*/
-      --*(this + 1); /*0x6bae0e*/
+      --this->HashTable_field_0x04; /*0x6bae0e*/
       DeleteAndZero((void **)v24); /*0x6bae15*/
       __3_YAXPAX_Z(v24); /*0x6bae1b*/
       aP1a = 1; /*0x6bae23*/
@@ -10115,16 +10115,16 @@ char __thiscall HashTable::RemoveHashTableEntry(_DWORD *this, ObjectClass *aP1, 
 LABEL_24:
     if ( v37 <= *((double *)this + 4) ) /*0x6bae34*/
     {
-      v25 = *(this + 2); /*0x6bae3a*/
-      if ( v25 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x6bae4c*/
+      v25 = this->HashTable_field_0x08; /*0x6bae3a*/
+      if ( v25 > this->HashTable_field_0x30 && this->HashTable_field_0x50 != 1 ) /*0x6bae4c*/
       {
-        v26 = *(this + 3); /*0x6bae52*/
+        v26 = this->HashTable_field_0x0C; /*0x6bae52*/
         v27 = (AbstractClass *)*this; /*0x6bae55*/
         a2b = (AbstractClass *)*this; /*0x6bae5a*/
-        *(this + 2) = v25 >> 1; /*0x6bae60*/
-        *(this + 3) = v26 - 1; /*0x6bae68*/
+        this->HashTable_field_0x08 = v25 >> 1; /*0x6bae60*/
+        this->HashTable_field_0x0C = v26 - 1; /*0x6bae68*/
         v28 = (AbstractClass *)__2_YAPAXI_Z(4 * (v25 >> 1)); /*0x6bae73*/
-        v29 = 4 * *(this + 2); /*0x6bae78*/
+        v29 = 4 * this->HashTable_field_0x08; /*0x6bae78*/
         *this = v28; /*0x6bae7f*/
         memset(v28, 0, v29); /*0x6bae85*/
         if ( (int)v25 > 0 ) /*0x6bae90*/
@@ -10138,7 +10138,7 @@ LABEL_24:
             {
               do /*0x6baec9*/
               {
-                v33 = ((int (__thiscall *)(ObjectClass *))*(this + 6))(v32) & ((1 << *(this + 3)) - 1); /*0x6baeac*/
+                v33 = ((int (__thiscall *)(ObjectClass *))this->HashTable_field_0x18)(v32) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6baeac*/
                 v34 = *(_DWORD *)(*this + 4 * v33); /*0x6baeb1*/
                 *(_DWORD *)(*this + 4 * v33) = v32; /*0x6baeb7*/
                 v35 = (ObjectClass *)v32[4].customSound_controller[2]; /*0x6baeb9*/
@@ -10220,7 +10220,7 @@ void __thiscall HashTable_RebuildEx(_DWORD *this)
 }
 
 
-// ==== 0x006BAFA0  ObjectClass::Render_Load_6BAFA0  this=int  sig=csp ====
+// ==== 0x006BAFA0  ObjectClass::Render_Load_6BAFA0  this=ObjectClass  sig=csp ====
 void __thiscall sub_6BAFA0(_DWORD *this)
 {
   int v2; // esi
@@ -10236,16 +10236,16 @@ void __thiscall sub_6BAFA0(_DWORD *this)
   int v12; // eax
   _DWORD *v13; // [esp+4h] [ebp-4h]
 
-  if ( *((_BYTE *)this + 20) != 1 ) /*0x6bafa8*/
+  if ( this->customSound_controller != 1 ) /*0x6bafa8*/
   {
-    v2 = *(this + 2); /*0x6bafb0*/
+    v2 = this->vtable3; /*0x6bafb0*/
     v3 = (_DWORD *)*this; /*0x6bafb3*/
-    v4 = *(this + 3) + 1; /*0x6bafbc*/
-    *(this + 2) = 2 * v2; /*0x6bafbd*/
+    v4 = this->vtable4 + 1; /*0x6bafbc*/
+    this->vtable3 = 2 * v2; /*0x6bafbd*/
     v13 = v3; /*0x6bafc0*/
-    *(this + 3) = v4; /*0x6bafc8*/
+    this->vtable4 = v4; /*0x6bafc8*/
     v5 = __2_YAPAXI_Z(8 * v2); /*0x6bafd3*/
-    v6 = 4 * *(this + 2); /*0x6bafd8*/
+    v6 = 4 * this->vtable3; /*0x6bafd8*/
     *this = v5; /*0x6bafdf*/
     memset(v5, 0, v6); /*0x6bafe4*/
     if ( v2 > 0 ) /*0x6bafef*/
@@ -10259,7 +10259,7 @@ void __thiscall sub_6BAFA0(_DWORD *this)
         {
           do /*0x6bb027*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x6bb00b*/
+            v10 = ((int (__thiscall *)(int))this->nextArrayIndex)(v9) & ((1 << this->vtable4) - 1); /*0x6bb00b*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x6bb00f*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x6bb015*/
             v12 = *(_DWORD *)(v9 + 776); /*0x6bb017*/
@@ -10430,7 +10430,7 @@ void __cdecl sub_6BB2A0()
 }
 
 
-// ==== 0x006BB2E0  WriteRegistryKeyCOM  this=unknown  sig=csp ====
+// ==== 0x006BB2E0  WriteRegistryKeyCOM  this=-  sig=csp ====
 char __fastcall WriteRegistryKeyCOM(LPCSTR lpString2, LPCSTR a2, LPCSTR lpString)
 {
   char v4; // bl
@@ -10780,7 +10780,7 @@ LONG __thiscall TopLevelExceptionFilter(
 }
 
 
-// ==== 0x006BB9A0  WinMain  this=VOID_PTR  sig=csp ====
+// ==== 0x006BB9A0  WinMain  this=-  sig=csp ====
 int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
   HWND WindowA; // eax
@@ -12192,7 +12192,7 @@ LABEL_374:
 
 
 
-// ==== 0x006BE1C0  WinMainSetup  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x006BE1C0  WinMainSetup  this=-  sig=ida-proto ====
 void __cdecl WinMain_Setup()
 {
   void *v0; // esi
@@ -12801,7 +12801,7 @@ void __cdecl WinMain_Setup()
 }
 
 
-// ==== 0x006BEC50  ObjectClass::ExitProgram  this=int  sig=csp ====
+// ==== 0x006BEC50  ObjectClass::ExitProgram  this=ObjectClass  sig=csp ====
 void __thiscall __noreturn ExitProgram(void *Code)
 {
   exit((int)Code); /*0x6bec51*/
@@ -12904,7 +12904,7 @@ int __thiscall VectorClass_K::_vt06(_DWORD *this, int a2)
 }
 
 
-// ==== 0x006BEDB0  COMClassFactory::Register  this=int  sig=csp ====
+// ==== 0x006BEDB0  COMClassFactory::Register  this=COMClassFactory  sig=csp ====
 int __thiscall COMClassFactory::Register(LPVOID *ppv, IID *rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext)
 {
   int result; // eax

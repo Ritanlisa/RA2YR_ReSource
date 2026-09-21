@@ -149,14 +149,14 @@ FlyLocomotionClass *__thiscall FlyLocomotionClass::ProcessMove(_DWORD *Block, ch
 }
 
 
-// ==== 0x004D03D0  UnitClass::CompareCoordinateMagnitude  this=int  sig=csp ====
+// ==== 0x004D03D0  UnitClass::CompareCoordinateMagnitude  this=UnitClass  sig=csp ====
 bool __thiscall sub_4D03D0(__int16 *this, __int16 *a2)
 {
   return abs16(*this) >= (int)abs16(*a2); /*0x4d03eb*/
 }
 
 
-// ==== 0x004D0400  JumpjetLocomotionClass::CheckWindowsErrorWrapper_0  this=VOID_PTR  sig=csp ====
+// ==== 0x004D0400  JumpjetLocomotionClass::CheckWindowsErrorWrapper_0  this=JumpjetLocomotionClass  sig=csp ====
 BOOL __thiscall sub_4D0400(_DWORD *this, int a2)
 {
   if ( a2 ) /*0x4d0409*/
@@ -165,7 +165,7 @@ BOOL __thiscall sub_4D0400(_DWORD *this, int a2)
 }
 
 
-// ==== 0x004D0430  ObjectClass::Release3COM  this=VOID_PTR  sig=csp ====
+// ==== 0x004D0430  ObjectClass::Release3COM  this=ObjectClass  sig=csp ====
 int __thiscall COM_Release3(int *this)
 {
   int result; // eax
@@ -199,7 +199,7 @@ _DWORD *__thiscall ObjectVector::Construct(_DWORD *this, IUnknown *aP1, IUnknown
 }
 
 
-// ==== 0x004D0490  ComPtr::ReleaseAndSet  this=VOID_PTR  sig=csp ====
+// ==== 0x004D0490  ComPtr::ReleaseAndSet  this=ComPtr  sig=csp ====
 int __thiscall ComPtr::ReleaseAndSet(_DWORD *this, ObjectClass *aP1)
 {
   int v3; // edi
@@ -241,21 +241,21 @@ int __thiscall ComPtr::ReleaseAndSet(_DWORD *this, ObjectClass *aP1)
 }
 
 
-// ==== 0x004D0510  JumpjetLocomotionClass::GetInterface  this=unknown  sig=csp ====
+// ==== 0x004D0510  JumpjetLocomotionClass::GetInterface  this=JumpjetLocomotionClass  sig=csp ====
 int __stdcall JumpjetLocomotionClass::_vt0(int a1, const void *a2, _DWORD *a3)
 {
   return LocomotionClass::QueryInterface(a1 - 4, a2, a3);
 }
 
 
-// ==== 0x004D0520  JumpjetLocomotionClass::GetInterface2  this=unknown  sig=csp ====
+// ==== 0x004D0520  JumpjetLocomotionClass::GetInterface2  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::_vt1(int a1)
 {
   return COM::AddRef(a1 - 4);
 }
 
 
-// ==== 0x004D0530  JumpjetLocomotionClass::Stub2  this=unknown  sig=csp ====
+// ==== 0x004D0530  JumpjetLocomotionClass::Stub2  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::_vt2(int a1)
 {
   return COM::ReleaseRef((volatile LONG *)(a1 - 4));
@@ -1244,7 +1244,7 @@ int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
 }
 
 
-// ==== 0x004D1890  TacticalClass::DrawBuildings  this=int  sig=csp ====
+// ==== 0x004D1890  TacticalClass::DrawBuildings  this=TacticalClass  sig=csp ====
 int __thiscall TacticalClass::DrawBuildings(int *this)
 {
   int result; // eax
@@ -1414,7 +1414,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                     v100[2] = v38; /*0x4d20b9*/
                     Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v100, &v77); /*0x4d20c0*/
                     v110 = *this; /*0x4d20d2*/
-                    v39 = MEMORY[0x87F7E8][7663] - *(this + 1); /*0x4d20e3*/
+                    v39 = MEMORY[0x87F7E8][7663] - this->q004; /*0x4d20e3*/
                     v40 = 1000; /*0x4d20eb*/
                     v77 += MEMORY[0x87F7E8][7662] - v110; /*0x4d20f0*/
                     v41 = v39 + v78; /*0x4d20f8*/
@@ -1481,7 +1481,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                   v105[1] = *(_DWORD *)(v4 + 56); /*0x4d1d10*/
                   v105[2] = *(_DWORD *)(v4 + 60); /*0x4d1d1f*/
                   v60 = Coord::To_Cell(MEMORY[0x87F7E8], v105); /*0x4d1d30*/
-                  v22 = MEMORY[0x87F7E8][7663] - *(this + 1); /*0x4d1d41*/
+                  v22 = MEMORY[0x87F7E8][7663] - this->q004; /*0x4d1d41*/
                   v23 = v18[5889]; /*0x4d1d49*/
                   v79 += MEMORY[0x87F7E8][7662] - *this; /*0x4d1d4f*/
                   v24 = v22 + v80; /*0x4d1d57*/
@@ -1493,9 +1493,9 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                   v83[1] = v24; /*0x4d1d7b*/
                   v25 = v24 + *(__int16 *)(v66 + 4) / 2; /*0x4d1d88*/
                   v88[0] = *this; /*0x4d1d8e*/
-                  v88[1] = *(this + 1); /*0x4d1d95*/
-                  v88[2] = *(this + 2); /*0x4d1d9c*/
-                  v89 = *(this + 3); /*0x4d1da5*/
+                  v88[1] = this->q004; /*0x4d1d95*/
+                  v88[2] = this->q002; /*0x4d1d9c*/
+                  v89 = this->q00C; /*0x4d1da5*/
                   if ( v89 > v25 ) /*0x4d1dac*/
                     v89 = v25; /*0x4d1dae*/
                   v73 = *((_DWORD *)v18 + 1356) + 144; /*0x4d1dc4*/
@@ -1630,7 +1630,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
               *((_BYTE *)v6 + 286) = v62; /*0x4d1ace*/
               break; /*0x4d1ad4*/
             case 0x1D: /*0x4d19bd*/
-              v43 = *(this + 1); /*0x4d220d*/
+              v43 = this->q004; /*0x4d220d*/
               v44 = *this; /*0x4d2210*/
               v45 = *(_DWORD *)(MEMORY[0x87F7E8][7887] + 180); /*0x4d2218*/
               v90 = *(_DWORD *)(MEMORY[0x87F7E8][7887] + 176); /*0x4d221e*/
@@ -1685,7 +1685,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
               v103[1] = v9[1]; /*0x4d1b49*/
               v103[2] = v9[2]; /*0x4d1b5b*/
               Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v103, &v81); /*0x4d1b62*/
-              v12 = MEMORY[0x87F7E8][7663] - *(this + 1); /*0x4d1b79*/
+              v12 = MEMORY[0x87F7E8][7663] - this->q004; /*0x4d1b79*/
               v13 = *v9; /*0x4d1b81*/
               v81 += MEMORY[0x87F7E8][7662] - *this; /*0x4d1b83*/
               v14 = v12 + v82; /*0x4d1b8b*/
@@ -1966,7 +1966,7 @@ LABEL_22:
 }
 
 
-// ==== 0x004D2790  CellClass::recalcPassability  this=VOID_PTR  sig=csp ====
+// ==== 0x004D2790  CellClass::recalcPassability  this=CellClass  sig=csp ====
 int __thiscall sub_4D2790(int this)
 {
   if ( *(_DWORD *)(this + 48) == 6 ) /*0x4d2794*/
@@ -2525,7 +2525,7 @@ _DWORD *__thiscall FoggedObject::DrawVector_Constructor(_DWORD *this, IUnknown *
 }
 
 
-// ==== 0x004D2E40  Vector::ReallocDynamic  this=int  sig=csp ====
+// ==== 0x004D2E40  Vector::ReallocDynamic  this=Vector  sig=csp ====
 char __thiscall ReallocDynamicVector(int this, int a2)
 {
   char *v3; // edi
@@ -6513,7 +6513,7 @@ char __thiscall FootClass_CanBeControlled(void *this)
 }
 
 
-// ==== 0x004DA230  FootClass::CanBeRecruited  this=int  sig=csp ====
+// ==== 0x004DA230  FootClass::CanBeRecruited  this=FootClass  sig=csp ====
 char __thiscall FootClass::CanBeRecruited(_DWORD *this, AbstractClass *aP1)
 {
   char result; // al
@@ -6521,24 +6521,24 @@ char __thiscall FootClass::CanBeRecruited(_DWORD *this, AbstractClass *aP1)
 
   if ( !aP1 ) /*0x4da239*/
     return 0; /*0x4da23b*/
-  if ( aP1 != (AbstractClass *)*(this + 135) ) /*0x4da247*/
+  if ( aP1 != (AbstractClass *)this->focus ) /*0x4da247*/
     return 0; /*0x4da249*/
-  if ( *((_BYTE *)this + 129) ) /*0x4da24f*/
+  if ( this->q204 ) /*0x4da24f*/
     return 0; /*0x4da259*/
-  if ( *(this + 373) ) /*0x4da25f*/
+  if ( this->FootClass_field_5D4 ) /*0x4da25f*/
     return 0; /*0x4da269*/
   v4 = (*(int (__thiscall **)(_DWORD *))(*this + 388))(this); /*0x4da273*/
   result = IPersistStream::SetField(v4); /*0x4da27b*/
   if ( result ) /*0x4da282*/
-    return *((_BYTE *)this + 1057) != 0; /*0x4da291*/
+    return this->q421 != 0; /*0x4da291*/
   return result; /*0x4da23d*/
 }
 
 
-// ==== 0x004DA2A0  FootClass::ClearSomeVector2  this=VOID_PTR  sig=csp ====
+// ==== 0x004DA2A0  FootClass::ClearSomeVector2  this=FootClass  sig=csp ====
 bool __thiscall FootClass::ClearSomeVector2(void *this)
 {
-  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 388))(this) == 7; /*0x4da2ae*/
+  return (*(int (__thiscall **)(void *))(this->q184)(this) == 7; /*0x4da2ae*/
 }
 
 
@@ -8024,7 +8024,7 @@ LABEL_8:
 }
 
 
-// ==== 0x004DC340  ObjectClass::DrawFootTargetLine  this=int  sig=csp ====
+// ==== 0x004DC340  ObjectClass::DrawFootTargetLine  this=ObjectClass  sig=csp ====
 char __thiscall DrawFootTargetLine(int *this)
 {
   int v2; // eax
@@ -8069,7 +8069,7 @@ char __thiscall DrawFootTargetLine(int *this)
   _DWORD v42[4]; // [esp+94h] [ebp-10h] BYREF
 
   a2[0] = -1; /*0x4dc34a*/
-  v2 = *(this + 173); /*0x4dc34f*/
+  v2 = this->q2B4; /*0x4dc34f*/
   a2[1] = -1; /*0x4dc355*/
   a2[2] = -1; /*0x4dc35c*/
   v18[0] = 0; /*0x4dc361*/
@@ -8089,16 +8089,16 @@ LABEL_11:
     v23 = v5; /*0x4dc498*/
     goto LABEL_12; /*0x4dc498*/
   }
-  if ( !*(this + 361) ) /*0x4dc37a*/
+  if ( !this->q5A4 ) /*0x4dc37a*/
     return v2; /*0x4dc37a*/
-  a1 = *(this + 39); /*0x4dc3d6*/
-  v38 = *(this + 40); /*0x4dc3dd*/
+  a1 = this->q027; /*0x4dc3d6*/
+  v38 = this->owningHouseIndex; /*0x4dc3dd*/
   v6 = *(this + 358); /*0x4dc3e1*/
-  v39 = *(this + 41); /*0x4dc3ec*/
+  v39 = this->q029; /*0x4dc3ec*/
   if ( v6 ) /*0x4dc3f0*/
     v7 = *(_DWORD *)(*(this + 355) + 4 * v6 - 4); /*0x4dc406*/
   else
-    v7 = *(this + 361); /*0x4dc3f2*/
+    v7 = this->q5A4; /*0x4dc3f2*/
   v8 = (*(int (__stdcall **)(char **))(*(_DWORD *)v7 + 72))(&tail_1602E); /*0x4dc411*/
   v21 = *(Tactical **)v8; /*0x4dc418*/
   v22 = *(_DWORD *)(v8 + 4); /*0x4dc41f*/
@@ -8114,7 +8114,7 @@ LABEL_11:
 LABEL_12:
   Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], &a1, (IUnknown *)&v27); /*0x4dc49c*/
   Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], &v21, (IUnknown *)&v26); /*0x4dc4c1*/
-  v9 = *(this + 135) + 22265; /*0x4dc4de*/
+  v9 = this->q21C + 22265; /*0x4dc4de*/
   v28 += *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]; /*0x4dc4e4*/
   var68 += *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]; /*0x4dc4e8*/
   *(_WORD *)v18 = *(_WORD *)v9; /*0x4dc4f4*/
@@ -8538,7 +8538,7 @@ LABEL_45:
 }
 
 
-// ==== 0x004DCE80  Cell::IsValidDestination  this=int  sig=csp ====
+// ==== 0x004DCE80  Cell::IsValidDestination  this=Cell  sig=csp ====
 bool __thiscall Cell_IsValidDestination(_BYTE *this, __int16 *a2)
 {
   int v4; // eax
@@ -8575,7 +8575,7 @@ bool __thiscall Cell_IsValidDestination(_BYTE *this, __int16 *a2)
         return 0; /*0x4dcf19*/
     }
   }
-  v8 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _DWORD *, _DWORD))(*(_DWORD *)this + 76))(this, v16, 0); /*0x4dcf31*/
+  v8 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _DWORD *, _DWORD))(this->__pad_130)(this, v16, 0); /*0x4dcf31*/
   LOWORD(v17) = *v8 / 256; /*0x4dcf4a*/
   v9 = *(_DWORD *)this; /*0x4dcf5b*/
   HIWORD(v17) = v8[1] / 256; /*0x4dcf60*/

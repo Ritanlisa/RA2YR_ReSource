@@ -377,7 +377,7 @@ void __cdecl unknown_libname_26()
 }
 
 
-// ==== 0x00600630  Gadget::InitProperties  this=int  sig=csp ====
+// ==== 0x00600630  Gadget::InitProperties  this=Gadget  sig=csp ====
 _DWORD *__thiscall Gadget_InitProperties(_DWORD *this)
 {
   unknown_libname_74(this + 1); /*0x600636*/
@@ -746,7 +746,7 @@ void __cdecl sub_600AF0()
 }
 
 
-// ==== 0x00600C70  NavigateDialogTab  this=int  sig=csp ====
+// ==== 0x00600C70  NavigateDialogTab  this=-  sig=csp ====
 char __fastcall NavigateDialogTab(HWND hCtl, bool a2)
 {
   HWND Parent; // eax
@@ -761,7 +761,7 @@ char __fastcall NavigateDialogTab(HWND hCtl, bool a2)
 }
 
 
-// ==== 0x00600CA0  ValidateDialogEvent  this=int  sig=csp ====
+// ==== 0x00600CA0  ValidateDialogEvent  this=-  sig=csp ====
 int __fastcall ValidateDialogEvent(int a1, HWND a2)
 {
   _DWORD *v3; // eax
@@ -970,7 +970,7 @@ LABEL_164:
 }
 
 
-// ==== 0x00601360  Event::IsValidActionType  this=int  sig=csp ====
+// ==== 0x00601360  Event::IsValidActionType  this=Event  sig=csp ====
 bool __thiscall Event_IsValidActionType(void *this)
 {
   return this == (void *)268 /*0x6015d4*/
@@ -1034,7 +1034,7 @@ bool __thiscall Event_IsValidActionType(void *this)
 }
 
 
-// ==== 0x006015E0  CtlDialogColorHandler  this=int  sig=csp ====
+// ==== 0x006015E0  CtlDialogColorHandler  this=-  sig=csp ====
 int __fastcall CtlDialogColorHandler(int a1, HWND a2)
 {
   _DWORD *v3; // eax
@@ -1237,7 +1237,7 @@ LABEL_5:
 }
 
 
-// ==== 0x00601D20  ValidateDialogControl  this=int  sig=csp ====
+// ==== 0x00601D20  ValidateDialogControl  this=-  sig=csp ====
 int __fastcall ValidateDialogControl(int a1, HWND a2)
 {
   _DWORD *v3; // eax
@@ -1476,7 +1476,7 @@ LABEL_5:
 }
 
 
-// ==== 0x00602490  IsValidActionDialog  this=int  sig=csp ====
+// ==== 0x00602490  IsValidActionDialog  this=-  sig=csp ====
 bool __fastcall IsValidActionDialog(int a1, HWND a2)
 {
   _DWORD *v3; // eax
@@ -1655,7 +1655,7 @@ LABEL_5:
 }
 
 
-// ==== 0x00602AE0  Dialog::IsSpecialTemplate  this=int  sig=csp ====
+// ==== 0x00602AE0  Dialog::IsSpecialTemplate  this=Dialog  sig=csp ====
 BOOL __thiscall Dialog::IsSpecialTemplate(void *this)
 {
   return this == (void *)293 /*0x602b7a*/
@@ -1679,7 +1679,7 @@ BOOL __thiscall Dialog::IsSpecialTemplate(void *this)
 }
 
 
-// ==== 0x00602B90  UI_Helper_602B90  this=int  sig=csp ====
+// ==== 0x00602B90  UI_Helper_602B90  this=-  sig=csp ====
 bool __fastcall UI_Helper_602B90(int a1, HWND a2)
 {
   _DWORD *v3; // eax
@@ -1894,7 +1894,7 @@ LABEL_5:
 }
 
 
-// ==== 0x00603240  UI_Helper  this=int  sig=csp ====
+// ==== 0x00603240  UI_Helper  this=-  sig=csp ====
 BOOL __fastcall UI_Helper_603240(int a1, HWND a2)
 {
   _DWORD *v3; // eax
@@ -1956,7 +1956,7 @@ LABEL_5:
 }
 
 
-// ==== 0x006033F0  BinkMovie::HandleKeyboard  this=int  sig=csp ====
+// ==== 0x006033F0  BinkMovie::HandleKeyboard  this=BinkMovie  sig=csp ====
 int __fastcall BinkMovie::HandleKeyboard(int a1, HWND a2)
 {
   _DWORD *v3; // eax
@@ -2040,7 +2040,7 @@ LABEL_46:
 }
 
 
-// ==== 0x006035F0  DispatchDialogControlAction  this=int  sig=csp ====
+// ==== 0x006035F0  DispatchDialogControlAction  this=-  sig=csp ====
 int __fastcall DispatchDialogControlAction(int a1, HWND a2)
 {
   _DWORD *v3; // eax
@@ -2128,7 +2128,7 @@ LABEL_5:
 }
 
 
-// ==== 0x00603870  GetDialogControlSHP  this=int  sig=csp ====
+// ==== 0x00603870  GetDialogControlSHP  this=-  sig=csp ====
 void *__fastcall GetDialogControlSHP(int a1, HWND a2, bool *a3)
 {
   _DWORD *v4; // eax
@@ -2292,7 +2292,7 @@ LABEL_37:
 }
 
 
-// ==== 0x00603D30  CacheDialogInvalidate  this=int  sig=csp ====
+// ==== 0x00603D30  CacheDialogInvalidate  this=-  sig=csp ====
 HWND *__fastcall CacheDialogInvalidate(HWND hWnd, HWND a2)
 {
   HWND *result; // eax
@@ -2323,21 +2323,21 @@ HWND *__fastcall CacheDialogInvalidate(HWND hWnd, HWND a2)
 }
 
 
-// ==== 0x00603DB0  Diplomacy_Helper  this=int  sig=csp ====
+// ==== 0x00603DB0  Diplomacy_Helper  this=-  sig=csp ====
 LRESULT __fastcall Diplomacy_Helper(HWND hWnd, unsigned __int8 a2)
 {
   return SendMessageA(hWnd, 0x4E5u, 0, a2); /*0x603dc5*/
 }
 
 
-// ==== 0x00603DD0  globalHelper_003DD0  this=int  sig=csp ====
+// ==== 0x00603DD0  globalHelper_003DD0  this=-  sig=csp ====
 LRESULT __fastcall globalHelper_003DD0(HWND hWnd, unsigned __int8 a2)
 {
   return SendMessageA(hWnd, 0x4E6u, 0, a2); /*0x603de5*/
 }
 
 
-// ==== 0x00603E40  sub_603E40  this=int  sig=ida-proto ====
+// ==== 0x00603E40  sub_603E40  this=-  sig=ida-proto ====
 _DWORD *__fastcall sub_603E40(int a1, int a2)
 {
   _DWORD *result; // eax
@@ -2364,7 +2364,7 @@ _DWORD *__fastcall sub_603E40(int a1, int a2)
 }
 
 
-// ==== 0x00603F00  UI_Assign  this=unknown  sig=csp ====
+// ==== 0x00603F00  UI_Assign  this=-  sig=csp ====
 wchar_t **__fastcall UI_Assign(wchar_t **a1, HWND a2, LPARAM a3, LPARAM a4)
 {
   LPARAM lParam[2]; // [esp+8h] [ebp-Ch] BYREF
@@ -2380,7 +2380,7 @@ wchar_t **__fastcall UI_Assign(wchar_t **a1, HWND a2, LPARAM a3, LPARAM a4)
 }
 
 
-// ==== 0x00603F60  WOLobby_Setup  this=unknown  sig=csp ====
+// ==== 0x00603F60  WOLobby_Setup  this=-  sig=csp ====
 wchar_t **__fastcall WOLobby_Setup(wchar_t **a1, HWND a2, LPARAM a3)
 {
   LPARAM lParam[2]; // [esp+8h] [ebp-Ch] BYREF
@@ -2416,7 +2416,7 @@ wchar_t **__fastcall sub_603FC0(wchar_t **a1, HWND a2, HWND hWnd, unsigned __int
 }
 
 
-// ==== 0x00604060  GetSkirmishMenuOwnerName  this=unknown  sig=csp ====
+// ==== 0x00604060  GetSkirmishMenuOwnerName  this=-  sig=csp ====
 wchar_t **__fastcall GetSkirmishMenuOwnerName(SkirmishDialog *aP0, HWND a2, HWND a3)
 {
   char *v4; // eax
@@ -3751,7 +3751,7 @@ LABEL_885:
 }
 
 
-// ==== 0x00606740  SetDialogActiveFlag  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00606740  SetDialogActiveFlag  this=-  sig=ida-proto ====
 int __fastcall Dialog_SetActiveFlag(int a1, char a2)
 {
   int result; // eax
@@ -3806,7 +3806,7 @@ char __thiscall sub_6067A0(void *this)
 }
 
 
-// ==== 0x00606800  Dialog::MapControlToAction  this=unknown  sig=csp ====
+// ==== 0x00606800  Dialog::MapControlToAction  this=Dialog  sig=csp ====
 int __stdcall Dialog::MapControlToAction(int hWnd, int a2)
 {
   int v2; // ebp
@@ -4742,7 +4742,7 @@ char __thiscall Dialog::StopBink(void *this)
 }
 
 
-// ==== 0x00608070  Dialog::IdleProcess  this=VOID_PTR  sig=csp ====
+// ==== 0x00608070  Dialog::IdleProcess  this=Dialog  sig=csp ====
 char __thiscall Dialog::IdleProcess(void *this)
 {
   _DWORD *v2; // eax
@@ -4929,7 +4929,7 @@ int __thiscall sub_6083E0(void *this)
 }
 
 
-// ==== 0x00608440  HashTable::LookupAndMark  this=int  sig=csp ====
+// ==== 0x00608440  HashTable::LookupAndMark  this=HashTable  sig=csp ====
 int __thiscall HashTable_LookupAndMark(void *this)
 {
   int result; // eax
@@ -4957,7 +4957,7 @@ int __thiscall HashTable_LookupAndMark(void *this)
 }
 
 
-// ==== 0x00608500  ControlDialogHandler  this=VOID_PTR  sig=csp ====
+// ==== 0x00608500  ControlDialogHandler  this=-  sig=csp ====
 char __fastcall ControlDialogHandler(int a1, HWND a2, _DWORD *a3)
 {
   int v4; // esi
@@ -5411,7 +5411,7 @@ LABEL_142:
 }
 
 
-// ==== 0x00608CD0  IsDialogControlVisible  this=int  sig=csp ====
+// ==== 0x00608CD0  IsDialogControlVisible  this=-  sig=csp ====
 bool __fastcall IsDialogControlVisible(int a1, HWND a2)
 {
   _DWORD *v3; // eax
@@ -5712,7 +5712,7 @@ bool __fastcall sub_6096A0(int a1, HWND a2)
 }
 
 
-// ==== 0x00609730  GetDialogDefaultButton  this=int  sig=csp ====
+// ==== 0x00609730  GetDialogDefaultButton  this=-  sig=csp ====
 bool __fastcall GetDialogDefaultButton(int a1, HWND a2)
 {
   _DWORD *v3; // eax
@@ -5978,7 +5978,7 @@ LABEL_7:
 }
 
 
-// ==== 0x00609E20  FilterDialogButtonAction  this=int  sig=csp ====
+// ==== 0x00609E20  FilterDialogButtonAction  this=-  sig=csp ====
 bool __fastcall FilterDialogButtonAction(int a1, HWND a2)
 {
   _DWORD *v3; // eax
@@ -6130,7 +6130,7 @@ LABEL_5:
 }
 
 
-// ==== 0x0060A180  EnumFunc  this=unknown  sig=csp ====
+// ==== 0x0060A180  EnumFunc  this=-  sig=csp ====
 BOOL __stdcall EnumFunc(HWND hWnd, LPARAM a2)
 {
   HWND v2; // esi
@@ -6167,7 +6167,7 @@ BOOL __stdcall EnumFunc(HWND hWnd, LPARAM a2)
 }
 
 
-// ==== 0x0060A250  sub_60A250  this=unknown  sig=csp ====
+// ==== 0x0060A250  sub_60A250  this=-  sig=csp ====
 BOOL __stdcall sub_60A250(HWND hWnd, LPARAM a2)
 {
   HWND v2; // esi
@@ -6204,7 +6204,7 @@ BOOL __stdcall sub_60A250(HWND hWnd, LPARAM a2)
 }
 
 
-// ==== 0x0060A330  Dialog::HandleTabKey  this=unknown  sig=csp ====
+// ==== 0x0060A330  Dialog::HandleTabKey  this=Dialog  sig=csp ====
 int __stdcall Dialog::HandleTabKey(int hWnd, int a2)
 {
   _DWORD *v3; // eax
@@ -6317,7 +6317,7 @@ LABEL_33:
 }
 
 
-// ==== 0x0060A5B0  Dialog::DispatchEvent  this=unknown  sig=csp ====
+// ==== 0x0060A5B0  Dialog::DispatchEvent  this=Dialog  sig=csp ====
 int __stdcall Dialog::DispatchEvent(int hWnd, int a2)
 {
   int v2; // ebp
@@ -6538,7 +6538,7 @@ LABEL_74:
 }
 
 
-// ==== 0x0060AA60  sub_60AA60  this=unknown  sig=csp ====
+// ==== 0x0060AA60  sub_60AA60  this=-  sig=csp ====
 BOOL __stdcall sub_60AA60(HWND hWnd, LPARAM a2)
 {
   HWND Parent; // eax
@@ -6550,14 +6550,14 @@ BOOL __stdcall sub_60AA60(HWND hWnd, LPARAM a2)
 }
 
 
-// ==== 0x0060AAA0  Dialog::EnumAndCleanup  this=int  sig=csp ====
+// ==== 0x0060AAA0  Dialog::EnumAndCleanup  this=Dialog  sig=csp ====
 int __thiscall Dialog::EnumAndCleanup(void *this)
 {
   return ((int (__stdcall *)(void *, int (__stdcall *)(int, int), _DWORD))EnumChildWindows)(this, sub_60AA60, 0); /*0x60aaae*/
 }
 
 
-// ==== 0x0060AAB0  GadgetClass::FindByWindow  this=unknown  sig=csp ====
+// ==== 0x0060AAB0  GadgetClass::FindByWindow  this=GadgetClass  sig=csp ====
 BOOL __stdcall GadgetClass_FindByWindow(HWND hWnd, LPARAM a2)
 {
   HWND Parent; // edi
@@ -6722,7 +6722,7 @@ LABEL_86:
 }
 
 
-// ==== 0x0060AF50  UI_Get  this=int  sig=csp ====
+// ==== 0x0060AF50  UI_Get  this=-  sig=csp ====
 BOOL __fastcall UI_Get(HWND hWnd, _DWORD *a2)
 {
   HWND Parent; // ebp
@@ -6745,7 +6745,7 @@ BOOL __fastcall UI_Get(HWND hWnd, _DWORD *a2)
 }
 
 
-// ==== 0x0060B000  RepositionGameSpeedIndicator  this=int  sig=csp ====
+// ==== 0x0060B000  RepositionGameSpeedIndicator  this=-  sig=csp ====
 BOOL __fastcall RepositionGameSpeedIndicator(HWND hWnd, int a2)
 {
   HWND Parent; // esi
@@ -6812,7 +6812,7 @@ BOOL __fastcall RepositionGameSpeedIndicator(HWND hWnd, int a2)
 }
 
 
-// ==== 0x0060B1D0  UI_Get_60B1D0  this=int  sig=csp ====
+// ==== 0x0060B1D0  UI_Get_60B1D0  this=-  sig=csp ====
 BOOL __fastcall UI_Get_60B1D0(HWND hWnd, HWND a2)
 {
   HWND Parent; // esi
@@ -6921,7 +6921,7 @@ BOOL __thiscall UI_Get_60B350(HWND hWnd)
 }
 
 
-// ==== 0x0060B420  ObjectClass::UI_Get_60B420  this=int  sig=csp ====
+// ==== 0x0060B420  ObjectClass::UI_Get_60B420  this=ObjectClass  sig=csp ====
 BOOL __thiscall UI_Get_60B420(HWND hWnd)
 {
   HWND Parent; // esi
@@ -6981,7 +6981,7 @@ LABEL_9:
 }
 
 
-// ==== 0x0060B550  ObjectClass::UI_Get_60B550  this=int  sig=csp ====
+// ==== 0x0060B550  ObjectClass::UI_Get_60B550  this=ObjectClass  sig=csp ====
 BOOL __thiscall UI_Get_60B550(HWND hWnd)
 {
   HWND Parent; // edi
@@ -7011,7 +7011,7 @@ BOOL __thiscall UI_Get_60B550(HWND hWnd)
 }
 
 
-// ==== 0x0060B610  ObjectClass::UI_Get_60B610  this=int  sig=csp ====
+// ==== 0x0060B610  ObjectClass::UI_Get_60B610  this=ObjectClass  sig=csp ====
 BOOL __thiscall UI_Get_60B610(HWND hWnd)
 {
   HWND Parent; // esi
@@ -7084,7 +7084,7 @@ BOOL __thiscall sub_60B740(HWND hWnd)
 }
 
 
-// ==== 0x0060B7A0  ObjectClass::UI_Get_60B7A0  this=int  sig=csp ====
+// ==== 0x0060B7A0  ObjectClass::UI_Get_60B7A0  this=ObjectClass  sig=csp ====
 char __thiscall UI_Get_60B7A0(HWND hWnd)
 {
   HWND Parent; // edi
@@ -7183,7 +7183,7 @@ LABEL_5:
 }
 
 
-// ==== 0x0060B950  Control::RepositionControlsDialog  this=int  sig=csp ====
+// ==== 0x0060B950  Control::RepositionControlsDialog  this=Control  sig=csp ====
 char __thiscall Control::RepositionControlsDialog(HWND hWnd)
 {
   HWND Parent; // esi
@@ -7476,7 +7476,7 @@ LABEL_171:
 }
 
 
-// ==== 0x0060C0C0  RepositionDialogControls  this=unknown  sig=csp ====
+// ==== 0x0060C0C0  RepositionDialogControls  this=-  sig=csp ====
 BOOL __stdcall RepositionDialogControls(HWND hWnd, HWND a2)
 {
   HWND v2; // esi
@@ -7753,7 +7753,7 @@ char __thiscall Dialog_CheckControlType(void *this)
 }
 
 
-// ==== 0x0060C7D0  ObjectClass::UI_Helper_60C7D0  this=int  sig=csp ====
+// ==== 0x0060C7D0  ObjectClass::UI_Helper_60C7D0  this=ObjectClass  sig=csp ====
 char __thiscall sub_60C7D0(void *this)
 {
   _DWORD *v1; // eax
@@ -7804,7 +7804,7 @@ char __thiscall sub_60C7D0(void *this)
 }
 
 
-// ==== 0x0060C930  ObjectClass::UI_Helper_60C930  this=int  sig=csp ====
+// ==== 0x0060C930  ObjectClass::UI_Helper_60C930  this=ObjectClass  sig=csp ====
 char __thiscall sub_60C930(void *this)
 {
   _DWORD *v1; // eax
@@ -7841,7 +7841,7 @@ char __thiscall sub_60C930(void *this)
 }
 
 
-// ==== 0x0060CAF0  ObjectClass::UI_Helper_60CAF0  this=int  sig=csp ====
+// ==== 0x0060CAF0  ObjectClass::UI_Helper_60CAF0  this=ObjectClass  sig=csp ====
 char __thiscall sub_60CAF0(void *this)
 {
   _DWORD *v1; // eax
@@ -7886,7 +7886,7 @@ char __thiscall sub_60CAF0(void *this)
 }
 
 
-// ==== 0x0060CBA0  CampaignScore::LookupDialogHash  this=VOID_PTR  sig=csp ====
+// ==== 0x0060CBA0  CampaignScore::LookupDialogHash  this=CampaignScore  sig=csp ====
 int __thiscall sub_60CBA0(void *this)
 {
   int result; // eax
@@ -7914,7 +7914,7 @@ int __thiscall sub_60CBA0(void *this)
 }
 
 
-// ==== 0x0060CC00  CampaignScore::FindDialogTemplate  this=VOID_PTR  sig=csp ====
+// ==== 0x0060CC00  CampaignScore::FindDialogTemplate  this=CampaignScore  sig=csp ====
 int __thiscall sub_60CC00(void *this)
 {
   int result; // eax
@@ -7942,7 +7942,7 @@ int __thiscall sub_60CC00(void *this)
 }
 
 
-// ==== 0x0060CCC0  ObjectClass::UI_Helper_60CCC0  this=int  sig=csp ====
+// ==== 0x0060CCC0  ObjectClass::UI_Helper_60CCC0  this=ObjectClass  sig=csp ====
 char __thiscall sub_60CCC0(void *this)
 {
   _DWORD *v1; // eax
@@ -7979,7 +7979,7 @@ char __thiscall sub_60CCC0(void *this)
 }
 
 
-// ==== 0x0060CDB0  ObjectClass::UI_Helper_60CDB0  this=int  sig=csp ====
+// ==== 0x0060CDB0  ObjectClass::UI_Helper_60CDB0  this=ObjectClass  sig=csp ====
 char __thiscall sub_60CDB0(void *this)
 {
   _DWORD *v1; // eax
@@ -8170,7 +8170,7 @@ LABEL_10:
 }
 
 
-// ==== 0x0060D2C0  UI_Helper_60D2C0  this=int  sig=ida-proto ====
+// ==== 0x0060D2C0  UI_Helper_60D2C0  this=-  sig=ida-proto ====
 _DWORD *__fastcall sub_60D2C0(int a1, int a2)
 {
   _DWORD *result; // eax
@@ -8224,7 +8224,7 @@ int __thiscall sub_60D320(void *this)
 }
 
 
-// ==== 0x0060D380  Campaign::Screen  this=unknown  sig=csp ====
+// ==== 0x0060D380  Campaign::Screen  this=Campaign  sig=csp ====
 LONG __stdcall sub_60D380(char a1)
 {
   HWND v1; // esi
@@ -8275,7 +8275,7 @@ void nullsub_31()
 }
 
 
-// ==== 0x0060D450  DialogClass::RegisterWinClasses  this=unknown  sig=csp ====
+// ==== 0x0060D450  DialogClass::RegisterWinClasses  this=DialogClass  sig=csp ====
 ATOM sub_60D450()
 {
   ATOM result; // ax
@@ -8307,7 +8307,7 @@ ATOM sub_60D450()
 }
 
 
-// ==== 0x0060D520  sub_60D520  this=unknown  sig=csp ====
+// ==== 0x0060D520  sub_60D520  this=-  sig=csp ====
 LRESULT __stdcall sub_60D520(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
   return DefWindowProcA(hWnd, Msg, wParam, lParam); /*0x60d53a*/
@@ -9663,7 +9663,7 @@ LABEL_137:
 
 
 
-// ==== 0x0060F320  Dialog::SubclassEditControl  this=unknown  sig=csp ====
+// ==== 0x0060F320  Dialog::SubclassEditControl  this=Dialog  sig=csp ====
 int __stdcall Dialog::SubclassEditControl(int hWnd, int a2)
 {
   int v2; // ebx
@@ -9724,7 +9724,7 @@ int __stdcall Dialog::SubclassEditControl(int hWnd, int a2)
 }
 
 
-// ==== 0x0060F4B0  InitializeDialogControls  this=int  sig=csp ====
+// ==== 0x0060F4B0  InitializeDialogControls  this=-  sig=csp ====
 char __fastcall InitializeDialogControls(HWND a1, LPARAM a2)
 {
   LPARAM v2; // edi
@@ -9842,7 +9842,7 @@ LABEL_20:
 }
 
 
-// ==== 0x0060F760  Dialog::InitWindow  this=unknown  sig=csp ====
+// ==== 0x0060F760  Dialog::InitWindow  this=Dialog  sig=csp ====
 int __stdcall Dialog::InitWindow(int a1, int a2)
 {
   _DWORD *v2; // ebp
@@ -9937,7 +9937,7 @@ LABEL_22:
 }
 
 
-// ==== 0x0060F9A0  Dialog::InitializeControls  this=int  sig=csp ====
+// ==== 0x0060F9A0  Dialog::InitializeControls  this=Dialog  sig=csp ====
 int __stdcall Dialog::InitializeControls(void *hWnd, void *a2)
 {
   char BitShift_Red; // al

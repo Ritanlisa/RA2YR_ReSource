@@ -353,7 +353,7 @@ void PopulateWOLLobbyListBox()
 }
 
 
-// ==== 0x00780A00  FormatLocaleStringWOL  this=unknown  sig=csp ====
+// ==== 0x00780A00  FormatLocaleStringWOL  this=-  sig=csp ====
 wchar_t **__fastcall WOL_FormatLocaleString(wchar_t **a1, int a2)
 {
   char **v3; // eax
@@ -504,7 +504,7 @@ LABEL_27:
 }
 
 
-// ==== 0x00780D90  Render_Format  this=unknown  sig=csp ====
+// ==== 0x00780D90  Render_Format  this=-  sig=csp ====
 wchar_t **__fastcall Render_Format(wchar_t **a1, char **a2)
 {
   char *v4; // eax
@@ -547,7 +547,7 @@ LABEL_6:
 }
 
 
-// ==== 0x00780E30  FormatWOLPlayerInfoForDisplay  this=unknown  sig=csp ====
+// ==== 0x00780E30  FormatWOLPlayerInfoForDisplay  this=-  sig=csp ====
 CampaignScore *__fastcall FormatWOLPlayerInfoForDisplay(wchar_t **a1, HWND a2, WPARAM wParam)
 {
   wchar_t *StringCSF; // eax
@@ -642,7 +642,7 @@ LABEL_14:
 }
 
 
-// ==== 0x00781090  WOLobby_Get  this=unknown  sig=csp ====
+// ==== 0x00781090  WOLobby_Get  this=-  sig=csp ====
 CampaignScore *__fastcall WOLobby_Get(wchar_t **a1, HWND a2, WPARAM wParam)
 {
   wchar_t *StringCSF; // eax
@@ -669,7 +669,7 @@ CampaignScore *__fastcall WOLobby_Get(wchar_t **a1, HWND a2, WPARAM wParam)
 }
 
 
-// ==== 0x00781130  FilterWOLGameListEntry  this=unknown  sig=csp ====
+// ==== 0x00781130  FilterWOLGameListEntry  this=-  sig=csp ====
 bool __fastcall FilterWOLGameListEntry(AbstractClass *aP0, int a2, int a3, int a4)
 {
   if ( g_WOL_GameListRender != (ObjectClass *)2 ) /*0x781142*/
@@ -1492,7 +1492,7 @@ LABEL_12:
 }
 
 
-// ==== 0x00781FB0  InsertGameSettings  this=unknown  sig=csp ====
+// ==== 0x00781FB0  InsertGameSettings  this=-  sig=csp ====
 char __fastcall InsertGameSettings(_BYTE *a1, char a2)
 {
   _BYTE *v2; // ebp
@@ -1669,7 +1669,7 @@ LABEL_75:
 }
 
 
-// ==== 0x00782320  InsertBuddyList  this=unknown  sig=csp ====
+// ==== 0x00782320  InsertBuddyList  this=-  sig=csp ====
 void __fastcall InsertBuddyList(char *a1, char a2)
 {
   ObjectClass *v4; // eax
@@ -2901,7 +2901,7 @@ LABEL_12:
 }
 
 
-// ==== 0x00783A90  Bitmap::GetNumberBitmapWOL  this=int  sig=csp ====
+// ==== 0x00783A90  Bitmap::GetNumberBitmapWOL  this=Bitmap  sig=csp ====
 int __thiscall WOL_GetNumberBitmap(void *this)
 {
   int result; // eax
@@ -2946,14 +2946,14 @@ int __thiscall WOL_GetNumberBitmap(void *this)
 }
 
 
-// ==== 0x00783B80  ObjectClass::Render_Find  this=VOID_PTR  sig=csp ====
+// ==== 0x00783B80  ObjectClass::Render_Find  this=ObjectClass  sig=csp ====
 int __thiscall sub_783B80(unsigned int *this)
 {
   unsigned int v2; // eax
 
   if ( !this ) /*0x783b82*/
     return 0; /*0x783b84*/
-  v2 = *(this + 3); /*0x783b87*/
+  v2 = this->vtable4; /*0x783b87*/
   if ( v2 > 0x7D0 ) /*0x783b8f*/
     return HashTable::Find(MEMORY[0xAC4848], MEMORY[0x835FE4], 0); /*0x783b9d*/
   if ( v2 > 0x5DC ) /*0x783ba8*/
@@ -2976,7 +2976,7 @@ int __thiscall sub_783B80(unsigned int *this)
 }
 
 
-// ==== 0x00783C80  ObjectClass::DisplayRankingsWOL  this=int  sig=csp ====
+// ==== 0x00783C80  ObjectClass::DisplayRankingsWOL  this=ObjectClass  sig=csp ====
 void __fastcall DisplayRankingsWOL(void *this, char a2)
 {
   HWND GameUI; // eax
@@ -4156,7 +4156,7 @@ LABEL_41:
 }
 
 
-// ==== 0x00785740  ObjectClass::LeaveChannelWOL  this=int  sig=csp ====
+// ==== 0x00785740  ObjectClass::LeaveChannelWOL  this=ObjectClass  sig=csp ====
 void __thiscall LeaveChannelWOL(const char *this)
 {
   const char *v2; // ebp
@@ -4753,7 +4753,7 @@ char sub_786270()
 }
 
 
-// ==== 0x00786390  LoginFlowWOL_Reset  this=unknown  sig=csp ====
+// ==== 0x00786390  LoginFlowWOL_Reset  this=-  sig=csp ====
 int sub_786390()
 {
   HANDLE *v1; // esi
@@ -5698,7 +5698,7 @@ LABEL_87:
 }
 
 
-// ==== 0x00787770  NetworkLobbyWOL  this=unknown  sig=csp ====
+// ==== 0x00787770  NetworkLobbyWOL  this=-  sig=csp ====
 int __fastcall NetworkLobbyWOL(HWND hWnd, char a2)
 {
   char *v3; // eax
@@ -6138,7 +6138,7 @@ LABEL_88:
 }
 
 
-// ==== 0x00788180  FindLobbyIDWOL  this=unknown  sig=csp ====
+// ==== 0x00788180  FindLobbyIDWOL  this=-  sig=csp ====
 int __fastcall WOL_FindLobbyID(char a1)
 {
   int v1; // esi
@@ -6507,7 +6507,7 @@ LABEL_9:
 }
 
 
-// ==== 0x00788B00  ObjectClass::CreateAccountWOL  this=int  sig=csp ====
+// ==== 0x00788B00  ObjectClass::CreateAccountWOL  this=ObjectClass  sig=csp ====
 int __usercall WOL_CreateAccount@<eax>(HWND a1@<ecx>, int a2@<ebx>, int a3@<ebp>)
 {
   HANDLE *v3; // esi
@@ -6974,7 +6974,7 @@ char **__fastcall sub_789630(char **a1, int a2)
 }
 
 
-// ==== 0x007896A0  PopulateWOLUserList  this=int  sig=csp ====
+// ==== 0x007896A0  PopulateWOLUserList  this=-  sig=csp ====
 char __fastcall PopulateWOLUserList(HWND hWnd, char a2)
 {
   LPARAM v4; // ebp
@@ -7577,7 +7577,7 @@ LABEL_71:
 }
 
 
-// ==== 0x0078A470  ObjectClass::HandleOnlineWOL  this=int  sig=csp ====
+// ==== 0x0078A470  ObjectClass::HandleOnlineWOL  this=ObjectClass  sig=csp ====
 int __thiscall HandleOnlineWOL(wchar_t *String1)
 {
   wchar_t *StringCSF; // eax
@@ -7667,7 +7667,7 @@ int __thiscall HandleOnlineWOL(wchar_t *String1)
 }
 
 
-// ==== 0x0078A6B0  ObjectClass::HandlePageWOL  this=int  sig=csp ====
+// ==== 0x0078A6B0  ObjectClass::HandlePageWOL  this=ObjectClass  sig=csp ====
 wchar_t *__thiscall HandlePageWOL(ObjectClass *String1)
 {
   int v2; // esi
@@ -7796,7 +7796,7 @@ LABEL_23:
 }
 
 
-// ==== 0x0078A8F0  ObjectClass::HandleReplyWOL  this=int  sig=csp ====
+// ==== 0x0078A8F0  ObjectClass::HandleReplyWOL  this=ObjectClass  sig=csp ====
 wchar_t *__usercall HandleReplyWOL@<eax>(wchar_t *String1@<ecx>, int a2@<ebx>)
 {
   int v3; // esi
@@ -7938,7 +7938,7 @@ LABEL_28:
 }
 
 
-// ==== 0x0078ABF0  ChatMessageWOL  this=unknown  sig=csp ====
+// ==== 0x0078ABF0  ChatMessageWOL  this=-  sig=csp ====
 __int16 __fastcall WOL_ChatMessage(char a1, wchar_t *a2)
 {
   byte_B77E40 = a1; /*0x78abf0*/
@@ -7946,7 +7946,7 @@ __int16 __fastcall WOL_ChatMessage(char a1, wchar_t *a2)
 }
 
 
-// ==== 0x0078AC10  WOLobby::DlgProc  this=unknown  sig=csp ====
+// ==== 0x0078AC10  WOLobby::DlgProc  this=WOLobby  sig=csp ====
 int __stdcall WOLobby::DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
@@ -9296,7 +9296,7 @@ LABEL_32:
 
 
 
-// ==== 0x0078D120  OnlineLobbyDlgProcWOL  this=unknown  sig=csp ====
+// ==== 0x0078D120  OnlineLobbyDlgProcWOL  this=-  sig=csp ====
 int __stdcall OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
 {
   int result; // eax
@@ -9613,7 +9613,7 @@ LABEL_50:
 }
 
 
-// ==== 0x0078DA30  sub_78DA30  this=unknown  sig=csp ====
+// ==== 0x0078DA30  sub_78DA30  this=-  sig=csp ====
 int __stdcall sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
@@ -9674,7 +9674,7 @@ int __stdcall sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 
 
-// ==== 0x0078DB70  WOLLogin::DlgProc  this=unknown  sig=csp ====
+// ==== 0x0078DB70  WOLLogin::DlgProc  this=WOLLogin  sig=csp ====
 int __stdcall WOLLogin_DlgProc(HWND hWnd, HWND a2, int a3, HWND a4)
 {
   HWND v4; // ebp
@@ -9845,7 +9845,7 @@ int __stdcall WOLLogin_DlgProc(HWND hWnd, HWND a2, int a3, HWND a4)
 }
 
 
-// ==== 0x0078E030  WOLGameClass::ParseChatMessage  this=unknown  sig=csp ====
+// ==== 0x0078E030  WOLGameClass::ParseChatMessage  this=WOLGameClass  sig=csp ====
 int __stdcall sub_78E030(HWND hWnd, unsigned int a2, int a3, HWND a4)
 {
   HWND v4; // ebp
@@ -9933,7 +9933,7 @@ int __stdcall sub_78E030(HWND hWnd, unsigned int a2, int a3, HWND a4)
 }
 
 
-// ==== 0x0078E230  CreateAccountDlgProcWOL  this=unknown  sig=csp ====
+// ==== 0x0078E230  CreateAccountDlgProcWOL  this=-  sig=csp ====
 int __stdcall sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 {
   HWND v5; // eax
@@ -10228,7 +10228,7 @@ int __stdcall sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 }
 
 
-// ==== 0x0078E950  WOLobbySmallDlgProc  this=unknown  sig=csp ====
+// ==== 0x0078E950  WOLobbySmallDlgProc  this=-  sig=csp ====
 int __stdcall WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 {
   int v5; // ebx
@@ -10336,7 +10336,7 @@ int __stdcall WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 }
 
 
-// ==== 0x0078EBC0  DlgProcGameSetup  this=unknown  sig=csp ====
+// ==== 0x0078EBC0  DlgProcGameSetup  this=-  sig=csp ====
 int __stdcall GameSetup_DlgProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
 {
   int result; // eax
@@ -10614,7 +10614,7 @@ LABEL_15:
 }
 
 
-// ==== 0x0078F200  ObjectClass::BuildWOLPlayerTooltip  this=int  sig=csp ====
+// ==== 0x0078F200  ObjectClass::BuildWOLPlayerTooltip  this=ObjectClass  sig=csp ====
 wchar_t *__thiscall BuildWOLPlayerTooltip(IUnknown *this)
 {
   char *v2; // eax
@@ -10776,7 +10776,7 @@ LABEL_40:
 }
 
 
-// ==== 0x0078F5C0  WOLobby::FormatLatencyText  this=int  sig=csp ====
+// ==== 0x0078F5C0  WOLobby::FormatLatencyText  this=WOLobby  sig=csp ====
 wchar_t *__thiscall WOLobby::FormatLatencyText(wchar_t *Format)
 {
   int v2; // eax
@@ -10823,7 +10823,7 @@ wchar_t *__thiscall WOLobby::FormatLatencyText(wchar_t *Format)
 }
 
 
-// ==== 0x0078F7F0  WOLobby::SetupDlgProc  this=VOID_PTR  sig=csp ====
+// ==== 0x0078F7F0  WOLobby::SetupDlgProc  this=WOLobby  sig=csp ====
 int __stdcall sub_78F7F0(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
 {
   int result; // eax

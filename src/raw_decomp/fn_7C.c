@@ -810,7 +810,7 @@ LABEL_64:
 }
 
 
-// ==== 0x007C1130  Audio_Render_7C1130  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x007C1130  Audio_Render_7C1130  this=-  sig=ida-proto ====
 int __fastcall sub_7C1130(int a1, int a2)
 {
   int v2; // eax
@@ -1350,7 +1350,7 @@ int __thiscall sub_7C1BE0(int this)
 }
 
 
-// ==== 0x007C1D40  Audio_Render_7C1D40  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x007C1D40  Audio_Render_7C1D40  this=-  sig=ida-proto ====
 int __fastcall sub_7C1D40(int a1, int a2)
 {
   int v2; // eax
@@ -1801,7 +1801,7 @@ int __fastcall sub_7C2410(int a1, int a2)
 }
 
 
-// ==== 0x007C2590  RenderAudioVideoFrame  this=unknown  sig=csp ====
+// ==== 0x007C2590  RenderAudioVideoFrame  this=-  sig=csp ====
 int __fastcall RenderAudioVideoFrame(const char *a0, _DWORD *a1, ObjectClass *aP2)
 {
   int (__cdecl *v5)(_DWORD, int, _DWORD, int); // eax
@@ -2394,7 +2394,7 @@ LABEL_80:
 }
 
 
-// ==== 0x007C30D0  ProcessAudioStreamBuffer  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x007C30D0  ProcessAudioStreamBuffer  this=-  sig=ida-proto ====
 int __fastcall ProcessAudioStreamBuffer(int a1, signed int a2, int a3)
 {
   bool v5; // bl
@@ -2682,7 +2682,7 @@ int __thiscall sub_7C35B0(unsigned __int16 *this)
 }
 
 
-// ==== 0x007C35C0  AbstractClass::finalizeDestruction  this=VOID_PTR  sig=csp ====
+// ==== 0x007C35C0  AbstractClass::finalizeDestruction  this=AbstractClass  sig=csp ====
 int __thiscall sub_7C35C0(int this)
 {
   unsigned __int16 v1; // ax
@@ -5913,7 +5913,7 @@ __int64 __usercall Math::RoundToInt@<edx:eax>(double a1@<st0>)
 }
 
 
-// ==== 0x007C5F3D  Event_Process_7C5F3D  this=unknown  sig=csp ====
+// ==== 0x007C5F3D  Event_Process_7C5F3D  this=-  sig=csp ====
 int sub_7C5F3D()
 {
   unsigned int v0; // kr00_4
@@ -5991,7 +5991,7 @@ LABEL_4:
 }
 
 
-// ==== 0x007C6064  Timer::ReadTSC  this=unknown  sig=csp ====
+// ==== 0x007C6064  Timer::ReadTSC  this=Timer  sig=csp ====
 unsigned __int64 __cdecl sub_7C6064(_DWORD *a1)
 {
   unsigned __int64 result; // rax
@@ -6002,7 +6002,7 @@ unsigned __int64 __cdecl sub_7C6064(_DWORD *a1)
 }
 
 
-// ==== 0x007C61CF  globalHelper_0C61CF  this=unknown  sig=csp ====
+// ==== 0x007C61CF  globalHelper_0C61CF  this=-  sig=csp ====
 int __cdecl sub_7C61CF(int a1)
 {
   char v1; // ch
@@ -6061,7 +6061,7 @@ int __cdecl sub_7C61CF(int a1)
 }
 
 
-// ==== 0x007C6620  sub_7C6620  this=unknown  sig=csp ====
+// ==== 0x007C6620  sub_7C6620  this=-  sig=csp ====
 int __cdecl sub_7C6620(int a1, int a2, int a3, int a4)
 {
   int v4; // edi
@@ -6593,7 +6593,7 @@ LABEL_2:
 }
 
 
-// ==== 0x007C7350  Audio_Render_7C7350  this=unknown  sig=csp ====
+// ==== 0x007C7350  Audio_Render_7C7350  this=-  sig=csp ====
 int __cdecl sub_7C7350(int a1)
 {
   *(_WORD *)(a1 + 4) = 0; /*0x7c7356*/
@@ -6604,7 +6604,7 @@ int __cdecl sub_7C7350(int a1)
 }
 
 
-// ==== 0x007C7371  Render::DrawTileBitmap  this=unknown  sig=csp ====
+// ==== 0x007C7371  Render::DrawTileBitmap  this=Render  sig=csp ====
 void __cdecl Render_DrawTileBitmap(int a1, _WORD *a2, __int16 a3, __int16 a4, unsigned int a5, int a6)
 {
   int v6; // eax
@@ -7281,7 +7281,7 @@ LABEL_39:
 }
 
 
-// ==== 0x007C7F20  Audio_Helper_7C7F20  this=int  sig=csp ====
+// ==== 0x007C7F20  Audio_Helper_7C7F20  this=-  sig=csp ====
 int __usercall sub_7C7F20@<eax>(int a1@<edx>, _WORD *a2, _BYTE *a3, int a4)
 {
   unsigned int v4; // kr00_4
@@ -7509,7 +7509,7 @@ int __usercall sub_7C7F20@<eax>(int a1@<edx>, _WORD *a2, _BYTE *a3, int a4)
 }
 
 
-// ==== 0x007C81DB  AudioCodec::Decode  this=int  sig=csp ====
+// ==== 0x007C81DB  AudioCodec::Decode  this=AudioCodec  sig=csp ====
 char *__cdecl AudioCodec_Decode(unsigned __int8 *a1, char *a2, int a3)
 {
   char *v3; // edi
@@ -7671,7 +7671,7 @@ char *__cdecl AudioCodec_Decode(unsigned __int8 *a1, char *a2, int a3)
 }
 
 
-// ==== 0x007C8362  FindClose  this=unknown  sig=csp ====
+// ==== 0x007C8362  FindClose  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall FindClose(HANDLE hFindFile)
 {
@@ -7679,7 +7679,7 @@ BOOL __stdcall FindClose(HANDLE hFindFile)
 }
 
 
-// ==== 0x007C8368  FindNextFileA  this=unknown  sig=csp ====
+// ==== 0x007C8368  FindNextFileA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData)
 {
@@ -7687,7 +7687,7 @@ BOOL __stdcall FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData
 }
 
 
-// ==== 0x007C836E  FindFirstFileA  this=unknown  sig=csp ====
+// ==== 0x007C836E  FindFirstFileA  this=-  sig=csp ====
 // attributes: thunk
 HANDLE __stdcall FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData)
 {
@@ -7695,7 +7695,7 @@ HANDLE __stdcall FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFile
 }
 
 
-// ==== 0x007C8374  FormatMessageA  this=unknown  sig=csp ====
+// ==== 0x007C8374  FormatMessageA  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall FormatMessageA(
         DWORD dwFlags,
@@ -7718,7 +7718,7 @@ DWORD __stdcall GetLastError()
 }
 
 
-// ==== 0x007C8380  SetThreadPriority  this=unknown  sig=csp ====
+// ==== 0x007C8380  SetThreadPriority  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetThreadPriority(HANDLE hThread, int nPriority)
 {
@@ -7726,7 +7726,7 @@ BOOL __stdcall SetThreadPriority(HANDLE hThread, int nPriority)
 }
 
 
-// ==== 0x007C8386  CreateThread  this=unknown  sig=csp ====
+// ==== 0x007C8386  CreateThread  this=-  sig=csp ====
 // attributes: thunk
 HANDLE __stdcall CreateThread(
         LPSECURITY_ATTRIBUTES lpThreadAttributes,
@@ -7740,7 +7740,7 @@ HANDLE __stdcall CreateThread(
 }
 
 
-// ==== 0x007C838C  InitializeCriticalSection  this=unknown  sig=csp ====
+// ==== 0x007C838C  InitializeCriticalSection  this=-  sig=csp ====
 // attributes: thunk
 void __stdcall InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 {
@@ -7748,7 +7748,7 @@ void __stdcall InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 }
 
 
-// ==== 0x007C8392  Sleep  this=unknown  sig=csp ====
+// ==== 0x007C8392  Sleep  this=-  sig=csp ====
 // attributes: thunk
 void __stdcall Sleep(DWORD dwMilliseconds)
 {
@@ -7756,7 +7756,7 @@ void __stdcall Sleep(DWORD dwMilliseconds)
 }
 
 
-// ==== 0x007C8398  LeaveCriticalSection  this=unknown  sig=csp ====
+// ==== 0x007C8398  LeaveCriticalSection  this=-  sig=csp ====
 // attributes: thunk
 void __stdcall LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 {
@@ -7764,7 +7764,7 @@ void __stdcall LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 }
 
 
-// ==== 0x007C839E  EnterCriticalSection  this=unknown  sig=csp ====
+// ==== 0x007C839E  EnterCriticalSection  this=-  sig=csp ====
 // attributes: thunk
 void __stdcall EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 {
@@ -7772,7 +7772,7 @@ void __stdcall EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 }
 
 
-// ==== 0x007C83A4  DeleteCriticalSection  this=unknown  sig=csp ====
+// ==== 0x007C83A4  DeleteCriticalSection  this=-  sig=csp ====
 // attributes: thunk
 void __stdcall DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 {
@@ -7780,7 +7780,7 @@ void __stdcall DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 }
 
 
-// ==== 0x007C83AA  CloseHandle  this=unknown  sig=csp ====
+// ==== 0x007C83AA  CloseHandle  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall CloseHandle(HANDLE hObject)
 {
@@ -7788,7 +7788,7 @@ BOOL __stdcall CloseHandle(HANDLE hObject)
 }
 
 
-// ==== 0x007C83B0  WaitForSingleObject  this=unknown  sig=csp ====
+// ==== 0x007C83B0  WaitForSingleObject  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds)
 {
@@ -7796,7 +7796,7 @@ DWORD __stdcall WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds)
 }
 
 
-// ==== 0x007C83B6  QueryPerformanceFrequency  this=unknown  sig=csp ====
+// ==== 0x007C83B6  QueryPerformanceFrequency  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall QueryPerformanceFrequency(LARGE_INTEGER *lpFrequency)
 {
@@ -7804,7 +7804,7 @@ BOOL __stdcall QueryPerformanceFrequency(LARGE_INTEGER *lpFrequency)
 }
 
 
-// ==== 0x007C83BC  QueryPerformanceCounter  this=unknown  sig=csp ====
+// ==== 0x007C83BC  QueryPerformanceCounter  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall QueryPerformanceCounter(LARGE_INTEGER *lpPerformanceCount)
 {
@@ -7820,7 +7820,7 @@ DWORD __stdcall GetCurrentThreadId()
 }
 
 
-// ==== 0x007C83C8  InterlockedDecrement  this=unknown  sig=csp ====
+// ==== 0x007C83C8  InterlockedDecrement  this=-  sig=csp ====
 // attributes: thunk
 LONG __stdcall InterlockedDecrement(volatile LONG *lpAddend)
 {
@@ -7828,7 +7828,7 @@ LONG __stdcall InterlockedDecrement(volatile LONG *lpAddend)
 }
 
 
-// ==== 0x007C83CE  InterlockedIncrement  this=unknown  sig=csp ====
+// ==== 0x007C83CE  InterlockedIncrement  this=-  sig=csp ====
 // attributes: thunk
 LONG __stdcall InterlockedIncrement(volatile LONG *lpAddend)
 {
@@ -7836,7 +7836,7 @@ LONG __stdcall InterlockedIncrement(volatile LONG *lpAddend)
 }
 
 
-// ==== 0x007C83D4  MultiByteToWideChar  this=unknown  sig=csp ====
+// ==== 0x007C83D4  MultiByteToWideChar  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall MultiByteToWideChar(
         UINT CodePage,
@@ -7850,7 +7850,7 @@ int __stdcall MultiByteToWideChar(
 }
 
 
-// ==== 0x007C83DA  SetFilePointer  this=unknown  sig=csp ====
+// ==== 0x007C83DA  SetFilePointer  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall SetFilePointer(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod)
 {
@@ -7858,7 +7858,7 @@ DWORD __stdcall SetFilePointer(HANDLE hFile, LONG lDistanceToMove, PLONG lpDista
 }
 
 
-// ==== 0x007C83E0  CreateFileA  this=unknown  sig=csp ====
+// ==== 0x007C83E0  CreateFileA  this=-  sig=csp ====
 // attributes: thunk
 HANDLE __stdcall CreateFileA(
         LPCSTR lpFileName,
@@ -7880,7 +7880,7 @@ HANDLE __stdcall CreateFileA(
 }
 
 
-// ==== 0x007C83E6  DeviceIoControl  this=unknown  sig=csp ====
+// ==== 0x007C83E6  DeviceIoControl  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall DeviceIoControl(
         HANDLE hDevice,
@@ -7904,7 +7904,7 @@ BOOL __stdcall DeviceIoControl(
 }
 
 
-// ==== 0x007C83EC  GetDriveTypeA  this=unknown  sig=csp ====
+// ==== 0x007C83EC  GetDriveTypeA  this=-  sig=csp ====
 // attributes: thunk
 UINT __stdcall GetDriveTypeA(LPCSTR lpRootPathName)
 {
@@ -7912,7 +7912,7 @@ UINT __stdcall GetDriveTypeA(LPCSTR lpRootPathName)
 }
 
 
-// ==== 0x007C83F2  WideCharToMultiByte  this=unknown  sig=csp ====
+// ==== 0x007C83F2  WideCharToMultiByte  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall WideCharToMultiByte(
         UINT CodePage,
@@ -7936,7 +7936,7 @@ int __stdcall WideCharToMultiByte(
 }
 
 
-// ==== 0x007C83F8  GetDiskFreeSpaceA  this=unknown  sig=csp ====
+// ==== 0x007C83F8  GetDiskFreeSpaceA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetDiskFreeSpaceA(
         LPCSTR lpRootPathName,
@@ -7954,7 +7954,7 @@ BOOL __stdcall GetDiskFreeSpaceA(
 }
 
 
-// ==== 0x007C83FE  GetProcAddress  this=unknown  sig=csp ====
+// ==== 0x007C83FE  GetProcAddress  this=-  sig=csp ====
 // attributes: thunk
 FARPROC __stdcall GetProcAddress(HMODULE hModule, LPCSTR lpProcName)
 {
@@ -7962,7 +7962,7 @@ FARPROC __stdcall GetProcAddress(HMODULE hModule, LPCSTR lpProcName)
 }
 
 
-// ==== 0x007C8404  GetModuleHandleA  this=unknown  sig=csp ====
+// ==== 0x007C8404  GetModuleHandleA  this=-  sig=csp ====
 // attributes: thunk
 HMODULE __stdcall GetModuleHandleA(LPCSTR lpModuleName)
 {
@@ -7970,7 +7970,7 @@ HMODULE __stdcall GetModuleHandleA(LPCSTR lpModuleName)
 }
 
 
-// ==== 0x007C840A  CreateMutexA  this=unknown  sig=csp ====
+// ==== 0x007C840A  CreateMutexA  this=-  sig=csp ====
 // attributes: thunk
 HANDLE __stdcall CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes, BOOL bInitialOwner, LPCSTR lpName)
 {
@@ -7978,7 +7978,7 @@ HANDLE __stdcall CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes, BOOL bIni
 }
 
 
-// ==== 0x007C8410  MapViewOfFileEx  this=unknown  sig=csp ====
+// ==== 0x007C8410  MapViewOfFileEx  this=-  sig=csp ====
 // attributes: thunk
 LPVOID __stdcall MapViewOfFileEx(
         HANDLE hFileMappingObject,
@@ -7998,7 +7998,7 @@ LPVOID __stdcall MapViewOfFileEx(
 }
 
 
-// ==== 0x007C8416  SetEvent  this=unknown  sig=csp ====
+// ==== 0x007C8416  SetEvent  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetEvent(HANDLE hEvent)
 {
@@ -8006,7 +8006,7 @@ BOOL __stdcall SetEvent(HANDLE hEvent)
 }
 
 
-// ==== 0x007C841C  OpenEventA  this=unknown  sig=csp ====
+// ==== 0x007C841C  OpenEventA  this=-  sig=csp ====
 // attributes: thunk
 HANDLE __stdcall OpenEventA(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR lpName)
 {
@@ -8014,7 +8014,7 @@ HANDLE __stdcall OpenEventA(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR l
 }
 
 
-// ==== 0x007C8422  UnmapViewOfFile  this=unknown  sig=csp ====
+// ==== 0x007C8422  UnmapViewOfFile  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall UnmapViewOfFile(LPCVOID lpBaseAddress)
 {
@@ -8022,7 +8022,7 @@ BOOL __stdcall UnmapViewOfFile(LPCVOID lpBaseAddress)
 }
 
 
-// ==== 0x007C8428  LockResource  this=unknown  sig=csp ====
+// ==== 0x007C8428  LockResource  this=-  sig=csp ====
 // attributes: thunk
 LPVOID __stdcall LockResource(HGLOBAL hResData)
 {
@@ -8030,7 +8030,7 @@ LPVOID __stdcall LockResource(HGLOBAL hResData)
 }
 
 
-// ==== 0x007C842E  LoadResource  this=unknown  sig=csp ====
+// ==== 0x007C842E  LoadResource  this=-  sig=csp ====
 // attributes: thunk
 HGLOBAL __stdcall LoadResource(HMODULE hModule, HRSRC hResInfo)
 {
@@ -8038,7 +8038,7 @@ HGLOBAL __stdcall LoadResource(HMODULE hModule, HRSRC hResInfo)
 }
 
 
-// ==== 0x007C8434  FindResourceA  this=unknown  sig=csp ====
+// ==== 0x007C8434  FindResourceA  this=-  sig=csp ====
 // attributes: thunk
 HRSRC __stdcall FindResourceA(HMODULE hModule, LPCSTR lpName, LPCSTR lpType)
 {
@@ -8046,7 +8046,7 @@ HRSRC __stdcall FindResourceA(HMODULE hModule, LPCSTR lpName, LPCSTR lpType)
 }
 
 
-// ==== 0x007C843A  GetVolumeInformationA  this=unknown  sig=csp ====
+// ==== 0x007C843A  GetVolumeInformationA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetVolumeInformationA(
         LPCSTR lpRootPathName,
@@ -8070,7 +8070,7 @@ BOOL __stdcall GetVolumeInformationA(
 }
 
 
-// ==== 0x007C8440  FreeLibrary  this=unknown  sig=csp ====
+// ==== 0x007C8440  FreeLibrary  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall FreeLibrary(HMODULE hLibModule)
 {
@@ -8078,7 +8078,7 @@ BOOL __stdcall FreeLibrary(HMODULE hLibModule)
 }
 
 
-// ==== 0x007C8446  LoadLibraryA  this=unknown  sig=csp ====
+// ==== 0x007C8446  LoadLibraryA  this=-  sig=csp ====
 // attributes: thunk
 HMODULE __stdcall LoadLibraryA(LPCSTR lpLibFileName)
 {
@@ -8102,7 +8102,7 @@ BOOL __stdcall AllocConsole()
 }
 
 
-// ==== 0x007C8458  ExitProcess  this=unknown  sig=csp ====
+// ==== 0x007C8458  ExitProcess  this=-  sig=csp ====
 // attributes: thunk
 void __stdcall __noreturn ExitProcess(UINT uExitCode)
 {
@@ -8110,7 +8110,7 @@ void __stdcall __noreturn ExitProcess(UINT uExitCode)
 }
 
 
-// ==== 0x007C845E  IsBadReadPtr  this=unknown  sig=csp ====
+// ==== 0x007C845E  IsBadReadPtr  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall IsBadReadPtr(const void *lp, UINT_PTR ucb)
 {
@@ -8118,7 +8118,7 @@ BOOL __stdcall IsBadReadPtr(const void *lp, UINT_PTR ucb)
 }
 
 
-// ==== 0x007C8464  IsBadCodePtr  this=unknown  sig=csp ====
+// ==== 0x007C8464  IsBadCodePtr  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall IsBadCodePtr(FARPROC lpfn)
 {
@@ -8126,7 +8126,7 @@ BOOL __stdcall IsBadCodePtr(FARPROC lpfn)
 }
 
 
-// ==== 0x007C846A  lstrcatA  this=unknown  sig=csp ====
+// ==== 0x007C846A  lstrcatA  this=-  sig=csp ====
 // attributes: thunk
 LPSTR __stdcall lstrcatA(LPSTR lpString1, LPCSTR lpString2)
 {
@@ -8134,7 +8134,7 @@ LPSTR __stdcall lstrcatA(LPSTR lpString1, LPCSTR lpString2)
 }
 
 
-// ==== 0x007C8470  lstrlenA  this=unknown  sig=csp ====
+// ==== 0x007C8470  lstrlenA  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall lstrlenA(LPCSTR lpString)
 {
@@ -8142,7 +8142,7 @@ int __stdcall lstrlenA(LPCSTR lpString)
 }
 
 
-// ==== 0x007C8476  GetModuleFileNameA  this=unknown  sig=csp ====
+// ==== 0x007C8476  GetModuleFileNameA  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nSize)
 {
@@ -8158,7 +8158,7 @@ HANDLE __stdcall GetCurrentProcess()
 }
 
 
-// ==== 0x007C8482  WriteFile  this=unknown  sig=csp ====
+// ==== 0x007C8482  WriteFile  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall WriteFile(
         HANDLE hFile,
@@ -8171,7 +8171,7 @@ BOOL __stdcall WriteFile(
 }
 
 
-// ==== 0x007C8488  FlushInstructionCache  this=unknown  sig=csp ====
+// ==== 0x007C8488  FlushInstructionCache  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall FlushInstructionCache(HANDLE hProcess, LPCVOID lpBaseAddress, SIZE_T dwSize)
 {
@@ -8179,7 +8179,7 @@ BOOL __stdcall FlushInstructionCache(HANDLE hProcess, LPCVOID lpBaseAddress, SIZ
 }
 
 
-// ==== 0x007C848E  VirtualProtect  this=unknown  sig=csp ====
+// ==== 0x007C848E  VirtualProtect  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall VirtualProtect(LPVOID lpAddress, SIZE_T dwSize, DWORD flNewProtect, PDWORD lpflOldProtect)
 {
@@ -8187,7 +8187,7 @@ BOOL __stdcall VirtualProtect(LPVOID lpAddress, SIZE_T dwSize, DWORD flNewProtec
 }
 
 
-// ==== 0x007C8494  VirtualQuery  this=unknown  sig=csp ====
+// ==== 0x007C8494  VirtualQuery  this=-  sig=csp ====
 // attributes: thunk
 SIZE_T __stdcall VirtualQuery(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer, SIZE_T dwLength)
 {
@@ -8203,7 +8203,7 @@ DWORD __stdcall GetTickCount()
 }
 
 
-// ==== 0x007C84A0  GetSystemTime  this=unknown  sig=csp ====
+// ==== 0x007C84A0  GetSystemTime  this=-  sig=csp ====
 // attributes: thunk
 void __stdcall GetSystemTime(LPSYSTEMTIME lpSystemTime)
 {
@@ -8211,7 +8211,7 @@ void __stdcall GetSystemTime(LPSYSTEMTIME lpSystemTime)
 }
 
 
-// ==== 0x007C84A6  GlobalMemoryStatus  this=unknown  sig=csp ====
+// ==== 0x007C84A6  GlobalMemoryStatus  this=-  sig=csp ====
 // attributes: thunk
 void __stdcall GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)
 {
@@ -8219,7 +8219,7 @@ void __stdcall GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)
 }
 
 
-// ==== 0x007C84AC  CreateProcessA  this=unknown  sig=csp ====
+// ==== 0x007C84AC  CreateProcessA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall CreateProcessA(
         LPCSTR lpApplicationName,
@@ -8247,7 +8247,7 @@ BOOL __stdcall CreateProcessA(
 }
 
 
-// ==== 0x007C84B2  DeleteFileA  this=unknown  sig=csp ====
+// ==== 0x007C84B2  DeleteFileA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall DeleteFileA(LPCSTR lpFileName)
 {
@@ -8255,7 +8255,7 @@ BOOL __stdcall DeleteFileA(LPCSTR lpFileName)
 }
 
 
-// ==== 0x007C84B8  GetTempFileNameA  this=unknown  sig=csp ====
+// ==== 0x007C84B8  GetTempFileNameA  this=-  sig=csp ====
 // attributes: thunk
 UINT __stdcall GetTempFileNameA(LPCSTR lpPathName, LPCSTR lpPrefixString, UINT uUnique, LPSTR lpTempFileName)
 {
@@ -8263,7 +8263,7 @@ UINT __stdcall GetTempFileNameA(LPCSTR lpPathName, LPCSTR lpPrefixString, UINT u
 }
 
 
-// ==== 0x007C84BE  GetWindowsDirectoryA  this=unknown  sig=csp ====
+// ==== 0x007C84BE  GetWindowsDirectoryA  this=-  sig=csp ====
 // attributes: thunk
 UINT __stdcall GetWindowsDirectoryA(LPSTR lpBuffer, UINT uSize)
 {
@@ -8271,7 +8271,7 @@ UINT __stdcall GetWindowsDirectoryA(LPSTR lpBuffer, UINT uSize)
 }
 
 
-// ==== 0x007C84C4  GetTimeFormatA  this=unknown  sig=csp ====
+// ==== 0x007C84C4  GetTimeFormatA  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall GetTimeFormatA(
         LCID Locale,
@@ -8285,7 +8285,7 @@ int __stdcall GetTimeFormatA(
 }
 
 
-// ==== 0x007C84CA  GetDateFormatA  this=unknown  sig=csp ====
+// ==== 0x007C84CA  GetDateFormatA  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall GetDateFormatA(
         LCID Locale,
@@ -8299,7 +8299,7 @@ int __stdcall GetDateFormatA(
 }
 
 
-// ==== 0x007C84D0  FileTimeToSystemTime  this=unknown  sig=csp ====
+// ==== 0x007C84D0  FileTimeToSystemTime  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall FileTimeToSystemTime(const FILETIME *lpFileTime, LPSYSTEMTIME lpSystemTime)
 {
@@ -8307,7 +8307,7 @@ BOOL __stdcall FileTimeToSystemTime(const FILETIME *lpFileTime, LPSYSTEMTIME lpS
 }
 
 
-// ==== 0x007C84D6  FileTimeToLocalFileTime  this=unknown  sig=csp ====
+// ==== 0x007C84D6  FileTimeToLocalFileTime  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall FileTimeToLocalFileTime(const FILETIME *lpFileTime, LPFILETIME lpLocalFileTime)
 {
@@ -8315,7 +8315,7 @@ BOOL __stdcall FileTimeToLocalFileTime(const FILETIME *lpFileTime, LPFILETIME lp
 }
 
 
-// ==== 0x007C84DC  SystemTimeToFileTime  this=unknown  sig=csp ====
+// ==== 0x007C84DC  SystemTimeToFileTime  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SystemTimeToFileTime(const SYSTEMTIME *lpSystemTime, LPFILETIME lpFileTime)
 {
@@ -8323,7 +8323,7 @@ BOOL __stdcall SystemTimeToFileTime(const SYSTEMTIME *lpSystemTime, LPFILETIME l
 }
 
 
-// ==== 0x007C84E2  CompareFileTime  this=unknown  sig=csp ====
+// ==== 0x007C84E2  CompareFileTime  this=-  sig=csp ====
 // attributes: thunk
 LONG __stdcall CompareFileTime(const FILETIME *lpFileTime1, const FILETIME *lpFileTime2)
 {
@@ -8331,7 +8331,7 @@ LONG __stdcall CompareFileTime(const FILETIME *lpFileTime1, const FILETIME *lpFi
 }
 
 
-// ==== 0x007C84E8  CopyFileA  this=unknown  sig=csp ====
+// ==== 0x007C84E8  CopyFileA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall CopyFileA(LPCSTR lpExistingFileName, LPCSTR lpNewFileName, BOOL bFailIfExists)
 {
@@ -8339,7 +8339,7 @@ BOOL __stdcall CopyFileA(LPCSTR lpExistingFileName, LPCSTR lpNewFileName, BOOL b
 }
 
 
-// ==== 0x007C84EE  CreateDirectoryA  this=unknown  sig=csp ====
+// ==== 0x007C84EE  CreateDirectoryA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall CreateDirectoryA(LPCSTR lpPathName, LPSECURITY_ATTRIBUTES lpSecurityAttributes)
 {
@@ -8347,7 +8347,7 @@ BOOL __stdcall CreateDirectoryA(LPCSTR lpPathName, LPSECURITY_ATTRIBUTES lpSecur
 }
 
 
-// ==== 0x007C84F4  MulDiv  this=unknown  sig=csp ====
+// ==== 0x007C84F4  MulDiv  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall MulDiv(int nNumber, int nNumerator, int nDenominator)
 {
@@ -8355,7 +8355,7 @@ int __stdcall MulDiv(int nNumber, int nNumerator, int nDenominator)
 }
 
 
-// ==== 0x007C84FA  EscapeCommFunction  this=unknown  sig=csp ====
+// ==== 0x007C84FA  EscapeCommFunction  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall EscapeCommFunction(HANDLE hFile, DWORD dwFunc)
 {
@@ -8363,7 +8363,7 @@ BOOL __stdcall EscapeCommFunction(HANDLE hFile, DWORD dwFunc)
 }
 
 
-// ==== 0x007C8500  ClearCommBreak  this=unknown  sig=csp ====
+// ==== 0x007C8500  ClearCommBreak  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ClearCommBreak(HANDLE hFile)
 {
@@ -8371,7 +8371,7 @@ BOOL __stdcall ClearCommBreak(HANDLE hFile)
 }
 
 
-// ==== 0x007C8506  SetCommBreak  this=unknown  sig=csp ====
+// ==== 0x007C8506  SetCommBreak  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetCommBreak(HANDLE hFile)
 {
@@ -8379,7 +8379,7 @@ BOOL __stdcall SetCommBreak(HANDLE hFile)
 }
 
 
-// ==== 0x007C850C  ReadFile  this=unknown  sig=csp ====
+// ==== 0x007C850C  ReadFile  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ReadFile(
         HANDLE hFile,
@@ -8392,7 +8392,7 @@ BOOL __stdcall ReadFile(
 }
 
 
-// ==== 0x007C8512  GetFileSize  this=unknown  sig=csp ====
+// ==== 0x007C8512  GetFileSize  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall GetFileSize(HANDLE hFile, LPDWORD lpFileSizeHigh)
 {
@@ -8400,7 +8400,7 @@ DWORD __stdcall GetFileSize(HANDLE hFile, LPDWORD lpFileSizeHigh)
 }
 
 
-// ==== 0x007C8518  FileTimeToDosDateTime  this=unknown  sig=csp ====
+// ==== 0x007C8518  FileTimeToDosDateTime  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall FileTimeToDosDateTime(const FILETIME *lpFileTime, LPWORD lpFatDate, LPWORD lpFatTime)
 {
@@ -8408,7 +8408,7 @@ BOOL __stdcall FileTimeToDosDateTime(const FILETIME *lpFileTime, LPWORD lpFatDat
 }
 
 
-// ==== 0x007C851E  GetFileInformationByHandle  this=unknown  sig=csp ====
+// ==== 0x007C851E  GetFileInformationByHandle  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetFileInformationByHandle(HANDLE hFile, LPBY_HANDLE_FILE_INFORMATION lpFileInformation)
 {
@@ -8416,7 +8416,7 @@ BOOL __stdcall GetFileInformationByHandle(HANDLE hFile, LPBY_HANDLE_FILE_INFORMA
 }
 
 
-// ==== 0x007C8524  SetFileTime  this=unknown  sig=csp ====
+// ==== 0x007C8524  SetFileTime  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetFileTime(
         HANDLE hFile,
@@ -8428,7 +8428,7 @@ BOOL __stdcall SetFileTime(
 }
 
 
-// ==== 0x007C852A  DosDateTimeToFileTime  this=unknown  sig=csp ====
+// ==== 0x007C852A  DosDateTimeToFileTime  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall DosDateTimeToFileTime(WORD wFatDate, WORD wFatTime, LPFILETIME lpFileTime)
 {
@@ -8436,7 +8436,7 @@ BOOL __stdcall DosDateTimeToFileTime(WORD wFatDate, WORD wFatTime, LPFILETIME lp
 }
 
 
-// ==== 0x007C8530  GetStartupInfoA  this=unknown  sig=csp ====
+// ==== 0x007C8530  GetStartupInfoA  this=-  sig=csp ====
 // attributes: thunk
 void __stdcall GetStartupInfoA(LPSTARTUPINFOA lpStartupInfo)
 {
@@ -8444,7 +8444,7 @@ void __stdcall GetStartupInfoA(LPSTARTUPINFOA lpStartupInfo)
 }
 
 
-// ==== 0x007C8536  TerminateProcess  this=unknown  sig=csp ====
+// ==== 0x007C8536  TerminateProcess  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall TerminateProcess(HANDLE hProcess, UINT uExitCode)
 {
@@ -8452,7 +8452,7 @@ BOOL __stdcall TerminateProcess(HANDLE hProcess, UINT uExitCode)
 }
 
 
-// ==== 0x007C853C  WaitForMultipleObjects  this=unknown  sig=csp ====
+// ==== 0x007C853C  WaitForMultipleObjects  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall WaitForMultipleObjects(DWORD nCount, const HANDLE *lpHandles, BOOL bWaitAll, DWORD dwMilliseconds)
 {
@@ -8460,7 +8460,7 @@ DWORD __stdcall WaitForMultipleObjects(DWORD nCount, const HANDLE *lpHandles, BO
 }
 
 
-// ==== 0x007C8542  lstrcpyA  this=unknown  sig=csp ====
+// ==== 0x007C8542  lstrcpyA  this=-  sig=csp ====
 // attributes: thunk
 LPSTR __stdcall lstrcpyA(LPSTR lpString1, LPCSTR lpString2)
 {
@@ -8468,7 +8468,7 @@ LPSTR __stdcall lstrcpyA(LPSTR lpString1, LPCSTR lpString2)
 }
 
 
-// ==== 0x007C8548  SetUnhandledExceptionFilter  this=unknown  sig=csp ====
+// ==== 0x007C8548  SetUnhandledExceptionFilter  this=-  sig=csp ====
 // attributes: thunk
 LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter)
 {
@@ -8476,7 +8476,7 @@ LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_E
 }
 
 
-// ==== 0x007C854E  SetCurrentDirectoryA  this=unknown  sig=csp ====
+// ==== 0x007C854E  SetCurrentDirectoryA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetCurrentDirectoryA(LPCSTR lpPathName)
 {
@@ -8484,7 +8484,7 @@ BOOL __stdcall SetCurrentDirectoryA(LPCSTR lpPathName)
 }
 
 
-// ==== 0x007C8554  OpenMutexA  this=unknown  sig=csp ====
+// ==== 0x007C8554  OpenMutexA  this=-  sig=csp ====
 // attributes: thunk
 HANDLE __stdcall OpenMutexA(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR lpName)
 {
@@ -8492,7 +8492,7 @@ HANDLE __stdcall OpenMutexA(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR l
 }
 
 
-// ==== 0x007C855A  GetFileTime  this=unknown  sig=csp ====
+// ==== 0x007C855A  GetFileTime  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetFileTime(
         HANDLE hFile,
@@ -8504,7 +8504,7 @@ BOOL __stdcall GetFileTime(
 }
 
 
-// ==== 0x007C8560  GetLogicalDriveStringsA  this=unknown  sig=csp ====
+// ==== 0x007C8560  GetLogicalDriveStringsA  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall GetLogicalDriveStringsA(DWORD nBufferLength, LPSTR lpBuffer)
 {
@@ -8512,7 +8512,7 @@ DWORD __stdcall GetLogicalDriveStringsA(DWORD nBufferLength, LPSTR lpBuffer)
 }
 
 
-// ==== 0x007C8566  ClearCommError  this=unknown  sig=csp ====
+// ==== 0x007C8566  ClearCommError  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ClearCommError(HANDLE hFile, LPDWORD lpErrors, LPCOMSTAT lpStat)
 {
@@ -8520,7 +8520,7 @@ BOOL __stdcall ClearCommError(HANDLE hFile, LPDWORD lpErrors, LPCOMSTAT lpStat)
 }
 
 
-// ==== 0x007C856C  SetCommTimeouts  this=unknown  sig=csp ====
+// ==== 0x007C856C  SetCommTimeouts  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetCommTimeouts(HANDLE hFile, LPCOMMTIMEOUTS lpCommTimeouts)
 {
@@ -8528,7 +8528,7 @@ BOOL __stdcall SetCommTimeouts(HANDLE hFile, LPCOMMTIMEOUTS lpCommTimeouts)
 }
 
 
-// ==== 0x007C8572  SetCommState  this=unknown  sig=csp ====
+// ==== 0x007C8572  SetCommState  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetCommState(HANDLE hFile, LPDCB lpDCB)
 {
@@ -8536,7 +8536,7 @@ BOOL __stdcall SetCommState(HANDLE hFile, LPDCB lpDCB)
 }
 
 
-// ==== 0x007C8578  GetCommState  this=unknown  sig=csp ====
+// ==== 0x007C8578  GetCommState  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetCommState(HANDLE hFile, LPDCB lpDCB)
 {
@@ -8544,7 +8544,7 @@ BOOL __stdcall GetCommState(HANDLE hFile, LPDCB lpDCB)
 }
 
 
-// ==== 0x007C857E  CreateEventA  this=unknown  sig=csp ====
+// ==== 0x007C857E  CreateEventA  this=-  sig=csp ====
 // attributes: thunk
 HANDLE __stdcall CreateEventA(
         LPSECURITY_ATTRIBUTES lpEventAttributes,
@@ -8556,7 +8556,7 @@ HANDLE __stdcall CreateEventA(
 }
 
 
-// ==== 0x007C8584  PurgeComm  this=unknown  sig=csp ====
+// ==== 0x007C8584  PurgeComm  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall PurgeComm(HANDLE hFile, DWORD dwFlags)
 {
@@ -8564,7 +8564,7 @@ BOOL __stdcall PurgeComm(HANDLE hFile, DWORD dwFlags)
 }
 
 
-// ==== 0x007C858A  SetupComm  this=unknown  sig=csp ====
+// ==== 0x007C858A  SetupComm  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetupComm(HANDLE hFile, DWORD dwInQueue, DWORD dwOutQueue)
 {
@@ -8572,7 +8572,7 @@ BOOL __stdcall SetupComm(HANDLE hFile, DWORD dwInQueue, DWORD dwOutQueue)
 }
 
 
-// ==== 0x007C8590  GetCommMask  this=unknown  sig=csp ====
+// ==== 0x007C8590  GetCommMask  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetCommMask(HANDLE hFile, LPDWORD lpEvtMask)
 {
@@ -8580,7 +8580,7 @@ BOOL __stdcall GetCommMask(HANDLE hFile, LPDWORD lpEvtMask)
 }
 
 
-// ==== 0x007C8596  ResetEvent  this=unknown  sig=csp ====
+// ==== 0x007C8596  ResetEvent  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ResetEvent(HANDLE hEvent)
 {
@@ -8588,7 +8588,7 @@ BOOL __stdcall ResetEvent(HANDLE hEvent)
 }
 
 
-// ==== 0x007C859C  GetCommModemStatus  this=unknown  sig=csp ====
+// ==== 0x007C859C  GetCommModemStatus  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetCommModemStatus(HANDLE hFile, LPDWORD lpModemStat)
 {
@@ -8596,7 +8596,7 @@ BOOL __stdcall GetCommModemStatus(HANDLE hFile, LPDWORD lpModemStat)
 }
 
 
-// ==== 0x007C85A2  GetOverlappedResult  this=unknown  sig=csp ====
+// ==== 0x007C85A2  GetOverlappedResult  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetOverlappedResult(
         HANDLE hFile,
@@ -8608,7 +8608,7 @@ BOOL __stdcall GetOverlappedResult(
 }
 
 
-// ==== 0x007C85A8  GetVersionExA  this=unknown  sig=csp ====
+// ==== 0x007C85A8  GetVersionExA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetVersionExA(LPOSVERSIONINFOA lpVersionInformation)
 {
@@ -8616,7 +8616,7 @@ BOOL __stdcall GetVersionExA(LPOSVERSIONINFOA lpVersionInformation)
 }
 
 
-// ==== 0x007C85AE  GetExitCodeProcess  this=unknown  sig=csp ====
+// ==== 0x007C85AE  GetExitCodeProcess  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetExitCodeProcess(HANDLE hProcess, LPDWORD lpExitCode)
 {
@@ -8624,7 +8624,7 @@ BOOL __stdcall GetExitCodeProcess(HANDLE hProcess, LPDWORD lpExitCode)
 }
 
 
-// ==== 0x007C85B4  GetCurrentDirectoryA  this=unknown  sig=csp ====
+// ==== 0x007C85B4  GetCurrentDirectoryA  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall GetCurrentDirectoryA(DWORD nBufferLength, LPSTR lpBuffer)
 {
@@ -8632,7 +8632,7 @@ DWORD __stdcall GetCurrentDirectoryA(DWORD nBufferLength, LPSTR lpBuffer)
 }
 
 
-// ==== 0x007C85BA  HeapDestroy  this=unknown  sig=csp ====
+// ==== 0x007C85BA  HeapDestroy  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall HeapDestroy(HANDLE hHeap)
 {
@@ -8640,7 +8640,7 @@ BOOL __stdcall HeapDestroy(HANDLE hHeap)
 }
 
 
-// ==== 0x007C85C0  GetComputerNameA  this=unknown  sig=csp ====
+// ==== 0x007C85C0  GetComputerNameA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetComputerNameA(LPSTR lpBuffer, LPDWORD nSize)
 {
@@ -8648,7 +8648,7 @@ BOOL __stdcall GetComputerNameA(LPSTR lpBuffer, LPDWORD nSize)
 }
 
 
-// ==== 0x007C85C6  ReleaseMutex  this=unknown  sig=csp ====
+// ==== 0x007C85C6  ReleaseMutex  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ReleaseMutex(HANDLE hMutex)
 {
@@ -8656,7 +8656,7 @@ BOOL __stdcall ReleaseMutex(HANDLE hMutex)
 }
 
 
-// ==== 0x007C85CC  GetClientRect  this=unknown  sig=csp ====
+// ==== 0x007C85CC  GetClientRect  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetClientRect(HWND hWnd, LPRECT lpRect)
 {
@@ -8664,7 +8664,7 @@ BOOL __stdcall GetClientRect(HWND hWnd, LPRECT lpRect)
 }
 
 
-// ==== 0x007C85D2  DispatchMessageA  this=unknown  sig=csp ====
+// ==== 0x007C85D2  DispatchMessageA  this=-  sig=csp ====
 // attributes: thunk
 LRESULT __stdcall DispatchMessageA(const MSG *lpMsg)
 {
@@ -8672,7 +8672,7 @@ LRESULT __stdcall DispatchMessageA(const MSG *lpMsg)
 }
 
 
-// ==== 0x007C85D8  TranslateMessage  this=unknown  sig=csp ====
+// ==== 0x007C85D8  TranslateMessage  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall TranslateMessage(const MSG *lpMsg)
 {
@@ -8680,7 +8680,7 @@ BOOL __stdcall TranslateMessage(const MSG *lpMsg)
 }
 
 
-// ==== 0x007C85DE  ClientToScreen  this=unknown  sig=csp ====
+// ==== 0x007C85DE  ClientToScreen  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ClientToScreen(HWND hWnd, LPPOINT lpPoint)
 {
@@ -8688,7 +8688,7 @@ BOOL __stdcall ClientToScreen(HWND hWnd, LPPOINT lpPoint)
 }
 
 
-// ==== 0x007C85E4  SetRect  this=unknown  sig=csp ====
+// ==== 0x007C85E4  SetRect  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetRect(LPRECT lprc, int xLeft, int yTop, int xRight, int yBottom)
 {
@@ -8704,7 +8704,7 @@ BOOL __stdcall PostMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 }
 
 
-// ==== 0x007C85F0  PostMessageA  this=unknown  sig=csp ====
+// ==== 0x007C85F0  PostMessageA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall PostMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
@@ -8712,7 +8712,7 @@ BOOL __stdcall PostMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 }
 
 
-// ==== 0x007C85F6  GetDlgItem  this=unknown  sig=csp ====
+// ==== 0x007C85F6  GetDlgItem  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall GetDlgItem(HWND hDlg, int nIDDlgItem)
 {
@@ -8720,7 +8720,7 @@ HWND __stdcall GetDlgItem(HWND hDlg, int nIDDlgItem)
 }
 
 
-// ==== 0x007C85FC  SendMessageA  this=unknown  sig=csp ====
+// ==== 0x007C85FC  SendMessageA  this=-  sig=csp ====
 // attributes: thunk
 LRESULT __stdcall SendMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
@@ -8728,7 +8728,7 @@ LRESULT __stdcall SendMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam
 }
 
 
-// ==== 0x007C8602  EnableWindow  this=unknown  sig=csp ====
+// ==== 0x007C8602  EnableWindow  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall EnableWindow(HWND hWnd, BOOL bEnable)
 {
@@ -8736,7 +8736,7 @@ BOOL __stdcall EnableWindow(HWND hWnd, BOOL bEnable)
 }
 
 
-// ==== 0x007C8608  InvalidateRect  this=unknown  sig=csp ====
+// ==== 0x007C8608  InvalidateRect  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall InvalidateRect(HWND hWnd, const RECT *lpRect, BOOL bErase)
 {
@@ -8744,7 +8744,7 @@ BOOL __stdcall InvalidateRect(HWND hWnd, const RECT *lpRect, BOOL bErase)
 }
 
 
-// ==== 0x007C860E  ShowWindow  this=unknown  sig=csp ====
+// ==== 0x007C860E  ShowWindow  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ShowWindow(HWND hWnd, int nCmdShow)
 {
@@ -8752,7 +8752,7 @@ BOOL __stdcall ShowWindow(HWND hWnd, int nCmdShow)
 }
 
 
-// ==== 0x007C8614  SetTimer  this=unknown  sig=csp ====
+// ==== 0x007C8614  SetTimer  this=-  sig=csp ====
 // attributes: thunk
 UINT_PTR __stdcall SetTimer(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, TIMERPROC lpTimerFunc)
 {
@@ -8760,7 +8760,7 @@ UINT_PTR __stdcall SetTimer(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, TIMERPRO
 }
 
 
-// ==== 0x007C861A  SendDlgItemMessageA  this=unknown  sig=csp ====
+// ==== 0x007C861A  SendDlgItemMessageA  this=-  sig=csp ====
 // attributes: thunk
 LRESULT __stdcall SendDlgItemMessageA(HWND hDlg, int nIDDlgItem, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
@@ -8768,7 +8768,7 @@ LRESULT __stdcall SendDlgItemMessageA(HWND hDlg, int nIDDlgItem, UINT Msg, WPARA
 }
 
 
-// ==== 0x007C8620  KillTimer  this=unknown  sig=csp ====
+// ==== 0x007C8620  KillTimer  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall KillTimer(HWND hWnd, UINT_PTR uIDEvent)
 {
@@ -8776,7 +8776,7 @@ BOOL __stdcall KillTimer(HWND hWnd, UINT_PTR uIDEvent)
 }
 
 
-// ==== 0x007C8626  ValidateRect  this=unknown  sig=csp ====
+// ==== 0x007C8626  ValidateRect  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ValidateRect(HWND hWnd, const RECT *lpRect)
 {
@@ -8784,7 +8784,7 @@ BOOL __stdcall ValidateRect(HWND hWnd, const RECT *lpRect)
 }
 
 
-// ==== 0x007C862C  GetWindowLongA  this=unknown  sig=csp ====
+// ==== 0x007C862C  GetWindowLongA  this=-  sig=csp ====
 // attributes: thunk
 LONG __stdcall GetWindowLongA(HWND hWnd, int nIndex)
 {
@@ -8792,7 +8792,7 @@ LONG __stdcall GetWindowLongA(HWND hWnd, int nIndex)
 }
 
 
-// ==== 0x007C8632  SetWindowLongA  this=unknown  sig=csp ====
+// ==== 0x007C8632  SetWindowLongA  this=-  sig=csp ====
 // attributes: thunk
 LONG __stdcall SetWindowLongA(HWND hWnd, int nIndex, LONG dwNewLong)
 {
@@ -8800,7 +8800,7 @@ LONG __stdcall SetWindowLongA(HWND hWnd, int nIndex, LONG dwNewLong)
 }
 
 
-// ==== 0x007C8638  UpdateWindow  this=unknown  sig=csp ====
+// ==== 0x007C8638  UpdateWindow  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall UpdateWindow(HWND hWnd)
 {
@@ -8808,7 +8808,7 @@ BOOL __stdcall UpdateWindow(HWND hWnd)
 }
 
 
-// ==== 0x007C863E  MessageBoxIndirectA  this=unknown  sig=csp ====
+// ==== 0x007C863E  MessageBoxIndirectA  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall MessageBoxIndirectA(const MSGBOXPARAMSA *lpmbp)
 {
@@ -8816,7 +8816,7 @@ int __stdcall MessageBoxIndirectA(const MSGBOXPARAMSA *lpmbp)
 }
 
 
-// ==== 0x007C8644  PeekMessageA  this=unknown  sig=csp ====
+// ==== 0x007C8644  PeekMessageA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall PeekMessageA(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg)
 {
@@ -8824,7 +8824,7 @@ BOOL __stdcall PeekMessageA(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMs
 }
 
 
-// ==== 0x007C864A  MessageBoxA  this=unknown  sig=csp ====
+// ==== 0x007C864A  MessageBoxA  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType)
 {
@@ -8832,7 +8832,7 @@ int __stdcall MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType
 }
 
 
-// ==== 0x007C8650  ReleaseDC  this=unknown  sig=csp ====
+// ==== 0x007C8650  ReleaseDC  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall ReleaseDC(HWND hWnd, HDC hDC)
 {
@@ -8840,7 +8840,7 @@ int __stdcall ReleaseDC(HWND hWnd, HDC hDC)
 }
 
 
-// ==== 0x007C8656  GetDC  this=unknown  sig=csp ====
+// ==== 0x007C8656  GetDC  this=-  sig=csp ====
 // attributes: thunk
 HDC __stdcall GetDC(HWND hWnd)
 {
@@ -8848,7 +8848,7 @@ HDC __stdcall GetDC(HWND hWnd)
 }
 
 
-// ==== 0x007C865C  CloseWindow  this=unknown  sig=csp ====
+// ==== 0x007C865C  CloseWindow  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall CloseWindow(HWND hWnd)
 {
@@ -8856,7 +8856,7 @@ BOOL __stdcall CloseWindow(HWND hWnd)
 }
 
 
-// ==== 0x007C8662  DefWindowProcA  this=unknown  sig=csp ====
+// ==== 0x007C8662  DefWindowProcA  this=-  sig=csp ====
 // attributes: thunk
 LRESULT __stdcall DefWindowProcA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
@@ -8872,7 +8872,7 @@ HWND __stdcall GetActiveWindow()
 }
 
 
-// ==== 0x007C866E  EndDialog  this=unknown  sig=csp ====
+// ==== 0x007C866E  EndDialog  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall EndDialog(HWND hDlg, INT_PTR nResult)
 {
@@ -8880,7 +8880,7 @@ BOOL __stdcall EndDialog(HWND hDlg, INT_PTR nResult)
 }
 
 
-// ==== 0x007C8674  SetFocus  this=unknown  sig=csp ====
+// ==== 0x007C8674  SetFocus  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall SetFocus(HWND hWnd)
 {
@@ -8888,7 +8888,7 @@ HWND __stdcall SetFocus(HWND hWnd)
 }
 
 
-// ==== 0x007C867A  SetDlgItemTextA  this=unknown  sig=csp ====
+// ==== 0x007C867A  SetDlgItemTextA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetDlgItemTextA(HWND hDlg, int nIDDlgItem, LPCSTR lpString)
 {
@@ -8896,7 +8896,7 @@ BOOL __stdcall SetDlgItemTextA(HWND hDlg, int nIDDlgItem, LPCSTR lpString)
 }
 
 
-// ==== 0x007C8680  DialogBoxParamA  this=unknown  sig=csp ====
+// ==== 0x007C8680  DialogBoxParamA  this=-  sig=csp ====
 // attributes: thunk
 INT_PTR __stdcall DialogBoxParamA(
         HINSTANCE hInstance,
@@ -8909,7 +8909,7 @@ INT_PTR __stdcall DialogBoxParamA(
 }
 
 
-// ==== 0x007C8686  DialogBoxIndirectParamA  this=unknown  sig=csp ====
+// ==== 0x007C8686  DialogBoxIndirectParamA  this=-  sig=csp ====
 // attributes: thunk
 INT_PTR __stdcall DialogBoxIndirectParamA(
         HINSTANCE hInstance,
@@ -8922,7 +8922,7 @@ INT_PTR __stdcall DialogBoxIndirectParamA(
 }
 
 
-// ==== 0x007C868C  ShowCursor  this=unknown  sig=csp ====
+// ==== 0x007C868C  ShowCursor  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall ShowCursor(BOOL bShow)
 {
@@ -8930,7 +8930,7 @@ int __stdcall ShowCursor(BOOL bShow)
 }
 
 
-// ==== 0x007C8692  SetWindowPos  this=unknown  sig=csp ====
+// ==== 0x007C8692  SetWindowPos  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags)
 {
@@ -8938,7 +8938,7 @@ BOOL __stdcall SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int c
 }
 
 
-// ==== 0x007C8698  DestroyWindow  this=unknown  sig=csp ====
+// ==== 0x007C8698  DestroyWindow  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall DestroyWindow(HWND hWnd)
 {
@@ -8962,7 +8962,7 @@ HWND __stdcall GetCapture()
 }
 
 
-// ==== 0x007C86AA  SetCapture  this=unknown  sig=csp ====
+// ==== 0x007C86AA  SetCapture  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall SetCapture(HWND hWnd)
 {
@@ -8970,7 +8970,7 @@ HWND __stdcall SetCapture(HWND hWnd)
 }
 
 
-// ==== 0x007C86B0  GetDlgCtrlID  this=unknown  sig=csp ====
+// ==== 0x007C86B0  GetDlgCtrlID  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall GetDlgCtrlID(HWND hWnd)
 {
@@ -8978,7 +8978,7 @@ int __stdcall GetDlgCtrlID(HWND hWnd)
 }
 
 
-// ==== 0x007C86B6  ChildWindowFromPointEx  this=unknown  sig=csp ====
+// ==== 0x007C86B6  ChildWindowFromPointEx  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall ChildWindowFromPointEx(HWND hwnd, POINT pt, UINT flags)
 {
@@ -8986,7 +8986,7 @@ HWND __stdcall ChildWindowFromPointEx(HWND hwnd, POINT pt, UINT flags)
 }
 
 
-// ==== 0x007C86BC  GetWindowRect  this=unknown  sig=csp ====
+// ==== 0x007C86BC  GetWindowRect  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetWindowRect(HWND hWnd, LPRECT lpRect)
 {
@@ -8994,7 +8994,7 @@ BOOL __stdcall GetWindowRect(HWND hWnd, LPRECT lpRect)
 }
 
 
-// ==== 0x007C86C2  GetCursorPos  this=unknown  sig=csp ====
+// ==== 0x007C86C2  GetCursorPos  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetCursorPos(LPPOINT lpPoint)
 {
@@ -9002,7 +9002,7 @@ BOOL __stdcall GetCursorPos(LPPOINT lpPoint)
 }
 
 
-// ==== 0x007C86C8  GetKeyState  this=unknown  sig=csp ====
+// ==== 0x007C86C8  GetKeyState  this=-  sig=csp ====
 // attributes: thunk
 SHORT __stdcall GetKeyState(int nVirtKey)
 {
@@ -9010,7 +9010,7 @@ SHORT __stdcall GetKeyState(int nVirtKey)
 }
 
 
-// ==== 0x007C86CE  GetAsyncKeyState  this=unknown  sig=csp ====
+// ==== 0x007C86CE  GetAsyncKeyState  this=-  sig=csp ====
 // attributes: thunk
 SHORT __stdcall GetAsyncKeyState(int vKey)
 {
@@ -9018,7 +9018,7 @@ SHORT __stdcall GetAsyncKeyState(int vKey)
 }
 
 
-// ==== 0x007C86D4  ToAscii  this=unknown  sig=csp ====
+// ==== 0x007C86D4  ToAscii  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall ToAscii(UINT uVirtKey, UINT uScanCode, const BYTE *lpKeyState, LPWORD lpChar, UINT uFlags)
 {
@@ -9026,7 +9026,7 @@ int __stdcall ToAscii(UINT uVirtKey, UINT uScanCode, const BYTE *lpKeyState, LPW
 }
 
 
-// ==== 0x007C86DA  MapVirtualKeyA  this=unknown  sig=csp ====
+// ==== 0x007C86DA  MapVirtualKeyA  this=-  sig=csp ====
 // attributes: thunk
 UINT __stdcall MapVirtualKeyA(UINT uCode, UINT uMapType)
 {
@@ -9034,7 +9034,7 @@ UINT __stdcall MapVirtualKeyA(UINT uCode, UINT uMapType)
 }
 
 
-// ==== 0x007C86E0  GetSystemMetrics  this=unknown  sig=csp ====
+// ==== 0x007C86E0  GetSystemMetrics  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall GetSystemMetrics(int nIndex)
 {
@@ -9042,7 +9042,7 @@ int __stdcall GetSystemMetrics(int nIndex)
 }
 
 
-// ==== 0x007C86E6  MoveWindow  this=unknown  sig=csp ====
+// ==== 0x007C86E6  MoveWindow  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL bRepaint)
 {
@@ -9050,7 +9050,7 @@ BOOL __stdcall MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL
 }
 
 
-// ==== 0x007C86EC  AdjustWindowRectEx  this=unknown  sig=csp ====
+// ==== 0x007C86EC  AdjustWindowRectEx  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall AdjustWindowRectEx(LPRECT lpRect, DWORD dwStyle, BOOL bMenu, DWORD dwExStyle)
 {
@@ -9058,7 +9058,7 @@ BOOL __stdcall AdjustWindowRectEx(LPRECT lpRect, DWORD dwStyle, BOOL bMenu, DWOR
 }
 
 
-// ==== 0x007C86F2  GetMenu  this=unknown  sig=csp ====
+// ==== 0x007C86F2  GetMenu  this=-  sig=csp ====
 // attributes: thunk
 HMENU __stdcall GetMenu(HWND hWnd)
 {
@@ -9066,7 +9066,7 @@ HMENU __stdcall GetMenu(HWND hWnd)
 }
 
 
-// ==== 0x007C86F8  AdjustWindowRect  this=unknown  sig=csp ====
+// ==== 0x007C86F8  AdjustWindowRect  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall AdjustWindowRect(LPRECT lpRect, DWORD dwStyle, BOOL bMenu)
 {
@@ -9074,7 +9074,7 @@ BOOL __stdcall AdjustWindowRect(LPRECT lpRect, DWORD dwStyle, BOOL bMenu)
 }
 
 
-// ==== 0x007C86FE  GetSysColor  this=unknown  sig=csp ====
+// ==== 0x007C86FE  GetSysColor  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall GetSysColor(int nIndex)
 {
@@ -9082,7 +9082,7 @@ DWORD __stdcall GetSysColor(int nIndex)
 }
 
 
-// ==== 0x007C8704  CreateDialogParamA  this=unknown  sig=csp ====
+// ==== 0x007C8704  CreateDialogParamA  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall CreateDialogParamA(
         HINSTANCE hInstance,
@@ -9095,7 +9095,7 @@ HWND __stdcall CreateDialogParamA(
 }
 
 
-// ==== 0x007C870A  EndPaint  this=unknown  sig=csp ====
+// ==== 0x007C870A  EndPaint  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall EndPaint(HWND hWnd, const PAINTSTRUCT *lpPaint)
 {
@@ -9103,7 +9103,7 @@ BOOL __stdcall EndPaint(HWND hWnd, const PAINTSTRUCT *lpPaint)
 }
 
 
-// ==== 0x007C8710  BeginPaint  this=unknown  sig=csp ====
+// ==== 0x007C8710  BeginPaint  this=-  sig=csp ====
 // attributes: thunk
 HDC __stdcall BeginPaint(HWND hWnd, LPPAINTSTRUCT lpPaint)
 {
@@ -9111,7 +9111,7 @@ HDC __stdcall BeginPaint(HWND hWnd, LPPAINTSTRUCT lpPaint)
 }
 
 
-// ==== 0x007C8716  CharToOemBuffA  this=unknown  sig=csp ====
+// ==== 0x007C8716  CharToOemBuffA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall CharToOemBuffA(LPCSTR lpszSrc, LPSTR lpszDst, DWORD cchDstLength)
 {
@@ -9119,7 +9119,7 @@ BOOL __stdcall CharToOemBuffA(LPCSTR lpszSrc, LPSTR lpszDst, DWORD cchDstLength)
 }
 
 
-// ==== 0x007C871C  TranslateAcceleratorA  this=unknown  sig=csp ====
+// ==== 0x007C871C  TranslateAcceleratorA  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall TranslateAcceleratorA(HWND hWnd, HACCEL hAccTable, LPMSG lpMsg)
 {
@@ -9127,7 +9127,7 @@ int __stdcall TranslateAcceleratorA(HWND hWnd, HACCEL hAccTable, LPMSG lpMsg)
 }
 
 
-// ==== 0x007C8722  IsDialogMessageA  this=unknown  sig=csp ====
+// ==== 0x007C8722  IsDialogMessageA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall IsDialogMessageA(HWND hDlg, LPMSG lpMsg)
 {
@@ -9135,7 +9135,7 @@ BOOL __stdcall IsDialogMessageA(HWND hDlg, LPMSG lpMsg)
 }
 
 
-// ==== 0x007C8728  GetWindowTextA  this=unknown  sig=csp ====
+// ==== 0x007C8728  GetWindowTextA  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall GetWindowTextA(HWND hWnd, LPSTR lpString, int nMaxCount)
 {
@@ -9143,7 +9143,7 @@ int __stdcall GetWindowTextA(HWND hWnd, LPSTR lpString, int nMaxCount)
 }
 
 
-// ==== 0x007C872E  IsWindowEnabled  this=unknown  sig=csp ====
+// ==== 0x007C872E  IsWindowEnabled  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall IsWindowEnabled(HWND hWnd)
 {
@@ -9151,7 +9151,7 @@ BOOL __stdcall IsWindowEnabled(HWND hWnd)
 }
 
 
-// ==== 0x007C8734  GetNextDlgTabItem  this=unknown  sig=csp ====
+// ==== 0x007C8734  GetNextDlgTabItem  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall GetNextDlgTabItem(HWND hDlg, HWND hCtl, BOOL bPrevious)
 {
@@ -9159,7 +9159,7 @@ HWND __stdcall GetNextDlgTabItem(HWND hDlg, HWND hCtl, BOOL bPrevious)
 }
 
 
-// ==== 0x007C873A  GetParent  this=unknown  sig=csp ====
+// ==== 0x007C873A  GetParent  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall GetParent(HWND hWnd)
 {
@@ -9167,7 +9167,7 @@ HWND __stdcall GetParent(HWND hWnd)
 }
 
 
-// ==== 0x007C8740  GetClassNameA  this=unknown  sig=csp ====
+// ==== 0x007C8740  GetClassNameA  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall GetClassNameA(HWND hWnd, LPSTR lpClassName, int nMaxCount)
 {
@@ -9175,7 +9175,7 @@ int __stdcall GetClassNameA(HWND hWnd, LPSTR lpClassName, int nMaxCount)
 }
 
 
-// ==== 0x007C8746  EnumChildWindows  this=unknown  sig=csp ====
+// ==== 0x007C8746  EnumChildWindows  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall EnumChildWindows(HWND hWndParent, WNDENUMPROC lpEnumFunc, LPARAM lParam)
 {
@@ -9183,7 +9183,7 @@ BOOL __stdcall EnumChildWindows(HWND hWndParent, WNDENUMPROC lpEnumFunc, LPARAM 
 }
 
 
-// ==== 0x007C874C  IsWindowVisible  this=unknown  sig=csp ====
+// ==== 0x007C874C  IsWindowVisible  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall IsWindowVisible(HWND hWnd)
 {
@@ -9191,7 +9191,7 @@ BOOL __stdcall IsWindowVisible(HWND hWnd)
 }
 
 
-// ==== 0x007C8752  SetForegroundWindow  this=unknown  sig=csp ====
+// ==== 0x007C8752  SetForegroundWindow  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetForegroundWindow(HWND hWnd)
 {
@@ -9199,7 +9199,7 @@ BOOL __stdcall SetForegroundWindow(HWND hWnd)
 }
 
 
-// ==== 0x007C8758  RegisterClassA  this=unknown  sig=csp ====
+// ==== 0x007C8758  RegisterClassA  this=-  sig=csp ====
 // attributes: thunk
 ATOM __stdcall RegisterClassA(const WNDCLASSA *lpWndClass)
 {
@@ -9207,7 +9207,7 @@ ATOM __stdcall RegisterClassA(const WNDCLASSA *lpWndClass)
 }
 
 
-// ==== 0x007C875E  CreateWindowExA  this=unknown  sig=csp ====
+// ==== 0x007C875E  CreateWindowExA  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall CreateWindowExA(
         DWORD dwExStyle,
@@ -9239,7 +9239,7 @@ HWND __stdcall CreateWindowExA(
 }
 
 
-// ==== 0x007C8764  CallWindowProcA  this=unknown  sig=csp ====
+// ==== 0x007C8764  CallWindowProcA  this=-  sig=csp ====
 // attributes: thunk
 LRESULT __stdcall CallWindowProcA(WNDPROC lpPrevWndFunc, HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
@@ -9247,7 +9247,7 @@ LRESULT __stdcall CallWindowProcA(WNDPROC lpPrevWndFunc, HWND hWnd, UINT Msg, WP
 }
 
 
-// ==== 0x007C876A  BringWindowToTop  this=unknown  sig=csp ====
+// ==== 0x007C876A  BringWindowToTop  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall BringWindowToTop(HWND hWnd)
 {
@@ -9255,7 +9255,7 @@ BOOL __stdcall BringWindowToTop(HWND hWnd)
 }
 
 
-// ==== 0x007C8770  GetWindow  this=unknown  sig=csp ====
+// ==== 0x007C8770  GetWindow  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall GetWindow(HWND hWnd, UINT uCmd)
 {
@@ -9263,7 +9263,7 @@ HWND __stdcall GetWindow(HWND hWnd, UINT uCmd)
 }
 
 
-// ==== 0x007C8776  IntersectRect  this=unknown  sig=csp ====
+// ==== 0x007C8776  IntersectRect  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall IntersectRect(LPRECT lprcDst, const RECT *lprcSrc1, const RECT *lprcSrc2)
 {
@@ -9271,7 +9271,7 @@ BOOL __stdcall IntersectRect(LPRECT lprcDst, const RECT *lprcSrc1, const RECT *l
 }
 
 
-// ==== 0x007C877C  WindowFromPoint  this=unknown  sig=csp ====
+// ==== 0x007C877C  WindowFromPoint  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall WindowFromPoint(POINT Point)
 {
@@ -9279,7 +9279,7 @@ HWND __stdcall WindowFromPoint(POINT Point)
 }
 
 
-// ==== 0x007C8782  GetUpdateRect  this=unknown  sig=csp ====
+// ==== 0x007C8782  GetUpdateRect  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetUpdateRect(HWND hWnd, LPRECT lpRect, BOOL bErase)
 {
@@ -9295,7 +9295,7 @@ HWND __stdcall GetFocus()
 }
 
 
-// ==== 0x007C878E  LockWindowUpdate  this=unknown  sig=csp ====
+// ==== 0x007C878E  LockWindowUpdate  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall LockWindowUpdate(HWND hWndLock)
 {
@@ -9303,7 +9303,7 @@ BOOL __stdcall LockWindowUpdate(HWND hWndLock)
 }
 
 
-// ==== 0x007C8794  ScreenToClient  this=unknown  sig=csp ====
+// ==== 0x007C8794  ScreenToClient  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ScreenToClient(HWND hWnd, LPPOINT lpPoint)
 {
@@ -9311,7 +9311,7 @@ BOOL __stdcall ScreenToClient(HWND hWnd, LPPOINT lpPoint)
 }
 
 
-// ==== 0x007C879A  GetKeyNameTextA  this=unknown  sig=csp ====
+// ==== 0x007C879A  GetKeyNameTextA  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall GetKeyNameTextA(LONG lParam, LPSTR lpString, int cchSize)
 {
@@ -9319,7 +9319,7 @@ int __stdcall GetKeyNameTextA(LONG lParam, LPSTR lpString, int cchSize)
 }
 
 
-// ==== 0x007C87A0  CreateDialogIndirectParamA  this=unknown  sig=csp ====
+// ==== 0x007C87A0  CreateDialogIndirectParamA  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall CreateDialogIndirectParamA(
         HINSTANCE hInstance,
@@ -9332,7 +9332,7 @@ HWND __stdcall CreateDialogIndirectParamA(
 }
 
 
-// ==== 0x007C87A6  SetCursorPos  this=unknown  sig=csp ====
+// ==== 0x007C87A6  SetCursorPos  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetCursorPos(int X, int Y)
 {
@@ -9340,7 +9340,7 @@ BOOL __stdcall SetCursorPos(int X, int Y)
 }
 
 
-// ==== 0x007C87AC  FindWindowA  this=unknown  sig=csp ====
+// ==== 0x007C87AC  FindWindowA  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall FindWindowA(LPCSTR lpClassName, LPCSTR lpWindowName)
 {
@@ -9348,7 +9348,7 @@ HWND __stdcall FindWindowA(LPCSTR lpClassName, LPCSTR lpWindowName)
 }
 
 
-// ==== 0x007C87B2  PostQuitMessage  this=unknown  sig=csp ====
+// ==== 0x007C87B2  PostQuitMessage  this=-  sig=csp ====
 // attributes: thunk
 void __stdcall PostQuitMessage(int nExitCode)
 {
@@ -9356,7 +9356,7 @@ void __stdcall PostQuitMessage(int nExitCode)
 }
 
 
-// ==== 0x007C87B8  SetCursor  this=unknown  sig=csp ====
+// ==== 0x007C87B8  SetCursor  this=-  sig=csp ====
 // attributes: thunk
 HCURSOR __stdcall SetCursor(HCURSOR hCursor)
 {
@@ -9364,7 +9364,7 @@ HCURSOR __stdcall SetCursor(HCURSOR hCursor)
 }
 
 
-// ==== 0x007C87BE  LoadCursorA  this=unknown  sig=csp ====
+// ==== 0x007C87BE  LoadCursorA  this=-  sig=csp ====
 // attributes: thunk
 HCURSOR __stdcall LoadCursorA(HINSTANCE hInstance, LPCSTR lpCursorName)
 {
@@ -9372,7 +9372,7 @@ HCURSOR __stdcall LoadCursorA(HINSTANCE hInstance, LPCSTR lpCursorName)
 }
 
 
-// ==== 0x007C87C4  ChildWindowFromPoint  this=unknown  sig=csp ====
+// ==== 0x007C87C4  ChildWindowFromPoint  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall ChildWindowFromPoint(HWND hWndParent, POINT Point)
 {
@@ -9380,7 +9380,7 @@ HWND __stdcall ChildWindowFromPoint(HWND hWndParent, POINT Point)
 }
 
 
-// ==== 0x007C87CA  WinHelpA  this=unknown  sig=csp ====
+// ==== 0x007C87CA  WinHelpA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall WinHelpA(HWND hWndMain, LPCSTR lpszHelp, UINT uCommand, ULONG_PTR dwData)
 {
@@ -9388,7 +9388,7 @@ BOOL __stdcall WinHelpA(HWND hWndMain, LPCSTR lpszHelp, UINT uCommand, ULONG_PTR
 }
 
 
-// ==== 0x007C87D0  GetWindowContextHelpId  this=unknown  sig=csp ====
+// ==== 0x007C87D0  GetWindowContextHelpId  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall GetWindowContextHelpId(HWND a1)
 {
@@ -9396,7 +9396,7 @@ DWORD __stdcall GetWindowContextHelpId(HWND a1)
 }
 
 
-// ==== 0x007C87D6  RedrawWindow  this=unknown  sig=csp ====
+// ==== 0x007C87D6  RedrawWindow  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall RedrawWindow(HWND hWnd, const RECT *lprcUpdate, HRGN hrgnUpdate, UINT flags)
 {
@@ -9404,7 +9404,7 @@ BOOL __stdcall RedrawWindow(HWND hWnd, const RECT *lprcUpdate, HRGN hrgnUpdate, 
 }
 
 
-// ==== 0x007C87DC  SetActiveWindow  this=unknown  sig=csp ====
+// ==== 0x007C87DC  SetActiveWindow  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall SetActiveWindow(HWND hWnd)
 {
@@ -9412,7 +9412,7 @@ HWND __stdcall SetActiveWindow(HWND hWnd)
 }
 
 
-// ==== 0x007C87E2  RegisterHotKey  this=unknown  sig=csp ====
+// ==== 0x007C87E2  RegisterHotKey  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall RegisterHotKey(HWND hWnd, int id, UINT fsModifiers, UINT vk)
 {
@@ -9420,7 +9420,7 @@ BOOL __stdcall RegisterHotKey(HWND hWnd, int id, UINT fsModifiers, UINT vk)
 }
 
 
-// ==== 0x007C87E8  LoadIconA  this=unknown  sig=csp ====
+// ==== 0x007C87E8  LoadIconA  this=-  sig=csp ====
 // attributes: thunk
 HICON __stdcall LoadIconA(HINSTANCE hInstance, LPCSTR lpIconName)
 {
@@ -9436,7 +9436,7 @@ HWND __stdcall GetForegroundWindow()
 }
 
 
-// ==== 0x007C87F4  GetTopWindow  this=unknown  sig=csp ====
+// ==== 0x007C87F4  GetTopWindow  this=-  sig=csp ====
 // attributes: thunk
 HWND __stdcall GetTopWindow(HWND hWnd)
 {
@@ -9444,7 +9444,7 @@ HWND __stdcall GetTopWindow(HWND hWnd)
 }
 
 
-// ==== 0x007C87FA  WaitForInputIdle  this=unknown  sig=csp ====
+// ==== 0x007C87FA  WaitForInputIdle  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall WaitForInputIdle(HANDLE hProcess, DWORD dwMilliseconds)
 {
@@ -9452,7 +9452,7 @@ DWORD __stdcall WaitForInputIdle(HANDLE hProcess, DWORD dwMilliseconds)
 }
 
 
-// ==== 0x007C8800  CheckDlgButton  this=unknown  sig=csp ====
+// ==== 0x007C8800  CheckDlgButton  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall CheckDlgButton(HWND hDlg, int nIDButton, UINT uCheck)
 {
@@ -9460,7 +9460,7 @@ BOOL __stdcall CheckDlgButton(HWND hDlg, int nIDButton, UINT uCheck)
 }
 
 
-// ==== 0x007C8806  IsDlgButtonChecked  this=unknown  sig=csp ====
+// ==== 0x007C8806  IsDlgButtonChecked  this=-  sig=csp ====
 // attributes: thunk
 UINT __stdcall IsDlgButtonChecked(HWND hDlg, int nIDButton)
 {
@@ -9468,7 +9468,7 @@ UINT __stdcall IsDlgButtonChecked(HWND hDlg, int nIDButton)
 }
 
 
-// ==== 0x007C880C  CreateDIBSection  this=unknown  sig=csp ====
+// ==== 0x007C880C  CreateDIBSection  this=-  sig=csp ====
 // attributes: thunk
 HBITMAP __stdcall CreateDIBSection(
         HDC hdc,
@@ -9482,7 +9482,7 @@ HBITMAP __stdcall CreateDIBSection(
 }
 
 
-// ==== 0x007C8812  DeleteObject  this=unknown  sig=csp ====
+// ==== 0x007C8812  DeleteObject  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall DeleteObject(HGDIOBJ ho)
 {
@@ -9490,7 +9490,7 @@ BOOL __stdcall DeleteObject(HGDIOBJ ho)
 }
 
 
-// ==== 0x007C8818  GetTextMetricsA  this=unknown  sig=csp ====
+// ==== 0x007C8818  GetTextMetricsA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetTextMetricsA(HDC hdc, LPTEXTMETRICA lptm)
 {
@@ -9498,7 +9498,7 @@ BOOL __stdcall GetTextMetricsA(HDC hdc, LPTEXTMETRICA lptm)
 }
 
 
-// ==== 0x007C881E  SelectObject  this=unknown  sig=csp ====
+// ==== 0x007C881E  SelectObject  this=-  sig=csp ====
 // attributes: thunk
 HGDIOBJ __stdcall SelectObject(HDC hdc, HGDIOBJ h)
 {
@@ -9506,7 +9506,7 @@ HGDIOBJ __stdcall SelectObject(HDC hdc, HGDIOBJ h)
 }
 
 
-// ==== 0x007C8824  CreateFontIndirectA  this=unknown  sig=csp ====
+// ==== 0x007C8824  CreateFontIndirectA  this=-  sig=csp ====
 // attributes: thunk
 HFONT __stdcall CreateFontIndirectA(const LOGFONTA *lplf)
 {
@@ -9514,7 +9514,7 @@ HFONT __stdcall CreateFontIndirectA(const LOGFONTA *lplf)
 }
 
 
-// ==== 0x007C882A  GetDeviceCaps  this=unknown  sig=csp ====
+// ==== 0x007C882A  GetDeviceCaps  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall GetDeviceCaps(HDC hdc, int index)
 {
@@ -9522,7 +9522,7 @@ int __stdcall GetDeviceCaps(HDC hdc, int index)
 }
 
 
-// ==== 0x007C8830  TextOutA  this=unknown  sig=csp ====
+// ==== 0x007C8830  TextOutA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c)
 {
@@ -9530,7 +9530,7 @@ BOOL __stdcall TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c)
 }
 
 
-// ==== 0x007C8836  SetTextColor  this=unknown  sig=csp ====
+// ==== 0x007C8836  SetTextColor  this=-  sig=csp ====
 // attributes: thunk
 COLORREF __stdcall SetTextColor(HDC hdc, COLORREF color)
 {
@@ -9538,7 +9538,7 @@ COLORREF __stdcall SetTextColor(HDC hdc, COLORREF color)
 }
 
 
-// ==== 0x007C883C  SetBkColor  this=unknown  sig=csp ====
+// ==== 0x007C883C  SetBkColor  this=-  sig=csp ====
 // attributes: thunk
 COLORREF __stdcall SetBkColor(HDC hdc, COLORREF color)
 {
@@ -9546,7 +9546,7 @@ COLORREF __stdcall SetBkColor(HDC hdc, COLORREF color)
 }
 
 
-// ==== 0x007C8842  SetBkMode  this=unknown  sig=csp ====
+// ==== 0x007C8842  SetBkMode  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall SetBkMode(HDC hdc, int mode)
 {
@@ -9554,7 +9554,7 @@ int __stdcall SetBkMode(HDC hdc, int mode)
 }
 
 
-// ==== 0x007C8848  CreateSolidBrush  this=unknown  sig=csp ====
+// ==== 0x007C8848  CreateSolidBrush  this=-  sig=csp ====
 // attributes: thunk
 HBRUSH __stdcall CreateSolidBrush(COLORREF color)
 {
@@ -9562,7 +9562,7 @@ HBRUSH __stdcall CreateSolidBrush(COLORREF color)
 }
 
 
-// ==== 0x007C884E  GetTextColor  this=unknown  sig=csp ====
+// ==== 0x007C884E  GetTextColor  this=-  sig=csp ====
 // attributes: thunk
 COLORREF __stdcall GetTextColor(HDC hdc)
 {
@@ -9570,7 +9570,7 @@ COLORREF __stdcall GetTextColor(HDC hdc)
 }
 
 
-// ==== 0x007C8854  GetBkColor  this=unknown  sig=csp ====
+// ==== 0x007C8854  GetBkColor  this=-  sig=csp ====
 // attributes: thunk
 COLORREF __stdcall GetBkColor(HDC hdc)
 {
@@ -9578,7 +9578,7 @@ COLORREF __stdcall GetBkColor(HDC hdc)
 }
 
 
-// ==== 0x007C885A  GetBkMode  this=unknown  sig=csp ====
+// ==== 0x007C885A  GetBkMode  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall GetBkMode(HDC hdc)
 {
@@ -9586,7 +9586,7 @@ int __stdcall GetBkMode(HDC hdc)
 }
 
 
-// ==== 0x007C8860  GetStockObject  this=unknown  sig=csp ====
+// ==== 0x007C8860  GetStockObject  this=-  sig=csp ====
 // attributes: thunk
 HGDIOBJ __stdcall GetStockObject(int i)
 {
@@ -9594,7 +9594,7 @@ HGDIOBJ __stdcall GetStockObject(int i)
 }
 
 
-// ==== 0x007C8866  RestoreDC  this=unknown  sig=csp ====
+// ==== 0x007C8866  RestoreDC  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall RestoreDC(HDC hdc, int nSavedDC)
 {
@@ -9602,7 +9602,7 @@ BOOL __stdcall RestoreDC(HDC hdc, int nSavedDC)
 }
 
 
-// ==== 0x007C886C  DPtoLP  this=unknown  sig=csp ====
+// ==== 0x007C886C  DPtoLP  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall DPtoLP(HDC hdc, LPPOINT lppt, int c)
 {
@@ -9610,7 +9610,7 @@ BOOL __stdcall DPtoLP(HDC hdc, LPPOINT lppt, int c)
 }
 
 
-// ==== 0x007C8872  SetWindowOrgEx  this=unknown  sig=csp ====
+// ==== 0x007C8872  SetWindowOrgEx  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetWindowOrgEx(HDC hdc, int x, int y, LPPOINT lppt)
 {
@@ -9618,7 +9618,7 @@ BOOL __stdcall SetWindowOrgEx(HDC hdc, int x, int y, LPPOINT lppt)
 }
 
 
-// ==== 0x007C8878  SetViewportOrgEx  this=unknown  sig=csp ====
+// ==== 0x007C8878  SetViewportOrgEx  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall SetViewportOrgEx(HDC hdc, int x, int y, LPPOINT lppt)
 {
@@ -9626,7 +9626,7 @@ BOOL __stdcall SetViewportOrgEx(HDC hdc, int x, int y, LPPOINT lppt)
 }
 
 
-// ==== 0x007C887E  ModifyWorldTransform  this=unknown  sig=csp ====
+// ==== 0x007C887E  ModifyWorldTransform  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ModifyWorldTransform(HDC hdc, const XFORM *lpxf, DWORD mode)
 {
@@ -9634,7 +9634,7 @@ BOOL __stdcall ModifyWorldTransform(HDC hdc, const XFORM *lpxf, DWORD mode)
 }
 
 
-// ==== 0x007C8884  SetGraphicsMode  this=unknown  sig=csp ====
+// ==== 0x007C8884  SetGraphicsMode  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall SetGraphicsMode(HDC hdc, int iMode)
 {
@@ -9642,7 +9642,7 @@ int __stdcall SetGraphicsMode(HDC hdc, int iMode)
 }
 
 
-// ==== 0x007C888A  SaveDC  this=unknown  sig=csp ====
+// ==== 0x007C888A  SaveDC  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall SaveDC(HDC hdc)
 {
@@ -9650,7 +9650,7 @@ int __stdcall SaveDC(HDC hdc)
 }
 
 
-// ==== 0x007C8890  RegCloseKey  this=unknown  sig=csp ====
+// ==== 0x007C8890  RegCloseKey  this=-  sig=csp ====
 // attributes: thunk
 LSTATUS __stdcall RegCloseKey(HKEY hKey)
 {
@@ -9658,7 +9658,7 @@ LSTATUS __stdcall RegCloseKey(HKEY hKey)
 }
 
 
-// ==== 0x007C8896  RegQueryValueExA  this=unknown  sig=csp ====
+// ==== 0x007C8896  RegQueryValueExA  this=-  sig=csp ====
 // attributes: thunk
 LSTATUS __stdcall RegQueryValueExA(
         HKEY hKey,
@@ -9672,7 +9672,7 @@ LSTATUS __stdcall RegQueryValueExA(
 }
 
 
-// ==== 0x007C889C  RegOpenKeyExA  this=unknown  sig=csp ====
+// ==== 0x007C889C  RegOpenKeyExA  this=-  sig=csp ====
 // attributes: thunk
 LSTATUS __stdcall RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult)
 {
@@ -9680,7 +9680,7 @@ LSTATUS __stdcall RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REG
 }
 
 
-// ==== 0x007C88A2  RegDeleteValueA  this=unknown  sig=csp ====
+// ==== 0x007C88A2  RegDeleteValueA  this=-  sig=csp ====
 // attributes: thunk
 LSTATUS __stdcall RegDeleteValueA(HKEY hKey, LPCSTR lpValueName)
 {
@@ -9688,7 +9688,7 @@ LSTATUS __stdcall RegDeleteValueA(HKEY hKey, LPCSTR lpValueName)
 }
 
 
-// ==== 0x007C88A8  RegSetValueExA  this=unknown  sig=csp ====
+// ==== 0x007C88A8  RegSetValueExA  this=-  sig=csp ====
 // attributes: thunk
 LSTATUS __stdcall RegSetValueExA(
         HKEY hKey,
@@ -9702,7 +9702,7 @@ LSTATUS __stdcall RegSetValueExA(
 }
 
 
-// ==== 0x007C88AE  RegCreateKeyExA  this=unknown  sig=csp ====
+// ==== 0x007C88AE  RegCreateKeyExA  this=-  sig=csp ====
 // attributes: thunk
 LSTATUS __stdcall RegCreateKeyExA(
         HKEY hKey,
@@ -9728,7 +9728,7 @@ LSTATUS __stdcall RegCreateKeyExA(
 }
 
 
-// ==== 0x007C88B4  RegEnumKeyExA  this=unknown  sig=csp ====
+// ==== 0x007C88B4  RegEnumKeyExA  this=-  sig=csp ====
 // attributes: thunk
 LSTATUS __stdcall RegEnumKeyExA(
         HKEY hKey,
@@ -9744,7 +9744,7 @@ LSTATUS __stdcall RegEnumKeyExA(
 }
 
 
-// ==== 0x007C88BA  RegDeleteKeyA  this=unknown  sig=csp ====
+// ==== 0x007C88BA  RegDeleteKeyA  this=-  sig=csp ====
 // attributes: thunk
 LSTATUS __stdcall RegDeleteKeyA(HKEY hKey, LPCSTR lpSubKey)
 {
@@ -9752,7 +9752,7 @@ LSTATUS __stdcall RegDeleteKeyA(HKEY hKey, LPCSTR lpSubKey)
 }
 
 
-// ==== 0x007C88C0  RegQueryInfoKeyA  this=unknown  sig=csp ====
+// ==== 0x007C88C0  RegQueryInfoKeyA  this=-  sig=csp ====
 // attributes: thunk
 LSTATUS __stdcall RegQueryInfoKeyA(
         HKEY hKey,
@@ -9784,7 +9784,7 @@ LSTATUS __stdcall RegQueryInfoKeyA(
 }
 
 
-// ==== 0x007C88C6  FindExecutableA  this=unknown  sig=csp ====
+// ==== 0x007C88C6  FindExecutableA  this=-  sig=csp ====
 // attributes: thunk
 HINSTANCE __stdcall FindExecutableA(LPCSTR lpFile, LPCSTR lpDirectory, LPSTR lpResult)
 {
@@ -9792,7 +9792,7 @@ HINSTANCE __stdcall FindExecutableA(LPCSTR lpFile, LPCSTR lpDirectory, LPSTR lpR
 }
 
 
-// ==== 0x007C88CC  OleRun  this=unknown  sig=csp ====
+// ==== 0x007C88CC  OleRun  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall OleRun(LPUNKNOWN pUnknown)
 {
@@ -9800,7 +9800,7 @@ HRESULT __stdcall OleRun(LPUNKNOWN pUnknown)
 }
 
 
-// ==== 0x007C88D2  CoCreateInstance  this=unknown  sig=csp ====
+// ==== 0x007C88D2  CoCreateInstance  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall CoCreateInstance(
         const IID *const rclsid,
@@ -9813,7 +9813,7 @@ HRESULT __stdcall CoCreateInstance(
 }
 
 
-// ==== 0x007C88D8  OleLoadFromStream  this=unknown  sig=csp ====
+// ==== 0x007C88D8  OleLoadFromStream  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall OleLoadFromStream(LPSTREAM pStm, const IID *const iidInterface, LPVOID *ppvObj)
 {
@@ -9821,7 +9821,7 @@ HRESULT __stdcall OleLoadFromStream(LPSTREAM pStm, const IID *const iidInterface
 }
 
 
-// ==== 0x007C88DE  OleSaveToStream  this=unknown  sig=csp ====
+// ==== 0x007C88DE  OleSaveToStream  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall OleSaveToStream(LPPERSISTSTREAM pPStm, LPSTREAM pStm)
 {
@@ -9829,7 +9829,7 @@ HRESULT __stdcall OleSaveToStream(LPPERSISTSTREAM pPStm, LPSTREAM pStm)
 }
 
 
-// ==== 0x007C88E4  CLSIDFromString  this=unknown  sig=csp ====
+// ==== 0x007C88E4  CLSIDFromString  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall CLSIDFromString(LPCOLESTR lpsz, LPCLSID pclsid)
 {
@@ -9837,7 +9837,7 @@ HRESULT __stdcall CLSIDFromString(LPCOLESTR lpsz, LPCLSID pclsid)
 }
 
 
-// ==== 0x007C88EA  StringFromCLSID  this=unknown  sig=csp ====
+// ==== 0x007C88EA  StringFromCLSID  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall StringFromCLSID(const IID *const rclsid, LPOLESTR *lplpsz)
 {
@@ -9845,7 +9845,7 @@ HRESULT __stdcall StringFromCLSID(const IID *const rclsid, LPOLESTR *lplpsz)
 }
 
 
-// ==== 0x007C88F0  CoFileTimeNow  this=unknown  sig=csp ====
+// ==== 0x007C88F0  CoFileTimeNow  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall CoFileTimeNow(FILETIME *lpFileTime)
 {
@@ -9853,7 +9853,7 @@ HRESULT __stdcall CoFileTimeNow(FILETIME *lpFileTime)
 }
 
 
-// ==== 0x007C88F6  StgCreateDocfile  this=unknown  sig=csp ====
+// ==== 0x007C88F6  StgCreateDocfile  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall StgCreateDocfile(const WCHAR *pwcsName, DWORD grfMode, DWORD reserved, IStorage **ppstgOpen)
 {
@@ -9861,7 +9861,7 @@ HRESULT __stdcall StgCreateDocfile(const WCHAR *pwcsName, DWORD grfMode, DWORD r
 }
 
 
-// ==== 0x007C88FC  StgOpenStorage  this=unknown  sig=csp ====
+// ==== 0x007C88FC  StgOpenStorage  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall StgOpenStorage(
         const WCHAR *pwcsName,
@@ -9875,7 +9875,7 @@ HRESULT __stdcall StgOpenStorage(
 }
 
 
-// ==== 0x007C8902  StringFromGUID2  this=unknown  sig=csp ====
+// ==== 0x007C8902  StringFromGUID2  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall StringFromGUID2(const GUID *const rguid, LPOLESTR lpsz, int cchMax)
 {
@@ -9883,7 +9883,7 @@ int __stdcall StringFromGUID2(const GUID *const rguid, LPOLESTR lpsz, int cchMax
 }
 
 
-// ==== 0x007C8908  CoDisconnectObject  this=unknown  sig=csp ====
+// ==== 0x007C8908  CoDisconnectObject  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall CoDisconnectObject(LPUNKNOWN pUnk, DWORD dwReserved)
 {
@@ -9891,7 +9891,7 @@ HRESULT __stdcall CoDisconnectObject(LPUNKNOWN pUnk, DWORD dwReserved)
 }
 
 
-// ==== 0x007C890E  CoRegisterClassObject  this=unknown  sig=csp ====
+// ==== 0x007C890E  CoRegisterClassObject  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall CoRegisterClassObject(
         const IID *const rclsid,
@@ -9904,7 +9904,7 @@ HRESULT __stdcall CoRegisterClassObject(
 }
 
 
-// ==== 0x007C8914  OleInitialize  this=unknown  sig=csp ====
+// ==== 0x007C8914  OleInitialize  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall OleInitialize(LPVOID pvReserved)
 {
@@ -9920,7 +9920,7 @@ void __stdcall OleUninitialize::0()
 }
 
 
-// ==== 0x007C8920  CoRevokeClassObject  this=unknown  sig=csp ====
+// ==== 0x007C8920  CoRevokeClassObject  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall CoRevokeClassObject(DWORD dwRegister)
 {
@@ -9928,7 +9928,7 @@ HRESULT __stdcall CoRevokeClassObject(DWORD dwRegister)
 }
 
 
-// ==== 0x007C8926  SysAllocString  this=unknown  sig=csp ====
+// ==== 0x007C8926  SysAllocString  this=-  sig=csp ====
 // attributes: thunk
 BSTR __stdcall SysAllocString(const OLECHAR *psz)
 {
@@ -9936,7 +9936,7 @@ BSTR __stdcall SysAllocString(const OLECHAR *psz)
 }
 
 
-// ==== 0x007C892C  SysFreeString  this=unknown  sig=csp ====
+// ==== 0x007C892C  SysFreeString  this=-  sig=csp ====
 // attributes: thunk
 void __stdcall SysFreeString(BSTR bstrString)
 {
@@ -9944,7 +9944,7 @@ void __stdcall SysFreeString(BSTR bstrString)
 }
 
 
-// ==== 0x007C8932  LoadTypeLib  this=unknown  sig=csp ====
+// ==== 0x007C8932  LoadTypeLib  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall LoadTypeLib(LPCOLESTR szFile, ITypeLib **pptlib)
 {
@@ -9952,7 +9952,7 @@ HRESULT __stdcall LoadTypeLib(LPCOLESTR szFile, ITypeLib **pptlib)
 }
 
 
-// ==== 0x007C8938  RevokeActiveObject  this=unknown  sig=csp ====
+// ==== 0x007C8938  RevokeActiveObject  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall RevokeActiveObject(DWORD dwRegister, void *pvReserved)
 {
@@ -9960,7 +9960,7 @@ HRESULT __stdcall RevokeActiveObject(DWORD dwRegister, void *pvReserved)
 }
 
 
-// ==== 0x007C893E  RegisterActiveObject  this=unknown  sig=csp ====
+// ==== 0x007C893E  RegisterActiveObject  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall RegisterActiveObject(IUnknown *punk, const IID *const rclsid, DWORD dwFlags, DWORD *pdwRegister)
 {
@@ -9976,7 +9976,7 @@ DWORD __stdcall 1timeGetTime()
 }
 
 
-// ==== 0x007C894A  timeEndPeriod  this=unknown  sig=csp ====
+// ==== 0x007C894A  timeEndPeriod  this=-  sig=csp ====
 // attributes: thunk
 MMRESULT __stdcall timeEndPeriod(UINT uPeriod)
 {
@@ -9984,7 +9984,7 @@ MMRESULT __stdcall timeEndPeriod(UINT uPeriod)
 }
 
 
-// ==== 0x007C8950  timeKillEvent  this=unknown  sig=csp ====
+// ==== 0x007C8950  timeKillEvent  this=-  sig=csp ====
 // attributes: thunk
 MMRESULT __stdcall timeKillEvent(UINT uTimerID)
 {
@@ -9992,7 +9992,7 @@ MMRESULT __stdcall timeKillEvent(UINT uTimerID)
 }
 
 
-// ==== 0x007C8956  timeSetEvent  this=unknown  sig=csp ====
+// ==== 0x007C8956  timeSetEvent  this=-  sig=csp ====
 // attributes: thunk
 MMRESULT __stdcall timeSetEvent(UINT uDelay, UINT uResolution, LPTIMECALLBACK fptc, DWORD_PTR dwUser, UINT fuEvent)
 {
@@ -10000,7 +10000,7 @@ MMRESULT __stdcall timeSetEvent(UINT uDelay, UINT uResolution, LPTIMECALLBACK fp
 }
 
 
-// ==== 0x007C895C  timeBeginPeriod  this=unknown  sig=csp ====
+// ==== 0x007C895C  timeBeginPeriod  this=-  sig=csp ====
 // attributes: thunk
 MMRESULT __stdcall timeBeginPeriod(UINT uPeriod)
 {
@@ -10008,7 +10008,7 @@ MMRESULT __stdcall timeBeginPeriod(UINT uPeriod)
 }
 
 
-// ==== 0x007C8962  htonl  this=float  sig=csp ====
+// ==== 0x007C8962  htonl  this=-  sig=csp ====
 // attributes: thunk
 u_long __stdcall htonl(IUnknown *aP0)
 {
@@ -10016,7 +10016,7 @@ u_long __stdcall htonl(IUnknown *aP0)
 }
 
 
-// ==== 0x007C8968  htons  this=unknown  sig=csp ====
+// ==== 0x007C8968  htons  this=-  sig=csp ====
 // attributes: thunk
 u_short __stdcall htons(IUnknown *aP0)
 {
@@ -10024,7 +10024,7 @@ u_short __stdcall htons(IUnknown *aP0)
 }
 
 
-// ==== 0x007C896E  ntohl  this=int  sig=csp ====
+// ==== 0x007C896E  ntohl  this=-  sig=csp ====
 // attributes: thunk
 u_long __stdcall ntohl(u_long netlong)
 {
@@ -10048,7 +10048,7 @@ int __stdcall WSAGetLastError()
 }
 
 
-// ==== 0x007C8980  gethostbyname  this=int  sig=csp ====
+// ==== 0x007C8980  gethostbyname  this=-  sig=csp ====
 // attributes: thunk
 struct hostent *__stdcall gethostbyname(IUnknown *aP0)
 {
@@ -10056,7 +10056,7 @@ struct hostent *__stdcall gethostbyname(IUnknown *aP0)
 }
 
 
-// ==== 0x007C8986  ntoainet  this=int  sig=csp ====
+// ==== 0x007C8986  ntoainet  this=-  sig=csp ====
 // attributes: thunk
 char *__stdcall ntoainet(struct in_addr in)
 {
@@ -10064,7 +10064,7 @@ char *__stdcall ntoainet(struct in_addr in)
 }
 
 
-// ==== 0x007C898C  getsockopt  this=unknown  sig=csp ====
+// ==== 0x007C898C  getsockopt  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall getsockopt(AnimClass *aP0, int level, int optname, char *optval, int *optlen)
 {
@@ -10090,7 +10090,7 @@ int __stdcall bind(IUnknown *aP0, IUnknown *aP1, int namelen)
 }
 
 
-// ==== 0x007C899E  socket  this=unknown  sig=csp ====
+// ==== 0x007C899E  socket  this=-  sig=csp ====
 // attributes: thunk
 SOCKET __stdcall socket(int af, int type, int protocol)
 {
@@ -10106,7 +10106,7 @@ int __stdcall setsockopt(IUnknown *aP0, int level, int optname, IUnknown *aP3, i
 }
 
 
-// ==== 0x007C89AA  recvfrom  this=unknown  sig=csp ====
+// ==== 0x007C89AA  recvfrom  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall recvfrom(SOCKET s, char *buf, int len, int flags, struct sockaddr *from, int *fromlen)
 {
@@ -10114,7 +10114,7 @@ int __stdcall recvfrom(SOCKET s, char *buf, int len, int flags, struct sockaddr 
 }
 
 
-// ==== 0x007C89B0  sendto  this=VOID_PTR  sig=csp ====
+// ==== 0x007C89B0  sendto  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall sendto(SOCKET s, const char *buf, IUnknown *aP2, int flags, IUnknown *aP4, int tolen)
 {
@@ -10138,7 +10138,7 @@ int __stdcall WSAAsyncSelect(SOCKET s, IUnknown *aP1, IUnknown *aP2, int lEvent)
 }
 
 
-// ==== 0x007C89C2  EnumProtocolsA  this=unknown  sig=csp ====
+// ==== 0x007C89C2  EnumProtocolsA  this=-  sig=csp ====
 // attributes: thunk
 INT __stdcall EnumProtocolsA(LPINT lpiProtocols, LPVOID lpProtocolBuffer, LPDWORD lpdwBufferLength)
 {
@@ -10146,7 +10146,7 @@ INT __stdcall EnumProtocolsA(LPINT lpiProtocols, LPVOID lpProtocolBuffer, LPDWOR
 }
 
 
-// ==== 0x007C89C8  WSAStartup  this=unknown  sig=csp ====
+// ==== 0x007C89C8  WSAStartup  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall WSAStartup(WORD wVersionRequested, CCINIClass *aP1)
 {
@@ -10154,7 +10154,7 @@ int __stdcall WSAStartup(WORD wVersionRequested, CCINIClass *aP1)
 }
 
 
-// ==== 0x007C89CE  gethostname  this=unknown  sig=csp ====
+// ==== 0x007C89CE  gethostname  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall gethostname(IUnknown *aP0, AnimClass *aP1)
 {
@@ -10162,7 +10162,7 @@ int __stdcall gethostname(IUnknown *aP0, AnimClass *aP1)
 }
 
 
-// ==== 0x007C89D4  DirectDrawCreate  this=unknown  sig=csp ====
+// ==== 0x007C89D4  DirectDrawCreate  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall DirectDrawCreate(GUID *lpGUID, LPDIRECTDRAW *lplpDD, IUnknown *pUnkOuter)
 {
@@ -10170,7 +10170,7 @@ HRESULT __stdcall DirectDrawCreate(GUID *lpGUID, LPDIRECTDRAW *lplpDD, IUnknown 
 }
 
 
-// ==== 0x007C89DA  DirectSoundCreate  this=unknown  sig=csp ====
+// ==== 0x007C89DA  DirectSoundCreate  this=-  sig=csp ====
 // attributes: thunk
 HRESULT __stdcall DirectSoundCreate(LPCGUID pcGuidDevice, LPDIRECTSOUND *ppDS, LPUNKNOWN pUnkOuter)
 {
@@ -10178,7 +10178,7 @@ HRESULT __stdcall DirectSoundCreate(LPCGUID pcGuidDevice, LPDIRECTSOUND *ppDS, L
 }
 
 
-// ==== 0x007C89E0  VerQueryValueA  this=unknown  sig=csp ====
+// ==== 0x007C89E0  VerQueryValueA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall VerQueryValueA(CCINIClass *aP0, LPCSTR lpSubBlock, LPVOID *lplpBuffer, INIClass *aP3)
 {
@@ -10186,7 +10186,7 @@ BOOL __stdcall VerQueryValueA(CCINIClass *aP0, LPCSTR lpSubBlock, LPVOID *lplpBu
 }
 
 
-// ==== 0x007C89E6  GetFileVersionInfoA  this=unknown  sig=csp ====
+// ==== 0x007C89E6  GetFileVersionInfoA  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall GetFileVersionInfoA(LPCSTR lptstrFilename, DWORD dwHandle, AbstractClass *aP2, CCINIClass *aP3)
 {
@@ -10194,7 +10194,7 @@ BOOL __stdcall GetFileVersionInfoA(LPCSTR lptstrFilename, DWORD dwHandle, Abstra
 }
 
 
-// ==== 0x007C89EC  GetFileVersionInfoSizeA  this=unknown  sig=csp ====
+// ==== 0x007C89EC  GetFileVersionInfoSizeA  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall GetFileVersionInfoSizeA(LPCSTR lptstrFilename, LPDWORD lpdwHandle)
 {
@@ -10202,7 +10202,7 @@ DWORD __stdcall GetFileVersionInfoSizeA(LPCSTR lptstrFilename, LPDWORD lpdwHandl
 }
 
 
-// ==== 0x007C89F2  ImageList::DragEnter  this=unknown  sig=csp ====
+// ==== 0x007C89F2  ImageList::DragEnter  this=ImageList  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ImageList::DragEnter(HWND hwndLock, int x, int y)
 {
@@ -10210,7 +10210,7 @@ BOOL __stdcall ImageList::DragEnter(HWND hwndLock, int x, int y)
 }
 
 
-// ==== 0x007C89F8  ImageList::BeginDrag  this=unknown  sig=csp ====
+// ==== 0x007C89F8  ImageList::BeginDrag  this=ImageList  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ImageList::BeginDrag(HIMAGELIST himlTrack, int iTrack, int dxHotspot, int dyHotspot)
 {
@@ -10218,7 +10218,7 @@ BOOL __stdcall ImageList::BeginDrag(HIMAGELIST himlTrack, int iTrack, int dxHots
 }
 
 
-// ==== 0x007C89FE  ImageList::Destroy  this=unknown  sig=csp ====
+// ==== 0x007C89FE  ImageList::Destroy  this=ImageList  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ImageList::Destroy(HIMAGELIST himl)
 {
@@ -10234,7 +10234,7 @@ void __stdcall ImageList::EndDrag()
 }
 
 
-// ==== 0x007C8A0A  ImageList::DragMove  this=unknown  sig=csp ====
+// ==== 0x007C8A0A  ImageList::DragMove  this=ImageList  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ImageList::DragMove(int x, int y)
 {
@@ -10242,7 +10242,7 @@ BOOL __stdcall ImageList::DragMove(int x, int y)
 }
 
 
-// ==== 0x007C8A10  ImageList::DragShowNolock  this=unknown  sig=csp ====
+// ==== 0x007C8A10  ImageList::DragShowNolock  this=ImageList  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ImageList::DragShowNolock(BOOL fShow)
 {
@@ -10258,7 +10258,7 @@ void __stdcall InitCommonControls()
 }
 
 
-// ==== 0x007C8A1C  ImmAssociateContext  this=unknown  sig=csp ====
+// ==== 0x007C8A1C  ImmAssociateContext  this=-  sig=csp ====
 // attributes: thunk
 HIMC __stdcall ImmAssociateContext(ObjectClass *aP0, ObjectClass *aP1)
 {
@@ -10274,7 +10274,7 @@ HIMC __stdcall ImmGetContext(ObjectClass *aP0)
 }
 
 
-// ==== 0x007C8A28  ImmNotifyIME  this=unknown  sig=csp ====
+// ==== 0x007C8A28  ImmNotifyIME  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ImmNotifyIME(ObjectClass *aP0, DWORD dwAction, DWORD dwIndex, DWORD dwValue)
 {
@@ -10282,7 +10282,7 @@ BOOL __stdcall ImmNotifyIME(ObjectClass *aP0, DWORD dwAction, DWORD dwIndex, DWO
 }
 
 
-// ==== 0x007C8A2E  ImmGetCandidateListA  this=unknown  sig=csp ====
+// ==== 0x007C8A2E  ImmGetCandidateListA  this=-  sig=csp ====
 // attributes: thunk
 DWORD __stdcall ImmGetCandidateListA(HIMC a1, DWORD deIndex, LPCANDIDATELIST lpCandList, DWORD dwBufLen)
 {
@@ -10290,7 +10290,7 @@ DWORD __stdcall ImmGetCandidateListA(HIMC a1, DWORD deIndex, LPCANDIDATELIST lpC
 }
 
 
-// ==== 0x007C8A34  ImmGetCompositionStringA  this=unknown  sig=csp ====
+// ==== 0x007C8A34  ImmGetCompositionStringA  this=-  sig=csp ====
 // attributes: thunk
 LONG __stdcall ImmGetCompositionStringA(ObjectClass *aP0, DWORD a2, LPVOID lpBuf, DWORD dwBufLen)
 {
@@ -10298,7 +10298,7 @@ LONG __stdcall ImmGetCompositionStringA(ObjectClass *aP0, DWORD a2, LPVOID lpBuf
 }
 
 
-// ==== 0x007C8A3A  ImmSetOpenStatus  this=unknown  sig=csp ====
+// ==== 0x007C8A3A  ImmSetOpenStatus  this=-  sig=csp ====
 // attributes: thunk
 BOOL __stdcall ImmSetOpenStatus(HIMC a1, BOOL a2)
 {
@@ -10306,7 +10306,7 @@ BOOL __stdcall ImmSetOpenStatus(HIMC a1, BOOL a2)
 }
 
 
-// ==== 0x007C8A40  _BinkClose_4  this=unknown  sig=csp ====
+// ==== 0x007C8A40  _BinkClose_4  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkClose_4(int a1)
 {
@@ -10314,7 +10314,7 @@ int __stdcall BinkClose_4(int a1)
 }
 
 
-// ==== 0x007C8A46  _BinkDDSurfaceType_4  this=unknown  sig=csp ====
+// ==== 0x007C8A46  _BinkDDSurfaceType_4  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkDDSurfaceType_4(int a1)
 {
@@ -10322,7 +10322,7 @@ int __stdcall BinkDDSurfaceType_4(int a1)
 }
 
 
-// ==== 0x007C8A4C  _BinkSetVolume_8  this=unknown  sig=csp ====
+// ==== 0x007C8A4C  _BinkSetVolume_8  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkSetVolume_8(int a1, int a2)
 {
@@ -10338,7 +10338,7 @@ int __stdcall BinkGetError_0()
 }
 
 
-// ==== 0x007C8A58  _BinkOpen_8  this=unknown  sig=csp ====
+// ==== 0x007C8A58  _BinkOpen_8  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkOpen_8(int a1, int a2)
 {
@@ -10346,7 +10346,7 @@ int __stdcall BinkOpen_8(int a1, int a2)
 }
 
 
-// ==== 0x007C8A5E  _BinkSetSoundSystem_8  this=unknown  sig=csp ====
+// ==== 0x007C8A5E  _BinkSetSoundSystem_8  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkSetSoundSystem_8(int a1, int a2)
 {
@@ -10354,7 +10354,7 @@ int __stdcall BinkSetSoundSystem_8(int a1, int a2)
 }
 
 
-// ==== 0x007C8A64  _BinkOpenDirectSound_4  this=unknown  sig=csp ====
+// ==== 0x007C8A64  _BinkOpenDirectSound_4  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkOpenDirectSound_4(int a1)
 {
@@ -10362,7 +10362,7 @@ int __stdcall BinkOpenDirectSound_4(int a1)
 }
 
 
-// ==== 0x007C8A6A  _BinkGoto_12  this=unknown  sig=csp ====
+// ==== 0x007C8A6A  _BinkGoto_12  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkGoto_12(int a1, int a2, int a3)
 {
@@ -10370,7 +10370,7 @@ int __stdcall BinkGoto_12(int a1, int a2, int a3)
 }
 
 
-// ==== 0x007C8A70  _BinkPause_8  this=unknown  sig=csp ====
+// ==== 0x007C8A70  _BinkPause_8  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkPause_8(int a1, int a2)
 {
@@ -10378,7 +10378,7 @@ int __stdcall BinkPause_8(int a1, int a2)
 }
 
 
-// ==== 0x007C8A76  _BinkNextFrame_4  this=unknown  sig=csp ====
+// ==== 0x007C8A76  _BinkNextFrame_4  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkNextFrame_4(int a1)
 {
@@ -10386,7 +10386,7 @@ int __stdcall BinkNextFrame_4(int a1)
 }
 
 
-// ==== 0x007C8A7C  _BinkCopyToBuffer_28  this=unknown  sig=csp ====
+// ==== 0x007C8A7C  _BinkCopyToBuffer_28  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkCopyToBuffer_28(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
@@ -10394,7 +10394,7 @@ int __stdcall BinkCopyToBuffer_28(int a1, int a2, int a3, int a4, int a5, int a6
 }
 
 
-// ==== 0x007C8A82  _BinkDoFrame_4  this=unknown  sig=csp ====
+// ==== 0x007C8A82  _BinkDoFrame_4  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkDoFrame_4(int a1)
 {
@@ -10402,7 +10402,7 @@ int __stdcall BinkDoFrame_4(int a1)
 }
 
 
-// ==== 0x007C8A88  _BinkWait_4  this=unknown  sig=csp ====
+// ==== 0x007C8A88  _BinkWait_4  this=-  sig=csp ====
 // attributes: thunk
 int __stdcall BinkWait_4(int a1)
 {
@@ -10434,14 +10434,14 @@ ObjectClass *__thiscall ___Gtype_info_UAEPAXI_Z(type_info *this, char a2)
 }
 
 
-// ==== 0x007C8AD3  ??8type_info_QBEHABV0__Z  this=VOID_PTR  sig=csp ====
+// ==== 0x007C8AD3  ??8type_info_QBEHABV0__Z  this=-  sig=csp ====
 BOOL __thiscall __8type_info_QBEHABV0__Z(const char *this, int a2)
 {
   return strcmp((const char *)(a2 + 9), this + 9) == 0; /*0x7c8aeb*/
 }
 
 
-// ==== 0x007C8AEE  ??9type_info_QBEHABV0__Z  this=VOID_PTR  sig=csp ====
+// ==== 0x007C8AEE  ??9type_info_QBEHABV0__Z  this=-  sig=csp ====
 BOOL __thiscall __9type_info_QBEHABV0__Z(const char *this, int a2)
 {
   return strcmp((const char *)(a2 + 9), this + 9) != 0; /*0x7c8b07*/
@@ -10477,7 +10477,7 @@ ObjectClass *__thiscall sub_7C8B38(void *this, int a2)
 }
 
 
-// ==== 0x007C8B3D  ??3_YAXPAX_Z  this=VOID_PTR  sig=csp ====
+// ==== 0x007C8B3D  ??3_YAXPAX_Z  this=-  sig=csp ====
 void __cdecl __3_YAXPAX_Z(void *Block)
 {
   free(Block); /*0x7c8b41*/
@@ -10587,7 +10587,7 @@ LABEL_6:
 }
 
 
-// ==== 0x007C8C9C  _shortsort  this=unknown  sig=csp ====
+// ==== 0x007C8C9C  _shortsort  this=-  sig=csp ====
 unsigned int __cdecl shortsort(AbstractClass *aP0, unsigned int a2, int a3, int (__cdecl *a4)(unsigned int))
 {
   AbstractClass *result; // eax
@@ -10642,7 +10642,7 @@ char *__cdecl swap(char *a1, char *a2, int a3)
 }
 
 
-// ==== 0x007C8D20  __strcmpi  this=VOID_PTR  sig=csp ====
+// ==== 0x007C8D20  __strcmpi  this=-  sig=csp ====
 int __cdecl _strcmpi(char *a1, char *a2)
 {
   int result; // eax
@@ -10715,7 +10715,7 @@ int __cdecl _strcmpi(char *a1, char *a2)
 }
 
 
-// ==== 0x007C8DF0  _strrchr  this=int  sig=csp ====
+// ==== 0x007C8DF0  _strrchr  this=-  sig=csp ====
 char *__cdecl strrchr(const char *Str, int Ch)
 {
   unsigned int v2; // ecx
@@ -10804,7 +10804,7 @@ LABEL_11:
 }
 
 
-// ==== 0x007C8EC0  __allmul  this=int  sig=csp ====
+// ==== 0x007C8EC0  __allmul  this=-  sig=csp ====
 unsigned __int64 __stdcall _allmul(__int64 a1, __int64 a2)
 {
   if ( HIDWORD(a1) | HIDWORD(a2) ) /*0x7c8ec8*/
@@ -10814,7 +10814,7 @@ unsigned __int64 __stdcall _allmul(__int64 a1, __int64 a2)
 }
 
 
-// ==== 0x007C8EF4  _sprintf  this=VOID_PTR  sig=csp ====
+// ==== 0x007C8EF4  _sprintf  this=-  sig=csp ====
 int sprintf(char *const Buffer, ObjectClass *aP1, INIClass *aP2)
 {
   int v3; // eax
@@ -10870,7 +10870,7 @@ int (__cdecl *_cfltcvt_init_13())(int, void *Src, int, size_t Size, int)
 }
 
 
-// ==== 0x007C8F96  sub_7C8F96  this=unknown  sig=csp ====
+// ==== 0x007C8F96  sub_7C8F96  this=-  sig=csp ====
 int __cdecl sub_7C8F96(int a1)
 {
   int result; // eax
@@ -11034,7 +11034,7 @@ void __usercall CIpow_Helper_Helper(double a1@<st0>)
 }
 
 
-// ==== 0x007C91D0  _strncpy  this=VOID_PTR  sig=csp ====
+// ==== 0x007C91D0  _strncpy  this=-  sig=csp ====
 char *__cdecl strncpy(char *Destination, const char *Source, IUnknown *aP2)
 {
   INIClass *v3; // ecx
@@ -11168,7 +11168,7 @@ fill_dwords_with_EOS:
 }
 
 
-// ==== 0x007C92D0  __alldiv  this=int  sig=csp ====
+// ==== 0x007C92D0  __alldiv  this=-  sig=csp ====
 int __stdcall _alldiv(unsigned __int64 a1, __int64 a2)
 {
   int v2; // edi
@@ -11224,7 +11224,7 @@ int __stdcall _alldiv(unsigned __int64 a1, __int64 a2)
 }
 
 
-// ==== 0x007C9380  __aulldiv  this=int  sig=csp ====
+// ==== 0x007C9380  __aulldiv  this=-  sig=csp ====
 unsigned int __stdcall _aulldiv(unsigned __int64 a1, __int64 a2)
 {
   unsigned __int64 v3; // rtt
@@ -11293,7 +11293,7 @@ void *__cdecl malloc(AbstractClass *aP0)
 }
 
 
-// ==== 0x007C9442  __nh_malloc  this=unknown  sig=csp ====
+// ==== 0x007C9442  __nh_malloc  this=-  sig=csp ====
 int __cdecl _nh_malloc(IUnknown *aP0, int a2)
 {
   int result; // eax
@@ -11312,7 +11312,7 @@ int __cdecl _nh_malloc(IUnknown *aP0, int a2)
 }
 
 
-// ==== 0x007C946E  __heap_alloc  this=unknown  sig=csp ====
+// ==== 0x007C946E  __heap_alloc  this=-  sig=csp ====
 LPVOID __cdecl _heap_alloc(IUnknown *aP0)
 {
   IUnknown *v1; // esi
@@ -11333,7 +11333,7 @@ LPVOID __cdecl _heap_alloc(IUnknown *aP0)
 }
 
 
-// ==== 0x007C94BC  Audio_Write  this=unknown  sig=csp ====
+// ==== 0x007C94BC  Audio_Write  this=-  sig=csp ====
 size_t __cdecl sub_7C94BC(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream)
 {
   size_t v4; // esi
@@ -11345,7 +11345,7 @@ size_t __cdecl sub_7C94BC(void *Buffer, size_t ElementSize, size_t ElementCount,
 }
 
 
-// ==== 0x007C94EB  _fread  this=unknown  sig=csp ====
+// ==== 0x007C94EB  _fread  this=-  sig=csp ====
 size_t __cdecl fread(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream)
 {
   size_t v4; // edi
@@ -11420,7 +11420,7 @@ LABEL_20:
 }
 
 
-// ==== 0x007C95D3  Audio_Write_7C95D3  this=unknown  sig=csp ====
+// ==== 0x007C95D3  Audio_Write_7C95D3  this=-  sig=csp ====
 size_t __cdecl sub_7C95D3(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream)
 {
   size_t v4; // esi
@@ -11432,7 +11432,7 @@ size_t __cdecl sub_7C95D3(void *Buffer, size_t ElementSize, size_t ElementCount,
 }
 
 
-// ==== 0x007C9602  _fwrite  this=unknown  sig=csp ====
+// ==== 0x007C9602  _fwrite  this=-  sig=csp ====
 size_t __cdecl fwrite(const void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream)
 {
   size_t v4; // edi
@@ -11506,7 +11506,7 @@ LABEL_26:
 }
 
 
-// ==== 0x007C970C  __onexit  this=unknown  sig=csp ====
+// ==== 0x007C970C  __onexit  this=-  sig=csp ====
 _onexit_t __cdecl _onexit(_onexit_t Func)
 {
   size_t v1; // eax
@@ -11571,7 +11571,7 @@ int __cdecl _toupper(int C)
 }
 
 
-// ==== 0x007C97D3  _toupper  this=unknown  sig=csp ====
+// ==== 0x007C97D3  _toupper  this=-  sig=csp ====
 int __cdecl toupper(Color *aP0)
 {
   int v1; // ebx
@@ -11605,7 +11605,7 @@ int __cdecl toupper(Color *aP0)
 }
 
 
-// ==== 0x007C9842  _toupper_0  this=unknown  sig=csp ====
+// ==== 0x007C9842  _toupper_0  this=-  sig=csp ====
 int __cdecl toupper_0(int C)
 {
   int result; // eax
@@ -11647,7 +11647,7 @@ int __cdecl toupper_0(int C)
 }
 
 
-// ==== 0x007C990E  _isalpha  this=unknown  sig=csp ====
+// ==== 0x007C990E  _isalpha  this=-  sig=csp ====
 int __cdecl isalpha(int C)
 {
   if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9915*/
@@ -11677,7 +11677,7 @@ int __cdecl islower(int C)
 }
 
 
-// ==== 0x007C998C  _isdigit  this=unknown  sig=csp ====
+// ==== 0x007C998C  _isdigit  this=-  sig=csp ====
 int __cdecl isdigit(int C)
 {
   if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9993*/
@@ -11687,7 +11687,7 @@ int __cdecl isdigit(int C)
 }
 
 
-// ==== 0x007C99B4  _isxdigit  this=unknown  sig=csp ====
+// ==== 0x007C99B4  _isxdigit  this=-  sig=csp ====
 int __cdecl isxdigit(int C)
 {
   if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c99bb*/
@@ -11697,7 +11697,7 @@ int __cdecl isxdigit(int C)
 }
 
 
-// ==== 0x007C99E1  _isspace  this=unknown  sig=csp ====
+// ==== 0x007C99E1  _isspace  this=-  sig=csp ====
 int __cdecl isspace(int C)
 {
   if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c99e8*/
@@ -11717,7 +11717,7 @@ int __cdecl ispunct(int C)
 }
 
 
-// ==== 0x007C9A31  _isalnum  this=unknown  sig=csp ====
+// ==== 0x007C9A31  _isalnum  this=-  sig=csp ====
 int __cdecl isalnum(int C)
 {
   if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9a38*/
@@ -11737,7 +11737,7 @@ int __cdecl isprint(int C)
 }
 
 
-// ==== 0x007C9A8D  _isgraph  this=unknown  sig=csp ====
+// ==== 0x007C9A8D  _isgraph  this=-  sig=csp ====
 int __cdecl isgraph(int C)
 {
   if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9a94*/
@@ -11801,7 +11801,7 @@ int __cdecl __iscsym(int C)
 }
 
 
-// ==== 0x007C9B72  _atol  this=unknown  sig=csp ====
+// ==== 0x007C9B72  _atol  this=-  sig=csp ====
 int __cdecl atol(const char *String)
 {
   int v3; // esi
@@ -11832,7 +11832,7 @@ int __cdecl atol(const char *String)
 }
 
 
-// ==== 0x007C9BFD  _atoi  this=unknown  sig=csp ====
+// ==== 0x007C9BFD  _atoi  this=-  sig=csp ====
 int __cdecl atoi(const char *String)
 {
   return atol(String); /*0x7c9c07*/
@@ -11916,7 +11916,7 @@ char *__cdecl strtok(char *String, ObjectClass *aP1)
 }
 
 
-// ==== 0x007C9D66  _atof  this=unknown  sig=csp ====
+// ==== 0x007C9D66  _atof  this=-  sig=csp ====
 double __cdecl atof(CCINIClass *aP0)
 {
   _BYTE v4[24]; // [esp+4h] [ebp-18h] BYREF
@@ -11930,7 +11930,7 @@ double __cdecl atof(CCINIClass *aP0)
 }
 
 
-// ==== 0x007C9DBD  globalHelper_0C9DBD  this=unknown  sig=csp ====
+// ==== 0x007C9DBD  globalHelper_0C9DBD  this=-  sig=csp ====
 int __cdecl globalHelper_0C9DBD(int a1, CCINIClass *aP1, int a3)
 {
   return strtoxl((unsigned __int8 *)a1, (unsigned __int8 **)aP1, a3, 0); /*0x7c9dd3*/
@@ -12053,7 +12053,7 @@ LABEL_44:
 }
 
 
-// ==== 0x007C9FD9  _strtoul  this=unknown  sig=csp ====
+// ==== 0x007C9FD9  _strtoul  this=-  sig=csp ====
 unsigned int __cdecl strtoul(const char *String, char **EndPtr, int Radix)
 {
   return strtoxl((unsigned __int8 *)String, (unsigned __int8 **)EndPtr, Radix, 1); /*0x7c9fef*/
@@ -12304,7 +12304,7 @@ TrailUp3:
 }
 
 
-// ==== 0x007CA3C5  _wcsrchr  this=unknown  sig=csp ====
+// ==== 0x007CA3C5  _wcsrchr  this=-  sig=csp ====
 wchar_t *__cdecl wcsrchr(const wchar_t *Str, wchar_t Ch)
 {
   const wchar_t *v2; // eax
@@ -12342,7 +12342,7 @@ size_t __cdecl wcslen(const wchar_t *String)
 }
 
 
-// ==== 0x007CA422  _wcsncpy  this=VOID_PTR  sig=csp ====
+// ==== 0x007CA422  _wcsncpy  this=-  sig=csp ====
 wchar_t *__cdecl wcsncpy(wchar_t *Destination, const wchar_t *Source, DropListClass *aP2)
 {
   DropListClass *v3; // ecx
@@ -12406,7 +12406,7 @@ wchar_t *__cdecl wcscat(wchar_t *Destination, CampaignScore *aP1)
 }
 
 
-// ==== 0x007CA489  _wcscpy  this=VOID_PTR  sig=csp ====
+// ==== 0x007CA489  _wcscpy  this=-  sig=csp ====
 wchar_t *__cdecl wcscpy(wchar_t *Destination, const wchar_t *Source)
 {
   const wchar_t *v2; // ecx
@@ -12431,7 +12431,7 @@ wchar_t *__cdecl wcscpy(wchar_t *Destination, const wchar_t *Source)
 }
 
 
-// ==== 0x007CA4B0  _strstr  this=int  sig=csp ====
+// ==== 0x007CA4B0  _strstr  this=-  sig=csp ====
 char *__cdecl strstr(ObjectClass *aP0, const char *SubStr)
 {
   char v2; // dl
@@ -12496,7 +12496,7 @@ first_char_found:
 }
 
 
-// ==== 0x007CA530  _sscanf  this=int  sig=csp ====
+// ==== 0x007CA530  _sscanf  this=-  sig=csp ====
 int sscanf(const char *const Buffer, const char *const Format, ...)
 {
   FILE Stream; // [esp+0h] [ebp-20h] BYREF
@@ -12511,7 +12511,7 @@ int sscanf(const char *const Buffer, const char *const Format, ...)
 }
 
 
-// ==== 0x007CA564  _swprintf  this=VOID_PTR  sig=csp ====
+// ==== 0x007CA564  _swprintf  this=-  sig=csp ====
 int swprintf(wchar_t *const Buffer, const size_t BufferCount, const wchar_t *const Format, CampaignScore *aP3)
 {
   int v4; // eax
@@ -12538,7 +12538,7 @@ int swprintf(wchar_t *const Buffer, const size_t BufferCount, const wchar_t *con
 }
 
 
-// ==== 0x007CA5D3  _wcscmp  this=VOID_PTR  sig=csp ====
+// ==== 0x007CA5D3  _wcscmp  this=-  sig=csp ====
 int __cdecl wcscmp(const wchar_t *String1, const wchar_t *String2)
 {
   const wchar_t *v3; // esi
@@ -12562,7 +12562,7 @@ int __cdecl wcscmp(const wchar_t *String1, const wchar_t *String2)
 }
 
 
-// ==== 0x007CA610  _strncmp  this=int  sig=csp ====
+// ==== 0x007CA610  _strncmp  this=-  sig=csp ====
 int __cdecl strncmp(AnimClass *aP0, const char *Str2, size_t MaxCount)
 {
   size_t v3; // ecx
@@ -12610,7 +12610,7 @@ int __cdecl strncmp(AnimClass *aP0, const char *Str2, size_t MaxCount)
 }
 
 
-// ==== 0x007CA650  ObjectClass::__alloca_probe  this=VOID_PTR  sig=csp ====
+// ==== 0x007CA650  ObjectClass::__alloca_probe  this=ObjectClass  sig=csp ====
 void _alloca_probe(WinModemClass *aP0, char a2)
 {
   unsigned int v2; // eax
@@ -12622,7 +12622,7 @@ void _alloca_probe(WinModemClass *aP0, char a2)
 }
 
 
-// ==== 0x007CA67F  _time  this=int  sig=csp ====
+// ==== 0x007CA67F  _time  this=-  sig=csp ====
 __time32_t __cdecl time(__time32_t *const Time)
 {
   int v1; // eax
@@ -12666,7 +12666,7 @@ __time32_t __cdecl time(__time32_t *const Time)
 }
 
 
-// ==== 0x007CA75B  _fclose  this=float  sig=csp ====
+// ==== 0x007CA75B  _fclose  this=-  sig=csp ====
 int __cdecl fclose(MouseClass *aP0)
 {
   int v1; // edi
@@ -12686,7 +12686,7 @@ int __cdecl fclose(MouseClass *aP0)
 }
 
 
-// ==== 0x007CA78C  __fclose_lk  this=unknown  sig=csp ====
+// ==== 0x007CA78C  __fclose_lk  this=-  sig=csp ====
 int __cdecl _fclose_lk(MouseClass *aP0)
 {
   int v1; // edi
@@ -12714,7 +12714,7 @@ int __cdecl _fclose_lk(MouseClass *aP0)
 }
 
 
-// ==== 0x007CA7D8  _fprintf  this=VOID_PTR  sig=csp ====
+// ==== 0x007CA7D8  _fprintf  this=-  sig=csp ====
 int fprintf(MouseClass *aP0, const char *const Format, CellStruct *aP2)
 {
   int v3; // edi
@@ -12729,7 +12729,7 @@ int fprintf(MouseClass *aP0, const char *const Format, CellStruct *aP2)
 }
 
 
-// ==== 0x007CA814  __fsopen  this=unknown  sig=csp ====
+// ==== 0x007CA814  __fsopen  this=-  sig=csp ====
 FILE *__cdecl _fsopen(const char *FileName, const char *Mode, int ShFlag)
 {
   FILE *result; // eax
@@ -12748,14 +12748,14 @@ FILE *__cdecl _fsopen(const char *FileName, const char *Mode, int ShFlag)
 }
 
 
-// ==== 0x007CA845  _fopen  this=int  sig=csp ====
+// ==== 0x007CA845  _fopen  this=-  sig=csp ====
 FILE *__cdecl fopen(const char *FileName, const char *Mode)
 {
   return _fsopen(FileName, Mode, 64); /*0x7ca857*/
 }
 
 
-// ==== 0x007CA858  _vswprintf  this=int  sig=csp ====
+// ==== 0x007CA858  _vswprintf  this=-  sig=csp ====
 int __cdecl vswprintf(wchar_t *const Buffer, CampaignScore *aP1, ObjectClass *aP2, SessionClass *aP3)
 {
   int v4; // eax
@@ -12820,7 +12820,7 @@ ObjectClass *__thiscall sub_7CA993(void *Block, char a2)
 }
 
 
-// ==== 0x007CA9AF  ObjectClass::j_Exception_Destructor  this=VOID_PTR  sig=csp ====
+// ==== 0x007CA9AF  ObjectClass::j_Exception_Destructor  this=ObjectClass  sig=csp ====
 // attributes: thunk
 void __thiscall j_Exception_Destructor(void *this)
 {
@@ -12856,7 +12856,7 @@ ObjectClass *__thiscall sub_7CA9E4(void *Block, char a2)
 }
 
 
-// ==== 0x007CAA00  ObjectClass::j_Exception_Destructor_2  this=VOID_PTR  sig=csp ====
+// ==== 0x007CAA00  ObjectClass::j_Exception_Destructor_2  this=ObjectClass  sig=csp ====
 // attributes: thunk
 void __thiscall j_Exception_Destructor_2(void *this)
 {
@@ -12864,7 +12864,7 @@ void __thiscall j_Exception_Destructor_2(void *this)
 }
 
 
-// ==== 0x007CAA05  ___RTtypeid  this=VOID_PTR  sig=csp ====
+// ==== 0x007CAA05  ___RTtypeid  this=-  sig=csp ====
 int __cdecl __RTtypeid(_DWORD *a1)
 {
   int v1; // esi
@@ -12889,7 +12889,7 @@ int __cdecl __RTtypeid(_DWORD *a1)
 }
 
 
-// ==== 0x007CAAE4  ___RTDynamicCast  this=unknown  sig=csp ====
+// ==== 0x007CAAE4  ___RTDynamicCast  this=-  sig=csp ====
 _BYTE *__cdecl __RTDynamicCast(IUnknown *aP0, int arg4, struct TypeDescriptor *a2, struct TypeDescriptor *a3, int a5)
 {
   _BYTE *result; // eax
@@ -12938,7 +12938,7 @@ ObjectClass *__thiscall sub_7CAC13(void *Block, char a2)
 }
 
 
-// ==== 0x007CAC2F  ObjectClass::j_Exception_Destructor_3  this=VOID_PTR  sig=csp ====
+// ==== 0x007CAC2F  ObjectClass::j_Exception_Destructor_3  this=ObjectClass  sig=csp ====
 // attributes: thunk
 void __thiscall j_Exception_Destructor_3(void *this)
 {
@@ -12955,7 +12955,7 @@ exception *__thiscall sub_7CAC34(exception *this, struct exception *a2)
 }
 
 
-// ==== 0x007CAC4C  ?FindCompleteObject_YAPAXPAPAX_Z  this=unknown  sig=csp ====
+// ==== 0x007CAC4C  ?FindCompleteObject_YAPAXPAPAX_Z  this=-  sig=csp ====
 char *__cdecl _FindCompleteObject_YAPAXPAPAX_Z(void **a1)
 {
   int v1; // edx
@@ -12971,7 +12971,7 @@ char *__cdecl _FindCompleteObject_YAPAXPAPAX_Z(void **a1)
 }
 
 
-// ==== 0x007CAC66  ?FindSITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z  this=unknown  sig=csp ====
+// ==== 0x007CAC66  ?FindSITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z  this=-  sig=csp ====
 const struct _s_RTTIBaseClassDescriptor *__cdecl _FindSITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z(
         void *a1,
         const struct _s_RTTICompleteObjectLocator *a2,
@@ -13005,7 +13005,7 @@ const struct _s_RTTIBaseClassDescriptor *__cdecl _FindSITargetTypeInstance_YAPBU
 }
 
 
-// ==== 0x007CACC0  ?FindMITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z  this=unknown  sig=csp ====
+// ==== 0x007CACC0  ?FindMITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z  this=-  sig=csp ====
 const struct _s_RTTIBaseClassDescriptor *__cdecl _FindMITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z(
         void *a1,
         const struct _s_RTTICompleteObjectLocator *a2,
@@ -13093,7 +13093,7 @@ LABEL_11:
 }
 
 
-// ==== 0x007CADB9  ?FindVITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z  this=unknown  sig=csp ====
+// ==== 0x007CADB9  ?FindVITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z  this=-  sig=csp ====
 const struct _s_RTTIBaseClassDescriptor *__cdecl _FindVITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z(
         void *a1,
         const struct _s_RTTICompleteObjectLocator *a2,
@@ -13196,7 +13196,7 @@ LABEL_15:
 }
 
 
-// ==== 0x007CAEF1  ?PMDtoOffset_YAHPAXABUPMD___Z  this=unknown  sig=csp ====
+// ==== 0x007CAEF1  ?PMDtoOffset_YAHPAXABUPMD___Z  this=-  sig=csp ====
 int __cdecl _PMDtoOffset_YAHPAXABUPMD___Z(char *a1, const struct PMD *a2)
 {
   int v2; // ecx
@@ -13210,7 +13210,7 @@ int __cdecl _PMDtoOffset_YAHPAXABUPMD___Z(char *a1, const struct PMD *a2)
 }
 
 
-// ==== 0x007CAF30  _strchr  this=int  sig=csp ====
+// ==== 0x007CAF30  _strchr  this=-  sig=csp ====
 char *__cdecl strchr(const char *Str, int Val)
 {
   const char *v2; // edx
@@ -13287,7 +13287,7 @@ int __cdecl _tolower(int C)
 }
 
 
-// ==== 0x007CAFF4  _tolower  this=unknown  sig=csp ====
+// ==== 0x007CAFF4  _tolower  this=-  sig=csp ====
 int __cdecl tolower(int C)
 {
   int v1; // ebx
@@ -13321,7 +13321,7 @@ int __cdecl tolower(int C)
 }
 
 
-// ==== 0x007CB063  _tolower_0  this=unknown  sig=csp ====
+// ==== 0x007CB063  _tolower_0  this=-  sig=csp ====
 int __cdecl tolower_0(int C)
 {
   int result; // eax
@@ -13361,7 +13361,7 @@ int __cdecl tolower_0(int C)
 }
 
 
-// ==== 0x007CB12E  __putws  this=unknown  sig=csp ====
+// ==== 0x007CB12E  __putws  this=-  sig=csp ====
 int __cdecl _putws(const wchar_t *Buffer)
 {
   int v1; // ebx
@@ -13389,7 +13389,7 @@ LABEL_7:
 }
 
 
-// ==== 0x007CB19C  _fflush  this=int  sig=csp ====
+// ==== 0x007CB19C  _fflush  this=-  sig=csp ====
 int __cdecl fflush(MouseClass *aP0)
 {
   int v2; // edi
@@ -13403,7 +13403,7 @@ int __cdecl fflush(MouseClass *aP0)
 }
 
 
-// ==== 0x007CB1CB  __fflush_lk  this=unknown  sig=csp ====
+// ==== 0x007CB1CB  __fflush_lk  this=-  sig=csp ====
 int __cdecl _fflush_lk(int a1)
 {
   if ( _flush((_DWORD *)a1) ) /*0x7cb1d1*/
@@ -13414,7 +13414,7 @@ int __cdecl _fflush_lk(int a1)
 }
 
 
-// ==== 0x007CB1F9  __flush  this=unknown  sig=csp ====
+// ==== 0x007CB1F9  __flush  this=-  sig=csp ====
 int __cdecl _flush(MouseClass *aP0)
 {
   int v1; // ebx
@@ -13460,7 +13460,7 @@ int sub_7CB255()
 }
 
 
-// ==== 0x007CB25E  _flsall  this=unknown  sig=csp ====
+// ==== 0x007CB25E  _flsall  this=-  sig=csp ====
 int __cdecl flsall(MouseClass *aP0)
 {
   int v1; // ebx
@@ -13588,7 +13588,7 @@ int __endstdio()
 }
 
 
-// ==== 0x007CB3F9  __lock_file  this=unknown  sig=csp ====
+// ==== 0x007CB3F9  __lock_file  this=-  sig=csp ====
 void __cdecl _lock_file(MouseClass *aP0)
 {
   if ( aP0 < (MouseClass *)&off_87BF50 || aP0 > (MouseClass *)&stru_87C1B0 ) /*0x7cb40b*/
@@ -13598,7 +13598,7 @@ void __cdecl _lock_file(MouseClass *aP0)
 }
 
 
-// ==== 0x007CB428  __lock_file2  this=unknown  sig=csp ====
+// ==== 0x007CB428  __lock_file2  this=-  sig=csp ====
 void __cdecl _lock_file2(int a1, int a2)
 {
   if ( a1 >= 20 ) /*0x7cb42f*/
@@ -13608,7 +13608,7 @@ void __cdecl _lock_file2(int a1, int a2)
 }
 
 
-// ==== 0x007CB44B  __unlock_file  this=unknown  sig=csp ====
+// ==== 0x007CB44B  __unlock_file  this=-  sig=csp ====
 void __cdecl _unlock_file(MouseClass *aP0)
 {
   if ( aP0 < (MouseClass *)&off_87BF50 || aP0 > (MouseClass *)&stru_87C1B0 ) /*0x7cb45d*/
@@ -13618,7 +13618,7 @@ void __cdecl _unlock_file(MouseClass *aP0)
 }
 
 
-// ==== 0x007CB47A  __unlock_file2  this=unknown  sig=csp ====
+// ==== 0x007CB47A  __unlock_file2  this=-  sig=csp ====
 void __cdecl _unlock_file2(int a1, int a2)
 {
   if ( a1 >= 20 ) /*0x7cb481*/
@@ -13628,7 +13628,7 @@ void __cdecl _unlock_file2(int a1, int a2)
 }
 
 
-// ==== 0x007CB49D  _srand  this=unknown  sig=csp ====
+// ==== 0x007CB49D  _srand  this=-  sig=csp ====
 IUnknown *srand(IUnknown *aP0)
 {
   IUnknown *result; // eax
@@ -13639,7 +13639,7 @@ IUnknown *srand(IUnknown *aP0)
 }
 
 
-// ==== 0x007CB4AA  _rand  this=VOID_PTR  sig=csp ====
+// ==== 0x007CB4AA  _rand  this=-  sig=csp ====
 int __cdecl rand()
 {
   int v0; // eax
@@ -13652,7 +13652,7 @@ int __cdecl rand()
 }
 
 
-// ==== 0x007CB4CC  _wcsncmp  this=unknown  sig=csp ====
+// ==== 0x007CB4CC  _wcsncmp  this=-  sig=csp ====
 int __cdecl wcsncmp(const wchar_t *String1, CampaignScore *aP1, size_t MaxCount)
 {
   bool v4; // zf
@@ -13721,7 +13721,7 @@ LABEL_6:
 }
 
 
-// ==== 0x007CB550  _strncat  this=unknown  sig=csp ====
+// ==== 0x007CB550  _strncat  this=-  sig=csp ====
 char *__cdecl strncat(CCINIClass *aP0, const char *Source, size_t Count)
 {
   size_t v3; // ecx
@@ -13863,7 +13863,7 @@ main_loop_1:
 }
 
 
-// ==== 0x007CB673  __splitpath  this=unknown  sig=csp ====
+// ==== 0x007CB673  __splitpath  this=-  sig=csp ====
 void __cdecl _splitpath(const char *FullPath, char *Drive, char *Dir, ObjectClass *aP3, char *Ext)
 {
   const char *v5; // ebx
@@ -13996,7 +13996,7 @@ int __cdecl vsprintf(char *const Buffer, const char *const Format, va_list ArgLi
 }
 
 
-// ==== 0x007CB80B  _fgetc  this=unknown  sig=csp ====
+// ==== 0x007CB80B  _fgetc  this=-  sig=csp ====
 int __cdecl fgetc(MouseClass *aP0)
 {
   int v2; // edi
@@ -14046,7 +14046,7 @@ int __cdecl iswxdigit(wint_t C)
 }
 
 
-// ==== 0x007CB8A8  _iswspace  this=unknown  sig=csp ====
+// ==== 0x007CB8A8  _iswspace  this=-  sig=csp ====
 int __cdecl iswspace(wint_t C)
 {
   return iswctype(C, 8u); /*0x7cb8b5*/
@@ -14067,7 +14067,7 @@ int __cdecl iswprint(wint_t C)
 }
 
 
-// ==== 0x007CB8E6  _iswgraph  this=unknown  sig=csp ====
+// ==== 0x007CB8E6  _iswgraph  this=-  sig=csp ====
 int __cdecl iswgraph(wint_t C)
 {
   return iswctype(C, 0x117u); /*0x7cb8f6*/
@@ -14088,7 +14088,7 @@ int __cdecl iswascii(wint_t C)
 }
 
 
-// ==== 0x007CB911  _wcstok  this=unknown  sig=csp ====
+// ==== 0x007CB911  _wcstok  this=-  sig=csp ====
 wchar_t *__cdecl wcstok(wchar_t *String, CampaignScore *aP1, wchar_t **Context)
 {
   ObjectClass *v3; // eax
@@ -14157,14 +14157,14 @@ LABEL_19:
 }
 
 
-// ==== 0x007CB9B8  _wcstol  this=unknown  sig=csp ====
+// ==== 0x007CB9B8  _wcstol  this=-  sig=csp ====
 int __cdecl wcstol(BlowStraw *aP0, wchar_t **EndPtr, int Radix)
 {
   return wcstoxl((wint_t *)aP0, EndPtr, Radix, 0); /*0x7cb9ce*/
 }
 
 
-// ==== 0x007CB9CF  _wcstoxl  this=unknown  sig=csp ====
+// ==== 0x007CB9CF  _wcstoxl  this=-  sig=csp ====
 int __cdecl wcstoxl(wint_t *a1, wint_t **a2, int a3, int a4)
 {
   wint_t v4; // si
@@ -14270,14 +14270,14 @@ LABEL_24:
 }
 
 
-// ==== 0x007CBB76  WideChar::ToLong  this=unknown  sig=csp ====
+// ==== 0x007CBB76  WideChar::ToLong  this=WideChar  sig=csp ====
 int __cdecl WideChar::ToLong(BlowStraw *aP0, int a2, int a3)
 {
   return wcstoxl((wint_t *)aP0, (wint_t **)a2, a3, 1); /*0x7cbb8c*/
 }
 
 
-// ==== 0x007CBB8D  __mbsnccnt  this=int  sig=csp ====
+// ==== 0x007CBB8D  __mbsnccnt  this=-  sig=csp ====
 size_t __cdecl _mbsnccnt(const unsigned __int8 *Str, size_t MaxCount)
 {
   size_t v2; // esi
@@ -14309,7 +14309,7 @@ size_t __cdecl _mbsnccnt(const unsigned __int8 *Str, size_t MaxCount)
 }
 
 
-// ==== 0x007CBBDB  _swscanf  this=unknown  sig=csp ====
+// ==== 0x007CBBDB  _swscanf  this=-  sig=csp ====
 int swscanf(const wchar_t *const Buffer, CampaignScore *aP1, ...)
 {
   FILE File; // [esp+0h] [ebp-20h] BYREF
@@ -14324,7 +14324,7 @@ int swscanf(const wchar_t *const Buffer, CampaignScore *aP1, ...)
 }
 
 
-// ==== 0x007CBC11  Object_Init_7CBC11  this=unknown  sig=csp ====
+// ==== 0x007CBC11  Object_Init_7CBC11  this=-  sig=csp ====
 char *__cdecl sub_7CBC11(char *VarName)
 {
   char *v1; // esi
@@ -14336,7 +14336,7 @@ char *__cdecl sub_7CBC11(char *VarName)
 }
 
 
-// ==== 0x007CBC32  _getenv  this=unknown  sig=csp ====
+// ==== 0x007CBC32  _getenv  this=-  sig=csp ====
 char *__cdecl getenv(const char *VarName)
 {
   const char **v1; // esi
@@ -14367,7 +14367,7 @@ char *__cdecl getenv(const char *VarName)
 }
 
 
-// ==== 0x007CBCAF  __itow  this=unknown  sig=csp ====
+// ==== 0x007CBCAF  __itow  this=-  sig=csp ====
 wchar_t *__cdecl _itow(int Value, wchar_t *Buffer, int Radix)
 {
   CHAR MultiByteStr[20]; // [esp+0h] [ebp-14h] BYREF
@@ -14432,14 +14432,14 @@ void _cinit()
 }
 
 
-// ==== 0x007CBDDC  _exit  this=unknown  sig=csp ====
+// ==== 0x007CBDDC  _exit  this=-  sig=csp ====
 void __cdecl __noreturn exit(int Code)
 {
   doexit(Code, 0, 0); /*0x7cbde4*/
 }
 
 
-// ==== 0x007CBDED  __exit  this=unknown  sig=csp ====
+// ==== 0x007CBDED  __exit  this=-  sig=csp ====
 void __cdecl __noreturn _exit(int Code)
 {
   doexit(Code, 1, 0); /*0x7cbdf5*/
@@ -14460,7 +14460,7 @@ void __cdecl _c_exit()
 }
 
 
-// ==== 0x007CBE1C  _doexit  this=unknown  sig=csp ====
+// ==== 0x007CBE1C  _doexit  this=-  sig=csp ====
 int __cdecl doexit(UINT uExitCode, int a2, int a3)
 {
   HANDLE CurrentProcess; // eax
@@ -14502,7 +14502,7 @@ int __cdecl doexit(UINT uExitCode, int a2, int a3)
 }
 
 
-// ==== 0x007CBEC1  __lockexit  this=unknown  sig=csp ====
+// ==== 0x007CBEC1  __lockexit  this=-  sig=csp ====
 void _lockexit()
 {
   _lock(13); /*0x7cbec3*/
@@ -14516,7 +14516,7 @@ int _unlockexit()
 }
 
 
-// ==== 0x007CBED3  __initterm  this=unknown  sig=csp ====
+// ==== 0x007CBED3  __initterm  this=-  sig=csp ====
 void __cdecl _initterm(_PVFV *First, _PVFV *Last)
 {
   while ( First < Last ) /*0x7cbedc*/
@@ -14543,7 +14543,7 @@ unsigned int __cdecl _clearfp()
 }
 
 
-// ==== 0x007CBF14  __control87  this=unknown  sig=csp ====
+// ==== 0x007CBF14  __control87  this=-  sig=csp ====
 unsigned int __cdecl _control87(unsigned int NewValue, unsigned int Mask)
 {
   unsigned int v2; // esi
@@ -14554,7 +14554,7 @@ unsigned int __cdecl _control87(unsigned int NewValue, unsigned int Mask)
 }
 
 
-// ==== 0x007CBF49  __controlfp  this=unknown  sig=csp ====
+// ==== 0x007CBF49  __controlfp  this=-  sig=csp ====
 unsigned int __cdecl _controlfp(unsigned int NewValue, unsigned int Mask)
 {
   return _control87(NewValue, Mask & 0xFFF7FFFF); /*0x7cbf5e*/
@@ -14582,7 +14582,7 @@ void __cdecl _fpreset()
 }
 
 
-// ==== 0x007CBF8A  __abstract_cw  this=unknown  sig=csp ====
+// ==== 0x007CBF8A  __abstract_cw  this=-  sig=csp ====
 char __cdecl _abstract_cw(char a1)
 {
   char result; // al
@@ -14602,7 +14602,7 @@ char __cdecl _abstract_cw(char a1)
 }
 
 
-// ==== 0x007CC01C  __hw_cw  this=unknown  sig=csp ====
+// ==== 0x007CC01C  __hw_cw  this=-  sig=csp ====
 char __cdecl _hw_cw(int a1)
 {
   char result; // al
@@ -14622,7 +14622,7 @@ char __cdecl _hw_cw(int a1)
 }
 
 
-// ==== 0x007CC0A5  __abstract_sw  this=unknown  sig=csp ====
+// ==== 0x007CC0A5  __abstract_sw  this=-  sig=csp ====
 char __cdecl _abstract_sw(char a1)
 {
   char result; // al
@@ -14642,7 +14642,7 @@ char __cdecl _abstract_sw(char a1)
 }
 
 
-// ==== 0x007CC0DC  __global_unwind2  this=unknown  sig=csp ====
+// ==== 0x007CC0DC  __global_unwind2  this=-  sig=csp ====
 void __cdecl _global_unwind2(PVOID TargetFrame)
 {
   RtlUnwind(TargetFrame, &gu_return, 0, 0); /*0x7cc0ef*/
@@ -14664,7 +14664,7 @@ int __cdecl _unwind_handler(int a1, int a2, int a3, _DWORD *a4)
 }
 
 
-// ==== 0x007CC11E  __local_unwind2  this=VOID_PTR  sig=csp ====
+// ==== 0x007CC11E  __local_unwind2  this=-  sig=csp ====
 int __cdecl _local_unwind2(int a1, int a2)
 {
   int result; // eax
@@ -14711,14 +14711,14 @@ int __cdecl _abnormal_termination()
 }
 
 
-// ==== 0x007CC1A9  __NLG_Notify1  this=unknown  sig=csp ====
+// ==== 0x007CC1A9  __NLG_Notify1  this=-  sig=csp ====
 void __stdcall _NLG_Notify1(int a1)
 {
   JUMPOUT(0x7CC1BC); /*0x7cc1bc*/
 }
 
 
-// ==== 0x007CC1B2  __NLG_Notify  this=unknown  sig=csp ====
+// ==== 0x007CC1B2  __NLG_Notify  this=-  sig=csp ====
 int __userpurge _NLG_Notify@<eax>(int result@<eax>, int a2@<ebp>, int a3)
 {
   unk_87C1D8 = *(_DWORD *)(a2 + 8); /*0x7cc1bc*/
@@ -14789,7 +14789,7 @@ int __stdcall _seh_longjmp_unwind_4(int a1)
 }
 
 
-// ==== 0x007CC2AC  _mbstowcs  this=int  sig=csp ====
+// ==== 0x007CC2AC  _mbstowcs  this=-  sig=csp ====
 size_t __cdecl mbstowcs(wchar_t *Dest, const char *Source, size_t MaxCount)
 {
   int v3; // ebx
@@ -14812,7 +14812,7 @@ size_t __cdecl mbstowcs(wchar_t *Dest, const char *Source, size_t MaxCount)
 }
 
 
-// ==== 0x007CC309  __mbstowcs_lk  this=unknown  sig=csp ====
+// ==== 0x007CC309  __mbstowcs_lk  this=-  sig=csp ====
 size_t __cdecl _mbstowcs_lk(LPWSTR lpWideCharStr, LPCCH lpMultiByteStr, unsigned int cchWideChar)
 {
   LPWSTR v3; // edx
@@ -14877,7 +14877,7 @@ LABEL_9:
 }
 
 
-// ==== 0x007CC409  _wcspbrk  this=unknown  sig=csp ====
+// ==== 0x007CC409  _wcspbrk  this=-  sig=csp ====
 wchar_t *__cdecl wcspbrk(BlowStraw *aP0, CampaignScore *aP1)
 {
   BlowStraw *result; // eax
@@ -14912,7 +14912,7 @@ LABEL_6:
 }
 
 
-// ==== 0x007CC447  _wcstombs  this=unknown  sig=csp ====
+// ==== 0x007CC447  _wcstombs  this=-  sig=csp ====
 size_t __cdecl wcstombs(CCINIClass *aP0, ObjectClass *aP1, size_t MaxCount)
 {
   int v3; // ebx
@@ -14935,7 +14935,7 @@ size_t __cdecl wcstombs(CCINIClass *aP0, ObjectClass *aP1, size_t MaxCount)
 }
 
 
-// ==== 0x007CC4A4  __wcstombs_lk  this=unknown  sig=csp ====
+// ==== 0x007CC4A4  __wcstombs_lk  this=-  sig=csp ====
 size_t __cdecl _wcstombs_lk(CCINIClass *aP0, ObjectClass *aP1, unsigned int cchWideChar)
 {
   size_t v3; // edi
@@ -15042,7 +15042,7 @@ LABEL_34:
 }
 
 
-// ==== 0x007CC653  _wcsncnt  this=unknown  sig=csp ====
+// ==== 0x007CC653  _wcsncnt  this=-  sig=csp ====
 int __cdecl wcsncnt(ObjectClass *aP0, int a2)
 {
   int v2; // ecx
@@ -15067,7 +15067,7 @@ int __cdecl wcsncnt(ObjectClass *aP0, int a2)
 }
 
 
-// ==== 0x007CC682  _wcsstr  this=unknown  sig=csp ====
+// ==== 0x007CC682  _wcsstr  this=-  sig=csp ====
 wchar_t *__cdecl wcsstr(CampaignScore *aP0, const wchar_t *SubStr)
 {
   CampaignScore *result; // eax
@@ -15340,14 +15340,14 @@ void *__cdecl _Gettnames()
 }
 
 
-// ==== 0x007CCA19  String::Wrapper5to4  this=unknown  sig=csp ====
+// ==== 0x007CCA19  String::Wrapper5to4  this=String  sig=csp ====
 int __cdecl String::Wrapper5to4(CampaignScore *aP0, int a2, int a3, int a4)
 {
   return String_Helper_7CCA34((unsigned __int8 *)aP0, a2, (unsigned __int8 *)a3, a4, 0); /*0x7cca33*/
 }
 
 
-// ==== 0x007CCA34  String_Helper_7CCA34  this=unknown  sig=csp ====
+// ==== 0x007CCA34  String_Helper_7CCA34  this=-  sig=csp ====
 unsigned int __cdecl sub_7CCA34(unsigned __int8 *a1, unsigned int a2, unsigned __int8 *a3, int a4, void *a5)
 {
   void *v5; // eax
@@ -15634,7 +15634,7 @@ void __cdecl _store_str(_BYTE *a1, _DWORD *a2, _DWORD *a3)
 }
 
 
-// ==== 0x007CCF44  ObjectClass::__store_num  this=VOID_PTR  sig=csp ====
+// ==== 0x007CCF44  ObjectClass::__store_num  this=ObjectClass  sig=csp ====
 int __cdecl _store_num(int a1, unsigned int a2, _DWORD *a3, unsigned int *a4)
 {
   int result; // eax
@@ -15703,7 +15703,7 @@ char *__cdecl _store_number(int a1, char **a2, _DWORD *a3)
 }
 
 
-// ==== 0x007CCFFC  __store_winword  this=unknown  sig=csp ====
+// ==== 0x007CCFFC  __store_winword  this=-  sig=csp ====
 void __cdecl _store_winword(unsigned __int8 *a1, int a2, _DWORD *a3, _DWORD *a4, int a5)
 {
   unsigned __int8 *v5; // ebx
@@ -15968,7 +15968,7 @@ LABEL_15:
 }
 
 
-// ==== 0x007CD2CB  _localtime  this=unknown  sig=csp ====
+// ==== 0x007CD2CB  _localtime  this=-  sig=csp ====
 struct tm *__cdecl localtime(CampaignScore *aP0)
 {
   CampaignScore *v1; // esi
@@ -16065,7 +16065,7 @@ struct tm *__cdecl localtime(CampaignScore *aP0)
 }
 
 
-// ==== 0x007CD42B  _remove  this=unknown  sig=csp ====
+// ==== 0x007CD42B  _remove  this=-  sig=csp ====
 int __cdecl remove(const char *FileName)
 {
   DWORD LastError; // eax
@@ -16081,14 +16081,14 @@ int __cdecl remove(const char *FileName)
 }
 
 
-// ==== 0x007CD455  __unlink  this=unknown  sig=csp ====
+// ==== 0x007CD455  __unlink  this=-  sig=csp ====
 int __cdecl _unlink(const char *FileName)
 {
   return remove(FileName); /*0x7cd45f*/
 }
 
 
-// ==== 0x007CD460  _tmpnam  this=unknown  sig=csp ====
+// ==== 0x007CD460  _tmpnam  this=-  sig=csp ====
 char *__cdecl tmpnam(char *Buffer)
 {
   char *v1; // edi
@@ -16188,7 +16188,7 @@ LABEL_15:
 }
 
 
-// ==== 0x007CD5B4  _init_namebuf  this=unknown  sig=csp ====
+// ==== 0x007CD5B4  _init_namebuf  this=-  sig=csp ====
 char *__cdecl init_namebuf(int a1)
 {
   char *v1; // esi
@@ -16217,7 +16217,7 @@ char *__cdecl init_namebuf(int a1)
 }
 
 
-// ==== 0x007CD615  _genfname  this=unknown  sig=csp ====
+// ==== 0x007CD615  _genfname  this=-  sig=csp ====
 int __cdecl genfname(const unsigned __int8 *Buffer)
 {
   char *v1; // esi
@@ -16241,7 +16241,7 @@ void sub_7CD65B()
 }
 
 
-// ==== 0x007CD662  unknown_libname_75  this=unknown  sig=csp ====
+// ==== 0x007CD662  unknown_libname_75  this=-  sig=csp ====
 // Microsoft VisualC 2-14/net runtime
 char *__cdecl unknown_libname_75(CampaignScore *aP0)
 {
@@ -16361,7 +16361,7 @@ differ:
 }
 
 
-// ==== 0x007CD790  _strcspn  this=unknown  sig=csp ====
+// ==== 0x007CD790  _strcspn  this=-  sig=csp ====
 size_t __cdecl strcspn(IUnknown *aP0, const char *Control)
 {
   unsigned int v2; // eax
@@ -16392,7 +16392,7 @@ size_t __cdecl strcspn(IUnknown *aP0, const char *Control)
 }
 
 
-// ==== 0x007CD7CE  _wcscspn  this=unknown  sig=csp ====
+// ==== 0x007CD7CE  _wcscspn  this=-  sig=csp ====
 size_t __cdecl wcscspn(ObjectClass *aP0, const wchar_t *Control)
 {
   ObjectClass *v2; // eax
@@ -16466,7 +16466,7 @@ void __noreturn start()
 }
 
 
-// ==== 0x007CD917  __amsg_exit  this=unknown  sig=csp ====
+// ==== 0x007CD917  __amsg_exit  this=-  sig=csp ====
 void __cdecl __noreturn _amsg_exit(DWORD NumberOfBytesWritten)
 {
   if ( MEMORY[0xB78230] == 1 ) /*0x7cd91e*/
@@ -16476,7 +16476,7 @@ void __cdecl __noreturn _amsg_exit(DWORD NumberOfBytesWritten)
 }
 
 
-// ==== 0x007CD93C  _fast_error_exit  this=unknown  sig=csp ====
+// ==== 0x007CD93C  _fast_error_exit  this=-  sig=csp ====
 void __cdecl __noreturn fast_error_exit(DWORD NumberOfBytesWritten)
 {
   if ( MEMORY[0xB78230] == 1 ) /*0x7cd943*/
@@ -16493,7 +16493,7 @@ void nullsub_269()
 }
 
 
-// ==== 0x007CD960  __mtinitlocks  this=unknown  sig=csp ====
+// ==== 0x007CD960  __mtinitlocks  this=-  sig=csp ====
 void _mtinitlocks()
 {
   InitializeCriticalSection(lpCriticalSection); /*0x7cd96d*/
@@ -16526,7 +16526,7 @@ void _mtdeletelocks()
 }
 
 
-// ==== 0x007CD9F5  __lock  this=unknown  sig=csp ====
+// ==== 0x007CD9F5  __lock  this=-  sig=csp ====
 void __cdecl _lock(int a1)
 {
   struct _RTL_CRITICAL_SECTION *v1; // edi
@@ -16552,7 +16552,7 @@ void __cdecl _lock(int a1)
 }
 
 
-// ==== 0x007CDA56  __unlock  this=int  sig=csp ====
+// ==== 0x007CDA56  __unlock  this=-  sig=csp ====
 void __cdecl _unlock(int a1)
 {
   LeaveCriticalSection(*(&dword_87C2A8 + a1)); /*0x7cda63*/
@@ -16566,7 +16566,7 @@ void nullsub_270()
 }
 
 
-// ==== 0x007CDA90  _strcmp  this=unknown  sig=csp ====
+// ==== 0x007CDA90  _strcmp  this=-  sig=csp ====
 int __cdecl strcmp(IUnknown *aP0, IUnknown *aP1)
 {
   IUnknown *v2; // edx
@@ -16775,7 +16775,7 @@ LABEL_31:
 }
 
 
-// ==== 0x007CDD5A  __setlocale_set_cat  this=unknown  sig=csp ====
+// ==== 0x007CDD5A  __setlocale_set_cat  this=-  sig=csp ====
 char *__cdecl _setlocale_set_cat(void *a0, IUnknown *aP1)
 {
   size_t v3; // eax
@@ -16860,7 +16860,7 @@ CCINIClass *_setlocale_get_all()
 }
 
 
-// ==== 0x007CDF2E  __expandlocale  this=unknown  sig=csp ====
+// ==== 0x007CDF2E  __expandlocale  this=-  sig=csp ====
 char *__cdecl _expandlocale(IUnknown *aP0, IUnknown *aP1, _WORD *a2, _DWORD *a3)
 {
   AbstractClass *result; // eax
@@ -16910,7 +16910,7 @@ int ReturnNull3()
 }
 
 
-// ==== 0x007CE049  __strcats  this=unknown  sig=csp ====
+// ==== 0x007CE049  __strcats  this=-  sig=csp ====
 char *__cdecl _strcats(CCINIClass *aP0, int a2)
 {
   int v2; // edi
@@ -16935,7 +16935,7 @@ char *__cdecl _strcats(CCINIClass *aP0, int a2)
 }
 
 
-// ==== 0x007CE06E  ___lc_strtolc  this=unknown  sig=csp ====
+// ==== 0x007CE06E  ___lc_strtolc  this=-  sig=csp ====
 int __cdecl __lc_strtolc(char *a0, IUnknown *aP1)
 {
   ObjectClass *v2; // esi
@@ -16997,7 +16997,7 @@ int __cdecl __lc_strtolc(char *a0, IUnknown *aP1)
 }
 
 
-// ==== 0x007CE13A  ___lc_lctostr  this=unknown  sig=csp ====
+// ==== 0x007CE13A  ___lc_lctostr  this=-  sig=csp ====
 char *__cdecl __lc_lctostr(char *Destination, char *Source)
 {
   char *result; // eax
@@ -17012,7 +17012,7 @@ char *__cdecl __lc_lctostr(char *Destination, char *Source)
 }
 
 
-// ==== 0x007CE18D  __flsbuf  this=unknown  sig=csp ====
+// ==== 0x007CE18D  __flsbuf  this=-  sig=csp ====
 int __cdecl _flsbuf(int Ch, FILE *File)
 {
   FILE *v2; // esi
@@ -17082,7 +17082,7 @@ LABEL_6:
 }
 
 
-// ==== 0x007CE2A5  __output  this=unknown  sig=csp ====
+// ==== 0x007CE2A5  __output  this=-  sig=csp ====
 int __cdecl _output(FILE *File, char *a2, int a3)
 {
   int v3; // esi
@@ -17566,7 +17566,7 @@ LABEL_171:
 }
 
 
-// ==== 0x007CE9E6  _write_char  this=unknown  sig=csp ====
+// ==== 0x007CE9E6  _write_char  this=-  sig=csp ====
 _DWORD *__cdecl write_char(int a1, FILE *File, _DWORD *a3)
 {
   int v4; // eax
@@ -17592,7 +17592,7 @@ _DWORD *__cdecl write_char(int a1, FILE *File, _DWORD *a3)
 }
 
 
-// ==== 0x007CEA1B  _write_multi_char  this=unknown  sig=csp ====
+// ==== 0x007CEA1B  _write_multi_char  this=-  sig=csp ====
 _DWORD *__cdecl write_multi_char(int a1, _DWORD *a2, FILE *File, _DWORD *a4)
 {
   _DWORD *result; // eax
@@ -17610,7 +17610,7 @@ _DWORD *__cdecl write_multi_char(int a1, _DWORD *a2, FILE *File, _DWORD *a4)
 }
 
 
-// ==== 0x007CEA4C  _write_string  this=unknown  sig=csp ====
+// ==== 0x007CEA4C  _write_string  this=-  sig=csp ====
 _DWORD *__cdecl write_string(char *a1, _DWORD *a2, FILE *File, _DWORD *a4)
 {
   _DWORD *result; // eax
@@ -17630,7 +17630,7 @@ _DWORD *__cdecl write_string(char *a1, _DWORD *a2, FILE *File, _DWORD *a4)
 }
 
 
-// ==== 0x007CEA84  _get_int_arg  this=unknown  sig=csp ====
+// ==== 0x007CEA84  _get_int_arg  this=-  sig=csp ====
 int __cdecl get_int_arg(_DWORD *a1)
 {
   *a1 += 4; /*0x7cea88*/
@@ -17793,7 +17793,7 @@ int *__cdecl _fassign(int a1, int *a2, int a3)
 }
 
 
-// ==== 0x007CEC26  __cftoe  this=unknown  sig=csp ====
+// ==== 0x007CEC26  __cftoe  this=-  sig=csp ====
 _BYTE *__cdecl _cftoe(double *a1, _BYTE *a2, int a3, int a4)
 {
   double v6; // [esp+0h] [ebp-3Ch]
@@ -17855,7 +17855,7 @@ _BYTE *__cdecl _cftoe2(_BYTE *a1, int a2, int a3, int a4, char a5)
 }
 
 
-// ==== 0x007CED49  __cftof  this=unknown  sig=csp ====
+// ==== 0x007CED49  __cftof  this=-  sig=csp ====
 char *__cdecl _cftof(double *a1, char *Src, size_t Size)
 {
   double v5; // [esp+0h] [ebp-3Ch]
@@ -17870,7 +17870,7 @@ char *__cdecl _cftof(double *a1, char *Src, size_t Size)
 }
 
 
-// ==== 0x007CED9E  __cftof2  this=unknown  sig=csp ====
+// ==== 0x007CED9E  __cftof2  this=-  sig=csp ====
 char *__cdecl _cftof2(char *Src, int Size, _DWORD *a3, char a4)
 {
   int v4; // eax
@@ -17937,7 +17937,7 @@ LABEL_15:
 }
 
 
-// ==== 0x007CEE45  __cftog  this=unknown  sig=csp ====
+// ==== 0x007CEE45  __cftog  this=-  sig=csp ====
 char *__cdecl _cftog(double *a1, char *Src, char *Size, int a4)
 {
   int v5; // esi
@@ -17971,7 +17971,7 @@ char *__cdecl _cfltcvt(double *a1, char *Src, int a3, char *Size, int a5)
 }
 
 
-// ==== 0x007CEF29  __shift  this=unknown  sig=csp ====
+// ==== 0x007CEF29  __shift  this=-  sig=csp ====
 void __cdecl _shift(const char *Src, int a2)
 {
   size_t v2; // eax
@@ -18263,7 +18263,7 @@ LABEL_7:
 }
 
 
-// ==== 0x007CF51C  __powhlp  this=VOID_PTR  sig=csp ====
+// ==== 0x007CF51C  __powhlp  this=-  sig=csp ====
 int __cdecl _powhlp(double a1, double a2, double *a3)
 {
   double v4; // st7
@@ -18341,7 +18341,7 @@ LABEL_7:
 }
 
 
-// ==== 0x007CF64C  __d_inttype  this=unknown  sig=csp ====
+// ==== 0x007CF64C  __d_inttype  this=-  sig=csp ====
 int __cdecl _d_inttype(double X)
 {
   if ( (_fpclass(X) & 0x90) != 0 ) /*0x7cf662*/
@@ -18352,7 +18352,7 @@ int __cdecl _d_inttype(double X)
 }
 
 
-// ==== 0x007CF6B1  __heap_init  this=int  sig=csp ====
+// ==== 0x007CF6B1  __heap_init  this=-  sig=csp ====
 int __cdecl _heap_init(int a1)
 {
   hHeap = HeapCreate(a1 == 0, 0x1000u, 0); /*0x7cf6ca*/
@@ -18428,7 +18428,7 @@ int __sbh_heap_init()
 }
 
 
-// ==== 0x007CF7BD  ___sbh_find_block  this=unknown  sig=csp ====
+// ==== 0x007CF7BD  ___sbh_find_block  this=-  sig=csp ====
 char *__cdecl __sbh_find_block(INIClass *aP0)
 {
   AbstractClass *result; // eax

@@ -2,7 +2,7 @@
 // by tools/csp_export/rewrite_member_refs.py (mechanical, CSP member table).
 // REFERENCE ONLY - not compiled. Width-matched rewrites; unmatched kept raw.
 
-// ==== 0x005C0080  Entity_Load  this=unknown  sig=csp ====
+// ==== 0x005C0080  Entity_Load  this=-  sig=csp ====
 char __fastcall sub_5C0080(char **a1, _BYTE *a2)
 {
   char result; // al
@@ -329,7 +329,7 @@ void __thiscall sub_5C0630(_DWORD *this)
 }
 
 
-// ==== 0x005C0640  Render_Play  this=VOID_PTR  sig=csp ====
+// ==== 0x005C0640  Render_Play  this=-  sig=csp ====
 char __fastcall sub_5C0640(const char *a1, char *a2, int a3)
 {
   char *v3; // ebp
@@ -378,7 +378,7 @@ char __fastcall sub_5C0640(const char *a1, char *a2, int a3)
 }
 
 
-// ==== 0x005C07D0  CreateMovie  this=int  sig=csp ====
+// ==== 0x005C07D0  CreateMovie  this=-  sig=csp ====
 _DWORD *__fastcall Movie_Create(int a1, int a2, int *a3)
 {
   int *v4; // eax
@@ -1011,7 +1011,7 @@ _DWORD *__thiscall ScenarioClass::initAI(MultiplayerBattle *this, char a2)
 }
 
 
-// ==== 0x005C1030  ListBox::Constructor  this=int  sig=csp ====
+// ==== 0x005C1030  ListBox::Constructor  this=ListBox  sig=csp ====
 wchar_t **__thiscall ListBox::Constructor(wchar_t *this)
 {
   char v1; // bl
@@ -2799,7 +2799,7 @@ int __thiscall MPCooperative::_vt20(_DWORD *this, HWND hWnd, int a3)
 }
 
 
-// ==== 0x005C2D00  MPCooperative_Play  this=int  sig=csp ====
+// ==== 0x005C2D00  MPCooperative_Play  this=-  sig=csp ====
 int __stdcall MPCooperative_Play(AnimClass *aP0, int a2, int a3)
 {
   int v3; // ecx
@@ -3518,30 +3518,30 @@ LABEL_47:
 }
 
 
-// ==== 0x005C3EC0  MovieClass::Create  this=VOID_PTR  sig=csp ====
+// ==== 0x005C3EC0  MovieClass::Create  this=MovieClass  sig=csp ====
 bool __thiscall MovieClass_Create(int *this)
 {
   void *v2; // edi
   _DWORD *v3; // eax
   _DWORD *v4; // eax
 
-  v2 = (void *)*(this + 16); /*0x5c3ec4*/
+  v2 = (void *)this->MovieClass_field_0x10; /*0x5c3ec4*/
   if ( v2 ) /*0x5c3ec9*/
   {
-    Array::Cleanup(*(this + 16)); /*0x5c3ecd*/
+    Array::Cleanup(this->MovieClass_field_0x10); /*0x5c3ecd*/
     __3_YAXPAX_Z(v2); /*0x5c3ed3*/
   }
-  *(this + 16) = 0; /*0x5c3edd*/
+  this->MovieClass_field_0x10 = 0; /*0x5c3edd*/
   v3 = __2_YAPAXI_Z(0x70u); /*0x5c3ee4*/
   if ( v3 ) /*0x5c3eee*/
     v4 = MissionClass::Init(v3); /*0x5c3ef2*/
   else
     v4 = 0; /*0x5c3ef9*/
-  *(this + 16) = (int)v4; /*0x5c3eff*/
+  this->MovieClass_field_0x10 = (int)v4; /*0x5c3eff*/
   Movie::SetupScreen((int)v4, 0); /*0x5c3f02*/
   if ( MEMORY[0xA8DA84] == 2 ) /*0x5c3f0e*/
-    String::AssignWideToChar((char *)*(this + 16), *(char **)MEMORY[0xA8DA78], *(char **)(MEMORY[0xA8DA78] + 4)); /*0x5c3f1f*/
-  return *(this + 16) != 0; /*0x5c3f27*/
+    String::AssignWideToChar((char *)this->MovieClass_field_0x10, *(char **)MEMORY[0xA8DA78], *(char **)(MEMORY[0xA8DA78] + 4)); /*0x5c3f1f*/
+  return this->MovieClass_field_0x10 != 0; /*0x5c3f27*/
 }
 
 
@@ -5651,7 +5651,7 @@ int sub_5C6060()
 }
 
 
-// ==== 0x005C6080  sub_5C6080  this=unknown  sig=csp ====
+// ==== 0x005C6080  sub_5C6080  this=-  sig=csp ====
 int __stdcall sub_5C6080(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
@@ -5680,7 +5680,7 @@ BOOL __thiscall ShowConfirmDialog(_WORD *lParam)
 }
 
 
-// ==== 0x005C6120  PtrVector::Destroy  this=int  sig=csp ====
+// ==== 0x005C6120  PtrVector::Destroy  this=PtrVector  sig=csp ====
 int __thiscall PtrVector_Destroy(_DWORD *this)
 {
   int i; // edi
@@ -5740,7 +5740,7 @@ void *sub_5C61D0()
 }
 
 
-// ==== 0x005C61E0  Hash_Check_5C61E0  this=unknown  sig=csp ====
+// ==== 0x005C61E0  Hash_Check_5C61E0  this=-  sig=csp ====
 int sub_5C61E0()
 {
   return 3511; /*0x5c61e5*/
@@ -5799,7 +5799,7 @@ int __fastcall sub_5C6230(unsigned int a1, _BYTE *a2)
 }
 
 
-// ==== 0x005C62B0  EncodeVarInt  this=unknown  sig=csp ====
+// ==== 0x005C62B0  EncodeVarInt  this=-  sig=csp ====
 int __fastcall VarInt_Encode(int a1, _BYTE *a2, int a3)
 {
   unsigned int v4; // eax
@@ -5856,7 +5856,7 @@ int __fastcall VarInt_Encode(int a1, _BYTE *a2, int a3)
 }
 
 
-// ==== 0x005C6370  DecodeLengthLCW  this=unknown  sig=csp ====
+// ==== 0x005C6370  DecodeLengthLCW  this=-  sig=csp ====
 char __fastcall LCW_DecodeLength(int a1, _BYTE *a2, int a3)
 {
   int v3; // eax
@@ -5980,7 +5980,7 @@ unsigned int __userpurge __spoils<ecx> sub_5C63F0@<eax>(
 }
 
 
-// ==== 0x005C6490  EncodeVarInt_Helper  this=unknown  sig=csp ====
+// ==== 0x005C6490  EncodeVarInt_Helper  this=-  sig=csp ====
 int __fastcall sub_5C6490(_BYTE *a1, char *a2, int a3)
 {
   char *v4; // esi
@@ -6085,7 +6085,7 @@ char __fastcall sub_5C6550(int a1, _BYTE *a2, int a3, int a4)
 }
 
 
-// ==== 0x005C65B0  BigInt_Helper  this=unknown  sig=csp ====
+// ==== 0x005C65B0  BigInt_Helper  this=-  sig=csp ====
 int __fastcall sub_5C65B0(int *a1, int a2)
 {
   int result; // eax
@@ -6102,7 +6102,7 @@ int __fastcall sub_5C65B0(int *a1, int a2)
 }
 
 
-// ==== 0x005C6660  RotateBitBufferRight  this=int  sig=csp ====
+// ==== 0x005C6660  RotateBitBufferRight  this=-  sig=csp ====
 void __fastcall BitBuffer_RotateRight(_DWORD *a1, int a2, int a3)
 {
   int v4; // ecx
@@ -6210,7 +6210,7 @@ void __fastcall BitBuffer_RotateRight(_DWORD *a1, int a2, int a3)
 }
 
 
-// ==== 0x005C67A0  RotateBitBufferLeft  this=int  sig=csp ====
+// ==== 0x005C67A0  RotateBitBufferLeft  this=-  sig=csp ====
 void __fastcall RotateBitBufferLeft(int *a0, int a2, Buffer *aP2)
 {
   char v3; // di
@@ -6305,7 +6305,7 @@ void __fastcall RotateBitBufferLeft(int *a0, int a2, Buffer *aP2)
 }
 
 
-// ==== 0x005C6940  InitArrayWithValue  this=int  sig=csp ====
+// ==== 0x005C6940  InitArrayWithValue  this=-  sig=csp ====
 int __fastcall InitArrayWithValue(_DWORD *a0, int a2, AbstractClass *aP2)
 {
   memset(a0, 0, 4 * (_DWORD)aP2); /*0x5c694c*/
@@ -6314,7 +6314,7 @@ int __fastcall InitArrayWithValue(_DWORD *a0, int a2, AbstractClass *aP2)
 }
 
 
-// ==== 0x005C6960  FindBitArrayHighestBit  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x005C6960  FindBitArrayHighestBit  this=-  sig=ida-proto ====
 int __fastcall BitArray_FindHighestBit(int a1, int a2)
 {
   _DWORD *v2; // eax
@@ -6353,7 +6353,7 @@ LABEL_4:
 }
 
 
-// ==== 0x005C69E0  CompareBigIntLE  this=unknown  sig=csp ====
+// ==== 0x005C69E0  CompareBigIntLE  this=-  sig=csp ====
 int __fastcall CompareBigIntLE(int a1, int a2, int a3)
 {
   int v3; // edi
@@ -6387,7 +6387,7 @@ int __fastcall CompareBigIntLE(int a1, int a2, int a3)
 }
 
 
-// ==== 0x005C6A30  Crypto_Helper  this=unknown  sig=csp ====
+// ==== 0x005C6A30  Crypto_Helper  this=-  sig=csp ====
 bool __fastcall Crypto_Helper(unsigned int *a0, unsigned int *a1, _DWORD *a2, Crypto *aP3, int a5)
 {
   bool result; // al
@@ -6414,7 +6414,7 @@ bool __fastcall Crypto_Helper(unsigned int *a0, unsigned int *a1, _DWORD *a2, Cr
 }
 
 
-// ==== 0x005C6AA0  sub_5C6AA0  this=unknown  sig=csp ====
+// ==== 0x005C6AA0  sub_5C6AA0  this=-  sig=csp ====
 bool __fastcall sub_5C6AA0(unsigned int *a1, unsigned int *a2, int a3, bool a4, int a5)
 {
   int v6; // ebp
@@ -6443,7 +6443,7 @@ bool __fastcall sub_5C6AA0(unsigned int *a1, unsigned int *a2, int a3, bool a4, 
 }
 
 
-// ==== 0x005C6B60  DecodeAudioSampleWord  this=unknown  sig=csp ====
+// ==== 0x005C6B60  DecodeAudioSampleWord  this=-  sig=csp ====
 unsigned __int8 __fastcall DecodeAudioSampleWord(
         int a1,
         unsigned __int16 *a2,
@@ -6475,7 +6475,7 @@ unsigned __int8 __fastcall DecodeAudioSampleWord(
 }
 
 
-// ==== 0x005C6BC0  FillArrayPattern  this=int  sig=csp ====
+// ==== 0x005C6BC0  FillArrayPattern  this=-  sig=csp ====
 int __fastcall Array_FillPattern(_DWORD *a1, char *a2, _DWORD *a3, int a4)
 {
   int v4; // ebp
@@ -6629,7 +6629,7 @@ LABEL_21:
 }
 
 
-// ==== 0x005C6D90  sub_5C6D90  this=unknown  sig=csp ====
+// ==== 0x005C6D90  sub_5C6D90  this=-  sig=csp ====
 int __fastcall sub_5C6D90(int a1, unsigned __int16 *a2, __int16 a3, int a4)
 {
   unsigned int v4; // esi
@@ -7025,7 +7025,7 @@ int __fastcall BigInt::ArrayArithmetic(int *a1, char *a2, _DWORD *a3, int a4)
 }
 
 
-// ==== 0x005C71E0  ShiftBigIntAndScan  this=int  sig=csp ====
+// ==== 0x005C71E0  ShiftBigIntAndScan  this=-  sig=csp ====
 __int16 __fastcall BigInt_ShiftAndScan(_DWORD *a1, int a2, int a3, int a4)
 {
   _DWORD *v6; // eax
@@ -7118,7 +7118,7 @@ LABEL_11:
 }
 
 
-// ==== 0x005C7310  SubtractBigInteger  this=int  sig=csp ====
+// ==== 0x005C7310  SubtractBigInteger  this=-  sig=csp ====
 int __fastcall SubtractBigInteger(_DWORD *a1, _DWORD *a2, int a3, char *a4, Buffer *aP2)
 {
   char *v7; // eax
@@ -7496,7 +7496,7 @@ LABEL_29:
 }
 
 
-// ==== 0x005C7740  ModInverseBigInteger  this=unknown  sig=csp ====
+// ==== 0x005C7740  ModInverseBigInteger  this=-  sig=csp ====
 int __fastcall ModInverseBigInteger(char *a1, const void *a2, const void *a3, int a4)
 {
   int v4; // ebp
@@ -7615,7 +7615,7 @@ int __fastcall ModInverseBigInteger(char *a1, const void *a2, const void *a3, in
 }
 
 
-// ==== 0x005C7990  DivideBigInteger  this=int  sig=csp ====
+// ==== 0x005C7990  DivideBigInteger  this=-  sig=csp ====
 int __fastcall DivideBigInteger(_DWORD *a1, char *a2, int a3)
 {
   char *v4; // eax
@@ -7910,7 +7910,7 @@ char __fastcall sub_5C7BA0(const char *a1, unsigned __int16 *a2, int a3)
 }
 
 
-// ==== 0x005C7DB0  Math_Compute  this=unknown  sig=csp ====
+// ==== 0x005C7DB0  Math_Compute  this=-  sig=csp ====
 void __fastcall sub_5C7DB0(_WORD *a1, unsigned __int16 *a2, unsigned __int16 a3, int a4)
 {
   int v4; // ebx
@@ -7999,7 +7999,7 @@ int __fastcall sub_5C7E00(_DWORD *a1, unsigned __int16 *a2, unsigned __int16 *a3
 }
 
 
-// ==== 0x005C7EC0  ModBigIntExp_Helper  this=int  sig=csp ====
+// ==== 0x005C7EC0  ModBigIntExp_Helper  this=-  sig=csp ====
 int __fastcall sub_5C7EC0(const void *a1, int a2)
 {
   int v2; // ebx
@@ -8159,7 +8159,7 @@ LABEL_24:
 }
 
 
-// ==== 0x005C80A0  ObjectClass::ComputeModularInverse  this=int  sig=csp ====
+// ==== 0x005C80A0  ObjectClass::ComputeModularInverse  this=ObjectClass  sig=csp ====
 int __thiscall ComputeModularInverse(int *this, _WORD *a2, int a3)
 {
   int v3; // eax
@@ -8420,7 +8420,7 @@ unsigned int __thiscall sub_5C8470(_WORD *this)
 }
 
 
-// ==== 0x005C8500  ModBigIntExp  this=int  sig=csp ====
+// ==== 0x005C8500  ModBigIntExp  this=-  sig=csp ====
 int __fastcall ModBigIntExp(_DWORD *a0, AbstractClass *aP1, char *a2, char *a3, int a5)
 {
   int v5; // ebp
@@ -8954,7 +8954,7 @@ LABEL_38:
 }
 
 
-// ==== 0x005C8DD0  ValidateRSAKey_Helper  this=VOID_PTR  sig=csp ====
+// ==== 0x005C8DD0  ValidateRSAKey_Helper  this=-  sig=csp ====
 char __fastcall sub_5C8DD0(_DWORD *a1, int a2, int a3, int a4)
 {
   int v5; // ebp
@@ -9583,7 +9583,7 @@ int sub_5C96E0()
 }
 
 
-// ==== 0x005C9700  Scenario::ResetDisplayArrays  this=int  sig=csp ====
+// ==== 0x005C9700  Scenario::ResetDisplayArrays  this=Scenario  sig=csp ====
 void *__thiscall sub_5C9700(void *this)
 {
   MEMORY[0xABF9F4] = 0; /*0x5c970f*/
@@ -9730,7 +9730,7 @@ int __cdecl sub_5C9AE0(const void *a1, const void *a2)
 }
 
 
-// ==== 0x005C9B10  MPScore::DlgProc  this=unknown  sig=csp ====
+// ==== 0x005C9B10  MPScore::DlgProc  this=MPScore  sig=csp ====
 int __userpurge MPScore::DlgProc@<eax>(CampaignScore *a1@<ebp>, HWND hWnd, unsigned int a3, int a4, unsigned int a5)
 {
   int result; // eax
@@ -9960,7 +9960,7 @@ int __userpurge MPScore::DlgProc@<eax>(CampaignScore *a1@<ebp>, HWND hWnd, unsig
 }
 
 
-// ==== 0x005CA110  Game::GetMultiplayerScoreScreenBar  this=VOID_PTR  sig=csp ====
+// ==== 0x005CA110  Game::GetMultiplayerScoreScreenBar  this=Game  sig=csp ====
 int __thiscall Game::GetMultiplayerScoreScreenBar(void *this)
 {
   int playerSideIndex; // eax
@@ -10763,7 +10763,7 @@ MultiplayerSiegeAttackerTeam *__thiscall MultiplayerSiegeAttackerTeam::QueryInte
 }
 
 
-// ==== 0x005CAF70  ObjectClass::method_5CAF70  this=VOID_PTR  sig=csp ====
+// ==== 0x005CAF70  ObjectClass::method_5CAF70  this=ObjectClass  sig=csp ====
 DWORD __thiscall sub_5CAF70(LONG *this)
 {
   DWORD result; // eax
@@ -11070,7 +11070,7 @@ int sub_5CB570()
 }
 
 
-// ==== 0x005CB590  PaletteClass::Load  this=int  sig=csp ====
+// ==== 0x005CB590  PaletteClass::Load  this=PaletteClass  sig=csp ====
 _DWORD *__thiscall PaletteClass_Load(const char **this)
 {
   char *EntireFile; // eax
@@ -11166,7 +11166,7 @@ void *__thiscall MSShapeAnim::Constructor(
 }
 
 
-// ==== 0x005CB790  ObjectClass::TerritoryUpdateDisplayWOL  this=int  sig=csp ====
+// ==== 0x005CB790  ObjectClass::TerritoryUpdateDisplayWOL  this=ObjectClass  sig=csp ====
 unsigned int __thiscall WOL_Territory_UpdateDisplay(_DWORD *this, int a2)
 {
   int *v3; // eax
@@ -11186,7 +11186,7 @@ unsigned int __thiscall WOL_Territory_UpdateDisplay(_DWORD *this, int a2)
   v10 = v3[2]; /*0x5cb7b6*/
   v4 = *this; /*0x5cb7ba*/
   v5 = v3[3]; /*0x5cb7bc*/
-  *(this + 10) = a2; /*0x5cb7bf*/
+  this->owningHouseIndex = a2; /*0x5cb7bf*/
   v11 = v5; /*0x5cb7c2*/
   v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(v4 + 24))(this, v12); /*0x5cb7cd*/
   if ( v8 != *v6 || v9 != v6[1] || v10 != v6[2] || v11 != v6[3] ) /*0x5cb7f9*/
@@ -11197,39 +11197,39 @@ unsigned int __thiscall WOL_Territory_UpdateDisplay(_DWORD *this, int a2)
       &v8,
       0,
       1);
-  result = *(__int16 *)(*(this + 7) + 6); /*0x5cb821*/
-  if ( *(this + 10) >= result ) /*0x5cb827*/
-    *(this + 10) = --result; /*0x5cb82a*/
+  result = *(__int16 *)(this->referenceCount + 6); /*0x5cb821*/
+  if ( this->owningHouseIndex >= result ) /*0x5cb827*/
+    this->owningHouseIndex = --result; /*0x5cb82a*/
   return result; /*0x5cb82d*/
 }
 
 
-// ==== 0x005CB840  MSAnim::GetField  this=int  sig=csp ====
+// ==== 0x005CB840  MSAnim::GetField  this=MSAnim  sig=csp ====
 unsigned int __thiscall MSAnim::GetField(_DWORD *this, unsigned int a2)
 {
   int v2; // eax
   unsigned int result; // eax
 
-  v2 = *(this + 7); /*0x5cb844*/
-  *(this + 11) = a2; /*0x5cb847*/
+  v2 = this->q01C; /*0x5cb844*/
+  this->q02C = a2; /*0x5cb847*/
   result = *(__int16 *)(v2 + 6); /*0x5cb84a*/
   if ( a2 >= result ) /*0x5cb850*/
-    *(this + 11) = --result; /*0x5cb853*/
+    this->q02C = --result; /*0x5cb853*/
   return result; /*0x5cb856*/
 }
 
 
-// ==== 0x005CB860  MSAnim::SetField  this=int  sig=csp ====
+// ==== 0x005CB860  MSAnim::SetField  this=MSAnim  sig=csp ====
 unsigned int __thiscall MSAnim::SetField(_DWORD *this, unsigned int a2)
 {
   int v2; // eax
   unsigned int result; // eax
 
-  v2 = *(this + 7); /*0x5cb864*/
-  *(this + 12) = a2; /*0x5cb867*/
+  v2 = this->q01C; /*0x5cb864*/
+  this->q030 = a2; /*0x5cb867*/
   result = *(__int16 *)(v2 + 6); /*0x5cb86a*/
   if ( a2 >= result ) /*0x5cb870*/
-    *(this + 12) = --result; /*0x5cb873*/
+    this->q030 = --result; /*0x5cb873*/
   return result; /*0x5cb876*/
 }
 
@@ -12220,18 +12220,18 @@ void __thiscall ScenarioClass::sub_5CC550(int this, int a2, int *a3)
 }
 
 
-// ==== 0x005CC690  ObjectClass::Map_Process_5CC690  this=VOID_PTR  sig=csp ====
+// ==== 0x005CC690  ObjectClass::Map_Process_5CC690  this=ObjectClass  sig=csp ====
 void __thiscall sub_5CC690(_DWORD *this)
 {
-  *(this + 16) = 0; /*0x5cc690*/
+  this->q040 = 0; /*0x5cc690*/
 }
 
 
-// ==== 0x005CC6A0  MSAnim::Reset  this=VOID_PTR  sig=csp ====
+// ==== 0x005CC6A0  MSAnim::Reset  this=MSAnim  sig=csp ====
 int __thiscall MSAnim::Reset(_DWORD *this, int a2)
 {
-  *(this + 16) = 0; /*0x5cc6a4*/
-  *(this + 10) = a2; /*0x5cc6ab*/
+  this->q040 = 0; /*0x5cc6a4*/
+  this->q028 = a2; /*0x5cc6ab*/
   return a2; /*0x5cc6ae*/
 }
 
@@ -13253,7 +13253,7 @@ LABEL_20:
 }
 
 
-// ==== 0x005CD850  WrapWideStringText  this=unknown  sig=csp ====
+// ==== 0x005CD850  WrapWideStringText  this=-  sig=csp ====
 ObjectClass *__fastcall WrapWideStringText(const wchar_t **ecx0, int *a2, int a3)
 {
   ObjectClass *v3; // esi
@@ -15072,24 +15072,24 @@ int __thiscall CampaignClass::DeleteAndZero(MapSelect *this, MSFont *aP1)
 }
 
 
-// ==== 0x005CF810  CampaignClass::Check  this=int  sig=csp ====
+// ==== 0x005CF810  CampaignClass::Check  this=CampaignClass  sig=csp ====
 int __thiscall sub_5CF810(_DWORD *this, unsigned __int16 a2)
 {
-  if ( *(this + 4) > (int)a2 ) /*0x5cf81e*/
-    return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x5cf828*/
+  if ( this->uniqueId > (int)a2 ) /*0x5cf81e*/
+    return *(_DWORD *)(this->vtable2 + 4 * a2); /*0x5cf828*/
   else
     return 0; /*0x5cf820*/
 }
 
 
-// ==== 0x005CF830  ObjectClass::Network_Load  this=int  sig=csp ====
+// ==== 0x005CF830  ObjectClass::Network_Load  this=ObjectClass  sig=csp ====
 int __thiscall Network_Load(void *this, ObjectClass *aP1)
 {
-  return (*(int (__thiscall **)(void *, ObjectClass **))(*(_DWORD *)this + 16))(this, &aP1); /*0x5cf83a*/
+  return (*(int (__thiscall **)(void *, ObjectClass **))(this->uniqueId)(this, &aP1); /*0x5cf83a*/
 }
 
 
-// ==== 0x005CF840  ObjectClass::method_5CF840  this=VOID_PTR  sig=csp ====
+// ==== 0x005CF840  ObjectClass::method_5CF840  this=ObjectClass  sig=csp ====
 const char **__thiscall sub_5CF840(_DWORD *this, MapSelect *aP1)
 {
   int v3; // esi
@@ -15100,12 +15100,12 @@ const char **__thiscall sub_5CF840(_DWORD *this, MapSelect *aP1)
   if ( !Audio::IsSoundEnabled() ) /*0x5cf847*/
     return 0; /*0x5cf847*/
   v3 = 0; /*0x5cf853*/
-  if ( (int)*(this + 21) <= 0 ) /*0x5cf857*/
+  if ( (int)this->q054 <= 0 ) /*0x5cf857*/
     return 0; /*0x5cf8b5*/
   v4 = (const char **)aP1; /*0x5cf859*/
   while ( 1 ) /*0x5cf864*/
   {
-    v5 = *(ObjectClass **)(*(this + 18) + 4 * v3); /*0x5cf864*/
+    v5 = *(ObjectClass **)(this->q048 + 4 * v3); /*0x5cf864*/
     String::AssignFromPtr((char **)&v7, (const char **)v5); /*0x5cf868*/
     String::ToLower((const char **)&v7); /*0x5cf871*/
     String::AssignFromPtr((char **)&aP1, v4); /*0x5cf87b*/
@@ -15114,7 +15114,7 @@ const char **__thiscall sub_5CF840(_DWORD *this, MapSelect *aP1)
       break; /*0x5cf892*/
     DeleteAndZero((void **)&aP1); /*0x5cf89f*/
     DeleteAndZero(&v7); /*0x5cf8a8*/
-    if ( ++v3 >= *(this + 21) ) /*0x5cf8b3*/
+    if ( ++v3 >= this->q054 ) /*0x5cf8b3*/
       return 0; /*0x5cf8b3*/
   }
   DeleteAndZero((void **)&aP1); /*0x5cf8bf*/
@@ -15123,7 +15123,7 @@ const char **__thiscall sub_5CF840(_DWORD *this, MapSelect *aP1)
 }
 
 
-// ==== 0x005CF8E0  MSChoiceClass::LoadFromINI  this=VOID_PTR  sig=csp ====
+// ==== 0x005CF8E0  MSChoiceClass::LoadFromINI  this=MSChoiceClass  sig=csp ====
 char **__thiscall MSChoiceClass::LoadFromINI(char **this, ObjectClass *arg0, ObjectClass *aP2)
 {
   ObjectClass *v4; // ebx

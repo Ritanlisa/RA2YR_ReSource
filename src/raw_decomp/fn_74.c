@@ -431,23 +431,23 @@ LABEL_16:
 }
 
 
-// ==== 0x00740DF0  HouseClass::SetPrimaryFactory  this=VOID_PTR  sig=csp ====
+// ==== 0x00740DF0  HouseClass::SetPrimaryFactory  this=HouseClass  sig=csp ====
 char __thiscall sub_740DF0(_DWORD *this, int a2)
 {
-  if ( a2 == -1 || *(this + 435) != -1 ) /*0x740e00*/
+  if ( a2 == -1 || this->q6CC != -1 ) /*0x740e00*/
     return 0; /*0x740e17*/
-  *(this + 435) = a2; /*0x740e02*/
+  this->q6CC = a2; /*0x740e02*/
   (*(void (__thiscall **)(_DWORD *, int))(*this + 292))(this, 2); /*0x740e0c*/
   return 1; /*0x740e14*/
 }
 
 
-// ==== 0x00740E20  HouseClass::ClearPrimaryFactory  this=int  sig=csp ====
+// ==== 0x00740E20  HouseClass::ClearPrimaryFactory  this=HouseClass  sig=csp ====
 char __thiscall sub_740E20(_DWORD *this)
 {
-  if ( *(this + 435) == -1 ) /*0x740e2b*/
+  if ( this->q6CC == -1 ) /*0x740e2b*/
     return 0; /*0x740e40*/
-  *(this + 435) = -1; /*0x740e2d*/
+  this->q6CC = -1; /*0x740e2d*/
   (*(void (__thiscall **)(_DWORD *, int))(*this + 292))(this, 2); /*0x740e37*/
   return 1; /*0x740e3f*/
 }
@@ -733,7 +733,7 @@ double __thiscall TechnoClass::sub_7414A0(int this)
 }
 
 
-// ==== 0x007414E0  UnitClass::ApproachTarget_DisallowMoving  this=int  sig=csp ====
+// ==== 0x007414E0  UnitClass::ApproachTarget_DisallowMoving  this=UnitClass  sig=csp ====
 void *__thiscall UnitClass::ApproachTarget_DisallowMoving(_DWORD *this, char a2)
 {
   int v3; // eax
@@ -744,20 +744,20 @@ void *__thiscall UnitClass::ApproachTarget_DisallowMoving(_DWORD *this, char a2)
   int v8; // eax
   _BYTE *v10; // eax
 
-  if ( (unsigned __int8)House::IsCurrentPlayer((#375 *)*(this + 135))
-    || (v3 = *(this + 173)) == 0
-    || *(this + 361)
-    || (v4 = (*(_BYTE *)(v3 + 20) & 1) != 0 ? (_BYTE *)v3 : 0, !*(_BYTE *)(*(this + 433) + 3368))
+  if ( (unsigned __int8)House::IsCurrentPlayer((#375 *)this->owner)
+    || (v3 = this->q2B4) == 0
+    || this->FootClass_field_5A4
+    || (v4 = (*(_BYTE *)(v3 + 20) & 1) != 0 ? (_BYTE *)v3 : 0, !*(_BYTE *)(this->Type + 3368))
     && !TechnoTypeClass::HasVoiceResponse((float *)this, 17)
-    || ObjectClass::DistanceTo(this, *(this + 173)) >= *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5928)
+    || ObjectClass::DistanceTo(this, this->q2B4) >= *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5928)
     || !v4
     || !ObjectClass::IsCrushable(v4, (_DWORD **)this)
-    || !*(_BYTE *)(*(this + 433) + 3373) && (unsigned __int8)House::IsCurrentPlayer((#375 *)*(this + 135)) )
+    || !*(_BYTE *)(this->Type + 3373) && (unsigned __int8)House::IsCurrentPlayer((#375 *)this->owner) )
   {
-    if ( *(_BYTE *)(*(this + 433) + 3434) ) /*0x74159f*/
+    if ( *(_BYTE *)(this->Type + 3434) ) /*0x74159f*/
     {
       v5 = *this; /*0x7415af*/
-      v6 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 740))(this, *(this + 173)); /*0x7415b4*/
+      v6 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 740))(this, this->q2B4); /*0x7415b4*/
       v7 = *(_DWORD *)(*(int (__thiscall **)(_DWORD *, int))(v5 + 1016))(this, v6); /*0x7415c3*/
       if ( v7 ) /*0x7415c7*/
       {
@@ -767,23 +767,23 @@ void *__thiscall UnitClass::ApproachTarget_DisallowMoving(_DWORD *this, char a2)
           if ( *(_BYTE *)(v8 + 704) ) /*0x7415d3*/
           {
             if ( !a2 ) /*0x7415e3*/
-              (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, *(this + 173), 1); /*0x7415f2*/
-            return (void *)*(this + 173); /*0x741600*/
+              (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1); /*0x7415f2*/
+            return (void *)this->q2B4; /*0x741600*/
           }
         }
       }
     }
-    if ( !*(_BYTE *)(*(this + 433) + 3369) ) /*0x741609*/
+    if ( !*(_BYTE *)(this->Type + 3369) ) /*0x741609*/
       return FootClass::CalculateApproachPath(this, 0); /*0x741609*/
-    v10 = (_BYTE *)*(this + 173); /*0x741613*/
-    if ( !v10 || *(_BYTE *)(*(this + 135) + 492) && *((_BYTE *)this + 1292) ) /*0x74162d*/
+    v10 = (_BYTE *)this->q2B4; /*0x741613*/
+    if ( !v10 || *(_BYTE *)(this->owner + 492) && this->q50C ) /*0x74162d*/
       return FootClass::CalculateApproachPath(this, 0); /*0x74162d*/
     if ( (v10[20] & 2) == 0 || !ObjectClass::IsCrushable((v10[20] & 2) != 0 ? v10 : 0, (_DWORD **)this) )
       return FootClass::CalculateApproachPath(this, 0); /*0x741689*/
   }
   if ( !a2 ) /*0x741665*/
-    (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, *(this + 173), 1); /*0x741674*/
-  return (void *)*(this + 173); /*0x7415fe*/
+    (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1); /*0x741674*/
+  return (void *)this->q2B4; /*0x7415fe*/
 }
 
 
@@ -2129,7 +2129,7 @@ LABEL_10:
 }
 
 
-// ==== 0x007436E0  ObjectClass::ReadFootINI  this=int  sig=csp ====
+// ==== 0x007436E0  ObjectClass::ReadFootINI  this=ObjectClass  sig=csp ====
 int __thiscall sub_7436E0(char *this)
 {
   int result; // eax
@@ -4752,10 +4752,10 @@ int __thiscall TechnoClass::releaseSpawns(#377 *this)
 }
 
 
-// ==== 0x00746D80  FootClass::updateScanRange  this=int  sig=csp ====
+// ==== 0x00746D80  FootClass::updateScanRange  this=FootClass  sig=csp ====
 char __thiscall sub_746D80(_BYTE *this)
 {
-  return *(this + 1760); /*0x746d86*/
+  return this->q6E0; /*0x746d86*/
 }
 
 
@@ -4766,10 +4766,10 @@ BOOL __thiscall sub_746D90(_BYTE *this)
 }
 
 
-// ==== 0x00746DB0  TechnoClass::HasDeployFlags  this=int  sig=csp ====
+// ==== 0x00746DB0  TechnoClass::HasDeployFlags  this=TechnoClass  sig=csp ====
 BOOL __thiscall TechnoClass::HasDeployFlags(_BYTE *this)
 {
-  return *(this + 1761) || *(this + 1762); /*0x746dc6*/
+  return this->q6E1 || this->q6E2; /*0x746dc6*/
 }
 
 
@@ -4826,12 +4826,12 @@ UnitClass *__thiscall C07F5C70::Seek(void **Block, char a2)
 }
 
 
-// ==== 0x00746EA0  TechnoClass::processIronCurtainExpiry  this=int  sig=csp ====
+// ==== 0x00746EA0  TechnoClass::processIronCurtainExpiry  this=TechnoClass  sig=csp ====
 bool __thiscall TechnoClass::processIronCurtainExpiry(_DWORD *this, IUnknown *aP1)
 {
   _DWORD *v2; // eax
 
-  v2 = (_DWORD *)*(this + 4); /*0x746ea0*/
+  v2 = (_DWORD *)this->uniqueId; /*0x746ea0*/
   return v2 && *v2 == aP1->field_0; /*0x746eb3*/
 }
 
@@ -5058,7 +5058,7 @@ LABEL_11:
 }
 
 
-// ==== 0x00747370  BuildingTypeClass::FindIndex  this=VOID_PTR  sig=csp ====
+// ==== 0x00747370  BuildingTypeClass::FindIndex  this=BuildingTypeClass  sig=csp ====
 int __thiscall BuildingTypeClass::FindIndex(void *this)
 {
   int v2; // esi
@@ -5210,7 +5210,7 @@ _DWORD *__stdcall UnitTypeClass::_vt31(_DWORD *a1)
 }
 
 
-// ==== 0x00747600  sub_747600  this=unknown  sig=csp ====
+// ==== 0x00747600  sub_747600  this=-  sig=csp ====
 _DWORD *__stdcall sub_747600(_DWORD *a1, int a2, _DWORD *a3)
 {
   *a1 = *a3; /*0x74760a*/
@@ -5687,7 +5687,7 @@ UnitTypeClass *__thiscall UnitTypeClass::ddtor(void **Block, char a2)
 }
 
 
-// ==== 0x00748220  Voxel::BuildIndexTable  this=int  sig=csp ====
+// ==== 0x00748220  Voxel::BuildIndexTable  this=Voxel  sig=csp ====
 char __thiscall Voxel_BuildIndexTable(void *this)
 {
   int v1; // ebx
@@ -5768,7 +5768,7 @@ char __thiscall Voxel_BuildIndexTable(void *this)
 }
 
 
-// ==== 0x00748360  System_Cleanup  this=unknown  sig=csp ====
+// ==== 0x00748360  System_Cleanup  this=-  sig=csp ====
 void sub_748360()
 {
   if ( unk_B1D14C ) /*0x748367*/
@@ -5779,7 +5779,7 @@ void sub_748360()
 }
 
 
-// ==== 0x00748380  sub_748380  this=int  sig=csp ====
+// ==== 0x00748380  sub_748380  this=-  sig=csp ====
 int __fastcall sub_748380(unsigned __int16 *a1, int a2)
 {
   int result; // eax
@@ -6822,7 +6822,7 @@ LABEL_18:
 }
 
 
-// ==== 0x00748FD0  HouseClass::ClearStatArray  this=int  sig=csp ====
+// ==== 0x00748FD0  HouseClass::ClearStatArray  this=HouseClass  sig=csp ====
 _DWORD *__thiscall HouseClass_ClearStatArray(_DWORD *this)
 {
   _DWORD *result; // eax
@@ -6852,13 +6852,13 @@ void nullsub_143()
 }
 
 
-// ==== 0x00749020  HouseClass::IncrementStat  this=VOID_PTR  sig=csp ====
+// ==== 0x00749020  HouseClass::IncrementStat  this=HouseClass  sig=csp ====
 int __thiscall HouseClass_IncrementStat(_DWORD *this, int a2)
 {
   int result; // eax
 
   result = a2; /*0x749020*/
-  if ( a2 < *(this + 512) ) /*0x74902c*/
+  if ( a2 < this->q800 ) /*0x74902c*/
     ++*(this + a2); /*0x74902e*/
   return result; /*0x749031*/
 }
@@ -6885,7 +6885,7 @@ int __thiscall HouseClass::InitStatArray(_DWORD *this, AbstractClass *aP1)
 }
 
 
-// ==== 0x007490A0  SumArray  this=unknown  sig=csp ====
+// ==== 0x007490A0  SumArray  this=-  sig=csp ====
 int __fastcall Array_Sum(int *a1)
 {
   int v1; // edx
@@ -6908,21 +6908,21 @@ int __fastcall Array_Sum(int *a1)
 }
 
 
-// ==== 0x007490C0  ObjectClass::??0Iostream_init_QAE_XZ_7  this=int  sig=csp ====
+// ==== 0x007490C0  ObjectClass::??0Iostream_init_QAE_XZ_7  this=ObjectClass  sig=csp ====
 Iostream_init *__thiscall __0Iostream_init_QAE_XZ_7(Iostream_init *this)
 {
   return this; /*0x7490c2*/
 }
 
 
-// ==== 0x007490D0  Array::Zero  this=int  sig=csp ====
+// ==== 0x007490D0  Array::Zero  this=Array  sig=csp ====
 int __thiscall Array_Zero(_DWORD *this)
 {
   int result; // eax
   _DWORD *v2; // edx
 
   result = 0; /*0x7490d6*/
-  if ( (int)*(this + 512) > 0 ) /*0x7490da*/
+  if ( (int)this->Array_field_0x800 > 0 ) /*0x7490da*/
   {
     v2 = this; /*0x7490dd*/
     do /*0x7490f1*/
@@ -6931,23 +6931,23 @@ int __thiscall Array_Zero(_DWORD *this)
       ++result; /*0x7490eb*/
       ++v2; /*0x7490ec*/
     }
-    while ( result < *(this + 512) ); /*0x7490f1*/
+    while ( result < this->Array_field_0x800 ); /*0x7490f1*/
   }
   return result; /*0x7490f4*/
 }
 
 
-// ==== 0x00749100  HouseClass::NetworkConvert  this=int  sig=csp ====
+// ==== 0x00749100  HouseClass::NetworkConvert  this=HouseClass  sig=csp ====
 int __thiscall HouseClass_NetworkConvert(_DWORD *this)
 {
   int result; // eax
   int v3; // ebx
   u_long *v4; // esi
 
-  result = *(this + 513); /*0x749104*/
-  if ( result || (result = *(this + 512), v3 = 0, result <= 0) ) /*0x749118*/
+  result = this->q804; /*0x749104*/
+  if ( result || (result = this->q800, v3 = 0, result <= 0) ) /*0x749118*/
   {
-    *(this + 513) = 1; /*0x749143*/
+    this->q804 = 1; /*0x749143*/
   }
   else
   {
@@ -6955,24 +6955,24 @@ int __thiscall HouseClass_NetworkConvert(_DWORD *this)
     do /*0x749133*/
     {
       *v4 = htonl(*v4); /*0x749125*/
-      result = *(this + 512); /*0x749127*/
+      result = this->q800; /*0x749127*/
       ++v3; /*0x74912d*/
       ++v4; /*0x74912e*/
     }
     while ( v3 < result ); /*0x749133*/
-    *(this + 513) = 1; /*0x749135*/
+    this->q804 = 1; /*0x749135*/
   }
   return result; /*0x749140*/
 }
 
 
-// ==== 0x00749150  Array::ByteSwap  this=int  sig=csp ====
+// ==== 0x00749150  Array::ByteSwap  this=Array  sig=csp ====
 void __thiscall Array_ByteSwap(u_long *this)
 {
   signed int v2; // ebx
   u_long *v3; // esi
 
-  if ( *(this + 513) && (v2 = 0, (int)*(this + 512) > 0) ) /*0x749169*/
+  if ( *(this + 513) && (v2 = 0, (int)this->Array_field_0x800 > 0) ) /*0x749169*/
   {
     v3 = this; /*0x74916c*/
     do /*0x749184*/
@@ -6981,7 +6981,7 @@ void __thiscall Array_ByteSwap(u_long *this)
       ++v2; /*0x74917e*/
       ++v3; /*0x74917f*/
     }
-    while ( v2 < (int)*(this + 512) ); /*0x749184*/
+    while ( v2 < (int)this->Array_field_0x800 ); /*0x749184*/
     *(this + 513) = 0; /*0x749186*/
   }
   else
@@ -8433,7 +8433,7 @@ VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **Block, char a2)
 }
 
 
-// ==== 0x0074BB20  globalHelper_04BB20  this=unknown  sig=csp ====
+// ==== 0x0074BB20  globalHelper_04BB20  this=-  sig=csp ====
 VoxelAnimTypeClass *__fastcall globalHelper_04BB20(ObjectClass *Source, int a2)
 {
   int v4; // esi
@@ -8459,15 +8459,15 @@ LABEL_6:
 }
 
 
-// ==== 0x0074BBA0  ObjectClass::method_74BBA0  this=int  sig=csp ====
+// ==== 0x0074BBA0  ObjectClass::method_74BBA0  this=ObjectClass  sig=csp ====
 char *__thiscall sub_74BBA0(char *this, int a2, int a3)
 {
   char *v4; // ecx
 
   *(_DWORD *)this = a2; /*0x74bbae*/
   v4 = this + 12; /*0x74bbb0*/
-  *(this + 4) = 0; /*0x74bbb6*/
-  *((_DWORD *)this + 2) = -1; /*0x74bbb9*/
+  this->vtable2 = 0; /*0x74bbb6*/
+  this->vtable3 = -1; /*0x74bbb9*/
   *((_DWORD *)v4 + 1) = 0; /*0x74bbc0*/
   *((_DWORD *)v4 + 2) = 0; /*0x74bbc3*/
   v4[12] = 1; /*0x74bbc6*/
@@ -9267,7 +9267,7 @@ void CleanupVeinholeSystem()
 }
 
 
-// ==== 0x0074CD60  ObjectClass::processDeath  this=int  sig=csp ====
+// ==== 0x0074CD60  ObjectClass::processDeath  this=ObjectClass  sig=csp ====
 int __thiscall sub_74CD60(_WORD *this)
 {
   int v1; // edx
@@ -9277,7 +9277,7 @@ int __thiscall sub_74CD60(_WORD *this)
   if ( MEMORY[0xB1D2A0] - 1 < 0 ) /*0x74cd6d*/
     return 0; /*0x74cda2*/
   for ( i = (char *)MEMORY[0xB1D294] + 4 * v1; /*0x74cd78*/
-        *(_WORD *)(*(_DWORD *)i + 248) != *this || *(_WORD *)(*(_DWORD *)i + 250) != *(this + 1);
+        *(_WORD *)(*(_DWORD *)i + 248) != *this || *(_WORD *)(*(_DWORD *)i + 250) != this->vtable2;
         i -= 4 )
   {
     if ( --v1 < 0 ) /*0x74cd97*/
@@ -9287,7 +9287,7 @@ int __thiscall sub_74CD60(_WORD *this)
 }
 
 
-// ==== 0x0074CDB0  ObjectClass::Helper_486E30_Helper  this=int  sig=csp ====
+// ==== 0x0074CDB0  ObjectClass::Helper_486E30_Helper  this=ObjectClass  sig=csp ====
 int __thiscall sub_74CDB0(__int16 *this)
 {
   int v1; // esi
@@ -9602,7 +9602,7 @@ LABEL_73:
 }
 
 
-// ==== 0x0074D450  Game_Load_Load  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0074D450  Game_Load_Load  this=-  sig=ida-proto ====
 int __fastcall sub_74D450(int a1)
 {
   int result; // eax
@@ -9773,7 +9773,7 @@ LABEL_10:
 }
 
 
-// ==== 0x0074D760  ObjectClass::CleanupVeinholeSystem  this=VOID_PTR  sig=csp ====
+// ==== 0x0074D760  ObjectClass::CleanupVeinholeSystem  this=ObjectClass  sig=csp ====
 void CleanupVeinholeSystem()
 {
   int i; // esi
@@ -10778,7 +10778,7 @@ void __thiscall sub_74E930(__int16 *this)
 }
 
 
-// ==== 0x0074EA70  ObjectClass::LoadVeinholeMonsters  this=int  sig=csp ====
+// ==== 0x0074EA70  ObjectClass::LoadVeinholeMonsters  this=ObjectClass  sig=csp ====
 char __thiscall LoadVeinholeMonsters(int *this)
 {
   int i; // edi
@@ -10910,7 +10910,7 @@ LABEL_32:
 }
 
 
-// ==== 0x0074ED60  SaveGame::LoadVeinholeData  this=int  sig=csp ====
+// ==== 0x0074ED60  SaveGame::LoadVeinholeData  this=SaveGame  sig=csp ====
 char __thiscall sub_74ED60(int *this)
 {
   int v2; // ecx
@@ -11501,12 +11501,12 @@ int __thiscall IRTTITypeInfo::sub_74F5F0(int *this, _DWORD *a2)
 }
 
 
-// ==== 0x0074F620  ObjectClass::DestroyVeinholeMonster_Destroy  this=VOID_PTR  sig=csp ====
+// ==== 0x0074F620  ObjectClass::DestroyVeinholeMonster_Destroy  this=ObjectClass  sig=csp ====
 void __thiscall sub_74F620(Concurrency::details::_NonReentrantLock *this)
 {
   int i; // eax
 
-  for ( i = 0; i <= *(_DWORD *)this; *(_DWORD *)(*((_DWORD *)this + 2) + 4 * i - 4) = 0 ) /*0x74f626*/
+  for ( i = 0; i <= *(_DWORD *)this; *(_DWORD *)(this->vtable3 + 4 * i - 4) = 0 ) /*0x74f626*/
     ++i; /*0x74f62b*/
   __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0(this); /*0x74f639*/
 }
@@ -11540,7 +11540,7 @@ VectorClass *__thiscall _::QueryInterface(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x0074F6A0    this=VOID_PTR  sig=? ====
+// ==== 0x0074F6A0    this=IRTTITypeInfo  sig=? ====
 _DWORD *__thiscall IRTTITypeInfo::loc_74F6A0(_DWORD *Block, char a2)
 {
   void *v3; // eax
@@ -11560,27 +11560,27 @@ _DWORD *__thiscall IRTTITypeInfo::loc_74F6A0(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x0074F6F0  ObjectClass::DestroyVeinholeMonster_Destroy_74F6F0  this=int  sig=csp ====
+// ==== 0x0074F6F0  ObjectClass::DestroyVeinholeMonster_Destroy_74F6F0  this=ObjectClass  sig=csp ====
 char __thiscall DestroyVeinholeMonster_Destroy_74F6F0(_DWORD *this, DynamicVector *aP1)
 {
   int v2; // edx
   DynamicVector *v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x74f6f0*/
+  v2 = this->uniqueId; /*0x74f6f0*/
   v3 = aP1; /*0x74f6f3*/
   if ( (int)aP1 >= v2 ) /*0x74f6f9*/
     return 0; /*0x74f71c*/
   v4 = v2 - 1; /*0x74f6fb*/
-  *(this + 4) = v4; /*0x74f6fe*/
+  this->uniqueId = v4; /*0x74f6fe*/
   if ( (int)aP1 < v4 ) /*0x74f701*/
   {
     do /*0x74f714*/
     {
       v3 = (DynamicVector *)((char *)v3 + 1); /*0x74f707*/
-      *(_DWORD *)(*(this + 1) + 4 * (_DWORD)v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * (_DWORD)v3); /*0x74f70b*/
+      *(_DWORD *)(this->vtable2 + 4 * (_DWORD)v3 - 4) = *(_DWORD *)(this->vtable2 + 4 * (_DWORD)v3); /*0x74f70b*/
     }
-    while ( (int)v3 < *(this + 4) ); /*0x74f714*/
+    while ( (int)v3 < this->uniqueId ); /*0x74f714*/
   }
   return 1; /*0x74f719*/
 }
@@ -11907,7 +11907,7 @@ void __thiscall sub_74FC80(char *this)
 }
 
 
-// ==== 0x0074FD20  Network::GetMaxPacketSize  this=VOID_PTR  sig=csp ====
+// ==== 0x0074FD20  Network::GetMaxPacketSize  this=Network  sig=csp ====
 int __thiscall Network::GetMaxPacketSize(VersionClass *this)
 {
   int v1; // ecx
@@ -11927,22 +11927,22 @@ int __thiscall Network::GetMaxPacketSize(VersionClass *this)
 }
 
 
-// ==== 0x0074FD50  NetworkBuffer::GetField  this=VOID_PTR  sig=csp ====
+// ==== 0x0074FD50  NetworkBuffer::GetField  this=NetworkBuffer  sig=csp ====
 int __thiscall NetworkBuffer::GetField(VersionClass *this)
 {
   this->field_3C = 0x20000; /*0x74fd55*/
-  *((_DWORD *)this + 16) = 0x20000; /*0x74fd58*/
+  this->__pad_010 = 0x20000; /*0x74fd58*/
   return 0x20000; /*0x74fd5b*/
 }
 
 
-// ==== 0x0074FD60  NetworkBuffer::UpdateWindow  this=VOID_PTR  sig=csp ====
+// ==== 0x0074FD60  NetworkBuffer::UpdateWindow  this=NetworkBuffer  sig=csp ====
 int __thiscall NetworkBuffer::UpdateWindow(VersionClass *this, CellStruct *aP1, unsigned int a3)
 {
   unsigned int v3; // edi
   CellStruct *v5; // eax
 
-  v3 = *((_DWORD *)this + 16); /*0x74fd66*/
+  v3 = this->__pad_010; /*0x74fd66*/
   if ( (unsigned int)aP1 > v3 ) /*0x74fd6b*/
     return -1; /*0x74fd6e*/
   v5 = (CellStruct *)this->field_3C; /*0x74fd75*/
@@ -11951,19 +11951,19 @@ int __thiscall NetworkBuffer::UpdateWindow(VersionClass *this, CellStruct *aP1, 
   if ( aP1 > v5 ) /*0x74fd89*/
     this->field_3C = (int)aP1; /*0x74fd8b*/
   if ( a3 < v3 ) /*0x74fd90*/
-    *((_DWORD *)this + 16) = a3; /*0x74fd92*/
-  return *((_DWORD *)this + 16); /*0x74fd6d*/
+    this->__pad_010 = a3; /*0x74fd92*/
+  return this->__pad_010; /*0x74fd6d*/
 }
 
 
-// ==== 0x0074FDA0  NetworkBuffer::GetField2  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0074FDA0  NetworkBuffer::GetField2  this=NetworkBuffer  sig=ida-proto ====
 int __thiscall NetworkBuffer::GetField2(VersionClass *this)
 {
   return 0x20000; /*0x74fda5*/
 }
 
 
-// ==== 0x0074FDB0  NetworkBuffer::GetField3  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0074FDB0  NetworkBuffer::GetField3  this=NetworkBuffer  sig=ida-proto ====
 int __thiscall NetworkBuffer::GetField3(VersionClass *this)
 {
   return 0x20000; /*0x74fdb5*/

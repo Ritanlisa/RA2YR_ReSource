@@ -66,7 +66,7 @@ int __thiscall ObjectClass::ClearFlags2(_DWORD *this)
 }
 
 
-// ==== 0x00401190  sub_401190  this=int  sig=ida-proto ====
+// ==== 0x00401190  sub_401190  this=-  sig=ida-proto ====
 int __fastcall sub_401190(int a1, int a2)
 {
   int v2; // edx
@@ -83,7 +83,7 @@ int __fastcall sub_4011B0(_DWORD *a1, int a2)
 }
 
 
-// ==== 0x004011C0  LoadAudioFile  this=int  sig=csp ====
+// ==== 0x004011C0  LoadAudioFile  this=-  sig=csp ====
 char *__fastcall LoadAudioFile(const char *a1, const char *a2)
 {
   char *v3; // ebp
@@ -212,7 +212,7 @@ LABEL_24:
 }
 
 
-// ==== 0x00401580  ObjectClass::method  this=VOID_PTR  sig=csp ====
+// ==== 0x00401580  ObjectClass::method  this=ObjectClass  sig=csp ====
 void __thiscall sub_401580(void **Block)
 {
   void (__thiscall ***v2)(_DWORD, int); // ecx
@@ -230,7 +230,7 @@ void __thiscall sub_401580(void **Block)
 }
 
 
-// ==== 0x004015C0  sub_4015C0  this=unknown  sig=csp ====
+// ==== 0x004015C0  sub_4015C0  this=-  sig=csp ====
 unsigned int __fastcall sub_4015C0(int a1, const void *a2)
 {
   void *v3; // eax
@@ -243,7 +243,7 @@ unsigned int __fastcall sub_4015C0(int a1, const void *a2)
 }
 
 
-// ==== 0x00401640  AudioIndex::GetSampleInformation  this=VOID_PTR  sig=csp ====
+// ==== 0x00401640  AudioIndex::GetSampleInformation  this=AudioIndex  sig=csp ====
 _DWORD *__fastcall AudioIndex::GetSampleInformation(_DWORD *a1, int a2, _DWORD *a3)
 {
   _DWORD *v3; // ecx
@@ -269,7 +269,7 @@ _DWORD *__fastcall AudioIndex::GetSampleInformation(_DWORD *a1, int a2, _DWORD *
 }
 
 
-// ==== 0x004016F0  IDXContainer::LoadSample  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x004016F0  IDXContainer::LoadSample  this=IDXContainer  sig=ida-proto ====
 int __fastcall IDXContainer::LoadSample(int a1, int a2)
 {
   int v3; // ebp
@@ -341,7 +341,7 @@ int __fastcall IDXContainer::LoadSample(int a1, int a2)
 }
 
 
-// ==== 0x004018C0  sub_4018C0  this=VOID_PTR  sig=csp ====
+// ==== 0x004018C0  sub_4018C0  this=-  sig=csp ====
 int __fastcall sub_4018C0(int a1, int a2, int a3)
 {
   int v4; // ecx
@@ -361,18 +361,18 @@ int __fastcall sub_4018C0(int a1, int a2, int a3)
 }
 
 
-// ==== 0x00401910  AudioStream::ReleaseSubsystem  this=VOID_PTR  sig=csp ====
+// ==== 0x00401910  AudioStream::ReleaseSubsystem  this=AudioStream  sig=csp ====
 int __thiscall sub_401910(_DWORD *this)
 {
   int (__thiscall ***v2)(_DWORD, int); // ecx
   int result; // eax
 
-  v2 = (int (__thiscall ***)(_DWORD, int))*(this + 68); /*0x401913*/
+  v2 = (int (__thiscall ***)(_DWORD, int))this->AudioStream_field_0x44; /*0x401913*/
   *(this + 70) = 0; /*0x401919*/
   if ( v2 ) /*0x401925*/
   {
     result = (**v2)(v2, 1); /*0x40192b*/
-    *(this + 68) = 0; /*0x40192d*/
+    this->AudioStream_field_0x44 = 0; /*0x40192d*/
   }
   return result; /*0x401937*/
 }
@@ -460,7 +460,7 @@ int *__fastcall sub_4019E0(int a1, int a2, int a3, int a4)
 }
 
 
-// ==== 0x00401B00  ObjectClass::method_401B00  this=VOID_PTR  sig=csp ====
+// ==== 0x00401B00  ObjectClass::method_401B00  this=ObjectClass  sig=csp ====
 void __thiscall sub_401B00(int *Block)
 {
   int *v1; // esi
@@ -504,7 +504,7 @@ void __thiscall sub_401B00(int *Block)
 }
 
 
-// ==== 0x00401C00  LoadSampleAudioMixer  this=int  sig=csp ====
+// ==== 0x00401C00  LoadSampleAudioMixer  this=-  sig=csp ====
 int *__fastcall AudioMixer_LoadSample(_DWORD *a1, int a2)
 {
   _DWORD *v2; // ebx
@@ -653,27 +653,27 @@ LABEL_38:
 }
 
 
-// ==== 0x00401F80  ObjectClass::?EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ  this=VOID_PTR  sig=csp ====
+// ==== 0x00401F80  ObjectClass::?EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ  this=ObjectClass  sig=csp ====
 int __thiscall _EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ(
         Concurrency::details::ContextBase *this)
 {
   int result; // eax
 
-  result = *((_DWORD *)this + 3) + 1; /*0x401f83*/
-  *((_DWORD *)this + 3) = result; /*0x401f84*/
+  result = this->vtable4 + 1; /*0x401f83*/
+  this->vtable4 = result; /*0x401f84*/
   return result; /*0x401f87*/
 }
 
 
-// ==== 0x00401F90  RefCount::Decrement  this=int  sig=csp ====
+// ==== 0x00401F90  RefCount::Decrement  this=RefCount  sig=csp ====
 int __thiscall RefCount_Decrement(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 3) - 1; /*0x401f93*/
-  *(this + 3) = result; /*0x401f96*/
+  result = this->q00C - 1; /*0x401f93*/
+  this->q00C = result; /*0x401f96*/
   if ( result < 0 ) /*0x401f99*/
-    *(this + 3) = 0; /*0x401f9b*/
+    this->q00C = 0; /*0x401f9b*/
   return result; /*0x401fa2*/
 }
 
@@ -710,7 +710,7 @@ int __thiscall sub_402020(_DWORD *this)
 }
 
 
-// ==== 0x00402040  AudioController::Constructor  this=int  sig=csp ====
+// ==== 0x00402040  AudioController::Constructor  this=AudioController  sig=csp ====
 int *__thiscall sub_402040(_DWORD *this)
 {
   int *v2; // ebx
@@ -740,11 +740,11 @@ int *__thiscall sub_402040(_DWORD *this)
   AudioMixer::Init(v2 + 4); /*0x4020fa*/
   v2[90] = 0; /*0x402103*/
   v2[43] = (int)this; /*0x402109*/
-  v2[53] = *(this + 116); /*0x402115*/
+  v2[53] = this->q1D0; /*0x402115*/
   qmemcpy(v2 + 95, this + 17, 0x20u); /*0x402129*/
   v2[103] = 0; /*0x40212b*/
   v2[104] = 0; /*0x402131*/
-  if ( !(*(int (__thiscall **)(int *))(*(this + 116) + 4))(v2) ) /*0x40213f*/
+  if ( !(*(int (__thiscall **)(int *))(this->q1D0 + 4))(v2) ) /*0x40213f*/
     return v2; /*0x402168*/
   if ( v2 ) /*0x402148*/
   {
@@ -755,7 +755,7 @@ int *__thiscall sub_402040(_DWORD *this)
 }
 
 
-// ==== 0x00402220  ObjectClass::Cleanup  this=int  sig=csp ====
+// ==== 0x00402220  ObjectClass::Cleanup  this=ObjectClass  sig=csp ====
 int __thiscall sub_402220(int *this)
 {
   int v2; // ebp
@@ -767,24 +767,24 @@ int __thiscall sub_402220(int *this)
   int result; // eax
   _DWORD *v9; // edx
 
-  v2 = *(this + 43); /*0x402226*/
+  v2 = this->q0AC; /*0x402226*/
   v3 = this + 54; /*0x40222c*/
   AudioMixer::Init(this + 54); /*0x402234*/
   EndFrameAudioMixer(v3, this + 4); /*0x402240*/
   ObjectClass::ClearFlags2(this + 4); /*0x402247*/
-  v4 = (_DWORD *)*(this + 36); /*0x40224c*/
+  v4 = (_DWORD *)this->objectTypeFlags; /*0x40224c*/
   if ( v4 ) /*0x402254*/
   {
     EndFrameAudioMixer(v3, v4); /*0x402258*/
-    ObjectClass::ClearFlags2((_DWORD *)*(this + 36)); /*0x402263*/
+    ObjectClass::ClearFlags2((_DWORD *)this->objectTypeFlags); /*0x402263*/
   }
-  v5 = (_DWORD *)*(this + 37); /*0x402268*/
+  v5 = (_DWORD *)this->q025; /*0x402268*/
   if ( v5 ) /*0x402270*/
     EndFrameAudioMixer(v3, v5); /*0x402274*/
-  v6 = (_DWORD *)*(this + 38); /*0x402279*/
+  v6 = (_DWORD *)this->q026; /*0x402279*/
   if ( v6 ) /*0x402281*/
     EndFrameAudioMixer(v3, v6); /*0x402285*/
-  v7 = (_DWORD *)*(this + 39); /*0x40228a*/
+  v7 = (_DWORD *)this->q027; /*0x40228a*/
   if ( v7 ) /*0x402292*/
     EndFrameAudioMixer(v3, v7); /*0x402296*/
   result = EndFrameAudioMixer(v3, (_DWORD *)(v2 + 104)); /*0x4022a0*/
@@ -936,7 +936,7 @@ int (__thiscall *__fastcall sub_402440(int a1, int a2))(int)
 }
 
 
-// ==== 0x004024A0  AudioSample::ResetState  this=VOID_PTR  sig=csp ====
+// ==== 0x004024A0  AudioSample::ResetState  this=AudioSample  sig=csp ====
 int __thiscall sub_4024A0(_DWORD *this)
 {
   int v2; // eax
@@ -951,15 +951,15 @@ int __thiscall sub_4024A0(_DWORD *this)
     *(this + 87) = AudioController::AdvanceQueue; /*0x4024c1*/
     *(this + 88) = AudioController::UpdatePlayback; /*0x4024cb*/
     *(this + 89) = AudioController::CleanupStream; /*0x4024d5*/
-    *(this + 44) = 0; /*0x4024df*/
+    this->q02C = 0; /*0x4024df*/
     *(this + 45) = 0; /*0x4024e5*/
     *(this + 46) = 0; /*0x4024eb*/
     *(this + 47) = 0; /*0x4024f1*/
-    *(this + 48) = 0; /*0x4024f7*/
-    *(this + 3) = 1; /*0x4024fd*/
+    this->AudioSample_field_0x0C = 0; /*0x4024f7*/
+    this->AudioSample_field_0x0C = 1; /*0x4024fd*/
     *(this + 42) = 0; /*0x402504*/
     *(this + 41) = 0; /*0x40250a*/
-    *(this + 40) = 0; /*0x402510*/
+    this->q028 = 0; /*0x402510*/
     v3 = MEMORY[0x87DE30]; /*0x402516*/
     *(this + 36) = 0; /*0x40251c*/
     *(this + 37) = v3; /*0x402522*/
@@ -972,7 +972,7 @@ int __thiscall sub_4024A0(_DWORD *this)
 }
 
 
-// ==== 0x00402550  AudioStream::Destructor  this=int  sig=csp ====
+// ==== 0x00402550  AudioStream::Destructor  this=AudioStream  sig=csp ====
 void __thiscall AudioStream::Destructor(_DWORD *Block)
 {
   void (__thiscall *v2)(_DWORD *); // eax
@@ -1008,7 +1008,7 @@ int (__thiscall *__thiscall Voice_Stop(int this))(int)
 }
 
 
-// ==== 0x00402600  AudioChannel::DeactivatePlay  this=int  sig=csp ====
+// ==== 0x00402600  AudioChannel::DeactivatePlay  this=AudioChannel  sig=csp ====
 int __thiscall AudioChannel::DeactivatePlay(_DWORD *this)
 {
   int v2; // eax
@@ -1026,7 +1026,7 @@ int __thiscall AudioChannel::DeactivatePlay(_DWORD *this)
 }
 
 
-// ==== 0x00402650  AudioChannel::ActivatePlay  this=int  sig=csp ====
+// ==== 0x00402650  AudioChannel::ActivatePlay  this=AudioChannel  sig=csp ====
 int __thiscall AudioChannel::ActivatePlay(_DWORD *this)
 {
   int v2; // eax
@@ -1044,17 +1044,17 @@ int __thiscall AudioChannel::ActivatePlay(_DWORD *this)
 }
 
 
-// ==== 0x004026A0  AudioFile::GetCallback  this=int  sig=csp ====
+// ==== 0x004026A0  AudioFile::GetCallback  this=AudioFile  sig=csp ====
 int __thiscall Accessor_4026a0(_DWORD *this)
 {
-  return (*(int (**)(void))(*(this + 53) + 40))();
+  return (*(int (**)(void))(this->q0D4 + 40))();
 }
 
 
-// ==== 0x004026B0  AudioStream::Stop  this=VOID_PTR  sig=csp ====
+// ==== 0x004026B0  AudioStream::Stop  this=AudioStream  sig=csp ====
 int __thiscall AudioStream_Stop(_DWORD *this)
 {
-  return (*(int (**)(void))(*(this + 53) + 44))();
+  return (*(int (**)(void))(this->AudioStream_field_0xD4 + 44))();
 }
 
 
@@ -1067,12 +1067,12 @@ int __thiscall sub_4026C0(_DWORD *this)
 }
 
 
-// ==== 0x004026F0  AudioStream::ReleaseChannel  this=int  sig=csp ====
+// ==== 0x004026F0  AudioStream::ReleaseChannel  this=AudioStream  sig=csp ====
 int __thiscall AudioStream_ReleaseChannel(_DWORD *this)
 {
-  (*(void (**)(void))(*(this + 53) + 40))(); /*0x4026f9*/
+  (*(void (**)(void))(this->AudioStream_field_0xD4 + 40))(); /*0x4026f9*/
   *(this + 41) &= ~0x10u; /*0x402705*/
-  return (*(int (__thiscall **)(_DWORD *))(*(this + 53) + 44))(this);
+  return (*(int (__thiscall **)(_DWORD *))(this->AudioStream_field_0xD4 + 44))(this);
 }
 
 
@@ -1134,7 +1134,7 @@ void __fastcall AudioStream_BindChannel(_DWORD *a1, _DWORD *a2)
 }
 
 
-// ==== 0x00402800  AudioStream::CheckFormatChanged  this=int  sig=csp ====
+// ==== 0x00402800  AudioStream::CheckFormatChanged  this=AudioStream  sig=csp ====
 int __fastcall sub_402800(int a1, const void *a2)
 {
   void *v3; // ebx
@@ -1299,7 +1299,7 @@ _DWORD *__thiscall sub_402AF0(int this)
 }
 
 
-// ==== 0x00402C70  CreateAudioChannel  this=unknown  sig=csp ====
+// ==== 0x00402C70  CreateAudioChannel  this=-  sig=csp ====
 int *__fastcall CreateAudioChannel(int a1, const void *a2)
 {
   int v2; // edi
@@ -1415,7 +1415,7 @@ int *__fastcall CreateAudioChannel(int a1, const void *a2)
 }
 
 
-// ==== 0x00402EF0  ObjectClass::method_402EF0  this=int  sig=csp ====
+// ==== 0x00402EF0  ObjectClass::method_402EF0  this=ObjectClass  sig=csp ====
 void __thiscall sub_402EF0(int *Block)
 {
   int *Next; // esi
@@ -1645,7 +1645,7 @@ struct Concurrency::IScheduler *__thiscall _GetIScheduler_SchedulerBase_details_
 }
 
 
-// ==== 0x00403530  AudioQueue::PreallocateChannels  this=int  sig=csp ====
+// ==== 0x00403530  AudioQueue::PreallocateChannels  this=AudioQueue  sig=csp ====
 int __fastcall sub_403530(_DWORD *a1, int a2)
 {
   int v4; // edi
@@ -1687,7 +1687,7 @@ int __fastcall sub_4035B0(int a1, int *a2)
 }
 
 
-// ==== 0x004035D0  AudioQueue::IteratorNext  this=VOID_PTR  sig=csp ====
+// ==== 0x004035D0  AudioQueue::IteratorNext  this=AudioQueue  sig=csp ====
 int *__thiscall sub_4035D0(int **this)
 {
   int *v2; // ecx
@@ -1699,7 +1699,7 @@ int *__thiscall sub_4035D0(int **this)
 }
 
 
-// ==== 0x004035F0  AudioQueue::FindBestChannel  this=unknown  sig=csp ====
+// ==== 0x004035F0  AudioQueue::FindBestChannel  this=AudioQueue  sig=csp ====
 int __fastcall sub_4035F0(int a1, int a2)
 {
   int v2; // ebx
@@ -1776,7 +1776,7 @@ int __fastcall sub_4035F0(int a1, int a2)
 }
 
 
-// ==== 0x004036C0  sub_4036C0  this=int  sig=ida-proto ====
+// ==== 0x004036C0  sub_4036C0  this=-  sig=ida-proto ====
 int __fastcall sub_4036C0(int a1, int a2)
 {
   int v3; // eax
@@ -1859,34 +1859,34 @@ int __thiscall sub_403810(int (**this)(void))
 }
 
 
-// ==== 0x00403820  AudioStream::Reset  this=int  sig=csp ====
+// ==== 0x00403820  AudioStream::Reset  this=AudioStream  sig=csp ====
 int __thiscall AudioStream::Reset(_DWORD *this)
 {
   *this = 0; /*0x403822*/
-  *(this + 1) = 0; /*0x403824*/
-  *(this + 2) = 0; /*0x403827*/
-  *(this + 3) = 0; /*0x40382a*/
-  *(this + 4) = 0; /*0x40382d*/
-  *(this + 5) = 0; /*0x403830*/
-  *(this + 6) = 0; /*0x403833*/
-  *(this + 7) = 0; /*0x403836*/
-  *(this + 10) = 0; /*0x403839*/
-  *(this + 11) = 0; /*0x40383c*/
-  *(this + 18) = 0; /*0x40383f*/
-  *(this + 20) = 0; /*0x403842*/
-  *(this + 16) = 5000; /*0x403845*/
-  *(this + 17) = 0; /*0x40384c*/
-  *(this + 12) = 0; /*0x40384f*/
-  *(this + 13) = 0; /*0x403852*/
-  *(this + 14) = 0; /*0x403855*/
-  *(this + 15) = 0; /*0x403858*/
-  *(this + 21) = 0; /*0x40385b*/
-  *(this + 19) = 0; /*0x40385e*/
+  this->AudioStream_field_0x4 = 0; /*0x403824*/
+  this->AudioStream_field_0x8 = 0; /*0x403827*/
+  this->AudioStream_field_0xC = 0; /*0x40382a*/
+  this->AudioStream_field_0x10 = 0; /*0x40382d*/
+  this->AudioStream_field_0x14 = 0; /*0x403830*/
+  this->AudioStream_field_0x18 = 0; /*0x403833*/
+  this->AudioStream_field_0x1C = 0; /*0x403836*/
+  this->AudioStream_field_0x28 = 0; /*0x403839*/
+  this->AudioStream_field_0x2C = 0; /*0x40383c*/
+  this->AudioStream_field_0x48 = 0; /*0x40383f*/
+  this->AudioStream_field_0x50 = 0; /*0x403842*/
+  this->AudioStream_field_0x40 = 5000; /*0x403845*/
+  this->AudioStream_field_0x44 = 0; /*0x40384c*/
+  this->AudioStream_field_0x30 = 0; /*0x40384f*/
+  this->AudioStream_field_0x34 = 0; /*0x403852*/
+  this->AudioStream_field_0x38 = 0; /*0x403855*/
+  this->AudioStream_field_0x3C = 0; /*0x403858*/
+  this->AudioStream_field_0x54 = 0; /*0x40385b*/
+  this->AudioStream_field_0x4C = 0; /*0x40385e*/
   return 0; /*0x403861*/
 }
 
 
-// ==== 0x00403870  CoordBounds::Constructor  this=int  sig=csp ====
+// ==== 0x00403870  CoordBounds::Constructor  this=CoordBounds  sig=csp ====
 __int64 __thiscall CoordBounds_Constructor(_DWORD *this, int a2, int a3)
 {
   __int64 result; // rax
@@ -1901,20 +1901,20 @@ __int64 __thiscall CoordBounds_Constructor(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x004038A0  AudioStream::ResetChannel  this=int  sig=csp ====
+// ==== 0x004038A0  AudioStream::ResetChannel  this=AudioStream  sig=csp ====
 int __thiscall AudioStream::ResetChannel(_DWORD *this, int a2, int a3)
 {
-  *(this + 2) = a2; /*0x4038a4*/
-  *(this + 3) = a3; /*0x4038ab*/
+  this->AudioStream_field_0x8 = a2; /*0x4038a4*/
+  this->AudioStream_field_0xC = a3; /*0x4038ab*/
   return a2; /*0x4038ae*/
 }
 
 
-// ==== 0x004038C0  AudioStream::ResetChannel2  this=int  sig=csp ====
+// ==== 0x004038C0  AudioStream::ResetChannel2  this=AudioStream  sig=csp ====
 int __thiscall AudioStream::ResetChannel2(_DWORD *this, int a2, int a3)
 {
-  *(this + 8) = a2; /*0x4038c4*/
-  *(this + 9) = a3; /*0x4038cb*/
+  this->AudioStream_field_0x20 = a2; /*0x4038c4*/
+  this->AudioStream_field_0x24 = a3; /*0x4038cb*/
   return a2; /*0x4038ce*/
 }
 
@@ -1926,7 +1926,7 @@ BOOL __thiscall sub_4038E0(_QWORD *this, __int64 a2)
 }
 
 
-// ==== 0x00403920  AudioThread::UpdateStats  this=VOID_PTR  sig=csp ====
+// ==== 0x00403920  AudioThread::UpdateStats  this=AudioThread  sig=csp ====
 int __thiscall AudioThread_UpdateStats(int this, __int64 a2)
 {
   int result; // eax
@@ -1952,7 +1952,7 @@ int __thiscall AudioThread_UpdateStats(int this, __int64 a2)
 }
 
 
-// ==== 0x004039C0  sub_4039C0  this=unknown  sig=csp ====
+// ==== 0x004039C0  sub_4039C0  this=-  sig=csp ====
 int __fastcall sub_4039C0(int a1, char *a2)
 {
   unsigned int v3; // edx
@@ -2150,7 +2150,7 @@ int sub_403EB0()
 }
 
 
-// ==== 0x00403ED0  sub_403ED0  this=int  sig=ida-proto ====
+// ==== 0x00403ED0  sub_403ED0  this=-  sig=ida-proto ====
 int __fastcall sub_403ED0(int a1, int a2)
 {
   int v4; // ecx
@@ -3082,7 +3082,7 @@ int __thiscall Audio::FlushChannel(_DWORD **Block)
 }
 
 
-// ==== 0x00404E20  PollNextAudioQueue  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00404E20  PollNextAudioQueue  this=-  sig=ida-proto ====
 int __fastcall sub_404E20(int a1)
 {
   int v1; // ebp
@@ -3268,37 +3268,37 @@ int sub_405040()
 }
 
 
-// ==== 0x00405130  ObjectClass::method  this=int  sig=csp ====
+// ==== 0x00405130  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_405130(_DWORD *this)
 {
   if ( MEMORY[0x87E2A0] ) /*0x405137*/
-    return *(this + 20); /*0x40513c*/
+    return this->customSound_controller; /*0x40513c*/
   else
     return 0; /*0x405139*/
 }
 
 
-// ==== 0x00405140  ObjectClass::method  this=int  sig=csp ====
+// ==== 0x00405140  ObjectClass::method  this=ObjectClass  sig=csp ====
 double __thiscall sub_405140(float *this)
 {
   if ( MEMORY[0x87E2A0] ) /*0x405147*/
-    return *(this + 21); /*0x405150*/
+    return this->q054; /*0x405150*/
   else
     return 0.0; /*0x405149*/
 }
 
 
-// ==== 0x00405160  ObjectClass::method  this=int  sig=csp ====
+// ==== 0x00405160  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_405160(_DWORD *this)
 {
   if ( MEMORY[0x87E2A0] ) /*0x405167*/
-    return *(this + 5); /*0x40516c*/
+    return this->abstractFlags; /*0x40516c*/
   else
     return 0; /*0x405169*/
 }
 
 
-// ==== 0x00405170  VocClass::GetSampleName  this=VOID_PTR  sig=csp ====
+// ==== 0x00405170  VocClass::GetSampleName  this=VocClass  sig=csp ====
 char *__thiscall VocClass_GetSampleName(char *this)
 {
   char *result; // eax
@@ -3372,14 +3372,14 @@ int *__thiscall AudioPool_ProcessQueue(_DWORD *this)
 }
 
 
-// ==== 0x004052E0  ObjectClass::method_4052E0  this=int  sig=csp ====
+// ==== 0x004052E0  ObjectClass::method_4052E0  this=ObjectClass  sig=csp ====
 int __thiscall sub_4052E0(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 6); /*0x4052e0*/
+  result = this->nextArrayIndex; /*0x4052e0*/
   LOBYTE(result) = result | 8; /*0x4052e3*/
-  *(this + 6) = result; /*0x4052e5*/
+  this->nextArrayIndex = result; /*0x4052e5*/
   return result; /*0x4052e8*/
 }
 
@@ -3855,7 +3855,7 @@ LABEL_2:
 }
 
 
-// ==== 0x00405B50  sub_405B50  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00405B50  sub_405B50  this=-  sig=ida-proto ====
 _DWORD *__fastcall sub_405B50(int a1, char a2)
 {
   _DWORD *v3; // esi
@@ -3886,13 +3886,13 @@ _DWORD *__fastcall sub_405B50(int a1, char a2)
 }
 
 
-// ==== 0x00405BE0  AudioController::Init  this=VOID_PTR  sig=csp ====
+// ==== 0x00405BE0  AudioController::Init  this=AudioController  sig=csp ====
 int __thiscall sub_405BE0(_DWORD *this)
 {
-  *(this + 3) = &MEMORY[0x87E294]; /*0x405be2*/
+  this->AudioController_field_0C = &MEMORY[0x87E294]; /*0x405be2*/
   *this = 0; /*0x405be9*/
-  *(this + 1) = 0; /*0x405beb*/
-  *(this + 2) = 0; /*0x405bee*/
+  this->AudioController_field_04 = 0; /*0x405beb*/
+  this->AudioController_field_08 = 0; /*0x405bee*/
   return 0; /*0x405bf1*/
 }
 
@@ -4240,7 +4240,7 @@ int __thiscall sub_406170(int this)
 }
 
 
-// ==== 0x004061D0  AudioMixer::PlayBuffer  this=VOID_PTR  sig=csp ====
+// ==== 0x004061D0  AudioMixer::PlayBuffer  this=AudioMixer  sig=csp ====
 int __fastcall AudioMixer::PlayBuffer(_DWORD *a1, unsigned int a2)
 {
   int v2; // eax
@@ -4264,7 +4264,7 @@ int __fastcall AudioMixer::PlayBuffer(_DWORD *a1, unsigned int a2)
 }
 
 
-// ==== 0x00406270  AudioMixer::RequestOrEndBuffer  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00406270  AudioMixer::RequestOrEndBuffer  this=AudioMixer  sig=ida-proto ====
 int __fastcall AudioMixer::RequestOrEndBuffer(int a1, unsigned int a2)
 {
   if ( *(_DWORD *)(a1 + 28) == 3 ) /*0x406276*/
@@ -4624,7 +4624,7 @@ void *__thiscall sub_406760(void (__thiscall *this)(char *))
 }
 
 
-// ==== 0x004067D0  sub_4067D0  this=unknown  sig=csp ====
+// ==== 0x004067D0  sub_4067D0  this=-  sig=csp ====
 BOOL __fastcall sub_4067D0(char *a1, _DWORD *a2)
 {
   const void **v4; // esi
@@ -4648,7 +4648,7 @@ BOOL __fastcall sub_4067D0(char *a1, _DWORD *a2)
 }
 
 
-// ==== 0x00406820  sub_406820  this=int  sig=csp ====
+// ==== 0x00406820  sub_406820  this=-  sig=csp ====
 BOOL __fastcall sub_406820(_DWORD *a1, char *a2)
 {
   const void **v4; // esi
@@ -4672,7 +4672,7 @@ BOOL __fastcall sub_406820(_DWORD *a1, char *a2)
 }
 
 
-// ==== 0x00406870  Audio::ApplyFormatFlags  this=int  sig=csp ====
+// ==== 0x00406870  Audio::ApplyFormatFlags  this=Audio  sig=csp ====
 BOOL __fastcall Audio::ApplyFormatFlags(int *a1, char *a2)
 {
   const void **v4; // esi
@@ -4859,7 +4859,7 @@ int sub_406AF0()
 }
 
 
-// ==== 0x00406B10  ObjectClass::InitializeAudioSubsystem  this=int  sig=csp ====
+// ==== 0x00406B10  ObjectClass::InitializeAudioSubsystem  this=ObjectClass  sig=csp ====
 int __thiscall InitializeAudioSubsystem(void *this)
 {
   int *AudioChannel; // eax
@@ -5060,7 +5060,7 @@ int sub_406EE0()
 }
 
 
-// ==== 0x00406F00  sub_406F00  this=unknown  sig=csp ====
+// ==== 0x00406F00  sub_406F00  this=-  sig=csp ====
 int sub_406F00()
 {
   int result; // eax
@@ -5105,7 +5105,7 @@ int sub_406F40()
 }
 
 
-// ==== 0x00406F70  UpdateAudioVideo  this=unknown  sig=csp ====
+// ==== 0x00406F70  UpdateAudioVideo  this=-  sig=csp ====
 void *AudioVideo_Update()
 {
   void *result; // eax
@@ -5136,14 +5136,14 @@ void *AudioVideo_Update()
 }
 
 
-// ==== 0x00407000  Audio::IsSoundEnabled  this=unknown  sig=csp ====
+// ==== 0x00407000  Audio::IsSoundEnabled  this=Audio  sig=csp ====
 BOOL Audio::IsSoundEnabled()
 {
   return MEMORY[0x87E728] != 0; /*0x40700d*/
 }
 
 
-// ==== 0x00407010  Audio::GetEnabled  this=unknown  sig=csp ====
+// ==== 0x00407010  Audio::GetEnabled  this=Audio  sig=csp ====
 void *Audio_GetEnabled()
 {
   return MEMORY[0x87E728]; /*0x407015*/
@@ -5581,14 +5581,14 @@ int __thiscall Queue_GetNext(int *this)
 }
 
 
-// ==== 0x00407480  AudioList::GetNextEntry  this=int  sig=csp ====
+// ==== 0x00407480  AudioList::GetNextEntry  this=AudioList  sig=csp ====
 int __thiscall AudioList_GetNextEntry(_DWORD *this)
 {
-  return *(_DWORD *)(*(this + 1) + 8) != *(this + 1) ? *(this + 1) : 0;
+  return *(_DWORD *)(this->q004 + 8) != this->q004 ? this->q004 : 0;
 }
 
 
-// ==== 0x004074D0  AllocLinkedListMemory  this=int  sig=ida-proto ====
+// ==== 0x004074D0  AllocLinkedListMemory  this=-  sig=ida-proto ====
 _DWORD *__fastcall Memory_AllocLinkedList(int a1, int a2)
 {
   int v2; // edi
@@ -5686,7 +5686,7 @@ int sub_407550()
 }
 
 
-// ==== 0x00407680  StartAddress  this=unknown  sig=csp ====
+// ==== 0x00407680  StartAddress  this=-  sig=csp ====
 DWORD __stdcall StartAddress(_DWORD *lpThreadParameter)
 {
   _DWORD *v1; // edi
@@ -5778,7 +5778,7 @@ void sub_407780()
 }
 
 
-// ==== 0x00407860  AudioStream::Constructor  this=int  sig=csp ====
+// ==== 0x00407860  AudioStream::Constructor  this=AudioStream  sig=csp ====
 char *__thiscall AudioStream_Constructor(void *this, unsigned __int64 a2)
 {
   int v3; // esi
@@ -5901,7 +5901,7 @@ int __thiscall sub_407A60(_DWORD *this)
 }
 
 
-// ==== 0x00407A90  AudioSample::Destructor  this=int  sig=csp ====
+// ==== 0x00407A90  AudioSample::Destructor  this=AudioSample  sig=csp ====
 void __thiscall AudioSample::Destructor(void *Block)
 {
   _DWORD *v2; // ecx
@@ -5947,7 +5947,7 @@ void __thiscall AudioSample::Destructor(void *Block)
 }
 
 
-// ==== 0x00407B40  AudioQueue::IsEmpty  this=int  sig=ida-proto ====
+// ==== 0x00407B40  AudioQueue::IsEmpty  this=AudioQueue  sig=ida-proto ====
 int __fastcall AudioQueue::IsEmpty(int a1, int a2)
 {
   int result; // eax
@@ -5958,7 +5958,7 @@ int __fastcall AudioQueue::IsEmpty(int a1, int a2)
 }
 
 
-// ==== 0x00407B50  AudioQueue::IsNotEmpty  this=int  sig=ida-proto ====
+// ==== 0x00407B50  AudioQueue::IsNotEmpty  this=AudioQueue  sig=ida-proto ====
 int __fastcall AudioQueue::IsNotEmpty(int a1, int a2)
 {
   int result; // eax
@@ -5969,7 +5969,7 @@ int __fastcall AudioQueue::IsNotEmpty(int a1, int a2)
 }
 
 
-// ==== 0x00407B60  ThreadAudioMixerMain  this=int  sig=csp ====
+// ==== 0x00407B60  ThreadAudioMixerMain  this=-  sig=csp ====
 int __fastcall ThreadAudioMixerMain(_DWORD *a1, RawFileClass *a2, int a3)
 {
   void (__thiscall ***v5)(_DWORD, int); // ecx
@@ -6188,15 +6188,15 @@ LABEL_51:
 }
 
 
-// ==== 0x00407F40  Audio::Release  this=int  sig=csp ====
+// ==== 0x00407F40  Audio::Release  this=Audio  sig=csp ====
 void __thiscall Audio_Release(_DWORD *this)
 {
   if ( !*(this + 34) ) /*0x407f43*/
   {
-    if ( *(this + 5) ) /*0x407f4d*/
+    if ( this->Audio_field_0x14 ) /*0x407f4d*/
     {
       EnterCriticalSection(&MEMORY[0x87E7F8]); /*0x407f59*/
-      Voice::Stop(*(this + 5)); /*0x407f62*/
+      Voice::Stop(this->Audio_field_0x14); /*0x407f62*/
       LeaveCriticalSection(&MEMORY[0x87E7F8]); /*0x407f6c*/
     }
   }
@@ -6266,14 +6266,14 @@ void __thiscall sub_408000(int this)
 }
 
 
-// ==== 0x00408070  Audio::IsSoundPlaying  this=int  sig=csp ====
+// ==== 0x00408070  Audio::IsSoundPlaying  this=Audio  sig=csp ====
 int __thiscall Audio_IsSoundPlaying(_DWORD *this)
 {
-  return *(this + 3) & 1; /*0x408076*/
+  return this->Audio_field_0xC & 1; /*0x408076*/
 }
 
 
-// ==== 0x00408080  SetAudioFileName  this=int  sig=csp ====
+// ==== 0x00408080  SetAudioFileName  this=-  sig=csp ====
 char *__fastcall SetAudioFileName(int a1, const char *a2)
 {
   char *result; // eax
@@ -6298,10 +6298,10 @@ int __thiscall sub_4080B0(_DWORD *this)
 }
 
 
-// ==== 0x004080C0  ThemeClass::RequestBuffer  this=VOID_PTR  sig=csp ====
+// ==== 0x004080C0  ThemeClass::RequestBuffer  this=ThemeClass  sig=csp ====
 int __thiscall ThemeClass_RequestBuffer(_DWORD *this)
 {
-  return RequestBufferMixer((unsigned int *)(*(this + 5) + 16), 0);
+  return RequestBufferMixer((unsigned int *)(this->q014 + 16), 0);
 }
 
 
@@ -6337,10 +6337,10 @@ char __thiscall sub_4080F0(int this)
 }
 
 
-// ==== 0x00408140  ThemeClass::GetValue  this=int  sig=csp ====
+// ==== 0x00408140  ThemeClass::GetValue  this=ThemeClass  sig=csp ====
 __int64 __thiscall sub_408140(_QWORD *this)
 {
-  return *(this + 4); /*0x408146*/
+  return this->ThemeClass_field_04; /*0x408146*/
 }
 
 
@@ -6566,18 +6566,18 @@ _DWORD *__thiscall sub_408460(size_t Size)
 }
 
 
-// ==== 0x004084E0  AudioStream::InitNodeFields  this=VOID_PTR  sig=csp ====
+// ==== 0x004084E0  AudioStream::InitNodeFields  this=AudioStream  sig=csp ====
 void __thiscall sub_4084E0(_DWORD *this)
 {
   *this = 0; /*0x4084e2*/
-  *(this + 1) = 0; /*0x4084e4*/
-  *(this + 5) = 0; /*0x4084e7*/
-  *(this + 6) = 0; /*0x4084ea*/
+  this->AudioStream_field_0x4 = 0; /*0x4084e4*/
+  this->AudioStream_field_0x14 = 0; /*0x4084e7*/
+  this->AudioStream_field_0x18 = 0; /*0x4084ea*/
   DListNode::Init(this + 2); /*0x4084f0*/
 }
 
 
-// ==== 0x00408500  sub_408500  this=unknown  sig=csp ====
+// ==== 0x00408500  sub_408500  this=-  sig=csp ====
 int __fastcall sub_408500(int a1, _DWORD *a2)
 {
   int result; // eax
@@ -6590,7 +6590,7 @@ int __fastcall sub_408500(int a1, _DWORD *a2)
 }
 
 
-// ==== 0x00408520  AudioController::GetOffset  this=int  sig=csp ====
+// ==== 0x00408520  AudioController::GetOffset  this=AudioController  sig=csp ====
 int __thiscall sub_408520(int *this)
 {
   return Queue::GetNext(this + 2);
@@ -6604,10 +6604,10 @@ void nullsub_2()
 }
 
 
-// ==== 0x00408540  Audio::CalcRate  this=int  sig=csp ====
+// ==== 0x00408540  Audio::CalcRate  this=Audio  sig=csp ====
 int __thiscall Audio_CalcRate(_DWORD *this, int a2, int a3)
 {
-  return a2 * *(this + 5) / 1000; /*0x40855b*/
+  return a2 * this->Audio_field_0x14 / 1000; /*0x40855b*/
 }
 
 
@@ -6624,7 +6624,7 @@ unsigned __int64 __fastcall sub_408560(int a1, int a2)
 }
 
 
-// ==== 0x004085A0  Struct::ZeroInit32  this=int  sig=csp ====
+// ==== 0x004085A0  Struct::ZeroInit32  this=Struct  sig=csp ====
 int __thiscall Struct_ZeroInit32(void *this)
 {
   memset(this, 0, 0x20u); /*0x4085aa*/
@@ -6632,25 +6632,25 @@ int __thiscall Struct_ZeroInit32(void *this)
 }
 
 
-// ==== 0x004085B0  ObjectClass::method_4085B0  this=VOID_PTR  sig=csp ====
+// ==== 0x004085B0  ObjectClass::method_4085B0  this=ObjectClass  sig=csp ====
 int __thiscall sub_4085B0(_DWORD *this)
 {
   int v1; // edx
   int result; // eax
 
-  v1 = *(this + 1); /*0x4085b3*/
-  result = *(this + 2) * *(this + 3) * *(this + 4); /*0x4085ba*/
-  *(this + 5) = result; /*0x4085c1*/
+  v1 = this->vtable2; /*0x4085b3*/
+  result = this->vtable3 * this->vtable4 * this->uniqueId; /*0x4085ba*/
+  this->abstractFlags = result; /*0x4085c1*/
   if ( v1 == 1 || v1 == 2 ) /*0x4085c9*/
   {
     result >>= 2; /*0x4085cb*/
-    *(this + 5) = result; /*0x4085ce*/
+    this->abstractFlags = result; /*0x4085ce*/
   }
   return result; /*0x4085d1*/
 }
 
 
-// ==== 0x004085E0  sub_4085E0  this=int  sig=csp ====
+// ==== 0x004085E0  sub_4085E0  this=-  sig=csp ====
 void __fastcall sub_4085E0(_DWORD *a1, int a2, int a3)
 {
   a1[4] = a3; /*0x4085e7*/
@@ -6667,7 +6667,7 @@ void __thiscall AudioNode_Release(_DWORD *this)
 }
 
 
-// ==== 0x00408610  ParseWaveFileHeader  this=int  sig=csp ====
+// ==== 0x00408610  ParseWaveFileHeader  this=-  sig=csp ====
 int __fastcall sub_408610(int a1, _DWORD *a2, size_t *a3)
 {
   unsigned __int16 *v3; // esi
@@ -6765,7 +6765,7 @@ int __fastcall sub_408610(int a1, _DWORD *a2, size_t *a3)
 }
 
 
-// ==== 0x004087F0  sub_4087F0  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x004087F0  sub_4087F0  this=-  sig=ida-proto ====
 _DWORD *sub_4087F0()
 {
   _DWORD *v0; // esi
@@ -6878,30 +6878,30 @@ void __thiscall sub_408840(_DWORD *this)
 }
 
 
-// ==== 0x00408930  AudioSample::SetField  this=VOID_PTR  sig=csp ====
+// ==== 0x00408930  AudioSample::SetField  this=AudioSample  sig=csp ====
 int __thiscall sub_408930(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 10); /*0x408930*/
-  *(this + 11) = 0; /*0x408937*/
-  *(this + 3) = result; /*0x40893a*/
+  result = this->q028; /*0x408930*/
+  this->q02C = 0; /*0x408937*/
+  this->AudioSample_field_0x0C = result; /*0x40893a*/
   if ( result ) /*0x40893d*/
   {
-    result = *(_DWORD *)(result + 8 * *(this + 5) + 32); /*0x408943*/
-    *(this + 1) = result; /*0x408948*/
+    result = *(_DWORD *)(result + 8 * this->q014 + 32); /*0x408943*/
+    this->AudioSample_field_0x04 = result; /*0x408948*/
   }
   else
   {
-    *(this + 1) = 0; /*0x408958*/
+    this->AudioSample_field_0x04 = 0; /*0x408958*/
   }
-  *(this + 2) = 0; /*0x40894b*/
-  *(this + 4) &= ~1u; /*0x408954*/
+  this->AudioSample_field_0x08 = 0; /*0x40894b*/
+  this->AudioSample_field_0x10 &= ~1u; /*0x408954*/
   return result; /*0x408957*/
 }
 
 
-// ==== 0x00408970  ObjectClass::method  this=int  sig=csp ====
+// ==== 0x00408970  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_408970(_DWORD *this)
 {
   _DWORD *v1; // edx
@@ -6921,7 +6921,7 @@ int __thiscall sub_408970(_DWORD *this)
 
   v1 = this; /*0x408973*/
   v2 = 0; /*0x408977*/
-  v3 = (_DWORD *)*(this + 1); /*0x408979*/
+  v3 = (_DWORD *)this->vtable2; /*0x408979*/
   v4 = this + 1; /*0x40897c*/
   if ( v3 != this + 1 ) /*0x408985*/
   {
@@ -6996,7 +6996,7 @@ int __thiscall sub_408970(_DWORD *this)
 }
 
 
-// ==== 0x00408A70  AudioMixer::SetupChannels  this=int  sig=csp ====
+// ==== 0x00408A70  AudioMixer::SetupChannels  this=AudioMixer  sig=csp ====
 int __thiscall sub_408A70(int *this)
 {
   int *v1; // edi
@@ -7009,7 +7009,7 @@ int __thiscall sub_408A70(int *this)
   _DWORD *v8; // eax
   int result; // eax
 
-  v1 = (int *)*(this + 1); /*0x408a7c*/
+  v1 = (int *)this->AudioMixer_field_04; /*0x408a7c*/
   if ( v1 == this + 1 ) /*0x408a81*/
   {
     v1 = 0; /*0x408a85*/
@@ -7019,7 +7019,7 @@ int __thiscall sub_408A70(int *this)
     v2 = 0; /*0x408a89*/
     if ( v1 ) /*0x408a8d*/
     {
-      v3 = (int *)*(this + 1); /*0x408a8f*/
+      v3 = (int *)this->AudioMixer_field_04; /*0x408a8f*/
       do /*0x408ab2*/
       {
         v4 = v3 + 9; /*0x408a91*/
@@ -7060,13 +7060,13 @@ int __thiscall sub_408A70(int *this)
     --v7; /*0x408afd*/
   }
   while ( v7 ); /*0x408afe*/
-  result = *v6 + *(this + 5); /*0x408b05*/
+  result = *v6 + this->AudioMixer_field_14; /*0x408b05*/
   *v6 = result; /*0x408b07*/
   return result; /*0x408b09*/
 }
 
 
-// ==== 0x00408B10  sub_408B10  this=int  sig=csp ====
+// ==== 0x00408B10  sub_408B10  this=-  sig=csp ====
 char __fastcall sub_408B10(_DWORD *a1, int *a2)
 {
   int v4; // ecx
@@ -7084,7 +7084,7 @@ char __fastcall sub_408B10(_DWORD *a1, int *a2)
 }
 
 
-// ==== 0x00408B40  sub_408B40  this=int  sig=csp ====
+// ==== 0x00408B40  sub_408B40  this=-  sig=csp ====
 int __fastcall sub_408B40(_DWORD *a1, int a2, int a3, size_t Size)
 {
   int result; // eax
@@ -7140,7 +7140,7 @@ int __fastcall sub_408B40(_DWORD *a1, int a2, int a3, size_t Size)
 }
 
 
-// ==== 0x00408C30  AcquireAudioStreamBuffer  this=int  sig=csp ====
+// ==== 0x00408C30  AcquireAudioStreamBuffer  this=-  sig=csp ====
 int __fastcall AudioStream_AcquireBuffer(_DWORD *a1, int a2)
 {
   int result; // eax
@@ -7218,28 +7218,28 @@ int __fastcall AudioStream_AcquireBuffer(_DWORD *a1, int a2)
 }
 
 
-// ==== 0x00408D30  ObjectClass::method_408D30  this=int  sig=csp ====
+// ==== 0x00408D30  ObjectClass::method_408D30  this=ObjectClass  sig=csp ====
 int __thiscall sub_408D30(_DWORD *this)
 {
-  return *(this + 35) - *(this + 36); /*0x408d3e*/
+  return this->onBridge - this->isAliveFlag; /*0x408d3e*/
 }
 
 
-// ==== 0x00408D40  ObjectClass::method_408D40  this=int  sig=csp ====
+// ==== 0x00408D40  ObjectClass::method_408D40  this=ObjectClass  sig=csp ====
 int __thiscall sub_408D40(_DWORD *this)
 {
-  return *(this + 19) - *(this + 20); /*0x408d48*/
+  return this->q04C - this->customSound_controller; /*0x408d48*/
 }
 
 
-// ==== 0x00408D50  AudioStream::GetChannel  this=int  sig=csp ====
+// ==== 0x00408D50  AudioStream::GetChannel  this=AudioStream  sig=csp ====
 int __thiscall Accessor_408d50(_DWORD *this)
 {
-  return *(this + 5); /*0x408d53*/
+  return this->AudioStream_field_0x14; /*0x408d53*/
 }
 
 
-// ==== 0x00408D80  sub_408D80  this=int  sig=ida-proto ====
+// ==== 0x00408D80  sub_408D80  this=-  sig=ida-proto ====
 _DWORD *__fastcall sub_408D80(int a1, int a2)
 {
   _DWORD *v4; // esi
@@ -7311,7 +7311,7 @@ int __thiscall sub_408ED0(_DWORD *this)
 }
 
 
-// ==== 0x00408EE0  BufferedAudioStreamRead  this=int  sig=csp ====
+// ==== 0x00408EE0  BufferedAudioStreamRead  this=-  sig=csp ====
 int __fastcall BufferedAudioStreamRead(AudioStream *a1, AudioStream *a2, signed int a3)
 {
   AudioStream *v3; // edi
@@ -7409,7 +7409,7 @@ LABEL_11:
 }
 
 
-// ==== 0x00409030  WriteAudioStreamToFile  this=int  sig=csp ====
+// ==== 0x00409030  WriteAudioStreamToFile  this=-  sig=csp ====
 int __fastcall WriteAudioStreamToFile(MouseClass *aP0, FILE *a1, signed int arg0, char *a3)
 {
   void *v7; // eax
@@ -7466,7 +7466,7 @@ int __thiscall sub_4090F0(_DWORD *this)
 }
 
 
-// ==== 0x00409100  ObjectClass::method  this=VOID_PTR  sig=csp ====
+// ==== 0x00409100  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_409100(int *this)
 {
   int v1; // esi
@@ -7480,20 +7480,20 @@ int __thiscall sub_409100(int *this)
   int v10; // edx
   _DWORD *v11; // edx
 
-  v1 = *(this + 11); /*0x409101*/
+  v1 = this->fallRate; /*0x409101*/
   if ( !v1 ) /*0x409106*/
     return 0; /*0x409108*/
-  v3 = *(this + 5) + 1; /*0x40910f*/
-  if ( *(this + 5) == 1 ) /*0x409113*/
+  v3 = this->abstractFlags + 1; /*0x40910f*/
+  if ( this->abstractFlags == 1 ) /*0x409113*/
     v3 = 0; /*0x409115*/
   v4 = (v3 << 6) + *this + 24; /*0x40911e*/
-  *(this + 14) += v1; /*0x409127*/
+  this->attachedBomb += v1; /*0x409127*/
   *(_DWORD *)(v4 + 52) += v1; /*0x40912f*/
-  v5 = (_DWORD *)*(this + 10); /*0x409132*/
+  v5 = (_DWORD *)this->owningHouseIndex; /*0x409132*/
   v6 = v1; /*0x409135*/
   while ( 1 ) /*0x409137*/
   {
-    v7 = *(this + 5); /*0x409137*/
+    v7 = this->abstractFlags; /*0x409137*/
     v8 = v5[2 * v7 + 9]; /*0x40913a*/
     v9 = &v5[2 * v7 + 8]; /*0x40913e*/
     if ( v8 > v1 ) /*0x409144*/
@@ -7516,15 +7516,15 @@ int __thiscall sub_409100(int *this)
   *v9 += v1; /*0x409171*/
   v9[1] -= v1; /*0x409178*/
 LABEL_13:
-  *(this + 10) = (int)v5; /*0x40917b*/
-  *(this + 11) = 0; /*0x409180*/
-  *(this + 3) = (int)v5; /*0x409187*/
+  this->owningHouseIndex = (int)v5; /*0x40917b*/
+  this->fallRate = 0; /*0x409180*/
+  this->vtable4 = (int)v5; /*0x409187*/
   if ( v5 ) /*0x40918a*/
-    *(this + 1) = v5[2 * *(this + 5) + 8]; /*0x409193*/
+    this->vtable2 = v5[2 * this->abstractFlags + 8]; /*0x409193*/
   else
-    *(this + 1) = 0; /*0x409198*/
-  *(this + 2) = 0; /*0x40919f*/
-  *(this + 4) &= ~1u; /*0x4091ac*/
+    this->vtable2 = 0; /*0x409198*/
+  this->vtable3 = 0; /*0x40919f*/
+  this->vtable2 &= ~1u; /*0x4091ac*/
   ReadAudioStream(this, 0); /*0x4091b1*/
   return v6; /*0x40910a*/
 }
@@ -7640,10 +7640,10 @@ int __thiscall sub_409310(int *this)
 }
 
 
-// ==== 0x00409320  Audio::GetSampleSize  this=int  sig=csp ====
+// ==== 0x00409320  Audio::GetSampleSize  this=Audio  sig=csp ====
 int __thiscall Audio_GetSampleSize(_DWORD *this)
 {
-  return *(this + 13) - *(this + 14); /*0x409328*/
+  return this->Audio_field_0x34 - this->Audio_field_0x38; /*0x409328*/
 }
 
 
@@ -7654,7 +7654,7 @@ int __thiscall sub_409330(_DWORD *this)
 }
 
 
-// ==== 0x00409360  sub_409360  this=unknown  sig=csp ====
+// ==== 0x00409360  sub_409360  this=-  sig=csp ====
 int sub_409360()
 {
   LONGLONG v0; // rax
@@ -7675,7 +7675,7 @@ int sub_409360()
 }
 
 
-// ==== 0x004093B0  Audio::Callback  this=unknown  sig=csp ====
+// ==== 0x004093B0  Audio::Callback  this=Audio  sig=csp ====
 int Audio_Callback()
 {
   if ( unk_87E848 ) /*0x4093b7*/
@@ -7770,7 +7770,7 @@ int __thiscall sub_409470(_DWORD *this)
 }
 
 
-// ==== 0x004095B0  AudioStreamThreadProc  this=unknown  sig=csp ====
+// ==== 0x004095B0  AudioStreamThreadProc  this=-  sig=csp ====
 DWORD __stdcall AudioStreamThreadProc(_DWORD *lpThreadParameter)
 {
   _DWORD *v1; // esi
@@ -7912,7 +7912,7 @@ LABEL_30:
 }
 
 
-// ==== 0x00409880  ProcessAudioStream  this=int  sig=csp ====
+// ==== 0x00409880  ProcessAudioStream  this=-  sig=csp ====
 int __fastcall ProcessAudioStream(int *a1, int a2)
 {
   int v3; // ebp
@@ -8126,7 +8126,7 @@ LABEL_47:
 }
 
 
-// ==== 0x00409C40  AudioBuffer::InitializePlayback  this=int  sig=csp ====
+// ==== 0x00409C40  AudioBuffer::InitializePlayback  this=AudioBuffer  sig=csp ====
 _DWORD *__thiscall sub_409C40(int *this)
 {
   int v2; // ecx
@@ -8165,9 +8165,9 @@ _DWORD *__thiscall sub_409C40(int *this)
       else
       {
         *(this + 28) = (int)AudioController::LoadThemeBank; /*0x409cb0*/
-        *(this + 44) = (int)ProcessAudioChannelMovement; /*0x409cb7*/
+        this->__pad_0B0 = (int)ProcessAudioChannelMovement; /*0x409cb7*/
         *(this + 35) = v4[6]; /*0x409cc4*/
-        *(this + 43) = v4[6]; /*0x409ccd*/
+        this->q0AC = v4[6]; /*0x409ccd*/
         *(this + 40) = 4 * v4[6] + 128; /*0x409cdd*/
       }
     }
@@ -8578,7 +8578,7 @@ int sub_40A770()
 }
 
 
-// ==== 0x0040A7A0  Audio::GetDirectSound  this=unknown  sig=csp ====
+// ==== 0x0040A7A0  Audio::GetDirectSound  this=Audio  sig=csp ====
 LPDIRECTSOUND Audio_GetDirectSound()
 {
   return MEMORY[0x87E89C]; /*0x40a7a5*/
@@ -8668,7 +8668,7 @@ int sub_40A850()
 }
 
 
-// ==== 0x0040A900  sub_40A900  this=int  sig=ida-proto ====
+// ==== 0x0040A900  sub_40A900  this=-  sig=ida-proto ====
 int __fastcall sub_40A900(int a1)
 {
   int v1; // eax
@@ -8830,7 +8830,7 @@ LABEL_11:
 }
 
 
-// ==== 0x0040ACD0  MoveCoordByDirection  this=VOID_PTR  sig=csp ====
+// ==== 0x0040ACD0  MoveCoordByDirection  this=-  sig=csp ====
 __int16 __fastcall Coord_MoveByDirection(unsigned __int8 a1, int *a2)
 {
   int v2; // esi
@@ -9036,7 +9036,7 @@ void __cdecl unknown_libname_2()
 }
 
 
-// ==== 0x0040AFD0  Array::ForEachReverse  this=int  sig=csp ====
+// ==== 0x0040AFD0  Array::ForEachReverse  this=Array  sig=csp ====
 int __stdcall Array::ForEachReverse(ObjectClass *aP0, int a2, int a3, int (__thiscall *a4)(int))
 {
   char *v4; // esi
@@ -9099,7 +9099,7 @@ void **__thiscall sub_40B010(void **Block, char a2)
 }
 
 
-// ==== 0x0040B070  SubzoneConnectionVector::Destruct  this=VOID_PTR  sig=csp ====
+// ==== 0x0040B070  SubzoneConnectionVector::Destruct  this=SubzoneConnectionVector  sig=csp ====
 char *__thiscall SubzoneConnectionVector::Destruct(_DWORD *Block, char a2)
 {
   int v3; // eax
@@ -11596,7 +11596,7 @@ void __stdcall DisplayClass::vt_entry_AC(int a1)
 }
 
 
-// ==== 0x0040D260  nullsub_56  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0040D260  nullsub_56  this=-  sig=ida-proto ====
 void __thiscall nullsub_56(void *this)
 {
   ; /*0x40d260*/

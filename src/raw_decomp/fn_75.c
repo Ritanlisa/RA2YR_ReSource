@@ -18,7 +18,7 @@ int __thiscall sub_750030(float *this)
 }
 
 
-// ==== 0x00750060  ObjectClass::Team_Create  this=VOID_PTR  sig=csp ====
+// ==== 0x00750060  ObjectClass::Team_Create  this=ObjectClass  sig=csp ====
 char __thiscall sub_750060(_DWORD *this, char a2)
 {
   char result; // al
@@ -67,7 +67,7 @@ char __thiscall Timer_SetFlag(_DWORD *this, char a2)
 }
 
 
-// ==== 0x007500D0  FootClass::GetField  this=VOID_PTR  sig=csp ====
+// ==== 0x007500D0  FootClass::GetField  this=FootClass  sig=csp ====
 double __thiscall FootClass::GetField(float *this)
 {
   double result; // st7
@@ -78,7 +78,7 @@ double __thiscall FootClass::GetField(float *this)
 }
 
 
-// ==== 0x007500E0  FootClass::SetField  this=VOID_PTR  sig=csp ====
+// ==== 0x007500E0  FootClass::SetField  this=FootClass  sig=csp ====
 void __thiscall FootClass::SetField(float *this, CCINIClass *aP1)
 {
   *this = (double)(int)aP1 * 0.01; /*0x7500ea*/
@@ -236,7 +236,7 @@ void __cdecl sub_750340()
 }
 
 
-// ==== 0x00750440  ObjectClass::LoadVocFromINI  this=int  sig=csp ====
+// ==== 0x00750440  ObjectClass::LoadVocFromINI  this=ObjectClass  sig=csp ====
 char __thiscall LoadVocFromINI(char **this, CCINIClass *aP1)
 {
   INIClass *SampleName; // eax
@@ -525,7 +525,7 @@ int __fastcall VocClass_Play(int a1, int a2, float a3, int a4)
 }
 
 
-// ==== 0x007509E0  StartAudioControllerAt  this=int  sig=csp ====
+// ==== 0x007509E0  StartAudioControllerAt  this=-  sig=csp ====
 int __fastcall StartAudioControllerAt(AudioController *aP0, int a2, int a1)
 {
   int *v5; // esi
@@ -584,7 +584,7 @@ int __fastcall StartAudioControllerAt(AudioController *aP0, int a2, int a1)
 }
 
 
-// ==== 0x00750AC0  ComputeAudioPosition  this=int  sig=csp ====
+// ==== 0x00750AC0  ComputeAudioPosition  this=-  sig=csp ====
 double __fastcall ComputeAudioPosition(AudioMixer *aP0, _DWORD *a1, int a3)
 {
   float *v4; // edi
@@ -729,7 +729,7 @@ LABEL_10:
 }
 
 
-// ==== 0x00750E20  PlayAudioAt2  this=int  sig=csp ====
+// ==== 0x00750E20  PlayAudioAt2  this=-  sig=csp ====
 int __fastcall PlayAudioAt2(IUnknown *aP0, _DWORD *a1, int a3)
 {
   int result; // eax
@@ -797,7 +797,7 @@ int VocClass_Update()
 }
 
 
-// ==== 0x00750F40  globalHelper_050F40  this=unknown  sig=csp ====
+// ==== 0x00750F40  globalHelper_050F40  this=-  sig=csp ====
 int __fastcall sub_750F40(_DWORD *a1, int a2)
 {
   int result; // eax
@@ -887,7 +887,7 @@ int sub_751080()
 }
 
 
-// ==== 0x007510D0  Audio::InitFromINI  this=int  sig=csp ====
+// ==== 0x007510D0  Audio::InitFromINI  this=Audio  sig=csp ====
 char __thiscall Audio::InitFromINI(unsigned __int8 ***this)
 {
   char *v2; // eax
@@ -1157,7 +1157,7 @@ int __thiscall System_Get_751520(void *this)
 }
 
 
-// ==== 0x00751590  VocClass::GetSampleNameByIndex  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00751590  VocClass::GetSampleNameByIndex  this=VocClass  sig=ida-proto ====
 char *__fastcall VocClass::GetSampleNameByIndex(int a1)
 {
   char *v1; // ecx
@@ -1190,7 +1190,7 @@ int __thiscall sub_7515C0(void *this)
 }
 
 
-// ==== 0x00751620  SaveGame::SaveAudioQueueItems  this=VOID_PTR  sig=csp ====
+// ==== 0x00751620  SaveGame::SaveAudioQueueItems  this=SaveGame  sig=csp ====
 int __thiscall sub_751620(int *this)
 {
   int v2; // esi
@@ -1252,7 +1252,7 @@ LABEL_11:
 }
 
 
-// ==== 0x00751710  LoadGame::RestoreAudioState  this=int  sig=csp ====
+// ==== 0x00751710  LoadGame::RestoreAudioState  this=LoadGame  sig=csp ====
 int __thiscall sub_751710(void *this)
 {
   void *v1; // edi
@@ -1346,7 +1346,7 @@ int __thiscall sub_751710(void *this)
 }
 
 
-// ==== 0x007518C0  SetVocClassEnabled  this=int  sig=ida-proto ====
+// ==== 0x007518C0  SetVocClassEnabled  this=-  sig=ida-proto ====
 void __fastcall VocClass_SetEnabled(char a1)
 {
   MEMORY[0x8464AC] = a1; /*0x7518c0*/
@@ -1701,7 +1701,7 @@ LABEL_2:
 }
 
 
-// ==== 0x00751EA0  sub_751EA0  this=VOID_PTR  sig=csp ====
+// ==== 0x00751EA0  sub_751EA0  this=-  sig=csp ====
 HANDLE __fastcall sub_751EA0(const CHAR *a1, _DWORD *a2, _DWORD *a3, _DWORD *a4)
 {
   const char *v4; // edi
@@ -2083,7 +2083,7 @@ void __fastcall sub_752590(int a1, int a2, int a3)
 }
 
 
-// ==== 0x00752680  AudioQueue::FindByData  this=int  sig=csp ====
+// ==== 0x00752680  AudioQueue::FindByData  this=AudioQueue  sig=csp ====
 int *__thiscall AudioQueue::FindByData(void *this)
 {
   int *result; // eax
@@ -2295,7 +2295,7 @@ void __fastcall ThemeClass_Stop(char a1)
 }
 
 
-// ==== 0x007529E0  Audio::IsPlaying  this=unknown  sig=csp ====
+// ==== 0x007529E0  Audio::IsPlaying  this=Audio  sig=csp ====
 int Audio_IsPlaying()
 {
   char *v0; // eax
@@ -2484,7 +2484,7 @@ int __thiscall sub_752CB0(int this, const char *a2)
 }
 
 
-// ==== 0x00752DB0  AudioEvent::LoadFromINI  this=int  sig=csp ====
+// ==== 0x00752DB0  AudioEvent::LoadFromINI  this=AudioEvent  sig=csp ====
 char __thiscall AudioEvent::LoadFromINI(int this, CCINIClass *aP1)
 {
   INIClass Source[7]; // [esp+18h] [ebp-1F4h] BYREF
@@ -2595,7 +2595,7 @@ char __thiscall AudioEvent::LoadFromINI(int this, CCINIClass *aP1)
 }
 
 
-// ==== 0x00753000  ObjectClass::InitFromINIEVA  this=int  sig=csp ====
+// ==== 0x00753000  ObjectClass::InitFromINIEVA  this=ObjectClass  sig=csp ====
 char __thiscall InitFromINIEVA(char *this)
 {
   char *v1; // edi
@@ -2692,7 +2692,7 @@ LABEL_10:
 }
 
 
-// ==== 0x007531A0  ObjectClass::LoadINIEVA  this=VOID_PTR  sig=csp ====
+// ==== 0x007531A0  ObjectClass::LoadINIEVA  this=ObjectClass  sig=csp ====
 int __thiscall EVA_LoadINI(void *this)
 {
   int result; // eax
@@ -2751,7 +2751,7 @@ int __thiscall VocClass::FindByName(void *this)
 }
 
 
-// ==== 0x007532A0  globalHelper_0532A0  this=int  sig=csp ====
+// ==== 0x007532A0  globalHelper_0532A0  this=-  sig=csp ====
 bool __fastcall sub_7532A0(std::codecvt_base *a1)
 {
   if ( (int)a1 < 0 || (int)a1 >= MEMORY[0xB1D4B0] ) /*0x7532aa*/
@@ -2775,7 +2775,7 @@ char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_22(std::codecvt_base
 }
 
 
-// ==== 0x007533B0  SaveGame::WriteMagicHeader  this=VOID_PTR  sig=csp ====
+// ==== 0x007533B0  SaveGame::WriteMagicHeader  this=SaveGame  sig=csp ====
 int __thiscall sub_7533B0(int *this)
 {
   int v2; // eax
@@ -2796,7 +2796,7 @@ int __thiscall sub_7533B0(int *this)
 }
 
 
-// ==== 0x007533F0  LoadGame::LoadMagicAndAudio  this=VOID_PTR  sig=csp ====
+// ==== 0x007533F0  LoadGame::LoadMagicAndAudio  this=LoadGame  sig=csp ====
 int __thiscall sub_7533F0(void *this)
 {
   int result; // eax
@@ -2811,22 +2811,22 @@ int __thiscall sub_7533F0(void *this)
   if ( MEMORY[0xB1D4CC] ) /*0x753418*/
     Audio::Release(MEMORY[0xB1D4CC]); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
-  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v3, 4, 0); /*0x753430*/
+  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->LoadGame_field_0x0C)(this, &v3, 4, 0); /*0x753430*/
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
   {
-    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v3, 4, 0); /*0x753455*/
+    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->LoadGame_field_0x0C)(this, &v3, 4, 0); /*0x753455*/
     if ( result >= 0 ) /*0x75345a*/
     {
       while ( v3 != 1450145861 ) /*0x753466*/
       {
         if ( v3 != 1450145865 ) /*0x75346e*/
           return -2147467259; /*0x7534cb*/
-        result = (*(int (__stdcall **)(void *, _DWORD *, int, _DWORD))(*(_DWORD *)this + 12))(this, v4, 12, 0); /*0x75347c*/
+        result = (*(int (__stdcall **)(void *, _DWORD *, int, _DWORD))(this->LoadGame_field_0x0C)(this, v4, 12, 0); /*0x75347c*/
         if ( result >= 0 ) /*0x753481*/
         {
           if ( MEMORY[0xB1D4CC] && v4[0] >= 0 && v4[0] < MEMORY[0xB1D4B0] ) /*0x75349a*/
             Audio_Load(*((_DWORD *)MEMORY[0xB1D4A4] + v4[0]), v4[1], v4[2]); /*0x7534ae*/
-          result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v3, 4, 0); /*0x7534bf*/
+          result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->LoadGame_field_0x0C)(this, &v3, 4, 0); /*0x7534bf*/
           if ( result >= 0 ) /*0x7534c4*/
             continue; /*0x7534c4*/
         }
@@ -2838,7 +2838,7 @@ int __thiscall sub_7533F0(void *this)
 }
 
 
-// ==== 0x007534E0  VoxClass::SetEVAIndex  this=int  sig=csp ====
+// ==== 0x007534E0  VoxClass::SetEVAIndex  this=VoxClass  sig=csp ====
 int __thiscall VoxClass::SetEVAIndex(void *this)
 {
   int result; // eax
@@ -3314,7 +3314,7 @@ int sub_753B40()
 }
 
 
-// ==== 0x00753B70  VoxelPaletteClass::LoadFromFile  this=VOID_PTR  sig=csp ====
+// ==== 0x00753B70  VoxelPaletteClass::LoadFromFile  this=VoxelPaletteClass  sig=csp ====
 int __thiscall sub_753B70(void *this)
 {
   int v2; // esi
@@ -3331,7 +3331,7 @@ int __thiscall sub_753B70(void *this)
 }
 
 
-// ==== 0x00753BF0  sub_753BF0  this=unknown  sig=csp ====
+// ==== 0x00753BF0  sub_753BF0  this=-  sig=csp ====
 char *__userpurge sub_753BF0@<eax>(
         char a1@<dl>,
         char a2@<cl>,
@@ -3375,14 +3375,14 @@ char *sub_753C60()
 }
 
 
-// ==== 0x00753C70  Miles::DriverGet  this=int  sig=csp ====
+// ==== 0x00753C70  Miles::DriverGet  this=Miles  sig=csp ====
 BSurface *Miles::DriverGet()
 {
   return (BSurface *)&stru_B1D188.__pad_579C[45060]; /*0x753c75*/
 }
 
 
-// ==== 0x00753C80  globalHelper_053C80  this=int  sig=csp ====
+// ==== 0x00753C80  globalHelper_053C80  this=-  sig=csp ====
 char __fastcall globalHelper_053C80(_DWORD *a1, SomeVoxelCache *edx0, SomeVoxelCache *aP2, float *a4, float *a2)
 {
   float *v7; // eax
@@ -3402,7 +3402,7 @@ char __fastcall globalHelper_053C80(_DWORD *a1, SomeVoxelCache *edx0, SomeVoxelC
 }
 
 
-// ==== 0x00753D00  Audio_Render  this=int  sig=csp ====
+// ==== 0x00753D00  Audio_Render  this=-  sig=csp ====
 char __fastcall Audio_Render(
         _DWORD *a0,
         SomeVoxelCache *edx0,
@@ -3513,7 +3513,7 @@ int Viewport_Clear()
 }
 
 
-// ==== 0x00753F90  globalHelper_053F90  this=int  sig=csp ====
+// ==== 0x00753F90  globalHelper_053F90  this=-  sig=csp ====
 char *__fastcall globalHelper_053F90(
         _DWORD *a0,
         ObjectClass *aP1,
@@ -3586,7 +3586,7 @@ char *__fastcall globalHelper_053F90(
 }
 
 
-// ==== 0x007540F0  TransformVoxelVertex  this=int  sig=csp ====
+// ==== 0x007540F0  TransformVoxelVertex  this=-  sig=csp ====
 int __fastcall TransformVoxelVertex(_DWORD *a1, SomeVoxelCache *a2, SomeVoxelCache *aP2, float *a4)
 {
   int Info; // eax
@@ -3671,7 +3671,7 @@ int __fastcall TransformVoxelVertex(_DWORD *a1, SomeVoxelCache *a2, SomeVoxelCac
 }
 
 
-// ==== 0x007542F0  InitializeAudioOcclusion  this=unknown  sig=csp ====
+// ==== 0x007542F0  InitializeAudioOcclusion  this=-  sig=csp ====
 int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
 {
   int v3; // edi
@@ -3829,7 +3829,7 @@ int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
 }
 
 
-// ==== 0x00754510  Voxel::RenderFrame  this=int  sig=csp ====
+// ==== 0x00754510  Voxel::RenderFrame  this=Voxel  sig=csp ====
 float *__thiscall Voxel_RenderFrame(float *this)
 {
   int v1; // edi
@@ -4216,7 +4216,7 @@ void ScreenEffect::Stub8()
 }
 
 
-// ==== 0x00754BE0  AudioConfig::InitDefault  this=float  sig=csp ====
+// ==== 0x00754BE0  AudioConfig::InitDefault  this=AudioConfig  sig=csp ====
 void *__thiscall AudioConfig_InitDefault(void *this)
 {
   qmemcpy(this, &flt_B44318, 0x30u); /*0x754bf0*/
@@ -4224,7 +4224,7 @@ void *__thiscall AudioConfig_InitDefault(void *this)
 }
 
 
-// ==== 0x00754C00  Voxel::SetProjectionAngle  this=int  sig=csp ====
+// ==== 0x00754C00  Voxel::SetProjectionAngle  this=Voxel  sig=csp ====
 int __stdcall sub_754C00(float a1)
 {
   int *v1; // eax
@@ -4576,7 +4576,7 @@ int Voxel_Projection_Setup()
 }
 
 
-// ==== 0x007559B0  CopyAudioData  this=unknown  sig=csp ====
+// ==== 0x007559B0  CopyAudioData  this=-  sig=csp ====
 char *__fastcall AudioData_Copy(char *a1, int a2)
 {
   qmemcpy(a1, (char *)&unk_B45188 + 48 * a2, 0x30u); /*0x7559c7*/
@@ -4609,7 +4609,7 @@ float *__fastcall sub_7559D0(float *a1, float *a2, void *a3, double a4)
 }
 
 
-// ==== 0x00755A40  InterpolateVoxelAnimPose  this=VOID_PTR  sig=csp ====
+// ==== 0x00755A40  InterpolateVoxelAnimPose  this=-  sig=csp ====
 void *__fastcall VoxelAnim_InterpolatePose(void *a1, int a2, int a3, double a4)
 {
   int v5; // eax
@@ -4713,7 +4713,7 @@ int j_TechnoClass_ClearArrays()
 }
 
 
-// ==== 0x00755C60  Locomotor_Update  this=unknown  sig=csp ====
+// ==== 0x00755C60  Locomotor_Update  this=-  sig=csp ====
 char *__fastcall sub_755C60(char *a1, int a2)
 {
   char *result; // eax
@@ -5230,10 +5230,10 @@ int __thiscall sub_7564A0(_DWORD *this, int a2)
 }
 
 
-// ==== 0x007564B0  VoxelSection::GetInfo  this=int  sig=csp ====
+// ==== 0x007564B0  VoxelSection::GetInfo  this=VoxelSection  sig=csp ====
 int __thiscall VoxelSection::GetInfo(_DWORD *this, SomeVoxelCache *aP1, SomeVoxelCache *aP2)
 {
-  return *(this + 5) + 164 * ((_DWORD)aP2 + *(_DWORD *)(*(this + 4) + 12 * (_DWORD)aP1)); /*0x7564cf*/
+  return this->q014 + 164 * ((_DWORD)aP2 + *(_DWORD *)(this->q010 + 12 * (_DWORD)aP1)); /*0x7564cf*/
 }
 
 
@@ -5277,7 +5277,7 @@ int __thiscall sub_756570(_DWORD *this)
 }
 
 
-// ==== 0x00756590  Voxel::ProcessColor  this=int  sig=csp ====
+// ==== 0x00756590  Voxel::ProcessColor  this=Voxel  sig=csp ====
 int __thiscall Voxel_ProcessColor(_DWORD *this, _DWORD *a2, float *a3)
 {
   int v4; // ebx
@@ -5313,7 +5313,7 @@ int __thiscall Voxel_ProcessColor(_DWORD *this, _DWORD *a2, float *a3)
   int v35; // [esp+58h] [ebp+4h]
   float v36; // [esp+5Ch] [ebp+8h]
 
-  v4 = *(this + 5) + 164 * (a2[2] + *(_DWORD *)(*(this + 4) + 12 * a2[1])); /*0x7565b8*/
+  v4 = this->Voxel_field_0x14 + 164 * (a2[2] + *(_DWORD *)(this->Voxel_field_0x10 + 12 * a2[1])); /*0x7565b8*/
   v5 = 9 * a2[3]; /*0x7565be*/
   v16 = *(_BYTE *)(v4 + 161); /*0x7565cd*/
   v6 = *(_BYTE *)(v4 + 162); /*0x7565d1*/
@@ -5363,7 +5363,7 @@ int __thiscall Voxel_ProcessColor(_DWORD *this, _DWORD *a2, float *a3)
 }
 
 
-// ==== 0x00756860  ObjectClass::InitializeTileAudioOcclusion  this=int  sig=csp ====
+// ==== 0x00756860  ObjectClass::InitializeTileAudioOcclusion  this=ObjectClass  sig=csp ====
 int __thiscall InitializeTileAudioOcclusion(_DWORD *this, int a2, float *a3)
 {
   int v3; // edx
@@ -5422,8 +5422,8 @@ int __thiscall InitializeTileAudioOcclusion(_DWORD *this, int a2, float *a3)
   int v57; // [esp+80h] [ebp+8h]
   int v58; // [esp+80h] [ebp+8h]
 
-  v3 = *(this + 4); /*0x756865*/
-  v5 = *(this + 5); /*0x75686d*/
+  v3 = this->uniqueId; /*0x756865*/
+  v5 = this->abstractFlags; /*0x75686d*/
   v6 = 0; /*0x756878*/
   v7 = *(float *)(a2 + 36); /*0x75687a*/
   v8 = 3 * *(_DWORD *)(a2 + 4); /*0x75687d*/
@@ -5635,7 +5635,7 @@ int __thiscall sub_756BB0(_DWORD *this)
 }
 
 
-// ==== 0x00756DD0  VoxelModel::LoadVXLHeader  this=VOID_PTR  sig=csp ====
+// ==== 0x00756DD0  VoxelModel::LoadVXLHeader  this=VoxelModel  sig=csp ====
 char __usercall sub_756DD0@<al>(int a1@<ebx>, int a2@<edi>, int a3)
 {
   unsigned int v4; // esi
@@ -5748,7 +5748,7 @@ char __usercall sub_756DD0@<al>(int a1@<ebx>, int a2@<edi>, int a3)
 }
 
 
-// ==== 0x00756F80  VoxelModel::ParseSectionData  this=VOID_PTR  sig=csp ====
+// ==== 0x00756F80  VoxelModel::ParseSectionData  this=VoxelModel  sig=csp ====
 char __usercall sub_756F80@<al>(unsigned int a1@<ebx>, int a2@<edi>, int a3)
 {
   unsigned int v4; // esi
@@ -5860,7 +5860,7 @@ char __usercall sub_756F80@<al>(unsigned int a1@<ebx>, int a2@<edi>, int a3)
 }
 
 
-// ==== 0x00757120  ObjectClass::RenderVoxels  this=VOID_PTR  sig=csp ====
+// ==== 0x00757120  ObjectClass::RenderVoxels  this=ObjectClass  sig=csp ====
 char __usercall Voxel_Render@<al>(int *a1@<ebx>, int a2@<ebp>, int a3@<edi>, int *a4)
 {
   int *v4; // ecx
@@ -6016,7 +6016,7 @@ char __usercall Voxel_Render@<al>(int *a1@<ebx>, int a2@<ebp>, int a3@<edi>, int
 }
 
 
-// ==== 0x00757360  ObjectClass::ProcessVoxelDepthSamples  this=VOID_PTR  sig=csp ====
+// ==== 0x00757360  ObjectClass::ProcessVoxelDepthSamples  this=ObjectClass  sig=csp ====
 char __usercall ProcessVoxelDepthSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3@<edi>, unsigned int a4)
 {
   unsigned int v4; // ecx
@@ -6419,7 +6419,7 @@ char __usercall sub_757790@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3@<edi
 }
 
 
-// ==== 0x00757980  ObjectClass::ProcessVoxelColorScanline  this=VOID_PTR  sig=csp ====
+// ==== 0x00757980  ObjectClass::ProcessVoxelColorScanline  this=ObjectClass  sig=csp ====
 char __usercall ProcessVoxelColorScanline@<al>(unsigned int a1@<edx>, int a2@<ebx>, int a3@<ebp>, int a4@<edi>, int a5)
 {
   unsigned int v6; // esi
@@ -6582,7 +6582,7 @@ char __usercall ProcessVoxelColorScanline@<al>(unsigned int a1@<edx>, int a2@<eb
 }
 
 
-// ==== 0x00757BF0  ObjectClass::VoxelDrawScanline  this=VOID_PTR  sig=csp ====
+// ==== 0x00757BF0  ObjectClass::VoxelDrawScanline  this=ObjectClass  sig=csp ====
 char __usercall VoxelDrawScanline@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3@<edi>, int a4)
 {
   unsigned int v5; // esi
@@ -6881,7 +6881,7 @@ char __usercall sub_757E70@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>, int a4
 }
 
 
-// ==== 0x00758030  VoxelRenderer::RenderFrame  this=VOID_PTR  sig=csp ====
+// ==== 0x00758030  VoxelRenderer::RenderFrame  this=VoxelRenderer  sig=csp ====
 char __usercall sub_758030@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3)
 {
   unsigned int v4; // esi
@@ -7013,7 +7013,7 @@ char __usercall sub_758030@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3)
 }
 
 
-// ==== 0x007581F0  ObjectClass::ProcessVoxelColorSamples  this=VOID_PTR  sig=csp ====
+// ==== 0x007581F0  ObjectClass::ProcessVoxelColorSamples  this=ObjectClass  sig=csp ====
 char __usercall ProcessVoxelColorSamples@<al>(int *a1@<ebx>, int a2@<ebp>, int a3@<edi>, int *a4)
 {
   int *v4; // ecx
@@ -7169,7 +7169,7 @@ char __usercall ProcessVoxelColorSamples@<al>(int *a1@<ebx>, int a2@<ebp>, int a
 }
 
 
-// ==== 0x00758430  ObjectClass::ProcessVoxelScanSamples  this=VOID_PTR  sig=csp ====
+// ==== 0x00758430  ObjectClass::ProcessVoxelScanSamples  this=ObjectClass  sig=csp ====
 char __usercall ProcessVoxelScanSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3@<edi>, unsigned int a4)
 {
   unsigned int v4; // ecx
@@ -7323,7 +7323,7 @@ char __usercall ProcessVoxelScanSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp>
 }
 
 
-// ==== 0x00758670  GlobalHelper_053C80_Helper  this=unknown  sig=csp ====
+// ==== 0x00758670  GlobalHelper_053C80_Helper  this=-  sig=csp ====
 char __fastcall sub_758670(float *a1, int a2)
 {
   int v2; // ebp
@@ -7355,7 +7355,7 @@ char __fastcall sub_758670(float *a1, int a2)
 }
 
 
-// ==== 0x007586F0  VoxelAnim::ComputeTransform  this=unknown  sig=csp ====
+// ==== 0x007586F0  VoxelAnim::ComputeTransform  this=VoxelAnim  sig=csp ====
 char __fastcall sub_7586F0(float *a1, float *a2, float a3, int a4)
 {
   int v5; // esi
@@ -7470,17 +7470,17 @@ int __fastcall sub_758880(float *a1, int a2)
 }
 
 
-// ==== 0x00758950  VoxelPalette::Init  this=VOID_PTR  sig=csp ====
+// ==== 0x00758950  VoxelPalette::Init  this=VoxelPalette  sig=csp ====
 _DWORD *__thiscall VoxelPalette_Init(_DWORD *this, int a2, int a3)
 {
   if ( a2 ) /*0x758959*/
   {
-    *(this + 4) = a2; /*0x758974*/
+    this->VoxelPalette_field_0x04 = a2; /*0x758974*/
     *(this + 6) = 0; /*0x758977*/
   }
   else
   {
-    *(this + 4) = __2_YAPAXI_Z(0x300u); /*0x758968*/
+    this->VoxelPalette_field_0x04 = __2_YAPAXI_Z(0x300u); /*0x758968*/
     *(this + 6) = 1; /*0x75896b*/
   }
   if ( a3 ) /*0x758984*/
@@ -7519,7 +7519,7 @@ BOOL __thiscall sub_7589F0(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00758A30  VoxelPaletteClass::ConvertFromFile  this=VOID_PTR  sig=csp ====
+// ==== 0x00758A30  VoxelPaletteClass::ConvertFromFile  this=VoxelPaletteClass  sig=csp ====
 int __thiscall sub_758A30(_DWORD *this, int a2)
 {
   int v3; // ebx
@@ -7586,7 +7586,7 @@ LABEL_5:
 }
 
 
-// ==== 0x00758B70  ObjectClass::GenerateLightRemapTable  this=int  sig=csp ====
+// ==== 0x00758B70  ObjectClass::GenerateLightRemapTable  this=ObjectClass  sig=csp ====
 int __thiscall GenerateLightRemapTable(int *this, float *a2, int a3)
 {
   float *v4; // eax
@@ -7628,13 +7628,13 @@ int __thiscall GenerateLightRemapTable(int *this, float *a2, int a3)
 
   if ( a2 && a3 ) /*0x758b89*/
   {
-    *(this + 2) = a3; /*0x758b8b*/
+    this->vtable3 = a3; /*0x758b8b*/
     v26 = a2; /*0x758b8e*/
   }
   else
   {
     v4 = (float *)&unk_B45A90; /*0x758b94*/
-    *(this + 2) = 32; /*0x758b99*/
+    this->vtable3 = 32; /*0x758b99*/
     v26 = (float *)&unk_B45A90; /*0x758ba0*/
     v33 = 0; /*0x758ba4*/
     do /*0x758bd2*/
@@ -7665,16 +7665,16 @@ int __thiscall GenerateLightRemapTable(int *this, float *a2, int a3)
     v9 = 1; /*0x758c23*/
     for ( i = 3; i < 768; i += 3 ) /*0x758c2f*/
     {
-      if ( v9 < *this || (v38 = 1, v9 > *(this + 1)) ) /*0x758c42*/
+      if ( v9 < *this || (v38 = 1, v9 > this->vtable2) ) /*0x758c42*/
         v38 = 0; /*0x758c44*/
       v11 = *v24; /*0x758c50*/
-      v12 = (unsigned __int8 *)(*(this + 4) + i); /*0x758c52*/
+      v12 = (unsigned __int8 *)(this->vtable2 + i); /*0x758c52*/
       v32 = (double)*v12 * v11; /*0x758c76*/
       v28 = (double)v12[1] * v11; /*0x758c88*/
       v30 = (double)v12[2] * v11; /*0x758c96*/
       v13 = VoxelRenderer::ProjectVertex(v32, v28, v30, v38); /*0x758ca5*/
       v14 = v9++ | (v35 << 8); /*0x758caf*/
-      *(_BYTE *)(v14 + *(this + 5)) = v13; /*0x758cbb*/
+      *(_BYTE *)(v14 + this->abstractFlags) = v13; /*0x758cbb*/
     }
     v15 = ++v35 < 16; /*0x758cd0*/
     ++v24; /*0x758cd7*/
@@ -7687,10 +7687,10 @@ int __thiscall GenerateLightRemapTable(int *this, float *a2, int a3)
     v16 = 1; /*0x758cfc*/
     for ( j = 3; j < 768; j += 3 ) /*0x758d08*/
     {
-      if ( v16 < *this || (v39 = 1, v16 > *(this + 1)) ) /*0x758d1b*/
+      if ( v16 < *this || (v39 = 1, v16 > this->vtable2) ) /*0x758d1b*/
         v39 = 0; /*0x758d1d*/
       v18 = *v25; /*0x758d29*/
-      v19 = (unsigned __int8 *)(*(this + 4) + j); /*0x758d2b*/
+      v19 = (unsigned __int8 *)(this->vtable2 + j); /*0x758d2b*/
       v29 = (double)*v19 * v18; /*0x758d4a*/
       v27 = (double)v19[1] * v18; /*0x758d58*/
       v20 = v18 * (double)v19[2]; /*0x758d60*/
@@ -7703,7 +7703,7 @@ int __thiscall GenerateLightRemapTable(int *this, float *a2, int a3)
         v31 = 255.0; /*0x758da5*/
       v21 = VoxelRenderer::ProjectVertex(v29, v27, v31, v39); /*0x758dc3*/
       v22 = v16++ | (v36 << 8); /*0x758dcd*/
-      *(_BYTE *)(v22 + *(this + 5)) = v21; /*0x758dd9*/
+      *(_BYTE *)(v22 + this->abstractFlags) = v21; /*0x758dd9*/
     }
     result = v36 + 1; /*0x758dea*/
     v15 = ++v36 < 32; /*0x758dee*/
@@ -7744,7 +7744,7 @@ char __thiscall sub_758E10(_DWORD *this, float a2, float a3, float a4)
 }
 
 
-// ==== 0x00758EA0  VoxelRenderer::ProjectVertex  this=int  sig=csp ====
+// ==== 0x00758EA0  VoxelRenderer::ProjectVertex  this=VoxelRenderer  sig=csp ====
 char __thiscall sub_758EA0(int *this, float a2, float a3, float a4, char a5)
 {
   int v6; // ecx
@@ -7768,14 +7768,14 @@ char __thiscall sub_758EA0(int *this, float a2, float a3, float a4, char a5)
     v9 = *this; /*0x758ed1*/
     if ( a5 ) /*0x758ed3*/
     {
-      if ( v7 < v9 || v7 > *(this + 1) ) /*0x758edc*/
+      if ( v7 < v9 || v7 > this->q001 ) /*0x758edc*/
         goto LABEL_13; /*0x758edc*/
     }
-    else if ( v7 >= v9 && v7 <= *(this + 1) ) /*0x758ee7*/
+    else if ( v7 >= v9 && v7 <= this->q001 ) /*0x758ee7*/
     {
       goto LABEL_13; /*0x758ee7*/
     }
-    v10 = (unsigned __int8 *)(i + *(this + 4)); /*0x758eee*/
+    v10 = (unsigned __int8 *)(i + this->VoxelRenderer_field_0x04); /*0x758eee*/
     v11 = a3 - (double)v10[1]; /*0x758f14*/
     v12 = a4 - (double)v10[2]; /*0x758f1c*/
     v13 = v12 * v12 + v11 * v11 + (a2 - (double)*v10) * (a2 - (double)*v10); /*0x758f2e*/
@@ -7960,7 +7960,7 @@ char sub_759200()
 }
 
 
-// ==== 0x00759260  Stream::InitializeBinkAudio  this=VOID_PTR  sig=csp ====
+// ==== 0x00759260  Stream::InitializeBinkAudio  this=Stream  sig=csp ====
 char *__thiscall Stream::InitializeBinkAudio(
         char *this,
         const char *a1,
@@ -8041,7 +8041,7 @@ LABEL_14:
   *((_DWORD *)this + 111) = v16; /*0x759383*/
   *((_DWORD *)this + 102) = -1; /*0x75938d*/
   *((_DWORD *)this + 103) = -1; /*0x759393*/
-  *((_DWORD *)this + 104) = 0; /*0x75939e*/
+  this->q068 = 0; /*0x75939e*/
   *((_DWORD *)this + 105) = 0; /*0x7593a4*/
   *((_DWORD *)this + 97) = 0; /*0x7593aa*/
   *((_DWORD *)this + 106) = a7; /*0x7593b0*/
@@ -8057,7 +8057,7 @@ LABEL_14:
   else
     *((_DWORD *)this + 94) = sub_75A100; /*0x7593f3*/
   *((_DWORD *)this + 95) = sub_75A2F0; /*0x759402*/
-  *((_DWORD *)this + 96) = sub_75A350; /*0x75940c*/
+  this->__pad_018 = sub_75A350; /*0x75940c*/
   if ( TestBitArray(4) ) /*0x759416*/
   {
     *((_DWORD *)this + 98) = j_Time_GetElapsedMS; /*0x75941f*/
@@ -8093,12 +8093,12 @@ LABEL_14:
 }
 
 
-// ==== 0x00759510  CCFileClass::Cleanup  this=VOID_PTR  sig=csp ====
+// ==== 0x00759510  CCFileClass::Cleanup  this=CCFileClass  sig=csp ====
 int __thiscall CCFileClass_Cleanup(_DWORD *this)
 {
   System_Cleanup(); /*0x759513*/
   *++this = &vt_CCFileClass; /*0x75951e*/
-  *(this + 25) = 0; /*0x759524*/
+  this->q064 = 0; /*0x759524*/
   Vector::Clear((int)(this + 22)); /*0x75952b*/
   *this = &off_7E1668; /*0x759532*/
   return BufferIOFileClass::Dtor(this); /*0x75953d*/
@@ -8281,14 +8281,14 @@ char __thiscall sub_7597A0(int this)
 }
 
 
-// ==== 0x00759830  ObjectClass::Render_Load  this=int  sig=csp ====
+// ==== 0x00759830  ObjectClass::Render_Load  this=ObjectClass  sig=csp ====
 int __thiscall sub_759830(_DWORD *this, int a2)
 {
   int result; // eax
 
-  result = *(this + 119); /*0x759834*/
+  result = this->q1DC; /*0x759834*/
   if ( a2 != -1 ) /*0x75983d*/
-    *(this + 119) = a2; /*0x75983f*/
+    this->q1DC = a2; /*0x75983f*/
   return result; /*0x759845*/
 }
 
@@ -8552,10 +8552,10 @@ char __thiscall sub_759E10(int this)
 }
 
 
-// ==== 0x00759E50  AbstractClass::checkBuildProgress  this=VOID_PTR  sig=csp ====
+// ==== 0x00759E50  AbstractClass::checkBuildProgress  this=AbstractClass  sig=csp ====
 void __thiscall sub_759E50(_BYTE *this)
 {
-  *(this + 1360) = 0; /*0x759e50*/
+  this->q550 = 0; /*0x759e50*/
 }
 
 
@@ -8589,14 +8589,14 @@ int __thiscall sub_759E80(int *this)
 }
 
 
-// ==== 0x00759EA0  ObjectClass::Render_Load_759EA0  this=int  sig=csp ====
+// ==== 0x00759EA0  ObjectClass::Render_Load_759EA0  this=ObjectClass  sig=csp ====
 int __thiscall sub_759EA0(_DWORD *this)
 {
   return *(this + 323); /*0x759ea6*/
 }
 
 
-// ==== 0x00759EB0  ObjectClass::Render_Load_759EB0  this=int  sig=csp ====
+// ==== 0x00759EB0  ObjectClass::Render_Load_759EB0  this=ObjectClass  sig=csp ====
 bool __thiscall sub_759EB0(int *this, int a2, unsigned int a3, unsigned int a4, int a5, int a6)
 {
   unsigned int v6; // edi
@@ -8606,28 +8606,28 @@ bool __thiscall sub_759EB0(int *this, int a2, unsigned int a3, unsigned int a4, 
 
   v6 = a3; /*0x759eb2*/
   if ( a3 == -1 ) /*0x759eb9*/
-    v6 = *(this + 328); /*0x759ebb*/
+    v6 = this->__pad_148; /*0x759ebb*/
   else
-    *(this + 328) = a3; /*0x759ec3*/
+    this->__pad_148 = a3; /*0x759ec3*/
   v7 = a4; /*0x759ec9*/
   if ( a4 == -1 ) /*0x759ed0*/
-    v7 = *(this + 329); /*0x759ed2*/
+    v7 = this->__pad_524; /*0x759ed2*/
   else
-    *(this + 329) = a4; /*0x759eda*/
+    this->__pad_524 = a4; /*0x759eda*/
   v8 = a5; /*0x759ee0*/
   if ( a5 == -1 ) /*0x759ee7*/
     v8 = 0; /*0x759ee9*/
   v9 = a6; /*0x759eeb*/
   if ( a6 == -1 ) /*0x759ef2*/
     v9 = 0; /*0x759ef4*/
-  return Audio_Process_7C3270(*(this + 128), a2, v6, v7, v8, v9) == -1; /*0x759f0c*/
+  return Audio_Process_7C3270(this->needsRedraw, a2, v6, v7, v8, v9) == -1; /*0x759f0c*/
 }
 
 
-// ==== 0x00759F20  ObjectClass::Render_Load_759F20  this=int  sig=csp ====
+// ==== 0x00759F20  ObjectClass::Render_Load_759F20  this=ObjectClass  sig=csp ====
 int __thiscall sub_759F20(_DWORD *this, int a2)
 {
-  *(this + 324) = a2; /*0x759f24*/
+  this->q510 = a2; /*0x759f24*/
   return a2; /*0x759f2a*/
 }
 
@@ -8646,7 +8646,7 @@ int __thiscall MovieClass_GetHeight(_DWORD *this)
 }
 
 
-// ==== 0x00759FB0  VoxelRenderer::InitializeBuffers  this=int  sig=csp ====
+// ==== 0x00759FB0  VoxelRenderer::InitializeBuffers  this=VoxelRenderer  sig=csp ====
 BOOL __thiscall sub_759FB0(int this, int a2, _DWORD *a3, int a4)
 {
   BOOL result; // eax
@@ -8720,7 +8720,7 @@ BOOL __cdecl sub_75A100(int a1, int a2, _DWORD *a3, int a4)
 }
 
 
-// ==== 0x0075A120  ObjectClass::method_75A120  this=int  sig=csp ====
+// ==== 0x0075A120  ObjectClass::method_75A120  this=ObjectClass  sig=csp ====
 BOOL __thiscall sub_75A120(int this, int a2, int *a3, int a4)
 {
   BOOL result; // eax
@@ -9181,7 +9181,7 @@ int __fastcall AnimSystem_Reset(int a1)
 }
 
 
-// ==== 0x0075A810  TestBitArray  this=int  sig=csp ====
+// ==== 0x0075A810  TestBitArray  this=-  sig=csp ====
 bool __fastcall BitArray_Test(int a1)
 {
   return ((unsigned __int8)(1 << (a1 & 7)) & (unsigned __int8)byte_B45BA8[a1 >> 3]) != 0; /*0x75a827*/
@@ -9533,7 +9533,7 @@ int __stdcall JumpjetLocomotionClass::sub_75AE30(int a1, int a2, int a3, int a4)
 }
 
 
-// ==== 0x0075AEC0  VoxelAnim::Draw  this=int  sig=csp ====
+// ==== 0x0075AEC0  VoxelAnim::Draw  this=VoxelAnim  sig=csp ====
 char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
 {
   _DWORD *v3; // ebx
@@ -10386,7 +10386,7 @@ LABEL_67:
 }
 
 
-// ==== 0x0075C240  Voxel::DrawHelper  this=int  sig=csp ====
+// ==== 0x0075C240  Voxel::DrawHelper  this=Voxel  sig=csp ====
 char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
 {
   IUnknown *v3; // ebx
@@ -10426,11 +10426,11 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
   char aP1a; // [esp+2Ch] [ebp+4h]
 
   v3 = (IUnknown *)CONTAINING_RECORD(this, IUnknown, field_0)->__pad_28; /*0x75c251*/
-  if ( *(this + 10) == g_AsyncMovieState.field_0 /*0x75c26e*/
-    && *(this + 11) == g_AsyncMovieState.field_4
-    && *(this + 12) == g_AsyncMovieState.field_8 )
+  if ( this->Voxel_field_0x28 == g_AsyncMovieState.field_0 /*0x75c26e*/
+    && this->Voxel_field_0x2C == g_AsyncMovieState.field_4
+    && this->__pad_030 == g_AsyncMovieState.field_8 )
   {
-    v4 = (BuildingTypeClass *)*(this + 3); /*0x75c278*/
+    v4 = (BuildingTypeClass *)this->Voxel_field_0xC; /*0x75c278*/
     a1 = v4->Armor[0]; /*0x75c287*/
     Strength = v4->Strength; /*0x75c28e*/
     v34 = (IUnknown *)v4->Image; /*0x75c295*/
@@ -10438,7 +10438,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
   }
   else
   {
-    (*(void (__stdcall **)(_DWORD *))(*(_DWORD *)*(this + 3) + 244))(this + 10); /*0x75c276*/
+    (*(void (__stdcall **)(_DWORD *))(*(_DWORD *)this->Voxel_field_0xC + 244))(this + 10); /*0x75c276*/
   }
   aP1a = 0; /*0x75c2aa*/
   v38[0] = aP1->field_0; /*0x75c2b3*/
@@ -10450,18 +10450,18 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     && aP1->field_8 == g_AsyncMovieState.field_8 )
   {
     v3->field_0 = aP1->field_0; /*0x75c5b7*/
-    *(this + 11) = aP1->field_4; /*0x75c5bc*/
-    *(this + 12) = aP1->field_8; /*0x75c5c2*/
+    this->Voxel_field_0x2C = aP1->field_4; /*0x75c5bc*/
+    this->__pad_030 = aP1->field_8; /*0x75c5c2*/
   }
   else
   {
-    if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 8 /*0x75c33c*/
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 9
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 7
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 11
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 25 )
+    if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 8 /*0x75c33c*/
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 9
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 7
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 11
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 25 )
     {
-      v7 = (BuildingTypeClass *)*(this + 3); /*0x75c342*/
+      v7 = (BuildingTypeClass *)this->Voxel_field_0xC; /*0x75c342*/
       v8 = *(_DWORD *)&v7->DebrisTypes[656]; /*0x75c345*/
       if ( v8 ) /*0x75c34d*/
       {
@@ -10474,7 +10474,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
             aP1a = 1; /*0x75c39e*/
         }
       }
-      v11 = *(_DWORD *)(*(this + 3) + 1444); /*0x75c3a6*/
+      v11 = *(_DWORD *)(this->Voxel_field_0xC + 1444); /*0x75c3a6*/
       *(_DWORD *)v32 = v11; /*0x75c3ae*/
       if ( v11 ) /*0x75c3b2*/
       {
@@ -10487,7 +10487,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
             aP1a = 1; /*0x75c3fb*/
         }
       }
-      v15 = (BuildingTypeClass *)*(this + 3); /*0x75c400*/
+      v15 = (BuildingTypeClass *)this->Voxel_field_0xC; /*0x75c400*/
       v16 = *(_DWORD **)&v15->DebrisTypes[656]; /*0x75c403*/
       if ( v16 ) /*0x75c40b*/
       {
@@ -10499,12 +10499,12 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
         }
       }
     }
-    v18 = *(IUnknown **)(*(this + 3) + 732); /*0x75c439*/
+    v18 = *(IUnknown **)(this->Voxel_field_0xC + 732); /*0x75c439*/
     if ( v18 )
     {
       if ( *(_DWORD *)&v18->__pad_2B8[32] )
       {
-        v19 = (_DWORD *)*(this + 3); /*0x75c44b*/
+        v19 = (_DWORD *)this->Voxel_field_0xC; /*0x75c44b*/
         a1 = 0; /*0x75c44f*/
         Strength = 0; /*0x75c453*/
         v20 = Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x75c463*/
@@ -10512,13 +10512,13 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
         {
           v21 = v19 ? ((*(int (__thiscall **)(_DWORD *))(*v19 + 44))(v19) == 15 ? (ObjectClass *)v19 : 0) : 0;
           v22 = (IUnknown *)Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x75c49a*/
-          if ( BuildingClass::CheckBridge(*(_DWORD **)(*(_DWORD *)(*(this + 3) + 732) + 728), v21, v22) ) /*0x75c4b0*/
+          if ( BuildingClass::CheckBridge(*(_DWORD **)(*(_DWORD *)(this->Voxel_field_0xC + 732) + 728), v21, v22) ) /*0x75c4b0*/
             aP1a = 1; /*0x75c4b9*/
         }
       }
     }
     if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v38) + 80) & 0x100) == 0 /*0x75c513*/
-      || (v23 = (int *)(*(this + 3) + 156),
+      || (v23 = (int *)(this->Voxel_field_0xC + 156),
           a1 = *v23,
           Strength = v23[1],
           v24 = v23[2],
@@ -10530,19 +10530,19 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     eax39 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v38); /*0x75c53a*/
     v26 = ObjectPlacement::CalcPosition(eax39, &a1, (IUnknown *)v38, aP1a, v33, 0); /*0x75c541*/
     v3 = (IUnknown *)(this + 10); /*0x75c548*/
-    *(this + 10) = *v26; /*0x75c54d*/
-    *(this + 11) = v26[1]; /*0x75c552*/
-    v31 = (AbstractClass *)*(this + 3); /*0x75c55b*/
-    *(this + 12) = v26[2]; /*0x75c562*/
+    this->Voxel_field_0x28 = *v26; /*0x75c54d*/
+    this->Voxel_field_0x2C = v26[1]; /*0x75c552*/
+    v31 = (AbstractClass *)this->Voxel_field_0xC; /*0x75c55b*/
+    this->__pad_030 = v26[2]; /*0x75c562*/
     eax39b = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)(this + 10)); /*0x75c565*/
     if ( !CrateClass::ProcessPickup(eax39b, v31) ) /*0x75c56c*/
     {
-      v25 = (BuildingTypeClass *)*(this + 3); /*0x75c575*/
+      v25 = (BuildingTypeClass *)this->Voxel_field_0xC; /*0x75c575*/
       if ( !v25->Name[29] ) /*0x75c578*/
       {
         v3->field_0 = g_AsyncMovieState.field_0; /*0x75c58a*/
-        *(this + 11) = g_AsyncMovieState.field_4; /*0x75c592*/
-        *(this + 12) = g_AsyncMovieState.field_8; /*0x75c59b*/
+        this->Voxel_field_0x2C = g_AsyncMovieState.field_4; /*0x75c592*/
+        this->__pad_030 = g_AsyncMovieState.field_8; /*0x75c59b*/
         if ( !v25->Name[44] ) /*0x75c59e*/
           return 0; /*0x75c5b0*/
       }
@@ -10552,7 +10552,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     && v3->field_4 == g_AsyncMovieState.field_4
     && v3->field_8 == g_AsyncMovieState.field_8 )
   {
-    v27 = (BuildingTypeClass *)*(this + 3); /*0x75c602*/
+    v27 = (BuildingTypeClass *)this->Voxel_field_0xC; /*0x75c602*/
     a1 = v27->Armor[0]; /*0x75c611*/
     Strength = v27->Strength; /*0x75c618*/
     v34 = (IUnknown *)v27->Image; /*0x75c61f*/
@@ -10561,7 +10561,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
   }
   else
   {
-    (*(void (__thiscall **)(_DWORD, IUnknown *))(*(_DWORD *)*(this + 3) + 240))(*(this + 3), v3); /*0x75c5f1*/
+    (*(void (__thiscall **)(_DWORD, IUnknown *))(*(_DWORD *)this->Voxel_field_0xC + 240))(this->Voxel_field_0xC, v3); /*0x75c5f1*/
     return 1; /*0x75c5f9*/
   }
 }
@@ -10880,7 +10880,7 @@ LONG __stdcall WalkLocomotionClass::_vt02(volatile LONG *a1)
 }
 
 
-// ==== 0x0075CBA0  JumpjetLocomotionClass::ShortFunc_75CBA0  this=VOID_PTR  sig=csp ====
+// ==== 0x0075CBA0  JumpjetLocomotionClass::ShortFunc_75CBA0  this=JumpjetLocomotionClass  sig=csp ====
 BOOL __stdcall JumpjetLocomotionClass::sub_75CBA0(int a1)
 {
   return *(_DWORD *)(a1 + 32) != 0; /*0x75cbae*/
@@ -10920,42 +10920,42 @@ WalkLocomotionClass *__thiscall WalkLocomotionClass::ProcessMove(ILocomotion **B
 }
 
 
-// ==== 0x0075CC30  JumpjetLocomotionClass::SmallStub_75CC30  this=unknown  sig=csp ====
+// ==== 0x0075CC30  JumpjetLocomotionClass::SmallStub_75CC30  this=JumpjetLocomotionClass  sig=csp ====
 int __stdcall JumpjetLocomotionClass::sub_75CC30(int a1, const void *a2, int *a3)
 {
   return WalkLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 }
 
 
-// ==== 0x0075CC40  JumpjetLocomotionClass::SmallStub_75CC40  this=unknown  sig=csp ====
+// ==== 0x0075CC40  JumpjetLocomotionClass::SmallStub_75CC40  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_75CC40(int a1)
 {
   return WalkLocomotionClass::AddRef(a1 - 4);
 }
 
 
-// ==== 0x0075CC50  JumpjetLocomotionClass::SmallStub_75CC50  this=unknown  sig=csp ====
+// ==== 0x0075CC50  JumpjetLocomotionClass::SmallStub_75CC50  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_75CC50(int a1)
 {
   return WalkLocomotionClass::Release((volatile LONG *)(a1 - 4));
 }
 
 
-// ==== 0x0075CC60  JumpjetLocomotionClass::SmallStub_75CC60  this=unknown  sig=csp ====
+// ==== 0x0075CC60  JumpjetLocomotionClass::SmallStub_75CC60  this=JumpjetLocomotionClass  sig=csp ====
 int __stdcall JumpjetLocomotionClass::sub_75CC60(int a1, const void *a2, int *a3)
 {
   return WalkLocomotionClass::QueryInterface(a1 - 24, a2, a3);
 }
 
 
-// ==== 0x0075CC70  JumpjetLocomotionClass::SmallStub_75CC70  this=unknown  sig=csp ====
+// ==== 0x0075CC70  JumpjetLocomotionClass::SmallStub_75CC70  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_75CC70(int a1)
 {
   return WalkLocomotionClass::AddRef(a1 - 24);
 }
 
 
-// ==== 0x0075CC80  JumpjetLocomotionClass::SmallStub_75CC80  this=unknown  sig=csp ====
+// ==== 0x0075CC80  JumpjetLocomotionClass::SmallStub_75CC80  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_75CC80(int a1)
 {
   return WalkLocomotionClass::Release((volatile LONG *)(a1 - 24));
@@ -11074,7 +11074,7 @@ int sub_75CE60()
 }
 
 
-// ==== 0x0075CEC0  WarheadTypeClass::Construct  this=int  sig=csp ====
+// ==== 0x0075CEC0  WarheadTypeClass::Construct  this=WarheadTypeClass  sig=csp ====
 int __thiscall WarheadTypeClass::Construct(int this, ObjectClass *aP1)
 {
   int v3; // eax
@@ -12503,7 +12503,7 @@ int __thiscall Voxel::BlendShadowColor(_DWORD *this, int a2, WaveClass *aP2, int
 }
 
 
-// ==== 0x0075EF30  sub_75EF30  this=unknown  sig=csp ====
+// ==== 0x0075EF30  sub_75EF30  this=-  sig=csp ====
 int __stdcall sub_75EF30(_WORD *a1, int a2)
 {
   int v2; // edx
@@ -12617,7 +12617,7 @@ int __thiscall sub_75F140(_DWORD *this)
 }
 
 
-// ==== 0x0075F230  CalcMathFacing8  this=float  sig=csp ====
+// ==== 0x0075F230  CalcMathFacing8  this=-  sig=csp ====
 int __fastcall sub_75F230(_DWORD *a1, _DWORD *a2)
 {
   int v2; // esi
@@ -12772,7 +12772,7 @@ char __thiscall Voxel::renderSection(_DWORD *this, ObjectClass *aP1)
 }
 
 
-// ==== 0x0075F540  Color::RGBFromFloat  this=float  sig=csp ====
+// ==== 0x0075F540  Color::RGBFromFloat  this=Color  sig=csp ====
 _DWORD *__thiscall Color::RGBFromFloat(_DWORD *this, IUnknown *aP1, float a3)
 {
   double v3; // st7
@@ -12785,13 +12785,13 @@ _DWORD *__thiscall Color::RGBFromFloat(_DWORD *this, IUnknown *aP1, float a3)
   v8 = Math::RoundToInt(v3); /*0x75f582*/
   v6 = Math::RoundToInt(v3); /*0x75f591*/
   *this = v5; /*0x75f59e*/
-  *(this + 1) = v8; /*0x75f5a0*/
-  *(this + 2) = v6; /*0x75f5a3*/
+  this->q004 = v8; /*0x75f5a0*/
+  this->q008 = v6; /*0x75f5a3*/
   return this; /*0x75f5ac*/
 }
 
 
-// ==== 0x0075F5C0  TacticalClass::CalcInverseAlpha  this=int  sig=csp ====
+// ==== 0x0075F5C0  TacticalClass::CalcInverseAlpha  this=TacticalClass  sig=csp ====
 _DWORD *__thiscall sub_75F5C0(_DWORD *this, int a2, float a3)
 {
   double v3; // st7
@@ -12802,7 +12802,7 @@ _DWORD *__thiscall sub_75F5C0(_DWORD *this, int a2, float a3)
   v5 = Math::RoundToInt(v3); /*0x75f5ea*/
   v6 = Math::RoundToInt(v3); /*0x75f5f7*/
   *this = v5; /*0x75f5fc*/
-  *(this + 1) = v6; /*0x75f5fe*/
+  this->q004 = v6; /*0x75f5fe*/
   return this; /*0x75f609*/
 }
 

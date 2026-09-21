@@ -90,7 +90,7 @@ LABEL_3:
 }
 
 
-// ==== 0x005F0180  HandlePlayerDisconnection  this=int  sig=ida-proto ====
+// ==== 0x005F0180  HandlePlayerDisconnection  this=-  sig=ida-proto ====
 char __fastcall HandlePlayerDisconnection(int a1, int a2)
 {
   char result; // al
@@ -723,7 +723,7 @@ int __fastcall StringBuilder_AppendChar(char a1)
 }
 
 
-// ==== 0x005F1390  Timer::GetElapsed  this=int  sig=csp ====
+// ==== 0x005F1390  Timer::GetElapsed  this=Timer  sig=csp ====
 int __thiscall Timer_GetElapsed(_DWORD *this)
 {
   int v1; // edi
@@ -1095,19 +1095,19 @@ int __thiscall ObjectClass_FreeResources(int this)
 }
 
 
-// ==== 0x005F19C0  EventClass::CheckFlag  this=VOID_PTR  sig=csp ====
+// ==== 0x005F19C0  EventClass::CheckFlag  this=EventClass  sig=csp ====
 int __thiscall EventClass::CheckFlag(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x5f19c0*/
+  v1 = this->EventClass_field_0x38; /*0x5f19c0*/
   if ( v1 ) /*0x5f19c5*/
     EventClass::serializeEvent(*(int **)(v1 + 4)); /*0x5f19ca*/
   return 1; /*0x5f19d4*/
 }
 
 
-// ==== 0x005F19E0  Modem::OpenPort  this=int  sig=csp ====
+// ==== 0x005F19E0  Modem::OpenPort  this=Modem  sig=csp ====
 int __thiscall Modem::OpenPort(_DWORD *this, Modem *aP1)
 {
   int v3; // ebp
@@ -1157,19 +1157,19 @@ int __thiscall Modem::OpenPort(_DWORD *this, Modem *aP1)
       v7 = v6 - 1; /*0x5f1a41*/
       if ( !v7 )
       {
-        v9 = (WinModemClass *)*(this + 13); /*0x5f1a59*/
+        v9 = (WinModemClass *)this->q034; /*0x5f1a59*/
         v8 = aP1 + 3; /*0x5f1a5c*/
         if ( v9 ) /*0x5f1a61*/
         {
-          FileFind::Close((void **)*(this + 13)); /*0x5f1a65*/
+          FileFind::Close((void **)this->q034); /*0x5f1a65*/
           __3_YAXPAX_Z(v9); /*0x5f1a6b*/
-          *(this + 13) = 0; /*0x5f1a73*/
+          this->q034 = 0; /*0x5f1a73*/
         }
         while ( 1 )
         {
           v10 = __2_YAPAXI_Z(0x1Cu); /*0x5f1a78*/
           v11 = v10 ? (ObjectClass *)Modem::EnumerateDevices(v10, (WinModemClass *)v3) : 0;
-          *(this + 13) = v11; /*0x5f1a96*/
+          this->q034 = v11; /*0x5f1a96*/
           if ( *(_DWORD *)v11->__pad_0 ) /*0x5f1a99*/
           {
             if ( !strcmp(v8->__pad_0, *(const char **)v11->__pad_0) ) /*0x5f1aa7*/
@@ -1181,7 +1181,7 @@ int __thiscall Modem::OpenPort(_DWORD *this, Modem *aP1)
             __3_YAXPAX_Z(v11); /*0x5f1ada*/
           }
           ++v3; /*0x5f1ae6*/
-          *(this + 13) = 0; /*0x5f1aea*/
+          this->q034 = 0; /*0x5f1aea*/
           if ( v3 >= 10 ) /*0x5f1af1*/
             goto LABEL_29; /*0x5f1af1*/
         }
@@ -1248,7 +1248,7 @@ int __thiscall NullModemClass::_vt13(_DWORD *this, int a2, int a3, int a4, int a
 }
 
 
-// ==== 0x005F1BF0  Stream::WriteBlock  this=VOID_PTR  sig=csp ====
+// ==== 0x005F1BF0  Stream::WriteBlock  this=Stream  sig=csp ====
 int __thiscall Stream::WriteBlock(int this, CellStruct *aP1, int a3, int a4)
 {
   int result; // eax
@@ -1267,7 +1267,7 @@ int __thiscall Stream::WriteBlock(int this, CellStruct *aP1, int a3, int a4)
 }
 
 
-// ==== 0x005F1C30  ObjectTypeClass::CreateInstance  this=VOID_PTR  sig=csp ====
+// ==== 0x005F1C30  ObjectTypeClass::CreateInstance  this=ObjectTypeClass  sig=csp ====
 int __thiscall ObjectTypeClass::CreateInstance(int this, CampaignScore *aP1, CampaignScore *aP2)
 {
   if ( *(_DWORD *)(this + 60) ) /*0x5f1c30*/
@@ -1393,12 +1393,12 @@ LABEL_11:
 }
 
 
-// ==== 0x005F1EA0  Count::GetCountQueue  this=VOID_PTR  sig=csp ====
+// ==== 0x005F1EA0  Count::GetCountQueue  this=Count  sig=csp ====
 int __thiscall Queue_GetCount(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x5f1ea0*/
+  v1 = this->q038; /*0x5f1ea0*/
   if ( v1 ) /*0x5f1ea5*/
     return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f1eaa*/
   else
@@ -1471,7 +1471,7 @@ int __thiscall NullModemClass::_vt15(int *this, int a2, int a3, int a4, int a5, 
 }
 
 
-// ==== 0x005F1FA0  NullModemClass::DetectModem  this=int  sig=csp ====
+// ==== 0x005F1FA0  NullModemClass::DetectModem  this=NullModemClass  sig=csp ====
 char __thiscall NullModemClass::DetectModem(_DWORD *this, _DWORD *a2, int a3)
 {
   wchar_t *StringCSF; // eax
@@ -1568,7 +1568,7 @@ LABEL_7:
     -1);
   Debug::Log(); /*0x5f20c8*/
   *(this + 7) = 1; /*0x5f20d5*/
-  *(this + 8) = 1; /*0x5f20d8*/
+  this->Active = 1; /*0x5f20d8*/
   v7 = (*(int (__thiscall **)(WinModemClass *, char *, int, _BYTE *, int, int, int, int))(*(_DWORD *)g_ClipboardBuffer->__pad_0 /*0x5f20fd*/
                                                                                         + 28))(
          g_ClipboardBuffer,
@@ -1647,7 +1647,7 @@ LABEL_18:
   }
   if ( *v10 == 1 ) /*0x5f22cc*/
   {
-    v13 = *(this + 13); /*0x5f22d2*/
+    v13 = this->q034; /*0x5f22d2*/
     if ( v13 ) /*0x5f22d7*/
     {
       strcpy(v45, "AT"); /*0x5f22e9*/
@@ -1655,7 +1655,7 @@ LABEL_18:
       if ( *(_DWORD *)(v13 + 24) ) /*0x5f2309*/
       {
         Debug::Log(); /*0x5f2319*/
-        strcpy(&v45[2], *(const char **)(*(this + 13) + 24)); /*0x5f2346*/
+        strcpy(&v45[2], *(const char **)(this->q034 + 24)); /*0x5f2346*/
         v7 = (*(int (__thiscall **)(WinModemClass *, char *, int, _BYTE *, int, int, int, int))(*(_DWORD *)g_ClipboardBuffer->__pad_0 /*0x5f236d*/
                                                                                               + 28))(
                g_ClipboardBuffer,
@@ -1677,13 +1677,13 @@ LABEL_18:
         }
         v10 = a2; /*0x5f23f4*/
       }
-      v15 = *(this + 13); /*0x5f2400*/
+      v15 = this->q034; /*0x5f2400*/
       if ( v10[6] ) /*0x5f23fb*/
       {
         if ( !*(_DWORD *)(v15 + 16) ) /*0x5f240e*/
           goto LABEL_37; /*0x5f240e*/
         Debug::Log(); /*0x5f2419*/
-        strcpy(&v45[2], *(const char **)(*(this + 13) + 16)); /*0x5f2446*/
+        strcpy(&v45[2], *(const char **)(this->q034 + 16)); /*0x5f2446*/
         (*(void (__thiscall **)(WinModemClass *, char *, int, _BYTE *, int, int, int, int))(*(_DWORD *)g_ClipboardBuffer->__pad_0 /*0x5f246a*/
                                                                                           + 28))(
           g_ClipboardBuffer,
@@ -1712,7 +1712,7 @@ LABEL_18:
         if ( !*(_DWORD *)(v15 + 20) ) /*0x5f2508*/
           goto LABEL_37; /*0x5f2508*/
         Debug::Log(); /*0x5f2513*/
-        strcpy(&v45[2], *(const char **)(*(this + 13) + 20)); /*0x5f2540*/
+        strcpy(&v45[2], *(const char **)(this->q034 + 20)); /*0x5f2540*/
         (*(void (__thiscall **)(WinModemClass *, char *, int, _BYTE *, int, int, int, int))(*(_DWORD *)g_ClipboardBuffer->__pad_0 /*0x5f2564*/
                                                                                           + 28))(
           g_ClipboardBuffer,
@@ -1735,13 +1735,13 @@ LABEL_18:
       }
       v10 = a2; /*0x5f25ec*/
 LABEL_37:
-      v18 = *(this + 13); /*0x5f25f3*/
+      v18 = this->q034; /*0x5f25f3*/
       if ( v10[7] ) /*0x5f25f3*/
       {
         if ( *(_DWORD *)(v18 + 8) ) /*0x5f2601*/
         {
           Debug::Log(); /*0x5f2611*/
-          strcpy(&v45[2], *(const char **)(*(this + 13) + 8)); /*0x5f263e*/
+          strcpy(&v45[2], *(const char **)(this->q034 + 8)); /*0x5f263e*/
           (*(void (__thiscall **)(WinModemClass *, char *, int, _BYTE *, int, int, int, int))(*(_DWORD *)g_ClipboardBuffer->__pad_0 /*0x5f2662*/
                                                                                             + 28))(
             g_ClipboardBuffer,
@@ -1766,7 +1766,7 @@ LABEL_37:
       else if ( *(_DWORD *)(v18 + 12) ) /*0x5f26ea*/
       {
         Debug::Log(); /*0x5f26fa*/
-        strcpy(&v45[2], *(const char **)(*(this + 13) + 12)); /*0x5f2727*/
+        strcpy(&v45[2], *(const char **)(this->q034 + 12)); /*0x5f2727*/
         (*(void (__thiscall **)(WinModemClass *, char *, int, _BYTE *, int, int, int, int))(*(_DWORD *)g_ClipboardBuffer->__pad_0 /*0x5f274b*/
                                                                                           + 28))(
           g_ClipboardBuffer,
@@ -1843,7 +1843,7 @@ LABEL_47:
 }
 
 
-// ==== 0x005F2950  Dialog::RunModemDialing  this=int  sig=csp ====
+// ==== 0x005F2950  Dialog::RunModemDialing  this=Dialog  sig=csp ====
 int __thiscall Dialog::RunModemDialing(int *this, int a2, int a3, char a4)
 {
   char v5; // bl
@@ -1978,7 +1978,7 @@ LABEL_36:
 }
 
 
-// ==== 0x005F2CE0  ObjectClass::WaitModemConnection  this=int  sig=csp ====
+// ==== 0x005F2CE0  ObjectClass::WaitModemConnection  this=ObjectClass  sig=csp ====
 int __userpurge WaitModemConnection@<eax>(int a1@<ecx>, int a2@<edi>, char a3)
 {
   int v3; // ebp
@@ -2265,7 +2265,7 @@ LABEL_7:
 }
 
 
-// ==== 0x005F3320  AppState::CallMethod  this=VOID_PTR  sig=csp ====
+// ==== 0x005F3320  AppState::CallMethod  this=AppState  sig=csp ====
 int __stdcall AppState_CallMethod(int a1)
 {
   return (*(int (__thiscall **)(HWND, int))(*(_DWORD *)g_ClipboardBuffer + 32))(g_ClipboardBuffer, a1); /*0x5f3330*/
@@ -2279,7 +2279,7 @@ void nullsub_28()
 }
 
 
-// ==== 0x005F3350  String::NormalizeNewlines  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x005F3350  String::NormalizeNewlines  this=String  sig=ida-proto ====
 int String_NormalizeNewlines()
 {
   const char *v0; // esi
@@ -2315,14 +2315,14 @@ LABEL_6:
 }
 
 
-// ==== 0x005F33A0  StringBuffer::Reset  this=VOID_PTR  sig=csp ====
+// ==== 0x005F33A0  StringBuffer::Reset  this=StringBuffer  sig=csp ====
 _BYTE *__thiscall StringBuffer_Reset(_DWORD *this)
 {
   _BYTE *result; // eax
 
-  result = (_BYTE *)*(this + 3); /*0x5f33a0*/
+  result = (_BYTE *)this->q00C; /*0x5f33a0*/
   *result = 0; /*0x5f33a3*/
-  *(this + 5) = 0; /*0x5f33a6*/
+  this->q014 = 0; /*0x5f33a6*/
   return result; /*0x5f33ad*/
 }
 
@@ -2347,7 +2347,7 @@ int sub_5F33B0()
 }
 
 
-// ==== 0x005F3440  EventClass::GetState  this=VOID_PTR  sig=csp ====
+// ==== 0x005F3440  EventClass::GetState  this=EventClass  sig=csp ====
 int __stdcall EventClass::GetState(int a1)
 {
   return 0; /*0x5f3442*/
@@ -2375,7 +2375,7 @@ unsigned int Dialog_CheckButtonState()
 }
 
 
-// ==== 0x005F34D0  sub_5F34D0  this=unknown  sig=csp ====
+// ==== 0x005F34D0  sub_5F34D0  this=-  sig=csp ====
 int __stdcall sub_5F34D0(char *String)
 {
   int v1; // esi
@@ -4892,7 +4892,7 @@ int __thiscall MapClass::ClearCellOverlayFlag(#374 *this)
 }
 
 
-// ==== 0x005F61A0  ObjectTypeClass::ReleaseWaveAndString  this=VOID_PTR  sig=csp ====
+// ==== 0x005F61A0  ObjectTypeClass::ReleaseWaveAndString  this=ObjectTypeClass  sig=csp ====
 void __thiscall ObjectTypeClass_ReleaseWaveAndString(int *this)
 {
   void *v2; // edi
@@ -4904,24 +4904,24 @@ void __thiscall ObjectTypeClass_ReleaseWaveAndString(int *this)
     WaveClass::Destroy(*this); /*0x5f61ac*/
     __3_YAXPAX_Z(v2); /*0x5f61b2*/
   }
-  v3 = (void **)*(this + 1); /*0x5f61ba*/
+  v3 = (void **)this->vtable2; /*0x5f61ba*/
   *this = 0; /*0x5f61bd*/
   if ( v3 ) /*0x5f61c5*/
   {
     String::Release(v3); /*0x5f61c9*/
     __3_YAXPAX_Z(v3); /*0x5f61cf*/
   }
-  *(this + 1) = 0; /*0x5f61d7*/
+  this->vtable2 = 0; /*0x5f61d7*/
 }
 
 
-// ==== 0x005F6220  DisplayClass::checkScreenBounds  this=VOID_PTR  sig=csp ====
+// ==== 0x005F6220  DisplayClass::checkScreenBounds  this=DisplayClass  sig=csp ====
 bool __thiscall sub_5F6220(void *this, int a2)
 {
   int v3; // edi
 
   v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 184))(a2); /*0x5f6234*/
-  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 184))(this) > v3; /*0x5f623e*/
+  return (*(int (__thiscall **)(void *))(this->__pad_0B8)(this) > v3; /*0x5f623e*/
 }
 
 
@@ -5235,7 +5235,7 @@ _DWORD *__fastcall sub_5F66A0(_DWORD *a1, int a2)
 }
 
 
-// ==== 0x005F6790  Network_Process_5F6790  this=unknown  sig=csp ====
+// ==== 0x005F6790  Network_Process_5F6790  this=-  sig=csp ====
 int *__fastcall sub_5F6790(int *a1, int a2)
 {
   int v2; // esi
@@ -5274,7 +5274,7 @@ int *__fastcall sub_5F6790(int *a1, int a2)
 }
 
 
-// ==== 0x005F6810  Network_Process_5F6810  this=VOID_PTR  sig=csp ====
+// ==== 0x005F6810  Network_Process_5F6810  this=-  sig=csp ====
 _DWORD *__fastcall sub_5F6810(int a1, _DWORD *a2)
 {
   _DWORD *result; // eax
@@ -5550,13 +5550,13 @@ int __thiscall ObjectClass::GetCoords_Alt(#374 *this)
 }
 
 
-// ==== 0x005F6CB0  ObjectClass::CheckFlagD0  this=VOID_PTR  sig=csp ====
+// ==== 0x005F6CB0  ObjectClass::CheckFlagD0  this=ObjectClass  sig=csp ====
 int __thiscall ObjectClass::CheckFlagD0(_DWORD *this, IUnknown *aP1)
 {
   IUnknown *result; // eax
 
   result = aP1; /*0x5f6cb0*/
-  *(this + 25) = aP1; /*0x5f6cb7*/
+  this->customSound = aP1; /*0x5f6cb7*/
   if ( aP1 == (IUnknown *)-1 ) /*0x5f6cba*/
     return AudioFile::Stop(this + 20); /*0x5f6cbf*/
   return (int)result; /*0x5f6cc4*/
@@ -7593,10 +7593,10 @@ void __fastcall TheaterObjectTypeClassSpecificID(char *a1, int a2)
 }
 
 
-// ==== 0x005F9710  ObjectTypeClass::SetRTTI71  this=VOID_PTR  sig=csp ====
+// ==== 0x005F9710  ObjectTypeClass::SetRTTI71  this=ObjectTypeClass  sig=csp ====
 void __thiscall ObjectTypeClass_SetRTTI71(_BYTE *this)
 {
-  *(this + 1) = 71; /*0x5f9710*/
+  this->vtable2 = 71; /*0x5f9710*/
 }
 
 
@@ -8336,25 +8336,25 @@ void nullsub_29()
 }
 
 
-// ==== 0x005FA440  AudioSettings::SetFlag70  this=VOID_PTR  sig=csp ====
+// ==== 0x005FA440  AudioSettings::SetFlag70  this=AudioSettings  sig=csp ====
 void __thiscall sub_5FA440(_BYTE *this, char a2)
 {
-  *(this + 70) = a2; /*0x5fa444*/
+  this->q046 = a2; /*0x5fa444*/
   byte_A83D22 = a2; /*0x5fa447*/
   Debug::Log(); /*0x5fa463*/
 }
 
 
-// ==== 0x005FA470  AudioSettings::SetFlag68  this=VOID_PTR  sig=csp ====
+// ==== 0x005FA470  AudioSettings::SetFlag68  this=AudioSettings  sig=csp ====
 void __thiscall sub_5FA470(_BYTE *this, char a2)
 {
-  *(this + 68) = a2; /*0x5fa474*/
+  this->q044 = a2; /*0x5fa474*/
   byte_A83D20 = a2; /*0x5fa477*/
   Debug::Log(); /*0x5fa493*/
 }
 
 
-// ==== 0x005FA4A0  Audio::SetScoreVolume  this=VOID_PTR  sig=csp ====
+// ==== 0x005FA4A0  Audio::SetScoreVolume  this=Audio  sig=csp ====
 void __thiscall Options::SetScoreVolume(Options *this, float volume, int pad)
 {
   double v4; // st7
@@ -8374,7 +8374,7 @@ void __thiscall Options::SetScoreVolume(Options *this, float volume, int pad)
 }
 
 
-// ==== 0x005FA510  Audio::SetSoundVolume  this=VOID_PTR  sig=csp ====
+// ==== 0x005FA510  Audio::SetSoundVolume  this=Audio  sig=csp ====
 void __thiscall Options::SetSoundVolume(Options *this, float volume, int pad)
 {
   double v3; // st7
@@ -8393,7 +8393,7 @@ void __thiscall Options::SetSoundVolume(Options *this, float volume, int pad)
 }
 
 
-// ==== 0x005FA590  Audio::SetVoiceVolume  this=VOID_PTR  sig=csp ====
+// ==== 0x005FA590  Audio::SetVoiceVolume  this=Audio  sig=csp ====
 void __thiscall Options::SetVoiceVolume(Options *this, float volume, int pad)
 {
   double v4; // st7
@@ -8415,7 +8415,7 @@ void __thiscall Options::SetVoiceVolume(Options *this, float volume, int pad)
 }
 
 
-// ==== 0x005FA620  GameSettings::Read  this=int  sig=csp ====
+// ==== 0x005FA620  GameSettings::Read  this=GameSettings  sig=csp ====
 char *__thiscall GameSettings::Read(unsigned __int16 *this)
 {
   int Int_Overwrite; // eax
@@ -8975,7 +8975,7 @@ void __thiscall sub_5FB160(int this)
 }
 
 
-// ==== 0x005FB2E0  Rules::GetProductionTimeMult  this=int  sig=csp ====
+// ==== 0x005FB2E0  Rules::GetProductionTimeMult  this=Rules  sig=csp ====
 char *__thiscall Rules::GetProductionTimeMult(int *this, CellStruct *aP1)
 {
   CellStruct *result; // eax
@@ -8994,7 +8994,7 @@ char *__thiscall Rules::GetProductionTimeMult(int *this, CellStruct *aP1)
 }
 
 
-// ==== 0x005FB320  HotkeyOptions::DlgProc  this=VOID_PTR  sig=csp ====
+// ==== 0x005FB320  HotkeyOptions::DlgProc  this=HotkeyOptions  sig=csp ====
 int __stdcall HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
 {
   int result; // eax
@@ -9554,7 +9554,7 @@ LABEL_81:
 }
 
 
-// ==== 0x005FBEF0  ShowHotkeyOptionsDialog  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x005FBEF0  ShowHotkeyOptionsDialog  this=-  sig=ida-proto ====
 char ShowHotkeyOptionsDialog()
 {
   int Dialog; // esi
@@ -9583,14 +9583,14 @@ char ShowHotkeyOptionsDialog()
 }
 
 
-// ==== 0x005FBF70  ObjectClass::Map_Helper_5FBF70  this=VOID_PTR  sig=csp ====
+// ==== 0x005FBF70  ObjectClass::Map_Helper_5FBF70  this=ObjectClass  sig=csp ====
 int __thiscall sub_5FBF70(_DWORD *this)
 {
-  return *(this + 3); /*0x5fbf73*/
+  return this->vtable4; /*0x5fbf73*/
 }
 
 
-// ==== 0x005FBF80  GameOptionsClass::UnlockMovieIfNeeded_MoviesList  this=VOID_PTR  sig=csp ====
+// ==== 0x005FBF80  GameOptionsClass::UnlockMovieIfNeeded_MoviesList  this=GameOptionsClass  sig=csp ====
 char *__thiscall GameOptionsClass::UnlockMovieIfNeeded_MoviesList(_DWORD *this, void *a2)
 {
   int v2; // edi
@@ -9648,7 +9648,7 @@ LABEL_10:
 }
 
 
-// ==== 0x005FC000  GameOptionsClass::PopulateMovieList  this=VOID_PTR  sig=csp ====
+// ==== 0x005FC000  GameOptionsClass::PopulateMovieList  this=GameOptionsClass  sig=csp ====
 char *__thiscall GameOptionsClass::PopulateMovieList(void *this, HWND hWnd)
 {
   void *v2; // ebx
@@ -10454,7 +10454,7 @@ LABEL_20:
 }
 
 
-// ==== 0x005FDCC0  globalHelper_0FDCC0  this=unknown  sig=csp ====
+// ==== 0x005FDCC0  globalHelper_0FDCC0  this=-  sig=csp ====
 _DWORD *__fastcall globalHelper_0FDCC0(IUnknown *aP0, int a2)
 {
   _DWORD *result; // eax
@@ -10476,7 +10476,7 @@ _DWORD *__fastcall globalHelper_0FDCC0(IUnknown *aP0, int a2)
 }
 
 
-// ==== 0x005FDD20  FindBuildingByTiberiumType  this=int  sig=csp ====
+// ==== 0x005FDD20  FindBuildingByTiberiumType  this=-  sig=csp ====
 int __fastcall FindBuildingByTiberiumType(IUnknown *aP0)
 {
   int v1; // eax
@@ -10666,12 +10666,12 @@ OverlayClass *__thiscall Object::DrawObject(void **Block, char a2)
 }
 
 
-// ==== 0x005FE020  OverlayClass::updateOverlayState  this=VOID_PTR  sig=csp ====
+// ==== 0x005FE020  OverlayClass::updateOverlayState  this=OverlayClass  sig=csp ====
 TechnoClass *__thiscall OverlayClass::updateOverlayState(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = a2; /*0x5fe02a*/
-  *(this + 2) = a3; /*0x5fe02d*/
-  *(this + 3) = 0; /*0x5fe030*/
+  this->vtable2 = a2; /*0x5fe02a*/
+  this->vtable3 = a3; /*0x5fe02d*/
+  this->vtable4 = 0; /*0x5fe030*/
   *this = &XSurface_Vtable; /*0x5fe037*/
   return (TechnoClass *)this; /*0x5fe03d*/
 }
@@ -10941,7 +10941,7 @@ void __thiscall OverlayTypeClass::_vt40(void *this, _DWORD *a2, int *a3, unsigne
 }
 
 
-// ==== 0x005FE620  LoadBuildingTypeClassSHPs  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x005FE620  LoadBuildingTypeClassSHPs  this=-  sig=ida-proto ====
 int __fastcall BuildingTypeClass_LoadSHPs(int a1)
 {
   int result; // eax
@@ -11302,7 +11302,7 @@ LABEL_6:
 }
 
 
-// ==== 0x005FED00  OverlayTypeClass::GetRadarColor  this=int  sig=csp ====
+// ==== 0x005FED00  OverlayTypeClass::GetRadarColor  this=OverlayTypeClass  sig=csp ====
 int __thiscall OverlayTypeClass::GetRadarColor(int *this, int a2, unsigned int a3)
 {
   char **v4; // eax
@@ -11314,9 +11314,9 @@ int __thiscall OverlayTypeClass::GetRadarColor(int *this, int a2, unsigned int a
   __int16 v11; // [esp+4h] [ebp-4h]
 
   v4 = (char **)(*(int (__thiscall **)(int *))(*this + 156))(this); /*0x5fed06*/
-  if ( v4 || (v5 = *(this + 167)) != 0 && (v4 = (char **)(*(int (__thiscall **)(int))(*(_DWORD *)v5 + 156))(v5)) != 0 ) /*0x5fed28*/
+  if ( v4 || (v5 = this->DamageLevels) != 0 && (v4 = (char **)(*(int (__thiscall **)(int))(*(_DWORD *)v5 + 156))(v5)) != 0 ) /*0x5fed28*/
   {
-    v6 = *(this + 165); /*0x5fed2e*/
+    v6 = this->LandType; /*0x5fed2e*/
     if ( (v6 < 127 || v6 > 138) && (v6 < 147 || v6 > 158) ) /*0x5fed4f*/
     {
       PixelData = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5feda2*/

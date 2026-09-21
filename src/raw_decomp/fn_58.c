@@ -303,7 +303,7 @@ LABEL_49:
 }
 
 
-// ==== 0x00580600  CellClass::ApplyTileModification8  this=int  sig=csp ====
+// ==== 0x00580600  CellClass::ApplyTileModification8  this=CellClass  sig=csp ====
 void __thiscall CellClass::ApplyTileModification8(int *this, MouseClass *aP1)
 {
   int v2; // eax
@@ -614,14 +614,14 @@ LABEL_51:
 }
 
 
-// ==== 0x00580B20  CellClass::updateLighting  this=VOID_PTR  sig=csp ====
+// ==== 0x00580B20  CellClass::updateLighting  this=CellClass  sig=csp ====
 BOOL __thiscall sub_580B20(__int16 *this)
 {
   unsigned int v1; // eax
   _DWORD *v2; // eax
   int v3; // eax
 
-  v1 = *this + (*(this + 1) << 9); /*0x580b2a*/
+  v1 = *this + (this->foggedObjects << 9); /*0x580b2a*/
   if ( v1 >= 0x40000 || (v2 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v1)) == 0 ) /*0x580b40*/
   {
     g_Map_GlobalCellIndex = *(_DWORD *)this; /*0x580b44*/
@@ -632,14 +632,14 @@ BOOL __thiscall sub_580B20(__int16 *this)
 }
 
 
-// ==== 0x00580B70  CellClass::applyTileDamage  this=VOID_PTR  sig=csp ====
+// ==== 0x00580B70  CellClass::applyTileDamage  this=CellClass  sig=csp ====
 BOOL __thiscall sub_580B70(__int16 *this)
 {
   unsigned int v1; // eax
   _DWORD *v2; // eax
   int v3; // eax
 
-  v1 = *this + (*(this + 1) << 9); /*0x580b7a*/
+  v1 = *this + (this->foggedObjects << 9); /*0x580b7a*/
   if ( v1 >= 0x40000 || (v2 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v1)) == 0 ) /*0x580b90*/
   {
     g_Map_GlobalCellIndex = *(_DWORD *)this; /*0x580b94*/
@@ -650,7 +650,7 @@ BOOL __thiscall sub_580B70(__int16 *this)
 }
 
 
-// ==== 0x00580BC0  ObjectClass::FindMapSpawnCell  this=int  sig=csp ====
+// ==== 0x00580BC0  ObjectClass::FindMapSpawnCell  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall FindMapSpawnCell(_DWORD *this, FootClass *aP1)
 {
   int *v3; // eax
@@ -718,13 +718,13 @@ _DWORD *__thiscall FindMapSpawnCell(_DWORD *this, FootClass *aP1)
   v38 = 32; /*0x580bdd*/
   v4 = *v3; /*0x580bf0*/
   v5 = v3[1]; /*0x580bf2*/
-  v6 = *(this + 61); /*0x580bf9*/
+  v6 = this->q0F4; /*0x580bf9*/
   LOWORD(v39) = v4 / 256; /*0x580bff*/
   v36 = (__int16)v39; /*0x580c0f*/
   HIWORD(v39) = v5 / 256; /*0x580c16*/
   v7 = 0; /*0x580c1b*/
   v8 = (ObjectClass *)SHIWORD(v39); /*0x580c1d*/
-  v9 = *(this + 62); /*0x580c20*/
+  v9 = this->q0F8; /*0x580c20*/
   v33 = 0; /*0x580c26*/
   v10 = v6 + v9; /*0x580c2a*/
   v35 = (ObjectClass *)SHIWORD(v39); /*0x580c2c*/
@@ -896,7 +896,7 @@ LABEL_37:
 }
 
 
-// ==== 0x00581090  ObjectClass::CleanupMapSystems  this=VOID_PTR  sig=csp ====
+// ==== 0x00581090  ObjectClass::CleanupMapSystems  this=ObjectClass  sig=csp ====
 int __thiscall sub_581090(_DWORD *this)
 {
   int v2; // ebx
@@ -920,13 +920,13 @@ int __thiscall sub_581090(_DWORD *this)
     --v2; /*0x5810b6*/
   }
   while ( v2 ); /*0x5810b7*/
-  v4 = (_DWORD *)*(this + 5); /*0x5810b9*/
+  v4 = (_DWORD *)this->abstractFlags; /*0x5810b9*/
   if ( v4 ) /*0x5810be*/
   {
     if ( *v4 ) /*0x5810c0*/
       (**(void (__thiscall ***)(_DWORD, int))*v4)(*v4, 3); /*0x5810ca*/
     __3_YAXPAX_Z(v4); /*0x5810cd*/
-    *(this + 5) = 0; /*0x5810d5*/
+    this->abstractFlags = 0; /*0x5810d5*/
   }
   v5 = (_DWORD **)(this + 32); /*0x5810dc*/
   v6 = this + 35; /*0x5810e2*/
@@ -954,7 +954,7 @@ int __thiscall sub_581090(_DWORD *this)
 }
 
 
-// ==== 0x00581140  LayerClass::DestroyCliff  this=VOID_PTR  sig=csp ====
+// ==== 0x00581140  LayerClass::DestroyCliff  this=LayerClass  sig=csp ====
 int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
 {
   int result; // eax
@@ -2668,7 +2668,7 @@ LABEL_44:
 }
 
 
-// ==== 0x00583180  Pathfinding::CrossBridge  this=VOID_PTR  sig=csp ====
+// ==== 0x00583180  Pathfinding::CrossBridge  this=Pathfinding  sig=csp ====
 int *__stdcall Pathfinding::CrossBridge(int *a0, IUnknown *aP1, IUnknown *aP2)
 {
   IUnknown *NeighbourContent; // ebx
@@ -2782,7 +2782,7 @@ int *__stdcall Pathfinding::CrossBridge(int *a0, IUnknown *aP1, IUnknown *aP2)
 }
 
 
-// ==== 0x005833F0  Pathfinding::SelectRegionPath  this=VOID_PTR  sig=csp ====
+// ==== 0x005833F0  Pathfinding::SelectRegionPath  this=Pathfinding  sig=csp ====
 int *__stdcall Pathfinding::SelectRegionPath(IUnknown *aP0, IUnknown *aP1, IUnknown *aP2)
 {
   int RegionMap; // eax
@@ -2873,7 +2873,7 @@ int *__stdcall Pathfinding::SelectRegionPath(IUnknown *aP0, IUnknown *aP1, IUnkn
 }
 
 
-// ==== 0x005835D0  FindCliffSeedCell  this=VOID_PTR  sig=csp ====
+// ==== 0x005835D0  FindCliffSeedCell  this=-  sig=csp ====
 int *__stdcall FindCliffSeedCell(int *a0, IUnknown *aP1, IUnknown *aP2)
 {
   unsigned int v3; // eax
@@ -2986,7 +2986,7 @@ LABEL_28:
 }
 
 
-// ==== 0x00583820  Pathfinding::CheckCliff  this=VOID_PTR  sig=csp ====
+// ==== 0x00583820  Pathfinding::CheckCliff  this=Pathfinding  sig=csp ====
 _DWORD *__thiscall Pathfinding::CheckCliff(int *this, _DWORD *a1, __int16 *a2, int a4, MouseClass *aP4)
 {
   unsigned int v5; // eax
@@ -3084,10 +3084,10 @@ _DWORD *__thiscall Pathfinding::CheckCliff(int *this, _DWORD *a1, __int16 *a2, i
       a2 = *(__int16 **)i->__pad_0; /*0x583a43*/
       if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (IUnknown *)&a2, (TechnoClass *)1) ) /*0x583a47*/
       {
-        v19 = (__int16)a2 + SHIWORD(a2) * (*(this + 62) + *(this + 61) + 1); /*0x583a73*/
+        v19 = (__int16)a2 + SHIWORD(a2) * (this->q0F8 + this->q0F4 + 1); /*0x583a73*/
         if ( v19 >= 0 ) /*0x583a75*/
         {
-          v20 = *(this + 27); /*0x583a7b*/
+          v20 = this->q06C; /*0x583a7b*/
           if ( v19 >= v20 ) /*0x583a80*/
             v19 = v20 - 1; /*0x583a82*/
         }
@@ -3095,7 +3095,7 @@ _DWORD *__thiscall Pathfinding::CheckCliff(int *this, _DWORD *a1, __int16 *a2, i
         {
           v19 = 0; /*0x583a77*/
         }
-        if ( (MouseClass *)*(__int16 *)(*(this + 28) + 2 * (a4 + 4 * v19 + v19)) == v14 ) /*0x583a97*/
+        if ( (MouseClass *)*(__int16 *)(this->__pad_01C + 2 * (a4 + 4 * v19 + v19)) == v14 ) /*0x583a97*/
           break; /*0x583a97*/
       }
       if ( ++v17 >= 6 ) /*0x583aa0*/
@@ -5346,7 +5346,7 @@ int sub_585EE0()
 }
 
 
-// ==== 0x00585F40  InterpolateTerrainLighting  this=VOID_PTR  sig=csp ====
+// ==== 0x00585F40  InterpolateTerrainLighting  this=-  sig=csp ====
 int __stdcall InterpolateTerrainLighting(int a1, MouseClass *aP1, int a3, int a4)
 {
   int v4; // ecx
@@ -5448,7 +5448,7 @@ int __stdcall InterpolateTerrainLighting(int a1, MouseClass *aP1, int a3, int a4
 }
 
 
-// ==== 0x005862C0  VeinholeMonsterClass_Update  this=VOID_PTR  sig=csp ====
+// ==== 0x005862C0  VeinholeMonsterClass_Update  this=-  sig=csp ====
 char __stdcall VeinholeMonsterClass_Update(MouseClass *aP0, int a2)
 {
   int v3; // edi
@@ -5547,7 +5547,7 @@ bool __stdcall Cell::IsPassable(IUnknown *aP0)
 }
 
 
-// ==== 0x005864A0  FogOfWar_Get  this=VOID_PTR  sig=csp ====
+// ==== 0x005864A0  FogOfWar_Get  this=-  sig=csp ====
 bool __stdcall FogOfWar_Get(IUnknown *aP0)
 {
   int v1; // eax
@@ -5593,14 +5593,14 @@ bool __stdcall FogOfWar_Get(IUnknown *aP0)
 }
 
 
-// ==== 0x005865E0  Game::Stub3  this=VOID_PTR  sig=csp ====
+// ==== 0x005865E0  Game::Stub3  this=Game  sig=csp ====
 char __stdcall Game::Stub3(IUnknown *aP0)
 {
   return 0; /*0x5865e2*/
 }
 
 
-// ==== 0x005865F0  CellClass::SpiralFindClosest  this=VOID_PTR  sig=csp ====
+// ==== 0x005865F0  CellClass::SpiralFindClosest  this=CellClass  sig=csp ====
 int __stdcall CellClass::SpiralFindClosest(IUnknown *aP0, MouseClass *aP1, IUnknown *aP2)
 {
   __int16 v3; // bx
@@ -5878,7 +5878,7 @@ void __thiscall LayerClass::Update_Pathfinding_2(int *this, IUnknown *aP1)
 }
 
 
-// ==== 0x00586AC0  JumpjetLocomotionClass::ClampToCellBounds  this=int  sig=csp ====
+// ==== 0x00586AC0  JumpjetLocomotionClass::ClampToCellBounds  this=JumpjetLocomotionClass  sig=csp ====
 _DWORD *__thiscall JumpjetLocomotionClass::ClampToCellBounds(int *this, MouseClass *aP1, IUnknown *aP2, char a4)
 {
   int v4; // ebx
@@ -5894,22 +5894,22 @@ _DWORD *__thiscall JumpjetLocomotionClass::ClampToCellBounds(int *this, MouseCla
   int aP2a; // [esp+24h] [ebp+8h]
   int v16; // [esp+28h] [ebp+Ch]
 
-  v4 = *(this + 61); /*0x586ac8*/
+  v4 = this->JumpjetLocomotionClass_field_3D; /*0x586ac8*/
   v5 = SLOWORD(aP2->field_0); /*0x586acf*/
   v6 = SHIWORD(aP2->field_0); /*0x586ad4*/
   if ( (v4 & 1) != 0 ) /*0x586ae1*/
     v7 = v5 - v6 + 1; /*0x586ae5*/
   else
     v7 = v5 - v6; /*0x586ae8*/
-  v8 = v4 / 2 + (v7 >> 1) - *(this + 63); /*0x586b05*/
-  v9 = v5 + v6 - v4 - *(this + 64); /*0x586b0d*/
-  aP2a = *(this + 65) / 2; /*0x586b2d*/
-  v10 = *(this + 66) / 2; /*0x586b36*/
+  v8 = v4 / 2 + (v7 >> 1) - this->JumpjetLocomotionClass_field_3F; /*0x586b05*/
+  v9 = v5 + v6 - v4 - this->DestinationCoords; /*0x586b0d*/
+  aP2a = this->q104 / 2; /*0x586b2d*/
+  v10 = this->q108 / 2; /*0x586b36*/
   if ( (int)abs32(v8 - aP2a) >= (int)abs32(v9 - v10) ) /*0x586b45*/
   {
     if ( v9 >= v10 ) /*0x586b83*/
     {
-      v11 = *(this + 66); /*0x586b98*/
+      v11 = this->q108; /*0x586b98*/
       if ( a4 ) /*0x586b9e*/
         --v11; /*0x586ba0*/
     }
@@ -5921,9 +5921,9 @@ _DWORD *__thiscall JumpjetLocomotionClass::ClampToCellBounds(int *this, MouseCla
   else if ( v8 >= aP2a ) /*0x586b4b*/
   {
     if ( a4 ) /*0x586b64*/
-      v8 = *(this + 65) - 1; /*0x586b6c*/
+      v8 = this->q104 - 1; /*0x586b6c*/
     else
-      v8 = *(this + 65); /*0x586b75*/
+      v8 = this->q104; /*0x586b75*/
     v11 = v9; /*0x586b6f*/
   }
   else
@@ -5931,8 +5931,8 @@ _DWORD *__thiscall JumpjetLocomotionClass::ClampToCellBounds(int *this, MouseCla
     v8 = a4 != 0; /*0x586b58*/
     v11 = v9; /*0x586b5a*/
   }
-  v12 = *(this + 64) + v11; /*0x586bb1*/
-  v13 = v8 + *(this + 63); /*0x586bb3*/
+  v12 = this->DestinationCoords + v11; /*0x586bb1*/
+  v13 = v8 + this->JumpjetLocomotionClass_field_3F; /*0x586bb3*/
   LOWORD(v16) = v13 + ((v12 + 1) >> 1); /*0x586bc7*/
   HIWORD(v16) = v4 + (v12 >> 1) - v13; /*0x586bcf*/
   aP1->field_0 = v16; /*0x586bdc*/
@@ -5940,7 +5940,7 @@ _DWORD *__thiscall JumpjetLocomotionClass::ClampToCellBounds(int *this, MouseCla
 }
 
 
-// ==== 0x00586BF0  MarkCliffEdgePassability  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00586BF0  MarkCliffEdgePassability  this=-  sig=ida-proto ====
 int __fastcall MarkCliffEdgePassability(int a1)
 {
   int result; // eax
@@ -6164,7 +6164,7 @@ _DWORD *__thiscall HouseClass::ClampToUsableCell(_DWORD *this, MouseClass *aP1, 
 }
 
 
-// ==== 0x00586FC0  FootClass::FindNearestApproachableCell  this=int  sig=csp ====
+// ==== 0x00586FC0  FootClass::FindNearestApproachableCell  this=FootClass  sig=csp ====
 int *__thiscall FootClass::FindNearestApproachableCell(_DWORD *this, MouseClass *aP1, __int16 *a2, IUnknown *aP3)
 {
   unsigned int v4; // eax
@@ -6657,7 +6657,7 @@ LABEL_31:
 }
 
 
-// ==== 0x00587410  CellClass::CheckConnectivity  this=int  sig=csp ====
+// ==== 0x00587410  CellClass::CheckConnectivity  this=CellClass  sig=csp ====
 char __thiscall CellClass::CheckConnectivity(int *this, IUnknown *aP1)
 {
   IUnknown *v2; // esi
@@ -7239,7 +7239,7 @@ char __thiscall MapCheck_Diagnostic(_DWORD *this)
 }
 
 
-// ==== 0x005880A0  MapClass::FindFirstFirestorm  this=VOID_PTR  sig=csp ====
+// ==== 0x005880A0  MapClass::FindFirstFirestorm  this=MapClass  sig=csp ====
 int *__stdcall MapClass::FindFirstFirestorm(int *a0, IUnknown *aP1, MouseClass *aP2, int a4)
 {
   int v4; // ebx
@@ -7450,7 +7450,7 @@ LABEL_31:
 }
 
 
-// ==== 0x00588570  globalHelper  this=VOID_PTR  sig=csp ====
+// ==== 0x00588570  globalHelper  this=-  sig=csp ====
 char __stdcall globalHelper_088570(MouseClass *aP0, VectorClass *aP1, MouseClass *aP2)
 {
   char v3; // cl
@@ -7559,7 +7559,7 @@ LABEL_21:
 }
 
 
-// ==== 0x00588750  ScanBuildingPlacementCells  this=VOID_PTR  sig=csp ====
+// ==== 0x00588750  ScanBuildingPlacementCells  this=-  sig=csp ====
 int __stdcall ScanBuildingPlacementCells(MouseClass *aP0, VectorClass *aP1, MouseClass *aP2)
 {
   MouseClass *v3; // edi
@@ -7665,23 +7665,23 @@ LABEL_24:
 }
 
 
-// ==== 0x00588960  ObjectClass::Object_Create  this=VOID_PTR  sig=csp ====
+// ==== 0x00588960  ObjectClass::Object_Create  this=ObjectClass  sig=csp ====
 int __thiscall sub_588960(_DWORD *this, int a2)
 {
   int v2; // eax
   int result; // eax
 
-  v2 = *(this + 82); /*0x588960*/
+  v2 = this->__pad_148; /*0x588960*/
   if ( v2 >= a2 ) /*0x58896c*/
     v2 = a2; /*0x58896e*/
-  *(this + 82) = v2; /*0x588972*/
+  this->__pad_148 = v2; /*0x588972*/
   result = v2 <= 0 ? 0 : v2;
-  *(this + 82) = result; /*0x588980*/
+  this->__pad_148 = result; /*0x588980*/
   return result; /*0x588986*/
 }
 
 
-// ==== 0x00588990  ScenarioClass::CalcMinShroudLevel  this=VOID_PTR  sig=csp ====
+// ==== 0x00588990  ScenarioClass::CalcMinShroudLevel  this=ScenarioClass  sig=csp ====
 int __thiscall sub_588990(_DWORD *this)
 {
   int v1; // edi
@@ -7689,27 +7689,27 @@ int __thiscall sub_588990(_DWORD *this)
   int v3; // eax
   int v4; // eax
 
-  if ( (int)*(this + 82) >= 13 )
+  if ( (int)this->q148 >= 13 )
   {
-    v1 = *(this + 80); /*0x58899d*/
+    v1 = this->q140; /*0x58899d*/
     for ( i = 0; i < v1; ++i )
     {
-      v3 = *(_DWORD *)(*(this + 79) + 4 * i); /*0x5889af*/
+      v3 = *(_DWORD *)(this->q13C + 4 * i); /*0x5889af*/
       if ( v3 )
       {
         v4 = *(char *)(v3 + 283); /*0x5889b6*/
-        if ( *(this + 82) < v4 ) /*0x5889c5*/
-          v4 = *(this + 82); /*0x5889c7*/
-        *(this + 82) = v4; /*0x5889cb*/
-        *(this + 82) = v4 <= 0 ? 0 : v4;
+        if ( this->q148 < v4 ) /*0x5889c5*/
+          v4 = this->q148; /*0x5889c7*/
+        this->q148 = v4; /*0x5889cb*/
+        this->q148 = v4 <= 0 ? 0 : v4;
       }
     }
   }
-  return *(this + 82); /*0x5889ea*/
+  return this->q148; /*0x5889ea*/
 }
 
 
-// ==== 0x005889F0  globalHelper_0889F0  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x005889F0  globalHelper_0889F0  this=-  sig=ida-proto ====
 int __fastcall sub_5889F0(int a1, int a2)
 {
   int *v2; // ebx
@@ -7834,7 +7834,7 @@ MapClass *__thiscall MapClass::Destru_vt04(char *Block, char a2)
 }
 
 
-// ==== 0x00588C10  CellClass::CopyNeighborData  this=int  sig=csp ====
+// ==== 0x00588C10  CellClass::CopyNeighborData  this=CellClass  sig=csp ====
 int __thiscall sub_588C10(int this, int a2)
 {
   *(_DWORD *)(this + 16) = *(_DWORD *)(a2 + 16); /*0x588c19*/
@@ -7855,7 +7855,7 @@ _WORD *__thiscall CellClass::initCellData(_WORD *this, MouseClass *aP1)
 }
 
 
-// ==== 0x00588C60  CellStruct::Sub  this=int  sig=csp ====
+// ==== 0x00588C60  CellStruct::Sub  this=CellStruct  sig=csp ====
 IUnknown *__thiscall CellStruct::Sub(__int16 *this, IUnknown *aP1, IUnknown *aP2)
 {
   __int16 v3; // dx
@@ -7863,7 +7863,7 @@ IUnknown *__thiscall CellStruct::Sub(__int16 *this, IUnknown *aP1, IUnknown *aP2
   IUnknown *aP2a; // [esp+8h] [ebp+8h]
 
   v3 = *this; /*0x588c60*/
-  v4 = *(this + 1) - HIWORD(aP2->field_0); /*0x588c6e*/
+  v4 = this->q004 - HIWORD(aP2->field_0); /*0x588c6e*/
   LOWORD(aP2a) = v3 - LOWORD(aP2->field_0); /*0x588c76*/
   HIWORD(aP2a) = v4; /*0x588c7b*/
   aP1->field_0 = (int)aP2a; /*0x588c84*/
@@ -8422,7 +8422,7 @@ char __thiscall DynamicVectorClass_SubzoneConn::_vt02(void *this, int a2, char *
 }
 
 
-// ==== 0x00589290  Vector8::EraseAt  this=int  sig=csp ====
+// ==== 0x00589290  Vector8::EraseAt  this=Vector8  sig=csp ====
 char __thiscall Vector8_EraseAt(_DWORD *this, int a2)
 {
   int v2; // edx
@@ -8430,22 +8430,22 @@ char __thiscall Vector8_EraseAt(_DWORD *this, int a2)
   int v4; // edx
   int v5; // edx
 
-  v2 = *(this + 4); /*0x589290*/
+  v2 = this->q010; /*0x589290*/
   v3 = a2; /*0x589293*/
   if ( a2 >= v2 ) /*0x589299*/
     return 0; /*0x5892c4*/
   v4 = v2 - 1; /*0x58929b*/
-  *(this + 4) = v4; /*0x58929e*/
+  this->q010 = v4; /*0x58929e*/
   if ( a2 < v4 ) /*0x5892a1*/
   {
     do /*0x5892bc*/
     {
-      v5 = *(this + 1); /*0x5892a4*/
+      v5 = this->q004; /*0x5892a4*/
       ++v3; /*0x5892a7*/
       *(_DWORD *)(v5 + 8 * v3 - 8) = *(_DWORD *)(v5 + 8 * v3); /*0x5892ab*/
       *(_DWORD *)(v5 + 8 * v3 - 4) = *(_DWORD *)(v5 + 8 * v3 + 4); /*0x5892b3*/
     }
-    while ( v3 < *(this + 4) ); /*0x5892bc*/
+    while ( v3 < this->q010 ); /*0x5892bc*/
   }
   return 1; /*0x5892c1*/
 }
@@ -9244,7 +9244,7 @@ int __thiscall MapClass::sub_589C10(int *this, int a2)
 }
 
 
-// ==== 0x00589C50  TileVector::PushBack  this=int  sig=csp ====
+// ==== 0x00589C50  TileVector::PushBack  this=TileVector  sig=csp ====
 char __thiscall TileVector::PushBack(_DWORD *this, MouseClass *aP1)
 {
   int v3; // ecx
@@ -9390,7 +9390,7 @@ unsigned int __thiscall MapClass::InitCellVe_vt05(int this, int a2)
 }
 
 
-// ==== 0x00589E20  RadarClass::updateRadarCells  this=int  sig=csp ====
+// ==== 0x00589E20  RadarClass::updateRadarCells  this=RadarClass  sig=csp ====
 char __thiscall sub_589E20(int *this, int a2, _DWORD *a3)
 {
   int v3; // ecx
@@ -9998,7 +9998,7 @@ VectorClass *__thiscall VectorClass_USubzoneTrackingStruct::QueryInterface(_DWOR
 }
 
 
-// ==== 0x0058A500  Subzone::CopyDataFrom  this=int  sig=csp ====
+// ==== 0x0058A500  Subzone::CopyDataFrom  this=Subzone  sig=csp ====
 int *__thiscall sub_58A500(int *this, int a2)
 {
   int v3; // edi
@@ -10014,7 +10014,7 @@ int *__thiscall sub_58A500(int *this, int a2)
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x58a510*/
     v3 = *(_DWORD *)(a2 + 8); /*0x58a513*/
-    *(this + 2) = v3; /*0x58a51a*/
+    this->Subzone_field_0x08 = v3; /*0x58a51a*/
     if ( v3 ) /*0x58a51d*/
     {
       v4 = (char *)__2_YAPAXI_Z(8 * v3); /*0x58a527*/
@@ -10038,10 +10038,10 @@ int *__thiscall sub_58A500(int *this, int a2)
       {
         v4 = 0; /*0x58a54a*/
       }
-      *(this + 1) = (int)v4; /*0x58a54e*/
+      this->Subzone_field_0x04 = (int)v4; /*0x58a54e*/
       if ( v4 ) /*0x58a551*/
       {
-        v7 = *(this + 2); /*0x58a553*/
+        v7 = this->Subzone_field_0x08; /*0x58a553*/
         v8 = 0; /*0x58a556*/
         *((_BYTE *)this + 13) = 1; /*0x58a55a*/
         if ( v7 > 0 ) /*0x58a55e*/
@@ -10049,26 +10049,26 @@ int *__thiscall sub_58A500(int *this, int a2)
           do /*0x58a57a*/
           {
             v9 = *(_DWORD *)(a2 + 4); /*0x58a560*/
-            v10 = *(this + 1); /*0x58a563*/
+            v10 = this->Subzone_field_0x04; /*0x58a563*/
             *(_DWORD *)(v10 + 8 * v8) = *(_DWORD *)(v9 + 8 * v8); /*0x58a569*/
             *(_DWORD *)(v10 + 8 * v8 + 4) = *(_DWORD *)(v9 + 8 * v8 + 4); /*0x58a570*/
             ++v8; /*0x58a577*/
           }
-          while ( v8 < *(this + 2) ); /*0x58a57a*/
+          while ( v8 < this->Subzone_field_0x08 ); /*0x58a57a*/
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x58a57e*/
+      this->Subzone_field_0x04 = 0; /*0x58a57e*/
       *((_BYTE *)this + 13) = 0; /*0x58a581*/
     }
   }
-  *(this + 4) = *(_DWORD *)(a2 + 16); /*0x58a588*/
-  *(this + 5) = *(_DWORD *)(a2 + 20); /*0x58a58e*/
-  *((_WORD *)this + 12) = *(_WORD *)(a2 + 24); /*0x58a595*/
-  *(this + 7) = *(_DWORD *)(a2 + 28); /*0x58a59c*/
-  *(this + 8) = *(_DWORD *)(a2 + 32); /*0x58a5a2*/
+  this->Subzone_field_0x04 = *(_DWORD *)(a2 + 16); /*0x58a588*/
+  this->q014 = *(_DWORD *)(a2 + 20); /*0x58a58e*/
+  this->__pad_00C = *(_WORD *)(a2 + 24); /*0x58a595*/
+  this->q01C = *(_DWORD *)(a2 + 28); /*0x58a59c*/
+  this->Subzone_field_0x08 = *(_DWORD *)(a2 + 32); /*0x58a5a2*/
   return this; /*0x58a587*/
 }
 
@@ -10586,7 +10586,7 @@ VectorClass *__thiscall VectorClass_UHashObject_uint_SubzoneConn::QueryInterface
 }
 
 
-// ==== 0x0058ABD0  Radar::CopyDataArray  this=int  sig=csp ====
+// ==== 0x0058ABD0  Radar::CopyDataArray  this=Radar  sig=csp ====
 int *__thiscall sub_58ABD0(int *this, int *a2)
 {
   int v3; // edi
@@ -10602,7 +10602,7 @@ int *__thiscall sub_58ABD0(int *this, int *a2)
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x58abe0*/
     v3 = a2[2]; /*0x58abe3*/
-    *(this + 2) = v3; /*0x58abea*/
+    this->Radar_field_0x2 = v3; /*0x58abea*/
     if ( v3 ) /*0x58abed*/
     {
       v4 = (char *)__2_YAPAXI_Z(8 * v3); /*0x58abf7*/
@@ -10626,34 +10626,34 @@ int *__thiscall sub_58ABD0(int *this, int *a2)
       {
         v4 = 0; /*0x58ac1a*/
       }
-      *(this + 1) = (int)v4; /*0x58ac1e*/
+      this->q004 = (int)v4; /*0x58ac1e*/
       if ( v4 ) /*0x58ac21*/
       {
-        v7 = *(this + 2); /*0x58ac23*/
+        v7 = this->Radar_field_0x2; /*0x58ac23*/
         v8 = 0; /*0x58ac26*/
-        *((_BYTE *)this + 13) = 1; /*0x58ac2a*/
+        this->__pad_034 = 1; /*0x58ac2a*/
         if ( v7 > 0 ) /*0x58ac2e*/
         {
           do /*0x58ac4a*/
           {
             v9 = a2[1]; /*0x58ac30*/
-            v10 = *(this + 1); /*0x58ac33*/
+            v10 = this->q004; /*0x58ac33*/
             *(_DWORD *)(v10 + 8 * v8) = *(_DWORD *)(v9 + 8 * v8); /*0x58ac39*/
             *(_DWORD *)(v10 + 8 * v8 + 4) = *(_DWORD *)(v9 + 8 * v8 + 4); /*0x58ac40*/
             ++v8; /*0x58ac47*/
           }
-          while ( v8 < *(this + 2) ); /*0x58ac4a*/
+          while ( v8 < this->Radar_field_0x2 ); /*0x58ac4a*/
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x58ac4e*/
-      *((_BYTE *)this + 13) = 0; /*0x58ac51*/
+      this->q004 = 0; /*0x58ac4e*/
+      this->__pad_034 = 0; /*0x58ac51*/
     }
   }
-  *(this + 4) = a2[4]; /*0x58ac58*/
-  *(this + 5) = a2[5]; /*0x58ac5e*/
+  this->q004 = a2[4]; /*0x58ac58*/
+  this->Radar_field_0x14 = a2[5]; /*0x58ac5e*/
   return this; /*0x58ac57*/
 }
 
@@ -10722,7 +10722,7 @@ _DWORD *__thiscall VectorClass_Constructor_Subzone(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x0058AD10  VectorClass_USubzoneTrackingStruct::SetCapacity  this=int  sig=csp ====
+// ==== 0x0058AD10  VectorClass_USubzoneTrackingStruct::SetCapacity  this=VectorClass_USubzoneTrackingStruct  sig=csp ====
 _DWORD *__thiscall sub_58AD10(_DWORD *this, _DWORD *a2)
 {
   int v3; // edi
@@ -10738,11 +10738,11 @@ _DWORD *__thiscall sub_58AD10(_DWORD *this, _DWORD *a2)
     return this; /*0x58ad1c*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x58ad20*/
   v3 = a2[2]; /*0x58ad23*/
-  *(this + 2) = v3; /*0x58ad2a*/
+  this->Capacity = v3; /*0x58ad2a*/
   if ( !v3 ) /*0x58ad2d*/
   {
-    *(this + 1) = 0; /*0x58ad95*/
-    *((_BYTE *)this + 13) = 0; /*0x58ad98*/
+    this->Items = 0; /*0x58ad95*/
+    this->IsAllocated = 0; /*0x58ad98*/
     return this; /*0x58ad9b*/
   }
   v4 = (char *)__2_YAPAXI_Z(8 * v3); /*0x58ad37*/
@@ -10766,23 +10766,23 @@ _DWORD *__thiscall sub_58AD10(_DWORD *this, _DWORD *a2)
   {
     v4 = 0; /*0x58ad5a*/
   }
-  *(this + 1) = v4; /*0x58ad5e*/
+  this->Items = v4; /*0x58ad5e*/
   if ( !v4 ) /*0x58ad61*/
     return this; /*0x58ad61*/
-  v7 = *(this + 2); /*0x58ad63*/
+  v7 = this->Capacity; /*0x58ad63*/
   v8 = 0; /*0x58ad66*/
-  *((_BYTE *)this + 13) = 1; /*0x58ad6a*/
+  this->IsAllocated = 1; /*0x58ad6a*/
   if ( v7 <= 0 ) /*0x58ad6e*/
     return this; /*0x58ad6e*/
   do /*0x58ad8a*/
   {
     v9 = a2[1]; /*0x58ad70*/
-    v10 = *(this + 1); /*0x58ad73*/
+    v10 = this->Items; /*0x58ad73*/
     *(_DWORD *)(v10 + 8 * v8) = *(_DWORD *)(v9 + 8 * v8); /*0x58ad79*/
     *(_DWORD *)(v10 + 8 * v8 + 4) = *(_DWORD *)(v9 + 8 * v8 + 4); /*0x58ad80*/
     ++v8; /*0x58ad87*/
   }
-  while ( v8 < *(this + 2) ); /*0x58ad8a*/
+  while ( v8 < this->Capacity ); /*0x58ad8a*/
   return this; /*0x58ad8e*/
 }
 
@@ -10855,7 +10855,7 @@ _DWORD *__thiscall RadarClass::drawRadarTerrain(_DWORD *this, MapClass *aP1, Map
 }
 
 
-// ==== 0x0058AE60  RadarClass::RenderJammerRadius  this=int  sig=csp ====
+// ==== 0x0058AE60  RadarClass::RenderJammerRadius  this=RadarClass  sig=csp ====
 _DWORD *__thiscall RadarClass::RenderJammerRadius(_DWORD *this, MapClass *aP1, MapClass *aP2)
 {
   _DWORD *v3; // ebp
@@ -10871,10 +10871,10 @@ _DWORD *__thiscall RadarClass::RenderJammerRadius(_DWORD *this, MapClass *aP1, M
 
   v3 = this; /*0x58ae69*/
   v4 = 0; /*0x58ae6b*/
-  *(this + 1) = 0; /*0x58ae73*/
-  *(this + 2) = aP1; /*0x58ae76*/
-  *((_BYTE *)this + 12) = 1; /*0x58ae79*/
-  *((_BYTE *)this + 13) = 0; /*0x58ae7d*/
+  this->RadarClass_field_0x4 = 0; /*0x58ae73*/
+  this->RadarClass_field_0x8 = aP1; /*0x58ae76*/
+  this->q030 = 1; /*0x58ae79*/
+  this->MovementZones = 0; /*0x58ae7d*/
   *this = &vt_VectorClass_SubzoneTrackingStruct; /*0x58ae80*/
   if ( !aP1 ) /*0x58ae87*/
     return v3; /*0x58af69*/
@@ -10949,7 +10949,7 @@ _DWORD *__thiscall RadarClass::RenderJammerRadius(_DWORD *this, MapClass *aP1, M
 }
 
 
-// ==== 0x0058AF80  RadarClass::drawRadarEvents  this=VOID_PTR  sig=csp ====
+// ==== 0x0058AF80  RadarClass::drawRadarEvents  this=RadarClass  sig=csp ====
 char __thiscall sub_58AF80(_DWORD *this, _DWORD *a2)
 {
   int v3; // ecx
@@ -10960,20 +10960,20 @@ char __thiscall sub_58AF80(_DWORD *this, _DWORD *a2)
   int v9; // eax
   _DWORD *v10; // ecx
 
-  v3 = *(this + 2); /*0x58af83*/
-  if ( *(this + 4) >= v3 ) /*0x58af8b*/
+  v3 = this->RadarClass_field_0x8; /*0x58af83*/
+  if ( this->RadarClass_field_0x10 >= v3 ) /*0x58af8b*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x58af96*/
+    if ( !this->MovementZones && v3 ) /*0x58af96*/
       return 0; /*0x58af96*/
-    v4 = *(this + 5); /*0x58af98*/
+    v4 = this->q014; /*0x58af98*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x58afa8*/
       return 0; /*0x58afaf*/
   }
-  v6 = *(this + 4); /*0x58afb5*/
+  v6 = this->RadarClass_field_0x10; /*0x58afb5*/
   v7 = v6 + 1; /*0x58afb8*/
   v8 = 3 * v6; /*0x58afbb*/
-  v9 = *(this + 1); /*0x58afbe*/
-  *(this + 4) = v7; /*0x58afc1*/
+  v9 = this->RadarClass_field_0x4; /*0x58afbe*/
+  this->RadarClass_field_0x10 = v7; /*0x58afc1*/
   v10 = (_DWORD *)(v9 + 4 * v8); /*0x58afc5*/
   *v10 = *a2; /*0x58afce*/
   v10[1] = a2[1]; /*0x58afd3*/
@@ -11662,7 +11662,7 @@ void *ComputeMapCameraBounds()
 }
 
 
-// ==== 0x0058BB00  Map_Helper_58BB00  this=unknown  sig=csp ====
+// ==== 0x0058BB00  Map_Helper_58BB00  this=-  sig=csp ====
 _DWORD *__fastcall sub_58BB00(_DWORD *a1, int a2)
 {
   _DWORD *result; // eax
@@ -12023,14 +12023,14 @@ void sub_58C100()
 }
 
 
-// ==== 0x0058C2A0  Tactical::GetCellData  this=int  sig=csp ====
+// ==== 0x0058C2A0  Tactical::GetCellData  this=Tactical  sig=csp ====
 char *__thiscall Tactical_GetCellData(__int16 *this)
 {
-  return (char *)g_MapTileArray + 80 * *this + 80 * unk_89C2DC * *(this + 1); /*0x58c2be*/
+  return (char *)g_MapTileArray + 80 * *this + 80 * unk_89C2DC * this->vtable2; /*0x58c2be*/
 }
 
 
-// ==== 0x0058C2C0  GetTileDataEntry  this=int  sig=ida-proto ====
+// ==== 0x0058C2C0  GetTileDataEntry  this=-  sig=ida-proto ====
 char *__fastcall TileData_GetEntry(int a1)
 {
   return (char *)g_MapTileArray + 80 * a1; /*0x58c2ce*/
@@ -12593,7 +12593,7 @@ void sub_58CE90()
 }
 
 
-// ==== 0x0058CF90  RandomMap::GenerateTerrainForAllCells  this=VOID_PTR  sig=csp ====
+// ==== 0x0058CF90  RandomMap::GenerateTerrainForAllCells  this=RandomMap  sig=csp ====
 int __thiscall sub_58CF90(void *this)
 {
   int result; // eax
@@ -12662,7 +12662,7 @@ int __fastcall sub_58D010(char a1)
 }
 
 
-// ==== 0x0058D070  SetLayerDataMap  this=unknown  sig=csp ====
+// ==== 0x0058D070  SetLayerDataMap  this=-  sig=csp ====
 int __fastcall Map_SetLayerData(__int16 *a1, int a2)
 {
   int result; // eax
@@ -12676,11 +12676,11 @@ int __fastcall Map_SetLayerData(__int16 *a1, int a2)
 }
 
 
-// ==== 0x0058D0A0  TileSystem::LookupMapTile  this=VOID_PTR  sig=csp ====
+// ==== 0x0058D0A0  TileSystem::LookupMapTile  this=TileSystem  sig=csp ====
 int __thiscall sub_58D0A0(__int16 *this)
 {
   if ( g_MapTileArray ) /*0x58d0a8*/
-    return *((_DWORD *)g_MapTileArray + 20 * *this + 20 * unk_89C2DC * *(this + 1) + 14); /*0x58d0c4*/
+    return *((_DWORD *)g_MapTileArray + 20 * *this + 20 * unk_89C2DC * this->TileSystem_field_0x04 + 14); /*0x58d0c4*/
   else
     return -1; /*0x58d0aa*/
 }
@@ -12983,7 +12983,7 @@ _DWORD *__thiscall RandomMap_TerrainAlloc(_DWORD *this)
 }
 
 
-// ==== 0x0058E5D0  TileSystem::AnalyzeTileConnectivity  this=int  sig=csp ====
+// ==== 0x0058E5D0  TileSystem::AnalyzeTileConnectivity  this=TileSystem  sig=csp ====
 _DWORD *__thiscall sub_58E5D0(_DWORD *this)
 {
   _DWORD *v1; // ebx
@@ -13051,7 +13051,7 @@ LABEL_18:
       || v13 - v12 >= v7
       || v14 > g_MapCellCount
       || (g_MapTileArray ? (v15 = *((_DWORD *)g_MapTileArray + 20 * v12 + 20 * unk_89C2DC * v13 + 14)) : (v15 = -1),
-          v15 == *(this + 2)) )
+          v15 == this->TileSystem_field_0x08) )
     {
       v4 = v21; /*0x58e6bd*/
       goto LABEL_18; /*0x58e6bd*/
@@ -13088,7 +13088,7 @@ LABEL_27:
 }
 
 
-// ==== 0x0058E740  RandomMap::CollectTerrainCells  this=int  sig=csp ====
+// ==== 0x0058E740  RandomMap::CollectTerrainCells  this=RandomMap  sig=csp ====
 char __thiscall RandomMap::CollectTerrainCells(_DWORD *this, int a2)
 {
   _DWORD *v2; // eax
@@ -13213,7 +13213,7 @@ char __thiscall RandomMap::CollectTerrainCells(_DWORD *this, int a2)
 }
 
 
-// ==== 0x0058E9B0  RandomMap::PlaceRandomMapTerrain  this=int  sig=csp ====
+// ==== 0x0058E9B0  RandomMap::PlaceRandomMapTerrain  this=RandomMap  sig=csp ====
 char __thiscall PlaceRandomMapTerrain(_DWORD *this)
 {
   _DWORD *v1; // esi
@@ -13299,7 +13299,7 @@ LABEL_12:
         {
           if ( v14[75] ) /*0x58eb1b*/
           {
-            *((_DWORD *)v14 + 14) = *(this + 2); /*0x58eb29*/
+            *((_DWORD *)v14 + 14) = this->RandomMap_field_0x8; /*0x58eb29*/
             if ( j < v21 /*0x58eb57*/
               || (v22 || !v21)
               && v24 > 0
@@ -13630,7 +13630,7 @@ char sub_58EF10()
 }
 
 
-// ==== 0x0058F0C0  RandomMap::CollectBorderCells  this=int  sig=csp ====
+// ==== 0x0058F0C0  RandomMap::CollectBorderCells  this=RandomMap  sig=csp ====
 void __thiscall RandomMap::CollectBorderCells(_DWORD *this)
 {
   _DWORD *v1; // ebx
@@ -13765,7 +13765,7 @@ void __thiscall RandomMap::CollectBorderCells(_DWORD *this)
 }
 
 
-// ==== 0x0058F2C0  RandomMap::PlaceBuildings  this=int  sig=csp ====
+// ==== 0x0058F2C0  RandomMap::PlaceBuildings  this=RandomMap  sig=csp ====
 char __thiscall RandomMap_PlaceBuildings(_DWORD *this, int a2, int a3)
 {
   int v4; // eax
@@ -13917,7 +13917,7 @@ char __thiscall RandomMap_PlaceBuildings(_DWORD *this, int a2, int a3)
       }
       while ( v8 > v7 - 1 );
       v10 = 80 * v8;
-      if ( *((_DWORD *)g_MapTileArray + 20 * v8 + 14) == *(this + 2) )
+      if ( *((_DWORD *)g_MapTileArray + 20 * v8 + 14) == this->RandomMap_field_0x8 )
       {
         v11 = CellStruct::Set(&v126, 0, 0);
         if ( !CellStruct::Equals((char *)g_MapTileArray + v10, v11) )

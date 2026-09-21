@@ -223,7 +223,7 @@ int __thiscall String::SplitComma(int this, ObjectClass *aP1)
 }
 
 
-// ==== 0x005D0470  Audio::ParseVolume  this=VOID_PTR  sig=csp ====
+// ==== 0x005D0470  Audio::ParseVolume  this=Audio  sig=csp ====
 int __thiscall Audio::ParseVolume(int this, const char **a1, ObjectClass *aP2)
 {
   int v4; // ebp
@@ -2050,7 +2050,7 @@ int __thiscall PriorityQueue::Add(Selection_WorldDominationTour *this, MSAnim *a
 }
 
 
-// ==== 0x005D1C90  ObjectClass::UI_Load_5D1C90  this=VOID_PTR  sig=csp ====
+// ==== 0x005D1C90  ObjectClass::UI_Load_5D1C90  this=ObjectClass  sig=csp ====
 int __thiscall sub_5D1C90(_DWORD *this, int (__thiscall ***a2)(_DWORD, int), int (__thiscall ***a3)(_DWORD, int))
 {
   _DWORD *v3; // esi
@@ -2063,7 +2063,7 @@ int __thiscall sub_5D1C90(_DWORD *this, int (__thiscall ***a2)(_DWORD, int), int
   int v10; // ecx
 
   v3 = this + 6; /*0x5d1c94*/
-  v4 = (*(int (__thiscall **)(_DWORD *, _DWORD *))(*(this + 6) + 16))(this + 6, &a3); /*0x5d1ca5*/
+  v4 = (*(int (__thiscall **)(_DWORD *, _DWORD *))(this->nextArrayIndex + 16))(this + 6, &a3); /*0x5d1ca5*/
   v5 = v3[2]; /*0x5d1ca7*/
   if ( v3[4] < v5 /*0x5d1cc9*/
     || (*((_BYTE *)v3 + 13) || !v5)
@@ -2547,7 +2547,7 @@ int __thiscall GameClass::loadScenarioFiles(int *this, ObjectClass *aP1)
 }
 
 
-// ==== 0x005D2350  sub_5D2350  this=VOID_PTR  sig=csp ====
+// ==== 0x005D2350  sub_5D2350  this=-  sig=csp ====
 int __stdcall sub_5D2350(int a1, int *a2)
 {
   int result; // eax
@@ -3365,7 +3365,7 @@ void __thiscall sub_5D2E30(void *this)
 }
 
 
-// ==== 0x005D2E90  FontClass::LoadFontResources  this=int  sig=csp ====
+// ==== 0x005D2E90  FontClass::LoadFontResources  this=FontClass  sig=csp ====
 char __thiscall FontClass::LoadFontResources(int this, __int16 a2)
 {
   int v3; // eax
@@ -3458,7 +3458,7 @@ LABEL_15:
 }
 
 
-// ==== 0x005D30C0  ObjectClass::method_5D30C0  this=VOID_PTR  sig=csp ====
+// ==== 0x005D30C0  ObjectClass::method_5D30C0  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_5D30C0(size_t *this, wchar_t *String, _DWORD *a3)
 {
   wchar_t *v3; // esi
@@ -3473,7 +3473,7 @@ _DWORD *__thiscall sub_5D30C0(size_t *this, wchar_t *String, _DWORD *a3)
   v10 = 0; /*0x5d30ce*/
   if ( String && (v6 = wcslen(String)) != 0 ) /*0x5d30df*/
   {
-    v7 = *(this + 2); /*0x5d30e2*/
+    v7 = this->vtable3; /*0x5d30e2*/
     while ( 1 ) /*0x5d30e9*/
     {
       for ( LOWORD(v6) = *v3; *v3; LOWORD(v6) = *v3 ) /*0x5d30e9*/
@@ -3488,7 +3488,7 @@ _DWORD *__thiscall sub_5D30C0(size_t *this, wchar_t *String, _DWORD *a3)
         v10 = v4; /*0x5d3112*/
       if ( *v3 == 10 ) /*0x5d311a*/
       {
-        v6 = *(this + 2); /*0x5d311c*/
+        v6 = this->vtable3; /*0x5d311c*/
         ++v3; /*0x5d311f*/
         v7 += v6; /*0x5d3122*/
       }
@@ -3496,7 +3496,7 @@ _DWORD *__thiscall sub_5D30C0(size_t *this, wchar_t *String, _DWORD *a3)
         break; /*0x5d3124*/
       v4 = 0; /*0x5d30e7*/
     }
-    v8 = *(this + 1); /*0x5d312a*/
+    v8 = this->vtable2; /*0x5d312a*/
     a3[3] = v7; /*0x5d3137*/
     a3[2] = v10 + v8; /*0x5d313a*/
     *a3 = 0; /*0x5d3140*/
@@ -3696,7 +3696,7 @@ int sub_5D3470()
 }
 
 
-// ==== 0x005D3490  Dialog::ShowMessageBox  this=int  sig=csp ====
+// ==== 0x005D3490  Dialog::ShowMessageBox  this=Dialog  sig=csp ====
 int __userpurge Dialog::ShowMessageBox@<eax>(int a1@<ebp>, _WORD *lParam, _WORD *a3, _WORD *a4, _WORD *a5, int a6)
 {
   int v6; // ebx
@@ -3785,7 +3785,7 @@ int __userpurge Dialog::ShowMessageBox@<eax>(int a1@<ebp>, _WORD *lParam, _WORD 
 }
 
 
-// ==== 0x005D36A0  sub_5D36A0  this=unknown  sig=csp ====
+// ==== 0x005D36A0  sub_5D36A0  this=-  sig=csp ====
 int __stdcall sub_5D36A0(HWND hWnd, unsigned int a2, unsigned int a3, int *a4)
 {
   int result; // eax
@@ -3951,35 +3951,35 @@ int sub_5D39B0()
 }
 
 
-// ==== 0x005D39D0  SessionClass::saveSettings  this=int  sig=csp ====
+// ==== 0x005D39D0  SessionClass::saveSettings  this=SessionClass  sig=csp ====
 _DWORD *__thiscall sub_5D39D0(_DWORD *this)
 {
   *this = 0; /*0x5d39da*/
-  *(this + 1) = 0; /*0x5d39dc*/
-  *(this + 2) = 0; /*0x5d39df*/
-  *(this + 3) = 0; /*0x5d39e2*/
-  *(this + 4) = 0; /*0x5d39e5*/
-  *(this + 5) = 0; /*0x5d39e8*/
-  *((_BYTE *)this + 24) = 0; /*0x5d39eb*/
+  this->MPGameMode = 0; /*0x5d39dc*/
+  this->SessionClass_field_08 = 0; /*0x5d39df*/
+  this->SessionClass_field_0C = 0; /*0x5d39e2*/
+  this->SessionClass_field_10 = 0; /*0x5d39e5*/
+  this->SessionClass_field_14 = 0; /*0x5d39e8*/
+  this->Color2 = 0; /*0x5d39eb*/
   *((_BYTE *)this + 25) = 0; /*0x5d39ee*/
   *((_BYTE *)this + 26) = 0; /*0x5d39f1*/
   *(this + 7) = 0; /*0x5d39f4*/
-  *(this + 8) = 0; /*0x5d39f7*/
-  *(this + 9) = 0; /*0x5d39fa*/
+  this->SessionClass_field_08 = 0; /*0x5d39f7*/
+  this->q024 = 0; /*0x5d39fa*/
   *(this + 172) = 0; /*0x5d39fd*/
   *(this + 173) = 0; /*0x5d3a03*/
-  *((_WORD *)this + 348) = 0; /*0x5d3a09*/
+  this->q057 = 0; /*0x5d3a09*/
   *(this + 175) = 0; /*0x5d3a10*/
-  *(this + 176) = 0; /*0x5d3a16*/
+  this->q02C = 0; /*0x5d3a16*/
   *(this + 177) = 0; /*0x5d3a1c*/
-  *((_WORD *)this + 20) = 0; /*0x5d3a22*/
+  this->SessionClass_field_14 = 0; /*0x5d3a22*/
   *((_WORD *)this + 182) = 0; /*0x5d3a26*/
   memset32(this + 1312, 65537, 7u); /*0x5d3a38*/
   return this; /*0x5d3a3c*/
 }
 
 
-// ==== 0x005D3A40  ObjectManager::InitMessageList  this=VOID_PTR  sig=csp ====
+// ==== 0x005D3A40  ObjectManager::InitMessageList  this=ObjectManager  sig=csp ====
 int __thiscall sub_5D3A40(_DWORD *this)
 {
   return MessageListClass::Init(this, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 640); /*0x5d3a5e*/
@@ -4064,7 +4064,7 @@ int __thiscall MessageListClass::Init(
 }
 
 
-// ==== 0x005D3BA0  MessageListClass::AddMessage  this=VOID_PTR  sig=csp ====
+// ==== 0x005D3BA0  MessageListClass::AddMessage  this=MessageListClass  sig=csp ====
 int __thiscall MessageListClass::AddMessage(
         _DWORD *this,
         IUnknown *aP1,
@@ -4117,24 +4117,24 @@ int __thiscall MessageListClass::AddMessage(
   v11 = (ObjectClass *)wcslen(String); /*0x5d3c23*/
   v12 = Text::MeasureWidth((int)String, 0); /*0x5d3c3a*/
   v34 = wcslen((const wchar_t *)aP3); /*0x5d3c42*/
-  if ( *(this + 177) - v12 - 8 <= 0 ) /*0x5d3c56*/
+  if ( this->q2C4 - v12 - 8 <= 0 ) /*0x5d3c56*/
     return 0; /*0x5d3c64*/
-  v13 = MessageListClass::CountCharsInWidth(Instance, aP3, *(this + 177) - v12 - 8, 111, 1); /*0x5d3c76*/
+  v13 = MessageListClass::CountCharsInWidth(Instance, aP3, this->q2C4 - v12 - 8, 111, 1); /*0x5d3c76*/
   v14 = v13; /*0x5d3c7b*/
   v35 = v13; /*0x5d3c7f*/
   if ( v13 < 0 ) /*0x5d3c83*/
     return 0; /*0x5d3c91*/
   wcsncat(String, (const wchar_t *)aP3, v13); /*0x5d3c9b*/
-  v15 = *(this + 3); /*0x5d3ca0*/
+  v15 = this->TextColorIndex; /*0x5d3ca0*/
   String[(_DWORD)v11 + v14] = 0; /*0x5d3caa*/
   if ( v15 > 0 ) /*0x5d3cb1*/
   {
     v16 = *this; /*0x5d3cb3*/
     for ( i = 0; v16; v16 = (*(int (__thiscall **)(int))(*(_DWORD *)v16 + 4))(v16) ) /*0x5d3cb3*/
       ++i; /*0x5d3cbf*/
-    if ( *((_BYTE *)this + 25) && *((_BYTE *)this + 26) ) /*0x5d3cce*/
+    if ( this->q019 && this->q01A ) /*0x5d3cce*/
       ++i; /*0x5d3cd5*/
-    if ( i + 1 > *(this + 3) ) /*0x5d3cdc*/
+    if ( i + 1 > this->TextColorIndex ) /*0x5d3cdc*/
     {
       v18 = (_DWORD *)*this; /*0x5d3cde*/
       if ( !*this ) /*0x5d3cde*/
@@ -4160,7 +4160,7 @@ int __thiscall MessageListClass::AddMessage(
   {
     ecx26 = aP5; /*0x5d3d39*/
     BYTE1(ecx26) = BYTE1(aP5) | 0x80; /*0x5d3d47*/
-    v23 = (TextLabelClass *)MessageListClass::clearMessages(v22, (int)String, *(this + 1), *(this + 2), a5, (int)ecx26); /*0x5d3d60*/
+    v23 = (TextLabelClass *)MessageListClass::clearMessages(v22, (int)String, this->MaxMessageCount, this->q002, a5, (int)ecx26); /*0x5d3d60*/
   }
   else
   {
@@ -4202,7 +4202,7 @@ LABEL_38:
     v23->field_24 = a7 + v25; /*0x5d3df9*/
   }
   v23->field_28 = (int)aP2; /*0x5d3e03*/
-  *(_DWORD *)&v23->__pad_2C[12] = *(this + 177); /*0x5d3e0c*/
+  *(_DWORD *)&v23->__pad_2C[12] = this->q2C4; /*0x5d3e0c*/
   v26 = 0; /*0x5d3e0f*/
   for ( j = this + 1312; !*j; ++j ) /*0x5d3e11*/
   {
@@ -4225,10 +4225,10 @@ LABEL_38:
     (*(void (__thiscall **)(TextLabelClass *, _DWORD))(*(_DWORD *)v23->__pad_0 + 16))(v23, *this); /*0x5d3ea8*/
   else
     *this = v23; /*0x5d3ead*/
-  if ( *((_BYTE *)this + 25) && *((_BYTE *)this + 26) ) /*0x5d3eb6*/
-    v29 = *(this + 2) + *(this + 5); /*0x5d3ec3*/
+  if ( this->q019 && this->q01A ) /*0x5d3eb6*/
+    v29 = this->q002 + this->MessageTimer; /*0x5d3ec3*/
   else
-    v29 = *(this + 2); /*0x5d3ec7*/
+    v29 = this->q002; /*0x5d3ec7*/
   v30 = (int *)*this; /*0x5d3eca*/
   if ( *this ) /*0x5d3eca*/
   {
@@ -4237,7 +4237,7 @@ LABEL_38:
       v31 = *v30; /*0x5d3ed0*/
       v30[4] = v29; /*0x5d3ed4*/
       v30 = (int *)(*(int (__thiscall **)(int *))(v31 + 4))(v30); /*0x5d3ed7*/
-      v29 += *(this + 5); /*0x5d3eda*/
+      v29 += this->MessageTimer; /*0x5d3eda*/
     }
     while ( v30 ); /*0x5d3edf*/
   }
@@ -4946,7 +4946,7 @@ char __thiscall sub_5D49A0(_DWORD *this)
 }
 
 
-// ==== 0x005D4AD0  TacticalClass::processInput  this=VOID_PTR  sig=csp ====
+// ==== 0x005D4AD0  TacticalClass::processInput  this=TacticalClass  sig=csp ====
 char __thiscall TacticalClass::processInput(int **this, CellStruct *aP1)
 {
   AnimClass *v2; // esi
@@ -4955,24 +4955,24 @@ char __thiscall TacticalClass::processInput(int **this, CellStruct *aP1)
   int v6; // eax
 
   v2 = (AnimClass *)&aP1[-1].__pad_2BC[4]; /*0x5d4ad6*/
-  *(this + 177) = (int *)&aP1[-1].__pad_2BC[4]; /*0x5d4ae1*/
+  this->q2C4 = (int *)&aP1[-1].__pad_2BC[4]; /*0x5d4ae1*/
   Debug::Log(); /*0x5d4ae7*/
   for ( i = *this; i; i = (int *)(*(int (__thiscall **)(int *))(v5 + 4))(i) ) /*0x5d4aec*/
   {
     v5 = *i; /*0x5d4af5*/
     i[14] = (int)v2; /*0x5d4af9*/
   }
-  LOBYTE(v6) = *((_BYTE *)this + 25); /*0x5d4b03*/
+  LOBYTE(v6) = this->q019; /*0x5d4b03*/
   if ( (_BYTE)v6 ) /*0x5d4b08*/
   {
-    v6 = (int)*(this + 9); /*0x5d4b0a*/
+    v6 = (int)this->field24; /*0x5d4b0a*/
     *(_DWORD *)(v6 + 56) = v2; /*0x5d4b0d*/
   }
   return v6; /*0x5d4b10*/
 }
 
 
-// ==== 0x005D4B20  WideString::WordWrap  this=int  sig=csp ====
+// ==== 0x005D4B20  WideString::WordWrap  this=WideString  sig=csp ====
 int __stdcall WideString::WordWrap(wchar_t *a0, CampaignScore *aP1, int a3, CampaignScore *aP3, int a5)
 {
   CampaignScore *v6; // ebp
@@ -5164,7 +5164,7 @@ LABEL_12:
 }
 
 
-// ==== 0x005D4E70  DialogQueue::PushEntry  this=int  sig=csp ====
+// ==== 0x005D4E70  DialogQueue::PushEntry  this=DialogQueue  sig=csp ====
 int __thiscall sub_5D4E70(void *this)
 {
   int result; // eax
@@ -5186,7 +5186,7 @@ int __thiscall sub_5D4E70(void *this)
 }
 
 
-// ==== 0x005D4ED0  DialogQueue::RemoveEntry  this=int  sig=csp ====
+// ==== 0x005D4ED0  DialogQueue::RemoveEntry  this=DialogQueue  sig=csp ====
 int __thiscall DialogQueue::RemoveEntry(void *this)
 {
   int result; // eax
@@ -5895,14 +5895,14 @@ void __thiscall sub_5D5850(void **this)
 }
 
 
-// ==== 0x005D5860  nullsub_192  this=VOID_PTR  sig=csp ====
+// ==== 0x005D5860  nullsub_192  this=-  sig=csp ====
 void __stdcall nullsub_192(int a1)
 {
   ; /*0x5d5860*/
 }
 
 
-// ==== 0x005D5870  Timer::EnableHighPrecision  this=int  sig=csp ====
+// ==== 0x005D5870  Timer::EnableHighPrecision  this=Timer  sig=csp ====
 void *__thiscall Timer_EnableHighPrecision(void *this)
 {
   timeBeginPeriod(1u); /*0x5d5875*/
@@ -5917,7 +5917,7 @@ MMRESULT Timer_DisableHighPrecision()
 }
 
 
-// ==== 0x005D5890  timeGetTime  this=int  sig=ida-proto ====
+// ==== 0x005D5890  timeGetTime  this=-  sig=ida-proto ====
 // attributes: thunk
 DWORD __stdcall timeGetTime()
 {
@@ -6399,7 +6399,7 @@ char __fastcall sub_5D6000(HWND hWnd, int a2)
 }
 
 
-// ==== 0x005D6130  SkirmishSetup_Setup  this=int  sig=csp ====
+// ==== 0x005D6130  SkirmishSetup_Setup  this=-  sig=csp ====
 char __fastcall SkirmishSetup_Setup(HWND hWnd, int a2)
 {
   int v3; // esi
@@ -6793,7 +6793,7 @@ char __stdcall ScenarioClass::_vt7(int a1)
 }
 
 
-// ==== 0x005D67B0  GameConfig::Constructor  this=int  sig=csp ====
+// ==== 0x005D67B0  GameConfig::Constructor  this=GameConfig  sig=csp ====
 char *__thiscall sub_5D67B0(char **this)
 {
   char **v1; // edi
@@ -6804,7 +6804,7 @@ char *__thiscall sub_5D67B0(char **this)
   int v8; // [esp+70h] [ebp-8h]
 
   v1 = this; /*0x5d67b5*/
-  if ( !*(this + 14) ) /*0x5d67bd*/
+  if ( !this->q038 ) /*0x5d67bd*/
   {
     v2 = __2_YAPAXI_Z(0x58u); /*0x5d67c9*/
     v3 = v2; /*0x5d67ce*/
@@ -7514,7 +7514,7 @@ char HouseClass_InitAlliances()
 }
 
 
-// ==== 0x005D7550  sub_5D7550  this=unknown  sig=csp ====
+// ==== 0x005D7550  sub_5D7550  this=-  sig=csp ====
 int __stdcall sub_5D7550(int a1)
 {
   return *(_DWORD *)(*(_DWORD *)&HouseClass_Array->__pad_0[4 * a1] + 90204); /*0x5d7563*/
@@ -7536,7 +7536,7 @@ _DWORD *__thiscall sub_5D7580(InitializerBase_MultiplayerGameMode *this)
 }
 
 
-// ==== 0x005D7590  LoadMultiplayerModesList  this=unknown  sig=csp ====
+// ==== 0x005D7590  LoadMultiplayerModesList  this=-  sig=csp ====
 int __fastcall LoadMultiplayerModesList(AbstractClass *a1, int edx0)
 {
   AbstractClass *v2; // esi
@@ -8082,7 +8082,7 @@ int __thiscall ScenarioClass::sub_5D8160(_DWORD *this, int a2)
 }
 
 
-// ==== 0x005D8170  MPBattleClass::MPBattleClass  this=unknown  sig=csp ====
+// ==== 0x005D8170  MPBattleClass::MPBattleClass  this=MPBattleClass  sig=csp ====
 _DWORD *__stdcall MPBattleClass::MPBattleClass(
         const wchar_t **a1,
         const wchar_t **a2,
@@ -8101,7 +8101,7 @@ _DWORD *__stdcall MPBattleClass::MPBattleClass(
 }
 
 
-// ==== 0x005D81B0  Helper_5D81B0  this=unknown  sig=csp ====
+// ==== 0x005D81B0  Helper_5D81B0  this=-  sig=csp ====
 _DWORD *__stdcall sub_5D81B0(const wchar_t **a1, const wchar_t **a2, const char **a3, const char **a4, char a5, int a6)
 {
   _DWORD *v6; // eax
@@ -8114,7 +8114,7 @@ _DWORD *__stdcall sub_5D81B0(const wchar_t **a1, const wchar_t **a2, const char 
 }
 
 
-// ==== 0x005D81F0  AbstractClass::processRevealArea  this=unknown  sig=csp ====
+// ==== 0x005D81F0  AbstractClass::processRevealArea  this=AbstractClass  sig=csp ====
 _DWORD *__stdcall AbstractClass::sub_5D81F0(
         const wchar_t **a1,
         const wchar_t **a2,
@@ -8133,7 +8133,7 @@ _DWORD *__stdcall AbstractClass::sub_5D81F0(
 }
 
 
-// ==== 0x005D8230  AbstractClass::computeRevealRadius  this=unknown  sig=csp ====
+// ==== 0x005D8230  AbstractClass::computeRevealRadius  this=AbstractClass  sig=csp ====
 _DWORD *__stdcall AbstractClass::sub_5D8230(
         const wchar_t **a1,
         const wchar_t **a2,
@@ -8152,7 +8152,7 @@ _DWORD *__stdcall AbstractClass::sub_5D8230(
 }
 
 
-// ==== 0x005D8270  AbstractClass::applyRevealToCell  this=unknown  sig=csp ====
+// ==== 0x005D8270  AbstractClass::applyRevealToCell  this=AbstractClass  sig=csp ====
 _DWORD *__stdcall AbstractClass::sub_5D8270(
         const wchar_t **a1,
         const wchar_t **a2,
@@ -8171,7 +8171,7 @@ _DWORD *__stdcall AbstractClass::sub_5D8270(
 }
 
 
-// ==== 0x005D82B0  AbstractClass::checkRevealCell  this=unknown  sig=csp ====
+// ==== 0x005D82B0  AbstractClass::checkRevealCell  this=AbstractClass  sig=csp ====
 _DWORD *__stdcall AbstractClass::sub_5D82B0(
         const wchar_t **a1,
         const wchar_t **a2,
@@ -8900,7 +8900,7 @@ char __thiscall PlayerClass_SetHouse(_DWORD *this, int a2)
 }
 
 
-// ==== 0x005D8D10  MPCombatTeam::AddToList  this=VOID_PTR  sig=csp ====
+// ==== 0x005D8D10  MPCombatTeam::AddToList  this=MPCombatTeam  sig=csp ====
 LRESULT __thiscall MPCombatTeam::AddToList(int this, MultiplayerGameMode *aP1)
 {
   CampaignScore *v3; // eax
@@ -9069,14 +9069,14 @@ _DWORD *__thiscall sub_5D8FB0(_DWORD *this)
 }
 
 
-// ==== 0x005D8FC0  ObjectClass::?_Release__NonReentrantLock_details_Concurrency__QAEXXZ  this=int  sig=csp ====
+// ==== 0x005D8FC0  ObjectClass::?_Release__NonReentrantLock_details_Concurrency__QAEXXZ  this=ObjectClass  sig=csp ====
 void __thiscall __Release__NonReentrantLock_details_Concurrency__QAEXXZ(Concurrency::details::_NonReentrantLock *this)
 {
   *(_DWORD *)this = 0; /*0x5d8fc0*/
 }
 
 
-// ==== 0x005D8FD0  CCFileClass::WriteINIString  this=int  sig=csp ====
+// ==== 0x005D8FD0  CCFileClass::WriteINIString  this=CCFileClass  sig=csp ====
 void __thiscall sub_5D8FD0(int *this)
 {
   char v2; // [esp+7h] [ebp-25h] BYREF
@@ -9090,7 +9090,7 @@ void __thiscall sub_5D8FD0(int *this)
     {
       RawFileClass::Construct(v3, (int)MEMORY[0x826444]); /*0x5d8ffd*/
       INIClass::SetInt((char *)&MEMORY[0x8870C0], (unsigned __int8 *)MEMORY[0x82642C], MEMORY[0x830CC0], *this, 0); /*0x5d9016*/
-      INIClass::SetInt((char *)&MEMORY[0x8870C0], (unsigned __int8 *)MEMORY[0x82642C], MEMORY[0x830CB0], *(this + 2), 0); /*0x5d9030*/
+      INIClass::SetInt((char *)&MEMORY[0x8870C0], (unsigned __int8 *)MEMORY[0x82642C], MEMORY[0x830CB0], this->FileSize, 0); /*0x5d9030*/
       INIClass::WriteDigest(&MEMORY[0x8870C0], (int)v3, 0); /*0x5d9041*/
       RawFileClass::Dtor(v3); /*0x5d904a*/
     }
@@ -9131,7 +9131,7 @@ __int16 __thiscall sub_5D9060(_DWORD *this, int a2)
 }
 
 
-// ==== 0x005D90E0  Network::QueryAddress  this=int  sig=csp ====
+// ==== 0x005D90E0  Network::QueryAddress  this=Network  sig=csp ====
 char __stdcall Network::QueryAddress(IPXManagerClass *aP0, int a2, int a3, char a4)
 {
   int QueueCount; // ebx
@@ -9180,7 +9180,7 @@ char __stdcall Network::QueryAddress(IPXManagerClass *aP0, int a2, int a3, char 
 }
 
 
-// ==== 0x005D9220  Network::WaitForPacket  this=int  sig=csp ====
+// ==== 0x005D9220  Network::WaitForPacket  this=Network  sig=csp ====
 __int16 __stdcall Network_WaitForPacket(int a1, int a2)
 {
   int v2; // ebx
@@ -9253,12 +9253,12 @@ void __thiscall sub_5D9360(int *this)
 }
 
 
-// ==== 0x005D93D0  Network::dispatchEvent  this=int  sig=csp ====
+// ==== 0x005D93D0  Network::dispatchEvent  this=Network  sig=csp ====
 int __thiscall sub_5D93D0(_DWORD *this)
 {
   int result; // eax
 
-  *(this + 1) = INIClass::ReadInt_Overwrite( /*0x5d93fa*/
+  this->Network_field_0x4 = INIClass::ReadInt_Overwrite( /*0x5d93fa*/
                   (int)&MEMORY[0x8870C0],
                   (unsigned __int8 *)MEMORY[0x82642C],
                   (unsigned __int8 *)MEMORY[0x830CC0],
@@ -9268,7 +9268,7 @@ int __thiscall sub_5D93D0(_DWORD *this)
              (unsigned __int8 *)MEMORY[0x82642C],
              (unsigned __int8 *)MEMORY[0x830CB0],
              1);
-  *(this + 3) = result; /*0x5d9402*/
+  this->Network_field_0xC = result; /*0x5d9402*/
   return result; /*0x5d9405*/
 }
 
@@ -9824,7 +9824,7 @@ LABEL_152:
 }
 
 
-// ==== 0x005D9DB0  DetectPortAllocationPattern  this=int  sig=csp ====
+// ==== 0x005D9DB0  DetectPortAllocationPattern  this=-  sig=csp ====
 int __stdcall DetectPortAllocationPattern(int a1, __int16 *a2, unsigned __int16 *a3, _BYTE *a4, _BYTE *a5)
 {
   __int16 *v5; // ebp
@@ -9988,7 +9988,7 @@ int __stdcall DetectPortAllocationPattern(int a1, __int16 *a2, unsigned __int16 
 }
 
 
-// ==== 0x005DA040  Network_Connect  this=int  sig=csp ====
+// ==== 0x005DA040  Network_Connect  this=-  sig=csp ====
 int __stdcall sub_5DA040(char a1)
 {
   int result; // eax
@@ -10008,7 +10008,7 @@ int __stdcall sub_5DA040(char a1)
 }
 
 
-// ==== 0x005DA080  NetworkLobby::GetPlayerCount  this=int  sig=csp ====
+// ==== 0x005DA080  NetworkLobby::GetPlayerCount  this=NetworkLobby  sig=csp ====
 int __stdcall NetworkLobby::GetPlayerCount(char a1)
 {
   int result; // eax
@@ -10327,7 +10327,7 @@ int Network::ShutdownInterface()
 }
 
 
-// ==== 0x005DA750  HandleNetworkPlayerDisconnect  this=int  sig=ida-proto ====
+// ==== 0x005DA750  HandleNetworkPlayerDisconnect  this=-  sig=ida-proto ====
 void __fastcall HandleNetworkPlayerDisconnect(wchar_t *a1, int a2)
 {
   wchar_t *v2; // ebp
@@ -11036,7 +11036,7 @@ LABEL_32:
 }
 
 
-// ==== 0x005DB600  ObjectClass::PlayerSkirmishSlotHandler_Handle_5DB600  this=int  sig=csp ====
+// ==== 0x005DB600  ObjectClass::PlayerSkirmishSlotHandler_Handle_5DB600  this=ObjectClass  sig=csp ====
 int __thiscall sub_5DB600(void *this)
 {
   memset(&MEMORY[0xA8D638], 0, 0x1C4u); /*0x5db611*/
@@ -11048,7 +11048,7 @@ int __thiscall sub_5DB600(void *this)
 }
 
 
-// ==== 0x005DB650  Map_Handle  this=int  sig=csp ====
+// ==== 0x005DB650  Map_Handle  this=-  sig=csp ====
 char __fastcall sub_5DB650(int a1, char a2, char a3)
 {
   HWND v5; // eax
@@ -11257,7 +11257,7 @@ int __usercall NetworkLobby::UpdatePlayerList@<eax>(CampaignScore *a1@<edi>)
 }
 
 
-// ==== 0x005DBB60  Game::BuildGameSettingsPacket  this=int  sig=csp ====
+// ==== 0x005DBB60  Game::BuildGameSettingsPacket  this=Game  sig=csp ====
 void __thiscall Game::BuildGameSettingsPacket(char *Buffer)
 {
   char *v1; // ebp
@@ -11390,7 +11390,7 @@ void __fastcall SetGameSetupPlayerState(char *a1, int a2)
 }
 
 
-// ==== 0x005DBEC0  ObjectClass::SendMultiplayerStartSignal_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x005DBEC0  ObjectClass::SendMultiplayerStartSignal_Start  this=ObjectClass  sig=csp ====
 int __thiscall SendMultiplayerStartSignal_Start(char *this)
 {
   char *v1; // ebx
@@ -11424,7 +11424,7 @@ int __thiscall SendMultiplayerStartSignal_Start(char *this)
 }
 
 
-// ==== 0x005DBF50  UpdateMultiplayerPlayerOptions  this=int  sig=csp ====
+// ==== 0x005DBF50  UpdateMultiplayerPlayerOptions  this=-  sig=csp ====
 int __fastcall UpdateMultiplayerPlayerOptions(CCINIClass *aP0, CCINIClass *aP1, CCINIClass *aP2, int a4, int a5)
 {
   ObjectClass *v5; // edi
@@ -11528,7 +11528,7 @@ LABEL_6:
 }
 
 
-// ==== 0x005DC170  NetworkLobby::ValidateSerialNumber  this=int  sig=csp ====
+// ==== 0x005DC170  NetworkLobby::ValidateSerialNumber  this=NetworkLobby  sig=csp ====
 char __thiscall sub_5DC170(char *this)
 {
   int v2; // esi
@@ -12714,7 +12714,7 @@ LABEL_8:
 }
 
 
-// ==== 0x005DDBD0  NetworkSettings::DlgProc  this=unknown  sig=csp ====
+// ==== 0x005DDBD0  NetworkSettings::DlgProc  this=NetworkSettings  sig=csp ====
 int __stdcall NetworkSettings_DlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 {
   int result; // eax
@@ -13050,7 +13050,7 @@ char __fastcall SendNetworkLobbyChatMessage(HWND hWnd, LPARAM a2, int a3)
 }
 
 
-// ==== 0x005DE520  NetworkLobby::DlgProc  this=VOID_PTR  sig=csp ====
+// ==== 0x005DE520  NetworkLobby::DlgProc  this=NetworkLobby  sig=csp ====
 INT_PTR __stdcall NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lParam)
 {
   wchar_t *StringCSF; // ebp
@@ -13517,7 +13517,7 @@ LABEL_75:
 }
 
 
-// ==== 0x005DF180  SkirmishDialogProc  this=unknown  sig=csp ====
+// ==== 0x005DF180  SkirmishDialogProc  this=-  sig=csp ====
 int __stdcall SkirmishDialogProc(SkirmishDialog *aP0, int a2, unsigned __int16 a3, HWND a4)
 {
   if ( !*((_BYTE *)&g_MatrixTransformState + 5208) ) /*0x5df189*/
@@ -13717,7 +13717,7 @@ int __fastcall Network_BroadcastMessage(int a1)
 }
 
 
-// ==== 0x005DF9E0  SendNetworkHeartbeat  this=int  sig=csp ====
+// ==== 0x005DF9E0  SendNetworkHeartbeat  this=-  sig=csp ====
 signed int __fastcall Network_SendHeartbeat(int a1, int a2, int a3, int a4)
 {
   DWORD Ticks; // eax
@@ -13884,7 +13884,7 @@ void __cdecl nullsub_27()
 }
 
 
-// ==== 0x005DFE00  SendNetworkPlayerOptions  this=int  sig=csp ====
+// ==== 0x005DFE00  SendNetworkPlayerOptions  this=-  sig=csp ====
 char __fastcall Network_SendPlayerOptions(_DWORD *a1, int a2)
 {
   char *v3; // eax

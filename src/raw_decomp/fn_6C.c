@@ -23,7 +23,7 @@ int __thiscall TClassFactory_TiberiumClass::GetSize(TClassFactory_VTiberiumClass
 }
 
 
-// ==== 0x006C0025  nullsub_114  this=unknown  sig=csp ====
+// ==== 0x006C0025  nullsub_114  this=-  sig=csp ====
 void __stdcall nullsub_114(int a1, int a2)
 {
   ; /*0x6c0025*/
@@ -6389,7 +6389,7 @@ int __thiscall TClassFactory_AlphaShapeClass::GetSize(TClassFactory_VAlphaShapeC
 }
 
 
-// ==== 0x006C61C0  ObjectClass::COM_SafeRelease  this=VOID_PTR  sig=csp ====
+// ==== 0x006C61C0  ObjectClass::COM_SafeRelease  this=ObjectClass  sig=csp ====
 int __thiscall sub_6C61C0(int *this)
 {
   int result; // eax
@@ -6568,7 +6568,7 @@ char __thiscall VectorClass_K::sub_6C6350(void *this, int a2, _DWORD *a3)
 }
 
 
-// ==== 0x006C6400  DynamicVector::Add  this=int  sig=csp ====
+// ==== 0x006C6400  DynamicVector::Add  this=DynamicVector  sig=csp ====
 char __thiscall DynamicVector::Add(_DWORD *this, DynamicVector *aP1)
 {
   int v3; // ecx
@@ -6576,18 +6576,18 @@ char __thiscall DynamicVector::Add(_DWORD *this, DynamicVector *aP1)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x6c6403*/
-  if ( *(this + 4) >= v3 ) /*0x6c640b*/
+  v3 = this->DynamicVector_field_0x8; /*0x6c6403*/
+  if ( this->DynamicVector_field_0x10 >= v3 ) /*0x6c640b*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x6c6416*/
+    if ( !this->IsAllocated && v3 ) /*0x6c6416*/
       return 0; /*0x6c6416*/
-    v4 = *(this + 5); /*0x6c6418*/
+    v4 = this->CapacityIncrement; /*0x6c6418*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x6c6428*/
       return 0; /*0x6c642f*/
   }
-  v6 = *(this + 4); /*0x6c6435*/
-  v7 = *(this + 1); /*0x6c6438*/
-  *(this + 4) = v6 + 1; /*0x6c643e*/
+  v6 = this->DynamicVector_field_0x10; /*0x6c6435*/
+  v7 = this->Items; /*0x6c6438*/
+  this->DynamicVector_field_0x10 = v6 + 1; /*0x6c643e*/
   *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x6c6448*/
   return 1; /*0x6c6431*/
 }
@@ -6996,7 +6996,7 @@ void __cdecl nullsub_234()
 }
 
 
-// ==== 0x006C6B00  ObjectClass::Audio_Read_6C6B00  this=int  sig=csp ====
+// ==== 0x006C6B00  ObjectClass::Audio_Read_6C6B00  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall Audio_Read_6C6B00(_DWORD *this, AbstractClass *aP1)
 {
   _DWORD *result; // eax
@@ -7152,7 +7152,7 @@ LABEL_4:
 }
 
 
-// ==== 0x006C6F50  ProcessGameResults  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x006C6F50  ProcessGameResults  this=-  sig=ida-proto ====
 void __fastcall ProcessGameResults(char a1)
 {
   IUnknown *v2; // esi
@@ -8518,7 +8518,7 @@ rc_ptr *__thiscall sub_6C8840(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x006C8870  ObjectClass::Audio_Read_6C8870  this=int  sig=csp ====
+// ==== 0x006C8870  ObjectClass::Audio_Read_6C8870  this=ObjectClass  sig=csp ====
 char __thiscall sub_6C8870(int *this)
 {
   int v2; // eax
@@ -8529,7 +8529,7 @@ char __thiscall sub_6C8870(int *this)
   int v8; // [esp+8h] [ebp-4h]
 
   v2 = *this; /*0x6c8875*/
-  v3 = *(this + 1); /*0x6c8878*/
+  v3 = this->vtable2; /*0x6c8878*/
   if ( 3 * v2 > v3 ) /*0x6c8880*/
     return 0; /*0x6c8883*/
   v5 = v3 / 2; /*0x6c888f*/
@@ -8538,13 +8538,13 @@ char __thiscall sub_6C8870(int *this)
   if ( v5 >= v3 ) /*0x6c889d*/
     return 0; /*0x6c88a0*/
   v6 = __2_YAPAXI_Z(32776 * v5); /*0x6c88b1*/
-  v7 = (const void *)*(this + 2); /*0x6c88b6*/
+  v7 = (const void *)this->vtable3; /*0x6c88b6*/
   v8 = (int)v6; /*0x6c88be*/
   if ( v7 ) /*0x6c88c2*/
     qmemcpy(v6, v7, 32776 * *this); /*0x6c88d9*/
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x6c88e7*/
-  *(this + 2) = v8; /*0x6c88f3*/
-  *(this + 1) = v5; /*0x6c88f6*/
+  __3_YAXPAX_Z((void *)this->vtable3); /*0x6c88e7*/
+  this->vtable3 = v8; /*0x6c88f3*/
+  this->vtable2 = v5; /*0x6c88f6*/
   return 1; /*0x6c8882*/
 }
 
@@ -8588,20 +8588,20 @@ int sub_6C8990()
 }
 
 
-// ==== 0x006C89B0  ObjectClass::method_6C89B0  this=int  sig=csp ====
+// ==== 0x006C89B0  ObjectClass::method_6C89B0  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_6C89B0(_DWORD *this, size_t Size)
 {
   void *v3; // eax
 
   *this = Size; /*0x6c89b8*/
   v3 = __2_YAPAXI_Z(Size); /*0x6c89ba*/
-  *(this + 1) = v3; /*0x6c89c2*/
-  *(this + 2) = v3; /*0x6c89c5*/
+  this->vtable2 = v3; /*0x6c89c2*/
+  this->vtable3 = v3; /*0x6c89c5*/
   return this; /*0x6c89ca*/
 }
 
 
-// ==== 0x006C89E0  Buffer::AppendCellData  this=int  sig=csp ====
+// ==== 0x006C89E0  Buffer::AppendCellData  this=Buffer  sig=csp ====
 int __thiscall Buffer::AppendCellData(_DWORD *this, AbstractClass *aP1, int a3)
 {
   AbstractClass *v4; // edi
@@ -8616,18 +8616,18 @@ int __thiscall Buffer::AppendCellData(_DWORD *this, AbstractClass *aP1, int a3)
   AbstractClass *v15; // [esp+18h] [ebp-8h]
   _BYTE *v16; // [esp+28h] [ebp+8h]
 
-  v4 = (AbstractClass *)*(this + 2); /*0x6c89e9*/
-  if ( (unsigned int)&v4->__pad_0[12] > *(this + 1) + *this ) /*0x6c89f9*/
+  v4 = (AbstractClass *)this->Buffer_field_08; /*0x6c89e9*/
+  if ( (unsigned int)&v4->__pad_0[12] > this->Buffer_field_04 + *this ) /*0x6c89f9*/
     return 0; /*0x6c89f9*/
-  v15 = (AbstractClass *)*(this + 2); /*0x6c89fd*/
-  *(this + 2) = &v4->__pad_0[12]; /*0x6c8a01*/
+  v15 = (AbstractClass *)this->Buffer_field_08; /*0x6c89fd*/
+  this->Buffer_field_08 = &v4->__pad_0[12]; /*0x6c8a01*/
   if ( !v4 ) /*0x6c8a04*/
     return 0; /*0x6c8a06*/
   *(_WORD *)v4->__pad_0 = *(_WORD *)a3; /*0x6c8a19*/
   *(_WORD *)&v4->__pad_0[2] = *(_WORD *)(a3 + 4); /*0x6c8a20*/
   *(_WORD *)&v4->__pad_0[4] = *(_WORD *)(a3 + 16); /*0x6c8a28*/
   *(_WORD *)&v4->__pad_0[6] = *(_WORD *)(a3 + 20); /*0x6c8a34*/
-  *(_DWORD *)&v4->__pad_0[8] = *(this + 2); /*0x6c8a3f*/
+  *(_DWORD *)&v4->__pad_0[8] = this->Buffer_field_08; /*0x6c8a3f*/
   v7 = CellStruct::Copy((int *)(a3 + 8), (IUnknown *)&v14); /*0x6c8a42*/
   v8 = aP1; /*0x6c8a49*/
   v16 = (_BYTE *)(*(int (__thiscall **)(AbstractClass *, _DWORD, _DWORD))(*(_DWORD *)aP1->__pad_0 + 92))( /*0x6c8a61*/
@@ -8641,8 +8641,8 @@ int __thiscall Buffer::AppendCellData(_DWORD *this, AbstractClass *aP1, int a3)
     while ( 1 ) /*0x6c8a8a*/
     {
       v10 = Map_Append(v16, (int)&MEMORY[0xB077F8].__pad_14B0[12584], *(_DWORD *)(a3 + 16)); /*0x6c8a8a*/
-      v11 = (char *)*(this + 2); /*0x6c8a8f*/
-      if ( (unsigned int)&v11[v10] > *(this + 1) + *this || (*(this + 2) = &v11[v10], !v11) ) /*0x6c8aa4*/
+      v11 = (char *)this->Buffer_field_08; /*0x6c8a8f*/
+      if ( (unsigned int)&v11[v10] > this->Buffer_field_04 + *this || (this->Buffer_field_08 = &v11[v10], !v11) ) /*0x6c8aa4*/
       {
         (*(void (__thiscall **)(AbstractClass *))(*(_DWORD *)v8->__pad_0 + 96))(v8); /*0x6c8ae6*/
         return 0; /*0x6c8af2*/
@@ -8718,7 +8718,7 @@ int __thiscall sub_6C8B10(_DWORD *this, int a2, int a3, __int16 a4, __int16 a5)
 }
 
 
-// ==== 0x006C8C40  Timer::GetTicks  this=VOID_PTR  sig=csp ====
+// ==== 0x006C8C40  Timer::GetTicks  this=Timer  sig=csp ====
 unsigned int Timer::GetTicks()
 {
   return (unsigned int)((int (*)(void))timeGetTime)() >> 4; /*0x6c8c49*/
@@ -8848,7 +8848,7 @@ int sub_6C8E50()
 }
 
 
-// ==== 0x006C8E70  ObjectClass::??0Iostream_init_QAE_XZ_5  this=int  sig=csp ====
+// ==== 0x006C8E70  ObjectClass::??0Iostream_init_QAE_XZ_5  this=ObjectClass  sig=csp ====
 Iostream_init *__thiscall __0Iostream_init_QAE_XZ_5(Iostream_init *this)
 {
   return this; /*0x6c8e72*/
@@ -8900,7 +8900,7 @@ LRESULT __fastcall sub_6C8FA0(CampaignScore *aP0, int nIDDlgItem, wchar_t *Forma
 }
 
 
-// ==== 0x006C8FF0  DlgProcScoreScreen  this=unknown  sig=csp ====
+// ==== 0x006C8FF0  DlgProcScoreScreen  this=-  sig=csp ====
 int __userpurge DlgProcScoreScreen@<eax>(
         CampaignScore *a1@<ebp>,
         HWND hWnd,
@@ -9204,7 +9204,7 @@ _DWORD *__thiscall Delegate::GetField(_DWORD *this)
 }
 
 
-// ==== 0x006C9600  AbstractClass::GetTotalValue  this=VOID_PTR  sig=csp ====
+// ==== 0x006C9600  AbstractClass::GetTotalValue  this=AbstractClass  sig=csp ====
 int __thiscall AbstractClass::GetTotalValue(float *this)
 {
   int v1; // edx
@@ -9329,7 +9329,7 @@ _DWORD *__thiscall sub_6C96E0(float *this, _DWORD *a2, int a3)
 }
 
 
-// ==== 0x006C9740  HouseClass::AccumulateFloat4  this=VOID_PTR  sig=csp ====
+// ==== 0x006C9740  HouseClass::AccumulateFloat4  this=HouseClass  sig=csp ====
 _DWORD *__thiscall sub_6C9740(float *this, _DWORD *a2, int a3)
 {
   float *v3; // eax
@@ -9347,14 +9347,14 @@ _DWORD *__thiscall sub_6C9740(float *this, _DWORD *a2, int a3)
   }
   while ( v4 ); /*0x6c975a*/
   *a2 = *(_DWORD *)this; /*0x6c9764*/
-  a2[1] = *((_DWORD *)this + 1); /*0x6c9769*/
-  a2[2] = *((_DWORD *)this + 2); /*0x6c976f*/
-  a2[3] = *((_DWORD *)this + 3); /*0x6c9776*/
+  a2[1] = this->vtable2; /*0x6c9769*/
+  a2[2] = this->vtable3; /*0x6c976f*/
+  a2[3] = this->vtable4; /*0x6c9776*/
   return a2; /*0x6c9775*/
 }
 
 
-// ==== 0x006C9780  ObjectClass::method_6C9780  this=VOID_PTR  sig=csp ====
+// ==== 0x006C9780  ObjectClass::method_6C9780  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_6C9780(char *this, _DWORD *a2, float *a3)
 {
   int v3; // esi
@@ -9389,7 +9389,7 @@ _DWORD *__thiscall sub_6C9780(char *this, _DWORD *a2, float *a3)
 }
 
 
-// ==== 0x006C97E0  HouseClass::ComputeResourceDelta  this=VOID_PTR  sig=csp ====
+// ==== 0x006C97E0  HouseClass::ComputeResourceDelta  this=HouseClass  sig=csp ====
 _DWORD *__thiscall sub_6C97E0(float *this, _DWORD *a2, int a3)
 {
   float *v3; // eax
@@ -9407,9 +9407,9 @@ _DWORD *__thiscall sub_6C97E0(float *this, _DWORD *a2, int a3)
   }
   while ( v4 ); /*0x6c97fa*/
   *a2 = *(_DWORD *)this; /*0x6c9804*/
-  a2[1] = *((_DWORD *)this + 1); /*0x6c9809*/
-  a2[2] = *((_DWORD *)this + 2); /*0x6c980f*/
-  a2[3] = *((_DWORD *)this + 3); /*0x6c9816*/
+  a2[1] = this->vtable2; /*0x6c9809*/
+  a2[2] = this->vtable3; /*0x6c980f*/
+  a2[3] = this->vtable4; /*0x6c9816*/
   return a2; /*0x6c9815*/
 }
 
@@ -9490,15 +9490,15 @@ int __thiscall Delegate::Invoke(_DWORD *this, int a2, Straw *aP2)
 }
 
 
-// ==== 0x006C9900  ObjectClass::Render_Parse  this=int  sig=csp ====
+// ==== 0x006C9900  ObjectClass::Render_Parse  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_6C9900(_DWORD *this)
 {
   *this = 0; /*0x6c9902*/
-  *(this + 1) = 1200; /*0x6c9908*/
-  *(this + 2) = 0xFFFFFF; /*0x6c990f*/
-  *(this + 3) = 15; /*0x6c9916*/
-  *(this + 4) = 2; /*0x6c991d*/
-  *(this + 5) = 0; /*0x6c9924*/
+  this->vtable2 = 1200; /*0x6c9908*/
+  this->vtable3 = 0xFFFFFF; /*0x6c990f*/
+  this->vtable4 = 15; /*0x6c9916*/
+  this->uniqueId = 2; /*0x6c991d*/
+  this->abstractFlags = 0; /*0x6c9924*/
   return this; /*0x6c992b*/
 }
 
@@ -9511,7 +9511,7 @@ void __thiscall sub_6C9930(void **this)
 }
 
 
-// ==== 0x006C9940  ObjectClass::method_6C9940  this=int  sig=csp ====
+// ==== 0x006C9940  ObjectClass::method_6C9940  this=ObjectClass  sig=csp ====
 int __thiscall sub_6C9940(_DWORD *this, char a2, char a3, unsigned __int8 a4)
 {
   unsigned __int16 v4; // ax
@@ -9520,27 +9520,27 @@ int __thiscall sub_6C9940(_DWORD *this, char a2, char a3, unsigned __int8 a4)
   HIBYTE(v4) = a2; /*0x6c9946*/
   LOBYTE(v4) = a3; /*0x6c9950*/
   result = a4 | (v4 << 8); /*0x6c9957*/
-  *(this + 2) = result; /*0x6c9959*/
+  this->vtable3 = result; /*0x6c9959*/
   return result; /*0x6c995c*/
 }
 
 
-// ==== 0x006C9960  ObjectClass::method_6C9960  this=VOID_PTR  sig=csp ====
+// ==== 0x006C9960  ObjectClass::method_6C9960  this=ObjectClass  sig=csp ====
 void __thiscall sub_6C9960(void **this, wchar_t *String)
 {
   size_t v3; // eax
   wchar_t *v4; // eax
 
-  if ( *(this + 5) ) /*0x6c9964*/
+  if ( this->abstractFlags ) /*0x6c9964*/
   {
-    __3_YAXPAX_Z(*(this + 5)); /*0x6c996c*/
-    *(this + 5) = 0; /*0x6c9974*/
+    __3_YAXPAX_Z(this->abstractFlags); /*0x6c996c*/
+    this->abstractFlags = 0; /*0x6c9974*/
   }
   if ( String ) /*0x6c9981*/
   {
     v3 = wcslen(String); /*0x6c9984*/
     v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x6c998e*/
-    *(this + 5) = v4; /*0x6c9996*/
+    this->abstractFlags = v4; /*0x6c9996*/
     if ( v4 ) /*0x6c999b*/
       wcscpy(v4, String); /*0x6c999f*/
   }
@@ -9657,7 +9657,7 @@ int __thiscall BinkMovie_FreeSurfaceTracker(int *this)
 }
 
 
-// ==== 0x006C9B40  BinkMovie::InitKeyframeTracking  this=int  sig=csp ====
+// ==== 0x006C9B40  BinkMovie::InitKeyframeTracking  this=BinkMovie  sig=csp ====
 char __thiscall BinkMovie_InitKeyframeTracking(int *this, char *Source)
 {
   int v3; // eax
@@ -9781,10 +9781,10 @@ char __thiscall BinkMovie::CheckKeyframeTransition(_DWORD *this, CellStruct *aP1
 }
 
 
-// ==== 0x006C9D30  AbstractClass::getTotalValue  this=VOID_PTR  sig=csp ====
+// ==== 0x006C9D30  AbstractClass::getTotalValue  this=AbstractClass  sig=csp ====
 int __thiscall sub_6C9D30(_DWORD *this, int a2)
 {
-  *(this + 3) = a2; /*0x6c9d34*/
+  this->vtable4 = a2; /*0x6c9d34*/
   return a2; /*0x6c9d37*/
 }
 
@@ -9873,7 +9873,7 @@ LABEL_7:
 }
 
 
-// ==== 0x006C9EC0  BinkMovie::VtableDispatch  this=int  sig=csp ====
+// ==== 0x006C9EC0  BinkMovie::VtableDispatch  this=BinkMovie  sig=csp ====
 _DWORD *__thiscall sub_6C9EC0(_DWORD *this, int a2)
 {
   int v3; // ecx
@@ -10206,7 +10206,7 @@ LABEL_18:
 }
 
 
-// ==== 0x006CA4A0  sub_6CA4A0  this=unknown  sig=csp ====
+// ==== 0x006CA4A0  sub_6CA4A0  this=-  sig=csp ====
 void __stdcall sub_6CA4A0(wchar_t *String2, int a2, int a3)
 {
   const wchar_t **v3; // edi
@@ -10285,7 +10285,7 @@ LABEL_11:
 }
 
 
-// ==== 0x006CA5A0  ObjectClass::method_6CA5A0  this=int  sig=csp ====
+// ==== 0x006CA5A0  ObjectClass::method_6CA5A0  this=ObjectClass  sig=csp ====
 unsigned int __thiscall sub_6CA5A0(wchar_t *Source)
 {
   ObjectClass *v1; // esi
@@ -10553,7 +10553,7 @@ int __thiscall VectorClass_ptr_SubTitle::sub_6CA910(int *this, _DWORD *a2)
 }
 
 
-// ==== 0x006CA940  Render_Parse_6CA940  this=VOID_PTR  sig=csp ====
+// ==== 0x006CA940  Render_Parse_6CA940  this=-  sig=csp ====
 char __fastcall sub_6CA940(int a1, _WORD *a2, int a3)
 {
   int v4; // esi
@@ -11153,7 +11153,7 @@ void **__thiscall SuperClass::CreateChronoAnim(int this, AbstractClass *aP1, Sup
 }
 
 
-// ==== 0x006CB4D0  SuperClass::SetOnHold  this=VOID_PTR  sig=csp ====
+// ==== 0x006CB4D0  SuperClass::SetOnHold  this=SuperClass  sig=csp ====
 char __thiscall SuperClass::SetOnHold(int this, CoordStruct *aP1)
 {
   IUnknown *v3; // esi
@@ -11343,17 +11343,17 @@ LABEL_45:
 }
 
 
-// ==== 0x006CB7B0  SuperClass::Lose  this=int  sig=csp ====
+// ==== 0x006CB7B0  SuperClass::Lose  this=SuperClass  sig=csp ====
 char __thiscall SuperClass::Lose(_BYTE *this)
 {
   int v1; // eax
   _BYTE *v3; // [esp+0h] [ebp-4h] BYREF
 
   v3 = this; /*0x6cb7b0*/
-  if ( !*(this + 109) ) /*0x6cb7b1*/
+  if ( !this->Granted ) /*0x6cb7b1*/
     return 0; /*0x6cb80d*/
-  *(this + 111) = 0; /*0x6cb7ba*/
-  *(this + 109) = 0; /*0x6cb7bd*/
+  this->IsCharged = 0; /*0x6cb7ba*/
+  this->Granted = 0; /*0x6cb7bd*/
   v3 = this; /*0x6cb7ca*/
   v1 = (*(int (__thiscall **)(int *, _BYTE **))(MEMORY[0xA83D50] + 16))(&MEMORY[0xA83D50], &v3); /*0x6cb7d4*/
   if ( v1 != -1 && v1 < MEMORY[0xA83D60] && v1 < --MEMORY[0xA83D60] ) /*0x6cb7ef*/
@@ -11369,15 +11369,15 @@ char __thiscall SuperClass::Lose(_BYTE *this)
 }
 
 
-// ==== 0x006CB820  SuperClass::SetReadiness  this=int  sig=csp ====
+// ==== 0x006CB820  SuperClass::SetReadiness  this=SuperClass  sig=csp ====
 char __thiscall SuperClass::SetReadiness(_BYTE *this, char a2)
 {
-  *(this + 111) = a2; /*0x6cb824*/
+  this->IsCharged = a2; /*0x6cb824*/
   return a2; /*0x6cb827*/
 }
 
 
-// ==== 0x006CB830  SuperClass::StopPreclickAnim  this=int  sig=csp ====
+// ==== 0x006CB830  SuperClass::StopPreclickAnim  this=SuperClass  sig=csp ====
 char __thiscall SuperClass::StopPreclickAnim(int this, IUnknown *aP1)
 {
   int v3; // eax
@@ -11429,7 +11429,7 @@ char __thiscall SuperClass::StopPreclickAnim(int this, IUnknown *aP1)
 }
 
 
-// ==== 0x006CB920  SuperClass::ClickFire  this=int  sig=csp ====
+// ==== 0x006CB920  SuperClass::ClickFire  this=SuperClass  sig=csp ====
 char __thiscall SuperClass::ClickFire(int this, int a2, __int16 *a3)
 {
   int v4; // eax
@@ -11631,7 +11631,7 @@ LABEL_11:
 }
 
 
-// ==== 0x006CBCA0  SuperWeapon::UpdateSuperWeaponReadyState  this=int  sig=csp ====
+// ==== 0x006CBCA0  SuperWeapon::UpdateSuperWeaponReadyState  this=SuperWeapon  sig=csp ====
 char __thiscall UpdateSuperWeaponReadyState(int this, char a2)
 {
   int v3; // eax
@@ -11940,7 +11940,7 @@ char __thiscall SuperClass::AnnounceReady(int this, DynamicVector *aP1)
 }
 
 
-// ==== 0x006CC1E0  SuperClass::SetCharge  this=VOID_PTR  sig=csp ====
+// ==== 0x006CC1E0  SuperClass::SetCharge  this=SuperClass  sig=csp ====
 char __thiscall SuperClass::SetCharge(int this, int a2)
 {
   _DWORD *v3; // eax
@@ -11984,25 +11984,25 @@ int __thiscall Super_GetDefaultTimer(_DWORD *this)
 }
 
 
-// ==== 0x006CC280  SuperClass::SetRechargeTime  this=VOID_PTR  sig=csp ====
+// ==== 0x006CC280  SuperClass::SetRechargeTime  this=SuperClass  sig=csp ====
 int __thiscall SuperClass::SetRechargeTime(_DWORD *this, int a2)
 {
-  *(this + 9) = a2; /*0x6cc284*/
+  this->SuperClass_field_0x24 = a2; /*0x6cc284*/
   return a2; /*0x6cc287*/
 }
 
 
-// ==== 0x006CC290  SuperClass::ResetRechargeTime  this=VOID_PTR  sig=csp ====
+// ==== 0x006CC290  SuperClass::ResetRechargeTime  this=SuperClass  sig=csp ====
 void __thiscall SuperClass::ResetRechargeTime(_DWORD *this)
 {
-  *(this + 9) = -1; /*0x6cc290*/
+  this->SuperClass_field_0x24 = -1; /*0x6cc290*/
 }
 
 
-// ==== 0x006CC2A0  SuperWeapon::GetField10  this=VOID_PTR  sig=csp ====
+// ==== 0x006CC2A0  SuperWeapon::GetField10  this=SuperWeapon  sig=csp ====
 char __thiscall sub_6CC2A0(_DWORD *this)
 {
-  return *(_BYTE *)(*(this + 10) + 230); /*0x6cc2a9*/
+  return *(_BYTE *)(this->q028 + 230); /*0x6cc2a9*/
 }
 
 
@@ -12056,7 +12056,7 @@ char __thiscall SuperClass::CanFire(int this)
 }
 
 
-// ==== 0x006CC390  SuperClass::Launch  this=int  sig=csp ====
+// ==== 0x006CC390  SuperClass::Launch  this=SuperClass  sig=csp ====
 void __fastcall SuperClass::Launch(int ecx0, int a2, __int16 *aP3, char a4)
 {
   SuperClass *v4; // ebx
@@ -13347,7 +13347,7 @@ LABEL_180:
 
 
 
-// ==== 0x006CDE80  nullsub_235  this=unknown  sig=csp ====
+// ==== 0x006CDE80  nullsub_235  this=-  sig=csp ====
 void __stdcall nullsub_235(int a1, int a2)
 {
   ; /*0x6cde80*/
@@ -13636,7 +13636,7 @@ int __thiscall sub_6CE270(int *this)
 }
 
 
-// ==== 0x006CE280  SuperClass::AdvanceCountdown  this=VOID_PTR  sig=csp ====
+// ==== 0x006CE280  SuperClass::AdvanceCountdown  this=SuperClass  sig=csp ====
 void __thiscall sub_6CE280(int *this)
 {
   int v1; // esi
@@ -13646,17 +13646,17 @@ void __thiscall sub_6CE280(int *this)
   v1 = *this; /*0x6ce281*/
   if ( *this != -1 ) /*0x6ce286*/
   {
-    v2 = *(this + 2); /*0x6ce288*/
+    v2 = this->vtable3; /*0x6ce288*/
     v3 = (char *)MEMORY[0xA8ED84] - v1; /*0x6ce296*/
     if ( (int)MEMORY[0xA8ED84] - v1 >= v2 ) /*0x6ce29a*/
     {
-      *(this + 2) = 0; /*0x6ce2ab*/
+      this->vtable3 = 0; /*0x6ce2ab*/
       *this = -1; /*0x6ce2ae*/
     }
     else
     {
       *this = -1; /*0x6ce29e*/
-      *(this + 2) = v2 - (_DWORD)v3; /*0x6ce2a4*/
+      this->vtable3 = v2 - (_DWORD)v3; /*0x6ce2a4*/
     }
   }
 }
@@ -13864,7 +13864,7 @@ ObjectClass *__thiscall sub_6CE570(void *this)
 }
 
 
-// ==== 0x006CE5B0  SuperWeaponTypeClass::SuperWeaponTypeClass  this=int  sig=csp ====
+// ==== 0x006CE5B0  SuperWeaponTypeClass::SuperWeaponTypeClass  this=SuperWeaponTypeClass  sig=csp ====
 int __thiscall SuperWeaponTypeClass::SuperWeaponTypeClass(int this, ObjectClass *aP1)
 {
   int v3; // eax
@@ -14318,7 +14318,7 @@ int __thiscall ObjectTypeClass_Read(void *this)
 }
 
 
-// ==== 0x006CEEB0  SuperWeaponTypeClass::FindFirstOfAction  this=int  sig=csp ====
+// ==== 0x006CEEB0  SuperWeaponTypeClass::FindFirstOfAction  this=SuperWeaponTypeClass  sig=csp ====
 int __thiscall SuperWeaponTypeClass::FindFirstOfAction(void *this)
 {
   int v1; // eax
@@ -15355,7 +15355,7 @@ int __fastcall sub_6CFD30(int a1)
 }
 
 
-// ==== 0x006CFD40  GetFontClassEntry  this=int  sig=ida-proto ====
+// ==== 0x006CFD40  GetFontClassEntry  this=-  sig=ida-proto ====
 char *__fastcall FontClass_GetEntry(int a1)
 {
   unsigned int v1; // eax
@@ -15388,7 +15388,7 @@ _DWORD *__fastcall sub_6CFD60(_DWORD *a1, int a2)
 }
 
 
-// ==== 0x006CFDB0  globalHelper_0CFDB0  this=int  sig=ida-proto ====
+// ==== 0x006CFDB0  globalHelper_0CFDB0  this=-  sig=ida-proto ====
 int __fastcall sub_6CFDB0(int a1)
 {
   int result; // eax

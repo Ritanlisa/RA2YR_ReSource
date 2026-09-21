@@ -85,7 +85,7 @@ int __stdcall JumpjetLocomotionClass::sub_5B01A0(_DWORD *a1, int a2, int a3, int
 }
 
 
-// ==== 0x005B17B0  BuildingClass::UpdateMovingPosition  this=int  sig=csp ====
+// ==== 0x005B17B0  BuildingClass::UpdateMovingPosition  this=BuildingClass  sig=csp ====
 char __thiscall BuildingClass::UpdateMovingPosition(int *this, IUnknown *aP1)
 {
   bool v3; // zf
@@ -114,7 +114,7 @@ char __thiscall BuildingClass::UpdateMovingPosition(int *this, IUnknown *aP1)
     GroundHeight = Cell::GetGroundHeight(&v12); /*0x5b1801*/
     if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], aP1) + 80) & 0x100) != 0 ) /*0x5b1813*/
     {
-      v6 = *(this + 3) + 156; /*0x5b1818*/
+      v6 = this->vtable4 + 156; /*0x5b1818*/
       v15 = *(IUnknown **)v6; /*0x5b1820*/
       v16 = *(_DWORD *)(v6 + 4); /*0x5b1827*/
       if ( *(_DWORD *)(v6 + 8) > (int)*(&g_MatrixTransformState + 16) /*0x5b183e*/
@@ -125,27 +125,27 @@ char __thiscall BuildingClass::UpdateMovingPosition(int *this, IUnknown *aP1)
   }
   v7 = this + 9; /*0x5b1853*/
   if ( *(_QWORD *)(this + 9) != *(_QWORD *)&g_MatrixTransformState /*0x5b1871*/
-    || (CoordStruct *)*(this + 11) != *(&g_MatrixTransformState + 2) )
+    || (CoordStruct *)this->fallRate != *(&g_MatrixTransformState + 2) )
   {
-    (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9); /*0x5b1879*/
+    (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->vtable4 + 244))(this->vtable4, this + 9); /*0x5b1879*/
   }
-  v11 = (IUnknown *)*(this + 3); /*0x5b1886*/
+  v11 = (IUnknown *)this->vtable4; /*0x5b1886*/
   v8 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v12); /*0x5b188d*/
-  if ( !CrateClass::ProcessPickup(v8, (AbstractClass *)v11) || (v9 = (IUnknown *)*(this + 3), v9->__pad_68[25]) ) /*0x5b18a0*/
+  if ( !CrateClass::ProcessPickup(v8, (AbstractClass *)v11) || (v9 = (IUnknown *)this->vtable4, v9->__pad_68[25]) ) /*0x5b18a0*/
   {
     *v7 = (int)g_MatrixTransformState; /*0x5b18ca*/
-    *((_QWORD *)this + 5) = *(_QWORD *)(&g_MatrixTransformState + 1); /*0x5b18d1*/
-    v9 = (IUnknown *)*(this + 3); /*0x5b18dd*/
+    this->abstractFlags = *(_QWORD *)(&g_MatrixTransformState + 1); /*0x5b18d1*/
+    v9 = (IUnknown *)this->vtable4; /*0x5b18dd*/
     if ( !v9->__pad_8C[4] ) /*0x5b18e8*/
       return 0; /*0x5b18e8*/
   }
   else
   {
     *v7 = v12; /*0x5b18b0*/
-    *(this + 10) = (int)v13; /*0x5b18b6*/
-    *(this + 11) = GroundHeight; /*0x5b18bd*/
+    this->owningHouseIndex = (int)v13; /*0x5b18b6*/
+    this->fallRate = GroundHeight; /*0x5b18bd*/
   }
-  if ( (CoordStruct *)*v7 != g_MatrixTransformState || *((_QWORD *)this + 5) != *(_QWORD *)(&g_MatrixTransformState + 1) ) /*0x5b1900*/
+  if ( (CoordStruct *)*v7 != g_MatrixTransformState || this->abstractFlags != *(_QWORD *)(&g_MatrixTransformState + 1) ) /*0x5b1900*/
   {
     (*(void (__thiscall **)(IUnknown *, int *))(v9->field_0 + 240))(v9, this + 9); /*0x5b1912*/
     return 1; /*0x5b1920*/
@@ -392,7 +392,7 @@ int sub_5B1D70()
 }
 
 
-// ==== 0x005B1D90  ObjectClass::method_5B1D90  this=int  sig=csp ====
+// ==== 0x005B1D90  ObjectClass::method_5B1D90  this=ObjectClass  sig=csp ====
 double *__thiscall sub_5B1D90(double *this)
 {
   DWORD v2; // edi
@@ -401,7 +401,7 @@ double *__thiscall sub_5B1D90(double *this)
 
   *(_DWORD *)this = 0; /*0x5b1d9b*/
   v4 = 0; /*0x5b1da1*/
-  *((_DWORD *)this + 1) = 1072693248; /*0x5b1da9*/
+  this->vtable2 = 1072693248; /*0x5b1da9*/
   v2 = sub_5CAF70((LONG *)&v4); /*0x5b1db5*/
   if ( v2 || v4 ) /*0x5b1dc1*/
   {
@@ -418,7 +418,7 @@ double *__thiscall sub_5B1D90(double *this)
 }
 
 
-// ==== 0x005B1E40  Timer::GetHighPrecision  this=int  sig=csp ====
+// ==== 0x005B1E40  Timer::GetHighPrecision  this=Timer  sig=csp ====
 double __thiscall Timer_GetHighPrecision(double *this)
 {
   unsigned int v2; // eax
@@ -558,7 +558,7 @@ int sub_5B20D0()
 }
 
 
-// ==== 0x005B20F0  Movement::CalcVelocity  this=int  sig=csp ====
+// ==== 0x005B20F0  Movement::CalcVelocity  this=Movement  sig=csp ====
 __int64 Movement::CalcVelocity(
         IUnknown *aP0,
         unsigned int *a1,
@@ -927,7 +927,7 @@ LABEL_48:
 }
 
 
-// ==== 0x005B2930  Movement::Check  this=int  sig=csp ====
+// ==== 0x005B2930  Movement::Check  this=Movement  sig=csp ====
 _DWORD *__thiscall sub_5B2930(_WORD *this, _DWORD *a2, _WORD *a3)
 {
   LOWORD(a3) = *this + *a3; /*0x5b293e*/
@@ -936,7 +936,7 @@ _DWORD *__thiscall sub_5B2930(_WORD *this, _DWORD *a2, _WORD *a3)
 }
 
 
-// ==== 0x005B2950  Math::Sub16  this=VOID_PTR  sig=csp ====
+// ==== 0x005B2950  Math::Sub16  this=Math  sig=csp ====
 IUnknown *__thiscall Math::Sub16(_WORD *this, BuildingTypeClass *aP1, IUnknown *aP2)
 {
   LOWORD(aP2) = *this - LOWORD(aP2->field_0); /*0x5b295a*/
@@ -961,7 +961,7 @@ bool __thiscall Math::Abs16Cmp(_WORD *this, IUnknown *aP1, IUnknown *aP2)
 }
 
 
-// ==== 0x005B29C0  Movement::CompareAbsCoords  this=VOID_PTR  sig=csp ====
+// ==== 0x005B29C0  Movement::CompareAbsCoords  this=Movement  sig=csp ====
 char __thiscall sub_5B29C0(__int16 *this, __int16 *a2, __int16 *a3)
 {
   __int16 v3; // bp
@@ -1703,7 +1703,7 @@ char __thiscall AbstractClass::_vt126(int this)
 }
 
 
-// ==== 0x005B36E0  IPersistStream::SetField  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x005B36E0  IPersistStream::SetField  this=IPersistStream  sig=ida-proto ====
 char __fastcall IPersistStream::SetField(int a1)
 {
   if ( a1 == -1 ) /*0x5b36e3*/
@@ -1713,25 +1713,25 @@ char __fastcall IPersistStream::SetField(int a1)
 }
 
 
-// ==== 0x005B3700  MissionClass::FindName  this=int  sig=csp ====
+// ==== 0x005B3700  MissionClass::FindName  this=MissionClass  sig=csp ====
 _BYTE *__thiscall MissionClass::FindName(_BYTE *this)
 {
-  *(this + 4) = 0; /*0x5b3706*/
-  *(this + 5) = 0; /*0x5b3709*/
-  *(this + 7) = 0; /*0x5b370c*/
-  *(this + 6) = 1; /*0x5b370f*/
-  *(this + 8) = 1; /*0x5b3712*/
-  *(this + 9) = 1; /*0x5b3715*/
-  *((_DWORD *)this + 4) = -755914244; /*0x5b3722*/
-  *((_DWORD *)this + 6) = -755914244; /*0x5b3725*/
+  this->vtable2 = 0; /*0x5b3706*/
+  this->abstractFlags = 0; /*0x5b3709*/
+  this->referenceCount = 0; /*0x5b370c*/
+  this->nextArrayIndex = 1; /*0x5b370f*/
+  this->vtable3 = 1; /*0x5b3712*/
+  this->objectTypeFlags = 1; /*0x5b3715*/
+  this->vtable2 = -755914244; /*0x5b3722*/
+  this->nextArrayIndex = -755914244; /*0x5b3725*/
   *(_DWORD *)this = -1; /*0x5b3728*/
-  *((_DWORD *)this + 5) = 1066426957; /*0x5b372e*/
-  *((_DWORD *)this + 7) = 1066426957; /*0x5b3731*/
+  this->abstractFlags = 1066426957; /*0x5b372e*/
+  this->referenceCount = 1066426957; /*0x5b3731*/
   return this; /*0x5b3734*/
 }
 
 
-// ==== 0x005B3760  MissionClass::LoadFromINI  this=int  sig=csp ====
+// ==== 0x005B3760  MissionClass::LoadFromINI  this=MissionClass  sig=csp ====
 char __thiscall MissionClass::LoadFromINI(int *this, _DWORD *a2)
 {
   char *v3; // eax
@@ -1759,56 +1759,56 @@ char __thiscall MissionClass::LoadFromINI(int *this, _DWORD *a2)
     v4 = MEMORY[0x817474]; /*0x5b37a0*/
   else
     v4 = off_816CAC[*this]; /*0x5b37a7*/
-  *((_BYTE *)this + 4) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
+  this->vtable2 = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
                            (int)a2,
                            (unsigned __int8 *)v4,
                            (unsigned __int8 *)MEMORY[0x82C2B8],
-                           *((_BYTE *)this + 4));
+                           this->vtable2);
   if ( *this == -1 ) /*0x5b37c7*/
     v5 = MEMORY[0x817474]; /*0x5b37c9*/
   else
     v5 = off_816CAC[*this]; /*0x5b37d0*/
-  *((_BYTE *)this + 5) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
+  this->abstractFlags = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
                            (int)a2,
                            (unsigned __int8 *)v5,
                            (unsigned __int8 *)MEMORY[0x82C2B0],
-                           *((_BYTE *)this + 5));
+                           this->abstractFlags);
   if ( *this == -1 ) /*0x5b37f0*/
     v6 = MEMORY[0x817474]; /*0x5b37f2*/
   else
     v6 = off_816CAC[*this]; /*0x5b37f9*/
-  *((_BYTE *)this + 6) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
+  this->nextArrayIndex = INIClass::ReadBool_Overwrite( /*0x5b3811*/
                            (int)a2,
                            (unsigned __int8 *)v6,
                            (unsigned __int8 *)MEMORY[0x82C2A4],
-                           *((_BYTE *)this + 6));
+                           this->nextArrayIndex);
   if ( *this == -1 ) /*0x5b3819*/
     v7 = MEMORY[0x817474]; /*0x5b381b*/
   else
     v7 = off_816CAC[*this]; /*0x5b3822*/
-  *((_BYTE *)this + 7) = INIClass::ReadBool_Overwrite( /*0x5b383a*/
+  this->referenceCount = INIClass::ReadBool_Overwrite( /*0x5b383a*/
                            (int)a2,
                            (unsigned __int8 *)v7,
                            (unsigned __int8 *)MEMORY[0x82C298],
-                           *((_BYTE *)this + 7));
+                           this->referenceCount);
   if ( *this == -1 ) /*0x5b3842*/
     v8 = MEMORY[0x817474]; /*0x5b3844*/
   else
     v8 = off_816CAC[*this]; /*0x5b384b*/
-  *((_BYTE *)this + 8) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
+  this->vtable3 = INIClass::ReadBool_Overwrite( /*0x5b3863*/
                            (int)a2,
                            (unsigned __int8 *)v8,
                            (unsigned __int8 *)MEMORY[0x82C28C],
-                           *((_BYTE *)this + 8));
+                           this->vtable3);
   if ( *this == -1 ) /*0x5b386b*/
     v9 = MEMORY[0x817474]; /*0x5b386d*/
   else
     v9 = off_816CAC[*this]; /*0x5b3874*/
-  *((_BYTE *)this + 9) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
+  this->objectTypeFlags = INIClass::ReadBool_Overwrite( /*0x5b388c*/
                            (int)a2,
                            (unsigned __int8 *)v9,
                            (unsigned __int8 *)stru_82C284,
-                           *((_BYTE *)this + 9));
+                           this->objectTypeFlags);
   if ( *this == -1 ) /*0x5b3894*/
     v10 = MEMORY[0x817474]; /*0x5b3896*/
   else
@@ -1828,9 +1828,9 @@ char __thiscall MissionClass::LoadFromINI(int *this, _DWORD *a2)
   *((double *)this + 3) = v14; /*0x5b38e2*/
   if ( v14 == 0.0 ) /*0x5b38f0*/
   {
-    v15 = *(this + 5); /*0x5b38f5*/
-    *(this + 6) = *(this + 4); /*0x5b38f8*/
-    *(this + 7) = v15; /*0x5b38fb*/
+    v15 = this->abstractFlags; /*0x5b38f5*/
+    this->nextArrayIndex = this->vtable2; /*0x5b38f8*/
+    this->referenceCount = v15; /*0x5b38fb*/
   }
   return 1; /*0x5b38fe*/
 }
@@ -1857,7 +1857,7 @@ int __thiscall LookupWaypointName(void *this)
 }
 
 
-// ==== 0x005B3950  FromNameIndex  this=int  sig=csp ====
+// ==== 0x005B3950  FromNameIndex  this=-  sig=csp ====
 char *__fastcall Name_FromIndex(int a1)
 {
   if ( a1 == -1 ) /*0x5b3953*/
@@ -2210,7 +2210,7 @@ void __thiscall sub_5B3F50(void *this)
 }
 
 
-// ==== 0x005B3FF0  InsertIntoHashTree  this=int  sig=csp ====
+// ==== 0x005B3FF0  InsertIntoHashTree  this=-  sig=csp ====
 _DWORD *__fastcall sub_5B3FF0(_DWORD *a1, _DWORD *a2)
 {
   _DWORD *result; // eax
@@ -2228,7 +2228,7 @@ _DWORD *__fastcall sub_5B3FF0(_DWORD *a1, _DWORD *a2)
 }
 
 
-// ==== 0x005B4080  Tree::Destructor  this=VOID_PTR  sig=csp ====
+// ==== 0x005B4080  Tree::Destructor  this=Tree  sig=csp ====
 void __thiscall Tree_Destructor(_DWORD *this)
 {
   if ( this ) /*0x5b4085*/
@@ -2340,7 +2340,7 @@ LABEL_9:
 }
 
 
-// ==== 0x005B4270  HashTree::MarkEntry  this=int  sig=csp ====
+// ==== 0x005B4270  HashTree::MarkEntry  this=HashTree  sig=csp ====
 int __thiscall HashTree_MarkEntry(const char *this)
 {
   int result; // eax
@@ -2427,7 +2427,7 @@ char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_7(std::codecvt_base 
 }
 
 
-// ==== 0x005B43F0  ReturnTrue  this=VOID_PTR  sig=csp ====
+// ==== 0x005B43F0  ReturnTrue  this=-  sig=csp ====
 char __stdcall ReturnTrue(AnimClass *aP0)
 {
   return 1; /*0x5b43f2*/
@@ -2568,7 +2568,7 @@ BlowStraw *__thiscall BlowStraw::QueryInterface(int *Block, char a2)
 }
 
 
-// ==== 0x005B4610  MixFileClass::UnlinkFromPool  this=VOID_PTR  sig=csp ====
+// ==== 0x005B4610  MixFileClass::UnlinkFromPool  this=MixFileClass  sig=csp ====
 int *__thiscall MixFileClass::UnlinkFromPool(int *Block, char a2)
 {
   COMObject::Release(Block); /*0x5b4613*/
@@ -2901,7 +2901,7 @@ LABEL_17:
 }
 
 
-// ==== 0x005B4B10  GameSetupDialogProc  this=unknown  sig=csp ====
+// ==== 0x005B4B10  GameSetupDialogProc  this=-  sig=csp ====
 int __stdcall GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax
@@ -4137,7 +4137,7 @@ void __thiscall sub_5B6DA0(HWND *this, wchar_t *Source)
 }
 
 
-// ==== 0x005B6EB0  ObjectClass::UI_Setup  this=int  sig=csp ====
+// ==== 0x005B6EB0  ObjectClass::UI_Setup  this=ObjectClass  sig=csp ====
 void __thiscall sub_5B6EB0(HWND *this, wchar_t *Format, unsigned int a3, int a4)
 {
   HWND DlgItem; // edi
@@ -4212,7 +4212,7 @@ HWND sub_5B6F30()
 }
 
 
-// ==== 0x005B7090  Game::StartModemMultiplayer  this=int  sig=csp ====
+// ==== 0x005B7090  Game::StartModemMultiplayer  this=Game  sig=csp ====
 char __thiscall StartModemMultiplayerGame(int this, char a2)
 {
   _BYTE *v4; // eax
@@ -4326,7 +4326,7 @@ LABEL_31:
 }
 
 
-// ==== 0x005B7360  ModemGame::ReceiveMapPreview  this=int  sig=csp ====
+// ==== 0x005B7360  ModemGame::ReceiveMapPreview  this=ModemGame  sig=csp ====
 void __thiscall ModemGame::ReceiveMapPreview(HWND *this)
 {
   int v1; // esi
@@ -4617,7 +4617,7 @@ char __thiscall ModemHost::Dialog(LONG dwNewLong)
 }
 
 
-// ==== 0x005B7970  NetworkGameSetup::DlgProc  this=unknown  sig=csp ====
+// ==== 0x005B7970  NetworkGameSetup::DlgProc  this=NetworkGameSetup  sig=csp ====
 int __stdcall NetworkGameSetup_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
@@ -5531,7 +5531,7 @@ char __thiscall sub_5B94C0(int this, char a2)
 }
 
 
-// ==== 0x005B9550  ModemGuest::UpdateGuestPlayerInfo  this=int  sig=csp ====
+// ==== 0x005B9550  ModemGuest::UpdateGuestPlayerInfo  this=ModemGuest  sig=csp ====
 int __thiscall sub_5B9550(char *this, wchar_t *Source, unsigned int a3, int a4)
 {
   wchar_t *v5; // edi
@@ -6211,7 +6211,7 @@ int __thiscall BuildGameSetupPacket(int this)
 }
 
 
-// ==== 0x005BA970  NetworkGameSetup::SendGameSetupPacket  this=int  sig=csp ====
+// ==== 0x005BA970  NetworkGameSetup::SendGameSetupPacket  this=NetworkGameSetup  sig=csp ====
 void __thiscall sub_5BA970(HWND *this, wchar_t *Source)
 {
   char *v3; // eax
@@ -6659,7 +6659,7 @@ LABEL_15:
 }
 
 
-// ==== 0x005BB560  NetworkGameSetup::DeleteComPtr  this=VOID_PTR  sig=csp ====
+// ==== 0x005BB560  NetworkGameSetup::DeleteComPtr  this=NetworkGameSetup  sig=csp ====
 _DWORD *__thiscall NetworkGameSetup::DeleteComPtr(_DWORD *Block, char a2)
 {
   ComPtr::Dtor(Block); /*0x5bb563*/
@@ -7449,7 +7449,7 @@ int sub_5BC530()
 }
 
 
-// ==== 0x005BC6E0  DlgProcAudioDebug  this=unknown  sig=csp ====
+// ==== 0x005BC6E0  DlgProcAudioDebug  this=-  sig=csp ====
 INT_PTR __stdcall AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
 {
   int v5; // ecx
@@ -7747,11 +7747,11 @@ int __thiscall sub_5BCC30(_DWORD *this)
 }
 
 
-// ==== 0x005BCC40  Network::validateConnection  this=int  sig=csp ====
+// ==== 0x005BCC40  Network::validateConnection  this=Network  sig=csp ====
 int __thiscall sub_5BCC40(_DWORD *this, int a2, int a3)
 {
-  *(this + 2503) = a2; /*0x5bcc48*/
-  *(this + 2504) = a3; /*0x5bcc4e*/
+  this->q271C = a2; /*0x5bcc48*/
+  this->q2720 = a3; /*0x5bcc4e*/
   return a2; /*0x5bcc54*/
 }
 
@@ -8080,7 +8080,7 @@ char __stdcall Debug_Helper(ObjectClass *aP0)
 }
 
 
-// ==== 0x005BD3D0  Text::DrawCharAtGrid  this=int  sig=csp ====
+// ==== 0x005BD3D0  Text::DrawCharAtGrid  this=Text  sig=csp ====
 BOOL __thiscall sub_5BD3D0(_DWORD *this, HDC hdc, int String, int a4)
 {
   int v4; // ebx
@@ -8206,7 +8206,7 @@ void __thiscall String_Release(void **this)
 }
 
 
-// ==== 0x005BD5C0  File::ParseFileHVA  this=int  sig=csp ====
+// ==== 0x005BD5C0  File::ParseFileHVA  this=File  sig=csp ====
 int __thiscall HVA_ParseFile(int this, int a2)
 {
   int v3; // esi
@@ -8290,7 +8290,7 @@ LABEL_15:
 }
 
 
-// ==== 0x005BD730  Matrix::Scale  this=VOID_PTR  sig=csp ====
+// ==== 0x005BD730  Matrix::Scale  this=Matrix  sig=csp ====
 unsigned int __thiscall Matrix_Scale(unsigned int *this, float a2)
 {
   unsigned int result; // eax
@@ -8300,20 +8300,20 @@ unsigned int __thiscall Matrix_Scale(unsigned int *this, float a2)
   int v6; // eax
   int v7; // eax
 
-  result = *(this + 2); /*0x5bd730*/
+  result = this->q008; /*0x5bd730*/
   for ( i = 0; i < result; ++i ) /*0x5bd738*/
   {
-    v4 = *(this + 1); /*0x5bd73b*/
-    for ( j = 0; j < v4; v4 = *(this + 1) ) /*0x5bd742*/
+    v4 = this->Matrix_field_0x04; /*0x5bd73b*/
+    for ( j = 0; j < v4; v4 = this->Matrix_field_0x04 ) /*0x5bd742*/
     {
-      *(float *)(48 * (j + i * v4) + *(this + 3) + 12) = a2 * *(float *)(48 * (j + i * v4) + *(this + 3) + 12); /*0x5bd75e*/
-      v6 = 48 * (j + *(this + 1) * i); /*0x5bd772*/
-      *(float *)(v6 + *(this + 3) + 28) = a2 * *(float *)(v6 + *(this + 3) + 28); /*0x5bd77d*/
-      v7 = 48 * (j + *(this + 1) * i); /*0x5bd791*/
+      *(float *)(48 * (j + i * v4) + this->q00C + 12) = a2 * *(float *)(48 * (j + i * v4) + this->q00C + 12); /*0x5bd75e*/
+      v6 = 48 * (j + this->Matrix_field_0x04 * i); /*0x5bd772*/
+      *(float *)(v6 + this->q00C + 28) = a2 * *(float *)(v6 + this->q00C + 28); /*0x5bd77d*/
+      v7 = 48 * (j + this->Matrix_field_0x04 * i); /*0x5bd791*/
       ++j; /*0x5bd794*/
-      *(float *)(v7 + *(this + 3) + 44) = a2 * *(float *)(v7 + *(this + 3) + 44); /*0x5bd79d*/
+      *(float *)(v7 + this->q00C + 44) = a2 * *(float *)(v7 + this->q00C + 44); /*0x5bd79d*/
     }
-    result = *(this + 2); /*0x5bd7a6*/
+    result = this->q008; /*0x5bd7a6*/
   }
   return result; /*0x5bd7af*/
 }
@@ -8536,7 +8536,7 @@ char __thiscall MouseClass::_vt21(int this, char a2)
 }
 
 
-// ==== 0x005BDB90  System_Handle  this=VOID_PTR  sig=csp ====
+// ==== 0x005BDB90  System_Handle  this=-  sig=csp ====
 int __stdcall sub_5BDB90(int a1, char a2)
 {
   int result; // eax
@@ -8550,7 +8550,7 @@ int __stdcall sub_5BDB90(int a1, char a2)
 }
 
 
-// ==== 0x005BDC00  sub_5BDC00  this=unknown  sig=csp ====
+// ==== 0x005BDC00  sub_5BDC00  this=-  sig=csp ====
 int *__stdcall sub_5BDC00(int *a1, int a2)
 {
   int v2; // ebx
@@ -9497,14 +9497,14 @@ void sub_5BE940()
 }
 
 
-// ==== 0x005BE970  Render_Render_5BE970  this=VOID_PTR  sig=csp ====
+// ==== 0x005BE970  Render_Render_5BE970  this=-  sig=csp ====
 int __stdcall sub_5BE970(int a1)
 {
   return MEMORY[0x82D028][7 * a1]; /*0x5be984*/
 }
 
 
-// ==== 0x005BE990  Render_Render_5BE990  this=VOID_PTR  sig=csp ====
+// ==== 0x005BE990  Render_Render_5BE990  this=-  sig=csp ====
 int __stdcall sub_5BE990(int a1)
 {
   return MEMORY[0x82D02C][7 * a1]; /*0x5be9a4*/
@@ -9902,7 +9902,7 @@ void Movie::Play(CCINIClass *aP0, int a2, CCINIClass *aP2, IUnknown *aP3, char a
 }
 
 
-// ==== 0x005BF260  Movie::PlayWrapper  this=int  sig=csp ====
+// ==== 0x005BF260  Movie::PlayWrapper  this=Movie  sig=csp ====
 char __thiscall Movie::Update(int this)
 {
   int IsSoundEnabled; // eax
@@ -9968,7 +9968,7 @@ int __thiscall sub_5BF360(int this)
 }
 
 
-// ==== 0x005BF390  EnqueueAsyncIOMovie  this=int  sig=ida-proto ====
+// ==== 0x005BF390  EnqueueAsyncIOMovie  this=-  sig=ida-proto ====
 void __fastcall sub_5BF390(int a1, char a2)
 {
   int v3; // ecx
@@ -10046,7 +10046,7 @@ char AsyncIO_Shutdown()
 }
 
 
-// ==== 0x005BF500  AsyncIO::Read  this=VOID_PTR  sig=csp ====
+// ==== 0x005BF500  AsyncIO::Read  this=AsyncIO  sig=csp ====
 int __thiscall AsyncIO_Read(void *this)
 {
   int result; // eax

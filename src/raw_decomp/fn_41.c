@@ -409,14 +409,14 @@ int __thiscall AbstractClass::COMStub_Return0_23(#378 *this)
 }
 
 
-// ==== 0x00410580  AbstractClass::Stub1INoticeSink  this=unknown  sig=csp ====
+// ==== 0x00410580  AbstractClass::Stub1INoticeSink  this=AbstractClass  sig=csp ====
 char __stdcall INoticeSink_Stub1(int a1, int a2)
 {
   return 0; /*0x410582*/
 }
 
 
-// ==== 0x00410590  AbstractClass::COM_Stub_Return0  this=unknown  sig=csp ====
+// ==== 0x00410590  AbstractClass::COM_Stub_Return0  this=AbstractClass  sig=csp ====
 void __stdcall COM_Stub_Return0(int a1)
 {
   ; /*0x410590*/
@@ -571,7 +571,7 @@ int sub_4107E0()
 }
 
 
-// ==== 0x00410800  AbstractTypeClass::Constructor  this=int  sig=csp ====
+// ==== 0x00410800  AbstractTypeClass::Constructor  this=AbstractTypeClass  sig=csp ====
 int __thiscall AbstractTypeClass::Constructor(int this, AbstractClass *aP1)
 {
   RandomStruct *v3; // ebx
@@ -955,7 +955,7 @@ int __thiscall StreamObj_Release(_DWORD *this)
 }
 
 
-// ==== 0x00410E70  sub_410E70  this=unknown  sig=csp ====
+// ==== 0x00410E70  sub_410E70  this=-  sig=csp ====
 char *__stdcall sub_410E70(char *a1, int a2, unsigned __int16 a3)
 {
   char *v3; // edx
@@ -1809,7 +1809,7 @@ int __cdecl ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION *dwUser, int a2, 
 }
 
 
-// ==== 0x00411B20  sub_411B20  this=int  sig=csp ====
+// ==== 0x00411B20  sub_411B20  this=-  sig=csp ====
 int __cdecl sub_411B20(DWORD_PTR dwUser, AnimClass *aP1, int a3)
 {
   int v3; // eax
@@ -1880,7 +1880,7 @@ int __cdecl sub_411B20(DWORD_PTR dwUser, AnimClass *aP1, int a3)
 }
 
 
-// ==== 0x00411DF0  InitializeSoundBufferPlayback  this=VOID_PTR  sig=csp ====
+// ==== 0x00411DF0  InitializeSoundBufferPlayback  this=-  sig=csp ====
 int __cdecl InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
 {
   LONG LockCount; // eax
@@ -1996,7 +1996,7 @@ int __cdecl InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
 }
 
 
-// ==== 0x00412000  SubmitDirectSoundBufferData  this=int  sig=csp ====
+// ==== 0x00412000  SubmitDirectSoundBufferData  this=-  sig=csp ====
 int __cdecl SubmitDirectSoundBufferData(unsigned int a1, char *a2, char *a3)
 {
   unsigned int v3; // edi
@@ -2152,7 +2152,7 @@ LABEL_21:
 }
 
 
-// ==== 0x004123A0  fptc  this=unknown  sig=csp ====
+// ==== 0x004123A0  fptc  this=-  sig=csp ====
 void __stdcall fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR dw2)
 {
   int v5; // eax
@@ -2486,7 +2486,7 @@ void __cdecl sub_4128F0()
 }
 
 
-// ==== 0x004129C0  DynamicArray::AddFromList  this=int  sig=csp ====
+// ==== 0x004129C0  DynamicArray::AddFromList  this=DynamicArray  sig=csp ====
 int __thiscall DynamicArray_AddFromList(char *this, int a2)
 {
   int v2; // ebx
@@ -2530,7 +2530,7 @@ int __thiscall DynamicArray_AddFromList(char *this, int a2)
 }
 
 
-// ==== 0x00412A40  Slider::CalcPosition  this=int  sig=csp ====
+// ==== 0x00412A40  Slider::CalcPosition  this=Slider  sig=csp ====
 int __stdcall Slider_CalcPosition(int a1, int a2, int a3)
 {
   int v3; // edx
@@ -3469,19 +3469,19 @@ int __thiscall Coord::ToGridIndex(char *this, VectorClass *aP1, VectorClass *aP2
 }
 
 
-// ==== 0x00413A30  Coord::ToCell  this=int  sig=csp ====
+// ==== 0x00413A30  Coord::ToCell  this=Coord  sig=csp ====
 _DWORD *__thiscall Coord::ToCell(_DWORD *this, IUnknown *aP1)
 {
   int v3; // [esp+0h] [ebp-4h]
 
   LOWORD(v3) = *this / 256; /*0x413a3f*/
-  HIWORD(v3) = *(this + 1) / 256; /*0x413a53*/
+  HIWORD(v3) = this->q004 / 256; /*0x413a53*/
   aP1->field_0 = v3; /*0x413a60*/
   return &aP1->field_0; /*0x413a63*/
 }
 
 
-// ==== 0x00413A70  DynamicVector::AddItem  this=int  sig=csp ====
+// ==== 0x00413A70  DynamicVector::AddItem  this=DynamicVector  sig=csp ====
 char __thiscall DynamicVector::AddItem(_DWORD *this, VectorClass *aP1)
 {
   int v3; // ecx
@@ -3489,18 +3489,18 @@ char __thiscall DynamicVector::AddItem(_DWORD *this, VectorClass *aP1)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x413a73*/
-  if ( *(this + 4) >= v3 ) /*0x413a7b*/
+  v3 = this->DynamicVector_field_0x8; /*0x413a73*/
+  if ( this->DynamicVector_field_0x10 >= v3 ) /*0x413a7b*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x413a86*/
+    if ( !this->IsAllocated && v3 ) /*0x413a86*/
       return 0; /*0x413a86*/
-    v4 = *(this + 5); /*0x413a88*/
+    v4 = this->CapacityIncrement; /*0x413a88*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x413a98*/
       return 0; /*0x413a9f*/
   }
-  v6 = *(this + 4); /*0x413aa5*/
-  v7 = *(this + 1); /*0x413aa8*/
-  *(this + 4) = v6 + 1; /*0x413aae*/
+  v6 = this->DynamicVector_field_0x10; /*0x413aa5*/
+  v7 = this->Items; /*0x413aa8*/
+  this->DynamicVector_field_0x10 = v6 + 1; /*0x413aae*/
   *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->vtable0; /*0x413ab8*/
   return 1; /*0x413aa1*/
 }
@@ -4270,7 +4270,7 @@ LABEL_32:
 }
 
 
-// ==== 0x00414A10  nullsub_71  this=unknown  sig=csp ====
+// ==== 0x00414A10  nullsub_71  this=-  sig=csp ====
 void __stdcall nullsub_71(int a1, int a2)
 {
   ; /*0x414a10*/
@@ -8315,7 +8315,7 @@ LABEL_4:
 }
 
 
-// ==== 0x0041AF80  ObjectClass::SaveAircraftToINI  this=int  sig=csp ====
+// ==== 0x0041AF80  ObjectClass::SaveAircraftToINI  this=ObjectClass  sig=csp ====
 int __thiscall SaveAircraftToINI(char *this)
 {
   int result; // eax
@@ -8793,7 +8793,7 @@ int __thiscall AircraftClass::_vt123(#377 *this)
 }
 
 
-// ==== 0x0041B900  TacticalClass::StubReturnTrue  this=VOID_PTR  sig=csp ====
+// ==== 0x0041B900  TacticalClass::StubReturnTrue  this=TacticalClass  sig=csp ====
 void TacticalClass::StubReturnTrue()
 {
   ; /*0x41b900*/
@@ -9528,7 +9528,7 @@ IUnknown *__thiscall Coord::Subtract(_DWORD *this, IUnknown *aP1, IUnknown *aP2,
 }
 
 
-// ==== 0x0041C250  ObjectClass::CreateInstanceCOM  this=VOID_PTR  sig=csp ====
+// ==== 0x0041C250  ObjectClass::CreateInstanceCOM  this=ObjectClass  sig=csp ====
 int __thiscall CreateInstanceCOM(LPVOID *ppv, IID *rclsid, ILocomotion *aP2, DWORD dwClsContext)
 {
   int result; // eax
@@ -9621,7 +9621,7 @@ void __thiscall Vector2::NormalizeNonZero(double *this)
 }
 
 
-// ==== 0x0041C490  AbstractClass::processCleanup  this=VOID_PTR  sig=csp ====
+// ==== 0x0041C490  AbstractClass::processCleanup  this=AbstractClass  sig=csp ====
 char *__thiscall AbstractClass::processCleanup(_DWORD *Block, char a2)
 {
   int v3; // eax
@@ -9663,7 +9663,7 @@ char *__thiscall AbstractClass::processCleanup(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x0041C500  BuildingTypeClass::Enqueue  this=int  sig=csp ====
+// ==== 0x0041C500  BuildingTypeClass::Enqueue  this=BuildingTypeClass  sig=csp ====
 char __thiscall BuildingTypeClass_Enqueue(int this, int a2)
 {
   char *v3; // edi
@@ -9692,7 +9692,7 @@ char __thiscall BuildingTypeClass_Enqueue(int this, int a2)
 }
 
 
-// ==== 0x0041C590  BuildingTypeClass::Dequeue  this=int  sig=csp ====
+// ==== 0x0041C590  BuildingTypeClass::Dequeue  this=BuildingTypeClass  sig=csp ====
 size_t __thiscall BuildingTypeClass::Dequeue(char **this, BuildingClass *aP1)
 {
   size_t result; // eax
@@ -9701,18 +9701,18 @@ size_t __thiscall BuildingTypeClass::Dequeue(char **this, BuildingClass *aP1)
   int v6; // ecx
   ObjectClass *v7; // esi
 
-  result = (size_t)*(this + 1); /*0x41c593*/
+  result = (size_t)this->vtable2; /*0x41c593*/
   if ( result ) /*0x41c598*/
   {
-    if ( !*((_BYTE *)this + 12) ) /*0x41c59e*/
+    if ( !this->vtable4 ) /*0x41c59e*/
     {
       qsort(*this, result, 8u, CompareFunction); /*0x41c5b0*/
-      *(this + 4) = 0; /*0x41c5b8*/
-      *((_BYTE *)this + 12) = 1; /*0x41c5bf*/
+      this->vtable2 = 0; /*0x41c5b8*/
+      this->vtable4 = 1; /*0x41c5bf*/
     }
     v4 = (ObjectClass *)*this; /*0x41c5c9*/
     v5 = *(ObjectClass **)aP1->__pad_0; /*0x41c5cb*/
-    v6 = (int)*(this + 1); /*0x41c5cd*/
+    v6 = (int)this->vtable2; /*0x41c5cd*/
     if ( v6 <= 0 ) /*0x41c5d2*/
       return 0; /*0x41c5fe*/
     while ( 1 ) /*0x41c5db*/
@@ -10678,7 +10678,7 @@ int __stdcall AirstrikeClass::_vt03(int a1, _DWORD *a2)
 }
 
 
-// ==== 0x0041D7E0  Warhead::GetWarheadSound  this=float  sig=csp ====
+// ==== 0x0041D7E0  Warhead::GetWarheadSound  this=Warhead  sig=csp ====
 bool __thiscall sub_41D7E0(int this, int a2)
 {
   int v3; // eax
@@ -10691,7 +10691,7 @@ bool __thiscall sub_41D7E0(int this, int a2)
 }
 
 
-// ==== 0x0041D830  AirstrikeClass::StartMission  this=VOID_PTR  sig=csp ====
+// ==== 0x0041D830  AirstrikeClass::StartMission  this=AirstrikeClass  sig=csp ====
 char __thiscall AirstrikeClass::StartMission(int this, int *a2)
 {
   char result; // al
@@ -10705,7 +10705,7 @@ char __thiscall AirstrikeClass::StartMission(int this, int *a2)
 }
 
 
-// ==== 0x0041D860  AirstrikeClass::SpawnAircraft  this=float  sig=csp ====
+// ==== 0x0041D860  AirstrikeClass::SpawnAircraft  this=AirstrikeClass  sig=csp ====
 int __thiscall sub_41D860(int this, int *a2)
 {
   int v3; // eax
@@ -11597,7 +11597,7 @@ int __thiscall AITriggerTypeClass::ProcessPower(int this, int *a2)
 }
 
 
-// ==== 0x0041E720  TriggerClass::EvaluateCondition  this=int  sig=csp ====
+// ==== 0x0041E720  TriggerClass::EvaluateCondition  this=TriggerClass  sig=csp ====
 char __thiscall TriggerClass_EvaluateCondition(int this, _DWORD *a2, int a3, char a4)
 {
   int v5; // ecx
@@ -11796,7 +11796,7 @@ LABEL_70:
 }
 
 
-// ==== 0x0041EAF0  AITriggerTypeClass::EnemyHouseOwns  this=int  sig=csp ====
+// ==== 0x0041EAF0  AITriggerTypeClass::EnemyHouseOwns  this=AITriggerTypeClass  sig=csp ====
 bool __thiscall AITriggerTypeClass::EnemyHouseOwns(_DWORD *this, int a2, _DWORD *a3)
 {
   int v4; // esi
@@ -11838,25 +11838,25 @@ LABEL_8:
   {
     v7 = 0; /*0x41eb99*/
   }
-  switch ( *(this + 58) ) /*0x41ebab*/
+  switch ( this->__pad_0E8 ) /*0x41ebab*/
   {
     case 0: /*0x41ebab*/
-      result = v7 < *(this + 57); /*0x41ebc0*/
+      result = v7 < this->q0E4; /*0x41ebc0*/
       break; /*0x41ebc5*/
     case 1: /*0x41ebab*/
-      result = v7 <= *(this + 57); /*0x41ebd6*/
+      result = v7 <= this->q0E4; /*0x41ebd6*/
       break; /*0x41ebdb*/
     case 2: /*0x41ebab*/
-      result = v7 == *(this + 57); /*0x41ebec*/
+      result = v7 == this->q0E4; /*0x41ebec*/
       break; /*0x41ebf1*/
     case 3: /*0x41ebab*/
-      result = v7 >= *(this + 57); /*0x41ec02*/
+      result = v7 >= this->q0E4; /*0x41ec02*/
       break; /*0x41ec07*/
     case 4: /*0x41ebab*/
-      result = v7 > *(this + 57); /*0x41ec18*/
+      result = v7 > this->q0E4; /*0x41ec18*/
       break; /*0x41ec1d*/
     case 5: /*0x41ebab*/
-      return v7 != *(this + 57); /*0x41ec26*/
+      return v7 != this->q0E4; /*0x41ec26*/
     default:
       return v9;
   }
@@ -11864,7 +11864,7 @@ LABEL_8:
 }
 
 
-// ==== 0x0041EC90  AITriggerTypeClass::CivilianHouseOwns  this=int  sig=csp ====
+// ==== 0x0041EC90  AITriggerTypeClass::CivilianHouseOwns  this=AITriggerTypeClass  sig=csp ====
 bool __thiscall AITriggerTypeClass::CivilianHouseOwns(_DWORD *this, int a2, int a3)
 {
   _DWORD *v3; // edi
@@ -11949,7 +11949,7 @@ LABEL_12:
 }
 
 
-// ==== 0x0041EE90  AITriggerTypeClass::OwnerHouseOwns  this=int  sig=csp ====
+// ==== 0x0041EE90  AITriggerTypeClass::OwnerHouseOwns  this=AITriggerTypeClass  sig=csp ====
 bool __thiscall AITriggerTypeClass::OwnerHouseOwns(_DWORD *this, _DWORD *a2, int a3)
 {
   int v4; // esi
@@ -11991,25 +11991,25 @@ LABEL_8:
   {
     v7 = 0; /*0x41ef39*/
   }
-  switch ( *(this + 58) ) /*0x41ef4b*/
+  switch ( this->__pad_0E8 ) /*0x41ef4b*/
   {
     case 0: /*0x41ef4b*/
-      result = v7 < *(this + 57); /*0x41ef60*/
+      result = v7 < this->q0E4; /*0x41ef60*/
       break; /*0x41ef65*/
     case 1: /*0x41ef4b*/
-      result = v7 <= *(this + 57); /*0x41ef76*/
+      result = v7 <= this->q0E4; /*0x41ef76*/
       break; /*0x41ef7b*/
     case 2: /*0x41ef4b*/
-      result = v7 == *(this + 57); /*0x41ef8c*/
+      result = v7 == this->q0E4; /*0x41ef8c*/
       break; /*0x41ef91*/
     case 3: /*0x41ef4b*/
-      result = v7 >= *(this + 57); /*0x41efa2*/
+      result = v7 >= this->q0E4; /*0x41efa2*/
       break; /*0x41efa7*/
     case 4: /*0x41ef4b*/
-      result = v7 > *(this + 57); /*0x41efb8*/
+      result = v7 > this->q0E4; /*0x41efb8*/
       break; /*0x41efbd*/
     case 5: /*0x41ef4b*/
-      return v7 != *(this + 57); /*0x41efc6*/
+      return v7 != this->q0E4; /*0x41efc6*/
     default:
       return v9;
   }
@@ -12017,7 +12017,7 @@ LABEL_8:
 }
 
 
-// ==== 0x0041F0D0  AITriggerTypeClass::IronCurtainCharged  this=int  sig=csp ====
+// ==== 0x0041F0D0  AITriggerTypeClass::IronCurtainCharged  this=AITriggerTypeClass  sig=csp ====
 bool __stdcall AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
 {
   int v2; // edx
@@ -12058,7 +12058,7 @@ LABEL_12:
 }
 
 
-// ==== 0x0041F180  AITriggerTypeClass::ChronoSphereCharged  this=int  sig=csp ====
+// ==== 0x0041F180  AITriggerTypeClass::ChronoSphereCharged  this=AITriggerTypeClass  sig=csp ====
 bool __stdcall AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
 {
   int v2; // edx
@@ -12099,7 +12099,7 @@ LABEL_12:
 }
 
 
-// ==== 0x0041F230  AITriggerTypeClass::HouseCredits  this=int  sig=csp ====
+// ==== 0x0041F230  AITriggerTypeClass::HouseCredits  this=AITriggerTypeClass  sig=csp ====
 bool __thiscall AITriggerTypeClass::HouseCredits(_DWORD *this, int a2, int a3)
 {
   char v3; // bl
@@ -12110,25 +12110,25 @@ bool __thiscall AITriggerTypeClass::HouseCredits(_DWORD *this, int a2, int a3)
   if ( !a3 ) /*0x41f23c*/
     return v3; /*0x41f2bd*/
   v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 24))(a3 + 36); /*0x41f245*/
-  switch ( *(this + 58) ) /*0x41f253*/
+  switch ( this->__pad_0E8 ) /*0x41f253*/
   {
     case 0: /*0x41f253*/
-      result = v5 < *(this + 57); /*0x41f266*/
+      result = v5 < this->q0E4; /*0x41f266*/
       break; /*0x41f269*/
     case 1: /*0x41f253*/
-      result = v5 <= *(this + 57); /*0x41f278*/
+      result = v5 <= this->q0E4; /*0x41f278*/
       break; /*0x41f27b*/
     case 2: /*0x41f253*/
-      result = v5 == *(this + 57); /*0x41f28a*/
+      result = v5 == this->q0E4; /*0x41f28a*/
       break; /*0x41f28d*/
     case 3: /*0x41f253*/
-      result = v5 >= *(this + 57); /*0x41f29c*/
+      result = v5 >= this->q0E4; /*0x41f29c*/
       break; /*0x41f29f*/
     case 4: /*0x41f253*/
-      result = v5 > *(this + 57); /*0x41f2ae*/
+      result = v5 > this->q0E4; /*0x41f2ae*/
       break; /*0x41f2b1*/
     case 5: /*0x41f253*/
-      return v5 != *(this + 57); /*0x41f2ba*/
+      return v5 != this->q0E4; /*0x41f2ba*/
     default:
       return v3;
   }
@@ -12230,7 +12230,7 @@ LABEL_28:
 }
 
 
-// ==== 0x0041F490  CCINIClass::ReadInfantryTypeList  this=VOID_PTR  sig=csp ====
+// ==== 0x0041F490  CCINIClass::ReadInfantryTypeList  this=CCINIClass  sig=csp ====
 AITriggerTypeClass *__fastcall CCINIClass::ReadInfantryTypeList(char *a1, int a2)
 {
   CCINIClass *KeyCount; // ebx
@@ -12609,26 +12609,26 @@ char __thiscall TriggerTypeClass_SaveToINI(int this, char *a2)
 }
 
 
-// ==== 0x0041FD30  ObjectClass::method_41FD30  this=VOID_PTR  sig=csp ====
+// ==== 0x0041FD30  ObjectClass::method_41FD30  this=ObjectClass  sig=csp ====
 int __thiscall sub_41FD30(_DWORD *this, int a2)
 {
-  *(this + 54) = a2; /*0x41fd34*/
+  this->q0D8 = a2; /*0x41fd34*/
   return a2; /*0x41fd3a*/
 }
 
 
-// ==== 0x0041FD40  ObjectClass::method_41FD40  this=VOID_PTR  sig=csp ====
+// ==== 0x0041FD40  ObjectClass::method_41FD40  this=ObjectClass  sig=csp ====
 int __thiscall sub_41FD40(_DWORD *this, int a2)
 {
-  *(this + 55) = a2; /*0x41fd44*/
+  this->q0DC = a2; /*0x41fd44*/
   return a2; /*0x41fd4a*/
 }
 
 
-// ==== 0x0041FD50  ObjectClass::method_41FD50  this=VOID_PTR  sig=csp ====
+// ==== 0x0041FD50  ObjectClass::method_41FD50  this=ObjectClass  sig=csp ====
 int __thiscall sub_41FD50(_DWORD *this, int a2)
 {
-  *(this + 56) = a2; /*0x41fd54*/
+  this->q0E0 = a2; /*0x41fd54*/
   return a2; /*0x41fd5a*/
 }
 
@@ -12715,7 +12715,7 @@ int __thiscall AITriggerTypeClass::RegisterFailure(int this)
 }
 
 
-// ==== 0x0041FEE0  globalHelper_01FEE0  this=int  sig=csp ====
+// ==== 0x0041FEE0  globalHelper_01FEE0  this=-  sig=csp ====
 bool __stdcall globalHelper_01FEE0(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
 {
   IUnknown *v3; // edi

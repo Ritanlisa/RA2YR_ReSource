@@ -132,7 +132,7 @@ _DWORD *__thiscall sub_6302A0(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x00630250  VectorClass::PushBackCopy  this=VOID_PTR  sig=csp ====
+// ==== 0x00630250  VectorClass::PushBackCopy  this=VectorClass  sig=csp ====
 char __thiscall VectorClass::PushBackCopy(_DWORD *this, AbstractClass *aP1)
 {
   int v3; // ecx
@@ -140,18 +140,18 @@ char __thiscall VectorClass::PushBackCopy(_DWORD *this, AbstractClass *aP1)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x630253*/
-  if ( *(this + 4) >= v3 ) /*0x63025b*/
+  v3 = this->Capacity; /*0x630253*/
+  if ( this->q010 >= v3 ) /*0x63025b*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x630266*/
+    if ( !this->__pad_034 && v3 ) /*0x630266*/
       return 0; /*0x630266*/
-    v4 = *(this + 5); /*0x630268*/
+    v4 = this->__pad_014; /*0x630268*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x630278*/
       return 0; /*0x63027f*/
   }
-  v6 = *(this + 4); /*0x630285*/
-  v7 = *(this + 1); /*0x630288*/
-  *(this + 4) = v6 + 1; /*0x63028e*/
+  v6 = this->q010; /*0x630285*/
+  v7 = this->Items; /*0x630288*/
+  this->q010 = v6 + 1; /*0x63028e*/
   *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x630298*/
   return 1; /*0x630281*/
 }
@@ -190,7 +190,7 @@ int sub_6302F0()
 }
 
 
-// ==== 0x00630310  DecodeFrameSHP  this=VOID_PTR  sig=csp ====
+// ==== 0x00630310  DecodeFrameSHP  this=-  sig=csp ====
 _DWORD *__fastcall SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
 {
   size_t v6; // ebp
@@ -709,7 +709,7 @@ bool __usercall Network::resetConnectionState@<al>(LONG dwNewLong@<ecx>, int a2@
 }
 
 
-// ==== 0x00630C10  PhoneEditorDialogProc  this=unknown  sig=csp ====
+// ==== 0x00630C10  PhoneEditorDialogProc  this=-  sig=csp ====
 int __stdcall PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax
@@ -1251,7 +1251,7 @@ void __thiscall sub_631640(int this)
 }
 
 
-// ==== 0x006316E0  ObjectClass::UI_Pop_631500_Pop  this=int  sig=csp ====
+// ==== 0x006316E0  ObjectClass::UI_Pop_631500_Pop  this=ObjectClass  sig=csp ====
 bool __userpurge UI_Pop_631500_Pop@<al>(LONG dwNewLong@<ecx>, int a2@<ebx>, int a3@<ebp>, int a4)
 {
   HWND Dialog; // eax
@@ -1279,7 +1279,7 @@ bool __userpurge UI_Pop_631500_Pop@<al>(LONG dwNewLong@<ecx>, int a2@<ebx>, int 
 }
 
 
-// ==== 0x00631760  NetworkSettingsDlgProc  this=unknown  sig=csp ====
+// ==== 0x00631760  NetworkSettingsDlgProc  this=-  sig=csp ====
 int __stdcall NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
@@ -1542,7 +1542,7 @@ int __thiscall GameClass_GetRelatedObject(_DWORD *this)
 }
 
 
-// ==== 0x00631D40  BuildingDebris::Init  this=int  sig=csp ====
+// ==== 0x00631D40  BuildingDebris::Init  this=BuildingDebris  sig=csp ====
 int __thiscall BuildingDebris_Init(_DWORD *this, int a2)
 {
   unsigned int v3; // eax
@@ -1601,47 +1601,47 @@ _DWORD *__thiscall TacticalClass::saveConfig(PixelFXClass *this, int a2)
 }
 
 
-// ==== 0x00631E50  TacticalClass::InterpolateColor  this=int  sig=csp ====
+// ==== 0x00631E50  TacticalClass::InterpolateColor  this=TacticalClass  sig=csp ====
 int __thiscall sub_631E50(_DWORD *this, int a2)
 {
   int v2; // eax
   int result; // eax
   int v4; // edi
 
-  v2 = a2 * *(this + 5) + *(this + 4); /*0x631e5f*/
-  *(this + 4) = v2; /*0x631e61*/
+  v2 = a2 * this->abstractFlags + this->uniqueId; /*0x631e5f*/
+  this->uniqueId = v2; /*0x631e61*/
   if ( v2 > 0x2000 ) /*0x631e69*/
-    *(this + 4) = 0x2000; /*0x631e6b*/
-  result = *(this + 4) & 0xFFF; /*0x631e77*/
-  if ( (*(this + 4) & 0x1000) != 0 ) /*0x631e7f*/
+    this->uniqueId = 0x2000; /*0x631e6b*/
+  result = this->uniqueId & 0xFFF; /*0x631e77*/
+  if ( (this->uniqueId & 0x1000) != 0 ) /*0x631e7f*/
     result = 4096 - result; /*0x631e88*/
-  v4 = result * *(this + 7); /*0x631ea5*/
-  *(this + 1) = (result * *(this + 6) + (4096 - result) * *(this + 9)) >> 12; /*0x631ea8*/
-  *(this + 2) = (v4 + (4096 - result) * *(this + 10)) >> 12; /*0x631eb7*/
-  *(this + 3) = (result * *(this + 8) + (4096 - result) * *(this + 11)) >> 12; /*0x631ecb*/
+  v4 = result * this->referenceCount; /*0x631ea5*/
+  this->q004 = (result * this->nextArrayIndex + (4096 - result) * this->field24) >> 12; /*0x631ea8*/
+  this->q008 = (v4 + (4096 - result) * this->field28) >> 12; /*0x631eb7*/
+  this->q00C = (result * this->NeedsSaveOrLink + (4096 - result) * this->TacticalClass_field_2C) >> 12; /*0x631ecb*/
   return result; /*0x631eb3*/
 }
 
 
-// ==== 0x00631EE0  TacticalClass::DecrementCounter  this=int  sig=csp ====
+// ==== 0x00631EE0  TacticalClass::DecrementCounter  this=TacticalClass  sig=csp ====
 char __thiscall sub_631EE0(_DWORD *this, int a2)
 {
   int v2; // eax
 
-  v2 = *(this + 14) - a2; /*0x631ee9*/
-  *(this + 14) = v2; /*0x631eeb*/
+  v2 = this->field38 - a2; /*0x631ee9*/
+  this->field38 = v2; /*0x631eeb*/
   if ( v2 > 0 ) /*0x631ef0*/
     return 0; /*0x631efe*/
-  *(this + 14) = 0; /*0x631ef2*/
+  this->field38 = 0; /*0x631ef2*/
   return 1; /*0x631efb*/
 }
 
 
-// ==== 0x00631F10  ObjectClass::method_631F10  this=VOID_PTR  sig=csp ====
+// ==== 0x00631F10  ObjectClass::method_631F10  this=ObjectClass  sig=csp ====
 int __thiscall sub_631F10(_DWORD *this, int a2, int a3)
 {
-  *(this + 12) = a2; /*0x631f18*/
-  *(this + 13) = a3; /*0x631f1b*/
+  this->nextObject = a2; /*0x631f18*/
+  this->attachedTag = a3; /*0x631f1b*/
   return a2; /*0x631f1e*/
 }
 
@@ -1663,7 +1663,7 @@ _DWORD *__thiscall GameClass::saveGameState(PixelFXClass *this, char a2)
 }
 
 
-// ==== 0x00631FC0  ObjectClass::method_631FC0  this=VOID_PTR  sig=csp ====
+// ==== 0x00631FC0  ObjectClass::method_631FC0  this=ObjectClass  sig=csp ====
 int __thiscall sub_631FC0(void *this, ObjectClass *aP1)
 {
   if ( aP1 ) /*0x631fc6*/
@@ -1673,7 +1673,7 @@ int __thiscall sub_631FC0(void *this, ObjectClass *aP1)
 }
 
 
-// ==== 0x00631FE0  ObjectClass::method_631FE0  this=VOID_PTR  sig=csp ====
+// ==== 0x00631FE0  ObjectClass::method_631FE0  this=ObjectClass  sig=csp ====
 int __thiscall sub_631FE0(void *this, _BYTE *a2)
 {
   if ( a2 ) /*0x631fe6*/
@@ -1683,26 +1683,26 @@ int __thiscall sub_631FE0(void *this, _BYTE *a2)
 }
 
 
-// ==== 0x00632000  ObjectClass::System_Init  this=VOID_PTR  sig=csp ====
+// ==== 0x00632000  ObjectClass::System_Init  this=ObjectClass  sig=csp ====
 int __thiscall sub_632000(_DWORD *this, _BYTE *a2)
 {
   int result; // eax
 
   DecodeLengthLCW((int)this, a2, 64); /*0x632009*/
   result = FindBitArrayHighestBit((int)this, 64) - 1; /*0x63201a*/
-  *(this + 128) = result; /*0x63201b*/
+  this->q200 = result; /*0x63201b*/
   return result; /*0x632021*/
 }
 
 
-// ==== 0x00632030  ObjectClass::System_Init  this=VOID_PTR  sig=csp ====
+// ==== 0x00632030  ObjectClass::System_Init  this=ObjectClass  sig=csp ====
 char __thiscall sub_632030(void *this, _BYTE *a2)
 {
   return DecodeLengthLCW((int)this + 256, a2, 64); /*0x632041*/
 }
 
 
-// ==== 0x00632740  BigInt::DecryptBlock  this=int  sig=csp ====
+// ==== 0x00632740  BigInt::DecryptBlock  this=BigInt  sig=csp ====
 int __thiscall BigInt::DecryptBlock(int this, Pipe *aP1, Pipe *aP2, Pipe *aP3)
 {
   int v6; // eax
@@ -2156,7 +2156,7 @@ void __thiscall GameClass::sub_6330C0(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00633110  PKStrawClass::SetSource  this=VOID_PTR  sig=csp ====
+// ==== 0x00633110  PKStrawClass::SetSource  this=PKStrawClass  sig=csp ====
 int __thiscall sub_633110(int this, int a2)
 {
   int result; // eax
@@ -2659,7 +2659,7 @@ _DWORD *__thiscall sub_633A20(_DWORD *this)
 }
 
 
-// ==== 0x00633A40  ObjectClass::method_633A40  this=VOID_PTR  sig=csp ====
+// ==== 0x00633A40  ObjectClass::method_633A40  this=ObjectClass  sig=csp ====
 int __thiscall sub_633A40(_DWORD *this, int a2)
 {
   *this = a2; /*0x633a44*/
@@ -2667,26 +2667,26 @@ int __thiscall sub_633A40(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00633A50  ObjectClass::method_633A50  this=VOID_PTR  sig=csp ====
+// ==== 0x00633A50  ObjectClass::method_633A50  this=ObjectClass  sig=csp ====
 int __thiscall sub_633A50(_DWORD *this, int a2)
 {
-  *(this + 1) = a2; /*0x633a54*/
+  this->vtable2 = a2; /*0x633a54*/
   return a2; /*0x633a57*/
 }
 
 
-// ==== 0x00633A60  ObjectClass::method_633A60  this=VOID_PTR  sig=csp ====
+// ==== 0x00633A60  ObjectClass::method_633A60  this=ObjectClass  sig=csp ====
 int __thiscall sub_633A60(_DWORD *this, int a2)
 {
-  *(this + 2) = a2; /*0x633a64*/
+  this->vtable3 = a2; /*0x633a64*/
   return a2; /*0x633a67*/
 }
 
 
-// ==== 0x00633A70  ObjectClass::method_633A70  this=VOID_PTR  sig=csp ====
+// ==== 0x00633A70  ObjectClass::method_633A70  this=ObjectClass  sig=csp ====
 char __thiscall sub_633A70(_BYTE *this, char a2)
 {
-  *(this + 12) = a2; /*0x633a74*/
+  this->vtable4 = a2; /*0x633a74*/
   return a2; /*0x633a77*/
 }
 
@@ -2721,12 +2721,12 @@ char __thiscall sub_633AB0(_BYTE *this)
 }
 
 
-// ==== 0x00633AC0  ObjectClass::ExecuteActionPlanManager_Helper  this=VOID_PTR  sig=csp ====
+// ==== 0x00633AC0  ObjectClass::ExecuteActionPlanManager_Helper  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_633AC0(_DWORD *this)
 {
   *(_BYTE *)this = 0; /*0x633ac2*/
-  *(this + 28) = 0; /*0x633ac5*/
-  *(this + 29) = -1; /*0x633acc*/
+  this->estimatedHealth = 0; /*0x633ac5*/
+  this->isOnMap = -1; /*0x633acc*/
   return this; /*0x633ad3*/
 }
 
@@ -2738,18 +2738,18 @@ void __thiscall sub_633AE0(void *this, const void *a2)
 }
 
 
-// ==== 0x00633B00  ObjectClass::method_633B00  this=VOID_PTR  sig=csp ====
+// ==== 0x00633B00  ObjectClass::method_633B00  this=ObjectClass  sig=csp ====
 int __thiscall sub_633B00(_DWORD *this, int a2)
 {
-  *(this + 28) = a2; /*0x633b04*/
+  this->estimatedHealth = a2; /*0x633b04*/
   return a2; /*0x633b07*/
 }
 
 
-// ==== 0x00633B10  ObjectClass::method_633B10  this=VOID_PTR  sig=csp ====
+// ==== 0x00633B10  ObjectClass::method_633B10  this=ObjectClass  sig=csp ====
 int __thiscall sub_633B10(_DWORD *this, int a2)
 {
-  *(this + 29) = a2; /*0x633b14*/
+  this->isOnMap = a2; /*0x633b14*/
   return a2; /*0x633b17*/
 }
 
@@ -3460,7 +3460,7 @@ _DWORD *__thiscall sub_6345A0(_DWORD **this, _DWORD *a2)
 }
 
 
-// ==== 0x006346B0  ScriptAction::FindItemByValue  this=int  sig=csp ====
+// ==== 0x006346B0  ScriptAction::FindItemByValue  this=ScriptAction  sig=csp ====
 _DWORD *__thiscall sub_6346B0(int *this, int a2)
 {
   int v2; // edx
@@ -3468,11 +3468,11 @@ _DWORD *__thiscall sub_6346B0(int *this, int a2)
   _DWORD **v4; // esi
   _DWORD **i; // ecx
 
-  v2 = *(this + 4); /*0x6346b0*/
+  v2 = this->ScriptAction_field_0x4; /*0x6346b0*/
   v3 = 0; /*0x6346b4*/
   if ( v2 <= 0 ) /*0x6346ba*/
     return 0; /*0x6346ba*/
-  v4 = (_DWORD **)*(this + 1); /*0x6346bc*/
+  v4 = (_DWORD **)this->ScriptAction_field_0x4; /*0x6346bc*/
   for ( i = v4; **i != a2; ++i ) /*0x6346c3*/
   {
     if ( ++v3 >= v2 ) /*0x6346d1*/
@@ -3519,7 +3519,7 @@ int __thiscall sub_6347A0(_DWORD *this, int a2)
 }
 
 
-// ==== 0x006347B0  BuildingClass::GetTypeEntry  this=int  sig=csp ====
+// ==== 0x006347B0  BuildingClass::GetTypeEntry  this=BuildingClass  sig=csp ====
 int __thiscall sub_6347B0(int *this, int a2)
 {
   int v2; // esi
@@ -3529,11 +3529,11 @@ int __thiscall sub_6347B0(int *this, int a2)
   int v6; // edx
   int result; // eax
 
-  v2 = *(this + 4); /*0x6347b3*/
+  v2 = this->vtable2; /*0x6347b3*/
   v3 = 0; /*0x6347b6*/
   if ( v2 <= 0 ) /*0x6347bb*/
     goto LABEL_7; /*0x6347bb*/
-  v4 = (_DWORD **)*(this + 1); /*0x6347c4*/
+  v4 = (_DWORD **)this->vtable2; /*0x6347c4*/
   while ( **v4 != a2 ) /*0x6347cb*/
   {
     ++v3; /*0x6347cd*/
@@ -3548,12 +3548,12 @@ int __thiscall sub_6347B0(int *this, int a2)
 LABEL_7:
     v5 = 0; /*0x6347de*/
   else
-    v5 = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x6347e2*/
+    v5 = *(_DWORD *)(this->vtable2 + 4 * v3); /*0x6347e2*/
 LABEL_9:
   v6 = *(_DWORD *)(v5 + 8); /*0x6347e5*/
   result = 0; /*0x6347e9*/
   if ( v6 != -1 ) /*0x6347f1*/
-    return *(_DWORD *)(*(this + 9) + 4 * v6); /*0x6347f6*/
+    return *(_DWORD *)(this->objectTypeFlags + 4 * v6); /*0x6347f6*/
   return result; /*0x6347e8*/
 }
 
@@ -3790,7 +3790,7 @@ int __thiscall ScriptAction_FindSquadMember(int this)
 }
 
 
-// ==== 0x00634B20  ObjectClass::Team_Get  this=int  sig=csp ====
+// ==== 0x00634B20  ObjectClass::Team_Get  this=ObjectClass  sig=csp ====
 void __thiscall sub_634B20(int *this)
 {
   int v2; // ebp
@@ -3812,24 +3812,24 @@ void __thiscall sub_634B20(int *this)
   _WORD v18[56]; // [esp+30h] [ebp-70h] BYREF
 
   v2 = 0; /*0x634b2a*/
-  v13 = *(this + 12); /*0x634b33*/
+  v13 = this->vtable4; /*0x634b33*/
   if ( v13 > 0 ) /*0x634b37*/
   {
     do /*0x634bf7*/
     {
-      v3 = *(_BYTE **)(*(this + 9) + 4 * v2); /*0x634b48*/
+      v3 = *(_BYTE **)(this->objectTypeFlags + 4 * v2); /*0x634b48*/
       qmemcpy(v18, v3, 0x6Cu); /*0x634b57*/
       v3 += 108; /*0x634b57*/
       v18[54] = *(_WORD *)v3; /*0x634b59*/
       LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
       GetScenarioClassActionCoords(v17, v18); /*0x634b60*/
       Debug::Log(); /*0x634b7d*/
-      v4 = *(this + 4); /*0x634b82*/
+      v4 = this->vtable2; /*0x634b82*/
       v5 = 0; /*0x634b88*/
       v14 = v4; /*0x634b8a*/
       for ( i = 0; v5 < v4; i = v5 ) /*0x634b94*/
       {
-        v6 = *(_DWORD **)(*(this + 1) + 4 * v5); /*0x634b99*/
+        v6 = *(_DWORD **)(this->vtable2 + 4 * v5); /*0x634b99*/
         if ( v6[2] == v2 ) /*0x634b9f*/
         {
           v7 = *v6; /*0x634ba1*/
@@ -3845,16 +3845,16 @@ void __thiscall sub_634B20(int *this)
     }
     while ( v2 < v13 ); /*0x634bf7*/
   }
-  if ( *(this + 42) > 0 ) /*0x634c05*/
+  if ( this->q02A > 0 ) /*0x634c05*/
   {
     qmemcpy(v18, this + 14, 0x6Fu); /*0x634c1b*/
     GetScenarioClassActionCoords(v17, v18); /*0x634c24*/
     Debug::Log(); /*0x634c43*/
-    v8 = *(this + 4); /*0x634c48*/
+    v8 = this->vtable2; /*0x634c48*/
     v9 = 0; /*0x634c4e*/
     for ( j = v8; v9 < v8; ++v9 ) /*0x634c56*/
     {
-      v10 = *(_BYTE **)(*(this + 1) + 4 * v9); /*0x634c5b*/
+      v10 = *(_BYTE **)(this->vtable2 + 4 * v9); /*0x634c5b*/
       if ( v10[12] ) /*0x634c5e*/
       {
         v11 = *(_DWORD *)v10; /*0x634c65*/
@@ -5901,10 +5901,10 @@ unsigned int __thiscall _GetExecutionResourceId_irtualProcessor_details_Concurre
 }
 
 
-// ==== 0x00636DC0  FactoryClass::GetState  this=VOID_PTR  sig=csp ====
+// ==== 0x00636DC0  FactoryClass::GetState  this=FactoryClass  sig=csp ====
 int __thiscall FactoryClass::GetState(_DWORD *this)
 {
-  return *(this + 5); /*0x636dc3*/
+  return this->abstractFlags; /*0x636dc3*/
 }
 
 
@@ -5932,14 +5932,14 @@ int __thiscall ArrayClass_GetAt_Wrap(int *this, int a2)
 }
 
 
-// ==== 0x00636EB0  ObjectClass::ExecuteActionPlanManager_Helper_636EB0  this=int  sig=csp ====
+// ==== 0x00636EB0  ObjectClass::ExecuteActionPlanManager_Helper_636EB0  this=ObjectClass  sig=csp ====
 int __thiscall sub_636EB0(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 5) - 1; /*0x636eb3*/
+  v1 = this->abstractFlags - 1; /*0x636eb3*/
   if ( v1 >= 0 ) /*0x636eb4*/
-    return *(_DWORD *)(*(this + 2) + 4 * v1); /*0x636ebc*/
+    return *(_DWORD *)(this->vtable3 + 4 * v1); /*0x636ebc*/
   else
     return 0; /*0x636eb6*/
 }
@@ -5992,7 +5992,7 @@ LABEL_9:
 }
 
 
-// ==== 0x00636FA0  ObjectClass::method_636FA0  this=VOID_PTR  sig=csp ====
+// ==== 0x00636FA0  ObjectClass::method_636FA0  this=ObjectClass  sig=csp ====
 int __thiscall sub_636FA0(int this, int a2, int a3)
 {
   *(_DWORD *)(this + 144) = a2; /*0x636fa8*/
@@ -6032,7 +6032,7 @@ char __thiscall sub_637030(_BYTE *this)
 }
 
 
-// ==== 0x00637060  TabClass::processTabInput  this=int  sig=csp ====
+// ==== 0x00637060  TabClass::processTabInput  this=TabClass  sig=csp ====
 void __thiscall sub_637060(void *this)
 {
   MEMORY[0xAC4B80] = (int)this; /*0x637060*/
@@ -6614,7 +6614,7 @@ char sub_6379C0()
 }
 
 
-// ==== 0x00637A10  ObjectClass::House_Play  this=int  sig=csp ====
+// ==== 0x00637A10  ObjectClass::House_Play  this=ObjectClass  sig=csp ====
 char sub_637A10()
 {
   char result; // al
@@ -6671,7 +6671,7 @@ char sub_637A10()
 }
 
 
-// ==== 0x00637AA0  FactoryClass::GetFlag  this=unknown  sig=csp ====
+// ==== 0x00637AA0  FactoryClass::GetFlag  this=FactoryClass  sig=csp ====
 char FactoryClass_GetFlag()
 {
   return MEMORY[0xAC4CF4]; /*0x637aa5*/
@@ -6903,14 +6903,14 @@ char __thiscall sub_637D00(_DWORD **this)
 }
 
 
-// ==== 0x00637DB0  ScriptAction::SetField10  this=int  sig=csp ====
+// ==== 0x00637DB0  ScriptAction::SetField10  this=ScriptAction  sig=csp ====
 bool __thiscall ScriptAction::SetField10(void *this)
 {
   return !MEMORY[0xAC4CF4] || this != (void *)4; /*0x637dc0*/
 }
 
 
-// ==== 0x00637DD0  Object_Helper_637DD0  this=unknown  sig=csp ====
+// ==== 0x00637DD0  Object_Helper_637DD0  this=-  sig=csp ====
 char __stdcall sub_637DD0(
         char a1,
         int a2,
@@ -7766,7 +7766,7 @@ AbstractClass *__thiscall TechnoClass::CreatePlanningNode(_DWORD *this)
 }
 
 
-// ==== 0x00638B70  Team_Load  this=int  sig=csp ====
+// ==== 0x00638B70  Team_Load  this=-  sig=csp ====
 char __fastcall sub_638B70(int *a1, int a2, char a3, char a4)
 {
   int v6; // edi
@@ -7806,7 +7806,7 @@ LABEL_9:
 }
 
 
-// ==== 0x00638C40  ObjectClass::ExecuteActionPlanManager_Helper_638C40  this=VOID_PTR  sig=csp ====
+// ==== 0x00638C40  ObjectClass::ExecuteActionPlanManager_Helper_638C40  this=ObjectClass  sig=csp ====
 bool __thiscall sub_638C40(void *this, int a2, char a3)
 {
   if ( this != (void *)1 && this != (void *)11 ) /*0x638c48*/
@@ -7957,7 +7957,7 @@ LABEL_8:
 }
 
 
-// ==== 0x00638F90  sub_638F90  this=unknown  sig=csp ====
+// ==== 0x00638F90  sub_638F90  this=-  sig=csp ====
 int __stdcall sub_638F90(int a1, int a2)
 {
   _DWORD *Coords; // eax
@@ -8134,7 +8134,7 @@ LABEL_13:
 }
 
 
-// ==== 0x006392D0  sub_6392D0  this=unknown  sig=csp ====
+// ==== 0x006392D0  sub_6392D0  this=-  sig=csp ====
 _DWORD **__stdcall sub_6392D0(int a1, int a2)
 {
   int v2; // ebx
@@ -8172,7 +8172,7 @@ _DWORD **__stdcall sub_6392D0(int a1, int a2)
 }
 
 
-// ==== 0x006393A0  sub_6393A0  this=unknown  sig=csp ====
+// ==== 0x006393A0  sub_6393A0  this=-  sig=csp ====
 _DWORD **__stdcall sub_6393A0(int a1, int a2)
 {
   int v2; // ebx
@@ -8210,7 +8210,7 @@ _DWORD **__stdcall sub_6393A0(int a1, int a2)
 }
 
 
-// ==== 0x00639470  sub_639470  this=unknown  sig=csp ====
+// ==== 0x00639470  sub_639470  this=-  sig=csp ====
 int __stdcall sub_639470(int a1, int a2, int a3)
 {
   int v3; // ebp
@@ -8329,7 +8329,7 @@ char __fastcall sub_6394E0(IUnknown *a1, int a2)
 }
 
 
-// ==== 0x006395B0  BuildingClass::SetProduction  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x006395B0  BuildingClass::SetProduction  this=BuildingClass  sig=ida-proto ====
 char __fastcall BuildingClass::SetProduction(int a1, int a2)
 {
   int v2; // ebx
@@ -8422,7 +8422,7 @@ char __fastcall BuildingClass::SetProduction(int a1, int a2)
 }
 
 
-// ==== 0x00639740  BuildingClass::CompleteProduction  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00639740  BuildingClass::CompleteProduction  this=BuildingClass  sig=ida-proto ====
 int __fastcall sub_639740(int a1, int a2)
 {
   int v2; // ebx
@@ -8473,7 +8473,7 @@ int __fastcall sub_639740(int a1, int a2)
 }
 
 
-// ==== 0x00639800  CompleteBuildingProduction  this=VOID_PTR  sig=csp ====
+// ==== 0x00639800  CompleteBuildingProduction  this=-  sig=csp ====
 char __fastcall CompleteBuildingProduction(IUnknown *a1, int edx0)
 {
   TechnoClass *v2; // edi
@@ -8646,7 +8646,7 @@ LABEL_10:
 }
 
 
-// ==== 0x00639A50  ScriptAction::ExecutePlacement  this=int  sig=ida-proto ====
+// ==== 0x00639A50  ScriptAction::ExecutePlacement  this=ScriptAction  sig=ida-proto ====
 int __fastcall ScriptAction::ExecutePlacement(
         int a1,
         int a2,
@@ -8967,7 +8967,7 @@ int sub_639DA0()
 }
 
 
-// ==== 0x00639E30  Object_Read  this=int  sig=csp ====
+// ==== 0x00639E30  Object_Read  this=-  sig=csp ====
 char __fastcall sub_639E30(int *a1, _DWORD *a2)
 {
   int v4; // eax
@@ -9087,7 +9087,7 @@ int __fastcall FactoryClass_DecCounter(unsigned int a1)
 }
 
 
-// ==== 0x00639FD0  NetworkClass::ExecutePlanningModeCmd  this=VOID_PTR  sig=csp ====
+// ==== 0x00639FD0  NetworkClass::ExecutePlanningModeCmd  this=NetworkClass  sig=csp ====
 int __thiscall sub_639FD0(char *this)
 {
   char v1; // al
@@ -9254,7 +9254,7 @@ void __thiscall sub_63A4A0(void *this)
 }
 
 
-// ==== 0x0063A5A0  HandlePlanningModeClick  this=unknown  sig=csp ====
+// ==== 0x0063A5A0  HandlePlanningModeClick  this=-  sig=csp ====
 bool __stdcall HandlePlanningModeClick(MouseClass *aP0, int a2)
 {
   ObjectClass *v3; // esi
@@ -9518,7 +9518,7 @@ char __stdcall sub_63AB00(int a1, int a2)
 }
 
 
-// ==== 0x0063AB60  Map_Process_63AB60  this=VOID_PTR  sig=csp ====
+// ==== 0x0063AB60  Map_Process_63AB60  this=-  sig=csp ====
 char __stdcall sub_63AB60(int a1, int a2)
 {
   int v3; // ebx
@@ -9577,7 +9577,7 @@ IUnknown *UI_Delete_Delete_63AC60()
 }
 
 
-// ==== 0x0063AC70  BuildingClass::CheckBuildability  this=int  sig=csp ====
+// ==== 0x0063AC70  BuildingClass::CheckBuildability  this=BuildingClass  sig=csp ====
 int __thiscall BuildingClass_CheckBuildability(void *this)
 {
   #72 *v1; // ebp
@@ -9850,17 +9850,17 @@ LABEL_37:
 }
 
 
-// ==== 0x0063B050  ObjectClass::Team_Load_63B050  this=VOID_PTR  sig=csp ====
+// ==== 0x0063B050  ObjectClass::Team_Load_63B050  this=ObjectClass  sig=csp ====
 void *__thiscall sub_63B050(_BYTE *this)
 {
   void *result; // eax
 
   result = 0; /*0x63b053*/
-  if ( *(this + 18) ) /*0x63b050*/
+  if ( this->q048 ) /*0x63b050*/
     return BuildingLoadQueue::GetNext(this + 14); /*0x63b05c*/
-  if ( *(this + 28) ) /*0x63b061*/
+  if ( this->referenceCount ) /*0x63b061*/
     return BuildingLoadQueue::GetNext(this + 24); /*0x63b06b*/
-  if ( *(this + 23) ) /*0x63b070*/
+  if ( this->q05C ) /*0x63b070*/
     return BuildingLoadQueue::GetNext(this + 19); /*0x63b07a*/
   return result; /*0x63b07f*/
 }
@@ -10545,11 +10545,11 @@ LABEL_55:
 }
 
 
-// ==== 0x0063BE10  BuildingClass::IsIdleWithNoCaptives  this=VOID_PTR  sig=csp ====
+// ==== 0x0063BE10  BuildingClass::IsIdleWithNoCaptives  this=BuildingClass  sig=csp ====
 bool __thiscall sub_63BE10(_BYTE *this)
 {
-  return (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 388))(this) == 11 /*0x63be4a*/
-      && (!this || (*(this + 20) & 4) == 0 || !*((_DWORD *)this + 361) && !*((_DWORD *)this + 173));
+  return (*(int (__thiscall **)(_BYTE *))(this->q184)(this) == 11 /*0x63be4a*/
+      && (!this || (this->abstractFlags & 4) == 0 || !this->q5A4 && !this->q2B4);
 }
 
 
@@ -11112,7 +11112,7 @@ LABEL_17:
 }
 
 
-// ==== 0x0063CA80  Render_Render_63CA80  this=VOID_PTR  sig=csp ====
+// ==== 0x0063CA80  Render_Render_63CA80  this=-  sig=csp ====
 _DWORD *__fastcall sub_63CA80(_DWORD *a1, _BYTE *a2, int a3)
 {
   int *ScenarioClassActionCoords; // ecx
@@ -11400,7 +11400,7 @@ int __thiscall sub_63CFC0(_DWORD *this)
 }
 
 
-// ==== 0x0063D070  HouseClass::ColorLerpAndPack  this=int  sig=csp ====
+// ==== 0x0063D070  HouseClass::ColorLerpAndPack  this=HouseClass  sig=csp ====
 int __fastcall ColorLerpAndPack(__int16 *a1, unsigned __int8 *a2, ObjectClass *aP1)
 {
   __int16 v3; // ax
@@ -11416,7 +11416,7 @@ int __fastcall ColorLerpAndPack(__int16 *a1, unsigned __int8 *a2, ObjectClass *a
 }
 
 
-// ==== 0x0063D0F0  ObjectClass::Render_Render_63D0F0  this=int  sig=csp ====
+// ==== 0x0063D0F0  ObjectClass::Render_Render_63D0F0  this=ObjectClass  sig=csp ====
 int __thiscall sub_63D0F0(_BYTE *this)
 {
   int result; // eax
@@ -11446,7 +11446,7 @@ int __thiscall sub_63D0F0(_BYTE *this)
                | ((unsigned __int8)byte_A80220 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
       }
     }
-    else if ( *(this + 131) ) /*0x63d1fc*/
+    else if ( this->isSelected ) /*0x63d1fc*/
     {
       return (HIBYTE(word_A80221) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x63d206*/
            | ((unsigned __int8)word_A80221 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
@@ -11457,7 +11457,7 @@ int __thiscall sub_63D0F0(_BYTE *this)
 }
 
 
-// ==== 0x0063D210  ActionScenarioClassCoordToScreen  this=VOID_PTR  sig=csp ====
+// ==== 0x0063D210  ActionScenarioClassCoordToScreen  this=-  sig=csp ====
 int *__fastcall ActionScenarioClassCoordToScreen(BuildingClass *aP0, const void *a1, int a3)
 {
   int v3; // eax
@@ -11596,12 +11596,12 @@ int __thiscall DrawActionLineSegment(void *this, Tactical *aP1, ObjectClass *aP2
 }
 
 
-// ==== 0x0063D540  BuildingClass::updateAnimationState  this=VOID_PTR  sig=csp ====
+// ==== 0x0063D540  BuildingClass::updateAnimationState  this=BuildingClass  sig=csp ====
 int __thiscall sub_63D540(char *this)
 {
   int v1; // eax
 
-  v1 = *(this + 12); /*0x63d540*/
+  v1 = this->vtable4; /*0x63d540*/
   if ( v1 == 11 ) /*0x63d547*/
     return Memory::Alloc76(); /*0x63d549*/
   if ( v1 == 29 ) /*0x63d551*/
@@ -11610,7 +11610,7 @@ int __thiscall sub_63D540(char *this)
 }
 
 
-// ==== 0x0063D560  BuildingClass::DrawSelectionBlip  this=int  sig=csp ====
+// ==== 0x0063D560  BuildingClass::DrawSelectionBlip  this=BuildingClass  sig=csp ====
 int __thiscall BuildingClass::DrawSelectionBlip(void *this, AbstractClass *aP1, BuildingClass *aP2, int a4, int a5)
 {
   double v6; // st7
@@ -11750,7 +11750,7 @@ void __fastcall Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, in
 }
 
 
-// ==== 0x0063D810  DrawTacticalLine2D  this=int  sig=csp ====
+// ==== 0x0063D810  DrawTacticalLine2D  this=-  sig=csp ====
 char __fastcall DrawTacticalLine2D(int a1, ObjectClass *aP1, int aP0, int aP0_4, int aP0_8, int aP0_12, char aP0_16)
 {
   signed int v7; // ebx
@@ -11905,16 +11905,16 @@ VectorClass *__thiscall FactoryClass::RemoveFromArrays(int *Block, char a2)
 }
 
 
-// ==== 0x0063DAD0  ObjectClass::PackRGBFromBytes  this=int  sig=csp ====
+// ==== 0x0063DAD0  ObjectClass::PackRGBFromBytes  this=ObjectClass  sig=csp ====
 int __thiscall PackRGBFromBytes(unsigned __int8 *this)
 {
   return (*this >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x63db15*/
-       | (*(this + 1) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-       | (*(this + 2) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
+       | (this->vtable2 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
+       | (this->vtable3 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
 }
 
 
-// ==== 0x0063DB20  ObjectClass::HandlePlanningModeClick_Handle  this=int  sig=csp ====
+// ==== 0x0063DB20  ObjectClass::HandlePlanningModeClick_Handle  this=ObjectClass  sig=csp ====
 BOOL __thiscall sub_63DB20(_DWORD *this, _DWORD *a2)
 {
   int v2; // eax
@@ -11922,11 +11922,11 @@ BOOL __thiscall sub_63DB20(_DWORD *this, _DWORD *a2)
   BOOL result; // eax
 
   result = 0; /*0x63db54*/
-  if ( *a2 >= *this && *a2 < *this + *(this + 2) ) /*0x63db36*/
+  if ( *a2 >= *this && *a2 < *this + this->vtable3 ) /*0x63db36*/
   {
     v2 = a2[1]; /*0x63db38*/
-    v3 = *(this + 1); /*0x63db3b*/
-    if ( v2 >= v3 && v2 < v3 + *(this + 3) ) /*0x63db49*/
+    v3 = this->vtable2; /*0x63db3b*/
+    if ( v2 >= v3 && v2 < v3 + this->vtable4 ) /*0x63db49*/
       return 1; /*0x63db2b*/
   }
   return result; /*0x63db50*/
@@ -12976,7 +12976,7 @@ char __thiscall BlowPipe_23_::sub_63E7D0(void *this, int a2, _DWORD *a3)
 }
 
 
-// ==== 0x0063E880  SidebarClass::addToList  this=int  sig=csp ====
+// ==== 0x0063E880  SidebarClass::addToList  this=SidebarClass  sig=csp ====
 char __thiscall SidebarClass::addToList(_DWORD *this, DynamicVector *aP1)
 {
   int v3; // ecx
@@ -12984,18 +12984,18 @@ char __thiscall SidebarClass::addToList(_DWORD *this, DynamicVector *aP1)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x63e883*/
-  if ( *(this + 4) >= v3 ) /*0x63e88b*/
+  v3 = this->SidebarClass_field_0x8; /*0x63e883*/
+  if ( this->q010 >= v3 ) /*0x63e88b*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x63e896*/
+    if ( !this->SidebarClass_field_0x34 && v3 ) /*0x63e896*/
       return 0; /*0x63e896*/
-    v4 = *(this + 5); /*0x63e898*/
+    v4 = this->SidebarClass_field_0x14; /*0x63e898*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x63e8a8*/
       return 0; /*0x63e8af*/
   }
-  v6 = *(this + 4); /*0x63e8b5*/
-  v7 = *(this + 1); /*0x63e8b8*/
-  *(this + 4) = v6 + 1; /*0x63e8be*/
+  v6 = this->q010; /*0x63e8b5*/
+  v7 = this->SidebarClass_field_0x4; /*0x63e8b8*/
+  this->q010 = v6 + 1; /*0x63e8be*/
   *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x63e8c8*/
   return 1; /*0x63e8b1*/
 }
@@ -13021,7 +13021,7 @@ int __thiscall BlowPipe_23_::sub_63E8D0(int *this, _DWORD *a2)
 }
 
 
-// ==== 0x0063E900  VectorClass::EraseAt  this=int  sig=csp ====
+// ==== 0x0063E900  VectorClass::EraseAt  this=VectorClass  sig=csp ====
 char __thiscall VectorClass::EraseAt(int *this, IUnknown *aP1)
 {
   int v3; // eax
@@ -13031,11 +13031,11 @@ char __thiscall VectorClass::EraseAt(int *this, IUnknown *aP1)
   v3 = (*(int (__thiscall **)(int *, IUnknown *))(*this + 16))(this, aP1); /*0x63e90c*/
   if ( v3 == -1 ) /*0x63e912*/
     return 0; /*0x63e912*/
-  v4 = *(this + 4); /*0x63e914*/
+  v4 = this->Items; /*0x63e914*/
   if ( v3 >= v4 ) /*0x63e919*/
     return 0; /*0x63e93b*/
   v5 = v4 - 1; /*0x63e91b*/
-  for ( *(this + 4) = v5; v3 < *(this + 4); *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3) ) /*0x63e921*/
+  for ( this->Items = v5; v3 < this->Items; *(_DWORD *)(this->Items + 4 * v3 - 4) = *(_DWORD *)(this->Items + 4 * v3) ) /*0x63e921*/
     ++v3; /*0x63e926*/
   return 1; /*0x63e937*/
 }
@@ -13208,7 +13208,7 @@ char __thiscall BlowPipe_23_::sub_63EAD0(void *this, int a2, _DWORD *a3)
 }
 
 
-// ==== 0x0063EB80  ScriptActionVector::PushBack  this=int  sig=csp ====
+// ==== 0x0063EB80  ScriptActionVector::PushBack  this=ScriptActionVector  sig=csp ====
 char __thiscall ScriptActionVector::PushBack(_DWORD *this, DynamicVector *aP1)
 {
   int v3; // ecx
@@ -13233,7 +13233,7 @@ char __thiscall ScriptActionVector::PushBack(_DWORD *this, DynamicVector *aP1)
 }
 
 
-// ==== 0x0063EBD0  PlanningNodeClass::RemoveFromArray  this=int  sig=csp ====
+// ==== 0x0063EBD0  PlanningNodeClass::RemoveFromArray  this=PlanningNodeClass  sig=csp ====
 char __thiscall PlanningNodeClass::RemoveFromArray(int *this, DynamicVector *aP1)
 {
   int v3; // eax
@@ -13243,11 +13243,11 @@ char __thiscall PlanningNodeClass::RemoveFromArray(int *this, DynamicVector *aP1
   v3 = (*(int (__thiscall **)(int *, DynamicVector *))(*this + 16))(this, aP1); /*0x63ebdc*/
   if ( v3 == -1 ) /*0x63ebe2*/
     return 0; /*0x63ebe2*/
-  v4 = *(this + 4); /*0x63ebe4*/
+  v4 = this->PlanningNodeClass_field_0x04; /*0x63ebe4*/
   if ( v3 >= v4 ) /*0x63ebe9*/
     return 0; /*0x63ec0b*/
   v5 = v4 - 1; /*0x63ebeb*/
-  for ( *(this + 4) = v5; v3 < *(this + 4); *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3) ) /*0x63ebf1*/
+  for ( this->PlanningNodeClass_field_0x04 = v5; v3 < this->PlanningNodeClass_field_0x04; *(_DWORD *)(this->PlanningNodeClass_field_0x04 + 4 * v3 - 4) = *(_DWORD *)(this->PlanningNodeClass_field_0x04 + 4 * v3) ) /*0x63ebf1*/
     ++v3; /*0x63ebf6*/
   return 1; /*0x63ec07*/
 }
@@ -13525,59 +13525,59 @@ _DWORD *__thiscall sub_63EFB0(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x0063F000  FactoryClass::RemoveItem  this=int  sig=csp ====
+// ==== 0x0063F000  FactoryClass::RemoveItem  this=FactoryClass  sig=csp ====
 char __thiscall FactoryClass::RemoveItem(_DWORD *this, VectorClass *aP1)
 {
   int v2; // edx
   VectorClass *v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x63f000*/
+  v2 = this->uniqueId; /*0x63f000*/
   v3 = aP1; /*0x63f003*/
   if ( (int)aP1 >= v2 ) /*0x63f009*/
     return 0; /*0x63f02c*/
   v4 = v2 - 1; /*0x63f00b*/
-  *(this + 4) = v4; /*0x63f00e*/
+  this->uniqueId = v4; /*0x63f00e*/
   if ( (int)aP1 < v4 ) /*0x63f011*/
   {
     do /*0x63f024*/
     {
       v3 = (VectorClass *)((char *)v3 + 1); /*0x63f017*/
-      *(_DWORD *)(*(this + 1) + 4 * (_DWORD)v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * (_DWORD)v3); /*0x63f01b*/
+      *(_DWORD *)(this->vtable2 + 4 * (_DWORD)v3 - 4) = *(_DWORD *)(this->vtable2 + 4 * (_DWORD)v3); /*0x63f01b*/
     }
-    while ( (int)v3 < *(this + 4) ); /*0x63f024*/
+    while ( (int)v3 < this->uniqueId ); /*0x63f024*/
   }
   return 1; /*0x63f029*/
 }
 
 
-// ==== 0x0063F040  Sidebar::RemoveItem  this=int  sig=csp ====
+// ==== 0x0063F040  Sidebar::RemoveItem  this=Sidebar  sig=csp ====
 char __thiscall sub_63F040(_DWORD *this, int a2)
 {
   int v2; // edx
   int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x63f040*/
+  v2 = this->Sidebar_field_0x10; /*0x63f040*/
   v3 = a2; /*0x63f043*/
   if ( a2 >= v2 ) /*0x63f049*/
     return 0; /*0x63f06c*/
   v4 = v2 - 1; /*0x63f04b*/
-  *(this + 4) = v4; /*0x63f04e*/
+  this->Sidebar_field_0x10 = v4; /*0x63f04e*/
   if ( a2 < v4 ) /*0x63f051*/
   {
     do /*0x63f064*/
     {
       ++v3; /*0x63f057*/
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x63f05b*/
+      *(_DWORD *)(this->Sidebar_field_0x4 + 4 * v3 - 4) = *(_DWORD *)(this->Sidebar_field_0x4 + 4 * v3); /*0x63f05b*/
     }
-    while ( v3 < *(this + 4) ); /*0x63f064*/
+    while ( v3 < this->Sidebar_field_0x10 ); /*0x63f064*/
   }
   return 1; /*0x63f069*/
 }
 
 
-// ==== 0x0063F080  ProcessVoxelVertexData  this=int  sig=csp ====
+// ==== 0x0063F080  ProcessVoxelVertexData  this=-  sig=csp ====
 void __fastcall Voxel_ProcessVertexData(_DWORD *a1, int *a2)
 {
   int v2; // esi
@@ -13761,7 +13761,7 @@ void __fastcall Voxel_ProcessVertexData(_DWORD *a1, int *a2)
 }
 
 
-// ==== 0x0063F2E0  Audio_Process  this=unknown  sig=csp ====
+// ==== 0x0063F2E0  Audio_Process  this=-  sig=csp ====
 int __fastcall sub_63F2E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD **a7)
 {
   _DWORD *v7; // ebx

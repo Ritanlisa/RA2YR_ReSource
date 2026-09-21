@@ -697,34 +697,34 @@ int __thiscall BuildingClass::GetSHPFrame(_DWORD *this, ConvertClass *aP1)
 }
 
 
-// ==== 0x00490E50  LightConvertClass::SelectRLEBlitter  this=int  sig=csp ====
+// ==== 0x00490E50  LightConvertClass::SelectRLEBlitter  this=LightConvertClass  sig=csp ====
 int __thiscall LightConvertClass::SelectRLEBlitter(_DWORD *this, IUnknown *aP1)
 {
-  if ( !*(this + 2) ) /*0x490e53*/
+  if ( !this->q008 ) /*0x490e53*/
     ConvertClass::InitTables((int)this); /*0x490e5a*/
   if ( ((unsigned __int8)aP1 & 0x10) != 0 ) /*0x490e65*/
   {
     if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490e6a*/
     {
       if ( (BYTE1(aP1) & 8) != 0 ) /*0x490e6f*/
-        return *(this + 87); /*0x490e71*/
+        return this->q15C; /*0x490e71*/
       else
-        return *(this + 68); /*0x490e7b*/
+        return this->q110; /*0x490e7b*/
     }
     else if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x490e8b*/
     {
       if ( (BYTE1(aP1) & 8) != 0 ) /*0x490e90*/
-        return *(this + 79); /*0x490e92*/
+        return this->q13C; /*0x490e92*/
       else
-        return *(this + 59); /*0x490e9c*/
+        return this->q0EC; /*0x490e9c*/
     }
     else if ( (BYTE1(aP1) & 8) != 0 ) /*0x490ea9*/
     {
-      return *(this + 74); /*0x490eab*/
+      return this->q128; /*0x490eab*/
     }
     else
     {
-      return *(this + 54); /*0x490eb5*/
+      return this->q0D8; /*0x490eb5*/
     }
   }
   switch ( (unsigned __int8)aP1 & 6 ) /*0x490ec7*/
@@ -733,126 +733,126 @@ int __thiscall LightConvertClass::SelectRLEBlitter(_DWORD *this, IUnknown *aP1)
       if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x491082*/
       {
         if ( (BYTE1(aP1) & 8) != 0 ) /*0x491087*/
-          return *(this + 90); /*0x491089*/
+          return this->q168; /*0x491089*/
         else
-          return *(this + 72); /*0x491093*/
+          return this->q120; /*0x491093*/
       }
       else if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x4910a3*/
       {
         if ( ((unsigned __int8)aP1 & 8) != 0 ) /*0x4910a7*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x4910ac*/
-            return *(this + 85); /*0x4910ae*/
+            return this->q154; /*0x4910ae*/
           else
-            return *(this + 66); /*0x4910b8*/
+            return this->q108; /*0x4910b8*/
         }
         else if ( (BYTE1(aP1) & 8) != 0 ) /*0x4910c5*/
         {
-          return *(this + 82); /*0x4910c7*/
+          return this->q148; /*0x4910c7*/
         }
         else
         {
-          return *(this + 63); /*0x4910d1*/
+          return this->q0FC; /*0x4910d1*/
         }
       }
       else if ( (BYTE1(aP1) & 8) != 0 ) /*0x4910de*/
       {
-        return *(this + 77); /*0x4910e0*/
+        return this->q134; /*0x4910e0*/
       }
       else
       {
-        return *(this + 57); /*0x4910ea*/
+        return this->q0E4; /*0x4910ea*/
       }
     case 4: /*0x490ec7*/
       if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x49100d*/
       {
         if ( (BYTE1(aP1) & 8) != 0 ) /*0x491012*/
-          return *(this + 89); /*0x491014*/
+          return this->q164; /*0x491014*/
         else
-          return *(this + 71); /*0x49101e*/
+          return this->q11C; /*0x49101e*/
       }
       else if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x49102e*/
       {
         if ( ((unsigned __int8)aP1 & 8) != 0 ) /*0x491032*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x491037*/
-            return *(this + 84); /*0x491039*/
+            return this->q150; /*0x491039*/
           else
-            return *(this + 65); /*0x491043*/
+            return this->q104; /*0x491043*/
         }
         else if ( (BYTE1(aP1) & 8) != 0 ) /*0x491050*/
         {
-          return *(this + 81); /*0x491052*/
+          return this->q144; /*0x491052*/
         }
         else
         {
-          return *(this + 62); /*0x49105c*/
+          return this->q0F8; /*0x49105c*/
         }
       }
       else if ( (BYTE1(aP1) & 8) != 0 ) /*0x491069*/
       {
-        return *(this + 76); /*0x49106b*/
+        return this->q130; /*0x49106b*/
       }
       else
       {
-        return *(this + 56); /*0x491075*/
+        return this->q0E0; /*0x491075*/
       }
     case 6: /*0x490ec7*/
       if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490f98*/
       {
         if ( (BYTE1(aP1) & 8) != 0 ) /*0x490f9d*/
-          return *(this + 88); /*0x490f9f*/
+          return this->q160; /*0x490f9f*/
         else
-          return *(this + 70); /*0x490fa9*/
+          return this->q118; /*0x490fa9*/
       }
       else if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x490fb9*/
       {
         if ( ((unsigned __int8)aP1 & 8) != 0 ) /*0x490fbd*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490fc2*/
-            return *(this + 83); /*0x490fc4*/
+            return this->q14C; /*0x490fc4*/
           else
-            return *(this + 64); /*0x490fce*/
+            return this->q100; /*0x490fce*/
         }
         else if ( (BYTE1(aP1) & 8) != 0 ) /*0x490fdb*/
         {
-          return *(this + 80); /*0x490fdd*/
+          return this->q140; /*0x490fdd*/
         }
         else
         {
-          return *(this + 61); /*0x490fe7*/
+          return this->q0F4; /*0x490fe7*/
         }
       }
       else if ( (BYTE1(aP1) & 8) != 0 ) /*0x490ff4*/
       {
-        return *(this + 75); /*0x490ff6*/
+        return this->q12C; /*0x490ff6*/
       }
       else
       {
-        return *(this + 55); /*0x491000*/
+        return this->q0DC; /*0x491000*/
       }
     default:
       if ( ((unsigned __int8)aP1 & 1) != 0 ) /*0x490ee1*/
       {
         if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490ee6*/
-          return *(this + 69); /*0x490ee8*/
+          return this->q114; /*0x490ee8*/
         if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x490ef8*/
-          return *(this + 60); /*0x490efa*/
-        return *(this + 53); /*0x490eef*/
+          return this->q0F0; /*0x490efa*/
+        return this->q0D4; /*0x490eef*/
       }
       if ( ((unsigned __int8)aP1 & 0x20) != 0 ) /*0x490f10*/
       {
         if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490f15*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490f1a*/
-            return *(this + 86); /*0x490f23*/
-          return *(this + 67); /*0x490f58*/
+            return this->q158; /*0x490f23*/
+          return this->q10C; /*0x490f58*/
         }
         if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x490f2c*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490f31*/
-            return *(this + 78); /*0x490f3a*/
-          return *(this + 58); /*0x490f79*/
+            return this->q138; /*0x490f3a*/
+          return this->q0E8; /*0x490f79*/
         }
       }
       else
@@ -860,25 +860,25 @@ int __thiscall LightConvertClass::SelectRLEBlitter(_DWORD *this, IUnknown *aP1)
         if ( (BYTE1(aP1) & 0x40) != 0 ) /*0x490f40*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490f45*/
-            return *(this + 86); /*0x490f4e*/
-          return *(this + 67); /*0x490f45*/
+            return this->q158; /*0x490f4e*/
+          return this->q10C; /*0x490f45*/
         }
         if ( ((unsigned int)aP1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x490f61*/
         {
           if ( (BYTE1(aP1) & 8) != 0 ) /*0x490f66*/
-            return *(this + 78); /*0x490f6f*/
-          return *(this + 58); /*0x490f66*/
+            return this->q138; /*0x490f6f*/
+          return this->q0E8; /*0x490f66*/
         }
       }
       if ( (BYTE1(aP1) & 8) != 0 ) /*0x490f7f*/
-        return *(this + 73); /*0x490f81*/
+        return this->q124; /*0x490f81*/
       else
-        return *(this + 52); /*0x490f8b*/
+        return this->q0D0; /*0x490f8b*/
   }
 }
 
 
-// ==== 0x00491100  ObjectClass::method  this=int  sig=csp ====
+// ==== 0x00491100  ObjectClass::method  this=ObjectClass  sig=csp ====
 int sub_491100(ObjectClass *aP0, char a2, int a3, ObjectClass *aP3, __int16 a5, char a6, __int16 a7)
 {
   char v7; // dl
@@ -14803,7 +14803,7 @@ _DWORD *__thiscall MissionClass_Init(_DWORD *this)
 }
 
 
-// ==== 0x0049B660  MPCooperative::processTurn  this=int  sig=csp ====
+// ==== 0x0049B660  MPCooperative::processTurn  this=MPCooperative  sig=csp ====
 int __thiscall sub_49B660(int this, char *a2, char *a3)
 {
   if ( a2 ) /*0x49b66e*/
@@ -14853,7 +14853,7 @@ void __thiscall Array_Cleanup(int this)
 }
 
 
-// ==== 0x0049B760  String::AssignWideToChar  this=int  sig=csp ====
+// ==== 0x0049B760  String::AssignWideToChar  this=String  sig=csp ====
 void __thiscall String::AssignWideToChar(char *this, CampaignScore *aP1, CampaignScore *aP2)
 {
   if ( aP1 ) /*0x49b76b*/
@@ -14867,7 +14867,7 @@ void __thiscall String::AssignWideToChar(char *this, CampaignScore *aP1, Campaig
 }
 
 
-// ==== 0x0049B7E0  FillScoreScreenStats  this=int  sig=csp ====
+// ==== 0x0049B7E0  FillScoreScreenStats  this=-  sig=csp ====
 void __fastcall FillScoreScreenStats(IUnknown *Destination, char a2)
 {
   IUnknown *v2; // ebp
@@ -15090,7 +15090,7 @@ char __thiscall UpdateScoreScreenStatistics(int this)
 }
 
 
-// ==== 0x0049BC80  Movie::GetSectionID  this=int  sig=csp ====
+// ==== 0x0049BC80  Movie::GetSectionID  this=Movie  sig=csp ====
 char __thiscall Movie_GetSectionID(int this, _DWORD *a2)
 {
   if ( !*(_BYTE *)(this + 108) ) /*0x49bc80*/
@@ -15100,7 +15100,7 @@ char __thiscall Movie_GetSectionID(int this, _DWORD *a2)
 }
 
 
-// ==== 0x0049BCA0  MPCooperative::GetMovieScore  this=int  sig=csp ====
+// ==== 0x0049BCA0  MPCooperative::GetMovieScore  this=MPCooperative  sig=csp ====
 char __thiscall MPCooperative::GetMovieScore(int this, CampaignEndScoreClass *aP1)
 {
   if ( !*(_BYTE *)(this + 108) ) /*0x49bca0*/
@@ -15110,7 +15110,7 @@ char __thiscall MPCooperative::GetMovieScore(int this, CampaignEndScoreClass *aP
 }
 
 
-// ==== 0x0049BCC0  Movie::GetState  this=int  sig=csp ====
+// ==== 0x0049BCC0  Movie::GetState  this=Movie  sig=csp ====
 char __thiscall Movie::GetState(int this, CCINIClass *aP1)
 {
   if ( !*(_BYTE *)(this + 108) ) /*0x49bcc0*/
@@ -15120,7 +15120,7 @@ char __thiscall Movie::GetState(int this, CCINIClass *aP1)
 }
 
 
-// ==== 0x0049BCE0  MPCooperative::BuildScoreEntries  this=int  sig=csp ====
+// ==== 0x0049BCE0  MPCooperative::BuildScoreEntries  this=MPCooperative  sig=csp ====
 char __thiscall MPCooperative::BuildScoreEntries(int this, int a2, CCINIClass *aP2)
 {
   int v6; // eax
@@ -15318,7 +15318,7 @@ char __thiscall MPCooperative::WriteCoopSaveINI(char *this)
 }
 
 
-// ==== 0x0049C0D0  ObjectClass::LoadCampaignCoopSave  this=int  sig=csp ====
+// ==== 0x0049C0D0  ObjectClass::LoadCampaignCoopSave  this=ObjectClass  sig=csp ====
 char __thiscall CampaignClass_LoadCoopSave(char *this)
 {
   char *v2; // ebx
@@ -15355,7 +15355,7 @@ char __thiscall CampaignClass_LoadCoopSave(char *this)
   if ( !*this ) /*0x49c0dc*/
     return 0; /*0x49c0dc*/
   v2 = this + 28; /*0x49c0e9*/
-  if ( !*(this + 28) ) /*0x49c0e6*/
+  if ( !this->referenceCount ) /*0x49c0e6*/
     return 0; /*0x49c0ee*/
   v3 = 0; /*0x49c0f7*/
   v4 = this; /*0x49c0fb*/
@@ -15455,55 +15455,55 @@ LABEL_44:
     BufferIOFileClass::Dtor(v29); /*0x49c58c*/
     return 0; /*0x49c594*/
   }
-  *((_DWORD *)this + 14) = INIClass::ReadInt_Overwrite(v28, unk_81F19C, 0); /*0x49c2fc*/
+  this->attachedBomb = INIClass::ReadInt_Overwrite(v28, unk_81F19C, 0); /*0x49c2fc*/
   INIClass::ReadInt_Overwrite(v28, unk_81F194, 0); /*0x49c2ff*/
-  *((_DWORD *)this + 17) = INIClass::ReadInt_Overwrite(v28, unk_81F184, -1); /*0x49c329*/
-  *((_DWORD *)this + 5) = SuperWeaponTypeClass::FindOrCreate( /*0x49c341*/
+  this->q011 = INIClass::ReadInt_Overwrite(v28, unk_81F184, -1); /*0x49c329*/
+  this->abstractFlags = SuperWeaponTypeClass::FindOrCreate( /*0x49c341*/
                             (unsigned __int8 ***)v24,
                             (unsigned __int8 *)v28,
                             (unsigned __int8 *)unk_81F17C,
                             -2);
-  *((_DWORD *)this + 6) = INIClass::ReadInt_Overwrite(v28, unk_81F174, -2); /*0x49c349*/
-  *((_DWORD *)this + 12) = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
+  this->nextArrayIndex = INIClass::ReadInt_Overwrite(v28, unk_81F174, -2); /*0x49c349*/
+  this->vtable4 = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
                              (unsigned __int8 ***)v24,
                              (unsigned __int8 *)v28,
                              (unsigned __int8 *)unk_81F16C,
                              -2);
-  *((_DWORD *)this + 13) = INIClass::ReadInt_Overwrite(v28, unk_81F164, -2); /*0x49c388*/
-  *((_DWORD *)this + 18) = INIClass::ReadInt_Overwrite(v28, unk_81F15C, 0); /*0x49c390*/
-  *((_DWORD *)this + 19) = INIClass::ReadInt_Overwrite(v28, unk_81F154, 0); /*0x49c3b6*/
-  *((_DWORD *)this + 20) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F14C], 0); /*0x49c3cd*/
-  *((_DWORD *)this + 21) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F144], 0); /*0x49c3d5*/
-  *((_DWORD *)this + 22) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F13C], 0); /*0x49c3fb*/
-  *((_DWORD *)this + 23) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
-  *((_DWORD *)this + 24) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F12C], 0); /*0x49c41a*/
-  *((_DWORD *)this + 25) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F124], 0); /*0x49c440*/
+  this->attachedTag = INIClass::ReadInt_Overwrite(v28, unk_81F164, -2); /*0x49c388*/
+  this->q048 = INIClass::ReadInt_Overwrite(v28, unk_81F15C, 0); /*0x49c390*/
+  this->q04C = INIClass::ReadInt_Overwrite(v28, unk_81F154, 0); /*0x49c3b6*/
+  this->abstractFlags = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F14C], 0); /*0x49c3cd*/
+  this->q054 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F144], 0); /*0x49c3d5*/
+  this->q058 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F13C], 0); /*0x49c3fb*/
+  this->q05C = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
+  this->nextArrayIndex = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F12C], 0); /*0x49c41a*/
+  this->customSound = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F124], 0); /*0x49c440*/
   Int_Overwrite = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F11C], 0); /*0x49c443*/
-  v20 = *((_DWORD *)this + 17); /*0x49c448*/
-  *((_DWORD *)this + 26) = Int_Overwrite; /*0x49c44b*/
+  v20 = this->q011; /*0x49c448*/
+  this->bombVisible = Int_Overwrite; /*0x49c44b*/
   if ( !MEMORY[0x89F578] ) /*0x49c455*/
     CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49c45c*/
   if ( v20 < 0 || v20 >= MEMORY[0x89F574] ) /*0x49c46f*/
   {
-    *((_DWORD *)this + 16) = 0; /*0x49c550*/
+    this->uniqueId = 0; /*0x49c550*/
     goto LABEL_44; /*0x49c550*/
   }
   v21 = MEMORY[0x89F570] + 76 * v20; /*0x49c486*/
-  *((_DWORD *)this + 16) = *(char *)(v21 + 8); /*0x49c489*/
-  *((_DWORD *)this + 15) = __2_YAPAXI_Z(4 * *(char *)(v21 + 8)); /*0x49c499*/
-  for ( j = 0; j < *((_DWORD *)this + 16); ++j ) /*0x49c4a6*/
+  this->uniqueId = *(char *)(v21 + 8); /*0x49c489*/
+  this->ambientSoundController = __2_YAPAXI_Z(4 * *(char *)(v21 + 8)); /*0x49c499*/
+  for ( j = 0; j < this->uniqueId; ++j ) /*0x49c4a6*/
   {
     sprintf(Buffer, MEMORY[0x81F114], j + 1); /*0x49c4b9*/
-    *(_DWORD *)(*((_DWORD *)this + 15) + 4 * j) = __2_YAPAXI_Z(0x104u); /*0x49c4ce*/
+    *(_DWORD *)(this->ambientSoundController + 4 * j) = __2_YAPAXI_Z(0x104u); /*0x49c4ce*/
     INIClass::GetString( /*0x49c4f3*/
       (unsigned __int8 ***)v24,
       (unsigned __int8 *)v28,
       (unsigned __int8 *)Buffer,
       MEMORY[0x81F108],
-      *(char **)(*((_DWORD *)this + 15) + 4 * j),
+      *(char **)(this->ambientSoundController + 4 * j),
       260);
   }
-  *(this + 108) = 1; /*0x49c505*/
+  this->health = 1; /*0x49c505*/
   HashTable::DestroyHashTableINIClass(v24); /*0x49c509*/
   v29[0] = &vt_CCFileClass; /*0x49c515*/
   v31 = 0; /*0x49c520*/
@@ -15715,7 +15715,7 @@ LABEL_47:
 }
 
 
-// ==== 0x0049CAF0  Movie::SetupScreen  this=int  sig=csp ====
+// ==== 0x0049CAF0  Movie::SetupScreen  this=Movie  sig=csp ====
 char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
 {
   CCINIClass *v3; // eax
@@ -15787,7 +15787,7 @@ char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
 }
 
 
-// ==== 0x0049CC50  MPCooperative::validateMove  this=VOID_PTR  sig=csp ====
+// ==== 0x0049CC50  MPCooperative::validateMove  this=MPCooperative  sig=csp ====
 char __thiscall sub_49CC50(
         _DWORD *this,
         int a2,
@@ -15851,24 +15851,24 @@ char __thiscall sub_49CC50(
 {
   int v59; // esi
 
-  if ( a2 < 0 || a2 >= *(this + 16) ) /*0x49cc5f*/
+  if ( a2 < 0 || a2 >= this->MPCooperative_field_0x10 ) /*0x49cc5f*/
     return 0; /*0x49ccde*/
-  v59 = *(this + 18); /*0x49cc66*/
-  *(this + 14) = a2; /*0x49cc69*/
-  *(this + 18) = a20 + v59; /*0x49cc75*/
-  *(this + 19) += a48; /*0x49cc81*/
-  *(this + 20) += a24; /*0x49cc90*/
-  *(this + 21) += a52; /*0x49cc9c*/
-  *(this + 22) += a16; /*0x49ccab*/
-  *(this + 23) += a44; /*0x49ccb7*/
-  *(this + 24) += a28; /*0x49ccc6*/
-  *(this + 25) += a56; /*0x49ccd2*/
-  *(this + 26) = a3; /*0x49ccd5*/
+  v59 = this->MPCooperative_field_0x48; /*0x49cc66*/
+  this->MPCooperative_field_0x38 = a2; /*0x49cc69*/
+  this->MPCooperative_field_0x48 = a20 + v59; /*0x49cc75*/
+  this->MPCooperative_field_0x4C += a48; /*0x49cc81*/
+  this->MPCooperative_field_0x14 += a24; /*0x49cc90*/
+  this->MPCooperative_field_0x54 += a52; /*0x49cc9c*/
+  this->MPCooperative_field_0x58 += a16; /*0x49ccab*/
+  this->MPCooperative_field_0x5C += a44; /*0x49ccb7*/
+  this->__pad_018 += a28; /*0x49ccc6*/
+  this->MPCooperative_field_0x64 += a56; /*0x49ccd2*/
+  this->MPCooperative_field_0x68 = a3; /*0x49ccd5*/
   return 1; /*0x49ccdb*/
 }
 
 
-// ==== 0x0049CCF0  ObjectClass::DecodeCampaignPlayerName  this=int  sig=csp ====
+// ==== 0x0049CCF0  ObjectClass::DecodeCampaignPlayerName  this=ObjectClass  sig=csp ====
 char __thiscall sub_49CCF0(
         int this,
         int a2,
@@ -16134,7 +16134,7 @@ char __thiscall sub_49CCF0(
 }
 
 
-// ==== 0x0049D070  Array::GetElementAt  this=int  sig=csp ====
+// ==== 0x0049D070  Array::GetElementAt  this=Array  sig=csp ====
 char __thiscall Array_GetElementAt(int this, _DWORD *a2, int a3)
 {
   int v3; // edx
@@ -16158,7 +16158,7 @@ char __thiscall Array_GetElementAt(int this, _DWORD *a2, int a3)
 }
 
 
-// ==== 0x0049D120  MPCooperative::ReadCoopSaveINI  this=int  sig=csp ====
+// ==== 0x0049D120  MPCooperative::ReadCoopSaveINI  this=MPCooperative  sig=csp ====
 bool __thiscall MPCooperative::ReadCoopSaveINI(char *this)
 {
   char *v1; // edi
@@ -16188,7 +16188,7 @@ bool __thiscall MPCooperative::ReadCoopSaveINI(char *this)
   if ( !*this ) /*0x49d12b*/
     return 0; /*0x49d12b*/
   v2 = this + 28; /*0x49d137*/
-  if ( !*(this + 28) ) /*0x49d134*/
+  if ( !this->__pad_070 ) /*0x49d134*/
     return 0; /*0x49d13c*/
   CCFileClass::Construct(v16, MEMORY[0x81F0F8]); /*0x49d14b*/
   v19[1] = 0; /*0x49d159*/
@@ -16281,7 +16281,7 @@ bool __thiscall MPCooperative::ReadCoopSaveINI(char *this)
 }
 
 
-// ==== 0x0049D390  ObjectClass::LoadCoopCampaignSave  this=int  sig=csp ====
+// ==== 0x0049D390  ObjectClass::LoadCoopCampaignSave  this=ObjectClass  sig=csp ====
 char __thiscall LoadCoopCampaignSave(char *this, IUnknown *aP1)
 {
   char *v2; // edi
@@ -16312,7 +16312,7 @@ char __thiscall LoadCoopCampaignSave(char *this, IUnknown *aP1)
   if ( !*this ) /*0x49d39d*/
     return 0; /*0x49d39d*/
   v3 = this + 28; /*0x49d3a8*/
-  if ( !*(this + 28) ) /*0x49d3a5*/
+  if ( !this->referenceCount ) /*0x49d3a5*/
     return 0; /*0x49d3ad*/
   CCFileClass::Construct(&aP1a, MEMORY[0x81F0F8]); /*0x49d3bc*/
   v20[1] = 0; /*0x49d3c8*/
@@ -16410,7 +16410,7 @@ LABEL_5:
 }
 
 
-// ==== 0x0049D680  ObjectClass::SerializeCampaignOptions  this=int  sig=csp ====
+// ==== 0x0049D680  ObjectClass::SerializeCampaignOptions  this=ObjectClass  sig=csp ====
 char __thiscall SerializeCampaignOptions(char *this)
 {
   int v3; // esi
@@ -16438,9 +16438,9 @@ char __thiscall SerializeCampaignOptions(char *this)
   char v25[16]; // [esp+18h] [ebp-1A0h] BYREF
   char Buffer[400]; // [esp+28h] [ebp-190h] BYREF
 
-  if ( !*(this + 108) ) /*0x49d68b*/
+  if ( !this->health ) /*0x49d68b*/
     return 0; /*0x49d68b*/
-  v3 = *((_DWORD *)this + 17); /*0x49d6a3*/
+  v3 = this->q011; /*0x49d6a3*/
   if ( !MEMORY[0x89F578] ) /*0x49d6a8*/
     CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49d6af*/
   v4 = 0; /*0x49d6b4*/
@@ -16450,17 +16450,17 @@ char __thiscall SerializeCampaignOptions(char *this)
   sprintf( /*0x49d70c*/
     Buffer,
     stru_81F218,
-    *((_DWORD *)this + 17),
-    *((_DWORD *)this + 14),
-    *((_DWORD *)this + 26),
-    *((_DWORD *)this + 18),
-    *((_DWORD *)this + 20),
-    *((_DWORD *)this + 22),
-    *((_DWORD *)this + 24),
-    *((_DWORD *)this + 19),
-    *((_DWORD *)this + 21),
-    *((_DWORD *)this + 23),
-    *((_DWORD *)this + 25));
+    this->q011,
+    this->attachedBomb,
+    this->bombVisible,
+    this->q048,
+    this->abstractFlags,
+    this->q058,
+    this->nextArrayIndex,
+    this->q04C,
+    this->q054,
+    this->q05C,
+    this->customSound);
   if ( *((int *)this + 16) > 0 ) /*0x49d719*/
   {
     v23 = 0; /*0x49d71f*/
@@ -16468,7 +16468,7 @@ char __thiscall SerializeCampaignOptions(char *this)
     {
       v5 = v23; /*0x49d723*/
       v6 = 0; /*0x49d727*/
-      while ( _strcmpi((const void *)(v5 + *(_DWORD *)(v24 + 12)), *(const void **)(*((_DWORD *)this + 15) + 4 * v4)) ) /*0x49d748*/
+      while ( _strcmpi((const void *)(v5 + *(_DWORD *)(v24 + 12)), *(const void **)(this->ambientSoundController + 4 * v4)) ) /*0x49d748*/
       {
         ++v6; /*0x49d74a*/
         v5 += 260; /*0x49d74b*/
@@ -16483,7 +16483,7 @@ char __thiscall SerializeCampaignOptions(char *this)
       ++v4; /*0x49d79b*/
       v23 += 780; /*0x49d7aa*/
     }
-    while ( v4 < *((_DWORD *)this + 16) ); /*0x49d7ae*/
+    while ( v4 < this->uniqueId ); /*0x49d7ae*/
   }
   strcat(Buffer, a1_0); /*0x49d7d9*/
   v7 = 0; /*0x49d7e7*/
@@ -16573,7 +16573,7 @@ char __thiscall SerializeCampaignOptions(char *this)
 }
 
 
-// ==== 0x0049D9F0  SideClass::FindByName  this=VOID_PTR  sig=csp ====
+// ==== 0x0049D9F0  SideClass::FindByName  this=SideClass  sig=csp ====
 int __thiscall SideClass::FindByName(void *this)
 {
   int v3; // ebx
@@ -17555,14 +17555,14 @@ int __thiscall DynamicVectorClass_PAD_16_::Get(_DWORD *this, int a2)
 }
 
 
-// ==== 0x0049EA10  Node::Init  this=int  sig=csp ====
+// ==== 0x0049EA10  Node::Init  this=Node  sig=csp ====
 _DWORD *__thiscall Node_Init(_DWORD *this)
 {
   *this = 0; /*0x49ea14*/
-  *(this + 1) = 0; /*0x49ea16*/
-  *(this + 2) = 0; /*0x49ea19*/
+  this->q004 = 0; /*0x49ea16*/
+  this->q008 = 0; /*0x49ea19*/
   *((_BYTE *)this + 12) = 0; /*0x49ea1c*/
-  *(this + 4) = 0; /*0x49ea1f*/
+  this->q004 = 0; /*0x49ea1f*/
   return this; /*0x49ea22*/
 }
 
@@ -18193,7 +18193,7 @@ int sub_49F2D0()
 }
 
 
-// ==== 0x0049F2F0  sub_49F2F0  this=unknown  sig=csp ====
+// ==== 0x0049F2F0  sub_49F2F0  this=-  sig=csp ====
 int sub_49F2F0()
 {
   MEMORY[0x89F688][0] = -65536; /*0x49f305*/
@@ -18231,7 +18231,7 @@ int sub_49F3A0()
 }
 
 
-// ==== 0x0049F420  RandomCoordScatter  this=float  sig=csp ====
+// ==== 0x0049F420  RandomCoordScatter  this=-  sig=csp ====
 int *__fastcall RandomCoordScatter(int *a0, IUnknown *aP1, int aP2, ScenarioClass *aP3)
 {
   char v5; // al
@@ -18289,7 +18289,7 @@ int *__fastcall RandomCoordScatter(int *a0, IUnknown *aP1, int aP2, ScenarioClas
 }
 
 
-// ==== 0x0049F550  globalHelper_09F550  this=int  sig=csp ====
+// ==== 0x0049F550  globalHelper_09F550  this=-  sig=csp ====
 IUnknown *__fastcall globalHelper_09F550(int *a1, IUnknown *a2, int a3)
 {
   int v4; // eax
@@ -18483,25 +18483,25 @@ void __thiscall IntVector_Destructor(_DWORD *this)
 }
 
 
-// ==== 0x0049FA00  RefCount::Increment  this=VOID_PTR  sig=csp ====
+// ==== 0x0049FA00  RefCount::Increment  this=RefCount  sig=csp ====
 int __thiscall RefCount_Increment(_DWORD *this, int a2)
 {
   int v3; // edi
   int i; // eax
   int v5; // ecx
 
-  v3 = *(this + 2); /*0x49fa09*/
+  v3 = this->__pad_008; /*0x49fa09*/
   if ( a2 < v3 ) /*0x49fa0e*/
   {
 LABEL_5:
-    ++*(_DWORD *)(*(this + 1) + 4 * a2); /*0x49fa3d*/
-    v5 = *(this + 1); /*0x49fa4d*/
-    ++*(this + 4); /*0x49fa51*/
+    ++*(_DWORD *)(this->RefCount_field_04 + 4 * a2); /*0x49fa3d*/
+    v5 = this->RefCount_field_04; /*0x49fa4d*/
+    ++this->RefCount_field_04; /*0x49fa51*/
     return *(_DWORD *)(v5 + 4 * a2); /*0x49fa59*/
   }
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, a2 + 10, 0) ) /*0x49fa1a*/
   {
-    for ( i = v3; i < *(this + 2); *(_DWORD *)(*(this + 1) + 4 * i - 4) = 0 ) /*0x49fa28*/
+    for ( i = v3; i < this->__pad_008; *(_DWORD *)(this->RefCount_field_04 + 4 * i - 4) = 0 ) /*0x49fa28*/
       ++i; /*0x49fa2d*/
     goto LABEL_5; /*0x49fa3b*/
   }
@@ -18509,25 +18509,25 @@ LABEL_5:
 }
 
 
-// ==== 0x0049FA70  CounterClass::Decrement  this=VOID_PTR  sig=csp ====
+// ==== 0x0049FA70  CounterClass::Decrement  this=CounterClass  sig=csp ====
 int __thiscall CounterClass_Decrement(_DWORD *this, int a2)
 {
   int v3; // edi
   int i; // eax
   int v5; // ecx
 
-  v3 = *(this + 2); /*0x49fa79*/
+  v3 = this->Capacity; /*0x49fa79*/
   if ( a2 < v3 ) /*0x49fa7e*/
   {
 LABEL_5:
-    --*(_DWORD *)(*(this + 1) + 4 * a2); /*0x49faad*/
-    v5 = *(this + 1); /*0x49fabd*/
-    --*(this + 4); /*0x49fac1*/
+    --*(_DWORD *)(this->count + 4 * a2); /*0x49faad*/
+    v5 = this->count; /*0x49fabd*/
+    --this->Count; /*0x49fac1*/
     return *(_DWORD *)(v5 + 4 * a2); /*0x49fac9*/
   }
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, a2 + 10, 0) ) /*0x49fa8a*/
   {
-    for ( i = v3; i < *(this + 2); *(_DWORD *)(*(this + 1) + 4 * i - 4) = 0 ) /*0x49fa98*/
+    for ( i = v3; i < this->Capacity; *(_DWORD *)(this->count + 4 * i - 4) = 0 ) /*0x49fa98*/
       ++i; /*0x49fa9d*/
     goto LABEL_5; /*0x49faab*/
   }
@@ -18566,10 +18566,10 @@ int __thiscall CounterClass::_vt03(_DWORD *this)
 }
 
 
-// ==== 0x0049FB60  VectorClass::GetCount  this=VOID_PTR  sig=csp ====
+// ==== 0x0049FB60  VectorClass::GetCount  this=VectorClass  sig=csp ====
 int __thiscall VectorClass_GetCount(_DWORD *this)
 {
-  return *(this + 4); /*0x49fb63*/
+  return this->q010; /*0x49fb63*/
 }
 
 

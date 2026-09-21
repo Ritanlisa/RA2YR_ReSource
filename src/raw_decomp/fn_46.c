@@ -470,7 +470,7 @@ LABEL_6:
 }
 
 
-// ==== 0x00465450  BulletTypeClass::ReadArmor  this=int  sig=csp ====
+// ==== 0x00465450  BulletTypeClass::ReadArmor  this=BulletTypeClass  sig=csp ====
 int BulletTypeClass::ReadArmor()
 {
   int v0; // edx
@@ -539,7 +539,7 @@ int BulletTypeClass::ReadArmor()
 }
 
 
-// ==== 0x00465570  ObjectClass::CalculateBuildingFoundationBounds  this=VOID_PTR  sig=csp ====
+// ==== 0x00465570  ObjectClass::CalculateBuildingFoundationBounds  this=ObjectClass  sig=csp ====
 int *__thiscall CalculateBuildingFoundationBounds(int *this, BuildingTypeClass *aP1)
 {
   __int16 *v3; // eax
@@ -584,7 +584,7 @@ int *__thiscall CalculateBuildingFoundationBounds(int *this, BuildingTypeClass *
   v36 = this + 1358; /*0x46558c*/
   if ( *(this + 1358) == unk_89C8A0 /*0x4655b7*/
     && *(this + 1359) == unk_89C8A4
-    && *(this + 1360) == unk_89C8A8
+    && this->q550 == unk_89C8A8
     && *(this + 1361) == unk_89C8AC )
   {
     v3 = (__int16 *)(*(int (__thiscall **)(int *))(*this + 156))(this); /*0x4655de*/
@@ -637,7 +637,7 @@ int *__thiscall CalculateBuildingFoundationBounds(int *this, BuildingTypeClass *
         }
         v6 = v12; /*0x4656ef*/
       }
-      v25 = *(this + 896) == 0; /*0x465710*/
+      v25 = this->qE00 == 0; /*0x465710*/
       v13 = (*(int (__thiscall **)(int *))(*this + 192))(this); /*0x465715*/
       if ( v13 ) /*0x465721*/
       {
@@ -686,12 +686,12 @@ int *__thiscall CalculateBuildingFoundationBounds(int *this, BuildingTypeClass *
         {
           if ( *((_BYTE *)this + 5986) ) /*0x4657ee*/
           {
-            v19 = (CCINIClass *)*(this + 896); /*0x4657f8*/
+            v19 = (CCINIClass *)this->qE00; /*0x4657f8*/
             if ( v19 ) /*0x465800*/
             {
               __3_YAXPAX_Z(v19); /*0x465803*/
-              *(this + 896) = 0; /*0x46580f*/
-              *((_BYTE *)this + 3588) = 0; /*0x465819*/
+              this->qE00 = 0; /*0x46580f*/
+              this->qE04 = 0; /*0x465819*/
             }
           }
         }
@@ -755,7 +755,7 @@ int *__thiscall CalculateBuildingFoundationBounds(int *this, BuildingTypeClass *
   {
     *(_DWORD *)aP1->vtable0 = *(this + 1358); /*0x4655c1*/
     *(_DWORD *)&aP1->vtable0[4] = *(this + 1359); /*0x4655c6*/
-    *(_DWORD *)&aP1->vtable0[8] = *(this + 1360); /*0x4655cc*/
+    *(_DWORD *)&aP1->vtable0[8] = this->q550; /*0x4655cc*/
     *(_DWORD *)&aP1->vtable0[12] = *(this + 1361); /*0x4655d3*/
     return (int *)aP1->vtable0; /*0x4655b9*/
   }
@@ -894,7 +894,7 @@ int sub_465CC0()
 }
 
 
-// ==== 0x00465D30  ReturnFalse_465D30  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x00465D30  ReturnFalse_465D30  this=-  sig=ida-proto ====
 char ReturnFalse_465D30()
 {
   return 0; /*0x465d32*/
@@ -2639,7 +2639,7 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
 }
 
 
-// ==== 0x00468430  BulletClass::LoseTarget  this=VOID_PTR  sig=csp ====
+// ==== 0x00468430  BulletClass::LoseTarget  this=BulletClass  sig=csp ====
 __int16 __thiscall BulletClass::LoseTarget(_DWORD **this)
 {
   _DWORD *v2; // eax
@@ -2647,21 +2647,21 @@ __int16 __thiscall BulletClass::LoseTarget(_DWORD **this)
   int v5; // [esp+8h] [ebp-10h]
   _BYTE v6[12]; // [esp+Ch] [ebp-Ch] BYREF
 
-  v2 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(this + 67) + 72))(*(this + 67), v6); /*0x468443*/
+  v2 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*this->BulletClass_field_0x10C + 72))(this->BulletClass_field_0x10C, v6); /*0x468443*/
   LOWORD(v5) = *v2 / 256; /*0x468456*/
   HIWORD(v5) = v2[1] / 256; /*0x46846a*/
   v4 = v5; /*0x468473*/
   LOWORD(v2) = MEMORY[0xA8E7AC]; /*0x468477*/
   if ( MEMORY[0xA8E7AC] /*0x46849b*/
-    || (LOWORD(v2) = (*(int (__thiscall **)(_DWORD))(**(this + 67) + 84))(*(this + 67)), (_BYTE)v2)
+    || (LOWORD(v2) = (*(int (__thiscall **)(_DWORD))(*this->BulletClass_field_0x10C + 84))(this->BulletClass_field_0x10C), (_BYTE)v2)
     || (LOWORD(v2) = v4, v4 == dword_89DDF0) )
   {
-    *(this + 67) = 0; /*0x4684c5*/
+    this->BulletClass_field_0x10C = 0; /*0x4684c5*/
   }
   else
   {
     v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v4); /*0x4684b5*/
-    *(this + 67) = v2; /*0x4684ba*/
+    this->BulletClass_field_0x10C = v2; /*0x4684ba*/
   }
   return (__int16)v2; /*0x4684c0*/
 }
@@ -5012,7 +5012,7 @@ VectorClass *__thiscall VectorClass_ptr_BulletClass::QueryInterface(_DWORD *Bloc
 }
 
 
-// ==== 0x0046B910  VectorClass_ptr_BulletClass::loc_46B910  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0046B910  VectorClass_ptr_BulletClass::loc_46B910  this=VectorClass_ptr_BulletClass  sig=ida-proto ====
 _DWORD *__thiscall VectorClass_ptr_BulletClass::loc_46B910(_DWORD *Block, char a2)
 {
   void *v3; // eax
@@ -5032,24 +5032,24 @@ _DWORD *__thiscall VectorClass_ptr_BulletClass::loc_46B910(_DWORD *Block, char a
 }
 
 
-// ==== 0x0046B960  BulletClass::AddVector3  this=VOID_PTR  sig=csp ====
+// ==== 0x0046B960  BulletClass::AddVector3  this=BulletClass  sig=csp ====
 double *__thiscall sub_46B960(double *this, double *a2)
 {
   *this = *a2 + *this; /*0x46b96a*/
-  *(this + 1) = a2[1] + *(this + 1); /*0x46b972*/
-  *(this + 2) = a2[2] + *(this + 2); /*0x46b97b*/
+  this->vtable2 = a2[1] + this->vtable2; /*0x46b972*/
+  this->vtable3 = a2[2] + this->vtable3; /*0x46b97b*/
   return this; /*0x46b97e*/
 }
 
 
-// ==== 0x0046B990  VectorClass_ptr_BulletClass::GetItem  this=unknown  sig=csp ====
+// ==== 0x0046B990  VectorClass_ptr_BulletClass::GetItem  this=VectorClass_ptr_BulletClass  sig=csp ====
 LONG __stdcall VectorClass_ptr_BulletClass::sub_46B990(int a1)
 {
   return BulletClass::CheckTargetValidity(a1 - 4);
 }
 
 
-// ==== 0x0046B9A0  VectorClass_ptr_BulletClass::GetItem_0  this=unknown  sig=csp ====
+// ==== 0x0046B9A0  VectorClass_ptr_BulletClass::GetItem_0  this=VectorClass_ptr_BulletClass  sig=csp ====
 LONG __stdcall VectorClass_ptr_BulletClass::sub_46B9A0(int a1)
 {
   return BulletClass::ValidateTarget((volatile LONG *)(a1 - 4));
@@ -5722,10 +5722,10 @@ int __thiscall BulletTypeClass::_vt10(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x0046C840  BulletTypeClass::SetScaledSpawnDelay  this=VOID_PTR  sig=csp ====
+// ==== 0x0046C840  BulletTypeClass::SetScaledSpawnDelay  this=BulletTypeClass  sig=csp ====
 int __thiscall BulletTypeClass::SetScaledSpawnDelay(_DWORD *this, int a2)
 {
-  *(this + 186) = a2; /*0x46c844*/
+  this->Scalable_e = a2; /*0x46c844*/
   return a2; /*0x46c84a*/
 }
 
@@ -6001,7 +6001,7 @@ char __thiscall CampaignClass::GetMapData(int this, unsigned __int8 ***aP1)
 }
 
 
-// ==== 0x0046CE10  CampaignClass::LoadFromINIList  this=int  sig=csp ====
+// ==== 0x0046CE10  CampaignClass::LoadFromINIList  this=CampaignClass  sig=csp ====
 int __thiscall CampaignClass::LoadFromINIList(char *this)
 {
   int result; // eax
@@ -6914,7 +6914,7 @@ HWND __fastcall sub_46DE20(HWND hDlg, int nCmdShow)
 }
 
 
-// ==== 0x0046F5E0  ErrorCode::Map  this=int  sig=csp ====
+// ==== 0x0046F5E0  ErrorCode::Map  this=ErrorCode  sig=csp ====
 int __thiscall ErrorCode_Map(void *this)
 {
   if ( this )
@@ -6924,7 +6924,7 @@ int __thiscall ErrorCode_Map(void *this)
 }
 
 
-// ==== 0x0046F600  Skirmish::FillPlayerNames  this=int  sig=csp ====
+// ==== 0x0046F600  Skirmish::FillPlayerNames  this=Skirmish  sig=csp ====
 int __thiscall Skirmish_FillPlayerNames(HWND this)
 {
   int result; // eax
@@ -7050,7 +7050,7 @@ BOOL __thiscall Lobby_SetupAllCountries(HWND this)
 }
 
 
-// ==== 0x0046F810  GetLobbyPlayerColor  this=int  sig=ida-proto ====
+// ==== 0x0046F810  GetLobbyPlayerColor  this=-  sig=ida-proto ====
 int __fastcall Lobby_GetPlayerColor(int a1)
 {
   wchar_t *v2; // esi
@@ -7070,7 +7070,7 @@ int __fastcall Lobby_GetPlayerColor(int a1)
 }
 
 
-// ==== 0x0046F880  GetHouseClassSideIndex  this=int  sig=ida-proto ====
+// ==== 0x0046F880  GetHouseClassSideIndex  this=-  sig=ida-proto ====
 int __fastcall HouseClass_GetSideIndex(int a1)
 {
   wchar_t *v2; // esi

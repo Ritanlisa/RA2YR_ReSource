@@ -2,7 +2,7 @@
 // by tools/csp_export/rewrite_member_refs.py (mechanical, CSP member table).
 // REFERENCE ONLY - not compiled. Width-matched rewrites; unmatched kept raw.
 
-// ==== 0x006F0130  TeamClass::CheckMemberSuperWeapon  this=int  sig=csp ====
+// ==== 0x006F0130  TeamClass::CheckMemberSuperWeapon  this=TeamClass  sig=csp ====
 void __thiscall TeamClass::CheckMemberSuperWeapon(int this, int a2, int a3)
 {
   int *v3; // esi
@@ -130,13 +130,13 @@ LABEL_28:
 }
 
 
-// ==== 0x006F03B0  FootClass::GetGameSpeedFromSession  this=VOID_PTR  sig=csp ====
+// ==== 0x006F03B0  FootClass::GetGameSpeedFromSession  this=FootClass  sig=csp ====
 int __thiscall sub_6F03B0(_DWORD **this)
 {
   int v1; // eax
   int v3; // [esp+0h] [ebp-8h] BYREF
 
-  v1 = *SessionClass::GetEntry(*(this + 10), &v3); /*0x6f03c0*/
+  v1 = *SessionClass::GetEntry(this->owningHouseIndex, &v3); /*0x6f03c0*/
   if ( v1 == 54 || v1 == 53 ) /*0x6f03ca*/
     return MEMORY[0x8871E0][1].?[1]; /*0x6f03e2*/
   else
@@ -400,7 +400,7 @@ LABEL_11:
 }
 
 
-// ==== 0x006F09C0  TeamClass::CreateOneOf  this=int  sig=csp ====
+// ==== 0x006F09C0  TeamClass::CreateOneOf  this=TeamClass  sig=csp ====
 int __thiscall TeamClass::CreateOneOf(int this, HouseClass *aP1)
 {
   HouseClass *OwnerHouse; // edi
@@ -445,7 +445,7 @@ int __thiscall TeamClass::CreateOneOf(int this, HouseClass *aP1)
 }
 
 
-// ==== 0x006F0A70  TeamTypeClass::DestroyAllInstances  this=int  sig=csp ====
+// ==== 0x006F0A70  TeamTypeClass::DestroyAllInstances  this=TeamTypeClass  sig=csp ====
 int __thiscall TeamTypeClass::DestroyAllInstances(void *this)
 {
   int result; // eax
@@ -468,7 +468,7 @@ int __thiscall TeamTypeClass::DestroyAllInstances(void *this)
 }
 
 
-// ==== 0x006F0AB0  AISelectTeamHouseClass  this=VOID_PTR  sig=csp ====
+// ==== 0x006F0AB0  AISelectTeamHouseClass  this=-  sig=csp ====
 int __fastcall AISelectTeamHouseClass(IUnknown *aP0, int a2, int a3)
 {
   int v3; // esi
@@ -824,7 +824,7 @@ LABEL_70:
 }
 
 
-// ==== 0x006F0FC0  TeamTypeClass::FindByName  this=int  sig=csp ====
+// ==== 0x006F0FC0  TeamTypeClass::FindByName  this=TeamTypeClass  sig=csp ====
 int __thiscall TeamTypeClass::FindByName(void *this)
 {
   int v2; // esi
@@ -1366,7 +1366,7 @@ _DWORD *__thiscall TechnoClass::GetWaypointCoords(_DWORD *this, AbstractClass *a
 }
 
 
-// ==== 0x006F18E0  TeamTypeClass::GetTransportWaypoint  this=int  sig=csp ====
+// ==== 0x006F18E0  TeamTypeClass::GetTransportWaypoint  this=TeamTypeClass  sig=csp ====
 _DWORD *__thiscall TeamTypeClass::GetTransportWaypoint(int *this, _DWORD *a2)
 {
   int v2; // eax
@@ -1374,7 +1374,7 @@ _DWORD *__thiscall TeamTypeClass::GetTransportWaypoint(int *this, _DWORD *a2)
   int *v5; // [esp+0h] [ebp-4h] BYREF
 
   v5 = this; /*0x6f18e0*/
-  v2 = *(this + 54); /*0x6f18e1*/
+  v2 = this->q0D8; /*0x6f18e1*/
   if ( v2 == -1 ) /*0x6f18ea*/
   {
     *a2 = MEMORY[0xB0E9C8]; /*0x6f18f6*/
@@ -1467,7 +1467,7 @@ LABEL_11:
 }
 
 
-// ==== 0x006F1AB0  TeamTypeClass::ReadScriptData  this=VOID_PTR  sig=csp ====
+// ==== 0x006F1AB0  TeamTypeClass::ReadScriptData  this=TeamTypeClass  sig=csp ====
 TeamTypeClass *__fastcall TeamTypeClass::ReadScriptData(char *a1, int a2)
 {
   CCINIClass *KeyCount; // ebx
@@ -1663,7 +1663,7 @@ int __thiscall TeamTypeClass::_vt13(int this, int *a2)
 }
 
 
-// ==== 0x006F1E20  TriggerClass::EvaluateObjectForTrigger  this=VOID_PTR  sig=csp ====
+// ==== 0x006F1E20  TriggerClass::EvaluateObjectForTrigger  this=TriggerClass  sig=csp ====
 bool __thiscall TriggerClass::EvaluateObjectForTrigger(int this, TechnoClass *aP1, int a3)
 {
   int queuedMission; // eax
@@ -1702,7 +1702,7 @@ bool __thiscall TriggerClass::EvaluateObjectForTrigger(int this, TechnoClass *aP
 }
 
 
-// ==== 0x006F1F30  TeamTypeClass::FlashAllInstances  this=int  sig=csp ====
+// ==== 0x006F1F30  TeamTypeClass::FlashAllInstances  this=TeamTypeClass  sig=csp ====
 int __thiscall TeamTypeClass::FlashAllInstances(void *this, AnimClass *aP1)
 {
   int result; // eax
@@ -1721,7 +1721,7 @@ int __thiscall TeamTypeClass::FlashAllInstances(void *this, AnimClass *aP1)
 }
 
 
-// ==== 0x006F1F70  TeamTypeClass::FindFirstInstance  this=VOID_PTR  sig=csp ====
+// ==== 0x006F1F70  TeamTypeClass::FindFirstInstance  this=TeamTypeClass  sig=csp ====
 int __thiscall TeamTypeClass::FindFirstInstance(void *this)
 {
   int v1; // edx
@@ -2248,14 +2248,14 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
 }
 
 
-// ==== 0x006F25D0  nullsub_240  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x006F25D0  nullsub_240  this=-  sig=ida-proto ====
 void __thiscall nullsub_240(void *this)
 {
   ; /*0x6f25d0*/
 }
 
 
-// ==== 0x006F25E0  ObjectClass::Team_Helper_6F25E0  this=VOID_PTR  sig=csp ====
+// ==== 0x006F25E0  ObjectClass::Team_Helper_6F25E0  this=ObjectClass  sig=csp ====
 char __thiscall sub_6F25E0(_DWORD *this, _DWORD *a2)
 {
   int v3; // ecx
@@ -2263,18 +2263,18 @@ char __thiscall sub_6F25E0(_DWORD *this, _DWORD *a2)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x6f25e3*/
-  if ( *(this + 4) >= v3 ) /*0x6f25eb*/
+  v3 = this->vtable3; /*0x6f25e3*/
+  if ( this->uniqueId >= v3 ) /*0x6f25eb*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x6f25f6*/
+    if ( !this->attachedTag && v3 ) /*0x6f25f6*/
       return 0; /*0x6f25f6*/
-    v4 = *(this + 5); /*0x6f25f8*/
+    v4 = this->abstractFlags; /*0x6f25f8*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x6f2608*/
       return 0; /*0x6f260f*/
   }
-  v6 = *(this + 4); /*0x6f2615*/
-  v7 = *(this + 1); /*0x6f2618*/
-  *(this + 4) = v6 + 1; /*0x6f261e*/
+  v6 = this->uniqueId; /*0x6f2615*/
+  v7 = this->vtable2; /*0x6f2618*/
+  this->uniqueId = v6 + 1; /*0x6f261e*/
   *(_DWORD *)(v7 + 8 * v6) = *a2; /*0x6f2627*/
   *(_DWORD *)(v7 + 8 * v6 + 4) = a2[1]; /*0x6f262e*/
   return 1; /*0x6f2611*/
@@ -2321,7 +2321,7 @@ VectorClass *__thiscall TeamTypeClass_28_::QueryInterface(_DWORD *Block, char a2
 }
 
 
-// ==== 0x006F26E0  ObjectClass::Team_Helper_6F26E0  this=VOID_PTR  sig=csp ====
+// ==== 0x006F26E0  ObjectClass::Team_Helper_6F26E0  this=ObjectClass  sig=csp ====
 char *__thiscall Team_Helper_6F26E0(char *Block, char a2)
 {
   char *v2; // esi
@@ -2364,7 +2364,7 @@ DynamicVector *__thiscall TeamTypeClass_28_::Constructor(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x006F2780  ObjectClass::Team_Helper_6F2780  this=int  sig=csp ====
+// ==== 0x006F2780  ObjectClass::Team_Helper_6F2780  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall Team_Helper_6F2780(_DWORD *this, IUnknown *aP1)
 {
   int v3; // eax
@@ -2376,28 +2376,28 @@ _DWORD *__thiscall Team_Helper_6F2780(_DWORD *this, IUnknown *aP1)
     return this; /*0x6f278a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x6f278e*/
   v3 = aP1->field_8; /*0x6f2791*/
-  *(this + 2) = v3; /*0x6f2796*/
+  this->vtable3 = v3; /*0x6f2796*/
   if ( !v3 ) /*0x6f2799*/
   {
-    *(this + 1) = 0; /*0x6f27da*/
-    *((_BYTE *)this + 13) = 0; /*0x6f27e1*/
+    this->vtable2 = 0; /*0x6f27da*/
+    this->attachedTag = 0; /*0x6f27e1*/
     return this; /*0x6f27e5*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x6f27a3*/
-  *(this + 1) = v4; /*0x6f27ab*/
+  this->vtable2 = v4; /*0x6f27ab*/
   if ( !v4 ) /*0x6f27b0*/
     return this; /*0x6f27b0*/
-  v5 = *(this + 2); /*0x6f27b2*/
+  v5 = this->vtable3; /*0x6f27b2*/
   v6 = 0; /*0x6f27b5*/
-  *((_BYTE *)this + 13) = 1; /*0x6f27b9*/
+  this->attachedTag = 1; /*0x6f27b9*/
   if ( v5 <= 0 ) /*0x6f27bd*/
     return this; /*0x6f27bd*/
   do /*0x6f27d1*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(aP1->field_4 + 4 * v6); /*0x6f27c8*/
+    *(_DWORD *)(this->vtable2 + 4 * v6) = *(_DWORD *)(aP1->field_4 + 4 * v6); /*0x6f27c8*/
     ++v6; /*0x6f27ce*/
   }
-  while ( v6 < *(this + 2) ); /*0x6f27d1*/
+  while ( v6 < this->vtable3 ); /*0x6f27d1*/
   return this; /*0x6f27d5*/
 }
 
@@ -3757,7 +3757,7 @@ int __thiscall TechnoClass::DTOR(int this)
 }
 
 
-// ==== 0x006F47A0  HouseClass::CalcProductionSpeed  this=VOID_PTR  sig=csp ====
+// ==== 0x006F47A0  HouseClass::CalcProductionSpeed  this=HouseClass  sig=csp ====
 int __thiscall HouseClass_CalcProductionSpeed(_DWORD *this)
 {
   int v2; // eax
@@ -3785,7 +3785,7 @@ int __thiscall HouseClass_CalcProductionSpeed(_DWORD *this)
   v15 = Math::RoundToInt(v4 * (double)v14); /*0x6f47e0*/
   v5 = (*(int (__thiscall **)(_DWORD *))(*this + 132))(this); /*0x6f47e4*/
   Math::RoundToInt((double)v15 * *(float *)(v5 + 1544)); /*0x6f47f4*/
-  PowerRatio = HouseClass::GetPowerRatio((int *)*(this + 135)); /*0x6f4808*/
+  PowerRatio = HouseClass::GetPowerRatio((int *)this->q21C); /*0x6f4808*/
   v6 = 1.0 - (1.0 - PowerRatio) * *((float *)MEMORY[0x8871E0] + 350); /*0x6f4822*/
   if ( v6 <= *((float *)MEMORY[0x8871E0] + 348) ) /*0x6f4837*/
     v6 = *((float *)MEMORY[0x8871E0] + 348); /*0x6f483b*/
@@ -3817,7 +3817,7 @@ int __thiscall HouseClass_CalcProductionSpeed(_DWORD *this)
     }
     while ( v12 ); /*0x6f4914*/
   }
-  if ( (*(int (__thiscall **)(_DWORD *))(*this + 44))(this) == 6 && *(_BYTE *)(*(this + 328) + 5489) ) /*0x6f4929*/
+  if ( (*(int (__thiscall **)(_DWORD *))(*this + 44))(this) == 6 && *(_BYTE *)(this->q520 + 5489) ) /*0x6f4929*/
     return Math::RoundToInt((double)v16 * *((double *)MEMORY[0x8871E0] + 235)); /*0x6f4943*/
   else
     return v8; /*0x6f494e*/
@@ -4196,7 +4196,7 @@ int __thiscall FootClass::CompleteProduction(#377 *this)
 }
 
 
-// ==== 0x006F5EF0  DrawTacticalLine3D  this=float  sig=csp ====
+// ==== 0x006F5EF0  DrawTacticalLine3D  this=-  sig=csp ====
 int __fastcall Tactical_DrawLine3D(_DWORD *a1, int *a2, int a3)
 {
   int *v5; // edx
@@ -4251,7 +4251,7 @@ int __fastcall Tactical_DrawLine3D(_DWORD *a1, int *a2, int a3)
 }
 
 
-// ==== 0x006F6030  globalHelper_0F6030  this=float  sig=csp ====
+// ==== 0x006F6030  globalHelper_0F6030  this=-  sig=csp ====
 int __fastcall sub_6F6030(int *a1, _DWORD *a2, int a3)
 {
   int v4; // eax
@@ -5360,7 +5360,7 @@ int __thiscall TechnoClass::CheckCellPassable3(#377 *this)
 }
 
 
-// ==== 0x006F79A0  TechnoClass::GetBridgeDamageMult  this=int  sig=csp ====
+// ==== 0x006F79A0  TechnoClass::GetBridgeDamageMult  this=TechnoClass  sig=csp ====
 double __thiscall TechnoClass_GetBridgeDamageMult(_DWORD **this, __int16 *a2)
 {
   int *v2; // eax
@@ -5432,7 +5432,7 @@ double __thiscall TechnoClass_GetBridgeDamageMult(_DWORD **this, __int16 *a2)
               v12 = Cell::IsBridge(v11); /*0x6f7a93*/
               if ( v12 ) /*0x6f7a9a*/
               {
-                if ( Object::IsAlliedWithObjectHouse(*(this + 135), (int)v12) ) /*0x6f7aa7*/
+                if ( Object::IsAlliedWithObjectHouse(this->Owner, (int)v12) ) /*0x6f7aa7*/
                   v35 = v35 * 0.5; /*0x6f7aba*/
               }
             }
@@ -5446,7 +5446,7 @@ double __thiscall TechnoClass_GetBridgeDamageMult(_DWORD **this, __int16 *a2)
               v15 = Cell::IsBridge(v14); /*0x6f7b07*/
               if ( v15 ) /*0x6f7b0e*/
               {
-                if ( Object::IsAlliedWithObjectHouse(*(this + 135), (int)v15) ) /*0x6f7b1b*/
+                if ( Object::IsAlliedWithObjectHouse(this->Owner, (int)v15) ) /*0x6f7b1b*/
                   v35 = v35 * 0.5; /*0x6f7b2e*/
               }
             }
@@ -5477,7 +5477,7 @@ double __thiscall TechnoClass_GetBridgeDamageMult(_DWORD **this, __int16 *a2)
               v21 = Cell::IsBridge(v20); /*0x6f7bbf*/
               if ( v21 ) /*0x6f7bc6*/
               {
-                if ( Object::IsAlliedWithObjectHouse(*(this + 135), (int)v21) ) /*0x6f7bd3*/
+                if ( Object::IsAlliedWithObjectHouse(this->Owner, (int)v21) ) /*0x6f7bd3*/
                   v35 = v35 * 0.5; /*0x6f7be6*/
               }
             }
@@ -5490,7 +5490,7 @@ double __thiscall TechnoClass_GetBridgeDamageMult(_DWORD **this, __int16 *a2)
               v23 = Cell::IsBridge(v22); /*0x6f7c33*/
               if ( v23 ) /*0x6f7c3a*/
               {
-                if ( Object::IsAlliedWithObjectHouse(*(this + 135), (int)v23) ) /*0x6f7c47*/
+                if ( Object::IsAlliedWithObjectHouse(this->Owner, (int)v23) ) /*0x6f7c47*/
                   v35 = v35 * 0.5; /*0x6f7c5a*/
               }
             }

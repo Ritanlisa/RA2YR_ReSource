@@ -225,7 +225,7 @@ char __stdcall JumpjetLocomotionClass::sub_6A05C0(int a1, int a2)
 }
 
 
-// ==== 0x006A05F0  WalkLocomotion::ProcessCollision  this=int  sig=csp ====
+// ==== 0x006A05F0  WalkLocomotion::ProcessCollision  this=WalkLocomotion  sig=csp ====
 char __thiscall WalkLocomotion::ProcessCollision(int this, char a2)
 {
   int v3; // eax
@@ -1235,7 +1235,7 @@ LABEL_190:
 }
 
 
-// ==== 0x006A1C80  WalkLocomotion::Update  this=int  sig=csp ====
+// ==== 0x006A1C80  WalkLocomotion::Update  this=WalkLocomotion  sig=csp ====
 char __thiscall WalkLocomotion_Update(int this, _BYTE *a2, int a3, int a4)
 {
   int v5; // ecx
@@ -2930,7 +2930,7 @@ LONG __stdcall ShipLocomotionClass::_vt02(volatile LONG *a1)
 }
 
 
-// ==== 0x006A4280  JumpjetLocomotionClass::GetLinkedLocomotorPointer_0  this=VOID_PTR  sig=csp ====
+// ==== 0x006A4280  JumpjetLocomotionClass::GetLinkedLocomotorPointer_0  this=JumpjetLocomotionClass  sig=csp ====
 BOOL __stdcall JumpjetLocomotionClass::sub_6A4280(int a1)
 {
   return *(_DWORD *)(a1 + 80) != 0; /*0x6a428e*/
@@ -2962,21 +2962,21 @@ ShipLocomotionClass *__thiscall ShipLocomotionClass::ProcessMove(ILocomotion **B
 }
 
 
-// ==== 0x006A4300  JumpjetLocomotionClass::SmallStub_6A4300  this=unknown  sig=csp ====
+// ==== 0x006A4300  JumpjetLocomotionClass::SmallStub_6A4300  this=JumpjetLocomotionClass  sig=csp ====
 int __stdcall JumpjetLocomotionClass::sub_6A4300(int a1, const void *a2, int *a3)
 {
   return ShipLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 }
 
 
-// ==== 0x006A4310  JumpjetLocomotionClass::SmallStub_6A4310  this=unknown  sig=csp ====
+// ==== 0x006A4310  JumpjetLocomotionClass::SmallStub_6A4310  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_6A4310(int a1)
 {
   return ShipLocomotionClass::AddRef(a1 - 4);
 }
 
 
-// ==== 0x006A4320  JumpjetLocomotionClass::SmallStub_6A4320  this=unknown  sig=csp ====
+// ==== 0x006A4320  JumpjetLocomotionClass::SmallStub_6A4320  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_6A4320(int a1)
 {
   return ShipLocomotionClass::Release((volatile LONG *)(a1 - 4));
@@ -3737,7 +3737,7 @@ int __thiscall sub_6A4F20(int this, int a2)
 }
 
 
-// ==== 0x006A4FF0  nullsub_36  this=VOID_PTR  sig=csp ====
+// ==== 0x006A4FF0  nullsub_36  this=-  sig=csp ====
 void __stdcall nullsub_36(IUnknown *aP0)
 {
   ; /*0x6a4ff0*/
@@ -4381,7 +4381,7 @@ void CleanupSidebarResources()
 }
 
 
-// ==== 0x006A5F20  SidebarClass::UpdateCameoProductionState  this=int  sig=csp ====
+// ==== 0x006A5F20  SidebarClass::UpdateCameoProductionState  this=SidebarClass  sig=csp ====
 char __thiscall sub_6A5F20(int this, _DWORD *a2)
 {
   int v3; // eax
@@ -4471,7 +4471,7 @@ char __thiscall sub_6A5F20(int this, _DWORD *a2)
 }
 
 
-// ==== 0x006A60A0  Sidebar::ActivateTab  this=VOID_PTR  sig=csp ====
+// ==== 0x006A60A0  Sidebar::ActivateTab  this=Sidebar  sig=csp ====
 int __thiscall Sidebar::ActivateTab(int this, IUnknown *aP1)
 {
   IUnknown *result; // eax
@@ -4509,7 +4509,7 @@ wchar_t *__thiscall sub_6A60E0(int this, wchar_t *a2)
 }
 
 
-// ==== 0x006A6140  Sidebar::FindProductionType  this=int  sig=csp ====
+// ==== 0x006A6140  Sidebar::FindProductionType  this=Sidebar  sig=csp ====
 char __thiscall Sidebar::FindProductionType(_DWORD *this, FactoryClass *aP1, MouseClass *aP2, int a4)
 {
   int v5; // eax
@@ -4766,7 +4766,7 @@ int __thiscall Tactical_UpdateUIVisibility(_DWORD *this)
 }
 
 
-// ==== 0x006A6A00  CreateTeamCommand::performAction_245  this=VOID_PTR  sig=csp ====
+// ==== 0x006A6A00  CreateTeamCommand::performAction_245  this=CreateTeamCommand  sig=csp ====
 char __thiscall sub_6A6A00(_DWORD *this, char a2, int a3)
 {
   int v3; // eax
@@ -4778,7 +4778,7 @@ char __thiscall sub_6A6A00(_DWORD *this, char a2, int a3)
   {
     v3 = a3; /*0x6a6a0f*/
     if ( a3 == -1 ) /*0x6a6a16*/
-      v3 = *(this + 5351); /*0x6a6a18*/
+      v3 = this->q539C; /*0x6a6a18*/
     v4 = this + 997 * v3 + 1361; /*0x6a6a2b*/
     if ( a2 ) /*0x6a6a38*/
     {
@@ -5599,7 +5599,7 @@ LABEL_32:
 }
 
 
-// ==== 0x006A7D20  HouseClass::UpdateAllProductionTabs  this=VOID_PTR  sig=csp ====
+// ==== 0x006A7D20  HouseClass::UpdateAllProductionTabs  this=HouseClass  sig=csp ====
 char __thiscall sub_6A7D20(char *this)
 {
   char v2; // bl
@@ -5614,7 +5614,7 @@ char __thiscall sub_6A7D20(char *this)
   do /*0x6a7d53*/
   {
     result = SidebarClass::UpdateProduction((int)(v4 - 60)); /*0x6a7d33*/
-    if ( result && v3 == *((_DWORD *)this + 5351) ) /*0x6a7d42*/
+    if ( result && v3 == this->costBuildingsMult ) /*0x6a7d42*/
     {
       *v4 = 1; /*0x6a7d44*/
       v2 = 1; /*0x6a7d47*/
@@ -5626,7 +5626,7 @@ char __thiscall sub_6A7D20(char *this)
   if ( v2 ) /*0x6a7d57*/
   {
     v6 = *(_DWORD *)this; /*0x6a7d59*/
-    *(this + 21414) = 1; /*0x6a7d60*/
+    this->q53A6 = 1; /*0x6a7d60*/
     return (*(int (__thiscall **)(char *, _DWORD))(v6 + 56))(this, 0); /*0x6a7d67*/
   }
   return result; /*0x6a7d6a*/
@@ -5768,7 +5768,7 @@ unsigned __int8 ObjectClass::ToggleSidebarDisplay(
 }
 
 
-// ==== 0x006A80A0  TabClass::updateTabProduction  this=int  sig=csp ====
+// ==== 0x006A80A0  TabClass::updateTabProduction  this=TabClass  sig=csp ====
 _BYTE *__thiscall sub_6A80A0(_BYTE *this, int a2)
 {
   _BYTE *result; // eax
@@ -5782,7 +5782,7 @@ _BYTE *__thiscall sub_6A80A0(_BYTE *this, int a2)
 
   result = this; /*0x6a80a0*/
   *(_DWORD *)this = 0; /*0x6a80aa*/
-  *(this + 4) = 0; /*0x6a80ac*/
+  this->TabClass_field_0x4 = 0; /*0x6a80ac*/
   v3 = MEMORY[0xA8ED84]; /*0x6a80af*/
   *((_DWORD *)result + 4) = 0; /*0x6a80b5*/
   *((_DWORD *)result + 2) = v3; /*0x6a80b8*/
@@ -5878,7 +5878,7 @@ _DWORD *__thiscall sub_6A81B0(int this)
 }
 
 
-// ==== 0x006A8220  SidebarClass::InitCameoGrid  this=VOID_PTR  sig=csp ====
+// ==== 0x006A8220  SidebarClass::InitCameoGrid  this=SidebarClass  sig=csp ====
 int __thiscall sub_6A8220(_DWORD *this, int a2)
 {
   int v2; // eax
@@ -5892,7 +5892,7 @@ int __thiscall sub_6A8220(_DWORD *this, int a2)
   int v10; // edx
   int i; // [esp+4h] [ebp+4h]
 
-  *(this + 14) = a2; /*0x6a8224*/
+  this->SidebarClass_field_0x38 = a2; /*0x6a8224*/
   v2 = 26; /*0x6a8235*/
   if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x6a822d*/
     v2 = 18; /*0x6a823c*/
@@ -5905,11 +5905,11 @@ int __thiscall sub_6A8220(_DWORD *this, int a2)
     v7 = 2 * result; /*0x6a8281*/
     do /*0x6a830e*/
     {
-      v8 = (_DWORD *)(56 * (v7 + 60 * *(this + 14)) + 11566720); /*0x6a8299*/
+      v8 = (_DWORD *)(56 * (v7 + 60 * this->SidebarClass_field_0x38) + 11566720); /*0x6a8299*/
       v8[9] = 202; /*0x6a82a0*/
-      v8[3] = v6 * MEMORY[0xB0B4FC] + MEMORY[0x880D4C][997 * *(this + 14)]; /*0x6a82c9*/
+      v8[3] = v6 * MEMORY[0xB0B4FC] + MEMORY[0x880D4C][997 * this->SidebarClass_field_0x38]; /*0x6a82c9*/
       v9 = i * MEMORY[0xB0B500]; /*0x6a82e2*/
-      v10 = MEMORY[0x880D50][997 * *(this + 14)]; /*0x6a82e7*/
+      v10 = MEMORY[0x880D50][997 * this->SidebarClass_field_0x38]; /*0x6a82e7*/
       v8[12] = v7; /*0x6a82ee*/
       ++v6; /*0x6a82f1*/
       ++v7; /*0x6a82f2*/
@@ -5925,7 +5925,7 @@ int __thiscall sub_6A8220(_DWORD *this, int a2)
 }
 
 
-// ==== 0x006A8330  SidebarClass::RefreshCameoGrid  this=int  sig=csp ====
+// ==== 0x006A8330  SidebarClass::RefreshCameoGrid  this=SidebarClass  sig=csp ====
 char __thiscall sub_6A8330(_DWORD *this)
 {
   int v2; // eax
@@ -5945,8 +5945,8 @@ char __thiscall sub_6A8330(_DWORD *this)
   {
     do /*0x6a83ce*/
     {
-      Hash::Reset((_DWORD *)(56 * (v3 + 60 * *(this + 14)) + 11566720)); /*0x6a839f*/
-      LOBYTE(v5) = Hash::InsertOrdered(&MEMORY[0x87F7E8], 56 * (v3 + 60 * *(this + 14)) + 11566720); /*0x6a83c6*/
+      Hash::Reset((_DWORD *)(56 * (v3 + 60 * this->SidebarClass_field_0x38) + 11566720)); /*0x6a839f*/
+      LOBYTE(v5) = Hash::InsertOrdered(&MEMORY[0x87F7E8], 56 * (v3 + 60 * this->SidebarClass_field_0x38) + 11566720); /*0x6a83c6*/
       ++v3; /*0x6a83cb*/
     }
     while ( v3 < v6 ); /*0x6a83ce*/
@@ -5956,14 +5956,14 @@ char __thiscall sub_6A8330(_DWORD *this)
 }
 
 
-// ==== 0x006A83E0  SidebarClass::sortCameoList  this=int  sig=csp ====
+// ==== 0x006A83E0  SidebarClass::sortCameoList  this=SidebarClass  sig=csp ====
 char __thiscall sub_6A83E0(_DWORD *this)
 {
   int i; // esi
   char result; // al
 
   for ( i = 0; i < 60; ++i ) /*0x6a83e4*/
-    result = Tactical::SelectObject(&MEMORY[0x87F7E8], 56 * (i + 60 * *(this + 14)) + 11566720); /*0x6a8408*/
+    result = Tactical::SelectObject(&MEMORY[0x87F7E8], 56 * (i + 60 * this->SidebarClass_field_0x38) + 11566720); /*0x6a8408*/
   return result; /*0x6a8413*/
 }
 
@@ -6314,7 +6314,7 @@ char __thiscall sub_6A89E0(_DWORD *this, char a2)
 }
 
 
-// ==== 0x006A8B30  SidebarClass::UpdateCameos  this=int  sig=csp ====
+// ==== 0x006A8B30  SidebarClass::UpdateCameos  this=SidebarClass  sig=csp ====
 char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
 {
   int v4; // edi
@@ -6376,15 +6376,15 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
   int v61; // [esp+20h] [ebp-78h]
 
   v57 = 0; /*0x6a8b45*/
-  if ( *(this + 63) ) /*0x6a8b3b*/
+  if ( this->VisibleRect ) /*0x6a8b3b*/
     goto LABEL_115; /*0x6a8b3b*/
-  v4 = *((_DWORD *)this + 18); /*0x6a8b50*/
+  v4 = this->q048; /*0x6a8b50*/
   if ( v4 ) /*0x6a8b55*/
   {
     v5 = 26; /*0x6a8b66*/
     if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x6a8b60*/
       v5 = 18; /*0x6a8b6f*/
-    v6 = *((_DWORD *)this + 21); /*0x6a8b9f*/
+    v6 = this->SidebarClass_field_0x54; /*0x6a8b9f*/
     v7 = (MEMORY[0x886F9C] - v5 - MEMORY[0xB0B4F8] + MEMORY[0x886F94] - 7) / 50; /*0x6a8bad*/
     v8 = 2; /*0x6a8baf*/
     v9 = 2 * v7; /*0x6a8bb4*/
@@ -6399,97 +6399,97 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
     {
       if ( v4 >= 0 ) /*0x6a8bdc*/
       {
-        if ( v8 * (v7 + *((_DWORD *)this + 17)) < v6 ) /*0x6a8c09*/
+        if ( v8 * (v7 + this->CellIterator_NextY) < v6 ) /*0x6a8c09*/
         {
-          *((_DWORD *)this + 18) = v4 - 1; /*0x6a8c11*/
-          *((_DWORD *)this + 19) = MEMORY[0xB0B500]; /*0x6a8c1a*/
-          *(this + 62) = 1; /*0x6a8c1d*/
-          *(this + 63) = 1; /*0x6a8c21*/
+          this->q048 = v4 - 1; /*0x6a8c11*/
+          this->__pad_04C = MEMORY[0xB0B500]; /*0x6a8c1a*/
+          this->q0F8 = 1; /*0x6a8c1d*/
+          this->VisibleRect = 1; /*0x6a8c21*/
         }
         else
         {
-          *((_DWORD *)this + 18) = 0; /*0x6a8c0b*/
+          this->q048 = 0; /*0x6a8c0b*/
         }
       }
       else
       {
-        v10 = *((_DWORD *)this + 17); /*0x6a8bde*/
+        v10 = this->CellIterator_NextY; /*0x6a8bde*/
         if ( v10 ) /*0x6a8be3*/
         {
-          *((_DWORD *)this + 18) = v4 + 1; /*0x6a8bec*/
-          *(this + 62) = 0; /*0x6a8bef*/
-          *(this + 63) = 1; /*0x6a8bf3*/
-          *((_DWORD *)this + 17) = v10 - 1; /*0x6a8bf7*/
-          *((_DWORD *)this + 19) = 0; /*0x6a8bfa*/
+          this->q048 = v4 + 1; /*0x6a8bec*/
+          this->q0F8 = 0; /*0x6a8bef*/
+          this->VisibleRect = 1; /*0x6a8bf3*/
+          this->CellIterator_NextY = v10 - 1; /*0x6a8bf7*/
+          this->__pad_04C = 0; /*0x6a8bfa*/
         }
         else
         {
-          *((_DWORD *)this + 18) = 0; /*0x6a8be5*/
+          this->q048 = 0; /*0x6a8be5*/
         }
       }
     }
     else
     {
-      *((_DWORD *)this + 18) = 0; /*0x6a8bcf*/
+      this->q048 = 0; /*0x6a8bcf*/
     }
   }
-  if ( *(this + 63) ) /*0x6a8c25*/
+  if ( this->VisibleRect ) /*0x6a8c25*/
   {
 LABEL_115:
-    if ( *(this + 62) ) /*0x6a8c2c*/
+    if ( this->q0F8 ) /*0x6a8c2c*/
     {
-      v11 = *((_DWORD *)this + 19) - MEMORY[0xB0B514]; /*0x6a8c3e*/
-      *((_DWORD *)this + 19) = v11; /*0x6a8c40*/
+      v11 = this->__pad_04C - MEMORY[0xB0B514]; /*0x6a8c3e*/
+      this->__pad_04C = v11; /*0x6a8c40*/
       if ( v11 <= 0 ) /*0x6a8c45*/
       {
-        v12 = *((_DWORD *)this + 17); /*0x6a8c47*/
-        *(this + 63) = 0; /*0x6a8c4a*/
-        *((_DWORD *)this + 19) = 0; /*0x6a8c4f*/
-        *((_DWORD *)this + 17) = v12 + 1; /*0x6a8c56*/
+        v12 = this->CellIterator_NextY; /*0x6a8c47*/
+        this->VisibleRect = 0; /*0x6a8c4a*/
+        this->__pad_04C = 0; /*0x6a8c4f*/
+        this->CellIterator_NextY = v12 + 1; /*0x6a8c56*/
       }
     }
     else
     {
-      v13 = MEMORY[0xB0B514] + *((_DWORD *)this + 19); /*0x6a8c63*/
-      *((_DWORD *)this + 19) = v13; /*0x6a8c65*/
+      v13 = MEMORY[0xB0B514] + this->__pad_04C; /*0x6a8c63*/
+      this->__pad_04C = v13; /*0x6a8c65*/
       if ( v13 >= MEMORY[0xB0B500] ) /*0x6a8c72*/
       {
-        *(this + 63) = 0; /*0x6a8c74*/
-        *((_DWORD *)this + 19) = 0; /*0x6a8c78*/
+        this->VisibleRect = 0; /*0x6a8c74*/
+        this->__pad_04C = 0; /*0x6a8c78*/
       }
     }
     v57 = 1; /*0x6a8c7f*/
   }
-  if ( *((_DWORD *)this + 16) != -1 ) /*0x6a8c8c*/
+  if ( this->q010 != -1 ) /*0x6a8c8c*/
   {
     v14 = this + 8; /*0x6a8c8e*/
-    if ( CDTimerClass::TimeRemaining((int *)this + 2) || (v15 = *((_DWORD *)this + 5)) == 0 ) /*0x6a8ca5*/
+    if ( CDTimerClass::TimeRemaining((int *)this + 2) || (v15 = this->SidebarClass_field_0x14) == 0 ) /*0x6a8ca5*/
     {
-      *(this + 4) = 0; /*0x6a8d4d*/
+      this->SidebarClass_field_0x4 = 0; /*0x6a8d4d*/
     }
     else
     {
-      v16 = *((_DWORD *)this + 6) + *(_DWORD *)this; /*0x6a8cb0*/
-      *(this + 4) = 1; /*0x6a8cb2*/
+      v16 = this->q006 + *(_DWORD *)this; /*0x6a8cb0*/
+      this->SidebarClass_field_0x4 = 1; /*0x6a8cb2*/
       *(_DWORD *)this = v16; /*0x6a8cb6*/
       v57 = 1; /*0x6a8cc4*/
       *v14 = MEMORY[0xA8ED84]; /*0x6a8cc9*/
-      *((_DWORD *)this + 3) = v61; /*0x6a8cd0*/
-      *((_DWORD *)this + 4) = v15; /*0x6a8cd3*/
+      this->IsInitialized = v61; /*0x6a8cd0*/
+      this->SidebarClass_field_0x4 = v15; /*0x6a8cd3*/
       if ( v16 >= 7 ) /*0x6a8cd6*/
       {
         *v14 = MEMORY[0xA8ED84]; /*0x6a8ce3*/
-        *((_DWORD *)this + 3) = v61; /*0x6a8ce5*/
-        *((_DWORD *)this + 4) = 0; /*0x6a8ce8*/
-        *((_DWORD *)this + 5) = 0; /*0x6a8ceb*/
+        this->IsInitialized = v61; /*0x6a8ce5*/
+        this->SidebarClass_field_0x4 = 0; /*0x6a8ce8*/
+        this->SidebarClass_field_0x14 = 0; /*0x6a8ceb*/
         *(_DWORD *)this = 0; /*0x6a8cee*/
-        *((_DWORD *)this + 16) = -1; /*0x6a8cf0*/
+        this->q010 = -1; /*0x6a8cf0*/
       }
     }
   }
   if ( MEMORY[0x884B88] > (int)MEMORY[0xA8ED84] ) /*0x6a8d00*/
     v57 = 1; /*0x6a8d02*/
-  if ( *((_DWORD *)this + 14) <= 1u ) /*0x6a8d0c*/
+  if ( this->SidebarClass_field_0x38 <= 1u ) /*0x6a8d0c*/
   {
     v17 = 0; /*0x6a8d1a*/
     if ( *((int *)this + 21) > 0 ) /*0x6a8d1e*/
@@ -6533,12 +6533,12 @@ LABEL_53:
         ++v17; /*0x6a8d83*/
         v18 += 13; /*0x6a8d84*/
       }
-      while ( v17 < *((_DWORD *)this + 21) ); /*0x6a8d23*/
+      while ( v17 < this->SidebarClass_field_0x54 ); /*0x6a8d23*/
     }
-    SHA1::Reset((int)&MEMORY[0xB07C48] + 96 * *((_DWORD *)this + 14)); /*0x6a8d8b*/
+    SHA1::Reset((int)&MEMORY[0xB07C48] + 96 * this->SidebarClass_field_0x38); /*0x6a8d8b*/
   }
 LABEL_44:
-  if ( *(this + 61) )
+  if ( this->q0F4 )
   {
     v58 = 0; /*0x6a8dad*/
     if ( *((int *)this + 21) > 0 )
@@ -6590,7 +6590,7 @@ LABEL_44:
         v21 += 13; /*0x6a8f49*/
         ++v58; /*0x6a8f58*/
       }
-      while ( v58 < *((_DWORD *)this + 21) );
+      while ( v58 < this->SidebarClass_field_0x54 );
     }
   }
   v27 = this; /*0x6a8f64*/
@@ -6637,7 +6637,7 @@ LABEL_44:
       ++v28; /*0x6a901e*/
       v29 += 13; /*0x6a901f*/
     }
-    while ( v28 < *((_DWORD *)this + 21) ); /*0x6a9025*/
+    while ( v28 < this->SidebarClass_field_0x54 ); /*0x6a9025*/
     v27 = this; /*0x6a902b*/
   }
   if ( v27[28] && HouseClass_Player == (#375 *)MEMORY[0xAC1198] )
@@ -6764,7 +6764,7 @@ LABEL_97:
     MEMORY[0x884B8E] = 1; /*0x6a926b*/
     MEMORY[0x880D68][3988 * MEMORY[0x884B84]] = 1; /*0x6a9283*/
     MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a928b*/
-    *(this + 60) = 1; /*0x6a929a*/
+    this->SidebarClass_field_0x3C = 1; /*0x6a929a*/
     MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a929e*/
     MEMORY[0x884B8F] = 1; /*0x6a92a7*/
     MEMORY[0xB0B518] = 1; /*0x6a92ae*/
@@ -6774,7 +6774,7 @@ LABEL_97:
 }
 
 
-// ==== 0x006A92E0  ObjectClass::GetSidebarTooltip  this=VOID_PTR  sig=csp ====
+// ==== 0x006A92E0  ObjectClass::GetSidebarTooltip  this=ObjectClass  sig=csp ====
 wchar_t *__thiscall ObjectClass::GetSidebarTooltip(int *this, int a2)
 {
   int v2; // eax
@@ -6793,10 +6793,10 @@ wchar_t *__thiscall ObjectClass::GetSidebarTooltip(int *this, int a2)
   CampaignScore *v16; // [esp-4h] [ebp-8h]
   CampaignScore *v17; // [esp+0h] [ebp-4h]
 
-  v2 = a2 + 2 * *(this + 17); /*0x6a92e8*/
+  v2 = a2 + 2 * this->q011; /*0x6a92e8*/
   if ( !HouseClass_Player.__pad_5568[22252] ) /*0x6a92f3*/
     return 0; /*0x6a92f3*/
-  v3 = *(this + 21); /*0x6a92f9*/
+  v3 = this->q054; /*0x6a92f9*/
   if ( v2 >= v3 || v3 >= 75 ) /*0x6a9307*/
     return 0; /*0x6a9307*/
   v4 = this + 13 * v2; /*0x6a9313*/
@@ -6891,7 +6891,7 @@ int __thiscall sub_6A94F0(_DWORD *this, int a2)
 }
 
 
-// ==== 0x006A9540  Sidebar::UpdateProductionDisplay  this=int  sig=csp ====
+// ==== 0x006A9540  Sidebar::UpdateProductionDisplay  this=Sidebar  sig=csp ====
 char __userpurge Sidebar::UpdateProductionDisplay@<al>(int a1@<ecx>, CampaignScore *a2@<edi>, char a3)
 {
   char result; // al
@@ -7741,7 +7741,7 @@ LABEL_121:
 }
 
 
-// ==== 0x006AA600  SidebarClass::UpdateProduction  this=int  sig=csp ====
+// ==== 0x006AA600  SidebarClass::UpdateProduction  this=SidebarClass  sig=csp ====
 char __thiscall sub_6AA600(int this)
 {
   int v2; // eax
@@ -8074,11 +8074,11 @@ LABEL_79:
 }
 
 
-// ==== 0x006AACE0  ObjectClass::method_6AACE0  this=VOID_PTR  sig=csp ====
+// ==== 0x006AACE0  ObjectClass::method_6AACE0  this=ObjectClass  sig=csp ====
 int __thiscall sub_6AACE0(_DWORD *this, int a2, int a3)
 {
-  *(this + 11) = a2; /*0x6aace8*/
-  *(this + 12) = a3; /*0x6aaceb*/
+  this->fallRate = a2; /*0x6aace8*/
+  this->nextObject = a3; /*0x6aaceb*/
   return a2; /*0x6aacee*/
 }
 
@@ -8673,7 +8673,7 @@ BOOL __thiscall PlayerClass_HasPlayers(_DWORD *this)
 }
 
 
-// ==== 0x006ABAD0  HouseClass::RouteFactoryRemoval  this=int  sig=csp ====
+// ==== 0x006ABAD0  HouseClass::RouteFactoryRemoval  this=HouseClass  sig=csp ====
 char __thiscall HouseClass::RouteFactoryRemoval(void *this, int a2, int a3, FactoryClass *aP3)
 {
   int v5; // eax
@@ -8707,7 +8707,7 @@ char __thiscall HouseClass::RouteFactoryRemoval(void *this, int a2, int a3, Fact
 }
 
 
-// ==== 0x006ABB60  HouseClass::RemoveFromProductionQueue  this=int  sig=csp ====
+// ==== 0x006ABB60  HouseClass::RemoveFromProductionQueue  this=HouseClass  sig=csp ====
 char __thiscall sub_6ABB60(int this, _DWORD *a2)
 {
   int v3; // esi
@@ -8776,7 +8776,7 @@ LABEL_19:
 }
 
 
-// ==== 0x006ABC40  Network_Process_6ABC40  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x006ABC40  Network_Process_6ABC40  this=-  sig=ida-proto ====
 int sub_6ABC40()
 {
   int result; // eax
@@ -8805,7 +8805,7 @@ int __thiscall HouseClass::GetStatus(IUnknown *this, IUnknown *aP1)
 }
 
 
-// ==== 0x006ABCD0  globalHelper_0ABCD0  this=unknown  sig=csp ====
+// ==== 0x006ABCD0  globalHelper_0ABCD0  this=-  sig=csp ====
 int __fastcall sub_6ABCD0(int a1, int a2, int a3)
 {
   switch ( a1 ) /*0x6abcd3*/
@@ -9116,7 +9116,7 @@ int sub_6AC430()
 }
 
 
-// ==== 0x006AC480  UI_Update_6AC480  this=unknown  sig=csp ====
+// ==== 0x006AC480  UI_Update_6AC480  this=-  sig=csp ====
 char __fastcall sub_6AC480(int a1, int *a2, _DWORD *a3, int a4)
 {
   char result; // al
@@ -9187,7 +9187,7 @@ int __thiscall SidebarClass_SaveLoad_Prefix_0(int *this, int a2)
 }
 
 
-// ==== 0x006AC5F0  TActionClass::executeHarvestAction  this=int  sig=csp ====
+// ==== 0x006AC5F0  TActionClass::executeHarvestAction  this=TActionClass  sig=csp ====
 _DWORD *__thiscall TActionClass::executeHarvestAction(_DWORD *this, int a2, MouseClass *aP2)
 {
   InfantryTypeClass *result; // eax
@@ -9370,18 +9370,18 @@ char *__thiscall sub_6AC840(char *this, int a2)
 }
 
 
-// ==== 0x006AC870  SidebarClass::initButtons  this=int  sig=csp ====
+// ==== 0x006AC870  SidebarClass::initButtons  this=SidebarClass  sig=csp ====
 _BYTE *__thiscall sub_6AC870(_BYTE *this)
 {
   wchar_t *v2; // edx
 
   *(_DWORD *)this = 0; /*0x6ac874*/
-  *(this + 4) = 0; /*0x6ac876*/
+  this->SidebarClass_field_0x4 = 0; /*0x6ac876*/
   v2 = MEMORY[0xA8ED84]; /*0x6ac879*/
-  *((_DWORD *)this + 4) = 0; /*0x6ac87f*/
-  *((_DWORD *)this + 2) = v2; /*0x6ac882*/
-  *((_DWORD *)this + 5) = 0; /*0x6ac885*/
-  *((_DWORD *)this + 6) = 1; /*0x6ac888*/
+  this->SidebarClass_field_0x4 = 0; /*0x6ac87f*/
+  this->SidebarClass_field_0x8 = v2; /*0x6ac882*/
+  this->SidebarClass_field_0x14 = 0; /*0x6ac885*/
+  this->q006 = 1; /*0x6ac888*/
   return this; /*0x6ac88f*/
 }
 
@@ -9548,7 +9548,7 @@ void __inc_tmpoff()
 }
 
 
-// ==== 0x006ACCA0  Map_Handle_6ACCA0  this=int  sig=ida-proto ====
+// ==== 0x006ACCA0  Map_Handle_6ACCA0  this=-  sig=ida-proto ====
 char __fastcall sub_6ACCA0(int a1)
 {
   HWND v1; // ebp
@@ -9708,7 +9708,7 @@ void __fastcall sub_6ACE80(SessionClass *hDlg, int a2)
 }
 
 
-// ==== 0x006ACEE0  DialogSkirmishFunc_UpdateMultiEngineer  this=int  sig=csp ====
+// ==== 0x006ACEE0  DialogSkirmishFunc_UpdateMultiEngineer  this=-  sig=csp ====
 void __fastcall DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog *hWnd, int nIDDlgItem, int a3, int a4)
 {
   int v6; // edi
@@ -10339,7 +10339,7 @@ LABEL_153:
 }
 
 
-// ==== 0x006ADC20  SetupSkirmishSpawnLocationEntry  this=int  sig=csp ====
+// ==== 0x006ADC20  SetupSkirmishSpawnLocationEntry  this=-  sig=csp ====
 BOOL __fastcall SetupSkirmishSpawnLocationEntry(SessionClass *hDlg, int nIDDlgItem)
 {
   int v4; // eax
@@ -10498,7 +10498,7 @@ void __fastcall sub_6ADDF0(HWND a1, int a2, int a3)
 }
 
 
-// ==== 0x006ADF00  Skirmish_Setup_6ADDF0_Setup  this=int  sig=csp ====
+// ==== 0x006ADF00  Skirmish_Setup_6ADDF0_Setup  this=-  sig=csp ====
 int __fastcall Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
 {
   int result; // eax
@@ -10581,7 +10581,7 @@ int __fastcall Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
 }
 
 
-// ==== 0x006AE080  HideSkirmishSpawnLocations  this=int  sig=csp ====
+// ==== 0x006AE080  HideSkirmishSpawnLocations  this=-  sig=csp ====
 void __fastcall HideSkirmishSpawnLocations(HWND hDlg, int a2)
 {
   int v3; // esi
@@ -10763,7 +10763,7 @@ bool __usercall ShowSkirmishSetupScreen@<al>(int a1@<ebx>, int a2@<ebp>)
 }
 
 
-// ==== 0x006AE3F0  Skirmish::Setup_DlgProc  this=unknown  sig=csp ====
+// ==== 0x006AE3F0  Skirmish::Setup_DlgProc  this=Skirmish  sig=csp ====
 int __stdcall Skirmish::Setup_DlgProc(void *hDlg, unsigned int a2, unsigned int a3, int a4)
 {
   int result; // eax
@@ -11600,7 +11600,7 @@ void __thiscall sub_6AF4A0(int this)
 }
 
 
-// ==== 0x006AF580  SlaveManagerClass::SetOwner  this=VOID_PTR  sig=csp ====
+// ==== 0x006AF580  SlaveManagerClass::SetOwner  this=SlaveManagerClass  sig=csp ====
 char __thiscall SlaveManagerClass::SetOwner(_DWORD *this, TechnoClass *aP1)
 {
   int v3; // eax
@@ -11608,9 +11608,9 @@ char __thiscall SlaveManagerClass::SetOwner(_DWORD *this, TechnoClass *aP1)
   int v5; // ecx
   int i; // ecx
 
-  v3 = *(this + 9); /*0x6af588*/
+  v3 = this->master; /*0x6af588*/
   *(_DWORD *)(v3 + 728) = 0; /*0x6af58b*/
-  *(this + 9) = aP1; /*0x6af595*/
+  this->master = aP1; /*0x6af595*/
   v4 = *(_DWORD **)&aP1->mindControlledBy_a_unit; /*0x6af598*/
   if ( v4 ) /*0x6af5a0*/
   {
@@ -11620,11 +11620,11 @@ char __thiscall SlaveManagerClass::SetOwner(_DWORD *this, TechnoClass *aP1)
       LOBYTE(v3) = (*(int (__thiscall **)(int, int))(*(_DWORD *)v5 + 32))(v5, 1); /*0x6af5b9*/
   }
   *(_DWORD *)&aP1->mindControlledBy_a_unit = this; /*0x6af5bc*/
-  for ( i = *(this + 18) - 1; i >= 0; --i ) /*0x6af5c6*/
+  for ( i = this->q048 - 1; i >= 0; --i ) /*0x6af5c6*/
   {
-    v3 = **(_DWORD **)(*(this + 15) + 4 * i); /*0x6af5ce*/
+    v3 = **(_DWORD **)(this->slaveVectorCount + 4 * i); /*0x6af5ce*/
     if ( v3 ) /*0x6af5d2*/
-      *(_DWORD *)(v3 + 732) = *(this + 9); /*0x6af5d7*/
+      *(_DWORD *)(v3 + 732) = this->master; /*0x6af5d7*/
   }
   return v3; /*0x6af5e0*/
 }

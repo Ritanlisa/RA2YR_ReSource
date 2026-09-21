@@ -9,7 +9,7 @@ void nullsub_272()
 }
 
 
-// ==== 0x007E0001  sub_7E0001  this=unknown  sig=csp ====
+// ==== 0x007E0001  sub_7E0001  this=-  sig=csp ====
 void __cdecl __spoils<ecx> sub_7E0001(int *a1, _DWORD *a2, int a3, int a4, int a5)
 {
   unsigned int v6; // ecx
@@ -51,7 +51,7 @@ void __cdecl __spoils<ecx> sub_7E0001(int *a1, _DWORD *a2, int a3, int a4, int a
 }
 
 
-// ==== 0x007E00A6  sub_7E00A6  this=unknown  sig=csp ====
+// ==== 0x007E00A6  sub_7E00A6  this=-  sig=csp ====
 void __cdecl __spoils<ecx> sub_7E00A6(int *a1, char *a2, int a3, unsigned int a4, unsigned int a5)
 {
   _DWORD *v6; // ecx
@@ -112,7 +112,7 @@ void __cdecl __spoils<ecx> sub_7E00A6(int *a1, char *a2, int a3, unsigned int a4
 }
 
 
-// ==== 0x007E0170  ObfuscateDataBlock  this=int  sig=csp ====
+// ==== 0x007E0170  ObfuscateDataBlock  this=-  sig=csp ====
 void __cdecl __spoils<ecx> ObfuscateDataBlock(int *a1, _DWORD *a2, int a3)
 {
   unsigned int v3; // ecx
@@ -145,7 +145,7 @@ void __cdecl __spoils<ecx> ObfuscateDataBlock(int *a1, _DWORD *a2, int a3)
 }
 
 
-// ==== 0x007E01D2  sub_7E01D2  this=unknown  sig=csp ====
+// ==== 0x007E01D2  sub_7E01D2  this=-  sig=csp ====
 void __cdecl __spoils<ecx> sub_7E01D2(_BYTE *a1, _BYTE *a2, _BYTE *a3, int a4)
 {
   int v7; // eax
@@ -166,7 +166,7 @@ void __cdecl __spoils<ecx> sub_7E01D2(_BYTE *a1, _BYTE *a2, _BYTE *a3, int a4)
 }
 
 
-// ==== 0x007E01FB  sub_7E01FB  this=unknown  sig=csp ====
+// ==== 0x007E01FB  sub_7E01FB  this=-  sig=csp ====
 void __cdecl sub_7E01FB(int *a1, char *a2, int a3, unsigned int a4, unsigned int a5)
 {
   _BYTE *v5; // [esp-24h] [ebp-34h]

@@ -9,7 +9,7 @@ void __cdecl nullsub_227()
 }
 
 
-// ==== 0x00690160  Screen::TransitionLoop  this=int  sig=csp ====
+// ==== 0x00690160  Screen::TransitionLoop  this=Screen  sig=csp ====
 int __thiscall Screen::TransitionLoop(MPCooperative *this, int a2)
 {
   int v3; // eax
@@ -252,7 +252,7 @@ char *__thiscall sub_6905F0(_DWORD *this)
 }
 
 
-// ==== 0x00690640  ScoreScreen::LoadAudio  this=unknown  sig=csp ====
+// ==== 0x00690640  ScoreScreen::LoadAudio  this=ScoreScreen  sig=csp ====
 int ScoreScreen_LoadAudio()
 {
   int result; // eax
@@ -888,7 +888,7 @@ _DWORD *__thiscall ScoreFontClass::Constructor_ScoreFontClass(_DWORD *Block, cha
 }
 
 
-// ==== 0x00691160  VectorClass::PushBack2  this=int  sig=csp ====
+// ==== 0x00691160  VectorClass::PushBack2  this=VectorClass  sig=csp ====
 char __thiscall VectorClass_PushBack_2(_DWORD *this, _DWORD *a2)
 {
   int v3; // ecx
@@ -896,18 +896,18 @@ char __thiscall VectorClass_PushBack_2(_DWORD *this, _DWORD *a2)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x691163*/
-  if ( *(this + 4) >= v3 ) /*0x69116b*/
+  v3 = this->Capacity; /*0x691163*/
+  if ( this->q010 >= v3 ) /*0x69116b*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x691176*/
+    if ( !this->__pad_034 && v3 ) /*0x691176*/
       return 0; /*0x691176*/
-    v4 = *(this + 5); /*0x691178*/
+    v4 = this->__pad_014; /*0x691178*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x691188*/
       return 0; /*0x69118f*/
   }
-  v6 = *(this + 4); /*0x691195*/
-  v7 = *(this + 1); /*0x691198*/
-  *(this + 4) = v6 + 1; /*0x69119e*/
+  v6 = this->q010; /*0x691195*/
+  v7 = this->Items; /*0x691198*/
+  this->q010 = v6 + 1; /*0x69119e*/
   *(_DWORD *)(v7 + 4 * v6) = *a2; /*0x6911a8*/
   return 1; /*0x691191*/
 }
@@ -2505,7 +2505,7 @@ void __cdecl nullsub_175()
 }
 
 
-// ==== 0x00692F30  TacticalClass::ProcessView  this=VOID_PTR  sig=csp ====
+// ==== 0x00692F30  TacticalClass::ProcessView  this=TacticalClass  sig=csp ====
 void __thiscall sub_692F30(_BYTE *this)
 {
   int v2; // esi
@@ -2530,7 +2530,7 @@ void __thiscall sub_692F30(_BYTE *this)
     v11[1] = v5 - v3; /*0x692f72*/
     if ( !Map_Process_63AB60(v11[0], v5 - v3) ) /*0x692f76*/
     {
-      if ( *(this + 21850) == 1 ) /*0x692f8c*/
+      if ( this->q555A == 1 ) /*0x692f8c*/
       {
         if ( Mouse::IsButtonDown(1u) ) /*0x692f96*/
         {
@@ -2548,7 +2548,7 @@ void __thiscall sub_692F30(_BYTE *this)
           v6 = Radar::ScanWaypoints((int)&v9, v8, 1); /*0x693015*/
           TacticalClass::HandlePlayerAction((char *)&MEMORY[0x87F7E8], (__int16 *)&v9, v10[0], v8, v6, 0); /*0x69302f*/
         }
-        if ( *(this + 21849) && !MEMORY[0xA8ED6B] ) /*0x693045*/
+        if ( this->q5559 && !MEMORY[0xA8ED6B] ) /*0x693045*/
           Viewport::ProcessScroll(this, v11); /*0x69304e*/
       }
     }
@@ -2563,7 +2563,7 @@ bool __thiscall MouseClass::_vt26(_BYTE *this)
 }
 
 
-// ==== 0x006930A0  Tactical::HandleTacticalMouseInput  this=int  sig=csp ====
+// ==== 0x006930A0  Tactical::HandleTacticalMouseInput  this=Tactical  sig=csp ====
 char __thiscall Tactical::HandleTacticalMouseInput(_BYTE *this, int _28, _DWORD *a2, int a4, MouseClass *aP4)
 {
   int v5; // eax
@@ -2687,7 +2687,7 @@ char __thiscall Tactical::HandleTacticalMouseInput(_BYTE *this, int _28, _DWORD 
 }
 
 
-// ==== 0x00693440  ObjectClass::ScrollMapEdge  this=int  sig=csp ====
+// ==== 0x00693440  ObjectClass::ScrollMapEdge  this=ObjectClass  sig=csp ====
 char __thiscall Map_EdgeScroll(int *this, _DWORD *a2)
 {
   char result; // al
@@ -3368,7 +3368,7 @@ LABEL_78:
 }
 
 
-// ==== 0x006941A0  ReceiveNetworkFile  this=int  sig=csp ====
+// ==== 0x006941A0  ReceiveNetworkFile  this=-  sig=csp ====
 char __fastcall ReceiveNetworkFile(RawFileClass *a1, DWORD a2, int a3, char a4)
 {
   int v6; // ebp
@@ -4275,7 +4275,7 @@ int sub_6956B0()
 }
 
 
-// ==== 0x006956D0  Network::sendGameEvent  this=int  sig=csp ====
+// ==== 0x006956D0  Network::sendGameEvent  this=Network  sig=csp ====
 bool Network::sendGameEvent(Modem *aP0, int _10, _DWORD *a2)
 {
   LONG v3; // ecx
@@ -4310,7 +4310,7 @@ bool Network::sendGameEvent(Modem *aP0, int _10, _DWORD *a2)
 }
 
 
-// ==== 0x00695760  DlgProcLoadGame  this=unknown  sig=csp ====
+// ==== 0x00695760  DlgProcLoadGame  this=-  sig=csp ====
 int __stdcall LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 {
   int result; // eax
@@ -4677,7 +4677,7 @@ LABEL_10:
 }
 
 
-// ==== 0x00695FD0  NetworkDialog::InitModemSettings  this=int  sig=csp ====
+// ==== 0x00695FD0  NetworkDialog::InitModemSettings  this=NetworkDialog  sig=csp ====
 HWND __thiscall NetworkDialog::InitModemSettings(HWND *this, _DWORD *a2)
 {
   HWND (__stdcall *v3)(HWND, int); // esi
@@ -4700,8 +4700,8 @@ HWND __thiscall NetworkDialog::InitModemSettings(HWND *this, _DWORD *a2)
     *(this + 34) = (HWND)760; /*0x695ff1*/
   if ( *(this + 35) == HWND_MESSAGE|0x2 ) /*0x696002*/
     *(this + 35) = (HWND)3; /*0x696004*/
-  if ( *(this + 36) == HWND_MESSAGE|0x2 ) /*0x696014*/
-    *(this + 36) = (HWND)57600; /*0x696016*/
+  if ( this->q090 == HWND_MESSAGE|0x2 ) /*0x696014*/
+    this->q090 = (HWND)57600; /*0x696016*/
   InitializeModemPortSelect((int)this); /*0x696022*/
   NetworkDialog::Dispatch(this); /*0x696029*/
   v3 = GetDlgItem; /*0x696030*/
@@ -4962,7 +4962,7 @@ LABEL_16:
 }
 
 
-// ==== 0x00696610  NetworkDialog::UpdateListBox  this=int  sig=csp ====
+// ==== 0x00696610  NetworkDialog::UpdateListBox  this=NetworkDialog  sig=csp ====
 HWND __thiscall sub_696610(HWND *this)
 {
   HWND result; // eax
@@ -5415,7 +5415,7 @@ int __thiscall sub_696F30(int this)
 }
 
 
-// ==== 0x00696F50  SessionClass::GetOption  this=VOID_PTR  sig=csp ====
+// ==== 0x00696F50  SessionClass::GetOption  this=SessionClass  sig=csp ====
 int __thiscall SessionClass_GetOption(int this)
 {
   int result; // eax
@@ -5519,7 +5519,7 @@ int __thiscall SessionClass::SetOption2(int this, SessionClass *aP1)
 }
 
 
-// ==== 0x006970A0  SessionClass::SessionClass  this=int  sig=csp ====
+// ==== 0x006970A0  SessionClass::SessionClass  this=SessionClass  sig=csp ====
 char *__thiscall sub_6970A0(char *this)
 {
   _DWORD *v2; // eax
@@ -5539,12 +5539,12 @@ char *__thiscall sub_6970A0(char *this)
   int v16; // ecx
   int v18; // [esp+10h] [ebp-4h]
 
-  *((_DWORD *)this + 1) = 0; /*0x6970b8*/
-  *((_DWORD *)this + 99) = 0; /*0x6970bb*/
+  this->MPGameMode = 0; /*0x6970b8*/
+  this->q063 = 0; /*0x6970bb*/
   *((_DWORD *)this + 100) = 0; /*0x6970c1*/
   *((_DWORD *)this + 101) = 1; /*0x6970c7*/
   *((_DWORD *)this + 102) = 10000; /*0x6970cd*/
-  *((_DWORD *)this + 103) = 10; /*0x6970d3*/
+  this->q067 = 10; /*0x6970d3*/
   *(this + 416) = 1; /*0x6970d9*/
   *(this + 417) = 1; /*0x6970df*/
   *(this + 418) = 1; /*0x6970e5*/
@@ -5561,7 +5561,7 @@ char *__thiscall sub_6970A0(char *this)
     --v3; /*0x69710d*/
   }
   while ( v3 ); /*0x69710e*/
-  *((_DWORD *)this + 130) = 0; /*0x697110*/
+  this->LANPreferences = 0; /*0x697110*/
   *((_DWORD *)this + 131) = 0; /*0x697116*/
   *((_DWORD *)this + 132) = 1; /*0x69711c*/
   *((_DWORD *)this + 133) = 10000; /*0x697122*/
@@ -5582,7 +5582,7 @@ char *__thiscall sub_6970A0(char *this)
     --v5; /*0x697167*/
   }
   while ( v5 ); /*0x697168*/
-  *((_DWORD *)this + 161) = 0; /*0x69716a*/
+  this->WOLPreferences = 0; /*0x69716a*/
   *((_DWORD *)this + 162) = 0; /*0x697170*/
   *((_DWORD *)this + 163) = 1; /*0x697176*/
   *((_DWORD *)this + 164) = 10000; /*0x69717c*/
@@ -5636,21 +5636,21 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 2565) = 0; /*0x697292*/
   *(this + 10264) = 1; /*0x697298*/
   *(this + 10265) = 0; /*0x69729f*/
-  *((_DWORD *)this + 2563) = &vt_DynamicVectorClass_NodeNameType; /*0x6972a5*/
+  this->UnknownVector_280C = &vt_DynamicVectorClass_NodeNameType; /*0x6972a5*/
   *((_DWORD *)this + 2568) = 10; /*0x6972ab*/
   *((_DWORD *)this + 2567) = 0; /*0x6972b1*/
-  *((_DWORD *)this + 2570) = 0; /*0x6972b7*/
+  this->StartSpots = 0; /*0x6972b7*/
   *((_DWORD *)this + 2571) = 0; /*0x6972bd*/
   *(this + 10288) = 1; /*0x6972c3*/
   *(this + 10289) = 0; /*0x6972ca*/
-  *((_DWORD *)this + 2569) = &vt_DynamicVectorClass_NodeNameType; /*0x6972d0*/
+  this->UnknownVector_2824 = &vt_DynamicVectorClass_NodeNameType; /*0x6972d0*/
   *((_DWORD *)this + 2574) = 10; /*0x6972d6*/
   *((_DWORD *)this + 2573) = 0; /*0x6972dc*/
-  *((_DWORD *)this + 2576) = 0; /*0x6972e2*/
+  this->WOLPreferences = 0; /*0x6972e2*/
   *((_DWORD *)this + 2577) = 0; /*0x6972e8*/
   *(this + 10312) = 1; /*0x6972ee*/
   *(this + 10313) = 0; /*0x6972f5*/
-  *((_DWORD *)this + 2575) = &vt_DynamicVectorClass_NodeNameType; /*0x6972fb*/
+  this->q283C = &vt_DynamicVectorClass_NodeNameType; /*0x6972fb*/
   *((_DWORD *)this + 2580) = 10; /*0x697301*/
   *((_DWORD *)this + 2579) = 0; /*0x697307*/
   *((_DWORD *)this + 2624) = 0; /*0x69730d*/
@@ -5698,35 +5698,35 @@ char *__thiscall sub_6970A0(char *this)
   while ( v12 ); /*0x6973ef*/
   *(this + 12488) = 0; /*0x6973f1*/
   *(_DWORD *)this = 0; /*0x6973fc*/
-  *((_DWORD *)this + 5) = 2; /*0x6973ff*/
+  this->SessionClass_field_14 = 2; /*0x6973ff*/
   *((_DWORD *)this + 7) = 0; /*0x697402*/
-  *(this + 32) = 1; /*0x697405*/
-  *((_DWORD *)this + 9) = 0; /*0x697409*/
-  *(this + 40) = 0; /*0x69740c*/
+  this->SessionClass_field_08 = 1; /*0x697405*/
+  this->q024 = 0; /*0x697409*/
+  this->q028 = 0; /*0x69740c*/
   *(this + 41) = 0; /*0x69740f*/
   *(this + 53) = 0; /*0x697412*/
-  *((_DWORD *)this + 14) = 0; /*0x697415*/
+  this->Handle = 0; /*0x697415*/
   *(this + 42) = 0; /*0x697418*/
   *(this + 43) = 0; /*0x69741b*/
-  *(this + 44) = 0; /*0x69741e*/
-  *((_DWORD *)this + 12) = 0; /*0x697421*/
-  *(this + 52) = 0; /*0x697424*/
+  this->q02C = 0; /*0x69741e*/
+  this->SessionClass_field_0C = 0; /*0x697421*/
+  this->UniqueID = 0; /*0x697424*/
   *(this + 228) = 0; /*0x697427*/
   *(this + 229) = 0; /*0x69742d*/
   *(this + 230) = 0; /*0x697433*/
   *(this + 231) = 0; /*0x697439*/
   *(this + 232) = 0; /*0x69743f*/
-  *((_DWORD *)this + 16) = 1; /*0x697445*/
+  this->SessionClass_field_10 = 1; /*0x697445*/
   *((_DWORD *)this + 81) = 0; /*0x69744c*/
   *(this + 328) = 0; /*0x697452*/
-  *((_DWORD *)this + 93) = 0; /*0x69745b*/
-  *((_DWORD *)this + 94) = -1; /*0x697461*/
-  *((_DWORD *)this + 87) = 2; /*0x697467*/
-  *((_DWORD *)this + 88) = -1; /*0x69746d*/
-  *((_DWORD *)this + 97) = *((_DWORD *)this + 93); /*0x697479*/
-  *((_DWORD *)this + 98) = *((_DWORD *)this + 94); /*0x697485*/
-  *((_DWORD *)this + 95) = *((_DWORD *)this + 87); /*0x697491*/
-  *((_DWORD *)this + 96) = *((_DWORD *)this + 88); /*0x69749d*/
+  this->idxSide = 0; /*0x69745b*/
+  this->idxSide2 = -1; /*0x697461*/
+  this->q057 = 2; /*0x697467*/
+  this->q058 = -1; /*0x69746d*/
+  this->Side = this->idxSide; /*0x697479*/
+  this->Side2 = this->idxSide2; /*0x697485*/
+  this->q05F = this->q057; /*0x697491*/
+  this->Color2 = this->q058; /*0x69749d*/
   *(this + 7897) = 1; /*0x6974a3*/
   *(this + 7896) = 1; /*0x6974aa*/
   *(this + 8129) = 1; /*0x6974b1*/
@@ -5743,15 +5743,15 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 3069) = 0; /*0x697504*/
   *(this + 12312) = 1; /*0x69750a*/
   *(this + 12104) = 0; /*0x697511*/
-  *((_DWORD *)this + 3079) = 0; /*0x69751c*/
+  this->q301C = 0; /*0x69751c*/
   memset(MEMORY[0xB73E44], 0, 0x2000u); /*0x697522*/
   memset(dword_B76338, 0, sizeof(dword_B76338)); /*0x69752e*/
-  *((_DWORD *)this + 192) = 0; /*0x697530*/
-  *((_DWORD *)this + 193) = 0; /*0x697536*/
-  *((_DWORD *)this + 195) = -1; /*0x69753c*/
-  *(this + 776) = 0; /*0x697542*/
+  this->MuteSWLaunches = 0; /*0x697530*/
+  this->SessionClass_field_304 = 0; /*0x697536*/
+  this->LastNickSlot = -1; /*0x69753c*/
+  this->WOLLimitResolution = 0; /*0x697542*/
   *(this + 10600) = 0; /*0x697548*/
-  *((_DWORD *)this + 3101) = -1; /*0x697559*/
+  this->q3074 = -1; /*0x697559*/
   memset(this + 12320, 0, 0x28u); /*0x69755f*/
   *((_WORD *)this + 6180) = 0; /*0x697561*/
   *((_DWORD *)this + 3107) = 0; /*0x697563*/
@@ -5766,7 +5766,7 @@ char *__thiscall sub_6970A0(char *this)
   *(this + 1672) = 0; /*0x69759f*/
   *(this + 1673) = 0; /*0x6975a5*/
   *(this + 1674) = 0; /*0x6975b0*/
-  *((_DWORD *)this + 196) = 8; /*0x6975b6*/
+  this->SessionClass_field_310 = 8; /*0x6975b6*/
   *((_DWORD *)this + 198) = 15; /*0x6975c0*/
   *((_DWORD *)this + 204) = 15; /*0x6975c6*/
   *((_DWORD *)this + 197) = 0; /*0x6975cc*/
@@ -5812,7 +5812,7 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 3118) = MEMORY[0xB07740]; /*0x69773a*/
   *((_DWORD *)this + 3119) = MEMORY[0xB07744]; /*0x697745*/
   v15 = this + 132; /*0x69774e*/
-  *((_DWORD *)this + 3120) = MEMORY[0xB07748]; /*0x697754*/
+  this->LastNickSlot = MEMORY[0xB07748]; /*0x697754*/
   *(this + 12488) = 0; /*0x697757*/
   *((_DWORD *)this + 3123) = 0; /*0x69775d*/
   *((_DWORD *)this + 3124) = 0; /*0x697763*/
@@ -5827,9 +5827,9 @@ char *__thiscall sub_6970A0(char *this)
     --v16; /*0x69778d*/
   }
   while ( v16 ); /*0x69778e*/
-  *((_DWORD *)this + 3) = 0; /*0x697790*/
-  *((_DWORD *)this + 4) = 0; /*0x697793*/
-  *(this + 1704) = 0; /*0x697796*/
+  this->SessionClass_field_0C = 0; /*0x697790*/
+  this->MPGameMode = 0; /*0x697793*/
+  this->ScenarioFilename = 0; /*0x697796*/
   *((_DWORD *)this + 563) = 0; /*0x69779c*/
   *(this + 2256) = 0; /*0x6977a2*/
   *((_DWORD *)this + 565) = 0; /*0x6977a9*/
@@ -5837,7 +5837,7 @@ char *__thiscall sub_6970A0(char *this)
 }
 
 
-// ==== 0x006977C0  CSFClass::LoadMissingStrings  this=VOID_PTR  sig=csp ====
+// ==== 0x006977C0  CSFClass::LoadMissingStrings  this=CSFClass  sig=csp ====
 int __thiscall sub_6977C0(char *this)
 {
   char *v1; // esi
@@ -6003,7 +6003,7 @@ void __thiscall ObjectManager::CleanupArrays(int this)
 }
 
 
-// ==== 0x00697AD0  BulkData::InitMissionHashing  this=int  sig=csp ====
+// ==== 0x00697AD0  BulkData::InitMissionHashing  this=BulkData  sig=csp ====
 void __thiscall sub_697AD0(_DWORD *this)
 {
   DWORD v2; // eax
@@ -6040,7 +6040,7 @@ void nullsub_228()
 }
 
 
-// ==== 0x00697B70  SessionClass::CreateConnections  this=int  sig=csp ====
+// ==== 0x00697B70  SessionClass::CreateConnections  this=SessionClass  sig=csp ====
 int __thiscall SessionClass_CreateConnections(void *this)
 {
   int v3; // esi
@@ -6067,34 +6067,34 @@ int __thiscall SessionClass_CreateConnections(void *this)
     {
       Debug::Log(); /*0x697bc5*/
       if ( _wcsicmp( /*0x697be7*/
-             *(const wchar_t **)(*((_DWORD *)this + 2576) + 4 * v3),
+             *(const wchar_t **)(this->WOLPreferences + 4 * v3),
              (const wchar_t *)(*((_DWORD *)HouseClass_Array
-                               + *(_DWORD *)(*(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3) + 111))
+                               + *(_DWORD *)(*(_DWORD *)(this->WOLPreferences + 4 * v3) + 111))
                              + 90154)) )
       {
         return 0; /*0x697bf1*/
       }
-      if ( !_wcsicmp(*(const wchar_t **)(*((_DWORD *)this + 2576) + 4 * v3), (const wchar_t *)this + 6160) ) /*0x697c04*/
+      if ( !_wcsicmp(*(const wchar_t **)(this->WOLPreferences + 4 * v3), (const wchar_t *)this + 6160) ) /*0x697c04*/
       {
-        *((_DWORD *)this + 3101) = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3) + 111); /*0x697c25*/
+        this->q3074 = *(_DWORD *)(*(_DWORD *)(this->WOLPreferences + 4 * v3) + 111); /*0x697c25*/
         Network::CopyAddress((_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v3) + 40), &v13, (int)v15); /*0x697c38*/
         NetworkID::Assign(&MEMORY[0xA8DBA4], &v13, (int)v15, 0); /*0x697c4d*/
         Network::SetPlayerCoords(&MEMORY[0xA8DBA4]); /*0x697c5c*/
       }
-      v4 = *(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3); /*0x697c67*/
+      v4 = *(_DWORD *)(this->WOLPreferences + 4 * v3); /*0x697c67*/
       *(_DWORD *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(v4 + 111)) + 516) = *(_DWORD *)(v4 + 123); /*0x697c7e*/
       Network::CopyAddress((_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v3) + 40), &v13, (int)v15); /*0x697c94*/
       v5 = 0; /*0x697c99*/
       for ( i = 0; i < 4; ++i ) /*0x697c9b*/
         v5 = (unsigned __int8)v15[i] | (v5 << 8); /*0x697ca8*/
       Debug::Log(); /*0x697cc7*/
-      *(_DWORD *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(*(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3) + 111)) + 512) = v5; /*0x697ce5*/
-      *(_BYTE *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(*(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3) + 111)) + 520) = 0; /*0x697d00*/
+      *(_DWORD *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(*(_DWORD *)(this->WOLPreferences + 4 * v3) + 111)) + 512) = v5; /*0x697ce5*/
+      *(_BYTE *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(*(_DWORD *)(this->WOLPreferences + 4 * v3) + 111)) + 520) = 0; /*0x697d00*/
       if ( v3 > 0 ) /*0x697d06*/
       {
-        v7 = *(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3); /*0x697d0e*/
+        v7 = *(_DWORD *)(this->WOLPreferences + 4 * v3); /*0x697d0e*/
         SessionClass::initLAN(*(_DWORD *)(v7 + 111), (wchar_t *)v7, v7 + 40); /*0x697d1f*/
-        *(_DWORD *)(*(_DWORD *)(*((_DWORD *)this + 2576) + 4 * v3) + 115) = -1; /*0x697d2d*/
+        *(_DWORD *)(*(_DWORD *)(this->WOLPreferences + 4 * v3) + 115) = -1; /*0x697d2d*/
       }
     }
     while ( ++v3 < *((_DWORD *)this + 2579) ); /*0x697bc5*/
@@ -6146,7 +6146,7 @@ LABEL_22:
 }
 
 
-// ==== 0x00697E70  SessionClass::IsValidHouse  this=int  sig=csp ====
+// ==== 0x00697E70  SessionClass::IsValidHouse  this=SessionClass  sig=csp ====
 char __thiscall SessionClass_IsValidHouse(int this, #375 *a2)
 {
   #375 *v2; // edi
@@ -6778,7 +6778,7 @@ char __userpurge Game::DumpMultiplayerGameInfo@<al>(int this@<ecx>, CellStruct *
 }
 
 
-// ==== 0x00698F90  GameSetup::WriteINI  this=VOID_PTR  sig=csp ====
+// ==== 0x00698F90  GameSetup::WriteINI  this=GameSetup  sig=csp ====
 int __thiscall GameSetup::WriteINI(int this, CCINIClass *aP1, unsigned __int8 *Block)
 {
   INIClass *v4; // edx
@@ -7187,7 +7187,7 @@ LABEL_20:
 }
 
 
-// ==== 0x00699980  SessionClass::LoadMissionList  this=int  sig=csp ====
+// ==== 0x00699980  SessionClass::LoadMissionList  this=SessionClass  sig=csp ====
 char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
 {
   wchar_t *Description; // esi
@@ -7556,7 +7556,7 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
 }
 
 
-// ==== 0x0069A1F0  WinMain::Constructor_VectorClass_Wstring_  this=VOID_PTR  sig=csp ====
+// ==== 0x0069A1F0  WinMain::Constructor_VectorClass_Wstring_  this=WinMain  sig=csp ====
 int __thiscall sub_69A1F0(_DWORD *this)
 {
   int i; // ebp
@@ -7604,7 +7604,7 @@ void nullsub_35()
 }
 
 
-// ==== 0x0069A310  SessionClass::GetPlayerColorScheme  this=VOID_PTR  sig=csp ====
+// ==== 0x0069A310  SessionClass::GetPlayerColorScheme  this=SessionClass  sig=csp ====
 unsigned int __stdcall SessionClass::GetPlayerColorScheme(ObjectClass *aP0)
 {
   ObjectClass *result; // eax
@@ -7646,7 +7646,7 @@ DWORD sub_69A340()
 }
 
 
-// ==== 0x0069A3B0  MapFile::LoadDescription  this=VOID_PTR  sig=csp ====
+// ==== 0x0069A3B0  MapFile::LoadDescription  this=MapFile  sig=csp ====
 VectorClass *__thiscall MapFile::LoadDescription(wchar_t *String, unsigned __int8 ***a2, INIClass *aP1)
 {
   wchar_t *v4; // ebp
@@ -7886,7 +7886,7 @@ VectorClass *__thiscall MapFile::LoadDescription(wchar_t *String, unsigned __int
 }
 
 
-// ==== 0x0069A980  SessionClass::ParseGameInfo  this=int  sig=csp ====
+// ==== 0x0069A980  SessionClass::ParseGameInfo  this=SessionClass  sig=csp ====
 wchar_t *__thiscall SessionClass::ParseGameInfo(
         wchar_t *Destination,
         char *Source,
@@ -8029,7 +8029,7 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
 }
 
 
-// ==== 0x0069AC30  ScenarioClass::CheckExists  this=int  sig=csp ====
+// ==== 0x0069AC30  ScenarioClass::CheckExists  this=ScenarioClass  sig=csp ====
 char __thiscall ScenarioClass_CheckExists(int *this, int a2)
 {
   _DWORD *v2; // eax
@@ -8049,16 +8049,16 @@ char __thiscall ScenarioClass_CheckExists(int *this, int a2)
     RawFileClass::Dtor(v11); /*0x69ac5b*/
     return v3; /*0x69ac68*/
   }
-  v5 = *(this + 102); /*0x69ac6b*/
+  v5 = this->q198; /*0x69ac6b*/
   v6 = 0; /*0x69ac71*/
   if ( v5 <= 0 ) /*0x69ac75*/
   {
 LABEL_7:
-    v8 = *(this + 102); /*0x69ac8a*/
+    v8 = this->q198; /*0x69ac8a*/
     v9 = 0; /*0x69ac90*/
     if ( v8 <= 0 ) /*0x69ac94*/
       return 0; /*0x69acb0*/
-    for ( i = (_DWORD *)*(this + 99); *i != a2; ++i ) /*0x69ac96*/
+    for ( i = (_DWORD *)this->q18C; *i != a2; ++i ) /*0x69ac96*/
     {
       if ( ++v9 >= v8 ) /*0x69aca6*/
         return 0; /*0x69aca6*/
@@ -8066,7 +8066,7 @@ LABEL_7:
   }
   else
   {
-    v7 = (_DWORD *)*(this + 99); /*0x69ac77*/
+    v7 = (_DWORD *)this->q18C; /*0x69ac77*/
     while ( *v7 != -1 ) /*0x69ac80*/
     {
       ++v6; /*0x69ac82*/
@@ -8086,7 +8086,7 @@ int __thiscall GameOption::GetField(_DWORD **this)
 }
 
 
-// ==== 0x0069ACD0  GameOption::SetDescriptionWStr  this=int  sig=csp ====
+// ==== 0x0069ACD0  GameOption::SetDescriptionWStr  this=GameOption  sig=csp ====
 wchar_t *__thiscall GameOption::SetDescriptionWStr(wchar_t *Destination, CampaignScore *aP1)
 {
   wchar_t *result; // eax
@@ -8106,7 +8106,7 @@ wchar_t *__thiscall GameOption::SetDescriptionWStr(wchar_t *Destination, Campaig
 }
 
 
-// ==== 0x0069AD80  GameOption::SetDigest  this=int  sig=csp ====
+// ==== 0x0069AD80  GameOption::SetDigest  this=GameOption  sig=csp ====
 char *__thiscall GameOption::SetDigest(char *this, CCINIClass *aP1)
 {
   char *result; // eax
@@ -8125,22 +8125,22 @@ char *__thiscall GameOption::SetDigest(char *this, CCINIClass *aP1)
 }
 
 
-// ==== 0x0069ADE0  ObjectClass::method_69ADE0  this=VOID_PTR  sig=csp ====
+// ==== 0x0069ADE0  ObjectClass::method_69ADE0  this=ObjectClass  sig=csp ====
 char __thiscall sub_69ADE0(_BYTE *this, char a2)
 {
-  *(this + 380) = a2; /*0x69ade4*/
+  this->q17C = a2; /*0x69ade4*/
   return a2; /*0x69adea*/
 }
 
 
-// ==== 0x0069ADF0  IsRandMap::Sed  this=VOID_PTR  sig=csp ====
+// ==== 0x0069ADF0  IsRandMap::Sed  this=IsRandMap  sig=csp ====
 BOOL __thiscall IsRandMap_Sed(int this)
 {
   return _strcmpi((const void *)(this + 88), aRandmapSed) == 0; /*0x69ae06*/
 }
 
 
-// ==== 0x0069AE10  GameClass::initPlayerData  this=int  sig=csp ====
+// ==== 0x0069AE10  GameClass::initPlayerData  this=GameClass  sig=csp ====
 bool __thiscall sub_69AE10(int *this, const char **a2)
 {
   int v3; // eax
@@ -8168,7 +8168,7 @@ BOOL __thiscall IsRandMap_Sed2(int this)
 }
 
 
-// ==== 0x0069AE90  Multiplayer::ShowProgress  this=int  sig=csp ====
+// ==== 0x0069AE90  Multiplayer::ShowProgress  this=Multiplayer  sig=csp ====
 void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
 {
   double v3; // st7
@@ -8273,7 +8273,7 @@ LABEL_25:
 }
 
 
-// ==== 0x0069B170  ObjectClass::ParseAndApplyAlliances  this=int  sig=csp ====
+// ==== 0x0069B170  ObjectClass::ParseAndApplyAlliances  this=ObjectClass  sig=csp ====
 void __thiscall ParseAndApplyAlliances(_BYTE *this)
 {
   bool v1; // zf
@@ -8318,7 +8318,7 @@ void __thiscall ParseAndApplyAlliances(_BYTE *this)
   int v41; // [esp+44h] [ebp-4h]
 
   v1 = *(_DWORD *)this == 4; /*0x69b176*/
-  *(this + 1672) = 0; /*0x69b17d*/
+  this->__pad_688 = 0; /*0x69b17d*/
   if ( v1 ) /*0x69b184*/
   {
     v2 = *(_DWORD *)MEMORY[0xA8B230]; /*0x69b199*/
@@ -8448,7 +8448,7 @@ void __thiscall ParseAndApplyAlliances(_BYTE *this)
           while ( v22 < v20 ); /*0x69b4be*/
         }
         __3_YAXPAX_Z(v4); /*0x69b4c1*/
-        *(this + 1672) = 1; /*0x69b4d4*/
+        this->__pad_688 = 1; /*0x69b4d4*/
         v27 = *(_DWORD *)MEMORY[0xA8B230]; /*0x69b4e0*/
         BYTE1(v27) = BYTE1(*(_DWORD *)MEMORY[0xA8B230]) | 4; /*0x69b4e2*/
         *(_DWORD *)MEMORY[0xA8B230] = v27; /*0x69b4e5*/
@@ -8472,13 +8472,13 @@ void __thiscall ParseAndApplyAlliances(_BYTE *this)
 }
 
 
-// ==== 0x0069B540  Network::processGameEvent  this=int  sig=csp ====
+// ==== 0x0069B540  Network::processGameEvent  this=Network  sig=csp ====
 _DWORD *__thiscall sub_69B540(_DWORD *this)
 {
   _DWORD *result; // eax
   int v2; // ecx
 
-  *(this + 9) = 0; /*0x69b540*/
+  this->q024 = 0; /*0x69b540*/
   result = this + 27; /*0x69b547*/
   v2 = 8; /*0x69b54a*/
   do /*0x69b55b*/
@@ -8492,7 +8492,7 @@ _DWORD *__thiscall sub_69B540(_DWORD *this)
 }
 
 
-// ==== 0x0069B560  SaveGame::SaveAudioData  this=int  sig=csp ====
+// ==== 0x0069B560  SaveGame::SaveAudioData  this=SaveGame  sig=csp ====
 bool __thiscall sub_69B560(void *this, int a2)
 {
   int v2; // esi
@@ -8517,7 +8517,7 @@ bool __thiscall sub_69B560(void *this, int a2)
 }
 
 
-// ==== 0x0069B5B0  LoadGame::LoadBlock300  this=int  sig=csp ====
+// ==== 0x0069B5B0  LoadGame::LoadBlock300  this=LoadGame  sig=csp ====
 bool __thiscall sub_69B5B0(_DWORD *this, int a2)
 {
   int v2; // esi
@@ -8531,7 +8531,7 @@ bool __thiscall sub_69B5B0(_DWORD *this, int a2)
     if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, &a2, 4, 0) >= 0 && a2 == 300 ) /*0x69b5d7*/
     {
       v4 = (*(int (__stdcall **)(int, _DWORD *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, this, 300, 0); /*0x69b5e4*/
-      *(this + 1) = -1; /*0x69b5e9*/
+      this->LoadGame_field_0x04 = -1; /*0x69b5e9*/
       if ( v4 >= 0 ) /*0x69b5f0*/
         return 1; /*0x69b5ba*/
     }
@@ -8540,7 +8540,7 @@ bool __thiscall sub_69B5B0(_DWORD *this, int a2)
 }
 
 
-// ==== 0x0069B600  NetworkSession::IsPlayerInGame  this=VOID_PTR  sig=csp ====
+// ==== 0x0069B600  NetworkSession::IsPlayerInGame  this=NetworkSession  sig=csp ====
 char __thiscall NetworkSession::IsPlayerInGame(_DWORD *this, int a2)
 {
   int v2; // edi
@@ -8553,7 +8553,7 @@ char __thiscall NetworkSession::IsPlayerInGame(_DWORD *this, int a2)
 
   if ( a2 == -2 ) /*0x69b60a*/
     return 0; /*0x69b657*/
-  v2 = *(this + 2579); /*0x69b60c*/
+  v2 = this->q284C; /*0x69b60c*/
   v3 = 0; /*0x69b612*/
   if ( v2 <= 0 ) /*0x69b616*/
   {
@@ -8567,7 +8567,7 @@ LABEL_10:
   }
   else
   {
-    v4 = (int *)*(this + 2576); /*0x69b618*/
+    v4 = (int *)this->q2840; /*0x69b618*/
     while ( 1 ) /*0x69b61e*/
     {
       v5 = *v4; /*0x69b61e*/
@@ -8638,31 +8638,31 @@ LABEL_10:
 }
 
 
-// ==== 0x0069B700  Session::GetPlayerOption  this=VOID_PTR  sig=csp ====
+// ==== 0x0069B700  Session::GetPlayerOption  this=Session  sig=csp ====
 int __thiscall Session_GetPlayerOption(_DWORD *this)
 {
   int result; // eax
 
   result = -2; /*0x69b706*/
-  if ( *(this + 94) != -2 ) /*0x69b70d*/
-    return *(this + 93); /*0x69b70f*/
+  if ( this->q178 != -2 ) /*0x69b70d*/
+    return this->q174; /*0x69b70f*/
   return result; /*0x69b715*/
 }
 
 
-// ==== 0x0069B720  Session::GetPlayerColor  this=VOID_PTR  sig=csp ====
+// ==== 0x0069B720  Session::GetPlayerColor  this=Session  sig=csp ====
 int __thiscall Session_GetPlayerColor(_DWORD *this)
 {
   int result; // eax
 
   result = -2; /*0x69b726*/
-  if ( *(this + 88) != -2 ) /*0x69b72d*/
-    return *(this + 87); /*0x69b72f*/
+  if ( this->q160 != -2 ) /*0x69b72d*/
+    return this->q15C; /*0x69b72f*/
   return result; /*0x69b735*/
 }
 
 
-// ==== 0x0069B760  SessionClass::AssignSide  this=VOID_PTR  sig=csp ====
+// ==== 0x0069B760  SessionClass::AssignSide  this=SessionClass  sig=csp ====
 int __thiscall SessionClass::AssignSide(_DWORD *this, int a2, MPCooperative *aP2)
 {
   int result; // eax
@@ -8675,28 +8675,28 @@ int __thiscall SessionClass::AssignSide(_DWORD *this, int a2, MPCooperative *aP2
     if ( (_BYTE)aP2 ) /*0x69b772*/
     {
       result = Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)9); /*0x69b783*/
-      *(this + 97) = result; /*0x69b788*/
-      *(this + 98) = -2; /*0x69b78e*/
+      this->Side = result; /*0x69b788*/
+      this->Side2 = -2; /*0x69b78e*/
     }
     else
     {
-      *(this + 97) = 0; /*0x69b79a*/
-      *(this + 98) = -2; /*0x69b7a4*/
+      this->Side = 0; /*0x69b79a*/
+      this->Side2 = -2; /*0x69b7a4*/
     }
   }
   else
   {
-    *(this + 97) = a2; /*0x69b7b0*/
-    *(this + 98) = -1; /*0x69b7b6*/
+    this->Side = a2; /*0x69b7b0*/
+    this->Side2 = -1; /*0x69b7b6*/
   }
-  v5 = *(this + 98); /*0x69b7c6*/
-  *(this + 93) = *(this + 97); /*0x69b7cc*/
-  *(this + 94) = v5; /*0x69b7d2*/
+  v5 = this->Side2; /*0x69b7c6*/
+  this->idxSide = this->Side; /*0x69b7cc*/
+  this->idxSide2 = v5; /*0x69b7d2*/
   return result; /*0x69b7d8*/
 }
 
 
-// ==== 0x0069B7E0  SessionClass::AssignColor  this=int  sig=csp ====
+// ==== 0x0069B7E0  SessionClass::AssignColor  this=SessionClass  sig=csp ====
 int __thiscall SessionClass::AssignColor(_DWORD *this, int a2, MPCooperative *aP2)
 {
   int result; // eax
@@ -8737,7 +8737,7 @@ LABEL_12:
         }
         else
         {
-          v7 = (int *)*(this + 2576); /*0x69b823*/
+          v7 = (int *)this->WOLPreferences; /*0x69b823*/
           while ( 1 ) /*0x69b829*/
           {
             v8 = *v7; /*0x69b829*/
@@ -8755,35 +8755,35 @@ LABEL_12:
         }
       }
 LABEL_15:
-      *(this + 95) = result; /*0x69b85e*/
-      *(this + 96) = -2; /*0x69b866*/
+      this->Color = result; /*0x69b85e*/
+      this->Color2 = -2; /*0x69b866*/
     }
     else
     {
-      *(this + 95) = 0; /*0x69b86e*/
-      *(this + 96) = -2; /*0x69b878*/
+      this->Color = 0; /*0x69b86e*/
+      this->Color2 = -2; /*0x69b878*/
     }
   }
   else
   {
-    *(this + 95) = a2; /*0x69b880*/
-    *(this + 96) = -1; /*0x69b886*/
+    this->Color = a2; /*0x69b880*/
+    this->Color2 = -1; /*0x69b886*/
   }
-  v12 = *(this + 96); /*0x69b896*/
-  *(this + 87) = *(this + 95); /*0x69b89c*/
-  *(this + 88) = v12; /*0x69b8a2*/
+  v12 = this->Color2; /*0x69b896*/
+  this->q057 = this->Color; /*0x69b89c*/
+  this->SessionClass_field_160 = v12; /*0x69b8a2*/
   return result; /*0x69b8a8*/
 }
 
 
-// ==== 0x0069B8B0  nullsub_229  this=unknown  sig=csp ====
+// ==== 0x0069B8B0  nullsub_229  this=-  sig=csp ====
 void __stdcall nullsub_229(int a1, int a2)
 {
   ; /*0x69b8b0*/
 }
 
 
-// ==== 0x0069B8C0  Player::RandomAssign  this=int  sig=csp ====
+// ==== 0x0069B8C0  Player::RandomAssign  this=Player  sig=csp ====
 void __thiscall Player_RandomAssign(_DWORD *this)
 {
   int v1; // ebp
@@ -8821,7 +8821,7 @@ void __thiscall Player_RandomAssign(_DWORD *this)
       if ( v4 == -2 ) /*0x69b904*/
       {
         *(_DWORD *)(v3 + 79) = -1; /*0x69b90d*/
-        v5 = *(this + 1); /*0x69b910*/
+        v5 = this->q004; /*0x69b910*/
         if ( v5 ) /*0x69b915*/
           *(_DWORD *)(v3 + 75) = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 108))(v5); /*0x69b91c*/
         else
@@ -8848,7 +8848,7 @@ void __thiscall Player_RandomAssign(_DWORD *this)
   {
     if ( *v7 == -2 ) /*0x69b9e4*/
     {
-      v8 = *(this + 1); /*0x69b9ea*/
+      v8 = this->q004; /*0x69b9ea*/
       if ( v8 ) /*0x69b9ef*/
         v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 112))(v8); /*0x69b9f3*/
       else
@@ -8903,18 +8903,18 @@ LABEL_35:
 }
 
 
-// ==== 0x0069BAB0  WTFMode::Init  this=VOID_PTR  sig=csp ====
+// ==== 0x0069BAB0  WTFMode::Init  this=WTFMode  sig=csp ====
 char __thiscall WTFMode_Init(_BYTE *this)
 {
   char result; // al
 
-  result = *(this + 12504); /*0x69bab0*/
+  result = this->q30D8; /*0x69bab0*/
   if ( !result ) /*0x69bab8*/
   {
     result = MEMORY[0xA8E9A0]; /*0x69babe*/
     if ( MEMORY[0xA8E9A0] ) /*0x69bac5*/
     {
-      *(this + 12504) = 1; /*0x69bac7*/
+      this->q30D8 = 1; /*0x69bac7*/
       if ( MEMORY[0x83ED20] == -1 ) /*0x69bad6*/
         MEMORY[0x83ED20] = *(_DWORD *)MEMORY[0xA8EB60]; /*0x69badd*/
       if ( !*(_DWORD *)this ) /*0x69bae2*/
@@ -8933,15 +8933,15 @@ char __thiscall WTFMode_Init(_BYTE *this)
 }
 
 
-// ==== 0x0069BB40  WTFMode::Shutdown  this=VOID_PTR  sig=csp ====
+// ==== 0x0069BB40  WTFMode::Shutdown  this=WTFMode  sig=csp ====
 char __thiscall WTFMode_Shutdown(_BYTE *this)
 {
   char result; // al
 
-  result = *(this + 12504); /*0x69bb40*/
+  result = this->q30D8; /*0x69bb40*/
   if ( result ) /*0x69bb48*/
   {
-    *(this + 12504) = 0; /*0x69bb4e*/
+    this->q30D8 = 0; /*0x69bb4e*/
     if ( MEMORY[0x83ED20] != -1 ) /*0x69bb5d*/
     {
       *(_DWORD *)MEMORY[0xA8EB60] = MEMORY[0x83ED20]; /*0x69bb5f*/
@@ -8965,14 +8965,14 @@ char __thiscall WTFMode_Shutdown(_BYTE *this)
 }
 
 
-// ==== 0x0069BBE0  SessionClass::GetGameSpeed  this=VOID_PTR  sig=csp ====
+// ==== 0x0069BBE0  SessionClass::GetGameSpeed  this=SessionClass  sig=csp ====
 char __thiscall SessionClass_GetGameSpeed(_BYTE *this)
 {
-  return *(this + 12504); /*0x69bbe6*/
+  return this->CurrentlyInGame; /*0x69bbe6*/
 }
 
 
-// ==== 0x0069BBF0  ObjectClass::Network_Disconnect_69BBF0  this=int  sig=csp ====
+// ==== 0x0069BBF0  ObjectClass::Network_Disconnect_69BBF0  this=ObjectClass  sig=csp ====
 void __thiscall sub_69BBF0(char *this, int a2)
 {
   char *v2; // eax
@@ -8993,7 +8993,7 @@ void __thiscall sub_69BBF0(char *this, int a2)
 }
 
 
-// ==== 0x0069BC20  IPXConnClass::closeConnection  this=VOID_PTR  sig=csp ====
+// ==== 0x0069BC20  IPXConnClass::closeConnection  this=IPXConnClass  sig=csp ====
 __int16 __thiscall sub_69BC20(_WORD *this, int a2)
 {
   int v2; // eax
@@ -9011,7 +9011,7 @@ __int16 __thiscall sub_69BC20(_WORD *this, int a2)
 }
 
 
-// ==== 0x0069BC60  GameClass::FindPlayerName  this=VOID_PTR  sig=csp ====
+// ==== 0x0069BC60  GameClass::FindPlayerName  this=GameClass  sig=csp ====
 int __stdcall GameClass_FindPlayerName(int a1)
 {
   int v1; // ebp
@@ -9038,7 +9038,7 @@ int __stdcall GameClass_FindPlayerName(int a1)
 }
 
 
-// ==== 0x0069BCC0  sub_69BCC0  this=unknown  sig=csp ====
+// ==== 0x0069BCC0  sub_69BCC0  this=-  sig=csp ====
 int __stdcall sub_69BCC0(ObjectClass *aP0)
 {
   ObjectClass *v1; // edi
@@ -9061,7 +9061,7 @@ int __stdcall sub_69BCC0(ObjectClass *aP0)
 }
 
 
-// ==== 0x0069BD00  sub_69BD00  this=unknown  sig=csp ====
+// ==== 0x0069BD00  sub_69BD00  this=-  sig=csp ====
 int __stdcall sub_69BD00(int a1)
 {
   int v1; // ebx
@@ -10926,7 +10926,7 @@ VectorClass *__thiscall VectorClass_ptr_PhoneEntryClass::QueryInterface(_DWORD *
 }
 
 
-// ==== 0x0069D720  VectorClass_ptr_GlobalPacketType::loc_69D720  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x0069D720  VectorClass_ptr_GlobalPacketType::loc_69D720  this=VectorClass_ptr_GlobalPacketType  sig=ida-proto ====
 _DWORD *__thiscall VectorClass_ptr_GlobalPacketType::loc_69D720(_DWORD *Block, char a2)
 {
   void *v3; // eax
@@ -11093,7 +11093,7 @@ int *__thiscall sub_69D8C0(_DWORD *this, const void **a2, int *a3)
 }
 
 
-// ==== 0x0069D960  SHA1::Process  this=int  sig=csp ====
+// ==== 0x0069D960  SHA1::Process  this=SHA1  sig=csp ====
 int __thiscall SHA1_Process(_DWORD *this, int a2, int a3)
 {
   int result; // eax
@@ -11113,7 +11113,7 @@ int __thiscall SHA1_Process(_DWORD *this, int a2, int a3)
       {
         SHA1::Transform(v5, this + 6); /*0x69d99c*/
         v5 += 64; /*0x69d9ab*/
-        *(this + 11) += 64; /*0x69d9ad*/
+        this->q02C += 64; /*0x69d9ad*/
         --v6; /*0x69d9b6*/
         a3 -= 64; /*0x69d9b7*/
       }
@@ -11126,7 +11126,7 @@ int __thiscall SHA1_Process(_DWORD *this, int a2, int a3)
 }
 
 
-// ==== 0x0069D9E0  SHA1::Compute  this=int  sig=csp ====
+// ==== 0x0069D9E0  SHA1::Compute  this=SHA1  sig=csp ====
 int __thiscall SHA1_Compute(_DWORD *this, char *a2)
 {
   int v3; // edx
@@ -11142,8 +11142,8 @@ int __thiscall SHA1_Compute(_DWORD *this, char *a2)
 
   if ( *(_BYTE *)this ) /*0x69d9e9*/
     qmemcpy(a2, this + 1, 0x14u); /*0x69d9fb*/
-  v3 = *(this + 12); /*0x69d9fd*/
-  v4 = *(this + 11); /*0x69da00*/
+  v3 = this->q030; /*0x69d9fd*/
+  v4 = this->q02C; /*0x69da00*/
   qmemcpy(v13, this + 13, sizeof(v13)); /*0x69da14*/
   v5 = v3 + v4; /*0x69da18*/
   *((_BYTE *)v13 + v3) = 0x80; /*0x69da29*/
@@ -11595,7 +11595,7 @@ int sub_69E070()
 }
 
 
-// ==== 0x0069E090  House::Constructor  this=int  sig=csp ====
+// ==== 0x0069E090  House::Constructor  this=House  sig=csp ====
 void __thiscall sub_69E090(char **this)
 {
   char *EntireFile; // eax
@@ -11603,14 +11603,14 @@ void __thiscall sub_69E090(char **this)
   char v4[12]; // [esp+5Ch] [ebp-14h] BYREF
   int v5; // [esp+68h] [ebp-8h]
 
-  if ( *(_WORD *)this == 0xFFFF && !*((_BYTE *)this + 16) ) /*0x69e09c*/
+  if ( *(_WORD *)this == 0xFFFF && !this->q004 ) /*0x69e09c*/
   {
-    CCFileClass::Construct(v3, *(this + 2)); /*0x69e0ab*/
+    CCFileClass::Construct(v3, this->House_field_0x2); /*0x69e0ab*/
     EntireFile = (char *)CCFileClass::ReadEntireFile(v3); /*0x69e0b4*/
     if ( EntireFile ) /*0x69e0bb*/
     {
-      *(this + 3) = EntireFile; /*0x69e0bd*/
-      *((_BYTE *)this + 16) = 1; /*0x69e0c0*/
+      this->__pad_00C = EntireFile; /*0x69e0bd*/
+      this->q004 = 1; /*0x69e0c0*/
     }
     v3[0] = &vt_CCFileClass; /*0x69e0c8*/
     v5 = 0; /*0x69e0d0*/
@@ -11621,7 +11621,7 @@ void __thiscall sub_69E090(char **this)
 }
 
 
-// ==== 0x0069E100  BTree::DeleteSubtree  this=VOID_PTR  sig=csp ====
+// ==== 0x0069E100  BTree::DeleteSubtree  this=BTree  sig=csp ====
 void __thiscall BTree::DeleteSubtree(_DWORD *this)
 {
   void *v2; // esi
@@ -12094,7 +12094,7 @@ int __thiscall MixFileClass_GetSubFile(char **this, unsigned int a2)
 }
 
 
-// ==== 0x0069E7E0  Building::GetFoundationSize  this=VOID_PTR  sig=csp ====
+// ==== 0x0069E7E0  Building::GetFoundationSize  this=Building  sig=csp ====
 _DWORD *__stdcall Building_GetFoundationSize(_DWORD *a1, unsigned int a2)
 {
   int v2; // eax
@@ -12128,7 +12128,7 @@ _DWORD *__stdcall Building_GetFoundationSize(_DWORD *a1, unsigned int a2)
 }
 
 
-// ==== 0x0069E860  MixFileClass::GetPixelData  this=float  sig=csp ====
+// ==== 0x0069E860  MixFileClass::GetPixelData  this=MixFileClass  sig=csp ====
 int __thiscall MixFileClass_GetPixelData(char **this, int a2, unsigned int a3)
 {
   char **SubFile; // eax
@@ -12159,7 +12159,7 @@ int __thiscall MixFileClass_GetPixelData(char **this, int a2, unsigned int a3)
 }
 
 
-// ==== 0x0069E900  ObjectClass::Helper_69E900  this=int  sig=csp ====
+// ==== 0x0069E900  ObjectClass::Helper_69E900  this=ObjectClass  sig=csp ====
 char __thiscall sub_69E900(char **this, unsigned int a2)
 {
   char **SubFile; // eax
@@ -12175,7 +12175,7 @@ char __thiscall sub_69E900(char **this, unsigned int a2)
 }
 
 
-// ==== 0x0069E930  MixFileClass::CacheNode_Dtor  this=VOID_PTR  sig=csp ====
+// ==== 0x0069E930  MixFileClass::CacheNode_Dtor  this=MixFileClass  sig=csp ====
 void *__thiscall MixFileClass_CacheNode_Dtor(void *this, char a2)
 {
   int v3; // eax
@@ -12183,25 +12183,25 @@ void *__thiscall MixFileClass_CacheNode_Dtor(void *this, char a2)
 
   if ( *(_WORD *)this == 0xFFFF ) /*0x69e937*/
   {
-    if ( *((_BYTE *)this + 16) ) /*0x69e939*/
+    if ( this->FileSize ) /*0x69e939*/
     {
-      if ( *((_DWORD *)this + 3) ) /*0x69e940*/
+      if ( this->CountFiles ) /*0x69e940*/
         MixFileClass::CacheNode_Dtor(1); /*0x69e949*/
-      *((_DWORD *)this + 3) = 0; /*0x69e94e*/
-      *((_BYTE *)this + 16) = 0; /*0x69e955*/
+      this->CountFiles = 0; /*0x69e94e*/
+      this->FileSize = 0; /*0x69e955*/
     }
-    v3 = *((_DWORD *)this + 6); /*0x69e959*/
+    v3 = this->Headers; /*0x69e959*/
     if ( v3 ) /*0x69e95e*/
-      *(_DWORD *)(v3 + 28) = *((_DWORD *)this + 7); /*0x69e963*/
-    v4 = *((_DWORD *)this + 7); /*0x69e966*/
+      *(_DWORD *)(v3 + 28) = this->q01C; /*0x69e963*/
+    v4 = this->q01C; /*0x69e966*/
     if ( v4 ) /*0x69e96b*/
-      *(_DWORD *)(v4 + 24) = *((_DWORD *)this + 6); /*0x69e970*/
+      *(_DWORD *)(v4 + 24) = this->Headers; /*0x69e970*/
     else
-      MEMORY[0xB077B0] = (void *)*((_DWORD *)this + 6); /*0x69e978*/
-    if ( *((_DWORD *)this + 2) ) /*0x69e97d*/
+      MEMORY[0xB077B0] = (void *)this->Headers; /*0x69e978*/
+    if ( this->Blowfish ) /*0x69e97d*/
     {
       free(*((void **)this + 2)); /*0x69e985*/
-      *((_DWORD *)this + 2) = 0; /*0x69e98d*/
+      this->Blowfish = 0; /*0x69e98d*/
     }
   }
   if ( (a2 & 1) != 0 ) /*0x69e999*/
@@ -12218,7 +12218,7 @@ int __thiscall VectorClass::Check(SHAPipe *this, Pipe *aP1, int aP2)
 }
 
 
-// ==== 0x0069E9E0  SHA1::ComputeThunk  this=VOID_PTR  sig=csp ====
+// ==== 0x0069E9E0  SHA1::ComputeThunk  this=SHA1  sig=csp ====
 int __thiscall SHA1::ComputeThunk(_DWORD *this, ObjectClass *aP1)
 {
   return SHA1::Compute((Pipe *)(this + 3), aP1); /*0x69e9ed*/
@@ -12702,18 +12702,18 @@ double __thiscall sub_69F1B0(int *this)
 }
 
 
-// ==== 0x0069F210  ObjectClass::method_69F210  this=VOID_PTR  sig=csp ====
+// ==== 0x0069F210  ObjectClass::method_69F210  this=ObjectClass  sig=csp ====
 int __thiscall sub_69F210(_DWORD *this, int a2)
 {
   int result; // eax
   _DWORD *v3; // ecx
   int v4; // [esp+4h] [ebp-Ch]
 
-  result = *(this + 7); /*0x69f210*/
+  result = this->referenceCount; /*0x69f210*/
   if ( a2 != result ) /*0x69f21c*/
   {
-    *(this + 8) = result; /*0x69f21e*/
-    *(this + 7) = a2; /*0x69f221*/
+    this->NeedsSaveOrLink = result; /*0x69f21e*/
+    this->referenceCount = a2; /*0x69f221*/
     v3 = this + 9; /*0x69f229*/
     *v3 = MEMORY[0xA8ED84]; /*0x69f232*/
     v3[1] = v4; /*0x69f23a*/

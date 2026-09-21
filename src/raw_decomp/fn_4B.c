@@ -528,7 +528,7 @@ char __stdcall JumpjetLocomotionClass::sub_4B0EF0(int a1, int a2)
 }
 
 
-// ==== 0x004B0F20  JumpjetLocomotion::ProcessCollision  this=int  sig=csp ====
+// ==== 0x004B0F20  JumpjetLocomotion::ProcessCollision  this=JumpjetLocomotion  sig=csp ====
 char __thiscall JumpjetLocomotion::ProcessCollision(int this, char a2)
 {
   int v3; // eax
@@ -1594,7 +1594,7 @@ LABEL_197:
 }
 
 
-// ==== 0x004B2630  JumpjetLocomotion::Update  this=int  sig=csp ====
+// ==== 0x004B2630  JumpjetLocomotion::Update  this=JumpjetLocomotion  sig=csp ====
 char __thiscall JumpjetLocomotion_Update(int this, _BYTE *a2, int a3, int a4)
 {
   int v5; // ecx
@@ -3336,7 +3336,7 @@ LONG __stdcall DriveLocomotionClass::_vt02(volatile LONG *a1)
 }
 
 
-// ==== 0x004B4CD0  JumpjetLocomotionClass::GetLinkedLocomotorPointer  this=VOID_PTR  sig=csp ====
+// ==== 0x004B4CD0  JumpjetLocomotionClass::GetLinkedLocomotorPointer  this=JumpjetLocomotionClass  sig=csp ====
 BOOL __stdcall JumpjetLocomotionClass::sub_4B4CD0(int a1)
 {
   return *(_DWORD *)(a1 + 80) != 0; /*0x4b4cde*/
@@ -3368,7 +3368,7 @@ DriveLocomotionClass *__thiscall DriveLocomotionClass::ProcessMove(ILocomotion *
 }
 
 
-// ==== 0x004B4D50  ComPtr::Release_Alt  this=VOID_PTR  sig=csp ====
+// ==== 0x004B4D50  ComPtr::Release_Alt  this=ComPtr  sig=csp ====
 int __thiscall ComPtr_Release_Alt(int *this)
 {
   int result; // eax
@@ -3380,7 +3380,7 @@ int __thiscall ComPtr_Release_Alt(int *this)
 }
 
 
-// ==== 0x004B4D60  Function::4B4D60  this=VOID_PTR  sig=csp ====
+// ==== 0x004B4D60  Function::4B4D60  this=Function  sig=csp ====
 int __thiscall MiniStub_4b4d60(int *this)
 {
   int result; // eax
@@ -3392,14 +3392,14 @@ int __thiscall MiniStub_4b4d60(int *this)
 }
 
 
-// ==== 0x004B4D70  Timeout::GetRemaining  this=VOID_PTR  sig=csp ====
+// ==== 0x004B4D70  Timeout::GetRemaining  this=Timeout  sig=csp ====
 int __thiscall Timeout_GetRemaining(int *this)
 {
   int v1; // edx
   int result; // eax
 
   v1 = *this; /*0x4b4d70*/
-  result = *(this + 2); /*0x4b4d72*/
+  result = this->q008; /*0x4b4d72*/
   if ( *this != -1 ) /*0x4b4d78*/
   {
     if ( (int)MEMORY[0xA8ED84] - v1 >= result ) /*0x4b4d84*/
@@ -3411,42 +3411,42 @@ int __thiscall Timeout_GetRemaining(int *this)
 }
 
 
-// ==== 0x004B4D90  JumpjetLocomotionClass::GetField_0x78  this=unknown  sig=csp ====
+// ==== 0x004B4D90  JumpjetLocomotionClass::GetField_0x78  this=JumpjetLocomotionClass  sig=csp ====
 int __stdcall JumpjetLocomotionClass::sub_4B4D90(int a1, const void *a2, int *a3)
 {
   return DriveLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 }
 
 
-// ==== 0x004B4DA0  JumpjetLocomotionClass::GetField_0x7C  this=unknown  sig=csp ====
+// ==== 0x004B4DA0  JumpjetLocomotionClass::GetField_0x7C  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_4B4DA0(int a1)
 {
   return DriveLocomotionClass::AddRef(a1 - 4);
 }
 
 
-// ==== 0x004B4DB0  JumpjetLocomotionClass::GetField_0x80  this=unknown  sig=csp ====
+// ==== 0x004B4DB0  JumpjetLocomotionClass::GetField_0x80  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_4B4DB0(int a1)
 {
   return DriveLocomotionClass::Release((volatile LONG *)(a1 - 4));
 }
 
 
-// ==== 0x004B4DC0  JumpjetLocomotionClass::loc_4B4DC0  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x004B4DC0  JumpjetLocomotionClass::loc_4B4DC0  this=JumpjetLocomotionClass  sig=ida-proto ====
 int __stdcall JumpjetLocomotionClass::loc_4B4DC0(int a1, const void *a2, int *a3)
 {
   return DriveLocomotionClass::QueryInterface(a1 - 24, a2, a3);
 }
 
 
-// ==== 0x004B4DD0  JumpjetLocomotionClass::loc_4B4DD0  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x004B4DD0  JumpjetLocomotionClass::loc_4B4DD0  this=JumpjetLocomotionClass  sig=ida-proto ====
 LONG __stdcall JumpjetLocomotionClass::loc_4B4DD0(int a1)
 {
   return DriveLocomotionClass::AddRef(a1 - 24);
 }
 
 
-// ==== 0x004B4DE0  JumpjetLocomotionClass::loc_4B4DE0  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x004B4DE0  JumpjetLocomotionClass::loc_4B4DE0  this=JumpjetLocomotionClass  sig=ida-proto ====
 LONG __stdcall JumpjetLocomotionClass::loc_4B4DE0(int a1)
 {
   return DriveLocomotionClass::Release((volatile LONG *)(a1 - 24));
@@ -3856,7 +3856,7 @@ DropListClass *__thiscall DropListClass::QueryInterface(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x004B5630  BlitterList::CopyEntry  this=int  sig=csp ====
+// ==== 0x004B5630  BlitterList::CopyEntry  this=BlitterList  sig=csp ====
 int __thiscall sub_4B5630(int this, int a2)
 {
   LinkedList::MoveNode((void *)this, (void *)a2); /*0x4b5639*/
@@ -3889,7 +3889,7 @@ int __thiscall sub_4B5630(int this, int a2)
 }
 
 
-// ==== 0x004B56E0  ObjectClass::method_4B56E0  this=int  sig=csp ====
+// ==== 0x004B56E0  ObjectClass::method_4B56E0  this=ObjectClass  sig=csp ====
 int __thiscall sub_4B56E0(int this, int a2)
 {
   LinkedList::MoveNode((void *)this, (void *)a2); /*0x4b56e9*/
@@ -3919,7 +3919,7 @@ int __thiscall sub_4B56E0(int this, int a2)
 }
 
 
-// ==== 0x004B5780  ObjectClass::method_4B5780  this=int  sig=csp ====
+// ==== 0x004B5780  ObjectClass::method_4B5780  this=ObjectClass  sig=csp ====
 int __thiscall sub_4B5780(int this, int a2)
 {
   LinkedList::MoveNode((void *)this, (void *)a2); /*0x4b5789*/
@@ -3965,7 +3965,7 @@ ToggleClass *__thiscall ToggleClass::QueryInterface(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x004B5830  ObjectClass::method_4B5830  this=int  sig=csp ====
+// ==== 0x004B5830  ObjectClass::method_4B5830  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_4B5830(_DWORD *this, _DWORD *a2)
 {
   int v3; // eax
@@ -3977,28 +3977,28 @@ _DWORD *__thiscall sub_4B5830(_DWORD *this, _DWORD *a2)
     return this; /*0x4b583a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x4b583e*/
   v3 = a2[2]; /*0x4b5841*/
-  *(this + 2) = v3; /*0x4b5846*/
+  this->vtable3 = v3; /*0x4b5846*/
   if ( !v3 ) /*0x4b5849*/
   {
-    *(this + 1) = 0; /*0x4b588a*/
-    *((_BYTE *)this + 13) = 0; /*0x4b5891*/
+    this->vtable2 = 0; /*0x4b588a*/
+    this->attachedTag = 0; /*0x4b5891*/
     return this; /*0x4b5895*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x4b5853*/
-  *(this + 1) = v4; /*0x4b585b*/
+  this->vtable2 = v4; /*0x4b585b*/
   if ( !v4 ) /*0x4b5860*/
     return this; /*0x4b5860*/
-  v5 = *(this + 2); /*0x4b5862*/
+  v5 = this->vtable3; /*0x4b5862*/
   v6 = 0; /*0x4b5865*/
-  *((_BYTE *)this + 13) = 1; /*0x4b5869*/
+  this->attachedTag = 1; /*0x4b5869*/
   if ( v5 <= 0 ) /*0x4b586d*/
     return this; /*0x4b586d*/
   do /*0x4b5881*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x4b5878*/
+    *(_DWORD *)(this->vtable2 + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x4b5878*/
     ++v6; /*0x4b587e*/
   }
-  while ( v6 < *(this + 2) ); /*0x4b5881*/
+  while ( v6 < this->vtable3 ); /*0x4b5881*/
   return this; /*0x4b5885*/
 }
 
@@ -4745,7 +4745,7 @@ LONG __stdcall DropPodLocomotionClass::_vt02(volatile LONG *a1)
 }
 
 
-// ==== 0x004B66C0  JumpjetLocomotionClass::ShortFunc_4B66C0  this=VOID_PTR  sig=csp ====
+// ==== 0x004B66C0  JumpjetLocomotionClass::ShortFunc_4B66C0  this=JumpjetLocomotionClass  sig=csp ====
 BOOL __stdcall JumpjetLocomotionClass::sub_4B66C0(int a1)
 {
   return *(_DWORD *)(a1 + 20) != 0; /*0x4b66ce*/
@@ -4777,42 +4777,42 @@ DropPodLocomotionClass *__thiscall DropPodLocomotionClass::ProcessMove(ILocomoti
 }
 
 
-// ==== 0x004B6740  JumpjetLocomotionClass::SmallStub_4B6740  this=unknown  sig=csp ====
+// ==== 0x004B6740  JumpjetLocomotionClass::SmallStub_4B6740  this=JumpjetLocomotionClass  sig=csp ====
 int __stdcall JumpjetLocomotionClass::sub_4B6740(int a1, const void *a2, int *a3)
 {
   return DropPodLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 }
 
 
-// ==== 0x004B6750  JumpjetLocomotionClass::SmallStub_4B6750  this=unknown  sig=csp ====
+// ==== 0x004B6750  JumpjetLocomotionClass::SmallStub_4B6750  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_4B6750(int a1)
 {
   return DropPodLocomotionClass::AddRef(a1 - 4);
 }
 
 
-// ==== 0x004B6760  JumpjetLocomotionClass::SmallStub_4B6760  this=unknown  sig=csp ====
+// ==== 0x004B6760  JumpjetLocomotionClass::SmallStub_4B6760  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_4B6760(int a1)
 {
   return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 4));
 }
 
 
-// ==== 0x004B6770  JumpjetLocomotionClass::SmallStub_4B6770  this=unknown  sig=csp ====
+// ==== 0x004B6770  JumpjetLocomotionClass::SmallStub_4B6770  this=JumpjetLocomotionClass  sig=csp ====
 int __stdcall JumpjetLocomotionClass::sub_4B6770(int a1, const void *a2, int *a3)
 {
   return DropPodLocomotionClass::QueryInterface(a1 - 24, a2, a3);
 }
 
 
-// ==== 0x004B6780  JumpjetLocomotionClass::SmallStub_4B6780  this=unknown  sig=csp ====
+// ==== 0x004B6780  JumpjetLocomotionClass::SmallStub_4B6780  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_4B6780(int a1)
 {
   return DropPodLocomotionClass::AddRef(a1 - 24);
 }
 
 
-// ==== 0x004B6790  JumpjetLocomotionClass::SmallStub_4B6790  this=unknown  sig=csp ====
+// ==== 0x004B6790  JumpjetLocomotionClass::SmallStub_4B6790  this=JumpjetLocomotionClass  sig=csp ====
 LONG __stdcall JumpjetLocomotionClass::sub_4B6790(int a1)
 {
   return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 24));
@@ -4942,14 +4942,14 @@ int sub_4B6990()
 }
 
 
-// ==== 0x004B69B0  HouseClass::initDropshipData  this=int  sig=csp ====
+// ==== 0x004B69B0  HouseClass::initDropshipData  this=HouseClass  sig=csp ====
 _DWORD *__thiscall sub_4B69B0(_DWORD *this)
 {
   *this = MEMORY[0xA8ED84]; /*0x4b69b8*/
-  *(this + 2) = 0x7FFFFFFF; /*0x4b69bc*/
-  *((_BYTE *)this + 12) = 0; /*0x4b69c3*/
-  *(this + 4) = 0; /*0x4b69c6*/
-  *(this + 10) = 0; /*0x4b69c9*/
+  this->vtable3 = 0x7FFFFFFF; /*0x4b69bc*/
+  this->relatedTagsCount = 0; /*0x4b69c3*/
+  this->uniqueId = 0; /*0x4b69c6*/
+  this->buildingType = 0; /*0x4b69c9*/
   return this; /*0x4b69cc*/
 }
 
@@ -5082,7 +5082,7 @@ char __thiscall sub_4B6B80(int this)
 }
 
 
-// ==== 0x004B6BB0  HouseClass::RegisterForSwizzleTracking  this=VOID_PTR  sig=csp ====
+// ==== 0x004B6BB0  HouseClass::RegisterForSwizzleTracking  this=HouseClass  sig=csp ====
 int __thiscall sub_4B6BB0(int *this)
 {
   int v2; // esi
@@ -5090,14 +5090,14 @@ int __thiscall sub_4B6BB0(int *this)
   int *v4; // edi
 
   v2 = 0; /*0x4b6bb4*/
-  result = *(this + 4); /*0x4b6bb6*/
+  result = this->vtable2; /*0x4b6bb6*/
   if ( result > 0 ) /*0x4b6bbb*/
   {
     v4 = this + 5; /*0x4b6bbe*/
     do /*0x4b6bd5*/
     {
       ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4); /*0x4b6bc7*/
-      result = *(this + 4); /*0x4b6bcc*/
+      result = this->vtable2; /*0x4b6bcc*/
       ++v2; /*0x4b6bcf*/
       ++v4; /*0x4b6bd0*/
     }
@@ -7183,7 +7183,7 @@ LABEL_397:
 
 
 
-// ==== 0x004B96A0  TextRenderer::RenderCentered  this=int  sig=csp ====
+// ==== 0x004B96A0  TextRenderer::RenderCentered  this=TextRenderer  sig=csp ====
 int *TextRenderer::RenderCentered(
         int a1,
         int a2,
@@ -7298,7 +7298,7 @@ int *TextRenderer::RenderCentered(
 }
 
 
-// ==== 0x004B9890  DisplayBuildingInfoPanel  this=int  sig=csp ====
+// ==== 0x004B9890  DisplayBuildingInfoPanel  this=-  sig=csp ====
 char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t *a3, char a4)
 {
   CampaignScore *v6; // eax
@@ -7488,12 +7488,12 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
 }
 
 
-// ==== 0x004B9BD0  Struct::Zero3  this=int  sig=csp ====
+// ==== 0x004B9BD0  Struct::Zero3  this=Struct  sig=csp ====
 _BYTE *__thiscall Struct_Zero3(_BYTE *this)
 {
   *this = 0; /*0x4b9bd4*/
-  *(this + 1) = 0; /*0x4b9bd6*/
-  *(this + 2) = 0; /*0x4b9bd9*/
+  this->q004 = 0; /*0x4b9bd6*/
+  this->q008 = 0; /*0x4b9bd9*/
   return this; /*0x4b9bdc*/
 }
 
@@ -7960,7 +7960,7 @@ DynamicVector *__thiscall FilePipe_30_::Destructor(_DWORD *Block, char a2)
 }
 
 
-// ==== 0x004BA1B0  VectorClass_ptr_CrossDissolveEffect::loc_4BA1B0  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x004BA1B0  VectorClass_ptr_CrossDissolveEffect::loc_4BA1B0  this=VectorClass_ptr_CrossDissolveEffect  sig=ida-proto ====
 _DWORD *__thiscall VectorClass_ptr_CrossDissolveEffect::loc_4BA1B0(_DWORD *Block, char a2)
 {
   void *v3; // eax
@@ -8290,7 +8290,7 @@ int __thiscall DSurface_Destroy(void *this)
 }
 
 
-// ==== 0x004BA770  DSurface::CreatePrimary  this=int  sig=csp ====
+// ==== 0x004BA770  DSurface::CreatePrimary  this=DSurface  sig=csp ====
 _DWORD *__thiscall DSurface::CreatePrimary(_DWORD *this)
 {
   char v1; // bl
@@ -8591,7 +8591,7 @@ int __thiscall DSurface_GetPitch(_DWORD *this)
 }
 
 
-// ==== 0x004BAD80  DSurface::Lock  this=int  sig=csp ====
+// ==== 0x004BAD80  DSurface::Lock  this=DSurface  sig=csp ====
 int __thiscall DSurface_Lock(int *this, int a2, int a3)
 {
   int v4; // eax
@@ -8604,44 +8604,44 @@ int __thiscall DSurface_Lock(int *this, int a2, int a3)
 
   if ( !MEMORY[0x89F978] && !MEMORY[0xA8ED80] ) /*0x4bad99*/
     return 0; /*0x4bad99*/
-  v4 = *(this + 7); /*0x4bad9f*/
-  if ( v4 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v4 + 96))(*(this + 7)) == -2005532222 ) /*0x4badb1*/
+  v4 = this->DSurface_field_0x1C; /*0x4bad9f*/
+  if ( v4 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v4 + 96))(this->DSurface_field_0x1C) == -2005532222 ) /*0x4badb1*/
   {
-    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 108))(*(this + 7)) /*0x4badca*/
-      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 96))(*(this + 7)) )
+    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->DSurface_field_0x1C + 108))(this->DSurface_field_0x1C) /*0x4badca*/
+      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->DSurface_field_0x1C + 96))(this->DSurface_field_0x1C) )
     {
       return 0; /*0x4badcf*/
     }
-    v5 = *(this + 3); /*0x4badd5*/
+    v5 = this->DSurface_field_0xC; /*0x4badd5*/
     if ( v5 > 0 ) /*0x4badda*/
     {
       v6 = *this; /*0x4baddc*/
-      *(this + 3) = 0; /*0x4bade0*/
+      this->DSurface_field_0xC = 0; /*0x4bade0*/
       (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v6 + 92))(this, 0, 0); /*0x4bade7*/
-      ++*(this + 3); /*0x4badf0*/
+      ++this->DSurface_field_0xC; /*0x4badf0*/
       (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x4badf5*/
-      *(this + 3) = v5; /*0x4badf8*/
+      this->DSurface_field_0xC = v5; /*0x4badf8*/
     }
   }
   if ( a2 >= 0 && a3 >= 0 ) /*0x4bae13*/
   {
-    if ( *(this + 3) ) /*0x4bae19*/
+    if ( this->DSurface_field_0xC ) /*0x4bae19*/
     {
 LABEL_14:
-      ++*(this + 3); /*0x4bae7c*/
+      ++this->DSurface_field_0xC; /*0x4bae7c*/
       v9 = a3 * (*(int (__thiscall **)(int *))(*this + 116))(this); /*0x4bae90*/
-      return a2 * (*(int (__thiscall **)(int *))(*this + 112))(this) + v9 + *(this + 5); /*0x4baeac*/
+      return a2 * (*(int (__thiscall **)(int *))(*this + 112))(this) + v9 + this->DSurface_field_0x14; /*0x4baeac*/
     }
     memset(v11, 0, sizeof(v11)); /*0x4bae2d*/
-    v7 = *(this + 7); /*0x4bae2f*/
+    v7 = this->DSurface_field_0x1C; /*0x4bae2f*/
     v11[0] = 108; /*0x4bae38*/
     if ( !(*(int (__stdcall **)(int, _DWORD, _DWORD *, int, _DWORD))(*(_DWORD *)v7 + 100))(v7, 0, v11, 1, 0) ) /*0x4bae46*/
     {
-      qmemcpy((void *)*(this + 8), v11, 0x6Cu); /*0x4bae59*/
-      v8 = (_DWORD *)*(this + 8); /*0x4bae5b*/
-      *(this + 4) = (unsigned int)(v8[21] + 7) >> 3; /*0x4bae67*/
+      qmemcpy((void *)this->DSurface_field_0x8, v11, 0x6Cu); /*0x4bae59*/
+      v8 = (_DWORD *)this->DSurface_field_0x8; /*0x4bae5b*/
+      this->DSurface_field_0x4 = (unsigned int)(v8[21] + 7) >> 3; /*0x4bae67*/
       *((_BYTE *)this + 25) = (v8[26] & 0x4000) != 0; /*0x4bae73*/
-      *(this + 5) = v8[9]; /*0x4bae79*/
+      this->DSurface_field_0x14 = v8[9]; /*0x4bae79*/
       goto LABEL_14; /*0x4bae79*/
     }
   }
@@ -8675,7 +8675,7 @@ BOOL __thiscall DSurface::CheckBltStatus(_DWORD **this)
 }
 
 
-// ==== 0x004BAF40  DSurface::Unlock  this=int  sig=csp ====
+// ==== 0x004BAF40  DSurface::Unlock  this=DSurface  sig=csp ====
 char __thiscall DSurface_Unlock(int *this)
 {
   int v2; // eax
@@ -8686,51 +8686,51 @@ char __thiscall DSurface_Unlock(int *this)
 
   if ( MEMORY[0x89F978] || MEMORY[0xA8ED80] ) /*0x4baf54*/
   {
-    v2 = *(this + 7); /*0x4baf56*/
+    v2 = this->DSurface_field_0x1C; /*0x4baf56*/
     if ( v2 ) /*0x4baf5b*/
     {
-      if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v2 + 96))(*(this + 7)) == -2005532222 /*0x4baf7d*/
-        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 108))(*(this + 7))
-        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 96))(*(this + 7)) )
+      if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v2 + 96))(this->DSurface_field_0x1C) == -2005532222 /*0x4baf7d*/
+        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->DSurface_field_0x1C + 108))(this->DSurface_field_0x1C)
+        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->DSurface_field_0x1C + 96))(this->DSurface_field_0x1C) )
       {
-        v3 = *(this + 3); /*0x4baf84*/
+        v3 = this->DSurface_field_0xC; /*0x4baf84*/
         if ( v3 > 0 ) /*0x4baf89*/
         {
           v4 = *this; /*0x4baf8b*/
-          *(this + 3) = 0; /*0x4baf93*/
+          this->DSurface_field_0xC = 0; /*0x4baf93*/
           (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v4 + 92))(this, 0, 0); /*0x4baf96*/
-          ++*(this + 3); /*0x4baf9f*/
+          ++this->DSurface_field_0xC; /*0x4baf9f*/
           (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x4bafa4*/
-          *(this + 3) = v3; /*0x4bafa7*/
+          this->DSurface_field_0xC = v3; /*0x4bafa7*/
         }
       }
     }
   }
-  v5 = *(this + 3); /*0x4bafaa*/
+  v5 = this->DSurface_field_0xC; /*0x4bafaa*/
   if ( v5 <= 0 ) /*0x4bafaf*/
     return 0; /*0x4bafd6*/
   v6 = v5 - 1; /*0x4bafb1*/
-  *(this + 3) = v6; /*0x4bafb4*/
+  this->DSurface_field_0xC = v6; /*0x4bafb4*/
   if ( !v6 ) /*0x4bafb7*/
   {
-    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 7) + 128))(*(this + 7), *(this + 5)); /*0x4bafc3*/
-    *(this + 5) = 0; /*0x4bafc9*/
+    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->DSurface_field_0x1C + 128))(this->DSurface_field_0x1C, this->DSurface_field_0x14); /*0x4bafc3*/
+    this->DSurface_field_0x14 = 0; /*0x4bafc9*/
   }
   return 1; /*0x4bafd0*/
 }
 
 
-// ==== 0x004BAFE0  ObjectClass::method_4BAFE0  this=VOID_PTR  sig=csp ====
+// ==== 0x004BAFE0  ObjectClass::method_4BAFE0  this=ObjectClass  sig=csp ====
 BOOL __thiscall sub_4BAFE0(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 7); /*0x4bafe0*/
+  v1 = this->referenceCount; /*0x4bafe0*/
   return v1 && (*(int (__stdcall **)(int))(*(_DWORD *)v1 + 96))(v1) == -2005532222; /*0x4baff9*/
 }
 
 
-// ==== 0x004BB000  DSurface::RestoreIfLost  this=int  sig=csp ====
+// ==== 0x004BB000  DSurface::RestoreIfLost  this=DSurface  sig=csp ====
 char __thiscall DSurface_RestoreIfLost(int *this)
 {
   int v3; // eax
@@ -8739,30 +8739,30 @@ char __thiscall DSurface_RestoreIfLost(int *this)
 
   if ( !MEMORY[0x89F978] && !MEMORY[0xA8ED80] ) /*0x4bb014*/
     return 0; /*0x4bb014*/
-  v3 = *(this + 7); /*0x4bb01b*/
-  if ( v3 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v3 + 96))(*(this + 7)) == -2005532222 ) /*0x4bb02d*/
+  v3 = this->DSurface_field_0x1C; /*0x4bb01b*/
+  if ( v3 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v3 + 96))(this->DSurface_field_0x1C) == -2005532222 ) /*0x4bb02d*/
   {
-    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 108))(*(this + 7)) /*0x4bb042*/
-      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 96))(*(this + 7)) )
+    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->DSurface_field_0x1C + 108))(this->DSurface_field_0x1C) /*0x4bb042*/
+      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->DSurface_field_0x1C + 96))(this->DSurface_field_0x1C) )
     {
       return 0; /*0x4bb01a*/
     }
-    v4 = *(this + 3); /*0x4bb049*/
+    v4 = this->DSurface_field_0xC; /*0x4bb049*/
     if ( v4 > 0 ) /*0x4bb04e*/
     {
       v5 = *this; /*0x4bb050*/
-      *(this + 3) = 0; /*0x4bb058*/
+      this->DSurface_field_0xC = 0; /*0x4bb058*/
       (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v5 + 92))(this, 0, 0); /*0x4bb05b*/
-      ++*(this + 3); /*0x4bb064*/
+      ++this->DSurface_field_0xC; /*0x4bb064*/
       (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x4bb069*/
-      *(this + 3) = v4; /*0x4bb06c*/
+      this->DSurface_field_0xC = v4; /*0x4bb06c*/
     }
   }
   return 1; /*0x4bb016*/
 }
 
 
-// ==== 0x004BB080  DSurface::BlitPart  this=VOID_PTR  sig=csp ====
+// ==== 0x004BB080  DSurface::BlitPart  this=DSurface  sig=csp ====
 int __thiscall DSurface_BlitPart(int *this, int a2, int a3, int a4, int a5, int a6)
 {
   int v7; // ebx
@@ -9251,7 +9251,7 @@ char __userpurge DSurface_FillRectWithFlags@<al>(int a1@<ecx>, int a2@<ebx>, int
 }
 
 
-// ==== 0x004BBB00  DSurface::BlitStretch  this=int  sig=csp ====
+// ==== 0x004BBB00  DSurface::BlitStretch  this=DSurface  sig=csp ====
 void __fastcall sub_4BBB00(int a1, int a2, int a3)
 {
   int v3; // esi
@@ -11212,7 +11212,7 @@ char __thiscall DSurface_DrawLineZBufColored(
 }
 
 
-// ==== 0x004BE9D0  BlendColorPack  this=int  sig=csp ====
+// ==== 0x004BE9D0  BlendColorPack  this=-  sig=csp ====
 int __fastcall Color_BlendPack(unsigned __int8 *a1, int a2, int a3, int a4)
 {
   int v4; // esi
@@ -11734,7 +11734,7 @@ LABEL_52:
 }
 
 
-// ==== 0x004BF650  BlendMinimapPixel  this=int  sig=csp ====
+// ==== 0x004BF650  BlendMinimapPixel  this=-  sig=csp ====
 __int16 __fastcall BlendMinimapPixel(unsigned __int16 a1, unsigned __int16 a2, int a3)
 {
   int v3; // eax

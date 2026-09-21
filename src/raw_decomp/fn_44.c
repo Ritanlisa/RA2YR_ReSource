@@ -7139,7 +7139,7 @@ LABEL_35:
 }
 
 
-// ==== 0x0044E3A0  BuildingClass::CheckOverlapWithOthers  this=VOID_PTR  sig=csp ====
+// ==== 0x0044E3A0  BuildingClass::CheckOverlapWithOthers  this=BuildingClass  sig=csp ====
 char __thiscall sub_44E3A0(_DWORD *this)
 {
   int v2; // ebp
@@ -8510,7 +8510,7 @@ int __thiscall sub_44FE60(INIClass *this)
 }
 
 
-// ==== 0x0044FEC0  BuildingClass::ReadConstructionData  this=int  sig=csp ====
+// ==== 0x0044FEC0  BuildingClass::ReadConstructionData  this=BuildingClass  sig=csp ====
 char __thiscall BuildingClass::ReadConstructionData(int this, INIClass *aP1)
 {
   int v3; // eax
@@ -8557,11 +8557,11 @@ char __thiscall BuildingClass::ReadConstructionData(int this, INIClass *aP1)
   v21 = *(unsigned __int8 *)(this + 1756); /*0x44ff71*/
   v9 = (INIClass *)(*(_DWORD *)(this + 1312) + 36); /*0x44ff79*/
   v10 = (INIClass *)(*(_DWORD *)(this + 540) + 90100); /*0x44ff7c*/
-  v11 = (*(int (__thiscall **)(int, _BYTE *, _DWORD))(*(_DWORD *)this + 440))( /*0x44ff82*/
+  v11 = (*(int (__thiscall **)(int, _BYTE *, _DWORD))(this->airstrikeTintTimer)( /*0x44ff82*/
           this,
           v26,
           (unsigned __int8)((unsigned int)((*Value >> 7) + 1) >> 1));
-  v18 = *(__int16 *)(*(int (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)this + 440))( /*0x44ff9f*/
+  v18 = *(__int16 *)(*(int (__thiscall **)(int, int *, _DWORD))(this->airstrikeTintTimer)( /*0x44ff9f*/
                       this,
                       &v27,
                       *(__int16 *)(v11 + 2));

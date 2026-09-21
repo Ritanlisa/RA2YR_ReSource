@@ -2,7 +2,7 @@
 // by tools/csp_export/rewrite_member_refs.py (mechanical, CSP member table).
 // REFERENCE ONLY - not compiled. Width-matched rewrites; unmatched kept raw.
 
-// ==== 0x00680070  SaveGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x00680070  SaveGame_Start  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680070(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -49,7 +49,7 @@ HRESULT __fastcall SaveGame_Start_680070(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x006800F0  SaveGame_Start_6800F0  this=VOID_PTR  sig=csp ====
+// ==== 0x006800F0  SaveGame_Start_6800F0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_6800F0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -96,7 +96,7 @@ HRESULT __fastcall SaveGame_Start_6800F0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680170  SaveGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x00680170  SaveGame_Start  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680170(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -143,7 +143,7 @@ HRESULT __fastcall SaveGame_Start_680170(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x006801F0  SaveGame_Start_6801F0  this=VOID_PTR  sig=csp ====
+// ==== 0x006801F0  SaveGame_Start_6801F0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_6801F0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -190,7 +190,7 @@ HRESULT __fastcall SaveGame_Start_6801F0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680270  SaveGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x00680270  SaveGame_Start  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680270(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -237,7 +237,7 @@ HRESULT __fastcall SaveGame_Start_680270(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x006802F0  SaveGame_Start_6802F0  this=VOID_PTR  sig=csp ====
+// ==== 0x006802F0  SaveGame_Start_6802F0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_6802F0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -284,7 +284,7 @@ HRESULT __fastcall SaveGame_Start_6802F0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680370  SaveGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x00680370  SaveGame_Start  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680370(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -331,7 +331,7 @@ HRESULT __fastcall SaveGame_Start_680370(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x006803F0  SaveGame_Start_6803F0  this=VOID_PTR  sig=csp ====
+// ==== 0x006803F0  SaveGame_Start_6803F0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_6803F0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -378,7 +378,7 @@ HRESULT __fastcall SaveGame_Start_6803F0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680470  SaveGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x00680470  SaveGame_Start  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680470(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -425,7 +425,7 @@ HRESULT __fastcall SaveGame_Start_680470(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x006804F0  SaveGame_Start_6804F0  this=VOID_PTR  sig=csp ====
+// ==== 0x006804F0  SaveGame_Start_6804F0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_6804F0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -472,7 +472,7 @@ HRESULT __fastcall SaveGame_Start_6804F0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680570  SaveGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x00680570  SaveGame_Start  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680570(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -519,7 +519,7 @@ HRESULT __fastcall SaveGame_Start_680570(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x006805F0  SaveGame_Start_6805F0  this=VOID_PTR  sig=csp ====
+// ==== 0x006805F0  SaveGame_Start_6805F0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_6805F0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -566,7 +566,7 @@ HRESULT __fastcall SaveGame_Start_6805F0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680670  SaveGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x00680670  SaveGame_Start  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680670(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -613,7 +613,7 @@ HRESULT __fastcall SaveGame_Start_680670(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x006806F0  SaveGame_Start_6806F0  this=VOID_PTR  sig=csp ====
+// ==== 0x006806F0  SaveGame_Start_6806F0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_6806F0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -660,7 +660,7 @@ HRESULT __fastcall SaveGame_Start_6806F0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680770  SaveGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x00680770  SaveGame_Start  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680770(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -707,7 +707,7 @@ HRESULT __fastcall SaveGame_Start_680770(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x006807F0  SaveGame_Start_6807F0  this=VOID_PTR  sig=csp ====
+// ==== 0x006807F0  SaveGame_Start_6807F0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_6807F0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -754,7 +754,7 @@ HRESULT __fastcall SaveGame_Start_6807F0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680870  SaveGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x00680870  SaveGame_Start  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680870(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -801,7 +801,7 @@ HRESULT __fastcall SaveGame_Start_680870(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x006808F0  SaveGame_Start_6808F0  this=VOID_PTR  sig=csp ====
+// ==== 0x006808F0  SaveGame_Start_6808F0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_6808F0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -848,7 +848,7 @@ HRESULT __fastcall SaveGame_Start_6808F0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680970  SaveGame_Start  this=VOID_PTR  sig=csp ====
+// ==== 0x00680970  SaveGame_Start  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680970(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -895,7 +895,7 @@ HRESULT __fastcall SaveGame_Start_680970(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x006809F0  SaveGame_Start_6809F0  this=VOID_PTR  sig=csp ====
+// ==== 0x006809F0  SaveGame_Start_6809F0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_6809F0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -942,7 +942,7 @@ HRESULT __fastcall SaveGame_Start_6809F0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680A70  SaveGame_Start_680A70  this=VOID_PTR  sig=csp ====
+// ==== 0x00680A70  SaveGame_Start_680A70  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680A70(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -989,7 +989,7 @@ HRESULT __fastcall SaveGame_Start_680A70(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680AF0  SaveGame_Start_680AF0  this=VOID_PTR  sig=csp ====
+// ==== 0x00680AF0  SaveGame_Start_680AF0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680AF0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -1036,7 +1036,7 @@ HRESULT __fastcall SaveGame_Start_680AF0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680B70  SaveGame_Start_680B70  this=VOID_PTR  sig=csp ====
+// ==== 0x00680B70  SaveGame_Start_680B70  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680B70(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -1083,7 +1083,7 @@ HRESULT __fastcall SaveGame_Start_680B70(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680BF0  SaveGame_Start_680BF0  this=VOID_PTR  sig=csp ====
+// ==== 0x00680BF0  SaveGame_Start_680BF0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680BF0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -1130,7 +1130,7 @@ HRESULT __fastcall SaveGame_Start_680BF0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680C70  SaveGame_Start_680C70  this=VOID_PTR  sig=csp ====
+// ==== 0x00680C70  SaveGame_Start_680C70  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680C70(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -1177,7 +1177,7 @@ HRESULT __fastcall SaveGame_Start_680C70(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680CF0  SaveGame_Start_680CF0  this=VOID_PTR  sig=csp ====
+// ==== 0x00680CF0  SaveGame_Start_680CF0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680CF0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -1224,7 +1224,7 @@ HRESULT __fastcall SaveGame_Start_680CF0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680D70  SaveGame_Start_680D70  this=VOID_PTR  sig=csp ====
+// ==== 0x00680D70  SaveGame_Start_680D70  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680D70(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -1271,7 +1271,7 @@ HRESULT __fastcall SaveGame_Start_680D70(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680DF0  SaveGame_Start_680DF0  this=VOID_PTR  sig=csp ====
+// ==== 0x00680DF0  SaveGame_Start_680DF0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680DF0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -1318,7 +1318,7 @@ HRESULT __fastcall SaveGame_Start_680DF0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680E70  SaveGame_Start_680E70  this=VOID_PTR  sig=csp ====
+// ==== 0x00680E70  SaveGame_Start_680E70  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680E70(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -1365,7 +1365,7 @@ HRESULT __fastcall SaveGame_Start_680E70(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680EF0  SaveGame_Start_680EF0  this=VOID_PTR  sig=csp ====
+// ==== 0x00680EF0  SaveGame_Start_680EF0  this=-  sig=csp ====
 HRESULT __fastcall SaveGame_Start_680EF0(LPSTREAM pStm, int a2)
 {
   int v4; // ecx
@@ -1412,7 +1412,7 @@ HRESULT __fastcall SaveGame_Start_680EF0(LPSTREAM pStm, int a2)
 }
 
 
-// ==== 0x00680F70  Game::validateScenario  this=VOID_PTR  sig=csp ====
+// ==== 0x00680F70  Game::validateScenario  this=Game  sig=csp ====
 int __thiscall sub_680F70(_DWORD *this, _DWORD *a2)
 {
   int v3; // edi
@@ -1451,7 +1451,7 @@ int __thiscall sub_680F70(_DWORD *this, _DWORD *a2)
 }
 
 
-// ==== 0x00680FF0  GameState::Reset  this=int  sig=csp ====
+// ==== 0x00680FF0  GameState::Reset  this=GameState  sig=csp ====
 _DWORD *__thiscall GameState::Reset(_DWORD *this)
 {
   *this = 0; /*0x680ff4*/
@@ -1474,10 +1474,10 @@ _DWORD *__thiscall GameState::Reset(_DWORD *this)
 }
 
 
-// ==== 0x00681060  ObjectClass::Map_Save  this=VOID_PTR  sig=csp ====
+// ==== 0x00681060  ObjectClass::Map_Save  this=ObjectClass  sig=csp ====
 int __thiscall sub_681060(_DWORD *this, int a2)
 {
-  *(this + 1) = a2; /*0x681064*/
+  this->vtable2 = a2; /*0x681064*/
   return a2; /*0x681067*/
 }
 
@@ -1489,7 +1489,7 @@ int __thiscall sub_681070(_DWORD *this)
 }
 
 
-// ==== 0x00681080  ObjectClass::Map_Save  this=VOID_PTR  sig=csp ====
+// ==== 0x00681080  ObjectClass::Map_Save  this=ObjectClass  sig=csp ====
 int __thiscall sub_681080(_DWORD *this, int a2)
 {
   *this = a2; /*0x681084*/
@@ -1497,22 +1497,22 @@ int __thiscall sub_681080(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00681090  ObjectClass::ReadPointerFromECX3  this=int  sig=csp ====
+// ==== 0x00681090  ObjectClass::ReadPointerFromECX3  this=ObjectClass  sig=csp ====
 int __thiscall ReadPointerFromECX3(void *this)
 {
   return *(_DWORD *)this; /*0x681092*/
 }
 
 
-// ==== 0x006810A0  ObjectClass::Map_Save_6810A0  this=VOID_PTR  sig=csp ====
+// ==== 0x006810A0  ObjectClass::Map_Save_6810A0  this=ObjectClass  sig=csp ====
 wchar_t *__thiscall sub_6810A0(wchar_t *this, wchar_t *Source)
 {
-  *(this + 131) = 0; /*0x6810a4*/
+  this->isSelected = 0; /*0x6810a4*/
   return wcsncpy(this + 4, Source, 0x7Fu); /*0x6810bc*/
 }
 
 
-// ==== 0x006810C0  ObjectClass::?raw_name_type_info__QBEPBDXZ  this=VOID_PTR  sig=csp ====
+// ==== 0x006810C0  ObjectClass::?raw_name_type_info__QBEPBDXZ  this=ObjectClass  sig=csp ====
 const char *__thiscall _raw_name_type_info__QBEPBDXZ(type_info *this)
 {
   return (char *)this + 8; /*0x6810c3*/
@@ -1527,7 +1527,7 @@ wchar_t *__thiscall sub_6810D0(wchar_t *this, wchar_t *Source)
 }
 
 
-// ==== 0x00681100  LoadOptions::GetData  this=int  sig=csp ====
+// ==== 0x00681100  LoadOptions::GetData  this=LoadOptions  sig=csp ====
 char *__thiscall sub_681100(char *this)
 {
   return this + 264; /*0x681106*/
@@ -1542,25 +1542,25 @@ int __thiscall sub_681110(_DWORD *this, int a2)
 }
 
 
-// ==== 0x00681120  LoadOptions::GetFlag98  this=VOID_PTR  sig=csp ====
+// ==== 0x00681120  LoadOptions::GetFlag98  this=LoadOptions  sig=csp ====
 int __thiscall sub_681120(_DWORD *this)
 {
-  return *(this + 98); /*0x681126*/
+  return this->q188; /*0x681126*/
 }
 
 
-// ==== 0x00681130  ObjectClass::Map_Save  this=VOID_PTR  sig=csp ====
+// ==== 0x00681130  ObjectClass::Map_Save  this=ObjectClass  sig=csp ====
 int __thiscall sub_681130(_DWORD *this, int a2)
 {
-  *(this + 99) = a2; /*0x681134*/
+  this->__pad_18C = a2; /*0x681134*/
   return a2; /*0x68113a*/
 }
 
 
-// ==== 0x00681140  LoadOptions::GetFlag99  this=VOID_PTR  sig=csp ====
+// ==== 0x00681140  LoadOptions::GetFlag99  this=LoadOptions  sig=csp ====
 int __thiscall sub_681140(_DWORD *this)
 {
-  return *(this + 99); /*0x681146*/
+  return this->q18C; /*0x681146*/
 }
 
 
@@ -1578,7 +1578,7 @@ char *__thiscall sub_6811B0(char *this)
 }
 
 
-// ==== 0x006811C0  ObjectClass::Map_Save_6811C0  this=VOID_PTR  sig=csp ====
+// ==== 0x006811C0  ObjectClass::Map_Save_6811C0  this=ObjectClass  sig=csp ====
 char *__thiscall sub_6811C0(char *this, char *Source)
 {
   *(this + 983) = 0; /*0x6811c4*/
@@ -1593,12 +1593,12 @@ char *__thiscall sub_6811F0(char *this)
 }
 
 
-// ==== 0x00681200  ObjectClass::Map_Save  this=VOID_PTR  sig=csp ====
+// ==== 0x00681200  ObjectClass::Map_Save  this=ObjectClass  sig=csp ====
 int __thiscall sub_681200(_DWORD *this, _DWORD *a2)
 {
   int result; // eax
 
-  *(this + 246) = *a2; /*0x681206*/
+  this->__pad_3D8 = *a2; /*0x681206*/
   result = a2[1]; /*0x68120c*/
   *(this + 247) = result; /*0x68120f*/
   return result; /*0x681215*/
@@ -1614,12 +1614,12 @@ _DWORD *__thiscall sub_681220(_DWORD *this, _DWORD *a2)
 }
 
 
-// ==== 0x00681240  ObjectClass::Map_Save  this=VOID_PTR  sig=csp ====
+// ==== 0x00681240  ObjectClass::Map_Save  this=ObjectClass  sig=csp ====
 int __thiscall sub_681240(_DWORD *this, _DWORD *a2)
 {
   int result; // eax
 
-  *(this + 248) = *a2; /*0x681246*/
+  this->q0F8 = *a2; /*0x681246*/
   result = a2[1]; /*0x68124c*/
   *(this + 249) = result; /*0x68124f*/
   return result; /*0x681255*/
@@ -1635,12 +1635,12 @@ _DWORD *__thiscall sub_681260(_DWORD *this, _DWORD *a2)
 }
 
 
-// ==== 0x00681280  ObjectClass::Map_Save  this=VOID_PTR  sig=csp ====
+// ==== 0x00681280  ObjectClass::Map_Save  this=ObjectClass  sig=csp ====
 int __thiscall sub_681280(_DWORD *this, _DWORD *a2)
 {
   int result; // eax
 
-  *(this + 250) = *a2; /*0x681286*/
+  this->q0FA = *a2; /*0x681286*/
   result = a2[1]; /*0x68128c*/
   *(this + 251) = result; /*0x68128f*/
   return result; /*0x681295*/
@@ -1656,22 +1656,22 @@ _DWORD *__thiscall sub_6812A0(_DWORD *this, _DWORD *a2)
 }
 
 
-// ==== 0x006812C0  ObjectClass::Map_Save_6812C0  this=VOID_PTR  sig=csp ====
+// ==== 0x006812C0  ObjectClass::Map_Save_6812C0  this=ObjectClass  sig=csp ====
 int __thiscall Map_Save_6812C0(_DWORD *this, CellStruct *aP1)
 {
-  *(this + 252) = aP1; /*0x6812c4*/
+  this->q0FC = aP1; /*0x6812c4*/
   return (int)aP1; /*0x6812ca*/
 }
 
 
-// ==== 0x006812D0  LoadOptions::GetFlag252  this=VOID_PTR  sig=csp ====
+// ==== 0x006812D0  LoadOptions::GetFlag252  this=LoadOptions  sig=csp ====
 int __thiscall sub_6812D0(_DWORD *this)
 {
-  return *(this + 252); /*0x6812d6*/
+  return this->q3F0; /*0x6812d6*/
 }
 
 
-// ==== 0x006812E0  GameOptions::SaveLoad  this=int  sig=csp ====
+// ==== 0x006812E0  GameOptions::SaveLoad  this=GameOptions  sig=csp ====
 int __thiscall GameOptions_SaveLoad(int this, int *a2)
 {
   int v2; // edi
@@ -1884,7 +1884,7 @@ LABEL_77:
 }
 
 
-// ==== 0x00681840  ObjectClass::ScenarioPropertyReadCOM  this=int  sig=csp ====
+// ==== 0x00681840  ObjectClass::ScenarioPropertyReadCOM  this=ObjectClass  sig=csp ====
 int __thiscall sub_681840(int this, int a2)
 {
   int (__stdcall **v4)(int, void *, int *); // eax
@@ -2251,7 +2251,7 @@ LABEL_91:
 }
 
 
-// ==== 0x00682150  Map_Read  this=int  sig=csp ====
+// ==== 0x00682150  Map_Read  this=-  sig=csp ====
 int __stdcall sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
 {
   int v3; // ecx
@@ -2304,7 +2304,7 @@ LABEL_5:
 }
 
 
-// ==== 0x00682240  Map_Read  this=int  sig=csp ====
+// ==== 0x00682240  Map_Read  this=-  sig=csp ====
 int __stdcall sub_682240(int a1, int a2, _WORD *a3)
 {
   _WORD *v3; // edi
@@ -2362,7 +2362,7 @@ LABEL_5:
 }
 
 
-// ==== 0x006822F0  Map_Read_6822F0  this=int  sig=csp ====
+// ==== 0x006822F0  Map_Read_6822F0  this=-  sig=csp ====
 int __stdcall sub_6822F0(int a1, int a2, LPSTR lpMultiByteStr)
 {
   LPSTR v3; // edi
@@ -2408,7 +2408,7 @@ int __stdcall sub_6822F0(int a1, int a2, LPSTR lpMultiByteStr)
 }
 
 
-// ==== 0x006823D0  Map_Read_6823D0  this=int  sig=csp ====
+// ==== 0x006823D0  Map_Read_6823D0  this=-  sig=csp ====
 int __stdcall sub_6823D0(int a1, int a2, wchar_t *Destination)
 {
   wchar_t *v3; // edi
@@ -2450,7 +2450,7 @@ int __stdcall sub_6823D0(int a1, int a2, wchar_t *Destination)
 }
 
 
-// ==== 0x006824B0  Map_Read_6824B0  this=int  sig=csp ====
+// ==== 0x006824B0  Map_Read_6824B0  this=-  sig=csp ====
 int __stdcall sub_6824B0(int a1, int a2, _DWORD *a3)
 {
   _DWORD *v3; // edi
@@ -2508,7 +2508,7 @@ LABEL_7:
 }
 
 
-// ==== 0x00682570  PropertyReadScenarioCOM  this=int  sig=csp ====
+// ==== 0x00682570  PropertyReadScenarioCOM  this=-  sig=csp ====
 int __stdcall COM_Property_ReadScenario(int a1, int a2, _DWORD *a3)
 {
   _DWORD *v3; // edi
@@ -2550,7 +2550,7 @@ int __stdcall COM_Property_ReadScenario(int a1, int a2, _DWORD *a3)
 }
 
 
-// ==== 0x00682640  WriteStringCOM  this=VOID_PTR  sig=csp ====
+// ==== 0x00682640  WriteStringCOM  this=-  sig=csp ====
 int __stdcall COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
 {
   int v3; // ecx
@@ -2614,7 +2614,7 @@ LABEL_18:
 }
 
 
-// ==== 0x00682780  GameOptions_Load  this=VOID_PTR  sig=csp ====
+// ==== 0x00682780  GameOptions_Load  this=-  sig=csp ====
 int __stdcall sub_682780(int a1, int a2, wchar_t *String)
 {
   int v3; // ecx
@@ -2676,7 +2676,7 @@ LABEL_18:
 }
 
 
-// ==== 0x00682880  ReadStringCOM  this=VOID_PTR  sig=csp ====
+// ==== 0x00682880  ReadStringCOM  this=-  sig=csp ====
 int __stdcall COM_ReadString(int *a1, int a2, LPCCH lpMultiByteStr)
 {
   int v3; // edx
@@ -2728,7 +2728,7 @@ LABEL_6:
 }
 
 
-// ==== 0x006829A0  GameOptions_Load_6829A0  this=VOID_PTR  sig=csp ====
+// ==== 0x006829A0  GameOptions_Load_6829A0  this=-  sig=csp ====
 int __stdcall sub_6829A0(int *a1, int a2, int a3)
 {
   int v3; // eax
@@ -2776,7 +2776,7 @@ LABEL_6:
 }
 
 
-// ==== 0x00682A90  PropertyReadBoolCOM  this=VOID_PTR  sig=csp ====
+// ==== 0x00682A90  PropertyReadBoolCOM  this=-  sig=csp ====
 int __stdcall COM_Property_ReadBool(int a1, int a2, char a3)
 {
   int v3; // ecx
@@ -2836,7 +2836,7 @@ LABEL_18:
 }
 
 
-// ==== 0x00682B80  PropertyBagReadCOM  this=VOID_PTR  sig=csp ====
+// ==== 0x00682B80  PropertyBagReadCOM  this=-  sig=csp ====
 int __stdcall COM_PropertyBag_Read(int *a1, int a2, int a3)
 {
   int v3; // eax
@@ -2884,7 +2884,7 @@ LABEL_6:
 }
 
 
-// ==== 0x00682C70  sub_682C70  this=unknown  sig=csp ====
+// ==== 0x00682C70  sub_682C70  this=-  sig=csp ====
 int __stdcall sub_682C70(int a1, int a2, _DWORD *a3)
 {
   _DWORD *v3; // edi
@@ -2943,7 +2943,7 @@ LABEL_7:
 }
 
 
-// ==== 0x00682D30  ReadBufferCOM  this=int  sig=csp ====
+// ==== 0x00682D30  ReadBufferCOM  this=-  sig=csp ====
 int __stdcall COM_ReadBuffer(int a1, int a2, _DWORD *a3)
 {
   _DWORD *v3; // edi
@@ -2992,7 +2992,7 @@ int __stdcall COM_ReadBuffer(int a1, int a2, _DWORD *a3)
 }
 
 
-// ==== 0x00682E10  WriteIntCOM  this=VOID_PTR  sig=csp ====
+// ==== 0x00682E10  WriteIntCOM  this=-  sig=csp ====
 int __stdcall COM_WriteInt(int a1, int a2, int a3)
 {
   int v3; // ecx
@@ -3052,7 +3052,7 @@ LABEL_18:
 }
 
 
-// ==== 0x00682F00  SetBufferParamsCOM  this=VOID_PTR  sig=csp ====
+// ==== 0x00682F00  SetBufferParamsCOM  this=-  sig=csp ====
 int __stdcall COM_SetBufferParams(int *a1, int a2, int *a3)
 {
   int v3; // eax
@@ -3104,7 +3104,7 @@ LABEL_6:
 }
 
 
-// ==== 0x00683000  ScenarioClass::LookupMethod  this=VOID_PTR  sig=csp ====
+// ==== 0x00683000  ScenarioClass::LookupMethod  this=ScenarioClass  sig=csp ====
 _UNKNOWN **__thiscall ScenarioClass_LookupMethod(void *this)
 {
   int v1; // edx
@@ -3123,7 +3123,7 @@ _UNKNOWN **__thiscall ScenarioClass_LookupMethod(void *this)
 }
 
 
-// ==== 0x00683030  COMObject::ValidatePtr  this=VOID_PTR  sig=csp ====
+// ==== 0x00683030  COMObject::ValidatePtr  this=COMObject  sig=csp ====
 int __thiscall COMObject_ValidatePtr(void *this)
 {
   if ( !*(_DWORD *)this ) /*0x683033*/
@@ -3132,7 +3132,7 @@ int __thiscall COMObject_ValidatePtr(void *this)
 }
 
 
-// ==== 0x00683050  ObjectClass::Map_Read  this=VOID_PTR  sig=csp ====
+// ==== 0x00683050  ObjectClass::Map_Read  this=ObjectClass  sig=csp ====
 int __thiscall sub_683050(int *this)
 {
   int result; // eax
@@ -3144,7 +3144,7 @@ int __thiscall sub_683050(int *this)
 }
 
 
-// ==== 0x00683060  ObjectClass::ReleaseCOM  this=int  sig=csp ====
+// ==== 0x00683060  ObjectClass::ReleaseCOM  this=ObjectClass  sig=csp ====
 int __thiscall COM_Release(int *this)
 {
   int result; // eax
@@ -3853,7 +3853,7 @@ int sub_683FB0()
 }
 
 
-// ==== 0x00684060  SetScenarioClassTimer  this=int  sig=ida-proto ====
+// ==== 0x00684060  SetScenarioClassTimer  this=-  sig=ida-proto ====
 void *__fastcall ScenarioClass_SetTimer(int a1)
 {
   DWORD Ticks; // eax
@@ -4619,7 +4619,7 @@ int sub_685120()
 }
 
 
-// ==== 0x006851F0  ObjectClass::ResetScenario  this=int  sig=csp ====
+// ==== 0x006851F0  ObjectClass::ResetScenario  this=ObjectClass  sig=csp ====
 int ScenarioClass_Reset()
 {
   int i; // esi
@@ -5501,7 +5501,7 @@ char *__thiscall ScenarioClass::SetFileName(char *this, ObjectClass *aP1)
 }
 
 
-// ==== 0x00686730  ScenarioClass::Construct  this=unknown  sig=csp ====
+// ==== 0x00686730  ScenarioClass::Construct  this=ScenarioClass  sig=csp ====
 char __usercall sub_686730@<al>(char *Source@<ecx>, double a2@<st0>)
 {
   char result; // al
@@ -5556,7 +5556,7 @@ char __usercall sub_686730@<al>(char *Source@<ecx>, double a2@<st0>)
 }
 
 
-// ==== 0x00686890  ScenarioClass::SetupAlliances  this=int  sig=csp ====
+// ==== 0x00686890  ScenarioClass::SetupAlliances  this=ScenarioClass  sig=csp ====
 int __thiscall ScenarioClass::SetupAlliances(void *this)
 {
   int i; // esi
@@ -5670,7 +5670,7 @@ int __thiscall ScenarioClass::SetupAlliances(void *this)
 }
 
 
-// ==== 0x00686B20  ScenarioClass::LoadMap  this=int  sig=csp ====
+// ==== 0x00686B20  ScenarioClass::LoadMap  this=ScenarioClass  sig=csp ====
 char __usercall ScenarioClass::LoadMap@<al>(char a1@<dl>, CCINIClass *a2@<ecx>, double a3@<st0>)
 {
   CCINIClass *v3; // ebp
@@ -6330,7 +6330,7 @@ LABEL_124:
 }
 
 
-// ==== 0x00687CE0  SaveScenarioToINI  this=int  sig=csp ====
+// ==== 0x00687CE0  SaveScenarioToINI  this=-  sig=csp ====
 char *__usercall SaveScenarioToINI@<eax>(RawFileClass *Source@<ecx>, ScenarioClass *a2@<edx>, int a3@<edi>)
 {
   CCFileClass *v4; // eax
@@ -6823,7 +6823,7 @@ LABEL_24:
 }
 
 
-// ==== 0x006886B0  GenerateScenarioUnits  this=VOID_PTR  sig=ida-proto ====
+// ==== 0x006886B0  GenerateScenarioUnits  this=-  sig=ida-proto ====
 int __fastcall FindInfantryDeployPosition(int *a1, RadarClass *a2, int a3)
 {
   RadarClass *v3; // esi
@@ -9568,7 +9568,7 @@ char __thiscall DynamicVector_PushBack(_DWORD *this, VectorClass *aP1)
 }
 
 
-// ==== 0x0068C2B0  Multiplayer::CopyDataArray  this=int  sig=csp ====
+// ==== 0x0068C2B0  Multiplayer::CopyDataArray  this=Multiplayer  sig=csp ====
 _DWORD *__thiscall Multiplayer::CopyDataArray(_DWORD *this, ObjectClass *aP1)
 {
   int v3; // edi
@@ -9636,7 +9636,7 @@ void __cdecl sub_68C370()
 }
 
 
-// ==== 0x0068C3B0  FontClass::CreateGlyphColor  this=VOID_PTR  sig=csp ====
+// ==== 0x0068C3B0  FontClass::CreateGlyphColor  this=FontClass  sig=csp ====
 int __fastcall FontClass::CreateGlyphColor(
         ObjectClass *aP0,
         const void *a1,
@@ -9903,7 +9903,7 @@ int __fastcall FindBuildingAnimByName(AbstractClass *aP0, int a2)
 }
 
 
-// ==== 0x0068CAB0  Network_Assign  this=int  sig=csp ====
+// ==== 0x0068CAB0  Network_Assign  this=-  sig=csp ====
 int __fastcall Network_Assign(void *a1, int a2)
 {
   int v2; // esi
@@ -12019,7 +12019,7 @@ int __thiscall ScoreScreen::AccumulateScoreStats(ScoreScreen *this)
 }
 
 
-// ==== 0x0068F060  Screen::TransitionRender  this=int  sig=csp ====
+// ==== 0x0068F060  Screen::TransitionRender  this=Screen  sig=csp ====
 int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP2, int a4)
 {
   int v5; // ecx
@@ -12139,7 +12139,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     v65 = 1; /*0x68f136*/
   v63 = v8; /*0x68f140*/
   v10 = v7 - v8; /*0x68f144*/
-  v11 = *(this + 2); /*0x68f146*/
+  v11 = this->q008; /*0x68f146*/
   v77 = v10; /*0x68f149*/
   v61 = v10; /*0x68f14d*/
   v60 = (wchar_t *)v6; /*0x68f15a*/
@@ -12149,7 +12149,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   (*(void (__thiscall **)(int, wchar_t **, int *, int))(*(_DWORD *)v11 + 28))(v11, &v60, &v58, 25); /*0x68f17b*/
   v63 = v66; /*0x68f189*/
   v60 = (wchar_t *)(v6 + 4); /*0x68f18d*/
-  v12 = *(this + 2); /*0x68f191*/
+  v12 = this->q008; /*0x68f191*/
   v61 = v77; /*0x68f19b*/
   var24C = 7; /*0x68f19f*/
   LOWORD(v58) = -18947; /*0x68f1a7*/
@@ -12157,7 +12157,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   (*(void (__thiscall **)(int, wchar_t **, int *, int))(*(_DWORD *)v12 + 28))(v12, &v60, &v58, 50); /*0x68f1bc*/
   v63 = v66; /*0x68f1ca*/
   v60 = (wchar_t *)(v6 + 11); /*0x68f1ce*/
-  v13 = *(this + 2); /*0x68f1d2*/
+  v13 = this->q008; /*0x68f1d2*/
   v61 = v77; /*0x68f1dc*/
   var24C = 4; /*0x68f1e0*/
   LOWORD(v58) = -18947; /*0x68f1e8*/
@@ -12166,7 +12166,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   v62 = (wchar_t *)(v6 + 132); /*0x68f20a*/
   v60 = (wchar_t *)(v6 + 132); /*0x68f20e*/
   v63 = v64; /*0x68f214*/
-  v14 = *(this + 2); /*0x68f21a*/
+  v14 = this->q008; /*0x68f21a*/
   v78 = v7 - v64; /*0x68f21d*/
   v61 = v7 - v64; /*0x68f221*/
   var24C = 4; /*0x68f22c*/
@@ -12176,14 +12176,14 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   v60 = (wchar_t *)(v6 + 136); /*0x68f255*/
   v61 = v78; /*0x68f259*/
   var24C = 7; /*0x68f25d*/
-  v15 = *(this + 2); /*0x68f269*/
+  v15 = this->q008; /*0x68f269*/
   v63 = v64; /*0x68f26c*/
   LOWORD(v58) = 7418; /*0x68f277*/
   BYTE2(v58) = 28; /*0x68f280*/
   (*(void (__thiscall **)(int, wchar_t **, int *, int))(*(_DWORD *)v15 + 28))(v15, &v60, &v58, 50); /*0x68f28b*/
   v63 = v64; /*0x68f29c*/
   v60 = (wchar_t *)(v6 + 143); /*0x68f2a0*/
-  v16 = *(this + 2); /*0x68f2a4*/
+  v16 = this->q008; /*0x68f2a4*/
   v61 = v78; /*0x68f2ae*/
   var24C = 4; /*0x68f2b2*/
   LOWORD(v58) = 7418; /*0x68f2ba*/
@@ -12239,7 +12239,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     else
     {
       v63 = v18; /*0x68f351*/
-      v21 = *(this + 2); /*0x68f35e*/
+      v21 = this->q008; /*0x68f35e*/
       v61 = v58; /*0x68f361*/
       v60 = (wchar_t *)v6; /*0x68f36c*/
       var24C = 15; /*0x68f370*/
@@ -12303,7 +12303,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     {
       v32 = v58; /*0x68f4b4*/
       v63 = v68; /*0x68f4b8*/
-      v33 = *(this + 2); /*0x68f4c5*/
+      v33 = this->q008; /*0x68f4c5*/
       v60 = v62; /*0x68f4c8*/
       v61 = v58; /*0x68f4d3*/
       var24C = 15; /*0x68f4d7*/
@@ -12364,7 +12364,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     v19 = v66; /*0x68f6a9*/
   }
   v61 = v77; /*0x68f6b3*/
-  v47 = *(this + 2); /*0x68f6be*/
+  v47 = this->q008; /*0x68f6be*/
   v63 = v19; /*0x68f6c1*/
   v60 = (wchar_t *)v6; /*0x68f6cc*/
   var24C = 15; /*0x68f6d0*/
@@ -12406,7 +12406,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
       1);
   v48 = v62; /*0x68f7b4*/
   v61 = v78; /*0x68f7b8*/
-  v49 = *(this + 2); /*0x68f7c5*/
+  v49 = this->q008; /*0x68f7c5*/
   v63 = v64; /*0x68f7c8*/
   v60 = v62; /*0x68f7d3*/
   var24C = 15; /*0x68f7d7*/
