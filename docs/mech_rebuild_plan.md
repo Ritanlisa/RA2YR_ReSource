@@ -507,3 +507,32 @@ this-relative 访问**，参数型 receiver（`a1->X`）架构上不产事件。
 3. **归属错位件识别法**：伪码 5 行 getter 但调用方 `mov ecx,[ebp+21Ch]`（=this->owner @540 G16 终审）——canon cls 锚是 TechnoClass、真 receiver 是 owner 指向的 HouseClass。翻译前必须 xrefs_to 抽查调用方 receiver 来源（#150 记录全过程）。
 4. **canon vt 槽标注可自相矛盾**：0x449A40 同一函数 canon 同时标 `vt+540`（错，实为槽 136 = +544）且作为槽 135 别名 thunk 存在；vtable_offsets 又给槽 136 = HasValidWeapon。槽位三角互证（IDA 内存直读 vtable + vtable_offsets + 树内 hpp）不一致时挂账，不硬翻（#151）。
 5. **harvest_loop/harness 语义**：30s MCP 客户端超时 ≠ 服务器中止——超时后禁止立即重调同一工具（重入双写）；等 G29.1 async 模式或改用小 count。
+
+### G30 收尾附录（并行会话善后方 + e4 试点词汇预研，另一会话补记）
+
+- **limbo 善后方**（30s 超时案遗留件收口流程）：`git diff` 按
+  `// 0xADDR` 块 + `[IDA decompile]` 标记比对，提取「pending 标记消失
+  但 signals 未 completed」件 → 逐件 `verify_function` → PASS 补 mark。
+  本轮 0x7d1512（GetCurrentThreadId thunk）即用此法收口。撕裂读判别：
+  size 复读两次不同 = writer 活跃，静默后复验即恢复（#149 原子写已根治）。
+- **e4 词汇判别细化**（试点调研定稿，翻译未开工）：
+  1. **int 形态件免类化直译**：伪码参数为裸 int（`int i` +
+     `*(int *)(i + 48)`）时保持 int 算术词汇 = 0 事件对称。先例 =
+     addr75_e4.cpp `sub_751080`（completed 直排体）。addr40 的
+     sub_406EC0/sub_406F40 同形态可直译。
+  2. **缺口件 = 类型化指针首参 + `a1[N]` 常量下标**（0x408C30 形态）→
+     成员形态 + **member_set 补锚前置**：验证器映射源是
+     member_lookup + signals._member_by_name（canon classes.hpp 只是
+     编译载体不参与事件判定）；AudioStream 现仅 4 锚（q029/q046/q05D/
+     q05E），缺口件所需偏移大多未锚。
+  3. 全局词汇：`MEMORY[0x87E728]` → `DataGlobal_87E728`
+     （e4_globals.hpp 已声明，globals_map 直给）。
+- **命名预研**（xref 语义定名，下批直译首批即用）：
+  - `0x406EC0` → `PumpMovieAudioQueue`（唯一调用方 Movie::Play ×2）
+  - `0x406F40` → `PumpAudioQueue`（PostFrameCleanup /
+    ScenarioClass::ProcessIntroTimer 每帧调用）
+  - 两件同核（406F40 多 badAlloc 前置 + AudioMixer::Pump），体 =
+    AudioQueue::GetNext 链遍历 + flags&4 && tag==1 → ActivatePlay。
+  - `0x751080` → `DecrementAudioQueueCountdowners`（队列遍历递减
+    +48 倒计时并 clamp 到 0，命中即 AudioSource::Get + 释放）——
+    已完成件，可随下批 rename_symbol 四方改名。

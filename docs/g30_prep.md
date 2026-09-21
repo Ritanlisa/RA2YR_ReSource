@@ -16,6 +16,14 @@
 - g29_prep 原前提（addr40 有 5 行件）已证伪：addr40 class="" 最小 56 行。
 - 正确试点对象：`list_pending` 里 `class=""` 且 `pseudocode_lines<=30` 的件
   （top_classes 显示 class="" 池 1,659 件，是最大剩余桶）。
+- **捷径（mech 计划「G30 收尾附录」）**：伪码参数为裸 int 的件（`int i` +
+  `*(int *)(i+48)` 形态）**免类化直译**即可 0 事件对称（先例 addr75
+  sub_751080）；仅类型化指针首参 + `a1[N]` 常量下标件才走类形态。
+  首批命名已预研：0x406EC0=PumpMovieAudioQueue / 0x406F40=PumpAudioQueue；
+  已完成件 0x751080 可改名 DecrementAudioQueueCountdowners。
+- 缺口件前置：AudioStream 在 member_lookup/_member_by_name 仅 4 锚，
+  类形态翻译前先 `member_set` 补锚（canon classes.hpp 只是编译载体，
+  不参与事件判定）。
 - 路径优先级：**生成器路径**（gen_e4_materialize 产出 E4Recv 类声明；G29.2 已
   铺平 classes.hpp + e4_globals.hpp 同 TU 编译 0 error）> set_signature 挂类。
 - 试点 10 件 → 通过率报告 → 批量判定写入 mech 计划。
