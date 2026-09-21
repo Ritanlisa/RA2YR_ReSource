@@ -2412,12 +2412,7 @@ return 1;
 namespace gamemd {
 int ScenarioClass_ClearFlag_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-char ScenarioClass::ClearFlag_0()
-{
   return ScenarioClass::ClearFlag();
-}
 }
 }
 // 0x5CEB60

@@ -299,11 +299,6 @@ int __fastcall InfantryClass::Destruct(IUnknown *a1, AbstractClass *edx0)
 namespace gamemd {
 int InfantryClass_ScanTarget_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __fastcall InfantryClass::ScanTarget_0(int *a1)
-{
   return InfantryClass::ScanTarget(a1);
-}
 }
 } // namespace gamemd

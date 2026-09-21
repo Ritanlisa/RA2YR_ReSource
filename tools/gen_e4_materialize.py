@@ -908,13 +908,29 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
             missing_globals.append("extern unsigned char %s[%d];  // data: 0x%X" % (g, size, addr))
     gh = E4 / "e4_globals.hpp"
     if refresh and gh.exists():
+        new_names = set()
+        for ln in missing_globals:
+            gm2 = re.match(r"extern\s+[\w\s\*]+?\s+([A-Za-z_]\w*)", ln)
+            if gm2:
+                new_names.add(gm2.group(1))
         for ln in gh.read_text(encoding="latin-1").split("\n"):
             gm = re.match(r"extern\s+.*;\s*//\s*data:\s*(0x[0-9A-Fa-f]+)", ln.strip())
             if gm:
                 gname = re.match(r"extern\s+[\w\s\*]+?\s+([A-Za-z_]\w*)", ln.strip())
-                if gname and gname.group(1) not in missing_globals:
+                # dedup BY NAME: the old line-in-list check compared a bare
+                # name against declaration LINES (always true), so stale
+                # declarations with conflicting types were re-appended forever
+                if gname and gname.group(1) not in new_names:
                     missing_globals.append(ln.strip())
         missing_globals = sorted(set(missing_globals), key=lambda s: s.lower())
+    # safety net: one declaration per global name (first wins -- new-run
+    # declarations are emitted before refreshed legacy lines)
+    _by_name = {}
+    for ln in missing_globals:
+        gname = re.match(r"extern\s+[\w\s\*]+?\s+([A-Za-z_]\w*)", ln.strip())
+        if gname:
+            _by_name.setdefault(gname.group(1), ln)
+    missing_globals = sorted(_by_name.values(), key=lambda s: s.lower())
     gh.write_text(
         "// E1: pseudo-body referenced globals missing from src (auto-generated)\n"
         "#pragma once\n#include <cstdint>\n\n" + "\n".join(missing_globals) + "\n",

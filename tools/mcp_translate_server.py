@@ -18,6 +18,7 @@ envelopes, so the stable public protocol shape is implemented directly.
 Run:  python tools/mcp_translate_server.py
 """
 import json
+import os
 import pathlib
 import re
 import subprocess
@@ -122,7 +123,19 @@ def _enclosing_function(lines, marker_idx, rel):
     s = lines[i].strip()
     if not s.endswith("{"):
         return None
-    sig = s[:-1].strip()
+    if s == "{":
+        # e4/gap2 two-line shape: the real signature sits on the line above.
+        # (#148: entry["line"] used to point at the brace-only line, so
+        # set_signature rewrote `{` instead of the def.)
+        j = i - 1
+        while j >= 0 and (lines[j].strip() == ""
+                          or lines[j].strip().startswith("//")):
+            j -= 1
+        if j < 0 or "(" not in lines[j] or "=" in lines[j].split("(")[0]:
+            return None
+        i = j
+        s = lines[i].strip()
+    sig = s[:-1].strip() if s.endswith("{") else s
     addr = None
     j = i - 1
     while j >= 0 and j > i - 12:
@@ -174,9 +187,23 @@ def signals():
     except OSError:
         mtime = None
     if _signals is None or mtime != _signals_mtime:
-        _signals = json.load(open(SIGNALS, encoding="utf-8")) if SIGNALS.exists() else {"symbols": {}}
+        try:
+            _signals = json.load(open(SIGNALS, encoding="utf-8"))
+        except json.JSONDecodeError:
+            # torn read: another writer is mid-replace — brief retry
+            time.sleep(0.25)
+            _signals = json.load(open(SIGNALS, encoding="utf-8"))
         _signals_mtime = mtime
     return _signals
+
+
+def write_signals_atomic(sigj):
+    """Atomic signals.json write (tmp + os.replace): a concurrent reader must
+    never observe a half-written document (torn-read 'Extra data' race)."""
+    tmp = SIGNALS.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(sigj, ensure_ascii=False, indent=2),
+                   encoding="utf-8")
+    os.replace(str(tmp), str(SIGNALS))
 
 
 def member_lookup():
@@ -426,8 +453,7 @@ def run_verify(addr, verbose=False):
                 if sym and sym.get("reopened_from"):
                     sym["reopened_from"] = None
                     sym["verified_after_reopen"] = True
-            sp.write_text(json.dumps(sigj, ensure_ascii=False, indent=2),
-                          encoding="utf-8")
+            write_signals_atomic(sigj)
         except Exception:
             pass
     result = {"verdict": "PASS" if proc.returncode == 0 else "FAIL",
@@ -782,6 +808,20 @@ def replace_pseudocode(entry, new_body, dry_run):
             break
     if marker_idx is None:
         return {"ok": False, "error": "marker not found near function"}
+    # guard (#146): the block's own annotation must name the entry's address —
+    # a stale index must never steer a body write into a neighbouring function
+    want = entry.get("address")
+    if want:
+        ann = _marker_annotation(lines, marker_idx)
+        try:
+            want_i = int(want, 16)
+        except (TypeError, ValueError):
+            want_i = None
+        if ann is not None and want_i is not None and ann != want_i:
+            return {"ok": False,
+                    "error": "annotation mismatch: block at // 0x%X but "
+                             "target is %s (stale index? re-resolve)"
+                             % (ann, want)}
     depth = 0
     started = False
     end = marker_idx
@@ -1188,8 +1228,7 @@ def tool_mark_completed(target, note=""):
     e["completed"] = True
     if note:
         e["note"] = note
-    SIGNALS.write_text(json.dumps(sig, ensure_ascii=False, indent=2),
-                       encoding="utf-8")
+    write_signals_atomic(sig)
     global _signals
     _signals = None
     return {"ok": True, "address": key, "name": e.get("name"),
@@ -1561,8 +1600,7 @@ def tool_member_set(cls, offset, name, mtype, size=4, evidence="manual",
     sig = json.loads(sp.read_text(encoding="utf-8"))
     mbn = sig.setdefault("_member_by_name", {}).setdefault(cls, {})
     mbn[name] = off
-    sp.write_text(json.dumps(sig, indent=2, ensure_ascii=False) + chr(10),
-                  encoding="utf-8")
+    write_signals_atomic(sig)
     return {"ok": True, "key": key, "entry": entry,
             "note": "run canon_regen to propagate into classes.hpp/members/"
                     "raw_decomp/bodies"}
@@ -1624,8 +1662,7 @@ def tool_reopen(target):
         sym["completed"] = False
         sym["translated"] = False
         sym["reopened_from"] = "needs-retranslation"
-    sp.write_text(json.dumps(sig, indent=2, ensure_ascii=False) + chr(10),
-                  encoding="utf-8")
+    write_signals_atomic(sig)
     invalidate_pending_index()
     rel = str(path)
     if path.is_absolute():
@@ -1665,6 +1702,16 @@ def tool_set_signature(target, signature, sync_hpp=True, dry_run=False):
         prefix, body_old = "", old
     indent = re.match(r"\s*", body_old).group(0)
     new_line = prefix + indent + sig_line + " {"
+    # #148 guard: the line we are about to rewrite must actually be the def
+    # line — its text has to contain the function name of the new signature.
+    name_m0 = re.match(r'^(.*?)([A-Za-z_]\w*)\s*\(', sig_line)
+    fname0 = name_m0.group(2) if name_m0 else None
+    if fname0 and fname0 not in old:
+        return {"ok": False,
+                "error": ("def-line mismatch: target line does not mention "
+                          "'%s' -- stale/wrong line, refusing to rewrite"
+                          % fname0),
+                "old_def": old.strip()}
     if dry_run:
         return {"ok": True, "dry_run": True, "file": entry["file"],
                 "old_def": old.strip(), "new_def": new_line.strip()}
@@ -1829,11 +1876,16 @@ def tool_sweep_stubs(file_filter=None, dry_run=True, limit=200):
 
 
 def tool_harvest_loop(count=20, max_lines=8, file_filter=None,
-                      dry_run=False):
+                      dry_run=False, async_mode=False):
     """Mechanical trivial-bucket harvest: pending functions whose rewritten
     raw_decomp body is a single `return <expr>;` (no `this`) are translated
     verbatim, verified, and marked on PASS / rolled back on FAIL. Returns a
     per-function ledger. Non-trivial candidates are reported for the agent."""
+    if async_mode and not dry_run:
+        jid = submit_job("harvest", lambda: tool_harvest_loop(
+            count, max_lines, file_filter, dry_run, False))
+        return {"ok": True, "job_id": jid,
+                "note": "verify runs ~10-30s per candidate; poll job_status"}
     idx = build_pending_index()
     pool = [e for e in idx
             if (e.get("pseudocode_lines") or 999) <= max_lines
@@ -1852,6 +1904,23 @@ def tool_harvest_loop(count=20, max_lines=8, file_filter=None,
         body = _raw_decomp_trivial_return(addr)
         if body is None:
             ledger.append({"addr": addr, "skipped": "not trivial-return"})
+            skipped += 1
+            continue
+        # #147 guard: every bare lowercase identifier in the return statement
+        # must be declared on the def line we keep (a param name like
+        # dwNewLong that survives only in the raw_decomp def would compile-
+        # break the carrier). PascalCase call targets / globals are exempt.
+        decl = entry.get("signature") or ""
+        ident_re = re.compile(r'\b([a-z_][a-z0-9_]{2,})\b')
+        exempt = {"return", "true", "false", "nullptr", "sizeof", "null"}
+        missing = sorted({t for t in ident_re.findall(body)
+                          if t not in exempt
+                          and not t.startswith(("g_", "data_global"))
+                          and t not in decl})
+        if missing:
+            ledger.append({"addr": addr,
+                           "skipped": "identifiers not in def line: %s"
+                                      % ", ".join(missing[:4])})
             skipped += 1
             continue
         attempted += 1
@@ -1905,9 +1974,28 @@ def _raw_decomp_trivial_return(addr):
     return stmts[0]
 
 
+def _marker_annotation(lines, marker_idx):
+    """Address annotation (`// 0xADDR`) above a pseudocode marker, as int."""
+    j = marker_idx - 1
+    while j >= 0 and j > marker_idx - 12:
+        m = ADDR_COMMENT.match(lines[j].strip())
+        if m:
+            return int(m.group(1), 16)
+        j -= 1
+    return None
+
+
 def _harvest_one(entry, ret_stmt, dry_run):
     """Replace a pending pseudocode block with one return statement, verify,
     mark on PASS, roll the file back on FAIL. The def line is kept as-is."""
+    # re-resolve fresh: earlier harvests in the same loop shifted line numbers
+    # (#146: stale entries made the marker scan land in the NEXT function's
+    # block, writing one function's body into another)
+    fresh = None
+    if entry.get("address"):
+        fresh = resolve_target(entry["address"])
+    if fresh and fresh.get("file") == entry.get("file") and fresh.get("line"):
+        entry = fresh
     p = PROJECT_ROOT / entry["file"]
     lines = _read_latin1(p).split("\n")
     marker_idx = None
@@ -1917,6 +2005,19 @@ def _harvest_one(entry, ret_stmt, dry_run):
             break
     if marker_idx is None:
         return {"skipped": "marker not found"}
+    # guard: the block's own annotation must name the target address (#146)
+    want = entry.get("address")
+    if want:
+        ann = _marker_annotation(lines, marker_idx)
+        try:
+            want_i = int(want, 16)
+        except (TypeError, ValueError):
+            want_i = None
+        if ann is None:
+            return {"skipped": "no // 0xADDR annotation above marker"}
+        if want_i is not None and ann != want_i:
+            return {"skipped": "annotation mismatch: block is 0x%X, "
+                               "target is %s" % (ann, want)}
     depth = started = 0
     end = marker_idx
     for k in range(marker_idx + 1, len(lines)):
@@ -1990,8 +2091,7 @@ def tool_reconcile_accounts(dry_run=True, limit=100):
                 sym["translated"] = False
                 sym["phantom_cleared"] = "marker&completed reconcile"
                 n += 1
-        SIGNALS.write_text(json.dumps(sig, ensure_ascii=False, indent=2),
-                           encoding="utf-8")
+        write_signals_atomic(sig)
         out["cleared"] = n
         invalidate_pending_index()
     return {"ok": True, **out}
@@ -2335,7 +2435,7 @@ TOOLS = [
                                               "default": 200}},
                      "required": []}},
     {"name": "harvest_loop",
-     "description": "琐碎桶机械收割：pending 且 raw_decomp 重写体为单条 return <expr>;（无 this）的函数逐个 replace→verify→PASS 标记/FAIL 回滚。返回逐函数账目。",
+     "description": "琐碎桶机械收割：pending 且 raw_decomp 重写体为单条 return <expr>;（无 this）的函数逐个 replace→verify→PASS 标记/FAIL 回滚（写入前校验块地址注解 #146；参数引用守卫 #147）。async=true 后台执行返回 job_id。返回逐函数账目。",
      "inputSchema": {"type": "object",
                      "properties": {"count": {"type": "integer",
                                               "default": 20},
@@ -2343,7 +2443,9 @@ TOOLS = [
                                                   "default": 8},
                                     "file_filter": {"type": "string"},
                                     "dry_run": {"type": "boolean",
-                                                "default": False}},
+                                                "default": False},
+                                    "async": {"type": "boolean",
+                                              "default": False}},
                      "required": []}},
 ]
 
@@ -2452,7 +2554,8 @@ def dispatch_tool(name, a):
                                 a.get("limit", 200))
     if name == "harvest_loop":
         return tool_harvest_loop(a.get("count", 20), a.get("max_lines", 8),
-                                 a.get("file_filter"), a.get("dry_run", False))
+                                 a.get("file_filter"), a.get("dry_run", False),
+                                 a.get("async", False))
     raise ValueError(f"unknown tool: {name}")
 
 

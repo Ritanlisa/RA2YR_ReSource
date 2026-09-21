@@ -467,3 +467,22 @@ this-relative 访问**，参数型 receiver（`a1->X`）架构上不产事件。
 **注意**：csp_canon/classes.hpp 与 e4/e4_globals.hpp 目前不能同 TU 共存
 （CRTGlobal/vt_* 双声明类型冲突，e4_globals 既有债）——类形态载体迁转时
 须处理 include 策略。
+
+### G29.1 工具 bug 修复（2026-09-21，实测反馈 #146-148 全闭环）
+
+| bug | 根因 | 修复 |
+|---|---|---|
+| #146 harvest 写体错位 | 循环用首轮 pending 索引的陈旧行号；第一件收割缩短文件后 marker 搜索漂进下一个函数块 | 写入前 `resolve_target` 重解析 + **地址注解守卫**（块上方 `// 0xADDR` 必须 == target，不一致即中止）；`replace_pseudocode` 同加守卫 |
+| #147 载体丢参 | 模板只看体是单 return，不管裸标识符是否在保留的 def 行声明 | return 语句中的裸小写标识符（非 g_/PascalCase/关键字）必须出现在 def 行，否则跳过 |
+| #148 set_signature 错行 | e4 pending 形态「签名行+独立 `{` 行」，`_enclosing_function` 把 `{` 行当定义行 | 独立 `{` 行上溯一行取真签名；set_signature 加 fname-in-old_def 守卫（目标行不含函数名即拒绝改写） |
+| signals.json 撕裂读 | run_verify/mark 双写者非原子写，并发读者看到半写文件（"Extra data"） | `write_signals_atomic`（tmp+os.replace）全 5 处替换 + signals() 读失败 250ms 重试 |
+| harvest 同步超时 | 每件 verify 10-30s×N | `async=true` 走 job 框架 |
+
+**验证**：受控实跑 harvest 4/4 PASS 全部落点正确（PostMessageA/_getmbcp 等逐一对账注解）；reconcile 幻影=0；#146-148 已 resolve。
+
+### G29.2 e4_globals.hpp 生成器债清偿（classes.hpp 同 TU 障碍清除）
+
+- **根因**：`gen_e4_materialize.py` E1 refresh 路径把全局名与声明行列表比对（恒真），旧声明永远重挂——**e4_globals.hpp 累积 11,977 条同名不同型重复声明**（15,460 行声明 / 3,483 唯一名）。
+- **修复**：生成器 refresh 改按名去重（新run优先）+ 逐名唯一兜底；现存文件外科去重 + 1 处 `_DWORD*` IDA-ism 修正。
+- **结果**：`csp_canon/classes.hpp` + `e4/e4_globals.hpp` **同 TU 编译 0 error / exit 0**（探针产出 .obj）——e4 类形态迁转的 include 策略不再有障碍。
+- 另：_generated 六个 core 文件 33K 行死存根删除经事后审计 **206/206 地址全部满足 sweep 语义**（completed 或非 stub 文件有真体注解）——并行会话合法产物，一并入库；本会话 sweep_stubs 实跑清除剩余 128 块，dry 复查 0 残留。

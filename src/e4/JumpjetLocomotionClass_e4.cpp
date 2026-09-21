@@ -2896,11 +2896,7 @@ int __stdcall JumpjetLocomotionClass::sub_729E50(int a1)
 // 0x72A1A0
 int JumpjetLocomotionClass::ShortFunc_72A1A0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::sub_72A1A0(int a1)
-{
   return *(_DWORD *)(a1 + 20) != 4 ? 2 : 0;
-}
 }
 
 // 0x54EB20

@@ -6,11 +6,6 @@
 namespace gamemd {
 int ImageList_DragShowNolock()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-BOOL __stdcall ImageList::DragShowNolock(BOOL fShow)
-{
   return ImageList_DragShowNolock(fShow);
-}
 }
 }

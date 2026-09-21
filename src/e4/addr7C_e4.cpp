@@ -3936,12 +3936,7 @@ int wsprintfA()
 namespace gamemd {
 int PostMessageA()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-BOOL __stdcall PostMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
-{
   return __imp_PostMessageA(hWnd, Msg, wParam, lParam);
-}
 }
 } // namespace gamemd
 

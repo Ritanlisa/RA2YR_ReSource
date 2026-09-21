@@ -6,11 +6,6 @@
 namespace gamemd {
 int GetCurrentProcessId_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-DWORD __stdcall GetCurrentProcessId::0()
-{
   return GetCurrentProcessId();
-}
 }
 }

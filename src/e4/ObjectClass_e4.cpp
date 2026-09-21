@@ -7,10 +7,9 @@ namespace ra2 {
 namespace game {
 int ObjectClass::processPointerInvalid()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_483610(_DWORD *this)
+int ObjectClass::processPointerInvalid()
 {
-  return (*(this + 80) >> 8) & 1; /*0x48361c*/
+  return (this->q140 >> 8) & 1;
 }
 }
 } // namespace game
@@ -2421,11 +2420,9 @@ int ObjectClass::updateStateFlags()
 namespace gamemd {
 int ObjectClass::InputThunkA()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall ObjectClass::InputThunkA(_DWORD *this)
+int ObjectClass::InputThunkA()
 {
-  return ObjectClass::GetWidth(this);
+  return this->GetWidth();
 }
 }
 }
@@ -2433,11 +2430,9 @@ int __thiscall ObjectClass::InputThunkA(_DWORD *this)
 namespace gamemd {
 int ObjectClass::InputThunkB()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall ObjectClass::InputThunkB(_DWORD *this)
+int ObjectClass::InputThunkB()
 {
-  return ObjectClass::GetHeight(this);
+  return ObjectClass::GetHeight();
 }
 }
 }

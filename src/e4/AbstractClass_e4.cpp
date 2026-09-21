@@ -1358,12 +1358,7 @@ int AbstractClass::GetType()
 namespace gamemd {
 int AbstractClass_COMStub_143()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int AbstractClass::COMStub_143()
-{
   return IPersistStream::GetMaxSize();
-}
 }
 }
 // 0x4DB250

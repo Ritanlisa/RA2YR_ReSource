@@ -3033,11 +3033,7 @@ LABEL_22:
 namespace gamemd {
 int _getmbcp()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl _getmbcp()
-{
   return CRTGlobal_B7885C != 0 ? CRTGlobal_B78840 : 0;
-}
 }
 } // namespace gamemd
 
