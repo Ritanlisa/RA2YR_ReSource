@@ -448,3 +448,22 @@ csp_anchor(async) / compare_parse / member_set(批量) / reopen / job_status
 ### e4 词汇缺口的最终答案
 
 `a1[3]` 零事件的解 = **成员形态翻译**（E4Recv 先例的推广）：def 改 `Cls::Name()`、a1→隐式 this、体内 this->Name——验证器 class_name→member_name_to_off 全链已通。载体：csp_canon/classes.hpp 现已编译干净（本节），set_signature 自动 include，get_context 给 receiver 指引。canon 表给成员名，载体给类型化 receiver——缺口闭合。
+
+## G29 基建轮工具实测（2026-09-21，五件套首跑）
+
+| 工具 | 实测结果 |
+|---|---|
+| sweep_stubs | ✓ dry 预览 58 文件/16 死块（_generated 残留），待实跑 |
+| harvest_loop | ⚠️ **半可用**：自动链路（定位→replace→verify→mark）跑通 +3（COM thunk 委托件质量合格），但发现 2 bug（#146 写体错位→幻影 completed、#147 载体丢参→编译错误），均已手工修复 + reconcile 0 phantom |
+| set_signature | ⚠️ #148：e4 pending 形态（签名行+独立 `{` 行）定位错行——把 ` {` 行当定义行替换 |
+| verify_function verbose/auto_mark | 未单测（harvest 内部已用同管线） |
+| get_context member_map | ✓ canon 成员名已注入（csp-canon source） |
+
+**关键架构确认（e4 自由函数词汇缺口根因）**：efv_cpp_events 源码自述
+"free function (class_name=None): member step skipped"——**成员事件只认
+this-relative 访问**，参数型 receiver（`a1->X`）架构上不产事件。故方案 B
+（改参数类型）无效，唯一解 = 生成器产出类形态载体（canon 有类的函数挂到
+类成员/E4Recv 类下，receiver 用 this）。classes.hpp 0 error 已铺好地基。
+**注意**：csp_canon/classes.hpp 与 e4/e4_globals.hpp 目前不能同 TU 共存
+（CRTGlobal/vt_* 双声明类型冲突，e4_globals 既有债）——类形态载体迁转时
+须处理 include 策略。
