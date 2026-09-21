@@ -393,16 +393,6 @@ namespace gamemd { int DropListClass::RemoveItem(int a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x004B55A0  DropListClass::COMStub  cls=EditClass  sig=csp  renamed_refs=0  residual=- ====
-int DropListClass::COMStub()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DropListClass::_vt35(_DWORD *this)
-{
-  return *(this + 13); /*0x4b55a3*/
-}
-}
-
 // ==== BACKFILL 0x004B55B0  DropListClass::ScrollUp  cls=DropListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int DropListClass::ScrollUp() {
 {
@@ -913,31 +903,6 @@ int E4Recv_4B6BE0::sub_4B6BE0(int a2)
 }
 }
 
-// ==== BACKFILL 0x004B6BF0  sub_4B6BF0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_4B6BF0::sub_4B6BF0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4B6BF0(void *this)
-{
-  int v1; // edx
-  int result; // eax
-
-  v1 = *((_DWORD *)MEMORY[0xA8B230] + 3385); /*0x4b6bf9*/
-  if ( !v1 ) /*0x4b6c01*/
-    return -1; /*0x4b6c01*/
-  result = 0; /*0x4b6c03*/
-  if ( v1 <= 0 ) /*0x4b6c07*/
-    return -1; /*0x4b6c25*/
-  while ( *(void **)(*((_DWORD *)MEMORY[0xA8B230] + 3382) + 4 * result) != this /*0x4b6c1e*/
-       || *(_DWORD *)(*((_DWORD *)MEMORY[0xA8B230] + 3389) + 4 * result) == -1 )
-  {
-    if ( ++result >= v1 ) /*0x4b6c23*/
-      return -1; /*0x4b6c23*/
-  }
-  return result; /*0x4b6c28*/
-}
-}
-
 // ==== BACKFILL 0x004B9CE0  VectorClass_ptr_CrossDissolveEffect::SetCapacity  cls=VectorClass_ptr_CrossDissolveEffect  sig=csp  renamed_refs=0  residual=- ====
 char VectorClass_ptr_CrossDissolveEffect::SetCapacity(int a2, unsigned int * a3)
 {
@@ -1031,16 +996,6 @@ unsigned int VectorClass_ptr_CrossDissolveEffect::GetItemIndex(int a2)
     return (unsigned int)(a2 - this->Items) >> 2;
     else
     return 0;
-}
-}
-
-// ==== BACKFILL 0x004BAD60  DSurface::GetBytesPerPixel  cls=DSurface  sig=csp  renamed_refs=0  residual=- ====
-int DSurface::GetBytesPerPixel()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DSurface_GetBytesPerPixel(_DWORD *this)
-{
-  return *(this + 4); /*0x4bad63*/
 }
 }
 

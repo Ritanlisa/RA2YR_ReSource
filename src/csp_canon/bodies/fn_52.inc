@@ -1010,28 +1010,6 @@ bool InfantryClass::CanAttackTarget(HouseClass* other)
     return result;
 }
 
-// ==== BACKFILL 0x005228B0  ObjectClass::GetTypeVt40_0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int ObjectClass_GetTypeVt40_0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall ObjectClass::GetTypeVt40_0(#377 *this)
-{
-  return TechnoClass::GetTypeVt40(this);
-}
-}
-
-// ==== BACKFILL 0x005228C0  ObjectClass::GetTypeVt41_0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int ObjectClass_GetTypeVt41_0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall ObjectClass::GetTypeVt41_0(#377 *this)
-{
-  return ObjectClass::GetTypeVt41(this);
-}
-}
-
 // ==== BACKFILL 0x00522A50  nullsub_146  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_146(int a1)
 {
@@ -1100,24 +1078,6 @@ namespace gamemd { void* COMObject::SwapReference(int a2) {
     return this;
 }
 } }
-
-// ==== BACKFILL 0x00523980  InfantryTypeClass::Constructor_523980  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall InfantryTypeClass::Constructor_523980(_DWORD *this, ObjectTypeClass *aP1)
-{
-  TechnoTypeClass::Construct((int)this, aP1); /*0x523988*/
-  *(this + 916) = &vt_TypeList_AnimTypeClass_const; /*0x523992*/
-  *(this + 923) = &vt_TypeList_AnimTypeClass_const; /*0x523998*/
-  *(this + 930) = &vt_TypeList_int; /*0x52399e*/
-  *this = &InfantryTypeClass::`vftable'; /*0x5239a8*/
-  *(this + 1) = &InfantryTypeClass::`vftable'; /*0x5239ae*/
-  *(this + 2) = &InfantryTypeClass::`vftable'; /*0x5239b5*/
-  *(this + 3) = &vt_InfantryTypeClass; /*0x5239bc*/
-  return this; /*0x5239c5*/
-}
-}
 
 // ==== BACKFILL 0x005239D0  InfantryTypeClass::DTOR  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryTypeClass::DTOR()
@@ -2150,24 +2110,6 @@ namespace gamemd { int INIClass::ReadBool(void* a1, void* a2, void* a3) {
 }
 } }
 
-// ==== BACKFILL 0x0052A610  sub_52A610  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_52A610::sub_52A610(void * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_52A610(char *this, void *a2)
-{
-  ObjectClass *v3; // eax
-  ObjectClass *v4; // eax
-  ObjectClass aP1[2]; // [esp+8h] [ebp-200h] BYREF
-
-  v3 = (ObjectClass *)sub_631FC0(a2, aP1); /*0x52a628*/
-  INIClass::ReadBase64Data(this, (unsigned __int8 *)MEMORY[0x825BF4].__pad_20, aP1, v3); /*0x52a63a*/
-  v4 = (ObjectClass *)sub_631FE0(a2, aP1); /*0x52a646*/
-  INIClass::ReadBase64Data(this, (unsigned __int8 *)&MEMORY[0x825BF4].sectionHead[1], aP1, v4); /*0x52a658*/
-  return 1; /*0x52a65d*/
-}
-}
-
 // ==== BACKFILL 0x0052A940  INIClass::SaveTimeField  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::SaveTimeField(void* a1, void* a2, int a3) {
 {
@@ -2410,15 +2352,6 @@ namespace gamemd { void* INIClass::getValue() {
       return this;
 }
 } }
-
-// ==== BACKFILL 0x0052B4D0  INIClass::deleteKey  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
-bool __thiscall INIClass::deleteKey(_DWORD *this, ObjectClass *aP1)
-{
-  _DWORD *v2; // eax
-
-  v2 = (_DWORD *)*(this + 4); /*0x52b4d0*/
-  return v2 && *v2 == *(_DWORD *)aP1->__pad_0; /*0x52b4e3*/
-}
 
 // ==== BACKFILL 0x0052B570  INIClass::mergeSection  cls=INIClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int INIClass::mergeSection(int a1) {

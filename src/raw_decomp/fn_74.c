@@ -425,7 +425,7 @@ LABEL_16:
     *v20 = a2; /*0x740db2*/
     result = MEMORY[0x8458D0][v28]; /*0x740db4*/
   }
-  if ( *(_BYTE *)(this->q6C4 + 3220) ) /*0x740dc1*/
+  if ( *(_BYTE *)(this->q1B1 + 3220) ) /*0x740dc1*/
     return ((unsigned int)((*ProgressTimer::GetValue(this + 452, &a2) >> 12) + 1) >> 1) & 7; /*0x740de3*/
   return result; /*0x740de6*/
 }
@@ -476,7 +476,7 @@ int __thiscall TechnoClass::sub_740EF0(_BYTE *this)
   int v3; // edx
   char *MissionControl; // eax
 
-  v2 = (*(int (__thiscall **)(_BYTE *, int *, _DWORD, _DWORD))(*(_DWORD *)this + 1320))( /*0x740f08*/
+  v2 = (*(int (__thiscall **)(_BYTE *, int *, _DWORD, _DWORD))(this->q528)( /*0x740f08*/
          this,
          &MEMORY[0x8871E0]->AISafeDistance[2],
          0,
@@ -491,7 +491,7 @@ int __thiscall TechnoClass::sub_740EF0(_BYTE *this)
            0,
            1) )
     {
-      (*(void (__thiscall **)(_BYTE *, _DWORD, int))(*(_DWORD *)this + 1156))(this, 0, 1); /*0x740f3e*/
+      (*(void (__thiscall **)(_BYTE *, _DWORD, int))(this->q121)(this, 0, 1); /*0x740f3e*/
     }
     goto LABEL_4; /*0x740f3e*/
   }
@@ -679,7 +679,7 @@ int __thiscall TechnoClass::FireWeaponBurst(#377 *this, int a2, int a3)
     if ( v8 >= 2 ) /*0x741388*/
       v9 = -1; /*0x741399*/
     else
-      v9 = *(_DWORD *)(this->q6C4 + 4 * v8 + 3648); /*0x741390*/
+      v9 = *(_DWORD *)(this->q1B1 + 4 * v8 + 3648); /*0x741390*/
     v7 = this->airstrikeTimer != -1 && v9 != -1; /*0x7413ae*/
   }
   if ( (*(int (__thiscall **)(#377 *, int, int, int))(this->q0F0)(this, a2, a3, 1) ) /*0x7413bc*/
@@ -687,19 +687,19 @@ int __thiscall TechnoClass::FireWeaponBurst(#377 *this, int a2, int a3)
   v10 = TechnoClass::FireWeapon(this); /*0x7413d3*/
   if ( v10 ) /*0x7413d7*/
   {
-    v11 = this->q6C4; /*0x7413dd*/
+    v11 = this->q1B1; /*0x7413dd*/
     v12 = *(_DWORD *)(v11 + 1668); /*0x7413e3*/
-    if ( v12 > 0 && this->pitchAngle < v12 && !*(_BYTE *)(v11 + 3364) ) /*0x7413f5*/
+    if ( v12 > 0 && this->q0BF < v12 && !*(_BYTE *)(v11 + 3364) ) /*0x7413f5*/
       TechnoClass::CalcAnimDelay(this); /*0x741401*/
     if ( !v7 ) /*0x741408*/
     {
-      v13 = *(_BYTE *)(this->q6C4 + 3677); /*0x741410*/
+      v13 = *(_BYTE *)(this->q1B1 + 3677); /*0x741410*/
       if ( v13 > 0 ) /*0x741418*/
         this->airstrikeTimer = 2 * v13 - 1; /*0x741421*/
     }
     if ( *(_BYTE *)(*(_DWORD *)(v10 + 172) + 748) ) /*0x74142d*/
       BulletClass::InitScalable((_DWORD **)v10); /*0x741439*/
-    if ( *(_BYTE *)(this->q6C4 + 3378) ) /*0x741444*/
+    if ( *(_BYTE *)(this->q1B1 + 3378) ) /*0x741444*/
     {
       v14 = (_DWORD *)((char *)this + 492); /*0x741457*/
       v15 = *(_DWORD *)(v17 + 316); /*0x74145e*/
@@ -1943,7 +1943,7 @@ LABEL_182:
             (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*v44 + 72))(*v44); /*0x7425a0*/
             (*(void (__thiscall **)(_DWORD *, int))(*this + 496))(this, -1); /*0x7425aa*/
             (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*this + 488))(this, 7, 0); /*0x7425b9*/
-            *((_BYTE *)this + 1708) = 1; /*0x7425bf*/
+            this->__pad_1AB = 1; /*0x7425bf*/
             *((_BYTE *)this + 504) = 1; /*0x7425c6*/
 LABEL_179:
             if ( v130 ) /*0x7425d3*/
@@ -2837,8 +2837,8 @@ int __thiscall UnitClass::HandleTargetDestroyed(int *this, int *a1, UnitTypeClas
   result = 0; /*0x7446f9*/
   if ( (int *)this->FollowerCar == a1 ) /*0x7446fd*/
     this->FollowerCar = 0; /*0x7446ff*/
-  if ( (int *)this->Type == a1 ) /*0x74470b*/
-    this->Type = 0; /*0x74470d*/
+  if ( (int *)this->q1B1 == a1 ) /*0x74470b*/
+    this->q1B1 = 0; /*0x74470d*/
   return (int)result->__pad_0; /*0x744713*/
 }
 
@@ -3000,7 +3000,7 @@ int __thiscall BuildingClass_FindPlacementCells(_DWORD *this, int a2)
   v2 = (_DWORD **)this; /*0x7447b7*/
   v108 = (_DWORD **)this; /*0x7447b9*/
   v3 = this + 354; /*0x7447c3*/
-  (*(void (__thiscall **)(_DWORD *))(*(this + 354) + 12))(this + 354); /*0x7447cb*/
+  (*(void (__thiscall **)(_DWORD *))(this->q162 + 12))(this + 354); /*0x7447cb*/
   v105 = ((int (__thiscall *)(_DWORD **, _DWORD))(*v2)[47])(v2, 0); /*0x7447df*/
   v4 = (_DWORD *)((int (__thiscall *)(_DWORD **, _DWORD *, _DWORD))(*v2)[19])(v2, v114, 0); /*0x7447e9*/
   LOWORD(v111) = *v4 / 256; /*0x7447fc*/
@@ -4547,7 +4547,7 @@ int __thiscall UnitClass::CheckForNearbyEnemies(int *this)
     if ( !this->q19D ) /*0x7468d7*/
       WinAPI::Wrapper(-2147467261); /*0x7468e6*/
     if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q19D + 16))(this->q19D) /*0x746901*/
-      && *(_BYTE *)(this->Type + 3378) )
+      && *(_BYTE *)(this->q1B1 + 3378) )
     {
       v17 = Team::GetMember(this, 0) == 0; /*0x746918*/
     }
@@ -4762,7 +4762,7 @@ char __thiscall sub_746D80(_BYTE *this)
 // ==== 0x00746D90  ObjectClass::Event_Process_746D90  this=ObjectClass  sig=csp ====
 BOOL __thiscall sub_746D90(_BYTE *this)
 {
-  return *(this + 1760) || *(this + 1761); /*0x746da6*/
+  return this->q6E0 || this->q6E1; /*0x746da6*/
 }
 
 
@@ -6972,7 +6972,7 @@ void __thiscall Array_ByteSwap(u_long *this)
   signed int v2; // ebx
   u_long *v3; // esi
 
-  if ( *(this + 513) && (v2 = 0, (int)this->Array_field_0x800 > 0) ) /*0x749169*/
+  if ( this->q201 && (v2 = 0, (int)this->Array_field_0x800 > 0) ) /*0x749169*/
   {
     v3 = this; /*0x74916c*/
     do /*0x749184*/
@@ -6982,11 +6982,11 @@ void __thiscall Array_ByteSwap(u_long *this)
       ++v3; /*0x74917f*/
     }
     while ( v2 < (int)this->Array_field_0x800 ); /*0x749184*/
-    *(this + 513) = 0; /*0x749186*/
+    this->q201 = 0; /*0x749186*/
   }
   else
   {
-    *(this + 513) = 0; /*0x749191*/
+    this->q201 = 0; /*0x749191*/
   }
 }
 
@@ -7169,13 +7169,13 @@ VoxelAnimClass *__thiscall DamageAnimClass::Constructor(void *this, VoxelAnimCla
   this->nextObject = 0; /*0x7493d7*/
   this->q0B4 = 0; /*0x7493de*/
   this->q0BC = 0; /*0x7493e1*/
-  this->q0C4 = 0; /*0x7493e4*/
+  this->q031 = 0; /*0x7493e4*/
   Int4::Set((_DWORD *)this + 56, 0, 0, 0, 1065353216); /*0x7493e7*/
   Int4::Set((_DWORD *)this + 60, 0, 0, 0, 1065353216); /*0x7493f7*/
   this->VoxelAnimClass_field_0x104 = aP1; /*0x749402*/
   this->q040 = -1; /*0x74940c*/
-  this->VoxelAnimClass_field_0x108 = 0; /*0x749416*/
-  this->VoxelAnimClass_field_0x10C = a4; /*0x74941c*/
+  this->q042 = 0; /*0x749416*/
+  this->q043 = a4; /*0x74941c*/
   this->q110 = 0; /*0x749422*/
   this->q13C = 0; /*0x749428*/
   this->q050 = 0; /*0x74942e*/
@@ -7297,7 +7297,7 @@ VoxelAnimClass *__thiscall DamageAnimClass::Constructor(void *this, VoxelAnimCla
     if ( v29 ) /*0x74987f*/
     {
       v30 = (IUnknown *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], aP2); /*0x74988f*/
-      this->VoxelAnimClass_field_0x108 = ParticleSystemClass::Constructor( /*0x7498aa*/
+      this->q042 = ParticleSystemClass::Constructor( /*0x7498aa*/
                                  (int)v29,
                                  *(IUnknown **)(this->VoxelAnimClass_field_0x104 + 764),
                                  aP2,
@@ -7307,7 +7307,7 @@ VoxelAnimClass *__thiscall DamageAnimClass::Constructor(void *this, VoxelAnimCla
                                  0);
       return (VoxelAnimClass *)this; /*0x7498b8*/
     }
-    this->VoxelAnimClass_field_0x108 = 0; /*0x7498bd*/
+    this->q042 = 0; /*0x7498bd*/
   }
   return (VoxelAnimClass *)this; /*0x7498b2*/
 }
@@ -7380,11 +7380,11 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
     }
     while ( v2 < MEMORY[0x887398] ); /*0x749a5d*/
   }
-  v3 = this->VoxelAnimClass_field_0x108; /*0x749a5f*/
+  v3 = this->q042; /*0x749a5f*/
   if ( v3 ) /*0x749a67*/
   {
     (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 248))(v3); /*0x749a6b*/
-    this->VoxelAnimClass_field_0x108 = 0; /*0x749a71*/
+    this->q042 = 0; /*0x749a71*/
   }
   if ( MEMORY[0xA8E9A0] ) /*0x749a82*/
     ObjectClass::Undeploy(this); /*0x749a86*/
@@ -7529,7 +7529,7 @@ LABEL_6:
         v27 = v10; /*0x749e1f*/
         v26 = v11; /*0x749e29*/
         v12 = (__int16 *)Coord::To_Cell(&MEMORY[0x87F7E8], &v25); /*0x749e2d*/
-        v13 = this->VoxelAnimClass_field_0x10C; /*0x749e32*/
+        v13 = this->q043; /*0x749e32*/
         v14 = v12[133]; /*0x749e38*/
         if ( v13 ) /*0x749e41*/
         {
@@ -7837,10 +7837,10 @@ _DWORD *__thiscall VoxelAnimTypeClass_Constructor(_DWORD *this, char *Source)
   this->MaxXYVel = 0; /*0x74adda*/
   this->VoxelIndex = 0; /*0x74ade1*/
   this->Duration = 30; /*0x74ade7*/
-  this->align_A9 = 1072273817; /*0x74adf1*/
-  *(this + 171) = 0; /*0x74adfb*/
-  *(this + 173) = 1069962989; /*0x74ae01*/
-  *(this + 175) = 1074528256; /*0x74ae0b*/
+  this->q2A4 = 1072273817; /*0x74adf1*/
+  this->q0AB = 0; /*0x74adfb*/
+  this->q0AD = 1069962989; /*0x74ae01*/
+  this->q0AF = 1074528256; /*0x74ae0b*/
   this->q2C4 = 1075052544; /*0x74ae15*/
   this->q2CC = 1076756480; /*0x74ae1f*/
   this->IsMeteor = 0; /*0x74ae29*/
@@ -9081,23 +9081,23 @@ VeinholeMonsterClass *__thiscall VeinholeMonsterClass::Constructor(void *this, I
   __int16 aP1a; // [esp+2Ch] [ebp+4h]
 
   ObjectClass::ctor(this); /*0x74c5b9*/
-  this->q0AC = 0; /*0x74c5c4*/
+  this->q02B = 0; /*0x74c5c4*/
   this->q02C = 0; /*0x74c5ca*/
   this->q0B4 = 0; /*0x74c5d0*/
   v4 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 224); /*0x74c5e1*/
   this->q0B8 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x74c5e7*/
   this->nextObject = v4; /*0x74c5ed*/
-  this->q0C4 = 0; /*0x74c5f3*/
+  this->q031 = 0; /*0x74c5f3*/
   this->q0C8 = 0; /*0x74c5f9*/
-  this->q0CC = 0; /*0x74c5ff*/
+  this->q033 = 0; /*0x74c5ff*/
   this->attachedTag = 0; /*0x74c605*/
   this->q0D4 = 0; /*0x74c60b*/
   v5 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x74c611*/
   this->q038 = 0; /*0x74c617*/
   this->q0D8 = v5; /*0x74c61d*/
   this->q0E4 = 0; /*0x74c623*/
-  this->q0E8 = 1; /*0x74c629*/
-  this->q0EC = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x74c638*/
+  this->q03A = 1; /*0x74c629*/
+  this->q03B = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x74c638*/
   this->q03D = 0; /*0x74c63e*/
   this->q0F8 = aP1->field_0; /*0x74c64b*/
   this->q0FC = 0; /*0x74c651*/
@@ -9156,9 +9156,9 @@ VeinholeMonsterClass *__thiscall VeinholeMonsterClass::Constructor(void *this, I
     this->q0D8 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x74c7ac*/
     v12 = v32; /*0x74c7ae*/
     this->q0E4 = 4; /*0x74c7b2*/
-    this->q0DC = v12; /*0x74c7b8*/
+    this->q037 = v12; /*0x74c7b8*/
     this->q038 = 4; /*0x74c7bb*/
-    this->q0E8 = 0; /*0x74c7be*/
+    this->q03A = 0; /*0x74c7be*/
     this->attachedTag = -1; /*0x74c7c4*/
     v13 = __2_YAPAXI_Z(8 * *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 220)); /*0x74c7e2*/
     if ( !v13 ) /*0x74c7ec*/
@@ -9200,7 +9200,7 @@ VeinholeMonsterClass *__thiscall VeinholeMonsterClass::Constructor(void *this, I
       *(_DWORD *)&stru_B1D188.__pad_164[4] = __2_YAPAXI_Z(v20); /*0x74c88b*/
     }
     v21 = Object::ComputeAllocationSize(); /*0x74c890*/
-    this->q0C4 = __2_YAPAXI_Z(v21); /*0x74c89b*/
+    this->q031 = __2_YAPAXI_Z(v21); /*0x74c89b*/
     v22 = (SLOWORD(aP1->field_0) << 8) + 128; /*0x74c8bc*/
     v32 = (SHIWORD(aP1->field_0) << 8) + 128; /*0x74c8c1*/
     v31 = v22; /*0x74c8cb*/
@@ -9693,13 +9693,13 @@ CoordStruct *__thiscall VeinholeMonsterClass::ProcessExpansion(
   if ( !p_Z ) /*0x74d60b*/
   {
     LOBYTE(v10) = 0; /*0x74d64d*/
-    this->q0CC = (void *)3; /*0x74d651*/
+    this->q033 = (void *)3; /*0x74d651*/
     AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, v10); /*0x74d65b*/
     return v11; /*0x74d660*/
   }
   if ( p_Z == (int *)1 ) /*0x74d60e*/
     return (CoordStruct *)5; /*0x74d641*/
-  this->q0CC = (void *)2; /*0x74d614*/
+  this->q033 = (void *)2; /*0x74d614*/
   v13 = this + 59; /*0x74d623*/
   *v13 = *(void **)&HouseClass_Player.__pad_5568[23248]; /*0x74d62e*/
   v13[1] = v15; /*0x74d633*/
@@ -10079,7 +10079,7 @@ __int16 *__thiscall VeinholeClass::SelectGrowthPosition(_DWORD *this)
   __int16 *v29; // [esp+1Ch] [ebp-4h]
 
   v1 = this; /*0x74dc05*/
-  result = (__int16 *)*(this + 44); /*0x74dc0d*/
+  result = (__int16 *)this->q02C; /*0x74dc0d*/
   if ( !result ) /*0x74dc15*/
     return result; /*0x74dc15*/
   v25 = 0; /*0x74dc20*/

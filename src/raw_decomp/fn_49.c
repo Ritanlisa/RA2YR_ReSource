@@ -15470,17 +15470,17 @@ LABEL_44:
                              (unsigned __int8 *)unk_81F16C,
                              -2);
   this->attachedTag = INIClass::ReadInt_Overwrite(v28, unk_81F164, -2); /*0x49c388*/
-  this->q048 = INIClass::ReadInt_Overwrite(v28, unk_81F15C, 0); /*0x49c390*/
+  this->q012 = INIClass::ReadInt_Overwrite(v28, unk_81F15C, 0); /*0x49c390*/
   this->q04C = INIClass::ReadInt_Overwrite(v28, unk_81F154, 0); /*0x49c3b6*/
   this->abstractFlags = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F14C], 0); /*0x49c3cd*/
   this->q054 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F144], 0); /*0x49c3d5*/
   this->q058 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F13C], 0); /*0x49c3fb*/
-  this->q05C = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
+  this->q017 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
   this->nextArrayIndex = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F12C], 0); /*0x49c41a*/
   this->customSound = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F124], 0); /*0x49c440*/
   Int_Overwrite = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F11C], 0); /*0x49c443*/
   v20 = this->q011; /*0x49c448*/
-  this->bombVisible = Int_Overwrite; /*0x49c44b*/
+  this->q01A = Int_Overwrite; /*0x49c44b*/
   if ( !MEMORY[0x89F578] ) /*0x49c455*/
     CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49c45c*/
   if ( v20 < 0 || v20 >= MEMORY[0x89F574] ) /*0x49c46f*/
@@ -15688,13 +15688,13 @@ char __thiscall CampaignClass_SaveProgress(char *this)
     INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F164, v26, 0); /*0x49c95d*/
   }
 LABEL_47:
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F11C], this->q068, 0); /*0x49c962*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F15C, this->q048, 0); /*0x49c98f*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F11C], this->q01A, 0); /*0x49c962*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F15C, this->q012, 0); /*0x49c98f*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F154, this->q04C, 0); /*0x49c9a8*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F14C], this->abstractFlags, 0); /*0x49c9c1*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F144], this->q054, 0); /*0x49c9da*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F13C], this->q058, 0); /*0x49c9f3*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F134], this->q05C, 0); /*0x49ca0c*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F134], this->q017, 0); /*0x49ca0c*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F12C], this->nextArrayIndex, 0); /*0x49ca25*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F124], this->Name, 0); /*0x49ca3e*/
   INIClass::WriteDigest(v28, (int)v33, 0); /*0x49ca51*/
@@ -16452,14 +16452,14 @@ char __thiscall SerializeCampaignOptions(char *this)
     stru_81F218,
     this->q011,
     this->attachedBomb,
-    this->bombVisible,
-    this->q048,
+    this->q01A,
+    this->q012,
     this->abstractFlags,
     this->q058,
     this->nextArrayIndex,
     this->q04C,
     this->q054,
-    this->q05C,
+    this->q017,
     this->customSound);
   if ( *((int *)this + 16) > 0 ) /*0x49d719*/
   {
@@ -17455,29 +17455,29 @@ _DWORD *__thiscall INISectionList_Constructor(_DWORD *this)
   v2 = this + 4; /*0x49e8e9*/
   *(this + 2) = 0; /*0x49e8ef*/
   *(this + 3) = 0; /*0x49e8f2*/
-  *(this + 1) = &vt_GenericNode; /*0x49e8f5*/
-  *(this + 5) = 0; /*0x49e8fb*/
-  *(this + 6) = 0; /*0x49e8fe*/
-  *(this + 4) = &vt_GenericNode; /*0x49e901*/
+  this->q004 = &vt_GenericNode; /*0x49e8f5*/
+  this->q005 = 0; /*0x49e8fb*/
+  this->q006 = 0; /*0x49e8fe*/
+  this->q004 = &vt_GenericNode; /*0x49e901*/
   *this = &vt_GenericList; /*0x49e907*/
   if ( this != (_DWORD *)-16 ) /*0x49e90d*/
   {
-    v3 = *(this + 5); /*0x49e90f*/
+    v3 = this->q005; /*0x49e90f*/
     if ( v3 ) /*0x49e914*/
     {
-      v4 = *(this + 6); /*0x49e916*/
+      v4 = this->q006; /*0x49e916*/
       if ( v4 ) /*0x49e91b*/
       {
         *(_DWORD *)(v4 + 4) = v3; /*0x49e91d*/
-        *(_DWORD *)(*(this + 5) + 8) = *(this + 6); /*0x49e926*/
-        *(this + 6) = 0; /*0x49e929*/
-        *(this + 5) = 0; /*0x49e92c*/
+        *(_DWORD *)(this->q005 + 8) = this->q006; /*0x49e926*/
+        this->q006 = 0; /*0x49e929*/
+        this->q005 = 0; /*0x49e92c*/
       }
     }
   }
   v5 = *(this + 2); /*0x49e92f*/
-  *(this + 6) = this + 1; /*0x49e932*/
-  *(this + 5) = v5; /*0x49e935*/
+  this->q006 = this + 1; /*0x49e932*/
+  this->q005 = v5; /*0x49e935*/
   v6 = *(this + 2); /*0x49e938*/
   if ( v6 ) /*0x49e93d*/
     *(_DWORD *)(v6 + 8) = v2; /*0x49e93f*/
@@ -17803,7 +17803,7 @@ _DWORD *__thiscall sub_49ECD0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49ed13*/
-  this->__pad_014 = 10; /*0x49ed19*/
+  *(this + 5) = 10; /*0x49ed19*/
   this->q010 = 0; /*0x49ed20*/
   return this; /*0x49ed29*/
 }

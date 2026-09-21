@@ -4292,21 +4292,21 @@ _DWORD *__thiscall sub_664D20(_DWORD *this, int a2)
   DynamicVectorClass::AnimTypeConstructor(this + 182, 0, 0); /*0x664dce*/
   this->poweredUnitCenters = &vt_TypeList_AnimTypeClass_const; /*0x664dd3*/
   DynamicVectorClass::Construct(this + 214, 0, 0); /*0x664de5*/
-  *(this + 214) = &vt_TypeList_int; /*0x664dea*/
+  this->q0D6 = &vt_TypeList_int; /*0x664dea*/
   DynamicVectorClass::Construct(this + 221, 0, 0); /*0x664dfc*/
-  *(this + 221) = &vt_TypeList_int; /*0x664e01*/
+  this->q0DD = &vt_TypeList_int; /*0x664e01*/
   DynamicVectorClass::Construct(this + 228, 0, 0); /*0x664e13*/
   this->q0E4 = &vt_TypeList_int; /*0x664e18*/
   DynamicVectorClass::Construct(this + 235, 0, 0); /*0x664e2a*/
-  *(this + 235) = &vt_TypeList_int; /*0x664e2f*/
+  this->q0EB = &vt_TypeList_int; /*0x664e2f*/
   DynamicVectorClass::Construct(this + 242, 0, 0); /*0x664e41*/
-  *(this + 242) = &vt_TypeList_int; /*0x664e46*/
+  this->q0F2 = &vt_TypeList_int; /*0x664e46*/
   DynamicVectorClass::Construct(this + 249, 0, 0); /*0x664e58*/
-  *(this + 249) = &vt_TypeList_int; /*0x664e5d*/
+  this->q0F9 = &vt_TypeList_int; /*0x664e5d*/
   DynamicVectorClass::Construct(this + 271, 0, 0); /*0x664e6f*/
-  *(this + 271) = &vt_TypeList_int; /*0x664e74*/
+  this->q10F = &vt_TypeList_int; /*0x664e74*/
   DynamicVectorClass::Construct(this + 278, 0, 0); /*0x664e86*/
-  *(this + 278) = &vt_TypeList_int; /*0x664e8b*/
+  this->q116 = &vt_TypeList_int; /*0x664e8b*/
   DynamicVectorClass::Construct(this + 285, 0, 0); /*0x664e9d*/
   this->q11D = &vt_TypeList_int; /*0x664ea2*/
   DynamicVector::Constructor_VoxelAnim(0, 0); /*0x664eb4*/
@@ -4316,7 +4316,7 @@ _DWORD *__thiscall sub_664D20(_DWORD *this, int a2)
   DynamicVectorClass::Construct(this + 435, 0, 0); /*0x664ee2*/
   this->q6CC = &vt_TypeList_int; /*0x664ee7*/
   DynamicVectorClass::Construct(this + 461, 0, 0); /*0x664ef9*/
-  *(this + 461) = &vt_TypeList_int; /*0x664efe*/
+  this->q1CD = &vt_TypeList_int; /*0x664efe*/
   SmudgeTypeVector::Construct(this + 497, 0, 0); /*0x664f10*/
   this->q7C4 = &vt_TypeList_SmudgeTypeClass_const; /*0x664f15*/
   SmudgeTypeVector::Construct(this + 504, 0, 0); /*0x664f27*/
@@ -4436,7 +4436,7 @@ _DWORD *__thiscall sub_664D20(_DWORD *this, int a2)
   DynamicVectorClass::Construct(this + 961, 0, 0); /*0x665446*/
   this->qF04 = &vt_TypeList_int; /*0x66544b*/
   DynamicVectorClass::Construct(this + 968, 0, 0); /*0x66545d*/
-  *(this + 968) = &vt_TypeList_int; /*0x665462*/
+  this->q0F2 = &vt_TypeList_int; /*0x665462*/
   TerrainTypeVector::Construct(0, 0); /*0x665474*/
   *(this + 1022) = &vt_TypeList_TerrainTypeClass_const; /*0x665479*/
   DynamicVectorClass::Construct(this + 1110, 0, 0); /*0x66548b*/
@@ -4454,13 +4454,13 @@ _DWORD *__thiscall sub_664D20(_DWORD *this, int a2)
   DynamicVectorClass::Construct(this + 1153, 0, 0); /*0x665515*/
   *(this + 1153) = &vt_TypeList_int; /*0x66551a*/
   DynamicVectorClass::Construct(this + 1160, 0, 0); /*0x66552c*/
-  *(this + 1160) = &vt_TypeList_int; /*0x665531*/
+  this->q488 = &vt_TypeList_int; /*0x665531*/
   DynamicVectorClass::Construct(this + 1167, 0, 0); /*0x665543*/
-  *(this + 1167) = &vt_TypeList_int; /*0x665548*/
+  this->q48F = &vt_TypeList_int; /*0x665548*/
   DynamicVectorClass::Construct(this + 1174, 0, 0); /*0x66555a*/
-  *(this + 1174) = &vt_TypeList_int; /*0x66555f*/
+  this->q496 = &vt_TypeList_int; /*0x66555f*/
   DynamicVectorClass::Construct(this + 1181, 0, 0); /*0x665571*/
-  *(this + 1181) = &vt_TypeList_int; /*0x665576*/
+  this->q49D = &vt_TypeList_int; /*0x665576*/
   DynamicVectorClass::Construct(this + 1188, 0, 0); /*0x665588*/
   *(this + 1188) = &vt_TypeList_int; /*0x66558d*/
   DynamicVectorClass::Construct(this + 1195, 0, 0); /*0x66559f*/

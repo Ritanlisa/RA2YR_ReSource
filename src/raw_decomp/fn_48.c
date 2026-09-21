@@ -980,9 +980,9 @@ int *__thiscall ObjectPlacement::CalcPosition(_DWORD *this, int *a1, IUnknown *a
   v37 = v15; /*0x48126b*/
   v38 = v14; /*0x48126f*/
   if ( a5 ) /*0x481273*/
-    v17 = *(this + 74); /*0x481275*/
+    v17 = this->q04A; /*0x481275*/
   else
-    v17 = *(this + 73); /*0x48127d*/
+    v17 = this->q049; /*0x48127d*/
   v18 = (v17 & 0x20) != 0; /*0x48128a*/
   if ( !a4 )
   {
@@ -1026,12 +1026,12 @@ LABEL_30:
         {
           if ( a5 ) /*0x481379*/
           {
-            LOBYTE(v25) = *((_BYTE *)this + 296); /*0x48137b*/
+            LOBYTE(v25) = this->q04A; /*0x48137b*/
             v26 = 1 << v24; /*0x481386*/
           }
           else
           {
-            LOBYTE(v26) = *((_BYTE *)this + 292); /*0x4813a8*/
+            LOBYTE(v26) = this->q049; /*0x4813a8*/
             v25 = 1 << v24; /*0x4813b3*/
           }
           if ( ((unsigned __int8)v25 & (unsigned __int8)v26) == 0 ) /*0x4813bc*/
@@ -1262,7 +1262,7 @@ void *__thiscall Cell_GetNeighbourContent(_DWORD *this, unsigned int a2)
   result = this; /*0x481815*/
   if ( a2 < 8 ) /*0x48181a*/
   {
-    v4 = *(this + 9); /*0x481822*/
+    v4 = this->q009; /*0x481822*/
     v3 = HIWORD(v4) + HIWORD(MEMORY[0x89F688][a2 & 7]); /*0x481839*/
     LOWORD(a2) = v4 + LOWORD(MEMORY[0x89F688][a2 & 7]); /*0x481841*/
     HIWORD(a2) = v3; /*0x48184a*/
@@ -1599,7 +1599,7 @@ LABEL_35:
                   v120 = 0;
                 }
 LABEL_36:
-                v16 = *(this + 59);
+                v16 = this->q03B;
                 if ( v16 == 2 || v16 == 6 )
                 {
                   v11 = 0;
@@ -1657,7 +1657,7 @@ LABEL_36:
                 v14 = aP1;
                 break;
             }
-            if ( *(this + 59) == 2 && !stru_89E138.__pad_71C[v11 + 1132] )
+            if ( this->q03B == 2 && !stru_89E138.__pad_71C[v11 + 1132] )
             {
               v11 = 0;
               v120 = 0;
@@ -2527,12 +2527,12 @@ char __thiscall sub_483460(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 80); /*0x483460*/
+  v1 = this->q050; /*0x483460*/
   if ( (v1 & 0x10) == 0 ) /*0x483468*/
     return 0; /*0x48347c*/
   LOBYTE(v1) = v1 & 0xEF; /*0x48346a*/
-  *(this + 20) = -1; /*0x48346c*/
-  *(this + 80) = v1; /*0x483473*/
+  this->q050 = -1; /*0x48346c*/
+  this->q050 = v1; /*0x483473*/
   return 1; /*0x48347b*/
 }
 
@@ -3538,7 +3538,7 @@ int __thiscall sub_4848B0(__int16 *this, _DWORD *a2)
 
   v2 = a2; /*0x4848b4*/
   v4 = *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], a2) + 9); /*0x4848c8*/
-  v5 = *(this + 18); /*0x4848cb*/
+  v5 = this->q012; /*0x4848cb*/
   v6 = this->q04C; /*0x4848cf*/
   v22 = v4; /*0x4848d3*/
   v7 = v6 - SHIWORD(v4); /*0x4848de*/
@@ -3765,7 +3765,7 @@ int __thiscall InfantryClass_GetType(__int16 *this)
 {
   __int16 v1; // ax
 
-  v1 = this->spawnOwner; /*0x484f20*/
+  v1 = this->q08B; /*0x484f20*/
   if ( v1 < 0 || v1 >= MEMORY[0x8B4148] ) /*0x484f37*/
     return 0; /*0x484f43*/
   else
@@ -3831,7 +3831,7 @@ int __thiscall CellClass::GetUIName(int *this)
 {
   int BuildingByTiberiumType; // eax
 
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(this + 17)); /*0x484ff3*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(this->q011); /*0x484ff3*/
   if ( BuildingByTiberiumType == -1 ) /*0x484ffb*/
     return 0; /*0x48500a*/
   else
@@ -3882,7 +3882,7 @@ int __thiscall JumpjetLocomotionClass::FindClosestOccupiableCell(_DWORD *this)
   v6 = 128; /*0x48508f*/
   v7 = 128; /*0x485097*/
   inited = Isometric::InitTables((int)this, (IUnknown *)&v6); /*0x4850a3*/
-  if ( MEMORY[0xA8D63C].__pad_1258[268] && (v3 = this->__pad_039) != 0 ) /*0x4850b6*/
+  if ( MEMORY[0xA8D63C].__pad_1258[268] && (v3 = *(this + 57)) != 0 ) /*0x4850b6*/
   {
     while ( (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) != 6 ) /*0x4850c2*/
     {
@@ -4930,7 +4930,7 @@ bool __thiscall CellClass_InMapDataRange(int *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x486650*/
+  v1 = this->q00E; /*0x486650*/
   return v1 >= unk_AA10A4 && v1 < unk_AA10A4 + 14; /*0x486666*/
 }
 
@@ -4940,7 +4940,7 @@ bool __thiscall CellClass_InBounds(int *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x486670*/
+  v1 = this->q00E; /*0x486670*/
   return v1 >= dword_ABC2B0 && v1 < dword_ABC2B0 + 16; /*0x486686*/
 }
 
@@ -5372,7 +5372,7 @@ int __thiscall sub_486D90(_DWORD *this, char a2)
   int v11; // [esp+10h] [ebp+4h]
 
   v3 = 1 << a2; /*0x486da4*/
-  if ( (*(this + 55) & (1 << a2)) == 0 ) /*0x486da8*/
+  if ( (this->q037 & (1 << a2)) == 0 ) /*0x486da8*/
     return -1; /*0x486dab*/
   v5 = 0; /*0x486db5*/
   v6 = 0; /*0x486db7*/
@@ -5948,18 +5948,18 @@ int __thiscall sub_487690(int *this)
   int v3; // edx
   int result; // eax
 
-  v1 = this->__pad_04C; /*0x487691*/
+  v1 = this->DisplayClass_field_0x130; /*0x487691*/
   if ( v1 == -1 ) /*0x48769a*/
-    this->__pad_04C = 0; /*0x48769c*/
-  v2 = this->__pad_04C + 1; /*0x4876ac*/
-  this->__pad_04C = v2; /*0x4876ad*/
+    this->DisplayClass_field_0x130 = 0; /*0x48769c*/
+  v2 = this->DisplayClass_field_0x130 + 1; /*0x4876ac*/
+  this->DisplayClass_field_0x130 = v2; /*0x4876ad*/
   v3 = v2; /*0x4876b3*/
   result = this->DisplayClass_field_0x134; /*0x4876b5*/
   if ( v3 > result ) /*0x4876bd*/
-    this->__pad_04C = result; /*0x4876bf*/
+    this->DisplayClass_field_0x130 = result; /*0x4876bf*/
   if ( v1 <= 0 ) /*0x4876c8*/
   {
-    result = this->__pad_04C; /*0x4876ca*/
+    result = this->DisplayClass_field_0x130; /*0x4876ca*/
     if ( result > 0 ) /*0x4876d2*/
     {
       result = this->DisplayClass_field_0x140; /*0x4876d4*/
@@ -6330,8 +6330,8 @@ __int64 __thiscall Cell_GetTraversability(double *this)
   double v1; // st7
 
   v1 = (double)*((int *)MEMORY[0x8871E0] + 1539); /*0x487cb5*/
-  if ( *(this + 30) < v1 ) /*0x487cc8*/
-    v1 = *(this + 30); /*0x487ccc*/
+  if ( this->q01E < v1 ) /*0x487cc8*/
+    v1 = this->q01E; /*0x487ccc*/
   return Math::RoundToInt(v1);
 }
 
@@ -6339,7 +6339,7 @@ __int64 __thiscall Cell_GetTraversability(double *this)
 // ==== 0x00487CE0  CellClass::RadLevel_Increase  this=CellStruct  sig=csp ====
 void __thiscall CellClass::RadLevel_Increase(double *this, double a2)
 {
-  *(this + 30) = a2 + *(this + 30); /*0x487cea*/
+  this->q01E = a2 + this->q01E; /*0x487cea*/
 }
 
 
@@ -6405,7 +6405,7 @@ char __thiscall CellClass_AttachObject(_DWORD *this, int a2)
 // ==== 0x00487DF0  Cell::IsBridge2  this=Cell  sig=csp ====
 bool __thiscall Cell_IsBridge2(_DWORD *this)
 {
-  return *(this + 59) == 5; /*0x487dfa*/
+  return this->q03B == 5; /*0x487dfa*/
 }
 
 
@@ -6416,7 +6416,7 @@ bool __thiscall sub_487E00(_DWORD *this)
 
   if ( !MEMORY[0xA8E9A0] ) /*0x487e0b*/
     return this->MovementAI_field_10 != 0; /*0x487e0b*/
-  v2 = (_DWORD *)*(this + 57); /*0x487e0d*/
+  v2 = (_DWORD *)this->q039; /*0x487e0d*/
   if ( !v2 ) /*0x487e15*/
     return this->MovementAI_field_10 != 0; /*0x487e15*/
   while ( (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) != 6 ) /*0x487e21*/
@@ -7041,7 +7041,7 @@ ColorListClass *__thiscall sub_488760(
 {
   ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x48878d*/
   this->q178 = 0; /*0x488799*/
-  this->__pad_17C = 0; /*0x48879f*/
+  this->__pad_05F = 0; /*0x48879f*/
   *((_BYTE *)this + 384) = 1; /*0x4887a5*/
   *((_BYTE *)this + 385) = 0; /*0x4887ab*/
   this->__pad_174 = &vt_DynamicVectorClass_int; /*0x4887b1*/
@@ -7439,7 +7439,7 @@ _DWORD *__thiscall ColorListClass::DrawColorRect(int *this, int a2, int a3, int 
 // ==== 0x00488EE0  ColorListClass::GetColor  this=ColorListClass  sig=csp ====
 int __thiscall ColorListClass::_vt34(void *this, int a2)
 {
-  return (*(int (__thiscall **)(void *, int, _DWORD))(*(_DWORD *)this + 204))(this, a2, 0); /*0x488eef*/
+  return (*(int (__thiscall **)(void *, int, _DWORD))(this->q033)(this, a2, 0); /*0x488eef*/
 }
 
 
@@ -9258,37 +9258,37 @@ int __thiscall sub_48B570(_DWORD *this, void *a2, _DWORD *a3, int a4, void *a5, 
   _DWORD *v10; // ecx
   int i; // ecx
 
-  if ( !*(this + 10) ) /*0x48b576*/
+  if ( !this->q00A ) /*0x48b576*/
     return 0; /*0x48b576*/
-  v8 = *(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4); /*0x48b58f*/
+  v8 = this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4); /*0x48b58f*/
   if ( (*(_BYTE *)v8 & 1) == 0 ) /*0x48b595*/
     return 0; /*0x48b712*/
   if ( a2 ) /*0x48b5a3*/
   {
     qmemcpy(a2, *(const void **)(v8 + 20), *(_DWORD *)(v8 + 16)); /*0x48b5b0*/
-    *a3 = *(_DWORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4) + 16); /*0x48b5cd*/
+    *a3 = *(_DWORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4) + 16); /*0x48b5cd*/
   }
   if ( a5 && a6 ) /*0x48b5db*/
   {
-    v9 = *(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4); /*0x48b5e9*/
+    v9 = this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4); /*0x48b5e9*/
     qmemcpy(a5, *(const void **)(v9 + 28), *(_DWORD *)(v9 + 24)); /*0x48b5f7*/
-    *a6 = *(_DWORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4) + 24); /*0x48b614*/
+    *a6 = *(_DWORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4) + 24); /*0x48b614*/
   }
   if ( a7 ) /*0x48b61c*/
-    *a7 = *(_WORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4) + 32); /*0x48b62f*/
-  *(_DWORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4)) &= ~1u; /*0x48b647*/
-  *(_DWORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4)) &= ~2u; /*0x48b65e*/
-  v10 = (_DWORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4)); /*0x48b66e*/
+    *a7 = *(_WORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4) + 32); /*0x48b62f*/
+  *(_DWORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4)) &= ~1u; /*0x48b647*/
+  *(_DWORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4)) &= ~2u; /*0x48b65e*/
+  v10 = (_DWORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4)); /*0x48b66e*/
   *v10 &= ~4u; /*0x48b676*/
-  *(_DWORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4) + 4) = 0; /*0x48b684*/
-  *(_DWORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4) + 8) = 0; /*0x48b694*/
-  *(_DWORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4) + 12) = 0; /*0x48b6a4*/
-  *(_DWORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4) + 16) = 0; /*0x48b6b4*/
-  *(_DWORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4) + 24) = 0; /*0x48b6c4*/
-  *(_WORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a4) + 32) = 0; /*0x48b6d4*/
-  for ( i = a4; i < *(this + 10) - 1; *(_DWORD *)(*(this + 12) + 4 * i - 4) = *(_DWORD *)(*(this + 12) + 4 * i) ) /*0x48b6e1*/
+  *(_DWORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4) + 4) = 0; /*0x48b684*/
+  *(_DWORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4) + 8) = 0; /*0x48b694*/
+  *(_DWORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4) + 12) = 0; /*0x48b6a4*/
+  *(_DWORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4) + 16) = 0; /*0x48b6b4*/
+  *(_DWORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4) + 24) = 0; /*0x48b6c4*/
+  *(_WORD *)(this->q009 + 36 * *(_DWORD *)(this->q00C + 4 * a4) + 32) = 0; /*0x48b6d4*/
+  for ( i = a4; i < this->q00A - 1; *(_DWORD *)(this->q00C + 4 * i - 4) = *(_DWORD *)(this->q00C + 4 * i) ) /*0x48b6e1*/
     ++i; /*0x48b6e6*/
-  *(_DWORD *)(*(this + 12) + 4 * (*(this + 10))-- - 4) = 0; /*0x48b6fd*/
+  *(_DWORD *)(this->q00C + 4 * (this->q00A)-- - 4) = 0; /*0x48b6fd*/
   return 1; /*0x48b6fc*/
 }
 
@@ -9371,35 +9371,35 @@ int __thiscall PacketQueue::ReleaseEntry(_DWORD *this, void *a1, _DWORD *a2, Ani
   _DWORD *v9; // ecx
   AnimClass *i; // ecx
 
-  if ( !*(this + 14) ) /*0x48b896*/
+  if ( !this->q00E ) /*0x48b896*/
     return 0; /*0x48b896*/
-  v7 = *(this + 13) + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3); /*0x48b8af*/
+  v7 = this->q00D + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3); /*0x48b8af*/
   if ( (*(_BYTE *)v7 & 1) == 0 ) /*0x48b8b5*/
     return 0; /*0x48b9d5*/
   if ( a1 ) /*0x48b8c3*/
   {
     qmemcpy(a1, *(const void **)(v7 + 12), *(_DWORD *)(v7 + 8)); /*0x48b8d0*/
-    *a2 = *(_DWORD *)(*(this + 13) + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3) + 8); /*0x48b8ed*/
+    *a2 = *(_DWORD *)(this->q00D + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3) + 8); /*0x48b8ed*/
   }
   if ( a4 && a5 ) /*0x48b8fd*/
   {
-    v8 = *(this + 13) + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3); /*0x48b90b*/
+    v8 = this->q00D + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3); /*0x48b90b*/
     qmemcpy(a4, *(const void **)(v8 + 20), *(_DWORD *)(v8 + 16)); /*0x48b919*/
-    *a5 = *(_DWORD *)(*(this + 13) + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3) + 16); /*0x48b934*/
+    *a5 = *(_DWORD *)(this->q00D + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3) + 16); /*0x48b934*/
   }
-  *(_DWORD *)(*(this + 13) + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3)) &= ~1u; /*0x48b94b*/
-  *(_DWORD *)(*(this + 13) + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3)) &= ~2u; /*0x48b962*/
-  v9 = (_DWORD *)(*(this + 13) + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3)); /*0x48b972*/
+  *(_DWORD *)(this->q00D + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3)) &= ~1u; /*0x48b94b*/
+  *(_DWORD *)(this->q00D + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3)) &= ~2u; /*0x48b962*/
+  v9 = (_DWORD *)(this->q00D + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3)); /*0x48b972*/
   *v9 &= ~4u; /*0x48b97a*/
-  *(_DWORD *)(*(this + 13) + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3) + 8) = 0; /*0x48b988*/
-  *(_DWORD *)(*(this + 13) + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3) + 16) = 0; /*0x48b998*/
+  *(_DWORD *)(this->q00D + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3) + 8) = 0; /*0x48b988*/
+  *(_DWORD *)(this->q00D + 24 * *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)aP3) + 16) = 0; /*0x48b998*/
   for ( i = aP3; /*0x48b9a4*/
-        (int)i < *(this + 14) - 1;
+        (int)i < this->q00E - 1;
         *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)i - 4) = *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (_DWORD)i) )
   {
     i = (AnimClass *)((char *)i + 1); /*0x48b9a9*/
   }
-  *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (*(this + 14))-- - 4) = 0; /*0x48b9c0*/
+  *(_DWORD *)(this->PacketQueue_field_0x04 + 4 * (this->q00E)-- - 4) = 0; /*0x48b9c0*/
   return 1; /*0x48b9bf*/
 }
 
@@ -9738,7 +9738,7 @@ void *__thiscall IPXConnClass::initConnection(
 {
   CommBufferClass *v10; // eax
 
-  *((_WORD *)this + 18) = (_WORD)aP4; /*0x48be73*/
+  this->q012 = (_WORD)aP4; /*0x48be73*/
   this->q028 = a6; /*0x48be7b*/
   *(_DWORD *)this = &vt_ConnectionClass; /*0x48be83*/
   this->q01C = (char *)&aP3->LastPacketTime + 2; /*0x48be89*/
@@ -9781,8 +9781,8 @@ int __thiscall Struct_ZeroInitAndSetup(_DWORD *this)
   this->PacketsSent = 0; /*0x48bf24*/
   this->PacketsReceived = 0; /*0x48bf27*/
   this->q018 = 0; /*0x48bf2a*/
-  *(this + 17) = -1; /*0x48bf30*/
-  *(this + 18) = -1; /*0x48bf33*/
+  this->q011 = -1; /*0x48bf30*/
+  this->q012 = -1; /*0x48bf33*/
   return Struct::ClearAllMemberFlags(this->PlayerIndex);
 }
 
@@ -9854,7 +9854,7 @@ int __thiscall ConnectionClass_ReceivePacket(_DWORD *this, int a2, int a3)
   char v26; // [esp+12h] [ebp-Eh]
   _BYTE v27[13]; // [esp+13h] [ebp-Dh]
 
-  if ( *(_WORD *)a2 != *((_WORD *)this + 18) ) /*0x48c054*/
+  if ( *(_WORD *)a2 != this->q012 ) /*0x48c054*/
   {
     ++this->q018; /*0x48c05b*/
     return 0; /*0x48c066*/
@@ -9892,12 +9892,12 @@ int __thiscall ConnectionClass_ReceivePacket(_DWORD *this, int a2, int a3)
     }
     if ( !v5 ) /*0x48c188*/
     {
-      v12 = *(this + 17); /*0x48c18e*/
+      v12 = this->q011; /*0x48c18e*/
       if ( *(_DWORD *)(a2 + 4) <= v12 && v12 != -1 ) /*0x48c19b*/
       {
 LABEL_40:
         v23 = *(_DWORD *)(a2 + 4); /*0x48c288*/
-        v25 = *((_WORD *)this + 18); /*0x48c28f*/
+        v25 = this->q012; /*0x48c28f*/
         v26 = 2; /*0x48c29c*/
         *(_DWORD *)&v27[1] = v23; /*0x48c2a1*/
         if ( MEMORY[0xA8DBA0] ) /*0x48c2a5*/
@@ -9934,10 +9934,10 @@ LABEL_40:
         }
         while ( ++v14 < v13[14] ); /*0x48c1ae*/
       }
-      if ( (*(_DWORD *)(this->PlayerIndex + 8) - *(_DWORD *)(this->PlayerIndex + 56) > 1 || *(_DWORD *)(a2 + 4) == *(this + 17) + 1) /*0x48c216*/
+      if ( (*(_DWORD *)(this->PlayerIndex + 8) - *(_DWORD *)(this->PlayerIndex + 56) > 1 || *(_DWORD *)(a2 + 4) == this->q011 + 1) /*0x48c216*/
         && ConnectionClass::allocPacketSlot(a2, a3, 0, 0) )
       {
-        v17 = *(this + 17) + 1; /*0x48c23f*/
+        v17 = this->q011 + 1; /*0x48c23f*/
         ++this->q038; /*0x48c240*/
         v18 = *(_DWORD *)(a2 + 4); /*0x48c243*/
         if ( v18 == v17 ) /*0x48c248*/
@@ -9945,7 +9945,7 @@ LABEL_40:
           while ( 1 ) /*0x48c24a*/
           {
             v19 = (_DWORD *)this->PlayerIndex; /*0x48c24a*/
-            *(this + 17) = v18; /*0x48c24d*/
+            this->q011 = v18; /*0x48c24d*/
             v20 = 0; /*0x48c250*/
             if ( (int)v19[14] <= 0 ) /*0x48c257*/
               break; /*0x48c257*/
@@ -9955,7 +9955,7 @@ LABEL_40:
               if ( v21 ) /*0x48c261*/
               {
                 v22 = *(_DWORD *)(v21 + 12); /*0x48c263*/
-                if ( !*(_BYTE *)(v22 + 2) && *(_DWORD *)(v22 + 4) == *(this + 17) + 1 ) /*0x48c276*/
+                if ( !*(_BYTE *)(v22 + 2) && *(_DWORD *)(v22 + 4) == this->q011 + 1 ) /*0x48c276*/
                   break; /*0x48c276*/
               }
               v19 = (_DWORD *)this->PlayerIndex; /*0x48c278*/
@@ -10017,7 +10017,7 @@ int __thiscall ConnectionClass_ProcessTileUpdate(_DWORD *this, void *a2, signed 
       goto LABEL_7; /*0x48c33f*/
     v7 = *(_DWORD *)(TileType + 12); /*0x48c341*/
     v8 = *(_BYTE *)(v7 + 2); /*0x48c344*/
-    if ( !v8 && *(_DWORD *)(v7 + 4) == *(this + 18) + 1 ) /*0x48c354*/
+    if ( !v8 && *(_DWORD *)(v7 + 4) == this->q012 + 1 ) /*0x48c354*/
       break; /*0x48c354*/
     if ( v8 == 1 ) /*0x48c359*/
       goto LABEL_10; /*0x48c359*/
@@ -10026,7 +10026,7 @@ LABEL_7:
     if ( ++v4 >= v5[14] ) /*0x48c362*/
       return 0; /*0x48c362*/
   }
-  *(this + 18) = *(_DWORD *)(v7 + 4); /*0x48c370*/
+  this->q012 = *(_DWORD *)(v7 + 4); /*0x48c370*/
 LABEL_10:
   v10 = *(_DWORD *)(TileType + 8) - 14; /*0x48c373*/
   v11 = *(_DWORD *)(TileType + 8) == 14; /*0x48c37e*/
@@ -10193,7 +10193,7 @@ int __thiscall ConnectionClass::_vt08(_DWORD *this)
       if ( (*(_BYTE *)TileType & 2) != 0 ) /*0x48c5b9*/
       {
         v5 = *(_DWORD *)(TileType + 12); /*0x48c5bb*/
-        if ( *(_BYTE *)(v5 + 2) == 1 || *(_DWORD *)(v5 + 4) < *(this + 17) ) /*0x48c5cc*/
+        if ( *(_BYTE *)(v5 + 2) == 1 || *(_DWORD *)(v5 + 4) < this->q011 ) /*0x48c5cc*/
           PacketQueue::ReleaseEntry((_DWORD *)this->PlayerIndex, 0, 0, v2--, 0, 0); /*0x48c5da*/
       }
       v3 = (_DWORD *)this->PlayerIndex; /*0x48c5e0*/

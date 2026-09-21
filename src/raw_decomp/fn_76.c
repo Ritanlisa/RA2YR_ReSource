@@ -1062,15 +1062,15 @@ int __thiscall Voxel_Section_Project(_DWORD *this, int *a2, int a3)
   this->q0C0 = v12; /*0x761b60*/
   v14 = v63; /*0x761b62*/
   this->q0C4 = v13; /*0x761b66*/
-  *(this + 83) = this + 84; /*0x761b6f*/
+  this->q053 = this + 84; /*0x761b6f*/
   this->q0C8 = v14; /*0x761b75*/
   Coord::To_Screen(&v58, this + 51); /*0x761b83*/
   Coord::To_Screen(&v61, this + 53); /*0x761b9a*/
-  v15 = *(this + 83); /*0x761b9f*/
+  v15 = this->q053; /*0x761b9f*/
   v16 = (double)v54; /*0x761ba7*/
   *(_DWORD *)(v15 + 8) = this->q0D4; /*0x761bab*/
   *(_DWORD *)(v15 + 12) = this->q0D8; /*0x761bb1*/
-  v17 = *(this + 83); /*0x761bb4*/
+  v17 = this->q053; /*0x761bb4*/
   *(_DWORD *)(v17 + 32) = this->q0CC; /*0x761bbc*/
   *(_DWORD *)(v17 + 36) = this->q0D0; /*0x761bc4*/
   v18 = 48 * this->q0B0; /*0x761bd2*/
@@ -1167,16 +1167,16 @@ int __thiscall Voxel_Section_Project(_DWORD *this, int *a2, int a3)
   Coord::To_Screen(this + 66, this + 57); /*0x761faa*/
   Coord::To_Screen(this + 69, this + 59); /*0x761fc3*/
   Coord::To_Screen(this + 72, this + 61); /*0x761fdc*/
-  v41 = (_DWORD *)*(this + 83); /*0x761fe1*/
+  v41 = (_DWORD *)this->q053; /*0x761fe1*/
   *v41 = this->q0DC; /*0x761fe9*/
   v41[1] = this->q0E0; /*0x761fee*/
-  v42 = *(this + 83); /*0x761ff1*/
+  v42 = this->q053; /*0x761ff1*/
   *(_DWORD *)(v42 + 16) = this->q0E4; /*0x761ff9*/
   *(_DWORD *)(v42 + 20) = this->q0E8; /*0x761fff*/
-  v43 = *(this + 83); /*0x762002*/
+  v43 = this->q053; /*0x762002*/
   *(_DWORD *)(v43 + 24) = this->q0F4; /*0x76200e*/
   *(_DWORD *)(v43 + 28) = this->q0F8; /*0x762017*/
-  result = *(this + 83); /*0x76201a*/
+  result = this->q053; /*0x76201a*/
   *(_DWORD *)(result + 40) = this->q0EC; /*0x762026*/
   *(_DWORD *)(result + 44) = this->q0F0; /*0x762034*/
   qmemcpy(this + 118, (const void *)(this->q1D4 + 928), 0x18u); /*0x762049*/
@@ -1376,7 +1376,7 @@ int __thiscall Voxel::LightRender(_DWORD *this, AbstractClass **a2, int a3)
   this->q0C0 = v10; /*0x7625ed*/
   v15 = v61; /*0x7625ef*/
   this->q0C4 = v11; /*0x7625f3*/
-  *(this + 83) = this + 96; /*0x7625fc*/
+  this->q053 = this + 96; /*0x7625fc*/
   this->q0C8 = v15; /*0x762602*/
   Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], &a1, (IUnknown *)(this + 51)); /*0x762617*/
   Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], &var94, (IUnknown *)(this + 53)); /*0x76262e*/
@@ -1482,16 +1482,16 @@ int __thiscall Voxel::LightRender(_DWORD *this, AbstractClass **a2, int a3)
   Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], this + 66, (IUnknown *)(this + 57)); /*0x762a2b*/
   Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], this + 69, (IUnknown *)(this + 59)); /*0x762a44*/
   Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], this + 72, (IUnknown *)(this + 61)); /*0x762a5d*/
-  v45 = (_DWORD *)*(this + 83); /*0x762a62*/
+  v45 = (_DWORD *)this->q053; /*0x762a62*/
   *v45 = this->q0DC; /*0x762a6a*/
   v45[1] = this->q0E0; /*0x762a6f*/
-  v46 = *(this + 83); /*0x762a72*/
+  v46 = this->q053; /*0x762a72*/
   *(_DWORD *)(v46 + 8) = this->q0E4; /*0x762a7a*/
   *(_DWORD *)(v46 + 12) = this->q0E8; /*0x762a80*/
-  v47 = *(this + 83); /*0x762a83*/
+  v47 = this->q053; /*0x762a83*/
   *(_DWORD *)(v47 + 16) = this->q0F4; /*0x762a8f*/
   *(_DWORD *)(v47 + 20) = this->q0F8; /*0x762a98*/
-  result = *(this + 83); /*0x762a9b*/
+  result = this->q053; /*0x762a9b*/
   *(_DWORD *)(result + 24) = this->q0EC; /*0x762aa7*/
   *(_DWORD *)(result + 28) = this->q0F0; /*0x762ab5*/
   qmemcpy(this + 118, (const void *)(this->q1D4 + 928), 0x18u); /*0x762aca*/
@@ -1839,7 +1839,7 @@ _DWORD *__thiscall sub_7632D0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_CellClass; /*0x763313*/
-  this->__pad_014 = 10; /*0x763319*/
+  *(this + 5) = 10; /*0x763319*/
   this->q010 = 0; /*0x763320*/
   return this; /*0x763329*/
 }
@@ -2215,7 +2215,7 @@ char __thiscall Waypoint_FindCell(int *this, _DWORD *a2)
   v6 = this->q038; /*0x763a64*/
   if ( v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
-  for ( i = (_DWORD *)*(this + 11); /*0x763a6e*/
+  for ( i = (_DWORD *)this->q00B; /*0x763a6e*/
         (unsigned __int16)(*i / 256) != (unsigned __int16)(*a2 / 256)
      || (unsigned __int16)(i[1] / 256) != (unsigned __int16)(a2[1] / 256);
         i += 3 )
@@ -8434,7 +8434,7 @@ _DWORD *__thiscall sub_76ABE0(_DWORD *this)
   v10 = 1; /*0x76ac05*/
   this->q030 = 0; /*0x76ac09*/
   this->q034 = 0; /*0x76ac0c*/
-  *((_BYTE *)this + 57) = 0; /*0x76ac0f*/
+  this->q039 = 0; /*0x76ac0f*/
   this->__pad_02C = &vt_DynamicVectorClass_rc_ptr_WDTTerritory; /*0x76ac12*/
   this->q03C = 0; /*0x76ac18*/
   *this = &vt_WDTState; /*0x76ac1e*/
@@ -8487,7 +8487,7 @@ WDTState *__thiscall File::LoadWDT(char *this, ObjectClass *aP1)
   this->q00C = 0; /*0x76ac9e*/
   this->q034 = 0; /*0x76aca1*/
   this->__pad_038 = 1; /*0x76aca4*/
-  *(this + 57) = 0; /*0x76aca8*/
+  this->q039 = 0; /*0x76aca8*/
   this->__pad_02C = &vt_DynamicVectorClass_rc_ptr_WDTTerritory; /*0x76acab*/
   this->q010 = 10; /*0x76acb2*/
   this->q03C = 0; /*0x76acb9*/
@@ -8528,13 +8528,13 @@ LABEL_25:
     if ( HashTable::FindString(PaletteData, aTotk, (IUnknown *)(this + 28)) ) /*0x76ad45*/
     {
       v6 = *(_DWORD *)v5; /*0x76ad4e*/
-      *(this + 72) = 1; /*0x76ad50*/
+      this->q048 = 1; /*0x76ad50*/
       *(_DWORD *)v5 = ++v6; /*0x76ad55*/
       this->q024 = v6; /*0x76ad59*/
     }
     else
     {
-      *(this + 72) = 0; /*0x76ad69*/
+      this->q048 = 0; /*0x76ad69*/
       HashTable::FindString(PaletteData, aCrtk, (IUnknown *)(this + 36)); /*0x76ad6c*/
       ++this->q024; /*0x76ad7d*/
       HashTable::FindString(PaletteData, aCyln, (IUnknown *)(this + 28)); /*0x76ad80*/
@@ -8543,7 +8543,7 @@ LABEL_25:
     HashTable::FindChunk(PaletteData, aWurl, 0, (CCINIClass *)&v17); /*0x76ad94*/
     HashTable::FindChunk(PaletteData, aSdsc, 0, (CCINIClass *)&Size); /*0x76ada6*/
     HashTable::FindChunk(PaletteData, aLdsc, 0, (CCINIClass *)&v15); /*0x76adb8*/
-    if ( !*(this + 72) ) /*0x76adbd*/
+    if ( !this->q048 ) /*0x76adbd*/
       HashTable::FindChunk(PaletteData, aMpvc, 0, (CCINIClass *)&v12); /*0x76adcf*/
     HashTable::FindChunk(PaletteData, aHsvc, 0, (CCINIClass *)&v13); /*0x76ade1*/
     this->q008 = __2_YAPAXI_Z((size_t)Size); /*0x76adf0*/
@@ -8555,7 +8555,7 @@ LABEL_25:
     this->WDTState_field_0x04 = eax12a; /*0x76ae0e*/
     Block = (IUnknown *)__2_YAPAXI_Z((size_t)v9); /*0x76ae17*/
     aP1a = 0; /*0x76ae23*/
-    if ( !*(this + 72) ) /*0x76ae1b*/
+    if ( !this->q048 ) /*0x76ae1b*/
     {
       aP1a = (WDTState *)__2_YAPAXI_Z((size_t)v12); /*0x76ae40*/
       memset(aP1a, 0, (unsigned int)v12); /*0x76ae47*/
@@ -8566,24 +8566,24 @@ LABEL_25:
     memset(Block, 0, (unsigned int)v13); /*0x76aea4*/
     File::FindByPrefix(PaletteData, aCmid, this + 20); /*0x76aeb8*/
     HashTable::FindString(PaletteData, aCyid, (IUnknown *)(this + 24)); /*0x76aec8*/
-    if ( *(this + 72) ) /*0x76aecd*/
+    if ( this->q048 ) /*0x76aecd*/
       this->q028 = 0; /*0x76aed2*/
     else
       HashTable::FindString(PaletteData, aTicc, (IUnknown *)(this + 40)); /*0x76aee2*/
     HashTable::FindChunk(PaletteData, aSdsc, *((void **)this + 2), (CCINIClass *)&Size); /*0x76aef7*/
     HashTable::FindChunk(PaletteData, aLdsc, *((void **)this + 3), (CCINIClass *)&v15); /*0x76af0c*/
     HashTable::FindChunk(PaletteData, aWurl, *((void **)this + 4), (CCINIClass *)&v17); /*0x76af21*/
-    if ( !*(this + 72) ) /*0x76af26*/
+    if ( !this->q048 ) /*0x76af26*/
       HashTable::FindChunk(PaletteData, aMpvc, aP1a, (CCINIClass *)&v12); /*0x76af3c*/
     v10 = (CCINIClass *)Block; /*0x76af41*/
     HashTable::FindChunk(PaletteData, aHsvc, Block, (CCINIClass *)&v13); /*0x76af52*/
-    if ( *(this + 72) ) /*0x76af57*/
+    if ( this->q048 ) /*0x76af57*/
       this->q008 = 30; /*0x76af6f*/
     else
       ParseWDTTerritories((int)this, aP1a, (int)v12); /*0x76af68*/
     File::LoadWDTDecompress((size_t *)this, v10, (int)v13); /*0x76af7e*/
     __3_YAXPAX_Z(v10); /*0x76af84*/
-    if ( !*(this + 72) ) /*0x76af89*/
+    if ( !this->q048 ) /*0x76af89*/
       __3_YAXPAX_Z(aP1a); /*0x76af98*/
     if ( PaletteData ) /*0x76afa2*/
       goto LABEL_25; /*0x76afa2*/
@@ -10933,7 +10933,7 @@ bool __thiscall TerritorySelectWDT(int *this, ObjectClass *aP1)
     v5 = 0; /*0x76dbce*/
     unknown_libname_74(&v27); /*0x76dbd0*/
     unknown_libname_74(&v27.CampaignScore_field_0x08); /*0x76dbd9*/
-    CellType = WDTClass::GetCellType((_DWORD *)*(this + 291), *(_DWORD *)(this->__pad_468 + 8)); /*0x76dbf0*/
+    CellType = WDTClass::GetCellType((_DWORD *)this->q123, *(_DWORD *)(this->__pad_468 + 8)); /*0x76dbf0*/
     v11 = 2; /*0x76dbf2*/
     if ( CellType >= 2 ) /*0x76dbfa*/
       v11 = *(_DWORD *)(this->q04C + 68) != CellType; /*0x76dc0b*/
@@ -11255,7 +11255,7 @@ int __thiscall Team_Start_76E430(int *this, int a2, ScoreScreen *aP2)
   if ( !v9 ) /*0x76e454*/
     goto LABEL_6; /*0x76e454*/
   v4 = WDTClass::CountCellType(v9, *(_DWORD *)(this->q04C + 68)); /*0x76e45d*/
-  if ( v4 <= *(this + 270) ) /*0x76e468*/
+  if ( v4 <= this->q10E ) /*0x76e468*/
   {
     v5 = this->q110; /*0x76e46a*/
     v8.vfptr = &vt_rc_ptr_WorldDominationTour_State; /*0x76e476*/
@@ -11263,9 +11263,9 @@ int __thiscall Team_Start_76E430(int *this, int a2, ScoreScreen *aP2)
     ComPtr::Release(&v8); /*0x76e487*/
     return 1; /*0x76e495*/
   }
-  if ( v4 >= *(this + 269) ) /*0x76e49e*/
+  if ( v4 >= this->q10D ) /*0x76e49e*/
   {
-    v7 = *(this + 271); /*0x76e4a0*/
+    v7 = this->q10F; /*0x76e4a0*/
     v8.vfptr = &vt_rc_ptr_WorldDominationTour_State; /*0x76e4a6*/
     aP2->__pad_0[0] = v4 >= v7; /*0x76e4b7*/
     ComPtr::Release(&v8); /*0x76e4bd*/
@@ -11481,7 +11481,7 @@ LABEL_11:
   if ( v8 > 1 ) /*0x76e930*/
   {
     v9 = 0; /*0x76e932*/
-    if ( v8 > 3 || v7 >= *(this + 271) ) /*0x76e93f*/
+    if ( v8 > 3 || v7 >= this->q10F ) /*0x76e93f*/
     {
       aP2.__pad_0[0] = 1; /*0x76e941*/
       goto LABEL_12; /*0x76e946*/

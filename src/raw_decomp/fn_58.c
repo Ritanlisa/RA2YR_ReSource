@@ -2150,7 +2150,7 @@ LABEL_33:
   }
   v46 = this->q0F8; /*0x58284b*/
   v110 = ((char *)v8 - (char *)v6) / 10 - 1; /*0x582851*/
-  v109 = v46 + *(this + 61) + 1; /*0x58285f*/
+  v109 = v46 + this->q03D + 1; /*0x58285f*/
   v101 = 10 * v109; /*0x582868*/
   v47 = (IUnknown *)((char *)v7 - 10 * v109); /*0x58286c*/
   v48 = (IUnknown *)((char *)v7 + 10 * v109); /*0x58286e*/
@@ -5833,7 +5833,7 @@ void __thiscall LayerClass::Update_Pathfinding_2(int *this, IUnknown *aP1)
     v5 = 4 * i; /*0x5869a7*/
     if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)(4 * i + v2->field_4), (TechnoClass *)1) ) /*0x5869b5*/
     {
-      v6 = *(__int16 *)(v5 + v2->field_4) + *(__int16 *)(v5 + v2->field_4 + 2) * (this->q0F8 + this->q0F4 + 1); /*0x5869dd*/
+      v6 = *(__int16 *)(v5 + v2->field_4) + *(__int16 *)(v5 + v2->field_4 + 2) * (this->q0F8 + this->q03D + 1); /*0x5869dd*/
       if ( v6 >= 0 ) /*0x5869df*/
       {
         v7 = this->q06C; /*0x5869e5*/
@@ -5860,7 +5860,7 @@ void __thiscall LayerClass::Update_Pathfinding_2(int *this, IUnknown *aP1)
     aP1 = *(IUnknown **)(v2->field_4 + 4 * j); /*0x586a52*/
     if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&aP1, (TechnoClass *)1) ) /*0x586a56*/
     {
-      v12 = (__int16)aP1 + SHIWORD(aP1) * (this->q0F8 + this->q0F4 + 1); /*0x586a7c*/
+      v12 = (__int16)aP1 + SHIWORD(aP1) * (this->q0F8 + this->q03D + 1); /*0x586a7c*/
       if ( v12 >= 0 ) /*0x586a7e*/
       {
         v13 = this->q06C; /*0x586a84*/
@@ -5904,12 +5904,12 @@ _DWORD *__thiscall JumpjetLocomotionClass::ClampToCellBounds(int *this, MouseCla
   v8 = v4 / 2 + (v7 >> 1) - this->JumpjetLocomotionClass_field_3F; /*0x586b05*/
   v9 = v5 + v6 - v4 - this->DestinationCoords; /*0x586b0d*/
   aP2a = this->q104 / 2; /*0x586b2d*/
-  v10 = this->q108 / 2; /*0x586b36*/
+  v10 = this->q042 / 2; /*0x586b36*/
   if ( (int)abs32(v8 - aP2a) >= (int)abs32(v9 - v10) ) /*0x586b45*/
   {
     if ( v9 >= v10 ) /*0x586b83*/
     {
-      v11 = this->q108; /*0x586b98*/
+      v11 = this->q042; /*0x586b98*/
       if ( a4 ) /*0x586b9e*/
         --v11; /*0x586ba0*/
     }
@@ -6098,7 +6098,7 @@ _DWORD *__thiscall HouseClass::ClampToUsableCell(_DWORD *this, MouseClass *aP1, 
   v5 = SHIWORD(aP2->field_0); /*0x586e5d*/
   v6 = this->q041; /*0x586e61*/
   v7 = this->q0FC; /*0x586e67*/
-  v8 = *(this + 61); /*0x586e6d*/
+  v8 = this->q03D; /*0x586e6d*/
   if ( v3 - v5 < 2 * (v7 + v6) - v8 ) /*0x586e7f*/
   {
     if ( v5 - v3 >= v8 - 2 * v7 ) /*0x586eb2*/
@@ -6129,12 +6129,12 @@ _DWORD *__thiscall HouseClass::ClampToUsableCell(_DWORD *this, MouseClass *aP1, 
     v15 = v14; /*0x586ef2*/
   }
   v16 = *((char *)v15 + 283); /*0x586f0a*/
-  if ( *((_BYTE *)v15 + 284) && v5 + v3 < v16 + *(this + 61) + 2 * this->q010 + 4 ) /*0x586f2c*/
+  if ( *((_BYTE *)v15 + 284) && v5 + v3 < v16 + this->q03D + 2 * this->q010 + 4 ) /*0x586f2c*/
     ++v16; /*0x586f2e*/
   v17 = this->q010; /*0x586f2f*/
-  if ( v5 + v3 > v16 + *(this + 61) + 2 * v17 ) /*0x586f46*/
+  if ( v5 + v3 > v16 + this->q03D + 2 * v17 ) /*0x586f46*/
   {
-    if ( v5 + v3 > v16 + *(this + 61) + 2 * (v17 + *(this + 66)) + 2 ) /*0x586f7e*/
+    if ( v5 + v3 > v16 + this->q03D + 2 * (v17 + this->q042) + 2 ) /*0x586f7e*/
     {
       do /*0x586f9c*/
       {
@@ -8312,7 +8312,7 @@ _DWORD *__thiscall sub_589100(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_SubzoneConnectionStruct; /*0x589178*/
-  this->__pad_014 = 10; /*0x58917e*/
+  *(this + 5) = 10; /*0x58917e*/
   this->q010 = 0; /*0x589185*/
   return this; /*0x58918a*/
 }
@@ -9252,18 +9252,18 @@ char __thiscall TileVector::PushBack(_DWORD *this, MouseClass *aP1)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x589c53*/
-  if ( *(this + 4) >= v3 ) /*0x589c5b*/
+  v3 = this->q002; /*0x589c53*/
+  if ( this->q004 >= v3 ) /*0x589c5b*/
   {
     if ( !*((_BYTE *)this + 13) && v3 ) /*0x589c66*/
       return 0; /*0x589c66*/
-    v4 = *(this + 5); /*0x589c68*/
+    v4 = this->q005; /*0x589c68*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x589c78*/
       return 0; /*0x589c7f*/
   }
-  v6 = *(this + 4); /*0x589c85*/
-  v7 = *(this + 1); /*0x589c88*/
-  *(this + 4) = v6 + 1; /*0x589c8e*/
+  v6 = this->q004; /*0x589c85*/
+  v7 = this->q004; /*0x589c88*/
+  this->q004 = v6 + 1; /*0x589c8e*/
   *(_DWORD *)(v7 + 4 * v6) = aP1->field_0; /*0x589c98*/
   return 1; /*0x589c81*/
 }
@@ -11904,14 +11904,14 @@ _DWORD *__thiscall RandomMap_TerrainTileData_Constructor(_DWORD *this, int a2)
   v5 = a2; /*0x58bfb5*/
   this->SlowdownDistance = IsGroundTypeRange; /*0x58bfb9*/
   *(_DWORD *)((char *)this + 22) = v5; /*0x58bfbe*/
-  *((_BYTE *)this + 26) = 0; /*0x58bfc1*/
+  this->q01A = 0; /*0x58bfc1*/
   this->q1B0 = 1; /*0x58bfc4*/
   this->referenceCount = 0; /*0x58bfc7*/
   this->NeedsSaveOrLink = 0; /*0x58bfca*/
   this->LineTrailColorDecrement = 0; /*0x58bfcd*/
   this->ChargerBarrels_0x12 = 0; /*0x58bfd0*/
   this->TargetSpecialThreatCoefficient = 0; /*0x58bfd3*/
-  this->__pad_034 = 1; /*0x58bfd6*/
+  *((_BYTE *)this + 52) = 1; /*0x58bfd6*/
   *((_BYTE *)this + 53) = 0; /*0x58bfd9*/
   this->TargetEffectivenessCoefficient = &vt_DynamicVectorClass_Cell; /*0x58bfdc*/
   this->zero_3C = 10; /*0x58bfe3*/

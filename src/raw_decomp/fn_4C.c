@@ -2494,17 +2494,17 @@ int *__thiscall sub_4C2FC0(
   {
     Instance = TextRenderer::GetInstance(); /*0x4c3039*/
     if ( a9 == -1 ) /*0x4c3043*/
-      this->ID = Instance->referenceCount + 1; /*0x4c3049*/
+      this->q006 = Instance->referenceCount + 1; /*0x4c3049*/
     if ( aP7 == (ControlClass *)-1 ) /*0x4c304f*/
     {
       if ( wcslen((const wchar_t *)this->q034) ) /*0x4c3055*/
       {
         v13 = Text::MeasureWidth(this->q034, 0); /*0x4c3069*/
         this->q044 = 0; /*0x4c3071*/
-        this->Visible = v13 + 6; /*0x4c3078*/
+        this->q005 = v13 + 6; /*0x4c3078*/
         return this; /*0x4c3081*/
       }
-      this->Visible = (this->__pad_038 + 1) * Text::MeasureWidth((int)stru_820768, 0) + 2; /*0x4c309a*/
+      this->q005 = (this->__pad_038 + 1) * Text::MeasureWidth((int)stru_820768, 0) + 2; /*0x4c309a*/
     }
   }
   this->q044 = 0; /*0x4c309d*/
@@ -2614,8 +2614,8 @@ int __thiscall DropListClass::_vt36(int *this)
 
   v1 = this->X; /*0x4c32a6*/
   v5[0] = this->Width; /*0x4c32a9*/
-  v2 = this->Visible; /*0x4c32ad*/
-  v3 = this->ID; /*0x4c32b0*/
+  v2 = this->q005; /*0x4c32ad*/
+  v3 = this->q006; /*0x4c32b0*/
   v5[1] = v1; /*0x4c32b3*/
   v5[3] = v3; /*0x4c32b7*/
   v5[2] = v2; /*0x4c32c6*/
@@ -5019,14 +5019,14 @@ IUnknown *__thiscall ScriptAction::InitActionFields(
   {
     this->q008 = a2; /*0x4c686e*/
     *this = 4; /*0x4c6874*/
-    *(this + 29) = 0; /*0x4c6877*/
+    this->q01D = 0; /*0x4c6877*/
     *(_DWORD *)(this + 7) = a3; /*0x4c687b*/
     this->q02C = a4; /*0x4c6881*/
     this->q00C = a5; /*0x4c6888*/
     *(_DWORD *)(this + 14) = a6; /*0x4c6892*/
-    *(this + 18) = a7; /*0x4c6899*/
+    this->q012 = a7; /*0x4c6899*/
     *(_DWORD *)(this + 19) = a8; /*0x4c68a3*/
-    *(this + 23) = a9; /*0x4c68aa*/
+    this->q017 = a9; /*0x4c68aa*/
     this->q018 = a10; /*0x4c68b4*/
     this->q070 = a11; /*0x4c68bb*/
   }
@@ -6702,11 +6702,11 @@ _WORD *__thiscall FrameSnapshot_Init(_WORD *this)
   wchar_t *v2; // edx
 
   *this = 0; /*0x4c91c4*/
-  *(this + 2) = 0; /*0x4c91c7*/
+  this->q002 = 0; /*0x4c91c7*/
   v2 = MEMORY[0xA8ED84]; /*0x4c91cb*/
   this->FrameSnapshot_field_0x04 = 0; /*0x4c91d1*/
-  *((_DWORD *)this + 2) = v2; /*0x4c91d4*/
-  *(this + 10) = 0; /*0x4c91d7*/
+  this->q002 = v2; /*0x4c91d4*/
+  this->q00A = 0; /*0x4c91d7*/
   return this; /*0x4c91db*/
 }
 
@@ -6721,11 +6721,11 @@ _WORD *__thiscall FrameSnapshot_InitMax(_WORD *this, int a2)
 
   result = this; /*0x4c91e0*/
   *this = 0; /*0x4c91e4*/
-  *(this + 2) = 0; /*0x4c91e7*/
+  this->q002 = 0; /*0x4c91e7*/
   v3 = MEMORY[0xA8ED84]; /*0x4c91eb*/
   this->FrameSnapshot_field_0x04 = 0; /*0x4c91f1*/
-  *((_DWORD *)this + 2) = v3; /*0x4c91f4*/
-  *(this + 10) = 0; /*0x4c91f7*/
+  this->q002 = v3; /*0x4c91f4*/
+  this->q00A = 0; /*0x4c91f7*/
   v4 = a2; /*0x4c91fb*/
   if ( a2 >= 127 ) /*0x4c9202*/
     v4 = 127; /*0x4c9204*/
@@ -7446,8 +7446,8 @@ char __thiscall FactoryClass::HasProgressChanged(_BYTE *this)
 {
   char result; // al
 
-  result = this->__pad_5D0; /*0x4c9c60*/
-  this->__pad_5D0 = 0; /*0x4c9c63*/
+  result = this->__pad_174; /*0x4c9c60*/
+  this->__pad_174 = 0; /*0x4c9c63*/
   return result; /*0x4c9c67*/
 }
 
@@ -7949,7 +7949,7 @@ int __thiscall FactoryClass::Stat(#378 *this, int *a2)
     v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4); /*0x4ca543*/
     Power::TimerProcess(v6); /*0x4ca549*/
   }
-  Power::TimerProcess(this->specialItem); /*0x4ca554*/
+  Power::TimerProcess(this->q01A); /*0x4ca554*/
   v7 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->owner + 4) + 16))(this->owner + 4); /*0x4ca563*/
   return Power::TimerProcess(v7); /*0x4ca56e*/
 }

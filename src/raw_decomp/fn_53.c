@@ -12370,9 +12370,9 @@ IPXManagerClass *__thiscall Waypoint::InitInvalid(_BYTE *this)
   this->Initialized = -1; /*0x53ecbf*/
   this->Active = -1; /*0x53ecc2*/
   this->tail_6 = -1; /*0x53ecc5*/
-  *(this + 7) = -1; /*0x53ecc8*/
+  this->q007 = -1; /*0x53ecc8*/
   this->q008 = -1; /*0x53eccb*/
-  this->__pad_024 = -1; /*0x53ecce*/
+  *(this + 9) = -1; /*0x53ecce*/
   return (IPXManagerClass *)this; /*0x53ecd1*/
 }
 
@@ -13218,9 +13218,9 @@ int *__thiscall Network_Init_53FA90(
   *((_WORD *)this + 92) = (_WORD)aP4; /*0x53fad2*/
   this->q0C4 = 0; /*0x53fad9*/
   this->__pad_0C8 = 1; /*0x53fadf*/
-  *(this + 53) = (int)aP2; /*0x53fae6*/
+  this->q035 = (int)aP2; /*0x53fae6*/
   v7 = __2_YAPAXI_Z(4 * (_DWORD)aP2); /*0x53faec*/
-  v8 = *(this + 53); /*0x53faf1*/
+  v8 = this->q035; /*0x53faf1*/
   this->IPXGlobalConnClass_field_0x34 = v7; /*0x53faf7*/
   v9 = (IPXManagerClass *)__2_YAPAXI_Z(12 * v8); /*0x53fb09*/
   if ( v9 ) /*0x53fb10*/
@@ -13241,7 +13241,7 @@ int *__thiscall Network_Init_53FA90(
   {
     v9 = 0; /*0x53fb2f*/
   }
-  v11 = *(this + 53); /*0x53fb31*/
+  v11 = this->q035; /*0x53fb31*/
   v12 = 0; /*0x53fb37*/
   this->q0CC = (int)v9; /*0x53fb3b*/
   if ( v11 > 0 ) /*0x53fb41*/
@@ -13251,9 +13251,9 @@ int *__thiscall Network_Init_53FA90(
       ++v12; /*0x53fb49*/
       *(_DWORD *)(this->IPXGlobalConnClass_field_0x34 + 4 * v12 - 4) = -1; /*0x53fb4a*/
     }
-    while ( v12 < *(this + 53) ); /*0x53fb5a*/
+    while ( v12 < this->q035 ); /*0x53fb5a*/
   }
-  *(this + 54) = 0; /*0x53fb5c*/
+  this->q036 = 0; /*0x53fb5c*/
   return this; /*0x53fb64*/
 }
 
@@ -13320,7 +13320,7 @@ int __thiscall IPXGlobalConnClass::_vt12(void *this, _WORD *a2, signed int a3, i
   int v26; // [esp+18h] [ebp-Ch]
   __int16 v27; // [esp+22h] [ebp-2h]
 
-  if ( *a2 != *((_WORD *)this + 18) ) /*0x53fcc3*/
+  if ( *a2 != this->q012 ) /*0x53fcc3*/
     return 0; /*0x53fccc*/
   if ( !*((_BYTE *)a2 + 2) ) /*0x53fcd9*/
   {
@@ -13336,16 +13336,16 @@ int __thiscall IPXGlobalConnClass::_vt12(void *this, _WORD *a2, signed int a3, i
 LABEL_24:
       if ( !ConnectionClass::allocPacketSlot(*((int **)this + 1), a2, a3, &v20, 12) ) /*0x53fe20*/
         goto LABEL_30; /*0x53fe20*/
-      v14 = (_DWORD *)(this->q0CC + 12 * *((_DWORD *)this + 54)); /*0x53fe31*/
+      v14 = (_DWORD *)(this->q0CC + 12 * this->q036); /*0x53fe31*/
       *v14 = v20; /*0x53fe38*/
       v14[1] = v21; /*0x53fe3e*/
       v14[2] = v22; /*0x53fe45*/
-      *(_DWORD *)(this->IPXGlobalConnClass_field_0x34 + 4 * *((_DWORD *)this + 54)) = *((_DWORD *)a2 + 1); /*0x53fe57*/
-      v15 = *((_DWORD *)this + 53); /*0x53fe60*/
-      v16 = *((_DWORD *)this + 54) + 1; /*0x53fe67*/
-      *((_DWORD *)this + 54) = v16; /*0x53fe69*/
+      *(_DWORD *)(this->IPXGlobalConnClass_field_0x34 + 4 * this->q036) = *((_DWORD *)a2 + 1); /*0x53fe57*/
+      v15 = this->q035; /*0x53fe60*/
+      v16 = this->q036 + 1; /*0x53fe67*/
+      this->q036 = v16; /*0x53fe69*/
       if ( v16 >= v15 ) /*0x53fe71*/
-        *((_DWORD *)this + 54) = 0; /*0x53fe73*/
+        this->q036 = 0; /*0x53fe73*/
     }
     else
     {
@@ -13365,14 +13365,14 @@ LABEL_23:
         }
         ++v12; /*0x53fdfd*/
         v13 += 12; /*0x53fdfe*/
-        if ( (signed int)v12 >= *((_DWORD *)this + 53) ) /*0x53fe03*/
+        if ( (signed int)v12 >= this->q035 ) /*0x53fe03*/
           goto LABEL_23; /*0x53fe03*/
       }
       v11 = a5; /*0x53fe86*/
     }
     v17 = *((_DWORD *)a2 + 1); /*0x53fe8e*/
     v18 = *((_WORD *)this + 92); /*0x53fe91*/
-    v23 = *((_WORD *)this + 18); /*0x53fe98*/
+    v23 = this->q012; /*0x53fe98*/
     v24 = 2; /*0x53fe9f*/
     v26 = v17; /*0x53feaa*/
     v27 = v18; /*0x53feb4*/

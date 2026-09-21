@@ -68,11 +68,11 @@ int __thiscall ReadMultiplayerDialogSettings(#381 *this)
     this->q528 = v13; /*0x671fdf*/
     *((_DWORD *)this + 1321) = INIClass::ReadInt_Overwrite(aMultiplayerdia, aAidifficulty, v14); /*0x671ff9*/
     v15 = INIClass::ReadInt_Overwrite(aMultiplayerdia, aAiplayers, *((_DWORD *)this + 1322)); /*0x672014*/
-    v16 = *((_BYTE *)this + 5292); /*0x672019*/
+    v16 = this->q52B; /*0x672019*/
     *((_DWORD *)this + 1322) = v15; /*0x67201f*/
     BoolOverwriteINIClass = INIClass::ReadBool_Overwrite(aMultiplayerdia, aBridgedestruct, v16); /*0x672033*/
     v18 = *((_BYTE *)this + 5293); /*0x672038*/
-    *((_BYTE *)this + 5292) = BoolOverwriteINIClass; /*0x67203e*/
+    this->q52B = BoolOverwriteINIClass; /*0x67203e*/
     *((_BYTE *)this + 5293) = INIClass::ReadBool_Overwrite(aMultiplayerdia, aShadowgrow, v18); /*0x672058*/
     v19 = INIClass::ReadBool_Overwrite(aMultiplayerdia, aShroud, *((_BYTE *)this + 5294)); /*0x672073*/
     v20 = *((_BYTE *)this + 5295); /*0x672078*/
@@ -88,9 +88,9 @@ int __thiscall ReadMultiplayerDialogSettings(#381 *this)
     v26 = *((_BYTE *)this + 5299); /*0x6720f6*/
     *((_BYTE *)this + 5298) = v25; /*0x6720fc*/
     *((_BYTE *)this + 5299) = INIClass::ReadBool_Overwrite(aMultiplayerdia, aHarvestertruce, v26); /*0x672116*/
-    v27 = INIClass::ReadBool_Overwrite(aMultiplayerdia, aMultiengineer, *((_BYTE *)this + 5300)); /*0x672131*/
+    v27 = INIClass::ReadBool_Overwrite(aMultiplayerdia, aMultiengineer, this->q52D); /*0x672131*/
     v28 = *((_BYTE *)this + 5301); /*0x672136*/
-    *((_BYTE *)this + 5300) = v27; /*0x67213c*/
+    this->q52D = v27; /*0x67213c*/
     v29 = INIClass::ReadBool_Overwrite(aMultiplayerdia, aAlliesallowed, v28); /*0x672150*/
     v30 = *((_BYTE *)this + 5307); /*0x672155*/
     *((_BYTE *)this + 5301) = v29; /*0x67215b*/
@@ -5253,8 +5253,8 @@ int *__thiscall TypeList::CopyFull(int *this, VectorClass *aP1)
     }
   }
   this->Items = (int)aP1[1].vtable0; /*0x67a0f3*/
-  this->__pad_014 = (int)aP1[1].Items; /*0x67a0f9*/
-  *(this + 6) = aP1[1].Capacity; /*0x67a0ff*/
+  *(this + 5) = (int)aP1[1].Items; /*0x67a0f9*/
+  this->q006 = aP1[1].Capacity; /*0x67a0ff*/
   return this; /*0x67a104*/
 }
 
@@ -5299,8 +5299,8 @@ int *__thiscall TypeList::CopyAircraft(int *this, VectorClass *aP1)
     }
   }
   this->Items = (int)aP1[1].vtable0; /*0x67a173*/
-  this->__pad_014 = (int)aP1[1].Items; /*0x67a179*/
-  *(this + 6) = aP1[1].Capacity; /*0x67a17f*/
+  *(this + 5) = (int)aP1[1].Items; /*0x67a179*/
+  this->q006 = aP1[1].Capacity; /*0x67a17f*/
   return this; /*0x67a184*/
 }
 
@@ -5438,7 +5438,7 @@ int *__thiscall TypeList::CopyInfantry(int *this, CCINIClass *aP1)
   }
   this->Items = aP1->sectionHead[0]; /*0x67a2f3*/
   this->CapacityIncrement = aP1->sectionHead[1]; /*0x67a2f9*/
-  this->unknown_18 = aP1->sectionHead[2]; /*0x67a2ff*/
+  this->q006 = aP1->sectionHead[2]; /*0x67a2ff*/
   return this; /*0x67a304*/
 }
 
@@ -5811,14 +5811,14 @@ int __thiscall SaveLoad::StreamVector(_DWORD *this, TechnoTypeClass *aP1)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *(_DWORD *)aP1->vtable0; /*0x67a77c*/
-  v6 = *(this + 4); /*0x67a789*/
+  v6 = this->q004; /*0x67a789*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a78d*/
   result = v6; /*0x67a790*/
   for ( i = 0; i < v6; ++i ) /*0x67a798*/
   {
     (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a7a8*/
       aP1,
-      *(this + 1) + 4 * i,
+      this->q004 + 4 * i,
       4,
       0);
     result = v6; /*0x67a7ab*/
@@ -6218,7 +6218,7 @@ _DWORD *__thiscall sub_67AC70(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const; /*0x67acb3*/
-  this->__pad_014 = 10; /*0x67acb9*/
+  *(this + 5) = 10; /*0x67acb9*/
   this->q010 = 0; /*0x67acc0*/
   return this; /*0x67acc9*/
 }
@@ -6495,7 +6495,7 @@ _DWORD *__thiscall SmudgeTypeVector_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x67b033*/
-  this->__pad_014 = 10; /*0x67b039*/
+  *(this + 5) = 10; /*0x67b039*/
   this->q010 = 0; /*0x67b040*/
   return this; /*0x67b049*/
 }
@@ -6772,7 +6772,7 @@ _DWORD *__thiscall sub_67B370(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<TerrainTypeClass const *>::`vftable'; /*0x67b3b3*/
-  this->__pad_014 = 10; /*0x67b3b9*/
+  *(this + 5) = 10; /*0x67b3b9*/
   this->q010 = 0; /*0x67b3c0*/
   return this; /*0x67b3c9*/
 }
@@ -7698,7 +7698,7 @@ _DWORD *__thiscall TypeList::CopyVoxelAnim(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x67c261*/
-  this->__pad_014 = aP1[1].Items; /*0x67c267*/
+  *(this + 5) = aP1[1].Items; /*0x67c267*/
   *this = &vt_TypeList_VoxelAnimTypeClass_const; /*0x67c26a*/
   return this; /*0x67c272*/
 }
@@ -7749,7 +7749,7 @@ _DWORD *__thiscall SmudgeTypeList::Copy(_DWORD *this, CCINIClass *aP1)
     }
   }
   this->q010 = aP1->sectionHead[0]; /*0x67c2f1*/
-  this->__pad_014 = aP1->sectionHead[1]; /*0x67c2f7*/
+  *(this + 5) = aP1->sectionHead[1]; /*0x67c2f7*/
   *this = &vt_TypeList_SmudgeTypeClass_const; /*0x67c2fa*/
   return this; /*0x67c302*/
 }

@@ -221,16 +221,6 @@ namespace gamemd { int TacticalClass::SetCameraPosition(int a2, int a3, int a4) 
 }
 } }
 
-// ==== BACKFILL 0x00540F90  Network::GetSendCount  cls=IPXManagerClass  sig=csp  renamed_refs=0  residual=- ====
-int Network::GetSendCount()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Network_GetSendCount(_DWORD *this)
-{
-  return *(this + 17); /*0x540f93*/
-}
-}
-
 // ==== BACKFILL 0x005415F0  IPXManagerClass::ddtor  cls=IPXManagerClass  sig=csp  renamed_refs=0  residual=- ====
 int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)
 {
@@ -2817,16 +2807,6 @@ return 18;
 int IsometricTileTypeClass::GetObjectSize()
 {
 return 780;
-}
-
-// ==== BACKFILL 0x0054A160  IsometricTileTypeClass::GetAuxField  cls=IsometricTileTypeClass  sig=csp  renamed_refs=0  residual=- ====
-int IsometricTileTypeClass::GetAuxField()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IsometricTileTypeClass::_vt16(_DWORD *this)
-{
-  return *(this + 165); /*0x54a166*/
-}
 }
 
 // ==== BACKFILL 0x0054A170  IsometricTileTypeClass::ddtor  cls=IsometricTileTypeClass  sig=csp  renamed_refs=0  residual=- ====

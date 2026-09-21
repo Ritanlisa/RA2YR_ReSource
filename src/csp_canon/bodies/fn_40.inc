@@ -194,16 +194,6 @@ int E4Recv_401F80::_EnterCriticalRegionHelper_ContextBase_details_Concurrency__U
 }
 }
 
-// ==== BACKFILL 0x00401FB0  sub_401FB0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int sub_401FB0(unsigned int* a1)
- {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_401FB0(_DWORD *this)
-{
-  return *(this + 3); /*0x401fb3*/
-}
-}
-
 // ==== BACKFILL 0x00401FC0  sub_401FC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_401FC0(int * Block)
 {
@@ -219,16 +209,6 @@ int sub_401FC0(int * Block)
     }
     nullsub_2((int *)Block + 7);
     return PushFrontLinkedListAlt(*(int **)(((int *)Block)[36] + 8), (int)Block);
-}
-}
-
-// ==== BACKFILL 0x00402020  sub_402020  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int sub_402020(unsigned int* a1)
- {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_402020(_DWORD *this)
-{
-  return *(this + 5); /*0x402023*/
 }
 }
 
@@ -429,16 +409,6 @@ namespace ra2 { namespace game { int AudioController::CleanupStream() {
 }
 } } }
 
-// ==== BACKFILL 0x00402430  sub_402430  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int sub_402430(unsigned int* a1)
- {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_402430(_DWORD *this)
-{
-  return *(this + 41) & 8; /*0x402439*/
-}
-}
-
 // ==== BACKFILL 0x00402440  sub_402440  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void * sub_402440(int a1, int a2)
 {
@@ -479,16 +449,6 @@ void AudioStream::Destructor()
 }
 }
 
-// ==== BACKFILL 0x004026B0  AudioStream::Stop  cls=AudioStream  sig=csp  renamed_refs=0  residual=- ====
-int AudioStream::Stop()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AudioStream_Stop(_DWORD *this)
-{
-  return (*(int (**)(void))(*(this + 53) + 44))();
-}
-}
-
 // ==== BACKFILL 0x004026C0  sub_4026C0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4026C0::sub_4026C0()
 {
@@ -496,18 +456,6 @@ int E4Recv_4026C0::sub_4026C0()
     (*(void (**)(void))(this->M212 + 40))();
     this->M164 |= 0x10u;
     return (*(int (__thiscall **)(int *))(this->M212 + 44))(this);
-}
-}
-
-// ==== BACKFILL 0x004026F0  AudioStream::ReleaseChannel  cls=AudioStream  sig=csp  renamed_refs=0  residual=- ====
-int AudioStream::ReleaseChannel()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AudioStream_ReleaseChannel(_DWORD *this)
-{
-  (*(void (**)(void))(*(this + 53) + 40))(); /*0x4026f9*/
-  *(this + 41) &= ~0x10u; /*0x402705*/
-  return (*(int (__thiscall **)(_DWORD *))(*(this + 53) + 44))(this);
 }
 }
 
@@ -701,26 +649,6 @@ int * AudioQueue::IteratorNext()
     if ( v2 )
     *(void**)this = (int *)AudioQueue::GetNextAlt(v2);
     return *this;
-}
-}
-
-// ==== BACKFILL 0x00403810  sub_403810  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int sub_403810(int (**a1)(void))
- {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_403810(int (**this)(void))
-{
-  return (*(this + 67))();
-}
-}
-
-// ==== BACKFILL 0x004038E0  sub_4038E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int sub_4038E0(unsigned long long* a1, unsigned long long a2)
- {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_4038E0(_QWORD *this, __int64 a2)
-{
-  return (unsigned __int64)(a2 - *(this + 5)) >= *this; /*0x403903*/
 }
 }
 
@@ -1150,27 +1078,6 @@ int * sub_406670(void * a1, int a2)
     }
   }
     return result;
-}
-}
-
-// ==== BACKFILL 0x00406760  sub_406760  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-void * E4Recv_406760::sub_406760(void (__thiscall *this)(char *) a1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall sub_406760(void (__thiscall *this)(char *))
-{
-  void *result; // eax
-  char Buffer[200]; // [esp+4h] [ebp-C8h] BYREF
-
-  result = MEMORY[0x87E298]; /*0x406760*/
-  if ( MEMORY[0x87E298] ) /*0x406770*/
-  {
-    sprintf(Buffer, MEMORY[0x81624C], MEMORY[0x87E28C], MEMORY[0x87E290]); /*0x406789*/
-    this(Buffer); /*0x406795*/
-    sprintf(Buffer, stru_81622C, MEMORY[0xB1D3A8], MEMORY[0xB1D3AC]); /*0x4067ae*/
-    return (void *)((int (__thiscall *)(char *))this)(Buffer); /*0x4067ba*/
-  }
-  return result; /*0x4067bc*/
 }
 }
 
@@ -1674,16 +1581,6 @@ namespace gamemd { void AudioMixer::ProcessAudioFrame() {
 }
 } }
 
-// ==== BACKFILL 0x00408070  Audio::IsSoundPlaying  cls=Audio  sig=csp  renamed_refs=0  residual=- ====
-int Audio::IsSoundPlaying()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Audio_IsSoundPlaying(_DWORD *this)
-{
-  return *(this + 3) & 1; /*0x408076*/
-}
-}
-
 // ==== BACKFILL 0x00408080  SetAudioFileName  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * SetAudioFileName(int a1, const char * a2)
 {
@@ -1708,26 +1605,6 @@ int E4Recv_4080B0::sub_4080B0()
 {
 {
     return RequestBufferMixer((unsigned int *)(this->M20 + 16), 0x4000);
-}
-}
-
-// ==== BACKFILL 0x004080C0  ThemeClass::RequestBuffer  cls=ThemeClass  sig=csp  renamed_refs=0  residual=- ====
-int ThemeClass::RequestBuffer()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ThemeClass_RequestBuffer(_DWORD *this)
-{
-  return RequestBufferMixer((unsigned int *)(*(this + 5) + 16), 0);
-}
-}
-
-// ==== BACKFILL 0x00408140  ThemeClass::GetValue  cls=ThemeClass  sig=csp  renamed_refs=0  residual=- ====
-long long ThemeClass::GetValue()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 __thiscall sub_408140(_QWORD *this)
-{
-  return *(this + 4); /*0x408146*/
 }
 }
 
@@ -1801,16 +1678,6 @@ void nullsub_2()
   ;
 }
 
-// ==== BACKFILL 0x00408540  Audio::CalcRate  cls=Audio  sig=csp  renamed_refs=0  residual=- ====
-int Audio::CalcRate(int a2, int a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Audio_CalcRate(_DWORD *this, int a2, int a3)
-{
-  return a2 * *(this + 5) / 1000; /*0x40855b*/
-}
-}
-
 // ==== BACKFILL 0x004085A0  Struct::ZeroInit32  cls=Struct  sig=csp  renamed_refs=0  residual=- ====
 int Struct::ZeroInit32()
 {
@@ -1846,104 +1713,6 @@ void sub_4085E0(unsigned int * a1, int a2, int a3)
     *((int*)(a1) + 3) = a2;
     DListNode::InitEmpty(a1);
     *((int*)(a1) + 5) = 0;
-}
-}
-
-// ==== BACKFILL 0x00408970  sub_408970  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_408970::sub_408970()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_408970(_DWORD *this)
-{
-  _DWORD *v1; // edx
-  int v2; // ebx
-  _DWORD *v3; // esi
-  _DWORD *v4; // edi
-  _DWORD *v5; // eax
-  int v6; // edx
-  _DWORD *v7; // esi
-  _DWORD *v8; // eax
-  _DWORD *v9; // ecx
-  int v10; // edx
-  int *v11; // edi
-  int v12; // ecx
-  _DWORD *v13; // eax
-  int result; // eax
-
-  v1 = this; /*0x408973*/
-  v2 = 0; /*0x408977*/
-  v3 = (_DWORD *)*(this + 1); /*0x408979*/
-  v4 = this + 1; /*0x40897c*/
-  if ( v3 != this + 1 ) /*0x408985*/
-  {
-    do /*0x4089ce*/
-    {
-      LinkedList::Init((_DWORD **)v3); /*0x40898e*/
-      v5 = (_DWORD *)v3[12]; /*0x408993*/
-      v3[12] = 0; /*0x408996*/
-      v6 = v5[5]; /*0x40899b*/
-      --*v5; /*0x40899f*/
-      v5[5] = v6 - v3[7]; /*0x4089a6*/
-      v5[4] &= ~2u; /*0x4089ae*/
-      if ( v3[4] ) /*0x4089b1*/
-        __3_YAXPAX_Z((void *)v3[4]); /*0x4089b9*/
-      __3_YAXPAX_Z(v3); /*0x4089c2*/
-      v3 = (_DWORD *)*v4; /*0x4089c7*/
-    }
-    while ( (_DWORD *)*v4 != v4 ); /*0x4089ce*/
-    v1 = this; /*0x4089d0*/
-  }
-  v7 = (_DWORD *)*v4; /*0x4089d4*/
-  if ( (_DWORD *)*v4 == v4 ) /*0x4089d8*/
-  {
-    v7 = 0; /*0x4089da*/
-  }
-  else if ( v7 ) /*0x4089e0*/
-  {
-    v8 = (_DWORD *)*v4; /*0x4089e2*/
-    do /*0x408a05*/
-    {
-      v9 = v8 + 9; /*0x4089e4*/
-      v10 = 2; /*0x4089e7*/
-      do /*0x4089fb*/
-      {
-        *(v9 - 1) = v8[6]; /*0x4089ef*/
-        *v9 = v8[7]; /*0x4089f5*/
-        v9 += 2; /*0x4089f7*/
-        --v10; /*0x4089fa*/
-      }
-      while ( v10 ); /*0x4089fb*/
-      v8[13] = v2; /*0x4089fd*/
-      v8 = (_DWORD *)*v8; /*0x408a00*/
-      ++v2; /*0x408a02*/
-    }
-    while ( v8 != v4 ); /*0x408a05*/
-    v1 = this; /*0x408a07*/
-  }
-  v11 = v1 + 19; /*0x408a0d*/
-  v12 = 2; /*0x408a10*/
-  v13 = v1 + 19; /*0x408a15*/
-  do /*0x408a51*/
-  {
-    *(v13 - 3) = v7; /*0x408a17*/
-    *v13 = -1001; /*0x408a1a*/
-    v13[1] = *v13; /*0x408a22*/
-    *(v13 - 1) = 0; /*0x408a27*/
-    *(v13 - 2) = 0; /*0x408a2a*/
-    *(v13 - 10) = v7; /*0x408a2d*/
-    if ( v7 ) /*0x408a30*/
-      *(v13 - 12) = v7[2 * *(v13 - 8) + 8]; /*0x408a39*/
-    else
-      *(v13 - 12) = 0; /*0x408a3e*/
-    *(v13 - 11) = 0; /*0x408a41*/
-    *(v13 - 9) &= ~1u; /*0x408a4a*/
-    v13 += 16; /*0x408a4d*/
-    --v12; /*0x408a50*/
-  }
-  while ( v12 ); /*0x408a51*/
-  result = *v11; /*0x408a53*/
-  *v11 += v1[5]; /*0x408a5a*/
-  return result; /*0x408a5c*/
 }
 }
 
@@ -2107,16 +1876,6 @@ int E4Recv_408D40::sub_408D40()
 }
 }
 
-// ==== BACKFILL 0x00408D50  AudioStream::GetChannel  cls=AudioStream  sig=csp  renamed_refs=0  residual=- ====
-int AudioStream::GetChannel()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Accessor_408d50(_DWORD *this)
-{
-  return *(this + 5); /*0x408d53*/
-}
-}
-
 // ==== BACKFILL 0x00408EC0  sub_408EC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_408EC0::sub_408EC0()
 {
@@ -2182,27 +1941,6 @@ int E4Recv_4090F0::sub_4090F0()
 {
 {
     return this->M36;
-}
-}
-
-// ==== BACKFILL 0x00409310  AudioStream::ReadStreamAndReturn  cls=AudioStream  sig=csp  renamed_refs=0  residual=- ====
-int AudioStream::ReadStreamAndReturn()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_409310(int *this)
-{
-  ReadAudioStream(this, 0); /*0x409315*/
-  return *(this + 2); /*0x40931d*/
-}
-}
-
-// ==== BACKFILL 0x00409320  Audio::GetSampleSize  cls=Audio  sig=csp  renamed_refs=0  residual=- ====
-int Audio::GetSampleSize()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Audio_GetSampleSize(_DWORD *this)
-{
-  return *(this + 13) - *(this + 14); /*0x409328*/
 }
 }
 
@@ -2709,17 +2447,6 @@ int VectorClass_ptr_IsometricTileClass::FindValue(unsigned int * a2)
 
 // ==== BACKFILL 0x0040D250  DisplayClass::vt_entry_AC  cls=DisplayClass  sig=csp  renamed_refs=0  residual=- ====
 void DisplayClass::vt_entry_AC(uint32_t unk) {}
-
-// ==== BACKFILL 0x0040D270  SidebarClass::initButtons2  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
-int SidebarClass::initButtons2()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-char __thiscall SidebarClass::InitButtons_0(void *this)
-{
-  return SidebarClass::InitButtons(this);
-}
-}
 
 // ==== BACKFILL 0x0040D300  nullsub_57  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_57()

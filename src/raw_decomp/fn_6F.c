@@ -323,11 +323,11 @@ _DWORD *__thiscall TechnoTypeClass::LoadBase(_DWORD *this, ObjectClass *aP1)
   this->q0A0 = 1; /*0x6f0705*/
   this->q0A4 = 0; /*0x6f070b*/
   this->q0A8 = 0; /*0x6f0723*/
-  this->__pad_0AC = 0; /*0x6f073b*/
+  this->q02B = 0; /*0x6f073b*/
   this->TeamTypeClass_field_2C = 0; /*0x6f0753*/
   this->q0B4 = 7; /*0x6f076b*/
   this->q0B8 = -1; /*0x6f0775*/
-  this->__pad_0BC = 0; /*0x6f077b*/
+  *(this + 47) = 0; /*0x6f077b*/
   this->q0C0 = 0; /*0x6f0781*/
   this->q0C4 = 0; /*0x6f0787*/
   this->q0C8 = -1; /*0x6f078d*/
@@ -340,14 +340,14 @@ _DWORD *__thiscall TechnoTypeClass::LoadBase(_DWORD *this, ObjectClass *aP1)
   this->q0E4 = 0; /*0x6f07b7*/
   this->__pad_0E8 = 0; /*0x6f07bd*/
   this->q0EC = 9; /*0x6f07c3*/
-  this->__pad_0F0 = 1; /*0x6f07cd*/
+  this->__pad_3C0 = 1; /*0x6f07cd*/
   this->__pad_F10 = 0; /*0x6f07d3*/
   *((_BYTE *)this + 242) = 0; /*0x6f07d9*/
   *((_BYTE *)this + 243) = 0; /*0x6f07df*/
   this->UINameLabel = 0; /*0x6f07e5*/
   *((_BYTE *)this + 245) = 1; /*0x6f07eb*/
   *((_BYTE *)this + 246) = 0; /*0x6f07f1*/
-  *((_BYTE *)this + 247) = 0; /*0x6f07f7*/
+  this->q0F7 = 0; /*0x6f07f7*/
   *this = &TeamTypeClass::`vftable'; /*0x6f07fd*/
   this->vtable2 = &TeamTypeClass::`vftable'; /*0x6f0803*/
   this->vtable3 = &TeamTypeClass::`vftable'; /*0x6f080a*/
@@ -1941,7 +1941,7 @@ _DWORD *__thiscall sub_6F2230(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<TeamTypeClass const *>::`vftable'; /*0x6f2273*/
-  this->__pad_014 = 10; /*0x6f2279*/
+  *(this + 5) = 10; /*0x6f2279*/
   this->q010 = 0; /*0x6f2280*/
   return this; /*0x6f2289*/
 }
@@ -2714,7 +2714,7 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->q24C = 0; /*0x6f2d62*/
   this->isChronosphereImmune = 0; /*0x6f2d68*/
   this->lastSightCoords = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6908]; /*0x6f2d79*/
-  *(this + 150) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2d85*/
+  this->q096 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2d85*/
   *(this + 151) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6916]; /*0x6f2d93*/
   this->lastSightRange = 0; /*0x6f2d96*/
   this->lastSightHeight = 0; /*0x6f2d9c*/
@@ -2723,7 +2723,7 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->gapRadius = 0; /*0x6f2dae*/
   this->isBeingWarpedOut = 0; /*0x6f2db4*/
   this->isWarpingOut = 0; /*0x6f2dba*/
-  this->isWarpEffectActive = 0; /*0x6f2dc0*/
+  this->q9C8 = 0; /*0x6f2dc0*/
   this->temporalUsing = 0; /*0x6f2dc6*/
   this->temporalTargetingMe = 0; /*0x6f2dcc*/
   this->isImmobilized = 0; /*0x6f2dd2*/
@@ -2786,7 +2786,7 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->manipulatedByUnit = 0; /*0x6f2f79*/
   this->chronoWarpedByHouse = 0; /*0x6f2f7f*/
   this->q3F8 = 2; /*0x6f2f85*/
-  *(this + 255) = 1; /*0x6f2f8b*/
+  this->q0FF = 1; /*0x6f2f8b*/
   this->passengers_e = 1; /*0x6f2f91*/
   this->q404 = 1; /*0x6f2f97*/
   this->q40C = 0; /*0x6f2f9d*/
@@ -2829,14 +2829,14 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   *((_BYTE *)this + 1124) = 1; /*0x6f308c*/
   this->vecAbs_IsAllocated = 0; /*0x6f3093*/
   this->currentTargets = &vt_DynamicVectorClass_AbstractClass; /*0x6f3099*/
-  *(this + 283) = 10; /*0x6f309f*/
-  *(this + 282) = 0; /*0x6f30a5*/
+  this->q11B = 10; /*0x6f309f*/
+  this->q11A = 0; /*0x6f30a5*/
   this->audioLoopIndex3 = 0; /*0x6f30ab*/
   this->audioVolume3 = 0; /*0x6f30b1*/
   this->audioController4 = 1; /*0x6f30b7*/
   this->q47D = 0; /*0x6f30be*/
   this->q470 = &vt_DynamicVectorClass_AbstractClass; /*0x6f30c4*/
-  *(this + 289) = 10; /*0x6f30ca*/
+  this->q121 = 10; /*0x6f30ca*/
   this->q120 = 0; /*0x6f30d0*/
   this->isTurretRotateSoundPlaying = 1; /*0x6f30d6*/
   this->turretIsRotating = 0; /*0x6f30dc*/
@@ -3565,7 +3565,7 @@ _DWORD *__thiscall sub_6F4300(_DWORD *this, int a2)
   this->sightRangeBonus = 1; /*0x6f4387*/
   this->manipulatedByUnit = 0; /*0x6f438d*/
   this->chronoWarpedByHouse = 0; /*0x6f4393*/
-  *(this + 255) = 1; /*0x6f4399*/
+  this->q0FF = 1; /*0x6f4399*/
   this->passengers_e = 1; /*0x6f439f*/
   this->q404 = 1; /*0x6f43a5*/
   this->q3F8 = 2; /*0x6f43b5*/
@@ -3577,11 +3577,11 @@ _DWORD *__thiscall sub_6F4300(_DWORD *this, int a2)
   this->secondaryTurretIndex = 0; /*0x6f43da*/
   AbstractClassVector::Construct(this + 278, 0, 0); /*0x6f43e7*/
   this->currentTargets = &vt_DynamicVectorClass_AbstractClass; /*0x6f43ec*/
-  *(this + 283) = 10; /*0x6f43f2*/
-  *(this + 282) = 0; /*0x6f43f5*/
+  this->q11B = 10; /*0x6f43f2*/
+  this->q11A = 0; /*0x6f43f5*/
   AbstractClassVector::Construct(this + 284, 0, 0); /*0x6f4402*/
   this->q470 = &vt_DynamicVectorClass_AbstractClass; /*0x6f4407*/
-  *(this + 289) = 10; /*0x6f440d*/
+  this->q121 = 10; /*0x6f440d*/
   this->q120 = 0; /*0x6f4410*/
   *this = &TechnoClass::`vftable'; /*0x6f4413*/
   this->vtable2 = &TechnoClass::`vftable'; /*0x6f4419*/
@@ -4757,14 +4757,14 @@ int __thiscall TechnoClass::CleanupDeploy(void *this)
   if ( this->inLimbo || !(*(int (__thiscall **)(void *))(this->hasParachute)(this) ) /*0x6f6ad7*/
     return RadioClass::ProcessCmd((#374 *)this); /*0x6f6adf*/
   if ( *(_BYTE *)((*(int (__thiscall **)(void *))(this->hasParachute)(this) + 1518) ) /*0x6f6aef*/
-    (*(void (__thiscall **)(void *, _DWORD, _DWORD, int, IUnknown *))(*(_DWORD *)this + 1164))( /*0x6f6b06*/
+    (*(void (__thiscall **)(void *, _DWORD, _DWORD, int, IUnknown *))(this->q123)( /*0x6f6b06*/
       this,
       0,
       0,
       1,
       HouseClass_Player);
   else
-    (*(void (__thiscall **)(void *, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)this + 1164))(this, 0, 0, 0, 0); /*0x6f6b16*/
+    (*(void (__thiscall **)(void *, _DWORD, _DWORD, _DWORD, _DWORD))(this->q123)(this, 0, 0, 0, 0); /*0x6f6b16*/
   v7[0] = this->q027; /*0x6f6b25*/
   v7[1] = this->owningHouseIndex; /*0x6f6b2c*/
   v7[2] = this->q029; /*0x6f6b37*/
@@ -5325,7 +5325,7 @@ int __thiscall TechnoClass::CheckAndFireAtTarget(#377 *this)
   if ( v3 && (v4 = *v3) != 0 && *(_BYTE *)(v4 + 310) ) /*0x6f78f3*/
     return (*(int (__thiscall **)(#377 *, int, int))(this->qEA0)(this, v6, v2); /*0x6f7907*/
   else
-    return (*(int (__thiscall **)(#377 *, int))(*(_DWORD *)this + 940))(this, v6); /*0x6f791b*/
+    return (*(int (__thiscall **)(#377 *, int))(this->q0EB)(this, v6); /*0x6f791b*/
 }
 
 
@@ -6501,7 +6501,7 @@ LABEL_10:
     v107 = this->q029;
     StartAudioController((int)&v106, (int)(this + 290));
   }
-  edi28 = this->currentWeaponSlot_e;
+  edi28 = this->q04F;
   ebx28 = this + 84;
   if ( edi28 != FootClass::CheckAccelLimit((float *)this + 84) )
   {
@@ -6530,7 +6530,7 @@ LABEL_10:
         this->ambientSoundController = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3048);
       }
     }
-    this->currentWeaponSlot_e = FootClass::CheckAccelLimit((float *)this + 84);
+    this->q04F = FootClass::CheckAccelLimit((float *)this + 84);
   }
   if ( this->isOnMap
     && *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 1517)
@@ -6635,7 +6635,7 @@ LABEL_93:
   {
     if ( !(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] % 16) )
     {
-      v24 = this->currentMission;
+      v24 = this->q02B;
       if ( v24 != 8 && v24 != 17 )
       {
         v23 = (IUnknown *)*this;
@@ -6662,7 +6662,7 @@ LABEL_93:
         if ( this->bunkerLinkedUnit <= 0 )
         {
 LABEL_115:
-          this->q124 = edi105;
+          this->q049 = edi105;
           goto LABEL_116;
         }
         v28 = (SlaveManagerClass *)this->slaveManager;
@@ -6704,7 +6704,7 @@ LABEL_116:
   {
     if ( this->shouldLoseTarget )
     {
-      v36 = this->currentMission;
+      v36 = this->q02B;
       if ( !v36
         || v36 == 7
         || v36 == 13
@@ -6722,7 +6722,7 @@ LABEL_116:
       }
     }
   }
-  ++this->missionData;
+  ++this->q031;
   ObjectClass::ProcessCloaking((int)this);
   v37 = this->q060;
   eax135 = this->q188;
@@ -6745,7 +6745,7 @@ LABEL_139:
   }
   else
   {
-    v39 = this->currentMission;
+    v39 = this->q02B;
     if ( (v39 == 2 || v39 == 10 || v39 == 5) && FootClass::CanEnterCell((int)this, (int)ebx28) )
     {
       v38 = (IUnknown *)*this;
@@ -6887,7 +6887,7 @@ LABEL_148:
       if ( !(*(unsigned __int8 (__thiscall **)(int *))(*this + 656))(this) )
       {
         v63 = 0;
-        if ( !this || (*(_BYTE *)(this + 5) & 4) == 0 || (v63 = this, !this->__pad_5A4) )
+        if ( !this || (*(_BYTE *)(this + 5) & 4) == 0 || (v63 = this, !this->q169) )
         {
           if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 708))(this, this->sprayOffsetIndex_e)
             || this->inOpenToppedTransport )
@@ -6908,7 +6908,7 @@ LABEL_148:
   if ( (*(int (__thiscall **)(int *))(*this + 44))(this) == 6 )
     goto LABEL_236;
   v65 = this->q040;
-  v60 = (TechnoClass *)this->transporter_e;
+  v60 = (TechnoClass *)this->q042;
   if ( v65 != -1 )
   {
     if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v65 >= (int)v60 )
@@ -6922,7 +6922,7 @@ LABEL_235:
     goto LABEL_236;
   }
 LABEL_233:
-  v61 = (TechnoClass *)this->turretChargeTimer;
+  v61 = (TechnoClass *)this->q043;
   if ( !v61 )
     goto LABEL_235;
   v68 = this->q044;
@@ -6932,7 +6932,7 @@ LABEL_233:
   v70 = v109;
   this->q040 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664];
   this->currentTurretNumber = v70;
-  this->transporter_e = (int)v61;
+  this->q042 = (int)v61;
 LABEL_236:
   v71 = this->ambientSoundController;
   v72 = this + 60;
@@ -7103,7 +7103,7 @@ int __thiscall TechnoClass::StepAnimFrame(#377 *this)
   result = *(_DWORD *)((*(int (__thiscall **)(#377 *))(this->hasParachute)(this) + 1668); /*0x6fb01c*/
   if ( result != -1 ) /*0x6fb025*/
   {
-    v3 = this->pitchAngle; /*0x6fb027*/
+    v3 = this->q0BF; /*0x6fb027*/
     if ( v3 < result ) /*0x6fb02f*/
     {
       v4 = this->q07F; /*0x6fb031*/
@@ -7114,7 +7114,7 @@ int __thiscall TechnoClass::StepAnimFrame(#377 *this)
         {
 LABEL_7:
           v5 = *(_DWORD *)this; /*0x6fb054*/
-          this->pitchAngle = v3 + 1; /*0x6fb05b*/
+          this->q0BF = v3 + 1; /*0x6fb05b*/
           (*(void (__thiscall **)(#377 *, int))(v5 + 292))(this, 2); /*0x6fb061*/
           return TechnoClass::CalcAnimDelay(this); /*0x6fb069*/
         }
@@ -7734,7 +7734,7 @@ bool __thiscall TechnoClass::ShouldBeCloaked(void *this)
     return 0; /*0x6fbee9*/
 LABEL_19:
   if ( this->sprayOffsetIndex_e /*0x6fbef9*/
-    && (*(unsigned __int8 (__thiscall **)(void *, _DWORD))(*(_DWORD *)this + 940))(this, this->sprayOffsetIndex_e) )
+    && (*(unsigned __int8 (__thiscall **)(void *, _DWORD))(this->q0EB)(this, this->sprayOffsetIndex_e) )
   {
     return 0; /*0x6fbf0b*/
   }
@@ -8399,7 +8399,7 @@ int __thiscall TechnoClass::CalculateROF(#377 *this)
   if ( *(_BYTE *)(v3 + 304) /*0x6fd028*/
     || *(_BYTE *)(v3 + 298) && this->sparkParticles
     || *(_BYTE *)(v3 + 297) && this->fireParticles
-    || *(_BYTE *)(v3 + 301) && this->unitValue )
+    || *(_BYTE *)(v3 + 301) && this->q0C5 )
   {
     return *(_DWORD *)(v3 + 176); /*0x6fd1fa*/
   }
@@ -8684,7 +8684,7 @@ _DWORD *__thiscall TechnoClass::CreateFiringRadarBlip(int this, InfantryClass *a
   _DWORD v8[3]; // [esp+1Ch] [ebp-18h] BYREF
   _BYTE v9[12]; // [esp+28h] [ebp-Ch] BYREF
 
-  v3 = (*(int (__thiscall **)(int, InfantryClass *))(*(_DWORD *)this + 740))(this, aP1); /*0x6fd588*/
+  v3 = (*(int (__thiscall **)(int, InfantryClass *))(this->q0B9)(this, aP1); /*0x6fd588*/
   v4 = *(IUnknown **)(*(int (__thiscall **)(int, int))(*(_DWORD *)this + 1016))(this, v3); /*0x6fd593*/
   v5 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *, int, _DWORD, _DWORD, _DWORD))(this->q02C)( /*0x6fd5ae*/
                    this,
@@ -8843,7 +8843,7 @@ int __thiscall SpreadRadiationAreaEffect(void *this, InfantryClass *aP1)
   int v29; // [esp+5Ch] [ebp-10h]
   int v30[3]; // [esp+60h] [ebp-Ch] BYREF
 
-  v2 = (*(int (__thiscall **)(void *, int *))(*(_DWORD *)this + 72))(this, &v24); /*0x6fd813*/
+  v2 = (*(int (__thiscall **)(void *, int *))(this->q012)(this, &v24); /*0x6fd813*/
   v17 = 0; /*0x6fd818*/
   v27 = *(_DWORD *)v2; /*0x6fd822*/
   v28 = *(IUnknown **)(v2 + 4); /*0x6fd829*/
@@ -9360,7 +9360,7 @@ int __thiscall TechnoClass::HandleCursorClick(_BYTE *this, _BYTE *a1, TechnoClas
   char aP2a; // [esp+28h] [ebp+8h]
 
   if ( this->chronoLockRemaining /*0x6ffefd*/
-    || this->airstrike && !*(_BYTE *)((*(int (__thiscall **)(_BYTE *))(this->hasParachute)(this) + 1682)
+    || this->q0AA && !*(_BYTE *)((*(int (__thiscall **)(_BYTE *))(this->hasParachute)(this) + 1682)
     || !a1 )
   {
     return 0; /*0x6ffefd*/
@@ -9445,7 +9445,7 @@ LABEL_37:
       && this )
     {
       if ( (*(int (__thiscall **)(_BYTE *))(this->fallRate)(this) == 1 /*0x70015b*/
-        && *(int *)(this->q6C4 + 1504) > 0
+        && *(int *)(this->q1B1 + 1504) > 0
         && *((int *)this + 69) > 0 )
       {
         return 4; /*0x700169*/

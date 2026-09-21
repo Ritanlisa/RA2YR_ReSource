@@ -2448,6 +2448,25 @@ namespace gamemd { int Stream::ReadOLEObjects() {
 }
 } }
 
+// ==== BACKFILL 0x0067FD20  LoadOptions_Load  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
+char LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
+{
+    WCHAR widePath[64];
+    MultiByteToWideChar(0, 0, lpMultiByteStr, -1, widePath, 64);
+    IStorage* storage = 0;
+    if ( StgOpenStorage(widePath, 0, 0x12u, 0, 0, &storage) < 0
+      || ScenarioPropertyReadCOM(a2, (int)storage) < 0 )
+    {
+        if ( storage )
+            storage->lpVtbl->Release(storage);
+        return 0;
+    }
+    if ( storage )
+        storage->lpVtbl->Release(storage);
+    return 1;
+
+}
+
 // ==== BACKFILL 0x0067FDD0  ComPtr::ReleaseSimple  cls=ComPtr  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ComPtr::ReleaseSimple() {
 {

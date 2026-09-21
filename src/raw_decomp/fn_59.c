@@ -4163,7 +4163,7 @@ void __thiscall PlaceRandomWaypoints(int *this, int a2)
       v7 = Math::RoundToInt((double)v23 * v24 * 2.328306437080797e-10); /*0x594955*/
     }
     while ( v7 > v6 ); /*0x59495c*/
-    v20 = *(_DWORD *)(this->__pad_02C + 4 * v7); /*0x594967*/
+    v20 = *(_DWORD *)(*(this + 11) + 4 * v7); /*0x594967*/
     v25[0] = (__int16)v20 - 3; /*0x594979*/
     v25[1] = SHIWORD(v20) - 3; /*0x59497d*/
     v25[2] = 6; /*0x59498a*/
@@ -5827,12 +5827,12 @@ int __thiscall Skirmish::ReadSettings(HWND *this, HWND hDlg)
   this->__pad_048 = v11; /*0x596d79*/
   if ( v21 != v11 ) /*0x596d7e*/
     byte_ABE2D8 = 1; /*0x596d80*/
-  v22 = this->__pad_064; /*0x596d90*/
+  v22 = *(this + 25); /*0x596d90*/
   hDlge = GetDlgItem(hDlg, 1030); /*0x596da2*/
   v12 = SendMessageA(hDlge, 0x147u, 0, 0); /*0x596da6*/
   v13 = (HWND)SendMessageA(hDlge, 0x150u, v12, 0); /*0x596db3*/
-  this->__pad_064 = v13; /*0x596db9*/
-  *(this + 26) = v13; /*0x596dbe*/
+  *(this + 25) = v13; /*0x596db9*/
+  this->q01A = v13; /*0x596dbe*/
   if ( v22 != v13 ) /*0x596dc1*/
     byte_ABE2D8 = 1; /*0x596dc3*/
   hDlgf = this->q014; /*0x596dd3*/
@@ -5936,7 +5936,7 @@ LRESULT __thiscall RandomMap_SetupDialog(_DWORD *this, HWND hDlg)
     ++v10; /*0x596f82*/
   }
   while ( (int)v11 < (int)&dword_82B080 ); /*0x596f89*/
-  v14 = GetStringCSF((&off_82B070)[this->__pad_064], 0, g_Str_File_MapGen_cpp, 4902); /*0x596fa5*/
+  v14 = GetStringCSF((&off_82B070)[*(this + 25)], 0, g_Str_File_MapGen_cpp, 4902); /*0x596fa5*/
   v15 = SendMessageA(j, 0x4BEu, 0, (LPARAM)v14); /*0x596fb3*/
   SendMessageA(j, 0x14Eu, v15, 0); /*0x596fbe*/
   for ( k = GetDlgItem(hDlg, 1029); SendMessageA(k, 0x146u, 0, 0) > 0; SendMessageA(k, 0x144u, 0, 0) ) /*0x596fd2*/
@@ -6028,8 +6028,8 @@ int __thiscall Skirmish::RandomizeSettings(_DWORD *this, ObjectClass *aP1)
                    &MEMORY[0x87F8E4].__pad_5568[7484],
                    *(&dword_82B080 + (_DWORD)aP1),
                    *(&dword_82B094 + (_DWORD)aP1));
-  *(this + 21) = 20 * this->q004; /*0x59730b*/
-  *(this + 22) = Random::Range(&MEMORY[0x87F8E4].__pad_5568[7484], 0, (IUnknown *)0x64); /*0x597313*/
+  this->q015 = 20 * this->q004; /*0x59730b*/
+  this->q016 = Random::Range(&MEMORY[0x87F8E4].__pad_5568[7484], 0, (IUnknown *)0x64); /*0x597313*/
   v3 = *(_DWORD *)(dword_ABE260 + 4 * (_DWORD)aP1); /*0x597322*/
   v4 = *(_DWORD *)(dword_ABE27C + 4 * (_DWORD)aP1); /*0x597325*/
   if ( v3 >= 0 ) /*0x59732a*/
@@ -6094,31 +6094,31 @@ _DWORD *__thiscall sub_597430(_DWORD *this)
     switch ( *(_BYTE *)(v3 + 18) ) /*0x5974d1*/
     {
       case 0: /*0x5974d1*/
-        this->__pad_064 = 0; /*0x5974d8*/
+        *(this + 25) = 0; /*0x5974d8*/
         break; /*0x5974df*/
       case 2: /*0x5974d1*/
-        this->__pad_064 = 2; /*0x5974e1*/
+        *(this + 25) = 2; /*0x5974e1*/
         break; /*0x5974e4*/
       case 3: /*0x5974d1*/
-        this->__pad_064 = 3; /*0x5974e6*/
+        *(this + 25) = 3; /*0x5974e6*/
         break; /*0x5974e9*/
       default:
-        this->__pad_064 = 1; /*0x5974eb*/
+        *(this + 25) = 1; /*0x5974eb*/
         break; /*0x5974eb*/
     }
     switch ( *(_BYTE *)(v3 + 19) ) /*0x5974f7*/
     {
       case 0: /*0x5974f7*/
-        *(this + 26) = 0; /*0x5974fe*/
+        this->q01A = 0; /*0x5974fe*/
         break; /*0x597505*/
       case 2: /*0x5974f7*/
-        *(this + 26) = 2; /*0x597507*/
+        this->q01A = 2; /*0x597507*/
         break; /*0x59750a*/
       case 3: /*0x5974f7*/
-        *(this + 26) = 3; /*0x59750c*/
+        this->q01A = 3; /*0x59750c*/
         break; /*0x59750f*/
       default:
-        *(this + 26) = 1; /*0x597511*/
+        this->q01A = 1; /*0x597511*/
         break; /*0x597511*/
     }
     this->__pad_050 = 4; /*0x597516*/
@@ -6143,8 +6143,8 @@ _DWORD *__thiscall sub_597430(_DWORD *this)
     this->q06C = *(unsigned __int8 *)(v3 + 36); /*0x597565*/
     this->q044 = *(unsigned __int8 *)(v3 + 39); /*0x59756d*/
     this->q04C = *(unsigned __int8 *)(v3 + 42); /*0x597575*/
-    *(this + 21) = *(unsigned __int8 *)(v3 + 45); /*0x59757d*/
-    *(this + 22) = *(unsigned __int8 *)(v3 + 48); /*0x597585*/
+    this->q015 = *(unsigned __int8 *)(v3 + 45); /*0x59757d*/
+    this->q016 = *(unsigned __int8 *)(v3 + 48); /*0x597585*/
     this->q05C = *(unsigned __int8 *)(v3 + 51); /*0x59758d*/
     this->q060 = *(unsigned __int8 *)(v3 + 54); /*0x597593*/
     this->q004 = *(_DWORD *)(v3 + 24); /*0x597599*/
@@ -6233,25 +6233,25 @@ int __thiscall SettingsClass_ClampValues(int *this)
   {
     this->q014 = 8; /*0x59765c*/
   }
-  v7 = *(this + 21); /*0x597671*/
+  v7 = this->q015; /*0x597671*/
   if ( v7 <= 100 ) /*0x597676*/
   {
     if ( v7 < 1 ) /*0x597680*/
-      *(this + 21) = 1; /*0x597682*/
+      this->q015 = 1; /*0x597682*/
   }
   else
   {
-    *(this + 21) = 100; /*0x597678*/
+    this->q015 = 100; /*0x597678*/
   }
-  v8 = *(this + 22); /*0x597689*/
+  v8 = this->q016; /*0x597689*/
   if ( v8 <= 100 ) /*0x59768e*/
   {
     if ( v8 < 0 ) /*0x597697*/
-      *(this + 22) = 0; /*0x597699*/
+      this->q016 = 0; /*0x597699*/
   }
   else
   {
-    *(this + 22) = 100; /*0x597690*/
+    this->q016 = 100; /*0x597690*/
   }
   v9 = this->q05C; /*0x59769c*/
   if ( v9 <= 100 ) /*0x5976a1*/
@@ -6263,35 +6263,35 @@ int __thiscall SettingsClass_ClampValues(int *this)
   {
     this->q05C = 100; /*0x5976a3*/
   }
-  v10 = this->__pad_018; /*0x5976af*/
+  v10 = this->q060; /*0x5976af*/
   if ( v10 <= 100 ) /*0x5976b4*/
   {
     if ( v10 < 0 ) /*0x5976bd*/
-      this->__pad_018 = 0; /*0x5976bf*/
+      this->q060 = 0; /*0x5976bf*/
   }
   else
   {
-    this->__pad_018 = 100; /*0x5976b6*/
+    this->q060 = 100; /*0x5976b6*/
   }
-  v11 = this->__pad_064; /*0x5976c2*/
+  v11 = *(this + 25); /*0x5976c2*/
   if ( v11 < 4 ) /*0x5976c8*/
   {
     if ( v11 < 0 ) /*0x5976d1*/
-      this->__pad_064 = 0; /*0x5976d3*/
+      *(this + 25) = 0; /*0x5976d3*/
   }
   else
   {
-    this->__pad_064 = 3; /*0x5976ca*/
+    *(this + 25) = 3; /*0x5976ca*/
   }
-  v12 = *(this + 26); /*0x5976d6*/
+  v12 = this->q01A; /*0x5976d6*/
   if ( v12 < 4 ) /*0x5976dc*/
   {
     if ( v12 < 0 ) /*0x5976e5*/
-      *(this + 26) = 0; /*0x5976e7*/
+      this->q01A = 0; /*0x5976e7*/
   }
   else
   {
-    *(this + 26) = 3; /*0x5976de*/
+    this->q01A = 3; /*0x5976de*/
   }
   v13 = this->q06C; /*0x5976ea*/
   if ( v13 <= 100 ) /*0x5976ef*/
@@ -6856,9 +6856,9 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
   (*(void (**)(void))(v5 + 12))(); /*0x59829a*/
   (*(void (__thiscall **)(_DWORD *))(this->q1A4 + 12))(this + 105); /*0x5982a9*/
   (*(void (__thiscall **)(_DWORD *))(this->q1C0 + 12))(this + 112); /*0x5982b8*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite(off_82B134, MEMORY[0x82BDB8], *(this + 175)); /*0x5982d0*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite(off_82B134, MEMORY[0x82BDB8], this->q0AF); /*0x5982d0*/
   v7 = this->q02C; /*0x5982d5*/
-  *(this + 175) = Int_Overwrite; /*0x5982db*/
+  this->q0AF = Int_Overwrite; /*0x5982db*/
   this->q02C = INIClass::ReadInt_Overwrite(off_82B134, stru_82BDA4, v7); /*0x5982f7*/
   IntList = &v24; /*0x598300*/
   DynamicVectorClass::Copy(&v24, this + 98); /*0x598304*/
@@ -6879,7 +6879,7 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
   v8 = IntList; /*0x598337*/
   *(this + 102) = IntList[4]; /*0x59833e*/
   *(this + 103) = v8[5]; /*0x598344*/
-  *(this + 104) = v8[6]; /*0x59834a*/
+  this->q01A = v8[6]; /*0x59834a*/
   v32 = (int)&vt_VectorClass_int; /*0x598356*/
   VectorClass::Destroy((int)&v32); /*0x59835a*/
   IntList = &v24; /*0x598364*/
@@ -7738,8 +7738,8 @@ char *__thiscall RandomMap::SetupTheater(int *this, char a2)
   int v83[3]; // [esp+BCh] [ebp-Ch] BYREF
 
   v74 = (MapResourceClass *)this;
-  *(float *)&v72 = (double)this->__pad_064 * 0.33333334;
-  v68 = (double)*(this + 26) * 0.33333334;
+  *(float *)&v72 = (double)*(this + 25) * 0.33333334;
+  v68 = (double)this->q01A * 0.33333334;
   RandomMap::LoadConfig(this);
   v3 = this->__pad_03C;
   if ( v3 == 3 || v3 == 4 )
@@ -7762,14 +7762,14 @@ char *__thiscall RandomMap::SetupTheater(int *this, char a2)
   v6 = Math::RoundToInt(v5);
   v76 = this->q060;
   v78[2] = v76 + 4;
-  *(this + 97) = v6;
+  this->q061 = v6;
   v78[0] = 0;
   v78[1] = 0;
   v78[3] = v6 + 12;
   v75[0] = 2;
   v75[1] = 5;
   v77 = v6;
-  *(this + 195) = 4;
+  this->q0C3 = 4;
   v79[1] = 0;
   v79[2] = 0;
   INISectionList::Constructor(v80);
@@ -7779,11 +7779,11 @@ char *__thiscall RandomMap::SetupTheater(int *this, char a2)
   v79[0] = &CCINIClass_Vtable;
   INIClass::ClearSection((int)v79, 0, 0);
   v7 = this->q038;
-  *(this + 195) = 4;
+  this->q0C3 = 4;
   INIClass::SetString((char *)v79, (unsigned __int8 *)&MEMORY[0x81FFF0], unk_818658, &Theater_Array[112 * v7]);
   INIClass::SetRect((char *)v79, (unsigned __int8 *)&MEMORY[0x81FFF0], g_INI_Key_Size, v78);
   INIClass::SetRect((char *)v79, (unsigned __int8 *)&MEMORY[0x81FFF0], g_INI_Key_LocalSize, v75);
-  INIClass::SetInt((char *)v79, (unsigned __int8 *)&MEMORY[0x81FFF0], aLevel, *(this + 195), 0);
+  INIClass::SetInt((char *)v79, (unsigned __int8 *)&MEMORY[0x81FFF0], aLevel, this->q0C3, 0);
   INIClass::SetString(
     (char *)v79,
     (unsigned __int8 *)(*(_DWORD *)g_SuperWeaponTypeCount + 36),
@@ -9681,7 +9681,7 @@ LABEL_27:
           v75[75] = 0; /*0x59c4e2*/
           *(_DWORD *)(j + 56) = v73; /*0x59c4e6*/
           *(_BYTE *)(j + 282) = 0; /*0x59c4e9*/
-          *(_BYTE *)(j + 283) = *(this + 195); /*0x59c4f6*/
+          *(_BYTE *)(j + 283) = this->q0C3; /*0x59c4f6*/
         }
       }
       return 0; /*0x59c50a*/
@@ -9977,8 +9977,8 @@ char __thiscall TiberiumClass::Grow(int *this, _WORD *a2)
   inited = 1; /*0x59c937*/
   LODWORD(v86) = v3; /*0x59c93c*/
   if ( v3 ) /*0x59c940*/
-    v3 = Math::RoundToInt((double)*(this + 97) * (double)this->q060 * (double)SLODWORD(v86) * 0.008 + 100.0); /*0x59c95e*/
-  v4 = v3 - *(this + 193); /*0x59c963*/
+    v3 = Math::RoundToInt((double)this->q061 * (double)this->q060 * (double)SLODWORD(v86) * 0.008 + 100.0); /*0x59c95e*/
+  v4 = v3 - this->q0C1; /*0x59c963*/
   LODWORD(v85) = v4; /*0x59c96c*/
   if ( v4 <= 75 ) /*0x59c970*/
     return 0; /*0x59c970*/

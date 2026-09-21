@@ -9936,7 +9936,7 @@ void __thiscall HashMap_Shrink2(_DWORD *this)
         {
           do /*0x7adffd*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << this->HashMap_field_0x0C) - 1); /*0x7adfe7*/
+            v10 = ((int (__thiscall *)(int))this->q006)(v9) & ((1 << this->HashMap_field_0x0C) - 1); /*0x7adfe7*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x7adfeb*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7adff1*/
             v12 = *(_DWORD *)(v9 + 112); /*0x7adff3*/
@@ -9995,7 +9995,7 @@ void __thiscall sub_7AE020(_DWORD *this)
         {
           do /*0x7ae0a1*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << this->WOLGameList_field_0x0C) - 1); /*0x7ae08b*/
+            v10 = ((int (__thiscall *)(int))this->q006)(v9) & ((1 << this->WOLGameList_field_0x0C) - 1); /*0x7ae08b*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x7ae08f*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7ae095*/
             v12 = *(_DWORD *)(v9 + 112); /*0x7ae097*/

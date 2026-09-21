@@ -3126,7 +3126,7 @@ _DWORD *__thiscall SideClass::Construct(_DWORD *this, CCINIClass *aP1)
   this->__pad_0A0 = 0; /*0x6a4569*/
   this->q0A4 = 1; /*0x6a456f*/
   *((_BYTE *)this + 165) = 0; /*0x6a4576*/
-  this->__pad_0AC = 10; /*0x6a457c*/
+  this->q02B = 10; /*0x6a457c*/
   this->q0A8 = 0; /*0x6a4586*/
   this->houseTypes = &vt_TypeList_int; /*0x6a458c*/
   *this = &SideClass::`vftable'; /*0x6a4597*/
@@ -3673,9 +3673,9 @@ char *__thiscall sub_6A4E60(char *this)
   this->__pad_53A4 = 0; /*0x6a4eba*/
   this->q53A5 = 0; /*0x6a4ec0*/
   this->q53A6 = 1; /*0x6a4ec6*/
-  *(this + 21416) = 0; /*0x6a4ecd*/
-  *(this + 21780) = 0; /*0x6a4ed3*/
-  *(this + 21781) = 0; /*0x6a4ed9*/
+  this->q53A8 = 0; /*0x6a4ecd*/
+  this->q5514 = 0; /*0x6a4ed3*/
+  this->q5515 = 0; /*0x6a4ed9*/
   *(_DWORD *)this = &SidebarClass::`vftable'; /*0x6a4edf*/
   v4 = this + 5444; /*0x6a4ee5*/
   v5 = 4; /*0x6a4eeb*/
@@ -3772,8 +3772,8 @@ int __thiscall HouseClass_InitSubsystems(_BYTE *this)
 
   PowerClass::updateDrain(); /*0x6a5036*/
   this->q53A6 = 1; /*0x6a503d*/
-  *(this + 21781) = 0; /*0x6a5044*/
-  *(this + 21780) = 0; /*0x6a504a*/
+  this->q5515 = 0; /*0x6a5044*/
+  this->q5514 = 0; /*0x6a504a*/
   v2 = this + 5444; /*0x6a5050*/
   v3 = 4; /*0x6a5056*/
   do /*0x6a5069*/
@@ -4049,7 +4049,7 @@ LABEL_17:
             goto LABEL_17; /*0x6a55d5*/
         }
       }
-      *(this + 5355) = v2; /*0x6a55db*/
+      this->__pad_53AC = v2; /*0x6a55db*/
       for ( i = 0; i < 8; i = this->SidebarClass_field_0x1544 ) /*0x6a55e1*/
       {
         v16 = *(this + i + 5355); /*0x6a55e7*/
@@ -4654,8 +4654,8 @@ LABEL_29:
 LABEL_37:
   if ( *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[10192] ) /*0x6a6455*/
   {
-    *(this + 5350) = 1; /*0x6a6457*/
-    *(this + 5349) = 0; /*0x6a6461*/
+    this->q14E6 = 1; /*0x6a6457*/
+    this->q14E5 = 0; /*0x6a6461*/
   }
 LABEL_39:
   v13 = v24; /*0x6a6467*/
@@ -4827,7 +4827,7 @@ char __thiscall sub_6A6AF0(_DWORD *this, ObjectClass *aP1, int a3)
 
   v3 = a3; /*0x6a6af3*/
   if ( a3 == -1 ) /*0x6a6afe*/
-    v3 = *(this + 5351); /*0x6a6b00*/
+    v3 = this->q14E7; /*0x6a6b00*/
   v4 = this + 997 * v3 + 1361; /*0x6a6b19*/
   v5 = 26; /*0x6a6b20*/
   v14 = v4; /*0x6a6b25*/
@@ -5147,7 +5147,7 @@ void __thiscall FlushSidebarTooltip(_BYTE *this, char a2)
   int v17; // [esp+40h] [ebp-14h]
   struct tagRECT Rect; // [esp+44h] [ebp-10h] BYREF
 
-  if ( !*(this + 21413) || !MEMORY[0xA8E9A0] || !MEMORY[0xA8ED5C] ) /*0x6a7109*/
+  if ( !this->q53A5 || !MEMORY[0xA8E9A0] || !MEMORY[0xA8ED5C] ) /*0x6a7109*/
     goto LABEL_25; /*0x6a7109*/
   GetClientRect(g_hWnd, &Rect); /*0x6a711b*/
   Point.x = Rect.left; /*0x6a7129*/
@@ -5172,7 +5172,7 @@ LABEL_13:
       && MEMORY[0x880A00] == MEMORY[0xB07DD4]
       && !a2 )
     {
-      if ( *(this + 21416) )
+      if ( this->q53A8 )
       {
         y = Point.y; /*0x6a72d1*/
         v10 = Point.x + (MEMORY[0xA8EB7C] != 0 ? MEMORY[0x886FA8] : 0);
@@ -5189,7 +5189,7 @@ LABEL_13:
           &v14,
           0,
           1);
-        *(this + 21416) = 0; /*0x6a7315*/
+        this->q53A8 = 0; /*0x6a7315*/
       }
       v3 = MEMORY[0x886F98]; /*0x6a7332*/
       v17 = MEMORY[0x886F9C]; /*0x6a733e*/
@@ -5247,7 +5247,7 @@ LABEL_13:
     }
     goto LABEL_24; /*0x6a73a0*/
   }
-  if ( *(this + 21416) )
+  if ( this->q53A8 )
   {
     (*(void (__thiscall **)(int, int, int))(*(_DWORD *)MEMORY[0x887640] + 60))(MEMORY[0x887640], MEMORY[0x887300], 1); /*0x6a71c7*/
     v15 = Point.y; /*0x6a71eb*/
@@ -5265,7 +5265,7 @@ LABEL_13:
       &v10,
       0,
       1);
-    *(this + 21416) = 0; /*0x6a722f*/
+    this->q53A8 = 0; /*0x6a722f*/
 LABEL_24:
     MEMORY[0xB0B519] = 1; /*0x6a7481*/
   }
@@ -5410,11 +5410,11 @@ int __thiscall SidebarClass::UpdateStrips(char *this, TabClass *aP1, _DWORD *a2)
   }
   if ( this->q53A5 ) /*0x6a77db*/
   {
-    v7 = *((_DWORD *)this + 5350); /*0x6a77e9*/
+    v7 = this->q14E6; /*0x6a77e9*/
     if ( v7 == 1 ) /*0x6a77f2*/
     {
-      v8 = *((_DWORD *)this + 5349) + 1; /*0x6a77fa*/
-      *((_DWORD *)this + 5349) = v8; /*0x6a77fb*/
+      v8 = this->q14E5 + 1; /*0x6a77fa*/
+      this->q14E5 = v8; /*0x6a77fb*/
       if ( v8 <= *(__int16 *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[10192] + 6) ) /*0x6a780f*/
         goto LABEL_11; /*0x6a780f*/
     }
@@ -5422,20 +5422,20 @@ int __thiscall SidebarClass::UpdateStrips(char *this, TabClass *aP1, _DWORD *a2)
     {
       if ( v7 != -1 ) /*0x6a7816*/
         goto LABEL_11; /*0x6a7816*/
-      v9 = *((_DWORD *)this + 5349) - 1; /*0x6a781e*/
-      *((_DWORD *)this + 5349) = v9; /*0x6a781f*/
+      v9 = this->q14E5 - 1; /*0x6a781e*/
+      this->q14E5 = v9; /*0x6a781f*/
       if ( v9 >= 0 ) /*0x6a7825*/
         goto LABEL_11; /*0x6a7825*/
     }
-    *((_DWORD *)this + 5350) = 0; /*0x6a7829*/
-    *((_DWORD *)this + 5349) = 0; /*0x6a782f*/
+    this->q14E6 = 0; /*0x6a7829*/
+    this->q14E5 = 0; /*0x6a782f*/
 LABEL_11:
-    v10 = *(this + 21780); /*0x6a7835*/
-    *(this + 21780) = *(_DWORD *)&HouseClass_Player->__pad_2B8[56] > 0; /*0x6a7866*/
-    if ( v10 != *(this + 21780) ) /*0x6a7873*/
+    v10 = this->q5514; /*0x6a7835*/
+    this->q5514 = *(_DWORD *)&HouseClass_Player->__pad_2B8[56] > 0; /*0x6a7866*/
+    if ( v10 != this->q5514 ) /*0x6a7873*/
     {
       (*(void (__thiscall **)(char *, _DWORD))(this->SidebarClass_field_0x38)(this, 0); /*0x6a787b*/
-      v11 = *(this + 21780); /*0x6a787e*/
+      v11 = this->q5514; /*0x6a787e*/
       this->q53A6 = 1; /*0x6a7884*/
       if ( !v11 ) /*0x6a788d*/
         (*(void (__thiscall **)(char *, _DWORD, _DWORD))(this->q048)(this, 0, 0); /*0x6a7897*/
@@ -5614,7 +5614,7 @@ char __thiscall sub_6A7D20(char *this)
   do /*0x6a7d53*/
   {
     result = SidebarClass::UpdateProduction((int)(v4 - 60)); /*0x6a7d33*/
-    if ( result && v3 == this->costBuildingsMult ) /*0x6a7d42*/
+    if ( result && v3 == this->q14E7 ) /*0x6a7d42*/
     {
       *v4 = 1; /*0x6a7d44*/
       v2 = 1; /*0x6a7d47*/
@@ -6378,7 +6378,7 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
   v57 = 0; /*0x6a8b45*/
   if ( this->VisibleRect ) /*0x6a8b3b*/
     goto LABEL_115; /*0x6a8b3b*/
-  v4 = this->q048; /*0x6a8b50*/
+  v4 = this->q012; /*0x6a8b50*/
   if ( v4 ) /*0x6a8b55*/
   {
     v5 = 26; /*0x6a8b66*/
@@ -6401,14 +6401,14 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
       {
         if ( v8 * (v7 + this->CellIterator_NextY) < v6 ) /*0x6a8c09*/
         {
-          this->q048 = v4 - 1; /*0x6a8c11*/
-          this->__pad_04C = MEMORY[0xB0B500]; /*0x6a8c1a*/
+          this->q012 = v4 - 1; /*0x6a8c11*/
+          *((_DWORD *)this + 19) = MEMORY[0xB0B500]; /*0x6a8c1a*/
           this->q0F8 = 1; /*0x6a8c1d*/
           this->VisibleRect = 1; /*0x6a8c21*/
         }
         else
         {
-          this->q048 = 0; /*0x6a8c0b*/
+          this->q012 = 0; /*0x6a8c0b*/
         }
       }
       else
@@ -6416,21 +6416,21 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
         v10 = this->CellIterator_NextY; /*0x6a8bde*/
         if ( v10 ) /*0x6a8be3*/
         {
-          this->q048 = v4 + 1; /*0x6a8bec*/
+          this->q012 = v4 + 1; /*0x6a8bec*/
           this->q0F8 = 0; /*0x6a8bef*/
           this->VisibleRect = 1; /*0x6a8bf3*/
           this->CellIterator_NextY = v10 - 1; /*0x6a8bf7*/
-          this->__pad_04C = 0; /*0x6a8bfa*/
+          *((_DWORD *)this + 19) = 0; /*0x6a8bfa*/
         }
         else
         {
-          this->q048 = 0; /*0x6a8be5*/
+          this->q012 = 0; /*0x6a8be5*/
         }
       }
     }
     else
     {
-      this->q048 = 0; /*0x6a8bcf*/
+      this->q012 = 0; /*0x6a8bcf*/
     }
   }
   if ( this->VisibleRect ) /*0x6a8c25*/
@@ -6438,24 +6438,24 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
 LABEL_115:
     if ( this->q0F8 ) /*0x6a8c2c*/
     {
-      v11 = this->__pad_04C - MEMORY[0xB0B514]; /*0x6a8c3e*/
-      this->__pad_04C = v11; /*0x6a8c40*/
+      v11 = *((_DWORD *)this + 19) - MEMORY[0xB0B514]; /*0x6a8c3e*/
+      *((_DWORD *)this + 19) = v11; /*0x6a8c40*/
       if ( v11 <= 0 ) /*0x6a8c45*/
       {
         v12 = this->CellIterator_NextY; /*0x6a8c47*/
         this->VisibleRect = 0; /*0x6a8c4a*/
-        this->__pad_04C = 0; /*0x6a8c4f*/
+        *((_DWORD *)this + 19) = 0; /*0x6a8c4f*/
         this->CellIterator_NextY = v12 + 1; /*0x6a8c56*/
       }
     }
     else
     {
-      v13 = MEMORY[0xB0B514] + this->__pad_04C; /*0x6a8c63*/
-      this->__pad_04C = v13; /*0x6a8c65*/
+      v13 = MEMORY[0xB0B514] + *((_DWORD *)this + 19); /*0x6a8c63*/
+      *((_DWORD *)this + 19) = v13; /*0x6a8c65*/
       if ( v13 >= MEMORY[0xB0B500] ) /*0x6a8c72*/
       {
         this->VisibleRect = 0; /*0x6a8c74*/
-        this->__pad_04C = 0; /*0x6a8c78*/
+        *((_DWORD *)this + 19) = 0; /*0x6a8c78*/
       }
     }
     v57 = 1; /*0x6a8c7f*/
@@ -6463,7 +6463,7 @@ LABEL_115:
   if ( this->q010 != -1 ) /*0x6a8c8c*/
   {
     v14 = this + 8; /*0x6a8c8e*/
-    if ( CDTimerClass::TimeRemaining((int *)this + 2) || (v15 = this->SidebarClass_field_0x14) == 0 ) /*0x6a8ca5*/
+    if ( CDTimerClass::TimeRemaining((int *)this + 2) || (v15 = this->q005) == 0 ) /*0x6a8ca5*/
     {
       this->SidebarClass_field_0x4 = 0; /*0x6a8d4d*/
     }
@@ -6481,7 +6481,7 @@ LABEL_115:
         *v14 = MEMORY[0xA8ED84]; /*0x6a8ce3*/
         this->IsInitialized = v61; /*0x6a8ce5*/
         this->SidebarClass_field_0x4 = 0; /*0x6a8ce8*/
-        this->SidebarClass_field_0x14 = 0; /*0x6a8ceb*/
+        this->q005 = 0; /*0x6a8ceb*/
         *(_DWORD *)this = 0; /*0x6a8cee*/
         this->q010 = -1; /*0x6a8cf0*/
       }
@@ -6538,7 +6538,7 @@ LABEL_53:
     SHA1::Reset((int)&MEMORY[0xB07C48] + 96 * this->SidebarClass_field_0x38); /*0x6a8d8b*/
   }
 LABEL_44:
-  if ( this->q0F4 )
+  if ( this->q03D )
   {
     v58 = 0; /*0x6a8dad*/
     if ( *((int *)this + 21) > 0 )
@@ -8669,7 +8669,7 @@ char __thiscall sub_6ABA60(int this, int a2, int a3, int a4)
 // ==== 0x006ABAC0  PlayerClass::HasPlayers  this=CommandClass  sig=csp ====
 BOOL __thiscall PlayerClass_HasPlayers(_DWORD *this)
 {
-  return *(this + 21) > 0; /*0x6abaca*/
+  return this->q015 > 0; /*0x6abaca*/
 }
 
 
@@ -9295,7 +9295,7 @@ LABEL_13:
   v10[13 * v9 + 34] = (char *)aP2 + *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6ac713*/
 LABEL_38:
   result = (InfantryTypeClass *)((char *)&aP2->field_0 + *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] + 1); /*0x6ac71a*/
-  *(this + 5352) = result; /*0x6ac728*/
+  this->q14E8 = result; /*0x6ac728*/
   return result->vtable0; /*0x6ac670*/
 }
 
@@ -9362,9 +9362,9 @@ SidebarClass *__thiscall ObjectClass::DestructWithRadar(char *Block, char a2)
 char *__thiscall sub_6AC840(char *this, int a2)
 {
   RadarClass::Render(this, a2); /*0x6ac848*/
-  *(this + 4556) = 0; /*0x6ac84f*/
-  *(this + 4557) = 0; /*0x6ac855*/
-  *(this + 4558) = 0; /*0x6ac85b*/
+  this->q11CC = 0; /*0x6ac84f*/
+  this->q11CD = 0; /*0x6ac855*/
+  this->q11CE = 0; /*0x6ac85b*/
   *(_DWORD *)this = &DisplayClass::`vftable'; /*0x6ac861*/
   return this; /*0x6ac869*/
 }
@@ -9380,7 +9380,7 @@ _BYTE *__thiscall sub_6AC870(_BYTE *this)
   v2 = MEMORY[0xA8ED84]; /*0x6ac879*/
   this->SidebarClass_field_0x4 = 0; /*0x6ac87f*/
   this->SidebarClass_field_0x8 = v2; /*0x6ac882*/
-  this->SidebarClass_field_0x14 = 0; /*0x6ac885*/
+  this->q005 = 0; /*0x6ac885*/
   this->q006 = 1; /*0x6ac888*/
   return this; /*0x6ac88f*/
 }
@@ -9412,7 +9412,7 @@ _DWORD *__thiscall sub_6AC8D0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<Point2D>::`vftable'; /*0x6ac92a*/
-  this->__pad_014 = 10; /*0x6ac930*/
+  *(this + 5) = 10; /*0x6ac930*/
   this->q010 = 0; /*0x6ac937*/
   return this; /*0x6ac940*/
 }
@@ -12112,7 +12112,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
   _BYTE v33[8]; // [esp+44h] [ebp-10h] BYREF
   SlaveManagerClass *v34; // [esp+4Ch] [ebp-8h]
 
-  v2 = (SlaveManagerClass *)this->SlaveManagerClass_field_5C; /*0x6afd67*/
+  v2 = (SlaveManagerClass *)this->q017; /*0x6afd67*/
   switch ( (unsigned int)v2 )
   {
     case 0u:
@@ -12125,7 +12125,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
           currentMission = v3->currentMission; /*0x6afd95*/
           if ( currentMission != 19 && currentMission != 18 ) /*0x6afda7*/
           {
-            this->SlaveManagerClass_field_5C = (TechnoClass *)5; /*0x6afdad*/
+            this->q017 = (TechnoClass *)5; /*0x6afdad*/
             this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6afdb4*/
           }
         }
@@ -12137,7 +12137,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
         && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v5->__pad_0 + 44))(this->master) == 1
         && (v2 = *(SlaveManagerClass **)&v5[1].hasParachute) != 0 )
       {
-        this->SlaveManagerClass_field_5C = (TechnoClass *)2; /*0x6afdde*/
+        this->q017 = (TechnoClass *)2; /*0x6afdde*/
         this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6afde5*/
       }
       else
@@ -12156,7 +12156,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
               v27 = v2,
               v2 == *(SlaveManagerClass **)&MEMORY[0xB077F8].__pad_14B0[10512]) )
         {
-          this->SlaveManagerClass_field_5C = 0; /*0x6afe67*/
+          this->q017 = 0; /*0x6afe67*/
           this->nextArrayIndex = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6afe74*/
         }
         else
@@ -12168,7 +12168,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
                          this->master,
                          2,
                          0);
-          this->SlaveManagerClass_field_5C = (TechnoClass *)2; /*0x6afeac*/
+          this->q017 = (TechnoClass *)2; /*0x6afeac*/
           this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6afeb3*/
         }
       }
@@ -12185,13 +12185,13 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
           LOBYTE(v2) = TechnoClass::Deploy((int *)v8->__pad_0); /*0x6afef9*/
           if ( (_BYTE)v2 ) /*0x6aff00*/
           {
-            this->SlaveManagerClass_field_5C = (TechnoClass *)4; /*0x6aff02*/
+            this->q017 = (TechnoClass *)4; /*0x6aff02*/
             this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6aff09*/
           }
           else
           {
             v9 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6aff16*/
-            this->SlaveManagerClass_field_5C = (TechnoClass *)3; /*0x6aff23*/
+            this->q017 = (TechnoClass *)3; /*0x6aff23*/
             this->abstractFlags = (TechnoClass *)v9; /*0x6aff2a*/
             v2 = v34; /*0x6aff2c*/
             this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6aff30*/
@@ -12202,7 +12202,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
       }
       else
       {
-        this->SlaveManagerClass_field_5C = 0; /*0x6afed3*/
+        this->q017 = 0; /*0x6afed3*/
         this->nextArrayIndex = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6afee0*/
       }
       break; /*0x6afee8*/
@@ -12213,12 +12213,12 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
         LOBYTE(v2) = TechnoClass::Deploy((int *)v10->__pad_0); /*0x6aff6d*/
         if ( !(_BYTE)v2 ) /*0x6aff74*/
           goto LABEL_53; /*0x6aff74*/
-        this->SlaveManagerClass_field_5C = (TechnoClass *)4; /*0x6aff7a*/
+        this->q017 = (TechnoClass *)4; /*0x6aff7a*/
         this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6aff81*/
       }
       else
       {
-        this->SlaveManagerClass_field_5C = 0; /*0x6aff56*/
+        this->q017 = 0; /*0x6aff56*/
         LOBYTE(v2) = MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6aff5d*/
         this->nextArrayIndex = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6aff62*/
       }
@@ -12233,7 +12233,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
           : (v2 = 0),
             v2[13].NeedsSaveOrLink) )
       {
-        this->SlaveManagerClass_field_5C = (TechnoClass *)5; /*0x6affc2*/
+        this->q017 = (TechnoClass *)5; /*0x6affc2*/
         this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6affc9*/
       }
       else
@@ -12252,7 +12252,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
                : 0;
             if ( !v2[16].__pad_48[4] && (this->master)->currentMission == 5 ) /*0x6b0022*/
             {
-              this->SlaveManagerClass_field_5C = (TechnoClass *)2; /*0x6b0028*/
+              this->q017 = (TechnoClass *)2; /*0x6b0028*/
               this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6b002f*/
             }
           }
@@ -12263,7 +12263,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
       v14 = this->master; /*0x6b003c*/
       if ( v14 && (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)v14->__pad_0 + 44))(v14) == 1 ) /*0x6b004b*/
       {
-        this->SlaveManagerClass_field_5C = 0; /*0x6b004d*/
+        this->q017 = 0; /*0x6b004d*/
         LOBYTE(v2) = MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b0054*/
         this->nextArrayIndex = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b0059*/
       }
@@ -12311,11 +12311,11 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
                            this->master,
                            19,
                            0);
-            this->SlaveManagerClass_field_5C = (TechnoClass *)6; /*0x6b01ee*/
+            this->q017 = (TechnoClass *)6; /*0x6b01ee*/
             this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6b01f5*/
           }
         }
-        if ( this->SlaveManagerClass_field_5C != (TechnoClass *)6 ) /*0x6b0200*/
+        if ( this->q017 != (TechnoClass *)6 ) /*0x6b0200*/
           LOBYTE(v2) = FactoryClass::PlaceExitUnits(this); /*0x6b0204*/
       }
       break; /*0x6b0061*/
@@ -12325,7 +12325,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
       {
         LOBYTE(v2) = (unsigned __int8)Event_Process_6B0490(this); /*0x6b021e*/
 LABEL_53:
-        this->SlaveManagerClass_field_5C = (TechnoClass *)1; /*0x6b0223*/
+        this->q017 = (TechnoClass *)1; /*0x6b0223*/
         this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6b022a*/
       }
       break; /*0x6b022a*/

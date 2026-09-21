@@ -1999,17 +1999,6 @@ void E4Recv_5CA670::sub_5CA670()
 }
 }
 
-// ==== BACKFILL 0x005CA7D0  MPBattleClass::vt_entry_18  cls=MultiplayerSiege  sig=csp  renamed_refs=0  residual=- ====
-int MPBattleClass::vt_entry_18()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-bool __thiscall MPBattleClass::vt_entry_18(std::codecvt_base *this)
-{
-  return ScenarioClass::createStartingForces(this);
-}
-}
-
 // ==== BACKFILL 0x005CA7E0  MultiplayerSiege::StubReturnFalse  cls=MultiplayerSiege  sig=csp  renamed_refs=0  residual=- ====
 char MultiplayerSiege::StubReturnFalse()
 {
@@ -2384,16 +2373,6 @@ void nullsub_189(int a1)
   ;
 }
 
-// ==== BACKFILL 0x005CD320  MSVQAnim::Stub  cls=MSVQAnim  sig=csp  renamed_refs=0  residual=- ====
-char MSVQAnim::Stub()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSVQAnim::_vt07(_BYTE *this)
-{
-  return *(this + 45); /*0x5cd323*/
-}
-}
-
 // ==== BACKFILL 0x005CD570  sub_5CD570  cls=MSAnim  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int * a6, int a7, int a8, char a9, char a10)
 {
@@ -2525,16 +2504,6 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
     }
   }
     return result;
-}
-}
-
-// ==== BACKFILL 0x005CEAB0  MSPCXAnim::Stub  cls=MSPCXAnim  sig=csp  renamed_refs=0  residual=- ====
-char MSPCXAnim::Stub()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim::_vt07(_BYTE *this)
-{
-  return *(this + 41); /*0x5ceab3*/
 }
 }
 

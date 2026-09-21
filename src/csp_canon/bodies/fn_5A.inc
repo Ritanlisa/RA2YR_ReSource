@@ -286,24 +286,6 @@ Concurrency::details::_ReaderWriterLock * E4Recv_5A9BF0::__0_ReaderWriterLock_de
 }
 }
 
-// ==== BACKFILL 0x005AC230  MapSeed::IsCellInBounds  cls=MapSeed  sig=csp  renamed_refs=0  residual=- ====
-bool MapSeed::IsCellInBounds()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_5AC230(__int16 *this)
-{
-  int v1; // edx
-  int v2; // eax
-
-  v1 = *this; /*0x5ac230*/
-  v2 = *(this + 1); /*0x5ac233*/
-  return v2 + v1 > g_MapCellHeight_Value /*0x5ac25f*/
-      && v1 - v2 < g_MapCellHeight_Value
-      && v2 - v1 < g_MapCellHeight_Value
-      && v2 + v1 <= g_MapCellCount;
-}
-}
-
 // ==== BACKFILL 0x005AC270  MapSeedClass::QueryInterface  cls=MapSeedClass  sig=csp  renamed_refs=0  residual=- ====
 MapSeedClass * MapSeedClass::QueryInterface(char a2)
 {
@@ -352,16 +334,6 @@ unsigned int * RandomMap::Constructor_VectorClass_Cell_(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;
-}
-}
-
-// ==== BACKFILL 0x005AC370  Coord::Compare2D  cls=Coord  sig=csp  renamed_refs=0  residual=- ====
-BOOL Coord::Compare2D(unsigned short * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Coord_Compare2D(_WORD *this, _WORD *a2)
-{
-  return *this != *a2 || *(this + 1) != a2[1]; /*0x5ac388*/
 }
 }
 
@@ -723,45 +695,6 @@ unsigned int * RandomMap::Constructor_1(int a2, int a3)
     this->IsAllocated = 1;
   }
     return this;
-}
-}
-
-// ==== BACKFILL 0x005ADD10  Map_Delete  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_5ADD10::Map_Delete()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Map_Delete(int this)
-{
-  bool v3; // bl
-  wchar_t *v4; // eax
-  wchar_t *StringCSF; // [esp-10h] [ebp-F8h]
-  int v7; // [esp+0h] [ebp-E8h]
-  _DWORD v8[20]; // [esp+Ch] [ebp-DCh] BYREF
-  char v9[120]; // [esp+5Ch] [ebp-8Ch] BYREF
-  int v10[5]; // [esp+D4h] [ebp-14h] BYREF
-
-  MSEngine::Construct(v8); /*0x5add1e*/
-  Map_Delete_5CEDD0(v9); /*0x5add27*/
-  unknown_libname_73(v10); /*0x5add33*/
-  v10[1] = Timer::GetTicks(); /*0x5add48*/
-  v10[3] = 0; /*0x5add50*/
-  v8[0] = &vt_MapSelect; /*0x5add5b*/
-  v3 = ScenarioClass::Load(v8, (ObjectClass *)this) == 0; /*0x5add71*/
-  DeleteAndZero((int)v10); /*0x5add74*/
-  MSEngine::Destructor((int)v9); /*0x5add7d*/
-  MSEngine::Destruct(v8); /*0x5add86*/
-  if ( v3 )
-  {
-    StringCSF = GetStringCSF(g_Str_TXT_OK, 0, &stru_82C090.onBridge, 134); /*0x5addba*/
-    v4 = GetStringCSF((wchar_t *)&stru_82C090.spawnStatus, 0, &stru_82C090.onBridge, 134); /*0x5addc5*/
-    Dialog::ShowMessageBox((int)v4, StringCSF, 0, 0, 0, v7); /*0x5addcf*/
-    return 0; /*0x5addd4*/
-  }
-  else
-  {
-    Debug::Log(); /*0x5addf6*/
-    return strlen((const char *)(this + 4700)) != 0 ? this + 4700 : 0;
-  }
 }
 }
 
@@ -1279,184 +1212,6 @@ double E4Recv_5AF3B0::sub_5AF3B0()
     *((double *)&aP0 + 1) = v1[1];
     *(double *)&aP0 = v1[2];
     return Math::CalcAngle((AbstractClass *)aP0, *(double *)((char *)&aP0 + 4));
-}
-}
-
-// ==== BACKFILL 0x005AF470  sub_5AF470  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-double E4Recv_5AF470::sub_5AF470()
- {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall sub_5AF470(IUnknown *this)
-{
-  float *v1; // eax
-  __int128 aP0; // [esp+0h] [ebp-34h]
-  _DWORD v4[3]; // [esp+1Ch] [ebp-18h] BYREF
-  float v5[3]; // [esp+28h] [ebp-Ch] BYREF
-
-  v4[0] = 1065353216; /*0x5af47e*/
-  v4[1] = 0; /*0x5af486*/
-  v4[2] = 0; /*0x5af48e*/
-  v1 = TransformMatrix3x4Point((AbstractClass *)v5, this, (IUnknown *)v4); /*0x5af496*/
-  *((double *)&aP0 + 1) = *v1; /*0x5af4ae*/
-  *(double *)&aP0 = v1[1]; /*0x5af4c1*/
-  return Math::CalcAngle((AbstractClass *)aP0, *(double *)((char *)&aP0 + 4)); /*0x5af4cc*/
-}
-}
-
-// ==== BACKFILL 0x005AF550  sub_5AF550  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5AF550(int this, float *a2, float *a3, AbstractClass *a4)
-{
-  double v7; // st7
-  double v8; // st7
-  double v9; // st7
-  double v10; // st7
-  float aP1; // [esp+0h] [ebp-28h]
-  float v12; // [esp+10h] [ebp-18h]
-  float v13; // [esp+10h] [ebp-18h]
-  float v14; // [esp+14h] [ebp-14h]
-  float v15; // [esp+14h] [ebp-14h]
-  float v16; // [esp+14h] [ebp-14h]
-  float aP2a; // [esp+18h] [ebp-10h]
-  float aP2; // [esp+18h] [ebp-10h]
-  float v19; // [esp+1Ch] [ebp-Ch]
-  float v20; // [esp+1Ch] [ebp-Ch]
-  float v21; // [esp+20h] [ebp-8h]
-  float v22; // [esp+24h] [ebp-4h]
-  float v23; // [esp+2Ch] [ebp+4h]
-  float v24; // [esp+2Ch] [ebp+4h]
-  int v25; // [esp+30h] [ebp+8h]
-
-  v12 = *a3 - *a2; /*0x5af566*/
-  *(float *)&v25 = a3[1] - a2[1]; /*0x5af570*/
-  v7 = a3[2] - a2[2]; /*0x5af577*/
-  v14 = v7; /*0x5af57a*/
-  v19 = v7 * v14; /*0x5af582*/
-  aP2a = v12 * v12; /*0x5af58e*/
-  v23 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(*(float *)&v25 * *(float *)&v25 + aP2a + v19)); /*0x5af5aa*/
-  v8 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(aP2a + v19)); /*0x5af5b9*/
-  if ( v23 == 0.0 ) /*0x5af5d0*/
-  {
-    v21 = 0.0; /*0x5af5ea*/
-    aP2 = 1.0; /*0x5af5f2*/
-  }
-  else
-  {
-    v21 = *(float *)&v25 / v23; /*0x5af5da*/
-    aP2 = v8 / v23; /*0x5af5e4*/
-  }
-  if ( v8 == 0.0 ) /*0x5af605*/
-  {
-    v20 = 0.0; /*0x5af621*/
-    v24 = 1.0; /*0x5af629*/
-  }
-  else
-  {
-    v20 = v12 / v8; /*0x5af60d*/
-    v24 = v14 / v8; /*0x5af617*/
-  }
-  *(_DWORD *)this = 1065353216; /*0x5af638*/
-  this->M4 = 0; /*0x5af63a*/
-  this->M8 = 0; /*0x5af63d*/
-  this->M12 = 0; /*0x5af640*/
-  this->M16 = 0; /*0x5af643*/
-  this->M20 = 1065353216; /*0x5af646*/
-  this->M24 = 0; /*0x5af649*/
-  this->M28 = 0; /*0x5af64c*/
-  this->M32 = 0; /*0x5af64f*/
-  this->M36 = 0; /*0x5af652*/
-  this->M40 = 1065353216; /*0x5af655*/
-  this->M44 = 0; /*0x5af658*/
-  v9 = *a2; /*0x5af65b*/
-  *(float *)(this + 12) = *a2; /*0x5af669*/
-  *(float *)(this + 28) = 0.0; /*0x5af677*/
-  *(float *)(this + 44) = 0.0; /*0x5af67a*/
-  v10 = v9 + 0.0; /*0x5af680*/
-  v15 = a2[1]; /*0x5af684*/
-  *(float *)(this + 12) = v10; /*0x5af68d*/
-  v16 = v15 + *(float *)(this + 28); /*0x5af697*/
-  *(float *)(this + 28) = v16; /*0x5af69b*/
-  v13 = (float)0.0 + 0.0; /*0x5af6ae*/
-  *(float *)(this + 44) = v13; /*0x5af6b2*/
-  v22 = a2[2]; /*0x5af6be*/
-  *(float *)(this + 12) = v10 + 0.0; /*0x5af6c4*/
-  *(float *)(this + 28) = v16 + 0.0; /*0x5af6d1*/
-  *(float *)(this + 44) = v13 + v22; /*0x5af6dc*/
-  sub_5AF120((float *)this, v20, v24); /*0x5af6df*/
-  aP1 = -v21; /*0x5af6f0*/
-  sub_5AF000((float *)this, (ObjectClass *)LODWORD(aP1), (ObjectClass *)LODWORD(aP2)); /*0x5af6f5*/
-  Matrix2D::Rotate((float *)this, a4); /*0x5af701*/
-}
-}
-
-// ==== BACKFILL 0x005AF980  MultiplyMatrix3x4  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-float * MultiplyMatrix3x4(ObjectClass * aP0, float * a1, float * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-float *__fastcall MultiplyMatrix3x4(ObjectClass *aP0, float *a1, float *a2)
-{
-  float *result; // eax
-  double v4; // st7
-  double v5; // st6
-  double v6; // st5
-  double v8; // st4
-  double v9; // st3
-  double v10; // st2
-  float v11; // esi
-  float v12; // [esp+8h] [ebp-68h]
-  float v13; // [esp+Ch] [ebp-64h]
-  float v14; // [esp+10h] [ebp-60h]
-  float v15; // [esp+14h] [ebp-5Ch]
-  float v16; // [esp+18h] [ebp-58h]
-  float v17; // [esp+1Ch] [ebp-54h]
-  float v18; // [esp+20h] [ebp-50h]
-  float v19; // [esp+24h] [ebp-4Ch]
-  float v20; // [esp+28h] [ebp-48h]
-  float v21; // [esp+2Ch] [ebp-44h]
-  float v22; // [esp+30h] [ebp-40h]
-  float v23; // [esp+34h] [ebp-3Ch]
-  float v24; // [esp+3Ch] [ebp-34h]
-  float v25[12]; // [esp+40h] [ebp-30h] BYREF
-  float a2a; // [esp+74h] [ebp+4h]
-
-  result = (float *)aP0; /*0x5af983*/
-  v14 = a1[4]; /*0x5af98a*/
-  v13 = a1[5]; /*0x5af991*/
-  v4 = *a1; /*0x5af998*/
-  v12 = a1[6]; /*0x5af99a*/
-  v5 = a1[1]; /*0x5af9a1*/
-  v6 = a1[2]; /*0x5af9a4*/
-  v17 = a1[8]; /*0x5af9a7*/
-  v16 = a1[9]; /*0x5af9ae*/
-  v15 = a1[10]; /*0x5af9b5*/
-  v8 = *a2; /*0x5af9bd*/
-  v9 = a2[4]; /*0x5af9bf*/
-  v10 = a2[8]; /*0x5af9c2*/
-  v19 = a2[1]; /*0x5af9d0*/
-  v22 = a2[2]; /*0x5af9dd*/
-  v24 = a2[3]; /*0x5af9e4*/
-  v18 = a2[5]; /*0x5af9ed*/
-  v21 = a2[6]; /*0x5af9f4*/
-  v11 = a2[7]; /*0x5af9f8*/
-  v25[0] = v10 * v6 + v9 * v5 + v8 * v4; /*0x5af9fb*/
-  a2a = a2[9]; /*0x5afa12*/
-  v20 = a2[10]; /*0x5afa1c*/
-  v23 = a2[11]; /*0x5afa28*/
-  v25[4] = v10 * v12 + v9 * v13 + v8 * v14; /*0x5afa2e*/
-  v25[8] = v10 * v15 + v9 * v16 + v8 * v17; /*0x5afa46*/
-  v25[1] = a2a * v6 + v18 * v5 + v19 * v4; /*0x5afa60*/
-  v25[5] = a2a * v12 + v18 * v13 + v19 * v14; /*0x5afa8b*/
-  v25[9] = a2a * v15 + v18 * v16 + v19 * v17; /*0x5afaab*/
-  v25[2] = v20 * v6 + v21 * v5 + v22 * v4; /*0x5afac5*/
-  v25[6] = v20 * v12 + v21 * v13 + v22 * v14; /*0x5afae5*/
-  v25[10] = v20 * v15 + v21 * v16 + v22 * v17; /*0x5afb05*/
-  v25[3] = v23 * v6 + v11 * v5 + v24 * v4 + a1[3]; /*0x5afb22*/
-  v25[7] = v23 * v12 + v11 * v13 + v24 * v14 + a1[7]; /*0x5afb4b*/
-  v25[11] = v23 * v15 + v11 * v16 + v24 * v17 + a1[11]; /*0x5afb6e*/
-  qmemcpy(result, v25, 0x30u); /*0x5afb72*/
-  return result; /*0x5afb74*/
 }
 }
 

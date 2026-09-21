@@ -11859,18 +11859,18 @@ char __thiscall SkirmishVector::PushBack(_DWORD *this, _DWORD *a2)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x5eee43*/
-  if ( *(this + 4) >= v3 ) /*0x5eee4b*/
+  v3 = this->q002; /*0x5eee43*/
+  if ( this->q004 >= v3 ) /*0x5eee4b*/
   {
     if ( !*((_BYTE *)this + 13) && v3 ) /*0x5eee56*/
       return 0; /*0x5eee56*/
-    v4 = *(this + 5); /*0x5eee58*/
+    v4 = this->q005; /*0x5eee58*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x5eee68*/
       return 0; /*0x5eee6f*/
   }
-  v6 = *(this + 4); /*0x5eee75*/
-  v7 = *(this + 1); /*0x5eee78*/
-  *(this + 4) = v6 + 1; /*0x5eee7e*/
+  v6 = this->q004; /*0x5eee75*/
+  v7 = this->q004; /*0x5eee78*/
+  this->q004 = v6 + 1; /*0x5eee7e*/
   *(_DWORD *)(v7 + 4 * v6) = *a2; /*0x5eee88*/
   return 1; /*0x5eee71*/
 }

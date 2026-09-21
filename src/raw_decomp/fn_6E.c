@@ -2399,9 +2399,9 @@ char __thiscall TActionClass::executeIronCurtainAction(int *this, int a2, int a3
   if ( v5 > *(_DWORD *)(a2 + 612) ) /*0x6e42ec*/
     return 0; /*0x6e42ec*/
   v6 = *(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * v5); /*0x6e42f4*/
-  if ( !*(_BYTE *)(v6 + 109) || (unsigned int)this->TActionClass_field_48 > 0x64 ) /*0x6e4303*/
+  if ( !*(_BYTE *)(v6 + 109) || (unsigned int)this->q012 > 0x64 ) /*0x6e4303*/
     return 0; /*0x6e4317*/
-  SuperClass::SetCharge(v6, this->TActionClass_field_48); /*0x6e430d*/
+  SuperClass::SetCharge(v6, this->q012); /*0x6e430d*/
   return 1; /*0x6e4314*/
 }
 
@@ -2416,7 +2416,7 @@ char __thiscall TActionClass::executeNukeAction(int *this, int a2, int a3, int a
   v5 = this->idxArray; /*0x6e4328*/
   if ( v5 < 0 || v5 > *(_DWORD *)(a2 + 612) ) /*0x6e433c*/
     return 0; /*0x6e4355*/
-  SuperClass::SetRechargeTime(*(_DWORD **)(*(_DWORD *)(a2 + 600) + 4 * v5), this->TActionClass_field_48); /*0x6e434b*/
+  SuperClass::SetRechargeTime(*(_DWORD **)(*(_DWORD *)(a2 + 600) + 4 * v5), this->q012); /*0x6e434b*/
   return 1; /*0x6e4352*/
 }
 
@@ -2850,7 +2850,7 @@ char __thiscall Tactical_42_::sub_6E49D0(void *this, int a2, _DWORD *a3)
         v5 = a2; /*0x6e4a16*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->vtable2 + 4 * i - 4) ) /*0x6e4a1c*/
         ++i; /*0x6e4a21*/
-      if ( this->__pad_034 ) /*0x6e4a2e*/
+      if ( *((_BYTE *)this + 13) ) /*0x6e4a2e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x6e4a39*/
         this->vtable2 = 0; /*0x6e4a41*/
@@ -2858,7 +2858,7 @@ char __thiscall Tactical_42_::sub_6E49D0(void *this, int a2, _DWORD *a3)
     }
     this->vtable2 = v4; /*0x6e4a4a*/
     this->vtable3 = a2; /*0x6e4a52*/
-    this->__pad_034 = a3 == 0; /*0x6e4a55*/
+    *((_BYTE *)this + 13) = a3 == 0; /*0x6e4a55*/
   }
   else
   {
@@ -3996,7 +3996,7 @@ char *__thiscall TagTypeClass::Construct(char *this, ObjectClass *aP1)
   if ( Destination != this + 100 ) /*0x6e5bd0*/
   {
     qmemcpy(this + 100, Destination, 0x30u); /*0x6e5bdc*/
-    *(this + 148) = v7; /*0x6e5bde*/
+    this->q094 = v7; /*0x6e5bde*/
   }
   this->q098 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6140]; /*0x6e5be6*/
   if ( *(int *)&MEMORY[0xB077F8].__pad_579C[6140] < *(int *)&MEMORY[0xB077F8].__pad_579C[6132] /*0x6e5c1e*/
@@ -7262,7 +7262,7 @@ char __thiscall sub_6EA3E0(void *this)
 
   v8 = this->TeamClass_field_7A; /*0x6ea3ec*/
   v2 = TeamClass::SumMemberCounts(*(int **)(this->buildingType + 228)); /*0x6ea3f6*/
-  v3 = this->totalObjects; /*0x6ea3fb*/
+  v3 = this->q012; /*0x6ea3fb*/
   if ( v3 > 0 ) /*0x6ea404*/
   {
     this->unknown79 = v3 == v2; /*0x6ea40d*/

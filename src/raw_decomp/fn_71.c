@@ -413,18 +413,18 @@ size_t __thiscall SortedStateVector::BinarySearch(char **this, IUnknown *aP1)
   int v6; // ecx
   ObjectClass *v7; // esi
 
-  result = (size_t)*(this + 1); /*0x7107e3*/
+  result = (size_t)this->q001; /*0x7107e3*/
   if ( result ) /*0x7107e8*/
   {
     if ( !*((_BYTE *)this + 12) ) /*0x7107ee*/
     {
       qsort(*this, result, 8u, sub_710860); /*0x710800*/
-      *(this + 4) = 0; /*0x710808*/
+      this->q004 = 0; /*0x710808*/
       *((_BYTE *)this + 12) = 1; /*0x71080f*/
     }
     v4 = (ObjectClass *)*this; /*0x710819*/
     v5 = (ObjectClass *)aP1->field_0; /*0x71081b*/
-    v6 = (int)*(this + 1); /*0x71081d*/
+    v6 = (int)this->q001; /*0x71081d*/
     if ( v6 <= 0 ) /*0x710822*/
       return 0; /*0x71084e*/
     while ( 1 ) /*0x71082b*/
@@ -636,7 +636,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->weapon1 = 0; /*0x710b14*/
   this->ImageAllocated = 0; /*0x710b1c*/
   this->align_A9 = 0; /*0x710b28*/
-  this->eliteWeapon2 = 0; /*0x710b2f*/
+  this->q0AA = 0; /*0x710b2f*/
   this->VoiceEnter = 0; /*0x710b36*/
   *(_DWORD *)(this + 686) = 0; /*0x710b3d*/
   *(_DWORD *)(this + 690) = 0; /*0x710b43*/
@@ -652,7 +652,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->threatAvoidValue = 0; /*0x710b82*/
   this->cloakable = 0; /*0x710b88*/
   this->q0B8 = 0; /*0x710b8e*/
-  this->trainable = 0; /*0x710b94*/
+  this->q0B9 = 0; /*0x710b94*/
   this->buildLimit = 0; /*0x710b9a*/
   *((_DWORD *)this + 187) = 0; /*0x710ba0*/
   this->ChargerTurrets = 0; /*0x710ba6*/
@@ -661,7 +661,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->q0C0 = -755914244; /*0x710bbc*/
   *((_DWORD *)this + 193) = 1063281229; /*0x710bc6*/
   this->AccelerationFactor = -343597384; /*0x710bd0*/
-  this->q30C = 1067366481; /*0x710bda*/
+  this->q0C3 = 1067366481; /*0x710bda*/
   this->q0C4 = 7; /*0x710be4*/
   VoxelAnimTypeVector::Constructor(0, 0); /*0x710bee*/
   this->TargetLaser = 0; /*0x710bf8*/
@@ -669,14 +669,14 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->DebrisTypes = &vt_TypeList_VoxelAnimTypeClass_const; /*0x710bfe*/
   VectorClass::Construct((_DWORD *)this + 204, 0, 0); /*0x710c0f*/
   *((_DWORD *)this + 209) = 10; /*0x710c14*/
-  this->__pad_034 = 0; /*0x710c17*/
+  *((_DWORD *)this + 208) = 0; /*0x710c17*/
   this->DebrisMaximums = &vt_TypeList_int; /*0x710c1a*/
   this->Locomotor = 1247291207; /*0x710c2d*/
   this->SuppressionThreshold = 298948665; /*0x710c39*/
   this->JumpjetCrash = -1610610249; /*0x710c42*/
   this->qD60 = -777003740; /*0x710c4b*/
   this->unknown_double_360 = 0; /*0x710c4e*/
-  this->__pad_D90 = 0; /*0x710c54*/
+  this->q364 = 0; /*0x710c54*/
   this->unknown_double_368 = 0; /*0x710c5a*/
   this->qDB0 = 0; /*0x710c60*/
   this->Weight = 0; /*0x710c6b*/
@@ -704,9 +704,9 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->FireAngle = 8; /*0x710d12*/
   this->PipScale = 0; /*0x710d1c*/
   this->PipsDrawForAll = 0; /*0x710d22*/
-  this->LeptonMindControlOffset = 70; /*0x710d28*/
+  this->q0F7 = 70; /*0x710d28*/
   this->PixelSelectionBracketDelta = 0; /*0x710d33*/
-  this->PipWrap = 0; /*0x710d40*/
+  this->q0F9 = 0; /*0x710d40*/
   VectorClass::BuildingTypeConstructor((_DWORD *)this + 250, 0, 0); /*0x710d46*/
   *((_DWORD *)this + 255) = 10; /*0x710d4b*/
   *((_DWORD *)this + 254) = 0; /*0x710d51*/
@@ -724,7 +724,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->q044 = 0; /*0x710db7*/
   this->q10C = &vt_TypeList_int; /*0x710dbd*/
   VectorClass::Construct((_DWORD *)this + 275, 0, 0); /*0x710dc7*/
-  *((_DWORD *)this + 280) = 10; /*0x710dd4*/
+  this->q046 = 10; /*0x710dd4*/
   *((_DWORD *)this + 279) = 0; /*0x710dda*/
   this->VoiceSelectDeactivated = &vt_TypeList_int; /*0x710de0*/
   VectorClass::Construct((_DWORD *)this + 282, 0, 0); /*0x710dea*/
@@ -753,7 +753,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->MoveSound = &vt_TypeList_int; /*0x710eb2*/
   VectorClass::Construct((_DWORD *)this + 324, 0, 0); /*0x710ebc*/
   *((_DWORD *)this + 329) = 10; /*0x710ec1*/
-  *((_DWORD *)this + 328) = 0; /*0x710ec7*/
+  this->q052 = 0; /*0x710ec7*/
   this->q144 = &vt_TypeList_int; /*0x710ecd*/
   this->AuxSound1 = -1; /*0x710ed7*/
   this->NoSpawnAlt = -1; /*0x710edd*/
@@ -785,14 +785,14 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->EnterGrinderSound = -1; /*0x710f81*/
   this->LeaveGrinderSound = -1; /*0x710f87*/
   this->EnterBioReactorSound = -1; /*0x710f8d*/
-  this->LeaveBioReactorSound = -1; /*0x710f93*/
+  this->q169 = -1; /*0x710f93*/
   this->ActivateSound = -1; /*0x710f99*/
-  this->DeactivateSound = -1; /*0x710f9f*/
-  this->MindClearedSound = -1; /*0x710fa5*/
-  this->MovementZone = 0; /*0x710fab*/
+  this->q16B = -1; /*0x710f9f*/
+  this->q16C = -1; /*0x710fa5*/
+  this->q16D = 0; /*0x710fab*/
   this->GuardRange = 0; /*0x710fb1*/
-  this->MinDebris = 0; /*0x710fb7*/
-  this->MaxDebris = 0; /*0x710fbd*/
+  this->q16F = 0; /*0x710fb7*/
+  this->q170 = 0; /*0x710fbd*/
   AnimTypeVector::Constructor((_DWORD *)this + 369, 0, 0); /*0x710fc3*/
   this->q1760 = 10; /*0x710fc8*/
   *((_DWORD *)this + 373) = 0; /*0x710fce*/
@@ -836,7 +836,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->SpeedType = a3; /*0x7110e0*/
   this->InitialAmmo = -1; /*0x7110e6*/
   this->Ammo = -1; /*0x7110ec*/
-  this->IFVMode = 0; /*0x7110f2*/
+  this->q1A2 = 0; /*0x7110f2*/
   this->AirRangeBonus = 0; /*0x7110f8*/
   this->BerserkFriendly = 0; /*0x7110fe*/
   this->SprayAttack = 0; /*0x711104*/
@@ -845,7 +845,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->Unnatural = 0; /*0x711116*/
   this->CloseRange = 0; /*0x71111c*/
   this->Reload = 0; /*0x711122*/
-  this->EmptyReload = -1; /*0x711128*/
+  this->q1A7 = -1; /*0x711128*/
   this->ReloadIncrement = 0; /*0x71112e*/
   this->RadialFireSegments = 0; /*0x711134*/
   this->DeployFireWeapon = 1; /*0x71113a*/
@@ -860,10 +860,10 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->DeployingAnim = 0; /*0x711175*/
   this->AttackFriendlies = 0; /*0x71117b*/
   this->AttackCursorOnFriendlies = 0; /*0x711181*/
-  this->UndeployDelay = -1; /*0x711187*/
+  this->q1B1 = -1; /*0x711187*/
   this->PreventAttackMove = 0; /*0x71118d*/
   this->OwnerFlags = 0; /*0x711193*/
-  this->__pad_1B4 = -1; /*0x71119e*/
+  this->AIBasePlanningSide = -1; /*0x71119e*/
   this->StupidHunt = 0; /*0x7111a4*/
   this->AllowedToStartInMultiplayer = 1; /*0x7111ac*/
   if ( &MEMORY[0x889F64] ) /*0x7111b9*/
@@ -1039,10 +1039,10 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->SecondSpawnOffset = 0x40000000; /*0x7115dd*/
   *((_DWORD *)this + 866) = 1041865114; /*0x7115e7*/
   *(this + 3468) = 0; /*0x7115f1*/
-  this->__pad_D90 = 40; /*0x7115f7*/
+  this->q364 = 40; /*0x7115f7*/
   this->JumpJet = 0; /*0x711601*/
   this->Crashable = 0; /*0x711607*/
-  *(this + 3480) = 0; /*0x71160d*/
+  this->q366 = 0; /*0x71160d*/
   *(this + 3481) = 1; /*0x711613*/
   *(this + 3482) = 1; /*0x71161a*/
   *(this + 3483) = 0; /*0x711621*/
@@ -6417,7 +6417,7 @@ int sub_717840()
 // ==== 0x00717880  HouseClass::HasPower  this=IUnknown  sig=csp ====
 BOOL __thiscall HouseClass_HasPower(_DWORD *this)
 {
-  return *(this + 514) > 0; /*0x71788d*/
+  return this->q202 > 0; /*0x71788d*/
 }
 
 
@@ -6711,7 +6711,7 @@ _DWORD *__thiscall sub_717C00(_DWORD *this, _DWORD *a2)
   if ( !v3 ) /*0x717c19*/
   {
     this->vtable2 = 0; /*0x717c5a*/
-    this->__pad_034 = 0; /*0x717c61*/
+    *((_BYTE *)this + 13) = 0; /*0x717c61*/
     return this; /*0x717c65*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x717c23*/
@@ -6720,7 +6720,7 @@ _DWORD *__thiscall sub_717C00(_DWORD *this, _DWORD *a2)
     return this; /*0x717c30*/
   v5 = this->vtable3; /*0x717c32*/
   v6 = 0; /*0x717c35*/
-  this->__pad_034 = 1; /*0x717c39*/
+  *((_BYTE *)this + 13) = 1; /*0x717c39*/
   if ( v5 <= 0 ) /*0x717c3d*/
     return this; /*0x717c3d*/
   do /*0x717c51*/
@@ -6754,7 +6754,7 @@ _DWORD *__thiscall TypeList_Particle_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_ParticleSystemTypeClass_const; /*0x717cb3*/
-  this->__pad_014 = 10; /*0x717cb9*/
+  *(this + 5) = 10; /*0x717cb9*/
   this->q010 = 0; /*0x717cc0*/
   return this; /*0x717cc9*/
 }
@@ -6830,7 +6830,7 @@ _DWORD *__thiscall VectorClass::CopyParticle(_DWORD *this, DynamicVector *aP1)
     }
   }
   this->q010 = aP1->field_10; /*0x717d91*/
-  this->__pad_014 = *(_DWORD *)aP1->__pad_14; /*0x717d97*/
+  *(this + 5) = *(_DWORD *)aP1->__pad_14; /*0x717d97*/
   *this = &vt_TypeList_ParticleSystemTypeClass_const; /*0x717d9a*/
   return this; /*0x717da2*/
 }
@@ -8798,7 +8798,7 @@ _DWORD *__thiscall TemporalClass::TemporalClass(_DWORD *this, TechnoClass *aP1)
   this->q02C = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x71a529*/
   this->TemporalClass_field_30 = v5; /*0x71a52c*/
   this->TemporalClass_field_34 = 0; /*0x71a52f*/
-  this->__pad_040 = 0; /*0x71a532*/
+  this->uniqueId = 0; /*0x71a532*/
   this->q044 = 0; /*0x71a535*/
   if ( *(int *)&stru_B05488.__pad_579C[16460] < *(int *)&stru_B05488.__pad_579C[16452] /*0x71a569*/
     || (stru_B05488.__pad_579C[16457] || !*(_DWORD *)&stru_B05488.__pad_579C[16452])
@@ -8972,11 +8972,11 @@ LABEL_10:
       v16 = *v15; /*0x71a864*/
       v17 = (*(int (__thiscall **)(int *, _DWORD))(*v15 + 740))(v15, 0); /*0x71a866*/
       v18 = (*(int (__thiscall **)(_DWORD, int))(v16 + 1016))(this->creationFrame, v17); /*0x71a870*/
-      v19 = this->q048; /*0x71a878*/
+      v19 = this->q012; /*0x71a878*/
       v20 = *(_DWORD *)(*(_DWORD *)v18 + 164); /*0x71a87b*/
       this->q04C = v20; /*0x71a881*/
       result = (void **)(v19 - (WarpPerStep + v20)); /*0x71a888*/
-      this->q048 = (int)result; /*0x71a88a*/
+      this->q012 = (int)result; /*0x71a88a*/
       if ( (int)result <= 0 )
       {
         if ( this->q028 ) /*0x71a895*/
@@ -9972,20 +9972,20 @@ TerrainClass *__thiscall TerrainClass::Construct(void **this, TerrainTypeClass *
   TerrainClass *aP2a; // [esp+24h] [ebp+8h]
 
   ObjectClass::ctor(this); /*0x71bb99*/
-  this->Animation = 0; /*0x71bba4*/
+  this->q02B = 0; /*0x71bba4*/
   this->q0B0 = 0; /*0x71bbaa*/
   v4 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x71bbb0*/
   this->height = 0; /*0x71bbb5*/
   this->Type = v4; /*0x71bbbb*/
   this->nextObject = 0; /*0x71bbc1*/
-  this->q0C4 = (void *)1; /*0x71bbc7*/
+  this->q031 = (void *)1; /*0x71bbc7*/
   this->q0C8 = aP1; /*0x71bbd4*/
   this->q0CC = 0; /*0x71bbda*/
   this->q0CD = 0; /*0x71bbe0*/
   this->attachedTag = 0; /*0x71bbe6*/
   this->q0D4 = 0; /*0x71bbec*/
   this->q0D8 = 0; /*0x71bbf2*/
-  this->q0DC = 0; /*0x71bbf8*/
+  this->q037 = 0; /*0x71bbf8*/
   *this = &TerrainClass::`vftable'; /*0x71bbff*/
   this->vtable2 = &off_7F5200; /*0x71bc05*/
   this->vtable3 = &TerrainClass::`vftable'; /*0x71bc0b*/
@@ -10070,20 +10070,20 @@ TerrainClass *__thiscall TerrainClass::Construct(void **this, TerrainTypeClass *
   TerrainClass *aP2a; // [esp+24h] [ebp+8h]
 
   ObjectClass::ctor(this); /*0x71bb99*/
-  this->Animation = 0; /*0x71bba4*/
+  this->q02B = 0; /*0x71bba4*/
   this->q0B0 = 0; /*0x71bbaa*/
   v4 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x71bbb0*/
   this->height = 0; /*0x71bbb5*/
   this->Type = v4; /*0x71bbbb*/
   this->nextObject = 0; /*0x71bbc1*/
-  this->q0C4 = (void *)1; /*0x71bbc7*/
+  this->q031 = (void *)1; /*0x71bbc7*/
   this->q0C8 = aP1; /*0x71bbd4*/
   this->q0CC = 0; /*0x71bbda*/
   this->q0CD = 0; /*0x71bbe0*/
   this->attachedTag = 0; /*0x71bbe6*/
   this->q0D4 = 0; /*0x71bbec*/
   this->q0D8 = 0; /*0x71bbf2*/
-  this->q0DC = 0; /*0x71bbf8*/
+  this->q037 = 0; /*0x71bbf8*/
   *this = &TerrainClass::`vftable'; /*0x71bbff*/
   this->vtable2 = &off_7F5200; /*0x71bc05*/
   this->vtable3 = &TerrainClass::`vftable'; /*0x71bc0b*/
@@ -10240,7 +10240,7 @@ char __userpurge TerrainClass::CheckNearbyObjects@<al>(int this@<ecx>, MouseClas
   v2 = (SmudgeClass *)aP1.field_0; /*0x71bfb4*/
   if ( !(unsigned __int8)ObjectClass::UpdateProductionDisplay((#374 *)this) ) /*0x71bfbc*/
     return 0; /*0x71c063*/
-  aP1.field_0 = *(_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)this + 440))(this, v8); /*0x71bfdf*/
+  aP1.field_0 = *(_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(this->q6E0)(this, v8); /*0x71bfdf*/
   if ( v2 ) /*0x71bfe3*/
   {
     if ( v2 == (SmudgeClass *)1 || v2 == (SmudgeClass *)3 ) /*0x71bfeb*/
@@ -10344,11 +10344,11 @@ void __thiscall TerrainClass::Draw(unsigned int *this, int *a2, int *a3)
   {
     if ( *(_BYTE *)(this->q0C8 + 691) ) /*0x71c1fe*/
     {
-      v7 = this->Animation; /*0x71c208*/
+      v7 = this->q02B; /*0x71c208*/
     }
     else if ( this->q0CD ) /*0x71c210*/
     {
-      v7 = *((unsigned __int8 *)this + 205) + this->Animation; /*0x71c225*/
+      v7 = *((unsigned __int8 *)this + 205) + this->q02B; /*0x71c225*/
     }
     else
     {
@@ -10418,7 +10418,7 @@ void __thiscall TerrainClass::_vt70(unsigned __int8 *this, int *a2, int *a3)
   int v15; // [esp+18h] [ebp-8h] BYREF
   int v16; // [esp+1Ch] [ebp-4h]
 
-  v14 = *(_DWORD *)(*(int (__thiscall **)(unsigned __int8 *, unsigned int *))(*(_DWORD *)this + 440))(this, &v13); /*0x71c384*/
+  v14 = *(_DWORD *)(*(int (__thiscall **)(unsigned __int8 *, unsigned int *))(this->q6E0)(this, &v13); /*0x71c384*/
   v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14); /*0x71c391*/
   v5 = (*(int (__thiscall **)(unsigned __int8 *))(this->health)(this); /*0x71c396*/
   if ( v5 ) /*0x71c39a*/
@@ -10426,7 +10426,7 @@ void __thiscall TerrainClass::_vt70(unsigned __int8 *this, int *a2, int *a3)
     v6 = this->q0CD; /*0x71c3a0*/
     v13 = 0; /*0x71c3a6*/
     if ( v6 ) /*0x71c3b0*/
-      v13 = v6 + this->Animation; /*0x71c3bf*/
+      v13 = v6 + this->q02B; /*0x71c3bf*/
     v7 = a2[1]; /*0x71c3c9*/
     v8 = *(_DWORD *)this; /*0x71c3cc*/
     v15 = *a2; /*0x71c3ce*/
@@ -10599,7 +10599,7 @@ char __thiscall TerrainClass::_vt95(void *this)
           this->Type = v2; /*0x71c715*/
           this->IsBurning = v4; /*0x71c71b*/
           this->height = 2; /*0x71c71e*/
-          this->Animation = 0; /*0x71c721*/
+          this->q02B = 0; /*0x71c721*/
           LOBYTE(v2) = v4; /*0x71c717*/
         }
       }
@@ -10738,7 +10738,7 @@ char __thiscall TerrainClass::ApplyCellModifications(#374 *this)
 
   if ( !this->inLimbo ) /*0x71c937*/
   {
-    v2 = *(_DWORD *)(*(int (__thiscall **)(#374 *, int *))(*(_DWORD *)this + 440))(this, &v13); /*0x71c956*/
+    v2 = *(_DWORD *)(*(int (__thiscall **)(#374 *, int *))(this->q6E0)(this, &v13); /*0x71c956*/
     v3 = 0; /*0x71c958*/
     v12 = v2; /*0x71c95a*/
     do /*0x71c9b8*/
@@ -10760,7 +10760,7 @@ char __thiscall TerrainClass::ApplyCellModifications(#374 *this)
     v7 = Coord::To_Cell(&MEMORY[0x87F7E8], v14); /*0x71c9e2*/
     v7[73] &= ~0x40u; /*0x71c9f6*/
   }
-  v11 = *(_DWORD *)(*(int (__thiscall **)(#374 *, int *))(*(_DWORD *)this + 440))(this, &v13); /*0x71ca0a*/
+  v11 = *(_DWORD *)(*(int (__thiscall **)(#374 *, int *))(this->q6E0)(this, &v13); /*0x71ca0a*/
   v8 = ObjectClass::Undeploy(this); /*0x71ca21*/
   v9 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v11); /*0x71ca23*/
   House::AnnounceUpgrade((int)v9, -1); /*0x71ca2a*/
@@ -11474,8 +11474,8 @@ _DWORD *__thiscall TerrainTypeClass::TerrainTypeClass(_DWORD *this, ObjectClass 
   this->Selectable = 0; /*0x71db18*/
   this->q234 = 1; /*0x71db1e*/
   this->q22F = 1; /*0x71db24*/
-  this->q231 = 0; /*0x71db2a*/
-  this->q232 = 1; /*0x71db30*/
+  this->LegalTarget = 0; /*0x71db2a*/
+  this->Insignificant = 1; /*0x71db30*/
   v3 = *(TerrainTypeClass **)&HouseClass_Player.__pad_5568[20596]; /*0x71db36*/
   if ( *(int *)&HouseClass_Player.__pad_5568[20596] < *(int *)&HouseClass_Player.__pad_5568[20588] /*0x71db74*/
     || (HouseClass_Player.__pad_5568[20593] || !*(_DWORD *)&HouseClass_Player.__pad_5568[20588])

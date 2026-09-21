@@ -175,12 +175,12 @@ char *__thiscall sub_770270(char *this, int a2)
   while ( v7 ); /*0x7702e2*/
   *((_DWORD *)this + 235) = Timer::GetTicks(); /*0x7702f6*/
   *((_DWORD *)this + 237) = 0; /*0x7702fc*/
-  *(this + 952) = 1; /*0x770305*/
-  *((_DWORD *)this + 239) = 0; /*0x77030c*/
+  this->q3B8 = 1; /*0x770305*/
+  this->__pad_3BC = 0; /*0x77030c*/
   VectorClass::WstringConstructor((_DWORD *)this + 240, 0, 0); /*0x770312*/
   this->q3C0 = &vt_DynamicVectorClass_Wstring; /*0x770317*/
   *((_DWORD *)this + 245) = 10; /*0x77031d*/
-  *((_DWORD *)this + 244) = 0; /*0x770324*/
+  this->__pad_03D = 0; /*0x770324*/
   *((_DWORD *)this + 246) = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
   String::Assign((char **)&a2, MEMORY[0x8491C4]); /*0x77033b*/
@@ -1050,7 +1050,7 @@ void __thiscall sub_7714B0(_DWORD *this, int a2, char a3, int a4)
 
   v5 = this->q0F4; /*0x7714c4*/
   v6 = v5 - 1; /*0x7714c6*/
-  if ( v5 > this->__pad_3BC ) /*0x7714c9*/
+  if ( v5 > this->q3BC ) /*0x7714c9*/
   {
     do /*0x77150b*/
     {
@@ -1064,9 +1064,9 @@ void __thiscall sub_7714B0(_DWORD *this, int a2, char a3, int a4)
       }
       v10 = v6--; /*0x771506*/
     }
-    while ( v10 > this->__pad_3BC ); /*0x77150b*/
+    while ( v10 > this->q3BC ); /*0x77150b*/
   }
-  if ( !this->__pad_3BC ) /*0x77150d*/
+  if ( !this->q3BC ) /*0x77150d*/
     this->q3B8 = 1; /*0x771517*/
   unknown_libname_73(v17); /*0x771522*/
   v11 = *this; /*0x77152b*/
@@ -1079,11 +1079,11 @@ void __thiscall sub_7714B0(_DWORD *this, int a2, char a3, int a4)
     {
       if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77157c*/
       {
-        *(this + 235) = Timer::GetTicks(); /*0x771598*/
+        this->q0EB = Timer::GetTicks(); /*0x771598*/
         this->q0EC = v17[2]; /*0x7715a2*/
-        *(this + 237) = a4; /*0x7715a5*/
+        this->q0ED = a4; /*0x7715a5*/
       }
-      v14 = *(this + 242); /*0x7715a8*/
+      v14 = this->q0F2; /*0x7715a8*/
       if ( this->q0F4 < v14 /*0x7715d9*/
         || (*((_BYTE *)this + 973) || !v14)
         && (v15 = this->q3D4, v15 > 0)
@@ -1094,7 +1094,7 @@ void __thiscall sub_7714B0(_DWORD *this, int a2, char a3, int a4)
         String::Reassign((char **)(this->__pad_3C4 + 4 * v16), (const char **)v17); /*0x7715f4*/
       }
       if ( a3 ) /*0x7715ff*/
-        ++this->__pad_3BC; /*0x771601*/
+        ++this->q3BC; /*0x771601*/
     }
   }
   DeleteAndZero(v17); /*0x77160b*/
@@ -1323,17 +1323,17 @@ signed int __thiscall Territory_WorldDominationTour_8_::_vt02(signed int *this)
   result = this->q004; /*0x771903*/
   if ( result != -1 ) /*0x771909*/
   {
-    v3 = this->q018; /*0x77190c*/
+    v3 = this->q006; /*0x77190c*/
     result = Timer::GetTicks() - this->q004; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {
-      this->q018 = 0; /*0x771934*/
+      this->q006 = 0; /*0x771934*/
       this->q004 = -1; /*0x771937*/
     }
     else
     {
       this->q004 = -1; /*0x771925*/
-      this->q018 = v3 - result; /*0x77192c*/
+      this->q006 = v3 - result; /*0x77192c*/
     }
   }
   return result; /*0x771930*/
@@ -1591,8 +1591,8 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   this->q11C = 0; /*0x771d2a*/
   this->q120 = 0; /*0x771d30*/
   *((_BYTE *)this + 289) = 0; /*0x771d36*/
-  *((_BYTE *)this + 290) = 0; /*0x771d3c*/
-  this->q123 = 0; /*0x771d42*/
+  this->q488 = 0; /*0x771d3c*/
+  this->__pad_48C = 0; /*0x771d42*/
   this->q124 = 0; /*0x771d48*/
   this->q128 = 0; /*0x771d60*/
   this->q12C = 0; /*0x771d78*/
@@ -1617,7 +1617,7 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   this->q148 = 0; /*0x771e16*/
   this->q149 = 0; /*0x771e1c*/
   this->q14A = 0; /*0x771e22*/
-  this->q14B = 0; /*0x771e28*/
+  this->q52C = 0; /*0x771e28*/
   this->q14C = 0; /*0x771e2e*/
   this->q14D = 0; /*0x771e34*/
   this->q14E = 10; /*0x771e3a*/
@@ -3266,8 +3266,8 @@ _DWORD *__thiscall WinModemClass::Construct(_DWORD *this)
 {
   *this = &WinModemClass::`vftable'; /*0x774128*/
   this->WinModemClass_field_0x24 = __2_YAPAXI_Z(0x2000); /*0x774133*/
-  *(this + 21) = 0; /*0x77413b*/
-  *(this + 22) = 0; /*0x77413e*/
+  this->q015 = 0; /*0x77413b*/
+  this->q016 = 0; /*0x77413e*/
   this->WinModemClass_field_0x14 = 0; /*0x774141*/
   *((_BYTE *)this + 81) = 0; /*0x774144*/
   this->q068 = 0; /*0x774147*/
@@ -3761,7 +3761,7 @@ int __thiscall WinModemClass::ReadBytes(void (**this)(), WinModemClass *aP1, Win
 
   if ( !WinModemClass::ReadSerial((int)this) ) /*0x774b37*/
     return 0; /*0x774ba9*/
-  v4 = (char *)*(this + 22) - (char *)*(this + 21); /*0x774b46*/
+  v4 = (char *)this->q016 - (char *)this->q015; /*0x774b46*/
   v5 = (WinModemClass *)(v4 + (v4 < 0 ? 0x2000 : 0));
   if ( (int)v5 > (int)aP2 ) /*0x774b56*/
     v5 = aP2; /*0x774b58*/
@@ -3773,13 +3773,13 @@ int __thiscall WinModemClass::ReadBytes(void (**this)(), WinModemClass *aP1, Win
     v8 = this->Member100; /*0x774b65*/
     if ( v8 ) /*0x774b6a*/
     {
-      if ( *((_BYTE *)this->WinModemClass_field_0x24 + (_DWORD)*(this + 21)) != 13 ) /*0x774b78*/
+      if ( *((_BYTE *)this->WinModemClass_field_0x24 + (_DWORD)this->q015) != 13 ) /*0x774b78*/
         v8(); /*0x774b7a*/
     }
     aP1 = (WinModemClass *)((char *)aP1 + 1); /*0x774b82*/
-    HIBYTE(aP1[-1].WinModemClass_field_0x38) = *((_BYTE *)this->WinModemClass_field_0x24 + (_DWORD)*(this + 21)); /*0x774b86*/
+    HIBYTE(aP1[-1].WinModemClass_field_0x38) = *((_BYTE *)this->WinModemClass_field_0x24 + (_DWORD)this->q015); /*0x774b86*/
     v7 = (WinModemClass *)((char *)v7 - 1); /*0x774b92*/
-    *(this + 21) = (void (*)())(((unsigned __int16)*(this + 21) + 1) & 0x1FFF); /*0x774b93*/
+    this->q015 = (void (*)())(((unsigned __int16)this->q015 + 1) & 0x1FFF); /*0x774b93*/
   }
   while ( v7 ); /*0x774b96*/
   return (int)v5->__pad_0; /*0x774b99*/
@@ -5388,7 +5388,7 @@ void *__thiscall sub_776EB0(void *this)
     this->isFallingDown = 1; /*0x776f11*/
   }
   strncpy((char *)this + 12, VersionInformation.szCSDVersion, 0x7Fu); /*0x776f22*/
-  *((_BYTE *)this + 139) = 0; /*0x776f2a*/
+  this->q08B = 0; /*0x776f2a*/
   return this; /*0x776f32*/
 }
 

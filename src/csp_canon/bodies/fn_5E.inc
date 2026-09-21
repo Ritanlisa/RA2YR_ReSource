@@ -279,63 +279,6 @@ int Network::SendOptionsGame()
 }
 }
 
-// ==== BACKFILL 0x005E3850  WOLobby_Play  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int INIClass::WOLobby_Play()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WOLobby_Play(INIClass *this)
-{
-  const char *v1; // edx
-  int v2; // ebx
-  int result; // eax
-  int i; // esi
-  char *v6; // eax
-  char v7[108]; // [esp+14h] [ebp-234h] BYREF
-  _DWORD v8[113]; // [esp+80h] [ebp-1C8h] BYREF
-  __int16 v9; // [esp+244h] [ebp-4h]
-  char v10; // [esp+246h] [ebp-2h]
-
-  v2 = (int)*(&g_MatrixTransformState + 2263); /*0x5e3857*/
-  if ( *(&g_MatrixTransformState + 2263) ) /*0x5e3864*/
-  {
-    memset(v7, 0, sizeof(v7)); /*0x5e3875*/
-    strcpy(&v7[36], this->__pad_0); /*0x5e3892*/
-    return (*(int (__stdcall **)(int, char *, const char *))(*(_DWORD *)v2 + 56))(v2, v7, v1); /*0x5e38a3*/
-  }
-  else
-  {
-    memset(v8, 0, sizeof(v8)); /*0x5e38c6*/
-    v9 = 0; /*0x5e38c8*/
-    v10 = 0; /*0x5e38ca*/
-    v8[0] = 24; /*0x5e38d5*/
-    strcpy((char *)&v8[1], &HouseClass_Player.__pad_5568[8396]); /*0x5e38f6*/
-    strcpy((char *)&v8[11] + 3, v1); /*0x5e3915*/
-    *(_DWORD *)&HouseClass_Player.__pad_5568[17731] = Session::GetPlayerColor(&HouseClass_Player.__pad_5568[8068]); /*0x5e392d*/
-    *(_DWORD *)&HouseClass_Player.__pad_5568[17735] = WideString::Hash((wchar_t *)&HouseClass_Player.__pad_5568[17244]); /*0x5e3937*/
-    result = *(_DWORD *)&HouseClass_Player.__pad_5568[18384]; /*0x5e393c*/
-    for ( i = 1; i < *(int *)&HouseClass_Player.__pad_5568[18384]; ++i ) /*0x5e3948*/
-    {
-      v6 = ToWideStringChar(*(IUnknown **)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * i)); /*0x5e3953*/
-      if ( !_strcmpi(v6, this) ) /*0x5e3959*/
-      {
-        Debug::Log(); /*0x5e3974*/
-        Network::SendMessage( /*0x5e39a0*/
-          (int)&HouseClass_Player.__pad_5568[22284],
-          (int)v8,
-          455,
-          1,
-          *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * i) + 40,
-          0,
-          0);
-        Event::Dispatch(); /*0x5e39a5*/
-      }
-      result = *(_DWORD *)&HouseClass_Player.__pad_5568[18384]; /*0x5e39aa*/
-    }
-  }
-  return result; /*0x5e38a6*/
-}
-}
-
 // ==== BACKFILL 0x005E70D0  SkirmishSetup_Setup_5E70D0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 WPARAM SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2)
 {
@@ -1120,17 +1063,6 @@ int VectorClass_cptr_MultiMission::j_vt09(unsigned char * a1, signed int a3, int
     *(char *)(a3 + 10 + this->field_50) = 13;
     WinModemClass::WriteSerial((int)g_ClipboardBuffer, (LPCVOID)this->field_50, (WinModemClass *)(a3 + 11));
     return 1;
-}
-}
-
-// ==== BACKFILL 0x005EF280  Struct::ZeroInitAndSetup_0_0  cls=NullModemConnClass  sig=csp  renamed_refs=0  residual=- ====
-int Struct::ZeroInitAndSetup_0_0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall Struct::ZeroInitAndSetup_0_0(NullModemConnClass *this)
-{
-  return Struct::ZeroInitAndSetup(this);
 }
 }
 

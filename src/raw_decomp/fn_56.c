@@ -991,7 +991,7 @@ char *__thiscall sub_565190(char *this, int a2)
   v3 = this + 80; /*0x565199*/
   *(_DWORD *)this = &off_7EA6FC; /*0x5651a0*/
   this->MapClass_field_0x10 = 0; /*0x5651a6*/
-  this->MapClass_field_0x14 = 0; /*0x5651a9*/
+  this->q005 = 0; /*0x5651a9*/
   RadarClass::drawRadarTerrain((_DWORD *)this + 20, 0, 0); /*0x5651ac*/
   *v3 = &DynamicVectorClass<ZoneConnectionClass>::`vftable'; /*0x5651b1*/
   v3[5] = 10; /*0x5651b7*/
@@ -1010,9 +1010,9 @@ char *__thiscall sub_565190(char *this, int a2)
   while ( v5 ); /*0x5651e9*/
   VectorClass::CellConstructor((_DWORD *)this + 53, 0, 0); /*0x5651f5*/
   this->MapClass_field_0xD4 = &vt_DynamicVectorClass_Cell; /*0x5651ff*/
-  *((_DWORD *)this + 58) = 10; /*0x565205*/
+  this->q03A = 10; /*0x565205*/
   *((_DWORD *)this + 57) = 0; /*0x565208*/
-  this->MaxLevel = &vt_VectorClass_CellClass; /*0x56520b*/
+  this->__pad_04E = &vt_VectorClass_CellClass; /*0x56520b*/
   v6 = this + 356; /*0x565215*/
   v7 = 256; /*0x56521b*/
   do /*0x56522b*/
@@ -1046,7 +1046,7 @@ char *__thiscall sub_565190(char *this, int a2)
     --v11; /*0x5652a1*/
   }
   while ( v11 ); /*0x5652a5*/
-  this->MapClass_field_0x14 = 0; /*0x5652a7*/
+  this->q005 = 0; /*0x5652a7*/
   return this; /*0x5652ac*/
 }
 
@@ -1071,18 +1071,18 @@ void __thiscall MapClass_Destructor(char *this)
   Map_Destroy(); /*0x5652d0*/
   BuildingClass::FreeUpgradeQueue(); /*0x5652d5*/
   BuildingClass::FreeUpgradeQueue2(); /*0x5652da*/
-  if ( this->somecount_4C ) /*0x5652df*/
+  if ( this->q01A ) /*0x5652df*/
   {
     __3_YAXPAX_Z(*((void **)this + 26)); /*0x5652e9*/
-    this->somecount_4C = 0; /*0x5652f1*/
+    this->q01A = 0; /*0x5652f1*/
   }
-  v2 = (_DWORD *)this->MapClass_field_0x14; /*0x5652f6*/
+  v2 = (_DWORD *)this->q005; /*0x5652f6*/
   if ( v2 ) /*0x5652fb*/
   {
     if ( *v2 ) /*0x5652fd*/
       (**(void (__thiscall ***)(_DWORD, int))*v2)(*v2, 3); /*0x565307*/
     __3_YAXPAX_Z(v2); /*0x56530a*/
-    this->MapClass_field_0x14 = 0; /*0x565312*/
+    this->q005 = 0; /*0x565312*/
   }
   if ( this->q01C ) /*0x565315*/
   {
@@ -1114,12 +1114,12 @@ void __thiscall MapClass_Destructor(char *this)
   }
   this->q1169 = 0; /*0x56538f*/
   this->MapClass_field_0x1164 = 0; /*0x565395*/
-  v6 = (void *)this->MapClass_field_0x13C; /*0x56539b*/
-  this->MaxLevel = &vt_VectorClass_CellClass; /*0x5653a1*/
+  v6 = (void *)this->q04F; /*0x56539b*/
+  this->__pad_04E = &vt_VectorClass_CellClass; /*0x5653a1*/
   if ( v6 && this->q145 ) /*0x5653af*/
   {
     __3_YAXPAX_Z(v6); /*0x5653b8*/
-    this->MapClass_field_0x13C = 0; /*0x5653c0*/
+    this->q04F = 0; /*0x5653c0*/
   }
   this->q145 = 0; /*0x5653c6*/
   this->MapClass_field_0x50 = 0; /*0x5653cc*/
@@ -1131,7 +1131,7 @@ void __thiscall MapClass_Destructor(char *this)
     this->q0D8 = 0; /*0x5653f3*/
   }
   this->q0E1 = 0; /*0x5653f9*/
-  this->MapClass_field_0xDC = 0; /*0x5653ff*/
+  this->q037 = 0; /*0x5653ff*/
   v8 = this + 212; /*0x565405*/
   v9 = 3; /*0x56540b*/
   do /*0x56543a*/
@@ -1173,7 +1173,7 @@ _DWORD *__thiscall HexCoord::Convert(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
   v3 = this->q0FC + aP2->field_0; /*0x5654ba*/
   v4 = this->q010 + aP2->field_4; /*0x5654bf*/
   v5 = v4 + 1; /*0x5654c2*/
-  v6 = (v4 >> 1) + *(this + 61); /*0x5654c9*/
+  v6 = (v4 >> 1) + this->q03D; /*0x5654c9*/
   aP1->field_0 = v3 + (v5 >> 1); /*0x5654d3*/
   aP1->field_4 = v6 - v3; /*0x5654d5*/
   return &aP1->field_0; /*0x5654c1*/
@@ -1214,7 +1214,7 @@ _DWORD *__thiscall CellClass::GetScreenCenterOffset(_DWORD *this, MouseClass *aP
   void *v8; // esi
   int v10; // [esp+14h] [ebp-4h]
 
-  v3 = *(this + 61); /*0x56552a*/
+  v3 = this->q03D; /*0x56552a*/
   v10 = this->q010; /*0x565530*/
   v4 = this->q0FC; /*0x565539*/
   v5 = a2[1]; /*0x565540*/
@@ -1310,7 +1310,7 @@ void *__thiscall Coord::To_Cell(_DWORD *this, IUnknown *aP1)
 
   v2 = aP1->field_4 / 256; /*0x56574f*/
   v3 = aP1->field_0 / 256 + (v2 << 9); /*0x56575a*/
-  if ( v3 >= 0 && v3 < *(this + 80) ) /*0x565764*/
+  if ( v3 >= 0 && v3 < this->q050 ) /*0x565764*/
   {
     v4 = *(void **)(this->Coord_field_0x13C + 4 * v3); /*0x56576c*/
     if ( v4 ) /*0x565771*/
@@ -1330,7 +1330,7 @@ void *__thiscall CellCoord_To_CellObj(_DWORD *this, __int16 *a2)
   void *result; // eax
 
   v2 = *a2 + (a2[1] << 9); /*0x5657af*/
-  if ( v2 >= 0x40000 || (result = *(void **)(*(this + 79) + 4 * v2)) == 0 ) /*0x5657c6*/
+  if ( v2 >= 0x40000 || (result = *(void **)(this->q04F + 4 * v2)) == 0 ) /*0x5657c6*/
   {
     g_Map_GlobalCellIndex = *(_DWORD *)a2; /*0x5657cf*/
     return &g_CellClassArray; /*0x5657ca*/
@@ -1587,7 +1587,7 @@ int __thiscall MapClass_FreeAllCells(int *this)
 
   for ( i = 0; i < this->MapClass_field_0x50; ++i ) /*0x565b0e*/
   {
-    v3 = *(_DWORD *)(this->MapClass_field_0x13C + 4 * i); /*0x565b16*/
+    v3 = *(_DWORD *)(this->q04F + 4 * i); /*0x565b16*/
     if ( v3 ) /*0x565b1b*/
     {
       *(_DWORD *)(v3 + 44) = 0; /*0x565b1d*/
@@ -1596,19 +1596,19 @@ int __thiscall MapClass_FreeAllCells(int *this)
   }
   for ( j = 0; j < this->MapClass_field_0x50; ++j ) /*0x565b39*/
   {
-    v5 = *(_DWORD *)(this->MapClass_field_0x13C + 4 * j); /*0x565b41*/
+    v5 = *(_DWORD *)(this->q04F + 4 * j); /*0x565b41*/
     if ( v5 ) /*0x565b46*/
     {
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v5 + 32))(v5, 1); /*0x565b4c*/
-      *(_DWORD *)(this->MapClass_field_0x13C + 4 * j) = 0; /*0x565b55*/
+      *(_DWORD *)(this->q04F + 4 * j) = 0; /*0x565b55*/
     }
   }
   ReturnFalse2(0, 1); /*0x565b67*/
   result = this->MapClass_field_0x50; /*0x565b6c*/
   if ( result < 0x40000 ) /*0x565b78*/
   {
-    (*(void (__thiscall **)(int *, int, _DWORD))(this->MaxLevel + 8))(this + 78, 0x40000, 0); /*0x565b8c*/
-    for ( result = 0; result < this->MapClass_field_0x50; *(_DWORD *)(this->MapClass_field_0x13C + 4 * result - 4) = 0 ) /*0x565b99*/
+    (*(void (__thiscall **)(int *, int, _DWORD))(this->__pad_04E + 8))(this + 78, 0x40000, 0); /*0x565b8c*/
+    for ( result = 0; result < this->MapClass_field_0x50; *(_DWORD *)(this->q04F + 4 * result - 4) = 0 ) /*0x565b99*/
       ++result; /*0x565ba1*/
   }
   return result; /*0x565bb0*/
@@ -1810,7 +1810,7 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
   int v160; // [esp+6Ah] [ebp-8h]
   int n; // [esp+6Eh] [ebp-4h]
 
-  v158 = this->MapClass_field_0xF4;
+  v158 = this->q03D;
   v159 = g_MapSeedState;
   v6 = 0;
   v7 = 0;
@@ -1825,12 +1825,12 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
     do
     {
       v8 = v6 % 512;
-      v9 = this->MapClass_field_0xF4;
+      v9 = this->q03D;
       v10 = (__int16)(v6 / 512);
       v11 = v8 + v10;
       if ( v11 <= v9 || v8 - v10 >= v9 || v10 - v8 >= v9 || v11 > v9 + 2 * this->q0F8 )
       {
-        v12 = *(_DWORD *)(this->MapClass_field_0x13C + 4 * v6);
+        v12 = *(_DWORD *)(this->q04F + 4 * v6);
         if ( v12 )
           *(_BYTE *)(v12 + 283) = a4;
       }
@@ -1843,11 +1843,11 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
   {
     Block = __2_YAPAXI_Z(328 * v158 * i);
     v156 = (int)Block;
-    v13 = this->MapClass_field_0xF4;
-    this->q10C = 1;
+    v13 = this->q03D;
+    this->q043 = 1;
     this->CellIterator_NextY = v13;
     this->CellIterator_CurrentY = v13 - 1;
-    this->CellIterator_NextCell = (v13 << 11) + this->MapClass_field_0x13C + 4;
+    this->CellIterator_NextCell = (v13 << 11) + this->q04F + 4;
     Bit = LayerClass::CellIteratorNext(this);
     v159 = *(_DWORD *)(Bit + 36);
     if ( Bit )
@@ -2002,23 +2002,23 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
   v48 = a2;
   v49 = a2;
   v50 = 0;
-  this->MapClass_field_0xEC = *a2;
+  this->q03B = *a2;
   this->q03C = v49[1];
-  this->MapClass_field_0xF4 = v49[2];
+  this->q03D = v49[2];
   this->q0F8 = v49[3];
-  v51 = this->MapClass_field_0xF4;
-  this->MapClass_field_0xEC = 0;
+  v51 = this->q03D;
+  this->q03B = 0;
   this->q03C = 0;
   if ( v51 > 63 || this->q0F8 > 63 )
     MEMORY[0x880C74] = 2;
   g_MapCellHeight_Value = MEMORY[0x87F8DC];
   v153 = 0;
   g_MapCellCount = MEMORY[0x87F8DC] + 2 * MEMORY[0x87F8E0];
-  this->MapCoordBounds = 1;
-  this->MapClass_field_0x128 = 1;
+  this->q049 = 1;
+  this->q04A = 1;
   v52 = v48[3] + v48[2] - 1;
   this->__pad_12C = v52;
-  this->__pad_04C = v52;
+  this->MapClass_field_0x130 = v52;
   if ( 2 * v52 + 2 > 0 )
   {
     *(_DWORD *)v150 = 0;
@@ -2033,14 +2033,14 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
           LOWORD(v147) = v53;
           HIWORD(v147) = v50;
           v54 = (__int16)v53 + v146[0];
-          v55 = this->MapClass_field_0xF4;
+          v55 = this->q03D;
           if ( v54 > v55
             && (__int16)v53 - v146[0] < v55
             && v146[0] - (__int16)v53 < v55
             && v54 <= v55 + 2 * this->q0F8 )
           {
             v56 = *(_DWORD *)v150 + v53;
-            v57 = *(_DWORD **)(this->MapClass_field_0x13C + 4 * (*(_DWORD *)v150 + v53));
+            v57 = *(_DWORD **)(this->q04F + 4 * (*(_DWORD *)v150 + v53));
             if ( v57 )
             {
               CellClass::Construct(v57);
@@ -2054,10 +2054,10 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
               else
                 v59 = 0;
               ObjectClass::SetMember09(&v147);
-              *(_DWORD *)(this->MapClass_field_0x13C + 4 * v56) = v59;
+              *(_DWORD *)(this->q04F + 4 * v56) = v59;
               v50 = v153;
             }
-            *(_BYTE *)(*(_DWORD *)(this->MapClass_field_0x13C + 4 * v56) + 283) = a4;
+            *(_BYTE *)(*(_DWORD *)(this->q04F + 4 * v56) + 283) = a4;
           }
           ++v53;
         }
@@ -2066,16 +2066,16 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
       v153 = ++v50;
       *(_DWORD *)v150 += 512;
     }
-    while ( v50 < 2 * this->__pad_04C + 2 );
+    while ( v50 < 2 * this->MapClass_field_0x130 + 2 );
   }
   v145 = 0;
   if ( (_BYTE)jj )
     goto LABEL_119;
-  v60 = this->MapClass_field_0xF4;
-  this->q10C = 1;
+  v60 = this->q03D;
+  this->q043 = 1;
   this->CellIterator_NextY = v60;
   this->CellIterator_CurrentY = v60 - 1;
-  this->CellIterator_NextCell = (v60 << 11) + this->MapClass_field_0x13C + 4;
+  this->CellIterator_NextCell = (v60 << 11) + this->q04F + 4;
   v61 = *(_DWORD *)(LayerClass::CellIteratorNext(this) + 36);
   v62 = a2[1];
   v63 = *a2;
@@ -2098,7 +2098,7 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
       HIWORD(jj) = v150[1] + HIWORD(v159);
       v65 = (char *)(v64 - 9);
       v66 = (__int16)(v159 + v150[0]) + ((__int16)(v150[1] + HIWORD(v159)) << 9);
-      if ( v66 < 0x40000 && (v67 = *(char **)(this->MapClass_field_0x13C + 4 * v66)) != 0 )
+      if ( v66 < 0x40000 && (v67 = *(char **)(this->q04F + 4 * v66)) != 0 )
       {
         v68 = v67;
       }
@@ -2254,15 +2254,15 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
     }
     while ( v153 );
   }
-  v100 = this->MapClass_field_0xF4;
-  this->q10C = 1;
+  v100 = this->q03D;
+  this->q043 = 1;
   this->CellIterator_NextY = v100;
   this->CellIterator_CurrentY = v100 - 1;
-  this->CellIterator_NextCell = (v100 << 11) + this->MapClass_field_0x13C + 4;
+  this->CellIterator_NextCell = (v100 << 11) + this->q04F + 4;
   for ( j = LayerClass::CellIteratorNext(this); j; j = LayerClass::CellIteratorNext(this) )
   {
     v102 = *(_DWORD *)(j + 36);
-    v103 = this->MapClass_field_0xF4;
+    v103 = this->q03D;
     jj = v102;
     v104 = a2[1];
     v156 = v102;
@@ -2272,7 +2272,7 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
       || (__int16)v102 - SHIWORD(v102) > v103 + 2 * (v158 - *a2 - MEMORY[0x87F8DC]) - 1 )
     {
       v105 = (__int16)v102 + (SHIWORD(v102) << 9);
-      v106 = *(_DWORD *)(this->MapClass_field_0x13C + 4 * v105);
+      v106 = *(_DWORD *)(this->q04F + 4 * v105);
       if ( v106 )
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v106 + 32))(v106, 1);
       v107 = __2_YAPAXI_Z(0x148u);
@@ -2280,13 +2280,13 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
         v108 = CellClass::Construct(v107);
       else
         v108 = 0;
-      *(_DWORD *)(this->MapClass_field_0x13C + 4 * v105) = v108;
+      *(_DWORD *)(this->q04F + 4 * v105) = v108;
       ObjectClass::SetMember09(&v156);
-      *(_DWORD *)(*(_DWORD *)(this->MapClass_field_0x13C + 4 * v105) + 56) = 0xFFFF;
-      *(_BYTE *)(*(_DWORD *)(this->MapClass_field_0x13C + 4 * v105) + 282) = 0;
-      *(_BYTE *)(*(_DWORD *)(this->MapClass_field_0x13C + 4 * v105) + 284) = 0;
-      *(_DWORD *)(*(_DWORD *)(this->MapClass_field_0x13C + 4 * v105) + 68) = -1;
-      *(_BYTE *)(*(_DWORD *)(this->MapClass_field_0x13C + 4 * v105) + 283) = a4;
+      *(_DWORD *)(*(_DWORD *)(this->q04F + 4 * v105) + 56) = 0xFFFF;
+      *(_BYTE *)(*(_DWORD *)(this->q04F + 4 * v105) + 282) = 0;
+      *(_BYTE *)(*(_DWORD *)(this->q04F + 4 * v105) + 284) = 0;
+      *(_DWORD *)(*(_DWORD *)(this->q04F + 4 * v105) + 68) = -1;
+      *(_BYTE *)(*(_DWORD *)(this->q04F + 4 * v105) + 283) = a4;
     }
   }
   for ( k = 0; k < 702; ++k )
@@ -2364,7 +2364,7 @@ void __thiscall sub_565C10(int *this, _DWORD *a2, int jj, char a4, char a5)
                               0); *kk != 0x7FFF || kk[1] != 0x7FFF; kk += 2 )
         {
           v128 = (__int16)(*kk + (_WORD)a2);
-          v129 = this->MapClass_field_0xF4;
+          v129 = this->q03D;
           v130 = (__int16)(HIWORD(a2) + kk[1]);
           if ( v130 + v128 <= v129 )
             goto LABEL_93;
@@ -2393,14 +2393,14 @@ LABEL_93:
   {
     do
     {
-      v133 = this->MapClass_field_0x13C;
+      v133 = this->q04F;
       v134 = *(_DWORD *)(v133 + 4 * v132);
       a2 = (_DWORD *)(v133 + 4 * v132);
       jj = v134;
       if ( v134 )
       {
         v135 = v132 % 512;
-        v136 = this->MapClass_field_0xF4;
+        v136 = this->q03D;
         v137 = (__int16)(v132 / 512);
         v138 = v135 + v137;
         if ( v138 > v136 )
@@ -2415,11 +2415,11 @@ LABEL_93:
     }
     while ( ++v132 < this->MapClass_field_0x50 );
   }
-  v139 = this->MapClass_field_0xF4;
-  this->q10C = 1;
+  v139 = this->q03D;
+  this->q043 = 1;
   this->CellIterator_NextY = v139;
   this->CellIterator_CurrentY = v139 - 1;
-  this->CellIterator_NextCell = (v139 << 11) + this->MapClass_field_0x13C + 4;
+  this->CellIterator_NextCell = (v139 << 11) + this->q04F + 4;
   for ( mm = (_DWORD *)LayerClass::CellIteratorNext(this); mm; mm = (_DWORD *)LayerClass::CellIteratorNext(this) )
   {
     v141 = mm[80];
@@ -2550,27 +2550,27 @@ int __thiscall ShroudClass::UpdateVisibility(int *this, MouseClass *aP1)
   v3 = this + 63; /*0x56724b*/
   v4 = ClipRectIntersection(v17, &aP1->field_0, this + 59, 0, 0); /*0x567251*/
   *v3 = *v4; /*0x56725a*/
-  this->__pad_040 = v4[1]; /*0x56725f*/
-  this->q104 = v4[2]; /*0x567265*/
-  this->MapClass_field_0x108 = v4[3]; /*0x56726b*/
+  this->MapClass_field_0x100 = v4[1]; /*0x56725f*/
+  this->__pad_041 = v4[2]; /*0x567265*/
+  this->q042 = v4[3]; /*0x56726b*/
   v5 = *v3; /*0x56726e*/
   if ( *v3 <= 2 ) /*0x567273*/
     v5 = 2; /*0x567275*/
-  v6 = this->__pad_040; /*0x56727a*/
+  v6 = this->MapClass_field_0x100; /*0x56727a*/
   *v3 = v5; /*0x567280*/
   if ( v6 <= 2 ) /*0x567285*/
     v6 = 2; /*0x567287*/
-  v7 = this->MapClass_field_0xF4; /*0x56728c*/
-  this->__pad_040 = v6; /*0x567292*/
+  v7 = this->q03D; /*0x56728c*/
+  this->MapClass_field_0x100 = v6; /*0x567292*/
   v8 = v7 - v5 - 2; /*0x56729a*/
-  if ( this->q104 < v8 ) /*0x5672a5*/
-    v8 = this->q104; /*0x5672a7*/
-  v9 = this->MapClass_field_0x108; /*0x5672a9*/
-  this->q104 = v8; /*0x5672af*/
+  if ( this->__pad_041 < v8 ) /*0x5672a5*/
+    v8 = this->__pad_041; /*0x5672a7*/
+  v9 = this->q042; /*0x5672a9*/
+  this->__pad_041 = v8; /*0x5672af*/
   v10 = this->q0F8 - v6 - 6; /*0x5672bd*/
   if ( v9 < v10 ) /*0x5672c2*/
     v10 = v9; /*0x5672c4*/
-  this->MapClass_field_0x108 = v10; /*0x5672cd*/
+  this->q042 = v10; /*0x5672cd*/
   MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2); /*0x5672d3*/
   result = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[412]; /*0x5672d8*/
   for ( i = 0; i < *(int *)&MEMORY[0xA8D63C].__pad_14B0[412]; ++i ) /*0x5672e1*/
@@ -2769,7 +2769,7 @@ LABEL_22:
         if ( (__int16)Math::RoundToInt(v26) > (int)aP2 ) /*0x5676f0*/
           continue; /*0x5676f0*/
         v27 = v44[0] + (v44[1] << 9); /*0x567707*/
-        if ( v27 < 0x40000 && (v28 = *(int **)(this->q13C + 4 * v27)) != 0 ) /*0x56771e*/
+        if ( v27 < 0x40000 && (v28 = *(int **)(this->q04F + 4 * v27)) != 0 ) /*0x56771e*/
         {
           v29 = v28; /*0x567720*/
         }
@@ -3014,7 +3014,7 @@ LABEL_27:
         if ( (__int16)Math::RoundToInt(v33) <= (int)aP2 ) /*0x567c0a*/
         {
           v34 = v49[0] + (v49[1] << 9); /*0x567c21*/
-          if ( v34 < 0x40000 && (v35 = *(_DWORD **)(this->q13C + 4 * v34)) != 0 ) /*0x567c38*/
+          if ( v34 < 0x40000 && (v35 = *(_DWORD **)(this->q04F + 4 * v34)) != 0 ) /*0x567c38*/
           {
             v36 = v35; /*0x567c3a*/
           }
@@ -3387,7 +3387,7 @@ bool __thiscall LayerClass::CoordinatesLegal(_DWORD *this, IUnknown *aP1)
   int v3; // esi
   int v4; // eax
 
-  v2 = *(this + 61); /*0x568304*/
+  v2 = this->q03D; /*0x568304*/
   v3 = SLOWORD(aP1->field_0); /*0x56830c*/
   v4 = SHIWORD(aP1->field_0); /*0x56830f*/
   return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * this->q0F8; /*0x568337*/
@@ -4842,7 +4842,7 @@ ObjectClass *__thiscall PlaceTerrainCliffsRegion(ObjectClass **this)
   int v42; // [esp+30h] [ebp-8h] BYREF
   int v43; // [esp+34h] [ebp-4h] BYREF
 
-  result = this->q128; /*0x56a086*/
+  result = this->q04A; /*0x56a086*/
   v3 = (ObjectClass *)((char *)this->q04C + (_DWORD)result); /*0x56a092*/
   v33 = result; /*0x56a094*/
   if ( (int)result < (int)v3 ) /*0x56a09a*/
@@ -4851,7 +4851,7 @@ ObjectClass *__thiscall PlaceTerrainCliffsRegion(ObjectClass **this)
     v5 = *(AbstractClass **)&MEMORY[0xA8D63C].__pad_579C[57936]; /*0x56a0a9*/
     do /*0x56a4ab*/
     {
-      v6 = this->q124; /*0x56a0af*/
+      v6 = this->q049; /*0x56a0af*/
       v7 = (ObjectClass *)((char *)this->q12C + (_DWORD)v6); /*0x56a0bb*/
       v32 = v6; /*0x56a0bd*/
       if ( (int)v6 < (int)v7 ) /*0x56a0c3*/
@@ -4860,7 +4860,7 @@ ObjectClass *__thiscall PlaceTerrainCliffsRegion(ObjectClass **this)
         v34 = v8; /*0x56a0cf*/
         while ( 1 ) /*0x56a0dd*/
         {
-          v9 = (int)this->q13C; /*0x56a0dd*/
+          v9 = (int)this->q04F; /*0x56a0dd*/
           HIWORD(v31) = (_WORD)result; /*0x56a0e3*/
           LOWORD(v31) = (_WORD)v6; /*0x56a0ed*/
           if ( *(_DWORD *)(v9 + 4 * ((_DWORD)v8 + (__int16)v6)) ) /*0x56a0f2*/
@@ -4987,7 +4987,7 @@ ObjectClass *__thiscall PlaceTerrainCliffsRegion(ObjectClass **this)
             v6 = v32; /*0x56a473*/
           }
           v6 = (ObjectClass *)((char *)v6 + 1); /*0x56a483*/
-          v29 = (int)&(this->q12C)->__pad_0[(_DWORD)this->q124]; /*0x56a484*/
+          v29 = (int)&(this->q12C)->__pad_0[(_DWORD)this->q049]; /*0x56a484*/
           v32 = v6; /*0x56a488*/
           if ( (int)v6 >= v29 ) /*0x56a48c*/
             break; /*0x56a48c*/
@@ -4997,7 +4997,7 @@ ObjectClass *__thiscall PlaceTerrainCliffsRegion(ObjectClass **this)
         result = v33; /*0x56a492*/
       }
       result = (ObjectClass *)((char *)result + 1); /*0x56a4a2*/
-      v30 = (ObjectClass *)((char *)this->q04C + (_DWORD)this->q128); /*0x56a4a3*/
+      v30 = (ObjectClass *)((char *)this->q04C + (_DWORD)this->q04A); /*0x56a4a3*/
       v33 = result; /*0x56a4a7*/
     }
     while ( (int)result < (int)v30 ); /*0x56a4ab*/
@@ -5070,17 +5070,17 @@ void __userpurge FlattenCliffMap(int *this@<ecx>, IUnknown aP0)
         {
           v7 = (_WORD)v32 + v2[1]; /*0x56a50e*/
           LOWORD(v34) = v4 + *v2; /*0x56a519*/
-          v8 = this->q124; /*0x56a51e*/
+          v8 = this->q049; /*0x56a51e*/
           HIWORD(v34) = v7; /*0x56a524*/
           aP0.field_0 = (int)v34; /*0x56a52f*/
           if ( (__int16)v34 >= v8 && (__int16)v34 <= this->q12C + v8 ) /*0x56a541*/
           {
             v9 = v7; /*0x56a547*/
-            v10 = this->q128; /*0x56a54a*/
+            v10 = this->q04A; /*0x56a54a*/
             if ( v9 >= v10 && v9 <= this->q04C + v10 ) /*0x56a560*/
             {
               v11 = (__int16)v34 + (v9 << 9); /*0x56a56f*/
-              if ( *(_DWORD *)(this->q13C + 4 * v11) ) /*0x56a571*/
+              if ( *(_DWORD *)(this->q04F + 4 * v11) ) /*0x56a571*/
               {
                 if ( v11 < 0x40000 && (v12 = *(_DWORD **)(*(_DWORD *)&stru_87C374.__pad_14B0[8448] + 4 * v11)) != 0 ) /*0x56a591*/
                 {
@@ -5292,17 +5292,17 @@ void __userpurge RepairMapCliff(int *this@<ecx>, IUnknown aP0)
         {
           v7 = (_WORD)v32 + v2[1]; /*0x56a9ce*/
           LOWORD(v34) = v4 + *v2; /*0x56a9d9*/
-          v8 = this->q124; /*0x56a9de*/
+          v8 = this->q049; /*0x56a9de*/
           HIWORD(v34) = v7; /*0x56a9e4*/
           aP0.field_0 = (int)v34; /*0x56a9ef*/
           if ( (__int16)v34 >= v8 && (__int16)v34 <= this->q12C + v8 ) /*0x56aa01*/
           {
             v9 = v7; /*0x56aa07*/
-            v10 = this->q128; /*0x56aa0a*/
+            v10 = this->q04A; /*0x56aa0a*/
             if ( v9 >= v10 && v9 <= this->q04C + v10 ) /*0x56aa20*/
             {
               v11 = (__int16)v34 + (v9 << 9); /*0x56aa2f*/
-              if ( *(_DWORD *)(this->q13C + 4 * v11) ) /*0x56aa31*/
+              if ( *(_DWORD *)(this->q04F + 4 * v11) ) /*0x56aa31*/
               {
                 if ( v11 < 0x40000 && (v12 = *(_DWORD **)(*(_DWORD *)&stru_87C374.__pad_14B0[8448] + 4 * v11)) != 0 ) /*0x56aa51*/
                 {
@@ -6320,7 +6320,7 @@ char __thiscall CellClass::CreateBuildingCrater(__int16 *this, MouseClass *aP1)
   else
   {
     v5 = SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9); /*0x56c09f*/
-    if ( v5 < 0x40000 && (v6 = *(MouseClass **)(this->CellClass_field_13C + 4 * v5)) != 0 ) /*0x56c0b5*/
+    if ( v5 < 0x40000 && (v6 = *(MouseClass **)(this->q04F + 4 * v5)) != 0 ) /*0x56c0b5*/
     {
       v7 = v6; /*0x56c0b7*/
     }
@@ -6459,11 +6459,11 @@ _DWORD *__thiscall FindNearestObjectAtCell(_DWORD *this, _DWORD *a2)
     v7 = v4 + *((_WORD *)v5 + 1); /*0x56c351*/
     LOWORD(v23) = v3 + v6; /*0x56c354*/
     v8 = (__int16)(v3 + v6); /*0x56c359*/
-    v9 = *(this + 61); /*0x56c35c*/
+    v9 = this->q03D; /*0x56c35c*/
     HIWORD(v23) = v7; /*0x56c362*/
     v10 = v7; /*0x56c367*/
     v11 = v8 + v7; /*0x56c36a*/
-    if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * *(this + 62) ) /*0x56c39c*/
+    if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * this->q03E ) /*0x56c39c*/
     {
       v12 = v8 + (v10 << 9); /*0x56c3a7*/
       if ( v12 >= 0x40000 || (v13 = *(_DWORD **)(this->Object_field_0x13C + 4 * v12)) == 0 ) /*0x56c3c1*/
@@ -6626,9 +6626,9 @@ int __thiscall Terrain::ConnectivityGraph(_DWORD *this)
   nextArrayIndex = this; /*0x56c515*/
   v81 = -1; /*0x56c51a*/
   *(_DWORD *)&aP3.__pad_0[12] = -1; /*0x56c51e*/
-  v2 = (_DWORD *)*(this + 5); /*0x56c529*/
+  v2 = (_DWORD *)this->q005; /*0x56c529*/
   v3 = 0; /*0x56c52c*/
-  v4 = *(this + 26) + 4 * this->q06C; /*0x56c52e*/
+  v4 = this->q01A + 4 * this->q06C; /*0x56c52e*/
   aP3.NeedsSaveOrLink = 0; /*0x56c531*/
   v93 = 0; /*0x56c535*/
   LOWORD(v94) = 1; /*0x56c539*/
@@ -7500,7 +7500,7 @@ int __thiscall CellToTileIndexMap(int *this, IUnknown *aP1)
   int result; // eax
   int v3; // ecx
 
-  result = SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (this->q0F8 + *(this + 61) + 1); /*0x56d40f*/
+  result = SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (this->q0F8 + this->q03D + 1); /*0x56d40f*/
   if ( result < 0 ) /*0x56d412*/
     return 0; /*0x56d414*/
   v3 = this->q06C; /*0x56d419*/
@@ -7513,7 +7513,7 @@ int __thiscall CellToTileIndexMap(int *this, IUnknown *aP1)
 // ==== 0x0056D430  Cell::CoordToIndex  this=IUnknown  sig=csp ====
 int __thiscall Cell::CoordToIndex(_DWORD *this, IUnknown *aP1)
 {
-  return SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (this->q0F8 + *(this + 61) + 1); /*0x56d450*/
+  return SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (this->q0F8 + this->q03D + 1); /*0x56d450*/
 }
 
 
@@ -7621,7 +7621,7 @@ __int16 __thiscall CellClass::DetermineTileConnectivity(int *this, IUnknown *aP1
   _DWORD v15[8]; // [esp+18h] [ebp-20h] BYREF
   IUnknown *aP1a; // [esp+3Ch] [ebp+4h]
 
-  v2 = SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (this->radSite + this->q0F4 + 1); /*0x56d5c5*/
+  v2 = SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (this->radSite + this->q03D + 1); /*0x56d5c5*/
   if ( v2 >= 0 ) /*0x56d5c7*/
   {
     v3 = this->CellClass_field_6C; /*0x56d5cd*/
@@ -7632,7 +7632,7 @@ __int16 __thiscall CellClass::DetermineTileConnectivity(int *this, IUnknown *aP1
   {
     v2 = 0; /*0x56d5c9*/
   }
-  v4 = this->unknown68; /*0x56d5d7*/
+  v4 = this->q01A; /*0x56d5d7*/
   v15[2] = 1; /*0x56d5e0*/
   v15[6] = -1; /*0x56d5e8*/
   v5 = (unsigned __int8 *)(v4 + 4 * v2); /*0x56d5f0*/

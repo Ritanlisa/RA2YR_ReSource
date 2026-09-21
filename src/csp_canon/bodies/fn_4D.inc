@@ -303,30 +303,6 @@ int FoggedObjectClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x004D2810  FoggedObjectClass::PowerDrainUpdate  cls=FoggedObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int FoggedObjectClass::PowerDrainUpdate(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall FoggedObjectClass::_vt13(int this, int a2)
-{
-  AbstractClass::ProcessPower((#378 *)this); /*0x4d2819*/
-  Power::TimerProcess(this->LastSight); /*0x4d2824*/
-  Power::TimerProcess(this->Cell); /*0x4d282f*/
-  Power::TimerProcess(*(_DWORD *)(this + 48)); /*0x4d283a*/
-  Power::TimerProcess(*(_DWORD *)(this + 52)); /*0x4d2845*/
-  Power::TimerProcess(*(_DWORD *)(this + 56)); /*0x4d2850*/
-  Power::TimerProcess(*(_DWORD *)(this + 60)); /*0x4d285b*/
-  Power::TimerProcess(*(_DWORD *)(this + 64)); /*0x4d2866*/
-  Power::TimerProcess(*(_DWORD *)(this + 68)); /*0x4d2871*/
-  Power::TimerProcess(*(_DWORD *)(this + 72)); /*0x4d287c*/
-  Power::TimerProcess(*(_DWORD *)(this + 76)); /*0x4d2887*/
-  Power::TimerProcess(*(_DWORD *)(this + 80)); /*0x4d2892*/
-  Power::TimerProcess(*(_DWORD *)(this + 84)); /*0x4d289d*/
-  Power::TimerProcess(*(_DWORD *)(this + 88)); /*0x4d28a8*/
-  return Power::TimerProcess(*(_DWORD *)(this + 108)); /*0x4d28b8*/
-}
-}
-
 // ==== BACKFILL 0x004D28C0  TechnoClass::recalcThreat  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int TechnoClass::recalcThreat() {
 {
@@ -336,21 +312,6 @@ namespace ra2 { namespace game { int TechnoClass::recalcThreat() {
     return **(int **)(this + 96);
 }
 } } }
-
-// ==== BACKFILL 0x004D28D0  FoggedObjectClass::CheckVisibility  cls=FoggedObjectClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall FoggedObjectClass::_vt24(_DWORD *this, _DWORD *a2)
-{
-  int v3; // [esp+0h] [ebp-4h]
-
-  LOWORD(v3) = *(this + 13) / 256; /*0x4d28e0*/
-  HIWORD(v3) = *(this + 14) / 256; /*0x4d28f4*/
-  *a2 = v3; /*0x4d2901*/
-  return a2; /*0x4d2904*/
-}
-}
 
 // ==== BACKFILL 0x004D2910  FoggedObjectClass::ddtor  cls=FoggedObjectClass  sig=csp  renamed_refs=0  residual=- ====
 FoggedObjectClass * FoggedObjectClass::ddtor(char a2)
@@ -598,17 +559,6 @@ int TechnoClass::GetTargetCellCenter(AbstractClass* a2) {
     v9[0] = (((short)(v4 / 256)) << 8) + 128;
     v9[1] = (v6 << 8) + 128;
     return this->CheckTileSeed(v9);
-}
-}
-
-// ==== BACKFILL 0x004DE620  ObjectClass::IsHeightAboveThreshold_0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int ObjectClass_IsHeightAboveThreshold_0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall ObjectClass::IsHeightAboveThreshold_0(#374 *this)
-{
-  return ObjectClass::IsHeightAboveThreshold(this);
 }
 }
 

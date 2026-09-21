@@ -278,11 +278,11 @@ int sub_720420()
 _DWORD *__thiscall sub_720440(_DWORD *this)
 {
   this->q0A0 = 0; /*0x720444*/
-  *(this + 161) = 0; /*0x72044a*/
+  this->qA10 = 0; /*0x72044a*/
   *((_BYTE *)this + 648) = 1; /*0x720450*/
   this->__pad_2890 = 0; /*0x720457*/
   this->__pad_28A0 = 0; /*0x72045d*/
-  *(this + 163) = -1; /*0x720463*/
+  this->q0A3 = -1; /*0x720463*/
   *(_BYTE *)this = 0; /*0x72046d*/
   this->q100 = 0; /*0x72046f*/
   this->q100 = 0; /*0x720475*/
@@ -515,7 +515,7 @@ char __thiscall Audio::LoadWAVFiles(_DWORD *this)
       LOBYTE(IsSoundEnabled) = dword_A8ED54[4]; /*0x720814*/
       if ( !LOBYTE(dword_A8ED54[4]) ) /*0x72081b*/
       {
-        IsSoundEnabled = *(this + 9); /*0x720821*/
+        IsSoundEnabled = this->q009; /*0x720821*/
         for ( i = 0; i < IsSoundEnabled; ++i ) /*0x720828*/
         {
           _makepath(Buffer, 0, 0, (const char *)(*(_DWORD *)(this->__pad_018 + 4 * i) + 256), g_Str_File__WAV); /*0x720855*/
@@ -540,7 +540,7 @@ char __thiscall Audio::LoadWAVFiles(_DWORD *this)
           Vector::Clear((int)v11); /*0x72090c*/
           v10[0] = (int)&off_7E1668; /*0x720915*/
           BufferIOFileClass::Dtor(v10); /*0x72091d*/
-          IsSoundEnabled = *(this + 9); /*0x720922*/
+          IsSoundEnabled = this->q009; /*0x720922*/
         }
       }
     }
@@ -751,12 +751,12 @@ int __thiscall ThemeClass::Play(int *this, Movie *aP1)
 
   if ( MEMORY[0xA8D63C].__pad_14B0[392] && Audio::IsSoundEnabled() && !MEMORY[0xA8D63C].__pad_14B0[632] )
   {
-    v3 = *(this + 11); /*0x720bdc*/
+    v3 = this->q00B; /*0x720bdc*/
     if ( !v3 ) /*0x720be5*/
       goto LABEL_13; /*0x720be5*/
     if ( this->Movie_field_0x44 && !AudioSample::IsBuffering(v3) ) /*0x720bee*/
-      Audio::Release((_DWORD *)*(this + 11)); /*0x720bfa*/
-    if ( !Audio::IsSoundPlaying((_DWORD *)*(this + 11)) || (Movie *)this->Movie_field_0x4 != aP1 )
+      Audio::Release((_DWORD *)this->q00B); /*0x720bfa*/
+    if ( !Audio::IsSoundPlaying((_DWORD *)this->q00B) || (Movie *)this->Movie_field_0x4 != aP1 )
     {
 LABEL_13:
       if ( MEMORY[0xA8D63C].__pad_14B0[392] /*0x720c37*/
@@ -765,7 +765,7 @@ LABEL_13:
         && *this != -1 )
       {
         Debug::Log(); /*0x720c42*/
-        v4 = (_DWORD *)*(this + 11); /*0x720c47*/
+        v4 = (_DWORD *)this->q00B; /*0x720c47*/
         if ( v4 ) /*0x720c4f*/
           Audio::Release(v4); /*0x720c51*/
         *this = -1; /*0x720c56*/
@@ -779,12 +779,12 @@ LABEL_13:
           goto LABEL_47; /*0x720c8e*/
         this->Movie_field_0x4 = (int)aP1; /*0x720c94*/
         v5 = MEMORY[0x89E3A0] ? 0 : Game::CheckForGameCD(0);
-        v6 = *(this + 11); /*0x720cab*/
+        v6 = this->q00B; /*0x720cab*/
         if ( v6 && v5 > -1 ) /*0x720cba*/
         {
           if ( (unsigned int)aP1 >= this->Movie_field_0x24 ) /*0x720cbf*/
           {
-            ThreadAudioMixerMain((_DWORD *)*(this + 11), (RawFileClass *)&MEMORY[0x87F8E4].__pad_5568[20760], 1); /*0x720d02*/
+            ThreadAudioMixerMain((_DWORD *)this->q00B, (RawFileClass *)&MEMORY[0x87F8E4].__pad_5568[20760], 1); /*0x720d02*/
           }
           else
           {
@@ -792,9 +792,9 @@ LABEL_13:
               &MEMORY[0xB077F8].__pad_579C[8804],
               0,
               0,
-              (const char *)(*(_DWORD *)(*(this + 6) + 4 * (_DWORD)aP1) + 256),
+              (const char *)(*(_DWORD *)(this->q006 + 4 * (_DWORD)aP1) + 256),
               &stru_830620.__pad_579C[59820]);
-            ThreadAudioMixerMain((_DWORD *)*(this + 11), (RawFileClass *)&MEMORY[0xB077F8].__pad_579C[8804], 1); /*0x720ced*/
+            ThreadAudioMixerMain((_DWORD *)this->q00B, (RawFileClass *)&MEMORY[0xB077F8].__pad_579C[8804], 1); /*0x720ced*/
           }
           *this = (int)aP1; /*0x720cf2*/
         }
@@ -834,7 +834,7 @@ LABEL_13:
           }
         }
         Debug::Log(); /*0x720de8*/
-        if ( this->__pad_010 == 1 || *(_BYTE *)(*(_DWORD *)(*(this + 6) + 4 * (_DWORD)aP1) + 649) == 1 ) /*0x720e03*/
+        if ( this->__pad_010 == 1 || *(_BYTE *)(*(_DWORD *)(this->q006 + 4 * (_DWORD)aP1) + 649) == 1 ) /*0x720e03*/
 LABEL_47:
           this->Movie_field_0x8 = (int)aP1; /*0x720e05*/
       }
@@ -895,8 +895,8 @@ LABEL_14:
             Audio::Release(v6); /*0x720f46*/
         }
         *this = -1; /*0x720f4b*/
-        *(this + 1) = -1; /*0x720f51*/
-        *(this + 2) = -1; /*0x720f58*/
+        this->q001 = -1; /*0x720f51*/
+        this->q002 = -1; /*0x720f58*/
       }
     }
   }
@@ -991,7 +991,7 @@ bool __thiscall RulesClass::IsTypeBuildable(_DWORD *this, TechnoTypeClass *aP1)
     return 1; /*0x721150*/
   if ( (unsigned int)aP1 >= this->Movie_field_0x24 ) /*0x721155*/
     return 0; /*0x721159*/
-  v3 = *(_DWORD *)(*(this + 6) + 4 * (_DWORD)aP1); /*0x72115f*/
+  v3 = *(_DWORD *)(this->q006 + 4 * (_DWORD)aP1); /*0x72115f*/
   if ( !*(_BYTE *)(v3 + 650) ) /*0x721162*/
     return 0; /*0x72116e*/
   if ( !*(_BYTE *)(v3 + 648) ) /*0x721171*/
@@ -1016,11 +1016,11 @@ int __thiscall StringList_Find(_DWORD *this, const char *a2)
   if ( !strlen(a2) ) /*0x721220*/
     return -1; /*0x721220*/
   v3 = 0; /*0x721230*/
-  if ( (int)*(this + 9) <= 0 ) /*0x721234*/
+  if ( (int)this->q009 <= 0 ) /*0x721234*/
     return -1; /*0x721252*/
-  while ( _strcmpi(*(const void **)(*(this + 6) + 4 * v3), a2) ) /*0x721248*/
+  while ( _strcmpi(*(const void **)(this->q006 + 4 * v3), a2) ) /*0x721248*/
   {
-    if ( ++v3 >= *(this + 9) ) /*0x721250*/
+    if ( ++v3 >= this->q009 ) /*0x721250*/
       return -1; /*0x721250*/
   }
   return v3; /*0x721252*/
@@ -3044,7 +3044,7 @@ int __thiscall BuildingClass_RebuildOccupancy2(int **this)
 
   v2 = 0; /*0x7233a6*/
   v3 = this->q044; /*0x7233a9*/
-  this->q10C = 0; /*0x7233af*/
+  this->q043 = 0; /*0x7233af*/
   if ( *v3 >= 0 ) /*0x7233bc*/
   {
     do /*0x7233ce*/
@@ -3066,12 +3066,12 @@ int __thiscall BuildingClass_RebuildOccupancy2(int **this)
     {
       v7 = (__int16 *)(j + 9); /*0x72343a*/
       v17 = (__int16 *)(j + 9); /*0x72343d*/
-      (this->q118)[2 * (_DWORD)this->q10C] = j[9]; /*0x723443*/
-      (this->q118)[2 * (_DWORD)this->q10C + 1] = 0; /*0x723452*/
-      v8 = (int)this->q10C; /*0x72345a*/
+      (this->q118)[2 * (_DWORD)this->q043] = j[9]; /*0x723443*/
+      (this->q118)[2 * (_DWORD)this->q043 + 1] = 0; /*0x723452*/
+      v8 = (int)this->q043; /*0x72345a*/
       v9 = this->q044; /*0x723466*/
       v10 = (unsigned int)&(this->q118)[2 * v8]; /*0x72346c*/
-      this->q10C = (int *)(v8 + 1); /*0x723470*/
+      this->q043 = (int *)(v8 + 1); /*0x723470*/
       v11 = *v9 + 1; /*0x72347c*/
       v16 = *(float *)(v10 + 4); /*0x72347f*/
       v18 = v10; /*0x723486*/
@@ -3820,7 +3820,7 @@ char *__thiscall sub_724000(char *this, int a2)
   this->__pad_001 = 0; /*0x724010*/
   this->q008 = a2; /*0x724013*/
   this->ToolTipText = 0; /*0x724016*/
-  *((_DWORD *)this + 138) = 1000; /*0x724019*/
+  this->q08A = 1000; /*0x724019*/
   *((_DWORD *)this + 140) = 10000; /*0x724023*/
   *((_DWORD *)v3 + 1) = 0; /*0x72402d*/
   *((_DWORD *)v3 + 2) = 0; /*0x724030*/
@@ -3866,27 +3866,27 @@ void __thiscall ToolTipClass::updateString(char *this)
   this->q254 = 0; /*0x7240f6*/
   this->__pad_258 = 0; /*0x7240fc*/
   this->q25C = 0; /*0x724102*/
-  for ( i = 0; i < *((_DWORD *)this + 145); ++i ) /*0x724115*/
+  for ( i = 0; i < this->q091; ++i ) /*0x724115*/
   {
-    v4 = *((_DWORD *)this + 142); /*0x724117*/
+    v4 = this->q08E; /*0x724117*/
     if ( *(_DWORD *)(v4 + 4 * i) ) /*0x72411d*/
       __3_YAXPAX_Z(*(void **)(v4 + 4 * i)); /*0x724125*/
   }
-  (*(void (__thiscall **)(char *))(*((_DWORD *)this + 141) + 12))(this + 564); /*0x724146*/
+  (*(void (__thiscall **)(char *))(this->q08D + 12))(this + 564); /*0x724146*/
   __3_YAXPAX_Z(*((void **)this + 147)); /*0x724150*/
   this->q24C = 0; /*0x724155*/
   this->q250 = 0; /*0x72415b*/
   this->q254 = 0; /*0x724161*/
   this->__pad_258 = 0; /*0x724167*/
   this->q25C = 0; /*0x72416d*/
-  v5 = (void *)*((_DWORD *)this + 142); /*0x724173*/
-  *((_DWORD *)this + 141) = &VectorClass<ToolTip const *>::`vftable'; /*0x72417b*/
-  if ( v5 && *(this + 577) ) /*0x724183*/
+  v5 = (void *)this->q08E; /*0x724173*/
+  this->q08D = &VectorClass<ToolTip const *>::`vftable'; /*0x72417b*/
+  if ( v5 && this->q241 ) /*0x724183*/
   {
     __3_YAXPAX_Z(v5); /*0x724189*/
-    *((_DWORD *)this + 142) = 0; /*0x724191*/
+    this->q08E = 0; /*0x724191*/
   }
-  *(this + 577) = 0; /*0x724194*/
+  this->q241 = 0; /*0x724194*/
   *((_DWORD *)this + 143) = 0; /*0x724197*/
 }
 
@@ -4039,14 +4039,14 @@ LABEL_8:
 // ==== 0x00724510  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_724510(_DWORD *this)
 {
-  return *(this + 138); /*0x724516*/
+  return this->q08A; /*0x724516*/
 }
 
 
 // ==== 0x00724520  SidebarClass::initializeStrip  this=ToolTipManager  sig=csp ====
 int __thiscall sub_724520(_DWORD *this, int a2)
 {
-  *(this + 138) = a2; /*0x724524*/
+  this->q08A = a2; /*0x724524*/
   return a2; /*0x72452a*/
 }
 
@@ -4056,8 +4056,8 @@ int __thiscall sub_724530(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 138); /*0x724530*/
-  *(this + 139) = result; /*0x724536*/
+  result = this->q08A; /*0x724530*/
+  this->q08B = result; /*0x724536*/
   return result; /*0x72453c*/
 }
 
@@ -4067,8 +4067,8 @@ int __thiscall sub_724540(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 139); /*0x724540*/
-  *(this + 138) = result; /*0x724546*/
+  result = this->q08B; /*0x724540*/
+  this->q08A = result; /*0x724546*/
   return result; /*0x72454c*/
 }
 
@@ -4290,16 +4290,16 @@ LABEL_13:
       }
     }
   }
-  v19 = (*(int (__thiscall **)(int *, void **))(*(this + 141) + 16))(this + 141, &Block); /*0x72486e*/
+  v19 = (*(int (__thiscall **)(int *, void **))(this->q08D + 16))(this + 141, &Block); /*0x72486e*/
   if ( v19 != -1 ) /*0x724875*/
   {
-    v20 = *(this + 145); /*0x724877*/
+    v20 = this->q091; /*0x724877*/
     if ( v19 < v20 ) /*0x72487c*/
     {
       v21 = v20 - 1; /*0x72487e*/
-      for ( *(this + 145) = v21; /*0x724884*/
-            v19 < *(this + 145);
-            *(_DWORD *)(*(this + 142) + 4 * v19 - 4) = *(_DWORD *)(*(this + 142) + 4 * v19) )
+      for ( this->q091 = v21; /*0x724884*/
+            v19 < this->q091;
+            *(_DWORD *)(this->q08E + 4 * v19 - 4) = *(_DWORD *)(this->q08E + 4 * v19) )
       {
         ++v19; /*0x724889*/
       }

@@ -2,32 +2,30 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00480180  DSurface::Process  cls=DSurface  sig=csp  renamed_refs=0  residual=- ====
-void DSurface::Process(IUnknown * aP1, int * a2)
+// ==== BACKFILL 0x00480110  BuildingClass::CalcDrawPos  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
+Point2D* BuildingClass::CalcDrawPos(Point2D* out) const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DSurface::Process(int this, IUnknown *aP1, int *a2)
-{
-  TerrainClass::GenerateTexture( /*0x4801de*/
-    **(_DWORD ***)&MEMORY[0xA8D63C].__pad_14B0[576],
-    *(_DWORD *)MEMORY[0x87F69C]->__pad_0,
-    0,
-    *(int *)&MEMORY[0x87F8E4].__pad_5568[9416],
-    aP1->field_0,
-    aP1->field_4,
-    *a2,
-    (CCINIClass *)a2[1],
-    a2[2],
-    (IUnknown *)a2[3],
-    *(char *)(this + 283),
-    *(__int16 *)(this + 268),
-    1,
-    0,
-    0,
-    1,
-    0,
-    0);
+Point2D out;
+int* baseCoords = globalHelper_0FDCC0((int*)&out, this->q044);
+int baseX = baseCoords[0];
+int baseY = baseCoords[1];
+if ((char)this->currentRank >= 0) {
+    if (this->q044 == 239)
+        baseY -= 15;
+    else {
+    }
+} else {
+    unsigned int gateStage = this->q11E;
+    baseY -= 16;
+    if (gateStage >= 9 && gateStage <= 0x11)
+        baseY -= 15;
+    else {
+    }
 }
+int drawY = *(int*)&DataGlobal_87F8E4[14104] - 15 * (char)this->q11B + baseY;
+out.X = baseX + 30;
+out.Y = drawY + 15;
+return out;
 }
 
 // ==== BACKFILL 0x00480A30  CellClass::GetCoords  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
@@ -142,16 +140,6 @@ namespace gamemd { int CellClass::DamageAllObjects() {
     return result;
 }
 } }
-
-// ==== BACKFILL 0x00483610  ObjectClass::processPointerInvalid  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int ObjectClass::processPointerInvalid()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_483610(_DWORD *this)
-{
-  return (*(this + 80) >> 8) & 1; /*0x48361c*/
-}
-}
 
 // ==== BACKFILL 0x00483620  BuildingClass::IsTiberiumCollectorEligible  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
 bool BuildingClass::IsTiberiumCollectorEligible() {
@@ -533,19 +521,6 @@ int E4Recv_484F50::sub_484F50()
 }
 }
 
-// ==== BACKFILL 0x00485060  Cell::IsValidHeight  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
-BOOL Cell::IsValidHeight()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Cell_IsValidHeight(int *this)
-{
-  int v1; // eax
-
-  v1 = *(this + 14); /*0x485060*/
-  return v1 >= dword_AA0738 && v1 < dword_AA0738 + 14; /*0x485079*/
-}
-}
-
 // ==== BACKFILL 0x00485200  CellClass::ddtor  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::ddtor() {
 {
@@ -591,23 +566,6 @@ namespace ra2 { namespace game { int ObjectClass::SetTriggerTarget(int a2) {
     return result;
 }
 } } }
-
-// ==== BACKFILL 0x004852D0  BuildingClass::CreateDestructionCrater  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
-char __thiscall sub_4852D0(int this)
-{
-  int v2; // kr04_4
-  int v3; // kr00_4
-  int v5[2]; // [esp+8h] [ebp-14h] BYREF
-  _DWORD v6[3]; // [esp+10h] [ebp-Ch] BYREF
-
-  v2 = (*(__int16 *)(this + 36) << 8) + 128; /*0x4852f9*/
-  v3 = (*(__int16 *)(this + 38) << 8) + 128; /*0x485306*/
-  v6[2] = 0; /*0x485308*/
-  v6[1] = (v3 / 256) << 8; /*0x485312*/
-  v6[0] = (v2 / 256) << 8; /*0x48532c*/
-  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v6, v5); /*0x485330*/
-  return Cell::CreateCrater(v5[0] - 30, MEMORY[0x87F7E8][7663] - 15 * *(char *)(this + 283) + v5[1] - 15, 60, 30, 0); /*0x485389*/
-}
 
 // ==== BACKFILL 0x00485460  BuildingClass::CheckAdjacentCells  cls=BuildingClass  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { int BuildingClass::CheckAdjacentCells() {
@@ -682,19 +640,6 @@ namespace gamemd { int BuildingClass::CheckAdjacentCells() {
 }
 } }
 
-// ==== BACKFILL 0x00486380  Cell::IsEmpty  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
-bool Cell::IsEmpty()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall Cell_IsEmpty(_DWORD *this)
-{
-  int v1; // eax
-
-  v1 = *(this + 14); /*0x486380*/
-  return v1 == 0xFFFF || !v1; /*0x486390*/
-}
-}
-
 // ==== BACKFILL 0x004863A0  E4Recv_4863A0::sub_4863A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_4863A0::sub_4863A0()
 {
@@ -749,45 +694,6 @@ bool E4Recv_4866F0::sub_4866F0()
     int v1;
     v1 = this->M56;
     return v1 >= DataGlobal_ABBEC4 && v1 < DataGlobal_ABBEC4 + 4;
-}
-}
-
-// ==== BACKFILL 0x00486730  Value::InRange  cls=Value  sig=csp  renamed_refs=0  residual=- ====
-bool Value::InRange()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall Value_InRange(int *this)
-{
-  int v1; // eax
-
-  v1 = *(this + 14); /*0x486730*/
-  return v1 >= unk_AA0E20 && v1 < unk_AA0E20 + 14; /*0x486746*/
-}
-}
-
-// ==== BACKFILL 0x00486790  RandomMap::Check  cls=RandomMap  sig=csp  renamed_refs=0  residual=- ====
-bool RandomMap::Check()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_486790(int *this)
-{
-  int v1; // eax
-
-  v1 = *(this + 14); /*0x486790*/
-  return v1 >= unk_AA0E24 && v1 < unk_AA0E24 + 16; /*0x4867a6*/
-}
-}
-
-// ==== BACKFILL 0x004867B0  Cell::IsShore  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
-bool Cell::IsShore()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall Cell_IsShore(int *this)
-{
-  int v1; // eax
-
-  v1 = *(this + 14); /*0x4867b0*/
-  return v1 == unk_AA0E18 || v1 >= unk_AA0748 && v1 < unk_AA0748 + 16; /*0x4867d0*/
 }
 }
 
@@ -1097,16 +1003,6 @@ int E4Recv_486D90::sub_486D90(char a2)
   }
     while ( v5 < 8 );
     return v6;
-}
-}
-
-// ==== BACKFILL 0x004870B0  Cell::HasOccupierBit  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
-BOOL Cell::HasOccupierBit(IUnknown * aP1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Cell::HasOccupierBit(_DWORD *this, IUnknown *aP1)
-{
-  return ((1 << (char)aP1) & *(this + 30)) != 0; /*0x4870c8*/
 }
 }
 
@@ -1597,16 +1493,6 @@ namespace gamemd { void CellClass::RadLevel_Decrease(double a1) {
 }
 } }
 
-// ==== BACKFILL 0x00487D50  Cell::GetSlopeIndex  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
-int Cell::GetSlopeIndex()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Cell_GetSlopeIndex(int this)
-{
-  return *(char *)(this + 283) + 4 * ((this->Cell_field_0x140 >> 7) & 1); /*0x487d66*/
-}
-}
-
 // ==== BACKFILL 0x00487D70  CellClass::AttachObject  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::AttachObject(int a2) {
 {
@@ -1639,16 +1525,6 @@ namespace gamemd { int CellClass::AttachObject(int a2) {
       }
 }
 } }
-
-// ==== BACKFILL 0x00487DF0  Cell::IsBridge2  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
-bool Cell::IsBridge2()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall Cell_IsBridge2(_DWORD *this)
-{
-  return *(this + 59) == 5; /*0x487dfa*/
-}
-}
 
 // ==== BACKFILL 0x00487E50  AbstractClass::compareType  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::compareType(int a1)
@@ -1692,31 +1568,6 @@ unsigned int * Coord_Neighbor(unsigned int * a1, unsigned short * a2, char a3)
     HIWORD(v5) = *((int*)(a2) + 1) + HIWORD(Direction_X_Offsets[v4]);
     *result = v5;
     return result;
-}
-}
-
-// ==== BACKFILL 0x00487EE0  Bounds::Subtract  cls=Bounds  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * Bounds::Subtract(IUnknown * aP1, unsigned int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Bounds::Subtract(int *this, IUnknown *aP1, _DWORD *a2)
-{
-  int v3; // edx
-  int v4; // eax
-  int v5; // esi
-  int v6; // ecx
-  int v7; // edx
-
-  v3 = *(this + 1); /*0x487ee0*/
-  v4 = *this; /*0x487ee3*/
-  v5 = *(this + 2); /*0x487ef1*/
-  v6 = *(this + 3); /*0x487ef4*/
-  v7 = v3 - a2[1]; /*0x487ef7*/
-  aP1->field_0 = v4 - *a2; /*0x487f01*/
-  aP1->field_4 = v7; /*0x487f06*/
-  aP1->field_8 = v5; /*0x487f09*/
-  aP1->field_C = v6; /*0x487f0d*/
-  return &aP1->field_0; /*0x487f05*/
 }
 }
 
@@ -1809,16 +1660,6 @@ char ObjectClass::GetStateFlag()
 {
 {
     return this->referenceCount;
-}
-}
-
-// ==== BACKFILL 0x004886B0  CheckListClass::COMStub  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
-int CheckListClass::COMStub()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CheckListClass::_vt37(_DWORD *this)
-{
-  return *(this + 17); /*0x4886b3*/
 }
 }
 
@@ -2115,30 +1956,6 @@ void CommBufferClass::sub_48B1F0()
     __3_YAXPAX_Z((void *)this->field_34);
     __3_YAXPAX_Z(*(void **)&this->__pad_28[8]);
     __3_YAXPAX_Z(*((void **)(this) + 16));
-}
-}
-
-// ==== BACKFILL 0x0048B720  Terrain::GetTileIndex  cls=Terrain  sig=csp  renamed_refs=0  residual=- ====
-int Terrain::GetTileIndex(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Terrain_GetTileIndex(_DWORD *this, int a2)
-{
-  return (*(_DWORD *)(*(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a2)) & 1) != 0
-       ? *(this + 9) + 36 * *(_DWORD *)(*(this + 12) + 4 * a2)
-       : 0;
-}
-}
-
-// ==== BACKFILL 0x0048B9E0  Terrain::GetTileType  cls=Terrain  sig=csp  renamed_refs=0  residual=- ====
-int Terrain::GetTileType(AnimClass * aP1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Terrain::GetTileType(_DWORD *this, AnimClass *aP1)
-{
-  return (*(_DWORD *)(*(this + 13) + 24 * *(_DWORD *)(*(this + 16) + 4 * (_DWORD)aP1)) & 1) != 0
-       ? *(this + 13) + 24 * *(_DWORD *)(*(this + 16) + 4 * (_DWORD)aP1)
-       : 0;
 }
 }
 

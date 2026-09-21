@@ -128,34 +128,6 @@ namespace gamemd { int LayerClass::Save(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x00554280  Render_Render_554280  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, unsigned short a4, char a5)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Render_Render_554280(unsigned __int16 *a0, AbstractClass *aP1, int *a2, unsigned __int16 a4, char a5)
-{
-  int v5; // esi
-  int v6; // ecx
-  int v7; // edx
-  AbstractClass v9; // [esp-18h] [ebp-3Ch] BYREF
-  int v10[4]; // [esp+14h] [ebp-10h] BYREF
-
-  v5 = a2[1]; /*0x55428a*/
-  v6 = *a2; /*0x554294*/
-  v7 = *a2 + a2[2]; /*0x55429b*/
-  v10[3] = v5 + a2[3]; /*0x55429d*/
-  v10[0] = v6; /*0x5542a5*/
-  v10[2] = v7; /*0x5542b0*/
-  memset(&v9.__pad_0[12], 0, 12); /*0x5542c3*/
-  v10[1] = v5; /*0x5542c7*/
-  *(_QWORD *)&v9.__pad_0[4] = (unsigned int)a5 | 0xC00000000LL; /*0x55431a*/
-  *(_DWORD *)v9.__pad_0 = (unsigned __int8)((unsigned __int8)(a4 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]) /*0x55432f*/
-                        | (((unsigned __int8)((unsigned __int8)(a4 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140])
-                          | ((unsigned __int8)((unsigned __int8)(a4 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]) << 8)) << 8);
-  return PrintFontLayout((AbstractClass *)v10, aP0, v9); /*0x554341*/
-}
-}
-
 // ==== BACKFILL 0x00554AA0  TacticalClass::UpdateScrollTarget  cls=TacticalClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int TacticalClass::UpdateScrollTarget(int a1, int a2, int a3, int a4, int a5) {
 {
@@ -957,18 +929,6 @@ size_t sub_5584F0(char * a1, void * a2)
 }
 }
 
-// ==== BACKFILL 0x00558840  Options::PrepareSaveLoadDlg  cls=Options  sig=csp  renamed_refs=0  residual=- ====
-bool Options::PrepareSaveLoadDlg()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_558840(const char **this)
-{
-  *(this + 1) = (const char *)3; /*0x558840*/
-  *(this + 3) = 0; /*0x558847*/
-  return SaveLoadDialog::DlgProc(this);
-}
-}
-
 // ==== BACKFILL 0x005588E0  sub_5588E0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT sub_5588E0(HWND hDlg, int a2, HWND hWnd, int a4)
 {
@@ -1190,6 +1150,44 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
     v6[0] = &DataGlobal_7E1668;
     return BufferIOFileClass::Dtor(v6);
 }
+}
+
+// ==== BACKFILL 0x00559D60  LoadOptions::AddRef  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
+char LoadOptions::AddRef(LPCCH lpMultiByteStr)
+{
+    int targetRate = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance);
+    wchar_t* loadPrompt = GetStringCSF(aTxtLoading, 0, g_Str_File_LoadDlg_CPP, 1052);
+    HWND waitBox = CreateMessageBox((LPARAM)loadPrompt, 0, 0);
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance);
+    if ( waitBox )
+        Dialog::Show(waitBox);
+    g_BounceClassInit = 0;
+    DataGlobal_A8E378[0] = 0;
+    WTFMode::Shutdown(g_GameMode_Current);
+    char loaded = Game::LoadSaved(lpMultiByteStr);
+    while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) < targetRate )
+        (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
+    while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) > targetRate )
+        (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance);
+    if ( waitBox )
+        Dialog::Destroy(waitBox);
+    return loaded;
+
+}
+
+// ==== BACKFILL 0x00559E40  LoadOptions::Release  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
+char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
+{
+    wchar_t* savePrompt = GetStringCSF(aTxtSavingGame, 0, g_Str_File_LoadDlg_CPP, 1107);
+    HWND waitBox = CreateMessageBox((LPARAM)savePrompt, 0, 0);
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance);
+    if ( waitBox )
+        Dialog::Show(waitBox);
+    char saveOk = SaveScenarioClassGame_AdjustMPSaveFileName(lpMultiByteStr, Source, 0);
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
+    if ( waitBox )
+        Dialog::Destroy(waitBox);
+    return saveOk;
 }
 
 // ==== BACKFILL 0x00559EB0  LoadOptions::ddtor  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
@@ -1791,19 +1789,6 @@ int WriteCompressionBlock(Pipe * aP0, BlowStraw * aP1, CCINIClass * aP2, int * a
     v9[1] = 0;
     *v6 += 3;
     return result;
-}
-}
-
-// ==== BACKFILL 0x0055F6C0  SyncDelay::Check  cls=SyncDelay  sig=csp  renamed_refs=0  residual=- ====
-bool SyncDelay::Check(unsigned int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_55F6C0(_DWORD *this, _DWORD *a2)
-{
-  _DWORD *v2; // eax
-
-  v2 = (_DWORD *)*(this + 4); /*0x55f6c0*/
-  return v2 && *v2 == *a2; /*0x55f6d3*/
 }
 }
 

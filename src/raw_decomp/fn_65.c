@@ -1595,8 +1595,8 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
 // ==== 0x00652CD0  ObjectClass::method_652CD0  this=ObjectClass  sig=csp ====
 void __thiscall sub_652CD0(_DWORD *this)
 {
-  *(this + 1323) = 4; /*0x652cd0*/
-  *(this + 1343) = 25; /*0x652cda*/
+  this->q52B = 4; /*0x652cd0*/
+  this->q53F = 25; /*0x652cda*/
 }
 
 
@@ -3032,7 +3032,7 @@ int *__thiscall GenerateImageThumbnail(float *this, RadarClass *aP1, RadarClass 
     aP3->field_8 = aP2->field_8; /*0x6547ff*/
     *(_DWORD *)aP3->__pad_C = *(_DWORD *)aP2->__pad_C; /*0x654805*/
   }
-  if ( !this->RadarClass_field_0x123C ) /*0x654808*/
+  if ( !this->q48F ) /*0x654808*/
   {
     v8 = *(_DWORD *)aP2->__pad_C * (int)aP2->field_8; /*0x654815*/
     v9 = __2_YAPAXI_Z(3 * v8); /*0x65481d*/
@@ -3450,7 +3450,7 @@ _DWORD *__thiscall sub_655050(_DWORD *this, _DWORD *a2, __int16 *a3)
   v3 = *a3; /*0x655063*/
   v4 = a3[1]; /*0x655066*/
   v5 = v3 + this->__pad_524 - v4; /*0x65506e*/
-  v6 = v3 + v4 - *(this + 1318); /*0x655075*/
+  v6 = v3 + v4 - this->q526; /*0x655075*/
   v7 = 2; /*0x655077*/
   if ( v5 == -1 ) /*0x65507c*/
   {
@@ -4195,11 +4195,11 @@ void __thiscall sub_655B20(int *this)
   int v12; // [esp-8h] [ebp-18h]
   _DWORD *v13; // [esp+Ch] [ebp-4h]
 
-  *(this + 1159) = 0; /*0x655b2a*/
-  *(this + 1160) = 0; /*0x655b30*/
-  *(this + 1167) = 0; /*0x655b36*/
-  *(this + 1174) = 0; /*0x655b3c*/
-  *(this + 1181) = 0; /*0x655b42*/
+  this->q487 = 0; /*0x655b2a*/
+  this->q488 = 0; /*0x655b30*/
+  this->q48F = 0; /*0x655b36*/
+  this->q496 = 0; /*0x655b3c*/
+  this->q49D = 0; /*0x655b42*/
   v2 = __2_YAPAXI_Z(0x10u); /*0x655b48*/
   v3 = v2; /*0x655b4d*/
   if ( v2 ) /*0x655b54*/
@@ -4246,15 +4246,15 @@ void __thiscall sub_655B20(int *this)
   {
     v3 = 0; /*0x655bcb*/
   }
-  *(this + 1174) = (int)v3; /*0x655bd7*/
+  this->q496 = (int)v3; /*0x655bd7*/
   Shroud::ProcessCellVisibility(&MEMORY[0x87F7E8], (int)&MEMORY[0x87F8E4]); /*0x655bdd*/
   RadarClass::RecreateSurface((int)this, (int)this); /*0x655be4*/
   for ( i = 0; i < MEMORY[0xA8EC88]; *(_BYTE *)(*((_DWORD *)MEMORY[0xA8EC7C] + i - 1) + 1059) = 0 ) /*0x655bf3*/
     ++i; /*0x655bfb*/
-  if ( *(this + 1324) == 3 ) /*0x655c18*/
+  if ( this->q52C == 3 ) /*0x655c18*/
   {
-    v12 = *(this + 1325); /*0x655c21*/
-    *(this + 1323) = 5; /*0x655c24*/
+    v12 = this->q52D; /*0x655c21*/
+    this->q52B = 5; /*0x655c24*/
     RadarClass::SetViewMode((int)this, v12, 0); /*0x655c2e*/
     RadarClass::SetGlobal((void *)MEMORY[0x8871E0]->DetailMinFrameRateNormal); /*0x655c3b*/
   }
@@ -6005,8 +6005,8 @@ int __thiscall FogOfWar::Render(int **this)
 
   if ( g_hWnd ) /*0x657cf0*/
   {
-    v7 = (*(int (__thiscall **)(_DWORD))(**(this + 1159) + 124))(*(this + 1159)); /*0x657d4e*/
-    result = (*(int (__thiscall **)(_DWORD))(**(this + 1159) + 128))(*(this + 1159)); /*0x657d52*/
+    v7 = (*(int (__thiscall **)(_DWORD))(*this->q487 + 124))(this->q487); /*0x657d4e*/
+    result = (*(int (__thiscall **)(_DWORD))(*this->q487 + 128))(this->q487); /*0x657d52*/
     v8 = 0; /*0x657d58*/
     for ( i = result; v8 < result; ++v8 ) /*0x657d60*/
     {
@@ -6027,11 +6027,11 @@ int __thiscall FogOfWar::Render(int **this)
   }
   else
   {
-    v2 = *(this + 1159); /*0x657cf2*/
+    v2 = this->q487; /*0x657cf2*/
     v3 = *v2; /*0x657d06*/
-    v4 = (*(int (__thiscall **)(_DWORD, _DWORD *, _DWORD, int))(**(this + 1160) + 120))(*(this + 1160), v11, 0, 1); /*0x657d0d*/
-    v5 = (*(int (__thiscall **)(int *, _BYTE *, _DWORD, int))(*v2 + 120))(v2, v12, *(this + 1160), v4); /*0x657d21*/
-    (*(void (__thiscall **)(_DWORD, int))(v3 + 8))(*(this + 1159), v5); /*0x657d2b*/
+    v4 = (*(int (__thiscall **)(_DWORD, _DWORD *, _DWORD, int))(*this->q488 + 120))(this->q488, v11, 0, 1); /*0x657d0d*/
+    v5 = (*(int (__thiscall **)(int *, _BYTE *, _DWORD, int))(*v2 + 120))(v2, v12, this->q488, v4); /*0x657d21*/
+    (*(void (__thiscall **)(_DWORD, int))(v3 + 8))(this->q487, v5); /*0x657d2b*/
     return FogOfWar::RenderCell((int)this); /*0x657d30*/
   }
   return result; /*0x657d35*/
@@ -7107,7 +7107,7 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
     }
   }
   *this = &vt_DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658e5e*/
-  this->__pad_014 = 10; /*0x658e64*/
+  *(this + 5) = 10; /*0x658e64*/
   this->q010 = 0; /*0x658e6b*/
   return this; /*0x658e70*/
 }
@@ -7446,20 +7446,20 @@ _DWORD *__thiscall RadBeam::InitState(_DWORD *this, rc_ptr_base *aP1)
   *((_BYTE *)this + 33) = 0; /*0x659418*/
   *((_BYTE *)this + 34) = 0; /*0x65941b*/
   this->range = 0; /*0x65941e*/
-  *(this + 10) = 0; /*0x659421*/
+  this->q00A = 0; /*0x659421*/
   this->data = 0; /*0x659424*/
   this->memberAtOffset48 = 0; /*0x659427*/
-  *(this + 13) = 0; /*0x65942a*/
-  *(this + 14) = 0; /*0x65942d*/
+  this->q00D = 0; /*0x65942a*/
+  this->q00E = 0; /*0x65942d*/
   this->memberAtOffset64 = 0; /*0x659430*/
   this->pad_72 = 0; /*0x659433*/
   this->memberAtOffset60 = 0; /*0x659436*/
   this->memberAtOffset68 = 0; /*0x659439*/
-  *(this + 19) = 0; /*0x65943c*/
+  this->q013 = 0; /*0x65943c*/
   this->abstractFlags = 0; /*0x65943f*/
   this->memberAtOffset84 = 1; /*0x659442*/
   this->memberAtOffset88 = 0; /*0x659445*/
-  *(this + 31) = 0; /*0x659448*/
+  this->q01F = 0; /*0x659448*/
   this->color2 = 0; /*0x65944b*/
   *((_BYTE *)this + 193) = 0; /*0x659451*/
   *((_BYTE *)this + 194) = 0; /*0x659457*/
@@ -8529,10 +8529,10 @@ _DWORD *__thiscall RadioClass::RadioClass(_DWORD *this)
   this->q0E4 = 0; /*0x65a75a*/
   this->q0E8 = 1; /*0x65a764*/
   this->q0EC = 1; /*0x65a76e*/
-  *((_BYTE *)this + 237) = 0; /*0x65a775*/
+  this->q0ED = 0; /*0x65a775*/
   this->radioLinks = &vt_VectorClass_TechnoClass; /*0x65a77c*/
   this->q0E4 = __2_YAPAXI_Z(4u); /*0x65a78b*/
-  *((_BYTE *)this + 237) = 1; /*0x65a791*/
+  this->q0ED = 1; /*0x65a791*/
   *this = &RadioClass::`vftable'; /*0x65a798*/
   this->vtable2 = &RadioClass::`vftable'; /*0x65a79e*/
   this->vtable3 = &RadioClass::`vftable'; /*0x65a7a5*/
@@ -8673,7 +8673,7 @@ int __thiscall VectorClass::RemoveElement(#377 *this)
   }
   if ( v17 == 3 ) /*0x65a99a*/
   {
-    v4 = this->q0E8; /*0x65a99c*/
+    v4 = this->q03A; /*0x65a99c*/
     v5 = 0; /*0x65a9a2*/
     if ( v4 > 0 ) /*0x65a9a6*/
     {
@@ -8686,7 +8686,7 @@ int __thiscall VectorClass::RemoveElement(#377 *this)
           *v8 = 0; /*0x65a9b8*/
         ++v5; /*0x65a9c4*/
       }
-      while ( v5 < this->q0E8 ); /*0x65a9c7*/
+      while ( v5 < this->q03A ); /*0x65a9c7*/
     }
     goto LABEL_9; /*0x65a9c7*/
   }
@@ -8697,7 +8697,7 @@ LABEL_9:
     v10 = AbstractClass::IsTechnoType(this); /*0x65a9d3*/
     return (*(int (__thiscall **)(int *, void *, int, int))(v9 + 404))(v1, v10, v17, v18); /*0x65a9e5*/
   }
-  v11 = this->q0E8; /*0x65a9ed*/
+  v11 = this->q03A; /*0x65a9ed*/
   v12 = -1; /*0x65a9f3*/
   v13 = 0; /*0x65a9f6*/
   if ( v11 > 0 ) /*0x65a9fa*/
@@ -8789,7 +8789,7 @@ int __thiscall RadioClass::PowerDrainUpdate(int *this, AbstractClass *aP1)
 
   AbstractClass::COMStub_13((int)this, aP1); /*0x65ab1a*/
   Power::TimerProcess(aP1); /*0x65ab28*/
-  result = (BaseClass *)this->q0E8; /*0x65ab2d*/
+  result = (BaseClass *)this->q03A; /*0x65ab2d*/
   for ( i = 0; i < (int)result; ++i ) /*0x65ab37*/
   {
     v5 = *(_DWORD *)(this->q0E4 + 4 * i); /*0x65ab3f*/
@@ -8801,7 +8801,7 @@ int __thiscall RadioClass::PowerDrainUpdate(int *this, AbstractClass *aP1)
       (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 44))(v6); /*0x65ab63*/
       Power::TimerProcess(aP1); /*0x65ab69*/
     }
-    result = (BaseClass *)this->q0E8; /*0x65ab6e*/
+    result = (BaseClass *)this->q03A; /*0x65ab6e*/
   }
   return (int)result; /*0x65ab79*/
 }
@@ -8942,7 +8942,7 @@ int __thiscall TacticalClass::UpdateObjects(#377 *this)
   int v4; // [esp+Ch] [ebp+4h]
 
   v2 = 0; /*0x65ace4*/
-  result = this->q0E8; /*0x65ace6*/
+  result = this->q03A; /*0x65ace6*/
   if ( result > 0 ) /*0x65acee*/
   {
     do /*0x65ad1c*/
@@ -8953,7 +8953,7 @@ int __thiscall TacticalClass::UpdateObjects(#377 *this)
           v4,
           &MEMORY[0xA8EC30],
           *(_DWORD *)(this->q0E4 + 4 * v2));
-      result = this->q0E8; /*0x65ad13*/
+      result = this->q03A; /*0x65ad13*/
       ++v2; /*0x65ad19*/
     }
     while ( v2 < result ); /*0x65ad1c*/
@@ -8983,7 +8983,7 @@ bool __thiscall Array::Contains(int *this, IUnknown *aP1)
   int v3; // eax
   IUnknown **v4; // ecx
 
-  if ( aP1 && (v2 = this->q0E8, v3 = 0, v2 > 0) ) /*0x65ad63*/
+  if ( aP1 && (v2 = this->q03A, v3 = 0, v2 > 0) ) /*0x65ad63*/
   {
     v4 = (IUnknown **)this->q0E4; /*0x65ad65*/
     while ( *v4 != aP1 ) /*0x65ad6d*/
@@ -9012,7 +9012,7 @@ int __thiscall RadioClass::FindLinkIndex(int *this, int a2)
 
   if ( !a2 ) /*0x65ad97*/
     return -1; /*0x65ad97*/
-  v2 = this->q0E8; /*0x65ad99*/
+  v2 = this->q03A; /*0x65ad99*/
   result = 0; /*0x65ad9f*/
   if ( v2 <= 0 ) /*0x65ada3*/
     return -1; /*0x65adb7*/
@@ -9032,7 +9032,7 @@ char __thiscall RadioClass::HasFreeLink(int *this)
   int v2; // eax
   _DWORD *i; // ecx
 
-  v1 = this->vecTechno_Capacity; /*0x65adc0*/
+  v1 = this->q03A; /*0x65adc0*/
   v2 = 0; /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
@@ -9052,7 +9052,7 @@ char __thiscall Array::ContainsValue(int *this, IUnknown *aP1)
   int v3; // edx
   IUnknown **i; // ecx
 
-  v2 = *(this + 58); /*0x65adf1*/
+  v2 = this->q03A; /*0x65adf1*/
   v3 = 0; /*0x65adf7*/
   if ( v2 <= 0 ) /*0x65adfc*/
     return 0; /*0x65ae1a*/
@@ -9072,7 +9072,7 @@ char __thiscall Team_AllMembersValid(int *this)
   int v2; // eax
   _DWORD *i; // ecx
 
-  v1 = *(this + 58); /*0x65ae30*/
+  v1 = this->q03A; /*0x65ae30*/
   v2 = 0; /*0x65ae36*/
   if ( v1 <= 0 ) /*0x65ae3a*/
     return 0; /*0x65ae4f*/
@@ -9458,7 +9458,7 @@ int __thiscall RadSiteClass::SetSpread(_DWORD *this, int a2)
 
   this->q044 = a2; /*0x65b4d4*/
   result = (a2 << 8) + 128; /*0x65b4da*/
-  *(this + 18) = result; /*0x65b4df*/
+  this->q012 = result; /*0x65b4df*/
   return result; /*0x65b4e2*/
 }
 
@@ -9468,10 +9468,10 @@ int __thiscall RadSiteClass::SetRadLevel(_DWORD *this, int a2)
 {
   int result; // eax
 
-  *(this + 19) = a2; /*0x65b4f4*/
+  this->q013 = a2; /*0x65b4f4*/
   result = a2 * MEMORY[0x8871E0][1].?; /*0x65b502*/
-  *(this + 27) = result; /*0x65b505*/
-  *(this + 28) = result; /*0x65b508*/
+  this->q01B = result; /*0x65b505*/
+  this->q01C = result; /*0x65b508*/
   return result; /*0x65b50b*/
 }
 
@@ -9481,9 +9481,9 @@ int __thiscall sub_65B510(int *this)
 {
   int v1; // esi
 
-  v1 = *(this + 27); /*0x65b511*/
+  v1 = this->q01B; /*0x65b511*/
   if ( v1 > 0 ) /*0x65b516*/
-    return *(this + 19) * *(this + 28) / v1; /*0x65b524*/
+    return this->q013 * this->q01C / v1; /*0x65b524*/
   else
     return 0; /*0x65b518*/
 }
@@ -9661,9 +9661,9 @@ LABEL_9:
   }
   TacticalClass::UpdateScrollTarget( /*0x65b871*/
     this->LightSource,
-    *(_DWORD *)(this->LightSource + 36) - this->q068,
+    *(_DWORD *)(this->LightSource + 36) - this->q01A,
     this->referenceCount * this->IntensitySteps / this->RadDuration,
-    this->referenceCount * this->IntensityDecrement / this->RadDuration,
+    this->referenceCount * this->q017 / this->RadDuration,
     this->referenceCount * this->nextArrayIndex / this->RadDuration,
     0);
   v9 = MEMORY[0x8871E0][1].?[2]; /*0x65b8b9*/
@@ -10014,9 +10014,9 @@ char __thiscall RadSiteClass::DecreaseLight(int *this)
 {
   return TacticalClass::UpdateScrollTarget( /*0x65becc*/
            this->LightSource,
-           *(_DWORD *)(this->LightSource + 36) - this->q068,
+           *(_DWORD *)(this->LightSource + 36) - this->q01A,
            this->referenceCount * this->IntensitySteps / this->RadDuration,
-           this->referenceCount * this->IntensityDecrement / this->RadDuration,
+           this->referenceCount * this->q017 / this->RadDuration,
            this->referenceCount * this->nextArrayIndex / this->RadDuration,
            0);
 }

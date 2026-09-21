@@ -627,10 +627,10 @@ int *__thiscall BuildingClass_InitBuildLimit(int **this)
   int i; // edi
   int v4; // ecx
 
-  result = this->q05C; /*0x6b0cc4*/
+  result = this->q017; /*0x6b0cc4*/
   if ( !result ) /*0x6b0cc9*/
   {
-    this->q05C = (int *)1; /*0x6b0ccb*/
+    this->q017 = (int *)1; /*0x6b0ccb*/
     this->nextArrayIndex = (int *)0x7FFFFFFF; /*0x6b0cd2*/
     for ( i = (int)this->q012 - 1; i >= 0; --i ) /*0x6b0cdd*/
     {
@@ -654,10 +654,10 @@ int *__thiscall sub_6B0D10(int **this)
   int i; // edi
   int v4; // ecx
 
-  result = this->q05C; /*0x6b0d14*/
+  result = this->q017; /*0x6b0d14*/
   if ( !result ) /*0x6b0d19*/
   {
-    this->q05C = (int *)4; /*0x6b0d1b*/
+    this->q017 = (int *)4; /*0x6b0d1b*/
     this->nextArrayIndex = (int *)0x7FFFFFFF; /*0x6b0d22*/
     for ( i = (int)this->q012 - 1; i >= 0; --i ) /*0x6b0d2d*/
     {
@@ -681,10 +681,10 @@ int *__thiscall sub_6B0D60(int **this)
   int i; // edi
   int v4; // ecx
 
-  result = this->q05C; /*0x6b0d64*/
+  result = this->q017; /*0x6b0d64*/
   if ( !result ) /*0x6b0d69*/
   {
-    this->q05C = (int *)4; /*0x6b0d6b*/
+    this->q017 = (int *)4; /*0x6b0d6b*/
     this->nextArrayIndex = (int *)0x7FFFFFFF; /*0x6b0d72*/
     for ( i = (int)this->q012 - 1; i >= 0; --i ) /*0x6b0d7d*/
     {
@@ -1627,7 +1627,7 @@ int *__thiscall SliderClass::Constructor(
     if ( v8 ) /*0x6b1b79*/
     {
       v30 = (ControlClass *)this->SliderClass_field_0x04; /*0x6b1b87*/
-      v28 = (ControlClass *)(this->SliderClass_field_0x14 + this->SliderClass_field_0x0C + 2); /*0x6b1b8c*/
+      v28 = (ControlClass *)(this->q005 + this->SliderClass_field_0x0C + 2); /*0x6b1b8c*/
       v9 = SearchMIXFile(&stru_830620.__pad_579C[40972], 0); /*0x6b1b94*/
       v10 = ShapeButtonClass::Constructor(v8, (ControlClass *)a2, v9, v28, v30, 0, 0, 0); /*0x6b1b9d*/
     }
@@ -1673,9 +1673,9 @@ int *__thiscall SliderClass::Constructor(
   (*(void (__thiscall **)(int *))(v17 + 72))(this); /*0x6b1c46*/
   v18 = this->q02E; /*0x6b1c49*/
   if ( v18 ) /*0x6b1c4e*/
-    v19 = this->SliderClass_field_0x14; /*0x6b1c50*/
+    v19 = this->q005; /*0x6b1c50*/
   else
-    v19 = this->SliderClass_field_0x18; /*0x6b1c55*/
+    v19 = this->q006; /*0x6b1c55*/
   v20 = (double)this->SliderClass_field_0x0C; /*0x6b1c58*/
   v21 = Math::RoundToInt(v20); /*0x6b1c7c*/
   if ( v21 <= 4 ) /*0x6b1c7e*/
@@ -1687,9 +1687,9 @@ int *__thiscall SliderClass::Constructor(
     v23 = v19 - v21; /*0x6b1c9e*/
   this->SliderClass_field_0x14 = v23; /*0x6b1ca2*/
   if ( v18 ) /*0x6b1ca5*/
-    v24 = this->SliderClass_field_0x14; /*0x6b1ca7*/
+    v24 = this->q005; /*0x6b1ca7*/
   else
-    v24 = this->SliderClass_field_0x18; /*0x6b1cac*/
+    v24 = this->q006; /*0x6b1cac*/
   v25 = Math::RoundToInt(v22); /*0x6b1cc5*/
   if ( v25 <= 4 ) /*0x6b1cc7*/
     v25 = 4; /*0x6b1cc9*/
@@ -1771,9 +1771,9 @@ __int64 __thiscall SliderClass::_vt42(int *this, int a2)
   this->q048 = v3; /*0x6b1ddd*/
   (*(void (__thiscall **)(int *))(*this + 72))(this); /*0x6b1de6*/
   if ( this->q02E ) /*0x6b1de9*/
-    v4 = this->SliderClass_field_0x14; /*0x6b1df0*/
+    v4 = this->q005; /*0x6b1df0*/
   else
-    v4 = this->SliderClass_field_0x18; /*0x6b1df5*/
+    v4 = this->q006; /*0x6b1df5*/
   v5 = (double)this->SliderClass_field_0x0C; /*0x6b1df8*/
   v6 = Math::RoundToInt(v5); /*0x6b1e12*/
   if ( v6 <= 4 ) /*0x6b1e14*/
@@ -4381,7 +4381,7 @@ SmudgeClass *__thiscall UnitClass::Create(void **this, AbstractClass *aP1, Abstr
 
   ObjectClass::ctor(this); /*0x6b4a53*/
   *this = &SmudgeClass::`vftable'; /*0x6b4a5c*/
-  this->Type = aP1; /*0x6b4a62*/
+  this->q02B = aP1; /*0x6b4a62*/
   this->vtable3 = &SmudgeClass::`vftable'; /*0x6b4a6c*/
   this->vtable2 = &SmudgeClass::`vftable'; /*0x6b4a73*/
   this->vtable4 = &SmudgeClass::`vftable'; /*0x6b4a79*/
@@ -4424,7 +4424,7 @@ char __thiscall UnitClass::UnloadPassengers(int *this, int a2)
   if ( !(unsigned __int8)ObjectClass::UpdateProductionDisplay((#374 *)this) || v2 != 1 && v2 != 3 ) /*0x6b4bfb*/
     return 0; /*0x6b4c61*/
   a2 = *(_DWORD *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 440))(this, v6); /*0x6b4c0e*/
-  if ( MEMORY[0xA8E7AC] > 0 || MEMORY[0xA8ED6B] || Cell::IsWalkable((int *)this->Type, &a2, 1) ) /*0x6b4c31*/
+  if ( MEMORY[0xA8E7AC] > 0 || MEMORY[0xA8ED6B] || Cell::IsWalkable((int *)this->q02B, &a2, 1) ) /*0x6b4c31*/
     UnitClass::CreateUnloadPlacementCraters(&a2); /*0x6b4c45*/
   v4 = *this; /*0x6b4c4a*/
   this->isOnMap = 0; /*0x6b4c4e*/
@@ -4784,8 +4784,8 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, char *Source)
   this->vtable4 = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
   *(_WORD *)(this + 559) = 1; /*0x6b52ba*/
-  this->q231 = 0; /*0x6b52c7*/
-  this->q232 = 1; /*0x6b52ce*/
+  this->LegalTarget = 0; /*0x6b52c7*/
+  this->Insignificant = 1; /*0x6b52ce*/
   this->q233 = 1; /*0x6b52d4*/
   this->q235 = 0; /*0x6b52da*/
   v3 = MEMORY[0xA8EC28]; /*0x6b52e1*/
@@ -6393,7 +6393,7 @@ LABEL_5:
   this->SpawnManagerClass_field_58 = 10; /*0x6b726b*/
   v5 = 0; /*0x6b7271*/
   v80 = 0; /*0x6b7275*/
-  if ( this->q048 > 0 )
+  if ( this->q012 > 0 )
   {
     while ( 1 )
     {
@@ -6405,9 +6405,9 @@ LABEL_5:
       switch ( *(_DWORD *)(v7 + 4) )
       {
         case 0:
-          if ( !this->SpawnManagerClass_field_68 ) /*0x6b72a7*/
+          if ( !this->q01A ) /*0x6b72a7*/
             goto LABEL_87; /*0x6b72a7*/
-          v10 = this->SpawnManagerClass_field_5C; /*0x6b72ad*/
+          v10 = this->q017; /*0x6b72ad*/
           v11 = this->SpawnManagerClass_field_64; /*0x6b72b0*/
           if ( v10 == -1 ) /*0x6b72b6*/
             goto LABEL_11; /*0x6b72b6*/
@@ -6439,13 +6439,13 @@ LABEL_21:
                     if ( *(_BYTE *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v14 + 132))(v14) + 3432) ) /*0x6b7392*/
                     {
                       v15 = v91; /*0x6b73a1*/
-                      this->SpawnManagerClass_field_5C = dword_A8ED54[12]; /*0x6b73a5*/
+                      this->q017 = dword_A8ED54[12]; /*0x6b73a5*/
                       v16 = 9; /*0x6b73a8*/
                       this->nextArrayIndex = v15; /*0x6b73ad*/
                     }
                     else
                     {
-                      this->SpawnManagerClass_field_5C = dword_A8ED54[12]; /*0x6b73b2*/
+                      this->q017 = dword_A8ED54[12]; /*0x6b73b2*/
                       v16 = 20; /*0x6b73b9*/
                       this->nextArrayIndex = v91; /*0x6b73be*/
                     }
@@ -6536,10 +6536,10 @@ LABEL_21:
                       v29 = this->SpawnManagerClass_field_6C; /*0x6b759b*/
                       if ( v29 ) /*0x6b75a0*/
                       {
-                        this->SpawnManagerClass_field_68 = v29; /*0x6b75a2*/
+                        this->q01A = v29; /*0x6b75a2*/
                         this->SpawnManagerClass_field_6C = 0; /*0x6b75a5*/
                       }
-                      (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*v9 + 1152))(v9, this->SpawnManagerClass_field_68, 1); /*0x6b75b6*/
+                      (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*v9 + 1152))(v9, this->q01A, 1); /*0x6b75b6*/
                       (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v9 + 488))(v9, 2, 0); /*0x6b75c4*/
                     }
                     else
@@ -6560,7 +6560,7 @@ LABEL_21:
           }
 LABEL_87:
           v80 = ++v5; /*0x6b7960*/
-          if ( v5 >= this->q048 ) /*0x6b7964*/
+          if ( v5 >= this->q012 ) /*0x6b7964*/
             goto LABEL_88; /*0x6b7964*/
           break; /*0x6b7964*/
         case 1:
@@ -6582,10 +6582,10 @@ LABEL_50:
             v36 = this->SpawnManagerClass_field_6C; /*0x6b764b*/
             if ( v36 ) /*0x6b7650*/
             {
-              this->SpawnManagerClass_field_68 = v36; /*0x6b7652*/
+              this->q01A = v36; /*0x6b7652*/
               this->SpawnManagerClass_field_6C = 0; /*0x6b7655*/
             }
-            if ( !this->SpawnManagerClass_field_68 ) /*0x6b765c*/
+            if ( !this->q01A ) /*0x6b765c*/
               goto LABEL_55; /*0x6b7661*/
             v37 = (__int16 *)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->owner + 440))(this->owner, &v83); /*0x6b76a9*/
             v38 = CellCoord::To_CellObj(MEMORY[0x87F7E8], v37); /*0x6b76b5*/
@@ -6599,14 +6599,14 @@ LABEL_50:
           v41 = this->SpawnManagerClass_field_6C; /*0x6b76e3*/
           if ( v41 ) /*0x6b76e8*/
           {
-            this->SpawnManagerClass_field_68 = v41; /*0x6b76ea*/
+            this->q01A = v41; /*0x6b76ea*/
             this->SpawnManagerClass_field_6C = 0; /*0x6b76ed*/
           }
-          if ( v9[191] && this->SpawnManagerClass_field_68 ) /*0x6b7702*/
+          if ( v9[191] && this->q01A ) /*0x6b7702*/
           {
             (*(void (__thiscall **)(_DWORD, _DWORD))(***(_DWORD ***)(this->spawnVectorCount + 4 * v5) + 968))( /*0x6b7718*/
               **(_DWORD **)(this->spawnVectorCount + 4 * v5),
-              this->SpawnManagerClass_field_68);
+              this->q01A);
             (*(void (__thiscall **)(_DWORD, int, _DWORD))(***(_DWORD ***)(this->spawnVectorCount + 4 * v5) + 488))( /*0x6b772c*/
               **(_DWORD **)(this->spawnVectorCount + 4 * v5),
               1,
@@ -6625,14 +6625,14 @@ LABEL_55:
           v42 = this->SpawnManagerClass_field_6C; /*0x6b7737*/
           if ( v42 ) /*0x6b773c*/
           {
-            this->SpawnManagerClass_field_68 = v42; /*0x6b773e*/
+            this->q01A = v42; /*0x6b773e*/
             this->SpawnManagerClass_field_6C = 0; /*0x6b7741*/
           }
-          if ( (int)v9[191] > 0 && this->SpawnManagerClass_field_68 ) /*0x6b7752*/
+          if ( (int)v9[191] > 0 && this->q01A ) /*0x6b7752*/
           {
             *(_DWORD *)(*(_DWORD *)(this->spawnVectorCount + 4 * v5) + 4) = 3; /*0x6b775f*/
             v43 = **(_DWORD **)(this->spawnVectorCount + 4 * v5); /*0x6b776c*/
-            (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v43 + 968))(v43, this->SpawnManagerClass_field_68); /*0x6b7774*/
+            (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v43 + 968))(v43, this->q01A); /*0x6b7774*/
             (*(void (__thiscall **)(_DWORD, int, _DWORD))(***(_DWORD ***)(this->spawnVectorCount + 4 * v5) + 488))( /*0x6b7788*/
               **(_DWORD **)(this->spawnVectorCount + 4 * v5),
               1,
@@ -6730,10 +6730,10 @@ LABEL_88:
       if ( v63 == 1 ) /*0x6b797d*/
       {
         v64 = 1; /*0x6b7986*/
-        if ( this->q048 <= 0 ) /*0x6b798a*/
+        if ( this->q012 <= 0 ) /*0x6b798a*/
           goto LABEL_98; /*0x6b798a*/
         v65 = this->spawnVectorCount; /*0x6b798c*/
-        v66 = this->q048; /*0x6b798f*/
+        v66 = this->q012; /*0x6b798f*/
         do /*0x6b79a6*/
         {
           v67 = *(_DWORD *)(*(_DWORD *)v65 + 4); /*0x6b7993*/
@@ -6749,13 +6749,13 @@ LABEL_98:
       }
       return; /*0x6b79be*/
     }
-    if ( !this->SpawnManagerClass_field_68 ) /*0x6b79bf*/
+    if ( !this->q01A ) /*0x6b79bf*/
     {
 LABEL_100:
       UnitClass::ProcessIdleOrders(this); /*0x6b79c4*/
       return; /*0x6b79d2*/
     }
-    v68 = this->q048; /*0x6b79d3*/
+    v68 = this->q012; /*0x6b79d3*/
     if ( v68 <= 0 ) /*0x6b79d8*/
     {
 LABEL_106:
@@ -6771,7 +6771,7 @@ LABEL_106:
             if ( *(_BYTE *)(*(_DWORD *)(*v73 + 1732) + 3432) ) /*0x6b7a1e*/
             {
               v62 = 1; /*0x6b7a2e*/
-              UnitClass::GetExitCell((int)&dword_A8ED54[46633], (_DWORD *)*v73, (_DWORD *)this->SpawnManagerClass_field_68); /*0x6b7a37*/
+              UnitClass::GetExitCell((int)&dword_A8ED54[46633], (_DWORD *)*v73, (_DWORD *)this->q01A); /*0x6b7a37*/
               dword_A8ED54[46633] = dword_A8ED54[12]; /*0x6b7a46*/
               dword_A8ED54[46634] = v72; /*0x6b7a4b*/
               dword_A8ED54[46635] = 2; /*0x6b7a51*/
@@ -6797,7 +6797,7 @@ LABEL_106:
             {
               v73[1] = 3; /*0x6b7ad4*/
               v77 = **(_DWORD **)(this->spawnVectorCount + 4 * v71); /*0x6b7ae1*/
-              (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v77 + 968))(v77, this->SpawnManagerClass_field_68); /*0x6b7ae9*/
+              (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v77 + 968))(v77, this->q01A); /*0x6b7ae9*/
               (*(void (__thiscall **)(_DWORD, int, _DWORD))(***(_DWORD ***)(this->spawnVectorCount + 4 * v71) + 488))( /*0x6b7afd*/
                 **(_DWORD **)(this->spawnVectorCount + 4 * v71),
                 1,
@@ -6806,7 +6806,7 @@ LABEL_106:
           }
           ++v71; /*0x6b7b06*/
         }
-        while ( v71 < this->q048 ); /*0x6b7b09*/
+        while ( v71 < this->q012 ); /*0x6b7b09*/
         if ( v62 ) /*0x6b7b11*/
           UnitClass::ProcessIdleOrders(this); /*0x6b7b15*/
       }
@@ -6832,12 +6832,12 @@ LABEL_106:
     v78 = this->SpawnManagerClass_field_6C; /*0x6b7b29*/
     if ( v78 ) /*0x6b7b2e*/
     {
-      this->SpawnManagerClass_field_68 = v78; /*0x6b7b30*/
+      this->q01A = v78; /*0x6b7b30*/
       this->SpawnManagerClass_field_6C = 0; /*0x6b7b33*/
     }
-    if ( this->SpawnManagerClass_field_68 ) /*0x6b7b36*/
+    if ( this->q01A ) /*0x6b7b36*/
     {
-      if ( (*(unsigned __int8 (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)this->owner + 940))(this->owner, this->SpawnManagerClass_field_68) ) /*0x6b7b43*/
+      if ( (*(unsigned __int8 (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)this->owner + 940))(this->owner, this->q01A) ) /*0x6b7b43*/
       {
         this->referenceCount = 1; /*0x6b7b5c*/
         return; /*0x6b7b5c*/
@@ -6854,7 +6854,7 @@ int __thiscall SpawnManagerClass::SetTarget(_DWORD *this, int a2)
   int result; // eax
 
   result = a2; /*0x6b7b90*/
-  if ( a2 != *(this + 26) ) /*0x6b7b99*/
+  if ( a2 != this->q01A ) /*0x6b7b99*/
     this->q1B0 = a2; /*0x6b7b9b*/
   return result; /*0x6b7b9e*/
 }
@@ -6959,7 +6959,7 @@ int __thiscall SpawnManagerClass::CountAliveSpawns(int *this)
   int result; // eax
   int v3; // ecx
 
-  v1 = this->q048; /*0x6b7d30*/
+  v1 = this->q012; /*0x6b7d30*/
   result = 0; /*0x6b7d33*/
   if ( v1 > 0 ) /*0x6b7d37*/
   {
@@ -6985,7 +6985,7 @@ int __thiscall SpawnManagerClass::CountDockedSpawns(int *this)
   int v3; // edx
   int v4; // ecx
 
-  v1 = this->q048; /*0x6b7d51*/
+  v1 = this->q012; /*0x6b7d51*/
   result = 0; /*0x6b7d54*/
   if ( v1 > 0 ) /*0x6b7d58*/
   {
@@ -7495,7 +7495,7 @@ _DWORD *__thiscall SpawnManagerClass::Constructor_6B83A0(_DWORD *this, DynamicVe
     }
   }
   *this = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b83e3*/
-  this->__pad_014 = 10; /*0x6b83e9*/
+  *(this + 5) = 10; /*0x6b83e9*/
   this->q010 = 0; /*0x6b83f0*/
   return this; /*0x6b83f9*/
 }

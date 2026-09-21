@@ -117,31 +117,6 @@ unsigned int * sub_430F60(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x00431410  HouseClass::createStartingUnits  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
-char __thiscall sub_431410(int *this, int a2)
-{
-  int v3; // eax
-  int v4; // esi
-  int *v5; // edi
-
-  v3 = *(this + 24); /*0x431413*/
-  if ( v3 ) /*0x431418*/
-  {
-    LOBYTE(v3) = 3 * a2; /*0x431421*/
-    v4 = 0; /*0x431424*/
-    v5 = this + 3 * a2; /*0x431426*/
-    do /*0x43143f*/
-    {
-      if ( *v5 ) /*0x43142a*/
-        LOBYTE(v3) = Network::SendBeaconDelete(this, a2, v4); /*0x431433*/
-      ++v4; /*0x431438*/
-      ++v5; /*0x431439*/
-    }
-    while ( v4 < 3 ); /*0x43143f*/
-  }
-  return v3; /*0x431444*/
-}
-
 // ==== BACKFILL 0x00431700  HouseClass::Render  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::Render(int a2, int a3, int a4, int a5, int a6) {
 {
@@ -382,41 +357,6 @@ int BinkMovieHandle::Check(int a2)
     result = BinkGoto(this->tempPath, a2, 1);
     this->memoryBuffer = 0;
     return result;
-}
-}
-
-// ==== BACKFILL 0x00432C30  BinkMovie::Pause  cls=BinkMovie  sig=csp  renamed_refs=0  residual=- ====
-int BinkMovie::Pause(unsigned char a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BinkMovie_Pause(_DWORD *this, unsigned __int8 a2)
-{
-  return BinkPause(*(this + 1), a2); /*0x432c44*/
-}
-}
-
-// ==== BACKFILL 0x00432C50  BinkMovie::IsAtEnd  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
-BOOL BinkMovie::IsAtEnd()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall BinkMovie_IsAtEnd(_DWORD *this)
-{
-  int v1; // eax
-  unsigned int v2; // edx
-
-  v1 = *(this + 1); /*0x432c50*/
-  v2 = *(_DWORD *)(v1 + 12); /*0x432c54*/
-  return v2 >= *(_DWORD *)(v1 + 8) || v2 < *(this + 12); /*0x432c5c*/
-}
-}
-
-// ==== BACKFILL 0x00433040  BinkMovie::RenderFrameToSurface  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
-bool BinkMovie::RenderFrameToSurface()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall BinkMovie_RenderFrameToSurface(int *this)
-{
-  return BinkMovie::RenderLoop((int)this, *(this + 3), *(this + 4), *(this + 5)); /*0x433051*/
 }
 }
 
@@ -1334,23 +1274,6 @@ char BlitterCopySimpleSHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, int ar
 }
 }
 
-// ==== BACKFILL 0x00437F30  CellStruct::Copy  cls=CellStruct  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CellStruct::Copy(IUnknown * aP1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CellStruct::Copy(int *this, IUnknown *aP1)
-{
-  AbstractClass *v3; // edx
-  int v4; // ecx
-
-  v3 = (AbstractClass *)*this; /*0x437f34*/
-  v4 = *(this + 1); /*0x437f36*/
-  aP1->field_0 = (int)v3; /*0x437f39*/
-  aP1->field_4 = v4; /*0x437f3b*/
-  return &aP1->field_0; /*0x437f3e*/
-}
-}
-
 // ==== BACKFILL 0x004389B0  ObjectClass::CleanupAudioAndRefs  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::CleanupAudioAndRefs() {
 {
@@ -1386,16 +1309,6 @@ Iostream_init * E4Recv_438A60::__0Iostream_init_QAE_XZ_1()
 {
 {
     return this;
-}
-}
-
-// ==== BACKFILL 0x00438A70  BombClass::TimeToExplode  cls=BombClass  sig=csp  renamed_refs=0  residual=- ====
-bool BombClass::TimeToExplode()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall BombClass::TimeToExplode(int this)
-{
-  return !this->audioController && (int)MEMORY[0xA8ED84] > *(_DWORD *)(this + 56) && !this->BombClass_field_58; /*0x438a8c*/
 }
 }
 
@@ -1539,26 +1452,6 @@ BombClass * BombClass::CopyTo(char a2)
 }
 }
 
-// ==== BACKFILL 0x004399A0  Coord::GetCoords  cls=Coord  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * Coord::GetCoords(int * outCoords)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Coord::GetCoords(float *this, int *outCoords)
-{
-  int v3; // edi
-  int v4; // ebx
-  int v5; // eax
-
-  v3 = Math::RoundToInt(*(this + 6)); /*0x4399b0*/
-  v4 = Math::RoundToInt(*(this + 7)); /*0x4399ba*/
-  v5 = Math::RoundToInt(*(this + 8)); /*0x4399bc*/
-  *outCoords = v3; /*0x4399c7*/
-  outCoords[1] = v4; /*0x4399cb*/
-  outCoords[2] = v5; /*0x4399cf*/
-  return outCoords; /*0x4399c9*/
-}
-}
-
 // ==== BACKFILL 0x004399E0  VoxelAnimClass::QuaternionToMatrix  cls=VoxelAnimClass  sig=csp  renamed_refs=0  residual=- ====
 float * VoxelAnimClass::QuaternionToMatrix(float * a2)
 {
@@ -1607,16 +1500,6 @@ double JumpjetLocomotionClass::ComputeVectorLengthMetric()
 }
 }
 
-// ==== BACKFILL 0x0043A130  JumpjetLocomotionClass::ComputeVectorLengthMetric_0  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
-void JumpjetLocomotionClass::ComputeVectorLengthMetric_0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_43A130(float *this)
-{
-  Math::Sqrt(*this * *this + *(this + 1) * *(this + 1) + *(this + 2) * *(this + 2)); /*0x43a154*/
-}
-}
-
 // ==== BACKFILL 0x0043A500  COM::GetClassID  cls=NeuronClass  sig=csp  renamed_refs=0  residual=- ====
 int COM::GetClassID(int a1, unsigned int * a2)
 {
@@ -1628,17 +1511,6 @@ int COM::GetClassID(int a1, unsigned int * a2)
     *((int*)(a2) + 2) = 268445372;
     *((int*)(a2) + 3) = 1303416651;
     return 0;
-}
-}
-
-// ==== BACKFILL 0x0043A5D0  Power::Update  cls=NeuronClass  sig=csp  renamed_refs=0  residual=- ====
-int Power::Update(int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Power_Update(_DWORD *this, int *a2)
-{
-  AbstractClass::ProcessPower((int)this, a2); /*0x43a5d9*/
-  return Power::TimerProcess((int)MEMORY[0xA8ED84] - *(this + 12)); /*0x43a5f0*/
 }
 }
 

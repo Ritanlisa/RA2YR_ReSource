@@ -1595,10 +1595,10 @@ int __thiscall OptionQueue::PushEntry(int *this, IUnknown *aP1)
 
   if ( *this >= 128 ) /*0x4f1aa9*/
     return 0; /*0x4f1af5*/
-  qmemcpy((char *)this + 74 * *(this + 2) + 37 * *(this + 2) + 12, aP1, 0x6Fu); /*0x4f1ac6*/
-  *(this + *(this + 2) + 3555) = timeGetTime(); /*0x4f1ad6*/
+  qmemcpy((char *)this + 74 * this->q002 + 37 * this->q002 + 12, aP1, 0x6Fu); /*0x4f1ac6*/
+  *(this + this->q002 + 3555) = timeGetTime(); /*0x4f1ad6*/
   v3 = *this + 1; /*0x4f1ae6*/
-  *(this + 2) = ((unsigned __int8)*(this + 2) + 1) & 0x7F; /*0x4f1ae7*/
+  this->q002 = ((unsigned __int8)this->q002 + 1) & 0x7F; /*0x4f1ae7*/
   *this = v3; /*0x4f1aea*/
   return 1; /*0x4f1af1*/
 }
@@ -4704,9 +4704,9 @@ bool __thiscall SuperWeaponTypeClass::IsAvailable(_DWORD *this)
   bool v37; // [esp+17h] [ebp-5h]
   int v38; // [esp+18h] [ebp-4h]
 
-  v36 = *(this + 87) > 0; /*0x4f6565*/
-  v33 = *(this + 86) > 0; /*0x4f656c*/
-  v37 = *(this + 88) > 0; /*0x4f6573*/
+  v36 = this->q057 > 0; /*0x4f6565*/
+  v33 = this->q056 > 0; /*0x4f656c*/
+  v37 = this->q058 > 0; /*0x4f6573*/
   v2 = *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2848; /*0x4f657d*/
   v32 = this->UIName > 0; /*0x4f6583*/
   v3 = SuperWeaponTypeClass::FindByName((void *)(this->SidebarImageFile_0x18 + 152)); /*0x4f6598*/
@@ -6300,7 +6300,7 @@ int __thiscall HouseClass::NotifyUnderAttack(void *this, BuildingClass *aP1)
   v6 = HouseClass_Player /*0x4f9478*/
     && HouseClass_Player != this
     && ((v5 = *(_DWORD *)&HouseClass_Player->__pad_28[8], v5 == this->vtable4)
-     || v5 != -1 && ((1 << v5) & *((_DWORD *)this + 5602)) != 0)
+     || v5 != -1 && ((1 << v5) & this->q15E2) != 0)
     && (!MEMORY[0xA8B238] || !*(_BYTE *)(*((_DWORD *)aP1->focus + 13) + 422));
   if ( v4 ) /*0x4f947d*/
   {
@@ -6345,7 +6345,7 @@ LABEL_30:
     }
   }
 LABEL_31:
-  result = this->q048; /*0x4f95d4*/
+  result = this->q012; /*0x4f95d4*/
   for ( i = 0; i < result; ++i ) /*0x4f95db*/
   {
     TeamClass::Update_0( /*0x4f95f2*/
@@ -6355,7 +6355,7 @@ LABEL_31:
       *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[1196],
       0,
       0);
-    result = this->q048; /*0x4f95f7*/
+    result = this->q012; /*0x4f95f7*/
   }
   return result; /*0x4f95ff*/
 }
@@ -6548,7 +6548,7 @@ LABEL_16:
 // ==== 0x004F9950  HouseClass::AddPower  this=IUnknown  sig=csp ====
 int __thiscall HouseClass::AddPower(_DWORD *this, IUnknown *aP1)
 {
-  *(this + 195) += aP1; /*0x4f995c*/
+  this->q0C3 += aP1; /*0x4f995c*/
   return (int)aP1; /*0x4f9962*/
 }
 
@@ -6602,7 +6602,7 @@ bool __thiscall HouseClass::IsAllied(_DWORD *this, IUnknown *aP1)
     return 1; /*0x4f9a1b*/
   if ( aP1 == (IUnknown *)-1 ) /*0x4f9a23*/
     return 0; /*0x4f9a3d*/
-  return ((1 << (char)aP1) & *(this + 5602)) != 0; /*0x4f9a1d*/
+  return ((1 << (char)aP1) & this->q15E2) != 0; /*0x4f9a1d*/
 }
 
 
@@ -6651,7 +6651,7 @@ bool __thiscall Object::IsAlliedWithObjectHouse(_DWORD *this, IUnknown *aP1)
   v5 = v3[12]; /*0x4f9aae*/
   if ( v5 == this->q030 ) /*0x4f9ab6*/
     return 1; /*0x4f9abb*/
-  return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9ad5*/
+  return v5 != -1 && (this->q15E2 & (1 << v5)) != 0; /*0x4f9ad5*/
 }
 
 
@@ -6673,7 +6673,7 @@ bool __thiscall House_IsAlliedWithObjectSimple(_DWORD *this, _BYTE *a2)
   v5 = *(_DWORD *)(v3 + 48); /*0x4f9b14*/
   if ( v5 == this->q030 ) /*0x4f9b1c*/
     return 1; /*0x4f9b21*/
-  return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9b3b*/
+  return v5 != -1 && (this->q15E2 & (1 << v5)) != 0; /*0x4f9b3b*/
 }
 
 
@@ -8306,7 +8306,7 @@ char __thiscall sub_4FBD00(_DWORD *this, int a2)
       {
         v5 = v4[12]; /*0x4fbd24*/
         if ( v5 != this->nextObject /*0x4fbd55*/
-          && (v5 == -1 || ((1 << v5) & *(this + 5602)) == 0)
+          && (v5 == -1 || ((1 << v5) & this->q15E2) == 0)
           && DynamicVector::GetOrGrow(v4 + 5460, a2) > 0 )
         {
           break; /*0x4fbd55*/
@@ -8333,28 +8333,28 @@ int __thiscall sub_4FBD80(_DWORD *this, int a2, int a3)
   {
     case 1: /*0x4fbd92*/
     case 40: /*0x4fbd92*/
-      v5 = *(this + 5524); /*0x4fbdaf*/
+      v5 = this->q1594; /*0x4fbdaf*/
       if ( v5 == -1 ) /*0x4fbdb8*/
         goto LABEL_10; /*0x4fbdb8*/
       result = *((_DWORD *)g_UnitTypeCount2 + v5); /*0x4fbdc0*/
       break; /*0x4fbdc3*/
     case 2: /*0x4fbd92*/
     case 3: /*0x4fbd92*/
-      v3 = *(this + 5526); /*0x4fbd99*/
+      v3 = this->q1596; /*0x4fbd99*/
       if ( v3 == -1 ) /*0x4fbda2*/
         goto LABEL_10; /*0x4fbda2*/
       result = *((_DWORD *)MEMORY[0xA8B21C] + v3); /*0x4fbda9*/
       break; /*0x4fbdac*/
     case 6: /*0x4fbd92*/
     case 7: /*0x4fbd92*/
-      v7 = *(this + 5523); /*0x4fbddc*/
+      v7 = this->q1593; /*0x4fbddc*/
       if ( v7 == -1 ) /*0x4fbde5*/
         goto LABEL_10; /*0x4fbde5*/
       result = *((_DWORD *)g_TriggerTypeCount + v7); /*0x4fbded*/
       break; /*0x4fbdf0*/
     case 15: /*0x4fbd92*/
     case 16: /*0x4fbd92*/
-      v6 = *(this + 5525); /*0x4fbdc6*/
+      v6 = this->q1595; /*0x4fbdc6*/
       if ( v6 == -1 ) /*0x4fbdcf*/
         goto LABEL_10; /*0x4fbdcf*/
       result = *((_DWORD *)MEMORY[0xA8E34C] + v6); /*0x4fbdd6*/
@@ -8470,9 +8470,9 @@ char __thiscall HouseClass::PickedUpFlag(int *this, ObjectClass *aP1, char a3)
 {
   if ( !aP1 || aP1->inLimbo ) /*0x4fc06c*/
     return 0; /*0x4fc0a8*/
-  HouseClass::IsCellOccupied((int)this, (IUnknown *)*(this + 5367), a3); /*0x4fc084*/
+  HouseClass::IsCellOccupied((int)this, (IUnknown *)this->q14F7, a3); /*0x4fc084*/
   HouseClass::SetPrimaryFactory(aP1, *(_DWORD *)(this->attachedTag + 184)); /*0x4fc095*/
-  *(this + 5367) = (int)aP1; /*0x4fc09a*/
+  this->q14F7 = (int)aP1; /*0x4fc09a*/
   return 1; /*0x4fc0a0*/
 }
 
@@ -9264,8 +9264,8 @@ double __thiscall HouseClass_GetPowerRatio(int *this)
   int v1; // eax
   int v2; // ecx
 
-  v1 = *(this + 5353); /*0x4fce33*/
-  v2 = *(this + 5354); /*0x4fce39*/
+  v1 = this->q14E9; /*0x4fce33*/
+  v2 = this->q14EA; /*0x4fce39*/
   if ( v1 >= v2 || !v2 ) /*0x4fce4d*/
     return 1.0; /*0x4fce69*/
   if ( v1 ) /*0x4fce51*/
@@ -9463,8 +9463,8 @@ int __thiscall BuildingClass_CalcExitCoords(int *this)
 
   v2 = 0; /*0x4fd164*/
   v3 = 5; /*0x4fd166*/
-  this->q5490 = MEMORY[0xA8EF98]; /*0x4fd16b*/
-  *(this + 5414) = 0; /*0x4fd171*/
+  this->q1524 = MEMORY[0xA8EF98]; /*0x4fd16b*/
+  this->q1526 = 0; /*0x4fd171*/
   result = (int)(this + 5416); /*0x4fd177*/
   do /*0x4fd189*/
   {
@@ -9475,7 +9475,7 @@ int __thiscall BuildingClass_CalcExitCoords(int *this)
     --v3; /*0x4fd188*/
   }
   while ( v3 ); /*0x4fd189*/
-  if ( this->__pad_0BC > 0 ) /*0x4fd191*/
+  if ( this->qBC0 > 0 ) /*0x4fd191*/
   {
     v5 = this->__pad_078; /*0x4fd197*/
     v6 = 0; /*0x4fd19a*/
@@ -9537,12 +9537,12 @@ int __thiscall BuildingClass_CalcExitCoords(int *this)
                   0,
                   0);
       v7 = v33; /*0x4fd2c7*/
-      this->q5490 = result; /*0x4fd2cb*/
+      this->q1524 = result; /*0x4fd2cb*/
     }
     if ( v7 <= 1 ) /*0x4fd2d4*/
     {
 LABEL_39:
-      *(this + 5414) = 512; /*0x4fd4ee*/
+      this->q1526 = 512; /*0x4fd4ee*/
     }
     else
     {
@@ -9559,10 +9559,10 @@ LABEL_39:
           v13 = v39; /*0x4fd2f6*/
           if ( v39 && !*(_BYTE *)(v39 + 129) && *(int *)(v39 + 108) > 0 ) /*0x4fd318*/
           {
-            if ( this->__pad_5494 == MEMORY[0xA8EF98] ) /*0x4fd332*/
-              v14 = this->q5490; /*0x4fd33d*/
+            if ( this->q1525 == MEMORY[0xA8EF98] ) /*0x4fd332*/
+              v14 = this->q1524; /*0x4fd33d*/
             else
-              v14 = this->__pad_5494; /*0x4fd345*/
+              v14 = this->q1525; /*0x4fd345*/
             v36[1] = v14; /*0x4fd34e*/
             v38 = v14; /*0x4fd352*/
             if ( v14 == MEMORY[0xA8EF98] ) /*0x4fd356*/
@@ -9601,7 +9601,7 @@ LABEL_39:
       v26 = v35 / v7; /*0x4fd41b*/
       if ( v35 / v7 <= 512 ) /*0x4fd422*/
         v26 = 512; /*0x4fd424*/
-      *(this + 5414) = v26; /*0x4fd429*/
+      this->q1526 = v26; /*0x4fd429*/
       result = this->__pad_078; /*0x4fd42f*/
       v27 = 0; /*0x4fd432*/
       v36[0] = result; /*0x4fd434*/
@@ -11805,7 +11805,7 @@ int __thiscall PathfindingClass::FindPath(_DWORD *this, ObjectClass *aP1)
   v22 = v12; /*0x4ffbe5*/
   v24 = v2 - v13; /*0x4ffbe9*/
   v14 = Coord::Length(&v22); /*0x4ffbed*/
-  v15 = *(this + 5414); /*0x4ffbf2*/
+  v15 = this->q1526; /*0x4ffbf2*/
   if ( v14 <= v15 ) /*0x4ffbfa*/
     return 0; /*0x4ffbff*/
   if ( v14 > 4 * v15 ) /*0x4ffc0d*/

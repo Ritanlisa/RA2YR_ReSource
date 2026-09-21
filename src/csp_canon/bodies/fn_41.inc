@@ -618,36 +618,6 @@ char * sub_410E70(char * a1, int a2, unsigned short a3)
 }
 }
 
-// ==== BACKFILL 0x004112D0  MapClass::isLocationShrouded  cls=MapClass  sig=csp  renamed_refs=0  residual=- ====
-int MapClass::isLocationShrouded(unsigned short a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4112D0(_DWORD *this, unsigned __int16 a2)
-{
-  int v2; // eax
-  int v3; // ecx
-  _DWORD v5[4]; // [esp+0h] [ebp-10h] BYREF
-
-  v5[3] = *(this + 11); /*0x4112d8*/
-  v5[0] = 0; /*0x4112e0*/
-  v5[1] = 0; /*0x4112e4*/
-  v2 = *(this + 10); /*0x4112e8*/
-  v3 = *(this + 5); /*0x4112eb*/
-  v5[2] = v2; /*0x4112f4*/
-  return (*(int (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v3 + 20))(v3, v5, a2); /*0x411303*/
-}
-}
-
-// ==== BACKFILL 0x00411310  StreamClass::WriteBytes  cls=StreamClass  sig=csp  renamed_refs=0  residual=- ====
-int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall StreamClass_WriteBytes(_DWORD **this, unsigned __int16 a2, char a3, int a4, int a5, int a6)
-{
-  return (*(int (__thiscall **)(_DWORD, char *, _DWORD))(**(this + 5) + 20))(*(this + 5), &a3, a2); /*0x411328*/
-}
-}
-
 // ==== BACKFILL 0x00411330  TacticalClass::FillScanlinesTransparent  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TacticalClass::FillScanlinesTransparent(int a1, int a2, int a3, int a4) {
 {
@@ -822,16 +792,6 @@ char XSurface::Unlock()
 {
     --this->LockCount;
     return 1;
-}
-}
-
-// ==== BACKFILL 0x00411580  Surface::IsLocked  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
-BOOL Surface::IsLocked()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Surface_IsLocked(_DWORD *this)
-{
-  return *(this + 3) != 0; /*0x41158a*/
 }
 }
 
@@ -1074,21 +1034,6 @@ int SaveGame::SaveIteratedData(int a2)
     return 0;
   }
     return result;
-}
-}
-
-// ==== BACKFILL 0x00413A30  Coord::ToCell  cls=Coord  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * Coord::ToCell(IUnknown * aP1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Coord::ToCell(_DWORD *this, IUnknown *aP1)
-{
-  int v3; // [esp+0h] [ebp-4h]
-
-  LOWORD(v3) = *this / 256; /*0x413a3f*/
-  HIWORD(v3) = *(this + 1) / 256; /*0x413a53*/
-  aP1->field_0 = v3; /*0x413a60*/
-  return &aP1->field_0; /*0x413a63*/
 }
 }
 
@@ -1646,13 +1591,6 @@ void FootClass::vt_entry_534() {}
 // ==== BACKFILL 0x0041C140  FootClass::vt_entry_540  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
 void FootClass::vt_entry_540() {}
 
-// ==== BACKFILL 0x0041C150  TacticalClass::ProcessTick2  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-_DWORD *__thiscall MiniStub_41c150(_DWORD *this, _DWORD *a2)
-{
-  *a2 = *(this + 344); /*0x41c15a*/
-  return a2; /*0x41c15c*/
-}
-
 // ==== BACKFILL 0x0041C160  TacticalClass::ProcessTick3  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TacticalClass::ProcessTick3(int a1) {
 {
@@ -1716,33 +1654,6 @@ unsigned short * Vector::ToFacingMath(unsigned short * a2)
     v3 = Math::CalcAngle(this->Vector_field_0x8, v5);
     *a2 = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427);
     return a2;
-}
-}
-
-// ==== BACKFILL 0x0041C350  Math::Hypotenuse2D  cls=Math  sig=csp  renamed_refs=0  residual=- ====
-void Math::Hypotenuse2D()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Math_Hypotenuse2D(double *this)
-{
-  Math::Sqrt(*this * *this + *(this + 1) * *(this + 1)); /*0x41c369*/
-}
-}
-
-// ==== BACKFILL 0x0041C380  Coord::Length  cls=Coord  sig=csp  renamed_refs=0  residual=- ====
-double Coord::Length()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall Coord::Length(int *this)
-{
-  double result; // st7
-
-  result = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( /*0x41c3a4*/
-                                         (double)*this * (double)*this
-                                       + (double)*(this + 1) * (double)*(this + 1)
-                                       + (double)*(this + 2) * (double)*(this + 2)));
-  Math::RoundToInt(result); /*0x41c3ac*/
-  return result; /*0x41c3a9*/
 }
 }
 

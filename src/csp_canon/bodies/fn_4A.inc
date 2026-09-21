@@ -1101,16 +1101,6 @@ namespace ra2 { namespace game { int TechnoClass::checkCloakState() {
 }
 } } }
 
-// ==== BACKFILL 0x004A5110  Window::IsVisible  cls=Window  sig=csp  renamed_refs=0  residual=- ====
-bool Window::IsVisible()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall Window_IsVisible(_BYTE *this)
-{
-  return *(this + 24) && *(this + 25); /*0x4a5120*/
-}
-}
-
 // ==== BACKFILL 0x004A5130  BuildingClass::CheckFlag24  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::CheckFlag24()
 {
@@ -1149,36 +1139,6 @@ unsigned int E4Recv_4A5950::_GetNumExternalThreads_SchedulerProxy_details_Concur
 {
 {
     return this->M180;
-}
-}
-
-// ==== BACKFILL 0x004A5E50  sub_4A5E50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_4A5E50::sub_4A5E50(int a2, AbstractClass * aP2, AbstractClass * aP3)
- {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4A5E50(unsigned __int16 *this, int a2, AbstractClass *aP2, AbstractClass *aP3)
-{
-  BitFont *v5; // esi
-  int PixelData; // eax
-
-  *(_DWORD *)aP2->__pad_0 = 0; /*0x4a5e5e*/
-  *(_DWORD *)aP3->__pad_0 = 0; /*0x4a5e65*/
-  v5 = (BitFont *)aP0; /*0x4a5e6b*/
-  if ( !this || !aP0 ) /*0x4a5e77*/
-    return 0; /*0x4a5ea2*/
-  PixelData = FontClass::GetPixelData(aP0, 0x57u); /*0x4a5e7d*/
-  Text::Layout(v5, this, aP2, aP3, (AbstractClass *)(a2 * PixelData)); /*0x4a5e8d*/
-  return *(_DWORD *)aP3->__pad_0 / v5[2].field_4; /*0x4a5e98*/
-}
-}
-
-// ==== BACKFILL 0x004A60D0  TextRenderer::GetInstance  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-AbstractClass * TextRenderer::GetInstance()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AbstractClass *TextRenderer::GetInstance()
-{
-  return aP0; /*0x4a60d5*/
 }
 }
 
@@ -1966,46 +1926,6 @@ int E4Recv_4AECD0::sub_4AECD0()
     FreeLibrary(v3);
   }
     return v1;
-}
-}
-
-// ==== BACKFILL 0x004AF2A0  BlitterDrawSHP  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_4AF2A0::BlitterDrawSHP()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BlitterDrawSHP(IUnknown *this)
-{
-  _DWORD *v1; // edx
-  int SHPFrame; // eax
-  int v4; // edx
-  int v5; // eax
-  XSurface *v7; // [esp-18h] [ebp-40h]
-  XSurface aP2; // [esp+8h] [ebp-20h] BYREF
-  char v9[16]; // [esp+18h] [ebp-10h] BYREF
-  XSurface *aP3; // [esp+2Ch] [ebp+4h]
-  XSurface *aP5; // [esp+30h] [ebp+8h]
-  XSurface *v12; // [esp+34h] [ebp+Ch]
-  XSurface *aP1; // [esp+38h] [ebp+10h]
-  int v14; // [esp+3Ch] [ebp+14h]
-  XSurface *aP6; // [esp+40h] [ebp+18h]
-  XSurface *aP7; // [esp+44h] [ebp+1Ch]
-  XSurface *aP8; // [esp+48h] [ebp+20h]
-  int v18; // [esp+4Ch] [ebp+24h]
-  int v19; // [esp+50h] [ebp+28h]
-  int v20; // [esp+54h] [ebp+2Ch]
-
-  SHPFrame = (int)aP6; /*0x4af2a0*/
-  v1[95] = v14; /*0x4af2b1*/
-  if ( !aP6 )
-    SHPFrame = BuildingClass::GetSHPFrame(v1, v14 != 0 ? (ConvertClass *)0x10 : 0);
-  v4 = *(_DWORD *)v12->__pad_0; /*0x4af2d0*/
-  aP2.Width = v12->Width; /*0x4af2d5*/
-  *(_DWORD *)aP2.__pad_0 = v4; /*0x4af2dd*/
-  aP2.Height = aP5->Height; /*0x4af2e4*/
-  aP2.LockCount = aP5->LockCount; /*0x4af2eb*/
-  v7 = (XSurface *)SHPFrame; /*0x4af308*/
-  v5 = (*(int (__thiscall **)(XSurface *, char *))(*(_DWORD *)aP3->__pad_0 + 120))(aP3, v9); /*0x4af313*/
-  return BlitterCopySHP((XSurface *)this, aP1, &aP2, aP3, v5, aP5, v7, aP7, aP8, v18, v19, v20); /*0x4af328*/
 }
 }
 

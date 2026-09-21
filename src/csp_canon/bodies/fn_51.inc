@@ -266,24 +266,6 @@ unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00511650  HouseTypeClass::loadVeteranWeapons  cls=HouseTypeClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseTypeClass::loadVeteranWeapons(_DWORD *this, HouseTypeClass *aP1)
-{
-  AbstractTypeClass::Init((int)this, (AbstractTypeClass *)aP1); /*0x511658*/
-  *(this + 83) = &vt_TypeList_InfantryTypeClass_const; /*0x51165d*/
-  *(this + 90) = &vt_TypeList_UnitTypeClass_const; /*0x511667*/
-  *(this + 97) = &vt_TypeList_AircraftTypeClass_const; /*0x511671*/
-  *this = &HouseTypeClass::`vftable'; /*0x51167b*/
-  *(this + 1) = &HouseTypeClass::`vftable'; /*0x511681*/
-  *(this + 2) = &HouseTypeClass::`vftable'; /*0x511688*/
-  *(this + 3) = &vt_HouseTypeClass; /*0x51168f*/
-  return this; /*0x511698*/
-}
-}
-
 // ==== BACKFILL 0x005117D0  SuperWeaponTypeClass::FindByName  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperWeaponTypeClass::FindByName()
 {
@@ -306,34 +288,6 @@ int SuperWeaponTypeClass::FindByName()
     return -1;
   }
     return v4[46];
-}
-}
-
-// ==== BACKFILL 0x00512170  HouseTypeClass::ProcessPower  cls=HouseTypeClass  sig=csp  renamed_refs=4  residual=- ====
-int HouseTypeClass::ProcessPower(int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseTypeClass::ProcessPower(int this, int *a2)
-{
-  int v3; // edx
-  int v4; // eax
-
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x51217a*/
-  Power::TimerProcess(this->uniqueId); /*0x512188*/
-  Power::TimerProcess(this->abstractFlags); /*0x512196*/
-  Power::TimerProcess(this->nextArrayIndex); /*0x5121a4*/
-  Checksummer::Add_double(this->NeedsSaveOrLink, *(_DWORD *)(this + 204)); /*0x5121b9*/
-  Checksummer::Add_double(this->groundspeedMult, *(_DWORD *)(this + 212)); /*0x5121ce*/
-  Checksummer::Add_double(this->airspeedMult, *(_DWORD *)(this + 220)); /*0x5121e3*/
-  Checksummer::Add_double(this->armorMult, *(_DWORD *)(this + 228)); /*0x5121f8*/
-  Checksummer::Add_double(this->rofMult, *(_DWORD *)(this + 236)); /*0x51220d*/
-  Checksummer::Add_double(this->costMult, *(_DWORD *)(this + 244)); /*0x512222*/
-  Checksummer::Add_double(this->buildtimeMult, *(_DWORD *)(this + 252)); /*0x512237*/
-  Checksummer::Add_Buffer((unsigned int *)a2, (unsigned __int8 *)(this + 416), strlen((const char *)(this + 416))); /*0x512252*/
-  LOBYTE(v3) = *(_BYTE *)(this + 420); /*0x512257*/
-  v4 = Power::FinalizeDrain(a2, v3); /*0x512260*/
-  LOBYTE(v4) = *(_BYTE *)(this + 421); /*0x512265*/
-  return Power::FlagProcess(a2, v4); /*0x512273*/
 }
 }
 
@@ -1029,17 +983,6 @@ namespace gamemd { int MovementAI::MarkOccupiedPathCell() {
 }
 } }
 
-// ==== BACKFILL 0x00516C70  JumpjetLocomotionClass::DispatchVirtualCall_2  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
-bool JumpjetLocomotionClass::DispatchVirtualCall_2(int a1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __stdcall JumpjetLocomotionClass::sub_516C70(int a1)
-{
-  return StreamClass::GetDirty(a1) /*0x516c90*/
-      || (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 456))(*(_DWORD *)(a1 + 8)) > 0;
-}
-}
-
 // ==== BACKFILL 0x00516CA0  JumpjetLocomotionClass::IsBridgeBlocking  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::IsBridgeBlocking(int a1)
 {
@@ -1317,55 +1260,6 @@ LocomotionClass * LocomotionClass::ProcessMove(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (LocomotionClass *)this;
-}
-}
-
-// ==== BACKFILL 0x00517440  Color::ConvertToRGB  cls=Color  sig=csp  renamed_refs=0  residual=- ====
-int Color::ConvertToRGB(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Color_ConvertToRGB(unsigned __int8 *this, int a2)
-{
-  int v2; // esi
-  int v3; // ebx
-  int v4; // ecx
-  unsigned int v5; // eax
-  unsigned int v6; // eax
-  unsigned int v7; // edx
-  __int16 v9; // [esp+10h] [ebp-20h]
-  _DWORD v10[5]; // [esp+14h] [ebp-1Ch]
-  int v11; // [esp+28h] [ebp-8h]
-  unsigned int v12; // [esp+2Ch] [ebp-4h]
-
-  v2 = *(this + 2); /*0x51744b*/
-  v3 = *(this + 1); /*0x517453*/
-  v4 = 3 * *this; /*0x51745c*/
-  v10[2] = v2; /*0x51745f*/
-  v4 *= 2; /*0x517463*/
-  v10[1] = v2; /*0x517467*/
-  v10[3] = v2 * (255 - v3 * (v4 % 255) / 0xFFu) / 0xFF; /*0x51749b*/
-  v11 = v2 * (255 - v3) / 255; /*0x5174b7*/
-  v10[4] = v11; /*0x5174bb*/
-  v12 = v2 * (255 - v3 * (255 - v4 % 255) / 0xFFu) / 0xFF; /*0x5174e2*/
-  v5 = ((unsigned int)(v4 / 255) > 4 ? -4 : 2) + v4 / 255;
-  LOBYTE(v9) = v10[v5]; /*0x51750f*/
-  v6 = (v5 > 4 ? -4 : 2) + v5;
-  v7 = v6 + (v6 > 4 ? -4 : 2);
-  LOBYTE(v6) = v10[v6]; /*0x51752c*/
-  HIBYTE(v9) = v10[v7]; /*0x517535*/
-  *(_WORD *)a2 = v9; /*0x517544*/
-  *(_BYTE *)(a2 + 2) = v6; /*0x51754a*/
-  return a2; /*0x517530*/
-}
-}
-
-// ==== BACKFILL 0x00517590  DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare  cls=DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode  sig=csp  renamed_refs=0  residual=- ====
-BOOL DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(unsigned char * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_517590(_BYTE *this, _BYTE *a2)
-{
-  return *this != *a2 || *(this + 1) != a2[1] || *(this + 2) != a2[2]; /*0x5175bd*/
 }
 }
 

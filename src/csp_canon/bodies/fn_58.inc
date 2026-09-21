@@ -669,33 +669,6 @@ namespace gamemd { int CellClass::CopyNeighborData(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00588C40  CellClass::initCellData  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
-_WORD *__thiscall CellClass::initCellData(_WORD *this, MouseClass *aP1)
-{
-  *this += LOWORD(aP1->field_0); /*0x588c49*/
-  *(this + 1) += HIWORD(aP1->field_0); /*0x588c50*/
-  return this; /*0x588c54*/
-}
-
-// ==== BACKFILL 0x00588C60  CellStruct::Sub  cls=CellStruct  sig=csp  renamed_refs=0  residual=- ====
-IUnknown * CellStruct::Sub(IUnknown * aP1, IUnknown * aP2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__thiscall CellStruct::Sub(__int16 *this, IUnknown *aP1, IUnknown *aP2)
-{
-  __int16 v3; // dx
-  __int16 v4; // cx
-  IUnknown *aP2a; // [esp+8h] [ebp+8h]
-
-  v3 = *this; /*0x588c60*/
-  v4 = *(this + 1) - HIWORD(aP2->field_0); /*0x588c6e*/
-  LOWORD(aP2a) = v3 - LOWORD(aP2->field_0); /*0x588c76*/
-  HIWORD(aP2a) = v4; /*0x588c7b*/
-  aP1->field_0 = (int)aP2a; /*0x588c84*/
-  return aP1; /*0x588c86*/
-}
-}
-
 // ==== BACKFILL 0x00588C90  VectorClass::CleanupSubzone  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 void VectorClass::CleanupSubzone()
 {

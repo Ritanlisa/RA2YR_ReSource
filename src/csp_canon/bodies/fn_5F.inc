@@ -36,16 +36,6 @@ unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
 }
 }
 
-// ==== BACKFILL 0x005F1950  NullModemClass::COMStub  cls=NullModemClass  sig=csp  renamed_refs=0  residual=- ====
-int NullModemClass::COMStub()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass::_vt04(_DWORD *this)
-{
-  return *(this + 15); /*0x5f1953*/
-}
-}
-
 // ==== BACKFILL 0x005F1960  ObjectClass::FreeResources  cls=ObjectClass  sig=csp  renamed_refs=4  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::FreeResources() {
 {
@@ -2062,16 +2052,6 @@ unsigned int * globalHelper_0FDCC0(IUnknown * aP0, int a2)
     *result = 0;
     result[1] = v4;
     return result;
-}
-}
-
-// ==== BACKFILL 0x005FDDE0  Object::ProcessEvent  cls=OverlayClass  sig=csp  renamed_refs=0  residual=- ====
-int Object::ProcessEvent()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Object::_vt34(_DWORD *this)
-{
-  return *(this + 43); /*0x5fdde6*/
 }
 }
 

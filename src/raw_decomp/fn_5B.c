@@ -1363,14 +1363,14 @@ int __thiscall MissionClass::SetState(#377 *this)
   int v4; // [esp+10h] [ebp+4h]
 
   result = v4; /*0x5b2fdc*/
-  if ( this->currentMission != 28 || v4 != 5 ) /*0x5b2fe5*/
+  if ( this->q02B != 28 || v4 != 5 ) /*0x5b2fe5*/
   {
-    this->currentMission = v4; /*0x5b2fe9*/
+    this->q02B = v4; /*0x5b2fe9*/
     this->queuedMission = -1; /*0x5b2fef*/
     this->missionQueued = 0; /*0x5b2ff9*/
     this->missionStatus = 0; /*0x5b2fff*/
     this->nextObject = MEMORY[0xA8ED84]; /*0x5b300a*/
-    this->missionData = 0; /*0x5b3010*/
+    this->q031 = 0; /*0x5b3010*/
     v2 = (_DWORD *)((char *)this + 200); /*0x5b301b*/
     *v2 = MEMORY[0xA8ED84]; /*0x5b3021*/
     v2[1] = v3; /*0x5b3027*/
@@ -1386,7 +1386,7 @@ int __thiscall MissionClass::GetPrimaryOrFallback(#377 *this)
 {
   int result; // eax
 
-  result = this->currentMission; /*0x5b3040*/
+  result = this->q02B; /*0x5b3040*/
   if ( result == -1 ) /*0x5b3049*/
     return this->queuedMission; /*0x5b304b*/
   return result; /*0x5b3051*/
@@ -1429,7 +1429,7 @@ LABEL_5:
         *(_DWORD *)(this + 208) = v2; /*0x5b318c*/
         break; /*0x5b3193*/
       case 2: /*0x5b30c1*/
-        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 556))(this); /*0x5b3352*/
+        v2 = (*(int (__thiscall **)(int))(this->q08B)(this); /*0x5b3352*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b335f*/
         *(_DWORD *)(this + 204) = v6; /*0x5b3365*/
         *(_DWORD *)(this + 208) = v2; /*0x5b3368*/
@@ -1497,7 +1497,7 @@ LABEL_5:
         *(_DWORD *)(this + 208) = v2; /*0x5b3258*/
         break; /*0x5b325f*/
       case 0xF: /*0x5b30c1*/
-        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 552))(this); /*0x5b3374*/
+        v2 = (*(int (__thiscall **)(int))(this->q08A)(this); /*0x5b3374*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b3381*/
         *(_DWORD *)(this + 204) = v6; /*0x5b3387*/
         *(_DWORD *)(this + 208) = v2; /*0x5b338a*/
@@ -1587,7 +1587,7 @@ LABEL_5:
         *(_DWORD *)(this + 208) = v2; /*0x5b3456*/
         break; /*0x5b345d*/
       default:
-        v2 = (*(int (__thiscall **)(int))(this->__pad_204)(this); /*0x5b34c8*/
+        v2 = (*(int (__thiscall **)(int))(this->inLimbo)(this); /*0x5b34c8*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b34d4*/
         *(_DWORD *)(this + 204) = v6; /*0x5b34da*/
         *(_DWORD *)(this + 208) = v2; /*0x5b34dd*/
@@ -1612,16 +1612,16 @@ int __thiscall MissionClass::AdvanceState(#377 *this)
   }
   else
   {
-    this->currentMission = result; /*0x5b357f*/
+    this->q02B = result; /*0x5b357f*/
     this->queuedMission = -1; /*0x5b3585*/
     v2 = MEMORY[0xA8ED84]; /*0x5b358f*/
     this->missionStatus = 0; /*0x5b359c*/
     this->missionTimer = v2; /*0x5b35a2*/
-    this->q0CC = v3; /*0x5b35a8*/
+    this->q033 = v3; /*0x5b35a8*/
     this->attachedTag = 0; /*0x5b35ab*/
     result = (int)MEMORY[0xA8ED84]; /*0x5b35ae*/
     this->nextObject = MEMORY[0xA8ED84]; /*0x5b35b3*/
-    this->missionData = 0; /*0x5b35b9*/
+    this->q031 = 0; /*0x5b35b9*/
     this->missionQueued = 0; /*0x5b35bf*/
     LOBYTE(result) = 1; /*0x5b35c5*/
   }
@@ -1639,7 +1639,7 @@ int __thiscall BuildingClass::MissionDispatch(#377 *this)
   char v6; // [esp+Ch] [ebp+8h]
 
   result = v5; /*0x5b35e0*/
-  v3 = this->currentMission; /*0x5b35e7*/
+  v3 = this->q02B; /*0x5b35e7*/
   if ( (v3 != 28 || v5 != 5) && v3 != 19 ) /*0x5b35fa*/
   {
     if ( v5 != -1 ) /*0x5b35ff*/
@@ -2235,7 +2235,7 @@ void __thiscall Tree_Destructor(_DWORD *this)
   {
     if ( *this ) /*0x5b4087*/
       Tree::Destructor(); /*0x5b408d*/
-    if ( *(this + 1) ) /*0x5b4092*/
+    if ( this->q001 ) /*0x5b4092*/
       Tree::Destructor(); /*0x5b4099*/
     __3_YAXPAX_Z(this); /*0x5b409f*/
   }
@@ -4078,10 +4078,10 @@ int __thiscall sub_5B6CD0(_DWORD *this)
   __int16 v8; // [esp+100h] [ebp-4h]
 
   memset(v7, 0, sizeof(v7)); /*0x5b6ce5*/
-  v2 = *(this + 21); /*0x5b6ce7*/
+  v2 = this->q015; /*0x5b6ce7*/
   v8 = 0; /*0x5b6cea*/
-  v3 = *(this + 20); /*0x5b6cec*/
-  v4 = *(this + 22); /*0x5b6cef*/
+  v3 = this->q014; /*0x5b6cec*/
+  v4 = this->q016; /*0x5b6cef*/
   v7[0] = 101; /*0x5b6cf2*/
   *(_DWORD *)((char *)&v7[33] + 2) = v3; /*0x5b6cfa*/
   v7[53] = v2; /*0x5b6d01*/
@@ -5544,12 +5544,12 @@ int __thiscall sub_5B9550(char *this, wchar_t *Source, unsigned int a3, int a4)
   v5 = (wchar_t *)(this + 34); /*0x5b9564*/
   if ( _wcsicmp((const wchar_t *)this + 17, Source) /*0x5b958c*/
     || *((_DWORD *)this + 19) != a3
-    || (result = a4, *((_DWORD *)this + 20) != a4) )
+    || (result = a4, this->q014 != a4) )
   {
     wcscpy(v5, Source); /*0x5b9594*/
     v7 = *(HWND *)this; /*0x5b9599*/
     *((_DWORD *)this + 19) = a3; /*0x5b95a5*/
-    *((_DWORD *)this + 20) = a4; /*0x5b95a8*/
+    this->q014 = a4; /*0x5b95a8*/
     DlgItem = GetDlgItem(v7, 1640); /*0x5b95b7*/
     if ( DlgItem ) /*0x5b95bb*/
     {
@@ -5563,7 +5563,7 @@ int __thiscall sub_5B9550(char *this, wchar_t *Source, unsigned int a3, int a4)
     }
     result = PlayVocClass(HIDWORD(MEMORY[0x8871E0]->MovieOff), 0x2000, 1.0, 0); /*0x5b9632*/
   }
-  *(this + 9) = 1; /*0x5b9637*/
+  this->q009 = 1; /*0x5b9637*/
   return result; /*0x5b963b*/
 }
 
@@ -7743,7 +7743,7 @@ void nullsub_174()
 // ==== 0x005BCC30  ObjectClass::method_5BCC30  this=ObjectClass  sig=csp ====
 int __thiscall sub_5BCC30(_DWORD *this)
 {
-  return *(this + 2502); /*0x5bcc36*/
+  return this->q9C6; /*0x5bcc36*/
 }
 
 
@@ -7759,10 +7759,10 @@ int __thiscall sub_5BCC40(_DWORD *this, int a2, int a3)
 // ==== 0x005BCC60  ObjectClass::method_5BCC60  this=ObjectClass  sig=csp ====
 int __thiscall sub_5BCC60(_DWORD *this, int a2, int a3, int a4, int a5)
 {
-  *(this + 2505) = a2; /*0x5bcc68*/
-  *(this + 2506) = a3; /*0x5bcc72*/
-  *(this + 2507) = a4; /*0x5bcc7c*/
-  *(this + 2508) = a5; /*0x5bcc82*/
+  this->q9C9 = a2; /*0x5bcc68*/
+  this->q9CA = a3; /*0x5bcc72*/
+  this->q9CB = a4; /*0x5bcc7c*/
+  this->q9CC = a5; /*0x5bcc82*/
   return a4; /*0x5bcc88*/
 }
 
@@ -7796,7 +7796,7 @@ char __thiscall TextBuffer_Init(_BYTE *this)
     ++v2; /*0x5bccb8*/
   }
   while ( v1 < 25 ); /*0x5bccbe*/
-  *(this + 10036) = 1; /*0x5bccc8*/
+  this->q2734 = 1; /*0x5bccc8*/
   return Text::DrawRepeated(this, 0, 0, 80, 25); /*0x5bccd4*/
 }
 
@@ -7804,7 +7804,7 @@ char __thiscall TextBuffer_Init(_BYTE *this)
 // ==== 0x005BCCE0  ObjectClass::method_5BCCE0  this=ObjectClass  sig=csp ====
 char __thiscall sub_5BCCE0(_BYTE *this)
 {
-  return *(this + 10036); /*0x5bcce6*/
+  return this->q2734; /*0x5bcce6*/
 }
 
 
@@ -7839,10 +7839,10 @@ char __thiscall sub_5BCE10(int *this, int a2)
   result = *((_BYTE *)&(&g_MatrixTransformState)[22] + 10); /*0x5bce10*/
   if ( *((_BYTE *)&(&g_MatrixTransformState)[22] + 10) ) /*0x5bce1d*/
   {
-    v4 = *(this + 2505); /*0x5bce27*/
-    v5 = *(this + 2506); /*0x5bce2d*/
-    v6 = *(this + 2508); /*0x5bce34*/
-    v7 = *(this + 2507); /*0x5bce3b*/
+    v4 = this->q9C9; /*0x5bce27*/
+    v5 = this->q9CA; /*0x5bce2d*/
+    v6 = this->q9CC; /*0x5bce34*/
+    v7 = this->q9CB; /*0x5bce3b*/
     if ( a2 <= 0 ) /*0x5bce44*/
     {
       if ( a2 < 0 ) /*0x5bcef9*/
@@ -7889,7 +7889,7 @@ char __thiscall sub_5BCE10(int *this, int a2)
       v10 = (char *)this + v9 - 1; /*0x5bce72*/
       v11 = this + v9 + 499; /*0x5bce76*/
       v22 = v10; /*0x5bce7d*/
-      v23 = *(this + 2507); /*0x5bce97*/
+      v23 = this->q9CB; /*0x5bce97*/
       v21 = this + 20 * v4 + 5 * v4 + v5 + 500; /*0x5bce9b*/
       v12 = v25; /*0x5bce9f*/
       do /*0x5bcef5*/
@@ -8033,8 +8033,8 @@ char __thiscall sub_5BD2E0(_DWORD *this, ObjectClass *aP1, int a3, int a4, int a
   result = *((_BYTE *)&(&g_MatrixTransformState)[22] + 10); /*0x5bd2e0*/
   if ( *((_BYTE *)&(&g_MatrixTransformState)[22] + 10) ) /*0x5bd2f0*/
   {
-    *(this + 2503) = a3; /*0x5bd300*/
-    *(this + 2504) = a4; /*0x5bd306*/
+    this->q9C7 = a3; /*0x5bd300*/
+    this->q9C8 = a4; /*0x5bd306*/
     if ( *((_BYTE *)&(&g_MatrixTransformState)[22] + 10) ) /*0x5bd313*/
       this->q271 = a5; /*0x5bd31c*/
     sprintf((char *const)&Buffer, &stru_82D020, (INIClass *)aP1); /*0x5bd334*/
@@ -8090,7 +8090,7 @@ BOOL __thiscall sub_5BD3D0(_DWORD *this, HDC hdc, int String, int a4)
   v4 = a4; /*0x5bd3d1*/
   v5 = String; /*0x5bd3d7*/
   v7 = *(this + 20 * String + 5 * String + a4 + 500); /*0x5bd3e7*/
-  if ( v7 != *(this + 2501) ) /*0x5bd3f2*/
+  if ( v7 != this->q9C5 ) /*0x5bd3f2*/
   {
     if ( v7 == 1 ) /*0x5bd3f7*/
     {
@@ -8102,7 +8102,7 @@ BOOL __thiscall sub_5BD3D0(_DWORD *this, HDC hdc, int String, int a4)
       SetBkColor(hdc, MEMORY[0xABF128]); /*0x5bd424*/
       SetTextColor(hdc, MEMORY[0xABF110]); /*0x5bd436*/
     }
-    *(this + 2501) = v7; /*0x5bd43c*/
+    this->q9C5 = v7; /*0x5bd43c*/
   }
   LOBYTE(String) = *((_BYTE *)this + 20 * v5 + 5 * v5 + v4); /*0x5bd45a*/
   return TextOutA( /*0x5bd484*/
@@ -8468,7 +8468,7 @@ _BYTE *__thiscall sub_5BDA40(_BYTE *this)
   this->q5560 = 0; /*0x5bda56*/
   this->q5564 = 0; /*0x5bda5c*/
   this->q5568 = 0; /*0x5bda62*/
-  *((_DWORD *)this + 5446) = &vt_MouseClass; /*0x5bda68*/
+  this->q1546 = &vt_MouseClass; /*0x5bda68*/
   return this; /*0x5bda74*/
 }
 
@@ -8832,18 +8832,18 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
       dword_822CF8 = -1; /*0x5bdfc3*/
       (*(void (__thiscall **)(int *))(*this + 92))(this); /*0x5bdfd2*/
       __3_YAXPAX_Z((void *)this->q01C); /*0x5bdfd9*/
-      v5 = (void *)this->MouseClass_field_0x68; /*0x5bdfde*/
+      v5 = (void *)this->q01A; /*0x5bdfde*/
       this->q01C = 0; /*0x5bdfe1*/
       __3_YAXPAX_Z(v5); /*0x5bdfe5*/
-      v6 = (_DWORD *)this->MouseClass_field_0x14; /*0x5bdfea*/
-      this->MouseClass_field_0x68 = 0; /*0x5bdff2*/
+      v6 = (_DWORD *)this->q005; /*0x5bdfea*/
+      this->q01A = 0; /*0x5bdff2*/
       if ( v6 ) /*0x5bdff5*/
       {
         if ( *v6 ) /*0x5bdff7*/
           (**(void (__thiscall ***)(_DWORD, int))*v6)(*v6, 3); /*0x5be001*/
         __3_YAXPAX_Z(v6); /*0x5be004*/
       }
-      this->MouseClass_field_0x14 = 0; /*0x5be00c*/
+      this->q005 = 0; /*0x5be00c*/
       v7 = this + 35; /*0x5be00f*/
       v8 = 3; /*0x5be015*/
       do /*0x5be025*/
@@ -8890,7 +8890,7 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
         {
           MouseClass::drawCursor(this, (int)&v72); /*0x5be0a8*/
           *this = (int)&MouseClass::`vftable'; /*0x5be0ad*/
-          *(this + 5446) = (int)&vt_MouseClass; /*0x5be0b4*/
+          this->q1546 = (int)&vt_MouseClass; /*0x5be0b4*/
         }
         v14 = this + 1386; /*0x5be0be*/
         v74 = 4; /*0x5be0c4*/
@@ -8922,17 +8922,17 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
         (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x5be135*/
         v17 = *this; /*0x5be138*/
         this->q01C = 0; /*0x5be14a*/
-        this->MouseClass_field_0x68 = 0; /*0x5be14d*/
+        this->q01A = 0; /*0x5be14d*/
         (*(void (__thiscall **)(int *, int *, int, _DWORD, _DWORD))(v17 + 112))(this, this + 59, 1, 0, 0); /*0x5be150*/
         if ( this->q01C ) /*0x5be153*/
         {
           __3_YAXPAX_Z((void *)this->q01C); /*0x5be15b*/
           this->q01C = 0; /*0x5be163*/
         }
-        if ( this->MouseClass_field_0x68 ) /*0x5be166*/
+        if ( this->q01A ) /*0x5be166*/
         {
-          __3_YAXPAX_Z((void *)this->MouseClass_field_0x68); /*0x5be16e*/
-          this->MouseClass_field_0x68 = 0; /*0x5be176*/
+          __3_YAXPAX_Z((void *)this->q01A); /*0x5be16e*/
+          this->q01A = 0; /*0x5be176*/
         }
         v18 = (void *)__2_YAPAXI_Z(10 * this->q06C); /*0x5be182*/
         v19 = this->q06C; /*0x5be187*/
@@ -8959,7 +8959,7 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
         {
           v20 = 0; /*0x5be1ba*/
         }
-        this->MouseClass_field_0x68 = (int)v20; /*0x5be1be*/
+        this->q01A = (int)v20; /*0x5be1be*/
         v24 = (int **)__2_YAPAXI_Z(0x10u); /*0x5be1c1*/
         v25 = v24; /*0x5be1c6*/
         v26 = 256; /*0x5be1cd*/
@@ -9006,7 +9006,7 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
         {
           v25 = 0; /*0x5be23f*/
         }
-        this->MouseClass_field_0x14 = (int)v25; /*0x5be247*/
+        this->q005 = (int)v25; /*0x5be247*/
         v76 = this + 32; /*0x5be24a*/
         v33 = 0; /*0x5be254*/
         v74 = (int)(this + 35); /*0x5be256*/
@@ -9017,7 +9017,7 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
           v78 = v33 + 1; /*0x5be268*/
           v36 = 1 << (v33 + 1); /*0x5be26c*/
           (*(void (__thiscall **)(int))(v35 + 12))(v74); /*0x5be270*/
-          *(_DWORD *)(v34 + 20) = 4 * this->q0F4 * this->q0F8 / (v36 * v36); /*0x5be28d*/
+          *(_DWORD *)(v34 + 20) = 4 * this->q03D * this->q0F8 / (v36 * v36); /*0x5be28d*/
           v37 = (_DWORD *)__2_YAPAXI_Z(0x10u); /*0x5be290*/
           v38 = v37; /*0x5be295*/
           if ( v37 ) /*0x5be29c*/
@@ -9078,7 +9078,7 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
         v48 = pStm; /*0x5be358*/
         result = (*(int (__stdcall **)(LPSTREAM, _DWORD, int, _DWORD))(*(_DWORD *)pStm->__pad_0 + 12))( /*0x5be369*/
                    pStm,
-                   this->MouseClass_field_0x68,
+                   this->q01A,
                    4 * this->q06C,
                    0);
         if ( result >= 0 ) /*0x5be36e*/
@@ -9112,11 +9112,11 @@ int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
 LABEL_72:
                   for ( i = 0; i < this->q050; ++i ) /*0x5be492*/
                   {
-                    v60 = *(_DWORD *)(this->MaxWidth + 4 * i); /*0x5be49a*/
+                    v60 = *(_DWORD *)(this->q04F + 4 * i); /*0x5be49a*/
                     if ( v60 ) /*0x5be49f*/
                     {
                       (*(void (__thiscall **)(int, int))(*(_DWORD *)v60 + 32))(v60, 1); /*0x5be4a5*/
-                      *(_DWORD *)(this->MaxWidth + 4 * i) = 0; /*0x5be4ae*/
+                      *(_DWORD *)(this->q04F + 4 * i) = 0; /*0x5be4ae*/
                     }
                   }
                   result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(*(_DWORD *)v48->__pad_0 + 12))( /*0x5be4c7*/
@@ -9163,7 +9163,7 @@ LABEL_99:
                             LoadBuildingTypeClassTheatreSHP(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] /*0x5be689*/
                                                                       + 4696));
                             LoadFactoryClassTheaterSHP(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 4696)); /*0x5be69a*/
-                            this->q11BC = 0; /*0x5be69f*/
+                            this->q46F = 0; /*0x5be69f*/
                             dword_822CF8 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 4696); /*0x5be6b1*/
                             return 0; /*0x5be6b6*/
                           }
@@ -9178,10 +9178,10 @@ LABEL_99:
                                          0);
                               if ( result < 0 ) /*0x5be5bf*/
                                 break; /*0x5be5bf*/
-                              v66 = this->q0DC; /*0x5be5c5*/
+                              v66 = this->q037; /*0x5be5c5*/
                               if ( this->q0E4 < v66 /*0x5be5f5*/
                                 || (this->q0E1 || !v66)
-                                && (v67 = this->q0E8, v67 > 0)
+                                && (v67 = this->q03A, v67 > 0)
                                 && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(this->CellStructs1 + 8))(
                                      this + 53,
                                      v67 + v66,
@@ -9321,7 +9321,7 @@ HRESULT __thiscall MouseClass::DrawCursor(int *this, LPSTREAM pStm)
       {
         result = (*(int (__stdcall **)(IStream *, _DWORD, int, _DWORD))(*(_DWORD *)v2->__pad_0 + 16))( /*0x5be737*/
                    v2,
-                   this->MouseClass_field_0x68,
+                   this->q01A,
                    4 * this->q06C,
                    0);
         if ( result >= 0 ) /*0x5be73c*/
@@ -9515,9 +9515,9 @@ int __stdcall sub_5BE990(int a1)
 _DWORD *__thiscall sub_5BE9B0(_DWORD *this, int a2)
 {
   UI_Init((int)this, a2); /*0x5be9b8*/
-  *(this + 5446) = &vt_INoticeSink; /*0x5be9bd*/
+  this->q1546 = &vt_INoticeSink; /*0x5be9bd*/
   *this = &TabClass::`vftable'; /*0x5be9c7*/
-  *(this + 5446) = &TabClass::`vftable'; /*0x5be9cd*/
+  this->q1546 = &TabClass::`vftable'; /*0x5be9cd*/
   return this; /*0x5be9d9*/
 }
 
@@ -9570,7 +9570,7 @@ _DWORD *__thiscall sub_5BEA30(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_HashObject_unsigned_int_unsigned_int; /*0x5bea8a*/
-  this->__pad_014 = 10; /*0x5bea90*/
+  *(this + 5) = 10; /*0x5bea90*/
   this->q010 = 0; /*0x5bea97*/
   return this; /*0x5beaa0*/
 }
@@ -10629,12 +10629,12 @@ void __thiscall MovieContext_Cleanup(_DWORD **this)
       }
       *this = 0; /*0x5bff29*/
     }
-    v4 = this->q048; /*0x5bff2f*/
+    v4 = this->q012; /*0x5bff2f*/
     if ( v4 ) /*0x5bff34*/
     {
-      BinkMovie::FreeSurfaceTracker(this->q048); /*0x5bff38*/
+      BinkMovie::FreeSurfaceTracker(this->q012); /*0x5bff38*/
       __3_YAXPAX_Z(v4); /*0x5bff3e*/
-      this->q048 = 0; /*0x5bff46*/
+      this->q012 = 0; /*0x5bff46*/
     }
     this->q114 = 0; /*0x5bff4d*/
   }

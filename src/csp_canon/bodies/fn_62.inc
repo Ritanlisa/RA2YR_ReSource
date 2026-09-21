@@ -371,44 +371,6 @@ int ObjectClass::GetMember01()
 }
 }
 
-// ==== BACKFILL 0x006242B0  sub_6242B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-bool E4Recv_6242B0::sub_6242B0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_6242B0(HWND this)
-{
-  int v2; // eax
-  HWND v3; // edi
-  HWND hWnda; // [esp+Ch] [ebp-84h] BYREF
-  CHAR ClassName[128]; // [esp+10h] [ebp-80h] BYREF
-
-  hWnda = this; /*0x6242c4*/
-  GetClassNameA(this, ClassName, 128); /*0x6242c8*/
-  if ( !strcmp(ClassName, MEMORY[0x833728]) ) /*0x6242df*/
-    return 1; /*0x62430a*/
-  if ( !strcmp(ClassName, MEMORY[0x833720]) ) /*0x624325*/
-    return 1; /*0x624350*/
-  if ( !strcmp(ClassName, MEMORY[0x833718]) /*0x6243c1*/
-    && MEMORY[0xAC1B04]
-    && (v2 = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&hWnda) & ((1 << MEMORY[0xAC1B0C]) - 1)))) != 0 )
-  {
-    v3 = hWnda; /*0x6243c3*/
-    while ( *(HWND *)v2 != hWnda ) /*0x6243c9*/
-    {
-      v2 = *(_DWORD *)(v2 + 516); /*0x6243cb*/
-      if ( !v2 ) /*0x6243d3*/
-        return !strcmp(ClassName, MEMORY[0x83370C]) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x6243d3*/
-    }
-    return *(_DWORD *)(v2 + 108) == 1; /*0x6243e8*/
-  }
-  else
-  {
-    v3 = hWnda; /*0x6243f2*/
-    return !strcmp(ClassName, MEMORY[0x83370C]) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x624445*/
-  }
-}
-}
-
 // ==== BACKFILL 0x00624460  Options::ClearComboBoxes  cls=Options  sig=csp  renamed_refs=0  residual=- ====
 void Options::ClearComboBoxes()
 {
@@ -2821,16 +2783,6 @@ namespace gamemd { int ParticleSystemClass::Update() {
       return v3;
 }
 } }
-
-// ==== BACKFILL 0x0062FE60  ParticleSystemClass::Draw  cls=ParticleSystemClass  sig=csp  renamed_refs=0  residual=- ====
-BOOL ParticleSystemClass::Draw()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall ParticleSystemClass::_vt17(int this)
-{
-  return *(_BYTE *)(this + 248) && !this->Owner; /*0x62fe79*/
-}
-}
 
 // ==== BACKFILL 0x0062FE80  ParticleSystemClass::StubReturn2  cls=ParticleSystemClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleSystemClass::StubReturn2()

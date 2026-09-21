@@ -2599,13 +2599,13 @@ _DWORD *__thiscall sub_473750(_DWORD *this, _DWORD *a2)
   int v7; // eax
 
   v3 = a2; /*0x473754*/
-  *(this + 1) = 0; /*0x47375a*/
+  this->q004 = 0; /*0x47375a*/
   *(this + 2) = 0; /*0x47375d*/
   *(this + 3) = 0; /*0x473760*/
   *((_WORD *)this + 10) = 0; /*0x473763*/
-  *((_WORD *)this + 11) = 0; /*0x473767*/
-  *(this + 6) = 0; /*0x47376d*/
-  *(this + 7) = -1; /*0x473770*/
+  this->__pad_00B = 0; /*0x473767*/
+  this->q006 = 0; /*0x47376d*/
+  this->q007 = -1; /*0x473770*/
   *this = &vt_CarryoverClass; /*0x473777*/
   if ( v3 ) /*0x47377d*/
   {
@@ -2615,11 +2615,11 @@ _DWORD *__thiscall sub_473750(_DWORD *this, _DWORD *a2)
     if ( !v5 || (v6 = v5 - 5) == 0 || v6 == 9 ) /*0x473794*/
     {
       v7 = (*(int (__thiscall **)(_DWORD *))(*v3 + 132))(v3); /*0x4737a6*/
-      *(this + 4) = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 64))(v7); /*0x4737b3*/
+      this->q004 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 64))(v7); /*0x4737b3*/
     }
-    *(this + 7) = *(_DWORD *)(*(_DWORD *)(v3[135] + 52) + 184); /*0x4737c7*/
-    *(this + 6) = v3[27]; /*0x4737cd*/
-    *(this + 5) = *(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*v3 + 440))(v3, &a2); /*0x4737df*/
+    this->q007 = *(_DWORD *)(*(_DWORD *)(v3[135] + 52) + 184); /*0x4737c7*/
+    this->q006 = v3[27]; /*0x4737cd*/
+    this->q005 = *(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*v3 + 440))(v3, &a2); /*0x4737df*/
   }
   return this; /*0x4737e4*/
 }
@@ -5561,7 +5561,7 @@ _DWORD *__thiscall VectorClass::Copy(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x477821*/
-  this->__pad_014 = aP1[1].Items; /*0x477827*/
+  *(this + 5) = aP1[1].Items; /*0x477827*/
   *this = &vt_TypeList_int; /*0x47782a*/
   return this; /*0x477832*/
 }
@@ -5739,7 +5739,7 @@ _DWORD *__thiscall DynamicVectorClass::Copy(_DWORD *this, DynamicVector *aP1)
     }
   }
   this->q010 = aP1->field_10; /*0x477a51*/
-  this->__pad_014 = *(_DWORD *)aP1->__pad_14; /*0x477a57*/
+  *(this + 5) = *(_DWORD *)aP1->__pad_14; /*0x477a57*/
   *this = &vt_DynamicVectorClass_int; /*0x477a5a*/
   return this; /*0x477a62*/
 }
@@ -6012,7 +6012,7 @@ _DWORD *__thiscall DynamicVectorClass_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_int; /*0x477df3*/
-  this->__pad_014 = 10; /*0x477df9*/
+  *(this + 5) = 10; /*0x477df9*/
   this->q010 = 0; /*0x477e00*/
   return this; /*0x477e09*/
 }
@@ -6077,7 +6077,7 @@ char __thiscall DynamicVector::Add_Alt(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x477ed6*/
       return 0; /*0x477ed6*/
-    v4 = this->__pad_014; /*0x477ed8*/
+    v4 = *(this + 5); /*0x477ed8*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x477ee8*/
       return 0; /*0x477eef*/
   }
@@ -9170,7 +9170,7 @@ _DWORD *__thiscall sub_47BBF0(_DWORD *this)
   this->CellClass_field_11F = 0; /*0x47bd22*/
   this->shroudedness = -2; /*0x47bd28*/
   this->foggedness = -2; /*0x47bd2e*/
-  this->blockedNeighbours = 0; /*0x47bd34*/
+  this->q488 = 0; /*0x47bd34*/
   this->shroudCounter = 1; /*0x47bd3a*/
   this->gapsCoveringThisCell = 0; /*0x47bd44*/
   this->visibilityChanged = 0; /*0x47bd4a*/
@@ -9500,7 +9500,7 @@ _DWORD *__thiscall PlacementList::FindByID(_DWORD *this, int a2, TechnoClass *aP
 
   if ( !MEMORY[0xA8D63C].__pad_1258[268] ) /*0x47c4d9*/
     return 0; /*0x47c4d9*/
-  v3 = (_DWORD *)((_BYTE)aP2 ? *(this + 58) : this->q0E4);
+  v3 = (_DWORD *)((_BYTE)aP2 ? this->q03A : this->q0E4);
   if ( !v3 ) /*0x47c4f3*/
     return 0; /*0x47c50b*/
   while ( (*(int (__thiscall **)(_DWORD *))(*v3 + 44))(v3) != a2 ) /*0x47c502*/
@@ -9540,7 +9540,7 @@ _DWORD *__thiscall CellClass_FindInfantry(_DWORD *this, char a2)
 
   if ( !MEMORY[0xA8E9A0] ) /*0x47c558*/
     return 0; /*0x47c558*/
-  v2 = (_DWORD *)(a2 ? *(this + 58) : this->q0E4);
+  v2 = (_DWORD *)(a2 ? this->q03A : this->q0E4);
   if ( !v2 ) /*0x47c572*/
     return 0; /*0x47c587*/
   while ( (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) != 36 ) /*0x47c57e*/
@@ -11300,7 +11300,7 @@ _DWORD *__thiscall CellClass_FindBuilding(_DWORD *this, char a2)
 
   if ( !MEMORY[0xA8E9A0] ) /*0x47eba8*/
     return 0; /*0x47eba8*/
-  v2 = (_DWORD *)(a2 ? *(this + 58) : this->q0E4);
+  v2 = (_DWORD *)(a2 ? this->q03A : this->q0E4);
   if ( !v2 ) /*0x47ebc2*/
     return 0; /*0x47ebd7*/
   while ( (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) != 1 ) /*0x47ebce*/
@@ -11320,7 +11320,7 @@ _DWORD *__thiscall PlacementList_FindByType(_DWORD *this, char a2)
 
   if ( !MEMORY[0xA8E9A0] ) /*0x47ebf8*/
     return 0; /*0x47ebf8*/
-  v2 = (_DWORD *)(a2 ? *(this + 58) : this->q0E4);
+  v2 = (_DWORD *)(a2 ? this->q03A : this->q0E4);
   if ( !v2 ) /*0x47ec12*/
     return 0; /*0x47ec27*/
   while ( (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) != 2 ) /*0x47ec1e*/

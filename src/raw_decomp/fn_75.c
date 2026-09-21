@@ -5582,14 +5582,14 @@ int __thiscall sub_756BB0(_DWORD *this)
   float v15; // [esp+24h] [ebp-58h]
 
   v2 = 0; /*0x756bb6*/
-  result = *(this + 2); /*0x756bb8*/
+  result = this->q002; /*0x756bb8*/
   if ( result ) /*0x756bbd*/
   {
     result = 0; /*0x756bc4*/
     v11 = 0; /*0x756bc8*/
     do /*0x756dc0*/
     {
-      v4 = *(this + 5) + result; /*0x756bd1*/
+      v4 = this->q005 + result; /*0x756bd1*/
       v5 = *(unsigned __int8 *)(v4 + 161); /*0x756bdb*/
       v12 = *(unsigned __int8 *)(v4 + 162); /*0x756bff*/
       v14 = (double)*(unsigned __int8 *)(v4 + 160) * 0.5; /*0x756c05*/
@@ -5629,7 +5629,7 @@ int __thiscall sub_756BB0(_DWORD *this)
       result = v11 + 164; /*0x756db5*/
       v11 += 164; /*0x756dbc*/
     }
-    while ( v2 < *(this + 2) ); /*0x756dc0*/
+    while ( v2 < this->q002 ); /*0x756dc0*/
   }
   return result; /*0x756dc9*/
 }
@@ -7476,22 +7476,22 @@ _DWORD *__thiscall VoxelPalette_Init(_DWORD *this, int a2, int a3)
   if ( a2 ) /*0x758959*/
   {
     this->VoxelPalette_field_0x04 = a2; /*0x758974*/
-    *(this + 6) = 0; /*0x758977*/
+    this->q006 = 0; /*0x758977*/
   }
   else
   {
     this->VoxelPalette_field_0x04 = __2_YAPAXI_Z(0x300u); /*0x758968*/
-    *(this + 6) = 1; /*0x75896b*/
+    this->q006 = 1; /*0x75896b*/
   }
   if ( a3 ) /*0x758984*/
   {
-    *(this + 5) = a3; /*0x7589a3*/
-    *(this + 7) = 0; /*0x7589a6*/
+    this->q005 = a3; /*0x7589a3*/
+    this->q007 = 0; /*0x7589a6*/
   }
   else
   {
-    *(this + 5) = __2_YAPAXI_Z(0x8000u); /*0x758993*/
-    *(this + 7) = 1; /*0x758996*/
+    this->q005 = __2_YAPAXI_Z(0x8000u); /*0x758993*/
+    this->q007 = 1; /*0x758996*/
   }
   return this; /*0x75899f*/
 }
@@ -7538,12 +7538,12 @@ int __thiscall sub_758A30(_DWORD *this, int a2)
   v5 = v9[1]; /*0x758a66*/
   *this = v9[0]; /*0x758a6a*/
   v6 = v9[3]; /*0x758a6c*/
-  *(this + 2) = v4; /*0x758a70*/
-  v7 = *(this + 4); /*0x758a73*/
-  *(this + 1) = v5; /*0x758a76*/
-  *(this + 3) = v6; /*0x758a79*/
+  this->q002 = v4; /*0x758a70*/
+  v7 = this->q004; /*0x758a73*/
+  this->q004 = v5; /*0x758a76*/
+  this->q003 = v6; /*0x758a79*/
   if ( (*(int (__thiscall **)(int, int, int))(*(_DWORD *)a2 + 36))(a2, v7, 768) != 768 /*0x758aaa*/
-    || (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a2 + 36))(a2, *(this + 5), *(this + 2) << 8) != *(this + 2) << 8 )
+    || (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a2 + 36))(a2, this->q005, this->q002 << 8) != this->q002 << 8 )
   {
 LABEL_5:
     v3 = 1; /*0x758aac*/
@@ -7984,38 +7984,38 @@ char *__thiscall Stream::InitializeBinkAudio(
 
   CCFileClass::Construct3((int)(this + 4)); /*0x75926a*/
   Stream::CopyFromTemplate(this + 376); /*0x759275*/
-  *((_DWORD *)this + 331) = aP2; /*0x759282*/
+  this->q52C = aP2; /*0x759282*/
   *((_DWORD *)this + 121) = this; /*0x759288*/
   *((_DWORD *)this + 101) = &v19; /*0x75928e*/
-  *((_DWORD *)this + 110) = 0; /*0x75929b*/
+  this->__pad_1B8 = 0; /*0x75929b*/
   if ( !TestBitArray(15) ) /*0x7592a1*/
-    *((_DWORD *)this + 110) |= 1u; /*0x7592af*/
+    this->__pad_1B8 |= 1u; /*0x7592af*/
   if ( !TestBitArray(1) ) /*0x7592b7*/
   {
-    v9 = *((_DWORD *)this + 110); /*0x7592c0*/
+    v9 = this->__pad_1B8; /*0x7592c0*/
     LOBYTE(v9) = v9 | 4; /*0x7592c6*/
-    *((_DWORD *)this + 110) = v9; /*0x7592c8*/
+    this->__pad_1B8 = v9; /*0x7592c8*/
   }
   if ( TestBitArray(10) ) /*0x7592d3*/
   {
-    v10 = *((_DWORD *)this + 110); /*0x7592dc*/
+    v10 = this->__pad_1B8; /*0x7592dc*/
     LOBYTE(v10) = v10 | 0x40; /*0x7592e2*/
-    *((_DWORD *)this + 110) = v10; /*0x7592e4*/
+    this->__pad_1B8 = v10; /*0x7592e4*/
   }
   if ( TestBitArray(12) ) /*0x7592ef*/
   {
-    v11 = *((_DWORD *)this + 110); /*0x7592f8*/
+    v11 = this->__pad_1B8; /*0x7592f8*/
     LOBYTE(v11) = v11 | 0x80; /*0x7592fe*/
-    *((_DWORD *)this + 110) = v11; /*0x759300*/
+    this->__pad_1B8 = v11; /*0x759300*/
   }
   v12 = *((_DWORD *)this + 111) | 8; /*0x75930c*/
   *((_DWORD *)this + 111) = v12; /*0x75930f*/
   v13 = v12; /*0x75931e*/
-  if ( (*(this + 1324) & 2) != 0 ) /*0x759320*/
+  if ( (this->q52C & 2) != 0 ) /*0x759320*/
   {
     LOBYTE(v13) = v12 | 0x20; /*0x759322*/
     *((_DWORD *)this + 111) = v13; /*0x759324*/
-    if ( (*(this + 1324) & 4) == 0 ) /*0x759333*/
+    if ( (this->q52C & 4) == 0 ) /*0x759333*/
       goto LABEL_14; /*0x759333*/
     BYTE1(v13) = BYTE1(v12) | 1; /*0x759335*/
   }
@@ -8050,7 +8050,7 @@ LABEL_14:
     *((_DWORD *)this + 112) = 1; /*0x7593c5*/
   else
     *((_DWORD *)this + 112) = 14; /*0x7593cd*/
-  v17 = *(this + 1324); /*0x7593d7*/
+  v17 = this->q52C; /*0x7593d7*/
   *((_DWORD *)this + 113) = -1; /*0x7593dd*/
   if ( (v17 & 1) != 0 ) /*0x7593e5*/
     *((_DWORD *)this + 94) = sub_75A2B0; /*0x7593e7*/
@@ -8061,12 +8061,12 @@ LABEL_14:
   if ( TestBitArray(4) ) /*0x759416*/
   {
     *((_DWORD *)this + 98) = j_Time_GetElapsedMS; /*0x75941f*/
-    *((_DWORD *)this + 108) = 60; /*0x759429*/
+    this->__pad_06C = 60; /*0x759429*/
   }
   else
   {
     *((_DWORD *)this + 98) = sub_4116A0; /*0x759435*/
-    *((_DWORD *)this + 108) = 60; /*0x75943f*/
+    this->__pad_06C = 60; /*0x75943f*/
     *((_DWORD *)this + 127) = *(unsigned __int16 *)&MEMORY[0xA8D63C].__pad_14B0[188]; /*0x759455*/
   }
   *((_DWORD *)this + 100) = ManageMultimediaTimer; /*0x759463*/
@@ -8200,11 +8200,11 @@ int __thiscall sub_759670(_DWORD *this, int a2, void *a3, unsigned int a4)
       result = 0; /*0x75968a*/
       break; /*0x75968d*/
     case 5: /*0x759682*/
-      v5 = *(this + 334); /*0x759690*/
+      v5 = this->q14E; /*0x759690*/
       if ( v5 + a4 > this->q530 ) /*0x7596a5*/
         goto LABEL_11; /*0x7596a5*/
       qmemcpy(a3, (const void *)(v5 + this->q53C), a4); /*0x7596bf*/
-      *(this + 334) += a4; /*0x7596d3*/
+      this->q14E += a4; /*0x7596d3*/
       result = 0; /*0x7596d9*/
       break; /*0x7596db*/
     case 7: /*0x759682*/
@@ -8212,20 +8212,20 @@ int __thiscall sub_759670(_DWORD *this, int a2, void *a3, unsigned int a4)
       {
         if ( a3 == (void *)1 ) /*0x7596e8*/
         {
-          *(this + 334) += a4; /*0x759714*/
+          this->q14E += a4; /*0x759714*/
           result = 0; /*0x75971a*/
         }
         else
         {
           if ( a3 != (void *)2 ) /*0x7596eb*/
             goto LABEL_11; /*0x7596eb*/
-          *(this + 334) = this->q530 - a4 - 1; /*0x7596fc*/
+          this->q14E = this->q530 - a4 - 1; /*0x7596fc*/
           result = 0; /*0x759702*/
         }
       }
       else
       {
-        *(this + 334) = a4; /*0x759725*/
+        this->q14E = a4; /*0x759725*/
         result = 0; /*0x75972b*/
       }
       break; /*0x759704*/
@@ -8242,7 +8242,7 @@ LABEL_11:
 _BYTE *__thiscall sub_759760(_BYTE *this, const void *a2)
 {
   qmemcpy(this + 516, a2, 0x300u); /*0x759773*/
-  *(this + 1320) = 1; /*0x759776*/
+  this->q528 = 1; /*0x759776*/
   return this; /*0x759775*/
 }
 
@@ -8403,10 +8403,10 @@ LABEL_23:
         v4 = ProcessAudioStreamPipeline(this->needsRedraw, 1, 0); /*0x759acd*/
         if ( v4 >= 0 ) /*0x759ad1*/
         {
-          if ( *(this + 1320) ) /*0x759ad7*/
+          if ( this->q528 ) /*0x759ad7*/
           {
             Surface::CreateSurfacePalette(this + 516); /*0x759ae5*/
-            *(this + 1320) = 0; /*0x759aea*/
+            this->q528 = 0; /*0x759aea*/
           }
           if ( *(_DWORD *)this ) /*0x759af0*/
           {
@@ -8463,7 +8463,7 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
 
   v2 = a2; /*0x759c34*/
   *a2 = 0; /*0x759c3b*/
-  if ( !*(this + 1361) ) /*0x759c40*/
+  if ( !this->q551 ) /*0x759c40*/
   {
     Render_Render_7C3690(this->needsRedraw, this->__pad_508); /*0x759c56*/
     if ( this->q144 != -1 ) /*0x759c62*/
@@ -8477,7 +8477,7 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
       }
     }
     Debug::Log(); /*0x759cb7*/
-    *(this + 1361) = 1; /*0x759cbf*/
+    this->q551 = 1; /*0x759cbf*/
   }
   if ( this->q550 == 1 && (MEMORY[0xA8D5F8] & 2) == 0 && !MEMORY[0xA8EDA0] ) /*0x759cdf*/
   {
@@ -8505,10 +8505,10 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
     }
     else
     {
-      if ( *(this + 1320) ) /*0x759d35*/
+      if ( this->q528 ) /*0x759d35*/
       {
         Surface::CreateSurfacePalette(this + 516); /*0x759d45*/
-        *(this + 1320) = 0; /*0x759d4a*/
+        this->q528 = 0; /*0x759d4a*/
       }
       if ( *(_DWORD *)this ) /*0x759d51*/
       {
@@ -8592,7 +8592,7 @@ int __thiscall sub_759E80(int *this)
 // ==== 0x00759EA0  ObjectClass::Render_Load_759EA0  this=ObjectClass  sig=csp ====
 int __thiscall sub_759EA0(_DWORD *this)
 {
-  return *(this + 323); /*0x759ea6*/
+  return this->q143; /*0x759ea6*/
 }
 
 
@@ -12141,7 +12141,7 @@ _DWORD *__thiscall sub_75E6B0(_DWORD *this, _DWORD *a2)
     }
   }
   this->q010 = a2[4]; /*0x75e721*/
-  this->__pad_014 = a2[5]; /*0x75e727*/
+  *(this + 5) = a2[5]; /*0x75e727*/
   *this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const; /*0x75e72a*/
   return this; /*0x75e732*/
 }
@@ -12290,16 +12290,16 @@ WaveClass *__thiscall WaveClass::Constructor(
   ObjectClass::ctor(this); /*0x75e956*/
   this->WaveClass_field_138_e = 0; /*0x75e969*/
   this->WaveClass_field_FC = 0; /*0x75e96f*/
-  this->WaveClass_field_158 = aP5; /*0x75e975*/
+  this->q02B = aP5; /*0x75e975*/
   this->WaveClass_field_D8 = a4; /*0x75e97b*/
   this->Facing = 1; /*0x75e981*/
   this->WaveClass_field_12D_e = 0; /*0x75e988*/
   this->WaveClass_field_F8 = (void *)100; /*0x75e98e*/
   this->WaveClass_field_134_e = 0; /*0x75e998*/
-  this->WaveClass_field_13C_e = 0; /*0x75e99e*/
+  this->q04F = 0; /*0x75e99e*/
   this->alignmentPadding75_3 = 0; /*0x75e9a4*/
   this->WaveClass_field_148_e = 0; /*0x75e9aa*/
-  this->WaveClass_field_14C_e = 0; /*0x75e9b0*/
+  this->q053 = 0; /*0x75e9b0*/
   this->WaveClass_field_114 = 0; /*0x75e9b6*/
   this->q069 = 0; /*0x75e9bc*/
   this->wasFallingDown = 0; /*0x75e9c2*/
@@ -12347,19 +12347,19 @@ WaveClass *__thiscall WaveClass::Constructor(
     v10 = (int)this->WaveClass_field_D8; /*0x75eb5c*/
     if ( v10 > 0 && v10 <= 2 ) /*0x75eb69*/
     {
-      v11 = this->WaveClass_field_14C_e; /*0x75eb6b*/
-      v12 = (int)this->WaveClass_field_188; /*0x75eb71*/
+      v11 = this->q053; /*0x75eb6b*/
+      v12 = (int)this->q037; /*0x75eb71*/
       this->WaveClass_field_138_e = 0; /*0x75eb77*/
-      this->WaveClass_field_13C_e = (void *)1072693248; /*0x75eb7d*/
+      this->q04F = (void *)1072693248; /*0x75eb7d*/
       this->WaveClass_field_120 = (void *)160; /*0x75eb87*/
       *v11 = v12; /*0x75eb91*/
       v11[1] = this->WaveClass_field_E4; /*0x75eb99*/
-      v13 = (int)this->WaveClass_field_14C_e; /*0x75eb9c*/
+      v13 = (int)this->q053; /*0x75eb9c*/
       *(_DWORD *)(v13 + 8) = this->WaveClass_field_180; /*0x75eba8*/
       *(_DWORD *)(v13 + 12) = this->WaveClass_field_184; /*0x75ebb1*/
-      v14 = (int)this->WaveClass_field_14C_e; /*0x75ebb4*/
+      v14 = (int)this->q053; /*0x75ebb4*/
       *(_DWORD *)(v14 + 16) = this->WaveClass_field_190; /*0x75ebbc*/
-      *(_DWORD *)(v14 + 20) = this->WaveClass_field_194; /*0x75ebc2*/
+      *(_DWORD *)(v14 + 20) = this->q03A; /*0x75ebc2*/
     }
     Voxel::TransformMatrix((int)this); /*0x75ebc7*/
     return (WaveClass *)this; /*0x75ebcc*/
@@ -12606,9 +12606,9 @@ int __thiscall sub_75F140(_DWORD *this)
   this->__pad_218 = *v5; /*0x75f1cb*/
   this->q21C = *v5; /*0x75f1d3*/
   this->__pad_220 = *v5; /*0x75f1db*/
-  *(this + 137) = 2 * *v5; /*0x75f1e5*/
-  *(this + 138) = 2 * *v5; /*0x75f1ef*/
-  *(this + 139) = 2 * *v5; /*0x75f1f9*/
+  this->q089 = 2 * *v5; /*0x75f1e5*/
+  this->q08A = 2 * *v5; /*0x75f1ef*/
+  this->q08B = 2 * *v5; /*0x75f1f9*/
   this->WaveClass_field_138 = 3 * *v5; /*0x75f204*/
   this->isFallingDown = 3 * *v5; /*0x75f20f*/
   result = 3 * *v5; /*0x75f217*/

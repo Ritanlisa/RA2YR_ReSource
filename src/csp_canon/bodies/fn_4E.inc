@@ -2,16 +2,6 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x004E0080  TeamClass::HasAnyMemberFlagged  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-BOOL TeamClass::HasAnyMemberFlagged()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_4E0080(_BYTE *this)
-{
-  return *(this + 1679) || *(this + 1680) || *(this + 1681); /*0x4e00a0*/
-}
-}
-
 // ==== BACKFILL 0x004E0130  AbstractClass::COMStub_Return0_34  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Return0_34()
 {
@@ -54,20 +44,16 @@ unsigned int AbstractClass::queueMission(int a2)
 // ==== BACKFILL 0x004E01F0  FoggedObjectClass_42::ClearBuffer  cls=FoggedObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void FoggedObjectClass_42::ClearBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall FoggedObjectClass_42_::sub_4E01F0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x4e01f6*/
-  *(_DWORD *)(this + 16) = 0; /*0x4e01f9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x4e0200*/
-  {
-    __3_YAXPAX_Z(v2); /*0x4e0206*/
-    *(_DWORD *)(this + 4) = 0; /*0x4e020e*/
-  }
-  *(_BYTE *)(this + 13) = 0; /*0x4e0211*/
-  *(_DWORD *)(this + 8) = 0; /*0x4e0214*/
+    void *v2 = this->Items;
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
+    {
+        OperatorDelete(v2);
+        this->Items = 0;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 
@@ -173,49 +159,42 @@ namespace ra2 { namespace game { int AbstractClass::completeMission(int a2, void
 // ==== BACKFILL 0x004E0700  FoggedObjectClass_42::SetCapacity  cls=FoggedObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall FoggedObjectClass_42_::sub_4E0700(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x4e070c*/
-  {
-    *((_BYTE *)this + 12) = 0; /*0x4e0712*/
-    if ( a3 ) /*0x4e0718*/
-      v4 = a3; /*0x4e072e*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e072a*/
-    *((_BYTE *)this + 12) = 1; /*0x4e0732*/
-    if ( !v4 ) /*0x4e0736*/
-      return 0; /*0x4e07aa*/
-    if ( *((_DWORD *)this + 1) ) /*0x4e0738*/
+    if ( a2 )
     {
-      v5 = *((_DWORD *)this + 2); /*0x4e073f*/
-      if ( a2 < v5 ) /*0x4e0744*/
-        v5 = a2; /*0x4e0746*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4e074c*/
-        ++i; /*0x4e0751*/
-      if ( *((_BYTE *)this + 13) ) /*0x4e075e*/
-      {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e0769*/
-        *((_DWORD *)this + 1) = 0; /*0x4e0771*/
-      }
+        this->IsInitialized = 0;
+        unsigned int *v4 = a3;
+        if ( !a3 )
+            v4 = (unsigned int *)OperatorNew(4 * a2);
+        this->IsInitialized = 1;
+        if ( !v4 )
+            return 0;
+        if ( this->Items )
+        {
+            int v5 = this->Capacity;
+            if ( a2 < v5 )
+                v5 = a2;
+            int i;
+            for ( i = 0; i < v5; v4[i - 1] = this->Items[i - 1] )
+                ++i;
+            if ( this->IsAllocated )
+            {
+                OperatorDelete(this->Items);
+                this->Items = 0;
+            }
+        }
+        this->Items = v4;
+        this->Capacity = a2;
+        this->IsAllocated = a3 == 0;
     }
-    *((_DWORD *)this + 1) = v4; /*0x4e077a*/
-    *((_DWORD *)this + 2) = a2; /*0x4e0782*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x4e0785*/
-  }
-  else
-  {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4e078e*/
-  }
-  v7 = *((_DWORD *)this + 2); /*0x4e0791*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x4e0799*/
-    *((_DWORD *)this + 4) = v7; /*0x4e079b*/
-  return 1; /*0x4e079e*/
+    else
+    {
+        this->GetClassIdentifier();
+    }
+    int v7 = this->Capacity;
+    if ( v7 < this->Count )
+        this->Count = v7;
+    return 1;
 }
 }
 
@@ -298,38 +277,6 @@ int BuildingAnim::GetType()
     return *(int *)v0;
     else
     return 0;
-}
-}
-
-// ==== BACKFILL 0x004E1470  DialogControl::IsHidden  cls=DialogControl  sig=csp  renamed_refs=0  residual=- ====
-BOOL DialogControl::IsHidden()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall DialogControl_IsHidden(_BYTE *this)
-{
-  return *(this + 30) == 0; /*0x4e147a*/
-}
-}
-
-// ==== BACKFILL 0x004E14A0  ObjectClass::InputThunkA  cls=GadgetClass  sig=csp  renamed_refs=0  residual=- ====
-int ObjectClass::InputThunkA()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall ObjectClass::InputThunkA(_DWORD *this)
-{
-  return ObjectClass::GetWidth(this);
-}
-}
-
-// ==== BACKFILL 0x004E14B0  ObjectClass::InputThunkB  cls=GadgetClass  sig=csp  renamed_refs=0  residual=- ====
-int ObjectClass::InputThunkB()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall ObjectClass::InputThunkB(_DWORD *this)
-{
-  return ObjectClass::GetHeight(this);
 }
 }
 
@@ -621,16 +568,6 @@ namespace gamemd { int COMObject::SetField(int a1) {
       return 1;
 }
 } }
-
-// ==== BACKFILL 0x004E30A0  GaugeClass::Stub  cls=GaugeClass  sig=csp  renamed_refs=0  residual=- ====
-int GaugeClass::Stub()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GaugeClass::_vt36(_DWORD *this)
-{
-  return *(this + 13); /*0x4e30a3*/
-}
-}
 
 // ==== BACKFILL 0x004E30C0  COMObject::Thunk_COMObject_sub_4E30C0  cls=GaugeClass  sig=csp  renamed_refs=0  residual=- ====
 int COMObject::Thunk_COMObject_sub_4E30C0()

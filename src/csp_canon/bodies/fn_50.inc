@@ -2019,26 +2019,6 @@ int TActionClass::executeAttackAction(int a2)
 }
 }
 
-// ==== BACKFILL 0x0050D9E0  HouseClass::GetInfSelfHealStep  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
-int HouseClass::GetInfSelfHealStep()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::GetInfSelfHealStep(_DWORD *this)
-{
-  return *(this + 89) * MEMORY[0x8871E0]->SelfHealInfantryAmount; /*0x50d9ef*/
-}
-}
-
-// ==== BACKFILL 0x0050D9F0  HouseClass::GetUnitSelfHealStep  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
-int HouseClass::GetUnitSelfHealStep()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::GetUnitSelfHealStep(_DWORD *this)
-{
-  return *(this + 90) * MEMORY[0x8871E0]->SelfHealUnitAmount; /*0x50d9ff*/
-}
-}
-
 // ==== BACKFILL 0x0050DA40  sub_50DA40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_50DA40::sub_50DA40(int a2)
 {
@@ -2187,16 +2167,6 @@ namespace gamemd { int HouseClass::processRadar(int a1, int a2, int a3) {
       return a4;
 }
 } }
-
-// ==== BACKFILL 0x0050E470  CellStruct::Equals  cls=CellStruct  sig=csp  renamed_refs=0  residual=- ====
-BOOL CellStruct::Equals(unsigned short * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall CellStruct_Equals(_WORD *this, _WORD *a2)
-{
-  return *this == *a2 && *(this + 1) == a2[1]; /*0x50e48b*/
-}
-}
 
 // ==== BACKFILL 0x0050E5D0  AbstractClass::getTargetCoordinates  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void AbstractClass::getTargetCoordinates() {

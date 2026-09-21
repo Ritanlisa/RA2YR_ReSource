@@ -355,7 +355,7 @@ _DWORD *__thiscall RandomMap_CellListAlloc(_DWORD *this, int a2)
     v4 = 0; /*0x5a0735*/
   }
   v23 = v4; /*0x5a073d*/
-  v4[5] = this->q060 * *(this + 97); /*0x5a0748*/
+  v4[5] = this->q060 * this->q061; /*0x5a0748*/
   v5 = unk_89C2DC; /*0x5a074b*/
   if ( unk_89C2DC * unk_89C2DC <= 0 ) /*0x5a0758*/
     return v4; /*0x5a08c1*/
@@ -533,7 +533,7 @@ char __thiscall RandomMap::SpreadArea(
 
   v7 = this->q060; /*0x5a08de*/
   v89 = (MapResourceClass *)this; /*0x5a08e4*/
-  v8 = 2 * *(this + 97) * v7; /*0x5a08f4*/
+  v8 = 2 * this->q061 * v7; /*0x5a08f4*/
   if ( v8 <= 100 ) /*0x5a08f6*/
     v8 = 100; /*0x5a08f8*/
   v9 = (MapResourceClass *)__2_YAPAXI_Z(8 * v8); /*0x5a0905*/
@@ -549,7 +549,7 @@ char __thiscall RandomMap::SpreadArea(
   v10 = (AbstractClass *)__2_YAPAXI_Z(0x14u); /*0x5a0929*/
   if ( v10 ) /*0x5a0930*/
   {
-    v11 = 2 * *(this + 97) * this->q060; /*0x5a093f*/
+    v11 = 2 * this->q061 * this->q060; /*0x5a093f*/
     if ( v11 <= 100 ) /*0x5a0944*/
       v11 = 100; /*0x5a0946*/
     *(_DWORD *)&v10->__pad_0[12] = 0; /*0x5a0952*/
@@ -2942,7 +2942,7 @@ int __thiscall sub_5A38C0(int *this)
   LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x5a38d4*/
   result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x5a38de*/
   v3 = (int *)result; /*0x5a38e6*/
-  for ( i = (double)this->CellClass_field_5C * 0.01; result; v3 = (int *)result ) /*0x5a38f4*/
+  for ( i = (double)this->q017 * 0.01; result; v3 = (int *)result ) /*0x5a38f4*/
   {
     v4 = (char *)g_MapTileArray + 80 * (__int16)v3[9] + 80 * unk_89C2DC * (__int16)HIWORD(v3[9]); /*0x5a3920*/
     if ( CellClass::IsTerrainType(v3) ) /*0x5a3922*/
@@ -7482,7 +7482,7 @@ _DWORD *__thiscall ListNode::Alloc(_DWORD *this, rc_ptr_base *aP1)
 {
   int v3; // eax
 
-  *(this + 2) = 0; /*0x5a9a25*/
+  this->q002 = 0; /*0x5a9a25*/
   *this = 1; /*0x5a9a2c*/
   v3 = __2_YAPAXI_Z(8u); /*0x5a9a32*/
   if ( v3 ) /*0x5a9a3c*/
@@ -7510,7 +7510,7 @@ _DWORD *__thiscall WaypointPath::Constructor(_DWORD *this, rc_ptr_base *aP1, rc_
   int v6; // edx
   rc_ptr_base *v7; // edx
 
-  *(this + 2) = 0; /*0x5a9a78*/
+  this->q002 = 0; /*0x5a9a78*/
   *this = 2; /*0x5a9a7b*/
   v4 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u); /*0x5a9a81*/
   if ( v4 ) /*0x5a9a8b*/
@@ -9203,7 +9203,7 @@ _DWORD *__thiscall DynamicVector::Copy(_DWORD *this, VectorClass *aP1)
     this->__pad_034 = 0; /*0x5ac49d*/
 LABEL_8:
     this->q010 = aP1[1].vtable0; /*0x5ac4a1*/
-    this->__pad_014 = aP1[1].Items; /*0x5ac4aa*/
+    *(this + 5) = aP1[1].Items; /*0x5ac4aa*/
     return this; /*0x5ac4ad*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x5ac453*/
@@ -9222,7 +9222,7 @@ LABEL_8:
   }
   while ( v6 < this->Capacity ); /*0x5ac481*/
   this->q010 = aP1[1].vtable0; /*0x5ac486*/
-  this->__pad_014 = aP1[1].Items; /*0x5ac48c*/
+  *(this + 5) = aP1[1].Items; /*0x5ac48c*/
   return this; /*0x5ac491*/
 }
 
@@ -9591,7 +9591,7 @@ _DWORD *__thiscall DynamicVectorClass_BuildingType_Constructor(_DWORD *this, int
     }
   }
   *this = &vt_DynamicVectorClass_BuildingTypeClass_const; /*0x5ac943*/
-  this->__pad_014 = 10; /*0x5ac949*/
+  *(this + 5) = 10; /*0x5ac949*/
   this->q010 = 0; /*0x5ac950*/
   return this; /*0x5ac959*/
 }
@@ -10603,7 +10603,7 @@ _DWORD *__thiscall TypeList::BuildingTypeCopy(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x5ad6d1*/
-  this->__pad_014 = aP1[1].Items; /*0x5ad6d7*/
+  *(this + 5) = aP1[1].Items; /*0x5ad6d7*/
   *this = &vt_TypeList_BuildingTypeClass_const; /*0x5ad6da*/
   return this; /*0x5ad6e2*/
 }
@@ -11522,8 +11522,8 @@ int __thiscall Matrix3x4_Identity(_DWORD *this)
 void __thiscall Math_MatrixMulVector(float *this, float a2, float a3, float a4)
 {
   this->IsInitialized = a3 * this->Vector_field_0x4 + a4 * this->Vector_field_0x8 + a2 * *this + this->IsInitialized; /*0x5ae8ab*/
-  *(this + 7) = a2 * this->Vector_field_0x4 + a3 * this->CapacityIncrement + a4 * *(this + 6) + *(this + 7); /*0x5ae8ca*/
-  *(this + 11) = a2 * this->Vector_field_0x8 + a3 * *(this + 9) + a4 * *(this + 10) + *(this + 11); /*0x5ae8e9*/
+  this->q007 = a2 * this->Vector_field_0x4 + a3 * this->CapacityIncrement + a4 * this->q006 + this->q007; /*0x5ae8ca*/
+  this->q00B = a2 * this->Vector_field_0x8 + a3 * this->q009 + a4 * this->q00A + this->q00B; /*0x5ae8e9*/
 }
 
 
@@ -11545,21 +11545,21 @@ float *__thiscall Matrix3x3_Multiply(float *this, float *a2)
   v3 = *a2; /*0x5ae8f5*/
   v10 = v3 * *this + this->Matrix3x3_field_0x0C; /*0x5ae8fe*/
   this->Matrix3x3_field_0x0C = v10; /*0x5ae902*/
-  v8 = v3 * this->Matrix3x3_field_0x04 + *(this + 7); /*0x5ae90d*/
-  *(this + 7) = v8; /*0x5ae911*/
-  v4 = v3 * this->Matrix3x3_field_0x08 + *(this + 11); /*0x5ae917*/
-  *(this + 11) = v4; /*0x5ae91a*/
+  v8 = v3 * this->Matrix3x3_field_0x04 + this->q007; /*0x5ae90d*/
+  this->q007 = v8; /*0x5ae911*/
+  v4 = v3 * this->Matrix3x3_field_0x08 + this->q00B; /*0x5ae917*/
+  this->q00B = v4; /*0x5ae91a*/
   v5 = result[1]; /*0x5ae91d*/
   v11 = v5 * this->Matrix3x3_field_0x04 + v10; /*0x5ae929*/
   this->Matrix3x3_field_0x0C = v11; /*0x5ae92d*/
-  v9 = v5 * *(this + 5) + v8; /*0x5ae939*/
-  *(this + 7) = v9; /*0x5ae93d*/
-  v6 = v4 + v5 * *(this + 9); /*0x5ae943*/
-  *(this + 11) = v6; /*0x5ae945*/
+  v9 = v5 * this->q005 + v8; /*0x5ae939*/
+  this->q007 = v9; /*0x5ae93d*/
+  v6 = v4 + v5 * this->q009; /*0x5ae943*/
+  this->q00B = v6; /*0x5ae945*/
   v7 = result[2]; /*0x5ae948*/
   this->Matrix3x3_field_0x0C = v7 * this->Matrix3x3_field_0x08 + v11; /*0x5ae954*/
-  *(this + 7) = v7 * *(this + 6) + v9; /*0x5ae960*/
-  *(this + 11) = v7 * *(this + 10) + v6; /*0x5ae968*/
+  this->q007 = v7 * this->q006 + v9; /*0x5ae960*/
+  this->q00B = v7 * this->q00A + v6; /*0x5ae968*/
   return result; /*0x5ae96e*/
 }
 
@@ -11577,8 +11577,8 @@ void __thiscall Matrix3x4::Translate(float *this, ParticleSystemClass *aP1)
 void __thiscall Matrix3x3::ApplyCol0(float *this, AbstractClass *aP1)
 {
   this->Matrix3x3_field_0x0C = *(float *)&aP1 * this->Matrix3x3_field_0x04 + this->Matrix3x3_field_0x0C; /*0x5ae9ba*/
-  *(this + 7) = *(float *)&aP1 * *(this + 5) + *(this + 7); /*0x5ae9c7*/
-  *(this + 11) = *(float *)&aP1 * *(this + 9) + *(this + 11); /*0x5ae9d4*/
+  this->q007 = *(float *)&aP1 * this->q005 + this->q007; /*0x5ae9c7*/
+  this->q00B = *(float *)&aP1 * this->q009 + this->q00B; /*0x5ae9d4*/
 }
 
 
@@ -11586,8 +11586,8 @@ void __thiscall Matrix3x3::ApplyCol0(float *this, AbstractClass *aP1)
 void __thiscall Matrix3x3::ApplyCol1(float *this, AbstractClass *aP1)
 {
   this->Matrix3x3_field_0x0C = *(float *)&aP1 * this->Matrix3x3_field_0x08 + this->Matrix3x3_field_0x0C; /*0x5ae9ea*/
-  *(this + 7) = *(float *)&aP1 * *(this + 6) + *(this + 7); /*0x5ae9f7*/
-  *(this + 11) = *(float *)&aP1 * *(this + 10) + *(this + 11); /*0x5aea04*/
+  this->q007 = *(float *)&aP1 * this->q006 + this->q007; /*0x5ae9f7*/
+  this->q00B = *(float *)&aP1 * this->q00A + this->q00B; /*0x5aea04*/
 }
 
 
@@ -12000,9 +12000,9 @@ float *__thiscall Matrix3x3::TransformPoint(float *this, IUnknown *aP1, float *a
   int v8; // [esp+8h] [ebp-4h]
 
   *(float *)&varC = this->Matrix3x3_field_0x04 * a2[1] + this->Matrix3x3_field_0x08 * a2[2] + *a2 * *this; /*0x5af4eb*/
-  *(float *)&v6 = *(this + 5) * a2[1] + this->Matrix3x3_field_0x04 * *a2 + *(this + 6) * a2[2]; /*0x5af508*/
-  v3 = *(this + 9) * a2[1] + this->Matrix3x3_field_0x08 * *a2; /*0x5af517*/
-  v4 = *(this + 10) * a2[2]; /*0x5af51c*/
+  *(float *)&v6 = this->q005 * a2[1] + this->Matrix3x3_field_0x04 * *a2 + this->q006 * a2[2]; /*0x5af508*/
+  v3 = this->q009 * a2[1] + this->Matrix3x3_field_0x08 * *a2; /*0x5af517*/
+  v4 = this->q00A * a2[2]; /*0x5af51c*/
   aP1->field_0 = varC; /*0x5af527*/
   *(float *)&v8 = v3 + v4; /*0x5af52d*/
   aP1->field_4 = (int)v6; /*0x5af531*/

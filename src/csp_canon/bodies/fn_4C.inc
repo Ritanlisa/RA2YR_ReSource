@@ -2,77 +2,10 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x004C1A90  DSurface::BlitWhole  cls=DSurface  sig=csp  renamed_refs=0  residual=- ====
-bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall DSurface_BlitWhole(int a1, int a2, int a3)
-{
-  return XSurface::BlitWhole(a1, a2, a3);
-}
-
-/* ASM:
-mov     eax, [esp+arg_8]
-mov     edx, [esp+arg_4]
-push    eax
-mov     eax, [esp+4+arg_0]
-push    edx
-push    eax
-call    XSurface__BlitWhole
-retn    0Ch
-*/
-}
-
 // ==== BACKFILL 0x004C1AB0  DSurface::IsDSurface  cls=DSurface  sig=csp  renamed_refs=0  residual=- ====
 char DSurface::IsDSurface()
 {
 return 1;
-}
-
-// ==== BACKFILL 0x004C1B50  Vector::TwoDMagnitudeMath  cls=Vector  sig=csp  renamed_refs=0  residual=- ====
-double Math_Vector2D_Magnitude()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall Math_Vector2D_Magnitude(int *this)
-{
-  double result; // st7
-
-  result = Math::Sqrt((double)*this * (double)*this + (double)*(this + 1) * (double)*(this + 1)); /*0x4c1b69*/
-  Math::RoundToInt(result); /*0x4c1b71*/
-  return result; /*0x4c1b6e*/
-}
-}
-
-// ==== BACKFILL 0x004C2790  sub_4C2790  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_4C2790::sub_4C2790()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4C2790(int this)
-{
-  int result; // eax
-  int v3[2]; // [esp+8h] [ebp-10h] BYREF
-  int v4[2]; // [esp+10h] [ebp-8h] BYREF
-
-  if ( this->M40 )
-  {
-    Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], (_DWORD *)this, (IUnknown *)v4); /*0x4c27aa*/
-    Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], (_DWORD *)(this + 12), (IUnknown *)v3); /*0x4c27be*/
-    if ( ClipLine(v4, v3, (int *)&MEMORY[0x87F8E4].__pad_5568[8532]) )
-      Lightning::Draw(
-        (_DWORD *)this,
-        *(_DWORD *)this,
-        this->M4,
-        this->M8,
-        this->M12,
-        this->M16,
-        this->M20,
-        (unsigned char)this->M44 != 0 ? 5 : 10);
-    ++this->M28; /*0x4c281a*/
-  }
-  result = *(int *)(this + 40) >> 1; /*0x4c2821*/
-  this->M40 = result; /*0x4c2823*/
-  return result; /*0x4c2820*/
-}
 }
 
 // ==== BACKFILL 0x004C2B40  sub_4C2B40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
@@ -295,32 +228,6 @@ wchar_t ** E4Recv_4C3C90::sub_4C3C90(wchar_t * a2, wchar_t * a3, wchar_t * Strin
     *(void**)this = v7;
     wcscpy(v7, String);
     return this;
-}
-}
-
-// ==== BACKFILL 0x004C3DD0  sub_4C3DD0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_4C3DD0::sub_4C3DD0(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4C3DD0(int *this, int a2)
-{
-  int v3; // edx
-  _DWORD v5[4]; // [esp+4h] [ebp-10h] BYREF
-
-  TextRenderer::GetInstance(); /*0x4c3dd9*/
-  Text::MeasureWidth(*this, 0); /*0x4c3de5*/
-  v3 = *(this + 2); /*0x4c3def*/
-  v5[2] = MEMORY[0x8A00A4]; /*0x4c3df8*/
-  v5[0] = 0; /*0x4c3e09*/
-  v5[1] = v3; /*0x4c3e12*/
-  v5[3] = 18; /*0x4c3e16*/
-  return (*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887314] + 8))( /*0x4c3e28*/
-           MEMORY[0x887314],
-           v5,
-           a2,
-           v5,
-           0,
-           1);
 }
 }
 
@@ -600,16 +507,6 @@ int BuildingTypeClass::GetPowerOutput(ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x004C9C50  SidebarClass::draw  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
-char SidebarClass::draw()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_4C9C50(_BYTE *this)
-{
-  return *(this + 92); /*0x4c9c53*/
-}
-}
-
 // ==== BACKFILL 0x004CA120  ObjectClass::GetMember09  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass::GetMember09()
 {
@@ -632,16 +529,6 @@ int AbstractClass::GetType()
 {
 {
     return this->repairStationsCapacity;
-}
-}
-
-// ==== BACKFILL 0x004CA170  SidebarClass::draw2  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
-int SidebarClass::draw2()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4CA170(_DWORD *this)
-{
-  return *(this + 26); /*0x4ca173*/
 }
 }
 
@@ -828,53 +715,6 @@ namespace ra2 { namespace game { void* AbstractClass::resetScriptState(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x004CACB0  Math::SinCos  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int Math_SinCos()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// local variable allocation has failed, the output may be wrong!
-double __cdecl Math::SinCos(IUnknown *aP0)
-{
-  int v1; // eax
-  char v2; // cl
-  signed int v3; // eax
-
-  v1 = Math::RoundToInt(*(double *)&aP0 * flt_8223B0); /*0x4cacba*/
-  v2 = v1 & 1; /*0x4cacc4*/
-  v3 = (v1 / 2) & 0x80001FFF; /*0x4cacc9*/
-  if ( v3 < 0 )
-    v3 = (((_WORD)v3 - 1) | 0xFFFFE000) + 1 + ((int)((((_WORD)v3 - 1) | 0xFFFFE000) + 1) < 0 ? 0x2000 : 0);
-  if ( v2 && v3 < 0x1FFF ) /*0x4cace7*/
-    ++v3; /*0x4cace9*/
-  return *(float *)&stru_84DD9C.__pad_1258[4 * v3 + 144]; /*0x4cacf1*/
-}
-}
-
-// ==== BACKFILL 0x004CAD00  Math::ArcTan2  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int Math_ArcTan2()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// local variable allocation has failed, the output may be wrong!
-double __cdecl Math::ArcTan2(IUnknown *aP0)
-{
-  int v1; // eax
-  char v2; // cl
-  signed int v3; // eax
-  int v4; // eax
-
-  v1 = Math::RoundToInt(*(double *)&aP0 * flt_8223B4); /*0x4cad0a*/
-  v2 = v1 & 1; /*0x4cad14*/
-  v3 = (v1 / 2) & 0x80001FFF; /*0x4cad19*/
-  if ( v3 >= 0 || (v3 = (((_WORD)v3 - 1) | 0xFFFFE000) + 1, v3 >= 0) ) /*0x4cad27*/
-    v4 = v3 + 2048; /*0x4cad30*/
-  else
-    v4 = v3 + 10240; /*0x4cad29*/
-  if ( v2 && v4 < 10239 ) /*0x4cad3e*/
-    ++v4; /*0x4cad40*/
-  return *(float *)&stru_84DD9C.__pad_1258[4 * v4 + 144]; /*0x4cad48*/
-}
-}
-
 // ==== BACKFILL 0x004CAD80  BuildingLight::CalcIntensity  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 double BuildingLight::CalcIntensity(double a1)
 {
@@ -907,55 +747,6 @@ double Math::ArcTan(double a1)
     if ( v4 < 0.0 )
     return -result;
     return result;
-}
-}
-
-// ==== BACKFILL 0x004CAE30  Math::CalcAngle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int Math_CalcAngle()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// local variable allocation has failed, the output may be wrong!
-double __cdecl Math::CalcAngle(AbstractClass *aP0, double a2)
-{
-  double v3; // st7
-  char v4; // c3
-  double result; // st7
-  int v6; // eax
-  float v7; // [esp+0h] [ebp-4h]
-  double v8; // [esp+10h] [ebp+Ch]
-  float v9; // [esp+10h] [ebp+Ch]
-
-  v7 = v8; /*0x4cae35*/
-  v9 = *(double *)&aP0; /*0x4cae3d*/
-  v3 = v9; /*0x4cae4b*/
-  if ( v4 ) /*0x4cae54*/
-  {
-    if ( v3 == 0.0 ) /*0x4cae61*/
-    {
-      return 0.0; /*0x4cae63*/
-    }
-    else if ( v9 <= 0.0 ) /*0x4cae7a*/
-    {
-      return -1.5707964; /*0x4cae84*/
-    }
-    else
-    {
-      return 1.5707964; /*0x4cae7c*/
-    }
-  }
-  else
-  {
-    v6 = abs32(Math::RoundToInt(v3 / v7 / flt_8650B8)); /*0x4cae9e*/
-    if ( v6 >= 4097 ) /*0x4caea5*/
-      result = 1.5707964; /*0x4caeb0*/
-    else
-      result = *(float *)&stru_84DD9C.__pad_579C[4 * v6 + 56188]; /*0x4caea7*/
-    if ( v7 < 0.0 ) /*0x4caec5*/
-      result = 3.141592653589793 - result; /*0x4caec7*/
-    if ( v9 < 0.0 ) /*0x4caedc*/
-      return -result; /*0x4caede*/
-  }
-  return result; /*0x4cae6a*/
 }
 }
 
@@ -1360,16 +1151,6 @@ int FlyLocomotionClass::BeginMove(int * a1, int * a2)
     }
   }
     return result;
-}
-}
-
-// ==== BACKFILL 0x004CFCF0  JumpjetLocomotionClass::DispatchVirtualCall_0  cls=FlyLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
-int JumpjetLocomotionClass::DispatchVirtualCall_0(int a1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::sub_4CFCF0(int a1)
-{
-  return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 456))(*(_DWORD *)(a1 + 8)) > 0 ? 4 : 2;
 }
 }
 

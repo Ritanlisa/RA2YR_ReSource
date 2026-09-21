@@ -1455,21 +1455,21 @@ int __thiscall sub_680F70(_DWORD *this, _DWORD *a2)
 _DWORD *__thiscall GameState::Reset(_DWORD *this)
 {
   *this = 0; /*0x680ff4*/
-  *(this + 1) = 0; /*0x680ff6*/
-  *(this + 98) = -1; /*0x680ff9*/
-  *(this + 99) = 0; /*0x681003*/
-  *(this + 252) = 0; /*0x681009*/
-  *((_WORD *)this + 4) = 0; /*0x68100f*/
+  this->q001 = 0; /*0x680ff6*/
+  this->q062 = -1; /*0x680ff9*/
+  this->q063 = 0; /*0x681003*/
+  this->q0FC = 0; /*0x681009*/
+  this->q001 = 0; /*0x68100f*/
   *((_WORD *)this + 132) = 0; /*0x681013*/
   *((_BYTE *)this + 400) = 0; /*0x68101a*/
   *((_BYTE *)this + 660) = 0; /*0x681020*/
   *((_BYTE *)this + 724) = 0; /*0x681026*/
-  *(this + 246) = 0; /*0x68102c*/
-  *(this + 247) = 0; /*0x681032*/
-  *(this + 248) = 0; /*0x681038*/
-  *(this + 249) = 0; /*0x68103e*/
-  *(this + 250) = 0; /*0x681044*/
-  *(this + 251) = 0; /*0x68104a*/
+  this->q0F6 = 0; /*0x68102c*/
+  this->q0F7 = 0; /*0x681032*/
+  this->q0F8 = 0; /*0x681038*/
+  this->q0F9 = 0; /*0x68103e*/
+  this->q0FA = 0; /*0x681044*/
+  this->q0FB = 0; /*0x68104a*/
   return this; /*0x681050*/
 }
 
@@ -1522,7 +1522,7 @@ const char *__thiscall _raw_name_type_info__QBEPBDXZ(type_info *this)
 // ==== 0x006810D0  ObjectClass::Map_Save_6810D0  this=IUnknown  sig=csp ====
 wchar_t *__thiscall sub_6810D0(wchar_t *this, wchar_t *Source)
 {
-  *(this + 195) = 0; /*0x6810d4*/
+  this->q0C3 = 0; /*0x6810d4*/
   return wcsncpy(this + 132, Source, 0x3Fu); /*0x6810ef*/
 }
 
@@ -1581,7 +1581,7 @@ char *__thiscall sub_6811B0(char *this)
 // ==== 0x006811C0  ObjectClass::Map_Save_6811C0  this=ObjectClass  sig=csp ====
 char *__thiscall sub_6811C0(char *this, char *Source)
 {
-  *(this + 983) = 0; /*0x6811c4*/
+  this->q3D7 = 0; /*0x6811c4*/
   return strncpy(this + 724, Source, 0x103u); /*0x6811e0*/
 }
 
@@ -1598,9 +1598,9 @@ int __thiscall sub_681200(_DWORD *this, _DWORD *a2)
 {
   int result; // eax
 
-  this->__pad_3D8 = *a2; /*0x681206*/
+  *(this + 246) = *a2; /*0x681206*/
   result = a2[1]; /*0x68120c*/
-  *(this + 247) = result; /*0x68120f*/
+  this->q0F7 = result; /*0x68120f*/
   return result; /*0x681215*/
 }
 
@@ -1608,8 +1608,8 @@ int __thiscall sub_681200(_DWORD *this, _DWORD *a2)
 // ==== 0x00681220  ObjectClass::method  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_681220(_DWORD *this, _DWORD *a2)
 {
-  *a2 = this->__pad_3D8; /*0x68122a*/
-  a2[1] = *(this + 247); /*0x681232*/
+  *a2 = *(this + 246); /*0x68122a*/
+  a2[1] = this->q0F7; /*0x681232*/
   return a2; /*0x681235*/
 }
 
@@ -1621,7 +1621,7 @@ int __thiscall sub_681240(_DWORD *this, _DWORD *a2)
 
   this->q0F8 = *a2; /*0x681246*/
   result = a2[1]; /*0x68124c*/
-  *(this + 249) = result; /*0x68124f*/
+  this->q0F9 = result; /*0x68124f*/
   return result; /*0x681255*/
 }
 
@@ -1630,7 +1630,7 @@ int __thiscall sub_681240(_DWORD *this, _DWORD *a2)
 _DWORD *__thiscall sub_681260(_DWORD *this, _DWORD *a2)
 {
   *a2 = this->q0F8; /*0x68126a*/
-  a2[1] = *(this + 249); /*0x681272*/
+  a2[1] = this->q0F9; /*0x681272*/
   return a2; /*0x681275*/
 }
 
@@ -1642,7 +1642,7 @@ int __thiscall sub_681280(_DWORD *this, _DWORD *a2)
 
   this->q0FA = *a2; /*0x681286*/
   result = a2[1]; /*0x68128c*/
-  *(this + 251) = result; /*0x68128f*/
+  this->q0FB = result; /*0x68128f*/
   return result; /*0x681295*/
 }
 
@@ -1651,7 +1651,7 @@ int __thiscall sub_681280(_DWORD *this, _DWORD *a2)
 _DWORD *__thiscall sub_6812A0(_DWORD *this, _DWORD *a2)
 {
   *a2 = this->q0FA; /*0x6812aa*/
-  a2[1] = *(this + 251); /*0x6812b2*/
+  a2[1] = this->q0FB; /*0x6812b2*/
   return a2; /*0x6812b5*/
 }
 
@@ -9537,7 +9537,7 @@ _DWORD *__thiscall sub_68C200(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_TechnoTypeClass; /*0x68c243*/
-  this->__pad_014 = 10; /*0x68c249*/
+  *(this + 5) = 10; /*0x68c249*/
   this->q010 = 0; /*0x68c250*/
   return this; /*0x68c259*/
 }
@@ -9556,7 +9556,7 @@ char __thiscall DynamicVector_PushBack(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x68c276*/
       return 0; /*0x68c276*/
-    v4 = this->__pad_014; /*0x68c278*/
+    v4 = *(this + 5); /*0x68c278*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x68c288*/
       return 0; /*0x68c28f*/
   }
@@ -9580,30 +9580,30 @@ _DWORD *__thiscall Multiplayer::CopyDataArray(_DWORD *this, ObjectClass *aP1)
     return this; /*0x68c2bb*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x68c2bf*/
   v3 = *(_DWORD *)&aP1->__pad_0[8]; /*0x68c2c2*/
-  *(this + 2) = v3; /*0x68c2c7*/
+  this->q002 = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
   {
-    *(this + 1) = 0; /*0x68c319*/
+    this->q001 = 0; /*0x68c319*/
     *((_BYTE *)this + 13) = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x68c2d4*/
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
-  *(this + 1) = v4; /*0x68c2eb*/
+  this->q001 = v4; /*0x68c2eb*/
   if ( !v4 ) /*0x68c2ee*/
     return this; /*0x68c2ee*/
-  v5 = *(this + 2); /*0x68c2f0*/
+  v5 = this->q002; /*0x68c2f0*/
   v6 = 0; /*0x68c2f3*/
   *((_BYTE *)this + 13) = 1; /*0x68c2f7*/
   if ( v5 <= 0 ) /*0x68c2fb*/
     return this; /*0x68c2fb*/
   do /*0x68c30f*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->__pad_0[4] + 4 * v6); /*0x68c306*/
+    *(_DWORD *)(this->q001 + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->__pad_0[4] + 4 * v6); /*0x68c306*/
     ++v6; /*0x68c30c*/
   }
-  while ( v6 < *(this + 2) ); /*0x68c30f*/
+  while ( v6 < this->q002 ); /*0x68c30f*/
   return this; /*0x68c313*/
 }
 
@@ -9745,8 +9745,8 @@ char *__thiscall FontClass::InitMetrics(
   while ( v8 ); /*0x68c72d*/
   this->q304 = _strdup(Source); /*0x68c744*/
   this->q610 = *(_WORD *)aP2->__pad_0; /*0x68c752*/
-  *(this + 778) = aP2->__pad_0[2]; /*0x68c75d*/
-  this->q30C = 0; /*0x68c778*/
+  this->q30A = aP2->__pad_0[2]; /*0x68c75d*/
+  this->q0C3 = 0; /*0x68c778*/
   this->q0C4 = a6; /*0x68c77e*/
   *((_DWORD *)this + 197) = 16; /*0x68c784*/
   *((_DWORD *)this + 198) = 15; /*0x68c78a*/
@@ -9758,7 +9758,7 @@ char *__thiscall FontClass::InitMetrics(
   this->q0CC = 16; /*0x68c7c2*/
   *((_DWORD *)this + 205) = 16; /*0x68c7c8*/
   *((_DWORD *)this + 206) = 21; /*0x68c7d2*/
-  this->q30C = FontClass::CreateGlyphColor( /*0x68c7ee*/
+  this->q0C3 = FontClass::CreateGlyphColor( /*0x68c7ee*/
                               this + 776,
                               aP3,
                               a5,
@@ -10487,15 +10487,15 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v15 = 0;
   }
-  v16 = *(this + 15);
-  if ( *(this + 17) < v16
+  v16 = this->q00F;
+  if ( this->q011 < v16
     || (*((_BYTE *)this + 65) || !v16)
-    && (v17 = *(this + 18), v17 > 0)
+    && (v17 = this->q012, v17 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v17 + v16, 0) )
   {
-    v18 = (AbstractClass *)*(this + 17);
+    v18 = (AbstractClass *)this->q011;
     v19 = *(this + 14);
-    *(this + 17) = (int)&v18->__pad_0[1];
+    this->q011 = (int)&v18->__pad_0[1];
     *(_DWORD *)(v19 + 4 * (_DWORD)v18) = v15;
   }
   v20 = __2_YAPAXI_Z(0xCu);
@@ -10512,15 +10512,15 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v21 = 0;
   }
-  v22 = *(this + 15);
-  if ( *(this + 17) < v22
+  v22 = this->q00F;
+  if ( this->q011 < v22
     || (*((_BYTE *)this + 65) || !v22)
-    && (v23 = *(this + 18), v23 > 0)
+    && (v23 = this->q012, v23 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v23 + v22, 0) )
   {
-    v24 = (AbstractClass *)*(this + 17);
+    v24 = (AbstractClass *)this->q011;
     v25 = *(this + 14);
-    *(this + 17) = (int)&v24->__pad_0[1];
+    this->q011 = (int)&v24->__pad_0[1];
     *(_DWORD *)(v25 + 4 * (_DWORD)v24) = v21;
   }
   v26 = __2_YAPAXI_Z(0xCu);
@@ -10537,15 +10537,15 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v27 = 0;
   }
-  v28 = *(this + 15);
-  if ( *(this + 17) < v28
+  v28 = this->q00F;
+  if ( this->q011 < v28
     || (*((_BYTE *)this + 65) || !v28)
-    && (v29 = *(this + 18), v29 > 0)
+    && (v29 = this->q012, v29 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v29 + v28, 0) )
   {
-    v30 = (AbstractClass *)*(this + 17);
+    v30 = (AbstractClass *)this->q011;
     v31 = *(this + 14);
-    *(this + 17) = (int)&v30->__pad_0[1];
+    this->q011 = (int)&v30->__pad_0[1];
     *(_DWORD *)(v31 + 4 * (_DWORD)v30) = v27;
   }
   v32 = __2_YAPAXI_Z(0xCu);
@@ -10562,15 +10562,15 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v33 = 0;
   }
-  v34 = *(this + 15);
-  if ( *(this + 17) < v34
+  v34 = this->q00F;
+  if ( this->q011 < v34
     || (*((_BYTE *)this + 65) || !v34)
-    && (v35 = *(this + 18), v35 > 0)
+    && (v35 = this->q012, v35 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v35 + v34, 0) )
   {
-    v36 = (AbstractClass *)*(this + 17);
+    v36 = (AbstractClass *)this->q011;
     v37 = *(this + 14);
-    *(this + 17) = (int)&v36->__pad_0[1];
+    this->q011 = (int)&v36->__pad_0[1];
     *(_DWORD *)(v37 + 4 * (_DWORD)v36) = v33;
   }
   v38 = __2_YAPAXI_Z(0xCu);
@@ -10587,15 +10587,15 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v39 = 0;
   }
-  v40 = *(this + 15);
-  if ( *(this + 17) < v40
+  v40 = this->q00F;
+  if ( this->q011 < v40
     || (*((_BYTE *)this + 65) || !v40)
-    && (v41 = *(this + 18), v41 > 0)
+    && (v41 = this->q012, v41 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v41 + v40, 0) )
   {
-    v42 = (AbstractClass *)*(this + 17);
+    v42 = (AbstractClass *)this->q011;
     v43 = *(this + 14);
-    *(this + 17) = (int)&v42->__pad_0[1];
+    this->q011 = (int)&v42->__pad_0[1];
     *(_DWORD *)(v43 + 4 * (_DWORD)v42) = v39;
   }
   v44 = __2_YAPAXI_Z(0xCu);
@@ -10612,15 +10612,15 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v45 = 0;
   }
-  v46 = *(this + 15);
-  if ( *(this + 17) < v46
+  v46 = this->q00F;
+  if ( this->q011 < v46
     || (*((_BYTE *)this + 65) || !v46)
-    && (v47 = *(this + 18), v47 > 0)
+    && (v47 = this->q012, v47 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v47 + v46, 0) )
   {
-    v48 = (AbstractClass *)*(this + 17);
+    v48 = (AbstractClass *)this->q011;
     v49 = *(this + 14);
-    *(this + 17) = (int)&v48->__pad_0[1];
+    this->q011 = (int)&v48->__pad_0[1];
     *(_DWORD *)(v49 + 4 * (_DWORD)v48) = v45;
   }
   v50 = __2_YAPAXI_Z(0xCu);
@@ -10637,15 +10637,15 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     v51 = 0;
   }
-  v52 = *(this + 15);
-  if ( *(this + 17) < v52
+  v52 = this->q00F;
+  if ( this->q011 < v52
     || (*((_BYTE *)this + 65) || !v52)
-    && (v53 = *(this + 18), v53 > 0)
+    && (v53 = this->q012, v53 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*v13 + 8))(this + 13, v53 + v52, 0) )
   {
-    v54 = (AbstractClass *)*(this + 17);
+    v54 = (AbstractClass *)this->q011;
     v55 = *(this + 14);
-    *(this + 17) = (int)&v54->__pad_0[1];
+    this->q011 = (int)&v54->__pad_0[1];
     *(_DWORD *)(v55 + 4 * (_DWORD)v54) = v51;
   }
   eax79 = (_DWORD *)__2_YAPAXI_Z(0x18u);
@@ -10668,7 +10668,7 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     if ( Audio::IsSoundEnabled() )
     {
-      for ( i = 0; i < *(this + 17); ++i )
+      for ( i = 0; i < this->q011; ++i )
       {
         if ( !_strcmpi(&stru_830620.__pad_579C[34396], **(const void ***)(*(this + 14) + 4 * i)) )
           break;
@@ -10724,7 +10724,7 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     if ( Audio::IsSoundEnabled() )
     {
-      for ( j = 0; j < *(this + 17); ++j )
+      for ( j = 0; j < this->q011; ++j )
       {
         if ( !_strcmpi(&stru_830620.__pad_579C[34368], **(const void ***)(*(this + 14) + 4 * j)) )
           break;
@@ -11086,7 +11086,7 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     if ( Audio::IsSoundEnabled() )
     {
-      for ( ii = 0; ii < *(this + 17); ++ii )
+      for ( ii = 0; ii < this->q011; ++ii )
       {
         if ( !_strcmpi(&stru_830620.__pad_579C[34388], **(const void ***)(*(this + 14) + 4 * ii)) )
           break;
@@ -11193,14 +11193,14 @@ int __thiscall ScoreScreen::Display(int *this)
     v140 = 0;
   }
   v145 = this->ScoreScreen_field_0x24;
-  if ( *(this + 11) < v145
+  if ( this->q00B < v145
     || (*((_BYTE *)this + 41) || !v145)
     && (eax147 = this->ScoreScreen_field_0x0C, eax147 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v145 + eax147, 0) )
   {
-    v144 = (AbstractClass *)*(this + 11);
+    v144 = (AbstractClass *)this->q00B;
     v148 = this->ScoreScreen_field_0x08;
-    *(this + 11) = (int)&v144->__pad_0[1];
+    this->q00B = (int)&v144->__pad_0[1];
     *(_DWORD *)(v148 + 4 * (_DWORD)v144) = v140;
   }
   v146 = *ebx85;
@@ -11243,14 +11243,14 @@ int __thiscall ScoreScreen::Display(int *this)
     v154 = 0;
   }
   v159 = this->ScoreScreen_field_0x24;
-  if ( *(this + 11) < v159
+  if ( this->q00B < v159
     || (*((_BYTE *)this + 41) || !v159)
     && (v160 = this->ScoreScreen_field_0x0C, v160 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v159 + v160, 0) )
   {
-    v158 = (AbstractClass *)*(this + 11);
+    v158 = (AbstractClass *)this->q00B;
     v162 = this->ScoreScreen_field_0x08;
-    *(this + 11) = (int)&v158->__pad_0[1];
+    this->q00B = (int)&v158->__pad_0[1];
     *(_DWORD *)(v162 + 4 * (_DWORD)v158) = v154;
   }
   v163 = *this + 328;
@@ -11278,14 +11278,14 @@ int __thiscall ScoreScreen::Display(int *this)
     v161 = 0;
   }
   v169 = this->ScoreScreen_field_0x24;
-  if ( *(this + 11) < v169
+  if ( this->q00B < v169
     || (*((_BYTE *)this + 41) || !v169)
     && (eax167 = this->ScoreScreen_field_0x0C, eax167 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v169 + eax167, 0) )
   {
-    v168 = (AbstractClass *)*(this + 11);
+    v168 = (AbstractClass *)this->q00B;
     v172 = this->ScoreScreen_field_0x08;
-    *(this + 11) = (int)&v168->__pad_0[1];
+    this->q00B = (int)&v168->__pad_0[1];
     *(_DWORD *)(v172 + 4 * (_DWORD)v168) = v161;
   }
   v170 = *ebx85;
@@ -11328,14 +11328,14 @@ int __thiscall ScoreScreen::Display(int *this)
     v178 = 0;
   }
   v183 = this->ScoreScreen_field_0x24;
-  if ( *(this + 11) < v183
+  if ( this->q00B < v183
     || (*((_BYTE *)this + 41) || !v183)
     && (v184 = this->ScoreScreen_field_0x0C, v184 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v183 + v184, 0) )
   {
-    v182 = (AbstractClass *)*(this + 11);
+    v182 = (AbstractClass *)this->q00B;
     v186 = this->ScoreScreen_field_0x08;
-    *(this + 11) = (int)&v182->__pad_0[1];
+    this->q00B = (int)&v182->__pad_0[1];
     *(_DWORD *)(v186 + 4 * (_DWORD)v182) = v178;
   }
   v187 = *this - (*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->ScoreScreen_field_0x0C + 8))(this->ScoreScreen_field_0x0C, Buffer) / 2 + 422;
@@ -11363,14 +11363,14 @@ int __thiscall ScoreScreen::Display(int *this)
     v188 = 0;
   }
   v193 = this->ScoreScreen_field_0x24;
-  if ( *(this + 11) < v193
+  if ( this->q00B < v193
     || (*((_BYTE *)this + 41) || !v193)
     && (eax187 = this->ScoreScreen_field_0x0C, eax187 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v193 + eax187, 0) )
   {
-    v192 = (AbstractClass *)*(this + 11);
+    v192 = (AbstractClass *)this->q00B;
     v196 = this->ScoreScreen_field_0x08;
-    *(this + 11) = (int)&v192->__pad_0[1];
+    this->q00B = (int)&v192->__pad_0[1];
     *(_DWORD *)(v196 + 4 * (_DWORD)v192) = v188;
   }
   v194 = *ebx85;
@@ -11393,7 +11393,7 @@ int __thiscall ScoreScreen::Display(int *this)
   {
     if ( Audio::IsSoundEnabled() )
     {
-      for ( kk = 0; kk < *(this + 17); ++kk )
+      for ( kk = 0; kk < this->q011; ++kk )
       {
         if ( !_strcmpi(&stru_830620.__pad_579C[34380], **(const void ***)(*(this + 14) + 4 * kk)) )
           break;
@@ -11503,14 +11503,14 @@ int __thiscall ScoreScreen::Display(int *this)
     v207 = 0;
   }
   v216 = this->ScoreScreen_field_0x24;
-  if ( *(this + 11) < v216
+  if ( this->q00B < v216
     || (*((_BYTE *)this + 41) || !v216)
     && (v217 = this->ScoreScreen_field_0x0C, v217 > 0)
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v216 + v217, 0) )
   {
-    v215 = (AbstractClass *)*(this + 11);
+    v215 = (AbstractClass *)this->q00B;
     v219 = this->ScoreScreen_field_0x08;
-    *(this + 11) = (int)&v215->__pad_0[1];
+    this->q00B = (int)&v215->__pad_0[1];
     *(_DWORD *)(v219 + 4 * (_DWORD)v215) = v207;
   }
   memset(aP4_316, 0, sizeof(aP4_316));
@@ -11584,14 +11584,14 @@ LABEL_222:
       v228 = 0;
     }
     v233 = this->ScoreScreen_field_0x24;
-    if ( *(this + 11) < v233
+    if ( this->q00B < v233
       || (*((_BYTE *)this + 41) || !v233)
       && (eax229 = this->ScoreScreen_field_0x0C, eax229 > 0)
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, eax229 + v233, 0) )
     {
-      v232 = (AbstractClass *)*(this + 11);
+      v232 = (AbstractClass *)this->q00B;
       v236 = this->ScoreScreen_field_0x08;
-      *(this + 11) = (int)&v232->__pad_0[1];
+      this->q00B = (int)&v232->__pad_0[1];
       *(_DWORD *)(v236 + 4 * (_DWORD)v232) = v228;
     }
     if ( *(_DWORD *)v298->__pad_0 )
@@ -11620,14 +11620,14 @@ LABEL_222:
         v234 = 0;
       }
       v242 = this->ScoreScreen_field_0x24;
-      if ( *(this + 11) < v242
+      if ( this->q00B < v242
         || (*((_BYTE *)this + 41) || !v242)
         && (eax239 = this->ScoreScreen_field_0x0C, eax239 > 0)
         && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, eax239 + v242, 0) )
       {
-        v241 = (AbstractClass *)*(this + 11);
+        v241 = (AbstractClass *)this->q00B;
         v245 = this->ScoreScreen_field_0x08;
-        *(this + 11) = (int)&v241->__pad_0[1];
+        this->q00B = (int)&v241->__pad_0[1];
         *(_DWORD *)(v245 + 4 * (_DWORD)v241) = v234;
       }
       v243 = (AbstractClass *)(Buffer + 16);
@@ -11657,14 +11657,14 @@ LABEL_222:
         v247 = 0;
       }
       v253 = this->ScoreScreen_field_0x24;
-      if ( *(this + 11) < v253
+      if ( this->q00B < v253
         || (*((_BYTE *)this + 41) || !v253)
         && (eax248 = this->ScoreScreen_field_0x0C, eax248 > 0)
         && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, eax248 + v253, 0) )
       {
-        v252 = (AbstractClass *)*(this + 11);
+        v252 = (AbstractClass *)this->q00B;
         v256 = this->ScoreScreen_field_0x08;
-        *(this + 11) = (int)&v252->__pad_0[1];
+        this->q00B = (int)&v252->__pad_0[1];
         *(_DWORD *)(v256 + 4 * (_DWORD)v252) = v247;
       }
       v254 = *ebx85;
@@ -11723,14 +11723,14 @@ LABEL_222:
       v261 = 0;
     }
     v269 = this->ScoreScreen_field_0x24;
-    if ( *(this + 11) < v269
+    if ( this->q00B < v269
       || (*((_BYTE *)this + 41) || !v269)
       && (v270 = this->ScoreScreen_field_0x0C, v270 > 0)
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))&(*ebx85)->__pad_0[8])(this + 7, v270 + v269, 0) )
     {
-      v268 = (AbstractClass *)*(this + 11);
+      v268 = (AbstractClass *)this->q00B;
       v272 = this->ScoreScreen_field_0x08;
-      *(this + 11) = (int)&v268->__pad_0[1];
+      this->q00B = (int)&v268->__pad_0[1];
       *(_DWORD *)(v272 + 4 * (_DWORD)v268) = v261;
     }
     CellClass::CreateInstance(this, 1);
@@ -11751,7 +11751,7 @@ LABEL_222:
     CCFileClass::Reset(aP4_28);
   }
   Theme::Stop(&g_BuildingTypeClass_Count, (ObjectClass *)1);
-  for ( nn = 0; nn < *(this + 17); ++nn )
+  for ( nn = 0; nn < this->q011; ++nn )
   {
     v271 = *(CCINIClass **)(*(this + 14) + 4 * nn);
     if ( v271 )
@@ -11762,7 +11762,7 @@ LABEL_222:
     }
   }
   (*(void (__thiscall **)(int *))(*(this + 13) + 12))(this + 13);
-  for ( i1 = 0; i1 < *(this + 11); ++i1 )
+  for ( i1 = 0; i1 < this->q00B; ++i1 )
   {
     v276 = *(void (__thiscall ****)(_DWORD, int))(this->ScoreScreen_field_0x08 + 4 * i1);
     if ( v276 )
@@ -12104,7 +12104,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
 
   v5 = (int)aP2; /*0x68f07a*/
   v6 = *this + a4; /*0x68f085*/
-  v7 = *(this + 1) + 244; /*0x68f08a*/
+  v7 = this->q001 + 244; /*0x68f08a*/
   v73 = 0; /*0x68f092*/
   v74 = 0; /*0x68f096*/
   v75 = 0; /*0x68f09a*/

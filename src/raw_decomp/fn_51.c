@@ -1206,35 +1206,35 @@ _BYTE *__thiscall SuperWeaponTypeClass::Construct(_BYTE *this, AbstractClass *aP
   this->suffix[4] = -1; /*0x511416*/
   this->airspeedMult = 0; /*0x51141c*/
   this->firepowerMult = 0; /*0x511427*/
-  this->q0CC = 1072693248; /*0x51142d*/
+  this->q033 = 1072693248; /*0x51142d*/
   this->groundspeedMult_e = 0; /*0x511433*/
   *((_DWORD *)this + 53) = 1072693248; /*0x511439*/
   this->airspeedMult_e = 0; /*0x51143f*/
-  this->q0DC = 1072693248; /*0x511445*/
+  this->q037 = 1072693248; /*0x511445*/
   this->armorMult = 0; /*0x51144b*/
   this->q0E4 = 1072693248; /*0x511451*/
-  this->rofMult_e = 0; /*0x511457*/
+  this->q03A = 0; /*0x511457*/
   this->m_zero_3C = 0; /*0x51145d*/
   this->buildtimeMult_e = 0; /*0x511463*/
-  this->q0EC = 1072693248; /*0x511469*/
+  this->q03B = 1072693248; /*0x511469*/
   this->uiNameLabel = 1072693248; /*0x51146f*/
   this->q0FC = 1072693248; /*0x511475*/
   this->rofMult = 1065353216; /*0x51148a*/
   this->armorUnitsMult_e = 1065353216; /*0x511490*/
-  this->armorAircraftMult_e = 1065353216; /*0x511496*/
-  this->armorBuildingsMult_e = 1065353216; /*0x51149c*/
+  this->q042 = 1065353216; /*0x511496*/
+  this->q043 = 1065353216; /*0x51149c*/
   this->q044 = 1065353216; /*0x5114a2*/
   this->costInfantryMult_e = 1065353216; /*0x5114a8*/
   this->costUnitsMult_e = 1065353216; /*0x5114ae*/
   this->costAircraftMult_e = 1065353216; /*0x5114b4*/
   this->costMult = 1065353216; /*0x5114ba*/
-  this->costDefensesMult_e = 1065353216; /*0x5114c0*/
-  this->currentSpeed_infantry_mult_e = 1065353216; /*0x5114c6*/
+  this->q049 = 1065353216; /*0x5114c0*/
+  this->q04A = 1065353216; /*0x5114c6*/
   this->currentSpeed_units_mult_e = 1065353216; /*0x5114cc*/
   this->q04C = 1065353216; /*0x5114d2*/
   this->buildtimeInfantryMult_e = 1065353216; /*0x5114d8*/
   this->buildtimeUnitsMult_e = 1065353216; /*0x5114de*/
-  this->buildtimeAircraftMult_e = 1065353216; /*0x5114e4*/
+  this->q04F = 1065353216; /*0x5114e4*/
   this->buildtimeMult = 1065353216; /*0x5114ea*/
   this->buildtimeDefensesMult_e = 1065353216; /*0x5114f0*/
   this->incomeMult_e = 1065353216; /*0x5114f6*/
@@ -1250,11 +1250,11 @@ _BYTE *__thiscall SuperWeaponTypeClass::Construct(_BYTE *this, AbstractClass *aP
   this->__pad_198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
   this->q184 = &vt_TypeList_AircraftTypeClass_const; /*0x51154c*/
-  this->__pad_1A4 = 65; /*0x511552*/
-  *(this + 421) = 0; /*0x511559*/
-  *(this + 422) = 0; /*0x51155f*/
-  *(this + 423) = 1; /*0x511565*/
-  *(this + 424) = 0; /*0x51156c*/
+  *(this + 420) = 65; /*0x511552*/
+  this->q1A5 = 0; /*0x511559*/
+  this->q1A6 = 0; /*0x51155f*/
+  this->q1A7 = 1; /*0x511565*/
+  this->q1A8 = 0; /*0x51156c*/
   *(_DWORD *)this = &HouseTypeClass::`vftable'; /*0x511572*/
   this->vtable2 = &HouseTypeClass::`vftable'; /*0x511578*/
   this->vtable3 = &HouseTypeClass::`vftable'; /*0x51157f*/
@@ -2419,7 +2419,7 @@ _DWORD *__thiscall HouseTypeClass::readStartInfantry(_DWORD *this, InfantryTypeC
   if ( !v3 ) /*0x512be9*/
   {
     this->vtable2 = 0; /*0x512c2a*/
-    this->__pad_034 = 0; /*0x512c31*/
+    *((_BYTE *)this + 13) = 0; /*0x512c31*/
     return this; /*0x512c35*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x512bf3*/
@@ -2428,7 +2428,7 @@ _DWORD *__thiscall HouseTypeClass::readStartInfantry(_DWORD *this, InfantryTypeC
     return this; /*0x512c00*/
   v5 = this->vtable3; /*0x512c02*/
   v6 = 0; /*0x512c05*/
-  this->__pad_034 = 1; /*0x512c09*/
+  *((_BYTE *)this + 13) = 1; /*0x512c09*/
   if ( v5 <= 0 ) /*0x512c0d*/
     return this; /*0x512c0d*/
   do /*0x512c21*/
@@ -2583,7 +2583,7 @@ _DWORD *__thiscall InfantryTypeVector_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_InfantryTypeClass_const; /*0x512e03*/
-  this->__pad_014 = 10; /*0x512e09*/
+  *(this + 5) = 10; /*0x512e09*/
   this->q010 = 0; /*0x512e10*/
   return this; /*0x512e19*/
 }
@@ -2668,7 +2668,7 @@ char __thiscall InfantryTypeVector::Add(_DWORD *this, InfantryTypeClass *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x512f36*/
       return 0; /*0x512f36*/
-    v4 = this->__pad_014; /*0x512f38*/
+    v4 = *(this + 5); /*0x512f38*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x512f48*/
       return 0; /*0x512f4f*/
   }
@@ -2880,7 +2880,7 @@ _DWORD *__thiscall UnitTypeVector_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<UnitTypeClass const *>::`vftable'; /*0x5131d3*/
-  this->__pad_014 = 10; /*0x5131d9*/
+  *(this + 5) = 10; /*0x5131d9*/
   this->q010 = 0; /*0x5131e0*/
   return this; /*0x5131e9*/
 }
@@ -2965,7 +2965,7 @@ char __thiscall VectorClass::PushBack(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->__pad_034 && v3 ) /*0x513306*/
       return 0; /*0x513306*/
-    v4 = this->__pad_014; /*0x513308*/
+    v4 = *(this + 5); /*0x513308*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x513318*/
       return 0; /*0x51331f*/
   }
@@ -3177,7 +3177,7 @@ _DWORD *__thiscall sub_513560(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_AircraftTypeClass_const; /*0x5135a3*/
-  this->__pad_014 = 10; /*0x5135a9*/
+  *(this + 5) = 10; /*0x5135a9*/
   this->q010 = 0; /*0x5135b0*/
   return this; /*0x5135b9*/
 }
@@ -3339,7 +3339,7 @@ _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x5137b1*/
-  this->__pad_014 = aP1[1].Items; /*0x5137b7*/
+  *(this + 5) = aP1[1].Items; /*0x5137b7*/
   *this = &vt_TypeList_UnitTypeClass_const; /*0x5137ba*/
   return this; /*0x5137c2*/
 }
@@ -3390,7 +3390,7 @@ _DWORD *__thiscall HouseTypeClass::readParaDropTypes(_DWORD *this, VectorClass *
     }
   }
   this->q010 = aP1[1].vtable0; /*0x513841*/
-  this->__pad_014 = aP1[1].Items; /*0x513847*/
+  *(this + 5) = aP1[1].Items; /*0x513847*/
   *this = &vt_TypeList_AircraftTypeClass_const; /*0x51384a*/
   return this; /*0x513852*/
 }
@@ -3441,7 +3441,7 @@ _DWORD *__thiscall HouseTypeClass::readAllowedUnits(_DWORD *this, InfantryTypeCl
     }
   }
   this->q010 = aP1->uniqueId; /*0x5138d1*/
-  this->__pad_014 = aP1->abstractFlags; /*0x5138d7*/
+  *(this + 5) = aP1->abstractFlags; /*0x5138d7*/
   *this = &vt_DynamicVectorClass_InfantryTypeClass_const; /*0x5138da*/
   return this; /*0x5138e2*/
 }
@@ -4628,7 +4628,7 @@ int __thiscall MovementAI::MainFootClass(int *this, char a2)
       (*(void (__thiscall **)(IUnknown *, _DWORD, int))(v31->field_0 + 1152))(v31, 0, 1);
       v32 = (IUnknown *)this->vtable4;
       this->abstractFlags = 0;
-      this->q048 = 0;
+      this->q012 = 0;
       this->q054 = 0;
       this->q04C = 0;
       (*(void (__thiscall **)(IUnknown *, _DWORD, _DWORD))(v32->field_0 + 1348))(v32, 0, 0);
@@ -4737,7 +4737,7 @@ int __thiscall MovementAI::MainFootClass(int *this, char a2)
         this->fallRate = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1692];
         (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->vtable4 + 1152))(this->vtable4, 0, 1);
         this->abstractFlags = 0;
-        this->q048 = 0;
+        this->q012 = 0;
         this->q054 = 0;
         this->q04C = 0;
         (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)this->vtable4 + 1348))(this->vtable4, 0, 0);
@@ -4800,7 +4800,7 @@ int __thiscall MovementAI::MainFootClass(int *this, char a2)
       {
         v48 = (IUnknown *)this->vtable4;
         this->abstractFlags = 0;
-        this->q048 = 0;
+        this->q012 = 0;
         this->q054 = 0;
         this->q04C = 0;
         (*(void (__thiscall **)(IUnknown *, _DWORD, _DWORD))(v48->field_0 + 1348))(v48, 0, 0);
@@ -4827,7 +4827,7 @@ int __thiscall MovementAI::MainFootClass(int *this, char a2)
         this->owningHouseIndex = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1688];
         v50 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1692];
         this->abstractFlags = 0;
-        this->q048 = 0;
+        this->q012 = 0;
         this->fallRate = v50;
         v51 = (IUnknown *)this->vtable4;
         this->q054 = 0;
@@ -4850,7 +4850,7 @@ int __thiscall MovementAI::MainFootClass(int *this, char a2)
       v78 = (IUnknown *)this->vtable4;
       this->fallRate = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1692];
       this->abstractFlags = 0;
-      this->q048 = 0;
+      this->q012 = 0;
       this->q054 = 0;
       this->q04C = 0;
       (*(void (__thiscall **)(IUnknown *, _DWORD, _DWORD))(v78->field_0 + 1348))(v78, 0, 0);
@@ -4916,7 +4916,7 @@ LABEL_97:
       Cell::IsPassableAllied(this->vtable4, (__int16 *)&v95);
       v52 = (IUnknown *)this->vtable4;
       this->abstractFlags = 0;
-      this->q048 = 0;
+      this->q012 = 0;
       this->q054 = 0;
       this->q04C = 0;
       (*(void (__thiscall **)(IUnknown *, _DWORD, _DWORD))(v52->field_0 + 1348))(v52, 0, 0);
@@ -4935,7 +4935,7 @@ LABEL_97:
       {
         v67 = (IUnknown *)this->vtable4;
         this->abstractFlags = 0;
-        this->q048 = 0;
+        this->q012 = 0;
         this->q054 = 0;
         this->q04C = 0;
         (*(void (__thiscall **)(IUnknown *, _DWORD, _DWORD))(v67->field_0 + 1348))(v67, 0, 0);
@@ -5042,7 +5042,7 @@ LABEL_97:
         this->fallRate = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1692];
         v64 = (IUnknown *)this->vtable4;
         this->abstractFlags = 0;
-        this->q048 = 0;
+        this->q012 = 0;
         this->q054 = 0;
         this->q04C = 0;
         (*(void (__thiscall **)(IUnknown *, _DWORD, _DWORD))(v64->field_0 + 1348))(v64, 0, 0);
@@ -5064,7 +5064,7 @@ LABEL_62:
       this->owningHouseIndex = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1688];
       v53 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1692];
       this->abstractFlags = 0;
-      this->q048 = 0;
+      this->q012 = 0;
       this->fallRate = v53;
       v54 = (IUnknown *)this->vtable4;
       this->q054 = 0;
@@ -6832,7 +6832,7 @@ int __thiscall InfantryClass::ProcessDeployment(
         if ( !v23->?[2592] )
         {
           v25 = *(_DWORD *)&a4->__pad_115[11];
-          if ( this->SequenceAnim == 33 )
+          if ( this->q1B1 == 33 )
           {
             if ( v25 == 8 )
             {
@@ -7276,7 +7276,7 @@ int __thiscall CalculateLocomotionFrameIndex(int *this)
   AbstractClass *v17; // [esp+22h] [ebp-14h] BYREF
   _BYTE v18[16]; // [esp+26h] [ebp-10h] BYREF
 
-  v2 = this->__pad_6C4; /*0x518d88*/
+  v2 = this->q1B1; /*0x518d88*/
   if ( v2 == -1 ) /*0x518d91*/
   {
     v3 = (__int16 *)(*(int (__thiscall **)(int *, AbstractClass **))(*this + 440))(this, &v17); /*0x518d9d*/
@@ -8421,7 +8421,7 @@ LABEL_26:
     v59 = *this; /*0x51ba3c*/
     v84 = v58; /*0x51ba41*/
     (*(void (__thiscall **)(int *, int *))(v59 + 240))(this, &a2); /*0x51ba45*/
-    if ( (_DWORD *)this->Archive == v45 ) /*0x51ba51*/
+    if ( (_DWORD *)this->q169 == v45 ) /*0x51ba51*/
     {
       v60 = *this; /*0x51ba53*/
       a2 = 0; /*0x51ba60*/
@@ -8516,7 +8516,7 @@ LABEL_98:
     if ( (*(unsigned __int8 (__thiscall **)(int))(this->q200)(this) ) /*0x51bc1c*/
     {
       if ( (*(int (__thiscall **)(int))(this->q610)(this) == -1 && *(_DWORD *)(this + 180) == -1 ) /*0x51bc3d*/
-        (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this + 1156))(this, 0, 1); /*0x51bc47*/
+        (*(void (__thiscall **)(int, _DWORD, int))(this->q121)(this, 0, 1); /*0x51bc47*/
       (*(void (__thiscall **)(int))(this->disguiseBlinkTimer)(this); /*0x51bc51*/
     }
     if ( *(int *)(this + 108) <= 0 ) /*0x51bc5c*/
@@ -8618,7 +8618,7 @@ LABEL_61:
       if ( (*(unsigned __int8 (__thiscall **)(int))(this->q200)(this) ) /*0x51bed1*/
       {
         if ( (*(int (__thiscall **)(int))(this->q610)(this) == -1 && *(_DWORD *)(this + 180) == -1 ) /*0x51beef*/
-          (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this + 1156))(this, 0, 1); /*0x51bef9*/
+          (*(void (__thiscall **)(int, _DWORD, int))(this->q121)(this, 0, 1); /*0x51bef9*/
         (*(void (__thiscall **)(int))(this->disguiseBlinkTimer)(this); /*0x51bf03*/
       }
       InfantryClass::ProcessIdleDeploy((int *)this); /*0x51bf0b*/
@@ -9240,8 +9240,8 @@ char __thiscall InfantryClass::ProcessIdleAction(_DWORD *this)
   v3 = Math::RoundToInt((v14 - v15) * ((double)(int)v12 * 4.656612877414201e-10) + v15); /*0x51ce26*/
   v4 = v17; /*0x51ce2b*/
   this->idleActionTimer = v2; /*0x51ce35*/
-  this->__pad_16C = v4; /*0x51ce3b*/
-  this->q5C0 = v3; /*0x51ce3e*/
+  this->q16C = v4; /*0x51ce3b*/
+  this->q170 = v3; /*0x51ce3e*/
   if ( !*(_BYTE *)(this->Type + 3775) /*0x51ce67*/
     || (unsigned __int8)House::IsCurrentPlayer((#375 *)this->owner)
     || (int)this->PanicDurationLeft <= 50 )
@@ -9369,14 +9369,14 @@ char __userpurge InfantryClass::FindMoveTarget@<al>(TechnoClass *this@<ecx>, IUn
   AbstractClass aP1; // [esp+5Ch] [ebp-24h] BYREF
 
   v2 = aP3.field_4; /*0x51d0d5*/
-  v4 = this->SequenceAnim; /*0x51d0dd*/
+  v4 = this->q1B1; /*0x51d0dd*/
   if ( (v4 == 27 || v4 == 28 || v4 == 29 || v4 == 30) && LOBYTE(aP3.field_4) && LOBYTE(aP3.field_8) ) /*0x51d101*/
   {
     (*(void (__thiscall **)(TechnoClass *, int, _DWORD, _DWORD))(*(_DWORD *)this->__pad_0 + 1368))(this, 31, 0, 0); /*0x51d10d*/
   }
   else if ( (unsigned __int8)House::IsCurrentPlayer((#375 *)this->focus) ) /*0x51d11b*/
   {
-    MissionControl = (char *)this->SequenceAnim; /*0x51d124*/
+    MissionControl = (char *)this->q1B1; /*0x51d124*/
     if ( MissionControl == (char *)27 /*0x51d148*/
       || MissionControl == (char *)28
       || MissionControl == (char *)29
@@ -9395,7 +9395,7 @@ char __userpurge InfantryClass::FindMoveTarget@<al>(TechnoClass *this@<ecx>, IUn
     LOBYTE(MissionControl) = *(_BYTE *)(this->animation + 3775); /*0x51d190*/
     if ( (_BYTE)MissionControl || !this->sprayOffsetIndex || v2 )
     {
-      MissionControl = (char *)this->SequenceAnim; /*0x51d1aa*/
+      MissionControl = (char *)this->q1B1; /*0x51d1aa*/
       if ( MissionControl == (char *)-1 || MissionControl == (char *)31 || byte_7EAF7C[4 * (_DWORD)MissionControl] )
       {
         if ( *(_BYTE *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6125) /*0x51d1fa*/
@@ -9413,7 +9413,7 @@ LABEL_33:
         }
         else if ( !v2 ) /*0x51d1fe*/
         {
-          if ( !this->FootClass_field_5D4 ) /*0x51d206*/
+          if ( !this->q175 ) /*0x51d206*/
             return (char)MissionControl; /*0x51d206*/
           goto LABEL_33; /*0x51d206*/
         }
@@ -9790,7 +9790,7 @@ char __thiscall InfantryClass::PlayIdleAnim(_BYTE *this)
   int v10; // [esp+Ch] [ebp-10h] BYREF
   _DWORD v11[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  v2 = this->SequenceAnim; /*0x51daf6*/
+  v2 = this->q1B1; /*0x51daf6*/
   if ( v2 == 27 || v2 == 28 || v2 == 29 || v2 == 30 ) /*0x51db0e*/
   {
     (*(void (__thiscall **)(_BYTE *, int, _DWORD, _DWORD))(this->FootClass_field_558)(this, 28, 0, 0); /*0x51db18*/
@@ -9965,7 +9965,7 @@ int __thiscall InfantryClass::FireWeaponWithCleanup(#377 *this, int a2, int a3)
     {
       if ( *(_BYTE *)(this->animation + 3775) ) /*0x51df92*/
       {
-        if ( !this->barrelRecoil ) /*0x51df9c*/
+        if ( !this->q0BF ) /*0x51df9c*/
         {
           v5 = *(_DWORD *)this; /*0x51dfa6*/
           this->q1B5 = 300; /*0x51dfaa*/
@@ -10166,7 +10166,7 @@ char __thiscall InfantryClass::_vt80(_BYTE *this, int a2, __int16 *a3, __int16 *
 {
   int v6; // eax
 
-  v6 = this->SequenceAnim; /*0x51f25d*/
+  v6 = this->q1B1; /*0x51f25d*/
   if ( (v6 == 27 || v6 == 28 || v6 == 29 || v6 == 30) /*0x51f285*/
     && (*(int (__thiscall **)(_BYTE *, __int16 *, _DWORD, void **))(this->estimatedHealth)(this, a3, 0, a5) == 2 )
   {
@@ -10215,7 +10215,7 @@ int __thiscall InfantryClass::FindPathToBuilding(int *this)
       && !v6
       || (result = (*(int (__thiscall **)(int *, int))(*this + 968))(this, v6), !v6) )
     {
-      if ( this->currentMission != 5 ) /*0x51f3ae*/
+      if ( this->q02B != 5 ) /*0x51f3ae*/
       {
         result = (*(int (__thiscall **)(int *))(*this + 132))(this); /*0x51f3b4*/
         if ( !*(_BYTE *)(result + 3476) ) /*0x51f3ba*/
@@ -10260,7 +10260,7 @@ int __thiscall InfantryClass::EnterBuilding(float *this)
     return 1;
   }
   else if ( (unsigned __int8)House::IsCurrentPlayer(*((#375 **)this + 135))
-         && ((v8 = this->SequenceAnim, v8 == 27) || v8 == 28 || v8 == 29 || v8 == 30) )
+         && ((v8 = this->q1B1, v8 == 27) || v8 == 28 || v8 == 29 || v8 == 30) )
   {
     (*(void (__thiscall **)(float *))(this->q428)(this);
     MissionControl = MissionClass::GetMissionControl(this);
@@ -10290,7 +10290,7 @@ int __thiscall InfantryClass::ProcessEnterOrRepair(#375 **this)
     return 1; /*0x51f5b9*/
   }
   else if ( !(unsigned __int8)House::IsCurrentPlayer(this->owner) /*0x51f5e9*/
-         && ((v5 = (int)this->SequenceAnim, v5 == 27) || v5 == 28 || v5 == 29 || v5 == 30)
+         && ((v5 = (int)this->q1B1, v5 == 27) || v5 == 28 || v5 == 29 || v5 == 30)
          && !this->target )
   {
     (*((void (__thiscall **)(#375 **, int, _DWORD, _DWORD))*this + 342))(this, 31, 0, 0); /*0x51f5fd*/

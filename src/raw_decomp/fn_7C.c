@@ -8,7 +8,7 @@ int __thiscall sub_7C0490(_DWORD *this)
   int i; // edi
   int result; // eax
 
-  for ( i = 0; i < *(this + 34); ++i ) /*0x7c049e*/
+  for ( i = 0; i < this->q022; ++i ) /*0x7c049e*/
   {
     result = FillAudioStreamBuffer((int)this, 32); /*0x7c04a7*/
     if ( result == -1 ) /*0x7c04af*/
@@ -2678,7 +2678,7 @@ int __fastcall SeekAudioStream(int a1, DSurface *aP1, DSurface *aP2, int a4, uns
 // ==== 0x007C35B0  ObjectClass::method_7C35B0  this=ObjectClass  sig=csp ====
 int __thiscall sub_7C35B0(unsigned __int16 *this)
 {
-  return *(this + 906); /*0x7c35b9*/
+  return this->q38A; /*0x7c35b9*/
 }
 
 

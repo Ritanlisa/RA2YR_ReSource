@@ -330,33 +330,6 @@ int CreateTeamCommand::performAction_21()
 }
 }
 
-// ==== BACKFILL 0x00535FE0  SelectTeamCommand::AddRef  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-ObjectClass * SelectTeamCommand::AddRef()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall SelectTeamCommand::AddRef(_DWORD *this)
-{
-  sprintf(&HouseClass_Player.__pad_5568[25344], &stru_8270D8, (INIClass *)*(this + 1)); /*0x535fee*/
-  return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x535ffb*/
-}
-}
-
-// ==== BACKFILL 0x00536000  SelectTeamCommand::Release  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * SelectTeamCommand::Release()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall SelectTeamCommand::_vt02(const wchar_t **this)
-{
-  wchar_t *StringCSF; // eax
-  const wchar_t *v3; // [esp-4h] [ebp-4h]
-
-  v3 = *(this + 1); /*0x536005*/
-  StringCSF = GetStringCSF(MEMORY[0x8270E8], 0, g_Str_File_Init_CPP, 6292); /*0x536015*/
-  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x536020*/
-  return &MEMORY[0xA8F654]; /*0x53602d*/
-}
-}
-
 // ==== BACKFILL 0x00536030  SelectTeamCommand::ddtor  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * SelectTeamCommand::ddtor()
 {
@@ -393,36 +366,6 @@ SelectTeamCommand * CreateTeamCommand::performAction_22(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (SelectTeamCommand *)this;
-}
-}
-
-// ==== BACKFILL 0x005360D0  AddTeamCommand::AddRef  cls=AddTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-ObjectClass * AddTeamCommand::AddRef()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall AddTeamCommand::AddRef(_DWORD *this)
-{
-  sprintf( /*0x5360de*/
-    &HouseClass_Player.__pad_5568[25344],
-    (ObjectClass *)&stru_8270D8.customSound_controller[3],
-    (INIClass *)*(this + 1));
-  return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x5360eb*/
-}
-}
-
-// ==== BACKFILL 0x005360F0  AddTeamCommand::Release  cls=AddTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * AddTeamCommand::Release()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall AddTeamCommand::_vt02(const wchar_t **this)
-{
-  wchar_t *StringCSF; // eax
-  const wchar_t *v3; // [esp-4h] [ebp-4h]
-
-  v3 = *(this + 1); /*0x5360f5*/
-  StringCSF = GetStringCSF(MEMORY[0x827148], 0, g_Str_File_Init_CPP, 6326); /*0x536105*/
-  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x536110*/
-  return &MEMORY[0xA8F654]; /*0x53611d*/
 }
 }
 
@@ -465,33 +408,6 @@ AddTeamCommand * CreateTeamCommand::performAction_23(char a2)
 }
 }
 
-// ==== BACKFILL 0x005361C0  CenterTeamCommand::AddRef  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-ObjectClass * CenterTeamCommand::AddRef()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall CenterTeamCommand::AddRef(_DWORD *this)
-{
-  sprintf(&HouseClass_Player.__pad_5568[25344], &stru_8271A0, (INIClass *)*(this + 1)); /*0x5361ce*/
-  return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x5361db*/
-}
-}
-
-// ==== BACKFILL 0x005361E0  CenterTeamCommand::Release  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CenterTeamCommand::Release()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall CenterTeamCommand::_vt02(const wchar_t **this)
-{
-  wchar_t *StringCSF; // eax
-  const wchar_t *v3; // [esp-4h] [ebp-4h]
-
-  v3 = *(this + 1); /*0x5361e5*/
-  StringCSF = GetStringCSF(MEMORY[0x8271B0], 0, g_Str_File_Init_CPP, 6361); /*0x5361f5*/
-  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x536200*/
-  return &MEMORY[0xA8F654]; /*0x53620d*/
-}
-}
-
 // ==== BACKFILL 0x00536210  CSF::GetTeamString  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CSF::GetTeamString()
 {
@@ -528,36 +444,6 @@ CenterTeamCommand * CreateTeamCommand::performAction_24(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (CenterTeamCommand *)this;
-}
-}
-
-// ==== BACKFILL 0x005362B0  TauntCommandClass::AddRef  cls=TauntCommandClass  sig=csp  renamed_refs=0  residual=- ====
-ObjectClass * TauntCommandClass::AddRef()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall TauntCommandClass::AddRef(_DWORD *this)
-{
-  sprintf( /*0x5362be*/
-    &HouseClass_Player.__pad_5568[25344],
-    (ObjectClass *)&stru_8271A0.customSound_controller[2],
-    (INIClass *)*(this + 1));
-  return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x5362cb*/
-}
-}
-
-// ==== BACKFILL 0x005362D0  TauntCommandClass::Release  cls=TauntCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * TauntCommandClass::Release()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall TauntCommandClass::_vt02(const wchar_t **this)
-{
-  wchar_t *StringCSF; // eax
-  const wchar_t *v3; // [esp-4h] [ebp-4h]
-
-  v3 = *(this + 1); /*0x5362d5*/
-  StringCSF = GetStringCSF(MEMORY[0x827204], 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
-  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x5362f0*/
-  return &MEMORY[0xA8F654]; /*0x5362fd*/
 }
 }
 
@@ -1065,17 +951,6 @@ wchar_t * CreateTeamCommand::performAction_78()
 }
 }
 
-// ==== BACKFILL 0x00536C00  CreateTeamCommand::performAction_79  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_79()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-wchar_t *__thiscall CreateTeamCommand::performAction_79(AllToCheerCommandClass *this)
-{
-  return UI_Create_730F30(); /*0x536c05*/
-}
-}
-
 // ==== BACKFILL 0x00536C10  CreateTeamCommand::performAction_80  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_80()
 {
@@ -1268,17 +1143,6 @@ wchar_t * CreateTeamCommand::performAction_103()
 }
 }
 
-// ==== BACKFILL 0x00536EA0  CreateTeamCommand::performAction_104  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_104()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall CreateTeamCommand::performAction_104(CenterBaseCommandClass *this)
-{
-  return TAction::CenterOnStartCoords(); /*0x536ea5*/
-}
-}
-
 // ==== BACKFILL 0x00536EB0  CreateTeamCommand::performAction_105  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_105()
 {
@@ -1306,17 +1170,6 @@ wchar_t * CreateTeamCommand::performAction_108()
 {
 {
     return GetStringCSF(aTxtAllianceDes, 0, g_Str_File_Init_CPP, 7049);
-}
-}
-
-// ==== BACKFILL 0x00536F20  CreateTeamCommand::performAction_109  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_109()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-char *__thiscall CreateTeamCommand::performAction_109(AllianceCommandClass *this)
-{
-  return UI_Create_7318F0(); /*0x536f25*/
 }
 }
 
@@ -2198,17 +2051,6 @@ wchar_t * DeleteCommandClass::Read()
 }
 }
 
-// ==== BACKFILL 0x00537F90  DeleteCommandClass::Undo  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int DeleteCommandClass_Undo()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-char __stdcall DeleteCommandClass::_vt08(int a1)
-{
-  return UI_Delete(); /*0x537f95*/
-}
-}
-
 // ==== BACKFILL 0x00537FA0  CreateTeamCommand::performAction_198  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_198(char a2)
 {
@@ -2778,62 +2620,6 @@ int E4Recv_538CC0::sub_538CC0()
 }
 }
 
-// ==== BACKFILL 0x00538E70  sub_538E70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-short E4Recv_538E70::sub_538E70(double a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall sub_538E70(void *this, double a2)
-{
-  int v3; // edi
-  unsigned int v4; // esi
-  int v5; // eax
-  unsigned __int8 v6; // cl
-  int v7; // eax
-  int v8; // ecx
-  __int16 result; // ax
-  _BYTE v10[4]; // [esp+Ch] [ebp-18h] BYREF
-  _BYTE v11[4]; // [esp+10h] [ebp-14h] BYREF
-  __int16 v12; // [esp+14h] [ebp-10h] BYREF
-  unsigned __int8 v13; // [esp+16h] [ebp-Eh]
-  int v14; // [esp+18h] [ebp-Ch]
-  int v15; // [esp+1Eh] [ebp-6h]
-
-  v3 = 0; /*0x538e78*/
-  do
-  {
-    v4 = (unsigned int)this + 2 * (v3 % 256) + v3 % 256; /*0x538e92*/
-    v5 = ComputeColorSaturation(v4, (int)v10, (int)v10); /*0x538e97*/
-    v6 = *(_BYTE *)(v5 + 2); /*0x538ea1*/
-    v12 = *(_WORD *)v5; /*0x538ea4*/
-    LOBYTE(v15) = v6; /*0x538ea9*/
-    v13 = v6; /*0x538eb7*/
-    v14 = v6; /*0x538ebb*/
-    v7 = Math::RoundToInt((double)v6 * a2); /*0x538ec7*/
-    if ( v7 >= 255 ) /*0x538ed1*/
-      v7 = 255; /*0x538ed3*/
-    v13 = v7 <= 0 ? 0 : v7;
-    v8 = Color::ConvertToRGB((unsigned __int8 *)&v12, (int)v11); /*0x538ef2*/
-    ++v3; /*0x538ef4*/
-    result = *(_WORD *)v8; /*0x538efb*/
-    LOBYTE(v8) = *(_BYTE *)(v8 + 2); /*0x538efe*/
-    *(_WORD *)v4 = result; /*0x538f01*/
-    *(_BYTE *)(v4 + 2) = v8; /*0x538f04*/
-  }
-  while ( v3 < 256 );
-  return result; /*0x538f0d*/
-}
-}
-
-// ==== BACKFILL 0x0053A100  LightningStorm::IsActive  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-char LightningStorm::IsActive()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char LightningStorm_IsActive()
-{
-  return unk_A9FAB4; /*0x53a105*/
-}
-}
-
 // ==== BACKFILL 0x0053AD00  UpdateSurfaceAnimations  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int UpdateSurfaceAnimations(int a1, AnimClass * aP1, int a3, int a4)
 {
@@ -3155,23 +2941,6 @@ unsigned int * NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, short a
 }
 }
 
-// ==== BACKFILL 0x0053EDA0  Network::CopyAddress  cls=Network  sig=csp  renamed_refs=0  residual=- ====
-char * Network::CopyAddress(unsigned int * a2, int a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Network_CopyAddress(_DWORD *this, _DWORD *a2, int a3)
-{
-  char *result; // eax
-
-  result = (char *)(this + 1); /*0x53eda4*/
-  *(_DWORD *)a3 = *(this + 1); /*0x53edaa*/
-  LOWORD(result) = (unsigned short)this->Network_field_0x8; /*0x53edad*/
-  *(_WORD *)(a3 + 4) = (_WORD)result; /*0x53edb1*/
-  *a2 = *this; /*0x53edbb*/
-  return result; /*0x53edac*/
-}
-}
-
 // ==== BACKFILL 0x0053EDC0  Network::CopyAddress_Small  cls=Network  sig=csp  renamed_refs=0  residual=- ====
 int Network::CopyAddress_Small(IPXManagerClass * aP1)
 {
@@ -3266,17 +3035,6 @@ short Network::SetPort(IPXManagerClass * aP1)
     return (short)aP1;
   }
     return result;
-}
-}
-
-// ==== BACKFILL 0x0053F4E0  Struct::ZeroInitAndSetup_0  cls=IPXConnClass  sig=csp  renamed_refs=0  residual=- ====
-int Struct::ZeroInitAndSetup_0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall Struct::ZeroInitAndSetup_0(_DWORD *this)
-{
-  return Struct::ZeroInitAndSetup(this);
 }
 }
 

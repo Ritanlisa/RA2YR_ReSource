@@ -261,16 +261,6 @@ int MapClass::IsCellPassable(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x005657E0  Cell::Exists  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
-bool Cell::Exists(MouseClass * aP1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall Cell::Exists(_DWORD *this, MouseClass *aP1)
-{
-  return *(_DWORD *)(*(this + 79) + 4 * (SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9))) != 0; /*0x5657fd*/
-}
-}
-
 // ==== BACKFILL 0x00565B00  MapClass::FreeAllCells  cls=MapClass  sig=csp  renamed_refs=4  residual=- ====
 int MapClass::FreeAllCells()
 {
@@ -383,40 +373,6 @@ namespace gamemd { void* CellClass::BuildPathfindingGraph() {
 }
 } }
 
-// ==== BACKFILL 0x00568300  LayerClass::CoordinatesLegal  cls=LayerClass  sig=csp  renamed_refs=0  residual=- ====
-bool LayerClass::CoordinatesLegal(IUnknown * aP1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall LayerClass::CoordinatesLegal(_DWORD *this, IUnknown *aP1)
-{
-  int v2; // edx
-  int v3; // esi
-  int v4; // eax
-
-  v2 = *(this + 61); /*0x568304*/
-  v3 = SLOWORD(aP1->field_0); /*0x56830c*/
-  v4 = SHIWORD(aP1->field_0); /*0x56830f*/
-  return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * *(this + 62); /*0x568337*/
-}
-}
-
-// ==== BACKFILL 0x00568350  Tactical::IsCellVisible  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
-bool Tactical::IsCellVisible(IUnknown * aP1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall Tactical::IsCellVisible(_DWORD *this, IUnknown *aP1)
-{
-  int v2; // edx
-  int v3; // esi
-  int v4; // eax
-
-  v2 = *(this + 61); /*0x56836f*/
-  v3 = (__int16)(aP1->field_0 / 256); /*0x56837b*/
-  v4 = (__int16)(aP1->field_4 / 256); /*0x56837e*/
-  return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * *(this + 62); /*0x5683a5*/
-}
-}
-
 // ==== BACKFILL 0x0056AE40  sub_56AE40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_56AE40::sub_56AE40(int a2)
 {
@@ -464,87 +420,6 @@ int E4Recv_56AE40::sub_56AE40(int a2)
   }
     LCWPipe::Dtor(v14);
     return v3;
-}
-}
-
-// ==== BACKFILL 0x0056AF40  sub_56AF40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char * E4Recv_56AF40::sub_56AF40(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_56AF40(int *this, int a2)
-{
-  int *v2; // esi
-  char *v3; // edi
-  int v4; // eax
-  int v5; // esi
-  int v6; // ebx
-  int v7; // ecx
-  char *v8; // edi
-  char *v9; // edi
-  char *v10; // edi
-  char *v11; // edi
-  int v12; // esi
-  int v15; // [esp+Ch] [ebp-30h] BYREF
-  int Src; // [esp+10h] [ebp-2Ch] BYREF
-  int v17[10]; // [esp+14h] [ebp-28h] BYREF
-  int v18; // [esp+40h] [ebp+4h]
-
-  v2 = this; /*0x56af45*/
-  v3 = 0; /*0x56af47*/
-  LCWPipe::Constructor(v17, 0, 0x2000); /*0x56af57*/
-  Pipe::SetDelegate(v17, a2); /*0x56af65*/
-  v4 = 0; /*0x56af70*/
-  v18 = 0; /*0x56af74*/
-  if ( v2[80] > 0 ) /*0x56af78*/
-  {
-    do /*0x56b08b*/
-    {
-      v5 = *(_DWORD *)(v2[79] + 4 * v4); /*0x56af88*/
-      if ( v4 ) /*0x56af8b*/
-      {
-        if ( v5 ) /*0x56af93*/
-        {
-          v6 = *(_DWORD *)(v5 + 36); /*0x56af99*/
-          Src = v6; /*0x56afa0*/
-          v7 = *(this + 61); /*0x56afa9*/
-          Src = SHIWORD(v6) + (__int16)v6; /*0x56afb7*/
-          if ( Src > v7 /*0x56afea*/
-            && (__int16)v6 - SHIWORD(v6) < v7
-            && SHIWORD(v6) - (__int16)v6 < v7
-            && Src <= v7 + 2 * *(this + 62) )
-          {
-            Src = v6; /*0x56aff7*/
-            if ( v6 != g_MapSeedState /*0x56b028*/
-              && (_DWORD *)v5 != g_CellClassArray
-              && (*(_DWORD *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
-            {
-              Src = v6; /*0x56b035*/
-              v8 = &v3[(_DWORD)LCW::Compress((int)v17, (char *)&Src, 4)]; /*0x56b045*/
-              v9 = &v8[(_DWORD)LCW::Compress((int)v17, (char *)(v5 + 56), 4)]; /*0x56b059*/
-              v10 = &v9[(_DWORD)LCW::Compress((int)v17, (char *)(v5 + 282), 1)]; /*0x56b06d*/
-              v3 = &v10[(_DWORD)LCW::Compress((int)v17, (char *)(v5 + 283), 1)]; /*0x56b074*/
-            }
-          }
-        }
-      }
-      v2 = this; /*0x56b076*/
-      v4 = v18 + 1; /*0x56b07e*/
-      v18 = v4; /*0x56b085*/
-    }
-    while ( v4 < *(this + 80) ); /*0x56b08b*/
-  }
-  v15 = g_MapSeedState; /*0x56b0a4*/
-  v11 = &v3[(_DWORD)LCW::Compress((int)v17, (char *)&v15, 4)]; /*0x56b0ad*/
-  v12 = 100; /*0x56b0af*/
-  do /*0x56b0c7*/
-  {
-    v11 = &v11[(_DWORD)LCW::Compress((int)v17, (char *)&v15, 4)]; /*0x56b0c4*/
-    --v12; /*0x56b0c6*/
-  }
-  while ( v12 ); /*0x56b0c7*/
-  (*(void (__thiscall **)(int *))(v17[0] + 4))(v17); /*0x56b0d1*/
-  LCWPipe::Dtor(v17); /*0x56b0d8*/
-  return v11; /*0x56b0df*/
 }
 }
 
@@ -603,80 +478,6 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
     v13 = *v4;
     v17 = g_MapSeedState;
     return v2 + (*(int (__thiscall **)(int *, int *, int))(v13 + 16))(v4, &v17, 4);
-}
-}
-
-// ==== BACKFILL 0x0056B250  sub_56B250  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_56B250::sub_56B250(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_56B250(int *this, int a2)
-{
-  int *v2; // esi
-  int v3; // edi
-  int v4; // eax
-  int v5; // esi
-  int v6; // ebx
-  int v7; // ecx
-  int v8; // edi
-  int v9; // edi
-  int v10; // edi
-  int v11; // edi
-  int v12; // esi
-  int Src; // [esp+Ch] [ebp-30h] BYREF
-  int v16; // [esp+10h] [ebp-2Ch] BYREF
-  int v17[10]; // [esp+14h] [ebp-28h] BYREF
-  int v18; // [esp+40h] [ebp+4h]
-
-  v2 = this; /*0x56b255*/
-  LZOPipe::Constructor(v17, 0, 0x2000); /*0x56b266*/
-  Pipe::SetDelegate(v17, a2); /*0x56b274*/
-  v3 = 0; /*0x56b27f*/
-  v4 = 0; /*0x56b281*/
-  v18 = 0; /*0x56b285*/
-  if ( v2[80] > 0 ) /*0x56b289*/
-  {
-    do /*0x56b39c*/
-    {
-      v5 = *(_DWORD *)(v2[79] + 4 * v4); /*0x56b299*/
-      if ( v4 ) /*0x56b29c*/
-      {
-        if ( v5 ) /*0x56b2a4*/
-        {
-          v6 = *(_DWORD *)(v5 + 36); /*0x56b2aa*/
-          Src = v6; /*0x56b2b1*/
-          v7 = *(this + 61); /*0x56b2ba*/
-          Src = SHIWORD(v6) + (__int16)v6; /*0x56b2c8*/
-          if ( Src > v7 /*0x56b2fb*/
-            && (__int16)v6 - SHIWORD(v6) < v7
-            && SHIWORD(v6) - (__int16)v6 < v7
-            && Src <= v7 + 2 * *(this + 62) )
-          {
-            Src = v6; /*0x56b308*/
-            if ( v6 != g_MapSeedState /*0x56b339*/
-              && (_DWORD *)v5 != g_CellClassArray
-              && (*(_DWORD *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
-            {
-              Src = v6; /*0x56b346*/
-              v8 = Compression::Read((int)v17, (int)&Src, 4) + v3; /*0x56b356*/
-              v9 = Compression::Read((int)v17, v5 + 56, 4) + v8; /*0x56b36a*/
-              v10 = Compression::Read((int)v17, v5 + 282, 1) + v9; /*0x56b37e*/
-              v3 = Compression::Read((int)v17, v5 + 283, 1) + v10; /*0x56b385*/
-            }
-          }
-        }
-      }
-      v2 = this; /*0x56b387*/
-      v4 = v18 + 1; /*0x56b38f*/
-      v18 = v4; /*0x56b396*/
-    }
-    while ( v4 < *(this + 80) ); /*0x56b39c*/
-  }
-  v16 = g_MapSeedState; /*0x56b3b5*/
-  v11 = Compression::Read((int)v17, (int)&v16, 4) + v3; /*0x56b3c6*/
-  v12 = (*(int (__thiscall **)(int *))(v17[0] + 4))(v17); /*0x56b3cf*/
-  LZOPipe::Destructor(v17); /*0x56b3d1*/
-  return v12 + v11; /*0x56b3d9*/
 }
 }
 
@@ -1078,16 +879,6 @@ int Cell::DecodeFlags()
 {
 {
     return *(void**)this & 0xF | ((unsigned short)*(void**)this >> 12);
-}
-}
-
-// ==== BACKFILL 0x0056D430  Cell::CoordToIndex  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
-int Cell::CoordToIndex(IUnknown * aP1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Cell::CoordToIndex(_DWORD *this, IUnknown *aP1)
-{
-  return SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (*(this + 62) + *(this + 61) + 1); /*0x56d450*/
 }
 }
 

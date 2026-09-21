@@ -5,7 +5,7 @@
 // ==== 0x004E0080  TeamClass::HasAnyMemberFlagged  this=TechnoClass  sig=csp ====
 BOOL __thiscall sub_4E0080(_BYTE *this)
 {
-  return *(this + 1679) || this->q1A4 || *(this + 1681); /*0x4e00a0*/
+  return this->q68F || this->q1A4 || this->q691; /*0x4e00a0*/
 }
 
 
@@ -17,8 +17,8 @@ _DWORD *__thiscall FootClass::Jumpjet_OccupyCell(__int16 *this, TagClass *aP1)
 
   result = *(TagClass **)&MEMORY[0x89F690].__pad_579C[61276]; /*0x4e00b0*/
   v4 = this + 690; /*0x4e00c8*/
-  if ( *(this + 690) == *(_WORD *)&MEMORY[0x89F690].__pad_579C[61276] /*0x4e00d4*/
-    && *(this + 691) == *(_WORD *)&MEMORY[0x89F690].__pad_579C[61278] )
+  if ( this->q2B2 == *(_WORD *)&MEMORY[0x89F690].__pad_579C[61276] /*0x4e00d4*/
+    && this->q2B3 == *(_WORD *)&MEMORY[0x89F690].__pad_579C[61278] )
   {
     *(_DWORD *)v4 = aP1; /*0x4e011b*/
     return aP1->__pad_0; /*0x4e0116*/
@@ -853,7 +853,7 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
     }
   }
   *this = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a8a*/
-  this->__pad_014 = 10; /*0x4e0a90*/
+  *(this + 5) = 10; /*0x4e0a90*/
   this->q010 = 0; /*0x4e0a97*/
   return this; /*0x4e0aa0*/
 }
@@ -1019,12 +1019,12 @@ char __thiscall PairVector::PushBack(_DWORD *this, _DWORD *a2)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x4e0c43*/
+  v3 = this->q002; /*0x4e0c43*/
   if ( this->q004 >= v3 ) /*0x4e0c4b*/
   {
     if ( !*((_BYTE *)this + 13) && v3 ) /*0x4e0c56*/
       return 0; /*0x4e0c56*/
-    v4 = *(this + 5); /*0x4e0c58*/
+    v4 = this->q005; /*0x4e0c58*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x4e0c68*/
       return 0; /*0x4e0c6f*/
   }
@@ -1424,8 +1424,8 @@ _DWORD *__thiscall GadgetClass_Constructor(_DWORD *this, int a2, int a3, int a4,
   this->X = 0; /*0x4e1319*/
   this->Y = 0; /*0x4e131c*/
   this->__pad_070 = 0; /*0x4e131f*/
-  *((_BYTE *)this + 30) = 0; /*0x4e1322*/
-  *((_BYTE *)this + 29) = a7; /*0x4e1327*/
+  this->q01E = 0; /*0x4e1322*/
+  this->q01D = a7; /*0x4e1327*/
   this->q020 = a6; /*0x4e132a*/
   *this = &GadgetClass::`vftable'; /*0x4e132d*/
   if ( a7 ) /*0x4e1334*/
@@ -1441,12 +1441,12 @@ _DWORD *__thiscall ControlClass::Constructor(_DWORD *this, EditClass *aP1)
   this->m_Prev = 0; /*0x4e1347*/
   *this = &vt_LinkClass; /*0x4e134e*/
   this->LinkClass_field_0C = aP1[3]; /*0x4e1357*/
-  this->m_Next = aP1[4]; /*0x4e135d*/
-  *(this + 5) = aP1[5]; /*0x4e1363*/
-  *(this + 6) = aP1[6]; /*0x4e1369*/
+  this->__pad_010 = aP1[4]; /*0x4e135d*/
+  this->q005 = aP1[5]; /*0x4e1363*/
+  this->q006 = aP1[6]; /*0x4e1369*/
   *((_BYTE *)this + 28) = aP1[7].__tail_0[0]; /*0x4e136f*/
   *((_BYTE *)this + 29) = aP1[7].__tail_0[1]; /*0x4e1375*/
-  *((_BYTE *)this + 30) = aP1[7].__tail_0[2]; /*0x4e137b*/
+  this->q01E = aP1[7].__tail_0[2]; /*0x4e137b*/
   this->m_Prev = aP1[8]; /*0x4e1381*/
   *this = &vt_GadgetClass; /*0x4e1384*/
   return this; /*0x4e138a*/
@@ -1504,7 +1504,7 @@ int __thiscall DialogControl_Hide(_BYTE *this)
   int v1; // eax
 
   v1 = *(_DWORD *)this; /*0x4e1450*/
-  *(this + 30) = 0; /*0x4e1452*/
+  this->q01E = 0; /*0x4e1452*/
   this->q01C = 1; /*0x4e1456*/
   return (*(int (**)(void))(v1 + 84))();
 }
@@ -1513,7 +1513,7 @@ int __thiscall DialogControl_Hide(_BYTE *this)
 // ==== 0x004E1460  GadgetClass::Show  this=GadgetClass  sig=csp ====
 int __thiscall DialogControl_Show(_BYTE *this)
 {
-  *(this + 30) = 1; /*0x4e1462*/
+  this->q01E = 1; /*0x4e1462*/
   this->q01C = 1; /*0x4e1465*/
   return (*(int (__thiscall **)(_BYTE *))(this->q054)(this);
 }
@@ -1522,7 +1522,7 @@ int __thiscall DialogControl_Show(_BYTE *this)
 // ==== 0x004E1470  DialogControl::IsHidden  this=GadgetClass  sig=csp ====
 BOOL __thiscall DialogControl::IsHidden(_BYTE *this)
 {
-  return *(this + 30) == 0; /*0x4e147a*/
+  return this->q01E == 0; /*0x4e147a*/
 }
 
 
@@ -1650,7 +1650,7 @@ _DWORD *__thiscall sub_4E15A0(_DWORD *this, int a2, int a3)
   {
     do /*0x4e1624*/
     {
-      if ( !*((_BYTE *)this + 30) ) /*0x4e15c4*/
+      if ( !this->q01E ) /*0x4e15c4*/
       {
         v4 = this->Width; /*0x4e15cf*/
         v5 = this->Height; /*0x4e15d2*/
@@ -1861,7 +1861,7 @@ char __thiscall COMObject_TrackCurrent(_BYTE *this, char a2)
   char result; // al
 
   result = a2; /*0x4e1975*/
-  if ( *(this + 29) && (a2 & 0x11) != 0 ) /*0x4e197d*/
+  if ( this->q01D && (a2 & 0x11) != 0 ) /*0x4e197d*/
   {
     MEMORY[0x8B3E88] = (int)this; /*0x4e197f*/
   }
@@ -2762,7 +2762,7 @@ int __thiscall GaugeClass::_vt39(int *this)
     v2 = this->GaugeClass_field_0x0C; /*0x4e29e6*/
   if ( this->q02E ) /*0x4e29e8*/
   {
-    v3 = this->GaugeClass_field_0x18; /*0x4e29f2*/
+    v3 = this->q006; /*0x4e29f2*/
     v7 = this->GaugeClass_field_0x04; /*0x4e29f5*/
     v9 = v3; /*0x4e29f9*/
     v6 = v2; /*0x4e2a08*/
@@ -2771,7 +2771,7 @@ int __thiscall GaugeClass::_vt39(int *this)
   else
   {
     v6 = this->GaugeClass_field_0x0C; /*0x4e2a1f*/
-    v5 = this->GaugeClass_field_0x14; /*0x4e2a23*/
+    v5 = this->q005; /*0x4e2a23*/
     v7 = v2; /*0x4e2a31*/
     v8 = v5; /*0x4e2a35*/
     v9 = 4; /*0x4e2a39*/
@@ -2907,13 +2907,13 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
     *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228],
     this->Width,
     this->X,
-    this->Visible,
-    this->ID);
-  v3 = *((_BYTE *)this + 30); /*0x4e2b9b*/
-  v4 = this->Visible; /*0x4e2b9e*/
+    this->q005,
+    this->q006);
+  v3 = this->q01E; /*0x4e2b9b*/
+  v4 = this->q005; /*0x4e2b9e*/
   v5 = this->X; /*0x4e2ba1*/
   v54 = this->Width; /*0x4e2ba4*/
-  v57 = this->ID; /*0x4e2bab*/
+  v57 = this->q006; /*0x4e2bab*/
   v56 = v4; /*0x4e2bb3*/
   v55 = v5; /*0x4e2bc0*/
   DrawBuildingTilesSHP(&v54, v3 != 0, 1); /*0x4e2bc4*/
@@ -2938,7 +2938,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
           v54 = v36 + 1; /*0x4e2e8e*/
           v55 = this->X + 1; /*0x4e2e96*/
           v37 = v6 - v36; /*0x4e2e9c*/
-          v38 = this->ID - 2; /*0x4e2ea2*/
+          v38 = this->q006 - 2; /*0x4e2ea2*/
           v56 = v37 + 1; /*0x4e2ea5*/
           v57 = v38; /*0x4e2eaf*/
           (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2eb5*/
@@ -2951,7 +2951,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
             v39 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 10); /*0x4e2eda*/
           v55 = this->X + 1; /*0x4e2ee5*/
           v40 = v7 - this->Width + 1; /*0x4e2ef4*/
-          v57 = this->ID - 2; /*0x4e2ef5*/
+          v57 = this->q006 - 2; /*0x4e2ef5*/
           v54 = v6; /*0x4e2eff*/
           v56 = v40; /*0x4e2f03*/
           (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2f0e*/
@@ -2963,7 +2963,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
           else
             v41 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 6); /*0x4e2f31*/
           v42 = v8 - this->Width; /*0x4e2f3c*/
-          v43 = this->ID; /*0x4e2f3e*/
+          v43 = this->q006; /*0x4e2f3e*/
           v55 = this->X + 1; /*0x4e2f41*/
           v54 = v7; /*0x4e2f4f*/
           v56 = v42 + 1; /*0x4e2f53*/
@@ -2979,7 +2979,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
           v45 = this->X; /*0x4e2f88*/
           v54 = this->Width + 1; /*0x4e2f8d*/
           v55 = v45 + 1; /*0x4e2f94*/
-          v56 = this->Visible - 2; /*0x4e2fa2*/
+          v56 = this->q005 - 2; /*0x4e2fa2*/
           v57 = v6 - v45 + 1; /*0x4e2fac*/
           (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2fb8*/
             *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416],
@@ -2989,7 +2989,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
             v46 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 5); /*0x4e2fd1*/
           else
             v46 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 10); /*0x4e2fdd*/
-          v47 = this->Visible; /*0x4e2fe4*/
+          v47 = this->q005; /*0x4e2fe4*/
           v48 = this->Width + 1; /*0x4e2fe7*/
           v55 = v6; /*0x4e2fe8*/
           v49 = this->X; /*0x4e2fec*/
@@ -3004,7 +3004,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
             v50 = *(unsigned __int8 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 3); /*0x4e3027*/
           else
             v50 = *(unsigned __int16 *)(*(_DWORD *)MEMORY[0x87F6C4]->__pad_174 + 6); /*0x4e3034*/
-          v51 = this->Visible - 2; /*0x4e303f*/
+          v51 = this->q005 - 2; /*0x4e303f*/
           v54 = this->Width + 1; /*0x4e3042*/
           v52 = v8 - this->X + 1; /*0x4e3051*/
           v55 = v7; /*0x4e3052*/
@@ -3027,7 +3027,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
         v54 = v20 + 1; /*0x4e2d10*/
         v55 = this->X + 1; /*0x4e2d18*/
         v21 = v6 - v20; /*0x4e2d1e*/
-        v22 = this->ID - 2; /*0x4e2d24*/
+        v22 = this->q006 - 2; /*0x4e2d24*/
         v56 = v21 + 1; /*0x4e2d27*/
         v57 = v22; /*0x4e2d31*/
         (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2d37*/
@@ -3041,7 +3041,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
         v24 = this->Width; /*0x4e2d5d*/
         v25 = v6 - v24; /*0x4e2d63*/
         v26 = v8 - v24; /*0x4e2d65*/
-        v27 = this->ID; /*0x4e2d67*/
+        v27 = this->q006; /*0x4e2d67*/
         v55 = this->X + 1; /*0x4e2d6d*/
         v54 = v25 + 1; /*0x4e2d7b*/
         v56 = v26 - 1; /*0x4e2d7f*/
@@ -3060,7 +3060,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
         v54 = this->Width + 1; /*0x4e2dbc*/
         v29 = this->X; /*0x4e2dc0*/
         v55 = v29 + 1; /*0x4e2dc7*/
-        v56 = this->Visible - 2; /*0x4e2dd1*/
+        v56 = this->q005 - 2; /*0x4e2dd1*/
         v57 = v6 - v29 + 1; /*0x4e2dda*/
         (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2de6*/
           *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416],
@@ -3074,7 +3074,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
         v54 = v31 + 1; /*0x4e2e18*/
         v32 = this->X; /*0x4e2e1c*/
         v55 = v6 - v32 + 1; /*0x4e2e2a*/
-        v33 = this->Visible; /*0x4e2e2e*/
+        v33 = this->q005; /*0x4e2e2e*/
         v57 = v8 - v32 + 1; /*0x4e2e36*/
         v56 = v31 + v33 - 2; /*0x4e2e3a*/
         (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2e40*/
@@ -3096,7 +3096,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
       v12 = this->Width; /*0x4e2c34*/
       v13 = v8 - v12; /*0x4e2c38*/
       v14 = v12 + 1; /*0x4e2c3e*/
-      v15 = this->ID; /*0x4e2c41*/
+      v15 = this->q006; /*0x4e2c41*/
       v54 = v14; /*0x4e2c44*/
       v55 = this->X + 1; /*0x4e2c4d*/
       v56 = v13 + 1; /*0x4e2c5a*/
@@ -3115,7 +3115,7 @@ int __thiscall BuildingPlacementClass::Draw(TriColorGaugeClass *this, int a2)
       v54 = this->Width + 1; /*0x4e2c94*/
       v17 = this->X; /*0x4e2c98*/
       v55 = v17 + 1; /*0x4e2ca1*/
-      v56 = this->Visible - 2; /*0x4e2cac*/
+      v56 = this->q005 - 2; /*0x4e2cac*/
       v57 = v8 - v17 + 1; /*0x4e2cb6*/
       (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 20))( /*0x4e2cbc*/
         *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416],

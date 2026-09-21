@@ -486,54 +486,6 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
 }
 }
 
-// ==== BACKFILL 0x00453D60  BuildingClass::MarkCellOccupied  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
-void BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::MarkCellOccupied(#377 *this)
-{
-  _DWORD *v1; // ecx
-  _DWORD *v2; // eax
-  int v3; // ecx
-  int result; // eax
-  _DWORD *v5; // [esp+4h] [ebp+4h] BYREF
-
-  v1 = v5; /*0x453d60*/
-  LOWORD(v5) = *v5 / 256; /*0x453d72*/
-  HIWORD(v5) = v1[1] / 256; /*0x453d8b*/
-  v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v5); /*0x453d9d*/
-  v3 = v2[73]; /*0x453da2*/
-  result = (int)(v2 + 73); /*0x453da8*/
-  LOBYTE(v3) = v3 | 0x80; /*0x453dad*/
-  *(_DWORD *)result = v3; /*0x453db0*/
-  return result; /*0x453db2*/
-}
-}
-
-// ==== BACKFILL 0x00453DC0  BuildingClass::ClearCellOccupied  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
-void BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::ClearCellOccupied(#377 *this)
-{
-  _DWORD *v1; // ecx
-  _DWORD *v2; // eax
-  int v3; // ecx
-  int result; // eax
-  _DWORD *v5; // [esp+4h] [ebp+4h] BYREF
-
-  v1 = v5; /*0x453dc0*/
-  LOWORD(v5) = *v5 / 256; /*0x453dd2*/
-  HIWORD(v5) = v1[1] / 256; /*0x453deb*/
-  v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v5); /*0x453dfd*/
-  v3 = v2[73]; /*0x453e02*/
-  result = (int)(v2 + 73); /*0x453e08*/
-  LOBYTE(v3) = v3 & 0x7F; /*0x453e0d*/
-  *(_DWORD *)result = v3; /*0x453e10*/
-  return result; /*0x453e12*/
-}
-}
-
 // ==== BACKFILL 0x00454250  MissionClass::IsProducing  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
 namespace ra2 { namespace game { int MissionClass::IsProducing() {
 {
@@ -1379,28 +1331,6 @@ char Vector::RemoveAt(AbstractClass * aP1)
     while ( (int)v3 < this->Vector_field_0x10 );
   }
     return 1;
-}
-}
-
-// ==== BACKFILL 0x0045DD50  sub_45DD50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_45DD50::sub_45DD50()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_45DD50(void *this)
-{
-  ObjectClass *v2; // edi
-  const void **v3; // esi
-
-  v2 = 0; /*0x45dd55*/
-  v3 = (const void **)&off_819288; /*0x45dd57*/
-  while ( _strcmpi(*v3, this) ) /*0x45dd6a*/
-  {
-    v3 += 2; /*0x45dd6c*/
-    v2 = (ObjectClass *)((char *)v2 + 1); /*0x45dd6f*/
-    if ( (int)v3 >= (int)dword_8192B8 ) /*0x45dd76*/
-      return 0; /*0x45dd7d*/
-  }
-  return dword_81928C[2 * (_DWORD)v2]; /*0x45dd78*/
 }
 }
 

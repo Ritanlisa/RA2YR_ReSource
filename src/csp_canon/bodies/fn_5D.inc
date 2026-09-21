@@ -2,87 +2,10 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x005D0580  j_DeleteAndZero  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int j_DeleteAndZero()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-void __thiscall j_DeleteAndZero(void **this)
-{
-  DeleteAndZero(this); /*0x5d0580*/
-}
-}
-
 // ==== BACKFILL 0x005D0590  nullsub_24  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_24()
 {
   ;
-}
-
-// ==== BACKFILL 0x005D25D0  sub_5D25D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5D25D0(int this, char *Source, int a3)
-{
-  char **v4; // eax
-  char **v5; // edi
-  int v6; // ecx
-  int v7; // eax
-  int v8; // eax
-  int v9; // edx
-
-  if ( !Source || !a3 ) /*0x5d25e3*/
-    return 0; /*0x5d25e3*/
-  v4 = (char **)__2_YAPAXI_Z(0xCu); /*0x5d25e7*/
-  v5 = v4 ? Audio::SetSoundFileName(v4, Source, a3) : 0;
-  v6 = this->M56; /*0x5d2602*/
-  if ( this->M64 >= v6 ) /*0x5d260d*/
-  {
-    if ( !(unsigned char)this->M61 && v6 ) /*0x5d2618*/
-      return 0; /*0x5d2618*/
-    v7 = this->M68; /*0x5d261a*/
-    if ( v7 <= 0 /*0x5d262a*/
-      || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->M48 + 8))(this + 48, v6 + v7, 0) )
-    {
-      return 0; /*0x5d264a*/
-    }
-  }
-  v8 = this->M64; /*0x5d2631*/
-  v9 = this->M52; /*0x5d2634*/
-  this->M64 = v8 + 1; /*0x5d263a*/
-  *(_DWORD *)(v9 + 4 * v8) = v5; /*0x5d263d*/
-  return 1; /*0x5d2640*/
-}
-}
-
-// ==== BACKFILL 0x005D2650  sub_5D2650  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-void E4Recv_5D2650::sub_5D2650(void * a2, int a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5D2650(_DWORD *this, void *a2, int a3)
-{
-  int v4; // esi
-  int v5; // eax
-
-  if ( a2 ) /*0x5d265c*/
-  {
-    if ( Audio::IsSoundEnabled() ) /*0x5d265e*/
-    {
-      v4 = 0; /*0x5d266a*/
-      if ( (int)*(this + 16) > 0 ) /*0x5d266e*/
-      {
-        while ( _strcmpi(a2, **(const void ***)(*(this + 13) + 4 * v4)) ) /*0x5d2684*/
-        {
-          if ( ++v4 >= *(this + 16) ) /*0x5d268c*/
-            return; /*0x5d268c*/
-        }
-        v5 = Math::RoundToInt((double)a3 * MEMORY[0xA8EB98]); /*0x5d269f*/
-        nullsub_192(v5); /*0x5d26a7*/
-      }
-    }
-  }
-}
 }
 
 // ==== BACKFILL 0x005D26F0  MSEngine_Destru::Release  cls=MSEngine  sig=csp  renamed_refs=0  residual=- ====
@@ -292,29 +215,6 @@ namespace gamemd { int TacticalClass::processInput(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x005D4F20  sub_5D4F20  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_5D4F20::sub_5D4F20()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5D4F20(const char *this)
-{
-  int v1; // edi
-
-  v1 = 0; /*0x5d4f29*/
-  if ( MEMORY[0xABFCA0] <= 0 ) /*0x5d4f2f*/
-    return 0; /*0x5d4f87*/
-  while ( 1 ) /*0x5d4f47*/
-  {
-    GetWindowTextA(*((HWND *)MEMORY[0xABFC94] + v1), MEMORY[0xABFCD0], 99); /*0x5d4f47*/
-    if ( !strcmp(MEMORY[0xABFCD0], this) ) /*0x5d4f56*/
-      break; /*0x5d4f56*/
-    if ( ++v1 >= MEMORY[0xABFCA0] ) /*0x5d4f85*/
-      return 0; /*0x5d4f85*/
-  }
-  return *((_DWORD *)MEMORY[0xABFC94] + v1); /*0x5d4f87*/
-}
-}
-
 // ==== BACKFILL 0x005D5850  MSEngine::DestroyData  cls=MSEngine  sig=csp  renamed_refs=0  residual=- ====
 void MSEngine::DestroyData()
 {
@@ -334,36 +234,6 @@ void nullsub_192(int a1)
 int ScenarioClass::MissionStubReturnZero()
 {
 return -2;
-}
-
-// ==== BACKFILL 0x005D5DC0  Dialog::GetModeNeg2  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
-int Dialog::GetModeNeg2()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Dialog_GetModeNeg2(_BYTE *this)
-{
-  return *(this + 63) != 0 ? 0 : -2;
-}
-}
-
-// ==== BACKFILL 0x005D5DD0  Dialog::GetMode3  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
-int Dialog::GetMode3()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Dialog_GetMode3(_BYTE *this)
-{
-  return *(this + 60) != 0 ? 3 : -2;
-}
-}
-
-// ==== BACKFILL 0x005D5DE0  GameMode::IsValid  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
-bool GameMode::IsValid(unsigned int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall GameMode_IsValid(_BYTE *this, unsigned int a2)
-{
-  return (!*(this + 63) || a2 != -2) && a2 < 4; /*0x5d5df2*/
-}
 }
 
 // ==== BACKFILL 0x005D62C0  PlayerClass::AssignPlayerIndex  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
@@ -406,31 +276,10 @@ char ScenarioClass::createStartingForces()
 return 1;
 }
 
-// ==== BACKFILL 0x005D6350  DialogClass::GetFlag  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
-char DialogClass::GetFlag()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DialogClass_GetFlag(_BYTE *this)
-{
-  return *(this + 52); /*0x5d6353*/
-}
-}
-
 // ==== BACKFILL 0x005D6360  MPCooperative::Stub  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::Stub()
 {
 return 0;
-}
-
-// ==== BACKFILL 0x005D6430  ScenarioClass::dispatchEvents  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
-int ScenarioClass_dispatchEvents()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// Microsoft VisualC 2-14/net runtime
-int ScenarioClass::dispatchEvents()
-{
-  return Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 9); /*0x69b684*/
-}
 }
 
 // ==== BACKFILL 0x005D6790  ScenarioClass::ClearFlag  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====

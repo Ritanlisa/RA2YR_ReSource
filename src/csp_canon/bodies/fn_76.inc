@@ -944,37 +944,6 @@ int MapSizeGameOption_WorldDominationTour::ddtor(MapSizeOptStub **a2)
     return DataGlobal_848628[4 * a2[1]->mszByte18 + a2[1]->mszByte19];
 }
 
-// ==== BACKFILL 0x00767820  GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create  cls=GameOption@WorldDominationTour  sig=csp  renamed_refs=0  residual=- ====
-void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall ConstructorWDTFlagOption_Create(
-        GameOption_WorldDominationTour *this,
-        int arg0,
-        void *a2,
-        int arg8,
-        void *a4,
-        ObjectClass *aP5)
-{
-  ObjectClass *v6; // edx
-  ObjectClass *v8; // ecx
-
-  v6 = aP5; /*0x767824*/
-  v8 = (ObjectClass *)arg8; /*0x76782b*/
-  *((_DWORD *)this + 2) = arg0; /*0x76782f*/
-  *((_DWORD *)this + 3) = v8; /*0x767836*/
-  this->GameOption_WorldDominationTour_field_0x04 = 0; /*0x76783d*/
-  *(_DWORD *)this->__pad_0 = &WorldDominationTour::GameOption::`vftable'; /*0x767844*/
-  *((_DWORD *)this + 4) = v6; /*0x76784a*/
-  String::AssignFromPtr((char **)this + 5, (const char **)&a4); /*0x76784d*/
-  String::AssignFromPtr((char **)this + 6, (const char **)&a2); /*0x76785a*/
-  *(_DWORD *)this->__pad_0 = &WorldDominationTour::FlagGameOption::`vftable'; /*0x767863*/
-  DeleteAndZero(&a2); /*0x767869*/
-  DeleteAndZero(&a4); /*0x767872*/
-  return this; /*0x767879*/
-}
-}
-
 // ==== BACKFILL 0x00767B00  Team_Create_767B00  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
 {

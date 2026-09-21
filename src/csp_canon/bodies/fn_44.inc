@@ -153,6 +153,39 @@ namespace gamemd { int SuperWeapon::CreateUnits() {
 }
 } }
 
+// ==== BACKFILL 0x00447F10  BuildingClass::GetFireError  cls=BuildingClass  sig=csp  renamed_refs=3  residual=- ====
+int BuildingClass::GetFireError()
+{
+BuildingTypeClass* typePtr = this->Type;
+if (((typePtr->CanBeOccupied && !typePtr->CanOccupyFire)) && !this->MissionStubReturnZero6() || ObjectClass::HasLocation(this))
+    return 5;
+if (this->Type->EMPulseCannon)
+    return 6;
+if (this->GetCurrentMission() == 19 || this->GetCurrentMission() == 18)
+    return 5;
+if (!this->IsPoweredActive())
+    return 6;
+if (this->DelayBeforeFiring)
+    return 3;
+int occupyHeightArg;
+int delayedArg;
+int fireError = TriggerTypeClass::ReadINI(this, occupyHeightArg, delayedArg);
+if (fireError)
+    return fireError;
+if (!this->HasOccupantAudio())
+    return fireError;
+int angleOut;
+int effectArg;
+int turretAngle = this->GetTurretAngle(&angleOut, effectArg);
+int angleLimit = this->Type->TurretAnimIsVoxel != 0 ? 0 : 8;
+short facingOut;
+int* facingValue = ProgressTimer::GetValue((ProgressTimer*)((char*)this + 904), &facingOut);
+short facingDelta = (short)(angleLimit << 8);
+if (abs16(facingDelta) >= (int)abs16((int)*(unsigned short*)facingValue - turretAngle))
+    return fireError;
+return 2;
+}
+
 // ==== BACKFILL 0x00449410  BuildingClass::GetBoundingSizeExt  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 int __thiscall BuildingClass::GetBoundingSizeExt(#377 *this)
 {
@@ -161,26 +194,58 @@ int __thiscall BuildingClass::GetBoundingSizeExt(#377 *this)
        + ObjectClass::GetBoundingSize(this);
 }
 
-// ==== BACKFILL 0x0044B760  AbstractClass::COMStub_133  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass_COMStub_133()
+// ==== BACKFILL 0x004494C0  BuildingClass::CanBeSold  cls=BuildingClass  sig=csp  renamed_refs=5  residual=- ====
+bool BuildingClass::CanBeSold()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall AbstractClass::COMStub_133(#377 *this)
-{
-  return IPersistStream::StubReturn450();
+bool result;
+if (ObjectClass::HasLocation(this)) {
+    result = false;
+} else {
+    if (this->Type->Unsellable) {
+        result = false;
+    } else {
+        if (this->BuildingClass_field_bool_6E9) {
+            if (this->BuildingClass_field_int_534) {
+                if (this->GetCurrentMission() != 19) {
+                    if (this->GetCurrentMission() != 18)
+                        return true;
+                }
+            }
+        }
+        if (!this->Type->FirestormWall || this->focus->firestormActive)
+            result = false;
+        else
+            result = true;
+    }
 }
+return result;
 }
 
-// ==== BACKFILL 0x0044B770  AbstractClass::COMStub_137  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass_COMStub_137()
+// ==== BACKFILL 0x0044D5D0  BuildingClass::CaptureBuilding  cls=BuildingClass  sig=csp  renamed_refs=4  residual=- ====
+bool BuildingClass::CaptureBuilding(HouseClass* newOwner)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall AbstractClass::COMStub_137(#377 *this)
-{
-  return AircraftClass::CheckMissionStatus();
+bool result;
+if (TechnoClass::SetHouseFlag(this, newOwner)) {
+    if (!g_IKnowWhatImDoing) {
+        this->focus->lastBuiltVehicleType = this->Type->ArrayIndex;
+        this->focus->unknownBool246 = 1;
+    }
+    HouseClass* ownerHouse = this->focus;
+    ownerHouse->recheckTechTree = 1;
+    if (!Team::AllMembersValid(this)
+        && House::IsCurrentPlayer(ownerHouse)
+        && this->GetCurrentMission() != 18
+        && this->queuedMission != 18
+        || !Team::AllMembersValid(this)
+        && !House::IsCurrentPlayer(ownerHouse)
+        && newOwner == ownerHouse
+        && this->GetCurrentMission() != 18)
+        this->CreateUnits();
+    result = true;
+} else {
+    result = false;
 }
+return result;
 }
 
 // ==== BACKFILL 0x0044D700  BuildingClass::GetAmmoCountScaled  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====

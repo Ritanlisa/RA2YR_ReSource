@@ -330,16 +330,6 @@ int Cell::GetGroundHeight(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x00578AC0  MapClass::IncrementRedrawCounter  cls=MapClass  sig=csp  renamed_refs=0  residual=- ====
-void MapClass::IncrementRedrawCounter()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_578AC0(_BYTE *this)
-{
-  ++*(this + 4440); /*0x578ac0*/
-}
-}
-
 // ==== BACKFILL 0x00578B70  sub_578B70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_578B70::sub_578B70(short * a2)
 {

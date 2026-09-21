@@ -246,7 +246,7 @@ void __thiscall Terrain::ProcessCellModification(int *this, IUnknown *aP1)
         goto LABEL_139; /*0x5703e8*/
       }
       v34 = (__int16)v32 + (v81[1] << 9); /*0x5703f1*/
-      if ( !*(_DWORD *)(this->q13C + 4 * v34) ) /*0x570401*/
+      if ( !*(_DWORD *)(this->q04F + 4 * v34) ) /*0x570401*/
         goto LABEL_74; /*0x570401*/
       if ( v34 < 0x40000 && (v35 = *(_DWORD **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_3C[4] + 4 * v34)) != 0 ) /*0x57041d*/
       {
@@ -6184,7 +6184,7 @@ int __thiscall MapClass::RemoveTriggerRef(int *this, AbstractClass *aP1, int a3)
       v8 = *(__int16 *)(v6 + 4 * i); /*0x577955*/
       v9 = (IUnknown **)(v6 + 4 * i); /*0x577959*/
       v10 = v8 + (v7 << 9); /*0x57795f*/
-      if ( v10 < 0x40000 && (v11 = *(_DWORD **)(this->MapClass_field_0x13C + 4 * v10)) != 0 ) /*0x577975*/
+      if ( v10 < 0x40000 && (v11 = *(_DWORD **)(this->q04F + 4 * v10)) != 0 ) /*0x577975*/
       {
         v12 = v11; /*0x577977*/
       }
@@ -6260,11 +6260,11 @@ int __thiscall ShroudClass::Reset(_DWORD *this, IUnknown *aP1)
 LABEL_7:
     Debug::Log(); /*0x577ae6*/
   HouseClass::ResetObjectOrders(0, 0); /*0x577af3*/
-  v4 = *(this + 61); /*0x577aff*/
-  *(this + 67) = 1; /*0x577b05*/
-  *(this + 68) = v4; /*0x577b0f*/
-  *(this + 69) = v4 - 1; /*0x577b18*/
-  *(this + 70) = (v4 << 11) + *(this + 79) + 4; /*0x577b2d*/
+  v4 = this->q03D; /*0x577aff*/
+  this->q043 = 1; /*0x577b05*/
+  this->q044 = v4; /*0x577b0f*/
+  this->q045 = v4 - 1; /*0x577b18*/
+  this->q046 = (v4 << 11) + this->q04F + 4; /*0x577b2d*/
   for ( i = (_DWORD *)LayerClass::CellIteratorNext(this); i; i = (_DWORD *)LayerClass::CellIteratorNext(this) ) /*0x577b3a*/
   {
     v6 = i[80] & 0xFFFFFFFC; /*0x577b4b*/
@@ -6300,11 +6300,11 @@ int __thiscall sub_577BB0(_DWORD *this, int a2)
   if ( !a2 ) /*0x577be2*/
 LABEL_7:
     Debug::Log(); /*0x577be4*/
-  v4 = *(this + 61); /*0x577bf1*/
+  v4 = this->q03D; /*0x577bf1*/
   this->q10C = 1; /*0x577bf7*/
   this->__pad_110 = v4; /*0x577c01*/
-  *(this + 69) = v4 - 1; /*0x577c0a*/
-  *(this + 70) = (v4 << 11) + this->q13C + 4; /*0x577c1f*/
+  this->q045 = v4 - 1; /*0x577c0a*/
+  this->q046 = (v4 << 11) + this->q13C + 4; /*0x577c1f*/
   for ( i = LayerClass::CellIteratorNext(this); i; i = LayerClass::CellIteratorNext(this) ) /*0x577c2c*/
   {
     v6 = *(_DWORD *)(i + 320) & 0xFFFFFFFC; /*0x577c3d*/
@@ -6342,8 +6342,8 @@ LABEL_7:
   v4 = this->q0F4; /*0x577ce0*/
   this->q10C = 1; /*0x577ce6*/
   this->__pad_110 = v4; /*0x577cf0*/
-  *(this + 69) = v4 - 1; /*0x577cf9*/
-  *(this + 70) = (v4 << 11) + this->q13C + 4; /*0x577d0e*/
+  this->q045 = v4 - 1; /*0x577cf9*/
+  this->q046 = (v4 << 11) + this->q13C + 4; /*0x577d0e*/
   for ( i = (int *)LayerClass::CellIteratorNext(this); i; i = (int *)LayerClass::CellIteratorNext(this) ) /*0x577d1d*/
   {
     DisplayClass::AdvanceFrameCounter(i); /*0x577d21*/
@@ -6731,12 +6731,12 @@ bool __thiscall LayerClass::IsWithinUsableArea(_DWORD *this, IUnknown *aP1, Tech
       v7 = g_CellClassArray; /*0x57849d*/
     }
     v3 = *((char *)v7 + 283); /*0x5784a8*/
-    if ( *((_BYTE *)v7 + 284) && v4 + v5 < v3 + *(this + 61) + 2 * this->q010 + 4 ) /*0x5784ca*/
+    if ( *((_BYTE *)v7 + 284) && v4 + v5 < v3 + this->q03D + 2 * this->q010 + 4 ) /*0x5784ca*/
       ++v3; /*0x5784cc*/
   }
-  v8 = *(this + 61); /*0x5784d3*/
+  v8 = this->q03D; /*0x5784d3*/
   result = 0; /*0x578531*/
-  if ( v4 + v5 > v3 + v8 + 2 * this->q010 && v4 + v5 <= v3 + v8 + 2 * (this->q010 + *(this + 66)) + 2 ) /*0x5784fe*/
+  if ( v4 + v5 > v3 + v8 + 2 * this->q010 && v4 + v5 <= v3 + v8 + 2 * (this->q010 + this->q042) + 2 ) /*0x5784fe*/
   {
     v9 = this->q0FC; /*0x578500*/
     if ( v5 - v4 < 2 * (v9 + this->q041) - v8 && v4 - v5 < v8 - 2 * v9 ) /*0x578523*/

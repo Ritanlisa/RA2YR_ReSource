@@ -6687,9 +6687,9 @@ _DWORD *__thiscall sub_6C6540(
   {
     Instance = (DropListClass *)TextRenderer::GetInstance(); /*0x6c65a8*/
     if ( aP3 == -1 ) /*0x6c65aa*/
-      this->StaticButtonClass_field_0x14 = Text::MeasureWidth(this->StaticButtonClass_field_0x0C, 0); /*0x6c65b9*/
+      this->q005 = Text::MeasureWidth(this->StaticButtonClass_field_0x0C, 0); /*0x6c65b9*/
     if ( aP4 == -1 ) /*0x6c65bf*/
-      this->ID = Instance->DropListClass_field_0x1C; /*0x6c65c4*/
+      this->q006 = Instance->DropListClass_field_0x1C; /*0x6c65c4*/
   }
   return this; /*0x6c65c9*/
 }
@@ -6700,7 +6700,7 @@ int __thiscall StaticButtonClass::SetText(int this, ControlClass *aP1)
 {
   if ( !GadgetClass::ClearState((_BYTE *)this, aP1) ) /*0x6c6648*/
     return 0; /*0x6c6672*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)this + 136))(this); /*0x6c6655*/
+  (*(void (__thiscall **)(int))(this->__pad_022)(this); /*0x6c6655*/
   (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 140))(this, *(_DWORD *)(this + 48)); /*0x6c6663*/
   return 1; /*0x6c666e*/
 }
@@ -6735,8 +6735,8 @@ void __thiscall StaticButtonClass::Draw(void **this, DropListClass *aP1, char a3
     {
       (*((void (__thiscall **)(void **))*this + 34))(this); /*0x6c66e4*/
       Instance = (CampaignScore *)TextRenderer::GetInstance(); /*0x6c66f5*/
-      this->StaticButtonClass_field_0x14 = (void *)Text::MeasureWidth((int)this->StaticButtonClass_field_0x0C, 0); /*0x6c6701*/
-      this->ID = (void *)Instance->CampaignScore_field_0x1C; /*0x6c670f*/
+      this->q005 = (void *)Text::MeasureWidth((int)this->StaticButtonClass_field_0x0C, 0); /*0x6c6701*/
+      this->q006 = (void *)Instance->CampaignScore_field_0x1C; /*0x6c670f*/
       v7 = Buffer::Init(v8, 0, 0); /*0x6c6712*/
       StaticButtonClass::ReleaseBuffer((int)(this + 9), v7); /*0x6c671b*/
       Vector::Clear((int)v8); /*0x6c6724*/
@@ -6763,25 +6763,25 @@ char __thiscall StaticButtonClass::_vt34(int *this)
   int v15; // [esp+14h] [ebp-4h]
 
   v2 = this + 9; /*0x6c674a*/
-  if ( *(this + 9) ) /*0x6c6747*/
+  if ( this->q009 ) /*0x6c6747*/
     goto LABEL_9; /*0x6c674f*/
-  v3 = this->StaticButtonClass_field_0x14; /*0x6c6751*/
+  v3 = this->q005; /*0x6c6751*/
   if ( v3 > 0 ) /*0x6c6756*/
   {
-    v3 = this->ID; /*0x6c6758*/
+    v3 = this->q006; /*0x6c6758*/
     if ( v3 > 0 ) /*0x6c675d*/
     {
       if ( this != (int *)-36 ) /*0x6c6761*/
       {
         v4 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887314] + 112))(MEMORY[0x887314]); /*0x6c676b*/
-        LOBYTE(v3) = (unsigned __int8)INIClass::loadFile(v2, this->StaticButtonClass_field_0x14 * this->ID * v4); /*0x6c6779*/
+        LOBYTE(v3) = (unsigned __int8)INIClass::loadFile(v2, this->q005 * this->q006 * v4); /*0x6c6779*/
       }
       if ( !*v2 ) /*0x6c6781*/
         return v3; /*0x6c6781*/
       v5 = this->StaticButtonClass_field_0x04; /*0x6c6786*/
-      v6 = this->StaticButtonClass_field_0x14; /*0x6c6789*/
+      v6 = this->q005; /*0x6c6789*/
       v12 = this->StaticButtonClass_field_0x0C; /*0x6c678c*/
-      v7 = this->ID; /*0x6c6790*/
+      v7 = this->q006; /*0x6c6790*/
       v13 = v5; /*0x6c6793*/
       v15 = v7; /*0x6c6797*/
       v14 = v6; /*0x6c67a6*/
@@ -6791,10 +6791,10 @@ char __thiscall StaticButtonClass::_vt34(int *this)
   if ( *v2 ) /*0x6c67af*/
   {
 LABEL_9:
-    v8 = this->StaticButtonClass_field_0x14; /*0x6c67b4*/
+    v8 = this->q005; /*0x6c67b4*/
     v9 = this->StaticButtonClass_field_0x04; /*0x6c67ba*/
     v12 = this->StaticButtonClass_field_0x0C; /*0x6c67bd*/
-    v10 = this->ID; /*0x6c67c1*/
+    v10 = this->q006; /*0x6c67c1*/
     v14 = v8; /*0x6c67c4*/
     v15 = v10; /*0x6c67ce*/
     v13 = v9; /*0x6c67d7*/
@@ -9880,7 +9880,7 @@ _DWORD *__thiscall sub_6C9EC0(_DWORD *this, int a2)
 
   v3 = a2; /*0x6c9ec3*/
   *this = a2; /*0x6c9ec9*/
-  *(this + 513) = 0; /*0x6c9ecb*/
+  this->q201 = 0; /*0x6c9ecb*/
   a2 = 0; /*0x6c9ed1*/
   (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)v3 + 8))(v3, &a2, 2); /*0x6c9ede*/
   if ( (_WORD)a2 != 0xFEFF ) /*0x6c9ee8*/
@@ -9929,7 +9929,7 @@ int __thiscall ParseMovieSubtitles(char *this, char *Source)
     while ( 1 ) /*0x6c9f45*/
     {
       v3 = Render_Parse_6CA940(1024); /*0x6c9f45*/
-      ++this->q804; /*0x6c9f48*/
+      ++this->q201; /*0x6c9f48*/
       v4 = WideString::Trim((wchar_t *)this + 2); /*0x6c9f55*/
       if ( wcslen(v4) ) /*0x6c9f58*/
       {
@@ -9988,7 +9988,7 @@ int __thiscall ParseMovieSubtitles(char *this, char *Source)
           }
           while ( v11 < 1024 ); /*0x6ca050*/
           *((_WORD *)this + v11 + 2) = 0; /*0x6ca05c*/
-          ++this->q804; /*0x6ca069*/
+          ++this->q201; /*0x6ca069*/
           v12 = WideString::Trim((wchar_t *)this + 2); /*0x6ca074*/
         }
         while ( !wcslen(v12) || *v12 == 59 || !v12 || !wcslen(v12) ); /*0x6ca08e*/
@@ -15450,16 +15450,16 @@ _DWORD *__thiscall TabClass::Constructor(_DWORD *this)
   int v35; // eax
 
   TabClass::initTabData(); /*0x6cfe2b*/
-  *(this + 5446) = &vt_INoticeSink; /*0x6cfe3c*/
+  this->q1546 = &vt_INoticeSink; /*0x6cfe3c*/
   TabClass::initStripClass(this + 5447); /*0x6cfe42*/
   this->q552C = MEMORY[0xA8ED84]; /*0x6cfe4e*/
-  *(this + 5453) = 0; /*0x6cfe54*/
+  this->q154D = 0; /*0x6cfe54*/
   v2 = MEMORY[0xA8ED84]; /*0x6cfe5a*/
-  *(this + 5456) = 0; /*0x6cfe60*/
+  this->q1550 = 0; /*0x6cfe60*/
   this->q5538 = v2; /*0x6cfe66*/
-  *(this + 5446) = &TabClass::`vftable'; /*0x6cfe6e*/
-  *((_BYTE *)this + 21828) = 1; /*0x6cfe74*/
-  *((_BYTE *)this + 21829) = 1; /*0x6cfe7a*/
+  this->q1546 = &TabClass::`vftable'; /*0x6cfe6e*/
+  this->q5544 = 1; /*0x6cfe74*/
+  this->q5545 = 1; /*0x6cfe7a*/
   *((_BYTE *)this + 21830) = 1; /*0x6cfe80*/
   *this = &TabClass::`vftable'; /*0x6cfe86*/
   v3 = 0; /*0x6cfe8c*/

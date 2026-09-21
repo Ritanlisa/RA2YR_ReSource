@@ -3648,7 +3648,7 @@ __int16 __thiscall DropListClass::_vt19(char *this, char a2, _DWORD *a3, char *a
     else
     {
       v6 = this->DropListClass_field_0x04; /*0x4b5101*/
-      v7 = this->DropListClass_field_0x14; /*0x4b5104*/
+      v7 = this->q005; /*0x4b5104*/
       v8 = this->DropListClass_field_0x2C; /*0x4b5108*/
       this->q0BC = this->DropListClass_field_0x0C; /*0x4b510e*/
       v9 = this->DropListClass_field_0x4C; /*0x4b5114*/
@@ -8221,7 +8221,7 @@ char *__thiscall DSurface::Construct(char *this, IUnknown *aP1, DSurface *aP2, O
   this->DSurface_field_0x4 = 0; /*0x4ba5be*/
   this->DSurface_field_0x14 = 0; /*0x4ba5c1*/
   this->DSurface_field_0x18 = 0; /*0x4ba5c4*/
-  *(this + 25) = 0; /*0x4ba5c7*/
+  this->q019 = 0; /*0x4ba5c7*/
   this->DSurface_field_0x1C = 0; /*0x4ba5ca*/
   this->DSurface_field_0x8 = 0; /*0x4ba5cd*/
   *(_DWORD *)this = &DSurface_Vtable; /*0x4ba5d0*/
@@ -8250,7 +8250,7 @@ char *__thiscall DSurface::Construct(char *this, IUnknown *aP1, DSurface *aP2, O
       (*(void (__stdcall **)(_DWORD, _DWORD))(**(_DWORD **)v6 + 88))(*(_DWORD *)v6, this->DSurface_field_0x8); /*0x4ba67a*/
       v8 = (IUnknown *)this->DSurface_field_0x8; /*0x4ba67d*/
       this->DSurface_field_0x4 = (unsigned int)(v8->field_54 + 7) >> 3; /*0x4ba689*/
-      *(this + 25) = (*(_DWORD *)v8->__pad_68 & 0x4000) != 0; /*0x4ba695*/
+      this->q019 = (*(_DWORD *)v8->__pad_68 & 0x4000) != 0; /*0x4ba695*/
     }
   }
   return this; /*0x4ba69a*/
@@ -8554,7 +8554,7 @@ _DWORD *__thiscall sub_4BAC60(_DWORD *this, int a2)
   this->DSurface_field_0x10 = 0; /*0x4bac74*/
   this->DSurface_field_0x14 = 0; /*0x4bac77*/
   this->DSurface_field_0x18 = 0; /*0x4bac7a*/
-  *((_BYTE *)this + 25) = 0; /*0x4bac7d*/
+  this->q019 = 0; /*0x4bac7d*/
   this->DSurface_field_0x1C = a2; /*0x4bac80*/
   this->DSurface_field_0x20 = 0; /*0x4bac83*/
   *this = &DSurface_Vtable; /*0x4bac86*/
@@ -8568,7 +8568,7 @@ _DWORD *__thiscall sub_4BAC60(_DWORD *this, int a2)
     {
       v4 = (_DWORD *)this->DSurface_field_0x20; /*0x4bacc2*/
       this->DSurface_field_0x10 = (unsigned int)(v4[21] + 7) >> 3; /*0x4bacce*/
-      *((_BYTE *)this + 25) = (v4[26] & 0x4000) != 0; /*0x4bacda*/
+      this->q019 = (v4[26] & 0x4000) != 0; /*0x4bacda*/
       this->DSurface_field_0x4 = v4[3]; /*0x4bace0*/
       this->DSurface_field_0x8 = v4[2]; /*0x4bace6*/
     }
@@ -8640,7 +8640,7 @@ LABEL_14:
       qmemcpy((void *)this->DSurface_field_0x8, v11, 0x6Cu); /*0x4bae59*/
       v8 = (_DWORD *)this->DSurface_field_0x8; /*0x4bae5b*/
       this->DSurface_field_0x4 = (unsigned int)(v8[21] + 7) >> 3; /*0x4bae67*/
-      *((_BYTE *)this + 25) = (v8[26] & 0x4000) != 0; /*0x4bae73*/
+      this->q019 = (v8[26] & 0x4000) != 0; /*0x4bae73*/
       this->DSurface_field_0x14 = v8[9]; /*0x4bae79*/
       goto LABEL_14; /*0x4bae79*/
     }
@@ -8875,7 +8875,7 @@ char __thiscall DSurface::Blit(int *this, int *a1, int *a2, _DWORD *a3, int *a4,
     v13 = a8; /*0x4bb1b7*/
   if ( !v42 /*0x4bb1f8*/
     && v13 == 1
-    && (!*((_BYTE *)this + 25)
+    && (!this->q019
      || (*((unsigned __int8 (__thiscall **)(void **))*v10 + 33))(v10) == 1 && !*((_BYTE *)v10 + 25))
     && aP5->field_8 == (void *)a2[2]
     && aP5->field_C == (void *)a2[3] )

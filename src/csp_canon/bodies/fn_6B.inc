@@ -2,6 +2,94 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
+// ==== BACKFILL 0x006B0300  BuildingClass::FindPlacementCells2  cls=BuildingClass  sig=csp  renamed_refs=2  residual=- ====
+void BuildingClass::FindPlacementCells2(int* outCell, int inCell) {
+    TechnoClass* occupant = (TechnoClass*)this->objectTypeFlags;
+    int width;
+    int height;
+    if ( occupant && (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)occupant->__pad_0 + 44))(occupant) == 6 )
+    {
+        TechnoClass* occupant2 = (TechnoClass*)this->objectTypeFlags;
+        TechnoClass* typedOccupant;
+        if ( occupant2 )
+            typedOccupant = ((*(int (__thiscall **)(_DWORD))(*(_DWORD *)occupant2->__pad_0 + 44))((int*)this->objectTypeFlags) == 6 ? occupant2 : 0);
+        else
+            typedOccupant = 0;
+        width = BuildingTypeClass::GetFoundationWidth((BuildingTypeClass*)((BuildingClass*)typedOccupant)->Type);
+        TechnoClass* occupant3 = (TechnoClass*)this->objectTypeFlags;
+        if ( occupant3 )
+        {
+            int whatAmI = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)occupant3->__pad_0 + 44))((int*)this->objectTypeFlags);
+            height = BuildingTypeClass::GetFoundationHeight(
+                (BuildingTypeClass*)(whatAmI == 6 ? ((BuildingClass*)occupant3)->Type : *(_DWORD *)0x520),
+                0);
+        }
+        else
+        {
+            height = BuildingTypeClass::GetFoundationHeight((BuildingTypeClass*)*(_DWORD *)0x520, 0);
+        }
+    }
+    else if ( *(_DWORD *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->objectTypeFlags + 132))(this->objectTypeFlags) + 1028) )
+    {
+        int baseType = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->objectTypeFlags + 132))(this->objectTypeFlags);
+        width = BuildingTypeClass::GetFoundationWidth((BuildingTypeClass*)*(_DWORD *)(baseType + 1028));
+        int baseType2 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->objectTypeFlags + 132))(this->objectTypeFlags);
+        height = BuildingTypeClass::GetFoundationHeight((BuildingTypeClass*)*(_DWORD *)(baseType2 + 1028), 0);
+    }
+    else
+    {
+        width = 1;
+        height = 1;
+    }
+    int cellBuf[2];
+    int* coords = (int*)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->objectTypeFlags + 440))(this->objectTypeFlags, &cellBuf);
+    int tileIndex = MapClass::GetTileIndex(&DataGlobal_87F7E8, coords, 0, 0);
+    int foundBuf[2] = {0, 0};
+    int* found = (int*)*LayerClass::Pathfinding_Find(
+        &DataGlobal_87F7E8,
+        (int)foundBuf,
+        foundBuf,
+        (__int16 *)&inCell,
+        1,
+        tileIndex,
+        0,
+        0,
+        width,
+        height,
+        1,
+        0,
+        0,
+        0,
+        (__int16 *)&inCell,
+        0,
+        1);
+    foundBuf[0] = (int)found;
+    short foundY = HIWORD(found);
+    if ( found == *(SlaveManagerClass **)&DataGlobal_B0B5B8 )
+    {
+        *outCell = *(int *)&DataGlobal_B0B5B8;
+        return;
+    }
+    else
+    {
+        int adjusted = inCell;
+        if ( width > 2 )
+        {
+            HIWORD(adjusted) = HIWORD(foundBuf[0]);
+            LOWORD(adjusted) = (short)found + 1;
+            found = (int*)adjusted;
+            foundBuf[0] = adjusted;
+        }
+        if ( height > 2 )
+        {
+            LOWORD(adjusted) = (short)found;
+            HIWORD(adjusted) = foundY + 1;
+        }
+        *outCell = (int)found;
+    }
+    return;
+}
+
 // ==== BACKFILL 0x006B0A90  sub_6B0A90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_6B0A90::sub_6B0A90(int a2)
 {

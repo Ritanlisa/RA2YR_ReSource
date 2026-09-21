@@ -59,15 +59,10 @@ namespace ra2 { namespace game { int ObjectClass::RemoveFromPointerList(int a2) 
 }
 } } }
 
-// ==== BACKFILL 0x004722A0  CaptureManagerClass::CannotControlAnyMore  cls=CaptureManagerClass  sig=csp  renamed_refs=0  residual=- ====
-bool CaptureManagerClass::CannotControlAnyMore()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall CaptureManagerClass::CannotControlAnyMore(int this)
-{
-  return !this->CaptureManagerClass_field_40 && this->originalOwner >= *(_DWORD *)(this + 60); /*0x4722a7*/
-}
-}
+// ==== BACKFILL 0x004722C0  CellClass::HasContent  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { BOOL CellClass::HasContent() {
+    return this->attached3 > 0;
+} }
 
 // ==== BACKFILL 0x004722D0  TechnoClass::processPowerDrain  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::processPowerDrain()
@@ -249,16 +244,6 @@ int LinkedList::Pop()
     --*(void**)this;
   }
     return result;
-}
-}
-
-// ==== BACKFILL 0x00473450  CCINIClass::GetDB  cls=CCINIClass  sig=csp  renamed_refs=0  residual=- ====
-int CCINIClass::GetDB()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CCINIClass_GetDB(_DWORD *this)
-{
-  return *(this + 1); /*0x473453*/
 }
 }
 

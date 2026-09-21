@@ -43,20 +43,6 @@ unsigned int * E4Recv_4202F0::sub_4202F0(int a2)
 }
 }
 
-// ==== BACKFILL 0x00420DA0  AlphaShapeClass::SD_vt13  cls=AlphaShapeClass  sig=csp  renamed_refs=0  residual=- ====
-int AlphaShapeClass::SD_vt13(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AlphaShapeClass::SD_vt13(int this, int a2)
-{
-  AbstractClass::ProcessPower((#378 *)this); /*0x420da9*/
-  Power::TimerProcess(*(_DWORD *)(this + 40)); /*0x420db4*/
-  Power::TimerProcess(*(_DWORD *)(this + 44)); /*0x420dbf*/
-  Power::TimerProcess(*(_DWORD *)(this + 48)); /*0x420dca*/
-  return Power::TimerProcess(*(_DWORD *)(this + 52)); /*0x420dda*/
-}
-}
-
 // ==== BACKFILL 0x00420DE0  AlphaShapeClass::SD_vt05  cls=AlphaShapeClass  sig=csp  renamed_refs=1  residual=- ====
 int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
 {
@@ -77,19 +63,6 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
     aP0[1].AlphaShapeClass_field_0x14 = 0;
   }
     return (int)Prefix_0->__pad_0;
-}
-}
-
-// ==== BACKFILL 0x00420E40  AlphaShapeClass::SD_vt06  cls=AlphaShapeClass  sig=csp  renamed_refs=0  residual=- ====
-int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AlphaShapeClass::SD_vt06(TechnoTypeClass *aP0, int *a1, int aP2)
-{
-  int Prefix; // eax
-
-  Prefix = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x420e4f*/
-  return Prefix >= 0 ? 0 : Prefix;
 }
 }
 
@@ -1081,77 +1054,6 @@ int E4Recv_426E80::sub_426E80(int a2)
 }
 }
 
-// ==== BACKFILL 0x00426ED0  sub_426ED0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_426ED0::sub_426ED0(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_426ED0(int this, int a2)
-{
-  int v3; // esi
-  int v4; // edx
-  unsigned __int16 *i; // ecx
-  int v6; // eax
-  int v8; // ecx
-  int v9; // edx
-  unsigned __int16 v10; // si
-  unsigned __int16 v11; // cx
-  int v12; // edi
-  int v13; // ebx
-  int v14; // edx
-  unsigned __int16 *v15; // ecx
-  unsigned __int16 v16; // ax
-
-  if ( a2 >= this->M204 ) /*0x426ee0*/
-    return 0; /*0x426ee0*/
-  v3 = 0; /*0x426ee4*/
-  v4 = *(unsigned __int16 *)(this + 146); /*0x426ee6*/
-  if ( !(_WORD)v4 ) /*0x426eef*/
-    return 0; /*0x426eef*/
-  for ( i = (unsigned __int16 *)(this + 2060); ; i += 3 ) /*0x426ef1*/
-  {
-    HIWORD(v6) = 0; /*0x426ef7*/
-    if ( *i <= a2 ) /*0x426efe*/
-    {
-      LOWORD(v6) = *i; /*0x426ef9*/
-      if ( v6 + i[1] > a2 ) /*0x426f0a*/
-        break; /*0x426f0a*/
-    }
-    if ( ++v3 >= v4 ) /*0x426f12*/
-      return 0; /*0x426f12*/
-  }
-  if ( v3 == -1 ) /*0x426f20*/
-    return 0; /*0x426f14*/
-  if ( (unsigned char)this->M136 && this->M3608 != v3 ) /*0x426f32*/
-  {
-    v8 = this->M132; /*0x426f34*/
-    this->M3608 = v3; /*0x426f3f*/
-    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v8 + 40))(v8, (v3 << 16) + 2816, 0); /*0x426f50*/
-    (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 132) + 36))( /*0x426f87*/
-      this->M132,
-      this->M3600,
-      *(unsigned __int16 *)(this + 2 * (3 * v3 + 1032)) + 2 * *(unsigned __int16 *)(this + 6 * v3 + 2062) + 8);
-  }
-  v9 = 3 * v3; /*0x426f8a*/
-  v10 = *(_WORD *)(this + 6 * v3 + 2060); /*0x426f8f*/
-  v11 = *(_WORD *)(this + 2 * v9 + 2062); /*0x426f99*/
-  v12 = this->M3600; /*0x426fa4*/
-  v13 = a2 - v10; /*0x426faa*/
-  v14 = 2 * v11 + 8; /*0x426fac*/
-  v15 = (unsigned __int16 *)(v12 + 8); /*0x426fb2*/
-  if ( v13 > 0 ) /*0x426fb5*/
-  {
-    do /*0x426fc2*/
-    {
-      v16 = *v15++; /*0x426fb9*/
-      v14 += v16; /*0x426fbf*/
-      --v13; /*0x426fc1*/
-    }
-    while ( v13 ); /*0x426fc2*/
-  }
-  return v12 + v14 + 2; /*0x426f14*/
-}
-}
-
 // ==== BACKFILL 0x00426FD0  sub_426FD0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned short E4Recv_426FD0::sub_426FD0(int a2)
 {
@@ -1340,69 +1242,6 @@ int AnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[2] = 1610654892;
   a2[3] = -1252326136;
   return 0;
-}
-
-// ==== BACKFILL 0x004289D0  AnimTypeClass::PowerDrainUpdate  cls=AnimTypeClass  sig=csp  renamed_refs=6  residual=- ====
-int AnimTypeClass::PowerDrainUpdate(int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AnimTypeClass::_vt13(int this, int *a2)
-{
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // edx
-  int v8; // eax
-  int v9; // ecx
-  int v10; // edx
-  int v11; // eax
-  int v12; // ecx
-  int v13; // edx
-  int v14; // ecx
-
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x4289d9*/
-  Power::TimerProcess(this->Layer); /*0x4289e7*/
-  LOBYTE(v3) = this->Normalized; /*0x4289ec*/
-  Power::FlagProcess(a2, v3); /*0x4289f5*/
-  LOBYTE(v4) = this->Flat; /*0x4289fa*/
-  v5 = Power::FlagProcess(a2, v4); /*0x428a03*/
-  LOBYTE(v5) = this->Translucent; /*0x428a08*/
-  Power::FlagProcess(a2, v5); /*0x428a11*/
-  LOBYTE(v6) = this->Scorch; /*0x428a16*/
-  Power::FlagProcess(a2, v6); /*0x428a1f*/
-  LOBYTE(v7) = this->Flamer; /*0x428a24*/
-  v8 = Power::FlagProcess(a2, v7); /*0x428a2d*/
-  LOBYTE(v8) = this->Crater; /*0x428a32*/
-  Power::FlagProcess(a2, v8); /*0x428a3b*/
-  LOBYTE(v9) = this->Sticky; /*0x428a40*/
-  Power::FlagProcess(a2, v9); /*0x428a49*/
-  LOBYTE(v10) = this->PingPong; /*0x428a4e*/
-  v11 = Power::FlagProcess(a2, v10); /*0x428a57*/
-  LOBYTE(v11) = this->Reverse; /*0x428a5c*/
-  Power::FlagProcess(a2, v11); /*0x428a65*/
-  LOBYTE(v12) = this->Shadow; /*0x428a6a*/
-  Power::FlagProcess(a2, v12); /*0x428a73*/
-  Power::TimerProcess(this->vtable3); /*0x428a81*/
-  Checksummer::Add_double((unsigned int *)a2, this->abstractFlags, *(_DWORD *)(this + 684)); /*0x428a96*/
-  LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
-  Power::FlagProcess(a2, v13); /*0x428aa4*/
-  Power::TimerProcess(this->referenceCount); /*0x428ab2*/
-  Power::TimerProcess(this->NeedsSaveOrLink); /*0x428ac0*/
-  Power::TimerProcess(this->LoopStart); /*0x428ace*/
-  Power::TimerProcess(this->LoopEnd); /*0x428adc*/
-  Power::TimerProcess(this->End); /*0x428aea*/
-  Power::TimerProcess(this->Report); /*0x428af8*/
-  Power::TimerProcess(this->UIName); /*0x428b06*/
-  Power::TimerProcess(this->zero_3C); /*0x428b14*/
-  Power::TimerProcess(this->DetailLevel); /*0x428b22*/
-  Power::TimerProcess(this->TranslucencyDetailLevel); /*0x428b30*/
-  Power::TimerProcess(this->RandomLoopDelay); /*0x428b3e*/
-  Power::TimerProcess(this->RandomLoopDelay.Max); /*0x428b4c*/
-  Power::TimerProcess(this->Translucency); /*0x428b5a*/
-  LOBYTE(v14) = this->Tiled; /*0x428b5f*/
-  return Power::FlagProcess(a2, v14); /*0x428b6d*/
-}
 }
 
 // ==== BACKFILL 0x00428C10  AnimTypeClass::GetAnimData  cls=AnimTypeClass  sig=csp  renamed_refs=0  residual=- ====
@@ -1746,124 +1585,6 @@ namespace gamemd { int CellClass::ClearOccupancyGrid() {
 }
 } }
 
-// ==== BACKFILL 0x0042A900  sub_42A900  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-void E4Recv_42A900::sub_42A900()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_42A900(int this)
-{
-  void **v2; // esi
-  void **v3; // esi
-  void *v4; // eax
-  void *v5; // eax
-  void *v6; // eax
-  void **v7; // esi
-  int v8; // ebp
-  int v9; // esi
-  int v10; // edi
-  void *v11; // eax
-
-  v2 = *(void ***)(this + 20); /*0x42a907*/
-  if ( v2 ) /*0x42a90c*/
-  {
-    __3_YAXPAX_Z(v2[2]); /*0x42a912*/
-    __3_YAXPAX_Z(v2); /*0x42a918*/
-  }
-  v3 = *(void ***)(this + 104); /*0x42a920*/
-  this->M20 = 0; /*0x42a923*/
-  if ( v3 ) /*0x42a928*/
-  {
-    __3_YAXPAX_Z(v3[2]); /*0x42a92e*/
-    __3_YAXPAX_Z(v3); /*0x42a934*/
-  }
-  v4 = *(void **)(this + 16); /*0x42a93c*/
-  this->M104 = 0; /*0x42a93f*/
-  if ( v4 ) /*0x42a944*/
-    __3_YAXPAX_Z(v4); /*0x42a947*/
-  v5 = *(void **)(this + 12); /*0x42a94f*/
-  this->M16 = 0; /*0x42a952*/
-  if ( v5 ) /*0x42a957*/
-    __3_YAXPAX_Z(v5); /*0x42a95a*/
-  v6 = *(void **)(this + 24); /*0x42a962*/
-  this->M12 = 0; /*0x42a965*/
-  if ( v6 ) /*0x42a96a*/
-  {
-    __3_YAXPAX_Z(v6); /*0x42a96d*/
-    this->M24 = 0; /*0x42a975*/
-  }
-  if ( this->M28 ) /*0x42a978*/
-  {
-    __3_YAXPAX_Z(*(void **)(this + 28)); /*0x42a980*/
-    this->M28 = 0; /*0x42a988*/
-  }
-  if ( this->M36 ) /*0x42a98b*/
-  {
-    __3_YAXPAX_Z(*(void **)(this + 36)); /*0x42a993*/
-    this->M36 = 0; /*0x42a99b*/
-  }
-  if ( this->M32 ) /*0x42a99e*/
-  {
-    __3_YAXPAX_Z(*(void **)(this + 32)); /*0x42a9a6*/
-    this->M32 = 0; /*0x42a9ae*/
-  }
-  v7 = (void **)(this + 76); /*0x42a9b2*/
-  v8 = 3; /*0x42a9b5*/
-  do /*0x42a9f5*/
-  {
-    if ( *(v7 - 3) ) /*0x42a9ba*/
-    {
-      __3_YAXPAX_Z(*(v7 - 3)); /*0x42a9c2*/
-      *(v7 - 3) = 0; /*0x42a9ca*/
-    }
-    if ( *v7 ) /*0x42a9cd*/
-    {
-      __3_YAXPAX_Z(*v7); /*0x42a9d4*/
-      *v7 = 0; /*0x42a9dc*/
-    }
-    if ( v7[3] ) /*0x42a9de*/
-    {
-      __3_YAXPAX_Z(v7[3]); /*0x42a9e6*/
-      v7[3] = 0; /*0x42a9ee*/
-    }
-    ++v7; /*0x42a9f1*/
-    --v8; /*0x42a9f4*/
-  }
-  while ( v8 ); /*0x42a9f5*/
-  __3_YAXPAX_Z(*(void **)(this + 100)); /*0x42a9fb*/
-  v9 = this + 188; /*0x42aa03*/
-  v10 = 3; /*0x42aa09*/
-  do /*0x42aa37*/
-  {
-    v11 = *(void **)(v9 - 20); /*0x42aa0f*/
-    v9 -= 24; /*0x42aa12*/
-    *(_DWORD *)v9 = &vt_VectorClass_unsigned_int; /*0x42aa17*/
-    if ( v11 ) /*0x42aa1d*/
-    {
-      if ( *(_BYTE *)(v9 + 13) ) /*0x42aa1f*/
-      {
-        __3_YAXPAX_Z(v11); /*0x42aa25*/
-        *(_DWORD *)(v9 + 4) = 0; /*0x42aa2d*/
-      }
-    }
-    --v10; /*0x42aa30*/
-    *(_BYTE *)(v9 + 13) = 0; /*0x42aa31*/
-    *(_DWORD *)(v9 + 8) = 0; /*0x42aa34*/
-  }
-  while ( v10 ); /*0x42aa37*/
-}
-}
-
-// ==== BACKFILL 0x0042B1C0  Cell::PosToIndex  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
-int Cell::PosToIndex()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Cell_PosToIndex(__int16 *this)
-{
-  return ((*this - *(this + 1) + MEMORY[0x87F8DC] - 1) >> 1) /*0x42b1e3*/
-       + MEMORY[0x87F8DC] * (*this - MEMORY[0x87F8DC] + *(this + 1) - 1);
-}
-}
-
 // ==== BACKFILL 0x0042B1F0  Object::ComputeAllocationSize  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Object::ComputeAllocationSize()
 {
@@ -1879,23 +1600,6 @@ unsigned short * CellStruct::Set(short a2, short a3)
     LOWORD(this->vfptr) = a2;
     HIWORD(this->vfptr) = a3;
     return this;
-}
-}
-
-// ==== BACKFILL 0x0042D510  CellStruct::Add  cls=CellStruct  sig=csp  renamed_refs=0  residual=- ====
-IUnknown * CellStruct::Add(IUnknown * aP1, IUnknown * aP2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__thiscall CellStruct::Add(_WORD *this, IUnknown *aP1, IUnknown *aP2)
-{
-  __int16 v3; // dx
-  IUnknown *aP2a; // [esp+8h] [ebp+8h]
-
-  v3 = *this + LOWORD(aP2->field_0); /*0x42d51f*/
-  HIWORD(aP2a) = *(this + 1) + HIWORD(aP2->field_0); /*0x42d522*/
-  LOWORD(aP2a) = v3; /*0x42d52b*/
-  aP1->field_0 = (int)aP2a; /*0x42d534*/
-  return aP1; /*0x42d536*/
 }
 }
 
