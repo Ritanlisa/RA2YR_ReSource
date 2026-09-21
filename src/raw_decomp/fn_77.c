@@ -1270,7 +1270,7 @@ _DWORD *__thiscall sub_771850(_DWORD *this, int a2)
   this->q004 = 0; /*0x771859*/
   this->q008 = 0; /*0x77185c*/
   *((_BYTE *)this + 12) = 0; /*0x77185f*/
-  *(this + 4) = Timer::GetTicks(); /*0x771867*/
+  this->q004 = Timer::GetTicks(); /*0x771867*/
   this->q018 = 0; /*0x77186e*/
   this->q01C = a2; /*0x771871*/
   *this = &vt_WorldDominationTour_Voices_Anim; /*0x771874*/
@@ -1323,17 +1323,17 @@ signed int __thiscall Territory_WorldDominationTour_8_::_vt02(signed int *this)
   result = this->q004; /*0x771903*/
   if ( result != -1 ) /*0x771909*/
   {
-    v3 = *(this + 6); /*0x77190c*/
+    v3 = this->q018; /*0x77190c*/
     result = Timer::GetTicks() - this->q004; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {
-      *(this + 6) = 0; /*0x771934*/
+      this->q018 = 0; /*0x771934*/
       this->q004 = -1; /*0x771937*/
     }
     else
     {
       this->q004 = -1; /*0x771925*/
-      *(this + 6) = v3 - result; /*0x77192c*/
+      this->q018 = v3 - result; /*0x77192c*/
     }
   }
   return result; /*0x771930*/
@@ -1343,15 +1343,15 @@ signed int __thiscall Territory_WorldDominationTour_8_::_vt02(signed int *this)
 // ==== 0x00771950  Anim_Voices_WorldDominationTour::ddtor  this=Anim@Voices@WorldDominationTour  sig=csp ====
 void __thiscall Territory_WorldDominationTour_8_::_vt03(_DWORD *this)
 {
-  if ( *(this + 4) == -1 ) /*0x771957*/
-    *(this + 4) = Timer::GetTicks(); /*0x771961*/
+  if ( this->q004 == -1 ) /*0x771957*/
+    this->q004 = Timer::GetTicks(); /*0x771961*/
 }
 
 
 // ==== 0x00771970  Anim_Voices_WorldDominationTour::Read  this=Anim@Voices@WorldDominationTour  sig=csp ====
 char __thiscall Territory_WorldDominationTour_8_::_vt04(int *this, int a2, int a3)
 {
-  AudioQueue::Update(*(this + 7)); /*0x771973*/
+  AudioQueue::Update(this->q01C); /*0x771973*/
   return 0; /*0x77197a*/
 }
 
@@ -1359,7 +1359,7 @@ char __thiscall Territory_WorldDominationTour_8_::_vt04(int *this, int a2, int a
 // ==== 0x00771980  Anim_Voices_WorldDominationTour::Write  this=Anim@Voices@WorldDominationTour  sig=csp ====
 void __thiscall Territory_WorldDominationTour_8_::_vt05(int *this, int a2, int a3)
 {
-  AudioQueue::Update(*(this + 7)); /*0x771983*/
+  AudioQueue::Update(this->q01C); /*0x771983*/
 }
 
 
@@ -1389,20 +1389,20 @@ BOOL Territory_WorldDominationTour_8_::_vt07()
 // ==== 0x007719D0  Anim_Voices_WorldDominationTour::Close  this=Anim@Voices@WorldDominationTour  sig=csp ====
 void __thiscall Territory_WorldDominationTour_8_::_vt08(int *this, int a2)
 {
-  AudioQueue::Update(*(this + 7)); /*0x7719d3*/
+  AudioQueue::Update(this->q01C); /*0x7719d3*/
 }
 
 
 // ==== 0x007719E0  DynamicVectorClass_uint::sub_7719E0  this=DynamicVectorClass_uint  sig=csp ====
 int __thiscall sub_7719E0(_BYTE *this)
 {
-  *(this + 12) = 1; /*0x7719e2*/
+  this->IsInitialized = 1; /*0x7719e2*/
   this->Items = 0; /*0x7719e6*/
   this->Capacity = 0; /*0x7719e9*/
-  *(this + 13) = 0; /*0x7719ec*/
+  this->IsAllocated = 0; /*0x7719ec*/
   *(_DWORD *)this = &vt_DynamicVectorClass_unsigned_int; /*0x7719ef*/
   this->CapacityIncrement = 10; /*0x7719f5*/
-  this->Count = 0; /*0x7719fc*/
+  this->Items = 0; /*0x7719fc*/
   return 0; /*0x7719ff*/
 }
 
@@ -1414,12 +1414,12 @@ void __thiscall sub_771A00(void *this)
 
   v2 = (CCINIClass *)this->Items; /*0x771a06*/
   *(_DWORD *)this = &vt_VectorClass_unsigned_int; /*0x771a09*/
-  if ( v2 && *((_BYTE *)this + 13) ) /*0x771a13*/
+  if ( v2 && this->IsAllocated ) /*0x771a13*/
   {
     __3_YAXPAX_Z(v2); /*0x771a19*/
     this->Items = 0; /*0x771a21*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x771a24*/
+  this->IsAllocated = 0; /*0x771a24*/
   this->Capacity = 0; /*0x771a27*/
 }
 
@@ -1576,60 +1576,60 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   VectorClass::Construct(this + 47, 0, 0); /*0x771cc5*/
   this->AttachedParticleSystem = 10; /*0x771cca*/
   this->OpenToppedAnim = 0; /*0x771cd1*/
-  *(this + 47) = &vt_TypeList_int; /*0x771cd4*/
+  this->DownReport = &vt_TypeList_int; /*0x771cd4*/
   VectorClass::Construct(this + 54, 0, 0); /*0x771ce4*/
   this->TerrainFire = 10; /*0x771ce9*/
   this->CellRangefinding = 0; /*0x771cf0*/
-  *(this + 54) = &vt_TypeList_int; /*0x771cf3*/
+  this->q0D8 = &vt_TypeList_int; /*0x771cf3*/
   AnimTypeVector::Constructor(this + 61, 0, 0); /*0x771d03*/
   this->IsRadBeam = 10; /*0x771d08*/
   this->AreaFire = 0; /*0x771d0f*/
-  *(this + 61) = &vt_TypeList_AnimTypeClass_const; /*0x771d12*/
+  this->InfiniteMindControl = &vt_TypeList_AnimTypeClass_const; /*0x771d12*/
   this->IsMagBeam = 0; /*0x771d18*/
   this->q114 = 0; /*0x771d1e*/
   this->q118 = 0; /*0x771d24*/
   this->q11C = 0; /*0x771d2a*/
-  *((_BYTE *)this + 288) = 0; /*0x771d30*/
+  this->q120 = 0; /*0x771d30*/
   *((_BYTE *)this + 289) = 0; /*0x771d36*/
   *((_BYTE *)this + 290) = 0; /*0x771d3c*/
-  *((_BYTE *)this + 291) = 0; /*0x771d42*/
+  this->q123 = 0; /*0x771d42*/
   this->q124 = 0; /*0x771d48*/
   this->q128 = 0; /*0x771d60*/
-  *(this + 75) = 0; /*0x771d78*/
-  *(this + 76) = 0x1000000; /*0x771d90*/
-  *((_BYTE *)this + 308) = 0; /*0x771da9*/
-  *((_BYTE *)this + 309) = 0; /*0x771daf*/
-  *((_BYTE *)this + 310) = 0; /*0x771db5*/
-  *((_BYTE *)this + 311) = 1; /*0x771dbb*/
-  *((_BYTE *)this + 312) = 0; /*0x771dc2*/
-  *((_BYTE *)this + 313) = 0; /*0x771dc8*/
-  *((_BYTE *)this + 314) = 0; /*0x771dce*/
-  *((_BYTE *)this + 315) = 0; /*0x771dd4*/
+  this->q12C = 0; /*0x771d78*/
+  this->q130 = 0x1000000; /*0x771d90*/
+  this->q134 = 0; /*0x771da9*/
+  this->q135 = 0; /*0x771daf*/
+  this->q136 = 0; /*0x771db5*/
+  this->q137 = 1; /*0x771dbb*/
+  this->q138 = 0; /*0x771dc2*/
+  this->q139 = 0; /*0x771dc8*/
+  this->q13A = 0; /*0x771dce*/
+  this->q13B = 0; /*0x771dd4*/
   this->q13C = 0; /*0x771dda*/
-  *((_BYTE *)this + 320) = 0; /*0x771de0*/
-  *((_BYTE *)this + 321) = 1; /*0x771de6*/
-  *((_BYTE *)this + 322) = 0; /*0x771ded*/
-  *((_BYTE *)this + 323) = 1; /*0x771df3*/
-  *((_BYTE *)this + 324) = 0; /*0x771dfa*/
-  *((_BYTE *)this + 325) = 0; /*0x771e00*/
-  *((_BYTE *)this + 326) = 0; /*0x771e06*/
-  *((_BYTE *)this + 327) = 0; /*0x771e0f*/
-  *((_BYTE *)this + 328) = 0; /*0x771e16*/
-  *((_BYTE *)this + 329) = 0; /*0x771e1c*/
-  *((_BYTE *)this + 330) = 0; /*0x771e22*/
-  *((_BYTE *)this + 331) = 0; /*0x771e28*/
-  *((_BYTE *)this + 332) = 0; /*0x771e2e*/
-  *((_BYTE *)this + 333) = 0; /*0x771e34*/
-  *((_BYTE *)this + 334) = 10; /*0x771e3a*/
-  *((_BYTE *)this + 335) = 0; /*0x771e41*/
-  *((_BYTE *)this + 336) = 0; /*0x771e47*/
-  *((_BYTE *)this + 337) = 0; /*0x771e4d*/
-  *((_BYTE *)this + 338) = 0; /*0x771e53*/
-  *((_BYTE *)this + 339) = 0; /*0x771e59*/
-  *((_BYTE *)this + 340) = 0; /*0x771e5f*/
-  *((_BYTE *)this + 341) = 0; /*0x771e65*/
+  this->q140 = 0; /*0x771de0*/
+  this->q504 = 1; /*0x771de6*/
+  this->__pad_508 = 0; /*0x771ded*/
+  this->q143 = 1; /*0x771df3*/
+  this->q144 = 0; /*0x771dfa*/
+  this->q514 = 0; /*0x771e00*/
+  this->__pad_518 = 0; /*0x771e06*/
+  this->q147 = 0; /*0x771e0f*/
+  this->q148 = 0; /*0x771e16*/
+  this->q149 = 0; /*0x771e1c*/
+  this->q14A = 0; /*0x771e22*/
+  this->q14B = 0; /*0x771e28*/
+  this->q14C = 0; /*0x771e2e*/
+  this->q14D = 0; /*0x771e34*/
+  this->q14E = 10; /*0x771e3a*/
+  this->q14F = 0; /*0x771e41*/
+  this->q150 = 0; /*0x771e47*/
+  this->q151 = 0; /*0x771e4d*/
+  this->q152 = 0; /*0x771e53*/
+  this->q153 = 0; /*0x771e59*/
+  this->q550 = 0; /*0x771e5f*/
+  this->__pad_554 = 0; /*0x771e65*/
   this->q158 = 0; /*0x771e6b*/
-  *((_BYTE *)this + 348) = 0; /*0x771e71*/
+  this->q15C = 0; /*0x771e71*/
   *this = &WeaponTypeClass::`vftable'; /*0x771e77*/
   this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771e7d*/
   this->vtable3 = &WeaponTypeClass::`vftable'; /*0x771e83*/
@@ -1654,9 +1654,9 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
 _DWORD *__thiscall WeaponTypeClass::loadWeaponProperties(_DWORD *this, AbstractTypeClass *aP1)
 {
   AbstractTypeClass::Init((int)this, aP1); /*0x771f08*/
-  *(this + 47) = &vt_TypeList_int; /*0x771f12*/
-  *(this + 54) = &vt_TypeList_int; /*0x771f18*/
-  *(this + 61) = &vt_TypeList_AnimTypeClass_const; /*0x771f1e*/
+  this->DownReport = &vt_TypeList_int; /*0x771f12*/
+  this->q0D8 = &vt_TypeList_int; /*0x771f18*/
+  this->InfiniteMindControl = &vt_TypeList_AnimTypeClass_const; /*0x771f1e*/
   *this = &WeaponTypeClass::`vftable'; /*0x771f28*/
   this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771f2e*/
   this->vtable3 = &WeaponTypeClass::`vftable'; /*0x771f35*/
@@ -3268,7 +3268,7 @@ _DWORD *__thiscall WinModemClass::Construct(_DWORD *this)
   this->WinModemClass_field_0x24 = __2_YAPAXI_Z(0x2000); /*0x774133*/
   *(this + 21) = 0; /*0x77413b*/
   *(this + 22) = 0; /*0x77413e*/
-  *((_BYTE *)this + 80) = 0; /*0x774141*/
+  this->WinModemClass_field_0x14 = 0; /*0x774141*/
   *((_BYTE *)this + 81) = 0; /*0x774144*/
   this->q068 = 0; /*0x774147*/
   this->Member100 = 0; /*0x77414a*/
@@ -3618,10 +3618,10 @@ void __thiscall WinModemClass::_vt04(HANDLE *this, char a2)
 {
   if ( a2 ) /*0x774906*/
   {
-    if ( EscapeCommFunction(*(this + 23), 5u) ) /*0x77490e*/
+    if ( EscapeCommFunction(this->q05C, 5u) ) /*0x77490e*/
       return; /*0x774916*/
   }
-  else if ( EscapeCommFunction(*(this + 23), 6u) ) /*0x774920*/
+  else if ( EscapeCommFunction(this->q05C, 6u) ) /*0x774920*/
   {
     return; /*0x774928*/
   }
@@ -3635,11 +3635,11 @@ BOOL __thiscall SerialPort_Close(HANDLE *this)
 {
   BOOL result; // eax
 
-  if ( *(this + 23) != (HANDLE)-1 ) /*0x774957*/
+  if ( this->q05C != (HANDLE)-1 ) /*0x774957*/
   {
     Debug::Log(); /*0x77495e*/
-    result = CloseHandle(*(this + 23)); /*0x77496a*/
-    *(this + 23) = (HANDLE)-1; /*0x774970*/
+    result = CloseHandle(this->q05C); /*0x77496a*/
+    this->q05C = (HANDLE)-1; /*0x774970*/
   }
   return result; /*0x774977*/
 }
@@ -3770,14 +3770,14 @@ int __thiscall WinModemClass::ReadBytes(void (**this)(), WinModemClass *aP1, Win
   v7 = v5; /*0x774b63*/
   do /*0x774b96*/
   {
-    v8 = *(this + 25); /*0x774b65*/
+    v8 = this->Member100; /*0x774b65*/
     if ( v8 ) /*0x774b6a*/
     {
-      if ( *((_BYTE *)*(this + 9) + (_DWORD)*(this + 21)) != 13 ) /*0x774b78*/
+      if ( *((_BYTE *)this->WinModemClass_field_0x24 + (_DWORD)*(this + 21)) != 13 ) /*0x774b78*/
         v8(); /*0x774b7a*/
     }
     aP1 = (WinModemClass *)((char *)aP1 + 1); /*0x774b82*/
-    HIBYTE(aP1[-1].WinModemClass_field_0x38) = *((_BYTE *)*(this + 9) + (_DWORD)*(this + 21)); /*0x774b86*/
+    HIBYTE(aP1[-1].WinModemClass_field_0x38) = *((_BYTE *)this->WinModemClass_field_0x24 + (_DWORD)*(this + 21)); /*0x774b86*/
     v7 = (WinModemClass *)((char *)v7 - 1); /*0x774b92*/
     *(this + 21) = (void (*)())(((unsigned __int16)*(this + 21) + 1) & 0x1FFF); /*0x774b93*/
   }
@@ -4226,8 +4226,8 @@ int __thiscall WinModemClass::LogCommErrors(_DWORD *this, NullModemClass *aP1, c
     if ( (BYTE1(aP1) & 1) != 0 ) /*0x775572*/
     {
       Debug::Log(); /*0x775579*/
-      result = *(this + 6) + 1; /*0x775584*/
-      *(this + 6) = result; /*0x775585*/
+      result = this->__pad_018 + 1; /*0x775584*/
+      this->__pad_018 = result; /*0x775585*/
     }
   }
   if ( (a3 & 1) != 0 ) /*0x77558f*/
@@ -5112,7 +5112,7 @@ unsigned int __thiscall sub_7767F0(char **this)
   char *v2; // edi
   LPARAM lParam[10]; // [esp+8h] [ebp-28h] BYREF
 
-  v2 = *(this + 7); /*0x7767f7*/
+  v2 = this->referenceCount; /*0x7767f7*/
   if ( !v2 ) /*0x7767fc*/
     return 0; /*0x776873*/
   String::Trim(v2); /*0x776801*/
@@ -7110,20 +7110,20 @@ void *__thiscall LoadAccountInfoWOL_Load(
         ReferenceCounted *aP14)
 {
   this->q004 = 0; /*0x779695*/
-  *((_BYTE *)this + 8) = 0; /*0x779698*/
+  this->q008 = 0; /*0x779698*/
   *(_DWORD *)this = &vt_ReferenceCounted; /*0x7796a3*/
   String::AssignFromPtr((char **)this + 3, (const char **)aP1); /*0x7796a9*/
-  this->q010 = aP2; /*0x7796ba*/
+  this->q004 = aP2; /*0x7796ba*/
   this->q018 = aP4; /*0x7796c1*/
-  *((_BYTE *)this + 20) = (_BYTE)aP3; /*0x7796c8*/
+  this->q014 = (_BYTE)aP3; /*0x7796c8*/
   this->q01C = a6; /*0x7796cf*/
   this->q024 = aP7; /*0x7796d6*/
-  this->q020 = aP6; /*0x7796dd*/
+  this->q008 = aP6; /*0x7796dd*/
   this->q028 = aP8; /*0x7796e4*/
-  this->q030 = aP10; /*0x7796eb*/
+  this->__pad_00C = aP10; /*0x7796eb*/
   this->q02C = aP9; /*0x7796f2*/
   this->q034 = aP11; /*0x7796f9*/
-  *((_BYTE *)this + 56) = (_BYTE)aP12; /*0x779700*/
+  this->__pad_038 = (_BYTE)aP12; /*0x779700*/
   WideString::AssignFromPtr((wchar_t **)this + 15, (const wchar_t **)aP14); /*0x779703*/
   WideString::AssignFromPtr((wchar_t **)this + 16, (const wchar_t **)aP13); /*0x779710*/
   *(_DWORD *)this = &PlayerProfile::`vftable'; /*0x779715*/

@@ -9,11 +9,8 @@
 namespace gamemd {
 void E4Recv_46D350::sub_46D350()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_46D350(_DWORD *this)
-{
-  *this = &vt_CampaignScoreClass; /*0x46d350*/
-}
+    *(void**)this = &vt_CampaignScoreClass;
+
 }
 } // namespace gamemd
 

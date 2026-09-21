@@ -329,3 +329,67 @@ csp_anchor(async) / compare_parse / member_set(批量) / reopen / job_status
 | 3 命名轮 | **随译做** + 语义发现挂账（上表） |
 | 4 收割机理审计 | 未动（G28 项） |
 | 5 签名缺口补锚 | 未动（G28 项） |
+
+## 第 6 步 RA2MCP 阶段执行记录（2026-09-21 G28 第三轮）
+
+### 账目
+
+- **净增 completed +5 → 12,662**（时点 stats 复核 pending 3,946）：
+  1. `0x559E40 LoadOptions::Release`（保存游戏对话框 + WWMouse 显隐）
+  2. `0x67FD20 LoadOptions_Load`（COM StgOpenStorage 读档流程）
+  3. `0x559D60 LoadOptions::AddRef`（读档对话框 + 帧率保持双循环）
+  4. `0x6B0300 BuildingClass::FindPlacementCells2`（三分支地基尺寸决策 + 寻路
+     坐标，14 块全同构；hpp 签名补参 `(int* outCell, int inCell)`）
+  5. `0x46D350 sub_46D350`（CampaignScore 虚表安装件）
+- 全部走 `verify_execution_flow` PASS 后 `mark_completed`；门控（Clang AST）
+  对修改文件零违规；单 TU 编译错误均为既有基线债（abstract/object/vector
+  等 hpp include 顺序债），改动文件零新增错误。
+
+### G28 新增机制结论（G29 直接复用）
+
+1. **subs_N.cpp 旧 Task17 存根双通道抢占定位**：验证器 by-name 的
+   def_pattern 会匹配存根注释行里的 `__thiscall` 伪码签名（`// IDA: void
+   __thiscall sub_XXXXXX(...)`）；by_addr 又命中其 `0xADDR` 注释。清除存根时
+   残留注释**不得带 `0xADDR` 样式**（先例：subs_2.cpp 46D350）。e4 类限定名
+   （`E4Recv_XXX::sub_YYY`）不吃 by-name pattern（`::` 阻断前导空白匹配），
+   全靠 by_addr 兜底定位 e4 文件——所以存根清扫是 e4 收割的**前置动作**。
+2. **`A || B` 融合复刻共享标签块**（秘籍 2 实战验证）：IDA 的
+   `LABEL_4:` 共享失败出口 = C++ `if (A || B) { LABEL_4 内容 }`，深度 0
+   逐条件分块 + 共享 then 入口，0x67FD20 一次过。
+3. **`*(_DWORD *)0x520` 常量地址解引用**产生 `READ(global,0x520)` 事件 ✓
+   （PE 头死路径读的忠实复刻词汇；十进制 1312 渲染统一写 0x520）。
+4. **WWMouse 虚调用指针形态**：`(*(void(__thiscall**)(int))(*(_DWORD*)
+   g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance)` 被 C++ 提取器
+   解析为具体 CALL 地址（0x622800/0x622720）+ 双 READ(global,0x887640)，
+   与 IDA 侧对称（gap2 同源词汇，G23 词汇表可直接搬）。
+5. **replace_body 签名处理**：new_body 首行若带函数签名会被 auto-strip，
+   但**旧签名行保留**——改签名时旧签名行需手动 Edit 或 new_body 不带签名。
+   尾部 `}` 闭合位置以 ASM 注释块为界，多删/多加 `}` 要对文件复核。
+6. **e4 自由函数事件词汇缺口（G29 大项）**：`sub_XXX(unsigned int* a1)`
+   形态的载体（addr40/addr47 等约 2,900 件）`a1[3]`/`*(a1+1)` 参数指针
+   下标**不产生 READ(member,N) 事件**——需类形态 + `this->member`。受阻
+   件清单 = next_batch 里 class="" 的 5 行件。可行解：e4 hpp 加最小类声明
+   （E4Recv 模式扩展）或签名改 `Class*` 型参。
+7. **伪码丢参警惕**：SelectWeapon(0x6f3330) 的 `v11 [esp+1Ch] [ebp+4h]`
+   = 寄存器溢出的**栈参数**（target），签名渲染丢失——翻译前对照 ebp+4
+   偏移识别丢弃参数，hpp 签名要补。
+
+### G28 挂账（转 G29）
+
+- **#145 IsFootprintBlocked(0x4578c0) 形状不可达**：事件层全对齐
+  （STEP3(0) OK：440 槽 SetZ + 双读 q520），但 IDA 用 `goto LABEL_12` +
+  共享 RET（LABEL_13 双入边 / RET1 三入边），C++ 无 goto 时 4 return 语句
+  = 4 RET 块 vs IDA 2 个，恒差 2 块。需验证器 canonical 增加「同返回值 RET
+  合并」规则。姊妹件 CheckOverlapWithOthers(0x44e3a0) 现存 goto 译法被
+  reject gate 拦，同款阻塞。
+- **SelectWeapon/CreateDestructionEffect/ValidatePlacement** 三大件
+  （132/216/223 行）未动——SelectWeapon 需先补 target 参数。
+- **BuildingClass@36 objectTypeFlags 误名**：实为 occupant/驻留体指针
+  （`*(this+9)` 被 cast TechnoClass* 并 WhatAmI==6 判建筑）。ml 名来自
+  ObjectClass 继承面，rename 影响 ObjectClass 全族——G29 裁决。
+- **BuildingTypeClass@0x1703 = PlaceAnywhere 定谳**（0x464AC0 的
+  `this[5891] || ValidatePath` 语义 = PlaceAnywhere=yes 跳过路径验证）；
+  该件真实归属 BuildingTypeClass 而非 canon 的 AbstractClass，跨类调用
+  （ValidatePath 是 TechnoType 层 vt+168）+ 归属改名一起做。
+- g28_prep 的 hpp 裁决两项（q204@516 / 1732 双义）与收割机理审计、
+  签名缺口补锚未动，顺延 G29。

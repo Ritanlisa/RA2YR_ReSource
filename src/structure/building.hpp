@@ -80,7 +80,7 @@ public:
     bool ValidateCell(int cell_x, int cell_y);  // 0x4DD9F0
     bool ValidatePlacementEx();  // 0x4DEE80
     void FindPlacementCells();  // 0x7447B0
-    void FindPlacementCells2();  // 0x6B0300
+    void FindPlacementCells2(int* outCell, int inCell);  // 0x6B0300
     void SearchPlacement();  // 0x56BEC0
     void VisualizePlacement();  // 0x485AF0
     CoordStruct* GetPlacementCoords(CoordStruct* out) const;  // 0x45F160

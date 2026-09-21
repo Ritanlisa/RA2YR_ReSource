@@ -1395,13 +1395,13 @@ char __thiscall VectorClass_ptr_VocClass::Add(int *this, int a2)
   _DWORD *v4; // eax
   int v5; // ecx
 
-  v2 = *(this + 2); /*0x751932*/
+  v2 = this->Capacity; /*0x751932*/
   if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x75193d*/
   {
     v3 = 0; /*0x75193f*/
     if ( v2 <= 0 ) /*0x751943*/
       return 1; /*0x751963*/
-    v4 = (_DWORD *)*(this + 1); /*0x751945*/
+    v4 = (_DWORD *)this->Items; /*0x751945*/
     v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x75194b*/
     while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x751954*/
     {
@@ -1424,12 +1424,12 @@ char __thiscall VectorClass_ptr_VocClass::_vt02(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x75197c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x751986*/
+    this->IsInitialized = 0; /*0x751986*/
     if ( a3 ) /*0x75198c*/
       v4 = a3; /*0x7519a2*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x75199e*/
-    *((_BYTE *)this + 12) = 1; /*0x7519a6*/
+    this->IsInitialized = 1; /*0x7519a6*/
     if ( v4 ) /*0x7519aa*/
     {
       if ( this->Items ) /*0x7519b5*/
@@ -1439,7 +1439,7 @@ char __thiscall VectorClass_ptr_VocClass::_vt02(void *this, int a2, _DWORD *a3)
           v6 = a2; /*0x7519c3*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x7519c9*/
           ++i; /*0x7519ce*/
-        if ( *((_BYTE *)this + 13) ) /*0x7519db*/
+        if ( this->IsAllocated ) /*0x7519db*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x7519e6*/
           this->Items = 0; /*0x7519ee*/
@@ -1447,7 +1447,7 @@ char __thiscall VectorClass_ptr_VocClass::_vt02(void *this, int a2, _DWORD *a3)
       }
       this->Items = v4; /*0x7519f7*/
       this->Capacity = a2; /*0x7519ff*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x751a02*/
+      this->IsAllocated = a3 == 0; /*0x751a02*/
       return 1; /*0x751a08*/
     }
     else
@@ -1457,7 +1457,7 @@ char __thiscall VectorClass_ptr_VocClass::_vt02(void *this, int a2, _DWORD *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x751a12*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x751a12*/
     return 1; /*0x751a18*/
   }
 }
@@ -1518,12 +1518,12 @@ char __thiscall VectorClass_ptr_VocClass::sub_751AB0(void *this, int a2, _DWORD 
 
   if ( a2 ) /*0x751abc*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x751ac2*/
+    this->IsInitialized = 0; /*0x751ac2*/
     if ( a3 ) /*0x751ac8*/
       v4 = a3; /*0x751ade*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x751ada*/
-    *((_BYTE *)this + 12) = 1; /*0x751ae2*/
+    this->IsInitialized = 1; /*0x751ae2*/
     if ( !v4 ) /*0x751ae6*/
       return 0; /*0x751b5a*/
     if ( this->Items ) /*0x751ae8*/
@@ -1533,7 +1533,7 @@ char __thiscall VectorClass_ptr_VocClass::sub_751AB0(void *this, int a2, _DWORD 
         v5 = a2; /*0x751af6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x751afc*/
         ++i; /*0x751b01*/
-      if ( *((_BYTE *)this + 13) ) /*0x751b0e*/
+      if ( this->IsAllocated ) /*0x751b0e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x751b19*/
         this->Items = 0; /*0x751b21*/
@@ -1541,15 +1541,15 @@ char __thiscall VectorClass_ptr_VocClass::sub_751AB0(void *this, int a2, _DWORD 
     }
     this->Items = v4; /*0x751b2a*/
     this->DynamicVector_field_0x8 = a2; /*0x751b32*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x751b35*/
+    this->IsAllocated = a3 == 0; /*0x751b35*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x751b3e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x751b41*/
-  if ( v7 < this->DynamicVector_field_0x10 ) /*0x751b49*/
-    this->DynamicVector_field_0x10 = v7; /*0x751b4b*/
+  if ( v7 < this->Items ) /*0x751b49*/
+    this->Items = v7; /*0x751b4b*/
   return 1; /*0x751b4e*/
 }
 
@@ -1565,7 +1565,7 @@ int __thiscall VectorClass_ptr_VocClass::sub_751B60(int *this, _DWORD *a2)
   result = 0; /*0x751b63*/
   if ( v2 <= 0 ) /*0x751b68*/
     return -1; /*0x751b7f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x751b6e*/
+  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x751b6e*/
   {
     if ( ++result >= v2 ) /*0x751b7d*/
       return -1; /*0x751b7d*/
@@ -2975,13 +2975,13 @@ char __thiscall VectorClass_ptr_VoxClass::Add(int *this, int a2)
   _DWORD *v4; // eax
   int v5; // ecx
 
-  v2 = *(this + 2); /*0x7536b2*/
+  v2 = this->Capacity; /*0x7536b2*/
   if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x7536bd*/
   {
     v3 = 0; /*0x7536bf*/
     if ( v2 <= 0 ) /*0x7536c3*/
       return 1; /*0x7536e3*/
-    v4 = (_DWORD *)*(this + 1); /*0x7536c5*/
+    v4 = (_DWORD *)this->Items; /*0x7536c5*/
     v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x7536cb*/
     while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x7536d4*/
     {
@@ -3004,12 +3004,12 @@ char __thiscall VectorClass_ptr_VoxClass::_vt02(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x7536fc*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x753706*/
+    this->IsInitialized = 0; /*0x753706*/
     if ( a3 ) /*0x75370c*/
       v4 = a3; /*0x753722*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x75371e*/
-    *((_BYTE *)this + 12) = 1; /*0x753726*/
+    this->IsInitialized = 1; /*0x753726*/
     if ( v4 ) /*0x75372a*/
     {
       if ( this->Items ) /*0x753735*/
@@ -3019,7 +3019,7 @@ char __thiscall VectorClass_ptr_VoxClass::_vt02(void *this, int a2, _DWORD *a3)
           v6 = a2; /*0x753743*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x753749*/
           ++i; /*0x75374e*/
-        if ( *((_BYTE *)this + 13) ) /*0x75375b*/
+        if ( this->IsAllocated ) /*0x75375b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x753766*/
           this->Items = 0; /*0x75376e*/
@@ -3027,7 +3027,7 @@ char __thiscall VectorClass_ptr_VoxClass::_vt02(void *this, int a2, _DWORD *a3)
       }
       this->Items = v4; /*0x753777*/
       this->Capacity = a2; /*0x75377f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x753782*/
+      this->IsAllocated = a3 == 0; /*0x753782*/
       return 1; /*0x753788*/
     }
     else
@@ -3037,7 +3037,7 @@ char __thiscall VectorClass_ptr_VoxClass::_vt02(void *this, int a2, _DWORD *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x753792*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x753792*/
     return 1; /*0x753798*/
   }
 }
@@ -3098,12 +3098,12 @@ char __thiscall VectorClass_ptr_VoxClass::sub_753830(void *this, int a2, _DWORD 
 
   if ( a2 ) /*0x75383c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x753842*/
+    this->IsInitialized = 0; /*0x753842*/
     if ( a3 ) /*0x753848*/
       v4 = a3; /*0x75385e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x75385a*/
-    *((_BYTE *)this + 12) = 1; /*0x753862*/
+    this->IsInitialized = 1; /*0x753862*/
     if ( !v4 ) /*0x753866*/
       return 0; /*0x7538da*/
     if ( this->Items ) /*0x753868*/
@@ -3113,7 +3113,7 @@ char __thiscall VectorClass_ptr_VoxClass::sub_753830(void *this, int a2, _DWORD 
         v5 = a2; /*0x753876*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x75387c*/
         ++i; /*0x753881*/
-      if ( *((_BYTE *)this + 13) ) /*0x75388e*/
+      if ( this->IsAllocated ) /*0x75388e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x753899*/
         this->Items = 0; /*0x7538a1*/
@@ -3121,15 +3121,15 @@ char __thiscall VectorClass_ptr_VoxClass::sub_753830(void *this, int a2, _DWORD 
     }
     this->Items = v4; /*0x7538aa*/
     this->DynamicVector_field_0x8 = a2; /*0x7538b2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x7538b5*/
+    this->IsAllocated = a3 == 0; /*0x7538b5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x7538be*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x7538c1*/
-  if ( v7 < this->DynamicVector_field_0x10 ) /*0x7538c9*/
-    this->DynamicVector_field_0x10 = v7; /*0x7538cb*/
+  if ( v7 < this->Items ) /*0x7538c9*/
+    this->Items = v7; /*0x7538cb*/
   return 1; /*0x7538ce*/
 }
 
@@ -3145,7 +3145,7 @@ int __thiscall VectorClass_ptr_VoxClass::sub_7538E0(int *this, _DWORD *a2)
   result = 0; /*0x7538e3*/
   if ( v2 <= 0 ) /*0x7538e8*/
     return -1; /*0x7538ff*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x7538ee*/
+  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x7538ee*/
   {
     if ( ++result >= v2 ) /*0x7538fd*/
       return -1; /*0x7538fd*/
@@ -8301,7 +8301,7 @@ bool __thiscall sub_759850(int *this, int a2, int a3)
   v3 = a3; /*0x759850*/
   if ( a3 < 0 ) /*0x759856*/
     v3 = -1; /*0x759858*/
-  return Audio_Render_7C3430(*(this + 128), a2, v3, 1u) == -1; /*0x759873*/
+  return Audio_Render_7C3430(this->needsRedraw, a2, v3, 1u) == -1; /*0x759873*/
 }
 
 
@@ -8313,23 +8313,23 @@ bool __thiscall sub_759880(int *this, int a2, int a3, int a4)
   int v6; // esi
 
   v4 = a2; /*0x759880*/
-  if ( a2 < 0 || a2 >= *(this + 322) ) /*0x75988e*/
+  if ( a2 < 0 || a2 >= this->__pad_508 ) /*0x75988e*/
     v4 = 0; /*0x759890*/
   v5 = a3; /*0x759892*/
-  if ( a3 < 0 || a3 >= *(this + 322) ) /*0x7598a1*/
-    v5 = *(this + 322) - 1; /*0x7598a9*/
+  if ( a3 < 0 || a3 >= this->__pad_508 ) /*0x7598a1*/
+    v5 = this->__pad_508 - 1; /*0x7598a9*/
   v6 = a4; /*0x7598aa*/
   if ( a4 < 0 ) /*0x7598b0*/
     v6 = -1; /*0x7598b2*/
-  return SeekAudioStream(*(this + 128), v4, v5, v6, 0) == -1; /*0x7598cb*/
+  return SeekAudioStream(this->needsRedraw, v4, v5, v6, 0) == -1; /*0x7598cb*/
 }
 
 
 // ==== 0x007598D0  AbstractClass::updateBuildingState  this=ObjectClass  sig=csp ====
 void __thiscall sub_7598D0(int *this, signed int a2)
 {
-  if ( a2 != *(this + 321) && ProcessAudioStreamBuffer(*(this + 128), a2, 0) != -6 ) /*0x7598f2*/
-    *(this + 321) = a2; /*0x7598f4*/
+  if ( a2 != this->q504 && ProcessAudioStreamBuffer(this->needsRedraw, a2, 0) != -6 ) /*0x7598f2*/
+    this->q504 = a2; /*0x7598f4*/
 }
 
 
@@ -8346,8 +8346,8 @@ BOOL __thiscall MovieClass::RenderLoop(char *this, int a2, char a3)
 
   v9 = 0; /*0x759951*/
   v8 = 0; /*0x759955*/
-  Render_Render_7C3690(this->q200); /*0x759970*/
-  if ( this->q510 != -1 ) /*0x75997c*/
+  Render_Render_7C3690(this->needsRedraw); /*0x759970*/
+  if ( this->q144 != -1 ) /*0x75997c*/
   {
     Render_Render_7C3710(v10, &a2); /*0x759996*/
     if ( a2 == 1 ) /*0x7599a2*/
@@ -8394,13 +8394,13 @@ LABEL_23:
       {
         v8 = 1; /*0x759b2a*/
         if ( this->q514 && !this->q550 ) /*0x759b33*/
-          ProcessAudioStreamPipeline(this->q200, 2, 0); /*0x759b47*/
+          ProcessAudioStreamPipeline(this->needsRedraw, 2, 0); /*0x759b47*/
         this->q550 = 1; /*0x759b51*/
         Debug::Log(); /*0x759b58*/
       }
       else
       {
-        v4 = ProcessAudioStreamPipeline(this->q200, 1, 0); /*0x759acd*/
+        v4 = ProcessAudioStreamPipeline(this->needsRedraw, 1, 0); /*0x759acd*/
         if ( v4 >= 0 ) /*0x759ad1*/
         {
           if ( *(this + 1320) ) /*0x759ad7*/
@@ -8410,7 +8410,7 @@ LABEL_23:
           }
           if ( *(_DWORD *)this ) /*0x759af0*/
           {
-            v5 = MovieClass::ComputeTime(this->q200); /*0x759afa*/
+            v5 = MovieClass::ComputeTime(this->needsRedraw); /*0x759afa*/
             BinkMovie::CheckKeyframeTransition(*(_DWORD **)this, v5); /*0x759b02*/
           }
           v6 = (void (*)(void))*((_DWORD *)this + 338); /*0x759b07*/
@@ -8465,15 +8465,15 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
   *a2 = 0; /*0x759c3b*/
   if ( !*(this + 1361) ) /*0x759c40*/
   {
-    Render_Render_7C3690(this->q200, *((_DWORD *)this + 322)); /*0x759c56*/
-    if ( this->q510 != -1 ) /*0x759c62*/
+    Render_Render_7C3690(this->needsRedraw, this->__pad_508); /*0x759c56*/
+    if ( this->q144 != -1 ) /*0x759c62*/
     {
       Render_Render_7C3710(*((unsigned __int8 **)this + 128), &v10, &v9, &a2); /*0x759c78*/
       if ( a2 == (_BYTE *)1 || a2 == (_BYTE *)4 ) /*0x759c89*/
       {
         Voxel::BuildIndexTable(*((void **)this + 324)); /*0x759c91*/
         if ( a2 == (_BYTE *)1 ) /*0x759c9b*/
-          Render_Render_7C3230(this->q200, (int)sub_7C6B70, (int)CopySHPFrameToSurface); /*0x759cad*/
+          Render_Render_7C3230(this->needsRedraw, (int)sub_7C6B70, (int)CopySHPFrameToSurface); /*0x759cad*/
       }
     }
     Debug::Log(); /*0x759cb7*/
@@ -8488,7 +8488,7 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
   }
   if ( MEMORY[0xA8ED80] == 1 && !this->q550 ) /*0x759d0f*/
   {
-    v4 = ProcessAudioStreamPipeline(this->q200, 1, 0); /*0x759d2a*/
+    v4 = ProcessAudioStreamPipeline(this->needsRedraw, 1, 0); /*0x759d2a*/
     v5 = v4; /*0x759d2f*/
     if ( v4 < 0 ) /*0x759d33*/
     {
@@ -8512,7 +8512,7 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
       }
       if ( *(_DWORD *)this ) /*0x759d51*/
       {
-        v6 = MovieClass::ComputeTime(this->q200); /*0x759d5c*/
+        v6 = MovieClass::ComputeTime(this->needsRedraw); /*0x759d5c*/
         BinkMovie::CheckKeyframeTransition(*(_DWORD **)this, v6); /*0x759d64*/
       }
       v7 = (void (*)(void))*((_DWORD *)this + 338); /*0x759d69*/
@@ -8526,7 +8526,7 @@ LABEL_28:
   if ( !byte_B45BA4 ) /*0x759dbb*/
   {
     if ( this->q514 && !this->q550 ) /*0x759dc7*/
-      ProcessAudioStreamPipeline(this->q200, 2, 0); /*0x759dde*/
+      ProcessAudioStreamPipeline(this->needsRedraw, 2, 0); /*0x759dde*/
     this->q550 = 1; /*0x759de3*/
     byte_B45BA4 = 1; /*0x759def*/
     Debug::Log(); /*0x759df6*/
@@ -8577,7 +8577,7 @@ int __thiscall sub_759E80(int *this)
   int result; // eax
   int v3; // ecx
 
-  result = AbstractClass::finalizeDestruction(*(this + 128)); /*0x759e89*/
+  result = AbstractClass::finalizeDestruction(this->needsRedraw); /*0x759e89*/
   v3 = *this; /*0x759e8e*/
   if ( *this ) /*0x759e8e*/
   {
@@ -8934,13 +8934,13 @@ char __thiscall VectorClass_ptr_MovieHandle::Add(int *this, int a2)
   _DWORD *v4; // eax
   int v5; // ecx
 
-  v2 = *(this + 2); /*0x75a492*/
+  v2 = this->Capacity; /*0x75a492*/
   if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x75a49d*/
   {
     v3 = 0; /*0x75a49f*/
     if ( v2 <= 0 ) /*0x75a4a3*/
       return 1; /*0x75a4c3*/
-    v4 = (_DWORD *)*(this + 1); /*0x75a4a5*/
+    v4 = (_DWORD *)this->Items; /*0x75a4a5*/
     v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x75a4ab*/
     while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x75a4b4*/
     {
@@ -8963,12 +8963,12 @@ char __thiscall VectorClass_ptr_MovieHandle::_vt02(void *this, int a2, _DWORD *a
 
   if ( a2 ) /*0x75a4dc*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x75a4e6*/
+    this->IsInitialized = 0; /*0x75a4e6*/
     if ( a3 ) /*0x75a4ec*/
       v4 = a3; /*0x75a502*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x75a4fe*/
-    *((_BYTE *)this + 12) = 1; /*0x75a506*/
+    this->IsInitialized = 1; /*0x75a506*/
     if ( v4 ) /*0x75a50a*/
     {
       if ( this->Items ) /*0x75a515*/
@@ -8978,7 +8978,7 @@ char __thiscall VectorClass_ptr_MovieHandle::_vt02(void *this, int a2, _DWORD *a
           v6 = a2; /*0x75a523*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x75a529*/
           ++i; /*0x75a52e*/
-        if ( *((_BYTE *)this + 13) ) /*0x75a53b*/
+        if ( this->IsAllocated ) /*0x75a53b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x75a546*/
           this->Items = 0; /*0x75a54e*/
@@ -8986,7 +8986,7 @@ char __thiscall VectorClass_ptr_MovieHandle::_vt02(void *this, int a2, _DWORD *a
       }
       this->Items = v4; /*0x75a557*/
       this->Capacity = a2; /*0x75a55f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x75a562*/
+      this->IsAllocated = a3 == 0; /*0x75a562*/
       return 1; /*0x75a568*/
     }
     else
@@ -8996,7 +8996,7 @@ char __thiscall VectorClass_ptr_MovieHandle::_vt02(void *this, int a2, _DWORD *a
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x75a572*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x75a572*/
     return 1; /*0x75a578*/
   }
 }
@@ -9057,12 +9057,12 @@ char __thiscall VectorClass_ptr_MovieHandle::sub_75A610(void *this, int a2, _DWO
 
   if ( a2 ) /*0x75a61c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x75a622*/
+    this->IsInitialized = 0; /*0x75a622*/
     if ( a3 ) /*0x75a628*/
       v4 = a3; /*0x75a63e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x75a63a*/
-    *((_BYTE *)this + 12) = 1; /*0x75a642*/
+    this->IsInitialized = 1; /*0x75a642*/
     if ( !v4 ) /*0x75a646*/
       return 0; /*0x75a6ba*/
     if ( this->Items ) /*0x75a648*/
@@ -9072,7 +9072,7 @@ char __thiscall VectorClass_ptr_MovieHandle::sub_75A610(void *this, int a2, _DWO
         v5 = a2; /*0x75a656*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x75a65c*/
         ++i; /*0x75a661*/
-      if ( *((_BYTE *)this + 13) ) /*0x75a66e*/
+      if ( this->IsAllocated ) /*0x75a66e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x75a679*/
         this->Items = 0; /*0x75a681*/
@@ -9080,15 +9080,15 @@ char __thiscall VectorClass_ptr_MovieHandle::sub_75A610(void *this, int a2, _DWO
     }
     this->Items = v4; /*0x75a68a*/
     this->DynamicVector_field_0x8 = a2; /*0x75a692*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x75a695*/
+    this->IsAllocated = a3 == 0; /*0x75a695*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x75a69e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x75a6a1*/
-  if ( v7 < this->DynamicVector_field_0x10 ) /*0x75a6a9*/
-    this->DynamicVector_field_0x10 = v7; /*0x75a6ab*/
+  if ( v7 < this->Items ) /*0x75a6a9*/
+    this->Items = v7; /*0x75a6ab*/
   return 1; /*0x75a6ae*/
 }
 
@@ -9104,7 +9104,7 @@ int __thiscall VectorClass_ptr_MovieHandle::sub_75A6C0(int *this, _DWORD *a2)
   result = 0; /*0x75a6c3*/
   if ( v2 <= 0 ) /*0x75a6c8*/
     return -1; /*0x75a6df*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x75a6ce*/
+  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x75a6ce*/
   {
     if ( ++result >= v2 ) /*0x75a6dd*/
       return -1; /*0x75a6dd*/
@@ -12106,8 +12106,8 @@ _DWORD *__thiscall sub_75E6B0(_DWORD *this, _DWORD *a2)
 
   this->Items = 0; /*0x75e6bd*/
   this->Capacity = 0; /*0x75e6c0*/
-  *((_BYTE *)this + 12) = 1; /*0x75e6c3*/
-  *((_BYTE *)this + 13) = 0; /*0x75e6c7*/
+  this->q030 = 1; /*0x75e6c3*/
+  this->__pad_034 = 0; /*0x75e6c7*/
   *this = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x75e6ca*/
   if ( this != a2 ) /*0x75e6d0*/
   {
@@ -12122,7 +12122,7 @@ _DWORD *__thiscall sub_75E6B0(_DWORD *this, _DWORD *a2)
       {
         v5 = this->Capacity; /*0x75e6f5*/
         v6 = 0; /*0x75e6f8*/
-        *((_BYTE *)this + 13) = 1; /*0x75e6fc*/
+        this->__pad_034 = 1; /*0x75e6fc*/
         if ( v5 > 0 ) /*0x75e700*/
         {
           do /*0x75e714*/
@@ -12137,11 +12137,11 @@ _DWORD *__thiscall sub_75E6B0(_DWORD *this, _DWORD *a2)
     else
     {
       this->Items = 0; /*0x75e718*/
-      *((_BYTE *)this + 13) = 0; /*0x75e71b*/
+      this->__pad_034 = 0; /*0x75e71b*/
     }
   }
   this->q010 = a2[4]; /*0x75e721*/
-  *(this + 5) = a2[5]; /*0x75e727*/
+  this->__pad_014 = a2[5]; /*0x75e727*/
   *this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const; /*0x75e72a*/
   return this; /*0x75e732*/
 }
@@ -12288,38 +12288,38 @@ WaveClass *__thiscall WaveClass::Constructor(
   int v14; // edx
 
   ObjectClass::ctor(this); /*0x75e956*/
-  *(this + 78) = 0; /*0x75e969*/
+  this->WaveClass_field_138_e = 0; /*0x75e969*/
   this->WaveClass_field_FC = 0; /*0x75e96f*/
-  *(this + 43) = aP5; /*0x75e975*/
+  this->WaveClass_field_158 = aP5; /*0x75e975*/
   this->WaveClass_field_D8 = a4; /*0x75e97b*/
-  *((_BYTE *)this + 300) = 1; /*0x75e981*/
-  *((_BYTE *)this + 301) = 0; /*0x75e988*/
+  this->Facing = 1; /*0x75e981*/
+  this->WaveClass_field_12D_e = 0; /*0x75e988*/
   this->WaveClass_field_F8 = (void *)100; /*0x75e98e*/
-  *(this + 77) = 0; /*0x75e998*/
-  *(this + 79) = 0; /*0x75e99e*/
+  this->WaveClass_field_134_e = 0; /*0x75e998*/
+  this->WaveClass_field_13C_e = 0; /*0x75e99e*/
   this->alignmentPadding75_3 = 0; /*0x75e9a4*/
-  *(this + 82) = 0; /*0x75e9aa*/
-  *(this + 83) = 0; /*0x75e9b0*/
+  this->WaveClass_field_148_e = 0; /*0x75e9aa*/
+  this->WaveClass_field_14C_e = 0; /*0x75e9b0*/
   this->WaveClass_field_114 = 0; /*0x75e9b6*/
   this->q069 = 0; /*0x75e9bc*/
   this->wasFallingDown = 0; /*0x75e9c2*/
   this->WaveClass_field_120 = 0; /*0x75e9ce*/
   this->q075 = aP3; /*0x75e9d4*/
   FrameSnapshot::Init((_WORD *)this + 236); /*0x75e9da*/
-  *(this + 125) = 0; /*0x75e9e1*/
-  *(this + 126) = (void *)5; /*0x75e9e7*/
-  *((_BYTE *)this + 508) = 1; /*0x75e9f1*/
-  *((_BYTE *)this + 509) = 0; /*0x75e9f8*/
+  this->q1F4 = 0; /*0x75e9e1*/
+  this->q1F8 = (void *)5; /*0x75e9e7*/
+  this->q1FC = 1; /*0x75e9f1*/
+  this->q1FD = 0; /*0x75e9f8*/
   this->WaveClass_field_128 = &vt_VectorClass_CellClass; /*0x75e9fe*/
-  *(this + 125) = (void *)__2_YAPAXI_Z(0x14u); /*0x75ea18*/
-  *((_BYTE *)this + 509) = 1; /*0x75ea1e*/
+  this->q1F4 = (void *)__2_YAPAXI_Z(0x14u); /*0x75ea18*/
+  this->q1FD = 1; /*0x75ea1e*/
   this->WaveClass_field_128 = &vt_DynamicVectorClass_CellClass; /*0x75ea25*/
   this->WaveClass_field_12D = (void *)10; /*0x75ea2f*/
   this->WaveClass_field_12C = 0; /*0x75ea39*/
   *this = &WaveClass::`vftable'; /*0x75ea3f*/
-  *(this + 1) = &WaveClass::`vftable'; /*0x75ea45*/
-  *(this + 2) = &vt_WaveClass; /*0x75ea4b*/
-  *(this + 3) = &off_7F6BC8; /*0x75ea52*/
+  this->vtable2 = &WaveClass::`vftable'; /*0x75ea45*/
+  this->vtable3 = &vt_WaveClass; /*0x75ea4b*/
+  this->vtable4 = &off_7F6BC8; /*0x75ea52*/
   v7 = a1[1] - aP2->field_4; /*0x75ea66*/
   if ( Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)((*a1 - aP2->field_0) * (*a1 - aP2->field_0) + v7 * v7))) >= 240.0 ) /*0x75ea91*/
   {
@@ -12342,24 +12342,24 @@ WaveClass *__thiscall WaveClass::Constructor(
     else
       Voxel::SectionProject(this, a1, (int)aP2); /*0x75eb29*/
     this->wasFallingDown = 0; /*0x75eb3c*/
-    *(this + 115) = (void *)CalcMathFacing8(this + 51, this + 57); /*0x75eb51*/
+    this->WaveClass_field_1CC_e = (void *)CalcMathFacing8(this + 51, this + 57); /*0x75eb51*/
     WaveClass::DrawWave(this, (WaveClass *)(this + 45), 0); /*0x75eb57*/
     v10 = (int)this->WaveClass_field_D8; /*0x75eb5c*/
     if ( v10 > 0 && v10 <= 2 ) /*0x75eb69*/
     {
-      v11 = *(this + 83); /*0x75eb6b*/
-      v12 = (int)*(this + 55); /*0x75eb71*/
-      *(this + 78) = 0; /*0x75eb77*/
-      *(this + 79) = (void *)1072693248; /*0x75eb7d*/
+      v11 = this->WaveClass_field_14C_e; /*0x75eb6b*/
+      v12 = (int)this->WaveClass_field_188; /*0x75eb71*/
+      this->WaveClass_field_138_e = 0; /*0x75eb77*/
+      this->WaveClass_field_13C_e = (void *)1072693248; /*0x75eb7d*/
       this->WaveClass_field_120 = (void *)160; /*0x75eb87*/
       *v11 = v12; /*0x75eb91*/
       v11[1] = this->WaveClass_field_E4; /*0x75eb99*/
-      v13 = (int)*(this + 83); /*0x75eb9c*/
-      *(_DWORD *)(v13 + 8) = *(this + 53); /*0x75eba8*/
-      *(_DWORD *)(v13 + 12) = *(this + 54); /*0x75ebb1*/
-      v14 = (int)*(this + 83); /*0x75ebb4*/
-      *(_DWORD *)(v14 + 16) = *(this + 57); /*0x75ebbc*/
-      *(_DWORD *)(v14 + 20) = *(this + 58); /*0x75ebc2*/
+      v13 = (int)this->WaveClass_field_14C_e; /*0x75eb9c*/
+      *(_DWORD *)(v13 + 8) = this->WaveClass_field_180; /*0x75eba8*/
+      *(_DWORD *)(v13 + 12) = this->WaveClass_field_184; /*0x75ebb1*/
+      v14 = (int)this->WaveClass_field_14C_e; /*0x75ebb4*/
+      *(_DWORD *)(v14 + 16) = this->WaveClass_field_190; /*0x75ebbc*/
+      *(_DWORD *)(v14 + 20) = this->WaveClass_field_194; /*0x75ebc2*/
     }
     Voxel::TransformMatrix((int)this); /*0x75ebc7*/
     return (WaveClass *)this; /*0x75ebcc*/
@@ -12595,24 +12595,24 @@ int __thiscall sub_75F140(_DWORD *this)
   this->WaveClass_field_1C0_e = v2 - 1; /*0x75f17c*/
   v3 = this->WaveClass_field_1CC_e; /*0x75f182*/
   v4 = -1 - v2; /*0x75f188*/
-  *(this + 130) = 0; /*0x75f18c*/
-  *(this + 131) = 0; /*0x75f192*/
+  this->__pad_208 = 0; /*0x75f18c*/
+  this->WaveClass_field_12F = 0; /*0x75f192*/
   v5 = this + v3 + 107; /*0x75f198*/
   this->WaveClass_field_1B4_e = 1; /*0x75f19f*/
   this->WaveClass_field_1C4_e = -1; /*0x75f1a9*/
   this->WaveClass_field_1C8_e = v4; /*0x75f1b3*/
-  *(this + 132) = *v5; /*0x75f1bb*/
+  this->WaveIntensity = *v5; /*0x75f1bb*/
   this->q214 = *v5; /*0x75f1c3*/
   this->__pad_218 = *v5; /*0x75f1cb*/
   this->q21C = *v5; /*0x75f1d3*/
-  *(this + 136) = *v5; /*0x75f1db*/
+  this->__pad_220 = *v5; /*0x75f1db*/
   *(this + 137) = 2 * *v5; /*0x75f1e5*/
   *(this + 138) = 2 * *v5; /*0x75f1ef*/
   *(this + 139) = 2 * *v5; /*0x75f1f9*/
-  *(this + 140) = 3 * *v5; /*0x75f204*/
-  *(this + 141) = 3 * *v5; /*0x75f20f*/
+  this->WaveClass_field_138 = 3 * *v5; /*0x75f204*/
+  this->isFallingDown = 3 * *v5; /*0x75f20f*/
   result = 3 * *v5; /*0x75f217*/
-  *(this + 142) = result; /*0x75f21a*/
+  this->q08E = result; /*0x75f21a*/
   return result; /*0x75f220*/
 }
 
@@ -12685,24 +12685,24 @@ char __thiscall WaveClass::DamageArea(int *this, ObjectClass *aP1)
   int v15; // [esp+14h] [ebp-8h]
   int v16; // [esp+18h] [ebp-4h] BYREF
 
-  v3 = *(this + 117); /*0x75f338*/
+  v3 = this->alignmentPadding75; /*0x75f338*/
   if ( v3 ) /*0x75f340*/
   {
     v4 = aP1; /*0x75f346*/
     LOWORD(aP1) = *(_DWORD *)aP1->__pad_0 / 256; /*0x75f359*/
     HIWORD(aP1) = *(_DWORD *)&v4->__pad_0[4] / 256; /*0x75f372*/
     v5 = (char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1); /*0x75f391*/
-    v6 = (*(int (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 117) + 1016))(*(this + 117), 0); /*0x75f395*/
+    v6 = (*(int (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)this->alignmentPadding75 + 1016))(this->alignmentPadding75, 0); /*0x75f395*/
     v7 = *(_DWORD *)v6; /*0x75f39b*/
     v15 = *(_DWORD *)(*(_DWORD *)v6 + 172); /*0x75f3a9*/
     v16 = *(_DWORD *)(*(_DWORD *)v6 + 152); /*0x75f3ad*/
-    if ( (*((_DWORD *)v5 + 80) & 0x100) != 0 && *(this + 47) >= dword_B725C8 * (v5[283] + 4) ) /*0x75f3d5*/
+    if ( (*((_DWORD *)v5 + 80) & 0x100) != 0 && this->q0BC >= dword_B725C8 * (v5[283] + 4) ) /*0x75f3d5*/
       v8 = *((_DWORD *)v5 + 58); /*0x75f3d7*/
     else
       v8 = *((_DWORD *)v5 + 57); /*0x75f3df*/
     for ( ; v8; v8 = *(_DWORD *)(v8 + 48) ) /*0x75f3e7*/
     {
-      v9 = *(this + 117); /*0x75f3e9*/
+      v9 = this->alignmentPadding75; /*0x75f3e9*/
       if ( v8 != v9 && *(_BYTE *)(v8 + 144) && *(_BYTE *)(v8 + 116) && !*(_BYTE *)(v8 + 129) && *(int *)(v8 + 108) > 0 ) /*0x75f413*/
         (*(void (__thiscall **)(int, int *, _DWORD, int, int, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v8 + 364))( /*0x75f42c*/
           v8,
@@ -12750,7 +12750,7 @@ char __thiscall Voxel::renderSection(_DWORD *this, ObjectClass *aP1)
   ObjectClass *v8; // edx
 
   v3 = (ObjectClass *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)aP1->__pad_0); /*0x75f4cd*/
-  v4 = *(this + 124); /*0x75f4d2*/
+  v4 = this->__pad_7C0; /*0x75f4d2*/
   v5 = this + 124; /*0x75f4d8*/
   aP1 = v3; /*0x75f4de*/
   v6 = (*(int (__thiscall **)(_DWORD *, ObjectClass **))(v4 + 16))(v5, &aP1); /*0x75f4e9*/

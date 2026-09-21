@@ -1474,12 +1474,12 @@ _DWORD *__thiscall RadarClass_Constructor(_DWORD *this)
   this->RadarClass_field_0x14B0 = 0; /*0x652ac2*/
   this->q14A8 = v6; /*0x652ac8*/
   this->RadarClass_field_0x14B4 = 0; /*0x652acb*/
-  *((_BYTE *)this + 5308) = 0; /*0x652ad1*/
-  *((_BYTE *)this + 5309) = 0; /*0x652ad7*/
+  this->q14BC = 0; /*0x652ad1*/
+  this->q14BD = 0; /*0x652ad7*/
   this->q14D4 = -1; /*0x652add*/
-  *((_BYTE *)this + 5336) = 0; /*0x652ae7*/
-  *((_BYTE *)this + 5337) = 0; /*0x652aed*/
-  *((_BYTE *)this + 5338) = 0; /*0x652af3*/
+  this->IsAvailableNow = 0; /*0x652ae7*/
+  this->RadarClass_field_0x14D9 = 0; /*0x652aed*/
+  this->q14DA = 0; /*0x652af3*/
   this->q14DC = dword_B048B0; /*0x652b05*/
   this->q14E0 = dword_B048B4; /*0x652b11*/
   this->q14E4 = dword_B048B8; /*0x652b1a*/
@@ -1578,7 +1578,7 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
     this->RadarClass_field_0x1260 = 0; /*0x652c7a*/
   }
   *((_BYTE *)this + 4713) = 0; /*0x652c80*/
-  *(this + 1177) = 0; /*0x652c86*/
+  this->__pad_1264 = 0; /*0x652c86*/
   v6 = (void *)this->RadarClass_field_0x1228; /*0x652c8c*/
   this->RadarClass_field_0x1224 = &vt_VectorClass_Cell; /*0x652c92*/
   if ( v6 && *((_BYTE *)this + 4657) ) /*0x652ca0*/
@@ -1587,7 +1587,7 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
     this->RadarClass_field_0x1228 = 0; /*0x652cb1*/
   }
   *((_BYTE *)this + 4657) = 0; /*0x652cb9*/
-  *(this + 1163) = 0; /*0x652cbf*/
+  this->__pad_122C = 0; /*0x652cbf*/
   return MapClass::Destruct(this); /*0x652cca*/
 }
 
@@ -1606,21 +1606,21 @@ int __thiscall RadarClass::Destru_vt05(int *this)
   int result; // eax
 
   Debug::Log(); /*0x652cf8*/
-  *(this + 1152) = 140; /*0x652d07*/
-  *(this + 1150) = 140; /*0x652d0d*/
-  *(this + 1145) = 0; /*0x652d18*/
-  *(this + 1146) = 16; /*0x652d22*/
-  *(this + 1147) = 48; /*0x652d2c*/
-  *(this + 1153) = 108; /*0x652d36*/
-  *(this + 1151) = 108; /*0x652d3c*/
-  *(this + 1149) = 49; /*0x652d42*/
+  this->RadarClass_field_0x1200 = 140; /*0x652d07*/
+  this->RadarClass_field_0x11F8 = 140; /*0x652d0d*/
+  this->q11E4 = 0; /*0x652d18*/
+  this->RadarClass_field_0x11E8 = 16; /*0x652d22*/
+  this->RadarClass_field_0x11EC = 48; /*0x652d2c*/
+  this->RadarClass_field_0x1204 = 108; /*0x652d36*/
+  this->RadarClass_field_0x11FC = 108; /*0x652d3c*/
+  this->RadarClass_field_0x11F4 = 49; /*0x652d42*/
   DisplayClass::LoadTypeData(this); /*0x652d4c*/
-  MEMORY[0xB04A20] = *(this + 1149); /*0x652d57*/
-  MEMORY[0xB04A24] = *(this + 1152); /*0x652d62*/
-  MEMORY[0xB04A28] = *(this + 1153); /*0x652d73*/
+  MEMORY[0xB04A20] = this->RadarClass_field_0x11F4; /*0x652d57*/
+  MEMORY[0xB04A24] = this->RadarClass_field_0x1200; /*0x652d62*/
+  MEMORY[0xB04A28] = this->RadarClass_field_0x1204; /*0x652d73*/
   MEMORY[0xB04A30] = 223; /*0x652d79*/
   result = VocClass::FindByName(MEMORY[0x8392C0]); /*0x652d83*/
-  *(this + 1333) = result; /*0x652d88*/
+  this->q14D4 = result; /*0x652d88*/
   return result; /*0x652d8e*/
 }
 
@@ -3449,7 +3449,7 @@ _DWORD *__thiscall sub_655050(_DWORD *this, _DWORD *a2, __int16 *a3)
 
   v3 = *a3; /*0x655063*/
   v4 = a3[1]; /*0x655066*/
-  v5 = v3 + *(this + 1316) - v4; /*0x65506e*/
+  v5 = v3 + this->__pad_524 - v4; /*0x65506e*/
   v6 = v3 + v4 - *(this + 1318); /*0x655075*/
   v7 = 2; /*0x655077*/
   if ( v5 == -1 ) /*0x65507c*/
@@ -4667,13 +4667,13 @@ char __thiscall RadarClass::UpdateFoundationShapesCustom(float *this)
     }
     if ( v4 == 1 ) /*0x656454*/
     {
-      v8 = *(this + 1314) + 0.5; /*0x656460*/
+      v8 = this->RadarClass_field_0x1488 + 0.5; /*0x656460*/
       if ( v8 < 1.0 ) /*0x656473*/
         v8 = 1.0; /*0x656477*/
     }
     else
     {
-      v8 = (double)v4 * *(this + 1314) + 0.5; /*0x65648d*/
+      v8 = (double)v4 * this->RadarClass_field_0x1488 + 0.5; /*0x65648d*/
       if ( v8 < 2.0 ) /*0x6564a0*/
         v8 = 2.0; /*0x6564a4*/
     }
@@ -5072,7 +5072,7 @@ int __thiscall SidebarClass_Save(int *this, int a2)
   if ( result >= 0 )
   {
     v5 = *(_DWORD *)v2; /*0x656add*/
-    a2 = *(this + 1179); /*0x656ae9*/
+    a2 = this->q126C; /*0x656ae9*/
     result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v5 + 16))(v2, &a2, 4, 0); /*0x656aed*/
     if ( result >= 0 )
     {
@@ -5081,7 +5081,7 @@ int __thiscall SidebarClass_Save(int *this, int a2)
       {
 LABEL_6:
         v7 = *(_DWORD *)v2; /*0x656b27*/
-        a2 = *(this + 1165); /*0x656b39*/
+        a2 = this->q1234; /*0x656b39*/
         result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v7 + 16))(v2, &a2, 4, 0); /*0x656b3d*/
         if ( result >= 0 )
         {
@@ -5110,7 +5110,7 @@ LABEL_10:
             {
               result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))( /*0x656b63*/
                          v2,
-                         *(this + 1162) + 4 * v8,
+                         this->RadarClass_field_0x1228 + 4 * v8,
                          4,
                          0);
               if ( result < 0 ) /*0x656b68*/
@@ -5125,7 +5125,7 @@ LABEL_10:
       {
         while ( 1 ) /*0x656b13*/
         {
-          result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, *(this + 1176) + 8 * v6, 8, 0); /*0x656b13*/
+          result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this->RadarClass_field_0x1260 + 8 * v6, 8, 0); /*0x656b13*/
           if ( result < 0 ) /*0x656b18*/
             break; /*0x656b18*/
           if ( ++v6 >= a2 ) /*0x656b25*/
@@ -6623,14 +6623,14 @@ char __thiscall RadarHashVector::_vt01(int *this, int a2)
   _DWORD *v6; // ecx
   int v7; // edx
 
-  v2 = *(this + 2); /*0x65891b*/
+  v2 = this->Capacity; /*0x65891b*/
   if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x658920*/
   {
     v3 = 0; /*0x658922*/
     if ( v2 <= 0 ) /*0x658926*/
       return 1; /*0x658960*/
     v4 = *(_DWORD *)(a2 + 4); /*0x658928*/
-    v5 = (_DWORD *)*(this + 1); /*0x65892b*/
+    v5 = (_DWORD *)this->Items; /*0x65892b*/
     v6 = (_DWORD *)(v4 + 4); /*0x65892e*/
     v7 = v4 - (_DWORD)v5; /*0x658931*/
     while ( *v5 == *(_DWORD *)((char *)v5 + v7) && v5[1] == *v6 && v5[2] == v6[1] ) /*0x65894d*/
@@ -6665,7 +6665,7 @@ char __thiscall RadarHashVector::_vt02(void *this, int a2, char *a3)
   if ( a2 ) /*0x65897e*/
   {
     v5 = a3; /*0x658984*/
-    *((_BYTE *)this + 12) = 0; /*0x658988*/
+    this->IsInitialized = 0; /*0x658988*/
     if ( a3 ) /*0x65898d*/
     {
       if ( a2 - 1 >= 0 ) /*0x6589c7*/
@@ -6709,7 +6709,7 @@ char __thiscall RadarHashVector::_vt02(void *this, int a2, char *a3)
         v5 = 0; /*0x6589be*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x6589dd*/
+    this->IsInitialized = 1; /*0x6589dd*/
     if ( v5 ) /*0x6589e1*/
     {
       if ( this->Items ) /*0x6589ec*/
@@ -6734,7 +6734,7 @@ char __thiscall RadarHashVector::_vt02(void *this, int a2, char *a3)
           while ( v12 ); /*0x658a24*/
           v3 = a2; /*0x658a26*/
         }
-        if ( *((_BYTE *)this + 13) ) /*0x658a2c*/
+        if ( this->IsAllocated ) /*0x658a2c*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x658a35*/
           this->Items = 0; /*0x658a3d*/
@@ -6742,7 +6742,7 @@ char __thiscall RadarHashVector::_vt02(void *this, int a2, char *a3)
       }
       this->Items = v5; /*0x658a48*/
       this->Capacity = v3; /*0x658a4e*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x658a51*/
+      this->IsAllocated = a3 == 0; /*0x658a51*/
       return 1; /*0x658a57*/
     }
     else
@@ -6752,7 +6752,7 @@ char __thiscall RadarHashVector::_vt02(void *this, int a2, char *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x658a61*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x658a61*/
     return 1; /*0x658a67*/
   }
 }
@@ -6823,7 +6823,7 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
   if ( a2 ) /*0x658b1e*/
   {
     v5 = a3; /*0x658b24*/
-    *((_BYTE *)this + 12) = 0; /*0x658b28*/
+    this->IsInitialized = 0; /*0x658b28*/
     if ( a3 ) /*0x658b2d*/
     {
       if ( a2 - 1 >= 0 ) /*0x658b67*/
@@ -6867,7 +6867,7 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
         v5 = 0; /*0x658b5e*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x658b7d*/
+    this->IsInitialized = 1; /*0x658b7d*/
     if ( !v5 ) /*0x658b81*/
       return 0; /*0x658c11*/
     if ( this->Items ) /*0x658b87*/
@@ -6892,7 +6892,7 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
         while ( v11 ); /*0x658bbf*/
         v3 = a2; /*0x658bc1*/
       }
-      if ( *((_BYTE *)this + 13) ) /*0x658bc7*/
+      if ( this->IsAllocated ) /*0x658bc7*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x658bd0*/
         this->Items = 0; /*0x658bd8*/
@@ -6900,15 +6900,15 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
     }
     this->Items = v5; /*0x658be3*/
     this->DynamicVector_field_0x8 = v3; /*0x658be9*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x658bec*/
+    this->IsAllocated = a3 == 0; /*0x658bec*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x658bf5*/
   }
   v15 = this->DynamicVector_field_0x8; /*0x658bf8*/
-  if ( v15 < this->DynamicVector_field_0x10 ) /*0x658c00*/
-    this->DynamicVector_field_0x10 = v15; /*0x658c02*/
+  if ( v15 < this->Items ) /*0x658c00*/
+    this->Items = v15; /*0x658c02*/
   return 1; /*0x658c05*/
 }
 
@@ -6924,7 +6924,7 @@ int __thiscall RadarHashVector::sub_658C20(int *this, _DWORD *a2)
   result = 0; /*0x658c25*/
   if ( v2 <= 0 ) /*0x658c2b*/
     return -1; /*0x658c56*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 4 ) /*0x658c31*/
+  for ( i = (_DWORD *)this->Items; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 4 ) /*0x658c31*/
   {
     if ( ++result >= v2 ) /*0x658c54*/
       return -1; /*0x658c54*/
@@ -7020,8 +7020,8 @@ _DWORD *__thiscall VectorClass::PointConstructor(_DWORD *this, MapClass *aP1, Ma
 
   this->Items = 0; /*0x658d6a*/
   this->Capacity = aP1; /*0x658d71*/
-  *((_BYTE *)this + 12) = 1; /*0x658d74*/
-  *((_BYTE *)this + 13) = 0; /*0x658d78*/
+  this->q030 = 1; /*0x658d74*/
+  this->__pad_034 = 0; /*0x658d78*/
   *this = &vt_VectorClass_Point2D; /*0x658d7c*/
   if ( aP1 ) /*0x658d82*/
   {
@@ -7034,10 +7034,10 @@ _DWORD *__thiscall VectorClass::PointConstructor(_DWORD *this, MapClass *aP1, Ma
     if ( v5 ) /*0x658dad*/
     {
       this->Items = v5; /*0x658db0*/
-      *((_BYTE *)this + 13) = 1; /*0x658db7*/
+      this->__pad_034 = 1; /*0x658db7*/
       return this; /*0x658dbf*/
     }
-    *((_BYTE *)this + 13) = 1; /*0x658dc4*/
+    this->__pad_034 = 1; /*0x658dc4*/
     this->Items = 0; /*0x658dc8*/
   }
   return this; /*0x658d96*/
@@ -7055,8 +7055,8 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
 
   this->Items = 0; /*0x658ded*/
   this->Capacity = aP1; /*0x658df0*/
-  *((_BYTE *)this + 12) = 1; /*0x658df3*/
-  *((_BYTE *)this + 13) = 0; /*0x658df7*/
+  this->q030 = 1; /*0x658df3*/
+  this->__pad_034 = 0; /*0x658df7*/
   *this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658dfa*/
   if ( aP1 ) /*0x658e00*/
   {
@@ -7103,11 +7103,11 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
         v6 = 0; /*0x658e55*/
       }
       this->Items = v6; /*0x658e57*/
-      *((_BYTE *)this + 13) = 1; /*0x658e5a*/
+      this->__pad_034 = 1; /*0x658e5a*/
     }
   }
   *this = &vt_DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658e5e*/
-  *(this + 5) = 10; /*0x658e64*/
+  this->__pad_014 = 10; /*0x658e64*/
   this->q010 = 0; /*0x658e6b*/
   return this; /*0x658e70*/
 }
@@ -7572,14 +7572,14 @@ char __thiscall sub_659550(_BYTE *this, char a2)
 // ==== 0x00659560  ObjectClass::method  this=ObjectClass  sig=csp ====
 void __thiscall sub_659560(_BYTE *this)
 {
-  *(this + 9) = 0; /*0x659560*/
+  this->objectTypeFlags = 0; /*0x659560*/
 }
 
 
 // ==== 0x00659570  ObjectClass::method  this=ObjectClass  sig=csp ====
 char __thiscall sub_659570(_BYTE *this)
 {
-  return *(this + 9); /*0x659573*/
+  return this->objectTypeFlags; /*0x659573*/
 }
 
 
@@ -8180,13 +8180,13 @@ char __thiscall VectorClass_ptr_RadBeam::Add(int *this, int a2)
   _DWORD *v4; // eax
   int v5; // ecx
 
-  v2 = *(this + 2); /*0x65a242*/
+  v2 = this->Capacity; /*0x65a242*/
   if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x65a24d*/
   {
     v3 = 0; /*0x65a24f*/
     if ( v2 <= 0 ) /*0x65a253*/
       return 1; /*0x65a273*/
-    v4 = (_DWORD *)*(this + 1); /*0x65a255*/
+    v4 = (_DWORD *)this->Items; /*0x65a255*/
     v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x65a25b*/
     while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x65a264*/
     {
@@ -8209,12 +8209,12 @@ char __thiscall VectorClass_ptr_RadBeam::_vt02(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x65a28c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x65a296*/
+    this->IsInitialized = 0; /*0x65a296*/
     if ( a3 ) /*0x65a29c*/
       v4 = a3; /*0x65a2b2*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x65a2ae*/
-    *((_BYTE *)this + 12) = 1; /*0x65a2b6*/
+    this->IsInitialized = 1; /*0x65a2b6*/
     if ( v4 ) /*0x65a2ba*/
     {
       if ( this->Items ) /*0x65a2c5*/
@@ -8224,7 +8224,7 @@ char __thiscall VectorClass_ptr_RadBeam::_vt02(void *this, int a2, _DWORD *a3)
           v6 = a2; /*0x65a2d3*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x65a2d9*/
           ++i; /*0x65a2de*/
-        if ( *((_BYTE *)this + 13) ) /*0x65a2eb*/
+        if ( this->IsAllocated ) /*0x65a2eb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x65a2f6*/
           this->Items = 0; /*0x65a2fe*/
@@ -8232,7 +8232,7 @@ char __thiscall VectorClass_ptr_RadBeam::_vt02(void *this, int a2, _DWORD *a3)
       }
       this->Items = v4; /*0x65a307*/
       this->Capacity = a2; /*0x65a30f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x65a312*/
+      this->IsAllocated = a3 == 0; /*0x65a312*/
       return 1; /*0x65a318*/
     }
     else
@@ -8242,7 +8242,7 @@ char __thiscall VectorClass_ptr_RadBeam::_vt02(void *this, int a2, _DWORD *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x65a322*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x65a322*/
     return 1; /*0x65a328*/
   }
 }
@@ -8303,12 +8303,12 @@ char __thiscall VectorClass_ptr_RadBeam::sub_65A3C0(void *this, int a2, _DWORD *
 
   if ( a2 ) /*0x65a3cc*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x65a3d2*/
+    this->IsInitialized = 0; /*0x65a3d2*/
     if ( a3 ) /*0x65a3d8*/
       v4 = a3; /*0x65a3ee*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x65a3ea*/
-    *((_BYTE *)this + 12) = 1; /*0x65a3f2*/
+    this->IsInitialized = 1; /*0x65a3f2*/
     if ( !v4 ) /*0x65a3f6*/
       return 0; /*0x65a46a*/
     if ( this->Items ) /*0x65a3f8*/
@@ -8318,7 +8318,7 @@ char __thiscall VectorClass_ptr_RadBeam::sub_65A3C0(void *this, int a2, _DWORD *
         v5 = a2; /*0x65a406*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x65a40c*/
         ++i; /*0x65a411*/
-      if ( *((_BYTE *)this + 13) ) /*0x65a41e*/
+      if ( this->IsAllocated ) /*0x65a41e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x65a429*/
         this->Items = 0; /*0x65a431*/
@@ -8326,15 +8326,15 @@ char __thiscall VectorClass_ptr_RadBeam::sub_65A3C0(void *this, int a2, _DWORD *
     }
     this->Items = v4; /*0x65a43a*/
     this->DynamicVector_field_0x8 = a2; /*0x65a442*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x65a445*/
+    this->IsAllocated = a3 == 0; /*0x65a445*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x65a44e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x65a451*/
-  if ( v7 < this->DynamicVector_field_0x10 ) /*0x65a459*/
-    this->DynamicVector_field_0x10 = v7; /*0x65a45b*/
+  if ( v7 < this->Items ) /*0x65a459*/
+    this->Items = v7; /*0x65a45b*/
   return 1; /*0x65a45e*/
 }
 
@@ -8350,7 +8350,7 @@ int __thiscall VectorClass_ptr_RadBeam::sub_65A470(int *this, _DWORD *a2)
   result = 0; /*0x65a473*/
   if ( v2 <= 0 ) /*0x65a478*/
     return -1; /*0x65a48f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x65a47e*/
+  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x65a47e*/
   {
     if ( ++result >= v2 ) /*0x65a48d*/
       return -1; /*0x65a48d*/
@@ -8528,7 +8528,7 @@ _DWORD *__thiscall RadioClass::RadioClass(_DWORD *this)
   RadioClass::Constructor((int)this); /*0x65a753*/
   this->q0E4 = 0; /*0x65a75a*/
   this->q0E8 = 1; /*0x65a764*/
-  *((_BYTE *)this + 236) = 1; /*0x65a76e*/
+  this->q0EC = 1; /*0x65a76e*/
   *((_BYTE *)this + 237) = 0; /*0x65a775*/
   this->radioLinks = &vt_VectorClass_TechnoClass; /*0x65a77c*/
   this->q0E4 = __2_YAPAXI_Z(4u); /*0x65a78b*/
@@ -8538,7 +8538,7 @@ _DWORD *__thiscall RadioClass::RadioClass(_DWORD *this)
   this->vtable3 = &RadioClass::`vftable'; /*0x65a7a5*/
   this->vtable4 = &vt_RadioClass; /*0x65a7ac*/
   *(_DWORD *)this->q0E4 = 0; /*0x65a7be*/
-  *(this + 53) = 0; /*0x65a7c4*/
+  this->lastCommands = 0; /*0x65a7c4*/
   this->q0D8 = 0; /*0x65a7ca*/
   this->q0DC = 0; /*0x65a7d2*/
   return this; /*0x65a7d8*/
@@ -8719,7 +8719,7 @@ LABEL_9:
       }
     }
   }
-  (*(void (__thiscall **)(#377 *, int, _DWORD))(*(_DWORD *)this + 632))(this, 3, **((_DWORD **)this + 57)); /*0x65aa1f*/
+  (*(void (__thiscall **)(#377 *, int, _DWORD))(this->__pad_278)(this, 3, **((_DWORD **)this + 57)); /*0x65aa1f*/
   v12 = 0; /*0x65aa34*/
 LABEL_20:
   v15 = *v1; /*0x65aa36*/
@@ -8736,8 +8736,8 @@ LABEL_20:
 // ==== 0x0065AA80  RadioClass::ProcessCmd  this=RadioClass  sig=csp ====
 int __thiscall RadioClass::ProcessCmd(#374 *this)
 {
-  if ( !*((_BYTE *)this + 129) ) /*0x65aa83*/
-    (*(void (__thiscall **)(#374 *, int))(*(_DWORD *)this + 640))(this, 3); /*0x65aa91*/
+  if ( !this->inLimbo ) /*0x65aa83*/
+    (*(void (__thiscall **)(#374 *, int))(this->q0A0)(this, 3); /*0x65aa91*/
   return ObjectClass::Undeploy(this); /*0x65aa9e*/
 }
 
@@ -8789,19 +8789,19 @@ int __thiscall RadioClass::PowerDrainUpdate(int *this, AbstractClass *aP1)
 
   AbstractClass::COMStub_13((int)this, aP1); /*0x65ab1a*/
   Power::TimerProcess(aP1); /*0x65ab28*/
-  result = (BaseClass *)*(this + 58); /*0x65ab2d*/
+  result = (BaseClass *)this->q0E8; /*0x65ab2d*/
   for ( i = 0; i < (int)result; ++i ) /*0x65ab37*/
   {
-    v5 = *(_DWORD *)(*(this + 57) + 4 * i); /*0x65ab3f*/
+    v5 = *(_DWORD *)(this->q0E4 + 4 * i); /*0x65ab3f*/
     if ( v5 ) /*0x65ab44*/
     {
       (*(void (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4); /*0x65ab4d*/
       Power::TimerProcess(aP1); /*0x65ab53*/
-      v6 = *(_DWORD *)(*(this + 57) + 4 * i); /*0x65ab5e*/
+      v6 = *(_DWORD *)(this->q0E4 + 4 * i); /*0x65ab5e*/
       (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 44))(v6); /*0x65ab63*/
       Power::TimerProcess(aP1); /*0x65ab69*/
     }
-    result = (BaseClass *)*(this + 58); /*0x65ab6e*/
+    result = (BaseClass *)this->q0E8; /*0x65ab6e*/
   }
   return (int)result; /*0x65ab79*/
 }
@@ -8972,7 +8972,7 @@ int __thiscall Team::GetMember(_DWORD *this, AbstractClass *aP1)
 // ==== 0x0065AD40  Array::Get  this=TechnoClass  sig=csp ====
 int __thiscall Array_Get(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 57) + 4 * a2); /*0x65ad4d*/
+  return *(_DWORD *)(this->flashing + 4 * a2); /*0x65ad4d*/
 }
 
 
@@ -8983,9 +8983,9 @@ bool __thiscall Array::Contains(int *this, IUnknown *aP1)
   int v3; // eax
   IUnknown **v4; // ecx
 
-  if ( aP1 && (v2 = *(this + 58), v3 = 0, v2 > 0) ) /*0x65ad63*/
+  if ( aP1 && (v2 = this->q0E8, v3 = 0, v2 > 0) ) /*0x65ad63*/
   {
-    v4 = (IUnknown **)*(this + 57); /*0x65ad65*/
+    v4 = (IUnknown **)this->q0E4; /*0x65ad65*/
     while ( *v4 != aP1 ) /*0x65ad6d*/
     {
       ++v3; /*0x65ad6f*/
@@ -9032,11 +9032,11 @@ char __thiscall RadioClass::HasFreeLink(int *this)
   int v2; // eax
   _DWORD *i; // ecx
 
-  v1 = *(this + 58); /*0x65adc0*/
+  v1 = this->vecTechno_Capacity; /*0x65adc0*/
   v2 = 0; /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
-  for ( i = (_DWORD *)*(this + 57); *i; ++i ) /*0x65adcc*/
+  for ( i = (_DWORD *)this->flashing; *i; ++i ) /*0x65adcc*/
   {
     if ( ++v2 >= v1 ) /*0x65addd*/
       return 0; /*0x65addd*/
@@ -9056,7 +9056,7 @@ char __thiscall Array::ContainsValue(int *this, IUnknown *aP1)
   v3 = 0; /*0x65adf7*/
   if ( v2 <= 0 ) /*0x65adfc*/
     return 0; /*0x65ae1a*/
-  for ( i = (IUnknown **)*(this + 57); *i && *i != aP1; ++i ) /*0x65adfe*/
+  for ( i = (IUnknown **)this->q0E4; *i && *i != aP1; ++i ) /*0x65adfe*/
   {
     if ( ++v3 >= v2 ) /*0x65ae18*/
       return 0; /*0x65ae18*/
@@ -9076,7 +9076,7 @@ char __thiscall Team_AllMembersValid(int *this)
   v2 = 0; /*0x65ae36*/
   if ( v1 <= 0 ) /*0x65ae3a*/
     return 0; /*0x65ae4f*/
-  for ( i = (_DWORD *)*(this + 57); !*i; ++i ) /*0x65ae3c*/
+  for ( i = (_DWORD *)this->q0E4; !*i; ++i ) /*0x65ae3c*/
   {
     if ( ++v2 >= v1 ) /*0x65ae4d*/
       return 0; /*0x65ae4d*/
@@ -9294,13 +9294,13 @@ _DWORD *__thiscall sub_65B1E0(_DWORD *this)
 
   AbstractClass::Constructor((int)this); /*0x65b1e3*/
   this->LightSource = 0; /*0x65b1ea*/
-  *(this + 10) = MEMORY[0xA8ED84]; /*0x65b1f3*/
+  this->RadLevelTimer = MEMORY[0xA8ED84]; /*0x65b1f3*/
   this->q030 = 0; /*0x65b1f6*/
   v2 = MEMORY[0xA8ED84]; /*0x65b1f9*/
   this->q03C = 0; /*0x65b1ff*/
-  *(this + 13) = v2; /*0x65b202*/
-  *((_WORD *)this + 32) = 0; /*0x65b205*/
-  *((_WORD *)this + 33) = 0; /*0x65b209*/
+  this->RadLightTimer = v2; /*0x65b202*/
+  this->q080 = 0; /*0x65b205*/
+  this->alignmentPadding = 0; /*0x65b209*/
   this->Spread = 0; /*0x65b20d*/
   this->SpreadInLeptons = 0; /*0x65b210*/
   this->RadLevel = 0; /*0x65b213*/
@@ -9339,18 +9339,18 @@ void __thiscall RadSiteClass::Constructor(void **this)
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
   *this = &RadSiteClass::`vftable'; /*0x65b2fc*/
-  *(this + 1) = &RadSiteClass::`vftable'; /*0x65b303*/
-  *(this + 2) = &RadSiteClass::`vftable'; /*0x65b30a*/
-  *(this + 3) = &vt_RadSiteClass; /*0x65b311*/
+  this->vtable2 = &RadSiteClass::`vftable'; /*0x65b303*/
+  this->vtable3 = &RadSiteClass::`vftable'; /*0x65b30a*/
+  this->vtable4 = &vt_RadSiteClass; /*0x65b311*/
   v2 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)this + 32); /*0x65b318*/
   TerrainClass::SetFieldF8(v2, 0); /*0x65b321*/
   LOBYTE(v3) = 1; /*0x65b326*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, v3); /*0x65b32a*/
-  v4 = (LightSourceClass *)*(this + 9); /*0x65b32f*/
+  v4 = (LightSourceClass *)this->LightSource; /*0x65b32f*/
   if ( v4 ) /*0x65b334*/
   {
     (*(void (__thiscall **)(LightSourceClass *, int))(*(_DWORD *)v4->__pad_0 + 32))(v4, 1); /*0x65b33a*/
-    *(this + 9) = 0; /*0x65b33d*/
+    this->LightSource = 0; /*0x65b33d*/
   }
   v6 = this; /*0x65b354*/
   v5 = ((int (__thiscall *)(DynamicVector **, void ***))RadSiteClass_Array->field_10)(&RadSiteClass_Array, &v6); /*0x65b358*/
@@ -9624,7 +9624,7 @@ int __thiscall RadSiteClass::_vt23(int *this)
   int v11; // [esp+Ch] [ebp-8h]
 
   --this->referenceCount; /*0x65b80b*/
-  v2 = *(this + 10); /*0x65b80e*/
+  v2 = this->RadLevelTimer; /*0x65b80e*/
   v3 = this->vtable4; /*0x65b811*/
   v4 = MEMORY[0xA8ED84]; /*0x65b814*/
   if ( v2 == -1 ) /*0x65b81d*/
@@ -9642,13 +9642,13 @@ LABEL_4:
 LABEL_5:
   RadSiteClass::DecreaseRadiation(this); /*0x65b82d*/
   v5 = MEMORY[0x8871E0][1].?[1]; /*0x65b843*/
-  *(this + 10) = (int)MEMORY[0xA8ED84]; /*0x65b849*/
-  *(this + 11) = v11; /*0x65b84c*/
+  this->RadLevelTimer = (int)MEMORY[0xA8ED84]; /*0x65b849*/
+  this->q02C = v11; /*0x65b84c*/
   this->vtable4 = v5; /*0x65b84f*/
   v4 = MEMORY[0xA8ED84]; /*0x65b852*/
 LABEL_6:
-  v6 = *(this + 13); /*0x65b858*/
-  v7 = *(this + 15); /*0x65b85b*/
+  v6 = this->RadLightTimer; /*0x65b858*/
+  v7 = this->q03C; /*0x65b85b*/
   if ( v6 == -1 ) /*0x65b861*/
     goto LABEL_9; /*0x65b861*/
   v8 = (int)v4 - v6; /*0x65b863*/
@@ -9660,16 +9660,16 @@ LABEL_9:
       goto LABEL_11; /*0x65b86f*/
   }
   TacticalClass::UpdateScrollTarget( /*0x65b871*/
-    *(this + 9),
-    *(_DWORD *)(*(this + 9) + 36) - *(this + 26),
-    this->referenceCount * *(this + 22) / *(this + 27),
-    this->referenceCount * *(this + 23) / *(this + 27),
-    this->referenceCount * this->nextArrayIndex / *(this + 27),
+    this->LightSource,
+    *(_DWORD *)(this->LightSource + 36) - this->q068,
+    this->referenceCount * this->IntensitySteps / this->RadDuration,
+    this->referenceCount * this->IntensityDecrement / this->RadDuration,
+    this->referenceCount * this->nextArrayIndex / this->RadDuration,
     0);
   v9 = MEMORY[0x8871E0][1].?[2]; /*0x65b8b9*/
-  *(this + 13) = (int)MEMORY[0xA8ED84]; /*0x65b8bf*/
-  *(this + 14) = v11; /*0x65b8c2*/
-  *(this + 15) = v9; /*0x65b8c5*/
+  this->RadLightTimer = (int)MEMORY[0xA8ED84]; /*0x65b8bf*/
+  this->q038 = v11; /*0x65b8c2*/
+  this->q03C = v9; /*0x65b8c5*/
 LABEL_11:
   result = this->referenceCount; /*0x65b8c8*/
   if ( result <= 0 ) /*0x65b8cd*/
@@ -10013,11 +10013,11 @@ int __fastcall RadSiteClass::DecreaseRadiation(_DWORD *a1)
 char __thiscall RadSiteClass::DecreaseLight(int *this)
 {
   return TacticalClass::UpdateScrollTarget( /*0x65becc*/
-           *(this + 9),
-           *(_DWORD *)(*(this + 9) + 36) - *(this + 26),
-           this->referenceCount * *(this + 22) / *(this + 27),
-           this->referenceCount * *(this + 23) / *(this + 27),
-           this->referenceCount * this->nextArrayIndex / *(this + 27),
+           this->LightSource,
+           *(_DWORD *)(this->LightSource + 36) - this->q068,
+           this->referenceCount * this->IntensitySteps / this->RadDuration,
+           this->referenceCount * this->IntensityDecrement / this->RadDuration,
+           this->referenceCount * this->nextArrayIndex / this->RadDuration,
            0);
 }
 
@@ -10074,13 +10074,13 @@ char __thiscall VectorClass_ptr_RadSiteClass::Add(int *this, int a2)
   _DWORD *v4; // eax
   int v5; // ecx
 
-  v2 = *(this + 2); /*0x65bf52*/
+  v2 = this->Capacity; /*0x65bf52*/
   if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x65bf5d*/
   {
     v3 = 0; /*0x65bf5f*/
     if ( v2 <= 0 ) /*0x65bf63*/
       return 1; /*0x65bf83*/
-    v4 = (_DWORD *)*(this + 1); /*0x65bf65*/
+    v4 = (_DWORD *)this->Items; /*0x65bf65*/
     v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x65bf6b*/
     while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x65bf74*/
     {
@@ -10103,12 +10103,12 @@ char __thiscall VectorClass_ptr_RadSiteClass::_vt02(void *this, int a2, _DWORD *
 
   if ( a2 ) /*0x65bf9c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x65bfa6*/
+    this->IsInitialized = 0; /*0x65bfa6*/
     if ( a3 ) /*0x65bfac*/
       v4 = a3; /*0x65bfc2*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x65bfbe*/
-    *((_BYTE *)this + 12) = 1; /*0x65bfc6*/
+    this->IsInitialized = 1; /*0x65bfc6*/
     if ( v4 ) /*0x65bfca*/
     {
       if ( this->Items ) /*0x65bfd5*/
@@ -10118,7 +10118,7 @@ char __thiscall VectorClass_ptr_RadSiteClass::_vt02(void *this, int a2, _DWORD *
           v6 = a2; /*0x65bfe3*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x65bfe9*/
           ++i; /*0x65bfee*/
-        if ( *((_BYTE *)this + 13) ) /*0x65bffb*/
+        if ( this->IsAllocated ) /*0x65bffb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x65c006*/
           this->Items = 0; /*0x65c00e*/
@@ -10126,7 +10126,7 @@ char __thiscall VectorClass_ptr_RadSiteClass::_vt02(void *this, int a2, _DWORD *
       }
       this->Items = v4; /*0x65c017*/
       this->Capacity = a2; /*0x65c01f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x65c022*/
+      this->IsAllocated = a3 == 0; /*0x65c022*/
       return 1; /*0x65c028*/
     }
     else
@@ -10136,7 +10136,7 @@ char __thiscall VectorClass_ptr_RadSiteClass::_vt02(void *this, int a2, _DWORD *
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x65c032*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x65c032*/
     return 1; /*0x65c038*/
   }
 }
@@ -10197,12 +10197,12 @@ char __thiscall VectorClass_ptr_RadSiteClass::sub_65C0D0(void *this, int a2, _DW
 
   if ( a2 ) /*0x65c0dc*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x65c0e2*/
+    this->IsInitialized = 0; /*0x65c0e2*/
     if ( a3 ) /*0x65c0e8*/
       v4 = a3; /*0x65c0fe*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x65c0fa*/
-    *((_BYTE *)this + 12) = 1; /*0x65c102*/
+    this->IsInitialized = 1; /*0x65c102*/
     if ( !v4 ) /*0x65c106*/
       return 0; /*0x65c17a*/
     if ( this->Items ) /*0x65c108*/
@@ -10212,7 +10212,7 @@ char __thiscall VectorClass_ptr_RadSiteClass::sub_65C0D0(void *this, int a2, _DW
         v5 = a2; /*0x65c116*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x65c11c*/
         ++i; /*0x65c121*/
-      if ( *((_BYTE *)this + 13) ) /*0x65c12e*/
+      if ( this->IsAllocated ) /*0x65c12e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x65c139*/
         this->Items = 0; /*0x65c141*/
@@ -10220,15 +10220,15 @@ char __thiscall VectorClass_ptr_RadSiteClass::sub_65C0D0(void *this, int a2, _DW
     }
     this->Items = v4; /*0x65c14a*/
     this->DynamicVector_field_0x8 = a2; /*0x65c152*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x65c155*/
+    this->IsAllocated = a3 == 0; /*0x65c155*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x65c15e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x65c161*/
-  if ( v7 < this->DynamicVector_field_0x10 ) /*0x65c169*/
-    this->DynamicVector_field_0x10 = v7; /*0x65c16b*/
+  if ( v7 < this->Items ) /*0x65c169*/
+    this->Items = v7; /*0x65c16b*/
   return 1; /*0x65c16e*/
 }
 
@@ -10244,7 +10244,7 @@ int __thiscall VectorClass_ptr_RadSiteClass::sub_65C180(int *this, _DWORD *a2)
   result = 0; /*0x65c183*/
   if ( v2 <= 0 ) /*0x65c188*/
     return -1; /*0x65c19f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x65c18e*/
+  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x65c18e*/
   {
     if ( ++result >= v2 ) /*0x65c19d*/
       return -1; /*0x65c19d*/
@@ -10302,7 +10302,7 @@ _BYTE *__thiscall WinMain_Helper_65C250(RAMFileClass *this, int a2, MixFileClass
   this->field_10 = (int)aP2; /*0x65c268*/
   this->q014 = 0; /*0x65c26b*/
   this->q018 = 1; /*0x65c26e*/
-  *((_BYTE *)this + 28) = 0; /*0x65c275*/
+  this->__pad_01C = 0; /*0x65c275*/
   *((_BYTE *)this + 29) = 0; /*0x65c278*/
   *(_DWORD *)this->__pad_0 = &vt_RAMFileClass; /*0x65c27b*/
   if ( !a2 && (int)aP2 > 0 ) /*0x65c285*/
@@ -10321,7 +10321,7 @@ void __thiscall WinMain_Helper_65C2A0(RAMFileClass *this)
 
   v2 = *((_BYTE *)this + 29); /*0x65c2a3*/
   *(_DWORD *)this->__pad_0 = &vt_RAMFileClass; /*0x65c2a6*/
-  *((_BYTE *)this + 28) = 0; /*0x65c2ae*/
+  this->__pad_01C = 0; /*0x65c2ae*/
   if ( v2 ) /*0x65c2b2*/
   {
     __3_YAXPAX_Z((void *)this->field_8); /*0x65c2b8*/
@@ -10362,7 +10362,7 @@ char __thiscall AbstractClass::updateTeamState(RAMFileClass *this)
 // ==== 0x0065C330  RAMFileClass::processTeamOrder  this=RAMFileClass  sig=csp ====
 char __thiscall AbstractClass::processTeamOrder(RAMFileClass *this)
 {
-  return *((_BYTE *)this + 28); /*0x65c333*/
+  return this->__pad_01C; /*0x65c333*/
 }
 
 
@@ -10380,7 +10380,7 @@ int __thiscall nullsub_0_2(RAMFileClass *this, int a2)
     return 0; /*0x65c391*/
   this->q014 = 0; /*0x65c367*/
   this->q018 = a2; /*0x65c36e*/
-  *((_BYTE *)this + 28) = 1; /*0x65c374*/
+  this->__pad_01C = 1; /*0x65c374*/
   if ( a2 == 2 ) /*0x65c378*/
     this->field_10 = 0; /*0x65c37a*/
   return (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this); /*0x65c38d*/
@@ -10404,7 +10404,7 @@ size_t __thiscall nullsub_0_3(RAMFileClass *this, void *a1, signed int Size)
   v5 = 0; /*0x65c3bf*/
   if ( (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this) ) /*0x65c3c1*/
   {
-    if ( (*((_BYTE *)this + 24) & 1) != 0 ) /*0x65c3d9*/
+    if ( (this->q018 & 1) != 0 ) /*0x65c3d9*/
       goto LABEL_7; /*0x65c3d9*/
     return 0; /*0x65c418*/
   }
@@ -10434,7 +10434,7 @@ int __thiscall nullsub_0_4(RAMFileClass *this, int a2, int a3)
     return this->q014; /*0x65c494*/
   v4 = this->field_10; /*0x65c436*/
   v5 = v4; /*0x65c43b*/
-  if ( (*((_BYTE *)this + 24) & 2) != 0 ) /*0x65c43d*/
+  if ( (this->q018 & 2) != 0 ) /*0x65c43d*/
     v5 = this->field_C; /*0x65c43f*/
   switch ( a3 ) /*0x65c449*/
   {
@@ -10487,7 +10487,7 @@ size_t __thiscall AbstractClass::validateTeamConfig(RAMFileClass *this, void *Sr
   v5 = 0; /*0x65c4cf*/
   if ( (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this) ) /*0x65c4d1*/
   {
-    if ( (*((_BYTE *)this + 24) & 2) != 0 ) /*0x65c4e9*/
+    if ( (this->q018 & 2) != 0 ) /*0x65c4e9*/
       goto LABEL_7; /*0x65c4e9*/
     return 0; /*0x65c537*/
   }
@@ -10512,7 +10512,7 @@ LABEL_7:
 // ==== 0x0065C540  RAMFileClass::resetTeamState  this=RAMFileClass  sig=csp ====
 void __thiscall AbstractClass::resetTeamState(RAMFileClass *this)
 {
-  *((_BYTE *)this + 28) = 0; /*0x65c540*/
+  this->__pad_01C = 0; /*0x65c540*/
 }
 
 
@@ -10558,7 +10558,7 @@ void *__thiscall nullsub_0_10(RAMFileClass *this, char a2)
 
   v3 = *((_BYTE *)this + 29); /*0x65c5a3*/
   *(_DWORD *)this->__pad_0 = &vt_RAMFileClass; /*0x65c5a6*/
-  *((_BYTE *)this + 28) = 0; /*0x65c5ae*/
+  this->__pad_01C = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {
     __3_YAXPAX_Z((void *)this->field_8); /*0x65c5b8*/
@@ -10884,20 +10884,20 @@ void __thiscall RawFileClass_Dtor(int *this)
   *this = (int)&vt_RawFileClass; /*0x65ca03*/
   if ( (unsigned __int8)RawFileClass::Write() ) /*0x65ca09*/
   {
-    if ( !CloseHandle((HANDLE)*(this + 5)) ) /*0x65ca17*/
+    if ( !CloseHandle((HANDLE)this->FileTimeDateLo) ) /*0x65ca17*/
     {
       v2 = *this; /*0x65ca25*/
-      v4 = *(this + 6); /*0x65ca27*/
+      v4 = this->FileNameAllocated; /*0x65ca27*/
       LastError = GetLastError(); /*0x65ca29*/
       (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v2 + 64))(this, LastError, 0, v4); /*0x65ca32*/
     }
-    *(this + 5) = -1; /*0x65ca36*/
+    this->FileTimeDateLo = -1; /*0x65ca36*/
   }
-  if ( *((_BYTE *)this + 32) && *(this + 6) ) /*0x65ca44*/
+  if ( this->q020 && this->FileNameAllocated ) /*0x65ca44*/
   {
-    free((void *)*(this + 6)); /*0x65ca4c*/
-    *(this + 6) = 0; /*0x65ca54*/
-    *((_BYTE *)this + 32) = 0; /*0x65ca5b*/
+    free((void *)this->FileNameAllocated); /*0x65ca4c*/
+    this->FileNameAllocated = 0; /*0x65ca54*/
+    this->q020 = 0; /*0x65ca5b*/
   }
   *this = (int)&vt_FileClass; /*0x65ca5f*/
 }
@@ -10914,14 +10914,14 @@ void __stdcall BufferIOFileClass::StubReturnFalse(int a1, int a2, int a3)
 _DWORD *__thiscall RawFileClass::Construct(_DWORD *this, RawFileClass *aP1)
 {
   this->FileName = -1; /*0x65ca87*/
-  *(this + 5) = -1; /*0x65ca8a*/
-  *((_BYTE *)this + 4) = 0; /*0x65ca91*/
+  this->FileTimeDateLo = -1; /*0x65ca8a*/
+  this->FileName = 0; /*0x65ca91*/
   this->FileSize = 0; /*0x65ca94*/
   this->Handle = 0; /*0x65ca97*/
-  *(this + 6) = aP1; /*0x65ca9a*/
-  *((_WORD *)this + 14) = 0; /*0x65ca9d*/
+  this->FileNameAllocated = aP1; /*0x65ca9a*/
+  this->__pad_038 = 0; /*0x65ca9d*/
   *((_WORD *)this + 15) = 0; /*0x65caa1*/
-  *((_BYTE *)this + 32) = 0; /*0x65caa5*/
+  this->q020 = 0; /*0x65caa5*/
   *this = &vt_RawFileClass; /*0x65caa8*/
   return this; /*0x65caae*/
 }
@@ -10933,22 +10933,22 @@ char *__thiscall FileClass_SetName(_DWORD *this, char *Source)
   void *v3; // eax
   char *result; // eax
 
-  v3 = (void *)*(this + 6); /*0x65cac4*/
-  if ( v3 && *((_BYTE *)this + 32) ) /*0x65cacb*/
+  v3 = (void *)this->FileNameAllocated; /*0x65cac4*/
+  if ( v3 && this->q020 ) /*0x65cacb*/
   {
     free(v3); /*0x65cad3*/
-    *(this + 6) = 0; /*0x65cadb*/
-    *((_BYTE *)this + 32) = 0; /*0x65cae2*/
+    this->FileNameAllocated = 0; /*0x65cadb*/
+    this->q020 = 0; /*0x65cae2*/
   }
   if ( !Source ) /*0x65caec*/
     return 0; /*0x65caef*/
   this->Handle = 0; /*0x65caf6*/
   this->FileName = -1; /*0x65cafd*/
   result = _strdup(Source); /*0x65cb04*/
-  *(this + 6) = result; /*0x65cb0c*/
+  this->FileNameAllocated = result; /*0x65cb0c*/
   if ( result ) /*0x65cb11*/
   {
-    *((_BYTE *)this + 32) = 1; /*0x65cb26*/
+    this->q020 = 1; /*0x65cb26*/
   }
   else
   {
@@ -10974,13 +10974,13 @@ BOOL __thiscall FileClass_Open2(const CHAR **this, const CHAR *a2)
   const CHAR *FileA; // eax
 
   (*((void (__thiscall **)(const CHAR **))*this + 13))(this); /*0x65cb55*/
-  v3 = *(this + 6); /*0x65cb58*/
+  v3 = this->FileNameAllocated; /*0x65cb58*/
   if ( !v3 ) /*0x65cb5d*/
   {
     (*((void (__thiscall **)(const CHAR **, int, _DWORD, _DWORD))*this + 16))(this, 2, 0, 0); /*0x65cb67*/
     return 0; /*0x65cb6d*/
   }
-  *(this + 2) = a2; /*0x65cb74*/
+  this->FileSize = a2; /*0x65cb74*/
   if ( a2 == (const CHAR *)1 ) /*0x65cb78*/
   {
     FileA = (const CHAR *)CreateFileA(v3, 0x80000000, 3u, 0, 3u, 0x8000080u, 0); /*0x65cbbb*/
@@ -10995,11 +10995,11 @@ BOOL __thiscall FileClass_Open2(const CHAR **this, const CHAR *a2)
       goto LABEL_10; /*0x65cb7e*/
     FileA = (const CHAR *)CreateFileA(v3, 0xC0000000, 0, 0, 4u, 0x80u, 0); /*0x65cb92*/
   }
-  *(this + 5) = FileA; /*0x65cbc1*/
+  this->FileTimeDateLo = FileA; /*0x65cbc1*/
 LABEL_10:
-  if ( *(this + 3) || this->FilePointer != (const CHAR *)-1 ) /*0x65cbcf*/
+  if ( this->Handle || this->FilePointer != (const CHAR *)-1 ) /*0x65cbcf*/
     (*((void (__thiscall **)(const CHAR **, _DWORD, _DWORD))*this + 10))(this, 0, 0); /*0x65cbd9*/
-  return *(this + 5) + 1 != 0; /*0x65cb6c*/
+  return this->FileTimeDateLo + 1 != 0; /*0x65cb6c*/
 }
 
 
@@ -11011,33 +11011,33 @@ char __thiscall FileClass_Open(int *this, int a2)
   DWORD LastError; // eax
   int v7; // [esp-4h] [ebp-Ch]
 
-  if ( !*(this + 6) ) /*0x65cbf4*/
+  if ( !this->FileNameAllocated ) /*0x65cbf4*/
     return 0; /*0x65cbff*/
   if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65cc06*/
     return 1; /*0x65cc0b*/
   if ( !a2 ) /*0x65cc17*/
   {
-    FileA = CreateFileA((LPCSTR)*(this + 6), 0x80000000, 1u, 0, 3u, 0x80u, 0); /*0x65cc59*/
-    *(this + 5) = (int)FileA; /*0x65cc62*/
+    FileA = CreateFileA((LPCSTR)this->FileNameAllocated, 0x80000000, 1u, 0, 3u, 0x80u, 0); /*0x65cc59*/
+    this->FileTimeDateLo = (int)FileA; /*0x65cc62*/
     if ( FileA == (HANDLE)-1 ) /*0x65cc65*/
       return 0; /*0x65cc6b*/
     if ( CloseHandle(FileA) ) /*0x65cc6f*/
       goto LABEL_13; /*0x65cc77*/
     v4 = *this; /*0x65cc7c*/
-    v7 = *(this + 6); /*0x65cc7e*/
+    v7 = this->FileNameAllocated; /*0x65cc7e*/
     goto LABEL_12; /*0x65cc7e*/
   }
   FileClass::Open2(1); /*0x65cc1d*/
   if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65cc26*/
   {
-    if ( CloseHandle((HANDLE)*(this + 5)) ) /*0x65cc31*/
+    if ( CloseHandle((HANDLE)this->FileTimeDateLo) ) /*0x65cc31*/
     {
 LABEL_13:
-      *(this + 5) = -1; /*0x65cc8d*/
+      this->FileTimeDateLo = -1; /*0x65cc8d*/
       return 1; /*0x65cc8d*/
     }
     v4 = *this; /*0x65cc3e*/
-    v7 = *(this + 6); /*0x65cc40*/
+    v7 = this->FileNameAllocated; /*0x65cc40*/
 LABEL_12:
     LastError = GetLastError(); /*0x65cc7f*/
     (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v4 + 64))(this, LastError, 0, v7); /*0x65cc8a*/
@@ -11058,15 +11058,15 @@ int __thiscall FileClass_CloseHandle(HANDLE *this)
   result = (*((int (__thiscall **)(HANDLE *))*this + 6))(this); /*0x65cca5*/
   if ( (_BYTE)result ) /*0x65ccaa*/
   {
-    result = CloseHandle(*(this + 5)); /*0x65ccb0*/
+    result = CloseHandle(this->FileTimeDateLo); /*0x65ccb0*/
     if ( !result ) /*0x65ccb8*/
     {
       v3 = (int (__thiscall **)(HANDLE *, DWORD, _DWORD, int))*this; /*0x65ccbe*/
-      v5 = (int)*(this + 6); /*0x65ccc0*/
+      v5 = (int)this->FileNameAllocated; /*0x65ccc0*/
       LastError = GetLastError(); /*0x65ccc2*/
       result = v3[16](this, LastError, 0, v5); /*0x65cccb*/
     }
-    *(this + 5) = (HANDLE)-1; /*0x65cccf*/
+    this->FileTimeDateLo = (HANDLE)-1; /*0x65cccf*/
   }
   return result; /*0x65ccd6*/
 }
@@ -11110,7 +11110,7 @@ DWORD __thiscall FileClass::Read(_DWORD *this, BufferIOFileClass *aP1, AbstractC
   }
   while ( (int)v7 > 0 ) /*0x65cd41*/
   {
-    v11 = (void *)*(this + 5); /*0x65cd54*/
+    v11 = (void *)this->FileTimeDateLo; /*0x65cd54*/
     NumberOfBytesRead = 0; /*0x65cd55*/
     if ( ReadFile(v11, aP1, (DWORD)v7, &NumberOfBytesRead, 0) ) /*0x65cd5d*/
     {
@@ -11129,7 +11129,7 @@ DWORD __thiscall FileClass::Read(_DWORD *this, BufferIOFileClass *aP1, AbstractC
       if ( byte_B04BEC ) /*0x65cd7c*/
         break; /*0x65cd7c*/
       v9 = *this; /*0x65cd81*/
-      v12 = *(this + 6); /*0x65cd83*/
+      v12 = this->FileNameAllocated; /*0x65cd83*/
       LastError = GetLastError(); /*0x65cd86*/
       (*(void (__thiscall **)(_DWORD *, DWORD, int, int))(v9 + 64))(this, LastError, 1, v12); /*0x65cd8f*/
       v4 = nNumberOfBytesToRead; /*0x65cd92*/
@@ -11170,10 +11170,10 @@ DWORD __thiscall FileClass::Write2(int *this, LPCVOID lpBuffer, IUnknown *aP2)
       return result; /*0x65cdfa*/
     v16 = 1; /*0x65ce03*/
   }
-  if ( !WriteFile((HANDLE)*(this + 5), lpBuffer, (DWORD)aP2, &NumberOfBytesWritten, 0) ) /*0x65ce22*/
+  if ( !WriteFile((HANDLE)this->FileTimeDateLo, lpBuffer, (DWORD)aP2, &NumberOfBytesWritten, 0) ) /*0x65ce22*/
   {
     v5 = *this; /*0x65ce35*/
-    v14 = *(this + 6); /*0x65ce37*/
+    v14 = this->FileNameAllocated; /*0x65ce37*/
     LastError = GetLastError(); /*0x65ce3a*/
     (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v5 + 64))(this, LastError, 0, v14); /*0x65ce3f*/
   }
@@ -11181,39 +11181,39 @@ DWORD __thiscall FileClass::Write2(int *this, LPCVOID lpBuffer, IUnknown *aP2)
     goto LABEL_19; /*0x65ce46*/
   if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65ce51*/
   {
-    v7 = SetFilePointer((HANDLE)*(this + 5), 0, 0, 1u); /*0x65ce79*/
+    v7 = SetFilePointer((HANDLE)this->FileTimeDateLo, 0, 0, 1u); /*0x65ce79*/
     if ( v7 != -1 ) /*0x65ce7e*/
       goto LABEL_12; /*0x65ce7e*/
     v8 = *this; /*0x65ce83*/
-    v13 = *(this + 6); /*0x65ce85*/
+    v13 = this->FileNameAllocated; /*0x65ce85*/
     v9 = GetLastError(); /*0x65ce88*/
     (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v8 + 64))(this, v9, 0, v13); /*0x65ce8d*/
   }
   else
   {
-    (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, *(this + 6)); /*0x65ce6a*/
+    (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, this->FileNameAllocated); /*0x65ce6a*/
   }
   v7 = 0; /*0x65ce90*/
 LABEL_12:
-  if ( v7 > this->FilePointer + *(this + 3) ) /*0x65ce9d*/
+  if ( v7 > this->FilePointer + this->Handle ) /*0x65ce9d*/
   {
     if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65cea3*/
     {
-      v10 = SetFilePointer((HANDLE)*(this + 5), 0, 0, 1u); /*0x65cec5*/
+      v10 = SetFilePointer((HANDLE)this->FileTimeDateLo, 0, 0, 1u); /*0x65cec5*/
       if ( v10 != -1 ) /*0x65ceca*/
       {
 LABEL_18:
-        this->FilePointer = v10 - *(this + 3); /*0x65cede*/
+        this->FilePointer = v10 - this->Handle; /*0x65cede*/
         goto LABEL_19; /*0x65cee1*/
       }
       v11 = *this; /*0x65cecf*/
-      v15 = *(this + 6); /*0x65ced1*/
+      v15 = this->FileNameAllocated; /*0x65ced1*/
       v12 = GetLastError(); /*0x65ced4*/
       (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v11 + 64))(this, v12, 0, v15); /*0x65ced9*/
     }
     else
     {
-      (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, *(this + 6)); /*0x65ceb6*/
+      (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, this->FileNameAllocated); /*0x65ceb6*/
     }
     v10 = 0; /*0x65cedc*/
     goto LABEL_18; /*0x65cedc*/
@@ -11262,7 +11262,7 @@ int __thiscall FileClass_Seek(int *this, LONG lDistanceToMove, DWORD dwMoveMetho
       if ( dwMoveMethod == 2 ) /*0x65cf20*/
       {
         v5 = 0; /*0x65cf2b*/
-        v6 = v4 + *(this + 3) + lDistanceToMove; /*0x65cf2d*/
+        v6 = v4 + this->Handle + lDistanceToMove; /*0x65cf2d*/
       }
       else
       {
@@ -11274,7 +11274,7 @@ int __thiscall FileClass_Seek(int *this, LONG lDistanceToMove, DWORD dwMoveMetho
       v7 = lDistanceToMove; /*0x65cf31*/
       if ( lDistanceToMove > v4 ) /*0x65cf37*/
         v7 = v4; /*0x65cf39*/
-      v6 = *(this + 3) + v7; /*0x65cf3b*/
+      v6 = this->Handle + v7; /*0x65cf3b*/
     }
     if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65cf48*/
     {
@@ -11293,21 +11293,21 @@ int __thiscall FileClass_Seek(int *this, LONG lDistanceToMove, DWORD dwMoveMetho
       {
         v5 = 0; /*0x65cf81*/
       }
-      v8 = SetFilePointer((HANDLE)*(this + 5), v6, 0, v5); /*0x65cf8b*/
+      v8 = SetFilePointer((HANDLE)this->FileTimeDateLo, v6, 0, v5); /*0x65cf8b*/
       if ( v8 != -1 ) /*0x65cf90*/
       {
 LABEL_20:
-        v11 = *(this + 3); /*0x65cfa8*/
+        v11 = this->Handle; /*0x65cfa8*/
         result = v8 - v11; /*0x65cfab*/
         if ( result >= 0 ) /*0x65cfad*/
           goto LABEL_27; /*0x65cfad*/
         if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65cfb3*/
         {
-          v13 = SetFilePointer((HANDLE)*(this + 5), v11, 0, 0); /*0x65cfd4*/
+          v13 = SetFilePointer((HANDLE)this->FileTimeDateLo, v11, 0, 0); /*0x65cfd4*/
           if ( v13 != -1 ) /*0x65cfd9*/
           {
 LABEL_26:
-            v11 = *(this + 3); /*0x65cff1*/
+            v11 = this->Handle; /*0x65cff1*/
             result = v13 - v11; /*0x65cff4*/
 LABEL_27:
             v16 = this->FilePointer; /*0x65cff6*/
@@ -11316,45 +11316,45 @@ LABEL_27:
               v17 = v16 + v11; /*0x65cfff*/
               if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65d003*/
               {
-                v18 = SetFilePointer((HANDLE)*(this + 5), v17, 0, 0); /*0x65d030*/
+                v18 = SetFilePointer((HANDLE)this->FileTimeDateLo, v17, 0, 0); /*0x65d030*/
                 if ( v18 == -1 ) /*0x65d035*/
                 {
                   v19 = *this; /*0x65d03a*/
-                  v26 = *(this + 6); /*0x65d03c*/
+                  v26 = this->FileNameAllocated; /*0x65d03c*/
                   LastError = GetLastError(); /*0x65d03f*/
                   (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v19 + 64))(this, LastError, 0, v26); /*0x65d048*/
                   v18 = 0; /*0x65d04b*/
                 }
-                return v18 - *(this + 3); /*0x65d04d*/
+                return v18 - this->Handle; /*0x65d04d*/
               }
               else
               {
-                (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, *(this + 6)); /*0x65d016*/
-                return -*(this + 3); /*0x65d021*/
+                (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, this->FileNameAllocated); /*0x65d016*/
+                return -this->Handle; /*0x65d021*/
               }
             }
             return result; /*0x65d024*/
           }
           v14 = *this; /*0x65cfde*/
-          v25 = *(this + 6); /*0x65cfe0*/
+          v25 = this->FileNameAllocated; /*0x65cfe0*/
           v15 = GetLastError(); /*0x65cfe3*/
           (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v14 + 64))(this, v15, 0, v25); /*0x65cfec*/
         }
         else
         {
-          (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, *(this + 6)); /*0x65cfc6*/
+          (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, this->FileNameAllocated); /*0x65cfc6*/
         }
         v13 = 0; /*0x65cfef*/
         goto LABEL_26; /*0x65cfef*/
       }
       v9 = *this; /*0x65cf95*/
-      v24 = *(this + 6); /*0x65cf97*/
+      v24 = this->FileNameAllocated; /*0x65cf97*/
       v10 = GetLastError(); /*0x65cf9a*/
       (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v9 + 64))(this, v10, 0, v24); /*0x65cfa3*/
     }
     else
     {
-      (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, *(this + 6)); /*0x65cf61*/
+      (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, this->FileNameAllocated); /*0x65cf61*/
     }
     v8 = 0; /*0x65cfa6*/
     goto LABEL_20; /*0x65cfa6*/
@@ -11377,11 +11377,11 @@ LABEL_27:
     {
       v21 = 0; /*0x65d097*/
     }
-    result = SetFilePointer((HANDLE)*(this + 5), lDistanceToMove, 0, v21); /*0x65d0a5*/
+    result = SetFilePointer((HANDLE)this->FileTimeDateLo, lDistanceToMove, 0, v21); /*0x65d0a5*/
     if ( result == -1 ) /*0x65d0ae*/
     {
       v22 = *this; /*0x65d0b3*/
-      v27 = *(this + 6); /*0x65d0b5*/
+      v27 = this->FileNameAllocated; /*0x65d0b5*/
       v23 = GetLastError(); /*0x65d0b8*/
       (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v22 + 64))(this, v23, 0, v27); /*0x65d0c1*/
       return 0; /*0x65d0c4*/
@@ -11389,7 +11389,7 @@ LABEL_27:
   }
   else
   {
-    (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, *(this + 6)); /*0x65d072*/
+    (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, this->FileNameAllocated); /*0x65d072*/
     return 0; /*0x65d076*/
   }
   return result; /*0x65d020*/
@@ -11411,14 +11411,14 @@ int __thiscall CCFileClass_GetFileSize(int *this)
   {
     if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65d0e0*/
     {
-      FileSize = GetFileSize((HANDLE)*(this + 5), 0); /*0x65d0f2*/
+      FileSize = GetFileSize((HANDLE)this->FileTimeDateLo, 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
         v4 = *this; /*0x65d0fd*/
-        v6 = *(this + 6); /*0x65d0ff*/
+        v6 = this->FileNameAllocated; /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
         (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
-        result = -1 - *(this + 3); /*0x65d113*/
+        result = -1 - this->Handle; /*0x65d113*/
         this->FilePointer = result; /*0x65d116*/
         return result; /*0x65d11b*/
       }
@@ -11428,7 +11428,7 @@ int __thiscall CCFileClass_GetFileSize(int *this)
       FileSize = (*(int (__thiscall **)(int *))(*this + 44))(this); /*0x65d130*/
       (*(void (__thiscall **)(int *))(*this + 52))(this); /*0x65d136*/
     }
-    result = FileSize - *(this + 3); /*0x65d13e*/
+    result = FileSize - this->Handle; /*0x65d13e*/
     this->FilePointer = result; /*0x65d140*/
   }
   return result; /*0x65d119*/
@@ -11456,18 +11456,18 @@ int __thiscall FileClass_Delete(LPCSTR *this)
   int v5; // [esp-8h] [ebp-Ch]
 
   (*((void (__thiscall **)(LPCSTR *))*this + 13))(this); /*0x65d195*/
-  if ( *(this + 6) ) /*0x65d198*/
+  if ( this->FileNameAllocated ) /*0x65d198*/
   {
     if ( (*((unsigned __int8 (__thiscall **)(LPCSTR *, _DWORD))*this + 5))(this, 0) ) /*0x65d1b6*/
     {
-      if ( DeleteFileA(*(this + 6)) ) /*0x65d1c5*/
+      if ( DeleteFileA(this->FileNameAllocated) ) /*0x65d1c5*/
       {
         return 1; /*0x65d1e8*/
       }
       else
       {
         v3 = *this; /*0x65d1d3*/
-        v5 = (int)*(this + 6); /*0x65d1d5*/
+        v5 = (int)this->FileNameAllocated; /*0x65d1d5*/
         LastError = GetLastError(); /*0x65d1d7*/
         (*((void (__thiscall **)(LPCSTR *, DWORD, _DWORD, int))v3 + 16))(this, LastError, 0, v5); /*0x65d1e0*/
         return 0; /*0x65d1e4*/
@@ -11493,7 +11493,7 @@ int __thiscall FileClass_GetDosTimestamp(HANDLE *this)
   WORD FatTime[2]; // [esp+4h] [ebp-38h] BYREF
   struct _BY_HANDLE_FILE_INFORMATION FileInformation; // [esp+8h] [ebp-34h] BYREF
 
-  if ( !GetFileInformationByHandle(*(this + 5), &FileInformation) ) /*0x65d1fc*/
+  if ( !GetFileInformationByHandle(this->FileTimeDateLo, &FileInformation) ) /*0x65d1fc*/
     return 0; /*0x65d237*/
   FileTimeToDosDateTime(&FileInformation.ftLastWriteTime, FatDate, FatTime); /*0x65d215*/
   return FatTime[0] | (FatDate[0] << 16); /*0x65d233*/
@@ -11507,11 +11507,11 @@ bool __thiscall FileClass_SetTime(HANDLE *this, int wFatTime)
   struct _FILETIME FileTime; // [esp+4h] [ebp-3Ch] BYREF
   struct _BY_HANDLE_FILE_INFORMATION FileInformation; // [esp+Ch] [ebp-34h] BYREF
 
-  v3 = *(this + 5); /*0x65d246*/
+  v3 = this->FileTimeDateLo; /*0x65d246*/
   return v3 != (void *)-1 /*0x65d293*/
       && GetFileInformationByHandle(v3, &FileInformation)
       && DosDateTimeToFileTime(HIWORD(wFatTime), wFatTime, &FileTime)
-      && SetFileTime(*(this + 5), &FileInformation.ftCreationTime, &FileTime, &FileTime);
+      && SetFileTime(this->FileTimeDateLo, &FileInformation.ftCreationTime, &FileTime, &FileTime);
 }
 
 
@@ -11525,9 +11525,9 @@ void __thiscall FileClass::GetFileSizeOp(int *this, int a2, CCFileClass *aP2)
   if ( a2 )
   {
     FileSize = (CCFileClass *)CCFileClass::GetFileSize(this); /*0x65d2cd*/
-    v5 = (CCFileClass *)*(this + 3); /*0x65d2d2*/
+    v5 = (CCFileClass *)this->Handle; /*0x65d2d2*/
     this->FilePointer = (int)FileSize; /*0x65d2d5*/
-    *(this + 3) = (int)&v5->__pad_0[a2]; /*0x65d2da*/
+    this->Handle = (int)&v5->__pad_0[a2]; /*0x65d2da*/
     if ( aP2 != (CCFileClass *)-1 ) /*0x65d2e4*/
     {
       if ( (int)FileSize >= (int)aP2 ) /*0x65d2e8*/
@@ -11541,7 +11541,7 @@ void __thiscall FileClass::GetFileSizeOp(int *this, int a2, CCFileClass *aP2)
   }
   else
   {
-    *(this + 3) = 0; /*0x65d2bc*/
+    this->Handle = 0; /*0x65d2bc*/
     this->FilePointer = -1; /*0x65d2bf*/
   }
 }
@@ -11582,7 +11582,7 @@ RawFileClass *__thiscall RawFileClass::QueryInterface(_DWORD *Block, char a2)
 // ==== 0x0065D420  RawFileClass::Write  this=RawFileClass  sig=csp ====
 BOOL __thiscall RawFileClass::_vt06(_DWORD *this)
 {
-  return *(this + 5) != -1; /*0x65d42b*/
+  return this->FileTimeDateLo != -1; /*0x65d42b*/
 }
 
 
@@ -11754,8 +11754,8 @@ int __thiscall COMClass_ReleaseRef(int (__thiscall ***this)(void *, int))
 {
   int result; // eax
 
-  result = (int)*(this + 1) - 1; /*0x65d673*/
-  *(this + 1) = (int (__thiscall **)(void *, int))result; /*0x65d674*/
+  result = (int)this->q004 - 1; /*0x65d673*/
+  this->q004 = (int (__thiscall **)(void *, int))result; /*0x65d674*/
   if ( !result ) /*0x65d677*/
   {
     if ( this ) /*0x65d67b*/
@@ -14000,9 +14000,9 @@ void __thiscall sub_65FE00(_BYTE *this)
 
   if ( !this->q03D ) /*0x65fe0b*/
     return; /*0x65fe0b*/
-  if ( !*(this + 60) ) /*0x65fe11*/
+  if ( !this->ambientSoundController ) /*0x65fe11*/
   {
-    v2 = this->nextObject; /*0x65fe18*/
+    v2 = this->vtable4; /*0x65fe18*/
     v3 = this->attachedBomb; /*0x65fe1b*/
     if ( v2 != -1 ) /*0x65fe21*/
     {
@@ -14026,7 +14026,7 @@ LABEL_8:
   *((float *)this + 3) = v4; /*0x65fe66*/
   v5 = *((float *)this + 4) + 0.7853981633974483; /*0x65fe6c*/
   v15 = v5 - (double)(int)Math::RoundToInt(v4) * 1.570796326794897; /*0x65fe94*/
-  if ( *(this + 60) ) /*0x65fe83*/
+  if ( this->ambientSoundController ) /*0x65fe83*/
   {
     if ( fabs(v4 - (double)MEMORY[0x8871E0]->NukeTakeOff) >= 0.01 ) /*0x65feb9*/
     {
@@ -14045,10 +14045,10 @@ LABEL_8:
     {
       v6 = v15 + *((float *)this + 4); /*0x65fed1*/
       v7 = 4 * *(_DWORD *)this; /*0x65fed7*/
-      *(this + 60) = 0; /*0x65feda*/
+      this->ambientSoundController = 0; /*0x65feda*/
       *((float *)this + 4) = v6; /*0x65fee1*/
       v8 = dword_7F099C[v7]; /*0x65feea*/
-      this->nextObject = MEMORY[0xA8ED84]; /*0x65fef0*/
+      this->vtable4 = MEMORY[0xA8ED84]; /*0x65fef0*/
       this->attachedTag = v17; /*0x65fef6*/
       this->attachedBomb = v8; /*0x65fef9*/
       v9 = dword_7F09A0[v7]; /*0x65ff02*/

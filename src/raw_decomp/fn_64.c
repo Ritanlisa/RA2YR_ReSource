@@ -3006,7 +3006,7 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
   this->ParticleSystemTypeClass_field_0x294 = -1; /*0x6440b3*/
   this->ParticleSystemTypeClass_field_0x2B4 = -1; /*0x6440b9*/
   this->ParticleSystemTypeClass_field_0x2B8 = -1; /*0x6440bf*/
-  *((_BYTE *)this + 664) = 0; /*0x6440c5*/
+  this->__pad_298 = 0; /*0x6440c5*/
   this->ParticleSystemTypeClass_field_0x29C = 1; /*0x6440cb*/
   this->ParticleSystemTypeClass_field_0x2A0 = 0; /*0x6440d5*/
   this->ParticleSystemTypeClass_field_0x2A4 = 50; /*0x6440db*/
@@ -3021,7 +3021,7 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
   *(this + 182) = 0; /*0x64411a*/
   *(this + 184) = 0; /*0x644120*/
   this->ParticleSystemTypeClass_field_0x2E8 = 0; /*0x644126*/
-  *(this + 188) = 0; /*0x64412c*/
+  this->__pad_2F0 = 0; /*0x64412c*/
   *(this + 190) = 0; /*0x644132*/
   this->ParticleSystemTypeClass_field_0x2CC = 1069128089; /*0x64413b*/
   this->ParticleSystemTypeClass_field_bool_2D4 = 1067030937; /*0x644145*/
@@ -3033,7 +3033,7 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
   this->ParticleSystemTypeClass_field_0x300 = 0; /*0x644171*/
   this->q304 = 0; /*0x644177*/
   this->ParticleSystemTypeClass_field_0x308 = 0; /*0x64417d*/
-  *((_BYTE *)this + 780) = 0; /*0x644196*/
+  this->__pad_30C = 0; /*0x644196*/
   *this = &ParticleSystemTypeClass::`vftable'; /*0x64419c*/
   this->vtable2 = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
   this->vtable3 = &ParticleSystemTypeClass::`vftable'; /*0x6441a8*/
@@ -3051,7 +3051,7 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
     MEMORY[0xA83D78] = (ParticleSystemTypeClass *)((char *)MEMORY[0xA83D78] + 1); /*0x6441ff*/
     *(_DWORD *)&MEMORY[0xA83D6C]->__pad_0[4 * (_DWORD)v3] = this; /*0x64420b*/
   }
-  *((_BYTE *)this + 564) = 1; /*0x64420e*/
+  this->q234 = 1; /*0x64420e*/
   return this; /*0x644217*/
 }
 
@@ -3617,7 +3617,7 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
   this->ParticleTypeClass_field_0x304 = 0; /*0x644cbd*/
   *((_BYTE *)this + 776) = 0; /*0x644cc3*/
   *((_BYTE *)this + 777) = 0; /*0x644cc9*/
-  *((_BYTE *)this + 778) = 0; /*0x644ccf*/
+  this->__pad_30A = 0; /*0x644ccf*/
   *((_BYTE *)this + 779) = 4; /*0x644cd5*/
   *((_BYTE *)this + 780) = 0; /*0x644cdc*/
   *((_BYTE *)this + 783) = 0; /*0x644ce2*/
@@ -3650,7 +3650,7 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
     v4 = (*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9964])++; /*0x644da3*/
     *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9952] + 4 * v4) = this; /*0x644db2*/
   }
-  *((_BYTE *)this + 564) = 0; /*0x644db5*/
+  this->q234 = 0; /*0x644db5*/
   return this; /*0x644dbd*/
 }
 
@@ -4326,8 +4326,8 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
 
   this->Items = 0; /*0x645a7d*/
   this->Capacity = a2; /*0x645a80*/
-  *((_BYTE *)this + 12) = 1; /*0x645a83*/
-  *((_BYTE *)this + 13) = 0; /*0x645a87*/
+  this->q030 = 1; /*0x645a83*/
+  this->__pad_034 = 0; /*0x645a87*/
   *this = &vt_VectorClass_RGBClass; /*0x645a8a*/
   if ( a2 ) /*0x645a90*/
   {
@@ -4374,11 +4374,11 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
         v6 = 0; /*0x645ae3*/
       }
       this->Items = v6; /*0x645ae5*/
-      *((_BYTE *)this + 13) = 1; /*0x645ae8*/
+      this->__pad_034 = 1; /*0x645ae8*/
     }
   }
   *this = &vt_DynamicVectorClass_RGBClass; /*0x645aec*/
-  *(this + 5) = 10; /*0x645af2*/
+  this->__pad_014 = 10; /*0x645af2*/
   this->q010 = 0; /*0x645af9*/
   return this; /*0x645afe*/
 }
@@ -4498,9 +4498,9 @@ int __thiscall Int4_Set2(_DWORD *this, int a2, int a3, int a4, int a5)
 void __thiscall sub_645CD0(float *this, float a2)
 {
   *this = a2 * *this; /*0x645cd6*/
-  *(this + 1) = a2 * *(this + 1); /*0x645cdf*/
-  *(this + 2) = a2 * *(this + 2); /*0x645ce9*/
-  *(this + 3) = a2 * *(this + 3); /*0x645cf3*/
+  this->vtable2 = a2 * this->vtable2; /*0x645cdf*/
+  this->vtable3 = a2 * this->vtable3; /*0x645ce9*/
+  this->vtable4 = a2 * this->vtable4; /*0x645cf3*/
 }
 
 
@@ -4515,9 +4515,9 @@ char *__thiscall Function::645D00(char *this, int a2)
 _DWORD *__thiscall Float4::Copy(float *this, IUnknown *aP1, IUnknown *aP2)
 {
   *this = *(float *)&aP2->field_0; /*0x645d27*/
-  *(this + 1) = *(float *)&aP2->field_4; /*0x645d2c*/
-  *(this + 2) = *(float *)&aP2->field_8; /*0x645d32*/
-  *(this + 3) = *(float *)&aP2->field_C; /*0x645d3c*/
+  this->vtable2 = *(float *)&aP2->field_4; /*0x645d2c*/
+  this->vtable3 = *(float *)&aP2->field_8; /*0x645d32*/
+  this->vtable4 = *(float *)&aP2->field_C; /*0x645d3c*/
   aP1->field_0 = *(int *)this; /*0x645d43*/
   aP1->field_4 = *(int *)(this + 1); /*0x645d48*/
   aP1->field_8 = *(int *)(this + 2); /*0x645d4e*/
@@ -4564,17 +4564,17 @@ float *__thiscall sub_645D60(float *this, float *a2)
   v24 = this->vtable4; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
   v4 = QuaternionMathMultiply(v30, &v21, v3); /*0x645d9c*/
-  v5 = *(this + 3); /*0x645da3*/
+  v5 = this->vtable4; /*0x645da3*/
   v6 = *((_DWORD *)v4 + 1); /*0x645da6*/
   v25 = *(_DWORD *)v4; /*0x645da9*/
   v7 = *((_DWORD *)v4 + 2); /*0x645daf*/
   v26 = v6; /*0x645db2*/
   v27 = v7; /*0x645db7*/
   *(float *)&v20 = -v5; /*0x645dbe*/
-  v8 = *(this + 2); /*0x645dc1*/
+  v8 = this->vtable3; /*0x645dc1*/
   v28 = *((_DWORD *)v4 + 3); /*0x645dc5*/
   *(float *)&v19 = -v8; /*0x645dcb*/
-  *(float *)&v18 = -*(this + 1); /*0x645dd4*/
+  *(float *)&v18 = -this->vtable2; /*0x645dd4*/
   *(float *)&v17 = -*this; /*0x645de0*/
   v9 = (float *)Int4::Set(v30, v17, v18, v19, v20); /*0x645de3*/
   v29[0] = *v9; /*0x645dea*/
@@ -4591,9 +4591,9 @@ float *__thiscall sub_645D60(float *this, float *a2)
   if ( !(v14 | v15) ) /*0x645e97*/
   {
     *this = -*this; /*0x645ea2*/
-    *(this + 1) = -*(this + 1); /*0x645ea9*/
-    *(this + 2) = -*(this + 2); /*0x645eb1*/
-    *(this + 3) = -*(this + 3); /*0x645eb9*/
+    this->vtable2 = -this->vtable2; /*0x645ea9*/
+    this->vtable3 = -this->vtable3; /*0x645eb1*/
+    this->vtable4 = -this->vtable4; /*0x645eb9*/
   }
   return this; /*0x645ebe*/
 }

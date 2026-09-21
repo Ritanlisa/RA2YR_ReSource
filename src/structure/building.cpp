@@ -6297,108 +6297,92 @@ retn    4
 
 // IDA 0x449830: find placement cells variant
 // 0x6b0300
-void BuildingClass::FindPlacementCells2() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BuildingClass_FindPlacementCells2(_DWORD *this, _DWORD *a2, int a3)
-{
-  int v4; // ecx
-  int v5; // edi
-  int v6; // eax
-  int FoundationWidth; // eax
-  int v8; // ebx
-  int v9; // edi
-  int FoundationHeight; // ebx
-  int v11; // eax
-  int v12; // eax
-  int v13; // eax
-  __int16 *v14; // eax
-  int TileIndex; // eax
-  int v16; // eax
-  __int16 v17; // dx
-  int v19; // [esp+Ch] [ebp-Ch] BYREF
-  _DWORD v20[2]; // [esp+10h] [ebp-8h] BYREF
-
-  v4 = *(this + 9);
-  if ( v4 && (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 6 )
-  {
-    v5 = *(this + 9);
-    if ( v5 )
-      v6 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v5 + 44))(*(this + 9)) == 6 ? v5 : 0;
-    else
-      v6 = 0;
-    FoundationWidth = BuildingTypeClass::GetFoundationWidth(*(_DWORD **)(v6 + 1312));
-    v8 = *(this + 9);
-    v9 = FoundationWidth;
-    if ( v8 )
+void BuildingClass::FindPlacementCells2(int* outCell, int inCell) {
+    TechnoClass* occupant = (TechnoClass*)this->objectTypeFlags;
+    int width;
+    int height;
+    if ( occupant && (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)occupant->__pad_0 + 44))(occupant) == 6 )
     {
-      v11 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v8 + 44))(*(this + 9));
-      FoundationHeight = BuildingTypeClass::GetFoundationHeight(*(_DWORD *)(v11 == 6 ? v8 + 0x520 : 1312), 0);
+        TechnoClass* occupant2 = (TechnoClass*)this->objectTypeFlags;
+        TechnoClass* typedOccupant;
+        if ( occupant2 )
+            typedOccupant = ((*(int (__thiscall **)(_DWORD))(*(_DWORD *)occupant2->__pad_0 + 44))((int*)this->objectTypeFlags) == 6 ? occupant2 : 0);
+        else
+            typedOccupant = 0;
+        width = BuildingTypeClass::GetFoundationWidth((BuildingTypeClass*)*(int*)((char*)typedOccupant + 1312));
+        TechnoClass* occupant3 = (TechnoClass*)this->objectTypeFlags;
+        if ( occupant3 )
+        {
+            int whatAmI = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)occupant3->__pad_0 + 44))((int*)this->objectTypeFlags);
+            height = BuildingTypeClass::GetFoundationHeight(
+                (BuildingTypeClass*)(whatAmI == 6 ? *(int*)((char*)occupant3 + 1312) : *(_DWORD *)0x520),
+                0);
+        }
+        else
+        {
+            height = BuildingTypeClass::GetFoundationHeight((BuildingTypeClass*)*(_DWORD *)0x520, 0);
+        }
+    }
+    else if ( *(_DWORD *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->objectTypeFlags + 132))(this->objectTypeFlags) + 1028) )
+    {
+        int baseType = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->objectTypeFlags + 132))(this->objectTypeFlags);
+        width = BuildingTypeClass::GetFoundationWidth((BuildingTypeClass*)*(_DWORD *)(baseType + 1028));
+        int baseType2 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->objectTypeFlags + 132))(this->objectTypeFlags);
+        height = BuildingTypeClass::GetFoundationHeight((BuildingTypeClass*)*(_DWORD *)(baseType2 + 1028), 0);
     }
     else
     {
-      FoundationHeight = BuildingTypeClass::GetFoundationHeight(MEMORY[0x520], 0);
+        width = 1;
+        height = 1;
     }
-  }
-  else if ( *(_DWORD *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 9) + 132))(*(this + 9)) + 1028) )
-  {
-    v12 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 9) + 132))(*(this + 9));
-    v9 = BuildingTypeClass::GetFoundationWidth(*(_DWORD **)(v12 + 1028));
-    v13 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 9) + 132))(*(this + 9));
-    FoundationHeight = BuildingTypeClass::GetFoundationHeight(*(_DWORD *)(v13 + 1028), 0);
-  }
-  else
-  {
-    v9 = 1;
-    FoundationHeight = 1;
-  }
-  v14 = (__int16 *)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 9) + 440))(*(this + 9), &v19);
-  TileIndex = MapClass::GetTileIndex(&MEMORY[0x87F7E8], v14, 0, 0);
-  v16 = *LayerClass::Pathfinding_Find(
-           &MEMORY[0x87F7E8],
-           (int)v20,
-           v20,
-           (__int16 *)&a3,
-           1,
-           TileIndex,
-           0,
-           0,
-           v9,
-           FoundationHeight,
-           1,
-           0,
-           0,
-           0,
-           (__int16 *)&a3,
-           0,
-           1);
-  v20[0] = v16;
-  v17 = HIWORD(v16);
-  if ( v16 == MEMORY[0xB0B5B8] )
-  {
-    *a2 = MEMORY[0xB0B5B8];
-    return a2;
-  }
-  else
-  {
-    if ( v9 > 2 )
+    int cellBuf[2];
+    int* coords = (int*)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->objectTypeFlags + 440))(this->objectTypeFlags, &cellBuf);
+    int tileIndex = MapClass::GetTileIndex(&DataGlobal_87F7E8, coords, 0, 0);
+    int foundBuf[2] = {0, 0};
+    int* found = (int*)*LayerClass::Pathfinding_Find(
+        &DataGlobal_87F7E8,
+        (int)foundBuf,
+        foundBuf,
+        (__int16 *)&inCell,
+        1,
+        tileIndex,
+        0,
+        0,
+        width,
+        height,
+        1,
+        0,
+        0,
+        0,
+        (__int16 *)&inCell,
+        0,
+        1);
+    foundBuf[0] = (int)found;
+    short foundY = HIWORD(found);
+    if ( found == *(SlaveManagerClass **)&DataGlobal_B0B5B8 )
     {
-      HIWORD(a3) = HIWORD(v20[0]);
-      LOWORD(a3) = v16 + 1;
-      v16 = a3;
-      v20[0] = a3;
-      v17 = HIWORD(a3);
+        *outCell = *(int *)&DataGlobal_B0B5B8;
+        return;
     }
-    if ( FoundationHeight > 2 )
+    else
     {
-      LOWORD(a3) = v16;
-      HIWORD(a3) = v17 + 1;
-      v16 = a3;
+        int adjusted = inCell;
+        if ( width > 2 )
+        {
+            HIWORD(adjusted) = HIWORD(foundBuf[0]);
+            LOWORD(adjusted) = (short)found + 1;
+            found = (int*)adjusted;
+            foundBuf[0] = adjusted;
+        }
+        if ( height > 2 )
+        {
+            LOWORD(adjusted) = (short)found;
+            HIWORD(adjusted) = foundY + 1;
+        }
+        *outCell = (int)found;
     }
-    *a2 = v16;
-    return a2;
-  }
+    return;
 }
-
 /* ASM:
 sub     esp, 0Ch
 push    ebx
@@ -6566,7 +6550,6 @@ mov     eax, ecx
 add     esp, 0Ch
 retn    8
 */
-}
 
 // IDA 0x449840: search for valid placement
 // 0x56bec0

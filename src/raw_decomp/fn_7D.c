@@ -13659,7 +13659,7 @@ _DWORD *__thiscall sub_7DCE0E(_com_error *this, int a2)
 {
   int v3; // eax
 
-  *(this + 1) = *(_com_error *)(a2 + 4); /*0x7dce18*/
+  this->q004 = *(_com_error *)(a2 + 4); /*0x7dce18*/
   v3 = *(_DWORD *)(a2 + 8); /*0x7dce1b*/
   this->q00C = 0; /*0x7dce1e*/
   this->q008 = v3; /*0x7dce22*/

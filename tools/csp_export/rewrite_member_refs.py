@@ -28,14 +28,24 @@ except Exception:
     tmap = {}
 
 # this->Member lookup: canonClass -> {byteoff: (name, size)}
-def mem_of(cls, off, width):
+def mem_of(cls, off, width=None):
+    """Look up member at byte offset. Width is advisory (canon is authoritative);
+    try exact offset first, then scaled variants."""
     e = mtab.get(cls)
     if not e:
         return None
+    # try exact offset
     m = e['members'].get(str(off))
-    if not m or m.get('size') != width:
-        return None
-    return m['name']
+    if m and m.get('name'):
+        return m['name']
+    # try dword-scaled variants (if N itself is a dword index)
+    for alt in (off * 4, off // 4 if off % 4 == 0 else None):
+        if alt is None or alt == off:
+            continue
+        m = e['members'].get(str(alt))
+        if m and m.get('name'):
+            return m['name']
+    return None
 
 def this_class(addr, sig_line):
     k = '0x%08X:this' % addr
@@ -66,25 +76,23 @@ def rewrite(text, cls, scaled):
     count = 0
     def sub_deref(m):
         nonlocal count
-        cast = m.group(1)
         n = int(m.group(2), 0)
-        width = WIDTH.get(cast, 4)
-        off = n * (4 if scaled else 1)
-        name = mem_of(cls, off, width)
-        if name is None:
-            return m.group(0)
-        count += 1
-        return 'this->%s' % name
+        # try both scaled and unscaled offsets — canon is authoritative
+        for off in ([n * 4, n] if scaled else [n, n * 4]):
+            name = mem_of(cls, off)
+            if name is not None:
+                count += 1
+                return 'this->%s' % name
+        return m.group(0)
     def sub_index(m):
         nonlocal count
-        cast = m.group(1)
         n = int(m.group(2), 0)
-        width = WIDTH.get(cast, 4)
-        name = mem_of(cls, n * 4, width)
-        if name is None:
-            return m.group(0)
-        count += 1
-        return 'this->%s' % name
+        for off in ([n * 4, n] if scaled else [n, n * 4]):
+            name = mem_of(cls, off)
+            if name is not None:
+                count += 1
+                return 'this->%s' % name
+        return m.group(0)
     text = PATTERNS[0][0].sub(sub_deref, text)
     text = PATTERNS[1][0].sub(sub_index, text)
     return text, count

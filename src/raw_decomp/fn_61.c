@@ -235,7 +235,7 @@ _DWORD *__thiscall sub_6107E0(_DWORD *this)
   this->vtable3 = 0; /*0x6107e9*/
   this->vtable4 = 0; /*0x6107ec*/
   this->uniqueId = 0; /*0x6107ef*/
-  *((_WORD *)this + 10) = 0; /*0x6107f2*/
+  this->owningHouseIndex = 0; /*0x6107f2*/
   this->q114 = 0; /*0x6107f6*/
   this->q118 = 0; /*0x6107fc*/
   this->q11C = 0; /*0x610802*/

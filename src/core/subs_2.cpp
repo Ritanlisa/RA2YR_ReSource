@@ -1611,12 +1611,7 @@ int ReturnZero46D310()
   return 0;
 }
 
-// IDA: 0x46D350  proposal: MethodStub46D350
-// IDA: void __thiscall sub_46D350(_DWORD *this)
-//   *this = &CampaignScoreClass::`vftable';
-void MethodStub46D350(void* _this) // thiscall
-{
-}
+// 46D350 stub removed in G28: real translation lives in src/e4/addr46_e4.cpp (vtable install)
 
 // IDA: 0x46D480  proposal: ArithmeticCompute46D480
 // IDA: __int64 __usercall sub_46D480@<edx:eax>(__int64 result@<edx:eax>, int a2@<ecx>)

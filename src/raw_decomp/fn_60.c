@@ -17,13 +17,13 @@ char __thiscall VectorClass_ptr_SpotLightClass::Add(int *this, int a2)
   _DWORD *v4; // eax
   int v5; // ecx
 
-  v2 = *(this + 2); /*0x600022*/
+  v2 = this->Capacity; /*0x600022*/
   if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x60002d*/
   {
     v3 = 0; /*0x60002f*/
     if ( v2 <= 0 ) /*0x600033*/
       return 1; /*0x600053*/
-    v4 = (_DWORD *)*(this + 1); /*0x600035*/
+    v4 = (_DWORD *)this->Items; /*0x600035*/
     v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x60003b*/
     while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x600044*/
     {
@@ -46,12 +46,12 @@ char __thiscall VectorClass_ptr_SpotLightClass::_vt02(void *this, int a2, _DWORD
 
   if ( a2 ) /*0x60006c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x600076*/
+    this->IsInitialized = 0; /*0x600076*/
     if ( a3 ) /*0x60007c*/
       v4 = a3; /*0x600092*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x60008e*/
-    *((_BYTE *)this + 12) = 1; /*0x600096*/
+    this->IsInitialized = 1; /*0x600096*/
     if ( v4 ) /*0x60009a*/
     {
       if ( this->Items ) /*0x6000a5*/
@@ -61,7 +61,7 @@ char __thiscall VectorClass_ptr_SpotLightClass::_vt02(void *this, int a2, _DWORD
           v6 = a2; /*0x6000b3*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x6000b9*/
           ++i; /*0x6000be*/
-        if ( *((_BYTE *)this + 13) ) /*0x6000cb*/
+        if ( this->IsAllocated ) /*0x6000cb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x6000d6*/
           this->Items = 0; /*0x6000de*/
@@ -69,7 +69,7 @@ char __thiscall VectorClass_ptr_SpotLightClass::_vt02(void *this, int a2, _DWORD
       }
       this->Items = v4; /*0x6000e7*/
       this->Capacity = a2; /*0x6000ef*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x6000f2*/
+      this->IsAllocated = a3 == 0; /*0x6000f2*/
       return 1; /*0x6000f8*/
     }
     else
@@ -79,7 +79,7 @@ char __thiscall VectorClass_ptr_SpotLightClass::_vt02(void *this, int a2, _DWORD
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x600102*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x600102*/
     return 1; /*0x600108*/
   }
 }
@@ -140,12 +140,12 @@ char __thiscall VectorClass_ptr_SpotLightClass::sub_6001A0(void *this, int a2, _
 
   if ( a2 ) /*0x6001ac*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x6001b2*/
+    this->IsInitialized = 0; /*0x6001b2*/
     if ( a3 ) /*0x6001b8*/
       v4 = a3; /*0x6001ce*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x6001ca*/
-    *((_BYTE *)this + 12) = 1; /*0x6001d2*/
+    this->IsInitialized = 1; /*0x6001d2*/
     if ( !v4 ) /*0x6001d6*/
       return 0; /*0x60024a*/
     if ( this->Items ) /*0x6001d8*/
@@ -155,7 +155,7 @@ char __thiscall VectorClass_ptr_SpotLightClass::sub_6001A0(void *this, int a2, _
         v5 = a2; /*0x6001e6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x6001ec*/
         ++i; /*0x6001f1*/
-      if ( *((_BYTE *)this + 13) ) /*0x6001fe*/
+      if ( this->IsAllocated ) /*0x6001fe*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x600209*/
         this->Items = 0; /*0x600211*/
@@ -163,15 +163,15 @@ char __thiscall VectorClass_ptr_SpotLightClass::sub_6001A0(void *this, int a2, _
     }
     this->Items = v4; /*0x60021a*/
     this->DynamicVector_field_0x8 = a2; /*0x600222*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x600225*/
+    this->IsAllocated = a3 == 0; /*0x600225*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x60022e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x600231*/
-  if ( v7 < this->DynamicVector_field_0x10 ) /*0x600239*/
-    this->DynamicVector_field_0x10 = v7; /*0x60023b*/
+  if ( v7 < this->Items ) /*0x600239*/
+    this->Items = v7; /*0x60023b*/
   return 1; /*0x60023e*/
 }
 
@@ -187,7 +187,7 @@ int __thiscall VectorClass_ptr_SpotLightClass::sub_600250(int *this, _DWORD *a2)
   result = 0; /*0x600253*/
   if ( v2 <= 0 ) /*0x600258*/
     return -1; /*0x60026f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x60025e*/
+  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x60025e*/
   {
     if ( ++result >= v2 ) /*0x60026d*/
       return -1; /*0x60026d*/

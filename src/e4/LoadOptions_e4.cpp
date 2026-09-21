@@ -6,39 +6,29 @@
 namespace gamemd {
 char LoadOptions::AddRef(LPCCH lpMultiByteStr)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall LoadOptions::_vt01(LPCCH lpMultiByteStr)
-{
-  int v1; // esi
-  wchar_t *StringCSF; // eax
-  HWND MessageBox; // edi
-  char Saved; // bl
+    int targetRate = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance);
+    wchar_t* loadPrompt = GetStringCSF(aTxtLoading, 0, g_Str_File_LoadDlg_CPP, 1052);
+    HWND waitBox = CreateMessageBox((LPARAM)loadPrompt, 0, 0);
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance);
+    if ( waitBox )
+        Dialog::Show(waitBox);
+    g_BounceClassInit = 0;
+    DataGlobal_A8E378[0] = 0;
+    WTFMode::Shutdown(g_GameMode_Current);
+    char loaded = Game::LoadSaved(lpMultiByteStr);
+    while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) < targetRate )
+        (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
+    while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) > targetRate )
+        (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance);
+    if ( waitBox )
+        Dialog::Destroy(waitBox);
+    return loaded;
 
-  v1 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 40))(MEMORY[0x887640]); /*0x559d81*/
-  StringCSF = GetStringCSF(aTxtLoading, 0, MEMORY[0x829F5C], 1052); /*0x559d83*/
-  MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x559d9b*/
-  if ( MessageBox ) /*0x559da0*/
-    Dialog::Show(MessageBox); /*0x559da4*/
-  MEMORY[0xA8ED5C] = 0; /*0x559dae*/
-  MEMORY[0xA8E378] = 0; /*0x559db5*/
-  WTFMode::Shutdown(MEMORY[0xA8B238]); /*0x559dbc*/
-  Saved = Game::LoadSaved(lpMultiByteStr); /*0x559dd0*/
-  while ( (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 40))(MEMORY[0x887640]) < v1 ) /*0x559dd9*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x559de3*/
-  while ( (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 40))(MEMORY[0x887640]) > v1 ) /*0x559e02*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x559e0c*/
-  if ( MessageBox ) /*0x559e20*/
-    Dialog::Destroy(MessageBox); /*0x559e24*/
-  return Saved; /*0x559e29*/
-}
 }
 } // namespace gamemd
 
 // 0x559E40
 namespace gamemd {
-char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
-{
 char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
 {
     wchar_t* savePrompt = GetStringCSF(aTxtSavingGame, 0, g_Str_File_LoadDlg_CPP, 1107);
@@ -59,32 +49,20 @@ char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
 namespace gamemd {
 char LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
-{
-  IStorage *v3; // eax
-  bool v4; // sf
-  IStorage *ppstgOpen; // [esp+4h] [ebp-84h] BYREF
-  WCHAR WideCharStr[64]; // [esp+8h] [ebp-80h] BYREF
+    WCHAR widePath[64];
+    MultiByteToWideChar(0, 0, lpMultiByteStr, -1, widePath, 64);
+    IStorage* storage = 0;
+    if ( StgOpenStorage(widePath, 0, 0x12u, 0, 0, &storage) < 0
+      || ScenarioPropertyReadCOM(a2, (int)storage) < 0 )
+    {
+        if ( storage )
+            storage->lpVtbl->Release(storage);
+        return 0;
+    }
+    if ( storage )
+        storage->lpVtbl->Release(storage);
+    return 1;
 
-  MultiByteToWideChar(0, 0, lpMultiByteStr, -1, WideCharStr, 64); /*0x67fd3f*/
-  ppstgOpen = 0; /*0x67fd65*/
-  if ( StgOpenStorage(WideCharStr, 0, 0x12u, 0, 0, &ppstgOpen) < 0 ) /*0x67fd75*/
-  {
-    v3 = ppstgOpen; /*0x67fd77*/
-LABEL_4:
-    if ( v3 ) /*0x67fd93*/
-      v3->lpVtbl->Release(v3); /*0x67fd98*/
-    return 0; /*0x67fda4*/
-  }
-  v4 = ScenarioPropertyReadCOM(a2, (int)ppstgOpen) < 0; /*0x67fd89*/
-  v3 = ppstgOpen; /*0x67fd8b*/
-  if ( v4 ) /*0x67fd8f*/
-    goto LABEL_4; /*0x67fd8f*/
-  if ( ppstgOpen ) /*0x67fda7*/
-    ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67fdac*/
-  return 1; /*0x67fd9d*/
-}
 }
 } // namespace gamemd
 

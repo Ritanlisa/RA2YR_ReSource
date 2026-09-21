@@ -8626,7 +8626,7 @@ char __thiscall DynamicClass::Insert(int *this, HashTable *aP1, IUnknown *aP2)
   v5 = *this; /*0x7aca09*/
   if ( (int)aP2 > v5 ) /*0x7aca0f*/
     v4 = v5; /*0x7aca11*/
-  v6 = *(this + 1); /*0x7aca13*/
+  v6 = this->HashTable_field_0x04; /*0x7aca13*/
   if ( v4 >= v6 && v5 >= v6 ) /*0x7aca20*/
   {
     v7 = 2 * v5; /*0x7aca22*/
@@ -8640,14 +8640,14 @@ char __thiscall DynamicClass::Insert(int *this, HashTable *aP1, IUnknown *aP2)
     v9 = (CCINIClass *)__2_YAPAXI_Z(108 * v7); /*0x7aca49*/
     memset(v9, 0, (unsigned int)v8); /*0x7aca54*/
     v17 = (int)v9; /*0x7aca5e*/
-    v10 = (CCINIClass *)*(this + 2); /*0x7aca64*/
+    v10 = (CCINIClass *)this->HashTable_field_0x08; /*0x7aca64*/
     if ( v10 ) /*0x7aca69*/
       qmemcpy(v9, v10, 108 * *this); /*0x7aca7d*/
-    __3_YAXPAX_Z((void *)*(this + 2)); /*0x7aca8a*/
-    *(this + 2) = v17; /*0x7aca9a*/
-    *(this + 1) = aP2a; /*0x7aca9d*/
+    __3_YAXPAX_Z((void *)this->HashTable_field_0x08); /*0x7aca8a*/
+    this->HashTable_field_0x08 = v17; /*0x7aca9a*/
+    this->HashTable_field_0x04 = aP2a; /*0x7aca9d*/
   }
-  if ( *this >= *(this + 1) ) /*0x7acaa7*/
+  if ( *this >= this->HashTable_field_0x04 ) /*0x7acaa7*/
   {
     v11 = 2 * *this; /*0x7acaa9*/
     aP2b = v11; /*0x7acaae*/
@@ -8660,16 +8660,16 @@ char __thiscall DynamicClass::Insert(int *this, HashTable *aP1, IUnknown *aP2)
     v13 = (CCINIClass *)__2_YAPAXI_Z(108 * v11); /*0x7acacf*/
     memset(v13, 0, (unsigned int)v12); /*0x7acada*/
     v18 = (int)v13; /*0x7acae4*/
-    v14 = (CCINIClass *)*(this + 2); /*0x7acaea*/
+    v14 = (CCINIClass *)this->HashTable_field_0x08; /*0x7acaea*/
     if ( v14 ) /*0x7acaef*/
       qmemcpy(v13, v14, 108 * *this); /*0x7acb03*/
-    __3_YAXPAX_Z((void *)*(this + 2)); /*0x7acb10*/
-    *(this + 2) = v18; /*0x7acb20*/
-    *(this + 1) = aP2b; /*0x7acb23*/
+    __3_YAXPAX_Z((void *)this->HashTable_field_0x08); /*0x7acb10*/
+    this->HashTable_field_0x08 = v18; /*0x7acb20*/
+    this->HashTable_field_0x04 = aP2b; /*0x7acb23*/
   }
   if ( v4 < *this ) /*0x7acb2a*/
-    memcpy((void *)(*(this + 2) + 36 * (3 * v4 + 3)), (const void *)(*(this + 2) + 108 * v4), 108 * *this - 108 * v4); /*0x7acb53*/
-  v15 = (HashTable *)(*(this + 2) + 108 * v4); /*0x7acb65*/
+    memcpy((void *)(this->HashTable_field_0x08 + 36 * (3 * v4 + 3)), (const void *)(this->HashTable_field_0x08 + 108 * v4), 108 * *this - 108 * v4); /*0x7acb53*/
+  v15 = (HashTable *)(this->HashTable_field_0x08 + 108 * v4); /*0x7acb65*/
   if ( v15 ) /*0x7acb6a*/
     qmemcpy(v15, aP1, 0x6Cu); /*0x7acb75*/
   ++*this; /*0x7acb7c*/
@@ -8734,7 +8734,7 @@ char __thiscall ConnectAndLoginWOL_Connect_7ACBE0(void *this, const char **a1, T
   v9 = (CCINIClass *)this->vtable3; /*0x7acc45*/
   v10 = this->vtable2 + 1; /*0x7acc48*/
   this->vtable2 = v10; /*0x7acc55*/
-  if ( (double)(unsigned int)v10 / (double)(int)v9 >= *((double *)this + 5) && *((_BYTE *)this + 20) != 1 ) /*0x7acc7e*/
+  if ( (double)(unsigned int)v10 / (double)(int)v9 >= *((double *)this + 5) && this->abstractFlags != 1 ) /*0x7acc7e*/
   {
     Block = *(CCINIClass **)this; /*0x7acc89*/
     v11 = this->vtable4 + 1; /*0x7acc97*/
@@ -9024,13 +9024,13 @@ char __thiscall WonlineStringDialogControl_12_::_vt01(int *this, int a2)
   _DWORD *v4; // eax
   int v5; // ecx
 
-  v2 = *(this + 2); /*0x7ad092*/
+  v2 = this->Capacity; /*0x7ad092*/
   if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x7ad09d*/
   {
     v3 = 0; /*0x7ad09f*/
     if ( v2 <= 0 ) /*0x7ad0a3*/
       return 1; /*0x7ad0c3*/
-    v4 = (_DWORD *)*(this + 1); /*0x7ad0a5*/
+    v4 = (_DWORD *)this->Items; /*0x7ad0a5*/
     v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x7ad0ab*/
     while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x7ad0b4*/
     {
@@ -9053,12 +9053,12 @@ char __thiscall WonlineStringDialogControl_12_::_vt02(void *this, int a2, _DWORD
 
   if ( a2 ) /*0x7ad0dc*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x7ad0e6*/
+    this->IsInitialized = 0; /*0x7ad0e6*/
     if ( a3 ) /*0x7ad0ec*/
       v4 = a3; /*0x7ad102*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x7ad0fe*/
-    *((_BYTE *)this + 12) = 1; /*0x7ad106*/
+    this->IsInitialized = 1; /*0x7ad106*/
     if ( v4 ) /*0x7ad10a*/
     {
       if ( this->Items ) /*0x7ad115*/
@@ -9068,7 +9068,7 @@ char __thiscall WonlineStringDialogControl_12_::_vt02(void *this, int a2, _DWORD
           v6 = a2; /*0x7ad123*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x7ad129*/
           ++i; /*0x7ad12e*/
-        if ( *((_BYTE *)this + 13) ) /*0x7ad13b*/
+        if ( this->IsAllocated ) /*0x7ad13b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x7ad146*/
           this->Items = 0; /*0x7ad14e*/
@@ -9076,7 +9076,7 @@ char __thiscall WonlineStringDialogControl_12_::_vt02(void *this, int a2, _DWORD
       }
       this->Items = v4; /*0x7ad157*/
       this->Capacity = a2; /*0x7ad15f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x7ad162*/
+      this->IsAllocated = a3 == 0; /*0x7ad162*/
       return 1; /*0x7ad168*/
     }
     else
@@ -9086,7 +9086,7 @@ char __thiscall WonlineStringDialogControl_12_::_vt02(void *this, int a2, _DWORD
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x7ad172*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x7ad172*/
     return 1; /*0x7ad178*/
   }
 }
@@ -9147,12 +9147,12 @@ char __thiscall WonlineStringDialogControl_12_::sub_7AD210(void *this, int a2, _
 
   if ( a2 ) /*0x7ad21c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x7ad222*/
+    this->IsInitialized = 0; /*0x7ad222*/
     if ( a3 ) /*0x7ad228*/
       v4 = a3; /*0x7ad23e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x7ad23a*/
-    *((_BYTE *)this + 12) = 1; /*0x7ad242*/
+    this->IsInitialized = 1; /*0x7ad242*/
     if ( !v4 ) /*0x7ad246*/
       return 0; /*0x7ad2ba*/
     if ( this->Items ) /*0x7ad248*/
@@ -9162,7 +9162,7 @@ char __thiscall WonlineStringDialogControl_12_::sub_7AD210(void *this, int a2, _
         v5 = a2; /*0x7ad256*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x7ad25c*/
         ++i; /*0x7ad261*/
-      if ( *((_BYTE *)this + 13) ) /*0x7ad26e*/
+      if ( this->IsAllocated ) /*0x7ad26e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x7ad279*/
         this->Items = 0; /*0x7ad281*/
@@ -9170,15 +9170,15 @@ char __thiscall WonlineStringDialogControl_12_::sub_7AD210(void *this, int a2, _
     }
     this->Items = v4; /*0x7ad28a*/
     this->DynamicVector_field_0x8 = a2; /*0x7ad292*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x7ad295*/
+    this->IsAllocated = a3 == 0; /*0x7ad295*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x7ad29e*/
   }
   v7 = this->DynamicVector_field_0x8; /*0x7ad2a1*/
-  if ( v7 < this->DynamicVector_field_0x10 ) /*0x7ad2a9*/
-    this->DynamicVector_field_0x10 = v7; /*0x7ad2ab*/
+  if ( v7 < this->Items ) /*0x7ad2a9*/
+    this->Items = v7; /*0x7ad2ab*/
   return 1; /*0x7ad2ae*/
 }
 
@@ -9194,7 +9194,7 @@ int __thiscall WonlineStringDialogControl_12_::sub_7AD2C0(int *this, _DWORD *a2)
   result = 0; /*0x7ad2c3*/
   if ( v2 <= 0 ) /*0x7ad2c8*/
     return -1; /*0x7ad2df*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x7ad2ce*/
+  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x7ad2ce*/
   {
     if ( ++result >= v2 ) /*0x7ad2dd*/
       return -1; /*0x7ad2dd*/
@@ -10165,7 +10165,7 @@ char __thiscall HashTable::Lookup(_DWORD *this, ObjectClass *aP1, TechnoTypeClas
     if ( v11 || v12 ) /*0x7ae2a3*/
     {
       v13 = this->vtable3; /*0x7ae2ac*/
-      if ( v13 > this->TargetSpecialThreatCoefficient && *((_BYTE *)this + 20) != 1 ) /*0x7ae2be*/
+      if ( v13 > this->TargetSpecialThreatCoefficient && this->SlowdownDistance != 1 ) /*0x7ae2be*/
       {
         v14 = this->vtable4; /*0x7ae2c0*/
         v15 = (AbstractClass *)*this; /*0x7ae2c3*/
@@ -10229,7 +10229,7 @@ LABEL_23:
     if ( v32 <= *((double *)this + 4) ) /*0x7ae3a9*/
     {
       v23 = this->vtable3; /*0x7ae3af*/
-      if ( v23 > this->TargetSpecialThreatCoefficient && *((_BYTE *)this + 20) != 1 ) /*0x7ae3c1*/
+      if ( v23 > this->TargetSpecialThreatCoefficient && this->SlowdownDistance != 1 ) /*0x7ae3c1*/
       {
         v24 = (AbstractClass *)*this; /*0x7ae3ca*/
         aP2b = (AbstractClass *)*this; /*0x7ae3ce*/
@@ -10289,7 +10289,7 @@ void __thiscall HashMap_Shrink(_DWORD *this)
   int *v13; // [esp+8h] [ebp-4h]
 
   v2 = this->vtable3; /*0x7ae465*/
-  if ( v2 > this->TargetSpecialThreatCoefficient && *((_BYTE *)this + 20) != 1 ) /*0x7ae477*/
+  if ( v2 > this->TargetSpecialThreatCoefficient && this->SlowdownDistance != 1 ) /*0x7ae477*/
   {
     v3 = (int *)*this; /*0x7ae480*/
     v4 = this->vtable4; /*0x7ae483*/
@@ -10347,7 +10347,7 @@ void __thiscall HashTable_Grow(_DWORD *this)
   int v12; // eax
   _DWORD *v13; // [esp+4h] [ebp-4h]
 
-  if ( *((_BYTE *)this + 20) != 1 ) /*0x7ae518*/
+  if ( this->SlowdownDistance != 1 ) /*0x7ae518*/
   {
     v2 = this->vtable3; /*0x7ae520*/
     v3 = (_DWORD *)*this; /*0x7ae523*/
@@ -10860,8 +10860,8 @@ _DWORD *__thiscall sub_7AECD0(_DWORD *this, int a2, int a3)
 {
   this->Items = 0; /*0x7aecdb*/
   this->Capacity = a2; /*0x7aecde*/
-  *((_BYTE *)this + 12) = 1; /*0x7aece1*/
-  *((_BYTE *)this + 13) = 0; /*0x7aece5*/
+  this->q030 = 1; /*0x7aece1*/
+  this->__pad_034 = 0; /*0x7aece5*/
   *this = &vt_VectorClass_tConnInfoStruct; /*0x7aece8*/
   if ( a2 ) /*0x7aecee*/
   {
@@ -10871,7 +10871,7 @@ _DWORD *__thiscall sub_7AECD0(_DWORD *this, int a2, int a3)
       return this; /*0x7aecfe*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x7aed0d*/
-    *((_BYTE *)this + 13) = 1; /*0x7aed10*/
+    this->__pad_034 = 1; /*0x7aed10*/
   }
   return this; /*0x7aecfd*/
 }

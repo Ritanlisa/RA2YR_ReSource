@@ -246,7 +246,7 @@ void __thiscall Terrain::ProcessCellModification(int *this, IUnknown *aP1)
         goto LABEL_139; /*0x5703e8*/
       }
       v34 = (__int16)v32 + (v81[1] << 9); /*0x5703f1*/
-      if ( !*(_DWORD *)(*(this + 79) + 4 * v34) ) /*0x570401*/
+      if ( !*(_DWORD *)(this->q13C + 4 * v34) ) /*0x570401*/
         goto LABEL_74; /*0x570401*/
       if ( v34 < 0x40000 && (v35 = *(_DWORD **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_3C[4] + 4 * v34)) != 0 ) /*0x57041d*/
       {
@@ -6177,14 +6177,14 @@ int __thiscall MapClass::RemoveTriggerRef(int *this, AbstractClass *aP1, int a3)
   v3 = aP1; /*0x577922*/
   if ( (*(int (__thiscall **)(AbstractClass *))(*(_DWORD *)aP1->__pad_0 + 44))(aP1) == 44 ) /*0x577932*/
   {
-    for ( i = 0; i < *(this + 1115); ++i ) /*0x577943*/
+    for ( i = 0; i < this->MapClass_field_0x116C; ++i ) /*0x577943*/
     {
-      v6 = *(this + 1112); /*0x57794a*/
+      v6 = this->MapClass_field_0x1160; /*0x57794a*/
       v7 = *(__int16 *)(v6 + 4 * i + 2); /*0x577950*/
       v8 = *(__int16 *)(v6 + 4 * i); /*0x577955*/
       v9 = (IUnknown **)(v6 + 4 * i); /*0x577959*/
       v10 = v8 + (v7 << 9); /*0x57795f*/
-      if ( v10 < 0x40000 && (v11 = *(_DWORD **)(*(this + 79) + 4 * v10)) != 0 ) /*0x577975*/
+      if ( v10 < 0x40000 && (v11 = *(_DWORD **)(this->MapClass_field_0x13C + 4 * v10)) != 0 ) /*0x577975*/
       {
         v12 = v11; /*0x577977*/
       }
@@ -6196,16 +6196,16 @@ int __thiscall MapClass::RemoveTriggerRef(int *this, AbstractClass *aP1, int a3)
       if ( v12 && (AbstractClass *)v12[15] == v3 ) /*0x57798e*/
       {
         ObjectClass::SetTriggerTarget(v12, 0); /*0x577994*/
-        v13 = (*(int (__thiscall **)(int *, _DWORD *))(*(this + 1111) + 16))(this + 1111, v12 + 9); /*0x5779ab*/
+        v13 = (*(int (__thiscall **)(int *, _DWORD *))(this->MapClass_field_0x115C + 16))(this + 1111, v12 + 9); /*0x5779ab*/
         if ( v13 != -1 ) /*0x5779b1*/
         {
-          v14 = *(this + 1115); /*0x5779b3*/
+          v14 = this->MapClass_field_0x116C; /*0x5779b3*/
           if ( v13 < v14 ) /*0x5779b8*/
           {
             v15 = v14 - 1; /*0x5779ba*/
-            for ( *(this + 1115) = v15; /*0x5779c0*/
-                  v13 < *(this + 1115);
-                  *(_DWORD *)(*(this + 1112) + 4 * v13 - 4) = *(_DWORD *)(*(this + 1112) + 4 * v13) )
+            for ( this->MapClass_field_0x116C = v15; /*0x5779c0*/
+                  v13 < this->MapClass_field_0x116C;
+                  *(_DWORD *)(this->MapClass_field_0x1160 + 4 * v13 - 4) = *(_DWORD *)(this->MapClass_field_0x1160 + 4 * v13) )
             {
               ++v13; /*0x5779c5*/
             }
@@ -6731,15 +6731,15 @@ bool __thiscall LayerClass::IsWithinUsableArea(_DWORD *this, IUnknown *aP1, Tech
       v7 = g_CellClassArray; /*0x57849d*/
     }
     v3 = *((char *)v7 + 283); /*0x5784a8*/
-    if ( *((_BYTE *)v7 + 284) && v4 + v5 < v3 + *(this + 61) + 2 * *(this + 64) + 4 ) /*0x5784ca*/
+    if ( *((_BYTE *)v7 + 284) && v4 + v5 < v3 + *(this + 61) + 2 * this->q010 + 4 ) /*0x5784ca*/
       ++v3; /*0x5784cc*/
   }
   v8 = *(this + 61); /*0x5784d3*/
   result = 0; /*0x578531*/
-  if ( v4 + v5 > v3 + v8 + 2 * *(this + 64) && v4 + v5 <= v3 + v8 + 2 * (*(this + 64) + *(this + 66)) + 2 ) /*0x5784fe*/
+  if ( v4 + v5 > v3 + v8 + 2 * this->q010 && v4 + v5 <= v3 + v8 + 2 * (this->q010 + *(this + 66)) + 2 ) /*0x5784fe*/
   {
     v9 = this->q0FC; /*0x578500*/
-    if ( v5 - v4 < 2 * (v9 + *(this + 65)) - v8 && v4 - v5 < v8 - 2 * v9 ) /*0x578523*/
+    if ( v5 - v4 < 2 * (v9 + this->q041) - v8 && v4 - v5 < v8 - 2 * v9 ) /*0x578523*/
       return 1; /*0x5784e3*/
   }
   return result; /*0x578525*/
