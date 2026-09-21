@@ -8082,103 +8082,51 @@ retn
 // IDA 0x44e400: check footprint blocked
 // 0x4578c0
 bool BuildingClass::IsFootprintBlocked() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt169(#377 *this)
-{
-  int result; // eax
-  int *v3; // eax
-  _DWORD *v4; // ecx
-  int FoundationWidth; // eax
-  int v6; // ecx
-  int v7; // ebx
-  int v8; // edi
-  __int16 v9; // si
-  __int16 v10; // di
-  __int16 v11; // si
-  _DWORD *v12; // eax
-  #377 *ClosestObjectCell; // eax
-  _DWORD *v14; // eax
-  int v15; // [esp+10h] [ebp-30h]
-  int v16; // [esp+14h] [ebp-2Ch]
-  int v17; // [esp+18h] [ebp-28h]
-  int v18; // [esp+1Ch] [ebp-24h]
-  int v19; // [esp+20h] [ebp-20h] BYREF
-  int v20; // [esp+24h] [ebp-1Ch] BYREF
-  int v21; // [esp+28h] [ebp-18h]
-  int v22; // [esp+2Ch] [ebp-14h] BYREF
-  int v23; // [esp+30h] [ebp-10h]
-  _DWORD v24[2]; // [esp+38h] [ebp-8h] BYREF
-
-  if ( !TechnoClass::ShouldNotBeCloaked((float *)this) )
-  {
-    v3 = (int *)(*(int (__thiscall **)(#377 *, int *))(*(_DWORD *)this + 440))(this, &v22);
-    v4 = (_DWORD *)*((_DWORD *)this + 328);
-    v23 = *v3;
-    FoundationWidth = BuildingTypeClass::GetFoundationWidth(v4);
-    v6 = *((_DWORD *)this + 328);
-    v7 = FoundationWidth;
-    v22 = FoundationWidth;
-    result = BuildingTypeClass::GetFoundationHeight(v6, 0);
-    v8 = -1;
-    v21 = result;
-    v18 = -1;
-    if ( v7 < -1 )
-    {
-LABEL_13:
-      LOBYTE(result) = 0;
-      return result;
-    }
-    while ( 1 )
-    {
-      v9 = -1;
-      v17 = -1;
-      if ( result >= -1 )
-        break;
-LABEL_12:
-      v18 = ++v8;
-      if ( v8 > v7 )
-        goto LABEL_13;
-    }
-    v10 = v23 + v8;
-    while ( 1 )
-    {
-      v24[0] = 0;
-      v24[1] = 0;
-      v11 = HIWORD(v23) + v9;
-      LOWORD(v15) = v10;
-      HIWORD(v15) = v11;
-      v19 = v15;
-      v12 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v19);
-      ClosestObjectCell = (#377 *)Object::FindClosestObjectCell(v12, v24, 0, 0);
-      if ( ClosestObjectCell == this )
-      {
-        LOWORD(v16) = v10;
-        HIWORD(v16) = v11;
-        v20 = v16;
-        v14 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v20);
-        ClosestObjectCell = (#377 *)WTFMode::FindObjectByType(v14, 0);
-      }
-      if ( ClosestObjectCell )
-      {
-        if ( *((_DWORD *)ClosestObjectCell + 135) != *((_DWORD *)this + 135) )
-        {
-          result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)ClosestObjectCell + 132))(ClosestObjectCell);
-          if ( *(_BYTE *)(result + 3229) )
-            break;
+    bool result = true;
+    if (!TechnoClass::ShouldNotBeCloaked(this)) {
+        result = false;
+        int coordBuf[2];
+        int* coords = this->SetZ(coordBuf);
+        int originPacked = coords[0];
+        int width = BuildingTypeClass::GetFoundationWidth(this->q520);
+        int height = BuildingTypeClass::GetFoundationHeight(this->q520, false);
+        int row = -1, rowCache = -1;
+        int col = -1, colCache = -1;
+        if (width < -1) return false;
+        while (true) {
+            col = -1;
+            colCache = -1;
+            if (height >= -1) {
+                int rowBase = originPacked + row;
+                while (true) {
+                    int objectBuf[2] = { 0, 0 };
+                    int cellY = (originPacked >> 16) + col;
+                    int cellKey = (rowBase & 0xFFFF) | (cellY << 16);
+                    void* cell = CellCoord::To_CellObj(&DataGlobal_87F7E8[0], (short*)&cellKey);
+                    ObjectClass* closest = Object::FindClosestObjectCell(cell, objectBuf, 0, 0);
+                    if (closest == this) {
+                        int homeKey = (rowBase & 0xFFFF) | (cellY << 16);
+                        void* homeCell = CellCoord::To_CellObj(&DataGlobal_87F7E8[0], (short*)&homeKey);
+                        closest = WTFMode::FindObjectByType(homeCell, 0);
+                    }
+                    if (closest) {
+                        if (closest->owner != this->owner) {
+                            int closestOwner = closest->vt33();
+                            if (*(unsigned char*)(closestOwner + 3229))
+                                return true;
+                        }
+                    }
+                    col = ++colCache;
+                    if (colCache > height)
+                        break;
+                }
+            }
+            rowCache = ++row;
+            if (row > width)
+                break;
         }
-      }
-      result = v21;
-      v9 = ++v17;
-      if ( v17 > v21 )
-      {
-        v7 = v22;
-        v8 = v18;
-        goto LABEL_12;
-      }
     }
-  }
-  LOBYTE(result) = 1;
-  return result;
+    return result;
 }
 
 /* ASM:

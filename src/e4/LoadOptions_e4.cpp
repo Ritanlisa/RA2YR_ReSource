@@ -39,23 +39,18 @@ char __stdcall LoadOptions::_vt01(LPCCH lpMultiByteStr)
 namespace gamemd {
 char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall LoadOptions::_vt02(LPCCH lpMultiByteStr, wchar_t *Source)
+char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
 {
-  wchar_t *StringCSF; // eax
-  HWND MessageBox; // esi
-  char v4; // bl
-
-  StringCSF = GetStringCSF(aTxtSavingGame, 0, MEMORY[0x829F5C], 1107); /*0x559e55*/
-  MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559e69*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x559e6d*/
-  if ( MessageBox ) /*0x559e72*/
-    Dialog::Show(MessageBox); /*0x559e76*/
-  v4 = SaveScenarioClassGame_AdjustMPSaveFileName(lpMultiByteStr, Source, 0); /*0x559e90*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x559e94*/
-  if ( MessageBox ) /*0x559e99*/
-    Dialog::Destroy(MessageBox); /*0x559e9d*/
-  return v4; /*0x559ea4*/
+    wchar_t* savePrompt = GetStringCSF(aTxtSavingGame, 0, g_Str_File_LoadDlg_CPP, 1107);
+    HWND waitBox = CreateMessageBox((LPARAM)savePrompt, 0, 0);
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance);
+    if ( waitBox )
+        Dialog::Show(waitBox);
+    char saveOk = SaveScenarioClassGame_AdjustMPSaveFileName(lpMultiByteStr, Source, 0);
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
+    if ( waitBox )
+        Dialog::Destroy(waitBox);
+    return saveOk;
 }
 }
 } // namespace gamemd

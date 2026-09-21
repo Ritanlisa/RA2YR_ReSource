@@ -3330,6 +3330,7 @@ int __thiscall sub_401FB0(_DWORD *this)
   return *(this + 3); /*0x401fb3*/
 }
 }
+}
 } // namespace gamemd
 
 // 0x401FC0
