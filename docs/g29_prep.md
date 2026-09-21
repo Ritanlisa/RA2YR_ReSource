@@ -32,12 +32,12 @@
   删除（保留不带 0xADDR 的占位注释）。
 - 一次性脚本化：`.omo/g29_stub_sweep.py`（按 functions.json 地址对账）。
 
-### 3. 验证器 RET 合并词汇（解锁 #145 族）
+### 3. ~~验证器 RET 合并词汇~~ ✅ 已解决（G28.5）
 
-- efv_normalize.py 增加「同返回值 RET 合并」canonical 规则（RET 块按
-  presence 比较，已是 SET 语义——合并同 signature 终结块的入边）。
-- 获用户批准后实施（验证器是 REVERSE 管道保护文件的旁系，改前说明）。
-- 解锁：IsFootprintBlocked + CheckOverlapWithOthers（goto 译法可回填）。
+- 1bb979ec 落地容忍规则；IsFootprintBlocked + CheckOverlapWithOthers 已收割
+  （12,664）。新技巧 sticky-or（goto 消除）见 mech 计划 G28.5 节。
+- 残余：src/core/subs_*.cpp 内仍有带伪码签名的注释（by_name 通道实测已被
+  e4 优先规避，但 by_addr 通道遇 0xADDR 样式注释仍可能误命中——清扫仍建议）。
 
 ### 4. G27/G28 挂账裁决（顺延项）
 

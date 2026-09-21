@@ -393,3 +393,18 @@ csp_anchor(async) / compare_parse / member_set(批量) / reopen / job_status
   （ValidatePath 是 TechnoType 层 vt+168）+ 归属改名一起做。
 - g28_prep 的 hpp 裁决两项（q204@516 / 1732 双义）与收割机理审计、
   签名缺口补锚未动，顺延 G29。
+
+## G28.5 复核（2026-09-21，MCP/源码更新后）
+
+用户更新后逐项实测 G28 挂账：
+
+| 挂账项 | 状态 |
+|---|---|
+| #145 RET 合并词汇 | **已解决**（1bb979ec 容忍规则）→ IsFootprintBlocked(0x4578c0) + CheckOverlapWithOthers(0x44e3a0) 双双 verify PASS 收割，completed **12,664** |
+| 存根抢占定位 | **已解决**（_generated 62,245 行清除 d6a015c6 + 定位器 e4 优先）——0x401FB0 实测直接定位 e4 文件 |
+| e4 自由函数事件词汇缺口 | **仍在**：0x401FB0 C++ 侧 `a1[3]` 仍零事件（READ(member,12) 缺失）；e4 无 ObjectClass 声明，方案 B 需先建 e4 类声明基建 |
+| 0x464AC0 PlaceAnywhere 归属 | 仍在：member_map 键 23564(=5891×4) 未解析，canon 仍归 AbstractClass——G29 裁决 |
+
+**新技巧（sticky-or）**：`goto X`（提前退出跳过置位）可用「循环条件自终止 + 出口 `v = v || cond` 永或」消除——CheckOverlapWithOthers 的 `while(this==v4){v4=v4[12]; if(!v4)break;} v6=v6||v4!=0` 7 块全同构。适用于同款"链条遍历+粘性标志"形状。
+
+**工具面确认**：`addr_lookup` 支持全局变量反查（G28 时用 grep 绕远，以后先用它）。
