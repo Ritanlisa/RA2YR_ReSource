@@ -2697,11 +2697,11 @@ unsigned int * ObjectClass::clearTarget(char a2)
 
 // 0x77D200
 namespace gamemd {
-int ObjectClass::j_Game_ProcessIdle()
+int j_Game_ProcessIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-char __thiscall ObjectClass::j_Game_ProcessIdle(SimpleWonlineDialogControl *this)
+char __thiscall j_Game_ProcessIdle(SimpleWonlineDialogControl *this)
 {
   return Game::ProcessIdle((CreateGameDialogControl *)this);
 }

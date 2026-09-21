@@ -626,10 +626,9 @@ namespace ra2 { namespace game { bool MissionClass::vt_entry_200() {
 } } }
 // 0x41B9E0
 namespace ra2 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TechnoClass::sub_41B9E0(_BYTE *this)
+int TechnoClass::updateROFTimer()
 {
-  return *(this + 1749); /*0x41b9e6*/
+    return this->q6D5;
 }
 }
 // 0x41BDD0

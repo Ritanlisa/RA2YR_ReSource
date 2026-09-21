@@ -636,6 +636,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int DecrementUnitCount(void* a1);  // 0x4FF550
     int GetBuildLimit(int a1, int a2, int a3);  // 0x500510
     int GetFactoryCount(int a1, int a2);  // 0x500910
+    bool IsTechInfiltrated();  // 0x50D9C0
+    bool IsProductionInfiltrated();  // 0x50D9D0
     int LoadTypeList();  // 0x5009B0
     int ReadFromINI(void* a1);  // 0x500B40
     int SaveToINI(void* a1);  // 0x501210

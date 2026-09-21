@@ -7892,7 +7892,8 @@ namespace gamemd { int HouseClass::GetBuildLimit(int a1, int a2, int a3) {
 } }
 
 // 0x500910
-namespace gamemd { int HouseClass::GetFactoryCount(int a1, int a2) {
+namespace gamemd
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall HouseClass::GetFactoryCount(int *this, int a2, char a3)
 {
@@ -7931,7 +7932,7 @@ LABEL_10:
   }
   return result; /*0x50095d*/
 }
-} }
+}
 
 // 0x5009B0
 namespace gamemd { int HouseClass::LoadTypeList() {

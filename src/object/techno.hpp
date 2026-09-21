@@ -1107,8 +1107,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int recalcThreat();  // 0x4D28C0
     int QueueDrawVoiceResponse(void* a1, int a2, int a3, int a4, int a5, void* a6, int a7, int a8, int a9, int a10, int a11);  // 0x4DB0D0
     void checkBuildLimit();  // 0x505180
-    bool processExperienceGain();  // 0x50D9C0
-    bool updateVeterancy();  // 0x50D9D0
     void Find(int a1);  // 0x50E010
     void Process(int a1);  // 0x50E1C0
     bool updateTurretRotation();  // 0x5224F0

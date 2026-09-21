@@ -15392,6 +15392,20 @@ namespace gamemd { int SuperClass::Get(int a1, int a2, int a3, int a4) {
     return 1;
 }
 } }
+// 0x50D9C0
+namespace gamemd {
+bool HouseClass::IsTechInfiltrated()
+{
+    return this->techInfiltrationFlags > 0;
+}
+} // namespace gamemd
+// 0x50D9D0
+namespace gamemd {
+bool HouseClass::IsProductionInfiltrated()
+{
+    return this->productionInfiltrationFlags > 0;
+}
+} // namespace gamemd
 // 0x6F9E50
 namespace gamemd { int MovementAI::Begin() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -15889,24 +15903,12 @@ LABEL_148:
        && *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3479))
       && !v48
       && !(dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 48))
-// 0x50d9c0
-      && TechnoClass::processExperienceGain((_DWORD *)*(this + 135)) )
+      && HouseClass::IsTechInfiltrated((_DWORD *)*(this + 135)) )
     {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_50D9C0(_DWORD *this)
-{
-  return *(this + 89) > 0; /*0x50d9cd*/
-}
   }
   else if ( !(dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 56))
-// 0x50d9d0
-         && TechnoClass::updateVeterancy((_DWORD *)*(this + 135)) )
+         && IsProductionInfiltrated((_DWORD *)*(this + 135)) )
   {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_50D9D0(_DWORD *this)
-{
-  return *(this + 90) > 0; /*0x50d9dd*/
-}
   (*(void (__thiscall **)(int *, _DWORD))(*this + 1040))(this, 0);
   v54 = *(this + 180);
   if ( v54 )

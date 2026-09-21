@@ -536,3 +536,47 @@ this-relative 访问**，参数型 receiver（`a1->X`）架构上不产事件。
   - `0x751080` → `DecrementAudioQueueCountdowners`（队列遍历递减
     +48 倒计时并 clamp 到 0，命中即 AudioSource::Get + 释放）——
     已完成件，可随下批 rename_symbol 四方改名。
+
+## G30 执行记录（2026-09-21，缺口总账轮：试点+归属裁决，净增 +7 → completed 12,687）
+
+- **缺口 A 试点（11 件考虑，5 PASS / 6 顺延）**：通过率报告 =
+  判别规则本身 **5/5 有效**（凡无基础设施阻塞的件全部一次过验），
+  顺延 6 件的根因不是翻译技法而是基础设施缺口：
+  - **无声明全局（4 件：0x49e740/0x752a40/0x752cb0/0x471890/0x4c5370）**
+    = `MEMORY[0xADDR]` 形态全局在 E1 生成器收集盲区（idscan 只扫标识符，
+    gindex 门）→ 永不进 e4_globals.hpp → 挂账 **#154**（修复后可整批解锁）。
+  - **门控 ptr-int 比较词汇缺口（#152）**：GetResourceID CSF 族 4 件
+    this∈{0..7} 指针-整数比较，任何忠实 C++ 都触发 non-ptr-to-ptr /
+    ptr-nonptr-conv（整数字面量转指针仅 0 豁免）。
+  - **验证器 C++ switch 词汇缺口（#153）**：0x500910 GetFactoryCount
+    switch 翻译体被 C++ 提取器拍平成单块（无 case:N 分派边）→ FAIL，
+    已 reopen 保 pending。
+  - 结构性不可达 1 件：0x49fa70 CounterClass::Decrement（goto 共享尾
+    + 循环体非表达式，sticky-or 融合不适用）。
+  - **PASS 5 件**：0x41c150 TacticalClass::ProcessTick2（免 cast 改
+    `int* a1` 参数型 + hpp 同步）/ 0x41b9e0 TechnoClass::updateROFTimer
+    （member_set 补锚 q6D5@1749）/ 0x65b4b0 RadSiteClass::GetSpread /
+    0x41c050 TacticalClass::ProcessTick（补锚 q5D4@1492）/ 0x7ba320
+    （drawCursor→IsRefCountNegative 四方改名 + q00C@12 ml/hpp vptr 漂移
+    按 ml 对称）。embed 形态 gap2 块经 replace_body 消费后独立可验；
+    但**嵌入在 enclosing 原码块内的翻译体不可 verify**（by_addr 回溯扫
+    会被原码 `if (` 类行劫持，#150 两件为此搬迁为独立块后 PASS）。
+- **缺口 B（#150）闭环**：0x50D9C0/D0 = HouseClass 谓词（调用点传
+  owner@540；binary 反汇编 mov edx,[ecx+164h/168h] + YRpp bool run
+  Side0/1/2TechInfiltrated/BarracksInfiltrated/WarFactoryInfiltrated）。
+  裁决 IsTechInfiltrated(@356 techInfiltrationFlags) /
+  IsProductionInfiltrated(@360 productionInfiltrationFlags)，
+  member_set 补锚 + 四方改名 + 独立块安置，verify 双 PASS。
+- **缺口 C（#151）闭环**：0x449A40 = `jmp [eax+21Ch]` 转发 thunk
+  （BuildingClass 主表 0x7E3EBC 槽136→槽135）。槽对基类实现=return-450
+  桩，沿用已完成件 TechnoClass::CheckState1/2 命名体系：0x4496B0=
+  BuildingClass::CheckState1、0x449A40=BuildingClass::CheckState2。
+  GetOwnerHouse/UpdateProduction/HasValidWeapon 三名俱废。四方同步 +
+  vtable_offsets 540/544 归位（520/524 还给 Return450B/C）。
+- **缺口 D 裁决**：0x77F900 Game::ProcessIdle = 全局函数（38 调用方
+  全为 WOL/网络对话框循环，无 ECX receiver），0x77D200=孤儿 jmp 别名
+  → 正名 j_Game_ProcessIdle（原误挂 ObjectClass:: 前缀）。翻译按
+  全局函数形态，无 receiver 归属问题。
+- **纪律重申**：rename_symbol 对已翻译 def 行会剥类限定符（IsTechInfiltrated
+  事故第二例）——限定名改名后必须复查 def 行与 hpp；gap2/e4 生成文件
+  是 latin-1 写盘，Edit 工具前必须 Read 刷新。

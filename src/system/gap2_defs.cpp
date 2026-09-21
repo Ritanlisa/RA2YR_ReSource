@@ -202,19 +202,17 @@ namespace gamemd { int TacticalClass::CheckAction() {
 } }
 // 0x41C050
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall MiniStub_41c050(_DWORD *this)
+bool TacticalClass::ProcessTick()
 {
-  return *(this + 373) != 0; /*0x41c05d*/
+    return this->q5D4 != 0;
 }
 }
 // 0x41C150
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MiniStub_41c150(_DWORD *this, _DWORD *a2)
+void *TacticalClass::ProcessTick2(int *a1)
 {
-  *a2 = *(this + 344); /*0x41c15a*/
-  return a2; /*0x41c15c*/
+    *a1 = this->q560;
+    return a1;
 }
 }
 // 0x41C160

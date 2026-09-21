@@ -9384,10 +9384,9 @@ namespace gamemd { int WWMouseClass::UpdateCursorMovement() {
 } }
 // 0x7BA320
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall WWMouseClass::_vt02(int *this)
+bool WWMouseClass::IsRefCountNegative()
 {
-  return *(this + 3) < 0; /*0x7ba32a*/
+    return this->q00C < 0;
 }
 }
 // 0x7BA380

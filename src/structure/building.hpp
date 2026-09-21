@@ -119,7 +119,7 @@ public:
 
     // Production
     int StartProduction(int type_index);  // 0x447780
-    void UpdateProduction();  // 0x4496B0
+    void CheckState1();  // 0x4496B0
     void CompleteProduction();  // 0x639740
     void ProductionDisplayUpdate();  // 0x43F180
     void DisplayProductionFrame();  // 0x43D030
@@ -349,7 +349,7 @@ public:
     void SetPlanningToken(ra2::game::PlanningTokenClass* token);  // 0x705D10
     BuildingTypeClass* GetTypePtr();  // 0x459EE0
     BuildingTypeClass* GetType_Thunk();  // 0x705D60
-    HouseClass* GetOwnerHouse();  // 0x449A40
+    HouseClass* CheckState2();  // 0x449A40
     int GetTypeEntry();  // 0x6347B0
     const wchar_t* GetTypeField60();  // 0x459ED0 (returns Type->UIName@+0x60)
     int GetObjectData();  // 0x6385C0

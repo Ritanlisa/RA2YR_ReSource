@@ -16767,11 +16767,11 @@ retn    4
 
 // IDA 0x447ab0: update production timer
 // 0x4496b0
-void BuildingClass::UpdateProduction()
+void BuildingClass::CheckState1()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4496b0
-int __thiscall BuildingClass::UpdateProduction(#377 *this)
+int __thiscall CheckState1(#377 *this)
 {
   int v2; // eax
   int v3; // eax
@@ -21837,10 +21837,10 @@ BuildingTypeClass* BuildingClass::GetType_Thunk() { return Type; }
 
 // IDA 0x449a40: get owner house via vtable
 // 0x449a40
-HouseClass* BuildingClass::GetOwnerHouse()
+HouseClass* BuildingClass::CheckState2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::GetOwnerHouse(#377 *this)
+int __thiscall CheckState2(#377 *this)
 {
   return (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 540))(this);
 }
