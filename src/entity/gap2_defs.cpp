@@ -627,66 +627,6 @@ namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, v
       }
 }
 } }
-        {
-          v2 = *((_DWORD *)g_AnimClassPool + i);
-          if ( *(void **)(v2 + 204) == this )
-            *(_BYTE *)(v2 + 405) = 0;
-        }
-      }
-}
-} }
-
-// 0x422BC0
-namespace gamemd { int AnimClass::SetAnimSpeed() {
-{
-    return this->FlamingGuyCoords + ObjectClass::GetBoundingSize((AnimClass *)this);
-}
-} }
-
-// 0x422BE0
-namespace gamemd { void* AnimClass::UpdateZAdjust(void* a1) {
-{
-      _DWORD *Coords;
-      _DWORD *v4;
-      int v5;
-      int v6;
-      int v7;
-      int v8;
-      int v9;
-      int *v11;
-      CoordStruct v12;
-
-      if ( this->q0CC )
-      {
-        Coords = (_DWORD *)ObjectClass::GetCoords(this);
-        v4 = (_DWORD *)(*(int (__thiscall **)(_DWORD, CoordStruct *))(**((_DWORD **)this + 51) + 72))(
-                         this->q0CC,
-                         &v12);
-        v5 = *Coords + *v4;
-        v6 = Coords[1];
-        v7 = Coords[2];
-        v8 = v4[1] + v6;
-        v9 = v4[2];
-        *a2 = v5;
-        a2[1] = v8;
-        a2[2] = v9 + v7;
-        return a2;
-      }
-      else
-      {
-        v11 = (int *)ObjectClass::GetCoords(this);
-        *a2 = *v11;
-        a2[1] = v11[1];
-        a2[2] = v11[2];
-        return a2;
-      }
-}
-} }
-
-// 0x422C70
-namespace gamemd { int AnimClass::CheckLayerFlags(int a1, int a2, int a3) {
-{
-    if ( this->q184 )
     return 0;
     else
     return ObjectClass::CalcDrawRect((AnimClass *)this);
