@@ -28,7 +28,7 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 
 // 0x5116A0
 namespace gamemd {
-AbstractClass * HouseTypeClass::Dtor()
+AbstractClass * * HouseTypeClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -58,7 +58,7 @@ AbstractClass * HouseTypeClass::Dtor()
   }
   *(_BYTE *)(this + 401) = 0; /*0x51173d*/
   this->q18C = 0; /*0x511743*/
-  void * v4 = this->q16C; /*0x511749*/
+  AbstractClass *v4 = this->q16C; /*0x511749*/
   this->q168 = &vt_VectorClass_UnitTypeClass_const; /*0x51174f*/
   if ( v4 && *(_BYTE *)(this + 373) ) /*0x51175d*/
   {
@@ -67,7 +67,7 @@ AbstractClass * HouseTypeClass::Dtor()
   }
   *(_BYTE *)(this + 373) = 0; /*0x511774*/
   this->q170 = 0; /*0x51177a*/
-  void * v5 = this->q150; /*0x511780*/
+  AbstractClass *v5 = this->q150; /*0x511780*/
   this->veteranInfantry = &vt_VectorClass_InfantryTypeClass_const; /*0x511786*/
   if ( v5 && *(_BYTE *)(this + 345) ) /*0x511794*/
   {
@@ -99,11 +99,11 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
   char *i; // eax
   char *j; // eax
   CCINIClass *Alt; // edi
-  CCINIClass *v48; // eax
+  AbstractClass *v48; // eax
   ObjectClass *k; // eax
   CCINIClass *v50; // edi
-  CCINIClass *v54; // eax
-  CCINIClass *v55; // edi
+  AbstractClass *v54; // eax
+  AbstractTypeClass *v55; // edi
   CCINIClass *CountryData; // eax
   int esi58a; // esi
   int ecx58; // ecx
@@ -225,7 +225,7 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_825430.headNode[1],
           this->q1A7);
-  char v21 = this->q1A8; /*0x511aa9*/
+  FlashData *v21 = this->q1A8; /*0x511aa9*/
   this->q1A7 = v20; /*0x511aaf*/
   char v22 = INIClass::ReadBool_Overwrite((int)v3, (unsigned __int8 *)(this + 36), &stru_825430, v21); /*0x511abe*/
   double v23 = this->q100; /*0x511ac3*/
@@ -510,7 +510,7 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
 
 // 0x512170
 namespace gamemd {
-AbstractClass * HouseTypeClass::ProcessPower(int * a2)
+AbstractClass * * HouseTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -549,12 +549,12 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
   int n; // esi
   int ii; // esi
 
-  _DWORD * v2 = i; /*0x512295*/
-  _DWORD * v3 = i + 83; /*0x51229f*/
+  HouseTypeClass *v2 = i; /*0x512295*/
+  VectorClass *v3 = i + 83; /*0x51229f*/
   (*(void (__thiscall **)(_DWORD *))(i[83] + 12))(i + 83); /*0x5122a7*/
   (*(void (__thiscall **)(_DWORD *))(v2[90] + 12))(v2 + 90); /*0x5122b8*/
   (*(void (__thiscall **)(_DWORD *))(v2[97] + 12))(v2 + 97); /*0x5122c7*/
-  int v4 = a2; /*0x5122ca*/
+  AbstractClass *v4 = a2; /*0x5122ca*/
   result = AbstractClass::SaveLoad_Prefix_0(v2, a2); /*0x5122d0*/
   if ( result >= 0 ) /*0x5122d7*/
   {
@@ -565,11 +565,11 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
       InfantryTypeVector::Construct(v3, 0, 0); /*0x5122f7*/
       *v3 = &vt_TypeList_InfantryTypeClass_const; /*0x5122fc*/
     }
-    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &a2, 4, 0); /*0x51230e*/
+    v4->vt_entry_68(&a2, 4, 0); /*0x51230e*/
     for ( i = 0; (int)i < a2; i = (_DWORD *)((char *)i + 1) ) /*0x51231f*/
     {
   int v11; // [esp+58h] [ebp-4h] BYREF
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v11, 4, 0); /*0x51232d*/
+      v4->vt_entry_68(&v11, 4, 0); /*0x51232d*/
       InfantryTypeVector::Add(v3, &v11); /*0x512337*/
     }
     if ( v2 != (_DWORD *)-360 ) /*0x51234f*/
@@ -577,18 +577,18 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
       UnitTypeVector::Construct(v2 + 90, 0, 0); /*0x512357*/
       v2[90] = &vt_TypeList_UnitTypeClass_const; /*0x51235c*/
     }
-    (*(void (__stdcall **)(int, _DWORD **, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0); /*0x51236f*/
+    v4->vt_entry_68(&i, 4, 0); /*0x51236f*/
     for ( j = 0; j < (int)i; ++j ) /*0x51237a*/
     {
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &a2, 4, 0); /*0x512388*/
+      v4->vt_entry_68(&a2, 4, 0); /*0x512388*/
       VectorClass::PushBack(v2 + 90, &a2); /*0x512392*/
     }
     if ( v2 != (_DWORD *)-388 ) /*0x5123a6*/
       HouseTypeClass::readStartUnit(v2 + 97); /*0x5123aa*/
-    (*(void (__stdcall **)(int, _DWORD **, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0); /*0x5123bb*/
+    v4->vt_entry_68(&i, 4, 0); /*0x5123bb*/
     for ( k = 0; k < (int)i; ++k ) /*0x5123c6*/
     {
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &a2, 4, 0); /*0x5123d4*/
+      v4->vt_entry_68(&a2, 4, 0); /*0x5123d4*/
       HouseTypeClass::readPowerPlants(v2 + 97, &a2); /*0x5123de*/
     }
     for ( m = 0; m < v2[87]; ++m ) /*0x5123f4*/

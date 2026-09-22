@@ -19,7 +19,7 @@ unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4)
 
 // 0x642130
 namespace gamemd {
-AbstractClass * Palette_Preview_Generate()
+AbstractClass * * Palette_Preview_Generate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -182,7 +182,7 @@ LABEL_37:
       if ( v20 > 0 ) /*0x642435*/
       {
         v30 = Blocka; /*0x642447*/
-        int v31 = (unsigned __int8)v54; /*0x642451*/
+        AbstractClass *v31 = (unsigned __int8)v54; /*0x642451*/
         v53[0] = BYTE1(v54); /*0x642460*/
         while ( 1 ) /*0x642490*/
         {

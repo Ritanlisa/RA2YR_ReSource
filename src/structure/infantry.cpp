@@ -67,7 +67,7 @@ void InfantryClass::ProcessDeploy()
 
 // IDA: 0x51D6F0 (ProcessDeployAction, 1013B) — validates weapon, checks mission, sets loco
 // 0x51d6f0
-InfantryTypeClass * InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
+InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51d6f0
@@ -634,7 +634,7 @@ retn    0Ch
 
 // IDA: 0x5200B0 (ProcessIdleDeploy, 428B)
 // 0x5200b0
-AnimClass * InfantryClass::ProcessIdleDeploy()
+AnimClass * * InfantryClass::ProcessIdleDeploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6608,7 +6608,7 @@ retn    14h
 }
 
 // 0x51e140
-BuildingTypeClass * InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
+BuildingTypeClass * * InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51e140

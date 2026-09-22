@@ -30,7 +30,7 @@ void sub_7A19E0()
   char * v2 = String::GetOrEmpty((char **)&dword_B76AC4); /*0x7a1a6a*/
   int v13; // [esp+10h] [ebp-70h] BYREF
   String::Assign((char **)&v13, v2); /*0x7a1a74*/
-  signed int v3 = g_WOL_State; /*0x7a1a79*/
+  Coord *v3 = g_WOL_State; /*0x7a1a79*/
   char * v4 = 0; /*0x7a1a7e*/
   int v5 = 0; /*0x7a1a80*/
   if ( (int)g_WOL_State <= 0 ) /*0x7a1a84*/

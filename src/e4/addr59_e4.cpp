@@ -136,7 +136,7 @@ LABEL_19:
               }
               else
               {
-                char * v12 = (char *)g_RandomMap_TerrainState; /*0x59424f*/
+                AbstractClass *v12 = (char *)g_RandomMap_TerrainState; /*0x59424f*/
                 while ( *(_DWORD *)(*(_DWORD *)v12 + 8) != v9 ) /*0x59425a*/
                 {
                   ++v11; /*0x59425c*/
@@ -310,13 +310,13 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
 
 // 0x594B50
 namespace gamemd {
-ObjectClass * RandomMap_DistributeTerrain()
+ObjectClass * * RandomMap_DistributeTerrain()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   int j; // edi
-  size_t v13; // eax
+  ObjectClass *v13; // eax
   signed int k; // edi
   int n; // esi
   int ii; // esi
@@ -340,7 +340,7 @@ ObjectClass * RandomMap_DistributeTerrain()
   int v1 = Terrain::ConnectivityGraph(&DataGlobal_87F7E8); /*0x594ba9*/
   int v3; // ebp
   HIWORD(v3) = 0; /*0x594bb4*/
-  int v2 = v35[dword_ABE014]; /*0x594bb6*/
+  ObjectClass *v2 = v35[dword_ABE014]; /*0x594bb6*/
   LOWORD(v3) = *(_WORD *)(DataGlobal_87F800[v2] + 2 * v1); /*0x594bc1*/
   Map_Helper_58CE90(); /*0x594bc5*/
   LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x594bcf*/
@@ -358,13 +358,13 @@ ObjectClass * RandomMap_DistributeTerrain()
   int v6 = g_RandomMap_TileData - 1; /*0x594c51*/
   if ( g_RandomMap_TileData - 1 >= 0 ) /*0x594c54*/
   {
-    _DWORD * v7 = g_RandomMap_TerrainState; /*0x594c56*/
+    AbstractClass *v7 = g_RandomMap_TerrainState; /*0x594c56*/
     do /*0x594c81*/
     {
       _DWORD * v8 = (_DWORD *)v7[v6]; /*0x594c5b*/
       if ( v8[3] < v32 ) /*0x594c65*/
       {
-        void * v9 = (void *)v7[v6]; /*0x594c67*/
+        AbstractClass *v9 = (void *)v7[v6]; /*0x594c67*/
         if ( v8 ) /*0x594c6b*/
         {
           TileNode::Cleanup(v8); /*0x594c6d*/
@@ -409,22 +409,22 @@ ObjectClass * RandomMap_DistributeTerrain()
     if ( v40 < v38 /*0x594da7*/
       || (v39 || !v38) && v41 > 0 && ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v36[2])(&v36, v41 + v38, 0) )
     {
-      int v15 = v40++; /*0x594db6*/
+      ObjectClass *v15 = v40++; /*0x594db6*/
       *((_DWORD *)Block + v15) = *(_DWORD *)(8 * k + 4); /*0x594dbf*/
     }
     v13 = NumOfElements; /*0x594dc2*/
   }
-  int v16 = v40; /*0x594dcb*/
+  ObjectClass *v16 = v40; /*0x594dcb*/
   int v17 = 0; /*0x594dcf*/
   int v30 = 0; /*0x594dd3*/
   if ( v40 > 0 ) /*0x594dd7*/
   {
     int * v18 = (int *)Block; /*0x594dd9*/
-    int v19 = v40; /*0x594ddd*/
+    ObjectClass *v19 = v40; /*0x594ddd*/
     do /*0x594dea*/
     {
-      int v20 = *v18++; /*0x594ddf*/
-      v17 += *(_DWORD *)(v20 + 12); /*0x594de7*/
+      AbstractClass *v20 = *v18++; /*0x594ddf*/
+      v17 += v20->vtable4; /*0x594de7*/
       --v19; /*0x594de9*/
     }
     while ( v19 ); /*0x594dea*/
@@ -475,7 +475,7 @@ ObjectClass * RandomMap_DistributeTerrain()
 
 // 0x595CE0
 namespace gamemd {
-AbstractTypeClass * CleanupRandomMapCache()
+AbstractTypeClass * * CleanupRandomMapCache()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -661,7 +661,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
   }
   if ( v15[1] ) /*0x596016*/
     dword_ABE028 = 4; /*0x596018*/
-  char * v5 = GameConfig::ComputeCRC(); /*0x596023*/
+  AbstractClass *v5 = GameConfig::ComputeCRC(); /*0x596023*/
   memset(Destination, 0, sizeof(Destination)); /*0x596033*/
   strncpy(Destination, DataGlobal_82BB38, 0x80u); /*0x596047*/
   strncat(Destination, v5, 0x80u); /*0x59605a*/
@@ -670,21 +670,20 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
   CCFileClass::Construct(v18, Destination); /*0x59608b*/
   if ( CCFileClass::Open(v18, 0) ) /*0x596097*/
   {
-    void * v6 = g_Map_TiberiumConfig; /*0x5960a4*/
+    AbstractClass *v6 = g_Map_TiberiumConfig; /*0x5960a4*/
     if ( !g_Map_TiberiumConfig ) /*0x5960ab*/
     {
       void * v7 = __2_YAPAXI_Z(4u); /*0x5960af*/
       if ( v7 ) /*0x5960b9*/
         v6 = (void *)unknown_libname_27(v7); /*0x5960bd*/
-      else
-        v6 = 0; /*0x5960c4*/
+      AbstractClass *v6 = 0; /*0x5960c4*/
       g_Map_TiberiumConfig = v6; /*0x5960c6*/
     }
     if ( Surface::LoadToSurfaceSHP((char **)v6, Destination) ) /*0x5960d5*/
     {
       RawFileClass::Construct(v17, (int)stru_829ABC); /*0x5960e7*/
       CompressScreenshot(v17, *(int **)g_Map_TiberiumConfig, &FileSystem_TEMPERAT_PAL); /*0x5960fc*/
-      void * v8 = g_Map_TiberiumConfig; /*0x596101*/
+      AbstractClass *v8 = g_Map_TiberiumConfig; /*0x596101*/
       if ( g_Map_TiberiumConfig ) /*0x596109*/
       {
         ComPtr::Dtor(g_Map_TiberiumConfig); /*0x59610d*/
@@ -694,7 +693,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
       RawFileClass::Dtor(v17); /*0x596125*/
       goto LABEL_39; /*0x59612a*/
     }
-    void * v9 = g_Map_TiberiumConfig; /*0x59612f*/
+    AbstractClass *v9 = g_Map_TiberiumConfig; /*0x59612f*/
     if ( g_Map_TiberiumConfig ) /*0x596137*/
     {
       ComPtr::Dtor(g_Map_TiberiumConfig); /*0x59613b*/
@@ -722,7 +721,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
   int v12; // ecx
   LOBYTE(v12) = 0; /*0x5961fe*/
   ScreenSaver::Process(v12); /*0x596200*/
-  _DWORD * v13 = g_Map_TiberiumConfig; /*0x596205*/
+  AbstractClass *v13 = g_Map_TiberiumConfig; /*0x596205*/
   if ( g_Map_TiberiumConfig ) /*0x59620f*/
   {
     if ( *(_DWORD *)g_Map_TiberiumConfig ) /*0x596215*/
@@ -762,7 +761,7 @@ LABEL_39:
 
 // 0x59A8F0
 namespace gamemd {
-AbstractClass * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
+AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

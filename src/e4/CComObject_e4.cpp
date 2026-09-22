@@ -75,14 +75,14 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
       if ( v11 < v10 ) /*0x7938cb*/
       {
   int v17; // edx
-        int v13 = *v12; /*0x7938d1*/
+        AbstractClass *v13 = *v12; /*0x7938d1*/
         int * v14 = v12 + 1; /*0x7938d3*/
-        char * v15 = this + 8 * v9; /*0x7938d6*/
+        AbstractClass *v15 = this + 8 * v9; /*0x7938d6*/
         do /*0x793906*/
         {
-          int v16 = *v14; /*0x7938d9*/
+          Game *v16 = *v14; /*0x7938d9*/
           *(_DWORD *)v15 = v13; /*0x7938db*/
-          *((_DWORD *)v15 + 1) = v16; /*0x7938e4*/
+          v15->vtable2 = v16; /*0x7938e4*/
           Debug::Log(); /*0x7938e7*/
           v10 = Game_PlayerCount; /*0x7938f0*/
           v17 = v20 + 1; /*0x7938f8*/
@@ -110,7 +110,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
 
 // 0x7A4EC0
 namespace gamemd {
-Coord * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a3, int a4)
+Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -129,7 +129,7 @@ Coord * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a3,
   {
     return 0; /*0x7a4f38*/
   }
-  signed int v5 = g_WOL_State; /*0x7a4f3e*/
+  Coord *v5 = g_WOL_State; /*0x7a4f3e*/
   signed int v6 = 0; /*0x7a4f44*/
   signed int v19 = 0; /*0x7a4f48*/
   if ( (int)g_WOL_State > 0 ) /*0x7a4f4c*/
@@ -173,7 +173,7 @@ Coord * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a3,
           if ( v9 < g_WOL_StateFlags ) /*0x7a5096*/
           {
             char * v10 = (char *)__2_YAPAXI_Z(108 * v9); /*0x7a50a2*/
-            char * v11 = (char *)g_WOL_ConnectionFlags; /*0x7a50a7*/
+            AbstractClass *v11 = (char *)g_WOL_ConnectionFlags; /*0x7a50a7*/
             void * v12 = v10; /*0x7a50b2*/
             if ( g_WOL_ConnectionFlags ) /*0x7a50b4*/
             {
@@ -228,12 +228,12 @@ LABEL_39:
   void *v20; // [esp+20h] [ebp-E4h] BYREF
   String::Assign((char **)&v20, (const char *)(a4 + 401)); /*0x7a5173*/
   String::ToLower((const char **)&v20); /*0x7a518e*/
-  int v17 = *((_DWORD *)g_WOL_ListParser + (dword_B768D8(&v20) & ((1 << dword_B768CC) - 1))); /*0x7a51b2*/
+  HashTable *v17 = *((_DWORD *)g_WOL_ListParser + (dword_B768D8(&v20) & ((1 << dword_B768CC) - 1))); /*0x7a51b2*/
   if ( v17 ) /*0x7a51b7*/
   {
     while ( !String::Compare((const char **)v17, (const char **)&v20) ) /*0x7a51c7*/
     {
-      v17 = *(_DWORD *)(v17 + 112); /*0x7a51c9*/
+      v17 = v17->q01C; /*0x7a51c9*/
       if ( !v17 ) /*0x7a51ce*/
         goto LABEL_42; /*0x7a51ce*/
     }
@@ -261,7 +261,7 @@ LABEL_42:
 
 // 0x7A5290
 namespace gamemd {
-Coord * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const char * a3)
+Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -369,7 +369,7 @@ LABEL_20:
 
 // 0x7A5690
 namespace gamemd {
-AbstractClass * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, unsigned char * a3)
+AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -389,7 +389,7 @@ AbstractClass * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, unsig
     {
       memset(DataGlobal_B76E40, 0, 0x940u); /*0x7a576f*/
       char * v9 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x7a577b*/
-      int v10 = g_CommandExecState; /*0x7a5788*/
+      AbstractClass *v10 = g_CommandExecState; /*0x7a5788*/
       strcpy(DataGlobal_B76E40, v9); /*0x7a5799*/
       DataGlobal_B76E58[0] = v10; /*0x7a57a8*/
       DataGlobal_B76E5C = 0; /*0x7a57ad*/
@@ -453,7 +453,7 @@ AbstractClass * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, unsig
 
 // 0x7A7B60
 namespace gamemd {
-Coord * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a3, int a4, wchar_t * a5)
+Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a3, int a4, wchar_t * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -533,7 +533,7 @@ LABEL_16:
     if ( g_GameMode_Current[0] == 4 && (dword_B76B30 & 0x100) != 0 ) /*0x7a7d47*/
       *(_DWORD *)dword_B779C4 = 2; /*0x7a7d49*/
     char * v12 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x7a7d59*/
-    int v13 = g_WOL_State; /*0x7a7d66*/
+    Coord *v13 = g_WOL_State; /*0x7a7d66*/
     strcpy(byte_B77830, v12); /*0x7a7d77*/
     if ( v13 > 0 && g_WOL_ConnectionFlags ) /*0x7a7d8b*/
       strcpy(byte_B779E0, (const char *)g_WOL_ConnectionFlags + 36); /*0x7a7da7*/
@@ -549,7 +549,7 @@ LABEL_16:
     int v14 = 0; /*0x7a7e1d*/
     if ( (int)g_WOL_State > 0 ) /*0x7a7e21*/
     {
-      char * v15 = (char *)g_WOL_ConnectionFlags; /*0x7a7e23*/
+      AbstractClass *v15 = (char *)g_WOL_ConnectionFlags; /*0x7a7e23*/
       while ( 1 ) /*0x7a7e29*/
       {
         if ( v14 >= 0 && v14 < (int)g_WOL_State ) /*0x7a7e2f*/
@@ -581,12 +581,12 @@ LABEL_41:
 
 // 0x7A7EA0
 namespace gamemd {
-Coord * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a3, int a4, char * Source)
+Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a3, int a4, char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *Flagged; // esi
-  wchar_t *v9; // eax
+  CampaignScore *v9; // eax
   wchar_t *v10; // eax
   HWND Current; // ebp
   HWND DlgItem; // eax
@@ -603,7 +603,7 @@ Coord * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a3,
   }
   if ( a2 < 0 ) /*0x7a7ee3*/
     return 0; /*0x7a7ee3*/
-  char * v5 = _strdup(Source); /*0x7a7ef6*/
+  AbstractClass *v5 = _strdup(Source); /*0x7a7ef6*/
   bool v6 = SetupNetworkLobbyDialog(v5, (void *)(a4 + 36)); /*0x7a7f0d*/
   free(v5); /*0x7a7f0f*/
   if ( g_NetworkLobby_Init ) /*0x7a7f1e*/
@@ -628,7 +628,7 @@ Coord * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a3,
     CharStringToWide((wchar_t **)&v22, (const char **)&g_WebBrowser); /*0x7a7f93*/
     v9 = WideString::GetOrEmpty((wchar_t **)&v22); /*0x7a7f9c*/
     v10 = Player::FindByName(v9); /*0x7a7fa3*/
-    int v11 = (int)v10; /*0x7a7fa8*/
+    Coord *v11 = (int)v10; /*0x7a7fa8*/
     if ( v10 /*0x7a7fed*/
       && SessionClass::GetPlayerSide((int)v10) >= 0
       && SessionClass::GetPlayerColor(v11) >= 0
@@ -654,7 +654,7 @@ Coord * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a3,
     }
     if ( (int)(Timer::GetTicks() - dword_B78608) > 900 ) /*0x7a806e*/
     {
-      void * v14 = g_UIControlState; /*0x7a8070*/
+      IUnknown *v14 = g_UIControlState; /*0x7a8070*/
       if ( (!g_UIControlState || !*(_DWORD *)g_UIControlState) && !byte_B77E2C ) /*0x7a8085*/
       {
         if ( !Destination /*0x7a80a8*/
@@ -735,7 +735,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v11; // eax
+  CampaignScore *v11; // eax
   if ( !g_NetworkLobby_Init && a2 >= 0 ) /*0x7a8db5*/
   {
     if ( g_GameOptionsFlags == 3 || g_GameOptionsFlags == 1 || g_GameOptionsFlags == 2 ) /*0x7a8dcd*/
@@ -781,7 +781,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
         String::Assign(&String1, v6); /*0x7a8e5e*/
         CharStringToWide((wchar_t **)&a2, (const char **)&String1); /*0x7a8e6b*/
         DeleteAndZero((void **)&String1); /*0x7a8e74*/
-        int v9 = 61680; /*0x7a8e7b*/
+        AbstractClass *v9 = 61680; /*0x7a8e7b*/
         if ( (*v7 & 1) != 0 ) /*0x7a8e83*/
           v9 = 16776960; /*0x7a8e85*/
         const void * v10 = v7 + 36; /*0x7a8e8b*/
@@ -801,11 +801,11 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
 
 // 0x7A8ED0
 namespace gamemd {
-AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a2, int a3, const char * a4, wchar_t * String)
+AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a2, int a3, const char * a4, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v11; // eax
+  CampaignScore *v11; // eax
   if ( g_NetworkLobby_Init ) /*0x7a8ed8*/
     return 0; /*0x7a8eda*/
   if ( a2 < 0 ) /*0x7a8ee6*/
@@ -817,7 +817,7 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a2,
     if ( (*a4 & 1) != 0 || Dialog::FindByHandle((void *)0xC2) || Dialog::FindByHandle((void *)0xC9) ) /*0x7a8f1c*/
       goto LABEL_21; /*0x7a8f1c*/
     bool v7 = WideString::IsASCII((const wchar_t **)&a2) == 0; /*0x7a8f2e*/
-    int v8 = dword_B779C0; /*0x7a8f30*/
+    AbstractClass *v8 = dword_B779C0; /*0x7a8f30*/
     if ( v7 ) /*0x7a8f35*/
       v8 = dword_B779DC; /*0x7a8f37*/
     if ( v8 ) /*0x7a8f43*/
@@ -825,7 +825,7 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a2,
 LABEL_21:
       if ( IsBuddyOrIgnoreWOL(v6) ) /*0x7a8f56*/
       {
-        int v9 = 61680; /*0x7a8f71*/
+        AbstractClass *v9 = 61680; /*0x7a8f71*/
         if ( (*v6 & 1) != 0 ) /*0x7a8f79*/
           v9 = 16776960; /*0x7a8f7b*/
         const void * v10 = v6 + 36; /*0x7a8f81*/
@@ -845,7 +845,7 @@ LABEL_21:
 
 // 0x7A8FC0
 namespace gamemd {
-AbstractClass * CComObject_CChatEventSink___ATL_DispatchStub_17()
+AbstractClass * * CComObject_CChatEventSink___ATL_DispatchStub_17()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -854,11 +854,11 @@ AbstractClass * CComObject_CChatEventSink___ATL_DispatchStub_17()
 
 // 0x7A9110
 namespace gamemd {
-AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a2, const char * a3, wchar_t * String)
+AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a2, const char * a3, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v10; // eax
+  CampaignScore *v10; // eax
   if ( g_NetworkLobby_Init ) /*0x7a9118*/
     return 0; /*0x7a911a*/
   if ( a2 < 0 ) /*0x7a9126*/
@@ -870,7 +870,7 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a2,
     if ( (*a3 & 1) != 0 || Dialog::FindByHandle((void *)0xC2) || Dialog::FindByHandle((void *)0xC9) ) /*0x7a915c*/
       goto LABEL_21; /*0x7a915c*/
     bool v6 = WideString::IsASCII((const wchar_t **)&a2) == 0; /*0x7a916e*/
-    int v7 = dword_B779C0; /*0x7a9170*/
+    AbstractClass *v7 = dword_B779C0; /*0x7a9170*/
     if ( v6 ) /*0x7a9175*/
       v7 = dword_B779DC; /*0x7a9177*/
     if ( v7 ) /*0x7a9183*/
@@ -878,7 +878,7 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a2,
 LABEL_21:
       if ( IsBuddyOrIgnoreWOL(v5) ) /*0x7a9196*/
       {
-        int v8 = 16744576; /*0x7a91b1*/
+        AbstractClass *v8 = 16744576; /*0x7a91b1*/
         if ( (*v5 & 1) != 0 ) /*0x7a91b9*/
           v8 = 16776960; /*0x7a91bb*/
         const void * v9 = v5 + 36; /*0x7a91c1*/
@@ -898,23 +898,23 @@ LABEL_21:
 
 // 0x7A9200
 namespace gamemd {
-CampaignScore * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a2, const char * a3, const char * a4)
+CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a2, const char * a3, const char * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v8; // eax
+  CampaignScore *v8; // eax
   int Type; // esi
   wchar_t *StringCSF; // eax
-  wchar_t *v12; // eax
+  CampaignScore *v12; // eax
   HWND Current; // esi
-  wchar_t *v14; // eax
-  wchar_t *v15; // eax
+  CampaignScore *v14; // eax
+  CampaignScore *v15; // eax
   HWND Dialog; // eax
-  wchar_t *v17; // eax
+  CampaignScore *v17; // eax
   HWND DlgItem; // eax
   char **ChatCommand; // ebx
-  HWND v20; // esi
-  wchar_t *v23; // eax
+  AbstractClass *v20; // esi
+  CampaignScore *v23; // eax
   wchar_t Buffer[256]; // [esp+20h] [ebp-200h] BYREF
 
   if ( a2 < 0 ) /*0x7a920d*/
@@ -929,7 +929,7 @@ CampaignScore * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a2,
   if ( (*a3 & 1) == 0 && !Dialog::FindByHandle((void *)0xC2) && !Dialog::FindByHandle((void *)0xC9) ) /*0x7a9266*/
   {
     bool v5 = WideString::IsASCII((const wchar_t **)&v25) == 0; /*0x7a9278*/
-    int v6 = dword_B779C0; /*0x7a927a*/
+    AbstractClass *v6 = dword_B779C0; /*0x7a927a*/
     if ( v5 ) /*0x7a927f*/
       v6 = dword_B779DC; /*0x7a9281*/
     if ( !v6 ) /*0x7a928d*/
@@ -1019,7 +1019,7 @@ LABEL_12:
 
 // 0x7A9550
 namespace gamemd {
-AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a2, int a3, wchar_t * String)
+AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a2, int a3, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1028,15 +1028,15 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a2,
   HWND Current; // esi
   HWND DlgItem; // eax
   char **ChatCommand; // ebx
-  HWND v14; // esi
-  wchar_t *v17; // eax
+  AbstractClass *v14; // esi
+  CampaignScore *v17; // eax
   void *v18; // [esp+Ch] [ebp-204h] BYREF
   wchar_t Buffer[256]; // [esp+10h] [ebp-200h] BYREF
 
   if ( a2 < 0 ) /*0x7a955f*/
     return 0; /*0x7a9563*/
   WideString::Assign((wchar_t **)&v18, String); /*0x7a957b*/
-  int v5 = a3; /*0x7a9580*/
+  ObjectClass *v5 = a3; /*0x7a9580*/
   if ( a3 ) /*0x7a9589*/
   {
     if ( (*(_BYTE *)a3 & 1) != 0 ) /*0x7a9592*/
@@ -1054,7 +1054,7 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a2,
     else
     {
       bool v7 = WideString::IsASCII((const wchar_t **)&v18) == 0; /*0x7a95c5*/
-      int v8 = dword_B779C0; /*0x7a95c7*/
+      AbstractClass *v8 = dword_B779C0; /*0x7a95c7*/
       if ( v7 ) /*0x7a95cc*/
         v8 = dword_B779DC; /*0x7a95ce*/
       v6 = v8 != 0; /*0x7a95d5*/
@@ -1125,7 +1125,7 @@ LABEL_27:
 
 // 0x7A9800
 namespace gamemd {
-ObjectClass * CComObject_CChatEventSink___ATL::DispatchStub_27(int a1, int a2)
+ObjectClass * * CComObject_CChatEventSink___ATL::DispatchStub_27(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1281,7 +1281,7 @@ void CComObject_CChatEventSink___ATL_DispatchStub_19()
 
 // 0x7AB440
 namespace gamemd {
-Coord * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void * a3, int a4, int a5)
+Coord * * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void * a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1289,7 +1289,7 @@ Coord * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void * 
   size_t v14; // ecx
   if ( a2 ) /*0x7ab44c*/
     return 0; /*0x7ab65d*/
-  signed int v5 = g_WOL_State; /*0x7ab452*/
+  Coord *v5 = g_WOL_State; /*0x7ab452*/
   signed int v6 = 0; /*0x7ab458*/
   signed int v18 = 0; /*0x7ab45c*/
   if ( (int)g_WOL_State > 0 ) /*0x7ab460*/
@@ -1327,7 +1327,7 @@ Coord * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void * 
           if ( v9 < g_WOL_StateFlags ) /*0x7ab550*/
           {
             char * v10 = (char *)__2_YAPAXI_Z(108 * v9); /*0x7ab55c*/
-            char * v11 = (char *)g_WOL_ConnectionFlags; /*0x7ab561*/
+            AbstractClass *v11 = (char *)g_WOL_ConnectionFlags; /*0x7ab561*/
             void * v12 = v10; /*0x7ab56c*/
             if ( g_WOL_ConnectionFlags ) /*0x7ab56e*/
             {
@@ -1395,9 +1395,9 @@ int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v10; // eax
-  wchar_t *v11; // eax
+  CampaignScore *v11; // eax
   HWND v12; // eax
-  wchar_t *v13; // eax
+  CampaignScore *v13; // eax
   wchar_t *StringCSF; // eax
   wchar_t *v18; // [esp-10h] [ebp-814h]
   HWND DlgItem; // [esp-10h] [ebp-814h]
@@ -1411,7 +1411,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int
   char * v6 = (char *)(a3 + 52); /*0x7ab6c5*/
   if ( !_strnicmp((const char *)(a3 + 52), g_Str_Lob_41_, strlen(g_Str_Lob_41_)) ) /*0x7ab6cf*/
   {
-    int v7 = atol((const char *)(strlen(g_Str_Lob_41_) + a3 + 52)); /*0x7ab6f2*/
+    Coord *v7 = atol((const char *)(strlen(g_Str_Lob_41_) + a3 + 52)); /*0x7ab6f2*/
     int v8 = v7 / 8; /*0x7ab6fd*/
     int v9 = v7 % 8; /*0x7ab70c*/
     if ( v8 ) /*0x7ab70f*/
@@ -1508,8 +1508,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
         v7 = v6; /*0x7ab954*/
         if ( v6 ) /*0x7ab95b*/
           unknown_libname_73(v6); /*0x7ab95f*/
-        else
-          v7 = 0; /*0x7ab966*/
+        AbstractClass *v7 = 0; /*0x7ab966*/
         String::Reassign(v7, (const char **)&a2); /*0x7ab96f*/
         v7[1] = v5; /*0x7ab978*/
         v7[2] = 0; /*0x7ab981*/
@@ -1572,7 +1571,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
 
 // 0x7ABAF0
 namespace gamemd {
-AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a2, char * a3)
+AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1586,12 +1585,12 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a2,
   strcpy(v17, g_GameSetupBuffer); /*0x7abb1c*/
   String::Assign_Bool(&v15, v17); /*0x7abb2e*/
   String::ToLower((const char **)&v15); /*0x7abb37*/
-  int v3 = *((_DWORD *)g_WOL_ConnectionPool + (dword_B76548(&v15) & ((1 << dword_B7653C) - 1))); /*0x7abb5d*/
+  HashTable *v3 = *((_DWORD *)g_WOL_ConnectionPool + (dword_B76548(&v15) & ((1 << dword_B7653C) - 1))); /*0x7abb5d*/
   if ( v3 ) /*0x7abb62*/
   {
     while ( !String::Compare((const char **)v3, (const char **)&v15) ) /*0x7abb76*/
     {
-      v3 = *(_DWORD *)(v3 + 8); /*0x7abb78*/
+      v3 = v3->q008; /*0x7abb78*/
       if ( !v3 ) /*0x7abb7d*/
         goto LABEL_19; /*0x7abb7d*/
     }
@@ -1600,7 +1599,7 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a2,
       v16 = (unsigned int)(dword_B76534 - 1); /*0x7abb98*/
       *(float *)&v16 = (double)v16 / (double)dword_B76538; /*0x7abbb4*/
       int v4 = dword_B76548(&v15) & ((1 << dword_B7653C) - 1); /*0x7abbcc*/
-      int v5 = *((_DWORD *)g_WOL_ConnectionPool + v4); /*0x7abbd3*/
+      HashTable *v5 = *((_DWORD *)g_WOL_ConnectionPool + v4); /*0x7abbd3*/
       if ( v5 ) /*0x7abbd8*/
       {
         if ( String::Compare((const char **)v5, (const char **)&v15) ) /*0x7abbe5*/
@@ -1618,17 +1617,17 @@ LABEL_18:
         }
         else
         {
-          int v9 = *(_DWORD *)(v5 + 8); /*0x7abc2b*/
+          HashTable *v9 = v5->q008; /*0x7abc2b*/
           if ( v9 ) /*0x7abc30*/
           {
             while ( !String::Compare((const char **)v9, (const char **)&v15) ) /*0x7abc40*/
             {
               v5 = v9; /*0x7abc42*/
-              v9 = *(_DWORD *)(v9 + 8); /*0x7abc44*/
+              v9 = v9->q008; /*0x7abc44*/
               if ( !v9 ) /*0x7abc49*/
                 goto LABEL_17; /*0x7abc49*/
             }
-            *(_DWORD *)(v5 + 8) = *(_DWORD *)(v9 + 8); /*0x7abc50*/
+            v5->q008 = v9->q008; /*0x7abc50*/
             --dword_B76534; /*0x7abc5c*/
             ScalarDtor::DeleteAndZero((void **)v9, 1); /*0x7abc68*/
           }
@@ -1644,8 +1643,7 @@ LABEL_19:
   v11 = v10; /*0x7abc8f*/
   if ( v10 ) /*0x7abc96*/
     unknown_libname_73(v10); /*0x7abc9a*/
-  else
-    v11 = 0; /*0x7abca1*/
+  HashTable *v11 = 0; /*0x7abca1*/
   String::Reassign(v11, (const char **)&v15); /*0x7abcaa*/
   v11[2] = 0; /*0x7abcaf*/
   v11[1] = a3; /*0x7abcb6*/
@@ -1666,7 +1664,7 @@ LABEL_19:
 
 // 0x7ABD40
 namespace gamemd {
-AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a2, float a3)
+AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a2, float a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1688,12 +1686,12 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a2,
       do /*0x7abd74*/
       {
         String::Assign_Bool((void **)&a2, (const char *)(LODWORD(v4) + 36)); /*0x7abd74*/
-        int v5 = *((_DWORD *)g_WOL_MessageQueue + (dword_B76698(&a2) & ((1 << dword_B7668C) - 1))); /*0x7abd98*/
+        HashTable *v5 = *((_DWORD *)g_WOL_MessageQueue + (dword_B76698(&a2) & ((1 << dword_B7668C) - 1))); /*0x7abd98*/
         if ( !v5 ) /*0x7abd9d*/
           goto LABEL_21; /*0x7abd9d*/
         while ( !String::Compare((const char **)v5, (const char **)&a2) ) /*0x7abdb1*/
         {
-          v5 = *(_DWORD *)(v5 + 8); /*0x7abdb3*/
+          v5 = v5->q008; /*0x7abdb3*/
           if ( !v5 ) /*0x7abdb8*/
             goto LABEL_21; /*0x7abdb8*/
         }
@@ -1701,7 +1699,7 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a2,
           goto LABEL_21; /*0x7abdc6*/
         a3 = (double)(unsigned int)(g_WOL_MessageConfig - 1) / (double)g_WOL_MsgPool; /*0x7abdef*/
         int v6 = dword_B76698(&a2) & ((1 << dword_B7668C) - 1); /*0x7abe07*/
-        int v7 = *((_DWORD *)g_WOL_MessageQueue + v6); /*0x7abe0e*/
+        HashTable *v7 = *((_DWORD *)g_WOL_MessageQueue + v6); /*0x7abe0e*/
         if ( !v7 ) /*0x7abe13*/
           goto LABEL_21; /*0x7abe13*/
         if ( String::Compare((const char **)v7, (const char **)&a2) ) /*0x7abe20*/
@@ -1718,17 +1716,17 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a2,
         }
         else
         {
-          int v11 = *(_DWORD *)(v7 + 8); /*0x7abe66*/
+          HashTable *v11 = v7->q008; /*0x7abe66*/
           if ( v11 ) /*0x7abe6b*/
           {
             while ( !String::Compare((const char **)v11, (const char **)&a2) ) /*0x7abe7b*/
             {
               v7 = v11; /*0x7abe7d*/
-              v11 = *(_DWORD *)(v11 + 8); /*0x7abe7f*/
+              v11 = v11->q008; /*0x7abe7f*/
               if ( !v11 ) /*0x7abe84*/
                 goto LABEL_19; /*0x7abe84*/
             }
-            *(_DWORD *)(v7 + 8) = *(_DWORD *)(v11 + 8); /*0x7abe8b*/
+            v7->q008 = v11->q008; /*0x7abe8b*/
             --g_WOL_MessageConfig; /*0x7abe97*/
             ScalarDtor::DeleteAndZero((void **)v11, 1); /*0x7abea3*/
           }
@@ -1743,8 +1741,7 @@ LABEL_21:
         v14 = v13; /*0x7abecd*/
         if ( v13 ) /*0x7abed4*/
           unknown_libname_73(v13); /*0x7abed8*/
-        else
-          v14 = 0; /*0x7abedf*/
+        HashTable *v14 = 0; /*0x7abedf*/
         String::Reassign(v14, (const char **)&a2); /*0x7abee8*/
         v14[1] = v12; /*0x7abef1*/
         v14[2] = 0; /*0x7abef4*/
@@ -1769,7 +1766,7 @@ LABEL_21:
 
 // 0x7ABFA0
 namespace gamemd {
-AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a2, int a3)
+AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1788,12 +1785,12 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a2,
   strcpy(v15, g_GameSetupBuffer); /*0x7abfe5*/
   String::Assign_Bool((void **)&a3, v15); /*0x7abff7*/
   String::ToLower((const char **)&a3); /*0x7ac000*/
-  int v4 = *((_DWORD *)g_WOL_MessageQueue + (dword_B76698(&a3) & ((1 << dword_B7668C) - 1))); /*0x7ac024*/
+  HashTable *v4 = *((_DWORD *)g_WOL_MessageQueue + (dword_B76698(&a3) & ((1 << dword_B7668C) - 1))); /*0x7ac024*/
   if ( v4 ) /*0x7ac029*/
   {
     while ( !String::Compare((const char **)v4, (const char **)&a3) ) /*0x7ac03d*/
     {
-      v4 = *(_DWORD *)(v4 + 8); /*0x7ac03f*/
+      v4 = v4->q008; /*0x7ac03f*/
       if ( !v4 ) /*0x7ac044*/
         goto LABEL_20; /*0x7ac044*/
     }
@@ -1801,7 +1798,7 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a2,
     {
       float v16 = (double)(unsigned int)(g_WOL_MessageConfig - 1) / (double)g_WOL_MsgPool; /*0x7ac07b*/
       int v5 = dword_B76698(&a3) & ((1 << dword_B7668C) - 1); /*0x7ac093*/
-      int v6 = *((_DWORD *)g_WOL_MessageQueue + v5); /*0x7ac09a*/
+      HashTable *v6 = *((_DWORD *)g_WOL_MessageQueue + v5); /*0x7ac09a*/
       if ( v6 ) /*0x7ac09f*/
       {
         if ( String::Compare((const char **)v6, (const char **)&a3) ) /*0x7ac0ac*/
@@ -1817,17 +1814,17 @@ AbstractClass * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a2,
         }
         else
         {
-          int v9 = *(_DWORD *)(v6 + 8); /*0x7ac0f2*/
+          HashTable *v9 = v6->q008; /*0x7ac0f2*/
           if ( v9 ) /*0x7ac0f7*/
           {
             while ( !String::Compare((const char **)v9, (const char **)&a3) ) /*0x7ac107*/
             {
               v6 = v9; /*0x7ac109*/
-              v9 = *(_DWORD *)(v9 + 8); /*0x7ac10b*/
+              v9 = v9->q008; /*0x7ac10b*/
               if ( !v9 ) /*0x7ac110*/
                 goto LABEL_18; /*0x7ac110*/
             }
-            *(_DWORD *)(v6 + 8) = *(_DWORD *)(v9 + 8); /*0x7ac117*/
+            v6->q008 = v9->q008; /*0x7ac117*/
             --g_WOL_MessageConfig; /*0x7ac123*/
             ScalarDtor::DeleteAndZero((void **)v9, 1); /*0x7ac12f*/
           }
@@ -1844,8 +1841,7 @@ LABEL_20:
   v11 = v10; /*0x7ac156*/
   if ( v10 ) /*0x7ac15d*/
     unknown_libname_73(v10); /*0x7ac161*/
-  else
-    v11 = 0; /*0x7ac168*/
+  HashTable *v11 = 0; /*0x7ac168*/
   String::Reassign(v11, (const char **)&a3); /*0x7ac171*/
   v11[1] = (char *)v3; /*0x7ac17a*/
   v11[2] = 0; /*0x7ac17d*/
@@ -1864,7 +1860,7 @@ LABEL_20:
 
 // 0x7AC220
 namespace gamemd {
-ObjectClass * CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2, int a3)
+ObjectClass * * CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1873,11 +1869,11 @@ ObjectClass * CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2, i
   HWND Current; // eax
   HWND DlgItem; // eax
   HWND v10; // eax
-  HWND v11; // esi
+  ObjectClass *v11; // esi
   HWND v12; // eax
   if ( a2 >= 0 ) /*0x7ac22b*/
   {
-    int v3 = a3; /*0x7ac23b*/
+    ObjectClass *v3 = a3; /*0x7ac23b*/
     if ( a3 ) /*0x7ac23d*/
     {
       while ( 1 ) /*0x7ac24e*/
@@ -1887,7 +1883,7 @@ ObjectClass * CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2, i
           break; /*0x7ac25a*/
 LABEL_20:
         DeleteAndZero((void **)&a3); /*0x7ac3f9*/
-        v3 = *(_DWORD *)(v3 + 32); /*0x7ac405*/
+        v3 = v3->NeedsSaveOrLink; /*0x7ac405*/
         if ( !v3 ) /*0x7ac40a*/
           goto LABEL_21; /*0x7ac40a*/
       }
@@ -1895,7 +1891,7 @@ LABEL_20:
       StringVector::Insert(&g_WindowManager, (const char **)&a2, g_WindowManager); /*0x7ac28f*/
       StringVector::Insert(&g_WOL_RequestManager, (const char **)&a2, g_WOL_RequestManager); /*0x7ac2a8*/
       int v4 = g_WOL_BuddyList; /*0x7ac2ad*/
-      int v5 = g_WOL_BuddyList; /*0x7ac2b2*/
+      BlowStraw *v5 = g_WOL_BuddyList; /*0x7ac2b2*/
       if ( g_WOL_BuddyList >= dword_B779B4 ) /*0x7ac2be*/
       {
         DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x7ac2c5*/

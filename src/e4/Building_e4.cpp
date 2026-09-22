@@ -209,11 +209,11 @@ int Building::GetRenderType()
 {
   char result; // al
 
-  int v1 = this->q0A0; /*0x772a90*/
+  BuildingTypeClass *v1 = this->q0A0; /*0x772a90*/
   result = 0; /*0x772a96*/
-  if ( *(_BYTE *)(v1 + 676) ) /*0x772a98*/
+  if ( v1->eliteWeapon1 ) /*0x772a98*/
     result = 4; /*0x772aa2*/
-  if ( *(_BYTE *)(v1 + 677) ) /*0x772aa7*/
+  if ( v1->EliteWeapon ) /*0x772aa7*/
     return result | 0xB8; /*0x772ab1*/
   return result; /*0x772ab3*/
 }

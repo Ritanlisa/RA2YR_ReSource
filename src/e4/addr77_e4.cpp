@@ -420,7 +420,7 @@ LABEL_11:
           v14 = (HDC)__2_YAPAXI_Z(144 * v13); /*0x775f5f*/
           memset(v14, 0, 4 * ((unsigned int)(144 * v13) >> 2)); /*0x775f6a*/
           hdc = v14; /*0x775f74*/
-          char * v15 = (char *)dword_B72F40; /*0x775f7a*/
+          AbstractClass *v15 = (char *)dword_B72F40; /*0x775f7a*/
           if ( dword_B72F40 ) /*0x775f82*/
           {
             char * v16 = (char *)v14; /*0x775f89*/
@@ -443,7 +443,7 @@ LABEL_11:
           v20 = (HDC)__2_YAPAXI_Z(144 * v19); /*0x775fdf*/
           memset(v20, 0, 4 * ((unsigned int)(144 * v19) >> 2)); /*0x775fea*/
           hdca = v20; /*0x775ff4*/
-          char * v21 = (char *)dword_B72F40; /*0x775ffa*/
+          AbstractClass *v21 = (char *)dword_B72F40; /*0x775ffa*/
           if ( dword_B72F40 ) /*0x776002*/
           {
             char * v22 = (char *)v20; /*0x776009*/
@@ -675,7 +675,7 @@ void E4Recv_776570::sub_776570()
 
 // 0x777080
 namespace gamemd {
-AbstractClass * SetDialogParent(HWND hWnd, HWND a2)
+AbstractClass * * SetDialogParent(HWND hWnd, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -754,7 +754,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
     switch ( Msg ) /*0x7776ae*/
     {
       case 1u: /*0x7776ae*/
-        _DWORD * v11 = __2_YAPAXI_Z(0x268u); /*0x777797*/
+        ToolTipManager *v11 = __2_YAPAXI_Z(0x268u); /*0x777797*/
         if ( v11 ) /*0x77779e*/
         {
           MainWindowProc_Helper_724000(v9); /*0x7777a3*/
@@ -951,7 +951,7 @@ void * E4Recv_777BB0::sub_777BB0()
 
 // 0x777C30
 namespace gamemd {
-ObjectClass * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yBottom)
+ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yBottom)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1139,7 +1139,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
   int v30; // [esp+6Ch] [ebp-70h]
       LOBYTE(v30) = Bool_Overwrite; /*0x778c2e*/
       String::Assign((char **)&v16, g_INI_Key_Country); /*0x778c32*/
-      int v9 = INIClass::ReadInt((char **)&v17, (char **)&v16, -2); /*0x778c50*/
+      ObjectClass *v9 = INIClass::ReadInt((char **)&v17, (char **)&v16, -2); /*0x778c50*/
       DeleteAndZero(&v16); /*0x778c52*/
       String::Assign((char **)&v16, stru_81B138); /*0x778c60*/
       int v10 = INIClass::ReadInt((char **)&v17, (char **)&v16, -2); /*0x778c7e*/
@@ -1180,7 +1180,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       char * v13 = CharToWideString(v12); /*0x778e3d*/
       WideString::Reassign(&v20, (wchar_t *)v13); /*0x778e47*/
       if ( __2_YAPAXI_Z(0x44u) )
-  int v14; // esi
+  rc_ptr_base *v14; // esi
         v14 = LoadAccountInfoWOL_Load(
                 &v19,
                 Int,
@@ -1196,9 +1196,8 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
                 v34,
                 &v20,
                 &v21);
-      else
-        v14 = 0; /*0x778eb7*/
-      _DWORD * v15 = v32; /*0x778eb9*/
+      rc_ptr_base *v14 = 0; /*0x778eb7*/
+      rc_ptr_base *v15 = v32; /*0x778eb9*/
       ComPtr::Constructor(v32); /*0x778ebf*/
       *v15 = &vt_rc_ptr_PlayerProfile; /*0x778ec6*/
       ComPtr::Set(v15, v14); /*0x778ecd*/
@@ -1235,7 +1234,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
 
 // 0x778F30
 namespace gamemd {
-CampaignScore * LocalizeWOLDateString(char ** a1, void ** a2)
+CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1264,7 +1263,6 @@ CampaignScore * LocalizeWOLDateString(char ** a1, void ** a2)
   wchar_t *v27; // eax
   CampaignScore *v28; // eax
   wchar_t *v29; // eax
-
   char * v3 = String::GetOrEmpty_Alt(a1); /*0x778f33*/
   char * v4 = CharToWideString(v3); /*0x778f3a*/
   WideString::Reassign(a2, (wchar_t *)v4); /*0x778f42*/
@@ -1397,7 +1395,7 @@ CampaignScore * LocalizeWOLDateString(char ** a1, void ** a2)
 
 // 0x779230
 namespace gamemd {
-CampaignScore * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
+CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1440,7 +1438,6 @@ CampaignScore * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   wchar_t *v41; // [esp-4h] [ebp-10h]
   wchar_t *v42; // [esp-4h] [ebp-10h]
   wchar_t *v43; // [esp+8h] [ebp-4h] BYREF
-
   unknown_libname_74(&v43); /*0x77923b*/
   v4 = WideString::GetOrEmpty_Alt(a1); /*0x779242*/
   WideString::Reassign((void **)&v43, (wchar_t *)v4); /*0x77924c*/
@@ -1565,7 +1562,7 @@ int RunWOLMainLoop(char a1)
   while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) < 0 ) /*0x77b2b6*/
     (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x77b2c0*/
   RunWOLMainLoop_Helper(); /*0x77b2d2*/
-  int v2 = dword_A83D14; /*0x77b2d7*/
+  AbstractClass *v2 = dword_A83D14; /*0x77b2d7*/
   if ( dword_A83D14 == -1 ) /*0x77b2e0*/
     v2 = dword_A83D18; /*0x77b2e2*/
   if ( v2 == StringList::Find(&g_BuildingTypeClass_Count, g_INI_Key_INTRO) ) /*0x77b2f9*/
@@ -1595,11 +1592,11 @@ int RunWOLMainLoop(char a1)
     }
   }
   int v6 = dword_B73678; /*0x77b39d*/
-  int v7 = 0; /*0x77b3a3*/
+  Coord *v7 = 0; /*0x77b3a3*/
   bool v15 = 0; /*0x77b3a5*/
   do /*0x77b527*/
   {
-  int v10; // ecx
+  Coord *v10; // ecx
     if ( !g_GameOptionsFlags || g_GameOptionsFlags == 6 ) /*0x77b3b7*/
       int v8 = 0; /*0x77b3c6*/
     else
@@ -1748,7 +1745,7 @@ void sub_77BAE0()
   unsigned int v0 = dword_B768C8; /*0x77bae0*/
   for ( i = 0; i < dword_B768C8; v0 = dword_B768C8 ) /*0x77baed*/
   {
-    int v2 = *((_DWORD *)g_WOL_ListParser + i); /*0x77baf4*/
+    SessionClass *v2 = *((_DWORD *)g_WOL_ListParser + i); /*0x77baf4*/
     while ( v2 ) /*0x77baf9*/
     {
       v3 = (void **)v2; /*0x77bafb*/
@@ -1766,7 +1763,7 @@ void sub_77BAE0()
     {
       if ( byte_B768D4 || v0 <= v4 ) /*0x77bb58*/
         break; /*0x77bb58*/
-      int * v5 = (int *)g_WOL_ListParser; /*0x77bb64*/
+      AbstractClass *v5 = (int *)g_WOL_ListParser; /*0x77bb64*/
       int v6 = v0; /*0x77bb6a*/
       dword_B768C8 = v0 >> 1; /*0x77bb6f*/
       --dword_B768CC; /*0x77bb7b*/
@@ -1774,7 +1771,7 @@ void sub_77BAE0()
       memset(g_WOL_ListParser, 0, 4 * dword_B768C8); /*0x77bb9c*/
       if ( v6 > 0 ) /*0x77bb9e*/
       {
-        int * v7 = v5; /*0x77bba0*/
+        AbstractClass *v7 = v5; /*0x77bba0*/
         int v8 = v6; /*0x77bba2*/
         do /*0x77bbdd*/
         {
@@ -1821,7 +1818,7 @@ void sub_77BCB0()
   unsigned int v0 = DataGlobal_B73B00; /*0x77bcb0*/
   for ( i = 0; i < DataGlobal_B73B00; v0 = DataGlobal_B73B00 ) /*0x77bcbd*/
   {
-    int v2 = *((_DWORD *)DataGlobal_B73AF8 + i); /*0x77bcc4*/
+    SessionClass *v2 = *((_DWORD *)DataGlobal_B73AF8 + i); /*0x77bcc4*/
     while ( v2 ) /*0x77bcc9*/
     {
       v3 = (void **)v2; /*0x77bccb*/
@@ -1839,7 +1836,7 @@ void sub_77BCB0()
     {
       if ( DataGlobal_B73B0C || v0 <= v4 ) /*0x77bd28*/
         break; /*0x77bd28*/
-      int * v5 = (int *)DataGlobal_B73AF8; /*0x77bd34*/
+      AbstractClass *v5 = (int *)DataGlobal_B73AF8; /*0x77bd34*/
       int v6 = v0; /*0x77bd3a*/
       DataGlobal_B73B00 = v0 >> 1; /*0x77bd3f*/
       --DataGlobal_B73B04; /*0x77bd4b*/
@@ -1847,7 +1844,7 @@ void sub_77BCB0()
       memset(DataGlobal_B73AF8, 0, 4 * DataGlobal_B73B00); /*0x77bd6c*/
       if ( v6 > 0 ) /*0x77bd6e*/
       {
-        int * v7 = v5; /*0x77bd70*/
+        AbstractClass *v7 = v5; /*0x77bd70*/
         int v8 = v6; /*0x77bd72*/
         do /*0x77bdad*/
         {
@@ -1894,7 +1891,7 @@ void sub_77BE80()
   unsigned int v0 = dword_B77D88; /*0x77be80*/
   for ( i = 0; i < dword_B77D88; v0 = dword_B77D88 ) /*0x77be8d*/
   {
-    int v2 = *((_DWORD *)dword_B77D80 + i); /*0x77be94*/
+    SessionClass *v2 = *((_DWORD *)dword_B77D80 + i); /*0x77be94*/
     while ( v2 ) /*0x77be99*/
     {
       v3 = (void **)v2; /*0x77be9b*/
@@ -1912,7 +1909,7 @@ void sub_77BE80()
     {
       if ( byte_B77D94 || v0 <= v4 ) /*0x77bef8*/
         break; /*0x77bef8*/
-      int * v5 = (int *)dword_B77D80; /*0x77bf04*/
+      AbstractClass *v5 = (int *)dword_B77D80; /*0x77bf04*/
       int v6 = v0; /*0x77bf0a*/
       dword_B77D88 = v0 >> 1; /*0x77bf0f*/
       --dword_B77D8C; /*0x77bf1b*/
@@ -1920,7 +1917,7 @@ void sub_77BE80()
       memset(dword_B77D80, 0, 4 * dword_B77D88); /*0x77bf3c*/
       if ( v6 > 0 ) /*0x77bf3e*/
       {
-        int * v7 = v5; /*0x77bf40*/
+        AbstractClass *v7 = v5; /*0x77bf40*/
         int v8 = v6; /*0x77bf42*/
         do /*0x77bf7d*/
         {
@@ -1967,7 +1964,7 @@ void sub_77C050()
   unsigned int v0 = dword_B76648; /*0x77c050*/
   for ( i = 0; i < dword_B76648; v0 = dword_B76648 ) /*0x77c05d*/
   {
-    int v2 = *((_DWORD *)dword_B76640 + i); /*0x77c064*/
+    SessionClass *v2 = *((_DWORD *)dword_B76640 + i); /*0x77c064*/
     while ( v2 ) /*0x77c069*/
     {
       v3 = (void **)v2; /*0x77c06b*/
@@ -1985,7 +1982,7 @@ void sub_77C050()
     {
       if ( byte_B76654 || v0 <= v4 ) /*0x77c0c8*/
         break; /*0x77c0c8*/
-      int * v5 = (int *)dword_B76640; /*0x77c0d4*/
+      AbstractClass *v5 = (int *)dword_B76640; /*0x77c0d4*/
       int v6 = v0; /*0x77c0da*/
       dword_B76648 = v0 >> 1; /*0x77c0df*/
       --dword_B7664C; /*0x77c0eb*/
@@ -1993,7 +1990,7 @@ void sub_77C050()
       memset(dword_B76640, 0, 4 * dword_B76648); /*0x77c10c*/
       if ( v6 > 0 ) /*0x77c10e*/
       {
-        int * v7 = v5; /*0x77c110*/
+        AbstractClass *v7 = v5; /*0x77c110*/
         int v8 = v6; /*0x77c112*/
         do /*0x77c14d*/
         {
@@ -2040,11 +2037,11 @@ void sub_77C220()
   unsigned int v0 = g_WOL_MsgPool; /*0x77c220*/
   for ( i = 0; i < g_WOL_MsgPool; v0 = g_WOL_MsgPool ) /*0x77c22d*/
   {
-    int v2 = *((_DWORD *)g_WOL_MessageQueue + i); /*0x77c234*/
+    SessionClass *v2 = *((_DWORD *)g_WOL_MessageQueue + i); /*0x77c234*/
     while ( v2 ) /*0x77c239*/
     {
       v3 = (void **)v2; /*0x77c23b*/
-      v2 = *(_DWORD *)(v2 + 8); /*0x77c23d*/
+      v2 = v2->SessionClass_field_08; /*0x77c23d*/
       DeleteAndZero(v3); /*0x77c246*/
       __3_YAXPAX_Z(v3); /*0x77c24c*/
     }
@@ -2058,7 +2055,7 @@ void sub_77C220()
     {
       if ( byte_B76694 || v0 <= v4 ) /*0x77c298*/
         break; /*0x77c298*/
-      int * v5 = (int *)g_WOL_MessageQueue; /*0x77c2a4*/
+      AbstractClass *v5 = (int *)g_WOL_MessageQueue; /*0x77c2a4*/
       int v6 = v0; /*0x77c2aa*/
       g_WOL_MsgPool = v0 >> 1; /*0x77c2af*/
       --dword_B7668C; /*0x77c2bb*/
@@ -2066,7 +2063,7 @@ void sub_77C220()
       memset(g_WOL_MessageQueue, 0, 4 * g_WOL_MsgPool); /*0x77c2dc*/
       if ( v6 > 0 ) /*0x77c2de*/
       {
-        int * v7 = v5; /*0x77c2e0*/
+        AbstractClass *v7 = v5; /*0x77c2e0*/
         int v8 = v6; /*0x77c2e2*/
         do /*0x77c31d*/
         {
@@ -2113,11 +2110,11 @@ void sub_77C450()
   unsigned int v0 = dword_B76538; /*0x77c450*/
   for ( i = 0; i < dword_B76538; v0 = dword_B76538 ) /*0x77c45d*/
   {
-    int v2 = *((_DWORD *)g_WOL_ConnectionPool + i); /*0x77c464*/
+    SessionClass *v2 = *((_DWORD *)g_WOL_ConnectionPool + i); /*0x77c464*/
     while ( v2 ) /*0x77c469*/
     {
       v3 = (void **)v2; /*0x77c46b*/
-      v2 = *(_DWORD *)(v2 + 8); /*0x77c46d*/
+      v2 = v2->SessionClass_field_08; /*0x77c46d*/
       DeleteAndZero(v3); /*0x77c476*/
       __3_YAXPAX_Z(v3); /*0x77c47c*/
     }
@@ -2131,7 +2128,7 @@ void sub_77C450()
     {
       if ( byte_B76544 || v0 <= v4 ) /*0x77c4c8*/
         break; /*0x77c4c8*/
-      int * v5 = (int *)g_WOL_ConnectionPool; /*0x77c4d4*/
+      AbstractClass *v5 = (int *)g_WOL_ConnectionPool; /*0x77c4d4*/
       int v6 = v0; /*0x77c4da*/
       dword_B76538 = v0 >> 1; /*0x77c4df*/
       --dword_B7653C; /*0x77c4eb*/
@@ -2139,7 +2136,7 @@ void sub_77C450()
       memset(g_WOL_ConnectionPool, 0, 4 * dword_B76538); /*0x77c50c*/
       if ( v6 > 0 ) /*0x77c50e*/
       {
-        int * v7 = v5; /*0x77c510*/
+        AbstractClass *v7 = v5; /*0x77c510*/
         int v8 = v6; /*0x77c512*/
         do /*0x77c54d*/
         {
@@ -2186,11 +2183,11 @@ void sub_77CB00()
   unsigned int v0 = dword_B76998; /*0x77cb00*/
   for ( i = 0; i < dword_B76998; v0 = dword_B76998 ) /*0x77cb0d*/
   {
-    int v2 = *((_DWORD *)g_WOL_AccountInfo + i); /*0x77cb14*/
+    SessionClass *v2 = *((_DWORD *)g_WOL_AccountInfo + i); /*0x77cb14*/
     while ( v2 ) /*0x77cb19*/
     {
       v3 = (void **)v2; /*0x77cb1b*/
-      v2 = *(_DWORD *)(v2 + 8); /*0x77cb1d*/
+      v2 = v2->SessionClass_field_08; /*0x77cb1d*/
       DeleteAndZero(v3); /*0x77cb26*/
       __3_YAXPAX_Z(v3); /*0x77cb2c*/
     }
@@ -2204,7 +2201,7 @@ void sub_77CB00()
     {
       if ( byte_B769A4 || v0 <= v4 ) /*0x77cb78*/
         break; /*0x77cb78*/
-      int * v5 = (int *)g_WOL_AccountInfo; /*0x77cb84*/
+      AbstractClass *v5 = (int *)g_WOL_AccountInfo; /*0x77cb84*/
       int v6 = v0; /*0x77cb8a*/
       dword_B76998 = v0 >> 1; /*0x77cb8f*/
       --dword_B7699C; /*0x77cb9b*/
@@ -2212,7 +2209,7 @@ void sub_77CB00()
       memset(g_WOL_AccountInfo, 0, 4 * dword_B76998); /*0x77cbbc*/
       if ( v6 > 0 ) /*0x77cbbe*/
       {
-        int * v7 = v5; /*0x77cbc0*/
+        AbstractClass *v7 = v5; /*0x77cbc0*/
         int v8 = v6; /*0x77cbc2*/
         do /*0x77cbfd*/
         {
@@ -2259,7 +2256,7 @@ void sub_77CCD0()
   unsigned int v0 = g_WOL_PacketQueue; /*0x77ccd0*/
   for ( i = 0; i < g_WOL_PacketQueue; v0 = g_WOL_PacketQueue ) /*0x77ccdd*/
   {
-    int v2 = *((_DWORD *)g_WOL_EventQueue + i); /*0x77cce4*/
+    SessionClass *v2 = *((_DWORD *)g_WOL_EventQueue + i); /*0x77cce4*/
     while ( v2 ) /*0x77cce9*/
     {
       v3 = (void **)v2; /*0x77cceb*/
@@ -2277,7 +2274,7 @@ void sub_77CCD0()
     {
       if ( byte_B7661C || v0 <= v4 ) /*0x77cd4b*/
         break; /*0x77cd4b*/
-      int * v5 = (int *)g_WOL_EventQueue; /*0x77cd57*/
+      AbstractClass *v5 = (int *)g_WOL_EventQueue; /*0x77cd57*/
       int v6 = v0; /*0x77cd5d*/
       g_WOL_PacketQueue = v0 >> 1; /*0x77cd62*/
       --dword_B76614; /*0x77cd6e*/
@@ -2285,7 +2282,7 @@ void sub_77CCD0()
       memset(g_WOL_EventQueue, 0, 4 * g_WOL_PacketQueue); /*0x77cd8f*/
       if ( v6 > 0 ) /*0x77cd91*/
       {
-        int * v7 = v5; /*0x77cd93*/
+        AbstractClass *v7 = v5; /*0x77cd93*/
         int v8 = v6; /*0x77cd95*/
         do /*0x77cdd6*/
         {
@@ -2475,7 +2472,7 @@ void OpenURLWOL(INIClass * a1, int a2)
 
 // 0x77E900
 namespace gamemd {
-Coord * AssignWOLPlayerSide(const char ** a1, int a2)
+Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2483,9 +2480,8 @@ Coord * AssignWOLPlayerSide(const char ** a1, int a2)
   HWND v6; // eax
   char **v13; // eax
   char *i; // [esp+14h] [ebp-80h] BYREF
-  void *v25; // [esp+1Ch] [ebp-78h] BYREF
+  ObjectClass *v25; // [esp+1Ch] [ebp-78h] BYREF
   void *v26; // [esp+20h] [ebp-74h] BYREF
-
   bool v4 = String::Length(a1) == 0; /*0x77e913*/
   v5 = a1; /*0x77e915*/
   if ( v4 ) /*0x77e917*/
@@ -2497,7 +2493,7 @@ Coord * AssignWOLPlayerSide(const char ** a1, int a2)
     v6 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x77e943*/
     EnablePlayerSlotControls(v6, 1u); /*0x77e94c*/
   }
-  signed int v7 = g_WOL_State; /*0x77e951*/
+  Coord *v7 = g_WOL_State; /*0x77e951*/
   char * v8 = 0; /*0x77e956*/
   signed int v9 = 0; /*0x77e958*/
   if ( (int)g_WOL_State > 0 ) /*0x77e95c*/
@@ -2523,7 +2519,7 @@ Coord * AssignWOLPlayerSide(const char ** a1, int a2)
     }
   }
 LABEL_16:
-  bool v22 = dword_B77E4C == 1; /*0x77e9b4*/
+  Coord *v22 = dword_B77E4C == 1; /*0x77e9b4*/
   String::ToLowerCopy((const char **)&v24, (char **)&v26); /*0x77e9cb*/
   int v12 = 0; /*0x77e9d5*/
   if ( Game_PlayerCount > 0 ) /*0x77e9d9*/
@@ -2550,10 +2546,10 @@ LABEL_21:
     *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * v12) + 119) = a2; /*0x77ea61*/
     if ( v22 && (g_GameOptionsFlags == 3 || g_GameOptionsFlags == 1 || g_GameOptionsFlags == 2) && !byte_B77DEC && v12 == 1 ) /*0x77ea92*/
     {
-      signed int v15 = g_WOL_State; /*0x77ea98*/
+      Coord *v15 = g_WOL_State; /*0x77ea98*/
       if ( g_WOL_State == 2 ) /*0x77eaa1*/
       {
-  _DWORD *v18; // ebp
+  ObjectClass *v18; // ebp
         int v16 = 0; /*0x77eaac*/
         v25 = 0; /*0x77eab2*/
   _BYTE v28[108]; // [esp+28h] [ebp-6Ch] BYREF
@@ -2564,7 +2560,7 @@ LABEL_21:
           if ( v16 >= 0 && v17 < v15 ) /*0x77eace*/
             qmemcpy(v28, (char *)g_WOL_ConnectionFlags + v16, sizeof(v28)); /*0x77eae2*/
           v18 = __2_YAPAXI_Z(0x6Cu); /*0x77eaeb*/
-          void * v19 = v25; /*0x77eaed*/
+          ObjectClass *v19 = v25; /*0x77eaed*/
           qmemcpy(v18, v28, 0x6Cu); /*0x77eaff*/
           char * v20 = i; /*0x77eb01*/
           v18[8] = v19; /*0x77eb05*/
@@ -2583,7 +2579,7 @@ LABEL_21:
         byte_B77DEC = 1; /*0x77eb59*/
         if ( v18 ) /*0x77eb60*/
         {
-  _DWORD *v21; // esi
+  ObjectClass *v21; // esi
           do /*0x77eb72*/
           {
             v21 = (_DWORD *)v18[8]; /*0x77eb62*/
@@ -2728,16 +2724,15 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  char *v8; // ebx
+  AbstractClass *v8; // ebx
   char *v12; // ecx
   int v13; // [esp+Ch] [ebp-8h]
-
-  int v3 = a2; /*0x77ef99*/
+  Game *v3 = a2; /*0x77ef99*/
   Debug::Log(); /*0x77efaa*/
   if ( (*(int (__stdcall **)(LPVOID, int, int))(*(_DWORD *)ppv + 24))(ppv, a1, v3) ) /*0x77efbc*/
     return 0; /*0x77efc4*/
   int v5 = g_WOL_RequestState; /*0x77efcb*/
-  int v6 = g_WOL_RequestState; /*0x77efd0*/
+  BlowStraw *v6 = g_WOL_RequestState; /*0x77efd0*/
   v13 = g_WOL_RequestState; /*0x77efd4*/
   int v7 = g_WOL_RequestToken; /*0x77efe0*/
   if ( g_WOL_RequestState < g_WOL_RequestToken ) /*0x77efe8*/
@@ -2751,7 +2746,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
       v7 = 10; /*0x77eff6*/
     v8 = (char *)__2_YAPAXI_Z(4 * v7); /*0x77f00a*/
     memset(v8, 0, 4 * ((unsigned int)(4 * v7) >> 2)); /*0x77f018*/
-    void * v9 = g_WOL_RequestFlags; /*0x77f021*/
+    AbstractClass *v9 = g_WOL_RequestFlags; /*0x77f021*/
     if ( g_WOL_RequestFlags ) /*0x77f028*/
     {
       qmemcpy(v8, g_WOL_RequestFlags, 4 * g_WOL_RequestState); /*0x77f034*/
@@ -2770,7 +2765,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
       v10 = 10; /*0x77f06d*/
     v8 = (char *)__2_YAPAXI_Z(4 * v10); /*0x77f081*/
     memset(v8, 0, 4 * ((unsigned int)(4 * v10) >> 2)); /*0x77f08f*/
-    void * v11 = g_WOL_RequestFlags; /*0x77f098*/
+    AbstractClass *v11 = g_WOL_RequestFlags; /*0x77f098*/
     if ( g_WOL_RequestFlags ) /*0x77f09f*/
     {
       qmemcpy(v8, g_WOL_RequestFlags, 4 * g_WOL_RequestState); /*0x77f0ab*/
@@ -2905,13 +2900,12 @@ LABEL_5:
 
 // 0x77F320
 namespace gamemd {
-AbstractClass * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
+AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   HANDLE *v6; // esi
-
   int v3 = a1; /*0x77f32a*/
   if ( !g_WOL_RequestState || (result = RequestChannelListWOL()) != 0 ) /*0x77f33f*/
   {
@@ -2928,7 +2922,7 @@ AbstractClass * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
     else
     {
       int v7 = g_WOL_RequestState; /*0x77f392*/
-      int v8 = g_WOL_RequestState; /*0x77f397*/
+      BlowStraw *v8 = g_WOL_RequestState; /*0x77f397*/
       int v16 = g_WOL_RequestState; /*0x77f39b*/
       int v9 = g_WOL_RequestToken; /*0x77f3a5*/
       if ( g_WOL_RequestState >= g_WOL_RequestToken ) /*0x77f3ad*/
@@ -2938,7 +2932,7 @@ AbstractClass * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
           v9 = 10; /*0x77f3bf*/
         void * v10 = __2_YAPAXI_Z(4 * v9); /*0x77f3d3*/
         memset(v10, 0, 4 * ((unsigned int)(4 * v9) >> 2)); /*0x77f3e1*/
-        void * v11 = g_WOL_RequestFlags; /*0x77f3ea*/
+        AbstractClass *v11 = g_WOL_RequestFlags; /*0x77f3ea*/
         if ( g_WOL_RequestFlags ) /*0x77f3f1*/
         {
           qmemcpy(v10, g_WOL_RequestFlags, 4 * g_WOL_RequestState); /*0x77f3fd*/
@@ -2958,7 +2952,7 @@ AbstractClass * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
           v12 = 10; /*0x77f432*/
         void * v13 = __2_YAPAXI_Z(4 * v12); /*0x77f446*/
         memset(v13, 0, 4 * ((unsigned int)(4 * v12) >> 2)); /*0x77f454*/
-        void * v14 = g_WOL_RequestFlags; /*0x77f45d*/
+        AbstractClass *v14 = g_WOL_RequestFlags; /*0x77f45d*/
         if ( g_WOL_RequestFlags ) /*0x77f464*/
         {
           qmemcpy(v13, g_WOL_RequestFlags, 4 * g_WOL_RequestState); /*0x77f470*/
@@ -3002,7 +2996,6 @@ char sub_77F520(char a1)
 {
   char result; // al
   HANDLE *v2; // esi
-
   if ( !g_WOL_RequestState || (result = RequestChannelListWOL()) != 0 ) /*0x77f539*/
   {
     v2 = &Handles; /*0x77f547*/
@@ -3018,7 +3011,7 @@ char sub_77F520(char a1)
     else
     {
       int v3 = g_WOL_RequestState; /*0x77f584*/
-      int v4 = g_WOL_RequestState; /*0x77f589*/
+      BlowStraw *v4 = g_WOL_RequestState; /*0x77f589*/
       int v13 = g_WOL_RequestState; /*0x77f58d*/
       int v5 = g_WOL_RequestToken; /*0x77f598*/
       if ( g_WOL_RequestState >= g_WOL_RequestToken ) /*0x77f5a1*/
@@ -3028,7 +3021,7 @@ char sub_77F520(char a1)
           v5 = 10; /*0x77f5b3*/
         void * v6 = __2_YAPAXI_Z(4 * v5); /*0x77f5c7*/
         memset(v6, 0, 4 * ((unsigned int)(4 * v5) >> 2)); /*0x77f5d5*/
-        void * v7 = g_WOL_RequestFlags; /*0x77f5de*/
+        AbstractClass *v7 = g_WOL_RequestFlags; /*0x77f5de*/
         if ( g_WOL_RequestFlags ) /*0x77f5e5*/
         {
           qmemcpy(v6, g_WOL_RequestFlags, 4 * g_WOL_RequestState); /*0x77f5f1*/
@@ -3047,7 +3040,7 @@ char sub_77F520(char a1)
           v8 = 10; /*0x77f622*/
         void * v9 = __2_YAPAXI_Z(4 * v8); /*0x77f636*/
         memset(v9, 0, 4 * ((unsigned int)(4 * v8) >> 2)); /*0x77f644*/
-        void * v10 = g_WOL_RequestFlags; /*0x77f64d*/
+        AbstractClass *v10 = g_WOL_RequestFlags; /*0x77f64d*/
         if ( g_WOL_RequestFlags ) /*0x77f654*/
         {
           qmemcpy(v9, g_WOL_RequestFlags, 4 * g_WOL_RequestState); /*0x77f660*/
@@ -3090,7 +3083,6 @@ char sub_77F710(unsigned char a1, char a2)
 {
   char result; // al
   HANDLE *v4; // esi
-
   if ( !g_WOL_RequestState || (result = RequestChannelListWOL()) != 0 ) /*0x77f72c*/
   {
     v4 = &Handles; /*0x77f73b*/
@@ -3106,7 +3098,7 @@ char sub_77F710(unsigned char a1, char a2)
     else
     {
       int v5 = g_WOL_RequestState; /*0x77f77e*/
-      int v6 = g_WOL_RequestState; /*0x77f783*/
+      BlowStraw *v6 = g_WOL_RequestState; /*0x77f783*/
       int v15 = g_WOL_RequestState; /*0x77f787*/
       int v7 = g_WOL_RequestToken; /*0x77f791*/
       if ( g_WOL_RequestState >= g_WOL_RequestToken ) /*0x77f79a*/
@@ -3116,7 +3108,7 @@ char sub_77F710(unsigned char a1, char a2)
           v7 = 10; /*0x77f7ac*/
         void * v8 = __2_YAPAXI_Z(4 * v7); /*0x77f7c0*/
         memset(v8, 0, 4 * ((unsigned int)(4 * v7) >> 2)); /*0x77f7ce*/
-        void * v9 = g_WOL_RequestFlags; /*0x77f7d7*/
+        AbstractClass *v9 = g_WOL_RequestFlags; /*0x77f7d7*/
         if ( g_WOL_RequestFlags ) /*0x77f7de*/
         {
           qmemcpy(v8, g_WOL_RequestFlags, 4 * g_WOL_RequestState); /*0x77f7ea*/
@@ -3135,7 +3127,7 @@ char sub_77F710(unsigned char a1, char a2)
           v10 = 10; /*0x77f81b*/
         void * v11 = __2_YAPAXI_Z(4 * v10); /*0x77f82f*/
         memset(v11, 0, 4 * ((unsigned int)(4 * v10) >> 2)); /*0x77f83d*/
-        void * v12 = g_WOL_RequestFlags; /*0x77f846*/
+        AbstractClass *v12 = g_WOL_RequestFlags; /*0x77f846*/
         if ( g_WOL_RequestFlags ) /*0x77f84d*/
         {
           qmemcpy(v11, g_WOL_RequestFlags, 4 * g_WOL_RequestState); /*0x77f859*/

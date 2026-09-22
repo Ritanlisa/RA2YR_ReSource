@@ -379,7 +379,7 @@ void TechnoClass::Uncloak(bool play_sound)
 }
 
 // 0x6f3330
-AbstractClass * TechnoClass::SelectWeapon(AbstractClass* target) const
+AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f3330
@@ -4480,7 +4480,7 @@ int TechnoClass::CanInitiateSell() const { return false; }
 // 0x6f3280
 int TechnoClass::IsNotAircraftOrBuilding() const { return false; }
 // 0x6f3330
-AbstractClass * TechnoClass::SelectWeapon() {
+AbstractClass * * TechnoClass::SelectWeapon() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f3330
 {

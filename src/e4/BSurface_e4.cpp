@@ -80,9 +80,9 @@ int BSurface::CreateTripleBuffer()
 
   if ( !this->Width ) /*0x7b8c66*/
     return 0; /*0x7b8e70*/
-  int v2 = *(_DWORD *)(this + 68); /*0x7b8c6f*/
+  IUnknown *v2 = *(_DWORD *)(this + 68); /*0x7b8c6f*/
   if ( v2 /*0x7b8c9a*/
-    && (*(__int16 *)(this->Width + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 124))(v2)
+    && (*(__int16 *)(this->Width + 2) > v2->IsAboveScreenMargin()
      || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 68) + 128))(*(_DWORD *)(this + 68))) )
   {
     v3 = *(void (__thiscall ****)(_DWORD, int))(this + 68); /*0x7b8c9c*/
@@ -90,9 +90,9 @@ int BSurface::CreateTripleBuffer()
       (**v3)(v3, 1); /*0x7b8ca7*/
     *(_DWORD *)(this + 68) = 0; /*0x7b8ca9*/
   }
-  int v4 = *(_DWORD *)(this + 88); /*0x7b8cac*/
+  IUnknown *v4 = *(_DWORD *)(this + 88); /*0x7b8cac*/
   if ( v4 /*0x7b8cd7*/
-    && (*(__int16 *)(this->Width + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 124))(v4)
+    && (*(__int16 *)(this->Width + 2) > v4->IsAboveScreenMargin()
      || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 128))(*(_DWORD *)(this + 88))) )
   {
     v5 = *(void (__thiscall ****)(_DWORD, int))(this + 88); /*0x7b8cd9*/
@@ -100,9 +100,9 @@ int BSurface::CreateTripleBuffer()
       (**v5)(v5, 1); /*0x7b8ce4*/
     *(_DWORD *)(this + 88) = 0; /*0x7b8ce6*/
   }
-  int v6 = *(_DWORD *)(this + 108); /*0x7b8ce9*/
+  IUnknown *v6 = *(_DWORD *)(this + 108); /*0x7b8ce9*/
   if ( v6 /*0x7b8d14*/
-    && (*(__int16 *)(this->Width + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 124))(v6)
+    && (*(__int16 *)(this->Width + 2) > v6->IsAboveScreenMargin()
      || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 108) + 128))(*(_DWORD *)(this + 108))) )
   {
     v7 = *(void (__thiscall ****)(_DWORD, int))(this + 108); /*0x7b8d16*/
@@ -114,7 +114,7 @@ int BSurface::CreateTripleBuffer()
   {
     if ( !*(_DWORD *)(this + 68) ) /*0x7b8d33*/
     {
-      _DWORD * v8 = __2_YAPAXI_Z(0x20u); /*0x7b8d3f*/
+      CellStruct *v8 = __2_YAPAXI_Z(0x20u); /*0x7b8d3f*/
       if ( v8 ) /*0x7b8d46*/
       {
         IUnknown *v9 = this->Width; /*0x7b8d4b*/
@@ -137,7 +137,7 @@ int BSurface::CreateTripleBuffer()
     }
     if ( !*(_DWORD *)(this + 88) ) /*0x7b8d8f*/
     {
-      _DWORD * v13 = __2_YAPAXI_Z(0x20u); /*0x7b8d9d*/
+      IUnknown *v13 = __2_YAPAXI_Z(0x20u); /*0x7b8d9d*/
       if ( v13 ) /*0x7b8da4*/
       {
         IUnknown *v14 = this->Width; /*0x7b8da6*/
@@ -160,7 +160,7 @@ int BSurface::CreateTripleBuffer()
     }
     if ( !*(_DWORD *)(this + 108) ) /*0x7b8ded*/
     {
-      _DWORD * v18 = __2_YAPAXI_Z(0x20u); /*0x7b8dfb*/
+      IUnknown *v18 = __2_YAPAXI_Z(0x20u); /*0x7b8dfb*/
       if ( v18 ) /*0x7b8e02*/
       {
         IUnknown *v19 = this->Width; /*0x7b8e07*/

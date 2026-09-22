@@ -15,10 +15,10 @@ int CommandClass::BuildBar()
   int v40; // [esp+14h] [ebp-10h]
   int v41; // [esp+18h] [ebp-Ch]
   char *v42; // [esp+1Ch] [ebp-8h]
-  int * v2 = (int *)&DataGlobal_B0C1C0; /*0x6d1207*/
+  ShapeButtonClass *v2 = (int *)&DataGlobal_B0C1C0; /*0x6d1207*/
   do /*0x6d1224*/
   {
-    (*(void (__thiscall **)(int *))(*v2 + 32))(v2); /*0x6d1210*/
+    v2->Reset_3(); /*0x6d1210*/
     (*(void (__thiscall **)(void *, int *))(this->q00C)(this, v2); /*0x6d1218*/
     v2 += 24; /*0x6d121b*/
   }
@@ -114,7 +114,7 @@ int CommandClass::BuildBar()
   else
     v28 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v27); /*0x6d1426*/
   PushCommandClass::Execute(v28, (int)DataGlobal_8428AC); /*0x6d1435*/
-  unsigned int v29 = g_ObjectTrackingPool[DataGlobal_B0CC1C]; /*0x6d1440*/
+  GadgetClass *v29 = g_ObjectTrackingPool[DataGlobal_B0CC1C]; /*0x6d1440*/
   if ( v29 > 0x18 ) /*0x6d1449*/
     _DWORD * v30 = 0; /*0x6d145e*/
   else

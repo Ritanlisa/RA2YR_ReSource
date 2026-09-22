@@ -345,7 +345,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
 // 0x6B7F10
 namespace ra2 {
 namespace game {
-AbstractClass * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1_4)
+AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1_4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -22,8 +22,7 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
   float v19; // [esp+24h] [ebp-18h]
   float v20; // [esp+28h] [ebp-14h]
   float v21; // [esp+2Ch] [ebp-10h]
-
-  int v5 = dword_8469E0[a4]; /*0x758702*/
+  ObjectClass *v5 = dword_8469E0[a4]; /*0x758702*/
   v16 = *a1 + *a2; /*0x75870c*/
   v17 = a2[1] + a1[1]; /*0x758716*/
   double v6 = a2[2] + a1[2]; /*0x75871d*/

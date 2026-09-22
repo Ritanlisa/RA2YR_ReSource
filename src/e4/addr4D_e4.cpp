@@ -17,7 +17,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
 {
   BuildingTypeClass *i; // eax
   int edx15; // edx
-  CCINIClass *v14; // eax
+  AbstractClass *v14; // eax
   int result; // eax
   __int16 v17[4]; // [esp+10h] [ebp-Ch] BYREF
 
@@ -45,7 +45,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   v17[0] = *(_DWORD *)&aP0[1].__pad_0[4] / 256; /*0x4d16df*/
   v17[1] = v3 / 256; /*0x4d16e4*/
   int v18 = *(_DWORD *)v17; /*0x4d16f3*/
-  int v4 = *(_DWORD *)&stru_89E138[88972]; /*0x4d170e*/
+  IUnknown *v4 = *(_DWORD *)&stru_89E138[88972]; /*0x4d170e*/
   int v5 = 74 * (v17[1] - ((v17[0] + v17[1]) << 9) - v17[0]) - *(_DWORD *)aP0[1].__pad_0 + 0x7FFFFFFF; /*0x4d1714*/
   if ( *(_DWORD *)&stru_89E138[88972] ) /*0x4d171c*/
   {

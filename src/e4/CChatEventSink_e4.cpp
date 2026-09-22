@@ -9,7 +9,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x7AA870
-Coord * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
+Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -125,7 +125,7 @@ LABEL_103:
             int v13 = v35[0]; /*0x7aaa7b*/
             if ( v35[0] > 0 ) /*0x7aaa81*/
             {
-              char * v14 = (char *)Block; /*0x7aaa87*/
+              AbstractClass *v14 = (char *)Block; /*0x7aaa87*/
               while ( 1 ) /*0x7aaa8b*/
               {
                 if ( v12 >= 0 && v12 < v13 ) /*0x7aaa91*/
@@ -140,7 +140,7 @@ LABEL_103:
                   goto LABEL_43; /*0x7aaae8*/
               }
               v6 = a3; /*0x7aaaec*/
-              int v15 = v39[10]; /*0x7aaaf3*/
+              AbstractClass *v15 = v39[10]; /*0x7aaaf3*/
               Debug::Log(); /*0x7aab01*/
               *((_DWORD *)a3 + 10) = v15; /*0x7aab09*/
             }
@@ -152,12 +152,12 @@ LABEL_43:
             {
   void *v37; // [esp+80h] [ebp-318h] BYREF
               unknown_libname_73(&v37); /*0x7aab4b*/
-              int v16 = g_WOL_ChatPool; /*0x7aab50*/
+              Coord *v16 = g_WOL_ChatPool; /*0x7aab50*/
               int v17 = 0; /*0x7aab55*/
               if ( g_WOL_ChatPool <= 0 ) /*0x7aab59*/
               {
 LABEL_51:
-                int v18 = 0; /*0x7aab96*/
+                Coord *v18 = 0; /*0x7aab96*/
                 if ( v16 < 0 ) /*0x7aab9a*/
                   v18 = v16; /*0x7aab9c*/
                 if ( v18 >= dword_B777A4 ) /*0x7aaba4*/
@@ -201,12 +201,12 @@ LABEL_51:
               }
               DeleteAndZero(&v37); /*0x7aac1e*/
             }
-            int v20 = *((_DWORD *)g_WOL_ConnectionPool + (dword_B76548(&v32) & ((1 << dword_B7653C) - 1))); /*0x7aac42*/
+            HashTable *v20 = *((_DWORD *)g_WOL_ConnectionPool + (dword_B76548(&v32) & ((1 << dword_B7653C) - 1))); /*0x7aac42*/
             if ( v20 ) /*0x7aac47*/
             {
               while ( !String::Compare((const char **)v20, (const char **)&v32) ) /*0x7aac57*/
               {
-                v20 = *(_DWORD *)(v20 + 8); /*0x7aac5d*/
+                v20 = v20->q008; /*0x7aac5d*/
                 if ( !v20 ) /*0x7aac62*/
                   goto LABEL_66; /*0x7aac62*/
               }
@@ -216,12 +216,12 @@ LABEL_51:
 LABEL_66:
   void *v38; // [esp+84h] [ebp-314h] BYREF
               unknown_libname_73(&v38); /*0x7aac64*/
-              int v21 = g_WOL_LoginToken; /*0x7aac6d*/
+              Coord *v21 = g_WOL_LoginToken; /*0x7aac6d*/
               int v22 = 0; /*0x7aac72*/
               if ( g_WOL_LoginToken <= 0 ) /*0x7aac76*/
               {
 LABEL_72:
-                int v23 = 0; /*0x7aacb3*/
+                Coord *v23 = 0; /*0x7aacb3*/
                 if ( v21 < 0 ) /*0x7aacb7*/
                   v23 = v21; /*0x7aacb9*/
                 if ( v23 >= dword_B765FC ) /*0x7aacc1*/

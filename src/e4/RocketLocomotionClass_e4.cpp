@@ -8,8 +8,7 @@ R RocketLocomotionClass::RocketLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v2; // ecx
-
+  CDTimerClass *v2; // ecx
   LocomotionClass::Init((_DWORD *)this); /*0x661ec3*/
   this->MovingDestination = dword_B04E38; /*0x661ed1*/
   *(_DWORD *)(this + 28) = dword_B04E3C; /*0x661eda*/

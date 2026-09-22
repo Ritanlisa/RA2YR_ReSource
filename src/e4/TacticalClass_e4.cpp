@@ -24,7 +24,7 @@ void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
   int * v5 = BuildingClass::CalcDrawPos(this, (IUnknown *)&v19); /*0x47f54b*/
   int v6 = *v5; /*0x47f554*/
   int v7 = aP1->field_4 + v5[1]; /*0x47f55e*/
-  int * v8 = a2; /*0x47f560*/
+  CampaignClass *v8 = a2; /*0x47f560*/
   int v9 = v6 + aP1->field_0; /*0x47f564*/
   int v10 = a2[1]; /*0x47f568*/
   int v17 = v9 - *a2; /*0x47f571*/
@@ -180,8 +180,8 @@ void* TacticalClass::ProcessScroll(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  int v3; // eax
-  int v10; // [esp+10h] [ebp-10h] BYREF
+  VectorClass *v3; // eax
+  VectorClass *v10; // [esp+10h] [ebp-10h] BYREF
   int v11; // [esp+14h] [ebp-Ch]
   if ( !*(_BYTE *)(this + 4559) || this->q11B3 || this->q11B4 ) /*0x4ac3a3*/
   {
@@ -322,13 +322,13 @@ void TacticalClass::InterpolateView()
   {
   int v27[3]; // [esp+30h] [ebp-18h] BYREF
   bool v7; // zf
-    int v1 = 0; /*0x4ae2a7*/
-    int v2 = 0; /*0x4ae2a9*/
+    Tactical *v1 = 0; /*0x4ae2a7*/
+    AbstractClass *v2 = 0; /*0x4ae2a9*/
     int v3 = 0; /*0x4ae2ab*/
-    int v18 = 0; /*0x4ae2af*/
-    int v19 = 0; /*0x4ae2b3*/
+    Tactical *v18 = 0; /*0x4ae2af*/
+    AbstractClass *v19 = 0; /*0x4ae2b3*/
     int v20 = 0; /*0x4ae2b7*/
-    _DWORD * v4 = g_ObjectClass_CurrentCount; /*0x4ae2bd*/
+    AbstractClass *v4 = g_ObjectClass_CurrentCount; /*0x4ae2bd*/
     v16 = g_SelectionManager; /*0x4ae2c2*/
     do /*0x4ae2fc*/
     {
@@ -346,8 +346,8 @@ void TacticalClass::InterpolateView()
     }
     while ( !v7 ); /*0x4ae2fc*/
     int v8 = 0; /*0x4ae2fe*/
-    int v24 = v1; /*0x4ae302*/
-    int v25 = v2; /*0x4ae306*/
+    Tactical *v24 = v1; /*0x4ae302*/
+    AbstractClass *v25 = v2; /*0x4ae306*/
     int v26 = v3; /*0x4ae30a*/
     if ( g_SelectionManager ) /*0x4ae30e*/
     {
@@ -423,7 +423,7 @@ void TacticalClass::InterpolateView()
 
 // 0x4F45B0
 namespace gamemd {
-AbstractClass * TacticalClass_RenderFrame()
+AbstractClass * * TacticalClass_RenderFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -438,7 +438,7 @@ AbstractClass * TacticalClass_RenderFrame()
   }
   if ( !AudioStream::ReadSamples(0) ) /*0x4f45ea*/
   {
-    void * v3 = DataGlobal_8A0E0C; /*0x4f45f7*/
+    AbstractClass *v3 = DataGlobal_8A0E0C; /*0x4f45f7*/
     if ( !DataGlobal_8A0E0C ) /*0x4f45ff*/
       goto LABEL_8; /*0x4f45ff*/
     if ( !AudioStream::ReadSamples(0) ) /*0x4f4602*/
@@ -649,7 +649,7 @@ signed int TacticalClass::RenderIsometricOverlay(IUnknown * aP1, IUnknown * aP2,
   _DWORD v20[4]; // [esp+54h] [ebp-10h] BYREF
   IUnknown *aP1a; // [esp+68h] [ebp+4h]
 
-  char v4 = a4; /*0x6d2de4*/
+  Tactical *v4 = a4; /*0x6d2de4*/
   if ( a4 ) /*0x6d2dee*/
   {
     TacticalClass::RenderIsometric( /*0x6d2dfa*/
@@ -794,7 +794,7 @@ LABEL_10:
   }
   while ( v6 < this->visibleCellCount ); /*0x6d3734*/
 LABEL_11:
-  int v11 = 0; /*0x6d3750*/
+  Tactical *v11 = 0; /*0x6d3750*/
   if ( *(int *)&aP1->__pad_0[8] > 0 && *(int *)&aP1->__pad_0[12] > 0 && !a5 ) /*0x6d3766*/
     TacticalClass::CalcBuildingDrawPos((int)this, (IUnknown *)aP1); /*0x6d376b*/
   if ( *(int *)&aP2->vtable0[8] > 0 && *(int *)&aP2->vtable0[12] > 0 && !a5 ) /*0x6d3784*/
@@ -803,7 +803,7 @@ LABEL_11:
   v25 = 0; /*0x6d3793*/
   if ( *(int *)&g_OverlayTypeConfig[22160] > 0 ) /*0x6d3799*/
   {
-    int v13 = *(_DWORD *)&g_OverlayTypeConfig[22148]; /*0x6d379f*/
+    IUnknown *v13 = *(_DWORD *)&g_OverlayTypeConfig[22148]; /*0x6d379f*/
     do /*0x6d3860*/
     {
       int v14 = *(_DWORD *)(v11 + v13); /*0x6d37af*/
@@ -990,7 +990,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
             if ( LayerClass::CoordinatesLegal(&stru_87C374[13428], (IUnknown *)&v31) ) /*0x6d709e*/
             {
               _DWORD * v27 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v31); /*0x6d70b5*/
-              int v28 = (int)v27; /*0x6d70ba*/
+              IUnknown *v28 = (int)v27; /*0x6d70ba*/
               if ( v27[17] != -1 ) /*0x6d70c0*/
               {
                 PlacementRect = BuildingClass::GetPlacementRect((int)v27, (IUnknown *)v59); /*0x6d70d0*/
@@ -1099,7 +1099,7 @@ void * TacticalClass::IsOccupiedByTechno(unsigned int * a2)
   if ( (int)this->floats <= 0 ) /*0x6da3c3*/
   {
 LABEL_18:
-    int v13 = v2[1]; /*0x6da4b8*/
+    IUnknown *v13 = v2[1]; /*0x6da4b8*/
     v20[0] = *(_DWORD *)&DataGlobal_87F8E4[30396] + *v2; /*0x6da4cb*/
     v20[1] = *(_DWORD *)&DataGlobal_87F8E4[30400] + v13; /*0x6da4d9*/
     a2 = (_DWORD *)*Tactical::PixelToCell((int)this, (AbstractClass *)&v21, (IUnknown *)v20); /*0x6da4ec*/
@@ -1175,7 +1175,7 @@ void* TacticalClass::DrawPlacementCircles()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v0; // ebx
+  CellStruct *v0; // ebx
   int i; // edi
   int *Coords; // eax
   __int16 v16; // si
@@ -1201,7 +1201,7 @@ void* TacticalClass::DrawPlacementCircles()
   float v52; // [esp+34h] [ebp-28h]
   char v50; // [esp+2Eh] [ebp-2Eh]
   int v48; // [esp+28h] [ebp-34h] BYREF
-    int v3 = g_RadarBlipPool; /*0x6dbe81*/
+    IUnknown *v3 = g_RadarBlipPool; /*0x6dbe81*/
     int v51 = g_RadarBlipPool; /*0x6dbe89*/
     if ( g_RadarBlipPool && (*(int (__thiscall **)(int))(*(_DWORD *)g_RadarBlipPool + 44))(g_RadarBlipPool) == 6 ) /*0x6dbe9d*/
     {
@@ -1231,7 +1231,7 @@ void* TacticalClass::DrawPlacementCircles()
         {
           DataGlobal_842950 = -1; /*0x6dbf30*/
         }
-        int v9 = *(_DWORD *)(v3 + 540) + 22265; /*0x6dbf55*/
+        int v9 = v3->q21C + 22265; /*0x6dbf55*/
         v49 = *(_WORD *)v9; /*0x6dbf5f*/
         v50 = *(_BYTE *)(v9 + 2); /*0x6dbf67*/
         Color::Lerp((unsigned __int8 *)&v49, DataGlobal_B0E648, (unsigned __int8 *)&DataGlobal_B0CE14); /*0x6dbf6f*/
@@ -1410,16 +1410,15 @@ unsigned int * TacticalClass::CollectSelectedIDs()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  _DWORD *v2; // ebx
-  _DWORD *v26; // [esp+10h] [ebp-10h]
+  VectorClass *v2; // ebx
+  VectorClass *v26; // [esp+10h] [ebp-10h]
   const char **v27; // [esp+14h] [ebp-Ch]
   const char **v28; // [esp+14h] [ebp-Ch]
   const char **v29; // [esp+14h] [ebp-Ch]
   int v30; // [esp+18h] [ebp-8h]
   wchar_t *v31; // [esp+1Ch] [ebp-4h]
-
   _DWORD * v0 = __2_YAPAXI_Z(0x18u); /*0x732d18*/
-  _DWORD * v1 = v0; /*0x732d1d*/
+  VectorClass *v1 = v0; /*0x732d1d*/
   if ( v0 ) /*0x732d26*/
   {
     TacticalClass::updateScroll(v0, 0, 0); /*0x732d2c*/
@@ -1450,10 +1449,10 @@ unsigned int * TacticalClass::CollectSelectedIDs()
 LABEL_12:
       int v8 = v2[2]; /*0x732de8*/
       if ( v5 < v8 /*0x732e0a*/
-        || (*((_BYTE *)v2 + 13) || !v8)
+        || (v2->IsAllocated || !v8)
   int v9; // eax
         && (v9 = v2[5], v9 > 0)
-        && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v2 + 8))(v2, v8 + v9, 0) )
+        && v2->Release(v8 + v9, 0) )
       {
         int v10 = v2[4]; /*0x732e11*/
         int v11 = v2[1]; /*0x732e14*/
@@ -1469,10 +1468,10 @@ LABEL_12:
 LABEL_26:
           int v14 = v2[2]; /*0x732eae*/
           if ( v2[4] < v14 /*0x732ed3*/
-            || (*((_BYTE *)v2 + 13) || !v14)
+            || (v2->IsAllocated || !v14)
   int v15; // eax
             && (v15 = v2[5], v15 > 0)
-            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v2 + 8))(v2, v14 + v15, 0) )
+            && v2->Release(v14 + v15, 0) )
           {
             int v16 = v2[4]; /*0x732eda*/
             int v17 = v2[1]; /*0x732edd*/
@@ -1518,10 +1517,10 @@ LABEL_25:
 LABEL_40:
           int v20 = v2[2]; /*0x732f79*/
           if ( v2[4] < v20 /*0x732f9e*/
-            || (*((_BYTE *)v2 + 13) || !v20)
+            || (v2->IsAllocated || !v20)
   int v21; // eax
             && (v21 = v2[5], v21 > 0)
-            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v2 + 8))(v2, v20 + v21, 0) )
+            && v2->Release(v20 + v21, 0) )
           {
             int v22 = v2[4]; /*0x732fa5*/
             int v23 = v2[1]; /*0x732fa8*/

@@ -23,7 +23,7 @@ int KeyboardConfig::LoadINI()
   if ( CCINIClass::Load(v8, (int)v10, 0, 0) ) /*0x533d57*/
   {
     __3_YAXPAX_Z(Base); /*0x533d6c*/
-    int v0 = 0; /*0x533d74*/
+    AbstractTypeClass *v0 = 0; /*0x533d74*/
     Base = 0; /*0x533d7a*/
     NumOfElements = 0; /*0x533d85*/
     DataGlobal_87F688 = 0; /*0x533d8b*/
@@ -87,7 +87,7 @@ LABEL_14:
 }
 
 // 0x538B80
-AbstractClass * KeyboardConfig::ReleaseBuffer(int a2)
+AbstractClass * * KeyboardConfig::ReleaseBuffer(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -95,22 +95,22 @@ AbstractClass * KeyboardConfig::ReleaseBuffer(int a2)
 
   if ( a2 < 0 ) /*0x538b8c*/
     return 0; /*0x538b8c*/
-  char * v3 = (char *)__2_YAPAXI_Z(8 * (a2 + *(_DWORD *)(this + 8))); /*0x538ba0*/
+  AbstractClass *v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->vtable3)); /*0x538ba0*/
   if ( !v3 ) /*0x538ba7*/
     return 0; /*0x538c00*/
   _DWORD *v6; // edx
   int v5; // eax
-  for ( i = 0; i < *(_DWORD *)(this + 4); *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
+  for ( i = 0; i < this->vtable2; *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
   {
     v5 = 8 * i; /*0x538bb9*/
     v6 = (_DWORD *)(*(_DWORD *)this + 8 * i++); /*0x538bc2*/
     *(_DWORD *)&v3[v5] = *v6; /*0x538bc7*/
   }
   __3_YAXPAX_Z(*(void **)this); /*0x538bdb*/
-  int v7 = a2 + *(_DWORD *)(this + 8); /*0x538be6*/
+  int v7 = a2 + this->vtable3; /*0x538be6*/
   *(_DWORD *)this = v3; /*0x538be8*/
-  *(_DWORD *)(this + 8) = v7; /*0x538bea*/
-  *(_DWORD *)(this + 16) = 0; /*0x538bed*/
+  this->vtable3 = v7; /*0x538bea*/
+  this->uniqueId = 0; /*0x538bed*/
   return 1; /*0x538bf4*/
 }
 }

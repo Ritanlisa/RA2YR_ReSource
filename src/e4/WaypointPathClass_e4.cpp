@@ -85,8 +85,8 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 {
   int result; // eax
 
-  _DWORD * v2 = a1; /*0x763c76*/
-  int v3 = a2; /*0x763c7b*/
+  AbstractClass *v2 = a1; /*0x763c76*/
+  AbstractClass *v3 = a2; /*0x763c7b*/
   result = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x763c81*/
   if ( result >= 0 ) /*0x763c8a*/
   {
@@ -99,10 +99,10 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       v2[2] = &WaypointPathClass::`vftable'; /*0x763cb4*/
       v2[3] = &vt_WaypointPathClass; /*0x763cbb*/
     }
-    result = (*(int (__stdcall **)(int, _DWORD **, int, _DWORD))(*(_DWORD *)v3 + 12))(v3, &a1, 4, 0); /*0x763ccd*/
+    result = v3->vt_entry_68(&a1, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
     {
-      _DWORD * v5 = v2 + 10; /*0x763cd8*/
+      VectorClass *v5 = v2 + 10; /*0x763cd8*/
       if ( v5 ) /*0x763cdd*/
       {
         WaypointPathClass::computePath(v5, 0, 0); /*0x763ce3*/
@@ -128,10 +128,10 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
             break; /*0x763d1e*/
           int v8 = v5[2]; /*0x763d20*/
           if ( v5[4] < v8 /*0x763d42*/
-            || (*((_BYTE *)v5 + 13) || !v8)
+            || (v5->IsAllocated || !v8)
   int v9; // eax
             && (v9 = v5[5], v9 > 0)
-            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v5 + 8))(v5, v8 + v9, 0) )
+            && v5->Release(v8 + v9, 0) )
           {
             int v10 = v5[4]; /*0x763d49*/
             int v11 = v10 + 1; /*0x763d4c*/

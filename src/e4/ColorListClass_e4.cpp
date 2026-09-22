@@ -8,7 +8,7 @@ int ColorListClass::SetColor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->q16C; /*0x557ae0*/
+  ListClass *v1 = this->q16C; /*0x557ae0*/
   if ( this->q044 > v1 ) /*0x557aeb*/
     return *(_DWORD *)(this->q038 + 4 * v1); /*0x557af3*/
   else

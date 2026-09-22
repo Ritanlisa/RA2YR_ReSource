@@ -242,14 +242,14 @@ void* AnimTypeClass::GetWarhead(int a2)
       }
     }
   }
-  int v6 = this->Image; /*0x427c12*/
+  IUnknown *v6 = this->Image; /*0x427c12*/
   if ( v6 ) /*0x427c1a*/
   {
     int v7 = this->End; /*0x427c1c*/
     this->AnimTypeClass_field_2A4 = 1; /*0x427c22*/
     if ( !v7 ) /*0x427c2b*/
     {
-      int v8 = *(__int16 *)(v6 + 6); /*0x427c2d*/
+      int v8 = v6->q018; /*0x427c2d*/
       bool v9 = this->Shadow; /*0x427c31*/
       this->End = v8; /*0x427c37*/
       if ( v9 ) /*0x427c3f*/
@@ -257,7 +257,7 @@ void* AnimTypeClass::GetWarhead(int a2)
     }
     if ( !this->LoopEnd ) /*0x427c4c*/
       this->LoopEnd = this->End; /*0x427c5c*/
-    this->MiddleFrameWidth = *(__int16 *)(v6 + 6) / 2; /*0x427c6b*/
+    this->MiddleFrameWidth = v6->q018 / 2; /*0x427c6b*/
     this->MiddleFrameHeight = -1; /*0x427c74*/
     this->q2A0 = -1; /*0x427c7a*/
     LOBYTE(v3) = -1; /*0x427c71*/
@@ -878,7 +878,7 @@ LABEL_70:
 
 // 0x428800
 namespace gamemd {
-ScenarioClass * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
+ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

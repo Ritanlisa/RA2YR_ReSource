@@ -21,7 +21,7 @@ int CellClass::EnsureFileLoaded()
 
 // 0x56EF50
 namespace gamemd {
-HouseClass * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
+HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -190,7 +190,7 @@ HouseClass * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 
 // 0x56F2F0
 namespace gamemd {
-HouseClass * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
+HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -359,7 +359,7 @@ HouseClass * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 
 // 0x56F8B0
 namespace gamemd {
-HouseClass * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
+HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -536,7 +536,7 @@ HouseClass * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
 
 // 0x56FC80
 namespace gamemd {
-HouseClass * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
+HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -713,7 +713,7 @@ HouseClass * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
 
 // 0x572440
 namespace gamemd {
-HouseClass * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
+HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -882,7 +882,7 @@ HouseClass * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
 
 // 0x5727E0
 namespace gamemd {
-HouseClass * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
+HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1051,7 +1051,7 @@ HouseClass * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
 
 // 0x572DA0
 namespace gamemd {
-HouseClass * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
+HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1228,7 +1228,7 @@ HouseClass * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
 
 // 0x573170
 namespace gamemd {
-HouseClass * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
+HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

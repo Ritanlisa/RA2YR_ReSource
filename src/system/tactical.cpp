@@ -4244,7 +4244,7 @@ retn
 // IDA: 0x6D8B30 -- TacticalClass::CalcViewportCells
 // Calculates which cells are visible in the current viewport.
 // 0x6d8b30
-BuildingTypeClass * TacticalClass::CalcViewportCells()
+BuildingTypeClass * * TacticalClass::CalcViewportCells()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4900,7 +4900,7 @@ retn    18h
 // IDA: 0x4A8960 -- TacticalClass::SetViewDimensions
 // Sets viewport dimensions and recalculates visible area.
 // 0x4a8960
-AbstractClass * TacticalClass::SetViewDimensions(int width, int height)
+AbstractClass * * TacticalClass::SetViewDimensions(int width, int height)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4a8960
@@ -5346,7 +5346,7 @@ retn    4
 // IDA: 0x6D2540 -- TacticalClass::ScrollViewport
 // Scrolls the viewport by a delta amount.
 // 0x6d2540
-AbstractClass * TacticalClass::ScrollViewport(int dx, int dy)
+AbstractClass * * TacticalClass::ScrollViewport(int dx, int dy)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6d2540

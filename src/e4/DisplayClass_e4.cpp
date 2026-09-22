@@ -88,7 +88,7 @@ int DisplayClass::LoadTypeData()
   v6[1] = Viewport[1]; /*0x4a888f*/
   v6[2] = Viewport[2]; /*0x4a8896*/
   int v3 = Viewport[3]; /*0x4a889e*/
-  int v4 = *this; /*0x4a88a1*/
+  VectorClass *v4 = *this; /*0x4a88a1*/
   v6[3] = v3; /*0x4a88a6*/
   return this->SetViewDimensions(v6); /*0x4a88b0*/
 }
@@ -112,10 +112,10 @@ int DisplayClass::SetSize()
   this->q11D0 = 0; /*0x4a88f7*/
   *(_BYTE *)(this + 4529) = 0; /*0x4a88fd*/
   *(_BYTE *)(this + 4530) = 0; /*0x4a8903*/
-  int * v2 = DataGlobal_8A0360; /*0x4a8909*/
+  LogicClass *v2 = DataGlobal_8A0360; /*0x4a8909*/
   do /*0x4a891e*/
   {
-    result = (*(int (__thiscall **)(int *))(*v2 + 12))(v2); /*0x4a8912*/
+    result = v2->TryFreeAndClear(); /*0x4a8912*/
     v2 += 6; /*0x4a8915*/
   }
   while ( (int)v2 < (int)&DataGlobal_8A03D8 ); /*0x4a891e*/
@@ -138,7 +138,7 @@ char DisplayClass::ddtor()
 }
 
 // 0x4A9890
-Tactical * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
+Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -311,7 +311,7 @@ LABEL_34:
 }
 
 // 0x4A9DD0
-VectorClass * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown * aP2)
+VectorClass * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -569,7 +569,7 @@ void * DisplayClass::Draw(int a2)
 
   if ( a2 < 500 || a2 > 900 || this->Stub() ) /*0x4ae513*/
     return 0; /*0x4ae513*/
-  int v3 = DSurface_ViewBounds; /*0x4ae524*/
+  IUnknown *v3 = DSurface_ViewBounds; /*0x4ae524*/
   int v4 = g_Map_VisibleRect; /*0x4ae531*/
   _DWORD * v5 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)g_WWMouseClass_Instance + 52))(g_WWMouseClass_Instance, v18); /*0x4ae538*/
   int v6 = v5[1]; /*0x4ae54a*/
@@ -776,7 +776,7 @@ int DisplayClass::GetCoordDelta(AbstractClass * aP1)
   result = (int)aP1; /*0x6da2d4*/
   int v4 = *(this + 857); /*0x6da2d8*/
   v5 = (IUnknown *)*(this + 858); /*0x6da2de*/
-  int v6 = v4 + *(_DWORD *)&g_OverlayTypeConfig[21844][8 * (_DWORD)aP1 + 76]; /*0x6da2f2*/
+  AbstractClass *v6 = v4 + *(_DWORD *)&g_OverlayTypeConfig[21844][8 * (_DWORD)aP1 + 76]; /*0x6da2f2*/
   v7 = (IUnknown *)((char *)v5 + *(_DWORD *)&g_OverlayTypeConfig[21844][8 * (_DWORD)aP1 + 80]); /*0x6da2f4*/
   if ( v6 != v4 || v7 != v5 ) /*0x6da2fc*/
   {
@@ -811,7 +811,7 @@ int DisplayClass::ReadFromBuffer(void * a1, signed int Size)
   if ( v5 && a1 && Size > 0 ) /*0x7ba4eb*/
   {
     int v6 = this->q004; /*0x7ba4ed*/
-    signed int v7 = Size; /*0x7ba4f3*/
+    ModemGame *v7 = Size; /*0x7ba4f3*/
     if ( v6 ) /*0x7ba4f5*/
     {
       signed int v8 = v6 - this->q018; /*0x7ba4fa*/

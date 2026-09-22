@@ -35,7 +35,7 @@
 
 // 0x690400
 namespace gamemd {
-AbstractClass * E4Recv_690400::sub_690400()
+AbstractClass * * E4Recv_690400::sub_690400()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -44,8 +44,8 @@ AbstractClass * E4Recv_690400::sub_690400()
 
   GetClientRect(g_hWnd, &Rect); /*0x690412*/
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x690423*/
-  int v2 = *this; /*0x690429*/
-  int v3 = *(this + 1); /*0x69042f*/
+  AbstractClass *v2 = *this; /*0x690429*/
+  AbstractClass *v3 = *(this + 1); /*0x69042f*/
   _DWORD v5[4]; // [esp+8h] [ebp-30h] BYREF
   v5[0] = v2; /*0x690432*/
   _DWORD v6[4]; // [esp+18h] [ebp-20h] BYREF
@@ -77,7 +77,7 @@ AbstractClass * E4Recv_690400::sub_690400()
 
 // 0x693B70
 namespace gamemd {
-CampaignClass * Network_RequestFile(char * a1, int a2, int a3)
+CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -97,7 +97,6 @@ CampaignClass * Network_RequestFile(char * a1, int a2, int a3)
   int v43[113]; // [esp+144h] [ebp-48Ch] BYREF
   __int16 v44; // [esp+308h] [ebp-2C8h]
   char v45; // [esp+30Ah] [ebp-2C6h]
-
   v36 = 0; /*0x693b86*/
   Waypoint::InitInvalid(v39); /*0x693b8a*/
   Debug::Log(DataGlobal_83E8F8); /*0x693b94*/
@@ -112,7 +111,7 @@ CampaignClass * Network_RequestFile(char * a1, int a2, int a3)
     Stream::WriteBlock((int)&g_EventManager, (int)v41, 250, 1); /*0x693cef*/
     while ( Count::GetCountQueue(&g_EventManager) > 0 ) /*0x693d00*/
     {
-      int v8 = 3600; /*0x693d06*/
+      IPXConnClass *v8 = 3600; /*0x693d06*/
       if ( Ticks != -1 ) /*0x693d0d*/
       {
         int v9 = Timer::GetTicks() - Ticks; /*0x693d18*/
@@ -147,7 +146,7 @@ CampaignClass * Network_RequestFile(char * a1, int a2, int a3)
     }
     while ( Network::GetQueueCount((int)g_NetworkManager) > 0 ) /*0x693c80*/
     {
-      int v6 = 3600; /*0x693c8a*/
+      IPXConnClass *v6 = 3600; /*0x693c8a*/
       if ( Ticks != -1 ) /*0x693c91*/
       {
         int v7 = Timer::GetTicks() - Ticks; /*0x693c9c*/
@@ -184,7 +183,7 @@ LABEL_24:
   _BYTE v40[4]; // [esp+44h] [ebp-58Ch] BYREF
       if ( ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v46, (int)v40) > 0 && *(_DWORD *)v46 == 111 ) /*0x693ebe*/
         break; /*0x693ebe*/
-      int v18 = 3600; /*0x693ec4*/
+      IPXConnClass *v18 = 3600; /*0x693ec4*/
       if ( v33 != -1 ) /*0x693ecb*/
       {
         int v19 = Timer::GetTicks() - v33; /*0x693ed6*/
@@ -219,7 +218,7 @@ LABEL_24:
         if ( v48 == 17 && v13 ) /*0x693e2d*/
           break; /*0x693e2d*/
       }
-      int v15 = 3600; /*0x693e33*/
+      IPXConnClass *v15 = 3600; /*0x693e33*/
       if ( v33 != -1 ) /*0x693e3a*/
       {
         int v16 = Timer::GetTicks() - v33; /*0x693e45*/
@@ -262,7 +261,7 @@ LABEL_54:
     Stream::WriteBlock((int)&g_EventManager, (int)v41, 250, 1); /*0x6940d3*/
     while ( Count::GetCountQueue(&g_EventManager) > 0 ) /*0x6940e4*/
     {
-      int v26 = 3600; /*0x6940ea*/
+      IPXConnClass *v26 = 3600; /*0x6940ea*/
       if ( v34 != -1 ) /*0x6940f1*/
       {
         int v27 = Timer::GetTicks() - v34; /*0x6940fc*/
@@ -297,7 +296,7 @@ LABEL_54:
     }
     while ( Network::GetQueueCount((int)g_NetworkManager) > 0 ) /*0x694064*/
     {
-      int v24 = 3600; /*0x69406e*/
+      IPXConnClass *v24 = 3600; /*0x69406e*/
       if ( v34 != -1 ) /*0x694075*/
       {
         int v25 = Timer::GetTicks() - v34; /*0x694080*/
@@ -785,7 +784,7 @@ LABEL_38:
     while ( v22 && v20 < v21 ); /*0x694bc5*/
   }
 LABEL_62:
-  int v26 = (v56 + 191) / 192; /*0x694c2e*/
+  CCFileClass *v26 = (v56 + 191) / 192; /*0x694c2e*/
   FileClass::Load(v61, 1); /*0x694c51*/
   int v27 = 0; /*0x694c56*/
   if ( a4 ) /*0x694c61*/
@@ -890,7 +889,7 @@ LABEL_121:
         Buffer = v31; /*0x694df7*/
         if ( v31 >= 192 ) /*0x694dff*/
           Buffer = 192; /*0x694e01*/
-        char * v34 = ToWideStringChar(*(char **)Game_PlayerInfoArray); /*0x694e17*/
+        WinModemClass *v34 = ToWideStringChar(*(char **)Game_PlayerInfoArray); /*0x694e17*/
         int v35 = v56; /*0x694e31*/
   char v66[20]; // [esp+D0h] [ebp-660h] BYREF
         strcpy(v66, v34); /*0x694e38*/
@@ -959,14 +958,13 @@ LABEL_121:
       goto LABEL_70; /*0x694f9e*/
   }
   while ( Network::GetQueueCount((int)g_NetworkManager) ); /*0x694fb0*/
-  int v46 = v53; /*0x6950ee*/
+  AbstractClass *v46 = v53; /*0x6950ee*/
   if ( v52 != -1 ) /*0x6950f5*/
   {
     signed int v47 = Timer::GetTicks() - v52; /*0x695100*/
     if ( v47 >= v53 ) /*0x695106*/
       v46 = 0; /*0x69510c*/
-    else
-      v46 = v53 - v47; /*0x695108*/
+    AbstractClass *v46 = v53 - v47; /*0x695108*/
   }
   Debug::Log(DataGlobal_83EA40, v46); /*0x695114*/
   v48 = 1; /*0x695125*/
@@ -991,7 +989,7 @@ LABEL_122:
 
 // 0x6951F0
 namespace gamemd {
-AbstractClass * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a2, int a4, char a5)
+AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a2, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1018,7 +1016,7 @@ LABEL_17:
   CCFileClass::Construct(v18, (char *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v6) + 88)); /*0x695260*/
   if ( !CCFileClass::Open(v18, 0) && a5 == 1 ) /*0x69527b*/
   {
-    int * v7 = *(int **)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v6); /*0x695283*/
+    AbstractClass *v7 = *(int **)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v6); /*0x695283*/
     int v8 = Game::CheckForGameCD((void *)0x3C); /*0x69528b*/
     if ( !ScenarioClass::CheckExists(v7, v8) ) /*0x695293*/
     {
@@ -1102,7 +1100,7 @@ void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   HWND v13; // eax
   HWND v14; // esi
   char *v15; // eax
-  char *v16; // edi
+  Coord *v16; // edi
   LRESULT v17; // eax
   LPARAM v18; // ebx
   HWND v19; // eax
@@ -1317,7 +1315,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
     while ( 1 ) /*0x69953b*/
     {
       v7 += 5; /*0x69953b*/
-      signed int v9 = v7 * CCFileClass::GetSize(v20) / 100; /*0x69955b*/
+      ObjectClass *v9 = v7 * CCFileClass::GetSize(v20) / 100; /*0x69955b*/
       if ( v8 ) /*0x69955d*/
         __3_YAXPAX_Z(v8); /*0x699560*/
       v8 = (CampaignScore *)__2_YAPAXI_Z(v9 + 1); /*0x699571*/
@@ -1336,12 +1334,12 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
         {
           v12[1] = 0; /*0x6995e1*/
           Debug::Log(); /*0x6995e4*/
-          int v13 = 0; /*0x6995ec*/
+          AbstractClass *v13 = 0; /*0x6995ec*/
           v14 = 0; /*0x6995ee*/
           while ( 1 ) /*0x6995f5*/
           {
             int v17 = v13 + 1; /*0x6995f5*/
-            signed int v15 = (v13 + 1) * CCFileClass::GetSize(v20) / 100; /*0x699616*/
+            ObjectClass *v15 = (v13 + 1) * CCFileClass::GetSize(v20) / 100; /*0x699616*/
             if ( v14 ) /*0x699618*/
               __3_YAXPAX_Z(v14); /*0x69961b*/
             v14 = (CCINIClass *)__2_YAPAXI_Z(v15 + 1); /*0x69962c*/
@@ -1546,7 +1544,7 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
   char v14[48]; // [esp+4Ch] [ebp-30h] BYREF
 
   Matrix3x4::Identity(v13); /*0x69f0cc*/
-  int v3 = *(this + 12); /*0x69f0d1*/
+  ObjectClass *v3 = *(this + 12); /*0x69f0d1*/
   if ( v3 ) /*0x69f0da*/
   {
     int v4 = *(this + 9); /*0x69f0e0*/
@@ -1561,7 +1559,7 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
     if ( (double)(v3 - v5) / (double)*(this + 12) < 1.0 ) /*0x69f118*/
     {
   double v7; // st7
-      int v6 = *(this + 12); /*0x69f11a*/
+      ObjectClass *v6 = *(this + 12); /*0x69f11a*/
       if ( v6 ) /*0x69f123*/
       {
         int v8 = *(this + 9); /*0x69f12d*/

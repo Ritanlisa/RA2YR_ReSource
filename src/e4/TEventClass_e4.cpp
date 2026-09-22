@@ -9,7 +9,7 @@
 
 // 0x71E940
 namespace gamemd {
-DynamicVector * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
+DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -192,12 +192,12 @@ LABEL_22:
         case 59: /*0x71ecd6*/
           if ( a2 == v8 ) /*0x71f1bf*/
           {
-            void * v51 = (void *)this->TEventClass_field_34; /*0x71f1c1*/
+            DynamicVector *v51 = (void *)this->TEventClass_field_34; /*0x71f1c1*/
             if ( v51 == (void *)-1 || HouseClass::FindOwner(v51) ) /*0x71f1c9*/
             {
               if ( a4 ) /*0x71f1d8*/
               {
-                void * v52 = (void *)this->TEventClass_field_34; /*0x71f1da*/
+                DynamicVector *v52 = (void *)this->TEventClass_field_34; /*0x71f1da*/
                 if ( v52 == (void *)-1 /*0x71f1f5*/
   int v53; // ebx
                   || (v53 = (*(int (__thiscall **)(int))(*(_DWORD *)a4 + 56))(a4),
@@ -216,7 +216,7 @@ LABEL_22:
           {
             if ( a4 ) /*0x71ecef*/
             {
-              void * v28 = (void *)this->TEventClass_field_34; /*0x71ecf5*/
+              DynamicVector *v28 = (void *)this->TEventClass_field_34; /*0x71ecf5*/
               if ( v28 != (void *)-1 ) /*0x71ecfb*/
               {
                 if ( HouseClass::FindOwner(v28) ) /*0x71ed01*/
@@ -280,7 +280,7 @@ LABEL_22:
         return 0; /*0x71ee7c*/
       if ( a3 ) /*0x71ee88*/
       {
-  char *v42; // ecx
+  AbstractClass *v42; // ecx
   int v41; // edx
   int v40; // esi
         switch ( v8 ) /*0x71eea2*/
@@ -436,7 +436,7 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   int v7; // [esp-Ch] [ebp-14h]
   int v8; // [esp-8h] [ebp-10h]
   int v9; // [esp-4h] [ebp-Ch]
-  int v2 = this->TEventClass_field_2C; /*0x71f390*/
+  TEventClass *v2 = this->TEventClass_field_2C; /*0x71f390*/
   switch ( v2 ) /*0x71f3a8*/
   {
     case 1: /*0x71f3a8*/
@@ -538,7 +538,7 @@ int TEventClass::CheckConditions(int a2, int a3)
   result = this->TEventClass_field_28; /*0x71f800*/
   if ( result == a2 ) /*0x71f809*/
   {
-    result = *(_DWORD *)(result + 40); /*0x71f80b*/
+    result = result->TEventClass_field_28; /*0x71f80b*/
     this->TEventClass_field_28 = result; /*0x71f80e*/
   }
   if ( this->TEventClass_field_30 == a2 ) /*0x71f814*/

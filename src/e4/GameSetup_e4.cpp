@@ -29,7 +29,7 @@ int GameSetup::LookupDialogHash()
 }
 
 // 0x698F90
-AbstractClass * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
+AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -11,8 +11,8 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  _DWORD *v6; // esi
-  _DWORD *v8; // ebx
+  rc_ptr_base *v6; // esi
+  rc_ptr_base *v8; // ebx
   int i; // esi
   void (__thiscall ***v12)(_DWORD, int); // ecx
   int v3 = a2; /*0x766c13*/
@@ -95,7 +95,7 @@ LABEL_14:
 
 // 0x766DC0
 namespace gamemd {
-AbstractClass * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
+AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -105,12 +105,12 @@ AbstractClass * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned 
   int v3 = a2; /*0x766dc3*/
   if ( a2 ) /*0x766dcd*/
   {
-  _DWORD *v6; // ebx
+  rc_ptr_base *v6; // ebx
     this->q00C = 0; /*0x766dd7*/
     if ( a3 ) /*0x766ddd*/
     {
       *a3 = a2; /*0x766e21*/
-      _DWORD * v8 = a3 + 1; /*0x766e23*/
+      rc_ptr_base *v8 = a3 + 1; /*0x766e23*/
       if ( a2 - 1 >= 0 ) /*0x766e2f*/
       {
         int v9 = a2; /*0x766e31*/
@@ -133,7 +133,7 @@ AbstractClass * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned 
       {
         *v5 = a2; /*0x766df3*/
         v6 = v5 + 1; /*0x766df5*/
-        _DWORD * v7 = v5 + 1; /*0x766dfb*/
+        rc_ptr *v7 = v5 + 1; /*0x766dfb*/
         if ( a2 - 1 >= 0 ) /*0x766dff*/
         {
           int v14 = a2; /*0x766e02*/
@@ -177,7 +177,7 @@ AbstractClass * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned 
   {
     (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x766eb9*/
   }
-  int v12 = this->Conflict_WorldDominationTour_12_field_0x8; /*0x766ebc*/
+  AbstractClass *v12 = this->Conflict_WorldDominationTour_12_field_0x8; /*0x766ebc*/
   if ( v12 < this->Conflict_WorldDominationTour_12_field_0x10 ) /*0x766ec4*/
     this->Conflict_WorldDominationTour_12_field_0x10 = v12; /*0x766ec6*/
   return 1; /*0x766ec9*/

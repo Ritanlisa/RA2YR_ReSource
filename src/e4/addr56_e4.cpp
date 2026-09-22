@@ -26,8 +26,8 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
   IUnknown *v5; // edx
   LONG eax41; // eax
   ObjectClass *Viewport; // ecx
-  ObjectClass *v8; // edx
-  ObjectClass *v9; // eax
+  AbstractClass *v8; // edx
+  AbstractClass *v9; // eax
   IUnknown *v15; // edx
   int eax46; // eax
   MouseClass *i; // esi
@@ -138,7 +138,7 @@ LABEL_19:
     v9 = *(ObjectClass **)&Viewport->__pad_0[4]; /*0x560fbc*/
     rc.right = 168; /*0x560fbf*/
     v33[1] = v9; /*0x560fc3*/
-    int v12 = *(_DWORD *)&Viewport->__pad_0[8]; /*0x560fcb*/
+    AbstractClass *v12 = *(_DWORD *)&Viewport->__pad_0[8]; /*0x560fcb*/
     v31[1] = 0; /*0x560fce*/
     v33[2] = v12; /*0x560fd2*/
     v31[2] = v12; /*0x560fd6*/
@@ -273,7 +273,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
 {
   int result; // eax
   _DWORD *WindowLongA; // esi
-  HWND v6; // ebx
+  ObjectClass *v6; // ebx
   LPARAM v8; // esi
   INIClass **v9; // ebp
   INIClass *v10; // eax
@@ -396,9 +396,9 @@ void sub_568140(int * a1, int a2)
   int result; // eax
   __int16 v19; // [esp+14h] [ebp-8h]
   __int16 v20; // [esp+16h] [ebp-6h]
-  int v2 = *a1; /*0x56814a*/
-  int v3 = a1[1]; /*0x56814c*/
-  int v4 = a1[2]; /*0x56814f*/
+  WaveClass *v2 = *a1; /*0x56814a*/
+  IUnknown *v3 = a1[1]; /*0x56814c*/
+  IUnknown *v4 = a1[2]; /*0x56814f*/
   int v5 = ZCoordToScreenY(v4); /*0x568154*/
   int v6; // esi
   v6 = ((((unsigned int)(((unsigned __int64)(2004318071LL * v5) >> 32) - v5) >> 31) /*0x568173*/
@@ -496,7 +496,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
         {
           int v6 = *(_DWORD *)(v5 + 36); /*0x56af99*/
           Src = v6; /*0x56afa0*/
-          int v7 = *(this + 61); /*0x56afa9*/
+          CampaignClass *v7 = *(this + 61); /*0x56afa9*/
           Src = SHIWORD(v6) + (__int16)v6; /*0x56afb7*/
           if ( Src > v7 /*0x56afea*/
             && (__int16)v6 - SHIWORD(v6) < v7
@@ -541,7 +541,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
 
 // 0x56B250
 namespace gamemd {
-BombClass * E4Recv_56B250::sub_56B250(int a2)
+BombClass * * E4Recv_56B250::sub_56B250(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -565,7 +565,7 @@ BombClass * E4Recv_56B250::sub_56B250(int a2)
         {
           int v6 = *(_DWORD *)(v5 + 36); /*0x56b2aa*/
           Src = v6; /*0x56b2b1*/
-          int v7 = *(this + 61); /*0x56b2ba*/
+          CampaignClass *v7 = *(this + 61); /*0x56b2ba*/
           Src = SHIWORD(v6) + (__int16)v6; /*0x56b2c8*/
           if ( Src > v7 /*0x56b2fb*/
             && (__int16)v6 - SHIWORD(v6) < v7
@@ -594,7 +594,7 @@ BombClass * E4Recv_56B250::sub_56B250(int a2)
   }
   int v16 = g_MapSeedState; /*0x56b3b5*/
   int v11 = Compression::Read((int)v17, (int)&v16, 4) + v3; /*0x56b3c6*/
-  int v12 = (*(int (__thiscall **)(int *))(v17[0] + 4))(v17); /*0x56b3cf*/
+  BombClass *v12 = (*(int (__thiscall **)(int *))(v17[0] + 4))(v17); /*0x56b3cf*/
   LZOPipe::Destructor(v17); /*0x56b3d1*/
   return v12 + v11; /*0x56b3d9*/
 }

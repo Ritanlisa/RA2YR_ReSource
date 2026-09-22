@@ -57,7 +57,7 @@ unsigned int * sub_6B2430(int * a1, int a2)
 
 // 0x6B2700
 namespace gamemd {
-CellClass * InitializeBuildabilityGrid(int a1)
+CellClass * * InitializeBuildabilityGrid(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -192,7 +192,7 @@ LABEL_24:
 
 // 0x6B2A70
 namespace gamemd {
-AbstractClass * SlaveManager_InitGrid()
+AbstractClass * * SlaveManager_InitGrid()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -389,7 +389,7 @@ AbstractClass * SlaveManager_InitGrid()
 
 // 0x6B2F30
 namespace gamemd {
-AbstractClass * sub_6B2F30(char a1, int a2, int a3)
+AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -484,7 +484,7 @@ AbstractClass * sub_6B2F30(char a1, int a2, int a3)
   int v45; // ebp
   int v44; // ebx
   int v43; // edi
-  _DWORD *v12; // ebx
+  AbstractClass *v12; // ebx
     v107 = v4; /*0x6b303b*/
     v98 = (__int16)v83; /*0x6b3047*/
     v10 = g_SlaveManagerPool; /*0x6b304b*/
@@ -581,13 +581,13 @@ LABEL_31:
     int v86 = ScreenRect[1]; /*0x6b3213*/
     int v87 = ScreenRect[2]; /*0x6b321e*/
     int v88 = ScreenRect[3]; /*0x6b3225*/
-    int v27 = *((char *)v12 + 283); /*0x6b3232*/
+    int v27 = v12->q11B0; /*0x6b3232*/
   char v28; // dl
     v28 = ((int)((unsigned __int64)(2290649225LL * v82) >> 32) >> 3 < 0) /*0x6b3241*/
         + ((int)((unsigned __int64)(2290649225LL * v82) >> 32) >> 3);
-    *((_BYTE *)v12 + 283) = v28; /*0x6b3248*/
+    v12->q11B0 = v28; /*0x6b3248*/
     Object_Create(v28); /*0x6b3252*/
-    if ( v27 != *((char *)v12 + 283) ) /*0x6b3260*/
+    if ( v27 != v12->q11B0 ) /*0x6b3260*/
       CellClass::ClearCellContents(v12); /*0x6b3264*/
     House::AnnounceUpgrade((int)v12, -1); /*0x6b326d*/
     int v29 = v12[18]; /*0x6b3272*/
@@ -664,11 +664,10 @@ LABEL_31:
         goto LABEL_88; /*0x6b33e2*/
       }
     }
-    *((_BYTE *)v12 + 284) = v40; /*0x6b33e9*/
+    v12->q11C = v40; /*0x6b33e9*/
     if ( v40 ) /*0x6b33ef*/
-      int v47 = v40 + g_CellTileLookup - 1; /*0x6b33fe*/
-    else
-      v47 = unk_AA10B0; /*0x6b33f1*/
+      BombClass *v47 = v40 + g_CellTileLookup - 1; /*0x6b33fe*/
+    BombClass *v47 = unk_AA10B0; /*0x6b33f1*/
     v12[14] = v47; /*0x6b3402*/
     House::AnnounceUpgrade((int)v12, -1); /*0x6b3409*/
     v77 = v12[9]; /*0x6b341b*/
@@ -803,7 +802,7 @@ LABEL_110:
         {
           LOWORD(v98) = v77; /*0x6b36c7*/
           HIWORD(v98) = v82; /*0x6b36d2*/
-          void * v63 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v98); /*0x6b36dc*/
+          AbstractClass *v63 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v98); /*0x6b36dc*/
           int * v64 = CellClass::GetScreenRect((int)v63, v113); /*0x6b36e8*/
           int v65 = *v64; /*0x6b36ed*/
           v110 = v64[1]; /*0x6b36f2*/
@@ -952,7 +951,7 @@ void ProcessSlaveManagerTerrain()
               _DWORD * v17 = &DataGlobal_83FF18; /*0x6b39f9*/
               while ( 1 ) /*0x6b39fe*/
               {
-                _DWORD * v18 = (_DWORD *)*v17; /*0x6b39fe*/
+                AbstractClass *v18 = (_DWORD *)*v17; /*0x6b39fe*/
                 if ( *(_DWORD *)*v17 == v23 && v18[1] == v24 && v18[2] == v25 && v18[3] == v26 ) /*0x6b3a19*/
                   break; /*0x6b3a19*/
                 ++v17; /*0x6b3a1b*/
@@ -962,9 +961,8 @@ void ProcessSlaveManagerTerrain()
               }
               *(_BYTE *)(i + 284) = v16; /*0x6b3a2b*/
               if ( v16 ) /*0x6b3a31*/
-                int v19 = g_CellTileLookup + v16 - 1; /*0x6b3a40*/
-              else
-                v19 = unk_AA10B0; /*0x6b3a33*/
+                BombClass *v19 = g_CellTileLookup + v16 - 1; /*0x6b3a40*/
+              BombClass *v19 = unk_AA10B0; /*0x6b3a33*/
               *(_DWORD *)(i + 56) = v19; /*0x6b3a44*/
             }
           }
@@ -1115,8 +1113,8 @@ char sub_6B3CD0(int a1, char a2, int a3, unsigned int a4)
   InitializeBuildabilityGrid(a3); /*0x6b3d1d*/
   int v20 = 1; /*0x6b3d32*/
   int v7 = a4 & 3 | (2 * (a4 & 4)) | (a4 >> 1) & 4; /*0x6b3d4d*/
-  int v8 = (__int16)a3 - dword_8759A8; /*0x6b3d59*/
-  int v18 = v8; /*0x6b3d5b*/
+  AbstractClass *v8 = (__int16)a3 - dword_8759A8; /*0x6b3d59*/
+  AbstractClass *v18 = v8; /*0x6b3d5b*/
   int v9 = SHIWORD(a3) - dword_8759AC; /*0x6b3d5f*/
   int v10 = v9 + 2; /*0x6b3d61*/
   int v19 = v9 + 2; /*0x6b3d66*/
@@ -1125,7 +1123,7 @@ char sub_6B3CD0(int a1, char a2, int a3, unsigned int a4)
     int v11 = v8 + 2; /*0x6b3d70*/
     do /*0x6b3df7*/
     {
-      int v12 = v8; /*0x6b3d75*/
+      AbstractClass *v12 = v8; /*0x6b3d75*/
       if ( v8 < v11 ) /*0x6b3d77*/
       {
         while ( 1 ) /*0x6b3d79*/
@@ -1172,7 +1170,7 @@ LABEL_20:
 
 // 0x6B3E60
 namespace gamemd {
-AbstractClass * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int a4)
+AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1183,7 +1181,6 @@ AbstractClass * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int a4
   int v28; // [esp+24h] [ebp-4h]
   int v29; // [esp+2Ch] [ebp+4h]
   int v30; // [esp+30h] [ebp+8h]
-
   int v4 = a1; /*0x6b3e6d*/
   g_SlaveMgrPool = 0; /*0x6b3e7a*/
   if ( DataGlobal_B0B654 && DataGlobal_B0B65D ) /*0x6b3e8a*/
@@ -1257,7 +1254,7 @@ LABEL_27:
     {
       if ( g_SlaveMgrPool - 1 >= 0 ) /*0x6b4045*/
       {
-        int v19 = g_SlaveMgrPool; /*0x6b404a*/
+        AbstractClass *v19 = g_SlaveMgrPool; /*0x6b404a*/
         int v20 = 12 * (g_SlaveMgrPool - 1); /*0x6b404d*/
         do /*0x6b4078*/
         {
@@ -1291,7 +1288,7 @@ LABEL_25:
   if ( g_SlaveMgrPool - 1 >= 0 ) /*0x6b4089*/
   {
     int v21 = 12 * (g_SlaveMgrPool - 1); /*0x6b408e*/
-    int v22 = g_SlaveMgrPool; /*0x6b4091*/
+    AbstractClass *v22 = g_SlaveMgrPool; /*0x6b4091*/
     do /*0x6b40ba*/
     {
       v21 -= 12; /*0x6b4098*/
@@ -1958,7 +1955,7 @@ int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned cha
 
 // 0x6B9D00
 namespace gamemd {
-AbstractClass * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, int a5)
+AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3595,7 +3592,7 @@ void WinMain_Setup()
   void (__thiscall ***v9)(_DWORD, int); // ecx
   int j; // esi
 
-  void * v0 = DataGlobal_A8F794; /*0x6be1c2*/
+  AbstractClass *v0 = DataGlobal_A8F794; /*0x6be1c2*/
   g_WTFMode = 0; /*0x6be1cc*/
   if ( DataGlobal_A8F794 ) /*0x6be1d2*/
   {
@@ -3703,14 +3700,14 @@ void WinMain_Setup()
   MapClass::FreeAllCells(&DataGlobal_87F7E8); /*0x6be3ee*/
   TacticalClass::FreeResources(&DataGlobal_87F7E8); /*0x6be3f8*/
   WinMainSetup_Setup_6BB8E0(); /*0x6be3fd*/
-  void * v6 = g_ZBufferDescriptor; /*0x6be402*/
+  IUnknown *v6 = g_ZBufferDescriptor; /*0x6be402*/
   if ( g_ZBufferDescriptor ) /*0x6be40a*/
   {
     Stream::GetField(g_ZBufferDescriptor); /*0x6be40e*/
     __3_YAXPAX_Z(v6); /*0x6be414*/
     g_ZBufferDescriptor = 0; /*0x6be41c*/
   }
-  void * v7 = g_VisibleSurfaceDescriptor; /*0x6be422*/
+  IUnknown *v7 = g_VisibleSurfaceDescriptor; /*0x6be422*/
   if ( g_VisibleSurfaceDescriptor ) /*0x6be42a*/
   {
     StreamObj::Release(g_VisibleSurfaceDescriptor); /*0x6be42e*/
@@ -3907,10 +3904,10 @@ void WinMain_Setup()
     (**(void (__thiscall ***)(int, int))g_MixFile_CAMEOMD)(g_MixFile_CAMEOMD, 1); /*0x6be7ab*/
     g_MixFile_CAMEOMD = 0; /*0x6be7ad*/
   }
-  int v10 = g_MixFilePool_Count; /*0x6be7b3*/
+  MixFileClass *v10 = g_MixFilePool_Count; /*0x6be7b3*/
   if ( g_MixFilePool_Count > 0 ) /*0x6be7bb*/
   {
-    _DWORD * v11 = g_MixFilePool; /*0x6be7bd*/
+    AbstractClass *v11 = g_MixFilePool; /*0x6be7bd*/
     do /*0x6be806*/
     {
       if ( *v11 ) /*0x6be7c3*/
@@ -3979,7 +3976,7 @@ void WinMain_Setup()
   int v13 = DataGlobal_884DD0; /*0x6be8b8*/
   if ( DataGlobal_884DD0 > 0 ) /*0x6be8c0*/
   {
-    _DWORD * v14 = DataGlobal_884DC4; /*0x6be8c2*/
+    AbstractClass *v14 = DataGlobal_884DC4; /*0x6be8c2*/
     do /*0x6be90b*/
     {
       if ( *v14 ) /*0x6be8c8*/
@@ -4086,14 +4083,14 @@ void WinMain_Setup()
     g_BinkMoviePlayer = 0; /*0x6bea78*/
   }
   Network::ShutdownInterface(); /*0x6bea7e*/
-  void * v16 = DataGlobal_A83DB8; /*0x6bea83*/
+  AbstractClass *v16 = DataGlobal_A83DB8; /*0x6bea83*/
   if ( DataGlobal_A83DB8 ) /*0x6bea8b*/
   {
     Vector::Clear(DataGlobal_A83DB8); /*0x6bea8f*/
     __3_YAXPAX_Z(v16); /*0x6bea95*/
     DataGlobal_A83DB8 = 0; /*0x6bea9d*/
   }
-  void * v17 = g_RulesClass_Instance; /*0x6beaa3*/
+  AbstractClass *v17 = g_RulesClass_Instance; /*0x6beaa3*/
   if ( g_RulesClass_Instance ) /*0x6beaab*/
   {
     RulesClass::DTOR(g_RulesClass_Instance); /*0x6beaaf*/
@@ -4103,7 +4100,7 @@ void WinMain_Setup()
   _DWORD * v18 = g_ScenarioClass_Instance; /*0x6beac3*/
   if ( g_ScenarioClass_Instance ) /*0x6beacc*/
   {
-    void * v19 = (void *)*((_DWORD *)g_ScenarioClass_Instance + 3396); /*0x6bead2*/
+    AbstractClass *v19 = (void *)*((_DWORD *)g_ScenarioClass_Instance + 3396); /*0x6bead2*/
     *((_DWORD *)g_ScenarioClass_Instance + 3395) = &vt_VectorClass_int; /*0x6beadf*/
     if ( v19 && *((_BYTE *)v18 + 13593) ) /*0x6beae7*/
     {
@@ -4112,7 +4109,7 @@ void WinMain_Setup()
     }
     *((_BYTE *)v18 + 13593) = 0; /*0x6beafe*/
     v18[3397] = 0; /*0x6beb04*/
-    void * v20 = (void *)v18[3389]; /*0x6beb0a*/
+    AbstractClass *v20 = (void *)v18[3389]; /*0x6beb0a*/
     v18[3388] = &vt_VectorClass_int; /*0x6beb10*/
     if ( v20 && *((_BYTE *)v18 + 13565) ) /*0x6beb1a*/
     {
@@ -4121,7 +4118,7 @@ void WinMain_Setup()
     }
     *((_BYTE *)v18 + 13565) = 0; /*0x6beb31*/
     v18[3390] = 0; /*0x6beb37*/
-    void * v21 = (void *)v18[3382]; /*0x6beb3d*/
+    AbstractClass *v21 = (void *)v18[3382]; /*0x6beb3d*/
     v18[3381] = &vt_VectorClass_TechnoTypeClass; /*0x6beb43*/
     if ( v21 && *((_BYTE *)v18 + 13537) ) /*0x6beb51*/
     {

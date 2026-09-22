@@ -10,7 +10,7 @@ int MoveFeedback::ProcessCommand()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Height; // eax
-  _DWORD *v3; // esi
+  VectorClass *v3; // esi
   int v12; // ebp
   int i; // edi
   char v16; // [esp+13h] [ebp-9h]
@@ -44,9 +44,9 @@ int MoveFeedback::ProcessCommand()
         {
           int v7 = v3[2]; /*0x732849*/
           if ( v3[4] < v7 /*0x732873*/
-            || ((LOBYTE(Height) = *((_BYTE *)v3 + 13), (_BYTE)Height) || !v7)
+            || ((LOBYTE(Height) = v3->IsAllocated, (_BYTE)Height) || !v7)
             && (Height = v3[5], Height > 0)
-            && (LOBYTE(Height) = (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v7 + Height, 0),
+            && (LOBYTE(Height) = v3->Release(v7 + Height, 0),
                 (_BYTE)Height) )
           {
             Height = v3[4]; /*0x732875*/

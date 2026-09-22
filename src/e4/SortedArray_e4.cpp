@@ -99,7 +99,7 @@ LABEL_9:
 }
 
 // 0x5388A0
-ObjectClass * SortedArray::RemoveByKey(DynamicVector * aP1)
+ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -186,7 +186,7 @@ int SortedArray::FindPair(int * a2)
   }
   int v6 = this->SortedArray_field_0x04; /*0x5389ce*/
   int v7 = *a2; /*0x5389d1*/
-  _DWORD * v8 = *(_DWORD **)this; /*0x5389d3*/
+  ObjectClass *v8 = *(_DWORD **)this; /*0x5389d3*/
   if ( v6 <= 0 ) /*0x5389d7*/
     return 0; /*0x5389d7*/
   while ( 1 ) /*0x5389e0*/

@@ -73,7 +73,7 @@ AbstractClass * * GameSettings::Read()
                             (CCINIClass *)&stru_830620[11296],
                             *((_BYTE *)this + 20));
   Debug::Log(); /*0x5fa771*/
-  int v4; // eax
+  AbstractClass *v4; // eax
   v4 = INIClass::ReadInt_Overwrite( /*0x5fa78c*/
          (int)&stru_87C374[44364],
          (unsigned __int8 *)&g_INI_Key_Options,

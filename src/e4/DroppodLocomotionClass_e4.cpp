@@ -14,7 +14,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double v4; // st7
-  __int64 v5; // rax
+  ObjectClass *v5; // rax
   double v6; // st7
   int v7; // eax
   int v8; // ecx
@@ -35,14 +35,14 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   int v33[2]; // [esp+1Ch] [ebp-24h] BYREF
   int v35; // [esp+28h] [ebp-18h] BYREF
   int v36; // [esp+2Ch] [ebp-14h]
-  int v37; // [esp+30h] [ebp-10h]
+  TechnoClass *v37; // [esp+30h] [ebp-10h]
   int v38[3]; // [esp+34h] [ebp-Ch] BYREF
   int VeteranCombat_high; // [esp+44h] [ebp+4h]
 
   int * v2 = *(int **)(a1 + 8); /*0x4b5b7b*/
   v35 = v2[39]; /*0x4b5b88*/
   v36 = v2[40]; /*0x4b5b8f*/
-  int v3 = v2[41]; /*0x4b5b93*/
+  TechnoClass *v3 = v2[41]; /*0x4b5b93*/
   v38[0] = v35; /*0x4b5b96*/
   v37 = v3; /*0x4b5b9a*/
   v38[1] = v36; /*0x4b5b9e*/

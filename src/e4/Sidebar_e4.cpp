@@ -8,14 +8,14 @@
 
 // 0x4FA350
 namespace gamemd {
-AbstractClass * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5)
+AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v6; // ebx
   int v7; // esi
   int v9; // ebp
-  int v10; // esi
+  FactoryClass *v10; // esi
   int result; // eax
   char v13; // bl
   IUnknown *Status; // eax
@@ -89,8 +89,7 @@ LABEL_40:
     case 0x28u: /*0x4fa47b*/
       if ( (_BYTE)aP3 ) /*0x4fa4b0*/
         v10 = *(_DWORD *)(this + 21432); /*0x4fa4b2*/
-      else
-        v10 = *(_DWORD *)(this + 21428); /*0x4fa4ba*/
+      FactoryClass *v10 = *(_DWORD *)(this + 21428); /*0x4fa4ba*/
       break; /*0x4fa4b8*/
     case 2u: /*0x4fa47b*/
     case 3u: /*0x4fa47b*/
@@ -100,8 +99,7 @@ LABEL_40:
     case 7u: /*0x4fa47b*/
       if ( v7 == 5 ) /*0x4fa4c5*/
         v10 = *(_DWORD *)(this + 21452); /*0x4fa4c7*/
-      else
-        v10 = *(_DWORD *)(this + 21436); /*0x4fa4cf*/
+      FactoryClass *v10 = *(_DWORD *)(this + 21436); /*0x4fa4cf*/
       break; /*0x4fa4cd*/
     case 0xFu: /*0x4fa47b*/
     case 0x10u: /*0x4fa47b*/
@@ -120,7 +118,7 @@ LABEL_40:
     if ( !v10 ) /*0x4fa4fe*/
       goto LABEL_40; /*0x4fa4fe*/
   }
-  if ( *(_DWORD *)(v10 + 56) && !*(_BYTE *)(v10 + 112) && v6 == (IUnknown *)7 ) /*0x4fa531*/
+  if ( v10->queuedCapacity && !v10->isSuspended && v6 == (IUnknown *)7 ) /*0x4fa531*/
     goto LABEL_40; /*0x4fa531*/
   switch ( (unsigned int)v6 ) /*0x4fa564*/
   {
@@ -150,29 +148,29 @@ LABEL_40:
       break;
   }
   v13 = 0; /*0x4fa5a8*/
-  if ( *(_BYTE *)(v10 + 112) ) /*0x4fa5a8*/
+  if ( v10->isSuspended ) /*0x4fa5a8*/
   {
-    int v14 = *(_DWORD *)(v10 + 88); /*0x4fa5b1*/
+    int v14 = v10->q058; /*0x4fa5b1*/
     if ( v14 ) /*0x4fa5b6*/
     {
       if ( (*(int (__thiscall **)(int))(*(_DWORD *)v14 + 132))(v14) == v9 ) /*0x4fa5c2*/
       {
         v13 = 1; /*0x4fa5c4*/
 LABEL_55:
-        if ( !*(_DWORD *)(v10 + 80) || a5 || v13 ) /*0x4fa5f6*/
+        if ( !v10->q050 || a5 || v13 ) /*0x4fa5f6*/
         {
-          char v16 = *(_BYTE *)(v10 + 112); /*0x4fa622*/
+          bool v16 = v10->isSuspended; /*0x4fa622*/
           ProductionClass::StartTimer(v10, v24); /*0x4fa628*/
           if ( !v16 && g_GameMode_Current && *(_BYTE *)(this + 492) ) /*0x4fa63a*/
           {
-            int v17 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v10 + 88) + 132))(*(_DWORD *)(v10 + 88)); /*0x4fa649*/
+            int v17 = (*(int (__thiscall **)(_DWORD))(*v10->q058 + 132))(v10->q058); /*0x4fa649*/
   int v18; // eax
             v18 = (int)(54 * ((int)DataGlobal_A8B558 * (int)g_ScenarioState / 0x3Cu)) /*0x4fa67b*/
                 / (*(int (__thiscall **)(int))(*(_DWORD *)v17 + 136))(v17);
             if ( v18 >= 53 ) /*0x4fa680*/
               v18 = 53; /*0x4fa682*/
             if ( v21 ) /*0x4fa68d*/
-              *(_DWORD *)(v10 + 36) = v18; /*0x4fa68f*/
+              v10->production = v18; /*0x4fa68f*/
           }
           if ( HouseClass_Player == (IUnknown *)this ) /*0x4fa698*/
             Sidebar::FindProductionType(&DataGlobal_87F7E8, (FactoryClass *)v10, (MouseClass *)a1, (int)aP2); /*0x4fa6aa*/
@@ -190,21 +188,21 @@ LABEL_55:
   if ( FactoryClass::DemandProduction(v10, v9, (#375 *)this, a5) ) /*0x4fa5d1*/
     goto LABEL_55; /*0x4fa5df*/
   Debug::Log(); /*0x4fa6c4*/
-  if ( *(_DWORD *)(v10 + 80) || *(_DWORD *)(v10 + 88) ) /*0x4fa6d9*/
+  if ( v10->q050 || v10->q058 ) /*0x4fa6d9*/
     return 3; /*0x4fa807*/
   Debug::Log(); /*0x4fa6ec*/
   Debug::Log(); /*0x4fa6fc*/
   Debug::Log(); /*0x4fa70a*/
-  v19 = *(_DWORD *)(v10 + 88); /*0x4fa70f*/
+  v19 = v10->q058; /*0x4fa70f*/
   if ( v19 ) /*0x4fa717*/
     (*(void (__thiscall **)(int))(*(_DWORD *)v19 + 44))(v19); /*0x4fa71b*/
   Debug::Log(); /*0x4fa729*/
-  v20 = *(_DWORD *)(v10 + 88); /*0x4fa72e*/
+  v20 = v10->q058; /*0x4fa72e*/
   if ( v20 ) /*0x4fa736*/
     (*(void (__thiscall **)(int))(*(_DWORD *)v20 + 64))(v20); /*0x4fa73a*/
   Debug::Log(); /*0x4fa748*/
   Debug::Log(); /*0x4fa758*/
-  (*(void (__thiscall **)(int, int))(*(_DWORD *)v10 + 32))(v10, 1); /*0x4fa76a*/
+  v10->CopyTo_0(1); /*0x4fa76a*/
   switch ( (unsigned int)v23 ) /*0x4fa782*/
   {
     case 0u: /*0x4fa782*/
@@ -290,7 +288,7 @@ LABEL_3:
 
 // 0x533F50
 namespace gamemd {
-CreateTeamCommand * Sidebar::ScrollSidebarSkipGame()
+CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -319,7 +317,7 @@ CreateTeamCommand * Sidebar::ScrollSidebarSkipGame()
 
 // 0x636310
 namespace gamemd {
-TechnoClass * Sidebar::CancelSidebarProductionQueue()
+TechnoClass * * Sidebar::CancelSidebarProductionQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -400,7 +398,7 @@ TechnoClass * Sidebar::CancelSidebarProductionQueue()
     this->q024 = -1; /*0x6364c4*/
     *(this + 37) = -1; /*0x6364ca*/
     *((_BYTE *)this + 153) = 0; /*0x6364d0*/
-    void * v15 = (void *)this->q008; /*0x6364d7*/
+    AbstractClass *v15 = (void *)this->q008; /*0x6364d7*/
     *v10 = &vt_VectorClass_PlanningNodeClass; /*0x6364de*/
     if ( v15 ) /*0x6364e4*/
     {
@@ -447,7 +445,7 @@ int Sidebar::RemoveItem(int a2)
 
 // 0x63FB20
 namespace gamemd {
-ObjectClass * Sidebar::Render(char a2)
+ObjectClass * * Sidebar::Render(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -464,7 +462,7 @@ ObjectClass * Sidebar::Render(char a2)
     int v16 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x63fb78*/
     int v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
     int * v5 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v16); /*0x63fb8c*/
-    int v6 = *(_DWORD *)(this + 5424); /*0x63fb91*/
+    ObjectClass *v6 = *(_DWORD *)(this + 5424); /*0x63fb91*/
   int v18[4]; // [esp+14h] [ebp-10h] BYREF
     v18[0] = *v5; /*0x63fb97*/
     v18[1] = v5[1]; /*0x63fb9e*/
@@ -560,7 +558,7 @@ ObjectClass * Sidebar::Render(char a2)
       }
       v11 = 0; /*0x63fce6*/
     }
-    int v13 = *(_DWORD *)(this + 5424); /*0x63fce8*/
+    ObjectClass *v13 = *(_DWORD *)(this + 5424); /*0x63fce8*/
     if ( v13 > 0 ) /*0x63fcf0*/
     {
       if ( v11 < v13 ) /*0x63fcf4*/
@@ -650,7 +648,7 @@ int Sidebar::ActivateTab(IUnknown * aP1)
 
 // 0x6A70E0
 namespace gamemd {
-AbstractClass * Sidebar::FlushSidebarTooltip(char a2)
+AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -57,7 +57,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   _BYTE * v4 = (_BYTE *)(DataGlobal_87F850 + 4 * CellToTileIndexMap((int *)&DataGlobal_87F7E8, (IUnknown *)(this + 36))); /*0x47d2da*/
   _BYTE * v57 = v4; /*0x47d2e2*/
   int v5 = DataGlobal_87F858 + 10 * CellToTileIndexMap((int *)&DataGlobal_87F7E8, (IUnknown *)(this + 36)); /*0x47d2f3*/
-  int v6 = *(_DWORD *)(this + 68); /*0x47d2f6*/
+  TypeList *v6 = *(_DWORD *)(this + 68); /*0x47d2f6*/
   int v56 = v5; /*0x47d2fc*/
   if ( v6 != -1 ) /*0x47d300*/
   {
@@ -136,7 +136,7 @@ LABEL_19:
 LABEL_40:
         *(_BYTE *)(this + 284) = HouseClass::GetCameoTypeIndex((void *)v18, *(unsigned __int8 *)(this + 282)); /*0x47d7fb*/
         CellClass::DetermineTileType(this); /*0x47d813*/
-        int v27 = *(_DWORD *)(this + 68); /*0x47d818*/
+        TypeList *v27 = *(_DWORD *)(this + 68); /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
           goto LABEL_47; /*0x47d81e*/
         if ( FindBuildingByTiberiumType(v27) != -1 ) /*0x47d828*/
@@ -365,7 +365,7 @@ unsigned int * House::GetStartCoords(IUnknown * aP1)
   _DWORD *FoundationSize; // eax
   char **v23; // [esp+10h] [ebp-20h] BYREF
 
-  int v3 = *(_DWORD *)(this + 68); /*0x47fb99*/
+  TypeList *v3 = *(_DWORD *)(this + 68); /*0x47fb99*/
   if ( v3 == -1 ) /*0x47fb9f*/
     goto LABEL_13; /*0x47fb9f*/
   unsigned int a2 = *(unsigned __int8 *)(this + 286); /*0x47fbb5*/
@@ -400,7 +400,7 @@ LABEL_11:
     v23 = v9; /*0x47fcad*/
     goto LABEL_12; /*0x47fcad*/
   }
-  int * v10 = *(int **)(this + 64); /*0x47fc86*/
+  AbstractClass *v10 = *(int **)(this + 64); /*0x47fc86*/
   v23 = 0; /*0x47fc89*/
   if ( v10 ) /*0x47fc8f*/
     BuildingClass::GetPlacementCoords(v10, (BuildingTypeClass *)&v23, &a2); /*0x47fc9b*/
@@ -702,7 +702,7 @@ void sub_501A20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v0; // ebx
+  CellStruct *v0; // ebx
   v0 = g_SelectionManager; /*0x501a21*/
   if ( g_SelectionManager ) /*0x501a2a*/
   {
@@ -761,7 +761,7 @@ int House::IsCurrentPlayer()
 
 // 0x50DB00
 namespace gamemd {
-AbstractClass * House::ChooseHouseEnemy(BuildingClass * aP1)
+AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1150,7 +1150,7 @@ void House_Play_6D1660()
   result = a1[21828]; /*0x6d1666*/
   if ( result ) /*0x6d166e*/
   {
-    int * v4 = (int *)&DataGlobal_B0C1C0; /*0x6d1675*/
+    ShapeButtonClass *v4 = (int *)&DataGlobal_B0C1C0; /*0x6d1675*/
     do /*0x6d168b*/
     {
       (*(void (__thiscall **)(_BYTE *, int *))(*(_DWORD *)a1 + 52))(a1, v4); /*0x6d167f*/

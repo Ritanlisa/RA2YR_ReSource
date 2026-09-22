@@ -28,9 +28,9 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  unsigned __int8 v3; // bl
+  AbstractClass *v3; // bl
   unsigned __int8 v4; // al
-  unsigned __int8 v5; // bl
+  AbstractClass *v5; // bl
   unsigned __int8 result; // al
 
   v3 = *(this + 1); /*0x517394*/
@@ -82,42 +82,36 @@ void SaveInfantryToINI()
   result = 0; /*0x51ff0d*/
   for ( i = 0; result < g_BuildingClass_Count; i = result ) /*0x51ff15*/
   {
-    int v4 = *((_DWORD *)g_InfantryClassLimit + result); /*0x51ff25*/
+    IUnknown *v4 = *((_DWORD *)g_InfantryClassLimit + result); /*0x51ff25*/
     if ( !*(_BYTE *)(v4 + 129) ) /*0x51ff28*/
     {
       sprintf(Buffer, g_Str_Trace__d, result); /*0x51ff41*/
-      if ( (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v4 + 388))(v4, a2, a3) == -1 ) /*0x51ff71*/
+      if ( v4->vt_slot_388(a2, a3) == -1 ) /*0x51ff71*/
         char * v30 = *(char **)(v4 + 180); /*0x51ff79*/
       else
-        v30 = (char *)(*(int (__thiscall **)(int))(*(_DWORD *)v4 + 388))(v4); /*0x51ff89*/
+        v30 = (char *)v4->vt_slot_388(); /*0x51ff89*/
   int v32; // [esp+2Ch] [ebp-90h] BYREF
       unsigned int v5 = *ProgressTimer::GetValue((_WORD *)(v4 + 904), &v32); /*0x51ff9d*/
-      int v6 = *(_DWORD *)(v4 + 540); /*0x51ffab*/
+      int v6 = v4->q21C; /*0x51ffab*/
       const char * v7 = (const char *)(*(_DWORD *)(v4 + 1728) + 36); /*0x51ffb3*/
   _DWORD v31[3]; // [esp+20h] [ebp-9Ch] BYREF
-      v31[0] = *(_DWORD *)(v4 + 156); /*0x51ffb6*/
+      v31[0] = v4->q09C; /*0x51ffb6*/
       int v8 = *(unsigned __int8 *)(v4 + 1058); /*0x51ffbf*/
-      v31[1] = *(_DWORD *)(v4 + 160); /*0x51ffc5*/
+      v31[1] = v4->q028; /*0x51ffc5*/
       int v9 = *(unsigned __int8 *)(v4 + 1057); /*0x51ffce*/
-      v31[2] = *(_DWORD *)(v4 + 164); /*0x51ffd4*/
+      v31[2] = v4->q0A4; /*0x51ffd4*/
       a3 = v8; /*0x51ffe0*/
       a2 = v9; /*0x51ffe7*/
-      int v23 = FootClass::GetField(v4 + 336, *(_DWORD *)(v4 + 532), *(unsigned __int8 *)(v4 + 140)); /*0x52000b*/
+      int v23 = FootClass::GetField(v4 + 336, *(_DWORD *)(v4 + 532), v4->q08C); /*0x52000b*/
       char * v19 = FromNameIndex((int)v30); /*0x52001b*/
   int v10; // eax
       LOBYTE(v10) = Input::OffsetToDirection(v31); /*0x52001c*/
   int v11; // eax
-      v11 = (*(int (__thiscall **)(int, char *, int, char *, _DWORD))(*(_DWORD *)v4 + 440))( /*0x52002b*/
-              v4,
-              Buffer,
-              v10,
-              v19,
-              (unsigned __int8)(((v5 >> 7) + 1) >> 1));
+      v11 = v4->GetCellCoords_Alt(/*0x52002b*/
+              v4, Buffer, v10, v19, (unsigned __int8)(((v5 >> 7) + 1) >> 1));
   int v14; // [esp-34h] [ebp-F0h]
-      v14 = *(__int16 *)(*(int (__thiscall **)(int, char *, _DWORD))(*(_DWORD *)v4 + 440))( /*0x520048*/
-                          v4,
-                          Buffer,
-                          *(__int16 *)(v11 + 2));
+      v14 = *(__int16 *)v4->GetCellCoords_Alt(/*0x520048*/
+                          v4, Buffer, *(__int16 *)(v11 + 2));
       HealthRatio = BuildingClass::GetHealthRatio((int *)v4); /*0x52004b*/
       int v13 = Math::RoundToInt(HealthRatio * 256.0); /*0x520056*/
       sprintf( /*0x520068*/

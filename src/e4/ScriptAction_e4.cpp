@@ -55,7 +55,7 @@ int ScriptAction::CreatePlacementAction(AbstractClass * aP1, const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  int v5; // ebx
+  ObjectClass *v5; // ebx
   _BYTE *v6; // eax
   int v7; // eax
   int v8; // ecx
@@ -83,7 +83,7 @@ int ScriptAction::CreatePlacementAction(AbstractClass * aP1, const void * a2)
   else
     v6 = 0; /*0x633fea*/
   qmemcpy(v6, a2, 0x6Fu); /*0x633ff8*/
-  *(_DWORD *)(v5 + 4) = v6; /*0x633ffd*/
+  v5->vtable2 = v6; /*0x633ffd*/
   v7 = this->q008; /*0x634000*/
   if ( this->q010 < v7 /*0x634024*/
     || (this->q034 || !v7)
@@ -218,7 +218,7 @@ int ScriptAction::FindSquadMember()
     do /*0x634a64*/
     {
       int v2 = *(_DWORD *)(this->ScriptAction_field_0x4 + 4 * v23); /*0x6349da*/
-      _DWORD * v3 = *(_DWORD **)v2; /*0x6349dd*/
+      AbstractClass *v3 = *(_DWORD **)v2; /*0x6349dd*/
       Type = BuildingClass::GetPlanningToken(*(_DWORD **)v2); /*0x6349e6*/
   int v24[3]; // [esp+18h] [ebp-108h] BYREF
       v24[0] = this; /*0x6349ed*/
@@ -232,9 +232,8 @@ int ScriptAction::FindSquadMember()
           int v6 = BuildingClass::GetPlanningToken(v3); /*0x634a1c*/
           int v7 = *(_DWORD *)(v6 + 20) - 1; /*0x634a24*/
           if ( v7 >= 0 ) /*0x634a25*/
-            int * v8 = *(int **)(*(_DWORD *)(v6 + 8) + 4 * v7); /*0x634a2e*/
-          else
-            v8 = 0; /*0x634a27*/
+            VectorClass *v8 = *(int **)(*(_DWORD *)(v6 + 8) + 4 * v7); /*0x634a2e*/
+          VectorClass *v8 = 0; /*0x634a27*/
           Value = Array::FindValue(v8, (int)v3); /*0x634a34*/
           if ( Value == -1 ) /*0x634a3c*/
             int v10 = 0; /*0x634a3e*/
@@ -386,7 +385,7 @@ int ScriptAction::FindBuildingMatch(AbstractClass * aP1)
 
 // 0x634E10
 namespace gamemd {
-ObjectClass * ScriptAction::PlaceObject(AbstractClass * aP1)
+ObjectClass * * ScriptAction::PlaceObject(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -395,7 +394,7 @@ ObjectClass * ScriptAction::PlaceObject(AbstractClass * aP1)
   int *Type; // esi
   ObjectClass *v24; // ecx
   _DWORD *ScenarioClassActionCoords; // eax
-  ScriptAction *v29; // [esp+10h] [ebp-118h] BYREF
+  ObjectClass *v29; // [esp+10h] [ebp-118h] BYREF
   ObjectClass *v30; // [esp+14h] [ebp-114h]
   __int16 v36; // [esp+B4h] [ebp-74h]
   __int16 v39; // [esp+124h] [ebp-4h]
@@ -472,7 +471,7 @@ ObjectClass * ScriptAction::PlaceObject(AbstractClass * aP1)
         this->ScriptAction_field_0x30 = v20 + 1; /*0x634f2c*/
         *(_DWORD *)(v21 + 4 * v20) = v16; /*0x634f2f*/
       }
-      int v22 = this->ScriptAction_field_0xA8; /*0x634f35*/
+      LineTrail *v22 = this->ScriptAction_field_0xA8; /*0x634f35*/
       result = this->ScriptAction_field_0x30 - 1; /*0x634f3b*/
       v29 = result; /*0x634f3e*/
       if ( v22 > 0 && this->ScriptAction_field_0xB0 == -1 ) /*0x634f53*/
@@ -660,7 +659,7 @@ int ScriptAction::ClearBuildingState()
 
 // 0x637E00
 namespace gamemd {
-TechnoClass * ScriptAction::DispatchBuilding()
+TechnoClass * * ScriptAction::DispatchBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -674,7 +673,7 @@ TechnoClass * ScriptAction::DispatchBuilding()
   int v39; // [esp+38h] [ebp-10h]
   _DWORD v40[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
-  char v2 = *this; /*0x637e09*/
+  AbstractClass *v2 = *this; /*0x637e09*/
   if ( *this == 43 ) /*0x637e0d*/
   {
     v32 = this->q008; /*0x637e17*/
@@ -682,7 +681,7 @@ TechnoClass * ScriptAction::DispatchBuilding()
     int v4 = 0; /*0x637e20*/
     for ( v33[0] = g_SidebarState; v4 < v33[0]; ++v4 ) /*0x637e28*/
     {
-      _DWORD * v5 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v4); /*0x637e34*/
+      AbstractClass *v5 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v4); /*0x637e34*/
       int v6 = v5[135]; /*0x637e37*/
       _DWORD * v7 = *(_DWORD **)(v6 + 48); /*0x637e3d*/
       if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v6) && HouseClass_Player ) /*0x637e50*/
@@ -690,10 +689,10 @@ TechnoClass * ScriptAction::DispatchBuilding()
       if ( (_DWORD *)v32 == v7 ) /*0x637e59*/
       {
         TypeBuildingClass = BuildingClass::GetPlanningToken(v5); /*0x637e5d*/
-        int v9 = TypeBuildingClass; /*0x637e62*/
+        ScriptAction *v9 = TypeBuildingClass; /*0x637e62*/
         if ( TypeBuildingClass ) /*0x637e66*/
         {
-          char v10 = ScriptAction::Check(TypeBuildingClass); /*0x637e71*/
+          AbstractClass *v10 = ScriptAction::Check(TypeBuildingClass); /*0x637e71*/
           ScriptAction::ClearBuildingState(v9); /*0x637e73*/
           char v11 = ScriptAction::IsBuildingTypeMatch(v5); /*0x637e7a*/
           if ( !v10 ) /*0x637e81*/
@@ -752,8 +751,8 @@ TechnoClass * ScriptAction::DispatchBuilding()
           }
           if ( v15 ) /*0x637f79*/
           {
-            _DWORD * v18 = (_DWORD *)v32; /*0x637f7f*/
-            _DWORD * v19 = (_DWORD *)BuildingClass::GetPlanningToken((_DWORD *)v32); /*0x637f85*/
+            AbstractClass *v18 = (_DWORD *)v32; /*0x637f7f*/
+            TechnoClass *v19 = (_DWORD *)BuildingClass::GetPlanningToken((_DWORD *)v32); /*0x637f85*/
             if ( !v19 ) /*0x637f8c*/
             {
               if ( __2_YAPAXI_Z(0x9Cu) ) /*0x637f93*/
@@ -776,7 +775,7 @@ TechnoClass * ScriptAction::DispatchBuilding()
   }
   else
   {
-    _BYTE * v20 = this + 7; /*0x63800a*/
+    AbstractClass *v20 = this + 7; /*0x63800a*/
     if ( v2 == 44 ) /*0x63800d*/
     {
       BuildingLoadQueue = BuildingLoadQueue::GetNext(v20); /*0x638013*/
@@ -785,7 +784,7 @@ TechnoClass * ScriptAction::DispatchBuilding()
         BuildingLoadQueue = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD *))(*BuildingLoadQueue + 88))( /*0x638029*/
                                         BuildingLoadQueue,
                                         v40);
-        int v21 = *BuildingLoadQueue; /*0x63802c*/
+        BuildingClass *v21 = *BuildingLoadQueue; /*0x63802c*/
         int v22 = 0; /*0x63802e*/
         _DWORD * v23 = (_DWORD *)this->q008; /*0x638030*/
         v38 = BuildingLoadQueue[1]; /*0x638037*/
@@ -794,13 +793,13 @@ TechnoClass * ScriptAction::DispatchBuilding()
         v33[0] = DataGlobal_AC4B40; /*0x638049*/
         if ( DataGlobal_AC4B40 > 0 ) /*0x63804d*/
         {
-  int v24; // esi
+  ObjectClass *v24; // esi
           while ( 1 ) /*0x638060*/
           {
             v24 = *((_DWORD *)DataGlobal_AC4B34 + v22); /*0x638060*/
             if ( (unsigned __int8)ScriptAction::GetActionCoordinates(v21, v38, v39) ) /*0x638073*/
             {
-              BuildingLoadQueue = (_DWORD *)TeamClass::GetLeaderIndex(***(_DWORD ****)(v24 + 4)); /*0x638083*/
+              BuildingLoadQueue = (_DWORD *)TeamClass::GetLeaderIndex(**v24->vtable2); /*0x638083*/
               if ( v23 == (_DWORD *)-1 || v23 == BuildingLoadQueue ) /*0x63808f*/
                 break; /*0x63808f*/
             }
@@ -810,12 +809,12 @@ TechnoClass * ScriptAction::DispatchBuilding()
           }
           if ( v24 ) /*0x6380a4*/
           {
-            _DWORD * v25 = ***(_DWORD ****)(v24 + 4); /*0x6380ab*/
+            BuildingClass *v25 = **v24->vtable2; /*0x6380ab*/
             int v26 = BuildingClass::GetPlanningToken(v25); /*0x6380af*/
             v33[0] = v24; /*0x6380bc*/
-            int v27 = (*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)(v26 + 4) + 16))(v26 + 4, v33); /*0x6380c7*/
+            AbstractClass *v27 = (*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)(v26 + 4) + 16))(v26 + 4, v33); /*0x6380c7*/
             int * v28 = (int *)BuildingClass::GetPlanningToken(v25); /*0x6380c9*/
-            int v29 = ArrayClass::GetAt_Wrap(v28, v27 + 1); /*0x6380d9*/
+            AbstractClass *v29 = ArrayClass::GetAt_Wrap(v28, v27 + 1); /*0x6380d9*/
             LOBYTE(BuildingLoadQueue) = BuildingClass::FlushScriptActions(v24); /*0x6380db*/
             if ( v29 ) /*0x6380e2*/
             {
@@ -878,7 +877,7 @@ int ScriptAction::ExecutePlacement(int a1, int a2, int a3, long long a4, int a5,
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  AbstractClass *v31; // ebx
+  TechnoClass *v31; // ebx
   _BYTE *WaypointCoords; // eax
   int Type; // ebx
   AbstractClass *aP1; // [esp+Ch] [ebp-18h]
@@ -960,7 +959,7 @@ int ScriptAction::ExecutePlacement(int a1, int a2, int a3, long long a4, int a5,
 
 // 0x63A8E0
 namespace gamemd {
-AbstractClass * ScriptAction::HitTest(MouseClass * aP0, int a2)
+AbstractClass * * ScriptAction::HitTest(MouseClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1469,14 +1468,14 @@ int ScriptAction::DrawPlacementMarker()
 
 // 0x6DD300
 namespace gamemd {
-AbstractClass * ScriptAction::Serialize(char * Buffer)
+AbstractClass * * ScriptAction::Serialize(char * Buffer)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *Buffera; // [esp+1Ch] [ebp+4h]
 
   int v3 = ScriptAction::GetActionTypeInfo(this->q0B0); /*0x6dd30b*/
-  int v4 = 0; /*0x6dd316*/
+  INIClass *v4 = 0; /*0x6dd316*/
   const char * v5 = 0; /*0x6dd318*/
   int v14 = this->q090; /*0x6dd31d*/
   int v16 = 0; /*0x6dd321*/
@@ -1544,7 +1543,7 @@ AbstractClass * ScriptAction::Serialize(char * Buffer)
   }
   else
   {
-  int v9; // eax
+  ObjectClass *v9; // eax
     switch ( v3 ) /*0x6dd420*/
     {
       case 4: /*0x6dd420*/
@@ -1566,7 +1565,7 @@ AbstractClass * ScriptAction::Serialize(char * Buffer)
     v5 = (const char *)v9; /*0x6dd459*/
   }
 LABEL_33:
-  char * v10 = &Buffer[strlen(Buffer)]; /*0x6dd45b*/
+  AbstractClass *v10 = &Buffer[strlen(Buffer)]; /*0x6dd45b*/
   Buffera = v10; /*0x6dd472*/
   switch ( v4 ) /*0x6dd476*/
   {
@@ -1653,8 +1652,8 @@ const char * ScriptAction::ParseScriptActionParams()
   char * v2 = strtok(0, Delimiter); /*0x6dd5c7*/
   this->q0B0 = atoi(v2); /*0x6dd5d8*/
   char * v3 = strtok(0, Delimiter); /*0x6dd5db*/
-  int v4 = atoi(v3); /*0x6dd5e6*/
-  char * v5 = strtok(0, Delimiter); /*0x6dd5f7*/
+  Coord *v4 = atoi(v3); /*0x6dd5e6*/
+  Coord *v5 = strtok(0, Delimiter); /*0x6dd5f7*/
   int v6 = atoi(v5); /*0x6dd5fa*/
   switch ( v4 ) /*0x6dd60d*/
   {
@@ -1819,7 +1818,7 @@ unsigned int * ScriptAction::ReadParameter()
   v5[1] = v2; /*0x6e1856*/
   if ( __PAIR32__(v2, v1) == DataGlobal_B0E680 ) /*0x6e186c*/
     return 0; /*0x6e189e*/
-  _DWORD * v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v5); /*0x6e1886*/
+  IUnknown *v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v5); /*0x6e1886*/
   result = Cell::IsBridge(v3); /*0x6e188a*/
   if ( !result ) /*0x6e1891*/
     return CellClass::FindInfantry(v3, 0); /*0x6e1896*/
@@ -2082,7 +2081,7 @@ unsigned char * ScriptAction::GetWaypointCoords(IUnknown * aP1)
 
 // 0x6FFBE0
 namespace gamemd {
-TechnoClass * ScriptAction::ExecuteMissionCmd()
+TechnoClass * * ScriptAction::ExecuteMissionCmd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

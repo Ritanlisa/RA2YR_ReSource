@@ -190,7 +190,7 @@ int RadioClass::HasFreeLink()
 {
   _DWORD *i; // ecx
 
-  int v1 = this->q03A; /*0x65adc0*/
+  AbstractClass *v1 = this->q03A; /*0x65adc0*/
   int v2 = 0; /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/

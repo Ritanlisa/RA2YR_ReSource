@@ -225,10 +225,10 @@ int ProcessRandomMapCellAdjacency()
   int v10; // eax
   int v9; // esi
   int v8; // edx
-  _DWORD *v7; // ecx
+  IUnknown *v7; // ecx
     NeighbourContent = Cell::GetNeighbourContent((_DWORD *)i, 5u); /*0x5a1a12*/
     void * v14 = Cell::GetNeighbourContent((_DWORD *)i, 1u); /*0x5a1a1f*/
-    void * v2 = Cell::GetNeighbourContent((_DWORD *)i, 3u); /*0x5a1a2c*/
+    VectorClass *v2 = Cell::GetNeighbourContent((_DWORD *)i, 3u); /*0x5a1a2c*/
     v3 = (__int16 *)Cell::GetNeighbourContent((_DWORD *)i, 2u); /*0x5a1a37*/
     v4 = (__int16 *)Cell::GetNeighbourContent((_DWORD *)i, 6u); /*0x5a1a44*/
     AdjacencyFlags = Cell::GetAdjacencyFlags(i); /*0x5a1a46*/
@@ -334,7 +334,7 @@ int E4Recv_5A1C70::sub_5A1C70()
   }
   for ( i = g_RandomMap_TileData - 1; i >= 0; --i ) /*0x5a1cb8*/
   {
-    void * v4 = (void *)*((_DWORD *)g_RandomMap_TerrainState + i); /*0x5a1cc0*/
+    AbstractClass *v4 = (void *)*((_DWORD *)g_RandomMap_TerrainState + i); /*0x5a1cc0*/
     if ( v4 ) /*0x5a1cc5*/
     {
       TileNode::Cleanup(*((_DWORD **)g_RandomMap_TerrainState + i)); /*0x5a1cc9*/
@@ -349,7 +349,7 @@ int E4Recv_5A1C70::sub_5A1C70()
     do /*0x5a1d4f*/
     {
       int v16 = *(_DWORD *)((char *)g_MapTileArray + v5); /*0x5a1d08*/
-      int * v7 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v16); /*0x5a1d11*/
+      RandomMap *v7 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v16); /*0x5a1d11*/
       if ( *(_DWORD *)((char *)g_MapTileArray + v5 + 56) == -1 /*0x5a1d3b*/
         && (*(_WORD *)((char *)g_MapTileArray + v5) || *(_WORD *)((char *)g_MapTileArray + v5 + 2))
         && (Cell::IsGroundTypeRange(v7) || Cell::IsShore(v7)) )
@@ -382,7 +382,7 @@ int E4Recv_5A1C70::sub_5A1C70()
     do /*0x5a1e07*/
     {
       result = (int)g_MapTileArray + v13; /*0x5a1dd0*/
-      if ( *(_DWORD *)((char *)g_MapTileArray + v13 + 56) == -1 && (*(_WORD *)result || *(_WORD *)(result + 2)) ) /*0x5a1de2*/
+      if ( *(_DWORD *)((char *)g_MapTileArray + v13 + 56) == -1 && (*(_WORD *)result || result->q008) ) /*0x5a1de2*/
       {
         void * v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)((char *)g_MapTileArray + v13)); /*0x5a1def*/
         result = RandomMap::GenerateTerrain((int)v15); /*0x5a1df6*/
@@ -937,7 +937,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
 
 // 0x5A6510
 namespace gamemd {
-FootClass * MapSeed_PlaceBuildingsScatter2(int a1)
+FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1052,7 +1052,7 @@ LABEL_10:
           LOWORD(v31) = v19 + *v20; /*0x5a6781*/
           HIWORD(v31) = HIWORD(v19) + v20[1]; /*0x5a6790*/
           LODWORD(v35[0]) = v31; /*0x5a6799*/
-          int * v21 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)v35); /*0x5a67a7*/
+          CellStruct *v21 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)v35); /*0x5a67a7*/
           if ( !CellClass::InBounds(v21) && !CellClass::InMapDataRange(v21) /*0x5a67da*/
             || v21[57]
             || v21[59] == 3
@@ -1076,7 +1076,7 @@ LABEL_10:
           *(_DWORD *)(v16 + 108) = v24; /*0x5a685a*/
           *(_DWORD *)(v16 + 112) = v24; /*0x5a685d*/
           (*(void (__thiscall **)(int, int))(v23 + 292))(v16, 2); /*0x5a6860*/
-          int v25 = v32; /*0x5a686a*/
+          FootClass *v25 = v32; /*0x5a686a*/
           v27 = 1; /*0x5a6872*/
           ++v30; /*0x5a6877*/
           if ( v32 > 17 && v32 < v44 && v32 < --v44 ) /*0x5a688c*/
@@ -1130,7 +1130,6 @@ void PlaceRandomNeutralUnits(int a1)
   int v20; // [esp+1Ch] [ebp-44h]
   __int64 v21; // [esp+20h] [ebp-40h]
   IUnknown *v22; // [esp+28h] [ebp-38h]
-
   void * v1 = (void *)SuperWeaponTypeClass::FindByName(g_INI_Key_Neutral); /*0x5a692c*/
   Owner = (IUnknown *)HouseClass::FindOwner(v1); /*0x5a6938*/
   v22 = Owner; /*0x5a693c*/
@@ -1162,7 +1161,7 @@ void PlaceRandomNeutralUnits(int a1)
       while ( (unsigned int)v4 > 6 ); /*0x5a69be*/
       if ( v4 > 2 ) /*0x5a69c3*/
       {
-        void * v9 = __2_YAPAXI_Z(0x8E8u); /*0x5a6a04*/
+        UnitClass *v9 = __2_YAPAXI_Z(0x8E8u); /*0x5a6a04*/
         if ( !v9 ) /*0x5a6a0b*/
         {
 LABEL_13:
@@ -1174,7 +1173,7 @@ LABEL_13:
       }
       else
       {
-        void * v6 = __2_YAPAXI_Z(0x6F0u); /*0x5a69cf*/
+        InfantryClass *v6 = __2_YAPAXI_Z(0x6F0u); /*0x5a69cf*/
         if ( !v6 ) /*0x5a69d6*/
           goto LABEL_13; /*0x5a69d6*/
         ExitCellByName = Factory::FindExitCellByName(*(&off_82B180 + v5)); /*0x5a69df*/
@@ -1640,7 +1639,7 @@ void IsAreaClearMap(MapClass * aP0, char a2, char a3)
   {
     return 0; /*0x5a742a*/
   }
-  int v10 = (int)v15; /*0x5a7384*/
+  CellStruct *v10 = (int)v15; /*0x5a7384*/
   if ( (int)v15 < (int)((int)v15 + (unsigned int)aP0->field_C) ) /*0x5a738a*/
   {
     do /*0x5a7418*/
@@ -1901,11 +1900,10 @@ void IsoTile_Draw(int a1, unsigned short * a2, char a3)
   int result; // eax
   int i; // ebx
   __int16 v9; // dx
-
   _WORD * v3 = a2; /*0x5a7faa*/
-  _DWORD * v4 = (_DWORD *)*((_DWORD *)g_FrameCounter + a1); /*0x5a7fac*/
-  _DWORD * v14 = v4; /*0x5a7fb5*/
-  result = (*(int (__thiscall **)(_DWORD *))(*v4 + 156))(v4); /*0x5a7fbb*/
+  AbstractClass *v4 = (_DWORD *)*((_DWORD *)g_FrameCounter + a1); /*0x5a7fac*/
+  AbstractClass *v14 = v4; /*0x5a7fb5*/
+  result = v4->vt_slot_156(); /*0x5a7fbb*/
   int v16 = result; /*0x5a7fc3*/
   if ( result ) /*0x5a7fc7*/
   {
@@ -1971,7 +1969,6 @@ void PlaceNeutralCreeps(unsigned short * a1)
   int v24; // [esp+20h] [ebp-3Ch]
   __int64 v25; // [esp+24h] [ebp-38h]
   IUnknown *v26; // [esp+2Ch] [ebp-30h]
-
   void * v1 = (void *)SuperWeaponTypeClass::FindByName(g_INI_Key_Neutral); /*0x5a872c*/
   OwnerHouseClass = (IUnknown *)HouseClass::FindOwner(v1); /*0x5a8738*/
   v26 = OwnerHouseClass; /*0x5a873c*/
@@ -2003,7 +2000,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
       while ( (unsigned int)v4 > 5 ); /*0x5a87be*/
       if ( v4 > 2 ) /*0x5a87c3*/
       {
-        void * v9 = __2_YAPAXI_Z(0x8E8u); /*0x5a8804*/
+        UnitClass *v9 = __2_YAPAXI_Z(0x8E8u); /*0x5a8804*/
         if ( !v9 ) /*0x5a880b*/
         {
 LABEL_13:
@@ -2018,7 +2015,7 @@ LABEL_13:
       }
       else
       {
-        void * v6 = __2_YAPAXI_Z(0x6F0u); /*0x5a87cf*/
+        InfantryClass *v6 = __2_YAPAXI_Z(0x6F0u); /*0x5a87cf*/
         if ( !v6 ) /*0x5a87d6*/
           goto LABEL_13; /*0x5a87d6*/
         ExitCellByNameFactory = Factory::FindExitCellByName(*(&off_82B240 + v5)); /*0x5a87df*/

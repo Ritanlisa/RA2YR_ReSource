@@ -20,11 +20,11 @@ namespace gamemd { int WTFMode::ResetUnitFlags() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  _DWORD *v1; // eax
+  AudioController *v1; // eax
   LOBYTE(v1) = g_WTFMode; /*0x41db40*/
   if ( g_WTFMode ) /*0x41db4d*/
   {
-    int v3 = this->q05C; /*0x41db53*/
+    AudioController *v3 = this->q05C; /*0x41db53*/
     v1 = this->q05C; /*0x41db56*/
     if ( v1 ) /*0x41db5a*/
     {
@@ -71,7 +71,7 @@ LABEL_8:
         _DWORD * v7 = 0; /*0x41dbed*/
         if ( DataGlobal_889FC8 > 0 ) /*0x41dbf1*/
         {
-          _DWORD * v8 = DataGlobal_889FBC; /*0x41dbf3*/
+          AbstractClass *v8 = DataGlobal_889FBC; /*0x41dbf3*/
           int v9 = DataGlobal_889FC8; /*0x41dbf9*/
           do /*0x41dc0c*/
           {
@@ -333,7 +333,7 @@ namespace gamemd { int Stream::ReadPacket() {
   int v4 = 0; /*0x5f1cb4*/
   if ( (int)(v3 - 2) < 0 ) /*0x5f1cb8*/
     goto LABEL_11; /*0x5f1cb8*/
-  char * v5 = this->q014; /*0x5f1cba*/
+  BlowStraw *v5 = this->q014; /*0x5f1cba*/
   while ( *(_WORD *)&v5[v4] != 0xDABD ) /*0x5f1cc3*/
   {
     if ( ++v4 > (int)(v3 - 2) ) /*0x5f1cc8*/

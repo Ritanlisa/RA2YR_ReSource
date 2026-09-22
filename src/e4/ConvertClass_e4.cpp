@@ -7,7 +7,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  ObjectClass *v7; // eax
+  CampaignClass *v7; // eax
   __int16 v12; // cx
   int i; // ebp
   int j; // ebp
@@ -142,8 +142,8 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
     while ( v8 < 256 ); /*0x48e9df*/
     int v14 = __2_YAPAXI_Z(this->q16C << 8); /*0x48e9eb*/
     this->q170 = v14; /*0x48e9f0*/
-    _BYTE * v15 = (_BYTE *)v14; /*0x48e9f6*/
-    int v16 = this->q16C; /*0x48e9f8*/
+    CampaignClass *v15 = (_BYTE *)v14; /*0x48e9f6*/
+    CampaignClass *v16 = this->q16C; /*0x48e9f8*/
     this->q174 = &v15[256 * ((v16 - 1) >> 1)]; /*0x48ea10*/
     if ( v16 == 1 ) /*0x48ea16*/
     {
@@ -185,7 +185,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   else
   {
     int v24 = __2_YAPAXI_Z(this->q16C << 9); /*0x48eb1c*/
-    int v25 = this->q16C; /*0x48eb21*/
+    CampaignClass *v25 = this->q16C; /*0x48eb21*/
     this->q170 = v24; /*0x48eb2a*/
     this->q174 = v24 + ((v25 - 1) >> 1 << 9); /*0x48eb3a*/
     if ( !(_BYTE)aP5 ) /*0x48eb46*/

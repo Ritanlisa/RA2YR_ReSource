@@ -25,7 +25,6 @@ namespace gamemd { int InfantryClass::PerFrameUpdate() {
   InfantryTypeClass **v10; // eax
   BuildingClass *v13; // [esp+0h] [ebp-8h]
   FootClass *v14; // [esp+4h] [ebp-4h]
-
   result = TechnoClass::Update(v13, v14); /*0x517cc4*/
   _DWORD * v4 = this->owner; /*0x517cc9*/
   if ( v4 ) /*0x517cd1*/
@@ -63,7 +62,7 @@ LABEL_11:
     if ( v12 == -1 ) /*0x517d72*/
       v12 = result[417]; /*0x517d74*/
     this->barrelRecoil = v12; /*0x517d7a*/
-    this->q3D2 = *((_BYTE *)result + 3280); /*0x517d86*/
+    this->q3D2 = result->Cloakable; /*0x517d86*/
   }
   return result; /*0x517d8c*/
 }
@@ -100,7 +99,7 @@ namespace gamemd { int AircraftClass::Construct(int a1, void* a2) {
   v4 = this->Type; /*0x413db1*/
   if ( v4 ) /*0x413db9*/
   {
-    int * v6 = (int *)(this + 1652); /*0x413dbb*/
+    ILocomotion *v6 = (int *)(this + 1652); /*0x413dbb*/
     p_uniqueId = (const IID *)&v4[23].uniqueId; /*0x413dc1*/
     v8 = this->locomotor; /*0x413dc7*/
     if ( v8 ) /*0x413dcb*/
@@ -683,7 +682,7 @@ LABEL_28:
     Matrix3x4::Identity(v92); /*0x436534*/
     float v69 = this->q058; /*0x43654e*/
     Matrix2D::Rotate(v92, v69); /*0x436551*/
-    int v39 = (int)this->q0C8; /*0x436562*/
+    BuildingLightClass *v39 = (int)this->q0C8; /*0x436562*/
     int v40 = (int)this->q0BC; /*0x436568*/
     int v41 = (char *)this->q033 - (char *)this->nextObject; /*0x436586*/
     *(float *)&v72 = (float)((char *)this->q031 - (char *)this->BuildingLightClass_field_B8); /*0x436590*/
@@ -719,8 +718,8 @@ LABEL_29:
     Matrix3x4::Identity(v92); /*0x43638b*/
     float v68 = this->q058; /*0x43639e*/
     Matrix2D::Rotate(v92, v68); /*0x4363a1*/
-    int v24 = (int)this->q0C8; /*0x4363ac*/
-    int v25 = (int)this->q033; /*0x4363b4*/
+    BuildingLightClass *v24 = (int)this->q0C8; /*0x4363ac*/
+    BuildingLightClass *v25 = (int)this->q033; /*0x4363b4*/
     *(float *)&v72 = (float)((char *)this->q031 - (char *)v17); /*0x4363ce*/
     v73 = (float)(v24 - v18); /*0x4363e9*/
     v74 = (float)(v25 - v19); /*0x4363f1*/
@@ -1804,8 +1803,8 @@ LABEL_16:
           if ( this == HouseClass_Player ) /*0x50b31f*/
           {
             SidebarClass::AddCameo((int *)&DataGlobal_87F7E8, 31, i); /*0x50b329*/
-            int v14 = *(_DWORD *)(*(_DWORD *)(this->q258 + 4 * i) + 40); /*0x50b337*/
-            (*(void (__thiscall **)(int))(*(_DWORD *)v14 + 64))(v14); /*0x50b33c*/
+            HouseTypeClass *v14 = *(_DWORD *)(*(_DWORD *)(this->q258 + 4 * i) + 40); /*0x50b337*/
+            v14->loadBuildLimits(); /*0x50b33c*/
             Status = HouseClass::GetStatus((void *)0x39, 0); /*0x50b348*/
             Sidebar::ActivateTab((int)&DataGlobal_87F7E8, Status); /*0x50b353*/
           }
@@ -1871,7 +1870,7 @@ namespace gamemd { int InfantryClass::Construct(int a1, void* a2) {
   v5 = this->Type; /*0x517b44*/
   if ( v5 ) /*0x517b4c*/
   {
-    _DWORD * v7 = (_DWORD *)(this + 1652); /*0x517b4e*/
+    ILocomotion *v7 = (_DWORD *)(this + 1652); /*0x517b4e*/
     p_uniqueId = (const IID *)&v5[23].uniqueId; /*0x517b54*/
     ILocomotion *v9 = this->Locomotor; /*0x517b5a*/
     if ( v9 ) /*0x517b5e*/
@@ -3706,7 +3705,7 @@ LABEL_98:
     }
     if ( this->health <= 0 ) /*0x51bc5c*/
     {
-      int v7 = this->SequenceAnim; /*0x51bc5e*/
+      Sequence *v7 = this->SequenceAnim; /*0x51bc5e*/
       if ( v7 != 11 /*0x51bc94*/
         && v7 != 12
         && v7 != 13
@@ -3758,9 +3757,9 @@ LABEL_98:
       }
       v10 = 0; /*0x51bd7d*/
 LABEL_55:
-      int v13 = this->isPlayingDamageSound; /*0x51bd7f*/
+      TechnoClass *v13 = this->isPlayingDamageSound; /*0x51bd7f*/
       if ( !v13 /*0x51bdaf*/
-        || !*(_DWORD *)(v13 + 728)
+        || !v13->slaveManager
         || v10 != (MouseClass *)v13
         || (v14 = (IUnknown *)(*(int (__thiscall **)(int))(this->airstrikeTintTimer)(this),
             !BuildingClass::CheckBridge(*(_DWORD **)(this->isPlayingDamageSound + 728), (ObjectClass *)this, v14)) )
@@ -3777,7 +3776,7 @@ LABEL_61:
         (*(void (__thiscall **)(int, int))(this->currentTurretNumber)(this, 2); /*0x51bde1*/
       if ( this->unknownBool68D && !this->q10C ) /*0x51bdf1*/
       {
-        int v15 = this->SequenceAnim; /*0x51bdfb*/
+        Sequence *v15 = this->SequenceAnim; /*0x51bdfb*/
         this->unknownBool68D = 0; /*0x51be01*/
         if ( v15 == 27 || v15 == 28 || v15 == 29 || v15 == 30 ) /*0x51be1a*/
           (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(this->FootClass_field_558)(this, 28, 0, 0); /*0x51be26*/
@@ -4056,7 +4055,7 @@ LABEL_49:
                                                    unk_A9FA20 + unk_A9FA2C,
                                                    0) )
                                             {
-                                              int v14 = unk_A9FA28++; /*0x539e50*/
+                                              AnimClass *v14 = unk_A9FA28++; /*0x539e50*/
                                               *((_DWORD *)unk_A9FA1C + v14) = v17; /*0x539e5d*/
                                             }
                                             v12 = v16; /*0x539e60*/
@@ -4086,7 +4085,7 @@ LABEL_49:
                                                dword_A9F9D8 + dword_A9F9E4,
                                                0) )
                                         {
-                                          int v9 = dword_A9F9E0++; /*0x539d92*/
+                                          AnimClass *v9 = dword_A9F9E0++; /*0x539d92*/
                                           *((_DWORD *)unk_A9F9D4 + v9) = v17; /*0x539d9f*/
                                         }
                                         v7 = v16; /*0x539da2*/
@@ -4115,7 +4114,7 @@ LABEL_49:
                                            dword_A9FA68 + dword_A9FA74,
                                            0) )
                                     {
-                                      int v5 = dword_A9FA70++; /*0x539cd8*/
+                                      AnimClass *v5 = dword_A9FA70++; /*0x539cd8*/
                                       *((_DWORD *)unk_A9FA64 + v5) = v17; /*0x539ce5*/
                                     }
                                     v3 = v16; /*0x539ce8*/

@@ -20,7 +20,7 @@ void * MSFrameAnim::QueryInterface(char a2)
 
 // 0x769FE0
 namespace gamemd {
-AbstractClass * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
+AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -30,12 +30,12 @@ AbstractClass * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   int v3 = a2; /*0x769fe3*/
   if ( a2 ) /*0x769fed*/
   {
-  _DWORD *v6; // ebx
+  rc_ptr_base *v6; // ebx
     this->q00C = 0; /*0x769ff7*/
     if ( a3 ) /*0x769ffd*/
     {
       *a3 = a2; /*0x76a041*/
-      _DWORD * v8 = a3 + 1; /*0x76a043*/
+      rc_ptr_base *v8 = a3 + 1; /*0x76a043*/
       if ( a2 - 1 >= 0 ) /*0x76a04f*/
       {
         int v9 = a2; /*0x76a051*/
@@ -58,7 +58,7 @@ AbstractClass * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
       {
         *v5 = a2; /*0x76a013*/
         v6 = v5 + 1; /*0x76a015*/
-        _DWORD * v7 = v5 + 1; /*0x76a01b*/
+        rc_ptr *v7 = v5 + 1; /*0x76a01b*/
         if ( a2 - 1 >= 0 ) /*0x76a01f*/
         {
           int v14 = a2; /*0x76a022*/
@@ -102,7 +102,7 @@ AbstractClass * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x76a0d9*/
   }
-  int v12 = this->MSFrameAnim_field_0x8; /*0x76a0dc*/
+  AbstractClass *v12 = this->MSFrameAnim_field_0x8; /*0x76a0dc*/
   if ( v12 < this->MSFrameAnim_field_0x10 ) /*0x76a0e4*/
     this->MSFrameAnim_field_0x10 = v12; /*0x76a0e6*/
   return 1; /*0x76a0e9*/

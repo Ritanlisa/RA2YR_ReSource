@@ -8,7 +8,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  CCINIClass *v2; // edi
+  IUnknown *v2; // edi
   int result; // eax
   CCINIClass *v5; // ebp
   CCINIClass *StringByIndex; // esi
@@ -19,10 +19,10 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   v2 = a2; /*0x41f2ec*/
   result = INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes); /*0x41f2f5*/
   v5 = 0; /*0x41f2fa*/
-  int v14 = result; /*0x41f2fe*/
+  INIClass *v14 = result; /*0x41f2fe*/
   while ( (int)v5 < v14 ) /*0x41f302*/
   {
-  _DWORD *v7; // esi
+  AITriggerTypeClass *v7; // esi
     StringByIndex = (CCINIClass *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, v5); /*0x41f317*/
     if ( _strcmpi((char *)&stru_817460.sectionHead[1], StringByIndex->__pad_0) ) /*0x41f31f*/
     {
@@ -47,7 +47,7 @@ LABEL_9:
 LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
-            (*(void (__thiscall **)(_DWORD *, char *))(*v7 + 100))(v7, a1); /*0x41f39c*/
+            v7->LoadFromINI_18(a1); /*0x41f39c*/
             v7[39] = a2; /*0x41f3a3*/
           }
           goto LABEL_13; /*0x41f3a3*/
@@ -62,7 +62,7 @@ LABEL_11:
 LABEL_13:
     v2 = a2; /*0x41f3a9*/
     if ( a2 == (CCINIClass *)1 ) /*0x41f3b0*/
-      *((_BYTE *)v7 + 164) = 1; /*0x41f3b2*/
+      v7->q0A4 = 1; /*0x41f3b2*/
     result = v14; /*0x41f3b9*/
     v5 = (CCINIClass *)((char *)v5 + 1); /*0x41f3bd*/
   }
@@ -108,7 +108,7 @@ int CCINIClass::GetDB()
 
 // 0x4741F0
 namespace gamemd {
-MultiplayerGameMode * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, char aP2)
+MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, char aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

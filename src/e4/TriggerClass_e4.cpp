@@ -11,7 +11,6 @@ char TriggerClass::FindByEventType(char a1)
 {
   size_t v7; // eax
   __int128 v8; // [esp+28h] [ebp-20h] BYREF
-
   if ( !DataGlobal_AC1DCC ) /*0x61095d*/
     return 0; /*0x61095f*/
   if ( a1 ) /*0x61096a*/
@@ -23,8 +22,8 @@ char TriggerClass::FindByEventType(char a1)
     _DWORD * v2 = __2_YAPAXI_Z(0x20u); /*0x61098d*/
     if ( v2 ) /*0x610994*/
     {
-      int v4 = HIDWORD(DataGlobal_AC1CB8); /*0x61099b*/
-      int v3 = DWORD2(DataGlobal_AC1CB8); /*0x61099b*/
+      AbstractClass *v4 = HIDWORD(DataGlobal_AC1CB8); /*0x61099b*/
+      AbstractClass *v3 = DWORD2(DataGlobal_AC1CB8); /*0x61099b*/
       v2[1] = DWORD2(DataGlobal_AC1CB8); /*0x6109a1*/
       v2[2] = v4; /*0x6109a9*/
       v2[3] = 0; /*0x6109b1*/

@@ -625,17 +625,17 @@ namespace gamemd { int DropListClass::SetItemText(int a1) {
 {
   _DWORD *Instance; // ebx
 
-  int v3 = C; /*0x4c342d*/
+  ControlClass *v3 = C; /*0x4c342d*/
   Instance = (_DWORD *)TextRenderer::GetInstance(); /*0x4c3431*/
   if ( C ) /*0x4c3435*/
   {
     if ( C == 8 ) /*0x4c343e*/
     {
-      int v9 = this->q03C; /*0x4c3540*/
+      ControlClass *v9 = this->q03C; /*0x4c3540*/
       if ( v9 ) /*0x4c3545*/
       {
         CampaignScore *v10 = this->q034; /*0x4c3547*/
-        int v11 = v9 - 1; /*0x4c354a*/
+        ControlClass *v11 = v9 - 1; /*0x4c354a*/
         this->q03C = v11; /*0x4c354b*/
         *(_WORD *)(v10 + 2 * v11) = 0; /*0x4c354e*/
         this->MarkDirty(); /*0x4c3558*/
@@ -664,7 +664,7 @@ LABEL_11:
           {
             *(_WORD *)(this->q034 + 2 * this->q03C) = v3; /*0x4c350e*/
             CampaignScore *v6 = this->q034; /*0x4c3515*/
-            int v7 = this->q03C + 1; /*0x4c3518*/
+            ControlClass *v7 = this->q03C + 1; /*0x4c3518*/
             this->q03C = v7; /*0x4c3519*/
             *(_WORD *)(v6 + 2 * v7) = 0; /*0x4c351e*/
             this->MarkDirty(); /*0x4c3526*/
@@ -1606,10 +1606,10 @@ namespace gamemd { int MouseClass::LoadGameAssets() {
       dword_822CF8 = -1; /*0x5bdfc3*/
       this->FreeAllCells(); /*0x5bdfd2*/
       __3_YAXPAX_Z((void *)this->q01C); /*0x5bdfd9*/
-      void * v5 = (void *)this->q01A; /*0x5bdfde*/
+      CampaignClass *v5 = (void *)this->q01A; /*0x5bdfde*/
       this->q01C = 0; /*0x5bdfe1*/
       __3_YAXPAX_Z(v5); /*0x5bdfe5*/
-      _DWORD * v6 = (_DWORD *)this->q005; /*0x5bdfea*/
+      AbstractClass *v6 = (_DWORD *)this->q005; /*0x5bdfea*/
       this->q01A = 0; /*0x5bdff2*/
       if ( v6 ) /*0x5bdff5*/
       {
@@ -1640,7 +1640,7 @@ namespace gamemd { int MouseClass::LoadGameAssets() {
       int v12 = 3; /*0x5be048*/
       do /*0x5be072*/
       {
-        _DWORD * v13 = (_DWORD *)*v11; /*0x5be04d*/
+        AbstractClass *v13 = (_DWORD *)*v11; /*0x5be04d*/
         if ( *v11 ) /*0x5be04d*/
         {
           if ( *v13 ) /*0x5be053*/
@@ -1712,13 +1712,13 @@ namespace gamemd { int MouseClass::LoadGameAssets() {
           this->q01A = 0; /*0x5be176*/
         }
         void * v18 = (void *)__2_YAPAXI_Z(10 * this->q06C); /*0x5be182*/
-        int v19 = this->q06C; /*0x5be187*/
+        CampaignClass *v19 = this->q06C; /*0x5be187*/
         this->q01C = (int)v18; /*0x5be18a*/
-        _BYTE * v20 = (_BYTE *)__2_YAPAXI_Z(4 * v19); /*0x5be195*/
+        CampaignClass *v20 = (_BYTE *)__2_YAPAXI_Z(4 * v19); /*0x5be195*/
         if ( v20 ) /*0x5be19f*/
         {
           int v21 = v19 - 1; /*0x5be1a1*/
-          _BYTE * v22 = v20; /*0x5be1a2*/
+          CampaignClass *v22 = v20; /*0x5be1a2*/
           if ( v21 >= 0 ) /*0x5be1a6*/
           {
             int v23 = v21 + 1; /*0x5be1a8*/
@@ -1793,7 +1793,7 @@ namespace gamemd { int MouseClass::LoadGameAssets() {
           int v34 = v74; /*0x5be25a*/
           int v35 = *(_DWORD *)v74; /*0x5be266*/
           v78 = v33 + 1; /*0x5be268*/
-          int v36 = 1 << (v33 + 1); /*0x5be26c*/
+          TechnoTypeClass *v36 = 1 << (v33 + 1); /*0x5be26c*/
           (*(void (__thiscall **)(int))(v35 + 12))(v74); /*0x5be270*/
           *(_DWORD *)(v34 + 20) = 4 * this->q03D * this->q0F8 / (v36 * v36); /*0x5be28d*/
           _DWORD * v37 = (_DWORD *)__2_YAPAXI_Z(0x10u); /*0x5be290*/
@@ -2063,7 +2063,7 @@ LABEL_99:
 namespace gamemd { int MouseClass::DrawCursor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  IStream *v2; // esi
+  MouseClass *v2; // esi
   HRESULT result; // eax
   int i; // eax
   HRESULT v14; // ebp
@@ -2718,9 +2718,9 @@ namespace gamemd { int SidebarClass::ResetProductionState() {
   while ( v25 < v26 )
   {
   char v16; // al
-    int v2 = *((_DWORD *)g_TechnoClass_Count + result); /*0x637adc*/
-    int v3 = *(_DWORD *)(v2 + 540); /*0x637adf*/
-    void * v4 = *(void **)(v3 + 48); /*0x637ae5*/
+    AbstractClass *v2 = *((_DWORD *)g_TechnoClass_Count + result); /*0x637adc*/
+    int v3 = v2->q21C; /*0x637adf*/
+    TechnoClass *v4 = *(void **)(v3 + 48); /*0x637ae5*/
     if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v3) && HouseClass_Player ) /*0x637af8*/
       v4 = (void *)*((_DWORD *)HouseClass_Player + 12); /*0x637afa*/
     if ( v27 != v4 ) /*0x637b01*/
@@ -2745,7 +2745,7 @@ namespace gamemd { int SidebarClass::ResetProductionState() {
         if ( v9 ) /*0x637b57*/
         {
           v9[45] = -1; /*0x637b59*/
-          int v10 = v9[12]; /*0x637b63*/
+          TechnoClass *v10 = v9[12]; /*0x637b63*/
           for ( i = 0; i < v10; *(_DWORD *)(*(_DWORD *)(v9[9] + 4 * i - 4) + 116) = -1 ) /*0x637b6a*/
             ++i; /*0x637b6f*/
           v9[43] = -1; /*0x637b7f*/
@@ -2763,14 +2763,14 @@ namespace gamemd { int SidebarClass::ResetProductionState() {
     *(_DWORD *)(v6 + 140) = -1; /*0x637bc0*/
     if ( !v2 ) /*0x637bca*/
       goto LABEL_32; /*0x637bca*/
-    int v15 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 388))(v2); /*0x637bd6*/
+    int v15 = v2->vt_slot_388(); /*0x637bd6*/
     if ( v15 == 5 ) /*0x637bdb*/
     {
       v16 = 1; /*0x637bdd*/
       goto LABEL_33; /*0x637bdf*/
     }
   char v29[8]; // [esp+20h] [ebp-E8h] BYREF
-    if ( ((WaypointCoords = ScriptAction::GetWaypointCoords(v29, *(_DWORD **)(v2 + 692)), /*0x637c0f*/
+    if ( ((WaypointCoords = ScriptAction::GetWaypointCoords(v29, v2->q2B4), /*0x637c0f*/
   int v28; // [esp+18h] [ebp-F0h]
            v28 = *(_DWORD *)WaypointCoords,
   char v18; // al
@@ -2800,7 +2800,7 @@ LABEL_33:
             int v21 = *(_DWORD *)(v19 + 140); /*0x637c47*/
             if ( (v21 == -1 || v21 > 0) && !*(_BYTE *)(v20 + 28) ) /*0x637c56*/
             {
-              (*(void (__thiscall **)(int, int, int))(*(_DWORD *)v2 + 488))(v2, 28, 1); /*0x637c65*/
+              v2->vt_slot_488(28, 1); /*0x637c65*/
   _WORD v30[56]; // [esp+28h] [ebp-E0h] BYREF
   char v31[112]; // [esp+98h] [ebp-70h] BYREF
               qmemcpy(v30, (const void *)FactoryClass::CompleteCurrentItem(v20, (int)v31), 0x6Fu); /*0x637c87*/
@@ -2897,7 +2897,7 @@ namespace gamemd { void PowerClass::updatePowerBarAnimation() {
 {
   ObjectClass *v7; // edi
   ObjectClass *v14; // eax
-  char *v15; // eax
+  ObjectClass *v15; // eax
   ObjectClass *v18; // eax
   int v19; // eax
   bool v20; // cc
@@ -3218,7 +3218,7 @@ namespace gamemd { int SidebarClass::Load(int a1) {
     {
       _DWORD * v21 = (_DWORD *)(this + 5312); /*0x6568dd*/
       AudioController::Init((_DWORD *)(this + 5312)); /*0x6568e1*/
-      int v5 = this + 4700; /*0x6568e6*/
+      VectorClass *v5 = this + 4700; /*0x6568e6*/
       if ( this != -4700 ) /*0x6568ee*/
       {
         VectorClass::PointConstructor(0, 0); /*0x6568f4*/
@@ -3233,7 +3233,7 @@ LABEL_14:
         result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0); /*0x656980*/
         if ( result >= 0 ) /*0x656990*/
         {
-          int v10 = this + 4644; /*0x656996*/
+          VectorClass *v10 = this + 4644; /*0x656996*/
           if ( this != -4644 ) /*0x65699e*/
           {
             VectorClass::CellConstructor((_DWORD *)(this + 4644), 0, 0); /*0x6569a4*/
@@ -3290,16 +3290,16 @@ LABEL_26:
               result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v19, 4, 0); /*0x6569ce*/
               if ( result < 0 ) /*0x6569d3*/
                 break; /*0x6569d3*/
-              int v12 = *(_DWORD *)(v10 + 8); /*0x6569d9*/
-              if ( *(_DWORD *)(v10 + 16) < v12 /*0x6569fb*/
-                || (*(_BYTE *)(v10 + 13) || !v12)
+              int v12 = v10->Capacity; /*0x6569d9*/
+              if ( v10->q010 < v12 /*0x6569fb*/
+                || (v10->IsAllocated || !v12)
   int v13; // eax
-                && (v13 = *(_DWORD *)(v10 + 20), v13 > 0)
-                && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v10 + 8))(v10, v12 + v13, 0) )
+                && (v13 = v10->q005, v13 > 0)
+                && v10->Release(v12 + v13, 0) )
               {
-                int v14 = *(_DWORD *)(v10 + 16); /*0x656a02*/
-                int v15 = *(_DWORD *)(v10 + 4); /*0x656a05*/
-                *(_DWORD *)(v10 + 16) = v14 + 1; /*0x656a0b*/
+                int v14 = v10->q010; /*0x656a02*/
+                int v15 = v10->Items; /*0x656a05*/
+                v10->q010 = v14 + 1; /*0x656a0b*/
                 *(_DWORD *)(v15 + 4 * v14) = v19; /*0x656a12*/
               }
               if ( ++v11 >= a2 ) /*0x656a1c*/
@@ -3321,7 +3321,7 @@ LABEL_26:
             || (*(_BYTE *)(this + 4713) || !v6)
   int v7; // eax
             && (v7 = this->q1270, v7 > 0)
-            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v5 + 8))(this + 4700, v6 + v7, 0) )
+            && v5->Release(v6 + v7, 0) )
           {
             int v8 = this->q126C; /*0x656954*/
             int v9 = this->q1260; /*0x656957*/
@@ -3736,7 +3736,7 @@ namespace gamemd { int SidebarClass::Init() {
       int v7 = v5 + v6; /*0x6a5434*/
       int v8 = DataGlobal_B0B4EC; /*0x6a5436*/
       *v4 = v3 + 203; /*0x6a543b*/
-      int v9 = g_SidebarConfig; /*0x6a543d*/
+      ConvertClass *v9 = g_SidebarConfig; /*0x6a543d*/
       *(v4 - 6) = v7; /*0x6a5443*/
       *(v4 - 5) = v8; /*0x6a5446*/
       v4[8] = -480; /*0x6a5449*/
@@ -4393,7 +4393,7 @@ namespace gamemd { int SidebarClass::UpdateCameos(int a1, int a2) {
     int v5 = 26; /*0x6a8b66*/
     if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6a8b60*/
       v5 = 18; /*0x6a8b6f*/
-    int v6 = this->q054; /*0x6a8b9f*/
+    AbstractClass *v6 = this->q054; /*0x6a8b9f*/
     int v7 = (g_DSurface_ViewBounds - v5 - g_SidebarBounds + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8bad*/
     int v8 = 2; /*0x6a8baf*/
     int v9 = 2 * v7; /*0x6a8bb4*/
@@ -4422,7 +4422,7 @@ namespace gamemd { int SidebarClass::UpdateCameos(int a1, int a2) {
       }
       else
       {
-        int v10 = this->CellIterator_NextY; /*0x6a8bde*/
+        BuildingClass *v10 = this->CellIterator_NextY; /*0x6a8bde*/
         if ( v10 ) /*0x6a8be3*/
         {
           this->q012 = v4 + 1; /*0x6a8bec*/
@@ -4451,7 +4451,7 @@ LABEL_115:
       *((_DWORD *)this + 19) = v11; /*0x6a8c40*/
       if ( v11 <= 0 ) /*0x6a8c45*/
       {
-        int v12 = this->CellIterator_NextY; /*0x6a8c47*/
+        BuildingClass *v12 = this->CellIterator_NextY; /*0x6a8c47*/
         this->VisibleRect = 0; /*0x6a8c4a*/
         *((_DWORD *)this + 19) = 0; /*0x6a8c4f*/
         this->CellIterator_NextY = v12 + 1; /*0x6a8c56*/
@@ -4471,7 +4471,7 @@ LABEL_115:
   }
   if ( this->q010 != -1 ) /*0x6a8c8c*/
   {
-    _DWORD * v14 = this + 8; /*0x6a8c8e*/
+    IUnknown *v14 = this + 8; /*0x6a8c8e*/
   int v15; // ecx
     if ( CDTimerClass::TimeRemaining((int *)this + 2) || (v15 = this->q005) == 0 ) /*0x6a8ca5*/
     {
@@ -4517,7 +4517,7 @@ LABEL_115:
         }
         else
         {
-          _DWORD * v19 = (_DWORD *)v18[3]; /*0x6a8d53*/
+          IUnknown *v19 = (_DWORD *)v18[3]; /*0x6a8d53*/
           if ( v19 ) /*0x6a8d58*/
           {
             if ( ObjectClass::IsCliffWall((_DWORD *)v18[3]) ) /*0x6a8d5c*/
@@ -4556,7 +4556,7 @@ LABEL_44:
       _DWORD * v21 = this + 104; /*0x6a8dbd*/
       do
       {
-        _DWORD * v22 = (_DWORD *)*(v21 - 1); /*0x6a8dc6*/
+        IUnknown *v22 = (_DWORD *)*(v21 - 1); /*0x6a8dc6*/
         if ( v22 )
         {
           if ( (unsigned __int8)FactoryClass::HasProgressChanged(*(v21 - 1)) )
@@ -4607,7 +4607,7 @@ LABEL_44:
   int v28 = 0; /*0x6a8f6a*/
   if ( this->q054 > 0 ) /*0x6a8f6f*/
   {
-    int * v29 = (int *)(this + 116); /*0x6a8f79*/
+    IUnknown *v29 = (int *)(this + 116); /*0x6a8f79*/
     do /*0x6a9025*/
     {
       if ( *(v29 - 3) == 1 ) /*0x6a8f80*/
@@ -4790,21 +4790,20 @@ LABEL_97:
 namespace gamemd { int SidebarClass::UpdateProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  unsigned __int8 *v10; // ebx
+  AbstractClass *v10; // ebx
   char *v43; // [esp+1Ch] [ebp-138h]
   char *Src; // [esp+20h] [ebp-134h]
   int v46; // [esp+28h] [ebp-12Ch]
-  int v48; // [esp+30h] [ebp-124h]
-
+  rc_ptr_base *v48; // [esp+30h] [ebp-124h]
   if ( ArmageddonMode || !this->q054 ) /*0x6aa617*/
     return 0; /*0x6aaca5*/
   char v40 = 0; /*0x6aa629*/
   int v2 = 26; /*0x6aa634*/
   if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6aa62e*/
     v2 = 18; /*0x6aa63d*/
-  int v3 = 2 * ((g_DSurface_ViewBounds - v2 - g_SidebarBounds + g_DSurface_SidebarBounds - 7) / 50); /*0x6aa670*/
+  rc_ptr_base *v3 = 2 * ((g_DSurface_ViewBounds - v2 - g_SidebarBounds + g_DSurface_SidebarBounds - 7) / 50); /*0x6aa670*/
   v48 = v3; /*0x6aa672*/
-  int * v4 = (int *)__2_YAPAXI_Z(104 * ((g_DSurface_ViewBounds - v2 - g_SidebarBounds + g_DSurface_SidebarBounds - 7) / 50) + 4); /*0x6aa684*/
+  rc_ptr_base *v4 = (int *)__2_YAPAXI_Z(104 * ((g_DSurface_ViewBounds - v2 - g_SidebarBounds + g_DSurface_SidebarBounds - 7) / 50) + 4); /*0x6aa684*/
   if ( v4 ) /*0x6aa68e*/
   {
     *v4 = v3; /*0x6aa690*/
@@ -4813,7 +4812,7 @@ namespace gamemd { int SidebarClass::UpdateProduction() {
     if ( v3 - 1 >= 0 ) /*0x6aa69e*/
     {
       _DWORD * v6 = v5 + 5; /*0x6aa6a1*/
-      int v36 = v3; /*0x6aa6a4*/
+      rc_ptr_base *v36 = v3; /*0x6aa6a4*/
       do /*0x6aa6bb*/
       {
         SidebarClass::initButtons(v6); /*0x6aa6aa*/
@@ -4850,9 +4849,9 @@ namespace gamemd { int SidebarClass::UpdateProduction() {
   v46 = 0; /*0x6aa71b*/
   if ( this->q054 > 0 ) /*0x6aa71f*/
   {
-    int * v9 = (int *)(this + 88); /*0x6aa725*/
+    EditClass *v9 = (int *)(this + 88); /*0x6aa725*/
     int v45 = 52; /*0x6aa734*/
-    int * v38 = (int *)(this + 88); /*0x6aa73c*/
+    EditClass *v38 = (int *)(this + 88); /*0x6aa73c*/
     Src = (char *)(this + 140); /*0x6aa740*/
     int * v41 = (int *)(this + 92); /*0x6aa744*/
     _DWORD * v47 = (_DWORD *)(this + 100); /*0x6aa748*/
@@ -4861,12 +4860,8 @@ namespace gamemd { int SidebarClass::UpdateProduction() {
       v10 = (unsigned __int8 *)TechnoTypeClass::GetByTypeAndIndex(*v41, *v9); /*0x6aa759*/
       if ( v10 ) /*0x6aa75d*/
       {
-        if ( !(*(int (__thiscall **)(unsigned __int8 *, int, _DWORD, _DWORD, #375 *))(*(_DWORD *)v10 + 148))( /*0x6aa781*/
-                v10,
-                1,
-                0,
-                0,
-                HouseClass_Player)
+        if ( !v10->Stub3(/*0x6aa781*/
+                v10, 1, 0, 0, HouseClass_Player)
           || !((_DWORD (__stdcall *)(unsigned __int8 *, _DWORD, char))HouseClass::CanBuild)(v10, 0, 1) )
         {
           goto LABEL_25; /*0x6aa788*/
@@ -4900,7 +4895,7 @@ LABEL_25:
         if ( v10 ) /*0x6aa87e*/
         {
           char v35 = v10[3278]; /*0x6aa88d*/
-          int v12 = (*(int (__thiscall **)(unsigned __int8 *))(*(_DWORD *)v10 + 44))(v10); /*0x6aa890*/
+          int v12 = v10->getAltitude(); /*0x6aa890*/
           if ( ((_DWORD (__stdcall *)(int, char, _DWORD))HouseClass::GetBuildLimit)(v12, v35, 0) ) /*0x6aa89a*/
           {
   char v51[112]; // [esp+E4h] [ebp-70h] BYREF
@@ -4918,7 +4913,7 @@ LABEL_25:
         if ( v48 > 0 ) /*0x6aa937*/
         {
           char * v14 = v43; /*0x6aa939*/
-          int v15 = v48; /*0x6aa93d*/
+          rc_ptr_base *v15 = v48; /*0x6aa93d*/
           do /*0x6aa99b*/
           {
             if ( *(_DWORD *)v14 == *v9 && *((_DWORD *)v14 + 1) == v9[1] ) /*0x6aa94f*/
@@ -6934,7 +6929,7 @@ namespace gamemd { int SidebarClass::findEntryIndexByName() {
 namespace gamemd { void* TabClass::Constructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v2; // ecx
+  IUnknown *v2; // ecx
   const char **v4; // edi
   int v5; // eax
   int v6; // ebp
@@ -7254,7 +7249,7 @@ namespace gamemd { int SidebarClass::DrawTabs(int a1) {
     int * v4 = g_ObjectTrackingPool; /*0x6d0a7c*/
     while ( 1 ) /*0x6d0a81*/
     {
-      int v5 = *v4; /*0x6d0a81*/
+      AbstractClass *v5 = *v4; /*0x6d0a81*/
       if ( *v4 >= 0 && v5 < 25 ) /*0x6d0a8a*/
       {
         char * v6 = (char *)&DataGlobal_B0C1C0 + 96 * v5; /*0x6d0a92*/
@@ -7320,7 +7315,7 @@ LABEL_28:
 LABEL_29:
   if ( !ArmageddonMode ) /*0x6d0b62*/
   {
-    void * v13 = DataGlobal_B0FB08; /*0x6d0b75*/
+    AbstractClass *v13 = DataGlobal_B0FB08; /*0x6d0b75*/
     v29 = 0; /*0x6d0b84*/
     i = 0; /*0x6d0b88*/
   int v35[2]; // [esp+2Ch] [ebp-20h] BYREF
@@ -7345,7 +7340,7 @@ LABEL_29:
       int v36 = v33; /*0x6d0c1e*/
       int v37 = v34; /*0x6d0c22*/
       v36 = *((_DWORD *)DataGlobal_B0FC58 + 2); /*0x6d0c29*/
-      int v16 = g_DSurface_Hidden_2; /*0x6d0c3b*/
+      AbstractClass *v16 = g_DSurface_Hidden_2; /*0x6d0c3b*/
       DrawToSurfaceSHP( /*0x6d0c5f*/
         g_DSurface_Hidden_2,
         g_SidebarConfig,
@@ -7407,7 +7402,7 @@ LABEL_29:
       }
       v29 = *(_DWORD *)DataGlobal_B0FC6C; /*0x6d0db2*/
       DrawToSurfaceSHP(v16, g_SidebarConfig, (int)DataGlobal_B0FABC, 0, &v29, &v31, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6d0dc8*/
-      _DWORD * v22 = DataGlobal_B0CCB0; /*0x6d0dd7*/
+      GadgetClass *v22 = DataGlobal_B0CCB0; /*0x6d0dd7*/
       if ( !v17[21828] ) /*0x6d0dcd*/
         v22 = DataGlobal_B0CC40; /*0x6d0dde*/
       ShapeButton::Draw((int)v22, 1); /*0x6d0de3*/
@@ -7766,7 +7761,7 @@ namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  _DWORD * v2 = (_DWORD *)this->uniqueId; /*0x724fa0*/
+  AbstractClass *v2 = (_DWORD *)this->uniqueId; /*0x724fa0*/
   return v2 && *v2 == *(_DWORD *)aP1->__pad_0; /*0x724fb3*/
 }
 }
@@ -7973,12 +7968,12 @@ namespace gamemd { void* SidebarClass::FindProductionData() {
   {
     if ( !dword_B768C4 ) /*0x77db10*/
       goto LABEL_18; /*0x77db10*/
-    int v6 = *((_DWORD *)g_WOL_ListParser + (dword_B768D8(&v7) & ((1 << dword_B768CC) - 1))); /*0x77db31*/
+    HashTable *v6 = *((_DWORD *)g_WOL_ListParser + (dword_B768D8(&v7) & ((1 << dword_B768CC) - 1))); /*0x77db31*/
     if ( !v6 ) /*0x77db36*/
       goto LABEL_18; /*0x77db36*/
     while ( !String::Compare((const char **)v6, (const char **)&v7) ) /*0x77db46*/
     {
-      v6 = *(_DWORD *)(v6 + 112); /*0x77db48*/
+      v6 = v6->q01C; /*0x77db48*/
       if ( !v6 ) /*0x77db4d*/
         goto LABEL_18; /*0x77db4d*/
     }
@@ -7990,12 +7985,12 @@ namespace gamemd { void* SidebarClass::FindProductionData() {
   {
     if ( !dword_B77D84 ) /*0x77daa5*/
       goto LABEL_18; /*0x77daa5*/
-    int v4 = *((_DWORD *)dword_B77D80 + (dword_B77D98(&v7) & ((1 << dword_B77D8C) - 1))); /*0x77daca*/
+    HashTable *v4 = *((_DWORD *)dword_B77D80 + (dword_B77D98(&v7) & ((1 << dword_B77D8C) - 1))); /*0x77daca*/
     if ( !v4 ) /*0x77dacf*/
       goto LABEL_18; /*0x77dacf*/
     while ( !String::Compare((const char **)v4, (const char **)&v7) ) /*0x77dae3*/
     {
-      v4 = *(_DWORD *)(v4 + 112); /*0x77dae5*/
+      v4 = v4->q01C; /*0x77dae5*/
       if ( !v4 ) /*0x77daea*/
         goto LABEL_18; /*0x77daea*/
     }

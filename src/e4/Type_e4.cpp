@@ -21,11 +21,11 @@ int Type::CheckAmbiguity(int a2, char a3)
         ++v4; /*0x578584*/
     }
   }
-  int v6 = this->q0F4; /*0x57858b*/
+  CampaignClass *v6 = this->q0F4; /*0x57858b*/
   result = 0; /*0x5785e9*/
   if ( v3 + v5 > v4 + v6 + 2 * this->q100 && v3 + v5 <= v4 + v6 + 2 * (this->q100 + this->q108) + 2 ) /*0x5785b6*/
   {
-    int v7 = this->q0FC; /*0x5785b8*/
+    BuildingTypeClass *v7 = this->q0FC; /*0x5785b8*/
     if ( v5 - v3 < 2 * (v7 + this->q104) - v6 && v3 - v5 < v6 - 2 * v7 ) /*0x5785db*/
       return 1; /*0x57859b*/
   }

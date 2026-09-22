@@ -15,11 +15,11 @@ void* BuildingClass::LoadFromStream()
   int result; // eax
 
   int v33; // [esp+60h] [ebp+4h] BYREF
-  int v1 = v33; /*0x453e25*/
+  BuildingClass *v1 = v33; /*0x453e25*/
   int v2 = v33 + 4; /*0x453e2c*/
   v33 = (*(int (__stdcall **)(int))(*(_DWORD *)(v33 + 4) + 16))(v33 + 4); /*0x453e3d*/
   v3 = BuildingTypeClass::Dequeue((char **)&g_BuildingLoadQueue_Array, &v33); /*0x453e41*/
-  int v4 = 0; /*0x453e46*/
+  AbstractClass *v4 = 0; /*0x453e46*/
   if ( v3 ) /*0x453e4a*/
   {
     int v5 = (int)(v3 - (_DWORD)g_BuildingLoadQueue_Array) >> 3; /*0x453e52*/
@@ -47,7 +47,7 @@ void* BuildingClass::LoadFromStream()
     if ( v1 ) /*0x453ec6*/
       BuildingClass::ctor((_DWORD *)v1, (int)&v33); /*0x453ecf*/
     int v11 = (*(int (__stdcall **)(int))(*(_DWORD *)v2 + 16))(v2); /*0x453ee0*/
-    int v12 = g_BuildingLoadQueue_Capacity; /*0x453ee2*/
+    AbstractClass *v12 = g_BuildingLoadQueue_Capacity; /*0x453ee2*/
     if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x453eea*/
       goto LABEL_13; /*0x453eea*/
     if ( !g_BuildingLoadQueue_Capacity ) /*0x453eee*/
@@ -80,7 +80,7 @@ LABEL_24:
         if ( v13 > 0 ) /*0x454050*/
         {
           do /*0x45406b*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v1 + 1648) + 4 * v18++)); /*0x454061*/
+            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1->Occupants + 4 * v18++)); /*0x454061*/
           while ( v18 < v34 ); /*0x45406b*/
         }
         result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v9 + 12))(v9, &v34, 4, 0); /*0x45407a*/
@@ -95,7 +95,7 @@ LABEL_36:
             if ( v19 > 0 ) /*0x4540ff*/
             {
               do /*0x45411a*/
-                ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v1 + 1672) + 4 * v25++)); /*0x454110*/
+                ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1->q688 + 4 * v25++)); /*0x454110*/
               while ( v25 < v34 ); /*0x45411a*/
             }
             int * v26 = (int *)(v1 + 1372); /*0x45411c*/
@@ -122,7 +122,7 @@ LABEL_36:
               --v31; /*0x45416d*/
             }
             while ( v31 ); /*0x45416e*/
-            *(_DWORD *)(v1 + 1556) = 0; /*0x454174*/
+            v1->LightSource = 0; /*0x454174*/
             return v32; /*0x454170*/
           }
           else
@@ -132,19 +132,19 @@ LABEL_36:
               result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v9 + 12))(v9, &v33, 4, 0); /*0x45409c*/
               if ( result < 0 ) /*0x4540a1*/
                 break; /*0x4540a1*/
-              int v21 = *(_DWORD *)(v1 + 1676); /*0x4540a7*/
-              if ( *(_DWORD *)(v1 + 1684) < v21 /*0x4540d8*/
-                || (*(_BYTE *)(v1 + 1681) || !v21)
+              int v21 = v1->Audio8; /*0x4540a7*/
+              if ( v1->q694 < v21 /*0x4540d8*/
+                || (v1->q691 || !v21)
   int v22; // eax
-                && (v22 = *(_DWORD *)(v1 + 1688), v22 > 0)
-                && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v1 + 1668) + 8))(
+                && (v22 = v1->q698, v22 > 0)
+                && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(v1->q684 + 8))(
                      v1 + 1668,
                      v21 + v22,
                      0) )
               {
-                int v23 = *(_DWORD *)(v1 + 1684); /*0x4540df*/
-                int v24 = *(_DWORD *)(v1 + 1672); /*0x4540e2*/
-                *(_DWORD *)(v1 + 1684) = v23 + 1; /*0x4540e8*/
+                int v23 = v1->q694; /*0x4540df*/
+                int v24 = v1->q688; /*0x4540e2*/
+                v1->q694 = v23 + 1; /*0x4540e8*/
                 *(_DWORD *)(v24 + 4 * v23) = v33; /*0x4540ef*/
               }
               v19 = v34; /*0x4540f2*/
@@ -161,19 +161,19 @@ LABEL_36:
           result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v9 + 12))(v9, &v33, 4, 0); /*0x453fed*/
           if ( result < 0 ) /*0x453ff2*/
             break; /*0x453ff2*/
-          int v14 = *(_DWORD *)(v1 + 1652); /*0x453ff8*/
-          if ( *(_DWORD *)(v1 + 1660) < v14 /*0x454029*/
-            || (*(_BYTE *)(v1 + 1657) || !v14)
+          int v14 = v1->FiringOccupantIndex; /*0x453ff8*/
+          if ( v1->q67C < v14 /*0x454029*/
+            || (v1->q679 || !v14)
   int v15; // eax
-            && (v15 = *(_DWORD *)(v1 + 1664), v15 > 0)
-            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v1 + 1644) + 8))(
+            && (v15 = v1->q680, v15 > 0)
+            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(v1->Overpowerers + 8))(
                  v1 + 1644,
                  v14 + v15,
                  0) )
           {
-            int v16 = *(_DWORD *)(v1 + 1660); /*0x454030*/
-            int v17 = *(_DWORD *)(v1 + 1648); /*0x454033*/
-            *(_DWORD *)(v1 + 1660) = v16 + 1; /*0x454039*/
+            int v16 = v1->q67C; /*0x454030*/
+            int v17 = v1->Occupants; /*0x454033*/
+            v1->q67C = v16 + 1; /*0x454039*/
             *(_DWORD *)(v17 + 4 * v16) = v33; /*0x454040*/
           }
           v13 = v34; /*0x454043*/

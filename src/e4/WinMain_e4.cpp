@@ -199,20 +199,20 @@ int WinMain::Constructor_VectorClass_Wstring_()
 
   for ( i = 0; i < this->q1A8; ++i ) /*0x69a200*/
   {
-    int v3 = *(_DWORD *)(this->q1A5 + 4 * i); /*0x69a208*/
+    AbstractClass *v3 = *(_DWORD *)(this->q1A5 + 4 * i); /*0x69a208*/
     if ( v3 ) /*0x69a20d*/
     {
-      *(_DWORD *)(v3 + 420) = &vt_VectorClass_Wstring; /*0x69a215*/
+      v3->q690 = &vt_VectorClass_Wstring; /*0x69a215*/
       VectorClass_Wstring::ddtor(v3 + 420); /*0x69a21b*/
-      void * v4 = *(void **)(v3 + 396); /*0x69a220*/
-      *(_DWORD *)(v3 + 392) = &vt_VectorClass_enum_DiskID; /*0x69a226*/
+      void * v4 = v3->q630; /*0x69a220*/
+      v3->q620 = &vt_VectorClass_enum_DiskID; /*0x69a226*/
       if ( v4 && *(_BYTE *)(v3 + 405) ) /*0x69a234*/
       {
         __3_YAXPAX_Z(v4); /*0x69a23d*/
-        *(_DWORD *)(v3 + 396) = 0; /*0x69a245*/
+        v3->q630 = 0; /*0x69a245*/
       }
       *(_BYTE *)(v3 + 405) = 0; /*0x69a24c*/
-      *(_DWORD *)(v3 + 400) = 0; /*0x69a252*/
+      v3->q190 = 0; /*0x69a252*/
       __3_YAXPAX_Z((void *)v3); /*0x69a258*/
     }
   }

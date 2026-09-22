@@ -26,7 +26,7 @@ void LoadingScreen::DestroyFileTrees()
 
   if ( DataGlobal_B0FC95 ) /*0x72ef6b*/
   {
-    void * v0 = DataGlobal_B0FAC4; /*0x72ef6d*/
+    AbstractClass *v0 = DataGlobal_B0FAC4; /*0x72ef6d*/
     if ( DataGlobal_B0FAC4 ) /*0x72ef75*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FAC4); /*0x72ef79*/
@@ -37,7 +37,7 @@ void LoadingScreen::DestroyFileTrees()
   DataGlobal_B0FAC4 = 0; /*0x72ef92*/
   if ( DataGlobal_B0FC96 ) /*0x72ef9a*/
   {
-    void * v1 = DataGlobal_B0F9DC; /*0x72ef9c*/
+    AbstractClass *v1 = DataGlobal_B0F9DC; /*0x72ef9c*/
     if ( DataGlobal_B0F9DC ) /*0x72efa4*/
     {
       FileTreeNode::Destroy(DataGlobal_B0F9DC); /*0x72efa8*/
@@ -48,7 +48,7 @@ void LoadingScreen::DestroyFileTrees()
   DataGlobal_B0F9DC = 0; /*0x72efc1*/
   if ( DataGlobal_B0FC97 ) /*0x72efc9*/
   {
-    void * v2 = DataGlobal_B0FAC0; /*0x72efcb*/
+    AbstractClass *v2 = DataGlobal_B0FAC0; /*0x72efcb*/
     if ( DataGlobal_B0FAC0 ) /*0x72efd3*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FAC0); /*0x72efd7*/
@@ -59,7 +59,7 @@ void LoadingScreen::DestroyFileTrees()
   DataGlobal_B0FAC0 = 0; /*0x72eff0*/
   if ( DataGlobal_B0FC98 ) /*0x72eff8*/
   {
-    void * v3 = g_DialogControlPool; /*0x72effa*/
+    AbstractClass *v3 = g_DialogControlPool; /*0x72effa*/
     if ( g_DialogControlPool ) /*0x72f002*/
     {
       FileTreeNode::Destroy(g_DialogControlPool); /*0x72f006*/
@@ -70,7 +70,7 @@ void LoadingScreen::DestroyFileTrees()
   g_DialogControlPool = 0; /*0x72f01f*/
   if ( DataGlobal_B0FC99 ) /*0x72f027*/
   {
-    void * v4 = DataGlobal_B0FA04; /*0x72f029*/
+    AbstractClass *v4 = DataGlobal_B0FA04; /*0x72f029*/
     if ( DataGlobal_B0FA04 ) /*0x72f031*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FA04); /*0x72f035*/
@@ -81,7 +81,7 @@ void LoadingScreen::DestroyFileTrees()
   DataGlobal_B0FA04 = 0; /*0x72f04e*/
   if ( DataGlobal_B0FC9A ) /*0x72f056*/
   {
-    void * v5 = DataGlobal_B0FAF8; /*0x72f058*/
+    AbstractClass *v5 = DataGlobal_B0FAF8; /*0x72f058*/
     if ( DataGlobal_B0FAF8 ) /*0x72f060*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FAF8); /*0x72f064*/
@@ -92,7 +92,7 @@ void LoadingScreen::DestroyFileTrees()
   DataGlobal_B0FAF8 = 0; /*0x72f07d*/
   if ( DataGlobal_B0FC9B ) /*0x72f085*/
   {
-    void * v6 = DataGlobal_B0FA74; /*0x72f087*/
+    AbstractClass *v6 = DataGlobal_B0FA74; /*0x72f087*/
     if ( DataGlobal_B0FA74 ) /*0x72f08f*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FA74); /*0x72f093*/
@@ -103,7 +103,7 @@ void LoadingScreen::DestroyFileTrees()
   DataGlobal_B0FA74 = 0; /*0x72f0ac*/
   if ( DataGlobal_B0FC9C ) /*0x72f0b4*/
   {
-    void * v7 = DataGlobal_B0FA38; /*0x72f0b6*/
+    AbstractClass *v7 = DataGlobal_B0FA38; /*0x72f0b6*/
     if ( DataGlobal_B0FA38 ) /*0x72f0be*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FA38); /*0x72f0c2*/
@@ -114,7 +114,7 @@ void LoadingScreen::DestroyFileTrees()
   DataGlobal_B0FA38 = 0; /*0x72f0db*/
   if ( DataGlobal_B0FC9D ) /*0x72f0e3*/
   {
-    void * v8 = DataGlobal_B0FAE8; /*0x72f0e5*/
+    AbstractClass *v8 = DataGlobal_B0FAE8; /*0x72f0e5*/
     if ( DataGlobal_B0FAE8 ) /*0x72f0ed*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FAE8); /*0x72f0f1*/
@@ -125,7 +125,7 @@ void LoadingScreen::DestroyFileTrees()
   DataGlobal_B0FAE8 = 0; /*0x72f10a*/
   if ( DataGlobal_B0FC9E ) /*0x72f112*/
   {
-    void * v9 = DataGlobal_B0FA54; /*0x72f114*/
+    AbstractClass *v9 = DataGlobal_B0FA54; /*0x72f114*/
     if ( DataGlobal_B0FA54 ) /*0x72f11c*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FA54); /*0x72f120*/

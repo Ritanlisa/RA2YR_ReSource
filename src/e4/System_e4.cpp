@@ -120,7 +120,7 @@ void sub_6269A0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  _DWORD * v0 = g_FileExtensionState; /*0x6269a0*/
+  ObjectClass *v0 = g_FileExtensionState; /*0x6269a0*/
   if ( !g_FileExtensionState ) /*0x6269a9*/
   {
     _DWORD * v1 = __2_YAPAXI_Z(0x10u); /*0x6269b1*/
@@ -129,7 +129,7 @@ void sub_6269A0()
     {
       *v1 = -1; /*0x6269c5*/
       _DWORD * v3 = __2_YAPAXI_Z(0x18u); /*0x6269cb*/
-      _DWORD * v4 = v3; /*0x6269d0*/
+      VectorClass *v4 = v3; /*0x6269d0*/
       if ( v3 ) /*0x6269d7*/
       {
         StringVector::Construct(v3, 0, 0); /*0x6269df*/
@@ -143,7 +143,7 @@ void sub_6269A0()
       }
       v2[1] = v4; /*0x6269fe*/
       _DWORD * v5 = __2_YAPAXI_Z(0x18u); /*0x626a01*/
-      _DWORD * v6 = v5; /*0x626a06*/
+      VectorClass *v6 = v5; /*0x626a06*/
       if ( v5 ) /*0x626a0d*/
       {
         VectorClass::ConstructHSV(v5, 0, 0); /*0x626a15*/
@@ -182,7 +182,7 @@ void sub_6269A0()
     while ( v8 < v9 ); /*0x626a90*/
   }
   (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v0[1] + 12))(v0[1]); /*0x626a99*/
-  return (*(int (__thiscall **)(_DWORD))(**((_DWORD **)g_FileExtensionState + 2) + 12))(*((_DWORD *)g_FileExtensionState + 2)); /*0x626aa9*/
+  return (*(int (__thiscall **)(_DWORD))(*g_FileExtensionState->vtable3 + 12))(g_FileExtensionState->vtable3); /*0x626aa9*/
 }
 }
 } // namespace gamemd
@@ -202,7 +202,7 @@ void sub_626AB0(const char * a1, int a2)
     {
       *v2 = -1; /*0x626ae1*/
       _DWORD * v4 = __2_YAPAXI_Z(0x18u); /*0x626ae8*/
-      _DWORD * v5 = v4; /*0x626aed*/
+      VectorClass *v5 = v4; /*0x626aed*/
       if ( v4 ) /*0x626af9*/
       {
         StringVector::Construct(v4, 0, 0); /*0x626b01*/
@@ -216,7 +216,7 @@ void sub_626AB0(const char * a1, int a2)
       }
       v3[1] = v5; /*0x626b1c*/
       _DWORD * v6 = __2_YAPAXI_Z(0x18u); /*0x626b1f*/
-      _DWORD * v7 = v6; /*0x626b24*/
+      VectorClass *v7 = v6; /*0x626b24*/
       if ( v6 ) /*0x626b2b*/
       {
         VectorClass::ConstructHSV(v6, 0, 0); /*0x626b33*/
@@ -307,7 +307,7 @@ void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, i
   v4 = *a1; /*0x7a2ead*/
   int v8 = 0; /*0x7a2eb5*/
   int v7 = 0; /*0x7a2ebd*/
-  int v5 = (*v4)(a1, &unk_7F7CD0, &v8); /*0x7a2ec7*/
+  Coord *v5 = (*v4)(a1, &unk_7F7CD0, &v8); /*0x7a2ec7*/
   if ( v5 >= 0 ) /*0x7a2ecb*/
   {
     v5 = (*(int (__stdcall **)(int, int, int *))(*(_DWORD *)v8 + 16))(v8, a3, &v7); /*0x7a2ee1*/
@@ -325,7 +325,7 @@ void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, i
 
 // 0x68C9C0
 namespace gamemd {
-AbstractClass * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
+AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

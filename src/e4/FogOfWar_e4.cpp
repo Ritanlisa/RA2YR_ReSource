@@ -7,7 +7,7 @@
 #include "e4/classes/Object_e4.hpp"
 
 // 0x655C50
-MapClass * FogOfWar::RevealArea(RadarClass * aP1)
+MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -170,7 +170,7 @@ LABEL_41:
     (*(void (__stdcall **)(RadarClass *, int))(*this->q487 + 36))(aP1, v17); /*0x65604d*/
   }
 LABEL_45:
-  int v22 = *(_DWORD *)(this + 5276); /*0x65608f*/
+  RadarClass *v22 = *(_DWORD *)(this + 5276); /*0x65608f*/
   int v23 = *(_DWORD *)(this + 5280); /*0x656095*/
   int v24 = this + 4620; /*0x6560a0*/
   int v25 = v22 + aP1->field_0; /*0x6560a6*/
@@ -293,7 +293,7 @@ int FogOfWar::RenderCell()
 }
 
 // 0x6562D0
-AbstractClass * FogOfWar::RevealCell(IUnknown * aP1)
+AbstractClass * * FogOfWar::RevealCell(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

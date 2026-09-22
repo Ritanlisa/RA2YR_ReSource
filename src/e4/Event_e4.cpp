@@ -114,7 +114,7 @@ void sub_5E95E0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LPARAM *v1; // ecx
-  LPARAM v2; // eax
+  AbstractClass *v2; // eax
   unsigned __int8 v4; // [esp+0h] [ebp-Ch]
   int v5 = DataGlobal_A8B548; /*0x5e95f0*/
   if ( DataGlobal_A8B548 >= DataGlobal_A8BB0C ) /*0x5e95f4*/
@@ -131,7 +131,7 @@ void sub_5E95E0()
         && v2 != g_Lobby_MaxPlayers
         && (wchar_t *)v2 != g_Lobby_PlayerReady
         && v0 == g_MPCooperativeState
-        && *(_DWORD *)(v2 + 107) == -1 )
+        && v2->q1AC == -1 )
       {
         break; /*0x5e9645*/
       }
@@ -161,7 +161,7 @@ void sub_796960()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v10; // [esp+244h] [ebp-4h]
-  int v0; // eax
+  Coord *v0; // eax
   LOBYTE(v0) = g_GameMode_Current[0]; /*0x796960*/
   if ( g_GameMode_Current[0] == 4 ) /*0x796970*/
     return v0; /*0x796970*/
@@ -208,7 +208,7 @@ LABEL_10:
       int v3 = 0; /*0x796a9b*/
       if ( (int)g_WOL_State > 0 ) /*0x796a9f*/
       {
-        char * v4 = (char *)g_WOL_ConnectionFlags; /*0x796aa1*/
+        AbstractClass *v4 = (char *)g_WOL_ConnectionFlags; /*0x796aa1*/
         while ( 1 ) /*0x796aa7*/
         {
           if ( v3 >= 0 && v3 < (int)g_WOL_State ) /*0x796aad*/
@@ -271,7 +271,7 @@ int sub_7A0F40()
         char * v6 = &Buffer[4 * (v3 >> 2)]; /*0x7a100a*/
         char * v5 = &v4[4 * (v3 >> 2)]; /*0x7a100a*/
         char v7 = v3; /*0x7a100c*/
-        int v8 = v9; /*0x7a100e*/
+        INIClass *v8 = v9; /*0x7a100e*/
         qmemcpy(v5, v6, v7 & 3); /*0x7a1015*/
         SetGameOptionsPing((const char *)&v11[9], v8); /*0x7a101b*/
         ++v1; /*0x7a1024*/

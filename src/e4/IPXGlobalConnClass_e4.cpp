@@ -73,7 +73,7 @@ LABEL_14:
 }
 
 // 0x5403F0
-HashTable * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3)
+HashTable * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

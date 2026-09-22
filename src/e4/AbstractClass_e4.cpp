@@ -116,7 +116,7 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 
 // 0x4FB9B0
 namespace gamemd {
-VectorClass * AbstractClass_RemoveObjectFromHouse()
+VectorClass * * AbstractClass_RemoveObjectFromHouse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -143,14 +143,14 @@ VectorClass * AbstractClass_RemoveObjectFromHouse()
   }
   if ( (*((int (__thiscall **)(void **))*v5 + 11))(v5) == 6 && (_BYTE)a4 ) /*0x4fba32*/
   {
-    int v10 = a1[20]; /*0x4fba38*/
+    DynamicVector *v10 = a1[20]; /*0x4fba38*/
     a4 = v5; /*0x4fba45*/
-    int v11 = (*(int (__thiscall **)(_DWORD *, void ***, int))(v10 + 16))(a1 + 20, &a4, a2); /*0x4fba49*/
+    int v11 = v10->Draw(a1 + 20, &a4, a2); /*0x4fba49*/
     if ( v11 != -1 ) /*0x4fba4f*/
       Vector::RemoveAt(a1 + 20, v11); /*0x4fba54*/
-    int v12 = a1[32]; /*0x4fba59*/
+    VectorClass *v12 = a1[32]; /*0x4fba59*/
     a5 = v5; /*0x4fba6c*/
-    int v13 = (*(int (__thiscall **)(_DWORD *, void ***))(v12 + 16))(a1 + 32, &a5); /*0x4fba70*/
+    int v13 = v12->GetSize(a1 + 32, &a5); /*0x4fba70*/
     if ( v13 != -1 ) /*0x4fba76*/
     {
       int v14 = a1[36]; /*0x4fba78*/
@@ -161,9 +161,9 @@ VectorClass * AbstractClass_RemoveObjectFromHouse()
           ++v13; /*0x4fba8a*/
       }
     }
-    int v16 = a1[38]; /*0x4fba99*/
+    VectorClass *v16 = a1[38]; /*0x4fba99*/
     a5 = v5; /*0x4fbaa9*/
-    int v17 = (*(int (__thiscall **)(_DWORD *, void ***))(v16 + 16))(a1 + 38, &a5); /*0x4fbab0*/
+    int v17 = v16->GetSize(a1 + 38, &a5); /*0x4fbab0*/
     if ( v17 != -1 ) /*0x4fbab6*/
       Vector::RemoveAt(a1 + 38, v17); /*0x4fbabb*/
     int v18 = a1[44]; /*0x4fbac0*/
@@ -179,14 +179,14 @@ VectorClass * AbstractClass_RemoveObjectFromHouse()
           ++v19; /*0x4fbaf1*/
       }
     }
-    int v22 = a1[50]; /*0x4fbb00*/
+    VectorClass *v22 = a1[50]; /*0x4fbb00*/
     a5 = v5; /*0x4fbb10*/
-    int v23 = (*(int (__thiscall **)(_DWORD *, void ***))(v22 + 16))(a1 + 50, &a5); /*0x4fbb17*/
+    int v23 = v22->GetSize(a1 + 50, &a5); /*0x4fbb17*/
     if ( v23 != -1 ) /*0x4fbb1d*/
       Vector::RemoveAt(a1 + 50, v23); /*0x4fbb22*/
-    int v24 = a1[56]; /*0x4fbb27*/
+    VectorClass *v24 = a1[56]; /*0x4fbb27*/
     a5 = v5; /*0x4fbb3a*/
-    int v25 = (*(int (__thiscall **)(_DWORD *, void ***))(v24 + 16))(a1 + 56, &a5); /*0x4fbb3e*/
+    int v25 = v24->GetSize(a1 + 56, &a5); /*0x4fbb3e*/
     if ( v25 != -1 ) /*0x4fbb44*/
     {
       int v26 = a1[60]; /*0x4fbb46*/
@@ -197,14 +197,14 @@ VectorClass * AbstractClass_RemoveObjectFromHouse()
           ++v25; /*0x4fbb58*/
       }
     }
-    int v28 = a1[62]; /*0x4fbb67*/
+    VectorClass *v28 = a1[62]; /*0x4fbb67*/
     a5 = v5; /*0x4fbb77*/
-    int v29 = (*(int (__thiscall **)(_DWORD *, void ***))(v28 + 16))(a1 + 62, &a5); /*0x4fbb7e*/
+    int v29 = v28->GetSize(a1 + 62, &a5); /*0x4fbb7e*/
     if ( v29 != -1 ) /*0x4fbb84*/
       Vector::RemoveAt(a1 + 62, v29); /*0x4fbb89*/
-    int v30 = a1[68]; /*0x4fbb8e*/
+    DynamicVector *v30 = a1[68]; /*0x4fbb8e*/
     a5 = v5; /*0x4fbba1*/
-    int v31 = (*(int (__thiscall **)(_DWORD *, void ***))(v30 + 16))(a1 + 68, &a5); /*0x4fbba5*/
+    int v31 = v30->Draw(a1 + 68, &a5); /*0x4fbba5*/
     if ( v31 != -1 ) /*0x4fbbab*/
       Vector::RemoveAt(a1 + 68, v31); /*0x4fbbb0*/
     int v32 = a1[74]; /*0x4fbbb5*/
@@ -220,14 +220,14 @@ VectorClass * AbstractClass_RemoveObjectFromHouse()
           ++v33; /*0x4fbbe6*/
       }
     }
-    int v36 = a1[80]; /*0x4fbbf5*/
+    VectorClass *v36 = a1[80]; /*0x4fbbf5*/
     a5 = v5; /*0x4fbc05*/
-    int v37 = (*(int (__thiscall **)(_DWORD *, void ***))(v36 + 16))(a1 + 80, &a5); /*0x4fbc0c*/
+    int v37 = v36->GetSize(a1 + 80, &a5); /*0x4fbc0c*/
     if ( v37 != -1 ) /*0x4fbc12*/
       Vector::RemoveAt(a1 + 80, v37); /*0x4fbc17*/
-    int v38 = a1[26]; /*0x4fbc1c*/
+    VectorClass *v38 = a1[26]; /*0x4fbc1c*/
     a5 = v5; /*0x4fbc29*/
-    int v39 = (*(int (__thiscall **)(_DWORD *, void ***))(v38 + 16))(a1 + 26, &a5); /*0x4fbc2d*/
+    int v39 = v38->GetSize(a1 + 26, &a5); /*0x4fbc2d*/
     if ( v39 != -1 ) /*0x4fbc33*/
     {
       int v40 = a1[30]; /*0x4fbc35*/
@@ -275,7 +275,7 @@ VectorClass * AbstractClass_RemoveObjectFromHouse()
 
 // 0x5C03D0
 namespace gamemd {
-ObjectClass * AbstractClass_getPathDirection()
+ObjectClass * * AbstractClass_getPathDirection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -438,7 +438,7 @@ void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
 
 // 0x7258D0
 namespace gamemd {
-AbstractClass * AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1)
+AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -454,7 +454,7 @@ AbstractClass * AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, Abstr
   int ii; // ebx
   int i1; // ebx
 
-  int v4 = (*(int (__thiscall **)(AbstractClass *))(*(_DWORD *)aP0->__pad_0 + 44))(aP0); /*0x7258de*/
+  AbstractClass *v4 = (*(int (__thiscall **)(AbstractClass *))(*(_DWORD *)aP0->__pad_0 + 44))(aP0); /*0x7258de*/
   int v5 = 0; /*0x7258e9*/
   if ( *(AbstractClass **)&stru_87C374[17944] == aP0 ) /*0x7258e7*/
     *(_DWORD *)&stru_87C374[17944] = 0; /*0x7258eb*/

@@ -7,8 +7,7 @@ T TeleportLocomotionClass::TeleportLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v2; // ecx
-
+  CDTimerClass *v2; // ecx
   LocomotionClass::Init((_DWORD *)this); /*0x718003*/
   this->MovingDestination = DataGlobal_B0EBF8; /*0x718011*/
   this->Owner = DataGlobal_B0EBFC; /*0x71801a*/

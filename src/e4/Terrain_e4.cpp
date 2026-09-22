@@ -37,7 +37,7 @@ int Terrain::GetTileType(AnimClass * aP1)
 
 // 0x568E40
 namespace gamemd {
-AbstractClass * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
+AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -55,14 +55,14 @@ AbstractClass * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
   CCINIClass *v37; // eax
   ObjectClass *v39; // eax
   IUnknown *v45; // ebp
-  IUnknown *v47; // edx
+  AbstractClass *v47; // edx
   IUnknown *v48; // edi
   #374 *v50; // eax
   #374 *v51; // eax
-  IUnknown *v58; // edx
+  AbstractClass *v58; // edx
   IUnknown *v60; // esi
   IUnknown *v61; // edi
-  IUnknown *v62; // esi
+  AbstractClass *v62; // esi
   char v63; // [esp+13h] [ebp-61h]
   ObjectClass *v64; // [esp+14h] [ebp-60h]
   ObjectClass *v65; // [esp+14h] [ebp-60h]
@@ -436,7 +436,7 @@ LABEL_44:
 
 // 0x56C510
 namespace gamemd {
-AbstractClass * Terrain::ConnectivityGraph()
+AbstractClass * * Terrain::ConnectivityGraph()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -444,7 +444,7 @@ AbstractClass * Terrain::ConnectivityGraph()
   void **v7; // esi
   unsigned int i; // eax
   IUnknown *v10; // edi
-  unsigned __int8 *v12; // esi
+  VectorClass *v12; // esi
   __int16 *v19; // esi
   bool v37; // zf
   IUnknown *v38; // eax
@@ -549,7 +549,7 @@ AbstractClass * Terrain::ConnectivityGraph()
     {
       int v14 = *v12; /*0x56c621*/
       *(_DWORD *)&aP3[12] = v14; /*0x56c626*/
-      if ( v14 == 7 || *((_WORD *)v12 + 1) ) /*0x56c630*/
+      if ( v14 == 7 || v12->Items ) /*0x56c630*/
       {
         v12 += 4; /*0x56c6b5*/
       }
@@ -603,7 +603,7 @@ AbstractClass * Terrain::ConnectivityGraph()
         {
           v21 = 0; /*0x56c713*/
         }
-        int v23 = nextArrayIndex[26]; /*0x56c725*/
+        VectorClass *v23 = nextArrayIndex[26]; /*0x56c725*/
         int v24 = *(unsigned __int16 *)(v23 + 4 * v21 + 2); /*0x56c72d*/
         int v25 = v19[2] + v20 * v19[3]; /*0x56c736*/
         if ( v25 >= 0 ) /*0x56c738*/
@@ -883,7 +883,7 @@ int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractC
   unsigned __int8 *v38; // esi
   int v39; // eax
   int v40; // edx
-  unsigned __int8 *v41; // edi
+  VectorClass *v41; // edi
   IUnknown *v56; // ebp
   unsigned int v57; // esi
   unsigned __int8 *v60; // ecx
@@ -1041,12 +1041,12 @@ LABEL_31:
   int v42; // ebx
     while ( 1 )
     {
-      v42 = *((unsigned __int16 *)v41 + 1); /*0x56ce51*/
+      v42 = v41->Items; /*0x56ce51*/
       if ( v41 >= (unsigned __int8 *)&aP3a[-1].NeedsSaveOrLink )
         v43 = (int)(v41 == (unsigned __int8 *)&aP3a[-1].NeedsSaveOrLink ? &v41[(_DWORD)a1a] : &v41[(_DWORD)a1a - 4]);
       else
         v43 = (int)&v41[v80]; /*0x56ce60*/
-      if ( *((_WORD *)v41 + 1) ) /*0x56ce4f*/
+      if ( v41->Items ) /*0x56ce4f*/
         break; /*0x56ce4f*/
       if ( *v41 != v81 ) /*0x56ce86*/
         goto LABEL_62; /*0x56ce86*/
@@ -1185,7 +1185,7 @@ LABEL_82:
 
 // 0x570050
 namespace gamemd {
-AbstractClass * Terrain::ProcessCellModification(IUnknown * aP1)
+AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1642,7 +1642,7 @@ LABEL_101:
 
 // 0x573540
 namespace gamemd {
-AbstractClass * Terrain::RecursiveModify(IUnknown * aP1)
+AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2305,7 +2305,7 @@ LABEL_64:
 
 // 0x579620
 namespace gamemd {
-VectorClass * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
+VectorClass * * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2317,7 +2317,7 @@ VectorClass * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
   int v11; // edx
   unsigned int v12; // eax
   MouseClass *v13; // eax
-  char v14; // si
+  VectorClass *v14; // si
   unsigned int v15; // eax
   MouseClass *v16; // eax
   char v17; // al
@@ -2348,7 +2348,7 @@ VectorClass * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
       g_Map_GlobalCellIndex = (IUnknown *)aP0; /*0x579695*/
       v6 = (MouseClass *)g_CellClassArray; /*0x57969a*/
     }
-    char v7 = Cell::GetAdjacencyFlags(v6); /*0x5796a7*/
+    VectorClass *v7 = Cell::GetAdjacencyFlags(v6); /*0x5796a7*/
     Random_field_0x04 = (Random *)v3[2].Random_field_0x04; /*0x5796ac*/
     HIWORD(aP0) = HIWORD(Random_field_0x04); /*0x5796b8*/
     LOWORD(aP0) = (_WORD)Random_field_0x04 + 1; /*0x5796bd*/
@@ -2418,7 +2418,7 @@ VectorClass * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
         v23 = (MouseClass *)g_CellClassArray; /*0x579947*/
         g_Map_GlobalCellIndex = (IUnknown *)aP0; /*0x57994c*/
       }
-      char v24 = Cell::GetAdjacencyFlags(v23); /*0x57995a*/
+      VectorClass *v24 = Cell::GetAdjacencyFlags(v23); /*0x57995a*/
       v38 = (Random *)v3[2].Random_field_0x04; /*0x57995f*/
       LOWORD(aP0) = (_WORD)v38 + 1; /*0x57996b*/
       HIWORD(aP0) = HIWORD(v38) + 1; /*0x579970*/
@@ -2791,12 +2791,12 @@ LABEL_58:
           __int64 v65 = (unsigned int)Random::State(&g_Randomizer); /*0x5a2d83*/
           int v39 = SHIWORD(v50); /*0x5a2d93*/
           int v40 = (__int16)v50; /*0x5a2d9e*/
-          unsigned int v41 = (unsigned int)v33; /*0x5a2da9*/
+          VectorClass *v41 = (unsigned int)v33; /*0x5a2da9*/
           v33 += 2; /*0x5a2dab*/
           v58 = (Random *)v41; /*0x5a2dae*/
           *(v33 - 1) = (double)v65 * 5.0 * 2.328306437080797e-10 + v62; /*0x5a2db6*/
           *((_DWORD *)g_MapTileArray + 20 * v40 + 20 * unk_89C2DC * v39 + 15) = a3; /*0x5a2dd1*/
-          float v42 = *(float *)(v41 + 4); /*0x5a2dd9*/
+          float v42 = v41->Items; /*0x5a2dd9*/
           ++v53; /*0x5a2ddd*/
           unsigned int v43 = *(_DWORD *)v8->__pad_0 + 1; /*0x5a2de3*/
           float v61 = v42; /*0x5a2de4*/

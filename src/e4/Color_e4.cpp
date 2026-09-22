@@ -106,9 +106,9 @@ unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  unsigned __int8 v3; // bl
+  AbstractClass *v3; // bl
   unsigned __int8 v4; // al
-  unsigned __int8 v5; // bl
+  AbstractClass *v5; // bl
   unsigned __int8 result; // al
 
   v3 = this->q004; /*0x6612f2*/

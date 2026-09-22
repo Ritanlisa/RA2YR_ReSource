@@ -4,7 +4,7 @@
 
 // 0x652C00
 namespace gamemd {
-CampaignClass * RadarClass::Destruct()
+CampaignClass * * RadarClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -12,7 +12,7 @@ CampaignClass * RadarClass::Destruct()
   *this = &vt_RadarClass; /*0x652c0c*/
   ((AudioFileClass *)((char *)this + 1328)).Release(); /*0x652c12*/
   TacticalClass::FreeResources(this); /*0x652c19*/
-  char * v2 = (char *)(this + 1314); /*0x652c1e*/
+  MapClass *v2 = (char *)(this + 1314); /*0x652c1e*/
   int v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
@@ -22,14 +22,14 @@ CampaignClass * RadarClass::Destruct()
     if ( v4 && v2[13] ) /*0x652c3b*/
     {
       __3_YAXPAX_Z(v4); /*0x652c41*/
-      *((_DWORD *)v2 + 1) = 0; /*0x652c49*/
+      v2->q004 = 0; /*0x652c49*/
     }
     --v3; /*0x652c4c*/
     v2[13] = 0; /*0x652c4d*/
-    *((_DWORD *)v2 + 2) = 0; /*0x652c50*/
+    v2->q008 = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
-  void * v5 = (void *)this->q1260; /*0x652c55*/
+  CampaignClass *v5 = (void *)this->q1260; /*0x652c55*/
   this->q125C = &vt_VectorClass_Point2D; /*0x652c5b*/
   if ( v5 && *((_BYTE *)this + 4713) ) /*0x652c69*/
   {
@@ -38,7 +38,7 @@ CampaignClass * RadarClass::Destruct()
   }
   *((_BYTE *)this + 4713) = 0; /*0x652c80*/
   this->q1264 = 0; /*0x652c86*/
-  void * v6 = (void *)this->q1228; /*0x652c8c*/
+  CampaignClass *v6 = (void *)this->q1228; /*0x652c8c*/
   this->q1224 = &vt_VectorClass_Cell; /*0x652c92*/
   if ( v6 && *((_BYTE *)this + 4657) ) /*0x652ca0*/
   {
@@ -58,10 +58,10 @@ void RadarClass_RecreateSurface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  CCINIClass *v3; // eax
+  CampaignClass *v3; // eax
   RadarClass *v4; // edi
   void (__thiscall ***v5)(_DWORD, int); // ecx
-  CCINIClass *v9; // edx
+  CampaignClass *v9; // edx
   void (__thiscall ***v12)(_DWORD, int); // ecx
   DSurface *v13; // ebx
   IUnknown *v15; // eax
@@ -70,7 +70,7 @@ void RadarClass_RecreateSurface()
   v4 = (RadarClass *)(a1 + 5276); /*0x654660*/
   if ( (int)v3 > 0 && *(int *)(a1 + 5288) > 0 ) /*0x654671*/
   {
-  char *v16; // eax
+  MapClass *v16; // eax
     v5 = *(void (__thiscall ****)(_DWORD, int))(a1 + 4640); /*0x654677*/
     *(_DWORD *)(a1 + 5280) = 0; /*0x65467d*/
     v4->field_0 = 0; /*0x654685*/
@@ -92,16 +92,16 @@ void RadarClass_RecreateSurface()
   _DWORD v19[4]; // [esp+10h] [ebp-10h] BYREF
     GenerateImageThumbnail((float *)a1, (RadarClass *)v19, v4, v4, (RadarClass *)1); /*0x6546d3*/
     int v6 = (*(int (__thiscall **)(_DWORD, int))(**(_DWORD **)(a1 + 4640) + 124))(*(_DWORD *)(a1 + 4640), a2); /*0x6546e0*/
-    int v7 = *(_DWORD *)(a1 + 4640); /*0x6546e3*/
+    MapClass *v7 = *(_DWORD *)(a1 + 4640); /*0x6546e3*/
     *(_DWORD *)(a1 + 5284) = v6; /*0x6546e9*/
-    int v8 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 128))(v7); /*0x6546f1*/
+    int v8 = v7->vt_slot_128(); /*0x6546f1*/
     v9 = *(CCINIClass **)(a1 + 5284); /*0x6546f7*/
-    int v10 = *(_DWORD *)(a1 + 4592); /*0x6546fd*/
+    MapClass *v10 = *(_DWORD *)(a1 + 4592); /*0x6546fd*/
     *(_DWORD *)(a1 + 5288) = v8; /*0x65470b*/
     v4->field_0 = v10; /*0x654711*/
     if ( (int)v9 < 140 ) /*0x654713*/
       v4->field_0 = v10 + (140 - (int)v9) / 2; /*0x654723*/
-    int v11 = *(_DWORD *)(a1 + 4596); /*0x654725*/
+    GadgetClass *v11 = *(_DWORD *)(a1 + 4596); /*0x654725*/
     *(_DWORD *)(a1 + 5280) = v11; /*0x65472e*/
     if ( v8 < 108 ) /*0x654734*/
       *(_DWORD *)(a1 + 5280) = v11 + (108 - v8) / 2; /*0x654744*/
@@ -115,9 +115,9 @@ void RadarClass_RecreateSurface()
     if ( v13 ) /*0x65476e*/
     {
       v19[0] = *(_DWORD *)(a1 + 4640); /*0x65477d*/
-      int v14 = v19[0]; /*0x654777*/
+      MapClass *v14 = v19[0]; /*0x654777*/
       v18 = (DSurface *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)v19[0] + 128))(v19[0]); /*0x654789*/
-      v15 = (IUnknown *)(*(int (__thiscall **)(int))(*(_DWORD *)v14 + 124))(v14); /*0x65478e*/
+      v15 = (IUnknown *)v14->IsAboveScreenMargin(); /*0x65478e*/
       v16 = DSurface::Construct((char *)v13, v15, v18, (ObjectClass *)1, 0); /*0x654794*/
     }
     else
@@ -125,7 +125,7 @@ void RadarClass_RecreateSurface()
       v16 = 0; /*0x65479b*/
     }
     *(_DWORD *)(a1 + 4636) = v16; /*0x65479d*/
-    (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)v16 + 24))(v16, 0); /*0x6547a8*/
+    v16->DtorSequence(0); /*0x6547a8*/
     LOBYTE(v3) = RadarClass::UpdateFoundationShapesCustom((float *)a1); /*0x6547ad*/
   }
   return (char)v3; /*0x6547b3*/
@@ -142,7 +142,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   const wchar_t *v14; // eax
   const wchar_t *v15; // ecx
   int v16; // edi
-  int v17; // eax
+  Coord *v17; // eax
   bool v18; // cl
   bool v19; // al
   char v20; // al

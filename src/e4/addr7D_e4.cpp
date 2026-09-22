@@ -21,8 +21,8 @@ void __sbh_heap_check()
 
   if ( IsBadWritePtr(::lp, 20 * CRTGlobal_B78B94) ) /*0x7d03ad*/
     return -1; /*0x7d03ba*/
-  _DWORD * v1 = ::lp; /*0x7d03bf*/
-  _DWORD * v22 = ::lp; /*0x7d03cd*/
+  AbstractClass *v1 = ::lp; /*0x7d03bf*/
+  AbstractClass *v22 = ::lp; /*0x7d03cd*/
   int v28 = 0; /*0x7d03d0*/
   if ( CRTGlobal_B78B94 <= 0 ) /*0x7d03d3*/
     return 0; /*0x7d03d3*/
@@ -695,7 +695,7 @@ void * realloc(CCINIClass * aP0, size_t Size)
   v3 = (AbstractClass *)Size; /*0x7d0f60*/
   if ( Size ) /*0x7d0f65*/
   {
-  void *v4; // edi
+  AbstractClass *v4; // edi
     while ( 1 ) /*0x7d0f75*/
     {
       v4 = 0; /*0x7d0f75*/
@@ -762,7 +762,7 @@ LABEL_22:
 
 // 0x7D10C2
 namespace gamemd {
-ControlClass * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, ObjectClass * aP2, int cchSrc, LPSTR lpDestStr, int cchDest, UINT CodePage, int a8)
+ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, ObjectClass * aP2, int cchSrc, LPSTR lpDestStr, int cchDest, UINT CodePage, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         CampaignScore *aP0,
@@ -932,7 +932,7 @@ main_loop_2:
 
 // 0x7D170D
 namespace gamemd {
-ControlClass * _input(FILE * Stream, char * a2, int a3)
+ControlClass * * _input(FILE * Stream, char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1124,7 +1124,7 @@ LABEL_253:
     if ( v14 > 111 ) /*0x7d190a*/
     {
   char *v30; // edi
-  int v16; // ebx
+  ControlClass *v16; // ebx
       switch ( v14 ) /*0x7d1b73*/
       {
         case 'p': /*0x7d1b73*/
@@ -1494,7 +1494,7 @@ LABEL_231:
       goto LABEL_117; /*0x7d1928*/
     if ( v14 <= 103 )
     {
-      int v17 = C; /*0x7d196b*/
+      ControlClass *v17 = C; /*0x7d196b*/
   char v52; // [esp+Ch] [ebp-1C4h] BYREF
       char * v18 = &v52; /*0x7d196e*/
       if ( C == 45 ) /*0x7d1977*/
@@ -1663,7 +1663,7 @@ void int _hextodec(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = C; /*0x7d213c*/
+  ControlClass *v1 = C; /*0x7d213c*/
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7d213a*/
     int v2 = *((_BYTE *)DataGlobal_87C590 + 2 * C) & 4; /*0x7d2158*/
   else
@@ -1677,7 +1677,7 @@ void int _hextodec(int C)
 
 // 0x7D21BE
 namespace gamemd {
-AbstractClass * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
+AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2275,7 +2275,7 @@ unsigned int * _getstream()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  _DWORD * v0 = 0; /*0x7d2dad*/
+  type_info *v0 = 0; /*0x7d2dad*/
   _lock(2); /*0x7d2daf*/
   int v1 = 0; /*0x7d2db4*/
   if ( (int)CRTStreamCount > 0 ) /*0x7d2dbd*/
@@ -2330,10 +2330,9 @@ void _putwc_lk(wchar_t WCh, FILE * File)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  FILE *v2; // esi
+  AbstractClass *v2; // esi
   bool v6; // sf
   int v7; // eax
-
   v2 = File; /*0x7d2fcc*/
   if ( (File->_flag & 0x40) != 0
     || (File->_file == -1
@@ -2743,7 +2742,7 @@ void* setSBCS()
 
 // 0x7D36D5
 namespace gamemd {
-ControlClass * int setSBUpLow()
+ControlClass * * int setSBUpLow()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2948,7 +2947,7 @@ void iswctype(wint_t C, wctype_t Type)
 
 // 0x7D3A6D
 namespace gamemd {
-ControlClass * _winput(FILE * File, CampaignScore * aP1, int a3)
+ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4565,7 +4564,7 @@ int _rmtmp()
 {
   signed int i; // esi
 
-  int v0 = 0; /*0x7d5795*/
+  type_info *v0 = 0; /*0x7d5795*/
   _lock(2); /*0x7d5797*/
   for ( i = 0; i < (int)CRTStreamCount; ++i ) /*0x7d57a5*/
   {
@@ -4642,7 +4641,7 @@ int _setenvp()
   size_t v5; // ebp
   if ( !CRTGlobal_B78BB8 ) /*0x7d5acb*/
     __initmbctable(); /*0x7d5acd*/
-  char * v0 = CRTGlobal_B78228; /*0x7d5ad2*/
+  AbstractClass *v0 = CRTGlobal_B78228; /*0x7d5ad2*/
   int v1 = 0; /*0x7d5ad8*/
   while ( *v0 ) /*0x7d5ade*/
   {
@@ -4868,7 +4867,7 @@ int * __crtGetEnvironmentStringsA()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  CHAR *v0; // ebx
+  AbstractClass *v0; // ebx
   WCHAR *EnvironmentStringsW; // esi
   LPCH EnvironmentStrings; // edi
   WCHAR *i; // eax
@@ -4994,7 +4993,7 @@ void* __init_time()
 
 // 0x7D6624
 namespace gamemd {
-AbstractClass * __init_numeric()
+AbstractClass * * __init_numeric()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5062,7 +5061,7 @@ AbstractClass * __init_numeric()
 
 // 0x7D6AA2
 namespace gamemd {
-AbstractClass * __init_ctype()
+AbstractClass * * __init_ctype()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6782,7 +6781,7 @@ void _alloc_osfhnd()
 {
   unsigned int i; // eax
 
-  int v0 = -1; /*0x7d93a9*/
+  type_info *v0 = -1; /*0x7d93a9*/
   _lock(18); /*0x7d93ac*/
   int v1 = 0; /*0x7d93b1*/
   int v8 = 0; /*0x7d93b4*/
@@ -6927,16 +6926,16 @@ void __crtGetStringTypeA(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, LPWORD 
 
 // 0x7D9872
 namespace gamemd {
-ControlClass * __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int a6, int a7)
+ControlClass * * __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  __int16 v27; // ax
-  __int16 v28; // dx
+  AbstractClass *v27; // ax
+  AbstractClass *v28; // dx
   __int16 v29; // ax
   int result; // eax
 
-  char * v7 = a3; /*0x7d987b*/
+  AbstractClass *v7 = a3; /*0x7d987b*/
   _BYTE v33[23]; // [esp+Ch] [ebp-5Ch] BYREF
   _BYTE * v47 = v33; /*0x7d9883*/
   int v8 = 0; /*0x7d9886*/
@@ -6965,9 +6964,9 @@ ControlClass * __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int a
     {
   int v32; // [esp-4h] [ebp-6Ch]
   int v31; // [esp-4h] [ebp-6Ch]
-  unsigned int v26; // esi
-  char *v25; // ebx
-  char *v17; // edi
+  AbstractClass *v26; // esi
+  AbstractClass *v25; // ebx
+  AbstractClass *v17; // edi
       case 0:
         if ( v10 >= 49 && v10 <= 57 ) /*0x7d98e4*/
           goto LABEL_10; /*0x7d98e4*/
@@ -7106,7 +7105,7 @@ LABEL_106:
         v8 = 4; /*0x7d9ab0*/
         goto LABEL_81; /*0x7d9ab2*/
       case 6:
-        char * v16 = v7 - 2; /*0x7d9ab4*/
+        AbstractClass *v16 = v7 - 2; /*0x7d9ab4*/
         a3 = v7 - 2; /*0x7d9aba*/
         if ( v10 >= 49 && v10 <= 57 ) /*0x7d9ac2*/
           goto LABEL_79; /*0x7d9ac2*/
@@ -7278,9 +7277,9 @@ LABEL_125:
           }
         }
         v29 = v40 | v27; /*0x7d9cfb*/
-        *(_DWORD *)(a1 + 6) = v26; /*0x7d9cff*/
-        *(_DWORD *)(a1 + 2) = v25; /*0x7d9d02*/
-        *(_WORD *)(a1 + 10) = v29; /*0x7d9d05*/
+        a1->nextArrayIndex = v26; /*0x7d9cff*/
+        a1->vtable3 = v25; /*0x7d9d02*/
+        a1->q028 = v29; /*0x7d9d05*/
         result = v45; /*0x7d9d09*/
         *(_WORD *)a1 = v28; /*0x7d9d0d*/
         return result;
@@ -7530,7 +7529,7 @@ void __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINICl
 
 // 0x7DA2B6
 namespace gamemd {
-ControlClass * __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, CampaignScore * aP2, int cchSrc, CampaignScore * aP4, CampaignScore * aP5, CampaignScore * aP6)
+ControlClass * * __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, CampaignScore * aP2, int cchSrc, CampaignScore * aP4, CampaignScore * aP5, CampaignScore * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         CampaignScore *aP0,
@@ -7902,7 +7901,7 @@ void __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cc
 
 // 0x7DA9CD
 namespace gamemd {
-AbstractClass * __crtsetenv(char * Str, int a2)
+AbstractClass * * __crtsetenv(char * Str, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -7910,7 +7909,7 @@ AbstractClass * __crtsetenv(char * Str, int a2)
   unsigned __int8 *v3; // esi
   void *v13; // eax
   size_t v14; // eax
-  CHAR *v16; // esi
+  AbstractClass *v16; // esi
   unsigned __int8 *v17; // eax
   unsigned __int8 *v19; // [esp+Ch] [ebp-8h]
   void *Block; // [esp+10h] [ebp-4h]
@@ -8158,7 +8157,7 @@ void __getlocaleinfo(int a1, LCID Locale, LCTYPE LCType, CCINIClass * aP3)
       if ( GetLastError() != 122 ) /*0x7daf6d*/
         return -1; /*0x7daf6d*/
       v6 = (AbstractClass *)__crtGetLocaleInfoA(Locale, LCType, 0, 0, 0); /*0x7daf78*/
-      int v7 = (int)v6; /*0x7daf7d*/
+      AbstractClass *v7 = (int)v6; /*0x7daf7d*/
       if ( !v6 ) /*0x7daf84*/
         return -1; /*0x7daf84*/
       v8 = (CCINIClass *)malloc(v6); /*0x7daf87*/
@@ -8213,7 +8212,7 @@ LABEL_9:
 
 // 0x7DB207
 namespace gamemd {
-AbstractClass * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
+AbstractClass * * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -8224,7 +8223,7 @@ AbstractClass * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
   _BYTE v23[12]; // [esp+Ch] [ebp-1Ch] BYREF
   _BYTE v24[12]; // [esp+18h] [ebp-10h] BYREF
   int v25; // [esp+24h] [ebp-4h]
-  int v5 = a5; /*0x7db211*/
+  AbstractClass *v5 = a5; /*0x7db211*/
   v6 = a2 & 0x8000; /*0x7db21c*/
   memset(v23, 204, 10); /*0x7db228*/
   v23[10] = -5; /*0x7db250*/
@@ -8245,7 +8244,7 @@ AbstractClass * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
     {
       strcpy((char *)(v5 + 4), "1#SNAN"); /*0x7db2b9*/
 LABEL_22:
-      *(_BYTE *)(v5 + 3) = 6; /*0x7db30a*/
+      v5->vtable4 = 6; /*0x7db30a*/
       return 0; /*0x7db310*/
     }
     if ( v6 && v8 == -1073741824 ) /*0x7db2c6*/
@@ -8254,7 +8253,7 @@ LABEL_22:
       {
         strcpy((char *)(v5 + 4), "1#IND"); /*0x7db2d3*/
 LABEL_19:
-        *(_BYTE *)(v5 + 3) = 5; /*0x7db2ed*/
+        v5->vtable4 = 5; /*0x7db2ed*/
         return 0; /*0x7db2f7*/
       }
     }
@@ -8303,7 +8302,7 @@ LABEL_29:
       for ( i = (unsigned __int8)-(char)v12; i; --i ) /*0x7db3c9*/
         __shr_12(v24); /*0x7db3cf*/
     }
-    int v14 = v5 + 4; /*0x7db3db*/
+    AbstractClass *v14 = v5 + 4; /*0x7db3db*/
     a5 = v5 + 4; /*0x7db3e0*/
     if ( v11 + 1 > 0 ) /*0x7db3e3*/
     {
@@ -8317,7 +8316,7 @@ LABEL_29:
         __add_12(v24, &a1); /*0x7db40b*/
         __shl_12(v24); /*0x7db414*/
         char v15 = v24[11]; /*0x7db419*/
-        _BYTE * v16 = (_BYTE *)a5; /*0x7db41c*/
+        AbstractClass *v16 = (_BYTE *)a5; /*0x7db41c*/
         v24[11] = 0; /*0x7db41f*/
         ++a5; /*0x7db428*/
         v10 = a3-- == 1; /*0x7db42b*/
@@ -8329,7 +8328,7 @@ LABEL_29:
     char v17 = *(_BYTE *)(v14 - 1); /*0x7db435*/
     _BYTE * v18 = (_BYTE *)(v14 - 2); /*0x7db439*/
     bool v19 = v17 < 53; /*0x7db43a*/
-    _BYTE * v20 = (_BYTE *)(v5 + 4); /*0x7db43d*/
+    AbstractClass *v20 = (_BYTE *)(v5 + 4); /*0x7db43d*/
     if ( v19 ) /*0x7db440*/
     {
       while ( v18 >= v20 ) /*0x7db474*/
@@ -8343,8 +8342,8 @@ LABEL_29:
         --v18; /*0x7db47b*/
       }
       *(_WORD *)v5 = 0; /*0x7db482*/
-      *(_BYTE *)(v5 + 2) = 32; /*0x7db486*/
-      *(_BYTE *)(v5 + 3) = 1; /*0x7db48a*/
+      v5->vtable3 = 32; /*0x7db486*/
+      v5->vtable4 = 1; /*0x7db48a*/
       *v20 = 48; /*0x7db48e*/
       goto LABEL_54; /*0x7db48e*/
     }
@@ -8364,17 +8363,17 @@ LABEL_46:
     ++*v18; /*0x7db459*/
 LABEL_47:
     char v21 = (_BYTE)v18 - v5 - 3; /*0x7db45b*/
-    *(_BYTE *)(v5 + 3) = v21; /*0x7db45f*/
+    v5->vtable4 = v21; /*0x7db45f*/
     *(_BYTE *)(v21 + v5 + 4) = 0; /*0x7db465*/
     return v25; /*0x7db471*/
   }
 LABEL_6:
   *(_WORD *)v5 = 0; /*0x7db27e*/
-  *(_BYTE *)(v5 + 2) = 32; /*0x7db282*/
-  *(_BYTE *)(v5 + 3) = 1; /*0x7db286*/
-  *(_BYTE *)(v5 + 4) = 48; /*0x7db28a*/
+  v5->vtable3 = 32; /*0x7db282*/
+  v5->vtable4 = 1; /*0x7db286*/
+  v5->vtable2 = 48; /*0x7db28a*/
 LABEL_54:
-  *(_BYTE *)(v5 + 5) = 0; /*0x7db491*/
+  v5->abstractFlags = 0; /*0x7db491*/
   return 1; /*0x7db46d*/
 }
 }
@@ -8995,7 +8994,6 @@ unsigned char * _mbschr(const unsigned char * Str, unsigned int C)
   const unsigned __int8 *i; // esi
   unsigned __int16 v4; // bx
   unsigned __int8 v5; // al
-
   if ( !CRTGlobal_B7885C ) /*0x7dc384*/
     return (unsigned __int8 *)strchr((const char *)Str, C); /*0x7dc38c*/
   _lock(25); /*0x7dc397*/
@@ -9024,7 +9022,7 @@ unsigned char * _mbschr(const unsigned char * Str, unsigned int C)
     }
   }
   _unlock(25); /*0x7dc3f3*/
-  return v4 == C ? (unsigned __int8 *)i : 0;
+  return v4 = = C ? (unsigned __int8 *)i : 0;
 }
 }
 } // namespace gamemd

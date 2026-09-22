@@ -234,7 +234,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
 
 // 0x411B20
 namespace gamemd {
-AbstractClass * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
+AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -637,7 +637,7 @@ bool sub_413CD0(int a1)
 
 // 0x41B110
 namespace gamemd {
-INIClass * PlaceAircraftFromINI()
+INIClass * * PlaceAircraftFromINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -646,9 +646,9 @@ INIClass * PlaceAircraftFromINI()
   unsigned __int8 *StringByIndex; // eax
   INIClass *v7; // esi
   INIClass *v9; // edi
-  AbstractClass *v10; // esi
+  AircraftClass *v10; // esi
   FootClass *v12; // esi
-  CCINIClass *v16; // eax
+  INIClass *v16; // eax
   CCINIClass *v20; // edi
   CCINIClass *v22; // ebx
   CCINIClass *v27; // eax

@@ -13,7 +13,7 @@
 
 // 0x419B00
 namespace gamemd {
-TechnoClass * Cell::IsOccupied(short * a2, char a3)
+TechnoClass * * Cell::IsOccupied(short * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -38,10 +38,10 @@ TechnoClass * Cell::IsOccupied(short * a2, char a3)
       }
     }
   }
-  int v7 = (int)*(this + 433); /*0x419b8a*/
-  if ( *(_BYTE *)(v7 + 3597) ) /*0x419b90*/
+  TechnoClass *v7 = (int)*(this + 433); /*0x419b8a*/
+  if ( v7->__pad_E0D ) /*0x419b90*/
     return 1; /*0x419b90*/
-  if ( !*(_BYTE *)(v7 + 3580) /*0x419bbf*/
+  if ( !v7->qDFC /*0x419bbf*/
   int v8; // ecx
     || (v8 = (int)*(this + 361)) == 0
     || (v16 = 1, (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 44))(v8) != 1) )
@@ -141,7 +141,7 @@ LABEL_6:
 
 // 0x481670
 namespace gamemd {
-AbstractClass * Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * aP4)
+AbstractClass * * Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -150,9 +150,8 @@ AbstractClass * Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * aP4
   void *Block; // [esp+18h] [ebp-14h]
 
   if ( (_BYTE)aP4 ) /*0x48167e*/
-    _DWORD * v6 = (_DWORD *)this->q0E8; /*0x481680*/
-  else
-    v6 = (_DWORD *)this->q0E4; /*0x481688*/
+    ObjectClass *v6 = (_DWORD *)this->q0E8; /*0x481680*/
+  ObjectClass *v6 = (_DWORD *)this->q0E4; /*0x481688*/
   char v14 = 0; /*0x481692*/
   if ( !(_BYTE)a4 && v6 ) /*0x48169f*/
   {
@@ -172,11 +171,10 @@ AbstractClass * Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * aP4
   }
 LABEL_11:
   if ( (_BYTE)aP4 ) /*0x4816ce*/
-    int v8 = this->q0E8; /*0x4816d0*/
-  else
-    v8 = this->q0E4; /*0x4816d8*/
+    ObjectClass *v8 = this->q0E8; /*0x4816d0*/
+  ObjectClass *v8 = this->q0E4; /*0x4816d8*/
   int v9 = 0; /*0x4816de*/
-  int v10 = 0; /*0x4816e0*/
+  AbstractClass *v10 = 0; /*0x4816e0*/
   int v11 = 10; /*0x4816e2*/
   Block = 0; /*0x4816e9*/
   int v17 = 0; /*0x4816ed*/
@@ -194,7 +192,7 @@ LABEL_11:
       if ( (v19 || !v10) && v11 > 0 ) /*0x481725*/
         break; /*0x481725*/
 LABEL_24:
-      v8 = *(_DWORD *)(v8 + 48); /*0x481750*/
+      v8 = v8->nextObject; /*0x481750*/
       if ( !v8 ) /*0x481755*/
         goto LABEL_25; /*0x481755*/
       v11 = v21; /*0x48170d*/
@@ -342,7 +340,7 @@ int Cell::IsValidHeight()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->q038; /*0x485060*/
+  VectorClass *v1 = this->q038; /*0x485060*/
   return v1 >= dword_AA0738 && v1 < dword_AA0738 + 14; /*0x485079*/
 }
 }
@@ -350,13 +348,13 @@ int Cell::IsValidHeight()
 
 // 0x486380
 namespace gamemd {
-int Cell::IsEmpty()
+void Cell::IsEmpty()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->q038; /*0x486380*/
-  return v1 = = 0xFFFF || !v1; /*0x486390*/
+  VectorClass *v1 = this->q038; /*0x486380*/
+  VectorClass *v1 = = 0xFFFF || !v1; /*0x486390*/
 }
 }
 } // namespace gamemd
@@ -368,7 +366,7 @@ int Cell::IsGroundTypeRange()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->q038; /*0x4865d0*/
+  RandomMap *v1 = this->q038; /*0x4865d0*/
   if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x4865e2*/
     return 1; /*0x4865e4*/
   return v1 >= dword_AA0738 && v1 < dword_AA0738 + 14 /*0x48663a*/
@@ -422,13 +420,13 @@ int Cell::IsInRange2()
 
 // 0x4867B0
 namespace gamemd {
-int Cell::IsShore()
+void Cell::IsShore()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->q038; /*0x4867b0*/
-  return v1 = = unk_AA0E18 || v1 >= unk_AA0748 && v1 < unk_AA0748 + 16; /*0x4867d0*/
+  RandomMap *v1 = this->q038; /*0x4867b0*/
+  RandomMap *v1 = = unk_AA0E18 || v1 >= unk_AA0748 && v1 < unk_AA0748 + 16; /*0x4867d0*/
 }
 }
 } // namespace gamemd
@@ -647,7 +645,7 @@ int Cell::IsBridge2()
 
 // 0x4DCE80
 namespace gamemd {
-Coord * Cell::IsValidDestination(short * a2)
+Coord * * Cell::IsValidDestination(short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -792,7 +790,7 @@ int Cell::SetRadar(IUnknown * aP1)
 
 // 0x56E990
 namespace gamemd {
-AbstractClass * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
+AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -878,12 +876,12 @@ AbstractClass * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
 
 // 0x56EB80
 namespace gamemd {
-ObjectClass * Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5)
+ObjectClass * * Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v5; // edi
-  _DWORD *v8; // esi
+  AbstractClass *v8; // esi
   char result; // al
   IUnknown *v10; // ebp
   IUnknown *v12; // ebx
@@ -917,7 +915,7 @@ ObjectClass * Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, 
     a1[2] = 0; /*0x56ec02*/
   int v21; // [esp+14h] [ebp-14h] BYREF
     Coord::To_Screen(*(_DWORD **)&stru_87C374[44976], a1, (IUnknown *)&v21); /*0x56ec0a*/
-    v22 = (ObjectClass *)((char *)v22 - 15 * *((char *)v8 + 283)); /*0x56ec33*/
+    v22 = (ObjectClass *)((char *)v22 - 15 * v8->q11B0); /*0x56ec33*/
     result = Cell::CreateCrater(v21 - 128, (int)&v22[-1].fallRate, 256, 256, 0); /*0x56ec53*/
     v12 = (IUnknown *)v8[14]; /*0x56ec58*/
     v10 = aP1; /*0x56ec5b*/
@@ -1001,7 +999,7 @@ LABEL_10:
 
 // 0x579B70
 namespace gamemd {
-HouseClass * Cell::GetAdjacencyFlags(MouseClass * aP0)
+HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1013,7 +1011,7 @@ HouseClass * Cell::GetAdjacencyFlags(MouseClass * aP0)
   _DWORD *v23; // ebp
   unsigned int v24; // eax
   _DWORD *v25; // eax
-  _DWORD *v26; // ebx
+  CellLand *v26; // ebx
   int v27; // edi
   int v28; // edi
   int v29; // ebp
@@ -1378,7 +1376,7 @@ LABEL_15:
     LOWORD(v11) = v5 + *a2; /*0x6b5fbc*/
     HIWORD(v11) = v3 + a2[1]; /*0x6b5fc1*/
     int v10 = v11; /*0x6b5fd4*/
-    _DWORD * v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v10); /*0x6b5fe3*/
+    IUnknown *v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v10); /*0x6b5fe3*/
     if ( !(unsigned __int8)LayerClass::CoordinatesLegal(a2) /*0x6b6011*/
       || *((_BYTE *)v6 + 284)
       || v6[18] != -1
@@ -1577,7 +1575,7 @@ LABEL_43:
 
 // 0x6D8700
 namespace gamemd {
-CellStruct * Cell::GetAdjacentPassableMask(IUnknown * aP0, int a2)
+CellStruct * * Cell::GetAdjacentPassableMask(IUnknown * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

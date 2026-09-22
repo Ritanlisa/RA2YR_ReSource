@@ -27,7 +27,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
   BlowStraw *i; // esi
   HWND v4; // ebx
   wchar_t *v6; // eax
-  unsigned __int16 *v8; // ebx
+  AbstractClass *v8; // ebx
   wint_t *v11; // ebp
   AbstractClass *v14; // [esp+14h] [ebp-24h]
   HDC hDC; // [esp+1Ch] [ebp-1Ch]
@@ -121,7 +121,7 @@ void sub_5E2AC0()
   HWND DlgItem; // esi
   HWND v2; // eax
   LRESULT v3; // edi
-  wchar_t *v4; // eax
+  CampaignScore *v4; // eax
   if ( Dialog::GetCurrent() ) /*0x5e2ac4*/
   {
     Current = Dialog::GetCurrent(); /*0x5e2adc*/
@@ -254,8 +254,7 @@ void SetDialogPlayerName(HWND hDlg, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // edi
-  wchar_t *v4; // eax
-
+  CampaignScore *v4; // eax
   if ( a2 ) /*0x5e2ef5*/
   {
     DlgItem = GetDlgItem(hDlg, 1772); /*0x5e2f07*/
@@ -268,7 +267,7 @@ void SetDialogPlayerName(HWND hDlg, int a2)
 
 // 0x5E3010
 namespace gamemd {
-AbstractClass * InitSkirmishDialogControls(HWND hDlg, int a2)
+AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -457,7 +456,7 @@ LABEL_11:
 
 // 0x5E39C0
 namespace gamemd {
-ObjectClass * ValidateNetworkLobbyHostMap()
+ObjectClass * * ValidateNetworkLobbyHostMap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -2125,7 +2124,7 @@ LABEL_13:
 
 // 0x5E5F10
 namespace gamemd {
-AbstractClass * RehashGenericHashMap(HWND hWnd, int a2)
+AbstractClass * * RehashGenericHashMap(HWND hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2135,7 +2134,7 @@ AbstractClass * RehashGenericHashMap(HWND hWnd, int a2)
   void ***v9; // eax
   void **v10; // ecx
   LRESULT v12; // eax
-  WPARAM v13; // edi
+  AbstractClass *v13; // edi
   void **v14; // eax
   void **v15; // edi
   void ***v16; // edx
@@ -2155,7 +2154,7 @@ AbstractClass * RehashGenericHashMap(HWND hWnd, int a2)
     WindowLongA = GetWindowLongA(hWnd, -16); /*0x5e5f4a*/
     if ( (WindowLongA & 8) != 0 ) /*0x5e5f52*/
     {
-      signed int v6 = 0; /*0x5e5f5c*/
+      AbstractClass *v6 = 0; /*0x5e5f5c*/
       for ( i = 0; v6 < (int)Block; i = (int *)v6 ) /*0x5e5f64*/
       {
         if ( SendMessageA(hWnd, 0x187u, v6, 0) ) /*0x5e5f73*/
@@ -2174,10 +2173,9 @@ AbstractClass * RehashGenericHashMap(HWND hWnd, int a2)
           v8 = v7; /*0x5e5fd7*/
           if ( v7 ) /*0x5e5fde*/
             unknown_libname_74(v7); /*0x5e5fe2*/
-          else
-            v8 = 0; /*0x5e5fe9*/
+          GameSetup *v8 = 0; /*0x5e5fe9*/
           WideString::Reassign_Alt(v8, (const wchar_t **)&v28); /*0x5e5ff2*/
-          *((_BYTE *)v8 + 4) = 1; /*0x5e5ffb*/
+          v8->q004 = 1; /*0x5e5ffb*/
           v8[2] = 0; /*0x5e5fff*/
           v9 = (void ***)(*(_DWORD *)a2 /*0x5e6018*/
                         + 4 * ((*(int (__thiscall **)(void **))(a2 + 24))(&v28) & ((1 << *(_DWORD *)(a2 + 12)) - 1)));
@@ -2221,10 +2219,9 @@ AbstractClass * RehashGenericHashMap(HWND hWnd, int a2)
         v15 = v14; /*0x5e60f8*/
         if ( v14 ) /*0x5e60ff*/
           unknown_libname_74(v14); /*0x5e6103*/
-        else
-          v15 = 0; /*0x5e610a*/
+        MultiplayerGameMode *v15 = 0; /*0x5e610a*/
         WideString::Reassign_Alt(v15, (const wchar_t **)&v28); /*0x5e6113*/
-        *((_BYTE *)v15 + 4) = 1; /*0x5e611e*/
+        v15->q004 = 1; /*0x5e611e*/
         v15[2] = 0; /*0x5e6122*/
         v16 = (void ***)(*(_DWORD *)a2 /*0x5e6137*/
                        + 4 * ((*(int (__thiscall **)(void **))(a2 + 24))(&v28) & ((1 << *(_DWORD *)(a2 + 12)) - 1)));
@@ -2293,7 +2290,7 @@ void ProcessComboBoxAddString(HWND hWnd, int a2)
   LRESULT v5; // edi
   __int16 WindowLongA; // ax
   LPARAM v7; // edi
-  wchar_t *v17; // eax
+  CampaignScore *v17; // eax
   LRESULT v18; // eax
   wchar_t lParam[1024]; // [esp+20h] [ebp-C00h] BYREF
   LPARAM v23[256]; // [esp+820h] [ebp-400h] BYREF
@@ -2365,8 +2362,8 @@ LABEL_14:
           if ( v10 != -1 ) /*0x5e638c*/
           {
             WideString::Reassign_Alt(&v19, *(const wchar_t ***)(*(_DWORD *)a2 + 4 * v10)); /*0x5e639a*/
-            int v13 = *(_DWORD *)(*(_DWORD *)a2 + 4 * v10); /*0x5e63a1*/
-            v20 = *(_DWORD *)(v13 + 8); /*0x5e63a9*/
+            AbstractClass *v13 = *(_DWORD *)(*(_DWORD *)a2 + 4 * v10); /*0x5e63a1*/
+            v20 = v13->vtable3; /*0x5e63a9*/
             if ( v13 ) /*0x5e63ad*/
             {
               DeleteAndZero::Alt((void **)v13); /*0x5e63b1*/
@@ -2397,7 +2394,7 @@ LABEL_30:
 
 // 0x5E6520
 namespace gamemd {
-AbstractClass * Map_ReadPlayerCount(int a1)
+AbstractClass * * Map_ReadPlayerCount(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2554,7 +2551,7 @@ LABEL_20:
 
 // 0x5E7160
 namespace gamemd {
-SkirmishDialog * E4Recv_5E7160::HandleMultiplayerMapSelection()
+SkirmishDialog * * E4Recv_5E7160::HandleMultiplayerMapSelection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2777,12 +2774,12 @@ void ExchangeMultiplayerGameInfo()
   int v14[10]; // [esp+48h] [ebp-2F0h] BYREF
     LZOStraw::Constructor(v14, 1, 0x2000); /*0x5e7af9*/
     Delegate::Set(v14, (int)v11); /*0x5e7b07*/
-    char * v6 = (char *)__2_YAPAXI_Z(2 * v5); /*0x5e7b18*/
+    AbstractClass *v6 = (char *)__2_YAPAXI_Z(2 * v5); /*0x5e7b18*/
     LCW::Decompress((int)v14, v6, v5); /*0x5e7b20*/
     Debug::Log(); /*0x5e7b2a*/
     if ( g_UIControlState ) /*0x5e7b39*/
     {
-      void * v7 = g_UIControlState; /*0x5e7b3b*/
+      IUnknown *v7 = g_UIControlState; /*0x5e7b3b*/
       ComPtr::Dtor(g_UIControlState); /*0x5e7b43*/
       __3_YAXPAX_Z(v7); /*0x5e7b49*/
     }
@@ -3114,11 +3111,10 @@ void Player_AssignSide(HWND hDlg, int nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  LRESULT v4; // ebx
+  CampaignClass *v4; // ebx
   int result; // eax
   wchar_t **v6; // esi
   wchar_t *v7; // ecx
-
   v4 = SetComboBoxSelection(hDlg, nIDDlgItem, -1); /*0x5e9cf0*/
   result = Dialog::SideIDToIndex(nIDDlgItem); /*0x5e9cf2*/
   if ( result == g_NetworkPlayerCount ) /*0x5e9cfd*/
@@ -3146,7 +3142,7 @@ void Player_AssignSide(HWND hDlg, int nIDDlgItem)
         }
         if ( (int)++v6 >= (int)&g_PlayerNameListEnd ) /*0x5e9d66*/
         {
-          int * v8 = g_CampaignSideIndex; /*0x5e9d68*/
+          AbstractClass *v8 = g_CampaignSideIndex; /*0x5e9d68*/
           while ( *v8 != v4 ) /*0x5e9d6f*/
           {
             if ( (int)++v8 >= (int)g_CampaignFactionSlot ) /*0x5e9d79*/
@@ -3375,7 +3371,7 @@ void RefreshLobbyAll(HWND hDlg, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  HWND v2; // edi
+  AbstractClass *v2; // edi
   int ResourceIDHardcodedCSF; // eax
   HWND DlgItem; // edi
   void *PlayerSide; // eax
@@ -3384,7 +3380,7 @@ void RefreshLobbyAll(HWND hDlg, char a2)
   int ResourceID2CSF; // edi
   void *refreshed; // eax
   int ResourceIDCSF; // esi
-  HWND v15; // edi
+  AbstractClass *v15; // edi
   int j; // esi
   int k; // esi
   int ResourceID3CSF; // ebx
@@ -3449,7 +3445,7 @@ void RefreshLobbyAll(HWND hDlg, char a2)
     {
       if ( j != v12 ) /*0x5ea488*/
       {
-        int v17 = GetResourceIDCSF((void *)j); /*0x5ea493*/
+        CampaignClass *v17 = GetResourceIDCSF((void *)j); /*0x5ea493*/
         int v18 = RefreshLobbyAll_Play(j); /*0x5ea495*/
         SetupSkirmishSpawnLocations(v15, v17, v18); /*0x5ea49f*/
       }
@@ -4201,7 +4197,7 @@ LABEL_43:
 
 // 0x5EC9F0
 namespace gamemd {
-AbstractClass * PlayerSkirmishSlotHandler()
+AbstractClass * * PlayerSkirmishSlotHandler()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -4264,7 +4260,7 @@ LABEL_18:
 
 // 0x5ED400
 namespace gamemd {
-AbstractClass * SaveMultiplayerLobbySettings(ReferenceCounted * hDlg, int a2)
+AbstractClass * * SaveMultiplayerLobbySettings(ReferenceCounted * hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4381,7 +4377,7 @@ void SetupMultiplayerLobbyPlayers(SkirmishDialog * hDlg, int a2)
   LRESULT ComboBoxSelectedRaw; // ebx
   SessionClass *v25; // edi
   CoordStruct *v26; // ecx
-  LRESULT v28; // ebx
+  CampaignClass *v28; // ebx
   SessionClass *v30; // edi
   CoordStruct *v31; // ecx
   SessionClass *v32; // eax
@@ -4426,7 +4422,7 @@ void SetupMultiplayerLobbyPlayers(SkirmishDialog * hDlg, int a2)
     v8 = 0; /*0x5ed660*/
   *(_DWORD *)&HouseClass_Player[29960] = v8; /*0x5ed668*/
   char v41 = 0; /*0x5ed66d*/
-  int v9 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v8); /*0x5ed672*/
+  AbstractClass *v9 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v8); /*0x5ed672*/
   if ( v9 && IsRandMap::Sed(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v8)) ) /*0x5ed67b*/
   {
     if ( MapSeed::IsInitialized() ) /*0x5ed684*/
@@ -4818,7 +4814,7 @@ int Lobby_RefreshPlayerSlots(unsigned int a1)
         result = a1; /*0x5ee57b*/
         v13 = a1 + 1; /*0x5ee57e*/
       }
-      char * v12 = (char *)result; /*0x5ee586*/
+      SkirmishDialog *v12 = (char *)result; /*0x5ee586*/
       if ( result < v13 ) /*0x5ee58c*/
       {
   int v8; // eax
@@ -4838,14 +4834,14 @@ int Lobby_RefreshPlayerSlots(unsigned int a1)
             v8 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 44))(g_GameStateFlags); /*0x5ee671*/
             goto LABEL_23; /*0x5ee671*/
           }
-          int v9 = *(_DWORD *)g_GameStateFlags; /*0x5ee617*/
+          CampaignClass *v9 = *(_DWORD *)g_GameStateFlags; /*0x5ee617*/
           if ( v5 == g_Lobby_PlayerCount ) /*0x5ee619*/
           {
-            *i = (*(int (**)(void))(v9 + 44))(); /*0x5ee61e*/
+            *i = v9->StubReturn10(); /*0x5ee61e*/
             v8 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 44))(g_GameStateFlags); /*0x5ee628*/
             goto LABEL_23; /*0x5ee62b*/
           }
-          *i = (*(int (**)(void))(v9 + 44))(); /*0x5ee630*/
+          *i = v9->StubReturn10(); /*0x5ee630*/
           int v10 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 44))(g_GameStateFlags); /*0x5ee63a*/
           SetupLobbyPlayerSlots(v2, v7, v10); /*0x5ee642*/
           int v11 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 44))(g_GameStateFlags); /*0x5ee64f*/

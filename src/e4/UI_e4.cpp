@@ -412,7 +412,7 @@ void sub_6D0E60()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  void * v0 = DataGlobal_B0FB08; /*0x6d0e73*/
+  AbstractClass *v0 = DataGlobal_B0FB08; /*0x6d0e73*/
   int v2[2]; // [esp+4h] [ebp-18h] BYREF
   v2[0] = 0; /*0x6d0e7b*/
   v2[1] = 0; /*0x6d0e7f*/
@@ -755,7 +755,7 @@ void sub_6D0FD0()
 {
   int result; // eax
 
-  int * v0 = (int *)&DataGlobal_B0C1C0; /*0x6d0fd4*/
+  ShapeButtonClass *v0 = (int *)&DataGlobal_B0C1C0; /*0x6d0fd4*/
   do /*0x6d0fef*/
   {
     ShapeButton::SetShape((int)v0, 0, 0, 0); /*0x6d0fe1*/
@@ -830,7 +830,7 @@ int sub_639DA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v0; // ebx
+  CellStruct *v0; // ebx
   v0 = g_SelectionManager; /*0x639da2*/
   int v1 = 0; /*0x639dae*/
   if ( (int)g_SelectionManager <= 0 ) /*0x639db2*/
@@ -1359,7 +1359,6 @@ void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4)
   int BuildingAnimByName; // eax
   __int16 v18; // [esp+10h] [ebp-20h]
   unsigned __int8 v19; // [esp+12h] [ebp-1Eh]
-
   result = DataGlobal_884B8C; /*0x6ac483*/
   int v15 = a1; /*0x6ac488*/
   if ( DataGlobal_884B8C ) /*0x6ac48e*/
@@ -1367,7 +1366,7 @@ void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4)
     if ( a1 ) /*0x6ac496*/
     {
       int v5 = a2[1]; /*0x6ac49f*/
-      int v6 = aP0; /*0x6ac4a5*/
+      BitFont *v6 = aP0; /*0x6ac4a5*/
       int v20 = *a2; /*0x6ac4b5*/
       BuildingAnimByName = FindBuildingAnimByName(DataGlobal_836ED8, 1); /*0x6ac4b9*/
   _BYTE v14[4]; // [esp+0h] [ebp-30h] BYREF

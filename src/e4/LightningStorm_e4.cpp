@@ -12,7 +12,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  __int16 v7; // si
+  TechnoTypeClass *v7; // si
   wchar_t *StringCSF; // eax
 
   result = a3; /*0x539eb1*/
@@ -87,7 +87,7 @@ int LightningStorm::IsActive()
 
 // 0x53A140
 namespace gamemd {
-AnimClass * LightningStorm::Strike(IUnknown * aP0)
+AnimClass * * LightningStorm::Strike(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -117,8 +117,7 @@ AnimClass * LightningStorm::Strike(IUnknown * aP0)
     v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a216*/
     if ( v6 ) /*0x53a220*/
       v7 = AnimClass::ctor(v6, v5, &aP2, 0, (CoordStruct *)1, (void *)0x600, 0, 0); /*0x53a23c*/
-    else
-      v7 = 0; /*0x53a240*/
+    AnimClass *v7 = 0; /*0x53a240*/
     if ( dword_A9FA70 < dword_A9FA68 /*0x53a278*/
       || (unk_A9FA6D || !dword_A9FA68)
       && dword_A9FA74 > 0
@@ -168,7 +167,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   void **v22; // esi
   void **v33; // [esp+30h] [ebp-10h]
 
-  _DWORD * v3 = Coord::To_Cell(&DataGlobal_87F7E8, &a1); /*0x53a31a*/
+  IUnknown *v3 = Coord::To_Cell(&DataGlobal_87F7E8, &a1); /*0x53a31a*/
   int v29; // [esp+1Ch] [ebp-24h] BYREF
   Coords = CellClass::GetCoords(v3, &v29); /*0x53a31f*/
   int v5 = Coords[1]; /*0x53a328*/
@@ -183,14 +182,13 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v8 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a366*/
   if ( v8 ) /*0x53a370*/
     v9 = AnimClass::ctor(v8, v7, v34, 0, 1, (void *)0x600, 0, 0); /*0x53a38c*/
-  else
-    v9 = 0; /*0x53a390*/
+  AnimClass *v9 = 0; /*0x53a390*/
   if ( unk_A9FA28 < unk_A9FA20 /*0x53a3c8*/
     || (unk_A9FA25 || !unk_A9FA20)
     && unk_A9FA2C > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(unk_A9FA18 + 8))(&unk_A9FA18, unk_A9FA2C + unk_A9FA20, 0) )
   {
-    int v10 = unk_A9FA28++; /*0x53a3d5*/
+    AnimClass *v10 = unk_A9FA28++; /*0x53a3d5*/
     *((_DWORD *)unk_A9FA1C + v10) = v9; /*0x53a3e4*/
   }
   int v27 = v3[9]; /*0x53a40f*/
@@ -217,11 +215,11 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
       AnimClass::ctor(v16, WarheadVersusMultiplier, &v31, 0, 1, (void *)0x2600, v17, 0); /*0x53a50e*/
     }
     char v25 = 0; /*0x53a515*/
-    _DWORD * v18 = Cell::IsBridge(v3); /*0x53a51f*/
+    Coord *v18 = Cell::IsBridge(v3); /*0x53a51f*/
     v29 = 0; /*0x53a524*/
     int v30 = 0; /*0x53a528*/
     ClosestObjectCell = Object::FindClosestObjectCell(v3, &v29, 0, 0); /*0x53a538*/
-    int v20 = ClosestObjectCell; /*0x53a53d*/
+    TechnoClass *v20 = ClosestObjectCell; /*0x53a53d*/
     if ( !ClosestObjectCell /*0x53a552*/
   char v26; // [esp+13h] [ebp-2Dh]
       || (v26 = 1, (*(int (__thiscall **)(int))(*(_DWORD *)ClosestObjectCell + 44))(ClosestObjectCell) != 15) )

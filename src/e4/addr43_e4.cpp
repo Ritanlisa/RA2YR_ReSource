@@ -35,14 +35,14 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v9; // eax
+  AbstractClass *v9; // eax
   if ( *(this + 12) ) /*0x431bc8*/
     return !a2 && !a3; /*0x431bdb*/
   if ( this->vt_slot_20(0) ) /*0x431bef*/
     *(this + 18) = this->vt_slot_44(); /*0x431bfd*/
   else
     *(this + 18) = 0; /*0x431c02*/
-  int v5 = a2; /*0x431c05*/
+  TagClass *v5 = a2; /*0x431c05*/
   if ( a2 ) /*0x431c0f*/
   {
     if ( a2 < 1024 ) /*0x431c17*/
@@ -73,7 +73,7 @@ LABEL_14:
     this->vt_slot_64(12, 0, 0); /*0x431d7d*/
     return 0; /*0x431d7d*/
   }
-  signed int v6 = *(this + 18); /*0x431c6d*/
+  AudioController *v6 = *(this + 18); /*0x431c6d*/
   *((_BYTE *)this + 36) = 1; /*0x431c75*/
   *((_BYTE *)this + 38) = 0; /*0x431c79*/
   *(this + 14) = 0; /*0x431c7c*/
@@ -84,9 +84,9 @@ LABEL_14:
   *(this + 20) = 0; /*0x431c8b*/
   if ( v6 ) /*0x431c8e*/
   {
-    int v7 = 0; /*0x431c97*/
+    AbstractClass *v7 = 0; /*0x431c97*/
     int v11 = 0; /*0x431c9b*/
-    signed int v10 = v6; /*0x431c9f*/
+    AudioController *v10 = v6; /*0x431c9f*/
     if ( v6 > (int)*(this + 13) ) /*0x431ca3*/
       v10 = *(this + 13); /*0x431ca5*/
     bool v8 = this->vt_slot_24() == 0; /*0x431cb0*/
@@ -139,7 +139,7 @@ LABEL_14:
 
 // 0x4373B0
 namespace gamemd {
-MouseClass * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XSurface * aP3, int a4, XSurface * aP5, XSurface * aP6, XSurface * aP7, XSurface * aP8, int a10, int a11, int a12)
+MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XSurface * aP3, int a4, XSurface * aP5, XSurface * aP6, XSurface * aP7, XSurface * aP8, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -490,7 +490,7 @@ MouseClass * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XSur
 
 // 0x437A10
 namespace gamemd {
-MouseClass * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IUnknown * aP3, unsigned int * a4, int * a5, TechnoClass * aP6, int a8, int a9, TechnoClass * aP9, int a11, int a12, TechnoClass * aP12, int a14, int a15)
+MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IUnknown * aP3, unsigned int * a4, int * a5, TechnoClass * aP6, int a8, int a9, TechnoClass * aP9, int a11, int a12, TechnoClass * aP12, int a14, int a15)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

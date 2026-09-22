@@ -133,7 +133,7 @@ LABEL_28:
 
 // 0x583AD0
 namespace gamemd {
-AbstractClass * E4Recv_583AD0::sub_583AD0(int * a2)
+AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -621,7 +621,7 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass * aP1, MouseClass 
       }
       v5 = v19; /*0x588838*/
 LABEL_15:
-  _DWORD *v12; // eax
+  IUnknown *v12; // eax
       if ( v8 >= 0x40000 || (v12 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v8)) == 0 ) /*0x588852*/
       {
         g_Map_GlobalCellIndex = v17; /*0x588854*/
@@ -684,7 +684,7 @@ int unknown::Read(unsigned short * a2)
   int result; // eax
   _WORD *i; // ecx
 
-  int v2 = this->m_Position; /*0x5896a2*/
+  AbstractClass *v2 = this->m_Position; /*0x5896a2*/
   result = 0; /*0x5896a5*/
   if ( v2 <= 0 ) /*0x5896aa*/
     return -1; /*0x5896e1*/
@@ -791,10 +791,10 @@ ScenarioClass * * ComputeMapCameraBounds()
       if ( !(unsigned __int8)ScenarioClass::Is_Waypoint_Valid(i) ) /*0x58b851*/
         break; /*0x58b858*/
       WaypointLocationScenarioClass = (__int16 *)ScenarioClass::Get_Waypoint_Location(&k, i); /*0x58b86a*/
-      void * v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, WaypointLocationScenarioClass); /*0x58b87e*/
-      int v5 = (*(int (__thiscall **)(void *))(*(_DWORD *)v4 + 72))(v4); /*0x58b88f*/
+      AbstractClass *v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, WaypointLocationScenarioClass); /*0x58b87e*/
+      int v5 = v4->GetInvalidCoord(); /*0x58b88f*/
   char v29[4]; // [esp+28h] [ebp-10h] BYREF
-      int * v6 = (int *)(*(int (__thiscall **)(void *, char *, _DWORD))(*(_DWORD *)v4 + 72))(v4, v29, *(_DWORD *)(v5 + 4)); /*0x58b89f*/
+      int * v6 = (int *)v4->GetInvalidCoord(v29, *(_DWORD *)(v5 + 4)); /*0x58b89f*/
   char v28[8]; // [esp+20h] [ebp-18h] BYREF
       IsoCoord::ToScreenOffset(*v6, (int)v28, &v24, &v25); /*0x58b8ab*/
       int * v7 = (int *)ScenarioClass::Get_Waypoint_Location(v27, i); /*0x58b8bc*/
@@ -842,7 +842,7 @@ ScenarioClass * * ComputeMapCameraBounds()
     {
       int v17 = 0; /*0x58ba26*/
       *((_DWORD *)g_ScenarioClass_Instance + 1103) = dword_ABED0C; /*0x58ba28*/
-      _DWORD * v18 = g_ScenarioClass_Instance; /*0x58ba2e*/
+      ScenarioClass *v18 = g_ScenarioClass_Instance; /*0x58ba2e*/
       if ( *((int *)g_ScenarioClass_Instance + 1103) > 0 ) /*0x58ba3c*/
       {
         int v19 = 1104; /*0x58ba3e*/
@@ -887,7 +887,7 @@ ScenarioClass * * ComputeMapCameraBounds()
 
 // 0x58EBC0
 namespace gamemd {
-AbstractClass * BuildRandomMapTiles()
+AbstractClass * * BuildRandomMapTiles()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -954,7 +954,7 @@ LABEL_30:
 LABEL_18:
         v4 = v28; /*0x58ecfb*/
 LABEL_19:
-        int * v15 = (int *)(*((_DWORD *)g_RandomMap_TerrainState + v9) + 64); /*0x58ecff*/
+        AbstractClass *v15 = (int *)(*((_DWORD *)g_RandomMap_TerrainState + v9) + 64); /*0x58ecff*/
         if ( !*(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + v9) + 72) ) /*0x58ed0a*/
         {
           *v15 = v7; /*0x58ed16*/
@@ -1024,7 +1024,7 @@ LABEL_32:
             }
             while ( v26 < g_RandomMap_TileData ); /*0x58ee5c*/
           }
-          void * v27 = *(void **)(v25 + 44); /*0x58ee5e*/
+          AbstractClass *v27 = *(void **)(v25 + 44); /*0x58ee5e*/
           *(_DWORD *)(v25 + 40) = &vt_VectorClass_Cell; /*0x58ee61*/
           if ( v27 ) /*0x58ee66*/
           {
@@ -1050,7 +1050,7 @@ LABEL_32:
 
 // 0x58EF10
 namespace gamemd {
-AbstractClass * sub_58EF10()
+AbstractClass * * sub_58EF10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1089,7 +1089,7 @@ AbstractClass * sub_58EF10()
   {
     do /*0x58efc3*/
     {
-      void * v5 = (void *)*((_DWORD *)g_RandomMap_TerrainState + v4); /*0x58efab*/
+      AbstractClass *v5 = (void *)*((_DWORD *)g_RandomMap_TerrainState + v4); /*0x58efab*/
       if ( v5 ) /*0x58efb0*/
       {
         TileNode::Cleanup(*((_DWORD **)g_RandomMap_TerrainState + v4)); /*0x58efb4*/

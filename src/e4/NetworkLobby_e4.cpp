@@ -3213,7 +3213,7 @@ char NetworkLobby::FillOptionCombo()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND ResourceID4; // eax
-  HWND v4; // esi
+  SkirmishDialog *v4; // esi
   HWND hDlg; // [esp+4h] [ebp-8h]
 
   char v8 = 1; /*0x5ee3a8*/
@@ -3262,7 +3262,7 @@ LABEL_18:
           {
             EnableWindow(v4, 0); /*0x5ee505*/
 LABEL_27:
-            char * v6 = CharToWideString(g_GameSetupBuffer); /*0x5ee4db*/
+            ObjectClass *v6 = CharToWideString(g_GameSetupBuffer); /*0x5ee4db*/
             ResourceID4 = (HWND)wcscmp((const wchar_t *)v6, g_CurrentPlayerName); /*0x5ee4eb*/
             if ( !ResourceID4 ) /*0x5ee4f5*/
               LOBYTE(ResourceID4) = SessionClass::SetOption2(v3, -2); /*0x5ee4fb*/

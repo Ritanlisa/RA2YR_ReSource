@@ -62,7 +62,7 @@ void String::Release()
 
 // 0x5D0380
 namespace gamemd {
-ObjectClass * String::SplitComma(ObjectClass * aP1)
+ObjectClass * * String::SplitComma(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -144,7 +144,7 @@ LABEL_6:
 
 // 0x763690
 namespace gamemd {
-ControlClass * String::To_Waypoint()
+ControlClass * * String::To_Waypoint()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -199,22 +199,22 @@ unsigned int String::Length()
 
 // 0x7B57A0
 namespace gamemd {
-AbstractClass * String::Replace(char * SubStr, const char * a3)
+AbstractClass * * String::Replace(char * SubStr, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v3; // edi
   size_t v7; // eax
-  size_t v9; // edx
-  size_t v14; // edx
-  size_t v18; // edx
+  AbstractClass *v9; // edx
+  AbstractClass *v14; // edx
+  AbstractClass *v18; // edx
   const char *v20; // esi
-  size_t v21; // ecx
+  AbstractClass *v21; // ecx
   char *v22; // eax
   char *Block; // [esp+10h] [ebp-Ch]
   size_t Count; // [esp+14h] [ebp-8h]
   v3 = (void **)this; /*0x7b57a6*/
-  char * v4 = 0; /*0x7b57a8*/
+  AbstractClass *v4 = 0; /*0x7b57a8*/
   const char * v5 = *this; /*0x7b57ae*/
   if ( !*this ) /*0x7b57ae*/
     v5 = &g_INI_DefaultBuffer; /*0x7b57b4*/
@@ -228,7 +228,7 @@ AbstractClass * String::Replace(char * SubStr, const char * a3)
     {
       const char * v16 = v4; /*0x7b5924*/
       unsigned int v17 = strlen(v5) + 1; /*0x7b5926*/
-      char * v28 = v4; /*0x7b592b*/
+      AbstractClass *v28 = v4; /*0x7b592b*/
       v18 = v17; /*0x7b5931*/
       if ( v4 ) /*0x7b5934*/
         v18 = strlen(v4) + v17; /*0x7b5940*/
@@ -247,7 +247,7 @@ AbstractClass * String::Replace(char * SubStr, const char * a3)
     Count = v7; /*0x7b57e8*/
     if ( v7 ) /*0x7b57ec*/
     {
-      char * v8 = v4; /*0x7b57ee*/
+      AbstractClass *v8 = v4; /*0x7b57ee*/
       v9 = v7 + 1; /*0x7b57f0*/
       Block = v4; /*0x7b57f5*/
       if ( v4 ) /*0x7b57f9*/
@@ -270,7 +270,7 @@ AbstractClass * String::Replace(char * SubStr, const char * a3)
     const char * v11 = a3; /*0x7b585c*/
     if ( a3 ) /*0x7b5862*/
     {
-      char * v12 = v4; /*0x7b586f*/
+      AbstractClass *v12 = v4; /*0x7b586f*/
       unsigned int v13 = strlen(a3) + 1; /*0x7b5871*/
       v14 = v13; /*0x7b5878*/
       if ( v4 ) /*0x7b587b*/
@@ -309,8 +309,7 @@ LABEL_35:
   *v3 = 0; /*0x7b59d3*/
   if ( v20 ) /*0x7b59d9*/
     v21 = strlen(v20) + 1; /*0x7b59e2*/
-  else
-    v21 = 1; /*0x7b59e8*/
+  AbstractClass *v21 = 1; /*0x7b59e8*/
   v22 = (char *)__2_YAPAXI_Z(v21); /*0x7b59ee*/
   *this = v22; /*0x7b59fc*/
   *v22 = 0; /*0x7b59fe*/
@@ -325,16 +324,16 @@ LABEL_35:
 
 // 0x7B5F10
 namespace gamemd {
-AbstractClass * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
+AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v12; // ecx
+  AbstractClass *v12; // ecx
   ObjectClass *v14; // edi
   size_t v15; // esi
   ObjectClass *v17; // ebp
   ObjectClass *v18; // esi
-  size_t v19; // ecx
+  AbstractClass *v19; // ecx
   char *Str; // [esp+18h] [ebp+8h]
 
   int v4 = a2; /*0x7b5f13*/
@@ -369,8 +368,7 @@ AbstractClass * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   *(_DWORD *)aP3->__pad_0 = 0; /*0x7b5fd4*/
   if ( v11 ) /*0x7b5fda*/
     v12 = strlen(v11) + 1; /*0x7b5fe3*/
-  else
-    v12 = 1; /*0x7b5fe9*/
+  AbstractClass *v12 = 1; /*0x7b5fe9*/
   _BYTE * v13 = (_BYTE *)__2_YAPAXI_Z(v12); /*0x7b5fef*/
   *(_DWORD *)aP3->__pad_0 = v13; /*0x7b5ff7*/
   *v13 = 0; /*0x7b5ffb*/
@@ -394,8 +392,7 @@ AbstractClass * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   *(_DWORD *)aP3->__pad_0 = 0; /*0x7b6076*/
   if ( v18 ) /*0x7b607c*/
     v19 = strlen(v18->__pad_0) + 1; /*0x7b6085*/
-  else
-    v19 = 1; /*0x7b608b*/
+  AbstractClass *v19 = 1; /*0x7b608b*/
   _BYTE * v20 = (_BYTE *)__2_YAPAXI_Z(v19); /*0x7b6091*/
   *(_DWORD *)aP3->__pad_0 = v20; /*0x7b6099*/
   *v20 = 0; /*0x7b609d*/
@@ -410,7 +407,7 @@ AbstractClass * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 
 // 0x7B7A60
 namespace gamemd {
-AbstractClass * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
+AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -420,7 +417,7 @@ AbstractClass * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
   const wchar_t *v12; // esi
   size_t v13; // eax
   const wchar_t *v16; // ebp
-  size_t v17; // esi
+  DropListClass *v17; // esi
   wchar_t *v18; // eax
   wchar_t *v19; // ebx
   const wchar_t *v20; // esi
@@ -502,7 +499,7 @@ AbstractClass * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
 
 // 0x7CCA34
 namespace gamemd {
-exception * int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
+exception * * int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -522,7 +519,7 @@ exception * int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * 
   {
     v10 = 0; /*0x7cca72*/
   }
-  void * v5 = a5; /*0x7cca75*/
+  exception *v5 = a5; /*0x7cca75*/
   if ( !a5 ) /*0x7cca7a*/
     v5 = off_87C1E0; /*0x7cca7c*/
   a5 = v5; /*0x7cca84*/

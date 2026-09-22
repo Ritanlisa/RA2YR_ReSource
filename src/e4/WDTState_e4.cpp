@@ -5,7 +5,7 @@
 
 // 0x76BA70
 namespace gamemd {
-AbstractClass * WDTState_4::Release(int a2, unsigned int * a3)
+AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -15,12 +15,12 @@ AbstractClass * WDTState_4::Release(int a2, unsigned int * a3)
   AbstractClass *v3 = a2; /*0x76ba73*/
   if ( a2 ) /*0x76ba7d*/
   {
-  _DWORD *v6; // ebx
+  rc_ptr_base *v6; // ebx
     this->q00C = 0; /*0x76ba87*/
     if ( a3 ) /*0x76ba8d*/
     {
       *a3 = a2; /*0x76bad1*/
-      _DWORD * v8 = a3 + 1; /*0x76bad3*/
+      rc_ptr_base *v8 = a3 + 1; /*0x76bad3*/
       if ( a2 - 1 >= 0 ) /*0x76badf*/
       {
         int v9 = a2; /*0x76bae1*/
@@ -43,7 +43,7 @@ AbstractClass * WDTState_4::Release(int a2, unsigned int * a3)
       {
         *v5 = a2; /*0x76baa3*/
         v6 = v5 + 1; /*0x76baa5*/
-        _DWORD * v7 = v5 + 1; /*0x76baab*/
+        rc_ptr *v7 = v5 + 1; /*0x76baab*/
         if ( a2 - 1 >= 0 ) /*0x76baaf*/
         {
           int v14 = a2; /*0x76bab2*/

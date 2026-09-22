@@ -260,7 +260,7 @@ char sub_646F70(IUnknown * a1, int a2, int a3, char a4, int a5, int a6, int a7)
 
 // 0x647260
 namespace gamemd {
-AbstractClass * ProcessNetworkEvents()
+AbstractClass * * ProcessNetworkEvents()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -562,7 +562,7 @@ LABEL_23:
 
 // 0x648710
 namespace gamemd {
-AbstractClass * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, int arg4, ScenarioClass * a4, int a6, short arg10, int * a7)
+AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, int arg4, ScenarioClass * a4, int a6, short arg10, int * a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1487,17 +1487,16 @@ LABEL_116:
 
 // 0x649CA0
 namespace gamemd {
-AbstractClass * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short a5)
+AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  int v20; // esi
+  AbstractClass *v20; // esi
   int v22; // [esp+10h] [ebp-1Ch]
   int v25; // [esp+1Ch] [ebp-10h]
   int v26; // [esp+20h] [ebp-Ch]
   int v28; // [esp+28h] [ebp-4h]
-
-  int v6 = Networking_LastEventIndex; /*0x649caf*/
+  AbstractClass *v6 = Networking_LastEventIndex; /*0x649caf*/
   v26 = a1; /*0x649cc4*/
   v25 = 0; /*0x649cc8*/
   v22 = Networking_LastEventIndex; /*0x649ccc*/
@@ -1533,10 +1532,10 @@ AbstractClass * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short a5
       int v23 = 0; /*0x649da7*/
       if ( Networking_LastEventIndex )
       {
-        int v10 = g_NetworkEventIndex; /*0x649db7*/
+        AbstractClass *v10 = g_NetworkEventIndex; /*0x649db7*/
         while ( v23 < v22 )
         {
-  char v19; // al
+  AbstractClass *v19; // al
           int v11 = 37 * v10; /*0x649dcf*/
           int v12 = g_NetworkPacketIndex[3 * v11] == 31 ? *(int *)((char *)&dword_A802DF + 3 * v11) + 111 : 111;
           if ( v9 + v12 > a3 ) /*0x649df5*/
@@ -1654,7 +1653,7 @@ void Network_SendFrameSync(int * a1, short a2)
 
 // 0x64A0C0
 namespace gamemd {
-AbstractClass * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int a4, int a5, unsigned int * a6)
+AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int a4, int a5, unsigned int * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1662,12 +1661,11 @@ AbstractClass * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int a4
   int v27; // eax
   char v28; // al
   _BYTE *v29; // ebp
-  unsigned __int16 v33; // si
+  Game *v33; // si
   unsigned int v35; // [esp+10h] [ebp-88h]
   int v37; // [esp+14h] [ebp-84h]
   _DWORD *v39; // [esp+18h] [ebp-80h]
   int v41; // [esp+20h] [ebp-78h]
-
   int v6 = a2; /*0x64a0cc*/
   int v7 = 0; /*0x64a0d5*/
   v41 = 0; /*0x64a0e0*/
@@ -1918,8 +1916,8 @@ LABEL_7:
             (wchar_t *)(v2 + 25),
             v7) )
     {
-      char * v8 = CharToWideString((_BYTE *)(v2 + 4)); /*0x64a6b1*/
-      int v9 = *(unsigned __int8 *)(v2 + 24); /*0x64a6cb*/
+      IUnknown *v8 = CharToWideString((_BYTE *)(v2 + 4)); /*0x64a6b1*/
+      IUnknown *v9 = *(unsigned __int8 *)(v2 + 24); /*0x64a6cb*/
       int v10 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].__pad_A0 * 900.0); /*0x64a6cd*/
       MessageListClass::AddMessage(g_GameNetworkObject, (wchar_t *)v8, v9, v6, v9, 16454, v10, 0); /*0x64a6e1*/
       PlayVocClass(g_RulesClass_Instance->MovieOn, 0x2000, 1.0, 0); /*0x64a6fe*/
@@ -2028,7 +2026,7 @@ LABEL_10:
 
 // 0x64B240
 namespace gamemd {
-AbstractClass * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4)
+AbstractClass * * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2036,7 +2034,7 @@ AbstractClass * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4)
 
   bool v13 = time(0) - dword_B0489C < 60; /*0x64b270*/
   dword_B0489C = time(0); /*0x64b27e*/
-  int v6 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 20))(a1, a2); /*0x64b292*/
+  AbstractClass *v6 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 20))(a1, a2); /*0x64b292*/
   Debug::Log(); /*0x64b29f*/
   if ( v6 == -1 ) /*0x64b2aa*/
   {
@@ -2099,7 +2097,6 @@ void Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned c
   unsigned __int8 v5; // dl
   char result; // al
   unsigned __int8 v19; // [esp+1Ch] [ebp-8h]
-
   v5 = *a1; /*0x64b4d8*/
   v19 = *a1; /*0x64b4e4*/
   if ( *a1 > 1u ) /*0x64b4e8*/
@@ -2136,7 +2133,7 @@ void Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned c
   }
   if ( a5 && v5 > 1u ) /*0x64b560*/
   {
-    int v9 = -1; /*0x64b566*/
+    Game *v9 = -1; /*0x64b566*/
     int v10 = -1; /*0x64b569*/
     int v11 = 0; /*0x64b56c*/
     int * v12 = dword_AFA42C; /*0x64b56e*/
@@ -2175,7 +2172,7 @@ LABEL_21:
 
 // 0x64B660
 namespace gamemd {
-AbstractClass * Network_CompressMegaMission(int a1, int a2, int a3, int a4, int a5, unsigned int * a6)
+AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, int a5, unsigned int * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2183,7 +2180,6 @@ AbstractClass * Network_CompressMegaMission(int a1, int a2, int a3, int a4, int 
   #375 *v13; // edx
   int result; // eax
   __int16 v32; // [esp+A0h] [ebp-4h]
-
   _WORD v31[54]; // [esp+34h] [ebp-70h] BYREF
   memset(v31, 0, sizeof(v31)); /*0x64b67e*/
   v32 = 0; /*0x64b680*/
@@ -2201,7 +2197,7 @@ AbstractClass * Network_CompressMegaMission(int a1, int a2, int a3, int a4, int 
     Debug::Log(); /*0x64b6ba*/
   if ( Networking_LastEventIndex ) /*0x64b6c8*/
   {
-    int v7 = g_NetworkEventIndex; /*0x64b6ce*/
+    AbstractClass *v7 = g_NetworkEventIndex; /*0x64b6ce*/
     while ( v28 < a5 ) /*0x64b6d4*/
     {
   int v17; // eax
@@ -2360,7 +2356,7 @@ AbstractClass * Network_CompressMegaMission(int a1, int a2, int a3, int a4, int 
 LABEL_47:
       ++v28; /*0x64bd04*/
       char * v19 = &g_NetworkPacketIndex[111 * g_NetworkEventIndex]; /*0x64bd22*/
-      int v20 = Networking_LastEventIndex; /*0x64bd29*/
+      AbstractClass *v20 = Networking_LastEventIndex; /*0x64bd29*/
       qmemcpy(v31, v19, sizeof(v31)); /*0x64bd2e*/
       v19 += 108; /*0x64bd2e*/
       v32 = *(_WORD *)v19; /*0x64bd30*/
@@ -2385,11 +2381,11 @@ LABEL_47:
 
 // 0x64BDD0
 namespace gamemd {
-AbstractClass * Network_DecodeEvents(char * a1, unsigned int a2)
+AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  unsigned __int8 v7; // al
+  AbstractClass *v7; // al
   unsigned __int8 v10; // cl
   unsigned int v11; // ecx
   char *v14; // ebp
@@ -2420,7 +2416,7 @@ AbstractClass * Network_DecodeEvents(char * a1, unsigned int a2)
   v40 = a1[2]; /*0x64be10*/
   if ( a2 < 0xE ) /*0x64be14*/
     return v35; /*0x64c370*/
-  int v6 = unk_8B4200; /*0x64be1a*/
+  AbstractClass *v6 = unk_8B4200; /*0x64be1a*/
   while ( 1 ) /*0x64be20*/
   {
   unsigned int v9; // eax
@@ -2459,7 +2455,7 @@ LABEL_9:
     v38 = v11; /*0x64be8d*/
     if ( v44 != 4 ) /*0x64be91*/
     {
-  char *v13; // edi
+  AbstractClass *v13; // edi
   char *v12; // esi
       if ( v44 == 27 ) /*0x64be99*/
       {
@@ -2472,7 +2468,7 @@ LABEL_9:
         if ( v44 == 31 ) /*0x64bea1*/
         {
           qmemcpy((char *)&v45[2] + 3, v12, v11); /*0x64bec7*/
-          unsigned int v15 = *(_DWORD *)((char *)&v45[2] + 3); /*0x64bed0*/
+          AbstractClass *v15 = *(_DWORD *)((char *)&v45[2] + 3); /*0x64bed0*/
           v14 = (char *)__2_YAPAXI_Z(*(_DWORD *)((char *)&v45[2] + 3)); /*0x64bede*/
           *(_DWORD *)((char *)&v45[1] + 3) = v14; /*0x64beed*/
           qmemcpy(v14, &a1[v3 + 1 + v38], v15); /*0x64befa*/
@@ -2666,7 +2662,7 @@ void Network_ProcessMapEvent(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v23; // eax
+  ObjectClass *v23; // eax
   _BYTE *WaypointCoords; // eax
   int k; // esi
   void **v77; // [esp+5Ch] [ebp-10Ch] BYREF
@@ -2711,14 +2707,14 @@ void Network_ProcessMapEvent(int a1, int a2)
                && v82 > 0
                && ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v77[2])(&v77, v82 + v79, 0)) )
             {
-              int v9 = v81++; /*0x64cece*/
+              MapClass *v9 = v81++; /*0x64cece*/
               *((_DWORD *)Block + v9) = v8; /*0x64ced9*/
             }
           }
           int v10 = 0; /*0x64cee9*/
           if ( v81 > 0 ) /*0x64ceed*/
           {
-  float v115; // [esp+F4h] [ebp-74h] BYREF
+  IUnknown *v115; // [esp+F4h] [ebp-74h] BYREF
   float v112; // [esp+E8h] [ebp-80h] BYREF
   float v108; // [esp+D8h] [ebp-90h]
   float v107; // [esp+D4h] [ebp-94h]
@@ -2734,8 +2730,8 @@ void Network_ProcessMapEvent(int a1, int a2)
             v130[0] = *v11; /*0x64cf05*/
             v130[1] = v11[1]; /*0x64cf0f*/
             v130[2] = v11[2]; /*0x64cf1d*/
-            int v12 = Network_Process_5F6810(&v77, v130); /*0x64cf30*/
-            _DWORD * v76 = (_DWORD *)v12; /*0x64cf38*/
+            MapClass *v12 = Network_Process_5F6810(&v77, v130); /*0x64cf30*/
+            MapClass *v76 = (_DWORD *)v12; /*0x64cf38*/
             Base = 0; /*0x64cf3c*/
             NumOfElements = 0; /*0x64cf40*/
             signed int v91 = 0; /*0x64cf44*/
@@ -2746,14 +2742,14 @@ void Network_ProcessMapEvent(int a1, int a2)
             {
               do /*0x64d029*/
               {
-                int v13 = v76[39]; /*0x64cf67*/
+                TechnoClass *v13 = v76[39]; /*0x64cf67*/
                 int v14 = v76[40]; /*0x64cf6b*/
-                int v15 = v76[41]; /*0x64cf6e*/
+                RecoilData *v15 = v76[41]; /*0x64cf6e*/
   _DWORD *v16; // eax
                 v16 = (_DWORD *)(*(int (__thiscall **)(_DWORD, float *))(**((_DWORD **)Block + v10) + 72))( /*0x64cf79*/
                                   *((_DWORD *)Block + v10),
                                   &v112);
-                float * v17 = (float *)Coord::Subtract(&v115, *v16 - v13, v16[1] - v14, v16[2] - v15); /*0x64cf94*/
+                IUnknown *v17 = (float *)Coord::Subtract(&v115, *v16 - v13, v16[1] - v14, v16[2] - v15); /*0x64cf94*/
                 v106 = *v17; /*0x64cf9b*/
                 v107 = v17[1]; /*0x64cfac*/
                 v108 = v17[2]; /*0x64cfb6*/
@@ -2810,7 +2806,7 @@ LABEL_22:
                 && v82 > 0
                 && ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v77[2])(&v77, v82 + v79, 0) )
               {
-                int v25 = v81++; /*0x64d126*/
+                MapClass *v25 = v81++; /*0x64d126*/
                 *((_DWORD *)Block + v25) = *v24; /*0x64d12f*/
               }
               if ( v104 < v102 /*0x64d171*/
@@ -2826,27 +2822,27 @@ LABEL_22:
                 && v99 > 0
                 && ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v94[2])(&v94, v99 + v96, 0) )
               {
-                int v27 = j++; /*0x64d1cf*/
+                MapClass *v27 = j++; /*0x64d1cf*/
                 *((_BYTE *)v95 + v27) = 0; /*0x64d1da*/
               }
               v23 = NumOfElements; /*0x64d1de*/
             }
-            int v28 = 0; /*0x64d1fc*/
-            int v120 = *(_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v12 + 440))(v12, &TileIndex); /*0x64d202*/
-            int v119 = 0; /*0x64d20b*/
+            TechnoClass *v28 = 0; /*0x64d1fc*/
+            int v120 = *(_DWORD *)v12->GetCellCoords_Alt(&TileIndex); /*0x64d202*/
+            TechnoClass *v119 = 0; /*0x64d20b*/
             if ( v81 > 0 ) /*0x64d212*/
             {
-  float v116; // [esp+F8h] [ebp-70h]
+  ObjectClass *v116; // [esp+F8h] [ebp-70h]
   float v110; // [esp+E0h] [ebp-88h]
   float v109; // [esp+DCh] [ebp-8Ch]
   _DWORD *v75; // [esp+54h] [ebp-114h] BYREF
-  _DWORD *v48; // eax
+  ObjectClass *v48; // eax
   int v45; // eax
   int v44; // ecx
-  _DWORD *v42; // esi
-  float v40; // edx
-  float v39; // ecx
-  float v38; // eax
+  ObjectClass *v42; // esi
+  RecoilData *v40; // edx
+  ObjectClass *v39; // ecx
+  IUnknown *v38; // eax
   _DWORD *v29; // ebp
               while ( 1 ) /*0x64d222*/
               {
@@ -2864,7 +2860,7 @@ LABEL_22:
                 if ( !*((_BYTE *)v95 + v28) ) /*0x64d25a*/
                   break; /*0x64d25a*/
 LABEL_84:
-                int v60 = v81; /*0x64d76b*/
+                MapClass *v60 = v81; /*0x64d76b*/
                 TileIndex = ++v28; /*0x64d772*/
                 if ( v28 < v81 ) /*0x64d776*/
                 {
@@ -2928,11 +2924,11 @@ LABEL_94:
               v112 = (double)(__int16)v73 + 0.5; /*0x64d2fe*/
               float v114 = 0.0; /*0x64d30b*/
               int v74 = (__int16)v33 - (__int16)v120; /*0x64d316*/
-              float v87 = 0.0; /*0x64d31a*/
+              RecoilData *v87 = 0.0; /*0x64d31a*/
               float v113 = (double)SHIWORD(v73) + 0.5; /*0x64d330*/
-              float v85 = (float)v74; /*0x64d33e*/
+              IUnknown *v85 = (float)v74; /*0x64d33e*/
               v74 = (__int16)v34 - SHIWORD(v120); /*0x64d344*/
-              float v86 = (float)v74; /*0x64d34c*/
+              ObjectClass *v86 = (float)v74; /*0x64d34c*/
               double v37 = Math::Sqrt(v86 * v86 + v85 * v85); /*0x64d365*/
               if ( v37 == 0.0 ) /*0x64d378*/
               {
@@ -2953,7 +2949,7 @@ LABEL_94:
                 v108 = 0.0 / v37; /*0x64d3b6*/
                 v40 = v108; /*0x64d3bd*/
               }
-              float v117 = v40; /*0x64d3e2*/
+              RecoilData *v117 = v40; /*0x64d3e2*/
               v87 = v40; /*0x64d3e9*/
               int v41 = *v29; /*0x64d3ed*/
               v86 = v39; /*0x64d3f0*/
@@ -3005,13 +3001,13 @@ LABEL_69:
               }
               if ( (v45 & 0x100) != 0 ) /*0x64d55d*/
               {
-                __int64 v46 = v36 - *((char *)v42 + 283) - 4; /*0x64d56d*/
+                __int64 v46 = v36 - v42->q11B - 4; /*0x64d56d*/
                 if ( (int)((HIDWORD(v46) ^ v46) - HIDWORD(v46)) > 2 ) /*0x64d575*/
                   goto LABEL_75; /*0x64d575*/
               }
               if ( (v42[80] & 0x100) == 0 ) /*0x64d57d*/
               {
-                __int64 v47 = v36 - *((char *)v42 + 283); /*0x64d58a*/
+                __int64 v47 = v36 - v42->q11B; /*0x64d58a*/
                 if ( (int)((HIDWORD(v47) ^ v47) - HIDWORD(v47)) > 2 ) /*0x64d592*/
                   goto LABEL_75; /*0x64d592*/
               }
@@ -3071,7 +3067,7 @@ LABEL_77:
                   v57[4] = v56; /*0x64d73d*/
                 }
 LABEL_83:
-                _DWORD * v58 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v76); /*0x64d740*/
+                IUnknown *v58 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v76); /*0x64d740*/
                 int v59 = v58[80]; /*0x64d74f*/
                 v2 = v84; /*0x64d75a*/
                 BYTE1(v59) |= 0x80u; /*0x64d75e*/

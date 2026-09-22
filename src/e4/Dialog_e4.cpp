@@ -118,7 +118,7 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
 {
   unsigned __int16 v9; // cx
   ObjectClass *Dialog; // eax
-  ObjectClass *v10; // esi
+  IUnknown *v10; // esi
   HWND DlgItem; // eax
   HWND v13; // eax
   HWND v14; // eax
@@ -272,7 +272,7 @@ int Dialog::RunModemDialing(ObjectClass * aP1, int a3, char a4)
   char Source[240]; // [esp+34h] [ebp-F0h] BYREF
 
   char v5 = 1; /*0x5f2961*/
-  int v6 = 3; /*0x5f2963*/
+  Game *v6 = 3; /*0x5f2963*/
   Debug::Log(); /*0x5f2968*/
   if ( a4 == 1 ) /*0x5f2979*/
     StringCSF = GetStringCSF((wchar_t *)&stru_830620[8772], 0, &stru_830620[8464], 1409); /*0x5f298c*/
@@ -398,7 +398,7 @@ LABEL_36:
 
 // 0x606800
 namespace gamemd {
-AbstractClass * Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
+AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -724,7 +724,7 @@ int Dialog::StopBink()
 
 // 0x608070
 namespace gamemd {
-AbstractClass * Dialog::IdleProcess()
+AbstractClass * * Dialog::IdleProcess()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -917,7 +917,7 @@ LABEL_33:
 
 // 0x60A5B0
 namespace gamemd {
-AbstractClass * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
+AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1130,7 +1130,7 @@ LABEL_74:
 
 // 0x60F760
 namespace gamemd {
-AbstractClass * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
+AbstractClass * * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1225,7 +1225,7 @@ LABEL_22:
 
 // 0x60F9A0
 namespace gamemd {
-AbstractClass * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
+AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1524,7 +1524,7 @@ LABEL_71:
 
 // 0x610360
 namespace gamemd {
-AbstractClass * Dialog::DestroyDialogSystem()
+AbstractClass * * Dialog::DestroyDialogSystem()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1560,7 +1560,7 @@ AbstractClass * Dialog::DestroyDialogSystem()
   }
   for ( i = v15[13]; v15[13]; i = v15[13] ) /*0x610416*/
     LinkedList::Remove(v15, i); /*0x61041d*/
-  void * v5 = v15[15]; /*0x61042a*/
+  AbstractClass *v5 = v15[15]; /*0x61042a*/
   if ( v15[15] ) /*0x610430*/
   {
     DeleteAndZero::Alt((void **)v15[15]); /*0x610434*/
@@ -1618,7 +1618,7 @@ LABEL_22:
 
 // 0x6137D0
 namespace gamemd {
-AbstractClass * Dialog_TabControlPaint()
+AbstractClass * * Dialog_TabControlPaint()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1930,11 +1930,11 @@ LABEL_43:
       Surface::TileBlit((INIClass *)&aP0.unknown30, *(ObjectClass **)&stru_87C374[44956], v48, 0, 0); /*0x613eff*/
     }
     sprintf(Buffer, (ObjectClass *)&stru_830620[21148], v45); /*0x613f12*/
-    int v53 = HashTable::Find(&g_MatrixTransformState + 5774, Buffer, 0); /*0x613f2e*/
+    MSShapeAnim *v53 = HashTable::Find(&g_MatrixTransformState + 5774, Buffer, 0); /*0x613f2e*/
     if ( v53 ) /*0x613f32*/
     {
-      int v54 = (*(int (__thiscall **)(int))(*(_DWORD *)v53 + 128))(v53); /*0x613f46*/
-      int v55 = (*(int (__thiscall **)(int))(*(_DWORD *)v53 + 124))(v53); /*0x613f48*/
+      int v54 = v53->vt_slot_128(); /*0x613f46*/
+      int v55 = v53->vt_slot_124(); /*0x613f48*/
       *(_DWORD *)aP0[0] = *(_DWORD *)aP0[32]; /*0x613f53*/
       aP0.headNode[1] = v55; /*0x613f5d*/
       aP0.headNode[0] = *(_DWORD *)&aP0[36]; /*0x613f6e*/
@@ -1967,7 +1967,7 @@ LABEL_43:
       strcpy((char *)&(&g_MatrixTransformState)[243], (const char *)v75[3]); /*0x6140a9*/
     v59 = v64; /*0x6140ba*/
     v62 = v66; /*0x6140be*/
-    unsigned int v61 = (unsigned int)*(&g_MatrixTransformState + 5630); /*0x6140c2*/
+    CampaignClass *v61 = (unsigned int)*(&g_MatrixTransformState + 5630); /*0x6140c2*/
     *(_DWORD *)v71[0] = *(_DWORD *)aP0[32]; /*0x6140ca*/
     *(_DWORD *)&v71[8] = *(_DWORD *)aP0[32] + *(_DWORD *)&aP0[40]; /*0x6140d2*/
     *(_DWORD *)&v71[4] = *(_DWORD *)&aP0[36] + 6; /*0x6140e4*/
@@ -1998,7 +1998,7 @@ LABEL_43:
 
 // 0x6213A0
 namespace gamemd {
-AbstractClass * Dialog::Resize()
+AbstractClass * * Dialog::Resize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2039,14 +2039,14 @@ AbstractClass * Dialog::Resize()
           {
             while ( *(HWND *)result != v5 ) /*0x62146a*/
             {
-              result = *(_DWORD *)(result + 516); /*0x62146c*/
+              result = result->q081; /*0x62146c*/
               if ( !result ) /*0x621474*/
                 return result; /*0x621474*/
             }
             result += 4; /*0x621480*/
             if ( result ) /*0x621485*/
             {
-              *(_DWORD *)(result + 232) = this->q010; /*0x621491*/
+              result->q0E8 = this->q010; /*0x621491*/
               InvalidateRect(v4, (const RECT *)(this + 28), 0); /*0x621497*/
               return UpdateWindow(v4); /*0x62149e*/
             }
@@ -2062,7 +2062,7 @@ AbstractClass * Dialog::Resize()
 
 // 0x621E90
 namespace gamemd {
-AbstractClass * Dialog::DrawBackground()
+AbstractClass * * Dialog::DrawBackground()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2070,7 +2070,7 @@ AbstractClass * Dialog::DrawBackground()
   LONG right; // eax
   LONG bottom; // ecx
   LONG v8; // eax
-  LONG v9; // ecx
+  AbstractClass *v9; // ecx
   HWND *v11; // eax
   HWND *v13; // eax
   HWND *v15; // eax
@@ -2089,7 +2089,7 @@ AbstractClass * Dialog::DrawBackground()
   LONG v39; // [esp+48h] [ebp-20h] BYREF
   LONG v40; // [esp+4Ch] [ebp-1Ch]
   LONG v41; // [esp+50h] [ebp-18h]
-  LONG v42; // [esp+54h] [ebp-14h]
+  AbstractClass *v42; // [esp+54h] [ebp-14h]
   struct tagRECT Rect; // [esp+58h] [ebp-10h] BYREF
 
   int v1 = 0; /*0x621e9c*/
@@ -2248,7 +2248,7 @@ LABEL_43:
       else if ( v10 == 2 ) /*0x6221d4*/
       {
   int v24; // eax
-  void *v23; // edi
+  AbstractClass *v23; // edi
         v42 = bottom; /*0x6221de*/
         v39 = left; /*0x6221e2*/
         v40 = top; /*0x6221f0*/
@@ -2389,7 +2389,7 @@ int Dialog::Destroy()
 
 // 0x6233A0
 namespace gamemd {
-CampaignClass * Dialog::CleanupTree()
+CampaignClass * * Dialog::CleanupTree()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2456,7 +2456,7 @@ int Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
 
 // 0x624BE0
 namespace gamemd {
-AbstractClass * Dialog::GrowBuffer()
+AbstractClass * * Dialog::GrowBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2469,13 +2469,13 @@ AbstractClass * Dialog::GrowBuffer()
     this->q008 = 2 * v2; /*0x624bfd*/
     _DWORD * v13 = v3; /*0x624c00*/
     this->q00C = v4; /*0x624c08*/
-    void * v5 = __2_YAPAXI_Z(8 * v2); /*0x624c13*/
+    AbstractClass *v5 = __2_YAPAXI_Z(8 * v2); /*0x624c13*/
     unsigned int v6 = 4 * this->q008; /*0x624c18*/
     *this = v5; /*0x624c1f*/
     memset(v5, 0, v6); /*0x624c24*/
     if ( v2 > 0 ) /*0x624c2f*/
     {
-      int * v7 = v3; /*0x624c31*/
+      AbstractClass *v7 = v3; /*0x624c31*/
       rc_ptr_base *v8 = v2; /*0x624c33*/
       do /*0x624c67*/
       {
@@ -2508,23 +2508,23 @@ AbstractClass * Dialog::GrowBuffer()
 
 // 0x624CA0
 namespace gamemd {
-AbstractClass * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
+AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v4; // eax
-  IUnknown *v7; // ecx
+  AbstractClass *v7; // ecx
   int ***v10; // eax
   bool v11; // zf
-  CCINIClass *v12; // esi
+  AbstractClass *v12; // esi
   size_t v13; // eax
   wchar_t *v14; // eax
-  CCINIClass *v15; // edi
+  AbstractClass *v15; // edi
   int CCINIClass_field_4C; // ebx
   _DWORD *i; // eax
   void **v18; // esi
-  IUnknown *v32; // esi
-  IUnknown *v36; // [esp+10h] [ebp-14h]
+  AbstractClass *v32; // esi
+  AbstractClass *v36; // [esp+10h] [ebp-14h]
   int v38; // [esp+14h] [ebp-10h]
   CCINIClass *v39; // [esp+18h] [ebp-Ch]
   CCINIClass *v40; // [esp+1Ch] [ebp-8h]
@@ -2600,7 +2600,7 @@ AbstractClass * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
       unsigned int v21 = this->q008; /*0x624e25*/
       if ( v21 > this->q00C && this->q005 != 1 ) /*0x624e37*/
       {
-        int * v22 = (int *)*this; /*0x624e40*/
+        AbstractClass *v22 = (int *)*this; /*0x624e40*/
         Blocka = (int *)*this; /*0x624e45*/
         int v23 = this->q00C - 1; /*0x624e4b*/
         this->q008 = v21 >> 1; /*0x624e4c*/
@@ -2611,7 +2611,7 @@ AbstractClass * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
         memset(v24, 0, v25); /*0x624e74*/
         if ( (int)v21 > 0 ) /*0x624e7f*/
         {
-          int * v26 = v22; /*0x624e81*/
+          AbstractClass *v26 = v22; /*0x624e81*/
           unsigned int v27 = v21; /*0x624e83*/
           do /*0x624ebe*/
           {
@@ -2692,7 +2692,7 @@ LABEL_41:
 
 // 0x671EA0
 namespace gamemd {
-INIClass * Dialog::ReadMultiplayerDialogSettings()
+INIClass * * Dialog::ReadMultiplayerDialogSettings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2706,24 +2706,24 @@ INIClass * Dialog::ReadMultiplayerDialogSettings()
   {
     *((_DWORD *)this + 1312) = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D0A4, *((_DWORD *)this + 1312)); /*0x671edc*/
     IntOverwriteINIClass = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_81DA20, *((_DWORD *)this + 1313)); /*0x671ef7*/
-    int v4 = *((_DWORD *)this + 1314); /*0x671efc*/
+    INIClass *v4 = *((_DWORD *)this + 1314); /*0x671efc*/
     *((_DWORD *)this + 1313) = IntOverwriteINIClass; /*0x671f02*/
     int v5 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D098, v4); /*0x671f16*/
-    int v6 = *((_DWORD *)this + 1315); /*0x671f1b*/
+    INIClass *v6 = *((_DWORD *)this + 1315); /*0x671f1b*/
     *((_DWORD *)this + 1314) = v5; /*0x671f21*/
     *((_DWORD *)this + 1315) = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D088, v6); /*0x671f3b*/
     int v7 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D078, *((_DWORD *)this + 1316)); /*0x671f56*/
-    int v8 = *((_DWORD *)this + 1317); /*0x671f5b*/
+    INIClass *v8 = *((_DWORD *)this + 1317); /*0x671f5b*/
     *((_DWORD *)this + 1316) = v7; /*0x671f61*/
     int v9 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, g_INI_Key_UnitCount, v8); /*0x671f75*/
-    int v10 = *((_DWORD *)this + 1318); /*0x671f7a*/
+    INIClass *v10 = *((_DWORD *)this + 1318); /*0x671f7a*/
     *((_DWORD *)this + 1317) = v9; /*0x671f80*/
     *((_DWORD *)this + 1318) = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D05C, v10); /*0x671f9a*/
     int v11 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, aTechlevel, *((_DWORD *)this + 1319)); /*0x671fb5*/
-    int v12 = *((_DWORD *)this + 1320); /*0x671fba*/
+    INIClass *v12 = *((_DWORD *)this + 1320); /*0x671fba*/
     *((_DWORD *)this + 1319) = v11; /*0x671fc0*/
     int v13 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, g_INI_Key_GameSpeed, v12); /*0x671fd4*/
-    int v14 = *((_DWORD *)this + 1321); /*0x671fd9*/
+    INIClass *v14 = *((_DWORD *)this + 1321); /*0x671fd9*/
     *((_DWORD *)this + 1320) = v13; /*0x671fdf*/
     *((_DWORD *)this + 1321) = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D04C, v14); /*0x671ff9*/
     int v15 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D040, *((_DWORD *)this + 1322)); /*0x672014*/

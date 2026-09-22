@@ -224,7 +224,7 @@ void* DrawTacticalLaserLine()
      | (BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green)
      | (BYTE2(a7) >> g_BitShift_Blue << g_BitShift_Blue);
   _DWORD v45[4]; // [esp+80h] [ebp-20h] BYREF
-  int * v8 = Rect::Construct(v45, &v28, 3, 3); /*0x704f25*/
+  AbstractClass *v8 = Rect::Construct(v45, &v28, 3, 3); /*0x704f25*/
   int v34 = *v8; /*0x704f2e*/
   int v35 = v8[1]; /*0x704f37*/
   int v36 = v8[2]; /*0x704f3e*/
@@ -238,7 +238,7 @@ void* DrawTacticalLaserLine()
   (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)DSurface_Composite + 20))(DSurface_Composite, &v30, v7); /*0x704f88*/
   v29 = v22 - 2; /*0x704f9f*/
   v28 = v21 - 2; /*0x704fad*/
-  int * v10 = Rect::Construct(v46, &v28, 3, 3); /*0x704fb1*/
+  AbstractClass *v10 = Rect::Construct(v46, &v28, 3, 3); /*0x704fb1*/
   v30 = *v10; /*0x704fba*/
   v31 = v10[1]; /*0x704fc3*/
   v32 = v10[2]; /*0x704fca*/
@@ -317,7 +317,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   __int16 v21; // ax
   struct IPersistStreamVtbl *lpVtbl; // esi
   unsigned int v24; // ebx
-  _DWORD *v25; // esi
+  ConvertClass *v25; // esi
   int v26; // edx
   int v29; // ecx
   int v30; // edx
@@ -427,8 +427,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   v24 = v19 & 0xFFFFFFEF; /*0x707172*/
   if ( (*(int (__thiscall **)(int *))(*a1 + 44))(a1) == 1 && *((_BYTE *)a1 + 1747) ) /*0x70717d*/
     v25 = (_DWORD *)unk_B1D140; /*0x707187*/
-  else
-    v25 = (_DWORD *)(*(int (__thiscall **)(int *))(*a1 + 484))(a1); /*0x70719a*/
+  ConvertClass *v25 = (_DWORD *)(*(int (__thiscall **)(int *))(*a1 + 484))(a1); /*0x70719a*/
   v26 = 0; /*0x70719c*/
   if ( (v24 & 8) != 0 ) /*0x7071a1*/
   {
@@ -470,7 +469,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
 
 // 0x709550
 namespace gamemd {
-AbstractClass * __usercall SelectTargetByWeight(unsigned int *a1@<ecx> a1, int a2@<esi> a2)
+AbstractClass * * __usercall SelectTargetByWeight(unsigned int *a1@<ecx> a1, int a2@<esi> a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -505,7 +504,7 @@ LABEL_8:
       }
       else
       {
-        _DWORD * v6 = (_DWORD *)a1[279]; /*0x709596*/
+        DynamicVectorClass *v6 = (_DWORD *)a1[279]; /*0x709596*/
         while ( *(_DWORD *)(a1[285] + 4 * i) != *v6 ) /*0x70959e*/
         {
           ++v4; /*0x7095a0*/
@@ -821,12 +820,11 @@ unsigned long long TechnoClass_RevealRadarEvent(int a1, int a2)
   DWORD result; // eax
   #375 *v7; // [esp-1Ch] [ebp-2Ch]
   int v9; // [esp+8h] [ebp-8h]
-
   if ( a1 && a2 ) /*0x70f12c*/
   {
     DataGlobal_B0EB3C = a2; /*0x70f134*/
     DataGlobal_B0EB38 = a1; /*0x70f13a*/
-    int v3 = *((_DWORD *)g_RulesClass_Instance + 1536); /*0x70f140*/
+    MultiplayerGameMode *v3 = *((_DWORD *)g_RulesClass_Instance + 1536); /*0x70f140*/
     Ticks = Timer::GetTicks(); /*0x70f14a*/
     DataGlobal_B0EA74 = v9; /*0x70f161*/
     v7 = HouseClass_Player; /*0x70f169*/

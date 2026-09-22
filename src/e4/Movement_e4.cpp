@@ -28,7 +28,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   int v41; // ecx
   int v42; // edx
   IUnknown *v43; // eax
-  int v44; // eax
+  AbstractClass *v44; // eax
   int *v45; // eax
   int v46; // ecx
   int esi11a; // esi
@@ -118,7 +118,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     v81 = (double *)(v21 - 0x3FFF); /*0x5b228c*/
     double v22 = Math::SinCos((IUnknown *)COERCE_UNSIGNED_INT64((double)(v21 - 0x3FFF) * -0.00009587672516830327)); /*0x5b229d*/
     double v23 = v22 * v82[0]; /*0x5b22a2*/
-    unsigned int v24 = *(_DWORD *)v13->vtable0; /*0x5b22ab*/
+    AbstractClass *v24 = *(_DWORD *)v13->vtable0; /*0x5b22ab*/
     *(double *)&v13->uniqueId = v23; /*0x5b22ad*/
     *(_QWORD *)&aP1.nextArrayIndex = __PAIR64__(*(_DWORD *)&v13->vtable0[4], v24); /*0x5b22b3*/
     eax10a = *(_DWORD *)&v13->vtable0[12]; /*0x5b22c2*/

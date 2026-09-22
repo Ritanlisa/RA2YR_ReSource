@@ -15,7 +15,7 @@ void* VoxelClass_RenderObject()
   __int16 v25; // dx
   float *inited; // eax
   _DWORD *Value; // eax
-  ObjectClass *v42; // esi
+  AbstractClass *v42; // esi
   int result; // eax
   float aP1a; // [esp+B8h] [ebp-12Ch]
   ParticleSystemClass *aP1b; // [esp+B8h] [ebp-12Ch]
@@ -26,7 +26,6 @@ void* VoxelClass_RenderObject()
   DirStruct desiredFacing; // [esp+E0h] [ebp-104h] BYREF
   ObjectClass *v53; // [esp+F4h] [ebp-F0h] BYREF
   int v54; // [esp+F8h] [ebp-ECh]
-
   int v6 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)a1 + 108))(a1); /*0x73c5ff*/
   int v7 = *((_DWORD *)a1 + 433); /*0x73c602*/
   int v8 = v6; /*0x73c608*/
@@ -120,7 +119,7 @@ LABEL_21:
     aP6 = (XSurface)xmmword_B1CFA8; /*0x73c80e*/
     if ( *(_DWORD *)(*((_DWORD *)a1 + 433) + 192) && *(_DWORD *)(*((_DWORD *)a1 + 433) + 196) ) /*0x73c83d*/
     {
-      int v21 = *((_DWORD *)a1 + 413); /*0x73c848*/
+      IUnknown *v21 = *((_DWORD *)a1 + 413); /*0x73c848*/
       int v59 = -1; /*0x73c84e*/
       if ( !v21 ) /*0x73c858*/
         WinAPI::Wrapper(-2147467261); /*0x73c85f*/
@@ -209,7 +208,7 @@ LABEL_21:
       }
       v8 = v54; /*0x73cbff*/
     }
-    int v26 = *(_DWORD *)&aP5[12]; /*0x73cc03*/
+    ConvertClass *v26 = *(_DWORD *)&aP5[12]; /*0x73cc03*/
     (*(void (__thiscall **)(_BYTE *, int, int, _DWORD *, _DWORD *, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, int))(*(_DWORD *)a1 + 1292))( /*0x73cc36*/
       a1,
       v8,

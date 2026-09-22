@@ -19,10 +19,10 @@ void sub_600750()
   unsigned int v0 = DataGlobal_AC1B50; /*0x600750*/
   for ( i = 0; i < DataGlobal_AC1B50; v0 = DataGlobal_AC1B50 ) /*0x60075d*/
   {
-    _DWORD * v2 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Entries + i); /*0x600764*/
+    AbstractClass *v2 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Entries + i); /*0x600764*/
     while ( v2 ) /*0x600769*/
     {
-      void * v3 = v2; /*0x60076b*/
+      AbstractClass *v3 = v2; /*0x60076b*/
       v2 = (_DWORD *)v2[2]; /*0x60076d*/
       __3_YAXPAX_Z(v3); /*0x600771*/
     }
@@ -36,7 +36,7 @@ void sub_600750()
     {
       if ( DataGlobal_AC1B5C || v0 <= v4 ) /*0x6007bd*/
         break; /*0x6007bd*/
-      int * v5 = (int *)g_DialogHashMap_Entries; /*0x6007c9*/
+      AbstractClass *v5 = (int *)g_DialogHashMap_Entries; /*0x6007c9*/
       int v6 = v0; /*0x6007cf*/
       DataGlobal_AC1B50 = v0 >> 1; /*0x6007d4*/
       --g_DialogHashMap_Insert; /*0x6007e0*/
@@ -44,7 +44,7 @@ void sub_600750()
       memset(g_DialogHashMap_Entries, 0, 4 * DataGlobal_AC1B50); /*0x600801*/
       if ( v6 > 0 ) /*0x600803*/
       {
-        int * v7 = v5; /*0x600805*/
+        AbstractClass *v7 = v5; /*0x600805*/
         int v8 = v6; /*0x600807*/
         do /*0x600842*/
         {
@@ -90,10 +90,10 @@ void sub_600920()
   unsigned int v0 = g_DialogBuffer; /*0x600920*/
   for ( i = 0; i < g_DialogBuffer; v0 = g_DialogBuffer ) /*0x60092d*/
   {
-    _DWORD * v2 = (_DWORD *)*((_DWORD *)g_DialogPool + i); /*0x600934*/
+    AbstractClass *v2 = (_DWORD *)*((_DWORD *)g_DialogPool + i); /*0x600934*/
     while ( v2 ) /*0x600939*/
     {
-      void * v3 = v2; /*0x60093b*/
+      AbstractClass *v3 = v2; /*0x60093b*/
       v2 = (_DWORD *)v2[2]; /*0x60093d*/
       __3_YAXPAX_Z(v3); /*0x600941*/
     }
@@ -107,7 +107,7 @@ void sub_600920()
     {
       if ( DataGlobal_AC18D4 || v0 <= v4 ) /*0x60098d*/
         break; /*0x60098d*/
-      int * v5 = (int *)g_DialogPool; /*0x600999*/
+      AbstractClass *v5 = (int *)g_DialogPool; /*0x600999*/
       int v6 = v0; /*0x60099f*/
       g_DialogBuffer = v0 >> 1; /*0x6009a4*/
       --DataGlobal_AC18CC; /*0x6009b0*/
@@ -115,7 +115,7 @@ void sub_600920()
       memset(g_DialogPool, 0, 4 * g_DialogBuffer); /*0x6009d1*/
       if ( v6 > 0 ) /*0x6009d3*/
       {
-        int * v7 = v5; /*0x6009d5*/
+        AbstractClass *v7 = v5; /*0x6009d5*/
         int v8 = v6; /*0x6009d7*/
         do /*0x600a12*/
         {
@@ -200,7 +200,7 @@ void sub_600AF0()
       memset(g_DialogHashMap_Base, 0, 4 * DataGlobal_AC1B08); /*0x600be5*/
       if ( v8 > 0 ) /*0x600be7*/
       {
-        int * v9 = v7; /*0x600be9*/
+        AbstractClass *v9 = v7; /*0x600be9*/
         int v10 = v8; /*0x600beb*/
         do /*0x600c2c*/
         {
@@ -1240,7 +1240,7 @@ LABEL_5:
 
 // 0x6035F0
 namespace gamemd {
-AbstractClass * DispatchDialogControlAction(int a1, HWND a2)
+AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2923,7 +2923,7 @@ int Dialog_SetActiveFlag(int a1, char a2)
 
 // 0x6071E0
 namespace gamemd {
-AbstractClass * GadgetClass_RenderAnimation(HWND a1, char a2)
+AbstractClass * * GadgetClass_RenderAnimation(HWND a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3435,7 +3435,7 @@ LABEL_116:
 
 // 0x608500
 namespace gamemd {
-AbstractClass * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
+AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3443,7 +3443,6 @@ AbstractClass * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
   _DWORD *v6; // eax
   int v15; // [esp+8h] [ebp-8h] BYREF
   int v16; // [esp+Ch] [ebp-4h] BYREF
-
   v16 = a1; /*0x608504*/
   v15 = 0; /*0x60851a*/
   HashTable::Get(&g_DialogHashMap_Base, &v16, &v15); /*0x608522*/
@@ -3454,8 +3453,8 @@ AbstractClass * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
   DlgCtrlID = GetDlgCtrlID(a2); /*0x608537*/
   if ( v4 != 148 ) /*0x608543*/
   {
-  int v13; // eax
-  int v9; // eax
+  AbstractClass *v13; // eax
+  AbstractClass *v9; // eax
     if ( v4 == 259 ) /*0x6086da*/
     {
       if ( DlgCtrlID != 1835 ) /*0x6086e1*/
@@ -3537,9 +3536,9 @@ LABEL_45:
     }
     else
     {
-  int v12; // eax
-  int v11; // eax
-  int v10; // eax
+  AbstractClass *v12; // eax
+  AbstractClass *v11; // eax
+  AbstractClass *v10; // eax
       if ( v4 != 189 ) /*0x6088fa*/
       {
         if ( v4 == 194 ) /*0x60893f*/
@@ -4692,7 +4691,7 @@ void sub_60A250(HWND hWnd, LPARAM a2)
 
 // 0x60B000
 namespace gamemd {
-AbstractClass * RepositionGameSpeedIndicator(HWND hWnd, int a2)
+AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4985,7 +4984,7 @@ int SkirmishDialog::ResizeDialogAndEnum()
 
 // 0x60F4B0
 namespace gamemd {
-AbstractClass * InitializeDialogControls(HWND a1, LPARAM a2)
+AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

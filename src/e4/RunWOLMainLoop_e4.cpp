@@ -8,7 +8,7 @@
 
 // 0x77E110
 namespace gamemd {
-Coord * sub_77E110()
+Coord * * sub_77E110()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -26,7 +26,7 @@ Coord * sub_77E110()
   {
     if ( !Theme::IsPlaying((int)&g_BuildingTypeClass_Count) ) /*0x77e15a*/
       goto LABEL_5; /*0x77e15a*/
-    int v1 = dword_A83D14; /*0x77e17d*/
+    AbstractClass *v1 = dword_A83D14; /*0x77e17d*/
     if ( dword_A83D14 == -1 ) /*0x77e186*/
       v1 = dword_A83D18; /*0x77e188*/
     v0 = StringList::Find(&g_BuildingTypeClass_Count, g_INI_Key_INTRO); /*0x77e198*/
@@ -69,11 +69,11 @@ void sub_785EA0()
     unsigned int v0 = g_WOL_MsgPool; /*0x785ec6*/
     for ( i = 0; i < g_WOL_MsgPool; v0 = g_WOL_MsgPool ) /*0x785ecf*/
     {
-      int v2 = *((_DWORD *)g_WOL_MessageQueue + i); /*0x785ed6*/
+      SessionClass *v2 = *((_DWORD *)g_WOL_MessageQueue + i); /*0x785ed6*/
       while ( v2 ) /*0x785edb*/
       {
         v3 = (void **)v2; /*0x785edd*/
-        v2 = *(_DWORD *)(v2 + 8); /*0x785edf*/
+        v2 = v2->SessionClass_field_08; /*0x785edf*/
         DeleteAndZero(v3); /*0x785ee8*/
         __3_YAXPAX_Z(v3); /*0x785eee*/
       }
@@ -143,14 +143,13 @@ void sub_785EA0()
 
 // 0x798DE0
 namespace gamemd {
-Coord * RunWOLMainLoop_Read()
+Coord * * RunWOLMainLoop_Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BOOL v6; // esi
   int v10; // [esp+34h] [ebp-20h] BYREF
   char v11; // [esp+38h] [ebp-1Ch]
-
   v10 = 0; /*0x798de9*/
   v11 = 0; /*0x798df1*/
   ReadRegistryOptionsWOL(&v10); /*0x798df6*/
@@ -169,15 +168,11 @@ Coord * RunWOLMainLoop_Read()
       -1,
       0,
       0);
-    int v4 = *(_DWORD *)g_UIPointerTable; /*0x798e7c*/
+    AbstractClass *v4 = *(_DWORD *)g_UIPointerTable; /*0x798e7c*/
     int v9 = g_NetworkRematchState & 0xFFFF00; /*0x798e7e*/
     char * v5 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x798e84*/
-    (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(v4 + 56))( /*0x798e9c*/
-      g_UIPointerTable,
-      g_WOL_ConnectFlag,
-      g_WOL_GameConfig,
-      v5,
-      v9);
+    v4->computeDistanceSquared(/*0x798e9c*/
+      g_UIPointerTable, g_WOL_ConnectFlag, g_WOL_GameConfig, v5, v9);
   }
   RunWOLMainLoop_Read_Read(); /*0x798e9f*/
   if ( Flag::IsNot2(&v10) ) /*0x798ea8*/

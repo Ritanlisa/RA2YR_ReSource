@@ -36,7 +36,7 @@ void * Tactical::ConstructTacticalSurface()
   this->q1B0 = -1; /*0x42a70d*/
   this->q038 = 0; /*0x42a710*/
   *((_WORD *)this + 57) = 0; /*0x42a714*/
-  _DWORD * v2 = this + 116; /*0x42a718*/
+  VectorClass *v2 = this + 116; /*0x42a718*/
   int v3 = 3; /*0x42a71b*/
   do /*0x42a73d*/
   {
@@ -147,7 +147,7 @@ void * Tactical::ConstructTacticalSurface()
   for ( i = 0; i <= *v20; *(_DWORD *)(v20[2] + 4 * i - 4) = 0 ) /*0x42a864*/
     ++i; /*0x42a869*/
   *v20 = 0; /*0x42a874*/
-  char * v22 = this + 116; /*0x42a87c*/
+  VectorClass *v22 = this + 116; /*0x42a87c*/
   char * v26 = this + 188; /*0x42a87f*/
   char * v25 = this + 116; /*0x42a883*/
   _DWORD * v23 = this + 76; /*0x42a887*/
@@ -157,7 +157,7 @@ void * Tactical::ConstructTacticalSurface()
     *(v23 - 3) = 0; /*0x42a898*/
     *v23 = 0; /*0x42a89b*/
     v23[3] = 0; /*0x42a89e*/
-    (*(void (__thiscall **)(char *))(*(_DWORD *)v22 + 12))(v22); /*0x42a8a3*/
+    v22->Cleanup5(); /*0x42a8a3*/
     memset(v26, 0, 0x3E8u); /*0x42a8b5*/
     v23[778] = 0; /*0x42a8bf*/
     ++v23; /*0x42a8c5*/
@@ -232,7 +232,7 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
 
 // 0x484180
 namespace gamemd {
-ScenarioClass * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8)
+ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -575,17 +575,17 @@ void* Tactical_Radar_Render()
     LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x640a5d*/
     int v9 = 10000; /*0x640a62*/
     int v62 = 10000; /*0x640a6c*/
-    int v56 = 10000; /*0x640a70*/
+    AbstractClass *v56 = 10000; /*0x640a70*/
     int v50 = 0; /*0x640a74*/
     int v10 = 0; /*0x640a7c*/
     for ( i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); i; i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) ) /*0x640a85*/
     {
-      _DWORD * v12 = (_DWORD *)(i + 36); /*0x640a8b*/
+      IUnknown *v12 = (_DWORD *)(i + 36); /*0x640a8b*/
       if ( (unsigned __int8)LayerClass::IsWithinUsableArea(i + 36, 0) ) /*0x640a96*/
       {
         v54 = (_DWORD *)*v12; /*0x640aa7*/
-        int v13 = (SHIWORD(v54) << 8) + 128; /*0x640ab9*/
-        int v14 = ((__int16)v54 << 8) + 128; /*0x640ac3*/
+        AbstractClass *v13 = (SHIWORD(v54) << 8) + 128; /*0x640ab9*/
+        BuildingTypeClass *v14 = ((__int16)v54 << 8) + 128; /*0x640ac3*/
         Coord::Subtract(&v64, v14, v13, 0); /*0x640acb*/
         Coord::Subtract(&v69, v14, v13, 0); /*0x640ad8*/
         IsoCoord::ToScreenOffset(v69, v65, &v53, &v57); /*0x640af7*/
@@ -609,15 +609,15 @@ void* Tactical_Radar_Render()
       if ( (unsigned __int8)ScenarioClass::Is_Waypoint_Valid(j) ) /*0x640b71*/
         ++v16; /*0x640b7a*/
     }
-    int v18 = 0; /*0x640b81*/
+    AbstractClass *v18 = 0; /*0x640b81*/
     v57 = j; /*0x640b83*/
     for ( k = v16; v18 < v16; ++v18 ) /*0x640b8d*/
     {
       if ( (!v18 || v18 <= j) && (unsigned __int8)ScenarioClass::Is_Waypoint_Valid(v18) ) /*0x640ba6*/
       {
         v54 = *(_DWORD **)ScenarioClass::Get_Waypoint_Location(&v63, v18); /*0x640bc8*/
-        int v19 = (SHIWORD(v54) << 8) + 128; /*0x640bde*/
-        int v20 = ((__int16)v54 << 8) + 128; /*0x640be4*/
+        AbstractClass *v19 = (SHIWORD(v54) << 8) + 128; /*0x640bde*/
+        BuildingTypeClass *v20 = ((__int16)v54 << 8) + 128; /*0x640be4*/
         Coord::Subtract(&v69, v20, v19, 0); /*0x640bec*/
         Coord::Subtract(&v64, v20, v19, 0); /*0x640bf9*/
         IsoCoord::ToScreenOffset(v64, v70, &v53, &v55); /*0x640c18*/
@@ -673,9 +673,8 @@ void* Tactical_Radar_Render()
     int v71 = v64 - 2 * v69; /*0x640dee*/
     char * v32 = (char *)__2_YAPAXI_Z(0x24u); /*0x640df2*/
     if ( v32 ) /*0x640dfc*/
-      char * v33 = DSurface::Construct(v32, v63, v64, 1, 0); /*0x640e13*/
-    else
-      v33 = 0; /*0x640e17*/
+      DSurface *v33 = DSurface::Construct(v32, v63, v64, 1, 0); /*0x640e13*/
+    DSurface *v33 = 0; /*0x640e17*/
     _DWORD * v34 = (_DWORD *)v55; /*0x640e19*/
     int v35 = *(_DWORD *)v33; /*0x640e1d*/
   _BYTE v77[8]; // [esp+ACh] [ebp-8h] BYREF
@@ -683,7 +682,7 @@ void* Tactical_Radar_Render()
     (*(void (__thiscall **)(char *, int *, _DWORD, int))(v35 + 8))(v33, &v70, *v34, v36); /*0x640e3d*/
     HIBYTE(v54) = 0; /*0x640e49*/
     v55 = LoadFileSHP(DataGlobal_836DF4); /*0x640e53*/
-    int v37 = 0; /*0x640e5b*/
+    AbstractClass *v37 = 0; /*0x640e5b*/
     v56 = 0; /*0x640e5f*/
     if ( v53 > 0 ) /*0x640e63*/
     {
@@ -696,7 +695,7 @@ void* Tactical_Radar_Render()
           if ( (unsigned __int8)ScenarioClass::Is_Waypoint_Valid(v37) ) /*0x640e8b*/
           {
             v58 = *(_DWORD *)ScenarioClass::Get_Waypoint_Location(&a6, v37); /*0x640eb0*/
-            int v39 = (SHIWORD(v58) << 8) + 128; /*0x640ec2*/
+            AbstractClass *v39 = (SHIWORD(v58) << 8) + 128; /*0x640ec2*/
   int v72; // [esp+8Ch] [ebp-28h] BYREF
             Coord::Subtract(&v72, ((__int16)v58 << 8) + 128, v39, 0); /*0x640ed4*/
   int v66; // [esp+6Ch] [ebp-48h] BYREF
@@ -734,7 +733,7 @@ void* Tactical_Radar_Render()
     int * v44 = a8; /*0x641071*/
     (*(void (__thiscall **)(int *, int *, _DWORD))(*a8 + 20))(a8, &v61, 0); /*0x641083*/
     int v45 = *v44; /*0x641088*/
-    int v46 = (*(int (__thiscall **)(char *, _BYTE *, _DWORD, _DWORD))(*(_DWORD *)v33 + 120))(v33, v77, 0, 0); /*0x641098*/
+    int v46 = v33->GetRect(v77, 0, 0); /*0x641098*/
     result = (int *)(*(int (__thiscall **)(int *, int *, char *, int))(v45 + 8))(v44, &v60, v33, v46); /*0x6410a4*/
     if ( v33 ) /*0x6410ac*/
       return (int *)(**(int (__thiscall ***)(char *, int))v33)(v33, 1); /*0x6410b4*/
@@ -904,7 +903,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
 
 // 0x6930A0
 namespace gamemd {
-MouseClass * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4)
+MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1091,7 +1090,7 @@ void Tactical::DisplayTacticalOverlayText(wchar_t * String)
     if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)DSurface_Composite + 132))(DSurface_Composite) ) /*0x6d4e60*/
     {
   int v13[2]; // [esp+14h] [ebp-28h] BYREF
-      signed int v3 = this->q0A4; /*0x6d4e6e*/
+      MSShapeAnim *v3 = this->q0A4; /*0x6d4e6e*/
       if ( v3 != -1 && DataGlobal_A8F798 && DataGlobal_A8F794 && *((__int16 *)DataGlobal_A8F794 + 3) > v3 ) /*0x6d4e93*/
       {
         __int64 v4 = g_DSurface_WindowOffset - *((__int16 *)DataGlobal_A8F794 + 2); /*0x6d4ea0*/
@@ -1122,8 +1121,8 @@ void Tactical::DisplayTacticalOverlayText(wchar_t * String)
         {
           int v15 = g_Map_VisibleRect; /*0x6d4f18*/
           int v17 = g_DSurface_WindowOffset; /*0x6d4f35*/
-          int v6 = g_Map_VisibleRectOffset; /*0x6d4f3e*/
-          _BYTE * v7 = (_BYTE *)aP0; /*0x6d4f4c*/
+          CampaignScore *v6 = g_Map_VisibleRectOffset; /*0x6d4f3e*/
+          BitFont *v7 = (_BYTE *)aP0; /*0x6d4f4c*/
           int v8 = DSurface_ViewBounds; /*0x6d4f5a*/
           int v14 = DSurface_ViewBounds; /*0x6d4f61*/
           int v16 = g_Map_VisibleRectOffset; /*0x6d4f65*/
@@ -1162,11 +1161,11 @@ unsigned int Tactical::SetTacticalPosition(IUnknown * aP1)
   unsigned int result; // eax
   IUnknown *v8; // [esp+10h] [ebp-8h] BYREF
   int v3 = aP1->field_0; /*0x6d607d*/
-  int v9 = aP1->field_4; /*0x6d6083*/
+  IUnknown *v9 = aP1->field_4; /*0x6d6083*/
   v8 = (IUnknown *)(-60 * v9 / 2 + 60 * v3 / 2); /*0x6d60c3*/
   int v4 = 30 * v9 / 2 + 30 * v3 / 2; /*0x6d60de*/
   v5 = (IUnknown *)((int)v8 / 256); /*0x6d60e2*/
-  int v6 = v4 / 256 - ZCoordToScreenY(aP1->field_8); /*0x6d6118*/
+  IUnknown *v6 = v4 / 256 - ZCoordToScreenY(aP1->field_8); /*0x6d6118*/
   v8 = (IUnknown *)((int)v8 / 256); /*0x6d611d*/
   v9 = v6; /*0x6d6121*/
   if ( ClampCoordMap((int *)&v8) && !g_NetworkPlayerBuffer[5935] ) /*0x6d6135*/
@@ -1597,7 +1596,7 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Tactical *v14; // ecx
-  ObjectClass *v22; // esi
+  AbstractClass *v22; // esi
   BOOL aP2a; // [esp+38h] [ebp+8h]
 
   int v29; // [esp+18h] [ebp-18h] BYREF
@@ -1658,7 +1657,7 @@ int Tactical_42::FindItem(unsigned int * a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  int v2 = this->q004; /*0x6e4a80*/
+  Tactical *v2 = this->q004; /*0x6e4a80*/
   result = 0; /*0x6e4a83*/
   if ( v2 <= 0 ) /*0x6e4a88*/
     return -1; /*0x6e4a9f*/

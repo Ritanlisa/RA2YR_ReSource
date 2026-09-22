@@ -62,7 +62,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                     - 50;
                 if ( v17 < *(unsigned __int16 *)Audio::GetSamplePosition((int)g_ZBufferDescriptor, v26[0], v15) ) /*0x62d11e*/
                 {
-                  int v18 = this->ParticleClass_field_0xB4; /*0x62d124*/
+                  IUnknown *v18 = this->ParticleClass_field_0xB4; /*0x62d124*/
                   if ( v18 ) /*0x62d12c*/
                     int v19 = *(_DWORD *)(this->ParticleClass_field_0xAC + 700) + 3 * v18; /*0x62d13f*/
                   else

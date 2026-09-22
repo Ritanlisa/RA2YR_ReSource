@@ -472,7 +472,6 @@ void * * ScenarioClass_SetTimer(int a1)
   void *result; // eax
   DWORD v6; // eax
   DWORD v8; // eax
-
   if ( a1 ) /*0x684068*/
   {
     Ticks = Timer::GetTicks(); /*0x68406e*/
@@ -522,7 +521,7 @@ void * * ScenarioClass_SetTimer(int a1)
 
 // 0x684290
 namespace gamemd {
-ScenarioClass * Mouse_Update()
+ScenarioClass * * Mouse_Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -620,11 +619,11 @@ LABEL_18:
   {
     if ( Progress::GetWeighted((int)g_UIManager, v0) < 0.999 ) /*0x68455b*/
     {
-      char * v10 = *(char **)(Game_PlayerInfoArray + 4 * i); /*0x684562*/
+      WinModemClass *v10 = *(char **)(Game_PlayerInfoArray + 4 * i); /*0x684562*/
       ToWideStringChar(v10); /*0x684567*/
       ToWideStringChar(v10); /*0x684570*/
       Debug::Log(); /*0x68457c*/
-      int v11 = *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * i) + 111); /*0x684591*/
+      AbstractClass *v11 = *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * i) + 111); /*0x684591*/
       HandleNetworkPlayerDisconnect(v11, 1); /*0x684596*/
       if ( SessionClass::IsValidHouse((int)g_GameMode_Current, *(#375 **)&HouseClass_Array->__pad_0[4 * v11]) ) /*0x6845aa*/
       {
@@ -683,13 +682,13 @@ void PostLoadInitScenario()
       TacticalClass::SetPositionThunk((int)&v34); /*0x684d42*/
     }
   }
-  int v4 = g_MultiplayerCleanup; /*0x684d47*/
+  AbstractTypeClass *v4 = g_MultiplayerCleanup; /*0x684d47*/
   for ( j = 0; j < g_MultiplayerCleanup; ++j ) /*0x684d50*/
   {
-    _DWORD * v6 = (_DWORD *)*((_DWORD *)DataGlobal_B0E784 + j); /*0x684d5c*/
+    TagTypeClass *v6 = (_DWORD *)*((_DWORD *)DataGlobal_B0E784 + j); /*0x684d5c*/
     if ( (Debug::AccumFlags(v6) & 4) != 0 ) /*0x684d68*/
     {
-      int v7 = TeamClass::FindOrCreate(v6); /*0x684d77*/
+      AbstractTypeClass *v7 = TeamClass::FindOrCreate(v6); /*0x684d77*/
       if ( dword_8B41B8 < unk_8B41B0 /*0x684da9*/
         || (unk_8B41B5 || !unk_8B41B0)
         && unk_8B41BC > 0
@@ -746,10 +745,10 @@ void PostLoadInitScenario()
   {
     do /*0x684efb*/
     {
-      int v19 = *((_DWORD *)DataGlobal_B0E784 + v18); /*0x684ec8*/
+      TagTypeClass *v19 = *((_DWORD *)DataGlobal_B0E784 + v18); /*0x684ec8*/
       if ( (unsigned __int8)TagClass::HasValidHouse(v19) ) /*0x684ecd*/
       {
-        int v20 = HouseClass::FindOwner(*(void **)(*(_DWORD *)(*(_DWORD *)(v19 + 160) + 164) + 180)); /*0x684ee8*/
+        int v20 = HouseClass::FindOwner(*(void **)(*(_DWORD *)(v19->q0A0 + 164) + 180)); /*0x684ee8*/
         ++*(_DWORD *)(v20 + 636); /*0x684eed*/
       }
       ++v18; /*0x684ef8*/
@@ -758,7 +757,7 @@ void PostLoadInitScenario()
   }
   if ( *((_BYTE *)g_ScenarioClass_Instance + 13490) ) /*0x684f02*/
   {
-    int v21 = 0; /*0x684f12*/
+    AbstractClass *v21 = 0; /*0x684f12*/
     for ( k = 0; v21 < HouseClass_Count; k = v21 ) /*0x684f1a*/
     {
       int v22 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v21]; /*0x684f23*/
@@ -795,7 +794,7 @@ void PostLoadInitScenario()
   MarkCliffEdgePassability(&DataGlobal_87F7E8); /*0x684fe5*/
   if ( !DataGlobal_A8ED78 ) /*0x684ff0*/
   {
-    void * v27 = __2_YAPAXI_Z(0x100u); /*0x684ffc*/
+    AbstractClass *v27 = __2_YAPAXI_Z(0x100u); /*0x684ffc*/
     if ( v27 ) /*0x685003*/
     {
       v34 = 2688; /*0x68500f*/
@@ -1121,12 +1120,12 @@ void SaveScenarioToINI()
 
 // 0x687F10
 namespace gamemd {
-AbstractClass * SessionClass_AssignHouses()
+AbstractClass * * SessionClass_AssignHouses()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LPARAM v10; // eax
-  LPARAM v16; // edx
+  AbstractClass *v16; // edx
   wchar_t *String; // eax
   int v22; // esi
   void *v23; // esi
@@ -1252,7 +1251,7 @@ AbstractClass * SessionClass_AssignHouses()
       int v12 = *v11; /*0x688167*/
       if ( *v11 != -1 && v12 != -3 ) /*0x688175*/
       {
-        int v13 = v11[8]; /*0x68817b*/
+        AbstractClass *v13 = v11[8]; /*0x68817b*/
         i = v10 + 1; /*0x688184*/
         void * v14 = __2_YAPAXI_Z(0x160B8u); /*0x688188*/
         if ( v14 ) /*0x688192*/
@@ -1379,17 +1378,17 @@ void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
       int v9 = SHIWORD(v3->field_0); /*0x688f72*/
       int v10 = (SLOWORD(v3->field_0) << 8) + 128; /*0x688f79*/
       v41 = GroundHeight; /*0x688f7f*/
-      int v11 = *a1; /*0x688f83*/
+      AbstractClass *v11 = *a1; /*0x688f83*/
       v39 = v10; /*0x688f85*/
       v40 = (v9 << 8) + 128; /*0x688f9a*/
-      if ( (*(unsigned __int8 (__thiscall **)(int *, int *, _DWORD))(v11 + 216))(a1, &v39, 0) ) /*0x688f9e*/
+      if ( v11->COMStub_54(a1, &v39, 0) ) /*0x688f9e*/
         return 1; /*0x688fb4*/
     }
   }
   if ( a3 < 32 ) /*0x688fc4*/
   {
 LABEL_8:
-    int v29 = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)7); /*0x688fce*/
+    ScenarioClass *v29 = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)7); /*0x688fce*/
     v30 = 0; /*0x688fe6*/
     int v37 = 0; /*0x688fea*/
     while ( 1 ) /*0x689032*/

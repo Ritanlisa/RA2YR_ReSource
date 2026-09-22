@@ -98,7 +98,7 @@ FootClass::FootClass() noexcept
 // ============================================================
 
 // 0x4da530
-Coord * FootClass::MovementAI()
+Coord * * FootClass::MovementAI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

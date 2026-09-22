@@ -138,16 +138,15 @@ void sub_452000(unsigned int * a1)
 {
   bool v10; // zf
   int v11; // ebx
-  int *v12; // ecx
+  CellStruct *v12; // ecx
   int v13; // esi
   int result; // eax
   _DWORD *v15; // [esp+10h] [ebp-10h]
   int v16; // [esp+14h] [ebp-Ch]
   int v17; // [esp+18h] [ebp-8h]
-
   v17 = (*(int (__thiscall **)(_DWORD *))(*a1 + 484))(a1); /*0x452015*/
   int v2 = (*(int (__thiscall **)(_DWORD *))(*a1 + 444))(a1); /*0x452019*/
-  int v3 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*a1 + 1124))(a1, *(__int16 *)(v2 + 266)); /*0x452031*/
+  BuildingTypeClass *v3 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*a1 + 1124))(a1, *(__int16 *)(v2 + 266)); /*0x452031*/
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*a1 + 352))(a1)
     || a1[165]
   _DWORD *v4; // eax
@@ -173,7 +172,7 @@ void sub_452000(unsigned int * a1)
       int v7 = *((char *)a1 + 1773); /*0x4520cf*/
       if ( v7 == 15 && (*(int (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*a1 + 104))(a1, 0, 0) == 5 ) /*0x4520e9*/
         LOBYTE(v7) = 16; /*0x4520eb*/
-      _DWORD * v8 = a1 + 343; /*0x4520f0*/
+      CellStruct *v8 = a1 + 343; /*0x4520f0*/
       int v9 = 21; /*0x4520f2*/
       do /*0x452107*/
       {
@@ -220,12 +219,12 @@ void sub_452D40()
   result = g_BuildingProductionState; /*0x452d40*/
   for ( i = 0; i < g_BuildingProductionState; ++i ) /*0x452d4a*/
   {
-    int v2 = *((_DWORD *)g_BuildingClass_InstanceCount + i); /*0x452d52*/
+    BuildingClass *v2 = *((_DWORD *)g_BuildingClass_InstanceCount + i); /*0x452d52*/
     if ( v2 /*0x452d7c*/
-      && *(_BYTE *)(*(_DWORD *)(v2 + 1312) + 5822)
+      && *(_BYTE *)(v2->Type + 5822)
       && !g_IKnowWhatImDoing
-      && *(_BYTE *)(v2 + 144)
-      && !*(_BYTE *)(v2 + 129) )
+      && v2->isAliveFlag
+      && !v2->inLimbo )
     {
       BuildingClass::DemolishBridge((#377 *)v2); /*0x452d8a*/
       BuildingClass::DemolishBridge((#377 *)v2); /*0x452d93*/
@@ -414,12 +413,12 @@ LABEL_20:
 
 // 0x456FB0
 namespace gamemd {
-BuildingTypeClass * sub_456FB0(unsigned int * a1, int a2, int a3)
+BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v4 = (*(int (__thiscall **)(_DWORD *, int))(*a1 + 1124))(a1, a3); /*0x456fc7*/
+  BuildingTypeClass *v4 = (*(int (__thiscall **)(_DWORD *, int))(*a1 + 1124))(a1, a3); /*0x456fc7*/
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*a1 + 352))(a1) ) /*0x456fc9*/
     return Techno::StartInvulnerability(v4); /*0x456fc9*/
   if ( a1[165]

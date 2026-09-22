@@ -37,7 +37,7 @@ AircraftClass::AircraftClass() noexcept
 
 // IDA: 0x417FE0 (Mission_Attack, 3445B)
 // 0x417fe0
-AbstractClass * AircraftClass::Mission_Attack()
+AbstractClass * * AircraftClass::Mission_Attack()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x417fe0
@@ -2471,7 +2471,7 @@ retn
 
 // IDA: 0x419C80 (Mission_Transport, 1215B)
 // 0x419c80
-ILocomotion * AircraftClass::Mission_Transport()
+ILocomotion * * AircraftClass::Mission_Transport()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4364,7 +4364,7 @@ int AircraftClass::PowerDrainUpdate(int a2)
 
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
 // 0x41b660
-AircraftTypeClass * AircraftClass::HandleTargetDestroyed()
+AircraftTypeClass * * AircraftClass::HandleTargetDestroyed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4408,7 +4408,7 @@ retn    8
 
 // IDA: 0x414A80 (ProcessMissionTimeout, 302B)
 // 0x414a80
-AbstractClass * AircraftClass::ProcessMissionTimeout()
+AbstractClass * * AircraftClass::ProcessMissionTimeout()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x414a80

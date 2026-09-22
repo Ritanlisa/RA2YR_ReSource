@@ -93,10 +93,10 @@ int VoxelAnimClass::CleanupMembers()
     }
     while ( v2 < DataGlobal_887398 ); /*0x749a5d*/
   }
-  int v3 = this->VoxelAnimClass_field_0x108; /*0x749a5f*/
+  AbstractClass *v3 = this->VoxelAnimClass_field_0x108; /*0x749a5f*/
   if ( v3 ) /*0x749a67*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 248))(v3); /*0x749a6b*/
+    v3->vt_slot_248(); /*0x749a6b*/
     this->VoxelAnimClass_field_0x108 = 0; /*0x749a71*/
   }
   if ( g_WTFMode ) /*0x749a82*/
@@ -124,7 +124,7 @@ int VoxelAnimClass::CleanupMembers()
 
 // 0x749B70
 namespace gamemd {
-Coord * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
+Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -141,9 +141,9 @@ Coord * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   {
   int v36[2]; // [esp+38h] [ebp-78h] BYREF
   int v33; // [esp+2Ch] [ebp-84h]
-    int v5 = a2[1]; /*0x749bcb*/
+    IUnknown *v5 = a2[1]; /*0x749bcb*/
     int v34 = *a2; /*0x749bd0*/
-    int v35 = v5; /*0x749bd4*/
+    IUnknown *v35 = v5; /*0x749bd4*/
     int v30 = this->q027; /*0x749bda*/
     int v31 = this->q028; /*0x749beb*/
     GroundHeight = this->q029; /*0x749bf2*/
@@ -173,7 +173,7 @@ LABEL_6:
       _DWORD * v6 = *(_DWORD **)(v4 + 176); /*0x749c8f*/
       if ( v6 ) /*0x749c97*/
       {
-  _DWORD *v15; // esi
+  ConvertClass *v15; // esi
   float v38[12]; // [esp+50h] [ebp-60h] BYREF
   float v39[12]; // [esp+80h] [ebp-30h] BYREF
         qmemcpy(v38, VoxelAnimClass::QuaternionToMatrix((float *)this + 44, v39), sizeof(v38)); /*0x749cbc*/
@@ -213,7 +213,7 @@ LABEL_6:
         v27 = v10; /*0x749e1f*/
         v26 = v11; /*0x749e29*/
         v12 = (__int16 *)Coord::To_Cell(&DataGlobal_87F7E8, &v25); /*0x749e2d*/
-        bool v13 = this->q043; /*0x749e32*/
+        AbstractClass *v13 = this->q043; /*0x749e32*/
         int v14 = v12[133]; /*0x749e38*/
         if ( v13 ) /*0x749e41*/
         {
@@ -230,7 +230,7 @@ LABEL_6:
         }
         v25 = v29 + v34; /*0x749e8b*/
         int v24 = v14; /*0x749e97*/
-        int v16 = *this; /*0x749e98*/
+        IUnknown *v16 = *this; /*0x749e98*/
         v26 = v28 + v35; /*0x749ea0*/
         int v17 = this->GetMember41(); /*0x749ea4*/
         int v23 = -2 - ZCoordToScreenY(v17); /*0x749eb8*/
@@ -292,7 +292,7 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
 
 // 0x74AA30
 namespace gamemd {
-AbstractClass * VoxelAnimClass::GetFrameCount(int * a2)
+AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -301,10 +301,10 @@ AbstractClass * VoxelAnimClass::GetFrameCount(int * a2)
   Power::TimerProcess(this->VoxelAnimClass_field_0x100); /*0x74aa47*/
   int v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->VoxelAnimClass_field_0x104 + 4) + 16))(this->VoxelAnimClass_field_0x104 + 4); /*0x74aa58*/
   Power::TimerProcess(v3); /*0x74aa5e*/
-  int v4 = this->VoxelAnimClass_field_0x108; /*0x74aa63*/
+  AbstractClass *v4 = this->VoxelAnimClass_field_0x108; /*0x74aa63*/
   if ( v4 ) /*0x74aa6b*/
   {
-    int v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x74aa74*/
+    int v5 = (*(int (__stdcall **)(int))(v4->vtable2 + 16))(v4 + 4); /*0x74aa74*/
     Power::TimerProcess(v5); /*0x74aa7a*/
   }
   int v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->VoxelAnimClass_field_0x10C + 4) + 16))(this->VoxelAnimClass_field_0x10C + 4); /*0x74aa8b*/

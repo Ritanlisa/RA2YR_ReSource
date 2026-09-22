@@ -78,12 +78,12 @@ LABEL_11:
 
 // 0x41CC20
 namespace gamemd {
-AnimTypeClass * AircraftTypeClass_LoadTypeData()
+AnimTypeClass * * AircraftTypeClass_LoadTypeData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Bool_Overwrite; // al
-  int v9; // eax
+  AnimTypeClass *v9; // eax
   char v10; // al
   char v11; // cl
   char v13; // [esp-Ch] [ebp-98h]

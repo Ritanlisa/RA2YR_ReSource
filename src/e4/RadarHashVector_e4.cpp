@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x658B10
-AbstractClass * RadarHashVector::ComputeHashIndex(int a2, char * a3)
+AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -11,7 +11,7 @@ AbstractClass * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   int v3 = a2; /*0x658b12*/
   if ( a2 ) /*0x658b1e*/
   {
-    char * v5 = a3; /*0x658b24*/
+    AbstractClass *v5 = a3; /*0x658b24*/
     this->q00C = 0; /*0x658b28*/
     if ( a3 ) /*0x658b2d*/
     {
@@ -61,7 +61,7 @@ AbstractClass * RadarHashVector::ComputeHashIndex(int a2, char * a3)
       return 0; /*0x658c11*/
     if ( this->RadarHashVector_field_0x04 ) /*0x658b87*/
     {
-      int v11 = this->RadarHashVector_field_0x08; /*0x658b8c*/
+      AbstractClass *v11 = this->RadarHashVector_field_0x08; /*0x658b8c*/
       if ( a2 < v11 ) /*0x658b91*/
         v11 = a2; /*0x658b93*/
       if ( v11 > 0 ) /*0x658b97*/
@@ -95,7 +95,7 @@ AbstractClass * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x658bf5*/
   }
-  int v15 = this->RadarHashVector_field_0x08; /*0x658bf8*/
+  AbstractClass *v15 = this->RadarHashVector_field_0x08; /*0x658bf8*/
   if ( v15 < this->RadarHashVector_field_0x10 ) /*0x658c00*/
     this->RadarHashVector_field_0x10 = v15; /*0x658c02*/
   return 1; /*0x658c05*/

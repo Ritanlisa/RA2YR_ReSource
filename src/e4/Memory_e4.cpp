@@ -77,7 +77,7 @@ LABEL_8:
   if ( cchWideChar > 0 ) /*0x614a8e*/
     v9[cchWideChar - 1] = 0; /*0x614a90*/
   signed int v10 = wcslen(v9); /*0x614a9d*/
-  void * v11 = __2_YAPAXI_Z(2 * v10 + 6); /*0x614aab*/
+  AbstractClass *v11 = __2_YAPAXI_Z(2 * v10 + 6); /*0x614aab*/
   memset(v11, 0, 2 * v10 + 6); /*0x614ab9*/
   int v12 = 0; /*0x614abd*/
   if ( v10 > 0 ) /*0x614ac6*/

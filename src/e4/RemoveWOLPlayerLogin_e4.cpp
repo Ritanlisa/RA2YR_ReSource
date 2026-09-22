@@ -18,13 +18,13 @@ void E4Recv_7AE830::sub_7AE830()
     int * v13 = (int *)*this; /*0x7ae856*/
     *(this + 2) = v2 >> 1; /*0x7ae85c*/
     *(this + 3) = v4 - 1; /*0x7ae864*/
-    void * v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7ae86f*/
+    AbstractClass *v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7ae86f*/
     unsigned int v6 = 4 * *(this + 2); /*0x7ae874*/
     *this = v5; /*0x7ae87b*/
     memset(v5, 0, v6); /*0x7ae880*/
     if ( (int)v2 > 0 ) /*0x7ae88b*/
     {
-      int * v7 = v3; /*0x7ae88d*/
+      rc_ptr_base *v7 = v3; /*0x7ae88d*/
       unsigned int v8 = v2; /*0x7ae88f*/
       do /*0x7ae8c3*/
       {

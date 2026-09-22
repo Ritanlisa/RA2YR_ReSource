@@ -9,8 +9,8 @@ int Input::OffsetToDirection()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
-  int v1 = (unsigned __int8)this->q004; /*0x4810aa*/
-  int v2 = (unsigned __int8)*this; /*0x4810b0*/
+  IPXGlobalConnClass *v1 = (unsigned __int8)this->q004; /*0x4810aa*/
+  ObjectClass *v2 = (unsigned __int8)*this; /*0x4810b0*/
   double v3 = Math::Sqrt((double)(v2 - 128) * (double)(v2 - 128) + (double)(v1 - 128) * (double)(v1 - 128)); /*0x4810e0*/
   if ( (int)Math::RoundToInt(v3) >= 60 ) /*0x4810f0*/
   {

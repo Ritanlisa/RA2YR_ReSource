@@ -115,7 +115,7 @@ void SHA1::Init()
 
 // IDA 0x69DA00: Process
 // 0x69d960
-EditClass * SHA1::Process(const void* data, uint32_t size)
+EditClass * * SHA1::Process(const void* data, uint32_t size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

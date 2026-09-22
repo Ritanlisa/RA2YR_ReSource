@@ -31,13 +31,13 @@ void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass 
 
 // 0x4E1390
 namespace gamemd {
-GadgetClass * GadgetClass::Dtor()
+GadgetClass * * GadgetClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *this = &vt_GadgetClass; /*0x4e1390*/
-  int v1 = DataGlobal_8B3E90; /*0x4e1396*/
+  GadgetClass *v1 = DataGlobal_8B3E90; /*0x4e1396*/
   if ( this == (_DWORD *)DataGlobal_8B3E90 ) /*0x4e139f*/
   {
     int v2 = this->q020; /*0x4e13a1*/
@@ -105,7 +105,7 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 
 // 0x60AAB0
 namespace gamemd {
-AbstractClass * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
+AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -269,7 +269,7 @@ LABEL_86:
 
 // 0x623560
 namespace gamemd {
-AbstractClass * GadgetClass::SetTooltip(CCINIClass * aP1)
+AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -300,9 +300,9 @@ int GadgetClass::Show()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = *(_DWORD *)this; /*0x723ea0*/
+  AbstractClass *v1 = *(_DWORD *)this; /*0x723ea0*/
   this->q0B4 = 1; /*0x723ea2*/
-  return (*(int (**)(void))(v1 + 72))();
+  return v1->GetInvalidCoord();
 }
 }
 } // namespace gamemd

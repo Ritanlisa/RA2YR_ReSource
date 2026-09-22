@@ -203,6 +203,24 @@ def build_types(body, cls, addr):
                 env[v] = env[vm.group(1)]
                 grew = True
                 continue
+            # defsite register channel: `vN = expr; ... /*0xSITE*/` -> the
+            # CSP type of the register at that definition site
+            dm2 = re.search(r'/\*0x([0-9A-Fa-f]{6,8})\*/\s*$', ln)
+            if dm2 and v not in env and ai:
+                site = int(dm2.group(1), 16)
+                for reg in ('eax', 'ecx', 'edx', 'ebx', 'esi', 'edi',
+                            'al', 'bl', 'cl', 'dl'):
+                    for fmt in ('0x%X', '0x%06X', '0x%07X', '0x%08X'):
+                        key = (ai + '::' + reg + '_v') + (fmt % site)
+                        t = (tmap.get(key) or {}).get('type')
+                        if t and re.match(r'^[A-Za-z_]\w*$', t)                                 and t not in ('VOID_PTR', 'TOP') and is_cls(t):
+                            env[v] = t
+                            grew = True
+                            break
+                    if v in env:
+                        break
+                if v in env:
+                    continue
             # sub-object pointer: `vN = this + OFF` -> member type at OFF
             sm = re.match(r'^(?:\(\s*(?:int|_DWORD|[A-Za-z_]\w*)\s*\*\s*\)\s*)?this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)$', rhs)
             if sm and cls:

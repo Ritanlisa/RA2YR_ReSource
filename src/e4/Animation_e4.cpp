@@ -5,7 +5,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x4549B0
-BuildingClass * Animation::UpdateBuildingAnimations()
+BuildingClass * * Animation::UpdateBuildingAnimations()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -53,7 +53,7 @@ BuildingClass * Animation::UpdateBuildingAnimations()
       {
         if ( *(_BYTE *)(i + this->q148 + 3983) ) /*0x454aa7*/
         {
-  _BYTE *v13; // eax
+  BuildingClass *v13; // eax
   int v12; // ecx
           HealthRatio = BuildingClass::GetHealthRatio(this); /*0x454ab4*/
           int v11 = *(_DWORD *)&stru_87C374[44652]; /*0x454ab9*/
@@ -129,7 +129,7 @@ BuildingClass * Animation::UpdateBuildingAnimations()
     }
     if ( v22 ) /*0x454c4d*/
     {
-  _BYTE *v24; // eax
+  BuildingClass *v24; // eax
   int v23; // ecx
 LABEL_52:
       if ( BuildingClass::GetHealthRatio(this) > *(double *)(*(_DWORD *)&stru_87C374[44652] + 5888) ) /*0x454c71*/
@@ -192,14 +192,14 @@ int Animation::GetProgress()
 }
 
 // 0x770550
-ObjectClass * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
+ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  ObjectClass *v3; // ebx
+  AbstractClass *v3; // ebx
   ObjectClass *v4; // ebp
   ObjectClass *v5; // edi
-  ObjectClass *v6; // esi
+  AbstractClass *v6; // esi
   Selection_WorldDominationTour *v7; // eax
   ObjectClass *i; // edi
   int owningHouseIndex; // ecx

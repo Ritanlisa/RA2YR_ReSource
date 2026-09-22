@@ -7,14 +7,14 @@
 
 // 0x4A8BF0
 namespace gamemd {
-Tactical * Mouse::SetBounds(IUnknown * aP1)
+Tactical * * Mouse::SetBounds(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v4; // cx
   Tactical *v5; // esi
-  __int16 v8; // cx
+  Tactical *v8; // cx
   __int16 v9; // [esp+8h] [ebp-8h] BYREF
   __int16 v10; // [esp+Ah] [ebp-6h]
   result = *(_DWORD *)(this + 4476); /*0x4a8bf7*/
@@ -143,7 +143,7 @@ int Mouse::ReleaseCapture()
 
 // 0x7B93F0
 namespace gamemd {
-AbstractClass * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
+AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -155,10 +155,10 @@ AbstractClass * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
   v5 = (char **)*(this + 1); /*0x7b93f9*/
   if ( v5 && aP1 && DataGlobal_87F6C8 ) /*0x7b9418*/
   {
-    int v6 = *(this + 20); /*0x7b942e*/
+    AbstractClass *v6 = *(this + 20); /*0x7b942e*/
     int v7 = *(this + 21); /*0x7b9431*/
     SubFile = MixFileClass::GetSubFile(v5, *(this + 2)); /*0x7b9440*/
-    int v13 = v6; /*0x7b9447*/
+    AbstractClass *v13 = v6; /*0x7b9447*/
     int v14 = v7; /*0x7b9454*/
     int v15 = 0; /*0x7b9458*/
     int v16 = 1; /*0x7b9468*/

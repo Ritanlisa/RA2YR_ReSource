@@ -44,7 +44,7 @@ void Weapon_Update()
     *(_DWORD *)(a1 + 136) = 0; /*0x659ccf*/
     if ( v3 > 0 ) /*0x659cdb*/
     {
-  int v9; // eax
+  AnimClass *v9; // eax
   int v8; // ecx
       do /*0x659e01*/
       {
@@ -85,7 +85,7 @@ void Weapon_Update()
       while ( v9 < v8 ); /*0x659e01*/
     }
   }
-  int v10 = *(_DWORD *)(a1 + 60); /*0x659e0c*/
+  AudioController *v10 = *(_DWORD *)(a1 + 60); /*0x659e0c*/
   int v11 = *(_DWORD *)(a1 + 124) + 1; /*0x659e12*/
   *(_DWORD *)(a1 + 124) = v11; /*0x659e14*/
   return v11 >= v10; /*0x659e19*/
@@ -144,7 +144,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   ObjectVector::Construct(&v48, 0, 0); /*0x70c777*/
   v48 = &vt_DynamicVectorClass_ObjectClass; /*0x70c77c*/
   int v53 = 10; /*0x70c784*/
-  int v52 = 0; /*0x70c78c*/
+  AbstractClass *v52 = 0; /*0x70c78c*/
   int v47 = 0; /*0x70c790*/
   while ( 1 ) /*0x70c7aa*/
   {
@@ -212,7 +212,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
         {
           goto LABEL_31; /*0x70c9f0*/
         }
-        int v25 = v52; /*0x70c9f2*/
+        AbstractClass *v25 = v52; /*0x70c9f2*/
         if ( v52 ) /*0x70c9f8*/
         {
           int v26 = 0; /*0x70c9fa*/
@@ -254,7 +254,7 @@ LABEL_31:
     {
       if ( v45 || !aP3 || (aP3->abstractFlags & 2) == 0 ) /*0x70caa3*/
         goto LABEL_55; /*0x70caa3*/
-      int v29 = v52; /*0x70caa9*/
+      AbstractClass *v29 = v52; /*0x70caa9*/
       if ( !v52 ) /*0x70caaf*/
         goto LABEL_48; /*0x70caaf*/
       int v30 = 0; /*0x70cab5*/

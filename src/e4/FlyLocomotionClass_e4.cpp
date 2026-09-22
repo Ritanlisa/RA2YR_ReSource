@@ -44,7 +44,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 {
   int i; // edi
   int v7; // eax
-  _DWORD *v8; // esi
+  AbstractClass *v8; // esi
   int v9; // edx
   void **v10; // [esp+Ch] [ebp-30h] BYREF
   void *Block; // [esp+10h] [ebp-2Ch]
@@ -99,7 +99,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
        || (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) != 1
        || !*(_BYTE *)(*(_DWORD *)(v4 + 1732) + 3598)) )
     {
-  _DWORD *v6; // ecx
+  AbstractClass *v6; // ecx
   int v5; // eax
       if ( g_GameMode_Current[0] /*0x4d003d*/
         && (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(*(_DWORD *)(a1 + 8) + 540))

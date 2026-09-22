@@ -23,7 +23,7 @@ int E4Recv_501750::sub_501750(int a2)
     *(this + 5353) = a2 + v4; /*0x50177e*/
     House_Notify(); /*0x501784*/
     result = *(this + 5353) < *(this + 5354); /*0x50179d*/
-    char v12 = result; /*0x5017a2*/
+    ObjectClass *v12 = result; /*0x5017a2*/
     if ( !g_IKnowWhatImDoing && v5 != result ) /*0x5017ae*/
     {
   int v9; // [esp+68h] [ebp-1Ch] BYREF

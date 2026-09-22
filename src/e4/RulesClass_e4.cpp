@@ -1735,7 +1735,7 @@ void* RulesClass::readAudioVisual()
                          (unsigned __int8 *)DataGlobal_839E70,
                          (unsigned __int8 *)DataGlobal_83B358,
                          v8);
-    unsigned int v6 = this->BerserkColor; /*0x66d1af*/
+    IUnknown *v6 = this->BerserkColor; /*0x66d1af*/
     unsigned int v7 = this->IronCurtainColor; /*0x66d1b5*/
     this->qC20 = Double_Overwrite; /*0x66d1bb*/
     this->q309 = INIClass::ReadDouble_Overwrite( /*0x66d1d6*/
@@ -1754,7 +1754,7 @@ void* RulesClass::readAudioVisual()
 }
 
 // 0x673E80
-INIClass * RulesClass::ReadPowerupsSection()
+INIClass * * RulesClass::ReadPowerupsSection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1765,7 +1765,7 @@ INIClass * RulesClass::ReadPowerupsSection()
   result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)DataGlobal_839D98); /*0x673e90*/
   if ( result ) /*0x673e9c*/
   {
-    int v2 = 0; /*0x673ea5*/
+    WeaponTypeClass *v2 = 0; /*0x673ea5*/
     double * v3 = DataGlobal_89EC28; /*0x673ea7*/
     do /*0x673fd7*/
     {
@@ -1786,14 +1786,14 @@ INIClass * RulesClass::ReadPowerupsSection()
           dword_81DA8C[v2] = atoi(v5); /*0x673f05*/
         }
         char * v6 = strtok(0, Delimiter); /*0x673f13*/
-        char * v7 = v6; /*0x673f18*/
+        INIClass *v7 = v6; /*0x673f18*/
         if ( v6 ) /*0x673f1f*/
         {
           String::Trim(v6); /*0x673f23*/
           dword_81DAD8[v2] = GlobalArray::FindString(v7); /*0x673f2f*/
         }
         char * v8 = strtok(0, Delimiter); /*0x673f3d*/
-        char * v9 = v8; /*0x673f42*/
+        INIClass *v9 = v8; /*0x673f42*/
         if ( v8 ) /*0x673f49*/
         {
           String::Trim(v8); /*0x673f4d*/
@@ -1808,7 +1808,7 @@ INIClass * RulesClass::ReadPowerupsSection()
           }
         }
         result = (int)strtok(0, Delimiter); /*0x673f8c*/
-        char * v10 = (char *)result; /*0x673f91*/
+        INIClass *v10 = (char *)result; /*0x673f91*/
         if ( result ) /*0x673f98*/
         {
   double v11; // st7
@@ -1839,7 +1839,7 @@ INIClass * RulesClass::ReadPowerupsSection()
 }
 
 // 0x6743D0
-INIClass * RulesClass::readDifficulty()
+INIClass * * RulesClass::readDifficulty()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1861,7 +1861,7 @@ INIClass * RulesClass::readDifficulty()
                       (unsigned __int8 *)DataGlobal_839D58,
                       (unsigned __int8 *)g_INI_Key_Speed,
                       this->?[9]);
-    int v4 = this->?[12]; /*0x67442c*/
+    IUnknown *v4 = this->?[12]; /*0x67442c*/
     this->?[9] = Int_Overwrite; /*0x674432*/
   double v15; // [esp-8h] [ebp-10h]
     HIDWORD(v15) = v4; /*0x674444*/
@@ -1871,11 +1871,11 @@ INIClass * RulesClass::readDifficulty()
                          (unsigned __int8 *)DataGlobal_839D58,
                          (unsigned __int8 *)DataGlobal_83D54C,
                          v15);
-    int v6 = this->?[13]; /*0x674453*/
+    INIClass *v6 = this->?[13]; /*0x674453*/
     *(double *)&this->?[11] = Double_Overwrite; /*0x67445b*/
     int v7 = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)DataGlobal_839D58, (unsigned __int8 *)DataGlobal_83D53C, v6); /*0x67446d*/
     int v8 = this->?[2]; /*0x674472*/
-    int v9 = this->?[1]; /*0x674478*/
+    IUnknown *v9 = this->?[1]; /*0x674478*/
     this->?[13] = v7; /*0x67447e*/
   double v10; // st7
     v10 = INIClass::ReadDouble_Overwrite( /*0x674493*/
@@ -1884,7 +1884,7 @@ INIClass * RulesClass::readDifficulty()
             (unsigned __int8 *)DataGlobal_81B140,
             COERCE_DOUBLE(__PAIR64__(v8, v9)));
     int v11 = this->?[4]; /*0x674498*/
-    int v12 = this->?[3]; /*0x67449e*/
+    IUnknown *v12 = this->?[3]; /*0x67449e*/
     *(double *)&this->?[1] = v10; /*0x6744a4*/
   double v13; // st7
     v13 = INIClass::ReadDouble_Overwrite( /*0x6744b9*/
@@ -1892,7 +1892,7 @@ INIClass * RulesClass::readDifficulty()
             (unsigned __int8 *)DataGlobal_839D58,
             (unsigned __int8 *)DataGlobal_83D528,
             COERCE_DOUBLE(__PAIR64__(v11, v12)));
-    int v14 = this->?[5]; /*0x6744be*/
+    INIClass *v14 = this->?[5]; /*0x6744be*/
     *(double *)&this->?[3] = v13; /*0x6744c4*/
     result = INIClass::ReadInt_Overwrite( /*0x6744d9*/
                v16,
@@ -1911,7 +1911,7 @@ INIClass * RulesClass::readDifficulty()
 }
 
 // 0x674550
-INIClass * RulesClass::ReadMovies()
+INIClass * * RulesClass::ReadMovies()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1941,7 +1941,7 @@ INIClass * RulesClass::ReadMovies()
         result = LookupNameIndex(Source); /*0x6745c0*/
         if ( result == -1 ) /*0x6745c8*/
         {
-          char * v5 = _strdup(Source); /*0x6745da*/
+          INIClass *v5 = _strdup(Source); /*0x6745da*/
           result = DataGlobal_ABF398; /*0x6745dc*/
           if ( DataGlobal_ABF3A0 < DataGlobal_ABF398 /*0x674614*/
             || (DataGlobal_ABF39D || !DataGlobal_ABF398)
@@ -1974,7 +1974,7 @@ void RulesClass::readMaximums()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
+  AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
   *this = &vt_VectorClass_BuildingTypeClass_const; /*0x679fa9*/
   if ( v2 && this->SelfHealInfantryAmount ) /*0x679fb3*/
   {
@@ -1992,7 +1992,7 @@ void RulesClass::readInfantryTypes()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
+  AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
   *this = &vt_VectorClass_UnitTypeClass_const; /*0x679fd9*/
   if ( v2 && this->SelfHealInfantryAmount ) /*0x679fe3*/
   {
@@ -2010,7 +2010,7 @@ void RulesClass::readCountries()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
+  AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
   *this = &vt_VectorClass_AircraftTypeClass_const; /*0x67a009*/
   if ( v2 && this->SelfHealInfantryAmount ) /*0x67a013*/
   {
@@ -2028,7 +2028,7 @@ void RulesClass::readVehicleTypes()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
+  AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
   *this = &vt_VectorClass_TerrainTypeClass_const; /*0x67a069*/
   if ( v2 && this->SelfHealInfantryAmount ) /*0x67a073*/
   {

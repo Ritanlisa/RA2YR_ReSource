@@ -190,7 +190,7 @@ int VectorClass::RemoveElement()
   int **v14; // ecx
   int v18; // [esp+18h] [ebp+8h]
   int *v19; // [esp+1Ch] [ebp+Ch]
-  int * v1 = v19; /*0x65a974*/
+  ObjectClass *v1 = v19; /*0x65a974*/
   if ( !v19 ) /*0x65a97c*/
   {
     v1 = (int *)**((_DWORD **)this + 57); /*0x65a984*/
@@ -220,9 +220,9 @@ int VectorClass::RemoveElement()
   if ( v17 != 2 ) /*0x65a9eb*/
   {
 LABEL_9:
-    int v9 = *v1; /*0x65a9c9*/
+    ObjectClass *v9 = *v1; /*0x65a9c9*/
     void * v10 = AbstractClass::IsTechnoType(this); /*0x65a9d3*/
-    return (*(int (__thiscall **)(int *, void *, int, int))(v9 + 404))(v1, v10, v17, v18); /*0x65a9e5*/
+    return v9->ProcessInputKey(v1, v10, v17, v18); /*0x65a9e5*/
   }
   int v11 = *((_DWORD *)this + 58); /*0x65a9ed*/
   int v12 = -1; /*0x65a9f3*/
@@ -246,12 +246,12 @@ LABEL_9:
       }
     }
   }
-  (*(void (__thiscall **)(#377 *, int, _DWORD))(*(_DWORD *)this + 632))(this, 3, **((_DWORD **)this + 57)); /*0x65aa1f*/
+  this->vt_slot_632(3, **((_DWORD **)this + 57)); /*0x65aa1f*/
   v12 = 0; /*0x65aa34*/
 LABEL_20:
-  int v15 = *v1; /*0x65aa36*/
+  ObjectClass *v15 = *v1; /*0x65aa36*/
   void * v16 = AbstractClass::IsTechnoType(this); /*0x65aa41*/
-  if ( (*(int (__thiscall **)(int *, void *, int, int))(v15 + 404))(v1, v16, 2, v18) == 1 ) /*0x65aa52*/
+  if ( v15->ProcessInputKey(v1, v16, 2, v18) == 1 ) /*0x65aa52*/
   {
     *(_DWORD *)(*((_DWORD *)this + 57) + 4 * v12) = v1; /*0x65aa5a*/
     return 1; /*0x65aa66*/
@@ -278,7 +278,7 @@ int VectorClass::GetAtChecked(IUnknown * aP1)
 
 // 0x42F6F0
 namespace gamemd {
-AbstractClass * VectorClass_Cell::Release(int a2, unsigned int * a3)
+AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -286,7 +286,7 @@ AbstractClass * VectorClass_Cell::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x42f6fc*/
   {
-  _DWORD *v5; // edi
+  AbstractClass *v5; // edi
     this->IsInitialized = 0; /*0x42f706*/
     if ( a3 ) /*0x42f70c*/
     {
@@ -297,8 +297,7 @@ AbstractClass * VectorClass_Cell::Release(int a2, unsigned int * a3)
       _DWORD * v4 = __2_YAPAXI_Z(4 * a2); /*0x42f716*/
       if ( v4 ) /*0x42f720*/
         v5 = v4; /*0x42f725*/
-      else
-        v5 = 0; /*0x42f72d*/
+      AbstractClass *v5 = 0; /*0x42f72d*/
     }
     this->IsInitialized = 1; /*0x42f73c*/
     if ( v5 ) /*0x42f740*/
@@ -337,7 +336,7 @@ AbstractClass * VectorClass_Cell::Release(int a2, unsigned int * a3)
 
 // 0x4E0840
 namespace gamemd {
-AbstractClass * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a3)
+AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -439,14 +438,14 @@ AbstractClass * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
 
 // 0x4E0B10
 namespace gamemd {
-AbstractClass * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity(int a2, int * a3)
+AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 ) /*0x4e0b1c*/
   {
-  _DWORD *v6; // edi
+  AbstractClass *v6; // edi
     int * v4 = a3; /*0x4e0b22*/
     this->IsInitialized = 0; /*0x4e0b26*/
     if ( a3 ) /*0x4e0b2c*/
@@ -565,7 +564,7 @@ unsigned int * VectorClass_K_8::Constructor()
 
 // 0x5AD010
 namespace gamemd {
-AbstractClass * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
+AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -575,15 +574,14 @@ AbstractClass * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
   {
     *((_BYTE *)this + 12) = 0; /*0x5ad022*/
     if ( a3 ) /*0x5ad028*/
-      _DWORD * v4 = a3; /*0x5ad03e*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5ad03a*/
+      AbstractClass *v4 = a3; /*0x5ad03e*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x5ad03a*/
     *((_BYTE *)this + 12) = 1; /*0x5ad042*/
     if ( !v4 ) /*0x5ad046*/
       return 0; /*0x5ad0ba*/
     if ( *((_DWORD *)this + 1) ) /*0x5ad048*/
     {
-      int v5 = *((_DWORD *)this + 2); /*0x5ad04f*/
+      AbstractClass *v5 = *((_DWORD *)this + 2); /*0x5ad04f*/
       if ( a2 < v5 ) /*0x5ad054*/
         v5 = a2; /*0x5ad056*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5ad05c*/
@@ -602,7 +600,7 @@ AbstractClass * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
   {
     this->vt_slot_12(); /*0x5ad09e*/
   }
-  int v7 = *((_DWORD *)this + 2); /*0x5ad0a1*/
+  AbstractClass *v7 = *((_DWORD *)this + 2); /*0x5ad0a1*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x5ad0a9*/
     *((_DWORD *)this + 4) = v7; /*0x5ad0ab*/
   return 1; /*0x5ad0ae*/
@@ -917,21 +915,18 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
   {
     do /*0x50150f*/
     {
-      int * v2 = (int *)*((_DWORD *)g_TechnoClass_Count + v1); /*0x501423*/
-      if ( a1 - 36 == v2[135] && *((_BYTE *)v2 + 116) && !*((_BYTE *)v2 + 129) ) /*0x50143d*/
+      AbstractClass *v2 = (int *)*((_DWORD *)g_TechnoClass_Count + v1); /*0x501423*/
+      if ( a1 - 36 == v2[135] && v2->q074 && !v2->q081 ) /*0x50143d*/
       {
         if ( *((_BYTE *)v2 + 708) /*0x50146d*/
-          && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*v2 + 132))(*((_DWORD *)g_TechnoClass_Count + v1)) + 562)
+          && *(_BYTE *)(v2->GetSpecialValue(*((_DWORD *)g_TechnoClass_Count + v1)) + 562)
           && !*(_BYTE *)(a1 + 456) )
         {
-          int v3 = (*(int (__thiscall **)(int *))(*v2 + 132))(v2); /*0x50147b*/
+          int v3 = v2->GetSpecialValue(); /*0x50147b*/
           int v4 = *v2; /*0x501487*/
           int v7 = *(_DWORD *)(v3 + 160); /*0x501489*/
-          (*(void (__thiscall **)(int *, int *, _DWORD, int, _DWORD, int, int, _DWORD))(v4 + 364))( /*0x5014aa*/
-            v2,
-            &v7,
-            0,
-            g_RulesClass_Instance->?[5],
+          v2->vt_slot_364(/*0x5014aa*/
+            v2, &v7, 0, g_RulesClass_Instance->?[5],
             0,
             1,
             1,
@@ -944,10 +939,10 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
             int v5 = v2[373]; /*0x5014c5*/
             if ( v5 ) /*0x5014cd*/
               TeamClass::LiberateMember_Start(v5, (int)v2, 0xFFFFFFFF, 0); /*0x5014d4*/
-            (*(void (__thiscall **)(int *, int, _DWORD))(*v2 + 488))(v2, 15, 0); /*0x5014e1*/
+            v2->vt_slot_488(15, 0); /*0x5014e1*/
           }
-          else if ( (*(int (__thiscall **)(int *))(*v2 + 44))(v2) == 6 /*0x501501*/
-                 && (*(int (__thiscall **)(int *))(*v2 + 1032))(v2) > 0 )
+          else if ( v2->getAltitude() == 6 /*0x501501*/
+                 && v2->vt_slot_1032() > 0 )
           {
             BuildingClass::UnloadUnits(v2, 1, 0); /*0x501509*/
           }
@@ -965,7 +960,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
 
 // 0x50F520
 namespace gamemd {
-AbstractClass * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, unsigned int * a3)
+AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -975,9 +970,8 @@ AbstractClass * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, 
   {
     this->IsInitialized = 0; /*0x50f536*/
     if ( a3 ) /*0x50f53c*/
-      _DWORD * v4 = a3; /*0x50f552*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x50f54e*/
+      AbstractClass *v4 = a3; /*0x50f552*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x50f54e*/
     this->IsInitialized = 1; /*0x50f556*/
     if ( v4 ) /*0x50f55a*/
     {
@@ -1015,7 +1009,7 @@ AbstractClass * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, 
 
 // 0x50F660
 namespace gamemd {
-AbstractClass * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(int a2, unsigned int * a3)
+AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1025,9 +1019,8 @@ AbstractClass * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(in
   {
     this->IsInitialized = 0; /*0x50f672*/
     if ( a3 ) /*0x50f678*/
-      _DWORD * v4 = a3; /*0x50f68e*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x50f68a*/
+      AbstractClass *v4 = a3; /*0x50f68e*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x50f68a*/
     this->IsInitialized = 1; /*0x50f692*/
     if ( !v4 ) /*0x50f696*/
       return 0; /*0x50f70a*/
@@ -1062,7 +1055,7 @@ AbstractClass * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(in
 
 // 0x6288F0
 namespace gamemd {
-AbstractClass * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, unsigned char * a2)
+AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1180,7 +1173,7 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(char a2)
   *this = &vt_ConvertClass; /*0x491214*/
   COMClass::RegisterAll(this); /*0x49121a*/
   __3_YAXPAX_Z(*(this + 92)); /*0x491226*/
-  void * v3 = *(this + 94); /*0x49122b*/
+  CampaignClass *v3 = *(this + 94); /*0x49122b*/
   *(this + 92) = 0; /*0x491231*/
   __3_YAXPAX_Z(v3); /*0x49123c*/
   *(this + 94) = 0; /*0x491244*/
@@ -1215,7 +1208,7 @@ void VectorClass_ptr_ConvertClass::MarkDirty()
 
 // 0x63E090
 namespace gamemd {
-AbstractClass * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned int * a3)
+AbstractClass * * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1225,9 +1218,8 @@ AbstractClass * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned in
   {
     this->IsInitialized = 0; /*0x63e0a6*/
     if ( a3 ) /*0x63e0ac*/
-      _DWORD * v4 = a3; /*0x63e0c2*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e0be*/
+      AbstractClass *v4 = a3; /*0x63e0c2*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x63e0be*/
     this->IsInitialized = 1; /*0x63e0c6*/
     if ( v4 ) /*0x63e0ca*/
     {
@@ -1269,8 +1261,8 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  _DWORD *v6; // esi
-  _DWORD *v8; // ebx
+  rc_ptr_base *v6; // esi
+  rc_ptr_base *v8; // ebx
   int i; // esi
   void (__thiscall ***v12)(_DWORD, int); // ecx
   int v3 = a2; /*0x76b8c3*/
@@ -1353,7 +1345,7 @@ LABEL_14:
 
 // 0x5D8470
 namespace gamemd {
-AbstractClass * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
+AbstractClass * * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1363,15 +1355,14 @@ AbstractClass * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
   {
     *((_BYTE *)this + 12) = 0; /*0x5d8482*/
     if ( a3 ) /*0x5d8488*/
-      _DWORD * v4 = a3; /*0x5d849e*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d849a*/
+      AbstractClass *v4 = a3; /*0x5d849e*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x5d849a*/
     *((_BYTE *)this + 12) = 1; /*0x5d84a2*/
     if ( !v4 ) /*0x5d84a6*/
       return 0; /*0x5d851a*/
     if ( *((_DWORD *)this + 1) ) /*0x5d84a8*/
     {
-      int v5 = *((_DWORD *)this + 2); /*0x5d84af*/
+      AbstractClass *v5 = *((_DWORD *)this + 2); /*0x5d84af*/
       if ( a2 < v5 ) /*0x5d84b4*/
         v5 = a2; /*0x5d84b6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d84bc*/
@@ -1390,7 +1381,7 @@ AbstractClass * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
   {
     this->vt_slot_12(); /*0x5d84fe*/
   }
-  int v7 = *((_DWORD *)this + 2); /*0x5d8501*/
+  AbstractClass *v7 = *((_DWORD *)this + 2); /*0x5d8501*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x5d8509*/
     *((_DWORD *)this + 4) = v7; /*0x5d850b*/
   return 1; /*0x5d850e*/
@@ -1400,7 +1391,7 @@ AbstractClass * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x5D8730
 namespace gamemd {
-AbstractClass * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
+AbstractClass * * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1410,15 +1401,14 @@ AbstractClass * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
   {
     *((_BYTE *)this + 12) = 0; /*0x5d8742*/
     if ( a3 ) /*0x5d8748*/
-      _DWORD * v4 = a3; /*0x5d875e*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d875a*/
+      AbstractClass *v4 = a3; /*0x5d875e*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x5d875a*/
     *((_BYTE *)this + 12) = 1; /*0x5d8762*/
     if ( !v4 ) /*0x5d8766*/
       return 0; /*0x5d87da*/
     if ( *((_DWORD *)this + 1) ) /*0x5d8768*/
     {
-      int v5 = *((_DWORD *)this + 2); /*0x5d876f*/
+      AbstractClass *v5 = *((_DWORD *)this + 2); /*0x5d876f*/
       if ( a2 < v5 ) /*0x5d8774*/
         v5 = a2; /*0x5d8776*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d877c*/
@@ -1437,7 +1427,7 @@ AbstractClass * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
   {
     this->vt_slot_12(); /*0x5d87be*/
   }
-  int v7 = *((_DWORD *)this + 2); /*0x5d87c1*/
+  AbstractClass *v7 = *((_DWORD *)this + 2); /*0x5d87c1*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x5d87c9*/
     *((_DWORD *)this + 4) = v7; /*0x5d87cb*/
   return 1; /*0x5d87ce*/
@@ -1447,7 +1437,7 @@ AbstractClass * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x5D8590
 namespace gamemd {
-AbstractClass * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
+AbstractClass * * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1457,9 +1447,8 @@ AbstractClass * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
   {
     *((_BYTE *)this + 12) = 0; /*0x5d85a6*/
     if ( a3 ) /*0x5d85ac*/
-      _DWORD * v4 = a3; /*0x5d85c2*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d85be*/
+      AbstractClass *v4 = a3; /*0x5d85c2*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x5d85be*/
     *((_BYTE *)this + 12) = 1; /*0x5d85c6*/
     if ( v4 ) /*0x5d85ca*/
     {
@@ -1497,7 +1486,7 @@ AbstractClass * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x4E9840
 namespace gamemd {
-AbstractClass * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
+AbstractClass * * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1507,15 +1496,14 @@ AbstractClass * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
   {
     *((_BYTE *)this + 12) = 0; /*0x4e9852*/
     if ( a3 ) /*0x4e9858*/
-      _DWORD * v4 = a3; /*0x4e986e*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e986a*/
+      AbstractClass *v4 = a3; /*0x4e986e*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x4e986a*/
     *((_BYTE *)this + 12) = 1; /*0x4e9872*/
     if ( !v4 ) /*0x4e9876*/
       return 0; /*0x4e98ea*/
     if ( *((_DWORD *)this + 1) ) /*0x4e9878*/
     {
-      int v5 = *((_DWORD *)this + 2); /*0x4e987f*/
+      AbstractClass *v5 = *((_DWORD *)this + 2); /*0x4e987f*/
       if ( a2 < v5 ) /*0x4e9884*/
         v5 = a2; /*0x4e9886*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4e988c*/
@@ -1534,7 +1522,7 @@ AbstractClass * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
   {
     this->vt_slot_12(); /*0x4e98ce*/
   }
-  int v7 = *((_DWORD *)this + 2); /*0x4e98d1*/
+  AbstractClass *v7 = *((_DWORD *)this + 2); /*0x4e98d1*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x4e98d9*/
     *((_DWORD *)this + 4) = v7; /*0x4e98db*/
   return 1; /*0x4e98de*/
@@ -1544,24 +1532,24 @@ AbstractClass * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x6DC850
 namespace gamemd {
-AbstractClass * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, char * a2)
+AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v3; // edi
   CCINIClass *v6; // ebx
-  char *v7; // ebx
+  AbstractClass *v7; // ebx
   CCINIClass *v8; // ebx
   CCINIClass *v9; // edx
   int v13; // eax
-  char *v15; // [esp+10h] [ebp-4h]
+  AbstractClass *v15; // [esp+10h] [ebp-4h]
   v3 = aP1; /*0x6dc855*/
   if ( !aP1 ) /*0x6dc85d*/
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x6dc94a*/
     goto LABEL_26; /*0x6dc94a*/
   }
-  char * v5 = a2; /*0x6dc863*/
+  AbstractClass *v5 = a2; /*0x6dc863*/
   this->IsInitialized = 0; /*0x6dc867*/
   if ( a2 ) /*0x6dc86d*/
   {
@@ -1645,7 +1633,7 @@ LABEL_26:
 
 // 0x6B44A0
 namespace gamemd {
-AbstractClass * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3)
+AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1683,7 +1671,7 @@ AbstractClass * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3)
       v8 = 0; /*0x6b44ef*/
       goto LABEL_14; /*0x6b44f1*/
     }
-    _DWORD * v6 = v5; /*0x6b44d6*/
+    AbstractClass *v6 = v5; /*0x6b44d6*/
     if ( a2 - 1 >= 0 ) /*0x6b44da*/
     {
       int v7 = a2; /*0x6b44de*/
@@ -1740,7 +1728,7 @@ LABEL_14:
 
 // 0x6B4650
 namespace gamemd {
-AbstractClass * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int * a3)
+AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1776,7 +1764,7 @@ AbstractClass * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int * 
   v5 = __2_YAPAXI_Z(12 * a2); /*0x6b4677*/
   if ( v5 ) /*0x6b4681*/
   {
-    _DWORD * v6 = v5; /*0x6b4686*/
+    AbstractClass *v6 = v5; /*0x6b4686*/
     if ( a2 - 1 >= 0 ) /*0x6b468a*/
     {
       int v7 = a2; /*0x6b468e*/

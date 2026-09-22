@@ -109,9 +109,9 @@ void sub_567F70(int * a1, int a2)
   int result; // eax
   __int16 v20; // [esp+14h] [ebp-8h]
   __int16 v21; // [esp+16h] [ebp-6h]
-  int v2 = *a1; /*0x567f7a*/
-  int v3 = a1[1]; /*0x567f7c*/
-  int v4 = a1[2]; /*0x567f7f*/
+  WaveClass *v2 = *a1; /*0x567f7a*/
+  IUnknown *v3 = a1[1]; /*0x567f7c*/
+  IUnknown *v4 = a1[2]; /*0x567f7f*/
   int v5 = ZCoordToScreenY(v4); /*0x567f84*/
   int v6; // esi
   v6 = ((((unsigned int)(((unsigned __int64)(2004318071LL * v5) >> 32) - v5) >> 31) /*0x567fa3*/
@@ -271,7 +271,7 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
   _DWORD *v10; // edx
   _DWORD *v11; // ecx
   result = *(InfantryTypeClass **)&g_NetworkPlayerBuffer[3356]; /*0x6ac5f0*/
-  int v5 = 0; /*0x6ac5f9*/
+  AbstractClass *v5 = 0; /*0x6ac5f9*/
   if ( *(int *)&g_NetworkPlayerBuffer[3356] <= 0 ) /*0x6ac601*/
   {
 LABEL_5:
@@ -374,7 +374,7 @@ LABEL_38:
 
 // 0x6E0B60
 namespace gamemd {
-AbstractClass * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4)
+AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -431,7 +431,7 @@ AbstractClass * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * 
       {
         if ( v15 ) /*0x6e0c39*/
         {
-          if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v15 + 44))(*(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5696] /*0x6e0c45*/
+          if ( v15->vt_slot_44(*(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5696] /*0x6e0c45*/
                                                                                + 4 * v14)) == 6 )
           {
             int v16 = *(_DWORD *)&v15[1312]; /*0x6e0c47*/
@@ -463,7 +463,7 @@ AbstractClass * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * 
 
 // 0x6E1CC0
 namespace gamemd {
-AnimClass * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
+AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -501,7 +501,7 @@ AnimClass * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int 
 
 // 0x6E2290
 namespace gamemd {
-AnimClass * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
+AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -539,7 +539,7 @@ AnimClass * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown *
 
 // 0x6E2390
 namespace gamemd {
-AbstractClass * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
+AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -594,7 +594,7 @@ AbstractClass * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a
 
 // 0x6E2C40
 namespace gamemd {
-ScenarioClass * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
+ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -639,7 +639,7 @@ ScenarioClass * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int
       bool v13 = v14 == 0; /*0x6e2dba*/
       if ( v14 < 0 ) /*0x6e2dbf*/
         v13 = (((_BYTE)v14 - 1) | 0xFFFFFFFE) == -1; /*0x6e2dc5*/
-      int v15 = String; /*0x6e2dc6*/
+      Coord *v15 = String; /*0x6e2dc6*/
       if ( v13 ) /*0x6e2dc8*/
         v15 = v19; /*0x6e2dca*/
       AnimClass::ctor( /*0x6e2dec*/
@@ -724,12 +724,12 @@ int TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
 
 // 0x6E4150
 namespace gamemd {
-AbstractClass * TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4)
+AbstractClass * * TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v5 = -1; /*0x6e415d*/
+  AbstractClass *v5 = -1; /*0x6e415d*/
   int v6 = *(_DWORD *)&g_NetworkPlayerBuffer[5332] - 1; /*0x6e4160*/
   if ( *(_DWORD *)&g_NetworkPlayerBuffer[5332] - 1 >= 0 ) /*0x6e416b*/
   {
@@ -842,7 +842,7 @@ LABEL_11:
   }
   else
   {
-    _DWORD * v5 = DataGlobal_B0F1A4; /*0x71e73a*/
+    AbstractClass *v5 = DataGlobal_B0F1A4; /*0x71e73a*/
     while ( *v5 != this ) /*0x71e742*/
     {
       ++v4; /*0x71e744*/

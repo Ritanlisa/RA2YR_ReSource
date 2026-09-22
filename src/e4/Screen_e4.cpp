@@ -14,12 +14,12 @@ void Screen_Capture()
   char result; // al
   int retaddr; // [esp+26h] [ebp+0h]
 
-  int v4 = a2; /*0x52fec5*/
+  AbstractClass *v4 = a2; /*0x52fec5*/
   if ( !a2 ) /*0x52fecf*/
     v4 = g_DSurface_Hidden; /*0x52fed1*/
-  (*(void (__thiscall **)(int, _DWORD, int, int))(*(_DWORD *)v4 + 24))(v4, 0, a4, a3); /*0x52fede*/
-  int v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 124))(v4); /*0x52fee8*/
-  int v6 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 128))(v4); /*0x52fef4*/
+  v4->COMStub_6(0, a4, a3); /*0x52fede*/
+  int v5 = v4->IsAboveScreenMargin(); /*0x52fee8*/
+  int v6 = v4->vt_slot_128(); /*0x52fef4*/
   retaddr = v5; /*0x52ff00*/
   _DWORD * v7 = __2_YAPAXI_Z(0x20u); /*0x52ff08*/
   _DWORD * v8 = v7; /*0x52ff0d*/
@@ -38,7 +38,7 @@ void Screen_Capture()
     v8 = 0; /*0x52ff48*/
   }
   Render_Draw(0); /*0x52ff52*/
-  (*(void (__thiscall **)(int, _DWORD *))(*(_DWORD *)v4 + 4))(v4, v8); /*0x52ff60*/
+  v4->COMStub_AddRef(v8); /*0x52ff60*/
   if ( v8 ) /*0x52ff67*/
     (*(void (__thiscall **)(_DWORD *, int))*v8)(v8, 1); /*0x52ff6f*/
   result = a1; /*0x52ff71*/
@@ -64,8 +64,8 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   int v47; // edx
   wchar_t *v48; // edi
   int v49; // eax
-  ObjectClass *v50; // ebx
-  ObjectClass *v51; // ebx
+  AbstractClass *v50; // ebx
+  AbstractClass *v51; // ebx
   CampaignScore *v53; // [esp+B8h] [ebp-26Ch]
   CampaignScore *v54; // [esp+B8h] [ebp-26Ch]
   CampaignScore *v55; // [esp+B8h] [ebp-26Ch]

@@ -8,10 +8,10 @@ int DialogControl::Hide()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = *(_DWORD *)this; /*0x4e1450*/
+  GadgetClass *v1 = *(_DWORD *)this; /*0x4e1450*/
   *(this + 30) = 0; /*0x4e1452*/
   this->q01C = 1; /*0x4e1456*/
-  return (*(int (**)(void))(v1 + 84))();
+  return v1->DeactivateGlobal();
 }
 }
 

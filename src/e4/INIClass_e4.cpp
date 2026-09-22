@@ -6,7 +6,7 @@
 
 // 0x526810
 namespace gamemd {
-ObjectClass * INIClass::BinarySearchSection(INIClass * aP1)
+ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -40,7 +40,7 @@ ObjectClass * INIClass::BinarySearchSection(INIClass * aP1)
     this->unknown38 = 0; /*0x52687e*/
     this->needsSave_flag = 1; /*0x526881*/
   }
-  int v7 = this->INIClass_field_2C; /*0x526885*/
+  ObjectClass *v7 = this->INIClass_field_2C; /*0x526885*/
   ecx7 = this->q028; /*0x52688d*/
   v17[0] = v5; /*0x526890*/
   eax7 = System_Search(ecx7, v7, (int *)v17); /*0x526894*/
@@ -93,7 +93,7 @@ LABEL_19:
 
 // 0x526960
 namespace gamemd {
-VoxelStruct * INIClass::GetKeyCount(INIClass * aP1)
+VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -103,7 +103,7 @@ VoxelStruct * INIClass::GetKeyCount(INIClass * aP1)
   size_t v5; // eax
   CCINIClass *v7; // eax
   size_t v8; // eax
-  int *v9; // esi
+  VoxelStruct *v9; // esi
   int v10; // esi
   unsigned int v12[3]; // [esp+8h] [ebp-Ch] BYREF
 
@@ -305,7 +305,7 @@ unsigned int * INIClass::INIClass()
 
   result = this; /*0x535aa0*/
   INILinkNode *v2 = this + 4; /*0x535aa6*/
-  _DWORD * v3 = result + 7; /*0x535aa9*/
+  INILinkNode *v3 = result + 7; /*0x535aa9*/
   result[1] = 0; /*0x535aac*/
   result[2] = 0; /*0x535aaf*/
   v2[1] = 0; /*0x535ab2*/
@@ -330,12 +330,12 @@ unsigned int * INIClass::INIClass()
       }
     }
   }
-  int v6 = v2[1]; /*0x535af6*/
+  INILinkNode *v6 = v2[1]; /*0x535af6*/
   result[9] = v2; /*0x535af9*/
   result[8] = v6; /*0x535afc*/
-  int v7 = v2[1]; /*0x535aff*/
+  INILinkNode *v7 = v2[1]; /*0x535aff*/
   if ( v7 ) /*0x535b04*/
-    *(_DWORD *)(v7 + 8) = v3; /*0x535b06*/
+    v7->Next = v3; /*0x535b06*/
   v2[1] = v3; /*0x535b09*/
   result[3] = &vt_List_INIClass_INISection; /*0x535b0c*/
   result[10] = 0; /*0x535b13*/

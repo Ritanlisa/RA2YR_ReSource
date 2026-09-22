@@ -297,8 +297,8 @@ int SlaveManagerClass::UpdateSlaves()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int * v2 = (int *)g_CurrentFrame; /*0x6af5f7*/
-  int v3 = this->abstractFlags; /*0x6af5fd*/
+  IUnknown *v2 = (int *)g_CurrentFrame; /*0x6af5f7*/
+  IUnknown *v3 = this->abstractFlags; /*0x6af5fd*/
   TechnoClass *v4 = this->SlaveManagerClass_field_58; /*0x6af600*/
   if ( v3 == -1 ) /*0x6af606*/
   {
@@ -331,7 +331,7 @@ LABEL_5:
 
 // 0x6AF6C0
 namespace gamemd {
-TechnoClass * SlaveManagerClass_ProcessSlaves()
+TechnoClass * * SlaveManagerClass_ProcessSlaves()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -341,7 +341,7 @@ TechnoClass * SlaveManagerClass_ProcessSlaves()
   int IsBuildingType; // ebx
   __int16 v24; // ax
   __int16 v41; // bx
-  unsigned __int16 v51; // bx
+  TechnoClass *v51; // bx
   wchar_t *v54; // eax
   __int16 v59; // ax
   __int16 v86[2]; // [esp+42h] [ebp-68h] BYREF
@@ -357,7 +357,7 @@ TechnoClass * SlaveManagerClass_ProcessSlaves()
     {
   _DWORD v100[3]; // [esp+8Eh] [ebp-1Ch] BYREF
       int v7 = *(_DWORD *)(a1[15] + 4 * result); /*0x6af6e6*/
-      int * v8 = *(int **)v7; /*0x6af6e9*/
+      IUnknown *v8 = *(int **)v7; /*0x6af6e9*/
       if ( !*(_DWORD *)v7 && *(_DWORD *)(v7 + 4) != 6 ) /*0x6af6f9*/
       {
         *(_DWORD *)v7 = 0; /*0x6af707*/
@@ -377,25 +377,20 @@ TechnoClass * SlaveManagerClass_ProcessSlaves()
   int v85; // [esp+3Ah] [ebp-70h] BYREF
   _WORD v84[4]; // [esp+32h] [ebp-78h] BYREF
   int v79; // [esp+16h] [ebp-94h]
-  int *v64; // eax
-  int *v50; // eax
+  AbstractClass *v64; // eax
+  AbstractClass *v50; // eax
         case 1:
           int v77 = *v8; /*0x6af744*/
   int v81; // [esp+22h] [ebp-88h] BYREF
-          v81 = *(_DWORD *)(*(int (__thiscall **)(int *, char *, int, _DWORD, int *, int))(v77 + 824))( /*0x6af778*/
-                             v8,
-  char v101[8]; // [esp+9Ah] [ebp-10h] BYREF
-                             v101,
-                             *((_DWORD *)g_RulesClass_Instance + 1505) / 256,
-                             0,
-                             a2,
-                             a3);
+          v81 = *(_DWORD *)v8->vt_slot_824(/*0x6af778*/
+                             v8, char v101[8]; // [esp+9Ah] [ebp-10h] BYREF
+                             v101, *((_DWORD *)g_RulesClass_Instance + 1505) / 256, 0, a2, a3);
           if ( v81 == DataGlobal_B0B5B8 )
           {
-  int *v18; // eax
+  AbstractClass *v18; // eax
             TechnoClass::SetFocus(v8, 0); /*0x6af7c5*/
-            int v11 = a1[9]; /*0x6af7ca*/
-            if ( v11 && (*(int (__thiscall **)(int))(*(_DWORD *)v11 + 44))(v11) == 6 )
+            TechnoClass *v11 = a1[9]; /*0x6af7ca*/
+            if ( v11 && v11->getAltitude() == 6 )
             {
               v79 = a1[9]; /*0x6af7e4*/
               if ( v79 )
@@ -407,10 +402,10 @@ TechnoClass * SlaveManagerClass_ProcessSlaves()
               int v14 = *(_DWORD *)(v4 + 1312); /*0x6af80b*/
               v79 = FoundationWidth; /*0x6af813*/
               FoundationHeight = BuildingTypeClass::GetFoundationHeight(v14, 0); /*0x6af817*/
-              int v16 = a1[9]; /*0x6af81f*/
+              TechnoClass *v16 = a1[9]; /*0x6af81f*/
               _WORD * v76 = CellStruct::Set(v100, v79 - 1, FoundationHeight / 2); /*0x6af839*/
   char v89[4]; // [esp+52h] [ebp-58h] BYREF
-              _WORD * v17 = (_WORD *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v16 + 440))(v16, v89); /*0x6af849*/
+              _WORD * v17 = (_WORD *)v16->GetCellCoords_Alt(v89); /*0x6af849*/
               v18 = CellStruct::Add(v17, &v99, v76); /*0x6af851*/
             }
             else
@@ -421,22 +416,22 @@ TechnoClass * SlaveManagerClass_ProcessSlaves()
             v85 = *v18; /*0x6af870*/
             a3 = 1; /*0x6af874*/
             a2 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v85); /*0x6af881*/
-            (*(void (__thiscall **)(int *))(v19 + 1152))(v8); /*0x6af884*/
-            (*(void (__thiscall **)(int *, int, _DWORD))(*v8 + 488))(v8, 2, 0); /*0x6af892*/
+            v8->vt_slot_1152(); /*0x6af884*/
+            v8->vt_slot_488(2, 0); /*0x6af892*/
             *(_DWORD *)(v7 + 4) = 4; /*0x6af898*/
           }
           else
           {
-            int v10 = *v8; /*0x6af78c*/
+            IUnknown *v10 = *v8; /*0x6af78c*/
             a3 = 1; /*0x6af792*/
             a2 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v81); /*0x6af79f*/
-            (*(void (__thiscall **)(int *))(v10 + 1152))(v8); /*0x6af7a2*/
-            (*(void (__thiscall **)(int *, int, _DWORD))(*v8 + 488))(v8, 2, 0); /*0x6af7b0*/
+            v10->vt_slot_1152(v8); /*0x6af7a2*/
+            v8->vt_slot_488(2, 0); /*0x6af7b0*/
             *(_DWORD *)(v7 + 4) = 2; /*0x6af7b6*/
           }
           goto LABEL_62; /*0x6af89f*/
         case 2:
-          _DWORD * v20 = (_DWORD *)(*(int (__thiscall **)(int *))(*v8 + 444))(v8); /*0x6af8a8*/
+          _DWORD * v20 = (_DWORD *)v8->GetCellCoords(); /*0x6af8a8*/
           if ( Cell::IsBridge2(v20) ) /*0x6af8b0*/
           {
             SlaveManagerClass::Check(v8); /*0x6af8bb*/
@@ -451,19 +446,19 @@ TechnoClass * SlaveManagerClass_ProcessSlaves()
           if ( (unsigned __int8)SlaveManagerClass::CheckIsOne(v8) ) /*0x6af8e6*/
           {
   int v82; // [esp+2Ah] [ebp-80h] BYREF
-            int v21 = (*(int (__thiscall **)(int *, int *, int))(*v8 + 444))(v8, a2, a3); /*0x6af8f7*/
+            int v21 = v8->GetCellCoords(a2, a3); /*0x6af8f7*/
             TechnoClass::SetFocus(v8, v21); /*0x6af900*/
-            int v22 = a1[9]; /*0x6af905*/
-            if ( v22 && (*(int (__thiscall **)(int))(*(_DWORD *)v22 + 44))(v22) == 6 ) /*0x6af914*/
+            TechnoClass *v22 = a1[9]; /*0x6af905*/
+            if ( v22 && v22->getAltitude() == 6 ) /*0x6af914*/
             {
               IsBuildingType = IsObjectTypeBuildingType(a1[9]); /*0x6af91e*/
               v24 = BuildingTypeClass::GetFoundationWidth(*(_DWORD **)(IsBuildingType + 1312)); /*0x6af926*/
               int v25 = *(_DWORD *)(IsBuildingType + 1312); /*0x6af92b*/
               v84[0] = v24 - 1; /*0x6af934*/
               int v26 = BuildingTypeClass::GetFoundationHeight(v25, 0); /*0x6af939*/
-              int v27 = a1[9]; /*0x6af93f*/
+              TechnoClass *v27 = a1[9]; /*0x6af93f*/
               v84[1] = v26 / 2; /*0x6af946*/
-              _WORD * v28 = (_WORD *)(*(int (__thiscall **)(int, _WORD *))(*(_DWORD *)v27 + 440))(v27, v87); /*0x6af95c*/
+              _WORD * v28 = (_WORD *)v27->GetCellCoords_Alt(v87); /*0x6af95c*/
               int v91 = *CellStruct::Add(v28, &v91, v84); /*0x6af96b*/
             }
             else
@@ -473,13 +468,13 @@ TechnoClass * SlaveManagerClass_ProcessSlaves()
             int v29 = *v8; /*0x6af987*/
             a3 = 1; /*0x6af98d*/
             a2 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v82); /*0x6af99a*/
-            (*(void (__thiscall **)(int *))(v29 + 1152))(v8); /*0x6af99d*/
-            (*(void (__thiscall **)(int *, int, _DWORD))(*v8 + 488))(v8, 2, 0); /*0x6af9ab*/
+            v8->vt_slot_1152(); /*0x6af99d*/
+            v8->vt_slot_488(2, 0); /*0x6af9ab*/
             *(_DWORD *)(v7 + 4) = 4; /*0x6af9b1*/
           }
           else
           {
-            _DWORD * v30 = (_DWORD *)(*(int (__thiscall **)(int *))(*v8 + 444))(v8); /*0x6af9c1*/
+            _DWORD * v30 = (_DWORD *)v8->GetCellCoords(); /*0x6af9c1*/
             if ( Cell::IsBridge2(v30) ) /*0x6af9c9*/
             {
               if ( !(unsigned __int8)SlaveManagerClass::IsMasterHarvester(v8) ) /*0x6af9e5*/
@@ -498,18 +493,18 @@ TechnoClass * SlaveManagerClass_ProcessSlaves()
           HIBYTE(v78) = 0; /*0x6afa04*/
           if ( v31 ) /*0x6afa0b*/
           {
-  int *v39; // eax
-            int v32 = a1[9]; /*0x6afa11*/
-            if ( v32 && (*(int (__thiscall **)(int))(*(_DWORD *)v32 + 44))(v32) == 6 ) /*0x6afa20*/
+  AbstractClass *v39; // eax
+            TechnoClass *v32 = a1[9]; /*0x6afa11*/
+            if ( v32 && v32->getAltitude() == 6 ) /*0x6afa20*/
             {
-              int v33 = IsObjectTypeBuildingType(a1[9]); /*0x6afa2a*/
-              int v34 = BuildingTypeClass::GetFoundationWidth(*(_DWORD **)(v33 + 1312)); /*0x6afa32*/
-              int v35 = *(_DWORD *)(v33 + 1312); /*0x6afa37*/
+              TechnoClass *v33 = IsObjectTypeBuildingType(a1[9]); /*0x6afa2a*/
+              int v34 = BuildingTypeClass::GetFoundationWidth(v33->q520); /*0x6afa32*/
+              int v35 = v33->q520; /*0x6afa37*/
               v77 = v34; /*0x6afa3f*/
               int v36 = BuildingTypeClass::GetFoundationHeight(v35, 0); /*0x6afa43*/
-              int v37 = a1[9]; /*0x6afa4c*/
+              TechnoClass *v37 = a1[9]; /*0x6afa4c*/
               _WORD * v72 = CellStruct::Set(v97, v77 - 1, v36 / 2); /*0x6afa67*/
-              _WORD * v38 = (_WORD *)(*(int (__thiscall **)(int, int *, _BYTE *))(*(_DWORD *)v37 + 440))(v37, &v99, v93); /*0x6afa75*/
+              _WORD * v38 = (_WORD *)v37->GetCellCoords_Alt(&v99, v93); /*0x6afa75*/
               v39 = CellStruct::Add(v38, v72, a2); /*0x6afa7d*/
             }
             else
@@ -528,19 +523,19 @@ TechnoClass * SlaveManagerClass_ProcessSlaves()
             if ( (__int16)SlaveManagerClass::Calc2DDistance(&v77) > *((_DWORD *)g_RulesClass_Instance + 894) ) /*0x6afb19*/
               HIBYTE(v78) = 1; /*0x6afb1b*/
           }
-          int v43 = a1[9]; /*0x6afb20*/
-          if ( v43 && (*(int (__thiscall **)(int))(*(_DWORD *)v43 + 44))(v43) == 6 ) /*0x6afb2f*/
+          TechnoClass *v43 = a1[9]; /*0x6afb20*/
+          if ( v43 && v43->getAltitude() == 6 ) /*0x6afb2f*/
           {
-            int v44 = IsObjectTypeBuildingType(a1[9]); /*0x6afb39*/
-            int v45 = BuildingTypeClass::GetFoundationWidth(*(_DWORD **)(v44 + 1312)); /*0x6afb41*/
-            int v46 = *(_DWORD *)(v44 + 1312); /*0x6afb46*/
+            TechnoClass *v44 = IsObjectTypeBuildingType(a1[9]); /*0x6afb39*/
+            int v45 = BuildingTypeClass::GetFoundationWidth(v44->q520); /*0x6afb41*/
+            int v46 = v44->q520; /*0x6afb46*/
             v77 = v45; /*0x6afb4e*/
             int v47 = BuildingTypeClass::GetFoundationHeight(v46, 0); /*0x6afb52*/
-            int v48 = a1[9]; /*0x6afb5a*/
+            TechnoClass *v48 = a1[9]; /*0x6afb5a*/
             _WORD * v73 = CellStruct::Set(v87, v77 - 1, v47 / 2); /*0x6afb71*/
   char v88[4]; // [esp+4Eh] [ebp-5Ch] BYREF
   char v90[4]; // [esp+56h] [ebp-54h] BYREF
-            _WORD * v49 = (_WORD *)(*(int (__thiscall **)(int, char *, char *))(*(_DWORD *)v48 + 440))(v48, v90, v88); /*0x6afb7e*/
+            _WORD * v49 = (_WORD *)v48->GetCellCoords_Alt(v90, v88); /*0x6afb7e*/
             v50 = CellStruct::Add(v49, v73, a2); /*0x6afb86*/
           }
           else
@@ -552,13 +547,13 @@ TechnoClass * SlaveManagerClass_ProcessSlaves()
           a2 = &v94; /*0x6afba7*/
           v78 = *v50; /*0x6afba8*/
           v51 = v78; /*0x6afb9d*/
-          _DWORD * v53 = (_DWORD *)(*(int (__thiscall **)(int *))(v52 + 440))(v8); /*0x6afbac*/
+          _DWORD * v53 = (_DWORD *)v8->GetCellCoords_Alt(); /*0x6afbac*/
           if ( *v53 == __PAIR32__(HIWORD(v77), v51) ) /*0x6afbb5*/
           {
             if ( !v8[361] ) /*0x6afbc2*/
             {
               InfantryClass::SlaveGiveMoney_RecordBalanceBefore(a1[9]); /*0x6afbd2*/
-              (*(void (__thiscall **)(int *))(*v8 + 212))(v8); /*0x6afbdb*/
+              v8->vt_slot_212(); /*0x6afbdb*/
               v54 = g_CurrentFrame; /*0x6afbe1*/
               int v55 = a1[13]; /*0x6afbe6*/
               *(_DWORD *)(v7 + 4) = 5; /*0x6afbec*/
@@ -575,8 +570,8 @@ LABEL_47:
           if ( v8[361] ) /*0x6afc07*/
             goto LABEL_47; /*0x6afc0f*/
 LABEL_48:
-          int v56 = IsObjectTypeBuildingType(a1[9]); /*0x6afc1d*/
-          int v57 = a1[9]; /*0x6afc25*/
+          TechnoClass *v56 = IsObjectTypeBuildingType(a1[9]); /*0x6afc1d*/
+          TechnoClass *v57 = a1[9]; /*0x6afc25*/
           if ( v56 ) /*0x6afc2a*/
           {
             int v58 = IsObjectTypeBuildingType(v57); /*0x6afc31*/
@@ -585,29 +580,26 @@ LABEL_48:
   _WORD v80[2]; // [esp+1Eh] [ebp-8Ch] BYREF
             v80[0] = v59 - 1; /*0x6afc47*/
             int v61 = BuildingTypeClass::GetFoundationHeight(v60, 0); /*0x6afc4c*/
-            int v62 = a1[9]; /*0x6afc52*/
+            TechnoClass *v62 = a1[9]; /*0x6afc52*/
             v80[1] = v61 / 2; /*0x6afc59*/
   _WORD *v63; // eax
-            v63 = (_WORD *)(*(int (__thiscall **)(int, char *, char *, _WORD *))(*(_DWORD *)v62 + 440))( /*0x6afc72*/
-                             v62,
-  char v96[4]; // [esp+76h] [ebp-34h] BYREF
-                             v96,
-  char v95[8]; // [esp+6Eh] [ebp-3Ch] BYREF
-                             v95,
-                             v80);
+            v63 = (_WORD *)v62->GetCellCoords_Alt(/*0x6afc72*/
+                             v62, char v96[4]; // [esp+76h] [ebp-34h] BYREF
+                             v96, char v95[8]; // [esp+6Eh] [ebp-3Ch] BYREF
+                             v95, v80);
             v64 = CellStruct::Add(v63, &v94, (_WORD *)a3); /*0x6afc7a*/
           }
           else
           {
   char v98[12]; // [esp+7Eh] [ebp-2Ch] BYREF
-            v64 = (int *)(*(int (__thiscall **)(int, char *, int *, int))(*(_DWORD *)v57 + 440))(v57, v98, &v94, a3); /*0x6afc8b*/
+            v64 = (int *)v57->GetCellCoords_Alt(v98, &v94, a3); /*0x6afc8b*/
           }
           int v65 = *v8; /*0x6afc93*/
           v83 = *v64; /*0x6afc99*/
           a3 = 1; /*0x6afc9d*/
           a2 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v83); /*0x6afcaa*/
-          (*(void (__thiscall **)(int *))(v65 + 1152))(v8); /*0x6afcad*/
-          (*(void (__thiscall **)(int *, int, _DWORD))(*v8 + 488))(v8, 2, 0); /*0x6afcbb*/
+          v8->vt_slot_1152(); /*0x6afcad*/
+          v8->vt_slot_488(2, 0); /*0x6afcbb*/
 LABEL_62:
           int v71 = a1[18]; /*0x6afd20*/
           result = ++v83; /*0x6afd27*/
@@ -745,14 +737,14 @@ int SlaveManagerClass::AssignTask(AbstractClass * aP1)
 // 0x6B1170
 namespace ra2 {
 namespace game {
-AbstractClass * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
+AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Prefix_0; // ebx
   wchar_t *v9; // ecx
-  int v2 = a2; /*0x6b1174*/
-  _DWORD * v3 = a1; /*0x6b1179*/
+  AbstractClass *v2 = a2; /*0x6b1174*/
+  AbstractClass *v3 = a1; /*0x6b1179*/
   Prefix_0 = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x6b1184*/
   _DWORD * v5 = 0; /*0x6b1186*/
   if ( Prefix_0 >= 0 ) /*0x6b118a*/
@@ -772,10 +764,10 @@ AbstractClass * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       v3[3] = &vt_SlaveManagerClass; /*0x6b11dd*/
     }
   int v16; // [esp+28h] [ebp-4h] BYREF
-    Prefix_0 = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v16, 4, 0); /*0x6b11f2*/
+    Prefix_0 = v2->vt_entry_68(&v16, 4, 0); /*0x6b11f2*/
     if ( Prefix_0 >= 0 ) /*0x6b11f6*/
     {
-      _DWORD * v6 = v3 + 14; /*0x6b11fc*/
+      VectorClass *v6 = v3 + 14; /*0x6b11fc*/
       if ( v3 != (_DWORD *)-56 ) /*0x6b1201*/
       {
         SlaveControlVector::Constructor(v3 + 14, 0, 0); /*0x6b1207*/
@@ -815,10 +807,10 @@ LABEL_20:
             break; /*0x6b125f*/
           int v10 = v3[16]; /*0x6b1265*/
           if ( v3[18] < v10 /*0x6b128a*/
-            || (*((_BYTE *)v3 + 69) || !v10)
+            || (v3->q114 || !v10)
   int v11; // eax
             && (v11 = v3[19], v11 > 0)
-            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v6 + 8))(v3 + 14, v10 + v11, 0) )
+            && v6->Release(v3 + 14, v10 + v11, 0) )
           {
             int v12 = v3[18]; /*0x6b1291*/
             int v13 = v3[15]; /*0x6b1294*/

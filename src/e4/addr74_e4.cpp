@@ -21,7 +21,7 @@
 
 // 0x743270
 namespace gamemd {
-Coord * PlaceScenarioUnits()
+Coord * * PlaceScenarioUnits()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -432,8 +432,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v4; // eax
-
+  AbstractClass *v4; // eax
   char * v3 = (char *)(this + 3); /*0x74bbff*/
   *(this + 4) = 0; /*0x74bc04*/
   *(this + 5) = 0; /*0x74bc07*/
@@ -483,8 +482,7 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v4; // eax
-
+  AbstractClass *v4; // eax
   int v3 = *(this + 2); /*0x74bca6*/
   if ( v3 != -1 ) /*0x74bcac*/
   {
@@ -542,7 +540,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   }
   if ( a2 ) /*0x74bde6*/
   {
-    unsigned int v5 = *this; /*0x74bdeb*/
+    AbstractClass *v5 = *this; /*0x74bdeb*/
     v6 = (*(int (__thiscall **)(unsigned int *, unsigned int, _DWORD))(*(this + 3) + 8))(this + 3, (a2 + 7) >> 3, 0); /*0x74bdf9*/
     *this = a2; /*0x74be01*/
     int v12 = v6; /*0x74be03*/
@@ -553,7 +551,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
         int v7 = *(this + 2); /*0x74be0e*/
         if ( v7 != v5 ) /*0x74be13*/
         {
-          int v8 = v5; /*0x74be17*/
+          AbstractClass *v8 = v5; /*0x74be17*/
           if ( v5 >= *this ) /*0x74be1b*/
             v8 = -1; /*0x74be1d*/
           if ( v8 != v7 ) /*0x74be22*/
@@ -621,9 +619,9 @@ int InitializeVeinholeSystem(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v2; // edi
+  AbstractClass *v2; // edi
   int i; // esi
-  void *v4; // eax
+  AbstractClass *v4; // eax
   int v5; // ebp
   int VeinholeShrinkRate; // eax
   int j; // ecx
@@ -631,8 +629,7 @@ int InitializeVeinholeSystem(char a1)
   int m; // esi
   int result; // eax
   int n; // esi
-  size_t v19; // [esp+10h] [ebp-8h]
-
+  AbstractClass *v19; // [esp+10h] [ebp-8h]
   v2 = Object::ComputeAllocationSize(); /*0x74de9e*/
   v19 = v2; /*0x74dea2*/
   if ( !a1 ) /*0x74dea6*/
@@ -757,7 +754,7 @@ int _::AddRef(int a2)
 
 // 0x74F400
 namespace gamemd {
-AbstractClass * _::Release(int a2, unsigned int * a3)
+AbstractClass * * _::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -767,9 +764,8 @@ AbstractClass * _::Release(int a2, unsigned int * a3)
   {
     *((_BYTE *)this + 12) = 0; /*0x74f416*/
     if ( a3 ) /*0x74f41c*/
-      _DWORD * v4 = a3; /*0x74f432*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x74f42e*/
+      AbstractClass *v4 = a3; /*0x74f432*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x74f42e*/
     *((_BYTE *)this + 12) = 1; /*0x74f436*/
     if ( v4 ) /*0x74f43a*/
     {
@@ -920,7 +916,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
       DataGlobal_A8ED0A = 0; /*0x74fc07*/
     }
     RawFileClass::Dtor(v9); /*0x74fc11*/
-    int v5 = DataGlobal_A8ED24; /*0x74fc16*/
+    AbstractClass *v5 = DataGlobal_A8ED24; /*0x74fc16*/
     LOBYTE(v5) = DataGlobal_A8ED24 | 8; /*0x74fc1b*/
     DataGlobal_A8ED24 = v5; /*0x74fc1d*/
   }
@@ -934,7 +930,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     v6 = 1; /*0x74fc49*/
     DataGlobal_A8ED24 |= 2u; /*0x74fc4e*/
   }
-  char * v7 = (char *)(this + 12); /*0x74fc60*/
+  AbstractClass *v7 = (char *)(this + 12); /*0x74fc60*/
   sprintf(v7, DataGlobal_846368, v6, v4); /*0x74fc6a*/
   return v7; /*0x74fc74*/
 }

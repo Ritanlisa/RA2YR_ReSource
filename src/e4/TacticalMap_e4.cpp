@@ -8,7 +8,7 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x484680
-ScenarioClass * TacticalMap::ComputeScreenTint()
+ScenarioClass * * TacticalMap::ComputeScreenTint()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -123,7 +123,7 @@ int TacticalMap::Redraw()
   if ( DataGlobal_A8EF54 ) /*0x4f454f*/
     (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DataGlobal_A8EF54 + 44))(DataGlobal_A8EF54, 0); /*0x4f4555*/
   TacticalMap::DrawCursor(&g_GameNetworkObject); /*0x4f455d*/
-  int v4 = g_TacticalRender; /*0x4f4562*/
+  ToolTipManager *v4 = g_TacticalRender; /*0x4f4562*/
   if ( g_TacticalRender ) /*0x4f456a*/
     (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)g_TacticalRender + 12))(g_TacticalRender, 0); /*0x4f4570*/
   if ( DataGlobal_A8B8B4 ) /*0x4f457a*/
@@ -169,13 +169,13 @@ int TacticalMap::DrawCursor()
     (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x5d49c8*/
     (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)this->q024 + 108))(this->q024, 1); /*0x5d49d2*/
     TextRenderer::GetInstance(); /*0x5d49db*/
-    int v3 = Text::MeasureWidth(*(_DWORD *)(this->q024 + 48), 0); /*0x5d49f8*/
+    CampaignScore *v3 = Text::MeasureWidth(*(_DWORD *)(this->q024 + 48), 0); /*0x5d49f8*/
     if ( *((_WORD *)this + 348) /*0x5d4a1b*/
       && *(this + 172) - *(this + 173) < this->TacticalMap_field_10 - 1
       && (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)this->q024 + 88))(this->q024) )
     {
       LOWORD(v9) = *((_WORD *)this + 348); /*0x5d4a29*/
-      _DWORD * v4 = (_DWORD *)this->q024; /*0x5d4a2e*/
+      CampaignScore *v4 = (_DWORD *)this->q024; /*0x5d4a2e*/
       int v5 = v4[3]; /*0x5d4a31*/
   _DWORD v10[2]; // [esp+Ch] [ebp-20h] BYREF
       v10[1] = v4[4]; /*0x5d4a39*/
@@ -396,7 +396,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
 
 // 0x6D3D10
 namespace gamemd {
-AbstractClass * TacticalMap_Render()
+AbstractClass * * TacticalMap_Render()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -408,8 +408,8 @@ int TacticalMap::RenderAllObjects(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  LPPERSISTSTREAM v19; // edi
-  LPPERSISTSTREAM v39; // ebx
+  AbstractClass *v19; // edi
+  AbstractClass *v39; // ebx
   struct IPersistStreamVtbl *lpVtbl; // eax
   LPPERSISTSTREAM v53; // ebp
   int result; // eax
@@ -419,9 +419,9 @@ int TacticalMap::RenderAllObjects(int a2)
   _BYTE v101[12]; // [esp+B8h] [ebp-5Ch] BYREF
   _BYTE v102[12]; // [esp+C4h] [ebp-50h] BYREF
 
-  int v2 = g_Map_VisibleRectOffset; /*0x6d8db7*/
+  IUnknown *v2 = g_Map_VisibleRectOffset; /*0x6d8db7*/
   int v3 = this->q0B0; /*0x6d8dc4*/
-  int v4 = this->q0B4; /*0x6d8dd5*/
+  IUnknown *v4 = this->q0B4; /*0x6d8dd5*/
   int v77 = v3 + g_Map_VisibleRectOffset / 2; /*0x6d8ddb*/
   int v73 = g_DSurface_WindowOffset; /*0x6d8de5*/
   float * v5 = (float *)(this + 3556); /*0x6d8deb*/

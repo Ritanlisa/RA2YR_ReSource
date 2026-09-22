@@ -1353,7 +1353,7 @@ void DlgProcScoreScreen()
     SendMessageA(eax21a, 0x4B2u, 0, (LPARAM)v17); /*0x6c92a1*/
     v21 = HouseClass_Count; /*0x6c92a3*/
     v23 = 0; /*0x6c92a8*/
-    int v24 = 0; /*0x6c92aa*/
+    CampaignScore *v24 = 0; /*0x6c92aa*/
     wParama = HouseClass_Count; /*0x6c92ac*/
     Formata = 0; /*0x6c92b2*/
     if ( (int)HouseClass_Count > 0 ) /*0x6c92b6*/

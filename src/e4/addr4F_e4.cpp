@@ -40,7 +40,7 @@ int InGameUI_Open()
 {
   unsigned __int16 v0; // cx
   HWND v1; // eax
-  HWND v2; // esi
+  IUnknown *v2; // esi
   LONG dwNewLong; // [esp+0h] [ebp-4h] BYREF
 
   dwNewLong = 0; /*0x4f10e9*/
@@ -127,7 +127,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   int result; // eax
   HWND DlgItem; // ebp
   wchar_t *StringCSF; // eax
-  HWND v7; // esi
+  ObjectClass *v7; // esi
   wchar_t *v9; // eax
   HouseClass *v10; // ecx
   wchar_t *v12; // eax
@@ -236,7 +236,7 @@ void LoadFromINIGraphicMenu()
   SessionClass *v20; // eax
   ObjectClass *v21; // esi
   int Int; // esi
-  ObjectClass *v28; // esi
+  AbstractClass *v28; // esi
   void *vtable0; // eax
   ObjectClass *a2; // [esp+Ch] [ebp-B4h] BYREF
   ObjectClass *v33; // [esp+10h] [ebp-B0h] BYREF
@@ -451,7 +451,7 @@ LABEL_22:
 
 // 0x4F2300
 namespace gamemd {
-ObjectClass * E4Recv_4F2300::ProcessGraphicMenu()
+ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -474,7 +474,7 @@ ObjectClass * E4Recv_4F2300::ProcessGraphicMenu()
   char v16 = 0; /*0x4f235d*/
   _BYTE * v4 = 0; /*0x4f2362*/
   Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x4f2364*/
-  int v5 = this->M84; /*0x4f2369*/
+  MSVQAnim *v5 = this->M84; /*0x4f2369*/
   if ( v5 ) /*0x4f236e*/
     MSEngine::ProcessEvents((_DWORD *)(this + 4), v5, 300000); /*0x4f2379*/
   int v6 = (*(int (__thiscall **)(int, void ***))(*(_DWORD *)DSurface_Alternate + 120))(DSurface_Alternate, &v24); /*0x4f238e*/
@@ -485,7 +485,7 @@ ObjectClass * E4Recv_4F2300::ProcessGraphicMenu()
     (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x4f23a8*/
     DDraw::HandleSuspend((_DWORD *)(this + 4)); /*0x4f23ad*/
     (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x4f23ba*/
-    int v7 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance); /*0x4f23ce*/
+    ObjectClass *v7 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance); /*0x4f23ce*/
   _DWORD v17[2]; // [esp+1Eh] [ebp-30h] BYREF
     v17[0] = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance); /*0x4f23db*/
     v17[1] = v7; /*0x4f23df*/
@@ -747,7 +747,7 @@ void ParseINIAnimGadgetDefinition()
 
 // 0x4F3140
 namespace gamemd {
-ReferenceCounted * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned int * a2, ObjectClass a4)
+ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned int * a2, ObjectClass a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -867,7 +867,7 @@ ReferenceCounted * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx
 
 // 0x4F3460
 namespace gamemd {
-MSAnim * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
+MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         int this,
@@ -1203,7 +1203,7 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
 
 // 0x4FBD80
 namespace gamemd {
-AbstractClass * E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
+AbstractClass * * E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

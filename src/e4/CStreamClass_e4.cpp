@@ -4,14 +4,14 @@
 #include "e4/classes/CStreamClass_16_e4.hpp"
 
 // 0x4A2CD0
-ModemGame * CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4)
+ModemGame * * CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IStream *v4; // ebp
-  size_t v5; // edi
+  ModemGame *v5; // edi
   HRESULT result; // eax
-  size_t v9; // eax
+  ModemGame *v9; // eax
   ULONG v10; // [esp+0h] [ebp-10h]
   v4 = Src; /*0x4a2cd2*/
   v5 = Size; /*0x4a2cd8*/
@@ -29,7 +29,7 @@ ModemGame * CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int S
     return 0; /*0x4a2d2e*/
   if ( a4 ) /*0x4a2d3a*/
     *a4 = 0; /*0x4a2d3c*/
-  int v8 = *(_DWORD *)(a1 + 20); /*0x4a2d42*/
+  ModemGame *v8 = *(_DWORD *)(a1 + 20); /*0x4a2d42*/
   if ( v8 > 0 ) /*0x4a2d47*/
   {
     if ( Size >= 0x10000 - v8 ) /*0x4a2d52*/

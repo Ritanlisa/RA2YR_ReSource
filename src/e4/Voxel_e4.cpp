@@ -355,12 +355,12 @@ int Voxel::Projection_Setup()
     v56 = 1065353216; /*0x7553a7*/
     v57 = 0; /*0x7553af*/
     v58 = 0; /*0x7553b7*/
-    float * v25 = &flt_B432D8[v24]; /*0x7553bf*/
+    Tactical *v25 = &flt_B432D8[v24]; /*0x7553bf*/
     float * v26 = (float *)TransformMatrix3x4Point(&v56); /*0x7553c5*/
     *v25 = *v26; /*0x7553d4*/
     int v27 = *((_DWORD *)v26 + 1); /*0x7553d6*/
     v55 = 0; /*0x7553d9*/
-    *((_DWORD *)v25 + 1) = v27; /*0x7553e1*/
+    v25->vtable2 = v27; /*0x7553e1*/
     v25[2] = v26[2]; /*0x7553e7*/
     float * v28 = (float *)((char *)&flt_B444A0 + v24 * 4); /*0x7553f8*/
     *(float *)&v53 = *(float *)(v24 * 4 + 11809500) - 0.0; /*0x7553fa*/
@@ -441,7 +441,7 @@ int Voxel::Projection_Setup()
   Matrix3x3::RotateX(v50); /*0x7558e9*/
   float v51 = -dbl_B44498; /*0x7558f7*/
   Matrix2D::Rotate(v51); /*0x7558ff*/
-  int * v47 = (int *)&unk_B450B8; /*0x755904*/
+  ObjectClass *v47 = (int *)&unk_B450B8; /*0x755904*/
   do /*0x755919*/
   {
     result = Matrix3x4::Identity(v47); /*0x75590b*/
@@ -465,13 +465,13 @@ int Voxel::Projection_Setup()
 
 // 0x755DB0
 namespace gamemd {
-AbstractClass * Voxel::SortDepth(ObjectClass * aP1, int a3)
+AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v5; // eax
   CCINIClass *v6; // eax
-  ObjectClass *v7; // esi
+  AbstractClass *v7; // esi
   void *uniqueId; // ecx
   CCINIClass *v19; // eax
   CCINIClass *v21; // eax
@@ -565,7 +565,7 @@ LABEL_67:
   }
   if ( a3 ) /*0x755ed0*/
   {
-  void *v20; // eax
+  AbstractClass *v20; // eax
     VoxelPalette::Init(v118, (int)&DataGlobal_B2FB78, (int)g_VoxelColorPalette); /*0x755ee7*/
     if ( (*(int (__thiscall **)(ObjectClass *, float *, int))(*(_DWORD *)aP1->__pad_0 + 36))(aP1, &v72, 1) != 1 ) /*0x755efd*/
     {
@@ -910,7 +910,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
   BuildingTypeClass *v4; // ecx
   BuildingTypeClass *v7; // eax
   BuildingTypeClass *v15; // eax
-  IUnknown *v18; // eax
+  TechnoClass *v18; // eax
   ObjectClass *v21; // ebx
   IUnknown *v22; // eax
   _DWORD *eax39; // eax
@@ -1155,7 +1155,7 @@ int Voxel::loadSectionData()
 
 // 0x75F4C0
 namespace gamemd {
-CellStruct * Voxel::renderSection(ObjectClass * aP1)
+CellStruct * * Voxel::renderSection(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1168,7 +1168,7 @@ CellStruct * Voxel::renderSection(ObjectClass * aP1)
   int v6 = (*(int (__thiscall **)(_DWORD *, ObjectClass **))(v4 + 16))(v5, &aP1); /*0x75f4e9*/
   if ( v6 == -1 ) /*0x75f4ef*/
   {
-    int v7 = v5[2]; /*0x75f4f1*/
+    AbstractClass *v7 = v5[2]; /*0x75f4f1*/
     if ( v5[4] < v7 /*0x75f51b*/
       || ((LOBYTE(v6) = *((_BYTE *)v5 + 13), (_BYTE)v6) || !v7)
       && (v6 = v5[5], v6 > 0)
@@ -1548,7 +1548,7 @@ int Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
 
 // 0x7609E0
 namespace gamemd {
-AbstractClass * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
+AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1586,7 +1586,7 @@ AbstractClass * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
       ProcessVoxelVertexData(&v3->WaveClass_field_148, &v3->WaveClass_field_1A0); /*0x760a7b*/
       if ( v3->WaveClass_field_1A8 ) /*0x760a80*/
       {
-  bool v21; // zf
+  WaveClass *v21; // zf
         int v5 = v4 + v3->WaveClass_field_1A4; /*0x760aa0*/
         v36 = (WaveClass *)(v3->WaveClass_field_1A0 + v5 - 1); /*0x760aaa*/
         if ( (int)v36 >= *(_DWORD *)&aP2->__pad_0[12] + *(_DWORD *)&aP2->__pad_0[4] ) /*0x760aae*/
@@ -1759,7 +1759,7 @@ void* Voxel::FaceBlit()
   IUnknown *v6; // eax
   MouseClass *v7; // edx
   MouseClass *v12; // eax
-  MouseClass *v16; // eax
+  RecoilData *v16; // eax
   IUnknown *v18; // eax
   MouseClass *v20; // eax
   IUnknown *v23; // eax
@@ -2114,7 +2114,7 @@ int Voxel::SectionProject(int * a2, int a3)
 
 // 0x762070
 namespace gamemd {
-AbstractClass * Voxel::LightRender(AbstractClass ** a2, int a3)
+AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2396,7 +2396,7 @@ AbstractClass * Voxel::LightRender(AbstractClass ** a2, int a3)
 
 // 0x762AF0
 namespace gamemd {
-DynamicVectorClass * Voxel::TransformMatrix()
+DynamicVectorClass * * Voxel::TransformMatrix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2414,17 +2414,17 @@ DynamicVectorClass * Voxel::TransformMatrix()
   int v3 = *(_DWORD *)(this + 172); /*0x762b62*/
   if ( !v3 ) /*0x762b6a*/
     goto LABEL_13; /*0x762b6a*/
-  int v4 = *(_DWORD *)(this + 468); /*0x762b70*/
+  TechnoClass *v4 = *(_DWORD *)(this + 468); /*0x762b70*/
   if ( !v4 ) /*0x762b78*/
     goto LABEL_13; /*0x762b78*/
   if ( this->Voxel_field_0x130 == (unsigned int)Math::RoundToInt(1.0 / 0.050000001) ) /*0x762b95*/
     goto LABEL_13; /*0x762b95*/
-  if ( *(_DWORD *)(v4 + 692) != v3 ) /*0x762ba1*/
+  if ( v4->target != v3 ) /*0x762ba1*/
     goto LABEL_13; /*0x762ba1*/
   if ( this->q02C != 3 ) /*0x762bae*/
   {
     int v5 = v4 + 156; /*0x762bc0*/
-    int v6 = *(_DWORD *)(v4 + 156); /*0x762bc4*/
+    int v6 = v4->location; /*0x762bc4*/
     int v7 = *(_DWORD *)(v5 + 4); /*0x762bc6*/
     int v8 = *(_DWORD *)(v5 + 8); /*0x762bc9*/
   _DWORD *v9; // eax
@@ -2466,33 +2466,21 @@ LABEL_13:
     }
     if ( this->q02C == 3 ) /*0x762ccf*/
     {
-      int v17 = *(_DWORD *)(this + 468); /*0x762cd7*/
+      TechnoClass *v17 = *(_DWORD *)(this + 468); /*0x762cd7*/
       int v18 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 172) + 88))(*(_DWORD *)(this + 172)); /*0x762ce8*/
   int *v19; // eax
-      v19 = (int *)(*(int (__thiscall **)(int, int *, _DWORD, _DWORD, _DWORD, _DWORD, int))(*(_DWORD *)v17 + 176))( /*0x762d05*/
-                     v17,
-                     &v71,
-                     0,
-                     0,
-                     0,
-                     0,
-                     v18);
+      v19 = (int *)v17->ComputeTransform(/*0x762d05*/
+                     v17, &v71, 0, 0, 0, 0, v18);
       Voxel::LightRender((_DWORD *)this, v19, (int)v75); /*0x762d0e*/
     }
     else
     {
 LABEL_21:
-      int v20 = *(_DWORD *)(this + 468); /*0x762d1b*/
+      TechnoClass *v20 = *(_DWORD *)(this + 468); /*0x762d1b*/
       int v21 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 172) + 88))(*(_DWORD *)(this + 172)); /*0x762d2c*/
   int *v22; // eax
-      v22 = (int *)(*(int (__thiscall **)(int, int *, _DWORD, _DWORD, _DWORD, _DWORD, int))(*(_DWORD *)v20 + 176))( /*0x762d49*/
-                     v20,
-                     &v71,
-                     0,
-                     0,
-                     0,
-                     0,
-                     v21);
+      v22 = (int *)v20->ComputeTransform(/*0x762d49*/
+                     v20, &v71, 0, 0, 0, 0, v21);
       Voxel::SectionProject((_DWORD *)this, v22, (int)v75); /*0x762d52*/
     }
   }

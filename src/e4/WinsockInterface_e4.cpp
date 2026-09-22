@@ -30,7 +30,7 @@ void * WinsockInterface::ProcessPacket(int a2)
     --v3; /*0x7702b5*/
   }
   while ( v3 ); /*0x7702b6*/
-  _DWORD * v6 = this + 892; /*0x7702b8*/
+  VectorClass *v6 = this + 892; /*0x7702b8*/
   int v7 = 2; /*0x7702be*/
   do /*0x7702e2*/
   {
@@ -104,7 +104,7 @@ int WinsockInterface::Init()
       MessageBoxA(g_hWnd, DataGlobal_84DFD0, Caption, 0); /*0x7b1e48*/
     }
     v3 = (struct WSAData *)__2_YAPAXI_Z(0x590u); /*0x7b1e53*/
-    int v4 = *this; /*0x7b1e58*/
+    AbstractClass *v4 = *this; /*0x7b1e58*/
     v5 = v3; /*0x7b1e5a*/
     v12 = v3; /*0x7b1e61*/
     *(this + 64539) = -1; /*0x7b1e65*/
@@ -142,7 +142,7 @@ int WinsockInterface::Init()
           int v8 = 0x7FFFFFFF; /*0x7b1f2c*/
           if ( v7 > 0 ) /*0x7b1f31*/
           {
-            char v15 = (const char **)&v15; /*0x7b1f34*/
+            WinModemClass *v15 = (const char **)&v15; /*0x7b1f34*/
             v10 = v7; /*0x7b1f38*/
             do /*0x7b1f63*/
             {

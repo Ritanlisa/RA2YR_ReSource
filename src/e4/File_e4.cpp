@@ -27,20 +27,20 @@ unsigned int * File::LoadFont()
 {
   void **v13; // edi
   void **v16; // ecx
-  size_t v20; // edi
+  AbstractClass *v20; // edi
   void **v24; // [esp+30h] [ebp-44h]
 
   unsigned int v2 = 0; /*0x43399b*/
-  _DWORD * v3 = 0; /*0x43399d*/
+  rc_ptr_base *v3 = 0; /*0x43399d*/
   _DWORD * v4 = __2_YAPAXI_Z(0x6Cu); /*0x43399f*/
   if ( v4 ) /*0x4339a9*/
   {
     _DWORD * v5 = CCFileClass::Construct(v4, this); /*0x4339b2*/
-    _DWORD * v6 = v5; /*0x4339b7*/
+    CCFileClass *v6 = v5; /*0x4339b7*/
     if ( v5 ) /*0x4339bb*/
     {
       if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*v5 + 20))(v5, 0) /*0x4339f0*/
-        || !(*(int (__thiscall **)(_DWORD *, int))(*v6 + 28))(v6, 1)
+        || !v6->Load_1(1)
         || (v3 = __2_YAPAXI_Z(0x24u)) == 0 )
       {
 LABEL_35:
@@ -54,7 +54,7 @@ LABEL_35:
       {
         memset(v7, 0, 0x20000u); /*0x433a22*/
   _DWORD v25[7]; // [esp+34h] [ebp-40h] BYREF
-        if ( (*(int (__thiscall **)(_DWORD *, _DWORD *, int))(*v6 + 36))(v6, v25, 28) == 28 ) /*0x433a35*/
+        if ( v6->Read(v25, 28) == 28 ) /*0x433a35*/
         {
           if ( v25[0] == 1416523622 ) /*0x433a44*/
           {
@@ -65,14 +65,14 @@ LABEL_35:
             v3[5] = v25[6]; /*0x433a6a*/
             int v8 = v3[6]; /*0x433a71*/
             v3[4] = v25[5]; /*0x433a74*/
-            if ( (*(int (__thiscall **)(_DWORD *, int, int))(*v6 + 36))(v6, v8, 0x20000) == 0x20000 ) /*0x433a84*/
+            if ( v6->Read(v8, 0x20000) == 0x20000 ) /*0x433a84*/
               goto LABEL_24; /*0x433a84*/
           }
           else if ( v25[0] == 1951297350 ) /*0x433a94*/
           {
-            (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*v6 + 40))(v6, 0, 0); /*0x433aa0*/
+            v6->Seek(0, 0); /*0x433aa0*/
   char v26[4]; // [esp+50h] [ebp-24h] BYREF
-            if ( (*(int (__thiscall **)(_DWORD *, char *, int))(*v6 + 36))(v6, v26, 36) == 36 ) /*0x433ab4*/
+            if ( v6->Read(v26, 36) == 36 ) /*0x433ab4*/
             {
   int v28; // [esp+58h] [ebp-1Ch]
               int v9 = v28; /*0x433abe*/
@@ -93,8 +93,8 @@ LABEL_35:
               if ( v13 ) /*0x433af7*/
               {
   int v33; // [esp+6Ch] [ebp-8h]
-                (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v6 + 40))(v6, v33, 0); /*0x433b07*/
-                int v14 = (*(int (__thiscall **)(_DWORD *, void **, unsigned int))(*v6 + 36))(v6, v13, 12 * v31); /*0x433b1a*/
+                v6->Seek(v33, 0); /*0x433b07*/
+                int v14 = v6->Read(v13, 12 * v31); /*0x433b1a*/
                 unsigned int v15 = v31; /*0x433b1d*/
                 if ( v14 == 12 * v31 ) /*0x433b29*/
                 {
@@ -127,7 +127,7 @@ LABEL_35:
                   }
                   free(v13); /*0x433b6e*/
   int v34; // [esp+70h] [ebp-4h]
-                  (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v6 + 40))(v6, v34, 0); /*0x433b81*/
+                  v6->Seek(v34, 0); /*0x433b81*/
 LABEL_24:
                   _WORD * v19 = (_WORD *)v3[6]; /*0x433b84*/
                   v20 = v3[5] * v3[4]; /*0x433b8a*/
@@ -143,7 +143,7 @@ LABEL_24:
                   while ( v21 ); /*0x433ba4*/
                   void * v22 = __2_YAPAXI_Z(v20); /*0x433ba7*/
                   v3[7] = v22; /*0x433bb1*/
-                  if ( v22 && (*(int (__thiscall **)(_DWORD *, void *, size_t))(*v6 + 36))(v6, v22, v20) == v20 ) /*0x433bc1*/
+                  if ( v22 && v6->Read(v22, v20) == v20 ) /*0x433bc1*/
                     goto LABEL_35; /*0x433bc1*/
                 }
               }
@@ -167,15 +167,14 @@ LABEL_24:
 
 // 0x4CB920
 namespace gamemd {
-File * File::Dispatch()
+File * * File::Dispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   u_short v2; // ax
   u_short v3; // cx
   u_short v4; // ax
-  u_long v5; // eax
-
+  File *v5; // eax
   v2 = ntohs(*(_WORD *)(this + 6)); /*0x4cb928*/
   v3 = this->q004; /*0x4cb92d*/
   *(_WORD *)(this + 6) = v2; /*0x4cb931*/
@@ -195,7 +194,7 @@ File * File::Dispatch()
       *this->q008 = v5; /*0x4cb975*/
       break; /*0x4cb975*/
     default:
-      return v5;
+      File *v5;
   }
   return v5; /*0x4cb962*/
 }
@@ -221,7 +220,7 @@ unsigned int * File::LoadFileHVA(ObjectClass * aP1)
 
 // 0x5BD5C0
 namespace gamemd {
-AbstractClass * File::ParseFileHVA(int a2)
+AbstractClass * * File::ParseFileHVA(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -236,7 +235,7 @@ AbstractClass * File::ParseFileHVA(int a2)
   {
   _BYTE v12[16]; // [esp+20h] [ebp-78h] BYREF
     (*(void (__thiscall **)(int, _BYTE *, int))(*(_DWORD *)a2 + 36))(a2, v12, 24); /*0x5bd607*/
-    void * v5 = *(void **)(this + 12); /*0x5bd60a*/
+    AbstractClass *v5 = *(void **)(this + 12); /*0x5bd60a*/
   int v13; // [esp+30h] [ebp-68h]
     int v6 = v13; /*0x5bd611*/
   int v14; // [esp+34h] [ebp-64h]
@@ -378,17 +377,17 @@ int File::FindByPrefix(char * Str1, unsigned char * a3)
 
 // 0x734990
 namespace gamemd {
-AbstractClass * File::ParseCSFString()
+AbstractClass * * File::ParseCSFString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v2; // eax
-  size_t v7; // eax
-  wchar_t *v9; // ecx
+  AbstractClass *v2; // eax
+  AbstractClass *v7; // eax
+  CampaignClass *v9; // ecx
   __int16 v10; // dx
-  wchar_t *v12; // ecx
+  CampaignClass *v12; // ecx
   size_t v14; // eax
-  size_t v15; // eax
+  AbstractClass *v15; // eax
   size_t Size; // [esp+10h] [ebp-9Ch] BYREF
   _BYTE v24[12]; // [esp+80h] [ebp-2Ch] BYREF
   int v25; // [esp+8Ch] [ebp-20h]
@@ -423,16 +422,16 @@ LABEL_42:
         CCFileClass::Read(v23, unk_B1BF38, Size); /*0x734a4a*/
         v2 = Size; /*0x734a4f*/
       }
-      char * v3 = (char *)dword_B1CF74; /*0x734a53*/
+      AbstractClass *v3 = (char *)dword_B1CF74; /*0x734a53*/
       unk_B1BF38[v2] = 0; /*0x734a59*/
       strcpy(&v3[v1], unk_B1BF38); /*0x734a7b*/
       if ( (int)Size > unk_B1CF58 ) /*0x734a90*/
         unk_B1CF58 = Size; /*0x734a92*/
-      int v4 = v19; /*0x734a9d*/
+      AbstractClass *v4 = v19; /*0x734a9d*/
       int v22 = 0; /*0x734aa1*/
       *(_DWORD *)((char *)dword_B1CF74 + v1 + 36) = v19; /*0x734aa5*/
       *(_DWORD *)((char *)dword_B1CF74 + v1 + 32) = v20; /*0x734ab3*/
-      int v5 = v20; /*0x734ab7*/
+      CampaignClass *v5 = v20; /*0x734ab7*/
       if ( v20 > 0 ) /*0x734abd*/
       {
         int v6 = 4 * v4; /*0x734ac3*/
@@ -575,7 +574,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   int eax12; // eax
   IUnknown *v7; // ecx
   int eax12a; // eax
-  IUnknown *v9; // edx
+  AbstractClass *v9; // edx
   CCINIClass *v10; // edi
   IUnknown *v12; // [esp+10h] [ebp-1Ch] BYREF
   IUnknown *v13; // [esp+14h] [ebp-18h] BYREF
@@ -599,7 +598,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
     PaletteData = File::LoadPaletteData(v3, aP1); /*0x76acdc*/
   else
     PaletteData = 0; /*0x76ace0*/
-  char * v5 = this + 28; /*0x76ace6*/
+  AbstractClass *v5 = this + 28; /*0x76ace6*/
   v12 = 0; /*0x76acf2*/
   v13 = 0; /*0x76acf6*/
   Size = 0; /*0x76acfa*/
@@ -697,13 +696,13 @@ LABEL_25:
 
 // 0x76B0A0
 namespace gamemd {
-AbstractClass * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
+AbstractClass * * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t i; // edi
   unsigned __int8 v13; // dl
-  int v4 = *(this + 9); /*0x76b0a7*/
+  AbstractClass *v4 = *(this + 9); /*0x76b0a7*/
   if ( 4 * a3 < v4 * this->q008 ) /*0x76b0b5*/
     return 0; /*0x76b0ba*/
   *(this + 17) = __2_YAPAXI_Z(4 * v4); /*0x76b0c7*/

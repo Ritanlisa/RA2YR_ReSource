@@ -26,7 +26,7 @@ char CopyProtection::NotifyLauncher()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD v0; // edi
-  HANDLE v1; // esi
+  AnimClass *v1; // esi
   DWORD v2; // esi
   struct tagMSG Msg; // [esp+10h] [ebp-1Ch] BYREF
 

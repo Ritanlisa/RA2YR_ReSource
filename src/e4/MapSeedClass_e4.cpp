@@ -6,7 +6,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x5A5B50
-MapSeedClass * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
+MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -19,7 +19,6 @@ MapSeedClass * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   VectorClass *NeighbourContent; // esi
   __int16 a1[4]; // [esp+10h] [ebp-118h] BYREF
   ObjectClass v23; // [esp+1Ch] [ebp-10Ch] BYREF
-
   v23.owningHouseIndex = (int)this; /*0x5a5b6a*/
   v2 = (MapSeedClass **)globalHelper_0A7640(&v23.spawnStatus, aP1); /*0x5a5b6e*/
   v3 = *v2; /*0x5a5b73*/
@@ -434,7 +433,7 @@ LABEL_24:
               v9 = this->q004 + 3; /*0x5a786b*/
               LOWORD(v12) = v8; /*0x5a7874*/
               HIWORD(v12) = v9; /*0x5a7879*/
-              int * v10 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v12); /*0x5a7883*/
+              CellStruct *v10 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v12); /*0x5a7883*/
               if ( !CellClass::InBounds(v10) && !Cell::IsEmpty(v10) && !CellClass::InMapDataRange(v10) ) /*0x5a789d*/
                 break; /*0x5a789d*/
               if ( ++v8 >= *this + 3 ) /*0x5a78ae*/

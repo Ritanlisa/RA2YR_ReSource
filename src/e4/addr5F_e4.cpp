@@ -162,7 +162,7 @@ LABEL_20:
 
 // 0x5F2CE0
 namespace gamemd {
-AbstractClass * WaitModemConnection()
+AbstractClass * * WaitModemConnection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -518,7 +518,7 @@ LABEL_11:
 
 // 0x5FDDF0
 namespace gamemd {
-AbstractClass * sub_5FDDF0()
+AbstractClass * * sub_5FDDF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -562,7 +562,7 @@ AbstractClass * sub_5FDDF0()
   }
   for ( i = v11 - 1; i >= 0; --i ) /*0x5fdeb1*/
   {
-    _BYTE * v5 = (_BYTE *)*((_DWORD *)Block + i); /*0x5fdeb7*/
+    AbstractClass *v5 = (_BYTE *)*((_DWORD *)Block + i); /*0x5fdeb7*/
     if ( BuildingClass::CheckAdjacentCells((int)v5) ) /*0x5fdebc*/
       BuildingClass::VisualizePlacement(v5); /*0x5fdec7*/
   }
@@ -680,8 +680,7 @@ AbstractClass * * GenerateRangeRingTextures()
   int i; // [esp+32h] [ebp-50h]
   int v20; // [esp+36h] [ebp-4Ch]
   int v21; // [esp+3Eh] [ebp-44h] BYREF
-
-  int v0 = 0; /*0x5ff429*/
+  AbstractClass *v0 = 0; /*0x5ff429*/
   if ( !DataGlobal_AC1834 ) /*0x5ff430*/
   {
   _DWORD v33[3]; // [esp+76h] [ebp-Ch] BYREF
@@ -702,7 +701,7 @@ AbstractClass * * GenerateRangeRingTextures()
       if ( !*v1 ) /*0x5ff444*/
       {
         _DWORD * v2 = __2_YAPAXI_Z(0x20u); /*0x5ff44b*/
-        _DWORD * v3 = v2; /*0x5ff450*/
+        AbstractClass *v3 = v2; /*0x5ff450*/
         if ( v2 ) /*0x5ff457*/
         {
           Surface::Construct(v2, 256, 128); /*0x5ff465*/
@@ -759,14 +758,14 @@ AbstractClass * * GenerateRangeRingTextures()
       v30[0] = (int)&Surface_Vtable; /*0x5ff593*/
     }
     i = 0; /*0x5ff5aa*/
-    _DWORD * v9 = &DataGlobal_AC1798; /*0x5ff5ae*/
+    AbstractClass *v9 = &DataGlobal_AC1798; /*0x5ff5ae*/
     int v10 = 128; /*0x5ff5b3*/
     do /*0x5ff721*/
     {
       if ( !*v9 ) /*0x5ff5b8*/
       {
         _DWORD * v11 = __2_YAPAXI_Z(0x20u); /*0x5ff5be*/
-        _DWORD * v12 = v11; /*0x5ff5c3*/
+        AbstractClass *v12 = v11; /*0x5ff5c3*/
         if ( v11 ) /*0x5ff5ca*/
         {
           Surface::Construct(v11, 256, 128); /*0x5ff5d8*/

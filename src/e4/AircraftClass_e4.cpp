@@ -169,7 +169,7 @@ void AircraftClass_DeployWithAnim()
 
 // 0x417CC0
 namespace gamemd {
-AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3)
+AircraftTypeClass * * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -514,7 +514,7 @@ int AircraftClass::RevealSight(int a2, int a3)
   #375 *v8; // edx
   int result; // eax
   int CrateImg; // ebx
-  int v17; // [esp+Ch] [ebp-Ch] BYREF
+  Coord *v17; // [esp+Ch] [ebp-Ch] BYREF
   int v18; // [esp+10h] [ebp-8h]
   int v19; // [esp+14h] [ebp-4h]
   int v4 = *(_DWORD *)(this->q1B1 + 1512); /*0x41ae00*/

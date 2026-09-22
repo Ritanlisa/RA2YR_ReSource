@@ -10,7 +10,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  TacticalMap *v11; // edx
+  MouseClass *v11; // edx
   _WORD *a5a; // [esp+18h] [ebp+14h]
 
   result = a4; /*0x493930*/
@@ -50,7 +50,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  TacticalMap *v14; // edi
+  MouseClass *v14; // edi
   _WORD *a5a; // [esp+14h] [ebp+14h]
 
   result = a4; /*0x493a60*/
@@ -92,7 +92,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  TacticalMap *v11; // edx
+  MouseClass *v11; // edx
   _WORD *a5a; // [esp+18h] [ebp+14h]
 
   result = a4; /*0x493b90*/
@@ -139,7 +139,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
   result = this->q008 + (v11 << 9); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
-    _DWORD * v14 = g_VisibleSurfaceDescriptor; /*0x493e35*/
+    MouseClass *v14 = g_VisibleSurfaceDescriptor; /*0x493e35*/
     int v17 = a4; /*0x493e3b*/
     do /*0x493e8e*/
     {

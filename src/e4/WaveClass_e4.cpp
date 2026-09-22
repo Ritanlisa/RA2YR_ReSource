@@ -12,23 +12,23 @@ int WaveClass::LoadWaveData(int a2, int a3)
   int Register; // ebp
 
   int v3 = a3; /*0x75f652*/
-  int v4 = a2; /*0x75f659*/
+  ObjectClass *v4 = a2; /*0x75f659*/
   Register = BuildingClass::SaveLoad_Register(this); /*0x75f664*/
   if ( Register >= 0 )
   {
     if ( v4 ) /*0x75f672*/
     {
       ObjectClass::Init((_DWORD *)v4, (int)&a3); /*0x75f67b*/
-      *(_DWORD *)(v4 + 332) = 0; /*0x75f680*/
-      *(_DWORD *)(v4 + 424) = 0; /*0x75f68c*/
+      v4->q053 = 0; /*0x75f680*/
+      v4->q06A = 0; /*0x75f68c*/
       FrameSnapshot::Init((_WORD *)(v4 + 472)); /*0x75f692*/
       WaveClass::Constructor_7632D0((_DWORD *)(v4 + 496), 0, 0); /*0x75f69f*/
       *(_DWORD *)v4 = &WaveClass::`vftable'; /*0x75f6a4*/
-      *(_DWORD *)(v4 + 4) = &WaveClass::`vftable'; /*0x75f6aa*/
-      *(_DWORD *)(v4 + 8) = &vt_WaveClass; /*0x75f6b1*/
-      *(_DWORD *)(v4 + 12) = &off_7F6BC8; /*0x75f6b8*/
+      v4->vtable2 = &WaveClass::`vftable'; /*0x75f6aa*/
+      v4->vtable3 = &vt_WaveClass; /*0x75f6b1*/
+      v4->vtable4 = &off_7F6BC8; /*0x75f6b8*/
     }
-    *(_DWORD *)(v4 + 332) = *(_DWORD *)(v4 + 176) == 3 ? v4 + 384 : v4 + 336;
+    v4->q053 = v4->q0B0 == 3 ? v4 + 384 : v4 + 336;
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 172)); /*0x75f6ee*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 468)); /*0x75f6ff*/
     Register = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v3 + 12))(v3, &a2, 4, 0); /*0x75f712*/
@@ -56,15 +56,15 @@ LABEL_17:
           if ( Register < 0 ) /*0x75f73b*/
             break; /*0x75f73b*/
           int v7 = *(_DWORD *)(v4 + 504); /*0x75f73d*/
-          if ( *(_DWORD *)(v4 + 512) < v7 /*0x75f76e*/
+          if ( v4->q200 < v7 /*0x75f76e*/
             || (*(_BYTE *)(v4 + 509) || !v7)
   int v8; // eax
-            && (v8 = *(_DWORD *)(v4 + 516), v8 > 0)
-            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v4 + 496) + 8))(v4 + 496, v7 + v8, 0) )
+            && (v8 = v4->inLimbo, v8 > 0)
+            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(v4->q7C0 + 8))(v4 + 496, v7 + v8, 0) )
           {
-            int v9 = *(_DWORD *)(v4 + 512); /*0x75f775*/
+            int v9 = v4->q200; /*0x75f775*/
             int v10 = *(_DWORD *)(v4 + 500); /*0x75f778*/
-            *(_DWORD *)(v4 + 512) = v9 + 1; /*0x75f77e*/
+            v4->q200 = v9 + 1; /*0x75f77e*/
             *(_DWORD *)(v10 + 4 * v9) = v13; /*0x75f785*/
           }
           v6 = a2; /*0x75f78c*/

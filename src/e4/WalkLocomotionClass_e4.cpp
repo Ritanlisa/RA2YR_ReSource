@@ -15,7 +15,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   int v4 = g_OverlayTypeConfig; /*0x6a032d*/
   if ( a3 != g_OverlayTypeConfig || a4 != DataGlobal_B077FC ) /*0x6a0340*/
   {
-    int v5 = a1 - 4; /*0x6a0358*/
+    IUnknown *v5 = a1 - 4; /*0x6a0358*/
     __int64 v13 = a4; /*0x6a035b*/
     unsigned int * v6 = (unsigned int *)(a1 - 4 + 64); /*0x6a0363*/
     unsigned int v12 = a3; /*0x6a036a*/
@@ -23,7 +23,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     {
       *v6 = g_OverlayTypeConfig; /*0x6a0386*/
       *(_DWORD *)(a1 + 64) = DataGlobal_B077FC; /*0x6a038d*/
-      int v7 = HIDWORD(DataGlobal_B077FC); /*0x6a0390*/
+      TechnoClass *v7 = HIDWORD(DataGlobal_B077FC); /*0x6a0390*/
       *(_BYTE *)(v5 + 99) = 0; /*0x6a0396*/
       *(_DWORD *)(a1 - 4 + 72) = v7; /*0x6a039a*/
       v4 = g_OverlayTypeConfig; /*0x6a039d*/
@@ -31,15 +31,15 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     if ( __PAIR64__(a4, a3) != __PAIR64__(DataGlobal_B077FC, v4) /*0x6a03be*/
       || (LOBYTE(v4) = BYTE4(DataGlobal_B077FC), HIDWORD(a4) != HIDWORD(DataGlobal_B077FC)) )
     {
-      __int64 v8 = v13; /*0x6a03c4*/
+      VoxelAnimClass *v8 = v13; /*0x6a03c4*/
       *(_BYTE *)(v5 + 99) = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(_QWORD *)(a1 + 64) = v8; /*0x6a03d0*/
-      int v11 = *(_DWORD *)(v5 + 12); /*0x6a03dd*/
+      int v11 = v5->q00C; /*0x6a03dd*/
       _DWORD * v9 = Coord::To_Cell(&DataGlobal_87F7E8, &v12); /*0x6a03e4*/
-      if ( !CrateClass::ProcessPickup(v9, v11) || *(_BYTE *)(*(_DWORD *)(v5 + 12) + 129) ) /*0x6a03f7*/
+      if ( !CrateClass::ProcessPickup(v9, v11) || *(_BYTE *)(v5->q00C + 129) ) /*0x6a03f7*/
       {
-        LOBYTE(v4) = *(_BYTE *)(*(_DWORD *)(v5 + 12) + 144); /*0x6a043d*/
+        LOBYTE(v4) = *(_BYTE *)(v5->q00C + 144); /*0x6a043d*/
         if ( (_BYTE)v4 ) /*0x6a0445*/
         {
           LOBYTE(v4) = g_OverlayTypeConfig; /*0x6a0447*/

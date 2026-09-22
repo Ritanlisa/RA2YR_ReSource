@@ -5,7 +5,7 @@
 
 // 0x5D55A0
 namespace gamemd {
-AbstractClass * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
+AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -13,7 +13,7 @@ AbstractClass * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   int v3 = a2; /*0x5d55a2*/
   if ( a2 ) /*0x5d55ae*/
   {
-    _DWORD * v5 = a3; /*0x5d55b4*/
+    AbstractClass *v5 = a3; /*0x5d55b4*/
     this->q00C = 0; /*0x5d55b8*/
     if ( a3 ) /*0x5d55bd*/
     {
@@ -36,7 +36,7 @@ AbstractClass * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
       _DWORD * v6 = __2_YAPAXI_Z(8 * a2); /*0x5d55c7*/
       if ( v6 ) /*0x5d55d1*/
       {
-        _DWORD * v7 = v6; /*0x5d55d6*/
+        AbstractClass *v7 = v6; /*0x5d55d6*/
         if ( a2 - 1 >= 0 ) /*0x5d55da*/
         {
           int v8 = a2; /*0x5d55dc*/
@@ -61,7 +61,7 @@ AbstractClass * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
       return 0; /*0x5d5694*/
     if ( this->MSFont_18_field_0x4 ) /*0x5d5611*/
     {
-      int v11 = this->MSFont_18_field_0x8; /*0x5d5616*/
+      AbstractClass *v11 = this->MSFont_18_field_0x8; /*0x5d5616*/
       if ( a2 < v11 ) /*0x5d561b*/
         v11 = a2; /*0x5d561d*/
       int v12 = 0; /*0x5d561f*/
@@ -91,7 +91,7 @@ AbstractClass * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x5d5678*/
   }
-  int v15 = this->MSFont_18_field_0x8; /*0x5d567b*/
+  AbstractClass *v15 = this->MSFont_18_field_0x8; /*0x5d567b*/
   if ( v15 < this->MSFont_18_field_0x10 ) /*0x5d5683*/
     this->MSFont_18_field_0x10 = v15; /*0x5d5685*/
   return 1; /*0x5d5688*/

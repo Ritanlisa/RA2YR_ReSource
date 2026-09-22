@@ -854,15 +854,15 @@ int Warhead::ApplyPostDamageEffects()
   }
   else
   {
-    int * v4 = (int *)*(this + 44); /*0x46a336*/
+    ParticleSystemClass *v4 = (int *)*(this + 44); /*0x46a336*/
     if ( v4 ) /*0x46a33e*/
     {
       int v5 = *(this + 39); /*0x46a353*/
       int v6 = *(this + 40); /*0x46a359*/
       int v7 = *v4; /*0x46a35f*/
       v92 = *(this + 41); /*0x46a361*/
-      _DWORD * v8 = (_DWORD *)(*(int (__thiscall **)(int *, int *))(v7 + 72))(v4, &v93); /*0x46a370*/
-      int * v9 = Coord::Subtract(&v90, *v8 - v5, v8[1] - v6, v8[2] - v92); /*0x46a392*/
+      _DWORD * v8 = (_DWORD *)v4->GetCoords_0(&v93); /*0x46a370*/
+      IUnknown *v9 = Coord::Subtract(&v90, *v8 - v5, v8[1] - v6, v8[2] - v92); /*0x46a392*/
       v84 = *v9; /*0x46a399*/
       v85 = v9[1]; /*0x46a3a4*/
       v86 = v9[2]; /*0x46a3ab*/
@@ -877,7 +877,7 @@ int Warhead::ApplyPostDamageEffects()
     }
   }
   result = this->vt_slot_444(); /*0x46a3da*/
-  if ( *(_DWORD *)(result + 228) ) /*0x46a3e0*/
+  if ( result->q0E4 ) /*0x46a3e0*/
   {
     int v11 = this->vt_slot_444(); /*0x46a3f2*/
     result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v11 + 228) + 44))(*(_DWORD *)(v11 + 228)); /*0x46a400*/
@@ -896,8 +896,8 @@ int Warhead::ApplyPostDamageEffects()
   double v74; // [esp+44h] [ebp-9Ch]
   double v73; // [esp+3Ch] [ebp-A4h] BYREF
       int v12 = *this; /*0x46a412*/
-      int v13 = *(_DWORD *)(this->q0AC + 692); /*0x46a414*/
-      int v99 = *(_DWORD *)(v13 + 160); /*0x46a425*/
+      IUnknown *v13 = *(_DWORD *)(this->q0AC + 692); /*0x46a414*/
+      int v99 = v13->q028; /*0x46a425*/
   int v83; // [esp+78h] [ebp-68h] BYREF
       int v14 = *(_DWORD *)this->vt_slot_440(&v83); /*0x46a434*/
       int v15 = *(_DWORD *)(v13 + 180); /*0x46a43c*/
@@ -931,16 +931,16 @@ int Warhead::ApplyPostDamageEffects()
               _BYTE * v23 = (_BYTE *)*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v82) + 57); /*0x46a4d7*/
               if ( v23 ) /*0x46a4df*/
               {
-                int v24 = *(this + 44); /*0x46a4e5*/
-                if ( v23 != (_BYTE *)v24 && v24 && !Object::IsAlliedWithObjectHouse(*(_DWORD **)(v24 + 540), (int)v23) ) /*0x46a502*/
+                ParticleSystemClass *v24 = *(this + 44); /*0x46a4e5*/
+                if ( v23 != (_BYTE *)v24 && v24 && !Object::IsAlliedWithObjectHouse(v24->q21C, (int)v23) ) /*0x46a502*/
                 {
                   char v25 = *(_BYTE *)(v13 + 303); /*0x46a515*/
-                  int v26 = *(_DWORD *)(v13 + 164); /*0x46a51b*/
+                  int v26 = v13->q0A4; /*0x46a51b*/
                   int v27 = *(_DWORD *)(v13 + 168); /*0x46a521*/
-                  int v102 = *(_DWORD *)(v13 + 172); /*0x46a527*/
+                  bool v102 = v13->q02B; /*0x46a527*/
   int v101; // [esp+CCh] [ebp-14h]
                   LOBYTE(v101) = v25; /*0x46a53b*/
-                  int v28 = *(this + 44); /*0x46a542*/
+                  ParticleSystemClass *v28 = *(this + 44); /*0x46a542*/
                   LODWORD(v88) = v26; /*0x46a551*/
                   LODWORD(v77) = v28; /*0x46a555*/
                   ppv = 0; /*0x46a559*/
@@ -1023,13 +1023,13 @@ int Warhead::ApplyPostDamageEffects()
                       v86 = v42; /*0x46a893*/
                       if ( v43 ) /*0x46a897*/
                       {
-                        _DWORD * v44 = (_DWORD *)*(this + 44); /*0x46a899*/
+                        ParticleSystemClass *v44 = (_DWORD *)*(this + 44); /*0x46a899*/
                         if ( v44 ) /*0x46a8a1*/
                           TechnoClass::CreateFireEffect(v44, v23, 0, v13, &v84); /*0x46a8ac*/
                       }
                       if ( *(_BYTE *)(v13 + 337) ) /*0x46a8b1*/
                       {
-                        int * v45 = (int *)*(this + 44); /*0x46a8bb*/
+                        ParticleSystemClass *v45 = (int *)*(this + 44); /*0x46a8bb*/
                         if ( v45 ) /*0x46a8c3*/
                           TechnoClass::CreateRadarBlip(v45, v23, v13, &v84); /*0x46a8cc*/
                       }
@@ -1066,11 +1066,11 @@ int Warhead::ApplyPostDamageEffects()
           LOWORD(v76) = v46 + v76; /*0x46a971*/
           v47 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -2, 2); /*0x46a980*/
           char v48 = *(_BYTE *)(v13 + 303); /*0x46a985*/
-          int v49 = *(this + 44); /*0x46a98b*/
+          ParticleSystemClass *v49 = *(this + 44); /*0x46a98b*/
           HIWORD(v76) += v47; /*0x46a991*/
-          int v50 = *(_DWORD *)(v13 + 164); /*0x46a996*/
+          int v50 = v13->q0A4; /*0x46a996*/
           int v51 = *(_DWORD *)(v13 + 168); /*0x46a99c*/
-          int v52 = *(_DWORD *)(v13 + 172); /*0x46a9a2*/
+          bool v52 = v13->q02B; /*0x46a9a2*/
           LOBYTE(v83) = v48; /*0x46a9a8*/
           LODWORD(v87) = v49; /*0x46a9b0*/
           LODWORD(v78) = v50; /*0x46a9ba*/

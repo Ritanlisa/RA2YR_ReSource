@@ -89,7 +89,7 @@ LABEL_12:
 }
 
 // 0x79C650
-AbstractClass * MapSeed::InsertName()
+AbstractClass * * MapSeed::InsertName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -102,7 +102,7 @@ AbstractClass * MapSeed::InsertName()
   void *v11; // [esp+8h] [ebp-70h] BYREF
     String::AssignFromPtr((char **)&v11, this); /*0x79c668*/
     int v2 = g_WindowManager; /*0x79c66d*/
-    int v3 = g_WindowManager; /*0x79c672*/
+    BlowStraw *v3 = g_WindowManager; /*0x79c672*/
     if ( g_WindowManager >= dword_B73AAC ) /*0x79c67e*/
     {
       DynamicVector::EnsureCapacity(&g_WindowManager); /*0x79c685*/
@@ -126,7 +126,7 @@ AbstractClass * MapSeed::InsertName()
     }
     g_WindowManager = v2 + 1; /*0x79c6ef*/
     int v5 = g_WOL_RequestManager; /*0x79c6f4*/
-    int v6 = g_WOL_RequestManager; /*0x79c6f9*/
+    BlowStraw *v6 = g_WOL_RequestManager; /*0x79c6f9*/
     if ( g_WOL_RequestManager >= dword_B76984 ) /*0x79c705*/
     {
       DynamicVector::EnsureCapacity(&g_WOL_RequestManager); /*0x79c70c*/
@@ -150,7 +150,7 @@ AbstractClass * MapSeed::InsertName()
     }
     g_WOL_RequestManager = v5 + 1; /*0x79c776*/
     int v8 = g_WOL_BuddyList; /*0x79c77b*/
-    int v9 = g_WOL_BuddyList; /*0x79c780*/
+    BlowStraw *v9 = g_WOL_BuddyList; /*0x79c780*/
     if ( g_WOL_BuddyList >= dword_B779B4 ) /*0x79c78c*/
     {
       DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x79c793*/

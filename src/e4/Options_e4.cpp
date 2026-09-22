@@ -261,7 +261,7 @@ int Options::PrepareSaveLoadDlg()
 
 // 0x55FAA0
 namespace gamemd {
-AbstractClass * Options::Screen_Save()
+AbstractClass * * Options::Screen_Save()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -309,7 +309,7 @@ AbstractClass * Options::Screen_Save()
     Options::SetScoreVolume((float *)g_GameModeOptions, v13, 0); /*0x55fbcd*/
     if ( DataGlobal_A8EBA0 == 0.0 ) /*0x55fbe3*/
     {
-      int v10 = dword_A83D14; /*0x55fbe5*/
+      AbstractClass *v10 = dword_A83D14; /*0x55fbe5*/
       if ( dword_A83D14 == -1 ) /*0x55fbed*/
         v10 = dword_A83D18; /*0x55fbef*/
       Theme::QueueSong((int)&g_BuildingTypeClass_Count, v10); /*0x55fbfa*/
@@ -339,9 +339,9 @@ char Options::Screen_Dialog()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v0; // eax
-  HWND v1; // esi
+  IUnknown *v1; // esi
   HWND v3; // eax
-  HWND v4; // esi
+  IUnknown *v4; // esi
   LONG dwNewLong; // [esp+14h] [ebp-8h] BYREF
   LONG v9; // [esp+18h] [ebp-4h] BYREF
   char v7 = g_WTFMode; /*0x55fc92*/
@@ -540,8 +540,8 @@ AbstractClass * * Options::DestroyComposite(char a2)
   }
   for ( i = (_DWORD *)*((_DWORD *)this + 14); i; i = (_DWORD *)*((_DWORD *)this + 14) ) /*0x62557f*/
   {
-    _DWORD * v4 = i; /*0x625581*/
-    _DWORD * v5 = 0; /*0x625583*/
+    AbstractClass *v4 = i; /*0x625581*/
+    AbstractClass *v5 = 0; /*0x625583*/
     while ( i != v4 ) /*0x62558b*/
     {
       v5 = v4; /*0x62558d*/
@@ -557,7 +557,7 @@ AbstractClass * * Options::DestroyComposite(char a2)
 LABEL_12:
     ; /*0x6255b3*/
   }
-  void * v6 = (void *)this->q010; /*0x6255bb*/
+  AbstractClass *v6 = (void *)this->q010; /*0x6255bb*/
   if ( v6 ) /*0x6255c0*/
   {
     DeleteAndZero::Alt(this->q010); /*0x6255c4*/

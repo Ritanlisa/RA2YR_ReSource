@@ -8,7 +8,7 @@
 
 // 0x6516F0
 namespace gamemd {
-CellStruct * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, unsigned char *a2@<edx> a2, CellStruct *a3@<ebp> a3)
+CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, unsigned char *a2@<edx> a2, CellStruct *a3@<ebp> a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -77,9 +77,8 @@ CellStruct * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, unsi
     fprintf(v7, g_Str_Trace_CPU__s__MMX__s__Vendor_, (CellStruct *)Name); /*0x651849*/
     fprintf(v7, g_Str_Trace_Frames_, *(CellStruct **)&HouseClass_Player[45112]); /*0x65185b*/
     if ( g_FrameCounter_Samples ) /*0x65186b*/
-      unsigned int v12 = g_FrameCounter_Total / (unsigned int)g_FrameCounter_Samples; /*0x651874*/
-    else
-      v12 = 0; /*0x651878*/
+      CellStruct *v12 = g_FrameCounter_Total / (unsigned int)g_FrameCounter_Samples; /*0x651874*/
+    CellStruct *v12 = 0; /*0x651878*/
     fprintf(v7, g_Str_Trace_Average_FPS_, (CellStruct *)v12); /*0x651881*/
     fprintf(v7, g_Str_Trace_Max_MaxAhead_, *(CellStruct **)&HouseClass_Player[30748]); /*0x651893*/
     fprintf(v7, g_Str_Trace_Latency_setting_, *(CellStruct **)&HouseClass_Player[40528]); /*0x6518a4*/
@@ -124,7 +123,7 @@ CellStruct * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, unsi
     }
     while ( (int)v15 < (int)&HouseClass_Player[31672] ); /*0x651a2e*/
     v16 = 0; /*0x651a34*/
-    int * v17 = dword_B04474; /*0x651a36*/
+    AbstractClass *v17 = dword_B04474; /*0x651a36*/
     do /*0x651a68*/
     {
       if ( v16 == v55 ) /*0x651a3f*/
@@ -192,7 +191,7 @@ CellStruct * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, unsi
           int v24 = 0; /*0x651bc8*/
           if ( v4[4].ambientSoundController[2] > 0 ) /*0x651bcc*/
           {
-            int v25 = v57 + 92; /*0x651bd2*/
+            AbstractClass *v25 = v57 + 92; /*0x651bd2*/
             do /*0x651c34*/
             {
               if ( *(char *)(v25 - 60) == v54 ) /*0x651bdd*/
@@ -280,9 +279,9 @@ CellStruct * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, unsi
         aP2 = 0; /*0x651e13*/
         do /*0x651ec5*/
         {
-          char * v35 = (char *)aP2 + ebx60[5]; /*0x651e1e*/
+          AbstractClass *v35 = (char *)aP2 + ebx60[5]; /*0x651e1e*/
           fprintf(v7, &stru_830620[33956], v34); /*0x651e2a*/
-          v36 = *((_WORD *)v35 + 18); /*0x651e2f*/
+          v36 = v35->q012; /*0x651e2f*/
           if ( v36 == 43 || v36 == 19 ) /*0x651e40*/
           {
             char * v38 = AbstractType::FindName((void *)v36); /*0x651e68*/

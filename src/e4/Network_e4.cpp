@@ -34,11 +34,11 @@ int Network::SendBeaconDelete(int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v4 = this->q018; /*0x4311cc*/
+  WinModemClass *v4 = this->q018; /*0x4311cc*/
   if ( v4 ) /*0x4311d1*/
   {
   char v14; // [esp+13h] [ebp-1DDh]
-  int v9; // esi
+  AbstractClass *v9; // esi
     if ( a2 == -1 && a3 == -1 ) /*0x4311ed*/
     {
       v14 = 1; /*0x4311ef*/
@@ -52,7 +52,7 @@ LABEL_5:
         v4 = *v8; /*0x4311fe*/
         if ( *v8 ) /*0x4311fe*/
         {
-          if ( (*(_BYTE *)(v4 + 12) & 2) != 0 ) /*0x431207*/
+          if ( (v4->q00C & 2) != 0 ) /*0x431207*/
             break; /*0x431207*/
         }
         ++v7; /*0x431209*/
@@ -76,16 +76,16 @@ LABEL_5:
     }
     if ( v9 ) /*0x431231*/
     {
-      v4 = *(_DWORD *)(v9 + 272); /*0x43123d*/
-      int v15 = v4; /*0x431243*/
+      v4 = v9->q110; /*0x43123d*/
+      WinModemClass *v15 = v4; /*0x431243*/
       if ( v4 == *((_DWORD *)HouseClass_Player + 12) || !v14 ) /*0x431252*/
       {
-        if ( (*(_BYTE *)(v9 + 12) & 1) != 0 /*0x4312a6*/
+        if ( (v9->vtable4 & 1) != 0 /*0x4312a6*/
           && HouseClass::IsAllied(HouseClass_Player, v4)
           && (unsigned __int8)HouseClass::IsAlliedWith(
-                                *(#375 **)&HouseClass_Array->__pad_0[4 * *(_DWORD *)(v9 + 272)],
+                                *(#375 **)&HouseClass_Array->__pad_0[4 * v9->q110],
                                 HouseClass_Player)
-          && !*(_BYTE *)(*(_DWORD *)&HouseClass_Array->__pad_0[4 * *(_DWORD *)(v9 + 272)] + 501) )
+          && !*(_BYTE *)(*(_DWORD *)&HouseClass_Array->__pad_0[4 * v9->q110] + 501) )
         {
   _DWORD *v10; // eax
           v10 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)DataGlobal_880A04 + 120))( /*0x4312bf*/
@@ -149,7 +149,7 @@ LABEL_5:
       }
       else
       {
-        *(_BYTE *)(v9 + 12) &= 0xFCu; /*0x431254*/
+        v9->vtable4 &= 0xFCu; /*0x431254*/
       }
     }
   }
@@ -164,7 +164,7 @@ int Network::SendBeacon(CellStruct * aP1, int a3, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  int v5; // eax
+  WinModemClass *v5; // eax
   Network *v7; // esi
   Network *v9; // ecx
   int v11; // ebp
@@ -189,7 +189,7 @@ LABEL_5:
       v5 = *v9; /*0x431490*/
       if ( *v9 ) /*0x431490*/
       {
-        if ( (*(_BYTE *)(v5 + 12) & 2) != 0 ) /*0x431499*/
+        if ( (v5->q00C & 2) != 0 ) /*0x431499*/
           break; /*0x431499*/
       }
       ++v8; /*0x43149f*/
@@ -234,9 +234,9 @@ LABEL_5:
           char * v12 = CharToWideString(&DataGlobal_87F8E4[42624]); /*0x431596*/
           wcscpy(Destination, (const wchar_t *)v12); /*0x4315a1*/
         }
-        char v13 = -1; /*0x4315b2*/
+        WinModemClass *v13 = -1; /*0x4315b2*/
         char v14 = HouseClass_Player->__pad_28[8]; /*0x4315b5*/
-        char v24 = -1; /*0x4315b8*/
+        WinModemClass *v24 = -1; /*0x4315b8*/
         char v25 = v14; /*0x4315bc*/
         v5 = 0; /*0x4315c0*/
         int * v15 = this + 3 * v14; /*0x4315c8*/
@@ -309,10 +309,10 @@ int Network::Dispatch()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
-  LPARAM *v8; // edi
+  WinModemClass *v8; // edi
   unsigned __int16 v15; // ax
-  LPARAM *v28; // esi
-  unsigned __int16 v33; // si
+  WinModemClass *v28; // esi
+  IPXManagerClass *v33; // si
   int j; // esi
   wchar_t *v38; // esi
   int v48; // [esp+28h] [ebp-1E8h] BYREF
@@ -380,7 +380,7 @@ LABEL_10:
                 v8 = &g_NetworkPlayerName; /*0x48d382*/
                 while ( 1 ) /*0x48d38d*/
                 {
-                  int v9 = *(_DWORD *)(Game_PlayerInfoArray + 4 * v5); /*0x48d38d*/
+                  WinModemClass *v9 = *(_DWORD *)(Game_PlayerInfoArray + 4 * v5); /*0x48d38d*/
                   const void * v10 = (const void *)ToWideStringChar(*v8); /*0x48d399*/
                   const void * v11 = (const void *)ToWideStringChar(v9); /*0x48d39b*/
                   if ( !_strcmpi(v10, v11) ) /*0x48d3a2*/
@@ -461,7 +461,7 @@ LABEL_25:
           case 10: /*0x48d583*/
             for ( j = 0; j < Network::GetSendCount(&g_NetworkManager); ++j ) /*0x48d828*/
             {
-              int v36 = Network::GetConnectionSpeed(j); /*0x48d839*/
+              AbstractClass *v36 = Network::GetConnectionSpeed(j); /*0x48d839*/
               int v37 = Network::FindPlayerByID(v36); /*0x48d841*/
               if ( (unsigned __int8)GUID::Compare(v37) ) /*0x48d84c*/
                 HandleNetworkPlayerDisconnect(v36, 0); /*0x48d859*/
@@ -568,7 +568,7 @@ LABEL_25:
             int v26 = 0; /*0x48d642*/
             if ( Game_PlayerCount > 0 ) /*0x48d646*/
             {
-              int * v45 = &Network_PlayerPorts; /*0x48d64c*/
+              IPXManagerClass *v45 = &Network_PlayerPorts; /*0x48d64c*/
               do /*0x48d788*/
               {
                 if ( (unsigned __int8)NetworkID::Compare(&Network_EventValue) ) /*0x48d665*/
@@ -580,7 +580,7 @@ LABEL_25:
                     v28 = &g_NetworkPlayerName; /*0x48d69a*/
                     while ( 1 ) /*0x48d6a6*/
                     {
-                      int v29 = *(_DWORD *)(Game_PlayerInfoArray + 4 * v26); /*0x48d6a6*/
+                      WinModemClass *v29 = *(_DWORD *)(Game_PlayerInfoArray + 4 * v26); /*0x48d6a6*/
                       const void * v30 = (const void *)ToWideStringChar(*v28); /*0x48d6b0*/
                       const void * v31 = (const void *)ToWideStringChar(v29); /*0x48d6b2*/
                       if ( !_strcmpi(v30, v31) ) /*0x48d6b9*/
@@ -657,7 +657,7 @@ void * Network::initConnection(int a2, unsigned int * a3, char a4)
   else
   {
     this->q002 = a2; /*0x4c6c5e*/
-    _DWORD * v5 = a3; /*0x4c6c6b*/
+    AbstractClass *v5 = a3; /*0x4c6c6b*/
     *this = 41; /*0x4c6c6f*/
   int v8; // [esp+4h] [ebp-8h] BYREF
     Network::CopyAddress(v5, &a2, (int)&v8); /*0x4c6c72*/
@@ -703,12 +703,12 @@ int Network::SendOffer()
 
 // 0x52F3F0
 namespace gamemd {
-AbstractClass * Network::Init()
+AbstractClass * * Network::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v0 = g_NetworkInterface; /*0x52f3f0*/
+  IPXInterfaceClass *v0 = g_NetworkInterface; /*0x52f3f0*/
   if ( g_NetworkInterface ) /*0x52f3fe*/
   {
     (**(void (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1); /*0x52f404*/
@@ -733,16 +733,15 @@ AbstractClass * Network::Init()
     void * v2 = __2_YAPAXI_Z(0x3F5CCu); /*0x52f448*/
     if ( v2 ) /*0x52f452*/
       v0 = Network::finalizeSession(v2); /*0x52f45b*/
-    else
-      v0 = 0; /*0x52f45f*/
+    IPXInterfaceClass *v0 = 0; /*0x52f45f*/
     g_NetworkInterface = v0; /*0x52f461*/
   }
   g_GameTypeFlags = 2; /*0x52f467*/
-  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v0 + 60))(v0, 0); /*0x52f474*/
+  v0->Bind(0); /*0x52f474*/
   Network::SetConnectionParams(30, -1, 600, 1); /*0x52f489*/
   Debug::Log(DataGlobal_826450); /*0x52f493*/
   char v4 = Network_Init_5DA6C0(); /*0x52f4a6*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x52f4ac*/
+  g_NetworkInterface->Receive(); /*0x52f4ac*/
   Network_PlayerPorts = 0; /*0x52f4b3*/
   DataGlobal_A8E2B6 = 0; /*0x52f4be*/
   DataGlobal_A8E2B0 = 0; /*0x52f4c4*/
@@ -943,7 +942,7 @@ int sub_53F830(int a1, int a2)
 
 // 0x540C60
 namespace gamemd {
-AbstractClass * Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4)
+AbstractClass * * Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -974,7 +973,7 @@ AbstractClass * Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, Cel
   result = this->q014; /*0x540ce4*/
   if ( result ) /*0x540ce9*/
   {
-    *(_DWORD *)(result + 40) = this->q058; /*0x540cee*/
+    result->q028 = this->q058; /*0x540cee*/
     result = this->q05C; /*0x540cf4*/
     *(_DWORD *)(this->q014 + 44) = result; /*0x540cf7*/
     *(_DWORD *)(this->q014 + 48) = this->q018; /*0x540d00*/
@@ -1123,7 +1122,7 @@ int Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
          a7);
   if ( !v9 ) /*0x541142*/
   {
-    int v10 = this->q0A0 + 1; /*0x54114a*/
+    AbstractClass *v10 = this->q0A0 + 1; /*0x54114a*/
     this->q0A0 = v10; /*0x54114b*/
     Debug::Log("Send overflow %d\n", v10); /*0x541159*/
   }
@@ -1134,7 +1133,7 @@ int Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
 
 // 0x541260
 namespace gamemd {
-AbstractClass * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String2)
+AbstractClass * * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1293,7 +1292,7 @@ void * Network::ReceiveLoop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  __int16 v12; // ax
+  HashTable *v12; // ax
   __int16 v13; // bp
   int PlayerName; // eax
   int ebp27; // ebp
@@ -1839,7 +1838,7 @@ int Network::validateConnection(int a2, int a3)
 
 // 0x5C46E0
 namespace gamemd {
-AbstractClass * Network::SetupRematch()
+AbstractClass * * Network::SetupRematch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1851,7 +1850,7 @@ AbstractClass * Network::SetupRematch()
   *(_DWORD *)dword_B77D6C = g_NetworkRematchState; /*0x5c46fb*/
   *(_DWORD *)dword_B779C4 = 0; /*0x5c4700*/
   DataGlobal_A8F900 = 0; /*0x5c4706*/
-  char * v2 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x5c4711*/
+  ObjectClass *v2 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x5c4711*/
   int v3 = Game_PlayerInfoArray; /*0x5c471e*/
   strcpy(byte_B77830, v2); /*0x5c472f*/
   int * v4 = (int *)(*(_DWORD *)(v3 + 4 * this->q054) + 40); /*0x5c473e*/
@@ -1910,7 +1909,7 @@ AbstractClass * Network::SetupRematch()
   *((_DWORD *)g_ScenarioClass_Instance + 1173) = g_GameRulesOptions; /*0x5c499c*/
   switch ( g_Rules_EngineerCount ) /*0x5c49b0*/
   {
-  unsigned int v11; // ecx
+  AbstractClass *v11; // ecx
     case 0: /*0x5c49b0*/
       g_ScenarioState = (wchar_t *)40; /*0x5c49b7*/
       g_GameSessionFlags = 60; /*0x5c49c1*/
@@ -1922,7 +1921,7 @@ AbstractClass * Network::SetupRematch()
       g_ScenarioLoadState = 10; /*0x5c49eb*/
       goto LABEL_12; /*0x5c49f5*/
     case 2: /*0x5c49b0*/
-      int v6 = 30; /*0x5c49f7*/
+      AbstractClass *v6 = 30; /*0x5c49f7*/
       goto LABEL_11; /*0x5c49fc*/
     case 3: /*0x5c49b0*/
       v6 = 20; /*0x5c49fe*/
@@ -1944,7 +1943,7 @@ LABEL_12:
       g_GameSessionPool = 0; /*0x5c4a40*/
       if ( !(unsigned char)this->Network_field_0x4 ) /*0x5c4a46*/
         g_GameSessionFlags = 0; /*0x5c4a4d*/
-      int v7 = 0; /*0x5c4a58*/
+      AbstractClass *v7 = 0; /*0x5c4a58*/
       if ( Game_PlayerCount > 0 ) /*0x5c4a5c*/
       {
         int * v8 = &dword_B7790C; /*0x5c4a5e*/
@@ -2064,13 +2063,13 @@ int Network::dispatchEvent()
 
 // 0x5D9410
 namespace gamemd {
-IPXConnClass * Network::ResolveAndConnect(unsigned char * a2)
+IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   struct hostent *v9; // eax
   bool v20; // sf
-  int v21; // ecx
+  IPXInterfaceClass *v21; // ecx
   int v23; // edi
   __int16 i; // si
   int v26; // edi
@@ -2082,7 +2081,7 @@ IPXConnClass * Network::ResolveAndConnect(unsigned char * a2)
   unsigned __int16 v61; // si
   int m; // edi
   int v66; // [esp+40h] [ebp-188h]
-  int v67; // [esp+40h] [ebp-188h]
+  IPXConnClass *v67; // [esp+40h] [ebp-188h]
   DWORD Ticks; // [esp+44h] [ebp-184h]
   DWORD v69; // [esp+44h] [ebp-184h]
   DWORD v70; // [esp+44h] [ebp-184h]
@@ -2103,7 +2102,7 @@ IPXConnClass * Network::ResolveAndConnect(unsigned char * a2)
   v77 = 2130706432; /*0x5d942d*/
   *a2 = 0; /*0x5d9435*/
   v66 = 0; /*0x5d9437*/
-  _BYTE * v3 = v87; /*0x5d943b*/
+  IPXManagerClass *v3 = v87; /*0x5d943b*/
   int v4 = 4; /*0x5d943f*/
   do /*0x5d944f*/
   {
@@ -2177,10 +2176,10 @@ LABEL_16:
     }
     if ( v7 < 16 ) /*0x5d95fd*/
     {
-      int v13 = 300; /*0x5d9603*/
+      IPXConnClass *v13 = 300; /*0x5d9603*/
       if ( Ticks != -1 ) /*0x5d960a*/
       {
-        int v14 = Timer::GetTicks() - Ticks; /*0x5d9615*/
+        AbstractClass *v14 = Timer::GetTicks() - Ticks; /*0x5d9615*/
         if ( v14 >= 300 ) /*0x5d961b*/
           break; /*0x5d961b*/
         v13 = 300 - v14; /*0x5d961d*/
@@ -2193,7 +2192,7 @@ LABEL_16:
   int v15 = v66; /*0x5d963b*/
   if ( v66 < 3 ) /*0x5d9642*/
     return 1; /*0x5d9642*/
-  char * v16 = (char *)v87; /*0x5d964c*/
+  IPXManagerClass *v16 = (char *)v87; /*0x5d964c*/
   signed int * v17 = &v79; /*0x5d9650*/
   do /*0x5d9679*/
   {
@@ -2228,7 +2227,7 @@ LABEL_36:
     if ( !v18-- ) /*0x5d96bc*/
       goto LABEL_36; /*0x5d96c1*/
   }
-  if ( !(*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v21 + 104))(v21, v15) ) /*0x5d96da*/
+  if ( !v21->vt_slot_104(v15) ) /*0x5d96da*/
     return 1; /*0x5d9d92*/
   (*(void (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x5d96ed*/
   v69 = Timer::GetTicks(); /*0x5d96f9*/
@@ -2295,7 +2294,7 @@ LABEL_46:
     v86[1] = 0; /*0x5d982c*/
     for ( k = 0; k < 4; ++k ) /*0x5d9830*/
     {
-  int v33; // ecx
+  IPXInterfaceClass *v33; // ecx
       int v31 = k; /*0x5d9834*/
       if ( !k ) /*0x5d9836*/
         v31 = 1; /*0x5d9838*/
@@ -2321,7 +2320,7 @@ LABEL_69:
           goto LABEL_69; /*0x5d988a*/
       }
       *((_WORD *)v85 + k) = (_WORD)v29; /*0x5d98a0*/
-      int v35 = (*(int (__thiscall **)(int, _WORD *))(*(_DWORD *)v33 + 104))(v33, v29); /*0x5d98a8*/
+      int v35 = v33->vt_slot_104(v29); /*0x5d98a8*/
       if ( !(_BYTE)v35 ) /*0x5d98ad*/
       {
         if ( k > 0 ) /*0x5d99e7*/
@@ -2352,7 +2351,7 @@ LABEL_69:
     signed int v71 = v38; /*0x5d98e7*/
   int v80; // [esp+70h] [ebp-158h]
     HIWORD(v38) = HIWORD(v80); /*0x5d98eb*/
-    int v39 = 720; /*0x5d98ef*/
+    IPXConnClass *v39 = 720; /*0x5d98ef*/
     int v81 = 720; /*0x5d98f1*/
     while ( 1 ) /*0x5d98fd*/
     {
@@ -2402,7 +2401,7 @@ LABEL_69:
     }
     else
     {
-  int v43; // ebx
+  IPXConnClass *v43; // ebx
   int v76; // [esp+58h] [ebp-170h] BYREF
       HIBYTE(v76) = 0; /*0x5d99a7*/
   int v74; // [esp+50h] [ebp-178h] BYREF
@@ -2430,8 +2429,8 @@ LABEL_69:
       {
         if ( (v43 & 0x10) != 0 ) /*0x5d9a72*/
         {
-  int v53; // ecx
-  int v49; // ecx
+  IPXInterfaceClass *v53; // ecx
+  IPXInterfaceClass *v49; // ecx
           Debug::Log(); /*0x5d9a7d*/
           int v47 = 255; /*0x5d9a85*/
           while ( 1 ) /*0x5d9a8e*/
@@ -2454,7 +2453,7 @@ LABEL_118:
             if ( !v47-- ) /*0x5d9ac1*/
               goto LABEL_118; /*0x5d9ac6*/
           }
-          if ( !(*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v49 + 104))(v49, k) ) /*0x5d9adf*/
+          if ( !v49->vt_slot_104(k) ) /*0x5d9adf*/
             return v43; /*0x5d9af2*/
           int v51 = 255; /*0x5d9af5*/
           while ( 1 ) /*0x5d9afe*/
@@ -2479,7 +2478,7 @@ LABEL_130:
             if ( !v51-- ) /*0x5d9b35*/
               goto LABEL_130; /*0x5d9b3a*/
           }
-          if ( !(*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v53 + 104))(v53, v47) ) /*0x5d9b53*/
+          if ( !v53->vt_slot_104(v47) ) /*0x5d9b53*/
             return v67; /*0x5d9b68*/
           (*(void (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x5d9b73*/
           v72 = Timer::GetTicks(); /*0x5d9b7f*/
@@ -2550,7 +2549,7 @@ LABEL_150:
           else
           {
             Debug::Log(); /*0x5d9d04*/
-            int v65 = v67; /*0x5d9d09*/
+            IPXConnClass *v65 = v67; /*0x5d9d09*/
             LOBYTE(v65) = v67 | 0x40; /*0x5d9d10*/
             v67 = v65; /*0x5d9d12*/
           }
@@ -2583,7 +2582,7 @@ unsigned short Network::ResolveNetworkAddress(unsigned short a2)
 {
   __int16 v4; // bx
   struct hostent *v5; // eax
-  unsigned __int16 v12; // si
+  WinModemClass *v12; // si
   DWORD Ticks; // [esp+14h] [ebp-138h]
   unsigned __int16 v22[8]; // [esp+34h] [ebp-118h] BYREF
   char name[256]; // [esp+4Ch] [ebp-100h] BYREF
@@ -2623,7 +2622,7 @@ unsigned short Network::ResolveNetworkAddress(unsigned short a2)
   int v20 = v16 & 4; /*0x5da26b*/
   if ( (v16 & 4) != 0 ) /*0x5da26f*/
   {
-  int v9; // ecx
+  IPXInterfaceClass *v9; // ecx
     int v7 = 255; /*0x5da275*/
     while ( 1 ) /*0x5da283*/
     {
@@ -2646,7 +2645,7 @@ LABEL_19:
         goto LABEL_19; /*0x5da2b7*/
     }
     v18 = v6; /*0x5da2cd*/
-    if ( !(*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v9 + 104))(v9, v6) ) /*0x5da2d4*/
+    if ( !v9->vt_slot_104(v6) ) /*0x5da2d4*/
       return a2; /*0x5da2ed*/
     (*(void (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x5da2f8*/
   }
@@ -2767,11 +2766,11 @@ int Network::CountDisconnectedHouses()
       {
         if ( v5 != v9 ) /*0x5e2c42*/
         {
-          int v6 = *((_DWORD *)HouseClass_Array + v5); /*0x5e2c4a*/
+          HouseClass *v6 = *((_DWORD *)HouseClass_Array + v5); /*0x5e2c4a*/
           if ( v6 ) /*0x5e2c4f*/
           {
-            if ( !*(_BYTE *)(v6 + 501) /*0x5e2c7d*/
-              && !*(_BYTE *)(*(_DWORD *)(v6 + 52) + 422)
+            if ( !v6->defeated /*0x5e2c7d*/
+              && !*(_BYTE *)(v6->relatedTagsCapacity + 422)
               && (void *)v6 != this
               && (unsigned __int8)HouseClass::IsAlliedWith((#375 *)v3, *((#375 **)HouseClass_Array + v5))
               && (unsigned __int8)HouseClass::IsAlliedWith((#375 *)v6, (#375 *)v3) )
@@ -2800,12 +2799,12 @@ LABEL_20:
 
 // 0x5EF4E0
 namespace gamemd {
-AbstractClass * Network_ModemConnectionDialog()
+AbstractClass * * Network_ModemConnectionDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v0; // ebx
-  LONG v4; // eax
+  IUnknown *v4; // eax
   void (__stdcall *v5)(HWND); // esi
   void (__stdcall *v6)(HWND, int); // ebp
   wchar_t *v17; // eax
@@ -3064,7 +3063,7 @@ LABEL_120:
       }
     }
     while ( v28 ); /*0x5ef996*/
-    void * v29 = (void *)NullModemClass::GetMember23(g_ClipboardBuffer); /*0x5ef998*/
+    WinModemClass *v29 = (void *)NullModemClass::GetMember23(g_ClipboardBuffer); /*0x5ef998*/
     ClearCommBreak(v29); /*0x5ef9a4*/
     void * v30 = (void *)NullModemClass::GetMember23(g_ClipboardBuffer); /*0x5ef9b2*/
     EscapeCommFunction(v30, 6u); /*0x5ef9b8*/
@@ -3398,7 +3397,7 @@ int Network::AddFrameEvent()
 
 // 0x6475F0
 namespace gamemd {
-AbstractClass * Network::QueueProcessingLoop()
+AbstractClass * * Network::QueueProcessingLoop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4042,16 +4041,16 @@ int Network::syncGameState()
 
 // 0x64C380
 namespace gamemd {
-AbstractClass * Network::ProcessEventList(int a1, int * a2, int a3)
+AbstractClass * * Network::ProcessEventList(int a1, int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // ebx
   IUnknown *v4; // edi
-  IUnknown *v6; // ecx
-  IUnknown *v7; // eax
+  Game *v6; // ecx
+  AbstractClass *v7; // eax
   int i; // esi
-  IUnknown *v10; // eax
+  AbstractClass *v10; // eax
   int v15; // eax
   char v17; // dl
   _BYTE *v21; // ecx
@@ -4096,7 +4095,7 @@ AbstractClass * Network::ProcessEventList(int a1, int * a2, int a3)
   }
   if ( *(_DWORD *)&HouseClass_Player[42380] ) /*0x64c413*/
   {
-    int v8 = *(_DWORD *)&HouseClass_Player[42384]; /*0x64c419*/
+    Game *v8 = *(_DWORD *)&HouseClass_Player[42384]; /*0x64c419*/
     if ( *(_DWORD *)&HouseClass_Player[42384] ) /*0x64c421*/
     {
       if ( *(_DWORD *)&HouseClass_Player[42388] != -1 ) /*0x64c42e*/
@@ -4213,7 +4212,7 @@ LABEL_97:
     }
     goto LABEL_119; /*0x64cc37*/
   }
-  int v14 = a1; /*0x64c525*/
+  AbstractClass *v14 = a1; /*0x64c525*/
   while ( 1 ) /*0x64c536*/
   {
     v15 = (word_8B41FC + (_WORD)v13) & 0x3FFF; /*0x64c536*/
@@ -4238,7 +4237,7 @@ LABEL_97:
     Debug::Log(); /*0x64c602*/
     Debug::Log(); /*0x64c613*/
     Debug::Log(); /*0x64c623*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)v14 + 16))(v14); /*0x64c62f*/
+    v14->IsClean(); /*0x64c62f*/
     v11 = *(_DWORD *)&HouseClass_Player[392]; /*0x64c632*/
 LABEL_96:
     v49 = ++v13; /*0x64cade*/
@@ -4248,7 +4247,7 @@ LABEL_96:
   v17 = *((_BYTE *)&unk_8B4204 + 111 * v15); /*0x64c63d*/
   if ( v17 == 19 ) /*0x64c647*/
   {
-  int v26; // esi
+  Network *v26; // esi
     v24 = HouseClass_Array; /*0x64c7bf*/
     int v25 = 0; /*0x64c7cc*/
     while ( 1 ) /*0x64c7d3*/
@@ -4256,7 +4255,7 @@ LABEL_96:
       v26 = *(_DWORD *)v24->__pad_0; /*0x64c7d3*/
       if ( *(_DWORD *)v24->__pad_0 ) /*0x64c7d3*/
       {
-        if ( *(_DWORD *)(v26 + 48) == v52 ) /*0x64c7dc*/
+        if ( v26->q030 == v52 ) /*0x64c7dc*/
           break; /*0x64c7dc*/
       }
       ++v25; /*0x64c7de*/
@@ -4445,7 +4444,7 @@ LABEL_95:
 
 // 0x6521C0
 namespace gamemd {
-AbstractClass * Network::RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27)
+AbstractClass * * Network::RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         __int64 a1,
@@ -4518,7 +4517,7 @@ int Network::SendUnreachable()
       char v13 = 0; /*0x6523fc*/
       v11[0] = 47; /*0x652402*/
       strcpy((char *)&v11[1], ToWideStringChar(*(char **)Game_PlayerInfoArray)); /*0x65242c*/
-      char * v3 = (char *)Network::checkTimeout(i); /*0x65243f*/
+      AbstractClass *v3 = (char *)Network::checkTimeout(i); /*0x65243f*/
       if ( v3 ) /*0x652443*/
       {
         char * v4 = ToWideStringChar(*(char **)Game_PlayerInfoArray); /*0x65244d*/
@@ -4761,7 +4760,7 @@ void * Network::reconnect(DynamicVector * aP1, short a3)
   char **v5; // esi
   char **i; // ecx
 
-  int v3 = this->q004; /*0x664400*/
+  DynamicVector *v3 = this->q004; /*0x664400*/
   result = 0; /*0x664404*/
   if ( v3 > 0 ) /*0x66440a*/
   {
@@ -4804,16 +4803,16 @@ unsigned int * Network::processGameEvent()
 
 // 0x792F10
 namespace gamemd {
-AbstractClass * Network::SyncPlayerList()
+AbstractClass * * Network::SyncPlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v4; // eax
-  wchar_t *v5; // esi
+  AbstractClass *v5; // esi
   wchar_t *v8; // eax
   int i; // esi
 
-  signed int v0 = g_WOL_State; /*0x792f10*/
+  Coord *v0 = g_WOL_State; /*0x792f10*/
   g_ScenarioLoadFlags = 1; /*0x792f18*/
   signed int v1 = 0; /*0x792f23*/
   if ( (int)g_WOL_State > 0 ) /*0x792f28*/
@@ -4852,7 +4851,7 @@ AbstractClass * Network::SyncPlayerList()
           v9 = 0; /*0x792ff5*/
           v12 = 0; /*0x792ff7*/
         }
-        int v10 = g_ScenarioLoadFlags; /*0x792ffb*/
+        AbstractClass *v10 = g_ScenarioLoadFlags; /*0x792ffb*/
         dword_B7790C[g_ScenarioLoadFlags] = v9; /*0x793001*/
         g_ScenarioLoadFlags = v10 + 1; /*0x793009*/
       }
@@ -4880,7 +4879,7 @@ AbstractClass * Network::SyncPlayerList()
 
 // 0x79C3A0
 namespace gamemd {
-AbstractClass * int sub_79C3A0()
+AbstractClass * * int sub_79C3A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4918,7 +4917,7 @@ AbstractClass * int sub_79C3A0()
           if ( v2 < dword_B76984 ) /*0x79c477*/
           {
             void * v3 = __2_YAPAXI_Z(4 * v2); /*0x79c482*/
-            void * v4 = g_WOL_SessionID; /*0x79c487*/
+            AbstractClass *v4 = g_WOL_SessionID; /*0x79c487*/
             void * v5 = v3; /*0x79c492*/
             if ( g_WOL_SessionID ) /*0x79c494*/
             {
@@ -4989,7 +4988,7 @@ void sub_793BB0()
   if ( DataGlobal_A8E224 > 0 ) /*0x793bc5*/
   {
     v1 = (DWORD *)&DataGlobal_A8E1C4; /*0x793bcf*/
-    int * v2 = DataGlobal_A8E1A4; /*0x793bd4*/
+    WinModemClass *v2 = DataGlobal_A8E1A4; /*0x793bd4*/
     do /*0x793bdc*/
     {
       signed int v3 = v1[2]; /*0x793bdc*/
@@ -5048,7 +5047,7 @@ void sub_7A2730()
 
 // 0x53F540
 namespace gamemd {
-AbstractClass * sub_53F540()
+AbstractClass * * sub_53F540()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6003,7 +6002,7 @@ char * sub_652110(int a1, int a2)
 
 // 0x664390
 namespace gamemd {
-AbstractClass * Network::handleDisconnect(IUnknown * aP1)
+AbstractClass * * Network::handleDisconnect(IUnknown * aP1)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

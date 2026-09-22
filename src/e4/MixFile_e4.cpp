@@ -10,7 +10,7 @@
 
 // 0x530460
 namespace gamemd {
-MixFileClass * MixFile::LoadAll()
+MixFileClass * * MixFile::LoadAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -45,9 +45,8 @@ MixFileClass * MixFile::LoadAll()
     (**(void (__thiscall ***)(_DWORD, int))DataGlobal_87F7E8[5516])(DataGlobal_87F7E8[5516], 1); /*0x53050d*/
   _DWORD * v4 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530511*/
   if ( v4 ) /*0x53051b*/
-    _DWORD * v5 = MixFileClass::FromFile(v4, aGenermdMix, (int)&DataGlobal_87F7E8[7270]); /*0x530529*/
-  else
-    v5 = 0; /*0x530530*/
+    MixFileClass *v5 = MixFileClass::FromFile(v4, aGenermdMix, (int)&DataGlobal_87F7E8[7270]); /*0x530529*/
+  MixFileClass *v5 = 0; /*0x530530*/
   DataGlobal_87F7E8[5516] = v5; /*0x530535*/
   ReturnTrue(0); /*0x53053a*/
   if ( DataGlobal_87F7E8[5515] ) /*0x530547*/
@@ -146,7 +145,7 @@ MixFileClass * MixFile::LoadAll()
         _DWORD * v21 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530856*/
         if ( v21 ) /*0x530860*/
         {
-          _DWORD * v22 = MixFileClass::FromFile(v21, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x530876*/
+          AbstractClass *v22 = MixFileClass::FromFile(v21, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x530876*/
           if ( v22 ) /*0x53087a*/
           {
             if ( DataGlobal_87F7E8[5492] < DataGlobal_87F7E8[5490] /*0x5308b2*/
@@ -182,7 +181,7 @@ LABEL_60:
         _DWORD * v25 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530995*/
         if ( v25 ) /*0x53099f*/
         {
-          _DWORD * v26 = MixFileClass::FromFile(v25, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x5309b5*/
+          AbstractClass *v26 = MixFileClass::FromFile(v25, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x5309b5*/
           if ( v26 ) /*0x5309b9*/
           {
             if ( DataGlobal_87F7E8[5492] < DataGlobal_87F7E8[5490] /*0x5309f1*/
@@ -349,7 +348,7 @@ LABEL_100:
         _DWORD * v56 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530fb0*/
         if ( v56 ) /*0x530fba*/
         {
-          _DWORD * v57 = MixFileClass::FromFile(v56, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x530fd0*/
+          AbstractClass *v57 = MixFileClass::FromFile(v56, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x530fd0*/
           if ( v57 ) /*0x530fd4*/
           {
             if ( DataGlobal_87F7E8[5506] < DataGlobal_87F7E8[5504] /*0x53100c*/
@@ -382,7 +381,7 @@ LABEL_100:
         _DWORD * v60 = (_DWORD *)__2_YAPAXI_Z(40); /*0x5310db*/
         if ( v60 ) /*0x5310e5*/
         {
-          _DWORD * v61 = MixFileClass::FromFile(v60, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x5310fb*/
+          AbstractClass *v61 = MixFileClass::FromFile(v60, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x5310fb*/
           if ( v61 ) /*0x5310ff*/
           {
             if ( DataGlobal_87F7E8[5506] < DataGlobal_87F7E8[5504] /*0x531137*/
@@ -448,13 +447,13 @@ LABEL_149:
 
 // 0x534FA0
 namespace gamemd {
-AbstractClass * MixFile::LoadSide()
+AbstractClass * * MixFile::LoadSide()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MixFile *v2; // ebx
   unsigned int YR; // eax
-  _DWORD *v12; // eax
+  AbstractClass *v12; // eax
   MixFile *v17; // [esp+1Ch] [ebp-11Ch]
   char Buffer[64]; // [esp+20h] [ebp-118h] BYREF
   _DWORD v19[22]; // [esp+60h] [ebp-D8h] BYREF
@@ -505,7 +504,7 @@ AbstractClass * MixFile::LoadSide()
       (**(void (__thiscall ***)(int, int))DataGlobal_884E78)(DataGlobal_884E78, 1); /*0x5350cb*/
     DataGlobal_884E78 = 0; /*0x5350cd*/
   }
-  unsigned int v5 = v2 + 1; /*0x5350d3*/
+  INIClass *v5 = v2 + 1; /*0x5350d3*/
   sprintf(Buffer, DataGlobal_827E0C, v2 + 1); /*0x5350e1*/
   Debug::Log(); /*0x5350f0*/
   _DWORD * v6 = CCFileClass::Construct(v19, Buffer); /*0x535101*/
@@ -615,7 +614,7 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
 {
   ObjectClass *v3; // edx
   int i; // esi
-  ObjectClass *v12; // edi
+  AbstractClass *v12; // edi
   char *eax15; // eax
   ObjectClass *v17; // edi
   int ecx21; // ecx
@@ -666,7 +665,7 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
   v12 = *(ObjectClass **)(v2[2] + 16); /*0x627719*/
   *(_DWORD *)&aP2[12] = v12; /*0x62771c*/
   int v13 = __2_YAPAXI_Z(0x18u); /*0x627720*/
-  _DWORD * v14 = (_DWORD *)v13; /*0x627725*/
+  AbstractClass *v14 = (_DWORD *)v13; /*0x627725*/
   if ( v13 ) /*0x62772c*/
   {
     *(_DWORD *)(v13 + 4) = 0; /*0x627730*/
@@ -675,7 +674,7 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
     *(_BYTE *)(v13 + 13) = 0; /*0x62773e*/
     *(_DWORD *)v13 = &vt_VectorClass_ColorScheme; /*0x627742*/
     *(_DWORD *)(v13 + 4) = __2_YAPAXI_Z(0x50u); /*0x627750*/
-    *((_BYTE *)v14 + 13) = 1; /*0x627753*/
+    v14->q034 = 1; /*0x627753*/
     *v14 = &vt_DynamicVectorClass_ColorScheme; /*0x627757*/
     v14[5] = 10; /*0x62775d*/
     v14[4] = 0; /*0x627764*/
@@ -710,9 +709,9 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
       *(_DWORD *)v17->__pad_0 = v19; /*0x6277e4*/
       int v20 = v14[2]; /*0x6277e6*/
       if ( v14[4] < v20 /*0x627809*/
-        || (*((_BYTE *)v14 + 13) || !v20)
+        || (v14->q034 || !v20)
         && (ecx21 = v14[5], ecx21 > 0)
-        && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v14 + 8))(v14, v20 + ecx21, 0) )
+        && v14->COMStub_Release(v20 + ecx21, 0) )
       {
         v21 = (ObjectClass *)v14[4]; /*0x627810*/
         v22 = (ObjectClass *)v14[1]; /*0x627813*/
@@ -734,9 +733,9 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
       *(_DWORD *)v23->__pad_0 = v19 + 1; /*0x627855*/
       eax27 = v14[2]; /*0x627857*/
       if ( v14[4] < eax27 /*0x62787a*/
-        || (*((_BYTE *)v14 + 13) || !eax27)
+        || (v14->q034 || !eax27)
         && (ecx30 = v14[5], ecx30 > 0)
-        && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v14 + 8))(v14, eax27 + ecx30, 0) )
+        && v14->COMStub_Release(eax27 + ecx30, 0) )
       {
         v26 = (ObjectClass *)v14[4]; /*0x627881*/
         v27 = (ObjectClass *)v14[1]; /*0x627884*/

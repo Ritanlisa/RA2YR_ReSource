@@ -153,7 +153,7 @@ namespace gamemd { void* BulletClass::FlightUpdate(int a1, int a2) {
         }
         v52 = v29 - 0x3FFF; /*0x416292*/
         *(double *)v53 = (double)v52 * -0.00009587672516830327; /*0x4162a0*/
-        __int64 v32 = *(_QWORD *)v53; /*0x4162a8*/
+        RecoilData *v32 = *(_QWORD *)v53; /*0x4162a8*/
         double v33 = Math::ArcTan2(*(double *)v53); /*0x4162ae*/
         double v50 = COERCE_DOUBLE(__PAIR64__(HIDWORD(v32), *(unsigned int *)v53)); /*0x4162ba*/
         *(double *)v25->vtable0 = v33 * *(double *)v25->vtable0; /*0x4162bb*/
@@ -8016,7 +8016,7 @@ namespace gamemd { int BulletClass::Fire(int a1) {
   int v32; // [esp+2Ch] [ebp-1Ch]
   int v34[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
-  int v3 = 0; /*0x468d87*/
+  AbstractClass *v3 = 0; /*0x468d87*/
   int v4 = this + 156; /*0x468d8a*/
   int v27 = this->q09C; /*0x468d96*/
   v5 = this->q10C; /*0x468d9a*/
@@ -8070,11 +8070,11 @@ namespace gamemd { int BulletClass::Fire(int a1) {
           v28 = v15; /*0x468f1b*/
           v29 = v16; /*0x468f1f*/
         }
-        if ( v3 && (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 120))(v3) != 2 ) /*0x468f31*/
+        if ( v3 && v3->checkBuildingPlacement() != 2 ) /*0x468f31*/
         {
           if ( ObjectClass::DistanceTo((void *)this, this->q10C) >= 128 ) /*0x468f46*/
             goto LABEL_30; /*0x468f46*/
-          v17 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v3 + 164))(v3, v34); /*0x468f55*/
+          v17 = (int *)v3->GetCoordsThunk1(v34); /*0x468f55*/
           goto LABEL_29; /*0x468f5b*/
         }
         if ( this->q10C ) /*0x468f60*/
@@ -11520,7 +11520,7 @@ LABEL_50:
   v79 = v42; /*0x59ce64*/
   if ( v84 > 0 ) /*0x59ce6a*/
   {
-    _DWORD * v45 = g_MapTileArray; /*0x59ce70*/
+    IUnknown *v45 = g_MapTileArray; /*0x59ce70*/
     while ( v42 && inited ) /*0x59ce84*/
     {
       if ( v45 ) /*0x59ce98*/
@@ -13296,7 +13296,7 @@ namespace gamemd { int ParticleSystemClass::Write(int a1, void* a2) {
   int i; // esi
 
   int * v3 = a3; /*0x62ff23*/
-  int v4 = a2; /*0x62ff29*/
+  ObjectClass *v4 = a2; /*0x62ff29*/
   result = BuildingClass::SaveLoad_Register(this); /*0x62ff2f*/
   if ( result >= 0 ) /*0x62ff38*/
   {
@@ -13304,13 +13304,13 @@ namespace gamemd { int ParticleSystemClass::Write(int a1, void* a2) {
     {
       ObjectClass::Init((_DWORD *)v4, (int)&a3); /*0x62ff49*/
       ParticleSystemClass::resetSystemState((_DWORD *)(v4 + 188), 0, 0); /*0x62ff58*/
-      *(_DWORD *)(v4 + 188) = &vt_DynamicVectorClass_ParticleClass; /*0x62ff5d*/
-      *(_DWORD *)(v4 + 208) = 10; /*0x62ff63*/
-      *(_DWORD *)(v4 + 204) = 0; /*0x62ff6a*/
+      v4->q0BC = &vt_DynamicVectorClass_ParticleClass; /*0x62ff5d*/
+      v4->q0D0 = 10; /*0x62ff63*/
+      v4->q0CC = 0; /*0x62ff6a*/
       *(_DWORD *)v4 = &ParticleSystemClass::`vftable'; /*0x62ff6d*/
-      *(_DWORD *)(v4 + 4) = &ParticleSystemClass::`vftable'; /*0x62ff73*/
-      *(_DWORD *)(v4 + 8) = &vt_ParticleSystemClass; /*0x62ff7a*/
-      *(_DWORD *)(v4 + 12) = &off_7EFB70; /*0x62ff81*/
+      v4->vtable2 = &ParticleSystemClass::`vftable'; /*0x62ff73*/
+      v4->vtable3 = &vt_ParticleSystemClass; /*0x62ff7a*/
+      v4->vtable4 = &off_7EFB70; /*0x62ff81*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 172)); /*0x62ff94*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 228)); /*0x62ffa5*/
@@ -13323,8 +13323,8 @@ namespace gamemd { int ParticleSystemClass::Write(int a1, void* a2) {
       if ( a2-- == 0 ) /*0x62ffdd*/
       {
 LABEL_14:
-        for ( i = 0; i < *(_DWORD *)(v4 + 204); ++i ) /*0x630065*/
-          ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v4 + 192) + 4 * i)); /*0x630076*/
+        for ( i = 0; i < v4->q0CC; ++i ) /*0x630065*/
+          ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4->q0C0 + 4 * i)); /*0x630076*/
         return 0; /*0x630086*/
       }
       else
@@ -13337,16 +13337,16 @@ LABEL_14:
           result = (*(int (__stdcall **)(int *, int **, int, _BYTE *))(v8 + 12))(v3, &a3, 4, v15); /*0x62fff9*/
           if ( result < 0 ) /*0x62fffe*/
             break; /*0x62fffe*/
-          int v9 = *(_DWORD *)(v4 + 196); /*0x630004*/
-          if ( *(_DWORD *)(v4 + 204) < v9 /*0x630032*/
+          int v9 = v4->q0C4; /*0x630004*/
+          if ( v4->q0CC < v9 /*0x630032*/
             || (*(_BYTE *)(v4 + 201) || !v9)
   int v10; // eax
-            && (v10 = *(_DWORD *)(v4 + 208), v10 > 0)
-            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v4 + 188) + 8))(v4 + 188, v9 + v10, 0) )
+            && (v10 = v4->q0D0, v10 > 0)
+            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(v4->q0BC + 8))(v4 + 188, v9 + v10, 0) )
           {
-            int v11 = *(_DWORD *)(v4 + 204); /*0x630039*/
-            int v12 = *(_DWORD *)(v4 + 192); /*0x63003c*/
-            *(_DWORD *)(v4 + 204) = v11 + 1; /*0x630042*/
+            int v11 = v4->q0CC; /*0x630039*/
+            int v12 = v4->q0C0; /*0x63003c*/
+            v4->q0CC = v11 + 1; /*0x630042*/
             *(_DWORD *)(v12 + 4 * v11) = a3; /*0x630049*/
           }
           if ( !a2-- ) /*0x630050*/
@@ -13480,7 +13480,7 @@ namespace gamemd { int RadSiteClass::Tick() {
 
   --this->referenceCount; /*0x65b80b*/
   TimerStruct *v2 = this->RadLevelTimer; /*0x65b80e*/
-  int v3 = this->vtable4; /*0x65b811*/
+  LightSourceClass *v3 = this->vtable4; /*0x65b811*/
   v4 = g_CurrentFrame; /*0x65b814*/
   if ( v2 == -1 ) /*0x65b81d*/
   {
@@ -13496,7 +13496,7 @@ LABEL_4:
   }
 LABEL_5:
   RadSiteClass::DecreaseRadiation(this); /*0x65b82d*/
-  int v5 = g_RulesClass_Instance[1].?[1]; /*0x65b843*/
+  LightSourceClass *v5 = g_RulesClass_Instance[1].?[1]; /*0x65b843*/
   this->RadLevelTimer = (int)g_CurrentFrame; /*0x65b849*/
   int v11; // [esp+Ch] [ebp-8h]
   this->q02C = v11; /*0x65b84c*/
@@ -13504,7 +13504,7 @@ LABEL_5:
   v4 = g_CurrentFrame; /*0x65b852*/
 LABEL_6:
   TimerStruct *v6 = this->RadLightTimer; /*0x65b858*/
-  int v7 = this->q03C; /*0x65b85b*/
+  LightSourceClass *v7 = this->q03C; /*0x65b85b*/
   if ( v6 == -1 ) /*0x65b861*/
     goto LABEL_9; /*0x65b861*/
   int v8 = (int)v4 - v6; /*0x65b863*/
@@ -13522,7 +13522,7 @@ LABEL_9:
     this->referenceCount * this->q017 / this->RadDuration,
     this->referenceCount * this->nextArrayIndex / this->RadDuration,
     0);
-  int v9 = g_RulesClass_Instance[1].?[2]; /*0x65b8b9*/
+  LightSourceClass *v9 = g_RulesClass_Instance[1].?[2]; /*0x65b8b9*/
   this->RadLightTimer = (int)g_CurrentFrame; /*0x65b8bf*/
   this->q038 = v11; /*0x65b8c2*/
   this->q03C = v9; /*0x65b8c5*/
@@ -15184,7 +15184,7 @@ namespace gamemd { int WaveClass::Update() {
         Coords = (ObjectClass *)CellClass::GetCoords(*(_DWORD **)(this->q1F4 + 4 * i), v7); /*0x760fbf*/
         WaveClass::DamageArea((int *)this, Coords); /*0x760fc7*/
       }
-      int v6 = this->WaveClass_field_F8 - 1; /*0x760fde*/
+      DynamicVectorClass *v6 = this->WaveClass_field_F8 - 1; /*0x760fde*/
       this->WaveClass_field_F8 = v6; /*0x760fdf*/
       if ( v6 >= 0 ) /*0x760fe5*/
         goto LABEL_3; /*0x760fe5*/
@@ -15199,7 +15199,7 @@ namespace gamemd { int WaveClass::Update() {
       break; /*0x76100a*/
     case 3: /*0x760f65*/
       Voxel::TransformMatrix((int)this); /*0x760f6e*/
-      int v3 = this->WaveClass_field_F8 - 1; /*0x760f79*/
+      DynamicVectorClass *v3 = this->WaveClass_field_F8 - 1; /*0x760f79*/
       this->WaveClass_field_F8 = v3; /*0x760f7a*/
       if ( v3 < 0 ) /*0x760f80*/
 LABEL_9:

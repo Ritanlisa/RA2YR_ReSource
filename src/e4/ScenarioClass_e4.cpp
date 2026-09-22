@@ -29,7 +29,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
   if ( g_ScenarioClass_Instance ) /*0x58bb38*/
   {
     *((_DWORD *)g_ScenarioClass_Instance + 1103) = dword_ABED0C; /*0x58bb45*/
-    _DWORD * v1 = g_ScenarioClass_Instance; /*0x58bb4b*/
+    ScenarioClass *v1 = g_ScenarioClass_Instance; /*0x58bb4b*/
     int v2 = 0; /*0x58bb52*/
     if ( *((int *)g_ScenarioClass_Instance + 1103) > 0 ) /*0x58bb5c*/
     {
@@ -75,7 +75,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
 
 // 0x5CC330
 namespace gamemd {
-CampaignClass * ScenarioClass_AnimateConstructionStage()
+CampaignClass * * ScenarioClass_AnimateConstructionStage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -270,14 +270,14 @@ int ScenarioClass::AssignStartPositions(char a1)
 
 // 0x6832C0
 namespace gamemd {
-TimerStruct * ScenarioClass::Constructor()
+TimerStruct * * ScenarioClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v2; // eax
-  wchar_t *v3; // ecx
-  wchar_t *v4; // eax
-  wchar_t *v5; // edx
+  TimerStruct *v2; // eax
+  TimerStruct *v3; // ecx
+  TimerStruct *v4; // eax
+  TimerStruct *v5; // edx
   SeedInitRNG((_DWORD *)(this + 536), 0); /*0x6832cf*/
   this->q614 = Timer::GetTicks(); /*0x6832e5*/
   this->pauseTimer = 0; /*0x6832eb*/
@@ -322,7 +322,7 @@ TimerStruct * ScenarioClass::Constructor()
   this->campaignIndex = -1; /*0x6833fd*/
   this->Items = 0; /*0x683407*/
   this->q108 = 0; /*0x68340a*/
-  _DWORD * v6 = (_DWORD *)(this + 1586); /*0x683410*/
+  CellStruct *v6 = (_DWORD *)(this + 1586); /*0x683410*/
   int v7 = 702; /*0x683416*/
   do /*0x683427*/
   {
@@ -411,7 +411,7 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
   }
   if ( g_GameRulesOptions != -1 ) /*0x683b9f*/
   {
-    int * v6 = *(int **)(g_MultiplayerGameState + 4 * g_GameRulesOptions); /*0x683ba7*/
+    AbstractClass *v6 = *(int **)(g_MultiplayerGameState + 4 * g_GameRulesOptions); /*0x683ba7*/
     int v7 = Game::CheckForGameCD((void *)0x3C); /*0x683baf*/
     if ( !ScenarioClass::CheckExists(v6, v7) ) /*0x683bb7*/
     {
@@ -522,7 +522,7 @@ int ScenarioClass::CleanupTemporary()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  void *v0; // ecx
+  ScenarioClass *v0; // ecx
   DWORD Ticks; // eax
   DWORD v4; // eax
   sub_406F00(); /*0x683eb1*/
@@ -588,8 +588,8 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
         result = g_ScenarioClass_Instance; /*0x684208*/
         DataGlobal_B07784 = 0; /*0x68420d*/
       }
-      if ( *((_DWORD *)result + 389) == -1 ) /*0x684227*/
-        *((_DWORD *)result + 389) = Timer::GetTicks(); /*0x684231*/
+      if ( result->q614 == -1 ) /*0x684227*/
+        result->q614 = Timer::GetTicks(); /*0x684231*/
       return (_BYTE *)sub_406F40(); /*0x684233*/
     }
   }
@@ -657,7 +657,7 @@ void ScenarioClass_Construct()
 
 // 0x686B20
 namespace gamemd {
-ScenarioClass * ScenarioClass_LoadMap()
+ScenarioClass * * ScenarioClass_LoadMap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

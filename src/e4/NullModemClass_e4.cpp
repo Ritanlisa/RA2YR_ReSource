@@ -21,7 +21,7 @@ int NullModemClass::Flush(int a2)
 
   result = this->linkObject; /*0x5f1f00*/
   if ( result ) /*0x5f1f05*/
-    return Rect::SetRedraw(*(_DWORD **)(result + 4), 1); /*0x5f1f0c*/
+    return Rect::SetRedraw(result->PlayerIndex, 1); /*0x5f1f0c*/
   return result; /*0x5f1f11*/
 }
 }
@@ -62,9 +62,9 @@ int NullModemClass::Receive()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->linkObject; /*0x5f35d0*/
+  NullModemClass *v1 = this->linkObject; /*0x5f35d0*/
   if ( v1 ) /*0x5f35d5*/
-    return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f35da*/
+    return *(_DWORD *)(v1->PlayerIndex + 40); /*0x5f35da*/
   else
     return 0; /*0x5f35de*/
 }
@@ -76,9 +76,9 @@ int NullModemClass::CheckStatus()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->linkObject; /*0x5f35f0*/
+  NullModemClass *v1 = this->linkObject; /*0x5f35f0*/
   if ( v1 ) /*0x5f35f5*/
-    return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 56); /*0x5f35fa*/
+    return *(_DWORD *)(v1->PlayerIndex + 56); /*0x5f35fa*/
   else
     return 0; /*0x5f35fe*/
 }
@@ -90,9 +90,9 @@ int NullModemClass::GetAddress(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v2 = this->linkObject; /*0x5f3610*/
+  NullModemClass *v2 = this->linkObject; /*0x5f3610*/
   if ( v2 ) /*0x5f3615*/
-    return *(_DWORD *)(*(_DWORD *)(v2 + 4) + 40); /*0x5f361a*/
+    return *(_DWORD *)(v2->PlayerIndex + 40); /*0x5f361a*/
   else
     return 0; /*0x5f3620*/
 }
@@ -104,9 +104,9 @@ int NullModemClass::SetAddress(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v2 = this->linkObject; /*0x5f3630*/
+  NullModemClass *v2 = this->linkObject; /*0x5f3630*/
   if ( v2 ) /*0x5f3635*/
-    return *(_DWORD *)(*(_DWORD *)(v2 + 4) + 56); /*0x5f363a*/
+    return *(_DWORD *)(v2->PlayerIndex + 56); /*0x5f363a*/
   else
     return 0; /*0x5f3640*/
 }

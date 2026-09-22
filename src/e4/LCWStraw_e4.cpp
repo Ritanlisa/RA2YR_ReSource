@@ -8,10 +8,10 @@ int LCWStraw::Dtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  void * v2 = (void *)this->q014; /*0x552453*/
+  AbstractClass *v2 = (void *)this->q014; /*0x552453*/
   *this = (int)&vt_LCWStraw; /*0x552456*/
   __3_YAXPAX_Z(v2); /*0x55245d*/
-  void * v3 = (void *)this->q018; /*0x552462*/
+  AbstractClass *v3 = (void *)this->q018; /*0x552462*/
   this->q014 = 0; /*0x552465*/
   __3_YAXPAX_Z(v3); /*0x55246d*/
   this->q018 = 0; /*0x552477*/

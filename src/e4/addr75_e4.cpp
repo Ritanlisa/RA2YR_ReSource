@@ -29,7 +29,7 @@
 
 // 0x750920
 namespace gamemd {
-AbstractClass * VocClass_Play(int a1, int a2, float a3, int a4)
+AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -55,7 +55,7 @@ AbstractClass * VocClass_Play(int a1, int a2, float a3, int a4)
   }
   if ( v5 ) /*0x75097d*/
   {
-    unsigned int v8 = Math::RoundToInt(a3 * 16384.0); /*0x75098e*/
+    AbstractClass *v8 = Math::RoundToInt(a3 * 16384.0); /*0x75098e*/
     if ( v8 >= 0x4000 ) /*0x750996*/
       v8 = 0x4000; /*0x750998*/
     if ( v6 || (v6 = AudioPool::ProcessQueue(v5)) != 0 ) /*0x7509ac*/
@@ -327,7 +327,7 @@ void ThemeClass_Update()
   int v11 = 0; /*0x7527fd*/
   int v10 = 0; /*0x752801*/
   int v2 = AudioQueue::GetNext(&DataGlobal_B1D3C8); /*0x752805*/
-  _DWORD * v3 = (_DWORD *)v2; /*0x75280a*/
+  ObjectClass *v3 = (_DWORD *)v2; /*0x75280a*/
   if ( v2 ) /*0x75280e*/
   {
     LinkedList::Init(v2); /*0x752812*/
@@ -347,7 +347,7 @@ void ThemeClass_Update()
     else
     {
   int v6; // eax
-      char * v5 = (char *)&DataGlobal_B1D474; /*0x752878*/
+      ObjectClass *v5 = (char *)&DataGlobal_B1D474; /*0x752878*/
       while ( 1 ) /*0x75287f*/
       {
         v6 = AudioQueue::GetNext(v5); /*0x75287f*/
@@ -765,7 +765,7 @@ void TransformVoxelVertex(unsigned int * a1, SomeVoxelCache * a2, SomeVoxelCache
 
 // 0x7542F0
 namespace gamemd {
-AbstractClass * InitializeAudioOcclusion(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
+AbstractClass * * InitializeAudioOcclusion(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1785,7 +1785,7 @@ void ProcessVoxelScanSamples()
 
 // 0x758AD0
 namespace gamemd {
-AbstractClass * E4Recv_758AD0::sub_758AD0(int * a2)
+AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1793,8 +1793,8 @@ AbstractClass * E4Recv_758AD0::sub_758AD0(int * a2)
   int v3 = 0; /*0x758ae2*/
   if ( !(*(int (__thiscall **)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
     goto LABEL_5; /*0x758ae4*/
-  int v4 = *(this + 2); /*0x758aed*/
-  int v5 = *(this + 1); /*0x758af0*/
+  AbstractClass *v4 = *(this + 2); /*0x758aed*/
+  AbstractClass *v5 = *(this + 1); /*0x758af0*/
   _DWORD v9[4]; // [esp+Ch] [ebp-10h] BYREF
   v9[0] = *this; /*0x758af3*/
   int v6 = *(this + 3); /*0x758af7*/
@@ -2029,7 +2029,7 @@ void sub_75F230(unsigned int * a1, unsigned int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v2 = *a2 - *a1; /*0x75f239*/
+  ObjectClass *v2 = *a2 - *a1; /*0x75f239*/
   int v3 = a1[1] - a2[1]; /*0x75f246*/
   double v11 = Math::SinCos(0.3926990816987241); /*0x75f25a*/
   double v4 = v11 / Math::ArcTan2(0.3926990816987241); /*0x75f26d*/

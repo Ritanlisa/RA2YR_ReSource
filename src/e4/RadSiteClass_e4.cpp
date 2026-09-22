@@ -9,8 +9,7 @@ unsigned int * RadSiteClass::RadSiteClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v2; // edx
-
+  TimerStruct *v2; // edx
   AbstractClass::Constructor((int)this); /*0x65b1e3*/
   this->LightSource = 0; /*0x65b1ea*/
   this->RadLevelTimer = g_CurrentFrame; /*0x65b1f3*/

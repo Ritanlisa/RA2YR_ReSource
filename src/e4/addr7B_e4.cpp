@@ -73,7 +73,7 @@ void * * sub_7B0340()
 
 // 0x7B05C0
 namespace gamemd {
-AbstractClass * Screenshot_Compress(int * a1, int * a2, void * Src)
+AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -150,8 +150,7 @@ AbstractClass * Screenshot_Compress(int * a1, int * a2, void * Src)
   __int16 v111; // [esp+A8h] [ebp-348h]
   char v112; // [esp+AAh] [ebp-346h]
   _BYTE v113[53]; // [esp+ABh] [ebp-345h] BYREF
-  char *v116; // [esp+E8h] [ebp-308h]
-
+  AbstractClass *v116; // [esp+E8h] [ebp-308h]
   int v5 = 0; /*0x7b05cd*/
   int v6 = *a2; /*0x7b05cf*/
   v54[0] = 10; /*0x7b05d4*/
@@ -312,7 +311,7 @@ LABEL_32:
   int v23 = *a2; /*0x7b07b6*/
   v51 = v22; /*0x7b07bd*/
   int v24 = (*(int (__thiscall **)(int *))(v23 + 124))(a2); /*0x7b07c1*/
-  char * v25 = (char *)__2_YAPAXI_Z(10 * v24); /*0x7b07dc*/
+  AbstractClass *v25 = (char *)__2_YAPAXI_Z(10 * v24); /*0x7b07dc*/
   v116 = v25; /*0x7b07df*/
   v50 = 0; /*0x7b07e8*/
   if ( v58 + 1 <= 0 ) /*0x7b07f0*/
@@ -457,7 +456,7 @@ LABEL_16:
 
 // 0x7B2E50
 namespace gamemd {
-CampaignClass * E4Recv_7B2E50::sub_7B2E50()
+CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -466,7 +465,7 @@ CampaignClass * E4Recv_7B2E50::sub_7B2E50()
   while ( this->M258888 ) /*0x7b2e5c*/
   {
     __3_YAXPAX_Z(**(void ***)(this + 258876)); /*0x7b2e6f*/
-    int v2 = this->M258888; /*0x7b2e74*/
+    CampaignClass *v2 = this->M258888; /*0x7b2e74*/
     if ( v2 > 0 ) /*0x7b2e7f*/
     {
       int v3 = v2 - 1; /*0x7b2e81*/
@@ -482,7 +481,7 @@ CampaignClass * E4Recv_7B2E50::sub_7B2E50()
   while ( this->M259424 ) /*0x7b2eb0*/
   {
     __3_YAXPAX_Z(**(void ***)(this + 259412)); /*0x7b2ec1*/
-    int v5 = this->M259424; /*0x7b2ec6*/
+    CampaignClass *v5 = this->M259424; /*0x7b2ec6*/
     if ( v5 > 0 ) /*0x7b2ed1*/
     {
       int v6 = v5 - 1; /*0x7b2ed3*/
@@ -496,7 +495,7 @@ CampaignClass * E4Recv_7B2E50::sub_7B2E50()
     }
   }
   UDPInterfaceClass::connect((_BYTE *)this); /*0x7b2f04*/
-  void * v8 = *(void **)(this + 259412); /*0x7b2f09*/
+  AbstractClass *v8 = *(void **)(this + 259412); /*0x7b2f09*/
   this->M259408 = &vt_VectorClass_unsigned_char; /*0x7b2f0f*/
   if ( v8 && (unsigned char)this->M259421 ) /*0x7b2f1d*/
   {
@@ -505,7 +504,7 @@ CampaignClass * E4Recv_7B2E50::sub_7B2E50()
   }
   *(_BYTE *)(this + 259421) = 0; /*0x7b2f34*/
   this->M259416 = 0; /*0x7b2f3a*/
-  void * v9 = *(void **)(this + 258876); /*0x7b2f40*/
+  CampaignClass *v9 = *(void **)(this + 258876); /*0x7b2f40*/
   this->M258872 = &vt_VectorClass_unsigned_char; /*0x7b2f46*/
   if ( v9 && (unsigned char)this->M258885 ) /*0x7b2f54*/
   {
@@ -534,13 +533,13 @@ void unknown_libname_73()
 
 // 0x7B60E0
 namespace gamemd {
-AbstractClass * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
+AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v11; // ecx
+  AbstractClass *v11; // ecx
   size_t v14; // esi
-  size_t v18; // ecx
+  AbstractClass *v18; // ecx
   signed int v5 = a2; /*0x7b60ec*/
   if ( *this ) /*0x7b60ea*/
     signed int v6 = strlen(*this); /*0x7b60ff*/
@@ -565,8 +564,7 @@ AbstractClass * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   *a3 = 0; /*0x7b6171*/
   if ( v10 ) /*0x7b6177*/
     v11 = strlen(v10) + 1; /*0x7b6180*/
-  else
-    v11 = 1; /*0x7b6186*/
+  AbstractClass *v11 = 1; /*0x7b6186*/
   _BYTE * v12 = __2_YAPAXI_Z(v11); /*0x7b618c*/
   *a3 = v12; /*0x7b6194*/
   *v12 = 0; /*0x7b6198*/
@@ -590,8 +588,7 @@ AbstractClass * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   *a3 = 0; /*0x7b6211*/
   if ( v17 ) /*0x7b6217*/
     v18 = strlen(v17) + 1; /*0x7b6220*/
-  else
-    v18 = 1; /*0x7b6226*/
+  AbstractClass *v18 = 1; /*0x7b6226*/
   _BYTE * v19 = __2_YAPAXI_Z(v18); /*0x7b622c*/
   *a3 = v19; /*0x7b6234*/
   *v19 = 0; /*0x7b6238*/
@@ -610,14 +607,13 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v5; // ecx
+  AbstractClass *v5; // ecx
   CCINIClass *v6; // ebx
   void *Block; // [esp+10h] [ebp-4h] BYREF
 
   if ( aP1 ) /*0x7b63cb*/
     v5 = strlen(aP1->__pad_0) + 1; /*0x7b63d4*/
-  else
-    v5 = 1; /*0x7b63da*/
+  AbstractClass *v5 = 1; /*0x7b63da*/
   v6 = (CCINIClass *)__2_YAPAXI_Z(v5); /*0x7b63e5*/
   v6->__pad_0[0] = 0; /*0x7b63ec*/
   if ( aP1 ) /*0x7b63ef*/
@@ -659,11 +655,11 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
   char **v4; // ebp
   ObjectClass *v6; // eax
   ObjectClass *v7; // esi
-  size_t v10; // edx
+  AbstractClass *v10; // edx
   ObjectClass *a2a; // [esp+18h] [ebp+4h]
 
   v4 = (char **)aP0; /*0x7b64e7*/
-  char * v5 = 0; /*0x7b64eb*/
+  AbstractClass *v5 = 0; /*0x7b64eb*/
   if ( *a1 ) /*0x7b64e9*/
   {
     v5 = (char *)__2_YAPAXI_Z(strlen(*a1) + 1); /*0x7b6506*/
@@ -682,7 +678,7 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
   }
   if ( v7 ) /*0x7b6545*/
   {
-    char * v8 = v5; /*0x7b6552*/
+    AbstractClass *v8 = v5; /*0x7b6552*/
     unsigned int v9 = strlen(v7->__pad_0) + 1; /*0x7b6554*/
     v10 = v9; /*0x7b655b*/
     if ( v5 ) /*0x7b655e*/
@@ -731,7 +727,7 @@ void unknown_libname_74()
 
 // 0x7B7C00
 namespace gamemd {
-AbstractClass * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
+AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -740,7 +736,7 @@ AbstractClass * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   const wchar_t *v9; // eax
   const wchar_t *v11; // esi
   size_t v12; // eax
-  size_t v14; // esi
+  DropListClass *v14; // esi
   const wchar_t *v15; // ebp
   wchar_t *v16; // eax
   wchar_t *v17; // ebx
@@ -816,7 +812,7 @@ AbstractClass * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
 
 // 0x7B9530
 namespace gamemd {
-AbstractClass * E4Recv_7B9530::sub_7B9530()
+AbstractClass * * E4Recv_7B9530::sub_7B9530()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -826,11 +822,11 @@ AbstractClass * E4Recv_7B9530::sub_7B9530()
     Debug::Log(); /*0x7b955d*/
   if ( BSurface::CreateTripleBuffer(this) && this->M36 ) /*0x7b9574*/
   {
-  int v20; // [esp+20h] [ebp-14h]
+  AbstractClass *v20; // [esp+20h] [ebp-14h]
     int v2 = 0; /*0x7b9585*/
     int v3 = 0; /*0x7b9587*/
     int v4 = 0; /*0x7b9589*/
-    int v5 = 0; /*0x7b958b*/
+    AbstractClass *v5 = 0; /*0x7b958b*/
     if ( this->M4 ) /*0x7b957f*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b95a8*/
@@ -1222,7 +1218,7 @@ LABEL_14:
 
 // 0x7BC580
 namespace gamemd {
-AbstractClass * sub_7BC580()
+AbstractClass * * sub_7BC580()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!

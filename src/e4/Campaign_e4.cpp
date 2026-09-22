@@ -13,8 +13,8 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  _DWORD *v6; // esi
-  _DWORD *v8; // ebx
+  rc_ptr_base *v6; // esi
+  rc_ptr_base *v8; // ebx
   int i; // esi
   void (__thiscall ***v12)(_DWORD, int); // ecx
   int v3 = a2; /*0x765843*/

@@ -221,7 +221,7 @@ int E4Recv_490400::sub_490400()
   *(_DWORD *)this = &vt_ConvertClass; /*0x490404*/
   COMClass::RegisterAll((_DWORD *)this); /*0x49040a*/
   __3_YAXPAX_Z(*(void **)(this + 368)); /*0x490416*/
-  void * v2 = *(void **)(this + 376); /*0x49041b*/
+  CampaignClass *v2 = *(void **)(this + 376); /*0x49041b*/
   this->M368 = 0; /*0x490421*/
   __3_YAXPAX_Z(v2); /*0x49042c*/
   this->M376 = 0; /*0x490434*/
@@ -264,7 +264,7 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
   unsigned __int8 v20; // al
   result = a5; /*0x491b41*/
   _BYTE * v14 = a2; /*0x491b58*/
-  unsigned int v15 = a7; /*0x491b5f*/
+  MouseClass *v15 = a7; /*0x491b5f*/
   if ( a5 <= 0 ) /*0x491b61*/
   {
     v18 = a4; /*0x491b9a*/
@@ -334,7 +334,7 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
         char *a10)
 {
   int result; // eax
-  TacticalMap *v14; // ecx
+  MouseClass *v14; // ecx
   int v19; // edi
   unsigned __int8 v20; // al
   unsigned __int8 v24; // [esp+20h] [ebp+Ch]
@@ -422,7 +422,7 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
         char *a10)
 {
   unsigned __int8 *v14; // esi
-  TacticalMap *v15; // ecx
+  MouseClass *v15; // ecx
   RLEBlitTransRemapDestZRead_E *v19; // ebx
   int v11 = a5; /*0x491d91*/
   unsigned int v12 = a7; /*0x491d95*/
@@ -510,7 +510,7 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
   unsigned __int8 v20; // al
   result = a5; /*0x491ea1*/
   int v14 = arg0; /*0x491eb8*/
-  unsigned int v15 = a7; /*0x491ebf*/
+  MouseClass *v15 = a7; /*0x491ebf*/
   if ( a5 <= 0 ) /*0x491ec1*/
   {
     v18 = a4; /*0x491efa*/
@@ -569,7 +569,7 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _WORD *result; // eax
-  TacticalMap *v15; // ecx
+  MouseClass *v15; // ecx
   RLEBlitTransXlatZReadWrite_E *v19; // ebx
   unsigned __int8 v20; // dl
   unsigned __int8 v21; // dl
@@ -717,7 +717,7 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 *result; // eax
-  TacticalMap *v15; // ecx
+  MouseClass *v15; // ecx
   RLEBlitTransRemapDestZReadWrite_E *v19; // ebx
   unsigned __int8 v21; // dl
   __int16 v24; // cx
@@ -794,7 +794,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 *result; // eax
-  TacticalMap *v15; // ecx
+  MouseClass *v15; // ecx
   RLEBlitTransRemapXlatZReadWrite_E *v19; // ebx
   unsigned __int8 v20; // dl
   unsigned __int8 v21; // dl
@@ -1017,7 +1017,7 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
   unsigned __int8 v19; // al
   unsigned __int8 v20; // al
   result = a5; /*0x4965b1*/
-  unsigned int v12 = a7; /*0x4965b5*/
+  MouseClass *v12 = a7; /*0x4965b5*/
   _WORD * v15 = a1; /*0x4965c9*/
   if ( a5 <= 0 ) /*0x4965cf*/
   {
@@ -1105,7 +1105,7 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
   result = a5; /*0x4966e7*/
   int v14 = arg0; /*0x4966f2*/
   a2a = (unsigned __int8 *)**((_DWORD **)this + 1); /*0x4966f6*/
-  unsigned int v15 = a7; /*0x4966fa*/
+  MouseClass *v15 = a7; /*0x4966fa*/
   if ( a5 <= 0 ) /*0x496700*/
   {
     v18 = a4; /*0x496733*/
@@ -1180,7 +1180,7 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
   unsigned __int8 v20; // al
   result = a5; /*0x496931*/
   int v12 = arg0; /*0x496935*/
-  unsigned int v14 = a7; /*0x496940*/
+  MouseClass *v14 = a7; /*0x496940*/
   if ( a5 <= 0 ) /*0x496955*/
   {
     v18 = aP3; /*0x496988*/
@@ -1255,7 +1255,7 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
   unsigned __int8 v19; // al
   unsigned __int8 v20; // al
   result = a5; /*0x496a81*/
-  unsigned int v12 = a7; /*0x496a85*/
+  MouseClass *v12 = a7; /*0x496a85*/
   _WORD * v14 = a1; /*0x496a90*/
   if ( a5 <= 0 ) /*0x496aa5*/
   {
@@ -1332,7 +1332,7 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   unsigned __int8 v20; // al
   result = a5; /*0x496bc1*/
   int v12 = arg0; /*0x496bc5*/
-  unsigned int v14 = a7; /*0x496bd0*/
+  MouseClass *v14 = a7; /*0x496bd0*/
   if ( a5 <= 0 ) /*0x496be5*/
   {
     v18 = aP3; /*0x496c18*/
@@ -1408,7 +1408,7 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
   unsigned __int8 v20; // al
   result = a5; /*0x496d11*/
   int v12 = arg0; /*0x496d15*/
-  unsigned int v14 = a7; /*0x496d20*/
+  MouseClass *v14 = a7; /*0x496d20*/
   if ( a5 <= 0 ) /*0x496d35*/
   {
     v18 = aP3; /*0x496d68*/
@@ -1484,7 +1484,7 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
   unsigned __int8 v20; // al
   result = a5; /*0x496e61*/
   _WORD * v12 = a1; /*0x496e65*/
-  unsigned int v14 = a7; /*0x496e70*/
+  MouseClass *v14 = a7; /*0x496e70*/
   if ( a5 <= 0 ) /*0x496e85*/
   {
     v18 = aP3; /*0x496eb8*/
@@ -1560,7 +1560,7 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   unsigned __int8 v20; // al
   result = a5; /*0x496fb1*/
   int v12 = arg0; /*0x496fb5*/
-  unsigned int v14 = a7; /*0x496fc0*/
+  MouseClass *v14 = a7; /*0x496fc0*/
   if ( a5 <= 0 ) /*0x496fd5*/
   {
     v18 = aP3; /*0x497008*/
@@ -1911,7 +1911,7 @@ LABEL_8:
 
 // 0x49C0D0
 namespace gamemd {
-AbstractClass * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
+AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1933,7 +1933,7 @@ AbstractClass * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   E4Recv_49C0D0 *v4 = this; /*0x49c0fb*/
   if ( *this )
   {
-  char v10; // al
+  INIClass *v10; // al
     do
     {
       if ( v3 >= 1021 ) /*0x49c109*/
@@ -2095,7 +2095,7 @@ LABEL_44:
 
 // 0x49CCF0
 namespace gamemd {
-AbstractClass * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
+AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         int this,
@@ -2115,7 +2115,7 @@ AbstractClass * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5, 
     CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49cd04*/
   if ( a2 >= 0 && a2 < DataGlobal_89F574 ) /*0x49cd1d*/
   {
-    int v12 = DataGlobal_89F570; /*0x49cd23*/
+    TechnoTypeClass *v12 = DataGlobal_89F570; /*0x49cd23*/
     this->M56 = -1; /*0x49cd30*/
     this->M72 = 0; /*0x49cd3a*/
     this->M76 = 0; /*0x49cd3d*/
@@ -2137,7 +2137,7 @@ AbstractClass * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5, 
       return 0; /*0x49cd83*/
     }
     this->M68 = a2; /*0x49cd86*/
-    int v14 = this->M60; /*0x49cd89*/
+    AbstractClass *v14 = this->M60; /*0x49cd89*/
     *(_BYTE *)(this + 108) = 1; /*0x49cd8e*/
     if ( v14 ) /*0x49cd92*/
     {
@@ -2470,7 +2470,7 @@ LABEL_5:
 
 // 0x49D680
 namespace gamemd {
-AbstractClass * E4Recv_49D680::SerializeCampaignOptions()
+AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2481,7 +2481,7 @@ AbstractClass * E4Recv_49D680::SerializeCampaignOptions()
 
   if ( !*(this + 108) ) /*0x49d68b*/
     return 0; /*0x49d68b*/
-  int v3 = this->M68; /*0x49d6a3*/
+  AnimClass *v3 = this->M68; /*0x49d6a3*/
   if ( !DataGlobal_89F578 ) /*0x49d6a8*/
     CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49d6af*/
   int v4 = 0; /*0x49d6b4*/
@@ -2508,7 +2508,7 @@ AbstractClass * E4Recv_49D680::SerializeCampaignOptions()
     do /*0x49d7ae*/
     {
       int v5 = v23; /*0x49d723*/
-      int v6 = 0; /*0x49d727*/
+      INIClass *v6 = 0; /*0x49d727*/
       while ( _strcmpi((const void *)(v5 + *(_DWORD *)(v24 + 12)), *(const void **)(this->M60 + 4 * v4)) ) /*0x49d748*/
       {
         ++v6; /*0x49d74a*/
@@ -2640,7 +2640,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
         v7 -= 76; /*0x49e7f6*/
         DeleteAndZero((void **)v7 + 7); /*0x49e7fc*/
         DeleteAndZero((void **)v7 + 6); /*0x49e804*/
-        void * v9 = *(void **)v7; /*0x49e809*/
+        AbstractClass *v9 = *(void **)v7; /*0x49e809*/
         *((_DWORD *)v7 - 1) = &vt_VectorClass_DynamicVectorClass_char; /*0x49e80b*/
         if ( v9 && v7[9] ) /*0x49e812*/
         {
@@ -2671,7 +2671,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
   {
     DeleteAndZero((void **)this + 18); /*0x49e86d*/
     DeleteAndZero((void **)this + 17); /*0x49e875*/
-    void * v12 = (void *)this->M44; /*0x49e87a*/
+    AbstractClass *v12 = (void *)this->M44; /*0x49e87a*/
     this->M40 = &vt_VectorClass_DynamicVectorClass_char; /*0x49e886*/
     if ( v12 && *(this + 53) ) /*0x49e88b*/
     {

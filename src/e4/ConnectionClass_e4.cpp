@@ -98,7 +98,7 @@ void ConnectionClass::dtor()
 {
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
-  void * v2 = (void *)this->q020; /*0x48bee3*/
+  AbstractClass *v2 = (void *)this->q020; /*0x48bee3*/
   *this = &vt_ConnectionClass; /*0x48bee6*/
   __3_YAXPAX_Z(v2); /*0x48beed*/
   v3 = (void (__thiscall ***)(_DWORD, int))this->PlayerIndex; /*0x48bef2*/
@@ -108,7 +108,7 @@ void ConnectionClass::dtor()
 }
 
 // 0x48BF40
-AbstractClass * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
+AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -216,7 +216,7 @@ LABEL_40:
         return 1; /*0x48c2f9*/
       }
       _DWORD * v13 = (_DWORD *)this->PlayerIndex; /*0x48c1a1*/
-      int v14 = 0; /*0x48c1a4*/
+      AbstractClass *v14 = 0; /*0x48c1a4*/
       if ( (int)v13[14] > 0 ) /*0x48c1ab*/
       {
         do /*0x48c1ae*/
@@ -245,7 +245,7 @@ LABEL_40:
   int v22; // eax
             _DWORD * v19 = (_DWORD *)this->PlayerIndex; /*0x48c24a*/
             this->q011 = v18; /*0x48c24d*/
-            int v20 = 0; /*0x48c250*/
+            AbstractClass *v20 = 0; /*0x48c250*/
             if ( (int)v19[14] <= 0 ) /*0x48c257*/
               break; /*0x48c257*/
             while ( 1 ) /*0x48c25a*/
@@ -303,7 +303,7 @@ int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
   int v7; // ecx
   signed int v10; // edx
   bool v11; // zf
-  int v4 = 0; /*0x48c326*/
+  AbstractClass *v4 = 0; /*0x48c326*/
   _DWORD * v5 = (_DWORD *)this->PlayerIndex; /*0x48c328*/
   if ( (int)v5[14] <= 0 ) /*0x48c330*/
     return 0; /*0x48c36a*/
@@ -406,7 +406,7 @@ int ConnectionClass::serviceSendQueue()
         }
         unsigned int v15 = *(_DWORD *)(v8 + 12) + 1; /*0x48c509*/
         *(_DWORD *)(v8 + 12) = v15; /*0x48c50a*/
-        unsigned int v16 = this->q02C; /*0x48c50d*/
+        TechnoTypeClass *v16 = this->q02C; /*0x48c50d*/
         if ( v16 != -1 && v15 > v16 ) /*0x48c519*/
         {
           int v17 = *(_DWORD *)v8; /*0x48c51b*/
@@ -414,7 +414,7 @@ int ConnectionClass::serviceSendQueue()
           LOBYTE(v17) = *(_DWORD *)v8 | 4; /*0x48c525*/
           *(_DWORD *)v8 = v17; /*0x48c527*/
         }
-        unsigned int v18 = this->LastPacketTime; /*0x48c529*/
+        CampaignScore *v18 = this->LastPacketTime; /*0x48c529*/
         if ( v18 != -1 && *(_DWORD *)(v8 + 8) - *(_DWORD *)(v8 + 4) > v18 ) /*0x48c53b*/
         {
           int v19 = *(_DWORD *)v8; /*0x48c53d*/

@@ -5,7 +5,7 @@
 #include "e4/classes/WideString_e4.hpp"
 
 // 0x657DA0
-CampaignScore * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
+CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -20,7 +20,7 @@ CampaignScore * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, 
   HWND v16; // eax
   HWND v17; // ebp
   HWND v18; // ebx
-  wchar_t *v19; // eax
+  CampaignScore *v19; // eax
   HWND v20; // eax
   int DlgCtrlID; // eax
   int v26; // esi

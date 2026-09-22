@@ -181,7 +181,7 @@ void* XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__t
   char result; // al
   int i; // ebx
 
-  int v5 = *this; /*0x7bab93*/
+  IUnknown *v5 = *this; /*0x7bab93*/
   XSurface *v28 = this; /*0x7bab9b*/
   int v33; // [esp+28h] [ebp-20h] BYREF
   int v6 = this->GetRect(&v33); /*0x7bab9f*/
@@ -318,7 +318,7 @@ void* XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__t
 }
 
 // 0x7BB050
-XSurface * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
+XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -329,10 +329,10 @@ XSurface * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   XSurface *v16; // eax
   int i; // ecx
   XSurface *v26; // eax
-  __int16 v29; // bx
+  XSurface *v29; // bx
   XSurface *v32; // edi
   XSurface *v33; // eax
-  __int16 v35; // bx
+  XSurface *v35; // bx
   XSurface *v41; // [esp-4h] [ebp-7Ch]
   XSurface *v42; // [esp-4h] [ebp-7Ch]
   XSurface *v49; // [esp+58h] [ebp-20h]
@@ -389,8 +389,8 @@ XSurface * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   aP1a = v16; /*0x7bb125*/
   a2a = (int *)(*(int (__thiscall **)(XSurface *))(*(_DWORD *)v4->__pad_0 + 116))(v4); /*0x7bb132*/
   _DWORD * v17 = CellStruct::Copy(v47, (IUnknown *)&v51); /*0x7bb139*/
-  int v18 = (*(int (__thiscall **)(XSurface *, _DWORD, _DWORD))(*(_DWORD *)v4->__pad_0 + 92))(v4, *v17, v17[1]); /*0x7bb154*/
-  char * v53 = (char *)v18; /*0x7bb158*/
+  XSurface *v18 = (*(int (__thiscall **)(XSurface *, _DWORD, _DWORD))(*(_DWORD *)v4->__pad_0 + 92))(v4, *v17, v17[1]); /*0x7bb154*/
+  XSurface *v53 = (char *)v18; /*0x7bb158*/
   if ( !v18 ) /*0x7bb15b*/
     return 0; /*0x7bb333*/
   if ( (*(int (__thiscall **)(XSurface *))(*(_DWORD *)v4->__pad_0 + 112))(v4) == 1 ) /*0x7bb16b*/
@@ -481,7 +481,7 @@ LABEL_9:
   }
   else
   {
-  bool v40; // zf
+  XSurface *v40; // zf
     char v34 = v15; /*0x7bb2cf*/
     v54 = v15 >> 1; /*0x7bb2d3*/
     v35 = (__int16)aP3; /*0x7bb2d6*/
@@ -492,13 +492,13 @@ LABEL_9:
     {
       v42 = v4; /*0x7bb2f0*/
       signed int v37 = v54; /*0x7bb2f1*/
-      char * v38 = v53; /*0x7bb2f4*/
+      XSurface *v38 = v53; /*0x7bb2f4*/
       if ( v54 > 0 ) /*0x7bb2fa*/
       {
         memset32(v53, v52, v54); /*0x7bb2ff*/
         v38 += 4 * v37; /*0x7bb2ff*/
       }
-      _WORD * v39 = v38; /*0x7bb301*/
+      XSurface *v39 = v38; /*0x7bb301*/
       v4 = v42; /*0x7bb303*/
       if ( v36 ) /*0x7bb306*/
         *v39 = v35; /*0x7bb308*/
@@ -738,7 +738,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
 }
 
 // 0x7BBB90
-XSurface * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)
+XSurface * * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -789,7 +789,7 @@ XSurface * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a
 }
 
 // 0x7BBCF0
-XSurface * XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
+XSurface * * XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -16,7 +16,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   WPARAM v13; // esi
   HWND Parent; // eax
   LONG v15; // ebx
-  size_t v16; // esi
+  AbstractClass *v16; // esi
   unsigned __int16 v18; // ax
   HWND v19; // eax
   HWND v20; // esi
@@ -28,7 +28,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   HWND v29; // eax
   HWND v30; // eax
   const WCHAR *v31; // edi
-  WPARAM v32; // edi
+  DropListClass *v32; // edi
   const wchar_t *v33; // esi
   WPARAM v35; // [esp-8h] [ebp-1884h]
   HWND v36; // [esp-4h] [ebp-1880h]

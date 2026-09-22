@@ -52,7 +52,7 @@
 
 // 0x539760
 namespace gamemd {
-AbstractClass * sub_539760()
+AbstractClass * * sub_539760()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -355,7 +355,7 @@ LABEL_5:
 
 // 0x68C050
 namespace gamemd {
-AbstractClass * sub_68C050()
+AbstractClass * * sub_68C050()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -381,7 +381,7 @@ AbstractClass * sub_68C050()
       if ( SHIDWORD(g_RulesClass_Instance->?) > 0 ) /*0x68c0b0*/
       {
   int v15; // [esp+10h] [ebp-10h]
-        int v4 = v15; /*0x68c0b2*/
+        AbstractClass *v4 = v15; /*0x68c0b2*/
         while ( 1 ) /*0x68c0bc*/
         {
           if ( v17 < v4 ) /*0x68c0c0*/
@@ -411,7 +411,7 @@ LABEL_15:
           int v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v17 - 1); /*0x68c12f*/
           if ( v7 < v17 ) /*0x68c13a*/
           {
-            int v8 = v7; /*0x68c13d*/
+            TechnoTypeClass *v8 = v7; /*0x68c13d*/
             if ( v7 < --v17 ) /*0x68c145*/
             {
               do /*0x68c159*/
@@ -580,7 +580,7 @@ void sub_5C98A0()
         DataGlobal_A8D25C[v4] += v15; /*0x5c99f5*/
       if ( !*(_BYTE *)(v2 + 501) ) /*0x5c99fb*/
       {
-        int v16 = DataGlobal_A8D25C[v4]; /*0x5c9a05*/
+        TechnoTypeClass *v16 = DataGlobal_A8D25C[v4]; /*0x5c9a05*/
         DataGlobal_A8D25C[v4] = v16 + v16 / 2 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, v16 / 2, v16); /*0x5c9a2a*/
       }
       Debug::Log(); /*0x5c9a6e*/
@@ -596,7 +596,7 @@ void sub_5C98A0()
 
 // 0x5EC880
 namespace gamemd {
-SkirmishDialog * Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
+SkirmishDialog * * Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -832,12 +832,11 @@ void Map_Helper_59BAB0()
 
 // 0x5A7D00
 namespace gamemd {
-AbstractClass * sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
+AbstractClass * * sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v10; // cx
-
   _DWORD * v4 = (_DWORD *)*((_DWORD *)g_FrameCounter + a1); /*0x5a7d0b*/
   int v6 = *v4; /*0x5a7d13*/
   _WORD * v19 = a2; /*0x5a7d15*/
@@ -875,7 +874,7 @@ LABEL_17:
         }
         else
         {
-          int * v13 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v17); /*0x5a7dba*/
+          VectorClass *v13 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v17); /*0x5a7dba*/
           int v14 = *(_DWORD *)(v20 + 4 * (v9 + v7 * v16[185]) + 16); /*0x5a7dcf*/
           if ( v14 /*0x5a7e27*/
             && (!Cell::IsEmpty(v13) && !sub_4863A0(v13)
@@ -1057,7 +1056,7 @@ void sub_63AB60(int a1, int a2)
     return 0; /*0x63ab73*/
   if ( DataGlobal_AC4CB0 ) /*0x63ab7d*/
     return 0; /*0x63ab85*/
-  int v3 = g_ScriptState; /*0x63ab8e*/
+  AbstractClass *v3 = g_ScriptState; /*0x63ab8e*/
   if ( !g_ScriptPool ) /*0x63ab98*/
     goto LABEL_11; /*0x63ab98*/
   _DWORD v10[4]; // [esp+18h] [ebp-20h] BYREF
@@ -1075,7 +1074,7 @@ void sub_63AB60(int a1, int a2)
   if ( a1 < v11[0] - 4 ) /*0x63ac0b*/
     goto LABEL_11; /*0x63ac0b*/
   if ( a1 < v11[2] + 8 + v11[0] - 4 && a2 >= v6 && a2 < v11[3] + 8 + v6 ) /*0x63ac1f*/
-    int v7 = g_ScriptPool; /*0x63ac21*/
+    AbstractClass *v7 = g_ScriptPool; /*0x63ac21*/
   else
 LABEL_11:
     v7 = 0; /*0x63ac28*/
@@ -1319,17 +1318,17 @@ LABEL_7:
 
 // 0x5549A0
 namespace gamemd {
-AbstractClass * sub_5549A0()
+AbstractClass * * sub_5549A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v0 = g_BridgeCellPool; /*0x5549a0*/
+  ObjectClass *v0 = g_BridgeCellPool; /*0x5549a0*/
   byte_829AE4 = 0; /*0x5549a6*/
   if ( g_BridgeCellPool ) /*0x5549af*/
   {
   bool v2; // zf
-    _DWORD * v1 = dword_ABCA14; /*0x5549b2*/
+    AbstractClass *v1 = dword_ABCA14; /*0x5549b2*/
     do /*0x5549fc*/
     {
       if ( *v1 ) /*0x5549b8*/
@@ -1441,8 +1440,8 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  _DWORD *v6; // esi
-  _DWORD *v8; // ebx
+  rc_ptr_base *v6; // esi
+  rc_ptr_base *v8; // ebx
   int i; // esi
   void (__thiscall ***v12)(_DWORD, int); // ecx
   int v3 = a2; /*0x769e33*/
@@ -1568,7 +1567,7 @@ void * Map_WorldDominationTour_20::Constructor_0(char a2)
 
 // 0x76A3F0
 namespace gamemd {
-AbstractClass * Map_WorldDominationTour_43::Release(int a2, char * a3)
+AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1576,7 +1575,7 @@ AbstractClass * Map_WorldDominationTour_43::Release(int a2, char * a3)
   int v3 = a2; /*0x76a3f2*/
   if ( a2 ) /*0x76a3fe*/
   {
-    char * v5 = a3; /*0x76a404*/
+    AbstractClass *v5 = a3; /*0x76a404*/
     this->q00C = 0; /*0x76a408*/
     if ( a3 ) /*0x76a40d*/
     {

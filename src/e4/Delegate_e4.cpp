@@ -10,7 +10,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v3; // ebp
-  int v5; // esi
+  AbstractClass *v5; // esi
   Pipe *pad_14; // ebx
   BombClass *v7; // ecx
   Pipe *v9; // eax
@@ -45,7 +45,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
     if ( a3 >= v5 - (int)v7 ) /*0x42de28*/
       Size = v5 - (_DWORD)v7; /*0x42de2a*/
     memcpy(&aP0->__pad_0[this->field_10], v3, Size); /*0x42de3e*/
-    int v8 = Size + this->field_10; /*0x42de4e*/
+    ModemGame *v8 = Size + this->field_10; /*0x42de4e*/
     v3 = (AbstractClass *)((char *)v3 + Size); /*0x42de55*/
     this->field_10 = v8; /*0x42de59*/
     a3 -= Size; /*0x42de5c*/

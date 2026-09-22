@@ -79,7 +79,7 @@ int BinkMovie::Stop()
 
 // 0x432750
 namespace gamemd {
-AbstractClass * BinkMovie::InitFromFile(LPCSTR * FullPath)
+AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -88,7 +88,7 @@ AbstractClass * BinkMovie::InitFromFile(LPCSTR * FullPath)
   const char *Error; // eax
   AbstractClass *v15; // ecx
   LONG v16; // edi
-  LONG v18; // edx
+  AbstractClass *v18; // edx
   LPCSTR *v22; // ecx
   LPCSTR v24; // eax
   LONG bottom; // edi
@@ -96,7 +96,7 @@ AbstractClass * BinkMovie::InitFromFile(LPCSTR * FullPath)
   LONG v27; // edx
   LONG lDistanceToMove[5]; // [esp+10h] [ebp-68h] BYREF
   struct tagRECT Rect; // [esp+24h] [ebp-54h] BYREF
-  LONG v30; // [esp+40h] [ebp-38h]
+  AbstractClass *v30; // [esp+40h] [ebp-38h]
   _BYTE v32[36]; // [esp+54h] [ebp-24h] BYREF
 
   int v3 = 0; /*0x432759*/
@@ -123,7 +123,7 @@ AbstractClass * BinkMovie::InitFromFile(LPCSTR * FullPath)
     int v5 = Audio::GetDirectSound(); /*0x4327a8*/
     BinkSetSoundSystem(BinkOpenDirectSound, v5); /*0x4327b4*/
   }
-  char * v6 = (char *)FullPath; /*0x4327ba*/
+  ObjectClass *v6 = (char *)FullPath; /*0x4327ba*/
   int v7 = RawFileClass::Construct(FullPath); /*0x4327c3*/
   bool v8 = (*(unsigned __int8 (__thiscall **)(int, _DWORD))(*(_DWORD *)v7 + 20))(v7, 0) == 1; /*0x4327d6*/
   RawFileClass::Dtor(v32); /*0x4327d9*/
@@ -162,16 +162,16 @@ LABEL_15:
     v16 = 0; /*0x4328c3*/
     int v17 = *v15; /*0x4328c5*/
     v18 = v15[1]; /*0x4328c7*/
-    int v19 = this->BinkMovie_field_0xC; /*0x4328ca*/
+    AbstractClass *v19 = this->BinkMovie_field_0xC; /*0x4328ca*/
     v30 = v18; /*0x4328cd*/
     if ( !v19 ) /*0x4328d3*/
     {
   int v21; // eax
       if ( v14 && *v14 ) /*0x4328d9*/
       {
-        int v20 = g_DSurface_Hidden; /*0x4328e3*/
+        AbstractClass *v20 = g_DSurface_Hidden; /*0x4328e3*/
         this->BinkMovie_field_0xC = g_DSurface_Hidden; /*0x4328e5*/
-        v16 = ((*(int (__thiscall **)(int))(*(_DWORD *)v20 + 124))(v20) - v17) / 2; /*0x4328f9*/
+        v16 = (v20->IsAboveScreenMargin() - v17) / 2; /*0x4328f9*/
         v21 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 128))(this->BinkMovie_field_0xC); /*0x4328fb*/
       }
       else
@@ -277,7 +277,7 @@ int BinkMovie::IsAtEnd()
 
 // 0x432C70
 namespace gamemd {
-AbstractClass * BinkMovie::Play()
+AbstractClass * * BinkMovie::Play()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -295,9 +295,9 @@ AbstractClass * BinkMovie::Play()
     this->q02D = 0; /*0x432cb4*/
     while ( 1 ) /*0x432cb8*/
     {
-      int v5 = this->BinkMovie_field_0x4; /*0x432cb8*/
-      unsigned int v6 = *(_DWORD *)(v5 + 12); /*0x432cbb*/
-      if ( v6 >= *(_DWORD *)(v5 + 8) || v6 < this->q00C ) /*0x432ccc*/
+      AbstractClass *v5 = this->BinkMovie_field_0x4; /*0x432cb8*/
+      unsigned int v6 = v5->vtable4; /*0x432cbb*/
+      if ( v6 >= v5->vtable3 || v6 < this->q00C ) /*0x432ccc*/
         break; /*0x432ccc*/
       ++unk_AA0430; /*0x432cdd*/
       if ( GameLoopMessagePump(&Msg, 0, 0, 0, 0) ) /*0x432ceb*/
@@ -585,14 +585,14 @@ void BinkMovie::Cleanup()
   if ( *this ) /*0x5c01f4*/
   {
     DSurface::FlipIfNeeded(); /*0x5c01fa*/
-    void * v2 = (void *)*this; /*0x5c01ff*/
+    AbstractClass *v2 = (void *)*this; /*0x5c01ff*/
     if ( *this ) /*0x5c01ff*/
     {
       CCFileClass::Cleanup(*this); /*0x5c0207*/
       __3_YAXPAX_Z(v2); /*0x5c020d*/
     }
   }
-  void * v3 = (void *)*(this + 18); /*0x5c0215*/
+  AbstractClass *v3 = (void *)*(this + 18); /*0x5c0215*/
   if ( v3 ) /*0x5c021a*/
   {
     BinkMovie::FreeSurfaceTracker((int *)*(this + 18)); /*0x5c021e*/
@@ -691,7 +691,7 @@ LABEL_46:
 
 // 0x6153E0
 namespace gamemd {
-AbstractClass * BinkMovie::WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
+AbstractClass * * BinkMovie::WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1391,7 +1391,7 @@ int BinkMovie::FreeSurfaceTracker()
       do /*0x6c9b14*/
       {
         int v4 = *(_DWORD *)(result + 4); /*0x6c9af4*/
-        void * v5 = *(void **)(v4 + 4 * v3); /*0x6c9af7*/
+        AbstractClass *v5 = *(void **)(v4 + 4 * v3); /*0x6c9af7*/
         if ( v5 ) /*0x6c9afc*/
         {
           BinkMovie::Destroy(*(_DWORD *)(v4 + 4 * v3)); /*0x6c9b00*/
@@ -1470,7 +1470,7 @@ int BinkMovie::CheckKeyframeTransition(CellStruct * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  ObjectClass *v7; // ecx
+  AbstractClass *v7; // ecx
   void (*v8)(void); // eax
 
   int v3 = *this; /*0x6c9c66*/
@@ -1502,7 +1502,7 @@ int BinkMovie::CheckKeyframeTransition(CellStruct * aP1)
     }
     while ( v5 < *(_DWORD *)(*this + 16) ); /*0x6c9cb3*/
   }
-  _DWORD * v9 = (_DWORD *)this->q008; /*0x6c9cb5*/
+  AbstractClass *v9 = (_DWORD *)this->q008; /*0x6c9cb5*/
   if ( v9 ) /*0x6c9cba*/
   {
     if ( (unsigned int)aP1 >= *v9 + v9[1] ) /*0x6c9cc5*/
@@ -1537,7 +1537,7 @@ int BinkMovie::CheckKeyframeTransition(CellStruct * aP1)
 
 // 0x6C9D40
 namespace gamemd {
-AbstractClass * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
+AbstractClass * * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1552,8 +1552,8 @@ AbstractClass * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
   int v3 = this->q004; /*0x6c9d4a*/
   if ( v3 ) /*0x6c9d4f*/
   {
-  int v9; // eax
-    int * v4 = this + 5; /*0x6c9d5a*/
+  AbstractClass *v9; // eax
+    AbstractClass *v4 = this + 5; /*0x6c9d5a*/
     (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v3 + 20))(v3, this + 5, 0); /*0x6c9d60*/
     v5 = (BitFont *)aP0; /*0x6c9d6b*/
     Property::Set( /*0x6c9dba*/
@@ -1570,7 +1570,7 @@ AbstractClass * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
     TextGroup::SetRect(v5, (AbstractClass *)&aP2.abstractFlags); /*0x6c9df3*/
     *(_DWORD *)&aP2[8] = aP1->abstractFlags; /*0x6c9e0d*/
     Text::Layout(v5, *(unsigned __int16 **)&aP2[8], &aP2, (AbstractClass *)&aP2.uniqueId, (AbstractClass *)v6); /*0x6c9e11*/
-    int v14 = 0; /*0x6c9e1e*/
+    AbstractClass *v14 = 0; /*0x6c9e1e*/
     uniqueId = aP1->uniqueId; /*0x6c9e26*/
     v8 = (ObjectClass *)(v5[2].field_4 * (*(_DWORD *)&aP1->__pad_0[12] - 1)); /*0x6c9e29*/
     if ( uniqueId == 2 ) /*0x6c9e30*/
@@ -1583,7 +1583,7 @@ AbstractClass * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
       {
 LABEL_7:
         v13 = v6; /*0x6c9e52*/
-        int * v10 = *(int **)&aP2[12]; /*0x6c9e66*/
+        CampaignScore *v10 = *(int **)&aP2[12]; /*0x6c9e66*/
         Font::Print( /*0x6c9e78*/
           (int)v5,
           *(_DWORD *)(*(_DWORD *)&aP2[12] + 16),

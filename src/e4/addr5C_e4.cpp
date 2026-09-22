@@ -35,7 +35,7 @@
 
 // 0x5C00E0
 namespace gamemd {
-ObjectClass * sub_5C00E0()
+ObjectClass * * sub_5C00E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -154,11 +154,11 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
 
 // 0x5C17B0
 namespace gamemd {
-CampaignClass * MPCooperative___vt07(int a2)
+CampaignClass * * MPCooperative___vt07(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  int v7; // eax
+  CampaignClass *v7; // eax
   int v8; // esi
   int v9; // eax
   int v10; // [esp-8h] [ebp-1Ch]
@@ -316,7 +316,7 @@ void sub_5C63F0()
 {
   unsigned int i; // ebp
 
-  _BYTE * v5 = a2; /*0x5c63fa*/
+  ObjectClass *v5 = a2; /*0x5c63fa*/
   unsigned int v6 = 4 * a5; /*0x5c63fc*/
   unsigned int v7 = a1 - 4 * a5; /*0x5c6426*/
   if ( a1 != 4 * a5 ) /*0x5c6428*/
@@ -1585,7 +1585,7 @@ char sub_5C7BA0(const char * a1, unsigned short * a2, int a3)
       bool v27 = *v4 == 45; /*0x5c7c26*/
       if ( *v4 == 45 ) /*0x5c7c2a*/
         ++v4; /*0x5c7c2c*/
-      int v7 = *(unsigned __int8 *)v4; /*0x5c7c30*/
+      ControlClass *v7 = *(unsigned __int8 *)v4; /*0x5c7c30*/
       v8 = (unsigned __int8 *)(v4 + 1); /*0x5c7c32*/
       for ( i = v8; v7; i = v8 )
       {
@@ -2418,16 +2418,15 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v5; // eax
+  CampaignScore *v5; // eax
   _DWORD *result; // eax
-  wchar_t *v21; // eax
-
+  CampaignScore *v21; // eax
   if ( a2[2] <= 0 || a2[3] <= 0 ) /*0x5cd6ac*/
   {
-    _DWORD * v20 = (_DWORD *)(this + 56); /*0x5cd81e*/
+    CampaignScore *v20 = (_DWORD *)(this + 56); /*0x5cd81e*/
     v21 = WideString::GetOrEmpty((wchar_t **)(this + 28)); /*0x5cd825*/
     result = sub_5D30C0(*(size_t **)(this + 52), v21, (_DWORD *)(this + 56)); /*0x5cd82e*/
-    int v22 = this->M8; /*0x5cd836*/
+    ObjectClass *v22 = this->M8; /*0x5cd836*/
     *v20 = this->M4; /*0x5cd839*/
     this->M60 = v22; /*0x5cd83b*/
   }
@@ -2435,14 +2434,14 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
   {
   int v17; // eax
   int v16; // edx
-    int * v4 = (int *)(this + 56); /*0x5cd6b2*/
+    CampaignScore *v4 = (int *)(this + 56); /*0x5cd6b2*/
     _DWORD * v23 = (_DWORD *)(this + 56); /*0x5cd6b6*/
     v5 = WideString::GetOrEmpty((wchar_t **)(this + 28)); /*0x5cd6ba*/
     sub_5D30C0(*(size_t **)(this + 52), v5, v23); /*0x5cd6c3*/
-    int v6 = this->M52; /*0x5cd6dc*/
+    MPCooperative *v6 = this->M52; /*0x5cd6dc*/
     this->M4 += (a2[2] - this->M64) / 2; /*0x5cd6df*/
-    int v7 = a2[3] % *(_DWORD *)(v6 + 8) / 2 + this->M8; /*0x5cd706*/
-    int v8 = this->M60; /*0x5cd70d*/
+    ObjectClass *v7 = a2[3] % v6->q008 / 2 + this->M8; /*0x5cd706*/
+    ObjectClass *v8 = this->M60; /*0x5cd70d*/
     *v4 += this->M4; /*0x5cd710*/
     this->M8 = v7; /*0x5cd71a*/
     this->M60 = v7 + v8; /*0x5cd71d*/
@@ -2499,11 +2498,11 @@ LABEL_20:
       v17 = v9; /*0x5cd7e2*/
     }
     *v4 = v17; /*0x5cd7f6*/
-    int v18 = this->M52; /*0x5cd7f8*/
+    MPCooperative *v18 = this->M52; /*0x5cd7f8*/
     this->M60 = v10; /*0x5cd7fb*/
     this->M64 = v16; /*0x5cd7fe*/
     this->M68 = v15; /*0x5cd801*/
-    result = (_DWORD *)(*(_DWORD *)(v18 + 4) / 2); /*0x5cd80f*/
+    result = (_DWORD *)(v18->q004 / 2); /*0x5cd80f*/
     this->M4 += result; /*0x5cd813*/
   }
   return result; /*0x5cd80e*/
@@ -2720,14 +2719,14 @@ LABEL_5:
       this + 84,
       0,
       1);
-  int v9 = this->M4; /*0x5ce179*/
+  AbstractClass *v9 = this->M4; /*0x5ce179*/
   if ( (unsigned char)this->M73 ) /*0x5ce176*/
     v9 += this->M76; /*0x5ce180*/
   v18 = this->M32; /*0x5ce18b*/
   v10 = v18 + 1; /*0x5ce18c*/
   int v11; // eax
   LOWORD(v11) = WideString::GetChar((const wchar_t **)(this + 28), v18); /*0x5ce18d*/
-  int v12 = v11; /*0x5ce192*/
+  MultiplayerGameMode *v12 = v11; /*0x5ce192*/
   if ( (_WORD)v11 != 10 ) /*0x5ce198*/
   {
   int v13; // eax
@@ -2750,8 +2749,8 @@ LABEL_5:
     }
     while ( (_WORD)v13 != 10 ); /*0x5ce1d5*/
   }
-  int v14 = this->M64; /*0x5ce1e0*/
-  int v15 = *(_DWORD *)(this->M52 + 8); /*0x5ce1e3*/
+  IUnknown *v14 = this->M64; /*0x5ce1e0*/
+  AbstractClass *v15 = *(_DWORD *)(this->M52 + 8); /*0x5ce1e3*/
   int v21 = this->M80; /*0x5ce1e6*/
   *a3 = this->M56; /*0x5ce1ee*/
   a3[1] = v21; /*0x5ce1f4*/

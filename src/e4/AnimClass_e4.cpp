@@ -145,7 +145,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
 {
   __int16 v9; // bx
   ConvertClass *v10; // eax
-  unsigned __int8 v15; // di
+  IUnknown *v15; // di
   IUnknown *v16; // eax
   __int16 v17; // ax
   CoordStruct *v19; // ebx
@@ -167,7 +167,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   int v56; // ecx
   int v57; // eax
   int v59; // ecx
-  _DWORD *v60; // eax
+  IUnknown *v60; // eax
   _DWORD *v61; // eax
   CoordStruct *v62; // eax
   _DWORD *FoundationSize; // eax
@@ -198,16 +198,16 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   CoordStruct *aP4; // [esp+2Ch] [ebp-E4h]
   int v105[2]; // [esp+30h] [ebp-E0h] BYREF
   ConvertClass *aP10; // [esp+38h] [ebp-D8h]
-  int v108; // [esp+40h] [ebp-D0h] BYREF
+  IUnknown *v108; // [esp+40h] [ebp-D0h] BYREF
   CCINIClass aP1; // [esp+50h] [ebp-C0h] BYREF
   CCINIClass v111; // [esp+B0h] [ebp-60h] BYREF
   if ( stru_89E138[11448] /*0x422ccb*/
     && *(_DWORD *)&stru_87C374[45776]
     && (unsigned __int8)ObjectClass::StepCleanup(this, aRing1) )
   {
-    int v4 = this->q0B4; /*0x422cd8*/
-    int v5 = this->q0C0; /*0x422ce4*/
-    int v6 = this->q0BC; /*0x422cea*/
+    IUnknown *v4 = this->q0B4; /*0x422cd8*/
+    CellStruct *v5 = this->q0C0; /*0x422ce4*/
+    IUnknown *v6 = this->q0BC; /*0x422cea*/
     if ( v4 != -1 ) /*0x422cf3*/
     {
       if ( *(_DWORD *)&HouseClass_Player[45112] - v4 >= v6 ) /*0x422cff*/
@@ -447,7 +447,7 @@ LABEL_78:
     int v34 = ZCoordToScreenY(aP0); /*0x423373*/
     v35 = *(IUnknown **)a2->__pad_0; /*0x423384*/
     v36 = (ConvertClass *)(*(_DWORD *)(this->q0C8 + 836) + v34 + *(_DWORD *)&a2->field_2[2]); /*0x42338b*/
-    int v37 = *this; /*0x42339a*/
+    IUnknown *v37 = *this; /*0x42339a*/
     v102 = v36; /*0x42339c*/
     aP0 = v35; /*0x4233a2*/
     v38 = (IUnknown *)this->CheckDamageFlags(); /*0x4233a6*/
@@ -583,10 +583,10 @@ LABEL_99:
   if ( HIBYTE(v62[71].Y) ) /*0x423636*/
   {
     FoundationSize = Building::GetFoundationSize(&v108, 0); /*0x42364f*/
-    int v64 = *(_DWORD *)a2->__pad_0; /*0x423657*/
+    IUnknown *v64 = *(_DWORD *)a2->__pad_0; /*0x423657*/
     int v65 = *(_DWORD *)&a2->field_2[2]; /*0x423659*/
     aP0 = (IUnknown *)FoundationSize[3]; /*0x42365c*/
-    int v66 = *this; /*0x423663*/
+    IUnknown *v66 = *this; /*0x423663*/
     v108 = v64; /*0x423667*/
     v105[0] = v64; /*0x42366d*/
     int v95 = (int)aP0 / 2; /*0x423673*/
@@ -630,7 +630,7 @@ LABEL_99:
     int v71 = *(_DWORD *)&a2->field_2[2]; /*0x423742*/
     aP0 = *(IUnknown **)a2->__pad_0; /*0x42374c*/
     v82 = (BuildingTypeClass *)aP10; /*0x423756*/
-    int v72 = *this; /*0x42375e*/
+    IUnknown *v72 = *this; /*0x42375e*/
     v102 = (ConvertClass *)(v109 + v71); /*0x423766*/
     v73 = (IUnknown *)this->CheckDamageFlags(); /*0x42376a*/
     BYTE1(v22) |= 0x20u; /*0x42379b*/
@@ -717,7 +717,7 @@ int AnimClass::InWhichLayer_AttachedObjectLayer()
 
   if ( this->q0CC ) /*0x424cb0*/
     return 2; /*0x424cba*/
-  int v2 = this->q0C8; /*0x424cc0*/
+  Coord *v2 = this->q0C8; /*0x424cc0*/
   if ( v2 ) /*0x424cc8*/
     return *(_DWORD *)(v2 + 868); /*0x424cca*/
   else
@@ -779,7 +779,7 @@ void AnimClass::FreeRenderBuffer()
 
 // 0x448260
 namespace gamemd {
-BuildingTypeClass * AnimClass::drawFrame()
+BuildingTypeClass * * AnimClass::drawFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

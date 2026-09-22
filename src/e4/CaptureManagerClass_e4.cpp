@@ -51,7 +51,7 @@ C CaptureManagerClass::CaptureManagerClass(TechnoClass * aP1, int a3, char a4)
 // 0x471A50
 namespace ra2 {
 namespace game {
-ScenarioClass * CaptureManagerClass::HandleOverload()
+ScenarioClass * * CaptureManagerClass::HandleOverload()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -322,8 +322,7 @@ void* CaptureManagerClass::CaptureUnit(int a2)
                 (void *)0x600,
                 0,
                 0);
-      else
-        v28 = 0; /*0x471f53*/
+      AnimClass *v28 = 0; /*0x471f53*/
       *(_DWORD *)(v5 + 712) = v28; /*0x471f57*/
       if ( v28 ) /*0x471f5d*/
       {
@@ -343,7 +342,7 @@ void* CaptureManagerClass::CaptureUnit(int a2)
 // 0x471FF0
 namespace ra2 {
 namespace game {
-AnimClass * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
+AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -430,11 +429,11 @@ int CaptureManagerClass::DrawLinks(int a1, ... a2)
   va_list va; // [esp+38h] [ebp+8h] BYREF
 
   va_start(va, a1);
-  int v1 = v1; /*0x472167*/
-  int v3 = *(_DWORD *)(v1 + 72); /*0x47216e*/
+  CaptureManagerClass *v1 = v1; /*0x472167*/
+  int v3 = v1->overloadCount; /*0x47216e*/
   int v20; // [esp+10h] [ebp-20h]
   HIBYTE(v20) = *(_BYTE *)(v3 + 131) != 0; /*0x47217b*/
-  int v4 = *(_DWORD *)(v1 + 52) - 1; /*0x472183*/
+  int v4 = v1->originalOwner - 1; /*0x472183*/
   if ( v4 >= 0 ) /*0x472188*/
   {
   int v9; // eax
@@ -522,7 +521,7 @@ int CaptureManagerClass::CannotControlAnyMore()
 // 0x4723B0
 namespace ra2 {
 namespace game {
-AbstractClass * CaptureManagerClass::DecideUnitFate(IUnknown * aP1)
+AbstractClass * * CaptureManagerClass::DecideUnitFate(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -727,13 +726,13 @@ int CaptureManagerClass::IsOverloading(bool * a2)
 // 0x472720
 namespace ra2 {
 namespace game {
-TechnoClass * CaptureManagerClass::LoadFromStream(int a1, int * a2)
+TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   wchar_t *v9; // ecx
-  int * v2 = a2; /*0x472724*/
+  AbstractClass *v2 = a2; /*0x472724*/
   int v3 = a1; /*0x472729*/
   result = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x472731*/
   _DWORD * v5 = 0; /*0x472736*/
@@ -754,7 +753,7 @@ TechnoClass * CaptureManagerClass::LoadFromStream(int a1, int * a2)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v3 + 72)); /*0x472791*/
     int v6 = *v2; /*0x472796*/
     a1 = 0; /*0x4727a1*/
-    result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v6 + 12))(v2, &a1, 4, 0); /*0x4727a5*/
+    result = v2->vt_entry_68(&a1, 4, 0); /*0x4727a5*/
     int v18 = result; /*0x4727aa*/
     if ( result >= 0 ) /*0x4727ae*/
     {
@@ -792,10 +791,10 @@ LABEL_19:
           int v10 = *v2; /*0x4727e4*/
           a2 = 0; /*0x4727f1*/
           int v16 = 0; /*0x4727f5*/
-          result = (*(int (__stdcall **)(int *, int **, int, _DWORD))(v10 + 12))(v2, &a2, 4, 0); /*0x4727f9*/
+          result = v2->vt_entry_68(&a2, 4, 0); /*0x4727f9*/
           if ( result < 0 ) /*0x4727fe*/
             break; /*0x4727fe*/
-          result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(*v2 + 12))(v2, &v16, 4, 0); /*0x47280f*/
+          result = v2->vt_entry_68(&v16, 4, 0); /*0x47280f*/
           v18 = result; /*0x472814*/
           if ( result < 0 ) /*0x472818*/
             break; /*0x472818*/
@@ -879,7 +878,7 @@ int CaptureManagerClass::Capture(unsigned int * a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  int v2 = this->vtable2; /*0x472d70*/
+  DynamicVector *v2 = this->vtable2; /*0x472d70*/
   result = 0; /*0x472d73*/
   if ( v2 <= 0 ) /*0x472d78*/
     return -1; /*0x472d8f*/

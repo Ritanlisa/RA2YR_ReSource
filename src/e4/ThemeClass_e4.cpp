@@ -93,9 +93,9 @@ void * ThemeClass::InitializeThemes(char * a2)
   int i; // [esp+10h] [ebp-28h]
   char Destination[32]; // [esp+18h] [ebp-20h] BYREF
 
-  char * v2 = a2; /*0x720597*/
+  ObjectTypeClass *v2 = a2; /*0x720597*/
   KeyCount = INIClass::GetKeyCount(a2, (unsigned __int8 *)g_INI_Key_Themes); /*0x7205a9*/
-  int v5 = 0; /*0x7205ab*/
+  AbstractTypeClass *v5 = 0; /*0x7205ab*/
   int v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
@@ -213,7 +213,7 @@ int ThemeClass::ClearQueues()
       *(_DWORD *)(*(_DWORD *)(j + 12) + 80) = 2; /*0x7523fe*/
       __3_YAXPAX_Z((void *)j); /*0x752401*/
     }
-    int * v3 = (int *)DataGlobal_B1D450; /*0x752419*/
+    ObjectClass *v3 = (int *)DataGlobal_B1D450; /*0x752419*/
     do /*0x752457*/
     {
       result = AudioQueue::GetNext(v3); /*0x752420*/

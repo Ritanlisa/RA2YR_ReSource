@@ -7,7 +7,7 @@
 
 // 0x777420
 namespace gamemd {
-AbstractClass * sub_777420()
+AbstractClass * * sub_777420()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

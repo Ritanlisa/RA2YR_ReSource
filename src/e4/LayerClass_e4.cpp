@@ -36,20 +36,20 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   IUnknown *v19; // eax
   ObjectClass *v29; // eax
   ObjectClass *v30; // esi
-  __int16 v33; // ax
+  Coord *v33; // ax
   TagClass **v35; // eax
   TagClass *v36; // ecx
   ObjectClass *v38; // eax
   ObjectClass *v39; // esi
-  __int16 v42; // ax
+  Coord *v42; // ax
   TagClass **v44; // eax
   ObjectClass *v48; // eax
   ObjectClass *v49; // esi
-  __int16 v51; // ax
+  Coord *v51; // ax
   TagClass **v53; // eax
   ObjectClass *v55; // eax
   ObjectClass *v56; // esi
-  __int16 v58; // ax
+  Coord *v58; // ax
   TagClass **v60; // eax
   unsigned __int16 v63; // di
   unsigned __int16 v64; // bp
@@ -58,7 +58,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   IUnknown *v67; // ecx
   IUnknown *v69; // ebx
   TagClass **v71; // eax
-  TagClass *v72; // esi
+  Coord *v72; // esi
   BuildingTypeClass *v73; // eax
   TagClass *v75; // [esp+18h] [ebp-1DCh] BYREF
   TagClass *v79; // [esp+28h] [ebp-1CCh]
@@ -103,7 +103,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
     if ( (v23[80] & 0x100) != 0 ) /*0x56dcda*/
       v83 += 4; /*0x56dcdc*/
   }
-  int v24 = aP0->field_F8 + *(_DWORD *)&aP0->__pad_EC[8]; /*0x56dced*/
+  Coord *v24 = aP0->field_F8 + *(_DWORD *)&aP0->__pad_EC[8]; /*0x56dced*/
   if ( v24 > 32 ) /*0x56dcf2*/
     v24 = 32; /*0x56dcf4*/
   i = (Tactical *)v24; /*0x56dcfb*/

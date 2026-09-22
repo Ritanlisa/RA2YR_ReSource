@@ -27,7 +27,7 @@ void ParticleTypeClass::GetClassIdentifier()
 
 // 0x4784F0
 namespace gamemd {
-AbstractClass * ParticleTypeClass::Release(int a2, char * a3)
+AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -35,7 +35,7 @@ AbstractClass * ParticleTypeClass::Release(int a2, char * a3)
   int v3 = a2; /*0x4784f2*/
   if ( a2 ) /*0x4784fe*/
   {
-    char * v5 = a3; /*0x478504*/
+    AbstractClass *v5 = a3; /*0x478504*/
     this->vtable4 = 0; /*0x478508*/
     if ( a3 ) /*0x47850d*/
     {
@@ -85,7 +85,7 @@ AbstractClass * ParticleTypeClass::Release(int a2, char * a3)
       return 0; /*0x4785e2*/
     if ( this->ParticleTypeClass_field_28C ) /*0x478562*/
     {
-      int v11 = this->BehavesLike; /*0x478567*/
+      AbstractClass *v11 = this->BehavesLike; /*0x478567*/
       if ( a2 < v11 ) /*0x47856c*/
         v11 = a2; /*0x47856e*/
       if ( v11 > 0 ) /*0x478572*/
@@ -117,7 +117,7 @@ AbstractClass * ParticleTypeClass::Release(int a2, char * a3)
   {
     (*(void (__thiscall **)(void *))(this->vtable4)(this); /*0x4785c6*/
   }
-  int v15 = this->BehavesLike; /*0x4785c9*/
+  AbstractClass *v15 = this->BehavesLike; /*0x4785c9*/
   if ( v15 < this->ParticleTypeClass_field_0x10 ) /*0x4785d1*/
     this->ParticleTypeClass_field_0x10 = v15; /*0x4785d3*/
   return 1; /*0x4785d6*/
@@ -204,7 +204,7 @@ void ParticleTypeClass_LoadFromINI()
   CCINIClass *v15; // eax
   char Bool_Overwrite; // al
   INIClass *eax5d; // eax
-  CCINIClass *v24; // ecx
+  IUnknown *v24; // ecx
   int eax5e; // eax
   CCINIClass *v27; // ecx
   int *Coord2; // eax
@@ -346,7 +346,7 @@ void ParticleTypeClass_LoadFromINI()
   char v21 = *(_BYTE *)(this + 783); /*0x6451ca*/
   *(_BYTE *)(this + 781) = v20; /*0x6451d0*/
   char v22 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &unk_818610, v21); /*0x6451df*/
-  int * v23 = this->q2B4; /*0x6451e4*/
+  IUnknown *v23 = this->q2B4; /*0x6451e4*/
   *(_BYTE *)(this + 783) = v22; /*0x6451ea*/
   eax5d = this->q2B0; /*0x6451f0*/
   aP3_4 = (int)v23; /*0x6451f6*/
@@ -542,7 +542,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
   int result; // eax
 
   int * v2 = (int *)a2; /*0x645663*/
-  int v3 = a1; /*0x645669*/
+  ObjectTypeClass *v3 = a1; /*0x645669*/
   result = ObjectTypeClass::LoadCleanup(a1, a2); /*0x64566f*/
   if ( result >= 0 ) /*0x645678*/
   {
@@ -552,9 +552,9 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
       ParticleTypeClass::Constructor((_DWORD *)(v3 + 696), 0, 0); /*0x645698*/
       *(_DWORD *)(v3 + 696) = &vt_TypeList_RGBClass; /*0x64569d*/
       *(_DWORD *)v3 = &ParticleTypeClass::`vftable'; /*0x6456a3*/
-      *(_DWORD *)(v3 + 4) = &ParticleTypeClass::`vftable'; /*0x6456a9*/
-      *(_DWORD *)(v3 + 8) = &ParticleTypeClass::`vftable'; /*0x6456b0*/
-      *(_DWORD *)(v3 + 12) = &vt_ParticleTypeClass; /*0x6456b7*/
+      v3->vtable2 = &ParticleTypeClass::`vftable'; /*0x6456a9*/
+      v3->vtable3 = &ParticleTypeClass::`vftable'; /*0x6456b0*/
+      v3->vtable4 = &vt_ParticleTypeClass; /*0x6456b7*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v3 + 740)); /*0x6456ca*/
     int v5 = *v2; /*0x6456cf*/
@@ -579,7 +579,7 @@ LABEL_14:
           result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v6 + 12))(v2, &a2, 3, 0); /*0x645712*/
           if ( result < 0 ) /*0x645717*/
             break; /*0x645717*/
-          int v7 = *(_DWORD *)(v3 + 704); /*0x645719*/
+          int v7 = v3->MainVoxel; /*0x645719*/
           if ( *(_DWORD *)(v3 + 712) < v7 /*0x645747*/
             || (*(_BYTE *)(v3 + 709) || !v7)
   int v8; // eax

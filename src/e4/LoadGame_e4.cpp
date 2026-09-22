@@ -21,10 +21,10 @@ int LoadGame::LoadTriggerEvents()
   int v2 = g_TriggerEventState - 1; /*0x66084d*/
   if ( g_TriggerEventState - 1 >= 0 ) /*0x660856*/
   {
-    _DWORD * v4 = g_TriggerPool; /*0x660858*/
+    AbstractClass *v4 = g_TriggerPool; /*0x660858*/
     do /*0x6608cb*/
     {
-      void * v5 = (void *)v4[v2]; /*0x66085e*/
+      AbstractClass *v5 = (void *)v4[v2]; /*0x66085e*/
       if ( v5 ) /*0x660863*/
       {
         v12 = v4[v2]; /*0x660875*/
@@ -89,7 +89,7 @@ int LoadGame::RemoveItem(int a2)
   int v3 = a2; /*0x660f13*/
   if ( a2 >= v2 ) /*0x660f19*/
     return 0; /*0x660f3c*/
-  int v4 = v2 - 1; /*0x660f1b*/
+  AbstractClass *v4 = v2 - 1; /*0x660f1b*/
   this->q010 = v4; /*0x660f1e*/
   if ( a2 < v4 ) /*0x660f21*/
   {

@@ -65,7 +65,7 @@ AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
 
 // 0x6E5CA0
 namespace gamemd {
-AbstractClass * TagTypeClass::CleanupMembers()
+AbstractClass * * TagTypeClass::CleanupMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -93,7 +93,7 @@ AbstractClass * TagTypeClass::CleanupMembers()
   int v4 = 0; /*0x6e5d01*/
   if ( g_GameObjectCleanup > 0 ) /*0x6e5d05*/
   {
-    _DWORD * v5 = g_TagClassCount; /*0x6e5d07*/
+    AbstractClass *v5 = g_TagClassCount; /*0x6e5d07*/
     do /*0x6e5d2e*/
     {
       _DWORD * v6 = (_DWORD *)v5[v4]; /*0x6e5d0c*/
@@ -148,7 +148,7 @@ int TagTypeClass::GetEvent(int a2, int a3)
   result = this->q0A0; /*0x6e5e50*/
   if ( result == a2 ) /*0x6e5e5c*/
   {
-    result = *(_DWORD *)(result + 168); /*0x6e5e5e*/
+    result = result->q0A8; /*0x6e5e5e*/
     this->q0A0 = result; /*0x6e5e64*/
   }
   return result; /*0x6e5e6a*/

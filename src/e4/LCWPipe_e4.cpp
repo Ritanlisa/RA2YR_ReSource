@@ -8,10 +8,10 @@ int LCWPipe::Dtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  void * v2 = (void *)this->q005; /*0x552063*/
+  AbstractClass *v2 = (void *)this->q005; /*0x552063*/
   *this = (int)&vt_LCWPipe; /*0x552066*/
   __3_YAXPAX_Z(v2); /*0x55206d*/
-  void * v3 = (void *)this->q006; /*0x552072*/
+  AbstractClass *v3 = (void *)this->q006; /*0x552072*/
   this->q005 = 0; /*0x552075*/
   __3_YAXPAX_Z(v3); /*0x55207d*/
   this->q006 = 0; /*0x552087*/

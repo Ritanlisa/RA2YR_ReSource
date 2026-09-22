@@ -85,7 +85,7 @@ int Session::PrepareGame()
       *(_DWORD *)Str = 119; /*0x5e776c*/
       result = Timer::GetTicks(); /*0x5e7774*/
       int v9 = 1800; /*0x5e7779*/
-      int v16 = result; /*0x5e777e*/
+      ObjectClass *v16 = result; /*0x5e777e*/
       while ( 1 ) /*0x5e778f*/
       {
         if ( v16 != -1 ) /*0x5e7793*/

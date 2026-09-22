@@ -370,14 +370,14 @@ int Scenario::ProcessSidebarUnits()
 
 // 0x552B10
 namespace gamemd {
-Game * Scenario::ComputeDisplayPosition()
+Game * * Scenario::ComputeDisplayPosition()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
   int v1 = g_DDraw_Active; /*0x552b12*/
-  int v2 = 640; /*0x552b20*/
+  rc_ptr_base *v2 = 640; /*0x552b20*/
   if ( g_DDraw_Active != 640 ) /*0x552b2b*/
     v2 = 800; /*0x552b2d*/
   if ( g_GameMode_Current[0] ) /*0x552b3b*/
@@ -385,7 +385,7 @@ Game * Scenario::ComputeDisplayPosition()
     int v9 = 480; /*0x552b9a*/
     if ( g_DDraw_Active != 640 ) /*0x552ba2*/
       v9 = 600; /*0x552ba4*/
-    int v10 = DataGlobal_8A00A8; /*0x552baa*/
+    Game *v10 = DataGlobal_8A00A8; /*0x552baa*/
     this->q024 = v2; /*0x552baf*/
     this->q028 = v9; /*0x552bb4*/
     this->q020 = (v10 - v9) / 2; /*0x552bc6*/
@@ -481,7 +481,7 @@ void Scenario::Update()
   int v17; // eax
   int *v18; // esi
   __int64 v19; // rax
-  int v20; // ecx
+  AbstractClass *v20; // ecx
   wchar_t *v31; // esi
   int v40; // edi
   int v41; // ecx
@@ -500,7 +500,7 @@ void Scenario::Update()
   int v64; // [esp+30h] [ebp-8h]
   int v65; // [esp+34h] [ebp-4h]
   int v1 = 0; /*0x55afc7*/
-  char * v2 = (char *)g_ScenarioClass_Instance; /*0x55afcd*/
+  ScenarioClass *v2 = (char *)g_ScenarioClass_Instance; /*0x55afcd*/
   ++dword_ABCD40; /*0x55afd3*/
   dword_A83CDC = 0; /*0x55afdb*/
   if ( g_ScenarioUpdateState > 0 ) /*0x55afe0*/
@@ -557,23 +557,23 @@ LABEL_22:
     goto LABEL_23; /*0x55b15e*/
   }
 LABEL_24:
-  int v6 = *((_DWORD *)v2 + 1146); /*0x55b17d*/
+  int v6 = v2->missionTimer; /*0x55b17d*/
   _DWORD * v7 = v2 + 4584; /*0x55b183*/
   if ( v6 != -1 ) /*0x55b18b*/
   {
-    char * v8 = (char *)*((_DWORD *)v2 + 1148); /*0x55b18d*/
+    char * v8 = (char *)v2->q11F0; /*0x55b18d*/
     char * v9 = (char *)g_CurrentFrame - v6; /*0x55b19e*/
-    if ( (int)g_CurrentFrame - *((_DWORD *)v2 + 1146) >= (int)v8 || v8 == v9 ) /*0x55b1a4*/
+    if ( (int)g_CurrentFrame - v2->missionTimer >= (int)v8 || v8 == v9 ) /*0x55b1a4*/
     {
       if ( *v7 != -1 ) /*0x55b1ae*/
       {
-        int v10 = *((_DWORD *)v2 + 1148); /*0x55b1b0*/
+        int v10 = v2->q11F0; /*0x55b1b0*/
         char * v11 = (char *)g_CurrentFrame - *v7; /*0x55b1b3*/
         if ( (int)v11 >= v10 ) /*0x55b1b9*/
           int v12 = 0; /*0x55b1bf*/
         else
           v12 = v10 - (_DWORD)v11; /*0x55b1bb*/
-        *((_DWORD *)v2 + 1148) = v12; /*0x55b1c1*/
+        v2->q11F0 = v12; /*0x55b1c1*/
         *v7 = -1; /*0x55b1c4*/
       }
       MapClass::MarkForRedraw(&DataGlobal_87F7E8, 2); /*0x55b1cd*/
@@ -632,7 +632,7 @@ LABEL_42:
       {
 LABEL_50:
         int v23 = Math::RoundToInt(v13[713] * 900.0); /*0x55b304*/
-        int v24 = v58; /*0x55b315*/
+        AbstractClass *v24 = v58; /*0x55b315*/
         v14[1161] = v15; /*0x55b319*/
         v14[1162] = v24; /*0x55b31b*/
         v14[1163] = v23; /*0x55b323*/
@@ -652,8 +652,8 @@ LABEL_51:
   {
   int v28; // edx
   char *v29; // ecx
-  int v30; // eax
-  _DWORD *v37; // edx
+  AbstractClass *v30; // eax
+  ScenarioClass *v37; // edx
   int v38; // eax
   int v39; // ecx
     int v25 = v14[1170]; /*0x55b368*/
@@ -683,7 +683,7 @@ LABEL_57:
       {
         v31 = g_CurrentFrame; /*0x55b3d2*/
         int v32 = Math::RoundToInt(*((double *)g_RulesClass_Instance + 717) * 900.0); /*0x55b3e4*/
-        int v33 = v58; /*0x55b3ef*/
+        AbstractClass *v33 = v58; /*0x55b3ef*/
         char * v34 = (char *)g_ScenarioClass_Instance + 4680; /*0x55b3f3*/
         *((_DWORD *)g_ScenarioClass_Instance + 1170) = v31; /*0x55b3f9*/
         *((_DWORD *)v34 + 1) = v33; /*0x55b3fb*/
@@ -848,7 +848,7 @@ int Scenario::PreGameInit()
   *(_DWORD *)&g_EventManager.field_D0[32] = g_Rules_EngineerCount; /*0x5e74aa*/
   v0 = (ObjectClass *)g_IntroMovieObject; /*0x5e74b0*/
   BYTE1(v0) = BYTE1(g_IntroMovieObject) & 0x77; /*0x5e74bb*/
-  unsigned int v2 = (unsigned int)v0 | ((HarvesterTruce & 1 | (16 * (BridgeDestruction & 1))) << 11); /*0x5e74c1*/
+  AbstractClass *v2 = (unsigned int)v0 | ((HarvesterTruce & 1 | (16 * (BridgeDestruction & 1))) << 11); /*0x5e74c1*/
   g_GameTypeFlags = 2; /*0x5e74c3*/
   LOBYTE(v2) = g_IntroMovieObject | 0xC0; /*0x5e74cd*/
   g_IntroMovieObject = v2; /*0x5e74d4*/
@@ -1140,17 +1140,16 @@ void Scenario_EndGameFlow()
   DWORD Ticks; // eax
   DWORD v4; // eax
   wchar_t *String; // eax
-  int v10; // ecx
+  SkirmishDialog *v10; // ecx
   __int16 result; // ax
   Iostream_init *v13; // eax
   int v14; // ecx
   int v15; // ecx
-  _BYTE *v16; // ecx
+  ScenarioClass *v16; // ecx
   LPARAM v19; // ebp
   int i; // eax
   LPARAM v23; // edx
   char v27; // [esp+Bh] [ebp-81h] BYREF
-
   if ( g_GameMode_Current && g_GameMode_Current != 5 && (g_NetworkEventPending & 2) == 0 ) /*0x68568b*/
   {
     RunNetworkGameLoop(); /*0x68568d*/
@@ -1207,7 +1206,7 @@ void Scenario_EndGameFlow()
 LABEL_36:
     g_CurrentPlayerName = 0; /*0x6858ce*/
     if ( v10 ) /*0x6858d7*/
-      (*(void (__thiscall **)(int, int))(*(_DWORD *)v10 + 164))(v10, 1); /*0x6858dd*/
+      v10->vt_slot_164(1); /*0x6858dd*/
     g_WTFMode = 0; /*0x6858ea*/
     return ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x685900*/
   }
@@ -1245,7 +1244,7 @@ LABEL_29:
     DataGlobal_A8D588 = 3; /*0x6858ba*/
   if ( !a1 ) /*0x6858c2*/
     goto LABEL_36; /*0x6858c2*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)v10 + 172))(v10); /*0x685903*/
+  v10->vt_slot_172(); /*0x685903*/
   ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x685910*/
 LABEL_40:
   Movie::PlayWrapper(*((_DWORD *)g_ScenarioClass_Instance + 1295), -1, 3, 1, 1, 1); /*0x685915*/
@@ -1368,9 +1367,8 @@ LABEL_64:
     if ( g_GameMode_Current == 3 ) /*0x685cba*/
     {
       if ( (unsigned int)(Network::GetLobbyStatus(g_NetworkManager) + 2) >= 0xF ) /*0x685ccc*/
-        int v24 = Network::GetLobbyStatus(g_NetworkManager) + 2; /*0x685cdf*/
-      else
-        v24 = 15; /*0x685cce*/
+        AbstractClass *v24 = Network::GetLobbyStatus(g_NetworkManager) + 2; /*0x685cdf*/
+      AbstractClass *v24 = 15; /*0x685cce*/
       Network::SetConnectionParams(g_NetworkManager, v24, -1, 600, 1); /*0x685cf0*/
       if ( (unsigned int)(Network::GetLobbyStatus(g_NetworkManager) + 2) >= 0x3C ) /*0x685d05*/
         int v25 = Network::GetLobbyStatus(g_NetworkManager) + 2; /*0x685d18*/
@@ -1381,9 +1379,8 @@ LABEL_64:
     else if ( g_GameMode_Current == 4 && !g_GameSessionFlags ) /*0x685d3a*/
     {
       if ( (unsigned int)(Network::GetLobbyStatus(g_NetworkManager) + 2) >= 0x3C ) /*0x685d4c*/
-        int v26 = Network::GetLobbyStatus(g_NetworkManager) + 2; /*0x685d5f*/
-      else
-        v26 = 60; /*0x685d4e*/
+        AbstractClass *v26 = Network::GetLobbyStatus(g_NetworkManager) + 2; /*0x685d5f*/
+      AbstractClass *v26 = 60; /*0x685d4e*/
       Network::SetConnectionParams(g_NetworkManager, v26, -1, 600, 1); /*0x685d70*/
     }
   }
@@ -1415,7 +1412,6 @@ void Scenario_EndGame()
   wchar_t *v26; // [esp-1Ah] [ebp-A8h]
   wchar_t *v27; // [esp-16h] [ebp-A4h]
   CampaignScore *v30; // [esp+Ah] [ebp-84h]
-
   if ( *(_DWORD *)&HouseClass_Player[29932] /*0x685ddb*/
     && *(_DWORD *)&HouseClass_Player[29932] != 5
     && (HouseClass_Player[39084] & 2) == 0 )
@@ -1601,9 +1597,8 @@ LABEL_65:
       if ( *(_DWORD *)&HouseClass_Player[29932] == 3 ) /*0x6862db*/
       {
         if ( (unsigned int)(Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2) >= 0xF ) /*0x6862ed*/
-          int v22 = Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2; /*0x686300*/
-        else
-          v22 = 15; /*0x6862ef*/
+          AbstractClass *v22 = Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2; /*0x686300*/
+        AbstractClass *v22 = 15; /*0x6862ef*/
         Network::SetConnectionParams( /*0x686311*/
           (int *)&HouseClass_Player[44148],
           (IUnknown *)v22,
@@ -1619,9 +1614,8 @@ LABEL_65:
       else if ( *(_DWORD *)&HouseClass_Player[29932] == 4 && !*(_DWORD *)&HouseClass_Player[30756] ) /*0x68635a*/
       {
         if ( (unsigned int)(Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2) >= 0x3C ) /*0x68636c*/
-          int v24 = Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2; /*0x68637f*/
-        else
-          v24 = 60; /*0x68636e*/
+          AbstractClass *v24 = Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2; /*0x68637f*/
+        AbstractClass *v24 = 60; /*0x68636e*/
         Network::SetConnectionParams( /*0x686390*/
           (int *)&HouseClass_Player[44148],
           (IUnknown *)v24,

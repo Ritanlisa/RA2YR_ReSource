@@ -141,7 +141,7 @@ void sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, 
 
 // 0x652230
 namespace gamemd {
-AbstractClass * Render_Show(CCINIClass * aP0, int a2)
+AbstractClass * * Render_Show(CCINIClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -203,7 +203,7 @@ AbstractClass * Render_Show(CCINIClass * aP0, int a2)
 } // namespace gamemd
 
 // 0x705270
-AbstractClass * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
+AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -259,7 +259,7 @@ AbstractClass * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6,
     v28 = -2; /*0x7053dc*/
   _DWORD v52[2]; // [esp+9Ch] [ebp-28h] BYREF
     _DWORD * v11 = Coord2D::Add(&v27, v52, v43); /*0x7053e6*/
-    int * v12 = Rect::Construct(v53, v11, 3, 3); /*0x7053f3*/
+    AbstractClass *v12 = Rect::Construct(v53, v11, 3, 3); /*0x7053f3*/
     v39 = *v12; /*0x7053fc*/
     v40 = v12[1]; /*0x705405*/
     v41 = v12[2]; /*0x70540c*/
@@ -273,7 +273,7 @@ AbstractClass * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6,
     v27 = -2; /*0x705462*/
     v28 = -2; /*0x705466*/
     _DWORD * v14 = Coord2D::Add(&v27, v52, v44); /*0x70547d*/
-    int * v15 = Rect::Construct(v54, v14, 3, 3); /*0x70548a*/
+    AbstractClass *v15 = Rect::Construct(v54, v14, 3, 3); /*0x70548a*/
     v35 = *v15; /*0x705493*/
     v36 = v15[1]; /*0x70549c*/
     v37 = v15[2]; /*0x7054a8*/
@@ -299,7 +299,7 @@ AbstractClass * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6,
   }
   v27 = v29 - 2; /*0x705583*/
   v28 = v30 - 2; /*0x70558b*/
-  int * v18 = Rect::Construct(v54, &v27, 3, 3); /*0x705597*/
+  AbstractClass *v18 = Rect::Construct(v54, &v27, 3, 3); /*0x705597*/
   v35 = *v18; /*0x7055a0*/
   v36 = v18[1]; /*0x7055a9*/
   v37 = v18[2]; /*0x7055b0*/
@@ -312,7 +312,7 @@ AbstractClass * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6,
   (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7055fa*/
   v28 = v34 - 2; /*0x705611*/
   v27 = v33 - 2; /*0x70561f*/
-  int * v20 = Rect::Construct(v54, &v27, 3, 3); /*0x705623*/
+  AbstractClass *v20 = Rect::Construct(v54, &v27, 3, 3); /*0x705623*/
   v35 = *v20; /*0x70562c*/
   v36 = v20[1]; /*0x705635*/
   v37 = v20[2]; /*0x70563c*/
@@ -1074,7 +1074,7 @@ void sub_731BF0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool IsButtonDown; // al
-  wchar_t *v3; // edi
+  CellStruct *v3; // edi
   if ( DataGlobal_B0FE58 ) /*0x731bfa*/
     return 1; /*0x731c01*/
   bool v1 = Mouse::IsButtonDown(DataGlobal_A8EC00) || Mouse::IsButtonDown(DataGlobal_A8EC04); /*0x731c31*/
@@ -1196,7 +1196,7 @@ int sub_778120()
 
 // 0x6CA310
 namespace gamemd {
-WinModemClass * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
+WinModemClass * * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1327,7 +1327,7 @@ void sub_53D850()
 
   if ( (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) != unk_AA0150 ) /*0x53d865*/
   {
-    int v0 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2); /*0x53d874*/
+    AbstractClass *v0 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2); /*0x53d874*/
     dword_A9FAE8[0] = 0; /*0x53d876*/
     unk_AA0150 = v0; /*0x53d880*/
     int v1 = 1; /*0x53d886*/
@@ -1352,11 +1352,11 @@ void sub_53D850()
 
 // 0x5541C0
 namespace gamemd {
-CampaignScore * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClass * aP2, int a4, AbstractClass * aP4, char a6, char a7)
+CampaignScore * * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClass * aP2, int a4, AbstractClass * aP4, char a6, char a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  AbstractClass *v8; // edx
+  CampaignScore *v8; // edx
   struct tagRECT *v10; // [esp+0h] [ebp-20h]
   AbstractClass *dy; // [esp+8h] [ebp-18h] BYREF
   AbstractClass *v13; // [esp+Ch] [ebp-14h] BYREF
@@ -1421,7 +1421,7 @@ void Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, un
 
 // 0x63B0A0
 namespace gamemd {
-AbstractClass * sub_63B0A0()
+AbstractClass * * sub_63B0A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1438,14 +1438,14 @@ AbstractClass * sub_63B0A0()
   DataGlobal_AC4C25 = 0; /*0x63b0d6*/
   for ( DataGlobal_AC4C20 = 0; v1 < v0; ++v1 ) /*0x63b0e2*/
   {
-    int v2 = *((_DWORD *)DataGlobal_AC4B34 + v1); /*0x63b0e9*/
-    if ( (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(***(_DWORD ***)(v2 + 4) + 540), HouseClass_Player) ) /*0x63b100*/
+    ObjectClass *v2 = *((_DWORD *)DataGlobal_AC4B34 + v1); /*0x63b0e9*/
+    if ( (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(**v2->vtable2 + 540), HouseClass_Player) ) /*0x63b100*/
       RenderScenarioActionLines(v2); /*0x63b10b*/
   }
   int v3 = g_SidebarState; /*0x63b115*/
   for ( i = 0; i < v3; ++i ) /*0x63b11f*/
   {
-    int v5 = *((_DWORD *)g_TechnoClass_Count + i); /*0x63b12d*/
+    ScriptAction *v5 = *((_DWORD *)g_TechnoClass_Count + i); /*0x63b12d*/
     if ( (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(v5 + 540), HouseClass_Player) ) /*0x63b136*/
       ScriptAction::ProcessIdleAction(v5); /*0x63b141*/
   }
@@ -1491,8 +1491,8 @@ void sub_660000()
   for ( i = 0; i < g_TriggerEventState; ++i ) /*0x660006*/
   {
     int v2 = *((_DWORD *)g_TriggerPool + i); /*0x660012*/
-    int v3 = *(_DWORD *)(v2 + 48); /*0x660015*/
-    int v4 = *(_DWORD *)(v2 + 56); /*0x660018*/
+    ObjectClass *v3 = *(_DWORD *)(v2 + 48); /*0x660015*/
+    BombClass *v4 = *(_DWORD *)(v2 + 56); /*0x660018*/
     if ( v3 != -1 ) /*0x66001e*/
     {
       if ( (int)g_CurrentFrame - v3 >= v4 ) /*0x66002a*/
@@ -1522,7 +1522,7 @@ void sub_6603B0()
   int v0 = g_TriggerEventState - 1; /*0x6603b7*/
   if ( g_TriggerEventState - 1 >= 0 ) /*0x6603bc*/
   {
-    _DWORD * v1 = g_TriggerPool; /*0x6603c4*/
+    AbstractClass *v1 = g_TriggerPool; /*0x6603c4*/
     do /*0x6603ca*/
     {
       int v2 = v1[v0]; /*0x6603ca*/

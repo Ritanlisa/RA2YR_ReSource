@@ -20,7 +20,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   int v4 = a2; /*0x4fb85f*/
   if ( !a2 ) /*0x4fb865*/
     return 0; /*0x4fb865*/
-  _DWORD * v5 = a3; /*0x4fb86b*/
+  IUnknown *v5 = a3; /*0x4fb86b*/
   if ( !a3 ) /*0x4fb871*/
     return 0; /*0x4fb919*/
   MapClass::UnselectAll_ClearLimboLaunchers(); /*0x4fb877*/
@@ -30,11 +30,11 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   DataGlobal_88099B = 0; /*0x4fb89b*/
   DataGlobal_88099C = 0; /*0x4fb8a2*/
   g_BuildingPlacementState = -1; /*0x4fb8a9*/
-  int v6 = v5[328]; /*0x4fb8b3*/
+  IUnknown *v6 = v5[328]; /*0x4fb8b3*/
   g_RadarBlipPool = (int)v5; /*0x4fb8b9*/
   g_RadarBlipManager = v6; /*0x4fb8bf*/
   DataGlobal_880994 = this->q00C; /*0x4fb8c7*/
-  const void * v7 = (const void *)(*(int (__thiscall **)(_DWORD *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
+  const void * v7 = (const void *)v5->vt_slot_264(1); /*0x4fb8d3*/
   Mouse::SetBounds((int)&DataGlobal_87F7E8, v7); /*0x4fb8df*/
   _DWORD * v8 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v4 + 440))(v4, &a2); /*0x4fb8ed*/
   Tactical::MouseMove((int)&DataGlobal_87F7E8, &a3, v8); /*0x4fb8fe*/
@@ -44,12 +44,12 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
 }
 
 // 0x54C550
-VectorClass * BuildingPlacement::ProcessBuildingPlacementAction()
+VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *NeighbourContent; // eax
-  char *v12; // eax
+  AbstractClass *v12; // eax
   _DWORD *v21; // edi
   int DeployDir; // ebx
   _DWORD *Value; // eax
@@ -74,11 +74,11 @@ VectorClass * BuildingPlacement::ProcessBuildingPlacementAction()
     {
       if ( ObjectClass::HasLinkedObject(this->BuildingPlacement_field_0x0C) ) /*0x54c5b5*/
       {
-        unsigned int v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x54c5d6*/
+        VectorClass *v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x54c5d6*/
         _DWORD * v8 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(*this->q00C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c5da*/
-        int v9 = *this->q00C; /*0x54c5e6*/
+        VectorClass *v9 = *this->q00C; /*0x54c5e6*/
         NeighbourContent = Cell::GetNeighbourContent(v8, v7); /*0x54c5ea*/
-        (*(void (__thiscall **)(_DWORD, void *, int))(v9 + 1152))(this->BuildingPlacement_field_0x0C, NeighbourContent, 1); /*0x54c5f3*/
+        v9->vt_slot_1152(this->BuildingPlacement_field_0x0C, NeighbourContent, 1); /*0x54c5f3*/
         _BYTE * v11 = this->q00C; /*0x54c5f9*/
         LOBYTE(v9) = v11[116]; /*0x54c600*/
         (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v11 + 292))(v11, 0); /*0x54c603*/
@@ -110,7 +110,7 @@ VectorClass * BuildingPlacement::ProcessBuildingPlacementAction()
             1);
   int v17; // eax
     LOBYTE(v17) = Input::OffsetToDirection((_DWORD *)(this + 64)); /*0x54c679*/
-    int v18 = v17; /*0x54c684*/
+    VectorClass *v18 = v17; /*0x54c684*/
     if ( (unsigned __int8)BuildingPlacement::IsPlacementFlagSet(v17, BYTE1(v5[80]) & 1) /*0x54c699*/
   char v47; // [esp+5Bh] [ebp-11h]
       || (v47 = 0, this->q090) )
@@ -172,7 +172,7 @@ VectorClass * BuildingPlacement::ProcessBuildingPlacementAction()
     v50 = v28[1]; /*0x54c7da*/
     v51 = v28[2]; /*0x54c7e6*/
     v12 = (char *)Coord::To_Cell(&DataGlobal_87F7E8, &v49); /*0x54c7ea*/
-    if ( (*((_DWORD *)v12 + 80) & 0x100) != 0 ) /*0x54c7f8*/
+    if ( (v12->q050 & 0x100) != 0 ) /*0x54c7f8*/
     {
       LOBYTE(v12) = dword_ABC5DC; /*0x54c7fa*/
       if ( v27 >= dword_ABC5DC ) /*0x54c801*/
@@ -288,15 +288,14 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  _DWORD *v35; // [esp+18h] [ebp-30h]
-  int v36; // [esp+1Ch] [ebp-2Ch]
+  VectorClass *v35; // [esp+18h] [ebp-30h]
+  MapClass *v36; // [esp+1Ch] [ebp-2Ch]
   int v41; // [esp+30h] [ebp-18h]
   double v49; // [esp+40h] [ebp-8h]
-
   int v2 = this->q008; /*0x594f51*/
   v49 = -1.0; /*0x594f5f*/
   v41 = -1; /*0x594f6f*/
-  int v3 = Math::RoundToInt(((double)dword_ABE030 * 0.01 * 12.0 / (double)dword_ABE028 + 2.0) * (double)v2); /*0x594f8d*/
+  MapClass *v3 = Math::RoundToInt(((double)dword_ABE030 * 0.01 * 12.0 / (double)dword_ABE028 + 2.0) * (double)v2); /*0x594f8d*/
   int v4 = a2; /*0x594f92*/
   v36 = v3; /*0x594f99*/
   if ( !v2 && *(int *)(a2 + 16) > 0 ) /*0x594fa4*/
@@ -311,7 +310,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     v36 = *(_DWORD *)(a2 + 16); /*0x594fc6*/
   }
   _DWORD * v6 = __2_YAPAXI_Z(0x18u); /*0x594fcc*/
-  _DWORD * v7 = v6; /*0x594fd1*/
+  VectorClass *v7 = v6; /*0x594fd1*/
   if ( v6 ) /*0x594fd8*/
   {
     VectorClass::CellConstructor(v6, 0, 0); /*0x594fde*/
@@ -325,9 +324,9 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     v35 = 0; /*0x594ff9*/
     v7 = 0; /*0x594ffd*/
   }
-  int v8 = *(_DWORD *)(a2 + 16); /*0x594fff*/
+  MapClass *v8 = *(_DWORD *)(a2 + 16); /*0x594fff*/
   int v33 = 0; /*0x595002*/
-  _DWORD * v9 = g_MapTileArray; /*0x595006*/
+  IUnknown *v9 = g_MapTileArray; /*0x595006*/
   if ( v8 - 1 > 0 )
   {
     while ( 1 )
@@ -377,15 +376,15 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
       int v15 = v7[2]; /*0x595158*/
       if ( v7[4] < v15 ) /*0x59515d*/
         goto LABEL_35; /*0x59515d*/
-      if ( !*((_BYTE *)v7 + 13) && v15 ) /*0x595168*/
+      if ( !v7->IsAllocated && v15 ) /*0x595168*/
         goto LABEL_37; /*0x595168*/
       int v16 = v7[5]; /*0x59516a*/
       if ( v16 <= 0 ) /*0x59516f*/
         goto LABEL_37; /*0x59516f*/
-      if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v7 + 8))(v7, v15 + v16, 0) ) /*0x59517a*/
+      if ( v7->Release(v15 + v16, 0) ) /*0x59517a*/
       {
 LABEL_35:
-        int v17 = v7[4]; /*0x595181*/
+        MapClass *v17 = v7[4]; /*0x595181*/
         int v18 = v7[1]; /*0x595184*/
         v7[4] = v17 + 1; /*0x59518a*/
         *(_DWORD *)(v18 + 4 * v17) = *v14; /*0x59518f*/
@@ -400,7 +399,7 @@ LABEL_37:
   if ( !*(_DWORD *)(v4 + 16) )
   {
 LABEL_38:
-    int v19 = v7[4]; /*0x59519b*/
+    MapClass *v19 = v7[4]; /*0x59519b*/
     if ( v19 < v36 )
     {
       while ( 1 )
@@ -458,15 +457,15 @@ LABEL_38:
         _DWORD * v48 = (_DWORD *)(*(_DWORD *)(v4 + 4) + 4 * v40); /*0x595392*/
         if ( v7[4] < v29 ) /*0x59539b*/
           goto LABEL_70; /*0x59539b*/
-        if ( !*((_BYTE *)v7 + 13) && v29 ) /*0x5953a6*/
+        if ( !v7->IsAllocated && v29 ) /*0x5953a6*/
           goto LABEL_72; /*0x5953a6*/
         int v30 = v7[5]; /*0x5953a8*/
         if ( v30 <= 0 ) /*0x5953ad*/
           goto LABEL_72; /*0x5953ad*/
-        if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v7 + 8))(v7, v29 + v30, 0) ) /*0x5953b8*/
+        if ( v7->Release(v29 + v30, 0) ) /*0x5953b8*/
         {
 LABEL_70:
-          int v31 = v7[4]; /*0x5953bf*/
+          MapClass *v31 = v7[4]; /*0x5953bf*/
           int v32 = v7[1]; /*0x5953c2*/
           v7[4] = v31 + 1; /*0x5953c8*/
           *(_DWORD *)(v32 + 4 * v31) = *v48; /*0x5953d1*/
@@ -483,12 +482,12 @@ LABEL_72:
   int v20 = v7[2]; /*0x5951e1*/
   _DWORD * v21 = *(_DWORD **)(v4 + 4); /*0x5951e7*/
   if ( v7[4] < v20 /*0x595211*/
-    || (*((_BYTE *)v7 + 13) || !v20)
+    || (v7->IsAllocated || !v20)
   int v22; // ecx
     && (v22 = v7[5], v22 > 0)
-    && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v7 + 8))(v7, v20 + v22, 0) )
+    && v7->Release(v20 + v22, 0) )
   {
-    int v23 = v7[4]; /*0x59521c*/
+    MapClass *v23 = v7[4]; /*0x59521c*/
     int v24 = v7[1]; /*0x59521f*/
     v7[4] = v23 + 1; /*0x595225*/
     *(_DWORD *)(v24 + 4 * v23) = *v21; /*0x59522a*/

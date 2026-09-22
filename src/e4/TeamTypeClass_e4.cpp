@@ -252,16 +252,16 @@ int TeamTypeClass::GetTeam(int a2, int a3)
 
 // 0x6F1090
 namespace gamemd {
-AbstractClass * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
+AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  CCINIClass *v3; // ecx
+  AbstractClass *v3; // ecx
   int Int_Overwrite; // eax
   char Bool_Overwrite; // al
-  CCINIClass *v23; // ecx
-  char *v27; // eax
-  CCINIClass *v28; // ecx
+  AbstractClass *v23; // ecx
+  IUnknown *v27; // eax
+  IUnknown *v28; // ecx
   int v29; // eax
   char v30; // al
   char v31; // cl
@@ -269,7 +269,7 @@ AbstractClass * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   char v33; // al
   char v34; // cl
   char v35; // al
-  CCINIClass *v36; // ecx
+  AbstractClass *v36; // ecx
   INIClass *v37; // eax
   INIClass *v38; // eax
   INIClass *v39; // ebp
@@ -292,7 +292,7 @@ AbstractClass * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   if ( !AbstractTypeClass::LoadFromINI(this, (AbstractTypeClass *)aP1) ) /*0x6f10b2*/
     return 0; /*0x6f10b2*/
   v3 = this->q0C4; /*0x6f10b8*/
-  int v4 = -1; /*0x6f10be*/
+  AbstractClass *v4 = -1; /*0x6f10be*/
   if ( v3 ) /*0x6f10c3*/
     v4 = *(_DWORD *)(*(_DWORD *)&v3->needsSave_flag + 184); /*0x6f10c8*/
   void *v5; // ebp
@@ -571,7 +571,7 @@ AbstractClass * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 
 // 0x6F1550
 namespace gamemd {
-AbstractClass * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
+AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -914,7 +914,7 @@ TeamTypeClass * TeamTypeClass::ddtor(char a2)
 
 // 0x6F22F0
 namespace gamemd {
-AbstractClass * TeamTypeClass_28::Release(int a2, int * a3)
+AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1016,14 +1016,14 @@ AbstractClass * TeamTypeClass_28::Release(int a2, int * a3)
 
 // 0x6F24B0
 namespace gamemd {
-AbstractClass * TeamTypeClass_28::SetCapacity(int a2, int * a3)
+AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 ) /*0x6f24bc*/
   {
-  _DWORD *v6; // edi
+  AbstractClass *v6; // edi
     int * v4 = a3; /*0x6f24c2*/
     this->q00C = 0; /*0x6f24c6*/
     if ( a3 ) /*0x6f24cc*/
@@ -1073,7 +1073,7 @@ AbstractClass * TeamTypeClass_28::SetCapacity(int a2, int * a3)
       return 0; /*0x6f25c7*/
     if ( this->TeamTypeClass_28_field_0x4 ) /*0x6f252d*/
     {
-      int v11 = this->TeamTypeClass_28_field_0x8; /*0x6f2534*/
+      AbstractClass *v11 = this->TeamTypeClass_28_field_0x8; /*0x6f2534*/
       if ( a2 < v11 ) /*0x6f2539*/
         v11 = a2; /*0x6f253b*/
       int v12 = 0; /*0x6f253d*/
@@ -1081,7 +1081,7 @@ AbstractClass * TeamTypeClass_28::SetCapacity(int a2, int * a3)
       {
         do /*0x6f2559*/
         {
-          int v13 = this->TeamTypeClass_28_field_0x4; /*0x6f2543*/
+          AbstractClass *v13 = this->TeamTypeClass_28_field_0x4; /*0x6f2543*/
           ++v12; /*0x6f2546*/
           v6[2 * v12 - 2] = *(_DWORD *)(v13 + 8 * v12 - 8); /*0x6f254d*/
           v6[2 * v12 - 1] = *(_DWORD *)(v13 + 8 * v12 - 4); /*0x6f2555*/
@@ -1091,7 +1091,7 @@ AbstractClass * TeamTypeClass_28::SetCapacity(int a2, int * a3)
       }
       if ( this->IsAllocated ) /*0x6f255f*/
       {
-        int v14 = this->TeamTypeClass_28_field_0x4; /*0x6f2566*/
+        AbstractClass *v14 = this->TeamTypeClass_28_field_0x4; /*0x6f2566*/
         if ( v14 ) /*0x6f256b*/
         {
           void * v15 = (void *)(v14 - 4); /*0x6f2570*/
@@ -1110,7 +1110,7 @@ AbstractClass * TeamTypeClass_28::SetCapacity(int a2, int * a3)
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x6f25ab*/
   }
-  int v16 = this->TeamTypeClass_28_field_0x8; /*0x6f25ae*/
+  AbstractClass *v16 = this->TeamTypeClass_28_field_0x8; /*0x6f25ae*/
   if ( v16 < this->TeamTypeClass_28_field_0x10 ) /*0x6f25b6*/
     this->TeamTypeClass_28_field_0x10 = v16; /*0x6f25b8*/
   return 1; /*0x6f25bb*/

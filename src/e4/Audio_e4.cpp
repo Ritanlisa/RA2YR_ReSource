@@ -385,7 +385,7 @@ void sub_53E1D0()
 
 // 0x5D0470
 namespace gamemd {
-ObjectClass * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
+ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -841,10 +841,10 @@ void * Audio::LoadSoundINI()
   result = DataGlobal_B1D3A4; /*0x751461*/
   if ( DataGlobal_B1D3A4 ) /*0x751468*/
   {
-    int v3 = AudioQueue::GetNext(&DataGlobal_B1D320); /*0x751474*/
+    ObjectClass *v3 = AudioQueue::GetNext(&DataGlobal_B1D320); /*0x751474*/
     if ( v3 ) /*0x751478*/
     {
-  int v4; // edi
+  ObjectClass *v4; // edi
       do /*0x7514b1*/
       {
         v4 = AudioQueue::GetNextAlt(v3); /*0x751485*/
@@ -1364,7 +1364,6 @@ int sub_7BE830(int a1, int a2)
   bool v9; // zf
   int result; // eax
   int v11; // ebp
-
   int v3 = 0; /*0x7be838*/
   if ( *(_DWORD *)(a1 + 1828) ) /*0x7be83b*/
   {
@@ -1378,7 +1377,7 @@ int sub_7BE830(int a1, int a2)
       int v7 = *v5; /*0x7be86b*/
       if ( v7 ) /*0x7be86f*/
       {
-        _DWORD * v8 = (_DWORD *)(v6 + 4); /*0x7be871*/
+        AbstractClass *v8 = (_DWORD *)(v6 + 4); /*0x7be871*/
         int v19 = v7; /*0x7be874*/
         do /*0x7be89e*/
         {
@@ -1410,7 +1409,7 @@ int sub_7BE830(int a1, int a2)
       int v15 = *v13; /*0x7be8e7*/
       if ( v15 ) /*0x7be8eb*/
       {
-        _DWORD * v16 = (_DWORD *)(v14 + 4); /*0x7be8ed*/
+        AbstractClass *v16 = (_DWORD *)(v14 + 4); /*0x7be8ed*/
         int v22 = v15; /*0x7be8f0*/
         do /*0x7be91a*/
         {
@@ -1726,7 +1725,7 @@ LABEL_6:
 
 // 0x7C3270
 namespace gamemd {
-BuildingTypeClass * Audio_Process_7C3270(int a1, int a2, unsigned int a3, ObjectClass * aP3, int a5, int a6)
+BuildingTypeClass * * Audio_Process_7C3270(int a1, int a2, unsigned int a3, ObjectClass * aP3, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1734,8 +1733,8 @@ BuildingTypeClass * Audio_Process_7C3270(int a1, int a2, unsigned int a3, Object
   int v12; // eax
   int v13; // edi
   int v14; // eax
-  char v15; // bl
-  int v16; // eax
+  AbstractClass *v15; // bl
+  HouseClass *v16; // eax
   int v6 = *(_DWORD *)(a1 + 128); /*0x7c3271*/
   unsigned int v7 = a3; /*0x7c327a*/
   int v8 = v6 & 0x30; /*0x7c3285*/
@@ -2108,7 +2107,7 @@ int sub_7DFD00(int a1)
 
 // 0x6C6D00
 namespace gamemd {
-AbstractClass * sub_6C6D00()
+AbstractClass * * sub_6C6D00()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2131,7 +2130,7 @@ AbstractClass * sub_6C6D00()
       if ( v1 < DataGlobal_B0BD54 ) /*0x6c6d7a*/
       {
         char * v2 = (char *)__2_YAPAXI_Z(32776 * v1); /*0x6c6d88*/
-        char * v3 = (char *)g_SidebarPool; /*0x6c6d8d*/
+        AbstractClass *v3 = (char *)g_SidebarPool; /*0x6c6d8d*/
         void * v4 = v2; /*0x6c6d98*/
         if ( g_SidebarPool ) /*0x6c6d9a*/
         {
@@ -2153,7 +2152,7 @@ AbstractClass * sub_6C6D00()
 
 // 0x6C6DE0
 namespace gamemd {
-AbstractClass * sub_6C6DE0()
+AbstractClass * * sub_6C6DE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2170,7 +2169,7 @@ AbstractClass * sub_6C6DE0()
       v0 = g_SidebarButtonState; /*0x6c6e17*/
     }
 LABEL_4:
-    char * v1 = (char *)g_SidebarPool; /*0x6c6e1d*/
+    AbstractClass *v1 = (char *)g_SidebarPool; /*0x6c6e1d*/
     while ( v5[1] < 1 || v5[0] > 10 ) /*0x6c6e31*/
     {
       int v2 = 0; /*0x6c6e37*/

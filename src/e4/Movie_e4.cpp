@@ -11,7 +11,7 @@
 
 // 0x49CAF0
 namespace gamemd {
-AbstractClass * Movie::SetupScreen(CCINIClass * aP1)
+AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -19,7 +19,7 @@ AbstractClass * Movie::SetupScreen(CCINIClass * aP1)
   TechnoTypeClass *v4; // ecx
   CCINIClass *v6; // ecx
   int i; // edi
-  CCINIClass *v8; // edx
+  AbstractClass *v8; // edx
   CCINIClass *v10; // ebx
   if ( !DataGlobal_89F578 ) /*0x49cafc*/
     CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49cb03*/
@@ -83,7 +83,7 @@ AbstractClass * Movie::SetupScreen(CCINIClass * aP1)
 
 // 0x49E3B0
 namespace gamemd {
-CampaignClass * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
+CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -113,7 +113,7 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
   Frame *v11; // ecx
   int eax16a; // eax
   ObjectClass *VQMovie; // eax
-  ObjectClass *v12; // esi
+  AbstractClass *v12; // esi
   Frame *v18; // ecx
   Frame *v19; // ecx
   int fallRate; // [esp+14h] [ebp-13Ch]
@@ -278,7 +278,7 @@ void Movie_PlayWrapper()
 
 // 0x7209D0
 namespace gamemd {
-AbstractClass * Movie::Update()
+AbstractClass * * Movie::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

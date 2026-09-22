@@ -51,7 +51,7 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   FileClassToBuffer = LoadFileClassToBuffer((char **)aP1, (bool *)this + 60); /*0x5cbd70*/
   *((_DWORD *)this + 7) = FileClassToBuffer; /*0x5cbd75*/
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
-  int v10 = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
+  ObjectClass *v10 = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
   *((_DWORD *)this + 17) = aP7; /*0x5cbd84*/
   this->q030 = v10; /*0x5cbd87*/
   this->q010 = 0; /*0x5cbd8a*/

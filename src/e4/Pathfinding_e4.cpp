@@ -10,9 +10,9 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  _DWORD *v4; // ebx
+  AbstractClass *v4; // ebx
   int *v5; // eax
-  int *v6; // esi
+  AbstractClass *v6; // esi
   int v10; // eax
   bool v11; // sf
   int i; // eax
@@ -22,7 +22,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   unsigned int v16; // edx
   _WORD *v20; // ebp
   _DWORD *v23; // eax
-  _DWORD *v24; // edi
+  VectorClass *v24; // edi
   bool v25; // cc
   __int16 *v36; // eax
   int v51; // eax
@@ -38,12 +38,11 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   int v76; // [esp+1Ch] [ebp-44h]
   __int64 v77; // [esp+20h] [ebp-40h]
   __int64 v78; // [esp+28h] [ebp-38h]
-  _DWORD *v79; // [esp+30h] [ebp-30h]
+  AbstractClass *v79; // [esp+30h] [ebp-30h]
   int v80; // [esp+34h] [ebp-2Ch] BYREF
   double v81[2]; // [esp+38h] [ebp-28h] BYREF
   __int64 v82; // [esp+48h] [ebp-18h] BYREF
   __int64 v83; // [esp+50h] [ebp-10h]
-
   int v2 = 10 * a2; /*0x5a536e*/
   _DWORD * v3 = __2_YAPAXI_Z(80 * a2); /*0x5a5378*/
   if ( v3 ) /*0x5a5384*/
@@ -166,10 +165,10 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v20) + 14) = dword_ABC2B0; /*0x5a557c*/
       int v26 = v24[2]; /*0x5a557f*/
       if ( v24[4] < v26 /*0x5a55a2*/
-        || (*((_BYTE *)v24 + 13) || !v26)
+        || (v24->IsAllocated || !v26)
   int v27; // ecx
         && (v27 = v24[5], v27 > 0)
-        && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v24 + 8))(v24, v26 + v27, 0) )
+        && v24->Release(v26 + v27, 0) )
       {
         int v28 = v24[4]; /*0x5a55a9*/
         int v29 = v24[1]; /*0x5a55ac*/
@@ -189,7 +188,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
           && SHIWORD(v80) - (__int16)v80 < g_MapCellHeight_Value
           && v31 <= g_MapCellCount )
         {
-          _DWORD * v32 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v73); /*0x5a563b*/
+          VectorClass *v32 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v73); /*0x5a563b*/
           if ( Cell::IsEmpty(v32) && v32[17] == -1 ) /*0x5a5650*/
           {
             int v33 = SHIWORD(v73); /*0x5a5656*/
@@ -239,9 +238,9 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
                 unsigned int v48 = v6[3]; /*0x5a5768*/
                 ++*v6; /*0x5a576e*/
                 if ( LODWORD(v42) > v48 ) /*0x5a5770*/
-                  *((float *)v6 + 3) = v42; /*0x5a5772*/
+                  v6->vtable4 = v42; /*0x5a5772*/
                 if ( LODWORD(v42) < v6[4] ) /*0x5a5778*/
-                  *((float *)v6 + 4) = v42; /*0x5a577a*/
+                  v6->vtable2 = v42; /*0x5a577a*/
               }
             }
           }

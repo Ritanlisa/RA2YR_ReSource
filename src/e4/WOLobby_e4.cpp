@@ -20,7 +20,7 @@ int INIClass::WOLobby_Play()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const char *v1; // edx
-  int v2; // ebx
+  Coord *v2; // ebx
   int result; // eax
   int i; // esi
   __int16 v9; // [esp+244h] [ebp-4h]
@@ -30,7 +30,7 @@ int INIClass::WOLobby_Play()
   char v7[108]; // [esp+14h] [ebp-234h] BYREF
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/
     strcpy(&v7[36], this->__pad_0); /*0x5e3892*/
-    return (*(int (__stdcall **)(int, char *, const char *))(*(_DWORD *)v2 + 56))(v2, v7, v1); /*0x5e38a3*/
+    return v2->vt_slot_56(v7, v1); /*0x5e38a3*/
   }
   else
   {

@@ -6,7 +6,7 @@
 
 // 0x478340
 namespace gamemd {
-AbstractClass * FilePipe_38::Release(int a2, char * a3)
+AbstractClass * * FilePipe_38::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -14,7 +14,7 @@ AbstractClass * FilePipe_38::Release(int a2, char * a3)
   int v3 = a2; /*0x478342*/
   if ( a2 ) /*0x47834e*/
   {
-    char * v5 = a3; /*0x478354*/
+    AbstractClass *v5 = a3; /*0x478354*/
     this->q00C = 0; /*0x478358*/
     if ( a3 ) /*0x47835d*/
     {

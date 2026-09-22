@@ -7,7 +7,7 @@
 
 // 0x6E4F60
 namespace gamemd {
-TriggerClass * TagClass::Destructor(void ** a1, AbstractClass * a2)
+TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -237,7 +237,7 @@ int TagClass::HasValidHouse()
 
 // 0x71ADE0
 namespace gamemd {
-Coord * TagClass::Unlink()
+Coord * * TagClass::Unlink()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -245,7 +245,7 @@ Coord * TagClass::Unlink()
 
   *(_BYTE *)(this->firstTrigger + 624) = 0; /*0x71ade9*/
   *(_DWORD *)(this->firstTrigger + 632) = 0; /*0x71adf2*/
-  int v2 = this->q011; /*0x71adf8*/
+  Coord *v2 = this->q011; /*0x71adf8*/
   this->firstTrigger = 0; /*0x71adfd*/
   if ( v2 ) /*0x71ae00*/
   {

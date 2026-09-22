@@ -5,7 +5,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x5FB320
-ObjectClass * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
+ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -16,7 +16,7 @@ ObjectClass * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3,
   __int16 v30; // ax
   int v39; // esi
   int *v40; // eax
-  _DWORD *v41; // esi
+  CampaignScore *v41; // esi
   int v42; // eax
   int m; // esi
   __int16 v49; // ax
@@ -83,7 +83,7 @@ ObjectClass * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3,
     {
       if ( sub_48BB60(v50) ) /*0x5fbb66*/
       {
-        int v53 = dword_87F5D8[43]; /*0x5fbbac*/
+        ObjectClass *v53 = dword_87F5D8[43]; /*0x5fbbac*/
         int v54 = 0; /*0x5fbbb4*/
         if ( dword_87F5D8[43] > 0 ) /*0x5fbbb8*/
         {
@@ -253,14 +253,14 @@ LABEL_127:
         int v8 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1227); /*0x5fb3d9*/
         int v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 16))(v7); /*0x5fb3df*/
         ((void (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v8, 1202, 0, v9); /*0x5fb3eb*/
-        int v10 = dword_87F5D8[43]; /*0x5fb3ed*/
+        ObjectClass *v10 = dword_87F5D8[43]; /*0x5fb3ed*/
         int v11 = 0; /*0x5fb3f2*/
   int v74; // [esp+10h] [ebp-11Ch]
         LOWORD(v74) = 0; /*0x5fb3f6*/
         if ( dword_87F5D8[43] > 0 ) /*0x5fb3fa*/
         {
           char v12 = dword_87F5D8[45]; /*0x5fb3fc*/
-          void * v13 = (void *)dword_87F5D8[42]; /*0x5fb402*/
+          AbstractClass *v13 = (void *)dword_87F5D8[42]; /*0x5fb402*/
           while ( 1 ) /*0x5fb408*/
           {
             if ( !v12 ) /*0x5fb40a*/
@@ -345,7 +345,7 @@ LABEL_16:
       char v84 = 0; /*0x5fb93a*/
       v79[0] = &CCINIClass_Vtable; /*0x5fb93f*/
       INIClass::ClearSection((int)v79, 0, 0); /*0x5fb947*/
-      int v43 = dword_87F5D8[43]; /*0x5fb94c*/
+      ObjectClass *v43 = dword_87F5D8[43]; /*0x5fb94c*/
       for ( m = 0; m < dword_87F5D8[43]; ++m ) /*0x5fb955*/
       {
         if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fb95f*/
@@ -414,7 +414,7 @@ LABEL_16:
     v31 |= 0x100u; /*0x5fb761*/
   if ( (v30 & 0x800) != 0 ) /*0x5fb76a*/
     v31 = 0; /*0x5fb76c*/
-  int v32 = dword_87F5D8[43]; /*0x5fb76e*/
+  ObjectClass *v32 = dword_87F5D8[43]; /*0x5fb76e*/
   if ( !dword_87F5D8[43] ) /*0x5fb775*/
     goto LABEL_81; /*0x5fb775*/
   _DWORD * v33 = (_DWORD *)dword_87F5D8[46]; /*0x5fb77b*/
@@ -426,8 +426,8 @@ LABEL_16:
       dword_87F5D8[46] = 0; /*0x5fb7ae*/
       LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb7b8*/
     }
-    int v34 = dword_87F5D8[43]; /*0x5fb7bf*/
-    _DWORD * v35 = (_DWORD *)dword_87F5D8[42]; /*0x5fb7c5*/
+    ObjectClass *v34 = dword_87F5D8[43]; /*0x5fb7bf*/
+    AbstractClass *v35 = (_DWORD *)dword_87F5D8[42]; /*0x5fb7c5*/
     if ( dword_87F5D8[43] <= 0 ) /*0x5fb7cd*/
       goto LABEL_81; /*0x5fb7cd*/
     while ( 1 ) /*0x5fb7da*/
@@ -469,8 +469,8 @@ LABEL_85:
     dword_87F5D8[46] = 0; /*0x5fb841*/
     LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb84b*/
   }
-  int v37 = dword_87F5D8[43]; /*0x5fb852*/
-  _DWORD * v38 = (_DWORD *)dword_87F5D8[42]; /*0x5fb858*/
+  ObjectClass *v37 = dword_87F5D8[43]; /*0x5fb852*/
+  AbstractClass *v38 = (_DWORD *)dword_87F5D8[42]; /*0x5fb858*/
   if ( dword_87F5D8[43] <= 0 ) /*0x5fb860*/
     goto LABEL_79; /*0x5fb860*/
   while ( 1 ) /*0x5fb869*/

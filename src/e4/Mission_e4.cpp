@@ -50,7 +50,7 @@ int Mission::ExecuteTechnoMissionAction()
                           * ((unsigned int)Random::State((_DWORD *)g_ScenarioClass_Instance + 134)
                            % g_RulesClass_Instance->BuildingGarrisonedSound[1]));
             v8 = *this; /*0x520c94*/
-            char v20 = &v20; /*0x520c96*/
+            BuildingTypeClass *v20 = &v20; /*0x520c96*/
 LABEL_19:
             int * v9 = (int *)this->vt_slot_72(v6); /*0x520c9a*/
             AnimClass::ctor(v4, v7, v9, 0, 1, (void *)0x600, 0, 0); /*0x520ca4*/
@@ -197,7 +197,7 @@ char Mission::ProcessUnitMissionAI()
     if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) ) /*0x520f72*/
     {
       int v2 = *(this + 361); /*0x520f79*/
-      int v3 = *this; /*0x520f7f*/
+      SpeedType *v3 = *this; /*0x520f7f*/
       if ( v2 ) /*0x520f86*/
       {
         this->vt_slot_1152(v2, 1); /*0x520f97*/
@@ -237,7 +237,7 @@ char Mission::ProcessUnitMissionAI()
   int v20; // [esp+58h] [ebp-24h]
             LOWORD(v20) = *v8 / 256; /*0x521099*/
             HIWORD(v20) = v8[1] / 256; /*0x5210af*/
-            int v9 = *this; /*0x5210b8*/
+            SpeedType *v9 = *this; /*0x5210b8*/
             v22 = v20; /*0x5210bb*/
             int v19 = this->vt_slot_800(); /*0x5210c9*/
             int v10 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, &v21) + 80) >> 8; /*0x5210de*/
@@ -485,7 +485,7 @@ int Mission::GetMissionDelay()
 {
   int result; // eax
 
-  int v1 = this->q180; /*0x70f770*/
+  ObjectClass *v1 = this->q180; /*0x70f770*/
   result = this->q188; /*0x70f779*/
   _DWORD * v3 = this + 96; /*0x70f783*/
   if ( v1 != -1 ) /*0x70f789*/

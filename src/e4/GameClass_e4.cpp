@@ -210,14 +210,14 @@ int GameClass::FindOpenSlot()
   while ( 1 ) /*0x5d6387*/
   {
   char v5; // al
-    int v4 = *(_DWORD *)(g_MultiplayerGameState + 4 * v2); /*0x5d6387*/
+    AbstractClass *v4 = *(_DWORD *)(g_MultiplayerGameState + 4 * v2); /*0x5d6387*/
     if ( IsRandMap::Sed(v4) ) /*0x5d638c*/
     {
       v5 = this->vt_slot_60(); /*0x5d6399*/
     }
     else
     {
-      if ( !*(_BYTE *)(v4 + 380) && Network::IsMultiplayerActive() ) /*0x5d63a8*/
+      if ( !v4->q5F0 && Network::IsMultiplayerActive() ) /*0x5d63a8*/
         goto LABEL_8; /*0x5d63af*/
       v5 = ((GameClass *)((char *)this + 48)).initPlayerData(); /*0x5d63b7*/
     }
@@ -267,7 +267,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
     {
       if ( *(_DWORD *)(this + 52) ) /*0x632e01*/
       {
-        signed int v9 = *(_DWORD *)(this + 320); /*0x632e6f*/
+        ModemGame *v9 = *(_DWORD *)(this + 320); /*0x632e6f*/
         if ( v9 >= aP2 ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
         memcpy((void *)(*(_DWORD *)(this + 316) - *(_DWORD *)(this + 320) + this + 60), (AbstractClass *)Src, v9); /*0x632e97*/
@@ -318,7 +318,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   Pipe Src[16]; // [esp+14h] [ebp-100h] BYREF
 
   char * v3 = a2; /*0x633138*/
-  signed int v4 = Size; /*0x633141*/
+  ModemGame *v4 = Size; /*0x633141*/
   if ( !a2 ) /*0x63314c*/
     return Delegate::Invoke((_DWORD *)this, (int)a2, (Straw *)Size); /*0x63314c*/
   if ( Size < 1 ) /*0x633155*/
@@ -326,7 +326,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   int v6 = *(_DWORD *)(this + 56); /*0x63315b*/
   if ( !v6 ) /*0x633160*/
     return Delegate::Invoke((_DWORD *)this, (int)a2, (Straw *)Size); /*0x6332e5*/
-  signed int v16 = 0; /*0x633169*/
+  ModemGame *v16 = 0; /*0x633169*/
   if ( this->q003 ) /*0x633166*/
   {
     if ( *(_DWORD *)(this + 52) == 1 ) /*0x63317d*/
@@ -402,7 +402,7 @@ int GameClass::initPlayerData(const char ** a2)
 
 // 0x6BEC60
 namespace gamemd {
-ObjectClass * GameClass::Shutdown()
+ObjectClass * * GameClass::Shutdown()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -579,7 +579,7 @@ int GameClass::processNetworkPacket(void * Src, signed int Size)
   if ( v5 && Src && Size > 0 ) /*0x7ba3db*/
   {
     int v6 = this->q004; /*0x7ba3dd*/
-    signed int v7 = Size; /*0x7ba3e3*/
+    ModemGame *v7 = Size; /*0x7ba3e3*/
     if ( v6 ) /*0x7ba3e5*/
     {
       signed int v8 = v6 - *((_DWORD *)this + 6); /*0x7ba3ea*/

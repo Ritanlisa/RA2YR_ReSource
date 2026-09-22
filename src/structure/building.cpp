@@ -135,7 +135,7 @@ BuildingClass::BuildingClass() noexcept
 
 // IDA 0x43b740
 // 0x43b740
-AbstractClass * BuildingClass::Construct()
+AbstractClass * * BuildingClass::Construct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x43b740
@@ -1294,7 +1294,7 @@ int BuildingClass::Activate()
 
 // IDA 0x452480: deactivate building power
 // 0x452480
-BuildingTypeClass * BuildingClass::Deactivate()
+BuildingTypeClass * * BuildingClass::Deactivate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1991,7 +1991,7 @@ int BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 
 // IDA 0x44d310: validate placement passes all checks
 // 0x480630
-AbstractClass * BuildingClass::ValidatePlacement() {
+AbstractClass * * BuildingClass::ValidatePlacement() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v4; // esi
@@ -9075,7 +9075,7 @@ void BuildingClass::ReassignFlagPosition() {}
 
 // IDA 0x44f620: toggle primary factory status
 // 0x447e90
-BuildingTypeClass * BuildingClass::TogglePrimaryFactory()
+BuildingTypeClass * * BuildingClass::TogglePrimaryFactory()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x447e90
@@ -9122,7 +9122,7 @@ int BuildingClass::Mission_Construction()
 
 // IDA 0x459ec0: returns 6 (wait timer constant)
 // 0x443c60
-VectorClass * BuildingClass::UpdateConstruction()
+VectorClass * * BuildingClass::UpdateConstruction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x443c60
@@ -12516,7 +12516,7 @@ retn
 
 // IDA 0x44d2c0: sell effects at location
 // 0x480cb0
-AbstractClass * BuildingClass::SellEffects()
+AbstractClass * * BuildingClass::SellEffects()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -13496,7 +13496,7 @@ void BuildingClass::Disappear_PrismForward() {}
 
 // IDA 0x43c2d0: main mission controller (handles production, sell, repair, etc.)
 // 0x43c2d0
-BuildingTypeClass * BuildingClass::MissionController()
+BuildingTypeClass * * BuildingClass::MissionController()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x43c2d0
@@ -15519,7 +15519,7 @@ bool BuildingClass::IsPoweredOn()
 // power during low-power conditions, buildings in a power-outage grace period,
 // buildings under construction or being sold (unless they have an engineer).
 // 0x4555d0
-BuildingTypeClass * BuildingClass::IsPoweredActive()
+BuildingTypeClass * * BuildingClass::IsPoweredActive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4555d0
@@ -15536,9 +15536,9 @@ BuildingTypeClass * BuildingClass::IsPoweredActive()
   if ( !result ) /*0x455603*/
     goto LABEL_20; /*0x455603*/
   result = this->gattlingValue; /*0x455609*/
-  if ( *(_BYTE *)(result + 5491) ) /*0x45560f*/
+  if ( result->Powered ) /*0x45560f*/
   {
-    if ( *(int *)(result + 3812) > 0 ) /*0x455621*/
+    if ( result->BuildingAnimFrame_6 > 0 ) /*0x455621*/
     {
       PowerRatio = HouseClass::GetPowerRatio((int *)this->owner); /*0x455629*/
       bool v4 = PowerRatio < 1.0; /*0x45562e*/
@@ -15550,8 +15550,8 @@ BuildingTypeClass * BuildingClass::IsPoweredActive()
         goto LABEL_20; /*0x455641*/
     }
   }
-  int v8 = this->gattlingValue; /*0x455643*/
-  if ( *(_BYTE *)(v8 + 5492) ) /*0x455649*/
+  BuildingTypeClass *v8 = this->gattlingValue; /*0x455643*/
+  if ( v8->PoweredSpecial ) /*0x455649*/
   {
     int v9 = this->owner; /*0x455653*/
     int v10 = *(_DWORD *)(v9 + 676); /*0x455659*/
@@ -15572,7 +15572,7 @@ LABEL_14:
     goto LABEL_14; /*0x45567a*/
   }
 LABEL_15:
-  if ( !*(_BYTE *)(v8 + 5458) || this->q6CC ) /*0x455690*/
+  if ( !v8->NeedsEngineer || this->q6CC ) /*0x455690*/
   {
     result = (*(int (__thiscall **)(#377 *))(this->q184)(this); /*0x45569e*/
     if ( result != 18 ) /*0x4556a7*/
@@ -15692,7 +15692,7 @@ int BuildingClass::GetPowerFrame()
 
 // IDA 0x447780: start production of type_index
 // 0x447780
-BuildingTypeClass * BuildingClass::StartProduction(int type_index)
+BuildingTypeClass * * BuildingClass::StartProduction(int type_index)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x447780
@@ -16195,7 +16195,7 @@ retn    4
 
 // IDA 0x447ab0: update production timer
 // 0x4496b0
-BuildingTypeClass * BuildingClass::CheckState1()
+BuildingTypeClass * * BuildingClass::CheckState1()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4496b0
@@ -18870,7 +18870,7 @@ void BuildingClass::AcquireTarget() {}
 
 // IDA 0x445f00: select target type flags
 // 0x445f00
-BuildingTypeClass * BuildingClass::SelectTargetTypeFlags()
+BuildingTypeClass * * BuildingClass::SelectTargetTypeFlags()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x445f00
@@ -18930,7 +18930,7 @@ bool BuildingClass::CheckBridge() { return false; }
 
 // IDA 0x4576f0: destroy building on bridge collapse
 // 0x4576f0
-ObjectClass * BuildingClass::DestroyOnBridgeCollapse()
+ObjectClass * * BuildingClass::DestroyOnBridgeCollapse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -19039,7 +19039,7 @@ CoordStruct* BuildingClass::GetBridgeAwareCoords(CoordStruct* out) const
 
 // IDA 0x44ced0: deploy building
 // 0x62a4a0
-BuildingTypeClass * BuildingClass::Deploy()
+BuildingTypeClass * * BuildingClass::Deploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -19780,7 +19780,7 @@ retn    10h
 
 // IDA 0x451f60: sync crate visual state
 // 0x451f60
-BuildingTypeClass * BuildingClass::SyncCrateVisuals()
+BuildingTypeClass * * BuildingClass::SyncCrateVisuals()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -20363,7 +20363,7 @@ void BuildingClass::Update()
 
 // IDA 0x44e8f0: object expired notification
 // 0x44e8f0
-BuildingTypeClass * BuildingClass::OnObjectExpired(ObjectClass* obj)
+BuildingTypeClass * * BuildingClass::OnObjectExpired(ObjectClass* obj)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x44e8f0
@@ -21297,7 +21297,7 @@ void BuildingClass::ReadConstructionData() {}
 
 // IDA 0x4527d0: check if has occupant audio
 // 0x4527d0
-BuildingTypeClass * BuildingClass::HasOccupantAudio()
+BuildingTypeClass * * BuildingClass::HasOccupantAudio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4527d0
@@ -21983,7 +21983,7 @@ retn    8
 
 // IDA 0x459c20: process upgrade targeting
 // 0x459c20
-BuildingTypeClass * BuildingClass::ProcessUpgradeTargeting()
+BuildingTypeClass * * BuildingClass::ProcessUpgradeTargeting()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -22173,7 +22173,7 @@ int BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
   int result; // eax
 
   _DWORD *v5; // [esp+4h] [ebp+4h] BYREF
-  _DWORD * v1 = v5; /*0x453d60*/
+  BuildingClass *v1 = v5; /*0x453d60*/
   LOWORD(v5) = *v5 / 256; /*0x453d72*/
   HIWORD(v5) = v1[1] / 256; /*0x453d8b*/
   _DWORD * v2 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v5); /*0x453d9d*/
@@ -22192,7 +22192,7 @@ int BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
   int result; // eax
 
   _DWORD *v5; // [esp+4h] [ebp+4h] BYREF
-  _DWORD * v1 = v5; /*0x453dc0*/
+  BuildingClass *v1 = v5; /*0x453dc0*/
   LOWORD(v5) = *v5 / 256; /*0x453dd2*/
   HIWORD(v5) = v1[1] / 256; /*0x453deb*/
   _DWORD * v2 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v5); /*0x453dfd*/
@@ -22510,7 +22510,7 @@ int BuildingClass::GetCursorAction() { return 0; }
 
 // IDA 0x70f6e0: update threat bounds for AI
 // 0x70f6e0
-BuildingTypeClass * BuildingClass::UpdateThreatBounds()
+BuildingTypeClass * * BuildingClass::UpdateThreatBounds()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x70f6e0

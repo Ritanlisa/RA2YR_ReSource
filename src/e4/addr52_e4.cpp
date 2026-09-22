@@ -326,7 +326,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // ebx
-  char *v14; // ecx
+  Color *v14; // ecx
   char *v15; // edx
   char *v16; // esi
   unsigned __int8 *v21; // [esp-Ch] [ebp-7Ch]
@@ -334,7 +334,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   char *v25; // [esp+14h] [ebp-5Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  char * v6 = String::GetOrEmpty_Alt(a4); /*0x529e85*/
+  Color *v6 = String::GetOrEmpty_Alt(a4); /*0x529e85*/
   a4 = (char **)v6; /*0x529e87*/
   char * v7 = String::GetOrEmpty_Alt((char **)Source); /*0x529e90*/
   Source = &g_INI_DefaultBuffer; /*0x529e98*/
@@ -349,8 +349,8 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
     unsigned int v17 = strlen(v7) + 1; /*0x529fab*/
   int v26[3]; // [esp+18h] [ebp-58h] BYREF
     unsigned int * v18 = KeyValuePair::Init(v26, 0); /*0x529fb7*/
-    int v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x529fca*/
-    int v23 = v19; /*0x529fcf*/
+    INIClass *v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x529fca*/
+    INIClass *v23 = v19; /*0x529fcf*/
     if ( !HashTable::BinarySearch((int)(this + 10), &v23) /*0x529ff0*/
   int v24; // [esp+10h] [ebp-60h] BYREF
       || (v24 = v19, (v8 = *(_DWORD *)SortedArray::FindValue((int)(this + 10), &v24)) == 0) )
@@ -369,7 +369,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
     v21 = (unsigned __int8 *)a4; /*0x529edb*/
   int v27[3]; // [esp+24h] [ebp-4Ch] BYREF
     unsigned int * v10 = KeyValuePair::Init(v27, 0); /*0x529ee2*/
-    int v11 = v8 + 44; /*0x529ef5*/
+    ObjectClass *v11 = v8 + 44; /*0x529ef5*/
     a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1); /*0x529efb*/
     if ( SortedArray::Find(v11, (int *)&a4) ) /*0x529f02*/
     {
@@ -509,7 +509,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // ebx
-  float v14; // ecx
+  Color *v14; // ecx
   float *v15; // edx
   float v16; // esi
   unsigned __int8 *v21; // [esp-Ch] [ebp-7Ch]
@@ -518,7 +518,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
   float v26[3]; // [esp+18h] [ebp-58h] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  char * v6 = String::GetOrEmpty_Alt(a4); /*0x52a305*/
+  Color *v6 = String::GetOrEmpty_Alt(a4); /*0x52a305*/
   a4 = (char **)v6; /*0x52a307*/
   char * v7 = String::GetOrEmpty_Alt((char **)LODWORD(Source)); /*0x52a310*/
   Source = COERCE_FLOAT(&g_INI_DefaultBuffer); /*0x52a318*/
@@ -532,8 +532,8 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
   {
     unsigned int v17 = strlen(v7) + 1; /*0x52a443*/
     unsigned int * v18 = KeyValuePair::Init(v26, 0); /*0x52a44f*/
-    int v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x52a462*/
-    int v23 = v19; /*0x52a467*/
+    INIClass *v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x52a462*/
+    INIClass *v23 = v19; /*0x52a467*/
     if ( !HashTable::BinarySearch((int)(this + 10), &v23) /*0x52a488*/
   int v24; // [esp+10h] [ebp-60h] BYREF
       || (v24 = v19, (v8 = *(_DWORD *)SortedArray::FindValue((int)(this + 10), &v24)) == 0) )
@@ -552,7 +552,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
     v21 = (unsigned __int8 *)a4; /*0x52a35b*/
   int v27[3]; // [esp+24h] [ebp-4Ch] BYREF
     unsigned int * v10 = KeyValuePair::Init(v27, 0); /*0x52a362*/
-    int v11 = v8 + 44; /*0x52a375*/
+    ObjectClass *v11 = v8 + 44; /*0x52a375*/
     a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1); /*0x52a37b*/
     if ( SortedArray::Find(v11, (int *)&a4) ) /*0x52a382*/
     {
@@ -587,7 +587,7 @@ LABEL_18:
   v16 = v25; /*0x52a436*/
 LABEL_19:
   *a2 = v14; /*0x52a4b8*/
-  *((_DWORD *)a2 + 1) = v15; /*0x52a4c0*/
+  a2->q004 = v15; /*0x52a4c0*/
   a2[2] = v16; /*0x52a4c3*/
   return a2; /*0x52a4c6*/
 }
@@ -596,12 +596,12 @@ LABEL_19:
 
 // 0x52A4D0
 namespace gamemd {
-ObjectClass * E4Recv_52A4D0::sub_52A4D0(unsigned char * a2)
+ObjectClass * * E4Recv_52A4D0::sub_52A4D0(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v4; // ecx
-  size_t v10; // eax
+  ObjectClass *v4; // ecx
+  ObjectClass *v10; // eax
   int v14; // edi
   int v15; // edx
   unsigned int v17[3]; // [esp+Ch] [ebp-Ch] BYREF
@@ -615,7 +615,7 @@ ObjectClass * E4Recv_52A4D0::sub_52A4D0(unsigned char * a2)
   v18 = v3; /*0x52a510*/
   if ( !v4 ) /*0x52a514*/
     return 0; /*0x52a514*/
-  _DWORD * v6 = *(_DWORD **)(this + 60); /*0x52a51a*/
+  AudioController *v6 = *(_DWORD **)(this + 60); /*0x52a51a*/
   if ( v6 && *v6 == v5 ) /*0x52a523*/
     goto LABEL_9; /*0x52a523*/
   if ( !(unsigned char)this->M56 ) /*0x52a525*/
@@ -624,7 +624,7 @@ ObjectClass * E4Recv_52A4D0::sub_52A4D0(unsigned char * a2)
     this->M60 = 0; /*0x52a53e*/
     *(_BYTE *)(this + 56) = 1; /*0x52a541*/
   }
-  int v7 = this->M48; /*0x52a545*/
+  ObjectClass *v7 = this->M48; /*0x52a545*/
   int v8 = this->M44; /*0x52a54d*/
   v17[0] = v5; /*0x52a550*/
   int v9 = UI_Find(v8, v7, (int *)v17); /*0x52a554*/
@@ -635,7 +635,7 @@ LABEL_9:
   v10 = this->M48; /*0x52a564*/
   if ( !v10 ) /*0x52a56a*/
     return unk_B78830; /*0x52a56a*/
-  _DWORD * v11 = *(_DWORD **)(this + 60); /*0x52a56c*/
+  AudioController *v11 = *(_DWORD **)(this + 60); /*0x52a56c*/
   if ( v11 && *v11 == v5 ) /*0x52a575*/
     return *(_DWORD *)(this->M60 + 4); /*0x52a5f3*/
   if ( !(unsigned char)this->M56 ) /*0x52a577*/
@@ -644,7 +644,7 @@ LABEL_9:
     this->M60 = 0; /*0x52a590*/
     *(_BYTE *)(this + 56) = 1; /*0x52a593*/
   }
-  int v12 = this->M48; /*0x52a597*/
+  ObjectClass *v12 = this->M48; /*0x52a597*/
   int v13 = this->M44; /*0x52a59a*/
   if ( v12 <= 0 ) /*0x52a59f*/
     return unk_B78830; /*0x52a59f*/
@@ -677,7 +677,7 @@ LABEL_19:
 
 // 0x52A610
 namespace gamemd {
-ObjectClass * E4Recv_52A610::sub_52A610(void * a2)
+ObjectClass * * E4Recv_52A610::sub_52A610(void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2534,7 +2534,7 @@ char CommandLine_Parse(int a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v4; // esi
-  char *v5; // esi
+  AbstractClass *v5; // esi
   __int16 v10; // ax
   unsigned __int16 v11; // ax
   char *v13; // esi
@@ -2549,7 +2549,6 @@ char CommandLine_Parse(int a1, int a2)
   char **v25; // [esp+18h] [ebp-20h]
   int v27; // [esp+20h] [ebp-18h]
   __int16 v29; // [esp+28h] [ebp-10h]
-
   v27 = a1; /*0x52f630*/
   ScenarioClass::ResetIntroFlags(&g_IntroMovieObject); /*0x52f634*/
   ArmageddonMode = 0; /*0x52f63e*/
@@ -2616,7 +2615,7 @@ LABEL_64:
   }
   if ( Checksummer::HashString(v5) == -648255326 ) /*0x52f787*/
   {
-    int v6 = g_IntroMovieObject; /*0x52f789*/
+    AbstractClass *v6 = g_IntroMovieObject; /*0x52f789*/
     LOBYTE(v6) = g_IntroMovieObject | 4; /*0x52f78e*/
     g_IntroMovieObject = v6; /*0x52f790*/
     goto LABEL_64; /*0x52f795*/
@@ -2698,7 +2697,7 @@ LABEL_64:
   }
   if ( strstr(v5, aAttract) ) /*0x52f9df*/
   {
-    int v12 = g_NetworkEventPending; /*0x52f9eb*/
+    Movie *v12 = g_NetworkEventPending; /*0x52f9eb*/
     LOBYTE(v12) = g_NetworkEventPending | 4; /*0x52f9f0*/
     g_NetworkEventPending = v12; /*0x52f9f2*/
     goto LABEL_64; /*0x52f9f7*/
@@ -2749,7 +2748,7 @@ LABEL_67:
 
 // 0x52FC20
 namespace gamemd {
-Straw * Random_Init()
+Straw * * Random_Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

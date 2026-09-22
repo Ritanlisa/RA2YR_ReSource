@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x408E70
-AbstractClass * Count::DecrementRefCountsAudio()
+AbstractClass * * Count::DecrementRefCountsAudio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -33,7 +33,7 @@ int Count::SetupAllCountriesLobby()
   wchar_t **v2; // esi
   int ResourceID2; // ebp
   BOOL result; // eax
-  wchar_t *v5; // ebx
+  SessionClass *v5; // ebx
   int PlayerSide; // esi
   HWND hWnd; // [esp+1Ch] [ebp-4h]
 
@@ -49,7 +49,7 @@ int Count::SetupAllCountriesLobby()
     if ( result ) /*0x46f70c*/
     {
       v5 = *v2; /*0x46f718*/
-      int v6 = -2; /*0x46f71c*/
+      CampaignClass *v6 = -2; /*0x46f71c*/
       if ( g_GameStateFlags && (g_GameMode_Current == 3 || g_GameMode_Current == 4) ) /*0x46f730*/
         v6 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 40))(g_GameStateFlags); /*0x46f737*/
       if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f73b*/

@@ -209,7 +209,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v99 = v10; /*0x58250c*/
   v111 = v12 + v106 - 1; /*0x582518*/
   v102 = (_DWORD *)*(this + (_DWORD)aP2 + 32); /*0x582527*/
-  int v13 = LOBYTE(aP1->field_8); /*0x58252d*/
+  IUnknown *v13 = LOBYTE(aP1->field_8); /*0x58252d*/
   while ( v9 >= v10 ) /*0x582538*/
   {
     __int64 v14 = LOBYTE(v7->field_8) - v13; /*0x582541*/
@@ -283,7 +283,7 @@ LABEL_14:
       }
     }
   }
-  int v30 = LOBYTE(v6->field_8); /*0x5826a9*/
+  IUnknown *v30 = LOBYTE(v6->field_8); /*0x5826a9*/
   if ( SHIWORD(v6->field_4) == v98 ) /*0x5826ae*/
   {
     do /*0x5826f5*/
@@ -597,7 +597,7 @@ LABEL_102:
 
 // 0x584550
 namespace gamemd {
-AbstractClass * Radar::Update(IUnknown * aP1)
+AbstractClass * * Radar::Update(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -759,7 +759,7 @@ LABEL_23:
           int v19 = *((unsigned __int16 *)&v111->field_0 + (_DWORD)v18); /*0x584776*/
           _DWORD * v20 = (_DWORD *)(*(_DWORD *)v93 + 36 * v19); /*0x584782*/
           _DWORD * v98 = v20; /*0x584785*/
-          int v21 = v20[4] - 1; /*0x58478c*/
+          AbstractClass *v21 = v20[4] - 1; /*0x58478c*/
           aP3 = (IUnknown *)v21; /*0x58478d*/
           if ( v21 >= 0 ) /*0x584791*/
           {
@@ -853,7 +853,7 @@ LABEL_73:
         }
         while ( !v42 ); /*0x584b53*/
       }
-      int v50 = 0; /*0x584b55*/
+      AbstractClass *v50 = 0; /*0x584b55*/
       aP3b = 0; /*0x584b57*/
       do /*0x584c85*/
       {
@@ -1104,10 +1104,10 @@ LABEL_72:
       }
     }
     int v76 = 2; /*0x584d64*/
-    char * v77 = &v2->__pad_A8[20]; /*0x584d69*/
+    Coord *v77 = &v2->__pad_A8[20]; /*0x584d69*/
     do /*0x584d84*/
     {
-      (*(void (__thiscall **)(char *))(*(_DWORD *)v77 + 12))(v77); /*0x584d73*/
+      v77->vt_slot_12(); /*0x584d73*/
       Subzone::BuildGraph(v2, (IUnknown *)v76--); /*0x584d79*/
       v77 -= 24; /*0x584d7f*/
     }
@@ -1202,7 +1202,7 @@ int Radar::PixelIndex()
 
 // 0x656EC0
 namespace gamemd {
-MapClass * Radar::RenderMinimap()
+MapClass * * Radar::RenderMinimap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1211,18 +1211,18 @@ MapClass * Radar::RenderMinimap()
   int j; // ebp
   int k; // ebp
   ConvertClass *v92; // [esp+56h] [ebp-30h]
-  int v2 = this + 4620; /*0x656ec9*/
+  IUnknown *v2 = this + 4620; /*0x656ec9*/
   int v95 = this + 4620; /*0x656ed1*/
   _BYTE v96[32]; // [esp+66h] [ebp-20h] BYREF
   *(_DWORD *)&v96[16] = *(_DWORD *)(this + 4620); /*0x656ed7*/
   *(_DWORD *)&v96[20] = *(_DWORD *)(this + 4624); /*0x656ede*/
   *(_DWORD *)&v96[24] = *(_DWORD *)(this + 4628); /*0x656ee5*/
-  int v3 = *(_DWORD *)(this + 5296); /*0x656ee9*/
-  *(_DWORD *)&v96[28] = *(_DWORD *)(v2 + 12); /*0x656ef9*/
+  MapClass *v3 = *(_DWORD *)(this + 5296); /*0x656ee9*/
+  *(_DWORD *)&v96[28] = v2->q00C; /*0x656ef9*/
   char v86; // [esp+40h] [ebp-46h]
   if ( v3 != 1 || (v86 = 1, *(_DWORD *)(this + 5292) != 1) ) /*0x656f0b*/
     v86 = 0; /*0x656f0d*/
-  int v91 = *(_DWORD *)&DataGlobal_87F8E4[30396] + *(_DWORD *)&DataGlobal_87F8E4[30404] / 2; /*0x656f28*/
+  IUnknown *v91 = *(_DWORD *)&DataGlobal_87F8E4[30396] + *(_DWORD *)&DataGlobal_87F8E4[30404] / 2; /*0x656f28*/
   v92 = (ConvertClass *)(*(_DWORD *)&DataGlobal_87F8E4[30400] /*0x656f3e*/
                        + *(_DWORD *)&DataGlobal_87F8E4[30408] / 2);
   v4 = (__int16 *)Tactical::PixelToCell( /*0x656f4e*/
@@ -1230,11 +1230,11 @@ MapClass * Radar::RenderMinimap()
                     (AbstractClass *)v96,
                     (IUnknown *)&v91);
   int * v5 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v4); /*0x656f59*/
-  int v6 = *(_DWORD *)(this + 5264); /*0x656f61*/
+  MapClass *v6 = *(_DWORD *)(this + 5264); /*0x656f61*/
   v91 = v5[9]; /*0x656f67*/
   int v7 = SHIWORD(v91); /*0x656f71*/
-  int v8 = (__int16)v91; /*0x656f76*/
-  int * v9 = (int *)(this + 5276); /*0x656f7b*/
+  MapClass *v8 = (__int16)v91; /*0x656f76*/
+  RadarClass *v9 = (int *)(this + 5276); /*0x656f7b*/
   int v10 = (__int16)v91 + v6 - SHIWORD(v91); /*0x656f81*/
   v91 = *(int *)(this + 5276); /*0x656f83*/
   int v88 = v10; /*0x656f87*/
@@ -1307,7 +1307,7 @@ MapClass * Radar::RenderMinimap()
     || HouseClass::ProcessData(dword_89C3B0) )
   {
   int v93; // [esp+5Ah] [ebp-2Ch]
-  int *v71; // edi
+  IUnknown *v71; // edi
   int v70; // ecx
   int v69; // edi
   int v62; // edx
@@ -1336,7 +1336,7 @@ MapClass * Radar::RenderMinimap()
       }
       for ( j = 0; j < *(_DWORD *)(this + 5364); ++j ) /*0x6572a3*/
       {
-        int v28 = j + *(_DWORD *)(this + 5356) - *v9; /*0x6572bd*/
+        MapClass *v28 = j + *(_DWORD *)(this + 5356) - *v9; /*0x6572bd*/
         *(_DWORD *)&v96[4] = *(_DWORD *)(this + 5360) - *(_DWORD *)(this + 5280); /*0x6572bf*/
         *(_DWORD *)v96 = v28; /*0x6572c3*/
         FogOfWar::RevealCell(this, (IUnknown *)v96); /*0x6572ce*/
@@ -1361,34 +1361,34 @@ MapClass * Radar::RenderMinimap()
         0,
         1);
       int v32 = *(_DWORD *)(this + 5280); /*0x65735b*/
-      int v33 = *v9 + *v31; /*0x65735e*/
+      IUnknown *v33 = *v9 + *v31; /*0x65735e*/
       int v34 = *(_DWORD *)(this + 4684); /*0x657360*/
       *(_DWORD *)v96 = v33; /*0x657363*/
       int v35 = v32 + v34; /*0x657367*/
       int v36 = *(_DWORD *)(this + 4692); /*0x657369*/
-      v37 = *(_DWORD *)(v2 + 8) <= 0; /*0x65736c*/
+      v37 = v2->q008 <= 0; /*0x65736c*/
       *(_DWORD *)&v96[4] = v35; /*0x657370*/
       int v38 = *(_DWORD *)(this + 4688); /*0x657374*/
       int v90 = v36; /*0x657377*/
       int v89 = v38; /*0x65737b*/
-      if ( v37 || *(int *)(v2 + 12) <= 0 ) /*0x657389*/
+      if ( v37 || v2->q00C <= 0 ) /*0x657389*/
       {
         v42 = v90; /*0x657478*/
       }
       else if ( v38 <= 0 || v36 <= 0 ) /*0x657399*/
       {
         v33 = *(_DWORD *)v2; /*0x65745f*/
-        *(_DWORD *)&v96[4] = *(_DWORD *)(v2 + 4); /*0x657464*/
-        v38 = *(_DWORD *)(v2 + 8); /*0x657468*/
-        v42 = *(_DWORD *)(v2 + 12); /*0x65746b*/
+        *(_DWORD *)&v96[4] = v2->q004; /*0x657464*/
+        v38 = v2->q008; /*0x657468*/
+        v42 = v2->q00C; /*0x65746b*/
       }
       else
       {
         v91 = *(int *)v2; /*0x6573a3*/
-        v92 = *(ConvertClass **)(v2 + 4); /*0x6573aa*/
-        int v39 = *(_DWORD *)(v2 + 8); /*0x6573ae*/
+        v92 = v2->q004; /*0x6573aa*/
+        int v39 = v2->q008; /*0x6573ae*/
         v93 = v39; /*0x6573b1*/
-        v94 = *(_DWORD *)(v2 + 12); /*0x6573b8*/
+        v94 = v2->q00C; /*0x6573b8*/
         if ( v91 > v33 ) /*0x6573c2*/
         {
           int v40 = v91 - v33; /*0x6573c4*/
@@ -1419,13 +1419,13 @@ MapClass * Radar::RenderMinimap()
         }
       }
       *(_DWORD *)v2 = v33; /*0x65747c*/
-      *(_DWORD *)(v2 + 4) = *(_DWORD *)&v96[4]; /*0x657482*/
+      v2->q004 = *(_DWORD *)&v96[4]; /*0x657482*/
       v88 = *v31; /*0x657488*/
       int v43 = v88; /*0x657485*/
-      *(_DWORD *)(v2 + 8) = v38; /*0x65748c*/
+      v2->q008 = v38; /*0x65748c*/
       int v44 = v43 + *(_DWORD *)(this + 4688); /*0x657495*/
       bool v45 = -*(_DWORD *)(this + 4688) < 0; /*0x657497*/
-      *(_DWORD *)(v2 + 12) = v42; /*0x657499*/
+      v2->q00C = v42; /*0x657499*/
       if ( v45 != __OFSUB__(v43, v44) ) /*0x65749c*/
       {
   int v47; // ecx
@@ -1469,9 +1469,9 @@ MapClass * Radar::RenderMinimap()
       {
         int v50 = VtableStub::72F510(); /*0x657595*/
         *(_DWORD *)v2 = *v9; /*0x65759b*/
-        *(_DWORD *)(v2 + 4) = *(_DWORD *)(this + 5280); /*0x6575a0*/
-        *(_DWORD *)(v2 + 8) = *(_DWORD *)(this + 5284); /*0x6575a6*/
-        *(_DWORD *)(v2 + 12) = *(_DWORD *)(this + 5288); /*0x6575af*/
+        v2->q004 = *(_DWORD *)(this + 5280); /*0x6575a0*/
+        v2->q008 = *(_DWORD *)(this + 5284); /*0x6575a6*/
+        v2->q00C = *(_DWORD *)(this + 5288); /*0x6575af*/
         *(_DWORD *)v96 = *(_DWORD *)(this + 4580); /*0x6575ba*/
         *(_DWORD *)&v96[4] = *(_DWORD *)(this + 4588); /*0x6575d7*/
   int *v51; // eax
@@ -1496,14 +1496,14 @@ MapClass * Radar::RenderMinimap()
           0,
           0);
       }
-      if ( *(int *)(v2 + 8) > 0 && *(int *)(v2 + 12) > 0 ) /*0x65760d*/
+      if ( v2->q008 > 0 && v2->q00C > 0 ) /*0x65760d*/
       {
-        int v52 = *(_DWORD *)(v2 + 8); /*0x65761e*/
-        int v53 = *(_DWORD *)(v2 + 4) - *(_DWORD *)(this + 5280); /*0x657621*/
-        int v54 = *(_DWORD *)(v2 + 12); /*0x657623*/
+        int v52 = v2->q008; /*0x65761e*/
+        int v53 = v2->q004 - *(_DWORD *)(this + 5280); /*0x657621*/
+        int v54 = v2->q00C; /*0x657623*/
         *(_DWORD *)v96 = *(_DWORD *)v2 - *v9; /*0x657626*/
         *(_DWORD *)&v96[4] = v53; /*0x657630*/
-        int v55 = *(_DWORD *)(this + 4636); /*0x65763d*/
+        MapClass *v55 = *(_DWORD *)(this + 4636); /*0x65763d*/
         *(_DWORD *)&v96[8] = v52; /*0x657643*/
         *(_DWORD *)&v96[12] = v54; /*0x657647*/
         (*(void (__thiscall **)(_DWORD, int, int, _BYTE *, _DWORD, int))(**(_DWORD **)&DataGlobal_87F8E4[31260] /*0x65764f*/
@@ -1541,7 +1541,7 @@ MapClass * Radar::RenderMinimap()
     }
     else
     {
-      if ( *(int *)(v2 + 8) > 0 && *(int *)(v2 + 12) > 0 ) /*0x6576e0*/
+      if ( v2->q008 > 0 && v2->q00C > 0 ) /*0x6576e0*/
       {
         v61 = *(_DWORD *)(this + 5356); /*0x6576e4*/
         v62 = *(_DWORD *)(this + 5360); /*0x6576e6*/
@@ -1555,16 +1555,16 @@ MapClass * Radar::RenderMinimap()
           v61 = *(_DWORD *)v2; /*0x657701*/
           *(_DWORD *)&v96[8] = v65; /*0x657703*/
         }
-        int v66 = *(_DWORD *)(v2 + 4); /*0x657707*/
+        int v66 = v2->q004; /*0x657707*/
         if ( v62 > v66 ) /*0x65770c*/
         {
           int v67 = v62 - v66 + *(_DWORD *)&v96[12]; /*0x657714*/
-          v62 = *(_DWORD *)(v2 + 4); /*0x657716*/
+          v62 = v2->q004; /*0x657716*/
           *(_DWORD *)&v96[12] = v67; /*0x657718*/
         }
-        if ( v61 + *(_DWORD *)&v96[8] < v64 + *(_DWORD *)(v2 + 8) ) /*0x657729*/
-          *(_DWORD *)&v96[8] = v64 - v61 + *(_DWORD *)(v2 + 8) + 1; /*0x657734*/
-        int v68 = *(_DWORD *)(v2 + 4) + *(_DWORD *)(v2 + 12); /*0x65773e*/
+        if ( v61 + *(_DWORD *)&v96[8] < v64 + v2->q008 ) /*0x657729*/
+          *(_DWORD *)&v96[8] = v64 - v61 + v2->q008 + 1; /*0x657734*/
+        int v68 = v2->q004 + v2->q00C; /*0x65773e*/
         v69 = *(_DWORD *)&v96[12]; /*0x657741*/
         if ( *(_DWORD *)&v96[12] + v62 < v68 ) /*0x65774a*/
           v69 = v68 - v62 + 1; /*0x65774f*/
@@ -1623,14 +1623,14 @@ LABEL_84:
       }
     }
     *(_DWORD *)v2 = v61; /*0x657831*/
-    *(_DWORD *)(v2 + 4) = v62; /*0x657834*/
-    *(_DWORD *)(v2 + 8) = v70; /*0x657837*/
-    *(_DWORD *)(v2 + 12) = v69; /*0x65783a*/
+    v2->q004 = v62; /*0x657834*/
+    v2->q008 = v70; /*0x657837*/
+    v2->q00C = v69; /*0x65783a*/
 LABEL_99:
     int v77 = *(_DWORD *)(this + 5344); /*0x65783d*/
-    int v78 = *(_DWORD *)(this + 5348); /*0x657849*/
+    MapClass *v78 = *(_DWORD *)(this + 5348); /*0x657849*/
     *(_DWORD *)(this + 5356) = *(_DWORD *)(this + 5340); /*0x65784f*/
-    int v79 = *(_DWORD *)(this + 5352); /*0x657855*/
+    MapClass *v79 = *(_DWORD *)(this + 5352); /*0x657855*/
     *(_DWORD *)(this + 5360) = v77; /*0x65785b*/
     *(_DWORD *)(this + 5364) = v78; /*0x657861*/
     *(_DWORD *)(this + 5368) = v79; /*0x657867*/
@@ -1639,9 +1639,9 @@ LABEL_99:
   if ( *(_DWORD *)(this + 4724) ) /*0x657872*/
   {
     *(_DWORD *)v96 = *(_DWORD *)(this + 4636); /*0x657884*/
-    int v80 = *(_DWORD *)v96; /*0x657882*/
+    MapClass *v80 = *(_DWORD *)v96; /*0x657882*/
     int v81 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)v96 + 128))(*(_DWORD *)v96); /*0x657896*/
-    memset(*(void **)(this + 4724), 0, v81 * (*(int (__thiscall **)(int))(*(_DWORD *)v80 + 124))(v80) / 8 + 1); /*0x6578b7*/
+    memset(*(void **)(this + 4724), 0, v81 * v80->IsAboveScreenMargin() / 8 + 1); /*0x6578b7*/
   }
   int v82; // eax
   LOBYTE(v82) = v86; /*0x6578c0*/
@@ -1651,9 +1651,9 @@ LABEL_99:
     int v84 = *(_DWORD *)&v96[24]; /*0x6578d0*/
     *(_DWORD *)v2 = *(_DWORD *)&v96[16]; /*0x6578d4*/
     v82 = *(_DWORD *)&v96[28]; /*0x6578d6*/
-    *(_DWORD *)(v2 + 4) = v83; /*0x6578da*/
-    *(_DWORD *)(v2 + 8) = v84; /*0x6578dd*/
-    *(_DWORD *)(v2 + 12) = v82; /*0x6578e0*/
+    v2->q004 = v83; /*0x6578da*/
+    v2->q008 = v84; /*0x6578dd*/
+    v2->q00C = v82; /*0x6578e0*/
   }
   return v82; /*0x6578e3*/
 }
@@ -1662,7 +1662,7 @@ LABEL_99:
 
 // 0x692610
 namespace gamemd {
-AbstractClass * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int aP3_4)
+AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int aP3_4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

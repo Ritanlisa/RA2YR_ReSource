@@ -221,24 +221,23 @@ int sub_6EC250(int a1, int a2)
   int i; // ebp
   int j; // eax
   wchar_t *v6; // edi
-
   result = g_HouseClass_AIProductionState; /*0x6ec253*/
   for ( i = 0; i < g_HouseClass_AIProductionState; ++i ) /*0x6ec265*/
   {
-    int v4 = *((_DWORD *)g_TeamClassPool + i); /*0x6ec275*/
-    if ( v4 && a2 == *(_DWORD *)(v4 + 44) && *(_DWORD *)(*(_DWORD *)(v4 + 36) + 180) < a1 ) /*0x6ec294*/
+    TeamClass *v4 = *((_DWORD *)g_TeamClassPool + i); /*0x6ec275*/
+    if ( v4 && a2 == v4->owner && *(_DWORD *)(v4->buildingType + 180) < a1 ) /*0x6ec294*/
     {
-      for ( j = *(_DWORD *)(v4 + 84); j; j = *(_DWORD *)(v4 + 84) ) /*0x6ec29b*/
+      for ( j = v4->firstUnit; j; j = v4->firstUnit ) /*0x6ec29b*/
         TeamClass::LiberateMember_Start(v4, j, 0xFFFFFFFF, 0); /*0x6ec2a4*/
-      *(_BYTE *)(v4 + 126) = 1; /*0x6ec2b0*/
-      *(_BYTE *)(v4 + 125) = 1; /*0x6ec2b3*/
+      v4->TeamClass_field_7E = 1; /*0x6ec2b0*/
+      v4->needsToDisappear = 1; /*0x6ec2b3*/
       v6 = g_CurrentFrame; /*0x6ec2bc*/
       int v7 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].AITriggerFailureWeightDelta * 900.0); /*0x6ec2ce*/
-      *(_BYTE *)(v4 + 131) = 1; /*0x6ec2da*/
-      *(_DWORD *)(v4 + 100) = v6; /*0x6ec2e0*/
+      v4->isSuspended = 1; /*0x6ec2da*/
+      v4->suspendTimer = v6; /*0x6ec2e0*/
   int v10; // [esp+10h] [ebp-8h]
-      *(_DWORD *)(v4 + 104) = v10; /*0x6ec2e2*/
-      *(_DWORD *)(v4 + 108) = v7; /*0x6ec2e5*/
+      v4->q01A = v10; /*0x6ec2e2*/
+      v4->q06C = v7; /*0x6ec2e5*/
     }
     result = g_HouseClass_AIProductionState; /*0x6ec2e8*/
   }
@@ -422,7 +421,7 @@ LABEL_19:
 
 // 0x6EFC70
 namespace gamemd {
-AbstractClass * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3)
+AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

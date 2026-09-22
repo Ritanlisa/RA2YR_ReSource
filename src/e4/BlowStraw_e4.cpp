@@ -16,7 +16,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
   int i; // edi
   char *FontClassEntry; // eax
 
-  int v4 = *(this + 5454); /*0x6d068b*/
+  IUnknown *v4 = *(this + 5454); /*0x6d068b*/
   int v5 = *(this + 5456); /*0x6d0691*/
   if ( v4 != -1 ) /*0x6d069a*/
   {
@@ -31,7 +31,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
     this->vt_slot_56(0); /*0x6d06ba*/
   }
 LABEL_6:
-  int v7 = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[33888] + 4); /*0x6d06bd*/
+  AbstractClass *v7 = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[33888] + 4); /*0x6d06bd*/
   if ( *a2 >= **(_DWORD **)&g_OverlayTypeConfig[33888] /*0x6d06dd*/
     && *a2 < **(_DWORD **)&g_OverlayTypeConfig[33888] + *(_DWORD *)&DataGlobal_87F8E4[30404] )
   {
@@ -165,7 +165,7 @@ CellStruct * * sub_731AF0()
 {
   wchar_t *result; // eax
   wchar_t *StringCSF; // eax
-  wchar_t *v3; // edi
+  CellStruct *v3; // edi
   wchar_t *v6; // eax
   result = g_SelectionManager; /*0x731af1*/
   if ( !g_SelectionManager ) /*0x731afa*/

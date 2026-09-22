@@ -15,9 +15,9 @@ void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  CoordStruct *v6; // edi
+  Coord *v6; // edi
   void **v7; // eax
-  AnimClass *v9; // esi
+  AbstractClass *v9; // esi
   CoordStruct aP2; // [esp+Ch] [ebp-18h] BYREF
 
   v6 = *(CoordStruct **)(*(_DWORD *)&stru_89E138[90140] + 4 * AnimTypeClass::FindIndex(a3)); /*0x43b5fb*/
@@ -26,8 +26,7 @@ void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
   v7 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x43b621*/
   if ( v7 ) /*0x43b62b*/
     v9 = AnimClass::ctor(v7, v6, &aP2, 0, (CoordStruct *)1, (void *)0x600, 0, 0); /*0x43b647*/
-  else
-    v9 = 0; /*0x43b64b*/
+  AbstractClass *v9 = 0; /*0x43b64b*/
   AnimClass::SetField95(v9, arg0); /*0x43b654*/
   Function::Method_424CA0(v9, (int)aP0); /*0x43b65c*/
   v9->__pad_194[9] = 1; /*0x43b661*/
@@ -549,7 +548,7 @@ int HouseClass::CanDetect()
 
 // 0x503040
 namespace gamemd {
-AbstractClass * HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
+AbstractClass * * HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1574,7 +1573,7 @@ LABEL_20:
 
 // 0x506EF0
 namespace gamemd {
-AbstractClass * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
+AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (v3 export truncated pseudocode — commented out; live version via get_context)
@@ -1650,8 +1649,8 @@ int HouseClass::UpdatePower()
   {
     do /*0x508ca5*/
     {
-      int v5 = *(_DWORD *)(this->absorbersCount + 4 * v4); /*0x508ca5*/
-      if ( v5 && !*(_BYTE *)(v5 + 129) && *(_BYTE *)(v5 + 116) ) /*0x508cb8*/
+      BuildingClass *v5 = *(_DWORD *)(this->absorbersCount + 4 * v4); /*0x508ca5*/
+      if ( v5 && !v5->inLimbo && v5->isOnMap ) /*0x508cb8*/
       {
         if ( g_GameMode_Current[0] ) /*0x508cc5*/
         {
@@ -1667,7 +1666,7 @@ LABEL_18:
             v12 = 1; /*0x508d32*/
           goto LABEL_21; /*0x508d32*/
         }
-        if ( *(_BYTE *)(v5 + 1051) || g_GameMode_Current[0] ) /*0x508cf0*/
+        if ( v5->isDiscoveredByCurrentPlayer || g_GameMode_Current[0] ) /*0x508cf0*/
           goto LABEL_18; /*0x508cf0*/
       }
 LABEL_21:
@@ -1676,7 +1675,7 @@ LABEL_21:
     while ( v4 < v13 ); /*0x508ca5*/
   }
   *(_BYTE *)(this + 22395) = v12; /*0x508d45*/
-  int v6 = this->powerBlackoutTimer; /*0x508d50*/
+  TimerStruct *v6 = this->powerBlackoutTimer; /*0x508d50*/
   int v7 = this->q0AB; /*0x508d56*/
   if ( v6 != -1 ) /*0x508d5f*/
   {
@@ -1720,7 +1719,7 @@ void * HouseClass::CanTogglePower()
   if ( (#375 *)this == HouseClass_Player ) /*0x508e01*/
   {
     int v2 = this->q2B8; /*0x508e07*/
-    int v3 = this->radarBlackoutTimer; /*0x508e10*/
+    TimerStruct *v3 = this->radarBlackoutTimer; /*0x508e10*/
   int v10; // [esp+0h] [ebp-Ch]
     LOBYTE(v10) = 0; /*0x508e1a*/
     if ( v3 != -1 ) /*0x508e1f*/
@@ -1785,7 +1784,7 @@ LABEL_29:
 
 // 0x5098F0
 namespace gamemd {
-CellStruct * HouseClass::UpdateAITryFireSW()
+CellStruct * * HouseClass::UpdateAITryFireSW()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2107,10 +2106,10 @@ void HouseClass::LostPoweredCenter(int a2)
       {
         do /*0x50e14c*/
         {
-          int v6 = *((_DWORD *)g_TechnoClass_Count + v5); /*0x50e11d*/
-          if ( *(_DWORD *)(v6 + 540) == this /*0x50e138*/
-            && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v6 + 132))(*((_DWORD *)g_TechnoClass_Count + v5)) == a2
-            && !*(_BYTE *)(v6 + 129) )
+          BuildingClass *v6 = *((_DWORD *)g_TechnoClass_Count + v5); /*0x50e11d*/
+          if ( v6->owner == this /*0x50e138*/
+            && v6->Vt34Thunk(*((_DWORD *)g_TechnoClass_Count + v5)) == a2
+            && !v6->inLimbo )
           {
             TechnoClass::Deactivate((_DWORD *)v6); /*0x50e144*/
             v4 = 1; /*0x50e149*/
@@ -2159,7 +2158,7 @@ int HouseClass::GetCameoTypeIndex(int a2)
 
 // 0x5D70F0
 namespace gamemd {
-AbstractClass * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
+AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2237,7 +2236,7 @@ LABEL_16:
   while ( v2 < (int)g_CrateCount ); /*0x5d7210*/
   v3 = v35; /*0x5d7216*/
 LABEL_20:
-  int v12 = 0; /*0x5d721a*/
+  InfantryTypeClass *v12 = 0; /*0x5d721a*/
   if ( *(int *)&HouseClass_Player[42508] > 0 ) /*0x5d7223*/
   {
   int v14; // esi
@@ -2414,7 +2413,7 @@ int HouseClass::InitAlliances()
 
 // 0x5EE9D0
 namespace gamemd {
-AbstractClass * HouseClass::FindStartPositions()
+AbstractClass * * HouseClass::FindStartPositions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2435,8 +2434,8 @@ AbstractClass * HouseClass::FindStartPositions()
   int v2 = HouseClass_Count; /*0x5eea06*/
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x5eea11*/
   {
-    int v4 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * i]; /*0x5eea1f*/
-    if ( !*(_BYTE *)(*(_DWORD *)(v4 + 52) + 422) && *(_BYTE *)(v4 + 492) ) /*0x5eea33*/
+    ObjectClass *v4 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * i]; /*0x5eea1f*/
+    if ( !*(_BYTE *)(v4->attachedTag + 422) && v4->q1EC ) /*0x5eea33*/
     {
       char v5 = 0; /*0x5eea47*/
       int v6 = -1; /*0x5eea49*/
@@ -2469,13 +2468,13 @@ AbstractClass * HouseClass::FindStartPositions()
     }
     v2 = HouseClass_Count; /*0x5eeadb*/
   }
-  int v10 = 0; /*0x5eeaeb*/
+  AbstractClass *v10 = 0; /*0x5eeaeb*/
   if ( v2 > 0 ) /*0x5eeaef*/
   {
     do /*0x5eeb7e*/
     {
-      int v11 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v10]; /*0x5eeafb*/
-      if ( !*(_BYTE *)(*(_DWORD *)(v11 + 52) + 422) && !*(_BYTE *)(v11 + 492) ) /*0x5eeb0b*/
+      ObjectClass *v11 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v10]; /*0x5eeafb*/
+      if ( !*(_BYTE *)(v11->attachedTag + 422) && !v11->q1EC ) /*0x5eeb0b*/
       {
         Debug::Log(); /*0x5eeb1f*/
         int * v12 = AssignRandomMapStartPositions(&v15, v10, (int)&v17, (int)v16, 0); /*0x5eeb39*/

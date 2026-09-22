@@ -14,7 +14,7 @@
 
 // 0x525110
 namespace gamemd {
-AbstractClass * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
+AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -24,9 +24,8 @@ AbstractClass * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
   {
     this->IsInitialized = 0; /*0x525126*/
     if ( a3 ) /*0x52512c*/
-      _DWORD * v4 = a3; /*0x525142*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x52513e*/
+      AbstractClass *v4 = a3; /*0x525142*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x52513e*/
     this->IsInitialized = 1; /*0x525146*/
     if ( v4 ) /*0x52514a*/
     {
@@ -64,7 +63,7 @@ AbstractClass * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
 
 // 0x589190
 namespace gamemd {
-AbstractClass * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
+AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -72,7 +71,7 @@ AbstractClass * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
   int v3 = a2; /*0x589192*/
   if ( a2 ) /*0x58919e*/
   {
-    char * v5 = a3; /*0x5891a4*/
+    AbstractClass *v5 = a3; /*0x5891a4*/
     this->IsInitialized = 0; /*0x5891a8*/
     if ( a3 ) /*0x5891ad*/
     {
@@ -95,7 +94,7 @@ AbstractClass * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
       char * v6 = (char *)__2_YAPAXI_Z(8 * a2); /*0x5891b7*/
       if ( v6 ) /*0x5891c1*/
       {
-        char * v7 = v6; /*0x5891c6*/
+        AbstractClass *v7 = v6; /*0x5891c6*/
         if ( a2 - 1 >= 0 ) /*0x5891ca*/
         {
           int v8 = a2; /*0x5891cc*/
@@ -171,7 +170,7 @@ int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(
 
 // 0x6284A0
 namespace gamemd {
-AbstractClass * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity_0(int a2, char * a3)
+AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity_0(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -179,7 +178,7 @@ AbstractClass * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCa
   int v3 = a2; /*0x6284a2*/
   if ( a2 ) /*0x6284ae*/
   {
-    char * v5 = a3; /*0x6284b4*/
+    AbstractClass *v5 = a3; /*0x6284b4*/
     this->IsInitialized = 0; /*0x6284b8*/
     if ( a3 ) /*0x6284bd*/
     {
@@ -271,11 +270,11 @@ AbstractClass * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCa
 
 // 0x628BB0
 namespace gamemd {
-AbstractClass * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remove(CCINIClass * aP1, unsigned char * a2)
+AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remove(CCINIClass * aP1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  CCINIClass *v3; // edi
+  AbstractClass *v3; // edi
   AbstractClass *v6; // ebx
   AbstractClass *v7; // esi
   CCINIClass *v8; // ebx

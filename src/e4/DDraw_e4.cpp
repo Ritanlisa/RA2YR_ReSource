@@ -128,28 +128,28 @@ int DDraw::CleanupSurfaces()
 {
   int result; // eax
 
-  void * v0 = DataGlobal_8A0E10; /*0x4c19b1*/
+  AbstractClass *v0 = DataGlobal_8A0E10; /*0x4c19b1*/
   if ( DataGlobal_8A0E10 ) /*0x4c19bc*/
   {
     DDraw::Init(DataGlobal_8A0E10); /*0x4c19c0*/
     __3_YAXPAX_Z(v0); /*0x4c19c6*/
     DataGlobal_8A0E10 = 0; /*0x4c19ce*/
   }
-  void * v1 = DataGlobal_8A0E0C; /*0x4c19d4*/
+  AbstractClass *v1 = DataGlobal_8A0E0C; /*0x4c19d4*/
   if ( DataGlobal_8A0E0C ) /*0x4c19dc*/
   {
     DDraw::ReleaseSurfaces(DataGlobal_8A0E0C); /*0x4c19e0*/
     __3_YAXPAX_Z(v1); /*0x4c19e6*/
     DataGlobal_8A0E0C = 0; /*0x4c19ee*/
   }
-  void * v2 = DataGlobal_8A0E08; /*0x4c19f4*/
+  AbstractClass *v2 = DataGlobal_8A0E08; /*0x4c19f4*/
   if ( DataGlobal_8A0E08 ) /*0x4c19fc*/
   {
     DDraw::ReleaseSurfaces(DataGlobal_8A0E08); /*0x4c1a00*/
     __3_YAXPAX_Z(v2); /*0x4c1a06*/
     DataGlobal_8A0E08 = 0; /*0x4c1a0e*/
   }
-  void * v3 = DataGlobal_8A0E04; /*0x4c1a14*/
+  AbstractClass *v3 = DataGlobal_8A0E04; /*0x4c1a14*/
   if ( DataGlobal_8A0E04 ) /*0x4c1a1c*/
   {
     DDraw::ReleaseSurfaces(DataGlobal_8A0E04); /*0x4c1a20*/

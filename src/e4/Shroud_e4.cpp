@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x654490
-RadarClass * Shroud::ProcessCellVisibility(MouseClass * aP1)
+RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -26,12 +26,12 @@ RadarClass * Shroud::ProcessCellVisibility(MouseClass * aP1)
   *(this + 1316) = v6 - v5; /*0x65453e*/
   LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x654544*/
   result = LayerClass::CellIteratorNext(this); /*0x65454b*/
-  int v9 = result; /*0x654550*/
+  RadarClass *v9 = result; /*0x654550*/
   if ( result ) /*0x654554*/
   {
     while ( 1 ) /*0x654567*/
     {
-      aP1 = *(MouseClass **)(v9 + 36); /*0x654567*/
+      aP1 = v9->outBuffer; /*0x654567*/
       if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&aP1, (TechnoClass *)1) ) /*0x65456b*/
         break; /*0x65456b*/
 LABEL_17:
@@ -41,11 +41,11 @@ LABEL_17:
         return result; /*0x654637*/
     }
     if ( *(this + 1318) == -1 ) /*0x65457f*/
-      *(this + 1318) = *(__int16 *)(v9 + 36) + *(__int16 *)(v9 + 38); /*0x65458b*/
-    int v10 = *(this + 1316); /*0x654594*/
+      *(this + 1318) = v9->outBuffer + *(__int16 *)(v9 + 38); /*0x65458b*/
+    MapClass *v10 = *(this + 1316); /*0x654594*/
     int v11 = *(this + 1318); /*0x65459a*/
-    aP1 = *(MouseClass **)(v9 + 36); /*0x6545a0*/
-    int v12 = (__int16)aP1 + v10 - SHIWORD(aP1); /*0x6545b0*/
+    aP1 = v9->outBuffer; /*0x6545a0*/
+    RadarClass *v12 = (__int16)aP1 + v10 - SHIWORD(aP1); /*0x6545b0*/
     int v13 = (__int16)aP1 + SHIWORD(aP1) - v11; /*0x6545b2*/
     int v14 = 2; /*0x6545b7*/
     if ( v12 == -1 ) /*0x6545bc*/
@@ -55,7 +55,7 @@ LABEL_17:
     else if ( v12 != 2 * *(this + 65) - 1 ) /*0x6545ce*/
     {
 LABEL_9:
-      int v15 = *(this + 1319); /*0x6545d5*/
+      RadarClass *v15 = *(this + 1319); /*0x6545d5*/
       if ( v12 >= v15 ) /*0x6545dd*/
       {
         if ( v14 + v12 > v15 + *(this + 1321) ) /*0x6545f4*/

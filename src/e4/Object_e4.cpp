@@ -164,7 +164,6 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
   _DWORD *result; // eax
   __int16 v30; // [esp+64h] [ebp+4h]
   __int16 v31; // [esp+66h] [ebp+6h]
-
   _DWORD * v21 = 0; /*0x56c238*/
   int v22 = 0; /*0x56c23e*/
   int v3 = *a2 / 256; /*0x56c249*/
@@ -217,7 +216,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
   char v28[12]; // [esp+48h] [ebp-18h] BYREF
             _DWORD * v17 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*i + 72))(i, v28); /*0x56c457*/
   int v29[3]; // [esp+54h] [ebp-Ch] BYREF
-            int * v18 = Coord::Subtract(v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
+            IUnknown *v18 = Coord::Subtract(v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
   int v26[3]; // [esp+30h] [ebp-30h] BYREF
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18[1]; /*0x56c485*/
@@ -267,14 +266,14 @@ void sub_5902C0(int a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v2; // ax
-  int * v1 = (int *)a1; /*0x5902c4*/
+  IUnknown *v1 = (int *)a1; /*0x5902c4*/
   v2 = *(_WORD *)a1; /*0x5902ce*/
   HIWORD(a1) = *(_WORD *)(a1 + 4); /*0x5902d6*/
   LOWORD(a1) = v2; /*0x5902e1*/
   char * v3 = (char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x5902e6*/
   int v4 = v1[1]; /*0x5902f2*/
   int v16 = v3[283]; /*0x5902f5*/
-  int v5 = *v1; /*0x5902f9*/
+  RandomMap *v5 = *v1; /*0x5902f9*/
   int v6 = (__int16)*v1; /*0x590301*/
   int v15 = v4; /*0x590307*/
   a1 = (__int16)v4 + v6; /*0x590310*/
@@ -304,7 +303,7 @@ void sub_5902C0(int a1)
           && (__int16)v14 - v8 < g_MapCellHeight_Value
           && a1 <= g_MapCellCount )
         {
-  int v10; // esi
+  RandomMap *v10; // esi
           int v9 = v15; /*0x590418*/
           if ( v15 >= v1[3] + v15 + 1 ) /*0x590425*/
             return 1; /*0x59049b*/
@@ -322,7 +321,7 @@ LABEL_24:
             LOWORD(a1) = v10; /*0x59043b*/
             HIWORD(a1) = v9; /*0x590440*/
             int * v11 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x590445*/
-            int * v12 = v11; /*0x59044a*/
+            RandomMap *v12 = v11; /*0x59044a*/
             if ( v11[17] != -1 || *((char *)v11 + 283) != v16 || !Cell::IsEmpty(v11) && !Cell::IsGroundTypeRange(v12) ) /*0x59046c*/
               break; /*0x59046c*/
             v7 = v1[2]; /*0x590475*/
@@ -393,7 +392,7 @@ void* Object::HandleAction(int * a2, int * a3)
   BuildingTypeClass *v14; // esi
   __int16 *v26; // eax
   __int16 *v28; // [esp-4h] [ebp-2Ch]
-  int * v4 = (int *)(this + 156); /*0x5fd987*/
+  Coord *v4 = (int *)(this + 156); /*0x5fd987*/
   int v5 = (*(int (__thiscall **)(_DWORD))(*this->q0AC + 156))(this->Object_field_0xAC); /*0x5fd98d*/
   int v32 = *v4; /*0x5fd993*/
   int v33 = *(_DWORD *)(this + 160); /*0x5fd99f*/
@@ -428,8 +427,8 @@ LABEL_5:
   int v11 = v9 + a2[1]; /*0x5fda30*/
   int v30 = *a2; /*0x5fda32*/
   int v31 = g_Map_VisibleRect + v11; /*0x5fda42*/
-  int v12 = this->Object_field_0xAC; /*0x5fda46*/
-  if ( *(_BYTE *)(v12 + 681) ) /*0x5fda4c*/
+  OverlayTypeClass *v12 = this->Object_field_0xAC; /*0x5fda46*/
+  if ( v12->q2A9 ) /*0x5fda4c*/
   {
     int v13 = 0; /*0x5fda5a*/
     if ( g_ObjectTypeConfig <= 0 ) /*0x5fda5e*/
@@ -476,9 +475,9 @@ LABEL_20:
       0,
       0);
   }
-  else if ( *(_BYTE *)(v12 + 686) ) /*0x5fdb08*/
+  else if ( v12->q2AE ) /*0x5fdb08*/
   {
-    if ( *(_DWORD *)(v12 + 660) == 167 ) /*0x5fdb20*/
+    if ( v12->LandType == 167 ) /*0x5fdb20*/
       v31 -= 38; /*0x5fdb22*/
     v32 = *v4; /*0x5fdb2b*/
     v33 = *(_DWORD *)(this + 160); /*0x5fdb32*/
@@ -610,8 +609,8 @@ void* * Object::CalculateObjectPlacementPosition(int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *result; // eax
-  int v4; // edx
-  int *v5; // ecx
+  IUnknown *v4; // edx
+  IUnknown *v5; // ecx
   int *v6; // eax
   int v7; // ecx
   _DWORD *NeighbourContentCell; // esi
@@ -634,7 +633,7 @@ LABEL_39:
   if ( !(unsigned __int8)ParasiteClass::CanExistOnVictimCell(this) ) /*0x62ac5a*/
   {
   int v26; // [esp+10h] [ebp-28h] BYREF
-    unsigned int v12 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)(*(_DWORD *)(this + 40) + 904), &v26) >> 12) + 1) >> 1) & 7; /*0x62ad3a*/
+    VectorClass *v12 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)(*(_DWORD *)(this + 40) + 904), &v26) >> 12) + 1) >> 1) & 7; /*0x62ad3a*/
     _DWORD * v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 40) + 444))(*(_DWORD *)(this + 40)); /*0x62ad43*/
     NeighbourContentCell = Cell::GetNeighbourContent(v13, v12); /*0x62ad50*/
     if ( !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q090 + 132))(this->q090) + 3278) ) /*0x62ad5a*/
@@ -725,11 +724,11 @@ LABEL_34:
       void * v8 = Coord::To_Cell(&DataGlobal_87F7E8, &v27); /*0x62ac97*/
       int * v9 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v8 + 72))(v8, v30); /*0x62aca5*/
       v27 = *v9; /*0x62acaa*/
-      int v10 = *(_DWORD *)(this + 40); /*0x62acae*/
+      IUnknown *v10 = *(_DWORD *)(this + 40); /*0x62acae*/
       v28 = v9[1]; /*0x62acb4*/
       int v11 = v9[2]; /*0x62acb8*/
       v29 = v11; /*0x62acbb*/
-      if ( *(_BYTE *)(v10 + 140) ) /*0x62acbf*/
+      if ( v10->q08C ) /*0x62acbf*/
         v29 = DataGlobal_AC497C + v11; /*0x62accf*/
     }
   }

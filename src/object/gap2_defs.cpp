@@ -465,12 +465,12 @@ LABEL_70:
         {
           v29 = this->q027; /*0x414dce*/
           v32 = v29; /*0x414dd2*/
-          int v8 = *(_DWORD *)this; /*0x414dd9*/
+          AnimClass *v8 = *(_DWORD *)this; /*0x414dd9*/
           v30 = this->owningHouseIndex; /*0x414ddb*/
           v33 = v30; /*0x414ddf*/
           v31 = this->q029; /*0x414dea*/
           v34 = v31 - 5; /*0x414df4*/
-          (*(void (__thiscall **)(char *, int *))(v8 + 436))(this, &v32); /*0x414df8*/
+          v8->SetPosition(&v32); /*0x414df8*/
           if ( (*(int (__thiscall **)(char *))(this->q1C8)(this) < -400 ) /*0x414e0d*/
           {
             (*(void (__thiscall **)(char *, _DWORD))(this->radioLinks)(this, 0); /*0x414e15*/
@@ -480,9 +480,9 @@ LABEL_70:
           if ( ((unsigned __int8)g_CurrentFrame & 3) == 0 ) /*0x414e34*/
           {
             int v9 = Random::Range(-170, 170); /*0x414e6a*/
-            int v10 = Random::Range(-170, 170); /*0x414e75*/
+            ScenarioClass *v10 = Random::Range(-170, 170); /*0x414e75*/
             int v11 = (*(int (__thiscall **)(char *))(this->q1C8)(this); /*0x414e77*/
-            int v12 = this->q029; /*0x414e82*/
+            TechnoTypeClass *v12 = this->q029; /*0x414e82*/
             int v13 = v9 + this->owningHouseIndex; /*0x414e89*/
             v29 = v10 + this->q027; /*0x414e92*/
             v30 = v13; /*0x414e96*/
@@ -495,11 +495,11 @@ LABEL_70:
   int v35[3]; // [esp+5Ch] [ebp-Ch] BYREF
         v35[0] = this->q027; /*0x414ede*/
         v35[1] = this->owningHouseIndex; /*0x414ee5*/
-        int v15 = this->q1B1; /*0x414ee9*/
+        AircraftTypeClass *v15 = this->q1B1; /*0x414ee9*/
         v35[2] = this->q029; /*0x414ef2*/
-        if ( *(_DWORD *)(v15 + 3584) ) /*0x414ef6*/
+        if ( v15->qE00 ) /*0x414ef6*/
         {
-          if ( !((int)g_CurrentFrame % *(_DWORD *)(v15 + 3588)) ) /*0x414f06*/
+          if ( !((int)g_CurrentFrame % v15->qE04) ) /*0x414f06*/
           {
             v16 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x414f15*/
             if ( v16 ) /*0x414f1f*/
@@ -514,9 +514,9 @@ LABEL_70:
                 0);
           }
         }
-        int v17 = this->q1B1; /*0x414f47*/
-        if ( (*(_BYTE *)(v17 + 3595)
-           || *(_BYTE *)(v17 + 3596)
+        AircraftTypeClass *v17 = this->q1B1; /*0x414f47*/
+        if ( (v17->qE0B
+           || v17->FlyBack
   int v18; // eax
   int v28; // [esp+40h] [ebp-28h] BYREF
            || (v18 = (*(int (__thiscall **)(char *, int *))(this->airstrikeTintTimer)(this, &v28),
@@ -4068,10 +4068,10 @@ namespace ra2 { namespace game { void TechnoClass::Process(int a1) {
     {
       do /*0x50e219*/
       {
-        int v5 = *((_DWORD *)g_TechnoClass_Count + v4); /*0x50e1ea*/
-        if ( *(_DWORD *)(v5 + 540) == this /*0x50e205*/
-          && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v5 + 132))(*((_DWORD *)g_TechnoClass_Count + v4)) == a2
-          && !*(_BYTE *)(v5 + 129) )
+        BuildingClass *v5 = *((_DWORD *)g_TechnoClass_Count + v4); /*0x50e1ea*/
+        if ( v5->owner == this /*0x50e205*/
+          && v5->Vt34Thunk(*((_DWORD *)g_TechnoClass_Count + v4)) == a2
+          && !v5->inLimbo )
         {
           TechnoClass::Deactivate((_DWORD *)v5); /*0x50e211*/
           v3 = 1; /*0x50e216*/
@@ -4299,7 +4299,7 @@ namespace ra2 { namespace game { int AbstractClass::ModifyCellTiles(int a1) {
   int v30 = (*(int (__thiscall **)(IsometricTileClass *))(this->q06C)(this); /*0x543342*/
   if ( !v30 ) /*0x543346*/
     return 0; /*0x543346*/
-  int v3 = a2; /*0x54334c*/
+  ObjectClass *v3 = a2; /*0x54334c*/
   if ( !(unsigned __int8)ObjectClass::UpdateProductionDisplay((#374 *)v2) ) /*0x543353*/
     return 0; /*0x543741*/
   v4 = v2[43]; /*0x543360*/
@@ -4703,9 +4703,9 @@ namespace ra2 { namespace game { int ObjectClass::ProcessCloaking() {
   LOBYTE(v2) = this->isAliveFlag; /*0x5b306c*/
   if ( !(_BYTE)v2 ) /*0x5b3074*/
     return v2; /*0x5b3074*/
-  int v3 = this->q0C8; /*0x5b307a*/
+  TimerStruct *v3 = this->q0C8; /*0x5b307a*/
   v2 = this->q0D0; /*0x5b3080*/
-  _DWORD * v4 = (_DWORD *)(this + 200); /*0x5b3086*/
+  TimerStruct *v4 = (_DWORD *)(this + 200); /*0x5b3086*/
   if ( v3 == -1 ) /*0x5b308f*/
     goto LABEL_5; /*0x5b308f*/
   if ( (int)g_CurrentFrame - v3 < v2 ) /*0x5b309b*/
@@ -5433,16 +5433,16 @@ namespace ra2 { namespace game { int ObjectClass::DetectCloaked() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  ObjectClass *v3; // edx
+  AbstractClass *v3; // edx
   AudioController *v5; // ecx
-  ObjectClass *v8; // edx
-  ObjectClass *v9; // eax
+  AbstractClass *v8; // edx
+  AbstractClass *v9; // eax
   AnimClass *v10; // eax
-  ObjectClass *v14; // edx
+  AbstractClass *v14; // edx
   IUnknown *v15; // eax
   IUnknown **v16; // edx
-  ObjectClass *v18; // edx
-  ObjectClass *v19; // edx
+  AbstractClass *v18; // edx
+  AbstractClass *v19; // edx
   ObjectClass *v20; // edi
   CoordStruct aP2; // [esp+24h] [ebp-Ch] BYREF
 
@@ -5568,7 +5568,7 @@ LABEL_19:
             {
               v19 = *(ObjectClass **)v17; /*0x5f4100*/
               v20 = (ObjectClass *)*((_DWORD *)v17 + 1); /*0x5f4102*/
-              int v21 = *((_DWORD *)v17 + 2); /*0x5f4105*/
+              AbstractClass *v21 = *((_DWORD *)v17 + 2); /*0x5f4105*/
               aP2.X = (int)v19; /*0x5f410c*/
               aP2.Y = (int)v20; /*0x5f4126*/
               aP2.Z = v21 + 3; /*0x5f412a*/
@@ -5650,7 +5650,7 @@ namespace ra2 { namespace game { int ObjectClass::HandleSelection() {
       return result; /*0x5f4553*/
     }
   }
-  _BYTE * v3 = AbstractClass::IsTechnoType(this); /*0x5f455b*/
+  AbstractClass *v3 = AbstractClass::IsTechnoType(this); /*0x5f455b*/
   if ( !ArmageddonMode ) /*0x5f4564*/
   {
     result = (*(int (__thiscall **)(#374 *))(this->q0A0)(this); /*0x5f456a*/
@@ -5667,7 +5667,7 @@ namespace ra2 { namespace game { int ObjectClass::HandleSelection() {
   }
   if ( v3 ) /*0x5f458a*/
   {
-    result = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v3 + 468))(v3); /*0x5f4590*/
+    result = v3->vt_slot_468(); /*0x5f4590*/
     if ( (_BYTE)result ) /*0x5f4598*/
     {
       LOBYTE(result) = 0; /*0x5f459b*/
@@ -6329,7 +6329,7 @@ namespace ra2 { namespace game { int ObjectClass::CheckGroundHeightDiff() {
   int GroundHeight; // edi
   int result; // eax
 
-  bool v2 = this->onBridge; /*0x5f6a7f*/
+  VectorClass *v2 = this->onBridge; /*0x5f6a7f*/
   _DWORD v8[3]; // [esp+1Ch] [ebp-Ch] BYREF
   int v9; // [esp+2Ch] [ebp+4h]
   _DWORD * v3 = (_DWORD *)(*(int (__thiscall **)(#374 *, _DWORD *, int))(this->q04C)(this, v8, v9); /*0x5f6a8d*/
@@ -8432,7 +8432,7 @@ namespace ra2 { namespace game { int AbstractClass::dispatchTeamEvent(int a2, in
 namespace ra2 { namespace game { int AbstractClass::validateTeamConfig() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v4; // edi
+  ModemGame *v4; // edi
   if ( !this->field_8 ) /*0x65c4b6*/
     return 0; /*0x65c4b6*/
   if ( !Src ) /*0x65c4c3*/
@@ -8450,12 +8450,12 @@ namespace ra2 { namespace game { int AbstractClass::validateTeamConfig() {
   (*(void (__thiscall **)(RAMFileClass *, int))(*(_DWORD *)this->__pad_0 + 28))(this, 2); /*0x65c4de*/
   v5 = 1; /*0x65c4e1*/
 LABEL_7:
-  int v6 = this->abstractFlags; /*0x65c4eb*/
+  AbstractClass *v6 = this->abstractFlags; /*0x65c4eb*/
   if ( Size >= this->field_C - v6 ) /*0x65c4f5*/
     v4 = this->field_C - v6; /*0x65c4f7*/
   memcpy((void *)(this->field_8 + this->abstractFlags), Src, v4); /*0x65c504*/
-  int v7 = this->field_10; /*0x65c50c*/
-  int v8 = v4 + this->abstractFlags; /*0x65c50f*/
+  AbstractClass *v7 = this->field_10; /*0x65c50c*/
+  AbstractClass *v8 = v4 + this->abstractFlags; /*0x65c50f*/
   this->abstractFlags = v8; /*0x65c516*/
   if ( v8 > v7 ) /*0x65c51b*/
     this->field_10 = v8; /*0x65c51d*/
@@ -9885,7 +9885,7 @@ LABEL_65:
   {
     this->vt_slot_1136(); /*0x707abc*/
   }
-  int * v19 = this + 193; /*0x707ac2*/
+  ParticleSystemClass *v19 = this + 193; /*0x707ac2*/
   int v20 = 8; /*0x707ac8*/
   do /*0x707ad7*/
   {
@@ -9903,14 +9903,14 @@ LABEL_65:
       this->q140 = 0; /*0x707af5*/
     if ( (IUnknown *)this->q086 == aP1 ) /*0x707b01*/
       this->q086 = 0; /*0x707b03*/
-    int * v21 = (int *)this->q2BC; /*0x707b09*/
+    FootClass *v21 = (int *)this->q2BC; /*0x707b09*/
     if ( v21 ) /*0x707b11*/
       ObjectClass::RemoveFromPointerList(v21, (int)aP1); /*0x707b14*/
   }
-  _DWORD * v22 = (_DWORD *)this->q0B4; /*0x707b19*/
+  CaptureManagerClass *v22 = (_DWORD *)this->q0B4; /*0x707b19*/
   if ( v22 ) /*0x707b21*/
     UnitClass::ClearTargetRef(v22, (int)aP1); /*0x707b24*/
-  _DWORD * v23 = (_DWORD *)this->q274; /*0x707b29*/
+  TemporalClass *v23 = (_DWORD *)this->q274; /*0x707b29*/
   if ( v23 ) /*0x707b31*/
     ObjectClass::UnlinkFromFactory(v23, aP1); /*0x707b34*/
   int v24 = this->q294; /*0x707b39*/
@@ -10989,7 +10989,7 @@ namespace ra2 { namespace game { int TechnoClass::CalcFlashAlpha(int a1) {
 {
   BuildingTypeClass *result; // eax
 
-  int v2 = this->q1BC; /*0x70e4b0*/
+  TechnoClass *v2 = this->q1BC; /*0x70e4b0*/
   int v3 = this->q1B4; /*0x70e4b7*/
   if ( v3 != -1 ) /*0x70e4c0*/
   {
@@ -11629,7 +11629,7 @@ namespace ra2 { namespace game { int TechnoClass::Draw(void* a1, void* a2) {
   AbstractClass *v28; // edi
   int v30; // edx
   ConvertClass *v33; // eax
-  int v34; // edx
+  RecoilData *v34; // edx
   ConvertClass *v37; // [esp-14h] [ebp-68h]
   int v38; // [esp+14h] [ebp-40h] BYREF
   Tactical *v40; // [esp+20h] [ebp-34h]

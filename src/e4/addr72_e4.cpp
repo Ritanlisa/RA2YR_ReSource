@@ -42,8 +42,8 @@ void * sub_7221B0()
     for ( i = 0; i < g_CrateProcessState; ++i ) /*0x7221cc*/
     {
       int v2 = *(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * i]; /*0x7221da*/
-      int v3 = *(_DWORD *)(v2 + 256); /*0x7221dd*/
-      int v4 = *(_DWORD *)(v2 + 264); /*0x7221e3*/
+      ObjectClass *v3 = *(_DWORD *)(v2 + 256); /*0x7221dd*/
+      AbstractClass *v4 = *(_DWORD *)(v2 + 264); /*0x7221e3*/
       if ( v3 != -1 ) /*0x7221ec*/
       {
         if ( (int)g_CurrentFrame - v3 >= v4 ) /*0x7221f8*/
@@ -55,7 +55,7 @@ void * sub_7221B0()
 LABEL_7:
         PropagateCellOccupancy(v2); /*0x722200*/
         _DWORD * v5 = (_DWORD *)(*(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * i] + 256); /*0x722216*/
-        int v6 = *(_DWORD *)(*(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * i] + 156); /*0x72221c*/
+        AbstractClass *v6 = *(_DWORD *)(*(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * i] + 156); /*0x72221c*/
         *v5 = g_CurrentFrame; /*0x722222*/
         int v7 = v7; /*0x722224*/
         v5[2] = v6; /*0x722227*/
@@ -76,7 +76,7 @@ void * sub_722C40()
 {
   void *result; // eax
   int i; // esi
-  BuildingClass *v6; // ebx
+  AbstractClass *v6; // ebx
   wchar_t *v7; // edi
   wchar_t *v8; // eax
   wchar_t **v9; // ecx
@@ -136,7 +136,7 @@ int CompareFunc2Int(unsigned int * a1, unsigned int * a2)
 
 // 0x725C70
 namespace gamemd {
-AbstractClass * sub_725C70()
+AbstractClass * * sub_725C70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -208,7 +208,7 @@ void sub_728200()
   for ( i = -1; v1 < v0; ++v1 ) /*0x728215*/
   {
     v2 = (__int16 *)*((_DWORD *)g_PathClass_State + v1); /*0x72821e*/
-    _WORD * v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v2 + 18); /*0x72822f*/
+    AbstractClass *v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v2 + 18); /*0x72822f*/
     if ( CellClass::IsTunnelEntrance((int)v3) ) /*0x728233*/
     {
       v3[139] = ++i; /*0x72825f*/
@@ -275,8 +275,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v14; // [esp+8h] [ebp-78h]
-
-  _DWORD * v3 = a2; /*0x72ade5*/
+  MapClass *v3 = a2; /*0x72ade5*/
   _DWORD v16[22]; // [esp+14h] [ebp-6Ch] BYREF
   CCFileClass::Construct(v16, Source); /*0x72adf0*/
   char * v4 = (char *)CCFileClass::ReadEntireFile(v16); /*0x72adfe*/
@@ -515,7 +514,7 @@ void DrawScoreScreenStats(ConvertClass * aP0, int a2)
 
 // 0x72E450
 namespace gamemd {
-AbstractClass * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
+AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -773,7 +772,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
   }
   int v12 = v2 + *((_DWORD *)DataGlobal_B0FC20 + 3); /*0x72edc2*/
   int v13 = *((__int16 *)DataGlobal_B0FA74 + 2); /*0x72edc4*/
-  _DWORD * v14 = __2_YAPAXI_Z(0x10u); /*0x72edc8*/
+  TechnoTypeClass *v14 = __2_YAPAXI_Z(0x10u); /*0x72edc8*/
   if ( v14 ) /*0x72edd2*/
   {
     *v14 = v8; /*0x72edd4*/
@@ -865,7 +864,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
 
 // 0x72F540
 namespace gamemd {
-AbstractClass * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
+AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1210,7 +1209,7 @@ unsigned int * Screen_SetupBuffers(int a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v3; // eax
-  int *v44; // ecx
+  AbstractClass *v44; // ecx
   int v45; // eax
   int v46; // eax
   int v47; // eax

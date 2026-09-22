@@ -77,7 +77,7 @@ int InfantryClass::ScanTarget(int * a1)
 
 // 0x4D5350
 namespace gamemd {
-AbstractClass * InfantryClass::ProcessDeploy(void ** a1)
+AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -182,13 +182,13 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     {
       if ( HouseClass::CanBuild((_DWORD *)a1->field_21C, (IUnknown *)v3, 0, 0) == -1 ) /*0x517de3*/
         *(_BYTE *)(a1->field_21C + 508) = 1; /*0x517deb*/
-      int v5 = *(_DWORD *)&a1->__pad_524[176]; /*0x517df2*/
+      IUnknown *v5 = *(_DWORD *)&a1->__pad_524[176]; /*0x517df2*/
       if ( v5 ) /*0x517dfa*/
       {
         TeamClass::LiberateMember_Start(v5, a1, 0xFFFFFFFF, 0); /*0x517e00*/
         *(_DWORD *)&a1->__pad_524[176] = 0; /*0x517e05*/
       }
-      _DWORD * v6 = *(_DWORD **)&a1->__pad_2B8[36]; /*0x517e0b*/
+      TechnoClass *v6 = *(_DWORD **)&a1->__pad_2B8[36]; /*0x517e0b*/
       if ( v6 ) /*0x517e13*/
       {
         eax8 = (_DWORD *)v6[182]; /*0x517e15*/

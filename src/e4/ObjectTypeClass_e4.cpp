@@ -290,7 +290,7 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
 }
 
 // 0x5F7400
-SomeVoxelCache * ObjectTypeClass::Destruct()
+SomeVoxelCache * * ObjectTypeClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -472,7 +472,7 @@ void ObjectTypeClass::UnloadPipsSHP()
 }
 
 // 0x5F9070
-AbstractClass * ObjectTypeClass::Load2DArt()
+AbstractClass * * ObjectTypeClass::Load2DArt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -489,7 +489,7 @@ AbstractClass * ObjectTypeClass::Load2DArt()
     if ( !this->q212 ) /*0x5f90a0*/
     {
   char v13; // [esp+20h] [ebp-208h]
-      char * v2 = this + 504; /*0x5f90ab*/
+      INIClass *v2 = this + 504; /*0x5f90ab*/
       sprintf(Buffer, DataGlobal_832AE8, this + 504); /*0x5f90bf*/
       if ( Buffer ) /*0x5f90d0*/
       {
@@ -565,8 +565,8 @@ LABEL_41:
   result = this->Image; /*0x5f928c*/
   if ( result ) /*0x5f9294*/
   {
-    v11 = *(_WORD *)(result + 2); /*0x5f9296*/
-    LOWORD(result) = *(_WORD *)(result + 4); /*0x5f929a*/
+    v11 = result->vtable3; /*0x5f9296*/
+    LOWORD(result) = result->vtable2; /*0x5f929a*/
     if ( v11 <= (__int16)result ) /*0x5f92a1*/
       result = (__int16)result; /*0x5f92a8*/
     else
@@ -626,7 +626,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
       v3 = Index; /*0x5f93bf*/
   }
   this->CrushSound = v3; /*0x5f93d5*/
-  int v5 = this->AmbientSound; /*0x5f93db*/
+  Armor *v5 = this->AmbientSound; /*0x5f93db*/
   if ( !INIClass::GetString( /*0x5f93f9*/
           (unsigned __int8 ***)aP1,
           (INIClass *)(this + 36),
@@ -634,7 +634,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
           (INIClass *)&DataGlobal_87F8E4[42624],
           (INIClass *)v34[32],
           128)
-  int v6; // eax
+  Armor *v6; // eax
     || (v6 = VocClass::FindIndex(v34[32]), v6 == -1) )
   {
     v6 = v5; /*0x5f93fb*/
@@ -933,7 +933,7 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
 }
 
 // 0x712040
-SHPStruct * ObjectTypeClass::SelectArtOrAlt()
+SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -957,7 +957,7 @@ SHPStruct * ObjectTypeClass::SelectArtOrAlt()
     v1 = HouseClass_Player; /*0x712076*/
   }
   if ( !v1 /*0x7120a1*/
-    || !*((_BYTE *)v1 + 704)
+    || !v1->armor
     || this->getAltitude() != 40
     && (this->getAltitude() != 7 || !*(this + 258)) )
   {

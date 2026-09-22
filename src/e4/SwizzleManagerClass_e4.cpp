@@ -13,7 +13,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
   int v3 = a2; /*0x6cf5a2*/
   if ( a2 ) /*0x6cf5ae*/
   {
-    _DWORD * v5 = a3; /*0x6cf5b4*/
+    AbstractClass *v5 = a3; /*0x6cf5b4*/
     this->q00C = 0; /*0x6cf5b8*/
     if ( a3 ) /*0x6cf5bd*/
     {
@@ -36,7 +36,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
       _DWORD * v6 = __2_YAPAXI_Z(8 * a2); /*0x6cf5c7*/
       if ( v6 ) /*0x6cf5d1*/
       {
-        _DWORD * v7 = v6; /*0x6cf5d6*/
+        AbstractClass *v7 = v6; /*0x6cf5d6*/
         if ( a2 - 1 >= 0 ) /*0x6cf5da*/
         {
           int v8 = a2; /*0x6cf5dc*/
@@ -104,7 +104,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
 
 // 0x6CF720
 namespace gamemd {
-AbstractClass * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
+AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -112,7 +112,7 @@ AbstractClass * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
   int v3 = a2; /*0x6cf722*/
   if ( a2 ) /*0x6cf72e*/
   {
-    _DWORD * v5 = a3; /*0x6cf734*/
+    AbstractClass *v5 = a3; /*0x6cf734*/
     this->q00C = 0; /*0x6cf738*/
     if ( a3 ) /*0x6cf73d*/
     {
@@ -135,7 +135,7 @@ AbstractClass * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
       _DWORD * v6 = __2_YAPAXI_Z(8 * a2); /*0x6cf747*/
       if ( v6 ) /*0x6cf751*/
       {
-        _DWORD * v7 = v6; /*0x6cf756*/
+        AbstractClass *v7 = v6; /*0x6cf756*/
         if ( a2 - 1 >= 0 ) /*0x6cf75a*/
         {
           int v8 = a2; /*0x6cf75c*/
@@ -160,7 +160,7 @@ AbstractClass * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x6cf814*/
     if ( this->SwizzleManagerClass_19_field_0x4 ) /*0x6cf791*/
     {
-      int v11 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf796*/
+      AbstractClass *v11 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf796*/
       if ( a2 < v11 ) /*0x6cf79b*/
         v11 = a2; /*0x6cf79d*/
       int v12 = 0; /*0x6cf79f*/
@@ -190,7 +190,7 @@ AbstractClass * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x6cf7f8*/
   }
-  int v15 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf7fb*/
+  AbstractClass *v15 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf7fb*/
   if ( v15 < this->SwizzleManagerClass_19_field_0x10 ) /*0x6cf803*/
     this->SwizzleManagerClass_19_field_0x10 = v15; /*0x6cf805*/
   return 1; /*0x6cf808*/

@@ -59,7 +59,7 @@ int Array::RemoveAt(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v2 = this->q010; /*0x63e590*/
+  VectorClass *v2 = this->q010; /*0x63e590*/
   int v3 = a2; /*0x63e593*/
   if ( a2 >= v2 ) /*0x63e599*/
     return 0; /*0x63e5bc*/
@@ -98,7 +98,7 @@ int Array::ContainsValue(IUnknown * aP1)
 {
   IUnknown **i; // ecx
 
-  int v2 = this->q0E8; /*0x65adf1*/
+  TechnoClass *v2 = this->q0E8; /*0x65adf1*/
   int v3 = 0; /*0x65adf7*/
   if ( v2 <= 0 ) /*0x65adfc*/
     return 0; /*0x65ae1a*/
@@ -201,7 +201,7 @@ int Array::CleanupArrayWOL()
 
 // 0x7AD790
 namespace gamemd {
-AbstractClass * Array::InsertElement(const void * a1, ObjectClass * aP2)
+AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

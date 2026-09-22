@@ -98,12 +98,12 @@ LABEL_7:
 }
 
 // 0x7B3A20
-AbstractClass * UDPInterfaceClass::Flush()
+AbstractClass * * UDPInterfaceClass::Flush()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  SOCKET *v4; // esi
+  Game *v4; // esi
   int v2 = 0; /*0x7b3a24*/
   result = this->q3F330; /*0x7b3a26*/
   if ( result <= 0 ) /*0x7b3a2e*/
@@ -132,12 +132,12 @@ AbstractClass * UDPInterfaceClass::Flush()
 }
 
 // 0x7B3AA0
-AbstractClass * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
+AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  SOCKET v6; // ebx
-  _DWORD *v13; // ebx
+  AbstractClass *v6; // ebx
+  AbstractClass *v13; // ebx
   u_short v14; // ax
   u_short v15; // ax
   int v16; // edx
@@ -196,7 +196,7 @@ LABEL_22:
     }
     fromlen = 16; /*0x7b3ee4*/
     int v26 = recvfrom(v6, this + 258164, 640, 0, &netshort, &fromlen); /*0x7b3eec*/
-    int v27 = v26; /*0x7b3ef1*/
+    AbstractClass *v27 = v26; /*0x7b3ef1*/
     if ( v26 == -1 ) /*0x7b3ef6*/
     {
       (*(void (__thiscall **)(char *, SOCKET))(this->q024)(this, v6); /*0x7b3efe*/
@@ -228,8 +228,8 @@ LABEL_71:
       v13 = (_DWORD *)IPXInterfaceClass::processPacket(this); /*0x7b3f80*/
       v13[4] = v27 - 4; /*0x7b3f8f*/
       v13[7] = this->qFC1D; /*0x7b3f98*/
-      *((_BYTE *)v13 + 23) = v39; /*0x7b3fa0*/
-      *((_BYTE *)v13 + 24) = 0; /*0x7b3fa6*/
+      v13->q017 = v39; /*0x7b3fa0*/
+      v13->nextArrayIndex = 0; /*0x7b3fa6*/
       qmemcpy(v13 + 8, this + 258168, v27 - 4); /*0x7b3fab*/
       if ( !this->VerifyCRC(v13) ) /*0x7b3fb9*/
       {
@@ -238,13 +238,13 @@ LABEL_71:
         Debug::Log(); /*0x7b4000*/
         if ( !byte_B78124 ) /*0x7b400f*/
           byte_B78124 = 1; /*0x7b4011*/
-        if ( *((_BYTE *)v13 + 22) ) /*0x7b4018*/
+        if ( v13->q058 ) /*0x7b4018*/
         {
           __3_YAXPAX_Z(v13); /*0x7b4024*/
           return 0; /*0x7b4035*/
         }
 LABEL_60:
-        *((_BYTE *)v13 + 21) = 0; /*0x7b3e9e*/
+        v13->q054 = 0; /*0x7b3e9e*/
         --this->qFC18; /*0x7b3eaa*/
         return 0; /*0x7b3eb8*/
       }
@@ -255,14 +255,14 @@ LABEL_60:
       v32 = htonl(0x7F000001u); /*0x7b404c*/
       if ( *(_DWORD *)&netshort.sa_data[2] == v32 ) /*0x7b4055*/
       {
-        *((_WORD *)v13 + 13) = 0; /*0x7b4057*/
+        v13->q034 = 0; /*0x7b4057*/
         *v13 = DataGlobal_A8DBB0; /*0x7b4065*/
         v13[1] = DataGlobal_A8DBB4; /*0x7b406c*/
         v13[2] = DataGlobal_A8DBB8; /*0x7b4075*/
       }
       else
       {
-        *((_WORD *)v13 + 13) = ntohs(*(u_short *)netshort.sa_data); /*0x7b4084*/
+        v13->q034 = ntohs(*(u_short *)netshort.sa_data); /*0x7b4084*/
         v13[1] = *(_DWORD *)&netshort.sa_data[2]; /*0x7b408c*/
       }
       bool v33 = this->Initialized; /*0x7b408f*/
@@ -324,7 +324,7 @@ LABEL_25:
   }
   v45 = (int)v13; /*0x7b3bff*/
   *(_DWORD *)&netshort.sa_data[2] = v13[1]; /*0x7b3c03*/
-  *(_WORD *)netshort.sa_data = htons(*((_WORD *)v13 + 13)); /*0x7b3c11*/
+  *(_WORD *)netshort.sa_data = htons(v13->q034); /*0x7b3c11*/
   netshort.sa_family = 2; /*0x7b3c1c*/
   if ( v39 ) /*0x7b3c23*/
   {
@@ -336,7 +336,7 @@ LABEL_25:
   }
   else
   {
-    v14 = *((_WORD *)v13 + 13); /*0x7b3c5b*/
+    v14 = v13->q034; /*0x7b3c5b*/
     if ( !v14 ) /*0x7b3c62*/
       v14 = hostshort; /*0x7b3c64*/
     *(_WORD *)netshort.sa_data = htons(v14); /*0x7b3c75*/
@@ -396,7 +396,7 @@ LABEL_43:
         ++v25; /*0x7b3e73*/
       }
     }
-    if ( *((_BYTE *)v13 + 22) ) /*0x7b3e82*/
+    if ( v13->q058 ) /*0x7b3e82*/
     {
       __3_YAXPAX_Z(v13); /*0x7b3e8a*/
       return 0; /*0x7b3e9b*/
@@ -415,13 +415,13 @@ LABEL_43:
       ++v22; /*0x7b3e17*/
     }
   }
-  if ( *((_BYTE *)v13 + 22) ) /*0x7b3e26*/
+  if ( v13->q058 ) /*0x7b3e26*/
   {
     __3_YAXPAX_Z(v13); /*0x7b3e2e*/
   }
   else
   {
-    *((_BYTE *)v13 + 21) = 0; /*0x7b3e42*/
+    v13->q054 = 0; /*0x7b3e42*/
     --this->qFC19; /*0x7b3e4e*/
   }
   return 0; /*0x7b3b27*/
@@ -458,7 +458,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2)
   while ( this->qFCD2 ) /*0x7b417c*/
   {
     __3_YAXPAX_Z(*this->q3F33C); /*0x7b418f*/
-    int v3 = (int)this->qFCD2; /*0x7b4194*/
+    CampaignClass *v3 = (int)this->qFCD2; /*0x7b4194*/
     if ( v3 > 0 ) /*0x7b419f*/
     {
       v4 = (void **)(v3 - 1); /*0x7b41a1*/
@@ -470,7 +470,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2)
   while ( this->qFD58 ) /*0x7b41d0*/
   {
     __3_YAXPAX_Z(*this->q3F554); /*0x7b41e1*/
-    int v6 = (int)this->qFD58; /*0x7b41e6*/
+    CampaignClass *v6 = (int)this->qFD58; /*0x7b41e6*/
     if ( v6 > 0 ) /*0x7b41f1*/
     {
       v7 = (void **)(v6 - 1); /*0x7b41f3*/
@@ -480,7 +480,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2)
     }
   }
   UDPInterfaceClass::connect(this); /*0x7b4224*/
-  void * v9 = this->q3F554; /*0x7b4229*/
+  AbstractClass *v9 = this->q3F554; /*0x7b4229*/
   this->qFD54 = &vt_VectorClass_unsigned_char; /*0x7b422f*/
   if ( v9 && *((_BYTE *)this + 259421) ) /*0x7b423d*/
   {
@@ -489,7 +489,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2)
   }
   *((_BYTE *)this + 259421) = 0; /*0x7b4254*/
   this->qFD56 = 0; /*0x7b425a*/
-  void * v10 = this->q3F33C; /*0x7b4260*/
+  CampaignClass *v10 = this->q3F33C; /*0x7b4260*/
   this->q3F338 = &vt_VectorClass_unsigned_char; /*0x7b4266*/
   if ( v10 && *((_BYTE *)this + 258885) ) /*0x7b4274*/
   {
@@ -536,7 +536,7 @@ unsigned int UDPInterfaceClass::reset(int a2)
 }
 
 // 0x7B44A0
-AbstractClass * UDPInterfaceClass::flush(int a2, unsigned int * a3)
+AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -546,9 +546,8 @@ AbstractClass * UDPInterfaceClass::flush(int a2, unsigned int * a3)
   {
     this->q00C = 0; /*0x7b44b2*/
     if ( a3 ) /*0x7b44b8*/
-      _DWORD * v4 = a3; /*0x7b44ce*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x7b44ca*/
+      AbstractClass *v4 = a3; /*0x7b44ce*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x7b44ca*/
     this->q00C = 1; /*0x7b44d2*/
     if ( !v4 ) /*0x7b44d6*/
       return 0; /*0x7b454a*/
@@ -588,7 +587,7 @@ int UDPInterfaceClass::sendPacket(unsigned int * a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  bool v2 = this->Initialized; /*0x7b4550*/
+  DynamicVector *v2 = this->Initialized; /*0x7b4550*/
   result = 0; /*0x7b4553*/
   if ( v2 <= 0 ) /*0x7b4558*/
     return -1; /*0x7b456f*/
@@ -602,7 +601,7 @@ int UDPInterfaceClass::sendPacket(unsigned int * a2)
 }
 
 // 0x7B3450
-AbstractClass * UDPInterfaceClass_Destru::Bind(int a2)
+AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -716,10 +715,9 @@ void UDPInterfaceClass_Destru_Connect()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  WPARAM v14; // eax
+  AnimClass *v14; // eax
   UINT v19; // eax
-  WPARAM v20; // [esp-8h] [ebp-20h]
-
+  AnimClass *v20; // [esp-8h] [ebp-20h]
   int v23 = 0; /*0x7b3726*/
   result = *(_DWORD *)(a1 + 258888); /*0x7b372e*/
   if ( result > 0 ) /*0x7b3736*/
@@ -793,7 +791,7 @@ int UDPInterfaceClass_Destru::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  SOCKET *v3; // edi
+  Game *v3; // edi
   u_int v4; // eax
   signed int v2; // ebx
   if ( IPXInterfaceClass::Receive(this) && (v2 = 0, (int)*(this + 64716) > 0) ) /*0x7b38a8*/

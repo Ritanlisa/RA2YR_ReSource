@@ -7,7 +7,7 @@
 
 // 0x7228B0
 namespace gamemd {
-BuildingTypeClass * AudioClass::ProcessEvent()
+BuildingTypeClass * * AudioClass::ProcessEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -17,7 +17,7 @@ BuildingTypeClass * AudioClass::ProcessEvent()
   __int16 *v7; // ecx
   __int16 *v17; // [esp+Ch] [ebp-8h]
   int v2 = 0; /*0x7228b6*/
-  int * v3 = *(this + 61); /*0x7228b9*/
+  CampaignClass *v3 = *(this + 61); /*0x7228b9*/
   *(this + 60) = 0; /*0x7228bf*/
   if ( *v3 >= 0 ) /*0x7228cc*/
   {

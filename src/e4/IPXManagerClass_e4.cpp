@@ -9,10 +9,10 @@ int IPXManagerClass::sendPacket(int a2, int a3, int a4)
 {
   int result; // eax
 
-  int v4 = this->q04C; /*0x540d80*/
+  IPXManagerClass *v4 = this->q04C; /*0x540d80*/
   if ( v4 ) /*0x540d93*/
   {
-    *(_DWORD *)(v4 + 40) = a2; /*0x540d95*/
+    v4->connTable = a2; /*0x540d95*/
     *(_DWORD *)(this->q04C + 44) = a3; /*0x540d9b*/
     *(_DWORD *)(this->q04C + 48) = a4; /*0x540da1*/
   }
@@ -36,7 +36,7 @@ int IPXManagerClass::send(int a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  int v2 = this->connCount; /*0x541040*/
+  IPXManagerClass *v2 = this->connCount; /*0x541040*/
   result = 0; /*0x541043*/
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
@@ -56,7 +56,7 @@ int IPXManagerClass::receivePacket(int a2)
 {
   int result; // eax
 
-  int v2 = this->connCount; /*0x541070*/
+  IPXManagerClass *v2 = this->connCount; /*0x541070*/
   result = 0; /*0x541074*/
   if ( v2 <= 0 ) /*0x54107d*/
   {

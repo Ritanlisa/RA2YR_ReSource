@@ -35,7 +35,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   AbstractClass *v18; // ecx
   ObjectClass *v21; // eax
   ObjectClass *v22; // eax
-  AbstractClass *v23; // ecx
+  BitFont *v23; // ecx
   int referenceCount; // eax
   unsigned __int8 *GlyphDataForChar; // eax
   int eax28; // eax
@@ -58,7 +58,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   unsigned __int8 v53[8]; // [esp+38h] [ebp-8h] BYREF
   __int16 aP5a; // [esp+58h] [ebp+18h]
 
-  int v10 = 0; /*0x434cdb*/
+  BitFont *v10 = 0; /*0x434cdb*/
   if ( !aP0 ) /*0x434cdf*/
     return 0; /*0x434cdf*/
   v11 = aP2; /*0x434ce5*/
@@ -73,7 +73,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   v16 = 0; /*0x434d19*/
   int v48 = 0; /*0x434d1b*/
   LOWORD(v15) = *(_WORD *)aP2->__pad_0; /*0x434d1f*/
-  int v51 = 0; /*0x434d22*/
+  BitFont *v51 = 0; /*0x434d22*/
   v49 = 0; /*0x434d29*/
   v45 = 0; /*0x434d2d*/
   v50 = v15; /*0x434d31*/

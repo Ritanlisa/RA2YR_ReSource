@@ -31,7 +31,7 @@
 
 // 0x4880F0
 namespace gamemd {
-ConvertClass * E4Recv_4880F0::sub_4880F0(int a2)
+ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -62,9 +62,8 @@ ConvertClass * E4Recv_4880F0::sub_4880F0(int a2)
   if ( (unsigned char)this->M45 ) /*0x488191*/
   {
     if ( *(_DWORD *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x4881a1*/
-      int v10 = *(unsigned __int8 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 4); /*0x4881ab*/
-    else
-      v10 = *(unsigned __int16 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 8); /*0x4881b8*/
+      AbstractClass *v10 = *(unsigned __int8 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 4); /*0x4881ab*/
+    AbstractClass *v10 = *(unsigned __int16 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 8); /*0x4881b8*/
     int v11 = this->M16 + 1; /*0x4881c3*/
     v15 = this->M12 + 1; /*0x4881c4*/
     int v12 = this->M20; /*0x4881c8*/
@@ -897,7 +896,7 @@ LABEL_213:
 
 // 0x48A620
 namespace gamemd {
-AbstractClass * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7)
+AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -909,7 +908,7 @@ AbstractClass * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char
     LOBYTE(v7) = a6; /*0x48a64a*/
     if ( a6 || a2 && (LOBYTE(v7) = *(_BYTE *)(a2 + 336), (_BYTE)v7) ) /*0x48a662*/
     {
-  int v11; // esi
+  AbstractClass *v11; // esi
       double v10 = *(float *)(a2 + 316); /*0x48a668*/
       if ( v10 <= 0.0 ) /*0x48a679*/
       {
@@ -1052,10 +1051,9 @@ bool sub_48BB60(int a1)
 {
   int v6; // edx
   _DWORD *v7; // eax
-
   BYTE1(a1) &= ~8u; /*0x48bb61*/
   int v1 = a1; /*0x48bb65*/
-  int v2 = NumOfElements; /*0x48bb68*/
+  ObjectClass *v2 = NumOfElements; /*0x48bb68*/
   int v3 = a1; /*0x48bb6e*/
   BYTE1(v3) = BYTE1(a1) & 0xE8; /*0x48bb71*/
   if ( !NumOfElements ) /*0x48bb76*/
@@ -1074,7 +1072,7 @@ LABEL_17:
     g_FileSystemPool = 0; /*0x48bbaf*/
     g_FileSystemInitFlag = 1; /*0x48bbb9*/
   }
-  _DWORD * v5 = Base; /*0x48bbc0*/
+  AbstractClass *v5 = Base; /*0x48bbc0*/
   if ( v2 <= 0 ) /*0x48bbc8*/
     goto LABEL_12; /*0x48bbc8*/
   while ( 1 ) /*0x48bbd1*/
@@ -1122,7 +1120,7 @@ int CompareFuncInt(unsigned int * a1, unsigned int * a2)
 
 // 0x48C8B0
 namespace gamemd {
-AbstractClass * Main_Game_Frame()
+AbstractClass * * Main_Game_Frame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1157,7 +1155,7 @@ LABEL_9:
   (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 20))(g_WWMouseClass_Instance); /*0x48c925*/
   while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) ) /*0x48c930*/
     (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x48c93f*/
-  int v1 = DataGlobal_A8EDA0; /*0x48c951*/
+  AbstractClass *v1 = DataGlobal_A8EDA0; /*0x48c951*/
   if ( DataGlobal_A8EDA0 ) /*0x48c95a*/
   {
     while ( 2 ) /*0x48c968*/
@@ -1477,9 +1475,8 @@ CellStruct * * sub_48E0B0()
     {
       fprintf(result, "Frames: %d\n", g_CurrentFrame);
       if ( g_FrameCounter_Samples ) /*0x48e0f8*/
-        unsigned int v2 = g_FrameCounter_Total / (unsigned int)g_FrameCounter_Samples; /*0x48e101*/
-      else
-        v2 = 0; /*0x48e105*/
+        CellStruct *v2 = g_FrameCounter_Total / (unsigned int)g_FrameCounter_Samples; /*0x48e101*/
+      CellStruct *v2 = 0; /*0x48e105*/
       fprintf(v1, "Average FPS: %d\n", v2);
       fprintf(v1, "Max MaxAhead: %d\n", DataGlobal_A8B568);
       fprintf(v1, "Latency setting: %d\n", g_NetworkHostState);

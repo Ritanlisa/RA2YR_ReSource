@@ -44,7 +44,7 @@ UnitClass::UnitClass() noexcept
 // Merged: Westwood combined harvest + unload into a single 5-case state machine.
 // Case 3 handles unloading logic (pop cargo, apply overlay, handle team members).
 // No separate Mission_Unload override exists in the binary (vtable slot = Return450J).
-ILocomotion * UnitClass::Mission_Harvest()
+ILocomotion * * UnitClass::Mission_Harvest()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4151e0
@@ -832,7 +832,7 @@ int UnitClass::UnloadPassengers(int placementType)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v2 = a2; /*0x6b4be3*/
+  ObjectClass *v2 = a2; /*0x6b4be3*/
   if ( !(unsigned __int8)ObjectClass::UpdateProductionDisplay((#374 *)this) || v2 != 1 && v2 != 3 ) /*0x6b4bfb*/
     return 0; /*0x6b4c61*/
   _BYTE v6[4]; // [esp+8h] [ebp-4h] BYREF
@@ -2552,11 +2552,11 @@ void* UnitClass::Deploy()
   AnimClass *v1; // esi
   int i; // edi
   void **v10; // eax
-  AnimClass *v14; // edx
+  IUnknown *v14; // edx
   AbstractClass *v19; // ebx
   CoordStruct *p_aP2; // eax
   AnimClass *v25; // edx
-  AnimClass *v27; // edx
+  IUnknown *v27; // edx
   CoordStruct *v29; // edi
   IUnknown *v32; // ebx
   CoordStruct *edi45; // edi
@@ -2891,7 +2891,7 @@ LABEL_82:
 }
 }
 // 0x738d30
-AbstractClass * UnitClass::DeployToBuilding()
+AbstractClass * * UnitClass::DeployToBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2902,7 +2902,6 @@ AbstractClass * UnitClass::DeployToBuilding()
   int v27; // [esp+18h] [ebp-1Ch] BYREF
   int v28; // [esp+1Ch] [ebp-18h] BYREF
   int v29; // [esp+20h] [ebp-14h] BYREF
-
   if ( !*(_DWORD *)(this->Type + 1028) ) /*0x738d41*/
     return 1; /*0x738d52*/
   this->ModifyCellTiles(0); /*0x738d58*/
@@ -2971,7 +2970,7 @@ AbstractClass * UnitClass::DeployToBuilding()
                0);
       if ( v26 != dword_B1CFB8 ) /*0x738f52*/
       {
-        int v17 = *this; /*0x738f62*/
+        AbstractClass *v17 = *this; /*0x738f62*/
         void * v18 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v26); /*0x738f70*/
         this->AssignDestination(v18, 1); /*0x738f78*/
       }
@@ -2988,7 +2987,7 @@ LABEL_7:
       LOWORD(v27) = *v6 / 256; /*0x738dbf*/
       HIWORD(v27) = v6[1] / 256; /*0x738dd7*/
       v26 = v27; /*0x738de4*/
-      int * v7 = CellStruct::Add(&v26, &v29, &DataGlobal_89F6A4); /*0x738de9*/
+      AbstractClass *v7 = CellStruct::Add(&v26, &v29, &DataGlobal_89F6A4); /*0x738de9*/
       int v8 = this->Type; /*0x738df0*/
       v28 = *v7; /*0x738df6*/
       if ( (*(unsigned __int8 (__thiscall **)(_DWORD, int *, _DWORD))(**(_DWORD **)(v8 + 1028) + 168))( /*0x738e08*/
@@ -3066,7 +3065,7 @@ LABEL_7:
           if ( (int)++v19 >= (int)&unk_B1D0A0 ) /*0x739346*/
             goto LABEL_23; /*0x739346*/
         }
-        int v23 = *this; /*0x73934a*/
+        AbstractClass *v23 = *this; /*0x73934a*/
         void * v24 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v29); /*0x739358*/
         this->AssignDestination(v24, 1); /*0x739360*/
       }
@@ -9361,9 +9360,9 @@ void* UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
   char v23; // si
   __int16 v26; // ax
   int LandHeight; // eax
-  int v30; // kr04_4
+  Coord *v30; // kr04_4
   _DWORD *v31; // eax
-  unsigned __int16 v32; // ax
+  IUnknown *v32; // ax
   __int128 aP0_4; // [esp+24h] [ebp-68h]
   int v34; // [esp+44h] [ebp-48h] BYREF
   int v35; // [esp+48h] [ebp-44h] BYREF
@@ -12743,7 +12742,7 @@ retn
 
 // IDA: 0x6B4A50 (Create, 234B static)
 // 0x6b4a50
-AbstractClass * UnitClass::Create(void* aP0, void* aP1, int aP2)
+AbstractClass * * UnitClass::Create(void* aP0, void* aP1, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -13551,7 +13550,7 @@ retn    4
 
 // IDA: 0x746810 (PerFrameUpdate, 167B)
 // 0x746810
-UnitTypeClass * UnitClass::PerFrameUpdate(int _DWORD *a1@<ecx>, int int a2@<edi>)
+UnitTypeClass * * UnitClass::PerFrameUpdate(int _DWORD *a1@<ecx>, int int a2@<edi>)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -13873,7 +13872,7 @@ retn
 
 // IDA: 0x4D4280 (ApproachEvaluate, 2177B)
 // 0x4d4280
-AbstractClass * UnitClass::ApproachEvaluate()
+AbstractClass * * UnitClass::ApproachEvaluate()
 {
 {
 {

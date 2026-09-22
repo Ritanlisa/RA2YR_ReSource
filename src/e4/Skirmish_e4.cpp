@@ -54,7 +54,7 @@ LABEL_9:
 }
 
 // 0x46F8F0
-CampaignClass * Skirmish::SetupAllSpawnLocations()
+CampaignClass * * Skirmish::SetupAllSpawnLocations()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -101,7 +101,7 @@ CampaignClass * Skirmish::SetupAllSpawnLocations()
   {
     if ( v7 != (char *)v1 ) /*0x46f986*/
     {
-  int v12; // eax
+  CampaignClass *v12; // eax
       int v9 = GetResourceIDCSF(v7); /*0x46f98a*/
       v10 = (SessionClass *)v8[2549]; /*0x46f98f*/
       int v11 = v9; /*0x46f995*/
@@ -156,7 +156,7 @@ int Skirmish::ReadSettings(HWND hDlg)
   HWND v13; // eax
   HWND DlgItem; // eax
   HWND v15; // eax
-  IUnknown *v16; // edi
+  AbstractClass *v16; // edi
   HWND v18; // [esp+10h] [ebp-4h]
   HWND v19; // [esp+10h] [ebp-4h]
   HWND v20; // [esp+10h] [ebp-4h]
@@ -232,7 +232,7 @@ int Skirmish::ReadSettings(HWND hDlg)
 }
 
 // 0x597260
-TechnoTypeClass * Skirmish::RandomizeSettings(ObjectClass * aP1)
+TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -260,8 +260,8 @@ TechnoTypeClass * Skirmish::RandomizeSettings(ObjectClass * aP1)
                    *(&dword_82B094 + (_DWORD)aP1));
   *(this + 21) = 20 * *(this + 16); /*0x59730b*/
   *(this + 22) = Random::Range(&DataGlobal_87F8E4[29348], 0, (IUnknown *)0x64); /*0x597313*/
-  int v3 = *(_DWORD *)(dword_ABE260 + 4 * (_DWORD)aP1); /*0x597322*/
-  int v4 = *(_DWORD *)(dword_ABE27C + 4 * (_DWORD)aP1); /*0x597325*/
+  TechnoTypeClass *v3 = *(_DWORD *)(dword_ABE260 + 4 * (_DWORD)aP1); /*0x597322*/
+  TechnoTypeClass *v4 = *(_DWORD *)(dword_ABE27C + 4 * (_DWORD)aP1); /*0x597325*/
   if ( v3 >= 0 ) /*0x59732a*/
   {
     if ( v3 > 100 ) /*0x597333*/
@@ -494,7 +494,7 @@ int Skirmish::EnableSpawnButtons()
 }
 
 // 0x6AE3F0
-ReferenceCounted * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
+ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -504,7 +504,7 @@ ReferenceCounted * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned 
   wchar_t *v9; // eax
   wchar_t *v11; // eax
   wchar_t *v13; // eax
-  LRESULT v14; // eax
+  ReferenceCounted *v14; // eax
   LRESULT v15; // eax
   wchar_t *v16; // eax
   wchar_t *v17; // eax
@@ -521,7 +521,7 @@ ReferenceCounted * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned 
       if ( *(_DWORD *)a4 && *(_DWORD *)(a4 + 4) != -1 ) /*0x6ae4ce*/
       {
         DlgCtrlID = GetDlgCtrlID(*(HWND *)a4); /*0x6ae4d5*/
-        int v7 = DlgCtrlID; /*0x6ae4db*/
+        ReferenceCounted *v7 = DlgCtrlID; /*0x6ae4db*/
         if ( DlgCtrlID == 1291 /*0x6ae52b*/
           || DlgCtrlID == 1294
           || DlgCtrlID == 1302
@@ -613,7 +613,7 @@ ReferenceCounted * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned 
 }
 
 // 0x6AE6E0
-AbstractClass * Skirmish::SetupGame(int a2)
+AbstractClass * * Skirmish::SetupGame(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -636,7 +636,7 @@ AbstractClass * Skirmish::SetupGame(int a2)
   HWND v24; // edi
   ObjectClass *v26; // ecx
   ObjectClass *v27; // esi
-  CCINIClass *v28; // ecx
+  AbstractClass *v28; // ecx
   int PlayerCountMap; // edi
   int j; // edi
   HWND (__stdcall *v35)(HWND, int); // edi
@@ -877,7 +877,7 @@ LABEL_44:
   *(_DWORD *)&HouseClass_Player[29936] = v27; /*0x6aebdd*/
   PlayerCountMap = ReadPlayerCountMap(*(int *)&HouseClass_Player[29960]); /*0x6aebee*/
   if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)&HouseClass_Player[29936] + 4))(*(_DWORD *)&HouseClass_Player[29936]) /*0x6aec07*/
-  int v32; // ecx
+  CampaignClass *v32; // ecx
     || (v32 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4580), v32 > PlayerCountMap) )
   {
     v32 = PlayerCountMap; /*0x6aec09*/

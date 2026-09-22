@@ -90,7 +90,7 @@ void Lobby::UpdatePlayerLabels()
   wchar_t *v29; // eax
   LRESULT v30; // eax
   LRESULT v31; // eax
-  wchar_t *v32; // eax
+  CampaignScore *v32; // eax
   char v33; // [esp+1h] [ebp-13h]
   int v36; // [esp+4h] [ebp-10h]
   int v37; // [esp+8h] [ebp-Ch]
@@ -492,7 +492,7 @@ int Lobby::BuildPlayerList()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t **v0; // esi
-  wchar_t *v1; // edi
+  HashTable *v1; // edi
   char **v2; // eax
   const char **v3; // eax
   char Destination[256]; // [esp+18h] [ebp-100h] BYREF

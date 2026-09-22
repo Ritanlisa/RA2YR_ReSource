@@ -301,7 +301,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 
 // 0x4A2370
 namespace gamemd {
-AbstractClass * DrawSidebarCreditsTimer()
+AbstractClass * * DrawSidebarCreditsTimer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -351,9 +351,8 @@ AbstractClass * DrawSidebarCreditsTimer()
       if ( *(_BYTE *)(a1 + 10) && g_RulesClass_Instance->ScatterSound >= 2 ) /*0x4a250b*/
       {
         if ( *(_BYTE *)(a1 + 9) ) /*0x4a250d*/
-          int v12 = *(_DWORD *)g_RulesClass_Instance->ChuteSound; /*0x4a2526*/
-        else
-          v12 = *(_DWORD *)(g_RulesClass_Instance->ChuteSound + 4); /*0x4a2530*/
+          AbstractClass *v12 = *(_DWORD *)g_RulesClass_Instance->ChuteSound; /*0x4a2526*/
+        AbstractClass *v12 = *(_DWORD *)(g_RulesClass_Instance->ChuteSound + 4); /*0x4a2530*/
         PlayVocClass(v12, 0x2000, 0.5, 0); /*0x4a2533*/
       }
       UI_Draw_6D0E60(&DataGlobal_87F7E8); /*0x4a253d*/
@@ -390,9 +389,9 @@ void CStreamClass___vt03(int a1, char * a2, signed int Size, signed int * a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  size_t v9; // edi
+  ModemGame *v9; // edi
   size_t v10; // eax
-  unsigned __int8 *v14; // ecx
+  CampaignClass *v14; // ecx
   int v4 = Size; /*0x4a2b66*/
   if ( !a2 ) /*0x4a2b6e*/
     return -2147467261; /*0x4a2b72*/
@@ -521,8 +520,7 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
 {
   ConvertClass *v2; // ebx
   void *result; // eax
-  size_t v6; // edi
-
+  AbstractClass *v6; // edi
   v2 = aP1; /*0x4a38d4*/
   LOBYTE(aP1) = 0; /*0x4a38d9*/
   v2->__pad_0[0] = 0; /*0x4a38db*/
@@ -532,7 +530,7 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
   bool v7; // zf
   _DWORD v8[22]; // [esp+Ch] [ebp-6Ch] BYREF
     CCFileClass::Construct(v8, aP0->__pad_0); /*0x4a38ed*/
-    void * v5 = 0; /*0x4a38f2*/
+    AbstractClass *v5 = 0; /*0x4a38f2*/
     if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(v8[0] + 20))(v8, 0) ) /*0x4a38fd*/
     {
       v6 = (*(int (__thiscall **)(_DWORD *))(v8[0] + 44))(v8); /*0x4a390f*/
@@ -562,13 +560,12 @@ LABEL_6:
 
 // 0x4A3970
 namespace gamemd {
-AbstractClass * FileClass_LoadToBuffer(char ** a1, bool * a2)
+AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  size_t v6; // ebx
-
+  AbstractClass *v6; // ebx
   char * v3 = String::GetOrEmpty_Alt(a1); /*0x4a397c*/
   *a2 = 0; /*0x4a3982*/
   result = SearchMIXFile(v3, 0); /*0x4a3985*/
@@ -577,7 +574,7 @@ AbstractClass * FileClass_LoadToBuffer(char ** a1, bool * a2)
   bool v7; // zf
   _DWORD v8[22]; // [esp+Ch] [ebp-6Ch] BYREF
     CCFileClass::Construct(v8, v3); /*0x4a3994*/
-    void * v5 = 0; /*0x4a3999*/
+    AbstractClass *v5 = 0; /*0x4a3999*/
     if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(v8[0] + 20))(v8, 0) ) /*0x4a39a4*/
     {
       v6 = (*(int (__thiscall **)(_DWORD *))(v8[0] + 44))(v8); /*0x4a39b6*/
@@ -714,11 +711,11 @@ LABEL_18:
 
 // 0x4A4130
 namespace gamemd {
-INIClass * int sub_4A4130()
+INIClass * * int sub_4A4130()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  LPDIRECTDRAW v0; // eax
+  INIClass *v0; // eax
   HRESULT v2; // eax
   CHAR Text[80]; // [esp+78h] [ebp-18Ch] BYREF
 
@@ -803,7 +800,6 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   int v18; // [esp+2Ch] [ebp-Ch]
   int v19; // [esp+30h] [ebp-8h]
   int v20; // [esp+34h] [ebp-4h]
-
   if ( !g_lpDirectDraw7 ) /*0x4a4915*/
     return 0; /*0x4a4ab2*/
   sub_4A4E30(&v16, 0, 0); /*0x4a4923*/
@@ -818,8 +814,8 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
       __3_YAXPAX_Z(Block); /*0x4a4aa8*/
     return 0; /*0x4a4aa8*/
   }
-  unsigned int * v5 = (unsigned int *)__2_YAPAXI_Z(8 * v19 + 4); /*0x4a497e*/
-  unsigned int * v6 = v5; /*0x4a4990*/
+  AbstractClass *v5 = (unsigned int *)__2_YAPAXI_Z(8 * v19 + 4); /*0x4a497e*/
+  AbstractClass *v6 = v5; /*0x4a4990*/
   memset(v5, 0, 8 * v19 + 4); /*0x4a4995*/
   NumOfElements = 0; /*0x4a4999*/
   int v7 = 0; /*0x4a49aa*/
@@ -1097,7 +1093,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass aP
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v4; // edx
-  AbstractClass *v6; // edi
+  CampaignScore *v6; // edi
   BitFont *v10; // ebx
   char ah1; // ah
   AbstractClass *a2a; // [esp+10h] [ebp-28h]
@@ -1194,7 +1190,7 @@ ControlClass * * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, u
   BitFont *v26; // [esp+10h] [ebp-420h]
   wchar_t Destination[512]; // [esp+30h] [ebp-400h] BYREF
 
-  int * v10 = a1; /*0x4a636f*/
+  ControlClass *v10 = a1; /*0x4a636f*/
   int v11 = *a5; /*0x4a6371*/
   int v28 = a5[1]; /*0x4a637c*/
   if ( a2 ) /*0x4a6380*/
@@ -1391,14 +1387,14 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   ReleaseDC(hWnd, DC); /*0x4a6942*/
   if ( !this->M8 ) /*0x4a6948*/
     goto LABEL_12; /*0x4a6948*/
-  int v11 = this->M4; /*0x4a6951*/
-  this->M16 = *(_DWORD *)(v11 + 4); /*0x4a6957*/
-  int v12 = this->M16; /*0x4a6962*/
-  this->M20 = abs32(*(_DWORD *)(v11 + 8)); /*0x4a6965*/
+  AbstractClass *v11 = this->M4; /*0x4a6951*/
+  this->M16 = v11->vtable2; /*0x4a6957*/
+  AbstractClass *v12 = this->M16; /*0x4a6962*/
+  this->M20 = abs32(v11->vtable3); /*0x4a6965*/
   int v13 = v12 + 3; /*0x4a6968*/
   LOBYTE(v13) = (v12 + 3) & 0xFC; /*0x4a696b*/
   this->M28 = v13; /*0x4a696d*/
-  if ( *(int *)(v11 + 8) <= 0 ) /*0x4a6975*/
+  if ( v11->vtable3 <= 0 ) /*0x4a6975*/
   {
     this->M24 = *v9; /*0x4a698b*/
   }
@@ -1413,7 +1409,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   if ( v15 ) /*0x4a69a6*/
   {
     int v16 = this->M20; /*0x4a69a8*/
-    int v17 = this->M12; /*0x4a69ab*/
+    AbstractClass *v17 = this->M12; /*0x4a69ab*/
     v15[2] = v16; /*0x4a69ae*/
     v15[1] = v14; /*0x4a69b9*/
     v15[3] = 0; /*0x4a69bc*/
@@ -1575,7 +1571,7 @@ LABEL_12:
   {
     while ( 1 ) /*0x4a8154*/
     {
-      signed int v5 = v11; /*0x4a8154*/
+      MSVQAnim *v5 = v11; /*0x4a8154*/
       if ( Ticks != -1 ) /*0x4a815b*/
       {
         signed int v6 = Timer::GetTicks() - Ticks; /*0x4a8166*/
@@ -1915,7 +1911,6 @@ ScenarioClass * * sub_4AC4F0()
   int v10; // [esp+Ch] [ebp-18h] BYREF
   int v11; // [esp+10h] [ebp-14h]
   int v12; // [esp+14h] [ebp-10h]
-
   int v0 = 0; /*0x4ac4fb*/
   int v1 = 0; /*0x4ac4fd*/
   int v2 = 0; /*0x4ac4ff*/
@@ -1976,15 +1971,14 @@ ScenarioClass * * sub_4AC4F0()
 
 // 0x4AE750
 namespace gamemd {
-AbstractClass * DispatchSelectionWaypointMove()
+AbstractClass * * DispatchSelectionWaypointMove()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD **v4; // eax
-  wchar_t *v6; // ecx
+  CellStruct *v6; // ecx
   int i; // esi
-  wchar_t *v13; // ebp
-
+  CellStruct *v13; // ebp
   LOBYTE(v4) = ArmageddonMode; /*0x4ae753*/
   unsigned int v27 = -1; /*0x4ae761*/
   int v26; // [esp+Ch] [ebp-Ch] BYREF
@@ -2167,7 +2161,7 @@ void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Con
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  ConvertClass *v16; // edi
+  AbstractClass *v16; // edi
   IUnknown **v20; // eax
   int SubFile; // eax
   ConvertClass *v25; // esi
@@ -2427,7 +2421,7 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
   char v14[48]; // [esp+4Ch] [ebp-30h] BYREF
 
   Matrix3x4::Identity(v13); /*0x4af9bc*/
-  int v3 = *(this + 12); /*0x4af9c1*/
+  ObjectClass *v3 = *(this + 12); /*0x4af9c1*/
   if ( v3 ) /*0x4af9ca*/
   {
     int v4 = *(this + 9); /*0x4af9d0*/
@@ -2442,7 +2436,7 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
     if ( (double)(v3 - v5) / (double)*(this + 12) < 1.0 ) /*0x4afa08*/
     {
   double v7; // st7
-      int v6 = *(this + 12); /*0x4afa0a*/
+      ObjectClass *v6 = *(this + 12); /*0x4afa0a*/
       if ( v6 ) /*0x4afa13*/
       {
         int v8 = *(this + 9); /*0x4afa1d*/

@@ -18,7 +18,7 @@ W WinsockInterfaceClass::WinsockInterfaceClass()
     WSACleanup(); /*0x7b1ad3*/
     this->q3F068 = 0; /*0x7b1ad8*/
   }
-  void * v3 = this->q03C; /*0x7b1ade*/
+  AbstractClass *v3 = this->q03C; /*0x7b1ade*/
   *(_DWORD *)(this + 56) = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1ae1*/
   if ( v3 && this->q045 ) /*0x7b1aec*/
   {
@@ -36,7 +36,7 @@ W WinsockInterfaceClass::WinsockInterfaceClass()
   }
   this->q02D = 0; /*0x7b1b22*/
   this->q028 = 0; /*0x7b1b25*/
-  void * v5 = this->q00C; /*0x7b1b28*/
+  AbstractClass *v5 = this->q00C; /*0x7b1b28*/
   this->LocalAddress = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1b2b*/
   if ( v5 && this->q015 ) /*0x7b1b36*/
   {

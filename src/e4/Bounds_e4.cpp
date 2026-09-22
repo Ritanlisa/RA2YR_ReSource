@@ -8,7 +8,7 @@ unsigned int * Bounds::Subtract(IUnknown * aP1, unsigned int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v3 = this->q004; /*0x487ee0*/
+  AbstractClass *v3 = this->q004; /*0x487ee0*/
   int v4 = *this; /*0x487ee3*/
   int v5 = this->q008; /*0x487ef1*/
   int v6 = this->q00C; /*0x487ef4*/

@@ -10,7 +10,7 @@
 #include "e4/classes/WalkLocomotion_e4.hpp"
 
 // 0x465450
-BuildingTypeClass * BulletTypeClass::ReadArmor()
+BuildingTypeClass * * BulletTypeClass::ReadArmor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -18,11 +18,11 @@ BuildingTypeClass * BulletTypeClass::ReadArmor()
   int i; // edi
   char Destination[60]; // [esp+Ch] [ebp-3Ch] BYREF
 
-  int v0 = g_TriggerClassCount; /*0x465450*/
+  BuildingTypeClass *v0 = g_TriggerClassCount; /*0x465450*/
   int v1 = 0; /*0x46545e*/
   if ( g_TriggerClassCount > 0 ) /*0x465462*/
   {
-    char * v2 = (char *)g_TriggerTypeCount; /*0x465464*/
+    AbstractClass *v2 = (char *)g_TriggerTypeCount; /*0x465464*/
     do /*0x46547d*/
     {
       if ( v1 <= *(char *)(*(_DWORD *)v2 + 5895) ) /*0x465475*/
@@ -75,7 +75,7 @@ BuildingTypeClass * BulletTypeClass::ReadArmor()
 }
 
 // 0x465CC0
-BuildingTypeClass * BulletTypeClass::ReadTrailerAnim()
+BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -86,7 +86,7 @@ BuildingTypeClass * BulletTypeClass::ReadTrailerAnim()
   result = g_TriggerClassCount; /*0x465cc0*/
   for ( i = 0; i < g_TriggerClassCount; ++i ) /*0x465ccd*/
   {
-    int v2 = *((_DWORD *)g_TriggerTypeCount + i); /*0x465cdc*/
+    WeaponTypeClass *v2 = *((_DWORD *)g_TriggerTypeCount + i); /*0x465cdc*/
     Destination[0] = 0; /*0x465cef*/
     INIClass::GetString( /*0x465cf5*/
       (unsigned __int8 ***)DataGlobal_887048,
@@ -194,7 +194,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
 }
 
 // 0x46BEE0
-WeaponTypeClass * BulletTypeClass::LoadFromINI(unsigned char *** a2)
+WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -324,7 +324,7 @@ WeaponTypeClass * BulletTypeClass::LoadFromINI(unsigned char *** a2)
               (INIClass *)(this + 504),
               25) > 0 )
   {
-  void *v20; // eax
+  WeaponTypeClass *v20; // eax
     v37 = this->trailer; /*0x46c20a*/
     if ( INIClass::GetString( /*0x46c219*/
            (unsigned __int8 ***)&DataGlobal_87F8E4[30876],

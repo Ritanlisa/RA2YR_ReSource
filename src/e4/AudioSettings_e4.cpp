@@ -29,7 +29,7 @@ void AudioSettings::SetFlag68(char a2)
 }
 
 // 0x6B6300
-AbstractClass * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
+AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -56,7 +56,7 @@ AbstractClass * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int 
   HWND v27; // eax
   HWND v28; // esi
   LRESULT v29; // eax
-  LRESULT v30; // esi
+  AbstractClass *v30; // esi
   LRESULT v32; // eax
   HWND v33; // eax
   HWND v35; // eax
@@ -178,7 +178,7 @@ AbstractClass * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int 
                 if ( v23 != -1 ) /*0x6b65c2*/
                 {
                   SendMessageA(v19, 0x19Au, v23, v21); /*0x6b65cc*/
-                  int v25 = dword_A83D14; /*0x6b65ce*/
+                  AbstractClass *v25 = dword_A83D14; /*0x6b65ce*/
                   if ( dword_A83D14 == -1 ) /*0x6b65d6*/
                     v25 = dword_A83D18; /*0x6b65d8*/
                   if ( v25 == v21 ) /*0x6b65df*/
@@ -225,7 +225,7 @@ AbstractClass * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int 
             if ( v29 != -1 ) /*0x6b67e5*/
             {
               v30 = SendMessageA(v28, 0x199u, v29, 0); /*0x6b67f6*/
-              int v31 = dword_A83D14; /*0x6b67f8*/
+              AbstractClass *v31 = dword_A83D14; /*0x6b67f8*/
               DataGlobal_A8EBA5 = 1; /*0x6b6800*/
               if ( dword_A83D14 == -1 ) /*0x6b6807*/
                 v31 = dword_A83D18; /*0x6b6809*/
@@ -271,7 +271,7 @@ AbstractClass * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int 
     Options::SetScoreVolume((float *)g_GameModeOptions, v40, 0); /*0x6b6900*/
     if ( DataGlobal_A8EBA0 == 0.0 ) /*0x6b6916*/
     {
-      int v34 = dword_A83D14; /*0x6b6918*/
+      AbstractClass *v34 = dword_A83D14; /*0x6b6918*/
       if ( dword_A83D14 == -1 ) /*0x6b6920*/
         v34 = dword_A83D18; /*0x6b6922*/
       Theme::QueueSong((int)&g_BuildingTypeClass_Count, v34); /*0x6b692d*/

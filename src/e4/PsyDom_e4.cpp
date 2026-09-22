@@ -11,8 +11,8 @@ void PsyDom::Fire()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  _DWORD *v3; // eax
-  CoordStruct *v4; // esi
+  AnimClass *v3; // eax
+  Coord *v4; // esi
   void *v5; // eax
   void **v6; // eax
   int v7; // eax
@@ -122,8 +122,7 @@ void PsyDom::Fire()
                     (void *)0x600,
                     0,
                     0);
-          else
-            v20 = 0; /*0x53b30d*/
+          AnimClass *v20 = 0; /*0x53b30d*/
           *(_DWORD *)&i->__pad_2B8[16] = v20; /*0x53b311*/
           if ( v20 ) /*0x53b317*/
             BuildingClass::AimTurret(v20, i); /*0x53b31c*/

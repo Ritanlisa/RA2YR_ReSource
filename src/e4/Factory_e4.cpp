@@ -17,7 +17,7 @@ int Factory::GetLinkedIndex(DynamicVector * aP1)
 
   if ( aP1 == (DynamicVector *)-1 ) /*0x663d68*/
     return -1; /*0x663d6a*/
-  int v3 = this->q004; /*0x663d70*/
+  AbstractClass *v3 = this->q004; /*0x663d70*/
   int v4 = 0; /*0x663d73*/
   if ( v3 <= 0 ) /*0x663d79*/
     return -1; /*0x663d79*/
@@ -52,7 +52,7 @@ void* Factory_CalculateExitCell()
   int v75; // [esp+60h] [ebp-24h] BYREF
   int v76; // [esp+64h] [ebp-20h] BYREF
   int v77; // [esp+68h] [ebp-1Ch]
-  int * v7 = a1 + 10; /*0x718b80*/
+  Coord *v7 = a1 + 10; /*0x718b80*/
   if ( a1[10] == DataGlobal_B0EBF8 && a1[11] == DataGlobal_B0EBFC && a1[12] == DataGlobal_B0EC00 ) /*0x718b9d*/
   {
     _DWORD * v8 = (_DWORD *)a1[3]; /*0x718ba7*/
@@ -65,7 +65,7 @@ void* Factory_CalculateExitCell()
   {
     (*(void (__stdcall **)(_DWORD *))(*(_DWORD *)a1[3] + 244))(a1 + 10); /*0x718ba5*/
   }
-  int * v9 = a4; /*0x718bd6*/
+  IUnknown *v9 = a4; /*0x718bd6*/
   _DWORD v73[2]; // [esp+54h] [ebp-30h] BYREF
   v73[0] = *a4; /*0x718bdf*/
   int v10 = *a4; /*0x718be3*/
@@ -123,9 +123,9 @@ void* Factory_CalculateExitCell()
           if ( (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v15 + 44))(v15) == 2 ) /*0x718d67*/
           {
             int v16 = *v9; /*0x718d78*/
-            int v17 = *(_DWORD *)v71; /*0x718d86*/
+            IUnknown *v17 = *(_DWORD *)v71; /*0x718d86*/
             v70 = v9[1] / 256; /*0x718d8b*/
-            if ( *(_DWORD *)(*(int (__stdcall **)(_DWORD *))(v17 + 440))(v73) == __PAIR32__(v70, v16 / 256) ) /*0x718da1*/
+            if ( *(_DWORD *)v17->GetCellCoords_Alt(v73) == __PAIR32__(v70, v16 / 256) ) /*0x718da1*/
               a6 = 1; /*0x718dae*/
           }
         }

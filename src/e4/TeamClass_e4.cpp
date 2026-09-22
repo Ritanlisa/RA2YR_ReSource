@@ -132,7 +132,7 @@ int TeamClass::DeployUnit(int a2, int a3)
       this->currentScript = 0; /*0x62a297*/
       return result; /*0x62a2a0*/
     }
-    int v6 = this->owner; /*0x62a2a3*/
+    IUnknown *v6 = this->owner; /*0x62a2a3*/
     int v7 = this->spawnCell; /*0x62a2a6*/
     if ( v6 != -1 ) /*0x62a2ac*/
     {
@@ -169,8 +169,8 @@ LABEL_12:
             *(_BYTE *)(this->buildingType + 1074) = 0; /*0x62a39c*/
             (*(void (__thiscall **)(_DWORD))(*this->buildingType + 332))(this->buildingType); /*0x62a3a7*/
           }
-          int v14 = this->buildingType; /*0x62a3ad*/
-          int v15 = *(_DWORD *)(v14 + 1076); /*0x62a3b0*/
+          TechnoClass *v14 = this->buildingType; /*0x62a3ad*/
+          int v15 = v14->previousTeam; /*0x62a3b0*/
           if ( v15 ) /*0x62a3b8*/
             TeamClass::AddMember(v15, v14, 0); /*0x62a3bc*/
           if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(*this->buildingType + 1196))(this->buildingType) ) /*0x62a3c6*/
@@ -227,8 +227,8 @@ int TeamClass::GetLeaderIndex()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->q21C; /*0x6339b0*/
-  int v2 = *(_DWORD *)(v1 + 48); /*0x6339b7*/
+  BuildingClass *v1 = this->q21C; /*0x6339b0*/
+  TechnoClass *v2 = v1->nextObject; /*0x6339b7*/
   if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v1) && HouseClass_Player ) /*0x6339ca*/
     return *((_DWORD *)HouseClass_Player + 12); /*0x6339cc*/
   else
@@ -239,7 +239,7 @@ int TeamClass::GetLeaderIndex()
 
 // 0x6340B0
 namespace gamemd {
-AbstractClass * TeamClass::DestroyAllMembers(TechnoClass * aP1)
+AbstractClass * * TeamClass::DestroyAllMembers(TechnoClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -376,7 +376,7 @@ int TeamClass::FindByMemberType(int a2)
   if ( result == -1 ) /*0x635a5d*/
   {
     AbstractClass *v4 = this->vtable2; /*0x635a63*/
-    _DWORD * v5 = 0; /*0x635a66*/
+    AbstractClass *v5 = 0; /*0x635a66*/
     int v6 = 0; /*0x635a68*/
     *(_DWORD *)v22 = v4; /*0x635a6a*/
     if ( v4 <= 0 ) /*0x635a70*/
@@ -399,8 +399,8 @@ int TeamClass::FindByMemberType(int a2)
           int v11 = *(_DWORD *)(Type + 140); /*0x635aa2*/
           if ( v11 == -1 || v10 < v11 ) /*0x635ab4*/
           {
-            int v12 = v5[135]; /*0x635acb*/
-            int v13 = *(_DWORD *)(v12 + 48); /*0x635acd*/
+            AbstractClass *v12 = v5[135]; /*0x635acb*/
+            ObjectClass *v13 = v12->q030; /*0x635acd*/
             if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v12) && HouseClass_Player ) /*0x635ae0*/
               v13 = *((_DWORD *)HouseClass_Player + 12); /*0x635ae2*/
             int v14 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v13] + 22265; /*0x635af4*/
@@ -419,7 +419,7 @@ int TeamClass::FindByMemberType(int a2)
       if ( !v5 ) /*0x635b52*/
         return -1; /*0x635b52*/
       int v17 = v5[135]; /*0x635b61*/
-      int v18 = *(_DWORD *)(v17 + 48); /*0x635b67*/
+      ObjectClass *v18 = *(_DWORD *)(v17 + 48); /*0x635b67*/
       if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v17) ) /*0x635b6a*/
       {
         if ( HouseClass_Player ) /*0x635b7a*/
@@ -455,7 +455,7 @@ int TeamClass::GetMember()
   if ( result == -1 ) /*0x635c22*/
   {
     int v3 = this->vtable2; /*0x635c28*/
-    _DWORD * v4 = 0; /*0x635c2b*/
+    AbstractClass *v4 = 0; /*0x635c2b*/
     int v5 = 0; /*0x635c2d*/
     if ( v3 <= 0 ) /*0x635c31*/
     {
@@ -472,8 +472,8 @@ int TeamClass::GetMember()
           v4 = (_DWORD *)*v6; /*0x635c40*/
           if ( !*(_BYTE *)(BuildingClass::GetPlanningToken((_DWORD *)*v6) + 152) ) /*0x635c51*/
           {
-            int v7 = v4[135]; /*0x635c71*/
-            int v8 = *(_DWORD *)(v7 + 48); /*0x635c73*/
+            AbstractClass *v7 = v4[135]; /*0x635c71*/
+            ObjectClass *v8 = v7->q030; /*0x635c73*/
             if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v7) && HouseClass_Player ) /*0x635c86*/
               v8 = *((_DWORD *)HouseClass_Player + 12); /*0x635c88*/
             int v9 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v8] + 22265; /*0x635c9b*/
@@ -491,7 +491,7 @@ int TeamClass::GetMember()
       if ( !v4 ) /*0x635c5a*/
         return -1; /*0x635c5a*/
       int v12 = v4[135]; /*0x635cf7*/
-      int v13 = *(_DWORD *)(v12 + 48); /*0x635cfd*/
+      ObjectClass *v13 = *(_DWORD *)(v12 + 48); /*0x635cfd*/
       if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v12) ) /*0x635d00*/
       {
         if ( HouseClass_Player ) /*0x635d10*/
@@ -537,7 +537,7 @@ int TeamClass::Reset(ObjectClass * aP1)
 
 // 0x636120
 namespace gamemd {
-TechnoClass * TeamClass::RemoveAllMembers()
+TechnoClass * * TeamClass::RemoveAllMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -597,7 +597,7 @@ TechnoClass * TeamClass::RemoveAllMembers()
   {
     v18 = *(_DWORD *)this; /*0x63624c*/
     int v11 = *(_DWORD *)(v18 + 540); /*0x636250*/
-    unsigned int v12 = *(_DWORD *)(v11 + 48); /*0x636256*/
+    HouseClass *v12 = *(_DWORD *)(v11 + 48); /*0x636256*/
     if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v11) && HouseClass_Player ) /*0x636269*/
       v12 = *((_DWORD *)HouseClass_Player + 12); /*0x63626b*/
     if ( v12 < 0x18 ) /*0x636270*/
@@ -685,7 +685,7 @@ LABEL_13:
         *(_DWORD *)&v30[7] = *(_DWORD *)WaypointCoords; /*0x636858*/
         v30[11] = WaypointCoords[4]; /*0x63685f*/
         int v15 = __2_YAPAXI_Z(0x10u); /*0x636863*/
-        int v16 = 0; /*0x636868*/
+        ObjectClass *v16 = 0; /*0x636868*/
         if ( v15 ) /*0x63686f*/
         {
           *(_DWORD *)v15 = 0; /*0x636871*/
@@ -703,7 +703,7 @@ LABEL_13:
         qmemcpy(v17, v30, 0x6Cu); /*0x6368ab*/
         *((_WORD *)v17 + 54) = v31; /*0x6368ad*/
         v17[110] = v32; /*0x6368af*/
-        *(_DWORD *)(v16 + 4) = v17; /*0x6368b0*/
+        v16->vtable2 = v17; /*0x6368b0*/
         v18 = *(TechnoClass **)(v8 + 8); /*0x6368b3*/
         if ( *(_DWORD *)(v8 + 16) < (int)v18 /*0x6368d7*/
           || (*(_BYTE *)(v8 + 13) || !v18)
@@ -747,7 +747,7 @@ LABEL_13:
 
 // 0x636980
 namespace gamemd {
-TeamClass * TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
+TeamClass * * TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -757,7 +757,7 @@ TeamClass * TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
   int Type; // edi
   __int16 v30; // [esp+90h] [ebp-4h]
   TeamClass *v3 = this; /*0x636987*/
-  int v4 = this->abstractFlags - a3; /*0x6369a0*/
+  TechnoClass *v4 = this->abstractFlags - a3; /*0x6369a0*/
   result = BuildingClass::GetPlanningToken(a2); /*0x6369a2*/
   if ( result ) /*0x6369a9*/
   {
@@ -767,10 +767,10 @@ TeamClass * TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
     {
       while ( 1 ) /*0x6369d1*/
       {
-  int v10; // eax
+  TechnoTypeClass *v10; // eax
         int v6 = *(_DWORD *)(v3[2] + 4 * v25); /*0x6369d1*/
         int v7 = 0; /*0x6369d4*/
-        int v8 = *(_DWORD *)(v6 + 16); /*0x6369d6*/
+        TeamClass *v8 = *(_DWORD *)(v6 + 16); /*0x6369d6*/
         if ( v8 <= 0 ) /*0x6369db*/
           goto LABEL_11; /*0x6369db*/
         v9 = *(_DWORD ***)(v6 + 4); /*0x6369e0*/
@@ -787,10 +787,9 @@ TeamClass * TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
         if ( v7 == -1 ) /*0x6369f7*/
 LABEL_11:
           v10 = 0; /*0x6369f9*/
-        else
-          v10 = *(_DWORD *)(*(_DWORD *)(v6 + 4) + 4 * v7); /*0x6369fd*/
+        TechnoTypeClass *v10 = *(_DWORD *)(*(_DWORD *)(v6 + 4) + 4 * v7); /*0x6369fd*/
 LABEL_13:
-        _BYTE * v11 = *(_BYTE **)(v10 + 4); /*0x636a00*/
+        _BYTE * v11 = v10->vtable2; /*0x636a00*/
   _BYTE v29[108]; // [esp+24h] [ebp-70h] BYREF
         qmemcpy(v29, v11, sizeof(v29)); /*0x636a13*/
         v11 += 108; /*0x636a13*/
@@ -801,7 +800,7 @@ LABEL_13:
         *(_DWORD *)&v29[7] = *(_DWORD *)WaypointCoords; /*0x636a26*/
         v29[11] = WaypointCoords[4]; /*0x636a2d*/
         _DWORD * v13 = __2_YAPAXI_Z(0x10u); /*0x636a31*/
-        _DWORD * v14 = 0; /*0x636a36*/
+        AbstractClass *v14 = 0; /*0x636a36*/
         if ( v13 ) /*0x636a3d*/
         {
           *v13 = 0; /*0x636a3f*/
@@ -827,7 +826,7 @@ LABEL_13:
           && (v17 = *(_DWORD *)(v6 + 20), v17 > 0)
           && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v6 + 8))(v6, v16 + v17, 0) )
         {
-          int v18 = *(_DWORD *)(v6 + 16); /*0x636aac*/
+          TeamClass *v18 = *(_DWORD *)(v6 + 16); /*0x636aac*/
           int v19 = *(_DWORD *)(v6 + 4); /*0x636aaf*/
           *(_DWORD *)(v6 + 16) = v18 + 1; /*0x636ab5*/
           *(_DWORD *)(v19 + 4 * v18) = v14; /*0x636ab8*/
@@ -862,7 +861,7 @@ LABEL_13:
 
 // 0x636B50
 namespace gamemd {
-CampaignClass * TeamClass::Cleanup(BuildingClass * aP1)
+CampaignClass * * TeamClass::Cleanup(BuildingClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1008,7 +1007,7 @@ int TeamClass::Update_0(int aP1, AbstractClass * aP2, IUnknown * aP3, AbstractCl
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  int v6; // edx
+  TagTypeClass *v6; // edx
   char v7; // bl
   TriggerClass *v8; // esi
   int eax8; // eax
@@ -1032,7 +1031,7 @@ int TeamClass::Update_0(int aP1, AbstractClass * aP2, IUnknown * aP3, AbstractCl
            (int)aP5) )
     {
       v6 = (int)this->buildingType; /*0x6e541d*/
-      int v10 = *(_DWORD *)(v6 + 156); /*0x6e5420*/
+      int v10 = v6->q09C; /*0x6e5420*/
       if ( !v10 ) /*0x6e5429*/
       {
         BuildingClass::ExecuteTriggers((int)v8, (TechnoClass *)aP2, (TriggerClass *)aP3); /*0x6e546d*/
@@ -2161,7 +2160,7 @@ int TeamClass::LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractCla
 
 // 0x6EAA90
 namespace gamemd {
-TeamTypeClass * TeamClass::RecruitMember(int a2)
+TeamTypeClass * * TeamClass::RecruitMember(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2335,7 +2334,7 @@ TeamTypeClass * TeamClass::RecruitMember(int a2)
 
 // 0x6EAEE0
 namespace gamemd {
-AbstractClass * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
+AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2345,10 +2344,10 @@ AbstractClass * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass *
   BuildingTypeClass *v31; // [esp+2Ch] [ebp-38h]
   BuildingTypeClass *v32; // [esp+2Ch] [ebp-38h]
   BuildingTypeClass *v33; // [esp+2Ch] [ebp-38h]
-  int v3; // eax
+  AbstractClass *v3; // eax
   LOBYTE(v3) = (_BYTE)aP2; /*0x6eaee3*/
   v4 = (AbstractClass *)this; /*0x6eaeea*/
-  int v5 = 0; /*0x6eaeec*/
+  AbstractClass *v5 = 0; /*0x6eaeec*/
   *(_DWORD *)aP2->__pad_0 = 0; /*0x6eaef2*/
   *(_DWORD *)aP1->__pad_0 = 0; /*0x6eaef9*/
   AbstractClass *v6 = this->firstUnit; /*0x6eaefb*/
@@ -2357,7 +2356,7 @@ AbstractClass * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass *
   int v39; // [esp+40h] [ebp-24h] BYREF
   int v38; // [esp+3Ch] [ebp-28h]
   int v37; // [esp+38h] [ebp-2Ch]
-  int v36; // [esp+34h] [ebp-30h] BYREF
+  AbstractClass *v36; // [esp+34h] [ebp-30h] BYREF
     if ( *SessionClass::GetEntry(this->currentScript, (IUnknown *)&v36) == 10 ) /*0x6eaf16*/
     {
   _DWORD v43[3]; // [esp+58h] [ebp-Ch] BYREF
@@ -2381,7 +2380,7 @@ AbstractClass * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass *
             {
               if ( this != *(_DWORD *)(v10 + 1492) ) /*0x6eaf97*/
               {
-                _DWORD * v11 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v10 + 72))(v10, &v39); /*0x6eafa7*/
+                AbstractClass *v11 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v10 + 72))(v10, &v39); /*0x6eafa7*/
                 _DWORD * v12 = (_DWORD *)v6->GetInvalidCoord(v42); /*0x6eafb0*/
                 v13 = Coord::Subtract( /*0x6eafd0*/
                         v43,
@@ -2423,7 +2422,7 @@ AbstractClass * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass *
             {
               if ( this != *(_DWORD *)(v15 + 1492) ) /*0x6eb096*/
               {
-                _DWORD * v16 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v15 + 72))(v15, v43); /*0x6eb0aa*/
+                AbstractClass *v16 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v15 + 72))(v15, v43); /*0x6eb0aa*/
                 _DWORD * v17 = (_DWORD *)v6->GetInvalidCoord(v42); /*0x6eb0b3*/
                 v18 = Coord::Subtract( /*0x6eb0d3*/
                         &v39,
@@ -2568,18 +2567,18 @@ void* TeamClass::AttackCoordinator()
   TeamClass *v1 = this; /*0x6eb497*/
   if ( !this->uniqueId ) /*0x6eb49d*/
     this->uniqueId = this->queuedFocus; /*0x6eb4a7*/
-  _DWORD * v2 = (_DWORD *)this->firstUnit; /*0x6eb4aa*/
+  IUnknown *v2 = (_DWORD *)this->firstUnit; /*0x6eb4aa*/
   int v3 = -1; /*0x6eb4ad*/
-  _DWORD * v4 = v2; /*0x6eb4b2*/
+  IUnknown *v4 = v2; /*0x6eb4b2*/
   if ( v2 ) /*0x6eb4b4*/
   {
     do /*0x6eb514*/
     {
-      int v5 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v2 + 132))(v2) + 1532); /*0x6eb4c0*/
-      if ( *((_BYTE *)v2 + 144) /*0x6eb506*/
+      int v5 = *(_DWORD *)(v2->GetSpecialValue() + 1532); /*0x6eb4c0*/
+      if ( v2->q024 /*0x6eb506*/
         && v2[27]
         && (g_IKnowWhatImDoing || !*((_BYTE *)v2 + 129))
-        && (*((_BYTE *)v2 + 1673) || (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) == 2)
+        && (*((_BYTE *)v2 + 1673) || v2->ReturnZeroPos() == 2)
         && v5 > v3 )
       {
         v4 = v2; /*0x6eb508*/
@@ -2594,7 +2593,7 @@ void* TeamClass::AttackCoordinator()
   if ( v6
     && (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 44))(v6) == 11
     && v1[21]
-    && (*(int (__thiscall **)(_DWORD *))(*v4 + 44))(v4) != 2 )
+    && v4->ReturnZeroPos() != 2 )
   {
     int v7 = v1[16]; /*0x6eb53e*/
     if ( v7 )
@@ -2614,8 +2613,8 @@ void* TeamClass::AttackCoordinator()
   if ( (int)g_CurrentFrame % 8 == 4 ) /*0x6eb5ae*/
   {
     int v9 = *v4; /*0x6eb5b3*/
-    int v10 = (*(int (__thiscall **)(_DWORD *, int, int))(*v4 + 740))(v4, v1[16], 1); /*0x6eb5ba*/
-    if ( (*(int (__thiscall **)(_DWORD *, int, int))(v9 + 960))(v4, v1[16], v10) == 5 ) /*0x6eb5d0*/
+    int v10 = v4->vt_slot_740(v1[16], 1); /*0x6eb5ba*/
+    if ( v4->vt_slot_960(v1[16], v10) == 5 ) /*0x6eb5d0*/
       v1->unknown81 = 1; /*0x6eb5d2*/
   }
   Entry = (_DWORD *)v1[16]; /*0x6eb5d9*/
@@ -2710,7 +2709,7 @@ LABEL_67:
 
 // 0x6EBAD0
 namespace gamemd {
-AbstractClass * TeamClass::UpdateMembers()
+AbstractClass * * TeamClass::UpdateMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

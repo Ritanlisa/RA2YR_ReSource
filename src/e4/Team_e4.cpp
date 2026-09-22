@@ -41,7 +41,6 @@ void Team_Start()
   LONG dwNewLong[2]; // [esp+Ch] [ebp-20h] BYREF
   DWORD Ticks; // [esp+14h] [ebp-18h]
   DWORD v21; // [esp+20h] [ebp-Ch]
-
   dwNewLong[1] = xRight; /*0x561191*/
   dwNewLong[0] = -1; /*0x561195*/
   Debug::Log(); /*0x56119d*/
@@ -78,7 +77,7 @@ void Team_Start()
       int v9 = v20; /*0x561278*/
       if ( Ticks != -1 ) /*0x56127f*/
       {
-        int v10 = Timer::GetTicks() - Ticks; /*0x56128a*/
+        ObjectClass *v10 = Timer::GetTicks() - Ticks; /*0x56128a*/
         if ( v10 >= v9 ) /*0x561290*/
           goto LABEL_9; /*0x561290*/
         v9 -= v10; /*0x561292*/
@@ -247,7 +246,7 @@ void sub_6219D0(int * a1, int a2, int a3, int a4)
 
 // 0x634B20
 namespace gamemd {
-Game * E4Recv_634B20::sub_634B20()
+Game * * E4Recv_634B20::sub_634B20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -427,7 +426,7 @@ int Team::AllMembersValid()
 {
   _DWORD *i; // ecx
 
-  int v1 = this->q0E8; /*0x65ae30*/
+  IUnknown *v1 = this->q0E8; /*0x65ae30*/
   int v2 = 0; /*0x65ae36*/
   if ( v1 <= 0 ) /*0x65ae3a*/
     return 0; /*0x65ae4f*/

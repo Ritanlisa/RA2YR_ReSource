@@ -4191,7 +4191,7 @@ void toupper(Color * aP0)
 
 // 0x7C9842
 namespace gamemd {
-ControlClass * toupper_0(int C)
+ControlClass * * toupper_0(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4200,7 +4200,7 @@ ControlClass * toupper_0(int C)
 
   if ( CRTGlobal_B782A0 )
   {
-    int v2 = C; /*0x7c986d*/
+    ControlClass *v2 = C; /*0x7c986d*/
     if ( (C >= 256
   int v3; // eax
        || ((int)SrcSizeInBytes <= 1 ? (v3 = *((_BYTE *)DataGlobal_87C590 + 2 * C) & 2) : (v3 = _isctype(C, 2)), v3))
@@ -4438,9 +4438,9 @@ void atol(const char * String)
         ? *((_BYTE *)DataGlobal_87C590 + 2 * *(unsigned __int8 *)String) & 8
         : _isctype(*(unsigned __int8 *)String, 8) )
     ++String; /*0x7c9ba5*/
-  int v3 = *(unsigned __int8 *)String; /*0x7c9ba8*/
+  ControlClass *v3 = *(unsigned __int8 *)String; /*0x7c9ba8*/
   const char * v4 = String + 1; /*0x7c9bab*/
-  int v5 = v3; /*0x7c9baf*/
+  ControlClass *v5 = v3; /*0x7c9baf*/
   if ( v3 == 45 || v3 == 43 ) /*0x7c9bb6*/
     v3 = *(unsigned __int8 *)v4++; /*0x7c9bb8*/
   int v6 = 0; /*0x7c9bbc*/
@@ -4469,9 +4469,9 @@ long long long _atoi64(const char * String)
         ? *((_BYTE *)DataGlobal_87C590 + 2 * *(unsigned __int8 *)String) & 8
         : _isctype(*(unsigned __int8 *)String, 8) )
     ++String; /*0x7c9c3c*/
-  int v3 = *(unsigned __int8 *)String; /*0x7c9c3f*/
+  ControlClass *v3 = *(unsigned __int8 *)String; /*0x7c9c3f*/
   const char * v4 = String + 1; /*0x7c9c42*/
-  int v10 = v3; /*0x7c9c46*/
+  ControlClass *v10 = v3; /*0x7c9c46*/
   if ( v3 == 45 || v3 == 43 ) /*0x7c9c4f*/
     v3 = *(unsigned __int8 *)v4++; /*0x7c9c51*/
   unsigned int v5 = 0; /*0x7c9c55*/
@@ -4556,7 +4556,7 @@ void atof(CCINIClass * aP0)
 
 // 0x7C9DD4
 namespace gamemd {
-ControlClass * strtoxl(unsigned char * a1, unsigned char ** a2, int a3, int a4)
+ControlClass * * strtoxl(unsigned char * a1, unsigned char ** a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5278,7 +5278,7 @@ void tolower(int C)
 
 // 0x7CB063
 namespace gamemd {
-ControlClass * tolower_0(int C)
+ControlClass * * tolower_0(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5287,7 +5287,7 @@ ControlClass * tolower_0(int C)
 
   if ( CRTGlobal_B782A0 )
   {
-    int v2 = C; /*0x7cb090*/
+    ControlClass *v2 = C; /*0x7cb090*/
     if ( (C >= 256
   int v3; // eax
        || ((int)SrcSizeInBytes <= 1 ? (v3 = *((_BYTE *)DataGlobal_87C590 + 2 * C) & 1) : (v3 = _isctype(C, 1)), v3))
@@ -5399,7 +5399,7 @@ void __initstdio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v0; // eax
+  ObjectClass *v0; // eax
   _UNKNOWN **v2; // eax
   int result; // eax
 
@@ -5664,7 +5664,7 @@ main_loop_1:
 
 // 0x7CB673
 namespace gamemd {
-AbstractClass * _splitpath(const char * FullPath, char * Drive, char * Dir, ObjectClass * aP3, char * Ext)
+AbstractClass * * _splitpath(const char * FullPath, char * Drive, char * Dir, ObjectClass * aP3, char * Ext)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5692,7 +5692,7 @@ AbstractClass * _splitpath(const char * FullPath, char * Drive, char * Dir, Obje
     *Drive = 0; /*0x7cb6b5*/
   }
   Drivea = 0; /*0x7cb6b8*/
-  char * v6 = (char *)v5; /*0x7cb6bf*/
+  AbstractClass *v6 = (char *)v5; /*0x7cb6bf*/
   v7 = 255; /*0x7cb6c1*/
   FullPatha = v5; /*0x7cb6c6*/
   if ( !*v5 ) /*0x7cb6bc*/
@@ -6065,11 +6065,11 @@ void _mbstowcs_lk(LPWSTR lpWideCharStr, LPCCH lpMultiByteStr, unsigned int cchWi
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  LPWSTR v3; // edx
+  AbstractClass *v3; // edx
   size_t result; // eax
   int v6; // eax
-  LPCCH v7; // eax
-  LPCCH v8; // ecx
+  wchar_t *v7; // eax
+  wchar_t *v8; // ecx
   LPCCH lpMultiByteStra; // [esp+18h] [ebp+Ch]
 
   v3 = lpWideCharStr; /*0x7cc30c*/
@@ -6283,17 +6283,16 @@ char * * _Getdays()
 {
   const char **v0; // esi
   size_t v2; // edi
-  size_t v3; // eax
+  AbstractClass *v3; // eax
   bool v4; // zf
-  char *v5; // esi
+  AbstractClass *v5; // esi
   const char **v6; // edi
   const char **v13; // [esp+Ch] [ebp-8h]
   int v14; // [esp+10h] [ebp-4h]
-  char *v15; // [esp+10h] [ebp-4h]
-
+  AbstractClass *v15; // [esp+10h] [ebp-4h]
   v0 = (const char **)off_87C1E0; /*0x7cc6ca*/
   v13 = (const char **)off_87C1E0; /*0x7cc6d1*/
-  int v1 = 0; /*0x7cc6d4*/
+  AbstractClass *v1 = 0; /*0x7cc6d4*/
   v14 = 7; /*0x7cc6d6*/
   do /*0x7cc6fc*/
   {
@@ -6340,14 +6339,13 @@ char * * _Getmonths()
   size_t v3; // eax
   bool v4; // zf
   int v5; // eax
-  char *v6; // esi
+  AbstractClass *v6; // esi
   const char **v7; // edi
   int v14; // [esp+Ch] [ebp-8h]
-  char *v15; // [esp+Ch] [ebp-8h]
+  AbstractClass *v15; // [esp+Ch] [ebp-8h]
   int v16; // [esp+10h] [ebp-4h]
-
   v16 = 0; /*0x7cc757*/
-  char * v0 = (char *)off_87C1E0; /*0x7cc75e*/
+  exception *v0 = (char *)off_87C1E0; /*0x7cc75e*/
   v14 = 12; /*0x7cc764*/
   v1 = (const char **)((char *)off_87C1E0 + 56); /*0x7cc76b*/
   do /*0x7cc791*/
@@ -6417,7 +6415,7 @@ void * * _Gettnames()
   const char **i; // [esp+18h] [ebp-4h]
 
   v0 = (const char **)off_87C1E0; /*0x7cc7ef*/
-  int v1 = 0; /*0x7cc7f6*/
+  exception *v1 = 0; /*0x7cc7f6*/
   v38 = (const char **)off_87C1E0; /*0x7cc7f8*/
   v34 = 7; /*0x7cc7fb*/
   do /*0x7cc82b*/
@@ -6447,7 +6445,7 @@ void * * _Gettnames()
   v11 = v10; /*0x7cc8bb*/
   if ( v10 ) /*0x7cc8c2*/
   {
-    char * v12 = v10 + 172; /*0x7cc8cd*/
+    AbstractClass *v12 = v10 + 172; /*0x7cc8cd*/
     memcpy_0(v10, off_87C1E0, 0xACu); /*0x7cc8da*/
     int v40 = (char *)v11 - (char *)v0; /*0x7cc8e8*/
     v36 = (char **)v11; /*0x7cc8eb*/
@@ -6457,7 +6455,7 @@ void * * _Gettnames()
     {
       *v36 = v12; /*0x7cc8fb*/
       char * v13 = strcpy(v12, *(v41 - 7)); /*0x7cc904*/
-      char * v14 = &v12[strlen(v13) + 1]; /*0x7cc912*/
+      AbstractClass *v14 = &v12[strlen(v13) + 1]; /*0x7cc912*/
       *(const char **)((char *)v41 + v40) = v14; /*0x7cc919*/
       char * v15 = strcpy(v14, *v41); /*0x7cc91f*/
       v16 = strlen(v15); /*0x7cc925*/
@@ -6474,7 +6472,7 @@ void * * _Gettnames()
     {
       *(const char **)((char *)v17 + v40) = v12; /*0x7cc959*/
       char * v18 = strcpy(v12, *v17); /*0x7cc95f*/
-      char * v19 = &v12[strlen(v18) + 1]; /*0x7cc96a*/
+      AbstractClass *v19 = &v12[strlen(v18) + 1]; /*0x7cc96a*/
       *v37 = v19; /*0x7cc971*/
       char * v20 = strcpy(v19, i[12]); /*0x7cc97a*/
       v21 = strlen(v20); /*0x7cc980*/
@@ -6487,13 +6485,13 @@ void * * _Gettnames()
     }
     v11[38] = v12; /*0x7cc999*/
     char * v22 = strcpy(v12, v0[38]); /*0x7cc9a6*/
-    char * v23 = &v12[strlen(v22) + 1]; /*0x7cc9b1*/
+    AbstractClass *v23 = &v12[strlen(v22) + 1]; /*0x7cc9b1*/
     v11[39] = v23; /*0x7cc9b5*/
     char * v24 = strcpy(v23, v0[39]); /*0x7cc9c2*/
-    char * v25 = &v23[strlen(v24) + 1]; /*0x7cc9cd*/
+    AbstractClass *v25 = &v23[strlen(v24) + 1]; /*0x7cc9cd*/
     v11[40] = v25; /*0x7cc9d1*/
     char * v26 = strcpy(v25, v0[40]); /*0x7cc9de*/
-    char * v27 = &v25[strlen(v26) + 1]; /*0x7cc9e9*/
+    AbstractClass *v27 = &v25[strlen(v26) + 1]; /*0x7cc9e9*/
     v11[41] = v27; /*0x7cc9ed*/
     char * v28 = strcpy(v27, v0[41]); /*0x7cc9fa*/
     v11[42] = &v27[strlen(v28) + 1]; /*0x7cca0c*/
@@ -6505,7 +6503,7 @@ void * * _Gettnames()
 
 // 0x7CCB2E
 namespace gamemd {
-exception * _expandtime(char a1, unsigned int * a2, unsigned int * a3, unsigned int * a4, unsigned char ** a5)
+exception * * _expandtime(char a1, unsigned int * a2, unsigned int * a3, unsigned int * a4, unsigned char ** a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -7058,10 +7056,9 @@ void * tmpnam(char * Buffer)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  char *v1; // edi
+  AbstractClass *v1; // edi
   int v2; // edi
   void *v3; // eax
-
   _lock(3); /*0x7cd465*/
   if ( Source ) /*0x7cd478*/
     goto LABEL_4; /*0x7cd478*/
@@ -7486,7 +7483,7 @@ char * * setlocale(int Category, const char * Locale)
   char * v2 = 0; /*0x7cdb22*/
   if ( (unsigned int)Category <= 5 ) /*0x7cdb26*/
   {
-  int v3; // eax
+  AbstractClass *v3; // eax
     _lock(19); /*0x7cdb37*/
     ++CRTGlobal_B78BA0; /*0x7cdb3c*/
     while ( CRTGlobal_B78BA4 ) /*0x7cdb49*/
@@ -7698,7 +7695,7 @@ void _flsbuf(int Ch, FILE * File)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  FILE *v2; // esi
+  AbstractClass *v2; // esi
   int flag; // eax
   char *base; // eax
   signed int v7; // edi
@@ -8606,7 +8603,7 @@ unsigned int * __sbh_free_block(AbstractClass * aP0, INIClass * aP1)
   int uniqueId; // eax
   int *p_INIClass_field_3C; // edx
   bool v9; // zf
-  unsigned int v14; // edi
+  AbstractClass *v14; // edi
   _DWORD *result; // eax
   LPVOID *v22; // eax
   _DWORD *v23; // [esp+10h] [ebp-10h]
@@ -8663,7 +8660,7 @@ unsigned int * __sbh_free_block(AbstractClass * aP0, INIClass * aP1)
   if ( (unknown38 & 1) == 0 ) /*0x7cf8c5*/
   {
     int * v26 = (int *)((char *)p_INIClass_field_3C - unknown38); /*0x7cf8d6*/
-    unsigned int v15 = (unknown38 >> 4) - 1; /*0x7cf8d9*/
+    AbstractClass *v15 = (unknown38 >> 4) - 1; /*0x7cf8d9*/
     aP1 = (INIClass *)v15; /*0x7cf8dd*/
     if ( v15 > 0x3F ) /*0x7cf8e0*/
     {
@@ -9020,8 +9017,7 @@ void * __sbh_alloc_new_region()
 {
   LPVOID v3; // eax
   LPVOID v4; // eax
-
-  int v0 = CRTGlobal_B78B94; /*0x7cfe1c*/
+  ObjectClass *v0 = CRTGlobal_B78B94; /*0x7cfe1c*/
   if ( CRTGlobal_B78B94 == CRTGlobal_B78B84 ) /*0x7cfe2d*/
   {
     void * v1 = HeapReAlloc(hHeap, 0, lp, 4 * (5 * CRTGlobal_B78B84 + 80)); /*0x7cfe44*/
@@ -9055,7 +9051,7 @@ void * __sbh_alloc_new_region()
 
 // 0x7CFFC8
 namespace gamemd {
-AbstractClass * __sbh_resize_block(unsigned int * a0, CCINIClass * aP1, AbstractClass * aP2)
+AbstractClass * * __sbh_resize_block(unsigned int * a0, CCINIClass * aP1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -114,7 +114,7 @@ LABEL_7:
 
 // 0x49C5A0
 namespace gamemd {
-AbstractClass * CampaignClass::SaveProgress()
+AbstractClass * * CampaignClass::SaveProgress()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -133,7 +133,7 @@ AbstractClass * CampaignClass::SaveProgress()
   int32_t *v2 = this + 28; /*0x49c5c4*/
   if ( !this->referenceCount ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
-  int v3 = this->alignmentPadding_3; /*0x49c5d4*/
+  AbstractClass *v3 = this->alignmentPadding_3; /*0x49c5d4*/
   if ( !DataGlobal_89F578 ) /*0x49c5d9*/
     CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49c5e0*/
   if ( v3 < 0 || v3 >= DataGlobal_89F574 ) /*0x49c5f5*/
@@ -159,7 +159,7 @@ AbstractClass * CampaignClass::SaveProgress()
   CampaignClass *v6 = this; /*0x49c687*/
   if ( *this )
   {
-  char v12; // al
+  INIClass *v12; // al
     do
     {
       if ( v5 >= 1021 ) /*0x49c695*/

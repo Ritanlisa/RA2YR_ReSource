@@ -12,7 +12,7 @@ int FileSystem::ProcessNextFileExtension()
   int i; // [esp+10h] [ebp-18h]
   int j; // [esp+10h] [ebp-18h]
 
-  _DWORD * v0 = g_FileExtensionState; /*0x626da7*/
+  VectorClass *v0 = g_FileExtensionState; /*0x626da7*/
   if ( !g_FileExtensionState ) /*0x626db1*/
   {
     _DWORD * v1 = __2_YAPAXI_Z(0x10u); /*0x626db9*/
@@ -21,7 +21,7 @@ int FileSystem::ProcessNextFileExtension()
     {
       *v1 = -1; /*0x626dc9*/
       _DWORD * v2 = __2_YAPAXI_Z(0x18u); /*0x626dcf*/
-      _DWORD * v3 = v2; /*0x626dd4*/
+      VectorClass *v3 = v2; /*0x626dd4*/
       if ( v2 ) /*0x626ddb*/
       {
         StringVector::Construct(v2, 0, 0); /*0x626de1*/
@@ -80,7 +80,7 @@ LABEL_19:
     }
     if ( v10 ) /*0x626ec0*/
     {
-      int v13 = *((_DWORD *)g_FileExtensionState + 3); /*0x626ece*/
+      int v13 = g_FileExtensionState->IsInitialized; /*0x626ece*/
       int v14 = *(_DWORD *)v13 + 24 * ((*(int (__thiscall **)(char *))(v13 + 4))(v10) % *(_DWORD *)(v13 + 8)); /*0x626ee1*/
       int v15 = *(_DWORD *)(v14 + 16) - 1; /*0x626ee4*/
       int v28 = v14; /*0x626ee5*/
@@ -107,7 +107,7 @@ LABEL_19:
           {
   _BYTE *v23; // ebx
   int v21; // edi
-            _DWORD * v19 = (_DWORD *)*((_DWORD *)g_FileExtensionState + 3); /*0x626f63*/
+            _DWORD * v19 = (_DWORD *)g_FileExtensionState->IsInitialized; /*0x626f63*/
             ++v27; /*0x626f66*/
             _DWORD * v29 = v19; /*0x626f6a*/
             if ( v30 >= v19[2] ) /*0x626f71*/

@@ -207,7 +207,7 @@ void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsi
 
 // 0x4C6CB0
 namespace gamemd {
-AbstractClass * EventClass::ProcessEvent()
+AbstractClass * * EventClass::ProcessEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1087,16 +1087,16 @@ int EventClass::CheckFlag()
 
 // 0x664440
 namespace gamemd {
-AbstractClass * EventClass::validateEventType()
+AbstractClass * * EventClass::validateEventType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v14[8]; // [esp+10h] [ebp-8h] BYREF
 
-  int v1 = DataGlobal_A8E2CC; /*0x664444*/
+  AbstractClass *v1 = DataGlobal_A8E2CC; /*0x664444*/
   if ( DataGlobal_A8E2CC == -1 ) /*0x664451*/
   {
-    int v3 = this->q004; /*0x664453*/
+    AbstractClass *v3 = this->q004; /*0x664453*/
     int v4 = 0; /*0x664456*/
     if ( v3 > 0 ) /*0x66445a*/
     {
@@ -1115,7 +1115,7 @@ AbstractClass * EventClass::validateEventType()
   }
   else
   {
-    int v6 = this->q004; /*0x664480*/
+    AbstractClass *v6 = this->q004; /*0x664480*/
     int v7 = 0; /*0x664483*/
     if ( v6 > 0 ) /*0x664487*/
     {

@@ -7,7 +7,7 @@
 
 // 0x6FC0B0
 namespace gamemd {
-TechnoClass * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass * aP2, int a4, TechnoClass * aP4)
+TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass * aP2, int a4, TechnoClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -37,10 +37,10 @@ TechnoClass * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, Te
   }
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*a0 + 476))(a0) ) /*0x6fc14f*/
   {
-    int v7 = a0[157]; /*0x6fc159*/
+    TemporalClass *v7 = a0[157]; /*0x6fc159*/
     if ( v7 ) /*0x6fc161*/
     {
-      if ( aP2 == *(TechnoClass **)(v7 + 40) ) /*0x6fc166*/
+      if ( aP2 == v7->q028 ) /*0x6fc166*/
         return 3; /*0x6fc174*/
     }
   }

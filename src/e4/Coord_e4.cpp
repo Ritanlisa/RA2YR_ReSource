@@ -232,7 +232,7 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 
 // 0x6D2140
 namespace gamemd {
-AbstractClass * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
+AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -26,7 +26,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
   {
     unk_A9FAC8 = this; /*0x53ae79*/
     word_A9FA48 = a2; /*0x53ae7f*/
-    void * v3 = (void *)g_RulesClass_Instance->?[0]; /*0x53ae85*/
+    Coord *v3 = (void *)g_RulesClass_Instance->?[0]; /*0x53ae85*/
     void * v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&word_A9FA48); /*0x53ae95*/
   _DWORD v9[3]; // [esp+10h] [ebp-Ch] BYREF
     int * v5 = (int *)(*(int (__thiscall **)(void *, _DWORD *))(*(_DWORD *)v4 + 72))(v4, v9); /*0x53aea3*/
@@ -116,7 +116,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
   this->q04C = 0; /*0x6cafc1*/
   this->SpecialSoundDuration = -1; /*0x6cafc4*/
   this->q060 = 1; /*0x6cafc7*/
-  int v4 = *(_DWORD *)&stru_B05488[27512]; /*0x6cafcb*/
+  CellStruct *v4 = *(_DWORD *)&stru_B05488[27512]; /*0x6cafcb*/
   this->SuperClass_field_0x78 = -1; /*0x6cafd1*/
   this->SuperClass_field_0x7C = -1; /*0x6cafd4*/
   this->ChronoMapCoords = v4; /*0x6cafda*/
@@ -172,7 +172,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
 
 // 0x6CB120
 namespace gamemd {
-SuperClass * SuperClass::CleanupMembers()
+SuperClass * * SuperClass::CleanupMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -250,7 +250,7 @@ SuperClass * SuperClass::CleanupMembers()
 
 // 0x6CB560
 namespace gamemd {
-AbstractClass * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -421,7 +421,7 @@ int SuperClass::Lose()
 
 // 0x6CB830
 namespace gamemd {
-AbstractClass * SuperClass::StopPreclickAnim(IUnknown * aP1)
+AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

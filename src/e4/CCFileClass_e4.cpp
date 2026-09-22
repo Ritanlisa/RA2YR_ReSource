@@ -4,7 +4,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x4325C0
-AudioController * CCFileClass::Close()
+AudioController * * CCFileClass::Close()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -18,9 +18,9 @@ AudioController * CCFileClass::Close()
   {
     if ( this->MixFileIndex ) /*0x4325d6*/
     {
-      int v3 = *(_DWORD *)this; /*0x4325dd*/
+      AudioController *v3 = *(_DWORD *)this; /*0x4325dd*/
       this->q029 = 0; /*0x4325e1*/
-      result = (*(int (__thiscall **)(_BYTE *))(v3 + 52))(this); /*0x4325e5*/
+      result = v3->vt_slot_52(); /*0x4325e5*/
       this->q029 = 1; /*0x4325e8*/
       this->q026 = 0; /*0x4325ec*/
       this->q025 = 0; /*0x4325f0*/
@@ -92,12 +92,12 @@ void CCFileClass::ProcessStream(unsigned int a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  _DWORD * v1 = DataGlobal_B077B0; /*0x69e324*/
+  AbstractClass *v1 = DataGlobal_B077B0; /*0x69e324*/
   if ( DataGlobal_B077B0 ) /*0x69e330*/
   {
     do /*0x69e3a1*/
     {
-      if ( v1[8] <= a1 && *(_WORD *)v1 == 0xFFFF && *((_BYTE *)v1 + 16) ) /*0x69e33d*/
+      if ( v1[8] <= a1 && *(_WORD *)v1 == 0xFFFF && v1->uniqueId ) /*0x69e33d*/
       {
         void * v3 = (void *)v1[3]; /*0x69e342*/
         if ( v3 ) /*0x69e347*/
@@ -122,13 +122,13 @@ void CCFileClass::ProcessStream(unsigned int a1)
           __3_YAXPAX_Z(v3); /*0x69e38e*/
         }
         v1[3] = 0; /*0x69e396*/
-        *((_BYTE *)v1 + 16) = 0; /*0x69e399*/
+        v1->uniqueId = 0; /*0x69e399*/
       }
       v1 = (_DWORD *)v1[6]; /*0x69e39c*/
     }
     while ( v1 ); /*0x69e3a1*/
   }
-  void * v6 = DataGlobal_B077B4; /*0x69e3a3*/
+  AbstractClass *v6 = DataGlobal_B077B4; /*0x69e3a3*/
   if ( DataGlobal_B077B4 ) /*0x69e3ab*/
   {
     if ( *(_WORD *)DataGlobal_B077B4 == 0xFFFF ) /*0x69e3b1*/
@@ -143,18 +143,18 @@ void CCFileClass::ProcessStream(unsigned int a1)
         *v9 = 0; /*0x69e3ce*/
         *v7 = 0; /*0x69e3d0*/
       }
-      int v10 = *((_DWORD *)v6 + 6); /*0x69e3d3*/
+      int v10 = v6->nextArrayIndex; /*0x69e3d3*/
       if ( v10 ) /*0x69e3d8*/
-        *(_DWORD *)(v10 + 28) = *((_DWORD *)v6 + 7); /*0x69e3dd*/
-      int v11 = *((_DWORD *)v6 + 7); /*0x69e3e0*/
+        *(_DWORD *)(v10 + 28) = v6->referenceCount; /*0x69e3dd*/
+      int v11 = v6->referenceCount; /*0x69e3e0*/
       if ( v11 ) /*0x69e3e5*/
-        *(_DWORD *)(v11 + 24) = *((_DWORD *)v6 + 6); /*0x69e3ea*/
+        *(_DWORD *)(v11 + 24) = v6->nextArrayIndex; /*0x69e3ea*/
       else
-        DataGlobal_B077B0 = (void *)*((_DWORD *)v6 + 6); /*0x69e3f2*/
-      if ( *((_DWORD *)v6 + 2) ) /*0x69e3f7*/
+        DataGlobal_B077B0 = (void *)v6->nextArrayIndex; /*0x69e3f2*/
+      if ( v6->vtable3 ) /*0x69e3f7*/
       {
-        free(*((void **)v6 + 2)); /*0x69e3ff*/
-        *((_DWORD *)v6 + 2) = 0; /*0x69e407*/
+        free(v6->vtable3); /*0x69e3ff*/
+        v6->vtable3 = 0; /*0x69e407*/
       }
     }
     __3_YAXPAX_Z(v6); /*0x69e40b*/

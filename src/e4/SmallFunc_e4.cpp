@@ -19,7 +19,7 @@
 
 // 0x6F19B0
 namespace gamemd {
-TeamTypeClass * SmallFunc_6F19B0(char * a1, int a2)
+TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

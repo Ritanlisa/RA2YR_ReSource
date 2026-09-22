@@ -304,13 +304,12 @@ void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
   int v34; // [esp+5Ch] [ebp-70h] BYREF
   int v38; // [esp+70h] [ebp-5Ch]
   int v39; // [esp+74h] [ebp-58h]
-
   int v4 = a4; /*0x6208f8*/
   if ( a4 == -1 && DataGlobal_AC4624 != -1 ) /*0x620911*/
     v4 = ((int)(unsigned __int8)DataGlobal_AC4624 >> g_BitShift_Green_0 << g_DDraw_BlueMask) /*0x62095c*/
        | (BYTE1(DataGlobal_AC4624) >> g_BitMask_Blue << g_BitMask_Green)
        | (BYTE2(DataGlobal_AC4624) >> g_BitShift_Blue << g_BitShift_Blue);
-  int v7 = DataGlobal_AC1B94; /*0x620963*/
+  AbstractClass *v7 = DataGlobal_AC1B94; /*0x620963*/
   int v29 = DataGlobal_AC1B98; /*0x62096c*/
   int v30 = DataGlobal_AC1B94; /*0x620970*/
   if ( DataGlobal_AC1B98 == -1 ) /*0x620974*/
@@ -535,7 +534,7 @@ void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3
 {
   unsigned __int16 *v3; // edx
   AbstractClass *v4; // ecx
-  AbstractClass *v10; // esi
+  BitFont *v10; // esi
   AbstractClass *v12; // edi
   AbstractClass *v9; // ebp
   BitFont *v15; // ebx
@@ -698,7 +697,7 @@ LABEL_21:
 
 // 0x6214B0
 namespace gamemd {
-AbstractClass * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
+AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -919,7 +918,7 @@ void AddDynamicVector(HWND a1, int * a2)
       v16 = 10; /*0x62249d*/
       v4 = 10; /*0x6224a5*/
     }
-    unsigned int v5 = 4 * v4; /*0x6224a9*/
+    AbstractClass *v5 = 4 * v4; /*0x6224a9*/
     void * v6 = __2_YAPAXI_Z(4 * v4); /*0x6224b8*/
     memset(v6, 0, v5); /*0x6224c6*/
     int v14 = (int)v6; /*0x6224ca*/
@@ -939,7 +938,7 @@ void AddDynamicVector(HWND a1, int * a2)
       v17 = 10; /*0x62251d*/
       v8 = 10; /*0x622525*/
     }
-    unsigned int v9 = 4 * v8; /*0x622529*/
+    AbstractClass *v9 = 4 * v8; /*0x622529*/
     void * v10 = __2_YAPAXI_Z(4 * v8); /*0x622538*/
     memset(v10, 0, v9); /*0x622546*/
     const void * v11 = (const void *)a2[2]; /*0x62254f*/
@@ -969,9 +968,9 @@ void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
 {
   int result; // eax
   HWND *v6; // edi
-  HINSTANCE v8; // eax
+  ObjectClass *v8; // eax
   HWND DialogIndirectParamA; // eax
-  HWND v10; // esi
+  ObjectClass *v10; // esi
   const DLGTEMPLATE *v11; // [esp-10h] [ebp-2Ch]
   HWND v12; // [esp-Ch] [ebp-28h]
   LPARAM dwInitParam[2]; // [esp+14h] [ebp-8h] BYREF
@@ -1014,7 +1013,7 @@ void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
 
 // 0x622820
 namespace gamemd {
-AbstractClass * SetupDialog(CoordStruct * hWnd, int a2)
+AbstractClass * * SetupDialog(CoordStruct * hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1132,7 +1131,7 @@ AbstractClass * SetupDialog(CoordStruct * hWnd, int a2)
 
 // 0x622B50
 namespace gamemd {
-CampaignScore * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2)
+CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1405,8 +1404,8 @@ unsigned int * E4Recv_623730::sub_623730(unsigned int * a2)
   wchar_t *v8; // eax
   int **i; // esi
   size_t v13; // eax
-  int v3 = *(this + 13); /*0x623741*/
-  void * v4 = (void *)*(this + 10); /*0x623744*/
+  TagClass *v3 = *(this + 13); /*0x623741*/
+  AbstractClass *v4 = (void *)*(this + 10); /*0x623744*/
   int v5 = *(this + 15); /*0x623747*/
   qmemcpy(this, a2, 0x200u); /*0x62374a*/
   *(this + 15) = v5; /*0x623750*/
@@ -1425,11 +1424,11 @@ unsigned int * E4Recv_623730::sub_623730(unsigned int * a2)
     *(this + 10) = v8; /*0x623789*/
     wcscpy(v8, v6); /*0x62378c*/
   }
-  _DWORD * v9 = (_DWORD *)*(this + 13); /*0x623794*/
+  TagClass *v9 = (_DWORD *)*(this + 13); /*0x623794*/
   for ( i = (int **)a2[13]; v9; v9 = (_DWORD *)*(this + 13) ) /*0x62379c*/
   {
-    _DWORD * v11 = v9; /*0x62379e*/
-    _DWORD * v12 = 0; /*0x6237a0*/
+    TagClass *v11 = v9; /*0x62379e*/
+    TagClass *v12 = 0; /*0x6237a0*/
     while ( v9 != v11 ) /*0x6237a8*/
     {
       v12 = v11; /*0x6237aa*/
@@ -1467,7 +1466,7 @@ LABEL_15:
 
 // 0x623880
 namespace gamemd {
-CampaignScore * DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, ObjectClass * aP3, unsigned int * a4, int ecx0, signed int * a6, int a8, int a9, int a10, int a11)
+CampaignScore * * DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, ObjectClass * aP3, unsigned int * a4, int ecx0, signed int * a6, int a8, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1890,7 +1889,7 @@ unsigned int * sub_627020()
       {
         *v6 = 31; /*0x6270f3*/
         _DWORD * v11 = v6 + 1; /*0x6270f8*/
-        _DWORD * v7 = v6 + 1; /*0x6270fc*/
+        VectorClass *v7 = v6 + 1; /*0x6270fc*/
         do /*0x62710b*/
         {
           sub_628B00(v7, 0, 0); /*0x627102*/
@@ -2085,13 +2084,13 @@ void E4Recv_629530::sub_629530()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   E4Recv_629530 *v4; // [esp+8h] [ebp-4h] BYREF
-  int v2 = this->M68; /*0x629537*/
+  AudioController *v2 = this->M68; /*0x629537*/
   this->M76 = 0; /*0x62953a*/
   this->M80 = 0; /*0x62953f*/
   this->M72 = 0; /*0x629542*/
   if ( v2 ) /*0x629545*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)v2 + 248))(v2); /*0x629549*/
+    v2->vt_slot_248(); /*0x629549*/
     this->M68 = 0; /*0x62954f*/
   }
   if ( (unsigned char)this->M84 ) /*0x629552*/
@@ -2115,7 +2114,7 @@ void E4Recv_629530::sub_629530()
 
 // 0x62E070
 namespace gamemd {
-AbstractClass * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
+AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

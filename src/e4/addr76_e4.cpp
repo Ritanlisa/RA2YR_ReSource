@@ -70,9 +70,8 @@ HashTable * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
   unsigned int v24; // [esp+10h] [ebp-C0h] BYREF
   void *v25[2]; // [esp+14h] [ebp-BCh] BYREF
   _DWORD v34[22]; // [esp+74h] [ebp-5Ch] BYREF
-  int v35; // [esp+CCh] [ebp-4h]
-
-  _DWORD * v4 = this + 8; /*0x764b9e*/
+  HashTable *v35; // [esp+CCh] [ebp-4h]
+  CampaignScore *v4 = this + 8; /*0x764b9e*/
   v35 = 0; /*0x764ba1*/
   this->M4 = 0; /*0x764baa*/
   *(_DWORD *)this = &vt_ReferenceCounted; /*0x764bad*/
@@ -112,7 +111,7 @@ HashTable * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
           if ( v8 >= *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(a3 + 4) + 12) + 60) ) /*0x764c89*/
           {
             ComPtr::Constructor(v26); /*0x764c97*/
-            int v10 = v35; /*0x764c9c*/
+            HashTable *v10 = v35; /*0x764c9c*/
             v26[0] = &vt_rc_ptr_WDTTerritory; /*0x764ca3*/
             LOBYTE(v10) = v35 | 1; /*0x764cab*/
             v9 = v26; /*0x764cad*/
@@ -127,7 +126,7 @@ HashTable * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
           ComPtr::Set(v25, v9[1]); /*0x764cd1*/
           if ( (v35 & 1) != 0 ) /*0x764cde*/
           {
-            int v11 = v35; /*0x764ce0*/
+            HashTable *v11 = v35; /*0x764ce0*/
             LOBYTE(v11) = v35 & 0xFE; /*0x764ceb*/
             v26[0] = &vt_rc_ptr_WDTTerritory; /*0x764ced*/
             v35 = v11; /*0x764cf5*/
@@ -649,7 +648,7 @@ LABEL_67:
     }
     while ( 1 ) /*0x769736*/
     {
-  int v30; // eax
+  Coord *v30; // eax
       unsigned int v10 = (*(int (__thiscall **)(_DWORD *, int *))(*v3 + 40))(v3, &v49); /*0x769736*/
       v64 = v10; /*0x76973b*/
       if ( v10 <= 0x1D ) /*0x76973f*/
@@ -769,7 +768,7 @@ LABEL_67:
           }
           v66 = &vt_VectorCursor_TRect_int_VectorClass_TRect_int; /*0x769941*/
         }
-        int * v28 = (int *)((char *)v52 + 16 * v10); /*0x76994e*/
+        Coord *v28 = (int *)((char *)v52 + 16 * v10); /*0x76994e*/
         int v29 = v28[2]; /*0x769950*/
         if ( !v29 ) /*0x769955*/
           v28[3] = 0; /*0x769957*/
@@ -785,7 +784,7 @@ LABEL_67:
         int v33 = 1; /*0x769989*/
         if ( v29 > 0 && v28[3] > 0 ) /*0x769990*/
         {
-          int v34 = *v28; /*0x769994*/
+          Coord *v34 = *v28; /*0x769994*/
           bool v35 = *v28 <= v49; /*0x769997*/
           int v36 = v28[1]; /*0x769999*/
           int v37 = v28[2]; /*0x76999c*/
@@ -900,7 +899,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   {
     *v5 = v4; /*0x76b7e9*/
     _DWORD * v6 = v5 + 1; /*0x76b7eb*/
-    _DWORD * v7 = v5 + 1; /*0x76b7f1*/
+    rc_ptr_base *v7 = v5 + 1; /*0x76b7f1*/
     if ( v4 - 1 >= 0 ) /*0x76b7f5*/
     {
       do /*0x76b80b*/

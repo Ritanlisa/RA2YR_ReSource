@@ -22,7 +22,7 @@ unsigned int * IPXInterfaceClass::Construct()
 }
 
 // 0x7B0DD0
-AbstractClass * IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
+AbstractClass * * IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -74,7 +74,7 @@ AbstractClass * IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
   }
   else
   {
-    int v8 = *(_DWORD *)&v14[4]; /*0x7b0f19*/
+    AbstractClass *v8 = *(_DWORD *)&v14[4]; /*0x7b0f19*/
     v9 = *(_WORD *)&v14[12]; /*0x7b0f1d*/
     *(int *)((char *)&aP2->Color_field_00 + 2) = *(int *)&v14[4]; /*0x7b0f23*/
     this->qFCBF = v8; /*0x7b0f26*/
@@ -87,12 +87,12 @@ AbstractClass * IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
 }
 
 // 0x7B13D0
-AbstractClass * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen)
+AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v7; // esi
-  SOCKET v11; // eax
+  AbstractClass *v11; // eax
   u_short *v14; // edi
   CCINIClass *v18; // ebx
   u_short *v21; // ebp
@@ -324,7 +324,7 @@ void * IPXInterfaceClass::bindSocket()
 }
 
 // 0x7B1B80
-AnimClass * IPXInterfaceClass::AddRef()
+AnimClass * * IPXInterfaceClass::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -346,7 +346,7 @@ AnimClass * IPXInterfaceClass::AddRef()
 }
 
 // 0x7B1BC0
-AbstractClass * IPXInterfaceClass::Receive()
+AbstractClass * * IPXInterfaceClass::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -355,7 +355,7 @@ AbstractClass * IPXInterfaceClass::Receive()
   v2 = this->COMStub_Ret1139(-1); /*0x7b1bc9*/
   if ( WSAAsyncSelect(this->q3F06C, g_hWnd, v2, 3) != -1 ) /*0x7b1be3*/
   {
-    int v4 = this->q3F070; /*0x7b1bfc*/
+    AnimClass *v4 = this->q3F070; /*0x7b1bfc*/
     if ( v4 == -1 ) /*0x7b1c05*/
       return 1; /*0x7b1c05*/
     v5 = this->COMStub_Ret1139(v4); /*0x7b1c0e*/
@@ -376,14 +376,14 @@ void IPXInterfaceClass::Disconnect()
 
   while ( this->BoundSocket ) /*0x7b1ca6*/
   {
-    int v2 = *this->LocalNode; /*0x7b1cae*/
-    if ( *(_BYTE *)(v2 + 22) ) /*0x7b1cb0*/
+    AbstractClass *v2 = *this->LocalNode; /*0x7b1cae*/
+    if ( v2->q058 ) /*0x7b1cb0*/
     {
       __3_YAXPAX_Z(*this->LocalNode); /*0x7b1cb6*/
     }
     else
     {
-      *(_BYTE *)(v2 + 21) = 0; /*0x7b1cc0*/
+      v2->q054 = 0; /*0x7b1cc0*/
       --this->q3F05C; /*0x7b1cca*/
     }
     int v3 = this->BoundSocket; /*0x7b1cd0*/
@@ -447,12 +447,12 @@ unsigned char * IPXInterfaceClass::processPacket()
 }
 
 // 0x7B24E0
-AnimClass * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3)
+AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   UDPInterfaceClass *v5; // ebx
-  int v10; // eax
+  AnimClass *v10; // eax
   UINT v15; // eax
   v5 = (UDPInterfaceClass *)AudioQueue::AllocBuffer((_DWORD *)this, (WinsockInterfaceClass *)aP3); /*0x7b24f4*/
   qmemcpy(&v5[4], a1, a3); /*0x7b2505*/
@@ -498,7 +498,7 @@ AnimClass * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInte
 }
 
 // 0x7B2A20
-AbstractClass * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
+AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -508,9 +508,8 @@ AbstractClass * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
   {
     this->LocalNode = 0; /*0x7b2a32*/
     if ( a3 ) /*0x7b2a38*/
-      _DWORD * v4 = a3; /*0x7b2a4e*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x7b2a4a*/
+      AbstractClass *v4 = a3; /*0x7b2a4e*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x7b2a4a*/
     this->LocalNode = 1; /*0x7b2a52*/
     if ( !v4 ) /*0x7b2a56*/
       return 0; /*0x7b2aca*/

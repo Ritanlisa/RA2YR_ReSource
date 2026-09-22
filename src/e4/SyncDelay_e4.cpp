@@ -14,8 +14,8 @@ signed int SyncDelay::Start()
   signed int result; // eax
   _DWORD v24[4]; // [esp+14h] [ebp-10h] BYREF
 
-  int v0 = DataGlobal_887348; /*0x55e160*/
-  signed int v1 = DataGlobal_887350; /*0x55e171*/
+  SyncDelay *v0 = DataGlobal_887348; /*0x55e160*/
+  AbstractClass *v1 = DataGlobal_887350; /*0x55e171*/
   if ( DataGlobal_887348 != -1 ) /*0x55e179*/
   {
     Ticks = Timer::GetTicks(); /*0x55e180*/
@@ -80,7 +80,7 @@ LABEL_19:
       goto LABEL_38; /*0x55e2a6*/
     goto LABEL_23; /*0x55e2a6*/
   }
-  signed int v10 = DataGlobal_887350; /*0x55e2b4*/
+  AbstractClass *v10 = DataGlobal_887350; /*0x55e2b4*/
   if ( v0 != -1 ) /*0x55e2bc*/
   {
     signed int v11 = Timer::GetTicks() - DataGlobal_887348; /*0x55e2c8*/
@@ -93,11 +93,11 @@ LABEL_19:
     DDraw::WaitForIdle(); /*0x55e2d8*/
     while ( 1 ) /*0x55e317*/
     {
-  signed int v16; // esi
+  AbstractClass *v16; // esi
       while ( 1 ) /*0x55e2e3*/
       {
-        int v12 = DataGlobal_887348; /*0x55e2e3*/
-        signed int v13 = DataGlobal_887350; /*0x55e2e9*/
+        SyncDelay *v12 = DataGlobal_887348; /*0x55e2e3*/
+        AbstractClass *v13 = DataGlobal_887350; /*0x55e2e9*/
         if ( DataGlobal_887348 != -1 ) /*0x55e2f1*/
         {
           v14 = Timer::GetTicks(); /*0x55e2f8*/

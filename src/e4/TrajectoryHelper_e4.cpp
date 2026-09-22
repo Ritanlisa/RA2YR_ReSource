@@ -90,14 +90,14 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   #375 *v15; // ecx
   #375 *v39; // ecx
 
-  _BYTE * v8 = a2; /*0x4cc36b*/
+  IUnknown *v8 = a2; /*0x4cc36b*/
   int v41; // [esp+20h] [ebp-24h]
   LOWORD(v41) = a4 / 256; /*0x4cc382*/
   HIWORD(v41) = a5 / 256; /*0x4cc3a0*/
   _BYTE * v44 = a1; /*0x4cc3a9*/
   int v43 = v41; /*0x4cc3ad*/
-  _DWORD * v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v43); /*0x4cc3b6*/
-  _DWORD * v42 = v10; /*0x4cc3bc*/
+  IUnknown *v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v43); /*0x4cc3b6*/
+  IUnknown *v42 = v10; /*0x4cc3bc*/
   if ( *(_BYTE *)(a7 + 662) ) /*0x4cc3c0*/
   {
     SlopeIndex = Cell::GetSlopeIndex((int)v10); /*0x4cc3d5*/
@@ -122,7 +122,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
     {
 LABEL_16:
   int v45; // [esp+2Ch] [ebp-18h] BYREF
-      _DWORD * v16 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v10 + 72))(v10, &v45); /*0x4cc489*/
+      _DWORD * v16 = (_DWORD *)v10->vt_slot_72(&v45); /*0x4cc489*/
       int v17 = a4 - *v16; /*0x4cc49c*/
       int v18 = v16[1]; /*0x4cc4a2*/
       int v19 = v16[2]; /*0x4cc4a7*/

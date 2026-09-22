@@ -189,7 +189,7 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
 
 // 0x778210
 namespace gamemd {
-AbstractClass * ScoreScreen_DrawSHPBackground()
+AbstractClass * * ScoreScreen_DrawSHPBackground()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

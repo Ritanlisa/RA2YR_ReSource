@@ -553,7 +553,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
 
 // 0x5C1640
 namespace gamemd {
-AbstractClass * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
+AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -671,7 +671,7 @@ int MPCooperative::Read()
   for ( i = this->q0CD - 1; i >= 0; --i ) /*0x5c18ad*/
   {
     int v3 = this->q328; /*0x5c18af*/
-    void * v4 = *(void **)(v3 + 4 * i); /*0x5c18b5*/
+    Array *v4 = *(void **)(v3 + 4 * i); /*0x5c18b5*/
     if ( v4 ) /*0x5c18ba*/
     {
       Array::Cleanup(*(_DWORD *)(v3 + 4 * i)); /*0x5c18be*/
@@ -679,7 +679,7 @@ int MPCooperative::Read()
     }
   }
   int v5 = this->q0CB; /*0x5c18d5*/
-  _DWORD * v6 = this + 201; /*0x5c18db*/
+  VectorClass *v6 = this + 201; /*0x5c18db*/
   this->q324->Cleanup5(); /*0x5c18e3*/
   this->q324->Release(v5, 0); /*0x5c18ed*/
   int v15; // [esp+10h] [ebp-4h] BYREF
@@ -695,10 +695,10 @@ int MPCooperative::Read()
     int v10 = v6[2]; /*0x5c192c*/
     if ( v6[4] >= v10 ) /*0x5c1934*/
     {
-      if ( !*((_BYTE *)v6 + 13) && v10 ) /*0x5c193f*/
+      if ( !v6->IsAllocated && v10 ) /*0x5c193f*/
         continue; /*0x5c193f*/
       int v11 = v6[5]; /*0x5c1941*/
-      if ( v11 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v6 + 8))(v6, v10 + v11, 0) ) /*0x5c1951*/
+      if ( v11 <= 0 || !v6->Release(v10 + v11, 0) ) /*0x5c1951*/
         continue; /*0x5c1951*/
     }
     int v12 = v6[4]; /*0x5c1958*/
@@ -713,12 +713,12 @@ int MPCooperative::Read()
 
 // 0x5C1A10
 namespace gamemd {
-CampaignClass * MPCooperative::CopyTo()
+CampaignClass * * MPCooperative::CopyTo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND result; // eax
-  HWND v12; // edi
+  CampaignClass *v12; // edi
   char *String2; // [esp+10h] [ebp-Ch] BYREF
 
   g_MPCooperativeState = -1; /*0x5c1a13*/
@@ -887,12 +887,12 @@ LABEL_10:
 
 // 0x5C1DC0
 namespace gamemd {
-CampaignClass * MPCooperative::Seek()
+CampaignClass * * MPCooperative::Seek()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
-  LRESULT v3; // edi
+  CampaignClass *v3; // edi
   HWND GameUI; // eax
   int i; // edi
   int PlayerSide; // eax
@@ -905,7 +905,7 @@ CampaignClass * MPCooperative::Seek()
   {
     if ( Dialog::GetCurrentType() == 107 ) /*0x5c1e34*/
     {
-      void * v4 = this->q040; /*0x5c1e36*/
+      Array *v4 = this->q040; /*0x5c1e36*/
       if ( v4 ) /*0x5c1e3b*/
       {
         Array::Cleanup(this->MPCooperative_field_0x40); /*0x5c1e3f*/
@@ -932,13 +932,13 @@ CampaignClass * MPCooperative::Seek()
   {
     this->q048 = 1; /*0x5c1e26*/
 LABEL_16:
-    int v15 = this->MPCooperative_field_0x33C; /*0x5c1eab*/
+    CampaignClass *v15 = this->MPCooperative_field_0x33C; /*0x5c1eab*/
     int v17 = 0; /*0x5c1ebc*/
   int v18; // [esp+10h] [ebp-8h] BYREF
     Movie::GetSection((int)&g_DDrawSurfaceManager, v15, &v18); /*0x5c1ec4*/
     if ( v18 ) /*0x5c1ecf*/
     {
-  int v8; // eax
+  CampaignClass *v8; // eax
       int v7 = this->MPCooperative_field_0x40; /*0x5c1eda*/
       if ( v7 && Movie::GetState(v7, &v17) ) /*0x5c1ee6*/
       {
@@ -1244,13 +1244,13 @@ int MPCooperative::SyncState()
     }
     MPCooperative *v8 = v36; /*0x5c27ee*/
     int v34 = 0; /*0x5c27f2*/
-    int * v9 = DataGlobal_ABF460; /*0x5c27fa*/
+    ScenarioClass *v9 = DataGlobal_ABF460; /*0x5c27fa*/
     int * v10 = v36 + 107; /*0x5c27ff*/
     while ( 1 ) /*0x5c2815*/
     {
       if ( v34 >= v37 ) /*0x5c2815*/
       {
-  int v25; // esi
+  ScenarioClass *v25; // esi
         int v20 = v8->HandleEvent(); /*0x5c28d2*/
         int v21 = *v10; /*0x5c28d4*/
         if ( v10[2] < *v10 /*0x5c28f7*/
@@ -1360,7 +1360,7 @@ const char * MPCooperative::UpdateLobby(const char * a2, char * String)
         int v6 = 8; /*0x5c2aae*/
         do /*0x5c2aec*/
         {
-          int v7 = v5[2]; /*0x5c2ab5*/
+          Coord *v7 = v5[2]; /*0x5c2ab5*/
           (*(void (__thiscall **)(_DWORD *))(*v5 + 12))(v5); /*0x5c2aba*/
           (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v5 + 8))(v5, v7, 0); /*0x5c2ac4*/
           int v8 = v5[50]; /*0x5c2acd*/
@@ -1382,7 +1382,7 @@ const char * MPCooperative::UpdateLobby(const char * a2, char * String)
               char * v11 = strtok(0, Delimiter); /*0x5c2b14*/
               if ( v11 ) /*0x5c2b1e*/
               {
-                int v12 = atol(v11); /*0x5c2b29*/
+                Coord *v12 = atol(v11); /*0x5c2b29*/
                 int v13 = *(_DWORD *)v10; /*0x5c2b2b*/
                 if ( *((_DWORD *)v10 + 2) < *(_DWORD *)v10 /*0x5c2b51*/
                   || (v10[5] || !v13)
@@ -1393,7 +1393,7 @@ const char * MPCooperative::UpdateLobby(const char * a2, char * String)
                        v13 + v14,
                        0) )
                 {
-                  int v15 = *((_DWORD *)v10 + 2); /*0x5c2b58*/
+                  Coord *v15 = *((_DWORD *)v10 + 2); /*0x5c2b58*/
                   int v16 = *((_DWORD *)v10 - 1); /*0x5c2b5b*/
                   *((_DWORD *)v10 + 2) = v15 + 1; /*0x5c2b61*/
                   *(_DWORD *)(v16 + 4 * v15) = v12; /*0x5c2b64*/
@@ -1411,7 +1411,7 @@ const char * MPCooperative::UpdateLobby(const char * a2, char * String)
                        v17 + v18,
                        0) )
                 {
-                  int v19 = *((_DWORD *)v10 + 2); /*0x5c2b96*/
+                  Coord *v19 = *((_DWORD *)v10 + 2); /*0x5c2b96*/
                   int v20 = *((_DWORD *)v10 - 1); /*0x5c2b99*/
                   *((_DWORD *)v10 + 2) = v19 + 1; /*0x5c2b9f*/
                   *(_DWORD *)(v20 + 4 * v19) = -1; /*0x5c2ba2*/
@@ -1420,7 +1420,7 @@ const char * MPCooperative::UpdateLobby(const char * a2, char * String)
               char * v21 = strtok(0, Delimiter); /*0x5c2bb0*/
               if ( v21 ) /*0x5c2bba*/
               {
-                int v22 = atol(v21); /*0x5c2bc8*/
+                Coord *v22 = atol(v21); /*0x5c2bc8*/
                 int v23 = *((_DWORD *)v10 + 48); /*0x5c2bca*/
                 if ( *((_DWORD *)v10 + 50) < v23 /*0x5c2c08*/
                   || (v10[197] || !v23)
@@ -1541,7 +1541,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
   #375 *v10; // ecx
   int j; // eax
 
-  int v4 = a3; /*0x5c2de0*/
+  MPCooperative *v4 = a3; /*0x5c2de0*/
   int v5 = 0; /*0x5c2de6*/
   int v6 = *(_DWORD *)(a3 + 16); /*0x5c2de8*/
   for ( i = 0; i < v6; ++i ) /*0x5c2df4*/
@@ -1571,7 +1571,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
   char v15; // bl
       do /*0x5c2ebc*/
       {
-        if ( v14 >= *(_DWORD *)(v4 + 16) ) /*0x5c2eb3*/
+        if ( v14 >= v4->q010 ) /*0x5c2eb3*/
           break; /*0x5c2eb3*/
         v15 = *(_BYTE *)(v14 + a4 + 1); /*0x5c2eb5*/
         ++v14; /*0x5c2eb9*/
@@ -1580,7 +1580,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
     }
     *(_BYTE *)(v14 + a4) = 1; /*0x5c2ec2*/
     *((_DWORD *)g_ScenarioClass_Instance + v14 + 1120) = a2; /*0x5c2ecc*/
-    int v16 = *(_DWORD *)(*(_DWORD *)(v4 + 4) + 4 * v14); /*0x5c2ed8*/
+    int v16 = *(_DWORD *)(v4->q004 + 4 * v14); /*0x5c2ed8*/
     *a1 = v16; /*0x5c2ee0*/
     return a1; /*0x5c2edb*/
   }
@@ -1604,7 +1604,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
 
 // 0x5C2EF0
 namespace gamemd {
-AbstractClass * MPCooperative::GetPlayerCount(int a1)
+AbstractClass * * MPCooperative::GetPlayerCount(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1648,7 +1648,7 @@ AbstractClass * MPCooperative::GetPlayerCount(int a1)
       else
       {
         Debug::Log(); /*0x5c2f92*/
-        int v9 = MPCooperative_Play(i, (int)&v17, (int)v16); /*0x5c2fae*/
+        CampaignClass *v9 = MPCooperative_Play(i, (int)&v17, (int)v16); /*0x5c2fae*/
         int v10 = 0; /*0x5c2fb5*/
         if ( Game_PlayerCount <= 0 ) /*0x5c2fb9*/
           goto LABEL_17; /*0x5c2fb9*/
@@ -1673,7 +1673,7 @@ LABEL_17:
         {
           SessionClass::SetOption(*(_DWORD *)(Game_PlayerInfoArray + 4 * v10), v9); /*0x5c2ffa*/
           SessionClass::SetOption2(*(_DWORD *)(Game_PlayerInfoArray + 4 * v10), 0); /*0x5c300a*/
-          int * v14 = (int *)(Game_PlayerInfoArray + 4 * v10); /*0x5c3018*/
+          ObjectClass *v14 = (int *)(Game_PlayerInfoArray + 4 * v10); /*0x5c3018*/
           SessionClass::GetOption2(*v14); /*0x5c301b*/
           SessionClass::GetOption(*v14); /*0x5c3023*/
         }
@@ -1693,7 +1693,7 @@ LABEL_17:
 
 // 0x5C30C0
 namespace gamemd {
-ScenarioClass * MPCooperative::BroadcastMessage()
+ScenarioClass * * MPCooperative::BroadcastMessage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1703,7 +1703,7 @@ ScenarioClass * MPCooperative::BroadcastMessage()
   if ( v2 <= 0 ) /*0x5c30f3*/
     return 0; /*0x5c30f8*/
   g_Rules_AlliesAllowed = v2; /*0x5c30ff*/
-  int v4 = this->q33C; /*0x5c3105*/
+  CampaignClass *v4 = this->q33C; /*0x5c3105*/
   int v10 = 0; /*0x5c310f*/
   int v9 = 0; /*0x5c311a*/
   int v11; // [esp+18h] [ebp-4h] BYREF
@@ -1717,7 +1717,7 @@ ScenarioClass * MPCooperative::BroadcastMessage()
     v9 = 0; /*0x5c3159*/
   if ( v9 >= *(_DWORD *)(v11 + 56) ) /*0x5c3168*/
     return 0; /*0x5c316d*/
-  int v6 = *((_DWORD *)g_ScenarioClass_Instance + 1145); /*0x5c3179*/
+  AbstractClass *v6 = *((_DWORD *)g_ScenarioClass_Instance + 1145); /*0x5c3179*/
   if ( v6 < 8 ) /*0x5c3182*/
   {
     int * v7 = (int *)(4 * v6 + 11055740); /*0x5c3188*/
@@ -1758,7 +1758,7 @@ ScenarioClass * MPCooperative::BroadcastMessage()
 
 // 0x5C3220
 namespace gamemd {
-AbstractClass * MPCooperative::GetMapData()
+AbstractClass * * MPCooperative::GetMapData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1766,7 +1766,7 @@ AbstractClass * MPCooperative::GetMapData()
   Debug::Log(); /*0x5c322c*/
   if ( HouseClass_Count > 0 ) /*0x5c323b*/
   {
-  int v2; // eax
+  AbstractClass *v2; // eax
     int v0 = 1; /*0x5c3241*/
     int v8 = 0; /*0x5c3246*/
     int v12 = 1; /*0x5c324e*/
@@ -1982,7 +1982,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
 
   v4 = this; /*0x5c3b1a*/
   v26 = this; /*0x5c3b1c*/
-  int v5 = this->MPCooperative_field_0x50; /*0x5c3b20*/
+  CampaignScore *v5 = this->MPCooperative_field_0x50; /*0x5c3b20*/
   this->q004 = 1; /*0x5c3b23*/
   if ( !v5 ) /*0x5c3b29*/
   {
@@ -2144,7 +2144,7 @@ void MPCooperative::SetGameMode()
   char *v5; // esi
   int i; // edi
   HWND GameUI; // eax
-  HWND v10; // edi
+  SkirmishDialog *v10; // edi
   char Buffer[260]; // [esp+14h] [ebp-104h] BYREF
 
   if ( Dialog::GetCurrentType() != 107 ) /*0x5c3f94*/
@@ -2209,15 +2209,15 @@ LABEL_22:
 
 // 0x5C4110
 namespace gamemd {
-AbstractClass * MPCooperative::ProcessChat()
+AbstractClass * * MPCooperative::ProcessChat()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  LRESULT v2; // eax
+  AbstractClass *v2; // eax
   LPARAM v6; // ebp
   HWND Current; // eax
   HWND DlgItem; // esi
-  WPARAM v12; // ebx
+  AbstractClass *v12; // ebx
   wchar_t *String; // eax
   wchar_t *v14; // eax
   char Destination[260]; // [esp+14h] [ebp-104h] BYREF
@@ -2421,7 +2421,7 @@ void MPCooperative::ShowScoreScreen(int a2)
         _DWORD * v4 = __2_YAPAXI_Z(4u); /*0x5c4527*/
         if ( v4 ) /*0x5c4531*/
         {
-          _DWORD * v5 = MPCooperative::startGame(v4); /*0x5c453e*/
+          CampaignEndScoreClass *v5 = MPCooperative::startGame(v4); /*0x5c453e*/
           if ( v5 ) /*0x5c4542*/
           {
             MPCooperative::applyVoteResult(&v21, 0, 0); /*0x5c4550*/
@@ -2464,7 +2464,7 @@ void MPCooperative::ShowScoreScreen(int a2)
   bool v10; // zf
               do /*0x5c463c*/
               {
-                _DWORD * v9 = Block; /*0x5c45f6*/
+                AbstractClass *v9 = Block; /*0x5c45f6*/
                 if ( *(_DWORD *)Block ) /*0x5c45fa*/
                 {
                   __3_YAXPAX_Z(*(void **)Block); /*0x5c4601*/
@@ -2508,7 +2508,7 @@ void MPCooperative::ShowScoreScreen(int a2)
 
 // 0x5C4CA0
 namespace gamemd {
-IPXInterfaceClass * MPCooperative::InitializePlayers()
+IPXInterfaceClass * * MPCooperative::InitializePlayers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

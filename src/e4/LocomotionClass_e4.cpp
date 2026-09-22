@@ -9,7 +9,7 @@ int LocomotionClass::Initialize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v2; // ecx
+  RateTimer *v2; // ecx
   LocomotionClass::Init((_DWORD *)this); /*0x4af543*/
   *(_DWORD *)(this + 28) = 0; /*0x4af54d*/
   this->Owner = 0; /*0x4af550*/
@@ -21,7 +21,7 @@ int LocomotionClass::Initialize()
   *(_QWORD *)(this + 56) = DataGlobal_8A0794; /*0x4af570*/
   this->Powered = g_DDraw_ClipRect; /*0x4af585*/
   this->Dirty = DataGlobal_8A0794; /*0x4af58e*/
-  int v3 = HIDWORD(DataGlobal_8A0794); /*0x4af591*/
+  TechnoClass *v3 = HIDWORD(DataGlobal_8A0794); /*0x4af591*/
   this->RefCount = 0; /*0x4af597*/
   *(_DWORD *)(this + 76) = 0; /*0x4af59a*/
   this->q012 = v3; /*0x4af59d*/
@@ -106,8 +106,8 @@ int LocomotionClass::GetSpeedMultiplier()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->q5D4; /*0x4dc760*/
-  if ( v1 && *(_BYTE *)(*(_DWORD *)(v1 + 36) + 242) ) /*0x4dc76d*/
+  LocomotionClass *v1 = this->q5D4; /*0x4dc760*/
+  if ( v1 && *(_BYTE *)(v1->q090 + 242) ) /*0x4dc76d*/
     return 1.0; /*0x4dc777*/
   else
     return *(double *)(this + 1328); /*0x4dc77e*/

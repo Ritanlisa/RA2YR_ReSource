@@ -6,7 +6,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x5F8CE0
-AbstractClass * Turret::LoadVoxelTurretAndBarrel()
+AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -33,7 +33,7 @@ AbstractClass * Turret::LoadVoxelTurretAndBarrel()
         CCFileClass::Construct(v26, Source); /*0x5f8d63*/
         if ( CCFileClass::Open(v26, 0) ) /*0x5f8d70*/
         {
-          void * v3 = (void *)*((_DWORD *)this + 46); /*0x5f8d7d*/
+          AbstractClass *v3 = (void *)*((_DWORD *)this + 46); /*0x5f8d7d*/
           if ( v3 ) /*0x5f8d85*/
           {
             WaveClass::Destroy(*((_DWORD *)this + 46)); /*0x5f8d89*/
@@ -50,7 +50,7 @@ AbstractClass * Turret::LoadVoxelTurretAndBarrel()
             sprintf(Buffer, g_Str_Trace__sTUR, (const char *)this + 504); /*0x5f8ddd*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8df9*/
             CCFileClass::Construct(v20, Source); /*0x5f8e0d*/
-            void * v6 = (void *)*((_DWORD *)this + 47); /*0x5f8e12*/
+            AbstractClass *v6 = (void *)*((_DWORD *)this + 47); /*0x5f8e12*/
             if ( v6 ) /*0x5f8e1a*/
             {
               String::Release(*((void ***)this + 47)); /*0x5f8e1e*/
@@ -61,7 +61,7 @@ AbstractClass * Turret::LoadVoxelTurretAndBarrel()
               _DWORD * v8 = File::LoadFileHVA(v7, (int)v20); /*0x5f8e41*/
             else
               v8 = 0; /*0x5f8e48*/
-            _DWORD * v9 = (_DWORD *)*((_DWORD *)this + 46); /*0x5f8e4a*/
+            AbstractClass *v9 = (_DWORD *)*((_DWORD *)this + 46); /*0x5f8e4a*/
             *((_DWORD *)this + 47) = v8; /*0x5f8e52*/
             Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
             Matrix::Scale(*((unsigned int **)this + 47), *(float *)(Info + 12)); /*0x5f8e67*/
@@ -78,7 +78,7 @@ AbstractClass * Turret::LoadVoxelTurretAndBarrel()
         CCFileClass::Construct(v23, Source); /*0x5f8ed0*/
         if ( CCFileClass::Open(v23, 0) ) /*0x5f8edd*/
         {
-          void * v11 = (void *)*((_DWORD *)this + 48); /*0x5f8eea*/
+          AbstractClass *v11 = (void *)*((_DWORD *)this + 48); /*0x5f8eea*/
           if ( v11 ) /*0x5f8ef2*/
           {
             WaveClass::Destroy(*((_DWORD *)this + 48)); /*0x5f8ef6*/
@@ -95,7 +95,7 @@ AbstractClass * Turret::LoadVoxelTurretAndBarrel()
             sprintf(Buffer, g_Str_Trace__sBARL, (const char *)this + 504); /*0x5f8f47*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8f63*/
             CCFileClass::Construct(v20, Source); /*0x5f8f77*/
-            void * v14 = (void *)*((_DWORD *)this + 49); /*0x5f8f7c*/
+            AbstractClass *v14 = (void *)*((_DWORD *)this + 49); /*0x5f8f7c*/
             if ( v14 ) /*0x5f8f84*/
             {
               String::Release(*((void ***)this + 49)); /*0x5f8f88*/
@@ -106,7 +106,7 @@ AbstractClass * Turret::LoadVoxelTurretAndBarrel()
               _DWORD * v16 = File::LoadFileHVA(v15, (int)v20); /*0x5f8fab*/
             else
               v16 = 0; /*0x5f8fb2*/
-            _DWORD * v17 = (_DWORD *)*((_DWORD *)this + 48); /*0x5f8fb4*/
+            AbstractClass *v17 = (_DWORD *)*((_DWORD *)this + 48); /*0x5f8fb4*/
             *((_DWORD *)this + 49) = v16; /*0x5f8fbc*/
             int v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
             Matrix::Scale(*((unsigned int **)this + 49), *(float *)(v18 + 12)); /*0x5f8fd1*/

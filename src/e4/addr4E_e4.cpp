@@ -814,8 +814,7 @@ void SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v3; // eax
-
-  int v2 = DataGlobal_A8B3B4; /*0x4e48e7*/
+  AbstractClass *v2 = DataGlobal_A8B3B4; /*0x4e48e7*/
   if ( DataGlobal_A8B3B8 == -2 ) /*0x4e48f0*/
     v2 = -2; /*0x4e48f2*/
   if ( a2 )
@@ -1244,8 +1243,7 @@ void Lobby_FillFactionComboBox(HWND a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v3; // eax
-
-  int v2 = -2; /*0x4e53d4*/
+  CampaignClass *v2 = -2; /*0x4e53d4*/
   if ( a2 )
   {
     switch ( a2 )
@@ -1980,7 +1978,7 @@ LABEL_10:
 
 // 0x4E9240
 namespace gamemd {
-AbstractClass * HouseClass__vt_02_(int a2, unsigned int * a3)
+AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1990,9 +1988,8 @@ AbstractClass * HouseClass__vt_02_(int a2, unsigned int * a3)
   {
     this->IsInitialized = 0; /*0x4e9256*/
     if ( a3 ) /*0x4e925c*/
-      _DWORD * v4 = a3; /*0x4e9272*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e926e*/
+      AbstractClass *v4 = a3; /*0x4e9272*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x4e926e*/
     this->IsInitialized = 1; /*0x4e9276*/
     if ( v4 ) /*0x4e927a*/
     {
@@ -2030,7 +2027,7 @@ AbstractClass * HouseClass__vt_02_(int a2, unsigned int * a3)
 
 // 0x4E9E20
 namespace gamemd {
-AbstractClass * ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
+AbstractClass * * ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2040,9 +2037,8 @@ AbstractClass * ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
   {
     this->IsInitialized = 0; /*0x4e9e36*/
     if ( a3 ) /*0x4e9e3c*/
-      _DWORD * v4 = a3; /*0x4e9e52*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9e4e*/
+      AbstractClass *v4 = a3; /*0x4e9e52*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9e4e*/
     this->IsInitialized = 1; /*0x4e9e56*/
     if ( v4 ) /*0x4e9e5a*/
     {

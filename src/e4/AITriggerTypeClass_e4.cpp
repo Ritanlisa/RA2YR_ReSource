@@ -89,11 +89,11 @@ LABEL_12:
 }
 
 // 0x41EE90
-DynamicVector * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
+DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  int v7; // eax
+  DynamicVector *v7; // eax
   bool result; // al
   char v9; // [esp+7h] [ebp-1h]
   v9 = 0; /*0x41ee9a*/
@@ -103,7 +103,7 @@ DynamicVector * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
   if ( v4 ) /*0x41eeae*/
   {
     int v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 64))(v4); /*0x41eec1*/
-    int v6 = 0; /*0x41eec3*/
+    DynamicVector *v6 = 0; /*0x41eec3*/
     switch ( (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) ) /*0x41eed8*/
     {
       case 3: /*0x41eed8*/
@@ -266,18 +266,18 @@ int AITriggerTypeClass::HouseCredits(int a2, int a3)
 }
 
 // 0x41F580
-ObjectClass * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
+ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int ExitCellByName; // eax
   int Index; // eax
-  _DWORD *v12; // edx
+  AbstractClass *v12; // edx
   int v13; // eax
   char *v14; // eax
   unsigned int v15; // edi
   bool v16; // zf
-  char *v17; // esi
+  ObjectClass *v17; // esi
   char *v21; // eax
   char *v23; // eax
   char *v25; // eax
@@ -288,9 +288,9 @@ ObjectClass * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   char *v31; // eax
   char *v32; // eax
   char *v33; // eax
-  int v34; // eax
+  ObjectClass *v34; // eax
   int MaxBuildLevel; // eax
-  int v37; // eax
+  ObjectClass *v37; // eax
   char v40[4]; // [esp+10h] [ebp-270h] BYREF
   __int64 v41; // [esp+14h] [ebp-26Ch] BYREF
   char v42[23]; // [esp+1Ch] [ebp-264h] BYREF
@@ -482,8 +482,8 @@ LABEL_26:
   v34 = this->q0DC; /*0x41fa5c*/
   if ( v34 ) /*0x41fa64*/
   {
-    int v35 = this->q0B0; /*0x41fa6c*/
-    if ( v35 <= HouseClass::GetMaxBuildLevel(*(int **)(v34 + 228)) ) /*0x41fa79*/
+    ObjectClass *v35 = this->q0B0; /*0x41fa6c*/
+    if ( v35 <= HouseClass::GetMaxBuildLevel(v34->q0E4) ) /*0x41fa79*/
       MaxBuildLevel = HouseClass::GetMaxBuildLevel(*(int **)(this->q0DC + 228)); /*0x41fa8b*/
     else
       MaxBuildLevel = v35; /*0x41fa7b*/
@@ -492,8 +492,8 @@ LABEL_26:
   v37 = this->q0E0; /*0x41fa96*/
   if ( v37 ) /*0x41fa9e*/
   {
-    int v38 = this->q0B0; /*0x41faa6*/
-    if ( v38 > HouseClass::GetMaxBuildLevel(*(int **)(v37 + 228)) ) /*0x41fab3*/
+    ObjectClass *v38 = this->q0B0; /*0x41faa6*/
+    if ( v38 > HouseClass::GetMaxBuildLevel(v37->q0E4) ) /*0x41fab3*/
     {
       this->q0B0 = v38; /*0x41fab8*/
       return 1; /*0x41fac9*/

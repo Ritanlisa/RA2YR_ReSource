@@ -168,8 +168,8 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   CoordStruct *v17; // eax
   __int16 v33; // ax
   __int16 v34; // ax
-  CoordStruct *v38; // esi
-  CoordStruct *v39; // edi
+  Coord *v38; // esi
+  Coord *v39; // edi
   float aP2a; // [esp+38h] [ebp-158h]
   float aP2b; // [esp+38h] [ebp-158h]
   float aP2c; // [esp+38h] [ebp-158h]
@@ -958,14 +958,14 @@ unsigned int int sub_552640(unsigned char * a1, unsigned int a2)
 
 // 0x554400
 namespace gamemd {
-ObjectClass * E4Recv_554400::sub_554400(int a2, int a3)
+ObjectClass * * E4Recv_554400::sub_554400(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 != 4526 ) /*0x55440a*/
     return 0; /*0x554428*/
-  int v3 = *(this + 24); /*0x55440c*/
+  ObjectClass *v3 = *(this + 24); /*0x55440c*/
   if ( v3 ) /*0x554417*/
     (*(void (__thiscall **)(int, int, _DWORD, int))(*(_DWORD *)g_DSurface_Hidden + 4))(g_DSurface_Hidden, v3, 0, 1); /*0x554420*/
   return 1; /*0x554425*/
@@ -1163,7 +1163,7 @@ int E4Recv_557380::sub_557380(int a2)
 
 // 0x557B10
 namespace gamemd {
-ControlClass * CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
+ControlClass * * CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1810,7 +1810,7 @@ LABEL_14:
 
 // 0x55CFD0
 namespace gamemd {
-AbstractClass * Game_Frame_Check()
+AbstractClass * * Game_Frame_Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2008,7 +2008,7 @@ LABEL_8:
     BYTE2(dword_A8ED54[7]) = 1; /*0x55d3e8*/
   if ( LOBYTE(DataGlobal_87F7E8[539364]) == 1 && Audio::IsSoundEnabled() ) /*0x55d3f8*/
   {
-    int v1 = DataGlobal_87F7E8[528715]; /*0x55d401*/
+    AbstractClass *v1 = DataGlobal_87F7E8[528715]; /*0x55d401*/
     if ( DataGlobal_87F7E8[528715] == -1 ) /*0x55d409*/
       v1 = DataGlobal_87F7E8[528716]; /*0x55d40b*/
     if ( BYTE1(DataGlobal_87F7E8[539887]) ) /*0x55d418*/
@@ -2033,7 +2033,7 @@ LABEL_8:
       goto LABEL_62; /*0x55d79c*/
     }
 LABEL_61:
-    int v15 = DataGlobal_87F7E8[539870]; /*0x55d79e*/
+    AbstractClass *v15 = DataGlobal_87F7E8[539870]; /*0x55d79e*/
     DataGlobal_87F7E8[7896] = Timer::GetTicks(&v43); /*0x55d7b1*/
     DataGlobal_87F7E8[7897] = v43; /*0x55d7b6*/
     DataGlobal_87F7E8[7898] = v15; /*0x55d7bc*/
@@ -2052,7 +2052,7 @@ LABEL_61:
   int v44; // [esp+18h] [ebp-1ACh]
     if ( DataGlobal_87F7E8[536412] ) /*0x55d499*/
     {
-      int v2 = 60 / DataGlobal_87F7E8[536412]; /*0x55d507*/
+      AbstractClass *v2 = 60 / DataGlobal_87F7E8[536412]; /*0x55d507*/
       DataGlobal_87F7E8[7896] = Timer::GetTicks(&v43); /*0x55d50e*/
       DataGlobal_87F7E8[7897] = v43; /*0x55d517*/
       DataGlobal_87F7E8[7898] = v2; /*0x55d528*/
@@ -2086,7 +2086,7 @@ LABEL_61:
       else
         v4 -= v5; /*0x55d591*/
     }
-    int v6 = DataGlobal_87F7E8[536410]; /*0x55d59c*/
+    AbstractClass *v6 = DataGlobal_87F7E8[536410]; /*0x55d59c*/
     a1 = 0; /*0x55d5a2*/
     dword_A8ED54[47148] = v4; /*0x55d5a7*/
     if ( DataGlobal_87F7E8[536212] == 4 ) /*0x55d5ad*/
@@ -2204,7 +2204,7 @@ LABEL_70:
     return LOBYTE(DataGlobal_87F7E8[539758]) == 0; /*0x55d877*/
   }
 LABEL_72:
-  char v20 = DataGlobal_87F7E8[538500]; /*0x55d878*/
+  Movie *v20 = DataGlobal_87F7E8[538500]; /*0x55d878*/
   if ( (DataGlobal_87F7E8[538500] & 2) == 0 && !dword_A8ED54[19] && LOBYTE(dword_A8ED54[11]) ) /*0x55d895*/
   {
   int v51; // [esp+38h] [ebp-18Ch] BYREF
@@ -2229,7 +2229,7 @@ LABEL_72:
   int v45; // [esp+1Ch] [ebp-1A8h] BYREF
     if ( (v20 & 1) != 0 ) /*0x55d91a*/
     {
-      int * v21 = RequestMapSnapshot((_DWORD *)DataGlobal_87F7E8[7887], v54); /*0x55d92b*/
+      Tactical *v21 = RequestMapSnapshot((_DWORD *)DataGlobal_87F7E8[7887], v54); /*0x55d92b*/
       Time = *v21; /*0x55d936*/
       v43 = v21[1]; /*0x55d945*/
       FileClass::Write(&DataGlobal_87F7E8[538473], (int)&Time, 8); /*0x55d949*/
@@ -2742,7 +2742,7 @@ void* unknown_libname_21()
 
 // 0x55FDB0
 namespace gamemd {
-AbstractClass * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
+AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2813,7 +2813,7 @@ AbstractClass * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3
           do /*0x56024d*/
           {
             int v23 = *v22; /*0x5601d2*/
-            int v24 = v22[1]; /*0x5601d4*/
+            INIClass *v24 = v22[1]; /*0x5601d4*/
             v22 += 2; /*0x5601e0*/
             if ( DataGlobal_A8EB95 || v23 == 640 || v23 == 800 || v23 == 1024 ) /*0x5601fa*/
             {

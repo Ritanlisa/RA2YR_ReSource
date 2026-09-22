@@ -11,7 +11,7 @@ void DropListClass_OnKeyUp()
   wchar_t *result; // eax
   const wchar_t *v8; // eax
 
-  int * v4 = (int *)(a1 + 176); /*0x4b503a*/
+  ListClass *v4 = (int *)(a1 + 176); /*0x4b503a*/
   result = (wchar_t *)(*(int (__thiscall **)(int))(*(_DWORD *)(a1 + 176) + 148))(a1 + 176); /*0x4b5042*/
   if ( a3 >= (unsigned int)result ) /*0x4b504e*/
   {
@@ -19,10 +19,10 @@ void DropListClass_OnKeyUp()
   }
   else
   {
-    (*(void (__thiscall **)(int *, unsigned int, int))(*v4 + 184))(v4, a3, a2); /*0x4b5056*/
+    v4->Clear(a3, a2); /*0x4b5056*/
     int v6 = *v4; /*0x4b505e*/
     int v7 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 164))(a1); /*0x4b5062*/
-    v8 = (const wchar_t *)(*(int (__thiscall **)(int *, int))(v6 + 160))(v4, v7); /*0x4b506b*/
+    v8 = (const wchar_t *)v4->GetClamped(v7); /*0x4b506b*/
     return wcscpy(*(wchar_t **)(a1 + 52), v8); /*0x4b5076*/
   }
   return result; /*0x4b507f*/

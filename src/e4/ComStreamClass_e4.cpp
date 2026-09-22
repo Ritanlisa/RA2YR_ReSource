@@ -205,7 +205,7 @@ LABEL_17:
 }
 
 // 0x7AE0E0
-AbstractClass * ComStreamClass::readData()
+AbstractClass * * ComStreamClass::readData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -218,13 +218,13 @@ AbstractClass * ComStreamClass::readData()
     this->q008 = 2 * v2; /*0x7ae0fd*/
     _DWORD * v13 = v3; /*0x7ae100*/
     this->q00C = v4; /*0x7ae108*/
-    void * v5 = __2_YAPAXI_Z(8 * v2); /*0x7ae113*/
+    AbstractClass *v5 = __2_YAPAXI_Z(8 * v2); /*0x7ae113*/
     unsigned int v6 = 4 * this->q008; /*0x7ae118*/
     *this = v5; /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
     if ( v2 > 0 ) /*0x7ae12f*/
     {
-      int * v7 = v3; /*0x7ae131*/
+      AbstractClass *v7 = v3; /*0x7ae131*/
       rc_ptr_base *v8 = v2; /*0x7ae133*/
       do /*0x7ae167*/
       {
@@ -268,13 +268,13 @@ void ComStreamClass::flushStream()
     int * v13 = (int *)*this; /*0x7aef76*/
     this->q008 = v2 >> 1; /*0x7aef7c*/
     this->q00C = v4 - 1; /*0x7aef84*/
-    void * v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7aef8f*/
+    AbstractClass *v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7aef8f*/
     unsigned int v6 = 4 * this->q008; /*0x7aef94*/
     *this = v5; /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
     if ( (int)v2 > 0 ) /*0x7aefab*/
     {
-      int * v7 = v3; /*0x7aefad*/
+      rc_ptr_base *v7 = v3; /*0x7aefad*/
       unsigned int v8 = v2; /*0x7aefaf*/
       do /*0x7aefe3*/
       {

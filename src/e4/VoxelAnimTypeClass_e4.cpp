@@ -86,7 +86,7 @@ unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
 
 // 0x74B050
 namespace gamemd {
-AbstractTypeClass * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
+AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -100,17 +100,17 @@ AbstractTypeClass * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
   VoxelAnimTypeClass *v17; // eax
   AbstractTypeClass *v15; // edx
   int Index; // eax
-  AnimTypeClass *v22; // eax
+  AbstractTypeClass *v22; // eax
   AnimTypeClass *v19; // edx
   AnimTypeClass *v24; // eax
   AnimTypeClass *eax22; // eax
   INIClass *v27; // ecx
   WarheadTypeClass *v25; // edx
-  int v30; // eax
+  AbstractTypeClass *v30; // eax
   ParticleSystemTypeClass *eax28; // eax
   bool v32; // al
   _DWORD *TechnoType; // eax
-  WaveClass *v31; // edi
+  AbstractClass *v31; // edi
   ObjectClass *v36; // eax
   _DWORD *FileVXL; // eax
   INIClass *v38; // [esp-8h] [ebp-2A0h]
@@ -265,7 +265,7 @@ AbstractTypeClass * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
           (INIClass *)&DataGlobal_87F8E4[42624],
           (INIClass *)Destination,
           128)
-  int v21; // eax
+  AbstractTypeClass *v21; // eax
     || (v21 = VocClass::FindIndex(Destination), v21 == -1) )
   {
     v21 = v43; /*0x74b311*/

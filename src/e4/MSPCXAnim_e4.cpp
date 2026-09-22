@@ -15,14 +15,14 @@ int MSPCXAnim::Stub()
 
 // 0x5D09C0
 namespace gamemd {
-AbstractClass * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
+AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 ) /*0x5d09cc*/
   {
-  _DWORD *v6; // edi
+  AbstractClass *v6; // edi
     _DWORD * v4 = a3; /*0x5d09d2*/
     this->q00C = 0; /*0x5d09d6*/
     if ( a3 ) /*0x5d09dc*/
@@ -34,15 +34,14 @@ AbstractClass * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
       _DWORD * v5 = __2_YAPAXI_Z(8 * a2); /*0x5d09e6*/
       if ( v5 ) /*0x5d09f0*/
         v6 = v5; /*0x5d09f5*/
-      else
-        v6 = 0; /*0x5d09fd*/
+      AbstractClass *v6 = 0; /*0x5d09fd*/
     }
     this->q00C = 1; /*0x5d0a0c*/
     if ( !v6 ) /*0x5d0a10*/
       return 0; /*0x5d0a90*/
     if ( this->MSPCXAnim_42_field_0x4 ) /*0x5d0a12*/
     {
-      int v7 = this->MSPCXAnim_42_field_0x8; /*0x5d0a19*/
+      AbstractClass *v7 = this->MSPCXAnim_42_field_0x8; /*0x5d0a19*/
       if ( a2 < v7 ) /*0x5d0a1e*/
         v7 = a2; /*0x5d0a20*/
       int v8 = 0; /*0x5d0a22*/
@@ -50,7 +49,7 @@ AbstractClass * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
       {
         do /*0x5d0a3e*/
         {
-          int v9 = this->MSPCXAnim_42_field_0x4; /*0x5d0a28*/
+          AbstractClass *v9 = this->MSPCXAnim_42_field_0x4; /*0x5d0a28*/
           ++v8; /*0x5d0a2b*/
           v6[2 * v8 - 2] = *(_DWORD *)(v9 + 8 * v8 - 8); /*0x5d0a32*/
           v6[2 * v8 - 1] = *(_DWORD *)(v9 + 8 * v8 - 4); /*0x5d0a3a*/
@@ -72,7 +71,7 @@ AbstractClass * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x5d0a74*/
   }
-  int v10 = this->MSPCXAnim_42_field_0x8; /*0x5d0a77*/
+  AbstractClass *v10 = this->MSPCXAnim_42_field_0x8; /*0x5d0a77*/
   if ( v10 < this->MSPCXAnim_42_field_0x10 ) /*0x5d0a7f*/
     this->MSPCXAnim_42_field_0x10 = v10; /*0x5d0a81*/
   return 1; /*0x5d0a84*/

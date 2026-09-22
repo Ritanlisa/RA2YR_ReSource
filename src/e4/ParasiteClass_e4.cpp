@@ -160,7 +160,7 @@ void ParasiteClass::DeploySquad()
         Index = AnimTypeClass::FindIndex(DataGlobal_83665C); /*0x6298d1*/
         if ( Index != -1 ) /*0x6298d9*/
         {
-          void * v12 = (void *)*((_DWORD *)g_AnimTypeCount + Index); /*0x6298e5*/
+          Coord *v12 = (void *)*((_DWORD *)g_AnimTypeCount + Index); /*0x6298e5*/
           if ( v12 ) /*0x6298ea*/
           {
             v13 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6298f5*/
@@ -233,7 +233,7 @@ LABEL_20:
             double v18 = -64.0; /*0x629af7*/
           else
             v18 = v46; /*0x629aff*/
-          int v19 = Math::RoundToInt(v18); /*0x629b26*/
+          ScenarioClass *v19 = Math::RoundToInt(v18); /*0x629b26*/
           int v20 = Math::RoundToInt(v47 * v48 + v18 * v49); /*0x629b2a*/
           int v53 = v19 + v50; /*0x629b44*/
           v54 = v51 + v20; /*0x629b48*/
@@ -508,7 +508,7 @@ LABEL_8:
 // 0x62A980
 namespace ra2 {
 namespace game {
-AbstractClass * ParasiteClass::TryInfect(unsigned int * a2)
+AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -539,7 +539,7 @@ AbstractClass * ParasiteClass::TryInfect(unsigned int * a2)
   if ( ParasiteClass::CanInfect((_DWORD *)this, a2) ) /*0x62a9f5*/
   {
     _DWORD * v12 = (_DWORD *)(this->creationFrame + 1652); /*0x62aae2*/
-    int v13 = a2[39]; /*0x62aae8*/
+    AbstractClass *v13 = a2[39]; /*0x62aae8*/
     v16 = a2[40]; /*0x62aaed*/
     v17 = a2[41]; /*0x62aaf4*/
     if ( !*v12 ) /*0x62aaf8*/
@@ -638,7 +638,7 @@ void * ParasiteClass::UpdateParasite(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ParasiteClass *v7; // [esp+8h] [ebp-4h] BYREF
-  int v3 = this->q011; /*0x62af77*/
+  AnimClass *v3 = this->q011; /*0x62af77*/
   *(_DWORD *)this->__pad_0 = &ParasiteClass::`vftable'; /*0x62af7a*/
   *(_DWORD *)&this->__pad_0[4] = &ParasiteClass::`vftable'; /*0x62af82*/
   *(_DWORD *)&this->__pad_0[8] = &ParasiteClass::`vftable'; /*0x62af89*/
@@ -648,7 +648,7 @@ void * ParasiteClass::UpdateParasite(char a2)
   this->q012 = 0; /*0x62af9d*/
   if ( v3 ) /*0x62afa0*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 248))(v3); /*0x62afa4*/
+    v3->ProcessCraterFormation(); /*0x62afa4*/
     this->q011 = 0; /*0x62afaa*/
   }
   if ( this->q054 ) /*0x62afad*/
@@ -689,7 +689,7 @@ void * ParasiteClass::UpdateParasite(char a2)
 // 0x62BD50
 namespace ra2 {
 namespace game {
-Coord * ParasiteClass::Update()
+Coord * * ParasiteClass::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -761,7 +761,7 @@ Coord * ParasiteClass::Update()
     }
   }
   double v7 = (double)v51; /*0x62be60*/
-  int * v8 = (int *)(this + 204); /*0x62be64*/
+  Coord *v8 = (int *)(this + 204); /*0x62be64*/
   v51 = 0; /*0x62be6a*/
   v56 = v7; /*0x62be78*/
   double v9 = (double)SLODWORD(v52); /*0x62be7c*/
@@ -785,7 +785,7 @@ Coord * ParasiteClass::Update()
   Coord3D::Set(v62, v12, v43, v46); /*0x62bf13*/
   GroundHeight = Cell::GetGroundHeight(v62); /*0x62bf2d*/
   v59 = DataGlobal_AC4A0C + GroundHeight; /*0x62bf3d*/
-  _DWORD * v13 = Coord::To_Cell(&DataGlobal_87F7E8, v62); /*0x62bf46*/
+  IUnknown *v13 = Coord::To_Cell(&DataGlobal_87F7E8, v62); /*0x62bf46*/
   v50 = 0; /*0x62bf4d*/
   v49 = 0; /*0x62bf52*/
   if ( (v13[80] & 0x100) != 0 || (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v60) + 80) & 0x100) != 0 ) /*0x62bf74*/
@@ -873,7 +873,7 @@ LABEL_39:
   v51 = *(_DWORD *)v21; /*0x62c159*/
   v52 = v21[1]; /*0x62c160*/
   float v22 = v21[2]; /*0x62c164*/
-  int v23 = v51; /*0x62c167*/
+  Coord *v23 = v51; /*0x62c167*/
   this->ParasiteClass_field_34 = -v52; /*0x62c171*/
   v53 = v22; /*0x62c176*/
   *v8 = v23; /*0x62c17a*/
@@ -916,7 +916,7 @@ LABEL_50:
           int v32 = abs32(v29) + abs32(v30); /*0x62c2af*/
           if ( *((_BYTE *)v26 + 144) && v26[27] > 0 ) /*0x62c2c0*/
           {
-            bool v33 = this->q049; /*0x62c2c2*/
+            AbstractClass *v33 = this->q049; /*0x62c2c2*/
             if ( v33 ) /*0x62c2ca*/
               int v34 = *(_DWORD *)(v33 + 252); /*0x62c2cc*/
             else

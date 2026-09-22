@@ -8,12 +8,12 @@ void MixFileClass::CleanupCache()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  _DWORD * v0 = DataGlobal_B077B0; /*0x69e213*/
+  AbstractClass *v0 = DataGlobal_B077B0; /*0x69e213*/
   if ( DataGlobal_B077B0 ) /*0x69e21d*/
   {
     do /*0x69e289*/
     {
-      if ( *(_WORD *)v0 == 0xFFFF && *((_BYTE *)v0 + 16) ) /*0x69e225*/
+      if ( *(_WORD *)v0 == 0xFFFF && v0->uniqueId ) /*0x69e225*/
       {
         void * v1 = (void *)v0[3]; /*0x69e22a*/
         if ( v1 ) /*0x69e22f*/
@@ -38,13 +38,13 @@ void MixFileClass::CleanupCache()
           __3_YAXPAX_Z(v1); /*0x69e276*/
         }
         v0[3] = 0; /*0x69e27e*/
-        *((_BYTE *)v0 + 16) = 0; /*0x69e281*/
+        v0->uniqueId = 0; /*0x69e281*/
       }
       v0 = (_DWORD *)v0[6]; /*0x69e284*/
     }
     while ( v0 ); /*0x69e289*/
   }
-  void * v4 = DataGlobal_B077B4; /*0x69e28b*/
+  AbstractClass *v4 = DataGlobal_B077B4; /*0x69e28b*/
   if ( DataGlobal_B077B4 ) /*0x69e293*/
   {
     if ( *(_WORD *)DataGlobal_B077B4 == 0xFFFF ) /*0x69e299*/
@@ -59,18 +59,18 @@ void MixFileClass::CleanupCache()
         *v7 = 0; /*0x69e2b7*/
         *v5 = 0; /*0x69e2b9*/
       }
-      int v8 = *((_DWORD *)v4 + 6); /*0x69e2bc*/
+      int v8 = v4->nextArrayIndex; /*0x69e2bc*/
       if ( v8 ) /*0x69e2c2*/
-        *(_DWORD *)(v8 + 28) = *((_DWORD *)v4 + 7); /*0x69e2c7*/
-      int v9 = *((_DWORD *)v4 + 7); /*0x69e2ca*/
+        *(_DWORD *)(v8 + 28) = v4->referenceCount; /*0x69e2c7*/
+      int v9 = v4->referenceCount; /*0x69e2ca*/
       if ( v9 ) /*0x69e2cf*/
-        *(_DWORD *)(v9 + 24) = *((_DWORD *)v4 + 6); /*0x69e2d4*/
+        *(_DWORD *)(v9 + 24) = v4->nextArrayIndex; /*0x69e2d4*/
       else
-        DataGlobal_B077B0 = (void *)*((_DWORD *)v4 + 6); /*0x69e2dc*/
-      if ( *((_DWORD *)v4 + 2) ) /*0x69e2e1*/
+        DataGlobal_B077B0 = (void *)v4->nextArrayIndex; /*0x69e2dc*/
+      if ( v4->vtable3 ) /*0x69e2e1*/
       {
-        free(*((void **)v4 + 2)); /*0x69e2e9*/
-        *((_DWORD *)v4 + 2) = 0; /*0x69e2f1*/
+        free(v4->vtable3); /*0x69e2e9*/
+        v4->vtable3 = 0; /*0x69e2f1*/
       }
     }
     __3_YAXPAX_Z(v4); /*0x69e2f5*/

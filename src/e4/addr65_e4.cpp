@@ -529,7 +529,7 @@ void RenderScoreboardSidebar()
   wchar_t Buffer[18]; // [esp+58h] [ebp-70h] BYREF
   wchar_t v55[24]; // [esp+7Ch] [ebp-4Ch] BYREF
 
-  int v3; // eax
+  MapClass *v3; // eax
   LOBYTE(v3) = stru_87C374[34841]; /*0x653fa0*/
   if ( stru_87C374[34841] )
   {
@@ -560,7 +560,7 @@ void RenderScoreboardSidebar()
       v43);
     int v7 = a1[1149] + 2; /*0x65401c*/
     v45 = (wchar_t *)a1[1148]; /*0x65401f*/
-    int v46 = v7; /*0x654031*/
+    MapClass *v46 = v7; /*0x654031*/
     BuildingAnimByName = FindBuildingAnimByName(&g_INI_Key_Grey, 1); /*0x654035*/
   _DWORD *v30; // [esp+4h] [ebp-C4h]
     v30 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *, wchar_t **, int, _DWORD, int))(**(_DWORD **)&stru_87C374[44940] /*0x654056*/
@@ -578,8 +578,8 @@ void RenderScoreboardSidebar()
   int v38; // [esp+10h] [ebp-B8h]
   int a0; // [esp+30h] [ebp-98h] BYREF
     TextRenderer::DrawText(&a0, (size_t)StringCSF, v27, v30, v33, v35, v38, (int)v41); /*0x654074*/
-    int v10 = a1[1150]; /*0x654079*/
-    int v11 = a1[1148]; /*0x65407f*/
+    MapClass *v10 = a1[1150]; /*0x654079*/
+    MapClass *v11 = a1[1148]; /*0x65407f*/
     v45 = (wchar_t *)v7; /*0x654088*/
     varA8 = v10 + v11 - 2; /*0x654095*/
     v36 = (ObjectClass *)FindBuildingAnimByName(&g_INI_Key_Grey, 1); /*0x6540b0*/
@@ -595,7 +595,7 @@ void RenderScoreboardSidebar()
     v14 = *(_DWORD *)(*(_DWORD *)&stru_87C374[13144] + 4) == 1
         ? *(unsigned __int8 *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[13144] + 372) + 14)
         : *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[13144] + 372) + 28);
-    int v15 = a1[1148]; /*0x654113*/
+    MapClass *v15 = a1[1148]; /*0x654113*/
     varA8 = v15 + a1[1150] - 1; /*0x654129*/
     v45 = v13; /*0x654133*/
     v46 = v15; /*0x654137*/
@@ -614,8 +614,8 @@ void RenderScoreboardSidebar()
       do /*0x654308*/
       {
         v46 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v3]; /*0x65416d*/
-        int v17 = v46; /*0x654168*/
-        if ( v46 && *(_BYTE *)(*(_DWORD *)(v46 + 52) + 421) ) /*0x65417a*/
+        MapClass *v17 = v46; /*0x654168*/
+        if ( v46 && *(_BYTE *)(v46->MovementZones + 421) ) /*0x65417a*/
         {
   int v20; // ebp
   int v19; // ebx
@@ -765,7 +765,7 @@ void DrawPowerBarForPlayers(HWND hDlg)
   {
     while ( 1 ) /*0x658668*/
     {
-      int v3 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v2]; /*0x658668*/
+      AbstractClass *v3 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v2]; /*0x658668*/
       if ( v3 ) /*0x65866d*/
       {
         if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)&HouseClass_Array->__pad_0[4 * v2]) ) /*0x658671*/
@@ -775,7 +775,7 @@ LABEL_6:
           TabClass::DrawPower(hDlg, (void *)v2, (#375 *)v3); /*0x65868d*/
           goto LABEL_7; /*0x658692*/
         }
-        if ( !*(_BYTE *)(*(_DWORD *)(v3 + 52) + 422) ) /*0x658683*/
+        if ( !*(_BYTE *)(v3->q034 + 422) ) /*0x658683*/
           goto LABEL_6; /*0x65868b*/
       }
 LABEL_7:
@@ -828,7 +828,7 @@ LABEL_7:
 
 // 0x6591B0
 namespace gamemd {
-AbstractClass * UpdateProjectileTrails()
+AbstractClass * * UpdateProjectileTrails()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -878,17 +878,17 @@ AbstractClass * UpdateProjectileTrails()
   if ( v0 >= 0 )
   {
   char v12; // al
-  void *v9; // esi
+  AbstractClass *v9; // esi
     while ( 1 ) /*0x659282*/
     {
       v9 = (void *)*((_DWORD *)DataGlobal_B04A64 + v8); /*0x659282*/
       Block = v9; /*0x659285*/
-      int v10 = *((_DWORD *)v9 + 4); /*0x659289*/
+      int v10 = v9->vtable2; /*0x659289*/
       if ( v10 == 1 ) /*0x65928f*/
         break; /*0x65928f*/
       if ( v10 == 2 ) /*0x6592d0*/
       {
-        if ( *((_BYTE *)v9 + 9) ) /*0x6592d6*/
+        if ( v9->q024 ) /*0x6592d6*/
         {
           int v13 = Random::Range(Randomizer_Global, 0, 99); /*0x6592e8*/
           if ( v13 < (int)Math::RoundToInt(v21 * 100.0) ) /*0x6592fb*/
@@ -913,12 +913,12 @@ LABEL_36:
     {
       LODWORD(v19) = 10; /*0x6592a9*/
     }
-    *((double *)v9 + 3) = (double)SLODWORD(v19); /*0x6592bf*/
+    v9->vtable4 = (double)SLODWORD(v19); /*0x6592bf*/
     v12 = RenderProjectileTrail((int)Block); /*0x6592c6*/
 LABEL_23:
     if ( v12 )
     {
-      _DWORD * v14 = Block; /*0x659317*/
+      AbstractClass *v14 = Block; /*0x659317*/
       int v15 = *(_DWORD *)Block; /*0x65931b*/
       if ( *(_DWORD *)Block && *(void **)(v15 + 1296) == Block ) /*0x659327*/
       {
@@ -1059,11 +1059,11 @@ int RAMFileClass::nullsub_0_2(int a2)
 
 // 0x65C3A0
 namespace gamemd {
-AbstractClass * RAMFileClass::nullsub_0_3(void * a1, signed int Size)
+AbstractClass * * RAMFileClass::nullsub_0_3(void * a1, signed int Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  size_t v4; // edi
+  ModemGame *v4; // edi
   if ( !this->field_8 ) /*0x65c3a6*/
     return 0; /*0x65c3a6*/
   if ( !a1 ) /*0x65c3b3*/
@@ -1095,7 +1095,7 @@ LABEL_7:
 
 // 0x65C420
 namespace gamemd {
-AbstractClass * RAMFileClass::nullsub_0_4(int a2, int a3)
+AbstractClass * * RAMFileClass::nullsub_0_4(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1103,8 +1103,8 @@ AbstractClass * RAMFileClass::nullsub_0_4(int a2, int a3)
 
   if ( !this->field_8 || !(*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this) ) /*0x65c42c*/
     return this->q014; /*0x65c494*/
-  int v4 = this->field_10; /*0x65c436*/
-  int v5 = v4; /*0x65c43b*/
+  AbstractClass *v4 = this->field_10; /*0x65c436*/
+  AbstractClass *v5 = v4; /*0x65c43b*/
   if ( (this->q018 & 2) != 0 ) /*0x65c43d*/
     v5 = this->field_C; /*0x65c43f*/
   switch ( a3 ) /*0x65c449*/
@@ -2006,7 +2006,7 @@ void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a
   unsigned int TransitionCount; // eax
 
   int v9 = *((_DWORD *)g_AircraftTypeCount + a2); /*0x65e85b*/
-  unsigned int * v10 = a1; /*0x65e85e*/
+  TechnoClass *v10 = a1; /*0x65e85e*/
   TransitionCount = a1[120]; /*0x65e863*/
   unsigned int * v26 = a1; /*0x65e869*/
   int v29 = v9; /*0x65e86f*/
@@ -2095,7 +2095,7 @@ void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a
           do /*0x65ea58*/
           {
             int v21 = (*(int (__thiscall **)(int, unsigned int *))(*(_DWORD *)v20 + 140))(v20, v26); /*0x65ea2d*/
-            _DWORD * v22 = (_DWORD *)v21; /*0x65ea33*/
+            IUnknown *v22 = (_DWORD *)v21; /*0x65ea33*/
             if ( v21 ) /*0x65ea37*/
             {
               (*(void (__thiscall **)(int))(*(_DWORD *)v21 + 212))(v21); /*0x65ea3d*/
@@ -2466,9 +2466,8 @@ void CreateTriggerClassIfFarEnough(IUnknown * aP0, int a2, IUnknown * aP2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // edi
-  CCINIClass *v5; // ecx
+  AbstractClass *v5; // ecx
   __int16 v9; // ax
-
   v3 = aP0; /*0x65fa7c*/
   int v4; // esi
   if ( byte_7F09A4[16 * (_DWORD)aP0] && (v4 = 0, g_TriggerEventState > 0) ) /*0x65faa1*/

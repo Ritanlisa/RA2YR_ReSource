@@ -7,7 +7,7 @@
 
 // 0x5ACD30
 namespace gamemd {
-AbstractClass * MSEngine::Release(int a2, char * a3)
+AbstractClass * * MSEngine::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -15,7 +15,7 @@ AbstractClass * MSEngine::Release(int a2, char * a3)
   int v3 = a2; /*0x5acd32*/
   if ( a2 ) /*0x5acd3d*/
   {
-  char *v7; // edi
+  AbstractClass *v7; // edi
     char * v5 = a3; /*0x5acd43*/
     this->q00C = 0; /*0x5acd47*/
     if ( a3 ) /*0x5acd4d*/
@@ -27,8 +27,7 @@ AbstractClass * MSEngine::Release(int a2, char * a3)
       char * v6 = (char *)__2_YAPAXI_Z(16 * a2); /*0x5acd55*/
       if ( v6 ) /*0x5acd5f*/
         v7 = v6; /*0x5acd64*/
-      else
-        v7 = 0; /*0x5acd6c*/
+      AbstractClass *v7 = 0; /*0x5acd6c*/
     }
     this->q00C = 1; /*0x5acd7b*/
     if ( v7 ) /*0x5acd7f*/
@@ -83,15 +82,15 @@ AbstractClass * MSEngine::Release(int a2, char * a3)
 
 // 0x5ACED0
 namespace gamemd {
-AbstractClass * MSEngine::SetCapacity(int a2, char * a3)
+AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v3 = a2; /*0x5aced2*/
+  AbstractClass *v3 = a2; /*0x5aced2*/
   if ( a2 ) /*0x5acedd*/
   {
-  char *v7; // edi
+  AbstractClass *v7; // edi
     char * v5 = a3; /*0x5acee3*/
     this->q00C = 0; /*0x5acee7*/
     if ( a3 ) /*0x5aceed*/
@@ -103,15 +102,14 @@ AbstractClass * MSEngine::SetCapacity(int a2, char * a3)
       char * v6 = (char *)__2_YAPAXI_Z(16 * a2); /*0x5acef5*/
       if ( v6 ) /*0x5aceff*/
         v7 = v6; /*0x5acf04*/
-      else
-        v7 = 0; /*0x5acf0c*/
+      AbstractClass *v7 = 0; /*0x5acf0c*/
     }
     this->q00C = 1; /*0x5acf1b*/
     if ( !v7 ) /*0x5acf1f*/
       return 0; /*0x5acfb4*/
     if ( this->MSEngine_field_0x4 ) /*0x5acf25*/
     {
-      int v8 = this->MSEngine_field_0x8; /*0x5acf2c*/
+      AbstractClass *v8 = this->MSEngine_field_0x8; /*0x5acf2c*/
       if ( a2 < v8 ) /*0x5acf31*/
         v8 = a2; /*0x5acf33*/
       if ( v8 > 0 ) /*0x5acf37*/
@@ -146,7 +144,7 @@ AbstractClass * MSEngine::SetCapacity(int a2, char * a3)
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x5acf97*/
   }
-  int v12 = this->MSEngine_field_0x8; /*0x5acf9a*/
+  AbstractClass *v12 = this->MSEngine_field_0x8; /*0x5acf9a*/
   if ( v12 < this->MSEngine_field_0x10 ) /*0x5acfa2*/
     this->MSEngine_field_0x10 = v12; /*0x5acfa4*/
   return 1; /*0x5acfa7*/
@@ -156,13 +154,13 @@ AbstractClass * MSEngine::SetCapacity(int a2, char * a3)
 
 // 0x5CEE60
 namespace gamemd {
-CampaignClass * MSEngine::Destructor()
+CampaignClass * * MSEngine::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   SessionClass::Destruct((_DWORD *)this); /*0x5cee64*/
-  void * v2 = *(void **)(this + 72); /*0x5cee69*/
+  CampaignClass *v2 = *(void **)(this + 72); /*0x5cee69*/
   this->q011 = &vt_VectorClass_MSSfxEntry; /*0x5cee70*/
   if ( v2 && *(_BYTE *)(this + 81) ) /*0x5cee79*/
   {
@@ -171,7 +169,7 @@ CampaignClass * MSEngine::Destructor()
   }
   *(_BYTE *)(this + 81) = 0; /*0x5cee8a*/
   *(_DWORD *)(this + 76) = 0; /*0x5cee8d*/
-  void * v3 = this->q00C; /*0x5cee90*/
+  CampaignClass *v3 = this->q00C; /*0x5cee90*/
   this->q00B = &vt_VectorClass_MSAnimEntry; /*0x5cee93*/
   if ( v3 && *(_BYTE *)(this + 57) ) /*0x5cee9e*/
   {
@@ -245,7 +243,7 @@ void MSEngine::Destruct()
   for ( *this = &vt_MSEngine; v2 < this->q010; ++v2 ) /*0x5d1b45*/
   {
     int v3 = this->IsAllocated; /*0x5d1b47*/
-    void * v4 = *(void **)(v3 + 4 * v2); /*0x5d1b4a*/
+    AbstractClass *v4 = *(void **)(v3 + 4 * v2); /*0x5d1b4a*/
     if ( v4 ) /*0x5d1b4f*/
     {
       MSEngine::DestroyData(*(_DWORD *)(v3 + 4 * v2)); /*0x5d1b53*/
@@ -265,7 +263,7 @@ void MSEngine::Destruct()
   int v9 = this->q008; /*0x5d1ba0*/
   _DWORD * v10 = this + 2; /*0x5d1ba3*/
   (*(void (__thiscall **)(_DWORD *))(v9 + 12))(v10); /*0x5d1ba8*/
-  void * v11 = (void *)v5[1]; /*0x5d1bab*/
+  MSEngine *v11 = (void *)v5[1]; /*0x5d1bab*/
   *v5 = &vt_VectorClass_MSSfx; /*0x5d1bae*/
   if ( v11 && *((_BYTE *)v5 + 13) ) /*0x5d1bb9*/
   {
@@ -283,7 +281,7 @@ void MSEngine::Destruct()
   }
   *((_BYTE *)v8 + 13) = 0; /*0x5d1bee*/
   v8[2] = 0; /*0x5d1bf1*/
-  void * v13 = (void *)v10[1]; /*0x5d1bf4*/
+  AbstractClass *v13 = (void *)v10[1]; /*0x5d1bf4*/
   *v10 = &vt_VectorClass_TRect_int; /*0x5d1bf7*/
   if ( v13 && *((_BYTE *)v10 + 13) ) /*0x5d1c01*/
   {

@@ -219,7 +219,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
   this->vtable2 = &BuildingTypeClass::`vftable'; /*0x45e2d9*/
   this->vtable3 = &vt_BuildingTypeClass; /*0x45e2e1*/
   ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x45e2e8*/
-  int v4 = g_TriggerClassCount; /*0x45e2ed*/
+  BuildingTypeClass *v4 = g_TriggerClassCount; /*0x45e2ed*/
   if ( g_TriggerClassCount < dword_A83C70 /*0x45e32b*/
     || (byte_A83C75 || !dword_A83C70)
     && dword_A83C7C > 0
@@ -243,7 +243,7 @@ LABEL_11:
   }
   else
   {
-    _DWORD * v7 = g_TriggerTypeCount; /*0x45e348*/
+    AbstractClass *v7 = g_TriggerTypeCount; /*0x45e348*/
     while ( *v7 != this ) /*0x45e350*/
     {
       ++v6; /*0x45e352*/
@@ -308,7 +308,7 @@ LABEL_11:
   this->q14F8 = 0; /*0x45e440*/
   this->RoofDeployingAnimLoaded = 0; /*0x45e446*/
   this->UnderRoofDoorAnimLoaded = 0; /*0x45e44c*/
-  _DWORD * v12 = (_DWORD *)(this + 5512); /*0x45e452*/
+  Point2D *v12 = (_DWORD *)(this + 5512); /*0x45e452*/
   int v13 = 10; /*0x45e458*/
   do /*0x45e472*/
   {
@@ -330,7 +330,7 @@ LABEL_11:
     --v16; /*0x45e493*/
   }
   while ( v16 ); /*0x45e494*/
-  _DWORD * v18 = (_DWORD *)(this + 5732); /*0x45e49b*/
+  Point2D *v18 = (_DWORD *)(this + 5732); /*0x45e49b*/
   int v19 = 8; /*0x45e4a7*/
   do /*0x45e4c4*/
   {
@@ -378,13 +378,13 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
 }
 
 // 0x45E580
-AbstractClass * BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractClass * a2)
+AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char nextArrayIndex; // al
   int eax22; // eax
-  SHPStruct *v4; // eax
+  AbstractClass *v4; // eax
   BuildingTypeClass *v6; // [esp+8h] [ebp-4h] BYREF
   nextArrayIndex = a1[99].nextArrayIndex; /*0x45e587*/
   *(_DWORD *)a1->__pad_0 = &BuildingTypeClass::`vftable'; /*0x45e58d*/
@@ -460,7 +460,7 @@ AbstractClass * BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractCl
 }
 
 // 0x45E970
-AbstractClass * BuildingTypeClass::LoadRepairAnimations(void * this)
+AbstractClass * * BuildingTypeClass::LoadRepairAnimations(void * this)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -904,7 +904,7 @@ void BuildingTypeClass::LoadVoxel()
       CCFileClass::Construct(v25, Buffer); /*0x45fb3b*/
       if ( CCFileClass::Open(v25, 0) ) /*0x45fb48*/
       {
-        void * v3 = this->q0B8; /*0x45fb55*/
+        VoxelStruct *v3 = this->q0B8; /*0x45fb55*/
         if ( v3 ) /*0x45fb5d*/
         {
           WaveClass::Destroy(this->BarrelVoxel); /*0x45fb61*/
@@ -918,7 +918,7 @@ void BuildingTypeClass::LoadVoxel()
         this->BarrelVoxel = File; /*0x45fb8e*/
         _makepath(Buffer, 0, 0, Destination, g_Str_File__HVA); /*0x45fbab*/
         CCFileClass::Construct(v22, Buffer); /*0x45fbbf*/
-        void * v6 = this->ChargerTurrets; /*0x45fbc4*/
+        VoxelStruct *v6 = this->ChargerTurrets; /*0x45fbc4*/
         if ( v6 ) /*0x45fbcc*/
         {
           String::Release(this->ChargerTurrets); /*0x45fbd0*/
@@ -926,9 +926,8 @@ void BuildingTypeClass::LoadVoxel()
         }
         _DWORD * v7 = __2_YAPAXI_Z(0x10u); /*0x45fbe0*/
         if ( v7 ) /*0x45fbea*/
-          _DWORD * v8 = File::LoadFileHVA(v7, (int)v22); /*0x45fbf3*/
-        else
-          v8 = 0; /*0x45fbfa*/
+          VoxelStruct *v8 = File::LoadFileHVA(v7, (int)v22); /*0x45fbf3*/
+        VoxelStruct *v8 = 0; /*0x45fbfa*/
         this->ChargerTurrets = v8; /*0x45fbfe*/
         if ( v8 && !*(_BYTE *)v8 ) /*0x45fc06*/
         {
@@ -970,7 +969,7 @@ void BuildingTypeClass::LoadVoxel()
     CCFileClass::Construct(v28, Buffer); /*0x45fd01*/
     if ( CCFileClass::Open(v28, 0) ) /*0x45fd0e*/
     {
-      void * v13 = this->q0C0; /*0x45fd1b*/
+      AbstractClass *v13 = this->q0C0; /*0x45fd1b*/
       if ( v13 ) /*0x45fd23*/
       {
         WaveClass::Destroy(this->q0C0); /*0x45fd27*/
@@ -978,13 +977,12 @@ void BuildingTypeClass::LoadVoxel()
       }
       _DWORD * v14 = __2_YAPAXI_Z(0x1Cu); /*0x45fd37*/
       if ( v14 ) /*0x45fd41*/
-        _DWORD * v15 = File::LoadFileVXL(v14, (int)v28, 0); /*0x45fd4e*/
-      else
-        v15 = 0; /*0x45fd55*/
+        AbstractClass *v15 = File::LoadFileVXL(v14, (int)v28, 0); /*0x45fd4e*/
+      AbstractClass *v15 = 0; /*0x45fd55*/
       this->q0C0 = v15; /*0x45fd63*/
       _makepath(Buffer, 0, 0, Destination, g_Str_File__HVA); /*0x45fd74*/
       CCFileClass::Construct(v22, Buffer); /*0x45fd88*/
-      void * v16 = this->q0C4; /*0x45fd8d*/
+      CampaignClass *v16 = this->q0C4; /*0x45fd8d*/
       if ( v16 ) /*0x45fd95*/
       {
         String::Release(this->q0C4); /*0x45fd99*/
@@ -992,9 +990,8 @@ void BuildingTypeClass::LoadVoxel()
       }
       _DWORD * v17 = __2_YAPAXI_Z(0x10u); /*0x45fda9*/
       if ( v17 ) /*0x45fdb3*/
-        _DWORD * v18 = File::LoadFileHVA(v17, (int)v22); /*0x45fdbc*/
-      else
-        v18 = 0; /*0x45fdc3*/
+        CampaignClass *v18 = File::LoadFileHVA(v17, (int)v22); /*0x45fdbc*/
+      CampaignClass *v18 = 0; /*0x45fdc3*/
       this->q0C4 = v18; /*0x45fdc7*/
       if ( v18 ) /*0x45fdcd*/
       {
@@ -1201,55 +1198,55 @@ int BuildingTypeClass::UpdatePower()
 }
 
 // 0x465010
-AbstractClass * BuildingTypeClass::SaveLoad_Prefix()
+AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
   int v13; // [esp+38h] [ebp+4h] BYREF
-  int v1 = v13; /*0x465016*/
+  ObjectTypeClass *v1 = v13; /*0x465016*/
   if ( *(_BYTE *)(v13 + 5986) && *(_DWORD *)(v13 + 3584) ) /*0x465025*/
   {
     __3_YAXPAX_Z(*(void **)(v13 + 3584)); /*0x465030*/
-    *(_DWORD *)(v1 + 3584) = 0; /*0x465038*/
-    *(_BYTE *)(v1 + 3588) = 0; /*0x46503e*/
+    v1->qE00 = 0; /*0x465038*/
+    v1->qE04 = 0; /*0x46503e*/
   }
-  if ( *(_BYTE *)(v1 + 5404) && *(_DWORD *)(v1 + 5400) ) /*0x46504c*/
+  if ( v1->q151C && v1->q1518 ) /*0x46504c*/
   {
-    __3_YAXPAX_Z(*(void **)(v1 + 5400)); /*0x465057*/
-    *(_DWORD *)(v1 + 5400) = 0; /*0x46505f*/
-    *(_BYTE *)(v1 + 5404) = 0; /*0x465065*/
+    __3_YAXPAX_Z(v1->q1518); /*0x465057*/
+    v1->q1518 = 0; /*0x46505f*/
+    v1->q151C = 0; /*0x465065*/
   }
-  if ( *(_BYTE *)(v1 + 5352) && *(_DWORD *)(v1 + 5348) ) /*0x465073*/
+  if ( v1->q14E8 && v1->q14E4 ) /*0x465073*/
   {
-    __3_YAXPAX_Z(*(void **)(v1 + 5348)); /*0x46507e*/
-    *(_DWORD *)(v1 + 5348) = 0; /*0x465086*/
-    *(_BYTE *)(v1 + 5352) = 0; /*0x46508c*/
+    __3_YAXPAX_Z(v1->q14E4); /*0x46507e*/
+    v1->q14E4 = 0; /*0x465086*/
+    v1->q14E8 = 0; /*0x46508c*/
   }
-  if ( *(_BYTE *)(v1 + 5360) && *(_DWORD *)(v1 + 5356) ) /*0x46509a*/
+  if ( *(_BYTE *)(v1 + 5360) && v1->q14EC ) /*0x46509a*/
   {
-    __3_YAXPAX_Z(*(void **)(v1 + 5356)); /*0x4650a5*/
-    *(_DWORD *)(v1 + 5356) = 0; /*0x4650ad*/
+    __3_YAXPAX_Z(v1->q14EC); /*0x4650a5*/
+    v1->q14EC = 0; /*0x4650ad*/
     *(_BYTE *)(v1 + 5360) = 0; /*0x4650b3*/
   }
-  if ( *(_BYTE *)(v1 + 5368) && *(_DWORD *)(v1 + 5364) ) /*0x4650c1*/
+  if ( v1->q14F8 && v1->q14F4 ) /*0x4650c1*/
   {
-    __3_YAXPAX_Z(*(void **)(v1 + 5364)); /*0x4650cc*/
-    *(_DWORD *)(v1 + 5364) = 0; /*0x4650d4*/
-    *(_BYTE *)(v1 + 5368) = 0; /*0x4650da*/
+    __3_YAXPAX_Z(v1->q14F4); /*0x4650cc*/
+    v1->q14F4 = 0; /*0x4650d4*/
+    v1->q14F8 = 0; /*0x4650da*/
   }
-  if ( *(_BYTE *)(v1 + 5376) && *(_DWORD *)(v1 + 5372) ) /*0x4650e8*/
+  if ( v1->q1500 && v1->q14FC ) /*0x4650e8*/
   {
-    __3_YAXPAX_Z(*(void **)(v1 + 5372)); /*0x4650f3*/
-    *(_DWORD *)(v1 + 5372) = 0; /*0x4650fb*/
-    *(_BYTE *)(v1 + 5376) = 0; /*0x465101*/
+    __3_YAXPAX_Z(v1->q14FC); /*0x4650f3*/
+    v1->q14FC = 0; /*0x4650fb*/
+    v1->q1500 = 0; /*0x465101*/
   }
-  if ( *(_BYTE *)(v1 + 5384) && *(_DWORD *)(v1 + 5380) ) /*0x46510f*/
+  if ( v1->q1508 && v1->q1504 ) /*0x46510f*/
   {
-    __3_YAXPAX_Z(*(void **)(v1 + 5380)); /*0x46511a*/
-    *(_DWORD *)(v1 + 5380) = 0; /*0x465122*/
-    *(_BYTE *)(v1 + 5384) = 0; /*0x465128*/
+    __3_YAXPAX_Z(v1->q1504); /*0x46511a*/
+    v1->q1504 = 0; /*0x465122*/
+    v1->q1508 = 0; /*0x465128*/
   }
   int v14; // [esp+3Ch] [ebp+8h] BYREF
   int v2 = v14; /*0x46512e*/
@@ -1277,7 +1274,7 @@ AbstractClass * BuildingTypeClass::SaveLoad_Prefix()
 LABEL_32:
         BuildingTypeClass::LoadVoxel(v1); /*0x4651ed*/
         ObjectTypeClass::Load2DArt((char *)v1); /*0x4651f6*/
-        int v9 = *(_DWORD *)(v1 + 3824); /*0x4651fb*/
+        int v9 = v1->q3BC; /*0x4651fb*/
         *(_DWORD *)(v1 + 3672) = 0; /*0x465210*/
         v9 *= 120; /*0x465219*/
         *(_DWORD *)(v1 + 3580) = (char *)&unk_89C900 + v9; /*0x465228*/
@@ -1288,20 +1285,20 @@ LABEL_32:
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 3752)); /*0x465267*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 3756)); /*0x465278*/
         BuildingTypeClass::LoadVoxel(v1); /*0x46527f*/
-        *(_DWORD *)(v1 + 3584) = 0; /*0x465284*/
-        *(_BYTE *)(v1 + 3588) = 0; /*0x46528a*/
-        *(_DWORD *)(v1 + 5400) = 0; /*0x465290*/
-        *(_BYTE *)(v1 + 5404) = 0; /*0x465296*/
-        *(_DWORD *)(v1 + 5348) = 0; /*0x46529c*/
-        *(_BYTE *)(v1 + 5352) = 0; /*0x4652a2*/
-        *(_DWORD *)(v1 + 5356) = 0; /*0x4652a8*/
+        v1->qE00 = 0; /*0x465284*/
+        v1->qE04 = 0; /*0x46528a*/
+        v1->q1518 = 0; /*0x465290*/
+        v1->q151C = 0; /*0x465296*/
+        v1->q14E4 = 0; /*0x46529c*/
+        v1->q14E8 = 0; /*0x4652a2*/
+        v1->q14EC = 0; /*0x4652a8*/
         *(_BYTE *)(v1 + 5360) = 0; /*0x4652ae*/
-        *(_DWORD *)(v1 + 5364) = 0; /*0x4652b4*/
-        *(_BYTE *)(v1 + 5368) = 0; /*0x4652ba*/
-        *(_DWORD *)(v1 + 5372) = 0; /*0x4652c0*/
-        *(_BYTE *)(v1 + 5376) = 0; /*0x4652c6*/
-        *(_DWORD *)(v1 + 5380) = 0; /*0x4652cc*/
-        *(_BYTE *)(v1 + 5384) = 0; /*0x4652d2*/
+        v1->q14F4 = 0; /*0x4652b4*/
+        v1->q14F8 = 0; /*0x4652ba*/
+        v1->q14FC = 0; /*0x4652c0*/
+        v1->q1500 = 0; /*0x4652c6*/
+        v1->q1504 = 0; /*0x4652cc*/
+        v1->q1508 = 0; /*0x4652d2*/
         BuildingTypeClass::LoadAnimations(v1, *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x4652e6*/
         return 0; /*0x4652eb*/
       }
@@ -1385,7 +1382,7 @@ int BuildingTypeClass::ProcessData(unsigned int * a2, short * a3)
   __int16 *v8; // ecx
   if ( !g_GameMode_Current[0] ) /*0x50b770*/
     return 1; /*0x50b77b*/
-  int v5 = (int)a2; /*0x50b783*/
+  AbstractClass *v5 = (int)a2; /*0x50b783*/
   int v11 = *(_DWORD *)&g_RulesClass_Instance[1].FreeMCV; /*0x50b78f*/
   int v12 = 2 * v11 + BuildingTypeClass::GetFoundationWidth(a2); /*0x50b7a3*/
   int v6 = 2 * v11 + BuildingTypeClass::GetFoundationHeight(v5, 0); /*0x50b7b1*/
@@ -1620,7 +1617,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
 }
 
 // 0x645430
-ParticleTypeClass * BuildingTypeClass::FindOrCreateEx()
+ParticleTypeClass * * BuildingTypeClass::FindOrCreateEx()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1846,7 +1843,7 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2)
 
   if ( this->DamSmkOffScrnRel ) /*0x7178c6*/
   {
-    int v3 = this->DamageSmokeOffset; /*0x7178d4*/
+    Coord *v3 = this->DamageSmokeOffset; /*0x7178d4*/
     int v4 = this->TurretWeapon_0x21; /*0x7178da*/
   int v15[2]; // [esp+24h] [ebp-8h] BYREF
     v15[0] = v3; /*0x7178e1*/
@@ -1861,9 +1858,8 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2)
     double v10 = Math::Sqrt((double)v14[0] * (double)v14[0] + (double)v14[0] * (double)v14[0]); /*0x717936*/
     int v11 = Math::RoundToInt(v10 * 0.58); /*0x717944*/
     if ( this->ClearAllWeapons >= 0 ) /*0x717951*/
-      int v12 = -v11; /*0x717957*/
-    else
-      v12 = v11; /*0x717953*/
+      RecoilData *v12 = -v11; /*0x717957*/
+    RecoilData *v12 = v11; /*0x717953*/
     *a2 = v8; /*0x71795f*/
     a2[1] = v9; /*0x717961*/
     a2[2] = v12; /*0x717966*/

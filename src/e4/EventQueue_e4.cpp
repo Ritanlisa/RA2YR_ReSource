@@ -94,7 +94,7 @@ int EventQueue::Check()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->q314; /*0x54f650*/
+  AbstractClass *v1 = this->q314; /*0x54f650*/
   if ( v1 == this->q318 ) /*0x54f65e*/
     return 0; /*0x54f669*/
   else

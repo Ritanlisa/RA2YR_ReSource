@@ -30,7 +30,7 @@ void AddMessageListPlayerMessage(CellStruct * a1, int a2)
 
   if ( a2 == -1 ) /*0x730a93*/
     a2 = 240; /*0x730a95*/
-  int v2 = 3; /*0x730aa3*/
+  AbstractClass *v2 = 3; /*0x730aa3*/
   if ( HouseClass_Player ) /*0x730aa8*/
     v2 = HouseClass_Player[1].field_24; /*0x730aaa*/
   return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, a1, v2, (IUnknown *)0x4046, a2, 1); /*0x730ac9*/
@@ -40,7 +40,7 @@ void AddMessageListPlayerMessage(CellStruct * a1, int a2)
 
 // 0x730AF0
 namespace gamemd {
-AbstractClass * ProcessSelectionExperience()
+AbstractClass * * ProcessSelectionExperience()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -107,10 +107,10 @@ LABEL_24:
     }
     while ( 1 ) /*0x730b95*/
     {
-      _DWORD * v5 = (_DWORD *)*((_DWORD *)g_ObjectClass_CurrentCount + v4); /*0x730b95*/
+      ObjectClass *v5 = (_DWORD *)*((_DWORD *)g_ObjectClass_CurrentCount + v4); /*0x730b95*/
       if ( v5 ) /*0x730b9a*/
       {
-        if ( (*(int (__thiscall **)(_DWORD))(*v5 + 44))(*((_DWORD *)g_ObjectClass_CurrentCount + v4)) == 15 /*0x730baa*/
+        if ( v5->getAltitude(*((_DWORD *)g_ObjectClass_CurrentCount + v4)) == 15 /*0x730baa*/
           && TechnoClass::GetTypeFlag(v5) )
         {
           if ( !TechnoClass::IsMission27to30(v5) ) /*0x730bbc*/
@@ -122,7 +122,7 @@ LABEL_24:
         }
         else
         {
-          v0 = (*(int (__thiscall **)(_DWORD *))(*v5 + 44))(v5); /*0x730be0*/
+          v0 = v5->getAltitude(); /*0x730be0*/
           if ( v0 == 1 ) /*0x730be6*/
           {
             LOBYTE(v0) = *(_BYTE *)(v5[433] + 3603); /*0x730bee*/
@@ -169,7 +169,7 @@ LABEL_47:
 
 // 0x730D60
 namespace gamemd {
-CellStruct * sub_730D60()
+CellStruct * * sub_730D60()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -181,7 +181,7 @@ CellStruct * sub_730D60()
   if ( (int)g_SelectionManager > 0 )
   {
     int v1 = 0; /*0x730d86*/
-    char v2 = 1; /*0x730d88*/
+    CellStruct *v2 = 1; /*0x730d88*/
     v8 = g_SelectionManager; /*0x730d8c*/
     do
     {
@@ -267,11 +267,11 @@ LABEL_17:
 
 // 0x731AA0
 namespace gamemd {
-AbstractClass * sub_731AA0()
+AbstractClass * * sub_731AA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v0; // edi
+  CellStruct *v0; // edi
   v0 = g_SelectionManager; /*0x731aa3*/
   int v1 = 0; /*0x731aa9*/
   if ( (int)g_SelectionManager <= 0 ) /*0x731aad*/
@@ -432,14 +432,14 @@ void SelectAllOfType()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  _DWORD *v5; // ebx
+  VectorClass *v5; // ebx
   int HeightMap; // ebx
   int i; // esi
   int CoordDataMap; // edi
   int j; // esi
   int v16; // ebp
   int k; // edi
-  int v19; // eax
+  ObjectClass *v19; // eax
   wchar_t *v20; // [esp-4h] [ebp-214h]
   wchar_t *StringCSF; // [esp-4h] [ebp-214h]
   int v22; // [esp+8h] [ebp-208h] BYREF
@@ -457,7 +457,7 @@ void SelectAllOfType()
   if ( DataGlobal_B0FE64 ) /*0x732996*/
   {
     _DWORD * v2 = __2_YAPAXI_Z(0x18u); /*0x732998*/
-    _DWORD * v3 = v2; /*0x73299d*/
+    VectorClass *v3 = v2; /*0x73299d*/
     if ( v2 ) /*0x7329a4*/
     {
       EventClass::resetEvent(v2, 0, 0); /*0x7329aa*/
@@ -538,8 +538,7 @@ LABEL_25:
     _DWORD * v13 = __2_YAPAXI_Z(0x18u); /*0x732ace*/
     if ( v13 ) /*0x732ad8*/
       v5 = DynamicVector::Constructor_Techno(v13, 0, 0); /*0x732ae5*/
-    else
-      v5 = 0; /*0x732ae9*/
+    VectorClass *v5 = 0; /*0x732ae9*/
     int v14 = g_SidebarState; /*0x732aeb*/
     for ( j = 0; j < v14; ++j ) /*0x732af5*/
     {
@@ -591,7 +590,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int HeightMap; // eax
-  _DWORD *v4; // esi
+  VectorClass *v4; // esi
   int i; // edi
   int v13; // ebp
   int j; // edi
@@ -625,9 +624,9 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
         {
           int v8 = v4[2]; /*0x733060*/
           if ( v4[4] < v8 /*0x73308a*/
-            || ((LOBYTE(HeightMap) = *((_BYTE *)v4 + 13), (_BYTE)HeightMap) || !v8)
+            || ((LOBYTE(HeightMap) = v4->IsAllocated, (_BYTE)HeightMap) || !v8)
             && (HeightMap = v4[5], HeightMap > 0)
-            && (LOBYTE(HeightMap) = (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*v4 + 8))(v4, v8 + HeightMap, 0),
+            && (LOBYTE(HeightMap) = v4->Release(v8 + HeightMap, 0),
                 (_BYTE)HeightMap) )
           {
             HeightMap = v4[4]; /*0x73308c*/
@@ -689,7 +688,7 @@ void sub_7331B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v3; // ebx
+  CellStruct *v3; // ebx
   int HeightMap; // eax
   #375 **v13; // edi
 
@@ -700,13 +699,13 @@ void sub_7331B0()
     g_UnitTooltipState = 0; /*0x7331c7*/
   }
   _DWORD * v1 = __2_YAPAXI_Z(0x18u); /*0x7331cf*/
-  int v2 = (int)v1; /*0x7331d4*/
+  AbstractClass *v2 = (int)v1; /*0x7331d4*/
   if ( v1 ) /*0x7331db*/
   {
     EventClass::resetEvent(v1, 0, 0); /*0x7331e1*/
     *(_DWORD *)v2 = &vt_DynamicVectorClass_TechnoClass; /*0x7331e6*/
-    *(_DWORD *)(v2 + 20) = 10; /*0x7331ec*/
-    *(_DWORD *)(v2 + 16) = 0; /*0x7331f3*/
+    v2->abstractFlags = 10; /*0x7331ec*/
+    v2->uniqueId = 0; /*0x7331f3*/
   }
   else
   {
@@ -720,16 +719,16 @@ void sub_7331B0()
       int v4 = *((_DWORD *)g_ObjectClass_CurrentCount + v0); /*0x73320a*/
       if ( v4 && (*(_BYTE *)(v4 + 20) & 1) != 0 ) /*0x73321b*/
       {
-        int v5 = *(_DWORD *)(v2 + 8); /*0x73321d*/
-        if ( *(_DWORD *)(v2 + 16) < v5 /*0x733242*/
-          || (*(_BYTE *)(v2 + 13) || !v5)
+        int v5 = v2->vtable3; /*0x73321d*/
+        if ( v2->uniqueId < v5 /*0x733242*/
+          || (v2->q034 || !v5)
   int v6; // eax
-          && (v6 = *(_DWORD *)(v2 + 20), v6 > 0)
-          && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v2 + 8))(v2, v5 + v6, 0) )
+          && (v6 = v2->abstractFlags, v6 > 0)
+          && v2->COMStub_Release(v5 + v6, 0) )
         {
-          int v7 = *(_DWORD *)(v2 + 16); /*0x733249*/
-          int v8 = *(_DWORD *)(v2 + 4); /*0x73324c*/
-          *(_DWORD *)(v2 + 16) = v7 + 1; /*0x733252*/
+          int v7 = v2->uniqueId; /*0x733249*/
+          int v8 = v2->vtable2; /*0x73324c*/
+          v2->uniqueId = v7 + 1; /*0x733252*/
           *(_DWORD *)(v8 + 4 * v7) = v4; /*0x733255*/
         }
       }
@@ -739,20 +738,20 @@ void sub_7331B0()
     v0 = 0; /*0x73325d*/
   }
   g_UnitTooltipState = v2; /*0x73325f*/
-  HeightMap = *(_DWORD *)(v2 + 16); /*0x733265*/
+  HeightMap = v2->uniqueId; /*0x733265*/
   if ( !HeightMap )
   {
     if ( v2 ) /*0x733272*/
       (**(void (__thiscall ***)(int, int))v2)(v2, 1); /*0x73327a*/
     g_UnitTooltipState = 0; /*0x73327e*/
     _DWORD * v10 = __2_YAPAXI_Z(0x18u); /*0x733284*/
-    int v11 = (int)v10; /*0x733289*/
+    VectorClass *v11 = (int)v10; /*0x733289*/
     if ( v10 ) /*0x733290*/
     {
       EventClass::resetEvent(v10, 0, 0); /*0x733296*/
       *(_DWORD *)v11 = &vt_DynamicVectorClass_TechnoClass; /*0x73329b*/
-      *(_DWORD *)(v11 + 20) = 10; /*0x7332a1*/
-      *(_DWORD *)(v11 + 16) = 0; /*0x7332a8*/
+      v11->q005 = 10; /*0x7332a1*/
+      v11->q010 = 0; /*0x7332a8*/
     }
     else
     {
@@ -779,19 +778,16 @@ void sub_7331B0()
                 HeightMap = (*((int (__thiscall **)(#375 **))*v13 + 11))(v13); /*0x73331a*/
                 if ( HeightMap != 6 ) /*0x733320*/
                 {
-                  int v14 = *(_DWORD *)(v11 + 8); /*0x733322*/
-                  if ( *(_DWORD *)(v11 + 16) < v14 /*0x73334c*/
-                    || ((LOBYTE(HeightMap) = *(_BYTE *)(v11 + 13), (_BYTE)HeightMap) || !v14)
-                    && (HeightMap = *(_DWORD *)(v11 + 20), HeightMap > 0)
-                    && (LOBYTE(HeightMap) = (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v11 + 8))(
-                                              v11,
-                                              v14 + HeightMap,
-                                              0),
+                  int v14 = v11->Capacity; /*0x733322*/
+                  if ( v11->q010 < v14 /*0x73334c*/
+                    || ((LOBYTE(HeightMap) = v11->IsAllocated, (_BYTE)HeightMap) || !v14)
+                    && (HeightMap = v11->q005, HeightMap > 0)
+                    && (LOBYTE(HeightMap) = v11->Release(v14 + HeightMap, 0),
                         (_BYTE)HeightMap) )
                   {
-                    HeightMap = *(_DWORD *)(v11 + 16); /*0x73334e*/
-                    int v15 = *(_DWORD *)(v11 + 4); /*0x733351*/
-                    *(_DWORD *)(v11 + 16) = HeightMap + 1; /*0x733357*/
+                    HeightMap = v11->q010; /*0x73334e*/
+                    int v15 = v11->Items; /*0x733351*/
+                    v11->q010 = HeightMap + 1; /*0x733357*/
                     *(_DWORD *)(v15 + 4 * HeightMap) = v13; /*0x73335a*/
                   }
                 }
@@ -1151,7 +1147,7 @@ int SelectUnitsByTheme(char a1)
 {
   int result; // eax
   wchar_t *StringCSF; // ebx
-  wchar_t *v11; // edi
+  CellStruct *v11; // edi
   int i; // esi
   char *Block; // [esp+8h] [ebp-210h]
   wchar_t Destination[256]; // [esp+18h] [ebp-200h] BYREF
@@ -1188,13 +1184,13 @@ int SelectUnitsByTheme(char a1)
       SuperWeaponClass::UpdateAll(); /*0x733a22*/
       Block = SelectFactionThemeMusic(g_UnitTooltipState, 0, 0x7FFFFFFF, &v20); /*0x733a3e*/
     }
-    int v5 = g_UnitTooltipState; /*0x733a73*/
+    ObjectClass *v5 = g_UnitTooltipState; /*0x733a73*/
     int v18 = *(_DWORD *)(g_UnitTooltipState + 16); /*0x733a80*/
     if ( v18 > 0 ) /*0x733a84*/
     {
       do /*0x733aed*/
       {
-        int v6 = *(_DWORD *)(*(_DWORD *)(v5 + 4) + 4 * v2); /*0x733a89*/
+        int v6 = *(_DWORD *)(v5->vtable2 + 4 * v2); /*0x733a89*/
         const char * v7 = (const char *)((*(int (__thiscall **)(int))(*(_DWORD *)v6 + 136))(v6) + 36); /*0x733a9a*/
         if ( Block && !strcmp(v7, Block) && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v6 + 316))(v6) ) /*0x733ad2*/
           (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 332))(v6); /*0x733ae0*/
@@ -1221,7 +1217,7 @@ int SelectUnitsByTheme(char a1)
         }
       }
     }
-    int v14 = v10[4]; /*0x733b47*/
+    AbstractClass *v14 = v10[4]; /*0x733b47*/
     int v15 = 0; /*0x733b4a*/
     if ( v14 <= 0 ) /*0x733b4e*/
       goto LABEL_31; /*0x733b4e*/
@@ -1267,7 +1263,7 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v3; // edi
-  int v4; // eax
+  ObjectClass *v4; // eax
   const char **v14; // [esp+Ch] [ebp-14h]
   int v16; // [esp+14h] [ebp-Ch]
   int v18; // [esp+1Ch] [ebp-4h]
@@ -1341,29 +1337,28 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  int v6; // ebx
+  VectorClass *v6; // ebx
   int v7; // ebp
   _DWORD *v9; // eax
-  _DWORD *v10; // esi
-  _DWORD *v11; // ebx
+  VectorClass *v10; // esi
+  VectorClass *v11; // ebx
   int v12; // esi
   int v26; // ebp
   int i; // edi
   const char *v33; // edi
   char *v34; // ebp
-  _DWORD *v36; // [esp+10h] [ebp-24h]
-  int v37; // [esp+14h] [ebp-20h]
+  VectorClass *v36; // [esp+10h] [ebp-24h]
+  VectorClass *v37; // [esp+14h] [ebp-20h]
   const char **v38; // [esp+18h] [ebp-1Ch]
   int v39; // [esp+1Ch] [ebp-18h]
   int v40; // [esp+20h] [ebp-14h] BYREF
   const char *v41; // [esp+24h] [ebp-10h]
   int v42; // [esp+28h] [ebp-Ch]
   int v44; // [esp+30h] [ebp-4h]
-
   int v4 = a1; /*0x733e17*/
   v41 = a2; /*0x733e19*/
   v42 = a1; /*0x733e1f*/
-  int v5 = 0; /*0x733e28*/
+  VectorClass *v5 = 0; /*0x733e28*/
   if ( __2_YAPAXI_Z(0x18u) ) /*0x733e23*/
   {
     v6 = SelectFactionThemeMusic_Helper_734330(0, 0); /*0x733e3a*/
@@ -1403,7 +1398,7 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
   {
     v36 = 0; /*0x733eb6*/
   }
-  v40 = *(_DWORD *)(v37 + 16); /*0x733ec3*/
+  v40 = v37->q010; /*0x733ec3*/
   v12 = v40; /*0x733ebe*/
   if ( v40 > 0 ) /*0x733ec7*/
   {
@@ -1411,10 +1406,10 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
     {
       int v13 = v11[2]; /*0x733ec9*/
       if ( v11[4] < v13 /*0x733eee*/
-        || (*((_BYTE *)v11 + 13) || !v13)
+        || (v11->IsAllocated || !v13)
   int v14; // eax
         && (v14 = v11[5], v14 > 0)
-        && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v11 + 8))(v11, v13 + v14, 0) )
+        && v11->Release(v13 + v14, 0) )
       {
         int v15 = v11[4]; /*0x733ef5*/
         int v16 = v11[1]; /*0x733ef8*/
@@ -1435,7 +1430,7 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
       _DWORD * v17 = *(_DWORD **)(*(_DWORD *)(v4 + 4) + 4 * v39); /*0x733f2f*/
       const char * v18 = (const char *)((*(int (__thiscall **)(_DWORD *))(*v17 + 136))(v17) + 36); /*0x733f43*/
       int v19 = 0; /*0x733f46*/
-      int v43 = *(_DWORD *)(v37 + 16); /*0x733f4d*/
+      int v43 = v37->q010; /*0x733f4d*/
       if ( v43 <= 0 ) /*0x733f51*/
       {
 LABEL_27:
@@ -1443,7 +1438,7 @@ LABEL_27:
       }
       else
       {
-        v38 = *(const char ***)(v37 + 4); /*0x733f56*/
+        v38 = v37->Items; /*0x733f56*/
         while ( strcmp(v18, *v38) ) /*0x733f8d*/
         {
           ++v19; /*0x733f9b*/
@@ -1475,7 +1470,7 @@ LABEL_27:
     goto LABEL_39; /*0x734008*/
   for ( i = 0; i < v40; ++i ) /*0x734012*/
   {
-    if ( strcmp(v41, *(const char **)(*(_DWORD *)(v37 + 4) + 4 * i)) ) /*0x734028*/
+    if ( strcmp(v41, *(const char **)(v37->Items + 4 * i)) ) /*0x734028*/
     {
       int v28 = *(_DWORD *)(v11[1] + 4 * i); /*0x734061*/
       if ( v28 < a3 && v28 > *a4 ) /*0x73406e*/
@@ -1511,7 +1506,7 @@ LABEL_39:
   }
   v33 = v41; /*0x7340b2*/
   if ( v26 != -1 ) /*0x7340b9*/
-    v33 = *(const char **)(*(_DWORD *)(v37 + 4) + 4 * v26); /*0x7340c2*/
+    v33 = *(const char **)(v37->Items + 4 * v26); /*0x7340c2*/
   v34 = (char *)__2_YAPAXI_Z(0x64u); /*0x7340cf*/
   if ( v33 ) /*0x7340d3*/
     strcpy(v34, v33); /*0x7340e9*/

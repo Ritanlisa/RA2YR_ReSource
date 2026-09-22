@@ -106,14 +106,14 @@ LABEL_12:
 }
 
 // 0x5CA800
-AbstractClass * MultiplayerSiege::ProcessTurn(char a2)
+AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  void *v5; // eax
+  AbstractClass *v5; // eax
   int v6; // eax
-  _DWORD *v7; // ebx
-  int v8; // eax
+  ObjectClass *v7; // ebx
+  AbstractClass *v8; // eax
   int i; // esi
   _DWORD v13[4]; // [esp+10h] [ebp-28h] BYREF
   void **v14; // [esp+20h] [ebp-18h] BYREF
@@ -168,7 +168,7 @@ LABEL_26:
   HouseClass::SetMapSeed(v7, v8); /*0x5ca8e8*/
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x5ca8f6*/
   {
-    _DWORD * v10 = *(_DWORD **)&HouseClass_Array->__pad_0[4 * i]; /*0x5ca8fe*/
+    ObjectClass *v10 = *(_DWORD **)&HouseClass_Array->__pad_0[4 * i]; /*0x5ca8fe*/
     if ( !*(_BYTE *)(v10[13] + 422) && v10 != v7 ) /*0x5ca910*/
     {
       Debug::Log(); /*0x5ca91c*/

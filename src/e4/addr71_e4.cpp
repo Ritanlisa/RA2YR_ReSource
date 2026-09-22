@@ -29,12 +29,12 @@ int sub_710860(unsigned int * a1, unsigned int * a2)
 
 // 0x7187A0
 namespace gamemd {
-UnitTypeClass * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
+UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *i; // edi
-  _DWORD *v12; // eax
+  UnitTypeClass *v12; // eax
   char v22; // [esp+31h] [ebp-5h]
   int v23; // [esp+32h] [ebp-4h] BYREF
   for ( i = (_DWORD *)*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &a2) + 57); i; i = (_DWORD *)i[12] ) /*0x7187bf*/
@@ -79,12 +79,12 @@ UnitTypeClass * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a
     || (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &a2) + 80) & 0x100) != 0
     || *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &a2) + 59) == 1 )
   {
-    int * v13 = *(this + 3); /*0x718a01*/
+    UnitTypeClass *v13 = *(this + 3); /*0x718a01*/
     LOWORD(v23) = a2 / 256; /*0x718a14*/
     HIWORD(v23) = a3 / 256; /*0x718a2f*/
     int v14 = *v13; /*0x718a3c*/
     void * v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v23); /*0x718a46*/
-    if ( (*(int (__thiscall **)(_DWORD, void *, int, int, _DWORD, int))(v14 + 428))(*(this + 3), v15, -1, -1, 0, 1) == 7 /*0x718a60*/
+    if ( v13->vt_slot_428(*(this + 3), v15, -1, -1, 0, 1) == 7 /*0x718a60*/
       || (LOBYTE(v12) = v22) != 0 )
     {
       LOWORD(v23) = a2 / 256; /*0x718a80*/
@@ -93,13 +93,10 @@ UnitTypeClass * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a
       if ( !Cell::IsGroundTypeRange(v16) || (*(int (__thiscall **)(_DWORD))(**(this + 3) + 44))(*(this + 3)) == 15 ) /*0x718abd*/
       {
         int v19 = (*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)); /*0x718b23*/
-        int v20 = (int)*(this + 3); /*0x718b2f*/
+        UnitTypeClass *v20 = (int)*(this + 3); /*0x718b2f*/
         v23 = *(_DWORD *)(v19 + 160); /*0x718b32*/
-        LOBYTE(v12) = (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, _DWORD, _DWORD))(*(_DWORD *)v20 + 364))( /*0x718b53*/
-                        v20,
-                        &v23,
-                        0,
-                        g_RulesClass_Instance->?[5],
+        LOBYTE(v12) = v20->vt_slot_364(/*0x718b53*/
+                        v20, &v23, 0, g_RulesClass_Instance->?[5],
                         0,
                         1,
                         0,
@@ -127,7 +124,7 @@ UnitTypeClass * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a
   {
     *((_BYTE *)*(this + 3) + 973) = 1; /*0x71896b*/
     (*(void (__thiscall **)(_DWORD))(**(this + 3) + 928))(*(this + 3)); /*0x718977*/
-    _DWORD * v8 = *(this + 3); /*0x71897d*/
+    UnitTypeClass *v8 = *(this + 3); /*0x71897d*/
     _DWORD * v9 = (_DWORD *)v8[182]; /*0x718980*/
     if ( v9 ) /*0x718988*/
     {
@@ -137,16 +134,16 @@ UnitTypeClass * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v10 + 32))(v10, 1); /*0x7189ae*/
       (*(this + 3))[182] = 0; /*0x7189b4*/
     }
-    _DWORD * v11 = *(this + 3); /*0x7189be*/
+    UnitTypeClass *v11 = *(this + 3); /*0x7189be*/
     if ( v11[266] ) /*0x7189c1*/
     {
-      LOBYTE(v12) = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/
+      LOBYTE(v12) = v11->vt_slot_224(v11[266]); /*0x7189ce*/
     }
     else
     {
       v12 = (_DWORD *)v11[267]; /*0x7189dd*/
       if ( v12 ) /*0x7189e5*/
-        LOBYTE(v12) = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v11 + 228))(v11, v11[267]); /*0x7189ee*/
+        LOBYTE(v12) = v11->vt_slot_228(v11[267]); /*0x7189ee*/
     }
   }
   return (char)v12; /*0x7189d4*/

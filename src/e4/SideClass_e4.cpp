@@ -274,7 +274,7 @@ void * SideClass::Init(char a2)
     }
     while ( v3 < g_ObjectTypeList ); /*0x6a499d*/
   }
-  void * v4 = this->houseTypesCount; /*0x6a499f*/
+  AbstractClass *v4 = this->houseTypesCount; /*0x6a499f*/
   this->houseTypes = &vt_VectorClass_int; /*0x6a49a5*/
   if ( v4 && *((_BYTE *)this + 165) ) /*0x6a49b3*/
   {

@@ -18,15 +18,15 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   int v13; // eax
   float *XYZFromINI; // eax
   double v15; // st7
-  INIClass *v16; // eax
+  IUnknown *v16; // eax
   double v17; // st7
-  INIClass *v18; // edx
+  IUnknown *v18; // edx
   double v19; // st7
   INIClass *v20; // ecx
   double v21; // st7
-  INIClass *v22; // eax
+  IUnknown *v22; // eax
   double v23; // st7
-  INIClass *v24; // edx
+  IUnknown *v24; // edx
   double v25; // st7
   char v26; // al
   int Coord; // eax

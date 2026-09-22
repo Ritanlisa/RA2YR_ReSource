@@ -2003,7 +2003,7 @@ namespace gamemd { int MovementAI::StepFootClass(int a1) {
     int v6 = *v4 / 256; /*0x516535*/
     int v7 = this->q01C / 256; /*0x516538*/
     result = (*(int (__thiscall **)(TechnoClass *, IUnknown **))(*(_DWORD *)v3->__pad_0 + 440))(v3, &v61); /*0x51653b*/
-    if ( *(_WORD *)result == (_WORD)v6 && *(_WORD *)(result + 2) == (_WORD)v7 ) /*0x51654a*/
+    if ( *(_WORD *)result == (_WORD)v6 && result->vtable3 == (_WORD)v7 ) /*0x51654a*/
     {
   __int64 v8; // rax
       v8 = *(_DWORD *)(*(_DWORD *)this->m_State->vt_slot_76(/*0x516569*/
@@ -2154,7 +2154,7 @@ LABEL_19:
       }
     }
     result = this->m_State; /*0x516bca*/
-    *(_DWORD *)(result + 1612) = 10; /*0x516bcd*/
+    result->q64C = 10; /*0x516bcd*/
   }
   else
   {
@@ -2191,7 +2191,7 @@ LABEL_19:
     {
       *(_DWORD *)this->m_State->vt_slot_1152(this->m_State, 0, 1); /*0x5167a6*/
       result = this->m_State; /*0x5167ac*/
-      if ( !*(_BYTE *)(result + 144) ) /*0x5167b7*/
+      if ( !result->q090 ) /*0x5167b7*/
         return result; /*0x5167b7*/
     }
     else
@@ -2203,7 +2203,7 @@ LABEL_28:
       {
         (*(void (__thiscall **)(TechnoClass *, _DWORD, int))(*(_DWORD *)v25->__pad_0 + 1152))(v25, 0, 1); /*0x5167db*/
         result = this->m_State; /*0x5167e1*/
-        if ( !*(_BYTE *)(result + 144) ) /*0x5167ec*/
+        if ( !result->q090 ) /*0x5167ec*/
           return result; /*0x5167ec*/
         if ( *(_BYTE *)(result + 1674) ) /*0x5167f2*/
           PlayVocClass(*(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 1792), 0x2000, 1.0, 0); /*0x516813*/
@@ -6694,7 +6694,7 @@ namespace gamemd { int RulesClass::ReadDataList() {
   char * v20 = DataGlobal_0083D0C8; /*0x672458*/
   int v22 = KeyCount; /*0x67245d*/
   Debug::Log(); /*0x672461*/
-  int v2 = 0; /*0x672469*/
+  AbstractClass *v2 = 0; /*0x672469*/
   int v21 = 0; /*0x67246d*/
   if ( KeyCount > 0 ) /*0x672471*/
   {
@@ -6716,7 +6716,7 @@ namespace gamemd { int RulesClass::ReadDataList() {
         v6 = (_DWORD *)*((_DWORD *)DataGlobal_8B4124 + v4); /*0x6724c3*/
       }
       v20 = (char *)(v6 + 9); /*0x6724c9*/
-      char * v19 = (char *)v2; /*0x6724ca*/
+      AbstractClass *v19 = (char *)v2; /*0x6724ca*/
       char * v18 = DataGlobal_0083D0B8; /*0x6724cb*/
       Debug::Log(); /*0x6724d0*/
   _DWORD v16[3]; // [esp-1Ch] [ebp-50h] BYREF
@@ -6738,7 +6738,7 @@ namespace gamemd { int RulesClass::ReadDataList() {
       TypeList::Copy(v6 + 38, v7); /*0x672514*/
       v6[42] = v7[4]; /*0x67251e*/
       v6[43] = v7[5]; /*0x672524*/
-      void * v8 = Block; /*0x672527*/
+      AbstractClass *v8 = Block; /*0x672527*/
       bool v9 = Block == 0; /*0x67252e*/
       v6[44] = v7[6]; /*0x672530*/
       v23 = (int)&vt_VectorClass_int; /*0x672533*/
@@ -6765,7 +6765,7 @@ LABEL_17:
           }
           else
           {
-            _DWORD * v14 = DataGlobal_8B4124; /*0x67257c*/
+            AbstractClass *v14 = DataGlobal_8B4124; /*0x67257c*/
             while ( (_DWORD *)*v14 != v6 ) /*0x672584*/
             {
               ++v12; /*0x672586*/

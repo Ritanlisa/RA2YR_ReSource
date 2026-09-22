@@ -14,7 +14,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
 {
   char result; // al
   LPARAM v5; // esi
-  wchar_t *v6; // eax
+  CampaignScore *v6; // eax
   LRESULT v7; // edi
   int i; // [esp+14h] [ebp-8h]
 
@@ -76,7 +76,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
   SkirmishDialog *v8; // esi
   LRESULT v12; // eax
   HWND DlgItem; // eax
-  SkirmishDialog *v16; // edi
+  ObjectClass *v16; // edi
   LRESULT v18; // eax
   LRESULT v19; // eax
   HWND v21; // eax
@@ -94,11 +94,11 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
   LRESULT v34; // eax
   CampaignScore *v33; // eax
   int First; // esi
-  SkirmishDialog *v38; // edi
+  ObjectClass *v38; // edi
   HWND v39; // eax
   HWND eax71; // eax
   HWND v41; // eax
-  CCINIClass *v40; // eax
+  AbstractClass *v40; // eax
   WPARAM v43; // ebx
   SkirmishDialog *v45; // eax
   _DWORD var18[4]; // [esp+10h] [ebp-18h] BYREF
@@ -145,7 +145,7 @@ LABEL_5:
           v8 = aP0; /*0x5e69fd*/
           Dialog::IdleProcess(aP0); /*0x5e6a03*/
           ShowWindow((HWND)v8, 0); /*0x5e6a0b*/
-          signed int v11 = SkirmishSetup_Setup_5E8590(); /*0x5e6a16*/
+          SkirmishDialog *v11 = SkirmishSetup_Setup_5E8590(); /*0x5e6a16*/
           a4 = v11; /*0x5e6a1b*/
           if ( v11 == -1 ) /*0x5e6a1f*/
             goto LABEL_28; /*0x5e6a1f*/
@@ -370,13 +370,13 @@ LABEL_28:
     }
     return 0; /*0x5e6e20*/
   }
-  signed int v30 = a4; /*0x5e6e44*/
+  SkirmishDialog *v30 = a4; /*0x5e6e44*/
   v31 = (void **)(a4 + 8); /*0x5e6e51*/
   DlgCtrlID = (ReferenceCounted *)GetDlgCtrlID(*(HWND *)a4); /*0x5e6e58*/
   WideString::Assign_Alt(v31, 0); /*0x5e6e5a*/
   if ( DlgCtrlID == (ReferenceCounted *)1771 ) /*0x5e6e65*/
   {
-    esi60 = *(_DWORD *)(v30 + 4); /*0x5e6e67*/
+    esi60 = v30->q004; /*0x5e6e67*/
     if ( esi60 != -1 ) /*0x5e6e6d*/
     {
       v34 = SendDlgItemMessageA((HWND)aP0, 1771, 0x199u, esi60, 0); /*0x5e6e7d*/

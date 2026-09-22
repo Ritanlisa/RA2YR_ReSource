@@ -776,7 +776,7 @@ LABEL_47:
 
 // 0x663DB0
 namespace gamemd {
-AbstractClass * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
+AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -829,7 +829,7 @@ AbstractClass * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
     sprintf(CommandLine, g_Str_Trace_mphmd_exe__d__d__d__d, *v4, v4[1], v4[2], v4[3]); /*0x663e54*/
     goto LABEL_11; /*0x663e5c*/
   }
-  int * v5 = (int *)(*(_DWORD *)Game_PlayerInfoArray + 40); /*0x663e69*/
+  IPXManagerClass *v5 = (int *)(*(_DWORD *)Game_PlayerInfoArray + 40); /*0x663e69*/
   if ( *(_DWORD *)Game_PlayerInfoArray != -40 ) /*0x663e6c*/
   {
     Network::CopyAddress(v5, &v20, (int)&v12); /*0x663e7e*/

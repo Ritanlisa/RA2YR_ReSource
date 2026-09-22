@@ -18,7 +18,7 @@
 
 // 0x6DD8B0
 namespace gamemd {
-AbstractClass * TerrainClass_ProcessUpdate()
+AbstractClass * * TerrainClass_ProcessUpdate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1189,7 +1189,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
   _DWORD * v2 = a1; /*0x71cda4*/
   _DWORD * v3 = a1 + 1; /*0x71cdad*/
   int v4 = (*(int (__stdcall **)(_DWORD *))(a1[1] + 16))(a1 + 1); /*0x71cdb1*/
-  int v6 = g_BuildingLoadQueue_Count; /*0x71cdb4*/
+  IUnknown *v6 = g_BuildingLoadQueue_Count; /*0x71cdb4*/
   int v7 = v4; /*0x71cdba*/
   if ( g_BuildingLoadQueue_Count ) /*0x71cdbe*/
   {
@@ -1233,8 +1233,8 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
       v2[2] = &TerrainClass::`vftable'; /*0x71cea5*/
       v2[3] = &vt_TerrainClass; /*0x71ceac*/
     }
-    int v14 = (*(int (__stdcall **)(_DWORD *))(*v3 + 16))(v3); /*0x71cebf*/
-    int v15 = g_BuildingLoadQueue_Capacity; /*0x71cec1*/
+    ObjectClass *v14 = (*(int (__stdcall **)(_DWORD *))(*v3 + 16))(v3); /*0x71cebf*/
+    AbstractClass *v15 = g_BuildingLoadQueue_Capacity; /*0x71cec1*/
     if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x71cec9*/
       goto LABEL_16; /*0x71cec9*/
     if ( !g_BuildingLoadQueue_Capacity ) /*0x71cecd*/
@@ -1256,7 +1256,7 @@ LABEL_16:
 
 // 0x71D000
 namespace gamemd {
-AbstractClass * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
+AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

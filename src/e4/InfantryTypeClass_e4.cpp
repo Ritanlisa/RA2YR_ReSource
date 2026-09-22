@@ -9,7 +9,7 @@
 #include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x5236A0
-InfantryTypeClass * InfantryTypeClass::Constructor(ObjectClass * aP1)
+InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -203,12 +203,12 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int PipIdx; // eax
-  WeaponTypeClass *v5; // ebx
-  WeaponTypeClass *v6; // eax
-  WeaponTypeClass *v7; // ebx
-  WeaponTypeClass *v8; // eax
+  WeaponStruct *v5; // ebx
+  WeaponStruct *v6; // eax
+  WeaponStruct *v7; // ebx
+  WeaponStruct *v8; // eax
   INIClass *inited; // eax
-  VectorClass *v10; // eax
+  WeaponStruct *v10; // eax
   AbstractClass *i; // eax
   VectorClass *v12; // ecx
   AbstractClass *j; // eax
@@ -243,8 +243,7 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2)
   this->OccupyPip = PipIdx; /*0x52411f*/
   if ( INIClass::GetString(a2, v44, (unsigned __int8 *)v45, (INIClass *)v46, (INIClass *)p_unknown30, v48) ) /*0x524125*/
     v6 = InfantryTypeClass::Find((ObjectClass *)&aP1.field_1C); /*0x524132*/
-  else
-    v6 = v5; /*0x524139*/
+  WeaponStruct *v6 = v5; /*0x524139*/
   v7 = this->EliteOccupyWeapon; /*0x52413b*/
   this->OccupyWeapon = v6; /*0x524141*/
   if ( INIClass::GetString( /*0x52415e*/
@@ -529,7 +528,7 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2)
 
 // 0x524960
 namespace gamemd {
-ObjectTypeClass * InfantryTypeClass_LoadTypeData()
+ObjectTypeClass * * InfantryTypeClass_LoadTypeData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -539,7 +538,7 @@ ObjectTypeClass * InfantryTypeClass_LoadTypeData()
   int k; // ebx
   int m; // ebx
 
-  _DWORD * v4 = (_DWORD *)a2; /*0x524964*/
+  ObjectTypeClass *v4 = (_DWORD *)a2; /*0x524964*/
   int v5 = 0; /*0x524968*/
   if ( *(_DWORD *)(a2 + 3644) ) /*0x52496a*/
   {
@@ -611,7 +610,7 @@ ObjectTypeClass * InfantryTypeClass_LoadTypeData()
 
 // 0x524B60
 namespace gamemd {
-TechnoTypeClass * InfantryTypeClass_SaveLoad_Prefix()
+TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

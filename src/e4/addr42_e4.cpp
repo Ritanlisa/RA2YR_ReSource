@@ -107,7 +107,7 @@ LABEL_5:
 
 // 0x420F40
 namespace gamemd {
-AbstractClass * UpdateSpotlightsFoo(int * a1, int * a2)
+AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -206,7 +206,7 @@ AbstractClass * UpdateSpotlightsFoo(int * a1, int * a2)
           char * v49 = (char *)&unk_7E2B20 + 60 * v16 + v69; /*0x4211b0*/
           SubFile = MixFileClass::GetSubFile(v61, 0); /*0x4211c9*/
           _WORD * v25 = (_WORD *)StreamClass::ReadAndSeek((int)g_VisibleSurfaceDescriptor, v40, v41 - g_Map_VisibleRect); /*0x4211d3*/
-          _DWORD * v26 = g_VisibleSurfaceDescriptor; /*0x4211d8*/
+          MouseClass *v26 = g_VisibleSurfaceDescriptor; /*0x4211d8*/
           v27 = (unsigned __int8 *)(v22 + v60 * v21 + SubFile); /*0x4211ed*/
           if ( (unsigned int)&v25[(v37 - v41) * *((_DWORD *)g_VisibleSurfaceDescriptor + 10) + 2 + v42 + 0x7FFFFFFF * v40] < *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x421211*/
           {
@@ -243,7 +243,7 @@ AbstractClass * UpdateSpotlightsFoo(int * a1, int * a2)
           {
             char * v28 = v49; /*0x42122b*/
             int v38 = v37 - v41; /*0x42122f*/
-            int v29 = v40; /*0x421233*/
+            Coord *v29 = v40; /*0x421233*/
             do /*0x4212ad*/
             {
               if ( v29 < v42 ) /*0x421239*/
@@ -452,7 +452,7 @@ void* ProductionCompletionCallback()
 
 // 0x424F00
 namespace gamemd {
-AbstractClass * CreateUnitOnCompletion()
+AbstractClass * * CreateUnitOnCompletion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Create unit at completion (583B). Calculates exit cell, foundation offsets, spawns unit.
@@ -645,7 +645,7 @@ int E4Recv_425670::ConstructionPositionTracker()
     v53 = v3->field_0; /*0x4256fc*/
     v47 = (IUnknown *)(Location_Y - *(_DWORD *)&this->_pad_D8[56]); /*0x425708*/
     Location_Z = *(_DWORD *)&this->_pad_D8[60]; /*0x425709*/
-    int v50 = Coord::Subtract(&v50, (IUnknown *)(Location_X - v53), v47, 0); /*0x425718*/
+    IUnknown *v50 = Coord::Subtract(&v50, (IUnknown *)(Location_X - v53), v47, 0); /*0x425718*/
     v53 = v7->field_0; /*0x42571f*/
     v54 = v7->field_4; /*0x42572a*/
     Location_Z = v7->field_8; /*0x425731*/
@@ -833,7 +833,7 @@ void sub_4261D0()
 
 // 0x4267F0
 namespace gamemd {
-AbstractClass * sub_4267F0()
+AbstractClass * * sub_4267F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -876,7 +876,7 @@ AbstractClass * sub_4267F0()
       (*(void (__thiscall **)(int))(*(_DWORD *)a1 + 8))(a1); /*0x4268fb*/
       return 0; /*0x426903*/
     }
-    _DWORD * v9 = __2_YAPAXI_Z(0x20u); /*0x42690b*/
+    AbstractClass *v9 = __2_YAPAXI_Z(0x20u); /*0x42690b*/
     if ( v9 ) /*0x426912*/
     {
       v10 = *(_WORD *)(a1 + 160); /*0x426918*/
@@ -905,14 +905,14 @@ AbstractClass * sub_4267F0()
 
 // 0x426ED0
 namespace gamemd {
-AbstractClass * E4Recv_426ED0::sub_426ED0(int a2)
+AbstractClass * * E4Recv_426ED0::sub_426ED0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 *i; // ecx
   unsigned __int16 v10; // si
   unsigned __int16 v11; // cx
-  unsigned __int16 *v15; // ecx
+  AbstractClass *v15; // ecx
   unsigned __int16 v16; // ax
   if ( a2 >= this->M204 ) /*0x426ee0*/
     return 0; /*0x426ee0*/
@@ -1210,7 +1210,7 @@ unsigned int * PathClass_WalkPath(unsigned int * a1, int * a2, int a3, int * a4)
 
 // 0x42A900
 namespace gamemd {
-AbstractClass * E4Recv_42A900::sub_42A900()
+AbstractClass * * E4Recv_42A900::sub_42A900()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1231,15 +1231,15 @@ AbstractClass * E4Recv_42A900::sub_42A900()
     __3_YAXPAX_Z(v3[2]); /*0x42a92e*/
     __3_YAXPAX_Z(v3); /*0x42a934*/
   }
-  void * v4 = *(void **)(this + 16); /*0x42a93c*/
+  AbstractClass *v4 = *(void **)(this + 16); /*0x42a93c*/
   this->M104 = 0; /*0x42a93f*/
   if ( v4 ) /*0x42a944*/
     __3_YAXPAX_Z(v4); /*0x42a947*/
-  void * v5 = *(void **)(this + 12); /*0x42a94f*/
+  AbstractClass *v5 = *(void **)(this + 12); /*0x42a94f*/
   this->M16 = 0; /*0x42a952*/
   if ( v5 ) /*0x42a957*/
     __3_YAXPAX_Z(v5); /*0x42a95a*/
-  void * v6 = *(void **)(this + 24); /*0x42a962*/
+  AbstractClass *v6 = *(void **)(this + 24); /*0x42a962*/
   this->M12 = 0; /*0x42a965*/
   if ( v6 ) /*0x42a96a*/
   {
@@ -1285,7 +1285,7 @@ AbstractClass * E4Recv_42A900::sub_42A900()
   }
   while ( v8 ); /*0x42a9f5*/
   __3_YAXPAX_Z(*(void **)(this + 100)); /*0x42a9fb*/
-  int v9 = this + 188; /*0x42aa03*/
+  Coord *v9 = this + 188; /*0x42aa03*/
   int v10 = 3; /*0x42aa09*/
   do /*0x42aa37*/
   {
@@ -1297,12 +1297,12 @@ AbstractClass * E4Recv_42A900::sub_42A900()
       if ( *(_BYTE *)(v9 + 13) ) /*0x42aa1f*/
       {
         __3_YAXPAX_Z(v11); /*0x42aa25*/
-        *(_DWORD *)(v9 + 4) = 0; /*0x42aa2d*/
+        v9->q004 = 0; /*0x42aa2d*/
       }
     }
     --v10; /*0x42aa30*/
     *(_BYTE *)(v9 + 13) = 0; /*0x42aa31*/
-    *(_DWORD *)(v9 + 8) = 0; /*0x42aa34*/
+    v9->q008 = 0; /*0x42aa34*/
   }
   while ( v10 ); /*0x42aa37*/
 }
@@ -1392,8 +1392,8 @@ void sub_42B080(short * a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v11; // [esp+14h] [ebp-14h]
-  _WORD * v2 = a1; /*0x42b084*/
-  int v3 = a2 * unk_89C2D8; /*0x42b0ab*/
+  IUnknown *v2 = a1; /*0x42b084*/
+  SpeedType *v3 = a2 * unk_89C2D8; /*0x42b0ab*/
   int v13 = (*a1 << 8) + 128; /*0x42b0b0*/
   int v14 = (a1[1] << 8) + 128; /*0x42b0b4*/
   int v10 = -2; /*0x42b0bc*/
@@ -1453,7 +1453,7 @@ void sub_42B080(short * a1, int a2)
 
 // 0x42B420
 namespace gamemd {
-AbstractClass * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int a4, int a5, int ** a6)
+AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int a4, int a5, int ** a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1474,7 +1474,7 @@ AbstractClass * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int a
   int v57; // [esp+34h] [ebp-14h] BYREF
   int TileDataCellClass; // [esp+38h] [ebp-10h] BYREF
   int v59; // [esp+3Ch] [ebp-Ch]
-  double v60; // [esp+40h] [ebp-8h]
+  LocomotionClass *v60; // [esp+40h] [ebp-8h]
   int * v6 = a2; /*0x42b425*/
   int v7 = a4; /*0x42b42a*/
   int v8 = *a2; /*0x42b42f*/
@@ -1517,7 +1517,7 @@ AbstractClass * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int a
   }
   if ( a5 < a4 ) /*0x42b48d*/
   {
-  int *v15; // eax
+  AbstractClass *v15; // eax
     v50 = v11; /*0x42b491*/
     if ( a4 - a5 <= 0 ) /*0x42b499*/
       goto LABEL_19; /*0x42b499*/
@@ -1550,7 +1550,7 @@ LABEL_19:
     goto LABEL_16; /*0x42b4ef*/
   }
 LABEL_20:
-  double v16 = LocomotionClass::GetSpeedMultiplier(a1); /*0x42b508*/
+  LocomotionClass *v16 = LocomotionClass::GetSpeedMultiplier(a1); /*0x42b508*/
   int v17 = a1[135]; /*0x42b513*/
   v60 = v16; /*0x42b519*/
   v57 = v17; /*0x42b51d*/
@@ -1760,7 +1760,7 @@ LABEL_11:
 
 // 0x42BE20
 namespace gamemd {
-LocomotionClass * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short * a4, unsigned int * a5, int a6, char a7)
+LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short * a4, unsigned int * a5, int a6, char a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1800,7 +1800,7 @@ LocomotionClass * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short * 
     v29 = v13; /*0x42bea9*/
   if ( v14 <= v13 ) /*0x42beaf*/
     v14 = v13; /*0x42beb1*/
-  _DWORD * v15 = a5; /*0x42beb7*/
+  LocomotionClass *v15 = a5; /*0x42beb7*/
   v30 = v14 - v29; /*0x42bebf*/
   v39 = LocomotionClass::GetSpeedMultiplier(a5); /*0x42bec8*/
   v37 = v15[135]; /*0x42bedd*/
@@ -1840,7 +1840,7 @@ LABEL_49:
       _DWORD * v21 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a5); /*0x42bf6c*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData((__int16 *)&a5, v37) * v39 >= 0.01 ) /*0x42bfa1*/
         ++v31; /*0x42bfa3*/
-      v18 = (*(int (__thiscall **)(_DWORD *, _DWORD *, int, int, _DWORD, int))(*v15 + 428))(v15, v21, v32, v17, 0, 1) /*0x42bfe5*/
+      v18 = v15->vt_slot_428(v21, v32, v17, 0, 1) /*0x42bfe5*/
          || (v21[80] & 0x40000) != 0
          || v31 > 3
          || !a7 && v31 > 0;
@@ -1869,7 +1869,7 @@ LABEL_49:
       _DWORD * v24 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a5); /*0x42c070*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData((__int16 *)&a5, v37) * v39 >= 0.01 ) /*0x42c0a5*/
         ++v31; /*0x42c0a7*/
-      v18 = (*(int (__thiscall **)(_DWORD *, _DWORD *, int, int, _DWORD, int))(*v15 + 428))(v15, v24, v33, v17, 0, 1) /*0x42c0e9*/
+      v18 = v15->vt_slot_428(v24, v33, v17, 0, 1) /*0x42c0e9*/
          || (v24[80] & 0x40000) != 0
          || v31 > 3
          || !a7 && v31 > 0;
@@ -2050,7 +2050,7 @@ LABEL_18:
 
 // 0x42CCD0
 namespace gamemd {
-AbstractClass * E4Recv_42CCD0::sub_42CCD0(int a2)
+AbstractClass * * E4Recv_42CCD0::sub_42CCD0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2067,7 +2067,7 @@ AbstractClass * E4Recv_42CCD0::sub_42CCD0(int a2)
   int v20 = DataGlobal_87F858 + 10 * CellToTileIndexMap((int *)&DataGlobal_87F7E8, (__int16 *)(this + 112)); /*0x42ccfc*/
   while ( 1 ) /*0x42cd12*/
   {
-  void *v9; // eax
+  AbstractClass *v9; // eax
     v5 = *(_WORD *)(v20 + 2 * v3); /*0x42cd12*/
     WordVector::Constructor(&v22, 0, 0); /*0x42cd16*/
     v22 = &vt_DynamicVectorClass_unsigned_short_7E3844; /*0x42cd1f*/
@@ -2310,7 +2310,7 @@ void sub_42E150()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v2 = a2[6]; /*0x42e150*/
+  ObjectClass *v2 = a2[6]; /*0x42e150*/
   if ( v2 ) /*0x42e158*/
   {
     if ( *(_DWORD *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x42e164*/
@@ -2320,7 +2320,7 @@ void sub_42E150()
   _DWORD v6[4]; // [esp+0h] [ebp-10h] BYREF
     v6[0] = *a2; /*0x42e186*/
     v6[1] = a2[1]; /*0x42e18d*/
-    int v4 = a2[2]; /*0x42e191*/
+    AbstractClass *v4 = a2[2]; /*0x42e191*/
     int v5 = a2[3]; /*0x42e194*/
     v6[2] = v4; /*0x42e197*/
     v6[3] = v5; /*0x42e19b*/
@@ -2360,7 +2360,7 @@ void EncodeBitmapRGB(Pipe * aP0, int edx0, unsigned char * a2, int a4)
     {
       if ( v4 < 4 ) /*0x42fd74*/
         goto LABEL_19; /*0x42fd74*/
-      char v7 = v5->__pad_0[0]; /*0x42fd7a*/
+      AbstractClass *v7 = v5->__pad_0[0]; /*0x42fd7a*/
       v8 = 0; /*0x42fd7d*/
       v5 = (Pipe *)((char *)v5 + 1); /*0x42fd7f*/
       a2a = 0; /*0x42fd80*/
@@ -2368,13 +2368,13 @@ void EncodeBitmapRGB(Pipe * aP0, int edx0, unsigned char * a2, int a4)
       BYTE2(a2a) = v7; /*0x42fd85*/
       if ( !edx0 ) /*0x42fd89*/
         break; /*0x42fd89*/
-      char v9 = v5->__pad_0[0]; /*0x42fd8b*/
+      AbstractClass *v9 = v5->__pad_0[0]; /*0x42fd8b*/
       v5 = (Pipe *)((char *)v5 + 1); /*0x42fd8e*/
       --edx0; /*0x42fd8f*/
       BYTE1(a2a) = v9; /*0x42fd90*/
       if ( !edx0 ) /*0x42fd96*/
         goto LABEL_11; /*0x42fd96*/
-      char v10 = v5->__pad_0[0]; /*0x42fd98*/
+      AbstractClass *v10 = v5->__pad_0[0]; /*0x42fd98*/
       v5 = (Pipe *)((char *)v5 + 1); /*0x42fd9b*/
       LOBYTE(a2a) = v10; /*0x42fd9c*/
       --edx0; /*0x42fda0*/
@@ -2421,7 +2421,7 @@ void DecodeBitmapRGB(Pipe * aP0, BombClass * aP1, unsigned char * a2, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Pipe *v6; // ebp
-  unsigned __int8 v9; // cl
+  AbstractClass *v9; // cl
   _BYTE *a2a; // [esp+Ch] [ebp+4h]
 
   if ( aP0 ) /*0x42fe54*/

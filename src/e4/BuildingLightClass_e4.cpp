@@ -164,7 +164,7 @@ signed int BuildingLightClass::UpdateOscillation()
     double v14 = 1.0; /*0x513e00*/
   else
     v14 = 1.1; /*0x513e08*/
-  int v15 = (int)&g_CurrentFrame[v13]; /*0x513e20*/
+  RecoilData *v15 = (int)&g_CurrentFrame[v13]; /*0x513e20*/
   double v16 = v14 * *(double *)&g_RulesClass_Instance->HoverBob * 900.0; /*0x513e23*/
   int v27 = v15 % (int)Math::RoundToInt(v16); /*0x513e3a*/
   double v17 = Math::SinCos((double)v27 * 6.283185307179586 / v16); /*0x513e4f*/

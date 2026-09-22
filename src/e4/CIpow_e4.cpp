@@ -14,8 +14,7 @@ void CIpow_Helper()
   unsigned __int8 v17; // cl
   unsigned __int8 v18; // ch
   int v23; // [esp+88h] [ebp-4h]
-
-  int v7 = CW; /*0x7c8fd2*/
+  ObjectClass *v7 = CW; /*0x7c8fd2*/
   v23 = CW; /*0x7c8fd4*/
   if ( (_WORD)CW != 639 ) /*0x7c8fdf*/
     CW = _load_CW(v23); /*0x7c8fe1*/

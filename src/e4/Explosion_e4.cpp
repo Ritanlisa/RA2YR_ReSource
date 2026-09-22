@@ -12,7 +12,7 @@ int Explosion::RemoveItem(int a2)
   int v3 = a2; /*0x53dda3*/
   if ( a2 >= v2 ) /*0x53dda9*/
     return 0; /*0x53ddcc*/
-  int v4 = v2 - 1; /*0x53ddab*/
+  AbstractClass *v4 = v2 - 1; /*0x53ddab*/
   this->q010 = v4; /*0x53ddae*/
   if ( a2 < v4 ) /*0x53ddb1*/
   {

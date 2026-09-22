@@ -14,7 +14,7 @@ int TemporalClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  wchar_t *v2; // eax
+  IUnknown *v2; // eax
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a453*/
   v2 = g_CurrentFrame; /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
@@ -139,7 +139,7 @@ LABEL_10:
       int v16 = *v15; /*0x71a864*/
       int v17 = (*(int (__thiscall **)(int *, _DWORD))(*v15 + 740))(v15, 0); /*0x71a866*/
       int v18 = (*(int (__thiscall **)(_DWORD, int))(v16 + 1016))(this->creationFrame, v17); /*0x71a870*/
-      int v19 = this->q012; /*0x71a878*/
+      AnimClass *v19 = this->q012; /*0x71a878*/
       int v20 = *(_DWORD *)(*(_DWORD *)v18 + 164); /*0x71a87b*/
       this->q04C = v20; /*0x71a881*/
       result = (void **)(v19 - (WarpPerStep + v20)); /*0x71a888*/
@@ -202,7 +202,7 @@ LABEL_10:
                 while ( v27[70] ); /*0x71a9d6*/
               }
             }
-            int v29 = this->q03C; /*0x71a9de*/
+            Coord *v29 = this->q03C; /*0x71a9de*/
             if ( v29 ) /*0x71a9e3*/
             {
               SuperClass::SetOnHold(v29, 0); /*0x71a9e6*/

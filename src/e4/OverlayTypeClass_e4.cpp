@@ -87,7 +87,7 @@ LABEL_11:
 }
 
 // 0x5FE770
-AnimTypeClass * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
+AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -150,7 +150,7 @@ AnimTypeClass * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
          (unsigned __int8 *)(this + 36),
          (CCINIClass *)&stru_830620[12092],
          this->IsRubble);
-  char v10 = this->q2B2; /*0x5fe84d*/
+  Color *v10 = this->q2B2; /*0x5fe84d*/
   this->IsRubble = v9; /*0x5fe853*/
   char v11; // al
   v11 = INIClass::ReadBool_Overwrite( /*0x5fe862*/
@@ -249,7 +249,7 @@ AnimTypeClass * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
 }
 
 // 0x5FEAF0
-ScenarioClass * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
+ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

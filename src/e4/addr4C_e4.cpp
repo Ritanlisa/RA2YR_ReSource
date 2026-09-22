@@ -451,7 +451,7 @@ void sub_4C2830()
       v1 = (int *)Block; /*0x4c28b2*/
     }
     int * v8 = v1 + 10; /*0x4c28b9*/
-    int * v9 = v1; /*0x4c28be*/
+    ObjectClass *v9 = v1; /*0x4c28be*/
     if ( v1[10] ) /*0x4c28b6*/
     {
   int v18[2]; // [esp+28h] [ebp-14h] BYREF
@@ -460,7 +460,7 @@ void sub_4C2830()
       Coord::To_Screen(g_TacticalClass_Instance, v9 + 3, v17); /*0x4c28e2*/
       if ( ClipLine(v18, v17, &DSurface_ViewBounds) ) /*0x4c28f4*/
       {
-        int v10 = -(*((_BYTE *)v9 + 44) != 0); /*0x4c2904*/
+        int v10 = -(v9->fallRate != 0); /*0x4c2904*/
         LOBYTE(v10) = v10 & 0xFB; /*0x4c2906*/
         Lightning::Draw(v9, *v9, v9[1], v9[2], v9[3], v9[4], v9[5], v10 + 10); /*0x4c2938*/
       }
@@ -479,7 +479,7 @@ void sub_4C2830()
         }
         while ( v11 < DataGlobal_8A0E98 ); /*0x4c2993*/
       }
-      void * v12 = Block; /*0x4c299b*/
+      AbstractClass *v12 = Block; /*0x4c299b*/
       if ( Block ) /*0x4c299d*/
       {
         int v13 = *((_DWORD *)Block + 8); /*0x4c299f*/
@@ -501,7 +501,7 @@ void sub_4C2830()
 
 // 0x4C29E0
 namespace gamemd {
-ParticleSystemClass * sub_4C29E0()
+ParticleSystemClass * * sub_4C29E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -541,11 +541,10 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
 {
   unsigned __int8 *v8; // edi
   __int16 v14; // [esp+10h] [ebp-10h] BYREF
-
   int v16 = a2; /*0x4c38ed*/
   if ( !a3 || !a2 ) /*0x4c38fb*/
     return a4; /*0x4c38fb*/
-  char * v5 = a4; /*0x4c3901*/
+  AbstractClass *v5 = a4; /*0x4c3901*/
   if ( a4 ) /*0x4c3907*/
     goto LABEL_6; /*0x4c3907*/
   char * v6 = (char *)__2_YAPAXI_Z((a3 + 1) << 8); /*0x4c3910*/
@@ -595,14 +594,14 @@ LABEL_6:
 
 // 0x4C3DD0
 namespace gamemd {
-AbstractClass * E4Recv_4C3DD0::sub_4C3DD0(int a2)
+AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   TextRenderer::GetInstance(); /*0x4c3dd9*/
   Text::MeasureWidth(*this, 0); /*0x4c3de5*/
-  int v3 = *(this + 2); /*0x4c3def*/
+  AbstractClass *v3 = *(this + 2); /*0x4c3def*/
   _DWORD v5[4]; // [esp+4h] [ebp-10h] BYREF
   v5[2] = g_DDraw_Active; /*0x4c3df8*/
   v5[0] = 0; /*0x4c3e09*/
@@ -673,13 +672,12 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
 {
   __int16 v3; // bx
   __int16 v11; // cx
-  int v12; // ecx
+  AbstractClass *v12; // ecx
   int v14; // [esp+Ch] [ebp-4h]
-
   v3 = *(this + 10); /*0x4c95d2*/
   if ( v3 <= 0 ) /*0x4c95db*/
     goto LABEL_14; /*0x4c95db*/
-  int v4 = this->M8; /*0x4c95dd*/
+  AbstractClass *v4 = this->M8; /*0x4c95dd*/
   int v5 = this->M16; /*0x4c95e0*/
   if ( v4 != -1 ) /*0x4c95ec*/
   {
@@ -693,14 +691,14 @@ LABEL_14:
   }
   if ( !v5 ) /*0x4c95fa*/
     goto LABEL_14; /*0x4c95fa*/
-  int v6 = (__int16)(*this - *(this + 2)); /*0x4c9606*/
+  AbstractClass *v6 = (__int16)(*this - *(this + 2)); /*0x4c9606*/
   __int64 v7 = (__int16)(*this - *(this + 2)); /*0x4c960b*/
   int v8 = (int)((HIDWORD(v7) ^ v7) - HIDWORD(v7)) / v3; /*0x4c9611*/
   v14 = *(_DWORD *)this; /*0x4c9615*/
   if ( (__int16)v8 > 0 ) /*0x4c961c*/
   {
     int v9 = this->M16; /*0x4c961e*/
-    int v10 = this->M8; /*0x4c9621*/
+    AbstractClass *v10 = this->M8; /*0x4c9621*/
     if ( v10 != -1 ) /*0x4c9627*/
     {
       if ( (int)g_CurrentFrame - v10 >= v9 ) /*0x4c962f*/
@@ -906,12 +904,12 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   LOWORD(v56) = SLODWORD(a4) / 256; /*0x4cf08c*/
   HIWORD(v56) = a5 / 256; /*0x4cf09f*/
   _DWORD * v13 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v56); /*0x4cf0ac*/
-  _DWORD * v14 = Cell::IsBridge(v13); /*0x4cf0b8*/
+  IUnknown *v14 = Cell::IsBridge(v13); /*0x4cf0b8*/
   if ( v14 && !*(_BYTE *)((*(int (__thiscall **)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf0cc*/
   {
     if ( Array::Contains(*v6, (int)v14) ) /*0x4cf0d9*/
     {
-      int * v18 = (int *)(*(int (__thiscall **)(_DWORD *, int *, int *))(*v14 + 168))(v14, v63, *v6); /*0x4cf142*/
+      int * v18 = (int *)v14->GetCoords_Alt(v63, *v6); /*0x4cf142*/
       v11 = *v18; /*0x4cf148*/
       v12 = v18[1]; /*0x4cf14a*/
       v62 = v18[2]; /*0x4cf150*/

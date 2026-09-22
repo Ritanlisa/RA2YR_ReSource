@@ -199,7 +199,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
 
 // 0x6A93F0
 namespace gamemd {
-BombClass * E4Recv_6A93F0::sub_6A93F0()
+BombClass * * E4Recv_6A93F0::sub_6A93F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -480,7 +480,7 @@ void ShowSkirmishSetupScreen()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
-  HWND v3; // esi
+  IUnknown *v3; // esi
   LONG j; // eax
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
@@ -511,7 +511,7 @@ void ShowSkirmishSetupScreen()
     Dialog::Destroy(v3); /*0x6ae37d*/
     DataGlobal_B0B59C = 0; /*0x6ae382*/
   }
-  void * v6 = g_UIControlState; /*0x6ae38c*/
+  IUnknown *v6 = g_UIControlState; /*0x6ae38c*/
   if ( g_UIControlState ) /*0x6ae394*/
   {
     ComPtr::Dtor(g_UIControlState); /*0x6ae398*/
@@ -730,7 +730,7 @@ int TechnoClass::ProcessDeployAction()
                                          1);
   int v31; // [esp+3Ch] [ebp-18h] BYREF
           *(_DWORD *)v28 = *BuildingClass::FindPlacementCells2(this, (SlaveManagerClass *)&v31, v27); /*0x6b0100*/
-          int v32 = CellStruct::Sub(v28, (IUnknown *)&v32, (IUnknown *)&v27); /*0x6b0104*/
+          IUnknown *v32 = CellStruct::Sub(v28, (IUnknown *)&v32, (IUnknown *)&v27); /*0x6b0104*/
           int v16 = SHIWORD(v15->field_0); /*0x6b0109*/
           v29 = SLOWORD(v15->field_0); /*0x6b011b*/
           double v17 = Math::Sqrt((double)v29 * (double)v29 + (double)v16 * (double)v16); /*0x6b0134*/

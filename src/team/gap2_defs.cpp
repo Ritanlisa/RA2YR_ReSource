@@ -150,12 +150,12 @@ namespace gamemd { int TriggerClass::EvaluateCondition(void* a1, int a2, int a3)
   bool v13; // eax
   int v14; // eax
   char v15; // al
-  bool v5 = this->q037; /*0x41e726*/
+  ObjectClass *v5 = this->q037; /*0x41e726*/
   bool v7 = 1; /*0x41e74e*/
-  if ( !v5 || !*(_BYTE *)(v5 + 246) ) /*0x41e730*/
+  if ( !v5 || !v5->q0F6 ) /*0x41e730*/
   {
-    int v6 = this->q038; /*0x41e73a*/
-    if ( !v6 || !*(_BYTE *)(v6 + 246) ) /*0x41e744*/
+    ObjectClass *v6 = this->q038; /*0x41e73a*/
+    if ( !v6 || !v6->q0F6 ) /*0x41e744*/
       v7 = 0; /*0x41e738*/
   }
   if ( !v5 ) /*0x41e756*/
@@ -297,7 +297,7 @@ LABEL_70:
   result = globalHelper_01FEE0(this->q037, v8, a3); /*0x41e9ea*/
   if ( result ) /*0x41e9fc*/
   {
-    int v16 = this->q038; /*0x41ea05*/
+    ObjectClass *v16 = this->q038; /*0x41ea05*/
     if ( !v16 || (result = globalHelper_01FEE0(v16, v8, a3)) != 0 ) /*0x41ea1b*/
     {
       result = TriggerClass::ValidateTeamTriggerConditions(this->q037); /*0x41ea2d*/
@@ -306,18 +306,18 @@ LABEL_70:
         if ( !this->q038 /*0x41ea51*/
           || (result = TriggerClass::ValidateTeamTriggerConditions(this->q038)) != 0 )
         {
-          bool v17 = this->q037; /*0x41ea5a*/
+          ObjectClass *v17 = this->q037; /*0x41ea5a*/
           if ( v17 /*0x41ea82*/
-            && *(int *)(v17 + 184) >= 0
+            && v17->q0B8 >= 0
             && TeamClass::CountActiveTeamsForType(this->q037) >= *(_DWORD *)(this->q037 + 184) )
           {
             return 0; /*0x41ea87*/
           }
           else
           {
-            int v18 = this->q038; /*0x41ea8d*/
+            ObjectClass *v18 = this->q038; /*0x41ea8d*/
             return !v18 /*0x41eaba*/
-                || *(int *)(v18 + 184) < 0
+                || v18->q0B8 < 0
                 || TeamClass::CountActiveTeamsForType(this->q038) < *(_DWORD *)(this->q038
                                                                                            + 184);
           }
@@ -493,7 +493,7 @@ namespace gamemd { int CampaignClass::LoadFromINI() {
   INIClass Destination[2]; // [esp+E4h] [ebp-80h] BYREF
 
   CCFileClass::Construct(&aP1, aCoopcampmdIni); /*0x49db13*/
-  int v2 = 0; /*0x49db18*/
+  AbstractClass *v2 = 0; /*0x49db18*/
   if ( !CCINIClass::Load((_BYTE *)this, &aP1, 0, 0) ) /*0x49db23*/
   {
     this->q05C = 0; /*0x49db33*/
@@ -1345,7 +1345,7 @@ namespace gamemd { void ScriptTypeClass::GetAction(int a1, int a2) {
       int v5 = 0; /*0x691e54*/
       if ( this->isGlobal > 0 ) /*0x691e58*/
       {
-        int v6 = g_MultiplayerLogState; /*0x691e5a*/
+        TeamTypeClass *v6 = g_MultiplayerLogState; /*0x691e5a*/
         int * v7 = this + 42; /*0x691e60*/
         do /*0x691e66*/
         {
@@ -1469,7 +1469,7 @@ LABEL_11:
   }
   else
   {
-    _DWORD * v5 = DataGlobal_B0E65C; /*0x6dd0af*/
+    AbstractClass *v5 = DataGlobal_B0E65C; /*0x6dd0af*/
     while ( *v5 != this ) /*0x6dd0b7*/
     {
       ++v4; /*0x6dd0b9*/
@@ -1603,7 +1603,7 @@ namespace gamemd { int TeamClass::SelectAttackTarget(ScriptClass * aP1, char a3)
   TechnoClass *CellFromArray; // eax
   TechnoClass *v5; // esi
   int ObjectCell; // eax
-  AbstractClass *v8; // esi
+  FootClass *v8; // esi
   char result; // al
 
   if ( a3 ) /*0x6eca7d*/
@@ -2131,7 +2131,7 @@ namespace gamemd { void TeamClass::ProcessTeamMovement(int a1, int a2) {
 namespace gamemd { void TeamClass::SelectBestMember(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  MouseClass *v9; // edi
+  ObjectClass *v9; // edi
   int TileIndex; // [esp-30h] [ebp-60h]
   MouseClass *v19; // [esp+14h] [ebp-1Ch] BYREF
   TeamClass *v3 = this; /*0x6ee5c9*/
@@ -2179,7 +2179,7 @@ namespace gamemd { void TeamClass::SelectBestMember(int a1, int a2) {
   _BYTE v24[8]; // [esp+24h] [ebp-Ch] BYREF
         _DWORD * v14 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(v13 + 72))(v4, v24); /*0x6ee70c*/
         LOWORD(a3) = *v14 / 256; /*0x6ee723*/
-        int v15 = v14[1] / 256; /*0x6ee73e*/
+        ObjectClass *v15 = v14[1] / 256; /*0x6ee73e*/
         HIWORD(a3) = v15; /*0x6ee743*/
         LOBYTE(v15) = *((_BYTE *)v4 + 140); /*0x6ee74c*/
         int v21 = a3; /*0x6ee756*/
@@ -2234,19 +2234,19 @@ namespace gamemd { void* TeamClass::ScoreMember(void* a1, int a2, int a3) {
   int TileData; // eax
 
   result = 0; /*0x6eeeb3*/
-  int v5 = a2[135]; /*0x6eeeb5*/
+  HouseClass *v5 = a2[135]; /*0x6eeeb5*/
   int v6 = 0; /*0x6eeebb*/
   _DWORD * v26 = 0; /*0x6eeebd*/
   int v25 = -1; /*0x6eeec1*/
-  int v28 = v5; /*0x6eeecc*/
-  int v32 = *(_DWORD *)(v5 + 120); /*0x6eeed2*/
+  HouseClass *v28 = v5; /*0x6eeecc*/
+  int v32 = v5->bunkersCount; /*0x6eeed2*/
   int v27 = 0; /*0x6eeed6*/
   if ( v32 > 0 ) /*0x6eeeda*/
   {
     int v7 = a3; /*0x6eeee0*/
     while ( 1 ) /*0x6eeeef*/
     {
-      _DWORD * v8 = *(_DWORD **)(*(_DWORD *)(v5 + 108) + 4 * v6); /*0x6eeeef*/
+      _DWORD * v8 = *(_DWORD **)(v5->absorbersCount + 4 * v6); /*0x6eeeef*/
       if ( (void *)v8[328] == this ) /*0x6eeefc*/
       {
         int v9 = -1; /*0x6eef02*/
@@ -2257,7 +2257,7 @@ namespace gamemd { void* TeamClass::ScoreMember(void* a1, int a2, int a3) {
             _DWORD * v10 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v8 + 72))(v8, v43); /*0x6eef1e*/
   int v23; // [esp+18h] [ebp-70h]
             LOWORD(v23) = *v10 / 256; /*0x6eef31*/
-            int v11 = a2[135]; /*0x6eef42*/
+            HouseClass *v11 = a2[135]; /*0x6eef42*/
             HIWORD(v23) = v10[1] / 256; /*0x6eef4b*/
             int v30 = v23; /*0x6eef58*/
             v9 = 0x7FFFFFFF - CellClass::GetTileData((__int16 *)&v30, v11); /*0x6eef6d*/
@@ -2267,7 +2267,7 @@ namespace gamemd { void* TeamClass::ScoreMember(void* a1, int a2, int a3) {
             _DWORD * v12 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v8 + 72))(v8, v44); /*0x6eef7d*/
   int v24; // [esp+1Ch] [ebp-6Ch]
             LOWORD(v24) = *v12 / 256; /*0x6eef90*/
-            int v13 = a2[135]; /*0x6eefa1*/
+            HouseClass *v13 = a2[135]; /*0x6eefa1*/
             HIWORD(v24) = v12[1] / 256; /*0x6eefaa*/
             int v31 = v24; /*0x6eefb7*/
             TileData = CellClass::GetTileData((__int16 *)&v31, v13); /*0x6eefc2*/
@@ -2515,7 +2515,7 @@ namespace gamemd { void TeamClass::CheckMemberSuperWeapon(int a1, int a2) {
   int v7 = 0; /*0x6f018e*/
   if ( !v5 ) /*0x6f0192*/
     goto LABEL_33; /*0x6f0192*/
-  int * v8 = (int *)v5[135]; /*0x6f0198*/
+  AbstractClass *v8 = (int *)v5[135]; /*0x6f0198*/
   DefaultTimer = 0; /*0x6f019e*/
   if ( v8[153] <= 0 ) /*0x6f01aa*/
     goto LABEL_33; /*0x6f01aa*/
@@ -2523,7 +2523,7 @@ namespace gamemd { void TeamClass::CheckMemberSuperWeapon(int a1, int a2) {
   int v10 = v8[153]; /*0x6f01b6*/
   do /*0x6f01d7*/
   {
-    int v11 = *(_DWORD *)(*(_DWORD *)(*v9 + 40) + 180); /*0x6f01bd*/
+    AbstractClass *v11 = *(_DWORD *)(*(_DWORD *)(*v9 + 40) + 180); /*0x6f01bd*/
     if ( v11 == 3 ) /*0x6f01c6*/
       v7 = *v9; /*0x6f01c8*/
     if ( v11 == 4 ) /*0x6f01cd*/
@@ -2571,7 +2571,7 @@ LABEL_28:
   LOBYTE(v14) = *(_BYTE *)(v14 + 247); /*0x6f0244*/
   int v15 = v5->SelectAutoTarget_Start_AU(v12, v25, v14); /*0x6f0253*/
   TeamClass *v16 = v23; /*0x6f0259*/
-  int v17 = v15; /*0x6f025d*/
+  FootClass *v17 = v15; /*0x6f025d*/
   if ( v15 ) /*0x6f0261*/
   {
   _DWORD v26[3]; // [esp+28h] [ebp-Ch] BYREF
@@ -2582,7 +2582,7 @@ LABEL_28:
     int v19 = *(_DWORD *)(v7 + 40); /*0x6f02a5*/
     v23 = v27; /*0x6f02a8*/
     SuperWeapon::FireSuperWeaponHouseClass((#375 *)v8, *(_DWORD *)(v19 + 180), (int)&v23); /*0x6f02b6*/
-    _DWORD * v20 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v17 + 72))(v17, v26); /*0x6f02c4*/
+    _DWORD * v20 = (_DWORD *)v17->GetCoords_0(v26); /*0x6f02c4*/
     LOWORD(v27) = *v20 / 256; /*0x6f02d7*/
     HIWORD(v27) = v20[1] / 256; /*0x6f02ef*/
     v23 = v27; /*0x6f02fc*/
@@ -3248,17 +3248,16 @@ namespace gamemd { int TriggerTypeClass::LoadFromINI(void* a1) {
           String,
           512) )
     return 0; /*0x7275b5*/
-  char * v3 = strtok(String, Delimiter); /*0x727290*/
+  IUnknown *v3 = strtok(String, Delimiter); /*0x727290*/
   if ( _strcmpi(v3, g_Str__none_) ) /*0x727298*/
-    int v4 = *((_DWORD *)g_SuperWeaponTypeCount + SuperWeaponTypeClass::FindByName(v3)); /*0x7272bb*/
-  else
-    v4 = *(_DWORD *)g_SuperWeaponTypeCount; /*0x7272aa*/
+    HouseTypeClass *v4 = *((_DWORD *)g_SuperWeaponTypeCount + SuperWeaponTypeClass::FindByName(v3)); /*0x7272bb*/
+  HouseTypeClass *v4 = *(_DWORD *)g_SuperWeaponTypeCount; /*0x7272aa*/
   this->House = v4; /*0x7272cb*/
-  char * v5 = strtok(0, Delimiter); /*0x7272d6*/
+  IUnknown *v5 = strtok(0, Delimiter); /*0x7272d6*/
   this->NextTrigger = 0; /*0x7272de*/
   if ( _strcmpi(v5, g_Str__none_) ) /*0x7272e4*/
   {
-  _DWORD *v8; // eax
+  TriggerTypeClass *v8; // eax
     if ( !_strcmpi(g_Str__none_, v5) || !_strcmpi(g_Str_none, v5) ) /*0x72730c*/
       goto LABEL_14; /*0x72730c*/
     int v6 = 0; /*0x72731d*/
@@ -3320,17 +3319,16 @@ LABEL_15:
     int v16 = atoi(v15); /*0x7274d4*/
     if ( v16 ) /*0x7274de*/
     {
-      int v17 = v16; /*0x7274e0*/
+      INIClass *v17 = v16; /*0x7274e0*/
       do /*0x727514*/
       {
         void * v18 = __2_YAPAXI_Z(0x58u); /*0x7274e4*/
         if ( v18 ) /*0x7274ee*/
-          int v19 = TActionClass::TActionClass(v18); /*0x7274f7*/
-        else
-          v19 = 0; /*0x7274fb*/
+          INIClass *v19 = TActionClass::TActionClass(v18); /*0x7274f7*/
+        INIClass *v19 = 0; /*0x7274fb*/
         TriggerTypeClass::ParseActionData(v19); /*0x7274ff*/
         --v17; /*0x72750a*/
-        *(_DWORD *)(v19 + 40) = this->FirstEvent; /*0x72750b*/
+        v19->q028 = this->FirstEvent; /*0x72750b*/
         this->FirstEvent = v19; /*0x72750e*/
       }
       while ( v17 ); /*0x727514*/
@@ -3377,7 +3375,7 @@ namespace gamemd { int TriggerClass::Process() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  CCINIClass *v3; // ebx
+  AbstractTypeClass *v3; // ebx
   CCINIClass *StringByIndex; // esi
   TriggerTypeClass *v7; // eax
   int i; // [esp+8h] [ebp-4h]

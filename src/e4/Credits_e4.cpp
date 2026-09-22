@@ -34,7 +34,7 @@ char Credits::Screen()
       _DWORD * v3 = v2; /*0x52cc02*/
       if ( v2 ) /*0x52cc09*/
       {
-        _DWORD * v4 = v2 + 3; /*0x52cc0b*/
+        GenericList *v4 = v2 + 3; /*0x52cc0b*/
         v2[1] = 0; /*0x52cc0e*/
         v2[2] = 0; /*0x52cc13*/
         GenericList::Constructor(v2 + 3); /*0x52cc16*/
@@ -77,7 +77,7 @@ LABEL_15:
     _DWORD * v7 = v6; /*0x52cce2*/
     if ( v6 ) /*0x52cce9*/
     {
-      _DWORD * v8 = v6 + 3; /*0x52cceb*/
+      GenericList *v8 = v6 + 3; /*0x52cceb*/
       v6[1] = 0; /*0x52ccee*/
       v6[2] = 0; /*0x52ccf3*/
       GenericList::Constructor(v6 + 3); /*0x52ccf6*/

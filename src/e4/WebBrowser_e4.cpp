@@ -72,7 +72,7 @@ int WebBrowser::ShowDialog()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND result; // eax
-  HWND v3; // edi
+  IUnknown *v3; // edi
   LONG dwNewLong; // [esp+1Ch] [ebp-28h] BYREF
   struct tagRECT Rect; // [esp+24h] [ebp-20h] BYREF
 

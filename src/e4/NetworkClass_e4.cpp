@@ -48,7 +48,7 @@ LABEL_10:
 
 // 0x6FFE00
 namespace gamemd {
-AbstractClass * NetworkClass::RecordEvent()
+AbstractClass * * NetworkClass::RecordEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -92,12 +92,12 @@ AbstractClass * NetworkClass::RecordEvent()
 
 // 0x7B1C50
 namespace gamemd {
-AnimClass * NetworkClass::UnregisterAsync()
+AnimClass * * NetworkClass::UnregisterAsync()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  HWND v2; // ecx
-  SOCKET v3; // eax
+  ObjectClass *v2; // ecx
+  AnimClass *v3; // eax
   SOCKET result; // eax
 
   v2 = g_hWnd; /*0x7b1c53*/

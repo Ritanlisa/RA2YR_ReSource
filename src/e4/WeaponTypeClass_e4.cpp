@@ -174,7 +174,7 @@ int WeaponTypeClass::Destructor()
     }
     while ( v2 < g_WeaponTypePool ); /*0x771fcc*/
   }
-  void * v3 = this->Suicide; /*0x771fce*/
+  AbstractClass *v3 = this->Suicide; /*0x771fce*/
   this->Anim = &vt_VectorClass_AnimTypeClass_const; /*0x771fd4*/
   if ( v3 && this->Anim.IsAllocated ) /*0x771fe2*/
   {
@@ -183,7 +183,7 @@ int WeaponTypeClass::Destructor()
   }
   this->Anim.IsAllocated = 0; /*0x771ff9*/
   this->Anim.Capacity = 0; /*0x771fff*/
-  void * v4 = this->q0DC; /*0x772005*/
+  CampaignClass *v4 = this->q0DC; /*0x772005*/
   this->DownReport = &vt_VectorClass_int; /*0x77200b*/
   if ( v4 && this->DownReport.IsAllocated ) /*0x772019*/
   {
@@ -192,7 +192,7 @@ int WeaponTypeClass::Destructor()
   }
   this->DownReport.IsAllocated = 0; /*0x772030*/
   this->DownReport.Capacity = 0; /*0x772036*/
-  void * v5 = this->Anim; /*0x77203c*/
+  DynamicVectorClass *v5 = this->Anim; /*0x77203c*/
   this->Report = &vt_VectorClass_int; /*0x772042*/
   if ( v5 && this->Report.IsAllocated ) /*0x772050*/
   {
@@ -291,11 +291,11 @@ void WeaponTypeClass_SaveLoad_Prefix()
   int k; // ebx
   int m; // esi
 
-  int * v4 = a2; /*0x772cd3*/
+  WeaponTypeClass *v4 = a2; /*0x772cd3*/
   _DWORD * v5 = a2 + 47; /*0x772cdd*/
   (*(void (__thiscall **)(int *))(a2[47] + 12))(a2 + 47); /*0x772ce5*/
   (*(void (__thiscall **)(int *))(v4[54] + 12))(v4 + 54); /*0x772cf4*/
-  int v6 = a3; /*0x772cf7*/
+  AbstractClass *v6 = a3; /*0x772cf7*/
   result = AbstractClass::SaveLoad_Prefix_0(v4, a3); /*0x772cfd*/
   if ( result >= 0 ) /*0x772d04*/
   {
@@ -306,10 +306,10 @@ void WeaponTypeClass_SaveLoad_Prefix()
       DynamicVectorClass::AnimTypeConstructor(v4 + 61, 0, 0); /*0x772d2b*/
       v4[61] = (int)&vt_TypeList_AnimTypeClass_const; /*0x772d30*/
     }
-    (*(void (__stdcall **)(int, int **, int, _DWORD, int))(*(_DWORD *)v6 + 12))(v6, &a2, 4, 0, a1); /*0x772d42*/
+    v6->vt_entry_68(&a2, 4, 0, a1); /*0x772d42*/
     for ( i = 0; i < a3; ++i ) /*0x772d4d*/
     {
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, &a4, 4, 0); /*0x772d5b*/
+      v6->vt_entry_68(&a4, 4, 0); /*0x772d5b*/
       DynamicVector::Add_Alt4(v4 + 61, &a4); /*0x772d69*/
     }
     if ( v5 ) /*0x772d77*/
@@ -317,18 +317,18 @@ void WeaponTypeClass_SaveLoad_Prefix()
       DynamicVectorClass::Construct(v5, 0, 0); /*0x772d7f*/
       *v5 = &vt_TypeList_int; /*0x772d84*/
     }
-    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, &a3, 4, 0); /*0x772d97*/
+    v6->vt_entry_68(&a3, 4, 0); /*0x772d97*/
     for ( j = 0; j < a3; ++j ) /*0x772da2*/
     {
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, &a4, 4, 0); /*0x772db0*/
+      v6->vt_entry_68(&a4, 4, 0); /*0x772db0*/
       DynamicVector::Add_Alt(v5, &a4); /*0x772dba*/
     }
     if ( v4 != (int *)-216 ) /*0x772dce*/
       TypeList::Construct(v4 + 54); /*0x772dd2*/
-    (*(void (__stdcall **)(int, int *, int))(*(_DWORD *)v6 + 12))(v6, &a3, 4); /*0x772de3*/
+    v6->vt_entry_68(&a3, 4); /*0x772de3*/
     for ( k = 0; k < (int)a2; ++k ) /*0x772dee*/
     {
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, &a3, 4, 0); /*0x772dfc*/
+      v6->vt_entry_68(&a3, 4, 0); /*0x772dfc*/
       DynamicVector::Add_Alt(v4 + 54, &a3); /*0x772e06*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 43); /*0x772e1e*/

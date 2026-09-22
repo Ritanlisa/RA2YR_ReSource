@@ -531,7 +531,7 @@ namespace gamemd { void Player::RandomAssign() {
   int v1 = Game_PlayerCount; /*0x69b8d5*/
   for ( i = 0; i < v1; ++i ) /*0x69b8e2*/
   {
-    int v3 = *(_DWORD *)(Game_PlayerInfoArray + 4 * i); /*0x69b8f2*/
+    WinModemClass *v3 = *(_DWORD *)(Game_PlayerInfoArray + 4 * i); /*0x69b8f2*/
     int v4 = *(_DWORD *)(v3 + 79); /*0x69b8f5*/
     if ( v4 == -3 || *(_DWORD *)(v3 + 75) == -3 ) /*0x69b8ff*/
     {
@@ -556,7 +556,7 @@ namespace gamemd { void Player::RandomAssign() {
         *(_DWORD *)(v3 + 87) = -1; /*0x69b943*/
         *(_DWORD *)(v3 + 83) = -1; /*0x69b946*/
         do /*0x69b966*/
-          int v6 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x69b95e*/
+          ScenarioClass *v6 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x69b95e*/
         while ( (unsigned __int8)NetworkSession::IsPlayerInGame(v6) ); /*0x69b966*/
         *(_DWORD *)(v3 + 83) = v6; /*0x69b96f*/
       }

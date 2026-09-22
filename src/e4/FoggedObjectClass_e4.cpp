@@ -160,7 +160,7 @@ AbstractClass * * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int 
   this->House = 0; /*0x4d0c61*/
   this->Cell = 0; /*0x4d0c64*/
   this->q030 = 29; /*0x4d0c67*/
-  int v5 = *((char *)Coord::To_Cell(&DataGlobal_87F7E8, aP1) + 283); /*0x4d0c73*/
+  HouseClass *v5 = *((char *)Coord::To_Cell(&DataGlobal_87F7E8, aP1) + 283); /*0x4d0c73*/
   this->q054 = a3; /*0x4d0c85*/
   this->q050 = v5; /*0x4d0c8c*/
   this->q058 = a4; /*0x4d0c8f*/
@@ -479,12 +479,12 @@ LABEL_47:
 }
 
 // 0x4D1370
-AbstractClass * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
+AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v17; // ebp
-  _DWORD *v18; // ebx
+  AbstractClass *v18; // ebx
   signed int i; // eax
   _DWORD v22[2]; // [esp+10h] [ebp-10h] BYREF
   int v23; // [esp+18h] [ebp-8h]
@@ -599,8 +599,8 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   int result; // eax
   signed int i; // eax
 
-  int * v2 = (int *)a2; /*0x4d2514*/
-  int * v3 = a1; /*0x4d251b*/
+  AbstractClass *v2 = (int *)a2; /*0x4d2514*/
+  AbstractClass *v3 = a1; /*0x4d251b*/
   result = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x4d2521*/
   if ( result < 0 ) /*0x4d252a*/
     return result; /*0x4d252a*/
@@ -619,7 +619,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v3 + 10); /*0x4d2580*/
   int v5 = *v2; /*0x4d2585*/
   a1 = 0; /*0x4d2590*/
-  result = (*(int (__stdcall **)(int *, int **, int, _DWORD))(v5 + 12))(v2, &a1, 4, 0); /*0x4d2594*/
+  result = v2->vt_entry_68(&a1, 4, 0); /*0x4d2594*/
   a2 = result; /*0x4d2599*/
   if ( result < 0 ) /*0x4d259d*/
     return result; /*0x4d259d*/
@@ -628,7 +628,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   {
   int v13; // ebx
 LABEL_14:
-    v17 = *(_DWORD *)(*(int (__thiscall **)(int *, int *))(*v3 + 96))(v3, &v17); /*0x4d2665*/
+    v17 = *(_DWORD *)v3->GetDirty(&v17); /*0x4d2665*/
     int v12 = 74 * (SHIWORD(v17) - (((__int16)v17 + SHIWORD(v17)) << 9) - (__int16)v17) - v3[12] + 0x7FFFFFFF; /*0x4d26a1*/
     if ( (int)(g_MissionState + 1) <= DataGlobal_8B3CC8 ) /*0x4d26aa*/
     {
@@ -676,13 +676,13 @@ LABEL_22:
   int v20; // [esp+38h] [ebp-8h]
     LOBYTE(v20) = 0; /*0x4d25c6*/
     int v21 = 0; /*0x4d25cb*/
-    result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v6 + 12))(v2, &v18, 16, 0); /*0x4d25cf*/
+    result = v2->vt_entry_68(&v18, 16, 0); /*0x4d25cf*/
     a2 = result; /*0x4d25d4*/
     if ( result < 0 ) /*0x4d25d8*/
       return result; /*0x4d2779*/
     int v7 = v3[25]; /*0x4d25de*/
     if ( v3[27] < v7 /*0x4d2605*/
-      || (*((_BYTE *)v3 + 105) || !v7)
+      || (v3->q690 || !v7)
   int v8; // eax
       && (v8 = v3[28], v8 > 0)
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(v3[23] + 8))(v3 + 23, v7 + v8, 0) )
@@ -704,7 +704,7 @@ LABEL_22:
 }
 
 // 0x4D2810
-HouseClass * FoggedObjectClass::PowerDrainUpdate(int a2)
+HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -741,7 +741,7 @@ unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * a2)
 }
 
 // 0x4D2BC0
-AbstractClass * FoggedObjectClass::ResizeArray(int a2, char * a3)
+AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -749,7 +749,7 @@ AbstractClass * FoggedObjectClass::ResizeArray(int a2, char * a3)
   int v3 = a2; /*0x4d2bc2*/
   if ( a2 ) /*0x4d2bce*/
   {
-    char * v5 = a3; /*0x4d2bd4*/
+    AbstractClass *v5 = a3; /*0x4d2bd4*/
     this->vtable4 = 0; /*0x4d2bd8*/
     if ( a3 ) /*0x4d2bdd*/
     {
@@ -850,7 +850,7 @@ int FoggedObjectClass::Read(unsigned int * a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  int v2 = this->vtable2; /*0x4d2cd0*/
+  DynamicVector *v2 = this->vtable2; /*0x4d2cd0*/
   result = 0; /*0x4d2cd5*/
   if ( v2 <= 0 ) /*0x4d2cdb*/
     return -1; /*0x4d2cfc*/
@@ -872,7 +872,7 @@ int FoggedObjectClass_42::FindItem(unsigned int * a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  int v2 = this->Items; /*0x4e07b0*/
+  FoggedObjectClass *v2 = this->Items; /*0x4e07b0*/
   result = 0; /*0x4e07b3*/
   if ( v2 <= 0 ) /*0x4e07b8*/
     return -1; /*0x4e07cf*/

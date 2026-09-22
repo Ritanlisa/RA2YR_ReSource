@@ -148,7 +148,7 @@ LABEL_33:
         goto LABEL_34; /*0x6f0cb2*/
       }
 LABEL_35:
-      unsigned int v21 = 0; /*0x6f0cc4*/
+      TechnoTypeClass *v21 = 0; /*0x6f0cc4*/
       if ( !aP2 ) /*0x6f0ccd*/
         goto LABEL_58; /*0x6f0ccd*/
       if ( !v65 ) /*0x6f0cd9*/
@@ -336,7 +336,7 @@ LABEL_70:
 
 // 0x6F8960
 namespace gamemd {
-AbstractClass * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IUnknown * a2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP3a, IUnknown * aP6, int * a7, int a9)
+AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IUnknown * a2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP3a, IUnknown * aP6, int * a7, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -352,7 +352,7 @@ AbstractClass * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IUnk
     if ( MapClass::GetTileIndex(&stru_87C374[13428], aP4, *(IUnknown **)(v11 + 1460), (IUnknown *)1) != a9 ) /*0x6f89b4*/
       return 0; /*0x6f89bc*/
   }
-  int v13 = v10[58]; /*0x6f89bf*/
+  AbstractClass *v13 = v10[58]; /*0x6f89bf*/
   v14 = 0; /*0x6f89c5*/
   if ( !v13 ) /*0x6f89c9*/
     v13 = v10[57]; /*0x6f89cb*/
@@ -377,7 +377,7 @@ AbstractClass * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IUnk
   {
     if ( (IUnknown *)v13 == aP0 ) /*0x6f8a19*/
       goto LABEL_33; /*0x6f8a19*/
-    if ( (*(_BYTE *)(v13 + 20) & 1) == 0 ) /*0x6f8a2e*/
+    if ( (v13->abstractFlags & 1) == 0 ) /*0x6f8a2e*/
     {
       v14 = 0; /*0x6f8a23*/
       goto LABEL_33; /*0x6f8a25*/
@@ -391,7 +391,7 @@ AbstractClass * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IUnk
       goto LABEL_34; /*0x6f8a6b*/
     }
 LABEL_33:
-    v13 = *(_DWORD *)(v13 + 48); /*0x6f8b3e*/
+    v13 = v13->q030; /*0x6f8b3e*/
     if ( !v13 ) /*0x6f8b43*/
       goto LABEL_34; /*0x6f8b43*/
   }
@@ -404,10 +404,10 @@ LABEL_33:
      && (!*(_BYTE *)(*(_DWORD *)&aP0->__pad_690[48] + 3779)
       || *(_DWORD *)&aP0->__pad_A8[4] != 11
       || BuildingClass::GetHealthRatio((int *)v13) > *(double *)(*(_DWORD *)&stru_87C374[44652] + 5896)
-      || (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13) != 6
-      || (*(int (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(v13 + 1312) + 132))(
-           *(_DWORD *)(v13 + 1312),
-           *(_DWORD *)(v13 + 540)) <= 0)) )
+      || v13->getAltitude() != 6
+      || (*(int (__thiscall **)(_DWORD, _DWORD))(*v13->q520 + 132))(
+           v13->q520,
+           v13->q21C) <= 0)) )
   {
     goto LABEL_33; /*0x6f8b3c*/
   }

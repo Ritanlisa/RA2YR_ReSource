@@ -9,7 +9,7 @@
 
 // 0x4F6540
 namespace gamemd {
-AbstractClass * SuperWeaponTypeClass::IsAvailable()
+AbstractClass * * SuperWeaponTypeClass::IsAvailable()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -17,7 +17,7 @@ AbstractClass * SuperWeaponTypeClass::IsAvailable()
   int v11; // ebp
   _DWORD *BuildableFromArray; // eax
   int v13; // edi
-  char v14; // cl
+  AbstractClass *v14; // cl
   int v15; // eax
   int v16; // edx
   int v17; // ecx

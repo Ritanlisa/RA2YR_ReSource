@@ -8,7 +8,7 @@
 
 // 0x5F7A90
 namespace gamemd {
-AbstractClass * VoxelAnimType::LoadSection(const char * a2, int a3)
+AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -121,7 +121,7 @@ AbstractClass * VoxelAnimType::LoadSection(const char * a2, int a3)
 
 // 0x5F7DB0
 namespace gamemd {
-AbstractClass * VoxelAnimType::LoadBarrel(const char * a2, int a3)
+AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -537,7 +537,7 @@ LABEL_93:
         sprintf(Filename, g_Str_Trace__sBARL, this + 504); /*0x5f8961*/
         _makepath(Buffer, 0, 0, Filename, g_Str_File__HVA); /*0x5f897d*/
         CCFileClass::Construct(v54, Buffer); /*0x5f8994*/
-        void * v38 = (void *)*((_DWORD *)this + 49); /*0x5f8999*/
+        AbstractClass *v38 = (void *)*((_DWORD *)this + 49); /*0x5f8999*/
         if ( v38 ) /*0x5f89a1*/
         {
           String::Release(*((void ***)this + 49)); /*0x5f89a5*/

@@ -216,7 +216,7 @@ LABEL_17:
 }
 
 // 0x5CEEF0
-AbstractClass * SessionClass::LoadMapSelection(char ** a1)
+AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -240,7 +240,7 @@ AbstractClass * SessionClass::LoadMapSelection(char ** a1)
   SessionClass *v2 = this; /*0x5ceef8*/
   v47 = this; /*0x5cef00*/
   CCFileClass::Construct3((int)&v49.ambientSoundController[1]); /*0x5cef04*/
-  char * v3 = 0; /*0x5cef09*/
+  Coord *v3 = 0; /*0x5cef09*/
   *(_DWORD *)&v49[4] = 0; /*0x5cef0f*/
   *(_DWORD *)&v49[8] = 0; /*0x5cef13*/
   GenericList::Constructor(&v49[12]); /*0x5cef17*/
@@ -489,7 +489,7 @@ int SessionClass::Destruct()
   for ( i = 0; i < *(this + 21); ++i ) /*0x5cf5fc*/
   {
     int v3 = *(this + 18); /*0x5cf5fe*/
-    void * v4 = *(void **)(v3 + 4 * i); /*0x5cf601*/
+    SessionClass *v4 = *(void **)(v3 + 4 * i); /*0x5cf601*/
     if ( v4 ) /*0x5cf606*/
     {
       DeleteAndZero(*(void ***)(v3 + 4 * i)); /*0x5cf60a*/
@@ -504,7 +504,7 @@ int SessionClass::Destruct()
   for ( j = 0; j < *(this + 15); ++j ) /*0x5cf64c*/
   {
     int v6 = this->q030; /*0x5cf64e*/
-    void * v7 = *(void **)(v6 + 4 * j); /*0x5cf651*/
+    SessionClass *v7 = *(void **)(v6 + 4 * j); /*0x5cf651*/
     if ( v7 ) /*0x5cf656*/
     {
       DeleteAndZero(*(void ***)(v6 + 4 * j)); /*0x5cf65a*/
@@ -515,7 +515,7 @@ int SessionClass::Destruct()
   for ( k = 0; k < this->SessionClass_field_10; ++k ) /*0x5cf680*/
   {
     int v9 = this->MPGameMode; /*0x5cf682*/
-    void * v10 = *(void **)(v9 + 4 * k); /*0x5cf685*/
+    SessionClass *v10 = *(void **)(v9 + 4 * k); /*0x5cf685*/
     if ( v10 ) /*0x5cf68a*/
     {
       SessionClass::loadSettings(*(_DWORD *)(v9 + 4 * k)); /*0x5cf68e*/
@@ -527,7 +527,7 @@ int SessionClass::Destruct()
 }
 
 // 0x5D0070
-CampaignClass * SessionClass::loadSettings()
+CampaignClass * * SessionClass::loadSettings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -661,7 +661,7 @@ unsigned int SessionClass::initPlayers()
 }
 
 // 0x663B40
-AbstractClass * SessionClass::BuildLobbyPlayerList()
+AbstractClass * * SessionClass::BuildLobbyPlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -671,10 +671,10 @@ AbstractClass * SessionClass::BuildLobbyPlayerList()
   while ( this->unknown_10 ) /*0x663b46*/
   {
     __3_YAXPAX_Z(*this->MPGameMode); /*0x663b53*/
-    int v2 = this->unknown_10; /*0x663b58*/
+    AbstractClass *v2 = this->unknown_10; /*0x663b58*/
     if ( v2 > 0 ) /*0x663b60*/
     {
-      int v3 = v2 - 1; /*0x663b62*/
+      AbstractClass *v3 = v2 - 1; /*0x663b62*/
       int v4 = 0; /*0x663b63*/
       for ( this->unknown_10 = v3; /*0x663b6a*/
             v4 < this->unknown_10;
@@ -687,7 +687,7 @@ AbstractClass * SessionClass::BuildLobbyPlayerList()
   result = HouseClass_Count; /*0x663b85*/
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x663b94*/
   {
-    int v6 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * i]; /*0x663ba6*/
+    ObjectClass *v6 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * i]; /*0x663ba6*/
     if ( (unsigned __int8)House::IsCurrentPlayer((#375 *)v6) && !*(_BYTE *)(v6 + 502) ) /*0x663bbc*/
     {
       char * v7 = (char *)__2_YAPAXI_Z(0x2Au); /*0x663bd8*/
@@ -713,16 +713,16 @@ AbstractClass * SessionClass::BuildLobbyPlayerList()
       }
 LABEL_15:
       v7[41] = 1; /*0x663c50*/
-      v7[39] = DataGlobal_A8E2AC == *(_DWORD *)(v6 + 48); /*0x663c6a*/
+      v7[39] = DataGlobal_A8E2AC == v6->nextObject; /*0x663c6a*/
       v7[40] = 1 << i; /*0x663c6d*/
-      int v11 = this->unknown_08; /*0x663c70*/
+      AbstractClass *v11 = this->unknown_08; /*0x663c70*/
       if ( this->unknown_10 < v11 /*0x663c93*/
         || (this->IsAllocated || !v11)
   int v12; // ecx
         && (v12 = this->unknown_14, v12 > 0)
         && (*(unsigned __int8 (__thiscall **)(void *, int, _DWORD))(this->SessionClass_field_08)(this, v11 + v12, 0) )
       {
-        int v13 = this->unknown_10; /*0x663c9a*/
+        AbstractClass *v13 = this->unknown_10; /*0x663c9a*/
         int v14 = this->MPGameMode; /*0x663c9d*/
         this->unknown_10 = v13 + 1; /*0x663ca3*/
         *(_DWORD *)(v14 + 4 * v13) = v7; /*0x663ca6*/
@@ -740,7 +740,7 @@ unsigned int * SessionClass::GetEntry(IUnknown * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v2 = this->q02C; /*0x691500*/
+  AbstractClass *v2 = this->q02C; /*0x691500*/
   if ( v2 == -1 ) /*0x691506*/
   {
     aP1->field_0 = -1; /*0x691510*/
@@ -980,7 +980,7 @@ S * SessionClass::SessionClass()
     --v7; /*0x6971c1*/
   }
   while ( v7 ); /*0x6971c2*/
-  _BYTE * v8 = this + 920; /*0x6971c4*/
+  IPXManagerClass *v8 = this + 920; /*0x6971c4*/
   int v18 = 8; /*0x6971ca*/
   do /*0x6971e5*/
   {
@@ -1054,7 +1054,7 @@ S * SessionClass::SessionClass()
   ((Waypoint *)((char *)this + 10604)).InitInvalid(); /*0x6973a0*/
   ((Waypoint *)((char *)this + 10616)).InitInvalid(); /*0x6973ab*/
   ((Waypoint *)((char *)this + 10632)).InitInvalid(); /*0x6973b6*/
-  _BYTE * v9 = this + 10644; /*0x6973bb*/
+  IPXManagerClass *v9 = this + 10644; /*0x6973bb*/
   int v10 = 8; /*0x6973c1*/
   do /*0x6973d1*/
   {
@@ -1225,7 +1225,7 @@ int SessionClass::CreateConnections()
   Debug::Log(); /*0x697b7e*/
   if ( g_GameMode_Current[0] != 3 && g_GameMode_Current[0] != 4 ) /*0x697b93*/
     return 0; /*0x697b9e*/
-  int v3 = 0; /*0x697ba7*/
+  AbstractClass *v3 = 0; /*0x697ba7*/
   if ( this->qA13 > 0 ) /*0x697bab*/
   {
     do /*0x697bc5*/
@@ -1372,7 +1372,7 @@ AbstractClass * * SessionClass::LoadMissionList()
   unsigned __int8 *v33; // eax
   wchar_t *v34; // eax
   wchar_t *v35; // eax
-  wchar_t *v36; // esi
+  AbstractClass *v36; // esi
   size_t v39; // edi
   wchar_t *String; // eax
   wchar_t *v46; // eax
@@ -1409,7 +1409,7 @@ AbstractClass * * SessionClass::LoadMissionList()
   {
     FileStraw::Open(v60, (int)v67, 0); /*0x699a03*/
     KeyCount = INIClass::GetKeyCount((char *)v60, (unsigned __int8 *)g_INI_Key_MultiMaps); /*0x699a16*/
-    int v6 = 0; /*0x699a18*/
+    AbstractTypeClass *v6 = 0; /*0x699a18*/
     if ( KeyCount > 0 ) /*0x699a1c*/
     {
       while ( 1 ) /*0x699a3f*/
@@ -1520,7 +1520,7 @@ AbstractClass * * SessionClass::LoadMissionList()
           _DWORD * v26 = __2_YAPAXI_Z(0x28u); /*0x699cd0*/
           if ( v26 ) /*0x699cda*/
           {
-            _DWORD * v27 = MixFileClass::FromFile(v26, cFileName, (int)&DataGlobal_886980); /*0x699ced*/
+            MixFileClass *v27 = MixFileClass::FromFile(v26, cFileName, (int)&DataGlobal_886980); /*0x699ced*/
             if ( v27 ) /*0x699cf1*/
             {
               if ( DataGlobal_884DD0 < DataGlobal_884DC8 /*0x699d2d*/
@@ -1568,7 +1568,7 @@ AbstractClass * * SessionClass::LoadMissionList()
                       v36 = v35; /*0x699e61*/
                       if ( v35 ) /*0x699e65*/
                       {
-                        int v37 = *((_DWORD *)v35 + 97); /*0x699e6b*/
+                        AbstractClass *v37 = *((_DWORD *)v35 + 97); /*0x699e6b*/
                         int v38 = *((_DWORD *)v35 + 96); /*0x699e71*/
                         if ( v38 == v37 ) /*0x699e7b*/
                           swprintf(Buffer, (const size_t)&DataGlobal_83F4CC, (const wchar_t *const)0x28, v38, 41); /*0x699ea8*/
@@ -1633,7 +1633,7 @@ AbstractClass * * SessionClass::LoadMissionList()
     {
       if ( (FindFileData.dwFileAttributes & 0x116) == 0 ) /*0x69a02f*/
       {
-        char * v45 = FindFileData.cAlternateFileName; /*0x69a041*/
+        ObjectClass *v45 = FindFileData.cAlternateFileName; /*0x69a041*/
         if ( !strlen(FindFileData.cAlternateFileName) ) /*0x69a048*/
           v45 = FindFileData.cFileName; /*0x69a04f*/
         INIClass::GetString( /*0x69a073*/
@@ -1943,7 +1943,7 @@ void SessionClass::SetupNetwork()
       v3 = (char **)&g_NetworkPlayerName; /*0x69bdf1*/
       while ( 1 ) /*0x69bdfb*/
       {
-        char * v4 = *v3; /*0x69bdfb*/
+        WinModemClass *v4 = *v3; /*0x69bdfb*/
         v54 = ToWideStringChar(*(char **)(Game_PlayerInfoArray + 4 * v1)); /*0x69be07*/
         char * v5 = ToWideStringChar(v4); /*0x69be0b*/
         if ( !_strcmpi(v54, v5) ) /*0x69be16*/
@@ -2122,8 +2122,8 @@ LABEL_39:
     v32 = (char **)&g_NetworkPlayerName; /*0x69c244*/
     while ( 1 ) /*0x69c24e*/
     {
-      char * v33 = *v32; /*0x69c24e*/
-      char * v34 = ToWideStringChar(*(char **)Game_PlayerInfoArray); /*0x69c259*/
+      WinModemClass *v33 = *v32; /*0x69c24e*/
+      WinModemClass *v34 = ToWideStringChar(*(char **)Game_PlayerInfoArray); /*0x69c259*/
       char * v35 = ToWideStringChar(v33); /*0x69c25b*/
       if ( !_strcmpi(v34, v35) ) /*0x69c262*/
         break; /*0x69c262*/
@@ -2175,7 +2175,7 @@ LABEL_58:
         v55 = 8; /*0x69c36c*/
         do /*0x69c416*/
         {
-          char * v43 = *(char **)v54; /*0x69c381*/
+          WinModemClass *v43 = *(char **)v54; /*0x69c381*/
           v56 = ToWideStringChar(*(char **)(v41 + this->StartSpots.Items)); /*0x69c38a*/
           char * v44 = ToWideStringChar(v43); /*0x69c38e*/
           if ( !_strcmpi(v56, v44) ) /*0x69c399*/
@@ -2216,12 +2216,12 @@ LABEL_58:
 }
 
 // 0x78F000
-Coord * SessionClass::BuildLaunchString()
+Coord * * SessionClass::BuildLaunchString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t **v4; // edi
-  wchar_t *v5; // esi
+  SessionClass *v5; // esi
   wchar_t **v6; // esi
   char **v8; // eax
   char **v9; // eax

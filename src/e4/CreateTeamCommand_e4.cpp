@@ -103,7 +103,7 @@ unsigned int * CreateTeamCommand::performAction_158()
 
 // 0x5386A0
 namespace gamemd {
-AbstractClass * CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
+AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -113,9 +113,8 @@ AbstractClass * CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
   {
     this->q00C = 0; /*0x5386b2*/
     if ( a3 ) /*0x5386b8*/
-      _DWORD * v4 = a3; /*0x5386ce*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5386ca*/
+      AbstractClass *v4 = a3; /*0x5386ce*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x5386ca*/
     this->q00C = 1; /*0x5386d2*/
     if ( !v4 ) /*0x5386d6*/
       return 0; /*0x53874a*/
@@ -3011,7 +3010,7 @@ namespace gamemd {
   int result; // eax
   _DWORD *i; // ecx
 
-  int v2 = this->Items; /*0x538750*/
+  DynamicVector *v2 = this->Items; /*0x538750*/
   result = 0; /*0x538753*/
   if ( v2 <= 0 ) /*0x538758*/
     return -1; /*0x53876f*/

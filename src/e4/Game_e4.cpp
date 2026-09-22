@@ -137,7 +137,7 @@ int Game::SendCampaignOptions()
 
 // 0x534450
 namespace gamemd {
-AbstractClass * Game::DestroyAllObjects()
+AbstractClass * * Game::DestroyAllObjects()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -309,7 +309,7 @@ AbstractClass * Game::DestroyAllObjects()
   ProcessExpiredPointers(); /*0x534892*/
   while ( DataGlobal_AC1688 ) /*0x53489d*/
   {
-    void * v2 = *(void **)DataGlobal_AC167C; /*0x5348a5*/
+    AbstractClass *v2 = *(void **)DataGlobal_AC167C; /*0x5348a5*/
     if ( *(_DWORD *)DataGlobal_AC167C ) /*0x5348a5*/
     {
       BuildingLightQueue::RemoveEntry(*(_DWORD *)DataGlobal_AC167C); /*0x5348ad*/
@@ -440,7 +440,7 @@ int Game::MakeScreenshot(int a1)
 
 // 0x5B7090
 namespace gamemd {
-HashTable * Game::StartModemMultiplayer(char a2)
+HashTable * * Game::StartModemMultiplayer(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -452,7 +452,7 @@ HashTable * Game::StartModemMultiplayer(char a2)
   Game::processStartup(this); /*0x5b70a7*/
   g_ScenarioLoadFlags = 0; /*0x5b70b1*/
   _BYTE * v4 = __2_YAPAXI_Z(0x85u); /*0x5b70bb*/
-  _BYTE * v5 = v4; /*0x5b70c0*/
+  BlowStraw *v5 = v4; /*0x5b70c0*/
   if ( v4 ) /*0x5b70ca*/
   {
     Waypoint::InitInvalid(v4 + 40); /*0x5b70d3*/
@@ -531,9 +531,9 @@ LABEL_31:
   g_NetworkQuitFlag = 0; /*0x5b72e4*/
   *((_DWORD *)g_ScenarioClass_Instance + 1173) = g_GameRulesOptions; /*0x5b72eb*/
   g_ScenarioLoadFlags = Game_PlayerCount; /*0x5b730b*/
-  int v16 = g_IntroMovieObject; /*0x5b7311*/
+  AbstractClass *v16 = g_IntroMovieObject; /*0x5b7311*/
   BYTE1(v16) = BYTE1(g_IntroMovieObject) & 0x77; /*0x5b7319*/
-  int v17 = v16 | ((HarvesterTruce & 1 | (16 * (BridgeDestruction & 1))) << 11); /*0x5b731f*/
+  AbstractClass *v17 = v16 | ((HarvesterTruce & 1 | (16 * (BridgeDestruction & 1))) << 11); /*0x5b731f*/
   LOBYTE(v17) = g_IntroMovieObject | 0xC0; /*0x5b7326*/
   g_CurrentFrame = 0; /*0x5b7329*/
   g_GameTypeFlags = 2; /*0x5b7333*/
@@ -546,7 +546,7 @@ LABEL_31:
 
 // 0x5BA660
 namespace gamemd {
-AbstractClass * Game::BuildGameSetupPacket()
+AbstractClass * * Game::BuildGameSetupPacket()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -801,7 +801,6 @@ unsigned char Game::ManageGameSpeed()
   char v16; // [esp+12h] [ebp-1Eh]
   unsigned __int8 v17; // [esp+13h] [ebp-1Dh]
   _BYTE *v18; // [esp+14h] [ebp-1Ch] BYREF
-
   _BYTE * v2 = 0; /*0x6579ef*/
   char v3 = *(_BYTE *)(this + 5309); /*0x6579f1*/
   v18 = 0; /*0x6579f7*/
@@ -821,7 +820,7 @@ unsigned char Game::ManageGameSpeed()
   _BYTE v20[16]; // [esp+20h] [ebp-10h] BYREF
     int * v6 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, v20); /*0x657a6a*/
     DrawToSurfaceSHP(DSurface_Sidebar, v5, DataGlobal_B04A38, 0x20u, v19, v6, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x657a84*/
-    int v7 = *(_DWORD *)(this + 4588); /*0x657a95*/
+    MapClass *v7 = *(_DWORD *)(this + 4588); /*0x657a95*/
     *(_DWORD *)(this + 4620) = *(_DWORD *)(this + 4580); /*0x657aab*/
     *(_DWORD *)(this + 4624) = v7; /*0x657aae*/
     *(_DWORD *)(this + 4628) = 168; /*0x657ab1*/
@@ -867,7 +866,7 @@ LABEL_13:
   }
   if ( (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v2 + 4))(v2) == 1 ) /*0x657af3*/
   {
-    int v8 = *(_DWORD *)(this + 4588); /*0x657b01*/
+    MapClass *v8 = *(_DWORD *)(this + 4588); /*0x657b01*/
     *(_DWORD *)(this + 4620) = *(_DWORD *)(this + 4580); /*0x657b12*/
     *(_DWORD *)(this + 4624) = v8; /*0x657b15*/
     *(_DWORD *)(this + 4628) = 168; /*0x657b18*/
@@ -884,7 +883,7 @@ LABEL_22:
   if ( !v4 ) /*0x657c03*/
   {
     Debug::Log(); /*0x657c0a*/
-    int v12 = *(_DWORD *)(this + 5300); /*0x657c0f*/
+    MapClass *v12 = *(_DWORD *)(this + 5300); /*0x657c0f*/
     *(_DWORD *)(this + 5292) = 5; /*0x657c1a*/
     RadarClass::SetViewMode(this, v12, 0); /*0x657c27*/
     Game_Process(); /*0x657c2c*/
@@ -1051,7 +1050,7 @@ LABEL_6:
 
 // 0x67F9C0
 namespace gamemd {
-CellStruct * Game::SerializeGameSaveState()
+CellStruct * * Game::SerializeGameSaveState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1322,11 +1321,11 @@ void sub_685120()
 
 // 0x698CB0
 namespace gamemd {
-CellStruct * Game_DumpMultiplayerGameInfo()
+CellStruct * * Game_DumpMultiplayerGameInfo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  CCINIClass *v2; // eax
+  AbstractClass *v2; // eax
   MouseClass *v4; // esi
   int i; // ebp
   unsigned int j; // edi
@@ -1528,7 +1527,7 @@ LABEL_16:
 
 // 0x77F900
 namespace gamemd {
-Coord * Game::ProcessIdle()
+Coord * * Game::ProcessIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1538,7 +1537,7 @@ Coord * Game::ProcessIdle()
   int ebp30; // ebp
   int esi30; // esi
   CCINIClass *v8; // eax
-  ObjectClass *v9; // esi
+  HashTable *v9; // esi
   int k; // esi
   int esi56; // esi
   int ebp62; // ebp
@@ -1547,7 +1546,7 @@ Coord * Game::ProcessIdle()
   AbstractClass *v16; // ebx
   AbstractClass *v17; // edx
   CCINIClass *v18; // eax
-  ObjectClass *v19; // esi
+  HashTable *v19; // esi
   int ebp107; // ebp
   ObjectClass *v24; // eax
   int X; // esi
@@ -1555,14 +1554,14 @@ Coord * Game::ProcessIdle()
   ObjectClass *Block; // [esp+28h] [ebp-9Ch] BYREF
   const char *m; // [esp+2Ch] [ebp-98h] BYREF
   char *v33; // [esp+34h] [ebp-90h] BYREF
-  int v34; // [esp+38h] [ebp-8Ch] BYREF
+  Coord *v34; // [esp+38h] [ebp-8Ch] BYREF
   MSG Msg; // [esp+3Ch] [ebp-88h] BYREF
   struct in_addr Buffer[27]; // [esp+58h] [ebp-6Ch] BYREF
 
   int v1; // ebx
   int v2; // ebp
   ScreenSaver::Process(0, v1, v2); /*0x77f90c*/
-  signed int v3 = 0; /*0x77f916*/
+  Coord *v3 = 0; /*0x77f916*/
   int v4 = 0; /*0x77f918*/
   ++*(_DWORD *)&g_NetworkPlayerBuffer[77300]; /*0x77f925*/
   if ( GameLoopMessagePump(&Msg, 0, 0, 0, 1u) ) /*0x77f92a*/
@@ -1635,12 +1634,12 @@ Coord * Game::ProcessIdle()
         String::Reassign(&v33, (AbstractClass *)((char *)dword_B777A8 + 4 * esi30)); /*0x77fb67*/
         DynamicArray::Remove(&g_WOL_ChatPool, esi30); /*0x77fb72*/
       }
-      char * v10 = String::GetOrEmpty(&v33); /*0x77fb80*/
+      Coord *v10 = String::GetOrEmpty(&v33); /*0x77fb80*/
       if ( strlen(v10) > 9 ) /*0x77fb91*/
         v10[9] = 0; /*0x77fb93*/
       strcpy((char *)(ebp30 + 36), v10); /*0x77fbb1*/
       if ( v3 ) /*0x77fbbc*/
-        *(_DWORD *)(v3 + 32) = ebp30; /*0x77fbc4*/
+        v3->q008 = ebp30; /*0x77fbc4*/
       else
         Block = (ObjectClass *)ebp30; /*0x77fbbe*/
       v3 = ebp30; /*0x77fbcb*/
@@ -1680,7 +1679,7 @@ Coord * Game::ProcessIdle()
     {
       if ( g_WOL_LoginToken <= 0 ) /*0x77fcd1*/
         break; /*0x77fcd1*/
-      int v14 = __2_YAPAXI_Z(0x6Cu); /*0x77fcde*/
+      Coord *v14 = __2_YAPAXI_Z(0x6Cu); /*0x77fcde*/
       memset((void *)v14, 0, 0x6Cu); /*0x77fce9*/
       v34 = v14; /*0x77fcf2*/
       unknown_libname_73(&v33); /*0x77fcf6*/
@@ -1781,7 +1780,7 @@ Coord * Game::ProcessIdle()
     String::ToLowerCopy((const char **)&g_WebBrowser, (char **)&m); /*0x77ffe9*/
     if ( g_GameOptionsFlags != 3 && g_GameOptionsFlags != 1 && g_GameOptionsFlags != 2 ) /*0x780008*/
     {
-      signed int v23 = g_WOL_State; /*0x78000e*/
+      Coord *v23 = g_WOL_State; /*0x78000e*/
       if ( (int)g_WOL_State > 0 ) /*0x780015*/
       {
         ebp107 = 0; /*0x78001b*/
@@ -1882,7 +1881,7 @@ void Game_Setup(CCINIClass * aP0, CCINIClass * aP1, char * Buffera, char * a3)
 
 // 0x7A2330
 namespace gamemd {
-AbstractClass * Game::SetupWOLTournament()
+AbstractClass * * Game::SetupWOLTournament()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

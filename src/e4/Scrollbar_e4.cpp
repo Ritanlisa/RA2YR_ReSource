@@ -12,7 +12,6 @@ void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a
   __int16 v10; // bp
   __int16 v23; // [esp+10h] [ebp-48h]
   __int16 v24; // [esp+14h] [ebp-44h]
-
   result = a3; /*0x6205d3*/
   int v9 = 0; /*0x6205da*/
   v10 = 0; /*0x6205dc*/

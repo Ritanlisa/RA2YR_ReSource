@@ -31,7 +31,7 @@ int FactoryClass::UpdateProduction()
     }
     if ( this->specialItem == -1 || this->production != 54 ) /*0x4c9b5d*/
     {
-      _DWORD * v3 = (_DWORD *)(this + 44); /*0x4c9b63*/
+      TerrainTypeClass *v3 = (_DWORD *)(this + 44); /*0x4c9b63*/
       Speed = CDTimerClass::TimeRemaining((int *)(this + 44)); /*0x4c9b68*/
       if ( Speed || (Speed = this->queuedCapacity) == 0 ) /*0x4c9b76*/
       {
@@ -39,7 +39,7 @@ int FactoryClass::UpdateProduction()
       }
       else
       {
-  int v6; // edi
+  HouseClass *v6; // edi
         this->production += this->object; /*0x4c9b82*/
         this->q028 = 1; /*0x4c9b89*/
         *v3 = g_CurrentFrame; /*0x4c9b92*/
@@ -53,8 +53,7 @@ int FactoryClass::UpdateProduction()
           int v5 = this->production; /*0x4c9ba4*/
           if ( v5 == 54 ) /*0x4c9bae*/
             v6 = this->balance; /*0x4c9bc5*/
-          else
-            v6 = this->balance / (54 - v5); /*0x4c9bb6*/
+          HouseClass *v6 = this->balance / (54 - v5); /*0x4c9bb6*/
         }
         else
         {
@@ -194,7 +193,7 @@ int FactoryClass::SetObject(int a2)
 
   FactoryClass::AbandonProduction(this); /*0x4c9e16*/
   this->q058 = a2; /*0x4c9e21*/
-  int v3 = *(_DWORD *)(a2 + 540); /*0x4c9e27*/
+  HouseClass *v3 = *(_DWORD *)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
   this->owner = v3; /*0x4c9e30*/
   this->q02C = g_CurrentFrame; /*0x4c9e38*/
@@ -264,7 +263,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
   int result; // eax
 
   int * v2 = a2; /*0x4ca273*/
-  int v3 = a1; /*0x4ca279*/
+  AbstractClass *v3 = a1; /*0x4ca279*/
   result = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x4ca27f*/
   if ( result >= 0 ) /*0x4ca288*/
   {
@@ -273,13 +272,13 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       AbstractClass::InitVtables((_DWORD *)v3, (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor(0, 0); /*0x4ca2b2*/
-      *(_DWORD *)(v3 + 64) = &vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4ca2b7*/
-      *(_DWORD *)(v3 + 84) = 10; /*0x4ca2bd*/
-      *(_DWORD *)(v3 + 80) = 0; /*0x4ca2c4*/
+      v3->q040 = &vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4ca2b7*/
+      v3->q054 = 10; /*0x4ca2bd*/
+      v3->q050 = 0; /*0x4ca2c4*/
       *(_DWORD *)v3 = &FactoryClass::`vftable'; /*0x4ca2c7*/
-      *(_DWORD *)(v3 + 4) = &FactoryClass::`vftable'; /*0x4ca2cd*/
-      *(_DWORD *)(v3 + 8) = &FactoryClass::`vftable'; /*0x4ca2d4*/
-      *(_DWORD *)(v3 + 12) = &vt_FactoryClass; /*0x4ca2db*/
+      v3->vtable2 = &FactoryClass::`vftable'; /*0x4ca2cd*/
+      v3->vtable3 = &FactoryClass::`vftable'; /*0x4ca2d4*/
+      v3->vtable4 = &vt_FactoryClass; /*0x4ca2db*/
     }
     int v5 = *v2; /*0x4ca2e2*/
     a1 = 0; /*0x4ca2ee*/
@@ -295,7 +294,7 @@ LABEL_14:
         if ( v6 > 0 ) /*0x4ca378*/
         {
           do /*0x4ca390*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v3 + 68) + 4 * v12++)); /*0x4ca386*/
+            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v3->q044 + 4 * v12++)); /*0x4ca386*/
           while ( v12 < a1 ); /*0x4ca390*/
         }
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v3 + 108)); /*0x4ca39b*/
@@ -311,16 +310,16 @@ LABEL_14:
           result = (*(int (__stdcall **)(int *, int **, int, _DWORD))(v7 + 12))(v2, &a2, 4, 0); /*0x4ca319*/
           if ( result < 0 ) /*0x4ca31e*/
             break; /*0x4ca31e*/
-          int v8 = *(_DWORD *)(v3 + 72); /*0x4ca324*/
-          if ( *(_DWORD *)(v3 + 80) < v8 /*0x4ca349*/
-            || (*(_BYTE *)(v3 + 77) || !v8)
+          int v8 = v3->q048; /*0x4ca324*/
+          if ( v3->q050 < v8 /*0x4ca349*/
+            || (v3->q134 || !v8)
   int v9; // eax
-            && (v9 = *(_DWORD *)(v3 + 84), v9 > 0)
-            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v3 + 64) + 8))(v3 + 64, v8 + v9, 0) )
+            && (v9 = v3->q054, v9 > 0)
+            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(v3->q040 + 8))(v3 + 64, v8 + v9, 0) )
           {
-            int v10 = *(_DWORD *)(v3 + 80); /*0x4ca350*/
-            int v11 = *(_DWORD *)(v3 + 68); /*0x4ca353*/
-            *(_DWORD *)(v3 + 80) = v10 + 1; /*0x4ca359*/
+            int v10 = v3->q050; /*0x4ca350*/
+            int v11 = v3->q044; /*0x4ca353*/
+            v3->q050 = v10 + 1; /*0x4ca359*/
             *(_DWORD *)(v11 + 4 * v10) = a2; /*0x4ca360*/
           }
           v6 = a1; /*0x4ca367*/
@@ -337,7 +336,7 @@ LABEL_14:
 
 // 0x4CA430
 namespace gamemd {
-AbstractClass * FactoryClass::Stat(int * a2)
+AbstractClass * * FactoryClass::Stat(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -476,7 +475,7 @@ int FactoryClass::IsQueued(int a2)
 {
   _DWORD *i; // ecx
 
-  int v2 = this->abstractFlags; /*0x4ca6b0*/
+  ControlClass *v2 = this->abstractFlags; /*0x4ca6b0*/
   int v3 = 0; /*0x4ca6b3*/
   if ( v2 <= 0 ) /*0x4ca6b8*/
     return 0; /*0x4ca6cd*/
@@ -527,7 +526,7 @@ void * FactoryClass::CopyTo(char a2)
     }
     while ( v4 < g_AlphaShapePool ); /*0x4ca836*/
   }
-  void * v5 = this->q011; /*0x4ca838*/
+  AbstractClass *v5 = this->q011; /*0x4ca838*/
   this->uniqueId = &vt_VectorClass_TechnoTypeClass_const; /*0x4ca83b*/
   if ( v5 && this->q134 ) /*0x4ca846*/
   {

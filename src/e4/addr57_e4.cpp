@@ -55,7 +55,7 @@ LABEL_20:
 
 // 0x575EE0
 namespace gamemd {
-Coord * sub_575EE0(void * a1, int a2)
+Coord * * sub_575EE0(void * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -125,7 +125,7 @@ Coord * sub_575EE0(void * a1, int a2)
       if ( v11 ) /*0x575ff9*/
         TeamClass::Update_0(v11, 31, 0, g_MapSeedState, 0, 0); /*0x576009*/
   int v32; // [esp+18h] [ebp-14h] BYREF
-      int v12 = *CellStruct::Add(&a2, &v32, Direction_X_Offsets); /*0x576021*/
+      HouseClass *v12 = *CellStruct::Add(&a2, &v32, Direction_X_Offsets); /*0x576021*/
       unsigned int v13 = (__int16)v12 + (SHIWORD(v12) << 9); /*0x576032*/
   void *v14; // eax
       if ( v13 < 0x40000 && (v14 = *(void **)(g_Shroud_CellArray + 4 * v13)) != 0 ) /*0x576048*/
@@ -141,7 +141,7 @@ Coord * sub_575EE0(void * a1, int a2)
       if ( v16 ) /*0x57605e*/
         TeamClass::Update_0(v16, 31, 0, g_MapSeedState, 0, 0); /*0x57606e*/
   int v33; // [esp+1Ch] [ebp-10h] BYREF
-      int v17 = *CellStruct::Add((_WORD *)v15 + 18, &v33, Direction_X_Offsets); /*0x576085*/
+      HouseClass *v17 = *CellStruct::Add((_WORD *)v15 + 18, &v33, Direction_X_Offsets); /*0x576085*/
       unsigned int v18 = (__int16)v17 + (SHIWORD(v17) << 9); /*0x576096*/
       if ( v18 >= 0x40000 || (v4 = *(void **)(g_Shroud_CellArray + 4 * v18)) == 0 ) /*0x5760ac*/
       {
@@ -157,7 +157,7 @@ Coord * sub_575EE0(void * a1, int a2)
     {
   void *v27; // esi
   int v34; // [esp+20h] [ebp-Ch] BYREF
-      int v20 = *CellStruct::Add(&a2, &v34, &g_CellDirectionOffsets); /*0x5760f0*/
+      HouseClass *v20 = *CellStruct::Add(&a2, &v34, &g_CellDirectionOffsets); /*0x5760f0*/
       unsigned int v21 = (__int16)v20 + (SHIWORD(v20) << 9); /*0x576101*/
   void *v22; // eax
       if ( v21 >= 0x40000 || (v22 = *(void **)(g_Shroud_CellArray + 4 * v21)) == 0 ) /*0x576117*/
@@ -169,7 +169,7 @@ Coord * sub_575EE0(void * a1, int a2)
       if ( v23 ) /*0x576129*/
         TeamClass::Update_0(v23, 31, 0, g_MapSeedState, 0, 0); /*0x576139*/
   int v35; // [esp+24h] [ebp-8h] BYREF
-      int v24 = *CellStruct::Add(&a2, &v35, &Direction_Y_Offsets); /*0x576151*/
+      HouseClass *v24 = *CellStruct::Add(&a2, &v35, &Direction_Y_Offsets); /*0x576151*/
       unsigned int v25 = (__int16)v24 + (SHIWORD(v24) << 9); /*0x576162*/
   void *v26; // eax
       if ( v25 < 0x40000 && (v26 = *(void **)(g_Shroud_CellArray + 4 * v25)) != 0 ) /*0x576178*/
@@ -291,7 +291,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
 
 // 0x57A430
 namespace gamemd {
-MapClass * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUnknown * aP2, int aP1a, int a5)
+MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUnknown * aP2, int aP1a, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -333,7 +333,7 @@ MapClass * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUn
   CellData = (MapClass *)Tactical::GetCellData((__int16 *)&aP2); /*0x57a45b*/
   *(_DWORD *)&CellData->__pad_30[16] = Cell::GetTerrainMask(aP0, v5, 2); /*0x57a467*/
   TerrainMask = (MapClass *)Cell::GetTerrainMask(aP0, v5, 0); /*0x57a46a*/
-  char v10 = (char)TerrainMask; /*0x57a46f*/
+  MapClass *v10 = (char)TerrainMask; /*0x57a46f*/
   aP2 = (IUnknown *)TerrainMask; /*0x57a473*/
   if ( (int)TerrainMask > 0 ) /*0x57a477*/
   {
@@ -382,7 +382,7 @@ MapClass * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUn
         g_Map_GlobalCellIndex = (IUnknown *)v48; /*0x57a5db*/
         v17 = (IUnknown *)g_CellClassArray; /*0x57a5e0*/
       }
-      char v18 = Cell::GetTerrainMask(aP0, v17, 0); /*0x57a5ef*/
+      MapClass *v18 = Cell::GetTerrainMask(aP0, v17, 0); /*0x57a5ef*/
       v53 = (MapClass *)v5->field_24; /*0x57a5f4*/
       HIWORD(v49) = HIWORD(v53); /*0x57a600*/
       unsigned int v19 = (__int16)((_WORD)v53 - 2) + (SHIWORD(v53) << 9); /*0x57a613*/
@@ -406,7 +406,7 @@ MapClass * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUn
         g_Map_GlobalCellIndex = (IUnknown *)&v53[-12].__pad_D80[944]; /*0x57a69b*/
         v23 = (IUnknown *)g_CellClassArray; /*0x57a6a0*/
       }
-      char v24 = Cell::GetTerrainMask(aP0, v23, 0); /*0x57a6b2*/
+      MapClass *v24 = Cell::GetTerrainMask(aP0, v23, 0); /*0x57a6b2*/
       v53 = (MapClass *)v5->field_24; /*0x57a6b4*/
       unsigned int v25 = (__int16)v53 + ((__int16)(HIWORD(v53) - 2) << 9); /*0x57a6d2*/
       if ( v25 >= 0x40000 || (v26 = *(IUnknown **)(*(_DWORD *)&stru_87C374[13744] + 4 * v25)) == 0 ) /*0x57a6e8*/
@@ -428,7 +428,7 @@ MapClass * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUn
         g_Map_GlobalCellIndex = (IUnknown *)&v53[11].__pad_30C[648]; /*0x57a75a*/
         v29 = (IUnknown *)g_CellClassArray; /*0x57a75f*/
       }
-      char v30 = Cell::GetTerrainMask(aP0, v29, 0); /*0x57a771*/
+      MapClass *v30 = Cell::GetTerrainMask(aP0, v29, 0); /*0x57a771*/
       v53 = (MapClass *)v5->field_24; /*0x57a773*/
       unsigned int v31 = (__int16)v53 + ((__int16)(HIWORD(v53) + 2) << 9); /*0x57a791*/
       if ( v31 >= 0x40000 || (v32 = *(IUnknown **)(*(_DWORD *)&stru_87C374[13744] + 4 * v31)) == 0 ) /*0x57a7a7*/
@@ -487,7 +487,7 @@ MapClass * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUn
 
 // 0x57ACF0
 namespace gamemd {
-MapClass * GenerateMapClassCliffTransitions()
+MapClass * * GenerateMapClassCliffTransitions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
@@ -506,7 +506,7 @@ MapClass * GenerateMapClassCliffTransitions()
   VectorClass *v23; // esi
   VectorClass *v24; // edi
   IUnknown *v26; // esi
-  int v27; // ecx
+  VectorClass *v27; // ecx
   __int16 v28; // dx
   __int16 v29; // ax
   _DWORD v39[2]; // [esp+14h] [ebp-Ch] BYREF
@@ -519,7 +519,7 @@ MapClass * GenerateMapClassCliffTransitions()
     TerrainMask = Cell::GetTerrainMask(a0, aP2, 1); /*0x57ad1b*/
   else
     TerrainMask = Cell::GetTerrainMask(a0, aP2, 0); /*0x57ad26*/
-  char v11 = TerrainMask; /*0x57ad2b*/
+  VectorClass *v11 = TerrainMask; /*0x57ad2b*/
   if ( !TerrainMask ) /*0x57ad2f*/
     return 1; /*0x57ad2f*/
   if ( v8 != (IUnknown *)2 ) /*0x57ad38*/
@@ -752,7 +752,7 @@ LABEL_71:
 
 // 0x57B440
 namespace gamemd {
-MapClass * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
+MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         MouseClass *aP0,
@@ -1179,7 +1179,7 @@ void sub_57DC20(int a1)
 
 // 0x57DD50
 namespace gamemd {
-AbstractClass * CreateCliffRampMap(IUnknown * aP0)
+AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1199,7 +1199,7 @@ AbstractClass * CreateCliffRampMap(IUnknown * aP0)
   IUnknown *v37; // eax
   AbstractClass *v38; // eax
   IUnknown *v39; // eax
-  IUnknown *v41; // esi
+  AbstractClass *v41; // esi
   AbstractClass *v42; // [esp-8h] [ebp-E4h]
   ObjectClass *v43; // [esp-4h] [ebp-E0h]
   IUnknown *v44; // [esp+0h] [ebp-DCh]
@@ -1221,7 +1221,7 @@ AbstractClass * CreateCliffRampMap(IUnknown * aP0)
   _DWORD *v47; // [esp+10h] [ebp-CCh]
   int v17; // eax
   int v15; // edx
-  _DWORD *v5; // edi
+  AbstractClass *v5; // edi
     unsigned int v3 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9); /*0x57dd92*/
   int v4; // eax
     if ( v3 < 0x40000 && (v4 = *(_DWORD *)(*(_DWORD *)&stru_87C374[13744] + 4 * v3)) != 0 ) /*0x57dda2*/
@@ -1479,7 +1479,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
   IUnknown *v38; // eax
   AbstractClass *v39; // eax
   __int16 v40; // cx
-  ObjectClass *v41; // ebx
+  AbstractClass *v41; // ebx
   ObjectClass *v42; // edi
   IUnknown *v43; // esi
   AbstractClass *v45; // [esp-8h] [ebp-E4h]
@@ -1496,7 +1496,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
   if ( v2 >= 74 && v2 <= 101 ) /*0x57e2cb*/
   {
   _DWORD v52[2]; // [esp+3Ch] [ebp-A0h] BYREF
-  int v19; // eax
+  IUnknown *v19; // eax
   char *v18; // edi
   int v17; // edx
   _DWORD *v5; // ebp
@@ -1589,7 +1589,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
         v5 = *(_DWORD **)&aP1[12]; /*0x57e435*/
       }
     }
-    int v56 = v19; /*0x57e453*/
+    IUnknown *v56 = v19; /*0x57e453*/
     char * v55 = v18; /*0x57e45c*/
   _DWORD v60[16]; // [esp+6Ch] [ebp-70h] BYREF
     v60[2] = 91; /*0x57e460*/
@@ -1737,7 +1737,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
 
 // 0x57E7A0
 namespace gamemd {
-AbstractClass * CreateCliffBridgeMap(IUnknown * aP0)
+AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1757,7 +1757,7 @@ AbstractClass * CreateCliffBridgeMap(IUnknown * aP0)
   IUnknown *v37; // eax
   AbstractClass *v38; // eax
   IUnknown *v39; // eax
-  IUnknown *v41; // esi
+  AbstractClass *v41; // esi
   AbstractClass *v42; // [esp-8h] [ebp-E4h]
   ObjectClass *v43; // [esp-4h] [ebp-E0h]
   IUnknown *v44; // [esp+0h] [ebp-DCh]
@@ -1779,7 +1779,7 @@ AbstractClass * CreateCliffBridgeMap(IUnknown * aP0)
   _DWORD *v47; // [esp+10h] [ebp-CCh]
   int v17; // eax
   int v15; // edx
-  _DWORD *v5; // edi
+  AbstractClass *v5; // edi
     unsigned int v3 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9); /*0x57e7e6*/
   int v4; // eax
     if ( v3 < 0x40000 && (v4 = *(_DWORD *)(*(_DWORD *)&stru_87C374[13744] + 4 * v3)) != 0 ) /*0x57e7f6*/
@@ -2037,7 +2037,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
   IUnknown *v38; // eax
   AbstractClass *v39; // eax
   __int16 v40; // cx
-  ObjectClass *v41; // ebx
+  AbstractClass *v41; // ebx
   ObjectClass *v42; // edi
   IUnknown *v43; // esi
   AbstractClass *v45; // [esp-8h] [ebp-E4h]
@@ -2054,7 +2054,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
   if ( v2 >= 205 && v2 <= 232 ) /*0x57ed2f*/
   {
   _DWORD v52[2]; // [esp+3Ch] [ebp-A0h] BYREF
-  int v19; // eax
+  IUnknown *v19; // eax
   char *v18; // edi
   int v17; // edx
   _DWORD *v5; // ebp
@@ -2147,7 +2147,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
         v5 = *(_DWORD **)&aP1[12]; /*0x57ee99*/
       }
     }
-    int v56 = v19; /*0x57eeb7*/
+    IUnknown *v56 = v19; /*0x57eeb7*/
     char * v55 = v18; /*0x57eec0*/
   _DWORD v60[16]; // [esp+6Ch] [ebp-70h] BYREF
     v60[2] = 222; /*0x57eec4*/

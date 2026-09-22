@@ -53,7 +53,7 @@ unsigned int * TechnoClass::TechnoClass(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  IUnknown *v4; // edx
+  TimerStruct *v4; // edx
   IUnknown *v5; // ecx
   IUnknown *v6; // ecx
   IUnknown *v7; // edx
@@ -63,7 +63,7 @@ unsigned int * TechnoClass::TechnoClass(AbstractClass * aP1)
   this->isUseless = 0; /*0x6f2b58*/
   this->q0F8 = 0; /*0x6f2b5e*/
   this->chronoWarpedByHouse = 0; /*0x6f2b64*/
-  int v3 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6f2b6a*/
+  PassengersClass *v3 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6f2b6a*/
   this->q108 = 0; /*0x6f2b6f*/
   this->q100 = v3; /*0x6f2b75*/
   this->turretChargeTimer = 0; /*0x6f2b7b*/
@@ -357,8 +357,8 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
       TechnoClass::CreatePlanningNode(esi1); /*0x6f3f83*/
     if ( *(_DWORD *)((*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)esi1->__pad_0 + 132))(esi1) + 3416) ) /*0x6f3f93*/
     {
-  void *v8; // eax
-      int v6 = __2_YAPAXI_Z(0x74u); /*0x6f3fa4*/
+  CaptureManagerClass *v8; // eax
+      PlanningTokenClass *v6 = __2_YAPAXI_Z(0x74u); /*0x6f3fa4*/
       if ( v6 ) /*0x6f3fab*/
       {
         int v33 = *(_DWORD *)((*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)esi1->__pad_0 + 132))(esi1) + 3428); /*0x6f3fbf*/
@@ -376,7 +376,7 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
     if ( *(_DWORD *)((*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)esi1->__pad_0 + 132))(esi1) + 3392) ) /*0x6f400d*/
     {
   int v11; // eax
-      int v9 = __2_YAPAXI_Z(0x64u); /*0x6f401e*/
+      AbstractClass *v9 = __2_YAPAXI_Z(0x64u); /*0x6f401e*/
       if ( v9 ) /*0x6f4025*/
       {
         int v34 = *(_DWORD *)((*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)esi1->__pad_0 + 132))(esi1) + 3404); /*0x6f4039*/
@@ -480,7 +480,7 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
     *(_DWORD *)&esi1->isDiscoveredByComputer = eax49[2]; /*0x6f429e*/
     *(_DWORD *)&esi1->sightRangeBonus = eax49[3]; /*0x6f42a7*/
     int v27 = (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)esi1->__pad_0 + 132))(esi1); /*0x6f42b1*/
-    int v28 = *(_DWORD *)(v27 + 3256); /*0x6f42b7*/
+    RecoilData *v28 = *(_DWORD *)(v27 + 3256); /*0x6f42b7*/
     result = (_DWORD *)(v27 + 3256); /*0x6f42bd*/
     *(_DWORD *)&esi1->__pad_3F7[1] = v28; /*0x6f42c2*/
     *(_DWORD *)&esi1->__pad_3F7[5] = result[1]; /*0x6f42cb*/
@@ -607,7 +607,7 @@ int TechnoClass::DTOR()
 // 0x702D40
 namespace ra2 {
 namespace game {
-Coord * TechnoClass::RegisterKill()
+Coord * * TechnoClass::RegisterKill()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -822,7 +822,7 @@ int TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, i
   {
   int v29; // [esp+50h] [ebp-40h] BYREF
   int v25; // [esp+40h] [ebp-50h] BYREF
-    int * v10 = (int *)g_DSurface_Hidden_2; /*0x7058f0*/
+    AbstractClass *v10 = (int *)g_DSurface_Hidden_2; /*0x7058f0*/
     int v11 = Random::Range(Randomizer_Global, 190, 270); /*0x705905*/
     v21 = 0; /*0x70590c*/
     if ( v11 <= 255 ) /*0x70591c*/
@@ -844,23 +844,23 @@ int TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, i
       v25 = v31 - 2; /*0x7059d0*/
       int v26 = v32 + 1; /*0x7059d8*/
       int v30 = v32 + 1; /*0x7059dc*/
-      (*(void (__thiscall **)(int *, int *, int *, int))(*v10 + 48))(v10, &v25, &v29, v14); /*0x7059eb*/
+      v10->COMStub_Ret176_12(&v25, &v29, v14); /*0x7059eb*/
       int v15 = *v10; /*0x7059f2*/
       v25 = v31 - 2; /*0x7059f9*/
       v29 = v31 + 1; /*0x705a01*/
       v26 = v32; /*0x705a05*/
       v30 = v32; /*0x705a09*/
-      (*(void (__thiscall **)(int *, int *, int *, int))(v15 + 48))(v10, &v25, &v29, v14); /*0x705a19*/
+      v10->COMStub_Ret176_12(&v25, &v29, v14); /*0x705a19*/
       v26 = v32 - 1; /*0x705a2e*/
       v30 = v32 + 2; /*0x705a32*/
       v25 = v31 - 1; /*0x705a3a*/
       v29 = v31 - 1; /*0x705a3e*/
-      (*(void (__thiscall **)(int *, int *, int *, int))(*v10 + 48))(v10, &v25, &v29, v14); /*0x705a4c*/
+      v10->COMStub_Ret176_12(&v25, &v29, v14); /*0x705a4c*/
       v25 = v31; /*0x705a58*/
       v30 = v32 + 2; /*0x705a62*/
       v26 = v32 - 1; /*0x705a66*/
       v29 = v31; /*0x705a72*/
-      (*(void (__thiscall **)(int *, int *, int *, int))(*v10 + 48))(v10, &v25, &v29, v14); /*0x705a7c*/
+      v10->COMStub_Ret176_12(&v25, &v29, v14); /*0x705a7c*/
       v13 = v42; /*0x705a7f*/
       v12 = v32; /*0x705a83*/
     }
@@ -956,7 +956,7 @@ int TechnoClass::HasVoiceResponse(int weaponIndex)
 // 0x73B140
 namespace ra2 {
 namespace game {
-HouseClass * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11)
+HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

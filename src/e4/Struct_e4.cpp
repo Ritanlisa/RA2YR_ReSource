@@ -9,7 +9,7 @@ int Struct::ClearAllMemberFlags()
 {
   int result; // eax
 
-  int v1 = *(_DWORD *)&this->__pad_0[4]; /*0x48b2a0*/
+  CommBufferClass *v1 = *(_DWORD *)&this->__pad_0[4]; /*0x48b2a0*/
   int v2 = 0; /*0x48b2a7*/
   *(_DWORD *)&this->__pad_28[4] = 0; /*0x48b2ac*/
   this->q03C = 0; /*0x48b2af*/

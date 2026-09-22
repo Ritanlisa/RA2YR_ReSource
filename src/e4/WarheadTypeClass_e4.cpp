@@ -30,7 +30,7 @@ void * WarheadTypeClass::loadWarheadINI(CCINIClass * aP1, unsigned char * a2, CC
 }
 
 // 0x525300
-AbstractClass * WarheadTypeClass::Release(int a2, unsigned int * a3)
+AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -40,15 +40,14 @@ AbstractClass * WarheadTypeClass::Release(int a2, unsigned int * a3)
   {
     this->vtable4 = 0; /*0x525312*/
     if ( a3 ) /*0x525318*/
-      _DWORD * v4 = a3; /*0x52532e*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x52532a*/
+      AbstractClass *v4 = a3; /*0x52532e*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x52532a*/
     this->vtable4 = 1; /*0x525332*/
     if ( !v4 ) /*0x525336*/
       return 0; /*0x5253aa*/
     if ( this->WarheadTypeClass_field_0x4 ) /*0x525338*/
     {
-      int v5 = this->WarheadTypeClass_field_0x8; /*0x52533f*/
+      AbstractClass *v5 = this->WarheadTypeClass_field_0x8; /*0x52533f*/
       if ( a2 < v5 ) /*0x525344*/
         v5 = a2; /*0x525346*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->WarheadTypeClass_field_0x4 + 4 * i - 4) ) /*0x52534c*/
@@ -67,7 +66,7 @@ AbstractClass * WarheadTypeClass::Release(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(void *))(this->vtable4)(this); /*0x52538e*/
   }
-  int v7 = this->WarheadTypeClass_field_0x8; /*0x525391*/
+  AbstractClass *v7 = this->WarheadTypeClass_field_0x8; /*0x525391*/
   if ( v7 < this->WarheadTypeClass_field_0x10 ) /*0x525399*/
     this->WarheadTypeClass_field_0x10 = v7; /*0x52539b*/
   return 1; /*0x52539e*/
@@ -101,7 +100,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   this->Wall = 0; /*0x52abcd*/
   if ( this->Tiberium ) /*0x52abd0*/
   {
-  int v4; // edi
+  CampaignClass *v4; // edi
     do /*0x52abfc*/
     {
       free(*this->Tiberium); /*0x52abe1*/
@@ -256,7 +255,7 @@ void * WarheadTypeClass::ReadParticleSystems(char a2)
 }
 
 // 0x644630
-ParticleSystemTypeClass * WarheadTypeClass::applyDamage()
+ParticleSystemTypeClass * * WarheadTypeClass::applyDamage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -494,11 +493,11 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
   int m; // esi
   int n; // esi
 
-  _DWORD * v2 = a1; /*0x75e0c4*/
+  AbstractTypeClass *v2 = a1; /*0x75e0c4*/
   _DWORD * v3 = a1 + 99; /*0x75e0ce*/
   (*(void (__thiscall **)(_DWORD *))(a1[99] + 12))(a1 + 99); /*0x75e0d6*/
   (*(void (__thiscall **)(_DWORD *))(v2[106] + 12))(v2 + 106); /*0x75e0e7*/
-  int v4 = a2; /*0x75e0ea*/
+  AbstractClass *v4 = a2; /*0x75e0ea*/
   result = AbstractClass::SaveLoad_Prefix_0(v2, a2); /*0x75e0f0*/
   if ( result >= 0 ) /*0x75e0f7*/
   {
@@ -519,26 +518,26 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
       DynamicVectorClass::AnimTypeConstructor(v2 + 65, 0, 0); /*0x75e169*/
       v2[65] = &vt_TypeList_AnimTypeClass_const; /*0x75e16e*/
     }
-    (*(void (__stdcall **)(int, _DWORD **, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &a1, 4, 0); /*0x75e180*/
+    v4->vt_entry_68(&a1, 4, 0); /*0x75e180*/
     for ( i = 0; i < (int)a1; ++i ) /*0x75e18b*/
     {
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &a2, 4, 0); /*0x75e199*/
+      v4->vt_entry_68(&a2, 4, 0); /*0x75e199*/
       DynamicVector::Add_Alt4(v2 + 65, &a2); /*0x75e1a7*/
     }
     if ( v3 ) /*0x75e1b5*/
       TypeList::VoxelAnimConstructor(v3); /*0x75e1b9*/
-    (*(void (__stdcall **)(int, _DWORD **, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &a1, 4, 0); /*0x75e1ca*/
+    v4->vt_entry_68(&a1, 4, 0); /*0x75e1ca*/
     for ( j = 0; j < (int)a1; ++j ) /*0x75e1d5*/
     {
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &a2, 4, 0); /*0x75e1e3*/
+      v4->vt_entry_68(&a2, 4, 0); /*0x75e1e3*/
       DynamicVector::Add2(v3, &a2); /*0x75e1ed*/
     }
     if ( v2 != (_DWORD *)-424 ) /*0x75e201*/
       TypeList::Construct(v2 + 106); /*0x75e205*/
-    (*(void (__stdcall **)(int, _DWORD **, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &a1, 4, 0); /*0x75e216*/
+    v4->vt_entry_68(&a1, 4, 0); /*0x75e216*/
     for ( k = 0; k < (int)a1; ++k ) /*0x75e221*/
     {
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &a2, 4, 0); /*0x75e22f*/
+      v4->vt_entry_68(&a2, 4, 0); /*0x75e22f*/
       DynamicVector::Add_Alt(v2 + 106, &a2); /*0x75e239*/
     }
     for ( m = 0; m < v2[69]; ++m ) /*0x75e24f*/
@@ -621,7 +620,7 @@ int WarheadTypeClass::GetDamage(int a2, int a3)
 {
   int result; // eax
 
-  int v3 = a2; /*0x75e440*/
+  WarheadTypeClass *v3 = a2; /*0x75e440*/
   if ( a2 == this->q140 ) /*0x75e44c*/
     this->q140 = 0; /*0x75e44e*/
   _DWORD * v4 = this + 65; /*0x75e459*/
@@ -675,7 +674,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2)
     }
     while ( v4 < g_AnimManager ); /*0x75e5c6*/
   }
-  void * v5 = this->q1AC; /*0x75e5c8*/
+  CampaignClass *v5 = this->q1AC; /*0x75e5c8*/
   *(this + 106) = &vt_VectorClass_int; /*0x75e5d1*/
   if ( v5 && this->q1B5 ) /*0x75e5df*/
   {
@@ -684,7 +683,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2)
   }
   this->q1B5 = 0; /*0x75e5f6*/
   this->q1B0 = 0; /*0x75e5fc*/
-  void * v6 = this->Name; /*0x75e602*/
+  AbstractClass *v6 = this->Name; /*0x75e602*/
   this->DebrisTypes = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x75e608*/
   if ( v6 && this->q199 ) /*0x75e616*/
   {
@@ -693,7 +692,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2)
   }
   this->q199 = 0; /*0x75e62d*/
   this->MaxDebris = 0; /*0x75e633*/
-  void * v7 = this->q042; /*0x75e639*/
+  CampaignClass *v7 = this->q042; /*0x75e639*/
   this->q104 = &vt_VectorClass_AnimTypeClass_const; /*0x75e63f*/
   if ( v7 && this->q111 ) /*0x75e64d*/
   {

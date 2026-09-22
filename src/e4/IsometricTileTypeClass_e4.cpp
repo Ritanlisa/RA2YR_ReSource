@@ -40,7 +40,7 @@ int IsometricTileTypeClass::ProcessPower(int * a2)
 }
 
 // 0x549C80
-AbstractClass * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
+AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

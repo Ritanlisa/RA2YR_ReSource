@@ -10,7 +10,7 @@ long MainMenu_Screen()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  HWND v2; // esi
+  IUnknown *v2; // esi
   HWND DlgItem; // esi
   unsigned __int16 v6; // ax
   const char **v9; // edi
@@ -123,7 +123,7 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax
-  HWND v6; // esi
+  wchar_t *v6; // esi
   const wchar_t *v8; // eax
   HWND DlgItem; // eax
   wchar_t lParam[128]; // [esp+Ch] [ebp-100h] BYREF

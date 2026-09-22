@@ -249,12 +249,12 @@ void * AirstrikeClass::CopyTo(char a2)
 // 0x420E90
 namespace ra2 {
 namespace game {
-AbstractClass * AirstrikeClass::UpdateAll()
+AbstractClass * * AirstrikeClass::UpdateAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  _DWORD *v0; // eax
+  AbstractClass *v0; // eax
   LOBYTE(v0) = unk_89A134; /*0x420e90*/
   if ( !unk_89A134 ) /*0x420e98*/
   {

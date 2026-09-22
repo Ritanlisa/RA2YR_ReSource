@@ -121,7 +121,7 @@ unsigned int * sub_5B3FF0(unsigned int * a1, unsigned int * a2)
 
 // 0x5B40B0
 namespace gamemd {
-AbstractClass * SearchMIXFile(char * Source, IUnknown * aP1)
+AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -143,7 +143,7 @@ AbstractClass * SearchMIXFile(char * Source, IUnknown * aP1)
   _strupr(Str[0]); /*0x5b40ee*/
   memset(v14, 0, sizeof(v14)); /*0x5b4110*/
   int v3 = Checksummer::Add_Buffer(v14, (unsigned __int8 *)&Str, (IUnknown *)strlen(Str[0])); /*0x5b4127*/
-  _DWORD * v4 = *(&g_MatrixTransformState + 127); /*0x5b4129*/
+  AbstractClass *v4 = *(&g_MatrixTransformState + 127); /*0x5b4129*/
   if ( !*(&g_MatrixTransformState + 127) ) /*0x5b4130*/
     goto LABEL_9; /*0x5b4130*/
   while ( 1 ) /*0x5b4132*/
@@ -155,8 +155,7 @@ AbstractClass * SearchMIXFile(char * Source, IUnknown * aP1)
 LABEL_5:
     if ( v6 ) /*0x5b4140*/
       v4 = (_DWORD *)v4[1]; /*0x5b4142*/
-    else
-      v4 = (_DWORD *)*v4; /*0x5b4147*/
+    AbstractClass *v4 = (_DWORD *)*v4; /*0x5b4147*/
     if ( !v4 ) /*0x5b414b*/
       goto LABEL_9; /*0x5b414b*/
   }
@@ -222,7 +221,7 @@ LABEL_9:
 
 // 0x5B4430
 namespace gamemd {
-ObjectClass * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4, unsigned int * a5)
+ObjectClass * * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4, unsigned int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -243,7 +242,7 @@ LABEL_3:
   int v9; // esi
     if ( !v6 || !v6[1] || !v6[2] ) /*0x5b44c0*/
       return 0; /*0x5b4580*/
-    int v7 = v6[5]; /*0x5b44cb*/
+    ObjectClass *v7 = v6[5]; /*0x5b44cb*/
     int v8 = v6[8]; /*0x5b44ce*/
     if ( v7 <= 0 ) /*0x5b44d3*/
       goto LABEL_14; /*0x5b44d3*/
@@ -326,7 +325,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
   switch ( a2 ) /*0x5b4b56*/
   {
     case 2u: /*0x5b4b56*/
-      void * v15 = g_UIControlState; /*0x5b4ead*/
+      IUnknown *v15 = g_UIControlState; /*0x5b4ead*/
       if ( g_UIControlState ) /*0x5b4eb5*/
       {
         ComPtr::Dtor(g_UIControlState); /*0x5b4eb9*/
@@ -453,11 +452,11 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
 
 // 0x5B67F0
 namespace gamemd {
-AbstractClass * ApplyGameOptions(CampaignScore * aP0)
+AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  ObjectClass *v5; // edx
+  AbstractClass *v5; // edx
   const wchar_t *v11; // esi
   ObjectClass *v12; // esi
   if ( HouseClass_Player[29964] == (BYTE2(aP0[3].CampaignScore_field_0x14) & 1) ) /*0x5b6807*/
@@ -511,7 +510,7 @@ AbstractClass * ApplyGameOptions(CampaignScore * aP0)
   *(_DWORD *)&HouseClass_Player[29968] = *(int *)((char *)&aP0[3].CampaignScore_field_0x10 + 2); /*0x5b6a9f*/
   *(_DWORD *)&HouseClass_Player[29988] = HIBYTE(aP0[3].CampaignScore_field_0x1C); /*0x5b6aaa*/
   *(_DWORD *)&HouseClass_Player[45128] = *(_DWORD *)&aP0[4].__pad_0[2]; /*0x5b6ab6*/
-  int v6 = *(int *)((char *)&aP0[4].CampaignScore_field_0x04 + 2); /*0x5b6abc*/
+  AbstractClass *v6 = *(int *)((char *)&aP0[4].CampaignScore_field_0x04 + 2); /*0x5b6abc*/
   *(_DWORD *)&HouseClass_Player[44052] = v6; /*0x5b6ac4*/
   LOBYTE(v6) = v6 | 0xC0; /*0x5b6acf*/
   *(_DWORD *)&HouseClass_Player[29980] = BYTE2(aP0[4].CampaignScore_field_0x10); /*0x5b6ad1*/
@@ -573,17 +572,16 @@ LABEL_33:
 
 // 0x5BB290
 namespace gamemd {
-LZOPipe * __usercall GenerateRandomMapPreview(int a1@<esi> a1)
+LZOPipe * * __usercall GenerateRandomMapPreview(int a1@<esi> a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *Palette; // esi
-  DWORD v6; // esi
+  AbstractClass *v6; // esi
   signed int Buffer; // [esp+10h] [ebp-280h] BYREF
   DWORD TicksTimer; // [esp+14h] [ebp-27Ch]
   LPCSTR v15[9]; // [esp+4Ch] [ebp-244h] BYREF
   __int16 v18; // [esp+190h] [ebp-100h]
-
   TicksTimer = Timer::GetTicks(); /*0x5bb2af*/
   int v10 = 0; /*0x5bb2b3*/
   if ( !_strcmpi(&Destination, aRandmapSed) ) /*0x5bb2b7*/
@@ -640,7 +638,7 @@ LABEL_15:
     Buffer = 0; /*0x5bb403*/
     Palette = Palette::Preview_Generate((int *)g_UIControlState, a1, 64, (size_t *)&Buffer); /*0x5bb410*/
     Debug::Log(); /*0x5bb418*/
-    void * v4 = __2_YAPAXI_Z(4 * Buffer); /*0x5bb435*/
+    AbstractClass *v4 = __2_YAPAXI_Z(4 * Buffer); /*0x5bb435*/
   int v12[3]; // [esp+2Ch] [ebp-264h] BYREF
     v12[1] = 0; /*0x5bb437*/
     v12[2] = 0; /*0x5bb448*/
@@ -1062,7 +1060,7 @@ void sub_5BF390(int a1, char a2)
 
 // 0x5BF8C0
 namespace gamemd {
-ObjectClass * sub_5BF8C0()
+ObjectClass * * sub_5BF8C0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1097,7 +1095,7 @@ ObjectClass * sub_5BF8C0()
 
 // 0x5BF950
 namespace gamemd {
-AbstractClass * sub_5BF950()
+AbstractClass * * sub_5BF950()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1117,7 +1115,7 @@ AbstractClass * sub_5BF950()
       a2,
       a3,
       a1);
-    _DWORD * v4 = *(_DWORD **)(g_BigIntPool + 72); /*0x5bf98c*/
+    AudioController *v4 = *(_DWORD **)(g_BigIntPool + 72); /*0x5bf98c*/
     if ( v4 ) /*0x5bf991*/
     {
       if ( *v4 ) /*0x5bf997*/
@@ -1177,7 +1175,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   int Height; // ebp
   void *eax30a; // eax
   IUnknown *v31; // ecx
-  void *v32; // eax
+  IUnknown *v32; // eax
   IUnknown *v28; // edx
   int v34; // ebp
   int v35; // eax

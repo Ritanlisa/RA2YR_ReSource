@@ -53,11 +53,11 @@ bool sub_46D650()
     int v5 = *v4; /*0x46d6c3*/
     if ( *v4 && v5 != g_HouseClass_ObserverFlags && v5 != g_Lobby_PlayerCount ) /*0x46d6d7*/
     {
-      int v6 = *(v4 - 266); /*0x46d6d9*/
+      CampaignClass *v6 = *(v4 - 266); /*0x46d6d9*/
       if ( SessionClass::GetOption(v5) != v6 ) /*0x46d6e6*/
         v0 = 1; /*0x46d6e8*/
       SessionClass::SetOption(*v4, v6); /*0x46d6ed*/
-      int v7 = *(v4 - 258); /*0x46d6f4*/
+      CampaignClass *v7 = *(v4 - 258); /*0x46d6f4*/
       if ( SessionClass::GetPlayerSide(*v4) != v7 ) /*0x46d701*/
         v0 = 1; /*0x46d703*/
       SessionClass::SetPlayerOption(*v4, v7); /*0x46d708*/
@@ -111,7 +111,7 @@ void sub_46D8B0()
   int PlayerSide; // eax
 
   char v0 = 0; /*0x46d8b3*/
-  int v1 = 0; /*0x46d8b5*/
+  WinModemClass *v1 = 0; /*0x46d8b5*/
   v2 = (const wchar_t **)&g_NetworkPlayerName; /*0x46d8b7*/
   while ( 1 ) /*0x46d8c1*/
   {
@@ -195,9 +195,9 @@ void sub_46DA70()
   int v17 = HouseClass_Count; /*0x46da85*/
   for ( i = 0; v1 < v0; i = v1 ) /*0x46da8d*/
   {
-    int v2 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v1]; /*0x46da9a*/
+    ObjectClass *v2 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v1]; /*0x46da9a*/
     if ( v2 /*0x46dab7*/
-      && *(_BYTE *)(*(_DWORD *)(v2 + 52) + 422) != 1
+      && *(_BYTE *)(v2->attachedTag + 422) != 1
       && (unsigned __int8)House::IsCurrentPlayer(*(#375 **)&HouseClass_Array->__pad_0[4 * v1]) )
     {
       v3 = g_CampaignScoreFlags++; /*0x46dacf*/
@@ -209,7 +209,7 @@ void sub_46DA70()
       DataGlobal_A8D23C[28 * v3] = 0; /*0x46db05*/
       DataGlobal_A8D24C[28 * v3] = 0; /*0x46db0b*/
       DataGlobal_A8D25C[28 * v3] = 0; /*0x46db11*/
-      DataGlobal_A8D224[28 * v3] = *(_DWORD *)(v2 + 90196); /*0x46db1d*/
+      DataGlobal_A8D224[28 * v3] = v2->q16054; /*0x46db1d*/
       if ( !*(_BYTE *)(v2 + 501) ) /*0x46db23*/
       {
         ++DataGlobal_A8D228[28 * v3]; /*0x46db34*/

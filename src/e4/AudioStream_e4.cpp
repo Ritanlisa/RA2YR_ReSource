@@ -149,7 +149,7 @@ int AudioStream::SetupPlayback()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->AudioStream_field_0xA8; /*0x404700*/
+  AudioStream *v1 = this->AudioStream_field_0xA8; /*0x404700*/
   int v2 = 0; /*0x404707*/
   int v3 = 0; /*0x404709*/
   this->AudioStream_field_0x1E0 = v1; /*0x40470e*/
@@ -212,7 +212,7 @@ int AudioStream::SelectRandom()
       int v5 = Random::Range(Randomizer_Global, 0, v4 - 1); /*0x4047ea*/
       int v6 = this->AudioStream_field_0x1E0 - 1; /*0x404803*/
       this->AudioStream_field_0xAC = *(_DWORD *)(this + 4 * v5 + 352); /*0x404804*/
-      int v7 = v5; /*0x40480c*/
+      TechnoTypeClass *v7 = v5; /*0x40480c*/
       if ( v5 < v6 ) /*0x40480f*/
       {
         _DWORD * v8 = (_DWORD *)(this + 4 * v5 + 352); /*0x404811*/
@@ -315,7 +315,7 @@ void AudioStream::CleanupChannels()
         }
         LinkedList::Init((_DWORD **)v0); /*0x404f77*/
         v0[78] = 0; /*0x404f7c*/
-        if ( *((char *)v0 + 24) >= 0 ) /*0x404f87*/
+        if ( v0->nextArrayIndex >= 0 ) /*0x404f87*/
           PushFrontLinkedListAlt(DataGlobal_87E2A8, (int)v0); /*0x404f9c*/
         else
           __3_YAXPAX_Z(v0); /*0x404f8a*/
@@ -485,7 +485,7 @@ int AudioStream::ReadSamples(const void * a2)
       {
         if ( *v2 == 1 ) /*0x4a347f*/
         {
-          _DWORD * v5 = g_ZBufferDescriptor; /*0x4a3485*/
+          MouseClass *v5 = g_ZBufferDescriptor; /*0x4a3485*/
           if ( g_ZBufferDescriptor ) /*0x4a348d*/
           {
             if ( g_VisibleSurfaceDescriptor ) /*0x4a3499*/
@@ -554,7 +554,7 @@ int AudioStream::ReadSamples(const void * a2)
 
 // 0x4BEAC0
 namespace gamemd {
-MouseClass * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8)
+MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

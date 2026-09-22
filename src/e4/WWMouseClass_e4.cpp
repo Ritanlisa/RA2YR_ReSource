@@ -24,10 +24,10 @@ unsigned int * WWMouseClass::initSurface()
       {
         int v4 = result[21]; /*0x7b9069*/
         int v5 = result[19]; /*0x7b906d*/
-        int v6 = result[20]; /*0x7b9071*/
+        DynamicVector *v6 = result[20]; /*0x7b9071*/
   _DWORD v9[4]; // [esp+14h] [ebp-10h] BYREF
         v9[0] = result[11] + result[18]; /*0x7b9074*/
-        int v7 = result[12]; /*0x7b9078*/
+        RandomMap *v7 = result[12]; /*0x7b9078*/
   _DWORD v8[4]; // [esp+4h] [ebp-20h] BYREF
         v8[0] = 0; /*0x7b907f*/
         v8[1] = 0; /*0x7b9083*/
@@ -142,7 +142,7 @@ void* WWMouseClass::captureMouse()
         }
         int v7 = v16; /*0x7b9b8a*/
         int v8 = v17; /*0x7b9b8e*/
-        int v9 = v18; /*0x7b9b98*/
+        AbstractClass *v9 = v18; /*0x7b9b98*/
         int v10 = v19; /*0x7b9b9c*/
   _DWORD v20[4]; // [esp+14h] [ebp-20h] BYREF
         v20[0] = v16; /*0x7b9ba0*/
@@ -153,13 +153,13 @@ void* WWMouseClass::captureMouse()
         this->q014 = v9; /*0x7b9bb6*/
         this->q054 = v10; /*0x7b9bb9*/
         int v11 = v7 + this->q02C; /*0x7b9bbf*/
-        int * v12 = (int *)this->q044; /*0x7b9bc1*/
+        MouseClass *v12 = (int *)this->q044; /*0x7b9bc1*/
         v20[0] = v11; /*0x7b9bc4*/
         v20[1] = this->q00C + v8; /*0x7b9bcd*/
         int v13 = *v12; /*0x7b9bd1*/
         IUnknown *v15 = this->q024; /*0x7b9bdb*/
         v14 = (IUnknown *)Rect::Set(v21, 0, 0, v9, v10); /*0x7b9be6*/
-        (*(void (__thiscall **)(_DWORD, IUnknown *, int, _DWORD *, _DWORD, int))(v13 + 8))( /*0x7b9bef*/
+        v12->Release(/*0x7b9bef*/
           this->q044,
           v14,
           v15,
@@ -195,10 +195,10 @@ void WWMouseClass::releaseMouse()
         Debug::Log(); /*0x7b9cc1*/
       if ( this->q050 > 0 && this->q054 > 0 ) /*0x7b9cd6*/
       {
-        int v3 = this->WWMouseClass_field_0x24; /*0x7b9cd8*/
+        IUnknown *v3 = this->WWMouseClass_field_0x24; /*0x7b9cd8*/
         if ( v3 ) /*0x7b9cdd*/
         {
-          int v4 = this->WWMouseClass_field_0x44; /*0x7b9cdf*/
+          MouseClass *v4 = this->WWMouseClass_field_0x44; /*0x7b9cdf*/
           if ( v4 ) /*0x7b9ce4*/
           {
             int v5 = this->q04C; /*0x7b9ce9*/
@@ -215,13 +215,8 @@ void WWMouseClass::releaseMouse()
             v10[1] = v8; /*0x7b9d19*/
             v9[2] = v6; /*0x7b9d1d*/
             v9[3] = v7; /*0x7b9d21*/
-            (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)v3 + 8))( /*0x7b9d2d*/
-              v3,
-              v10,
-              v4,
-              v9,
-              0,
-              1);
+            v3->vt_slot_8(/*0x7b9d2d*/
+              v3, v10, v4, v9, 0, 1);
           }
         }
       }

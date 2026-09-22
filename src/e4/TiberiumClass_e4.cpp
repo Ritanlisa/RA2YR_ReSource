@@ -16,12 +16,12 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   __int16 v14; // cx
   int i; // [esp+28h] [ebp-4h]
 
-  _DWORD * v28 = (_DWORD *)RandomMap::CellListAlloc(a1); /*0x5a0171*/
+  VectorClass *v28 = (_DWORD *)RandomMap::CellListAlloc(a1); /*0x5a0171*/
   for ( i = 0; i < a2; ++i ) /*0x5a0181*/
   {
-  _DWORD *v29; // [esp+14h] [ebp-18h]
+  VectorClass *v29; // [esp+14h] [ebp-18h]
     _DWORD * v8 = __2_YAPAXI_Z(0x18u); /*0x5a0189*/
-    _DWORD * v9 = v8; /*0x5a018e*/
+    VectorClass *v9 = v8; /*0x5a018e*/
     if ( v8 ) /*0x5a0195*/
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
@@ -34,7 +34,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     {
       v29 = 0; /*0x5a01b6*/
     }
-    _DWORD * v10 = v28; /*0x5a01ba*/
+    VectorClass *v10 = v28; /*0x5a01ba*/
     int v31 = 0; /*0x5a01be*/
     v29[5] = 3 * v28[4]; /*0x5a01cc*/
     if ( (int)v28[4] > 0 ) /*0x5a01d4*/
@@ -73,10 +73,10 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
             {
               int v22 = v29[2]; /*0x5a02ff*/
               if ( v29[4] < v22 /*0x5a0324*/
-                || (*((_BYTE *)v29 + 13) || !v22)
+                || (v29->IsAllocated || !v22)
   int v23; // eax
                 && (v23 = v29[5], v23 > 0)
-                && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v29 + 8))(v29, v22 + v23, 0) )
+                && v29->Release(v22 + v23, 0) )
               {
                 int v24 = v29[4]; /*0x5a032b*/
                 int v25 = v29[1]; /*0x5a032e*/
@@ -199,13 +199,13 @@ int TiberiumClass::LoadFromINI(unsigned char *** aP1)
 {
   int Int_Overwrite; // eax
   double Double_Overwrite; // st7
-  CCINIClass *v5; // eax
+  LineTrail *v5; // eax
   int eax2a; // eax
   CCINIClass *v7; // eax
   INIClass *v11; // ecx
   AbstractClass *i; // eax
   int ecx10; // ecx
-  VectorClass *v13; // edx
+  WeaponStruct *v13; // edx
   VectorClass *v14; // eax
   char result; // al
   INIClass *_FFFFFFF4; // [esp-Ch] [ebp-D0h]
@@ -342,7 +342,7 @@ LABEL_19:
 
 // 0x721E80
 namespace gamemd {
-AbstractClass * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
+AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -352,7 +352,7 @@ AbstractClass * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
   void **v9; // ecx
   int result; // eax
 
-  int v2 = a1; /*0x721e83*/
+  AbstractTypeClass *v2 = a1; /*0x721e83*/
   int v3 = 0; /*0x721e87*/
   _DWORD * v4 = *(_DWORD **)(a1 + 244); /*0x721e8a*/
   if ( v4 ) /*0x721e92*/
@@ -360,10 +360,10 @@ AbstractClass * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     for ( i = 0; i <= *v4; *(_DWORD *)(v4[2] + 4 * i - 4) = 0 ) /*0x721e9a*/
       ++i; /*0x721e9f*/
     *v4 = 0; /*0x721eaa*/
-    v6 = *(void ***)(v2 + 244); /*0x721eac*/
+    v6 = v2->UINameLabel; /*0x721eac*/
     if ( v6 ) /*0x721eb4*/
       Scalar::Dtor(v6, 1); /*0x721eb8*/
-    *(_DWORD *)(v2 + 244) = 0; /*0x721ebd*/
+    v2->UINameLabel = 0; /*0x721ebd*/
   }
   if ( *(_DWORD *)(v2 + 252) ) /*0x721ec3*/
   {
@@ -375,17 +375,17 @@ AbstractClass * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     __3_YAXPAX_Z(*(void **)(v2 + 248)); /*0x721ee7*/
     *(_DWORD *)(v2 + 248) = 0; /*0x721eef*/
   }
-  _DWORD * v7 = *(_DWORD **)(v2 + 272); /*0x721ef5*/
-  *(_DWORD *)(v2 + 240) = 0; /*0x721efb*/
+  _DWORD * v7 = v2->q110; /*0x721ef5*/
+  v2->q0F0 = 0; /*0x721efb*/
   if ( v7 ) /*0x721f03*/
   {
     for ( j = 0; j <= *v7; *(_DWORD *)(v7[2] + 4 * j - 4) = 0 ) /*0x721f0b*/
       ++j; /*0x721f10*/
     *v7 = 0; /*0x721f1b*/
-    v9 = *(void ***)(v2 + 272); /*0x721f1d*/
+    v9 = v2->q110; /*0x721f1d*/
     if ( v9 ) /*0x721f25*/
       Scalar::Dtor(v9, 1); /*0x721f29*/
-    *(_DWORD *)(v2 + 272) = 0; /*0x721f2e*/
+    v2->q110 = 0; /*0x721f2e*/
   }
   if ( *(_DWORD *)(v2 + 280) ) /*0x721f34*/
   {
@@ -397,10 +397,10 @@ AbstractClass * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     __3_YAXPAX_Z(*(void **)(v2 + 276)); /*0x721f58*/
     *(_DWORD *)(v2 + 276) = 0; /*0x721f60*/
   }
-  int v10 = *(_DWORD *)(v2 + 196); /*0x721f66*/
-  *(_DWORD *)(v2 + 268) = 0; /*0x721f74*/
+  int v10 = v2->q031; /*0x721f66*/
+  v2->q10C = 0; /*0x721f74*/
   (*(void (__thiscall **)(int))(v10 + 12))(v2 + 196); /*0x721f7a*/
-  int v11 = a2; /*0x721f7d*/
+  AbstractClass *v11 = a2; /*0x721f7d*/
   result = AbstractClass::SaveLoad_Prefix_0((_DWORD *)v2, a2); /*0x721f83*/
   if ( result >= 0 ) /*0x721f8a*/
   {
@@ -408,24 +408,24 @@ AbstractClass * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     {
       AbstractTypeClass::Init(v2, (int)&a1); /*0x721f9b*/
       DynamicVectorClass::AnimTypeConstructor((_DWORD *)(v2 + 196), 0, 0); /*0x721fa4*/
-      *(_DWORD *)(v2 + 196) = &vt_TypeList_AnimTypeClass_const; /*0x721fb0*/
+      v2->q031 = &vt_TypeList_AnimTypeClass_const; /*0x721fb0*/
       Timer::Start((_DWORD *)(v2 + 256), 0); /*0x721fb6*/
       Timer::Start((_DWORD *)(v2 + 284), 0); /*0x721fc2*/
       *(_DWORD *)v2 = &TiberiumClass::`vftable'; /*0x721fc7*/
-      *(_DWORD *)(v2 + 4) = &TiberiumClass::`vftable'; /*0x721fcd*/
-      *(_DWORD *)(v2 + 8) = &TiberiumClass::`vftable'; /*0x721fd4*/
-      *(_DWORD *)(v2 + 12) = &vt_TiberiumClass; /*0x721fdb*/
+      v2->vtable2 = &TiberiumClass::`vftable'; /*0x721fcd*/
+      v2->vtable3 = &TiberiumClass::`vftable'; /*0x721fd4*/
+      v2->vtable4 = &vt_TiberiumClass; /*0x721fdb*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 224)); /*0x721fee*/
     if ( v2 != -196 ) /*0x721ff5*/
       AnimTypeList::Constructor((_DWORD *)(v2 + 196)); /*0x721ff9*/
-    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v11 + 12))(v11, &a1, 4, 0); /*0x722009*/
+    v11->vt_entry_68(&a1, 4, 0); /*0x722009*/
     result = 0; /*0x72200c*/
     if ( a1 > 0 ) /*0x722012*/
     {
       do /*0x722037*/
       {
-        (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v11 + 12))(v11, &a2, 4, 0); /*0x722023*/
+        v11->vt_entry_68(&a2, 4, 0); /*0x722023*/
         DynamicVector::Add_Alt4((_DWORD *)(v2 + 196), &a2); /*0x72202d*/
         ++v3; /*0x722032*/
       }
@@ -440,10 +440,10 @@ AbstractClass * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       while ( v13 < *(_DWORD *)(v2 + 212) ); /*0x722064*/
       result = 0; /*0x722066*/
     }
-    *(_DWORD *)(v2 + 272) = 0; /*0x722068*/
+    v2->q110 = 0; /*0x722068*/
     *(_DWORD *)(v2 + 276) = 0; /*0x72206e*/
     *(_DWORD *)(v2 + 280) = 0; /*0x722074*/
-    *(_DWORD *)(v2 + 244) = 0; /*0x72207a*/
+    v2->UINameLabel = 0; /*0x72207a*/
     *(_DWORD *)(v2 + 248) = 0; /*0x722080*/
     *(_DWORD *)(v2 + 252) = 0; /*0x722086*/
   }

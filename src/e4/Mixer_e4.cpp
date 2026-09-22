@@ -22,7 +22,7 @@ int Mixer::ReleaseChannel()
   result = v3[9]; /*0x40607f*/
   if ( *(this + 2) == (int *)result && *(this + 1) == (int *)v3[78] ) /*0x406094*/
   {
-    if ( (*(_BYTE *)(result + 16) & 1) == 0 || *(_DWORD *)(result + 76) ) /*0x40609c*/
+    if ( (result->q010 & 1) == 0 || *(_DWORD *)(result + 76) ) /*0x40609c*/
       goto LABEL_14; /*0x40609f*/
     if ( (v3[6] & 0x20) == 0 ) /*0x4060a5*/
     {

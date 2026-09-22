@@ -7,12 +7,12 @@
 
 // 0x610570
 namespace gamemd {
-AbstractClass * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
+AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v8; // ecx
-  HWND v9; // edi
+  AbstractClass *v9; // edi
   HWND *v11; // eax
   void *WindowLongA; // eax
 
@@ -37,13 +37,13 @@ AbstractClass * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
     __3_YAXPAX_Z(v15[10]); /*0x610600*/
     v15[10] = 0; /*0x610608*/
   }
-  _DWORD * v4 = v15[13]; /*0x61060c*/
+  AbstractClass *v4 = v15[13]; /*0x61060c*/
   if ( v15[13] ) /*0x610612*/
   {
     do /*0x61064d*/
     {
-      _DWORD * v5 = 0; /*0x610614*/
-      _DWORD * v6 = v4; /*0x610618*/
+      AbstractClass *v5 = 0; /*0x610614*/
+      AbstractClass *v6 = v4; /*0x610618*/
       if ( !v4 ) /*0x61061a*/
         break; /*0x61061a*/
       while ( v4 != v6 ) /*0x61061e*/
@@ -212,7 +212,7 @@ void sub_610B50()
 
 // 0x610BF0
 namespace gamemd {
-AbstractClass * sub_610BF0()
+AbstractClass * * sub_610BF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -259,10 +259,10 @@ void sub_612930()
   unsigned int v0 = DataGlobal_AC1860; /*0x612930*/
   for ( i = 0; i < DataGlobal_AC1860; v0 = DataGlobal_AC1860 ) /*0x61293d*/
   {
-    _DWORD * v2 = (_DWORD *)*((_DWORD *)DataGlobal_AC1858 + i); /*0x612944*/
+    AbstractClass *v2 = (_DWORD *)*((_DWORD *)DataGlobal_AC1858 + i); /*0x612944*/
     while ( v2 ) /*0x612949*/
     {
-      void * v3 = v2; /*0x61294b*/
+      AbstractClass *v3 = v2; /*0x61294b*/
       v2 = (_DWORD *)v2[3]; /*0x61294d*/
       __3_YAXPAX_Z(v3); /*0x612951*/
     }
@@ -276,7 +276,7 @@ void sub_612930()
     {
       if ( DataGlobal_AC186C || v0 <= v4 ) /*0x61299d*/
         break; /*0x61299d*/
-      int * v5 = (int *)DataGlobal_AC1858; /*0x6129a9*/
+      AbstractClass *v5 = (int *)DataGlobal_AC1858; /*0x6129a9*/
       int v6 = v0; /*0x6129af*/
       DataGlobal_AC1860 = v0 >> 1; /*0x6129b4*/
       --DataGlobal_AC1864; /*0x6129c0*/
@@ -284,7 +284,7 @@ void sub_612930()
       memset(DataGlobal_AC1858, 0, 4 * DataGlobal_AC1860); /*0x6129e1*/
       if ( v6 > 0 ) /*0x6129e3*/
       {
-        int * v7 = v5; /*0x6129e5*/
+        AbstractClass *v7 = v5; /*0x6129e5*/
         int v8 = v6; /*0x6129e7*/
         do /*0x612a22*/
         {
@@ -321,7 +321,7 @@ void sub_612930()
 
 // 0x612A60
 namespace gamemd {
-AbstractClass * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
+AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -385,7 +385,7 @@ LABEL_10:
 
 // 0x61D6D0
 namespace gamemd {
-AbstractClass * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -495,7 +495,7 @@ AbstractClass * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsign
 
 // 0x61ECA0
 namespace gamemd {
-AbstractClass * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
+AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -546,7 +546,7 @@ AbstractClass * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM l
               if ( v11 ) /*0x61ee33*/
               {
                 int v12 = v21; /*0x61ee35*/
-                int v13 = v20; /*0x61ee39*/
+                AbstractClass *v13 = v20; /*0x61ee39*/
                 v11[2] = v21; /*0x61ee3d*/
                 v11[1] = v13; /*0x61ee45*/
                 v11[3] = 0; /*0x61ee4e*/

@@ -834,7 +834,7 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
   {
     v7 = Turret::GetTransform((signed int)a1, v34, a3); /*0x51408d*/
 LABEL_16:
-    float * v20 = v7; /*0x514275*/
+    IUnknown *v20 = v7; /*0x514275*/
     qmemcpy(a2, v20, 0x30u); /*0x514285*/
     return a2; /*0x514277*/
   }
@@ -934,7 +934,7 @@ void * ObjectClass::checkLimbo()
 // 0x5F3B80
 namespace ra2 {
 namespace game {
-ObjectClass * ObjectClass::Dtor()
+ObjectClass * * ObjectClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1055,10 +1055,10 @@ int ObjectClass::DropAsBomb_Track()
 {
   int result; // eax
 
-  int v2 = *(_DWORD *)this; /*0x5f4168*/
+  AbstractClass *v2 = *(_DWORD *)this; /*0x5f4168*/
   this->isFallingDown = 1; /*0x5f416a*/
   this->isBomb = 1; /*0x5f4171*/
-  (*(void (__stdcall **)(_DWORD))(v2 + 292))(0); /*0x5f4178*/
+  v2->ModifyCellTiles(0); /*0x5f4178*/
   RemoveTarget((IUnknown *)this); /*0x5f4184*/
   this->onBridge = 0; /*0x5f418f*/
   Targeting::Readd((IUnknown *)this); /*0x5f4196*/
@@ -1080,10 +1080,10 @@ int ObjectClass::DropAsBomb_Track()
       {
   _DWORD v5[3]; // [esp+Ch] [ebp-Ch] BYREF
         v5[0] = this->location; /*0x5f41ed*/
-        int v4 = *(_DWORD *)this; /*0x5f41f1*/
+        AbstractClass *v4 = *(_DWORD *)this; /*0x5f41f1*/
         v5[1] = this->owningHouseIndex; /*0x5f41f6*/
         v5[2] = this->q029; /*0x5f4204*/
-        return (*(int (__thiscall **)(#374 *, _DWORD *))(v4 + 244))(this, v5); /*0x5f4208*/
+        return v4->vt_slot_244(v5); /*0x5f4208*/
       }
     }
   }
@@ -1102,23 +1102,23 @@ int ObjectClass::GetBoundsRect()
 {
   __int16 *v4; // esi
   int *FoundationSize; // eax
-  int v19; // esi
-  int v20; // edi
+  AbstractClass *v19; // esi
+  AbstractClass *v20; // edi
   int *v21; // eax
-  int v22; // ecx
-  int v23; // edx
-  int v24; // edi
-  int v25; // eax
-  int v26; // ecx
+  AbstractClass *v22; // ecx
+  AbstractClass *v23; // edx
+  AbstractClass *v24; // edi
+  AbstractClass *v25; // eax
+  AbstractClass *v26; // ecx
   int v27; // edi
   int v29; // [esp+Ch] [ebp-40h]
   int v30; // [esp+10h] [ebp-3Ch]
   int v31[2]; // [esp+14h] [ebp-38h] BYREF
   int v32; // [esp+1Ch] [ebp-30h] BYREF
   int v33; // [esp+20h] [ebp-2Ch]
-  int v34; // [esp+24h] [ebp-28h]
-  int v35; // [esp+28h] [ebp-24h]
-  int v36; // [esp+30h] [ebp-1Ch]
+  AbstractClass *v34; // [esp+24h] [ebp-28h]
+  AbstractClass *v35; // [esp+28h] [ebp-24h]
+  AbstractClass *v36; // [esp+30h] [ebp-1Ch]
   int v37; // [esp+38h] [ebp-14h]
   _DWORD v38[4]; // [esp+3Ch] [ebp-10h] BYREF
   _DWORD *v39; // [esp+50h] [ebp+4h]
@@ -1140,7 +1140,7 @@ int ObjectClass::GetBoundsRect()
   FoundationSize = Building::GetFoundationSize(&v32, v6); /*0x5f4911*/
   int v8 = *FoundationSize; /*0x5f4916*/
   v36 = FoundationSize[1]; /*0x5f491b*/
-  int v9 = FoundationSize[2]; /*0x5f4921*/
+  AbstractClass *v9 = FoundationSize[2]; /*0x5f4921*/
   int v10 = FoundationSize[3]; /*0x5f4924*/
   int v11 = v4[3]; /*0x5f4927*/
   v37 = v10; /*0x5f492b*/
@@ -1150,7 +1150,7 @@ int ObjectClass::GetBoundsRect()
   v34 = v12[2]; /*0x5f4951*/
   int v14 = v4[1]; /*0x5f4955*/
   int v15 = v4[2]; /*0x5f4959*/
-  int v16 = v12[3]; /*0x5f495d*/
+  AbstractClass *v16 = v12[3]; /*0x5f495d*/
   v29 = v14; /*0x5f4960*/
   v35 = v16; /*0x5f4964*/
   v30 = v15; /*0x5f4968*/
@@ -1170,7 +1170,7 @@ int ObjectClass::GetBoundsRect()
   }
   else
   {
-    int v18 = v36; /*0x5f4982*/
+    AbstractClass *v18 = v36; /*0x5f4982*/
     if ( v8 > v13 ) /*0x5f4988*/
     {
       v9 += v8 - v13; /*0x5f498e*/
@@ -1254,7 +1254,7 @@ LABEL_39:
 // 0x5F4D30
 namespace ra2 {
 namespace game {
-AbstractClass * ObjectClass::Undeploy()
+AbstractClass * * ObjectClass::Undeploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1314,16 +1314,16 @@ AbstractClass * ObjectClass::Undeploy()
 // 0x5F4EC0
 namespace ra2 {
 namespace game {
-AbstractClass * ObjectClass::Deploy()
+AbstractClass * * ObjectClass::Deploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
-  ObjectClass *v3; // ebx
-  ObjectClass *v5; // eax
+  AbstractClass *v3; // ebx
+  AbstractClass *v5; // eax
   ObjectClass *v6; // ebx
   AbstractClass *v9; // edx
-  ObjectClass *v10; // eax
+  AbstractClass *v10; // eax
   AbstractClass *v12; // ebp
   AbstractClass *aP3; // [esp+30h] [ebp-28h]
   _DWORD a1[3]; // [esp+40h] [ebp-18h] BYREF
@@ -1442,12 +1442,12 @@ LABEL_41:
         {
           char v18 = *(_BYTE *)(*(_DWORD *)&stru_87C374[44652] + 6245); /*0x5f51e2*/
           *(_WORD *)result = *(_WORD *)(*(_DWORD *)&stru_87C374[44652] + 6243); /*0x5f51e5*/
-          *(_BYTE *)(result + 2) = v18; /*0x5f51e8*/
+          result->AudioController_field_08 = v18; /*0x5f51e8*/
         }
         else
         {
           int v15 = (*(int (__thiscall **)(#374 *))(this->parachute)(this); /*0x5f51be*/
-          int v16 = this->lineTrailer; /*0x5f51c4*/
+          LineTrail *v16 = this->lineTrailer; /*0x5f51c4*/
           char v17 = *(_BYTE *)(v15 + 573); /*0x5f51d4*/
           *(_WORD *)v16 = *(_WORD *)(v15 + 571); /*0x5f51d7*/
           *(_BYTE *)(v16 + 2) = v17; /*0x5f51da*/
@@ -1468,7 +1468,7 @@ LABEL_41:
 // 0x5F5280
 namespace ra2 {
 namespace game {
-AbstractClass * ObjectClass::Destroy2()
+AbstractClass * * ObjectClass::Destroy2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1476,7 +1476,7 @@ AbstractClass * ObjectClass::Destroy2()
   AbstractClass *v5; // edx
   int result; // eax
 
-  _DWORD * v2 = (_DWORD *)this->lineTrailer; /*0x5f5284*/
+  LineTrail *v2 = (_DWORD *)this->lineTrailer; /*0x5f5284*/
   if ( v2 ) /*0x5f528c*/
   {
     TacticalClass::GetField(v2); /*0x5f528e*/
@@ -1514,7 +1514,7 @@ int ObjectClass::UpdateProductionDisplay()
   if ( !this->inLimbo ) /*0x5f5854*/
   {
   int v6; // [esp+Ch] [ebp+4h] BYREF
-    int v3 = v6; /*0x5f5862*/
+    ObjectClass *v3 = v6; /*0x5f5862*/
     if ( v6 == 2 ) /*0x5f5869*/
     {
       if ( !this->needsRedraw && this->isOnMap ) /*0x5f5879*/
@@ -1541,9 +1541,9 @@ int ObjectClass::UpdateProductionDisplay()
       }
       if ( (v3 == 1 || v3 == 3) && !this->isOnMap ) /*0x5f58ec*/
       {
-        int v5 = *(_DWORD *)this; /*0x5f58f3*/
+        AbstractClass *v5 = *(_DWORD *)this; /*0x5f58f3*/
         this->isOnMap = 1; /*0x5f58f7*/
-        result = (*(int (__thiscall **)(#374 *))(v5 + 308))(this); /*0x5f58fb*/
+        result = v5->MarkForRedraw(); /*0x5f58fb*/
         LOBYTE(result) = 1; /*0x5f5902*/
         return result; /*0x5f5905*/
       }
@@ -1571,9 +1571,9 @@ int ObjectClass::GetBoundingSize()
 {
 
   _BYTE v4[12]; // [esp+8h] [ebp-18h] BYREF
-  int v2 = (*(int (__thiscall **)(#374 *, _BYTE *))(this->q0AC)(this, v4); /*0x5f6be8*/
+  AbstractClass *v2 = (*(int (__thiscall **)(#374 *, _BYTE *))(this->q0AC)(this, v4); /*0x5f6be8*/
   _BYTE v5[12]; // [esp+14h] [ebp-Ch] BYREF
-  return *(_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(this->q0AC)(this, v5) + *(_DWORD *)(v2 + 4); /*0x5f6bfe*/
+  return *(_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(this->q0AC)(this, v5) + v2->vtable2; /*0x5f6bfe*/
 }
 }
 } // namespace game
@@ -1606,7 +1606,7 @@ int ObjectClass::resetObjectState(SidebarClass * aP1)
 // 0x6A5BF0
 namespace ra2 {
 namespace game {
-ConvertClass * ObjectClass::CleanupSidebarResources()
+ConvertClass * * ObjectClass::CleanupSidebarResources()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1729,7 +1729,7 @@ ConvertClass * ObjectClass::CleanupSidebarResources()
   }
   ScenarioClass::FreeConfig((int)DataGlobal_B07DF8); /*0x6a5e92*/
   ScenarioClass::FreeConfig((int)DataGlobal_B0B3A0); /*0x6a5e9c*/
-  int * v0 = (int *)&DataGlobal_B07C48; /*0x6a5ea1*/
+  ScenarioClass *v0 = (int *)&DataGlobal_B07C48; /*0x6a5ea1*/
   do /*0x6a5eb6*/
   {
     ScenarioClass::FreeConfig((int)v0); /*0x6a5ea8*/
@@ -2001,7 +2001,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     if ( v7 != -1 && !*(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array + v7) + 681) && !ObjectClass::processPointerInvalid /*0x7184f4*/
       || (_BYTE)a5 )
     {
-      int v14 = *(_DWORD *)(this->vtable4->vt_slot_132() + 1460); /*0x718505*/
+      ObjectClass *v14 = *(_DWORD *)(this->vtable4->vt_slot_132() + 1460); /*0x718505*/
       switch ( v14 ) /*0x71850e*/
       {
         case 9: /*0x71850e*/

@@ -213,7 +213,7 @@ void * TextRenderer::MeasureBuilding2()
   _DWORD v14[7]; // [esp+24h] [ebp-20h] BYREF
   FoundationSize = Building::GetFoundationSize(v14, 0); /*0x642f01*/
   int v2 = 0; /*0x642f08*/
-  int v3 = 0; /*0x642f0e*/
+  CampaignScore *v3 = 0; /*0x642f0e*/
   v16 = (CampaignScore *)FoundationSize[2]; /*0x642f1a*/
   int v12 = FoundationSize[3] + 6; /*0x642f24*/
   char v19; // [esp+54h] [ebp+10h]
@@ -243,7 +243,7 @@ void * TextRenderer::MeasureBuilding2()
   *arg0 = (char *)&v16->CampaignScore_field_0x18 + v2 + v8 + 2; /*0x642fb4*/
   if ( v12 > v3 ) /*0x642fb6*/
     v3 = v12; /*0x642fb8*/
-  int *v17; // [esp+4Ch] [ebp+8h]
+  CampaignScore *v17; // [esp+4Ch] [ebp+8h]
   result = v17; /*0x642fba*/
   *v17 = v3; /*0x642fc0*/
   if ( v3 <= referenceCount ) /*0x642fc2*/

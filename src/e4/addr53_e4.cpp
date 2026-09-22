@@ -21,12 +21,12 @@
 
 // 0x530000
 namespace gamemd {
-MixFileClass * sub_530000()
+MixFileClass * * sub_530000()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HANDLE FirstFileA; // edi
-  HANDLE v4; // edi
+  MixFileClass *v4; // edi
   struct _WIN32_FIND_DATAA FindFileData; // [esp+10h] [ebp-140h] BYREF
 
   FirstFileA = FindFirstFileA(DataGlobal_826620, &FindFileData); /*0x530022*/
@@ -39,7 +39,7 @@ MixFileClass * sub_530000()
         _DWORD * v1 = __2_YAPAXI_Z(0x28u); /*0x53003d*/
         if ( v1 ) /*0x530047*/
         {
-          _DWORD * v2 = MixFileClass::FromFile(v1, FindFileData.cFileName, (int)DataGlobal_886980); /*0x53005a*/
+          MixFileClass *v2 = MixFileClass::FromFile(v1, FindFileData.cFileName, (int)DataGlobal_886980); /*0x53005a*/
           if ( v2 ) /*0x53005e*/
           {
             if ( g_MixFilePool_Count < g_MixFilePool_Capacity /*0x530097*/
@@ -50,7 +50,7 @@ MixFileClass * sub_530000()
                    g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
                    0) )
             {
-              int v3 = g_MixFilePool_Count++; /*0x5300a4*/
+              MixFileClass *v3 = g_MixFilePool_Count++; /*0x5300a4*/
               *((_DWORD *)g_MixFilePool + v3) = v2; /*0x5300b3*/
             }
             ReturnTrue(0); /*0x5300ba*/
@@ -71,7 +71,7 @@ MixFileClass * sub_530000()
         _DWORD * v5 = __2_YAPAXI_Z(0x28u); /*0x5300f9*/
         if ( v5 ) /*0x530103*/
         {
-          _DWORD * v6 = MixFileClass::FromFile(v5, FindFileData.cFileName, (int)DataGlobal_886980); /*0x530116*/
+          MixFileClass *v6 = MixFileClass::FromFile(v5, FindFileData.cFileName, (int)DataGlobal_886980); /*0x530116*/
           if ( v6 ) /*0x53011a*/
           {
             if ( g_MixFilePool_Count < g_MixFilePool_Capacity /*0x530153*/
@@ -82,7 +82,7 @@ MixFileClass * sub_530000()
                    g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
                    0) )
             {
-              int v7 = g_MixFilePool_Count++; /*0x530160*/
+              MixFileClass *v7 = g_MixFilePool_Count++; /*0x530160*/
               *((_DWORD *)g_MixFilePool + v7) = v6; /*0x53016f*/
             }
           }
@@ -111,7 +111,7 @@ void ShowLoadingScreen()
   char *ecx7; // ecx
   int edx11; // edx
   CampaignScore *v10; // edi
-  AbstractClass *v11; // esi
+  CampaignScore *v11; // esi
   int eax13; // eax
   wchar_t *StringCSF; // eax
   CampaignScore *v14; // edi
@@ -404,87 +404,87 @@ LABEL_16:
 
 // 0x532150
 namespace gamemd {
-CreateTeamCommand * InitCommands()
+CreateTeamCommand * * InitCommands()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  _DWORD *v7; // esi
+  CreateTeamCommand *v7; // esi
   _DWORD *v9; // eax
-  _DWORD *v10; // esi
+  CreateTeamCommand *v10; // esi
   _DWORD *v12; // eax
-  _DWORD *v13; // esi
+  CreateTeamCommand *v13; // esi
   _DWORD *v15; // eax
-  _DWORD *v16; // esi
+  CreateTeamCommand *v16; // esi
   _DWORD *v18; // eax
-  _DWORD *v19; // esi
+  CreateTeamCommand *v19; // esi
   _DWORD *v21; // eax
-  _DWORD *v22; // esi
+  CreateTeamCommand *v22; // esi
   _DWORD *v24; // eax
-  _DWORD *v25; // esi
+  CreateTeamCommand *v25; // esi
   _DWORD *v27; // eax
-  _DWORD *v28; // esi
+  CreateTeamCommand *v28; // esi
   _DWORD *v30; // eax
-  _DWORD *v31; // esi
+  CreateTeamCommand *v31; // esi
   _DWORD *v33; // eax
   _DWORD *v35; // eax
-  _DWORD *v36; // esi
+  CreateTeamCommand *v36; // esi
   _DWORD *v38; // eax
-  _DWORD *v39; // esi
+  CreateTeamCommand *v39; // esi
   _DWORD *v41; // eax
   _DWORD *v43; // eax
-  _DWORD *v44; // esi
+  CreateTeamCommand *v44; // esi
   _DWORD *v46; // eax
-  _DWORD *v47; // esi
+  CreateTeamCommand *v47; // esi
   _DWORD *v49; // eax
-  _DWORD *v50; // esi
+  CreateTeamCommand *v50; // esi
   _DWORD *v52; // eax
-  _DWORD *v53; // esi
+  CreateTeamCommand *v53; // esi
   _DWORD *v55; // eax
-  _DWORD *v56; // esi
+  CreateTeamCommand *v56; // esi
   _DWORD *v58; // eax
-  _DWORD *v59; // esi
+  CreateTeamCommand *v59; // esi
   _DWORD *v61; // eax
-  _DWORD *v62; // esi
+  CreateTeamCommand *v62; // esi
   _DWORD *v64; // eax
-  _DWORD *v65; // esi
+  CreateTeamCommand *v65; // esi
   _DWORD *v67; // eax
-  _DWORD *v68; // esi
+  CreateTeamCommand *v68; // esi
   _DWORD *v70; // eax
-  _DWORD *v71; // esi
+  CreateTeamCommand *v71; // esi
   _DWORD *v73; // eax
-  _DWORD *v74; // esi
+  CreateTeamCommand *v74; // esi
   _DWORD *v76; // eax
-  _DWORD *v77; // esi
+  CreateTeamCommand *v77; // esi
   _DWORD *v79; // eax
-  _DWORD *v80; // esi
+  CreateTeamCommand *v80; // esi
   _DWORD *v82; // eax
-  _DWORD *v83; // esi
+  CreateTeamCommand *v83; // esi
   _DWORD *v85; // eax
-  _DWORD *v86; // esi
+  CreateTeamCommand *v86; // esi
   _DWORD *v88; // eax
-  _DWORD *v89; // esi
+  CreateTeamCommand *v89; // esi
   _DWORD *v91; // eax
-  _DWORD *v92; // esi
+  CreateTeamCommand *v92; // esi
   _DWORD *v94; // eax
-  _DWORD *v95; // esi
+  CreateTeamCommand *v95; // esi
   _DWORD *v97; // eax
-  _DWORD *v98; // esi
+  CreateTeamCommand *v98; // esi
   _DWORD *v100; // eax
-  _DWORD *v101; // esi
+  CreateTeamCommand *v101; // esi
   _DWORD *v103; // eax
-  _DWORD *v104; // esi
+  CreateTeamCommand *v104; // esi
   _DWORD *v106; // eax
-  _DWORD *v107; // esi
+  CreateTeamCommand *v107; // esi
   _DWORD *v109; // eax
-  _DWORD *v110; // esi
+  CreateTeamCommand *v110; // esi
   _DWORD *v112; // eax
-  _DWORD *v113; // esi
+  CreateTeamCommand *v113; // esi
   _DWORD *v115; // eax
-  _DWORD *v116; // esi
+  CreateTeamCommand *v116; // esi
   _DWORD *v118; // eax
-  _DWORD *v119; // esi
+  CreateTeamCommand *v119; // esi
   _DWORD *v121; // eax
-  _DWORD *v122; // esi
+  CreateTeamCommand *v122; // esi
   _DWORD *v124; // eax
   _DWORD *v125; // eax
   _DWORD *v126; // eax
@@ -538,7 +538,7 @@ CreateTeamCommand * InitCommands()
   int v175; // [esp+15Ch] [ebp-4h] BYREF
   if ( LOBYTE(DataGlobal_87F7E8[536627]) ) /*0x53215e*/
   {
-  _DWORD *v4; // esi
+  CreateTeamCommand *v4; // esi
   _DWORD *v1; // esi
     _DWORD * v0 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532166*/
     if ( v0 ) /*0x532170*/
@@ -558,7 +558,7 @@ CreateTeamCommand * InitCommands()
            dword_87F5D8[34] + dword_87F5D8[37],
            0) )
     {
-      int v2 = dword_87F5D8[36]++; /*0x5321be*/
+      CreateTeamCommand *v2 = dword_87F5D8[36]++; /*0x5321be*/
       *(_DWORD *)(dword_87F5D8[33] + 4 * v2) = v1; /*0x5321cd*/
     }
     _DWORD * v3 = (_DWORD *)__2_YAPAXI_Z(4); /*0x5321d2*/
@@ -579,7 +579,7 @@ CreateTeamCommand * InitCommands()
            dword_87F5D8[34] + dword_87F5D8[37],
            0) )
     {
-      int v5 = dword_87F5D8[36]++; /*0x53222b*/
+      CreateTeamCommand *v5 = dword_87F5D8[36]++; /*0x53222b*/
       *(_DWORD *)(dword_87F5D8[33] + 4 * v5) = v4; /*0x53223a*/
     }
   }
@@ -601,7 +601,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v8 = dword_87F5D8[36]++; /*0x532298*/
+    CreateTeamCommand *v8 = dword_87F5D8[36]++; /*0x532298*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v8) = v7; /*0x5322a7*/
   }
   v9 = (_DWORD *)__2_YAPAXI_Z(4); /*0x5322ac*/
@@ -622,7 +622,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v11 = dword_87F5D8[36]++; /*0x532305*/
+    CreateTeamCommand *v11 = dword_87F5D8[36]++; /*0x532305*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v11) = v10; /*0x532314*/
   }
   v12 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532319*/
@@ -643,7 +643,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v14 = dword_87F5D8[36]++; /*0x532372*/
+    CreateTeamCommand *v14 = dword_87F5D8[36]++; /*0x532372*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v14) = v13; /*0x532381*/
   }
   v15 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532386*/
@@ -664,7 +664,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v17 = dword_87F5D8[36]++; /*0x5323df*/
+    CreateTeamCommand *v17 = dword_87F5D8[36]++; /*0x5323df*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v17) = v16; /*0x5323ee*/
   }
   v18 = (_DWORD *)__2_YAPAXI_Z(4); /*0x5323f3*/
@@ -685,7 +685,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v20 = dword_87F5D8[36]++; /*0x53244c*/
+    CreateTeamCommand *v20 = dword_87F5D8[36]++; /*0x53244c*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v20) = v19; /*0x53245b*/
   }
   v21 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532460*/
@@ -706,7 +706,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v23 = dword_87F5D8[36]++; /*0x5324b9*/
+    CreateTeamCommand *v23 = dword_87F5D8[36]++; /*0x5324b9*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v23) = v22; /*0x5324c8*/
   }
   v24 = (_DWORD *)__2_YAPAXI_Z(4); /*0x5324cd*/
@@ -727,7 +727,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v26 = dword_87F5D8[36]++; /*0x532526*/
+    CreateTeamCommand *v26 = dword_87F5D8[36]++; /*0x532526*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v26) = v25; /*0x532535*/
   }
   v27 = (_DWORD *)__2_YAPAXI_Z(4); /*0x53253a*/
@@ -748,7 +748,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v29 = dword_87F5D8[36]++; /*0x532593*/
+    CreateTeamCommand *v29 = dword_87F5D8[36]++; /*0x532593*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v29) = v28; /*0x5325a2*/
   }
   v30 = (_DWORD *)__2_YAPAXI_Z(4); /*0x5325a7*/
@@ -769,7 +769,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v32 = dword_87F5D8[36]++; /*0x532600*/
+    CreateTeamCommand *v32 = dword_87F5D8[36]++; /*0x532600*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v32) = v31; /*0x53260f*/
   }
   v33 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532614*/
@@ -790,7 +790,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v34 = dword_87F5D8[36]++; /*0x532675*/
+    CreateTeamCommand *v34 = dword_87F5D8[36]++; /*0x532675*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v34) = v173; /*0x532684*/
   }
   v35 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532689*/
@@ -811,7 +811,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v37 = dword_87F5D8[36]++; /*0x5326e1*/
+    CreateTeamCommand *v37 = dword_87F5D8[36]++; /*0x5326e1*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v37) = v36; /*0x5326f0*/
   }
   v38 = (_DWORD *)__2_YAPAXI_Z(4); /*0x5326f5*/
@@ -832,7 +832,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v40 = dword_87F5D8[36]++; /*0x53274e*/
+    CreateTeamCommand *v40 = dword_87F5D8[36]++; /*0x53274e*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v40) = v39; /*0x53275d*/
   }
   v41 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532762*/
@@ -853,7 +853,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v42 = dword_87F5D8[36]++; /*0x5327c3*/
+    CreateTeamCommand *v42 = dword_87F5D8[36]++; /*0x5327c3*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v42) = v174; /*0x5327d2*/
   }
   v43 = (_DWORD *)__2_YAPAXI_Z(4); /*0x5327d7*/
@@ -874,7 +874,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v45 = dword_87F5D8[36]++; /*0x53282f*/
+    CreateTeamCommand *v45 = dword_87F5D8[36]++; /*0x53282f*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v45) = v44; /*0x53283e*/
   }
   v46 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532843*/
@@ -895,7 +895,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v48 = dword_87F5D8[36]++; /*0x53289c*/
+    CreateTeamCommand *v48 = dword_87F5D8[36]++; /*0x53289c*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v48) = v47; /*0x5328ab*/
   }
   v49 = (_DWORD *)__2_YAPAXI_Z(4); /*0x5328b0*/
@@ -916,7 +916,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v51 = dword_87F5D8[36]++; /*0x532909*/
+    CreateTeamCommand *v51 = dword_87F5D8[36]++; /*0x532909*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v51) = v50; /*0x532918*/
   }
   v52 = (_DWORD *)__2_YAPAXI_Z(4); /*0x53291d*/
@@ -937,7 +937,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v54 = dword_87F5D8[36]++; /*0x532976*/
+    CreateTeamCommand *v54 = dword_87F5D8[36]++; /*0x532976*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v54) = v53; /*0x532985*/
   }
   v55 = (_DWORD *)__2_YAPAXI_Z(4); /*0x53298a*/
@@ -958,7 +958,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v57 = dword_87F5D8[36]++; /*0x5329e3*/
+    CreateTeamCommand *v57 = dword_87F5D8[36]++; /*0x5329e3*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v57) = v56; /*0x5329f2*/
   }
   v58 = (_DWORD *)__2_YAPAXI_Z(4); /*0x5329f7*/
@@ -979,7 +979,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v60 = dword_87F5D8[36]++; /*0x532a50*/
+    CreateTeamCommand *v60 = dword_87F5D8[36]++; /*0x532a50*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v60) = v59; /*0x532a5f*/
   }
   v61 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532a64*/
@@ -1000,7 +1000,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v63 = dword_87F5D8[36]++; /*0x532abd*/
+    CreateTeamCommand *v63 = dword_87F5D8[36]++; /*0x532abd*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v63) = v62; /*0x532acc*/
   }
   v64 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532ad1*/
@@ -1021,7 +1021,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v66 = dword_87F5D8[36]++; /*0x532b2a*/
+    CreateTeamCommand *v66 = dword_87F5D8[36]++; /*0x532b2a*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v66) = v65; /*0x532b39*/
   }
   v67 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532b3e*/
@@ -1042,7 +1042,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v69 = dword_87F5D8[36]++; /*0x532b97*/
+    CreateTeamCommand *v69 = dword_87F5D8[36]++; /*0x532b97*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v69) = v68; /*0x532ba6*/
   }
   v70 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532bab*/
@@ -1063,7 +1063,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v72 = dword_87F5D8[36]++; /*0x532c04*/
+    CreateTeamCommand *v72 = dword_87F5D8[36]++; /*0x532c04*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v72) = v71; /*0x532c13*/
   }
   v73 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532c18*/
@@ -1084,7 +1084,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v75 = dword_87F5D8[36]++; /*0x532c71*/
+    CreateTeamCommand *v75 = dword_87F5D8[36]++; /*0x532c71*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v75) = v74; /*0x532c80*/
   }
   v76 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532c85*/
@@ -1105,7 +1105,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v78 = dword_87F5D8[36]++; /*0x532cde*/
+    CreateTeamCommand *v78 = dword_87F5D8[36]++; /*0x532cde*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v78) = v77; /*0x532ced*/
   }
   v79 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532cf2*/
@@ -1126,7 +1126,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v81 = dword_87F5D8[36]++; /*0x532d4b*/
+    CreateTeamCommand *v81 = dword_87F5D8[36]++; /*0x532d4b*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v81) = v80; /*0x532d5a*/
   }
   v82 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532d5f*/
@@ -1147,7 +1147,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v84 = dword_87F5D8[36]++; /*0x532db8*/
+    CreateTeamCommand *v84 = dword_87F5D8[36]++; /*0x532db8*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v84) = v83; /*0x532dc7*/
   }
   v85 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532dcc*/
@@ -1168,7 +1168,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v87 = dword_87F5D8[36]++; /*0x532e25*/
+    CreateTeamCommand *v87 = dword_87F5D8[36]++; /*0x532e25*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v87) = v86; /*0x532e34*/
   }
   v88 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532e39*/
@@ -1189,7 +1189,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v90 = dword_87F5D8[36]++; /*0x532e92*/
+    CreateTeamCommand *v90 = dword_87F5D8[36]++; /*0x532e92*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v90) = v89; /*0x532ea1*/
   }
   v91 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532ea6*/
@@ -1210,7 +1210,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v93 = dword_87F5D8[36]++; /*0x532eff*/
+    CreateTeamCommand *v93 = dword_87F5D8[36]++; /*0x532eff*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v93) = v92; /*0x532f0e*/
   }
   v94 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532f13*/
@@ -1231,7 +1231,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v96 = dword_87F5D8[36]++; /*0x532f6c*/
+    CreateTeamCommand *v96 = dword_87F5D8[36]++; /*0x532f6c*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v96) = v95; /*0x532f7b*/
   }
   v97 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532f80*/
@@ -1252,7 +1252,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v99 = dword_87F5D8[36]++; /*0x532fd9*/
+    CreateTeamCommand *v99 = dword_87F5D8[36]++; /*0x532fd9*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v99) = v98; /*0x532fe8*/
   }
   v100 = (_DWORD *)__2_YAPAXI_Z(4); /*0x532fed*/
@@ -1273,7 +1273,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v102 = dword_87F5D8[36]++; /*0x533046*/
+    CreateTeamCommand *v102 = dword_87F5D8[36]++; /*0x533046*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v102) = v101; /*0x533055*/
   }
   v103 = (_DWORD *)__2_YAPAXI_Z(4); /*0x53305a*/
@@ -1294,7 +1294,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v105 = dword_87F5D8[36]++; /*0x5330b3*/
+    CreateTeamCommand *v105 = dword_87F5D8[36]++; /*0x5330b3*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v105) = v104; /*0x5330c2*/
   }
   v106 = (_DWORD *)__2_YAPAXI_Z(4); /*0x5330c7*/
@@ -1315,7 +1315,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v108 = dword_87F5D8[36]++; /*0x533120*/
+    CreateTeamCommand *v108 = dword_87F5D8[36]++; /*0x533120*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v108) = v107; /*0x53312f*/
   }
   v109 = (_DWORD *)__2_YAPAXI_Z(8); /*0x533134*/
@@ -1337,7 +1337,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v111 = dword_87F5D8[36]++; /*0x533194*/
+    CreateTeamCommand *v111 = dword_87F5D8[36]++; /*0x533194*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v111) = v110; /*0x5331a3*/
   }
   v112 = (_DWORD *)__2_YAPAXI_Z(8); /*0x5331a8*/
@@ -1359,7 +1359,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v114 = dword_87F5D8[36]++; /*0x533208*/
+    CreateTeamCommand *v114 = dword_87F5D8[36]++; /*0x533208*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v114) = v113; /*0x533217*/
   }
   v115 = (_DWORD *)__2_YAPAXI_Z(8); /*0x53321c*/
@@ -1381,7 +1381,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v117 = dword_87F5D8[36]++; /*0x53327c*/
+    CreateTeamCommand *v117 = dword_87F5D8[36]++; /*0x53327c*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v117) = v116; /*0x53328b*/
   }
   v118 = (_DWORD *)__2_YAPAXI_Z(8); /*0x533290*/
@@ -1403,7 +1403,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v120 = dword_87F5D8[36]++; /*0x5332f0*/
+    CreateTeamCommand *v120 = dword_87F5D8[36]++; /*0x5332f0*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v120) = v119; /*0x5332ff*/
   }
   v121 = (_DWORD *)__2_YAPAXI_Z(8); /*0x533304*/
@@ -1425,7 +1425,7 @@ CreateTeamCommand * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    int v123 = dword_87F5D8[36]++; /*0x533364*/
+    CreateTeamCommand *v123 = dword_87F5D8[36]++; /*0x533364*/
     *(_DWORD *)(dword_87F5D8[33] + 4 * v123) = v122; /*0x533373*/
   }
   v124 = (_DWORD *)__2_YAPAXI_Z(8); /*0x533378*/
@@ -1741,7 +1741,7 @@ CreateTeamCommand * InitCommands()
 
 // 0x533FD0
 namespace gamemd {
-DSurface * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClass * aP2, int a4, char a5)
+DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClass * aP2, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1963,9 +1963,8 @@ void TheaterClass_LoadMIX(int a1)
     {
       _DWORD * v4 = __2_YAPAXI_Z(0x28u); /*0x534aa8*/
       if ( v4 ) /*0x534ab2*/
-        _DWORD * v5 = MixFileClass::FromFile(v4, v35, (int)&DataGlobal_886980); /*0x534ac0*/
-      else
-        v5 = 0; /*0x534ac7*/
+        MixFileClass *v5 = MixFileClass::FromFile(v4, v35, (int)&DataGlobal_886980); /*0x534ac0*/
+      MixFileClass *v5 = 0; /*0x534ac7*/
       DataGlobal_884E0C = (int)v5; /*0x534acc*/
       ReturnTrue(0); /*0x534ad1*/
     }
@@ -1980,9 +1979,8 @@ void TheaterClass_LoadMIX(int a1)
       (**(void (__thiscall ***)(int, int))DataGlobal_884E10)(DataGlobal_884E10, 1); /*0x534b20*/
     _DWORD * v7 = __2_YAPAXI_Z(0x28u); /*0x534b24*/
     if ( v7 ) /*0x534b2e*/
-      _DWORD * v8 = MixFileClass::FromFile(v7, v36, (int)&DataGlobal_886980); /*0x534b3c*/
-    else
-      v8 = 0; /*0x534b43*/
+      MixFileClass *v8 = MixFileClass::FromFile(v7, v36, (int)&DataGlobal_886980); /*0x534b3c*/
+    MixFileClass *v8 = 0; /*0x534b43*/
     DataGlobal_884E10 = (int)v8; /*0x534b48*/
     ReturnTrue(0); /*0x534b4d*/
     ReturnTrue(0); /*0x534b59*/
@@ -2075,42 +2073,42 @@ void TheaterClass_LoadMIX(int a1)
 
 // 0x5353D0
 namespace gamemd {
-ObjectClass * Radar_FindClosestEnemy(short * a1, int a2)
+ObjectClass * * Radar_FindClosestEnemy(short * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
   result = 0; /*0x5353e7*/
-  int v18 = 0; /*0x5353f1*/
+  ObjectClass *v18 = 0; /*0x5353f1*/
   int v16 = -1; /*0x5353f5*/
   int v17 = 0x7FFFFFFF; /*0x5353fd*/
   if ( (int)g_SelectionManager > 0 ) /*0x535405*/
   {
   int v15; // [esp+28h] [ebp-40h]
   int v5; // eax
-  int v4; // esi
+  ObjectClass *v4; // esi
     int v3 = 0; /*0x53540b*/
     int v21 = 0; /*0x53540f*/
     while ( 1 ) /*0x53541e*/
     {
       v15 = 0; /*0x53541e*/
       v4 = *((_DWORD *)g_ObjectClass_CurrentCount + v3); /*0x535422*/
-      if ( v4 && (*(_BYTE *)(v4 + 20) & 1) != 0 ) /*0x535433*/
+      if ( v4 && (v4->abstractFlags & 1) != 0 ) /*0x535433*/
       {
         v15 = 2; /*0x53543b*/
-        if ( *(_BYTE *)(v4 + 664) ) /*0x535435*/
+        if ( v4->q298 ) /*0x535435*/
         {
           v15 = 0; /*0x535447*/
         }
-        else if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v4 + 892))(v4) ) /*0x535451*/
+        else if ( v4->vt_slot_892() ) /*0x535451*/
         {
           v15 = 1; /*0x53545b*/
         }
-        else if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v4 + 684))(v4) ) /*0x535469*/
+        else if ( v4->vt_slot_684() ) /*0x535469*/
         {
           v15 = 3; /*0x535477*/
-          if ( (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) != 6 ) /*0x535485*/
+          if ( v4->getAltitude() != 6 ) /*0x535485*/
           {
             v15 = 4; /*0x53548b*/
             if ( TechnoClass::GetValue((_DWORD *)v4, -1) > 0 ) /*0x53549a*/
@@ -2127,7 +2125,7 @@ ObjectClass * Radar_FindClosestEnemy(short * a1, int a2)
   int v11; // ecx
   int v10; // eax
   char v22[12]; // [esp+50h] [ebp-18h] BYREF
-        int * v6 = (int *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v4 + 72))(v4, v22); /*0x5354dd*/
+        int * v6 = (int *)v4->GetCoords_0(v22); /*0x5354dd*/
         int v7 = *v6; /*0x5354e0*/
         int v8 = v6[1]; /*0x5354e2*/
         int v9 = v6[2]; /*0x5354e5*/
@@ -2252,7 +2250,7 @@ void sub_538D40()
 
 // 0x538E70
 namespace gamemd {
-AbstractClass * E4Recv_538E70::sub_538E70(double a2)
+AbstractClass * * E4Recv_538E70::sub_538E70(double a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2630,7 +2628,7 @@ LABEL_52:
 
 // 0x53AF40
 namespace gamemd {
-AnimClass * PsyDom::Update()
+AnimClass * * PsyDom::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2728,7 +2726,7 @@ void sub_53B460(int a1)
 
 // 0x53B560
 namespace gamemd {
-AnimClass * UpdateChronosphereEffect()
+AnimClass * * UpdateChronosphereEffect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2830,12 +2828,11 @@ int RenderChronosphereScreenEffect(char a1)
     double v8 = 0.0; /*0x53bc5a*/
     unk_A9FAA0 = 0.0; /*0x53bc62*/
     if ( a1 ) /*0x53bc68*/
-      int v9 = unk_A9FA98; /*0x53bc75*/
-    else
-      v9 = unk_A9FAA8 - unk_A9FA98; /*0x53bc71*/
+      AnimClass *v9 = unk_A9FA98; /*0x53bc75*/
+    AnimClass *v9 = unk_A9FAA8 - unk_A9FA98; /*0x53bc71*/
     if ( v9 > 0 ) /*0x53bc7d*/
     {
-      int v10 = v9; /*0x53bc83*/
+      AnimClass *v10 = v9; /*0x53bc83*/
       do /*0x53bc92*/
       {
         v7 = v7 + 0.002; /*0x53bc8d*/

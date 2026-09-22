@@ -216,7 +216,7 @@ void sub_626C60()
   {
     *v0 = -1; /*0x626c86*/
     _DWORD * v2 = __2_YAPAXI_Z(0x18u); /*0x626c8c*/
-    _DWORD * v3 = v2; /*0x626c91*/
+    VectorClass *v3 = v2; /*0x626c91*/
     if ( v2 ) /*0x626c98*/
     {
       StringVector::Construct(v2, 0, 0); /*0x626ca0*/
@@ -230,7 +230,7 @@ void sub_626C60()
     }
     v1[1] = v3; /*0x626cc5*/
     _DWORD * v4 = __2_YAPAXI_Z(0x18u); /*0x626cc8*/
-    _DWORD * v5 = v4; /*0x626ccd*/
+    VectorClass *v5 = v4; /*0x626ccd*/
     if ( v4 ) /*0x626cd4*/
     {
   _DWORD *v9; // edi
@@ -295,7 +295,7 @@ void sub_626C60()
 } // namespace gamemd
 
 // 0x641DB0
-AbstractClass * Surface::LoadToSurfaceSHP(char * Source)
+AbstractClass * * Surface::LoadToSurfaceSHP(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -391,7 +391,7 @@ LABEL_7:
       int v41 = v6; /*0x6552e8*/
       v7 = (RadarClass *)*(this + 1168); /*0x6552ec*/
       int v42 = 1; /*0x6552f2*/
-      int v8 = *(this + 1169); /*0x6552f6*/
+      MapClass *v8 = *(this + 1169); /*0x6552f6*/
   int v47[4]; // [esp+4Ch] [ebp-50h] BYREF
       v47[0] = 0; /*0x6552fd*/
       v47[1] = 0; /*0x655301*/
@@ -446,7 +446,7 @@ LABEL_14:
         *(_BYTE *)(v14 + 2) = v15; /*0x655421*/
 LABEL_16:
         v17 = (RadarClass *)*(this + 1168); /*0x655424*/
-        int v18 = *(this + 1169); /*0x65542a*/
+        MapClass *v18 = *(this + 1169); /*0x65542a*/
   _DWORD v48[7]; // [esp+5Ch] [ebp-40h] BYREF
         v48[0] = 0; /*0x655430*/
         v48[1] = 0; /*0x655434*/
@@ -557,8 +557,8 @@ int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
     v10 = (ObjectClass *)aP0->headNode[1]; /*0x6ba48f*/
     int v11 = aP0->headNode[2]; /*0x6ba492*/
     int v19 = (v22 - (int)v10) / 2 <= 0 ? 0 : (v22 - (int)v10) / 2;
-    int v12 = 0; /*0x6ba4bf*/
-    int v16 = 0; /*0x6ba4c3*/
+    MSShapeAnim *v12 = 0; /*0x6ba4bf*/
+    MSShapeAnim *v16 = 0; /*0x6ba4c3*/
     if ( v11 > 0 )
     {
       int v13 = a5 + ((v23 - v11) / 2 <= 0 ? 0 : (v23 - v11) / 2);
@@ -678,8 +678,8 @@ int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a
   char v76[16]; // [esp+84h] [ebp-210h] BYREF
   int v8 = (*(int (__thiscall **)(int, char *))(*(_DWORD *)a3 + 120))(a3, v76); /*0x6ba6a8*/
   int v9 = 0; /*0x6ba6b8*/
-  int v10 = 0; /*0x6ba6bd*/
-  int v56 = 0; /*0x6ba6c3*/
+  MSShapeAnim *v10 = 0; /*0x6ba6bd*/
+  MSShapeAnim *v56 = 0; /*0x6ba6c3*/
   int v11 = *(_DWORD *)(v8 + 8); /*0x6ba6c7*/
   int v57 = 0; /*0x6ba6ca*/
   int v74 = v11; /*0x6ba6ce*/
@@ -740,8 +740,8 @@ int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a
   int v70 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a2 + 92))(a2, 0, 0); /*0x6ba7c7*/
   if ( !v70 ) /*0x6ba7cd*/
     return 0; /*0x6ba7db*/
-  int v19 = 0; /*0x6ba7e5*/
-  int v53 = 0; /*0x6ba7e9*/
+  MSShapeAnim *v19 = 0; /*0x6ba7e5*/
+  MSShapeAnim *v53 = 0; /*0x6ba7e9*/
   int v64 = 0; /*0x6ba7ed*/
   if ( a5 ) /*0x6ba7f1*/
   {
@@ -803,8 +803,8 @@ LABEL_21:
   {
   bool v50; // cc
     int v28 = v57 * v26; /*0x6ba94d*/
-    _BYTE * v29 = (_BYTE *)(v10 + v28 + v65); /*0x6ba957*/
-    _BYTE * v54 = v29; /*0x6ba95b*/
+    MSShapeAnim *v29 = (_BYTE *)(v10 + v28 + v65); /*0x6ba957*/
+    MSShapeAnim *v54 = v29; /*0x6ba95b*/
     _WORD * v30 = (_WORD *)(v19 + 2 * (v10 + v28)); /*0x6ba95f*/
     _WORD * v71 = v30; /*0x6ba962*/
     do /*0x6ba992*/
@@ -815,10 +815,10 @@ LABEL_21:
       {
         if ( v10 < v74 - v55 ) /*0x6baabe*/
         {
-          _BYTE * v39 = v29; /*0x6baacc*/
+          MSShapeAnim *v39 = v29; /*0x6baacc*/
           int v40 = v64 - v65; /*0x6baad2*/
           _WORD * v41 = (_WORD *)(v70 + 2 * v31); /*0x6baad4*/
-          _BYTE * v63 = v39; /*0x6baad9*/
+          MSShapeAnim *v63 = v39; /*0x6baad9*/
           _WORD * v61 = v41; /*0x6baadd*/
           int v59 = v74 - v55 - v10; /*0x6baae5*/
           do /*0x6babc8*/
@@ -858,7 +858,7 @@ LABEL_21:
       }
       else if ( v10 < v74 - v55 ) /*0x6ba9a8*/
       {
-        _BYTE * v62 = v29; /*0x6ba9b4*/
+        MSShapeAnim *v62 = v29; /*0x6ba9b4*/
         v52 = v30; /*0x6ba9b8*/
         _WORD * v32 = (_WORD *)(v70 + 2 * v31); /*0x6ba9bc*/
         int v60 = v74 - v55 - v10; /*0x6ba9bf*/
@@ -913,7 +913,7 @@ LABEL_43:
 }
 
 // 0x707480
-TechnoClass * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6)
+TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -951,9 +951,8 @@ TechnoClass * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass *
   v36 = &BSurface_Vtable; /*0x7074dd*/
   unsigned int v12 = (unsigned int)aP4 & 0xFFFFFFEF; /*0x7074e5*/
   if ( (*(int (__thiscall **)(_BYTE *))(v11 + 44))(this) == 1 && *(this + 1747) ) /*0x7074f0*/
-    _DWORD * v13 = *(_DWORD **)&g_OverlayTypeConfig[88392]; /*0x7074fa*/
-  else
-    v13 = (_DWORD *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 484))(this); /*0x707505*/
+    ConvertClass *v13 = *(_DWORD **)&g_OverlayTypeConfig[88392]; /*0x7074fa*/
+  ConvertClass *v13 = (_DWORD *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 484))(this); /*0x707505*/
   aP4a = (int *)LightConvertClass::SelectRLEBlitter(v13, (IUnknown *)v12); /*0x707516*/
   a1a = 0; /*0x70751a*/
   if ( (v12 & 8) != 0 ) /*0x707522*/

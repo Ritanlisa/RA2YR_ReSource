@@ -55,12 +55,11 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
   __int16 v6; // cx
   __int16 v9; // ax
   __int16 v12; // cx
-
-  _WORD * v1 = a1; /*0x6d6bb2*/
+  SpeedType *v1 = a1; /*0x6d6bb2*/
   v2 = *a1 + 2; /*0x6d6bbd*/
   HIWORD(a1) = a1[1]; /*0x6d6bc1*/
   LOWORD(a1) = v2; /*0x6d6bc6*/
-  int v3 = 0; /*0x6d6bd3*/
+  IUnknown *v3 = 0; /*0x6d6bd3*/
   while ( 1 ) /*0x6d6bdf*/
   {
     result = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x6d6bdf*/

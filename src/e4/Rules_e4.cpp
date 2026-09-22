@@ -2205,7 +2205,7 @@ int Rules::ReadMiscINI()
 
 // 0x66BBB0
 namespace gamemd {
-IUnknown * Rules::ReadCombatINI()
+IUnknown * * Rules::ReadCombatINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

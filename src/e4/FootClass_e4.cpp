@@ -8,7 +8,7 @@
 // 0x4D3590
 namespace ra2 {
 namespace game {
-AbstractClass * FootClass::Destruct()
+AbstractClass * * FootClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -108,7 +108,7 @@ int FootClass::updateThreat()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v1 = this->targetingTimer; /*0x70f7e0*/
+  IUnknown *v1 = this->targetingTimer; /*0x70f7e0*/
   int v2 = this->q188; /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
@@ -131,7 +131,7 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
 {
   int Member; // eax
 
-  _DWORD * v6 = ppv; /*0x710006*/
+  IUnknown *v6 = ppv; /*0x710006*/
   int * v30 = a1; /*0x71000d*/
   if ( ppv )
   {
@@ -143,7 +143,7 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
     if ( v8 && v8[423] && *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*v8 + 132))(v8) + 3278) ) /*0x710042*/
       BuildingClass::Deploy(*(_DWORD *)(v6[421] + 1692), a2, a3); /*0x710058*/
     int v9 = v6[413]; /*0x71005d*/
-    _DWORD * v10 = v6 + 413; /*0x710063*/
+    ILocomotion *v10 = v6 + 413; /*0x710063*/
     int v27 = 0; /*0x71006b*/
     if ( v9 ) /*0x710073*/
     {
@@ -151,7 +151,7 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
       if ( v11 < 0 && v11 != -2147467262 ) /*0x710088*/
         WinAPI::Wrapper(v11); /*0x71008b*/
     }
-    if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*v6 + 132))(v6) + 1516)
+    if ( *(_BYTE *)(v6->GetSpecialValue() + 1516)
       && v27
       && !v6[172]
       && (*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)v27 + 28))(v27) )
@@ -165,8 +165,8 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
         if ( !v13 ) /*0x710126*/
           WinAPI::Wrapper(-2147467261); /*0x71012d*/
         (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*v10 + 72))(*v10); /*0x710137*/
-        (*(void (__thiscall **)(_DWORD *, int))(*v6 + 496))(v6, -1); /*0x710140*/
-        (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v6 + 488))(v6, 13, 0); /*0x71014e*/
+        v6->vt_slot_496(-1); /*0x710140*/
+        v6->vt_slot_488(13, 0); /*0x71014e*/
       }
       else
       {
@@ -196,11 +196,11 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
         v32);
       int v15 = *v6; /*0x7101b6*/
   int v31; // [esp+70h] [ebp-Ch] BYREF
-      int v16 = (*(int (__thiscall **)(_DWORD *, int *))(*v6 + 72))(v6, &v31); /*0x7101bf*/
-      (*(void (__thiscall **)(_DWORD *, int))(v15 + 244))(v6, v16); /*0x7101c5*/
+      int v16 = v6->vt_slot_72(&v31); /*0x7101bf*/
+      v6->vt_slot_244(v16); /*0x7101c5*/
       int v17 = *v6; /*0x7101cb*/
       *((_BYTE *)v6 + 1718) = 1; /*0x7101cf*/
-      (*(void (__thiscall **)(_DWORD *))(v17 + 976))(v6); /*0x7101d6*/
+      v6->vt_slot_976(); /*0x7101d6*/
       v12 = *v10 == 0; /*0x7101e0*/
       int v28 = 0; /*0x7101e2*/
       if ( !v12 ) /*0x7101e6*/
@@ -228,7 +228,7 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
         (*(void (__stdcall **)(int))(*(_DWORD *)v29 + 8))(v29); /*0x71028a*/
       if ( v28 )
       {
-        int * v21 = v30; /*0x710297*/
+        TechnoClass *v21 = v30; /*0x710297*/
         if ( v30[171] ) /*0x71029b*/
           TechnoClass::EjectPassengers(v30, 0); /*0x7102a6*/
         if ( v6[171] ) /*0x7102ab*/
@@ -254,7 +254,7 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
         *((_BYTE *)v6 + 1709) = 1; /*0x710352*/
         Member = Team::GetMember(v6, 0); /*0x710359*/
         if ( Member && (*(int (__thiscall **)(int))(*(_DWORD *)Member + 44))(Member) == 6 ) /*0x71036c*/
-          (*(void (__thiscall **)(_DWORD *, int))(*v6 + 640))(v6, 3); /*0x710374*/
+          v6->vt_slot_640(3); /*0x710374*/
         (*(void (__thiscall **)(int, int, int))(*(_DWORD *)v21[171] + 488))(v21[171], 5, 1); /*0x710386*/
         _DWORD * v25 = (_DWORD *)v21[171]; /*0x71038c*/
         if ( !*(_BYTE *)(v25[135] + 492) && !*(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*v25 + 132))(v25) + 1516) ) /*0x7103aa*/
