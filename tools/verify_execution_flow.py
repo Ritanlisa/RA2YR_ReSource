@@ -247,6 +247,42 @@ def load_signals(M):
             pass
 
 
+_MAP_CACHE_PATH = PROJECT_ROOT / ".omo" / "cache" / "verify_maps.json"
+
+
+def _hpp_fingerprint():
+    items = []
+    for hf in SRC_DIR.glob("**/*.hpp"):
+        try:
+            st = hf.stat()
+            items.append([str(hf.relative_to(PROJECT_ROOT)),
+                          st.st_mtime, st.st_size])
+        except OSError:
+            pass
+    items.sort()
+    return items
+
+
+def _load_map_cache(key):
+    try:
+        with open(_MAP_CACHE_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if data.get("key") == key:
+            return data
+    except (OSError, ValueError):
+        pass
+    return None
+
+
+def _save_map_cache(key, payload):
+    try:
+        _MAP_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(_MAP_CACHE_PATH, "w", encoding="utf-8") as f:
+            json.dump({"key": key, **payload}, f)
+    except OSError:
+        pass
+
+
 def load_globals_map(M):
     glob_pattern = re.compile(
         r'extern\s+[\w\s*&<>:\[\]]+?\s+(\w+)\s*(?:\[[^\]]*\])?\s*;'
@@ -1575,9 +1611,24 @@ def verify_single_function(ida_addr, func_name, display_name, M,
 def load_all_maps():
     M = Maps()
     load_signals(M)
-    load_globals_map(M)
+    # G30: header scans (globals map + vtable decl-order) dominate verify
+    # latency (~7s of ~9s). Cache by hpp fingerprint (path+mtime+size);
+    # any header change invalidates, so results are scan-equivalent.
+    key = _hpp_fingerprint()
+    cached = _load_map_cache(key)
+    if cached:
+        M.global_to_addr = cached["globals"]
+        M.class_vtable = cached["class_vtable"]
+        M.class_file = cached["class_file"]
+        M.class_parent = cached["class_parent"]
+    else:
+        load_globals_map(M)
+        parse_vtable_indices_from_headers(M)
+        _save_map_cache(key, {"globals": M.global_to_addr,
+                              "class_vtable": M.class_vtable,
+                              "class_file": M.class_file,
+                              "class_parent": M.class_parent})
     load_member_lookup(M)
-    parse_vtable_indices_from_headers(M)
     build_member_name_index(M)
     # Load binary vtable offsets (ground truth from IDA)
     if VTABLE_OFFSETS_JSON.exists():

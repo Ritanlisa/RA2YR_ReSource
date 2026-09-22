@@ -728,6 +728,10 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
         used_names["member"] |= pn["member"]
         used_names["free"] |= pn["free"]
     globals_used = set()
+    # G30 #154: MEMORY[0xADDR] forms and off-index IDA data labels
+    # (dword_XXXXXX etc.) carry no gindex name -> were never declared.
+    globals_addr_used = set()
+    globals_label_used = set()
 
     # pre-load globals index
     gindex = {}
@@ -829,6 +833,13 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
         for ident in idscan.findall(pseudo):
             if ident in gindex:
                 globals_used.add(ident)
+        for mm in re.finditer(r"\bMEMORY\[0x([0-9A-Fa-f]{6,8})\]", pseudo):
+            globals_addr_used.add(int(mm.group(1), 16))
+        for lm in re.finditer(
+                r"\b((?:dword|word|byte|qword|flt|dbl|unk|stru)_[0-9A-Fa-f]{6,8})\b",
+                pseudo):
+            if lm.group(1) not in gindex:
+                globals_label_used.add(lm.group(1))
 
         # 桶合并：模板实例桶（Name_arg）并入 Name；地址桶保持 _addr_XX 粒度
         if fn.bucket.startswith("_addr_"):
@@ -906,6 +917,30 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
             missing_globals.append("extern %s %s;  // data: 0x%X" % (ty, g, addr))
         else:
             missing_globals.append("extern unsigned char %s[%d];  // data: 0x%X" % (g, size, addr))
+    # G30 #154: declare MEMORY[0xADDR] / off-index label references. Resolve
+    # the address to an exported name when one exists, else synthesize
+    # DataGlobal_%X (house convention); label forms keep the IDA label typed
+    # by prefix. The refresh dedup-by-name below keeps these idempotent.
+    gaddr_name = {}
+    for _gn, (_ga, _gs) in gindex.items():
+        gaddr_name.setdefault(_ga, _gn)
+    _LABEL_PREFIX_TYPE = (("qword_", "unsigned long long"), ("dword_", "unsigned int"),
+                          ("word_", "unsigned short"), ("byte_", "unsigned char"),
+                          ("flt_", "float"), ("dbl_", "double"))
+    for addr in sorted(globals_addr_used):
+        name = gaddr_name.get(addr) or ("DataGlobal_%X" % addr)
+        if re.search(r"\b%s\b" % re.escape(name), src_blob):
+            continue
+        missing_globals.append("extern unsigned int %s;  // data: 0x%X" % (name, addr))
+    for lbl in sorted(globals_label_used):
+        if re.search(r"\b%s\b" % re.escape(lbl), src_blob):
+            continue
+        ty = next((t for p, t in _LABEL_PREFIX_TYPE if lbl.startswith(p)), "unsigned int")
+        try:
+            laddr = int(lbl.rsplit("_", 1)[1], 16)
+        except ValueError:
+            laddr = 0
+        missing_globals.append("extern %s %s;  // data: 0x%X" % (ty, lbl, laddr))
     gh = E4 / "e4_globals.hpp"
     if refresh and gh.exists():
         new_names = set()

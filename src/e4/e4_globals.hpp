@@ -3507,3 +3507,15 @@ extern int DataGlobal_B04988;  // data: 0xb04988
 extern int DataGlobal_B0498C;  // data: 0xb0498c
 extern int DataGlobal_B04990;  // data: 0xb04990
 extern int DataGlobal_B049BC;  // data: 0xb049bc
+extern unsigned int DataGlobal_B1D4A0;  // data: 0xB1D4A0  (audio theme queue obj)
+extern unsigned int DataGlobal_B1D4A8;  // data: 0xB1D4A8  (audio theme queue count)
+extern unsigned char DataGlobal_B1D4AD;  // data: 0xB1D4AD  (audio theme flag)
+extern unsigned int DataGlobal_B1D4B4;  // data: 0xB1D4B4  (audio theme pending)
+extern unsigned int DataGlobal_B1D4B8;  // data: 0xB1D4B8  (current theme node)
+extern unsigned int DataGlobal_8A3838;  // data: 0x8A3838  (EMPulseClass ctor src)
+extern unsigned int DataGlobal_89E0F0;  // data: 0x89E0F0  (CaptureManager pool obj)
+extern unsigned int DataGlobal_89E0F4;  // data: 0x89E0F4  (CaptureManager pool array)
+extern unsigned int DataGlobal_89E0F8;  // data: 0x89E0F8  (CaptureManager pool cap)
+extern unsigned char DataGlobal_89E0FD;  // data: 0x89E0FD  (CaptureManager flag)
+extern unsigned int DataGlobal_89E100;  // data: 0x89E100  (CaptureManager count)
+extern unsigned int DataGlobal_89E104;  // data: 0x89E104  (CaptureManager growth)

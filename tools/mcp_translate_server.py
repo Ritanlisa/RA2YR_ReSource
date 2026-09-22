@@ -861,8 +861,9 @@ def replace_pseudocode(entry, new_body, dry_run):
         return {"ok": False, "error": f"new_body brace imbalance {bal:+d}"}
     old_block = "\n".join(lines[marker_idx:end + 1])
     if dry_run:
+        span_start = marker_idx - 1 if gap2_def else marker_idx
         return {"ok": True, "dry_run": True,
-                "would_replace_lines": [marker_idx + 1, end + 1],
+                "would_replace_lines": [span_start + 1, end + 1],
                 "stripped_signature": stripped_note,
                 "old_preview": old_block[:600], "new_preview": new_body[:600]}
     if gap2_def:
@@ -872,12 +873,20 @@ def replace_pseudocode(entry, new_body, dry_run):
         if nb.endswith('}'):
             nb = nb[:-1]
         new_body = gap2_def + chr(10) + nb + chr(10) + '}'
-    lines[marker_idx:end + 1] = new_body.split(chr(10))
+        # #156: the gap2 one-liner def line sits BEFORE the marker, so the
+        # default span (marker..raw-end) would keep the original def line and
+        # the prepended gap2_def duplicates it -- a double signature line that
+        # breaks the C++ parser into the flat single-block fallback. Consume
+        # the original def line in the replacement span.
+        span_start = marker_idx - 1
+    else:
+        span_start = marker_idx
+    lines[span_start:end + 1] = new_body.split(chr(10))
     p.write_bytes("\n".join(lines).encode("latin-1"))
     annotation = None
     if entry.get("address"):
         annotation = annotate_function(entry["target"], entry["address"])
-    return {"ok": True, "replaced_lines": [marker_idx + 1, end + 1],
+    return {"ok": True, "replaced_lines": [span_start + 1, end + 1],
             "stripped_signature": stripped_note,
             "old_block_saved_chars": len(old_block),
             "address_annotation": annotation}

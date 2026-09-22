@@ -528,6 +528,18 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
                 if _is_ident(toks[j] if j < n else None):
                     mtok = toks[j]
                     method = tilde + mtok.value
+                    # G30 #153: `= &this->Member` / `( &this->Member` / `,
+                    # &this->Member` -- a unary address-of with NO possible
+                    # enclosing dereference is an IDA-side LEA: it observes no
+                    # memory, so it carries NO event. Only these three
+                    # unambiguous shapes suppress; `*(int *)&this->x` (prev
+                    # token `)` from a cast) keeps its READ because the &/* pair
+                    # is a genuine dereference.
+                    if (i >= 2 and _is_op(toks[i - 1], "&")
+                            and (toks[i - 2].kind == KIND_OP
+                                 and toks[i - 2].value in ("=", "(", ","))):
+                        i = j + 1
+                        continue
                     after = toks[j + 1] if j + 1 < n else None
                     if _is_op(after, "("):
                         # method call on `this`: virtual -> vfptr, else direct

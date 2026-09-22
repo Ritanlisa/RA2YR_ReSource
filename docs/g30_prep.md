@@ -121,6 +121,31 @@
 
 ## G30 核验轮补充修复（2026-09-22 复查）
 
+### 核验轮二期：超时根治 + #152/#153/#154 全闭环（净增 +5 → completed 12,692）
+
+1. **并行 verify 超时根治（双管）**：① 热点定位 = 每次 verify 全新进程重扫
+   全部 hpp（vtable 头解析 3.8s + globals map 3.0s，真实验证仅 1.9s）→
+   verify_execution_flow 加 hpp 指纹缓存（.omo/cache/verify_maps.json，
+   path+mtime+size 键控，行为等价），单次 14s→6s、并行双调 4.4s（原 30s 超时）；
+   ② async 通路本就存在（schema async 字段 → job_id → job_status），本会话
+   实证 verify-3 全链可用。纪律：批内 verify 用 async 或缓存热态串行。
+2. **#152 闭环（不改门控）**：GetResourceID 族 4 件 receiver 实为 RTTI 索引
+   （0..7），改型自由函数 `int GetResourceID*CSF(int rtti)` 免 cast，4/4 PASS。
+3. **#153 闭环（诊断修正）**：「switch 拍平」系 #156 双 def 行解析失败假象；
+   C++ switch 提取本支持 case 边。剩余不对称 = `= &this->X` 伪 READ（IDA LEA
+   零事件）→ efv_cpp_events 取址零事件词汇（三种无歧义形态）。0x500910 PASS。
+   normalize 未动：其非 marker 序不变量自检曾逮住一版 READ-only 块消除方案
+   并回退（自检防线有效）。
+4. **#154 闭环（生成器 + 定向解锁）**：gen_e4_materialize E1 收集补
+   MEMORY[0x] 与无索引 dword_/byte_ 等标签（gaddr 反查名 / DataGlobal_%X
+   合成 / 前缀定型）；e4_globals.hpp 定向追加 12 条（B1D4A0-B8 音频主题池、
+   8A3838 EMPulse、89E0F0-104 CaptureManager 池）。0x720940 的
+   stru_830620.__pad_579C[N] 结构体成员式全局仍不在覆盖内（记留）。
+5. **新账**：#156（replace_pseudocode 双 def 行，已修，重启生效）+
+   #155（harvest FAIL 回滚不净，0x7C8992 已手工恢复；琐碎桶已干涸：
+   ≤8 行 0 件、≤14 行 1 件——harvest 通道暂无吞吐对象）。
+   服务器进程仍跑旧代码，**下次会话首件事 = 重启 mcp_translate_server**。
+
 - **vtable_offsets.json 残余漂移**（G30 会话修复 540/544 时遗留）：
   Return450B/C 误挂 500/504 → 二进制主表 0x7E3EBC 直读归位 520/524
   （500/504 实为 OverrideMission_SyncLog/CheckOccupantState）；

@@ -7894,43 +7894,42 @@ namespace gamemd { int HouseClass::GetBuildLimit(int a1, int a2, int a3) {
 // 0x500910
 namespace gamemd
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::GetFactoryCount(int *this, int a2, char a3)
+int HouseClass::GetFactoryCount(int a1, int a2)
 {
-  int *v3; // eax
-  int result; // eax
+    int *v3;
+    int result;
 
-  switch ( a2 ) /*0x500922*/
-  {
-    case 1: /*0x500922*/
-    case 40: /*0x500922*/
-      if ( a3 ) /*0x50092f*/
-        v3 = this + 5346; /*0x500931*/
-      else
-        v3 = this + 5344; /*0x500939*/
-      goto LABEL_8; /*0x500937*/
-    case 2: /*0x500922*/
-    case 3: /*0x500922*/
-      v3 = this + 5342; /*0x500941*/
-      goto LABEL_8; /*0x500947*/
-    case 6: /*0x500922*/
-    case 7: /*0x500922*/
-      v3 = this + 5345; /*0x500951*/
-      goto LABEL_8; /*0x500951*/
-    case 15: /*0x500922*/
-    case 16: /*0x500922*/
-      v3 = this + 5343; /*0x500949*/
-LABEL_8:
-      if ( !v3 ) /*0x500959*/
-        goto LABEL_10; /*0x500959*/
-      result = *v3; /*0x50095b*/
-      break; /*0x50095d*/
+    switch (a1) {
+    case 1:
+    case 40:
+        if (a2) {
+            v3 = &this->numShipyards;
+        } else {
+            v3 = &this->numWarFactories;
+        }
+        break;
+    case 2:
+    case 3:
+        v3 = &this->numAirpads;
+        break;
+    case 6:
+    case 7:
+        v3 = &this->numConYards;
+        break;
+    case 15:
+    case 16:
+        v3 = &this->numBarracks;
+        break;
     default:
-LABEL_10:
-      result = 0; /*0x500960*/
-      break; /*0x500960*/
-  }
-  return result; /*0x50095d*/
+        v3 = 0;
+        break;
+    }
+    if (!v3) {
+        result = 0;
+    } else {
+        result = *v3;
+    }
+    return result;
 }
 }
 

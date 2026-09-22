@@ -5337,91 +5337,107 @@ int __thiscall GetResourceIDHardcodedCSF(void *this)
 }
 } }
 // 0x4E37D0
-namespace gamemd { int Gap2Recv_4E37D0::GetResourceID2CSF() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4E37D0(void *this)
-{
-  if ( !this ) /*0x4e37d4*/
-    return 1697; /*0x4e37d6*/
-  if ( this == (void *)1 ) /*0x4e37df*/
-    return 1296; /*0x4e37e1*/
-  if ( this == (void *)2 ) /*0x4e37ea*/
-    return 1299; /*0x4e37ec*/
-  if ( this == (void *)3 ) /*0x4e37f5*/
-    return 1310; /*0x4e37f7*/
-  if ( this == (void *)4 ) /*0x4e3800*/
-    return 1300; /*0x4e3802*/
-  if ( this == (void *)5 ) /*0x4e380b*/
-    return 1311; /*0x4e380d*/
-  if ( this == (void *)6 ) /*0x4e3816*/
-    return 1312; /*0x4e3818*/
-  return this != (void *)7 ? -1 : 1313;
+namespace gamemd { int GetResourceID2CSF(int rtti) {
+if (!rtti) {
+        return 1697;
+    }
+    if (rtti == 1) {
+        return 1296;
+    }
+    if (rtti == 2) {
+        return 1299;
+    }
+    if (rtti == 3) {
+        return 1310;
+    }
+    if (rtti == 4) {
+        return 1300;
+    }
+    if (rtti == 5) {
+        return 1311;
+    }
+    if (rtti == 6) {
+        return 1312;
+    }
+    return rtti != 7 ? -1 : 1313;
 }
 } }
 // 0x4E41D0
-namespace gamemd { int Gap2Recv_4E41D0::GetResourceIDCSF() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CSF_GetResourceID(void *this)
-{
-  if ( !this ) /*0x4e41d4*/
-    return 1698; /*0x4e41d6*/
-  if ( this == (void *)1 ) /*0x4e41df*/
-    return 1314; /*0x4e41e1*/
-  if ( this == (void *)2 ) /*0x4e41ea*/
-    return 1315; /*0x4e41ec*/
-  if ( this == (void *)3 ) /*0x4e41f5*/
-    return 1316; /*0x4e41f7*/
-  if ( this == (void *)4 ) /*0x4e4200*/
-    return 1317; /*0x4e4202*/
-  if ( this == (void *)5 ) /*0x4e420b*/
-    return 1318; /*0x4e420d*/
-  if ( this == (void *)6 ) /*0x4e4216*/
-    return 1319; /*0x4e4218*/
-  return this != (void *)7 ? -1 : 1320;
+namespace gamemd { int GetResourceIDCSF(int rtti) {
+    if (!rtti) {
+        return 1698;
+    }
+    if (rtti == 1) {
+        return 1314;
+    }
+    if (rtti == 2) {
+        return 1315;
+    }
+    if (rtti == 3) {
+        return 1316;
+    }
+    if (rtti == 4) {
+        return 1317;
+    }
+    if (rtti == 5) {
+        return 1318;
+    }
+    if (rtti == 6) {
+        return 1319;
+    }
+    return rtti != 7 ? -1 : 1320;
 }
 } }
 // 0x4E4E60
-namespace gamemd { int Gap2Recv_4E4E60::GetResourceID3CSF() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CSF_GetResourceID3(void *this)
-{
-  if ( !this ) /*0x4e4e64*/
-    return 1699; /*0x4e4e66*/
-  if ( this == (void *)1 ) /*0x4e4e6f*/
-    return 1700; /*0x4e4e71*/
-  if ( this == (void *)2 ) /*0x4e4e7a*/
-    return 1701; /*0x4e4e7c*/
-  if ( this == (void *)3 ) /*0x4e4e85*/
-    return 1702; /*0x4e4e87*/
-  if ( this == (void *)4 ) /*0x4e4e90*/
-    return 1703; /*0x4e4e92*/
-  if ( this == (void *)5 ) /*0x4e4e9b*/
-    return 1704; /*0x4e4e9d*/
-  if ( this == (void *)6 ) /*0x4e4ea6*/
-    return 1706; /*0x4e4ea8*/
-  return this != (void *)7 ? -1 : 1707;
+namespace gamemd { int GetResourceID3CSF(int rtti) {
+    if (!rtti) {
+        return 1699;
+    }
+    if (rtti == 1) {
+        return 1700;
+    }
+    if (rtti == 2) {
+        return 1701;
+    }
+    if (rtti == 3) {
+        return 1702;
+    }
+    if (rtti == 4) {
+        return 1703;
+    }
+    if (rtti == 5) {
+        return 1704;
+    }
+    if (rtti == 6) {
+        return 1706;
+    }
+    return rtti != 7 ? -1 : 1707;
 }
 } }
 // 0x4E5940
-namespace gamemd { int Gap2Recv_4E5940::GetResourceID4CSF() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CSF_GetResourceID4(void *this)
-{
-  if ( !this ) /*0x4e5944*/
-    return 1901; /*0x4e5946*/
-  if ( this == (void *)1 ) /*0x4e594f*/
-    return 1902; /*0x4e5951*/
-  if ( this == (void *)2 ) /*0x4e595a*/
-    return 1903; /*0x4e595c*/
-  if ( this == (void *)3 ) /*0x4e5965*/
-    return 1904; /*0x4e5967*/
-  if ( this == (void *)4 ) /*0x4e5970*/
-    return 1905; /*0x4e5972*/
-  if ( this == (void *)5 ) /*0x4e597b*/
-    return 1906; /*0x4e597d*/
-  if ( this == (void *)6 ) /*0x4e5986*/
-    return 1907; /*0x4e5988*/
-  return this != (void *)7 ? -1 : 1908;
+namespace gamemd { int GetResourceID4CSF(int rtti) {
+    if (!rtti) {
+        return 1901;
+    }
+    if (rtti == 1) {
+        return 1902;
+    }
+    if (rtti == 2) {
+        return 1903;
+    }
+    if (rtti == 3) {
+        return 1904;
+    }
+    if (rtti == 4) {
+        return 1905;
+    }
+    if (rtti == 5) {
+        return 1906;
+    }
+    if (rtti == 6) {
+        return 1907;
+    }
+    return rtti != 7 ? -1 : 1908;
 }
 } }
 // 0x4F9F70
