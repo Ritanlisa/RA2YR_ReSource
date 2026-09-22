@@ -251,7 +251,7 @@ void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
   if ( !MEMORY[0xA8ED6B] ) /*0x69aea1*/
   {
     v11 = a2; /*0x69aeb4*/
-    if ( *((_BYTE *)MEMORY[0xA8B230] + 13501) ) /*0x69aeb8*/
+    if ( *((_BYTE *)g_ScenarioClass_Instance + 13501) ) /*0x69aeb8*/
       v11 = a2 / 2; /*0x69aec7*/
     v12 = (double)v11; /*0x69aed6*/
     if ( Progress::GetWeighted(0) * 100.0 < v12 ) /*0x69aef1*/
@@ -283,7 +283,7 @@ void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
             if ( v8 <= 0 ) /*0x69b11e*/
               break; /*0x69b11e*/
             Sleep(0x14u); /*0x69b122*/
-            EventQueue::Process(MEMORY[0x87F770]); /*0x69b12a*/
+            EventQueue::Process(g_BinkMoviePlayer); /*0x69b12a*/
             Stream::ReadPacket(&MEMORY[0xA8EA70]); /*0x69b134*/
           }
           break; /*0x69b146*/

@@ -19,7 +19,7 @@ char __usercall sub_52FEC0@<al>(char a1@<dl>, int a2@<ecx>, int a3@<ebx>, int a4
 
   v4 = a2; /*0x52fec5*/
   if ( !a2 ) /*0x52fecf*/
-    v4 = MEMORY[0x88730C]; /*0x52fed1*/
+    v4 = g_DSurface_Hidden; /*0x52fed1*/
   (*(void (__thiscall **)(int, _DWORD, int, int))(*(_DWORD *)v4 + 24))(v4, 0, a4, a3); /*0x52fede*/
   v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 124))(v4); /*0x52fee8*/
   v6 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 128))(v4); /*0x52fef4*/
@@ -515,22 +515,22 @@ int __thiscall Screen::TransitionLoop(MPCooperative *this, int a2)
     v17[2] = 640; /*0x6901db*/
     v17[3] = 400; /*0x6901e3*/
     Rect::Set(v19, v3, v4, 640, 400); /*0x6901eb*/
-    if ( MEMORY[0x887640] ) /*0x6901f8*/
-      (*(void (__thiscall **)(int, IUnknown *, _DWORD))(*(_DWORD *)MEMORY[0x887640] + 60))( /*0x690205*/
-        MEMORY[0x887640],
-        MEMORY[0x88730C],
+    if ( g_WWMouseClass_Instance ) /*0x6901f8*/
+      (*(void (__thiscall **)(int, IUnknown *, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 60))( /*0x690205*/
+        g_WWMouseClass_Instance,
+        g_DSurface_Hidden,
         0);
-    (*(void (__thiscall **)(int, _DWORD *, IUnknown *, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x690225*/
-      MEMORY[0x887308],
+    (*(void (__thiscall **)(int, _DWORD *, IUnknown *, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x690225*/
+      g_DSurface_Primary,
       v17,
-      MEMORY[0x88730C],
+      g_DSurface_Hidden,
       v19,
       0,
       1);
-    if ( MEMORY[0x887640] ) /*0x690230*/
-      (*(void (__thiscall **)(int, IUnknown *, _DWORD))(*(_DWORD *)MEMORY[0x887640] + 64))( /*0x69023d*/
-        MEMORY[0x887640],
-        MEMORY[0x88730C],
+    if ( g_WWMouseClass_Instance ) /*0x690230*/
+      (*(void (__thiscall **)(int, IUnknown *, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 64))( /*0x69023d*/
+        g_WWMouseClass_Instance,
+        g_DSurface_Hidden,
         0);
     do
     {

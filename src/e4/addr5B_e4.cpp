@@ -359,7 +359,7 @@ int __stdcall GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, u
             if ( DlgItem ) /*0x5b4c64*/
             {
               SendMessageA(DlgItem, 0x4B3u, 0x100u, (LPARAM)lParam); /*0x5b4c83*/
-              SendMessageA(v8, 0x4B2u, 0, (LPARAM)&MEMORY[0x887734]); /*0x5b4c92*/
+              SendMessageA(v8, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x5b4c92*/
               if ( wcslen(lParam) ) /*0x5b4c9c*/
               {
                 if ( lParam[0] != 13 ) /*0x5b4cb5*/
@@ -822,7 +822,7 @@ LABEL_54:
       case 'E': /*0x5bc78d*/
       case 'e': /*0x5bc78d*/
         v7 = MEMORY[0xABF220]; /*0x5bc80f*/
-        if ( MEMORY[0xABF220] > 16 || MEMORY[0xABF220] >= MEMORY[0xB1D4B0] ) /*0x5bc820*/
+        if ( MEMORY[0xABF220] > 16 || MEMORY[0xABF220] >= g_InfantrySelectState ) /*0x5bc820*/
         {
           v7 = 0; /*0x5bc822*/
           MEMORY[0xABF220] = 0; /*0x5bc824*/
@@ -865,7 +865,7 @@ LABEL_45:
       case 'O': /*0x5bc78d*/
       case 'o': /*0x5bc78d*/
         v8 = MEMORY[0xABF220]; /*0x5bc837*/
-        if ( MEMORY[0xABF220] > 16 || MEMORY[0xABF220] >= MEMORY[0xB1D4B0] ) /*0x5bc848*/
+        if ( MEMORY[0xABF220] > 16 || MEMORY[0xABF220] >= g_InfantrySelectState ) /*0x5bc848*/
         {
           v8 = 0; /*0x5bc84a*/
           MEMORY[0xABF220] = 0; /*0x5bc84c*/
@@ -875,7 +875,7 @@ LABEL_45:
       case 'Q': /*0x5bc78d*/
       case 'q': /*0x5bc78d*/
         v5 = MEMORY[0xABF220]; /*0x5bc7a8*/
-        if ( MEMORY[0xABF220] > 16 || MEMORY[0xABF220] >= MEMORY[0xB1D4B0] ) /*0x5bc7b9*/
+        if ( MEMORY[0xABF220] > 16 || MEMORY[0xABF220] >= g_InfantrySelectState ) /*0x5bc7b9*/
         {
           v5 = 0; /*0x5bc7bb*/
           MEMORY[0xABF220] = 0; /*0x5bc7bd*/
@@ -894,7 +894,7 @@ LABEL_45:
       case 'W': /*0x5bc78d*/
       case 'w': /*0x5bc78d*/
         v6 = MEMORY[0xABF220]; /*0x5bc7e9*/
-        if ( MEMORY[0xABF220] > 16 || MEMORY[0xABF220] >= MEMORY[0xB1D4B0] ) /*0x5bc7fa*/
+        if ( MEMORY[0xABF220] > 16 || MEMORY[0xABF220] >= g_InfantrySelectState ) /*0x5bc7fa*/
         {
           v6 = 0; /*0x5bc7fc*/
           MEMORY[0xABF220] = 0; /*0x5bc7fe*/
@@ -1110,9 +1110,9 @@ void __fastcall sub_5BF390(int a1, char a2)
   if ( a1 >= 0 && a1 < MEMORY[0xABF3A0] ) /*0x5bf3a2*/
   {
     v3 = *((_DWORD *)MEMORY[0xABF394] + a1); /*0x5bf3ad*/
-    if ( !MEMORY[0xA8B238] ) /*0x5bf3b7*/
+    if ( !g_GameMode_Current ) /*0x5bf3b7*/
     {
-      v4 = CreateMovie(v3, MEMORY[0x887300], 0); /*0x5bf3c5*/
+      v4 = CreateMovie(v3, DSurface_Sidebar, 0); /*0x5bf3c5*/
       v5 = v4; /*0x5bf3ca*/
       if ( v4 ) /*0x5bf3ce*/
       {
@@ -1163,8 +1163,8 @@ char sub_5BF8C0()
     v4[1] = v2; /*0x5bf91a*/
     v4[0] = Rect.left + v3; /*0x5bf924*/
     v4[3] = v1; /*0x5bf928*/
-    return (*(int (__thiscall **)(int, _DWORD *, _DWORD, int, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x5bf93d*/
-             MEMORY[0x887308],
+    return (*(int (__thiscall **)(int, _DWORD *, _DWORD, int, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x5bf93d*/
+             g_DSurface_Primary,
              v4,
              *(_DWORD *)(MEMORY[0xABF3F4] + 8),
              MEMORY[0xABF3F4] + 36,
@@ -1202,8 +1202,8 @@ char __usercall sub_5BF950@<al>(int a1@<ebx>, int a2@<edi>, int a3@<esi>)
   result = TestBitArray(15); /*0x5bf958*/
   if ( !result ) /*0x5bf95f*/
   {
-    (*(void (__thiscall **)(int, int, _DWORD, int, _DWORD, int, int, int, int))(*(_DWORD *)MEMORY[0x88730C] + 8))( /*0x5bf983*/
-      MEMORY[0x88730C],
+    (*(void (__thiscall **)(int, int, _DWORD, int, _DWORD, int, int, int, int))(*(_DWORD *)g_DSurface_Hidden + 8))( /*0x5bf983*/
+      g_DSurface_Hidden,
       MEMORY[0xABF3F4] + 36,
       *(_DWORD *)(MEMORY[0xABF3F4] + 8),
       MEMORY[0xABF3F4] + 36,
@@ -1223,13 +1223,13 @@ char __usercall sub_5BF950@<al>(int a1@<ebx>, int a2@<edi>, int a3@<esi>)
         v11[1] = v6[1]; /*0x5bf9b8*/
         v12 = v6[2]; /*0x5bf9bf*/
         v13 = v6[3]; /*0x5bf9cc*/
-        v14[0] = ((*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x88730C] + 124))(MEMORY[0x88730C]) - v12) / 2; /*0x5bf9e6*/
-        v7 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x88730C] + 128))(MEMORY[0x88730C]); /*0x5bf9ec*/
+        v14[0] = ((*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 124))(g_DSurface_Hidden) - v12) / 2; /*0x5bf9e6*/
+        v7 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 128))(g_DSurface_Hidden); /*0x5bf9ec*/
         v14[2] = v12; /*0x5bf9fc*/
         v14[1] = v7 - v13; /*0x5bfa04*/
         v14[3] = v13; /*0x5bfa15*/
-        (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, int, int))(*(_DWORD *)MEMORY[0x88730C] + 8))( /*0x5bfa21*/
-          MEMORY[0x88730C],
+        (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, int, int))(*(_DWORD *)g_DSurface_Hidden + 8))( /*0x5bfa21*/
+          g_DSurface_Hidden,
           v14,
           v5,
           v11,
@@ -1246,10 +1246,10 @@ char __usercall sub_5BF950@<al>(int a1@<ebx>, int a2@<edi>, int a3@<esi>)
     v15[0] = Rect.left + v10; /*0x5bfa7c*/
     v15[2] = v9; /*0x5bfa80*/
     v15[3] = v8; /*0x5bfa84*/
-    return (*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x5bfa8f*/
-             MEMORY[0x887308],
+    return (*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x5bfa8f*/
+             g_DSurface_Primary,
              v15,
-             MEMORY[0x88730C]);
+             g_DSurface_Hidden);
   }
   return result; /*0x5bfa95*/
 }
@@ -1517,7 +1517,7 @@ char __fastcall Movie_RenderFrame(int a1, char a2, int a3, char a4)
       }
     }
     if ( a2 ) /*0x5bffe2*/
-      (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x5bffec*/
+      (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x5bffec*/
     if ( a3 != -1 ) /*0x5bfff6*/
       Theme::QueueSong(a3); /*0x5bfffe*/
     do /*0x5c0049*/
@@ -1537,7 +1537,7 @@ char __fastcall Movie_RenderFrame(int a1, char a2, int a3, char a4)
     while ( !v9 ); /*0x5c0049*/
     result = a2; /*0x5c004b*/
     if ( a2 ) /*0x5c0054*/
-      result = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x5c005e*/
+      result = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x5c005e*/
     MEMORY[0xABF3F4] = 0; /*0x5c0061*/
   }
   return result; /*0x5c006b*/

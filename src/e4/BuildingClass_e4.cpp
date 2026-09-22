@@ -47,24 +47,24 @@ int __thiscall BuildingClass::LoadFromStream(#377 *this)
   v1 = v33; /*0x453e25*/
   v2 = v33 + 4; /*0x453e2c*/
   v33 = (*(int (__stdcall **)(int))(*(_DWORD *)(v33 + 4) + 16))(v33 + 4); /*0x453e3d*/
-  v3 = BuildingTypeClass::Dequeue((char **)&MEMORY[0xB0E840], &v33); /*0x453e41*/
+  v3 = BuildingTypeClass::Dequeue((char **)&g_BuildingLoadQueue_Array, &v33); /*0x453e41*/
   v4 = 0; /*0x453e46*/
   if ( v3 ) /*0x453e4a*/
   {
-    v5 = (int)(v3 - (_DWORD)MEMORY[0xB0E840]) >> 3; /*0x453e52*/
+    v5 = (int)(v3 - (_DWORD)g_BuildingLoadQueue_Array) >> 3; /*0x453e52*/
     if ( v5 != -1 ) /*0x453e58*/
     {
       v6 = v5 + 1; /*0x453e5a*/
-      for ( i = MEMORY[0xB0E844]; v6 < (int)MEMORY[0xB0E844]; i = MEMORY[0xB0E844] ) /*0x453e64*/
+      for ( i = g_BuildingLoadQueue_Count; v6 < (int)g_BuildingLoadQueue_Count; i = g_BuildingLoadQueue_Count ) /*0x453e64*/
       {
-        v8 = (_DWORD *)((char *)MEMORY[0xB0E840] + 8 * v6++); /*0x453e6c*/
+        v8 = (_DWORD *)((char *)g_BuildingLoadQueue_Array + 8 * v6++); /*0x453e6c*/
         *(v8 - 2) = *v8; /*0x453e72*/
         *(v8 - 1) = v8[1]; /*0x453e78*/
       }
-      MEMORY[0xB0E844] = i - 1; /*0x453e8d*/
-      *((_DWORD *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844]) = 0; /*0x453e92*/
-      *((_DWORD *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844] + 1) = 0; /*0x453ea3*/
-      MEMORY[0xB0E850] = 0; /*0x453ea7*/
+      g_BuildingLoadQueue_Count = i - 1; /*0x453e8d*/
+      *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count) = 0; /*0x453e92*/
+      *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count + 1) = 0; /*0x453ea3*/
+      g_BuildingLoadQueue_Active = 0; /*0x453ea7*/
     }
   }
   v9 = v34; /*0x453ead*/
@@ -75,28 +75,28 @@ int __thiscall BuildingClass::LoadFromStream(#377 *this)
     if ( v1 ) /*0x453ec6*/
       BuildingClass::ctor((_DWORD *)v1, (int)&v33); /*0x453ecf*/
     v11 = (*(int (__stdcall **)(int))(*(_DWORD *)v2 + 16))(v2); /*0x453ee0*/
-    v12 = MEMORY[0xB0E848]; /*0x453ee2*/
-    if ( (int)(MEMORY[0xB0E844] + 1) <= MEMORY[0xB0E848] ) /*0x453eea*/
+    v12 = g_BuildingLoadQueue_Capacity; /*0x453ee2*/
+    if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x453eea*/
       goto LABEL_13; /*0x453eea*/
-    if ( !MEMORY[0xB0E848] ) /*0x453eee*/
+    if ( !g_BuildingLoadQueue_Capacity ) /*0x453eee*/
       v12 = 10; /*0x453ef0*/
-    if ( BuildingTypeClass::Enqueue((int)&MEMORY[0xB0E840], v12) ) /*0x453efb*/
+    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, v12) ) /*0x453efb*/
     {
 LABEL_13:
-      *((_DWORD *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844]) = v11; /*0x453f0f*/
-      *((_DWORD *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844] + 1) = v1; /*0x453f1e*/
-      MEMORY[0xB0E84C] = 0; /*0x453f28*/
-      ++MEMORY[0xB0E844]; /*0x453f2f*/
+      *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count) = v11; /*0x453f0f*/
+      *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count + 1) = v1; /*0x453f1e*/
+      g_BuildingLoadQueue_Dirty = 0; /*0x453f28*/
+      ++g_BuildingLoadQueue_Count; /*0x453f2f*/
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1312)); /*0x453f40*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1316)); /*0x453f51*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1344)); /*0x453f62*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1352)); /*0x453f73*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1356)); /*0x453f84*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1536)); /*0x453f95*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1312)); /*0x453f40*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1316)); /*0x453f51*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1344)); /*0x453f62*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1352)); /*0x453f73*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1356)); /*0x453f84*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1536)); /*0x453f95*/
     AudioController::Init((_DWORD *)(v1 + 1696)); /*0x453fa0*/
     AudioController::Init((_DWORD *)(v1 + 1716)); /*0x453fab*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1780)); /*0x453fbc*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1780)); /*0x453fbc*/
     result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v9 + 12))(v9, &v34, 4, 0); /*0x453fcd*/
     if ( result >= 0 ) /*0x453fd2*/
     {
@@ -108,7 +108,7 @@ LABEL_24:
         if ( v13 > 0 ) /*0x454050*/
         {
           do /*0x45406b*/
-            ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(_DWORD *)(v1 + 1648) + 4 * v18++)); /*0x454061*/
+            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v1 + 1648) + 4 * v18++)); /*0x454061*/
           while ( v18 < v34 ); /*0x45406b*/
         }
         result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v9 + 12))(v9, &v34, 4, 0); /*0x45407a*/
@@ -123,14 +123,14 @@ LABEL_36:
             if ( v19 > 0 ) /*0x4540ff*/
             {
               do /*0x45411a*/
-                ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(_DWORD *)(v1 + 1672) + 4 * v25++)); /*0x454110*/
+                ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v1 + 1672) + 4 * v25++)); /*0x454110*/
               while ( v25 < v34 ); /*0x45411a*/
             }
             v26 = (int *)(v1 + 1372); /*0x45411c*/
             v27 = 21; /*0x454122*/
             do /*0x454136*/
             {
-              ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v26++); /*0x45412d*/
+              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v26++); /*0x45412d*/
               --v27; /*0x454135*/
             }
             while ( v27 ); /*0x454136*/
@@ -138,7 +138,7 @@ LABEL_36:
             v29 = 3; /*0x45413e*/
             do /*0x454152*/
             {
-              ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v28++); /*0x454149*/
+              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v28++); /*0x454149*/
               --v29; /*0x454151*/
             }
             while ( v29 ); /*0x454152*/
@@ -146,7 +146,7 @@ LABEL_36:
             v31 = 8; /*0x45415a*/
             do /*0x45416e*/
             {
-              ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v30++); /*0x454165*/
+              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v30++); /*0x454165*/
               --v31; /*0x45416d*/
             }
             while ( v31 ); /*0x45416e*/
@@ -430,7 +430,7 @@ LABEL_8:
     v10 = (_DWORD *)this->q011; /*0x629793*/
     if ( v10 ) /*0x629798*/
     {
-      v10[45] = MEMORY[0xA8ED84]; /*0x6297af*/
+      v10[45] = g_CurrentFrame; /*0x6297af*/
       v11 = v12[2]; /*0x6297b2*/
       v10[48] = 128; /*0x6297b7*/
       v10[46] = v11; /*0x6297bf*/

@@ -51,7 +51,7 @@ char __fastcall sub_610950(char a1)
     (*(void (__thiscall **)(int, _DWORD *, int, __int128 *, _DWORD, int))(*(_DWORD *)v5 + 8))( /*0x610a08*/
       v5,
       v9,
-      MEMORY[0x887308],
+      g_DSurface_Primary,
       &MEMORY[0xAC1CB8],
       0,
       1);
@@ -61,20 +61,20 @@ char __fastcall sub_610950(char a1)
   if ( MEMORY[0xAC48B0] == -1 ) /*0x610a40*/
     v6 = -1; /*0x610a42*/
   else
-    v6 = ((int)(unsigned __int8)MEMORY[0xAC48B0] >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x610a8d*/
+    v6 = ((int)(unsigned __int8)MEMORY[0xAC48B0] >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x610a8d*/
        | (BYTE1(MEMORY[0xAC48B0]) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
        | (BYTE2(MEMORY[0xAC48B0]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
-  (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)MEMORY[0x887308] + 92))(MEMORY[0x887308], 0, 0); /*0x610a9d*/
-  (*(void (__thiscall **)(int, __int128 *, int))(*(_DWORD *)MEMORY[0x887308] + 20))(MEMORY[0x887308], &v8, v6); /*0x610aae*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887308] + 96))(MEMORY[0x887308]); /*0x610ab9*/
-  Team_Find((int *)&v8, MEMORY[0x887308], 8, 4); /*0x610aca*/
+  (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0); /*0x610a9d*/
+  (*(void (__thiscall **)(int, __int128 *, int))(*(_DWORD *)g_DSurface_Primary + 20))(g_DSurface_Primary, &v8, v6); /*0x610aae*/
+  (*(void (__thiscall **)(int))(*(_DWORD *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
+  Team_Find((int *)&v8, g_DSurface_Primary, 8, 4); /*0x610aca*/
   v7 = wcslen(MEMORY[0xAC1CCC]); /*0x610ae0*/
-  DrawTextRendererTextAligned(MEMORY[0xAC18A4], 0, (int *)&v8, MEMORY[0xAC1CCC], v7, 1, 1, MEMORY[0x887308], 0); /*0x610afb*/
+  DrawTextRendererTextAligned(MEMORY[0xAC18A4], 0, (int *)&v8, MEMORY[0xAC1CCC], v7, 1, 1, g_DSurface_Primary, 0); /*0x610afb*/
   HIDWORD(v8) -= 2; /*0x610b1e*/
   LODWORD(v8) = v8 + 1; /*0x610b2a*/
   ++DWORD1(v8); /*0x610b2e*/
   DWORD2(v8) -= 2; /*0x610b32*/
-  DrawDialogGradient((int *)MEMORY[0x887308], (int *)&v8, 1, -1); /*0x610b36*/
+  DrawDialogGradient((int *)g_DSurface_Primary, (int *)&v8, 1, -1); /*0x610b36*/
   return 1; /*0x610961*/
 }
 }

@@ -1304,8 +1304,8 @@ int __thiscall sub_7AF640(_DWORD *this, int a2)
   _DWORD v6[4]; // [esp+Ch] [ebp-20h] BYREF
   _BYTE v7[16]; // [esp+1Ch] [ebp-10h] BYREF
 
-  result = MEMORY[0x887310]; /*0x7af640*/
-  if ( MEMORY[0x887310] ) /*0x7af64d*/
+  result = DSurface_Alternate; /*0x7af640*/
+  if ( DSurface_Alternate ) /*0x7af64d*/
   {
     v4 = *(this + 7); /*0x7af64f*/
     if ( v4 ) /*0x7af654*/
@@ -1315,9 +1315,9 @@ int __thiscall sub_7AF640(_DWORD *this, int a2)
       v6[1] = v5[1]; /*0x7af66b*/
       v6[2] = v5[2]; /*0x7af672*/
       v6[3] = v5[3]; /*0x7af67f*/
-      (*(void (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)MEMORY[0x887310] + 20))(MEMORY[0x887310], v6, 0); /*0x7af68a*/
-      return (*(int (__thiscall **)(int, _DWORD *, _DWORD, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887310] + 8))( /*0x7af6a7*/
-               MEMORY[0x887310],
+      (*(void (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)DSurface_Alternate + 20))(DSurface_Alternate, v6, 0); /*0x7af68a*/
+      return (*(int (__thiscall **)(int, _DWORD *, _DWORD, _DWORD *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x7af6a7*/
+               DSurface_Alternate,
                v6,
                *(this + 7),
                v6,
@@ -1393,7 +1393,7 @@ int __stdcall WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, 
         {
           case 0xFu: /*0x7af734*/
             Dialog::DrawBackground(hWnd); /*0x7af77e*/
-            if ( MEMORY[0x887310] ) /*0x7af78a*/
+            if ( DSurface_Alternate ) /*0x7af78a*/
             {
               v8 = v7[7]; /*0x7af78c*/
               if ( v8 ) /*0x7af791*/
@@ -1403,12 +1403,12 @@ int __stdcall WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, 
                 v12 = v9[1]; /*0x7af7a8*/
                 v13 = v9[2]; /*0x7af7af*/
                 v14 = v9[3]; /*0x7af7bc*/
-                (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)MEMORY[0x887310] + 20))( /*0x7af7c7*/
-                  MEMORY[0x887310],
+                (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)DSurface_Alternate + 20))( /*0x7af7c7*/
+                  DSurface_Alternate,
                   &v11,
                   0);
-                (*(void (__thiscall **)(int, int *, _DWORD, int *, _DWORD, int))(*(_DWORD *)MEMORY[0x887310] + 8))( /*0x7af7e4*/
-                  MEMORY[0x887310],
+                (*(void (__thiscall **)(int, int *, _DWORD, int *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x7af7e4*/
+                  DSurface_Alternate,
                   &v11,
                   v7[7],
                   &v11,

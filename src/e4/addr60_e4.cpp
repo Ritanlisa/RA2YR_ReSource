@@ -951,7 +951,7 @@ LABEL_5:
     v4 = 0; /*0x60243a*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x60243d*/
   if ( (v4 == 259 || v4 == 3015) && DlgCtrlID == 1780 ) /*0x602458*/
-    return MEMORY[0x8871E0]->GenericBeep; /*0x602462*/
+    return g_RulesClass_Instance->GenericBeep; /*0x602462*/
   else
     return -1; /*0x60247b*/
 }
@@ -1137,7 +1137,7 @@ LABEL_5:
   {
     return 1; /*0x602aa0*/
   }
-  return Event::IsValidActionType(v4) && DlgCtrlID == 1685 && !SessionClass::GetGameSpeed(MEMORY[0xA8B238]); /*0x60262e*/
+  return Event::IsValidActionType(v4) && DlgCtrlID == 1685 && !SessionClass::GetGameSpeed(g_GameMode_Current); /*0x60262e*/
 }
 }
 } // namespace gamemd
@@ -2720,7 +2720,7 @@ LABEL_590:
           return MEMORY[0x8341B0];
         if ( result == (char *)1472 )
         {
-          if ( MEMORY[0xA8B238][0] != 4 )
+          if ( g_GameMode_Current[0] != 4 )
             return MEMORY[0x834188];
           result = MEMORY[0x83419C];
           if ( MEMORY[0xA8B244] != 3 )
@@ -3220,9 +3220,9 @@ LABEL_23:
   v12 = MEMORY[0xB0FA20];
   v80 = MEMORY[0xB0FB00];
   v62 = (HWND)v11;
-  v13 = *(_DWORD *)MEMORY[0x887310];
+  v13 = *(_DWORD *)DSurface_Alternate;
   v70 = MEMORY[0xB0FA20];
-  v14 = (int *)(*(int (__thiscall **)(int, int *))(v13 + 120))(MEMORY[0x887310], &v82);
+  v14 = (int *)(*(int (__thiscall **)(int, int *))(v13 + 120))(DSurface_Alternate, &v82);
   v72[0] = *v14;
   v72[1] = v14[1];
   v72[2] = v14[2];
@@ -3244,12 +3244,12 @@ LABEL_23:
   v83 = *((_DWORD *)MEMORY[0xB0FC10] + 1);
   v16 = v83;
   v17 = *((_DWORD *)MEMORY[0xB0FC10] + 2);
-  v18 = *(_DWORD *)MEMORY[0xB0FC1C];
+  v18 = *(_DWORD *)g_GadgetAnimState;
   v84 = *((_DWORD *)MEMORY[0xB0FC10] + 3);
   v93 = v18;
-  v94 = *((_DWORD *)MEMORY[0xB0FC1C] + 1);
-  v95 = *((_DWORD *)MEMORY[0xB0FC1C] + 2);
-  v96 = *((_DWORD *)MEMORY[0xB0FC1C] + 3);
+  v94 = *((_DWORD *)g_GadgetAnimState + 1);
+  v95 = *((_DWORD *)g_GadgetAnimState + 2);
+  v96 = *((_DWORD *)g_GadgetAnimState + 3);
   ScreenDialogToClient(hWnd, &v112);
   GetWindowRect(hWnd, &Rect);
   v19 = Rect.left - v112.left;
@@ -3355,11 +3355,11 @@ LABEL_23:
         v37 = v64 - *((_DWORD *)Block + v70);
         if ( v37 < 0 )
         {
-          DrawToSurfaceSHP(MEMORY[0x887310], v32, v35, a2 != 0 ? 6 : 0, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32, v35, a2 != 0 ? 6 : 0, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         else if ( v37 >= 6 && !a2 )
         {
-          DrawToSurfaceSHP(MEMORY[0x887310], v32, v35, 6u, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32, v35, 6u, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
       }
       if ( v61 )
@@ -3370,23 +3370,23 @@ LABEL_23:
         v39 = v64 - *((_DWORD *)Block + v101);
         if ( v39 < 0 )
         {
-          DrawToSurfaceSHP(MEMORY[0x887310], v32, (int)v79, a2 == 0, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32, (int)v79, a2 == 0, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         else if ( v39 >= 6 )
         {
-          DrawToSurfaceSHP(MEMORY[0x887310], v32, (int)v79, a2 != 0, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32, (int)v79, a2 != 0, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         else
         {
           v40 = Copy8Bytes(&v118, v109);
           v76 = *v40;
           v77 = v40[1];
-          DrawToSurfaceSHP(MEMORY[0x887310], v32, (int)v79, 1u, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32, (int)v79, 1u, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           v41 = Copy8Bytes(&v117, &v97);
           v76 = *v41;
           v77 = v41[1];
           DrawToSurfaceSHP(
-            MEMORY[0x887310],
+            DSurface_Alternate,
             v32,
             (int)v105,
             v86 + v68 * v39,
@@ -3415,7 +3415,7 @@ LABEL_23:
           v43 = -1;
 LABEL_68:
           DrawToSurfaceSHP(
-            MEMORY[0x887310],
+            DSurface_Alternate,
             v32,
             (int)v73,
             v89 + v68 * v43,
@@ -3436,7 +3436,7 @@ LABEL_68:
         if ( v43 < 6 )
           goto LABEL_68;
         if ( a2 )
-          DrawToSurfaceSHP(MEMORY[0x887310], v32, (int)v73, 0, v103, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32, (int)v73, 0, v103, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
       }
 LABEL_69:
       if ( v74 > 0 )
@@ -3451,15 +3451,15 @@ LABEL_69:
           v90[1] = v45;
           if ( v46 < 0 )
           {
-            DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 10 : 1, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 10 : 1, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           else if ( v46 >= 6 )
           {
-            DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 1 : 10, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 1 : 10, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           else
           {
-            DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, v78 + v68 * v46, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31, v33, v78 + v68 * v46, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           ++v44;
           v45 += v84;
@@ -3485,7 +3485,7 @@ LABEL_69:
             if ( v50 != -1 )
               break;
           }
-          DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 0xA : 0, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 0xA : 0, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
 LABEL_89:
           v47 += v84;
           --v48;
@@ -3495,11 +3495,11 @@ LABEL_89:
         }
         if ( v50 != -2 )
         {
-          DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, v87 + v68 * v50, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31, v33, v87 + v68 * v50, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           goto LABEL_89;
         }
 LABEL_87:
-        DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 0 : 10, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 0 : 10, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         goto LABEL_89;
       }
 LABEL_90:
@@ -3517,14 +3517,14 @@ LABEL_90:
         if ( v53 == -1 )
         {
 LABEL_94:
-          DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 10 : 1, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 10 : 1, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           goto LABEL_98;
         }
         if ( v53 == -2 )
 LABEL_96:
-          DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 1 : 10, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 1 : 10, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         else
-          DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, v78 + v68 * v53, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31, v33, v78 + v68 * v53, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
       }
 LABEL_98:
       v54 = v63;
@@ -3561,13 +3561,13 @@ LABEL_98:
           v57 = MEMORY[0xB0FB34];
         }
 LABEL_106:
-        DrawToSurfaceSHP(MEMORY[0x887310], (int)v62, (int)v57, 0, v69, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        DrawToSurfaceSHP(DSurface_Alternate, (int)v62, (int)v57, 0, v69, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         goto LABEL_116;
       }
       if ( MEMORY[0x8A00A4] >= 800 )
         v69[0] += 80;
       DrawToSurfaceSHP(
-        MEMORY[0x887310],
+        DSurface_Alternate,
         (int)v62,
         (int)v80,
         v88 + v68 * v56,
@@ -3584,25 +3584,25 @@ LABEL_106:
         0,
         0);
 LABEL_116:
-      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)MEMORY[0x887308] + 92))(MEMORY[0x887308], 0, 0);
-      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)MEMORY[0x887310] + 92))(MEMORY[0x887310], 0, 0);
-      (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))(
-        MEMORY[0x887308],
+      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0);
+      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)DSurface_Alternate + 92))(DSurface_Alternate, 0, 0);
+      (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))(
+        g_DSurface_Primary,
         v106,
-        MEMORY[0x887310],
+        DSurface_Alternate,
         v110,
         0,
         1);
       if ( v54 )
-        (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))(
-          MEMORY[0x887308],
+        (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))(
+          g_DSurface_Primary,
           v108,
-          MEMORY[0x887310],
+          DSurface_Alternate,
           v111,
           0,
           1);
-      (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887310] + 96))(MEMORY[0x887310]);
-      (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887308] + 96))(MEMORY[0x887308]);
+      (*(void (__thiscall **)(int))(*(_DWORD *)DSurface_Alternate + 96))(DSurface_Alternate);
+      (*(void (__thiscall **)(int))(*(_DWORD *)g_DSurface_Primary + 96))(g_DSurface_Primary);
       UpdateAudioVideo();
       Sleep(0x1Eu);
       if ( ++v64 >= v104 )
@@ -3613,9 +3613,9 @@ LABEL_116:
   __3_YAXPAX_Z(Block);
   if ( !a2 )
     return SendMessageA(hWnd, 0x4EDu, 0, 0);
-  PlayVocClass(*((_DWORD *)MEMORY[0x8871E0] + 468), 0x2000, 1.0, 0);
-  while ( (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 40))(MEMORY[0x887640]) )
-    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]);
+  PlayVocClass(*((_DWORD *)g_RulesClass_Instance + 468), 0x2000, 1.0, 0);
+  while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) )
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
   return SendMessageA(hWnd, 0x4ECu, 0, 0);
 }
 }
@@ -3655,7 +3655,7 @@ char __fastcall ControlDialogHandler(int a1, HWND a2, _DWORD *a3)
     {
       if ( DlgCtrlID != 1835 ) /*0x6086e1*/
         return 0; /*0x6086e1*/
-      v7 = *((_DWORD *)MEMORY[0xA8B230] + 3374); /*0x6086f8*/
+      v7 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x6086f8*/
       if ( MEMORY[0x8A00A4] >= 800 ) /*0x608700*/
       {
         if ( v7 ) /*0x608704*/
@@ -3681,7 +3681,7 @@ LABEL_47:
     {
       if ( DlgCtrlID != 1835 ) /*0x608741*/
         return 0; /*0x608741*/
-      v8 = *((_DWORD *)MEMORY[0xA8B230] + 3374); /*0x608753*/
+      v8 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x608753*/
       if ( MEMORY[0x8A00A4] >= 800 ) /*0x608761*/
       {
         if ( v8 ) /*0x608765*/
@@ -4577,7 +4577,7 @@ bool __fastcall sub_609BC0(int a1, HWND a2)
   _DWORD *v8; // eax
   HWND v9; // [esp+Ch] [ebp-4h] BYREF
 
-  if ( SessionClass::GetGameSpeed(MEMORY[0xA8B238]) ) /*0x609bcd*/
+  if ( SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x609bcd*/
     return 0; /*0x609bcd*/
   if ( (GetWindowLongA(a2, -16) & 0xB) == 0xB ) /*0x609bea*/
   {
@@ -4636,7 +4636,7 @@ bool __fastcall sub_609CF0(int a1, HWND a2)
   _DWORD *v8; // eax
   HWND v9; // [esp+Ch] [ebp-4h] BYREF
 
-  if ( !SessionClass::GetGameSpeed(MEMORY[0xA8B238]) ) /*0x609cfd*/
+  if ( !SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x609cfd*/
     return 0; /*0x609cfd*/
   if ( (GetWindowLongA(a2, -16) & 0xB) == 0xB ) /*0x609d1a*/
   {
@@ -4952,7 +4952,7 @@ BOOL __fastcall RepositionGameSpeedIndicator(HWND hWnd, int a2)
   struct tagRECT v19; // [esp+54h] [ebp-10h] BYREF
 
   Parent = GetParent(hWnd); /*0x60b019*/
-  GameSpeed = SessionClass::GetGameSpeed(MEMORY[0xA8B238]); /*0x60b020*/
+  GameSpeed = SessionClass::GetGameSpeed(g_GameMode_Current); /*0x60b020*/
   GetWindowRect(Parent, &Rect); /*0x60b02e*/
   GetWindowRect(hWnd, &v19); /*0x60b036*/
   if ( GameSpeed )

@@ -3370,7 +3370,7 @@ int __cdecl sub_7C6620(int a1, int a2, int a3, int a4)
   int v9; // [esp-8h] [ebp-20h]
   unsigned int v10; // [esp+14h] [ebp-4h]
 
-  v10 = *((_DWORD *)MEMORY[0xB0B6EC] + 2 * a1 + 2 * dword_8759A4 * a2); /*0x7c6642*/
+  v10 = *((_DWORD *)g_SlaveManagerPool + 2 * a1 + 2 * dword_8759A4 * a2); /*0x7c6642*/
   v4 = -1; /*0x7c6645*/
   do /*0x7c6719*/
   {
@@ -3379,7 +3379,7 @@ int __cdecl sub_7C6620(int a1, int a2, int a3, int a4)
     {
       if ( v5 | v4 ) /*0x7c6651*/
       {
-        v6 = (char *)MEMORY[0xB0B6EC] + 8 * v5 + 8 * a1 + 8 * dword_8759A4 * (v4 + a2); /*0x7c667a*/
+        v6 = (char *)g_SlaveManagerPool + 8 * v5 + 8 * a1 + 8 * dword_8759A4 * (v4 + a2); /*0x7c667a*/
         if ( (v6[1] & 1) != 0 ) /*0x7c6684*/
         {
           if ( !a4 && abs32(*v6 - v10) > 0xC ) /*0x7c6699*/
@@ -4685,7 +4685,7 @@ int __cdecl toupper_0(int C)
   {
     v2 = C; /*0x7c986d*/
     if ( (C >= 256
-       || ((int)MEMORY[0x87C79C] <= 1 ? (v3 = *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 2) : (v3 = _isctype(C, 2)), v3))
+       || ((int)SrcSizeInBytes <= 1 ? (v3 = *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 2) : (v3 = _isctype(C, 2)), v3))
       && (*((char *)MEMORY[0x87C590] + 2 * BYTE1(v2) + 1) >= 0
         ? (LOWORD(C) = (unsigned __int8)v2,
            v4 = __crtLCMapStringA((LCID)CRTGlobal_B782A0, 0x200u, (LPCSTR)&C, 1, DestStr, 3, 0, 1))
@@ -4722,7 +4722,7 @@ int isalpha(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl isalpha(int C)
 {
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9915*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9915*/
     return *((_WORD *)MEMORY[0x87C590] + C) & 0x103; /*0x7c9936*/
   else
     return _isctype(C, 259); /*0x7c9920*/
@@ -4737,7 +4737,7 @@ int isupper(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl isupper(int C)
 {
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9943*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9943*/
     return *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 1; /*0x7c9960*/
   else
     return _isctype(C, 1); /*0x7c994b*/
@@ -4752,7 +4752,7 @@ int islower(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl islower(int C)
 {
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c996b*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c996b*/
     return *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 2; /*0x7c9988*/
   else
     return _isctype(C, 2); /*0x7c9973*/
@@ -4767,7 +4767,7 @@ int isdigit(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl isdigit(int C)
 {
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9993*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9993*/
     return *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 4; /*0x7c99b0*/
   else
     return _isctype(C, 4); /*0x7c999b*/
@@ -4782,7 +4782,7 @@ int isxdigit(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl isxdigit(int C)
 {
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c99bb*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c99bb*/
     return *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 0x80; /*0x7c99db*/
   else
     return _isctype(C, 128); /*0x7c99c6*/
@@ -4797,7 +4797,7 @@ int isspace(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl isspace(int C)
 {
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c99e8*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c99e8*/
     return *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 8; /*0x7c9a05*/
   else
     return _isctype(C, 8); /*0x7c99f0*/
@@ -4812,7 +4812,7 @@ int ispunct(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl ispunct(int C)
 {
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9a10*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9a10*/
     return *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 0x10; /*0x7c9a2d*/
   else
     return _isctype(C, 16); /*0x7c9a18*/
@@ -4827,7 +4827,7 @@ int isalnum(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl isalnum(int C)
 {
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9a38*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9a38*/
     return *((_WORD *)MEMORY[0x87C590] + C) & 0x107; /*0x7c9a59*/
   else
     return _isctype(C, 263); /*0x7c9a43*/
@@ -4842,7 +4842,7 @@ int isprint(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl isprint(int C)
 {
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9a66*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9a66*/
     return *((_WORD *)MEMORY[0x87C590] + C) & 0x157; /*0x7c9a87*/
   else
     return _isctype(C, 343); /*0x7c9a71*/
@@ -4857,7 +4857,7 @@ int isgraph(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl isgraph(int C)
 {
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9a94*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9a94*/
     return *((_WORD *)MEMORY[0x87C590] + C) & 0x117; /*0x7c9ab5*/
   else
     return _isctype(C, 279); /*0x7c9a9f*/
@@ -4872,7 +4872,7 @@ int iscntrl(int C)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __cdecl iscntrl(int C)
 {
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9ac2*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9ac2*/
     return *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 0x20; /*0x7c9adf*/
   else
     return _isctype(C, 32); /*0x7c9aca*/
@@ -4889,7 +4889,7 @@ int __cdecl __iscsymf(int C)
 {
   int result; // eax
 
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9aff*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9aff*/
     result = *((_WORD *)MEMORY[0x87C590] + C) & 0x103; /*0x7c9b20*/
   else
     result = _isctype(C, 259); /*0x7c9b0a*/
@@ -4909,7 +4909,7 @@ int __cdecl __iscsym(int C)
 {
   int result; // eax
 
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9b3c*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9b3c*/
     result = *((_WORD *)MEMORY[0x87C590] + C) & 0x107; /*0x7c9b5d*/
   else
     result = _isctype(C, 263); /*0x7c9b47*/
@@ -4933,7 +4933,7 @@ int __cdecl atol(const char *String)
   int v6; // ebx
   int result; // eax
 
-  while ( (int)MEMORY[0x87C79C] <= 1
+  while ( (int)SrcSizeInBytes <= 1
         ? *((_BYTE *)MEMORY[0x87C590] + 2 * *(unsigned __int8 *)String) & 8
         : _isctype(*(unsigned __int8 *)String, 8) )
     ++String; /*0x7c9ba5*/
@@ -4943,7 +4943,7 @@ int __cdecl atol(const char *String)
   if ( v3 == 45 || v3 == 43 ) /*0x7c9bb6*/
     v3 = *(unsigned __int8 *)v4++; /*0x7c9bb8*/
   v6 = 0; /*0x7c9bbc*/
-  while ( (int)MEMORY[0x87C79C] <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v3) & 4 : _isctype(v3, 4) )
+  while ( (int)SrcSizeInBytes <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v3) & 4 : _isctype(v3, 4) )
   {
     v6 = v3 + 10 * v6 - 48; /*0x7c9be5*/
     v3 = *(unsigned __int8 *)v4++; /*0x7c9be9*/
@@ -4971,7 +4971,7 @@ __int64 __cdecl _atoi64(const char *String)
   __int64 result; // rax
   int v10; // [esp+10h] [ebp-4h]
 
-  while ( (int)MEMORY[0x87C79C] <= 1
+  while ( (int)SrcSizeInBytes <= 1
         ? *((_BYTE *)MEMORY[0x87C590] + 2 * *(unsigned __int8 *)String) & 8
         : _isctype(*(unsigned __int8 *)String, 8) )
     ++String; /*0x7c9c3c*/
@@ -4982,7 +4982,7 @@ __int64 __cdecl _atoi64(const char *String)
     v3 = *(unsigned __int8 *)v4++; /*0x7c9c51*/
   v5 = 0; /*0x7c9c55*/
   v6 = 0; /*0x7c9c57*/
-  while ( (int)MEMORY[0x87C79C] <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v3) & 4 : _isctype(v3, 4) )
+  while ( (int)SrcSizeInBytes <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v3) & 4 : _isctype(v3, 4) )
   {
     v8 = 10 * __PAIR64__(v6, v5) + v3 - 48; /*0x7c9c9a*/
     v6 = HIDWORD(v8); /*0x7c9c9e*/
@@ -5082,7 +5082,7 @@ int __cdecl strtoxl(unsigned __int8 *a1, unsigned __int8 **a2, int a3, int a4)
 
   v13 = 0; /*0x7c9ddb*/
   v4 = *a1; /*0x7c9de4*/
-  for ( i = a1 + 1; (int)MEMORY[0x87C79C] <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v4) & 8 : _isctype(v4, 8); ++i )
+  for ( i = a1 + 1; (int)SrcSizeInBytes <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v4) & 8 : _isctype(v4, 8); ++i )
     v4 = *i; /*0x7c9e17*/
   v14 = i; /*0x7c9e1f*/
   if ( v4 == 45 ) /*0x7c9e22*/
@@ -5107,7 +5107,7 @@ LABEL_26:
         v12 = 0xFFFFFFFF / a3; /*0x7c9e99*/
         while ( 1 ) /*0x7c9ea9*/
         {
-          if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9eb3*/
+          if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9eb3*/
             v7 = *((_BYTE *)MEMORY[0x87C590] + 2 * v4) & 4; /*0x7c9ec9*/
           else
             v7 = _isctype(v4, 4); /*0x7c9eb8*/
@@ -5117,7 +5117,7 @@ LABEL_26:
           }
           else
           {
-            if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7c9edf*/
+            if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9edf*/
               v9 = *((_WORD *)MEMORY[0x87C590] + v4) & 0x103; /*0x7c9ef5*/
             else
               v9 = _isctype(v4, 259); /*0x7c9ee3*/
@@ -5867,7 +5867,7 @@ int __cdecl tolower_0(int C)
   {
     v2 = C; /*0x7cb090*/
     if ( (C >= 256
-       || ((int)MEMORY[0x87C79C] <= 1 ? (v3 = *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 1) : (v3 = _isctype(C, 1)), v3))
+       || ((int)SrcSizeInBytes <= 1 ? (v3 = *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 1) : (v3 = _isctype(C, 1)), v3))
       && (*((char *)MEMORY[0x87C590] + 2 * BYTE1(v2) + 1) >= 0
         ? (LOWORD(C) = (unsigned __int8)v2, v4 = 1)
         : (LOBYTE(C) = BYTE1(v2), *(_WORD *)((char *)&C + 1) = (unsigned __int8)v2, v4 = 2),
@@ -7272,7 +7272,7 @@ void __cdecl _expandtime(char a1, _DWORD *a2, _DWORD *a3, _DWORD *a4, _BYTE **a5
     }
 LABEL_59:
     __tzset(); /*0x7cce4c*/
-    _store_str(*(&MEMORY[0x87CAEC] + (a2[8] != 0)), a3, a4); /*0x7cce69*/
+    _store_str(*(&lpMultiByteStr + (a2[8] != 0)), a3, a4); /*0x7cce69*/
     return; /*0x7cce69*/
   }
   if ( a1 <= 109 ) /*0x7ccd13*/
@@ -8075,7 +8075,7 @@ void __noreturn start()
   ms_exc.registration.TryLevel = 0; /*0x7cd88d*/
   _ioinit(); /*0x7cd890*/
   CRTGlobal_B78BA8 = (int)GetCommandLineA(); /*0x7cd89b*/
-  MEMORY[0xB78228] = (char *)__crtGetEnvironmentStringsA(); /*0x7cd8a5*/
+  CRTGlobal_B78228 = (char *)__crtGetEnvironmentStringsA(); /*0x7cd8a5*/
   _setargv(); /*0x7cd8aa*/
   _setenvp(); /*0x7cd8af*/
   _cinit(); /*0x7cd8b4*/
@@ -8217,7 +8217,7 @@ LABEL_45:
         all = (char *)v3; /*0x7cdd3f*/
         goto LABEL_46; /*0x7cdd3f*/
       }
-      all = (&MEMORY[0x87C484])[3 * Category]; /*0x7cdb72*/
+      all = (&Block)[3 * Category]; /*0x7cdb72*/
 LABEL_46:
       _unlock(19); /*0x7cdd41*/
 LABEL_47:
@@ -8276,10 +8276,10 @@ LABEL_47:
       all = (char *)_expandlocale((char *)Locale, Destination, 0, 0); /*0x7cdcc1*/
       if ( !all ) /*0x7cdcc8*/
         goto LABEL_46; /*0x7cdcc8*/
-      v14 = (const char **)&MEMORY[0x87C484]; /*0x7cdccf*/
+      v14 = (const char **)&Block; /*0x7cdccf*/
       do /*0x7cdd0e*/
       {
-        if ( v14 != (const char **)&MEMORY[0x87C484] ) /*0x7cdcd3*/
+        if ( v14 != (const char **)&Block ) /*0x7cdcd3*/
         {
           if ( !strcmp(Destination, *v14) || _setlocale_set_cat(v2, Destination) ) /*0x7cdcf1*/
             ++Categorya; /*0x7cdd01*/
@@ -8293,8 +8293,8 @@ LABEL_47:
       if ( v17 ) /*0x7cdd15*/
       {
         all = (char *)_setlocale_get_all(); /*0x7cdd22*/
-        free(MEMORY[0x87C484]); /*0x7cdd24*/
-        MEMORY[0x87C484] = 0; /*0x7cdd2a*/
+        free(Block); /*0x7cdd24*/
+        Block = 0; /*0x7cdd2a*/
         goto LABEL_46; /*0x7cdd30*/
       }
       v13 = Categorya == 0; /*0x7cdd32*/
@@ -8995,7 +8995,7 @@ char __cdecl _forcdecpt(char *a1)
     do /*0x7ceb66*/
     {
       ++v1; /*0x7ceb3c*/
-      if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7ceb44*/
+      if ( (int)SrcSizeInBytes <= 1 ) /*0x7ceb44*/
         v2 = *((_BYTE *)MEMORY[0x87C590] + 2 * *v1) & 4; /*0x7ceb61*/
       else
         v2 = _isctype(*v1, 4); /*0x7ceb4c*/
@@ -9003,7 +9003,7 @@ char __cdecl _forcdecpt(char *a1)
     while ( v2 ); /*0x7ceb66*/
   }
   result = *v1; /*0x7ceb6e*/
-  *v1 = MEMORY[0x87C7A0]; /*0x7ceb70*/
+  *v1 = SrcCh; /*0x7ceb70*/
   v4 = v1 + 1; /*0x7ceb72*/
   do /*0x7ceb7e*/
   {
@@ -9060,7 +9060,7 @@ char *__cdecl _cftof2(char *Src, int Size, _DWORD *a3, char a4)
   if ( Size > 0 ) /*0x7cedf8*/
   {
     _shift(v8, 1); /*0x7cedfd*/
-    *v8 = MEMORY[0x87C7A0][0]; /*0x7cee08*/
+    *v8 = SrcCh[0]; /*0x7cee08*/
     v9 = a3[1]; /*0x7cee0a*/
     v10 = v8 + 1; /*0x7cee0d*/
     if ( v9 < 0 ) /*0x7cee11*/

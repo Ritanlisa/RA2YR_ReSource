@@ -257,7 +257,7 @@ LABEL_22:
       }
 LABEL_71:
       v31 = Network_Process_7B2730(); /*0x7b3f50*/
-      if ( v31 > 0 && Random::Range(MEMORY[0x886B88], 0, 99) <= v31 ) /*0x7b3f6b*/
+      if ( v31 > 0 && Random::Range(Randomizer_Global, 0, 99) <= v31 ) /*0x7b3f6b*/
         return 0; /*0x7b3f76*/
       v13 = (_DWORD *)IPXInterfaceClass::processPacket(this); /*0x7b3f80*/
       v13[4] = v27 - 4; /*0x7b3f8f*/
@@ -556,14 +556,14 @@ void __thiscall UDPInterfaceClass_Destru::sub_7B42C0(int this)
   void *v2; // eax
 
   v2 = *(void **)(this + 4); /*0x7b42c6*/
-  *(_DWORD *)(this + 16) = 0; /*0x7b42c9*/
+  this->q010 = 0; /*0x7b42c9*/
   if ( v2 && *(_BYTE *)(this + 13) ) /*0x7b42d0*/
   {
     __3_YAXPAX_Z(v2); /*0x7b42d6*/
-    *(_DWORD *)(this + 4) = 0; /*0x7b42de*/
+    this->Initialized = 0; /*0x7b42de*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x7b42e1*/
-  *(_DWORD *)(this + 8) = 0; /*0x7b42e4*/
+  this->q008 = 0; /*0x7b42e4*/
 }
 }
 
@@ -573,8 +573,8 @@ unsigned int UDPInterfaceClass::reset(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall UDPInterfaceClass_Destru::sub_7B42F0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x7b42f0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x7b4305*/
+  if ( this->q00C ) /*0x7b42f0*/
+    return (unsigned int)(a2 - this->Initialized) >> 2; /*0x7b4305*/
   else
     return 0; /*0x7b42f7*/
 }

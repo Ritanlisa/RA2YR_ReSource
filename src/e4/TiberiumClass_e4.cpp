@@ -282,7 +282,7 @@ char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
           (CCINIClass *)&stru_830620.__pad_579C[60208],
           (INIClass *)v7);
   v11 = *(INIClass **)(this + 188); /*0x721b06*/
-  *(_DWORD *)(this + 184) = v10; /*0x721b0c*/
+  this->q0B8 = v10; /*0x721b0c*/
   v12 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81938C, v11); /*0x721b1b*/
   v18 = *(DynamicVector **)(this + 192); /*0x721b28*/
   this->Growth = v12; /*0x721b2f*/
@@ -338,22 +338,22 @@ char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
     case -1: /*0x721c55*/
       goto LABEL_19;
     case 2: /*0x721c55*/
-      this->NumImages = MEMORY[0xA83D84][1].sectionHead[1]; /*0x721c69*/
-      *(_DWORD *)(this + 228) = 12; /*0x721c6f*/
-      *(_DWORD *)(this + 232) = 12; /*0x721c75*/
+      this->NumImages = g_BuildingTypeClass_Array[1].sectionHead[1]; /*0x721c69*/
+      this->q0E4 = 12; /*0x721c6f*/
+      this->q0E8 = 12; /*0x721c75*/
       return 1; /*0x721c85*/
     case 3: /*0x721c55*/
-      this->NumImages = *(_DWORD *)&MEMORY[0xA83D84][5].__pad_41[3]; /*0x721c94*/
+      this->NumImages = *(_DWORD *)&g_BuildingTypeClass_Array[5].__pad_41[3]; /*0x721c94*/
       goto LABEL_18; /*0x721c9a*/
     case 4: /*0x721c55*/
-      this->NumImages = MEMORY[0xA83D84][6].INIClass_field_3C; /*0x721ca8*/
+      this->NumImages = g_BuildingTypeClass_Array[6].INIClass_field_3C; /*0x721ca8*/
       goto LABEL_18; /*0x721cae*/
     default:
-      this->NumImages = MEMORY[0xA83D84][4].unknown38; /*0x721cbb*/
+      this->NumImages = g_BuildingTypeClass_Array[4].unknown38; /*0x721cbb*/
 LABEL_18:
       this->TiberiumClass_field_EC = 8; /*0x721cc1*/
-      *(_DWORD *)(this + 228) = 12; /*0x721cd0*/
-      *(_DWORD *)(this + 232) = 12; /*0x721cd6*/
+      this->q0E4 = 12; /*0x721cd0*/
+      this->q0E8 = 12; /*0x721cd6*/
 LABEL_19:
       result = 1; /*0x721cdc*/
       break; /*0x721ce6*/
@@ -447,7 +447,7 @@ int __stdcall TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       *(_DWORD *)(v2 + 8) = &TiberiumClass::`vftable'; /*0x721fd4*/
       *(_DWORD *)(v2 + 12) = &vt_TiberiumClass; /*0x721fdb*/
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 224)); /*0x721fee*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 224)); /*0x721fee*/
     if ( v2 != -196 ) /*0x721ff5*/
       AnimTypeList::Constructor((_DWORD *)(v2 + 196)); /*0x721ff9*/
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v11 + 12))(v11, &a1, 4, 0); /*0x722009*/
@@ -467,7 +467,7 @@ int __stdcall TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     if ( *(int *)(v2 + 212) > 0 ) /*0x722045*/
     {
       do /*0x722064*/
-        ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(_DWORD *)(v2 + 200) + 4 * v13++)); /*0x722056*/
+        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v2 + 200) + 4 * v13++)); /*0x722056*/
       while ( v13 < *(_DWORD *)(v2 + 212) ); /*0x722064*/
       result = 0; /*0x722066*/
     }

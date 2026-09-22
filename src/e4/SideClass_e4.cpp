@@ -169,7 +169,7 @@ int SideClass::GetCountry(int * a2)
 int __thiscall SideClass::_vt13(int this, int *a2)
 {
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6a4719*/
-  return Power::TimerProcess(*(_DWORD *)(this + 168)); /*0x6a472c*/
+  return Power::TimerProcess(this->q0A8); /*0x6a472c*/
 }
 }
 } // namespace gamemd

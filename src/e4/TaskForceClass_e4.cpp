@@ -162,7 +162,7 @@ LABEL_11:
       v10 = 0; /*0x6e82fe*/
 LABEL_12:
     v11 = sub_412610(Source); /*0x6e8300*/
-    SwizzleManagerClass::Here_I_Am((int)&MEMORY[0xB077F8].__pad_14B0[13416], v11, (int)v10); /*0x6e8310*/
+    SwizzleManagerClass::Here_I_Am((int)&g_OverlayTypeConfig.__pad_14B0[13416], v11, (int)v10); /*0x6e8310*/
     result = (CCINIClass *)(*(int (__thiscall **)(TaskForceClass *, char *))(*(_DWORD *)v10->__pad_0 + 100))(v10, a1); /*0x6e831a*/
     *(_DWORD *)v10->__pad_A0 = a2; /*0x6e831d*/
     v5 = v12; /*0x6e8323*/

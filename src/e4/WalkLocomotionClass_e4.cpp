@@ -20,21 +20,21 @@ char __stdcall JumpjetLocomotionClass::sub_6A0310(int a1, int a2, unsigned int a
 
   *(_DWORD *)(a1 + 84) = a2; /*0x6a0323*/
   *(_DWORD *)(a1 + 88) = 0; /*0x6a0326*/
-  v4 = MEMORY[0xB077F8]; /*0x6a032d*/
-  if ( a3 != MEMORY[0xB077F8] || a4 != MEMORY[0xB077FC] ) /*0x6a0340*/
+  v4 = g_OverlayTypeConfig; /*0x6a032d*/
+  if ( a3 != g_OverlayTypeConfig || a4 != MEMORY[0xB077FC] ) /*0x6a0340*/
   {
     v5 = a1 - 4; /*0x6a0358*/
     v13 = a4; /*0x6a035b*/
     v6 = (unsigned int *)(a1 - 4 + 64); /*0x6a0363*/
     v12 = a3; /*0x6a036a*/
-    if ( *v6 != MEMORY[0xB077F8] || __PAIR64__(*(_DWORD *)(a1 - 4 + 72), *(_DWORD *)(a1 + 64)) != MEMORY[0xB077FC] ) /*0x6a0375*/
+    if ( *v6 != g_OverlayTypeConfig || __PAIR64__(*(_DWORD *)(a1 - 4 + 72), *(_DWORD *)(a1 + 64)) != MEMORY[0xB077FC] ) /*0x6a0375*/
     {
-      *v6 = MEMORY[0xB077F8]; /*0x6a0386*/
+      *v6 = g_OverlayTypeConfig; /*0x6a0386*/
       *(_DWORD *)(a1 + 64) = MEMORY[0xB077FC]; /*0x6a038d*/
       v7 = HIDWORD(MEMORY[0xB077FC]); /*0x6a0390*/
       *(_BYTE *)(v5 + 99) = 0; /*0x6a0396*/
       *(_DWORD *)(a1 - 4 + 72) = v7; /*0x6a039a*/
-      v4 = MEMORY[0xB077F8]; /*0x6a039d*/
+      v4 = g_OverlayTypeConfig; /*0x6a039d*/
     }
     if ( __PAIR64__(a4, a3) != __PAIR64__(MEMORY[0xB077FC], v4) /*0x6a03be*/
       || (LOBYTE(v4) = BYTE4(MEMORY[0xB077FC]), HIDWORD(a4) != HIDWORD(MEMORY[0xB077FC])) )
@@ -50,8 +50,8 @@ char __stdcall JumpjetLocomotionClass::sub_6A0310(int a1, int a2, unsigned int a
         LOBYTE(v4) = *(_BYTE *)(*(_DWORD *)(v5 + 12) + 144); /*0x6a043d*/
         if ( (_BYTE)v4 ) /*0x6a0445*/
         {
-          LOBYTE(v4) = MEMORY[0xB077F8]; /*0x6a0447*/
-          *v6 = MEMORY[0xB077F8]; /*0x6a044c*/
+          LOBYTE(v4) = g_OverlayTypeConfig; /*0x6a0447*/
+          *v6 = g_OverlayTypeConfig; /*0x6a044c*/
           *(_QWORD *)(a1 + 64) = MEMORY[0xB077FC]; /*0x6a0454*/
           *(_BYTE *)(v5 + 99) = 0; /*0x6a0460*/
         }
@@ -107,7 +107,7 @@ bool __stdcall JumpjetLocomotionClass::sub_6A3F50(int a1, int a2, int a3, int a4
   v23 = v6; /*0x6a3f75*/
   v24 = v7; /*0x6a3f79*/
   v25 = v8; /*0x6a3f7d*/
-  if ( v6 == MEMORY[0xB077F8] && __PAIR64__(v8, v7) == MEMORY[0xB077FC] ) /*0x6a3f89*/
+  if ( v6 == g_OverlayTypeConfig && __PAIR64__(v8, v7) == MEMORY[0xB077FC] ) /*0x6a3f89*/
     return 0; /*0x6a3f89*/
   if ( !*(_BYTE *)(v4 + 92) ) /*0x6a3f97*/
   {

@@ -46,7 +46,7 @@ int __thiscall Lobby_InvalidatePlayerSlots(HWND this)
     {
       v3 = 1901; /*0x4e5d6a*/
     }
-    if ( (MEMORY[0xA8B238] == 3 || MEMORY[0xA8B238] == 4) /*0x4e5df2*/
+    if ( (g_GameMode_Current == 3 || g_GameMode_Current == 4) /*0x4e5df2*/
       && ((v4 = *(&MEMORY[0xA8DA90] + i), v4 == MEMORY[0xAC11B4]) || *(_DWORD *)(v4 + 107) == -1) )
     {
       result = InitComboBoxNone(this, v3); /*0x4e5dff*/
@@ -113,7 +113,7 @@ void __thiscall Lobby_UpdatePlayerLabels(HWND this)
   {
     v33 = 0; /*0x5eb088*/
   }
-  if ( MEMORY[0xA8B238][0] == 4 ) /*0x5eb09d*/
+  if ( g_GameMode_Current[0] == 4 ) /*0x5eb09d*/
   {
     if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5eb0a8*/
       v1 = 6; /*0x5eb0b8*/
@@ -129,7 +129,7 @@ void __thiscall Lobby_UpdatePlayerLabels(HWND this)
     goto LABEL_26; /*0x5eb0cf*/
   if ( v33 ) /*0x5eb0d7*/
     goto LABEL_25; /*0x5eb0d7*/
-  if ( MEMORY[0xA8B238][0] == 4 ) /*0x5eb0df*/
+  if ( g_GameMode_Current[0] == 4 ) /*0x5eb0df*/
   {
     if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5eb0ea*/
       v2 = 6; /*0x5eb0fa*/
@@ -140,7 +140,7 @@ void __thiscall Lobby_UpdatePlayerLabels(HWND this)
   {
     v2 = 8; /*0x5eb101*/
   }
-  if ( MEMORY[0xA8B238][0] != 4 ) /*0x5eb10c*/
+  if ( g_GameMode_Current[0] != 4 ) /*0x5eb10c*/
   {
     if ( v2 >= 8 ) /*0x5eb118*/
       goto LABEL_24; /*0x5eb118*/
@@ -173,7 +173,7 @@ LABEL_26:
           if ( v4 != -1 && v4 < PlayerCount ) /*0x5eb17a*/
             PlayerCount = v4; /*0x5eb17c*/
         }
-        if ( MEMORY[0xA8B238][0] == 4 ) /*0x5eb185*/
+        if ( g_GameMode_Current[0] == 4 ) /*0x5eb185*/
         {
           if ( Network::IsLobbyFeature() ) /*0x5eb187*/
           {
@@ -188,7 +188,7 @@ LABEL_26:
       if ( v36 > PlayerCount ) /*0x5eb1a5*/
       {
         v5 = *(&MEMORY[0xA8DA90] + v36); /*0x5eb1a7*/
-        if ( v5 != MEMORY[0xAC119C] /*0x5eb1d2*/
+        if ( v5 != g_HouseClass_ObserverFlags /*0x5eb1d2*/
           && (!v5 || v5 != MEMORY[0xAC11A4] && v5 != MEMORY[0xAC11A8] && v5 != MEMORY[0xAC11AC]) )
         {
           v34 = 1; /*0x5eb1d4*/
@@ -234,7 +234,7 @@ LABEL_26:
     SendDlgItemMessageA(v7, v6, 0x14Bu, 0, 0); /*0x5eb282*/
     v9 = (wchar_t *)*(&MEMORY[0xA8DA90] + v36); /*0x5eb291*/
     v10 = v9; /*0x5eb29a*/
-    if ( v9 == (wchar_t *)MEMORY[0xAC119C] ) /*0x5eb29c*/
+    if ( v9 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x5eb29c*/
     {
       String = GetStringCSF(MEMORY[0x831C80], 0, MEMORY[0x8317D8], 5436); /*0x5eb2af*/
     }
@@ -277,7 +277,7 @@ LABEL_79:
     if ( !wcscmp((const wchar_t *)v12, MEMORY[0xA8D610]) ) /*0x5eb3b4*/
     {
       if ( v9 /*0x5eb3fe*/
-        && v9 != (wchar_t *)MEMORY[0xAC119C]
+        && v9 != (wchar_t *)g_HouseClass_ObserverFlags
         && v9 != (wchar_t *)MEMORY[0xAC11A0]
         && v9 != MEMORY[0xAC11B0]
         && v9 != (wchar_t *)MEMORY[0xAC11B4]
@@ -310,7 +310,7 @@ LABEL_79:
               if ( v18 != -1 && v18 < v17 ) /*0x5eb481*/
                 v17 = v18; /*0x5eb483*/
             }
-            if ( MEMORY[0xA8B238][0] == 4 ) /*0x5eb48c*/
+            if ( g_GameMode_Current[0] == 4 ) /*0x5eb48c*/
             {
               if ( Network::IsLobbyFeature() ) /*0x5eb48e*/
               {
@@ -327,7 +327,7 @@ LABEL_79:
 LABEL_111:
             v19 = GetStringCSF(MEMORY[0x831C80], 0, MEMORY[0x8317D8], 5479); /*0x5eb4bf*/
             v20 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v19); /*0x5eb4cd*/
-            SendMessageA(DlgItem, 0x151u, v20, MEMORY[0xAC119C]); /*0x5eb4dd*/
+            SendMessageA(DlgItem, 0x151u, v20, g_HouseClass_ObserverFlags); /*0x5eb4dd*/
           }
         }
         if ( v36 == MEMORY[0x8316A4] ) /*0x5eb4e5*/
@@ -459,7 +459,7 @@ void __thiscall Lobby::SetupPlayerWidgets(HWND this)
       v18 = ResourceID4CSF; /*0x5ebaef*/
       v10 = v6 == MEMORY[0xAC11B4] /*0x5ebb24*/
          || v6
-         && v6 != MEMORY[0xAC119C]
+         && v6 != g_HouseClass_ObserverFlags
          && v6 != MEMORY[0xAC11A0]
          && (wchar_t *)v6 != MEMORY[0xAC11B0]
          && *(_DWORD *)(v6 + 107) == -1;
@@ -483,7 +483,7 @@ void __thiscall Lobby::SetupPlayerWidgets(HWND this)
       {
         ShowWindow(v12, 5); /*0x5ebb9f*/
         ShowWindow(nIDDlgItema, 5); /*0x5ebba8*/
-        if ( MEMORY[0xA8B238][0] != 4 || !Network::IsLobbyFeature() ) /*0x5ebbb3*/
+        if ( g_GameMode_Current[0] != 4 || !Network::IsLobbyFeature() ) /*0x5ebbb3*/
         {
           ShowWindow(v9, 5); /*0x5ebbbf*/
           ShowWindow(v16, 5); /*0x5ebbc8*/

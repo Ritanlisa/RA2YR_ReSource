@@ -498,20 +498,20 @@ BOOL __thiscall BufferIOFileClass::Open(int this, CDFileClass *aP1)
   if ( *(_BYTE *)(this + 41) ) /*0x431f76*/
   {
     BufferIO::Flush(this); /*0x431f7b*/
-    if ( *(_BYTE *)(this + 38) ) /*0x431f80*/
+    if ( this->q026 ) /*0x431f80*/
     {
-      if ( *(_DWORD *)(this + 80) ) /*0x431f85*/
+      if ( this->q050 ) /*0x431f85*/
       {
         v3 = *(_DWORD *)this; /*0x431f8a*/
         *(_BYTE *)(this + 41) = 0; /*0x431f8e*/
         (*(void (__thiscall **)(int))(v3 + 52))(this); /*0x431f91*/
         *(_BYTE *)(this + 41) = 1; /*0x431f94*/
-        *(_BYTE *)(this + 38) = 0; /*0x431f98*/
+        this->q026 = 0; /*0x431f98*/
         *(_BYTE *)(this + 37) = 0; /*0x431f9b*/
         goto LABEL_8; /*0x431f9e*/
       }
       FileClass::CloseHandle((HANDLE *)this); /*0x431fa2*/
-      *(_BYTE *)(this + 38) = 0; /*0x431fa7*/
+      this->q026 = 0; /*0x431fa7*/
     }
     *(_BYTE *)(this + 37) = 0; /*0x431faa*/
   }
@@ -523,18 +523,18 @@ LABEL_8:
   v4 = aP1; /*0x431fb4*/
   if ( *(_BYTE *)(this + 41) ) /*0x431fb4*/
   {
-    *(_DWORD *)(this + 44) = aP1; /*0x431fc6*/
+    this->BufferPosition = aP1; /*0x431fc6*/
     if ( aP1 == (CDFileClass *)1 ) /*0x431fc9*/
     {
-      if ( *(_DWORD *)(this + 72) <= *(_DWORD *)(this + 52) ) /*0x431fd3*/
+      if ( this->TotalBytesWritten <= this->BufferReadSize ) /*0x431fd3*/
       {
-        *(_BYTE *)(this + 38) = 0; /*0x431fd5*/
+        this->q026 = 0; /*0x431fd5*/
 LABEL_19:
-        *(_DWORD *)(this + 56) = 0; /*0x432023*/
-        *(_DWORD *)(this + 60) = 0; /*0x432029*/
-        *(_DWORD *)(this + 64) = -1; /*0x43202c*/
-        *(_DWORD *)(this + 68) = -1; /*0x43202f*/
-        *(_DWORD *)(this + 76) = 0; /*0x432032*/
+        this->StreamSize = 0; /*0x432023*/
+        this->BufferMaxSize = 0; /*0x432029*/
+        this->BufferCursor = -1; /*0x43202c*/
+        this->TotalBytesRead = -1; /*0x43202f*/
+        this->q04C = 0; /*0x432032*/
         *(_BYTE *)(this + 37) = 1; /*0x432035*/
         return 1; /*0x432040*/
       }
@@ -544,9 +544,9 @@ LABEL_19:
       FileClass::Open2((const CHAR **)this, (const CHAR *)2); /*0x431fe2*/
       FileClass::CloseHandle((HANDLE *)this); /*0x431fe9*/
       v4 = (CDFileClass *)3; /*0x431fee*/
-      *(_DWORD *)(this + 80) = 0; /*0x431ff3*/
+      this->q050 = 0; /*0x431ff3*/
     }
-    if ( *(_DWORD *)(this + 80) ) /*0x431ff6*/
+    if ( this->q050 ) /*0x431ff6*/
     {
       v5 = *(_DWORD *)this; /*0x431ffb*/
       *(_BYTE *)(this + 41) = 0; /*0x432000*/
@@ -557,10 +557,10 @@ LABEL_19:
     {
       FileClass::Open2((const CHAR **)this, v4->__pad_0); /*0x43200f*/
     }
-    v6 = *(_DWORD *)(this + 44); /*0x432014*/
-    *(_BYTE *)(this + 38) = 1; /*0x432017*/
+    v6 = this->BufferPosition; /*0x432014*/
+    this->q026 = 1; /*0x432017*/
     if ( v6 == 2 ) /*0x43201e*/
-      *(_DWORD *)(this + 72) = 0; /*0x432020*/
+      this->TotalBytesWritten = 0; /*0x432020*/
     goto LABEL_19; /*0x432020*/
   }
   return FileClass::Open2((const CHAR **)this, aP1->__pad_0); /*0x432039*/
@@ -745,7 +745,7 @@ DWORD __thiscall FileClass::BufferedReader(int this, BufferIOFileClass *aP1, DWO
   if ( !(*(unsigned __int8 (__thiscall **)(int))(this->q018)(this) /*0x4322bc*/
     && (*(int (__thiscall **)(int, int))(this->q01C)(this, 1) )
   {
-    *(_DWORD *)(this + 80) = FileClass::Seek((int *)this, 0, 1u); /*0x4322cd*/
+    this->q014 = FileClass::Seek((int *)this, 0, 1u); /*0x4322cd*/
     v16 = 1; /*0x4322d0*/
   }
   if ( !*(_BYTE *)(this + 41) ) /*0x4322dd*/
@@ -768,12 +768,12 @@ LABEL_27:
   }
   do /*0x432461*/
   {
-    v5 = (BlowStraw *)(*(_DWORD *)(this + 52) - *(_DWORD *)(this + 56)); /*0x43230d*/
+    v5 = (BlowStraw *)(this->q034 - this->q038); /*0x43230d*/
     if ( (int)v4 < (int)v5 ) /*0x43230f*/
       v5 = v4; /*0x432311*/
     if ( !*(_BYTE *)(this + 39) ) /*0x432313*/
     {
-      if ( *(_DWORD *)(this + 72) >= *(_DWORD *)(this + 52) ) /*0x432323*/
+      if ( *(_DWORD *)(this + 72) >= this->q034 ) /*0x432323*/
       {
         v6 = *(AbstractClass **)(this + 52); /*0x432333*/
         *(_DWORD *)(this + 60) = *(_DWORD *)(this + 76); /*0x432335*/
@@ -783,7 +783,7 @@ LABEL_27:
         v6 = *(AbstractClass **)(this + 72); /*0x432325*/
         *(_DWORD *)(this + 60) = 0; /*0x432327*/
       }
-      if ( *(_DWORD *)(this + 80) ) /*0x432338*/
+      if ( this->q014 ) /*0x432338*/
       {
         v7 = *(AudioController **)this; /*0x432342*/
         v14 = *(BufferIOFileClass **)(this + 76); /*0x432346*/
@@ -791,8 +791,8 @@ LABEL_27:
         (*(void (__thiscall **)(int, BufferIOFileClass *, _DWORD))&v7->__pad_10[24])(this, v14, 0); /*0x43234d*/
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(this->q024)( /*0x43235c*/
           this,
-          *(_DWORD *)(this + 48),
-          *(_DWORD *)(this + 52));
+          this->q00C,
+          this->q034);
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)this + 40))(this, *(_DWORD *)(this + 76), 0); /*0x432369*/
         *(_BYTE *)(this + 41) = 1; /*0x43236c*/
       }
@@ -801,37 +801,37 @@ LABEL_27:
         FileClass::Seek((int *)this, *(_DWORD *)(this + 60), 0); /*0x43237a*/
         FileClass::Read((_DWORD *)this, *(BufferIOFileClass **)(this + 48), v6); /*0x432386*/
       }
-      *(_DWORD *)(this + 56) = 0; /*0x43238e*/
-      *(_DWORD *)(this + 64) = -1; /*0x432395*/
+      this->q038 = 0; /*0x43238e*/
+      this->q010 = -1; /*0x432395*/
       *(_DWORD *)(this + 68) = -1; /*0x432398*/
       *(_BYTE *)(this + 39) = 1; /*0x43239b*/
     }
-    memcpy(&v15->__pad_0[(_DWORD)aP1], (const void *)(*(_DWORD *)(this + 48) + *(_DWORD *)(this + 56)), (size_t)v5); /*0x4323b9*/
-    v8 = &v5->__pad_0[*(_DWORD *)(this + 56)]; /*0x4323c7*/
+    memcpy(&v15->__pad_0[(_DWORD)aP1], (const void *)(this->q00C + this->q038), (size_t)v5); /*0x4323b9*/
+    v8 = &v5->__pad_0[this->q038]; /*0x4323c7*/
     v15 = (BlowStraw *)((char *)v15 + (_DWORD)v5); /*0x4323c9*/
     v4 = (BlowStraw *)((char *)v4 - (int)v5); /*0x4323d7*/
     *(_DWORD *)(this + 76) = &v8[*(_DWORD *)(this + 60)]; /*0x4323d9*/
     v9 = *(char **)(this + 52); /*0x4323dc*/
-    *(_DWORD *)(this + 56) = v8; /*0x4323e1*/
+    this->q038 = v8; /*0x4323e1*/
     if ( v8 == v9 ) /*0x4323e4*/
     {
       BufferIO::Flush(this); /*0x4323e8*/
       v10 = *(_DWORD *)(this + 76); /*0x4323ed*/
-      *(_DWORD *)(this + 56) = 0; /*0x4323f0*/
+      this->q038 = 0; /*0x4323f0*/
       *(_DWORD *)(this + 60) = v10; /*0x4323f9*/
-      *(_DWORD *)(this + 64) = -1; /*0x4323fc*/
+      this->q010 = -1; /*0x4323fc*/
       *(_DWORD *)(this + 68) = -1; /*0x4323ff*/
       if ( v4 && *(_DWORD *)(this + 72) > v10 ) /*0x432407*/
       {
-        if ( *(_DWORD *)(this + 80) ) /*0x432409*/
+        if ( this->q014 ) /*0x432409*/
         {
           v11 = *(AudioController **)this; /*0x432410*/
           *(_BYTE *)(this + 41) = 0; /*0x432417*/
           (*(void (__thiscall **)(int, LONG, _DWORD))&v11->__pad_10[24])(this, v10, 0); /*0x43241b*/
           (*(void (__thiscall **)(int, _DWORD, _DWORD))(this->q024)( /*0x43242a*/
             this,
-            *(_DWORD *)(this + 48),
-            *(_DWORD *)(this + 52));
+            this->q00C,
+            this->q034);
           (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)this + 40))(this, *(_DWORD *)(this + 76), 0); /*0x432437*/
           *(_BYTE *)(this + 41) = 1; /*0x43243a*/
         }
@@ -2910,7 +2910,7 @@ LABEL_44:
       if ( *(_BYTE *)(v12[328] + 5823) && (IUnknown *)(*(int (__thiscall **)(_DWORD *))(*v12 + 60))(v12) == aP3 ) /*0x47c851*/
       {
 LABEL_52:
-        if ( (*(_BYTE *)(this + 292) & 0x3F) == 0 ) /*0x47c866*/
+        if ( (this->occupationFlags & 0x3F) == 0 ) /*0x47c866*/
           goto LABEL_14; /*0x47c866*/
         return 0; /*0x47c866*/
       }
@@ -2977,26 +2977,26 @@ LABEL_14:
     if ( !Type::CheckAmbiguity(&MEMORY[0x87F7E8], this, 1) ) /*0x47c887*/
       return 0; /*0x47c887*/
 LABEL_55:
-    v14 = *(_DWORD *)(this + 68); /*0x47c88d*/
+    v14 = this->q044; /*0x47c88d*/
     if ( v14 == -1 ) /*0x47c893*/
     {
 LABEL_86:
       if ( aP1 == (IUnknown *)-1 ) /*0x47c9d4*/
       {
-        v20 = *(_DWORD *)(this + 320); /*0x47c9d6*/
-        if ( (v20 & 0x100) == 0 && (v20 & 0x400) == 0 && !*(_BYTE *)(this + 284) ) /*0x47c9f3*/
+        v20 = this->flags; /*0x47c9d6*/
+        if ( (v20 & 0x100) == 0 && (v20 & 0x400) == 0 && !this->slopeIndex ) /*0x47c9f3*/
         {
           if ( !aP2->__pad_BC0[270] ) /*0x47ca0d*/
-            return MEMORY[0x89EA60][36 * *(_DWORD *)(this + 236)]; /*0x47ca4a*/
+            return MEMORY[0x89EA60][36 * this->landType]; /*0x47ca4a*/
           v21 = *(BombClass **)(this + 56); /*0x47ca0f*/
           if ( (int)v21 >= *(int *)&MEMORY[0xA8D63C].__pad_579C[55648] ) /*0x47ca1a*/
             return (int)v21 < *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55648] + 14; /*0x47ca25*/
         }
         return 0; /*0x47ca1a*/
       }
-      return MEMORY[0x89EA40][(_DWORD)aP1 + 8 * *(_DWORD *)(this + 236) + *(_DWORD *)(this + 236)] != 0.0; /*0x47ca6a*/
+      return MEMORY[0x89EA40][(_DWORD)aP1 + 8 * this->landType + this->landType] != 0.0; /*0x47ca6a*/
     }
-    v15 = *(_DWORD *)(this + 80); /*0x47c899*/
+    v15 = this->wallOwnerIndex; /*0x47c899*/
     v16 = 0; /*0x47c89c*/
     if ( v15 >= 0 ) /*0x47c8a0*/
       v16 = *(IUnknown **)&HouseClass_Array->__pad_0[4 * v15]; /*0x47c8a8*/
@@ -3006,7 +3006,7 @@ LABEL_86:
       {
         if ( ((v17 = *(_DWORD *)&aP2->__pad_DFC[88]) != 0 /*0x47c8fd*/
            && *(_DWORD *)(v17 + 660) == v14
-           && *(_BYTE *)(this + 286) >= 0x10u
+           && this->powerup >= 0x10u
            || aP2 == *(IUnknown **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2172)
            || aP2 == *(IUnknown **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2156)
            || aP2 == *(IUnknown **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2160))
@@ -3022,14 +3022,14 @@ LABEL_86:
       {
 LABEL_84:
         if ( !MEMORY[0xA8D63C].__pad_14B0[639] /*0x47c9bf*/
-          || *(_BYTE *)(*(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * *(_DWORD *)(this + 68)] + 680) )
+          || *(_BYTE *)(*(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * this->q044] + 680) )
         {
           return 0; /*0x47c9c7*/
         }
         goto LABEL_86; /*0x47c9c7*/
       }
       v18 = *(_DWORD *)&aP2->__pad_DFC[88]; /*0x47c914*/
-      if ( (v18 && *(_DWORD *)(v18 + 660) == 26 && *(_BYTE *)(this + 286) >= 0x10u /*0x47c949*/
+      if ( (v18 && *(_DWORD *)(v18 + 660) == 26 && this->powerup >= 0x10u /*0x47c949*/
          || aP2 == *(IUnknown **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2164)
          || aP2 == *(IUnknown **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2168))
         && v16 == aP3 )
@@ -3039,9 +3039,9 @@ LABEL_84:
     }
     if ( aP2 && aP2->__pad_14B0[527] && (v14 == 126 || FindBuildingByTiberiumType(v14) != -1) ) /*0x47c96e*/
     {
-      v19 = *(_DWORD *)(this + 320); /*0x47c970*/
+      v19 = this->flags; /*0x47c970*/
       if ( (v19 & 0x100) == 0 && (v19 & 0x400) == 0 ) /*0x47c987*/
-        return !*(_BYTE *)(this + 284); /*0x47c98d*/
+        return !this->slopeIndex; /*0x47c98d*/
       return 0; /*0x47c6da*/
     }
     goto LABEL_84; /*0x47c96e*/
@@ -3183,7 +3183,7 @@ BOOL __thiscall CellClass_DetermineTileType(int this)
   if ( g_CellTileLookup == -1 ) /*0x47cb95*/
     v64 = -1; /*0x47cb97*/
   v2 = dword_ABC2B8; /*0x47cb9e*/
-  v81 = *(_DWORD *)(this + 56); /*0x47cba6*/
+  v81 = this->q038; /*0x47cba6*/
   if ( v81 == dword_ABC2B8 || v81 >= unk_AA1134 && v81 <= v49 ) /*0x47cbb8*/
   {
     v3 = 0; /*0x47cbbe*/
@@ -3192,7 +3192,7 @@ BOOL __thiscall CellClass_DetermineTileType(int this)
     {
       if ( v4 < 8 ) /*0x47cbc7*/
       {
-        v74 = *(_DWORD *)(this + 36); /*0x47cbd5*/
+        v74 = this->smudgeTypeIndex; /*0x47cbd5*/
         v75 = *CellStruct::Add(&v74, &v82, (_WORD *)(4 * (v4 & 7) + 9041544)); /*0x47cbf6*/
         v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v75); /*0x47cbff*/
         v2 = dword_ABC2B8; /*0x47cc04*/
@@ -3207,13 +3207,13 @@ BOOL __thiscall CellClass_DetermineTileType(int this)
       v4 = ((_BYTE)v4 + 2) & 7; /*0x47cc2b*/
     }
     if ( v3 ) /*0x47cc36*/
-      *(_DWORD *)(this + 56) = v55 + v3; /*0x47cc3e*/
+      this->q038 = v55 + v3; /*0x47cc3e*/
     else
-      *(_DWORD *)(this + 56) = v2; /*0x47cc43*/
+      this->q038 = v2; /*0x47cc43*/
   }
   if ( v47 != -1 ) /*0x47cc4b*/
   {
-    v8 = *(_DWORD *)(this + 56); /*0x47cc51*/
+    v8 = this->q038; /*0x47cc51*/
     v9 = dword_ABB104; /*0x47cc54*/
     if ( v8 == dword_ABB104 || v8 >= v47 && v8 <= v50 ) /*0x47cc6c*/
     {
@@ -3224,7 +3224,7 @@ BOOL __thiscall CellClass_DetermineTileType(int this)
         if ( v11 < 8 ) /*0x47cc7b*/
         {
           v14 = v11 & 7; /*0x47cc86*/
-          v75 = *(_DWORD *)(this + 36); /*0x47cc89*/
+          v75 = this->smudgeTypeIndex; /*0x47cc89*/
           LOWORD(v56) = v75 + LOWORD(MEMORY[0x89F688][v14]); /*0x47cca8*/
           HIWORD(v56) = HIWORD(v75) + HIWORD(MEMORY[0x89F688][v14]); /*0x47ccb1*/
           v75 = v56; /*0x47ccba*/
@@ -3241,14 +3241,14 @@ BOOL __thiscall CellClass_DetermineTileType(int this)
         v11 = ((_BYTE)v11 + 2) & 7; /*0x47ccf0*/
       }
       if ( v10 ) /*0x47ccff*/
-        *(_DWORD *)(this + 56) = v47 + v10; /*0x47cd07*/
+        this->q038 = v47 + v10; /*0x47cd07*/
       else
-        *(_DWORD *)(this + 56) = v9; /*0x47cd0c*/
+        this->q038 = v9; /*0x47cd0c*/
     }
   }
   if ( v52 != -1 ) /*0x47cd16*/
   {
-    v16 = *(_DWORD *)(this + 56); /*0x47cd1c*/
+    v16 = this->q038; /*0x47cd1c*/
     v17 = unk_AA0E18; /*0x47cd1f*/
     if ( v16 == unk_AA0E18 || v16 >= v52 && v16 <= v51 ) /*0x47cd35*/
     {
@@ -3259,7 +3259,7 @@ BOOL __thiscall CellClass_DetermineTileType(int this)
         if ( v19 < 8 ) /*0x47cd44*/
         {
           v22 = v19 & 7; /*0x47cd4f*/
-          v75 = *(_DWORD *)(this + 36); /*0x47cd52*/
+          v75 = this->smudgeTypeIndex; /*0x47cd52*/
           LOWORD(v57) = v75 + LOWORD(MEMORY[0x89F688][v22]); /*0x47cd71*/
           HIWORD(v57) = HIWORD(v75) + HIWORD(MEMORY[0x89F688][v22]); /*0x47cd7a*/
           v75 = v57; /*0x47cd83*/
@@ -3276,14 +3276,14 @@ BOOL __thiscall CellClass_DetermineTileType(int this)
         v19 = ((_BYTE)v19 + 2) & 7; /*0x47cdd1*/
       }
       if ( v18 ) /*0x47cde0*/
-        *(_DWORD *)(this + 56) = v52 + v18; /*0x47cde8*/
+        this->q038 = v52 + v18; /*0x47cde8*/
       else
-        *(_DWORD *)(this + 56) = v17; /*0x47cded*/
+        this->q038 = v17; /*0x47cded*/
     }
   }
   if ( v54 != -1 ) /*0x47cdf7*/
   {
-    v24 = *(_DWORD *)(this + 56); /*0x47cdfd*/
+    v24 = this->q038; /*0x47cdfd*/
     v25 = dword_ABC2B0; /*0x47ce00*/
     if ( v24 == dword_ABC2B0 || v24 >= v54 && v24 <= v53 ) /*0x47ce16*/
     {
@@ -3294,7 +3294,7 @@ BOOL __thiscall CellClass_DetermineTileType(int this)
         if ( v27 < 8 ) /*0x47ce25*/
         {
           v30 = v27 & 7; /*0x47ce30*/
-          v77 = *(_DWORD *)(this + 36); /*0x47ce33*/
+          v77 = this->smudgeTypeIndex; /*0x47ce33*/
           LOWORD(v60) = v77 + LOWORD(MEMORY[0x89F688][v30]); /*0x47ce52*/
           HIWORD(v60) = HIWORD(v77) + HIWORD(MEMORY[0x89F688][v30]); /*0x47ce5b*/
           v77 = v60; /*0x47ce64*/
@@ -3317,23 +3317,23 @@ BOOL __thiscall CellClass_DetermineTileType(int this)
         v27 = ((_BYTE)v27 + 2) & 7; /*0x47cebe*/
       }
       if ( v26 ) /*0x47cecd*/
-        *(_DWORD *)(this + 56) = v54 + v26; /*0x47ced5*/
+        this->q038 = v54 + v26; /*0x47ced5*/
       else
-        *(_DWORD *)(this + 56) = v25; /*0x47ceda*/
+        this->q038 = v25; /*0x47ceda*/
     }
   }
-  v32 = *(_DWORD *)(this + 56); /*0x47cedd*/
+  v32 = this->q038; /*0x47cedd*/
   if ( v32 >= v73 && v32 <= v64 || v32 >= v48 && v32 <= v65 ) /*0x47cefc*/
   {
     v33 = 0; /*0x47cf08*/
-    if ( *(_BYTE *)(this + 284) == 1 ) /*0x47cf0c*/
+    if ( this->slopeIndex == 1 ) /*0x47cf0c*/
     {
-      v34 = *(_DWORD *)(this + 36); /*0x47cf12*/
+      v34 = this->smudgeTypeIndex; /*0x47cf12*/
       LOWORD(v66) = MEMORY[0x89F6A0] + v34; /*0x47cf21*/
       HIWORD(v66) = HIWORD(MEMORY[0x89F6A0]) + HIWORD(v34); /*0x47cf37*/
       v80 = v66; /*0x47cf40*/
       v33 = *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v80) + 284) == 0; /*0x47cf58*/
-      v35 = *(_DWORD *)(this + 36); /*0x47cf5d*/
+      v35 = this->smudgeTypeIndex; /*0x47cf5d*/
       LOWORD(v66) = MEMORY[0x89F690] + v35; /*0x47cf7c*/
       HIWORD(v66) = HIWORD(MEMORY[0x89F690]) + HIWORD(v35); /*0x47cf81*/
       v80 = v66; /*0x47cf90*/
@@ -3341,55 +3341,55 @@ BOOL __thiscall CellClass_DetermineTileType(int this)
         v33 |= 2u; /*0x47cfa3*/
       v36 = v48; /*0x47cfa6*/
       if ( v33 ) /*0x47cfac*/
-        *(_DWORD *)(this + 56) = v33 + v48 - 1; /*0x47cfb2*/
+        this->q038 = v33 + v48 - 1; /*0x47cfb2*/
     }
     else
     {
       v36 = v48; /*0x47cfb7*/
     }
-    if ( *(_BYTE *)(this + 284) == 2 ) /*0x47cfc2*/
+    if ( this->slopeIndex == 2 ) /*0x47cfc2*/
     {
-      v37 = *(_DWORD *)(this + 36); /*0x47cfc8*/
+      v37 = this->smudgeTypeIndex; /*0x47cfc8*/
       LOWORD(v67) = LOWORD(MEMORY[0x89F688][0]) + v37; /*0x47cfe7*/
       HIWORD(v67) = HIWORD(MEMORY[0x89F688][0]) + HIWORD(v37); /*0x47cfec*/
       v80 = v67; /*0x47cffb*/
       if ( !*((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v80) + 284) ) /*0x47d004*/
         v33 |= 1u; /*0x47d00e*/
-      v38 = *(_DWORD *)(this + 36); /*0x47d011*/
+      v38 = this->smudgeTypeIndex; /*0x47d011*/
       LOWORD(v68) = v38 + MEMORY[0x89F698]; /*0x47d026*/
       HIWORD(v68) = HIWORD(v38) + HIWORD(MEMORY[0x89F698]); /*0x47d035*/
       v80 = v68; /*0x47d03e*/
       if ( !*((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v80) + 284) ) /*0x47d04c*/
         v33 |= 2u; /*0x47d056*/
       if ( v33 ) /*0x47d05b*/
-        *(_DWORD *)(this + 56) = v33 + v36 + 2; /*0x47d061*/
+        this->q038 = v33 + v36 + 2; /*0x47d061*/
     }
-    if ( *(_BYTE *)(this + 284) == 3 ) /*0x47d06b*/
+    if ( this->slopeIndex == 3 ) /*0x47d06b*/
     {
-      v39 = *(_DWORD *)(this + 36); /*0x47d071*/
+      v39 = this->smudgeTypeIndex; /*0x47d071*/
       LOWORD(v69) = MEMORY[0x89F690] + v39; /*0x47d090*/
       HIWORD(v69) = HIWORD(MEMORY[0x89F690]) + HIWORD(v39); /*0x47d095*/
       v80 = v69; /*0x47d0a4*/
       if ( !*((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v80) + 284) ) /*0x47d0ad*/
         v33 |= 1u; /*0x47d0b7*/
-      v40 = *(_DWORD *)(this + 36); /*0x47d0ba*/
+      v40 = this->smudgeTypeIndex; /*0x47d0ba*/
       LOWORD(v70) = MEMORY[0x89F6A0] + v40; /*0x47d0c9*/
       HIWORD(v70) = HIWORD(MEMORY[0x89F6A0]) + HIWORD(v40); /*0x47d0df*/
       v80 = v70; /*0x47d0e8*/
       if ( !*((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v80) + 284) ) /*0x47d0f6*/
         v33 |= 2u; /*0x47d100*/
       if ( v33 ) /*0x47d105*/
-        *(_DWORD *)(this + 56) = v33 + v36 + 5; /*0x47d10b*/
+        this->q038 = v33 + v36 + 5; /*0x47d10b*/
     }
-    if ( *(_BYTE *)(this + 284) == 4 ) /*0x47d115*/
+    if ( this->slopeIndex == 4 ) /*0x47d115*/
     {
-      v41 = *(_DWORD *)(this + 36); /*0x47d11b*/
+      v41 = this->smudgeTypeIndex; /*0x47d11b*/
       LOWORD(v71) = v41 + MEMORY[0x89F698]; /*0x47d136*/
       HIWORD(v71) = HIWORD(v41) + HIWORD(MEMORY[0x89F698]); /*0x47d13f*/
       v80 = v71; /*0x47d14e*/
       if ( !*((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v80) + 284) ) /*0x47d157*/
         v33 |= 1u; /*0x47d161*/
-      v42 = *(_DWORD *)(this + 36); /*0x47d164*/
+      v42 = this->smudgeTypeIndex; /*0x47d164*/
       LOWORD(v72) = LOWORD(MEMORY[0x89F688][0]) + v42; /*0x47d173*/
       HIWORD(v72) = HIWORD(MEMORY[0x89F688][0]) + HIWORD(v42); /*0x47d189*/
       v80 = v72; /*0x47d192*/
@@ -3397,13 +3397,13 @@ BOOL __thiscall CellClass_DetermineTileType(int this)
         v33 |= 2u; /*0x47d1aa*/
       if ( !v33 ) /*0x47d1af*/
         goto LABEL_128; /*0x47d1af*/
-      *(_DWORD *)(this + 56) = v33 + v36 + 8; /*0x47d1b5*/
+      this->q038 = v33 + v36 + 8; /*0x47d1b5*/
     }
     if ( !v33 ) /*0x47d1ba*/
 LABEL_128:
-      *(_DWORD *)(this + 56) = *(unsigned __int8 *)(this + 284) + v73 - 1; /*0x47d1bc*/
+      this->q038 = *(unsigned __int8 *)(this + 284) + v73 - 1; /*0x47d1bc*/
   }
-  v43 = *(_DWORD *)(this + 56); /*0x47d1cf*/
+  v43 = this->q038; /*0x47d1cf*/
   v44 = v81; /*0x47d1d2*/
   if ( v81 != v43 ) /*0x47d1d8*/
   {
@@ -3411,7 +3411,7 @@ LABEL_128:
     if ( !(*(int (__thiscall **)(int))(*(_DWORD *)v45 + 156))(v45) ) /*0x47d1e7*/
       CellClass::EnsureFileLoaded(v45); /*0x47d1f3*/
   }
-  return v44 != *(_DWORD *)(this + 56); /*0x47d1fd*/
+  return v44 != this->q038; /*0x47d1fd*/
 }
 } }
 // 0x47DD70
@@ -3614,10 +3614,10 @@ LABEL_11:
     }
     while ( (int)v5 < (int)&MEMORY[0x89E720] );
   }
-  v11 = *(_DWORD *)(this + 36); /*0x481572*/
+  v11 = this->smudgeTypeIndex; /*0x481572*/
   v12 = v11; /*0x48157b*/
   LOBYTE(v16) = BYTE2(v11); /*0x481583*/
-  if ( *(_BYTE *)(this + 282) ) /*0x481575*/
+  if ( this->height ) /*0x481575*/
   {
     v13 = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576] + 4 * (_DWORD)aP1); /*0x481596*/
     result = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 156))(v13); /*0x48159d*/
@@ -5181,12 +5181,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
   int v249; // [esp-8h] [ebp-10h]
   int v250; // [esp-8h] [ebp-10h]
 
-  if ( *(_DWORD *)(this + 4) == 1 )
+  if ( this->q004 == 1 )
   {
     v2 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v2 )
     {
-      v3 = *(_DWORD *)(this + 372);
+      v3 = this->q174;
       *v2 = &BlitPlainXlat<unsigned char>::`vftable';
       v2[1] = v3;
     }
@@ -5194,11 +5194,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v2 = 0;
     }
-    *(_DWORD *)(this + 8) = v2;
+    this->q008 = v2;
     v4 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v4 )
     {
-      v5 = *(_DWORD *)(this + 372);
+      v5 = this->q174;
       *v4 = &BlitTransXlat<unsigned char>::`vftable';
       v4[1] = v5;
     }
@@ -5206,11 +5206,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v4 = 0;
     }
-    *(_DWORD *)(this + 12) = v4;
+    this->q00C = v4;
     v6 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v6 )
     {
-      v7 = *(_DWORD *)(this + 372);
+      v7 = this->q174;
       v6[1] = this + 380;
       v6[2] = v7;
       *v6 = &BlitTransZRemapXlat<unsigned char>::`vftable';
@@ -5219,11 +5219,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v6 = 0;
     }
-    *(_DWORD *)(this + 20) = v6;
+    this->q014 = v6;
     v8 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v8 )
     {
-      v9 = *(_DWORD *)(this + 376);
+      v9 = this->q178;
       *v8 = &BlitTransRemapDest<unsigned char>::`vftable';
       v8[1] = v9;
     }
@@ -5231,12 +5231,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v8 = 0;
     }
-    *(_DWORD *)(this + 16) = v8;
+    this->q010 = v8;
     v10 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v10 )
     {
-      v11 = *(_DWORD *)(this + 372);
-      v10[1] = *(_DWORD *)(this + 376);
+      v11 = this->q174;
+      v10[1] = this->q178;
       v10[2] = v11;
       *v10 = &BlitTransRemapXlat<unsigned char>::`vftable';
     }
@@ -5244,12 +5244,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v10 = 0;
     }
-    *(_DWORD *)(this + 24) = v10;
+    this->q018 = v10;
     v12 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v12 )
     {
-      v13 = *(_DWORD *)(this + 372);
-      v12[1] = *(_DWORD *)(this + 376);
+      v13 = this->q174;
+      v12[1] = this->q178;
       v12[2] = v13;
       *v12 = &BlitTransRemapXlat<unsigned char>::`vftable';
     }
@@ -5257,12 +5257,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v12 = 0;
     }
-    *(_DWORD *)(this + 28) = v12;
+    this->q01C = v12;
     v14 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v14 )
     {
-      v15 = *(_DWORD *)(this + 372);
-      v14[1] = *(_DWORD *)(this + 376);
+      v15 = this->q174;
+      v14[1] = this->q178;
       v14[2] = v15;
       *v14 = &BlitTransRemapXlat<unsigned char>::`vftable';
     }
@@ -5270,11 +5270,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v14 = 0;
     }
-    *(_DWORD *)(this + 32) = v14;
+    this->q020 = v14;
     v16 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v16 )
     {
-      v17 = *(_DWORD *)(this + 372);
+      v17 = this->q174;
       *v16 = &RLEBlitTransXlat<unsigned char>::`vftable';
       v16[1] = v17;
     }
@@ -5282,11 +5282,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v16 = 0;
     }
-    *(_DWORD *)(this + 208) = v16;
+    this->q0D0 = v16;
     v18 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v18 )
     {
-      v19 = *(_DWORD *)(this + 372);
+      v19 = this->q174;
       v18[1] = this + 380;
       v18[2] = v19;
       *v18 = &RLEBlitTransZRemapXlat<unsigned char>::`vftable';
@@ -5295,11 +5295,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v18 = 0;
     }
-    *(_DWORD *)(this + 216) = v18;
+    this->q0D8 = v18;
     v20 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v20 )
     {
-      v21 = *(_DWORD *)(this + 376);
+      v21 = this->q178;
       *v20 = &RLEBlitTransRemapDest<unsigned char>::`vftable';
       v20[1] = v21;
     }
@@ -5307,12 +5307,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v20 = 0;
     }
-    *(_DWORD *)(this + 212) = v20;
+    this->q0D4 = v20;
     v22 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v22 )
     {
-      v23 = *(_DWORD *)(this + 372);
-      v22[1] = *(_DWORD *)(this + 376);
+      v23 = this->q174;
+      v22[1] = this->q178;
       v22[2] = v23;
       *v22 = &RLEBlitTransRemapXlat<unsigned char>::`vftable';
     }
@@ -5320,12 +5320,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v22 = 0;
     }
-    *(_DWORD *)(this + 220) = v22;
+    this->q0DC = v22;
     v24 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v24 )
     {
-      v25 = *(_DWORD *)(this + 372);
-      v24[1] = *(_DWORD *)(this + 376);
+      v25 = this->q174;
+      v24[1] = this->q178;
       v24[2] = v25;
       *v24 = &RLEBlitTransRemapXlat<unsigned char>::`vftable';
     }
@@ -5333,12 +5333,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v24 = 0;
     }
-    *(_DWORD *)(this + 224) = v24;
+    this->q0E0 = v24;
     v26 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v26 )
     {
-      v27 = *(_DWORD *)(this + 372);
-      v26[1] = *(_DWORD *)(this + 376);
+      v27 = this->q174;
+      v26[1] = this->q178;
       v26[2] = v27;
       *v26 = &RLEBlitTransRemapXlat<unsigned char>::`vftable';
     }
@@ -5346,11 +5346,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v26 = 0;
     }
-    *(_DWORD *)(this + 228) = v26;
+    this->q0E4 = v26;
     v28 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v28 )
     {
-      v29 = *(_DWORD *)(this + 372);
+      v29 = this->q174;
       *v28 = &RLEBlitTransXlatZRead<unsigned char>::`vftable';
       v28[1] = v29;
     }
@@ -5358,11 +5358,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v28 = 0;
     }
-    *(_DWORD *)(this + 232) = v28;
+    this->q0E8 = v28;
     v30 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v30 )
     {
-      v31 = *(_DWORD *)(this + 372);
+      v31 = this->q174;
       v30[1] = this + 380;
       v30[2] = v31;
       *v30 = &RLEBlitTransZRemapXlatZRead<unsigned char>::`vftable';
@@ -5371,11 +5371,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v30 = 0;
     }
-    *(_DWORD *)(this + 236) = v30;
+    this->q0EC = v30;
     v32 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v32 )
     {
-      v33 = *(_DWORD *)(this + 376);
+      v33 = this->q178;
       *v32 = &RLEBlitTransRemapDestZRead<unsigned char>::`vftable';
       v32[1] = v33;
     }
@@ -5383,12 +5383,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v32 = 0;
     }
-    *(_DWORD *)(this + 240) = v32;
+    this->q0F0 = v32;
     v34 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v34 )
     {
-      v35 = *(_DWORD *)(this + 372);
-      v34[1] = *(_DWORD *)(this + 376);
+      v35 = this->q174;
+      v34[1] = this->q178;
       v34[2] = v35;
       *v34 = &RLEBlitTransRemapXlatZRead<unsigned char>::`vftable';
     }
@@ -5396,12 +5396,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v34 = 0;
     }
-    *(_DWORD *)(this + 244) = v34;
+    this->q0F4 = v34;
     v36 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v36 )
     {
-      v37 = *(_DWORD *)(this + 372);
-      v36[1] = *(_DWORD *)(this + 376);
+      v37 = this->q174;
+      v36[1] = this->q178;
       v36[2] = v37;
       *v36 = &RLEBlitTransRemapXlatZRead<unsigned char>::`vftable';
     }
@@ -5409,12 +5409,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v36 = 0;
     }
-    *(_DWORD *)(this + 248) = v36;
+    this->q0F8 = v36;
     v38 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v38 )
     {
-      v39 = *(_DWORD *)(this + 372);
-      v38[1] = *(_DWORD *)(this + 376);
+      v39 = this->q174;
+      v38[1] = this->q178;
       v38[2] = v39;
       *v38 = &RLEBlitTransRemapXlatZRead<unsigned char>::`vftable';
     }
@@ -5422,11 +5422,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v38 = 0;
     }
-    *(_DWORD *)(this + 252) = v38;
+    this->q0FC = v38;
     v40 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v40 )
     {
-      v41 = *(_DWORD *)(this + 372);
+      v41 = this->q174;
       *v40 = &RLEBlitTransXlatZReadWrite<unsigned char>::`vftable';
       v40[1] = v41;
     }
@@ -5434,11 +5434,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v40 = 0;
     }
-    *(_DWORD *)(this + 268) = v40;
+    this->q10C = v40;
     v42 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v42 )
     {
-      v43 = *(_DWORD *)(this + 372);
+      v43 = this->q174;
       v42[1] = this + 380;
       v42[2] = v43;
       *v42 = &RLEBlitTransZRemapXlatZReadWrite<unsigned char>::`vftable';
@@ -5447,11 +5447,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v42 = 0;
     }
-    *(_DWORD *)(this + 272) = v42;
+    this->q110 = v42;
     v44 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v44 )
     {
-      v45 = *(_DWORD *)(this + 376);
+      v45 = this->q178;
       *v44 = &RLEBlitTransRemapDestZReadWrite<unsigned char>::`vftable';
       v44[1] = v45;
     }
@@ -5459,12 +5459,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v44 = 0;
     }
-    *(_DWORD *)(this + 276) = v44;
+    this->q114 = v44;
     v46 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v46 )
     {
-      v47 = *(_DWORD *)(this + 372);
-      v46[1] = *(_DWORD *)(this + 376);
+      v47 = this->q174;
+      v46[1] = this->q178;
       v46[2] = v47;
       *v46 = &RLEBlitTransRemapXlatZReadWrite<unsigned char>::`vftable';
     }
@@ -5472,12 +5472,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v46 = 0;
     }
-    *(_DWORD *)(this + 280) = v46;
+    this->q118 = v46;
     v48 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v48 )
     {
-      v49 = *(_DWORD *)(this + 372);
-      v48[1] = *(_DWORD *)(this + 376);
+      v49 = this->q174;
+      v48[1] = this->q178;
       v48[2] = v49;
       *v48 = &RLEBlitTransRemapXlatZReadWrite<unsigned char>::`vftable';
     }
@@ -5485,19 +5485,19 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v48 = 0;
     }
-    *(_DWORD *)(this + 284) = v48;
+    this->q11C = v48;
     result = (_DWORD *)__2_YAPAXI_Z(12);
     if ( result )
     {
-      v51 = *(_DWORD *)(this + 372);
-      result[1] = *(_DWORD *)(this + 376);
+      v51 = this->q174;
+      result[1] = this->q178;
       result[2] = v51;
       *result = &RLEBlitTransRemapXlatZReadWrite<unsigned char>::`vftable';
-      *(_DWORD *)(this + 288) = result;
+      this->q120 = result;
     }
     else
     {
-      *(_DWORD *)(this + 288) = 0;
+      this->q120 = 0;
       return 0;
     }
   }
@@ -5506,7 +5506,7 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     v52 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v52 )
     {
-      v53 = *(_DWORD *)(this + 372);
+      v53 = this->q174;
       *v52 = &BlitPlainXlat<unsigned short>::`vftable';
       v52[1] = v53;
     }
@@ -5514,11 +5514,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v52 = 0;
     }
-    *(_DWORD *)(this + 8) = v52;
+    this->q008 = v52;
     v54 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v54 )
     {
-      v55 = *(_DWORD *)(this + 372);
+      v55 = this->q174;
       *v54 = &BlitTransXlat<unsigned short>::`vftable';
       v54[1] = v55;
     }
@@ -5526,11 +5526,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v54 = 0;
     }
-    *(_DWORD *)(this + 12) = v54;
+    this->q00C = v54;
     v56 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v56 )
     {
-      v57 = *(_DWORD *)(this + 372);
+      v57 = this->q174;
       v56[1] = this + 380;
       v56[2] = v57;
       *v56 = &BlitTransZRemapXlat<unsigned short>::`vftable';
@@ -5539,11 +5539,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v56 = 0;
     }
-    *(_DWORD *)(this + 20) = v56;
+    this->q014 = v56;
     v58 = __2_YAPAXI_Z(8);
     if ( v58 )
     {
-      v59 = *(_WORD *)(this + 384);
+      v59 = this->q180;
       *(_DWORD *)v58 = &BlitTransDarken<unsigned short>::`vftable';
       *(_WORD *)(v58 + 4) = v59;
     }
@@ -5551,12 +5551,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v58 = 0;
     }
-    *(_DWORD *)(this + 16) = v58;
+    this->q010 = v58;
     v60 = __2_YAPAXI_Z(12);
     if ( v60 )
     {
-      v61 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v60 + 4) = *(_DWORD *)(this + 372);
+      v61 = this->q184;
+      *(_DWORD *)(v60 + 4) = this->q174;
       *(_WORD *)(v60 + 8) = v61;
       *(_DWORD *)v60 = &BlitTransLucent75<unsigned short>::`vftable';
     }
@@ -5564,12 +5564,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v60 = 0;
     }
-    *(_DWORD *)(this + 24) = v60;
+    this->q018 = v60;
     v62 = __2_YAPAXI_Z(12);
     if ( v62 )
     {
-      v63 = *(_WORD *)(this + 384);
-      *(_DWORD *)(v62 + 4) = *(_DWORD *)(this + 372);
+      v63 = this->q180;
+      *(_DWORD *)(v62 + 4) = this->q174;
       *(_WORD *)(v62 + 8) = v63;
       *(_DWORD *)v62 = &BlitTransLucent50<unsigned short>::`vftable';
     }
@@ -5577,12 +5577,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v62 = 0;
     }
-    *(_DWORD *)(this + 28) = v62;
+    this->q01C = v62;
     v64 = __2_YAPAXI_Z(12);
     if ( v64 )
     {
-      v65 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v64 + 4) = *(_DWORD *)(this + 372);
+      v65 = this->q184;
+      *(_DWORD *)(v64 + 4) = this->q174;
       *(_WORD *)(v64 + 8) = v65;
       *(_DWORD *)v64 = &BlitTransLucent25<unsigned short>::`vftable';
     }
@@ -5590,11 +5590,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v64 = 0;
     }
-    *(_DWORD *)(this + 32) = v64;
+    this->q020 = v64;
     v66 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v66 )
     {
-      v67 = *(_DWORD *)(this + 372);
+      v67 = this->q174;
       *v66 = &BlitPlainXlatZRead<unsigned short>::`vftable';
       v66[1] = v67;
     }
@@ -5602,11 +5602,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v66 = 0;
     }
-    *(_DWORD *)(this + 36) = v66;
+    this->q024 = v66;
     v68 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v68 )
     {
-      v69 = *(_DWORD *)(this + 372);
+      v69 = this->q174;
       *v68 = &BlitTransXlatZRead<unsigned short>::`vftable';
       v68[1] = v69;
     }
@@ -5614,11 +5614,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v68 = 0;
     }
-    *(_DWORD *)(this + 40) = v68;
+    this->q028 = v68;
     v70 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v70 )
     {
-      v71 = *(_DWORD *)(this + 372);
+      v71 = this->q174;
       v70[1] = this + 380;
       v70[2] = v71;
       *v70 = &BlitTransZRemapXlatZRead<unsigned short>::`vftable';
@@ -5627,11 +5627,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v70 = 0;
     }
-    *(_DWORD *)(this + 48) = v70;
+    this->q030 = v70;
     v72 = __2_YAPAXI_Z(8);
     if ( v72 )
     {
-      v73 = *(_WORD *)(this + 384);
+      v73 = this->q180;
       *(_DWORD *)v72 = &BlitTransDarkenZRead<unsigned short>::`vftable';
       *(_WORD *)(v72 + 4) = v73;
     }
@@ -5639,12 +5639,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v72 = 0;
     }
-    *(_DWORD *)(this + 44) = v72;
+    this->q02C = v72;
     v74 = __2_YAPAXI_Z(12);
     if ( v74 )
     {
-      v75 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v74 + 4) = *(_DWORD *)(this + 372);
+      v75 = this->q184;
+      *(_DWORD *)(v74 + 4) = this->q174;
       *(_WORD *)(v74 + 8) = v75;
       *(_DWORD *)v74 = &BlitTransLucent75ZRead<unsigned short>::`vftable';
     }
@@ -5652,12 +5652,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v74 = 0;
     }
-    *(_DWORD *)(this + 52) = v74;
+    this->q034 = v74;
     v76 = __2_YAPAXI_Z(12);
     if ( v76 )
     {
-      v77 = *(_WORD *)(this + 384);
-      *(_DWORD *)(v76 + 4) = *(_DWORD *)(this + 372);
+      v77 = this->q180;
+      *(_DWORD *)(v76 + 4) = this->q174;
       *(_WORD *)(v76 + 8) = v77;
       *(_DWORD *)v76 = &BlitTransLucent50ZRead<unsigned short>::`vftable';
     }
@@ -5665,12 +5665,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v76 = 0;
     }
-    *(_DWORD *)(this + 56) = v76;
+    this->q038 = v76;
     v78 = __2_YAPAXI_Z(12);
     if ( v78 )
     {
-      v79 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v78 + 4) = *(_DWORD *)(this + 372);
+      v79 = this->q184;
+      *(_DWORD *)(v78 + 4) = this->q174;
       *(_WORD *)(v78 + 8) = v79;
       *(_DWORD *)v78 = &BlitTransLucent25ZRead<unsigned short>::`vftable';
     }
@@ -5678,12 +5678,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v78 = 0;
     }
-    *(_DWORD *)(this + 60) = v78;
+    this->q03C = v78;
     v80 = __2_YAPAXI_Z(12);
     if ( v80 )
     {
-      v81 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v80 + 4) = *(_DWORD *)(this + 372);
+      v81 = this->q184;
+      *(_DWORD *)(v80 + 4) = this->q174;
       *(_WORD *)(v80 + 8) = v81;
       *(_DWORD *)v80 = &BlitTransLucent75ZReadWarp<unsigned short>::`vftable';
     }
@@ -5691,12 +5691,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v80 = 0;
     }
-    *(_DWORD *)(this + 64) = v80;
+    this->q040 = v80;
     v82 = __2_YAPAXI_Z(12);
     if ( v82 )
     {
-      v83 = *(_WORD *)(this + 384);
-      *(_DWORD *)(v82 + 4) = *(_DWORD *)(this + 372);
+      v83 = this->q180;
+      *(_DWORD *)(v82 + 4) = this->q174;
       *(_WORD *)(v82 + 8) = v83;
       *(_DWORD *)v82 = &BlitTransLucent50ZReadWarp<unsigned short>::`vftable';
     }
@@ -5704,12 +5704,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v82 = 0;
     }
-    *(_DWORD *)(this + 68) = v82;
+    this->q044 = v82;
     v84 = __2_YAPAXI_Z(12);
     if ( v84 )
     {
-      v85 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v84 + 4) = *(_DWORD *)(this + 372);
+      v85 = this->q184;
+      *(_DWORD *)(v84 + 4) = this->q174;
       *(_WORD *)(v84 + 8) = v85;
       *(_DWORD *)v84 = &BlitTransLucent25ZReadWarp<unsigned short>::`vftable';
     }
@@ -5717,11 +5717,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v84 = 0;
     }
-    *(_DWORD *)(this + 72) = v84;
+    this->q048 = v84;
     v86 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v86 )
     {
-      v87 = *(_DWORD *)(this + 372);
+      v87 = this->q174;
       *v86 = &BlitPlainXlatZReadWrite<unsigned short>::`vftable';
       v86[1] = v87;
     }
@@ -5729,11 +5729,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v86 = 0;
     }
-    *(_DWORD *)(this + 76) = v86;
+    this->q04C = v86;
     v88 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v88 )
     {
-      v89 = *(_DWORD *)(this + 372);
+      v89 = this->q174;
       *v88 = &BlitTransXlatZReadWrite<unsigned short>::`vftable';
       v88[1] = v89;
     }
@@ -5741,11 +5741,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v88 = 0;
     }
-    *(_DWORD *)(this + 80) = v88;
+    this->q050 = v88;
     v90 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v90 )
     {
-      v91 = *(_DWORD *)(this + 372);
+      v91 = this->q174;
       v90[1] = this + 380;
       v90[2] = v91;
       *v90 = &BlitTransZRemapXlatZReadWrite<unsigned short>::`vftable';
@@ -5754,11 +5754,11 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v90 = 0;
     }
-    *(_DWORD *)(this + 88) = v90;
+    this->q058 = v90;
     v92 = __2_YAPAXI_Z(8);
     if ( v92 )
     {
-      v93 = *(_WORD *)(this + 384);
+      v93 = this->q180;
       *(_DWORD *)v92 = &BlitTransDarkenZReadWrite<unsigned short>::`vftable';
       *(_WORD *)(v92 + 4) = v93;
     }
@@ -5766,12 +5766,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v92 = 0;
     }
-    *(_DWORD *)(this + 84) = v92;
+    this->q054 = v92;
     v94 = __2_YAPAXI_Z(12);
     if ( v94 )
     {
-      v95 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v94 + 4) = *(_DWORD *)(this + 372);
+      v95 = this->q184;
+      *(_DWORD *)(v94 + 4) = this->q174;
       *(_WORD *)(v94 + 8) = v95;
       *(_DWORD *)v94 = &BlitTransLucent75ZReadWrite<unsigned short>::`vftable';
     }
@@ -5779,12 +5779,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v94 = 0;
     }
-    *(_DWORD *)(this + 92) = v94;
+    this->q05C = v94;
     v96 = __2_YAPAXI_Z(12);
     if ( v96 )
     {
-      v97 = *(_WORD *)(this + 384);
-      *(_DWORD *)(v96 + 4) = *(_DWORD *)(this + 372);
+      v97 = this->q180;
+      *(_DWORD *)(v96 + 4) = this->q174;
       *(_WORD *)(v96 + 8) = v97;
       *(_DWORD *)v96 = &BlitTransLucent50ZReadWrite<unsigned short>::`vftable';
     }
@@ -5792,12 +5792,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v96 = 0;
     }
-    *(_DWORD *)(this + 96) = v96;
+    this->q060 = v96;
     v98 = __2_YAPAXI_Z(12);
     if ( v98 )
     {
-      v99 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v98 + 4) = *(_DWORD *)(this + 372);
+      v99 = this->q184;
+      *(_DWORD *)(v98 + 4) = this->q174;
       *(_WORD *)(v98 + 8) = v99;
       *(_DWORD *)v98 = &BlitTransLucent25ZReadWrite<unsigned short>::`vftable';
     }
@@ -5805,12 +5805,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v98 = 0;
     }
-    *(_DWORD *)(this + 100) = v98;
+    this->q064 = v98;
     v100 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v100 )
     {
-      v101 = *(_DWORD *)(this + 364);
-      v100[1] = *(_DWORD *)(this + 368);
+      v101 = this->q16C;
+      v100[1] = this->q170;
       v100[2] = 0;
       *v100 = &BlitPlainXlatAlpha<unsigned short>::`vftable';
       v100[2] = CreateFractalNoise(v101);
@@ -5819,12 +5819,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v100 = 0;
     }
-    *(_DWORD *)(this + 104) = v100;
+    this->q068 = v100;
     v102 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v102 )
     {
-      v103 = *(_DWORD *)(this + 364);
-      v102[1] = *(_DWORD *)(this + 368);
+      v103 = this->q16C;
+      v102[1] = this->q170;
       v102[2] = 0;
       *v102 = &BlitTransXlatAlpha<unsigned short>::`vftable';
       v102[2] = CreateFractalNoise(v103);
@@ -5833,12 +5833,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v102 = 0;
     }
-    *(_DWORD *)(this + 108) = v102;
+    this->q06C = v102;
     v104 = (_DWORD *)__2_YAPAXI_Z(16);
     if ( v104 )
     {
-      v105 = *(_DWORD *)(this + 364);
-      v104[2] = *(_DWORD *)(this + 368);
+      v105 = this->q16C;
+      v104[2] = this->q170;
       v104[1] = this + 380;
       v104[3] = 0;
       *v104 = &BlitTransZRemapXlatAlpha<unsigned short>::`vftable';
@@ -5848,13 +5848,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v104 = 0;
     }
-    *(_DWORD *)(this + 112) = v104;
+    this->q070 = v104;
     v106 = __2_YAPAXI_Z(16);
     if ( v106 )
     {
-      v107 = *(_WORD *)(this + 388);
-      v243 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v106 + 4) = *(_DWORD *)(this + 368);
+      v107 = this->q184;
+      v243 = this->q16C;
+      *(_DWORD *)(v106 + 4) = this->q170;
       *(_DWORD *)(v106 + 8) = 0;
       *(_WORD *)(v106 + 12) = v107;
       *(_DWORD *)v106 = &BlitTransLucent75Alpha<unsigned short>::`vftable';
@@ -5864,13 +5864,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v106 = 0;
     }
-    *(_DWORD *)(this + 116) = v106;
+    this->q074 = v106;
     v108 = __2_YAPAXI_Z(16);
     if ( v108 )
     {
-      v109 = *(_WORD *)(this + 384);
-      v244 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v108 + 4) = *(_DWORD *)(this + 368);
+      v109 = this->q180;
+      v244 = this->q16C;
+      *(_DWORD *)(v108 + 4) = this->q170;
       *(_DWORD *)(v108 + 8) = 0;
       *(_WORD *)(v108 + 12) = v109;
       *(_DWORD *)v108 = &BlitTransLucent50Alpha<unsigned short>::`vftable';
@@ -5880,13 +5880,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v108 = 0;
     }
-    *(_DWORD *)(this + 120) = v108;
+    this->q078 = v108;
     v110 = __2_YAPAXI_Z(16);
     if ( v110 )
     {
-      v111 = *(_WORD *)(this + 388);
-      v245 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v110 + 4) = *(_DWORD *)(this + 368);
+      v111 = this->q184;
+      v245 = this->q16C;
+      *(_DWORD *)(v110 + 4) = this->q170;
       *(_DWORD *)(v110 + 8) = 0;
       *(_WORD *)(v110 + 12) = v111;
       *(_DWORD *)v110 = &BlitTransLucent25Alpha<unsigned short>::`vftable';
@@ -5896,23 +5896,23 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v110 = 0;
     }
-    *(_DWORD *)(this + 124) = v110;
+    this->q07C = v110;
     v112 = (_DWORD *)__2_YAPAXI_Z(4);
     if ( v112 )
       *v112 = &BlitTransXlatWriteAlpha<unsigned short>::`vftable';
     else
       v112 = 0;
-    *(_DWORD *)(this + 128) = v112;
+    this->q080 = v112;
     v113 = (_DWORD *)__2_YAPAXI_Z(4);
     if ( v113 )
       *v113 = &BlitTransXlatMultWriteAlpha<unsigned short>::`vftable';
     else
       v113 = 0;
-    *(_DWORD *)(this + 132) = v113;
+    this->q084 = v113;
     v114 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v114 )
     {
-      v115 = *(_DWORD *)(this + 368);
+      v115 = this->q170;
       *v114 = &BlitTranslucentWriteAlpha<unsigned short>::`vftable';
       v114[1] = v115;
     }
@@ -5920,12 +5920,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v114 = 0;
     }
-    *(_DWORD *)(this + 136) = v114;
+    this->q088 = v114;
     v116 = __2_YAPAXI_Z(12);
     if ( v116 )
     {
-      v117 = *(_WORD *)(this + 384);
-      *(_DWORD *)(v116 + 4) = *(_DWORD *)(this + 372);
+      v117 = this->q180;
+      *(_DWORD *)(v116 + 4) = this->q174;
       *(_WORD *)(v116 + 8) = v117;
       *(_DWORD *)v116 = &BlitTranslucent50NonzeroAlpha<unsigned short>::`vftable';
     }
@@ -5933,12 +5933,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v116 = 0;
     }
-    *(_DWORD *)(this + 140) = v116;
+    this->q08C = v116;
     v118 = __2_YAPAXI_Z(12);
     if ( v118 )
     {
-      v119 = *(_WORD *)(this + 384);
-      *(_DWORD *)(v118 + 4) = *(_DWORD *)(this + 372);
+      v119 = this->q180;
+      *(_DWORD *)(v118 + 4) = this->q174;
       *(_WORD *)(v118 + 8) = v119;
       *(_DWORD *)v118 = &BlitTranslucent50ZeroAlpha<unsigned short>::`vftable';
     }
@@ -5946,12 +5946,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v118 = 0;
     }
-    *(_DWORD *)(this + 144) = v118;
+    this->q090 = v118;
     v120 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v120 )
     {
-      v121 = *(_DWORD *)(this + 364);
-      v120[1] = *(_DWORD *)(this + 368);
+      v121 = this->q16C;
+      v120[1] = this->q170;
       v120[2] = 0;
       *v120 = &BlitPlainXlatAlpha<unsigned short>::`vftable';
       v120[2] = CreateFractalNoise(v121);
@@ -5960,12 +5960,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v120 = 0;
     }
-    *(_DWORD *)(this + 148) = v120;
+    this->q094 = v120;
     v122 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v122 )
     {
-      v123 = *(_DWORD *)(this + 364);
-      v122[1] = *(_DWORD *)(this + 368);
+      v123 = this->q16C;
+      v122[1] = this->q170;
       v122[2] = 0;
       *v122 = &BlitTransXlatAlphaZRead<unsigned short>::`vftable';
       v122[2] = CreateFractalNoise(v123);
@@ -5974,12 +5974,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v122 = 0;
     }
-    *(_DWORD *)(this + 152) = v122;
+    this->q098 = v122;
     v124 = (_DWORD *)__2_YAPAXI_Z(16);
     if ( v124 )
     {
-      v125 = *(_DWORD *)(this + 368);
-      v246 = *(_DWORD *)(this + 364);
+      v125 = this->q170;
+      v246 = this->q16C;
       v124[1] = this + 380;
       v124[2] = v125;
       v124[3] = 0;
@@ -5990,13 +5990,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v124 = 0;
     }
-    *(_DWORD *)(this + 156) = v124;
+    this->q09C = v124;
     v126 = __2_YAPAXI_Z(16);
     if ( v126 )
     {
-      v127 = *(_WORD *)(this + 388);
-      v128 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v126 + 4) = *(_DWORD *)(this + 368);
+      v127 = this->q184;
+      v128 = this->q16C;
+      *(_DWORD *)(v126 + 4) = this->q170;
       *(_DWORD *)(v126 + 8) = 0;
       *(_WORD *)(v126 + 12) = v127;
       *(_DWORD *)v126 = &BlitTransLucent75AlphaZRead<unsigned short>::`vftable';
@@ -6006,13 +6006,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v126 = 0;
     }
-    *(_DWORD *)(this + 160) = v126;
+    this->q0A0 = v126;
     v129 = __2_YAPAXI_Z(16);
     if ( v129 )
     {
-      v130 = *(_WORD *)(this + 384);
-      v131 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v129 + 4) = *(_DWORD *)(this + 368);
+      v130 = this->q180;
+      v131 = this->q16C;
+      *(_DWORD *)(v129 + 4) = this->q170;
       *(_DWORD *)(v129 + 8) = 0;
       *(_WORD *)(v129 + 12) = v130;
       *(_DWORD *)v129 = &BlitTransLucent50AlphaZRead<unsigned short>::`vftable';
@@ -6022,13 +6022,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v129 = 0;
     }
-    *(_DWORD *)(this + 164) = v129;
+    this->q0A4 = v129;
     v132 = __2_YAPAXI_Z(16);
     if ( v132 )
     {
-      v133 = *(_WORD *)(this + 388);
-      v134 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v132 + 4) = *(_DWORD *)(this + 368);
+      v133 = this->q184;
+      v134 = this->q16C;
+      *(_DWORD *)(v132 + 4) = this->q170;
       *(_DWORD *)(v132 + 8) = 0;
       *(_WORD *)(v132 + 12) = v133;
       *(_DWORD *)v132 = &BlitTransLucent25AlphaZRead<unsigned short>::`vftable';
@@ -6038,13 +6038,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v132 = 0;
     }
-    *(_DWORD *)(this + 168) = v132;
+    this->q0A8 = v132;
     v135 = __2_YAPAXI_Z(16);
     if ( v135 )
     {
-      v136 = *(_WORD *)(this + 388);
-      v137 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v135 + 4) = *(_DWORD *)(this + 368);
+      v136 = this->q184;
+      v137 = this->q16C;
+      *(_DWORD *)(v135 + 4) = this->q170;
       *(_DWORD *)(v135 + 8) = 0;
       *(_WORD *)(v135 + 12) = v136;
       *(_DWORD *)v135 = &BlitTransLucent75AlphaZReadWarp<unsigned short>::`vftable';
@@ -6054,13 +6054,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v135 = 0;
     }
-    *(_DWORD *)(this + 172) = v135;
+    this->q0AC = v135;
     v138 = __2_YAPAXI_Z(16);
     if ( v138 )
     {
-      v139 = *(_WORD *)(this + 384);
-      v140 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v138 + 4) = *(_DWORD *)(this + 368);
+      v139 = this->q180;
+      v140 = this->q16C;
+      *(_DWORD *)(v138 + 4) = this->q170;
       *(_DWORD *)(v138 + 8) = 0;
       *(_WORD *)(v138 + 12) = v139;
       *(_DWORD *)v138 = &BlitTransLucent50AlphaZReadWarp<unsigned short>::`vftable';
@@ -6070,13 +6070,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v138 = 0;
     }
-    *(_DWORD *)(this + 176) = v138;
+    this->q0B0 = v138;
     v141 = __2_YAPAXI_Z(16);
     if ( v141 )
     {
-      v142 = *(_WORD *)(this + 388);
-      v143 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v141 + 4) = *(_DWORD *)(this + 368);
+      v142 = this->q184;
+      v143 = this->q16C;
+      *(_DWORD *)(v141 + 4) = this->q170;
       *(_DWORD *)(v141 + 8) = 0;
       *(_WORD *)(v141 + 12) = v142;
       *(_DWORD *)v141 = &BlitTransLucent25AlphaZReadWarp<unsigned short>::`vftable';
@@ -6086,12 +6086,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v141 = 0;
     }
-    *(_DWORD *)(this + 180) = v141;
+    this->q0B4 = v141;
     v144 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v144 )
     {
-      v145 = *(_DWORD *)(this + 364);
-      v144[1] = *(_DWORD *)(this + 368);
+      v145 = this->q16C;
+      v144[1] = this->q170;
       v144[2] = 0;
       *v144 = &BlitPlainXlatAlpha<unsigned short>::`vftable';
       v144[2] = CreateFractalNoise(v145);
@@ -6100,12 +6100,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v144 = 0;
     }
-    *(_DWORD *)(this + 184) = v144;
+    this->q0B8 = v144;
     v146 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v146 )
     {
-      v147 = *(_DWORD *)(this + 364);
-      v146[1] = *(_DWORD *)(this + 368);
+      v147 = this->q16C;
+      v146[1] = this->q170;
       v146[2] = 0;
       *v146 = &BlitTransXlatAlphaZReadWrite<unsigned short>::`vftable';
       v146[2] = CreateFractalNoise(v147);
@@ -6114,12 +6114,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v146 = 0;
     }
-    *(_DWORD *)(this + 188) = v146;
+    this->q0BC = v146;
     v148 = (_DWORD *)__2_YAPAXI_Z(16);
     if ( v148 )
     {
-      v149 = *(_DWORD *)(this + 368);
-      v247 = *(_DWORD *)(this + 364);
+      v149 = this->q170;
+      v247 = this->q16C;
       v148[1] = this + 380;
       v148[2] = v149;
       v148[3] = 0;
@@ -6130,13 +6130,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v148 = 0;
     }
-    *(_DWORD *)(this + 192) = v148;
+    this->q0C0 = v148;
     v150 = __2_YAPAXI_Z(16);
     if ( v150 )
     {
-      v151 = *(_WORD *)(this + 388);
-      v152 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v150 + 4) = *(_DWORD *)(this + 368);
+      v151 = this->q184;
+      v152 = this->q16C;
+      *(_DWORD *)(v150 + 4) = this->q170;
       *(_DWORD *)(v150 + 8) = 0;
       *(_WORD *)(v150 + 12) = v151;
       *(_DWORD *)v150 = &BlitTransLucent75AlphaZReadWrite<unsigned short>::`vftable';
@@ -6146,13 +6146,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v150 = 0;
     }
-    *(_DWORD *)(this + 196) = v150;
+    this->q0C4 = v150;
     v153 = __2_YAPAXI_Z(16);
     if ( v153 )
     {
-      v154 = *(_WORD *)(this + 384);
-      v155 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v153 + 4) = *(_DWORD *)(this + 368);
+      v154 = this->q180;
+      v155 = this->q16C;
+      *(_DWORD *)(v153 + 4) = this->q170;
       *(_DWORD *)(v153 + 8) = 0;
       *(_WORD *)(v153 + 12) = v154;
       *(_DWORD *)v153 = &BlitTransLucent50AlphaZReadWrite<unsigned short>::`vftable';
@@ -6162,13 +6162,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v153 = 0;
     }
-    *(_DWORD *)(this + 200) = v153;
+    this->q0C8 = v153;
     v156 = __2_YAPAXI_Z(16);
     if ( v156 )
     {
-      v157 = *(_WORD *)(this + 388);
-      v158 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v156 + 4) = *(_DWORD *)(this + 368);
+      v157 = this->q184;
+      v158 = this->q16C;
+      *(_DWORD *)(v156 + 4) = this->q170;
       *(_DWORD *)(v156 + 8) = 0;
       *(_WORD *)(v156 + 12) = v157;
       *(_DWORD *)v156 = &BlitTransLucent25AlphaZReadWrite<unsigned short>::`vftable';
@@ -6178,22 +6178,22 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v156 = 0;
     }
-    *(_DWORD *)(this + 204) = v156;
+    this->q0CC = v156;
     v159 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v159 )
     {
-      v159[1] = *(_DWORD *)(this + 372);
+      v159[1] = this->q174;
       *v159 = &RLEBlitTransXlat<unsigned short>::`vftable';
     }
     else
     {
       v159 = 0;
     }
-    *(_DWORD *)(this + 208) = v159;
+    this->q0D0 = v159;
     v160 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v160 )
     {
-      v161 = *(_DWORD *)(this + 372);
+      v161 = this->q174;
       v160[1] = this + 380;
       v160[2] = v161;
       *v160 = &RLEBlitTransZRemapXlat<unsigned short>::`vftable';
@@ -6202,23 +6202,23 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v160 = 0;
     }
-    *(_DWORD *)(this + 216) = v160;
+    this->q0D8 = v160;
     v162 = __2_YAPAXI_Z(8);
     if ( v162 )
     {
-      *(_WORD *)(v162 + 4) = *(_WORD *)(this + 384);
+      *(_WORD *)(v162 + 4) = this->q180;
       *(_DWORD *)v162 = &RLEBlitTransDarken<unsigned short>::`vftable';
     }
     else
     {
       v162 = 0;
     }
-    *(_DWORD *)(this + 212) = v162;
+    this->q0D4 = v162;
     v163 = __2_YAPAXI_Z(12);
     if ( v163 )
     {
-      v164 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v163 + 4) = *(_DWORD *)(this + 372);
+      v164 = this->q184;
+      *(_DWORD *)(v163 + 4) = this->q174;
       *(_WORD *)(v163 + 8) = v164;
       *(_DWORD *)v163 = &RLEBlitTransLucent75<unsigned short>::`vftable';
     }
@@ -6226,12 +6226,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v163 = 0;
     }
-    *(_DWORD *)(this + 220) = v163;
+    this->q0DC = v163;
     v165 = __2_YAPAXI_Z(12);
     if ( v165 )
     {
-      v166 = *(_WORD *)(this + 384);
-      *(_DWORD *)(v165 + 4) = *(_DWORD *)(this + 372);
+      v166 = this->q180;
+      *(_DWORD *)(v165 + 4) = this->q174;
       *(_WORD *)(v165 + 8) = v166;
       *(_DWORD *)v165 = &RLEBlitTransLucent50<unsigned short>::`vftable';
     }
@@ -6239,12 +6239,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v165 = 0;
     }
-    *(_DWORD *)(this + 224) = v165;
+    this->q0E0 = v165;
     v167 = __2_YAPAXI_Z(12);
     if ( v167 )
     {
-      v168 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v167 + 4) = *(_DWORD *)(this + 372);
+      v168 = this->q184;
+      *(_DWORD *)(v167 + 4) = this->q174;
       *(_WORD *)(v167 + 8) = v168;
       *(_DWORD *)v167 = &RLEBlitTransLucent25<unsigned short>::`vftable';
     }
@@ -6252,22 +6252,22 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v167 = 0;
     }
-    *(_DWORD *)(this + 228) = v167;
+    this->q0E4 = v167;
     v169 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v169 )
     {
-      v169[1] = *(_DWORD *)(this + 372);
+      v169[1] = this->q174;
       *v169 = &RLEBlitTransXlatZRead<unsigned short>::`vftable';
     }
     else
     {
       v169 = 0;
     }
-    *(_DWORD *)(this + 232) = v169;
+    this->q0E8 = v169;
     v170 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v170 )
     {
-      v171 = *(_DWORD *)(this + 372);
+      v171 = this->q174;
       v170[1] = this + 380;
       v170[2] = v171;
       *v170 = &RLEBlitTransZRemapXlatZRead<unsigned short>::`vftable';
@@ -6276,23 +6276,23 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v170 = 0;
     }
-    *(_DWORD *)(this + 236) = v170;
+    this->q0EC = v170;
     v172 = __2_YAPAXI_Z(8);
     if ( v172 )
     {
-      *(_WORD *)(v172 + 4) = *(_WORD *)(this + 384);
+      *(_WORD *)(v172 + 4) = this->q180;
       *(_DWORD *)v172 = &RLEBlitTransDarkenZRead<unsigned short>::`vftable';
     }
     else
     {
       v172 = 0;
     }
-    *(_DWORD *)(this + 240) = v172;
+    this->q0F0 = v172;
     v173 = __2_YAPAXI_Z(12);
     if ( v173 )
     {
-      v174 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v173 + 4) = *(_DWORD *)(this + 372);
+      v174 = this->q184;
+      *(_DWORD *)(v173 + 4) = this->q174;
       *(_WORD *)(v173 + 8) = v174;
       *(_DWORD *)v173 = &RLEBlitTransLucent75ZRead<unsigned short>::`vftable';
     }
@@ -6300,12 +6300,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v173 = 0;
     }
-    *(_DWORD *)(this + 244) = v173;
+    this->q0F4 = v173;
     v175 = __2_YAPAXI_Z(12);
     if ( v175 )
     {
-      v176 = *(_WORD *)(this + 384);
-      *(_DWORD *)(v175 + 4) = *(_DWORD *)(this + 372);
+      v176 = this->q180;
+      *(_DWORD *)(v175 + 4) = this->q174;
       *(_WORD *)(v175 + 8) = v176;
       *(_DWORD *)v175 = &RLEBlitTransLucent50ZRead<unsigned short>::`vftable';
     }
@@ -6313,12 +6313,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v175 = 0;
     }
-    *(_DWORD *)(this + 248) = v175;
+    this->q0F8 = v175;
     v177 = __2_YAPAXI_Z(12);
     if ( v177 )
     {
-      v178 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v177 + 4) = *(_DWORD *)(this + 372);
+      v178 = this->q184;
+      *(_DWORD *)(v177 + 4) = this->q174;
       *(_WORD *)(v177 + 8) = v178;
       *(_DWORD *)v177 = &RLEBlitTransLucent25ZRead<unsigned short>::`vftable';
     }
@@ -6326,12 +6326,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v177 = 0;
     }
-    *(_DWORD *)(this + 252) = v177;
+    this->q0FC = v177;
     v179 = __2_YAPAXI_Z(12);
     if ( v179 )
     {
-      v180 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v179 + 4) = *(_DWORD *)(this + 372);
+      v180 = this->q184;
+      *(_DWORD *)(v179 + 4) = this->q174;
       *(_WORD *)(v179 + 8) = v180;
       *(_DWORD *)v179 = &RLEBlitTransLucent75ZReadWarp<unsigned short>::`vftable';
     }
@@ -6339,12 +6339,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v179 = 0;
     }
-    *(_DWORD *)(this + 256) = v179;
+    this->q100 = v179;
     v181 = __2_YAPAXI_Z(12);
     if ( v181 )
     {
-      v182 = *(_WORD *)(this + 384);
-      *(_DWORD *)(v181 + 4) = *(_DWORD *)(this + 372);
+      v182 = this->q180;
+      *(_DWORD *)(v181 + 4) = this->q174;
       *(_WORD *)(v181 + 8) = v182;
       *(_DWORD *)v181 = &RLEBlitTransLucent50ZReadWarp<unsigned short>::`vftable';
     }
@@ -6352,12 +6352,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v181 = 0;
     }
-    *(_DWORD *)(this + 260) = v181;
+    this->q104 = v181;
     v183 = __2_YAPAXI_Z(12);
     if ( v183 )
     {
-      v184 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v183 + 4) = *(_DWORD *)(this + 372);
+      v184 = this->q184;
+      *(_DWORD *)(v183 + 4) = this->q174;
       *(_WORD *)(v183 + 8) = v184;
       *(_DWORD *)v183 = &RLEBlitTransLucent25ZReadWarp<unsigned short>::`vftable';
     }
@@ -6365,22 +6365,22 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v183 = 0;
     }
-    *(_DWORD *)(this + 264) = v183;
+    this->q108 = v183;
     v185 = (_DWORD *)__2_YAPAXI_Z(8);
     if ( v185 )
     {
-      v185[1] = *(_DWORD *)(this + 372);
+      v185[1] = this->q174;
       *v185 = &RLEBlitTransXlatZReadWrite<unsigned short>::`vftable';
     }
     else
     {
       v185 = 0;
     }
-    *(_DWORD *)(this + 268) = v185;
+    this->q10C = v185;
     v186 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v186 )
     {
-      v187 = *(_DWORD *)(this + 372);
+      v187 = this->q174;
       v186[1] = this + 380;
       v186[2] = v187;
       *v186 = &RLEBlitTransZRemapXlatZReadWrite<unsigned short>::`vftable';
@@ -6389,23 +6389,23 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v186 = 0;
     }
-    *(_DWORD *)(this + 272) = v186;
+    this->q110 = v186;
     v188 = __2_YAPAXI_Z(8);
     if ( v188 )
     {
-      *(_WORD *)(v188 + 4) = *(_WORD *)(this + 384);
+      *(_WORD *)(v188 + 4) = this->q180;
       *(_DWORD *)v188 = &RLEBlitTransDarkenZReadWrite<unsigned short>::`vftable';
     }
     else
     {
       v188 = 0;
     }
-    *(_DWORD *)(this + 276) = v188;
+    this->q114 = v188;
     v189 = __2_YAPAXI_Z(12);
     if ( v189 )
     {
-      v190 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v189 + 4) = *(_DWORD *)(this + 372);
+      v190 = this->q184;
+      *(_DWORD *)(v189 + 4) = this->q174;
       *(_WORD *)(v189 + 8) = v190;
       *(_DWORD *)v189 = &RLEBlitTransLucent75ZReadWrite<unsigned short>::`vftable';
     }
@@ -6413,12 +6413,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v189 = 0;
     }
-    *(_DWORD *)(this + 280) = v189;
+    this->q118 = v189;
     v191 = __2_YAPAXI_Z(12);
     if ( v191 )
     {
-      v192 = *(_WORD *)(this + 384);
-      *(_DWORD *)(v191 + 4) = *(_DWORD *)(this + 372);
+      v192 = this->q180;
+      *(_DWORD *)(v191 + 4) = this->q174;
       *(_WORD *)(v191 + 8) = v192;
       *(_DWORD *)v191 = &RLEBlitTransLucent50ZReadWrite<unsigned short>::`vftable';
     }
@@ -6426,12 +6426,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v191 = 0;
     }
-    *(_DWORD *)(this + 284) = v191;
+    this->q11C = v191;
     v193 = __2_YAPAXI_Z(12);
     if ( v193 )
     {
-      v194 = *(_WORD *)(this + 388);
-      *(_DWORD *)(v193 + 4) = *(_DWORD *)(this + 372);
+      v194 = this->q184;
+      *(_DWORD *)(v193 + 4) = this->q174;
       *(_WORD *)(v193 + 8) = v194;
       *(_DWORD *)v193 = &RLEBlitTransLucent25ZReadWrite<unsigned short>::`vftable';
     }
@@ -6439,12 +6439,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v193 = 0;
     }
-    *(_DWORD *)(this + 288) = v193;
+    this->q120 = v193;
     v195 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v195 )
     {
-      v196 = *(_DWORD *)(this + 364);
-      v195[1] = *(_DWORD *)(this + 368);
+      v196 = this->q16C;
+      v195[1] = this->q170;
       v195[2] = 0;
       *v195 = &RLEBlitTransXlatAlpha<unsigned short>::`vftable';
       v195[2] = CreateFractalNoise(v196);
@@ -6453,12 +6453,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v195 = 0;
     }
-    *(_DWORD *)(this + 292) = v195;
+    this->q124 = v195;
     v197 = (_DWORD *)__2_YAPAXI_Z(16);
     if ( v197 )
     {
-      v198 = *(_DWORD *)(this + 368);
-      v248 = *(_DWORD *)(this + 364);
+      v198 = this->q170;
+      v248 = this->q16C;
       v197[1] = this + 380;
       v197[2] = v198;
       v197[3] = 0;
@@ -6469,13 +6469,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v197 = 0;
     }
-    *(_DWORD *)(this + 296) = v197;
+    this->q128 = v197;
     v199 = __2_YAPAXI_Z(16);
     if ( v199 )
     {
-      v200 = *(_WORD *)(this + 388);
-      v201 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v199 + 4) = *(_DWORD *)(this + 368);
+      v200 = this->q184;
+      v201 = this->q16C;
+      *(_DWORD *)(v199 + 4) = this->q170;
       *(_DWORD *)(v199 + 8) = 0;
       *(_WORD *)(v199 + 12) = v200;
       *(_DWORD *)v199 = &RLEBlitTransLucent75Alpha<unsigned short>::`vftable';
@@ -6485,13 +6485,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v199 = 0;
     }
-    *(_DWORD *)(this + 300) = v199;
+    this->q12C = v199;
     v202 = __2_YAPAXI_Z(16);
     if ( v202 )
     {
-      v203 = *(_WORD *)(this + 384);
-      v204 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v202 + 4) = *(_DWORD *)(this + 368);
+      v203 = this->q180;
+      v204 = this->q16C;
+      *(_DWORD *)(v202 + 4) = this->q170;
       *(_DWORD *)(v202 + 8) = 0;
       *(_WORD *)(v202 + 12) = v203;
       *(_DWORD *)v202 = &RLEBlitTransLucent50Alpha<unsigned short>::`vftable';
@@ -6501,13 +6501,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v202 = 0;
     }
-    *(_DWORD *)(this + 304) = v202;
+    this->q130 = v202;
     v205 = __2_YAPAXI_Z(16);
     if ( v205 )
     {
-      v206 = *(_WORD *)(this + 388);
-      v207 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v205 + 4) = *(_DWORD *)(this + 368);
+      v206 = this->q184;
+      v207 = this->q16C;
+      *(_DWORD *)(v205 + 4) = this->q170;
       *(_DWORD *)(v205 + 8) = 0;
       *(_WORD *)(v205 + 12) = v206;
       *(_DWORD *)v205 = &RLEBlitTransLucent25Alpha<unsigned short>::`vftable';
@@ -6517,12 +6517,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v205 = 0;
     }
-    *(_DWORD *)(this + 308) = v205;
+    this->q134 = v205;
     v208 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v208 )
     {
-      v209 = *(_DWORD *)(this + 364);
-      v208[1] = *(_DWORD *)(this + 368);
+      v209 = this->q16C;
+      v208[1] = this->q170;
       v208[2] = 0;
       *v208 = &RLEBlitTransXlatAlphaZRead<unsigned short>::`vftable';
       v208[2] = CreateFractalNoise(v209);
@@ -6531,12 +6531,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v208 = 0;
     }
-    *(_DWORD *)(this + 312) = v208;
+    this->q138 = v208;
     v210 = (_DWORD *)__2_YAPAXI_Z(16);
     if ( v210 )
     {
-      v211 = *(_DWORD *)(this + 368);
-      v249 = *(_DWORD *)(this + 364);
+      v211 = this->q170;
+      v249 = this->q16C;
       v210[1] = this + 380;
       v210[2] = v211;
       v210[3] = 0;
@@ -6547,13 +6547,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v210 = 0;
     }
-    *(_DWORD *)(this + 316) = v210;
+    this->q13C = v210;
     v212 = __2_YAPAXI_Z(16);
     if ( v212 )
     {
-      v213 = *(_WORD *)(this + 388);
-      v214 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v212 + 4) = *(_DWORD *)(this + 368);
+      v213 = this->q184;
+      v214 = this->q16C;
+      *(_DWORD *)(v212 + 4) = this->q170;
       *(_DWORD *)(v212 + 8) = 0;
       *(_WORD *)(v212 + 12) = v213;
       *(_DWORD *)v212 = &RLEBlitTransLucent75AlphaZRead<unsigned short>::`vftable';
@@ -6563,13 +6563,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v212 = 0;
     }
-    *(_DWORD *)(this + 320) = v212;
+    this->q140 = v212;
     v215 = __2_YAPAXI_Z(16);
     if ( v215 )
     {
-      v216 = *(_WORD *)(this + 384);
-      v217 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v215 + 4) = *(_DWORD *)(this + 368);
+      v216 = this->q180;
+      v217 = this->q16C;
+      *(_DWORD *)(v215 + 4) = this->q170;
       *(_DWORD *)(v215 + 8) = 0;
       *(_WORD *)(v215 + 12) = v216;
       *(_DWORD *)v215 = &RLEBlitTransLucent50AlphaZRead<unsigned short>::`vftable';
@@ -6579,13 +6579,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v215 = 0;
     }
-    *(_DWORD *)(this + 324) = v215;
+    this->q144 = v215;
     v218 = __2_YAPAXI_Z(16);
     if ( v218 )
     {
-      v219 = *(_WORD *)(this + 388);
-      v220 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v218 + 4) = *(_DWORD *)(this + 368);
+      v219 = this->q184;
+      v220 = this->q16C;
+      *(_DWORD *)(v218 + 4) = this->q170;
       *(_DWORD *)(v218 + 8) = 0;
       *(_WORD *)(v218 + 12) = v219;
       *(_DWORD *)v218 = &RLEBlitTransLucent25AlphaZRead<unsigned short>::`vftable';
@@ -6595,13 +6595,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v218 = 0;
     }
-    *(_DWORD *)(this + 328) = v218;
+    this->q148 = v218;
     v221 = __2_YAPAXI_Z(16);
     if ( v221 )
     {
-      v222 = *(_WORD *)(this + 388);
-      v223 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v221 + 4) = *(_DWORD *)(this + 368);
+      v222 = this->q184;
+      v223 = this->q16C;
+      *(_DWORD *)(v221 + 4) = this->q170;
       *(_DWORD *)(v221 + 8) = 0;
       *(_WORD *)(v221 + 12) = v222;
       *(_DWORD *)v221 = &RLEBlitTransLucent75AlphaZReadWarp<unsigned short>::`vftable';
@@ -6611,13 +6611,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v221 = 0;
     }
-    *(_DWORD *)(this + 332) = v221;
+    this->q14C = v221;
     v224 = __2_YAPAXI_Z(16);
     if ( v224 )
     {
-      v225 = *(_WORD *)(this + 384);
-      v226 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v224 + 4) = *(_DWORD *)(this + 368);
+      v225 = this->q180;
+      v226 = this->q16C;
+      *(_DWORD *)(v224 + 4) = this->q170;
       *(_DWORD *)(v224 + 8) = 0;
       *(_WORD *)(v224 + 12) = v225;
       *(_DWORD *)v224 = &RLEBlitTransLucent50AlphaZReadWarp<unsigned short>::`vftable';
@@ -6627,13 +6627,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v224 = 0;
     }
-    *(_DWORD *)(this + 336) = v224;
+    this->q150 = v224;
     v227 = __2_YAPAXI_Z(16);
     if ( v227 )
     {
-      v228 = *(_WORD *)(this + 388);
-      v229 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v227 + 4) = *(_DWORD *)(this + 368);
+      v228 = this->q184;
+      v229 = this->q16C;
+      *(_DWORD *)(v227 + 4) = this->q170;
       *(_DWORD *)(v227 + 8) = 0;
       *(_WORD *)(v227 + 12) = v228;
       *(_DWORD *)v227 = &RLEBlitTransLucent25AlphaZReadWarp<unsigned short>::`vftable';
@@ -6643,12 +6643,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v227 = 0;
     }
-    *(_DWORD *)(this + 340) = v227;
+    this->q154 = v227;
     v230 = (_DWORD *)__2_YAPAXI_Z(12);
     if ( v230 )
     {
-      v231 = *(_DWORD *)(this + 364);
-      v230[1] = *(_DWORD *)(this + 368);
+      v231 = this->q16C;
+      v230[1] = this->q170;
       v230[2] = 0;
       *v230 = &RLEBlitTransXlatAlphaZReadWrite<unsigned short>::`vftable';
       v230[2] = CreateFractalNoise(v231);
@@ -6657,12 +6657,12 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v230 = 0;
     }
-    *(_DWORD *)(this + 344) = v230;
+    this->q158 = v230;
     v232 = (_DWORD *)__2_YAPAXI_Z(16);
     if ( v232 )
     {
-      v233 = *(_DWORD *)(this + 368);
-      v250 = *(_DWORD *)(this + 364);
+      v233 = this->q170;
+      v250 = this->q16C;
       v232[1] = this + 380;
       v232[2] = v233;
       v232[3] = 0;
@@ -6673,13 +6673,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v232 = 0;
     }
-    *(_DWORD *)(this + 348) = v232;
+    this->q15C = v232;
     v234 = __2_YAPAXI_Z(16);
     if ( v234 )
     {
-      v235 = *(_WORD *)(this + 388);
-      v236 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v234 + 4) = *(_DWORD *)(this + 368);
+      v235 = this->q184;
+      v236 = this->q16C;
+      *(_DWORD *)(v234 + 4) = this->q170;
       *(_DWORD *)(v234 + 8) = 0;
       *(_WORD *)(v234 + 12) = v235;
       *(_DWORD *)v234 = &RLEBlitTransLucent75AlphaZReadWrite<unsigned short>::`vftable';
@@ -6689,13 +6689,13 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v234 = 0;
     }
-    *(_DWORD *)(this + 352) = v234;
+    this->q160 = v234;
     v237 = __2_YAPAXI_Z(16);
     if ( v237 )
     {
-      v238 = *(_WORD *)(this + 384);
-      v239 = *(_DWORD *)(this + 364);
-      *(_DWORD *)(v237 + 4) = *(_DWORD *)(this + 368);
+      v238 = this->q180;
+      v239 = this->q16C;
+      *(_DWORD *)(v237 + 4) = this->q170;
       *(_DWORD *)(v237 + 8) = 0;
       *(_WORD *)(v237 + 12) = v238;
       *(_DWORD *)v237 = &RLEBlitTransLucent50AlphaZReadWrite<unsigned short>::`vftable';
@@ -6705,24 +6705,24 @@ _DWORD *__thiscall ConvertClass::InitTables(int this)
     {
       v237 = 0;
     }
-    *(_DWORD *)(this + 356) = v237;
+    this->q164 = v237;
     result = (_DWORD *)__2_YAPAXI_Z(16);
     v240 = result;
     if ( result )
     {
-      v241 = *(_WORD *)(this + 388);
-      v242 = *(_DWORD *)(this + 364);
-      v240[1] = *(_DWORD *)(this + 368);
+      v241 = this->q184;
+      v242 = this->q16C;
+      v240[1] = this->q170;
       v240[2] = 0;
       *((_WORD *)v240 + 6) = v241;
       *v240 = &RLEBlitTransLucent25AlphaZReadWrite<unsigned short>::`vftable';
       result = CreateFractalNoise(v242);
       v240[2] = result;
-      *(_DWORD *)(this + 360) = v240;
+      this->q168 = v240;
     }
     else
     {
-      *(_DWORD *)(this + 360) = 0;
+      this->q168 = 0;
     }
   }
   return result;
@@ -12650,7 +12650,7 @@ int __thiscall INIClass::ReadInt_Overwrite(int this, unsigned __int8 *a1, CCINIC
     {
       if ( a1 == *(unsigned __int8 **)(this + 4) ) /*0x5276f8*/
       {
-        v7 = *(_DWORD *)(this + 8); /*0x5276fe*/
+        v7 = this->q008; /*0x5276fe*/
 LABEL_5:
         if ( v7 ) /*0x527703*/
         {
@@ -12720,7 +12720,7 @@ LABEL_29:
       v25 = 0; /*0x5277a4*/
       v16 = (unsigned __int8 *)Checksummer::Add_Buffer(&v23, a1, (IUnknown *)strlen((const char *)a1)); /*0x5277c2*/
       a1 = v16; /*0x5277c4*/
-      if ( *(_DWORD *)(this + 44) ) /*0x5277c8*/
+      if ( this->INIClass_field_2C ) /*0x5277c8*/
       {
         v17 = *(unsigned __int8 ***)(this + 56); /*0x5277cf*/
         if ( !v17 || *v17 != v16 ) /*0x5277d8*/
@@ -12728,25 +12728,25 @@ LABEL_29:
           v18 = SortedArray::BinarySearch((char **)(this + 40), (CCINIClass *)&a1); /*0x5277e1*/
           if ( !v18 ) /*0x5277e8*/
             goto LABEL_27; /*0x5277e8*/
-          *(_DWORD *)(this + 56) = v18; /*0x5277ea*/
+          this->unknown38 = v18; /*0x5277ea*/
         }
         a1 = v16; /*0x5277f1*/
         if ( HashTable::BinarySearch(this + 40, (ObjectClass *)&a1) ) /*0x5277f8*/
-          v19 = (int *)(*(_DWORD *)(this + 56) + 4); /*0x527804*/
+          v19 = (int *)(this->unknown38 + 4); /*0x527804*/
         else
           v19 = (int *)&unk_B7882C; /*0x527809*/
         v7 = *v19; /*0x52780e*/
         if ( v7 ) /*0x527812*/
         {
           v6 = aP2; /*0x527814*/
-          *(_DWORD *)(this + 8) = v7; /*0x527818*/
-          *(_DWORD *)(this + 4) = v4; /*0x52781b*/
+          this->q008 = v7; /*0x527818*/
+          this->headNode = v4; /*0x52781b*/
           goto LABEL_5; /*0x527820*/
         }
       }
 LABEL_27:
-      *(_DWORD *)(this + 4) = 0; /*0x527825*/
-      *(_DWORD *)(this + 8) = 0; /*0x52782c*/
+      this->headNode = 0; /*0x527825*/
+      this->q008 = 0; /*0x52782c*/
       return (int)aP3->__pad_0; /*0x527838*/
     }
   }
@@ -12799,35 +12799,35 @@ int __thiscall INIClass::ReadGUID_Overwrite(
             (unsigned __int8 *)aP2,
             (IUnknown *)strlen(aP2->__pad_0));
     aP1.headNode[1] = v17; /*0x527a14*/
-    if ( *(_DWORD *)(this + 44) ) /*0x527a18*/
+    if ( this->INIClass_field_2C ) /*0x527a18*/
     {
       if ( !SortedArray::CheckCache((_DWORD *)(this + 40), &aP1.headNode[1]) ) /*0x527a26*/
       {
         v18 = SortedArray::BinarySearch((char **)(this + 40), (CCINIClass *)&aP1.headNode[1]); /*0x527a36*/
         if ( !v18 ) /*0x527a3d*/
           goto LABEL_23; /*0x527a3d*/
-        *(_DWORD *)(this + 56) = v18; /*0x527a3f*/
+        this->unknown38 = v18; /*0x527a3f*/
       }
       aP1.sectionCount = v17; /*0x527a49*/
       if ( HashTable::BinarySearch(this + 40, (ObjectClass *)&aP1.sectionCount) ) /*0x527a4d*/
-        v19 = (int *)(*(_DWORD *)(this + 56) + 4); /*0x527a59*/
+        v19 = (int *)(this->unknown38 + 4); /*0x527a59*/
       else
         v19 = (int *)&unk_B7882C; /*0x527a5e*/
       v10 = *v19; /*0x527a63*/
       if ( v10 ) /*0x527a67*/
       {
         v9 = a3; /*0x527a69*/
-        *(_DWORD *)(this + 8) = v10; /*0x527a70*/
-        *(_DWORD *)(this + 4) = aP2; /*0x527a73*/
+        this->q008 = v10; /*0x527a70*/
+        this->headNode = aP2; /*0x527a73*/
         goto LABEL_6; /*0x527a78*/
       }
     }
 LABEL_23:
-    *(_DWORD *)(this + 4) = 0; /*0x527a7d*/
-    *(_DWORD *)(this + 8) = 0; /*0x527a82*/
+    this->headNode = 0; /*0x527a7d*/
+    this->q008 = 0; /*0x527a82*/
     goto LABEL_28; /*0x527a85*/
   }
-  v10 = *(_DWORD *)(this + 8); /*0x52796b*/
+  v10 = this->q008; /*0x52796b*/
 LABEL_6:
   if ( v10 ) /*0x527970*/
   {
@@ -12967,35 +12967,35 @@ unsigned int *__thiscall INIClass::ParseValue(
     memset(v24, 0, sizeof(v24)); /*0x527d8d*/
     v15 = (INIClass *)Checksummer::Add_Buffer(v24, (unsigned __int8 *)aP2, (IUnknown *)strlen(aP2->__pad_0)); /*0x527db3*/
     aP2 = v15; /*0x527db5*/
-    if ( *(_DWORD *)(this + 44) ) /*0x527db9*/
+    if ( this->INIClass_field_2C ) /*0x527db9*/
     {
       if ( !SortedArray::CheckCache((_DWORD *)(this + 40), &aP2) ) /*0x527dc7*/
       {
         v16 = SortedArray::BinarySearch((char **)(this + 40), (CCINIClass *)&aP2); /*0x527dd7*/
         if ( !v16 ) /*0x527dde*/
           goto LABEL_23; /*0x527dde*/
-        *(_DWORD *)(this + 56) = v16; /*0x527de0*/
+        this->unknown38 = v16; /*0x527de0*/
       }
       v23 = v15; /*0x527dea*/
       if ( HashTable::BinarySearch(this + 40, (ObjectClass *)&v23) ) /*0x527dee*/
-        v17 = (int *)(*(_DWORD *)(this + 56) + 4); /*0x527dfa*/
+        v17 = (int *)(this->unknown38 + 4); /*0x527dfa*/
       else
         v17 = (int *)&unk_B7882C; /*0x527dff*/
       v8 = *v17; /*0x527e04*/
       if ( v8 ) /*0x527e08*/
       {
         v7 = (CCINIClass *)a3; /*0x527e0a*/
-        *(_DWORD *)(this + 8) = v8; /*0x527e11*/
-        *(_DWORD *)(this + 4) = v6; /*0x527e14*/
+        this->q008 = v8; /*0x527e11*/
+        this->headNode = v6; /*0x527e14*/
         goto LABEL_6; /*0x527e19*/
       }
     }
 LABEL_23:
-    *(_DWORD *)(this + 4) = 0; /*0x527e1e*/
-    *(_DWORD *)(this + 8) = 0; /*0x527e23*/
+    this->headNode = 0; /*0x527e1e*/
+    this->q008 = 0; /*0x527e23*/
     goto LABEL_28; /*0x527e26*/
   }
-  v8 = *(_DWORD *)(this + 8); /*0x527d03*/
+  v8 = this->q008; /*0x527d03*/
 LABEL_6:
   if ( v8 ) /*0x527d08*/
   {
@@ -13093,31 +13093,31 @@ _DWORD *__thiscall INIClass::GetRect(int this, MSAnim *aP1, ObjectClass *aP2, CC
     memset(&v23.headNode[2], 0, 12); /*0x528000*/
     v12 = Checksummer::Add_Buffer((unsigned int *)&v23.headNode[2], v7, (IUnknown *)strlen((const char *)v7)); /*0x528026*/
     *(_DWORD *)v23.__pad_0 = v12; /*0x528028*/
-    if ( *(_DWORD *)(this + 44) ) /*0x52802c*/
+    if ( this->INIClass_field_2C ) /*0x52802c*/
     {
       if ( !SortedArray::CheckCache((_DWORD *)(this + 40), &v23) ) /*0x52803a*/
       {
         v13 = SortedArray::BinarySearch((char **)(this + 40), &v23); /*0x52804a*/
         if ( !v13 ) /*0x528051*/
           goto LABEL_19; /*0x528051*/
-        *(_DWORD *)(this + 56) = v13; /*0x528053*/
+        this->unknown38 = v13; /*0x528053*/
       }
       v23.headNode[1] = v12; /*0x52805d*/
       v8 = *(_DWORD *)SortedArray::FindValue(this + 40, (INIClass *)&v23.headNode[1]); /*0x528066*/
       if ( v8 ) /*0x52806a*/
       {
         v6 = v22; /*0x52806c*/
-        *(_DWORD *)(this + 8) = v8; /*0x528070*/
-        *(_DWORD *)(this + 4) = v7; /*0x528073*/
+        this->q008 = v8; /*0x528070*/
+        this->headNode = v7; /*0x528073*/
         goto LABEL_6; /*0x528078*/
       }
     }
 LABEL_19:
-    *(_DWORD *)(this + 4) = 0; /*0x52807d*/
-    *(_DWORD *)(this + 8) = 0; /*0x528082*/
+    this->headNode = 0; /*0x52807d*/
+    this->q008 = 0; /*0x528082*/
     goto LABEL_24; /*0x528085*/
   }
-  v8 = *(_DWORD *)(this + 8); /*0x527f78*/
+  v8 = this->q008; /*0x527f78*/
 LABEL_6:
   if ( v8 ) /*0x527f7d*/
   {
@@ -13243,7 +13243,7 @@ double __thiscall INIClass::ReadDouble_Overwrite(int this, INIClass *aP1, unsign
     {
       if ( aP1 == *(INIClass **)(this + 4) ) /*0x5283f8*/
       {
-        v7 = *(_DWORD *)(this + 8); /*0x5283fe*/
+        v7 = this->q008; /*0x5283fe*/
 LABEL_5:
         if ( v7 ) /*0x528403*/
         {
@@ -13307,7 +13307,7 @@ LABEL_29:
       v26 = 0; /*0x5284a4*/
       v16 = (INIClass *)Checksummer::Add_Buffer(&v24, (unsigned __int8 *)aP1, (IUnknown *)strlen(aP1->__pad_0)); /*0x5284c2*/
       aP1 = v16; /*0x5284c4*/
-      if ( *(_DWORD *)(this + 44) ) /*0x5284c8*/
+      if ( this->INIClass_field_2C ) /*0x5284c8*/
       {
         v17 = *(INIClass ***)(this + 56); /*0x5284cf*/
         if ( !v17 || *v17 != v16 ) /*0x5284d8*/
@@ -13315,26 +13315,26 @@ LABEL_29:
           v18 = SortedArray::BinarySearch((char **)(this + 40), (CCINIClass *)&aP1); /*0x5284e1*/
           if ( !v18 ) /*0x5284e8*/
             goto LABEL_27; /*0x5284e8*/
-          *(_DWORD *)(this + 56) = v18; /*0x5284ea*/
+          this->unknown38 = v18; /*0x5284ea*/
         }
         aP1 = v16; /*0x5284f1*/
         if ( HashTable::BinarySearch(this + 40, (ObjectClass *)&aP1) ) /*0x5284f8*/
-          v19 = (int *)(*(_DWORD *)(this + 56) + 4); /*0x528504*/
+          v19 = (int *)(this->unknown38 + 4); /*0x528504*/
         else
           v19 = (int *)&unk_B7882C; /*0x528509*/
         v7 = *v19; /*0x52850e*/
         if ( v7 ) /*0x528512*/
         {
           v6 = a2; /*0x528514*/
-          *(_DWORD *)(this + 8) = v7; /*0x528518*/
-          *(_DWORD *)(this + 4) = v4; /*0x52851b*/
+          this->q008 = v7; /*0x528518*/
+          this->headNode = v4; /*0x52851b*/
           goto LABEL_5; /*0x528520*/
         }
       }
 LABEL_27:
       result = *(double *)&aP3; /*0x528525*/
-      *(_DWORD *)(this + 4) = 0; /*0x52852d*/
-      *(_DWORD *)(this + 8) = 0; /*0x528530*/
+      this->headNode = 0; /*0x52852d*/
+      this->q008 = 0; /*0x528530*/
       return result; /*0x528538*/
     }
   }
@@ -13910,7 +13910,7 @@ size_t __thiscall INIClass::GetStringEx(int this, INIClass *aP1, CCINIClass *aP2
       {
         if ( aP1 == *(INIClass **)(this + 4) ) /*0x52919b*/
         {
-          v7 = *(_DWORD *)(this + 8); /*0x5291a1*/
+          v7 = this->q008; /*0x5291a1*/
 LABEL_6:
           if ( v7 ) /*0x5291a6*/
           {
@@ -13958,7 +13958,7 @@ LABEL_12:
         v24 = 0; /*0x52922a*/
         v14 = (ObjectClass *)Checksummer::Add_Buffer(&v22, (unsigned __int8 *)aP1, (IUnknown *)strlen(aP1->__pad_0)); /*0x529248*/
         v21 = v14; /*0x52924a*/
-        if ( !*(_DWORD *)(this + 44) ) /*0x529253*/
+        if ( !this->INIClass_field_2C ) /*0x529253*/
           goto LABEL_23; /*0x529253*/
         if ( !SortedArray::CheckCache((_DWORD *)(this + 40), &v21) ) /*0x52925c*/
         {
@@ -13966,24 +13966,24 @@ LABEL_12:
           if ( !v15 ) /*0x529273*/
           {
 LABEL_23:
-            *(_DWORD *)(this + 4) = 0; /*0x5292b3*/
-            *(_DWORD *)(this + 8) = 0; /*0x5292ba*/
+            this->headNode = 0; /*0x5292b3*/
+            this->q008 = 0; /*0x5292ba*/
             v25[0].__pad_0[4] = 0; /*0x5292bd*/
             goto LABEL_29; /*0x5292c2*/
           }
-          *(_DWORD *)(this + 56) = v15; /*0x529275*/
+          this->unknown38 = v15; /*0x529275*/
         }
         *(_DWORD *)v25[0].__pad_0 = v14; /*0x52927f*/
         if ( HashTable::BinarySearch(this + 40, v25) ) /*0x529283*/
-          v16 = (int *)(*(_DWORD *)(this + 56) + 4); /*0x52928f*/
+          v16 = (int *)(this->unknown38 + 4); /*0x52928f*/
         else
           v16 = (int *)&unk_B7882C; /*0x529294*/
         v7 = *v16; /*0x529299*/
         if ( v7 ) /*0x52929d*/
         {
           v6 = aP2; /*0x52929f*/
-          *(_DWORD *)(this + 8) = v7; /*0x5292a6*/
-          *(_DWORD *)(this + 4) = aP1; /*0x5292a9*/
+          this->q008 = v7; /*0x5292a6*/
+          this->headNode = aP1; /*0x5292a9*/
           goto LABEL_6; /*0x5292ae*/
         }
         goto LABEL_23; /*0x52929d*/
@@ -14181,7 +14181,7 @@ char __thiscall INIClass::ReadBool_Overwrite(int this, unsigned __int8 *a1, CCIN
     v25 = 0; /*0x5296c2*/
     v16 = (unsigned __int8 *)Checksummer::Add_Buffer(&v23, a1, (IUnknown *)strlen((const char *)a1)); /*0x5296e0*/
     a1 = v16; /*0x5296e2*/
-    if ( *(_DWORD *)(this + 44) ) /*0x5296e6*/
+    if ( this->INIClass_field_2C ) /*0x5296e6*/
     {
       v17 = *(unsigned __int8 ***)(this + 56); /*0x5296ed*/
       if ( !v17 || *v17 != v16 ) /*0x5296f6*/
@@ -14189,28 +14189,28 @@ char __thiscall INIClass::ReadBool_Overwrite(int this, unsigned __int8 *a1, CCIN
         v18 = SortedArray::BinarySearch((char **)(this + 40), (CCINIClass *)&a1); /*0x5296ff*/
         if ( !v18 ) /*0x529706*/
           goto LABEL_27; /*0x529706*/
-        *(_DWORD *)(this + 56) = v18; /*0x529708*/
+        this->unknown38 = v18; /*0x529708*/
       }
       a1 = v16; /*0x52970f*/
       if ( HashTable::BinarySearch(this + 40, (ObjectClass *)&a1) ) /*0x529716*/
-        v19 = (int *)(*(_DWORD *)(this + 56) + 4); /*0x529722*/
+        v19 = (int *)(this->unknown38 + 4); /*0x529722*/
       else
         v19 = (int *)&unk_B7882C; /*0x529727*/
       v7 = *v19; /*0x52972c*/
       if ( v7 ) /*0x529730*/
       {
         v6 = aP2; /*0x529732*/
-        *(_DWORD *)(this + 8) = v7; /*0x529736*/
-        *(_DWORD *)(this + 4) = v4; /*0x529739*/
+        this->q008 = v7; /*0x529736*/
+        this->headNode = v4; /*0x529739*/
         goto LABEL_5; /*0x52973e*/
       }
     }
 LABEL_27:
-    *(_DWORD *)(this + 4) = 0; /*0x529743*/
-    *(_DWORD *)(this + 8) = 0; /*0x529748*/
+    this->headNode = 0; /*0x529743*/
+    this->q008 = 0; /*0x529748*/
     return a4; /*0x529748*/
   }
-  v7 = *(_DWORD *)(this + 8); /*0x52961c*/
+  v7 = this->q008; /*0x52961c*/
 LABEL_5:
   if ( !v7 ) /*0x529621*/
     return a4; /*0x529621*/
@@ -14647,7 +14647,7 @@ int __thiscall INIClass::ReadTimeString(int this, unsigned __int8 *a1, unsigned 
     v26 = 0; /*0x52a842*/
     v15 = (CCINIClass *)Checksummer::Add_Buffer((unsigned int *)&v24, a1, (IUnknown *)strlen((const char *)a1)); /*0x52a84e*/
     v23 = v15; /*0x52a850*/
-    if ( *(_DWORD *)(this + 44) ) /*0x52a854*/
+    if ( this->INIClass_field_2C ) /*0x52a854*/
     {
       v16 = *(CCINIClass ***)(this + 56); /*0x52a859*/
       if ( !v16 || *v16 != v15 ) /*0x52a862*/
@@ -14655,29 +14655,29 @@ int __thiscall INIClass::ReadTimeString(int this, unsigned __int8 *a1, unsigned 
         v17 = SortedArray::BinarySearch((char **)(this + 40), (CCINIClass *)&v23); /*0x52a86b*/
         if ( !v17 ) /*0x52a872*/
           goto LABEL_27; /*0x52a872*/
-        *(_DWORD *)(this + 56) = v17; /*0x52a874*/
+        this->unknown38 = v17; /*0x52a874*/
       }
       v23 = v15; /*0x52a87b*/
       if ( HashTable::BinarySearch(this + 40, (ObjectClass *)&v23) ) /*0x52a882*/
-        v18 = (int *)(*(_DWORD *)(this + 56) + 4); /*0x52a88e*/
+        v18 = (int *)(this->unknown38 + 4); /*0x52a88e*/
       else
         v18 = (int *)&unk_B7882C; /*0x52a893*/
       v6 = *v18; /*0x52a898*/
       if ( v6 ) /*0x52a89c*/
       {
         v19 = (CCINIClass *)a1; /*0x52a89e*/
-        *(_DWORD *)(this + 8) = v6; /*0x52a8a2*/
-        *(_DWORD *)(this + 4) = v19; /*0x52a8a5*/
+        this->q008 = v6; /*0x52a8a2*/
+        this->headNode = v19; /*0x52a8a5*/
         v5 = (Color *)a2; /*0x52a8a8*/
         goto LABEL_5; /*0x52a8ac*/
       }
     }
 LABEL_27:
-    *(_DWORD *)(this + 4) = 0; /*0x52a8b1*/
-    *(_DWORD *)(this + 8) = 0; /*0x52a8b4*/
+    this->headNode = 0; /*0x52a8b1*/
+    this->q008 = 0; /*0x52a8b4*/
     return (int)aP3->__pad_0; /*0x52a8b4*/
   }
-  v6 = *(_DWORD *)(this + 8); /*0x52a78c*/
+  v6 = this->q008; /*0x52a78c*/
 LABEL_5:
   if ( !v6 ) /*0x52a791*/
     return (int)aP3->__pad_0; /*0x52a791*/
@@ -14813,20 +14813,20 @@ char __thiscall INIClass::setValue(int this, _DWORD *a1, CCINIClass *aP2)
   int v10; // eax
   int v11; // eax
 
-  v4 = *(_DWORD *)(this + 8); /*0x52b0aa*/
-  if ( *(_DWORD *)(this + 4) + 1 <= v4 ) /*0x52b0b0*/
+  v4 = this->q008; /*0x52b0aa*/
+  if ( this->headNode + 1 <= v4 ) /*0x52b0b0*/
   {
 LABEL_9:
-    *(_DWORD *)(*(_DWORD *)this + 8 * *(_DWORD *)(this + 4)) = *a1; /*0x52b12b*/
-    *(_DWORD *)(*(_DWORD *)this + 8 * *(_DWORD *)(this + 4) + 4) = *(_DWORD *)aP2->__pad_0; /*0x52b145*/
-    v11 = *(_DWORD *)(this + 4) + 1; /*0x52b14c*/
-    *(_BYTE *)(this + 12) = 0; /*0x52b14d*/
-    *(_DWORD *)(this + 4) = v11; /*0x52b151*/
+    *(_DWORD *)(*(_DWORD *)this + 8 * this->headNode) = *a1; /*0x52b12b*/
+    *(_DWORD *)(*(_DWORD *)this + 8 * this->headNode + 4) = *(_DWORD *)aP2->__pad_0; /*0x52b145*/
+    v11 = this->headNode + 1; /*0x52b14c*/
+    this->q00C = 0; /*0x52b14d*/
+    this->headNode = v11; /*0x52b151*/
     return 1; /*0x52b15a*/
   }
   if ( v4 ) /*0x52b0b4*/
   {
-    v5 = *(_DWORD *)(this + 8); /*0x52b0bd*/
+    v5 = this->q008; /*0x52b0bd*/
     if ( v4 < 0 ) /*0x52b0c1*/
       return 0; /*0x52b0c1*/
   }
@@ -14837,17 +14837,17 @@ LABEL_9:
   v6 = __2_YAPAXI_Z(8 * (v4 + v5)); /*0x52b0d7*/
   if ( v6 ) /*0x52b0de*/
   {
-    for ( i = 0; i < *(_DWORD *)(this + 4); *(_DWORD *)(v8 + v6 + 4) = v9[1] ) /*0x52b0ec*/
+    for ( i = 0; i < this->headNode; *(_DWORD *)(v8 + v6 + 4) = v9[1] ) /*0x52b0ec*/
     {
       v8 = 8 * i; /*0x52b0f0*/
       v9 = (_DWORD *)(*(_DWORD *)this + 8 * i++); /*0x52b0f9*/
       *(_DWORD *)(v8 + v6) = *v9; /*0x52b0fe*/
     }
     __3_YAXPAX_Z(*(void **)this); /*0x52b112*/
-    v10 = *(_DWORD *)(this + 8); /*0x52b117*/
+    v10 = this->q008; /*0x52b117*/
     *(_DWORD *)this = v6; /*0x52b11f*/
-    *(_DWORD *)(this + 8) = v5 + v10; /*0x52b121*/
-    *(_DWORD *)(this + 16) = 0; /*0x52b124*/
+    this->q008 = v5 + v10; /*0x52b121*/
+    this->sectionHead = 0; /*0x52b124*/
     goto LABEL_9; /*0x52b124*/
   }
   return 0; /*0x52b134*/
@@ -15266,38 +15266,38 @@ int __thiscall LightConvertClass::Constructor(
   ObjectClass *v16; // [esp-8h] [ebp-18h]
 
   ConvertClass::Construct((_DWORD *)this, aP1, (int)aP2, (ConvertClass *)aP3, aP9, (ConvertClass *)1); /*0x555dbe*/
-  v11 = *(_DWORD *)(this + 364); /*0x555dc3*/
-  *(_DWORD *)(this + 392) = aP1; /*0x555dd1*/
-  *(_DWORD *)(this + 396) = aP2; /*0x555ddb*/
-  *(_DWORD *)(this + 400) = aP8; /*0x555de8*/
+  v11 = this->q16C; /*0x555dc3*/
+  this->q188 = aP1; /*0x555dd1*/
+  this->q18C = aP2; /*0x555ddb*/
+  this->q064 = aP8; /*0x555de8*/
   *(_DWORD *)(this + 404) = 0; /*0x555dee*/
-  *(_DWORD *)(this + 408) = aP4; /*0x555df8*/
-  *(_DWORD *)(this + 412) = aP5; /*0x555dfe*/
-  *(_DWORD *)(this + 416) = aP6; /*0x555e04*/
-  *(_DWORD *)(this + 420) = aP4; /*0x555e0a*/
-  *(_DWORD *)(this + 424) = aP5; /*0x555e10*/
+  this->q198 = aP4; /*0x555df8*/
+  this->q19C = aP5; /*0x555dfe*/
+  this->q068 = aP6; /*0x555e04*/
+  this->q1A4 = aP4; /*0x555e0a*/
+  this->q1A8 = aP5; /*0x555e10*/
   *(_DWORD *)(this + 428) = aP6; /*0x555e16*/
-  *(_BYTE *)(this + 432) = 0; /*0x555e1c*/
+  this->q06C = 0; /*0x555e1c*/
   *(_DWORD *)this = &vt_LightConvertClass; /*0x555e23*/
   if ( v11 < 1 ) /*0x555e29*/
     return this; /*0x555e29*/
   if ( !aP8 ) /*0x555e31*/
-    *(_DWORD *)(this + 400) = &unk_829C20; /*0x555e33*/
+    this->q064 = &unk_829C20; /*0x555e33*/
   if ( dword_829D20 == -1 ) /*0x555e44*/
     dword_829D20 = DDraw::GetStatus(); /*0x555e4b*/
   if ( LightningStorm::IsActive() ) /*0x555e50*/
   {
     if ( aP4 == (ObjectClass *)-1 ) /*0x555e60*/
     {
-      *(_DWORD *)(this + 408) = 1000; /*0x555e67*/
-      *(_DWORD *)(this + 412) = 1000; /*0x555e6d*/
-      *(_DWORD *)(this + 416) = 1000; /*0x555e73*/
+      this->q198 = 1000; /*0x555e67*/
+      this->q19C = 1000; /*0x555e6d*/
+      this->q068 = 1000; /*0x555e73*/
     }
     else
     {
-      *(_DWORD *)(this + 408) = aP4; /*0x555e7b*/
-      *(_DWORD *)(this + 412) = aP5; /*0x555e81*/
-      *(_DWORD *)(this + 416) = aP6; /*0x555e87*/
+      this->q198 = aP4; /*0x555e7b*/
+      this->q19C = aP5; /*0x555e81*/
+      this->q068 = aP6; /*0x555e87*/
     }
     v16 = (ObjectClass *)(1000 * *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 13652) / 100); /*0x555ebe*/
     v12 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 13644); /*0x555ebf*/
@@ -15310,15 +15310,15 @@ LABEL_23:
   {
     if ( aP4 == (ObjectClass *)-1 ) /*0x555fc4*/
     {
-      *(_DWORD *)(this + 408) = 1000; /*0x555fcb*/
-      *(_DWORD *)(this + 412) = 1000; /*0x555fd1*/
-      *(_DWORD *)(this + 416) = 1000; /*0x555fd7*/
+      this->q198 = 1000; /*0x555fcb*/
+      this->q19C = 1000; /*0x555fd1*/
+      this->q068 = 1000; /*0x555fd7*/
     }
     else
     {
-      *(_DWORD *)(this + 408) = aP4; /*0x555fdf*/
-      *(_DWORD *)(this + 412) = aP5; /*0x555fe5*/
-      *(_DWORD *)(this + 416) = aP6; /*0x555feb*/
+      this->q198 = aP4; /*0x555fdf*/
+      this->q19C = aP5; /*0x555fe5*/
+      this->q068 = aP6; /*0x555feb*/
     }
     v16 = (ObjectClass *)(1000 * *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 13676) / 100); /*0x556022*/
     v12 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 13668); /*0x556023*/
@@ -15332,15 +15332,15 @@ LABEL_23:
   }
   if ( aP4 == (ObjectClass *)-1 ) /*0x555f12*/
   {
-    *(_DWORD *)(this + 408) = 1000; /*0x555f19*/
-    *(_DWORD *)(this + 412) = 1000; /*0x555f1f*/
-    *(_DWORD *)(this + 416) = 1000; /*0x555f25*/
+    this->q198 = 1000; /*0x555f19*/
+    this->q19C = 1000; /*0x555f1f*/
+    this->q068 = 1000; /*0x555f25*/
   }
   else
   {
-    *(_DWORD *)(this + 408) = aP4; /*0x555f2d*/
-    *(_DWORD *)(this + 412) = aP5; /*0x555f33*/
-    *(_DWORD *)(this + 416) = aP6; /*0x555f39*/
+    this->q198 = aP4; /*0x555f2d*/
+    this->q19C = aP5; /*0x555f33*/
+    this->q068 = aP6; /*0x555f39*/
   }
   v16 = (ObjectClass *)(1000 * *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 13704) / 100); /*0x555f7c*/
   v15 = (ObjectClass *)(1000 * *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 13700) / 100); /*0x555f97*/
@@ -15403,7 +15403,7 @@ namespace gamemd { int RadarClass::RenderMapPreview() {
 
       RadarClass::initRadarSurface((_DWORD *)this);
       RadarClass::drawRadarTerrain((_DWORD *)(this + 80), 0, 0);
-      *(_DWORD *)(this + 80) = &DynamicVectorClass<ZoneConnectionClass>::`vftable';
+      this->q140 = &DynamicVectorClass<ZoneConnectionClass>::`vftable';
       this->q064 = 10;
       this->q060 = 0;
       v2 = (_DWORD *)(this + 140);
@@ -15419,14 +15419,14 @@ namespace gamemd { int RadarClass::RenderMapPreview() {
       }
       while ( v3 );
       VectorClass::CellConstructor((_DWORD *)(this + 212), 0, 0);
-      *(_DWORD *)(this + 212) = &vt_DynamicVectorClass_Cell;
+      this->CellStructs1 = &vt_DynamicVectorClass_Cell;
       this->q0E8 = 10;
       this->q0E4 = 0;
       this->q13C = 0;
       this->q140 = 0;
       this->q144 = 1;
       this->q145 = 0;
-      *(_DWORD *)(this + 312) = &vt_VectorClass_CellClass;
+      this->MaxLevel = &vt_VectorClass_CellClass;
       v4 = (_WORD *)(this + 356);
       v5 = 256;
       do
@@ -15441,7 +15441,7 @@ namespace gamemd { int RadarClass::RenderMapPreview() {
       this->q1164 = 0;
       this->q1168 = 1;
       this->q1169 = 0;
-      *(_DWORD *)(this + 4444) = &vt_DynamicVectorClass_Cell;
+      this->q115C = &vt_DynamicVectorClass_Cell;
       this->q1170 = 10;
       this->q116C = 0;
       *(_DWORD *)this = &vt_MapClass;
@@ -15482,10 +15482,10 @@ namespace gamemd { void* RadarClass::Render(int a1) {
       }
       while ( v5 );
       VectorClass::CellConstructor((_DWORD *)this + 53, 0, 0);
-      *((_DWORD *)this + 53) = &vt_DynamicVectorClass_Cell;
+      this->CellStructs1 = &vt_DynamicVectorClass_Cell;
       this->q0E8 = 10;
       this->q0E4 = 0;
-      *((_DWORD *)this + 78) = &vt_VectorClass_CellClass;
+      this->MaxLevel = &vt_VectorClass_CellClass;
       v6 = this + 356;
       v7 = 256;
       do
@@ -15500,7 +15500,7 @@ namespace gamemd { void* RadarClass::Render(int a1) {
       this->q1164 = 0;
       this->q1168 = 1;
       this->q1169 = 0;
-      *((_DWORD *)this + 1111) = &vt_DynamicVectorClass_Cell;
+      this->q115C = &vt_DynamicVectorClass_Cell;
       this->q1170 = 10;
       this->q116C = 0;
       *(_DWORD *)this = &vt_MapClass;
@@ -28743,12 +28743,12 @@ DWORD __thiscall sub_5B5EF0(int this, char a2)
   __int16 v9; // [esp+104h] [ebp-4h]
 
   Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b5f00*/
-  if ( *(_BYTE *)(this + 9) == 1 ) /*0x5b5f0d*/
+  if ( this->smudgeTypeIndex == 1 ) /*0x5b5f0d*/
   {
     v3 = MEMORY[0x887340]; /*0x5b5f14*/
     if ( MEMORY[0x887338] != -1 ) /*0x5b5f1c*/
       v3 += Timer::GetTicks() - MEMORY[0x887338]; /*0x5b5f2e*/
-    if ( (unsigned int)(v3 - *(_DWORD *)(this + 12)) > 0x1E ) /*0x5b5f36*/
+    if ( (unsigned int)(v3 - this->vtable4) > 0x1E ) /*0x5b5f36*/
       goto LABEL_6; /*0x5b5f36*/
   }
   if ( a2 == 1 ) /*0x5b5f40*/
@@ -28758,8 +28758,8 @@ LABEL_6:
     v4 = MEMORY[0x887340]; /*0x5b5f4e*/
     if ( MEMORY[0x887338] != -1 ) /*0x5b5f56*/
       v4 += Timer::GetTicks() - MEMORY[0x887338]; /*0x5b5f68*/
-    *(_DWORD *)(this + 12) = v4; /*0x5b5f6a*/
-    *(_BYTE *)(this + 9) = 0; /*0x5b5f6d*/
+    this->vtable4 = v4; /*0x5b5f6a*/
+    this->smudgeTypeIndex = 0; /*0x5b5f6d*/
   }
   result = MEMORY[0x887338]; /*0x5b5f71*/
   v6 = MEMORY[0x887340]; /*0x5b5f76*/
@@ -28768,7 +28768,7 @@ LABEL_6:
     result = Timer::GetTicks() - MEMORY[0x887338]; /*0x5b5f8a*/
     v6 += result; /*0x5b5f90*/
   }
-  if ( (unsigned int)(v6 - *(_DWORD *)(this + 28)) > 0x28 ) /*0x5b5f98*/
+  if ( (unsigned int)(v6 - this->rubble) > 0x28 ) /*0x5b5f98*/
   {
     memset(v8, 0, sizeof(v8)); /*0x5b5fa5*/
     v9 = 0; /*0x5b5fa7*/
@@ -28783,7 +28783,7 @@ LABEL_6:
       result = Timer::GetTicks() - MEMORY[0x887338]; /*0x5b5ffa*/
       v7 += result; /*0x5b6000*/
     }
-    *(_DWORD *)(this + 28) = v7; /*0x5b6002*/
+    this->rubble = v7; /*0x5b6002*/
   }
   return result; /*0x5b6005*/
 }
@@ -28802,12 +28802,12 @@ DWORD __thiscall CellClass::SetOccupancy(int this, ModemHost *aP1)
   __int16 v9; // [esp+104h] [ebp-4h]
 
   Stream::ReadPacket((int)&MEMORY[0xA8D63C].__pad_1258[476]); /*0x5b9f40*/
-  if ( *(_BYTE *)(this + 9) == 1 ) /*0x5b9f4d*/
+  if ( this->smudgeTypeIndex == 1 ) /*0x5b9f4d*/
   {
     v3 = *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9460]; /*0x5b9f54*/
     if ( *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9452] != -1 ) /*0x5b9f5c*/
       v3 += Timer::GetTicks() - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9452]; /*0x5b9f6e*/
-    if ( (unsigned int)(v3 - *(_DWORD *)(this + 12)) > 0x1E ) /*0x5b9f76*/
+    if ( (unsigned int)(v3 - this->vtable4) > 0x1E ) /*0x5b9f76*/
       goto LABEL_6; /*0x5b9f76*/
   }
   if ( (_BYTE)aP1 == 1 ) /*0x5b9f80*/
@@ -28817,8 +28817,8 @@ LABEL_6:
     v4 = *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9460]; /*0x5b9f8e*/
     if ( *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9452] != -1 ) /*0x5b9f96*/
       v4 += Timer::GetTicks() - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9452]; /*0x5b9fa8*/
-    *(_DWORD *)(this + 12) = v4; /*0x5b9faa*/
-    *(_BYTE *)(this + 9) = 0; /*0x5b9fad*/
+    this->vtable4 = v4; /*0x5b9faa*/
+    this->smudgeTypeIndex = 0; /*0x5b9fad*/
   }
   result = *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9452]; /*0x5b9fb1*/
   v6 = *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9460]; /*0x5b9fb6*/
@@ -28827,7 +28827,7 @@ LABEL_6:
     result = Timer::GetTicks() - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9452]; /*0x5b9fca*/
     v6 += result; /*0x5b9fd0*/
   }
-  if ( (unsigned int)(v6 - *(_DWORD *)(this + 28)) > 0x28 ) /*0x5b9fd8*/
+  if ( (unsigned int)(v6 - this->rubble) > 0x28 ) /*0x5b9fd8*/
   {
     memset(v8, 0, sizeof(v8)); /*0x5b9fe5*/
     v9 = 0; /*0x5b9fe7*/
@@ -28842,7 +28842,7 @@ LABEL_6:
       result = Timer::GetTicks() - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9452]; /*0x5ba03a*/
       v7 += result; /*0x5ba040*/
     }
-    *(_DWORD *)(this + 28) = v7; /*0x5ba042*/
+    this->rubble = v7; /*0x5ba042*/
   }
   return result; /*0x5ba045*/
 }
@@ -31386,22 +31386,22 @@ char __thiscall RadarClass::Destru_vt16(int this, char a2)
   if ( v7 ) /*0x65316d*/
   {
     v8 = MEMORY[0xB0F9E0]; /*0x653184*/
-    v45 = *(_DWORD *)(this + 4580); /*0x65318b*/
-    v46 = *(_DWORD *)(this + 4584); /*0x65319d*/
+    v45 = this->q11E4; /*0x65318b*/
+    v46 = this->q11E8; /*0x65319d*/
     v9 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)MEMORY[0x887300] + 120))(MEMORY[0x887300], &v47); /*0x6531a8*/
     DrawToSurfaceSHP(MEMORY[0x887300], MEMORY[0x87F6CC], (int)v8, 0, &v45, v9, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6531c0*/
     ShapeButton::Draw((int)MEMORY[0xB04978], 1); /*0x6531cb*/
     ShapeButton::Draw((int)MEMORY[0xB04910], 1); /*0x6531d6*/
   }
-  v10 = *(_DWORD *)(this + 5292); /*0x6531db*/
+  v10 = this->q14AC; /*0x6531db*/
   if ( v10 != 1 ) /*0x6531e3*/
   {
     if ( !v10 ) /*0x6531eb*/
       goto LABEL_25; /*0x6531eb*/
-    v11 = *(_DWORD *)(this + 5384); /*0x6531f7*/
-    if ( *(_DWORD *)(this + 5376) != -1 ) /*0x653200*/
+    v11 = this->q1508; /*0x6531f7*/
+    if ( this->q1500 != -1 ) /*0x653200*/
     {
-      v12 = Timer::GetTicks() - *(_DWORD *)(this + 5376); /*0x65320d*/
+      v12 = Timer::GetTicks() - this->q1500; /*0x65320d*/
       if ( v12 >= v11 ) /*0x653215*/
         goto LABEL_19; /*0x653215*/
       v11 -= v12; /*0x653217*/
@@ -31411,47 +31411,47 @@ char __thiscall RadarClass::Destru_vt16(int this, char a2)
 LABEL_19:
     Ticks = Timer::GetTicks(); /*0x653221*/
     v14 = v48; /*0x65322a*/
-    *(_DWORD *)(this + 5376) = Ticks; /*0x65322e*/
-    v15 = *(_DWORD *)(this + 5292); /*0x653234*/
-    *(_DWORD *)(this + 5380) = v14; /*0x65323f*/
-    *(_DWORD *)(this + 5384) = 4; /*0x653245*/
-    v16 = *(_DWORD *)(this + 5372); /*0x65324b*/
+    this->q1500 = Ticks; /*0x65322e*/
+    v15 = this->q14AC; /*0x653234*/
+    this->q1504 = v14; /*0x65323f*/
+    this->q1508 = 4; /*0x653245*/
+    v16 = this->q14FC; /*0x65324b*/
     v3 = 1; /*0x653254*/
     if ( v15 == 2 ) /*0x653256*/
     {
-      *(_DWORD *)(this + 5372) = v16 - 1; /*0x65325b*/
+      this->q14FC = v16 - 1; /*0x65325b*/
       if ( v16 - 1 > 0 ) /*0x653263*/
         goto LABEL_25; /*0x653263*/
       v17 = 0; /*0x653265*/
-      *(_DWORD *)(this + 5292) = 0; /*0x65326d*/
+      this->q14AC = 0; /*0x65326d*/
       Mixer::ReleaseChannel((int **)(this + 5312)); /*0x653273*/
     }
     else
     {
       v17 = 32; /*0x65327b*/
-      *(_DWORD *)(this + 5372) = v16 + 1; /*0x653282*/
+      this->q14FC = v16 + 1; /*0x653282*/
       if ( v16 + 1 < 32 ) /*0x65328a*/
         goto LABEL_25; /*0x65328a*/
       Mixer::ReleaseChannel((int **)(this + 5312)); /*0x653292*/
-      *(_DWORD *)(this + 5292) = 1; /*0x653297*/
+      this->q14AC = 1; /*0x653297*/
       *(_BYTE *)(this + 5338) = 1; /*0x65329d*/
     }
-    *(_DWORD *)(this + 5372) = v17; /*0x6532a4*/
+    this->q14FC = v17; /*0x6532a4*/
 LABEL_25:
-    if ( *(_DWORD *)(this + 5292) != 1 && (*(_BYTE *)(this + 5337) == 1 || v3) ) /*0x6532c1*/
+    if ( this->q14AC != 1 && (*(_BYTE *)(this + 5337) == 1 || v3) ) /*0x6532c1*/
     {
-      v18 = *(_DWORD *)(this + 5372); /*0x6532c7*/
+      v18 = this->q14FC; /*0x6532c7*/
       if ( v18 >= 0 && v18 < *(__int16 *)(MEMORY[0xB04A38] + 6) ) /*0x6532e1*/
       {
         v19 = VtableStub::72F510(); /*0x6532ec*/
-        v45 = *(_DWORD *)(this + 4580); /*0x653304*/
-        v46 = *(_DWORD *)(this + 4588); /*0x653316*/
+        v45 = this->q11E4; /*0x653304*/
+        v46 = this->q11EC; /*0x653316*/
         v20 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)MEMORY[0x887300] + 120))(MEMORY[0x887300], &v47); /*0x653321*/
         DrawToSurfaceSHP( /*0x653340*/
           MEMORY[0x887300],
           v19,
           MEMORY[0xB04A38],
-          *(_DWORD *)(this + 5372),
+          this->q14FC,
           &v45,
           v20,
           0,
@@ -31464,19 +31464,19 @@ LABEL_25:
           0,
           0,
           0);
-        v21 = *(_DWORD *)(this + 4588); /*0x653351*/
-        *(_DWORD *)(this + 4620) = *(_DWORD *)(this + 4580); /*0x653362*/
-        *(_DWORD *)(this + 4624) = v21; /*0x653364*/
-        *(_DWORD *)(this + 4628) = 168; /*0x653367*/
-        *(_DWORD *)(this + 4632) = 110; /*0x65336a*/
+        v21 = this->q11EC; /*0x653351*/
+        this->q120C = this->q11E4; /*0x653362*/
+        this->q1210 = v21; /*0x653364*/
+        this->q1214 = 168; /*0x653367*/
+        this->q1218 = 110; /*0x65336a*/
       }
     }
   }
   Map_Helper_65FDD0(); /*0x65336d*/
   Radar::RenderMinimap(this); /*0x653374*/
-  if ( *(_DWORD *)(this + 5292) == 1 ) /*0x65337f*/
+  if ( this->q14AC == 1 ) /*0x65337f*/
   {
-    switch ( *(_DWORD *)(this + 5296) ) /*0x653395*/
+    switch ( this->q14B0 ) /*0x653395*/
     {
       case 1: /*0x653395*/
       case 4: /*0x653395*/
@@ -31489,18 +31489,18 @@ LABEL_25:
           if ( v22 ) /*0x6533b9*/
           {
             v23 = VtableStub::72F510(); /*0x6533c0*/
-            v45 = *(_DWORD *)(this + 4580); /*0x6533d8*/
-            v46 = *(_DWORD *)(this + 4588); /*0x6533ea*/
+            v45 = this->q11E4; /*0x6533d8*/
+            v46 = this->q11EC; /*0x6533ea*/
             v24 = (int *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)MEMORY[0x887300] + 120))(MEMORY[0x887300], v51); /*0x6533f5*/
             DrawToSurfaceSHP(MEMORY[0x887300], v23, MEMORY[0xB04A38], 0x20u, &v45, v24, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x65340f*/
             RenderScoreboardSidebar((_DWORD *)this, 1); /*0x653416*/
             goto LABEL_40; /*0x65341b*/
           }
           RenderScoreboardSidebar((_DWORD *)this, 1); /*0x653422*/
-          v25 = *(_DWORD *)(this + 4592); /*0x653427*/
-          v26 = *(_DWORD *)(this + 4596); /*0x65342d*/
-          v27 = *(_DWORD *)(this + 4608); /*0x653433*/
-          v28 = *(_DWORD *)(this + 4612); /*0x653439*/
+          v25 = this->q11F0; /*0x653427*/
+          v26 = this->q11F4; /*0x65342d*/
+          v27 = this->q1200; /*0x653433*/
+          v28 = this->q1204; /*0x653439*/
           goto LABEL_41; /*0x65343f*/
         }
         break; /*0x65343f*/
@@ -31512,20 +31512,20 @@ LABEL_25:
         {
           *(_BYTE *)(this + 5337) = 0; /*0x65345e*/
           v29 = VtableStub::72F510(); /*0x65346a*/
-          v47 = *(_DWORD *)(this + 4580); /*0x653482*/
-          v48 = *(_DWORD *)(this + 4588); /*0x653494*/
+          v47 = this->q11E4; /*0x653482*/
+          v48 = this->q11EC; /*0x653494*/
           v30 = (int *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)MEMORY[0x887300] + 120))(MEMORY[0x887300], v52); /*0x65349f*/
           DrawToSurfaceSHP(MEMORY[0x887300], v29, MEMORY[0xB04A38], 0, &v47, v30, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6534b9*/
 LABEL_40:
-          v25 = *(_DWORD *)(this + 4580); /*0x6534be*/
-          v26 = *(_DWORD *)(this + 4588); /*0x6534c4*/
+          v25 = this->q11E4; /*0x6534be*/
+          v26 = this->q11EC; /*0x6534c4*/
           v27 = 168; /*0x6534ca*/
           v28 = 110; /*0x6534d0*/
 LABEL_41:
-          *(_DWORD *)(this + 4620) = v25; /*0x6534d5*/
-          *(_DWORD *)(this + 4624) = v26; /*0x6534e1*/
-          *(_DWORD *)(this + 4628) = v27; /*0x6534e4*/
-          *(_DWORD *)(this + 4632) = v28; /*0x6534e7*/
+          this->q120C = v25; /*0x6534d5*/
+          this->q1210 = v26; /*0x6534e1*/
+          this->q1214 = v27; /*0x6534e4*/
+          this->q1218 = v28; /*0x6534e7*/
         }
         break; /*0x6534e7*/
     }
@@ -31539,7 +31539,7 @@ LABEL_41:
   if ( MEMORY[0xB049CC] ) /*0x653518*/
   {
     v31 = (int *)(this + 4620); /*0x653524*/
-    if ( *(int *)(this + 4628) <= 0 || *(int *)(this + 4632) <= 0 ) /*0x653537*/
+    if ( this->q1214 <= 0 || this->q1218 <= 0 ) /*0x653537*/
     {
       v32 = MEMORY[0xB04A00]; /*0x6535fe*/
       v33 = MEMORY[0xB04A04]; /*0x653603*/
@@ -31549,17 +31549,17 @@ LABEL_41:
     else if ( MEMORY[0xB04A08] <= 0 || MEMORY[0xB04A0C] <= 0 ) /*0x653551*/
     {
       v32 = *v31; /*0x6535f1*/
-      v33 = *(_DWORD *)(this + 4624); /*0x6535f3*/
-      v37 = *(_DWORD *)(this + 4628); /*0x6535f6*/
-      v36 = *(_DWORD *)(this + 4632); /*0x6535f9*/
+      v33 = this->q1210; /*0x6535f3*/
+      v37 = this->q1214; /*0x6535f6*/
+      v36 = this->q1218; /*0x6535f9*/
     }
     else
     {
       v32 = *v31; /*0x653559*/
-      v33 = *(_DWORD *)(this + 4624); /*0x65355b*/
-      v34 = *(_DWORD *)(this + 4628); /*0x65355e*/
+      v33 = this->q1210; /*0x65355b*/
+      v34 = this->q1214; /*0x65355e*/
       v49 = v34; /*0x653561*/
-      v50 = *(_DWORD *)(this + 4632); /*0x653568*/
+      v50 = this->q1218; /*0x653568*/
       if ( v32 > MEMORY[0xB04A00] ) /*0x653574*/
       {
         v34 += v32 - MEMORY[0xB04A00]; /*0x653578*/
@@ -31581,16 +31581,16 @@ LABEL_41:
       v37 = v49; /*0x6535df*/
     }
     *v31 = v32; /*0x653615*/
-    *(_DWORD *)(this + 4624) = v33; /*0x653618*/
-    *(_DWORD *)(this + 4628) = v37; /*0x65361b*/
-    *(_DWORD *)(this + 4632) = v36; /*0x65361e*/
+    this->q1210 = v33; /*0x653618*/
+    this->q1214 = v37; /*0x65361b*/
+    this->q1218 = v36; /*0x65361e*/
     MEMORY[0xB0B518] = 1; /*0x653621*/
   }
   LOBYTE(v2) = MEMORY[0xB04964]; /*0x653628*/
   if ( MEMORY[0xB04964] ) /*0x65362f*/
   {
     v38 = (int *)(this + 4620); /*0x65363b*/
-    if ( *(int *)(this + 4628) <= 0 || *(int *)(this + 4632) <= 0 ) /*0x65364e*/
+    if ( this->q1214 <= 0 || this->q1218 <= 0 ) /*0x65364e*/
     {
       v2 = dword_B048C8; /*0x653701*/
       v39 = dword_B048CC; /*0x653706*/
@@ -31600,15 +31600,15 @@ LABEL_41:
     else if ( dword_B048D0 <= 0 || dword_B048D4 <= 0 ) /*0x653668*/
     {
       v2 = *v38; /*0x6536f4*/
-      v39 = *(_DWORD *)(this + 4624); /*0x6536f6*/
-      v43 = *(_DWORD *)(this + 4628); /*0x6536f9*/
-      v42 = *(_DWORD *)(this + 4632); /*0x6536fc*/
+      v39 = this->q1210; /*0x6536f6*/
+      v43 = this->q1214; /*0x6536f9*/
+      v42 = this->q1218; /*0x6536fc*/
     }
     else
     {
       v2 = *v38; /*0x653670*/
-      v39 = *(_DWORD *)(this + 4624); /*0x653672*/
-      v40 = *(_DWORD *)(this + 4628); /*0x653675*/
+      v39 = this->q1210; /*0x653672*/
+      v40 = this->q1214; /*0x653675*/
       v49 = v38[2]; /*0x653678*/
       v50 = v38[3]; /*0x65367f*/
       if ( v2 > dword_B048C8 ) /*0x65368b*/
@@ -32151,12 +32151,12 @@ void __thiscall CellClass::RevealFogRect(int this, __int16 *a2)
   _DWORD v30[4]; // [esp+34h] [ebp-10h] BYREF
   int v31; // [esp+48h] [ebp+4h]
 
-  if ( !*(_DWORD *)(this + 4636) ) /*0x6565b1*/
+  if ( !this->q487 ) /*0x6565b1*/
     return; /*0x6565b1*/
   v3 = *(_DWORD *)(this + 5272); /*0x6565bb*/
   v4 = a2[1]; /*0x6565c1*/
   v5 = *a2; /*0x6565c5*/
-  v6 = (BuildingTypeClass *)(v5 + *(_DWORD *)(this + 5264) - v4); /*0x6565d2*/
+  v6 = (BuildingTypeClass *)(v5 + this->q524 - v4); /*0x6565d2*/
   v7 = v5 + v4 - v3; /*0x6565d4*/
   v8 = 2; /*0x6565d9*/
   if ( v6 == (BuildingTypeClass *)-1 ) /*0x6565de*/
@@ -32166,7 +32166,7 @@ LABEL_5:
     v8 = 1; /*0x6565f2*/
     goto LABEL_6; /*0x6565f2*/
   }
-  if ( v6 == (BuildingTypeClass *)(2 * *(_DWORD *)(this + 260) - 1) ) /*0x6565f0*/
+  if ( v6 == (BuildingTypeClass *)(2 * this->unknown104 - 1) ) /*0x6565f0*/
     goto LABEL_5; /*0x6565f0*/
 LABEL_6:
   v27 = v7; /*0x6565f7*/
@@ -32183,10 +32183,10 @@ LABEL_6:
   v26 = *v11; /*0x65663e*/
   v27 = (int)v11[1]; /*0x656645*/
   v28 = (IUnknown *)v11[2]; /*0x65664c*/
-  v12 = *(_DWORD *)(this + 4636); /*0x656650*/
+  v12 = this->q487; /*0x656650*/
   v29 = (int)v11[3]; /*0x656659*/
   v13 = (*(int (__thiscall **)(int))(*(_DWORD *)v12 + 124))(v12); /*0x656668*/
-  v14 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 4636) + 128))(*(_DWORD *)(this + 4636)); /*0x65666c*/
+  v14 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 4636) + 128))(this->q487); /*0x65666c*/
   v15 = v28; /*0x656672*/
   v21 = (IUnknown *)v14; /*0x656676*/
   if ( (int)v28 > 0 && v29 > 0 ) /*0x656686*/
@@ -32223,15 +32223,15 @@ void __thiscall RadarClass::Toggle(int this, char a2, MouseClass *aP2)
   if ( a2 != 1 ) /*0x656be9*/
   {
     Mixer::ReleaseChannel((int **)(this + 5312)); /*0x656c4e*/
-    *(_DWORD *)(this + 5292) = 2; /*0x656c57*/
+    this->q14AC = 2; /*0x656c57*/
     if ( (_BYTE)aP2 ) /*0x656c63*/
       PlayVocClass(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1780), 0x2000, 1.0, 0); /*0x656c7d*/
     goto LABEL_9; /*0x656c7d*/
   }
-  v4 = *(_DWORD *)(this + 5292); /*0x656beb*/
+  v4 = this->q14AC; /*0x656beb*/
   if ( !v4 || v4 == 2 ) /*0x656bf8*/
   {
-    *(_DWORD *)(this + 5292) = 3; /*0x656c04*/
+    this->q14AC = 3; /*0x656c04*/
     Mixer::ReleaseChannel((int **)(this + 5312)); /*0x656c0e*/
     if ( (_BYTE)aP2 ) /*0x656c19*/
       PlayVocClass(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1776), 0x2000, 1.0, 0); /*0x656c32*/
@@ -32255,9 +32255,9 @@ void __thiscall RadarClass::SetViewMode(int this, int a2, MouseClass *aP2)
   v5 = *(MouseClass **)(this + 5296); /*0x656cde*/
   if ( v5 != (MouseClass *)v4 ) /*0x656ce6*/
   {
-    if ( (v5 == (MouseClass *)3 || v5 == (MouseClass *)4 && v4 != 3) && *(_DWORD *)(this + 5292) != 5 ) /*0x656d06*/
+    if ( (v5 == (MouseClass *)3 || v5 == (MouseClass *)4 && v4 != 3) && this->q14AC != 5 ) /*0x656d06*/
     {
-      *(_DWORD *)(this + 5300) = v4; /*0x656d08*/
+      this->q14B4 = v4; /*0x656d08*/
       return; /*0x656d10*/
     }
     if ( !v4 ) /*0x656d18*/
@@ -32265,35 +32265,35 @@ void __thiscall RadarClass::SetViewMode(int this, int a2, MouseClass *aP2)
       LOBYTE(v5) = v5 == (MouseClass *)1; /*0x656da7*/
       RadarClass::Toggle(this, 0, v5); /*0x656dad*/
 LABEL_23:
-      *(_DWORD *)(this + 5296) = v4; /*0x656db2*/
+      this->q14B0 = v4; /*0x656db2*/
       return; /*0x656db2*/
     }
     if ( v4 != 1 ) /*0x656d1f*/
     {
       if ( v4 != 4 ) /*0x656d24*/
       {
-        v6 = *(_DWORD *)(this + 5292); /*0x656d2a*/
+        v6 = this->q14AC; /*0x656d2a*/
         if ( v6 != 1 && v6 != 5 ) /*0x656d38*/
         {
           RadarClass::Toggle(this, 1, 0); /*0x656d40*/
-          *(_DWORD *)(this + 5296) = v4; /*0x656d45*/
+          this->q14B0 = v4; /*0x656d45*/
           return; /*0x656d4d*/
         }
         goto LABEL_20; /*0x656d38*/
       }
       goto LABEL_23; /*0x656d24*/
     }
-    v7 = *(_DWORD *)(this + 5292); /*0x656d50*/
-    if ( (v7 == 1 || v7 == 5) && *(_BYTE *)(this + 5336) == 1 ) /*0x656d67*/
+    v7 = this->q14AC; /*0x656d50*/
+    if ( (v7 == 1 || v7 == 5) && this->IsAvailableNow == 1 ) /*0x656d67*/
     {
 LABEL_20:
-      *(_DWORD *)(this + 5296) = v4; /*0x656d69*/
-      *(_DWORD *)(this + 5292) = 4; /*0x656d6f*/
-      *(_DWORD *)(this + 5372) = 25; /*0x656d75*/
+      this->q14B0 = v4; /*0x656d69*/
+      this->q14AC = 4; /*0x656d6f*/
+      this->q14FC = 25; /*0x656d75*/
       return; /*0x656d81*/
     }
-    RadarClass::Toggle(this, *(_BYTE *)(this + 5336), aP2); /*0x656d92*/
-    *(_DWORD *)(this + 5296) = 1; /*0x656d97*/
+    RadarClass::Toggle(this, this->IsAvailableNow, aP2); /*0x656d92*/
+    this->q14B0 = 1; /*0x656d97*/
   }
 }
 } }
@@ -33001,11 +33001,11 @@ namespace gamemd { int ScenarioClass::ReadINIEntry(int a1) {
       this->q620 = Timer::GetTicks();
       this->q628 = 0;
       TechnoTypeVector::Construct((_DWORD *)(this + 13524), 0, 0);
-      *(_DWORD *)(this + 13524) = &vt_TypeList_TechnoTypeClass;
+      this->allowableUnits = &vt_TypeList_TechnoTypeClass;
       DynamicVectorClass::Construct((_DWORD *)(this + 13552), 0, 0);
-      *(_DWORD *)(this + 13552) = &vt_TypeList_int;
+      this->ambientCurrent = &vt_TypeList_int;
       DynamicVectorClass::Construct((_DWORD *)(this + 13580), 0, 0);
-      *(_DWORD *)(this + 13580) = &vt_TypeList_int;
+      this->ionAmbient = &vt_TypeList_int;
       if ( this->missionTimer_text )
         this->missionTimer_text_csf = GetStringCSF((wchar_t *)(this + 4600), 0, &stru_830620.__pad_579C[31356], 344);
       else
@@ -33425,7 +33425,7 @@ void __userpurge ScenarioClass::SaveLoad_Prefix_0(int this@<ecx>, ScenarioClass 
   int v14; // [esp+70h] [ebp-8h] BYREF
   DWORD *v15; // [esp+74h] [ebp-4h]
 
-  v3 = *(_DWORD *)(this + 1556); /*0x689479*/
+  v3 = this->q614; /*0x689479*/
   v4 = (_DWORD *)(this + 1556); /*0x68947f*/
   v15 = (DWORD *)(this + 1556); /*0x689488*/
   if ( v3 != -1 ) /*0x68948c*/
@@ -33447,7 +33447,7 @@ void __userpurge ScenarioClass::SaveLoad_Prefix_0(int this@<ecx>, ScenarioClass 
   if ( this != -13524 ) /*0x6894d2*/
   {
     TechnoTypeVector::Construct((_DWORD *)(this + 13524), 0, 0); /*0x6894da*/
-    *(_DWORD *)(this + 13524) = &vt_TypeList_TechnoTypeClass; /*0x6894df*/
+    this->allowableUnits = &vt_TypeList_TechnoTypeClass; /*0x6894df*/
   }
   (*(void (__stdcall **)(int, ScenarioClass *, int, _DWORD))(*(_DWORD *)v8 + 12))(v8, &aP1, 4, 0); /*0x6894f1*/
   for ( i = 0; i < aP1.nextScenario[0]; ++i ) /*0x6894fc*/
@@ -33458,7 +33458,7 @@ void __userpurge ScenarioClass::SaveLoad_Prefix_0(int this@<ecx>, ScenarioClass 
   if ( this != -13552 ) /*0x68952a*/
   {
     DynamicVectorClass::Construct((_DWORD *)(this + 13552), 0, 0); /*0x689532*/
-    *(_DWORD *)(this + 13552) = &vt_TypeList_int; /*0x689537*/
+    this->ambientCurrent = &vt_TypeList_int; /*0x689537*/
   }
   (*(void (__stdcall **)(int, ScenarioClass *, int, _DWORD))(*(_DWORD *)v8 + 12))(v8, &aP1, 4, 0); /*0x689549*/
   for ( j = 0; j < aP1.nextScenario[0]; ++j ) /*0x689554*/
@@ -33469,7 +33469,7 @@ void __userpurge ScenarioClass::SaveLoad_Prefix_0(int this@<ecx>, ScenarioClass 
   if ( this != -13580 ) /*0x689582*/
   {
     DynamicVectorClass::Construct((_DWORD *)(this + 13580), 0, 0); /*0x68958a*/
-    *(_DWORD *)(this + 13580) = &vt_TypeList_int; /*0x68958f*/
+    this->ionAmbient = &vt_TypeList_int; /*0x68958f*/
   }
   (*(void (__stdcall **)(int, ScenarioClass *, int, _DWORD))(*(_DWORD *)v8 + 12))(v8, &aP1, 4, 0); /*0x6895a1*/
   for ( k = 0; k < aP1.nextScenario[0]; ++k ) /*0x6895ac*/
@@ -33477,12 +33477,12 @@ void __userpurge ScenarioClass::SaveLoad_Prefix_0(int this@<ecx>, ScenarioClass 
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v8 + 12))(v8, &v14, 4, 0); /*0x6895ba*/
     DynamicVector::Add_Alt((_DWORD *)(this + 13580), (VectorClass *)&v14); /*0x6895c4*/
   }
-  for ( m = 0; m < *(_DWORD *)(this + 13540); ++m ) /*0x6895dc*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB077F8].__pad_14B0[13416], (int *)(*(_DWORD *)(this + 13528) + 4 * m)); /*0x6895ed*/
-  if ( *(_BYTE *)(this + 4600) ) /*0x6895fd*/
-    *(_DWORD *)(this + 4596) = GetStringCSF((wchar_t *)(this + 4600), 0, &stru_830620.__pad_579C[31356], 6608); /*0x68961e*/
+  for ( m = 0; m < this->dropshipUnitCounts; ++m ) /*0x6895dc*/
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB077F8].__pad_14B0[13416], (int *)(this->allowableUnitsCount + 4 * m)); /*0x6895ed*/
+  if ( this->missionTimer_text ) /*0x6895fd*/
+    this->missionTimer_text_csf = GetStringCSF((wchar_t *)(this + 4600), 0, &stru_830620.__pad_579C[31356], 6608); /*0x68961e*/
   else
-    *(_DWORD *)(this + 4596) = &MEMORY[0x87F8E4].__pad_5568[10472]; /*0x689626*/
+    this->missionTimer_text_csf = &MEMORY[0x87F8E4].__pad_5568[10472]; /*0x689626*/
   v13 = v15; /*0x689630*/
   if ( *v15 == -1 ) /*0x689637*/
     *v13 = Timer::GetTicks(); /*0x689641*/
@@ -33770,7 +33770,7 @@ char __thiscall ScenarioClass::SaveToINI(int this, char *a2, char a3)
     a2,
     (unsigned __int8 *)g_INI_Key_Header,
     g_INI_Key_NumCoopHumanStartSpots,
-    *(_DWORD *)(this + 4580),
+    this->numCoopHumanStartSpots,
     0);
   v13 = 0;
   do
@@ -33802,44 +33802,44 @@ char __thiscall ScenarioClass::SaveToINI(int this, char *a2, char a3)
   INIClass::SetString(a2, (unsigned __int8 *)g_INI_Key_Basic, aAltnextscenari, (char *)(this + 264));
   INIClass::SetWideAsHex(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Name, (#72 *)(this + 4960));
   INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aNewiniformat, 4, 0);
-  INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aCarryovercap, *(_DWORD *)(this + 7296) / 100, 0);
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aEndofgame, *(_BYTE *)(this + 13484));
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aSkipscore, *(_BYTE *)(this + 13486));
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aOnetimeonly, *(_BYTE *)(this + 13487));
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aSkipmapselect, *(_BYTE *)(this + 13488));
+  INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aCarryovercap, this->carryOverCap / 100, 0);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aEndofgame, this->endOfGame);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aSkipscore, this->skipScore);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aOnetimeonly, this->oneTimeOnly);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aSkipmapselect, this->skipMapSelect);
   INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Official, 1);
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aIgnoreglobalai, *(_BYTE *)(this + 13492));
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aTruckcrate, *(_BYTE *)(this + 13489));
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aTraincrate, *(_BYTE *)(this + 13477));
-  INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aPercent, *(_DWORD *)(this + 7300), 0);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aIgnoreglobalai, this->ignoreGlobalAiTriggers);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aTruckcrate, this->truckCrate);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aTraincrate, this->trainCrate);
+  INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aPercent, this->percent, 0);
   ScenarioClass::SaveTypeNameListToINI(a2, (unsigned __int8 *)g_INI_Key_Basic, aAllowableunits, this + 13524);
   ScenarioClass::SaveIntListToINI(a2, (unsigned __int8 *)g_INI_Key_Basic, aAllowableunitm, this + 13552);
-  ScenarioClass::loadMapData(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Theme, *(_DWORD *)(this + 7280));
+  ScenarioClass::loadMapData(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Theme, this->themeIndex);
   if ( !a3 )
   {
     strcpy(Source, (const char *)(MEMORY[0x87F7E8][528729] + 90100));
     INIClass::SetString(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Player, Source);
-    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Intro, *(_DWORD *)(this + 5172));
-    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Brief, *(_DWORD *)(this + 5176));
-    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, off_83E188, *(_DWORD *)(this + 5180));
-    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Lose, *(_DWORD *)(this + 5184));
-    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Action, *(_DWORD *)(this + 5188));
-    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, aPostscore, *(_DWORD *)(this + 5192));
-    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, aPremapselect, *(_DWORD *)(this + 5196));
+    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Intro, this->intro);
+    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Brief, this->brief);
+    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, off_83E188, this->win);
+    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Lose, this->lose);
+    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, g_INI_Key_Action, this->action);
+    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, aPostscore, this->postScore);
+    INIClass::SetStringByIndex(a2, (unsigned __int8 *)g_INI_Key_Basic, aPremapselect, this->preMapSelect);
     INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Basic, aCarryovermoney, *(double *)(this + 7288));
-    INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aTimerinherit, *(_BYTE *)(this + 13485));
-    INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aFillsilos, *(_BYTE *)(this + 13490));
-    INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aStartingdropsh, *(_DWORD *)(this + 13520), 0);
-    INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aHomecell, *(_DWORD *)(this + 524), 0);
-    INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aAlthomecell, *(_DWORD *)(this + 528), 0);
+    INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aTimerinherit, this->timerInherit);
+    INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aFillsilos, this->fillSilos);
+    INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aStartingdropsh, this->startingDropships, 0);
+    INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aHomecell, this->altHomeCell, 0);
+    INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aAlthomecell, this->uniqueId, 0);
   }
   INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aMultiplayeronl, *(unsigned __int8 *)(this + 13500), 0);
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aTiberiumgrowth, *(_BYTE *)(this + 13478));
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aVeingrowthenab, *(_BYTE *)(this + 13479));
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aIcegrowthenabl, *(_BYTE *)(this + 13480));
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aTiberiumdeatht, *(_BYTE *)(this + 13491));
-  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aFreeradar, *(_BYTE *)(this + 13476));
-  INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aInittime, *(_DWORD *)(this + 13724), 0);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aTiberiumgrowth, this->storedTiberium_growth_enabled);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aVeingrowthenab, this->veinGrowthEnabled);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aIcegrowthenabl, this->iceGrowthEnabled);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aTiberiumdeatht, this->storedTiberium_death_to_visceroid);
+  INIClass::SetBool(a2, (unsigned __int8 *)g_INI_Key_Basic, aFreeradar, this->freeRadar);
+  INIClass::SetInt(a2, (unsigned __int8 *)g_INI_Key_Basic, aInittime, this->q359C, 0);
   INIClass::ClearSection((int)a2, (int)g_INI_Key_VariableNames, 0);
   v18 = 0;
   v19 = this + 9354;
@@ -33855,9 +33855,9 @@ char __thiscall ScenarioClass::SaveToINI(int this, char *a2, char a3)
     v19 += 41;
   }
   while ( v18 < 100 );
-  INIClass::SaveTimeField(a2, (unsigned __int8 *)g_INI_Key_Ranking, aPartimeeasy, *(_DWORD *)(this + 13732));
-  INIClass::SaveTimeField(a2, (unsigned __int8 *)g_INI_Key_Ranking, aPartimemedium, *(_DWORD *)(this + 13736));
-  INIClass::SaveTimeField(a2, (unsigned __int8 *)g_INI_Key_Ranking, aPartimehard, *(_DWORD *)(this + 13740));
+  INIClass::SaveTimeField(a2, (unsigned __int8 *)g_INI_Key_Ranking, aPartimeeasy, this->parTimeEasy);
+  INIClass::SaveTimeField(a2, (unsigned __int8 *)g_INI_Key_Ranking, aPartimemedium, this->parTimeMedium);
+  INIClass::SaveTimeField(a2, (unsigned __int8 *)g_INI_Key_Ranking, aPartimehard, this->parTimeDifficult);
   INIClass::SetString(a2, (unsigned __int8 *)g_INI_Key_Ranking, aUnderpartitle, (char *)(this + 13744));
   INIClass::SetString(a2, (unsigned __int8 *)g_INI_Key_Ranking, aUnderparmessag, (char *)(this + 13775));
   INIClass::SetString(a2, (unsigned __int8 *)g_INI_Key_Ranking, aOverpartitle, (char *)(this + 13806));
@@ -33867,69 +33867,69 @@ char __thiscall ScenarioClass::SaveToINI(int this, char *a2, char a3)
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     g_INI_Key_Ambient,
-    (double)*(int *)(this + 13608) * 0.01);
-  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, off_820538, (double)*(int *)(this + 13620) * 0.01);
-  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, g_INI_Key_Green, (double)*(int *)(this + 13624) * 0.01);
-  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, g_INI_Key_Blue, (double)*(int *)(this + 13628) * 0.01);
+    (double)this->nukeRed * 0.01);
+  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, off_820538, (double)this->nukeGround * 0.01);
+  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, g_INI_Key_Green, (double)this->nukeLevel * 0.01);
+  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, g_INI_Key_Blue, (double)this->nukeAmbientChangeRate * 0.01);
   INIClass::SetDouble(
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     g_INI_Key_Ground,
-    (double)*(int *)(this + 13632) * 0.001);
+    (double)this->dominatorAmbient * 0.001);
   INIClass::SetDouble(
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     g_INI_Key_Level,
-    (double)*(int *)(this + 13636) * 0.001);
+    (double)this->dominatorRed * 0.001);
   INIClass::SetDouble(
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     g_INI_Key_IonAmbient,
-    (double)*(int *)(this + 13640) * 0.01);
+    (double)this->dominatorGreen * 0.01);
   INIClass::SetDouble(
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     g_INI_Key_IonRed,
-    (double)*(int *)(this + 13644) * 0.01);
+    (double)this->dominatorBlue * 0.01);
   INIClass::SetDouble(
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     g_INI_Key_IonGreen,
-    (double)*(int *)(this + 13648) * 0.01);
+    (double)this->dominatorGround * 0.01);
   INIClass::SetDouble(
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     g_INI_Key_IonBlue,
-    (double)*(int *)(this + 13652) * 0.01);
+    (double)this->dominatorLevel * 0.01);
   INIClass::SetDouble(
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     g_INI_Key_IonGround,
-    (double)*(int *)(this + 13656) * 0.001);
+    (double)this->dominatorAmbientChangeRate * 0.001);
   INIClass::SetDouble(
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     g_INI_Key_IonLevel,
-    (double)*(int *)(this + 13660) * 0.001);
-  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, aDominatorambie, (double)*(int *)(this + 13692) * 0.01);
-  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, aDominatorred, (double)*(int *)(this + 13696) * 0.01);
-  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, aDominatorgreen, (double)*(int *)(this + 13700) * 0.01);
-  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, aDominatorblue, (double)*(int *)(this + 13704) * 0.01);
+    (double)this->unknown3598 * 0.001);
+  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, aDominatorambie, (double)this->q357C * 0.01);
+  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, aDominatorred, (double)this->q3580 * 0.01);
+  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, aDominatorgreen, (double)this->q3584 * 0.01);
+  INIClass::SetDouble(a2, (unsigned __int8 *)g_INI_Key_Lighting, aDominatorblue, (double)this->q3588 * 0.01);
   INIClass::SetDouble(
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     aDominatorgroun,
-    (double)*(int *)(this + 13708) * 0.001);
+    (double)this->q358C * 0.001);
   INIClass::SetDouble(
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     aDominatorlevel,
-    (double)*(int *)(this + 13712) * 0.001);
+    (double)this->q3590 * 0.001);
   INIClass::SetDouble(
     a2,
     (unsigned __int8 *)g_INI_Key_Lighting,
     aDominatorambie_0,
-    (double)*(int *)(this + 13716) * 0.001);
+    (double)this->q3594 * 0.001);
   return 1;
 }
 
@@ -35121,12 +35121,12 @@ int __thiscall ScenarioClass::LoadNetworkConfig(int this)
                                (unsigned __int8 *)aPortnumberover,
                                0);
   String[0] = 0;
-  *(_DWORD *)(this + 10372) = INIClass::ReadInt_Overwrite(
+  this->q2884 = INIClass::ReadInt_Overwrite(
                                 (int)&MEMORY[0x87F7E8][7734],
                                 (unsigned __int8 *)g_INI_Key_MultiPlayer,
                                 (unsigned __int8 *)aPhoneindex,
                                 -1);
-  *(_DWORD *)(this + 12496) = INIClass::ReadInt_Overwrite(
+  this->q30D0 = INIClass::ReadInt_Overwrite(
                                 (int)&MEMORY[0x87F7E8][7734],
                                 (unsigned __int8 *)g_INI_Key_MultiPlayer,
                                 (unsigned __int8 *)aCheckheap,
@@ -35136,7 +35136,7 @@ int __thiscall ScenarioClass::LoadNetworkConfig(int this)
                              (unsigned __int8 *)g_INI_Key_MultiPlayer,
                              (unsigned __int8 *)aWollimitresolu,
                              *(_BYTE *)(this + 776));
-  *(_DWORD *)(this + 780) = INIClass::ReadInt_Overwrite(
+  this->q30C = INIClass::ReadInt_Overwrite(
                               (int)&MEMORY[0x87F7E8][7734],
                               (unsigned __int8 *)g_INI_Key_MultiPlayer,
                               (unsigned __int8 *)aLastnickslot,
@@ -35150,26 +35150,26 @@ int __thiscall ScenarioClass::LoadNetworkConfig(int this)
     (#72 *)v58,
     20);
   CopyWideToChar((_BYTE *)(this + 328), v58, -1);
-  *(_DWORD *)(this + 380) = INIClass::ReadInt_Overwrite(
+  this->q17C = INIClass::ReadInt_Overwrite(
                               (int)&MEMORY[0x87F7E8][7734],
                               (unsigned __int8 *)g_INI_Key_MultiPlayer,
                               (unsigned __int8 *)g_INI_Key_Color,
-                              *(_DWORD *)(this + 380));
+                              this->q17C);
   Int_Overwrite = INIClass::ReadInt_Overwrite(
                     (int)&MEMORY[0x87F7E8][7734],
                     (unsigned __int8 *)g_INI_Key_MultiPlayer,
                     (unsigned __int8 *)aColorex,
                     *(_DWORD *)(this + 384));
-  v8 = *(_DWORD *)(this + 388);
+  v8 = this->elapsedTimer;
   *(_DWORD *)(this + 384) = Int_Overwrite;
   v9 = SuperWeaponTypeClass::FindOrCreate(
          (unsigned __int8 ***)&MEMORY[0x87F7E8][7734],
          (unsigned __int8 *)g_INI_Key_MultiPlayer,
          (unsigned __int8 *)g_INI_Key_Side,
          v8);
-  v10 = *(_DWORD *)(this + 392);
-  *(_DWORD *)(this + 388) = v9;
-  *(_DWORD *)(this + 392) = INIClass::ReadInt_Overwrite(
+  v10 = this->q620;
+  this->elapsedTimer = v9;
+  this->q620 = INIClass::ReadInt_Overwrite(
                               (int)&MEMORY[0x87F7E8][7734],
                               (unsigned __int8 *)g_INI_Key_MultiPlayer,
                               (unsigned __int8 *)aSideex,
@@ -35178,40 +35178,40 @@ int __thiscall ScenarioClass::LoadNetworkConfig(int this)
                      &MEMORY[0x87F7E8][7734],
                      (unsigned __int8 *)g_INI_Key_MultiPlayer,
                      (unsigned __int8 *)aWoltaunts,
-                     *(_BYTE *)(this + 7897));
-  v12 = *(_BYTE *)(this + 7896);
-  *(_BYTE *)(this + 7897) = Bool_Overwrite;
+                     this->q1ED9);
+  v12 = this->q1ED8;
+  this->q1ED9 = Bool_Overwrite;
   v13 = INIClass::ReadBool_Overwrite(
           &MEMORY[0x87F7E8][7734],
           (unsigned __int8 *)g_INI_Key_MultiPlayer,
           (unsigned __int8 *)aLantaunts,
           v12);
-  v50 = *(_BYTE *)(this + 8129);
-  *(_BYTE *)(this + 7896) = v13;
-  *(_BYTE *)(this + 8129) = INIClass::ReadBool_Overwrite(
+  v50 = this->q1FC1;
+  this->q1ED8 = v13;
+  this->q1FC1 = INIClass::ReadBool_Overwrite(
                               &MEMORY[0x87F7E8][7734],
                               (unsigned __int8 *)g_INI_Key_MultiPlayer,
                               (unsigned __int8 *)aWolscrolltext,
                               v50);
-  *(_BYTE *)(this + 8128) = INIClass::ReadBool_Overwrite(
+  this->q1FC0 = INIClass::ReadBool_Overwrite(
                               &MEMORY[0x87F7E8][7734],
                               (unsigned __int8 *)g_INI_Key_MultiPlayer,
                               (unsigned __int8 *)aLanscrolltext,
-                              *(_BYTE *)(this + 8128));
-  v14 = *(_DWORD *)(this + 388);
+                              this->q1FC0);
+  v14 = this->elapsedTimer;
   *(_DWORD *)(this + 372) = v14;
   if ( v14 == -2 )
     *(_DWORD *)(this + 372) = 0;
-  *(_DWORD *)(this + 376) = *(_DWORD *)(this + 392);
+  *(_DWORD *)(this + 376) = this->q620;
   v15 = (void *)INIClass::ReadInt_Overwrite(
                   (int)&MEMORY[0x87F7E8][7734],
                   (unsigned __int8 *)g_INI_Key_MultiPlayer,
                   (unsigned __int8 *)g_INI_Key_GameMode,
                   1);
   v16 = MultiplayerGameMode::Find(v15);
-  *(_DWORD *)(this + 4) = v16;
+  this->Items = v16;
   if ( !v16 )
-    *(_DWORD *)(this + 4) = MultiplayerGameMode::GetFirst();
+    this->Items = MultiplayerGameMode::GetFirst();
   ReadGameSettingsINI((_DWORD *)(this + 396), &MEMORY[0x87F7E8][7734], (int)aSkirmish, (_DWORD *)1, (_DWORD *)6);
   ReadGameSettingsINI((_DWORD *)(this + 520), &MEMORY[0x87F7E8][7734], (int)aLan, (_DWORD *)2, (_DWORD *)2);
   ReadGameSettingsINI((_DWORD *)(this + 644), &MEMORY[0x87F7E8][7734], (int)aWonlinepref, (_DWORD *)2, (_DWORD *)2);
@@ -35223,7 +35223,7 @@ int __thiscall ScenarioClass::LoadNetworkConfig(int this)
     (char *)(this + 10424),
     63);
   if ( !strcmp((const char *)(this + 10424), String) )
-    *(_BYTE *)(this + 10424) = 0;
+    this->q28B8 = 0;
   *(_DWORD *)(this + 10376) = INIClass::ReadInt_Overwrite(
                                 (int)&MEMORY[0x87F7E8][7734],
                                 (unsigned __int8 *)g_INI_Key_SerialDefaults,
@@ -35234,7 +35234,7 @@ int __thiscall ScenarioClass::LoadNetworkConfig(int this)
                                 (unsigned __int8 *)g_INI_Key_SerialDefaults,
                                 (unsigned __int8 *)aIrq,
                                 -1);
-  *(_DWORD *)(this + 10384) = INIClass::ReadInt_Overwrite(
+  this->q2890 = INIClass::ReadInt_Overwrite(
                                 (int)&MEMORY[0x87F7E8][7734],
                                 (unsigned __int8 *)g_INI_Key_SerialDefaults,
                                 (unsigned __int8 *)aBaud,
@@ -35269,12 +35269,12 @@ int __thiscall ScenarioClass::LoadNetworkConfig(int this)
 LABEL_20:
   if ( v17 == 2 )
     *(_DWORD *)(this + 10388) = 0;
-  *(_DWORD *)(this + 10392) = INIClass::ReadInt_Overwrite(
+  this->q2898 = INIClass::ReadInt_Overwrite(
                                 (int)&MEMORY[0x87F7E8][7734],
                                 (unsigned __int8 *)g_INI_Key_SerialDefaults,
                                 (unsigned __int8 *)aInitstringinde,
                                 -1);
-  *(_DWORD *)(this + 10396) = INIClass::ReadInt_Overwrite(
+  this->q289C = INIClass::ReadInt_Overwrite(
                                 (int)&MEMORY[0x87F7E8][7734],
                                 (unsigned __int8 *)g_INI_Key_SerialDefaults,
                                 (unsigned __int8 *)aCallwaitstring,
@@ -35286,11 +35286,11 @@ LABEL_20:
     (char *)&MEMORY[0x87F7E8][10719],
     (char *)(this + 10408),
     16);
-  if ( !*(_DWORD *)(this + 10380) || !*(_DWORD *)(this + 10384) )
+  if ( !*(_DWORD *)(this + 10380) || !this->q2890 )
   {
     *(_DWORD *)(this + 10376) = 0;
     *(_DWORD *)(this + 10380) = -1;
-    *(_DWORD *)(this + 10384) = -1;
+    this->q2890 = -1;
   }
   KeyCount = INIClass::GetKeyCount((char *)&MEMORY[0x87F7E8][7734], (unsigned __int8 *)g_INI_Key_InitStrings);
   for ( k = 0; k < KeyCount; ++k )
@@ -35330,7 +35330,7 @@ LABEL_20:
       }
     }
   }
-  *(_DWORD *)(this + 10392) = (KeyCount != 0) - 1;
+  this->q2898 = (KeyCount != 0) - 1;
   v52 = INIClass::GetKeyCount((char *)&MEMORY[0x87F7E8][7734], (unsigned __int8 *)g_INI_Key_PhoneBook);
   for ( k = 0; k < v52; ++k )
   {
@@ -35527,8 +35527,8 @@ LABEL_62:
     LOWORD(v52) = k;
     HIWORD(v52) = v53;
     if ( __PAIR32__(v53, k) != dword_A8ED54[121507] )
-      *(_DWORD *)(this + 12492) = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v52);
-    *(_DWORD *)(this + 12500) = INIClass::ReadInt_Overwrite(
+      this->q30CC = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v52);
+    this->q30D4 = INIClass::ReadInt_Overwrite(
                                   (int)&MEMORY[0x87F7E8][7734],
                                   (unsigned __int8 *)g_INI_Key_SyncBug,
                                   (unsigned __int8 *)aPrintcrc,
@@ -36993,7 +36993,7 @@ char __thiscall CellClass_IsBuildable(int this)
   __int16 v9; // [esp+8h] [ebp-4h] BYREF
   __int16 v10; // [esp+Ah] [ebp-2h]
 
-  v2 = *(_DWORD *)(this + 228); /*0x6b25c5*/
+  v2 = this->firstObject; /*0x6b25c5*/
   if ( v2 ) /*0x6b25cd*/
   {
     while ( !*(_BYTE *)(v2 + 144) /*0x6b25ef*/
@@ -37007,25 +37007,25 @@ char __thiscall CellClass_IsBuildable(int this)
     return 0; /*0x6b25ef*/
   }
 LABEL_6:
-  if ( *(_DWORD *)(this + 232) ) /*0x6b25fc*/
+  if ( this->altObject ) /*0x6b25fc*/
     return 0; /*0x6b25fc*/
-  if ( (*(_DWORD *)(this + 320) & 0x500) != 0 ) /*0x6b2613*/
+  if ( (this->flags & 0x500) != 0 ) /*0x6b2613*/
     return 0; /*0x6b2613*/
   v3 = *(_WORD *)(this + 38); /*0x6b261d*/
-  v9 = LOWORD(MEMORY[0x89F688][0]) + *(_WORD *)(this + 36); /*0x6b2632*/
+  v9 = LOWORD(MEMORY[0x89F688][0]) + this->smudgeTypeIndex; /*0x6b2632*/
   v10 = HIWORD(MEMORY[0x89F688][0]) + v3; /*0x6b2637*/
   v4 = *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], &v9) + 80); /*0x6b2653*/
   if ( (v4 & 0x500) != 0 && (v4 & 0x800) != 0 ) /*0x6b2661*/
     return 0; /*0x6b2661*/
   v5 = HIWORD(MEMORY[0x89F6A0]) + *(_WORD *)(this + 38); /*0x6b2675*/
-  v9 = MEMORY[0x89F6A0] + *(_WORD *)(this + 36); /*0x6b267c*/
+  v9 = MEMORY[0x89F6A0] + this->smudgeTypeIndex; /*0x6b267c*/
   v10 = v5; /*0x6b2685*/
   v6 = *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], &v9) + 80); /*0x6b269d*/
   if ( (v6 & 0x500) != 0 && (v6 & 0x800) == 0 ) /*0x6b26ab*/
     return 0; /*0x6b26ab*/
-  if ( *(_DWORD *)(this + 68) != -1 || !LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)(this + 36)) ) /*0x6b26b9*/
+  if ( this->q044 != -1 || !LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)(this + 36)) ) /*0x6b26b9*/
     return 0; /*0x6b26f0*/
-  v7 = *(_DWORD *)(this + 56); /*0x6b26c2*/
+  v7 = this->q038; /*0x6b26c2*/
   if ( v7 >= MEMORY[0xA8ED38] || v7 == 0xFFFF ) /*0x6b26d4*/
     return 1; /*0x6b26ea*/
   else

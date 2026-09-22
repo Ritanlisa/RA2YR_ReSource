@@ -25,7 +25,7 @@ int sub_6D1130()
   void *v0; // esi
 
   MEMORY[0xB0CCD4] = 240; /*0x6d1149*/
-  MEMORY[0xB0CD00] = MEMORY[0x87F6CC]; /*0x6d1153*/
+  MEMORY[0xB0CD00] = g_SidebarConfig; /*0x6d1153*/
   MEMORY[0xB0CCDD] = 0; /*0x6d1158*/
   MEMORY[0xB0CCE0] = 0; /*0x6d115e*/
   MEMORY[0xB0CCD0] = 5; /*0x6d1164*/
@@ -33,7 +33,7 @@ int sub_6D1130()
   Rect_Point::Set(MEMORY[0xB0CCB0], *(_DWORD *)MEMORY[0xB0FC60], *((_DWORD *)MEMORY[0xB0FC60] + 1)); /*0x6d118a*/
   ShapeButton::SetShape((int)MEMORY[0xB0CCB0], (int)v0, 0, 0); /*0x6d1197*/
   MEMORY[0xB0CC64] = 241; /*0x6d11a7*/
-  MEMORY[0xB0CC90] = MEMORY[0x87F6CC]; /*0x6d11b1*/
+  MEMORY[0xB0CC90] = g_SidebarConfig; /*0x6d11b1*/
   MEMORY[0xB0CC6D] = 0; /*0x6d11b6*/
   MEMORY[0xB0CC70] = 0; /*0x6d11bc*/
   MEMORY[0xB0CC60] = 5; /*0x6d11c2*/

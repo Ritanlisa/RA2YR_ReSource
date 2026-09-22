@@ -25,7 +25,7 @@ bool __thiscall WinModemClass::ReadSerial(int this)
   DWORD Errors; // [esp+18h] [ebp-10h] BYREF
   struct _COMSTAT Stat; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = *(_BYTE *)(this + 80); /*0x77498b*/
+  v2 = this->q014; /*0x77498b*/
   v16 = 0; /*0x77498e*/
   if ( v2 ) /*0x774994*/
   {
@@ -34,14 +34,14 @@ bool __thiscall WinModemClass::ReadSerial(int this)
     if ( GetOverlappedResult(v3, (LPOVERLAPPED)(this + 40), &NumberOfBytesTransferred, 0) ) /*0x7749a8*/
     {
       v4 = NumberOfBytesTransferred; /*0x7749b2*/
-      *(_BYTE *)(this + 80) = 0; /*0x7749b6*/
+      this->q014 = 0; /*0x7749b6*/
       if ( v4 ) /*0x7749bb*/
       {
         v5 = 0; /*0x7749bd*/
         do /*0x7749e4*/
         {
-          *(_BYTE *)(this->WinModemClass_field_0x24 + *(_DWORD *)(this + 88)) = *(_BYTE *)(this + v5++ + 108); /*0x7749cd*/
-          *(_DWORD *)(this + 88) = ((unsigned __int16)*(_DWORD *)(this + 88) + 1) & 0x1FFF; /*0x7749db*/
+          *(_BYTE *)(this->WinModemClass_field_0x24 + this->q016) = *(_BYTE *)(this + v5++ + 108); /*0x7749cd*/
+          this->q016 = ((unsigned __int16)this->q016 + 1) & 0x1FFF; /*0x7749db*/
         }
         while ( v5 < NumberOfBytesTransferred ); /*0x7749e4*/
         v16 = NumberOfBytesTransferred; /*0x7749e6*/
@@ -91,8 +91,8 @@ bool __thiscall WinModemClass::ReadSerial(int this)
     {
       for ( i = 0; i < NumberOfBytesTransferred; ++i ) /*0x774ab0*/
       {
-        *(_BYTE *)(this->WinModemClass_field_0x24 + *(_DWORD *)(this + 88)) = *(_BYTE *)(i + this + 108); /*0x774abf*/
-        *(_DWORD *)(this + 88) = ((unsigned __int16)*(_DWORD *)(this + 88) + 1) & 0x1FFF; /*0x774acd*/
+        *(_BYTE *)(this->WinModemClass_field_0x24 + this->q016) = *(_BYTE *)(i + this + 108); /*0x774abf*/
+        this->q016 = ((unsigned __int16)this->q016 + 1) & 0x1FFF; /*0x774acd*/
       }
       v16 += NumberOfBytesTransferred; /*0x774ada*/
     }
@@ -103,7 +103,7 @@ bool __thiscall WinModemClass::ReadSerial(int this)
   if ( GetLastError() == 997 ) /*0x774af5*/
   {
     v10 = v16 == 0; /*0x774afd*/
-    *(_BYTE *)(this + 80) = 1; /*0x774aff*/
+    this->q014 = 1; /*0x774aff*/
     return !v10; /*0x774b0d*/
   }
   Debug::Log(); /*0x774b14*/
@@ -313,7 +313,7 @@ BOOL __thiscall WinModemClass::_vt06(int this, const char *NumberOfBytesWritten)
 
   Debug::Log(); /*0x774f5e*/
   strcpy(Buffer, aAtd); /*0x774f83*/
-  if ( *(_DWORD *)(this + 96) ) /*0x774f87*/
+  if ( this->q060 ) /*0x774f87*/
   {
     Debug::Log(); /*0x774fd5*/
     strcat(Buffer, MEMORY[0x83ED58]); /*0x775002*/
@@ -592,7 +592,7 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
     CloseHandle(*((HANDLE *)(this) + 23));
     *((int *)(this) + 23) = -1;
   }
-    if ( *(int *)(this + 36) )
+    if ( this->q024 )
     __3_YAXPAX_Z(*((void **)(this) + 9));
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

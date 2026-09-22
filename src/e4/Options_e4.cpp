@@ -288,9 +288,9 @@ void __thiscall Options::Screen_Save(HWND this)
   if ( DlgItem )
   {
     v3 = SendMessageA(DlgItem, 0x400u, 0, 0) != 0 ? 2 : 0;
-    if ( MEMORY[0xA8EB78] != v3 ) /*0x55fad9*/
+    if ( g_lParam != v3 ) /*0x55fad9*/
     {
-      MEMORY[0xA8EB78] = v3; /*0x55fae0*/
+      g_lParam = v3; /*0x55fae0*/
       TacticalClass::Initialize(&MEMORY[0x87F7E8]); /*0x55fae5*/
     }
   }
@@ -316,7 +316,7 @@ void __thiscall Options::Screen_Save(HWND this)
   if ( v9 ) /*0x55fba6*/
   {
     v13 = (double)SendMessageA(v9, 0x400u, 0, 0) * 0.1; /*0x55fbca*/
-    Options::SetScoreVolume((float *)MEMORY[0xA8EB60], v13, 0); /*0x55fbcd*/
+    Options::SetScoreVolume((float *)g_GameModeOptions, v13, 0); /*0x55fbcd*/
     if ( MEMORY[0xA8EBA0] == 0.0 ) /*0x55fbe3*/
     {
       v10 = dword_A83D14; /*0x55fbe5*/
@@ -330,13 +330,13 @@ void __thiscall Options::Screen_Save(HWND this)
   if ( v11 ) /*0x55fc15*/
   {
     v14 = (double)SendMessageA(v11, 0x400u, 0, 0) * 0.1; /*0x55fc39*/
-    Options::SetSoundVolume((float *)MEMORY[0xA8EB60], v14, 0); /*0x55fc3c*/
+    Options::SetSoundVolume((float *)g_GameModeOptions, v14, 0); /*0x55fc3c*/
   }
   v12 = GetDlgItem(this, 1334); /*0x55fc47*/
   if ( v12 ) /*0x55fc4b*/
   {
     v15 = (double)SendMessageA(v12, 0x400u, 0, 0) * 0.1; /*0x55fc6f*/
-    Options::SetVoiceVolume((float *)MEMORY[0xA8EB60], v15, 0); /*0x55fc72*/
+    Options::SetVoiceVolume((float *)g_GameModeOptions, v15, 0); /*0x55fc72*/
   }
 }
 }
@@ -359,15 +359,15 @@ char sub_55FC80()
   LONG dwNewLong; // [esp+14h] [ebp-8h] BYREF
   LONG v9; // [esp+18h] [ebp-4h] BYREF
 
-  v7 = MEMORY[0xA8E9A0]; /*0x55fc92*/
-  MEMORY[0xA8E9A0] = 0; /*0x55fc96*/
+  v7 = g_WTFMode; /*0x55fc92*/
+  g_WTFMode = 0; /*0x55fc96*/
   while ( 1 ) /*0x55fd14*/
   {
     while ( 1 ) /*0x55fcca*/
     {
       do /*0x55fcca*/
       {
-        qmemcpy(&dword_ABCE70, MEMORY[0xA8EB60], 0xB8u); /*0x55fcb1*/
+        qmemcpy(&dword_ABCE70, g_GameModeOptions, 0xB8u); /*0x55fcb1*/
         dwNewLong = -1; /*0x55fcbd*/
         v0 = (HWND)CreateDialog(0); /*0x55fcc1*/
         v1 = v0; /*0x55fcc6*/
@@ -387,7 +387,7 @@ char sub_55FC80()
       if ( dwNewLong != 1485 ) /*0x55fd14*/
         break; /*0x55fd14*/
       v9 = -1; /*0x55fd2d*/
-      ScenarioClass::LoadNetworkConfig(&MEMORY[0xA8B238]); /*0x55fd31*/
+      ScenarioClass::LoadNetworkConfig(&g_GameMode_Current); /*0x55fd31*/
       v3 = (HWND)CreateDialog(0); /*0x55fd42*/
       v4 = v3; /*0x55fd47*/
       if ( v3 ) /*0x55fd4b*/
@@ -406,10 +406,10 @@ char sub_55FC80()
     }
     if ( dwNewLong != 1486 ) /*0x55fd1c*/
       break; /*0x55fd1c*/
-    ShowHotkeyOptionsDialog(MEMORY[0xA8EB60]); /*0x55fd1e*/
+    ShowHotkeyOptionsDialog(g_GameModeOptions); /*0x55fd1e*/
   }
-  ScenarioClass::SaveGameOptions(MEMORY[0xA8EB60]); /*0x55fd8e*/
-  MEMORY[0xA8E9A0] = v7; /*0x55fd9a*/
+  ScenarioClass::SaveGameOptions(g_GameModeOptions); /*0x55fd8e*/
+  g_WTFMode = v7; /*0x55fd9a*/
   return v7; /*0x55fd97*/
 }
 }

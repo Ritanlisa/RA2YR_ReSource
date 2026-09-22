@@ -31,7 +31,7 @@ char __thiscall WTFMode_ResetUnitFlags(int this)
   LOBYTE(v1) = MEMORY[0xA8E9A0]; /*0x41db40*/
   if ( MEMORY[0xA8E9A0] ) /*0x41db4d*/
   {
-    v3 = *(_DWORD *)(this + 92); /*0x41db53*/
+    v3 = this->q05C; /*0x41db53*/
     v1 = *(_DWORD **)(this + 92); /*0x41db56*/
     if ( v1 ) /*0x41db5a*/
     {
@@ -97,7 +97,7 @@ LABEL_8:
           v6[165] = 0; /*0x41dc34*/
       }
     }
-    *(_DWORD *)(this + 80) = 0; /*0x41dc3b*/
+    this->q050 = 0; /*0x41dc3b*/
   }
   return (char)v1; /*0x41dc3f*/
 }
@@ -342,15 +342,15 @@ int __thiscall Stream_ReadPacket(int this)
   int v15; // ecx
   unsigned int v16; // [esp+14h] [ebp-4h]
 
-  if ( !*(_DWORD *)(this + 60) ) /*0x5f1c69*/
+  if ( !this->q03C ) /*0x5f1c69*/
     return 0; /*0x5f1c79*/
   v3 = WinModemClass::ReadBytes( /*0x5f1c97*/
-         *(_DWORD *)(this + 88) + *(_DWORD *)(this + 80),
+         *(_DWORD *)(this + 88) + this->q014,
          *(_DWORD *)(this + 84) - *(_DWORD *)(this + 88))
      + *(_DWORD *)(this + 88);
   *(_DWORD *)(this + 88) = v3; /*0x5f1c9c*/
   if ( v3 < 0xB ) /*0x5f1c9f*/
-    return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(*(_DWORD *)(this + 56)); /*0x5f1c9f*/
+    return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(this->q038); /*0x5f1c9f*/
   v4 = 0; /*0x5f1cb4*/
   if ( (int)(v3 - 2) < 0 ) /*0x5f1cb8*/
     goto LABEL_11; /*0x5f1cb8*/
@@ -363,8 +363,8 @@ int __thiscall Stream_ReadPacket(int this)
   if ( v4 == -1 ) /*0x5f1ccf*/
   {
 LABEL_11:
-    memcpy(*(void **)(this + 80), (const void *)(*(_DWORD *)(this + 80) + v4), 1u); /*0x5f1cd1*/
-    v6 = *(_DWORD *)(this + 56); /*0x5f1ce0*/
+    memcpy(*(void **)(this + 80), (const void *)(this->q014 + v4), 1u); /*0x5f1cd1*/
+    v6 = this->q038; /*0x5f1ce0*/
     *(_DWORD *)(this + 88) = 1; /*0x5f1ce3*/
     return (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 20))(v6); /*0x5f1cef*/
   }
@@ -373,7 +373,7 @@ LABEL_11:
     v7 = &v5[v4]; /*0x5f1d36*/
     if ( *(_WORD *)&v5[v4 + 4] == 0xDEAF ) /*0x5f1d39*/
     {
-      v10 = *(_DWORD *)(this + 8); /*0x5f1d6a*/
+      v10 = this->Stream_field_08; /*0x5f1d6a*/
       v11 = *((unsigned __int16 *)v7 + 1); /*0x5f1d6d*/
       if ( v11 <= v10 ) /*0x5f1d75*/
       {
@@ -385,26 +385,26 @@ LABEL_11:
             memcpy(v5, &v5[v4], v3 - v4); /*0x5f1dcc*/
             *(_DWORD *)(this + 88) -= v4; /*0x5f1dd9*/
           }
-          return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(*(_DWORD *)(this + 56)); /*0x5f1cb0*/
+          return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(this->q038); /*0x5f1cb0*/
         }
         if ( Audio_Read(v7 + 6, v11) == *(_DWORD *)&v5[v11 + 6 + v4] ) /*0x5f1e06*/
         {
           if ( !(*(int (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(this + 56) + 12))( /*0x5f1e58*/
-                  *(_DWORD *)(this + 56),
-                  *(_DWORD *)(this + 80) + v4 + 6,
+                  this->q038,
+                  this->q014 + v4 + 6,
                   v11) )
-            ++*(_DWORD *)(this + 108); /*0x5f1e5f*/
-          memcpy(*(void **)(this + 80), (const void *)(*(_DWORD *)(this + 80) + v16), *(_DWORD *)(this + 88) - v16); /*0x5f1e74*/
+            ++this->q06C; /*0x5f1e5f*/
+          memcpy(*(void **)(this + 80), (const void *)(this->q014 + v16), *(_DWORD *)(this + 88) - v16); /*0x5f1e74*/
           *(_DWORD *)(this + 88) -= v16; /*0x5f1e81*/
-          return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(*(_DWORD *)(this + 56)); /*0x5f1e8b*/
+          return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(this->q038); /*0x5f1e8b*/
         }
         else
         {
-          ++*(_DWORD *)(this + 112); /*0x5f1e11*/
+          ++this->q070; /*0x5f1e11*/
           Debug::Log(MEMORY[0x832400]); /*0x5f1e14*/
           v14 = v4 + 2; /*0x5f1e1f*/
-          memcpy(*(void **)(this + 80), (const void *)(*(_DWORD *)(this + 80) + v14), *(_DWORD *)(this + 88) - v14); /*0x5f1e2a*/
-          v15 = *(_DWORD *)(this + 56); /*0x5f1e32*/
+          memcpy(*(void **)(this + 80), (const void *)(this->q014 + v14), *(_DWORD *)(this + 88) - v14); /*0x5f1e2a*/
+          v15 = this->q038; /*0x5f1e32*/
           *(_DWORD *)(this + 88) -= v14; /*0x5f1e3a*/
           return (*(int (__thiscall **)(int))(*(_DWORD *)v15 + 20))(v15); /*0x5f1e3f*/
         }
@@ -413,8 +413,8 @@ LABEL_11:
       {
         Debug::Log(MEMORY[0x832420], v11 - v10); /*0x5f1d7f*/
         v12 = v4 + 2; /*0x5f1d8a*/
-        memcpy(*(void **)(this + 80), (const void *)(*(_DWORD *)(this + 80) + v12), *(_DWORD *)(this + 88) - v12); /*0x5f1d95*/
-        v13 = *(_DWORD *)(this + 56); /*0x5f1d9d*/
+        memcpy(*(void **)(this + 80), (const void *)(this->q014 + v12), *(_DWORD *)(this + 88) - v12); /*0x5f1d95*/
+        v13 = this->q038; /*0x5f1d9d*/
         *(_DWORD *)(this + 88) -= v12; /*0x5f1da5*/
         return (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 20))(v13); /*0x5f1daa*/
       }
@@ -423,7 +423,7 @@ LABEL_11:
     {
       v8 = v4 + 2; /*0x5f1d3b*/
       memcpy(v5, &v5[v8], v3 - v8); /*0x5f1d46*/
-      v9 = *(_DWORD *)(this + 56); /*0x5f1d4e*/
+      v9 = this->q038; /*0x5f1d4e*/
       *(_DWORD *)(this + 88) -= v8; /*0x5f1d56*/
       return (*(int (__thiscall **)(int))(*(_DWORD *)v9 + 20))(v9); /*0x5f1d5b*/
     }
@@ -432,7 +432,7 @@ LABEL_11:
   {
     memcpy(v5, &v5[v4], v3 - v4); /*0x5f1d0d*/
     *(_DWORD *)(this + 88) -= v4; /*0x5f1d1a*/
-    return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(*(_DWORD *)(this + 56)); /*0x5f1d24*/
+    return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(this->q038); /*0x5f1d24*/
   }
 }
 } }

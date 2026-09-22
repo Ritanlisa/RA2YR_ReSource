@@ -103,7 +103,7 @@ unsigned int __thiscall GameMode::ReadFlagsFromINI(int *this, CCINIClass *aP1)
                (v13 & 0x40000) != 0)
            & 1) << 18);
   *this = result; /*0x6b8da7*/
-  if ( !MEMORY[0xA8B238] || MEMORY[0xA8D63C].__pad_14B0[639] ) /*0x6b8dbb*/
+  if ( !g_GameMode_Current || MEMORY[0xA8D63C].__pad_14B0[639] ) /*0x6b8dbb*/
   {
     v15 = *this & 0xFFFFFFBF /*0x6b8de5*/
         | ((INIClass::ReadBool_Overwrite(

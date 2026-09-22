@@ -24,11 +24,11 @@ char Event::Dispatch()
   UpdateAudioVideo(); /*0x48d08c*/
   if ( g_AsyncIOState > 0 && *(_DWORD *)AsyncIO_Instance ) /*0x48d09f*/
     (*(void (__thiscall **)(_DWORD))(**(_DWORD **)AsyncIO_Instance + 8))(*(_DWORD *)AsyncIO_Instance); /*0x48d0a7*/
-  v0 = (CellStruct *)MEMORY[0xA8B238][0]; /*0x48d0aa*/
-  if ( MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4 ) /*0x48d0b7*/
+  v0 = (CellStruct *)g_GameMode_Current[0]; /*0x48d0aa*/
+  if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x48d0b7*/
   {
     Network::Dispatch(); /*0x48d0b9*/
-    v0 = (CellStruct *)MEMORY[0xA8B238][0]; /*0x48d0be*/
+    v0 = (CellStruct *)g_GameMode_Current[0]; /*0x48d0be*/
   }
   if ( v0 == (CellStruct *)1 ) /*0x48d0c6*/
   {
@@ -40,7 +40,7 @@ char Event::Dispatch()
   {
 LABEL_11:
     Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x48d0e0*/
-    if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) /*0x48d10f*/
+    if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) /*0x48d10f*/
       && ObjectTypeClass::CreateInstance((int)&MEMORY[0xA8EA70], (int)v3, (int)v2) > 0 )
     {
       do /*0x48d15f*/
@@ -50,7 +50,7 @@ LABEL_11:
       }
       while ( ObjectTypeClass::CreateInstance((int)&MEMORY[0xA8EA70], (int)v3, (int)v2) > 0 ); /*0x48d15f*/
     }
-    v0 = (CellStruct *)MEMORY[0xA8B238][0]; /*0x48d161*/
+    v0 = (CellStruct *)g_GameMode_Current[0]; /*0x48d161*/
   }
   if ( v0 == (CellStruct *)4 ) /*0x48d169*/
   {
@@ -128,7 +128,7 @@ char sub_5E95E0()
     v2 = *v1; /*0x5e961f*/
     if ( *v1 ) /*0x5e961f*/
     {
-      if ( v2 != MEMORY[0xAC119C] /*0x5e9645*/
+      if ( v2 != g_HouseClass_ObserverFlags /*0x5e9645*/
         && v2 != MEMORY[0xAC11A0]
         && v2 != MEMORY[0xAC11B4]
         && (wchar_t *)v2 != MEMORY[0xAC11B0]
@@ -175,8 +175,8 @@ char sub_796960()
   __int16 v10; // [esp+244h] [ebp-4h]
   char v11; // [esp+246h] [ebp-2h]
 
-  LOBYTE(v0) = MEMORY[0xA8B238][0]; /*0x796960*/
-  if ( MEMORY[0xA8B238][0] == 4 ) /*0x796970*/
+  LOBYTE(v0) = g_GameMode_Current[0]; /*0x796960*/
+  if ( g_GameMode_Current[0] == 4 ) /*0x796970*/
     return v0; /*0x796970*/
   Waypoint::InitInvalid(v7); /*0x79697a*/
   v0 = g_WOL_State; /*0x79697f*/

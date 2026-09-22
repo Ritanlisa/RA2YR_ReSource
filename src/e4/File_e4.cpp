@@ -197,10 +197,10 @@ __int16 __thiscall sub_4CB920(int this)
   u_long v5; // eax
 
   v2 = ntohs(*(_WORD *)(this + 6)); /*0x4cb928*/
-  v3 = *(_WORD *)(this + 4); /*0x4cb92d*/
+  v3 = this->q004; /*0x4cb92d*/
   *(_WORD *)(this + 6) = v2; /*0x4cb931*/
   v4 = ntohs(v3); /*0x4cb936*/
-  *(_WORD *)(this + 4) = v4; /*0x4cb93b*/
+  this->q004 = v4; /*0x4cb93b*/
   v5 = v4 - 3; /*0x4cb944*/
   switch ( v5 ) /*0x4cb94c*/
   {
@@ -271,37 +271,37 @@ int __thiscall HVA_ParseFile(int this, int a2)
     (*(void (__thiscall **)(int, _BYTE *, int))(*(_DWORD *)a2 + 36))(a2, v12, 24); /*0x5bd607*/
     v5 = *(void **)(this + 12); /*0x5bd60a*/
     v6 = v13; /*0x5bd611*/
-    *(_DWORD *)(this + 4) = v14; /*0x5bd617*/
-    *(_DWORD *)(this + 8) = v6; /*0x5bd61a*/
+    this->q004 = v14; /*0x5bd617*/
+    this->q008 = v6; /*0x5bd61a*/
     if ( v5 ) /*0x5bd61d*/
       __3_YAXPAX_Z(v5); /*0x5bd620*/
-    v7 = __2_YAPAXI_Z(48 * *(_DWORD *)(this + 4) * *(_DWORD *)(this + 8)); /*0x5bd636*/
+    v7 = __2_YAPAXI_Z(48 * this->q004 * this->q008); /*0x5bd636*/
     if ( !v7 ) /*0x5bd640*/
       v7 = 0; /*0x5bd649*/
     *(_DWORD *)(this + 12) = v7; /*0x5bd64d*/
     if ( v7 ) /*0x5bd650*/
     {
-      (*(void (__thiscall **)(int, int, int))(*(_DWORD *)a2 + 40))(a2, 16 * *(_DWORD *)(this + 4), 1); /*0x5bd675*/
+      (*(void (__thiscall **)(int, int, int))(*(_DWORD *)a2 + 40))(a2, 16 * this->q004, 1); /*0x5bd675*/
       v11 = 0; /*0x5bd67b*/
-      if ( *(_DWORD *)(this + 8) ) /*0x5bd678*/
+      if ( this->q008 ) /*0x5bd678*/
       {
         while ( 1 ) /*0x5bd686*/
         {
           v8 = 0; /*0x5bd686*/
-          if ( *(_DWORD *)(this + 4) ) /*0x5bd683*/
+          if ( this->q004 ) /*0x5bd683*/
             break; /*0x5bd683*/
 LABEL_14:
-          if ( (unsigned int)++v11 >= *(_DWORD *)(this + 8) ) /*0x5bd6e8*/
+          if ( (unsigned int)++v11 >= this->q008 ) /*0x5bd6e8*/
             goto LABEL_15; /*0x5bd6e8*/
         }
         while ( (*(int (__thiscall **)(int, _BYTE *, int))(*(_DWORD *)v3 + 36))(v3, v15, 48) == 48 ) /*0x5bd69d*/
         {
           v9 = (const void *)Matrix::Copy12Float(v15); /*0x5bd6a8*/
-          v10 = (void *)(*(_DWORD *)(this + 12) + 48 * (v8 + v11 * *(_DWORD *)(this + 4))); /*0x5bd6c7*/
+          v10 = (void *)(*(_DWORD *)(this + 12) + 48 * (v8 + v11 * this->q004)); /*0x5bd6c7*/
           ++v8; /*0x5bd6c9*/
           qmemcpy(v10, v9, 0x30u); /*0x5bd6ca*/
           v3 = a2; /*0x5bd6cf*/
-          if ( v8 >= *(_DWORD *)(this + 4) ) /*0x5bd6d8*/
+          if ( v8 >= this->q004 ) /*0x5bd6d8*/
             goto LABEL_14; /*0x5bd6d8*/
         }
         (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 52))(v3); /*0x5bd704*/

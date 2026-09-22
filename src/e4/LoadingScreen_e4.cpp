@@ -8,7 +8,7 @@ int LoadingScreen::GetColorScheme()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall LoadingScreen::GetColorScheme(ProgressScreenClass *this)
 {
-  if ( (MEMORY[0xA8B238] == (CellStruct *)3 || MEMORY[0xA8B238] == (CellStruct *)4) /*0x642b7a*/
+  if ( (g_GameMode_Current == (CellStruct *)3 || g_GameMode_Current == (CellStruct *)4) /*0x642b7a*/
     && *(_DWORD *)(**(_DWORD **)&MEMORY[0xA8D63C].__pad_430[12] + 107) == -1 )
   {
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4368], 1); /*0x642b86*/
@@ -71,15 +71,15 @@ void LoadingScreen_DestroyFileTrees()
   MEMORY[0xB0FAC0] = 0; /*0x72eff0*/
   if ( MEMORY[0xB0FC98] ) /*0x72eff8*/
   {
-    v3 = MEMORY[0xB0FB50]; /*0x72effa*/
-    if ( MEMORY[0xB0FB50] ) /*0x72f002*/
+    v3 = g_DialogControlPool; /*0x72effa*/
+    if ( g_DialogControlPool ) /*0x72f002*/
     {
-      FileTreeNode::Destroy(MEMORY[0xB0FB50]); /*0x72f006*/
+      FileTreeNode::Destroy(g_DialogControlPool); /*0x72f006*/
       __3_YAXPAX_Z(v3); /*0x72f00c*/
     }
     MEMORY[0xB0FC98] = 0; /*0x72f014*/
   }
-  MEMORY[0xB0FB50] = 0; /*0x72f01f*/
+  g_DialogControlPool = 0; /*0x72f01f*/
   if ( MEMORY[0xB0FC99] ) /*0x72f027*/
   {
     v4 = MEMORY[0xB0FA04]; /*0x72f029*/
@@ -159,7 +159,7 @@ void *LoadingScreen_LoadSHPs()
   char *v1; // ecx
   void *result; // eax
 
-  if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) == 2 ) /*0x72fa21*/
+  if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) == 2 ) /*0x72fa21*/
   {
     MEMORY[0xB0FA68] = LoadFileSHP(MEMORY[0x844D48], (bool *)&MEMORY[0xB0FCA5]); /*0x72fa39*/
     MEMORY[0xB0FAC8] = LoadFileSHP(MEMORY[0x844D3C], (bool *)&MEMORY[0xB0FCA1]); /*0x72fa4e*/

@@ -182,7 +182,7 @@ void __thiscall MSEngine::Destructor(int this)
 
   SessionClass::Destruct((_DWORD *)this); /*0x5cee64*/
   v2 = *(void **)(this + 72); /*0x5cee69*/
-  *(_DWORD *)(this + 68) = &vt_VectorClass_MSSfxEntry; /*0x5cee70*/
+  this->q011 = &vt_VectorClass_MSSfxEntry; /*0x5cee70*/
   if ( v2 && *(_BYTE *)(this + 81) ) /*0x5cee79*/
   {
     __3_YAXPAX_Z(v2); /*0x5cee7f*/
@@ -191,23 +191,23 @@ void __thiscall MSEngine::Destructor(int this)
   *(_BYTE *)(this + 81) = 0; /*0x5cee8a*/
   *(_DWORD *)(this + 76) = 0; /*0x5cee8d*/
   v3 = *(void **)(this + 48); /*0x5cee90*/
-  *(_DWORD *)(this + 44) = &vt_VectorClass_MSAnimEntry; /*0x5cee93*/
+  this->q00B = &vt_VectorClass_MSAnimEntry; /*0x5cee93*/
   if ( v3 && *(_BYTE *)(this + 57) ) /*0x5cee9e*/
   {
     __3_YAXPAX_Z(v3); /*0x5ceea4*/
-    *(_DWORD *)(this + 48) = 0; /*0x5ceeac*/
+    this->q00C = 0; /*0x5ceeac*/
   }
   *(_BYTE *)(this + 57) = 0; /*0x5ceeb2*/
-  *(_DWORD *)(this + 52) = 0; /*0x5ceeb5*/
+  this->IsAllocated = 0; /*0x5ceeb5*/
   DeleteAndZero((void **)(this + 40)); /*0x5ceeb8*/
   v4 = *(void **)(this + 4); /*0x5ceebd*/
   *(_DWORD *)this = &vt_VectorClass_MapStage; /*0x5ceec0*/
-  if ( v4 && *(_BYTE *)(this + 13) ) /*0x5ceeca*/
+  if ( v4 && this->IsAllocated ) /*0x5ceeca*/
   {
     __3_YAXPAX_Z(v4); /*0x5ceed0*/
     this->MSEngine_field_0x4 = 0; /*0x5ceed8*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5ceedb*/
+  this->IsAllocated = 0; /*0x5ceedb*/
   this->MSEngine_field_0x8 = 0; /*0x5ceede*/
 }
 }

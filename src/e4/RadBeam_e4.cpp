@@ -22,8 +22,8 @@ double *__thiscall RadBeam::Create(rc_ptr_base *this)
   if ( MEMORY[0xB04A70] < MEMORY[0xB04A68] /*0x65916a*/
     || (MEMORY[0xB04A6D] || !MEMORY[0xB04A68])
     && unk_B04A74 > 0
-    && ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))MEMORY[0xB04A60]->field_8)(
-         &MEMORY[0xB04A60],
+    && ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))RadBeam_Array->field_8)(
+         &RadBeam_Array,
          MEMORY[0xB04A68] + unk_B04A74,
          0) )
   {

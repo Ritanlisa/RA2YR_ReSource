@@ -130,7 +130,7 @@ LABEL_8:
         if ( (int)v8 > 0 ) /*0x65ac18*/
         {
           do /*0x65ac33*/
-            ObjectPtr::RegisterForTracking((int)&MEMORY[0xB077F8].__pad_14B0[13416], (int *)v3[1].attachedBomb + v9++); /*0x65ac29*/
+            ObjectPtr::RegisterForTracking((int)&g_OverlayTypeConfig.__pad_14B0[13416], (int *)v3[1].attachedBomb + v9++); /*0x65ac29*/
           while ( v9 < (int)aP2 ); /*0x65ac33*/
         }
         return 0; /*0x65ac35*/

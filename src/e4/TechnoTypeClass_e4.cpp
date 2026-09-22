@@ -453,9 +453,9 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->AIBasePlanningSide = -1; /*0x71119e*/
   this->StupidHunt = 0; /*0x7111a4*/
   this->AllowedToStartInMultiplayer = 1; /*0x7111ac*/
-  if ( &MEMORY[0x889F64] ) /*0x7111b9*/
+  if ( &g_INI_DefaultBuffer ) /*0x7111b9*/
   {
-    strncpy(this + 1750, &MEMORY[0x889F64], 0x18u); /*0x7111c7*/
+    strncpy(this + 1750, &g_INI_DefaultBuffer, 0x18u); /*0x7111c7*/
     this->q6EE = 0; /*0x7111cf*/
   }
   else
@@ -464,9 +464,9 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   }
   this->Cameo = 0; /*0x7111da*/
   this->CameoAllocated = 0; /*0x7111e2*/
-  if ( &MEMORY[0x889F64] ) /*0x7111ee*/
+  if ( &g_INI_DefaultBuffer ) /*0x7111ee*/
   {
-    strncpy(this + 1781, &MEMORY[0x889F64], 0x18u); /*0x7111fc*/
+    strncpy(this + 1781, &g_INI_DefaultBuffer, 0x18u); /*0x7111fc*/
     this->q70D = 0; /*0x711204*/
   }
   else
@@ -715,16 +715,16 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   }
   while ( v14 ); /*0x71177f*/
   memset(this + 2068, 0xFFu, 0x48u); /*0x71178e*/
-  if ( MEMORY[0xB0F680] < MEMORY[0xB0F678] /*0x7117c3*/
-    || (MEMORY[0xB0F67D] || !MEMORY[0xB0F678])
-    && MEMORY[0xB0F684] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F670] + 8))(
-         &MEMORY[0xB0F670],
-         MEMORY[0xB0F684] + MEMORY[0xB0F678],
+  if ( g_AnimManager < g_AnimTypePool /*0x7117c3*/
+    || (g_AnimPoolLocked || !g_AnimTypePool)
+    && g_AnimManagerConfig > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_AnimPoolManager + 8))(
+         &g_AnimPoolManager,
+         g_AnimManagerConfig + g_AnimTypePool,
          0) )
   {
-    v15 = MEMORY[0xB0F680]++; /*0x7117d0*/
-    *((_DWORD *)MEMORY[0xB0F674] + v15) = this; /*0x7117df*/
+    v15 = g_AnimManager++; /*0x7117d0*/
+    *((_DWORD *)g_AnimPoolCount + v15) = this; /*0x7117df*/
   }
   if ( MEMORY[0xA8EB10] < MEMORY[0xA8EB08] /*0x711816*/
     || (MEMORY[0xA8EB0D] || !MEMORY[0xA8EB08])
@@ -785,8 +785,8 @@ int __thiscall TechnoTypeClass::Construct(int this, ObjectTypeClass *aP1)
   this->Prerequisite = &vt_TypeList_int; /*0x71198a*/
   IntDynamicVector::Construct((_DWORD *)(this + 1620), aP1); /*0x71199a*/
   this->PrerequisiteOverride = &vt_TypeList_int; /*0x71199f*/
-  *(_BYTE *)(this + 1750) = 0; /*0x7119ac*/
-  *(_BYTE *)(this + 1781) = 0; /*0x7119b5*/
+  this->CameoFile = 0; /*0x7119ac*/
+  this->AltCameoFile = 0; /*0x7119b5*/
   ObjectTypeClass::CheckFlag((_DWORD *)(this + 1836), aP1); /*0x7119bb*/
   this->Explosion = &vt_TypeList_AnimTypeClass_const; /*0x7119c0*/
   ObjectTypeClass::CheckFlag((_DWORD *)(this + 1864), aP1); /*0x7119d0*/
@@ -802,7 +802,7 @@ int __thiscall TechnoTypeClass::Construct(int this, ObjectTypeClass *aP1)
   this->unknown_bool_CB4 = 0; /*0x711a28*/
   this->BarrelAnimData = 2; /*0x711a2e*/
   *(_DWORD *)(this + 3260) = 1; /*0x711a34*/
-  *(_DWORD *)(this + 3264) = 1; /*0x711a3a*/
+  this->DebrisMaximums = 1; /*0x711a3a*/
   *(_DWORD *)(this + 3268) = 1; /*0x711a40*/
   this->unknown_bool_CC8 = 0; /*0x711a46*/
   *(_DWORD *)this = &TechnoTypeClass::`vftable'; /*0x711a4c*/

@@ -9,9 +9,9 @@ int AlphaShapeClass::SD_vt13(int a2)
 int __thiscall AlphaShapeClass::SD_vt13(int this, int a2)
 {
   AbstractClass::ProcessPower((#378 *)this); /*0x420da9*/
-  Power::TimerProcess(*(_DWORD *)(this + 40)); /*0x420db4*/
-  Power::TimerProcess(*(_DWORD *)(this + 44)); /*0x420dbf*/
-  Power::TimerProcess(*(_DWORD *)(this + 48)); /*0x420dca*/
+  Power::TimerProcess(this->q028); /*0x420db4*/
+  Power::TimerProcess(this->q02C); /*0x420dbf*/
+  Power::TimerProcess(this->q030); /*0x420dca*/
   return Power::TimerProcess(*(_DWORD *)(this + 52)); /*0x420dda*/
 }
 }
@@ -39,7 +39,7 @@ int __thiscall AlphaShapeClass::SD_vt10(int this, int a2, int a3)
 
   result = a2; /*0x420e70*/
   if ( a2 == this->AlphaShapeClass_field_0x24 ) /*0x420e79*/
-    *(_BYTE *)(this + 60) = 1; /*0x420e7b*/
+    this->q03C = 1; /*0x420e7b*/
   return result; /*0x420e7f*/
 }
 }

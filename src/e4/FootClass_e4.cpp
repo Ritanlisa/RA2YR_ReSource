@@ -34,11 +34,11 @@ int __thiscall FootClass::Destruct(void *this)
   if ( v3 != -1 ) /*0x4d35e7*/
     FootClass::RemoveFromPointerArray(&MEMORY[0x89F690].__pad_579C[61332], v3); /*0x4d35ef*/
   v11 = this; /*0x4d3604*/
-  v4 = (*(int (__thiscall **)(char *, void **))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9796] + 16))( /*0x4d3608*/
-         &MEMORY[0xB077F8].__pad_579C[9796],
+  v4 = (*(int (__thiscall **)(char *, void **))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9796] + 16))( /*0x4d3608*/
+         &g_OverlayTypeConfig.__pad_579C[9796],
          &v11);
   if ( v4 != -1 ) /*0x4d360e*/
-    DynamicVector::RemoveItem(&MEMORY[0xB077F8].__pad_579C[9796], v4); /*0x4d3616*/
+    DynamicVector::RemoveItem(&g_OverlayTypeConfig.__pad_579C[9796], v4); /*0x4d3616*/
   v5 = (AbstractClass *)this->parasiteImUsing; /*0x4d361b*/
   if ( v5 ) /*0x4d3623*/
   {
@@ -119,8 +119,8 @@ bool __thiscall sub_70F7E0(_DWORD *this)
   v2 = this->q188; /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v1 < v2 ) /*0x70f7fb*/
-      return v2 == (_DWORD)MEMORY[0xA8ED84] - v1; /*0x70f808*/
+    if ( (int)g_CurrentFrame - v1 < v2 ) /*0x70f7fb*/
+      return v2 == (_DWORD)g_CurrentFrame - v1; /*0x70f808*/
     v2 = 0; /*0x70f809*/
   }
   return v2 == 0; /*0x70f808*/
@@ -230,7 +230,7 @@ void __userpurge FootClass::FootClass_ImbueLocomotor(
       (*(void (__stdcall **)(_DWORD, int, int, int, int))(*(_DWORD *)*v10 + 112))( /*0x7101b3*/
         *v10,
         -1,
-        MEMORY[0xB0EA90],
+        g_TechnoClassPool,
         MEMORY[0xB0EA94],
         v32);
       v15 = *v6; /*0x7101b6*/

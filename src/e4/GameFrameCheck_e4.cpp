@@ -18,17 +18,17 @@ int sub_6863E0()
   DWORD v7; // [esp+0h] [ebp-18h]
 
   MouseClass::LoadCursors(); /*0x6863e3*/
-  if ( MEMORY[0x886FB8] != MEMORY[0xA8EB8C] && MEMORY[0x886FBC] != MEMORY[0xA8EB90] ) /*0x686404*/
+  if ( g_CreditsScreenBounds != MEMORY[0xA8EB8C] && g_CreditsScreenConfig != MEMORY[0xA8EB90] ) /*0x686404*/
   {
     Debug::Log(); /*0x68640b*/
     ChangeVideoMode(MEMORY[0xA8EB8C], MEMORY[0xA8EB90]); /*0x68641f*/
   }
   MEMORY[0xA8ED5C] = 0; /*0x68642a*/
   MEMORY[0xA8E378] = 0; /*0x686433*/
-  if ( MEMORY[0x887368] ) /*0x68643a*/
-    Tooltip::Enable((void *)MEMORY[0x887368], 0); /*0x68643e*/
-  v0 = (char *)MEMORY[0xA8B230] + 1556; /*0x686450*/
-  if ( *((_DWORD *)MEMORY[0xA8B230] + 389) != -1 ) /*0x686459*/
+  if ( g_TacticalRender ) /*0x68643a*/
+    Tooltip::Enable((void *)g_TacticalRender, 0); /*0x68643e*/
+  v0 = (char *)g_ScenarioClass_Instance + 1556; /*0x686450*/
+  if ( *((_DWORD *)g_ScenarioClass_Instance + 389) != -1 ) /*0x686459*/
   {
     Ticks = Timer::GetTicks(); /*0x68645e*/
     v2 = v0[2]; /*0x686465*/
@@ -45,8 +45,8 @@ int sub_6863E0()
   StopThemeClass(1); /*0x6864c5*/
   ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ(); /*0x6864ca*/
   Mission::SetAndCall((int *)&MEMORY[0x87F7E8], 0, 0); /*0x6864d8*/
-  Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x6864e3*/
-  ScenarioClass::LoadScenarioAndStart((char *)MEMORY[0xA8B230] + 4700, 0, *((_DWORD *)MEMORY[0xA8B230] + 3379)); /*0x6864fc*/
+  Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x6864e3*/
+  ScenarioClass::LoadScenarioAndStart((char *)g_ScenarioClass_Instance + 4700, 0, *((_DWORD *)g_ScenarioClass_Instance + 3379)); /*0x6864fc*/
   GameResult::CalcScore((int)&MEMORY[0x8A38E0]); /*0x686506*/
   while ( 1 ) /*0x68650f*/
   {
@@ -62,9 +62,9 @@ int sub_6863E0()
       break; /*0x68652d*/
     Event::Dispatch(); /*0x68652f*/
   }
-  Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x686536*/
-  if ( MEMORY[0x887368] ) /*0x68654a*/
-    Tooltip::Enable((void *)MEMORY[0x887368], MEMORY[0xA8EB80]); /*0x686553*/
+  Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x686536*/
+  if ( g_TacticalRender ) /*0x68654a*/
+    Tooltip::Enable((void *)g_TacticalRender, MEMORY[0xA8EB80]); /*0x686553*/
   return TacticalMap::Redraw(&MEMORY[0x87F7E8]); /*0x686562*/
 }
 }
@@ -86,10 +86,10 @@ char sub_686570()
   int v6; // esi
   char result; // al
 
-  v0 = (char *)MEMORY[0xA8B230] + 1556; /*0x686579*/
+  v0 = (char *)g_ScenarioClass_Instance + 1556; /*0x686579*/
   MEMORY[0xA8ED5C] = 0; /*0x68657f*/
   MEMORY[0xA8E378] = 0; /*0x686585*/
-  if ( *((_DWORD *)MEMORY[0xA8B230] + 389) != -1 ) /*0x68658e*/
+  if ( *((_DWORD *)g_ScenarioClass_Instance + 389) != -1 ) /*0x68658e*/
   {
     Ticks = Timer::GetTicks(); /*0x686593*/
     v2 = v0[2]; /*0x68659a*/
@@ -97,25 +97,25 @@ char sub_686570()
     *v0 = -1; /*0x68659f*/
     v0[2] = v3 + v2; /*0x6865a7*/
   }
-  *((_DWORD *)MEMORY[0xA8B230] + 1173) = 1; /*0x6865b0*/
+  *((_DWORD *)g_ScenarioClass_Instance + 1173) = 1; /*0x6865b0*/
   AsyncIO::Shutdown(); /*0x6865ba*/
-  Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x6865c5*/
-  (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)MEMORY[0x887640] + 64))(MEMORY[0x887640], MEMORY[0x88730C], 0); /*0x6865d9*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 20))(MEMORY[0x887640]); /*0x6865e4*/
+  Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x6865c5*/
+  (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 64))(g_WWMouseClass_Instance, g_DSurface_Hidden, 0); /*0x6865d9*/
+  (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 20))(g_WWMouseClass_Instance); /*0x6865e4*/
   Mission::SetAndCall((int *)&MEMORY[0x87F7E8], 0, 0); /*0x6865ee*/
   Theme::Stop(&g_BuildingTypeClass_Count, 1); /*0x6865fa*/
-  Audio::GetFlag((unsigned int *)MEMORY[0x87E758]); /*0x686605*/
+  Audio::GetFlag((unsigned int *)g_MixerState); /*0x686605*/
   VoxClass::FindAndPlay(MEMORY[0x83DB34], -1); /*0x686616*/
-  Audio::WaitForCallback(MEMORY[0x87E758]); /*0x686621*/
-  v4 = MEMORY[0x887340]; /*0x68662b*/
-  if ( MEMORY[0x887338] != -1 ) /*0x686634*/
-    v4 += Timer::GetTicks() - MEMORY[0x887338]; /*0x686646*/
+  Audio::WaitForCallback(g_MixerState); /*0x686621*/
+  v4 = g_PerformanceTickOffset; /*0x68662b*/
+  if ( g_LastPerformanceTick != -1 ) /*0x686634*/
+    v4 += Timer::GetTicks() - g_LastPerformanceTick; /*0x686646*/
   v5 = v4 + 300; /*0x686649*/
   while ( (unsigned __int8)Audio::IsPlaying() ) /*0x68664f*/
   {
-    v6 = MEMORY[0x887340]; /*0x68665d*/
-    if ( MEMORY[0x887338] != -1 ) /*0x686666*/
-      v6 += Timer::GetTicks() - MEMORY[0x887338]; /*0x686678*/
+    v6 = g_PerformanceTickOffset; /*0x68665d*/
+    if ( g_LastPerformanceTick != -1 ) /*0x686666*/
+      v6 += Timer::GetTicks() - g_LastPerformanceTick; /*0x686678*/
     if ( v5 <= v6 ) /*0x68667c*/
       break; /*0x68667c*/
     Event::Dispatch(); /*0x68667e*/
@@ -124,18 +124,18 @@ char sub_686570()
   ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ(); /*0x686693*/
   AudioMixer::Shutdown(); /*0x686698*/
   AudioQueue::DrainAll(); /*0x68669d*/
-  EndBufferMixer((int *)MEMORY[0x87E758], 0x4000); /*0x6866ad*/
-  result = MEMORY[0x886FB8]; /*0x6866b2*/
-  if ( MEMORY[0x886FB8] != MEMORY[0xA8EB8C] ) /*0x6866c0*/
+  EndBufferMixer((int *)g_MixerState, 0x4000); /*0x6866ad*/
+  result = g_CreditsScreenBounds; /*0x6866b2*/
+  if ( g_CreditsScreenBounds != MEMORY[0xA8EB8C] ) /*0x6866c0*/
   {
     result = MEMORY[0xA8EB90]; /*0x6866c8*/
-    if ( MEMORY[0x886FBC] != MEMORY[0xA8EB90] ) /*0x6866cf*/
+    if ( g_CreditsScreenConfig != MEMORY[0xA8EB90] ) /*0x6866cf*/
     {
       Debug::Log(); /*0x6866d6*/
       result = ChangeVideoMode(MEMORY[0xA8EB8C], MEMORY[0xA8EB90]); /*0x6866ea*/
     }
   }
-  MEMORY[0xA8E9A0] = 0; /*0x6866ef*/
+  g_WTFMode = 0; /*0x6866ef*/
   return result; /*0x6866f5*/
 }
 }

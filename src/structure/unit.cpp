@@ -2372,24 +2372,24 @@ int __thiscall sub_6B6080(int this, _WORD *a2)
   int v9; // [esp+10h] [ebp+4h]
 
   v7 = 0; /*0x6b6086*/
-  result = *(_DWORD *)(this + 668); /*0x6b608e*/
+  result = this->chronoDestCoords; /*0x6b608e*/
   if ( result > 0 ) /*0x6b6096*/
   {
     do /*0x6b611c*/
     {
-      for ( i = 0; i < *(_DWORD *)(this + 664); ++i ) /*0x6b60ac*/
+      for ( i = 0; i < this->storedTiberium; ++i ) /*0x6b60ac*/
       {
         LOWORD(v9) = i + *a2; /*0x6b60bd*/
         HIWORD(v9) = v7 + a2[1]; /*0x6b60c6*/
         v8 = v9; /*0x6b60d5*/
         v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v8); /*0x6b60d9*/
-        v6[18] = *(_DWORD *)(this + 660); /*0x6b60ea*/
-        *((_BYTE *)v6 + 287) = i + *(_BYTE *)(this + 664) * v7; /*0x6b60f5*/
+        v6[18] = this->hijackerInfantryType; /*0x6b60ea*/
+        *((_BYTE *)v6 + 287) = i + this->storedTiberium * v7; /*0x6b60f5*/
         BuildingClass::CreatePlacementCrater(v6); /*0x6b60fb*/
       }
       result = ++v7; /*0x6b6115*/
     }
-    while ( v7 < *(_DWORD *)(this + 668) ); /*0x6b611c*/
+    while ( v7 < this->chronoDestCoords ); /*0x6b611c*/
   }
   return result; /*0x6b6120*/
 }
@@ -2434,16 +2434,16 @@ int __thiscall UnitClass::GetExitCell(int this, _DWORD *a2, _DWORD *a3)
   }
   *((_BYTE *)v3 + 1738) = 1;
   v3[191] = 1;
-  result = *(_DWORD *)(this + 20);
-  if ( *(_DWORD *)(this + 28) < result
-    || (*(_BYTE *)(this + 25) || !result)
-    && (v13 = *(_DWORD *)(this + 32), v13 > 0)
-    && (result = (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 12) + 8))(this + 12, result + v13, 0),
+  result = this->abstractFlags;
+  if ( this->referenceCount < result
+    || (this->q019 || !result)
+    && (v13 = this->needsSave, v13 > 0)
+    && (result = (*(int (__thiscall **)(int, int, _DWORD))(this->vtable4 + 8))(this + 12, result + v13, 0),
         (_BYTE)result) )
   {
-    result = *(_DWORD *)(this + 28);
-    v14 = *(_DWORD *)(this + 16);
-    *(_DWORD *)(this + 28) = result + 1;
+    result = this->referenceCount;
+    v14 = this->uniqueId;
+    this->referenceCount = result + 1;
     *(_DWORD *)(v14 + 4 * result) = v8;
   }
   return result;
@@ -12855,7 +12855,7 @@ bool __thiscall UnitClass::CanCrushTarget(int this, TechnoClass *aP1)
   _BYTE v10[12]; // [esp+28h] [ebp-18h] BYREF
   _BYTE v11[12]; // [esp+34h] [ebp-Ch] BYREF
 
-  result = (*(_BYTE *)(*(_DWORD *)(this + 1732) + 3368) || TechnoClass::HasVoiceResponse((TechnoClass *)this, 17)) /*0x743a30*/
+  result = (*(_BYTE *)(this->Type + 3368) || TechnoClass::HasVoiceResponse((TechnoClass *)this, 17)) /*0x743a30*/
         && aP1
         && ObjectClass::IsCrushable(aP1, (AbstractClass *)this)
         && (v3 = (_DWORD *)(*(int (__thiscall **)(TechnoClass *, _BYTE *))(*(_DWORD *)aP1->__pad_0 + 72))(aP1, v10),
@@ -12869,13 +12869,13 @@ bool __thiscall UnitClass::CanCrushTarget(int this, TechnoClass *aP1)
             (int)Math::RoundToInt(v5) <= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5928))
         && (!(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540))
          || *(_BYTE *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6123)
-         || *(_BYTE *)(*(_DWORD *)(this + 1732) + 3373))
-        && (v6 = *(_DWORD *)(this + 540), *(_DWORD *)(v6 + 388) != 2)
+         || *(_BYTE *)(this->Type + 3373))
+        && (v6 = this->owner, *(_DWORD *)(v6 + 388) != 2)
         && ((unsigned __int8)House::IsCurrentPlayer((#375 *)v6)
-         || *(_DWORD *)(*(_DWORD *)(this + 540) + 588) >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5192))
+         || *(_DWORD *)(this->owner + 588) >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5192))
         && (*(unsigned __int8 (__thiscall **)(TechnoClass *, _DWORD))(*(_DWORD *)aP1->__pad_0 + 200))(
              aP1,
-             *(_DWORD *)(this + 540)) == 0;
+             this->owner) == 0;
   return result; /*0x743a2e*/
 }
 }

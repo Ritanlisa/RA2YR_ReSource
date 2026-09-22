@@ -46,7 +46,7 @@ char E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E0250(_BYTE *this, int a2, int a3, int a4, int a5)
 {
-  *((_BYTE *)MEMORY[0xA8B230] + 13479) = *(this + 144); /*0x6e025c*/
+  *((_BYTE *)g_ScenarioClass_Instance + 13479) = *(this + 144); /*0x6e025c*/
   return 1; /*0x6e0264*/
 }
 }
@@ -59,7 +59,7 @@ char E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E0270(_BYTE *this, int a2, int a3, int a4, int a5)
 {
-  *((_BYTE *)MEMORY[0xA8B230] + 13478) = *(this + 144); /*0x6e027c*/
+  *((_BYTE *)g_ScenarioClass_Instance + 13478) = *(this + 144); /*0x6e027c*/
   return 1; /*0x6e0284*/
 }
 }
@@ -72,7 +72,7 @@ char E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6E0290(_BYTE *this, int a2, int a3, int a4, int a5)
 {
-  *((_BYTE *)MEMORY[0xA8B230] + 13480) = *(this + 144); /*0x6e029c*/
+  *((_BYTE *)g_ScenarioClass_Instance + 13480) = *(this + 144); /*0x6e029c*/
   return 1; /*0x6e02a4*/
 }
 }
@@ -99,7 +99,7 @@ char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
   int v8[2]; // [esp+8h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+10h] [ebp-4h]
 
-  v6 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v7, *(this + 17)); /*0x6e27ab*/
+  v6 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, *(this + 17)); /*0x6e27ab*/
   GroundHeight = 0; /*0x6e27af*/
   v8[1] = (SHIWORD(v6) << 8) + 128; /*0x6e27d0*/
   v8[0] = ((__int16)v6 << 8) + 128; /*0x6e27da*/
@@ -109,7 +109,7 @@ char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
   {
     GroundHeight += MEMORY[0xB0E6D4]; /*0x6e2827*/
   }
-  Tactical::SetTacticalPosition((int)MEMORY[0x887324], v8); /*0x6e2836*/
+  Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, v8); /*0x6e2836*/
   return 1; /*0x6e283d*/
 }
 }
@@ -137,7 +137,7 @@ char __thiscall sub_6E3380(int *this, int a2, int a3, int a4, int a5)
   int v9; // [esp+8h] [ebp-8h]
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v7 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v7, this->q011); /*0x6e339b*/
+  v7 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->q011); /*0x6e339b*/
   GroundHeight = 0; /*0x6e339f*/
   v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
   v8 = ((__int16)v7 << 8) + 128; /*0x6e33ca*/
@@ -240,24 +240,24 @@ int __fastcall sub_6EC250(int a1, int a2)
   int v7; // eax
   int v10; // [esp+10h] [ebp-8h]
 
-  result = MEMORY[0x8B40F8]; /*0x6ec253*/
-  for ( i = 0; i < MEMORY[0x8B40F8]; ++i ) /*0x6ec265*/
+  result = g_HouseClass_AIProductionState; /*0x6ec253*/
+  for ( i = 0; i < g_HouseClass_AIProductionState; ++i ) /*0x6ec265*/
   {
-    v4 = *((_DWORD *)MEMORY[0x8B40EC] + i); /*0x6ec275*/
+    v4 = *((_DWORD *)g_TeamClassPool + i); /*0x6ec275*/
     if ( v4 && a2 == *(_DWORD *)(v4 + 44) && *(_DWORD *)(*(_DWORD *)(v4 + 36) + 180) < a1 ) /*0x6ec294*/
     {
       for ( j = *(_DWORD *)(v4 + 84); j; j = *(_DWORD *)(v4 + 84) ) /*0x6ec29b*/
         TeamClass::LiberateMember_Start(v4, j, 0xFFFFFFFF, 0); /*0x6ec2a4*/
       *(_BYTE *)(v4 + 126) = 1; /*0x6ec2b0*/
       *(_BYTE *)(v4 + 125) = 1; /*0x6ec2b3*/
-      v6 = MEMORY[0xA8ED84]; /*0x6ec2bc*/
-      v7 = Math::RoundToInt(*(double *)&MEMORY[0x8871E0][1].AITriggerFailureWeightDelta * 900.0); /*0x6ec2ce*/
+      v6 = g_CurrentFrame; /*0x6ec2bc*/
+      v7 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].AITriggerFailureWeightDelta * 900.0); /*0x6ec2ce*/
       *(_BYTE *)(v4 + 131) = 1; /*0x6ec2da*/
       *(_DWORD *)(v4 + 100) = v6; /*0x6ec2e0*/
       *(_DWORD *)(v4 + 104) = v10; /*0x6ec2e2*/
       *(_DWORD *)(v4 + 108) = v7; /*0x6ec2e5*/
     }
-    result = MEMORY[0x8B40F8]; /*0x6ec2e8*/
+    result = g_HouseClass_AIProductionState; /*0x6ec2e8*/
   }
   return result; /*0x6ec2f9*/
 }
@@ -290,7 +290,7 @@ void __thiscall sub_6EDFD0(int this, int a2, int a3)
           v4,
           &v6,
           0,
-          MEMORY[0x8871E0]->?[5],
+          g_RulesClass_Instance->?[5],
           0,
           1,
           0,

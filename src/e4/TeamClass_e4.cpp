@@ -142,7 +142,7 @@ char __thiscall TeamClass_DeployUnit(int this, int a2, int a3)
     v7 = this->spawnCell; /*0x62a2a6*/
     if ( v6 != -1 ) /*0x62a2ac*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v6 >= v7 ) /*0x62a2b8*/
+      if ( (int)g_CurrentFrame - v6 >= v7 ) /*0x62a2b8*/
       {
 LABEL_12:
         v9 = (_DWORD *)Object::CalculateObjectPlacementPosition(v18); /*0x62a2ec*/
@@ -150,7 +150,7 @@ LABEL_12:
         v10 = v9[1]; /*0x62a307*/
         v17[1] = v10; /*0x62a30a*/
         v11 = v9[2]; /*0x62a30e*/
-        ++MEMORY[0xA8E7AC]; /*0x62a311*/
+        ++g_IKnowWhatImDoing; /*0x62a311*/
         v17[2] = v11; /*0x62a31d*/
         if ( v17[0] == MEMORY[0xAC4948] && v10 == MEMORY[0xAC494C] && v11 == MEMORY[0xAC4950] /*0x62a364*/
           || (Value = ProgressTimer::GetValue((_WORD *)(this->currentScript + 904), &a2),
@@ -159,14 +159,14 @@ LABEL_12:
                  v17,
                  (unsigned __int8)((unsigned int)((*Value >> 7) + 1) >> 1))) )
         {
-          --MEMORY[0xA8E7AC]; /*0x62a462*/
+          --g_IKnowWhatImDoing; /*0x62a462*/
           *(_DWORD *)(this->buildingType + 108) = 0; /*0x62a46a*/
           result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 248))(this->buildingType); /*0x62a472*/
           this->currentScript = 0; /*0x62a478*/
         }
         else
         {
-          --MEMORY[0xA8E7AC]; /*0x62a379*/
+          --g_IKnowWhatImDoing; /*0x62a379*/
           v13 = this->buildingType; /*0x62a37f*/
           if ( *(_BYTE *)(v13 + 1074) && (unsigned __int8)House::IsHumanPlayer(*(#375 **)(v13 + 540)) ) /*0x62a390*/
           {
@@ -203,7 +203,7 @@ LABEL_12:
         }
         return result; /*0x62a459*/
       }
-      v7 -= (int)MEMORY[0xA8ED84] - v6; /*0x62a2ba*/
+      v7 -= (int)g_CurrentFrame - v6; /*0x62a2ba*/
     }
     if ( v7 > 0 && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v5 + 352))(v5) ) /*0x62a2c2*/
     {
@@ -217,7 +217,7 @@ LABEL_12:
   if ( a2 == this->unknown44 ) /*0x62a487*/
   {
     this->unknown44 = 0; /*0x62a489*/
-    *(_BYTE *)(this + 84) = 1; /*0x62a490*/
+    this->firstUnit = 1; /*0x62a490*/
   }
   return result; /*0x62a27a*/
 }
@@ -465,7 +465,7 @@ int __thiscall sub_635A40(int *this, int a2)
       v15 = (v22[1] >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0]) | (v22[2] >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]); /*0x635bdf*/
       v16 = v22[0]; /*0x635be1*/
 LABEL_19:
-      result = (v16 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) | v15; /*0x635be5*/
+      result = (v16 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) | v15; /*0x635be5*/
       *(_DWORD *)(v20 + 116) = result; /*0x635c01*/
     }
   }
@@ -549,7 +549,7 @@ int __thiscall sub_635C10(int *this)
       v10 = (HIBYTE(v15) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0]) | (v16 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]); /*0x635d75*/
       v11 = v15; /*0x635d77*/
 LABEL_16:
-      result = (v11 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) | v10; /*0x635d7b*/
+      result = (v11 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) | v10; /*0x635d7b*/
       this->q02B = result; /*0x635d93*/
     }
   }
@@ -675,9 +675,9 @@ int __thiscall sub_636120(int this)
     }
   }
   result = (*(int (__thiscall **)(int))(this->vtable1 + 12))(this + 4); /*0x6362e3*/
-  *(_DWORD *)(this + 140) = -1; /*0x6362e6*/
-  *(_DWORD *)(this + 144) = -1; /*0x6362ec*/
-  *(_DWORD *)(this + 148) = -1; /*0x6362f2*/
+  this->q08C = -1; /*0x6362e6*/
+  this->buildingType = -1; /*0x6362ec*/
+  this->q250 = -1; /*0x6362f2*/
   *(_BYTE *)(this + 152) = 0; /*0x6362f8*/
   *(_BYTE *)(this + 153) = 0; /*0x6362ff*/
   return result; /*0x636306*/
@@ -2354,13 +2354,13 @@ int __thiscall TeamClass::RecruitMember(_DWORD *this, int a2)
   if ( v4 ) /*0x6eaaa4*/
     v5 = (char *)(*(int (__thiscall **)(CellClass *, _BYTE *))(v4->mapCoords[0] + 72))(v4, v39); /*0x6eaaad*/
   else
-    v5 = &MEMORY[0xB077F8].__pad_579C[6612]; /*0x6eaab2*/
+    v5 = &g_OverlayTypeConfig.__pad_579C[6612]; /*0x6eaab2*/
   v36 = *(_DWORD *)v5; /*0x6eaab9*/
   v37 = *((_DWORD *)v5 + 1); /*0x6eaac4*/
   v6 = (TeamTypeClass *)v2->buildingType; /*0x6eaacc*/
   v38 = *((_DWORD *)v5 + 2); /*0x6eaacf*/
   v7 = TechnoClass::GetWaypointCoords(v6, &v35); /*0x6eaad3*/
-  if ( *v7 != *(_WORD *)&MEMORY[0xB077F8].__pad_579C[6580] || v7[1] != *(_WORD *)&MEMORY[0xB077F8].__pad_579C[6582] ) /*0x6eaaef*/
+  if ( *v7 != *(_WORD *)&g_OverlayTypeConfig.__pad_579C[6580] || v7[1] != *(_WORD *)&g_OverlayTypeConfig.__pad_579C[6582] ) /*0x6eaaef*/
   {
     WaypointCoords = (CellClass *)TechnoClass::GetWaypointCoords((_DWORD *)v2->buildingType, &v35); /*0x6eaaf9*/
     v9 = (SLOWORD(WaypointCoords->mapCoords[0]) << 8) + 128; /*0x6eab0b*/
@@ -2781,7 +2781,7 @@ char __thiscall sub_6EB490(int *this)
       v5 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v2 + 132))(v2) + 1532); /*0x6eb4c0*/
       if ( *((_BYTE *)v2 + 144) /*0x6eb506*/
         && v2[27]
-        && (MEMORY[0xA8E7AC] || !*((_BYTE *)v2 + 129))
+        && (g_IKnowWhatImDoing || !*((_BYTE *)v2 + 129))
         && (*((_BYTE *)v2 + 1673) || (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) == 2)
         && v5 > v3 )
       {
@@ -2814,7 +2814,7 @@ char __thiscall sub_6EB490(int *this)
     }
     v1 = this; /*0x6eb596*/
   }
-  if ( (int)MEMORY[0xA8ED84] % 8 == 4 ) /*0x6eb5ae*/
+  if ( (int)g_CurrentFrame % 8 == 4 ) /*0x6eb5ae*/
   {
     v9 = *v4; /*0x6eb5b3*/
     v10 = (*(int (__thiscall **)(_DWORD *, int, int))(*v4 + 740))(v4, v1[16], 1); /*0x6eb5ba*/
@@ -2833,13 +2833,13 @@ LABEL_72:
   {
     if ( !*(_BYTE *)(v12 + 144) ) /*0x6eb60b*/
       goto LABEL_67; /*0x6eb60b*/
-    if ( *(_DWORD *)(v12 + 108) && (MEMORY[0xA8E7AC] || !*(_BYTE *)(v12 + 129)) && !*(_BYTE *)(v12 + 1673) ) /*0x6eb63b*/
+    if ( *(_DWORD *)(v12 + 108) && (g_IKnowWhatImDoing || !*(_BYTE *)(v12 + 129)) && !*(_BYTE *)(v12 + 1673) ) /*0x6eb63b*/
     {
       v14 = *SessionClass::GetEntry((_DWORD *)v1[10], v21); /*0x6eb656*/
       if ( v14 == 54 || v14 == 53 ) /*0x6eb660*/
-        v15 = *((_DWORD *)MEMORY[0x8871E0] + 1480); /*0x6eb676*/
+        v15 = *((_DWORD *)g_RulesClass_Instance + 1480); /*0x6eb676*/
       else
-        v15 = *((_DWORD *)MEMORY[0x8871E0] + 1479); /*0x6eb668*/
+        v15 = *((_DWORD *)g_RulesClass_Instance + 1479); /*0x6eb668*/
       if ( ObjectClass::DistanceTo((void *)v12, this->spawnCell) <= v15 ) /*0x6eb68d*/
       {
         *(_BYTE *)(v12 + 1673) = 1; /*0x6eb6c5*/
@@ -2854,7 +2854,7 @@ LABEL_72:
     }
     if ( *(_BYTE *)(v12 + 144) /*0x6eb714*/
       && *(_DWORD *)(v12 + 108)
-      && (MEMORY[0xA8E7AC] || !*(_BYTE *)(v12 + 129))
+      && (g_IKnowWhatImDoing || !*(_BYTE *)(v12 + 129))
       && (*(_BYTE *)(v12 + 1673) || (*(int (__thiscall **)(int))(*(_DWORD *)v12 + 44))(v12) == 2) )
     {
       if ( v19 == 15 /*0x6eb733*/
@@ -2948,14 +2948,14 @@ void __thiscall TeamClass_UpdateMembers(int this)
         {
           if ( *(_BYTE *)(v2 + 144) /*0x6ebb4a*/
             && *(_DWORD *)(v2 + 108)
-            && (MEMORY[0xA8E7AC] || !*(_BYTE *)(v2 + 129))
+            && (g_IKnowWhatImDoing || !*(_BYTE *)(v2 + 129))
             && !*(_BYTE *)(v2 + 1673) )
           {
             v4 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), &v15); /*0x6ebb61*/
             if ( v4 == 54 || v4 == 53 ) /*0x6ebb6b*/
-              v5 = *((_DWORD *)MEMORY[0x8871E0] + 1480); /*0x6ebb80*/
+              v5 = *((_DWORD *)g_RulesClass_Instance + 1480); /*0x6ebb80*/
             else
-              v5 = *((_DWORD *)MEMORY[0x8871E0] + 1479); /*0x6ebb73*/
+              v5 = *((_DWORD *)g_RulesClass_Instance + 1479); /*0x6ebb73*/
             if ( ObjectClass::DistanceTo((void *)v2, this->spawnCell) <= v5 ) /*0x6ebb93*/
             {
               *(_BYTE *)(v2 + 1673) = 1; /*0x6ebc8d*/
@@ -2975,7 +2975,7 @@ void __thiscall TeamClass_UpdateMembers(int this)
             v11 = 0; /*0x6ebbed*/
           if ( !*(_BYTE *)(v2 + 144) /*0x6ebc5c*/
             || !*(_DWORD *)(v2 + 108)
-            || !MEMORY[0xA8E7AC] && *(_BYTE *)(v2 + 129)
+            || !g_IKnowWhatImDoing && *(_BYTE *)(v2 + 129)
             || !*(_BYTE *)(v2 + 1673) && (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) != 2
             || (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 388))(v2) == 16
             || *(_DWORD *)(v2 + 180) == 16 )
@@ -2984,9 +2984,9 @@ void __thiscall TeamClass_UpdateMembers(int this)
           }
           v6 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), &v16); /*0x6ebc6f*/
           if ( v6 == 54 || v6 == 53 ) /*0x6ebc79*/
-            v13 = *((_DWORD *)MEMORY[0x8871E0] + 1480); /*0x6ebca4*/
+            v13 = *((_DWORD *)g_RulesClass_Instance + 1480); /*0x6ebca4*/
           else
-            v13 = *((_DWORD *)MEMORY[0x8871E0] + 1479); /*0x6ebc87*/
+            v13 = *((_DWORD *)g_RulesClass_Instance + 1479); /*0x6ebc87*/
           if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v2 + 84))(v2) ) /*0x6ebcac*/
             v13 *= 2; /*0x6ebcba*/
           v12 = 1; /*0x6ebcc4*/
@@ -3055,7 +3055,7 @@ LABEL_80:
         {
           if ( !*(_DWORD *)(v2 + 1444) ) /*0x6ebd61*/
             goto LABEL_87; /*0x6ebd61*/
-          if ( ObjectClass::DistanceTo((void *)v2, *(_DWORD *)(v2 + 1444)) <= *((_DWORD *)MEMORY[0x8871E0] + 1478) ) /*0x6ebd7f*/
+          if ( ObjectClass::DistanceTo((void *)v2, *(_DWORD *)(v2 + 1444)) <= *((_DWORD *)g_RulesClass_Instance + 1478) ) /*0x6ebd7f*/
           {
             if ( !*(_DWORD *)(v2 + 1652) ) /*0x6ebd85*/
               WinAPI::Wrapper(-2147467261); /*0x6ebd94*/
@@ -3114,14 +3114,14 @@ char __thiscall sub_6EBF50(int this)
       {
         if ( *(_BYTE *)(v3 + 144) /*0x6ebfc3*/
           && *(_DWORD *)(v3 + 108)
-          && (MEMORY[0xA8E7AC] || !*(_BYTE *)(v3 + 129))
+          && (g_IKnowWhatImDoing || !*(_BYTE *)(v3 + 129))
           && (*(_BYTE *)(v3 + 1673) || (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) == 2) )
         {
           v4 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), v14); /*0x6ebfd6*/
           if ( v4 == 54 || v4 == 53 ) /*0x6ebfe0*/
-            v5 = MEMORY[0x8871E0][1].?[1]; /*0x6ebff5*/
+            v5 = g_RulesClass_Instance[1].?[1]; /*0x6ebff5*/
           else
-            v5 = MEMORY[0x8871E0][1].?[0]; /*0x6ebfe8*/
+            v5 = g_RulesClass_Instance[1].?[0]; /*0x6ebfe8*/
           if ( (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) == 2 ) /*0x6ec005*/
             v5 *= 3; /*0x6ec007*/
           if ( *(_BYTE *)(this->buildingType + 167) /*0x6ec01c*/
@@ -3222,23 +3222,23 @@ int __thiscall TeamClass::_vt13(int this, int *a2)
     Power::TimerProcess(v8); /*0x6ec619*/
   }
   v9 = this->guardAreaTimer; /*0x6ec61e*/
-  v10 = *(_DWORD *)(this + 96); /*0x6ec621*/
+  v10 = this->q060; /*0x6ec621*/
   if ( v9 != -1 ) /*0x6ec627*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v9 >= v10 ) /*0x6ec633*/
+    if ( (int)g_CurrentFrame - v9 >= v10 ) /*0x6ec633*/
       v10 = 0; /*0x6ec639*/
     else
-      v10 -= (int)MEMORY[0xA8ED84] - v9; /*0x6ec635*/
+      v10 -= (int)g_CurrentFrame - v9; /*0x6ec635*/
   }
   Power::TimerProcess(v10); /*0x6ec63e*/
   v11 = this->suspendTimer; /*0x6ec643*/
-  v12 = *(_DWORD *)(this + 108); /*0x6ec646*/
+  v12 = this->q06C; /*0x6ec646*/
   if ( v11 != -1 ) /*0x6ec64c*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v11 >= v12 ) /*0x6ec658*/
+    if ( (int)g_CurrentFrame - v11 >= v12 ) /*0x6ec658*/
       v12 = 0; /*0x6ec65e*/
     else
-      v12 -= (int)MEMORY[0xA8ED84] - v11; /*0x6ec65a*/
+      v12 -= (int)g_CurrentFrame - v11; /*0x6ec65a*/
   }
   Power::TimerProcess(v12); /*0x6ec663*/
   v13 = this->tag; /*0x6ec668*/

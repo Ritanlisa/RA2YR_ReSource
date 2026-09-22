@@ -12,8 +12,8 @@ int __thiscall Mixer_ReleaseChannel(int **this)
   int *v3; // edi
   int v4; // eax
 
-  result = MEMORY[0x87E2A0]; /*0x406060*/
-  if ( !MEMORY[0x87E2A0] ) /*0x40606e*/
+  result = g_AudioConfigState; /*0x406060*/
+  if ( !g_AudioConfigState ) /*0x40606e*/
     goto LABEL_14; /*0x40606e*/
   if ( *(this + 3) != &MEMORY[0x87E294] ) /*0x406077*/
     goto LABEL_14; /*0x406077*/

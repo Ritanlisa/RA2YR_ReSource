@@ -182,7 +182,7 @@ int __thiscall AudioStream_SetupPlayback(int this)
   }
   if ( (*(_BYTE *)(v4 + 16) & 0x40) != 0 ) /*0x404751*/
     --this->AudioStream_field_0x1E0; /*0x404753*/
-  if ( *(int *)(this + 480) <= 0 ) /*0x404761*/
+  if ( this->q1E0 <= 0 ) /*0x404761*/
   {
     *(_DWORD *)(v4 + 12) = 0; /*0x404763*/
     return 0; /*0x40476a*/
@@ -231,7 +231,7 @@ int __thiscall AudioStream_SelectRandom(int this)
   {
     if ( (v3 & 2) != 0 ) /*0x4047de*/
     {
-      v5 = Random::Range(MEMORY[0x886B88], 0, v4 - 1); /*0x4047ea*/
+      v5 = Random::Range(Randomizer_Global, 0, v4 - 1); /*0x4047ea*/
       v6 = this->AudioStream_field_0x1E0 - 1; /*0x404803*/
       this->AudioStream_field_0xAC = *(_DWORD *)(this + 4 * v5 + 352); /*0x404804*/
       v7 = v5; /*0x40480c*/
@@ -292,10 +292,10 @@ void AudioStream_CleanupChannels()
   _DWORD **v4; // edi
   void **v5; // [esp+8h] [ebp-4h]
 
-  if ( MEMORY[0x87E2A0] ) /*0x404e7c*/
+  if ( g_AudioConfigState ) /*0x404e7c*/
   {
-    v0 = (void **)MEMORY[0x87E180]; /*0x404e82*/
-    if ( MEMORY[0x87E180] != &MEMORY[0x87E180] ) /*0x404e8e*/
+    v0 = (void **)g_AudioStreamObject; /*0x404e82*/
+    if ( g_AudioStreamObject != &g_AudioStreamObject ) /*0x404e8e*/
     {
       do /*0x404fb6*/
       {
@@ -347,7 +347,7 @@ void AudioStream_CleanupChannels()
         v0 = v1; /*0x404fa7*/
         --MEMORY[0x87E28C]; /*0x404fb0*/
       }
-      while ( v1 != &MEMORY[0x87E180] ); /*0x404fb6*/
+      while ( v1 != &g_AudioStreamObject ); /*0x404fb6*/
     }
   }
 }
@@ -535,25 +535,25 @@ int __thiscall AudioStream_ReadSamples(_DWORD *this, const void *a2)
       {
         if ( *v2 == 1 ) /*0x4a347f*/
         {
-          v5 = MEMORY[0x887644]; /*0x4a3485*/
-          if ( MEMORY[0x887644] ) /*0x4a348d*/
+          v5 = g_ZBufferDescriptor; /*0x4a3485*/
+          if ( g_ZBufferDescriptor ) /*0x4a348d*/
           {
-            if ( MEMORY[0x87E8A4] ) /*0x4a3499*/
+            if ( g_VisibleSurfaceDescriptor ) /*0x4a3499*/
             {
               v6 = (_WORD *)v16[9]; /*0x4a34a6*/
               v7 = 0; /*0x4a34aa*/
               v8 = v16[4] >> 1; /*0x4a34ac*/
               v14 = v16[4] >> 1; /*0x4a34b0*/
-              v13 = *((_DWORD *)MEMORY[0x887644] + 11); /*0x4a34b4*/
+              v13 = *((_DWORD *)g_ZBufferDescriptor + 11); /*0x4a34b4*/
               if ( v13 ) /*0x4a34b8*/
               {
                 do /*0x4a353c*/
                 {
                   SamplePosition = (_WORD *)Audio::GetSamplePosition((int)v5, 0, v7 - v5[1]); /*0x4a34d4*/
                   v10 = (_WORD *)StreamClass::ReadAndSeek( /*0x4a34df*/
-                                   (int)MEMORY[0x87E8A4],
+                                   (int)g_VisibleSurfaceDescriptor,
                                    0,
-                                   v7 - *((_DWORD *)MEMORY[0x87E8A4] + 1));
+                                   v7 - *((_DWORD *)g_VisibleSurfaceDescriptor + 1));
                   if ( !SamplePosition || !v10 ) /*0x4a34ee*/
                     break; /*0x4a34ee*/
                   if ( v8 ) /*0x4a34f2*/
@@ -564,14 +564,14 @@ int __thiscall AudioStream_ReadSamples(_DWORD *this, const void *a2)
                         *v6 = 0; /*0x4a3502*/
                       else
                         *v6 = *SamplePosition; /*0x4a34fd*/
-                      v5 = MEMORY[0x887644]; /*0x4a3507*/
+                      v5 = g_ZBufferDescriptor; /*0x4a3507*/
                       v11 = SamplePosition + 1; /*0x4a350d*/
                       ++v6; /*0x4a3510*/
-                      if ( (unsigned int)(SamplePosition + 1) >= *((_DWORD *)MEMORY[0x887644] + 7) ) /*0x4a3516*/
-                        v11 = (_WORD *)((char *)v11 - *((_DWORD *)MEMORY[0x887644] + 8)); /*0x4a3518*/
+                      if ( (unsigned int)(SamplePosition + 1) >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x4a3516*/
+                        v11 = (_WORD *)((char *)v11 - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x4a3518*/
                       SamplePosition = v11; /*0x4a351b*/
-                      if ( (unsigned int)++v10 >= *((_DWORD *)MEMORY[0x87E8A4] + 7) ) /*0x4a3529*/
-                        v10 = (_WORD *)((char *)v10 - *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4a352b*/
+                      if ( (unsigned int)++v10 >= *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x4a3529*/
+                        v10 = (_WORD *)((char *)v10 - *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4a352b*/
                       --v8; /*0x4a352e*/
                     }
                     while ( v8 ); /*0x4a352f*/
@@ -579,7 +579,7 @@ int __thiscall AudioStream_ReadSamples(_DWORD *this, const void *a2)
                   }
                   else
                   {
-                    v5 = MEMORY[0x887644]; /*0x4a3540*/
+                    v5 = g_ZBufferDescriptor; /*0x4a3540*/
                   }
                   ++v7; /*0x4a3539*/
                 }
@@ -790,9 +790,9 @@ char __thiscall AudioStream::DrawWaveform(
                               *(int *)&MEMORY[0x87F8E4].__pad_5568[10232],
                               aP1a,
                               (MouseClass *)(v79 - v28));
-  v30 = MEMORY[0x87E8A4]->field_4; /*0x4bed5c*/
+  v30 = g_VisibleSurfaceDescriptor->field_4; /*0x4bed5c*/
   v77 = v79; /*0x4bed5f*/
-  v31 = StreamClass::ReadAndSeek((int)MEMORY[0x87E8A4], aP1a, (MouseClass *)(v79 - (_DWORD)v30)); /*0x4bed67*/
+  v31 = StreamClass::ReadAndSeek((int)g_VisibleSurfaceDescriptor, aP1a, (MouseClass *)(v79 - (_DWORD)v30)); /*0x4bed67*/
   v32 = (_WORD *)v31; /*0x4bed7a*/
   LOWORD(v31) = *(_WORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 4) /*0x4bed87*/
               + *(_WORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 36);
@@ -859,8 +859,8 @@ char __thiscall AudioStream::DrawWaveform(
             if ( (unsigned int)SamplePosition >= v56 ) /*0x4bf508*/
               SamplePosition = (_WORD *)((char *)SamplePosition /*0x4bf50a*/
                                        - *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
-            if ( (unsigned int)++v32 >= *(_DWORD *)&MEMORY[0x87E8A4]->__pad_18[4] ) /*0x4bf518*/
-              v32 = (_WORD *)((char *)v32 - *(_DWORD *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf51a*/
+            if ( (unsigned int)++v32 >= *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[4] ) /*0x4bf518*/
+              v32 = (_WORD *)((char *)v32 - *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[8]); /*0x4bf51a*/
             aP4c = (IUnknown *)((char *)aP4c - v96); /*0x4bf52d*/
           }
           if ( v62 > 0 ) /*0x4bf53a*/
@@ -894,13 +894,13 @@ char __thiscall AudioStream::DrawWaveform(
           if ( v86 <= 0 ) /*0x4bf5f2*/
           {
             v59 = v32; /*0x4bf609*/
-            if ( (unsigned int)v32 < *(_DWORD *)MEMORY[0x87E8A4]->__pad_18 ) /*0x4bf60e*/
-              v59 = (_WORD *)((char *)v32 + *(_DWORD *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf613*/
+            if ( (unsigned int)v32 < *(_DWORD *)g_VisibleSurfaceDescriptor->__pad_18 ) /*0x4bf60e*/
+              v59 = (_WORD *)((char *)v32 + *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[8]); /*0x4bf613*/
             v32 = v59; /*0x4bf615*/
           }
-          else if ( (unsigned int)v32 >= *(_DWORD *)&MEMORY[0x87E8A4]->__pad_18[4] ) /*0x4bf5fc*/
+          else if ( (unsigned int)v32 >= *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[4] ) /*0x4bf5fc*/
           {
-            v32 = (_WORD *)((char *)v32 - *(_DWORD *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf5fe*/
+            v32 = (_WORD *)((char *)v32 - *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[8]); /*0x4bf5fe*/
           }
           --v72; /*0x4bf61c*/
         }
@@ -915,7 +915,7 @@ char __thiscall AudioStream::DrawWaveform(
       v73[0] = 0; /*0x4bf170*/
       if ( v34 > 0 ) /*0x4bf174*/
       {
-        v48 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4bf17a*/
+        v48 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x4bf17a*/
         do /*0x4bf39a*/
         {
           v49 = (unsigned __int16)*v32; /*0x4bf18d*/
@@ -929,7 +929,7 @@ char __thiscall AudioStream::DrawWaveform(
             *(_WORD *)(v99 + 2 * v73[0]) = ((v49 * (v68 + ((v33 * (unsigned __int8)v74) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4bf280*/
                                          | ((v49 * (v66 + ((v33 * BYTE2(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664])
                                          | ((v49 * (v67 + ((v33 * BYTE1(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672]);
-            v48 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4bf284*/
+            v48 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x4bf284*/
           }
           if ( (int)aP4b > 0 ) /*0x4bf293*/
           {
@@ -948,19 +948,19 @@ char __thiscall AudioStream::DrawWaveform(
               SamplePosition = (_WORD *)((char *)SamplePosition /*0x4bf2d8*/
                                        - *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
             }
-            v48 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4bf2f5*/
+            v48 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x4bf2f5*/
             v100 += v65; /*0x4bf2fb*/
             v32 += v86; /*0x4bf309*/
             if ( v86 <= 0 ) /*0x4bf30d*/
             {
               v52 = v32; /*0x4bf31c*/
-              if ( (unsigned int)v32 < *(_DWORD *)MEMORY[0x87E8A4]->__pad_18 ) /*0x4bf320*/
-                v52 = (_WORD *)((char *)v32 + *(_DWORD *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf325*/
+              if ( (unsigned int)v32 < *(_DWORD *)g_VisibleSurfaceDescriptor->__pad_18 ) /*0x4bf320*/
+                v52 = (_WORD *)((char *)v32 + *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[8]); /*0x4bf325*/
               v32 = v52; /*0x4bf327*/
             }
-            else if ( (unsigned int)v32 >= *(_DWORD *)&MEMORY[0x87E8A4]->__pad_18[4] ) /*0x4bf312*/
+            else if ( (unsigned int)v32 >= *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[4] ) /*0x4bf312*/
             {
-              v32 = (_WORD *)((char *)v32 - *(_DWORD *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf314*/
+              v32 = (_WORD *)((char *)v32 - *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[8]); /*0x4bf314*/
             }
           }
           if ( v61 > 0 ) /*0x4bf32f*/
@@ -987,7 +987,7 @@ char __thiscall AudioStream::DrawWaveform(
     aP4a = (IUnknown *)(aP2c - v37); /*0x4beed6*/
     if ( v37 > 0 ) /*0x4beedd*/
     {
-      v38 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4beee3*/
+      v38 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x4beee3*/
       v39 = 0; /*0x4beee9*/
       v71 = 0; /*0x4beeeb*/
       v73[0] = v37; /*0x4beeef*/
@@ -1004,7 +1004,7 @@ char __thiscall AudioStream::DrawWaveform(
           *(_WORD *)(v71 + v99) = ((v40 * (v68 + ((v33 * (unsigned __int8)v74) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4beff4*/
                                 | ((v40 * (v66 + ((v33 * BYTE2(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664])
                                 | ((v40 * (v67 + ((v33 * BYTE1(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672]);
-          v38 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4beff8*/
+          v38 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x4beff8*/
         }
         if ( v60 <= 0 ) /*0x4bf004*/
         {
@@ -1026,13 +1026,13 @@ char __thiscall AudioStream::DrawWaveform(
           SamplePosition = (_WORD *)((char *)SamplePosition /*0x4bf045*/
                                    - *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
         }
-        v38 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4bf065*/
+        v38 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x4bf065*/
         v32 += v86; /*0x4bf06b*/
         if ( v86 <= 0 ) /*0x4bf06f*/
           break; /*0x4bf06f*/
-        if ( (unsigned int)v32 < *(_DWORD *)&MEMORY[0x87E8A4]->__pad_18[4] ) /*0x4bf074*/
+        if ( (unsigned int)v32 < *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[4] ) /*0x4bf074*/
           goto LABEL_43; /*0x4bf074*/
-        v32 = (_WORD *)((char *)v32 - *(_DWORD *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf07d*/
+        v32 = (_WORD *)((char *)v32 - *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[8]); /*0x4bf07d*/
         v43 = v65 + v100; /*0x4bf086*/
 LABEL_45:
         if ( (int)aP4a > 0 ) /*0x4bf0b9*/
@@ -1056,8 +1056,8 @@ LABEL_45:
           goto LABEL_52; /*0x4bf12c*/
       }
       v44 = v32; /*0x4bf08d*/
-      if ( (unsigned int)v32 < *(_DWORD *)MEMORY[0x87E8A4]->__pad_18 ) /*0x4bf091*/
-        v44 = (_WORD *)((char *)v32 + *(_DWORD *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf096*/
+      if ( (unsigned int)v32 < *(_DWORD *)g_VisibleSurfaceDescriptor->__pad_18 ) /*0x4bf091*/
+        v44 = (_WORD *)((char *)v32 + *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[8]); /*0x4bf096*/
       v32 = v44; /*0x4bf098*/
 LABEL_43:
       v43 = v65 + v100; /*0x4bf09a*/
@@ -1121,7 +1121,7 @@ int __thiscall AudioStream_CalcReadPos(int this)
     return -1; /*0x7bd2fd*/
   v3 = *(_DWORD *)(this + 1964); /*0x7bd303*/
   v4 = *(_DWORD *)(this + 1936); /*0x7bd30f*/
-  v5 = *(_DWORD *)(this + 156); /*0x7bd315*/
+  v5 = this->q09C; /*0x7bd315*/
   v6 = (char *)(v3 + *(_DWORD *)(this + 1960)); /*0x7bd31b*/
   v7 = v2 - v3; /*0x7bd31d*/
   v17 = *(_DWORD *)(this + 1936) / v5; /*0x7bd32b*/
@@ -1386,7 +1386,7 @@ int __thiscall AudioStream_ProcessStream(int this)
   {
     v5 = *(_BYTE *)(this + 420); /*0x7beaa8*/
     ++*(_DWORD *)(this + 1752); /*0x7beaae*/
-    if ( (v5 & 4) != 0 && (*(_BYTE *)(this + 336) & 4) == 0 ) /*0x7beac1*/
+    if ( (v5 & 4) != 0 && (this->q054 & 4) == 0 ) /*0x7beac1*/
     {
       v6 = *(_DWORD *)(v2 + 16); /*0x7beac9*/
       *v3 = v6; /*0x7beacc*/
@@ -1416,7 +1416,7 @@ unsigned int AudioStream::GetPosition()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall AudioStream_GetPosition(int this)
 {
-  return (unsigned int)(60 * (*(int (__cdecl **)(int))(this + 80))(this)) / *(_DWORD *)(this + 120) /*0x7c3982*/
+  return (unsigned int)(60 * (*(int (__cdecl **)(int))(this + 80))(this)) / this->q1E0 /*0x7c3982*/
        + *(_DWORD *)(this + 328);
 }
 }

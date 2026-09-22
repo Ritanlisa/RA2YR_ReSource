@@ -97,10 +97,10 @@ int __thiscall sub_6A74A0(_DWORD *this, int a2)
   v3 = (int)(this + 997 * *(this + 5351) + 1361); /*0x6a74d4*/
   *((_BYTE *)this + 3988 * *(this + 5351) + 5472) = 1; /*0x6a74db*/
   v4 = 26; /*0x6a74ed*/
-  if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x6a74e5*/
+  if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6a74e5*/
     v4 = 18; /*0x6a74f4*/
   v5 = 0; /*0x6a7507*/
-  v6 = 2 * ((MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v4 + MEMORY[0x886F94] - 7) / 50); /*0x6a7527*/
+  v6 = 2 * ((g_DSurface_ViewBounds - g_SidebarBounds - v4 + g_DSurface_SidebarBounds - 7) / 50); /*0x6a7527*/
   if ( v6 > 0 ) /*0x6a752b*/
   {
     do /*0x6a7570*/
@@ -111,7 +111,7 @@ int __thiscall sub_6A74A0(_DWORD *this, int a2)
     }
     while ( v5 < v6 ); /*0x6a7570*/
   }
-  MEMORY[0x884B8F] = 1; /*0x6a7574*/
+  g_CameoRenderFlag = 1; /*0x6a7574*/
   return Tactical::UpdateUIVisibility(this); /*0x6a7580*/
 }
 }
@@ -145,11 +145,11 @@ char __thiscall sub_6A87F0(int this, int a2, int a3)
     return 0; /*0x6a8815*/
   }
 LABEL_7:
-  if ( !MEMORY[0xA8E7AC] && a2 != 31 ) /*0x6a882b*/
+  if ( !g_IKnowWhatImDoing && a2 != 31 ) /*0x6a882b*/
     VoxClass::FindAndPlay(MEMORY[0x83FA64], -1); /*0x6a8837*/
   TabCameoListClass::AddCameo_ReplaceItAll((int *)this, a2, a3); /*0x6a8840*/
   *(_BYTE *)(this + 60) = 1; /*0x6a8848*/
-  MEMORY[0x884B8F] = 1; /*0x6a884c*/
+  g_CameoRenderFlag = 1; /*0x6a884c*/
   return 1; /*0x6a8847*/
 }
 }
@@ -170,11 +170,11 @@ char __thiscall sub_6A89E0(_DWORD *this, char a2)
   _DWORD *v8; // eax
   int v10; // [esp+4h] [ebp-4h]
 
-  v10 = *((_DWORD *)MEMORY[0xA8B230] + 3374); /*0x6a89f2*/
+  v10 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x6a89f2*/
   v2 = 26; /*0x6a89f8*/
   if ( v10 ) /*0x6a89fd*/
     v2 = 18; /*0x6a89ff*/
-  v3 = (MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v2 + MEMORY[0x886F94] - 7) / 50; /*0x6a8a43*/
+  v3 = (g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8a43*/
   if ( HouseClass_Player == (#375 *)MEMORY[0xAC1198] ) /*0x6a8a45*/
     v3 = 1; /*0x6a8a47*/
   if ( a2 ) /*0x6a8a52*/
@@ -194,7 +194,7 @@ char __thiscall sub_6A89E0(_DWORD *this, char a2)
     v5 = 26; /*0x6a8a85*/
     if ( v10 ) /*0x6a8a8a*/
       v5 = 18; /*0x6a8a8c*/
-    v6 = (MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v5 + MEMORY[0x886F94] - 7) / 50; /*0x6a8aaa*/
+    v6 = (g_DSurface_ViewBounds - g_SidebarBounds - v5 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8aaa*/
     if ( HouseClass_Player == (#375 *)MEMORY[0xAC1198] ) /*0x6a8aac*/
     {
       v7 = v6; /*0x6a8ab7*/
@@ -230,10 +230,10 @@ char __thiscall sub_6A93F0(int this)
 
   *(_BYTE *)(this + 28) = 1; /*0x6a93f8*/
   v2 = 26; /*0x6a9408*/
-  if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x6a9400*/
+  if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6a9400*/
     v2 = 18; /*0x6a940f*/
   v3 = 0; /*0x6a942f*/
-  v4 = MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v2 + MEMORY[0x886F94] - 7; /*0x6a9431*/
+  v4 = g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7; /*0x6a9431*/
   v5 = (unsigned int)((unsigned __int64)(1374389535LL * v4) >> 32) >> 31; /*0x6a943c*/
   v6 = 2 * (v4 / 50); /*0x6a9443*/
   if ( v6 > 0 ) /*0x6a9447*/
@@ -246,7 +246,7 @@ char __thiscall sub_6A93F0(int this)
     }
     while ( v3 < v6 ); /*0x6a9494*/
   }
-  MEMORY[0x884B8F] = 1; /*0x6a9498*/
+  g_CameoRenderFlag = 1; /*0x6a9498*/
   return v5; /*0x6a9496*/
 }
 }
@@ -554,7 +554,7 @@ bool __usercall Skirmish_Setup_Screen@<al>(int a1@<ebx>, int a2@<ebp>)
     MEMORY[0xAC1154] = 0; /*0x6ae3a6*/
   }
   CleanupFileTree(); /*0x6ae3b0*/
-  SaveConfigWOL(&MEMORY[0xA8B238]); /*0x6ae3ba*/
+  SaveConfigWOL(&g_GameMode_Current); /*0x6ae3ba*/
   if ( dwNewLong == 1472 ) /*0x6ae3c9*/
     Screen::Capture(1, 0, a1, a2); /*0x6ae3cf*/
   return dwNewLong == 1559; /*0x6ae3e0*/
@@ -641,11 +641,11 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
                                       1);
         *(_DWORD *)v28 = v2; /*0x6afe25*/
         v27 = v2; /*0x6afe29*/
-        if ( (_WORD)v2 == *(_WORD *)&MEMORY[0xB077F8].__pad_14B0[10512] /*0x6afe57*/
-          && v28[1] == *(_WORD *)&MEMORY[0xB077F8].__pad_14B0[10514]
+        if ( (_WORD)v2 == *(_WORD *)&g_OverlayTypeConfig.__pad_14B0[10512] /*0x6afe57*/
+          && v28[1] == *(_WORD *)&g_OverlayTypeConfig.__pad_14B0[10514]
           || (v2 = (SlaveManagerClass *)*BuildingClass::FindPlacementCells2(this, (SlaveManagerClass *)&v30, v2),
               v27 = v2,
-              v2 == *(SlaveManagerClass **)&MEMORY[0xB077F8].__pad_14B0[10512]) )
+              v2 == *(SlaveManagerClass **)&g_OverlayTypeConfig.__pad_14B0[10512]) )
         {
           this->q017 = 0; /*0x6afe67*/
           this->nextArrayIndex = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6afe74*/
@@ -767,8 +767,8 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
                                       *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6016) / 256,
                                       0);
         *(_DWORD *)v28 = v2; /*0x6b0096*/
-        if ( (_WORD)v2 == *(_WORD *)&MEMORY[0xB077F8].__pad_14B0[10512] /*0x6b00ac*/
-          && v28[1] == *(_WORD *)&MEMORY[0xB077F8].__pad_14B0[10514] )
+        if ( (_WORD)v2 == *(_WORD *)&g_OverlayTypeConfig.__pad_14B0[10512] /*0x6b00ac*/
+          && v28[1] == *(_WORD *)&g_OverlayTypeConfig.__pad_14B0[10514] )
         {
           v27 = *(SlaveManagerClass **)(*(int (__thiscall **)(_DWORD, int *, int, int))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 /*0x6b00e7*/
                                                                                       + 824))(

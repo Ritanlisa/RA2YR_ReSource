@@ -13,18 +13,18 @@ int __thiscall FlyLocomotionClass::LocomotionClass(int this)
   LocomotionClass::Init((_DWORD *)this); /*0x4cc9a3*/
   this->AirportBound = 0; /*0x4cc9ad*/
   this->MovingDestination = MEMORY[0x8B3C78]; /*0x4cc9b6*/
-  *(_DWORD *)(this + 32) = MEMORY[0x8B3C7C]; /*0x4cc9be*/
-  *(_DWORD *)(this + 36) = MEMORY[0x8B3C80]; /*0x4cc9c7*/
+  this->Owner = MEMORY[0x8B3C7C]; /*0x4cc9be*/
+  this->q090 = MEMORY[0x8B3C80]; /*0x4cc9c7*/
   this->XYZ2 = MEMORY[0x8B3C78]; /*0x4cc9d3*/
   *(_DWORD *)(this + 44) = MEMORY[0x8B3C7C]; /*0x4cc9dc*/
   v2 = MEMORY[0x8B3C80]; /*0x4cc9df*/
-  *(_DWORD *)(this + 64) = 0; /*0x4cc9e5*/
-  *(_DWORD *)(this + 72) = 0; /*0x4cc9e8*/
+  this->Powered = 0; /*0x4cc9e5*/
+  this->q012 = 0; /*0x4cc9e8*/
   this->HasMoveOrder = 0; /*0x4cc9eb*/
   this->FlightLevel = 0; /*0x4cc9ee*/
   this->CurrentSpeed = 0; /*0x4cc9f1*/
-  *(_DWORD *)(this + 76) = 0; /*0x4cc9f4*/
-  *(_BYTE *)(this + 80) = 0; /*0x4cc9f7*/
+  this->IsTakingOff = 0; /*0x4cc9f4*/
+  this->RefCount = 0; /*0x4cc9f7*/
   *(_BYTE *)(this + 81) = 0; /*0x4cc9fa*/
   *(_BYTE *)(this + 82) = 0; /*0x4cc9fd*/
   this->FlyLocomotionClass_field_bool_53 = 0; /*0x4cca00*/
@@ -32,8 +32,8 @@ int __thiscall FlyLocomotionClass::LocomotionClass(int this)
   this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
   this->IsElevating = 0; /*0x4cca09*/
   *(_DWORD *)this = &FlyLocomotionClass::`vftable'; /*0x4cca0c*/
-  *(_DWORD *)(this + 4) = &vt_FlyLocomotionClass; /*0x4cca12*/
-  *(_DWORD *)(this + 48) = v2; /*0x4cca1b*/
+  this->vtable2 = &vt_FlyLocomotionClass; /*0x4cca12*/
+  this->LinkedTo = v2; /*0x4cca1b*/
   return this; /*0x4cca1e*/
 }
 }
@@ -76,7 +76,7 @@ void __stdcall FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   v10 = &vt_DynamicVectorClass_ObjectClass; /*0x4cfecd*/
   v15 = 10; /*0x4cfed3*/
   v14 = 0; /*0x4cfed7*/
-  if ( !MEMORY[0xA8B238][0] /*0x4cfeef*/
+  if ( !g_GameMode_Current[0] /*0x4cfeef*/
     || (v2 = *(_DWORD *)(*(_DWORD *)(a1 + 8) + 540), *(_DWORD *)(v2 + 22016) == -1)
     || (v22 = 1, (unsigned __int8)House::IsCurrentPlayer((#375 *)v2)) )
   {
@@ -102,11 +102,11 @@ void __stdcall FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
       && *(_BYTE *)(v4 + 144)
       && !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v4 + 132))(v4) + 3226)
       && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v4 + 132))(v4) + 561)
-      && ((*(_DWORD *)MEMORY[0xA8B230] & 0x800) == 0
+      && ((*(_DWORD *)g_ScenarioClass_Instance & 0x800) == 0
        || (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) != 1
        || !*(_BYTE *)(*(_DWORD *)(v4 + 1732) + 3598)) )
     {
-      if ( MEMORY[0xA8B238][0] /*0x4d003d*/
+      if ( g_GameMode_Current[0] /*0x4d003d*/
         && (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(*(_DWORD *)(a1 + 8) + 540))
         && !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)(v4 + 540) + 52) + 422)
         && ((*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 1
@@ -143,13 +143,13 @@ void __stdcall FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   {
     if ( v20 <= 0 ) /*0x4d00f8*/
       goto LABEL_45; /*0x4d00f8*/
-    v7 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, v20 - 1); /*0x4d0109*/
+    v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v20 - 1); /*0x4d0109*/
     v8 = v17; /*0x4d0111*/
     v9 = **(_DWORD **)(a1 + 8); /*0x4d0115*/
   }
   else
   {
-    v7 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, v14 - 1); /*0x4d00e2*/
+    v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v14 - 1); /*0x4d00e2*/
     v8 = Block; /*0x4d00ea*/
     v9 = **(_DWORD **)(a1 + 8); /*0x4d00ee*/
   }

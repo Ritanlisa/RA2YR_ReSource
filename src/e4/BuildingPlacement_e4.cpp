@@ -16,7 +16,7 @@ char __thiscall BuildingPlacement_Activate(int this, int a2, _DWORD *a3)
 
   if ( (#375 *)this != HouseClass_Player ) /*0x4fb84c*/
     return 0; /*0x4fb84c*/
-  if ( MEMORY[0x880990] ) /*0x4fb859*/
+  if ( g_RadarBlipManager ) /*0x4fb859*/
     return 0; /*0x4fb859*/
   v4 = a2; /*0x4fb85f*/
   if ( !a2 ) /*0x4fb865*/
@@ -30,11 +30,11 @@ char __thiscall BuildingPlacement_Activate(int this, int a2, _DWORD *a3)
   MEMORY[0x88099A] = 0; /*0x4fb894*/
   MEMORY[0x88099B] = 0; /*0x4fb89b*/
   MEMORY[0x88099C] = 0; /*0x4fb8a2*/
-  MEMORY[0x8809A0] = -1; /*0x4fb8a9*/
+  g_BuildingPlacementState = -1; /*0x4fb8a9*/
   v6 = v5[328]; /*0x4fb8b3*/
-  MEMORY[0x88098C] = (int)v5; /*0x4fb8b9*/
-  MEMORY[0x880990] = v6; /*0x4fb8bf*/
-  MEMORY[0x880994] = *(_DWORD *)(this + 48); /*0x4fb8c7*/
+  g_RadarBlipPool = (int)v5; /*0x4fb8b9*/
+  g_RadarBlipManager = v6; /*0x4fb8bf*/
+  MEMORY[0x880994] = this->q00C; /*0x4fb8c7*/
   v7 = (const void *)(*(int (__thiscall **)(_DWORD *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
   Mouse::SetBounds((int)&MEMORY[0x87F7E8], v7); /*0x4fb8df*/
   v8 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v4 + 440))(v4, &a2); /*0x4fb8ed*/
@@ -113,7 +113,7 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
     {
       if ( ObjectClass::HasLinkedObject(this->BuildingPlacement_field_0x0C) ) /*0x54c5b5*/
       {
-        v7 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 7); /*0x54c5d6*/
+        v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x54c5d6*/
         v8 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 444))(this->BuildingPlacement_field_0x0C); /*0x54c5da*/
         v9 = **(_DWORD **)(this + 12); /*0x54c5e6*/
         NeighbourContent = Cell::GetNeighbourContent(v8, v7); /*0x54c5ea*/
@@ -123,7 +123,7 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
         (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v11 + 292))(v11, 0); /*0x54c603*/
         v12 = *(char **)(this + 12); /*0x54c609*/
         v12[116] = v9; /*0x54c60d*/
-        *(_DWORD *)(this + 80) = 3; /*0x54c610*/
+        this->q014 = 3; /*0x54c610*/
       }
       else
       {
@@ -134,8 +134,8 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
         LOBYTE(v12) = (*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v14 + 292))(v14, 0); /*0x54c63b*/
         *(_BYTE *)(this->BuildingPlacement_field_0x0C + 116) = v15; /*0x54c645*/
         v16 = *(_DWORD *)(this + 44); /*0x54c648*/
-        *(_DWORD *)(this + 80) = 2; /*0x54c64b*/
-        *(_DWORD *)(this + 128) = v16; /*0x54c652*/
+        this->q014 = 2; /*0x54c64b*/
+        this->q020 = v16; /*0x54c652*/
       }
       return (char)v12; /*0x54c61d*/
     }
@@ -149,7 +149,7 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
     LOBYTE(v17) = Input::OffsetToDirection((_DWORD *)(this + 64)); /*0x54c679*/
     v18 = v17; /*0x54c684*/
     if ( (unsigned __int8)BuildingPlacement::IsPlacementFlagSet(v17, BYTE1(v5[80]) & 1) /*0x54c699*/
-      || (v47 = 0, *(_BYTE *)(this + 144)) )
+      || (v47 = 0, this->q090) )
     {
       v47 = 1; /*0x54c6a8*/
     }
@@ -160,15 +160,15 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
     {
       if ( !v47 /*0x54c70c*/
         || (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], (_DWORD *)(this + 64)) + 80) & 0x100) == 0
-        && (v48 > 2 || v48 == 2 && !*(_BYTE *)(this + 144)) )
+        && (v48 > 2 || v48 == 2 && !this->q090) )
       {
         LOBYTE(v12) = (*(int (__stdcall **)(int))(this->BuildingPlacement_field_0x04 + 72))(this + 4); /*0x54ca43*/
         return (char)v12; /*0x54ca4d*/
       }
-      if ( !*(_BYTE *)(this + 144) ) /*0x54c71a*/
+      if ( !this->q090 ) /*0x54c71a*/
       {
         v20 = this->BuildingPlacement_field_0x0C; /*0x54c724*/
-        *(_BYTE *)(this + 144) = 1; /*0x54c727*/
+        this->q090 = 1; /*0x54c727*/
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v20 + 240))(v20, this + 64); /*0x54c731*/
       }
     }
@@ -182,14 +182,14 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
       {
         if ( !*(_BYTE *)(this->BuildingPlacement_field_0x0C + 1709) ) /*0x54c75d*/
         {
-          DeployDir = MEMORY[0x8871E0]->DeployDir; /*0x54c776*/
+          DeployDir = g_RulesClass_Instance->DeployDir; /*0x54c776*/
           Value = ProgressTimer::GetValue((_WORD *)(this + 84), &v48); /*0x54c77a*/
           LOBYTE(v24) = 0; /*0x54c77f*/
           HIBYTE(v24) = DeployDir; /*0x54c781*/
           if ( *(_WORD *)Value != v24 ) /*0x54c786*/
           {
             LOBYTE(v25) = 0; /*0x54c78d*/
-            HIBYTE(v25) = MEMORY[0x8871E0]->DeployDir; /*0x54c793*/
+            HIBYTE(v25) = g_RulesClass_Instance->DeployDir; /*0x54c793*/
             LOWORD(v48) = v25; /*0x54c799*/
             FacingClass::Update((char *)(this + 84), &v48); /*0x54c79e*/
           }
@@ -198,7 +198,7 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
     }
   }
   v26 = this->BuildingPlacement_field_0x0C; /*0x54c7a3*/
-  *(_DWORD *)(this + 128) = 0; /*0x54c7a6*/
+  this->q020 = 0; /*0x54c7a6*/
   v27 = (*(int (__thiscall **)(int))(*(_DWORD *)v26 + 456))(v26); /*0x54c7b8*/
   v12 = *(char **)(this + 12); /*0x54c7ba*/
   if ( !v12[140] ) /*0x54c7bd*/
@@ -240,7 +240,7 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
     }
     (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 292))(this->BuildingPlacement_field_0x0C, 1); /*0x54c8c5*/
     *v2 = dword_ABC5A8; /*0x54c8d2*/
-    *(_DWORD *)(this + 68) = dword_ABC5AC; /*0x54c8db*/
+    this->q044 = dword_ABC5AC; /*0x54c8db*/
     v33 = this->BuildingPlacement_field_0x0C; /*0x54c8e4*/
     *(_DWORD *)(this + 72) = dword_ABC5B0; /*0x54c8e7*/
     *(_BYTE *)(this + 76) = 0; /*0x54c8ea*/
@@ -281,9 +281,9 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
             v38 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)v37 + 444))(v37); /*0x54c9c6*/
             CellClass::AttachObject(v38, 0); /*0x54c9ce*/
           }
-          GadgetGrid::RemoveItem(MEMORY[0x887888], this->BuildingPlacement_field_0x0C); /*0x54c9dc*/
+          GadgetGrid::RemoveItem(g_CellClassManager, this->BuildingPlacement_field_0x0C); /*0x54c9dc*/
           v39 = this->BuildingPlacement_field_0x0C; /*0x54c9e1*/
-          *(_DWORD *)(this + 80) = 0; /*0x54c9e4*/
+          this->q014 = 0; /*0x54c9e4*/
           v45 = v39; /*0x54c9eb*/
           v40 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)v39 + 444))(v39); /*0x54c9ee*/
           CrateClass::ProcessPickup(v40, v45); /*0x54c9f6*/
@@ -292,7 +292,7 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
           *(_BYTE *)(this->BuildingPlacement_field_0x0C + 1063) = 0; /*0x54ca08*/
           *(_BYTE *)(this->BuildingPlacement_field_0x0C + 1061) = 0; /*0x54ca12*/
           v41 = this->BuildingPlacement_field_0x0C; /*0x54ca19*/
-          *(_BYTE *)(this + 144) = 0; /*0x54ca1e*/
+          this->q090 = 0; /*0x54ca1e*/
           if ( v41 )
           {
             v12 = (char *)(*(int (__thiscall **)(int))(*(_DWORD *)v41 + 44))(v41); /*0x54ca29*/

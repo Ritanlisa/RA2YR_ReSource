@@ -23,7 +23,7 @@ void __thiscall UnitClass_ProcessIdleOrders(_DWORD *this)
       if ( *(_BYTE *)(*(_DWORD *)(v4 + 1732) + 3432) ) /*0x6b7bd7*/
       {
         UnitClass::GetExitCell(v4, this->bombVisible); /*0x6b7beb*/
-        g_MissionQueueFrame = (int)MEMORY[0xA8ED84]; /*0x6b7bfa*/
+        g_MissionQueueFrame = (int)g_CurrentFrame; /*0x6b7bfa*/
         g_MissionQueueParam = v5; /*0x6b7bff*/
         g_MissionQueueType = 2; /*0x6b7c05*/
         UnitClass::ClearTargetRef(**(_DWORD **)(this->ambientSoundController + 4 * i)); /*0x6b7c16*/

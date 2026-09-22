@@ -33,7 +33,7 @@ char __thiscall Timer_StartDouble(_BYTE *this, double a2)
     *(this + 24) = 1; /*0x4a525e*/
     *(double *)this = a2 * 900.0; /*0x4a5262*/
     v3 = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
-    v4 = MEMORY[0xA8ED84]; /*0x4a5269*/
+    v4 = g_CurrentFrame; /*0x4a5269*/
     *(this + 25) = 0; /*0x4a5272*/
     *((_DWORD *)this + 2) = v4; /*0x4a5276*/
     *((_DWORD *)this + 3) = v6; /*0x4a527c*/

@@ -336,7 +336,7 @@ LABEL_85:
     v39 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530c4f*/
     if ( v39 ) /*0x530c59*/
     {
-      MEMORY[0x87E738] = MixFileClass::FromFile(v39, g_Str_File_THEMEMD_MIX, (int)&MEMORY[0x87F7E8][7270]); /*0x530c70*/
+      g_MixFile_THEME = MixFileClass::FromFile(v39, g_Str_File_THEMEMD_MIX, (int)&MEMORY[0x87F7E8][7270]); /*0x530c70*/
       goto LABEL_100; /*0x530c75*/
     }
   }
@@ -355,11 +355,11 @@ LABEL_85:
     v42 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530cbd*/
     if ( v42 ) /*0x530cc7*/
     {
-      MEMORY[0x87E738] = MixFileClass::FromFile(v42, g_Str_File_THEME_MIX, (int)&MEMORY[0x87F7E8][7270]); /*0x530cda*/
+      g_MixFile_THEME = MixFileClass::FromFile(v42, g_Str_File_THEME_MIX, (int)&MEMORY[0x87F7E8][7270]); /*0x530cda*/
       goto LABEL_100; /*0x530cdf*/
     }
   }
-  MEMORY[0x87E738] = 0; /*0x530ce1*/
+  g_MixFile_THEME = 0; /*0x530ce1*/
 LABEL_100:
   Debug::Log_0(); /*0x530ce7*/
   LOBYTE(MEMORY[0x87F7E8][539939]) = 1; /*0x530cf9*/
@@ -650,10 +650,10 @@ char __thiscall MixFile_LoadSide(int this)
     House_Load(); /*0x5352e3*/
     Game::InitializeToolTipColor(v17); /*0x5352ec*/
     CCFileClass::Construct(v22, unk_827DC8); /*0x5352fd*/
-    if ( CCINIClass::Load(&MEMORY[0x887208], (int)v22, 0, 0) ) /*0x535311*/
+    if ( CCINIClass::Load(&CCINIClass_INI_UIMD, (int)v22, 0, 0) ) /*0x535311*/
     {
-      v16 = MEMORY[0xA8B238][0] && MEMORY[0xA8B238][0] != 5; /*0x53532f*/
-      SidebarClass::ReadButtonList(&MEMORY[0x887208], v16); /*0x53533d*/
+      v16 = g_GameMode_Current[0] && g_GameMode_Current[0] != 5; /*0x53532f*/
+      SidebarClass::ReadButtonList(&CCINIClass_INI_UIMD, v16); /*0x53533d*/
       SidebarClass::LoadButtonSHPs(&MEMORY[0x87F7E8]); /*0x535347*/
       v22[0] = &vt_CCFileClass; /*0x535353*/
       v24 = 0; /*0x53535a*/

@@ -38,11 +38,11 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
 
   if ( (unsigned int)dword_ABCD44 >= PingPongBuffer::GetWriteOffset() || *(_DWORD *)(this->ParticleClass_field_0xAC + 744) ) /*0x62cedc*/
   {
-    if ( MEMORY[0xA8EB78] || (v4 = *(_DWORD *)(this->ParticleClass_field_0xAC + 788), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
+    if ( g_lParam || (v4 = *(_DWORD *)(this->ParticleClass_field_0xAC + 788), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
     {
       if ( MEMORY[0xA8ED6B] /*0x62cf58*/
         || !g_hWnd
-        || (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) == 0
+        || (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) == 0
         || (v27 = this->q027,
             v28 = this->q028,
             v29 = this->q029,
@@ -54,27 +54,27 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
           v26[0] = this->q027; /*0x62d036*/
           v26[1] = this->q028; /*0x62d048*/
           v26[2] = this->q029; /*0x62d054*/
-          Coord::To_Screen(MEMORY[0x887324], v26, &v27); /*0x62d058*/
-          v12 = MEMORY[0x886FA4] + v28; /*0x62d06b*/
-          v28 += MEMORY[0x886FA4]; /*0x62d071*/
+          Coord::To_Screen(g_TacticalClass_Instance, v26, &v27); /*0x62d058*/
+          v12 = g_Map_VisibleRect + v28; /*0x62d06b*/
+          v28 += g_Map_VisibleRect; /*0x62d071*/
           if ( v27 >= *a3 && v27 < *a3 + a3[2] ) /*0x62d086*/
           {
             v13 = a3[1]; /*0x62d08c*/
             if ( v12 >= v13 && v12 < v13 + a3[3] ) /*0x62d09e*/
             {
               v14 = *(unsigned __int16 *)StreamClass::ReadAndSeek( /*0x62d0b6*/
-                                           (int)MEMORY[0x87E8A4],
+                                           (int)g_VisibleSurfaceDescriptor,
                                            v27,
-                                           v12 - *((_DWORD *)MEMORY[0x87E8A4] + 1));
+                                           v12 - *((_DWORD *)g_VisibleSurfaceDescriptor + 1));
               if ( (_WORD)v14 ) /*0x62d0bb*/
               {
-                v15 = v28 - *((_DWORD *)MEMORY[0x887644] + 1); /*0x62d0d4*/
+                v15 = v28 - *((_DWORD *)g_ZBufferDescriptor + 1); /*0x62d0d4*/
                 v26[0] = v27; /*0x62d0d9*/
                 v16 = ZCoordToScreenY(this->q029); /*0x62d0e8*/
-                v17 = (unsigned __int16)(*((_WORD *)MEMORY[0x887644] + 2) + *((_WORD *)MEMORY[0x887644] + 18) - v28) /*0x62d10f*/
+                v17 = (unsigned __int16)(*((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18) - v28) /*0x62d10f*/
                     - v16
                     - 50;
-                if ( v17 < *(unsigned __int16 *)Audio::GetSamplePosition((int)MEMORY[0x887644], v26[0], v15) ) /*0x62d11e*/
+                if ( v17 < *(unsigned __int16 *)Audio::GetSamplePosition((int)g_ZBufferDescriptor, v26[0], v15) ) /*0x62d11e*/
                 {
                   v18 = this->ParticleClass_field_0xB4; /*0x62d124*/
                   if ( v18 ) /*0x62d12c*/
@@ -95,10 +95,10 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
                     v24 = (v14 * v24) >> 7; /*0x62d22d*/
                     v25 = (v14 * v25) >> 7; /*0x62d230*/
                   }
-                  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x887314] + 36))( /*0x62d288*/
-                    MEMORY[0x887314],
+                  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)g_DSurface_Hidden_2 + 36))( /*0x62d288*/
+                    g_DSurface_Hidden_2,
                     &v27,
-                    (unsigned __int16)(v23 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0])
+                    (unsigned __int16)(v23 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0])
                   | (unsigned __int16)(v24 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
                   | (unsigned __int16)(v25 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
                 }
@@ -115,7 +115,7 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
           {
             v9 = 10240; /*0x62cfb0*/
             v10 = (*(int (__thiscall **)(void *))(this->q7A0)(this); /*0x62cfb5*/
-            if ( MEMORY[0xA8EB78] == 2 ) /*0x62cfc2*/
+            if ( g_lParam == 2 ) /*0x62cfc2*/
             {
               v11 = this->Translucency; /*0x62cfc4*/
               if ( v11 == 25 ) /*0x62cfcd*/
@@ -132,7 +132,7 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
               }
             }
             DrawToSurfaceSHP( /*0x62d01d*/
-              MEMORY[0x887314],
+              g_DSurface_Hidden_2,
               MEMORY[0x87F6C0],
               v8,
               v10,

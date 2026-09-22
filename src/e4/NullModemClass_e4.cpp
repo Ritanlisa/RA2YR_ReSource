@@ -35,16 +35,16 @@ int __thiscall NullModemClass::_vt02(int this, int a2, int a3, int a4, int a5)
 {
   int result; // eax
 
-  if ( !*(_DWORD *)(this + 60) ) /*0x5f3563*/
+  if ( !this->linkOpen ) /*0x5f3563*/
     return 0; /*0x5f356a*/
   result = (*(int (__thiscall **)(_DWORD, int, int, int, _DWORD))(**(_DWORD **)(this + 56) + 8))( /*0x5f3586*/
-             *(_DWORD *)(this + 56),
+             this->linkObject,
              a2,
              a3,
              a4,
              0);
   if ( !result ) /*0x5f358b*/
-    ++*(_DWORD *)(this + 104); /*0x5f358d*/
+    ++this->q068; /*0x5f358d*/
   return result; /*0x5f356c*/
 }
 }
@@ -184,7 +184,7 @@ char __thiscall NullModemClass::sendData(int this)
   ResetEvent(*(HANDLE *)(this + 56)); /*0x77469b*/
   ResetEvent(*(HANDLE *)(this + 76)); /*0x7746a1*/
   v8 = *(void **)(this + 92); /*0x7746ad*/
-  *(_BYTE *)(this + 80) = 0; /*0x7746ae*/
+  this->q050 = 0; /*0x7746ae*/
   *(_BYTE *)(this + 81) = 0; /*0x7746b1*/
   if ( GetCommState(v8, &DCB) ) /*0x7746b4*/
   {
@@ -218,8 +218,8 @@ char __thiscall NullModemClass::sendData(int this)
     cbInQue = Stat.cbInQue; /*0x77477f*/
     cbOutQue = Stat.cbOutQue; /*0x774783*/
     v7 = Errors == 0; /*0x774787*/
-    *(_DWORD *)(this + 28) = Stat.cbInQue; /*0x774789*/
-    *(_DWORD *)(this + 32) = cbOutQue; /*0x77478c*/
+    this->q01C = Stat.cbInQue; /*0x774789*/
+    this->q020 = cbOutQue; /*0x77478c*/
     if ( !v7 ) /*0x77478f*/
       WinModemClass::LogCommErrors((_DWORD *)this, v4, *(_BYTE *)&Stat, cbInQue, cbOutQue); /*0x7747a5*/
   }
@@ -246,7 +246,7 @@ int __thiscall NullModemClass::receiveData(int this)
   ResetEvent(*(HANDLE *)(this + 56)); /*0x7747eb*/
   ResetEvent(*(HANDLE *)(this + 76)); /*0x7747f1*/
   v7 = *(void **)(this + 92); /*0x7747ff*/
-  *(_BYTE *)(this + 80) = 0; /*0x774800*/
+  this->q050 = 0; /*0x774800*/
   *(_BYTE *)(this + 81) = 0; /*0x774803*/
   if ( !SetCommState(v7, (LPDCB)(this + 8300)) ) /*0x774806*/
     Debug::Log(); /*0x774816*/
@@ -261,8 +261,8 @@ int __thiscall NullModemClass::receiveData(int this)
     cbInQue = Stat.cbInQue; /*0x77485f*/
     cbOutQue = Stat.cbOutQue; /*0x774863*/
     v5 = Errors == 0; /*0x774867*/
-    *(_DWORD *)(this + 28) = Stat.cbInQue; /*0x774869*/
-    *(_DWORD *)(this + 32) = cbOutQue; /*0x77486c*/
+    this->q01C = Stat.cbInQue; /*0x774869*/
+    this->q020 = cbOutQue; /*0x77486c*/
     if ( !v5 ) /*0x77486f*/
       WinModemClass::LogCommErrors((_DWORD *)this, v2, *(_BYTE *)&Stat, cbInQue, cbOutQue); /*0x774885*/
   }

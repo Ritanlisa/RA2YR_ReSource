@@ -104,9 +104,9 @@ LABEL_11:
   *(_DWORD *)(this + 3604) = 0; /*0x523899*/
   *(_DWORD *)(this + 3608) = 0; /*0x52389f*/
   *(_BYTE *)(this + 3612) = 0; /*0x5238a5*/
-  *(_DWORD *)(this + 3600) = 0; /*0x5238ab*/
+  this->q384 = 0; /*0x5238ab*/
   this->EliteOccupyWeapon = 0; /*0x5238b4*/
-  *(_DWORD *)(this + 3632) = 0; /*0x5238ba*/
+  this->q38C = 0; /*0x5238ba*/
   *(_DWORD *)(this + 3620) = 0; /*0x5238c0*/
   *(_DWORD *)(this + 3636) = 0; /*0x5238c3*/
   *(_BYTE *)(this + 3640) = 0; /*0x5238c9*/
@@ -114,15 +114,15 @@ LABEL_11:
   *(_DWORD *)(this + 3624) = 0; /*0x5238d9*/
   this->RadarVisible = 0; /*0x5238dc*/
   this->Crushable = 1; /*0x5238e2*/
-  *(_BYTE *)(this + 3276) = 0; /*0x5238e9*/
+  this->Repairable = 0; /*0x5238e9*/
   *(_DWORD *)(this + 3628) = 0; /*0x5238ef*/
-  *(_BYTE *)(this + 3277) = 0; /*0x5238f2*/
+  this->Crewed = 0; /*0x5238f2*/
   *(_BYTE *)(this + 3381) = 0; /*0x5238f8*/
   *(_BYTE *)(this + 3382) = 0; /*0x5238fe*/
   *(_BYTE *)(this + 3387) = 0; /*0x523904*/
-  *(_BYTE *)(this + 3384) = 1; /*0x52390a*/
-  *(_BYTE *)(this + 3479) = 1; /*0x523911*/
-  *(_BYTE *)(this + 3478) = 0; /*0x523918*/
+  this->SpawnRegenRate = 1; /*0x52390a*/
+  this->DisableShadowCache = 1; /*0x523911*/
+  this->DisableVoxelCache = 0; /*0x523918*/
   *(_BYTE *)(this + 3374) = 0; /*0x52391e*/
   this->Sequence = __2_YAPAXI_Z(0x5E8u); /*0x52392c*/
   for ( i = 0; i < 1512; *(_DWORD *)(i + this->Sequence - 20) = 0 ) /*0x523932*/
@@ -612,7 +612,7 @@ int __userpurge InfantryTypeClass::_vt05@<eax>(int a1@<ebp>, int a2, int a3, int
       DynamicVector::Add_Alt4(v4 + 916, &a4); /*0x524a56*/
     }
     for ( j = 0; j < v4[920]; ++j ) /*0x524a6c*/
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v4[917] + 4 * j)); /*0x524a7d*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4[917] + 4 * j)); /*0x524a7d*/
     if ( v4 != (_DWORD *)-3692 ) /*0x524a95*/
     {
       DynamicVectorClass::AnimTypeConstructor(v4 + 923, 0, 0); /*0x524a9d*/
@@ -625,12 +625,12 @@ int __userpurge InfantryTypeClass::_vt05@<eax>(int a1@<ebp>, int a2, int a3, int
       DynamicVector::Add_Alt4(v4 + 923, &a3); /*0x524ad8*/
     }
     for ( m = 0; m < v4[927]; ++m ) /*0x524aef*/
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v4[924] + 4 * m)); /*0x524b00*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4[924] + 4 * m)); /*0x524b00*/
     v12 = __2_YAPAXI_Z(0x5E8u); /*0x524b15*/
     v4[911] = v12; /*0x524b1d*/
     (*(void (__stdcall **)(int, void *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, v12, 1512, 0); /*0x524b2e*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4 + 897); /*0x524b3d*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4 + 904); /*0x524b4e*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 897); /*0x524b3d*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 904); /*0x524b4e*/
     return v13; /*0x524b53*/
   }
   return result; /*0x524b57*/

@@ -202,12 +202,12 @@ int __thiscall CellClass_Draw(int this, int a2, _DWORD *a3, int a4)
 
   if ( a2 )
   {
-    v5 = *(_DWORD *)(this + 36);
+    v5 = this->smudgeTypeIndex;
     if ( v5 )
     {
       BYTE1(v5) |= 0x80u;
       *a3 = v5;
-      if ( (a2 & 0x40) != 0 && (*(_BYTE *)(this + 32) & 0x10) != 0 )
+      if ( (a2 & 0x40) != 0 && (this->overlayTypeIndex & 0x10) != 0 )
       {
         BYTE1(v5) |= 0x40u;
         *a3 = v5;
@@ -218,7 +218,7 @@ int __thiscall CellClass_Draw(int this, int a2, _DWORD *a3, int a4)
       *a3 = 0;
     }
   }
-  v6 = *(_DWORD *)(this + 40);
+  v6 = this->attached1;
   if ( v6 )
     (*(void (__thiscall **)(int, int, _DWORD *, int))(*(_DWORD *)v6 + 76))(v6, a2, a3, this);
   return COMObject::ActivateThunk(a2, a3, 0);
@@ -757,19 +757,19 @@ _BYTE *__thiscall CellClass_RegisterForRedraw(int this, __int16 *a2)
   result = CellCoord::To_CellObj(&MEMORY[0x87F7E8], a2);
   if ( result[286] < 0xBu )
   {
-    if ( *(_DWORD *)(this + 268) > Object::ComputeAllocationSize() - 10 )
+    if ( this->CellClass_field_10C > Object::ComputeAllocationSize() - 10 )
       BuildingClass::RebuildOccupancy2((int **)this);
-    *(_DWORD *)(*(_DWORD *)(this + 280) + 8 * *(_DWORD *)(this + 268)) = *(_DWORD *)a2;
-    *(float *)(*(_DWORD *)(this + 280) + 8 * *(_DWORD *)(this + 268) + 4) = (float)((int)MEMORY[0xA8ED84]
+    *(_DWORD *)(this->unknown118 + 8 * this->CellClass_field_10C) = *(_DWORD *)a2;
+    *(float *)(this->unknown118 + 8 * this->CellClass_field_10C + 4) = (float)((int)MEMORY[0xA8ED84]
                                                                                   + (int)abs32(
                                                                                            Random::State(
                                                                                              (_DWORD *)MEMORY[0xA8B230]
                                                                                            + 134))
                                                                                   % 50);
-    v4 = *(_DWORD *)(this + 268);
+    v4 = this->CellClass_field_10C;
     v5 = *(_DWORD **)(this + 272);
-    v6 = *(_DWORD *)(this + 280) + 8 * v4;
-    *(_DWORD *)(this + 268) = v4 + 1;
+    v6 = this->unknown118 + 8 * v4;
+    this->CellClass_field_10C = v4 + 1;
     v7 = *v5 + 1;
     v14 = *(float *)(v6 + 4);
     v12 = v6;

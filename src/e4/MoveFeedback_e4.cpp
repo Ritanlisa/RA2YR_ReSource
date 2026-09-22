@@ -88,7 +88,7 @@ char __thiscall MoveFeedback_Process(void *this)
     {
       v3 = 0; /*0x7328ba*/
     }
-    Height = GetHeightMap(MEMORY[0x887324]); /*0x7328c2*/
+    Height = GetHeightMap(g_TacticalClass_Instance); /*0x7328c2*/
     v11 = Height; /*0x7328c7*/
     if ( Height > 0 ) /*0x7328cb*/
     {

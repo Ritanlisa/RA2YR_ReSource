@@ -57,7 +57,7 @@ _DWORD *__thiscall OverlayTypeClass::OverlayTypeClass(_DWORD *this, ObjectClass 
         !v4) )
   {
     MEMORY[0xA83D90] = (OverlayTypeClass *)&v3->__pad_0[1]; /*0x5fe36d*/
-    *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * (_DWORD)v3] = this; /*0x5fe377*/
+    *(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * (_DWORD)v3] = this; /*0x5fe377*/
     v3 = MEMORY[0xA83D90]; /*0x5fe37a*/
   }
   v5 = 0; /*0x5fe37f*/
@@ -69,7 +69,7 @@ LABEL_11:
   }
   else
   {
-    v6 = MEMORY[0xA83D84]; /*0x5fe385*/
+    v6 = g_BuildingTypeClass_Array; /*0x5fe385*/
     while ( *(_DWORD **)v6->__pad_0 != this ) /*0x5fe38d*/
     {
       ++v5; /*0x5fe38f*/
@@ -132,7 +132,7 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                     (CCINIClass *)&stru_830620.__pad_14B0[4264],
                     v4);
   v23 = this->NoUseTileLandType; /*0x5fe7d3*/
-  *(_DWORD *)(this + 676) = Int_Overwrite; /*0x5fe7da*/
+  this->Wall = Int_Overwrite; /*0x5fe7da*/
   this->NoUseTileLandType = INIClass::ReadBool_Overwrite( /*0x5fe7e5*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
@@ -162,7 +162,7 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
          (unsigned __int8 *)(this + 36),
          (CCINIClass *)&stru_830620.__pad_14B0[6796],
          this->IsRubble);
-  v10 = *(_BYTE *)(this + 690); /*0x5fe84d*/
+  v10 = this->q2B2; /*0x5fe84d*/
   this->IsRubble = v9; /*0x5fe853*/
   v11 = INIClass::ReadBool_Overwrite( /*0x5fe862*/
           (int)aP1,
@@ -170,7 +170,7 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
           (CCINIClass *)&stru_830620.__pad_14B0[6784],
           v10);
   v12 = *(AnimTypeClass **)(this + 668); /*0x5fe867*/
-  *(_BYTE *)(this + 690) = v11; /*0x5fe884*/
+  this->q2B2 = v11; /*0x5fe884*/
   if ( INIClass::GetString( /*0x5fe88a*/
          aP1,
          (INIClass *)(this + 36),
@@ -209,9 +209,9 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
             (INIClass *)(this + 36),
             (Color *)&stru_830620.__pad_14B0[6744],
             (Color *)(this + 694));
-  *(_WORD *)(this + 694) = *(_WORD *)Coord; /*0x5fe94f*/
+  this->q2B6 = *(_WORD *)Coord; /*0x5fe94f*/
   v25 = this->Explodes; /*0x5fe95e*/
-  *(_BYTE *)(this + 696) = *(_BYTE *)(Coord + 2); /*0x5fe965*/
+  this->q2B8 = *(_BYTE *)(Coord + 2); /*0x5fe965*/
   v16 = INIClass::ReadBool_Overwrite( /*0x5fe968*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
@@ -239,18 +239,18 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620.__pad_14B0[6676],
           v20);
-  v27 = *(_BYTE *)(this + 693); /*0x5fe9dd*/
+  v27 = this->tail_2B5; /*0x5fe9dd*/
   *(_BYTE *)(this + 691) = v21; /*0x5fe9e4*/
-  *(_BYTE *)(this + 693) = INIClass::ReadBool_Overwrite( /*0x5fe9ef*/
+  this->tail_2B5 = INIClass::ReadBool_Overwrite( /*0x5fe9ef*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
                              (CCINIClass *)&stru_830620.__pad_14B0[6668],
                              v27);
-  *(_BYTE *)(this + 692) = INIClass::ReadBool_Overwrite( /*0x5fea0a*/
+  this->q2B4 = INIClass::ReadBool_Overwrite( /*0x5fea0a*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
                              (CCINIClass *)&stru_830620.__pad_14B0[6656],
-                             *(_BYTE *)(this + 692));
+                             this->q2B4);
   return 1; /*0x5fea11*/
 }
 }
@@ -278,7 +278,7 @@ int __stdcall OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x5feb3e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x5feb45*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 668)); /*0x5feb56*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 668)); /*0x5feb56*/
     if ( !*(_BYTE *)(a1 + 687) ) /*0x5feb5b*/
     {
       if ( *(_BYTE *)(a1 + 556) ) /*0x5feb69*/
@@ -288,12 +288,12 @@ int __stdcall OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
           0,
           0,
           (const char *)(a1 + 504),
-          (const char *)&off_7E1BC6 + 112 * *((_DWORD *)MEMORY[0xA8B230] + 1174));
+          (const char *)&off_7E1BC6 + 112 * *((_DWORD *)g_ScenarioClass_Instance + 1174));
       }
       else
       {
         _makepath(Buffer, 0, 0, (const char *)(a1 + 504), Ext); /*0x5febc0*/
-        TheaterObjectTypeClassSpecificID(Buffer, *((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x5febd7*/
+        TheaterObjectTypeClassSpecificID(Buffer, *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x5febd7*/
       }
       if ( !*(_DWORD *)(a1 + 164) ) /*0x5febdc*/
         *(_DWORD *)(a1 + 164) = SearchMIXFile(Buffer, 1); /*0x5febf1*/
@@ -328,12 +328,12 @@ void *__thiscall sub_5FEDE0(int this)
         0,
         0,
         (const char *)(this + 504),
-        (const char *)&off_7E1BC6 + 112 * *((_DWORD *)MEMORY[0xA8B230] + 1174));
+        (const char *)&off_7E1BC6 + 112 * *((_DWORD *)g_ScenarioClass_Instance + 1174));
     }
     else if ( this->NewTheater ) /*0x5fee59*/
     {
       _makepath(Buffer, 0, 0, (const char *)(this + 504), Ext); /*0x5fee78*/
-      TheaterObjectTypeClassSpecificID(Buffer, *((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x5fee90*/
+      TheaterObjectTypeClassSpecificID(Buffer, *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x5fee90*/
     }
     CCFileClass::Construct(v4, Buffer); /*0x5fee9f*/
     EntireFile = CCFileClass::ReadEntireFile(v4); /*0x5feead*/

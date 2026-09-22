@@ -814,7 +814,7 @@ void __thiscall sub_428DE0(int this)
       Debug::Log(); /*0x428e0a*/
       __3_YAXPAX_Z(*(void **)(this + 164)); /*0x428e16*/
       this->AnimClass_field_0xA4 = 0; /*0x428e1e*/
-      *(_BYTE *)(this + 168) = 0; /*0x428e28*/
+      this->q0A8 = 0; /*0x428e28*/
     }
   }
 }
@@ -1899,7 +1899,7 @@ int __usercall sub_7298F0@<eax>(_DWORD *a1@<ecx>, int a2@<edi>)
     (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)a1[3] + 288))(a1[3], 0, 0); /*0x729a43*/
     v10 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)a1[3] + 132))(a1[3]); /*0x729a4e*/
     v11 = Math::RoundToInt(64.0 / (double)*(int *)(v10 + 1820)); /*0x729a60*/
-    a1[10] = MEMORY[0xA8ED84]; /*0x729a72*/
+    a1[10] = g_CurrentFrame; /*0x729a72*/
     a1[11] = v17; /*0x729a78*/
     v12 = a1[3]; /*0x729a7b*/
     a1[12] = v11; /*0x729a7e*/
@@ -1911,7 +1911,7 @@ int __usercall sub_7298F0@<eax>(_DWORD *a1@<ecx>, int a2@<edi>)
   {
     v5 = (*(int (__thiscall **)(_DWORD, int))(*(_DWORD *)a1[3] + 456))(a1[3], a2); /*0x72993f*/
     v13 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)a1[3] + 1336))(a1[3]); /*0x72994f*/
-    v6 = Math::RoundToInt((double)v13 * *(double *)&MEMORY[0x8871E0]->TunnelSpeed); /*0x72995a*/
+    v6 = Math::RoundToInt((double)v13 * *(double *)&g_RulesClass_Instance->TunnelSpeed); /*0x72995a*/
     if ( v6 <= 5 ) /*0x729962*/
       v6 = 5; /*0x729964*/
     v16 += v6; /*0x729971*/
@@ -1927,7 +1927,7 @@ int __usercall sub_7298F0@<eax>(_DWORD *a1@<ecx>, int a2@<edi>)
         v16 = *v8; /*0x7299b5*/
         v17 = v8[1]; /*0x7299c2*/
         v18 = v8[2]; /*0x7299cd*/
-        StartAudioControllerAt(MEMORY[0x8871E0]->ImpactLandSound, (int)&v16, 0); /*0x7299d7*/
+        StartAudioControllerAt(g_RulesClass_Instance->ImpactLandSound, (int)&v16, 0); /*0x7299d7*/
         result = (int)__2_YAPAXI_Z(0x1C8u); /*0x7299e1*/
         if ( result ) /*0x7299eb*/
         {
@@ -1935,7 +1935,7 @@ int __usercall sub_7298F0@<eax>(_DWORD *a1@<ecx>, int a2@<edi>)
           v16 = *v9; /*0x729a09*/
           v17 = v9[1]; /*0x729a10*/
           v18 = v9[2]; /*0x729a1c*/
-          return (int)AnimClass::ctor((void **)result, (void *)MEMORY[0x8871E0]->?[3], &v16, 0, 1, (void *)0x600, 0, 0); /*0x729a2f*/
+          return (int)AnimClass::ctor((void **)result, (void *)g_RulesClass_Instance->?[3], &v16, 0, 1, (void *)0x600, 0, 0); /*0x729a2f*/
         }
       }
     }

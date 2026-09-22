@@ -179,14 +179,14 @@ LABEL_18:
 LABEL_47:
               if ( !MEMORY[0x87F8E4].__pad_125C[16878] && !v8 && !al44 ) /*0x4f4a36*/
               {
-                v43 -= *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[11460] + 12); /*0x4f4a4a*/
-                Rect.right -= *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[11460] + 12); /*0x4f4a53*/
+                v43 -= *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[11460] + 12); /*0x4f4a4a*/
+                Rect.right -= *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[11460] + 12); /*0x4f4a53*/
               }
 LABEL_51:
               if ( MEMORY[0x87F7EC] ) /*0x4f4a5e*/
               {
                 v26 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 128))(v3) /*0x4f4a7c*/
-                    - *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[11460] + 12);
+                    - *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[11460] + 12);
                 HIDWORD(v37) = v36; /*0x4f4a82*/
                 v39 = v26; /*0x4f4a86*/
                 v38 = abs32((int)MEMORY[0x87F7EC]); /*0x4f4a91*/

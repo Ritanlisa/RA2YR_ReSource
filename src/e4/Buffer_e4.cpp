@@ -331,7 +331,7 @@ int __thiscall AllocateCodecFrameBuffers(int this)
   if ( !v7 ) /*0x7c17e1*/
     return -8; /*0x7c17ef*/
   (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v7, v6); /*0x7c17f5*/
-  *(_DWORD *)(this + 48) += v6; /*0x7c17ff*/
+  this->Buffer_field_0C += v6; /*0x7c17ff*/
   if ( (*(int (__cdecl **)(int, int, int *, int))(this + 64))(this, 5, &v28, 8) ) /*0x7c180a*/
     return -2; /*0x7c1820*/
   if ( v28 != 1413698381 ) /*0x7c1829*/
@@ -350,7 +350,7 @@ LABEL_16:
   if ( v10 ) /*0x7c18ab*/
   {
     (*(void (__cdecl **)(int, int, int, unsigned int))(this + 68))(this, 4, v10, 12 * v9); /*0x7c18bf*/
-    *(_DWORD *)(this + 48) += 12 * v9; /*0x7c18cc*/
+    this->Buffer_field_0C += 12 * v9; /*0x7c18cc*/
     v24 = 0; /*0x7c18cf*/
     v11 = 0; /*0x7c18d9*/
     v21 = 0; /*0x7c18db*/
@@ -370,7 +370,7 @@ LABEL_16:
         if ( !v14 ) /*0x7c192f*/
           return -8; /*0x7c192f*/
         (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v14, 12 * v12); /*0x7c193a*/
-        *(_DWORD *)(this + 48) += 12 * v12; /*0x7c194d*/
+        this->Buffer_field_0C += 12 * v12; /*0x7c194d*/
         v16 = v12 * ((v23 + 1) & 0xFFFFFFFE); /*0x7c1957*/
         v26 = (int *)(v22 + v25 + 8); /*0x7c1964*/
         *v26 = v15; /*0x7c1968*/
@@ -379,7 +379,7 @@ LABEL_16:
         if ( !v17 ) /*0x7c1974*/
           return -8; /*0x7c1974*/
         (*(void (__cdecl **)(int, int, int, unsigned int))(this + 68))(this, 4, v17, v16); /*0x7c197f*/
-        *(_DWORD *)(this + 48) += v16; /*0x7c198c*/
+        this->Buffer_field_0C += v16; /*0x7c198c*/
         v19 = 0; /*0x7c1991*/
         do /*0x7c19b1*/
         {

@@ -15974,12 +15974,12 @@ LABEL_148:
       if ( !(*(unsigned __int8 (__thiscall **)(int *))(*this + 656))(this) )
       {
         v63 = 0;
-        if ( !this || (*(_BYTE *)(this + 5) & 4) == 0 || (v63 = this, !*(this + 361)) )
+        if ( !this || (this->MovementAI_field_14 & 4) == 0 || (v63 = this, !*(this + 361)) )
         {
           if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 708))(this, this->q2B4)
             || *((_BYTE *)this + 130) )
           {
-            if ( this && (*(_BYTE *)(this + 5) & 4) != 0 )
+            if ( this && (this->MovementAI_field_14 & 4) != 0 )
               (*(void (__thiscall **)(int *, _DWORD))(*v63 + 1340))(v63, 0);
             if ( !v63 || !v63[361] )
             {
@@ -16153,7 +16153,7 @@ LABEL_258:
           }
         }
       }
-      else if ( this && (*(_BYTE *)(this + 5) & 4) != 0 )
+      else if ( this && (this->MovementAI_field_14 & 4) != 0 )
       {
         if ( this->q674 )
           (*(void (__stdcall **)(_DWORD))(*(_DWORD *)this->q674 + 88))(this->q674);

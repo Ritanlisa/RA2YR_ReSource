@@ -1076,7 +1076,7 @@ unsigned int __stdcall sub_47EFE0(unsigned int *a1, int *a2, unsigned int a3)
     MEMORY[0x89E794] = SearchMIXFile(aShroudShp, 0); /*0x47f009*/
     MEMORY[0x89E790] = SearchMIXFile(aFogShp, 0); /*0x47f013*/
   }
-  if ( (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) != 0 ) /*0x47f022*/
+  if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) != 0 ) /*0x47f022*/
     v33 = (char **)MEMORY[0x89E790]; /*0x47f02a*/
   else
     v33 = (char **)MEMORY[0x89E794]; /*0x47f035*/
@@ -1125,15 +1125,15 @@ unsigned int __stdcall sub_47EFE0(unsigned int *a1, int *a2, unsigned int a3)
             v39 = v31; /*0x47f100*/
           }
           v31 = v28 + v9 - v11; /*0x47f118*/
-          v30 = v9 + *((_DWORD *)MEMORY[0x87E8A4] + 10) - v11; /*0x47f12e*/
+          v30 = v9 + *((_DWORD *)g_VisibleSurfaceDescriptor + 10) - v11; /*0x47f12e*/
           SubFile = MixFileClass::GetSubFile(v33, a3); /*0x47f142*/
-          result = StreamClass::ReadAndSeek((int)MEMORY[0x87E8A4], v9, v35 - MEMORY[0x886FA4]); /*0x47f14c*/
+          result = StreamClass::ReadAndSeek((int)g_VisibleSurfaceDescriptor, v9, v35 - g_Map_VisibleRect); /*0x47f14c*/
           v13 = v32 - v35; /*0x47f15b*/
-          v14 = (v32 - v35) * *((_DWORD *)MEMORY[0x87E8A4] + 10); /*0x47f16d*/
+          v14 = (v32 - v35) * *((_DWORD *)g_VisibleSurfaceDescriptor + 10); /*0x47f16d*/
           v41 = (unsigned __int8 *)(v12 + v28 * v10 + SubFile); /*0x47f172*/
           v33 = (char **)result; /*0x47f178*/
-          v15 = MEMORY[0x87E8A4]; /*0x47f18a*/
-          if ( result + 2 * (v14 + v39 + 0x7FFFFFFF * v9) + 4 < *((_DWORD *)MEMORY[0x87E8A4] + 7) ) /*0x47f193*/
+          v15 = g_VisibleSurfaceDescriptor; /*0x47f18a*/
+          if ( result + 2 * (v14 + v39 + 0x7FFFFFFF * v9) + 4 < *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x47f193*/
           {
             v29 = v32 - v35; /*0x47f20d*/
             v37 = v39 - v9; /*0x47f212*/
@@ -1173,7 +1173,7 @@ unsigned int __stdcall sub_47EFE0(unsigned int *a1, int *a2, unsigned int a3)
                   if ( *v41++ != 0xFE ) /*0x47f1b7*/
                   {
                     *(_WORD *)result = v17; /*0x47f1c4*/
-                    v15 = MEMORY[0x87E8A4]; /*0x47f1c7*/
+                    v15 = g_VisibleSurfaceDescriptor; /*0x47f1c7*/
                   }
                   result += 2; /*0x47f1d0*/
                   if ( result >= v15[7] ) /*0x47f1d5*/
@@ -1289,15 +1289,15 @@ _WORD *__stdcall RenderFogOfWarOverlay(int a1, int *a2, unsigned int a3)
             v9 = v27; /*0x47f346*/
           v39 = v9; /*0x47f350*/
           v28 = v32 + v14 - v9; /*0x47f362*/
-          v30 = v14 + *((_DWORD *)MEMORY[0x87E8A4] + 10) - v9; /*0x47f373*/
+          v30 = v14 + *((_DWORD *)g_VisibleSurfaceDescriptor + 10) - v9; /*0x47f373*/
           SubFileMixFileClass = MixFileClass::GetSubFile((char **)MEMORY[0x89E760], a3); /*0x47f38d*/
-          result = (_WORD *)StreamClass::ReadAndSeek((int)MEMORY[0x87E8A4], v14, v12 - MEMORY[0x886FA4]); /*0x47f397*/
-          v16 = MEMORY[0x87E8A4]; /*0x47f3a5*/
+          result = (_WORD *)StreamClass::ReadAndSeek((int)g_VisibleSurfaceDescriptor, v14, v12 - g_Map_VisibleRect); /*0x47f397*/
+          v16 = g_VisibleSurfaceDescriptor; /*0x47f3a5*/
           v41 = (unsigned __int8 *)(v15 + v32 * v13 + SubFileMixFileClass); /*0x47f3b4*/
-          if ( (unsigned int)&result[((_DWORD)v35 - v12) * *((_DWORD *)MEMORY[0x87E8A4] + 10)
+          if ( (unsigned int)&result[((_DWORD)v35 - v12) * *((_DWORD *)g_VisibleSurfaceDescriptor + 10)
                                    + 2
                                    + v39
-                                   + 0x7FFFFFFF * v14] < *((_DWORD *)MEMORY[0x87E8A4] + 7) )
+                                   + 0x7FFFFFFF * v14] < *((_DWORD *)g_VisibleSurfaceDescriptor + 7) )
           {
             if ( v12 < (int)v35 )
             {
@@ -1360,7 +1360,7 @@ _WORD *__stdcall RenderFogOfWarOverlay(int a1, int *a2, unsigned int a3)
                       v20 = v21 <= 0 ? 0 : v21;
                     }
                     *result = v20; /*0x47f43d*/
-                    v16 = MEMORY[0x87E8A4]; /*0x47f440*/
+                    v16 = g_VisibleSurfaceDescriptor; /*0x47f440*/
                   }
                   if ( (unsigned int)++result >= v16[7] ) /*0x47f44e*/
                     result = (_WORD *)((char *)result - v16[8]); /*0x47f450*/

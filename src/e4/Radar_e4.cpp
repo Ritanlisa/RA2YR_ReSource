@@ -160,7 +160,7 @@ bool __thiscall sub_5090F0(unsigned int *this)
   if ( v1 >= 0xC ) /*0x5090f8*/
     return 0; /*0x50912a*/
   v2 = *(this + v1 + 132); /*0x5090ff*/
-  return *(_DWORD *)(v2 + 56) < MEMORY[0x8871E0]->InfantryVirus && *(_DWORD *)(v2 + 36) == -1; /*0x509126*/
+  return *(_DWORD *)(v2 + 56) < g_RulesClass_Instance->InfantryVirus && *(_DWORD *)(v2 + 36) == -1; /*0x509126*/
 }
 }
 } // namespace gamemd
@@ -1500,14 +1500,14 @@ char __thiscall Radar::RenderMinimap(int this)
   v91 = *(int *)(this + 5276); /*0x656f83*/
   v88 = v10; /*0x656f87*/
   *(_DWORD *)v96 = v8; /*0x656f8b*/
-  v11 = Math::RoundToInt((double)v10 * *(float *)(this + 5256) + (double)v91); /*0x656f9d*/
+  v11 = Math::RoundToInt((double)v10 * this->RadarSizeFactor + (double)v91); /*0x656f9d*/
   v12 = v7 - *(_DWORD *)(this + 5272); /*0x656fac*/
   v88 = v11; /*0x656fae*/
   *(_DWORD *)v96 += v12; /*0x656fb4*/
-  *(_DWORD *)v96 = Math::RoundToInt((double)*(int *)v96 * *(float *)(this + 5256) + (double)*(int *)(this + 5280)); /*0x656fd1*/
+  *(_DWORD *)v96 = Math::RoundToInt((double)*(int *)v96 * this->RadarSizeFactor + (double)*(int *)(this + 5280)); /*0x656fd1*/
   if ( v88 == v91 - 1 ) /*0x656fdc*/
     ++v88; /*0x656fdf*/
-  v13 = 60.0 / *(float *)(this + 5256); /*0x656fe9*/
+  v13 = 60.0 / this->RadarSizeFactor; /*0x656fe9*/
   v14 = (_DWORD *)(this + 5340); /*0x656ff3*/
   v94 = 1; /*0x657000*/
   *(_DWORD *)(this + 5340) = v88; /*0x657004*/
@@ -1516,7 +1516,7 @@ char __thiscall Radar::RenderMinimap(int this)
   *(_DWORD *)(this + 5352) = 1; /*0x657010*/
   *(_DWORD *)v96 = 2 * *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8540]; /*0x65701c*/
   v15 = Math::RoundToInt(v13); /*0x65702c*/
-  v16 = 30.0 / *(float *)(this + 5256); /*0x657037*/
+  v16 = 30.0 / this->RadarSizeFactor; /*0x657037*/
   *(_DWORD *)(this + 5348) = v15; /*0x65703d*/
   *(_DWORD *)v96 = 2 * *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8544]; /*0x65704c*/
   *(float *)&v91 = v16; /*0x657050*/

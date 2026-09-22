@@ -12,7 +12,7 @@ BOOL ParticleSystemClass::Draw()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall ParticleSystemClass::_vt17(int this)
 {
-  return *(_BYTE *)(this + 248) && !this->Owner; /*0x62fe79*/
+  return this->q0F8 && !this->Owner; /*0x62fe79*/
 }
 }
 } // namespace gamemd

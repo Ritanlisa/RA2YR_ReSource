@@ -3133,7 +3133,7 @@ int __thiscall NetworkLobby::AssignPlayerSlot(LPARAM this)
 
   result = 0; /*0x5e9250*/
   v2 = &MEMORY[0xA8DA90]; /*0x5e9252*/
-  while ( (*v2 != MEMORY[0xAC119C] || *(_DWORD *)(this + 107) == -1) /*0x5e926c*/
+  while ( (*v2 != g_HouseClass_ObserverFlags || *(_DWORD *)(this + 107) == -1) /*0x5e926c*/
        && (*v2 != MEMORY[0xAC11B4] || *(_DWORD *)(this + 107) != -1) )
   {
     ++v2; /*0x5e926e*/
@@ -3234,7 +3234,7 @@ HWND *__thiscall sub_5EA2A0(HWND this)
     v4 = (wchar_t *)*(&MEMORY[0xA8DA90] + i); /*0x5ea321*/
     v5 = 0; /*0x5ea328*/
     if ( v4 /*0x5ea36c*/
-      && v4 != (wchar_t *)MEMORY[0xAC119C]
+      && v4 != (wchar_t *)g_HouseClass_ObserverFlags
       && v4 != (wchar_t *)MEMORY[0xAC11A0]
       && v4 != MEMORY[0xAC11B0]
       && v4 != (wchar_t *)MEMORY[0xAC11B4]
@@ -3278,7 +3278,7 @@ char __thiscall NetworkLobby::SetupPlayerSlotControls(HWND this)
   int v8; // [esp+14h] [ebp-4h]
 
   v7 = 0; /*0x5eb671*/
-  if ( MEMORY[0xA8B238][0] == 4 ) /*0x5eb676*/
+  if ( g_GameMode_Current[0] == 4 ) /*0x5eb676*/
   {
     if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5eb681*/
       v8 = 6; /*0x5eb694*/
@@ -3329,7 +3329,7 @@ char __thiscall NetworkLobby::SetupPlayerSlotControls(HWND this)
       if ( i >= v8 ) /*0x5eb74f*/
         *(&MEMORY[0xA8DA90] + i) = MEMORY[0xAC11A0]; /*0x5eb765*/
       else
-        *(&MEMORY[0xA8DA90] + i) = MEMORY[0xAC119C]; /*0x5eb756*/
+        *(&MEMORY[0xA8DA90] + i) = g_HouseClass_ObserverFlags; /*0x5eb756*/
       SetupSkirmishPlayerSlots(this, (void *)i, 0); /*0x5eb772*/
       MEMORY[0xA8B27C][i] = -1; /*0x5eb77a*/
       MEMORY[0xA8B29C][i] = -1; /*0x5eb781*/
@@ -3397,7 +3397,7 @@ LABEL_18:
       }
       else
       {
-        if ( v3 == MEMORY[0xAC119C] || v3 == MEMORY[0xAC11A0] ) /*0x5ee4b7*/
+        if ( v3 == g_HouseClass_ObserverFlags || v3 == MEMORY[0xAC11A0] ) /*0x5ee4b7*/
           goto LABEL_18; /*0x5ee4b7*/
         if ( v10 == MEMORY[0xA8DA8C] ) /*0x5ee4c4*/
         {

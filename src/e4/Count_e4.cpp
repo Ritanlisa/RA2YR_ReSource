@@ -58,13 +58,13 @@ BOOL __thiscall Lobby_SetupAllCountries(HWND this)
     {
       v5 = *v2; /*0x46f718*/
       v6 = -2; /*0x46f71c*/
-      if ( MEMORY[0xA8B23C] && (MEMORY[0xA8B238] == 3 || MEMORY[0xA8B238] == 4) ) /*0x46f730*/
+      if ( MEMORY[0xA8B23C] && (g_GameMode_Current == 3 || g_GameMode_Current == 4) ) /*0x46f730*/
         v6 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 40))(MEMORY[0xA8B23C]); /*0x46f737*/
       if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f73b*/
       {
         PlayerSide = (int)*(v2 - 2557); /*0x46f744*/
       }
-      else if ( v5 == (wchar_t *)MEMORY[0xAC119C] ) /*0x46f752*/
+      else if ( v5 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x46f752*/
       {
         PlayerSide = v6; /*0x46f754*/
       }

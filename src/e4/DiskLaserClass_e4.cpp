@@ -17,11 +17,11 @@ int __thiscall DiskLaserClass::DiskLaserClass(int this)
   this->DiskLaserClass_field_0x0C = &vt_DiskLaserClass; /*0x4a7a4e*/
   this->DiskLaserClass_field_0x24 = 0; /*0x4a7a55*/
   this->DiskLaserClass_field_0x28 = 0; /*0x4a7a58*/
-  *(_DWORD *)(this + 44) = 0; /*0x4a7a5b*/
-  *(_DWORD *)(this + 48) = 0; /*0x4a7a5e*/
-  *(_DWORD *)(this + 52) = 0; /*0x4a7a61*/
-  *(_DWORD *)(this + 56) = 0; /*0x4a7a64*/
-  *(_DWORD *)(this + 60) = 0; /*0x4a7a67*/
+  this->q02C = 0; /*0x4a7a5b*/
+  this->q030 = 0; /*0x4a7a5e*/
+  this->q0D0 = 0; /*0x4a7a61*/
+  this->q038 = 0; /*0x4a7a64*/
+  this->q03C = 0; /*0x4a7a67*/
   if ( MEMORY[0x8A0218] < MEMORY[0x8A0210] /*0x4a7a9e*/
     || (MEMORY[0x8A0215] || !MEMORY[0x8A0210])
     && MEMORY[0x8A021C] > 0

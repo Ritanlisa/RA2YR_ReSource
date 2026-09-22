@@ -5659,7 +5659,7 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
       v43 = v16;
       v41 = v17;
     }
-    if ( *(_BYTE *)(this + 981)
+    if ( this->q3D5
       && !MEMORY[0xA8E7AC]
       && !Type::CheckAmbiguity(&MEMORY[0x87F7E8], a2, 1)
       && !(*(unsigned __int8 (__thiscall **)(int))(this->isOnCarryall)(this) )
@@ -5695,7 +5695,7 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
       {
         if ( v23 != (_DWORD *)this )
         {
-          v24 = *(_DWORD *)(this + 1692);
+          v24 = this->FootClass_field_69C;
           if ( v24 )
           {
             v25 = *(_DWORD *)(v24 + 40);
@@ -5719,11 +5719,11 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
                || (*(int (__thiscall **)(int))(this->q610)(this) == 8
                || (*(int (__thiscall **)(int))(this->q610)(this) == 9
                || (*(int (__thiscall **)(int))(this->q610)(this) == 17
-               && *(_BYTE *)(*(_DWORD *)(this + 1728) + 3778)
+               && *(_BYTE *)(this->Type + 3778)
                || ((*(int (__thiscall **)(int))(this->q610)(this) == 11
                 || (*(int (__thiscall **)(int))(this->q610)(this) == 25
                 || (*(int (__thiscall **)(int))(this->q610)(this) == 5)
-               && *(_BYTE *)(*(_DWORD *)(this + 1728) + 3779)) )
+               && *(_BYTE *)(this->Type + 3779)) )
             {
               if ( v23 == *(_DWORD **)(this + 1444)
                 || (v45[0] = v23[39],
@@ -5734,9 +5734,9 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
               {
                 if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*v23 + 352))(v23) )
                   return 7;
-                if ( !*(_BYTE *)(this + 1048)
+                if ( !this->isTether
                   && !v40
-                  && MEMORY[0x89EA40][9 * *(_DWORD *)(a2 + 236) + *(_DWORD *)(*(_DWORD *)(this + 1728) + 1660)] == 0.0 )
+                  && MEMORY[0x89EA40][9 * *(_DWORD *)(a2 + 236) + *(_DWORD *)(this->Type + 1660)] == 0.0 )
                 {
                   return 7;
                 }
@@ -5765,7 +5765,7 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
               if ( v33 == v23 && (*(int (__thiscall **)(_DWORD *))(*v33 + 44))(v33) == 1 )
                 return 7;
             }
-            if ( *(_BYTE *)(*(_DWORD *)(this + 1728) + 3782)
+            if ( *(_BYTE *)(this->Type + 3782)
               && (*(unsigned __int8 (__thiscall **)(_DWORD *))(*v23 + 128))(v23)
               && *(_DWORD **)(this + 1444) == v23
               && !*(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*v23 + 132))(v23) + 3220) )
@@ -5777,7 +5777,7 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
 LABEL_96:
               if ( (*(int (__thiscall **)(int))(this->q610)(this) == 7
                 && v23 == *(_DWORD **)(this + 1444)
-                && *(_BYTE *)(this + 1048) )
+                && this->isTether )
               {
                 return 0;
               }
@@ -5839,7 +5839,7 @@ LABEL_128:
                 }
                 else if ( v37 == 15 )
                 {
-                  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*v23 + 200))(v23, *(_DWORD *)(this + 540)) )
+                  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*v23 + 200))(v23, this->owner) )
                     v19 = 6;
                 }
                 else if ( v37 != 36 && v19 < 5 )
@@ -5892,9 +5892,9 @@ LABEL_134:
         }
       }
     }
-    if ( !*(_BYTE *)(this + 1048)
+    if ( !this->isTether
       && !v40
-      && MEMORY[0x89EA40][9 * *(_DWORD *)(a2 + 236) + *(_DWORD *)(*(_DWORD *)(this + 1728) + 1660)] == 0.0 )
+      && MEMORY[0x89EA40][9 * *(_DWORD *)(a2 + 236) + *(_DWORD *)(this->Type + 1660)] == 0.0 )
     {
       return 7;
     }
@@ -6828,13 +6828,13 @@ int __thiscall InfantryClass::SelectAutoTarget(int this, unsigned int a2, __int6
   _BYTE v19[12]; // [esp+24h] [ebp-18h] BYREF
   _DWORD v20[3]; // [esp+30h] [ebp-Ch] BYREF
 
-  if ( (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) || !*(_BYTE *)(*(_DWORD *)(this + 1728) + 3779) )
+  if ( (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) || !*(_BYTE *)(this->Type + 3779) )
   {
     v9 = a2;
   }
   else
   {
-    v4 = *(_DWORD *)(*(_DWORD *)(this + 540) + 21728);
+    v4 = *(_DWORD *)(this->owner + 21728);
     if ( v4 )
     {
       v5 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v4 + 72))(v4, v19);
@@ -6843,29 +6843,29 @@ int __thiscall InfantryClass::SelectAutoTarget(int this, unsigned int a2, __int6
       v18 = v6[2] - v5[2];
       v7 = Math::Sqrt((double)(*v6 - *v5) * (double)(*v6 - *v5) + (double)v18 * (double)v18 + (double)v17 * (double)v17);
       if ( (int)Math::RoundToInt(v7) < 3840 )
-        return *(_DWORD *)(*(_DWORD *)(this + 540) + 21728);
+        return *(_DWORD *)(this->owner + 21728);
     }
     v9 = a2 | 0x200;
   }
-  if ( *(_BYTE *)(*(_DWORD *)(this + 1728) + 3782) )
+  if ( *(_BYTE *)(this->Type + 3782) )
   {
     v10 = *(_BYTE **)(this + 1444);
     if ( v10 )
     {
       if ( (v10[20] & 1) != 0
         && (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v10 + 128))(v10)
-        && !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 1444) + 132))(*(_DWORD *)(this + 1444))
+        && !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 1444) + 132))(this->Archive)
                      + 3220)
 // 0x5f6360
-        && ObjectClass::DistanceTo((void *)this, *(_DWORD *)(this + 1444)) < 3840 )
+        && ObjectClass::DistanceTo((void *)this, this->Archive) < 3840 )
       {
-        return *(_DWORD *)(this + 1444);
+        return this->Archive;
       }
     }
   }
   if ( (*(unsigned __int8 (__thiscall **)(int))(this->unloadTimer)(this) )
     goto LABEL_21;
-  v11 = *(_DWORD *)(this + 1728);
+  v11 = this->Type;
   v12 = *(_BYTE *)(v11 + 3782);
   if ( !*(_BYTE *)(v11 + 3774) )
   {
@@ -6898,12 +6898,12 @@ LABEL_21:
   {
     v9 &= 0xFFFFFF4B;
   }
-  if ( (*(_BYTE *)(*(_DWORD *)(this + 1728) + 3778) || TechnoClass::HasVoiceResponse(this, 14))
+  if ( (*(_BYTE *)(this->Type + 3778) || TechnoClass::HasVoiceResponse(this, 14))
     && !(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) )
   {
     v9 |= 0x20u;
   }
-  if ( *(_BYTE *)(*(_DWORD *)(this + 1728) + 3781) )
+  if ( *(_BYTE *)(this->Type + 3781) )
     v9 |= 0x240u;
   return FootClass::SelectAutoTarget_Cloaked(v9, a3, HIDWORD(a3));
 }

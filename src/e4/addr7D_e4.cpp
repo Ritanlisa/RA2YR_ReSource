@@ -230,8 +230,8 @@ int (__cdecl *__cdecl __set_new_handler_YAP6AHI_ZP6AHI_Z_Z(int (__cdecl *a1)(uns
   int (__cdecl *v1)(_DWORD); // esi
 
   _lock(9); /*0x7d06c1*/
-  v1 = MEMORY[0xB782C8]; /*0x7d06ca*/
-  MEMORY[0xB782C8] = a1; /*0x7d06d2*/
+  v1 = CRTGlobal_B782C8; /*0x7d06ca*/
+  CRTGlobal_B782C8 = a1; /*0x7d06d2*/
   _unlock(9); /*0x7d06d7*/
   return v1; /*0x7d06e0*/
 }
@@ -1100,7 +1100,7 @@ int __cdecl _input(FILE *Stream, char *a2, int a3)
   v5 = Stream; /*0x7d1732*/
   while ( 2 )
   {
-    if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7d1743*/
+    if ( (int)SrcSizeInBytes <= 1 ) /*0x7d1743*/
       v6 = *((_BYTE *)MEMORY[0x87C590] + 2 * v4) & 8; /*0x7d1760*/
     else
       v6 = _isctype(v4, 8); /*0x7d174b*/
@@ -1161,7 +1161,7 @@ int __cdecl _input(FILE *Stream, char *a2, int a3)
     do /*0x7d187f*/
     {
       v12 = (unsigned __int8)*++v3; /*0x7d17d4*/
-      if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7d17e0*/
+      if ( (int)SrcSizeInBytes <= 1 ) /*0x7d17e0*/
         v13 = *((_BYTE *)MEMORY[0x87C590] + 2 * (unsigned __int8)v12) & 4; /*0x7d17fd*/
       else
         v13 = _isctype((unsigned __int8)v12, 4); /*0x7d17e8*/
@@ -1412,7 +1412,7 @@ LABEL_141:
                       ++v76; /*0x7d1d95*/
                       SrcCh[1] = fgetc_0(Stream); /*0x7d1d9f*/
                     }
-                    mbtowc(&DstCh, SrcCh, MEMORY[0x87C79C]); /*0x7d1db0*/
+                    mbtowc(&DstCh, SrcCh, SrcSizeInBytes); /*0x7d1db0*/
                     *v37++ = DstCh; /*0x7d1dbc*/
                   }
                   else
@@ -1489,7 +1489,7 @@ LABEL_189:
             {
               if ( v14 == 120 ) /*0x7d1e6c*/
               {
-                if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7d1e75*/
+                if ( (int)SrcSizeInBytes <= 1 ) /*0x7d1e75*/
                   v40 = *((_BYTE *)MEMORY[0x87C590] + 2 * v16) & 0x80; /*0x7d1e8e*/
                 else
                   v40 = _isctype(v16, 128); /*0x7d1e7d*/
@@ -1501,7 +1501,7 @@ LABEL_189:
               }
               else
               {
-                if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7d1ec4*/
+                if ( (int)SrcSizeInBytes <= 1 ) /*0x7d1ec4*/
                   v41 = *((_BYTE *)MEMORY[0x87C590] + 2 * v16) & 4; /*0x7d1eda*/
                 else
                   v41 = _isctype(v16, 4); /*0x7d1ec9*/
@@ -1547,7 +1547,7 @@ LABEL_209:
             {
               if ( v14 == 120 || v14 == 112 ) /*0x7d1f80*/
               {
-                if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7d1fc3*/
+                if ( (int)SrcSizeInBytes <= 1 ) /*0x7d1fc3*/
                   v45 = *((_BYTE *)MEMORY[0x87C590] + 2 * v16) & 0x80; /*0x7d1fdc*/
                 else
                   v45 = _isctype(v16, 128); /*0x7d1fcb*/
@@ -1564,7 +1564,7 @@ LABEL_231:
               }
               else
               {
-                if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7d1f89*/
+                if ( (int)SrcSizeInBytes <= 1 ) /*0x7d1f89*/
                   v43 = *((_BYTE *)MEMORY[0x87C590] + 2 * v16) & 4; /*0x7d1f9f*/
                 else
                   v43 = _isctype(v16, 4); /*0x7d1f8e*/
@@ -1641,7 +1641,7 @@ LABEL_231:
 LABEL_70:
       if ( !v64 || v74 > 349 ) /*0x7d19b3*/
         v74 = 349; /*0x7d19b5*/
-      while ( (int)MEMORY[0x87C79C] <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v17) & 4 : _isctype(v17, 4) )
+      while ( (int)SrcSizeInBytes <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v17) & 4 : _isctype(v17, 4) )
       {
         if ( !v74-- ) /*0x7d19e0*/
           break; /*0x7d19e8*/
@@ -1651,16 +1651,16 @@ LABEL_70:
         v17 = fgetc_0(v19); /*0x7d19f9*/
         C = v17; /*0x7d19fc*/
       }
-      if ( MEMORY[0x87C7A0][0] == (_BYTE)v17 )
+      if ( SrcCh[0] == (_BYTE)v17 )
       {
         if ( v74-- )
         {
           ++v76; /*0x7d1a13*/
           v17 = fgetc_0(v19); /*0x7d1a1c*/
-          *v18 = MEMORY[0x87C7A0][0]; /*0x7d1a23*/
+          *v18 = SrcCh[0]; /*0x7d1a23*/
           C = v17; /*0x7d1a26*/
           ++v18; /*0x7d1a29*/
-          while ( (int)MEMORY[0x87C79C] <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v17) & 4 : _isctype(v17, 4) )
+          while ( (int)SrcSizeInBytes <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v17) & 4 : _isctype(v17, 4) )
           {
             if ( !v74-- ) /*0x7d1a4e*/
               break; /*0x7d1a56*/
@@ -1697,7 +1697,7 @@ LABEL_95:
             goto LABEL_97; /*0x7d1abb*/
           }
 LABEL_98:
-          while ( (int)MEMORY[0x87C79C] <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v17) & 4 : _isctype(v17, 4) )
+          while ( (int)SrcSizeInBytes <= 1 ? *((_BYTE *)MEMORY[0x87C590] + 2 * v17) & 4 : _isctype(v17, 4) )
           {
             if ( !v74-- ) /*0x7d1af5*/
               break; /*0x7d1afd*/
@@ -1793,7 +1793,7 @@ unsigned int __cdecl _hextodec(int C)
   int v2; // eax
 
   v1 = C; /*0x7d213c*/
-  if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7d213a*/
+  if ( (int)SrcSizeInBytes <= 1 ) /*0x7d213a*/
     v2 = *((_BYTE *)MEMORY[0x87C590] + 2 * C) & 4; /*0x7d2158*/
   else
     v2 = _isctype(C, 4); /*0x7d2143*/
@@ -2909,7 +2909,7 @@ LABEL_32:
     unk_B78858 = 0; /*0x7d3602*/
     goto LABEL_32; /*0x7d3603*/
   }
-  if ( MEMORY[0xB782D8] ) /*0x7d360c*/
+  if ( CRTGlobal_B782D8 ) /*0x7d360c*/
     goto LABEL_31; /*0x7d360c*/
   v3 = -1; /*0x7d361d*/
 LABEL_34:
@@ -3913,7 +3913,7 @@ wint_t __cdecl _hextodec_0(wint_t C)
 
   if ( (C & 0xFF00) == 0 )
   {
-    if ( (int)MEMORY[0x87C79C] <= 1
+    if ( (int)SrcSizeInBytes <= 1
        ? *((_BYTE *)MEMORY[0x87C590] + 2 * (unsigned __int8)C) & 4
        : _isctype((unsigned __int8)C, 4) )
     {
@@ -3947,7 +3947,7 @@ _crt_signal_t __cdecl signal(int Signal, _crt_signal_t Function)
   if ( Signal == 2 || Signal == 21 || Signal == 22 || Signal == 15 ) /*0x7d4868*/
   {
     _lock(1); /*0x7d48fe*/
-    if ( (Signal == 2 || Signal == 21) && !MEMORY[0xB782EC] ) /*0x7d4915*/
+    if ( (Signal == 2 || Signal == 21) && !CRTGlobal_B782EC ) /*0x7d4915*/
     {
       if ( !SetConsoleCtrlHandler(ctrlevent_capture_4, 1) ) /*0x7d4925*/
       {
@@ -3956,25 +3956,25 @@ _crt_signal_t __cdecl signal(int Signal, _crt_signal_t Function)
         _unlock(1); /*0x7d495c*/
         goto LABEL_28; /*0x7d495c*/
       }
-      MEMORY[0xB782EC] = 1; /*0x7d4927*/
+      CRTGlobal_B782EC = 1; /*0x7d4927*/
     }
     switch ( Signal ) /*0x7d492f*/
     {
       case 2: /*0x7d492f*/
-        v5 = (void (__cdecl *)(int))MEMORY[0xB782DC]; /*0x7d4991*/
-        MEMORY[0xB782DC] = (int)Function; /*0x7d4997*/
+        v5 = (void (__cdecl *)(int))CRTGlobal_B782DC; /*0x7d4991*/
+        CRTGlobal_B782DC = (int)Function; /*0x7d4997*/
         break;
       case 15: /*0x7d492f*/
-        v5 = (void (__cdecl *)(int))MEMORY[0xB782E8]; /*0x7d4983*/
-        MEMORY[0xB782E8] = (int)Function; /*0x7d4989*/
+        v5 = (void (__cdecl *)(int))CRTGlobal_B782E8; /*0x7d4983*/
+        CRTGlobal_B782E8 = (int)Function; /*0x7d4989*/
         break;
       case 21: /*0x7d492f*/
-        v5 = (void (__cdecl *)(int))MEMORY[0xB782E0]; /*0x7d4975*/
-        MEMORY[0xB782E0] = (int)Function; /*0x7d497b*/
+        v5 = (void (__cdecl *)(int))CRTGlobal_B782E0; /*0x7d4975*/
+        CRTGlobal_B782E0 = (int)Function; /*0x7d497b*/
         break;
       default:
-        v5 = (void (__cdecl *)(int))MEMORY[0xB782E4]; /*0x7d493e*/
-        MEMORY[0xB782E4] = (int)Function; /*0x7d4944*/
+        v5 = (void (__cdecl *)(int))CRTGlobal_B782E4; /*0x7d493e*/
+        CRTGlobal_B782E4 = (int)Function; /*0x7d4944*/
         break;
     }
     _unlock(1); /*0x7d49a4*/
@@ -3985,7 +3985,7 @@ _crt_signal_t __cdecl signal(int Signal, _crt_signal_t Function)
   v2 = _getptd(); /*0x7d4886*/
   if ( *(_UNKNOWN **)(v2 + 80) == &MEMORY[0x87CB20] ) /*0x7d4890*/
   {
-    v3 = malloc(MEMORY[0x87CBA0]); /*0x7d4898*/
+    v3 = malloc(Size); /*0x7d4898*/
     *(_DWORD *)(v2 + 80) = v3; /*0x7d48a0*/
     if ( !v3 ) /*0x7d48a3*/
     {
@@ -3993,7 +3993,7 @@ LABEL_28:
       *_errno() = 22; /*0x7d4962*/
       return (_crt_signal_t)-1; /*0x7d4974*/
     }
-    memcpy_0(v3, &MEMORY[0x87CB20], MEMORY[0x87CBA0]); /*0x7d48b1*/
+    memcpy_0(v3, &MEMORY[0x87CB20], Size); /*0x7d48b1*/
   }
   v4 = siglookup(Signal, *(_DWORD *)(v2 + 80)); /*0x7d48bd*/
   if ( !v4 ) /*0x7d48c6*/
@@ -4033,8 +4033,8 @@ int __cdecl raise(int Signal)
   switch ( Signal ) /*0x7d4a22*/
   {
     case 2: /*0x7d4a22*/
-      v2 = (void (__cdecl *)(_DWORD))MEMORY[0xB782DC]; /*0x7d4a8b*/
-      v3 = &MEMORY[0xB782DC]; /*0x7d4a91*/
+      v2 = (void (__cdecl *)(_DWORD))CRTGlobal_B782DC; /*0x7d4a8b*/
+      v3 = &CRTGlobal_B782DC; /*0x7d4a91*/
       break;
     case 4: /*0x7d4a22*/
     case 8: /*0x7d4a22*/
@@ -4044,16 +4044,16 @@ int __cdecl raise(int Signal)
       v2 = (void (__cdecl *)(_DWORD))*v3; /*0x7d4a87*/
       goto LABEL_15; /*0x7d4a89*/
     case 15: /*0x7d4a22*/
-      v2 = (void (__cdecl *)(_DWORD))MEMORY[0xB782E8]; /*0x7d4a61*/
-      v3 = &MEMORY[0xB782E8]; /*0x7d4a67*/
+      v2 = (void (__cdecl *)(_DWORD))CRTGlobal_B782E8; /*0x7d4a61*/
+      v3 = &CRTGlobal_B782E8; /*0x7d4a67*/
       break;
     case 21: /*0x7d4a22*/
-      v2 = (void (__cdecl *)(_DWORD))MEMORY[0xB782E0]; /*0x7d4a54*/
-      v3 = &MEMORY[0xB782E0]; /*0x7d4a5a*/
+      v2 = (void (__cdecl *)(_DWORD))CRTGlobal_B782E0; /*0x7d4a54*/
+      v3 = &CRTGlobal_B782E0; /*0x7d4a5a*/
       break;
     case 22: /*0x7d4a22*/
-      v2 = (void (__cdecl *)(_DWORD))MEMORY[0xB782E4]; /*0x7d4a47*/
-      v3 = &MEMORY[0xB782E4]; /*0x7d4a4d*/
+      v2 = (void (__cdecl *)(_DWORD))CRTGlobal_B782E4; /*0x7d4a47*/
+      v3 = &CRTGlobal_B782E4; /*0x7d4a4d*/
       break;
     default:
       return -1; /*0x7d4a42*/
@@ -4290,7 +4290,7 @@ LPSTR _tzset_lk()
   _lock(12); /*0x7d4d35*/
   MEMORY[0x87CB08] = -1; /*0x7d4d3a*/
   MEMORY[0x87CAF8] = -1; /*0x7d4d41*/
-  MEMORY[0xB782F0] = 0; /*0x7d4d48*/
+  CRTGlobal_B782F0 = 0; /*0x7d4d48*/
   v0 = getenv("TZ"); /*0x7d4d55*/
   v1 = v0; /*0x7d4d5a*/
   if ( !v0 ) /*0x7d4d5f*/
@@ -4300,7 +4300,7 @@ LPSTR _tzset_lk()
     if ( result == LPSTR_TEXTCALLBACKW ) /*0x7d4d7b*/
       return result; /*0x7d4d7b*/
     MEMORY[0x87CA60] = 60 * MEMORY[0xB782F8].Bias; /*0x7d4d99*/
-    MEMORY[0xB782F0] = 1; /*0x7d4d9e*/
+    CRTGlobal_B782F0 = 1; /*0x7d4d9e*/
     if ( MEMORY[0xB782F8].StandardDate.wMonth ) /*0x7d4da4*/
       MEMORY[0x87CA60] = 60 * MEMORY[0xB782F8].StandardBias + 60 * MEMORY[0xB782F8].Bias; /*0x7d4dad*/
     if ( MEMORY[0xB782F8].DaylightDate.wMonth && MEMORY[0xB782F8].DaylightBias ) /*0x7d4dc2*/
@@ -4318,17 +4318,17 @@ LPSTR _tzset_lk()
             0x220u,
             MEMORY[0xB782F8].StandardName,
             -1,
-            MEMORY[0x87CAEC],
+            lpMultiByteStr,
             63,
             0,
             &UsedDefaultChar)
       || UsedDefaultChar )
     {
-      *MEMORY[0x87CAEC] = 0; /*0x7d4e23*/
+      *lpMultiByteStr = 0; /*0x7d4e23*/
     }
     else
     {
-      MEMORY[0x87CAEC][63] = 0; /*0x7d4e18*/
+      lpMultiByteStr[63] = 0; /*0x7d4e18*/
     }
     if ( WideCharToMultiByte( /*0x7d4e4e*/
            CodePage,
@@ -4360,9 +4360,9 @@ LABEL_41:
     {
       strcpy(v4, v1); /*0x7d4eaf*/
       _unlock(12); /*0x7d4eb5*/
-      strncpy(MEMORY[0x87CAEC], v1, 3u); /*0x7d4ec3*/
+      strncpy(lpMultiByteStr, v1, 3u); /*0x7d4ec3*/
       v5 = v1 + 3; /*0x7d4ecd*/
-      MEMORY[0x87CAEC][3] = 0; /*0x7d4ed3*/
+      lpMultiByteStr[3] = 0; /*0x7d4ed3*/
       if ( *v5 == 45 ) /*0x7d4eda*/
       {
         v9 = 1; /*0x7d4edc*/
@@ -4426,7 +4426,7 @@ BOOL __cdecl _isindst_0(_DWORD *a1)
   v2 = a1[5]; /*0x7d4fe7*/
   if ( v2 != MEMORY[0x87CAF8] || v2 != MEMORY[0x87CB08] ) /*0x7d4ff8*/
   {
-    if ( MEMORY[0xB782F0] ) /*0x7d5004*/
+    if ( CRTGlobal_B782F0 ) /*0x7d5004*/
     {
       if ( MEMORY[0xB782F8].DaylightDate.wYear ) /*0x7d5031*/
         cvtdate( /*0x7d5065*/
@@ -4941,7 +4941,7 @@ void _setenvp()
 
   if ( !CRTGlobal_B78BB8 ) /*0x7d5acb*/
     __initmbctable(); /*0x7d5acd*/
-  v0 = MEMORY[0xB78228]; /*0x7d5ad2*/
+  v0 = CRTGlobal_B78228; /*0x7d5ad2*/
   v1 = 0; /*0x7d5ad8*/
   while ( *v0 ) /*0x7d5ade*/
   {
@@ -4953,7 +4953,7 @@ void _setenvp()
   CRTGlobal_B781E4 = v2; /*0x7d5b04*/
   if ( !v2 ) /*0x7d5b0a*/
     _amsg_exit(9u); /*0x7d5b0e*/
-  for ( i = MEMORY[0xB78228]; *i; i += v5 ) /*0x7d5b1a*/
+  for ( i = CRTGlobal_B78228; *i; i += v5 ) /*0x7d5b1a*/
   {
     v4 = strlen(i); /*0x7d5b20*/
     v5 = v4 + 1; /*0x7d5b28*/
@@ -4966,8 +4966,8 @@ void _setenvp()
       strcpy(*v2++, i); /*0x7d5b46*/
     }
   }
-  free(MEMORY[0xB78228]); /*0x7d5b5d*/
-  MEMORY[0xB78228] = 0; /*0x7d5b63*/
+  free(CRTGlobal_B78228); /*0x7d5b5d*/
+  CRTGlobal_B78228 = 0; /*0x7d5b63*/
   *v2 = 0; /*0x7d5b69*/
   CRTGlobal_B78BB4 = 1; /*0x7d5b6d*/
 }
@@ -5324,21 +5324,21 @@ int __init_numeric()
   _BYTE *v7; // eax
   char v8; // al
 
-  v0 = (unsigned __int16)MEMORY[0xB7853A]; /*0x7d662f*/
+  v0 = (unsigned __int16)CRTGlobal_B7853A; /*0x7d662f*/
   if ( CRTGlobal_B782A8 ) /*0x7d6636*/
   {
-    v1 = __getlocaleinfo(1, (unsigned __int16)MEMORY[0xB7853A], 0xEu, (int)&CRTGlobal_B78508); /*0x7d6657*/
-    v2 = __getlocaleinfo(1, v0, 0xFu, (int)&MEMORY[0xB7850C]) | v1; /*0x7d6667*/
-    v3 = __getlocaleinfo(1, v0, 0x10u, (int)&MEMORY[0xB78510]) | v2; /*0x7d6674*/
-    fix_grouping(MEMORY[0xB78510]); /*0x7d6676*/
+    v1 = __getlocaleinfo(1, (unsigned __int16)CRTGlobal_B7853A, 0xEu, (int)&CRTGlobal_B78508); /*0x7d6657*/
+    v2 = __getlocaleinfo(1, v0, 0xFu, (int)&CRTGlobal_B7850C) | v1; /*0x7d6667*/
+    v3 = __getlocaleinfo(1, v0, 0x10u, (int)&CRTGlobal_B78510) | v2; /*0x7d6674*/
+    fix_grouping(CRTGlobal_B78510); /*0x7d6676*/
     if ( v3 ) /*0x7d6681*/
     {
       free(CRTGlobal_B78508); /*0x7d6689*/
-      free(MEMORY[0xB7850C]); /*0x7d6694*/
-      free(MEMORY[0xB78510]); /*0x7d669f*/
+      free(CRTGlobal_B7850C); /*0x7d6694*/
+      free(CRTGlobal_B78510); /*0x7d669f*/
       CRTGlobal_B78508 = 0; /*0x7d66a7*/
-      MEMORY[0xB7850C] = 0; /*0x7d66ad*/
-      MEMORY[0xB78510] = 0; /*0x7d66b3*/
+      CRTGlobal_B7850C = 0; /*0x7d66ad*/
+      CRTGlobal_B78510 = 0; /*0x7d66b3*/
       return -1; /*0x7d66bc*/
     }
     if ( *MEMORY[0x87D620] != &MEMORY[0x87D5E8] ) /*0x7d66cd*/
@@ -5348,20 +5348,20 @@ int __init_numeric()
       free(MEMORY[0x87D620][2]); /*0x7d66ea*/
     }
     *MEMORY[0x87D620] = CRTGlobal_B78508; /*0x7d66fd*/
-    MEMORY[0x87D620][1] = MEMORY[0xB7850C]; /*0x7d670a*/
-    MEMORY[0x87D620][2] = MEMORY[0xB78510]; /*0x7d6718*/
+    MEMORY[0x87D620][1] = CRTGlobal_B7850C; /*0x7d670a*/
+    MEMORY[0x87D620][2] = CRTGlobal_B78510; /*0x7d6718*/
     v5 = *(_BYTE *)*MEMORY[0x87D620]; /*0x7d6722*/
     MEMORY[0x87C7A4] = 1; /*0x7d6724*/
-    MEMORY[0x87C7A0] = v5; /*0x7d672a*/
+    SrcCh = v5; /*0x7d672a*/
   }
   else
   {
     free(CRTGlobal_B78508); /*0x7d673a*/
-    free(MEMORY[0xB7850C]); /*0x7d6745*/
-    free(MEMORY[0xB78510]); /*0x7d6750*/
+    free(CRTGlobal_B7850C); /*0x7d6745*/
+    free(CRTGlobal_B78510); /*0x7d6750*/
     CRTGlobal_B78508 = 0; /*0x7d6757*/
-    MEMORY[0xB7850C] = 0; /*0x7d675d*/
-    MEMORY[0xB78510] = 0; /*0x7d6763*/
+    CRTGlobal_B7850C = 0; /*0x7d675d*/
+    CRTGlobal_B78510 = 0; /*0x7d6763*/
     *MEMORY[0x87D620] = malloc(2u); /*0x7d6777*/
     if ( !*MEMORY[0x87D620] ) /*0x7d677e*/
       return -1; /*0x7d677e*/
@@ -5378,7 +5378,7 @@ int __init_numeric()
     *v7 = 0; /*0x7d67d9*/
     v8 = *(_BYTE *)*MEMORY[0x87D620]; /*0x7d67e2*/
     MEMORY[0x87C7A4] = 1; /*0x7d67e4*/
-    MEMORY[0x87C7A0] = v8; /*0x7d67ee*/
+    SrcCh = v8; /*0x7d67ee*/
   }
   return 0; /*0x7d67f5*/
 }
@@ -5416,7 +5416,7 @@ int __init_ctype()
   lpSrcStr = 0; /*0x7d6ab4*/
   if ( CRTGlobal_B782A0 ) /*0x7d6ab7*/
   {
-    if ( !CodePage && __getlocaleinfo(0, (unsigned __int16)MEMORY[0xB7852C], 0x1004u, (int)&CodePage) ) /*0x7d6ada*/
+    if ( !CodePage && __getlocaleinfo(0, (unsigned __int16)CRTGlobal_B7852C, 0x1004u, (int)&CodePage) ) /*0x7d6ada*/
       goto LABEL_38; /*0x7d6ada*/
     v1 = (WORD *)malloc(0x202u); /*0x7d6af5*/
     v15 = v1; /*0x7d6af8*/
@@ -5436,7 +5436,7 @@ int __init_ctype()
       *((_BYTE *)Block + i) = i; /*0x7d6b48*/
     if ( !GetCPInfo(CodePage, &CPInfo) || CPInfo.MaxCharSize > 2 ) /*0x7d6b6c*/
       goto LABEL_38; /*0x7d6b6c*/
-    MEMORY[0x87C79C] = LOWORD(CPInfo.MaxCharSize); /*0x7d6b79*/
+    SrcSizeInBytes = LOWORD(CPInfo.MaxCharSize); /*0x7d6b79*/
     if ( LOWORD(CPInfo.MaxCharSize) > 1u && CPInfo.LeadByte[0] ) /*0x7d6b83*/
     {
       v4 = &CPInfo.LeadByte[1]; /*0x7d6b85*/
@@ -5462,7 +5462,7 @@ int __init_ctype()
     if ( __crtGetStringTypeW(1u, lpSrcStr, 256, (LPWORD)v16 + 1, 0, 0) ) /*0x7d6bea*/
     {
       *(_WORD *)v16 = 0; /*0x7d6bfd*/
-      if ( (int)MEMORY[0x87C79C] > 1 && CPInfo.LeadByte[0] ) /*0x7d6c0c*/
+      if ( (int)SrcSizeInBytes > 1 && CPInfo.LeadByte[0] ) /*0x7d6c0c*/
       {
         v10 = &CPInfo.LeadByte[1]; /*0x7d6c0e*/
         do /*0x7d6c3a*/
@@ -5487,12 +5487,12 @@ int __init_ctype()
       }
       MEMORY[0x87C594] = v9; /*0x7d6c42*/
       MEMORY[0x87C590] = (char *)v15 + 2; /*0x7d6c4b*/
-      if ( MEMORY[0xB78518] ) /*0x7d6c57*/
-        free(MEMORY[0xB78518]); /*0x7d6c5a*/
-      MEMORY[0xB78518] = v15; /*0x7d6c63*/
-      if ( MEMORY[0xB7851C] ) /*0x7d6c6f*/
-        free(MEMORY[0xB7851C]); /*0x7d6c72*/
-      MEMORY[0xB7851C] = v16; /*0x7d6c7b*/
+      if ( CRTGlobal_B78518 ) /*0x7d6c57*/
+        free(CRTGlobal_B78518); /*0x7d6c5a*/
+      CRTGlobal_B78518 = v15; /*0x7d6c63*/
+      if ( CRTGlobal_B7851C ) /*0x7d6c6f*/
+        free(CRTGlobal_B7851C); /*0x7d6c72*/
+      CRTGlobal_B7851C = v16; /*0x7d6c7b*/
     }
     else
     {
@@ -5507,12 +5507,12 @@ LABEL_38:
   }
   else
   {
-    MEMORY[0x87C590] = &MEMORY[0x87C598][1]; /*0x7d6cba*/
-    MEMORY[0x87C594] = &MEMORY[0x87C598][1]; /*0x7d6cbf*/
-    free(MEMORY[0xB78518]); /*0x7d6cc4*/
-    free(MEMORY[0xB7851C]); /*0x7d6ccf*/
-    MEMORY[0xB78518] = 0; /*0x7d6cd5*/
-    MEMORY[0xB7851C] = 0; /*0x7d6cdc*/
+    MEMORY[0x87C590] = &__ctype[1]; /*0x7d6cba*/
+    MEMORY[0x87C594] = &__ctype[1]; /*0x7d6cbf*/
+    free(CRTGlobal_B78518); /*0x7d6cc4*/
+    free(CRTGlobal_B7851C); /*0x7d6ccf*/
+    CRTGlobal_B78518 = 0; /*0x7d6cd5*/
+    CRTGlobal_B7851C = 0; /*0x7d6cdc*/
     return 0; /*0x7d6ce2*/
   }
 }
@@ -5607,69 +5607,69 @@ BOOL __stdcall LangCountryEnumProc_4(LPSTR a1)
   char String2[120]; // [esp+Ch] [ebp-78h] BYREF
 
   v1 = LcidFromHexString(a1); /*0x7d6f98*/
-  v2 = -(MEMORY[0xB78548] != 0); /*0x7d6fa7*/
+  v2 = -(CRTGlobal_B78548 != 0); /*0x7d6fa7*/
   LOWORD(v2) = v2 & 0xF005; /*0x7d6fa9*/
   if ( !unk_B78564(v1, v2 + 4098, String2, 120) ) /*0x7d6fbc*/
     goto LABEL_17; /*0x7d6fbc*/
-  if ( !_strcmpi(MEMORY[0xB78558], String2) )
+  if ( !_strcmpi(CRTGlobal_B78558, String2) )
   {
-    if ( !unk_B78564(v1, MEMORY[0xB78550] != 0 ? 3 : 4097, String2, 120) )
+    if ( !unk_B78564(v1, CRTGlobal_B78550 != 0 ? 3 : 4097, String2, 120) )
     {
 LABEL_17:
-      MEMORY[0xB7855C] = 0; /*0x7d70d5*/
+      CRTGlobal_B7855C = 0; /*0x7d70d5*/
       return 1; /*0x7d70df*/
     }
-    if ( !_strcmpi(MEMORY[0xB78554], String2) ) /*0x7d7012*/
+    if ( !_strcmpi(CRTGlobal_B78554, String2) ) /*0x7d7012*/
     {
-      LOWORD(MEMORY[0xB7855C]) = MEMORY[0xB7855C] | 0x304; /*0x7d701d*/
+      LOWORD(CRTGlobal_B7855C) = CRTGlobal_B7855C | 0x304; /*0x7d701d*/
       CRTGlobal_B78560 = v1; /*0x7d7026*/
 LABEL_6:
       MEMORY[0xB78544] = v1; /*0x7d702c*/
       goto LABEL_15; /*0x7d7032*/
     }
-    if ( (MEMORY[0xB7855C] & 2) == 0 ) /*0x7d703b*/
+    if ( (CRTGlobal_B7855C & 2) == 0 ) /*0x7d703b*/
     {
-      if ( MEMORY[0xB7854C] && !_strnicmp(MEMORY[0xB78554], String2, MEMORY[0xB7854C]) ) /*0x7d7051*/
+      if ( CRTGlobal_B7854C && !_strnicmp(CRTGlobal_B78554, String2, CRTGlobal_B7854C) ) /*0x7d7051*/
       {
-        MEMORY[0xB7855C] |= 2u; /*0x7d7063*/
+        CRTGlobal_B7855C |= 2u; /*0x7d7063*/
         CRTGlobal_B78560 = v1; /*0x7d706a*/
-        if ( strlen(MEMORY[0xB78554]) == MEMORY[0xB7854C] ) /*0x7d707c*/
+        if ( strlen(CRTGlobal_B78554) == CRTGlobal_B7854C ) /*0x7d707c*/
           goto LABEL_6; /*0x7d707c*/
       }
-      else if ( (MEMORY[0xB7855C] & 1) == 0 && TestDefaultCountry(v1) ) /*0x7d708a*/
+      else if ( (CRTGlobal_B7855C & 1) == 0 && TestDefaultCountry(v1) ) /*0x7d708a*/
       {
-        MEMORY[0xB7855C] |= 1u; /*0x7d7094*/
+        CRTGlobal_B7855C |= 1u; /*0x7d7094*/
         CRTGlobal_B78560 = v1; /*0x7d709b*/
       }
     }
   }
 LABEL_15:
-  if ( (MEMORY[0xB7855C] & 0x300) != 0x300 )
+  if ( (CRTGlobal_B7855C & 0x300) != 0x300 )
   {
-    if ( !unk_B78564(v1, MEMORY[0xB78550] != 0 ? 3 : 4097, String2, 120) )
+    if ( !unk_B78564(v1, CRTGlobal_B78550 != 0 ? 3 : 4097, String2, 120) )
       goto LABEL_17; /*0x7d70d3*/
-    if ( _strcmpi(MEMORY[0xB78554], String2) ) /*0x7d70ee*/
+    if ( _strcmpi(CRTGlobal_B78554, String2) ) /*0x7d70ee*/
     {
-      if ( MEMORY[0xB78550] || !MEMORY[0xB7854C] || _strnicmp(MEMORY[0xB78554], String2, MEMORY[0xB7854C]) ) /*0x7d7148*/
-        return ((unsigned int)~MEMORY[0xB7855C] >> 2) & 1; /*0x7d7152*/
+      if ( CRTGlobal_B78550 || !CRTGlobal_B7854C || _strnicmp(CRTGlobal_B78554, String2, CRTGlobal_B7854C) ) /*0x7d7148*/
+        return ((unsigned int)~CRTGlobal_B7855C >> 2) & 1; /*0x7d7152*/
       v4 = TestDefaultLanguage(v1, 0); /*0x7d7156*/
     }
     else
     {
-      BYTE1(MEMORY[0xB7855C]) |= 2u; /*0x7d70f9*/
-      if ( MEMORY[0xB78550] || !MEMORY[0xB7854C] || strlen(MEMORY[0xB78554]) != MEMORY[0xB7854C] ) /*0x7d7124*/
+      BYTE1(CRTGlobal_B7855C) |= 2u; /*0x7d70f9*/
+      if ( CRTGlobal_B78550 || !CRTGlobal_B7854C || strlen(CRTGlobal_B78554) != CRTGlobal_B7854C ) /*0x7d7124*/
         goto LABEL_28; /*0x7d7124*/
       v4 = TestDefaultLanguage(v1, 1); /*0x7d7128*/
     }
     if ( v4 ) /*0x7d715f*/
     {
 LABEL_28:
-      BYTE1(MEMORY[0xB7855C]) |= 1u; /*0x7d7161*/
+      BYTE1(CRTGlobal_B7855C) |= 1u; /*0x7d7161*/
       if ( !MEMORY[0xB78544] ) /*0x7d716e*/
         MEMORY[0xB78544] = v1; /*0x7d7170*/
     }
   }
-  return ((unsigned int)~MEMORY[0xB7855C] >> 2) & 1; /*0x7d7183*/
+  return ((unsigned int)~CRTGlobal_B7855C >> 2) & 1; /*0x7d7183*/
 }
 }
 } // namespace gamemd
@@ -5687,34 +5687,34 @@ BOOL __stdcall LanguageEnumProc_4(LPSTR a1)
   char String2[120]; // [esp+4h] [ebp-78h] BYREF
 
   v1 = LcidFromHexString(a1); /*0x7d71f0*/
-  v2 = -(MEMORY[0xB78550] != 0); /*0x7d71ff*/
+  v2 = -(CRTGlobal_B78550 != 0); /*0x7d71ff*/
   LOWORD(v2) = v2 & 0xF002; /*0x7d7201*/
   if ( !unk_B78564(v1, v2 + 4097, String2, 120) ) /*0x7d720c*/
   {
-    MEMORY[0xB7855C] = 0; /*0x7d7216*/
+    CRTGlobal_B7855C = 0; /*0x7d7216*/
     return 1; /*0x7d721f*/
   }
-  if ( _strcmpi(MEMORY[0xB78554], String2) ) /*0x7d722b*/
+  if ( _strcmpi(CRTGlobal_B78554, String2) ) /*0x7d722b*/
   {
-    if ( MEMORY[0xB78550] || !MEMORY[0xB7854C] || _strnicmp(MEMORY[0xB78554], String2, MEMORY[0xB7854C]) ) /*0x7d725f*/
-      return ((unsigned int)~MEMORY[0xB7855C] >> 2) & 1; /*0x7d7269*/
+    if ( CRTGlobal_B78550 || !CRTGlobal_B7854C || _strnicmp(CRTGlobal_B78554, String2, CRTGlobal_B7854C) ) /*0x7d725f*/
+      return ((unsigned int)~CRTGlobal_B7855C >> 2) & 1; /*0x7d7269*/
     v4 = TestDefaultLanguage(v1, 0); /*0x7d726d*/
   }
   else
   {
-    if ( MEMORY[0xB78550] ) /*0x7d723c*/
+    if ( CRTGlobal_B78550 ) /*0x7d723c*/
     {
 LABEL_11:
-      MEMORY[0xB7855C] |= 4u; /*0x7d7278*/
+      CRTGlobal_B7855C |= 4u; /*0x7d7278*/
       CRTGlobal_B78560 = v1; /*0x7d727f*/
       MEMORY[0xB78544] = v1; /*0x7d7285*/
-      return ((unsigned int)~MEMORY[0xB7855C] >> 2) & 1; /*0x7d7285*/
+      return ((unsigned int)~CRTGlobal_B7855C >> 2) & 1; /*0x7d7285*/
     }
     v4 = TestDefaultLanguage(v1, 1); /*0x7d7240*/
   }
   if ( v4 ) /*0x7d7276*/
     goto LABEL_11; /*0x7d7276*/
-  return ((unsigned int)~MEMORY[0xB7855C] >> 2) & 1; /*0x7d7298*/
+  return ((unsigned int)~CRTGlobal_B7855C >> 2) & 1; /*0x7d7298*/
 }
 }
 } // namespace gamemd
@@ -5731,24 +5731,24 @@ unsigned int __stdcall CountryEnumProc_4(LPSTR a1)
   char v4[120]; // [esp+4h] [ebp-78h] BYREF
 
   v1 = LcidFromHexString(a1); /*0x7d72e4*/
-  v2 = -(MEMORY[0xB78548] != 0); /*0x7d72f3*/
+  v2 = -(CRTGlobal_B78548 != 0); /*0x7d72f3*/
   LOWORD(v2) = v2 & 0xF005; /*0x7d72f5*/
   if ( unk_B78564(v1, v2 + 4098, v4, 120) ) /*0x7d7300*/
   {
-    if ( !_strcmpi(MEMORY[0xB78558], v4) ) /*0x7d731f*/
+    if ( !_strcmpi(CRTGlobal_B78558, v4) ) /*0x7d731f*/
     {
       if ( TestDefaultCountry(v1) ) /*0x7d732b*/
       {
-        MEMORY[0xB7855C] |= 4u; /*0x7d7335*/
+        CRTGlobal_B7855C |= 4u; /*0x7d7335*/
         CRTGlobal_B78560 = v1; /*0x7d733c*/
         MEMORY[0xB78544] = v1; /*0x7d7342*/
       }
     }
-    return ((unsigned int)~MEMORY[0xB7855C] >> 2) & 1; /*0x7d7352*/
+    return ((unsigned int)~CRTGlobal_B7855C >> 2) & 1; /*0x7d7352*/
   }
   else
   {
-    MEMORY[0xB7855C] = 0; /*0x7d730a*/
+    CRTGlobal_B7855C = 0; /*0x7d730a*/
     return 1; /*0x7d7312*/
   }
 }
@@ -5764,7 +5764,7 @@ LCID GetLcidFromDefault()
 {
   LCID result; // eax
 
-  LOWORD(MEMORY[0xB7855C]) = MEMORY[0xB7855C] | 0x104; /*0x7d735a*/
+  LOWORD(CRTGlobal_B7855C) = CRTGlobal_B7855C | 0x104; /*0x7d735a*/
   result = GetUserDefaultLCID(); /*0x7d7363*/
   CRTGlobal_B78560 = result; /*0x7d7369*/
   MEMORY[0xB78544] = result; /*0x7d736e*/
@@ -5852,7 +5852,7 @@ int __cdecl _wctomb_lk(LPSTR lpMultiByteStr, WCHAR WideCharStr)
                &WideCharStr,
                1,
                (LPSTR)result,
-               MEMORY[0x87C79C],
+               SrcSizeInBytes,
                0,
                (LPBOOL)&lpMultiByteStr);
     if ( !result || lpMultiByteStr ) /*0x7d782d*/
@@ -7422,7 +7422,7 @@ int __cdecl __strgtold12(int a1, char **a2, char *a3, int a4, int a5, int a6, in
       case 0:
         if ( v10 >= 49 && v10 <= 57 ) /*0x7d98e4*/
           goto LABEL_10; /*0x7d98e4*/
-        if ( v10 == MEMORY[0x87C7A0][0] ) /*0x7d98f3*/
+        if ( v10 == SrcCh[0] ) /*0x7d98f3*/
           goto LABEL_12; /*0x7d98f3*/
         if ( v10 == 43 ) /*0x7d9902*/
         {
@@ -7443,7 +7443,7 @@ int __cdecl __strgtold12(int a1, char **a2, char *a3, int a4, int a5, int a6, in
         v46 = 1; /*0x7d992e*/
         if ( v10 >= 49 && v10 <= 57 ) /*0x7d9936*/
           goto LABEL_10; /*0x7d9936*/
-        if ( v10 == MEMORY[0x87C7A0][0] ) /*0x7d993e*/
+        if ( v10 == SrcCh[0] ) /*0x7d993e*/
           goto LABEL_46; /*0x7d993e*/
         if ( v10 == 43 || v10 == 45 ) /*0x7d994c*/
           goto LABEL_30; /*0x7d994c*/
@@ -7462,7 +7462,7 @@ LABEL_81:
         }
         else
         {
-          if ( v10 == MEMORY[0x87C7A0][0] ) /*0x7d9996*/
+          if ( v10 == SrcCh[0] ) /*0x7d9996*/
           {
 LABEL_12:
             v32 = 5; /*0x7d98f5*/
@@ -7480,7 +7480,7 @@ LABEL_35:
         continue; /*0x7d99a7*/
       case 3:
         v46 = 1; /*0x7d99ac*/
-        while ( (int)MEMORY[0x87C79C] <= 1
+        while ( (int)SrcSizeInBytes <= 1
               ? *((_BYTE *)MEMORY[0x87C590] + 2 * (unsigned __int8)v10) & 4
               : _isctype((unsigned __int8)v10, 4) )
         {
@@ -7497,7 +7497,7 @@ LABEL_35:
           }
           v10 = *v7++; /*0x7d99f3*/
         }
-        if ( v10 != MEMORY[0x87C7A0][0] ) /*0x7d99fe*/
+        if ( v10 != SrcCh[0] ) /*0x7d99fe*/
           goto LABEL_57; /*0x7d99fe*/
 LABEL_46:
         v8 = 4; /*0x7d9a00*/
@@ -7513,7 +7513,7 @@ LABEL_46:
             v10 = *v7++; /*0x7d9a1b*/
           }
         }
-        while ( (int)MEMORY[0x87C79C] <= 1
+        while ( (int)SrcSizeInBytes <= 1
               ? *((_BYTE *)MEMORY[0x87C590] + 2 * (unsigned __int8)v10) & 4
               : _isctype((unsigned __int8)v10, 4) )
         {
@@ -7548,7 +7548,7 @@ LABEL_106:
         goto LABEL_89; /*0x7d9975*/
       case 5:
         v41 = 1; /*0x7d9a84*/
-        if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7d9a87*/
+        if ( (int)SrcSizeInBytes <= 1 ) /*0x7d9a87*/
           v15 = *((_BYTE *)MEMORY[0x87C590] + 2 * (unsigned __int8)v10) & 4; /*0x7d9aa6*/
         else
           v15 = _isctype((unsigned __int8)v10, 4); /*0x7d9a8e*/
@@ -7590,7 +7590,7 @@ LABEL_79:
         v18 = 0; /*0x7d9b69*/
         while ( 2 ) /*0x7d9b72*/
         {
-          if ( (int)MEMORY[0x87C79C] <= 1 ) /*0x7d9b72*/
+          if ( (int)SrcSizeInBytes <= 1 ) /*0x7d9b72*/
             v19 = *((_BYTE *)MEMORY[0x87C590] + 2 * (unsigned __int8)v10) & 4; /*0x7d9b8f*/
           else
             v19 = _isctype((unsigned __int8)v10, 4); /*0x7d9b7a*/
@@ -7607,7 +7607,7 @@ LABEL_79:
           break;
         }
         v43 = v18; /*0x7d9bb2*/
-        while ( (int)MEMORY[0x87C79C] <= 1
+        while ( (int)SrcSizeInBytes <= 1
               ? *((_BYTE *)MEMORY[0x87C590] + 2 * (unsigned __int8)v10) & 4
               : _isctype((unsigned __int8)v10, 4) )
           v10 = *v7++; /*0x7d9be0*/
@@ -7770,13 +7770,13 @@ unsigned int __cdecl _mbtowc_lk(LPWSTR lpWideCharStr, unsigned __int8 *lpMultiBy
       return 1; /*0x7d9e1e*/
     goto LABEL_18; /*0x7d9e9d*/
   }
-  result = MEMORY[0x87C79C]; /*0x7d9e30*/
-  if ( (int)MEMORY[0x87C79C] > 1 ) /*0x7d9e38*/
+  result = SrcSizeInBytes; /*0x7d9e30*/
+  if ( (int)SrcSizeInBytes > 1 ) /*0x7d9e38*/
   {
-    if ( (int)a3 >= (int)MEMORY[0x87C79C] ) /*0x7d9e3d*/
+    if ( (int)a3 >= (int)SrcSizeInBytes ) /*0x7d9e3d*/
     {
-      v5 = MultiByteToWideChar(CodePage, 9u, (LPCCH)lpMultiByteStr, MEMORY[0x87C79C], lpWideCharStr, lpWideCharStr != 0) == 0; /*0x7d9e5b*/
-      result = MEMORY[0x87C79C]; /*0x7d9e5d*/
+      v5 = MultiByteToWideChar(CodePage, 9u, (LPCCH)lpMultiByteStr, SrcSizeInBytes, lpWideCharStr, lpWideCharStr != 0) == 0; /*0x7d9e5b*/
+      result = SrcSizeInBytes; /*0x7d9e5d*/
       if ( !v5 ) /*0x7d9e62*/
         return result; /*0x7d9e62*/
       goto LABEL_16; /*0x7d9e62*/
@@ -8600,7 +8600,7 @@ int __cdecl isctype_CRT(unsigned __int8 a1, int a2, unsigned __int8 a3)
 
   if ( (a3 & (unsigned __int8)CRTGlobal_B78961[a1]) != 0 ) /*0x7dae7d*/
     return 1; /*0x7dae7d*/
-  result = a2 ? (unsigned __int16)(a2 & MEMORY[0x87C598][a1 + 1]) : 0;
+  result = a2 ? (unsigned __int16)(a2 & __ctype[a1 + 1]) : 0;
   if ( result ) /*0x7dae98*/
     return 1; /*0x7dae9d*/
   return result; /*0x7dae9a*/
@@ -10267,19 +10267,19 @@ int __cdecl _getch()
 
   if ( MEMORY[0x87DD70] == -1 ) /*0x7dd21f*/
   {
-    if ( MEMORY[0x87DD80] == (HANDLE)-1 ) /*0x7dd233*/
+    if ( hConsoleInput == (HANDLE)-1 ) /*0x7dd233*/
     {
       return -1; /*0x7dd235*/
     }
     else
     {
-      if ( MEMORY[0x87DD80] == (HANDLE)-2 ) /*0x7dd23c*/
+      if ( hConsoleInput == (HANDLE)-2 ) /*0x7dd23c*/
         __initconin(); /*0x7dd23e*/
-      GetConsoleMode(MEMORY[0x87DD80], &Mode); /*0x7dd250*/
-      SetConsoleMode(MEMORY[0x87DD80], 0); /*0x7dd264*/
-      for ( i = ReadConsoleInputA(MEMORY[0x87DD80], &Buffer, 1u, &NumberOfEventsRead); /*0x7dd27c*/
+      GetConsoleMode(hConsoleInput, &Mode); /*0x7dd250*/
+      SetConsoleMode(hConsoleInput, 0); /*0x7dd264*/
+      for ( i = ReadConsoleInputA(hConsoleInput, &Buffer, 1u, &NumberOfEventsRead); /*0x7dd27c*/
             i && NumberOfEventsRead;
-            i = ReadConsoleInputA(MEMORY[0x87DD80], &Buffer, 1u, &NumberOfEventsRead) )
+            i = ReadConsoleInputA(hConsoleInput, &Buffer, 1u, &NumberOfEventsRead) )
       {
         if ( Buffer.EventType == 1 && Buffer.Event.KeyEvent.bKeyDown ) /*0x7dd293*/
         {
@@ -10297,7 +10297,7 @@ int __cdecl _getch()
       }
       AsciiChar = -1; /*0x7dd2cb*/
 LABEL_17:
-      SetConsoleMode(MEMORY[0x87DD80], Mode); /*0x7dd2ce*/
+      SetConsoleMode(hConsoleInput, Mode); /*0x7dd2ce*/
       return AsciiChar; /*0x7dd2d9*/
     }
   }

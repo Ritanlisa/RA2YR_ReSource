@@ -32,7 +32,7 @@ int __thiscall sub_41D860(int this, int *a2)
   this->AirstrikeClass_field_3D = 1; /*0x41d870*/
   *(_DWORD *)(this + 52) = 0; /*0x41d874*/
   v4 = *(_DWORD *)(v3 + 3576); /*0x41d881*/
-  v17 = *(_DWORD *)(*(_DWORD *)MEMORY[0x8871E0]->? + 3576); /*0x41d895*/
+  v17 = *(_DWORD *)(*(_DWORD *)g_RulesClass_Instance->? + 3576); /*0x41d895*/
   if ( VeterancyStruct::IsElite((float *)(this->owner + 336)) ) /*0x41d8a2*/
   {
     v5 = this->AirstrikeClass_field_28; /*0x41d8ae*/
@@ -51,8 +51,8 @@ int __thiscall sub_41D860(int this, int *a2)
   v14 = (int)v8; /*0x41d919*/
   v9 = (unsigned int *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 76) + 60))(this->owner); /*0x41d91f*/
   result = PlaceAircraftOnMap(v9, v4, v5, 1, v14, 0, v15, 0, this); /*0x41d926*/
-  *(_DWORD *)(this + 44) = result; /*0x41d92d*/
-  *(_DWORD *)(this + 48) = result; /*0x41d930*/
+  this->q02C = result; /*0x41d92d*/
+  this->EliteAirstrikeTeamTypeIndex = result; /*0x41d930*/
   if ( result ) /*0x41d933*/
   {
     result = this->AirstrikeClass_field_5C; /*0x41d939*/
@@ -62,7 +62,7 @@ int __thiscall sub_41D860(int this, int *a2)
       v18[0] = *v11; /*0x41d949*/
       v18[1] = v11[1]; /*0x41d956*/
       v18[2] = v11[2]; /*0x41d961*/
-      result = StartAudioControllerAt(MEMORY[0x8871E0]->?, (int)v18, 0); /*0x41d96b*/
+      result = StartAudioControllerAt(g_RulesClass_Instance->?, (int)v18, 0); /*0x41d96b*/
     }
     this->AirstrikeClass_field_50 = a2; /*0x41d972*/
     if ( a2 ) /*0x41d975*/
@@ -73,17 +73,17 @@ int __thiscall sub_41D860(int this, int *a2)
         v12 = *a2; /*0x41d98b*/
         a2[165] = this; /*0x41d994*/
         (*(void (__thiscall **)(int *, int))(v12 + 348))(a2, 100000); /*0x41d99a*/
-        *((_BYTE *)a2 + 1784) = *((_BYTE *)&MEMORY[0x8871E0][1].?[12] /*0x41d9b8*/
-                                + 2 * MEMORY[0x8871E0][1].?[10]
-                                + MEMORY[0x8871E0][1].?[10]);
-        *((_BYTE *)a2 + 1785) = *((_BYTE *)&MEMORY[0x8871E0][1].?[12] /*0x41d9d5*/
-                                + 2 * MEMORY[0x8871E0][1].?[10]
-                                + MEMORY[0x8871E0][1].?[10]
+        *((_BYTE *)a2 + 1784) = *((_BYTE *)&g_RulesClass_Instance[1].?[12] /*0x41d9b8*/
+                                + 2 * g_RulesClass_Instance[1].?[10]
+                                + g_RulesClass_Instance[1].?[10]);
+        *((_BYTE *)a2 + 1785) = *((_BYTE *)&g_RulesClass_Instance[1].?[12] /*0x41d9d5*/
+                                + 2 * g_RulesClass_Instance[1].?[10]
+                                + g_RulesClass_Instance[1].?[10]
                                 + 1);
         v13 = *a2; /*0x41d9f1*/
-        *((_BYTE *)a2 + 1786) = *((_BYTE *)&MEMORY[0x8871E0][1].?[12] /*0x41d9f5*/
-                                + 2 * MEMORY[0x8871E0][1].?[10]
-                                + MEMORY[0x8871E0][1].?[10]
+        *((_BYTE *)a2 + 1786) = *((_BYTE *)&g_RulesClass_Instance[1].?[12] /*0x41d9f5*/
+                                + 2 * g_RulesClass_Instance[1].?[10]
+                                + g_RulesClass_Instance[1].?[10]
                                 + 2);
         a2[447] = 1; /*0x41d9fb*/
         return (*(int (__thiscall **)(int *, int))(v13 + 292))(a2, 2); /*0x41da05*/
@@ -155,7 +155,7 @@ LABEL_6:
       (*(void (__thiscall **)(_DWORD *, int))(v11 + 348))(v9, 100000); /*0x41dada*/
       (*(void (__thiscall **)(_DWORD *, int))(*v9 + 292))(v9, 2); /*0x41dae6*/
     }
-    v8 = *(_DWORD *)(this + 48); /*0x41daec*/
+    v8 = this->EliteAirstrikeTeamTypeIndex; /*0x41daec*/
     v12 = *(int **)(this + 92); /*0x41daef*/
     v13 = 0; /*0x41daf2*/
     for ( this->AirstrikeClass_field_50 = a2; v13 < v8; ++v13 ) /*0x41daf9*/
@@ -170,7 +170,7 @@ LABEL_6:
         }
         v12 = (int *)v12[374]; /*0x41db26*/
       }
-      v8 = *(_DWORD *)(this + 48); /*0x41db2c*/
+      v8 = this->EliteAirstrikeTeamTypeIndex; /*0x41db2c*/
     }
   }
   return v8; /*0x41da61*/
@@ -197,8 +197,8 @@ int __thiscall AirstrikeClass::RemoveAircraft(int this, AudioController *aP1)
   {
     this->AirstrikeClass_field_5C = *(_DWORD *)&aP1[7].__pad_94[4]; /*0x41dc98*/
     *(_DWORD *)&aP1[7].__pad_94[4] = 0; /*0x41dc9b*/
-    result = *(_DWORD *)(this + 48) - 1; /*0x41dca4*/
-    *(_DWORD *)(this + 48) = result; /*0x41dca5*/
+    result = this->EliteAirstrikeTeamTypeIndex - 1; /*0x41dca4*/
+    this->EliteAirstrikeTeamTypeIndex = result; /*0x41dca5*/
     *(_DWORD *)&aP1[3].__pad_10[68] = 0; /*0x41dca8*/
   }
   else if ( result ) /*0x41dcb2*/
@@ -210,7 +210,7 @@ int __thiscall AirstrikeClass::RemoveAircraft(int this, AudioController *aP1)
         *(_DWORD *)(result + 1496) = *(_DWORD *)&aP1[7].__pad_94[4]; /*0x41dcc4*/
         *(_DWORD *)&aP1[7].__pad_94[4] = 0; /*0x41dcca*/
         result = 0; /*0x41dcd3*/
-        --*(_DWORD *)(this + 48); /*0x41dcd6*/
+        --this->EliteAirstrikeTeamTypeIndex; /*0x41dcd6*/
         *(_DWORD *)&aP1[3].__pad_10[68] = 0; /*0x41dcd9*/
       }
       else
@@ -221,11 +221,11 @@ int __thiscall AirstrikeClass::RemoveAircraft(int this, AudioController *aP1)
     }
     while ( v3 <= 100 && result ); /*0x41dceb*/
   }
-  if ( *(int *)(this + 48) <= 0 ) /*0x41dcf0*/
+  if ( this->EliteAirstrikeTeamTypeIndex <= 0 ) /*0x41dcf0*/
   {
     v4 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x41dcf2*/
     this->AirstrikeClass_field_3C = 0; /*0x41dcf8*/
-    *(_DWORD *)(this + 64) = v4; /*0x41dcfb*/
+    this->q040 = v4; /*0x41dcfb*/
     this->AirstrikeClass_field_3D = 0; /*0x41dcfe*/
   }
   return result; /*0x41dd01*/
@@ -314,8 +314,8 @@ LABEL_8:
     goto LABEL_8; /*0x420ef3*/
   }
 LABEL_9:
-  v4 = MEMORY[0x88A100] - 1; /*0x420f07*/
-  if ( MEMORY[0x88A100] - 1 >= 0 ) /*0x420f12*/
+  v4 = g_AlphaShapeLimit - 1; /*0x420f07*/
+  if ( g_AlphaShapeLimit - 1 >= 0 ) /*0x420f12*/
   {
     v0 = MEMORY[0x88A0F4]; /*0x420f14*/
     do /*0x420f36*/

@@ -37,43 +37,43 @@ char __thiscall BuildingClass_AbandonProduction(int this)
   int v9; // ecx
   int v11; // [esp+Ch] [ebp-8h]
 
-  v2 = *(_DWORD *)(this + 88);
+  v2 = this->q058;
   if ( !v2 )
     return 0;
   v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 136))(v2);
   Debug::Log("Abandoning production of %s\n", (const char *)(v3 + 100));
-  v4 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 136))(*(_DWORD *)(this + 88));
-  v5 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v4 + 132))(v4, *(_DWORD *)(*(_DWORD *)(this + 88) + 540));
-  HouseClass::AddPower(*(_DWORD **)(this + 108), v5 - *(_DWORD *)(this + 96));
-  v6 = *(_DWORD *)(this + 104);
-  *(_DWORD *)(this + 96) = 0;
+  v4 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 136))(this->q058);
+  v5 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v4 + 132))(v4, *(_DWORD *)(this->q058 + 540));
+  HouseClass::AddPower(*(_DWORD **)(this + 108), v5 - this->balance);
+  v6 = this->specialItem;
+  this->balance = 0;
   if ( v6 )
-    *(_DWORD *)(this + 104) = -1;
+    this->specialItem = -1;
   v7 = MEMORY[0xA8ED84];
-  *(_DWORD *)(this + 56) = 0;
-  *(_DWORD *)(this + 44) = v7;
-  *(_DWORD *)(this + 48) = v11;
-  *(_DWORD *)(this + 52) = 0;
+  this->queuedCapacity = 0;
+  this->q02C = v7;
+  this->queuedObjects = v11;
+  this->queuedCount = 0;
   v8 = *(#375 **)(this + 108);
-  *(_DWORD *)(this + 36) = 0;
-  *(_BYTE *)(this + 112) = 1;
-  *(_BYTE *)(this + 93) = 1;
+  this->production = 0;
+  this->isSuspended = 1;
+  this->q174 = 1;
   if ( !(unsigned __int8)House::IsCurrentPlayer(v8) )
   {
-    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(*(_DWORD *)(this + 88)) == 15 )
-      *(_DWORD *)(*(_DWORD *)(this + 108) + 22100) = -1;
-    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(*(_DWORD *)(this + 88)) == 1 )
-      *(_DWORD *)(*(_DWORD *)(this + 108) + 22096) = -1;
-    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(*(_DWORD *)(this + 88)) == 2 )
-      *(_DWORD *)(*(_DWORD *)(this + 108) + 22104) = -1;
-    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(*(_DWORD *)(this + 88)) == 6 )
-      *(_DWORD *)(*(_DWORD *)(this + 108) + 22092) = -1;
+    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(this->q058) == 15 )
+      *(_DWORD *)(this->owner + 22100) = -1;
+    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(this->q058) == 1 )
+      *(_DWORD *)(this->owner + 22096) = -1;
+    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(this->q058) == 2 )
+      *(_DWORD *)(this->owner + 22104) = -1;
+    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(this->q058) == 6 )
+      *(_DWORD *)(this->owner + 22092) = -1;
   }
   ++MEMORY[0xA8E7AC];
-  v9 = *(_DWORD *)(this + 88);
+  v9 = this->q058;
   if ( v9 )
     (*(void (__thiscall **)(int, int))(*(_DWORD *)v9 + 32))(v9, 1);
-  *(_DWORD *)(this + 88) = 0;
+  this->q058 = 0;
   --MEMORY[0xA8E7AC];
   return 1;
 }

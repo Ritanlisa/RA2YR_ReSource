@@ -43,8 +43,8 @@ char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
   result = MEMORY[0xABF3F4]; /*0x5c00e0*/
   if ( MEMORY[0xABF3F4] ) /*0x5c00ea*/
   {
-    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x887310] + 24))(MEMORY[0x887310], 0); /*0x5c00fa*/
-    Frame::Present(MEMORY[0x887310], a1, a2, a3, 0, v7, v8, v9); /*0x5c0107*/
+    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Alternate + 24))(DSurface_Alternate, 0); /*0x5c00fa*/
+    Frame::Present(DSurface_Alternate, a1, a2, a3, 0, v7, v8, v9); /*0x5c0107*/
     result = TestBitArray(15); /*0x5c0111*/
     if ( !result ) /*0x5c0118*/
     {
@@ -57,8 +57,8 @@ char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
       v8 = v5; /*0x5c0164*/
       v7 = Rect.left + v6; /*0x5c016e*/
       v10 = v4; /*0x5c0172*/
-      return (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x5c0187*/
-               MEMORY[0x887308],
+      return (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x5c0187*/
+               g_DSurface_Primary,
                &v7,
                *(_DWORD *)(MEMORY[0xABF3F4] + 8),
                MEMORY[0xABF3F4] + 36,
@@ -170,7 +170,7 @@ char __thiscall MPCooperative::_vt07(int *this, int a2)
   v3 = 0; /*0x5c17c3*/
   v10 = this->q33C; /*0x5c17c5*/
   v11 = 0; /*0x5c17cb*/
-  Movie::GetSection((int)&MEMORY[0x89F518], v10, &v12); /*0x5c17cf*/
+  Movie::GetSection((int)&g_DDrawSurfaceManager, v10, &v12); /*0x5c17cf*/
   v4 = v12; /*0x5c17d4*/
   if ( !v12 ) /*0x5c17da*/
     return 1; /*0x5c17e4*/
@@ -3111,7 +3111,7 @@ LABEL_5:
     (*(void (__thiscall **)(int, int, int, int, _DWORD, int))(*(_DWORD *)a2 + 8))( /*0x5ce173*/
       a2,
       this + 84,
-      MEMORY[0x887310],
+      DSurface_Alternate,
       this + 84,
       0,
       1);

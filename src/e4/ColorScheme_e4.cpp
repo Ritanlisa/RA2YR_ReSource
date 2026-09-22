@@ -13,23 +13,23 @@ int __thiscall ColorScheme_Destructor(int this)
   int result; // eax
   int v4; // [esp+4h] [ebp-4h] BYREF
 
-  if ( *(_DWORD *)(this + 772) ) /*0x68c8d4*/
+  if ( this->q304 ) /*0x68c8d4*/
     free(*(void **)(this + 772)); /*0x68c8df*/
   v2 = *(void (__thiscall ****)(_DWORD, int))(this + 780); /*0x68c8e7*/
-  *(_DWORD *)(this + 772) = 0; /*0x68c8ed*/
+  this->q304 = 0; /*0x68c8ed*/
   if ( v2 ) /*0x68c8f9*/
     (**v2)(v2, 1); /*0x68c8ff*/
   *(_DWORD *)(this + 780) = 0; /*0x68c905*/
   v4 = this; /*0x68c91b*/
-  result = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB054D0] + 16))(&MEMORY[0xB054D0], &v4); /*0x68c91f*/
-  if ( result != -1 && result < MEMORY[0xB054E0] && result < --MEMORY[0xB054E0] ) /*0x68c93b*/
+  result = (*(int (__thiscall **)(int *, int *))(ColorScheme_Array + 16))(&ColorScheme_Array, &v4); /*0x68c91f*/
+  if ( result != -1 && result < g_AnimClass_SaveState && result < --g_AnimClass_SaveState ) /*0x68c93b*/
   {
     do /*0x68c953*/
     {
       ++result; /*0x68c943*/
-      *((_DWORD *)MEMORY[0xB054D4] + result - 1) = *((_DWORD *)MEMORY[0xB054D4] + result); /*0x68c947*/
+      *((_DWORD *)BuildingTypeClass_AnimTable + result - 1) = *((_DWORD *)BuildingTypeClass_AnimTable + result); /*0x68c947*/
     }
-    while ( result < MEMORY[0xB054E0] ); /*0x68c953*/
+    while ( result < g_AnimClass_SaveState ); /*0x68c953*/
   }
   return result; /*0x68c925*/
 }

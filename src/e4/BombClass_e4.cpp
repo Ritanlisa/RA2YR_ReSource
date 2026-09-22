@@ -22,7 +22,7 @@ int __thiscall BombClass::AbstractClass(int this)
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
   AudioController::Init((_DWORD *)(this + 60)); /*0x438605*/
-  *(_DWORD *)(this + 80) = MEMORY[0x8871E0]->ZoomInFactor; /*0x438615*/
+  this->q050 = g_RulesClass_Instance->ZoomInFactor; /*0x438615*/
   if ( dword_89C678 < dword_89C670 /*0x43864a*/
     || (unk_89C675 || !dword_89C670)
     && dword_89C67C > 0
@@ -52,8 +52,8 @@ Iostream_init *__thiscall BombClass::GetCurrentFrame(_DWORD *this)
 
   if ( this->audioController == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
-  v2 = 2 * (((int)MEMORY[0xA8ED84] - this->q034) / (MEMORY[0x8871E0]->?[1] / 6)); /*0x438a4c*/
-  if ( (int)MEMORY[0xA8ED84] % (2 * MEMORY[0x8871E0]->?[3]) >= MEMORY[0x8871E0]->?[3] ) /*0x438a53*/
+  v2 = 2 * (((int)g_CurrentFrame - this->q034) / (g_RulesClass_Instance->?[1] / 6)); /*0x438a4c*/
+  if ( (int)g_CurrentFrame % (2 * g_RulesClass_Instance->?[3]) >= g_RulesClass_Instance->?[3] ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
     return __0Iostream_init_QAE_XZ_1((Iostream_init *)v2); /*0x438a59*/
@@ -72,7 +72,7 @@ bool BombClass::TimeToExplode()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall BombClass::TimeToExplode(int this)
 {
-  return !this->audioController && (int)MEMORY[0xA8ED84] > *(_DWORD *)(this + 56) && !this->BombClass_field_58; /*0x438a8c*/
+  return !this->audioController && (int)g_CurrentFrame > this->q038 && !this->BombClass_field_58; /*0x438a8c*/
 }
 }
 } // namespace game
@@ -101,7 +101,7 @@ int __thiscall BombClass::_vt13(int this, int *a2)
     v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x438aac*/
     Power::TimerProcess(v5); /*0x438ab2*/
   }
-  v6 = *(_DWORD *)(this + 36); /*0x438ab7*/
+  v6 = this->q024; /*0x438ab7*/
   if ( v6 ) /*0x438abc*/
   {
     v7 = (*(int (__stdcall **)(int))(*(_DWORD *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/

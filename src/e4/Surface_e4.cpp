@@ -936,7 +936,7 @@ LABEL_21:
   v65 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a4 + 92))(a4, 0, 0); /*0x6ba87d*/
   if ( a5 ) /*0x6ba88a*/
   {
-    v20 = MEMORY[0x8A0DD4]; /*0x6ba88c*/
+    v20 = g_BitShift_Green_0; /*0x6ba88c*/
     v21 = v77; /*0x6ba892*/
     v22 = a5 + 1; /*0x6ba899*/
     v23 = 256; /*0x6ba89a*/
@@ -1141,7 +1141,7 @@ void __thiscall Surface::BlitTechnoTo(
   v36 = &BSurface_Vtable; /*0x7074dd*/
   v12 = (unsigned int)aP4 & 0xFFFFFFEF; /*0x7074e5*/
   if ( (*(int (__thiscall **)(_BYTE *))(v11 + 44))(this) == 1 && *(this + 1747) ) /*0x7074f0*/
-    v13 = *(_DWORD **)&MEMORY[0xB077F8].__pad_579C[65964]; /*0x7074fa*/
+    v13 = *(_DWORD **)&g_OverlayTypeConfig.__pad_579C[65964]; /*0x7074fa*/
   else
     v13 = (_DWORD *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 484))(this); /*0x707505*/
   aP4a = (int *)LightConvertClass::SelectRLEBlitter(v13, (IUnknown *)v12); /*0x707516*/
@@ -1159,26 +1159,26 @@ void __thiscall Surface::BlitTechnoTo(
     ecx8 = (unsigned __int16)a1[2]; /*0x70757b*/
     v32 = v15; /*0x70757f*/
     v34 = (unsigned __int16)v17; /*0x707585*/
-    if ( *(int *)&MEMORY[0xB077F8].__pad_579C[65588] > 0 && *(int *)&MEMORY[0xB077F8].__pad_579C[65592] > 0 ) /*0x707597*/
+    if ( *(int *)&g_OverlayTypeConfig.__pad_579C[65588] > 0 && *(int *)&g_OverlayTypeConfig.__pad_579C[65592] > 0 ) /*0x707597*/
     {
       if ( ecx8 <= 0 || v17 <= 0 ) /*0x7075a7*/
       {
-        eax8 = *(TechnoClass **)&MEMORY[0xB077F8].__pad_579C[65580]; /*0x70764e*/
-        v15 = *(TechnoClass **)&MEMORY[0xB077F8].__pad_579C[65584]; /*0x707653*/
-        ecx8 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[65588]; /*0x707659*/
-        v17 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[65592]; /*0x70765f*/
+        eax8 = *(TechnoClass **)&g_OverlayTypeConfig.__pad_579C[65580]; /*0x70764e*/
+        v15 = *(TechnoClass **)&g_OverlayTypeConfig.__pad_579C[65584]; /*0x707653*/
+        ecx8 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65588]; /*0x707659*/
+        v17 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65592]; /*0x70765f*/
       }
       else
       {
-        v18 = *(TechnoClass **)&MEMORY[0xB077F8].__pad_579C[65580]; /*0x7075b3*/
-        v27 = *(TechnoClass **)&MEMORY[0xB077F8].__pad_579C[65584]; /*0x7075b9*/
-        v29 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[65588]; /*0x7075c3*/
-        v26 = *(TechnoClass **)&MEMORY[0xB077F8].__pad_579C[65580]; /*0x7075cf*/
-        v30 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[65592]; /*0x7075d3*/
-        if ( *(int *)&MEMORY[0xB077F8].__pad_579C[65580] > (int)eax8 ) /*0x7075d7*/
+        v18 = *(TechnoClass **)&g_OverlayTypeConfig.__pad_579C[65580]; /*0x7075b3*/
+        v27 = *(TechnoClass **)&g_OverlayTypeConfig.__pad_579C[65584]; /*0x7075b9*/
+        v29 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65588]; /*0x7075c3*/
+        v26 = *(TechnoClass **)&g_OverlayTypeConfig.__pad_579C[65580]; /*0x7075cf*/
+        v30 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65592]; /*0x7075d3*/
+        if ( *(int *)&g_OverlayTypeConfig.__pad_579C[65580] > (int)eax8 ) /*0x7075d7*/
         {
           v18 = eax8; /*0x7075e1*/
-          v29 += *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[65580] - (_DWORD)eax8; /*0x7075e3*/
+          v29 += *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65580] - (_DWORD)eax8; /*0x7075e3*/
           v26 = eax8; /*0x7075e7*/
         }
         if ( (int)v27 > (int)v15 ) /*0x7075f1*/
@@ -1198,10 +1198,10 @@ void __thiscall Surface::BlitTechnoTo(
         eax8 = v18; /*0x70764a*/
       }
     }
-    *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[65580] = eax8; /*0x707661*/
-    *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[65584] = v15; /*0x707666*/
-    *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[65588] = ecx8; /*0x70766c*/
-    *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[65592] = v17; /*0x707672*/
+    *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65580] = eax8; /*0x707661*/
+    *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65584] = v15; /*0x707666*/
+    *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65588] = ecx8; /*0x70766c*/
+    *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65592] = v17; /*0x707672*/
   }
   if ( aP4a ) /*0x70767e*/
   {
@@ -1634,15 +1634,15 @@ int __thiscall Surface_PixelToIndex(int this, _DWORD *a2)
   v6 = v3; /*0x769349*/
   v7 = v4; /*0x76934f*/
   if ( v3 < 0 /*0x76937a*/
-    || v6 >= (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 124))(*(_DWORD *)(this + 36))
+    || v6 >= (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 124))(this->q024)
     || v7 < 0
-    || v7 >= (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 128))(*(_DWORD *)(this + 36)) )
+    || v7 >= (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 128))(this->q024) )
   {
     return -1; /*0x769390*/
   }
   else
   {
-    return (*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 36) + 40))(*(_DWORD *)(this + 36), &v6); /*0x769386*/
+    return (*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 36) + 40))(this->q024, &v6); /*0x769386*/
   }
 }
 }
@@ -1730,7 +1730,7 @@ int __thiscall sub_7BD690(int this)
     v7 = *(unsigned __int16 *)(this + 1870); /*0x7bd735*/
   else
     v7 = *(unsigned __int8 *)(this + 245); /*0x7bd746*/
-  if ( v7 != *(_DWORD *)(this + 16) ) /*0x7bd74b*/
+  if ( v7 != this->q010 ) /*0x7bd74b*/
   {
     v8 = *(_DWORD *)(this + 136); /*0x7bd75c*/
     v52 = 0; /*0x7bd762*/
@@ -1858,7 +1858,7 @@ LABEL_57:
   if ( !v22 ) /*0x7bd93b*/
     goto LABEL_103; /*0x7bd93b*/
   (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v22, *(_DWORD *)(this + 1908)); /*0x7bd95c*/
-  *(_DWORD *)(this + 48) += *(_DWORD *)(this + 1908); /*0x7bd96d*/
+  this->q00C += *(_DWORD *)(this + 1908); /*0x7bd96d*/
   v56 = 0; /*0x7bd978*/
   if ( *(int *)(this + 140) > 0 ) /*0x7bd97c*/
   {
@@ -1869,7 +1869,7 @@ LABEL_57:
       if ( !v23 ) /*0x7bd99b*/
         goto LABEL_103; /*0x7bd99b*/
       (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v23, *(_DWORD *)(this + 1896) + 24); /*0x7bd9af*/
-      *(_DWORD *)(this + 48) += *(_DWORD *)(this + 1896) + 24; /*0x7bd9c4*/
+      this->q00C += *(_DWORD *)(this + 1896) + 24; /*0x7bd9c4*/
       memset(v24, 0, 0x18u); /*0x7bd9cc*/
       *v24 = v24 + 6; /*0x7bd9d6*/
       if ( v21 ) /*0x7bd9d9*/
@@ -1932,7 +1932,7 @@ LABEL_103:
     return -8; /*0x7bdf27*/
   }
   (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v31, *(_DWORD *)(this + 1912)); /*0x7bdaf1*/
-  *(_DWORD *)(this + 48) += *(_DWORD *)(this + 1912); /*0x7bdb02*/
+  this->q00C += *(_DWORD *)(this + 1912); /*0x7bdb02*/
   v57 = 0; /*0x7bdb0d*/
   if ( *(int *)(this + 136) > 0 ) /*0x7bdb11*/
   {
@@ -1950,7 +1950,7 @@ LABEL_103:
         4,
         v32,
         *(_DWORD *)(this + 1904) + *(_DWORD *)(this + 1900) + 44);
-      *(_DWORD *)(this + 48) += *(_DWORD *)(this + 1904) + *(_DWORD *)(this + 1900) + 44; /*0x7bdb71*/
+      this->q00C += *(_DWORD *)(this + 1904) + *(_DWORD *)(this + 1900) + 44; /*0x7bdb71*/
       memset(v32, 0, 0x2Cu); /*0x7bdb79*/
       *v32 = v32 + 11; /*0x7bdb7e*/
       v33 = (int)v32 + *(_DWORD *)(this + 1900) + 44; /*0x7bdb89*/
@@ -2034,7 +2034,7 @@ LABEL_103:
         if ( !v42 ) /*0x7bdd03*/
           goto LABEL_103; /*0x7bdd03*/
         (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v42, *(_DWORD *)(this + 152)); /*0x7bdd24*/
-        *(_DWORD *)(this + 48) += *(_DWORD *)(this + 152); /*0x7bdd35*/
+        this->q00C += *(_DWORD *)(this + 152); /*0x7bdd35*/
       }
       v51 = *(_DWORD *)(this + 152) / *(_DWORD *)(this + 156); /*0x7bdd4d*/
       *(_DWORD *)(this + 1948) = v51; /*0x7bdd53*/
@@ -2043,14 +2043,14 @@ LABEL_103:
       if ( !v43 ) /*0x7bdd67*/
         goto LABEL_103; /*0x7bdd67*/
       (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v43, *(_DWORD *)(this + 1948)); /*0x7bdd88*/
-      *(_DWORD *)(this + 48) += *(_DWORD *)(this + 1948); /*0x7bdd96*/
+      this->q00C += *(_DWORD *)(this + 1948); /*0x7bdd96*/
       memset(*(void **)(this + 1940), 0, *(_DWORD *)(this + 1948)); /*0x7bddac*/
       v44 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, 2 * *(_DWORD *)(this + 1948)); /*0x7bddc3*/
       *(_DWORD *)(this + 1944) = v44; /*0x7bddc9*/
       if ( !v44 ) /*0x7bddd1*/
         goto LABEL_103; /*0x7bddd1*/
       (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v44, 2 * *(_DWORD *)(this + 1948)); /*0x7bddf4*/
-      *(_DWORD *)(this + 48) += 2 * *(_DWORD *)(this + 1948); /*0x7bde04*/
+      this->q00C += 2 * *(_DWORD *)(this + 1948); /*0x7bde04*/
       memset(*(void **)(this + 1944), 0, 2 * *(_DWORD *)(this + 1948)); /*0x7bde1c*/
       v48 = 2 * (*(_DWORD *)(this + 1996) / (unsigned int)*(unsigned __int8 *)(this + 244)) + 100; /*0x7bde3b*/
       *(_DWORD *)(this + 1972) = v48; /*0x7bde41*/
@@ -2059,14 +2059,14 @@ LABEL_103:
       if ( !v45 ) /*0x7bde55*/
         goto LABEL_103; /*0x7bde55*/
       (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v45, *(_DWORD *)(this + 1972)); /*0x7bde76*/
-      *(_DWORD *)(this + 48) += *(_DWORD *)(this + 1972); /*0x7bde84*/
+      this->q00C += *(_DWORD *)(this + 1972); /*0x7bde84*/
       v46 = (*(int (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 2, 0, *(_DWORD *)(this + 156)); /*0x7bde93*/
       *(_DWORD *)(this + 1976) = v46; /*0x7bde99*/
       if ( !v46 ) /*0x7bdea1*/
         goto LABEL_103; /*0x7bdea1*/
       (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v46, *(_DWORD *)(this + 156)); /*0x7bdec2*/
       memset(*(void **)(this + 1976), 0, *(_DWORD *)(this + 156)); /*0x7bded8*/
-      *(_DWORD *)(this + 48) += *(_DWORD *)(this + 156); /*0x7bdeef*/
+      this->q00C += *(_DWORD *)(this + 156); /*0x7bdeef*/
     }
   }
   v47 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdf04*/
@@ -2074,7 +2074,7 @@ LABEL_103:
   if ( !v47 ) /*0x7bdf12*/
     goto LABEL_103; /*0x7bdf12*/
   (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v47, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdf4d*/
-  *(_DWORD *)(this + 48) += 4 * *(unsigned __int16 *)(this + 236); /*0x7bdf65*/
+  this->q00C += 4 * *(unsigned __int16 *)(this + 236); /*0x7bdf65*/
   return -1; /*0x7bd6a3*/
 }
 }

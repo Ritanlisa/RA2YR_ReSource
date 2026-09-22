@@ -105,7 +105,7 @@ LABEL_11:
           (*(void (__stdcall **)(int, _DWORD, int, _DWORD, int, int, _DWORD))(*(_DWORD *)a1[2] + 364))( /*0x728d7c*/
             a1[2] + 108,
             0,
-            MEMORY[0x8871E0]->?[5],
+            g_RulesClass_Instance->?[5],
             0,
             1,
             1,

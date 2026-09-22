@@ -591,3 +591,17 @@ this-relative 访问**，参数型 receiver（`a1->X`）架构上不产事件。
 - **结果：1,108 块 / 8,745 处就地转换**（main 180 块中 95 块 1,315 处；gap2 360/113/1,994；e4 3,360/900/5,436）。
 - 逐字快照顾虑不成立：验证器 IDA 侧读快照/ida_cache（未动），不读树内块；replace_body 整块替换；get_context 快照优先回显 IDA 真值。
 - 验证：pending 块计数 3,919 不变；287 文件 8,349+/8,349- 纯平衡替换；Mission_Attack 块实测 `this->missionStatus`/`this->q2B4` 落地；replace_body dry 定位同一 span；verify PASS 无影响。
+
+### G29.4 地址+int 违规全量机械清除（2026-09-21，用户指令：门控忽略 baseline 单独跑）
+
+**全量盘点**（pattern 级全树扫描，无 tag 豁免、无路径豁免）：真代码违规 4,791 处 + pending 原始形态 48,039 处。其中 audit_access 原有双重盲区被证实：baseline tag diff + 路径排除（gap2_defs/subs/_gap2 整类文件从不被扫）——路径排除已移除（pending 块内跳保持）。
+
+**机械清除**（`tools/csp_export/fix_addr_violations.py`，真代码逐函数 verify 门控+回滚）：
+- 真代码：**107 函数修复后 verify PASS**（this 偏移→this->Member、MEMORY→全局名）；15 函数 FAIL 自动回滚零损伤。
+- pending 块：追加 4,372 处 this 形态 + 4,691 处 MEMORY→全局名（e4 经 e4_globals.hpp 可见性门全放行）。
+- 两轮累计：pending 就地成员化 8,745+4,372=13,117 处；MEMORY→名 4,691+260 真代码处。
+
+**残差 4,113（真代码）+ 38,430（pending）的结构性归因**（非可机械解，逐类证据）：
+1. 局部变量偏移形态（member-cast-off 2,515 / cast-ptr-plus 1,167）：`v83+1152` 是虚表走（合法 CALL(vfptr+N) 词汇，非成员访问）；`v15+36` 类型化局部需 v 名↔type_map SSA 键桥接（T14 实证桥接率 ~20%，结构性天花板）。
+2. this-offsets 成员表缺口（真代码 163 / pending 2,802）：偏移不在 canon 表，需 member_set 证据逐案补（csp_anchor 通道）。
+3. MEMORY 可见性门外（真代码 264 / pending 18,634）：声明 hpp 不在 TU include 集，机械加 include 有编译风险；pending 部分由翻译期 get_context globals_map（名字+hpp file:line）按需解决。

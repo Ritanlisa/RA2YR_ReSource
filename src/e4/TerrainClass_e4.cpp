@@ -1265,36 +1265,36 @@ int __stdcall TerrainClass::LoadFromStream(_DWORD *a1, int a2)
   v2 = a1; /*0x71cda4*/
   v3 = a1 + 1; /*0x71cdad*/
   v4 = (*(int (__stdcall **)(_DWORD *))(a1[1] + 16))(a1 + 1); /*0x71cdb1*/
-  v6 = MEMORY[0xB0E844]; /*0x71cdb4*/
+  v6 = g_BuildingLoadQueue_Count; /*0x71cdb4*/
   v7 = v4; /*0x71cdba*/
-  if ( MEMORY[0xB0E844] ) /*0x71cdbe*/
+  if ( g_BuildingLoadQueue_Count ) /*0x71cdbe*/
   {
-    if ( !MEMORY[0xB0E84C] ) /*0x71cdcb*/
+    if ( !g_BuildingLoadQueue_Dirty ) /*0x71cdcb*/
     {
-      qsort(MEMORY[0xB0E840], MEMORY[0xB0E844], 8u, CompareFunction); /*0x71cddc*/
-      v6 = MEMORY[0xB0E844]; /*0x71cde1*/
-      MEMORY[0xB0E850] = 0; /*0x71cdea*/
-      MEMORY[0xB0E84C] = 1; /*0x71cdf4*/
+      qsort(g_BuildingLoadQueue_Array, g_BuildingLoadQueue_Count, 8u, CompareFunction); /*0x71cddc*/
+      v6 = g_BuildingLoadQueue_Count; /*0x71cde1*/
+      g_BuildingLoadQueue_Active = 0; /*0x71cdea*/
+      g_BuildingLoadQueue_Dirty = 1; /*0x71cdf4*/
     }
     v17 = v7; /*0x71ce06*/
-    v8 = BinaryArraySearch((int)MEMORY[0xB0E840], v6, &v17); /*0x71ce0a*/
+    v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array, v6, &v17); /*0x71ce0a*/
     if ( v8 ) /*0x71ce11*/
     {
-      v9 = (v8 - (int)MEMORY[0xB0E840]) >> 3; /*0x71ce19*/
+      v9 = (v8 - (int)g_BuildingLoadQueue_Array) >> 3; /*0x71ce19*/
       if ( v9 != -1 ) /*0x71ce1f*/
       {
         v10 = v9 + 1; /*0x71ce21*/
-        for ( i = MEMORY[0xB0E844]; v10 < (int)MEMORY[0xB0E844]; i = MEMORY[0xB0E844] ) /*0x71ce2b*/
+        for ( i = g_BuildingLoadQueue_Count; v10 < (int)g_BuildingLoadQueue_Count; i = g_BuildingLoadQueue_Count ) /*0x71ce2b*/
         {
-          v12 = (_DWORD *)((char *)MEMORY[0xB0E840] + 8 * v10++); /*0x71ce33*/
+          v12 = (_DWORD *)((char *)g_BuildingLoadQueue_Array + 8 * v10++); /*0x71ce33*/
           *(v12 - 2) = *v12; /*0x71ce39*/
           *(v12 - 1) = v12[1]; /*0x71ce3f*/
         }
-        MEMORY[0xB0E844] = i - 1; /*0x71ce54*/
-        *((_DWORD *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844]) = 0; /*0x71ce59*/
-        v5 = MEMORY[0xB0E840]; /*0x71ce61*/
-        *((_DWORD *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844] + 1) = 0; /*0x71ce69*/
-        MEMORY[0xB0E850] = 0; /*0x71ce6d*/
+        g_BuildingLoadQueue_Count = i - 1; /*0x71ce54*/
+        *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count) = 0; /*0x71ce59*/
+        v5 = g_BuildingLoadQueue_Array; /*0x71ce61*/
+        *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count + 1) = 0; /*0x71ce69*/
+        g_BuildingLoadQueue_Active = 0; /*0x71ce6d*/
       }
     }
   }
@@ -1310,20 +1310,20 @@ int __stdcall TerrainClass::LoadFromStream(_DWORD *a1, int a2)
       v2[3] = &vt_TerrainClass; /*0x71ceac*/
     }
     v14 = (*(int (__stdcall **)(_DWORD *))(*v3 + 16))(v3); /*0x71cebf*/
-    v15 = MEMORY[0xB0E848]; /*0x71cec1*/
-    if ( (int)(MEMORY[0xB0E844] + 1) <= MEMORY[0xB0E848] ) /*0x71cec9*/
+    v15 = g_BuildingLoadQueue_Capacity; /*0x71cec1*/
+    if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x71cec9*/
       goto LABEL_16; /*0x71cec9*/
-    if ( !MEMORY[0xB0E848] ) /*0x71cecd*/
+    if ( !g_BuildingLoadQueue_Capacity ) /*0x71cecd*/
       v15 = 10; /*0x71cecf*/
-    if ( BuildingTypeClass::Enqueue((int)&MEMORY[0xB0E840], v15) ) /*0x71ceda*/
+    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, v15) ) /*0x71ceda*/
     {
 LABEL_16:
-      *((_DWORD *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844]) = v14; /*0x71ceee*/
-      *((_DWORD *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844] + 1) = v2; /*0x71cefc*/
-      MEMORY[0xB0E84C] = 0; /*0x71cf06*/
-      ++MEMORY[0xB0E844]; /*0x71cf0d*/
+      *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count) = v14; /*0x71ceee*/
+      *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count + 1) = v2; /*0x71cefc*/
+      g_BuildingLoadQueue_Dirty = 0; /*0x71cf06*/
+      ++g_BuildingLoadQueue_Count; /*0x71cf0d*/
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v2 + 50); /*0x71cf1e*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 50); /*0x71cf1e*/
   }
   return Register; /*0x71cf25*/
 }
@@ -1365,12 +1365,12 @@ char __thiscall TerrainClass::ProcessSpawnAnim(int this, _DWORD *a1, AbstractCla
   }
   v10 = (_DWORD *)(*(int (__stdcall **)(char *))(this->Animation)(v14); /*0x71d0ab*/
   Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], v10, (IUnknown *)(this + 216)); /*0x71d0b8*/
-  v11 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 180) + *(_DWORD *)(this + 220); /*0x71d0d6*/
-  *(_DWORD *)(this + 216) += *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 176); /*0x71d0dd*/
-  *(_DWORD *)(this + 220) = v11; /*0x71d0df*/
+  v11 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 180) + this->q0DC; /*0x71d0d6*/
+  this->q0D8 += *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 176); /*0x71d0dd*/
+  this->q0DC = v11; /*0x71d0df*/
   if ( *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], v3) + 17) != -1 ) /*0x71d0ef*/
   {
-    if ( *(_BYTE *)(*(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], v3) + 17)] /*0x71d108*/
+    if ( *(_BYTE *)(*(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], v3) + 17)] /*0x71d108*/
                   + 681) )
     {
       *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], v3) + 17) = -1; /*0x71d123*/

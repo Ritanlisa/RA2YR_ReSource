@@ -48,7 +48,7 @@ void __thiscall VectorCursor_uint_DynamicVectorClass_uint____13_::_vt10(int *thi
   int v4; // edx
   int v5; // eax
 
-  if ( ((unsigned __int8)MEMORY[0xA8ED84] & 1) == 0 ) /*0x4f4bb7*/
+  if ( ((unsigned __int8)g_CurrentFrame & 1) == 0 ) /*0x4f4bb7*/
   {
     v3 = *(this + 1); /*0x4f4bb9*/
     if ( v3 >= 0 ) /*0x4f4bbe*/

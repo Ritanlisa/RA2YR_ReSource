@@ -24,8 +24,8 @@ char __thiscall sub_501750(_DWORD *this, int a2)
   _BYTE v11[16]; // [esp+74h] [ebp-10h] BYREF
   char v12; // [esp+88h] [ebp+4h]
 
-  result = MEMORY[0xA8E9A0]; /*0x501750*/
-  if ( MEMORY[0xA8E9A0] ) /*0x50175f*/
+  result = g_WTFMode; /*0x501750*/
+  if ( g_WTFMode ) /*0x50175f*/
   {
     v4 = *(this + 5353); /*0x501765*/
     v5 = v4 < *(this + 5354); /*0x501777*/
@@ -33,7 +33,7 @@ char __thiscall sub_501750(_DWORD *this, int a2)
     House_Notify(); /*0x501784*/
     result = *(this + 5353) < *(this + 5354); /*0x50179d*/
     v12 = result; /*0x5017a2*/
-    if ( !MEMORY[0xA8E7AC] && v5 != result ) /*0x5017ae*/
+    if ( !g_IKnowWhatImDoing && v5 != result ) /*0x5017ae*/
     {
       (*(void (__stdcall **)(_DWORD *, void *, int *))*this)(this, &unk_7F7CD0, &v9); /*0x5017c1*/
       (*(void (__stdcall **)(int, int *))(*(_DWORD *)v9 + 12))(v9, &v8); /*0x5017cf*/

@@ -34,17 +34,17 @@ IUnknown *__thiscall ScriptAction::InitActionFields(
     this->q008 = a2; /*0x4c686e*/
     *this = 4; /*0x4c6874*/
     this->q074 = 0; /*0x4c6877*/
-    *(_DWORD *)(this + 7) = a3; /*0x4c687b*/
+    this->q01C = a3; /*0x4c687b*/
     this->q0B0 = a4; /*0x4c6881*/
     this->q00C = a5; /*0x4c6888*/
     *(_DWORD *)(this + 14) = a6; /*0x4c6892*/
     this->q048 = a7; /*0x4c6899*/
-    *(_DWORD *)(this + 19) = a8; /*0x4c68a3*/
+    this->q04C = a8; /*0x4c68a3*/
     *(this + 23) = a9; /*0x4c68aa*/
     this->ScriptAction_field_0x18 = a10; /*0x4c68b4*/
     this->q01C = a11; /*0x4c68bb*/
   }
-  *(_DWORD *)(this + 3) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x4c68c4*/
+  this->q00C = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x4c68c4*/
   return result; /*0x4c68c7*/
 }
 }
@@ -162,9 +162,9 @@ _DWORD *__thiscall ScriptAction_GetScreenPos(_DWORD **this, _DWORD *a2)
   v6[0] = *ActionCoords; /*0x634416*/
   v6[1] = ActionCoords[1]; /*0x63441d*/
   v6[2] = ActionCoords[2]; /*0x634434*/
-  Coord::To_Screen(MEMORY[0x887324], v6, v5); /*0x634438*/
-  v3 = MEMORY[0x886FA4] + v5[1]; /*0x634452*/
-  *a2 = MEMORY[0x886FA0] + v5[0]; /*0x634458*/
+  Coord::To_Screen(g_TacticalClass_Instance, v6, v5); /*0x634438*/
+  v3 = g_Map_VisibleRect + v5[1]; /*0x634452*/
+  *a2 = DSurface_ViewBounds + v5[0]; /*0x634458*/
   a2[1] = v3; /*0x63445a*/
   return a2; /*0x63445d*/
 }
@@ -546,11 +546,11 @@ int __thiscall ScriptAction::PlaceObject(int this, AbstractClass *aP1)
       *(_WORD *)(v16 + 108) = v36; /*0x634eed*/
       *(_BYTE *)(v16 + 110) = v37; /*0x634eef*/
       *(_DWORD *)(v16 + 112) = v17 + 1; /*0x634ef4*/
-      v18 = *(_DWORD *)(this + 40); /*0x634ef7*/
+      v18 = this->q028; /*0x634ef7*/
       if ( this->ScriptAction_field_0x30 < v18 /*0x634f1c*/
         || (*(_BYTE *)(this + 45) || !v18)
-        && (v19 = *(_DWORD *)(this + 52), v19 > 0)
-        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 32) + 8))(this + 32, v18 + v19, 0) )
+        && (v19 = this->q034, v19 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->q008 + 8))(this + 32, v18 + v19, 0) )
       {
         v20 = this->ScriptAction_field_0x30; /*0x634f23*/
         v21 = this->ScriptAction_field_0x24; /*0x634f26*/
@@ -717,7 +717,7 @@ int __thiscall sub_636CE0(int this)
         v2[43] = -1; /*0x636d24*/
       }
     }
-    *(_BYTE *)(this + 152) = 0; /*0x636d2a*/
+    this->q098 = 0; /*0x636d2a*/
   }
   v5 = this->ScriptAction_field_0x14; /*0x636d37*/
   v10 = v5; /*0x636d3c*/
@@ -940,7 +940,7 @@ char __thiscall DispatchBuildingScriptAction(char *this)
             {
               LOBYTE(BuildingLoadQueue) = (_BYTE)HouseClass_Player; /*0x6380e4*/
               if ( v23 == *((_DWORD **)HouseClass_Player + 12) ) /*0x6380ec*/
-                MEMORY[0xAC4BF0] = v29; /*0x6380ee*/
+                g_ScriptActionPool = v29; /*0x6380ee*/
             }
           }
         }
@@ -1648,14 +1648,14 @@ int __thiscall sub_63CE40(_DWORD *this)
   v9[0] = *ScenarioClassActionCoords; /*0x63ce85*/
   v9[1] = ScenarioClassActionCoords[1]; /*0x63ce8c*/
   v9[2] = ScenarioClassActionCoords[2]; /*0x63cea3*/
-  Coord::To_Screen(MEMORY[0x887324], v9, v8); /*0x63cea7*/
-  v8[0] += MEMORY[0x886FA0]; /*0x63cec7*/
+  Coord::To_Screen(g_TacticalClass_Instance, v9, v8); /*0x63cea7*/
+  v8[0] += DSurface_ViewBounds; /*0x63cec7*/
   v11[0] = v8[0] - 4 + 1; /*0x63cedb*/
-  v11[1] = MEMORY[0x886FA4] + v8[1] - 4 + 1; /*0x63cedf*/
+  v11[1] = g_Map_VisibleRect + v8[1] - 4 + 1; /*0x63cedf*/
   v11[2] = 6; /*0x63cef5*/
   v11[3] = 6; /*0x63cef9*/
-  return (*(int (__thiscall **)(int, _DWORD *, _DWORD *, int))(*(_DWORD *)MEMORY[0x88731C] + 16))( /*0x63cf07*/
-           MEMORY[0x88731C],
+  return (*(int (__thiscall **)(int, _DWORD *, _DWORD *, int))(*(_DWORD *)DSurface_Composite + 16))( /*0x63cf07*/
+           DSurface_Composite,
            v12,
            v11,
            DrawColor);
@@ -1685,10 +1685,10 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
   int v16; // [esp+14h] [ebp-4h]
   char *Buffera; // [esp+1Ch] [ebp+4h]
 
-  v3 = ScriptAction::GetActionTypeInfo(*(_DWORD *)(this + 44)); /*0x6dd30b*/
+  v3 = ScriptAction::GetActionTypeInfo(this->q0B0); /*0x6dd30b*/
   v4 = 0; /*0x6dd316*/
   v5 = 0; /*0x6dd318*/
-  v14 = *(_DWORD *)(this + 144); /*0x6dd31d*/
+  v14 = this->q090; /*0x6dd31d*/
   v16 = 0; /*0x6dd321*/
   v15 = 0; /*0x6dd325*/
   switch ( v3 ) /*0x6dd329*/
@@ -1699,8 +1699,8 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
       goto LABEL_33; /*0x6dd333*/
     case '.': /*0x6dd329*/
       v4 = 11; /*0x6dd340*/
-      v16 = *(_DWORD *)(this + 144); /*0x6dd345*/
-      v15 = *(_DWORD *)(this + 72); /*0x6dd349*/
+      v16 = this->q090; /*0x6dd345*/
+      v15 = this->q048; /*0x6dd349*/
       goto LABEL_33; /*0x6dd34d*/
     case '+': /*0x6dd329*/
       v4 = 9; /*0x6dd357*/
@@ -1729,7 +1729,7 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
       goto LABEL_33; /*0x6dd3b9*/
     }
   }
-  v7 = *(_DWORD *)(this + 80); /*0x6dd3be*/
+  v7 = this->q050; /*0x6dd3be*/
   if ( v7 && v3 == 11 ) /*0x6dd3c8*/
   {
     v4 = 2; /*0x6dd3d0*/
@@ -1737,7 +1737,7 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
     v5 = (const char *)(v7 + 36); /*0x6dd3d9*/
     goto LABEL_33; /*0x6dd3dc*/
   }
-  v8 = *(_DWORD *)(this + 76); /*0x6dd3de*/
+  v8 = this->q04C; /*0x6dd3de*/
   if ( v8 && v3 == 26 ) /*0x6dd3e8*/
   {
     v4 = 3; /*0x6dd3f0*/
@@ -1749,7 +1749,7 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
   {
     v5 = (const char *)(this + 109); /*0x6dd406*/
     v4 = 4; /*0x6dd40b*/
-    if ( !*(_BYTE *)(this + 109) || this == -109 ) /*0x6dd414*/
+    if ( !this->q06D || this == -109 ) /*0x6dd414*/
       v5 = MEMORY[0x842BF4]; /*0x6dd416*/
   }
   else
@@ -1767,7 +1767,7 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
         break;
       case 1: /*0x6dd420*/
         v4 = 8; /*0x6dd443*/
-        v9 = ScriptAction::GetArgumentString(*(_DWORD *)(this + 144)); /*0x6dd448*/
+        v9 = ScriptAction::GetArgumentString(this->q090); /*0x6dd448*/
         break;
       default:
         goto LABEL_33; /*0x6dd43b*/
@@ -1783,65 +1783,65 @@ LABEL_33:
       return sprintf( /*0x6dd49d*/
                v10,
                MEMORY[0x842BDC],
-               *(_DWORD *)(this + 44),
+               this->q0B0,
                11,
                v16,
-               *(_DWORD *)(this + 52),
+               this->q034,
                *(_DWORD *)(this + 56),
                *(_DWORD *)(this + 60),
-               *(_DWORD *)(this + 64),
+               this->q010,
                v15);
     case 10: /*0x6dd476*/
-      v12 = (const char *)Waypoint::To_String(*(_DWORD *)(this + 68)); /*0x6dd4b6*/
+      v12 = (const char *)Waypoint::To_String(this->q044); /*0x6dd4b6*/
       return sprintf( /*0x6dd4dc*/
                Buffera,
                MEMORY[0x842BC4],
-               *(_DWORD *)(this + 44),
+               this->q0B0,
                10,
                v5,
-               *(_DWORD *)(this + 52),
+               this->q034,
                *(_DWORD *)(this + 56),
                *(_DWORD *)(this + 60),
-               *(_DWORD *)(this + 64),
+               this->q010,
                v12);
     case 5: /*0x6dd476*/
     case 9: /*0x6dd476*/
       return sprintf( /*0x6dd594*/
                v10,
                MEMORY[0x842B94],
-               *(_DWORD *)(this + 44),
+               this->q0B0,
                v4,
                v5,
-               *(_DWORD *)(this + 52),
+               this->q034,
                *(_DWORD *)(this + 56),
                *(_DWORD *)(this + 60),
-               *(_DWORD *)(this + 64),
-               *(_DWORD *)(this + 144));
+               this->q010,
+               this->q090);
     default:
-      v13 = (const char *)Waypoint::To_String(*(_DWORD *)(this + 68)); /*0x6dd4fe*/
+      v13 = (const char *)Waypoint::To_String(this->q044); /*0x6dd4fe*/
       if ( v4 ) /*0x6dd4fc*/
         return sprintf( /*0x6dd524*/
                  Buffera,
                  MEMORY[0x842BC4],
-                 *(_DWORD *)(this + 44),
+                 this->q0B0,
                  v4,
                  v5,
-                 *(_DWORD *)(this + 52),
+                 this->q034,
                  *(_DWORD *)(this + 56),
                  *(_DWORD *)(this + 60),
-                 *(_DWORD *)(this + 64),
+                 this->q010,
                  v13);
       else
         return sprintf( /*0x6dd560*/
                  Buffera,
                  MEMORY[0x842BAC],
-                 *(_DWORD *)(this + 44),
+                 this->q0B0,
                  0,
                  v14,
-                 *(_DWORD *)(this + 52),
+                 this->q034,
                  *(_DWORD *)(this + 56),
                  *(_DWORD *)(this + 60),
-                 *(_DWORD *)(this + 64),
+                 this->q010,
                  v13);
   }
 }
@@ -1872,9 +1872,9 @@ const char *__thiscall ParseScriptActionParams(int this)
   char Destination[24]; // [esp+14h] [ebp-1Ch] BYREF
   char v17; // [esp+2Ch] [ebp-4h]
 
-  *(_DWORD *)(this + 144) = 0; /*0x6dd5c1*/
+  this->q090 = 0; /*0x6dd5c1*/
   v2 = strtok(0, MEMORY[0x817F70]); /*0x6dd5c7*/
-  *(_DWORD *)(this + 44) = atoi(v2); /*0x6dd5d8*/
+  this->q0B0 = atoi(v2); /*0x6dd5d8*/
   v3 = strtok(0, MEMORY[0x817F70]); /*0x6dd5db*/
   v4 = atoi(v3); /*0x6dd5e6*/
   v5 = strtok(0, MEMORY[0x817F70]); /*0x6dd5f7*/
@@ -1883,7 +1883,7 @@ const char *__thiscall ParseScriptActionParams(int this)
   {
     case 0: /*0x6dd60d*/
     case 11: /*0x6dd60d*/
-      *(_DWORD *)(this + 144) = v6; /*0x6dd614*/
+      this->q090 = v6; /*0x6dd614*/
       break; /*0x6dd61a*/
     case 1: /*0x6dd60d*/
     case 5: /*0x6dd60d*/
@@ -1903,40 +1903,40 @@ const char *__thiscall ParseScriptActionParams(int this)
     case 2: /*0x6dd60d*/
       if ( v6 == -1 ) /*0x6dd65f*/
       {
-        *(_DWORD *)(this + 80) = 0; /*0x6dd661*/
+        this->q050 = 0; /*0x6dd661*/
       }
       else if ( strlen(v5) >= 3 ) /*0x6dd678*/
       {
-        *(_DWORD *)(this + 80) = TagTypeClass::FindOrCreateTriggerType(v5); /*0x6dd691*/
+        this->q050 = TagTypeClass::FindOrCreateTriggerType(v5); /*0x6dd691*/
       }
       else
       {
-        *(_DWORD *)(this + 80) = *((_DWORD *)unk_8B417C + v6); /*0x6dd682*/
+        this->q050 = *((_DWORD *)unk_8B417C + v6); /*0x6dd682*/
       }
       break; /*0x6dd664*/
     case 3: /*0x6dd60d*/
       if ( v6 == -1 ) /*0x6dd69c*/
       {
-        *(_DWORD *)(this + 76) = 0; /*0x6dd69e*/
+        this->q04C = 0; /*0x6dd69e*/
       }
       else if ( strlen(v5) >= 3 ) /*0x6dd6b5*/
       {
-        *(_DWORD *)(this + 76) = TagTypeClass::FindOrCreate(v5); /*0x6dd6cb*/
+        this->q04C = TagTypeClass::FindOrCreate(v5); /*0x6dd6cb*/
       }
       else
       {
-        *(_DWORD *)(this + 76) = *((_DWORD *)MEMORY[0xB0E784] + v6); /*0x6dd6bf*/
+        this->q04C = *((_DWORD *)MEMORY[0xB0E784] + v6); /*0x6dd6bf*/
       }
       break; /*0x6dd6a1*/
     case 4: /*0x6dd60d*/
       if ( v6 == -1 ) /*0x6dd6d3*/
       {
-        *(_BYTE *)(this + 109) = 0; /*0x6dd6d5*/
+        this->q06D = 0; /*0x6dd6d5*/
       }
       else
       {
         v7 = v5; /*0x6dd6de*/
-        *(_BYTE *)(this + 109) = 0; /*0x6dd6e2*/
+        this->q06D = 0; /*0x6dd6e2*/
         if ( v5 ) /*0x6dd6e5*/
         {
           for ( i = *v5; i; i = *++v7 ) /*0x6dd6e7*/
@@ -1947,7 +1947,7 @@ const char *__thiscall ParseScriptActionParams(int this)
           if ( *v7 ) /*0x6dd6fb*/
           {
             strncpy((char *)(this + 109), v7, 0x1Fu); /*0x6dd704*/
-            *(_BYTE *)(this + 140) = 0; /*0x6dd711*/
+            this->q08C = 0; /*0x6dd711*/
             v9 = strlen((const char *)(this + 109)) + 1; /*0x6dd718*/
             v10 = v9 - 1; /*0x6dd71c*/
             if ( v9 != 1 ) /*0x6dd71d*/
@@ -1966,13 +1966,13 @@ const char *__thiscall ParseScriptActionParams(int this)
       }
       break; /*0x6dd6d9*/
     case 6: /*0x6dd60d*/
-      *(_DWORD *)(this + 144) = VocClass::FindByName(v5); /*0x6dd7c3*/
+      this->q090 = VocClass::FindByName(v5); /*0x6dd7c3*/
       break; /*0x6dd7c9*/
     case 7: /*0x6dd60d*/
-      *(_DWORD *)(this + 144) = VocClass::FindIndex(v5); /*0x6dd7d5*/
+      this->q090 = VocClass::FindIndex(v5); /*0x6dd7d5*/
       break; /*0x6dd7db*/
     case 8: /*0x6dd60d*/
-      *(_DWORD *)(this + 144) = StringList::Find(&g_BuildingTypeClass_Count, v5); /*0x6dd7eb*/
+      this->q090 = StringList::Find(&g_BuildingTypeClass_Count, v5); /*0x6dd7eb*/
       break; /*0x6dd7f1*/
     case 9: /*0x6dd60d*/
     case 10: /*0x6dd60d*/
@@ -1995,30 +1995,30 @@ const char *__thiscall ParseScriptActionParams(int this)
       break;
   }
   v11 = strtok(0, MEMORY[0x817F70]); /*0x6dd731*/
-  *(_DWORD *)(this + 52) = atoi(v11); /*0x6dd74a*/
+  this->q034 = atoi(v11); /*0x6dd74a*/
   v12 = strtok(0, MEMORY[0x817F70]); /*0x6dd74d*/
   *(_DWORD *)(this + 56) = atoi(v12); /*0x6dd75f*/
   v13 = strtok(0, MEMORY[0x817F70]); /*0x6dd762*/
   *(_DWORD *)(this + 60) = atoi(v13); /*0x6dd774*/
   v14 = strtok(0, MEMORY[0x817F70]); /*0x6dd777*/
-  *(_DWORD *)(this + 64) = atoi(v14); /*0x6dd789*/
+  this->q010 = atoi(v14); /*0x6dd789*/
   result = strtok(0, MEMORY[0x817F70]); /*0x6dd78c*/
   if ( result ) /*0x6dd796*/
   {
     if ( v4 == 5 || v4 == 9 ) /*0x6dd839*/
     {
       result = (const char *)atoi(result); /*0x6dd7a6*/
-      *(_DWORD *)(this + 144) = result; /*0x6dd7ae*/
+      this->q090 = result; /*0x6dd7ae*/
     }
     else if ( v4 == 11 ) /*0x6dd855*/
     {
       result = (const char *)atoi(result); /*0x6dd858*/
-      *(_DWORD *)(this + 72) = result; /*0x6dd860*/
+      this->q048 = result; /*0x6dd860*/
     }
     else
     {
       result = (const char *)String::To_Waypoint(result); /*0x6dd86d*/
-      *(_DWORD *)(this + 68) = result; /*0x6dd872*/
+      this->q044 = result; /*0x6dd872*/
     }
   }
   return result; /*0x6dd7b4*/

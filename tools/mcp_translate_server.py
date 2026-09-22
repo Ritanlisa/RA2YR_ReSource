@@ -519,9 +519,10 @@ def audit_access(rel_path=None):
     if rel_path:
         files = [PROJECT_ROOT / rel_path]
     else:
-        files = [p for p in sorted(SRC.rglob("*.cpp"))
-                 if not any(x in str(p) for x in ("_generated", "_gap2",
-                                                  "gap2_defs", "subs"))]
+        # G29.4 (user directive): the gate runs standalone across the WHOLE
+        # tree -- no baseline-tag exemption, no path exclusions. Pending
+        # blocks are still skipped inline (they are not completion claims).
+        files = sorted(SRC.rglob("*.cpp"))
     for p in files:
         if not p.exists():
             continue

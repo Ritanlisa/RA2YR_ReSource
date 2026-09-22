@@ -66,43 +66,43 @@ char __thiscall TEventClass::Execute(_DWORD *this, int a2, int a3, int a4, int *
       v27 = a5[2]; /*0x71ec39*/
       if ( *a5 == -1 ) /*0x71ec3f*/
         goto LABEL_44; /*0x71ec3f*/
-      if ( (int)MEMORY[0xA8ED84] - v26 < v27 ) /*0x71ec4b*/
+      if ( (int)g_CurrentFrame - v26 < v27 ) /*0x71ec4b*/
       {
-        v27 -= (int)MEMORY[0xA8ED84] - v26; /*0x71ec4d*/
+        v27 -= (int)g_CurrentFrame - v26; /*0x71ec4d*/
 LABEL_44:
         if ( v27 ) /*0x71ec51*/
           return 0; /*0x71ec51*/
       }
       return 1; /*0x71ec60*/
     case 14: /*0x71e964*/
-      if ( *((_DWORD *)MEMORY[0xA8B230] + 1146) == -1 ) /*0x71ebf6*/
+      if ( *((_DWORD *)g_ScenarioClass_Instance + 1146) == -1 ) /*0x71ebf6*/
         return 0; /*0x71ebf6*/
-      v24 = *((_DWORD *)MEMORY[0xA8B230] + 1146); /*0x71ebfc*/
-      v25 = *((_DWORD *)MEMORY[0xA8B230] + 1148); /*0x71ec02*/
+      v24 = *((_DWORD *)g_ScenarioClass_Instance + 1146); /*0x71ebfc*/
+      v25 = *((_DWORD *)g_ScenarioClass_Instance + 1148); /*0x71ec02*/
       if ( v24 == -1 ) /*0x71ec0b*/
         return !v25; /*0x71ec0b*/
-      if ( (int)MEMORY[0xA8ED84] - v24 >= v25 ) /*0x71ec17*/
+      if ( (int)g_CurrentFrame - v24 >= v25 ) /*0x71ec17*/
         return 1; /*0x71ec17*/
-      v25 -= (int)MEMORY[0xA8ED84] - v24; /*0x71ec1d*/
+      v25 -= (int)g_CurrentFrame - v24; /*0x71ec1d*/
       return !v25; /*0x71ec21*/
     case 27: /*0x71e964*/
-      ScenarioClass::GetGlobalStateByID(MEMORY[0xA8B230], this->TEventClass_field_34, &a6); /*0x71eb62*/
+      ScenarioClass::GetGlobalStateByID(g_ScenarioClass_Instance, this->TEventClass_field_34, &a6); /*0x71eb62*/
       return a6; /*0x71eb72*/
     case 28: /*0x71e964*/
-      ScenarioClass::GetGlobalStateByID(MEMORY[0xA8B230], this->TEventClass_field_34, &a6); /*0x71eb84*/
+      ScenarioClass::GetGlobalStateByID(g_ScenarioClass_Instance, this->TEventClass_field_34, &a6); /*0x71eb84*/
       return (_BYTE)a6 == 0; /*0x71eb9b*/
     case 36: /*0x71e964*/
-      ScenarioClass::GetLocalStateByID(MEMORY[0xA8B230], this->TEventClass_field_34, &a6); /*0x71ebad*/
+      ScenarioClass::GetLocalStateByID(g_ScenarioClass_Instance, this->TEventClass_field_34, &a6); /*0x71ebad*/
       return a6; /*0x71ebbd*/
     case 37: /*0x71e964*/
-      ScenarioClass::GetLocalStateByID(MEMORY[0xA8B230], this->TEventClass_field_34, &a6); /*0x71ebcf*/
+      ScenarioClass::GetLocalStateByID(g_ScenarioClass_Instance, this->TEventClass_field_34, &a6); /*0x71ebcf*/
       return (_BYTE)a6 == 0; /*0x71ebe6*/
     case 45: /*0x71e964*/
-      return *((_DWORD *)MEMORY[0xA8B230] + 3403) <= this->TEventClass_field_34; /*0x71eb03*/
+      return *((_DWORD *)g_ScenarioClass_Instance + 3403) <= this->TEventClass_field_34; /*0x71eb03*/
     case 46: /*0x71e964*/
-      return *((_DWORD *)MEMORY[0xA8B230] + 3403) >= this->TEventClass_field_34; /*0x71eb25*/
+      return *((_DWORD *)g_ScenarioClass_Instance + 3403) >= this->TEventClass_field_34; /*0x71eb25*/
     case 47: /*0x71e964*/
-      return this->TEventClass_field_34 <= (int)MEMORY[0xA8ED84] / 15; /*0x71eb50*/
+      return this->TEventClass_field_34 <= (int)g_CurrentFrame / 15; /*0x71eb50*/
     case 60: /*0x71e964*/
       v9 = -1; /*0x71e971*/
       v10 = MEMORY[0xA8EB10] - 1; /*0x71e974*/
@@ -294,7 +294,7 @@ LABEL_22:
         case 34: /*0x71ecd6*/
           if ( a2 == 34 ) /*0x71edc6*/
           {
-            WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v55, this->TEventClass_field_34); /*0x71eddb*/
+            WorldCoords = Cell::GetWorldCoords((__int16 *)g_ScenarioClass_Instance, v55, this->TEventClass_field_34); /*0x71eddb*/
             v32 = *WorldCoords; /*0x71ede0*/
             v33 = WorldCoords[1]; /*0x71ede6*/
             v34 = WorldCoords[2]; /*0x71edeb*/
@@ -377,11 +377,11 @@ LABEL_112:
             *(_BYTE *)a6 = 1; /*0x71effe*/
             goto LABEL_122; /*0x71f001*/
           case 23: /*0x71eea2*/
-            v40 = MEMORY[0x8B40F8]; /*0x71eea9*/
+            v40 = g_HouseClass_AIProductionState; /*0x71eea9*/
             v41 = 0; /*0x71eeaf*/
-            if ( MEMORY[0x8B40F8] <= 0 ) /*0x71eeb3*/
+            if ( g_HouseClass_AIProductionState <= 0 ) /*0x71eeb3*/
               goto LABEL_91; /*0x71eeb3*/
-            v42 = (char *)MEMORY[0x8B40EC]; /*0x71eeb8*/
+            v42 = (char *)g_TeamClassPool; /*0x71eeb8*/
             break; /*0x71eeb8*/
           case 32: /*0x71eea2*/
             if ( !DynamicVector::GetOrGrow((_DWORD *)(a3 + 21840), this->TEventClass_field_34) ) /*0x71efb9*/
@@ -407,11 +407,11 @@ LABEL_112:
             break; /*0x71eecc*/
           ++v41; /*0x71eed6*/
           v42 += 4; /*0x71eed7*/
-          if ( v41 >= MEMORY[0x8B40F8] ) /*0x71eedc*/
+          if ( v41 >= g_HouseClass_AIProductionState ) /*0x71eedc*/
             goto LABEL_91; /*0x71eedc*/
         }
         *(_BYTE *)a6 = 1; /*0x71eee4*/
-        v40 = MEMORY[0x8B40F8]; /*0x71eee7*/
+        v40 = g_HouseClass_AIProductionState; /*0x71eee7*/
 LABEL_91:
         if ( v41 == v40 ) /*0x71eeef*/
           return 0; /*0x71eefe*/
@@ -604,26 +604,26 @@ TEventClass *__thiscall TEventClass::Fire(void **this, char a2)
   this->vtable4 = &vt_TEventClass; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x71faa1*/
   v7 = this; /*0x71fab6*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F658] + 16))(&MEMORY[0xB0F658], &v7); /*0x71faba*/
-  if ( v3 != -1 && v3 < MEMORY[0xB0F668] && v3 < --MEMORY[0xB0F668] ) /*0x71fad5*/
+  v3 = (*(int (__thiscall **)(int *, void ***))(TActionClass_Array + 16))(&TActionClass_Array, &v7); /*0x71faba*/
+  if ( v3 != -1 && v3 < g_TActionClassState && v3 < --g_TActionClassState ) /*0x71fad5*/
   {
     do /*0x71faed*/
     {
       ++v3; /*0x71fadd*/
       *((_DWORD *)MEMORY[0xB0F65C] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F65C] + v3); /*0x71fae1*/
     }
-    while ( v3 < MEMORY[0xB0F668] ); /*0x71faed*/
+    while ( v3 < g_TActionClassState ); /*0x71faed*/
   }
   v7 = this; /*0x71faff*/
-  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v7); /*0x71fb03*/
-  if ( v4 != -1 && v4 < MEMORY[0xB0F680] && v4 < --MEMORY[0xB0F680] ) /*0x71fb1e*/
+  v4 = (*(int (__thiscall **)(int *, void ***))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v7); /*0x71fb03*/
+  if ( v4 != -1 && v4 < g_AnimManager && v4 < --g_AnimManager ) /*0x71fb1e*/
   {
     do /*0x71fb36*/
     {
       ++v4; /*0x71fb26*/
-      *((_DWORD *)MEMORY[0xB0F674] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v4); /*0x71fb2a*/
+      *((_DWORD *)g_AnimPoolCount + v4 - 1) = *((_DWORD *)g_AnimPoolCount + v4); /*0x71fb2a*/
     }
-    while ( v4 < MEMORY[0xB0F680] ); /*0x71fb36*/
+    while ( v4 < g_AnimManager ); /*0x71fb36*/
   }
   v7 = this; /*0x71fb48*/
   v5 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F1A0] + 16))(&MEMORY[0xB0F1A0], &v7); /*0x71fb4c*/

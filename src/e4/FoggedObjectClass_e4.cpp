@@ -37,18 +37,18 @@ int __thiscall FoggedObjectClass::InitBuildingFog(int this, _DWORD *a2, int a3, 
   this->LastSight = a3; /*0x4d099e*/
   this->House = 0; /*0x4d09a1*/
   this->Cell = a4; /*0x4d09a4*/
-  *(_DWORD *)(this + 48) = 20; /*0x4d09a7*/
-  *(_DWORD *)(this + 52) = *a2; /*0x4d09b4*/
-  *(_DWORD *)(this + 56) = a2[1]; /*0x4d09b9*/
-  *(_DWORD *)(this + 60) = a2[2]; /*0x4d09c4*/
-  *(_DWORD *)(this + 80) = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], a2) + 283); /*0x4d09da*/
-  *(_DWORD *)(this + 84) = -1; /*0x4d09dd*/
-  *(_DWORD *)(this + 88) = 0; /*0x4d09e4*/
+  this->q030 = 20; /*0x4d09a7*/
+  this->q034 = *a2; /*0x4d09b4*/
+  this->q038 = a2[1]; /*0x4d09b9*/
+  this->q03C = a2[2]; /*0x4d09c4*/
+  this->q050 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], a2) + 283); /*0x4d09da*/
+  this->q054 = -1; /*0x4d09dd*/
+  this->q058 = 0; /*0x4d09e4*/
   FoggedObject::DrawVector_Constructor((_DWORD *)(this + 92), 0, 0); /*0x4d09e7*/
-  *(_DWORD *)(this + 92) = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d09ec*/
-  *(_DWORD *)(this + 112) = 10; /*0x4d09f2*/
-  *(_DWORD *)(this + 108) = 0; /*0x4d09f9*/
-  *(_BYTE *)(this + 116) = 1; /*0x4d0a02*/
+  this->q05C = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d09ec*/
+  this->q070 = 10; /*0x4d09f2*/
+  this->q06C = 0; /*0x4d09f9*/
+  this->q01D = 1; /*0x4d0a02*/
   *(_DWORD *)this = &FoggedObjectClass::`vftable'; /*0x4d0a06*/
   this->vtable1 = &FoggedObjectClass::`vftable'; /*0x4d0a0c*/
   this->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d0a13*/
@@ -103,16 +103,16 @@ int __thiscall FoggedObjectClass::InitBuildingFog(int this, _DWORD *a2, int a3, 
       v16 = v12; /*0x4d0ace*/
     }
   }
-  *(_DWORD *)(this + 64) = v8; /*0x4d0aef*/
-  *(_DWORD *)(this + 68) = v15; /*0x4d0af1*/
-  *(_DWORD *)(this + 72) = v14; /*0x4d0af4*/
-  *(_DWORD *)(this + 76) = v16; /*0x4d0af7*/
-  v17 = *(_DWORD *)(this + 68); /*0x4d0b00*/
-  *(_DWORD *)(this + 64) += MEMORY[0x887324][44].__tail_0; /*0x4d0b0d*/
-  *(_DWORD *)(this + 68) = (char *)MEMORY[0x887324][45].__tail_0 + v17; /*0x4d0b1d*/
-  v18 = *(_DWORD *)(this + 68) - MEMORY[0x886FA4]; /*0x4d0b33*/
-  *(_DWORD *)(this + 64) -= MEMORY[0x886FA0]; /*0x4d0b35*/
-  *(_DWORD *)(this + 68) = v18; /*0x4d0b37*/
+  this->q040 = v8; /*0x4d0aef*/
+  this->q044 = v15; /*0x4d0af1*/
+  this->q048 = v14; /*0x4d0af4*/
+  this->q04C = v16; /*0x4d0af7*/
+  v17 = this->q044; /*0x4d0b00*/
+  this->q040 += g_TacticalClass_Instance[44].__tail_0; /*0x4d0b0d*/
+  this->q044 = (char *)g_TacticalClass_Instance[45].__tail_0 + v17; /*0x4d0b1d*/
+  v18 = this->q044 - g_Map_VisibleRect; /*0x4d0b33*/
+  this->q040 -= DSurface_ViewBounds; /*0x4d0b35*/
+  this->q044 = v18; /*0x4d0b37*/
   if ( MEMORY[0x8B3D20] < MEMORY[0x8B3D18] /*0x4d0b6f*/
     || (MEMORY[0x8B3D1D] || !MEMORY[0x8B3D18])
     && MEMORY[0x8B3D24] > 0
@@ -124,10 +124,10 @@ int __thiscall FoggedObjectClass::InitBuildingFog(int this, _DWORD *a2, int a3, 
     v19 = MEMORY[0x8B3D20]++; /*0x4d0b7c*/
     *((_DWORD *)MEMORY[0x8B3D14] + v19) = this; /*0x4d0b8b*/
   }
-  v20 = (__int16)(*(_DWORD *)(this + 52) / 256); /*0x4d0bb4*/
+  v20 = (__int16)(this->q034 / 256); /*0x4d0bb4*/
   v21 = MEMORY[0x8B3CC8]; /*0x4d0bcd*/
-  v22 = 74 * ((__int16)(*(_DWORD *)(this + 56) / 256) - ((v20 + (__int16)(*(_DWORD *)(this + 56) / 256)) << 9) - v20) /*0x4d0bd6*/
-      - *(_DWORD *)(this + 48)
+  v22 = 74 * ((__int16)(this->q038 / 256) - ((v20 + (__int16)(this->q038 / 256)) << 9) - v20) /*0x4d0bd6*/
+      - this->q030
       + 0x7FFFFFFF;
   if ( (int)(MEMORY[0x8B3CC4] + 1) <= MEMORY[0x8B3CC8] ) /*0x4d0bdf*/
     goto LABEL_27; /*0x4d0bdf*/
@@ -176,16 +176,16 @@ FoggedObjectClass *__thiscall FoggedObjectClass::InitTerrainFog(int this, IUnkno
   this->LastSight = -1; /*0x4d0c5a*/
   this->House = 0; /*0x4d0c61*/
   this->Cell = 0; /*0x4d0c64*/
-  *(_DWORD *)(this + 48) = 29; /*0x4d0c67*/
+  this->q030 = 29; /*0x4d0c67*/
   v5 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], aP1) + 283); /*0x4d0c73*/
-  *(_DWORD *)(this + 84) = a3; /*0x4d0c85*/
-  *(_DWORD *)(this + 80) = v5; /*0x4d0c8c*/
-  *(_DWORD *)(this + 88) = a4; /*0x4d0c8f*/
+  this->q054 = a3; /*0x4d0c85*/
+  this->q050 = v5; /*0x4d0c8c*/
+  this->q058 = a4; /*0x4d0c8f*/
   FoggedObject::DrawVector_Constructor((_DWORD *)(this + 92), 0, 0); /*0x4d0c92*/
-  *(_DWORD *)(this + 92) = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d0c97*/
-  *(_DWORD *)(this + 112) = 10; /*0x4d0c9e*/
-  *(_DWORD *)(this + 108) = 0; /*0x4d0ca5*/
-  *(_BYTE *)(this + 116) = 1; /*0x4d0cae*/
+  this->q05C = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d0c97*/
+  this->q070 = 10; /*0x4d0c9e*/
+  this->q06C = 0; /*0x4d0ca5*/
+  this->q01D = 1; /*0x4d0cae*/
   *(_DWORD *)this = &FoggedObjectClass::`vftable'; /*0x4d0cb2*/
   this->vtable1 = &FoggedObjectClass::`vftable'; /*0x4d0cb8*/
   this->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d0cbf*/
@@ -198,23 +198,23 @@ FoggedObjectClass *__thiscall FoggedObjectClass::InitTerrainFog(int this, IUnkno
   v24 = v8; /*0x4d0ce2*/
   v9 = *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61244] * v6[283]; /*0x4d0ced*/
   v24 = v9; /*0x4d0cf7*/
-  *(_DWORD *)(this + 52) = a1[0]; /*0x4d0cfd*/
-  *(_DWORD *)(this + 56) = v7; /*0x4d0d03*/
-  *(_DWORD *)(this + 60) = v9; /*0x4d0d06*/
+  this->q034 = a1[0]; /*0x4d0cfd*/
+  this->q038 = v7; /*0x4d0d03*/
+  this->q03C = v9; /*0x4d0d06*/
   Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], a1, (IUnknown *)&v21); /*0x4d0d15*/
   v10 = v21 - 30; /*0x4d0d25*/
   v22 -= 15; /*0x4d0d32*/
   v11 = v22; /*0x4d0d2a*/
-  *(_DWORD *)(this + 64) = v21 - 30; /*0x4d0d36*/
+  this->q040 = v21 - 30; /*0x4d0d36*/
   v25 = (IUnknown *)30; /*0x4d0d38*/
   v21 = v10; /*0x4d0d40*/
-  *(_DWORD *)(this + 68) = v11; /*0x4d0d44*/
+  this->q044 = v11; /*0x4d0d44*/
   v12 = v25; /*0x4d0d47*/
-  *(_DWORD *)(this + 72) = 60; /*0x4d0d4b*/
-  *(_DWORD *)(this + 76) = v12; /*0x4d0d4e*/
-  v13 = *(_DWORD *)(this + 68); /*0x4d0d61*/
-  *(_DWORD *)(this + 64) += *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 176); /*0x4d0d64*/
-  *(_DWORD *)(this + 68) = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 180) + v13; /*0x4d0d73*/
+  this->q048 = 60; /*0x4d0d4b*/
+  this->q04C = v12; /*0x4d0d4e*/
+  v13 = this->q044; /*0x4d0d61*/
+  this->q040 += *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 176); /*0x4d0d64*/
+  this->q044 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 180) + v13; /*0x4d0d73*/
   if ( *(int *)&MEMORY[0x89F690].__pad_579C[61172] < *(int *)&MEMORY[0x89F690].__pad_579C[61164] /*0x4d0dab*/
     || (MEMORY[0x89F690].__pad_579C[61169] || !*(_DWORD *)&MEMORY[0x89F690].__pad_579C[61164])
     && *(int *)&MEMORY[0x89F690].__pad_579C[61176] > 0
@@ -227,10 +227,10 @@ FoggedObjectClass *__thiscall FoggedObjectClass::InitTerrainFog(int this, IUnkno
     *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[61160] + 4 * v14) = this; /*0x4d0dc7*/
   }
   v15 = 74 /*0x4d0e11*/
-      * ((__int16)(*(_DWORD *)(this + 56) / 256)
-       - (((__int16)(*(_DWORD *)(this + 52) / 256) + (__int16)(*(_DWORD *)(this + 56) / 256)) << 9)
-       - (__int16)(*(_DWORD *)(this + 52) / 256))
-      - *(_DWORD *)(this + 48)
+      * ((__int16)(this->q038 / 256)
+       - (((__int16)(this->q034 / 256) + (__int16)(this->q038 / 256)) << 9)
+       - (__int16)(this->q034 / 256))
+      - this->q030
       + 0x7FFFFFFF;
   if ( *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61080] + 1 <= *(int *)&MEMORY[0x89F690].__pad_579C[61084] ) /*0x4d0e1a*/
     goto LABEL_15; /*0x4d0e1a*/
@@ -332,33 +332,33 @@ int __thiscall FoggedObjectClass::Constructor(int this, BuildingClass *aP1, Fogg
   v4 = (HouseClass *)aP1->focus; /*0x4d0f0c*/
   this->Cell = 0; /*0x4d0f12*/
   this->House = v4; /*0x4d0f19*/
-  *(_DWORD *)(this + 48) = 6; /*0x4d0f24*/
-  *(_DWORD *)(this + 52) = aP1->location[0]; /*0x4d0f2f*/
-  *(_DWORD *)(this + 56) = aP1->location[1]; /*0x4d0f34*/
-  *(_DWORD *)(this + 60) = aP1->location[2]; /*0x4d0f3a*/
+  this->q030 = 6; /*0x4d0f24*/
+  this->q034 = aP1->location[0]; /*0x4d0f2f*/
+  this->q038 = aP1->location[1]; /*0x4d0f34*/
+  this->q03C = aP1->location[2]; /*0x4d0f3a*/
   v5 = aP1->location[1]; /*0x4d0f3f*/
   v49[0] = aP1->location[0]; /*0x4d0f42*/
   v6 = aP1->location[2]; /*0x4d0f46*/
   v49[1] = v5; /*0x4d0f4d*/
   v50 = v6; /*0x4d0f57*/
   v7 = (VectorClass *)(this + 92); /*0x4d0f67*/
-  *(_DWORD *)(this + 80) = *((char *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v49) + 283); /*0x4d0f6a*/
-  *(_DWORD *)(this + 84) = -1; /*0x4d0f73*/
-  *(_DWORD *)(this + 88) = 0; /*0x4d0f7a*/
+  this->q050 = *((char *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v49) + 283); /*0x4d0f6a*/
+  this->q054 = -1; /*0x4d0f73*/
+  this->q058 = 0; /*0x4d0f7a*/
   FoggedObject::DrawVector_Constructor((_DWORD *)(this + 92), 0, 0); /*0x4d0f81*/
-  *(_DWORD *)(this + 92) = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d0f8a*/
-  *(_DWORD *)(this + 112) = 10; /*0x4d0f90*/
-  *(_DWORD *)(this + 108) = 0; /*0x4d0f97*/
-  *(_BYTE *)(this + 116) = (_BYTE)aP2; /*0x4d0fa2*/
+  this->q05C = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d0f8a*/
+  this->q070 = 10; /*0x4d0f90*/
+  this->q06C = 0; /*0x4d0f97*/
+  this->q01D = (_BYTE)aP2; /*0x4d0fa2*/
   *(_DWORD *)this = &FoggedObjectClass::`vftable'; /*0x4d0fa5*/
   this->vtable1 = &FoggedObjectClass::`vftable'; /*0x4d0fab*/
   this->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d0fb2*/
   this->vtable3 = &vt_FoggedObjectClass; /*0x4d0fb9*/
   v8 = (_DWORD *)(*(int (__thiscall **)(BuildingClass *, char *))(*(_DWORD *)aP1->__pad_0 + 300))(aP1, v52); /*0x4d0fc5*/
-  *(_DWORD *)(this + 64) = *v8; /*0x4d0fd2*/
-  *(_DWORD *)(this + 68) = v8[1]; /*0x4d0fd7*/
-  *(_DWORD *)(this + 72) = v8[2]; /*0x4d0fdd*/
-  *(_DWORD *)(this + 76) = v8[3]; /*0x4d0fe3*/
+  this->q040 = *v8; /*0x4d0fd2*/
+  this->q044 = v8[1]; /*0x4d0fd7*/
+  this->q048 = v8[2]; /*0x4d0fdd*/
+  this->q04C = v8[3]; /*0x4d0fe3*/
   if ( *(int *)&stru_89E138.__pad_579C[66636] < *(int *)&stru_89E138.__pad_579C[66628] /*0x4d101a*/
     || (stru_89E138.__pad_579C[66633] || !*(_DWORD *)&stru_89E138.__pad_579C[66628])
     && *(int *)&stru_89E138.__pad_579C[66640] > 0
@@ -372,10 +372,10 @@ int __thiscall FoggedObjectClass::Constructor(int this, BuildingClass *aP1, Fogg
   }
   v10 = *(_DWORD *)&stru_89E138.__pad_579C[66548]; /*0x4d107c*/
   v11 = 74 /*0x4d1081*/
-      * ((__int16)(*(_DWORD *)(this + 56) / 256)
-       - (((__int16)(*(_DWORD *)(this + 52) / 256) + (__int16)(*(_DWORD *)(this + 56) / 256)) << 9)
-       - (__int16)(*(_DWORD *)(this + 52) / 256))
-      - *(_DWORD *)(this + 48)
+      * ((__int16)(this->q038 / 256)
+       - (((__int16)(this->q034 / 256) + (__int16)(this->q038 / 256)) << 9)
+       - (__int16)(this->q034 / 256))
+      - this->q030
       + 0x7FFFFFFF;
   if ( *(_DWORD *)&stru_89E138.__pad_579C[66544] + 1 <= *(int *)&stru_89E138.__pad_579C[66548] ) /*0x4d108a*/
     goto LABEL_11; /*0x4d108a*/
@@ -398,16 +398,16 @@ LABEL_11:
   {
     LOBYTE(v53) = 1; /*0x4d1114*/
   }
-  v16 = *(_DWORD *)(this + 100); /*0x4d1119*/
-  if ( *(_DWORD *)(this + 108) < v16 /*0x4d113e*/
+  v16 = this->q064; /*0x4d1119*/
+  if ( this->q06C < v16 /*0x4d113e*/
     || (*(_BYTE *)(this + 105) || !v16)
-    && (v17 = *(_DWORD *)(this + 112), v17 > 0)
+    && (v17 = this->q070, v17 > 0)
     && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v7->vtable0 + 8))(this + 92, v16 + v17, 0) )
   {
-    v18 = *(_DWORD *)(this + 108); /*0x4d1145*/
-    *(_DWORD *)(this + 108) = v18 + 1; /*0x4d114b*/
+    v18 = this->q06C; /*0x4d1145*/
+    this->q06C = v18 + 1; /*0x4d114b*/
     v19 = v53; /*0x4d1156*/
-    v20 = (_DWORD *)(*(_DWORD *)(this + 96) + 16 * v18); /*0x4d115a*/
+    v20 = (_DWORD *)(this->q060 + 16 * v18); /*0x4d115a*/
     *v20 = Type; /*0x4d1160*/
     v20[1] = aP2a; /*0x4d1162*/
     v20[2] = v19; /*0x4d1167*/
@@ -424,7 +424,7 @@ LABEL_11:
     aP1a = *(BuildingClass **)(*Anims + 200); /*0x4d119a*/
     v22 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)*Anims + 296))(*Anims, v55); /*0x4d11a3*/
     v23 = (BuildingClass **)(this + 64); /*0x4d11ac*/
-    if ( *(int *)(this + 72) <= 0 || *(int *)(this + 76) <= 0 ) /*0x4d11bc*/
+    if ( this->q048 <= 0 || this->q04C <= 0 ) /*0x4d11bc*/
     {
       v32 = *(BuildingClass **)v22; /*0x4d1266*/
       v33 = *(_DWORD *)(v22 + 4); /*0x4d1268*/
@@ -439,10 +439,10 @@ LABEL_11:
         if ( v48 > 0 ) /*0x4d11da*/
         {
           v24 = *v23; /*0x4d11dc*/
-          v25 = *(_DWORD *)(this + 68); /*0x4d11de*/
-          v26 = *(_DWORD *)(this + 72); /*0x4d11e1*/
+          v25 = this->q044; /*0x4d11de*/
+          v26 = this->q048; /*0x4d11e1*/
           v50 = v26; /*0x4d11e4*/
-          v51 = *(_DWORD *)(this + 76); /*0x4d11eb*/
+          v51 = this->q04C; /*0x4d11eb*/
           v27 = *(BuildingClass **)v22; /*0x4d11ef*/
           if ( (int)v24 > *(_DWORD *)v22 ) /*0x4d11f3*/
           {
@@ -471,29 +471,29 @@ LABEL_11:
       }
       v22 = this + 64; /*0x4d125a*/
       v32 = *v23; /*0x4d125c*/
-      v33 = *(_DWORD *)(this + 68); /*0x4d125e*/
-      v34 = *(_DWORD *)(this + 72); /*0x4d1261*/
+      v33 = this->q044; /*0x4d125e*/
+      v34 = this->q048; /*0x4d1261*/
     }
     v31 = *(_DWORD *)(v22 + 12); /*0x4d126e*/
 LABEL_41:
     LOBYTE(v53) = 0; /*0x4d1271*/
-    *(_DWORD *)(this + 64) = v32; /*0x4d1279*/
-    *(_DWORD *)(this + 68) = v33; /*0x4d127f*/
-    *(_DWORD *)(this + 72) = v34; /*0x4d1282*/
-    *(_DWORD *)(this + 76) = v31; /*0x4d1285*/
+    this->q040 = v32; /*0x4d1279*/
+    this->q044 = v33; /*0x4d127f*/
+    this->q048 = v34; /*0x4d1282*/
+    this->q04C = v31; /*0x4d1285*/
     Anims = v45; /*0x4d1288*/
-    v35 = *(_DWORD *)(this + 108); /*0x4d1292*/
+    v35 = this->q06C; /*0x4d1292*/
     v36 = aP1a->sprayOffsetIndex + *(_DWORD *)(*v45 + 172); /*0x4d129d*/
-    v37 = *(_DWORD *)(this + 100); /*0x4d12a5*/
+    v37 = this->q064; /*0x4d12a5*/
     v54 = *(BuildingClass **)(*v45 + 256); /*0x4d12a8*/
     if ( v35 < v37 /*0x4d12cb*/
       || (*(_BYTE *)(this + 105) || !v37)
-      && (v38 = *(_DWORD *)(this + 112), v38 > 0)
+      && (v38 = this->q070, v38 > 0)
       && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v7->vtable0 + 8))(this + 92, v37 + v38, 0) )
     {
-      v39 = *(_DWORD *)(this + 108); /*0x4d12d2*/
-      *(_DWORD *)(this + 108) = v39 + 1; /*0x4d12dc*/
-      v40 = (BuildingClass **)(*(_DWORD *)(this + 96) + 16 * v39); /*0x4d12e5*/
+      v39 = this->q06C; /*0x4d12d2*/
+      this->q06C = v39 + 1; /*0x4d12dc*/
+      v40 = (BuildingClass **)(this->q060 + 16 * v39); /*0x4d12e5*/
       v41 = v53; /*0x4d12e7*/
       *v40 = aP1a; /*0x4d12eb*/
       v42 = v54; /*0x4d12ed*/
@@ -508,9 +508,9 @@ LABEL_47:
     --v46; /*0x4d1306*/
   }
   while ( !v43 ); /*0x4d130a*/
-  Cell::CreateCrater(*(_DWORD *)(this + 64), *(_DWORD *)(this + 68), *(_DWORD *)(this + 72), *(_DWORD *)(this + 76), 0); /*0x4d1338*/
-  *(_DWORD *)(this + 64) += *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22548] + 176); /*0x4d134d*/
-  *(_DWORD *)(this + 68) += *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22548] + 180); /*0x4d135f*/
+  Cell::CreateCrater(this->q040, this->q044, this->q048, this->q04C, 0); /*0x4d1338*/
+  this->q040 += *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22548] + 176); /*0x4d134d*/
+  this->q044 += *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22548] + 180); /*0x4d135f*/
   return this; /*0x4d1364*/
 }
 }
@@ -546,35 +546,35 @@ int __thiscall FoggedObjectClass::InitDrawRecord(int this, _DWORD *a2)
   this->LastSight = -1; /*0x4d1384*/
   this->House = 0; /*0x4d138b*/
   this->Cell = 0; /*0x4d1394*/
-  *(_DWORD *)(this + 48) = 36; /*0x4d1399*/
-  *(_DWORD *)(this + 52) = a2[39]; /*0x4d13a5*/
-  *(_DWORD *)(this + 56) = a2[40]; /*0x4d13aa*/
-  *(_DWORD *)(this + 60) = a2[41]; /*0x4d13b0*/
+  this->q030 = 36; /*0x4d1399*/
+  this->q034 = a2[39]; /*0x4d13a5*/
+  this->q038 = a2[40]; /*0x4d13aa*/
+  this->q03C = a2[41]; /*0x4d13b0*/
   v3 = a2[40]; /*0x4d13b5*/
   v4 = a2[41]; /*0x4d13b8*/
   v22[0] = a2[39]; /*0x4d13bb*/
   v22[1] = v3; /*0x4d13c9*/
   v23 = v4; /*0x4d13cd*/
-  *(_DWORD *)(this + 80) = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], v22) + 283); /*0x4d13e4*/
-  *(_DWORD *)(this + 84) = -1; /*0x4d13e7*/
-  *(_DWORD *)(this + 88) = 0; /*0x4d13ee*/
+  this->q050 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], v22) + 283); /*0x4d13e4*/
+  this->q054 = -1; /*0x4d13e7*/
+  this->q058 = 0; /*0x4d13ee*/
   FoggedObject::DrawVector_Constructor((_DWORD *)(this + 92), 0, 0); /*0x4d13f1*/
-  *(_DWORD *)(this + 92) = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d13f6*/
-  *(_DWORD *)(this + 112) = 10; /*0x4d13fc*/
-  *(_DWORD *)(this + 108) = 0; /*0x4d1403*/
-  *(_BYTE *)(this + 116) = 1; /*0x4d140a*/
+  this->q05C = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d13f6*/
+  this->q070 = 10; /*0x4d13fc*/
+  this->q06C = 0; /*0x4d1403*/
+  this->q01D = 1; /*0x4d140a*/
   *(_DWORD *)this = &FoggedObjectClass::`vftable'; /*0x4d140e*/
   this->vtable1 = &FoggedObjectClass::`vftable'; /*0x4d1414*/
   this->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d141b*/
   this->vtable3 = &vt_FoggedObjectClass; /*0x4d1422*/
   v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD *))(*a2 + 300))(a2, v22); /*0x4d1431*/
-  *(_DWORD *)(this + 64) = *v5; /*0x4d143b*/
-  *(_DWORD *)(this + 68) = v5[1]; /*0x4d1440*/
-  *(_DWORD *)(this + 72) = v5[2]; /*0x4d1446*/
-  *(_DWORD *)(this + 76) = v5[3]; /*0x4d144c*/
-  v6 = *(_DWORD *)(this + 68); /*0x4d1460*/
-  *(_DWORD *)(this + 64) += MEMORY[0x887324][44].__tail_0; /*0x4d1463*/
-  *(_DWORD *)(this + 68) = (char *)MEMORY[0x887324][45].__tail_0 + v6; /*0x4d1473*/
+  this->q040 = *v5; /*0x4d143b*/
+  this->q044 = v5[1]; /*0x4d1440*/
+  this->q048 = v5[2]; /*0x4d1446*/
+  this->q04C = v5[3]; /*0x4d144c*/
+  v6 = this->q044; /*0x4d1460*/
+  this->q040 += g_TacticalClass_Instance[44].__tail_0; /*0x4d1463*/
+  this->q044 = (char *)g_TacticalClass_Instance[45].__tail_0 + v6; /*0x4d1473*/
   if ( MEMORY[0x8B3D20] < MEMORY[0x8B3D18] /*0x4d14ab*/
     || (MEMORY[0x8B3D1D] || !MEMORY[0x8B3D18])
     && MEMORY[0x8B3D24] > 0
@@ -586,27 +586,27 @@ int __thiscall FoggedObjectClass::InitDrawRecord(int this, _DWORD *a2)
     v7 = MEMORY[0x8B3D20]++; /*0x4d14b8*/
     *((_DWORD *)MEMORY[0x8B3D14] + v7) = this; /*0x4d14c7*/
   }
-  v8 = *(_DWORD *)(this + 100); /*0x4d14ca*/
-  v9 = *(_DWORD *)(this + 108); /*0x4d14cd*/
+  v8 = this->q064; /*0x4d14ca*/
+  v9 = this->q06C; /*0x4d14cd*/
   v10 = a2[50]; /*0x4d14d0*/
   LOBYTE(v23) = 0; /*0x4d14da*/
   if ( v9 < v8 /*0x4d14fc*/
     || (*(_BYTE *)(this + 105) || !v8)
-    && (v11 = *(_DWORD *)(this + 112), v11 > 0)
-    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 92) + 8))(this + 92, v8 + v11, 0) )
+    && (v11 = this->q070, v11 > 0)
+    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->q05C + 8))(this + 92, v8 + v11, 0) )
   {
-    v12 = *(_DWORD *)(this + 108); /*0x4d1503*/
-    *(_DWORD *)(this + 108) = v12 + 1; /*0x4d1509*/
-    v13 = (_DWORD *)(*(_DWORD *)(this + 96) + 16 * v12); /*0x4d1514*/
+    v12 = this->q06C; /*0x4d1503*/
+    this->q06C = v12 + 1; /*0x4d1509*/
+    v13 = (_DWORD *)(this->q060 + 16 * v12); /*0x4d1514*/
     v14 = v23; /*0x4d1516*/
     *v13 = v10; /*0x4d151a*/
     v13[1] = 0; /*0x4d151c*/
     v13[2] = v14; /*0x4d151f*/
     v13[3] = 0; /*0x4d1524*/
   }
-  v15 = (__int16)(*(_DWORD *)(this + 52) / 256); /*0x4d154d*/
-  v16 = 74 * ((__int16)(*(_DWORD *)(this + 56) / 256) - ((v15 + (__int16)(*(_DWORD *)(this + 56) / 256)) << 9) - v15) /*0x4d156f*/
-      - *(_DWORD *)(this + 48)
+  v15 = (__int16)(this->q034 / 256); /*0x4d154d*/
+  v16 = 74 * ((__int16)(this->q038 / 256) - ((v15 + (__int16)(this->q038 / 256)) << 9) - v15) /*0x4d156f*/
+      - this->q030
       + 0x7FFFFFFF;
   if ( (int)(MEMORY[0x8B3CC4] + 1) <= MEMORY[0x8B3CC8] ) /*0x4d1578*/
     goto LABEL_21; /*0x4d1578*/
@@ -686,7 +686,7 @@ int __stdcall FoggedObjectClass::_vt05(int *a1, int a2)
     v3[2] = (int)&FoggedObjectClass::`vftable'; /*0x4d2569*/
     v3[3] = (int)&vt_FoggedObjectClass; /*0x4d2570*/
   }
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v3 + 10); /*0x4d2580*/
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v3 + 10); /*0x4d2580*/
   v5 = *v2; /*0x4d2585*/
   a1 = 0; /*0x4d2590*/
   result = (*(int (__stdcall **)(int *, int **, int, _DWORD))(v5 + 12))(v2, &a1, 4, 0); /*0x4d2594*/
@@ -762,7 +762,7 @@ LABEL_22:
       v11[2] = v20; /*0x4d262e*/
       v11[3] = v21; /*0x4d2635*/
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(16 * v3[27] + v3[24] - 16)); /*0x4d264b*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(16 * v3[27] + v3[24] - 16)); /*0x4d264b*/
     if ( ++v17 >= (int)a1 ) /*0x4d265f*/
       goto LABEL_14; /*0x4d265f*/
   }
@@ -778,18 +778,18 @@ int __thiscall FoggedObjectClass::_vt13(int this, int a2)
   AbstractClass::ProcessPower((#378 *)this); /*0x4d2819*/
   Power::TimerProcess(this->LastSight); /*0x4d2824*/
   Power::TimerProcess(this->Cell); /*0x4d282f*/
-  Power::TimerProcess(*(_DWORD *)(this + 48)); /*0x4d283a*/
-  Power::TimerProcess(*(_DWORD *)(this + 52)); /*0x4d2845*/
-  Power::TimerProcess(*(_DWORD *)(this + 56)); /*0x4d2850*/
-  Power::TimerProcess(*(_DWORD *)(this + 60)); /*0x4d285b*/
-  Power::TimerProcess(*(_DWORD *)(this + 64)); /*0x4d2866*/
-  Power::TimerProcess(*(_DWORD *)(this + 68)); /*0x4d2871*/
-  Power::TimerProcess(*(_DWORD *)(this + 72)); /*0x4d287c*/
-  Power::TimerProcess(*(_DWORD *)(this + 76)); /*0x4d2887*/
-  Power::TimerProcess(*(_DWORD *)(this + 80)); /*0x4d2892*/
-  Power::TimerProcess(*(_DWORD *)(this + 84)); /*0x4d289d*/
-  Power::TimerProcess(*(_DWORD *)(this + 88)); /*0x4d28a8*/
-  return Power::TimerProcess(*(_DWORD *)(this + 108)); /*0x4d28b8*/
+  Power::TimerProcess(this->q030); /*0x4d283a*/
+  Power::TimerProcess(this->q034); /*0x4d2845*/
+  Power::TimerProcess(this->q038); /*0x4d2850*/
+  Power::TimerProcess(this->q03C); /*0x4d285b*/
+  Power::TimerProcess(this->q040); /*0x4d2866*/
+  Power::TimerProcess(this->q044); /*0x4d2871*/
+  Power::TimerProcess(this->q048); /*0x4d287c*/
+  Power::TimerProcess(this->q04C); /*0x4d2887*/
+  Power::TimerProcess(this->q050); /*0x4d2892*/
+  Power::TimerProcess(this->q054); /*0x4d289d*/
+  Power::TimerProcess(this->q058); /*0x4d28a8*/
+  return Power::TimerProcess(this->q06C); /*0x4d28b8*/
 }
 }
 

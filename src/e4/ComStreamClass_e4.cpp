@@ -50,7 +50,7 @@ int __thiscall ComStreamClass::Write(CNetUtilEventSink *this)
   if ( Flag::IsNot2(&v22) ) /*0x7a3e07*/
   {
     ChannelWOL = FindChannelWOL(lParam->__pad_0, (int)aP1, 1u, *(_DWORD *)(v20 + 16)); /*0x7a3e2d*/
-    SaveConfigWOL((int)&MEMORY[0xA8B238]); /*0x7a3e31*/
+    SaveConfigWOL((int)&g_GameMode_Current); /*0x7a3e31*/
   }
   v17 = 1; /*0x7a3e3b*/
   v16 = 0; /*0x7a3e40*/

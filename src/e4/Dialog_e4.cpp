@@ -10,7 +10,7 @@ void Dialog::MapDialogResource()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_49F740(int this)
 {
-  if ( *(_DWORD *)(this + 4) == 48879 ) /*0x49f74a*/
+  if ( this->q010 == 48879 ) /*0x49f74a*/
   {
     Debug::Log(); /*0x49f751*/
     MEMORY[0x89F75C] = MapViewOfFileEx(*(HANDLE *)(this + 12), 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
@@ -103,7 +103,7 @@ int __thiscall InitializeGameSettingsDialog(HWND *this)
   v19 = GetDlgItem(*this, 1); /*0x5b5e51*/
   if ( v19 ) /*0x5b5e55*/
     EnableWindow(v19, 1); /*0x5b5e59*/
-  return PlayVocClass(HIDWORD(MEMORY[0x8871E0]->MovieOff), 0x2000, 1.0, 0); /*0x5b5e7c*/
+  return PlayVocClass(HIDWORD(g_RulesClass_Instance->MovieOff), 0x2000, 1.0, 0); /*0x5b5e7c*/
 }
 }
 } // namespace gamemd
@@ -763,7 +763,7 @@ char __thiscall Dialog::IdleProcess(SkirmishDialog *this)
   DWORD TickCount; // [esp+10h] [ebp-8h]
   int v12; // [esp+14h] [ebp-4h]
 
-  if ( SessionClass::GetGameSpeed(MEMORY[0xA8B238]) ) /*0x60807d*/
+  if ( SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x60807d*/
     return 0; /*0x60807d*/
   v10 = this; /*0x60808b*/
   if ( !MEMORY[0xAC1B04] ) /*0x608091*/
@@ -786,7 +786,7 @@ char __thiscall Dialog::IdleProcess(SkirmishDialog *this)
     return 0; /*0x608106*/
   if ( !v6 ) /*0x60810a*/
     return 0; /*0x60810a*/
-  PlayVocClass(MEMORY[0x8871E0]->UpgradeEliteSound, 0x2000, 1.0, 0); /*0x608124*/
+  PlayVocClass(g_RulesClass_Instance->UpgradeEliteSound, 0x2000, 1.0, 0); /*0x608124*/
   LOBYTE(v12) = IsWindowEnabled((HWND)this); /*0x608138*/
   EnableWindow((HWND)this, 0); /*0x60813c*/
   EnumChildWindows((HWND)this, Dialog::MapControlToAction, 1); /*0x60814a*/
@@ -811,9 +811,9 @@ char __thiscall Dialog::IdleProcess(SkirmishDialog *this)
   while ( 1 ) /*0x6081d8*/
   {
     MessageLoop(); /*0x6081d8*/
-    if ( MEMORY[0xA8B238][0] ) /*0x6081e4*/
+    if ( g_GameMode_Current[0] ) /*0x6081e4*/
     {
-      if ( MEMORY[0xA8B238][0] != 5 && !MEMORY[0xA8D60E] && !MEMORY[0xA8DAB4] ) /*0x6081fb*/
+      if ( g_GameMode_Current[0] != 5 && !MEMORY[0xA8D60E] && !MEMORY[0xA8DAB4] ) /*0x6081fb*/
         break; /*0x6081fb*/
     }
     Event::Dispatch(); /*0x608211*/
@@ -870,7 +870,7 @@ LABEL_7:
   if ( !hWnda ) /*0x60a39a*/
     return 1; /*0x60a39a*/
   Parent = GetParent(hWnd); /*0x60a3ac*/
-  if ( !SessionClass::GetGameSpeed(MEMORY[0xA8B238]) ) /*0x60a3ae*/
+  if ( !SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x60a3ae*/
   {
     if ( (GetWindowLongA(hWnd, -16) & 0xB) == 0xB ) /*0x60a3cb*/
     {
@@ -912,7 +912,7 @@ LABEL_22:
       }
     }
   }
-  if ( !SessionClass::GetGameSpeed(MEMORY[0xA8B238]) ) /*0x60a48e*/
+  if ( !SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x60a48e*/
     goto LABEL_33; /*0x60a48e*/
   if ( (GetWindowLongA(hWnd, -16) & 0xB) != 0xB /*0x60a4da*/
     || (v12 = hWnd, v11 = 0, HashTable::Get(&MEMORY[0xAC1B00], &v12, &v11), !v11)
@@ -1161,7 +1161,7 @@ LABEL_74:
   v7 = GetDlgCtrlID(v2); /*0x60a693*/
   if ( (v6 == 259 || v6 == 3015) && v7 == 1780 ) /*0x60a6ae*/
   {
-    v4[36] = *((_DWORD *)MEMORY[0x8871E0] + 433); /*0x60a6bd*/
+    v4[36] = *((_DWORD *)g_RulesClass_Instance + 433); /*0x60a6bd*/
     return 1; /*0x60a6c4*/
   }
   else
@@ -2125,11 +2125,11 @@ LONG __thiscall Dialog_Resize(char *this)
   struct tagRECT v6; // [esp+Ch] [ebp-20h] BYREF
   struct tagRECT Rect; // [esp+1Ch] [ebp-10h] BYREF
 
-  result = MEMORY[0x887308]; /*0x6213a0*/
-  if ( MEMORY[0x887308] ) /*0x6213ae*/
+  result = g_DSurface_Primary; /*0x6213a0*/
+  if ( g_DSurface_Primary ) /*0x6213ae*/
   {
-    result = MEMORY[0x887310]; /*0x6213b4*/
-    if ( MEMORY[0x887310] ) /*0x6213bb*/
+    result = DSurface_Alternate; /*0x6213b4*/
+    if ( DSurface_Alternate ) /*0x6213bb*/
     {
       ScreenDialogToClient(*((HWND *)this + 5), &v6); /*0x6213c8*/
       GetClientRect(*((HWND *)this + 5), &Rect); /*0x6213d6*/
@@ -2295,7 +2295,7 @@ LABEL_7:
       v10 = v3[44]; /*0x621fb1*/
       if ( v10 == 1 ) /*0x621fba*/
       {
-        if ( SessionClass::GetGameSpeed(MEMORY[0xA8B238]) ) /*0x621fc5*/
+        if ( SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x621fc5*/
         {
           RenderCreditsScreen((int)v7, &left, 0); /*0x621fd5*/
         }
@@ -2391,13 +2391,13 @@ LABEL_43:
         (*(void (__thiscall **)(_DWORD *, LONG *, int, LONG *, _DWORD, int))(v21 + 8))( /*0x622212*/
           v7,
           &v39,
-          MEMORY[0x887310],
+          DSurface_Alternate,
           &left,
           0,
           1);
-        if ( SessionClass::GetGameSpeed(MEMORY[0xA8B238]) ) /*0x62221a*/
+        if ( SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x62221a*/
         {
-          v22 = *((_DWORD *)MEMORY[0xA8B230] + 3374); /*0x622229*/
+          v22 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x622229*/
           if ( v22 ) /*0x622231*/
           {
             if ( v22 == 1 ) /*0x622243*/
@@ -2453,8 +2453,8 @@ LABEL_72:
         v42 = v37; /*0x62238a*/
         v40 = top - v38.top; /*0x622392*/
         v39 = left - v38.left; /*0x6223a7*/
-        (*(void (__thiscall **)(int, LONG *, _DWORD *, LONG *, _DWORD, int))(*(_DWORD *)MEMORY[0x887310] + 8))( /*0x6223b3*/
-          MEMORY[0x887310],
+        (*(void (__thiscall **)(int, LONG *, _DWORD *, LONG *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x6223b3*/
+          DSurface_Alternate,
           &left,
           v7,
           &v39,
@@ -2481,7 +2481,7 @@ HWND __thiscall Dialog::Destroy(SkirmishDialog *this)
   HWND v6; // ecx
   int v7; // eax
 
-  Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x62272a*/
+  Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x62272a*/
   Dialog::IdleProcess(this); /*0x622731*/
   DestroyWindow((HWND)this); /*0x622737*/
   result = 0; /*0x622745*/

@@ -74,7 +74,7 @@ int Game_SendCampaignOptions()
     for ( i = 0; i < 8; ++i )
     {
       v2 = *(&MEMORY[0xA8DA90] + i); /*0x46d4fc*/
-      if ( !v2 || v2 == MEMORY[0xAC119C] || v2 == MEMORY[0xAC11A0] ) /*0x46d515*/
+      if ( !v2 || v2 == g_HouseClass_ObserverFlags || v2 == MEMORY[0xAC11A0] ) /*0x46d515*/
       {
         *(_DWORD *)&v14[4 * i + 44] = -1; /*0x46d542*/
         *(_DWORD *)&v14[4 * i + 76] = -1; /*0x46d54a*/
@@ -148,19 +148,19 @@ int sub_534450()
   int v1; // ecx
   void *v2; // esi
 
-  ++MEMORY[0xA8E7AC]; /*0x53445f*/
+  ++g_IKnowWhatImDoing; /*0x53445f*/
   MEMORY[0xB0F6A8] = 0; /*0x534465*/
   AbstractClassVector::ddtor(&MEMORY[0xB0F698]); /*0x53446b*/
   MixFileClass::CleanupCache(); /*0x534470*/
-  for ( i = MEMORY[0xB0E844]; MEMORY[0xB0E844]; i = MEMORY[0xB0E844] ) /*0x53447c*/
+  for ( i = g_BuildingLoadQueue_Count; g_BuildingLoadQueue_Count; i = g_BuildingLoadQueue_Count ) /*0x53447c*/
   {
-    if ( !MEMORY[0xB0E84C] ) /*0x534484*/
+    if ( !g_BuildingLoadQueue_Dirty ) /*0x534484*/
     {
-      qsort(MEMORY[0xB0E840], i, 8u, CompareFunction); /*0x534494*/
-      MEMORY[0xB0E850] = 0; /*0x53449c*/
-      MEMORY[0xB0E84C] = 1; /*0x5344a2*/
+      qsort(g_BuildingLoadQueue_Array, i, 8u, CompareFunction); /*0x534494*/
+      g_BuildingLoadQueue_Active = 0; /*0x53449c*/
+      g_BuildingLoadQueue_Dirty = 1; /*0x5344a2*/
     }
-    v1 = *((_DWORD *)MEMORY[0xB0E840] + 1); /*0x5344af*/
+    v1 = *((_DWORD *)g_BuildingLoadQueue_Array + 1); /*0x5344af*/
     if ( v1 ) /*0x5344b4*/
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v1 + 32))(v1, 1); /*0x5344ba*/
   }
@@ -174,10 +174,10 @@ int sub_534450()
       (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA8E364] + 32))(*(_DWORD *)MEMORY[0xA8E364], 1); /*0x534505*/
   }
   ProcessExpiredPointers(); /*0x534510*/
-  while ( MEMORY[0xB0E730] ) /*0x53451b*/
+  while ( g_GameObjectCleanup ) /*0x53451b*/
   {
-    if ( *(_DWORD *)MEMORY[0xB0E724] ) /*0x534523*/
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xB0E724] + 32))(*(_DWORD *)MEMORY[0xB0E724], 1); /*0x53452d*/
+    if ( *(_DWORD *)g_TagClassCount ) /*0x534523*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)g_TagClassCount + 32))(*(_DWORD *)g_TagClassCount, 1); /*0x53452d*/
   }
   ProcessExpiredPointers(); /*0x534538*/
   while ( MEMORY[0xA8EAF8] ) /*0x534543*/
@@ -186,7 +186,7 @@ int sub_534450()
       (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA8EAEC] + 32))(*(_DWORD *)MEMORY[0xA8EAEC], 1); /*0x534554*/
   }
   ProcessExpiredPointers(); /*0x53455f*/
-  while ( MEMORY[0x8B4148] ) /*0x53456a*/
+  while ( g_Tubes_Count ) /*0x53456a*/
   {
     if ( *(_DWORD *)MEMORY[0x8B413C] ) /*0x534571*/
       (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x8B413C] + 32))(*(_DWORD *)MEMORY[0x8B413C], 1); /*0x53457b*/
@@ -228,10 +228,10 @@ int sub_534450()
       (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x8B4124] + 32))(*(_DWORD *)MEMORY[0x8B4124], 1); /*0x534665*/
   }
   ProcessExpiredPointers(); /*0x534670*/
-  while ( MEMORY[0x8B40F8] ) /*0x53467b*/
+  while ( g_HouseClass_AIProductionState ) /*0x53467b*/
   {
-    if ( *(_DWORD *)MEMORY[0x8B40EC] ) /*0x534682*/
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x8B40EC] + 32))(*(_DWORD *)MEMORY[0x8B40EC], 1); /*0x53468c*/
+    if ( *(_DWORD *)g_TeamClassPool ) /*0x534682*/
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)g_TeamClassPool + 32))(*(_DWORD *)g_TeamClassPool, 1); /*0x53468c*/
   }
   ProcessExpiredPointers(); /*0x534697*/
   while ( HouseClass_Count ) /*0x5346a2*/
@@ -328,7 +328,7 @@ int sub_534450()
       (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x8B3D14] + 32))(*(_DWORD *)MEMORY[0x8B3D14], 1); /*0x5348e1*/
   }
   ProcessExpiredPointers(); /*0x5348ec*/
-  while ( MEMORY[0x88A100] ) /*0x5348f7*/
+  while ( g_AlphaShapeLimit ) /*0x5348f7*/
   {
     if ( *(_DWORD *)MEMORY[0x88A0F4] ) /*0x5348fe*/
       (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0x88A0F4] + 32))(*(_DWORD *)MEMORY[0x88A0F4], 1); /*0x534908*/
@@ -349,13 +349,13 @@ int sub_534450()
       (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xA8E96C] + 32))(*(_DWORD *)MEMORY[0xA8E96C], 1); /*0x534965*/
   }
   ProcessExpiredPointers(); /*0x534970*/
-  if ( MEMORY[0x887324] ) /*0x53497d*/
-    ((void (__thiscall *)(LPPERSISTSTREAM, int))MEMORY[0x887324]->__tail_0[1].QueryInterface)(MEMORY[0x887324], 1); /*0x534983*/
-  MEMORY[0x887324] = 0; /*0x53498b*/
+  if ( g_TacticalClass_Instance ) /*0x53497d*/
+    ((void (__thiscall *)(LPPERSISTSTREAM, int))g_TacticalClass_Instance->__tail_0[1].QueryInterface)(g_TacticalClass_Instance, 1); /*0x534983*/
+  g_TacticalClass_Instance = 0; /*0x53498b*/
   MapClass::FreeAllCells(&MEMORY[0x87F7E8]); /*0x534991*/
   ProcessExpiredPointers(); /*0x534996*/
   Game::initScenario(&dword_89C3B0); /*0x5349a0*/
-  return --MEMORY[0xA8E7AC]; /*0x5349ab*/
+  return --g_IKnowWhatImDoing; /*0x5349ab*/
 }
 }
 } // namespace gamemd
@@ -405,27 +405,27 @@ int __stdcall Game::MakeScreenshot(int a1)
         v10 = Point; /*0x537c3e*/
         v12 = Rect.bottom + 1; /*0x537c4c*/
         v11 = Rect.right + 1; /*0x537c56*/
-        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x88730C] + 124))(MEMORY[0x88730C]); /*0x537c5c*/
+        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x537c5c*/
         if ( v11 >= v2 ) /*0x537c63*/
-          v11 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x88730C] + 124))(MEMORY[0x88730C]); /*0x537c70*/
-        v3 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x88730C] + 128))(MEMORY[0x88730C]); /*0x537c7c*/
+          v11 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x537c70*/
+        v3 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 128))(g_DSurface_Hidden); /*0x537c7c*/
         if ( v12 >= v3 ) /*0x537c86*/
-          v12 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x88730C] + 128))(MEMORY[0x88730C]); /*0x537c96*/
-        (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x537ca4*/
-        v4 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x88730C] + 124))(MEMORY[0x88730C]); /*0x537cb8*/
-        v5 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x88730C] + 128))(MEMORY[0x88730C]); /*0x537cbc*/
+          v12 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 128))(g_DSurface_Hidden); /*0x537c96*/
+        (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x537ca4*/
+        v4 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x537cb8*/
+        v5 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 128))(g_DSurface_Hidden); /*0x537cbc*/
         v15[0] = 0; /*0x537cd8*/
         v15[1] = 0; /*0x537cdd*/
         v15[2] = v4; /*0x537ce1*/
         v15[3] = v5; /*0x537ce5*/
-        (*(void (__thiscall **)(int, _DWORD *, int, struct tagPOINT *, _DWORD, int))(*(_DWORD *)MEMORY[0x88730C] + 8))( /*0x537cf0*/
-          MEMORY[0x88730C],
+        (*(void (__thiscall **)(int, _DWORD *, int, struct tagPOINT *, _DWORD, int))(*(_DWORD *)g_DSurface_Hidden + 8))( /*0x537cf0*/
+          g_DSurface_Hidden,
           v15,
-          MEMORY[0x887308],
+          g_DSurface_Primary,
           &v10,
           0,
           1);
-        (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x537cfb*/
+        (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x537cfb*/
         v6 = -1; /*0x537cfe*/
         do /*0x537d6d*/
         {
@@ -440,7 +440,7 @@ int __stdcall Game::MakeScreenshot(int a1)
         }
         while ( v8 ); /*0x537d6d*/
         CCFileClass::Construct(v16, Buffer); /*0x537d7b*/
-        CompressScreenshot(v16, (int *)MEMORY[0x88730C], &MEMORY[0x885780]); /*0x537d8f*/
+        CompressScreenshot(v16, (int *)g_DSurface_Hidden, &FileSystem_TEMPERAT_PAL); /*0x537d8f*/
         v16[0] = (int)&vt_CCFileClass; /*0x537d9b*/
         v18 = 0; /*0x537da3*/
         Vector::Clear((int)v17); /*0x537daa*/
@@ -531,22 +531,22 @@ char __thiscall StartModemMultiplayerGame(int this, char a2)
   v12 = MessageBox; /*0x5b721f*/
   if ( MessageBox ) /*0x5b7223*/
     Dialog::Show(MessageBox); /*0x5b7227*/
-  v13 = MEMORY[0x887340]; /*0x5b7231*/
-  if ( MEMORY[0x887338] != -1 ) /*0x5b7239*/
-    v13 += Timer::GetTicks() - MEMORY[0x887338]; /*0x5b724b*/
+  v13 = g_PerformanceTickOffset; /*0x5b7231*/
+  if ( g_LastPerformanceTick != -1 ) /*0x5b7239*/
+    v13 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5b724b*/
   while ( 1 ) /*0x5b7252*/
   {
     if ( !Count::GetCountQueue(&MEMORY[0xA8EA70]) ) /*0x5b7252*/
       goto LABEL_31; /*0x5b7252*/
-    v14 = MEMORY[0x887340]; /*0x5b7260*/
-    if ( MEMORY[0x887338] != -1 ) /*0x5b7268*/
-      v14 += Timer::GetTicks() - MEMORY[0x887338]; /*0x5b727a*/
+    v14 = g_PerformanceTickOffset; /*0x5b7260*/
+    if ( g_LastPerformanceTick != -1 ) /*0x5b7268*/
+      v14 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5b727a*/
     if ( (unsigned int)(v14 - v13) >= 0x708 ) /*0x5b7284*/
     {
 LABEL_31:
-      v15 = MEMORY[0x887340]; /*0x5b728b*/
-      if ( MEMORY[0x887338] != -1 ) /*0x5b7293*/
-        v15 += Timer::GetTicks() - MEMORY[0x887338]; /*0x5b72a5*/
+      v15 = g_PerformanceTickOffset; /*0x5b728b*/
+      if ( g_LastPerformanceTick != -1 ) /*0x5b7293*/
+        v15 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5b72a5*/
       if ( (unsigned int)(v15 - v13) >= 0x3C ) /*0x5b72ac*/
         break; /*0x5b72ac*/
     }
@@ -558,13 +558,13 @@ LABEL_31:
     Dialog::Destroy(v12); /*0x5b72ca*/
   EventClass::CheckFlag(&MEMORY[0xA8EA70]); /*0x5b72d4*/
   MEMORY[0xA8D60E] = 0; /*0x5b72e4*/
-  *((_DWORD *)MEMORY[0xA8B230] + 1173) = MEMORY[0xA8B254]; /*0x5b72eb*/
+  *((_DWORD *)g_ScenarioClass_Instance + 1173) = MEMORY[0xA8B254]; /*0x5b72eb*/
   MEMORY[0xA8B54C] = MEMORY[0xA8DA84]; /*0x5b730b*/
   v16 = MEMORY[0xA8E960]; /*0x5b7311*/
   BYTE1(v16) = BYTE1(MEMORY[0xA8E960]) & 0x77; /*0x5b7319*/
   v17 = v16 | ((MEMORY[0xA8B31D] & 1 | (16 * (MEMORY[0xA8B260] & 1))) << 11); /*0x5b731f*/
   LOBYTE(v17) = MEMORY[0xA8E960] | 0xC0; /*0x5b7326*/
-  MEMORY[0xA8ED84] = 0; /*0x5b7329*/
+  g_CurrentFrame = 0; /*0x5b7329*/
   MEMORY[0xA8B24C] = 2; /*0x5b7333*/
   MEMORY[0xA8E960] = v17; /*0x5b733d*/
   nullsub_37(&MEMORY[0xA8E960]); /*0x5b7343*/
@@ -597,7 +597,7 @@ int __thiscall BuildGameSetupPacket(int this)
   Debug::Log(); /*0x5ba66f*/
   DlgItem = GetDlgItem(*(HWND *)this, 1); /*0x5ba67e*/
   EnableWindow(DlgItem, 0); /*0x5ba685*/
-  v3 = *(_DWORD *)(this + 88); /*0x5ba696*/
+  v3 = this->q160; /*0x5ba696*/
   memset(v11, 0, sizeof(v11)); /*0x5ba699*/
   v4 = *(_DWORD *)(this + 84); /*0x5ba69b*/
   v12 = 0; /*0x5ba69e*/
@@ -663,7 +663,7 @@ int __thiscall Game::GetMultiplayerScoreScreenBar(void *this)
 {
   int playerSideIndex; // eax
 
-  playerSideIndex = MEMORY[0xA8B230]->playerSideIndex; /*0x5ca115*/
+  playerSideIndex = g_ScenarioClass_Instance->playerSideIndex; /*0x5ca115*/
   if ( playerSideIndex ) /*0x5ca11d*/
   {
     if ( playerSideIndex == 1 ) /*0x5ca21f*/
@@ -876,8 +876,8 @@ unsigned __int8 __thiscall ManageGameSpeed(int this)
     v5 = VtableStub::72F510(); /*0x657a35*/
     v19[0] = *(_DWORD *)(this + 4580); /*0x657a4d*/
     v19[1] = *(_DWORD *)(this + 4588); /*0x657a5f*/
-    v6 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)MEMORY[0x887300] + 120))(MEMORY[0x887300], v20); /*0x657a6a*/
-    DrawToSurfaceSHP(MEMORY[0x887300], v5, MEMORY[0xB04A38], 0x20u, v19, v6, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x657a84*/
+    v6 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, v20); /*0x657a6a*/
+    DrawToSurfaceSHP(DSurface_Sidebar, v5, MEMORY[0xB04A38], 0x20u, v19, v6, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x657a84*/
     v7 = *(_DWORD *)(this + 4588); /*0x657a95*/
     *(_DWORD *)(this + 4620) = *(_DWORD *)(this + 4580); /*0x657aab*/
     *(_DWORD *)(this + 4624) = v7; /*0x657aae*/
@@ -915,7 +915,7 @@ LABEL_13:
     {
       Debug::Log(); /*0x657ba9*/
       Mixer::ReleaseChannel((int **)(this + 5312)); /*0x657bb9*/
-      v11 = (_DWORD *)PlayVocClass(MEMORY[0x8871E0]->?[1], 0x2000, 1.0, 0); /*0x657bd8*/
+      v11 = (_DWORD *)PlayVocClass(g_RulesClass_Instance->?[1], 0x2000, 1.0, 0); /*0x657bd8*/
       SetAudioSource(this + 5312, v11, 0); /*0x657be1*/
       *(_DWORD *)(this + 5292) = 4; /*0x657be6*/
       *(_DWORD *)(this + 5372) = 25; /*0x657bf0*/
@@ -947,9 +947,9 @@ LABEL_22:
     Game_Process(); /*0x657c2c*/
     v17 = 0; /*0x657c37*/
     Mixer::ReleaseChannel((int **)(this + 5312)); /*0x657c3d*/
-    v13 = (_DWORD *)PlayVocClass(MEMORY[0x8871E0]->?[2], 0x2000, 1.0, 0); /*0x657c5b*/
+    v13 = (_DWORD *)PlayVocClass(g_RulesClass_Instance->?[2], 0x2000, 1.0, 0); /*0x657c5b*/
     SetAudioSource(this + 5312, v13, 0); /*0x657c64*/
-    RadarClass::SetGlobal((void *)MEMORY[0x8871E0]->DetailMinFrameRateNormal); /*0x657c71*/
+    RadarClass::SetGlobal((void *)g_RulesClass_Instance->DetailMinFrameRateNormal); /*0x657c71*/
     *(_BYTE *)(this + 5337) = 1; /*0x657c76*/
   }
   result = v17; /*0x657c81*/
@@ -1035,8 +1035,8 @@ char __thiscall Game::LoadSaved(AnimClass *this)
   if ( COM < 0 ) /*0x67e4d5*/
     goto LABEL_6; /*0x67e4d5*/
   ComPtr::ReleaseSimple((int *)&ppstgOpen); /*0x67e4d7*/
-  MEMORY[0xA8B238][0] = LoadOptions::GetFlag252(v13); /*0x67e4e8*/
-  SwizzleManager::ConvertWrapper((int)&MEMORY[0xB0C110]); /*0x67e4f2*/
+  g_GameMode_Current[0] = LoadOptions::GetFlag252(v13); /*0x67e4e8*/
+  SwizzleManager::ConvertWrapper((int)&SwizzleManagerClass_Instance); /*0x67e4f2*/
   v8 = 0; /*0x67e4fe*/
   MultiByteToWideChar(0, 0, this->field_0, -1, pwcsName, 64); /*0x67e50a*/
   ComPtr::ReleaseSimple((int *)&v8); /*0x67e510*/
@@ -1076,7 +1076,7 @@ LABEL_6:
     if ( !v7 ) /*0x67e664*/
       WinAPI::Wrapper(-2147467261); /*0x67e66b*/
     (*(void (__stdcall **)(int, _DWORD))(*(_DWORD *)v7 + 16))(v7, 0); /*0x67e678*/
-    SwizzleManager::ConvertWrapper((int)&MEMORY[0xB0C110]); /*0x67e680*/
+    SwizzleManager::ConvertWrapper((int)&SwizzleManagerClass_Instance); /*0x67e680*/
     Game_Load(); /*0x67e685*/
     SidebarClass::InitButtons(&MEMORY[0x87F7E8]); /*0x67e68f*/
     TacticalClass::BuildCommandBar(&MEMORY[0x87F7E8], (int)MultiByteToWideChar, 1); /*0x67e69f*/
@@ -1135,14 +1135,14 @@ int __thiscall SerializeGameSaveState(void *this)
   result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &MEMORY[0xA8ED78], 4, 0); /*0x67f9d3*/
   if ( result >= 0 )
   {
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], &MEMORY[0xA8ED78]); /*0x67f9e8*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &MEMORY[0xA8ED78]); /*0x67f9e8*/
     result = (*(int (__stdcall **)(void *, #375 **, int, _DWORD))(this->q003)(this, &HouseClass_Player, 4, 0); /*0x67f9f9*/
     if ( result >= 0 )
     {
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)&HouseClass_Player); /*0x67fa0e*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&HouseClass_Player); /*0x67fa0e*/
       result = (*(int (__stdcall **)(void *, wchar_t **, int, _DWORD))(this->q003)( /*0x67fa1f*/
                  this,
-                 &MEMORY[0xA8ED84],
+                 &g_CurrentFrame,
                  4,
                  0);
       if ( result >= 0 )
@@ -1154,8 +1154,8 @@ int __thiscall SerializeGameSaveState(void *this)
           if ( v13 <= 0 )
           {
 LABEL_14:
-            for ( i = 0; i < (int)MEMORY[0xA8ECC8]; ++i ) /*0x67face*/
-              ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)MEMORY[0xA8ECBC] + i); /*0x67fade*/
+            for ( i = 0; i < (int)g_SelectionManager; ++i ) /*0x67face*/
+              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)g_ObjectClass_CurrentCount + i); /*0x67fade*/
             result = (*(int (__stdcall **)(void *, float *, int, _DWORD))(this->q003)( /*0x67fafc*/
                        this,
                        MEMORY[0x89EA40],
@@ -1172,7 +1172,7 @@ LABEL_14:
                 {
 LABEL_27:
                   for ( j = 0; j < MEMORY[0x8B40D8]; ++j ) /*0x67fbb2*/
-                    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)MEMORY[0x8B40CC] + j); /*0x67fbc2*/
+                    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)MEMORY[0x8B40CC] + j); /*0x67fbc2*/
                   result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v13, 4, 0); /*0x67fbdd*/
                   if ( result >= 0 )
                   {
@@ -1181,7 +1181,7 @@ LABEL_27:
                     {
 LABEL_39:
                       for ( k = 0; k < dword_8B41B8; ++k ) /*0x67fc74*/
-                        ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)unk_8B41AC + k); /*0x67fc84*/
+                        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)unk_8B41AC + k); /*0x67fc84*/
                       result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)( /*0x67fc9f*/
                                  this,
                                  &dword_81DA8C,
@@ -1289,7 +1289,7 @@ LABEL_39:
               result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v14, 4, 0); /*0x67fa57*/
               if ( result < 0 ) /*0x67fa5c*/
                 break; /*0x67fa5c*/
-              if ( (int)MEMORY[0xA8ECC8] < MEMORY[0xA8ECC0] /*0x67fa99*/
+              if ( (int)g_SelectionManager < MEMORY[0xA8ECC0] /*0x67fa99*/
                 || (MEMORY[0xA8ECC5] || !MEMORY[0xA8ECC0])
                 && MEMORY[0xA8ECCC] > 0
                 && (*(unsigned __int8 (__thiscall **)(ObjectClass **, int, _DWORD))&MEMORY[0xA8ECB8]->__pad_0[8])(
@@ -1297,9 +1297,9 @@ LABEL_39:
                      MEMORY[0xA8ECC0] + MEMORY[0xA8ECCC],
                      0) )
               {
-                v4 = MEMORY[0xA8ECC8]; /*0x67faac*/
-                MEMORY[0xA8ECC8] = (wchar_t *)((char *)MEMORY[0xA8ECC8] + 1); /*0x67faaf*/
-                *((_DWORD *)MEMORY[0xA8ECBC] + (_DWORD)v4) = v14; /*0x67fab9*/
+                v4 = g_SelectionManager; /*0x67faac*/
+                g_SelectionManager = (wchar_t *)((char *)g_SelectionManager + 1); /*0x67faaf*/
+                *((_DWORD *)g_ObjectClass_CurrentCount + (_DWORD)v4) = v14; /*0x67fab9*/
               }
               if ( ++v3 >= v13 ) /*0x67fac3*/
                 goto LABEL_14; /*0x67fac3*/
@@ -1369,20 +1369,20 @@ int sub_685120()
 
   BulletTypeClass::ReadArmor(); /*0x685121*/
   nullsub_158(); /*0x685126*/
-  Game_Load_Load(*((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x685136*/
-  LoadObjectTypeClassTheaterSHP(*((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x685147*/
-  LoadFactoryClassTheaterSHP(*((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x685158*/
+  Game_Load_Load(*((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x685136*/
+  LoadObjectTypeClassTheaterSHP(*((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x685147*/
+  LoadFactoryClassTheaterSHP(*((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x685158*/
   RadarClass::InitializeHashTable((int *)&MEMORY[0x87F7E8]); /*0x685162*/
   if ( MEMORY[0xB0EA80] != -1 ) /*0x685176*/
   {
-    if ( (int)MEMORY[0xA8ED84] - MEMORY[0xB0EA80] >= MEMORY[0xB0EA88] ) /*0x685189*/
+    if ( (int)g_CurrentFrame - MEMORY[0xB0EA80] >= MEMORY[0xB0EA88] ) /*0x685189*/
       v0 = 0; /*0x68518f*/
     else
-      v0 = MEMORY[0xB0EA88] - ((_DWORD)MEMORY[0xA8ED84] - MEMORY[0xB0EA80]); /*0x68518b*/
+      v0 = MEMORY[0xB0EA88] - ((_DWORD)g_CurrentFrame - MEMORY[0xB0EA80]); /*0x68518b*/
     MEMORY[0xB0EA88] = v0; /*0x685191*/
   }
-  MEMORY[0xB0EA80] = (int)MEMORY[0xA8ED84]; /*0x6851a1*/
-  CellClass::setOverlayType((void **)MEMORY[0x87E8B8], (int)&MEMORY[0x87F8D4]); /*0x6851a7*/
+  MEMORY[0xB0EA80] = (int)g_CurrentFrame; /*0x6851a1*/
+  CellClass::setOverlayType((void **)g_AudioInitFlag, (int)&MEMORY[0x87F8D4]); /*0x6851a7*/
   Game_Load_Load_53AB50(); /*0x6851ac*/
   FindBuildingClass(); /*0x6851b1*/
   MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2); /*0x6851bd*/
@@ -1839,7 +1839,7 @@ char __thiscall Game::ProcessIdle(CreateGameDialogControl *this)
     dword_B7617C = (ObjectClass *)time(0); /*0x77fe97*/
     v3 = 0; /*0x77fe9c*/
   }
-  if ( MEMORY[0xA8B238] == (CellStruct *)4 && MEMORY[0xA8B244] == 3 && time(0) > dword_B7646C ) /*0x77fec1*/
+  if ( g_GameMode_Current == (CellStruct *)4 && MEMORY[0xA8B244] == 3 && time(0) > dword_B7646C ) /*0x77fec1*/
   {
     dword_B7646C = time(0) + 30; /*0x77fecf*/
     Event_Process_786270(); /*0x77fed4*/

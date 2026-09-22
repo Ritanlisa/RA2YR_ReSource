@@ -14,9 +14,9 @@ _DWORD *__thiscall sub_65B1E0(_DWORD *this)
 
   AbstractClass::Constructor((int)this); /*0x65b1e3*/
   this->LightSource = 0; /*0x65b1ea*/
-  this->RadLevelTimer = MEMORY[0xA8ED84]; /*0x65b1f3*/
+  this->RadLevelTimer = g_CurrentFrame; /*0x65b1f3*/
   this->q030 = 0; /*0x65b1f6*/
-  v2 = MEMORY[0xA8ED84]; /*0x65b1f9*/
+  v2 = g_CurrentFrame; /*0x65b1f9*/
   this->q03C = 0; /*0x65b1ff*/
   this->RadLightTimer = v2; /*0x65b202*/
   this->q080 = 0; /*0x65b205*/

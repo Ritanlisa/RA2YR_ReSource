@@ -67,7 +67,7 @@ HWND sub_785EA0()
   void *v12; // [esp+Ch] [ebp-4h] BYREF
 
   byte_B77DC0 = 1; /*0x785eac*/
-  if ( MEMORY[0xA8B238][0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x785ec0*/
+  if ( g_GameMode_Current[0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x785ec0*/
   {
     v0 = g_WOL_MsgPool; /*0x785ec6*/
     for ( i = 0; i < g_WOL_MsgPool; v0 = g_WOL_MsgPool ) /*0x785ecf*/

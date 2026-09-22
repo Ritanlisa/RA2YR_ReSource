@@ -27,42 +27,42 @@ char KeyboardConfig_LoadINI()
   CCFileClass::Construct(v10, MEMORY[0x827B88]); /*0x533d47*/
   if ( CCINIClass::Load(v8, (int)v10, 0, 0) ) /*0x533d57*/
   {
-    __3_YAXPAX_Z(MEMORY[0x87F680]); /*0x533d6c*/
+    __3_YAXPAX_Z(Base); /*0x533d6c*/
     v0 = 0; /*0x533d74*/
-    MEMORY[0x87F680] = 0; /*0x533d7a*/
-    MEMORY[0x87F684] = 0; /*0x533d85*/
+    Base = 0; /*0x533d7a*/
+    NumOfElements = 0; /*0x533d85*/
     MEMORY[0x87F688] = 0; /*0x533d8b*/
-    MEMORY[0x87F68C] = 0; /*0x533d91*/
-    MEMORY[0x87F690] = 0; /*0x533d97*/
+    g_FileSystemInitFlag = 0; /*0x533d91*/
+    g_FileSystemPool = 0; /*0x533d97*/
     for ( i = 0; i < INIClass::GetKeyCount((char *)v8, (unsigned __int8 *)g_INI_Key_Hotkey); v0 = i ) /*0x533da8*/
     {
       StringByIndex = (const char *)INIClass::GetStringByIndex((char *)v8, (unsigned __int8 *)g_INI_Key_Hotkey, v0); /*0x533dbf*/
       v2 = 0; /*0x533dd1*/
       Int_Overwrite = INIClass::ReadInt_Overwrite(g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
-      if ( MEMORY[0x87F668] > 0 ) /*0x533dde*/
+      if ( g_CommandClassVector_State > 0 ) /*0x533dde*/
       {
         while ( strcmp( /*0x533e1f*/
-                  (const char *)(*(int (__thiscall **)(_DWORD))(**((_DWORD **)MEMORY[0x87F65C] + v2) + 4))(*((_DWORD *)MEMORY[0x87F65C] + v2)),
+                  (const char *)(*(int (__thiscall **)(_DWORD))(**((_DWORD **)g_CommandClass_Capacity + v2) + 4))(*((_DWORD *)g_CommandClass_Capacity + v2)),
                   StringByIndex) )
         {
-          if ( ++v2 >= MEMORY[0x87F668] ) /*0x533e29*/
+          if ( ++v2 >= g_CommandClassVector_State ) /*0x533e29*/
             goto LABEL_14; /*0x533e29*/
         }
-        v3 = *((_DWORD *)MEMORY[0x87F65C] + v2); /*0x533e32*/
+        v3 = *((_DWORD *)g_CommandClass_Capacity + v2); /*0x533e32*/
         if ( v3 && Int_Overwrite ) /*0x533e3f*/
         {
           v4 = MEMORY[0x87F688]; /*0x533e47*/
-          if ( (int)(MEMORY[0x87F684] + 1) <= MEMORY[0x87F688] ) /*0x533e4f*/
+          if ( (int)(NumOfElements + 1) <= MEMORY[0x87F688] ) /*0x533e4f*/
             goto LABEL_13; /*0x533e4f*/
           if ( !MEMORY[0x87F688] ) /*0x533e53*/
             v4 = 10; /*0x533e55*/
           if ( (unsigned __int8)KeyboardConfig::ReleaseBuffer(v4) ) /*0x533e60*/
           {
 LABEL_13:
-            *((_DWORD *)MEMORY[0x87F680] + 2 * MEMORY[0x87F684]) = Int_Overwrite; /*0x533e74*/
-            *((_DWORD *)MEMORY[0x87F680] + 2 * MEMORY[0x87F684] + 1) = v3; /*0x533e83*/
-            MEMORY[0x87F68C] = 0; /*0x533e8d*/
-            ++MEMORY[0x87F684]; /*0x533e93*/
+            *((_DWORD *)Base + 2 * NumOfElements) = Int_Overwrite; /*0x533e74*/
+            *((_DWORD *)Base + 2 * NumOfElements + 1) = v3; /*0x533e83*/
+            g_FileSystemInitFlag = 0; /*0x533e8d*/
+            ++NumOfElements; /*0x533e93*/
           }
         }
       }

@@ -13,8 +13,8 @@ int __thiscall CampaignClass::CampaignClass(int this, ObjectClass *aP1)
 
   AbstractTypeClass::Constructor(this, (AbstractClass *)aP1); /*0x46cb68*/
   *(_DWORD *)this = &CampaignClass::`vftable'; /*0x46cb70*/
-  *(_DWORD *)(this + 152) = -1; /*0x46cb76*/
-  *(_DWORD *)(this + 668) = -1; /*0x46cb7c*/
+  this->q098 = -1; /*0x46cb76*/
+  this->q29C = -1; /*0x46cb7c*/
   this->vtable1 = &CampaignClass::`vftable'; /*0x46cb82*/
   this->vtable2 = &CampaignClass::`vftable'; /*0x46cb89*/
   this->vtable3 = &vt_CampaignClass; /*0x46cb90*/
@@ -29,7 +29,7 @@ int __thiscall CampaignClass::CampaignClass(int this, ObjectClass *aP1)
     v3 = g_UnitTypeInitState++; /*0x46cbd9*/
     *(_DWORD *)&g_CampaignTypeArray->__pad_0[4 * v3] = this; /*0x46cbe8*/
   }
-  *(_BYTE *)(this + 156) = 0; /*0x46cbf7*/
+  this->q09C = 0; /*0x46cbf7*/
   wcscpy((wchar_t *)(this + 672), (const wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472]); /*0x46cbfe*/
   return this; /*0x46cc08*/
 }
@@ -169,7 +169,7 @@ char __thiscall CampaignClass_SaveProgress(char *this)
     return 0; /*0x49c5c1*/
   v3 = this->alignmentPadding_3; /*0x49c5d4*/
   if ( !MEMORY[0x89F578] ) /*0x49c5d9*/
-    CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49c5e0*/
+    CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49c5e0*/
   if ( v3 < 0 || v3 >= MEMORY[0x89F574] ) /*0x49c5f5*/
     return 0; /*0x49cae5*/
   v27 = MEMORY[0x89F570] + 76 * v3; /*0x49c60d*/

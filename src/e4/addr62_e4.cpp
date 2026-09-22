@@ -379,7 +379,7 @@ int __fastcall Dialog_DrawGradient(int *a1, int *a2, int a3, int a4)
 
   v4 = a4; /*0x6208f8*/
   if ( a4 == -1 && MEMORY[0xAC4624] != -1 ) /*0x620911*/
-    v4 = ((int)(unsigned __int8)MEMORY[0xAC4624] >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x62095c*/
+    v4 = ((int)(unsigned __int8)MEMORY[0xAC4624] >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x62095c*/
        | (BYTE1(MEMORY[0xAC4624]) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
        | (BYTE2(MEMORY[0xAC4624]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
   v7 = MEMORY[0xAC1B94]; /*0x620963*/
@@ -391,7 +391,7 @@ int __fastcall Dialog_DrawGradient(int *a1, int *a2, int a3, int a4)
   }
   else
   {
-    v33 = ((int)(unsigned __int8)MEMORY[0xAC1B98] >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x6209bf*/
+    v33 = ((int)(unsigned __int8)MEMORY[0xAC1B98] >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x6209bf*/
         | (BYTE1(MEMORY[0xAC1B98]) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
         | (BYTE2(MEMORY[0xAC1B98]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
     v7 = MEMORY[0xAC1B94]; /*0x6209c3*/
@@ -399,7 +399,7 @@ int __fastcall Dialog_DrawGradient(int *a1, int *a2, int a3, int a4)
   if ( v7 == -1 ) /*0x6209ca*/
     v34 = -1; /*0x6209cc*/
   else
-    v34 = ((int)(unsigned __int8)v7 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x620a16*/
+    v34 = ((int)(unsigned __int8)v7 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x620a16*/
         | (BYTE1(v7) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
         | (BYTE2(MEMORY[0xAC1B94]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
   v8 = *a2; /*0x620a1d*/
@@ -465,7 +465,7 @@ int __fastcall Dialog_DrawGradient(int *a1, int *a2, int a3, int a4)
         if ( v23 == -1 ) /*0x620bf4*/
           v4 = -1; /*0x620bf6*/
         else
-          v4 = ((int)(unsigned __int8)v23 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x620c3e*/
+          v4 = ((int)(unsigned __int8)v23 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x620c3e*/
              | (BYTE1(v23) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
              | (BYTE2(v42) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
         v24 = *a1; /*0x620c48*/
@@ -545,17 +545,17 @@ int __fastcall ComputeHashModPrime(int *a1, int *a2, int a3)
   v8 = a2[3]; /*0x620cf1*/
   v36 = v7; /*0x620cf9*/
   v37 = v8; /*0x620d04*/
-  v9 = (39 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x620d3e*/
+  v9 = (39 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x620d3e*/
      | (248 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
      | (116 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
-  v10 = (19 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x620d7d*/
+  v10 = (19 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x620d7d*/
       | (123 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
       | (57 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
-  v24 = (30 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x620dbf*/
+  v24 = (30 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x620dbf*/
       | (186 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
       | (87 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
   v22 = 0; /*0x620dfb*/
-  v25 = (24 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x620e0d*/
+  v25 = (24 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x620e0d*/
       | (153 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
       | (71 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
   result = a3; /*0x620e11*/
@@ -922,11 +922,11 @@ LABEL_17:
       top = v28.top; /*0x62167d*/
       v33 = v28.right - v28.left + 1; /*0x621682*/
       v34 = v28.bottom - v28.top + 1; /*0x621688*/
-      if ( MEMORY[0x887308] ) /*0x62168c*/
+      if ( g_DSurface_Primary ) /*0x62168c*/
         (*(void (__thiscall **)(_DWORD *, _DWORD *, int, LONG *, _DWORD, int))(*v7 + 8))( /*0x6216a1*/
           v7,
           v29,
-          MEMORY[0x887308],
+          g_DSurface_Primary,
           &left,
           0,
           1);
@@ -969,8 +969,8 @@ LABEL_17:
   v35[3] = v3[3]; /*0x6217a2*/
   v35[1] = v20 - v28.top; /*0x6217ae*/
   v35[0] = v21 - v28.left; /*0x6217c0*/
-  return (*(int (__thiscall **)(int, int *, _DWORD *, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887310] + 8))( /*0x6217cc*/
-           MEMORY[0x887310],
+  return (*(int (__thiscall **)(int, int *, _DWORD *, _DWORD *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x6217cc*/
+           DSurface_Alternate,
            v3,
            v7,
            v35,
@@ -1959,13 +1959,13 @@ int __fastcall Dialog_Run(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UIN
   {
     ShowWindow(v3, 1); /*0x624215*/
     SetForegroundWindow(v4); /*0x62421c*/
-    Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x624228*/
+    Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x624228*/
     if ( !(*(unsigned __int8 (__thiscall **)(LPARAM))(*(_DWORD *)a3 + 8))(a3) ) /*0x624231*/
     {
       while ( !(*(unsigned __int8 (__thiscall **)(LPARAM))(*(_DWORD *)a3 + 16))(a3) ) /*0x624241*/
       {
         MessageLoop(); /*0x624243*/
-        if ( !MEMORY[0xA8B238] || MEMORY[0xA8B238] == 5 || MEMORY[0xA8D60E] || MEMORY[0xA8DAB4] ) /*0x624266*/
+        if ( !g_GameMode_Current || g_GameMode_Current == 5 || MEMORY[0xA8D60E] || MEMORY[0xA8DAB4] ) /*0x624266*/
         {
           Event::Dispatch(); /*0x62427c*/
         }
@@ -2341,15 +2341,15 @@ void __thiscall sub_629530(int this)
   if ( (unsigned char)this->M84 ) /*0x629552*/
   {
     v4 = this; /*0x629567*/
-    v3 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v4); /*0x62956b*/
-    if ( v3 != -1 && v3 < MEMORY[0xB0F5C8] && v3 < --MEMORY[0xB0F5C8] ) /*0x629586*/
+    v3 = (*(int (__thiscall **)(int *, int *))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, &v4); /*0x62956b*/
+    if ( v3 != -1 && v3 < g_BuildingTypeInstanceCount && v3 < --g_BuildingTypeInstanceCount ) /*0x629586*/
     {
       do /*0x62959e*/
       {
         ++v3; /*0x62958e*/
-        *((_DWORD *)MEMORY[0xB0F5BC] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F5BC] + v3); /*0x629592*/
+        *((_DWORD *)g_BuildingClassPoolManager + v3 - 1) = *((_DWORD *)g_BuildingClassPoolManager + v3); /*0x629592*/
       }
-      while ( v3 < MEMORY[0xB0F5C8] ); /*0x62959e*/
+      while ( v3 < g_BuildingTypeInstanceCount ); /*0x62959e*/
     }
     *(_BYTE *)(this + 84) = 0; /*0x6295a0*/
   }

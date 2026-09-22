@@ -172,7 +172,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2)
     int v3;
     void *v4;
     v3 = 0;
-    for ( *(int *)this = &vt_LoadOptionsClass; v3 < *(int *)(this + 48); ++v3 )
+    for ( *(int *)this = &vt_LoadOptionsClass; v3 < this->capacity; ++v3 )
     __3_YAXPAX_Z(*(void **)(*((int *)(this) + 9) + 4 * v3));
     (*(void (__thiscall **)(char *))(*((int *)(this) + 8) + 12))(this + 32);
     v4 = (void *)*((int *)(this) + 9);

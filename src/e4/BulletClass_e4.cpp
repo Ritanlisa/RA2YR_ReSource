@@ -14,44 +14,44 @@ int __thiscall sub_466380(int this)
   ObjectClass::ctor((_DWORD *)this); /*0x466384*/
   this->BulletClass_field_0xAC = 0; /*0x466391*/
   this->BulletClass_field_0xB0 = 0; /*0x466397*/
-  *(_BYTE *)(this + 180) = 0; /*0x46639d*/
+  this->q0B4 = 0; /*0x46639d*/
   BulletClass::ResetDetonationTimer(this + 184); /*0x4663a3*/
-  *(_DWORD *)(this + 288) = 0; /*0x4663aa*/
-  *(_BYTE *)(this + 260) = 1; /*0x4663b0*/
-  *(_BYTE *)(this + 261) = 1; /*0x4663b6*/
-  *(_BYTE *)(this + 224) = 0; /*0x4663bf*/
-  *(_DWORD *)(this + 256) = 0; /*0x4663c5*/
-  *(_DWORD *)(this + 264) = 0; /*0x4663cb*/
+  this->WH = 0; /*0x4663aa*/
+  this->q104 = 1; /*0x4663b0*/
+  this->CourseLock = 1; /*0x4663b6*/
+  this->Bright = 0; /*0x4663bf*/
+  this->q100 = 0; /*0x4663c5*/
+  this->CourseLockCounter = 0; /*0x4663cb*/
   this->BulletClass_field_0x10C = 0; /*0x4663d1*/
-  *(_DWORD *)(this + 272) = 0; /*0x4663d7*/
-  *(_DWORD *)(this + 276) = -1; /*0x4663dd*/
-  *(_DWORD *)(this + 280) = 0; /*0x4663e3*/
-  *(_DWORD *)(this + 292) = 0; /*0x4663e9*/
-  *(_DWORD *)(this + 296) = 0; /*0x4663ef*/
-  *(_BYTE *)(this + 300) = 0; /*0x4663f5*/
-  *(_BYTE *)(this + 301) = 0; /*0x4663fb*/
+  this->q110 = 0; /*0x4663d7*/
+  this->InheritedColor = -1; /*0x4663dd*/
+  this->q118 = 0; /*0x4663e3*/
+  this->AnimFrame = 0; /*0x4663e9*/
+  this->WeaponType = 0; /*0x4663ef*/
+  this->SourceCoords = 0; /*0x4663f5*/
+  this->q12D = 0; /*0x4663fb*/
   this->BulletClass_field_0x130 = 0; /*0x466401*/
-  *(_WORD *)(this + 332) = -1; /*0x466407*/
+  this->NextAnim = -1; /*0x466407*/
   *(_WORD *)(this + 334) = -1; /*0x46640e*/
   this->BulletClass_field_0x154 = 0; /*0x466419*/
-  *(_BYTE *)(this + 344) = 0; /*0x46641f*/
+  this->q158 = 0; /*0x46641f*/
   *(_DWORD *)this = &BulletClass::`vftable'; /*0x466425*/
   this->BulletClass_field_0x4 = &BulletClass::`vftable'; /*0x46642b*/
   this->BulletClass_field_0x8 = &BulletClass::`vftable'; /*0x466431*/
-  *(_DWORD *)(this + 12) = &vt_BulletClass; /*0x466438*/
+  this->vtable4 = &vt_BulletClass; /*0x466438*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x46643f*/
-  *(_DWORD *)(this + 308) = 0; /*0x466444*/
-  *(_DWORD *)(this + 312) = 0; /*0x46644a*/
-  *(_DWORD *)(this + 316) = 0; /*0x466450*/
+  this->q134 = 0; /*0x466444*/
+  this->TargetCoords = 0; /*0x46644a*/
+  this->q13C = 0; /*0x466450*/
   this->BulletClass_field_0x140 = 0; /*0x466456*/
-  *(_DWORD *)(this + 324) = 0; /*0x46645c*/
-  *(_DWORD *)(this + 328) = 0; /*0x466462*/
+  this->q144 = 0; /*0x46645c*/
+  this->DamageMultiplier = 0; /*0x466462*/
   if ( MEMORY[0xA8ED50] < MEMORY[0xA8ED48] /*0x46649b*/
     || (MEMORY[0xA8ED4D] || !MEMORY[0xA8ED48])
-    && MEMORY[0xA8ED54] > 0
+    && dword_A8ED54 > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA8ED40] + 8))(
          &MEMORY[0xA8ED40],
-         MEMORY[0xA8ED48] + MEMORY[0xA8ED54],
+         MEMORY[0xA8ED48] + dword_A8ED54,
          0) )
   {
     v2 = MEMORY[0xA8ED50]++; /*0x4664a8*/
@@ -81,18 +81,18 @@ int __thiscall BulletClass::Dtor(#374 *this)
   if ( this->q158 ) /*0x466586*/
   {
     v5 = this; /*0x4665a0*/
-    v2 = (*(int (__thiscall **)(int *, #374 **))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v5); /*0x4665a4*/
-    if ( v2 != -1 && v2 < MEMORY[0xB0F5C8] && v2 < --MEMORY[0xB0F5C8] ) /*0x4665bf*/
+    v2 = (*(int (__thiscall **)(int *, #374 **))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, &v5); /*0x4665a4*/
+    if ( v2 != -1 && v2 < g_BuildingTypeInstanceCount && v2 < --g_BuildingTypeInstanceCount ) /*0x4665bf*/
     {
       do /*0x4665d7*/
       {
         ++v2; /*0x4665c7*/
-        *((_DWORD *)MEMORY[0xB0F5BC] + v2 - 1) = *((_DWORD *)MEMORY[0xB0F5BC] + v2); /*0x4665cb*/
+        *((_DWORD *)g_BuildingClassPoolManager + v2 - 1) = *((_DWORD *)g_BuildingClassPoolManager + v2); /*0x4665cb*/
       }
-      while ( v2 < MEMORY[0xB0F5C8] ); /*0x4665d7*/
+      while ( v2 < g_BuildingTypeInstanceCount ); /*0x4665d7*/
     }
   }
-  if ( MEMORY[0xA8E9A0] ) /*0x4665e0*/
+  if ( g_WTFMode ) /*0x4665e0*/
     ObjectClass::Undeploy(this); /*0x4665e4*/
   this->BulletClass_field_0xAC = 0; /*0x4665e9*/
   this->BulletClass_field_0xB0 = 0; /*0x4665f3*/

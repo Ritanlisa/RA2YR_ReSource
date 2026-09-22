@@ -137,7 +137,7 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
       (**v7)(v7, 1); /*0x7b8d21*/
     *(_DWORD *)(this + 108) = 0; /*0x7b8d23*/
   }
-  if ( *(_DWORD *)(this + 36) ) /*0x7b8d26*/
+  if ( this->q009 ) /*0x7b8d26*/
   {
     if ( !*(_DWORD *)(this + 68) ) /*0x7b8d33*/
     {
@@ -147,7 +147,7 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
         v9 = this->Width; /*0x7b8d4b*/
         v10 = *(__int16 *)(v9 + 4); /*0x7b8d50*/
         v11 = *(__int16 *)(v9 + 2); /*0x7b8d54*/
-        v12 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(*(_DWORD *)(this + 36)); /*0x7b8d58*/
+        v12 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(this->q009); /*0x7b8d58*/
         v8[4] = v12; /*0x7b8d5b*/
         v8[1] = v11; /*0x7b8d6a*/
         v8[2] = v10; /*0x7b8d6d*/
@@ -170,7 +170,7 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
         v14 = this->Width; /*0x7b8da6*/
         v15 = *(__int16 *)(v14 + 4); /*0x7b8dac*/
         v16 = *(__int16 *)(v14 + 2); /*0x7b8db0*/
-        v17 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(*(_DWORD *)(this + 36)); /*0x7b8db6*/
+        v17 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(this->q009); /*0x7b8db6*/
         v13[4] = v17; /*0x7b8db9*/
         v13[1] = v16; /*0x7b8dc8*/
         v13[2] = v15; /*0x7b8dcb*/
@@ -193,7 +193,7 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
         v19 = this->Width; /*0x7b8e07*/
         v20 = *(__int16 *)(v19 + 4); /*0x7b8e0c*/
         v21 = *(__int16 *)(v19 + 2); /*0x7b8e10*/
-        v22 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(*(_DWORD *)(this + 36)); /*0x7b8e14*/
+        v22 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(this->q009); /*0x7b8e14*/
         v18[4] = v22; /*0x7b8e17*/
         v18[1] = v21; /*0x7b8e26*/
         v18[2] = v20; /*0x7b8e29*/

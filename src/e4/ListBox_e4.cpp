@@ -214,7 +214,7 @@ LABEL_70:
         Rect.top = top; /*0x6146b5*/
         SetupDialogRenderBuffer(&Rect.left, hWnd, v37); /*0x6146b9*/
         if ( !v25 ) /*0x6146c0*/
-          DrawDialogGradient((int *)MEMORY[0x887310], &Rect.left, 2, -1); /*0x6146d0*/
+          DrawDialogGradient((int *)DSurface_Alternate, &Rect.left, 2, -1); /*0x6146d0*/
         v41 = 0; /*0x6146eb*/
         Memory_Helper_6149B0(hWnd, 5120, (int)&v41); /*0x6146f3*/
         v44.left = v42.left; /*0x614706*/
@@ -223,7 +223,7 @@ LABEL_70:
         v44.bottom = v42.bottom - v42.top + 1; /*0x614724*/
         v28 = GetWindowLongA(hWnd, -16); /*0x614728*/
         DrawTextRendererMultiline( /*0x614760*/
-          (_DWORD *)MEMORY[0x887310],
+          (_DWORD *)DSurface_Alternate,
           &v44.left,
           &MEMORY[0xAC1E04],
           v41,

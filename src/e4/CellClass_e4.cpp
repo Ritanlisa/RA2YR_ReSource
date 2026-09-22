@@ -9,9 +9,9 @@ BOOL CellClass::EnsureFileLoaded()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall sub_544C80(int this)
 {
-  if ( !*(_DWORD *)(this + 164) && *(_BYTE *)(this + 756) ) /*0x544c8d*/
+  if ( !this->q0A4 && *(_BYTE *)(this + 756) ) /*0x544c8d*/
     MapClass::LoadFileData(this); /*0x544c97*/
-  return *(_DWORD *)(this + 164) != 0; /*0x544ca9*/
+  return this->q0A4 != 0; /*0x544ca9*/
 }
 }
 } // namespace gamemd

@@ -463,17 +463,17 @@ int sub_683FB0()
   void *v1; // ecx
 
   MouseClass::GetPosition(&MEMORY[0x87F7E8]); /*0x683fb7*/
-  if ( *((_DWORD *)MEMORY[0xA8B230] + 389) == -1 ) /*0x683fd0*/
+  if ( *((_DWORD *)g_ScenarioClass_Instance + 389) == -1 ) /*0x683fd0*/
   {
-    v0 = (DWORD *)((char *)MEMORY[0xA8B230] + 1556); /*0x683fc1*/
+    v0 = (DWORD *)((char *)g_ScenarioClass_Instance + 1556); /*0x683fc1*/
     *v0 = Timer::GetTicks(); /*0x683fda*/
   }
-  if ( *((_DWORD *)MEMORY[0xA8B230] + 389) != -1 ) /*0x683ff7*/
+  if ( *((_DWORD *)g_ScenarioClass_Instance + 389) != -1 ) /*0x683ff7*/
     Timer::GetTicks(); /*0x683ffc*/
   Debug::Log(); /*0x68400b*/
-  if ( MEMORY[0x887368] ) /*0x68401d*/
-    Tooltip::Enable((void *)MEMORY[0x887368], MEMORY[0xA8EB80]); /*0x684026*/
-  EndBufferMixer((int *)MEMORY[0x87E758], MEMORY[0x83D834]); /*0x684037*/
+  if ( g_TacticalRender ) /*0x68401d*/
+    Tooltip::Enable((void *)g_TacticalRender, MEMORY[0xA8EB80]); /*0x684026*/
+  EndBufferMixer((int *)g_MixerState, MEMORY[0x83D834]); /*0x684037*/
   LOBYTE(v1) = 0; /*0x68403c*/
   MEMORY[0x83D834] = 0x4000; /*0x68403e*/
   AsyncIO::Read(v1); /*0x684048*/
@@ -501,22 +501,22 @@ void *__fastcall ScenarioClass_SetTimer(int a1)
   if ( a1 ) /*0x684068*/
   {
     Ticks = Timer::GetTicks(); /*0x68406e*/
-    v3 = (char *)MEMORY[0xA8B230] + 1568; /*0x68407c*/
-    *((_DWORD *)MEMORY[0xA8B230] + 392) = Ticks; /*0x68408c*/
+    v3 = (char *)g_ScenarioClass_Instance + 1568; /*0x68407c*/
+    *((_DWORD *)g_ScenarioClass_Instance + 392) = Ticks; /*0x68408c*/
     *((_DWORD *)v3 + 1) = v9; /*0x684092*/
     *((_DWORD *)v3 + 2) = 60 * a1; /*0x684099*/
-    result = MEMORY[0xA8B230]; /*0x68409c*/
-    if ( *((_BYTE *)MEMORY[0xA8B230] + 1584) ) /*0x6840a1*/
+    result = g_ScenarioClass_Instance; /*0x68409c*/
+    if ( *((_BYTE *)g_ScenarioClass_Instance + 1584) ) /*0x6840a1*/
       return result; /*0x6840a9*/
-    *((_BYTE *)MEMORY[0xA8B230] + 1584) = 1; /*0x6840af*/
+    *((_BYTE *)g_ScenarioClass_Instance + 1584) = 1; /*0x6840af*/
   }
-  if ( !*((_DWORD *)MEMORY[0xA8B230] + 395) ) /*0x6840bc*/
+  if ( !*((_DWORD *)g_ScenarioClass_Instance + 395) ) /*0x6840bc*/
   {
     sub_406F00(); /*0x6840ca*/
-    if ( !MEMORY[0xA8B238][0] || MEMORY[0xA8B238][0] == 5 ) /*0x6840db*/
+    if ( !g_GameMode_Current[0] || g_GameMode_Current[0] == 5 ) /*0x6840db*/
     {
-      v5 = (char *)MEMORY[0xA8B230] + 1556; /*0x6840e2*/
-      if ( *((_DWORD *)MEMORY[0xA8B230] + 389) != -1 ) /*0x6840f1*/
+      v5 = (char *)g_ScenarioClass_Instance + 1556; /*0x6840e2*/
+      if ( *((_DWORD *)g_ScenarioClass_Instance + 389) != -1 ) /*0x6840f1*/
       {
         v6 = Timer::GetTicks(); /*0x6840f6*/
         v7 = v5[2]; /*0x6840fd*/
@@ -525,20 +525,20 @@ void *__fastcall ScenarioClass_SetTimer(int a1)
         v5[2] = v8 + v7; /*0x68410a*/
       }
     }
-    MEMORY[0xB054CC] = *((_BYTE *)MEMORY[0xA8B230] + 13730); /*0x68411b*/
+    MEMORY[0xB054CC] = *((_BYTE *)g_ScenarioClass_Instance + 13730); /*0x68411b*/
     if ( !MEMORY[0xB054CC] ) /*0x684120*/
     {
       Mouse::ReleaseCapture(&MEMORY[0x87F7E8]); /*0x684127*/
-      if ( !(*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 40))(MEMORY[0x887640]) ) /*0x684134*/
-        (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x684143*/
-      *((_BYTE *)MEMORY[0xA8B230] + 13730) = 1; /*0x68414c*/
-      MEMORY[0xA8ED9C] = 1; /*0x684159*/
-      Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x684160*/
+      if ( !(*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) ) /*0x684134*/
+        (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x684143*/
+      *((_BYTE *)g_ScenarioClass_Instance + 13730) = 1; /*0x68414c*/
+      g_GameActive = 1; /*0x684159*/
+      Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x684160*/
       MEMORY[0xB07784] = 0; /*0x684165*/
     }
   }
-  result = MEMORY[0xA8B230]; /*0x68416f*/
-  ++*((_DWORD *)MEMORY[0xA8B230] + 395); /*0x684174*/
+  result = g_ScenarioClass_Instance; /*0x68416f*/
+  ++*((_DWORD *)g_ScenarioClass_Instance + 395); /*0x684174*/
   return result; /*0x68417a*/
 }
 }
@@ -553,16 +553,16 @@ HWND Mouse_Update()
 {
   HWND result; // eax
 
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13730) == 1 /*0x6842a6*/
-    && (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 40))(MEMORY[0x887640]) )
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13730) == 1 /*0x6842a6*/
+    && (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) )
   {
     do /*0x6842c0*/
-      (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x6842b5*/
-    while ( (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 40))(MEMORY[0x887640]) ); /*0x6842c0*/
+      (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x6842b5*/
+    while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) ); /*0x6842c0*/
   }
-  *((_BYTE *)MEMORY[0xA8B230] + 13730) = 0; /*0x6842cc*/
-  MEMORY[0xA8ED9C] = 0; /*0x6842d9*/
-  result = Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x6842e0*/
+  *((_BYTE *)g_ScenarioClass_Instance + 13730) = 0; /*0x6842cc*/
+  g_GameActive = 0; /*0x6842d9*/
+  result = Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x6842e0*/
   MEMORY[0xB07784] = 0; /*0x6842e5*/
   return result; /*0x6842ef*/
 }
@@ -592,7 +592,7 @@ char WaitForMultiplayerLoadSync()
   DWORD TicksTimer; // [esp+2Ch] [ebp-24h]
   int v16; // [esp+34h] [ebp-1Ch]
 
-  if ( !MEMORY[0xA8B238][0] || MEMORY[0xA8B238][0] == 5 ) /*0x68438d*/
+  if ( !g_GameMode_Current[0] || g_GameMode_Current[0] == 5 ) /*0x68438d*/
     return 1; /*0x68460b*/
   Timer::GetTicks(); /*0x684397*/
   TicksTimer = Timer::GetTicks(); /*0x6843b5*/
@@ -602,10 +602,10 @@ char WaitForMultiplayerLoadSync()
   AverageProgress = Progress::GetAverage((int)MEMORY[0xAC4F58]); /*0x6843e5*/
   while ( 1 )
   {
-    EventQueue::Process(MEMORY[0x87F770]); /*0x6843ef*/
+    EventQueue::Process(g_BinkMoviePlayer); /*0x6843ef*/
     Event::Dispatch(); /*0x6843f4*/
     v0 = 1; /*0x6843fe*/
-    if ( MEMORY[0xA8B238][0] == 1 /*0x684418*/
+    if ( g_GameMode_Current[0] == 1 /*0x684418*/
       && g_ClipboardBuffer
       && (*(char (__thiscall **)(HWND))(*(_DWORD *)g_ClipboardBuffer + 12))(g_ClipboardBuffer) >= 0 )
     {
@@ -625,7 +625,7 @@ char WaitForMultiplayerLoadSync()
     v3 = Progress::GetAverage((int)MEMORY[0xAC4F58]); /*0x684451*/
     if ( !v5 )
     {
-      Multiplayer::ShowProgress(MEMORY[0xA8B238], *((_BYTE *)MEMORY[0xA8B230] + 13501) != 0 ? 200 : 100);
+      Multiplayer::ShowProgress(g_GameMode_Current, *((_BYTE *)g_ScenarioClass_Instance + 13501) != 0 ? 200 : 100);
       return 1; /*0x684605*/
     }
     if ( v3 != AverageProgress ) /*0x684474*/
@@ -647,7 +647,7 @@ char WaitForMultiplayerLoadSync()
 LABEL_18:
       TicksTimer = Timer::GetTicks(); /*0x6844d3*/
       v16 = 60; /*0x6844f1*/
-      Multiplayer::ShowProgress(MEMORY[0xA8B238], *((_BYTE *)MEMORY[0xA8B230] + 13501) != 0 ? 200 : 100);
+      Multiplayer::ShowProgress(g_GameMode_Current, *((_BYTE *)g_ScenarioClass_Instance + 13501) != 0 ? 200 : 100);
     }
   }
   for ( i = 1; i < MEMORY[0xA8DA84]; ++i ) /*0x68453f*/
@@ -660,7 +660,7 @@ LABEL_18:
       Debug::Log(); /*0x68457c*/
       v11 = *(_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * i) + 111); /*0x684591*/
       HandleNetworkPlayerDisconnect(v11, 1); /*0x684596*/
-      if ( SessionClass::IsValidHouse((int)MEMORY[0xA8B238], *(#375 **)&HouseClass_Array->__pad_0[4 * v11]) ) /*0x6845aa*/
+      if ( SessionClass::IsValidHouse((int)g_GameMode_Current, *(#375 **)&HouseClass_Array->__pad_0[4 * v11]) ) /*0x6845aa*/
       {
         MEMORY[0xA8E2AC] = -1; /*0x6845bf*/
         memset(MEMORY[0xA8E258], 0, 0x28u); /*0x6845c9*/
@@ -718,24 +718,24 @@ int __usercall ScenarioClass_PostLoadInit@<eax>(int a1@<edi>)
   int v35; // [esp+28h] [ebp-8h]
   int GroundHeight; // [esp+2Ch] [ebp-4h]
 
-  ++MEMORY[0xA8E7AC]; /*0x684c3f*/
+  ++g_IKnowWhatImDoing; /*0x684c3f*/
   for ( i = 0; i < MEMORY[0xA8EB50]; ++i ) /*0x684c4c*/
     (*(void (__thiscall **)(_DWORD))(**((_DWORD **)MEMORY[0xA8EB44] + i) + 1248))(*((_DWORD *)MEMORY[0xA8EB44] + i)); /*0x684c58*/
   MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2); /*0x684c6f*/
   if ( !MEMORY[0xA8ED6B] ) /*0x684c7b*/
   {
     TacticalClass::BuildCommandBar(&MEMORY[0x87F7E8], a1, 1); /*0x684c88*/
-    if ( !MEMORY[0xA8B238][0] ) /*0x684c94*/
+    if ( !g_GameMode_Current[0] ) /*0x684c94*/
     {
       if ( MEMORY[0x8A38E0] ) /*0x684ca7*/
-        v2 = *((_DWORD *)MEMORY[0xA8B230] + 132); /*0x684ca9*/
+        v2 = *((_DWORD *)g_ScenarioClass_Instance + 132); /*0x684ca9*/
       else
-        v2 = *((_DWORD *)MEMORY[0xA8B230] + 131); /*0x684cb1*/
-      v3 = *(_DWORD *)((char *)MEMORY[0xA8B230] + 4 * v2 + 1586); /*0x684cb7*/
-      *(_DWORD *)((char *)MEMORY[0xA8B230] + 13466) = v3; /*0x684cbe*/
-      *(_DWORD *)((char *)MEMORY[0xA8B230] + 13462) = *(_DWORD *)((char *)MEMORY[0xA8B230] + 13466); /*0x684cd4*/
-      *(_DWORD *)((char *)MEMORY[0xA8B230] + 13458) = *(_DWORD *)((char *)MEMORY[0xA8B230] + 13462); /*0x684ce9*/
-      *(_DWORD *)((char *)MEMORY[0xA8B230] + 13454) = *(_DWORD *)((char *)MEMORY[0xA8B230] + 13458); /*0x684d03*/
+        v2 = *((_DWORD *)g_ScenarioClass_Instance + 131); /*0x684cb1*/
+      v3 = *(_DWORD *)((char *)g_ScenarioClass_Instance + 4 * v2 + 1586); /*0x684cb7*/
+      *(_DWORD *)((char *)g_ScenarioClass_Instance + 13466) = v3; /*0x684cbe*/
+      *(_DWORD *)((char *)g_ScenarioClass_Instance + 13462) = *(_DWORD *)((char *)g_ScenarioClass_Instance + 13466); /*0x684cd4*/
+      *(_DWORD *)((char *)g_ScenarioClass_Instance + 13458) = *(_DWORD *)((char *)g_ScenarioClass_Instance + 13462); /*0x684ce9*/
+      *(_DWORD *)((char *)g_ScenarioClass_Instance + 13454) = *(_DWORD *)((char *)g_ScenarioClass_Instance + 13458); /*0x684d03*/
       v34 = ((__int16)v3 << 8) + 128; /*0x684d09*/
       v35 = (SHIWORD(v3) << 8) + 128; /*0x684d21*/
       GroundHeight = 0; /*0x684d2b*/
@@ -743,8 +743,8 @@ int __usercall ScenarioClass_PostLoadInit@<eax>(int a1@<edi>)
       TacticalClass::SetPositionThunk((int)&v34); /*0x684d42*/
     }
   }
-  v4 = MEMORY[0xB0E790]; /*0x684d47*/
-  for ( j = 0; j < MEMORY[0xB0E790]; ++j ) /*0x684d50*/
+  v4 = g_MultiplayerCleanup; /*0x684d47*/
+  for ( j = 0; j < g_MultiplayerCleanup; ++j ) /*0x684d50*/
   {
     v6 = (_DWORD *)*((_DWORD *)MEMORY[0xB0E784] + j); /*0x684d5c*/
     if ( (Debug::AccumFlags(v6) & 4) != 0 ) /*0x684d68*/
@@ -797,10 +797,10 @@ int __usercall ScenarioClass_PostLoadInit@<eax>(int a1@<edi>)
         }
       }
     }
-    v4 = MEMORY[0xB0E790]; /*0x684ea2*/
+    v4 = g_MultiplayerCleanup; /*0x684ea2*/
   }
   v18 = 0; /*0x684eb6*/
-  --MEMORY[0xA8E7AC]; /*0x684ebb*/
+  --g_IKnowWhatImDoing; /*0x684ebb*/
   if ( v4 > 0 ) /*0x684ec1*/
   {
     do /*0x684efb*/
@@ -813,9 +813,9 @@ int __usercall ScenarioClass_PostLoadInit@<eax>(int a1@<edi>)
       }
       ++v18; /*0x684ef8*/
     }
-    while ( v18 < MEMORY[0xB0E790] ); /*0x684efb*/
+    while ( v18 < g_MultiplayerCleanup ); /*0x684efb*/
   }
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13490) ) /*0x684f02*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13490) ) /*0x684f02*/
   {
     v21 = 0; /*0x684f12*/
     for ( k = 0; v21 < HouseClass_Count; k = v21 ) /*0x684f1a*/
@@ -824,8 +824,8 @@ int __usercall ScenarioClass_PostLoadInit@<eax>(int a1@<edi>)
       if ( v22 ) /*0x684f28*/
       {
         v23 = (*(int (__stdcall **)(int))(*(_DWORD *)(v22 + 36) + 24))(v22 + 36); /*0x684f34*/
-        v24 = *(_DWORD *)MEMORY[0xB0F4EC]->__pad_0; /*0x684f3b*/
-        if ( v23 > *(_DWORD *)(*(_DWORD *)MEMORY[0xB0F4EC]->__pad_0 + 184) ) /*0x684f43*/
+        v24 = *(_DWORD *)BuildingClass_InstanceArray->__pad_0; /*0x684f3b*/
+        if ( v23 > *(_DWORD *)(*(_DWORD *)BuildingClass_InstanceArray->__pad_0 + 184) ) /*0x684f43*/
         {
           do /*0x684f69*/
           {
@@ -874,27 +874,27 @@ int __usercall ScenarioClass_PostLoadInit@<eax>(int a1@<edi>)
       MEMORY[0xA8ED78] = 0; /*0x685047*/
     }
   }
-  if ( MEMORY[0x8871E0][1].?[11] ) /*0x685052*/
+  if ( g_RulesClass_Instance[1].?[11] ) /*0x685052*/
   {
     LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x685063*/
     for ( n = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); n; n = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x685076*/
     {
       if ( Building::GetNthOfType(n) ) /*0x68507a*/
       {
-        if ( !Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, MEMORY[0x8871E0][1].?[10] - 1) ) /*0x68509e*/
+        if ( !Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, g_RulesClass_Instance[1].?[10] - 1) ) /*0x68509e*/
         {
           v30 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6850b1*/
           if ( v30 ) /*0x6850b8*/
           {
             v31 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)n + 72))(n, &v34); /*0x6850cd*/
-            AnimClass::ctor(v30, (void *)MEMORY[0x8871E0][1].?[11], v31, 0, 1, (void *)0x600, 0, 0); /*0x6850e0*/
+            AnimClass::ctor(v30, (void *)g_RulesClass_Instance[1].?[11], v31, 0, 1, (void *)0x600, 0, 0); /*0x6850e0*/
           }
         }
       }
     }
   }
-  RadarClass::SetGlobal((void *)MEMORY[0x8871E0]->DetailMinFrameRateNormal); /*0x6850fd*/
-  return Map_Init(MEMORY[0x8871E0]->DetailBufferZoneWidth); /*0x685110*/
+  RadarClass::SetGlobal((void *)g_RulesClass_Instance->DetailMinFrameRateNormal); /*0x6850fd*/
+  return Map_Init(g_RulesClass_Instance->DetailBufferZoneWidth); /*0x685110*/
 }
 }
 } // namespace gamemd
@@ -921,13 +921,13 @@ int ScenarioClass_Reset()
   int v12; // ecx
   int result; // eax
 
-  *((_DWORD *)MEMORY[0xA8B230] + 133) = 1000000; /*0x6851fc*/
-  *((_BYTE *)MEMORY[0xA8B230] + 536) = 1; /*0x68520c*/
+  *((_DWORD *)g_ScenarioClass_Instance + 133) = 1000000; /*0x6851fc*/
+  *((_BYTE *)g_ScenarioClass_Instance + 536) = 1; /*0x68520c*/
   MEMORY[0x83D834] = 0x4000; /*0x685219*/
-  EndBufferMixer((int *)MEMORY[0x87E758], 0x4000); /*0x68521f*/
+  EndBufferMixer((int *)g_MixerState, 0x4000); /*0x68521f*/
   AudioQueue::DrainAll(); /*0x685224*/
   HouseClass_Player = 0; /*0x685231*/
-  ScenarioClass::InitTimer((int)MEMORY[0xA8B230]); /*0x685237*/
+  ScenarioClass::InitTimer((int)g_ScenarioClass_Instance); /*0x685237*/
   LightningStorm::End(); /*0x68523c*/
   for ( i = MEMORY[0xA8E978] - 1; i >= 0; --i ) /*0x68524c*/
   {
@@ -987,23 +987,23 @@ LABEL_16:
   v6 = 0; /*0x685354*/
   for ( j = 0; j < 2050; j += 41 ) /*0x685356*/
   {
-    v8 = MEMORY[0xA8B230]; /*0x685358*/
-    if ( (unsigned int)j < 0x802 && *((_BYTE *)MEMORY[0xA8B230] + j + 7344) ) /*0x685365*/
+    v8 = g_ScenarioClass_Instance; /*0x685358*/
+    if ( (unsigned int)j < 0x802 && *((_BYTE *)g_ScenarioClass_Instance + j + 7344) ) /*0x685365*/
     {
-      *((_BYTE *)MEMORY[0xA8B230] + j + 7344) = 0; /*0x68536e*/
+      *((_BYTE *)g_ScenarioClass_Instance + j + 7344) = 0; /*0x68536e*/
       v8[13482] = 1; /*0x685377*/
       HouseClass::UpdateAllTypes(v6); /*0x68537e*/
     }
     ++v6; /*0x685386*/
   }
-  if ( MEMORY[0x887324] ) /*0x685398*/
-    ((void (__thiscall *)(LPPERSISTSTREAM, int))MEMORY[0x887324]->__tail_0[1].QueryInterface)(MEMORY[0x887324], 1); /*0x68539e*/
+  if ( g_TacticalClass_Instance ) /*0x685398*/
+    ((void (__thiscall *)(LPPERSISTSTREAM, int))g_TacticalClass_Instance->__tail_0[1].QueryInterface)(g_TacticalClass_Instance, 1); /*0x68539e*/
   v9 = __2_YAPAXI_Z(0xE18u); /*0x6853a6*/
   if ( v9 ) /*0x6853b0*/
     v10 = (IPersistStream *)TacticalMap::Construct((int)v9); /*0x6853b4*/
   else
     v10 = 0; /*0x6853bb*/
-  MEMORY[0x887324] = v10; /*0x6853bf*/
+  g_TacticalClass_Instance = v10; /*0x6853bf*/
   Map_Setup_6DA980(v10); /*0x6853c4*/
   byte_829AE4 = 0; /*0x6853ce*/
   while ( MEMORY[0xA8E370] ) /*0x6853d6*/
@@ -1018,7 +1018,7 @@ LABEL_16:
     }
   }
   byte_829AE4 = 1; /*0x685418*/
-  while ( MEMORY[0xB0E790] ) /*0x685421*/
+  while ( g_MultiplayerCleanup ) /*0x685421*/
   {
     if ( *(_DWORD *)MEMORY[0xB0E784] ) /*0x685429*/
       (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xB0E784] + 32))(*(_DWORD *)MEMORY[0xB0E784], 1); /*0x685433*/
@@ -1039,13 +1039,13 @@ LABEL_16:
   }
   MEMORY[0x8B40D5] = 0; /*0x68549b*/
   MEMORY[0x8B40D0] = 0; /*0x6854a1*/
-  *((_DWORD *)MEMORY[0xA8B230] + 3433) = 3600; /*0x6854a7*/
-  *((_DWORD *)MEMORY[0xA8B230] + 3434) = *((_DWORD *)MEMORY[0xA8B230] + 3433); /*0x6854bc*/
-  *((_DWORD *)MEMORY[0xA8B230] + 3435) = *((_DWORD *)MEMORY[0xA8B230] + 3433); /*0x6854cd*/
-  *((_BYTE *)MEMORY[0xA8B230] + 13744) = 0; /*0x6854d8*/
-  *((_BYTE *)MEMORY[0xA8B230] + 13775) = 0; /*0x6854e4*/
-  *((_BYTE *)MEMORY[0xA8B230] + 13806) = 0; /*0x6854f0*/
-  *((_BYTE *)MEMORY[0xA8B230] + 13837) = 0; /*0x6854fb*/
+  *((_DWORD *)g_ScenarioClass_Instance + 3433) = 3600; /*0x6854a7*/
+  *((_DWORD *)g_ScenarioClass_Instance + 3434) = *((_DWORD *)g_ScenarioClass_Instance + 3433); /*0x6854bc*/
+  *((_DWORD *)g_ScenarioClass_Instance + 3435) = *((_DWORD *)g_ScenarioClass_Instance + 3433); /*0x6854cd*/
+  *((_BYTE *)g_ScenarioClass_Instance + 13744) = 0; /*0x6854d8*/
+  *((_BYTE *)g_ScenarioClass_Instance + 13775) = 0; /*0x6854e4*/
+  *((_BYTE *)g_ScenarioClass_Instance + 13806) = 0; /*0x6854f0*/
+  *((_BYTE *)g_ScenarioClass_Instance + 13837) = 0; /*0x6854fb*/
   Map_Reset_5549A0(); /*0x685501*/
   Map_Reset(); /*0x685506*/
   sub_4C5470(); /*0x68550b*/
@@ -1054,27 +1054,27 @@ LABEL_16:
   BuildingClass::FreeUpgradeQueue2(); /*0x68551a*/
   Stream::FlushAndReset(&MEMORY[0x87F5D8]); /*0x685524*/
   LoadGame::CleanupArray(&g_MissionQueueFrame); /*0x68552e*/
-  LoadGame::ClearAllSlots(MEMORY[0x887888]); /*0x685538*/
+  LoadGame::ClearAllSlots(g_CellClassManager); /*0x685538*/
   PlanningNodeClass::CleanupAll(); /*0x68553d*/
   MEMORY[0x87F8D4] = 0; /*0x68554f*/
   MEMORY[0x87F8D8] = 0; /*0x685554*/
-  MEMORY[0x87F8DC] = 0; /*0x68555a*/
-  MEMORY[0x87F8E0] = 0; /*0x685560*/
+  g_Cell_PositionLUT = 0; /*0x68555a*/
+  g_CellPositionOffset = 0; /*0x685560*/
   Debug::Log(); /*0x685566*/
   MouseClass::HandleClick(&MEMORY[0x87F7E8]); /*0x685573*/
   Debug::Log(); /*0x68557d*/
-  (*(void (__thiscall **)(int *))(MEMORY[0x87F778] + 12))(&MEMORY[0x87F778]); /*0x685590*/
+  (*(void (__thiscall **)(int *))(g_GameConfigManager + 12))(&g_GameConfigManager); /*0x685590*/
   Debug::Log(); /*0x685598*/
-  MEMORY[0xA8ECC8] = 0; /*0x6855a7*/
-  if ( MEMORY[0xA8ECBC] && MEMORY[0xA8ECC5] ) /*0x6855b5*/
+  g_SelectionManager = 0; /*0x6855a7*/
+  if ( g_ObjectClass_CurrentCount && MEMORY[0xA8ECC5] ) /*0x6855b5*/
   {
-    __3_YAXPAX_Z(MEMORY[0xA8ECBC]); /*0x6855b8*/
-    MEMORY[0xA8ECBC] = 0; /*0x6855c0*/
+    __3_YAXPAX_Z(g_ObjectClass_CurrentCount); /*0x6855b8*/
+    g_ObjectClass_CurrentCount = 0; /*0x6855c0*/
   }
   MEMORY[0xA8ECC5] = 0; /*0x6855cb*/
   MEMORY[0xA8ECC0] = 0; /*0x6855d1*/
   Debug::Log(); /*0x6855d7*/
-  v11 = (char *)MEMORY[0xA8B230] + 1586; /*0x6855e4*/
+  v11 = (char *)g_ScenarioClass_Instance + 1586; /*0x6855e4*/
   v12 = 702; /*0x6855e9*/
   do /*0x6855fa*/
   {
@@ -1091,11 +1091,11 @@ LABEL_16:
       (*(void (__thiscall **)(int, int))(*(_DWORD *)MEMORY[0xA8ED78] + 32))(MEMORY[0xA8ED78], 1); /*0x68562b*/
     MEMORY[0xA8ED78] = 0; /*0x68562e*/
   }
-  *((_BYTE *)MEMORY[0xA8B230] + 536) = 0; /*0x68563a*/
+  *((_BYTE *)g_ScenarioClass_Instance + 536) = 0; /*0x68563a*/
   Map_Reset_734210(); /*0x685640*/
   Selection::ClearGlobals(0); /*0x685647*/
   result = Map_Reset_660C50(); /*0x68564c*/
-  *((_DWORD *)MEMORY[0xA8B230] + 133) = 1000000; /*0x685659*/
+  *((_DWORD *)g_ScenarioClass_Instance + 133) = 1000000; /*0x685659*/
   return result; /*0x685657*/
 }
 }
@@ -1148,7 +1148,7 @@ char *__usercall SaveScenarioToINI@<eax>(RawFileClass *Source@<ecx>, ScenarioCla
       BufferIOFileClass::Dtor(aP1); /*0x687db9*/
     }
   }
-  ScenarioClass::SaveToINI((int)MEMORY[0xA8B230], a1.__pad_0, a2); /*0x687dce*/
+  ScenarioClass::SaveToINI((int)g_ScenarioClass_Instance, a1.__pad_0, a2); /*0x687dce*/
   if ( (_BYTE)a2 ) /*0x687dd7*/
   {
     if ( g_Map_TiberiumConfig && g_Map_TiberiumConfig->field_0 ) /*0x687de3*/
@@ -1275,7 +1275,7 @@ char SessionClass_AssignHouses()
         v8 = HouseClass::Construct((int)v7, *((_DWORD *)g_SuperWeaponTypeCount + *(_DWORD *)(v6 + 75))); /*0x687fc8*/
       else
         v8 = 0; /*0x687fcc*/
-      if ( MEMORY[0xA8B238][0] == 4 ) /*0x687fd5*/
+      if ( g_GameMode_Current[0] == 4 ) /*0x687fd5*/
       {
         WideString::Assign((wchar_t **)&v28, (wchar_t *)v6); /*0x687fdc*/
         ToWideStringCharAlt((char **)&v29, (const wchar_t **)&v28); /*0x687fe9*/
@@ -1367,7 +1367,7 @@ char SessionClass_AssignHouses()
         v17 = v11[24]; /*0x6881f5*/
         *(_DWORD *)(v15 + 90204) = v17; /*0x6881fb*/
         if ( v17 != -1 ) /*0x688201*/
-          *((_BYTE *)MEMORY[0xA8B230] + 4576) = 1; /*0x688209*/
+          *((_BYTE *)g_ScenarioClass_Instance + 4576) = 1; /*0x688209*/
         if ( g_INI_Key_Computer ) /*0x688217*/
         {
           strncpy(v35, g_INI_Key_Computer, 0x14u); /*0x68822b*/
@@ -1384,10 +1384,10 @@ char SessionClass_AssignHouses()
         }
         String = GetStringCSF(g_Str_TXT_COMPUTER, 0, MEMORY[0x83D838], 4032); /*0x688263*/
         wcscpy((wchar_t *)(v15 + 90154), String); /*0x688270*/
-        if ( MEMORY[0xA8B238][0] ) /*0x68827f*/
-          *(_DWORD *)(v15 + 588) = MEMORY[0x8871E0][1].SmallVisceroid; /*0x68828d*/
+        if ( g_GameMode_Current[0] ) /*0x68827f*/
+          *(_DWORD *)(v15 + 588) = g_RulesClass_Instance[1].SmallVisceroid; /*0x68828d*/
         v19 = *(v11 - 8); /*0x688299*/
-        if ( MEMORY[0xA8DA84] > 1 && HIBYTE(MEMORY[0x8871E0][1].?[1]) && v19 > 0 ) /*0x6882b3*/
+        if ( MEMORY[0xA8DA84] > 1 && HIBYTE(g_RulesClass_Instance[1].?[1]) && v19 > 0 ) /*0x6882b3*/
           --v19; /*0x6882b5*/
         HouseClass::SetCombatPower(v15, v19); /*0x6882b9*/
         v10 = i; /*0x6882be*/
@@ -1514,7 +1514,7 @@ int __fastcall FindInfantryDeployPosition(int *a1, RadarClass *a2, int a3)
   if ( a3 < 32 ) /*0x688fc4*/
   {
 LABEL_8:
-    v29 = Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)7); /*0x688fce*/
+    v29 = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)7); /*0x688fce*/
     v30 = 0; /*0x688fe6*/
     v37 = 0; /*0x688fea*/
     while ( 1 ) /*0x689032*/
@@ -1590,8 +1590,8 @@ LABEL_8:
         v20 = (__int16)v13; /*0x6890c7*/
         v38 = (IUnknown *)(MEMORY[0x87F8E4].field_28 + *(_DWORD *)&MEMORY[0x87F8E4].field_2D[3] - 1); /*0x6890d0*/
         v39 = *(_DWORD *)MEMORY[0x87F8E4].__pad_2C + *(_DWORD *)&MEMORY[0x87F8E4].__pad_31[3] - 1; /*0x6890e5*/
-        v32 = (RadarClass *)Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)1); /*0x6890fe*/
-        if ( Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x63) >= 50 ) /*0x68910a*/
+        v32 = (RadarClass *)Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)1); /*0x6890fe*/
+        if ( Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x63) >= 50 ) /*0x68910a*/
         {
           v21 = (char *)(v20 - (_DWORD)v32); /*0x68911e*/
           if ( (int)v21 < v15 ) /*0x689124*/
@@ -1603,8 +1603,8 @@ LABEL_8:
           if ( (int)v21 > (int)v38 ) /*0x689118*/
             LOWORD(v21) = (_WORD)v38; /*0x68911a*/
         }
-        v22 = Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)1); /*0x68913d*/
-        if ( Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x63) >= 50 ) /*0x689156*/
+        v22 = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)1); /*0x68913d*/
+        if ( Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x63) >= 50 ) /*0x689156*/
         {
           v23 = v19 - v22; /*0x689166*/
           if ( v23 < v16 ) /*0x68916a*/

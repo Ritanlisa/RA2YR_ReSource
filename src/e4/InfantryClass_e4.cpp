@@ -57,7 +57,7 @@ int __fastcall InfantryClass::ScanTarget(int *a1)
     (*(void (__thiscall **)(int *, _DWORD, int))(*a1 + 1156))(a1, 0, 1); /*0x4d4e7a*/
   MissionControl = MissionClass::GetMissionControl(a1); /*0x4d4e82*/
   v8 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d4e95*/
-  v9 = v8 + Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)2); /*0x4d4eb3*/
+  v9 = v8 + Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)2); /*0x4d4eb3*/
   if ( !a1[173]
     || (!a1
      || (*(int (__thiscall **)(int *))(*a1 + 44))(a1) != 15
@@ -113,7 +113,7 @@ int __fastcall InfantryClass_ProcessDeploy(#375 **a1)
         v14[2] = a1[41],
         !(*((unsigned __int8 (__thiscall **)(#375 **, _DWORD *, _DWORD))v2 + 231))(a1, v14, 0)) )
   {
-    if ( (unsigned __int8)House::IsCurrentPlayer(a1[135]) || MEMORY[0xA8B238][0] ) /*0x4d5504*/
+    if ( (unsigned __int8)House::IsCurrentPlayer(a1[135]) || g_GameMode_Current[0] ) /*0x4d5504*/
     {
       (*((void (__thiscall **)(#375 **))*a1 + 286))(a1); /*0x4d557c*/
     }
@@ -170,7 +170,7 @@ LABEL_12:
 LABEL_25:
   MissionControl = MissionClass::GetMissionControl(a1); /*0x4d5582*/
   v10 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d55a7*/
-  return v10 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2); /*0x4d55b0*/
+  return v10 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2); /*0x4d55b0*/
 }
 }
 } // namespace gamemd

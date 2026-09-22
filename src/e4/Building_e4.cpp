@@ -215,7 +215,7 @@ int __thiscall Building_GetNthOfType(int this)
   if ( v2 == -1 ) /*0x48502e*/
     return 0; /*0x485030*/
   else
-    return (*(unsigned __int8 *)(this + 286) + 1) * *(_DWORD *)(*((_DWORD *)MEMORY[0xB0F4EC] + v2) + 184); /*0x48504f*/
+    return (*(unsigned __int8 *)(this + 286) + 1) * *(_DWORD *)(*((_DWORD *)BuildingClass_InstanceArray + v2) + 184); /*0x48504f*/
 }
 }
 } // namespace gamemd

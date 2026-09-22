@@ -169,7 +169,7 @@ int __thiscall sub_583AD0(_DWORD *this, int *a2)
   v22 = 0; /*0x583b05*/
   *(_DWORD *)&MEMORY[0x87F8E4].__pad_18[8] = (char *)MEMORY[0x87F8E4].field_4 + MEMORY[0x87F8E4].field_0 + 1; /*0x583b0d*/
   *(_DWORD *)&MEMORY[0x87F8E4].__pad_18[12] = (char *)MEMORY[0x87F8E4].field_4 /*0x583b22*/
-                                            + MEMORY[0x87F8DC]
+                                            + g_Cell_PositionLUT
                                             - MEMORY[0x87F8E4].field_0;
   for ( i = MapClass::SpiralSearch(&MEMORY[0x87F7E8]); i; i = MapClass::SpiralSearch(&MEMORY[0x87F7E8]) ) /*0x583b2f*/
   {
@@ -422,7 +422,7 @@ int __fastcall MarkCliffEdgePassability(int a1)
           {
             v7 = SHIWORD(i) << 9; /*0x586c92*/
             v8 = v7 + (__int16)i; /*0x586c95*/
-            if ( v8 >= 0x40000 || (v9 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v8)) == 0 ) /*0x586cab*/
+            if ( v8 >= 0x40000 || (v9 = *(_DWORD **)(g_Shroud_CellArray + 4 * v8)) == 0 ) /*0x586cab*/
             {
               g_Map_GlobalCellIndex = i; /*0x586cad*/
               v9 = g_CellClassArray; /*0x586cb3*/
@@ -434,7 +434,7 @@ int __fastcall MarkCliffEdgePassability(int a1)
               do /*0x586d1b*/
               {
                 v11 = v7 + (__int16)(v10 + i); /*0x586cd8*/
-                if ( v11 >= 0x40000 || (v12 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v11)) == 0 ) /*0x586cef*/
+                if ( v11 >= 0x40000 || (v12 = *(_DWORD **)(g_Shroud_CellArray + 4 * v11)) == 0 ) /*0x586cef*/
                 {
                   LOWORD(v22) = v10 + i; /*0x586cd0*/
                   g_Map_GlobalCellIndex = v22; /*0x586cf5*/
@@ -460,7 +460,7 @@ int __fastcall MarkCliffEdgePassability(int a1)
             if ( v15 && HIWORD(v31) == *(_WORD *)(v3 + 6) ) /*0x586d7d*/
               break; /*0x586d7d*/
             v16 = (__int16)j + (SHIWORD(v31) << 9); /*0x586d8c*/
-            if ( v16 >= 0x40000 || (v17 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v16)) == 0 ) /*0x586da2*/
+            if ( v16 >= 0x40000 || (v17 = *(_DWORD **)(g_Shroud_CellArray + 4 * v16)) == 0 ) /*0x586da2*/
             {
               g_Map_GlobalCellIndex = j; /*0x586da4*/
               v17 = g_CellClassArray; /*0x586daa*/
@@ -472,7 +472,7 @@ int __fastcall MarkCliffEdgePassability(int a1)
               do /*0x586e08*/
               {
                 v19 = (__int16)j + ((__int16)(HIWORD(j) + v18) << 9); /*0x586dd2*/
-                if ( v19 >= 0x40000 || (v20 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v19), v3 = v21, !v20) ) /*0x586ded*/
+                if ( v19 >= 0x40000 || (v20 = *(_DWORD **)(g_Shroud_CellArray + 4 * v19), v3 = v21, !v20) ) /*0x586ded*/
                 {
                   HIWORD(v24) = HIWORD(j) + v18; /*0x586dc7*/
                   g_Map_GlobalCellIndex = v24; /*0x586df3*/
@@ -879,10 +879,10 @@ void *ComputeMapCameraBounds()
   char v29[4]; // [esp+28h] [ebp-10h] BYREF
   char v30[12]; // [esp+2Ch] [ebp-Ch] BYREF
 
-  result = MEMORY[0xA8B230]; /*0x58b820*/
+  result = g_ScenarioClass_Instance; /*0x58b820*/
   v1 = 0; /*0x58b82a*/
   dword_ABED0C = 0; /*0x58b830*/
-  if ( MEMORY[0xA8B230] && MEMORY[0x887324] ) /*0x58b842*/
+  if ( g_ScenarioClass_Instance && g_TacticalClass_Instance ) /*0x58b842*/
   {
     for ( i = 0; i < 8; ++i ) /*0x58b848*/
     {
@@ -930,16 +930,16 @@ void *ComputeMapCameraBounds()
       }
     }
     dword_ABDFD0 = v24; /*0x58b9fa*/
-    result = MEMORY[0xA8B230]; /*0x58ba01*/
+    result = g_ScenarioClass_Instance; /*0x58ba01*/
     dword_ABDFD4 = v11; /*0x58ba06*/
     dword_ABEC90 = v1 - v11; /*0x58ba0e*/
     dword_ABECD0 = v12 - v24; /*0x58ba14*/
-    if ( MEMORY[0xA8B230] ) /*0x58ba1a*/
+    if ( g_ScenarioClass_Instance ) /*0x58ba1a*/
     {
       v17 = 0; /*0x58ba26*/
-      *((_DWORD *)MEMORY[0xA8B230] + 1103) = dword_ABED0C; /*0x58ba28*/
-      v18 = MEMORY[0xA8B230]; /*0x58ba2e*/
-      if ( *((int *)MEMORY[0xA8B230] + 1103) > 0 ) /*0x58ba3c*/
+      *((_DWORD *)g_ScenarioClass_Instance + 1103) = dword_ABED0C; /*0x58ba28*/
+      v18 = g_ScenarioClass_Instance; /*0x58ba2e*/
+      if ( *((int *)g_ScenarioClass_Instance + 1103) > 0 ) /*0x58ba3c*/
       {
         v19 = 1104; /*0x58ba3e*/
         v20 = &dword_ABE328[-1104]; /*0x58ba48*/
@@ -959,19 +959,19 @@ void *ComputeMapCameraBounds()
           v18[v19] = v22; /*0x58ba80*/
           ++v17; /*0x58ba89*/
           ++v21; /*0x58ba8a*/
-          *(_DWORD *)((char *)MEMORY[0xA8B230] + v19 * 4 + 4) = v23; /*0x58ba8d*/
+          *(_DWORD *)((char *)g_ScenarioClass_Instance + v19 * 4 + 4) = v23; /*0x58ba8d*/
           v19 += 2; /*0x58ba9b*/
-          *(_DWORD *)((char *)MEMORY[0xA8B230] + v21 * 4 - 4) = dword_ABE304[v21 - 1137]; /*0x58ba9e*/
-          v18 = MEMORY[0xA8B230]; /*0x58baa2*/
-          if ( v17 >= *((_DWORD *)MEMORY[0xA8B230] + 1103) ) /*0x58baae*/
+          *(_DWORD *)((char *)g_ScenarioClass_Instance + v21 * 4 - 4) = dword_ABE304[v21 - 1137]; /*0x58ba9e*/
+          v18 = g_ScenarioClass_Instance; /*0x58baa2*/
+          if ( v17 >= *((_DWORD *)g_ScenarioClass_Instance + 1103) ) /*0x58baae*/
             break; /*0x58baae*/
         }
       }
       v18[1099] = dword_ABDFD4; /*0x58bab5*/
-      *((_DWORD *)MEMORY[0xA8B230] + 1100) = dword_ABDFD0; /*0x58bac7*/
-      *((_DWORD *)MEMORY[0xA8B230] + 1101) = dword_ABEC90; /*0x58bad8*/
+      *((_DWORD *)g_ScenarioClass_Instance + 1100) = dword_ABDFD0; /*0x58bac7*/
+      *((_DWORD *)g_ScenarioClass_Instance + 1101) = dword_ABEC90; /*0x58bad8*/
       result = (void *)dword_ABECD0; /*0x58bae4*/
-      *((_DWORD *)MEMORY[0xA8B230] + 1102) = dword_ABECD0; /*0x58bae9*/
+      *((_DWORD *)g_ScenarioClass_Instance + 1102) = dword_ABECD0; /*0x58bae9*/
     }
   }
   return result; /*0x58baef*/

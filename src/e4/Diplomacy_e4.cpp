@@ -61,9 +61,9 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
       for ( i = 0; i < 32; i += 4 ) /*0x657df1*/
       {
         DlgItem = GetDlgItem(hDlg, *(int *)((char *)&MEMORY[0x8391FC] + i)); /*0x657dfb*/
-        SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)&MEMORY[0x887734]); /*0x657e10*/
+        SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x657e10*/
         v8 = GetDlgItem(hDlg, *(int *)((char *)&MEMORY[0x83921C] + i)); /*0x657e1a*/
-        SendMessageA(v8, 0x4B2u, 0, (LPARAM)&MEMORY[0x887734]); /*0x657e29*/
+        SendMessageA(v8, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x657e29*/
       }
       v40 = 0; /*0x657e3e*/
       v39 = 0; /*0x657e43*/
@@ -85,7 +85,7 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
           && (v11 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v10], (hDlga = (#375 *)v11) != 0)
           && *(_BYTE *)(*(_DWORD *)(v11 + 52) + 421) )
         {
-          if ( !BYTE1(MEMORY[0x8871E0][1].InfantryBrute) /*0x657ef9*/
+          if ( !BYTE1(g_RulesClass_Instance[1].InfantryBrute) /*0x657ef9*/
             || (#375 *)MEMORY[0xAC1198] == HouseClass_Player
             || MEMORY[0xA8B244] == 2 )
           {
@@ -155,14 +155,14 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
       v17 = GetDlgItem(hDlg, 1840); /*0x6580b5*/
       if ( v17 ) /*0x6580b9*/
       {
-        if ( MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4 ) /*0x6580c8*/
+        if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x6580c8*/
         {
           ShowWindow(v17, 5); /*0x6580d4*/
-          if ( MEMORY[0xA8B238][0] == 3 ) /*0x6580de*/
+          if ( g_GameMode_Current[0] == 3 ) /*0x6580de*/
           {
             SendMessageA(v17, 0xF1u, (unsigned __int8)MEMORY[0xA8D110], 0); /*0x6580ef*/
           }
-          else if ( MEMORY[0xA8B238][0] == 4 ) /*0x6580f4*/
+          else if ( g_GameMode_Current[0] == 4 ) /*0x6580f4*/
           {
             SendMessageA(v17, 0xF1u, BYTE1(MEMORY[0xA8D110]), 0); /*0x658106*/
           }
@@ -173,7 +173,7 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
         }
       }
       DrawPowerBarForPlayers(hDlg); /*0x658112*/
-      if ( MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4 ) /*0x658124*/
+      if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x658124*/
       {
         v18 = GetDlgItem(hDlg, 1062); /*0x658134*/
         v19 = WideString::GetOrEmpty_Alt((wchar_t **)(MEMORY[0xA8B23C] + 32)); /*0x658139*/
@@ -212,12 +212,12 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
             v29 = HIWORD(a3); /*0x6582da*/
             if ( HIWORD(a3) <= 1u ) /*0x6582e0*/
             {
-              if ( MEMORY[0xA8B238][0] == 3 ) /*0x6582ee*/
+              if ( g_GameMode_Current[0] == 3 ) /*0x6582ee*/
               {
                 LOBYTE(MEMORY[0xA8D110]) = v29 == 1; /*0x6582f9*/
                 return 0; /*0x658305*/
               }
-              if ( MEMORY[0xA8B238][0] == 4 ) /*0x65830b*/
+              if ( g_GameMode_Current[0] == 4 ) /*0x65830b*/
                 BYTE1(MEMORY[0xA8D110]) = v29 == 1; /*0x658313*/
             }
           }

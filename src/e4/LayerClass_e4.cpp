@@ -526,7 +526,7 @@ void * LayerClass::Reveal(int a2)
   }
   Debug::Log(); /*0x577dd1*/
 LABEL_8:
-  if ( MEMORY[0xA8B238][0] != 3 && MEMORY[0xA8B238][0] != 4 /*0x577df4*/
+  if ( g_GameMode_Current[0] != 3 && g_GameMode_Current[0] != 4 /*0x577df4*/
     || !MEMORY[0xA8B23C]
     || (v8 = 1, (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 4))(MEMORY[0xA8B23C])) )
   {
@@ -537,10 +537,10 @@ LABEL_8:
   {
     HouseClass::ResetObjectOrders(0, 0); /*0x577e1e*/
     *((_BYTE *)HouseClass_Player + 576) = 1; /*0x577e29*/
-    MEMORY[0x87F8F8] = MEMORY[0x87F8DC]; /*0x577e3a*/
+    MEMORY[0x87F8F8] = g_Cell_PositionLUT; /*0x577e3a*/
     MEMORY[0x87F8F4] = 1; /*0x577e42*/
-    MEMORY[0x87F8FC] = MEMORY[0x87F8DC] - 1; /*0x577e4b*/
-    MEMORY[0x87F900] = (MEMORY[0x87F8DC] << 11) + MEMORY[0x87F924] + 4; /*0x577e5a*/
+    MEMORY[0x87F8FC] = g_Cell_PositionLUT - 1; /*0x577e4b*/
+    MEMORY[0x87F900] = (g_Cell_PositionLUT << 11) + g_Shroud_CellArray + 4; /*0x577e5a*/
     v4 = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x577e60*/
     if ( v4 ) /*0x577e67*/
     {
@@ -875,7 +875,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
             {
               *(_WORD *)(v13[28] + 10 * CellToTileIndexMap(v13, (__int16 *)&a3)) = 0;
               v17 = (__int16)a3 + (SHIWORD(a3) << 9);
-              if ( v17 >= 0x40000 || (v18 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v17)) == 0 )
+              if ( v17 >= 0x40000 || (v18 = *(_DWORD **)(g_Shroud_CellArray + 4 * v17)) == 0 )
               {
                 g_Map_GlobalCellIndex = a3;
                 v18 = g_CellClassArray;
@@ -928,7 +928,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
           if ( *(_DWORD *)(v92 + 4 * (v24 + j * v23) + 16) && LayerClass::IsWithinUsableArea(v13, (__int16 *)&a3, 1) )
           {
             v25 = (__int16)a3 + (SHIWORD(a3) << 9);
-            if ( v25 >= 0x40000 || (v26 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v25)) == 0 )
+            if ( v25 >= 0x40000 || (v26 = *(_DWORD **)(g_Shroud_CellArray + 4 * v25)) == 0 )
             {
               g_Map_GlobalCellIndex = a3;
               v26 = g_CellClassArray;
@@ -944,7 +944,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     }
     v27 = (v93 << 9) + v89;
     a3 = v27;
-    if ( v27 >= 0x40000 || (v28 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v27)) == 0 )
+    if ( v27 >= 0x40000 || (v28 = *(_DWORD **)(g_Shroud_CellArray + 4 * v27)) == 0 )
     {
       v28 = g_CellClassArray;
       g_Map_GlobalCellIndex = v99;
@@ -952,11 +952,11 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     v106 = g_MapRenderState * *((char *)v28 + 283);
     v104 = v95;
     v105 = v96;
-    Coord::To_Screen(MEMORY[0x887324], &v104, &v100);
+    Coord::To_Screen(g_TacticalClass_Instance, &v104, &v100);
     LOWORD(a3) = v99 + 5;
     HIWORD(a3) = HIWORD(v99) + 3;
     v29 = (__int16)(v99 + 5) + ((__int16)(HIWORD(v99) + 3) << 9);
-    if ( v29 >= 0x40000 || (v30 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v29)) == 0 )
+    if ( v29 >= 0x40000 || (v30 = *(_DWORD **)(g_Shroud_CellArray + 4 * v29)) == 0 )
     {
       g_Map_GlobalCellIndex = a3;
       v30 = g_CellClassArray;
@@ -964,11 +964,11 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     v106 = g_MapRenderState * *((char *)v30 + 283);
     v104 = ((__int16)(v99 + 5) << 8) + 128;
     v105 = ((__int16)(HIWORD(v99) + 3) << 8) + 128;
-    Coord::To_Screen(MEMORY[0x887324], &v104, &v102);
+    Coord::To_Screen(g_TacticalClass_Instance, &v104, &v102);
     Cell::CreateCrater(v100 - 120, v101 - 60, v102 - v100 + 240, v103 - v101 + 120, 0);
-    v94 = (int *)*((_DWORD *)MEMORY[0x8B4154] + AnimTypeClass::FindIndex(aXgrymed1));
-    v97 = *((_DWORD *)MEMORY[0x8B4154] + AnimTypeClass::FindIndex(aXgrymed2));
-    v98 = *((_DWORD *)MEMORY[0x8B4154] + AnimTypeClass::FindIndex(aXgrysml1));
+    v94 = (int *)*((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrymed1));
+    v97 = *((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrymed2));
+    v98 = *((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrysml1));
     result = v93 + 3;
     v92 = v93;
     v99 = v93 + 3;
@@ -989,7 +989,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
             v95 = 2;
             do
             {
-              v32 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
+              v32 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
               if ( v32 )
               {
                 v33 = v32 - 1;
@@ -1010,11 +1010,11 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
               v34 = (void **)__2_YAPAXI_Z(0x1C8u);
               if ( v34 )
               {
-                v35 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, -8, 8);
-                v36 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, -12, 12);
+                v35 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -8, 8);
+                v36 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -12, 12);
                 v37 = (__int16)v31;
                 v38 = (__int16)v31 + ((__int16)v92 << 9);
-                if ( v38 >= 0x40000 || (v39 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v38), v31 = v93, !v39) )
+                if ( v38 >= 0x40000 || (v39 = *(_DWORD **)(g_Shroud_CellArray + 4 * v38), v31 = v93, !v39) )
                 {
                   g_Map_GlobalCellIndex = v96;
                   v39 = g_CellClassArray;
@@ -1023,7 +1023,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
                 v105 = v35 + ((__int16)v92 << 8) + 128;
                 v104 = (v37 << 8) + 128 + v36;
                 v106 = v40;
-                v41 = (void *)Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
+                v41 = (void *)Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
                 AnimClass::ctor(v34, (void *)a3, &v104, v41, 1, (void *)0x600, 0, 0);
               }
               --v95;
@@ -1107,7 +1107,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
             }
             *(_WORD *)(v51[28] + 10 * v56) = 0;
             v58 = (__int16)v92 + (SHIWORD(v92) << 9);
-            if ( v58 >= 0x40000 || (v59 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v58)) == 0 )
+            if ( v58 >= 0x40000 || (v59 = *(_DWORD **)(g_Shroud_CellArray + 4 * v58)) == 0 )
             {
               g_Map_GlobalCellIndex = v92;
               v59 = g_CellClassArray;
@@ -1167,7 +1167,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
           if ( *(_DWORD *)(v90 + 4 * (v67 + n * v66) + 16) && LayerClass::IsWithinUsableArea(v51, (__int16 *)&v92, 1) )
           {
             v68 = (__int16)v92 + (SHIWORD(v92) << 9);
-            if ( v68 >= 0x40000 || (v69 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v68)) == 0 )
+            if ( v68 >= 0x40000 || (v69 = *(_DWORD **)(g_Shroud_CellArray + 4 * v68)) == 0 )
             {
               g_Map_GlobalCellIndex = v92;
               v69 = g_CellClassArray;
@@ -1182,7 +1182,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
       }
     }
     v70 = a3 + (v98 << 9);
-    if ( v70 >= 0x40000 || (v71 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v70)) == 0 )
+    if ( v70 >= 0x40000 || (v71 = *(_DWORD **)(g_Shroud_CellArray + 4 * v70)) == 0 )
     {
       v71 = g_CellClassArray;
       g_Map_GlobalCellIndex = v99;
@@ -1190,14 +1190,14 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     v106 = g_MapRenderState * *((char *)v71 + 283);
     v104 = v95;
     v105 = v97;
-    Coord::To_Screen(MEMORY[0x887324], &v104, &v102);
+    Coord::To_Screen(g_TacticalClass_Instance, &v104, &v102);
     v72 = (__int16)(v99 + 3);
     v73 = (__int16)(HIWORD(v99) + 5) << 9;
     v74 = v72 + v73 < 0;
     v75 = v72 + v73;
     LOWORD(v97) = v99 + 3;
     HIWORD(v97) = HIWORD(v99) + 5;
-    if ( v74 || v75 >= 0x40000 || (v76 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v75)) == 0 )
+    if ( v74 || v75 >= 0x40000 || (v76 = *(_DWORD **)(g_Shroud_CellArray + 4 * v75)) == 0 )
     {
       g_Map_GlobalCellIndex = v97;
       v76 = g_CellClassArray;
@@ -1205,11 +1205,11 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     v106 = g_MapRenderState * *((char *)v76 + 283);
     v104 = ((__int16)(v99 + 3) << 8) + 128;
     v105 = ((__int16)(HIWORD(v99) + 5) << 8) + 128;
-    Coord::To_Screen(MEMORY[0x887324], &v104, &v100);
+    Coord::To_Screen(g_TacticalClass_Instance, &v104, &v100);
     Cell::CreateCrater(v100 - 120, v103 - 60, v102 - v100 + 240, v101 - v103 + 120, 0);
-    v95 = *((_DWORD *)MEMORY[0x8B4154] + AnimTypeClass::FindIndex(aXgrymed1));
-    v96 = *((_DWORD *)MEMORY[0x8B4154] + AnimTypeClass::FindIndex(aXgrymed2));
-    v77 = *((_DWORD *)MEMORY[0x8B4154] + AnimTypeClass::FindIndex(aXgrysml1));
+    v95 = *((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrymed1));
+    v96 = *((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrymed2));
+    v77 = *((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrysml1));
     result = v98;
     v99 = v77;
     v91 = v98;
@@ -1231,7 +1231,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
             v97 = 2;
             do
             {
-              v79 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
+              v79 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
               if ( v79 )
               {
                 v80 = v79 - 1;
@@ -1252,11 +1252,11 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
               v81 = (void **)__2_YAPAXI_Z(0x1C8u);
               if ( v81 )
               {
-                v82 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, -8, 8);
-                v83 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, -12, 12);
+                v82 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -8, 8);
+                v83 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -12, 12);
                 v84 = (__int16)v78;
                 v85 = (__int16)v78 + ((__int16)v91 << 9);
-                if ( v85 >= 0x40000 || (v86 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v85), v78 = v93, !v86) )
+                if ( v85 >= 0x40000 || (v86 = *(_DWORD **)(g_Shroud_CellArray + 4 * v85), v78 = v93, !v86) )
                 {
                   g_Map_GlobalCellIndex = v98;
                   v86 = g_CellClassArray;
@@ -1265,7 +1265,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
                 v105 = v82 + ((__int16)v91 << 8) + 128;
                 v104 = (v84 << 8) + 128 + v83;
                 v106 = v87;
-                v88 = (void *)Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
+                v88 = (void *)Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
                 AnimClass::ctor(v81, (void *)v92, &v104, v88, 1, (void *)0x600, 0, 0);
               }
               --v97;

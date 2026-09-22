@@ -129,14 +129,14 @@ int __stdcall GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HW
       switch ( (unsigned __int16)a3 ) /*0x4e2354*/
       {
         case 0x52Cu: /*0x4e2354*/
-          if ( !v30 && MEMORY[0xA8E9A0] == 1 ) /*0x4e23a1*/
+          if ( !v30 && g_WTFMode == 1 ) /*0x4e23a1*/
           {
             MEMORY[0xA8EDA0] = 4; /*0x4e23a3*/
             *WindowLongA = 1; /*0x4e23ad*/
           }
           break;
         case 0x52Du: /*0x4e2354*/
-          if ( !v30 && MEMORY[0xA8E9A0] == 1 ) /*0x4e237b*/
+          if ( !v30 && g_WTFMode == 1 ) /*0x4e237b*/
           {
             MEMORY[0xA8EDA0] = 6; /*0x4e237e*/
             *WindowLongA = 1; /*0x4e2389*/
@@ -155,13 +155,13 @@ int __stdcall GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HW
       {
         DlgItem = GetDlgItem(hDlg, 1321); /*0x4e2034*/
         hWnda = DlgItem; /*0x4e2048*/
-        if ( MEMORY[0xA8B238][0] || MEMORY[0xA8EDDC] ) /*0x4e2058*/
+        if ( g_GameMode_Current[0] || MEMORY[0xA8EDDC] ) /*0x4e2058*/
         {
           if ( DlgItem ) /*0x4e207d*/
           {
             SendMessageA(DlgItem, 0x4ACu, 0, 0); /*0x4e2089*/
             SendMessageA(hWnda, 0x406u, 1u, 393216); /*0x4e209c*/
-            SendMessageA(hWnda, 0x405u, 1u, 6 - *(_DWORD *)MEMORY[0xA8EB60]); /*0x4e20b8*/
+            SendMessageA(hWnda, 0x405u, 1u, 6 - *(_DWORD *)g_GameModeOptions); /*0x4e20b8*/
           }
         }
         else
@@ -204,7 +204,7 @@ int __stdcall GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HW
         {
           SendMessageA(v16, 0x4ACu, 0, 0); /*0x4e2173*/
           SendMessageA(v17, 0x406u, 1u, 0x20000); /*0x4e2182*/
-          SendMessageA(v17, 0x405u, 1u, MEMORY[0xA8EB78]); /*0x4e2193*/
+          SendMessageA(v17, 0x405u, 1u, g_lParam); /*0x4e2193*/
         }
         v18 = GetDlgItem(hDlg, 1537); /*0x4e219b*/
         if ( v18 ) /*0x4e219f*/
@@ -215,7 +215,7 @@ int __stdcall GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HW
         v20 = GetDlgItem(hDlg, 1538); /*0x4e21e3*/
         if ( v20 ) /*0x4e21e7*/
           SendMessageA(v20, 0xF1u, MEMORY[0xA8EB80] != 0, 0); /*0x4e21ff*/
-        if ( MEMORY[0xA8E9A0] == 1 ) /*0x4e2208*/
+        if ( g_WTFMode == 1 ) /*0x4e2208*/
         {
           v21 = GetDlgItem(hDlg, 1325); /*0x4e2212*/
           if ( v21 ) /*0x4e2216*/
@@ -261,7 +261,7 @@ int __stdcall GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HW
         v27 = GetDlgItem(hDlg, 1651); /*0x4e22d7*/
         goto LABEL_38; /*0x4e22d7*/
       }
-      if ( !MEMORY[0xA8E9A0] && hWnd == GetDlgItem(hDlg, 1295) ) /*0x4e22f0*/
+      if ( !g_WTFMode && hWnd == GetDlgItem(hDlg, 1295) ) /*0x4e22f0*/
       {
         v26 = (&off_822774)[v25]; /*0x4e22f6*/
         v27 = GetDlgItem(hDlg, 1648); /*0x4e2303*/
@@ -864,7 +864,7 @@ int __fastcall SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
   {
     v3 = 1698; /*0x4e48fb*/
   }
-  if ( MEMORY[0xA8B238] == 3 || MEMORY[0xA8B238] == 4 ) /*0x4e496b*/
+  if ( g_GameMode_Current == 3 || g_GameMode_Current == 4 ) /*0x4e496b*/
   {
     v4 = *(&MEMORY[0xA8DA90] + a2); /*0x4e496d*/
     if ( v4 == MEMORY[0xAC11B4] && *(_DWORD *)(v4 + 107) == -1 ) /*0x4e4982*/
@@ -1025,7 +1025,7 @@ LABEL_44:
     {
       v13 = 1698; /*0x4e4b6f*/
     }
-    if ( (MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4) /*0x4e4bf7*/
+    if ( (g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4) /*0x4e4bf7*/
       && ((v14 = *(&MEMORY[0xA8DA90] + i), v14 == MEMORY[0xAC11B4]) || *(_DWORD *)(v14 + 107) == -1) )
     {
       result = FillListBox(v4, v13); /*0x4e4c04*/
@@ -1164,7 +1164,7 @@ LABEL_22:
     {
       v12 = 1698; /*0x4e4d74*/
     }
-    if ( (MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4) /*0x4e4dfc*/
+    if ( (g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4) /*0x4e4dfc*/
       && ((v13 = *(&MEMORY[0xA8DA90] + i), v13 == MEMORY[0xAC11B4]) || *(_DWORD *)(v13 + 107) == -1) )
     {
       result = FillListBox(hDlg, v12); /*0x4e4e09*/
@@ -1303,7 +1303,7 @@ int __fastcall Lobby_FillFactionComboBox(HWND a1, int a2)
   {
     v3 = 1699; /*0x4e53db*/
   }
-  if ( MEMORY[0xA8B238] == 3 || MEMORY[0xA8B238] == 4 ) /*0x4e544b*/
+  if ( g_GameMode_Current == 3 || g_GameMode_Current == 4 ) /*0x4e544b*/
   {
     v4 = *(&MEMORY[0xA8DA90] + a2); /*0x4e544d*/
     if ( v4 == MEMORY[0xAC11B4] && *(_DWORD *)(v4 + 107) == -1 ) /*0x4e5462*/
@@ -1605,7 +1605,7 @@ LABEL_22:
     {
       v12 = 1699; /*0x4e5854*/
     }
-    if ( (MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4) /*0x4e58dc*/
+    if ( (g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4) /*0x4e58dc*/
       && ((v13 = *(&MEMORY[0xA8DA90] + i), v13 == MEMORY[0xAC11B4]) || *(_DWORD *)(v13 + 107) == -1) )
     {
       result = SetupComboBoxRandomAlliance(hDlg, v12); /*0x4e58e9*/
@@ -1643,7 +1643,7 @@ bool __fastcall FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e5b93*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5b9f*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5bab*/
-  if ( MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4 ) /*0x4e5bba*/
+  if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x4e5bba*/
   {
     if ( MEMORY[0xA8B23C] && (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 44))(MEMORY[0xA8B23C]) < 0 ) /*0x4e5be8*/
     {
@@ -1674,7 +1674,7 @@ LABEL_9:
   while ( (int)v7 < (int)&MEMORY[0x8B3FF0] ); /*0x4e5c41*/
   SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e5c4d*/
   SendMessageA(DlgItem, 0x4F1u, 0, 0); /*0x4e5c59*/
-  if ( MEMORY[0xA8B238][0] == 4 && Network::IsLobbyFeature() ) /*0x4e5c67*/
+  if ( g_GameMode_Current[0] == 4 && Network::IsLobbyFeature() ) /*0x4e5c67*/
   {
     ShowWindow(DlgItem, 0); /*0x4e5c79*/
     v9 = GetDlgItem(hDlg, 1940); /*0x4e5c85*/
@@ -1734,7 +1734,7 @@ bool __fastcall Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
   {
     v3 = 1901; /*0x4e5e29*/
   }
-  if ( MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4 ) /*0x4e5e99*/
+  if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x4e5e99*/
   {
     v4 = *(&MEMORY[0xA8DA90] + a2); /*0x4e5e9b*/
     if ( v4 == MEMORY[0xAC11B4] && *(_DWORD *)(v4 + 107) == -1 ) /*0x4e5eaf*/
@@ -1838,7 +1838,7 @@ int sub_4E6860()
   MEMORY[0xA8ED4C] = 1; /*0x4e6871*/
   MEMORY[0xA8ED4D] = 0; /*0x4e6878*/
   MEMORY[0xA8ED40] = (int)&off_7E4678; /*0x4e687d*/
-  MEMORY[0xA8ED54] = 10; /*0x4e6887*/
+  dword_A8ED54 = 10; /*0x4e6887*/
   MEMORY[0xA8ED50] = 0; /*0x4e6891*/
   return atexit(sub_4E68A0); /*0x4e689c*/
 }

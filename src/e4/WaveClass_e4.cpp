@@ -38,8 +38,8 @@ int __thiscall WaveClass::_vt05(#374 *this, int a2, int a3)
       *(_DWORD *)(v4 + 12) = &off_7F6BC8; /*0x75f6b8*/
     }
     *(_DWORD *)(v4 + 332) = *(_DWORD *)(v4 + 176) == 3 ? v4 + 384 : v4 + 336;
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v4 + 172)); /*0x75f6ee*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v4 + 468)); /*0x75f6ff*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 172)); /*0x75f6ee*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 468)); /*0x75f6ff*/
     Register = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v3 + 12))(v3, &a2, 4, 0); /*0x75f712*/
     if ( Register >= 0 ) /*0x75f716*/
     {
@@ -52,7 +52,7 @@ LABEL_17:
         if ( v6 > 0 ) /*0x75f79d*/
         {
           do /*0x75f7b8*/
-            ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(_DWORD *)(v4 + 500) + 4 * v11++)); /*0x75f7ae*/
+            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v4 + 500) + 4 * v11++)); /*0x75f7ae*/
           while ( v11 < a2 ); /*0x75f7b8*/
         }
       }

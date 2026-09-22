@@ -175,11 +175,11 @@ _DWORD *__fastcall TrajectoryHelper::GetObstacle(
   if ( *(_BYTE *)(a7 + 664) ) /*0x4cc405*/
   {
     v13 = v10[17]; /*0x4cc413*/
-    v14 = v13 != -1 && *(_BYTE *)(*(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * v13] + 680); /*0x4cc432*/
+    v14 = v13 != -1 && *(_BYTE *)(*(_DWORD *)&g_BuildingTypeClass_Array->vtable0[4 * v13] + 680); /*0x4cc432*/
     if ( v10 != (_DWORD *)v8 /*0x4cc47c*/
       && v14
       && a1[283] <= v8[283]
-      && (!LOBYTE(MEMORY[0x8871E0][1].?[3])
+      && (!LOBYTE(g_RulesClass_Instance[1].?[3])
        || (v15 = *(#375 **)&HouseClass_Array->__pad_0[4 * v10[20]]) == 0
        || !(unsigned __int8)HouseClass::IsAlliedWith(v15, other)) )
     {
@@ -231,10 +231,10 @@ LABEL_22:
           if ( *(_BYTE *)(a7 + 664) ) /*0x4cc5d2*/
           {
             v37 = v33[17]; /*0x4cc5e0*/
-            v38 = v37 != -1 && *(_BYTE *)(*(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * v37] + 680); /*0x4cc5ff*/
+            v38 = v37 != -1 && *(_BYTE *)(*(_DWORD *)&g_BuildingTypeClass_Array->vtable0[4 * v37] + 680); /*0x4cc5ff*/
             if ( v33 != (_DWORD *)a2 && v38 && v44[283] <= a2[283] ) /*0x4cc61f*/
             {
-              if ( !LOBYTE(MEMORY[0x8871E0][1].?[3]) ) /*0x4cc627*/
+              if ( !LOBYTE(g_RulesClass_Instance[1].?[3]) ) /*0x4cc627*/
                 return v42; /*0x4cc627*/
               v39 = *(#375 **)&HouseClass_Array->__pad_0[4 * v33[20]]; /*0x4cc639*/
               if ( !v39 || !(unsigned __int8)HouseClass::IsAlliedWith(v39, other) ) /*0x4cc645*/

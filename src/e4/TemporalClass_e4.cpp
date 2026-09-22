@@ -14,9 +14,9 @@ int __thiscall sub_71A450(int this)
   int v3; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a453*/
-  v2 = MEMORY[0xA8ED84]; /*0x71a458*/
+  v2 = g_CurrentFrame; /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
-  *(_DWORD *)(this + 44) = v2; /*0x71a464*/
+  this->q02C = v2; /*0x71a464*/
   *(_DWORD *)this = &TemporalClass::`vftable'; /*0x71a467*/
   this->vtable1 = &TemporalClass::`vftable'; /*0x71a46d*/
   this->vtable2 = &TemporalClass::`vftable'; /*0x71a474*/
@@ -163,7 +163,7 @@ void **__thiscall TemporalClass::_vt23(int *this)
     v41 = v9 - v7; /*0x71a7ef*/
     v42 = v11; /*0x71a7f3*/
     v12 = Math::Sqrt((double)v8 * (double)v8 + (double)v11 * (double)v11 + (double)(v9 - v7) * (double)(v9 - v7)); /*0x71a81f*/
-    if ( (int)Math::RoundToInt(v12) > MEMORY[0x8871E0]->? << 8 )
+    if ( (int)Math::RoundToInt(v12) > g_RulesClass_Instance->? << 8 )
     {
       return (void **)FactoryClass::CompleteItem(this); /*0x71a841*/
     }
@@ -194,7 +194,7 @@ LABEL_10:
             v40 = *v22; /*0x71a8e3*/
             v41 = v22[1]; /*0x71a8ea*/
             v42 = v22[2]; /*0x71a8f6*/
-            result = AnimClass::ctor(result, (void *)MEMORY[0x8871E0]->?[1], &v40, 0, 1, (void *)0x600, 0, 0); /*0x71a909*/
+            result = AnimClass::ctor(result, (void *)g_RulesClass_Instance->?[1], &v40, 0, 1, (void *)0x600, 0, 0); /*0x71a909*/
           }
         }
         else
@@ -229,7 +229,7 @@ LABEL_10:
             {
               if ( (*(int (__thiscall **)(_DWORD))(*v27 + 1032))(this->q028) > 0 ) /*0x71a9a2*/
                 BuildingClass::AnimateUnloadUnits(v27, 0); /*0x71a9a7*/
-              if ( !MEMORY[0xA8E7AC] && v27[70] ) /*0x71a9b4*/
+              if ( !g_IKnowWhatImDoing && v27[70] ) /*0x71a9b4*/
               {
                 do /*0x71a9d6*/
                 {

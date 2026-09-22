@@ -285,7 +285,7 @@ bool __thiscall Coord::To_Screen(_DWORD *this, _DWORD *a1, IUnknown *aP2)
   v10 = a1[1]; /*0x6d214f*/
   v4 = (-60 * v10 / 2 + 60 * *a1 / 2) / 256; /*0x6d21c8*/
   v5 = (30 * v10 / 2 + 30 * *a1 / 2) / 256; /*0x6d21cb*/
-  v6 = Math::RoundToInt((double)(int)a1[2] * *(double *)&MEMORY[0xB077F8].field_5550 + (double)(a1[2] >= 728) + 0.5); /*0x6d21f2*/
+  v6 = Math::RoundToInt((double)(int)a1[2] * *(double *)&g_OverlayTypeConfig.field_5550 + (double)(a1[2] >= 728) + 0.5); /*0x6d21f2*/
   aP2->field_0 = v4; /*0x6d21fd*/
   aP2->field_4 = v5 - v6; /*0x6d21ff*/
   v7 = aP2->field_0 - *(this + 44); /*0x6d2213*/
@@ -294,10 +294,10 @@ bool __thiscall Coord::To_Screen(_DWORD *this, _DWORD *a1, IUnknown *aP2)
   aP2->field_4 = v8; /*0x6d221b*/
   if ( v7 < -360 ) /*0x6d222a*/
     return 0; /*0x6d222c*/
-  if ( v7 > *(_DWORD *)&MEMORY[0xB077F8].__pad_5554[228] + 360 ) /*0x6d2242*/
+  if ( v7 > *(_DWORD *)&g_OverlayTypeConfig.__pad_5554[228] + 360 ) /*0x6d2242*/
     return 0; /*0x6d2244*/
   if ( v8 >= -180 ) /*0x6d2251*/
-    return v8 <= *(_DWORD *)&MEMORY[0xB077F8].__pad_5554[232] + 180; /*0x6d2269*/
+    return v8 <= *(_DWORD *)&g_OverlayTypeConfig.__pad_5554[232] + 180; /*0x6d2269*/
   return 0; /*0x6d2220*/
 }
 }

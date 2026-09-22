@@ -401,7 +401,7 @@ void __thiscall IPXInterfaceClass::_vt05(int this)
   int v4; // ecx
   int v5; // eax
 
-  while ( *(_DWORD *)(this + 24) ) /*0x7b1ca6*/
+  while ( this->BoundSocket ) /*0x7b1ca6*/
   {
     v2 = **(_DWORD **)(this + 12); /*0x7b1cae*/
     if ( *(_BYTE *)(v2 + 22) ) /*0x7b1cb0*/
@@ -411,23 +411,23 @@ void __thiscall IPXInterfaceClass::_vt05(int this)
     else
     {
       *(_BYTE *)(v2 + 21) = 0; /*0x7b1cc0*/
-      --*(_DWORD *)(this + 258140); /*0x7b1cca*/
+      --this->q3F05C; /*0x7b1cca*/
     }
-    v3 = *(_DWORD *)(this + 24); /*0x7b1cd0*/
+    v3 = this->BoundSocket; /*0x7b1cd0*/
     if ( v3 > 0 ) /*0x7b1cd5*/
     {
       v4 = v3 - 1; /*0x7b1cd7*/
       v5 = 0; /*0x7b1cda*/
-      for ( *(_DWORD *)(this + 24) = v4; /*0x7b1ce1*/
-            v5 < *(_DWORD *)(this + 24);
+      for ( this->BoundSocket = v4; /*0x7b1ce1*/
+            v5 < this->BoundSocket;
             *(_DWORD *)(this->LocalNode + 4 * v5 - 4) = *(_DWORD *)(this->LocalNode + 4 * v5) )
       {
         ++v5; /*0x7b1ce6*/
       }
     }
   }
-  *(_DWORD *)(this + 258140) = 0; /*0x7b1cfa*/
-  *(_DWORD *)(this + 258128) = 0; /*0x7b1d00*/
+  this->q3F05C = 0; /*0x7b1cfa*/
+  this->q3F050 = 0; /*0x7b1d00*/
 }
 }
 
@@ -500,37 +500,37 @@ __int16 __thiscall IPXInterfaceClass::Connect(int this, const void *a1, unsigned
   v5[2].Initialized = 1; /*0x7b251d*/
   if ( (_BYTE)aP3 ) /*0x7b2523*/
   {
-    v6 = *(_DWORD *)(this + 64); /*0x7b2525*/
-    if ( *(_DWORD *)(this + 72) < v6 /*0x7b254d*/
-      || (*(_BYTE *)(this + 69) || !v6)
+    v6 = this->Count; /*0x7b2525*/
+    if ( this->tail_12 < v6 /*0x7b254d*/
+      || (this->q045 || !v6)
       && (v7 = *(_DWORD *)(this + 76), v7 > 0)
       && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 56) + 8))(this + 56, v6 + v7, 0) )
     {
-      v8 = *(_DWORD *)(this + 72); /*0x7b2554*/
+      v8 = this->tail_12; /*0x7b2554*/
       v9 = *(_DWORD *)(this + 60); /*0x7b2557*/
-      *(_DWORD *)(this + 72) = v8 + 1; /*0x7b255d*/
+      this->tail_12 = v8 + 1; /*0x7b255d*/
       *(_DWORD *)(v9 + 4 * v8) = v5; /*0x7b2560*/
     }
-    v10 = *(_DWORD *)(this + 258160); /*0x7b2563*/
+    v10 = this->q3F070; /*0x7b2563*/
   }
   else
   {
     v11 = *(_DWORD *)(this + 40); /*0x7b256b*/
-    if ( *(_DWORD *)(this + 48) < v11 /*0x7b2593*/
-      || (*(_BYTE *)(this + 45) || !v11)
-      && (v12 = *(_DWORD *)(this + 52), v12 > 0)
-      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 32) + 8))(this + 32, v11 + v12, 0) )
+    if ( this->LocalNode < v11 /*0x7b2593*/
+      || (this->q02D || !v11)
+      && (v12 = this->IsAllocated, v12 > 0)
+      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->LocalNetwork + 8))(this + 32, v11 + v12, 0) )
     {
-      v13 = *(_DWORD *)(this + 48); /*0x7b259a*/
+      v13 = this->LocalNode; /*0x7b259a*/
       v14 = *(_DWORD *)(this + 36); /*0x7b259d*/
-      *(_DWORD *)(this + 48) = v13 + 1; /*0x7b25a3*/
+      this->LocalNode = v13 + 1; /*0x7b25a3*/
       *(_DWORD *)(v14 + 4 * v13) = v5; /*0x7b25a6*/
     }
-    v10 = *(_DWORD *)(this + 258156); /*0x7b25a9*/
+    v10 = this->q3F06C; /*0x7b25a9*/
   }
   v15 = (*(int (__thiscall **)(int, int))(*(_DWORD *)this + 56))(this, v10); /*0x7b25b9*/
   SendMessageA((HWND)g_hWnd, v15, 0, 2); /*0x7b25c3*/
-  return EventQueue::Process(MEMORY[0x87F770]); /*0x7b25d4*/
+  return EventQueue::Process(g_BinkMoviePlayer); /*0x7b25d4*/
 }
 }
 

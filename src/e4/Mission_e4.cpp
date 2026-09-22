@@ -48,7 +48,7 @@ int __thiscall TechnoClass_MissionAction(_DWORD *this)
           v4 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x520bf9*/
           if ( !v4 ) /*0x520c00*/
             goto LABEL_20; /*0x520c00*/
-          v5 = (unsigned int)Random::State((_DWORD *)MEMORY[0xA8B230] + 134) % *(_DWORD *)(*(this + 432) + 3680); /*0x520c2d*/
+          v5 = (unsigned int)Random::State((_DWORD *)g_ScenarioClass_Instance + 134) % *(_DWORD *)(*(this + 432) + 3680); /*0x520c2d*/
           v6 = (char *)v19; /*0x520c37*/
           v7 = *(void **)(*(_DWORD *)(*(this + 432) + 3668) + 4 * v5); /*0x520c3b*/
           v8 = *this; /*0x520c3e*/
@@ -59,10 +59,10 @@ int __thiscall TechnoClass_MissionAction(_DWORD *this)
           v4 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x520c56*/
           if ( v4 ) /*0x520c5d*/
           {
-            v7 = *(void **)(MEMORY[0x8871E0]->GUICheckboxSound[2] /*0x520c91*/
+            v7 = *(void **)(g_RulesClass_Instance->GUICheckboxSound[2] /*0x520c91*/
                           + 4
-                          * ((unsigned int)Random::State((_DWORD *)MEMORY[0xA8B230] + 134)
-                           % MEMORY[0x8871E0]->BuildingGarrisonedSound[1]));
+                          * ((unsigned int)Random::State((_DWORD *)g_ScenarioClass_Instance + 134)
+                           % g_RulesClass_Instance->BuildingGarrisonedSound[1]));
             v8 = *this; /*0x520c94*/
             v6 = &v20; /*0x520c96*/
 LABEL_19:
@@ -530,17 +530,17 @@ int __thiscall sub_70F770(_DWORD *this)
   v3 = this + 96; /*0x70f783*/
   if ( v1 != -1 ) /*0x70f789*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v1 >= result ) /*0x70f795*/
+    if ( (int)g_CurrentFrame - v1 >= result ) /*0x70f795*/
       return result; /*0x70f795*/
-    result -= (int)MEMORY[0xA8ED84] - v1; /*0x70f797*/
+    result -= (int)g_CurrentFrame - v1; /*0x70f797*/
   }
   if ( result > 10 ) /*0x70f79c*/
   {
-    result = MEMORY[0xA8E7AC]; /*0x70f79e*/
-    if ( !MEMORY[0xA8E7AC] ) /*0x70f7a5*/
+    result = g_IKnowWhatImDoing; /*0x70f79e*/
+    if ( !g_IKnowWhatImDoing ) /*0x70f7a5*/
     {
-      result = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 4, 8); /*0x70f7b6*/
-      *v3 = MEMORY[0xA8ED84]; /*0x70f7c1*/
+      result = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 4, 8); /*0x70f7b6*/
+      *v3 = g_CurrentFrame; /*0x70f7c1*/
       v3[1] = v4; /*0x70f7c7*/
       v3[2] = result; /*0x70f7ca*/
     }

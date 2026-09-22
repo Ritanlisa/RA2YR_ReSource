@@ -21,16 +21,16 @@ char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
   int v12; // [esp+8h] [ebp-4h]
 
   if ( !MEMORY[0x89F578] ) /*0x49cafc*/
-    CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49cb03*/
+    CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49cb03*/
   v3 = aP1; /*0x49cb08*/
   if ( (int)aP1 < 0 || (int)aP1 >= MEMORY[0x89F574] ) /*0x49cb1c*/
     return 0; /*0x49cc46*/
   v4 = (TechnoTypeClass *)MEMORY[0x89F570]; /*0x49cb29*/
-  *(_BYTE *)(this + 108) = 1; /*0x49cb2f*/
+  this->q06C = 1; /*0x49cb2f*/
   this->Movie_field_0x38 = -1; /*0x49cb33*/
   v5 = &v4->vtable0[76 * (_DWORD)aP1]; /*0x49cb3a*/
   v6 = *(CCINIClass **)(this + 68); /*0x49cb3d*/
-  *(_DWORD *)(this + 72) = 0; /*0x49cb42*/
+  this->q048 = 0; /*0x49cb42*/
   *(_DWORD *)(this + 76) = 0; /*0x49cb45*/
   *(_DWORD *)(this + 80) = 0; /*0x49cb48*/
   *(_DWORD *)(this + 84) = 0; /*0x49cb4b*/
@@ -41,9 +41,9 @@ char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
   *(_DWORD *)(this + 104) = 0; /*0x49cb5a*/
   if ( v6 != aP1 ) /*0x49cb5d*/
   {
-    if ( *(_DWORD *)(this + 60) ) /*0x49cb63*/
+    if ( this->q03C ) /*0x49cb63*/
     {
-      for ( i = 0; i < *(_DWORD *)(this + 64); ++i ) /*0x49cb72*/
+      for ( i = 0; i < this->q010; ++i ) /*0x49cb72*/
       {
         v8 = *(CCINIClass **)(this + 60); /*0x49cb74*/
         if ( *(_DWORD *)&v8->__pad_0[4 * i] ) /*0x49cb77*/
@@ -51,19 +51,19 @@ char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
       }
       __3_YAXPAX_Z(*(void **)(this + 60)); /*0x49cb93*/
     }
-    *(_DWORD *)(this + 60) = 0; /*0x49cb9b*/
-    *(_DWORD *)(this + 64) = 0; /*0x49cb9e*/
-    *(_DWORD *)(this + 60) = __2_YAPAXI_Z(4 * v5[8]); /*0x49cbae*/
+    this->q03C = 0; /*0x49cb9b*/
+    this->q010 = 0; /*0x49cb9e*/
+    this->q03C = __2_YAPAXI_Z(4 * v5[8]); /*0x49cbae*/
     v9 = 0; /*0x49cbb7*/
     if ( v5[8] > 0 ) /*0x49cbbb*/
     {
       v12 = 0; /*0x49cbbd*/
       do /*0x49cc26*/
       {
-        v10 = (CCINIClass *)Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)2); /*0x49cbde*/
-        *(_DWORD *)(*(_DWORD *)(this + 60) + 4 * v9) = __2_YAPAXI_Z(0x104u); /*0x49cbf1*/
+        v10 = (CCINIClass *)Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)2); /*0x49cbde*/
+        *(_DWORD *)(this->q03C + 4 * v9) = __2_YAPAXI_Z(0x104u); /*0x49cbf1*/
         strncpy( /*0x49cc0c*/
-          *(char **)(*(_DWORD *)(this + 60) + 4 * v9++),
+          *(char **)(this->q03C + 4 * v9++),
           (const char *)(*((_DWORD *)v5 + 3) + 260 * ((_DWORD)v10 + v12)),
           0x103u);
         v12 += 3; /*0x49cc22*/
@@ -71,7 +71,7 @@ char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
       while ( v9 < v5[8] ); /*0x49cc26*/
     }
     v3 = aP1; /*0x49cc2e*/
-    *(_DWORD *)(this + 64) = v5[8]; /*0x49cc32*/
+    this->q010 = v5[8]; /*0x49cc32*/
     this->Movie_field_0x38 = 0; /*0x49cc35*/
   }
   this->Movie_field_0x44 = v3; /*0x49cc39*/
@@ -350,13 +350,13 @@ unsigned int __thiscall Movie::SelectNextBuildableType(int this, AnimClass *aP1)
 
   v2 = (TechnoTypeClass *)aP1; /*0x720a81*/
   if ( ((int)aP1 <= -1 /*0x720aa7*/
-     || *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(this + 24) + 4 * (_DWORD)aP1) + 649)
-     || *(_BYTE *)(this + 16))
+     || *(_BYTE *)(*(_DWORD *)(this->q006 + 4 * (_DWORD)aP1) + 649)
+     || this->q010)
     && (int)aP1 >= 0 )
   {
     return (unsigned int)v2; /*0x720b18*/
   }
-  if ( *(_BYTE *)(this + 18) == 1 ) /*0x720aad*/
+  if ( this->q048 == 1 ) /*0x720aad*/
   {
     v4 = 0; /*0x720ab0*/
     while ( 1 ) /*0x720abe*/

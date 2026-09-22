@@ -252,13 +252,13 @@ int __stdcall TacticalMap_DrawLaserLine(int a1, int a2, int a3, int a4, int a5, 
   v20 = 0; /*0x704e6c*/
   v26 = -1; /*0x704e71*/
   v27 = -1; /*0x704e79*/
-  Coord::To_Screen(MEMORY[0x887324], &a1, &v24); /*0x704e7d*/
-  Coord::To_Screen(MEMORY[0x887324], &a4, &v21); /*0x704e95*/
-  v22 += MEMORY[0x886FA4]; /*0x704ec3*/
-  v25 += MEMORY[0x886FA4]; /*0x704ece*/
+  Coord::To_Screen(g_TacticalClass_Instance, &a1, &v24); /*0x704e7d*/
+  Coord::To_Screen(g_TacticalClass_Instance, &a4, &v21); /*0x704e95*/
+  v22 += g_Map_VisibleRect; /*0x704ec3*/
+  v25 += g_Map_VisibleRect; /*0x704ece*/
   v29 = v25 - 2; /*0x704eeb*/
   v28 = v24 - 2; /*0x704f13*/
-  v7 = ((unsigned __int8)a7 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x704f1e*/
+  v7 = ((unsigned __int8)a7 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x704f1e*/
      | (BYTE1(a7) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
      | (BYTE2(a7) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
   v8 = Rect::Construct(v45, &v28, 3, 3); /*0x704f25*/
@@ -266,12 +266,12 @@ int __stdcall TacticalMap_DrawLaserLine(int a1, int a2, int a3, int a4, int a5, 
   v35 = v8[1]; /*0x704f37*/
   v36 = v8[2]; /*0x704f3e*/
   v37 = v8[3]; /*0x704f50*/
-  v9 = ClipRectIntersection(v46, &MEMORY[0x886FA0], &v34, 0, 0); /*0x704f5a*/
+  v9 = ClipRectIntersection(v46, &DSurface_ViewBounds, &v34, 0, 0); /*0x704f5a*/
   v30 = *v9; /*0x704f61*/
   v31 = v9[1]; /*0x704f68*/
   v32 = v9[2]; /*0x704f6f*/
   v33 = v9[3]; /*0x704f7c*/
-  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 20))(MEMORY[0x88731C], &v30, v7); /*0x704f88*/
+  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)DSurface_Composite + 20))(DSurface_Composite, &v30, v7); /*0x704f88*/
   v29 = v22 - 2; /*0x704f9f*/
   v28 = v21 - 2; /*0x704fad*/
   v10 = Rect::Construct(v46, &v28, 3, 3); /*0x704fb1*/
@@ -279,16 +279,16 @@ int __stdcall TacticalMap_DrawLaserLine(int a1, int a2, int a3, int a4, int a5, 
   v31 = v10[1]; /*0x704fc3*/
   v32 = v10[2]; /*0x704fca*/
   v33 = v10[3]; /*0x704fdc*/
-  v11 = ClipRectIntersection(v45, &MEMORY[0x886FA0], &v30, 0, 0); /*0x704fe6*/
+  v11 = ClipRectIntersection(v45, &DSurface_ViewBounds, &v30, 0, 0); /*0x704fe6*/
   v34 = *v11; /*0x704fee*/
   v35 = v11[1]; /*0x704ff5*/
   v36 = v11[2]; /*0x704ffc*/
   v37 = v11[3]; /*0x705009*/
-  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 20))(MEMORY[0x88731C], &v34, v7); /*0x705014*/
-  v44[0] = MEMORY[0x886FA0]; /*0x705028*/
-  v44[1] = MEMORY[0x886FA4]; /*0x705031*/
-  v44[2] = MEMORY[0x886FA8]; /*0x705035*/
-  v44[3] = MEMORY[0x886FAC]; /*0x705039*/
+  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)DSurface_Composite + 20))(DSurface_Composite, &v34, v7); /*0x705014*/
+  v44[0] = DSurface_ViewBounds; /*0x705028*/
+  v44[1] = g_Map_VisibleRect; /*0x705031*/
+  v44[2] = g_Map_VisibleRectOffset; /*0x705035*/
+  v44[3] = g_DSurface_WindowOffset; /*0x705039*/
   Time = timeGetTime(); /*0x70503d*/
   v13 = a1; /*0x70504a*/
   v42 = a2; /*0x705054*/
@@ -306,21 +306,21 @@ int __stdcall TacticalMap_DrawLaserLine(int a1, int a2, int a3, int a4, int a5, 
     v17 = ((double)v23 - 16.0) * 0.0625; /*0x7050f2*/
     v23 = (v14 * a6 + v15 * a3) / 32; /*0x7050f8*/
     v40 = Math::RoundToInt(v17); /*0x705119*/
-    Coord::To_Screen(MEMORY[0x887324], &v41, &v24); /*0x70512f*/
-    Coord::To_Screen(MEMORY[0x887324], &v38, &v21); /*0x705144*/
-    v25 += MEMORY[0x886FA4]; /*0x705158*/
-    v22 += MEMORY[0x886FA4]; /*0x70516b*/
+    Coord::To_Screen(g_TacticalClass_Instance, &v41, &v24); /*0x70512f*/
+    Coord::To_Screen(g_TacticalClass_Instance, &v38, &v21); /*0x705144*/
+    v25 += g_Map_VisibleRect; /*0x705158*/
+    v22 += g_Map_VisibleRect; /*0x70516b*/
     if ( ClipLine(&v24, &v21, v44) ) /*0x70516f*/
     {
       v20 = BYTE2(a7); /*0x70518f*/
       v19 = a7; /*0x705195*/
       if ( (((_WORD)v16 - (_WORD)v28) & 0x1F8u) <= 0xF8 && (((_WORD)v16 - (_WORD)v28) & 0x1F8) != 0 ) /*0x7051aa*/
         Color::Lerp((unsigned __int8 *)&v19, (v16 - v28) & 0xF8, (unsigned __int8 *)&v26); /*0x7051b6*/
-      (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 48))( /*0x705226*/
-        MEMORY[0x88731C],
+      (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)DSurface_Composite + 48))( /*0x705226*/
+        DSurface_Composite,
         &v24,
         &v21,
-        ((unsigned __int8)v19 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0])
+        ((unsigned __int8)v19 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0])
       | (HIBYTE(v19) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
       | (v20 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
     }
@@ -458,7 +458,7 @@ void *__fastcall TechnoClass_RenderVoxel(
   v42 = a7[1]; /*0x7070b5*/
   v43 = a7[2]; /*0x7070bc*/
   v44 = a7[3]; /*0x7070c9*/
-  if ( MEMORY[0x887314] != dword_B1D13C ) /*0x7070d4*/
+  if ( g_DSurface_Hidden_2 != dword_B1D13C ) /*0x7070d4*/
   {
     v21 = *((_WORD *)a1 + 485); /*0x7070da*/
     if ( v21 <= 0 ) /*0x7070e6*/
@@ -467,15 +467,15 @@ void *__fastcall TechnoClass_RenderVoxel(
         *((_WORD *)a1 + 485) = LOWORD(v46[5]) /*0x707166*/
                              + LOWORD(v46[1])
                              + *(_WORD *)(a6 + 4)
-                             + LOWORD(MEMORY[0x887324][45].__tail_0);
+                             + LOWORD(g_TacticalClass_Instance[45].__tail_0);
     }
     else
     {
-      lpVtbl = MEMORY[0x887324][45].__tail_0; /*0x7070f2*/
+      lpVtbl = g_TacticalClass_Instance[45].__tail_0; /*0x7070f2*/
       v37 = 0; /*0x707100*/
       v40 = v21 - (_DWORD)lpVtbl; /*0x707104*/
       v38 = 0; /*0x70710c*/
-      v39 = MEMORY[0x886FA8]; /*0x707110*/
+      v39 = g_Map_VisibleRectOffset; /*0x707110*/
       v23 = ClipRectIntersection(v47, &v41, (int *)&v37, 0, 0); /*0x70711e*/
       v41 = *v23; /*0x707125*/
       v42 = v23[1]; /*0x70712c*/
@@ -506,7 +506,7 @@ void *__fastcall TechnoClass_RenderVoxel(
   SHPFrame = (int *)BuildingClass::GetSHPFrame(v25, v24); /*0x707215*/
   v31 = Miles::DriverGet(); /*0x707227*/
   BlitterDrawSHP( /*0x707235*/
-    (int *)MEMORY[0x887314],
+    (int *)g_DSurface_Hidden_2,
     (int)v25,
     v31,
     &v46[2],
@@ -744,7 +744,7 @@ void __fastcall UpdateTimedStateMachine(int *a1)
       case 0: /*0x70e97d*/
         a1[112] = 1; /*0x70e988*/
         v2 = a1 + 109; /*0x70e997*/
-        *v2 = MEMORY[0xA8ED84]; /*0x70e9a3*/
+        *v2 = g_CurrentFrame; /*0x70e9a3*/
         v2[1] = v21; /*0x70e9a5*/
         v2[2] = 6; /*0x70e9a8*/
         return; /*0x70e9af*/
@@ -753,15 +753,15 @@ void __fastcall UpdateTimedStateMachine(int *a1)
         v4 = a1[111]; /*0x70e9b6*/
         if ( v3 == -1 ) /*0x70e9c5*/
           goto LABEL_10; /*0x70e9c5*/
-        if ( (int)MEMORY[0xA8ED84] - v3 >= v4 ) /*0x70e9d1*/
+        if ( (int)g_CurrentFrame - v3 >= v4 ) /*0x70e9d1*/
           goto LABEL_11; /*0x70e9d1*/
-        v4 -= (int)MEMORY[0xA8ED84] - v3; /*0x70e9d3*/
+        v4 -= (int)g_CurrentFrame - v3; /*0x70e9d3*/
 LABEL_10:
         if ( !v4 ) /*0x70e9d7*/
         {
 LABEL_11:
           a1[112] = 2; /*0x70e9dd*/
-          a1[109] = (int)MEMORY[0xA8ED84]; /*0x70e9ed*/
+          a1[109] = (int)g_CurrentFrame; /*0x70e9ed*/
           a1[110] = v21; /*0x70e9f8*/
           a1[111] = 4; /*0x70e9fc*/
         }
@@ -771,16 +771,16 @@ LABEL_11:
         v6 = a1[111]; /*0x70ea0a*/
         if ( v5 == -1 ) /*0x70ea19*/
           goto LABEL_15; /*0x70ea19*/
-        if ( (int)MEMORY[0xA8ED84] - v5 >= v6 ) /*0x70ea25*/
+        if ( (int)g_CurrentFrame - v5 >= v6 ) /*0x70ea25*/
           goto LABEL_16; /*0x70ea25*/
-        v6 -= (int)MEMORY[0xA8ED84] - v5; /*0x70ea27*/
+        v6 -= (int)g_CurrentFrame - v5; /*0x70ea27*/
 LABEL_15:
         if ( !v6 ) /*0x70ea2b*/
         {
 LABEL_16:
           a1[112] = 3; /*0x70ea31*/
-          v7 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, -5, 5); /*0x70ea4b*/
-          a1[109] = (int)MEMORY[0xA8ED84]; /*0x70ea59*/
+          v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -5, 5); /*0x70ea4b*/
+          a1[109] = (int)g_CurrentFrame; /*0x70ea59*/
           a1[110] = v21; /*0x70ea5f*/
           a1[111] = v7 + 20; /*0x70ea62*/
         }
@@ -790,15 +790,15 @@ LABEL_16:
         v9 = a1[111]; /*0x70ea71*/
         if ( v8 == -1 ) /*0x70ea80*/
           goto LABEL_20; /*0x70ea80*/
-        if ( (int)MEMORY[0xA8ED84] - v8 >= v9 ) /*0x70ea8c*/
+        if ( (int)g_CurrentFrame - v8 >= v9 ) /*0x70ea8c*/
           goto LABEL_21; /*0x70ea8c*/
-        v9 -= (int)MEMORY[0xA8ED84] - v8; /*0x70ea8e*/
+        v9 -= (int)g_CurrentFrame - v8; /*0x70ea8e*/
 LABEL_20:
         if ( !v9 ) /*0x70ea92*/
         {
 LABEL_21:
           a1[112] = 4; /*0x70ea98*/
-          a1[109] = (int)MEMORY[0xA8ED84]; /*0x70eaa8*/
+          a1[109] = (int)g_CurrentFrame; /*0x70eaa8*/
           a1[110] = v21; /*0x70eab3*/
           a1[111] = 64; /*0x70eab7*/
         }
@@ -808,15 +808,15 @@ LABEL_21:
         v11 = a1[111]; /*0x70eac5*/
         if ( v10 == -1 ) /*0x70ead4*/
           goto LABEL_25; /*0x70ead4*/
-        if ( (int)MEMORY[0xA8ED84] - v10 >= v11 ) /*0x70eae0*/
+        if ( (int)g_CurrentFrame - v10 >= v11 ) /*0x70eae0*/
           goto LABEL_26; /*0x70eae0*/
-        v11 -= (int)MEMORY[0xA8ED84] - v10; /*0x70eae2*/
+        v11 -= (int)g_CurrentFrame - v10; /*0x70eae2*/
 LABEL_25:
         if ( !v11 ) /*0x70eae6*/
         {
 LABEL_26:
           a1[112] = 5; /*0x70eaec*/
-          a1[109] = (int)MEMORY[0xA8ED84]; /*0x70eafc*/
+          a1[109] = (int)g_CurrentFrame; /*0x70eafc*/
           a1[110] = v21; /*0x70eb07*/
           a1[111] = 64; /*0x70eb0b*/
         }
@@ -826,9 +826,9 @@ LABEL_26:
         v13 = a1[111]; /*0x70eb19*/
         if ( v12 == -1 ) /*0x70eb28*/
           goto LABEL_30; /*0x70eb28*/
-        if ( (int)MEMORY[0xA8ED84] - v12 >= v13 ) /*0x70eb34*/
+        if ( (int)g_CurrentFrame - v12 >= v13 ) /*0x70eb34*/
           goto LABEL_31; /*0x70eb34*/
-        v13 -= (int)MEMORY[0xA8ED84] - v12; /*0x70eb36*/
+        v13 -= (int)g_CurrentFrame - v12; /*0x70eb36*/
 LABEL_30:
         if ( !v13 ) /*0x70eb3a*/
         {
@@ -836,7 +836,7 @@ LABEL_31:
           if ( Timeout::GetRemaining(a1 + 106) >= 158 ) /*0x70eb50*/
           {
             a1[112] = 4; /*0x70eb66*/
-            a1[109] = (int)MEMORY[0xA8ED84]; /*0x70eb7a*/
+            a1[109] = (int)g_CurrentFrame; /*0x70eb7a*/
             a1[110] = v21; /*0x70eb7c*/
             a1[111] = 64; /*0x70eb7f*/
           }
@@ -851,7 +851,7 @@ LABEL_31:
         {
           a1[112] = 7; /*0x70eb9c*/
           v14 = a1 + 109; /*0x70ebab*/
-          *v14 = MEMORY[0xA8ED84]; /*0x70ebb7*/
+          *v14 = g_CurrentFrame; /*0x70ebb7*/
           v14[1] = v21; /*0x70ebbd*/
           v14[2] = 6; /*0x70ebc0*/
         }
@@ -861,15 +861,15 @@ LABEL_31:
         v16 = a1[111]; /*0x70ebce*/
         if ( v15 == -1 ) /*0x70ebdd*/
           goto LABEL_39; /*0x70ebdd*/
-        if ( (int)MEMORY[0xA8ED84] - v15 >= v16 ) /*0x70ebe9*/
+        if ( (int)g_CurrentFrame - v15 >= v16 ) /*0x70ebe9*/
           goto LABEL_40; /*0x70ebe9*/
-        v16 -= (int)MEMORY[0xA8ED84] - v15; /*0x70ebeb*/
+        v16 -= (int)g_CurrentFrame - v15; /*0x70ebeb*/
 LABEL_39:
         if ( !v16 ) /*0x70ebef*/
         {
 LABEL_40:
           a1[112] = 8; /*0x70ebf5*/
-          a1[109] = (int)MEMORY[0xA8ED84]; /*0x70ec05*/
+          a1[109] = (int)g_CurrentFrame; /*0x70ec05*/
           a1[110] = v21; /*0x70ec10*/
           a1[111] = 4; /*0x70ec14*/
         }
@@ -879,15 +879,15 @@ LABEL_40:
         v18 = a1[111]; /*0x70ec22*/
         if ( v17 == -1 ) /*0x70ec31*/
           goto LABEL_44; /*0x70ec31*/
-        if ( (int)MEMORY[0xA8ED84] - v17 >= v18 ) /*0x70ec3d*/
+        if ( (int)g_CurrentFrame - v17 >= v18 ) /*0x70ec3d*/
           goto LABEL_45; /*0x70ec3d*/
-        v18 -= (int)MEMORY[0xA8ED84] - v17; /*0x70ec3f*/
+        v18 -= (int)g_CurrentFrame - v17; /*0x70ec3f*/
 LABEL_44:
         if ( !v18 ) /*0x70ec43*/
         {
 LABEL_45:
           a1[112] = 9; /*0x70ec45*/
-          a1[109] = (int)MEMORY[0xA8ED84]; /*0x70ec55*/
+          a1[109] = (int)g_CurrentFrame; /*0x70ec55*/
           a1[110] = v21; /*0x70ec60*/
           a1[111] = 20; /*0x70ec64*/
         }
@@ -897,9 +897,9 @@ LABEL_45:
         v20 = a1[111]; /*0x70ec72*/
         if ( v19 != -1 ) /*0x70ec7b*/
         {
-          if ( (int)MEMORY[0xA8ED84] - v19 >= v20 ) /*0x70ec87*/
+          if ( (int)g_CurrentFrame - v19 >= v20 ) /*0x70ec87*/
             goto LABEL_50; /*0x70ec87*/
-          v20 -= (int)MEMORY[0xA8ED84] - v19; /*0x70ec89*/
+          v20 -= (int)g_CurrentFrame - v19; /*0x70ec89*/
         }
         if ( !v20 ) /*0x70ec8d*/
           goto LABEL_50; /*0x70ec8d*/
@@ -937,7 +937,7 @@ DWORD __fastcall TechnoClass_RevealRadarEvent(int a1, int a2)
   {
     MEMORY[0xB0EB3C] = a2; /*0x70f134*/
     MEMORY[0xB0EB38] = a1; /*0x70f13a*/
-    v3 = *((_DWORD *)MEMORY[0x8871E0] + 1536); /*0x70f140*/
+    v3 = *((_DWORD *)g_RulesClass_Instance + 1536); /*0x70f140*/
     Ticks = Timer::GetTicks(); /*0x70f14a*/
     MEMORY[0xB0EA74] = v9; /*0x70f161*/
     v7 = HouseClass_Player; /*0x70f169*/

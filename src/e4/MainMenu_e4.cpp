@@ -54,15 +54,15 @@ LONG __usercall MainMenu_Screen@<eax>(int a1@<ebx>, int a2@<ebp>)
     {
       if ( (unsigned __int8)Dialog::PumpMessages() ) /*0x531db2*/
         dwNewLong = 7; /*0x531dbb*/
-      if ( MEMORY[0x8A00A0] ) /*0x531dca*/
+      if ( g_LoadScreenFlag ) /*0x531dca*/
       {
-        MEMORY[0x8A00A0] = 0; /*0x531dd0*/
+        g_LoadScreenFlag = 0; /*0x531dd0*/
         Screen::Capture(1, 0, a1, a2); /*0x531dd7*/
         Frame::Present(0); /*0x531de6*/
       }
-      if ( (unsigned __int16)EventQueue::Process(MEMORY[0x87F770]) ) /*0x531df1*/
+      if ( (unsigned __int16)EventQueue::Process(g_BinkMoviePlayer) ) /*0x531df1*/
       {
-        v6 = EventQueue::Read(MEMORY[0x87F770]); /*0x531e05*/
+        v6 = EventQueue::Read(g_BinkMoviePlayer); /*0x531e05*/
         a1 = v6; /*0x531e0d*/
         if ( (v6 & 0x800) == 0 ) /*0x531e16*/
         {
@@ -95,7 +95,7 @@ LONG __usercall MainMenu_Screen@<eax>(int a1@<ebx>, int a2@<ebp>)
             *(_BYTE *)*(&MEMORY[0x825C28] + 4 * v8) = *(_BYTE *)*(&MEMORY[0x825C28] + 4 * v8) == 0; /*0x531ebf*/
             memset(MEMORY[0xA8F7B8], 0, sizeof(MEMORY[0xA8F7B8])); /*0x531ec8*/
             PlayVocClass(1.0, 0); /*0x531edb*/
-            MEMORY[0x8A00A0] = 0; /*0x531ee4*/
+            g_LoadScreenFlag = 0; /*0x531ee4*/
             Screen::Capture(1, 0, a1, a2); /*0x531eeb*/
             Frame::Present(0); /*0x531efa*/
           }

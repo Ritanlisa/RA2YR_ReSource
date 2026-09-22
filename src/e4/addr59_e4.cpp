@@ -727,7 +727,7 @@ _DWORD *__fastcall GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
 
   ComPtr::Constructor(v15); /*0x595fc2*/
   v15[0] = &vt_rc_ptr_WDTTerritory; /*0x595fd8*/
-  if ( MEMORY[0xA8B238][0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x595fe5*/
+  if ( g_GameMode_Current[0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x595fe5*/
   {
     v4 = FindWDTTerritoryClass(v16, *(int *)MEMORY[0xA8B240]); /*0x595ff1*/
     ComPtr::Set(v15, v4[1]); /*0x595ffe*/
@@ -758,7 +758,7 @@ _DWORD *__fastcall GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     if ( Surface::LoadToSurfaceSHP((char **)v6, Destination) ) /*0x5960d5*/
     {
       RawFileClass::Construct(v17, (int)stru_829ABC); /*0x5960e7*/
-      CompressScreenshot(v17, *(int **)g_Map_TiberiumConfig, &MEMORY[0x885780]); /*0x5960fc*/
+      CompressScreenshot(v17, *(int **)g_Map_TiberiumConfig, &FileSystem_TEMPERAT_PAL); /*0x5960fc*/
       v8 = g_Map_TiberiumConfig; /*0x596101*/
       if ( g_Map_TiberiumConfig ) /*0x596109*/
       {
@@ -780,10 +780,10 @@ _DWORD *__fastcall GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   off_82AF14 = a2; /*0x596154*/
   dword_ABDFEC = (int)a2; /*0x59615d*/
   if ( dword_ABE04C == -1 ) /*0x596163*/
-    dword_ABE04C = Random::Range(MEMORY[0x886B88], 0, 0xFFFF); /*0x596175*/
+    dword_ABE04C = Random::Range(Randomizer_Global, 0, 0xFFFF); /*0x596175*/
   RandomMap::Generate((int *)dword_ABDFD8, 1, hDlg); /*0x596182*/
   MiniMap::Render((char **)g_Map_TiberiumConfig); /*0x59618d*/
-  if ( MEMORY[0xA8B238][0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x5961a2*/
+  if ( g_GameMode_Current[0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x5961a2*/
     MapPreview::Upload((int *)g_Map_TiberiumConfig); /*0x5961aa*/
   if ( dword_ABE150 ) /*0x5961b7*/
     (**(void (__thiscall ***)(int, int))dword_ABE150)(dword_ABE150, 1); /*0x5961bd*/
@@ -794,7 +794,7 @@ _DWORD *__fastcall GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     v11 = 0; /*0x5961d9*/
   dword_ABE150 = (int)v11; /*0x5961e7*/
   qmemcpy(v11, dword_ABDFD8, 0x178u); /*0x5961ec*/
-  ScenarioClass::SetFileName((char *)MEMORY[0xA8B230], g_INI_Key_RandomMap); /*0x5961f9*/
+  ScenarioClass::SetFileName((char *)g_ScenarioClass_Instance, g_INI_Key_RandomMap); /*0x5961f9*/
   LOBYTE(v12) = 0; /*0x5961fe*/
   ScreenSaver::Process(v12); /*0x596200*/
   v13 = g_Map_TiberiumConfig; /*0x596205*/
@@ -803,7 +803,7 @@ _DWORD *__fastcall GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     if ( *(_DWORD *)g_Map_TiberiumConfig ) /*0x596215*/
     {
       RawFileClass::Construct(v17, (int)stru_829ABC); /*0x596222*/
-      CompressScreenshot(v17, *(int **)g_Map_TiberiumConfig, &MEMORY[0x885780]); /*0x596237*/
+      CompressScreenshot(v17, *(int **)g_Map_TiberiumConfig, &FileSystem_TEMPERAT_PAL); /*0x596237*/
       if ( FindFirstFileA(PathName, &FindFileData) == (HANDLE)-1 ) /*0x596252*/
         CreateDirectoryA(PathName, 0); /*0x59625a*/
       CopyFileA(stru_829ABC, Destination, 0); /*0x59626e*/

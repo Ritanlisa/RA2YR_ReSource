@@ -288,7 +288,7 @@ Pipe *__thiscall GameClass::WriteEncryptedStream(int this, BombClass *Src, signe
   if ( Src && aP2 >= 1 && *(_DWORD *)(this + 56) ) /*0x632de7*/
   {
     v5 = 0; /*0x632df6*/
-    if ( *(_BYTE *)(this + 12) ) /*0x632df2*/
+    if ( this->q003 ) /*0x632df2*/
     {
       if ( *(_DWORD *)(this + 52) ) /*0x632e01*/
       {
@@ -312,7 +312,7 @@ Pipe *__thiscall GameClass::WriteEncryptedStream(int this, BombClass *Src, signe
       else
       {
         memset(aP1, 0, sizeof(aP1)); /*0x632e17*/
-        (*(void (__thiscall **)(_DWORD, Pipe *, int))(**(_DWORD **)(this + 16) + 8))(*(_DWORD *)(this + 16), aP1, 56); /*0x632e21*/
+        (*(void (__thiscall **)(_DWORD, Pipe *, int))(**(_DWORD **)(this + 16) + 8))(this->q004, aP1, 56); /*0x632e21*/
         v6 = *(_DWORD *)(this + 56); /*0x632e24*/
         if ( v6 ) /*0x632e29*/
           v7 = (Pipe *)((*(_DWORD *)(v6 + 512) - 1) / 8 * (55 / ((*(_DWORD *)(v6 + 512) - 1) / 8) + 1)); /*0x632e4a*/
@@ -322,7 +322,7 @@ Pipe *__thiscall GameClass::WriteEncryptedStream(int this, BombClass *Src, signe
         v5 = Delegate::Dispatch((_DWORD *)this, (Pipe *)(this + 60), v8); /*0x632e65*/
         GameClass::processFrame((_DWORD *)(this + 20), (int)aP1, 56); /*0x632e6d*/
       }
-      *(_BYTE *)(this + 12) = 0; /*0x632eea*/
+      this->q003 = 0; /*0x632eea*/
     }
     return (Pipe *)((char *)Delegate::Dispatch((_DWORD *)this, (Pipe *)v3, (Pipe *)aP2) + (_DWORD)v5); /*0x632f0a*/
   }
@@ -362,7 +362,7 @@ int __thiscall GameClass::ReadEncryptedStream(int this, char *a2, signed int Siz
   if ( !v6 ) /*0x633160*/
     return Delegate::Invoke((_DWORD *)this, (int)a2, (Straw *)Size); /*0x6332e5*/
   v16 = 0; /*0x633169*/
-  if ( *(_BYTE *)(this + 12) ) /*0x633166*/
+  if ( this->q003 ) /*0x633166*/
   {
     if ( *(_DWORD *)(this + 52) == 1 ) /*0x63317d*/
     {
@@ -384,7 +384,7 @@ int __thiscall GameClass::ReadEncryptedStream(int this, char *a2, signed int Siz
     else
     {
       memset(Src, 0, sizeof(Src)); /*0x63320d*/
-      (*(void (__thiscall **)(_DWORD, Pipe *, int))(**(_DWORD **)(this + 16) + 8))(*(_DWORD *)(this + 16), Src, 56); /*0x633217*/
+      (*(void (__thiscall **)(_DWORD, Pipe *, int))(**(_DWORD **)(this + 16) + 8))(this->q004, Src, 56); /*0x633217*/
       v12 = *(_DWORD *)(this + 56); /*0x63321a*/
       if ( v12 ) /*0x63321f*/
         v13 = (Pipe *)((*(_DWORD *)(v12 + 512) - 1) / 8 * (55 / ((*(_DWORD *)(v12 + 512) - 1) / 8) + 1)); /*0x633240*/
@@ -396,7 +396,7 @@ int __thiscall GameClass::ReadEncryptedStream(int this, char *a2, signed int Siz
       GameClass::updateUI((_DWORD *)(this + 20), (int)Src, 56); /*0x633268*/
     }
     v4 = Size; /*0x63326d*/
-    *(_BYTE *)(this + 12) = 0; /*0x633274*/
+    this->q003 = 0; /*0x633274*/
   }
   v15 = *(_DWORD *)(this + 320); /*0x633278*/
   if ( v15 > 0 ) /*0x633280*/
@@ -469,13 +469,13 @@ void GameClass_Shutdown()
   }
   CoDisconnectObject(&unk_89A29C, 0); /*0x6becc1*/
   OleUninitialize(); /*0x6becc7*/
-  if ( MEMORY[0x887640] ) /*0x6becd5*/
+  if ( g_WWMouseClass_Instance ) /*0x6becd5*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 20))(MEMORY[0x887640]); /*0x6becd9*/
-    if ( MEMORY[0x887640] ) /*0x6bece4*/
-      (**(void (__thiscall ***)(int, int))MEMORY[0x887640])(MEMORY[0x887640], 1); /*0x6bece9*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 20))(g_WWMouseClass_Instance); /*0x6becd9*/
+    if ( g_WWMouseClass_Instance ) /*0x6bece4*/
+      (**(void (__thiscall ***)(int, int))g_WWMouseClass_Instance)(g_WWMouseClass_Instance, 1); /*0x6bece9*/
   }
-  MEMORY[0x887640] = 0; /*0x6becf0*/
+  g_WWMouseClass_Instance = 0; /*0x6becf0*/
   if ( MEMORY[0xB0BCF4] ) /*0x6becfc*/
   {
     if ( MEMORY[0xB0BCF0] ) /*0x6bed06*/
@@ -524,7 +524,7 @@ __int16 __thiscall sub_74F960(int this)
     if ( FileClass::Open(v5, 0) ) /*0x74f988*/
     {
       FileClass::Read(v5, (char *)(this + 42), 16); /*0x74f99b*/
-      for ( *(_BYTE *)(this + 57) = 0; /*0x74f9b5*/
+      for ( this->q039 = 0; /*0x74f9b5*/
             *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) == 13;
             *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) = 0 )
       {
@@ -533,7 +533,7 @@ __int16 __thiscall sub_74F960(int this)
     }
     else
     {
-      *(_BYTE *)(this + 42) = 0; /*0x74f9d9*/
+      this->q02A = 0; /*0x74f9d9*/
     }
     RawFileClass::Dtor(v5); /*0x74f9e0*/
     v2 = *(_DWORD *)(this + 68); /*0x74f9e5*/
@@ -568,7 +568,7 @@ __int16 __thiscall sub_74FA20(int this)
     if ( FileClass::Open(v5, 0) ) /*0x74fa48*/
     {
       FileClass::Read(v5, (char *)(this + 42), 16); /*0x74fa5b*/
-      for ( *(_BYTE *)(this + 57) = 0; /*0x74fa75*/
+      for ( this->q039 = 0; /*0x74fa75*/
             *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) == 13;
             *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) = 0 )
       {
@@ -577,7 +577,7 @@ __int16 __thiscall sub_74FA20(int this)
     }
     else
     {
-      *(_BYTE *)(this + 42) = 0; /*0x74fa99*/
+      this->q02A = 0; /*0x74fa99*/
     }
     RawFileClass::Dtor(v5); /*0x74faa0*/
     v2 = *(_DWORD *)(this + 68); /*0x74faa5*/

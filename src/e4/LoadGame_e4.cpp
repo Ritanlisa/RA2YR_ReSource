@@ -187,9 +187,9 @@ char __thiscall LoadGame::Start(LPSTREAM this)
   int v70[4]; // [esp+36Ch] [ebp-10h] BYREF
 
   ResetScenario();
-  ScenarioClass::SaveLoad_Prefix_0((int)MEMORY[0xA8B230], (int)this);
-  MEMORY[0xA8ED9C] = *((_BYTE *)MEMORY[0xA8B230] + 13730);
-  result = MixFile::LoadSide(*((_DWORD *)MEMORY[0xA8B230] + 3374));
+  ScenarioClass::SaveLoad_Prefix_0((int)g_ScenarioClass_Instance, (int)this);
+  g_GameActive = *((_BYTE *)g_ScenarioClass_Instance + 13730);
+  result = MixFile::LoadSide(*((_DWORD *)g_ScenarioClass_Instance + 3374));
   if ( result )
   {
     Viewport = Display::GetViewport(v69);
@@ -208,16 +208,16 @@ char __thiscall LoadGame::Start(LPSTREAM this)
     v68[2] = v6;
     v70[3] = v7;
     v69[2] = v6;
-    v67[3] = MEMORY[0x886FBC];
-    v68[3] = MEMORY[0x886FBC];
-    v69[3] = MEMORY[0x886FBC];
+    v67[3] = g_CreditsScreenConfig;
+    v68[3] = g_CreditsScreenConfig;
+    v69[3] = g_CreditsScreenConfig;
     v69[0] = 0;
     v69[1] = 0;
-    AllocateSurfaceScreenSurfaces((int)&MEMORY[0x886FB0], (int)v69, (int)v68, (int)v67, 0);
+    AllocateSurfaceScreenSurfaces((int)&DSurface_WindowBounds, (int)v69, (int)v68, (int)v67, 0);
     TacticalClass::SetViewDimensions(v70);
     LoadGame::LoadBlock68(&MEMORY[0x8A38E0], (int)this);
-    LoadTheaterClassMIX(*((_DWORD *)MEMORY[0xA8B230] + 1174));
-    RulesClass::SaveLoad_Prefix_0(&MEMORY[0x8871E0]->DetailMinFrameRateNormal, (int)this);
+    LoadTheaterClassMIX(*((_DWORD *)g_ScenarioClass_Instance + 1174));
+    RulesClass::SaveLoad_Prefix_0(&g_RulesClass_Instance->DetailMinFrameRateNormal, (int)this);
     if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
       return 0;
     v8 = 0;
@@ -248,11 +248,11 @@ LABEL_10:
     if ( Game::SerializeGameSaveState(this) < 0 )
       return 0;
     MapClass::BuildSubzones(&MEMORY[0x87F7E8]);
-    LayerClass::Load(&MEMORY[0x87F778], this);
-    if ( MEMORY[0x887324] )
+    LayerClass::Load(&g_GameConfigManager, this);
+    if ( g_TacticalClass_Instance )
     {
-      (*(void (__thiscall **)(LPPERSISTSTREAM, int))(*(_DWORD *)MEMORY[0x887324] + 32))(MEMORY[0x887324], 1);
-      MEMORY[0x887324] = 0;
+      (*(void (__thiscall **)(LPPERSISTSTREAM, int))(*(_DWORD *)g_TacticalClass_Instance + 32))(g_TacticalClass_Instance, 1);
+      g_TacticalClass_Instance = 0;
     }
     if ( OleLoadFromStream(this, &IID_IUnknown, &v66) < 0 )
       return 0;
@@ -866,7 +866,7 @@ LABEL_205:
       if ( v57 > 0 )
       {
         do
-          ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)MEMORY[0xA83D54] + v58++);
+          ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)MEMORY[0xA83D54] + v58++);
         while ( v58 < v64 );
       }
     }
@@ -910,7 +910,7 @@ LABEL_222:
       if ( v62 > 0 )
       {
         do
-          ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)unk_8B41E4 + v63++);
+          ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)unk_8B41E4 + v63++);
         while ( v63 < v64 );
       }
     }
@@ -946,8 +946,8 @@ LABEL_222:
           return 0;
         if ( Stream::ReadOLEObjects(this) < 0 )
           return 0;
-        LoadGame::ClearAllSlots(MEMORY[0x887888]);
-        if ( LoadGame::LoadIteratedData((char *)MEMORY[0x887888], (int)this) < 0 )
+        LoadGame::ClearAllSlots(g_CellClassManager);
+        if ( LoadGame::LoadIteratedData((char *)g_CellClassManager, (int)this) < 0 )
           return 0;
         LoadGame::CleanupArray(&g_MissionQueueFrame);
         if ( LoadGame::LoadPointArray(&g_MissionQueueFrame, (int)this) < 0 )
@@ -959,7 +959,7 @@ LABEL_222:
           return 0;
         if ( Stream::ReadOLEObjects(this) < 0 )
           return 0;
-        if ( MEMORY[0xA8B238][0] == 5 )
+        if ( g_GameMode_Current[0] == 5 )
         {
           Debug::Log();
           if ( !LoadGame::LoadBlock300(MEMORY[0xA8B250], (int)this) )
@@ -975,7 +975,7 @@ LABEL_222:
         if ( LoadGame_Start((int)this) < 0 )
           return 0;
         MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2);
-        if ( !MEMORY[0xA8B238][0] )
+        if ( !g_GameMode_Current[0] )
           MEMORY[0xABCE08] = 1;
         return 1;
       }
@@ -1123,8 +1123,8 @@ int __thiscall sub_7533F0(void *this)
     *(_DWORD *)(MEMORY[0xB1D4C4] + 80) = 2; /*0x7533ff*/
     MEMORY[0xB1D4C4] = 0; /*0x753406*/
   }
-  if ( MEMORY[0xB1D4CC] ) /*0x753418*/
-    Audio::Release(MEMORY[0xB1D4CC]); /*0x75341a*/
+  if ( g_InfantryDrawState ) /*0x753418*/
+    Audio::Release(g_InfantryDrawState); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
   result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q00C)(this, &v3, 4, 0); /*0x753430*/
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
@@ -1139,8 +1139,8 @@ int __thiscall sub_7533F0(void *this)
         result = (*(int (__stdcall **)(void *, _DWORD *, int, _DWORD))(this->q00C)(this, v4, 12, 0); /*0x75347c*/
         if ( result >= 0 ) /*0x753481*/
         {
-          if ( MEMORY[0xB1D4CC] && v4[0] >= 0 && v4[0] < MEMORY[0xB1D4B0] ) /*0x75349a*/
-            Audio_Load(*((_DWORD *)MEMORY[0xB1D4A4] + v4[0]), v4[1], v4[2]); /*0x7534ae*/
+          if ( g_InfantryDrawState && v4[0] >= 0 && v4[0] < g_InfantrySelectState ) /*0x75349a*/
+            Audio_Load(*((_DWORD *)g_InfantryRenderPool + v4[0]), v4[1], v4[2]); /*0x7534ae*/
           result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q00C)(this, &v3, 4, 0); /*0x7534bf*/
           if ( result >= 0 ) /*0x7534c4*/
             continue; /*0x7534c4*/

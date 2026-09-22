@@ -3358,14 +3358,14 @@ int __thiscall AircraftClass::MissionDispatch(int this, _DWORD *a2, int a3, void
   int Member; // eax
   int v16; // eax
 
-  switch ( *(_DWORD *)(this + 172) )
+  switch ( this->currentMission )
   {
     case 4:
     case 0x1A:
     case 0x1B:
     case 0x1E:
     case 0x1F:
-      if ( *(_DWORD *)(this + 660) )
+      if ( this->airstrike )
         goto LABEL_4;
 LABEL_3:
       result = 0;
@@ -3375,25 +3375,25 @@ LABEL_4:
       switch ( a3 )
       {
         case 8:
-          if ( !*(_BYTE *)(*(_DWORD *)(this + 1732) + 3580)
+          if ( !*(_BYTE *)(this->Type + 3580)
             || (*(int (__thiscall **)(int))(this->q184)(this) != 2
-            || !*(_BYTE *)(this + 1048)
-            || (!*(_DWORD *)(this + 280) || (_DWORD *)CCINIClass::GetDB((_DWORD *)(this + 276)) != a2)
+            || !this->isTether
+            || (!this->q118 || (_DWORD *)CCINIClass::GetDB((_DWORD *)(this + 276)) != a2)
             && *(_DWORD **)(this + 1444) != a2 )
           {
             return FootClass::MissionDispatch((int *)this, a2, a3, a4);
           }
           return 10;
         case 14:
-          v14 = *(_DWORD *)(*(_DWORD *)(this + 1732) + 1504);
-          if ( v14 <= 0 || *(_DWORD *)(this + 276) >= v14 )
+          v14 = *(_DWORD *)(this->Type + 1504);
+          if ( v14 <= 0 || this->inAirFlag >= v14 )
             return FootClass::MissionDispatch((int *)this, a2, a3, a4);
           FootClass::MissionDispatch((int *)this, a2, a3, a4);
-          if ( !*(_DWORD *)(this + 1652) )
+          if ( !this->locomotor )
             WinAPI::Wrapper(-2147467261);
-          if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652)) )
+          if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(this->locomotor) )
             return 1;
-          RateScaler::Init((_BYTE *)(this + 848), *(double *)(*(_DWORD *)(this + 1732) + 968));
+          RateScaler::Init((_BYTE *)(this + 848), *(double *)(this->Type + 968));
           if ( (*(int (__thiscall **)(int, int, _DWORD *))(this->temporalTargetingMe)(this, 19, a2) != 1 )
             return 1;
           *a4 = (void *)this;
@@ -3409,13 +3409,13 @@ LABEL_4:
             return 1;
           }
         case 15:
-          if ( !*(_DWORD *)(*(_DWORD *)(this + 1732) + 1504)
+          if ( !*(_DWORD *)(this->Type + 1504)
             || !a2
             || !Object::IsAlliedWithObjectHouse(*(_DWORD **)(this + 540), (int)a2) )
           {
             goto LABEL_3;
           }
-          v16 = (*(_DWORD *)(this + 276) >= *(_DWORD *)(*(_DWORD *)(this + 1732) + 1504)) - 1;
+          v16 = (this->inAirFlag >= *(_DWORD *)(this->Type + 1504)) - 1;
           LOBYTE(v16) = v16 & 0xF7;
           return v16 + 10;
         case 18:
@@ -3439,16 +3439,16 @@ LABEL_4:
           break;
         case 19:
           FootClass::MissionDispatch((int *)this, a2, a3, a4);
-          if ( !*(_DWORD *)(this + 1652) )
+          if ( !this->locomotor )
             WinAPI::Wrapper(-2147467261);
-          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652)) )
+          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(this->locomotor) )
             return 1;
-          v11 = *(_DWORD *)(this + 1444);
+          v11 = this->movementDestination;
           if ( !v11 )
             return 1;
-          if ( *(_BYTE *)(*(_DWORD *)(this + 1732) + 3597)
+          if ( *(_BYTE *)(this->Type + 3597)
             && (*(int (__thiscall **)(int))(*(_DWORD *)v11 + 44))(v11) == 11
-            && *(_DWORD *)(this + 1444) == (*(int (__thiscall **)(int))(this->q1BC)(this) )
+            && this->movementDestination == (*(int (__thiscall **)(int))(this->q1BC)(this) )
           {
             return 1;
           }
@@ -3457,8 +3457,8 @@ LABEL_4:
             return 10;
           }
         case 21:
-          v12 = *(_DWORD *)(this + 1732);
-          if ( *(_DWORD *)(this + 276) == *(_DWORD *)(v12 + 1504) )
+          v12 = this->Type;
+          if ( this->inAirFlag == *(_DWORD *)(v12 + 1504) )
             Timer::StartDouble((_BYTE *)(this + 848), *(double *)(v12 + 968));
           if ( a2 )
           {
@@ -3482,17 +3482,17 @@ LABEL_4:
           (*(void (__thiscall **)(int, int))(this->temporalUsing)(this, 3);
           return FootClass::MissionDispatch((int *)this, a2, a3, a4);
         case 29:
-          if ( *(_DWORD *)(this + 692) )
+          if ( this->q2B4 )
             return 10;
           else
-            return *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) != *(_DWORD *)(this + 764) ? 10 : 1;
+            return *(_DWORD *)(this->Type + 1668) != this->pitchAngle ? 10 : 1;
         case 31:
-          if ( *(_DWORD *)(this + 764) >= *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) / 2 && *(_DWORD *)(this + 692) )
+          if ( this->pitchAngle >= *(_DWORD *)(this->Type + 1668) / 2 && this->q2B4 )
             return 1;
           else
             return FootClass::MissionDispatch((int *)this, a2, a3, a4);
         case 33:
-          return *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) != *(_DWORD *)(this + 764) ? 10 : 1;
+          return *(_DWORD *)(this->Type + 1668) != this->pitchAngle ? 10 : 1;
         default:
           return FootClass::MissionDispatch((int *)this, a2, a3, a4);
       }
@@ -4236,14 +4236,14 @@ int __thiscall AircraftClass::_vt122(int this, int a2, int a3)
 {
   int result; // eax
 
-  switch ( *(_DWORD *)(this + 172) )
+  switch ( this->currentMission )
   {
     case 4:
     case 0x1A:
     case 0x1B:
     case 0x1E:
     case 0x1F:
-      if ( *(_DWORD *)(this + 660) )
+      if ( this->airstrike )
         goto LABEL_4;
       result = a2 - 4;
       switch ( a2 )
@@ -4781,15 +4781,15 @@ int __thiscall AircraftClass::GetMissionTimer(int this)
   int v16; // [esp+Ch] [ebp-8h]
   int v17; // [esp+10h] [ebp-4h]
 
-  v2 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 1732) + 188))(*(_DWORD *)(this + 1732));
+  v2 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 1732) + 188))(this->Type);
   if ( (*(int (__thiscall **)(int))(this->forceShielded)(this) == v2 )
   {
-    if ( *(_DWORD *)(this + 1492) )
+    if ( this->team )
     {
-      if ( *(_DWORD *)(this + 1444) )
+      if ( this->movementDestination )
       {
         v3 = *(_DWORD *)this;
-        *(_BYTE *)(this + 1748) = 1;
+        this->AircraftClass_field_bool_6D4 = 1;
         (*(void (__thiscall **)(int, int, _DWORD))(v3 + 488))(this, 2, 0);
       }
       MissionControl = MissionClass::GetMissionControl((_DWORD *)this);
@@ -4797,10 +4797,10 @@ int __thiscall AircraftClass::GetMissionTimer(int this)
     }
     else if ( *(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(this->barrelRecoil)(this, 0) )
     {
-      if ( !*(_DWORD *)(this + 1492) )
+      if ( !this->team )
       {
         v8 = *(_DWORD *)this;
-        *(_BYTE *)(this + 1748) = 1;
+        this->AircraftClass_field_bool_6D4 = 1;
         (*(void (__thiscall **)(int, _DWORD, int))(v8 + 1156))(this, 0, 1);
       }
       return 1;
@@ -4808,9 +4808,9 @@ int __thiscall AircraftClass::GetMissionTimer(int this)
     else
     {
       v6 = *(_DWORD *)this;
-      v15 = *(_DWORD *)(this + 156);
-      v16 = *(_DWORD *)(this + 160);
-      v17 = *(_DWORD *)(this + 164);
+      v15 = this->location;
+      v16 = this->q0A0;
+      v17 = this->q0A4;
       v7 = Coord::To_Cell(&MEMORY[0x87F7E8], &v15);
       (*(void (__thiscall **)(int, void *, int))(v6 + 1152))(this, v7, 1);
       (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 2, 0);
@@ -4819,14 +4819,14 @@ int __thiscall AircraftClass::GetMissionTimer(int this)
   }
   if ( MEMORY[0x889ECC] )
   {
-    if ( *(_DWORD *)(this + 764) || !(*(unsigned __int8 (__thiscall **)(int))(this->isBerserk)(this) )
+    if ( this->pitchAngle || !(*(unsigned __int8 (__thiscall **)(int))(this->isBerserk)(this) )
       goto LABEL_14;
 LABEL_26:
     if ( !Team::AllMembersValid((int *)this) )
     {
       v11 = (*(int (__thiscall **)(int, int, _DWORD, _DWORD))(this->unknownShort528)(
               this,
-              *(_DWORD *)(this + 1732) + 1000,
+              this->Type + 1000,
               0,
               0);
       if ( v11 )
@@ -4842,19 +4842,19 @@ LABEL_26:
   if ( MEMORY[0x889ECD] )
   {
     if ( (*(unsigned __int8 (__thiscall **)(int))(this->isBerserk)(this)
-      && *(_DWORD *)(this + 764) < *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) / 2 )
+      && this->pitchAngle < *(_DWORD *)(this->Type + 1668) / 2 )
     {
       goto LABEL_26;
     }
   }
   else if ( (*(unsigned __int8 (__thiscall **)(int))(this->isBerserk)(this)
-         && *(_DWORD *)(this + 764) < *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) )
+         && this->pitchAngle < *(_DWORD *)(this->Type + 1668) )
   {
     goto LABEL_26;
   }
 LABEL_14:
-  v9 = *(_DWORD *)(this + 764);
-  if ( v9 != -1 && v9 < *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) / 2 )
+  v9 = this->pitchAngle;
+  if ( v9 != -1 && v9 < *(_DWORD *)(this->Type + 1668) / 2 )
   {
     if ( Team::AllMembersValid((int *)this) )
     {
@@ -4866,7 +4866,7 @@ LABEL_14:
       }
     }
   }
-  if ( *(_DWORD *)(this + 692) )
+  if ( this->q2B4 )
   {
     (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 1, 0);
     return 1;
@@ -4877,9 +4877,9 @@ LABEL_14:
     {
       if ( !(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) )
       {
-        v15 = *(_DWORD *)(this + 156);
-        v16 = *(_DWORD *)(this + 160);
-        v17 = *(_DWORD *)(this + 164);
+        v15 = this->location;
+        v16 = this->q0A0;
+        v17 = this->q0A4;
         v12 = CellClass::ScanOccupiers(&v15);
         if ( v12 )
         {

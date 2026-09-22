@@ -43,9 +43,9 @@ LABEL_9:
   *(_DWORD *)&v9[v12] |= 1u; /*0x48b7b7*/
   *(_DWORD *)(v12 + this->q034) &= ~2u; /*0x48b7c4*/
   *(_DWORD *)(this->q034 + v12) &= ~4u; /*0x48b7d2*/
-  v13 = MEMORY[0x887340]; /*0x48b7d9*/
-  if ( MEMORY[0x887338] != -1 ) /*0x48b7e2*/
-    v13 += Timer::GetTicks() - MEMORY[0x887338]; /*0x48b7f4*/
+  v13 = g_PerformanceTickOffset; /*0x48b7d9*/
+  if ( g_LastPerformanceTick != -1 ) /*0x48b7e2*/
+    v13 += Timer::GetTicks() - g_LastPerformanceTick; /*0x48b7f4*/
   *(_DWORD *)(this->q034 + v12 + 4) = v13; /*0x48b7fb*/
   *(_DWORD *)(this->q034 + v12 + 8) = a3; /*0x48b806*/
   qmemcpy(*(void **)(this->q034 + v12 + 12), a2, a3); /*0x48b816*/
@@ -126,27 +126,27 @@ int ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ConnectionClass::sendAck(int this, AnimClass *aP1, AnimClass *aP2, AnimClass *aP3, AnimClass *aP4)
 {
-  **(_WORD **)(this + 32) = *(_WORD *)(this + 36); /*0x48bf4b*/
+  **(_WORD **)(this + 32) = this->q024; /*0x48bf4b*/
   if ( aP3 ) /*0x48bf54*/
   {
-    *(_BYTE *)(*(_DWORD *)(this + 32) + 2) = 0; /*0x48bf59*/
-    *(_DWORD *)(*(_DWORD *)(this + 32) + 4) = *(_DWORD *)(this + 64); /*0x48bf63*/
+    *(_BYTE *)(this->q020 + 2) = 0; /*0x48bf59*/
+    *(_DWORD *)(this->q020 + 4) = this->q040; /*0x48bf63*/
     Debug::Log(); /*0x48bf6f*/
   }
   else
   {
-    *(_BYTE *)(*(_DWORD *)(this + 32) + 2) = 1; /*0x48bf7c*/
-    *(_DWORD *)(*(_DWORD *)(this + 32) + 4) = *(_DWORD *)(this + 60); /*0x48bf86*/
+    *(_BYTE *)(this->q020 + 2) = 1; /*0x48bf7c*/
+    *(_DWORD *)(this->q020 + 4) = this->q03C; /*0x48bf86*/
   }
-  if ( MEMORY[0xA8B238] == (CellStruct *)4 && MEMORY[0xA8D63C].__pad_524[64] ) /*0x48bf99*/
-    *(_BYTE *)(*(_DWORD *)(this + 32) + 3) = (_BYTE)aP4; /*0x48bfa2*/
-  if ( *(_DWORD *)(this + 28) < (int)aP2 ) /*0x48bfae*/
+  if ( g_GameMode_Current == (CellStruct *)4 && MEMORY[0xA8D63C].__pad_524[64] ) /*0x48bf99*/
+    *(_BYTE *)(this->q020 + 3) = (_BYTE)aP4; /*0x48bfa2*/
+  if ( this->q01C < (int)aP2 ) /*0x48bfae*/
   {
     Debug::Log(); /*0x48bfb6*/
     Debug::Log(); /*0x48bfc1*/
     return 0; /*0x48bfcd*/
   }
-  qmemcpy((void *)(*(_DWORD *)(this + 32) + 14), aP1, (unsigned int)aP2); /*0x48bfe5*/
+  qmemcpy((void *)(this->q020 + 14), aP1, (unsigned int)aP2); /*0x48bfe5*/
   if ( !ConnectionClass::queueSendPacket( /*0x48c006*/
           *(int **)(this + 4),
           *(const void **)(this + 32),
@@ -156,9 +156,9 @@ int __thiscall ConnectionClass::sendAck(int this, AnimClass *aP1, AnimClass *aP2
           0) )
     return 0; /*0x48c006*/
   if ( aP3 ) /*0x48c00e*/
-    ++*(_DWORD *)(this + 64); /*0x48c015*/
+    ++this->q040; /*0x48c015*/
   else
-    ++*(_DWORD *)(this + 60); /*0x48c026*/
+    ++this->q03C; /*0x48c026*/
   return 1; /*0x48bfc9*/
 }
 }
@@ -420,9 +420,9 @@ int __thiscall ConnectionClass_ServiceSendQueue(unsigned int *this)
       {
         if ( !*(_BYTE *)(*(_DWORD *)(TileIndex + 20) + 2) ) /*0x48c40d*/
         {
-          v6 = MEMORY[0x887340]; /*0x48c419*/
-          if ( MEMORY[0x887338] != -1 ) /*0x48c422*/
-            v6 += Timer::GetTicks() - MEMORY[0x887338]; /*0x48c434*/
+          v6 = g_PerformanceTickOffset; /*0x48c419*/
+          if ( g_LastPerformanceTick != -1 ) /*0x48c422*/
+            v6 += Timer::GetTicks() - g_LastPerformanceTick; /*0x48c434*/
           ConnectionClass::initQueue(v6 - *(_DWORD *)(v5 + 4)); /*0x48c43f*/
         }
         PacketQueue::ExtractEntry(0, 0, v2--, 0, 0, 0); /*0x48c452*/
@@ -441,9 +441,9 @@ int __thiscall ConnectionClass_ServiceSendQueue(unsigned int *this)
     v8 = Terrain::GetTileIndex((_DWORD *)this->PlayerIndex, v7); /*0x48c47e*/
     if ( (*(_BYTE *)v8 & 2) == 0 ) /*0x48c483*/
     {
-      v9 = MEMORY[0x887340]; /*0x48c48e*/
-      if ( MEMORY[0x887338] != -1 ) /*0x48c497*/
-        v9 += Timer::GetTicks() - MEMORY[0x887338]; /*0x48c4a9*/
+      v9 = g_PerformanceTickOffset; /*0x48c48e*/
+      if ( g_LastPerformanceTick != -1 ) /*0x48c497*/
+        v9 += Timer::GetTicks() - g_LastPerformanceTick; /*0x48c4a9*/
       v10 = *(_DWORD *)(v8 + 8); /*0x48c4ab*/
       if ( v9 - v10 > this->q028 ) /*0x48c4b7*/
       {

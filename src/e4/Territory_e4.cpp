@@ -16,7 +16,7 @@ char __thiscall Territory_WorldDominationTour_8_::_vt01(int this, char a2)
   DWORD v6; // [esp+4h] [ebp-8h]
 
   LOBYTE(Ticks) = a2; /*0x7718a0*/
-  *(_BYTE *)(this + 12) = a2; /*0x7718a9*/
+  this->q00C = a2; /*0x7718a9*/
   if ( !a2 ) /*0x7718ac*/
   {
     v3 = *(_DWORD **)(this + 28); /*0x7718af*/

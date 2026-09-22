@@ -194,15 +194,15 @@ bool __stdcall AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
   v8 = *(_DWORD *)(v6 + 56); /*0x41f11e*/
   if ( v7 == -1 ) /*0x41f124*/
     goto LABEL_12; /*0x41f124*/
-  if ( (int)MEMORY[0xA8ED84] - v7 < v8 ) /*0x41f130*/
+  if ( (int)g_CurrentFrame - v7 < v8 ) /*0x41f130*/
   {
-    v8 -= (int)MEMORY[0xA8ED84] - v7; /*0x41f132*/
+    v8 -= (int)g_CurrentFrame - v7; /*0x41f132*/
 LABEL_12:
     v9 = v8; /*0x41f134*/
-    return 1.0 - *(float *)&MEMORY[0x8871E0]->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f134*/
+    return 1.0 - *(float *)&g_RulesClass_Instance->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f134*/
   }
   v9 = 0; /*0x41f171*/
-  return 1.0 - *(float *)&MEMORY[0x8871E0]->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f167*/
+  return 1.0 - *(float *)&g_RulesClass_Instance->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f167*/
 }
 }
 
@@ -238,15 +238,15 @@ bool __stdcall AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
   v8 = *(_DWORD *)(v6 + 56); /*0x41f1ce*/
   if ( v7 == -1 ) /*0x41f1d4*/
     goto LABEL_12; /*0x41f1d4*/
-  if ( (int)MEMORY[0xA8ED84] - v7 < v8 ) /*0x41f1e0*/
+  if ( (int)g_CurrentFrame - v7 < v8 ) /*0x41f1e0*/
   {
-    v8 -= (int)MEMORY[0xA8ED84] - v7; /*0x41f1e2*/
+    v8 -= (int)g_CurrentFrame - v7; /*0x41f1e2*/
 LABEL_12:
     v9 = v8; /*0x41f1e4*/
-    return 1.0 - *(float *)&MEMORY[0x8871E0]->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f1e4*/
+    return 1.0 - *(float *)&g_RulesClass_Instance->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f1e4*/
   }
   v9 = 0; /*0x41f221*/
-  return 1.0 - *(float *)&MEMORY[0x8871E0]->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f217*/
+  return 1.0 - *(float *)&g_RulesClass_Instance->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f217*/
 }
 }
 
@@ -346,7 +346,7 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
           a2,
           (unsigned __int8 *)aAitriggertypes,
           (unsigned __int8 *)(this + 36),
-          &MEMORY[0x889F64],
+          &g_INI_DefaultBuffer,
           String,
           512) )
     return 0; /*0x41f5b9*/
@@ -358,7 +358,7 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
   if ( Destination != (char *)(this + 100) ) /*0x41f602*/
   {
     qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x41f60d*/
-    *(_BYTE *)(this + 148) = v46; /*0x41f60f*/
+    this->q094 = v46; /*0x41f60f*/
   }
   v4 = strtok(0, MEMORY[0x817F70]); /*0x41f616*/
   if ( !v4 ) /*0x41f620*/
@@ -366,38 +366,38 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
   strncpy(v42, v4, 0x18u); /*0x41f62e*/
   v43 = 0; /*0x41f63a*/
   String::Trim(v42); /*0x41f63e*/
-  *(_DWORD *)(this + 220) = 0; /*0x41f643*/
+  this->q0DC = 0; /*0x41f643*/
   if ( _strcmpi(v42, off_818114) ) /*0x41f655*/
-    *(_DWORD *)(this + 220) = TeamTypeClass::FindByName(v42); /*0x41f66a*/
+    this->q0DC = TeamTypeClass::FindByName(v42); /*0x41f66a*/
   v5 = strtok(0, MEMORY[0x817F70]); /*0x41f676*/
   if ( !v5 ) /*0x41f680*/
     return 0; /*0x41f680*/
   strncpy(v42, v5, 0x18u); /*0x41f68e*/
   v43 = 0; /*0x41f69a*/
   String::Trim(v42); /*0x41f69e*/
-  *(_DWORD *)(this + 160) = 0; /*0x41f6a3*/
-  *(_DWORD *)(this + 168) = -1; /*0x41f6a9*/
+  this->q0A0 = 0; /*0x41f6a3*/
+  this->q0A8 = -1; /*0x41f6a9*/
   if ( _strcmpi(v42, off_818118) ) /*0x41f6bf*/
   {
     if ( _strcmpi(v42, off_818114) ) /*0x41f6e2*/
     {
       v6 = SuperWeaponTypeClass::FindByName(v42); /*0x41f6f2*/
-      *(_DWORD *)(this + 168) = v6; /*0x41f6fa*/
+      this->q0A8 = v6; /*0x41f6fa*/
       if ( v6 != -1 ) /*0x41f700*/
-        *(_DWORD *)(this + 160) = 1; /*0x41f702*/
+        this->q0A0 = 1; /*0x41f702*/
     }
   }
   else
   {
-    *(_DWORD *)(this + 160) = 2; /*0x41f6cb*/
+    this->q0A0 = 2; /*0x41f6cb*/
   }
   if ( !strtok(0, MEMORY[0x817F70]) ) /*0x41f712*/
     return 0; /*0x41f712*/
-  *(_DWORD *)(this + 176) = 0; /*0x41f728*/
+  this->q0B0 = 0; /*0x41f728*/
   v7 = strtok(0, MEMORY[0x817F70]); /*0x41f72e*/
   if ( !v7 ) /*0x41f738*/
     return 0; /*0x41f738*/
-  *(_DWORD *)(this + 152) = atoi(v7); /*0x41f74a*/
+  this->q098 = atoi(v7); /*0x41f74a*/
   v8 = strtok(0, MEMORY[0x817F70]); /*0x41f750*/
   if ( !v8 ) /*0x41f75a*/
     return 0; /*0x41f75a*/
@@ -432,7 +432,7 @@ LABEL_25:
     goto LABEL_25; /*0x41f7d5*/
   }
 LABEL_26:
-  *(_DWORD *)(this + 216) = v9; /*0x41f7de*/
+  this->q036 = v9; /*0x41f7de*/
   v14 = strtok(0, MEMORY[0x817F70]); /*0x41f7ea*/
   if ( !v14 ) /*0x41f7f4*/
     return 0; /*0x41faf5*/
@@ -493,11 +493,11 @@ LABEL_26:
   }
   v27 = strtok(0, MEMORY[0x817F70]); /*0x41f91c*/
   if ( v27 ) /*0x41f926*/
-    *(_BYTE *)(this + 208) = atoi(v27) != 0; /*0x41f936*/
+    this->q0D0 = atoi(v27) != 0; /*0x41f936*/
   strtok(0, MEMORY[0x817F70]); /*0x41f942*/
   v28 = strtok(0, MEMORY[0x817F70]); /*0x41f94d*/
   if ( v28 ) /*0x41f957*/
-    *(_DWORD *)(this + 172) = atoi(v28); /*0x41f962*/
+    this->q0AC = atoi(v28); /*0x41f962*/
   v29 = strtok(0, MEMORY[0x817F70]); /*0x41f96e*/
   if ( v29 ) /*0x41f978*/
     *(_BYTE *)(this + 209) = atoi(v29) != 0; /*0x41f988*/
@@ -507,9 +507,9 @@ LABEL_26:
     strncpy(v44, v30, 0x18u); /*0x41f9a8*/
     v44[23] = 0; /*0x41f9b4*/
     String::Trim(v44); /*0x41f9b8*/
-    *(_DWORD *)(this + 224) = 0; /*0x41f9bd*/
+    this->q0E0 = 0; /*0x41f9bd*/
     if ( _strcmpi(v44, off_818114) ) /*0x41f9cf*/
-      *(_DWORD *)(this + 224) = TeamTypeClass::FindByName(v44); /*0x41f9e4*/
+      this->q0E0 = TeamTypeClass::FindByName(v44); /*0x41f9e4*/
   }
   v31 = strtok(0, MEMORY[0x817F70]); /*0x41f9f0*/
   if ( v31 ) /*0x41f9fa*/
@@ -520,26 +520,26 @@ LABEL_26:
   v33 = strtok(0, MEMORY[0x817F70]); /*0x41fa3c*/
   if ( v33 ) /*0x41fa46*/
     *(_BYTE *)(this + 212) = atoi(v33) != 0; /*0x41fa56*/
-  v34 = *(_DWORD *)(this + 220); /*0x41fa5c*/
+  v34 = this->q0DC; /*0x41fa5c*/
   if ( v34 ) /*0x41fa64*/
   {
-    v35 = *(_DWORD *)(this + 176); /*0x41fa6c*/
+    v35 = this->q0B0; /*0x41fa6c*/
     if ( v35 <= HouseClass::GetMaxBuildLevel(*(int **)(v34 + 228)) ) /*0x41fa79*/
-      MaxBuildLevel = HouseClass::GetMaxBuildLevel(*(int **)(*(_DWORD *)(this + 220) + 228)); /*0x41fa8b*/
+      MaxBuildLevel = HouseClass::GetMaxBuildLevel(*(int **)(this->q0DC + 228)); /*0x41fa8b*/
     else
       MaxBuildLevel = v35; /*0x41fa7b*/
-    *(_DWORD *)(this + 176) = MaxBuildLevel; /*0x41fa90*/
+    this->q0B0 = MaxBuildLevel; /*0x41fa90*/
   }
-  v37 = *(_DWORD *)(this + 224); /*0x41fa96*/
+  v37 = this->q0E0; /*0x41fa96*/
   if ( v37 ) /*0x41fa9e*/
   {
-    v38 = *(_DWORD *)(this + 176); /*0x41faa6*/
+    v38 = this->q0B0; /*0x41faa6*/
     if ( v38 > HouseClass::GetMaxBuildLevel(*(int **)(v37 + 228)) ) /*0x41fab3*/
     {
-      *(_DWORD *)(this + 176) = v38; /*0x41fab8*/
+      this->q0B0 = v38; /*0x41fab8*/
       return 1; /*0x41fac9*/
     }
-    *(_DWORD *)(this + 176) = HouseClass::GetMaxBuildLevel(*(int **)(*(_DWORD *)(this + 224) + 228)); /*0x41fadd*/
+    this->q0B0 = HouseClass::GetMaxBuildLevel(*(int **)(this->q0E0 + 228)); /*0x41fadd*/
   }
   return 1; /*0x41fab7*/
 }
@@ -556,29 +556,29 @@ int __thiscall AITriggerTypeClass::RegisterSuccess(int this)
   double v3; // st7
   int result; // eax
 
-  v1 = *(_DWORD *)(this + 264); /*0x41fd61*/
+  v1 = this->q108; /*0x41fd61*/
   v2 = 0.0; /*0x41fd67*/
   if ( v1 > 0 ) /*0x41fd73*/
   {
-    v2 = (double)*(int *)(this + 264) * ((double)*(int *)(this + 260) / (double)*(int *)(this + 264) - 0.5); /*0x41fd89*/
+    v2 = (double)this->q108 * ((double)this->q104 / (double)this->q108 - 0.5); /*0x41fd89*/
     if ( v2 < 0.0 ) /*0x41fd96*/
       v2 = 0.0; /*0x41fd9a*/
   }
-  v3 = v2 + *(double *)&MEMORY[0x8871E0]->AITriggerSuccessWeightDelta + *(double *)(this + 184); /*0x41fdb1*/
+  v3 = v2 + *(double *)&g_RulesClass_Instance->AITriggerSuccessWeightDelta + *(double *)(this + 184); /*0x41fdb1*/
   *(double *)(this + 184) = v3; /*0x41fdb3*/
   if ( v3 < *(double *)(this + 192) ) /*0x41fdc4*/
   {
-    *(_DWORD *)(this + 184) = *(_DWORD *)(this + 192); /*0x41fdcc*/
-    *(_DWORD *)(this + 188) = *(_DWORD *)(this + 196); /*0x41fdd8*/
+    this->q0B8 = this->q0C0; /*0x41fdcc*/
+    this->q0BC = this->q0C4; /*0x41fdd8*/
   }
   if ( *(double *)(this + 184) > *(double *)(this + 200) ) /*0x41fdef*/
   {
-    *(_DWORD *)(this + 184) = *(_DWORD *)(this + 200); /*0x41fdf7*/
-    *(_DWORD *)(this + 188) = *(_DWORD *)(this + 204); /*0x41fe03*/
+    this->q0B8 = this->q0C8; /*0x41fdf7*/
+    this->q0BC = this->q0CC; /*0x41fe03*/
   }
-  result = *(_DWORD *)(this + 260) + 1; /*0x41fe0f*/
-  *(_DWORD *)(this + 260) = result; /*0x41fe11*/
-  *(_DWORD *)(this + 264) = v1 + 1; /*0x41fe17*/
+  result = this->q104 + 1; /*0x41fe0f*/
+  this->q104 = result; /*0x41fe11*/
+  this->q108 = v1 + 1; /*0x41fe17*/
   return result; /*0x41fe1e*/
 }
 }
@@ -599,23 +599,23 @@ int __thiscall AITriggerTypeClass::RegisterFailure(int this)
   char v8; // c2
   bool v9; // c3
 
-  v1 = *(_DWORD *)(this + 264); /*0x41fe21*/
+  v1 = this->q108; /*0x41fe21*/
   v2 = 0.0; /*0x41fe28*/
   if ( v1 > 0 ) /*0x41fe3a*/
   {
     v2 = (double)v1 /*0x41fe56*/
-       * (((double)*(int *)(this + 260) / (double)v1 - 0.5)
-        * *(double *)&MEMORY[0x8871E0]->AITriggerTrackRecordCoefficient);
+       * (((double)this->q104 / (double)v1 - 0.5)
+        * *(double *)&g_RulesClass_Instance->AITriggerTrackRecordCoefficient);
     if ( v2 > 0.0 ) /*0x41fe63*/
       v2 = 0.0; /*0x41fe67*/
   }
-  v3 = v2 + *(double *)&MEMORY[0x8871E0]->AITriggerFailureWeightDelta + *(double *)(this + 184); /*0x41fe7a*/
+  v3 = v2 + *(double *)&g_RulesClass_Instance->AITriggerFailureWeightDelta + *(double *)(this + 184); /*0x41fe7a*/
   *(double *)(this + 184) = v3; /*0x41fe7c*/
   if ( v3 < *(double *)(this + 192) ) /*0x41fe8d*/
   {
-    *(_DWORD *)(this + 184) = *(_DWORD *)(this + 192); /*0x41fe95*/
-    result = *(_DWORD *)(this + 196); /*0x41fe9b*/
-    *(_DWORD *)(this + 188) = result; /*0x41fea1*/
+    this->q0B8 = this->q0C0; /*0x41fe95*/
+    result = this->q0C4; /*0x41fe9b*/
+    this->q0BC = result; /*0x41fea1*/
   }
   v6 = *(double *)(this + 184); /*0x41fea7*/
   v7 = v6 < *(double *)(this + 200); /*0x41fead*/
@@ -624,11 +624,11 @@ int __thiscall AITriggerTypeClass::RegisterFailure(int this)
   LOWORD(result) = v5; /*0x41feb3*/
   if ( v6 > *(double *)(this + 200) ) /*0x41feb8*/
   {
-    *(_DWORD *)(this + 184) = *(_DWORD *)(this + 200); /*0x41fec0*/
-    result = *(_DWORD *)(this + 204); /*0x41fec6*/
-    *(_DWORD *)(this + 188) = result; /*0x41fecc*/
+    this->q0B8 = this->q0C8; /*0x41fec0*/
+    result = this->q0CC; /*0x41fec6*/
+    this->q0BC = result; /*0x41fecc*/
   }
-  *(_DWORD *)(this + 264) = v1 + 1; /*0x41fed3*/
+  this->q108 = v1 + 1; /*0x41fed3*/
   return result; /*0x41fed9*/
 }
 }

@@ -77,8 +77,8 @@ int Cell::PosToIndex()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Cell_PosToIndex(__int16 *this)
 {
-  return ((*this - this->q004 + MEMORY[0x87F8DC] - 1) >> 1) /*0x42b1e3*/
-       + MEMORY[0x87F8DC] * (*this - MEMORY[0x87F8DC] + this->q004 - 1);
+  return ((*this - this->q004 + g_Cell_PositionLUT - 1) >> 1) /*0x42b1e3*/
+       + g_Cell_PositionLUT * (*this - g_Cell_PositionLUT + this->q004 - 1);
 }
 }
 } // namespace gamemd
@@ -314,7 +314,7 @@ bool __thiscall Cell::IsBuildable(
   }
   if ( aP6 != (IUnknown *)-1 ) /*0x4834ed*/
   {
-    v10 = *(char *)(this + 283); /*0x4834ef*/
+    v10 = this->__pad_11B; /*0x4834ef*/
     if ( aP6 == (IUnknown *)v10 ) /*0x4834f8*/
     {
       if ( (this->Cell_field_0x140 & 0x100) != 0 && !(_BYTE)aP7 ) /*0x48351c*/
@@ -326,7 +326,7 @@ bool __thiscall Cell::IsBuildable(
     }
   }
   v11 = 0; /*0x483527*/
-  if ( (aP6 == (IUnknown *)-1 || aP6 == (IUnknown *)(*(char *)(this + 283) + 4)) /*0x483542*/
+  if ( (aP6 == (IUnknown *)-1 || aP6 == (IUnknown *)(this->__pad_11B + 4)) /*0x483542*/
     && (this->Cell_field_0x140 & 0x100) != 0 )
   {
     v11 = 1; /*0x483546*/
@@ -342,11 +342,11 @@ bool __thiscall Cell::IsBuildable(
     v12 &= 0x5Fu; /*0x48356d*/
   if ( v12 ) /*0x483572*/
     return 0; /*0x48357a*/
-  v13 = *(_DWORD *)(this + 236); /*0x48357d*/
+  v13 = this->q03B; /*0x48357d*/
   v14 = *(_DWORD *)(this + 68); /*0x483583*/
   if ( v14 != -1 ) /*0x483589*/
   {
-    v15 = *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * v14]; /*0x483591*/
+    v15 = *(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * v14]; /*0x483591*/
     if ( v15 ) /*0x483596*/
     {
       if ( *(_BYTE *)(v15 + 680) ) /*0x483598*/
@@ -498,7 +498,7 @@ char __thiscall Cell_IsBuildableAdvanced(int this)
   {
     return 0; /*0x48703f*/
   }
-  if ( !MEMORY[0xA8E9A0] ) /*0x487048*/
+  if ( !g_WTFMode ) /*0x487048*/
     return 1; /*0x487048*/
   v4 = *(_DWORD **)(this + 228); /*0x48704a*/
   if ( v4 ) /*0x487052*/
@@ -512,7 +512,7 @@ char __thiscall Cell_IsBuildableAdvanced(int this)
     return 0; /*0x48705e*/
   }
 LABEL_14:
-  if ( !MEMORY[0xA8E9A0] ) /*0x487074*/
+  if ( !g_WTFMode ) /*0x487074*/
     return 1; /*0x487074*/
   v5 = *(_DWORD **)(this + 228); /*0x487076*/
   if ( !v5 ) /*0x48707e*/
@@ -615,7 +615,7 @@ LABEL_12:
     do /*0x487bed*/
     {
       HIWORD(v15) = v8 + *(_WORD *)(this + 38); /*0x487b0c*/
-      LOWORD(v15) = v14 + *(_WORD *)(this + 36); /*0x487b11*/
+      LOWORD(v15) = v14 + this->q009; /*0x487b11*/
       aP1 = v15; /*0x487b1e*/
       v9 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1); /*0x487b28*/
       if ( v9 != (_DWORD *)this ) /*0x487b2f*/
@@ -679,7 +679,7 @@ __int64 __thiscall Cell_GetTraversability(double *this)
 {
   double v1; // st7
 
-  v1 = (double)*((int *)MEMORY[0x8871E0] + 1539); /*0x487cb5*/
+  v1 = (double)*((int *)g_RulesClass_Instance + 1539); /*0x487cb5*/
   if ( this->q01E < v1 ) /*0x487cc8*/
     v1 = this->q01E; /*0x487ccc*/
   return Math::RoundToInt(v1);
@@ -694,7 +694,7 @@ int Cell::GetSlopeIndex()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Cell_GetSlopeIndex(int this)
 {
-  return *(char *)(this + 283) + 4 * ((this->Cell_field_0x140 >> 7) & 1); /*0x487d66*/
+  return this->__pad_11B + 4 * ((this->Cell_field_0x140 >> 7) & 1); /*0x487d66*/
 }
 }
 } // namespace gamemd
@@ -734,7 +734,7 @@ bool __thiscall Cell_IsValidDestination(_BYTE *this, __int16 *a2)
 
   if ( !LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], a2, 1) ) /*0x4dce93*/
     return 0; /*0x4dce93*/
-  if ( !MEMORY[0xA8B238] ) /*0x4dcea7*/
+  if ( !g_GameMode_Current ) /*0x4dcea7*/
   {
     if ( this->q41A ) /*0x4dcea9*/
     {
@@ -839,12 +839,12 @@ char __thiscall Cell::SetRadar(int *this, IUnknown *aP1)
   v18[2] = 1; /*0x56d499*/
   v18[6] = -1; /*0x56d4a1*/
   v5 = v4 + 4 * v2; /*0x56d4a9*/
-  v6 = MEMORY[0x87F8E0] + MEMORY[0x87F8DC] + 1; /*0x56d4b7*/
+  v6 = g_CellPositionOffset + g_Cell_PositionLUT + 1; /*0x56d4b7*/
   v18[4] = v6; /*0x56d4bd*/
   v18[0] = -v6; /*0x56d4c3*/
-  v18[1] = -(MEMORY[0x87F8E0] + MEMORY[0x87F8DC]); /*0x56d4ce*/
-  v18[3] = MEMORY[0x87F8E0] + MEMORY[0x87F8DC] + 2; /*0x56d4d5*/
-  v18[5] = MEMORY[0x87F8E0] + MEMORY[0x87F8DC]; /*0x56d4dc*/
+  v18[1] = -(g_CellPositionOffset + g_Cell_PositionLUT); /*0x56d4ce*/
+  v18[3] = g_CellPositionOffset + g_Cell_PositionLUT + 2; /*0x56d4d5*/
+  v18[5] = g_CellPositionOffset + g_Cell_PositionLUT; /*0x56d4dc*/
   v7 = -1 - v6; /*0x56d4e3*/
   result = *(_BYTE *)v5; /*0x56d4e5*/
   v9 = *(_BYTE *)v5 == 7; /*0x56d4e8*/

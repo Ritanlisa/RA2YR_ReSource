@@ -43,7 +43,7 @@ int __thiscall sub_4880F0(int this, int a2)
 
   if ( !Control::DispatchClick((_DWORD *)this, a2) ) /*0x4880fb*/
     return 0; /*0x488204*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x488110*/
+  (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x488110*/
   v3 = this->M16; /*0x488116*/
   v4 = this->M20; /*0x488119*/
   v15 = this->M12; /*0x48811c*/
@@ -52,10 +52,10 @@ int __thiscall sub_4880F0(int this, int a2)
   v17 = v4; /*0x488127*/
   v18 = v5; /*0x488133*/
   DrawBuildingTilesSHP(&v15, 0, 0); /*0x488137*/
-  if ( *(_DWORD *)(MEMORY[0x87F6C4] + 4) == 1 ) /*0x488145*/
-    v6 = *(unsigned __int8 *)(*(_DWORD *)(MEMORY[0x87F6C4] + 372) + 13); /*0x48814f*/
+  if ( *(_DWORD *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x488145*/
+    v6 = *(unsigned __int8 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 13); /*0x48814f*/
   else
-    v6 = *(unsigned __int16 *)(*(_DWORD *)(MEMORY[0x87F6C4] + 372) + 26); /*0x48815c*/
+    v6 = *(unsigned __int16 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 26); /*0x48815c*/
   v7 = this->M16 + 1; /*0x488167*/
   v15 = this->M12 + 1; /*0x488168*/
   v8 = this->M20; /*0x48816c*/
@@ -63,13 +63,13 @@ int __thiscall sub_4880F0(int this, int a2)
   v9 = this->M24 - 1; /*0x488177*/
   v17 = v8 - 1; /*0x488178*/
   v18 = v9; /*0x488183*/
-  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x887314] + 20))(MEMORY[0x887314], &v15, v6); /*0x48818e*/
+  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)g_DSurface_Hidden_2 + 20))(g_DSurface_Hidden_2, &v15, v6); /*0x48818e*/
   if ( (unsigned char)this->M45 ) /*0x488191*/
   {
-    if ( *(_DWORD *)(MEMORY[0x87F6C4] + 4) == 1 ) /*0x4881a1*/
-      v10 = *(unsigned __int8 *)(*(_DWORD *)(MEMORY[0x87F6C4] + 372) + 4); /*0x4881ab*/
+    if ( *(_DWORD *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x4881a1*/
+      v10 = *(unsigned __int8 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 4); /*0x4881ab*/
     else
-      v10 = *(unsigned __int16 *)(*(_DWORD *)(MEMORY[0x87F6C4] + 372) + 8); /*0x4881b8*/
+      v10 = *(unsigned __int16 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 8); /*0x4881b8*/
     v11 = this->M16 + 1; /*0x4881c3*/
     v15 = this->M12 + 1; /*0x4881c4*/
     v12 = this->M20; /*0x4881c8*/
@@ -77,9 +77,9 @@ int __thiscall sub_4880F0(int this, int a2)
     v13 = this->M24 - 1; /*0x4881d3*/
     v17 = v12 - 1; /*0x4881d4*/
     v18 = v13; /*0x4881df*/
-    (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x887314] + 20))(MEMORY[0x887314], &v15, v10); /*0x4881ea*/
+    (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)g_DSurface_Hidden_2 + 20))(g_DSurface_Hidden_2, &v15, v10); /*0x4881ea*/
   }
-  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x4881f5*/
+  (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x4881f5*/
   return 1; /*0x4881fd*/
 }
 }
@@ -100,7 +100,7 @@ int __fastcall Network_SendTimestamp(int a1, int a2, int a3, int a4)
   float v10; // [esp+Ch] [ebp-8h]
 
   v4 = a1; /*0x489184*/
-  if ( !a1 || (*(_BYTE *)MEMORY[0xA8B230] & 0x20) != 0 || !a2 ) /*0x4891a5*/
+  if ( !a1 || (*(_BYTE *)g_ScenarioClass_Instance & 0x20) != 0 || !a2 ) /*0x4891a5*/
     return 0; /*0x489263*/
   if ( a1 < 0 )
     return a4 >= 8 ? 0 : a1;
@@ -111,8 +111,8 @@ int __fastcall Network_SendTimestamp(int a1, int a2, int a3, int a4)
   if ( v10 != v9 && v8 ) /*0x489200*/
     v4 = Math::RoundToInt((v9 - v10) * (double)(v8 - a4) / (double)v8 + v10); /*0x489225*/
   result = Math::RoundToInt((double)(v4 <= 0 ? 0 : v4) * *(double *)(a2 + 8 * a3 + 160));
-  if ( result >= *((_DWORD *)MEMORY[0x8871E0] + 1458) ) /*0x489257*/
-    return *((_DWORD *)MEMORY[0x8871E0] + 1458); /*0x48925a*/
+  if ( result >= *((_DWORD *)g_RulesClass_Instance + 1458) ) /*0x489257*/
+    return *((_DWORD *)g_RulesClass_Instance + 1458); /*0x48925a*/
   return result; /*0x4891b8*/
 }
 }
@@ -965,8 +965,8 @@ char __fastcall CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char
   double v10; // st7
   int v11; // esi
 
-  LOBYTE(v7) = MEMORY[0xA8EB78]; /*0x48a620*/
-  if ( MEMORY[0xA8EB78] && (v7 = PingPongBuffer::GetWriteOffset(), (unsigned int)dword_ABCD44 >= v7) || (a7 & 0xF) != 0 ) /*0x48a644*/
+  LOBYTE(v7) = g_lParam; /*0x48a620*/
+  if ( g_lParam && (v7 = PingPongBuffer::GetWriteOffset(), (unsigned int)dword_ABCD44 >= v7) || (a7 & 0xF) != 0 ) /*0x48a644*/
   {
     LOBYTE(v7) = a6; /*0x48a64a*/
     if ( a6 || a2 && (LOBYTE(v7) = *(_BYTE *)(a2 + 336), (_BYTE)v7) ) /*0x48a662*/
@@ -1138,26 +1138,26 @@ bool __fastcall sub_48BB60(int a1)
 
   BYTE1(a1) &= ~8u; /*0x48bb61*/
   v1 = a1; /*0x48bb65*/
-  v2 = MEMORY[0x87F684]; /*0x48bb68*/
+  v2 = NumOfElements; /*0x48bb68*/
   v3 = a1; /*0x48bb6e*/
   BYTE1(v3) = BYTE1(a1) & 0xE8; /*0x48bb71*/
-  if ( !MEMORY[0x87F684] ) /*0x48bb76*/
+  if ( !NumOfElements ) /*0x48bb76*/
     goto LABEL_12; /*0x48bb76*/
-  v4 = MEMORY[0x87F690]; /*0x48bb78*/
-  if ( MEMORY[0x87F690] && *(_DWORD *)MEMORY[0x87F690] == v3 ) /*0x48bb84*/
+  v4 = g_FileSystemPool; /*0x48bb78*/
+  if ( g_FileSystemPool && *(_DWORD *)g_FileSystemPool == v3 ) /*0x48bb84*/
   {
 LABEL_17:
     v7 = (_DWORD *)(v4 + 4); /*0x48bc0b*/
     return !*v7 || (*(unsigned __int8 (__thiscall **)(_DWORD, int))(*(_DWORD *)*v7 + 20))(*v7, v1) == 0; /*0x48bc0e*/
   }
-  if ( !MEMORY[0x87F68C] ) /*0x48bb91*/
+  if ( !g_FileSystemInitFlag ) /*0x48bb91*/
   {
-    qsort(MEMORY[0x87F680], MEMORY[0x87F684], 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x48bba1*/
-    v2 = MEMORY[0x87F684]; /*0x48bba6*/
-    MEMORY[0x87F690] = 0; /*0x48bbaf*/
-    MEMORY[0x87F68C] = 1; /*0x48bbb9*/
+    qsort(Base, NumOfElements, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x48bba1*/
+    v2 = NumOfElements; /*0x48bba6*/
+    g_FileSystemPool = 0; /*0x48bbaf*/
+    g_FileSystemInitFlag = 1; /*0x48bbb9*/
   }
-  v5 = MEMORY[0x87F680]; /*0x48bbc0*/
+  v5 = Base; /*0x48bbc0*/
   if ( v2 <= 0 ) /*0x48bbc8*/
     goto LABEL_12; /*0x48bbc8*/
   while ( 1 ) /*0x48bbd1*/
@@ -1179,7 +1179,7 @@ LABEL_11:
   }
   if ( v4 ) /*0x48bc03*/
   {
-    MEMORY[0x87F690] = (int)&v5[2 * (v2 / 2)]; /*0x48bc05*/
+    g_FileSystemPool = (int)&v5[2 * (v2 / 2)]; /*0x48bc05*/
     goto LABEL_17; /*0x48bc05*/
   }
 LABEL_12:
@@ -1224,7 +1224,7 @@ int Main_Game_Frame()
   result = MEMORY[0xA8EDA0]; /*0x48c8b0*/
   if ( !MEMORY[0xA8EDA0] ) /*0x48c8c0*/
     return result; /*0x48c8c0*/
-  if ( MEMORY[0xA8B238] ) /*0x48c8cc*/
+  if ( g_GameMode_Current ) /*0x48c8cc*/
   {
     result = HouseClass_Player; /*0x48c8ce*/
     if ( *(_BYTE *)(HouseClass_Player + 504) /*0x48c8ef*/
@@ -1247,9 +1247,9 @@ LABEL_15:
   }
 LABEL_9:
   ScenarioClass::CleanupTemporary(); /*0x48c918*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 20))(MEMORY[0x887640]); /*0x48c925*/
-  while ( (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 40))(MEMORY[0x887640]) ) /*0x48c930*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x48c93f*/
+  (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 20))(g_WWMouseClass_Instance); /*0x48c925*/
+  while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) ) /*0x48c930*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x48c93f*/
   v1 = MEMORY[0xA8EDA0]; /*0x48c951*/
   if ( MEMORY[0xA8EDA0] ) /*0x48c95a*/
   {
@@ -1324,7 +1324,7 @@ LABEL_34:
           }
           goto LABEL_44;
         case 4: /*0x48c968*/
-          ShowHotkeyOptionsDialog(MEMORY[0xA8EB60]); /*0x48ca08*/
+          ShowHotkeyOptionsDialog(g_GameModeOptions); /*0x48ca08*/
           v1 = 5; /*0x48ca0d*/
           MEMORY[0xA8EDA0] = 5; /*0x48ca12*/
           continue; /*0x48ca17*/
@@ -1353,7 +1353,7 @@ LABEL_17:
             goto LABEL_18; /*0x48c9aa*/
           goto LABEL_44; /*0x48c9aa*/
         case 9: /*0x48c968*/
-          ScenarioClass::ShowMissionBriefing(MEMORY[0xA8B230]); /*0x48c975*/
+          ScenarioClass::ShowMissionBriefing(g_ScenarioClass_Instance); /*0x48c975*/
           v1 = MEMORY[0xA8EDA0]; /*0x48c97a*/
           if ( MEMORY[0xA8EDA0] != 9 ) /*0x48c982*/
             goto LABEL_18; /*0x48c982*/
@@ -1370,10 +1370,10 @@ LABEL_18:
   }
 LABEL_45:
   UpdateWindow(g_hWnd); /*0x48cc37*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13730) ) /*0x48cc4b*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x48cc5d*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 24))(MEMORY[0x887640]); /*0x48cc68*/
-  WTFMode::Init(&MEMORY[0xA8B238]); /*0x48cc70*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13730) ) /*0x48cc4b*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x48cc5d*/
+  (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 24))(g_WWMouseClass_Instance); /*0x48cc68*/
+  WTFMode::Init(&g_GameMode_Current); /*0x48cc70*/
   return PostFrameCleanup(); /*0x48c990*/
 }
 }
@@ -1569,14 +1569,14 @@ FILE *sub_48E0B0()
   unsigned __int16 *v5; // edi
   char *v6; // eax
 
-  result = (FILE *)MEMORY[0xA8B238][0]; /*0x48e0b1*/
-  if ( MEMORY[0xA8B238][0] == 4 )
+  result = (FILE *)g_GameMode_Current[0]; /*0x48e0b1*/
+  if ( g_GameMode_Current[0] == 4 )
   {
     result = fopen(aMpstatsTxt, Mode); /*0x48e0ca*/
     v1 = result; /*0x48e0cf*/
     if ( result )
     {
-      fprintf(result, "Frames: %d\n", MEMORY[0xA8ED84]);
+      fprintf(result, "Frames: %d\n", g_CurrentFrame);
       if ( g_FrameCounter_Samples ) /*0x48e0f8*/
         v2 = g_FrameCounter_Total / (unsigned int)g_FrameCounter_Samples; /*0x48e101*/
       else
@@ -1584,12 +1584,12 @@ FILE *sub_48E0B0()
       fprintf(v1, "Average FPS: %d\n", v2);
       fprintf(v1, "Max MaxAhead: %d\n", MEMORY[0xA8B568]);
       fprintf(v1, "Latency setting: %d\n", MEMORY[0xA8DB9C]);
-      fprintf(v1, "Game speed setting: %d\n", *(_DWORD *)MEMORY[0xA8EB60]);
-      if ( MEMORY[0x887628] )
+      fprintf(v1, "Game speed setting: %d\n", *(_DWORD *)g_GameModeOptions);
+      if ( g_NetworkInterface )
       {
-        for ( i = 0; i < (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887628] + 72))(MEMORY[0x887628]); ++i )
+        for ( i = 0; i < (*(int (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 72))(g_NetworkInterface); ++i )
         {
-          v4 = (_DWORD *)(*(int (__thiscall **)(int, int))(*(_DWORD *)MEMORY[0x887628] + 76))(MEMORY[0x887628], i); /*0x48e16a*/
+          v4 = (_DWORD *)(*(int (__thiscall **)(int, int))(*(_DWORD *)g_NetworkInterface + 76))(g_NetworkInterface, i); /*0x48e16a*/
           if ( v4 )
             fprintf(
               v1,

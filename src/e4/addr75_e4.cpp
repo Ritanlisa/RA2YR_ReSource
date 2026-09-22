@@ -286,11 +286,11 @@ void __fastcall ThemeManager_Update(int a1, int a2, int a3)
   int v6; // eax
 
   v3 = a2; /*0x752487*/
-  if ( MEMORY[0xB1D4CC] ) /*0x75248b*/
+  if ( g_InfantryDrawState ) /*0x75248b*/
   {
-    if ( a1 >= 0 && a1 < MEMORY[0xB1D4B0] && !MEMORY[0xB1D3D8] ) /*0x7524ac*/
+    if ( a1 >= 0 && a1 < g_InfantrySelectState && !MEMORY[0xB1D3D8] ) /*0x7524ac*/
     {
-      v4 = *((_DWORD *)MEMORY[0xB1D4A4] + a1); /*0x7524b7*/
+      v4 = *((_DWORD *)g_InfantryRenderPool + a1); /*0x7524b7*/
       if ( v4 != MEMORY[0xB1D4C4] ) /*0x7524c1*/
       {
         if ( a2 == -1 ) /*0x7524ca*/
@@ -310,8 +310,8 @@ void __fastcall ThemeManager_Update(int a1, int a2, int a3)
             *(_DWORD *)(MEMORY[0xB1D4C4] + 80) = 2; /*0x75252b*/
             MEMORY[0xB1D4C4] = 0; /*0x752532*/
           }
-          if ( MEMORY[0xB1D4CC] ) /*0x752544*/
-            Audio::Release(MEMORY[0xB1D4CC]); /*0x752546*/
+          if ( g_InfantryDrawState ) /*0x752544*/
+            Audio::Release(g_InfantryDrawState); /*0x752546*/
           ThemeClass::ClearQueues(); /*0x75254b*/
           MEMORY[0xB1D4D0] = 0; /*0x752552*/
         }
@@ -351,11 +351,11 @@ void ThemeClass_Update()
     return; /*0x752773*/
   if ( !Audio::IsSoundEnabled() ) /*0x752779*/
     return; /*0x752779*/
-  if ( !MEMORY[0xB1D4CC] ) /*0x75278e*/
+  if ( !g_InfantryDrawState ) /*0x75278e*/
     return; /*0x75278e*/
   if ( Audio::IsSoundPlaying() ) /*0x752794*/
     return; /*0x752794*/
-  v0 = MEMORY[0xB1D4D0] + ThemeClass::GetValue(MEMORY[0xB1D4CC]); /*0x7527b4*/
+  v0 = MEMORY[0xB1D4D0] + ThemeClass::GetValue(g_InfantryDrawState); /*0x7527b4*/
   LODWORD(v1) = Audio::Callback(); /*0x7527be*/
   if ( v1 <= v0 || MEMORY[0xB1D428] ) /*0x7527dc*/
     return; /*0x7527dc*/
@@ -371,7 +371,7 @@ void ThemeClass_Update()
   if ( v2 ) /*0x75280e*/
   {
     LinkedList::Init(v2); /*0x752812*/
-    if ( !MEMORY[0xB1D4B8] ) /*0x75281e*/
+    if ( !DataGlobal_B1D4B8 ) /*0x75281e*/
       goto LABEL_22; /*0x75281e*/
     goto LABEL_11; /*0x75281e*/
   }
@@ -379,10 +379,10 @@ void ThemeClass_Update()
   v3 = (_DWORD *)v4; /*0x75283f*/
   if ( !v4 ) /*0x752843*/
   {
-    v3 = MEMORY[0xB1D4B8]; /*0x752866*/
-    if ( MEMORY[0xB1D4B8] ) /*0x75286e*/
+    v3 = DataGlobal_B1D4B8; /*0x752866*/
+    if ( DataGlobal_B1D4B8 ) /*0x75286e*/
     {
-      MEMORY[0xB1D4B8] = 0; /*0x752870*/
+      DataGlobal_B1D4B8 = 0; /*0x752870*/
     }
     else
     {
@@ -402,11 +402,11 @@ void ThemeClass_Update()
     goto LABEL_22; /*0x752876*/
   }
   LinkedList::Init(v4); /*0x752847*/
-  if ( MEMORY[0xB1D4B8] ) /*0x752853*/
+  if ( DataGlobal_B1D4B8 ) /*0x752853*/
   {
 LABEL_11:
-    __3_YAXPAX_Z(MEMORY[0xB1D4B8]); /*0x752824*/
-    MEMORY[0xB1D4B8] = 0; /*0x75282d*/
+    __3_YAXPAX_Z(DataGlobal_B1D4B8); /*0x752824*/
+    DataGlobal_B1D4B8 = 0; /*0x75282d*/
   }
 LABEL_22:
   if ( v3 ) /*0x7528a9*/
@@ -432,7 +432,7 @@ LABEL_22:
       }
       strcpy(v12, v8); /*0x75291d*/
       strcat(v12, MEMORY[0x844768]); /*0x752949*/
-      if ( ThreadAudioMixerMain(MEMORY[0xB1D4CC], 1) ) /*0x75295c*/
+      if ( ThreadAudioMixerMain(g_InfantryDrawState, 1) ) /*0x75295c*/
       {
         MEMORY[0xB1D4D0] = 500; /*0x75296d*/
         MEMORY[0xB1D4C4] = v7; /*0x75297d*/
@@ -455,16 +455,16 @@ void __fastcall ThemeQueue_ClearPlaylist(int a1)
 {
   int i; // esi
 
-  if ( a1 >= 0 && a1 < MEMORY[0xB1D4B0] ) /*0x752a4e*/
+  if ( a1 >= 0 && a1 < g_InfantrySelectState ) /*0x752a4e*/
   {
-    for ( i = AudioQueue::FindByData(*((_DWORD *)MEMORY[0xB1D4A4] + a1)); /*0x752a61*/
+    for ( i = AudioQueue::FindByData(*((_DWORD *)g_InfantryRenderPool + a1)); /*0x752a61*/
           i;
-          i = AudioQueue::FindByData(*((_DWORD *)MEMORY[0xB1D4A4] + a1)) )
+          i = AudioQueue::FindByData(*((_DWORD *)g_InfantryRenderPool + a1)) )
     {
       if ( *(_DWORD *)(i + 4) != i ) /*0x752a66*/
         LinkedList::Init((_DWORD **)i); /*0x752a6a*/
-      if ( (void *)i == MEMORY[0xB1D4B8] ) /*0x752a75*/
-        MEMORY[0xB1D4B8] = 0; /*0x752a77*/
+      if ( (void *)i == DataGlobal_B1D4B8 ) /*0x752a75*/
+        DataGlobal_B1D4B8 = 0; /*0x752a77*/
       *(_DWORD *)(*(_DWORD *)(i + 12) + 80) = 2; /*0x752a85*/
       __3_YAXPAX_Z((void *)i); /*0x752a8c*/
     }
@@ -558,16 +558,16 @@ int __thiscall sub_752CB0(int this, const char *a2)
   this->M72 = 1; /*0x752ce8*/
   this->M76 = 0; /*0x752cef*/
   this->M80 = 2; /*0x752cf2*/
-  if ( MEMORY[0xB1D4B0] < MEMORY[0xB1D4A8] /*0x752d2e*/
-    || (MEMORY[0xB1D4AD] || !MEMORY[0xB1D4A8])
-    && MEMORY[0xB1D4B4] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB1D4A0] + 8))(
-         &MEMORY[0xB1D4A0],
-         MEMORY[0xB1D4A8] + MEMORY[0xB1D4B4],
+  if ( g_InfantrySelectState < DataGlobal_B1D4A8 /*0x752d2e*/
+    || (DataGlobal_B1D4AD || !DataGlobal_B1D4A8)
+    && DataGlobal_B1D4B4 > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_B1D4A0 + 8))(
+         &DataGlobal_B1D4A0,
+         DataGlobal_B1D4A8 + DataGlobal_B1D4B4,
          0) )
   {
-    v3 = MEMORY[0xB1D4B0]++; /*0x752d3b*/
-    *((_DWORD *)MEMORY[0xB1D4A4] + v3) = this; /*0x752d4a*/
+    v3 = g_InfantrySelectState++; /*0x752d3b*/
+    *((_DWORD *)g_InfantryRenderPool + v3) = this; /*0x752d4a*/
   }
   return this; /*0x752d4d*/
 }
@@ -623,11 +623,11 @@ char __thiscall InitFromINIEVA(CCINIClass *this)
         if ( &v11 == (CCINIClass **)-28 ) /*0x753080*/
           goto LABEL_10; /*0x753080*/
         v6 = 0; /*0x753087*/
-        if ( *(int *)&MEMORY[0xB077F8].__pad_579C[66844] <= 0 ) /*0x75308b*/
+        if ( *(int *)&g_OverlayTypeConfig.__pad_579C[66844] <= 0 ) /*0x75308b*/
           goto LABEL_10; /*0x75308b*/
-        while ( _strcmpi(Destination[0].__pad_0, *(char **)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[66832] + 4 * v6)) ) /*0x7530a6*/
+        while ( _strcmpi(Destination[0].__pad_0, *(char **)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[66832] + 4 * v6)) ) /*0x7530a6*/
         {
-          if ( ++v6 >= *(int *)&MEMORY[0xB077F8].__pad_579C[66844] ) /*0x7530b0*/
+          if ( ++v6 >= *(int *)&g_OverlayTypeConfig.__pad_579C[66844] ) /*0x7530b0*/
             goto LABEL_10; /*0x7530b0*/
         }
         if ( v6 == -1 ) /*0x7530b7*/
@@ -644,17 +644,17 @@ LABEL_10:
             *(_DWORD *)(v7 + 72) = 1; /*0x753102*/
             *(_DWORD *)(v7 + 76) = 0; /*0x753109*/
             *(_DWORD *)(v7 + 80) = 2; /*0x75310c*/
-            if ( *(int *)&MEMORY[0xB077F8].__pad_579C[66844] < *(int *)&MEMORY[0xB077F8].__pad_579C[66836] /*0x753146*/
-              || (MEMORY[0xB077F8].__pad_579C[66841] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[66836])
-              && *(int *)&MEMORY[0xB077F8].__pad_579C[66848] > 0
-              && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[66828]
+            if ( *(int *)&g_OverlayTypeConfig.__pad_579C[66844] < *(int *)&g_OverlayTypeConfig.__pad_579C[66836] /*0x753146*/
+              || (g_OverlayTypeConfig.__pad_579C[66841] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[66836])
+              && *(int *)&g_OverlayTypeConfig.__pad_579C[66848] > 0
+              && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[66828]
                                                                         + 8))(
-                   &MEMORY[0xB077F8].__pad_579C[66828],
-                   *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[66836] + *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[66848],
+                   &g_OverlayTypeConfig.__pad_579C[66828],
+                   *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[66836] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[66848],
                    0) )
             {
-              v8 = (*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[66844])++; /*0x753153*/
-              *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[66832] + 4 * v8) = v7; /*0x753162*/
+              v8 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[66844])++; /*0x753153*/
+              *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[66832] + 4 * v8) = v7; /*0x753162*/
             }
             v1 = aP1; /*0x753165*/
             v9 = v7; /*0x753169*/
@@ -666,7 +666,7 @@ LABEL_10:
         }
         else
         {
-          v9 = *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[66832] + 4 * v6); /*0x753177*/
+          v9 = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[66832] + 4 * v6); /*0x753177*/
         }
         LOBYTE(KeyCount) = AudioEvent::LoadFromINI(v9, v1); /*0x75317b*/
         v4 = i; /*0x753180*/
@@ -698,24 +698,24 @@ int __thiscall EVA_LoadINI(void *this)
     *(_DWORD *)(MEMORY[0xB1D4C4] + 80) = 2; /*0x7531aa*/
     MEMORY[0xB1D4C4] = 0; /*0x7531b1*/
   }
-  if ( MEMORY[0xB1D4CC] ) /*0x7531c3*/
-    Audio::Release(MEMORY[0xB1D4CC]); /*0x7531c5*/
+  if ( g_InfantryDrawState ) /*0x7531c3*/
+    Audio::Release(g_InfantryDrawState); /*0x7531c5*/
   ThemeClass::ClearQueues(v4); /*0x7531ca*/
-  for ( result = MEMORY[0xB1D4B0]; MEMORY[0xB1D4B0] > 0; result = MEMORY[0xB1D4B0] ) /*0x7531d6*/
+  for ( result = g_InfantrySelectState; g_InfantrySelectState > 0; result = g_InfantrySelectState ) /*0x7531d6*/
   {
-    v2 = *(void **)MEMORY[0xB1D4A4]; /*0x7531de*/
-    if ( *(_DWORD *)MEMORY[0xB1D4A4] ) /*0x7531de*/
+    v2 = *(void **)g_InfantryRenderPool; /*0x7531de*/
+    if ( *(_DWORD *)g_InfantryRenderPool ) /*0x7531de*/
     {
-      v4 = *(void **)MEMORY[0xB1D4A4]; /*0x7531f4*/
-      v3 = (*(int (__thiscall **)(int *, void **))(MEMORY[0xB1D4A0] + 16))(&MEMORY[0xB1D4A0], &v4); /*0x7531f8*/
-      if ( v3 != -1 && v3 < MEMORY[0xB1D4B0] && v3 < --MEMORY[0xB1D4B0] ) /*0x753213*/
+      v4 = *(void **)g_InfantryRenderPool; /*0x7531f4*/
+      v3 = (*(int (__thiscall **)(int *, void **))(DataGlobal_B1D4A0 + 16))(&DataGlobal_B1D4A0, &v4); /*0x7531f8*/
+      if ( v3 != -1 && v3 < g_InfantrySelectState && v3 < --g_InfantrySelectState ) /*0x753213*/
       {
         do /*0x75322b*/
         {
           ++v3; /*0x75321b*/
-          *((_DWORD *)MEMORY[0xB1D4A4] + v3 - 1) = *((_DWORD *)MEMORY[0xB1D4A4] + v3); /*0x75321f*/
+          *((_DWORD *)g_InfantryRenderPool + v3 - 1) = *((_DWORD *)g_InfantryRenderPool + v3); /*0x75321f*/
         }
-        while ( v3 < MEMORY[0xB1D4B0] ); /*0x75322b*/
+        while ( v3 < g_InfantrySelectState ); /*0x75322b*/
       }
       __3_YAXPAX_Z(v2); /*0x75322e*/
     }
@@ -732,10 +732,10 @@ bool sub_7532A0(std::codecvt_base * a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __fastcall sub_7532A0(std::codecvt_base *a1)
 {
-  if ( (int)a1 < 0 || (int)a1 >= MEMORY[0xB1D4B0] ) /*0x7532aa*/
+  if ( (int)a1 < 0 || (int)a1 >= g_InfantrySelectState ) /*0x7532aa*/
     return _do_always_noconv_codecvt_base_std__MBE_NXZ_21(a1); /*0x7532a2*/
   else
-    return *(_DWORD *)(*((_DWORD *)MEMORY[0xB1D4A4] + (_DWORD)a1) + 80) == 2; /*0x7532ba*/
+    return *(_DWORD *)(*((_DWORD *)g_InfantryRenderPool + (_DWORD)a1) + 80) == 2; /*0x7532ba*/
 }
 }
 } // namespace gamemd

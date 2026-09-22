@@ -444,12 +444,12 @@ int __thiscall VoxelAnimTypeClass::_vt13(int this, int *a2)
   Power::FlagProcess(a2, v5); /*0x74b6c3*/
   Power::TimerProcess(this->VoxelIndex); /*0x74b6d1*/
   Power::TimerProcess(this->Duration); /*0x74b6df*/
-  Checksummer::Add_double((unsigned int *)a2, this->Elasticity, *(_DWORD *)(this + 676)); /*0x74b6f4*/
-  Checksummer::Add_double((unsigned int *)a2, this->MinAngularVelocity, *(_DWORD *)(this + 684)); /*0x74b709*/
-  Checksummer::Add_double((unsigned int *)a2, this->MaxAngularVelocity, *(_DWORD *)(this + 692)); /*0x74b71e*/
-  Checksummer::Add_double((unsigned int *)a2, this->MinZVel, *(_DWORD *)(this + 700)); /*0x74b733*/
-  Checksummer::Add_double((unsigned int *)a2, this->MaxZVel, *(_DWORD *)(this + 708)); /*0x74b748*/
-  Checksummer::Add_double((unsigned int *)a2, this->MaxXYVel, *(_DWORD *)(this + 716)); /*0x74b75d*/
+  Checksummer::Add_double((unsigned int *)a2, this->Elasticity, this->q2A4); /*0x74b6f4*/
+  Checksummer::Add_double((unsigned int *)a2, this->MinAngularVelocity, this->q0AB); /*0x74b709*/
+  Checksummer::Add_double((unsigned int *)a2, this->MaxAngularVelocity, this->q0AD); /*0x74b71e*/
+  Checksummer::Add_double((unsigned int *)a2, this->MinZVel, this->q0AF); /*0x74b733*/
+  Checksummer::Add_double((unsigned int *)a2, this->MaxZVel, this->q2C4); /*0x74b748*/
+  Checksummer::Add_double((unsigned int *)a2, this->MaxXYVel, this->q2CC); /*0x74b75d*/
   LOBYTE(v6) = this->IsMeteor; /*0x74b762*/
   Power::FlagProcess(a2, v6); /*0x74b76b*/
   Power::TimerProcess(this->SpawnCount); /*0x74b779*/

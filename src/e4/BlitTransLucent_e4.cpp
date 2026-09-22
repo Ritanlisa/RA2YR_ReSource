@@ -83,7 +83,7 @@ _WORD *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(
     if ( *a2++ ) /*0x49628f*/
     {
       --v17; /*0x4962b8*/
-      *result = *(_WORD *)(this + 1) & (*result >> 1); /*0x4962b9*/
+      *result = this->q004 & (*result >> 1); /*0x4962b9*/
       ++result; /*0x4962bc*/
     }
     else

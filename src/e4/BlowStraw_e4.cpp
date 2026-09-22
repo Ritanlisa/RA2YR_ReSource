@@ -42,9 +42,9 @@ int __thiscall BlowStraw_29_::Seek(int *this, TabClass *aP1, _DWORD *a2)
     (*(void (__thiscall **)(int *, _DWORD))(v6 + 56))(this, 0); /*0x6d06ba*/
   }
 LABEL_6:
-  v7 = *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[11460] + 4); /*0x6d06bd*/
-  if ( *a2 >= **(_DWORD **)&MEMORY[0xB077F8].__pad_579C[11460] /*0x6d06dd*/
-    && *a2 < **(_DWORD **)&MEMORY[0xB077F8].__pad_579C[11460] + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8540] )
+  v7 = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[11460] + 4); /*0x6d06bd*/
+  if ( *a2 >= **(_DWORD **)&g_OverlayTypeConfig.__pad_579C[11460] /*0x6d06dd*/
+    && *a2 < **(_DWORD **)&g_OverlayTypeConfig.__pad_579C[11460] + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8540] )
   {
     v8 = (ScrollClass *)a2[1]; /*0x6d06df*/
     if ( (int)v8 >= v7 && (int)v8 < v7 + 30 ) /*0x6d06f2*/
@@ -59,7 +59,7 @@ LABEL_6:
       if ( *((_BYTE *)this + 21828) ) /*0x6d0865*/
       {
         SidebarUpdateAll(this); /*0x6d0875*/
-        (*(void (__thiscall **)(int *, char *))(*this + 52))(this, &MEMORY[0xB077F8].__pad_5498[32]); /*0x6d0883*/
+        (*(void (__thiscall **)(int *, char *))(*this + 52))(this, &g_OverlayTypeConfig.__pad_5498[32]); /*0x6d0883*/
         for ( i = 0; i < 25; ++i ) /*0x6d0886*/
         {
           FontClassEntry = GetFontClassEntry(i); /*0x6d088a*/
@@ -69,8 +69,8 @@ LABEL_6:
         HashTable::Remove(*(int **)&MEMORY[0x87F8E4].__pad_5568[9500], 240); /*0x6d08b3*/
         v16 = *this; /*0x6d08b8*/
         *((_BYTE *)this + 21828) = 0; /*0x6d08c1*/
-        (*(void (__thiscall **)(int *, char *))(v16 + 48))(this, &MEMORY[0xB077F8].__pad_53E0[104]); /*0x6d08c8*/
-        PushCommandClass::Execute(&MEMORY[0xB077F8].__pad_53E0[104], (int)&stru_830620.__pad_579C[51836]); /*0x6d08d5*/
+        (*(void (__thiscall **)(int *, char *))(v16 + 48))(this, &g_OverlayTypeConfig.__pad_53E0[104]); /*0x6d08c8*/
+        PushCommandClass::Execute(&g_OverlayTypeConfig.__pad_53E0[104], (int)&stru_830620.__pad_579C[51836]); /*0x6d08d5*/
         v17 = *this; /*0x6d08da*/
         *((_BYTE *)this + 21829) = 1; /*0x6d08e0*/
         (*(void (__thiscall **)(int *, _DWORD))(v17 + 56))(this, 0); /*0x6d08e6*/
@@ -83,7 +83,7 @@ LABEL_6:
         PlayVocClass(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 404), 0x2000, 1.0, 0); /*0x6d091a*/
         if ( !*((_BYTE *)this + 21828) ) /*0x6d091f*/
         {
-          (*(void (__thiscall **)(int *, char *))(*this + 52))(this, &MEMORY[0xB077F8].__pad_53E0[104]); /*0x6d0932*/
+          (*(void (__thiscall **)(int *, char *))(*this + 52))(this, &g_OverlayTypeConfig.__pad_53E0[104]); /*0x6d0932*/
           HashTable::Remove(*(int **)&MEMORY[0x87F8E4].__pad_5568[9500], 241); /*0x6d0940*/
           *((_BYTE *)this + 21828) = 1; /*0x6d0947*/
           CommandClass::BuildBar(this); /*0x6d094d*/
@@ -97,58 +97,58 @@ LABEL_6:
     {
       BYTE1(v9) &= 0x3Fu; /*0x6d0977*/
       v19 = v9 - 214; /*0x6d097a*/
-      if ( v19 >= *(int *)&MEMORY[0xB077F8].__pad_53E0[72] && v19 <= *(int *)&MEMORY[0xB077F8].__pad_5498[152] ) /*0x6d0989*/
-        SidebarClearReferences((char *)(v19 - *(_DWORD *)&MEMORY[0xB077F8].__pad_53E0[72] + 1)); /*0x6d0990*/
+      if ( v19 >= *(int *)&g_OverlayTypeConfig.__pad_53E0[72] && v19 <= *(int *)&g_OverlayTypeConfig.__pad_5498[152] ) /*0x6d0989*/
+        SidebarClearReferences((char *)(v19 - *(_DWORD *)&g_OverlayTypeConfig.__pad_53E0[72] + 1)); /*0x6d0990*/
     }
   }
   else
   {
     BYTE1(v9) &= ~0x80u; /*0x6d0724*/
     v10 = v9 - 214; /*0x6d0727*/
-    if ( v10 == *(_DWORD *)&MEMORY[0xB077F8].__pad_5498[148] ) /*0x6d072e*/
+    if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_5498[148] ) /*0x6d072e*/
     {
       BlowStraw_29_Get(); /*0x6d0730*/
     }
-    else if ( v10 == *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[16020] ) /*0x6d0740*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[16020] ) /*0x6d0740*/
     {
       UI_Create_731A30(); /*0x6d0742*/
     }
-    else if ( v10 == *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[13584] ) /*0x6d0752*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[13584] ) /*0x6d0752*/
     {
       UI_Create_730F30(); /*0x6d0754*/
     }
-    else if ( v10 == *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[15992] ) /*0x6d0764*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[15992] ) /*0x6d0764*/
     {
       ProcessSelectionExperience(); /*0x6d0766*/
     }
-    else if ( v10 == *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[16064] ) /*0x6d0776*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[16064] ) /*0x6d0776*/
     {
       GetFactoryData(); /*0x6d0778*/
     }
-    else if ( v10 == *(_DWORD *)&MEMORY[0xB077F8].__pad_53E0[68] ) /*0x6d078a*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_53E0[68] ) /*0x6d078a*/
     {
-      v11 = *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[4 * *(_DWORD *)&MEMORY[0xB077F8].__pad_53E0[68] + 16080]; /*0x6d078c*/
+      v11 = *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[4 * *(_DWORD *)&g_OverlayTypeConfig.__pad_53E0[68] + 16080]; /*0x6d078c*/
       if ( v11 > 0x18 ) /*0x6d0795*/
         v12 = 0; /*0x6d07a9*/
       else
-        v12 = &MEMORY[0xB077F8].__pad_14B0[96 * v11 + 13592]; /*0x6d07a2*/
+        v12 = &g_OverlayTypeConfig.__pad_14B0[96 * v11 + 13592]; /*0x6d07a2*/
       if ( v12[45] ) /*0x6d07ab*/
         UI_Create_731A50(1); /*0x6d07b4*/
       else
         UI_Create_731A70(1); /*0x6d07be*/
     }
-    else if ( v10 == *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[16068] ) /*0x6d07ce*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[16068] ) /*0x6d07ce*/
     {
       UI_Create_730EA0(); /*0x6d07d0*/
     }
-    else if ( v10 < *(int *)&MEMORY[0xB077F8].__pad_53E0[72] || v10 > *(int *)&MEMORY[0xB077F8].__pad_5498[152] ) /*0x6d07ea*/
+    else if ( v10 < *(int *)&g_OverlayTypeConfig.__pad_53E0[72] || v10 > *(int *)&g_OverlayTypeConfig.__pad_5498[152] ) /*0x6d07ea*/
     {
-      if ( v10 == *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[16016] ) /*0x6d082d*/
+      if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[16016] ) /*0x6d082d*/
         SelectAllOfType(); /*0x6d0833*/
     }
     else
     {
-      v13 = (char *)(v10 - *(_DWORD *)&MEMORY[0xB077F8].__pad_53E0[72] + 1); /*0x6d07ef*/
+      v13 = (char *)(v10 - *(_DWORD *)&g_OverlayTypeConfig.__pad_53E0[72] + 1); /*0x6d07ef*/
       if ( SidebarCountAvailableUnits(v13) ) /*0x6d07f3*/
       {
         if ( SidebarHasAvailableUnit(v13) ) /*0x6d0808*/
@@ -184,8 +184,8 @@ wchar_t *sub_731AF0()
   wchar_t *v6; // eax
   int v7; // ecx
 
-  result = MEMORY[0xA8ECC8]; /*0x731af1*/
-  if ( !MEMORY[0xA8ECC8] ) /*0x731afa*/
+  result = g_SelectionManager; /*0x731af1*/
+  if ( !g_SelectionManager ) /*0x731afa*/
   {
     StringCSF = GetStringCSF(MEMORY[0x845584], 0, MEMORY[0x845598], 856); /*0x731b0d*/
     v2 = 3; /*0x731b18*/
@@ -194,9 +194,9 @@ wchar_t *sub_731AF0()
     result = (wchar_t *)MessageListClass::AddMessage(MEMORY[0xA8BC60], 0, 0, StringCSF, v2, 16454, 240, 1); /*0x731b3e*/
     goto LABEL_5; /*0x731b3e*/
   }
-  v3 = MEMORY[0xA8ECC8]; /*0x731b4e*/
+  v3 = g_SelectionManager; /*0x731b4e*/
   v4 = 0; /*0x731b50*/
-  if ( (int)MEMORY[0xA8ECC8] <= 0 ) /*0x731b54*/
+  if ( (int)g_SelectionManager <= 0 ) /*0x731b54*/
   {
 LABEL_5:
     MEMORY[0xB0FE58] = 1; /*0x731b43*/
@@ -204,8 +204,8 @@ LABEL_5:
   }
   while ( 1 ) /*0x731b56*/
   {
-    result = (wchar_t *)MEMORY[0xA8ECBC]; /*0x731b56*/
-    v5 = (_BYTE *)*((_DWORD *)MEMORY[0xA8ECBC] + v4); /*0x731b5b*/
+    result = (wchar_t *)g_ObjectClass_CurrentCount; /*0x731b56*/
+    v5 = (_BYTE *)*((_DWORD *)g_ObjectClass_CurrentCount + v4); /*0x731b5b*/
     if ( v5 ) /*0x731b60*/
     {
       if ( (v5[20] & 1) != 0 ) /*0x731b6c*/

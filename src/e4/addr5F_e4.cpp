@@ -28,16 +28,16 @@ char sub_5F0070()
     v4[0] = 19; /*0x5f00a5*/
     Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v4, 111, 0); /*0x5f00aa*/
     Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v4, 111, 0); /*0x5f00bd*/
-    v1 = MEMORY[0x887340]; /*0x5f00c7*/
-    if ( MEMORY[0x887338] != -1 ) /*0x5f00d0*/
-      v1 += Timer::GetTicks() - MEMORY[0x887338]; /*0x5f00e2*/
+    v1 = g_PerformanceTickOffset; /*0x5f00c7*/
+    if ( g_LastPerformanceTick != -1 ) /*0x5f00d0*/
+      v1 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f00e2*/
     while ( 1 ) /*0x5f00e4*/
     {
-      LOBYTE(v0) = MEMORY[0x887338]; /*0x5f00e4*/
-      v2 = MEMORY[0x887340]; /*0x5f00e9*/
-      if ( MEMORY[0x887338] != -1 ) /*0x5f00f2*/
+      LOBYTE(v0) = g_LastPerformanceTick; /*0x5f00e4*/
+      v2 = g_PerformanceTickOffset; /*0x5f00e9*/
+      if ( g_LastPerformanceTick != -1 ) /*0x5f00f2*/
       {
-        v0 = Timer::GetTicks() - MEMORY[0x887338]; /*0x5f00fe*/
+        v0 = Timer::GetTicks() - g_LastPerformanceTick; /*0x5f00fe*/
         v2 += v0; /*0x5f0104*/
       }
       if ( (unsigned int)(v2 - v1) >= 0x1E ) /*0x5f010b*/
@@ -365,14 +365,14 @@ int sub_5F33B0()
 
   Event::Dispatch(); /*0x5f33b1*/
   MessageLoop(); /*0x5f33b6*/
-  v0 = EventQueue::Process(MEMORY[0x87F770]); /*0x5f33c1*/
+  v0 = EventQueue::Process(g_BinkMoviePlayer); /*0x5f33c1*/
   v1 = v0; /*0x5f33c9*/
   if ( !v0 )
-    return MEMORY[0xAC1344] != 0 ? 0xFFFFFC18 : 0;
-  Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x5f33d7*/
+    return g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0;
+  Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x5f33d7*/
   if ( v1 != 27 )
-    return MEMORY[0xAC1344] != 0 ? 0xFFFFFC18 : 0;
-  MEMORY[0xAC1344] = 1; /*0x5f33e1*/
+    return g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0;
+  g_NetworkTestFlag = 1; /*0x5f33e1*/
   return -1000; /*0x5f33ed*/
 }
 }
@@ -476,7 +476,7 @@ char sub_5FBEF0()
     {
       if ( Dialog::PumpMessages() == 1 ) /*0x5fbf35*/
         dwNewLong = 2; /*0x5fbf37*/
-      if ( !MEMORY[0xA8E9A0] ) /*0x5fbf46*/
+      if ( !g_WTFMode ) /*0x5fbf46*/
       {
         LOBYTE(v1) = 0; /*0x5fbf48*/
         ScreenSaver::Process(v1); /*0x5fbf4a*/
@@ -637,7 +637,7 @@ int __fastcall BuildingTypeClass_LoadSHPs(int a1)
   {
     while ( 1 ) /*0x5fe642*/
     {
-      v4 = *((_DWORD *)MEMORY[0xA83D84] + v2); /*0x5fe642*/
+      v4 = *((_DWORD *)g_BuildingTypeClass_Array + v2); /*0x5fe642*/
       v5 = *(_BYTE *)(v4 + 556); /*0x5fe64d*/
       if ( *(_BYTE *)(v4 + 687) ) /*0x5fe645*/
       {
@@ -856,7 +856,7 @@ char *GenerateRangeRingTextures()
       Buffer::Init(v33, 0, 0x10000); /*0x5ff640*/
       v30[0] = (int)&BSurface_Vtable; /*0x5ff649*/
       XSurface::Fill(v30, 0); /*0x5ff652*/
-      v20 = 60 * MEMORY[0x8871E0]->BuildWeapons[0]; /*0x5ff684*/
+      v20 = 60 * g_RulesClass_Instance->BuildWeapons[0]; /*0x5ff684*/
       v13 = Math::RoundToInt((double)v20 * -0.002790178571428571); /*0x5ff692*/
       Draw::Ellipse(v30, 128, 128, i - v13, 0, 0, 255, 255, v10); /*0x5ff6a9*/
       for ( k = 0; k < 128; ++k ) /*0x5ff6ae*/
@@ -892,7 +892,7 @@ char *GenerateRangeRingTextures()
     {
       BYTE1(v20) = (unsigned __int8)((unsigned __int16)v0 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x5ff7aa*/
       LOBYTE(v17) = 0; /*0x5ff7bb*/
-      HIBYTE(v17) = (unsigned __int8)((unsigned __int16)v0 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x5ff7bd*/
+      HIBYTE(v17) = (unsigned __int8)((unsigned __int16)v0 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x5ff7bd*/
       BYTE2(v20) = (unsigned __int8)((unsigned __int16)v0 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x5ff7bf*/
       result = (char *)BYTE2(v20); /*0x5ff7dc*/
       *((_DWORD *)MEMORY[0xAC1838] + v0++) = BYTE2(v20) | ((BYTE1(v20) | v17) << 8); /*0x5ff7e3*/

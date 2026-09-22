@@ -29,13 +29,13 @@ void __thiscall IPXGlobalConnClass::_vt17(int this, int a2)
     if ( TileType ) /*0x540164*/
     {
       Debug::Log(); /*0x540170*/
-      v6 = MEMORY[0x887338]; /*0x540175*/
-      v7 = MEMORY[0x887340]; /*0x540186*/
-      if ( MEMORY[0x887338] != -1 ) /*0x540188*/
+      v6 = g_LastPerformanceTick; /*0x540175*/
+      v7 = g_PerformanceTickOffset; /*0x540186*/
+      if ( g_LastPerformanceTick != -1 ) /*0x540188*/
       {
         Ticks = Timer::GetTicks(); /*0x54019a*/
-        v6 = MEMORY[0x887338]; /*0x54019c*/
-        v7 += Ticks - MEMORY[0x887338]; /*0x5401a3*/
+        v6 = g_LastPerformanceTick; /*0x54019c*/
+        v7 += Ticks - g_LastPerformanceTick; /*0x5401a3*/
       }
       if ( a2 + *(_DWORD *)(TileType + 4) >= v7 ) /*0x5401b0*/
       {
@@ -49,7 +49,7 @@ void __thiscall IPXGlobalConnClass::_vt17(int this, int a2)
           Timer::GetTicks(); /*0x5401c0*/
         Debug::Log(); /*0x5401eb*/
         v9 = 0; /*0x5401fa*/
-        v10 = *(_DWORD *)(this + 212); /*0x5401ff*/
+        v10 = this->q035; /*0x5401ff*/
         if ( v10 > 0 ) /*0x540207*/
         {
           v11 = *(_DWORD **)(this + 208); /*0x54020f*/
@@ -60,7 +60,7 @@ void __thiscall IPXGlobalConnClass::_vt17(int this, int a2)
             if ( v9 >= v10 ) /*0x54021b*/
               goto LABEL_14; /*0x54021b*/
           }
-          *(_DWORD *)(*(_DWORD *)(this + 208) + 4 * v9) = -1; /*0x54021f*/
+          *(_DWORD *)(this->q0D0 + 4 * v9) = -1; /*0x54021f*/
         }
 LABEL_14:
         PacketQueue::ReleaseEntry(*(_DWORD **)(this + 4), 0, 0, i--, 0, 0); /*0x540226*/

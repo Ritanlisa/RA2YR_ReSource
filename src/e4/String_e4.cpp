@@ -251,7 +251,7 @@ char __thiscall String_Replace(char **this, char *SubStr, const char *a3)
   v4 = 0; /*0x7b57a8*/
   v5 = *this; /*0x7b57ae*/
   if ( !*this ) /*0x7b57ae*/
-    v5 = &MEMORY[0x889F64]; /*0x7b57b4*/
+    v5 = &g_INI_DefaultBuffer; /*0x7b57b4*/
   if ( !v5 ) /*0x7b57bc*/
     goto LABEL_33; /*0x7b57bc*/
   while ( *v5 ) /*0x7b57c6*/
@@ -332,7 +332,7 @@ char __thiscall String_Replace(char **this, char *SubStr, const char *a3)
   {
     v3 = (void **)this; /*0x7b59b1*/
 LABEL_33:
-    v20 = &MEMORY[0x889F64]; /*0x7b59b5*/
+    v20 = &g_INI_DefaultBuffer; /*0x7b59b5*/
     goto LABEL_35; /*0x7b59ba*/
   }
   v3 = (void **)this; /*0x7b59bc*/
@@ -522,7 +522,7 @@ int __thiscall String_Tokenize2(const wchar_t **this, int a2, wchar_t *Str, void
   if ( v12 ) /*0x7b7b3c*/
     wcscpy((wchar_t *)*a4, v12); /*0x7b7b42*/
   v15 = v11 - v9; /*0x7b7b4e*/
-  v16 = &MEMORY[0x887734]; /*0x7b7b50*/
+  v16 = &g_TypeClass_DefaultString; /*0x7b7b50*/
   v17 = v15 + 1; /*0x7b7b55*/
   if ( *a4 ) /*0x7b7b4a*/
     v16 = (const wchar_t *)*a4; /*0x7b7b5a*/
@@ -532,7 +532,7 @@ int __thiscall String_Tokenize2(const wchar_t **this, int a2, wchar_t *Str, void
   if ( v16 ) /*0x7b7b72*/
     wcsncpy(v18, v16, v17); /*0x7b7b77*/
   v19[v17] = 0; /*0x7b7b7f*/
-  v20 = &MEMORY[0x887734]; /*0x7b7b88*/
+  v20 = &g_TypeClass_DefaultString; /*0x7b7b88*/
   if ( v19 ) /*0x7b7b8d*/
     v20 = v19; /*0x7b7b8f*/
   if ( *a4 ) /*0x7b7b91*/

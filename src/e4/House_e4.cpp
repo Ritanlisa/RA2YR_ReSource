@@ -81,7 +81,7 @@ void __thiscall House::AnnounceUpgrade(int this, IUnknown *aP1)
   v56 = v5; /*0x47d2fc*/
   if ( v6 != -1 ) /*0x47d300*/
   {
-    v7 = *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * v6]; /*0x47d30c*/
+    v7 = *(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * v6]; /*0x47d30c*/
     v8 = *(_DWORD *)(v7 + 664); /*0x47d30f*/
     *(_DWORD *)(this + 236) = v8; /*0x47d318*/
     if ( v8 == 4 || v8 == 9 || *(_BYTE *)(v7 + 684) ) /*0x47d325*/
@@ -163,7 +163,7 @@ LABEL_40:
         {
           if ( *(_BYTE *)(this + 284) <= 4u ) /*0x47d831*/
           {
-            if ( !*(_DWORD *)(*(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * *(_DWORD *)(this + 68)] + 664) ) /*0x47d864*/
+            if ( !*(_DWORD *)(*(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * *(_DWORD *)(this + 68)] + 664) ) /*0x47d864*/
               *(_DWORD *)(this + 236) = 5; /*0x47d86e*/
           }
           else
@@ -174,7 +174,7 @@ LABEL_40:
           }
           goto LABEL_48; /*0x47d857*/
         }
-        if ( !*(_BYTE *)(*(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * *(_DWORD *)(this + 68)] + 684) ) /*0x47d885*/
+        if ( !*(_BYTE *)(*(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * *(_DWORD *)(this + 68)] + 684) ) /*0x47d885*/
 LABEL_47:
           *(_DWORD *)(this + 236) = House::LookupObject((void *)v18, *(unsigned __int8 *)(this + 282)); /*0x47d8aa*/
 LABEL_48:
@@ -316,7 +316,7 @@ LABEL_98:
     }
     goto LABEL_40; /*0x47d5e0*/
   }
-  if ( v6 == -1 || (v45 = *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * v6], *(_BYTE *)(v45 + 684)) ) /*0x47db30*/
+  if ( v6 == -1 || (v45 = *(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * v6], *(_BYTE *)(v45 + 684)) ) /*0x47db30*/
     *(_DWORD *)(this + 236) = 0; /*0x47db48*/
   else
     *(_DWORD *)(this + 236) = *(_DWORD *)(v45 + 664); /*0x47db40*/
@@ -406,24 +406,24 @@ _DWORD *__thiscall House::GetStartCoords(int this, IUnknown *aP1)
   if ( v3 == -1 ) /*0x47fb9f*/
     goto LABEL_13; /*0x47fb9f*/
   a2 = *(unsigned __int8 *)(this + 286); /*0x47fbb5*/
-  v4 = *(_BYTE **)&MEMORY[0xA83D84]->__pad_0[4 * v3]; /*0x47fbb9*/
+  v4 = *(_BYTE **)&g_BuildingTypeClass_Array->__pad_0[4 * v3]; /*0x47fbb9*/
   v23 = 0; /*0x47fbbc*/
   if ( v4[681] ) /*0x47fbc0*/
   {
     BuildingByTiberiumType = FindBuildingByTiberiumType(v3); /*0x47fbce*/
     if ( BuildingByTiberiumType == -1 ) /*0x47fbd6*/
       goto LABEL_12; /*0x47fbd6*/
-    v6 = *(_DWORD **)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9560] + 4 * BuildingByTiberiumType); /*0x47fbe2*/
+    v6 = *(_DWORD **)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9560] + 4 * BuildingByTiberiumType); /*0x47fbe2*/
     if ( *(_BYTE *)(this + 284) ) /*0x47fbe5*/
     {
-      v7 = *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * v6[58] /*0x47fc36*/
+      v7 = *(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * v6[58] /*0x47fc36*/
                                                + 4 * *(_DWORD *)(v6[56] + 660)
                                                + 4 * v6[59] / 4 * (*(unsigned __int8 *)(this + 284) - 1)
                                                + 4 * (*(__int16 *)(this + 36) * *(__int16 *)(this + 38) % (v6[59] / 4))];
       v23 = (char **)(*(int (__thiscall **)(int))(*(_DWORD *)v7 + 156))(v7); /*0x47fc41*/
       goto LABEL_12; /*0x47fc47*/
     }
-    v8 = *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * *(_DWORD *)(v6[56] + 660) /*0x47fc6f*/
+    v8 = *(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * *(_DWORD *)(v6[56] + 660) /*0x47fc6f*/
                                              + 4 * (*(__int16 *)(this + 36) * *(__int16 *)(this + 38) % v6[58])];
     v9 = (char **)(*(int (__thiscall **)(int))(*(_DWORD *)v8 + 156))(v8); /*0x47fc74*/
     goto LABEL_11; /*0x47fc7a*/
@@ -757,17 +757,17 @@ void sub_501A20()
   int v1; // edi
   int v2; // esi
 
-  v0 = MEMORY[0xA8ECC8]; /*0x501a21*/
-  if ( MEMORY[0xA8ECC8] ) /*0x501a2a*/
+  v0 = g_SelectionManager; /*0x501a21*/
+  if ( g_SelectionManager ) /*0x501a2a*/
   {
     v1 = 0; /*0x501a2c*/
-    if ( (int)MEMORY[0xA8ECC8] > 0 ) /*0x501a30*/
+    if ( (int)g_SelectionManager > 0 ) /*0x501a30*/
     {
       do /*0x501a92*/
       {
-        v2 = *((_DWORD *)MEMORY[0xA8ECBC] + v1); /*0x501a38*/
+        v2 = *((_DWORD *)g_ObjectClass_CurrentCount + v1); /*0x501a38*/
         if ( v2 /*0x501a81*/
-          && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v2 + 44))(*((_DWORD *)MEMORY[0xA8ECBC] + v1)) == 6
+          && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v2 + 44))(*((_DWORD *)g_ObjectClass_CurrentCount + v1)) == 6
           && !*(_BYTE *)(v2 + 1050)
           && *(int *)(*(_DWORD *)(v2 + 1312) + 3808) > 0
           && ((1 << *(_DWORD *)(*((_DWORD *)HouseClass_Player + 13) + 184)) & *(_DWORD *)(v2 + 528)) != 0 )
@@ -790,7 +790,7 @@ int House::IsHumanPlayer()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall House::IsHumanPlayer(#375 *this)
 {
-  if ( MEMORY[0xA8B238][0] ) /*0x50b6f7*/
+  if ( g_GameMode_Current[0] ) /*0x50b6f7*/
     return this == HouseClass_Player; /*0x50b720*/
   return (unsigned char)this->House_field_0x1EC || *((_BYTE *)this + 493); /*0x50b70f*/
 }
@@ -806,9 +806,9 @@ int __thiscall House::IsCurrentPlayer(#375 *this)
 {
   int result; // eax
 
-  result = MEMORY[0xA8B238][0]; /*0x50b730*/
+  result = g_GameMode_Current[0]; /*0x50b730*/
   LOBYTE(result) = (unsigned char)this->House_field_0x1EC; /*0x50b737*/
-  if ( !MEMORY[0xA8B238][0] ) /*0x50b73d*/
+  if ( !g_GameMode_Current[0] ) /*0x50b73d*/
     LOBYTE(result) = (_BYTE)result || *((_BYTE *)this + 493); /*0x50b750*/
   return result; /*0x50b74f*/
 }
@@ -1143,8 +1143,8 @@ int __thiscall House::PowerBeginUpdate(int this, AbstractClass *aP1)
   Power::FlagProcess(aP1, v12); /*0x70c485*/
   LOBYTE(v13) = *(_BYTE *)(this + 1049); /*0x70c48a*/
   Power::FlagProcess(aP1, v13); /*0x70c493*/
-  v22 = MEMORY[0xA8B238]; /*0x70c498*/
-  if ( !MEMORY[0xA8B238] || MEMORY[0xA8B238] == (CellStruct *)5 ) /*0x70c4a4*/
+  v22 = g_GameMode_Current; /*0x70c498*/
+  if ( !g_GameMode_Current || g_GameMode_Current == (CellStruct *)5 ) /*0x70c4a4*/
   {
     LOBYTE(v22) = *(_BYTE *)(this + 1050); /*0x70c4a6*/
     Power::FlagProcess(aP1, (int)v22); /*0x70c4af*/
@@ -1196,7 +1196,7 @@ _DWORD *sub_72F350()
   LoadingScreen::FreeResources2(); /*0x72f35a*/
   MEMORY[0xB0FC0C] = 0; /*0x72f35f*/
   LoadingScreen::LoadSHPs(); /*0x72f366*/
-  if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) == 2 ) /*0x72f377*/
+  if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) == 2 ) /*0x72f377*/
   {
     LoadPaletteSimple(MEMORY[0x844BF8], &MEMORY[0xB0FBEC], &MEMORY[0xB0FBF0]); /*0x72f389*/
     LoadPaletteSimple(MEMORY[0x844BFC][0], &MEMORY[0xB0FBF4], &MEMORY[0xB0FBF8]); /*0x72f39e*/
@@ -1244,7 +1244,7 @@ char __usercall sub_6D1660@<al>(_BYTE *a1@<ecx>, int a2@<esi>)
     }
     while ( (int)v4 < (int)&MEMORY[0xB0CB20] ); /*0x6d168b*/
     (*(void (__thiscall **)(_BYTE *, _DWORD *, int))(*(_DWORD *)a1 + 52))(a1, MEMORY[0xB0CCB0], a2); /*0x6d1696*/
-    v5 = MEMORY[0xB0CB78]; /*0x6d1699*/
+    v5 = g_ObjectTrackingPool; /*0x6d1699*/
     do /*0x6d16d0*/
     {
       v6 = *v5; /*0x6d169e*/
@@ -1252,12 +1252,12 @@ char __usercall sub_6D1660@<al>(_BYTE *a1@<ecx>, int a2@<esi>)
       {
         v7 = (char *)&MEMORY[0xB0C1C0] + 96 * v6; /*0x6d16af*/
         if ( v7 ) /*0x6d16b6*/
-          HashTable::Remove((int *)MEMORY[0x887368], *((_DWORD *)v7 + 9)); /*0x6d16c2*/
+          HashTable::Remove((int *)g_TacticalRender, *((_DWORD *)v7 + 9)); /*0x6d16c2*/
       }
       ++v5; /*0x6d16c7*/
     }
     while ( (int)v5 < (int)MEMORY[0xB0CBDC] ); /*0x6d16d0*/
-    HashTable::Remove((int *)MEMORY[0x887368], 240); /*0x6d16dd*/
+    HashTable::Remove((int *)g_TacticalRender, 240); /*0x6d16dd*/
     v8 = *(_DWORD *)a1; /*0x6d16e2*/
     a1[21828] = 0; /*0x6d16eb*/
     (*(void (__thiscall **)(_BYTE *, _DWORD *))(v8 + 48))(a1, MEMORY[0xB0CC40]); /*0x6d16f2*/
@@ -1270,8 +1270,8 @@ char __usercall sub_6D1660@<al>(_BYTE *a1@<ecx>, int a2@<esi>)
       v11[0] = MEMORY[0xB0CC64]; /*0x6d1734*/
       v11[5] = MEMORY[0x842838]; /*0x6d1738*/
       v11[4] = MEMORY[0xB0CC58]; /*0x6d1740*/
-      HashTable::Remove((int *)MEMORY[0x887368], MEMORY[0xB0CC64]); /*0x6d1744*/
-      CommandClass::AddAction(MEMORY[0x887368], (int)v11); /*0x6d1754*/
+      HashTable::Remove((int *)g_TacticalRender, MEMORY[0xB0CC64]); /*0x6d1744*/
+      CommandClass::AddAction(g_TacticalRender, (int)v11); /*0x6d1754*/
     }
     v9 = *(_DWORD *)a1; /*0x6d1759*/
     a1[21829] = 1; /*0x6d175f*/

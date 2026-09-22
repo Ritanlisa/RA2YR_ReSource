@@ -19,42 +19,42 @@ HWND sub_777420()
   Debug::Log(); /*0x777425*/
   sub_407040(v0); /*0x77742d*/
   Debug::Log(); /*0x77744b*/
-  if ( MEMORY[0x887640] && byte_B73560 == 1 && !MEMORY[0xA8ED6B] ) /*0x77746d*/
-    (*(void (**)(void))(*(_DWORD *)MEMORY[0x887640] + 24))(); /*0x777471*/
+  if ( g_WWMouseClass_Instance && byte_B73560 == 1 && !MEMORY[0xA8ED6B] ) /*0x77746d*/
+    (*(void (**)(void))(*(_DWORD *)g_WWMouseClass_Instance + 24))(); /*0x777471*/
   if ( !MEMORY[0x89F978] ) /*0x77747c*/
   {
-    if ( MEMORY[0x887310] ) /*0x77748a*/
-      DSurface::RestoreIfLost((int *)MEMORY[0x887310]); /*0x77748c*/
-    if ( MEMORY[0x88730C] ) /*0x777499*/
-      DSurface::RestoreIfLost((int *)MEMORY[0x88730C]); /*0x77749b*/
-    if ( MEMORY[0x88731C] /*0x7774c7*/
-      && DSurface::RestoreIfLost((int *)MEMORY[0x88731C])
-      && (!MEMORY[0xA8ED5C] || (int)MEMORY[0xA8ED84] > 16) )
+    if ( DSurface_Alternate ) /*0x77748a*/
+      DSurface::RestoreIfLost((int *)DSurface_Alternate); /*0x77748c*/
+    if ( g_DSurface_Hidden ) /*0x777499*/
+      DSurface::RestoreIfLost((int *)g_DSurface_Hidden); /*0x77749b*/
+    if ( DSurface_Composite /*0x7774c7*/
+      && DSurface::RestoreIfLost((int *)DSurface_Composite)
+      && (!MEMORY[0xA8ED5C] || (int)g_CurrentFrame > 16) )
     {
-      (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x88731C] + 24))(MEMORY[0x88731C], 0); /*0x7774d3*/
+      (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Composite + 24))(DSurface_Composite, 0); /*0x7774d3*/
     }
-    if ( MEMORY[0x8872FC] /*0x7774f8*/
-      && DSurface::RestoreIfLost((int *)MEMORY[0x8872FC])
-      && (!MEMORY[0xA8ED5C] || (int)MEMORY[0xA8ED84] > 16) )
+    if ( DSurface_Tile /*0x7774f8*/
+      && DSurface::RestoreIfLost((int *)DSurface_Tile)
+      && (!MEMORY[0xA8ED5C] || (int)g_CurrentFrame > 16) )
     {
-      (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x8872FC] + 24))(MEMORY[0x8872FC], 0); /*0x777504*/
+      (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Tile + 24))(DSurface_Tile, 0); /*0x777504*/
     }
-    if ( MEMORY[0x887300] ) /*0x77750f*/
+    if ( DSurface_Sidebar ) /*0x77750f*/
     {
-      if ( DSurface::RestoreIfLost((int *)MEMORY[0x887300]) ) /*0x777511*/
+      if ( DSurface::RestoreIfLost((int *)DSurface_Sidebar) ) /*0x777511*/
       {
-        MEMORY[0x884B8F] = 1; /*0x77751f*/
-        if ( !MEMORY[0xA8ED5C] || (int)MEMORY[0xA8ED84] > 16 ) /*0x777530*/
-          (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x887300] + 24))(MEMORY[0x887300], 0); /*0x77753c*/
+        g_CameoRenderFlag = 1; /*0x77751f*/
+        if ( !MEMORY[0xA8ED5C] || (int)g_CurrentFrame > 16 ) /*0x777530*/
+          (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Sidebar + 24))(DSurface_Sidebar, 0); /*0x77753c*/
       }
     }
-    if ( MEMORY[0x887308] /*0x777561*/
-      && DSurface::RestoreIfLost((int *)MEMORY[0x887308])
-      && (!MEMORY[0xA8ED5C] || (int)MEMORY[0xA8ED84] > 16) )
+    if ( g_DSurface_Primary /*0x777561*/
+      && DSurface::RestoreIfLost((int *)g_DSurface_Primary)
+      && (!MEMORY[0xA8ED5C] || (int)g_CurrentFrame > 16) )
     {
-      (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)MEMORY[0x887308] + 20))( /*0x777572*/
-        MEMORY[0x887308],
-        &MEMORY[0x886FB0],
+      (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)g_DSurface_Primary + 20))( /*0x777572*/
+        g_DSurface_Primary,
+        &DSurface_WindowBounds,
         0);
     }
   }

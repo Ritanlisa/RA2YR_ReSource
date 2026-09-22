@@ -197,7 +197,7 @@ signed int __thiscall BuildingLightClass::UpdateOscillation(int this)
     v28 = v12; /*0x513dbb*/
     v30 = v10; /*0x513dbf*/
     if ( Cell::GetGroundHeight(&v28) > GroundHeight ) /*0x513dca*/
-      v26 = v24 - HIDWORD(MEMORY[0x8871E0]->ShakeScreen); /*0x513ddc*/
+      v26 = v24 - HIDWORD(g_RulesClass_Instance->ShakeScreen); /*0x513ddc*/
   }
   v25 = Math::RoundToInt((double)v24 + *(double *)(this + 96)); /*0x513dec*/
   v13 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->vtable3 + 4) + 16))(this->vtable3 + 4); /*0x513df9*/
@@ -205,14 +205,14 @@ signed int __thiscall BuildingLightClass::UpdateOscillation(int this)
     v14 = 1.0; /*0x513e00*/
   else
     v14 = 1.1; /*0x513e08*/
-  v15 = (int)&MEMORY[0xA8ED84][v13]; /*0x513e20*/
-  v16 = v14 * *(double *)&MEMORY[0x8871E0]->HoverBob * 900.0; /*0x513e23*/
+  v15 = (int)&g_CurrentFrame[v13]; /*0x513e20*/
+  v16 = v14 * *(double *)&g_RulesClass_Instance->HoverBob * 900.0; /*0x513e23*/
   v27 = v15 % (int)Math::RoundToInt(v16); /*0x513e3a*/
   v17 = Math::SinCos((double)v27 * 6.283185307179586 / v16); /*0x513e4f*/
   v18 = Math::RoundToInt(v17 + v17 + (double)v25); /*0x513e5d*/
   if ( v18 < 0 ) /*0x513e66*/
   {
-    *(_DWORD *)(this + 96) = 0; /*0x513e68*/
+    this->q060 = 0; /*0x513e68*/
     this->customSound = 0; /*0x513e6b*/
     v18 = 0; /*0x513e6e*/
   }
@@ -222,28 +222,28 @@ signed int __thiscall BuildingLightClass::UpdateOscillation(int this)
   (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 460))(this->vtable3, v18); /*0x513e7f*/
   result = this->vtable3; /*0x513e85*/
   *(_BYTE *)(result + 116) = v20; /*0x513e8c*/
-  v22 = MEMORY[0x8871E0]; /*0x513e8f*/
-  if ( v26 < SHIDWORD(MEMORY[0x8871E0]->ShakeScreen) ) /*0x513e9b*/
+  v22 = g_RulesClass_Instance; /*0x513e8f*/
+  if ( v26 < SHIDWORD(g_RulesClass_Instance->ShakeScreen) ) /*0x513e9b*/
   {
     if ( StreamClass::GetDirty(this + 4) ) /*0x513ea1*/
-      *(double *)(this + 96) = ((double)SHIDWORD(MEMORY[0x8871E0]->ShakeScreen) /*0x513ec8*/
-                              + (double)SHIDWORD(MEMORY[0x8871E0]->ShakeScreen)
+      *(double *)(this + 96) = ((double)SHIDWORD(g_RulesClass_Instance->ShakeScreen) /*0x513ec8*/
+                              + (double)SHIDWORD(g_RulesClass_Instance->ShakeScreen)
                               - (double)v26)
-                             / (double)SHIDWORD(MEMORY[0x8871E0]->ShakeScreen)
-                             * (double)MEMORY[0x8871E0][1].?
+                             / (double)SHIDWORD(g_RulesClass_Instance->ShakeScreen)
+                             * (double)g_RulesClass_Instance[1].?
                              + *(double *)(this + 96);
-    v22 = MEMORY[0x8871E0]; /*0x513ecd*/
-    result = SHIDWORD(MEMORY[0x8871E0]->ShakeScreen) / 4; /*0x513edf*/
+    v22 = g_RulesClass_Instance; /*0x513ecd*/
+    result = SHIDWORD(g_RulesClass_Instance->ShakeScreen) / 4; /*0x513edf*/
     if ( v26 < result ) /*0x513ee4*/
     {
-      result = (unsigned int)((unsigned __int64)(1431655766LL * MEMORY[0x8871E0][1].?) >> 32) >> 31; /*0x513ef5*/
-      *(double *)(this + 96) = (double)(MEMORY[0x8871E0][1].? / 3) + *(double *)(this + 96); /*0x513f05*/
-      v22 = MEMORY[0x8871E0]; /*0x513f08*/
+      result = (unsigned int)((unsigned __int64)(1431655766LL * g_RulesClass_Instance[1].?) >> 32) >> 31; /*0x513ef5*/
+      *(double *)(this + 96) = (double)(g_RulesClass_Instance[1].? / 3) + *(double *)(this + 96); /*0x513f05*/
+      v22 = g_RulesClass_Instance; /*0x513f08*/
     }
   }
   v23 = *(double *)(this + 96) - (double)v22[1].?; /*0x513f15*/
   *(double *)(this + 96) = v23; /*0x513f18*/
-  *(double *)(this + 96) = v23 * *(double *)&MEMORY[0x8871E0]->HoverDampen; /*0x513f27*/
+  *(double *)(this + 96) = v23 * *(double *)&g_RulesClass_Instance->HoverDampen; /*0x513f27*/
   return result; /*0x513f2a*/
 }
 }

@@ -56,16 +56,16 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
   this->vtable2 = &IsometricTileTypeClass::`vftable'; /*0x5448cf*/
   this->vtable3 = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
   this->vtable4 = &vt_IsometricTileTypeClass; /*0x5448dd*/
-  if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x544917*/
-    || (MEMORY[0xB077F8].__pad_579C[9961] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9956])
-    && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
-         &MEMORY[0xB077F8].__pad_579C[9948],
-         *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9956] + *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9968],
+  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[9964] < *(int *)&g_OverlayTypeConfig.__pad_579C[9956] /*0x544917*/
+    || (g_OverlayTypeConfig.__pad_579C[9961] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956])
+    && *(int *)&g_OverlayTypeConfig.__pad_579C[9968] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9948] + 8))(
+         &g_OverlayTypeConfig.__pad_579C[9948],
+         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9968],
          0) )
   {
-    v7 = (*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9964])++; /*0x544924*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9952] + 4 * v7) = this; /*0x544933*/
+    v7 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9964])++; /*0x544924*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952] + 4 * v7) = this; /*0x544933*/
   }
   if ( !a6 /*0x544970*/
     && (*(int *)&MEMORY[0xA8D63C].__pad_14B0[588] < *(int *)&MEMORY[0xA8D63C].__pad_14B0[580]
@@ -256,8 +256,8 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   if ( v9 ) /*0x71dfd2*/
   {
     PixelData = MixFileClass::GetPixelData(v9, (int)&v23, 0); /*0x71dfdd*/
-    *(_WORD *)(this + 668) = *(_WORD *)PixelData; /*0x71dfeb*/
-    *(_BYTE *)(this + 670) = *(_BYTE *)(PixelData + 2); /*0x71dff5*/
+    this->RadarColor = *(_WORD *)PixelData; /*0x71dfeb*/
+    this->q29E = *(_BYTE *)(PixelData + 2); /*0x71dff5*/
   }
   Coord = INIClass::GetCoord( /*0x71e00c*/
             aP1,
@@ -266,8 +266,8 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
             (Color *)&stru_830620.__pad_14B0[6744],
             (Color *)(this + 668));
   v12 = this->IsAnimated; /*0x71e014*/
-  *(_WORD *)(this + 668) = *(_WORD *)Coord; /*0x71e01a*/
-  *(_BYTE *)(this + 670) = *(_BYTE *)(Coord + 2); /*0x71e02a*/
+  this->RadarColor = *(_WORD *)Coord; /*0x71e01a*/
+  this->q29E = *(_BYTE *)(Coord + 2); /*0x71e02a*/
   v13 = INIClass::ReadBool_Overwrite( /*0x71e02d*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
@@ -280,7 +280,7 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                     (unsigned __int8 *)(this + 36),
                     (CCINIClass *)&stru_830620.__pad_579C[59536],
                     aP3_4a);
-  aP3 = *(float *)(this + 676); /*0x71e04c*/
+  aP3 = this->AnimationProbability; /*0x71e04c*/
   this->AnimationRate = Int_Overwrite; /*0x71e057*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x71e066*/
                        (int)aP1,
@@ -288,7 +288,7 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                        (unsigned __int8 *)&stru_830620.__pad_579C[59512],
                        (INIClass *)LODWORD(aP3));
   v16 = *(CCINIClass **)(this + 680); /*0x71e06b*/
-  *(float *)(this + 676) = Double_Overwrite; /*0x71e073*/
+  this->AnimationProbability = Double_Overwrite; /*0x71e073*/
   v18 = INIClass::ReadInt_Overwrite( /*0x71e080*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),

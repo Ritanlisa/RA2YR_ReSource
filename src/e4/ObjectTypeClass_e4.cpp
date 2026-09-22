@@ -131,9 +131,9 @@ int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
 
   AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
   v3 = (_DWORD *)(this + 200); /*0x5f70a3*/
-  *(_BYTE *)(this + 152) = 0; /*0x5f70a9*/
-  *(_BYTE *)(this + 153) = 0; /*0x5f70af*/
-  *(_BYTE *)(this + 154) = 0; /*0x5f70b5*/
+  this->q098 = 0; /*0x5f70a9*/
+  this->q264 = 0; /*0x5f70af*/
+  this->q268 = 0; /*0x5f70b5*/
   this->Armor = 0; /*0x5f70bb*/
   this->Strength = 0; /*0x5f70c1*/
   this->Image = 0; /*0x5f70c7*/
@@ -143,8 +143,8 @@ int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
   this->TurretVoxel = 0; /*0x5f70df*/
   this->BarrelVoxel = 0; /*0x5f70e5*/
   this->ChargerTurrets = 0; /*0x5f70eb*/
-  *(_DWORD *)(this + 192) = 0; /*0x5f70f1*/
-  *(_DWORD *)(this + 196) = 0; /*0x5f70f7*/
+  this->q0C0 = 0; /*0x5f70f1*/
+  this->q0C4 = 0; /*0x5f70f7*/
   v4 = 18; /*0x5f70fd*/
   do /*0x5f710b*/
   {
@@ -164,14 +164,14 @@ int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
     --v6; /*0x5f7120*/
   }
   while ( v6 ); /*0x5f7121*/
-  *(_BYTE *)(this + 488) = 0; /*0x5f712e*/
+  this->q7A0 = 0; /*0x5f712e*/
   this->MaxDimension = 0; /*0x5f7134*/
   this->CrushSound = -1; /*0x5f713a*/
   this->AmbientSound = -1; /*0x5f7140*/
-  *(_BYTE *)(this + 504) = 0; /*0x5f7146*/
+  this->ImageFile_0x19 = 0; /*0x5f7146*/
   this->AlternateArcticArt = 0; /*0x5f7148*/
   this->ArcticArtInUse = 0; /*0x5f714e*/
-  *(_BYTE *)(this + 531) = 0; /*0x5f7156*/
+  this->AlphaImageFile = 0; /*0x5f7156*/
   this->Bombable = 1; /*0x5f715c*/
   this->Selectable = 1; /*0x5f7162*/
   this->LegalTarget = 1; /*0x5f7168*/
@@ -187,30 +187,30 @@ int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
   this->HasRadialIndicator = 0; /*0x5f71a6*/
   this->IgnoresFirestorm = 0; /*0x5f71ac*/
   this->UseLineTrail = 0; /*0x5f71b2*/
-  *(_BYTE *)(this + 571) = 0x80; /*0x5f71b8*/
+  this->q23B = 0x80; /*0x5f71b8*/
   *(_BYTE *)(this + 572) = 0x80; /*0x5f71be*/
-  *(_BYTE *)(this + 573) = 0x80; /*0x5f71c4*/
+  this->q23D = 0x80; /*0x5f71c4*/
   this->LineTrailColorDecrement = 16; /*0x5f71ca*/
   this->VoxelCaches = 0; /*0x5f71d4*/
-  *(_DWORD *)(this + 584) = 0; /*0x5f71da*/
-  *(_DWORD *)(this + 588) = 0; /*0x5f71e0*/
-  *(_BYTE *)(this + 592) = 0; /*0x5f71e6*/
-  *(_DWORD *)(this + 596) = 0; /*0x5f71ec*/
-  *(_DWORD *)(this + 600) = 0; /*0x5f71f2*/
-  *(_DWORD *)(this + 604) = 0; /*0x5f71f8*/
-  *(_DWORD *)(this + 608) = 0; /*0x5f71fe*/
-  *(_BYTE *)(this + 612) = 0; /*0x5f7204*/
-  *(_DWORD *)(this + 616) = 0; /*0x5f720a*/
-  *(_DWORD *)(this + 620) = 0; /*0x5f7213*/
-  *(_DWORD *)(this + 624) = 0; /*0x5f7219*/
-  *(_DWORD *)(this + 628) = 0; /*0x5f721f*/
-  *(_BYTE *)(this + 632) = 0; /*0x5f7225*/
-  *(_DWORD *)(this + 636) = 0; /*0x5f722b*/
-  *(_DWORD *)(this + 640) = 0; /*0x5f7231*/
-  *(_DWORD *)(this + 644) = 0; /*0x5f7237*/
-  *(_DWORD *)(this + 648) = 0; /*0x5f723d*/
-  *(_BYTE *)(this + 652) = 0; /*0x5f7243*/
-  *(_DWORD *)(this + 656) = 0; /*0x5f7249*/
+  this->q248 = 0; /*0x5f71da*/
+  this->q24C = 0; /*0x5f71e0*/
+  this->q094 = 0; /*0x5f71e6*/
+  this->q254 = 0; /*0x5f71ec*/
+  this->q258 = 0; /*0x5f71f2*/
+  this->q25C = 0; /*0x5f71f8*/
+  this->q260 = 0; /*0x5f71fe*/
+  this->q264 = 0; /*0x5f7204*/
+  this->q268 = 0; /*0x5f720a*/
+  this->q26C = 0; /*0x5f7213*/
+  this->q270 = 0; /*0x5f7219*/
+  this->q274 = 0; /*0x5f721f*/
+  this->q278 = 0; /*0x5f7225*/
+  this->q27C = 0; /*0x5f722b*/
+  this->q280 = 0; /*0x5f7231*/
+  this->q284 = 0; /*0x5f7237*/
+  this->q288 = 0; /*0x5f723d*/
+  this->q28C = 0; /*0x5f7243*/
+  this->q290 = 0; /*0x5f7249*/
   *(_DWORD *)this = &ObjectTypeClass::`vftable'; /*0x5f7251*/
   this->vtable1 = &ObjectTypeClass::`vftable'; /*0x5f7258*/
   this->vtable2 = &ObjectTypeClass::`vftable'; /*0x5f725f*/
@@ -344,29 +344,29 @@ int __thiscall ObjectTypeClass::Destruct(int this)
   }
   ObjectTypeClass::CleanupWeapons((char *)this); /*0x5f7497*/
   __3_YAXPAX_Z(*(void **)(this + 640)); /*0x5f74a3*/
-  *(_DWORD *)(this + 640) = 0; /*0x5f74a8*/
-  *(_DWORD *)(this + 644) = 0; /*0x5f74ae*/
-  *(_DWORD *)(this + 648) = 0; /*0x5f74b4*/
-  *(_BYTE *)(this + 652) = 0; /*0x5f74ba*/
-  *(_DWORD *)(this + 656) = 0; /*0x5f74c0*/
+  this->q280 = 0; /*0x5f74a8*/
+  this->q284 = 0; /*0x5f74ae*/
+  this->q288 = 0; /*0x5f74b4*/
+  this->q28C = 0; /*0x5f74ba*/
+  this->q290 = 0; /*0x5f74c0*/
   __3_YAXPAX_Z(*(void **)(this + 620)); /*0x5f74cd*/
-  *(_DWORD *)(this + 620) = 0; /*0x5f74d2*/
-  *(_DWORD *)(this + 624) = 0; /*0x5f74d8*/
-  *(_DWORD *)(this + 628) = 0; /*0x5f74de*/
-  *(_BYTE *)(this + 632) = 0; /*0x5f74e4*/
-  *(_DWORD *)(this + 636) = 0; /*0x5f74ea*/
+  this->q26C = 0; /*0x5f74d2*/
+  this->q270 = 0; /*0x5f74d8*/
+  this->q274 = 0; /*0x5f74de*/
+  this->q278 = 0; /*0x5f74e4*/
+  this->q27C = 0; /*0x5f74ea*/
   __3_YAXPAX_Z(*(void **)(this + 600)); /*0x5f74f7*/
-  *(_DWORD *)(this + 600) = 0; /*0x5f74fc*/
-  *(_DWORD *)(this + 604) = 0; /*0x5f7502*/
-  *(_DWORD *)(this + 608) = 0; /*0x5f7508*/
-  *(_BYTE *)(this + 612) = 0; /*0x5f750e*/
-  *(_DWORD *)(this + 616) = 0; /*0x5f7514*/
+  this->q258 = 0; /*0x5f74fc*/
+  this->q25C = 0; /*0x5f7502*/
+  this->q260 = 0; /*0x5f7508*/
+  this->q264 = 0; /*0x5f750e*/
+  this->q268 = 0; /*0x5f7514*/
   __3_YAXPAX_Z(*(void **)(this + 580)); /*0x5f7521*/
   this->VoxelCaches = 0; /*0x5f7526*/
-  *(_DWORD *)(this + 584) = 0; /*0x5f752c*/
-  *(_DWORD *)(this + 588) = 0; /*0x5f7532*/
-  *(_BYTE *)(this + 592) = 0; /*0x5f7538*/
-  *(_DWORD *)(this + 596) = 0; /*0x5f753e*/
+  this->q248 = 0; /*0x5f752c*/
+  this->q24C = 0; /*0x5f7532*/
+  this->q094 = 0; /*0x5f7538*/
+  this->q254 = 0; /*0x5f753e*/
   v3 = (int *)(this + 488); /*0x5f7547*/
   v4 = 18; /*0x5f754d*/
   do /*0x5f755d*/
@@ -544,7 +544,7 @@ int __thiscall ObjectTypeClass::Load2DArt(char *this)
   char v15; // [esp+25h] [ebp-203h]
   char Buffer[256]; // [esp+128h] [ebp-100h] BYREF
 
-  if ( this->q211 && *((_DWORD *)MEMORY[0xA8B230] + 1174) == 1 && !this->ImageAllocated ) /*0x5f9096*/
+  if ( this->q211 && *((_DWORD *)g_ScenarioClass_Instance + 1174) == 1 && !this->ImageAllocated ) /*0x5f9096*/
   {
     if ( !this->q212 ) /*0x5f90a0*/
     {
@@ -574,11 +574,11 @@ int __thiscall ObjectTypeClass::Load2DArt(char *this)
   _makepath(&Source, 0, 0, this + 504, Ext); /*0x5f912e*/
   if ( this->q22C ) /*0x5f9133*/
   {
-    _makepath(&Source, 0, 0, this + 504, (const char *)&off_7E1BC6 + 112 * *((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x5f9169*/
+    _makepath(&Source, 0, 0, this + 504, (const char *)&off_7E1BC6 + 112 * *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x5f9169*/
   }
   else if ( this->q237 ) /*0x5f9173*/
   {
-    v3 = *((_DWORD *)MEMORY[0xA8B230] + 1174); /*0x5f9183*/
+    v3 = *((_DWORD *)g_ScenarioClass_Instance + 1174); /*0x5f9183*/
     if ( v3 != -1 ) /*0x5f918c*/
     {
       v4 = Source; /*0x5f918e*/
@@ -825,7 +825,7 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
           (INIClass *)(this + 504),
           (Color *)&stru_830620.__pad_14B0[4156],
           (Color *)(this + 571));
-  *(_WORD *)(this + 571) = *(_WORD *)v21; /*0x5f95bc*/
+  this->q23B = *(_WORD *)v21; /*0x5f95bc*/
   v32 = (CCINIClass *)this->LineTrailColorDecrement; /*0x5f95cd*/
   this->q23D = *(_BYTE *)(v21 + 2); /*0x5f95d4*/
   v22 = INIClass::ReadInt_Overwrite( /*0x5f95d7*/

@@ -10,7 +10,7 @@ bool __thiscall sub_487E00(_DWORD *this)
 {
   _DWORD *v2; // esi
 
-  if ( !MEMORY[0xA8E9A0] ) /*0x487e0b*/
+  if ( !g_WTFMode ) /*0x487e0b*/
     return this->MovementAI_field_10 != 0; /*0x487e0b*/
   v2 = (_DWORD *)this->q039; /*0x487e0d*/
   if ( !v2 ) /*0x487e15*/
@@ -40,16 +40,16 @@ bool __thiscall sub_4A5150(int this)
   v1 = this->MovementAI_field_14; /*0x4a515b*/
   if ( !v1 ) /*0x4a5164*/
     return 1; /*0x4a5164*/
-  v2 = *(_DWORD *)(this + 8); /*0x4a5166*/
+  v2 = this->q008; /*0x4a5166*/
   v3 = this->MovementAI_field_10; /*0x4a5169*/
   if ( v2 != -1 ) /*0x4a516f*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v2 >= v3 ) /*0x4a517b*/
+    if ( (int)g_CurrentFrame - v2 >= v3 ) /*0x4a517b*/
       v3 = 0; /*0x4a5181*/
     else
-      v3 -= (int)MEMORY[0xA8ED84] - v2; /*0x4a517d*/
+      v3 -= (int)g_CurrentFrame - v2; /*0x4a517d*/
   }
-  return (double)(v1 - v3) / (double)*(int *)(this + 20) == 1.0; /*0x4a519e*/
+  return (double)(v1 - v3) / (double)this->MovementAI_field_14 == 1.0; /*0x4a519e*/
 }
 }
 

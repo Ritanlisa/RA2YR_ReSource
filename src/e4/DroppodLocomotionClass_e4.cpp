@@ -57,9 +57,9 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
   v38[1] = v36; /*0x4b5b9e*/
   v38[2] = v3; /*0x4b5ba2*/
   VeteranCombat_high = (*(int (__thiscall **)(int *))(*v2 + 456))(v2) / 10 + 2; /*0x4b5bc9*/
-  if ( SHIDWORD(MEMORY[0x8871E0]->DropPodHeight) > VeteranCombat_high ) /*0x4b5bd5*/
-    VeteranCombat_high = HIDWORD(MEMORY[0x8871E0]->DropPodHeight); /*0x4b5bd7*/
-  VeteranSpeed = MEMORY[0x8871E0]->DropPodAngle; /*0x4b5bf3*/
+  if ( SHIDWORD(g_RulesClass_Instance->DropPodHeight) > VeteranCombat_high ) /*0x4b5bd5*/
+    VeteranCombat_high = HIDWORD(g_RulesClass_Instance->DropPodHeight); /*0x4b5bd7*/
+  VeteranSpeed = g_RulesClass_Instance->DropPodAngle; /*0x4b5bf3*/
   if ( *(_BYTE *)(a1 + 24) ) /*0x4b5bdb*/
   {
     v32 = (double)VeteranCombat_high; /*0x4b5bf4*/
@@ -72,7 +72,7 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
     v4 = *(double *)v33 - Math::ArcTan2(*(double *)&VeteranSpeed) * v32; /*0x4b5c34*/
   }
   v35 = Math::RoundToInt(v4); /*0x4b5c41*/
-  v5 = MEMORY[0x8871E0]->DropPodAngle; /*0x4b5c50*/
+  v5 = g_RulesClass_Instance->DropPodAngle; /*0x4b5c50*/
   *(double *)v33 = (double)v37; /*0x4b5c56*/
   v6 = Math::SinCos(*(double *)&v5); /*0x4b5c5c*/
   v7 = Math::RoundToInt(*(double *)v33 - v6 * v32); /*0x4b5c6c*/
@@ -83,19 +83,19 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
   if ( v9 > 0 ) /*0x4b5c87*/
   {
     (*(void (__thiscall **)(int *, int *))(*v10 + 436))(v10, &v35); /*0x4b5eaa*/
-    VeteranRatio_high = (_DWORD *)HIDWORD(MEMORY[0x8871E0]->MissileSafetyAltitude); /*0x4b5eb6*/
+    VeteranRatio_high = (_DWORD *)HIDWORD(g_RulesClass_Instance->MissileSafetyAltitude); /*0x4b5eb6*/
     if ( VeteranRatio_high ) /*0x4b5ebe*/
     {
-      if ( !((int)MEMORY[0xA8ED84] % 6) ) /*0x4b5ecf*/
+      if ( !((int)g_CurrentFrame % 6) ) /*0x4b5ecf*/
       {
         v20 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5edf*/
         if ( v20 ) /*0x4b5ee6*/
         {
           Index = AnimTypeClass::FindIndex(&unk_820320); /*0x4b5eed*/
-          AnimClass::ctor(v20, *((void **)MEMORY[0x8B4154] + Index), v38, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
+          AnimClass::ctor(v20, *((void **)g_AnimTypeCount + Index), v38, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
         }
       }
-      if ( !((int)MEMORY[0xA8ED84] % 3) ) /*0x4b5f1f*/
+      if ( !((int)g_CurrentFrame % 3) ) /*0x4b5f1f*/
       {
         v32 = 0.0; /*0x4b5f39*/
         v22 = Coord::To_Cell(&MEMORY[0x87F7E8], (_DWORD *)(a1 + 28)); /*0x4b5f41*/
@@ -107,7 +107,7 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
           v33[0] = *v24; /*0x4b5f7a*/
           v33[1] = v24[1]; /*0x4b5f86*/
           v34 = v24[2]; /*0x4b5f8d*/
-          v26 = Random::State(MEMORY[0x886B88]); /*0x4b5f91*/
+          v26 = Random::State(Randomizer_Global); /*0x4b5f91*/
           StartAudioControllerAt(*(_DWORD *)(VeteranRatio_high[48] + 4 * (v26 % v25)), (int)&v35, 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v33, 2 * VeteranRatio_high[41], *(_DWORD **)(a1 + 8), VeteranRatio_high[43], 1, 0); /*0x4b5fc7*/
           v27 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5fd6*/
@@ -144,18 +144,18 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
     {
       v16 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5dae*/
       if ( v16 ) /*0x4b5db8*/
-        AnimClass::ctor(v16, (void *)MEMORY[0x8871E0]->FlashFrameTime, &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5dd8*/
+        AnimClass::ctor(v16, (void *)g_RulesClass_Instance->FlashFrameTime, &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5dd8*/
       if ( *(_BYTE *)(a1 + 24) ) /*0x4b5ddd*/
       {
         v17 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5de9*/
         if ( v17 ) /*0x4b5df3*/
-          AnimClass::ctor(v17, *(void **)(MEMORY[0x8871E0]->GUITabSound[3] + 4), &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5e16*/
+          AnimClass::ctor(v17, *(void **)(g_RulesClass_Instance->GUITabSound[3] + 4), &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5e16*/
       }
       else
       {
         v18 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5e18*/
         if ( v18 ) /*0x4b5e22*/
-          AnimClass::ctor(v18, *(void **)MEMORY[0x8871E0]->GUITabSound[3], &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5e47*/
+          AnimClass::ctor(v18, *(void **)g_RulesClass_Instance->GUITabSound[3], &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5e47*/
       }
       (*(void (__thiscall **)(int *, int))(*v10 + 292))(v10, 1); /*0x4b5e52*/
       (*(void (__thiscall **)(int *, _DWORD))(*v10 + 460))(v10, 0); /*0x4b5e5e*/
@@ -165,12 +165,12 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
     }
     else
     {
-      PlaySoundEffectAt(&v35, 100, *(_DWORD **)(a1 + 8), MEMORY[0x8871E0]->?[5], 1, 0); /*0x4b5d28*/
+      PlaySoundEffectAt(&v35, 100, *(_DWORD **)(a1 + 8), g_RulesClass_Instance->?[5], 1, 0); /*0x4b5d28*/
       v13 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5d37*/
       if ( v13 ) /*0x4b5d3e*/
       {
         v30 = (void *)Return::HRESULT_Fail(v35, v36, v37); /*0x4b5d64*/
-        v14 = (void *)GetWarheadVersusMultiplier(100, MEMORY[0x8871E0]->?[5], 0, &v35); /*0x4b5d8a*/
+        v14 = (void *)GetWarheadVersusMultiplier(100, g_RulesClass_Instance->?[5], 0, &v35); /*0x4b5d8a*/
         AnimClass::ctor(v13, v14, &v35, 0, 1, (void *)0x2600, v30, 0); /*0x4b5d92*/
         (*(void (__stdcall **)(int))(*(_DWORD *)v11 + 8))(a1 - 4); /*0x4b5d9a*/
         return 1; /*0x4b5da6*/

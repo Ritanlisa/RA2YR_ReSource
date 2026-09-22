@@ -53,7 +53,7 @@ bool sub_46D650()
   do /*0x46d7fd*/
   {
     v5 = *v4; /*0x46d6c3*/
-    if ( *v4 && v5 != MEMORY[0xAC119C] && v5 != MEMORY[0xAC11A0] ) /*0x46d6d7*/
+    if ( *v4 && v5 != g_HouseClass_ObserverFlags && v5 != MEMORY[0xAC11A0] ) /*0x46d6d7*/
     {
       v6 = *(v4 - 266); /*0x46d6d9*/
       if ( SessionClass::GetOption(v5) != v6 ) /*0x46d6e6*/

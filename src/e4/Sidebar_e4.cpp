@@ -58,14 +58,14 @@ int __thiscall Sidebar::StartSidebarProduction(int this, void *a1, BuildingTypeC
       break; /*0x4fa3d5*/
     case 2u: /*0x4fa3b0*/
     case 3u: /*0x4fa3b0*/
-      v21 = *(_BYTE *)(this + 21456); /*0x4fa406*/
+      v21 = this->q53D0; /*0x4fa406*/
       break; /*0x4fa40a*/
     case 6u: /*0x4fa3b0*/
     case 7u: /*0x4fa3b0*/
       if ( v7 == 5 ) /*0x4fa3e6*/
-        v21 = *(_BYTE *)(this + 21464); /*0x4fa3ee*/
+        v21 = this->q53D8; /*0x4fa3ee*/
       else
-        v21 = *(_BYTE *)(this + 21460); /*0x4fa3fa*/
+        v21 = this->q53D4; /*0x4fa3fa*/
       break; /*0x4fa3f2*/
     case 0xFu: /*0x4fa3b0*/
     case 0x10u: /*0x4fa3b0*/
@@ -168,10 +168,10 @@ LABEL_55:
         {
           v16 = *(_BYTE *)(v10 + 112); /*0x4fa622*/
           ProductionClass::StartTimer(v10, v24); /*0x4fa628*/
-          if ( !v16 && MEMORY[0xA8B238] && *(_BYTE *)(this + 492) ) /*0x4fa63a*/
+          if ( !v16 && g_GameMode_Current && *(_BYTE *)(this + 492) ) /*0x4fa63a*/
           {
             v17 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v10 + 88) + 132))(*(_DWORD *)(v10 + 88)); /*0x4fa649*/
-            v18 = (int)(54 * ((int)MEMORY[0xA8B558] * (int)MEMORY[0xA8B550] / 0x3Cu)) /*0x4fa67b*/
+            v18 = (int)(54 * ((int)MEMORY[0xA8B558] * (int)g_ScenarioState / 0x3Cu)) /*0x4fa67b*/
                 / (*(int (__thiscall **)(int))(*(_DWORD *)v17 + 136))(v17);
             if ( v18 >= 53 ) /*0x4fa680*/
               v18 = 53; /*0x4fa682*/
@@ -303,20 +303,20 @@ int __thiscall Sidebar::ScrollSidebarSkipGame(const char *this)
   int result; // eax
   int v2; // edi
 
-  result = MEMORY[0x87F668]; /*0x533f50*/
+  result = g_CommandClassVector_State; /*0x533f50*/
   v2 = 0; /*0x533f59*/
-  if ( MEMORY[0x87F668] > 0 ) /*0x533f5f*/
+  if ( g_CommandClassVector_State > 0 ) /*0x533f5f*/
   {
     while ( strcmp( /*0x533f9f*/
-              (const char *)(*(int (__thiscall **)(_DWORD))(**((_DWORD **)MEMORY[0x87F65C] + v2) + 4))(*((_DWORD *)MEMORY[0x87F65C] + v2)),
+              (const char *)(*(int (__thiscall **)(_DWORD))(**((_DWORD **)g_CommandClass_Capacity + v2) + 4))(*((_DWORD *)g_CommandClass_Capacity + v2)),
               this) )
     {
-      result = MEMORY[0x87F668]; /*0x533fa1*/
-      if ( ++v2 >= MEMORY[0x87F668] ) /*0x533fa9*/
+      result = g_CommandClassVector_State; /*0x533fa1*/
+      if ( ++v2 >= g_CommandClassVector_State ) /*0x533fa9*/
         return result; /*0x533fa9*/
     }
-    return (*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)MEMORY[0x87F65C] + v2) + 32))( /*0x533fbc*/
-             *((_DWORD *)MEMORY[0x87F65C] + v2),
+    return (*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_CommandClass_Capacity + v2) + 32))( /*0x533fbc*/
+             *((_DWORD *)g_CommandClass_Capacity + v2),
              0);
   }
   return result; /*0x533fab*/
@@ -492,14 +492,14 @@ int __thiscall Sidebar_Render(int this, char a2)
   if ( (a2 || *(_BYTE *)(this + 5388)) && MEMORY[0x884B8D] ) /*0x63fb43*/
   {
     *(_BYTE *)(this + 5388) = 0; /*0x63fb49*/
-    MEMORY[0xB0B518] = 1; /*0x63fb55*/
-    if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x63fb5d*/
+    g_TooltipActive = 1; /*0x63fb55*/
+    if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x63fb5d*/
       v3 = 0; /*0x63fb70*/
     else
       v3 = 5; /*0x63fb69*/
-    v16 = *((_DWORD *)MEMORY[0xA8B230] + 3374); /*0x63fb78*/
-    v4 = MEMORY[0x886F94] + 69; /*0x63fb80*/
-    v5 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)MEMORY[0x887300] + 120))(MEMORY[0x887300], &v16); /*0x63fb8c*/
+    v16 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x63fb78*/
+    v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
+    v5 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v16); /*0x63fb8c*/
     v6 = *(_DWORD *)(this + 5424); /*0x63fb91*/
     v18[0] = *v5; /*0x63fb97*/
     v18[1] = v5[1]; /*0x63fb9e*/
@@ -515,8 +515,8 @@ int __thiscall Sidebar_Render(int this, char a2)
         v16 = v3; /*0x63fc13*/
         v17 = v4; /*0x63fc17*/
         DrawToSurfaceSHP( /*0x63fc1b*/
-          MEMORY[0x887300],
-          MEMORY[0x87F6CC],
+          DSurface_Sidebar,
+          g_SidebarConfig,
           (int)MEMORY[0xAC4E74],
           0,
           &v16,
@@ -543,8 +543,8 @@ int __thiscall Sidebar_Render(int this, char a2)
       v16 = v3; /*0x63fc75*/
       v17 = v4; /*0x63fc79*/
       DrawToSurfaceSHP( /*0x63fc7d*/
-        MEMORY[0x887300],
-        MEMORY[0x87F6CC],
+        DSurface_Sidebar,
+        g_SidebarConfig,
         (int)MEMORY[0xAC4E74],
         4u,
         &v16,
@@ -572,8 +572,8 @@ int __thiscall Sidebar_Render(int this, char a2)
           v16 = v3; /*0x63fccb*/
           v17 = v4; /*0x63fccf*/
           DrawToSurfaceSHP( /*0x63fcd3*/
-            MEMORY[0x887300],
-            MEMORY[0x87F6CC],
+            DSurface_Sidebar,
+            g_SidebarConfig,
             (int)MEMORY[0xAC4E74],
             1u,
             &v16,
@@ -605,8 +605,8 @@ int __thiscall Sidebar_Render(int this, char a2)
           v16 = v3; /*0x63fd29*/
           v17 = v4; /*0x63fd2d*/
           DrawToSurfaceSHP( /*0x63fd31*/
-            MEMORY[0x887300],
-            MEMORY[0x87F6CC],
+            DSurface_Sidebar,
+            g_SidebarConfig,
             (int)MEMORY[0xAC4E74],
             2u,
             &v16,
@@ -636,8 +636,8 @@ int __thiscall Sidebar_Render(int this, char a2)
         v16 = v3; /*0x63fd87*/
         v17 = v4; /*0x63fd8b*/
         DrawToSurfaceSHP( /*0x63fd8f*/
-          MEMORY[0x887300],
-          MEMORY[0x87F6CC],
+          DSurface_Sidebar,
+          g_SidebarConfig,
           (int)MEMORY[0xAC4E74],
           3u,
           &v16,
@@ -675,7 +675,7 @@ int __thiscall Sidebar::ActivateTab(int this, IUnknown *aP1)
   result = aP1; /*0x6a60a0*/
   if ( aP1 == *(IUnknown **)(this + 21404) ) /*0x6a60ac*/
   {
-    *(_BYTE *)(this + 21414) = 1; /*0x6a60b8*/
+    this->__pad_53A6 = 1; /*0x6a60b8*/
     *(_BYTE *)(this + 3988 * (_DWORD)aP1 + 5504) = 1; /*0x6a60c6*/
     return MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a60d2*/
   }
@@ -708,25 +708,25 @@ void __thiscall FlushSidebarTooltip(_BYTE *this, char a2)
   int v17; // [esp+40h] [ebp-14h]
   struct tagRECT Rect; // [esp+44h] [ebp-10h] BYREF
 
-  if ( !*(this + 21413) || !MEMORY[0xA8E9A0] || !MEMORY[0xA8ED5C] ) /*0x6a7109*/
+  if ( !*(this + 21413) || !g_WTFMode || !MEMORY[0xA8ED5C] ) /*0x6a7109*/
     goto LABEL_25; /*0x6a7109*/
   GetClientRect(g_hWnd, &Rect); /*0x6a711b*/
   Point.x = Rect.left; /*0x6a7129*/
   Point.y = Rect.top; /*0x6a7137*/
   ClientToScreen(g_hWnd, &Point); /*0x6a713d*/
-  if ( MEMORY[0xB0B518] || a2 ) /*0x6a7153*/
+  if ( g_TooltipActive || a2 ) /*0x6a7153*/
   {
-    MEMORY[0xB0B518] = 1; /*0x6a723a*/
+    g_TooltipActive = 1; /*0x6a723a*/
     goto LABEL_13; /*0x6a723a*/
   }
-  MEMORY[0xB0B518] = 0; /*0x6a7166*/
+  g_TooltipActive = 0; /*0x6a7166*/
   if ( MEMORY[0x8809F4] != MEMORY[0xB07DC8]
     || MEMORY[0x8809F8] != MEMORY[0xB07DCC]
     || MEMORY[0x8809FC] != MEMORY[0xB07DD0]
     || MEMORY[0x880A00] != MEMORY[0xB07DD4] )
   {
 LABEL_13:
-    (*(void (__thiscall **)(int, int, int))(*(_DWORD *)MEMORY[0x887640] + 60))(MEMORY[0x887640], MEMORY[0x887300], 1); /*0x6a7241*/
+    (*(void (__thiscall **)(int, int, int))(*(_DWORD *)g_WWMouseClass_Instance + 60))(g_WWMouseClass_Instance, DSurface_Sidebar, 1); /*0x6a7241*/
     if ( MEMORY[0x8809F4] == MEMORY[0xB07DC8]
       && MEMORY[0x8809F8] == MEMORY[0xB07DCC]
       && MEMORY[0x8809FC] == MEMORY[0xB07DD0]
@@ -736,58 +736,58 @@ LABEL_13:
       if ( *(this + 21416) )
       {
         y = Point.y; /*0x6a72d1*/
-        v10 = Point.x + (MEMORY[0xA8EB7C] != 0 ? MEMORY[0x886FA8] : 0);
+        v10 = Point.x + (MEMORY[0xA8EB7C] != 0 ? g_Map_VisibleRectOffset : 0);
         v14 = 0; /*0x6a72f3*/
         v15 = 0; /*0x6a72f7*/
         v16 = MEMORY[0x886F98]; /*0x6a72fb*/
         v17 = 16; /*0x6a72ff*/
         v12 = MEMORY[0x886F98]; /*0x6a7303*/
         v13 = 16; /*0x6a7307*/
-        (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x6a7312*/
-          MEMORY[0x887308],
+        (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a7312*/
+          g_DSurface_Primary,
           &v10,
-          MEMORY[0x887300],
+          DSurface_Sidebar,
           &v14,
           0,
           1);
         *(this + 21416) = 0; /*0x6a7315*/
       }
       v3 = MEMORY[0x886F98]; /*0x6a7332*/
-      v17 = MEMORY[0x886F9C]; /*0x6a733e*/
+      v17 = g_DSurface_ViewBounds; /*0x6a733e*/
       v14 = 0; /*0x6a7348*/
-      v4 = MEMORY[0x886F94] + Point.y; /*0x6a734e*/
-      v15 = MEMORY[0x886F94]; /*0x6a7357*/
+      v4 = g_DSurface_SidebarBounds + Point.y; /*0x6a734e*/
+      v15 = g_DSurface_SidebarBounds; /*0x6a7357*/
       v16 = MEMORY[0x886F98]; /*0x6a735b*/
-      v5 = (MEMORY[0xA8EB7C] != 0 ? MEMORY[0x886FA8] : 0) + Point.x;
-      v6 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887300] + 128))(MEMORY[0x887300]); /*0x6a7363*/
+      v5 = (MEMORY[0xA8EB7C] != 0 ? g_Map_VisibleRectOffset : 0) + Point.x;
+      v6 = (*(int (__thiscall **)(int))(*(_DWORD *)DSurface_Sidebar + 128))(DSurface_Sidebar); /*0x6a7363*/
       v10 = v5; /*0x6a7386*/
       y = v4; /*0x6a738a*/
       v12 = v3; /*0x6a738e*/
-      v13 = v6 - MEMORY[0x886F94]; /*0x6a7392*/
-      (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x6a739d*/
-        MEMORY[0x887308],
+      v13 = v6 - g_DSurface_SidebarBounds; /*0x6a7392*/
+      (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a739d*/
+        g_DSurface_Primary,
         &v10,
-        MEMORY[0x887300],
+        DSurface_Sidebar,
         &v14,
         0,
         1);
     }
-    else if ( MEMORY[0xB0B518] )
+    else if ( g_TooltipActive )
     {
-      v7 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)MEMORY[0x887300] + 120))(MEMORY[0x887300], &v10); /*0x6a73be*/
+      v7 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v10); /*0x6a73be*/
       v14 = 0; /*0x6a73dd*/
       v15 = 0; /*0x6a73e5*/
       v16 = *(_DWORD *)(v7 + 8); /*0x6a73ec*/
       v8 = *(_DWORD *)(v7 + 12); /*0x6a73f0*/
       y = Point.y; /*0x6a73fd*/
-      v10 = Point.x + (MEMORY[0xA8EB7C] != 0 ? MEMORY[0x886FA8] : 0);
+      v10 = Point.x + (MEMORY[0xA8EB7C] != 0 ? g_Map_VisibleRectOffset : 0);
       v17 = v8; /*0x6a741b*/
       v12 = v16; /*0x6a741f*/
       v13 = v8; /*0x6a7423*/
-      (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x6a742e*/
-        MEMORY[0x887308],
+      (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a742e*/
+        g_DSurface_Primary,
         &v10,
-        MEMORY[0x887300],
+        DSurface_Sidebar,
         &v14,
         0,
         1);
@@ -795,13 +795,13 @@ LABEL_13:
     else
     {
       v15 = Point.y + MEMORY[0x8809F8]; /*0x6a7458*/
-      v14 = Point.x + MEMORY[0x8809F4] + (MEMORY[0xA8EB7C] != 0 ? MEMORY[0x886FA8] : 0);
+      v14 = Point.x + MEMORY[0x8809F4] + (MEMORY[0xA8EB7C] != 0 ? g_Map_VisibleRectOffset : 0);
       v16 = MEMORY[0x8809FC]; /*0x6a746f*/
       v17 = MEMORY[0x880A00]; /*0x6a7473*/
-      (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x6a747e*/
-        MEMORY[0x887308],
+      (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a747e*/
+        g_DSurface_Primary,
         &v14,
-        MEMORY[0x887300],
+        DSurface_Sidebar,
         &MEMORY[0x8809F4],
         0,
         1);
@@ -810,19 +810,19 @@ LABEL_13:
   }
   if ( *(this + 21416) )
   {
-    (*(void (__thiscall **)(int, int, int))(*(_DWORD *)MEMORY[0x887640] + 60))(MEMORY[0x887640], MEMORY[0x887300], 1); /*0x6a71c7*/
+    (*(void (__thiscall **)(int, int, int))(*(_DWORD *)g_WWMouseClass_Instance + 60))(g_WWMouseClass_Instance, DSurface_Sidebar, 1); /*0x6a71c7*/
     v15 = Point.y; /*0x6a71eb*/
-    v14 = Point.x + (MEMORY[0xA8EB7C] != 0 ? MEMORY[0x886FA8] : 0);
+    v14 = Point.x + (MEMORY[0xA8EB7C] != 0 ? g_Map_VisibleRectOffset : 0);
     v10 = 0; /*0x6a720d*/
     y = 0; /*0x6a7211*/
     v12 = MEMORY[0x886F98]; /*0x6a7215*/
     v13 = 16; /*0x6a7219*/
     v16 = MEMORY[0x886F98]; /*0x6a721d*/
     v17 = 16; /*0x6a7221*/
-    (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x6a722c*/
-      MEMORY[0x887308],
+    (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a722c*/
+      g_DSurface_Primary,
       &v14,
-      MEMORY[0x887300],
+      DSurface_Sidebar,
       &v10,
       0,
       1);
@@ -831,7 +831,7 @@ LABEL_24:
     MEMORY[0xB0B519] = 1; /*0x6a7481*/
   }
 LABEL_25:
-  MEMORY[0xB0B518] = 0; /*0x6a7488*/
+  g_TooltipActive = 0; /*0x6a7488*/
 }
 }
 } // namespace gamemd

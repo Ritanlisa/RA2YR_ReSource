@@ -54,23 +54,23 @@ int __thiscall sub_5116A0(int this)
     while ( v2 < g_SuperWeaponTypeArray ); /*0x51170e*/
   }
   v3 = *(void **)(this + 392); /*0x511710*/
-  *(_DWORD *)(this + 388) = &vt_VectorClass_AircraftTypeClass_const; /*0x51171a*/
+  this->q184 = &vt_VectorClass_AircraftTypeClass_const; /*0x51171a*/
   if ( v3 && *(_BYTE *)(this + 401) ) /*0x511726*/
   {
     __3_YAXPAX_Z(v3); /*0x51172f*/
-    *(_DWORD *)(this + 392) = 0; /*0x511737*/
+    this->q188 = 0; /*0x511737*/
   }
   *(_BYTE *)(this + 401) = 0; /*0x51173d*/
-  *(_DWORD *)(this + 396) = 0; /*0x511743*/
+  this->q18C = 0; /*0x511743*/
   v4 = *(void **)(this + 364); /*0x511749*/
-  *(_DWORD *)(this + 360) = &vt_VectorClass_UnitTypeClass_const; /*0x51174f*/
+  this->q168 = &vt_VectorClass_UnitTypeClass_const; /*0x51174f*/
   if ( v4 && *(_BYTE *)(this + 373) ) /*0x51175d*/
   {
     __3_YAXPAX_Z(v4); /*0x511766*/
-    *(_DWORD *)(this + 364) = 0; /*0x51176e*/
+    this->q16C = 0; /*0x51176e*/
   }
   *(_BYTE *)(this + 373) = 0; /*0x511774*/
-  *(_DWORD *)(this + 368) = 0; /*0x51177a*/
+  this->q170 = 0; /*0x51177a*/
   v5 = *(void **)(this + 336); /*0x511780*/
   this->veteranInfantry = &vt_VectorClass_InfantryTypeClass_const; /*0x511786*/
   if ( v5 && *(_BYTE *)(this + 345) ) /*0x511794*/
@@ -184,7 +184,7 @@ char __thiscall HouseTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   if ( Destination != (char *)(this + 152) ) /*0x51191a*/
   {
     qmemcpy((void *)(this + 152), Destination, 0x18u); /*0x511925*/
-    *(_BYTE *)(this + 176) = v58; /*0x511927*/
+    this->veteranUnitsCount = v58; /*0x511927*/
     v3 = (CCINIClass *)aP1; /*0x511928*/
   }
   this->colorSchemeIndex = BuildingTypeClass::FindAnimByName( /*0x511942*/
@@ -192,7 +192,7 @@ char __thiscall HouseTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                               (unsigned __int8 *)(this + 36),
                               (unsigned __int8 *)&stru_81B138,
                               this->colorSchemeIndex);
-  aP4.__pad_20[2] = *(_BYTE *)(this + 420); /*0x51195a*/
+  aP4.__pad_20[2] = this->q1A4; /*0x51195a*/
   aP4.__pad_20[3] = 0; /*0x511966*/
   INIClass::GetString( /*0x51196b*/
     (unsigned __int8 ***)v3,
@@ -201,7 +201,7 @@ char __thiscall HouseTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
     (INIClass *)&aP4.__pad_20[2],
     &aP4,
     2);
-  *(_BYTE *)(this + 420) = aP4.__pad_0[0]; /*0x511974*/
+  this->q1A4 = aP4.__pad_0[0]; /*0x511974*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x511990*/
                        (int)v3,
                        (INIClass *)(this + 36),
@@ -237,16 +237,16 @@ char __thiscall HouseTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
           (INIClass *)(this + 36),
           (unsigned __int8 *)&stru_825430.needsSave_flag,
           v16);
-  v18 = *(_BYTE *)(this + 421); /*0x511a5b*/
+  v18 = this->q1A5; /*0x511a5b*/
   *(double *)(this + 248) = v17; /*0x511a61*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x511a70*/
                      (int)v3,
                      (unsigned __int8 *)(this + 36),
                      (CCINIClass *)&stru_825430.__pad_20[8],
                      v18);
-  aP3_4 = *(_BYTE *)(this + 422); /*0x511a7d*/
-  *(_BYTE *)(this + 421) = Bool_Overwrite; /*0x511a84*/
-  *(_BYTE *)(this + 422) = INIClass::ReadBool_Overwrite( /*0x511a8f*/
+  aP3_4 = this->q1A6; /*0x511a7d*/
+  this->q1A5 = Bool_Overwrite; /*0x511a84*/
+  this->q1A6 = INIClass::ReadBool_Overwrite( /*0x511a8f*/
                              (int)v3,
                              (unsigned __int8 *)(this + 36),
                              (CCINIClass *)&stru_825430.sectionHead[1],
@@ -255,107 +255,107 @@ char __thiscall HouseTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
           (int)v3,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_825430.headNode[1],
-          *(_BYTE *)(this + 423));
-  v21 = *(_BYTE *)(this + 424); /*0x511aa9*/
-  *(_BYTE *)(this + 423) = v20; /*0x511aaf*/
+          this->q1A7);
+  v21 = this->q1A8; /*0x511aa9*/
+  this->q1A7 = v20; /*0x511aaf*/
   v22 = INIClass::ReadBool_Overwrite((int)v3, (unsigned __int8 *)(this + 36), &stru_825430, v21); /*0x511abe*/
-  v23 = *(float *)(this + 256); /*0x511ac3*/
-  *(_BYTE *)(this + 424) = v22; /*0x511ace*/
-  *(float *)(this + 256) = INIClass::ReadDouble_Overwrite( /*0x511ae2*/
+  v23 = this->q100; /*0x511ac3*/
+  this->q1A8 = v22; /*0x511ace*/
+  this->q100 = INIClass::ReadDouble_Overwrite( /*0x511ae2*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aArmorinfantrym,
                              (INIClass *)LODWORD(v23));
-  *(float *)(this + 260) = INIClass::ReadDouble_Overwrite( /*0x511b01*/
+  this->q104 = INIClass::ReadDouble_Overwrite( /*0x511b01*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aArmorunitsmult,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 260)));
-  *(float *)(this + 264) = INIClass::ReadDouble_Overwrite( /*0x511b20*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q104));
+  this->q108 = INIClass::ReadDouble_Overwrite( /*0x511b20*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aArmoraircraftm,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 264)));
-  *(float *)(this + 268) = INIClass::ReadDouble_Overwrite( /*0x511b3f*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q108));
+  this->q10C = INIClass::ReadDouble_Overwrite( /*0x511b3f*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aArmorbuildings,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 268)));
-  *(float *)(this + 272) = INIClass::ReadDouble_Overwrite( /*0x511b5e*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q10C));
+  this->q110 = INIClass::ReadDouble_Overwrite( /*0x511b5e*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aArmordefensesm,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 272)));
-  *(float *)(this + 276) = INIClass::ReadDouble_Overwrite( /*0x511b7d*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q110));
+  this->q114 = INIClass::ReadDouble_Overwrite( /*0x511b7d*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aCostinfantrymu,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 276)));
-  *(float *)(this + 280) = INIClass::ReadDouble_Overwrite( /*0x511b9c*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q114));
+  this->q118 = INIClass::ReadDouble_Overwrite( /*0x511b9c*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aCostunitsmult,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 280)));
-  *(float *)(this + 284) = INIClass::ReadDouble_Overwrite( /*0x511bbb*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q118));
+  this->q11C = INIClass::ReadDouble_Overwrite( /*0x511bbb*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aCostaircraftmu,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 284)));
-  *(float *)(this + 288) = INIClass::ReadDouble_Overwrite( /*0x511bda*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q11C));
+  this->q120 = INIClass::ReadDouble_Overwrite( /*0x511bda*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aCostbuildingsm,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 288)));
-  *(float *)(this + 292) = INIClass::ReadDouble_Overwrite( /*0x511bf9*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q120));
+  this->q124 = INIClass::ReadDouble_Overwrite( /*0x511bf9*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aCostdefensesmu,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 292)));
-  *(float *)(this + 296) = INIClass::ReadDouble_Overwrite( /*0x511c18*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q124));
+  this->q128 = INIClass::ReadDouble_Overwrite( /*0x511c18*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aSpeedinfantrym,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 296)));
-  *(float *)(this + 300) = INIClass::ReadDouble_Overwrite( /*0x511c37*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q128));
+  this->q12C = INIClass::ReadDouble_Overwrite( /*0x511c37*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aSpeedunitsmult,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 300)));
-  *(float *)(this + 304) = INIClass::ReadDouble_Overwrite( /*0x511c56*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q12C));
+  this->q130 = INIClass::ReadDouble_Overwrite( /*0x511c56*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aSpeedaircraftm,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 304)));
-  *(float *)(this + 308) = INIClass::ReadDouble_Overwrite( /*0x511c75*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q130));
+  this->q134 = INIClass::ReadDouble_Overwrite( /*0x511c75*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aBuildtimeinfan,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 308)));
-  *(float *)(this + 312) = INIClass::ReadDouble_Overwrite( /*0x511c94*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q134));
+  this->q138 = INIClass::ReadDouble_Overwrite( /*0x511c94*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aBuildtimeunits,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 312)));
-  *(float *)(this + 316) = INIClass::ReadDouble_Overwrite( /*0x511cb3*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q138));
+  this->q13C = INIClass::ReadDouble_Overwrite( /*0x511cb3*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aBuildtimeaircr,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 316)));
-  *(float *)(this + 320) = INIClass::ReadDouble_Overwrite( /*0x511cd2*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q13C));
+  this->q140 = INIClass::ReadDouble_Overwrite( /*0x511cd2*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aBuildtimebuild,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 320)));
-  *(float *)(this + 324) = INIClass::ReadDouble_Overwrite( /*0x511cf1*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q140));
+  this->q144 = INIClass::ReadDouble_Overwrite( /*0x511cf1*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aBuildtimedefen,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 324)));
-  *(float *)(this + 328) = INIClass::ReadDouble_Overwrite( /*0x511d10*/
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q144));
+  this->q148 = INIClass::ReadDouble_Overwrite( /*0x511d10*/
                              (int)v3,
                              (INIClass *)(this + 36),
                              aIncomemult,
-                             (INIClass *)COERCE_UNSIGNED_INT64(*(float *)(this + 328)));
+                             (INIClass *)COERCE_UNSIGNED_INT64(this->q148));
   if ( INIClass::GetString( /*0x511d2d*/
          (unsigned __int8 ***)v3,
          (INIClass *)(this + 36),
@@ -436,7 +436,7 @@ char __thiscall HouseTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   *(_DWORD *)(this + 380) = *(int *)((char *)&aP4.sectionHead[1] + 2); /*0x511f2c*/
   v48 = *(CCINIClass **)((char *)aP4.headNode + 2); /*0x511f2f*/
   *(_DWORD *)(this + 376) = v31; /*0x511f33*/
-  *(_DWORD *)(this + 384) = v32; /*0x511f38*/
+  this->armorAircraftMult = v32; /*0x511f38*/
   *(_DWORD *)&aP4.__pad_0[2] = &vt_VectorClass_UnitTypeClass_const; /*0x511f3b*/
   if ( v48 && HIBYTE(aP4.headNode[2]) ) /*0x511f4b*/
     __3_YAXPAX_Z(v48); /*0x511f4e*/
@@ -481,9 +481,9 @@ char __thiscall HouseTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   HouseTypeClass::readBaseDefense((_DWORD *)(this + 388), (VectorClass *)&aP4.__pad_0[2]); /*0x512051*/
   v37 = *(int *)((char *)aP4.sectionHead + 2); /*0x51205a*/
   v38 = *(int *)((char *)&aP4.sectionHead[2] + 2); /*0x51205e*/
-  *(_DWORD *)(this + 408) = *(int *)((char *)&aP4.sectionHead[1] + 2); /*0x512062*/
+  this->q198 = *(int *)((char *)&aP4.sectionHead[1] + 2); /*0x512062*/
   v54 = *(CCINIClass **)((char *)aP4.headNode + 2); /*0x512065*/
-  *(_DWORD *)(this + 404) = v37; /*0x512069*/
+  this->q194 = v37; /*0x512069*/
   *(_DWORD *)(this + 412) = v38; /*0x51206e*/
   *(_DWORD *)&aP4.__pad_0[2] = &vt_VectorClass_AircraftTypeClass_const; /*0x512071*/
   if ( v54 && HIBYTE(aP4.headNode[2]) ) /*0x512081*/
@@ -552,17 +552,17 @@ int __thiscall HouseTypeClass::ProcessPower(int this, int *a2)
   Power::TimerProcess(this->arrayIndex2); /*0x512188*/
   Power::TimerProcess(this->sideIndex); /*0x512196*/
   Power::TimerProcess(this->colorSchemeIndex); /*0x5121a4*/
-  Checksummer::Add_double(this->firepowerMult, *(_DWORD *)(this + 204)); /*0x5121b9*/
+  Checksummer::Add_double(this->firepowerMult, this->q0CC); /*0x5121b9*/
   Checksummer::Add_double(this->groundspeedMult, *(_DWORD *)(this + 212)); /*0x5121ce*/
-  Checksummer::Add_double(this->airspeedMult, *(_DWORD *)(this + 220)); /*0x5121e3*/
-  Checksummer::Add_double(this->armorMult, *(_DWORD *)(this + 228)); /*0x5121f8*/
-  Checksummer::Add_double(this->rofMult, *(_DWORD *)(this + 236)); /*0x51220d*/
-  Checksummer::Add_double(this->costMult, *(_DWORD *)(this + 244)); /*0x512222*/
-  Checksummer::Add_double(this->buildtimeMult, *(_DWORD *)(this + 252)); /*0x512237*/
+  Checksummer::Add_double(this->airspeedMult, this->q0DC); /*0x5121e3*/
+  Checksummer::Add_double(this->armorMult, this->q0E4); /*0x5121f8*/
+  Checksummer::Add_double(this->rofMult, this->q0EC); /*0x51220d*/
+  Checksummer::Add_double(this->costMult, this->q0F4); /*0x512222*/
+  Checksummer::Add_double(this->buildtimeMult, this->q0FC); /*0x512237*/
   Checksummer::Add_Buffer((unsigned int *)a2, (unsigned __int8 *)(this + 416), strlen((const char *)(this + 416))); /*0x512252*/
-  LOBYTE(v3) = *(_BYTE *)(this + 420); /*0x512257*/
+  LOBYTE(v3) = this->q1A4; /*0x512257*/
   v4 = Power::FinalizeDrain(a2, v3); /*0x512260*/
-  LOBYTE(v4) = *(_BYTE *)(this + 421); /*0x512265*/
+  LOBYTE(v4) = this->q1A5; /*0x512265*/
   return Power::FlagProcess(a2, v4); /*0x512273*/
 }
 }
@@ -628,11 +628,11 @@ int __stdcall HouseTypeClass::SaveLoad_Prefix(_DWORD *i, int a2)
       HouseTypeClass::readPowerPlants(v2 + 97, &a2); /*0x5123de*/
     }
     for ( m = 0; m < v2[87]; ++m ) /*0x5123f4*/
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2[84] + 4 * m)); /*0x512405*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2[84] + 4 * m)); /*0x512405*/
     for ( n = 0; n < v2[94]; ++n ) /*0x51241f*/
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2[91] + 4 * n)); /*0x512430*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2[91] + 4 * n)); /*0x512430*/
     for ( ii = 0; ii < v2[101]; ++ii ) /*0x51244a*/
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2[98] + 4 * ii)); /*0x51245b*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2[98] + 4 * ii)); /*0x51245b*/
     return 0; /*0x51246b*/
   }
   return result; /*0x51246d*/

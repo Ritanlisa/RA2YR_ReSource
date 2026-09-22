@@ -161,10 +161,10 @@ int __thiscall VectorClass_RemoveObjectById(int this)
   int v7; // [esp+4h] [ebp-4h] BYREF
 
   v7 = this; /*0x4137a0*/
-  if ( !*(_DWORD *)(this + 9616) ) /*0x4137a1*/
+  if ( !this->q2590 ) /*0x4137a1*/
     return 0; /*0x4137ab*/
   v2 = this + 9600; /*0x4137b6*/
-  v3 = *(_DWORD *)(this + 9600); /*0x4137c3*/
+  v3 = this->q960; /*0x4137c3*/
   v7 = **(_DWORD **)(this + 9604); /*0x4137c7*/
   v4 = (*(int (__thiscall **)(int, int *))(v3 + 16))(this + 9600, &v7); /*0x4137cb*/
   if ( v4 != -1 ) /*0x4137d1*/
@@ -1034,7 +1034,7 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_501400(int a1)
             v2,
             &v7,
             0,
-            MEMORY[0x8871E0]->?[5],
+            g_RulesClass_Instance->?[5],
             0,
             1,
             1,
@@ -2735,12 +2735,12 @@ DynamicVector * VectorClass_ptr_LightConvertClass::Constructor_VectorClass_Light
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_LightConvertClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -3025,12 +3025,12 @@ DynamicVector * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_Isom
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_IsometricTileClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -3057,12 +3057,12 @@ LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectC
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_ObjectClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -3863,12 +3863,12 @@ DynamicVector * VectorClass_ptr_VoxelAnimClass::Constructor_VectorClass_VoxelAni
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_VoxelAnimClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -4153,12 +4153,12 @@ DynamicVector * VectorClass_ptr_WarheadTypeClass::Constructor_VectorClass_Warhea
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_WarheadTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -4443,12 +4443,12 @@ DynamicVector * VectorClass_ptr_WeaponTypeClass::Constructor_VectorClass_WeaponT
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_WeaponTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -4733,12 +4733,12 @@ DynamicVector * VectorClass_ptr_AirstrikeClass::Constructor_VectorClass_Airstrik
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_AirstrikeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -5931,12 +5931,12 @@ DynamicVector * VectorClass_ptr_FoggedObjectClass::Constructor_VectorClass_Fogge
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_FoggedObjectClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -6955,12 +6955,12 @@ DynamicVector * VectorClass_ptr_CaptureManagerClass::Constructor_VectorClass_Cap
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_CaptureManagerClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -9535,12 +9535,12 @@ VectorClass * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributio
     int v3;
     v3 = *(this + 1);
     *(void**)this = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z((void *)(v3 - 4));
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -9557,12 +9557,12 @@ DynamicVector * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
     int v3;
     v3 = *(this + 1);
     *(void**)this = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z((void *)(v3 - 4));
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -18638,12 +18638,12 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITr
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_AITriggerTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -18682,12 +18682,12 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Buil
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_BuildingLightClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -18792,12 +18792,12 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_TriggerClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -18836,12 +18836,12 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_TriggerTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -18924,12 +18924,12 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Part
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_ParticleSystemClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19254,12 +19254,12 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignC
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_CampaignClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19342,12 +19342,12 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_HouseTyp
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_HouseTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19386,12 +19386,12 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TaskForc
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_TaskForceClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19430,12 +19430,12 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TeamType
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_TeamTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19474,12 +19474,12 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptT
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_ScriptTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19518,12 +19518,12 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_Overlay
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_OverlayTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19562,12 +19562,12 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeT
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_SmudgeTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19606,12 +19606,12 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Terrain
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_TerrainTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19650,12 +19650,12 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Buildin
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_BuildingTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19694,12 +19694,12 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_Aircr
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_AircraftTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19738,12 +19738,12 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitT
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_UnitTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19782,12 +19782,12 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeC
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_AnimTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19826,12 +19826,12 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryT
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_InfantryTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19870,12 +19870,12 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTyp
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_BulletTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19914,12 +19914,12 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Voxe
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_VoxelAnimTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -19958,12 +19958,12 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Isom
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_IsometricTileTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -20002,12 +20002,12 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_ParticleTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -20046,12 +20046,12 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_ParticleSystemTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -20090,12 +20090,12 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Super
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_SuperWeaponTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -20134,12 +20134,12 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_AbstractType
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_AbstractTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -23354,12 +23354,12 @@ DynamicVector * VectorClass_ptr_IonBlastClass::Constructor_VectorClass_IonBlastC
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_IonBlastClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -23788,12 +23788,12 @@ VectorClass * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::QueryIn
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_IsometricTileTypeClass_TileInsertType;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -23810,12 +23810,12 @@ DynamicVector * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Const
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_IsometricTileTypeClass_TileInsertType;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -24100,12 +24100,12 @@ DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDra
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_LaserDrawClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -24636,12 +24636,12 @@ DynamicVector * VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightS
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_LightSourceClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -29585,12 +29585,12 @@ DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectT
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_ObjectTypeClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -29873,12 +29873,12 @@ DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLigh
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_SpotLightClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -30633,12 +30633,12 @@ DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteC
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_ParasiteClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -31329,12 +31329,12 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_PlanningMemberClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -31373,12 +31373,12 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_PlanningBranchClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -33537,12 +33537,12 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_MultiM
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_MultiMission;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -33581,12 +33581,12 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_Global
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_GlobalPacketType;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -33986,12 +33986,12 @@ DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_Slave
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_SlaveManagerClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -34478,12 +34478,12 @@ DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_Spawn
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_SpawnManagerClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -36310,12 +36310,12 @@ DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowCont
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_ShadowControlClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -36941,12 +36941,12 @@ DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalC
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_TemporalClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -37645,12 +37645,12 @@ DynamicVector * VectorClass_ptr_TiberiumClass::Constructor_VectorClass_TiberiumC
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_TiberiumClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -38829,12 +38829,12 @@ DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_Waypo
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_WaypointPathClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

@@ -1345,7 +1345,7 @@ int __thiscall sub_75F140(_DWORD *this)
   _DWORD *v5; // eax
   int result; // eax
 
-  v2 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887314] + 116))(MEMORY[0x887314]) >> 1; /*0x75f14e*/
+  v2 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) >> 1; /*0x75f14e*/
   *(this + 107) = -v2; /*0x75f159*/
   *(this + 108) = 1 - v2; /*0x75f164*/
   *(this + 110) = v2 + 1; /*0x75f16a*/
@@ -1522,7 +1522,7 @@ void __thiscall Voxel::ShadowCalc(int this, WaveClass *aP1, int *a2)
     v77 = v5 + 3; /*0x75fadf*/
     v79 = *a2 + 3; /*0x75faf0*/
     v69 = *a2 + a2[2] - 3; /*0x75faf8*/
-    v6 = *(_DWORD *)&aP1->__pad_0[4] - *(_DWORD *)(this + 208); /*0x75fb09*/
+    v6 = *(_DWORD *)&aP1->__pad_0[4] - this->q0D0; /*0x75fb09*/
     aP2 = (WaveClass *)(*(_DWORD *)aP1->__pad_0 - this->Voxel_field_0xCC); /*0x75fb17*/
     v76 = v6; /*0x75fb1b*/
     ProcessVoxelVertexData((_DWORD *)(this + 328), (int *)(this + 416)); /*0x75fb1f*/
@@ -1583,7 +1583,7 @@ void __thiscall Voxel::ShadowCalc(int this, WaveClass *aP1, int *a2)
                                * ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 116))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416]) >> 1)));
                 v51 = (MouseClass *)(v56 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]); /*0x7600c0*/
                 v84 = (MouseClass *)v50; /*0x7600c4*/
-                for ( i = abs32(v56 - v76 - *(_DWORD *)(this + 208)); v50 >= v60; --a4c ) /*0x7600d5*/
+                for ( i = abs32(v56 - v76 - this->q0D0); v50 >= v60; --a4c ) /*0x7600d5*/
                 {
                   if ( *(_WORD *)Audio::GetSamplePosition(*(int *)&MEMORY[0x87F8E4].__pad_5568[10232], v84, v51) > (unsigned __int16)aP1c ) /*0x7600f0*/
                     Voxel::BlendShadowColor((_DWORD *)this, v50, aP2, i, a4c); /*0x760100*/
@@ -1631,7 +1631,7 @@ void __thiscall Voxel::ShadowCalc(int this, WaveClass *aP1, int *a2)
                 v41 = &v37[v40]; /*0x75ff68*/
                 v42 = (unsigned __int16 *)(2 * v40 + SamplePosition); /*0x75ff6a*/
                 a4b = v42; /*0x75ff76*/
-                v43 = v39 - v76 - *(_DWORD *)(this + 208); /*0x75ff7a*/
+                v43 = v39 - v76 - this->q0D0; /*0x75ff7a*/
                 for ( j = (HIDWORD(v43) ^ v43) - HIDWORD(v43); v40 >= (int)v59; a4b = v42 ) /*0x75ff87*/
                 {
                   if ( *v42 > aP1b ) /*0x75ff91*/
@@ -1699,7 +1699,7 @@ void __thiscall Voxel::ShadowCalc(int this, WaveClass *aP1, int *a2)
                                * ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 116))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416]) >> 1)));
                 v33 = (MouseClass *)(v27 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]); /*0x75fdad*/
                 v85 = (MouseClass *)(v27 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]); /*0x75fdb7*/
-                v34 = abs32(v27 - v76 - *(_DWORD *)(this + 208)); /*0x75fdc6*/
+                v34 = abs32(v27 - v76 - this->q0D0); /*0x75fdc6*/
                 if ( v32 <= v63 ) /*0x75fdca*/
                 {
                   while ( 1 ) /*0x75fdd2*/
@@ -1747,7 +1747,7 @@ void __thiscall Voxel::ShadowCalc(int this, WaveClass *aP1, int *a2)
                 v19 = (int)v18; /*0x75fc5e*/
               v20 = (unsigned __int16 *)(2 * v19 + v11); /*0x75fc67*/
               v21 = &v14[v19]; /*0x75fc69*/
-              v22 = v15 - v76 - *(_DWORD *)(this + 208); /*0x75fc7b*/
+              v22 = v15 - v76 - this->q0D0; /*0x75fc7b*/
               v23 = v22; /*0x75fc7c*/
               v24 = v19; /*0x75fc7e*/
               v75 = v19; /*0x75fc82*/
@@ -2179,7 +2179,7 @@ void __thiscall Voxel::FaceBlit(int this)
   {
     v33 = *(MouseClass **)CellStruct::Set(&v38, *(_DWORD *)(this + 252) / 256, *(_DWORD *)(this + 256) / 256); /*0x7612e0*/
     v35 = *(MouseClass **)CellStruct::Set(&v38, *(_DWORD *)(this + 264) / 256, *(_DWORD *)(this + 268) / 256); /*0x761312*/
-    v14 = CellStruct::Set(&v38, *(_DWORD *)(this + 192) / 256, *(_DWORD *)(this + 196) / 256); /*0x76133c*/
+    v14 = CellStruct::Set(&v38, this->q030 / 256, *(_DWORD *)(this + 196) / 256); /*0x76133c*/
     v15 = *(_DWORD *)(this + 320); /*0x761349*/
     v34 = *(_DWORD *)v14; /*0x761355*/
     for ( i = COERCE_DOUBLE(__PAIR64__(*(_DWORD *)(this + 324), v15)); /*0x761376*/
@@ -2939,13 +2939,13 @@ int __thiscall Voxel_Transform_Matrix(int this)
   int v74; // [esp+2Ch] [ebp-10h]
   _BYTE v75[12]; // [esp+30h] [ebp-Ch] BYREF
 
-  if ( *(double *)(this + 312) - *(double *)(this + 320) > 0.1 && !*(_DWORD *)(this + 176) ) /*0x762b18*/
+  if ( *(double *)(this + 312) - *(double *)(this + 320) > 0.1 && !this->q02C ) /*0x762b18*/
     *(_BYTE *)(this + 301) = 1; /*0x762b22*/
-  if ( this->Voxel_field_0x130 == (unsigned int)Math::RoundToInt(1.0 / 0.050000001) && *(_DWORD *)(this + 176) == 3 ) /*0x762b49*/
+  if ( this->Voxel_field_0x130 == (unsigned int)Math::RoundToInt(1.0 / 0.050000001) && this->q02C == 3 ) /*0x762b49*/
   {
-    v2 = *(_DWORD *)(this + 308); /*0x762b4b*/
+    v2 = this->q134; /*0x762b4b*/
     this->Voxel_field_0x130 = 64; /*0x762b51*/
-    *(_DWORD *)(this + 308) = v2 + 1; /*0x762b5c*/
+    this->q134 = v2 + 1; /*0x762b5c*/
   }
   v3 = *(_DWORD *)(this + 172); /*0x762b62*/
   if ( !v3 ) /*0x762b6a*/
@@ -2957,7 +2957,7 @@ int __thiscall Voxel_Transform_Matrix(int this)
     goto LABEL_13; /*0x762b95*/
   if ( *(_DWORD *)(v4 + 692) != v3 ) /*0x762ba1*/
     goto LABEL_13; /*0x762ba1*/
-  if ( *(_DWORD *)(this + 176) != 3 ) /*0x762bae*/
+  if ( this->q02C != 3 ) /*0x762bae*/
   {
     v5 = v4 + 156; /*0x762bc0*/
     v6 = *(_DWORD *)(v4 + 156); /*0x762bc4*/
@@ -2982,7 +2982,7 @@ LABEL_13:
   }
   if ( *(_BYTE *)(this + 300) ) /*0x762c4e*/
   {
-    if ( *(_DWORD *)(this + 176) != 3 ) /*0x762c69*/
+    if ( this->q02C != 3 ) /*0x762c69*/
       goto LABEL_21; /*0x762c69*/
     v13 = *(_DWORD *)(this + 172); /*0x762c6f*/
     if ( v13 && (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13) == 1 ) /*0x762c81*/
@@ -2998,7 +2998,7 @@ LABEL_13:
       Voxel::LightRender((_DWORD *)this, v16, 0); /*0x762cbf*/
       goto LABEL_22; /*0x762cc4*/
     }
-    if ( *(_DWORD *)(this + 176) == 3 ) /*0x762ccf*/
+    if ( this->q02C == 3 ) /*0x762ccf*/
     {
       v17 = *(_DWORD *)(this + 468); /*0x762cd7*/
       v18 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 172) + 88))(*(_DWORD *)(this + 172)); /*0x762ce8*/
@@ -3030,7 +3030,7 @@ LABEL_21:
   }
 LABEL_22:
   v23 = *(double *)(this + 312); /*0x762d57*/
-  if ( *(_DWORD *)(this + 176) != 3 ) /*0x762d6c*/
+  if ( this->q02C != 3 ) /*0x762d6c*/
   {
     if ( v23 < 1.0 && *(_BYTE *)(this + 300) ) /*0x762f69*/
     {

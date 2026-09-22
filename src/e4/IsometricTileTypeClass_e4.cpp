@@ -14,18 +14,18 @@ int __thiscall IsometricTileTypeClass::ProcessPower(int this, int *a2)
   int v6; // eax
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x549b79*/
-  Power::TimerProcess(*(_DWORD *)(this + 660)); /*0x549b87*/
-  Power::TimerProcess(*(_DWORD *)(this + 664)); /*0x549b95*/
+  Power::TimerProcess(this->q294); /*0x549b87*/
+  Power::TimerProcess(this->q298); /*0x549b95*/
   Power::TimerProcess(*(_DWORD *)(this + 668)); /*0x549ba3*/
-  Power::TimerProcess(*(_DWORD *)(this + 672)); /*0x549bb1*/
+  Power::TimerProcess(this->q0A8); /*0x549bb1*/
   Power::TimerProcess(*(_DWORD *)(this + 692)); /*0x549bbf*/
-  v3 = *(_DWORD *)(this + 700); /*0x549bc4*/
+  v3 = this->q2BC; /*0x549bc4*/
   if ( v3 ) /*0x549bcc*/
   {
     v4 = (*(int (__stdcall **)(int))(*(_DWORD *)(v3 + 4) + 16))(v3 + 4); /*0x549bd5*/
     Power::TimerProcess(v4); /*0x549bdb*/
   }
-  Power::TimerProcess(*(_DWORD *)(this + 704)); /*0x549be9*/
+  Power::TimerProcess(this->q2C0); /*0x549be9*/
   Power::TimerProcess(*(_DWORD *)(this + 708)); /*0x549bf7*/
   Power::TimerProcess(*(_DWORD *)(this + 724)); /*0x549c05*/
   Power::TimerProcess(*(_DWORD *)(this + 728)); /*0x549c13*/
@@ -34,7 +34,7 @@ int __thiscall IsometricTileTypeClass::ProcessPower(int this, int *a2)
   v6 = Power::FlagProcess(a2, v5); /*0x549c2f*/
   LOBYTE(v6) = *(_BYTE *)(this + 737); /*0x549c34*/
   Power::FlagProcess(a2, v6); /*0x549c3d*/
-  Power::TimerProcess(*(_DWORD *)(this + 740)); /*0x549c4b*/
+  Power::TimerProcess(this->q0B9); /*0x549c4b*/
   Power::TimerProcess(*(_DWORD *)(this + 744)); /*0x549c59*/
   Power::TimerProcess(*(_DWORD *)(this + 748)); /*0x549c67*/
   return Power::TimerProcess(*(_DWORD *)(this + 752)); /*0x549c7a*/
@@ -52,7 +52,7 @@ int __stdcall IsometricTileTypeClass::_vt05(int *a1, int a2)
   int result; // eax
   int j; // eax
 
-  for ( i = 0; i < MEMORY[0x87F6A8]; *((_DWORD *)MEMORY[0x87F69C] + i - 1) = 0 ) /*0x549c8a*/
+  for ( i = 0; i < g_SurfaceAnimState; *((_DWORD *)MEMORY[0x87F69C] + i - 1) = 0 ) /*0x549c8a*/
   {
     v3 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)MEMORY[0x87F69C] + i); /*0x549c91*/
     if ( v3 ) /*0x549c96*/
@@ -74,8 +74,8 @@ int __stdcall IsometricTileTypeClass::_vt05(int *a1, int a2)
       a1[2] = (int)&IsometricTileTypeClass::`vftable'; /*0x549d0f*/
       a1[3] = (int)&vt_IsometricTileTypeClass; /*0x549d16*/
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], a1 + 175); /*0x549d2a*/
-    for ( j = 0; j < MEMORY[0x87F6A8]; *((_DWORD *)MEMORY[0x87F69C] + j - 1) = 0 ) /*0x549d39*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 175); /*0x549d2a*/
+    for ( j = 0; j < g_SurfaceAnimState; *((_DWORD *)MEMORY[0x87F69C] + j - 1) = 0 ) /*0x549d39*/
       ++j; /*0x549d41*/
     TerrainClass::InitTheatre(a1); /*0x549d56*/
     return 0; /*0x549d5b*/
@@ -95,7 +95,7 @@ int __thiscall IsometricTileTypeClass::_vt10(_DWORD *this, int a2, int a3)
   if ( this->q2BC == a2 ) /*0x549ddc*/
     this->q2BC = 0; /*0x549dde*/
   result = this->q2C8; /*0x549de8*/
-  if ( result != -1 && *((_DWORD *)MEMORY[0x8B4154] + result) == a2 ) /*0x549e02*/
+  if ( result != -1 && *((_DWORD *)g_AnimTypeCount + result) == a2 ) /*0x549e02*/
     this->q2C8 = -1; /*0x549e04*/
   return result; /*0x549e0e*/
 }

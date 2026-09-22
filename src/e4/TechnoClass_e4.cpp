@@ -141,9 +141,9 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->q240 = v8; /*0x6f2d5c*/
   this->q24C = 0; /*0x6f2d62*/
   this->isChronosphereImmune = 0; /*0x6f2d68*/
-  this->lastSightCoords = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6908]; /*0x6f2d79*/
-  this->q096 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2d85*/
-  this->q097 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6916]; /*0x6f2d93*/
+  this->lastSightCoords = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6908]; /*0x6f2d79*/
+  this->q096 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6912]; /*0x6f2d85*/
+  this->q097 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6916]; /*0x6f2d93*/
   this->lastSightRange = 0; /*0x6f2d96*/
   this->lastSightHeight = 0; /*0x6f2d9c*/
   this->gapSuperCharged = 0; /*0x6f2da2*/
@@ -157,9 +157,9 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->isImmobilized = 0; /*0x6f2dd2*/
   this->owningHouseIndex0 = 0; /*0x6f2dd8*/
   this->chronoLockRemaining = 0; /*0x6f2dde*/
-  this->chronoDestCoords = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6908]; /*0x6f2dea*/
-  this->q28C = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2df1*/
-  v9 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6916]; /*0x6f2df4*/
+  this->chronoDestCoords = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6908]; /*0x6f2dea*/
+  this->q28C = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6912]; /*0x6f2df1*/
+  v9 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6916]; /*0x6f2df4*/
   this->bunkerLinkedUnit = 0; /*0x6f2dfa*/
   this->pitchAngle = 0; /*0x6f2e00*/
   this->q290 = v9; /*0x6f2e06*/
@@ -202,7 +202,7 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->q3B8 = 0; /*0x6f2f01*/
   this->targetLaserTimer = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2f0d*/
   this->qF10 = 0; /*0x6f2f13*/
-  *((_WORD *)this + 485) = 0; /*0x6f2f1e*/
+  this->unknown_3CA = 0; /*0x6f2f1e*/
   this->countedAsOwned = 0; /*0x6f2f25*/
   this->isUseless = 0; /*0x6f2f3d*/
   this->isALoaner = 0; /*0x6f2f55*/
@@ -301,21 +301,21 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
     v10 = (*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[412])++; /*0x6f31c3*/
     *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[400] + 4 * v10) = this; /*0x6f31d2*/
   }
-  if ( *(int *)&MEMORY[0xB077F8].__pad_579C[10052] < *(int *)&MEMORY[0xB077F8].__pad_579C[10044] /*0x6f3209*/
-    || (MEMORY[0xB077F8].__pad_579C[10049] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10044])
-    && *(int *)&MEMORY[0xB077F8].__pad_579C[10056] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10036] + 8))(
-         &MEMORY[0xB077F8].__pad_579C[10036],
-         *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10056] + *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10044],
+  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[10052] < *(int *)&g_OverlayTypeConfig.__pad_579C[10044] /*0x6f3209*/
+    || (g_OverlayTypeConfig.__pad_579C[10049] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[10044])
+    && *(int *)&g_OverlayTypeConfig.__pad_579C[10056] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[10036] + 8))(
+         &g_OverlayTypeConfig.__pad_579C[10036],
+         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[10056] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[10044],
          0) )
   {
-    v11 = (*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10052])++; /*0x6f3216*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10040] + 4 * v11) = this; /*0x6f3225*/
+    v11 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[10052])++; /*0x6f3216*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[10040] + 4 * v11) = this; /*0x6f3225*/
   }
   (unsigned char)this->abstractFlags |= 1u; /*0x6f3237*/
   this->ammoReloadTimer = aP1; /*0x6f3241*/
   memset(this + 193, 0, 0x20u); /*0x6f3247*/
-  this->q1E4 = Random::State(&MEMORY[0xA8B230]->random[1]); /*0x6f3259*/
+  this->q1E4 = Random::State(&g_ScenarioClass_Instance->random[1]); /*0x6f3259*/
   return this; /*0x6f3262*/
 }
 }
@@ -667,31 +667,31 @@ int __thiscall TechnoClass::RegisterKill(#377 *this)
     if ( v4 ) /*0x702d7c*/
     {
       if ( v28 ) /*0x702d80*/
-        TeamClass::Update_0(v4, 6, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x702d90*/
+        TeamClass::Update_0(v4, 6, (AbstractClass *)this, *(IUnknown **)&g_OverlayTypeConfig.__pad_579C[6844], 0, 0); /*0x702d90*/
     }
   }
   if ( this->isAliveFlag ) /*0x702d95*/
   {
     v5 = (void **)this->attachedTag; /*0x702da3*/
     if ( v5 && v28 ) /*0x702dac*/
-      TeamClass::Update_0(v5, 4, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x702dbb*/
+      TeamClass::Update_0(v5, 4, (AbstractClass *)this, *(IUnknown **)&g_OverlayTypeConfig.__pad_579C[6844], 0, 0); /*0x702dbb*/
     if ( this->isAliveFlag /*0x702dd6*/
       && (*(int (__thiscall **)(#377 *))(this->fallRate)(this) != 1
       && this->isAliveFlag )
     {
       v6 = (void **)this->attachedTag; /*0x702de0*/
       if ( v6 && v28 ) /*0x702de9*/
-        TeamClass::Update_0(v6, 7, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x702df8*/
+        TeamClass::Update_0(v6, 7, (AbstractClass *)this, *(IUnknown **)&g_OverlayTypeConfig.__pad_579C[6844], 0, 0); /*0x702df8*/
       if ( this->isAliveFlag ) /*0x702dfd*/
       {
         v7 = (void **)this->attachedTag; /*0x702e07*/
         if ( v7 ) /*0x702e0c*/
-          TeamClass::Update_0(v7, 48, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x702e1c*/
+          TeamClass::Update_0(v7, 48, (AbstractClass *)this, *(IUnknown **)&g_OverlayTypeConfig.__pad_579C[6844], 0, 0); /*0x702e1c*/
         if ( this->isAliveFlag ) /*0x702e21*/
         {
           v8 = (void **)this->attachedTag; /*0x702e2b*/
           if ( v8 ) /*0x702e30*/
-            TeamClass::Update_0(v8, 29, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x702e3f*/
+            TeamClass::Update_0(v8, 29, (AbstractClass *)this, *(IUnknown **)&g_OverlayTypeConfig.__pad_579C[6844], 0, 0); /*0x702e3f*/
         }
       }
     }
@@ -881,18 +881,18 @@ int __stdcall TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3,
   int v43; // [esp+88h] [ebp-8h]
   int v44; // [esp+8Ch] [ebp-4h]
 
-  Coord::To_Screen(MEMORY[0x887324], &a1, &v41); /*0x705875*/
-  Coord::To_Screen(MEMORY[0x887324], &a4, &v31); /*0x70588a*/
+  Coord::To_Screen(g_TacticalClass_Instance, &a1, &v41); /*0x705875*/
+  Coord::To_Screen(g_TacticalClass_Instance, &a4, &v31); /*0x70588a*/
   v6 = -32 - ZCoordToScreenY(a3); /*0x7058a4*/
   v7 = -32 - ZCoordToScreenY(a6); /*0x7058b4*/
   v28 = abs32(v31 - v41); /*0x7058c5*/
-  v8 = *(_DWORD *)MEMORY[0x887314]; /*0x7058da*/
+  v8 = *(_DWORD *)g_DSurface_Hidden_2; /*0x7058da*/
   v27 = abs32(v32 - v42); /*0x7058dc*/
-  result = (*(int (__thiscall **)(int))(v8 + 132))(MEMORY[0x887314]); /*0x7058e0*/
+  result = (*(int (__thiscall **)(int))(v8 + 132))(g_DSurface_Hidden_2); /*0x7058e0*/
   if ( (_BYTE)result ) /*0x7058e8*/
   {
-    v10 = (int *)MEMORY[0x887314]; /*0x7058f0*/
-    v11 = Random::Range(MEMORY[0x886B88], 190, 270); /*0x705905*/
+    v10 = (int *)g_DSurface_Hidden_2; /*0x7058f0*/
+    v11 = Random::Range(Randomizer_Global, 190, 270); /*0x705905*/
     v21 = 0; /*0x70590c*/
     if ( v11 <= 255 ) /*0x70591c*/
     {
@@ -908,7 +908,7 @@ int __stdcall TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3,
     v13 = v42; /*0x70597a*/
     if ( v32 < v42 ) /*0x705980*/
     {
-      v14 = 255 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]; /*0x7059c5*/
+      v14 = 255 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]; /*0x7059c5*/
       v29 = v31 + 1; /*0x7059cc*/
       v25 = v31 - 2; /*0x7059d0*/
       v26 = v32 + 1; /*0x7059d8*/
@@ -949,14 +949,14 @@ int __stdcall TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3,
       v33 = v16 + v22 / 4; /*0x705ae1*/
       v34 = v13 + v23 / 4; /*0x705af8*/
       v18 = v6 + v24 / 4; /*0x705b15*/
-      AudioStream::DrawWaveform(v10, &MEMORY[0x886FA0], &v35, &v33, &v20, v25 / 4 + 255, v6, v18); /*0x705b34*/
+      AudioStream::DrawWaveform(v10, &DSurface_ViewBounds, &v35, &v33, &v20, v25 / 4 + 255, v6, v18); /*0x705b34*/
       if ( v28 <= v27 ) /*0x705b43*/
       {
         v39 = v35 + 1; /*0x705bc8*/
         v40 = v36; /*0x705bd1*/
         v37 = v33 + 1; /*0x705bd6*/
         v38 = v34; /*0x705bdf*/
-        AudioStream::DrawWaveform(v10, &MEMORY[0x886FA0], &v39, &v37, &v20, v17, v6, v18); /*0x705bf6*/
+        AudioStream::DrawWaveform(v10, &DSurface_ViewBounds, &v39, &v37, &v20, v17, v6, v18); /*0x705bf6*/
         v39 = v35 - 1; /*0x705c08*/
         v40 = v36; /*0x705c11*/
         v37 = v33 - 1; /*0x705c16*/
@@ -968,13 +968,13 @@ int __stdcall TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3,
         v40 = v36 + 1; /*0x705b5a*/
         v37 = v33; /*0x705b60*/
         v38 = v34 + 1; /*0x705b69*/
-        AudioStream::DrawWaveform(v10, &MEMORY[0x886FA0], &v39, &v37, &v20, v17, v6, v18); /*0x705b80*/
+        AudioStream::DrawWaveform(v10, &DSurface_ViewBounds, &v39, &v37, &v20, v17, v6, v18); /*0x705b80*/
         v39 = v35; /*0x705b91*/
         v40 = v36 - 1; /*0x705b9a*/
         v37 = v33; /*0x705ba0*/
         v38 = v34 - 1; /*0x705ba9*/
       }
-      AudioStream::DrawWaveform(v10, &MEMORY[0x886FA0], &v39, &v37, &v20, v17, v6, v18); /*0x705bb9*/
+      AudioStream::DrawWaveform(v10, &DSurface_ViewBounds, &v39, &v37, &v20, v17, v6, v18); /*0x705bb9*/
       v35 = v33; /*0x705c47*/
       v36 = v34; /*0x705c4f*/
       v6 = v18; /*0x705c57*/

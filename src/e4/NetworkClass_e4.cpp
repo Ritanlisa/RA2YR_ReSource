@@ -23,7 +23,7 @@ int __thiscall sub_639FD0(char *this)
       StringCSF = GetStringCSF((wchar_t *)MEMORY[0x836C34], 0, MEMORY[0x836BD4], 3233); /*0x639ffb*/
 LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
-      PlayVocClass(MEMORY[0x8871E0]->?[3], 0x2000, 1.0, 0); /*0x63a09e*/
+      PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a09e*/
     }
   }
   else if ( v1 == 6 ) /*0x639fff*/
@@ -33,7 +33,7 @@ LABEL_10:
       MEMORY[0xAC4C08] = 1; /*0x63a01f*/
       v3 = GetStringCSF(MEMORY[0x836C1C], 0, MEMORY[0x836BD4], 3233); /*0x63a026*/
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
-      PlayVocClass(MEMORY[0x8871E0]->?[3], 0x2000, 1.0, 0); /*0x63a04f*/
+      PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a04f*/
     }
   }
   else if ( v1 == 7 && !MEMORY[0xAC4C08] ) /*0x63a05c*/
@@ -42,7 +42,7 @@ LABEL_10:
     StringCSF = GetStringCSF(MEMORY[0x836C00], 0, MEMORY[0x836BD4], 3233); /*0x63a076*/
     goto LABEL_10; /*0x63a076*/
   }
-  return PlayVocClass(MEMORY[0x8871E0]->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/
+  return PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/
 }
 }
 } // namespace gamemd

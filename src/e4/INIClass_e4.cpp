@@ -44,7 +44,7 @@ int __thiscall INIClass::BinarySearchSection(int this, INIClass *aP1)
     this->needsSave_flag = 1; /*0x526881*/
   }
   v7 = this->INIClass_field_2C; /*0x526885*/
-  ecx7 = *(_DWORD *)(this + 40); /*0x52688d*/
+  ecx7 = this->q028; /*0x52688d*/
   v17[0] = v5; /*0x526890*/
   eax7 = System_Search(ecx7, v7, (int *)v17); /*0x526894*/
   if ( !eax7 ) /*0x52689b*/
@@ -64,7 +64,7 @@ LABEL_9:
     this->needsSave_flag = 1; /*0x5268d3*/
   }
   v10 = *(ObjectClass **)(this + 44); /*0x5268d7*/
-  v13 = *(_DWORD *)(this + 40); /*0x5268da*/
+  v13 = this->q028; /*0x5268da*/
   if ( (int)v10 <= 0 ) /*0x5268df*/
     return unk_B7882C; /*0x5268df*/
   while ( 1 ) /*0x5268ec*/

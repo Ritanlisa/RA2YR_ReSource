@@ -120,21 +120,21 @@ int __thiscall DamageArea_ApplyScatter(int this)
   int v112; // [esp+9Ch] [ebp-4h]
 
   v2 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 440))(
-                    *(_DWORD *)(this + 12),
+                    this->q00C,
                     &v106);
-  v3 = (_DWORD *)(*(_DWORD *)(this + 12) + 1376);
+  v3 = (_DWORD *)(this->q00C + 1376);
   v103 = v2;
-  if ( v2 != *v3 && (*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)(this + 4) + 128))(this + 4) )
-    Coord::ToGridIndex((char *)MEMORY[0x887888], *(_DWORD *)(this + 12), *(_DWORD *)(*(_DWORD *)(this + 12) + 1376), v2);
-  if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 388))(*(_DWORD *)(this + 12)) == 7
+  if ( v2 != *v3 && (*(unsigned __int8 (__stdcall **)(int))(this->q004 + 128))(this + 4) )
+    Coord::ToGridIndex((char *)g_CellClassManager, this->q00C, *(_DWORD *)(this->q00C + 1376), v2);
+  if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 388))(this->q00C) == 7
     && *(_BYTE *)(this + 92) )
   {
     *(_BYTE *)(this + 92) = 0;
   }
   v4 = this + 4;
-  if ( (*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)(this + 4) + 96))(this + 4)
-    && *(_DWORD *)(*(_DWORD *)(this + 12) + 108)
-    || !(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(*(_DWORD *)(this + 12)) )
+  if ( (*(unsigned __int8 (__stdcall **)(int))(this->q004 + 96))(this + 4)
+    && *(_DWORD *)(this->q00C + 108)
+    || !(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(this->q00C) )
   {
     v20 = *(int **)(this + 12);
     if ( v20[27] > 0 )
@@ -153,12 +153,12 @@ LABEL_34:
     result = (*(int (__stdcall **)(int))(*(_DWORD *)v4 + 16))(this + 4);
     if ( !(_BYTE)result )
       return result;
-    v22 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(*(_DWORD *)(this + 12));
-    v23 = *(_DWORD *)(this + 12);
+    v22 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(this->q00C);
+    v23 = this->q00C;
     v103 = v22;
     v99 = *(_BYTE *)(v22 + 3221);
     (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v23 + 292))(v23, 0);
-    v24 = *(_DWORD *)(this + 12);
+    v24 = this->q00C;
     v108 = *(double *)(v24 + 156);
     v109 = *(_DWORD *)(v24 + 164);
     v25 = *ProgressTimer::GetValue((_WORD *)(v24 + 904), &v106);
@@ -184,22 +184,22 @@ LABEL_34:
     LOWORD(v102) = SLODWORD(v108) / 256;
     WORD1(v102) = SHIDWORD(v108) / 256;
     if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102)
-      || !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 1244))(*(_DWORD *)(this + 12)) )
+      || !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 1244))(this->q00C) )
     {
       goto LABEL_50;
     }
-    v32 = *(_DWORD *)(this + 12);
+    v32 = this->q00C;
     if ( v32 && (*(int (__thiscall **)(int))(*(_DWORD *)v32 + 44))(v32) == 2 )
     {
-      v33 = *(_DWORD *)(this + 12);
-      v34 = v33 ? ((*(int (__thiscall **)(_DWORD))(*(_DWORD *)v33 + 44))(*(_DWORD *)(this + 12)) == 2 ? v33 : 0) : 0;
+      v33 = this->q00C;
+      v34 = v33 ? ((*(int (__thiscall **)(_DWORD))(*(_DWORD *)v33 + 44))(this->q00C) == 2 ? v33 : 0) : 0;
       if ( *(_BYTE *)(*(_DWORD *)(v34 + 1732) + 3595) )
         goto LABEL_50;
     }
     LOWORD(v102) = SLODWORD(v108) / 256;
     WORD1(v102) = SHIDWORD(v108) / 256;
     LODWORD(v101) = LODWORD(v102);
-    v35 = (__int16)*(_DWORD *)DamageArea::CalcScatterOffset(&v106, &v101) >= MEMORY[0x87F914] / 2
+    v35 = (__int16)*(_DWORD *)DamageArea::CalcScatterOffset(&v106, &v101) >= g_AircraftTrackerPool / 2
         ? LODWORD(v108) - 128
         : LODWORD(v108) + 128;
     LODWORD(v108) = v35;
@@ -214,12 +214,12 @@ LABEL_34:
           LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102)) )
     {
 LABEL_50:
-      (*(void (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 436))(*(_DWORD *)(this + 12), &v108);
+      (*(void (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 436))(this->q00C, &v108);
     }
-    v37 = *(_DWORD *)(this + 12);
+    v37 = this->q00C;
     LODWORD(v101) = 0;
     v38 = (*(int (__thiscall **)(int))(*(_DWORD *)v37 + 456))(v37);
-    v39 = *(_DWORD *)(this + 12);
+    v39 = this->q00C;
     if ( !*(_BYTE *)(v39 + 140) && v38 >= MEMORY[0x8B3CAC] )
     {
       v40 = v39 + 156;
@@ -231,18 +231,18 @@ LABEL_50:
         LODWORD(v101) = MEMORY[0x8B3CAC];
       }
     }
-    v41 = *(_DWORD *)(this + 28);
-    v42 = *(_DWORD *)(this + 32);
+    v41 = this->q070;
+    v42 = this->q008;
     v112 = *(_DWORD *)(this + 36);
-    v43 = (_DWORD *)(*(_DWORD *)(this + 12) + 156);
-    v44 = *(_DWORD *)(*(_DWORD *)(this + 12) + 160);
+    v43 = (_DWORD *)(this->q00C + 156);
+    v44 = *(_DWORD *)(this->q00C + 160);
     LODWORD(v106) = v41 - *v43;
     v45 = v43[2];
     HIDWORD(v106) = v42 - v44;
     v112 = v45;
     v46 = Math::Sqrt((double)(v42 - v44) * (double)(v42 - v44) + (double)SLODWORD(v106) * (double)SLODWORD(v106));
     LODWORD(v102) = Math::RoundToInt(v46);
-    if ( v38 >= *(_DWORD *)(this + 56) || (v47 = *(_DWORD *)(this + 12), *(int *)(v47 + 108) <= 0) )
+    if ( v38 >= *(_DWORD *)(this + 56) || (v47 = this->q00C, *(int *)(v47 + 108) <= 0) )
     {
       v54 = LODWORD(v101);
     }
@@ -284,22 +284,22 @@ LABEL_50:
       }
       v54 = LODWORD(v101);
       (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 460))(
-        *(_DWORD *)(this + 12),
+        this->q00C,
         LODWORD(v101) + v38 + v52);
-      *(_BYTE *)(*(_DWORD *)(this + 12) + 140) = 0;
+      *(_BYTE *)(this->q00C + 140) = 0;
       if ( v100 )
         (*(void (__stdcall **)(int))(*(_DWORD *)v100 + 8))(v100);
     }
     v55 = *(_DWORD *)(this + 56);
-    if ( v38 <= v55 && *(_DWORD *)(*(_DWORD *)(this + 12) + 108) )
+    if ( v38 <= v55 && *(_DWORD *)(this->q00C + 108) )
     {
 LABEL_114:
       v73 = *(int **)(this + 12);
       if ( v73[27] > 0
         && !*(_BYTE *)(this + 81)
-        && (!*(_BYTE *)(this + 80) || (*(int (__thiscall **)(int *))(*v73 + 456))(v73) >= *(_DWORD *)(this + 56) / 2)
-        && (*(_DWORD *)(this + 28) != MEMORY[0x8B3C78]
-         || *(_DWORD *)(this + 32) != MEMORY[0x8B3C7C]
+        && (!this->q050 || (*(int (__thiscall **)(int *))(*v73 + 456))(v73) >= *(_DWORD *)(this + 56) / 2)
+        && (this->q070 != MEMORY[0x8B3C78]
+         || this->q008 != MEMORY[0x8B3C7C]
          || *(_DWORD *)(this + 36) != MEMORY[0x8B3C80]) )
       {
         v74 = *(int (__stdcall ****)(_DWORD, void *, double *))(this + 12);
@@ -313,16 +313,16 @@ LABEL_114:
         }
         if ( (unsigned __int8)DamageArea::CheckOccupancyEligibility(this) )
         {
-          if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(*(_DWORD *)(this + 12)) + 3367) )
+          if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(this->q00C) + 3367) )
           {
-            if ( *(_BYTE *)(this + 80) || !*(_DWORD *)(*(_DWORD *)(this + 12) + 692) )
+            if ( this->q050 || !*(_DWORD *)(this->q00C + 692) )
             {
-              *(_DWORD *)(this + 64) = 0;
+              this->q100 = 0;
               *(_DWORD *)(this + 68) = 0;
             }
             else
             {
-              *(_DWORD *)(this + 64) = 0;
+              this->q100 = 0;
               *(_DWORD *)(this + 68) = 1072693248;
             }
           }
@@ -338,13 +338,13 @@ LABEL_114:
               if ( SLODWORD(v102) <= 85 )
               {
                 v79 = *(double *)(this + 72) * 0.5;
-                *(_DWORD *)(this + 64) = 0;
+                this->q100 = 0;
                 *(_DWORD *)(this + 68) = 0;
                 *(double *)(this + 72) = v79;
               }
               else
               {
-                *(_DWORD *)(this + 64) = -1717986918;
+                this->q100 = -1717986918;
                 *(_DWORD *)(this + 68) = 1069128089;
               }
             }
@@ -359,7 +359,7 @@ LABEL_114:
         }
         else
         {
-          *(_DWORD *)(this + 64) = 0;
+          this->q100 = 0;
           *(_DWORD *)(this + 68) = 1072693248;
         }
         if ( v75 )
@@ -367,7 +367,7 @@ LABEL_114:
       }
       if ( v99 )
       {
-        if ( *(int *)(*(_DWORD *)(this + 12) + 108) > 0 && *(double *)(this + 72) > 0.0 && !*(_BYTE *)(this + 80) )
+        if ( *(int *)(this->q00C + 108) > 0 && *(double *)(this + 72) > 0.0 && !this->q050 )
         {
           LODWORD(v106) = *(_DWORD *)(v103 + 760);
           if ( SLODWORD(v102) < SLODWORD(v106) )
@@ -379,7 +379,7 @@ LABEL_114:
             v83 = *v80;
             v104 = v82;
             v84 = (*(int (__thiscall **)(int *))(v83 + 132))(v80);
-            v85 = *(_DWORD *)(this + 12);
+            v85 = this->q00C;
             if ( v106 * *(double *)(v84 + 944) <= v104 )
             {
               v87 = (*(int (__thiscall **)(int))(*(_DWORD *)v85 + 132))(v85);
@@ -389,21 +389,21 @@ LABEL_114:
             {
               v86 = *(double *)((*(int (__thiscall **)(int))(*(_DWORD *)v85 + 132))(v85) + 944);
             }
-            *(float *)(*(_DWORD *)(this + 12) + 744) = v86;
+            *(float *)(this->q00C + 744) = v86;
           }
         }
       }
       if ( !*(_BYTE *)(this + 92) )
       {
         v88 = *(int **)(this + 12);
-        if ( v88[27] > 0 && !*(_BYTE *)(this + 81) && !*(_BYTE *)(this + 80) )
+        if ( v88[27] > 0 && !*(_BYTE *)(this + 81) && !this->q050 )
         {
-          v89 = *(_DWORD *)(this + 28) / 256;
-          v90 = *(_DWORD *)(this + 32) / 256;
+          v89 = this->q070 / 256;
+          v90 = this->q008 / 256;
           v91 = (_WORD *)(*(int (__thiscall **)(int *, double *))(*v88 + 440))(v88, &v106);
           if ( (_WORD)v89 == *v91 && (_WORD)v90 == v91[1] && *(double *)(this + 64) == 0.0 )
           {
-            v92 = *(_DWORD *)(this + 12);
+            v92 = this->q00C;
             if ( !*(_DWORD *)(v92 + 692) || !*(_DWORD *)(v92 + 764) )
               LocomotionClass::CheckBridgeBlock(this);
           }
@@ -436,7 +436,7 @@ LABEL_171:
     {
       if ( !*(_BYTE *)(this + 81) )
       {
-        v59 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(*(_DWORD *)(this + 12));
+        v59 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(this->q00C);
         if ( *(_DWORD *)(this + 56) == (*(int (__thiscall **)(int))(*(_DWORD *)v59 + 188))(v59) )
         {
           if ( v38 > 16 )
@@ -480,7 +480,7 @@ LABEL_171:
       }
     }
 LABEL_97:
-    v60 = *(_DWORD *)(this + 12);
+    v60 = this->q00C;
     v61 = v38 - v56;
     if ( !*(_DWORD *)(v60 + 108) && v61 <= 1 )
     {
@@ -492,20 +492,20 @@ LABEL_97:
       if ( v61 )
       {
 LABEL_105:
-        (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 460))(*(_DWORD *)(this + 12), v54 + v61);
+        (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 460))(this->q00C, v54 + v61);
         v62 = *(int **)(this + 12);
         if ( v62[27] > 0
-          && (*(_DWORD *)(this + 28) != MEMORY[0x8B3C78]
-           || *(_DWORD *)(this + 32) != MEMORY[0x8B3C7C]
+          && (this->q070 != MEMORY[0x8B3C78]
+           || this->q008 != MEMORY[0x8B3C7C]
            || *(_DWORD *)(this + 36) != MEMORY[0x8B3C80])
           && ((*(int (__thiscall **)(int *))(*v62 + 388))(v62) != 7
-           || (v63 = *(_DWORD *)(*(_DWORD *)(this + 12) + 1444)) == 0
+           || (v63 = *(_DWORD *)(this->q00C + 1444)) == 0
            || (*(int (__thiscall **)(int))(*(_DWORD *)v63 + 44))(v63) != 6
-           || !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 12) + 1444) + 1312) + 5835)) )
+           || !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)(this->q00C + 1444) + 1312) + 5835)) )
         {
-          v64 = *(_DWORD *)(this + 32);
-          v65 = (_DWORD *)(*(_DWORD *)(this + 12) + 156);
-          v110 = ((__int16)(*(_DWORD *)(this + 28) / 256) << 8) + 128;
+          v64 = this->q008;
+          v65 = (_DWORD *)(this->q00C + 156);
+          v110 = ((__int16)(this->q070 / 256) << 8) + 128;
           LODWORD(v106) = *v65;
           v111 = ((__int16)(v64 / 256) << 8) + 128;
           HIDWORD(v106) = v65[1];
@@ -522,7 +522,7 @@ LABEL_105:
           v71 = Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v68, v69)));
           v110 = Math::RoundToInt(v71 * 5.0 + v101);
           v111 = LODWORD(v106);
-          v72 = *(_DWORD *)(this + 12);
+          v72 = this->q00C;
           v112 = v66;
           (*(void (__thiscall **)(int, int *))(*(_DWORD *)v72 + 436))(v72, &v110);
         }
@@ -540,7 +540,7 @@ LABEL_105:
     }
     goto LABEL_105;
   }
-  v5 = *(_DWORD *)(this + 12);
+  v5 = this->q00C;
   v6 = *(_DWORD *)(this + 88);
   if ( *(_DWORD *)(v5 + 108) )
     v7 = v6 + 3;
@@ -560,16 +560,16 @@ LABEL_105:
   v103 = LODWORD(v102);
   if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v103) )
   {
-    RemoveTarget(*(_DWORD *)(this + 12));
-    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 292))(*(_DWORD *)(this + 12), 0);
-    (*(void (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 436))(*(_DWORD *)(this + 12), &v108);
-    (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 292))(*(_DWORD *)(this + 12), 1);
+    RemoveTarget(this->q00C);
+    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 292))(this->q00C, 0);
+    (*(void (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 436))(this->q00C, &v108);
+    (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 292))(this->q00C, 1);
     Targeting::Readd(*(_DWORD **)(this + 12));
   }
-  if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(*(_DWORD *)(this + 12)) > 0 )
+  if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(this->q00C) > 0 )
     goto LABEL_34;
-  GadgetGrid::RemoveItem(MEMORY[0x887888], *(_DWORD *)(this + 12));
-  (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 460))(*(_DWORD *)(this + 12), 0);
+  GadgetGrid::RemoveItem(g_CellClassManager, this->q00C);
+  (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 460))(this->q00C, 0);
   v10 = *(int **)(this + 12);
   v11 = v10[27];
   if ( !v11 )
@@ -585,28 +585,28 @@ LABEL_105:
       v14 = *(_DWORD *)((*(int (**)(void))(v13 + 132))() + 1340);
       if ( v14 != -1 )
         goto LABEL_23;
-      v14 = *((_DWORD *)MEMORY[0x8871E0] + 128);
+      v14 = *((_DWORD *)g_RulesClass_Instance + 128);
     }
     else
     {
       v14 = *(_DWORD *)((*(int (**)(void))(v13 + 132))() + 1344);
       if ( v14 != -1 )
         goto LABEL_23;
-      v14 = *((_DWORD *)MEMORY[0x8871E0] + 129);
+      v14 = *((_DWORD *)g_RulesClass_Instance + 129);
     }
     if ( v14 == -1 )
-      return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 248))(*(_DWORD *)(this + 12));
+      return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 248))(this->q00C);
 LABEL_23:
-    v15 = *(_DWORD *)(this + 12) + 156;
+    v15 = this->q00C + 156;
     v106 = *(double *)v15;
     v107 = *(_DWORD *)(v15 + 8);
     StartAudioControllerAt(v14, (int)&v106, 0);
-    return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 248))(*(_DWORD *)(this + 12));
+    return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 248))(this->q00C);
   }
   (*(void (__stdcall **)(int *, _DWORD, _DWORD, _DWORD, int, int, _DWORD))(*v10 + 364))(
     v10 + 27,
     0,
-    *((_DWORD *)MEMORY[0x8871E0] + 1002),
+    *((_DWORD *)g_RulesClass_Instance + 1002),
     0,
     1,
     1,
@@ -620,11 +620,11 @@ LABEL_23:
     v18 = *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v101) + 59);
     v98 = v109;
     LODWORD(v98) = Return::HRESULT_Fail(SLODWORD(v108), SHIDWORD(v108), v109);
-    VersusMultiplier = (void *)GetWarheadVersusMultiplier(v11, *((_DWORD *)MEMORY[0x8871E0] + 1002), v18, &v104);
+    VersusMultiplier = (void *)GetWarheadVersusMultiplier(v11, *((_DWORD *)g_RulesClass_Instance + 1002), v18, &v104);
     AnimClass::ctor(v17, VersusMultiplier, (int *)&v108, 0, 1, (void *)0x2600, (void *)v98, SBYTE4(v98));
   }
-  CreateSmokeEffectAt(v11, *((_DWORD *)MEMORY[0x8871E0] + 1002), SLODWORD(v108), SHIDWORD(v108), v109, 0, 0);
-  return PlaySoundEffectAt(&v108, v11, 0, *((_DWORD *)MEMORY[0x8871E0] + 1002), 1, 0);
+  CreateSmokeEffectAt(v11, *((_DWORD *)g_RulesClass_Instance + 1002), SLODWORD(v108), SHIDWORD(v108), v109, 0, 0);
+  return PlaySoundEffectAt(&v108, v11, 0, *((_DWORD *)g_RulesClass_Instance + 1002), 1, 0);
 }
 }
 
@@ -645,7 +645,7 @@ char __thiscall sub_4D0180(int this)
   v2 = *(_DWORD **)(this + 12); /*0x4d0187*/
   if ( v2 ) /*0x4d018c*/
   {
-    if ( (*(int (__thiscall **)(_DWORD))(*v2 + 44))(*(_DWORD *)(this + 12)) == 2 ) /*0x4d0198*/
+    if ( (*(int (__thiscall **)(_DWORD))(*v2 + 44))(this->q00C) == 2 ) /*0x4d0198*/
     {
       if ( (*(int (__stdcall **)(_DWORD *))(v2[432] + 32))(v2 + 432) ) /*0x4d01ab*/
         return 0; /*0x4d01b0*/
@@ -695,7 +695,7 @@ char __thiscall sub_4D0180(int this)
         v4 = v8; /*0x4d027a*/
       }
     }
-    if ( !*(_DWORD *)(*(_DWORD *)(this + 12) + 764) ) /*0x4d0281*/
+    if ( !*(_DWORD *)(this->q00C + 764) ) /*0x4d0281*/
     {
 LABEL_24:
       if ( v4 ) /*0x4d028d*/

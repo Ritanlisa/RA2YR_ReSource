@@ -228,7 +228,7 @@ int InitializeRadialGradientTexture()
   _DWORD v15[11]; // [esp+6Ch] [ebp-98h] BYREF
   _DWORD v16[27]; // [esp+98h] [ebp-6Ch] BYREF
 
-  v0 = *(_DWORD **)(MEMORY[0x88731C] + 28); /*0x4c16b4*/
+  v0 = *(_DWORD **)(DSurface_Composite + 28); /*0x4c16b4*/
   v14 = v0; /*0x4c16cb*/
   result = (*(int (__stdcall **)(int, void *, _DWORD *, __int64 *))(*(_DWORD *)MEMORY[0x8A0DF4] + 32))( /*0x4c16cf*/
              MEMORY[0x8A0DF4],
@@ -304,7 +304,7 @@ int InitializeRadialGradientTexture()
                       }
                       ++v5; /*0x4c1886*/
                       ++v7; /*0x4c18af*/
-                      *(v5 - 1) = (v9 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x4c18b0*/
+                      *(v5 - 1) = (v9 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x4c18b0*/
                                 | (v9 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
                                 | (v9 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
                     }
@@ -368,19 +368,19 @@ int __stdcall sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
   int v15[2]; // [esp+8h] [ebp-10h] BYREF
   int v16[2]; // [esp+10h] [ebp-8h] BYREF
 
-  Coord::To_Screen(MEMORY[0x887324], &a1, v16); /*0x4c1e85*/
-  Coord::To_Screen(MEMORY[0x887324], &a4, v15); /*0x4c1e9a*/
+  Coord::To_Screen(g_TacticalClass_Instance, &a1, v16); /*0x4c1e85*/
+  Coord::To_Screen(g_TacticalClass_Instance, &a4, v15); /*0x4c1e9a*/
   v9 = ZCoordToScreenY(a3); /*0x4c1ea3*/
   v10 = a8 - v9 - 2; /*0x4c1eb2*/
   v11 = ZCoordToScreenY(a6); /*0x4c1eb5*/
   v12 = a9 - v11 - 2; /*0x4c1ec8*/
-  if ( *(_DWORD *)(MEMORY[0x87F6C4] + 4) == 1 ) /*0x4c1ecf*/
-    v13 = *(unsigned __int8 *)(*(_DWORD *)(MEMORY[0x87F6C4] + 372) + a7); /*0x4c1ee0*/
+  if ( *(_DWORD *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x4c1ecf*/
+    v13 = *(unsigned __int8 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + a7); /*0x4c1ee0*/
   else
-    v13 = *(unsigned __int16 *)(*(_DWORD *)(MEMORY[0x87F6C4] + 372) + 2 * a7); /*0x4c1ef0*/
-  return (*(int (__thiscall **)(int, int *, int *, int *, int, int, int, _DWORD))(*(_DWORD *)MEMORY[0x88731C] + 52))( /*0x4c1f13*/
-           MEMORY[0x88731C],
-           &MEMORY[0x886FA0],
+    v13 = *(unsigned __int16 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 2 * a7); /*0x4c1ef0*/
+  return (*(int (__thiscall **)(int, int *, int *, int *, int, int, int, _DWORD))(*(_DWORD *)DSurface_Composite + 52))( /*0x4c1f13*/
+           DSurface_Composite,
+           &DSurface_ViewBounds,
            v16,
            v15,
            v13,
@@ -484,9 +484,9 @@ int sub_4C2830()
     v9 = v1; /*0x4c28be*/
     if ( v1[10] ) /*0x4c28b6*/
     {
-      Coord::To_Screen(MEMORY[0x887324], v1, v18); /*0x4c28ce*/
-      Coord::To_Screen(MEMORY[0x887324], v9 + 3, v17); /*0x4c28e2*/
-      if ( ClipLine(v18, v17, &MEMORY[0x886FA0]) ) /*0x4c28f4*/
+      Coord::To_Screen(g_TacticalClass_Instance, v1, v18); /*0x4c28ce*/
+      Coord::To_Screen(g_TacticalClass_Instance, v9 + 3, v17); /*0x4c28e2*/
+      if ( ClipLine(v18, v17, &DSurface_ViewBounds) ) /*0x4c28f4*/
       {
         v10 = -(*((_BYTE *)v9 + 44) != 0); /*0x4c2904*/
         LOBYTE(v10) = v10 & 0xFB; /*0x4c2906*/
@@ -653,8 +653,8 @@ int __thiscall sub_4C3DD0(int *this, int a2)
   v5[0] = 0; /*0x4c3e09*/
   v5[1] = v3; /*0x4c3e12*/
   v5[3] = 18; /*0x4c3e16*/
-  return (*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887314] + 8))( /*0x4c3e28*/
-           MEMORY[0x887314],
+  return (*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Hidden_2 + 8))( /*0x4c3e28*/
+           g_DSurface_Hidden_2,
            v5,
            a2,
            v5,
@@ -737,13 +737,13 @@ _DWORD *__thiscall sub_4C95D0(_WORD *this, _DWORD *a2, _WORD *a3)
   v5 = this->M16; /*0x4c95e0*/
   if ( v4 != -1 ) /*0x4c95ec*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v4 >= v5 ) /*0x4c95f4*/
+    if ( (int)g_CurrentFrame - v4 >= v5 ) /*0x4c95f4*/
     {
 LABEL_14:
       v12 = *(_DWORD *)this; /*0x4c964f*/
       goto LABEL_15; /*0x4c964f*/
     }
-    v5 -= (int)MEMORY[0xA8ED84] - v4; /*0x4c95f6*/
+    v5 -= (int)g_CurrentFrame - v4; /*0x4c95f6*/
   }
   if ( !v5 ) /*0x4c95fa*/
     goto LABEL_14; /*0x4c95fa*/
@@ -757,12 +757,12 @@ LABEL_14:
     v10 = this->M8; /*0x4c9621*/
     if ( v10 != -1 ) /*0x4c9627*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v10 >= v9 ) /*0x4c962f*/
+      if ( (int)g_CurrentFrame - v10 >= v9 ) /*0x4c962f*/
       {
         v11 = 0; /*0x4c964b*/
         goto LABEL_11; /*0x4c964d*/
       }
-      LOWORD(v9) = v9 - ((_WORD)MEMORY[0xA8ED84] - v10); /*0x4c9631*/
+      LOWORD(v9) = v9 - ((_WORD)g_CurrentFrame - v10); /*0x4c9631*/
     }
     v11 = v9; /*0x4c9633*/
 LABEL_11:
@@ -1216,7 +1216,7 @@ LABEL_60:
       a5 = *(_DWORD *)(v52 + 4); /*0x4cf592*/
       a6 = *(_DWORD *)(v52 + 8); /*0x4cf599*/
       if ( Cell::IsPassable(&a4) /*0x4cf5dd*/
-        || (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) != 0
+        || (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) != 0
         && (v53 = (int)(*v6 + 39),
             a4 = *(float *)v53,
             a5 = *(_DWORD *)(v53 + 4),

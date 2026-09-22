@@ -56,24 +56,24 @@ char ProcessSelectionExperience()
   char v13; // [esp+13h] [ebp-5h]
   wchar_t *v14; // [esp+14h] [ebp-4h]
 
-  LOBYTE(v0) = (_BYTE)MEMORY[0xA8ECC8]; /*0x730af3*/
+  LOBYTE(v0) = (_BYTE)g_SelectionManager; /*0x730af3*/
   v13 = 0; /*0x730afe*/
-  if ( (int)MEMORY[0xA8ECC8] <= 0 ) /*0x730b03*/
+  if ( (int)g_SelectionManager <= 0 ) /*0x730b03*/
     return v0; /*0x730b03*/
-  LOBYTE(v0) = (_BYTE)MEMORY[0xA8ECBC]; /*0x730b09*/
-  if ( !*(_DWORD *)MEMORY[0xA8ECBC]
-    || (v1 = *(#375 ***)MEMORY[0xA8ECBC],
-        v0 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)MEMORY[0xA8ECBC] + 44))(*(_DWORD *)MEMORY[0xA8ECBC]),
+  LOBYTE(v0) = (_BYTE)g_ObjectClass_CurrentCount; /*0x730b09*/
+  if ( !*(_DWORD *)g_ObjectClass_CurrentCount
+    || (v1 = *(#375 ***)g_ObjectClass_CurrentCount,
+        v0 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)g_ObjectClass_CurrentCount + 44))(*(_DWORD *)g_ObjectClass_CurrentCount),
         v0 != 6)
     || (v0 = (*((int (__thiscall **)(#375 **))*v1 + 258))(v1), v0 <= 0)
     || (LOBYTE(v0) = House::IsHumanPlayer(v1[135]), !(_BYTE)v0) )
   {
-    v3 = MEMORY[0xA8ECC8]; /*0x730b71*/
+    v3 = g_SelectionManager; /*0x730b71*/
     v4 = 0; /*0x730b77*/
     v11 = 0; /*0x730b7b*/
     v12 = 0; /*0x730b80*/
-    v14 = MEMORY[0xA8ECC8]; /*0x730b85*/
-    if ( (int)MEMORY[0xA8ECC8] <= 0 )
+    v14 = g_SelectionManager; /*0x730b85*/
+    if ( (int)g_SelectionManager <= 0 )
     {
 LABEL_24:
       v6 = 0; /*0x730c19*/
@@ -81,9 +81,9 @@ LABEL_24:
       {
         do
         {
-          v7 = (_BYTE *)*((_DWORD *)MEMORY[0xA8ECBC] + v6); /*0x730c29*/
+          v7 = (_BYTE *)*((_DWORD *)g_ObjectClass_CurrentCount + v6); /*0x730c29*/
           if ( v7
-            && ((*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)v7 + 160))(*((_DWORD *)MEMORY[0xA8ECBC] + v6))
+            && ((*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)v7 + 160))(*((_DWORD *)g_ObjectClass_CurrentCount + v6))
              || (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v7 + 156))(v7))
             && (v7[20] & 1) != 0
             && (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v7 + 784))(v7)
@@ -115,10 +115,10 @@ LABEL_24:
     }
     while ( 1 ) /*0x730b95*/
     {
-      v5 = (_DWORD *)*((_DWORD *)MEMORY[0xA8ECBC] + v4); /*0x730b95*/
+      v5 = (_DWORD *)*((_DWORD *)g_ObjectClass_CurrentCount + v4); /*0x730b95*/
       if ( v5 ) /*0x730b9a*/
       {
-        if ( (*(int (__thiscall **)(_DWORD))(*v5 + 44))(*((_DWORD *)MEMORY[0xA8ECBC] + v4)) == 15 /*0x730baa*/
+        if ( (*(int (__thiscall **)(_DWORD))(*v5 + 44))(*((_DWORD *)g_ObjectClass_CurrentCount + v4)) == 15 /*0x730baa*/
           && TechnoClass::GetTypeFlag(v5) )
         {
           if ( !TechnoClass::IsMission27to30(v5) ) /*0x730bbc*/
@@ -158,16 +158,16 @@ LABEL_23:
         goto LABEL_24; /*0x730c13*/
     }
   }
-  LOBYTE(v0) = (_BYTE)MEMORY[0xA8ECBC]; /*0x730b41*/
-  v2 = *(_BYTE **)MEMORY[0xA8ECBC]; /*0x730b46*/
-  if ( *(_DWORD *)MEMORY[0xA8ECBC] ) /*0x730b46*/
+  LOBYTE(v0) = (_BYTE)g_ObjectClass_CurrentCount; /*0x730b41*/
+  v2 = *(_BYTE **)g_ObjectClass_CurrentCount; /*0x730b46*/
+  if ( *(_DWORD *)g_ObjectClass_CurrentCount ) /*0x730b46*/
   {
     if ( (v2[20] & 1) != 0 ) /*0x730b54*/
     {
       LOBYTE(v0) = (*(int (__thiscall **)(_BYTE *, int))(*(_DWORD *)v2 + 884))(v2, 9); /*0x730b5e*/
       if ( (_BYTE)v0 ) /*0x730b66*/
 LABEL_47:
-        LOBYTE(v0) = PlayVocClass(MEMORY[0x8871E0]->?[2], 0x2000, 1.0, 0); /*0x730d39*/
+        LOBYTE(v0) = PlayVocClass(g_RulesClass_Instance->?[2], 0x2000, 1.0, 0); /*0x730d39*/
     }
   }
   return v0; /*0x730d55*/
@@ -194,18 +194,18 @@ char sub_730D60()
 
   if ( FactoryClass::GetFlag() ) /*0x730d65*/
     return System_Get(); /*0x730d6e*/
-  result = (char)MEMORY[0xA8ECC8]; /*0x730d79*/
-  if ( (int)MEMORY[0xA8ECC8] > 0 )
+  result = (char)g_SelectionManager; /*0x730d79*/
+  if ( (int)g_SelectionManager > 0 )
   {
     v1 = 0; /*0x730d86*/
     v2 = 1; /*0x730d88*/
-    v8 = MEMORY[0xA8ECC8]; /*0x730d8c*/
+    v8 = g_SelectionManager; /*0x730d8c*/
     do
     {
-      v3 = (_BYTE *)*((_DWORD *)MEMORY[0xA8ECBC] + v1); /*0x730d9b*/
+      v3 = (_BYTE *)*((_DWORD *)g_ObjectClass_CurrentCount + v1); /*0x730d9b*/
       if ( v3 && (v3[20] & 1) != 0 )
       {
-        if ( (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)v3 + 160))(*((_DWORD *)MEMORY[0xA8ECBC] + v1))
+        if ( (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)v3 + 160))(*((_DWORD *)g_ObjectClass_CurrentCount + v1))
           && (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v3 + 156))(v3)
           && (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v3 + 44))(v3) != 6 )
         {
@@ -238,7 +238,7 @@ char sub_730D60()
     }
     while ( v1 < (int)v8 );
     if ( v2 ) /*0x730e71*/
-      return PlayVocClass(MEMORY[0x8871E0]->?[0], 0x2000, 1.0, 0); /*0x730e8a*/
+      return PlayVocClass(g_RulesClass_Instance->?[0], 0x2000, 1.0, 0); /*0x730e8a*/
   }
   return result; /*0x730d73*/
 }
@@ -264,7 +264,7 @@ char __thiscall sub_731130(char *this)
     v3 = *((_DWORD *)MEMORY[0xA8EC7C] + v1); /*0x731147*/
     if ( v3 && !*(_BYTE *)(v3 + 129) )
     {
-      if ( MEMORY[0xA8B238][0] ? House::IsHumanPlayer(*(#375 **)(v3 + 540)) : *(_BYTE *)(*(_DWORD *)(v3 + 540) + 493) )
+      if ( g_GameMode_Current[0] ? House::IsHumanPlayer(*(#375 **)(v3 + 540)) : *(_BYTE *)(*(_DWORD *)(v3 + 540) + 493) )
       {
         v5 = *(char **)(v3 + 532); /*0x73117e*/
         if ( v5 != this - 1 ) /*0x731189*/
@@ -297,13 +297,13 @@ char sub_731AA0()
   int v1; // esi
   _BYTE *v2; // ecx
 
-  v0 = MEMORY[0xA8ECC8]; /*0x731aa3*/
+  v0 = g_SelectionManager; /*0x731aa3*/
   v1 = 0; /*0x731aa9*/
-  if ( (int)MEMORY[0xA8ECC8] <= 0 ) /*0x731aad*/
+  if ( (int)g_SelectionManager <= 0 ) /*0x731aad*/
     return 1; /*0x731ad8*/
   while ( 1 ) /*0x731ab4*/
   {
-    v2 = (_BYTE *)*((_DWORD *)MEMORY[0xA8ECBC] + v1); /*0x731ab4*/
+    v2 = (_BYTE *)*((_DWORD *)g_ObjectClass_CurrentCount + v1); /*0x731ab4*/
     if ( v2 ) /*0x731ab9*/
     {
       if ( (v2[20] & 1) != 0 && !(*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v2 + 1216))(v2) ) /*0x731ac9*/
@@ -413,7 +413,7 @@ _DWORD *__fastcall TechnoClass_GatherFiltered(unsigned __int8 (__fastcall *a1)(i
     v3 = 0; /*0x731faf*/
   }
   v4 = 0; /*0x731fbc*/
-  Height = GetHeightMap(MEMORY[0x887324]); /*0x731fc0*/
+  Height = GetHeightMap(g_TacticalClass_Instance); /*0x731fc0*/
   if ( Height <= 0 ) /*0x731fc4*/
     return v3; /*0x73203d*/
   do /*0x732031*/
@@ -454,7 +454,7 @@ BOOL __fastcall TechnoClass_StepCleanupIfHuman(int a1, void *a2)
   result = 0; /*0x7327b7*/
   if ( a1 && *(_BYTE *)(a1 + 144) )
   {
-    v4 = MEMORY[0xA8B238] ? House::IsHumanPlayer(*(#375 **)(a1 + 540)) : *(_BYTE *)(*(_DWORD *)(a1 + 540) + 493);
+    v4 = g_GameMode_Current ? House::IsHumanPlayer(*(#375 **)(a1 + 540)) : *(_BYTE *)(*(_DWORD *)(a1 + 540) + 493);
     if ( v4 && (unsigned __int8)ObjectClass::StepCleanup((void *)a1, a2) ) /*0x7327ad*/
       return 1; /*0x732782*/
   }
@@ -500,7 +500,7 @@ int SelectAllOfType()
   v1 = 0; /*0x73295d*/
   if ( MEMORY[0xA8B538] ) /*0x732961*/
     return result; /*0x732961*/
-  SelectAllOfType_Play(MEMORY[0x887324]); /*0x73296d*/
+  SelectAllOfType_Play(g_TacticalClass_Instance); /*0x73296d*/
   if ( MEMORY[0xB0FE54] != 2 ) /*0x732979*/
     MEMORY[0xB0FE64] = 0; /*0x73297b*/
   v23 = (int (__thiscall ***)(_DWORD, int))TacticalClass::CollectSelectedIDs(); /*0x732989*/
@@ -548,7 +548,7 @@ int SelectAllOfType()
     {
       v7 = 0; /*0x732a26*/
     }
-    HeightMap = GetHeightMap(MEMORY[0x887324]); /*0x732a33*/
+    HeightMap = GetHeightMap(g_TacticalClass_Instance); /*0x732a33*/
     for ( i = 0; i < HeightMap; ++i ) /*0x732a39*/
     {
       CoordDataMap = GetCoordDataMap(i); /*0x732a47*/
@@ -606,7 +606,7 @@ LABEL_36:
     if ( (unsigned __int8)IDTechnoClassMatches(v18, v23) ) /*0x732b34*/
       (*(void (__thiscall **)(int))(*(_DWORD *)v18 + 332))(v18); /*0x732b41*/
   }
-  if ( MEMORY[0xA8ECC8] ) /*0x732b55*/
+  if ( g_SelectionManager ) /*0x732b55*/
   {
     if ( MEMORY[0xB0FE64] ) /*0x732b7c*/
       StringCSF = GetStringCSF(MEMORY[0x8455C8], 0, MEMORY[0x845598], 1011); /*0x732b98*/
@@ -715,7 +715,7 @@ char __fastcall sub_732FF0(void *a1, int (__fastcall *a2)(_DWORD, int), int a3)
     {
       v4 = 0; /*0x7330d4*/
     }
-    HeightMap = GetHeightMap(MEMORY[0x887324]); /*0x7330dc*/
+    HeightMap = GetHeightMap(g_TacticalClass_Instance); /*0x7330dc*/
     v11 = HeightMap; /*0x7330e1*/
     for ( i = 0; i < v11; ++i ) /*0x7330e7*/
     {
@@ -767,10 +767,10 @@ char sub_7331B0()
   int v15; // edx
 
   v0 = 0; /*0x7331b9*/
-  if ( MEMORY[0xB0FE6C] ) /*0x7331bf*/
+  if ( g_UnitTooltipState ) /*0x7331bf*/
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FE6C])(MEMORY[0xB0FE6C], 1); /*0x7331c5*/
-    MEMORY[0xB0FE6C] = 0; /*0x7331c7*/
+    (**(void (__thiscall ***)(int, int))g_UnitTooltipState)(g_UnitTooltipState, 1); /*0x7331c5*/
+    g_UnitTooltipState = 0; /*0x7331c7*/
   }
   v1 = __2_YAPAXI_Z(0x18u); /*0x7331cf*/
   v2 = (int)v1; /*0x7331d4*/
@@ -785,12 +785,12 @@ char sub_7331B0()
   {
     v2 = 0; /*0x7331f8*/
   }
-  v3 = MEMORY[0xA8ECC8]; /*0x7331fa*/
-  if ( (int)MEMORY[0xA8ECC8] > 0 ) /*0x733202*/
+  v3 = g_SelectionManager; /*0x7331fa*/
+  if ( (int)g_SelectionManager > 0 ) /*0x733202*/
   {
     do /*0x73325b*/
     {
-      v4 = *((_DWORD *)MEMORY[0xA8ECBC] + v0); /*0x73320a*/
+      v4 = *((_DWORD *)g_ObjectClass_CurrentCount + v0); /*0x73320a*/
       if ( v4 && (*(_BYTE *)(v4 + 20) & 1) != 0 ) /*0x73321b*/
       {
         v5 = *(_DWORD *)(v2 + 8); /*0x73321d*/
@@ -810,13 +810,13 @@ char sub_7331B0()
     while ( v0 < (int)v3 ); /*0x73325b*/
     v0 = 0; /*0x73325d*/
   }
-  MEMORY[0xB0FE6C] = v2; /*0x73325f*/
+  g_UnitTooltipState = v2; /*0x73325f*/
   HeightMap = *(_DWORD *)(v2 + 16); /*0x733265*/
   if ( !HeightMap )
   {
     if ( v2 ) /*0x733272*/
       (**(void (__thiscall ***)(int, int))v2)(v2, 1); /*0x73327a*/
-    MEMORY[0xB0FE6C] = 0; /*0x73327e*/
+    g_UnitTooltipState = 0; /*0x73327e*/
     v10 = __2_YAPAXI_Z(0x18u); /*0x733284*/
     v11 = (int)v10; /*0x733289*/
     if ( v10 ) /*0x733290*/
@@ -830,7 +830,7 @@ char sub_7331B0()
     {
       v11 = 0; /*0x7332ad*/
     }
-    HeightMap = GetHeightMap(MEMORY[0x887324]); /*0x7332b5*/
+    HeightMap = GetHeightMap(g_TacticalClass_Instance); /*0x7332b5*/
     v12 = HeightMap; /*0x7332ba*/
     if ( HeightMap > 0 )
     {
@@ -845,7 +845,7 @@ char sub_7331B0()
             LOBYTE(HeightMap) = *(_BYTE *)(HeightMap + 144); /*0x7332e6*/
             if ( (_BYTE)HeightMap )
             {
-              LOBYTE(HeightMap) = MEMORY[0xA8B238][0] ? House::IsHumanPlayer(v13[135]) : *((_BYTE *)v13[135] + 493);
+              LOBYTE(HeightMap) = g_GameMode_Current[0] ? House::IsHumanPlayer(v13[135]) : *((_BYTE *)v13[135] + 493);
               if ( (_BYTE)HeightMap ) /*0x733314*/
               {
                 HeightMap = (*((int (__thiscall **)(#375 **))*v13 + 11))(v13); /*0x73331a*/
@@ -875,7 +875,7 @@ char sub_7331B0()
       }
       while ( v0 < v12 );
     }
-    MEMORY[0xB0FE6C] = v11; /*0x733366*/
+    g_UnitTooltipState = v11; /*0x733366*/
   }
   return HeightMap; /*0x73336c*/
 }
@@ -1279,33 +1279,33 @@ int __fastcall SelectUnitsByTheme(char a1)
   {
     if ( MEMORY[0xB0FE54] == 5 ) /*0x7339d0*/
     {
-      Block = SelectFactionThemeMusic(MEMORY[0xB0FE6C], MEMORY[0xB0FD70], MEMORY[0xB0FE70], &v20); /*0x733a62*/
+      Block = SelectFactionThemeMusic(g_UnitTooltipState, MEMORY[0xB0FD70], MEMORY[0xB0FE70], &v20); /*0x733a62*/
       if ( a1 ) /*0x733a66*/
         SuperWeaponClass::UpdateAll(); /*0x733a6e*/
     }
     else
     {
-      if ( MEMORY[0xB0FE6C] ) /*0x7339da*/
+      if ( g_UnitTooltipState ) /*0x7339da*/
       {
-        (**(void (__thiscall ***)(int, int))MEMORY[0xB0FE6C])(MEMORY[0xB0FE6C], 1); /*0x7339e0*/
-        MEMORY[0xB0FE6C] = 0; /*0x7339e2*/
+        (**(void (__thiscall ***)(int, int))g_UnitTooltipState)(g_UnitTooltipState, 1); /*0x7339e0*/
+        g_UnitTooltipState = 0; /*0x7339e2*/
       }
       v4 = TechnoClass::GatherAllBuildings(); /*0x7339e8*/
-      MEMORY[0xB0FE6C] = (int)v4; /*0x7339ed*/
+      g_UnitTooltipState = (int)v4; /*0x7339ed*/
       if ( !v4[4] ) /*0x7339f2*/
       {
         if ( v4 ) /*0x7339fb*/
           (*(void (__thiscall **)(_DWORD *, int))*v4)(v4, 1); /*0x733a03*/
-        MEMORY[0xB0FE6C] = 0; /*0x733a0c*/
-        MEMORY[0xB0FE6C] = (int)GatherTechnoClassFiltered( /*0x733a17*/
+        g_UnitTooltipState = 0; /*0x733a0c*/
+        g_UnitTooltipState = (int)GatherTechnoClassFiltered( /*0x733a17*/
                                   (unsigned __int8 (__fastcall *)(int, int))TechnoClass::IsCapturableByPlayer,
                                   0);
       }
       SuperWeaponClass::UpdateAll(); /*0x733a22*/
-      Block = SelectFactionThemeMusic(MEMORY[0xB0FE6C], 0, 0x7FFFFFFF, &v20); /*0x733a3e*/
+      Block = SelectFactionThemeMusic(g_UnitTooltipState, 0, 0x7FFFFFFF, &v20); /*0x733a3e*/
     }
-    v5 = MEMORY[0xB0FE6C]; /*0x733a73*/
-    v18 = *(_DWORD *)(MEMORY[0xB0FE6C] + 16); /*0x733a80*/
+    v5 = g_UnitTooltipState; /*0x733a73*/
+    v18 = *(_DWORD *)(g_UnitTooltipState + 16); /*0x733a80*/
     if ( v18 > 0 ) /*0x733a84*/
     {
       do /*0x733aed*/
@@ -1324,10 +1324,10 @@ int __fastcall SelectUnitsByTheme(char a1)
       v10 = DynamicVector::Constructor_Techno(v9, 0, 0); /*0x733b08*/
     else
       v10 = 0; /*0x733b0c*/
-    v11 = MEMORY[0xA8ECC8]; /*0x733b0e*/
+    v11 = g_SelectionManager; /*0x733b0e*/
     for ( i = 0; i < (int)v11; ++i ) /*0x733b18*/
     {
-      v13 = *((_DWORD *)MEMORY[0xA8ECBC] + i); /*0x733b1f*/
+      v13 = *((_DWORD *)g_ObjectClass_CurrentCount + i); /*0x733b1f*/
       if ( v13 ) /*0x733b24*/
       {
         if ( *(_BYTE *)(v13 + 20) & 1 ) /*0x733b2c*/
@@ -1350,8 +1350,8 @@ int __fastcall SelectUnitsByTheme(char a1)
     if ( !StringCSF ) /*0x733b84*/
     {
 LABEL_31:
-      if ( (int)MEMORY[0xA8ECC8] > 0 ) /*0x733b8d*/
-        StringCSF = *(wchar_t **)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)MEMORY[0xA8ECBC] + 136))(*(_DWORD *)MEMORY[0xA8ECBC]) /*0x733b9f*/
+      if ( (int)g_SelectionManager > 0 ) /*0x733b8d*/
+        StringCSF = *(wchar_t **)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)g_ObjectClass_CurrentCount + 136))(*(_DWORD *)g_ObjectClass_CurrentCount) /*0x733b9f*/
                                 + 96);
     }
     FillUnitTooltipUI(Destination, StringCSF); /*0x733ba8*/

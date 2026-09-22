@@ -24,7 +24,7 @@ char *__thiscall sub_770270(char *this, int a2)
   {
     unknown_libname_73(v4); /*0x770289*/
     Array::ForEach(v5, 24, 6, (int (__thiscall *)(int))sub_7719E0); /*0x770298*/
-    String::Assign_Alt(v4, &MEMORY[0x889F64]); /*0x7702a4*/
+    String::Assign_Alt(v4, &g_INI_DefaultBuffer); /*0x7702a4*/
     v4 += 37; /*0x7702a9*/
     v5 += 148; /*0x7702af*/
     --v3; /*0x7702b5*/

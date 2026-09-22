@@ -11,17 +11,17 @@ char __thiscall sub_4FCDC0(int this)
 {
   char result; // al
 
-  result = *(_BYTE *)(this + 504); /*0x4fcdc0*/
+  result = this->q1F8; /*0x4fcdc0*/
   if ( !result ) /*0x4fcdc8*/
   {
-    result = *(_BYTE *)(this + 503); /*0x4fcdca*/
+    result = this->__pad_1F7; /*0x4fcdca*/
     if ( !result ) /*0x4fcdd2*/
       return HouseClass::CheckWinCondition(this, 0); /*0x4fcdd6*/
   }
-  if ( *(_DWORD *)(this + 664) == -1 ) /*0x4fcde3*/
+  if ( this->q298 == -1 ) /*0x4fcde3*/
   {
-    result = (char)MEMORY[0xA8ED84]; /*0x4fcde5*/
-    *(_DWORD *)(this + 664) = MEMORY[0xA8ED84]; /*0x4fcdea*/
+    result = (char)g_CurrentFrame; /*0x4fcde5*/
+    this->q298 = g_CurrentFrame; /*0x4fcdea*/
   }
   return result; /*0x4fcddb*/
 }
@@ -77,7 +77,7 @@ int TActionClass::executeHuntAction(int a2)
 int __thiscall sub_50DA20(_DWORD *this, int a2)
 {
   this->q54F4 = a2; /*0x50da24*/
-  this->q54FC = MEMORY[0xA8ED84]; /*0x50da30*/
+  this->q54FC = g_CurrentFrame; /*0x50da30*/
   return a2; /*0x50da36*/
 }
 }
@@ -144,7 +144,7 @@ int __stdcall sub_567F70(int *a1, int a2)
   result = a2 + 2; /*0x567ff7*/
   if ( -2 - a2 < a2 + 2 ) /*0x568000*/
   {
-    v12 = MEMORY[0x87F924]; /*0x568006*/
+    v12 = g_Shroud_CellArray; /*0x568006*/
     do /*0x568130*/
     {
       if ( v9 < result ) /*0x56800f*/
@@ -171,19 +171,19 @@ int __stdcall sub_567F70(int *a1, int a2)
                 v17 = g_CellClassArray; /*0x5680a0*/
               }
               v17[76] = 1; /*0x5680a7*/
-              if ( v15 >= 0x40000 || (v18 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v15)) == 0 ) /*0x5680c5*/
+              if ( v15 >= 0x40000 || (v18 = *(_DWORD **)(g_Shroud_CellArray + 4 * v15)) == 0 ) /*0x5680c5*/
               {
                 g_Map_GlobalCellIndex = v22; /*0x5680c7*/
                 v18 = g_CellClassArray; /*0x5680cd*/
               }
               v18[75] &= ~8u; /*0x5680dd*/
-              if ( v15 >= 0x40000 || (v19 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v15)) == 0 ) /*0x5680f7*/
+              if ( v15 >= 0x40000 || (v19 = *(_DWORD **)(g_Shroud_CellArray + 4 * v15)) == 0 ) /*0x5680f7*/
               {
                 g_Map_GlobalCellIndex = v22; /*0x5680f9*/
                 v19 = g_CellClassArray; /*0x5680ff*/
               }
               v19[75] &= ~0x10u; /*0x56810d*/
-              v12 = MEMORY[0x87F924]; /*0x568113*/
+              v12 = g_Shroud_CellArray; /*0x568113*/
             }
           }
           v8 = a2; /*0x568119*/
@@ -500,7 +500,7 @@ char __thiscall TActionClass::executeRetreatAction(int *this, AbstractClass *aP1
   int v8; // [esp+4h] [ebp-10h] BYREF
   CoordStruct aP2; // [esp+8h] [ebp-Ch] BYREF
 
-  v7 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v8, this->q011); /*0x6e1cdb*/
+  v7 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v8, this->q011); /*0x6e1cdb*/
   aP2.Z = 0; /*0x6e1cdf*/
   aP2.Y = (SHIWORD(v7) << 8) + 128; /*0x6e1d00*/
   aP2.X = ((__int16)v7 << 8) + 128; /*0x6e1d0a*/
@@ -508,7 +508,7 @@ char __thiscall TActionClass::executeRetreatAction(int *this, AbstractClass *aP1
   if ( (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v7) + 80) & 0x100) != 0 /*0x6e1d49*/
     || (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v7) + 80) & 0x400) != 0 )
   {
-    aP2.Z += *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[5952]; /*0x6e1d57*/
+    aP2.Z += *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[5952]; /*0x6e1d57*/
   }
   v5 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6e1d60*/
   if ( v5 ) /*0x6e1d6a*/
@@ -540,7 +540,7 @@ char __thiscall TActionClass::executeEscortAction(int *this, int a2, int a3, int
   int v9; // [esp+8h] [ebp-10h] BYREF
   CoordStruct aP2; // [esp+Ch] [ebp-Ch] BYREF
 
-  v8 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v9, this->q011); /*0x6e22ae*/
+  v8 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v9, this->q011); /*0x6e22ae*/
   aP2.Z = 0; /*0x6e22b2*/
   aP2.Y = (SHIWORD(v8) << 8) + 128; /*0x6e22d3*/
   aP2.X = ((__int16)v8 << 8) + 128; /*0x6e22dd*/
@@ -548,7 +548,7 @@ char __thiscall TActionClass::executeEscortAction(int *this, int a2, int a3, int
   if ( (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v8) + 80) & 0x100) != 0 /*0x6e231c*/
     || (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v8) + 80) & 0x400) != 0 )
   {
-    aP2.Z += *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[5952]; /*0x6e232a*/
+    aP2.Z += *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[5952]; /*0x6e232a*/
   }
   v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6e2333*/
   if ( v6 ) /*0x6e233d*/
@@ -586,7 +586,7 @@ char __thiscall TActionClass::CreateWeaponImpactAtWaypoint(int *this, int a2, in
   int v15; // [esp+14h] [ebp-10h] BYREF
   CoordStruct aP2; // [esp+18h] [ebp-Ch] BYREF
 
-  v14 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v15, this->q011); /*0x6e23b1*/
+  v14 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v15, this->q011); /*0x6e23b1*/
   aP2.Z = 0; /*0x6e23b5*/
   aP2.Y = (SHIWORD(v14) << 8) + 128; /*0x6e23d6*/
   aP2.X = ((__int16)v14 << 8) + 128; /*0x6e23e0*/
@@ -594,7 +594,7 @@ char __thiscall TActionClass::CreateWeaponImpactAtWaypoint(int *this, int a2, in
   if ( (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14) + 80) & 0x100) != 0 /*0x6e241f*/
     || (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14) + 80) & 0x400) != 0 )
   {
-    aP2.Z += *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[5952]; /*0x6e242d*/
+    aP2.Z += *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[5952]; /*0x6e242d*/
   }
   v6 = this->idxArray; /*0x6e2431*/
   v7 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10016] + 4 * v6); /*0x6e2440*/
@@ -655,7 +655,7 @@ char __thiscall TActionClass::SpawnMeteorShower(int *this, AbstractClass *aP1, i
   int GroundHeight; // [esp+20h] [ebp-10h]
   CoordStruct aP2; // [esp+24h] [ebp-Ch] BYREF
 
-  v17 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v19, this->q011); /*0x6e2c60*/
+  v17 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v19, this->q011); /*0x6e2c60*/
   GroundHeight = 0; /*0x6e2c64*/
   v21 = (SHIWORD(v17) << 8) + 128; /*0x6e2c85*/
   v20 = ((__int16)v17 << 8) + 128; /*0x6e2c8f*/
@@ -663,10 +663,10 @@ char __thiscall TActionClass::SpawnMeteorShower(int *this, AbstractClass *aP1, i
   if ( (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v17) + 80) & 0x100) != 0 /*0x6e2cce*/
     || (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v17) + 80) & 0x400) != 0 )
   {
-    GroundHeight += *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[5952]; /*0x6e2cdc*/
+    GroundHeight += *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[5952]; /*0x6e2cdc*/
   }
   v6 = *(_DWORD *)&stru_830620.__pad_579C[4 * this->idxArray + 52544] /*0x6e2d0a*/
-     + (int)abs32(Random::State(&MEMORY[0xA8B230]->random[1])) % 3;
+     + (int)abs32(Random::State(&g_ScenarioClass_Instance->random[1])) % 3;
   String = GlobalArray::FindString(&stru_830620.__pad_579C[52836]); /*0x6e2d1b*/
   v19 = GlobalArray::FindString(&stru_830620.__pad_579C[52824]); /*0x6e2d22*/
   v8 = 70 * v6; /*0x6e2d32*/
@@ -675,8 +675,8 @@ char __thiscall TActionClass::SpawnMeteorShower(int *this, AbstractClass *aP1, i
   v18 = v6; /*0x6e2d3d*/
   do /*0x6e2dfa*/
   {
-    v9 = &MEMORY[0xA8B230]->random[1]; /*0x6e2d46*/
-    v10 = Random::State(&MEMORY[0xA8B230]->random[1]) % v8; /*0x6e2d58*/
+    v9 = &g_ScenarioClass_Instance->random[1]; /*0x6e2d46*/
+    v10 = Random::State(&g_ScenarioClass_Instance->random[1]) % v8; /*0x6e2d58*/
     v11 = Random::State(v9); /*0x6e2d5a*/
     aP2.X = v10 + v20; /*0x6e2d6d*/
     aP2.Z = GroundHeight; /*0x6e2d77*/
@@ -685,7 +685,7 @@ char __thiscall TActionClass::SpawnMeteorShower(int *this, AbstractClass *aP1, i
     v12 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x6e2d9c*/
     if ( v12 ) /*0x6e2da3*/
     {
-      v14 = abs32(Random::State(&MEMORY[0xA8B230]->random[1])) & 0x80000001; /*0x6e2dba*/
+      v14 = abs32(Random::State(&g_ScenarioClass_Instance->random[1])) & 0x80000001; /*0x6e2dba*/
       v13 = v14 == 0; /*0x6e2dba*/
       if ( v14 < 0 ) /*0x6e2dbf*/
         v13 = (((_BYTE)v14 - 1) | 0xFFFFFFFE) == -1; /*0x6e2dc5*/
@@ -888,8 +888,8 @@ int __thiscall TActionClass::TActionClass(int this)
   this->TActionClass_field_28 = 0; /*0x71e6b2*/
   this->TActionClass_field_2C = 0; /*0x71e6b5*/
   this->TActionClass_field_30 = 0; /*0x71e6b8*/
-  *(_BYTE *)(this + 56) = 0; /*0x71e6bb*/
-  *(_DWORD *)(this + 84) = 0; /*0x71e6be*/
+  this->TActionClass_field_38 = 0; /*0x71e6bb*/
+  this->TActionClass_field_54 = 0; /*0x71e6be*/
   *(_DWORD *)this = &TEventClass::`vftable'; /*0x71e6c1*/
   this->vtable1 = &TEventClass::`vftable'; /*0x71e6c7*/
   this->vtable2 = &TEventClass::`vftable'; /*0x71e6ce*/
@@ -927,27 +927,27 @@ LABEL_11:
     }
   }
   this->idxArray = v4; /*0x71e74f*/
-  if ( MEMORY[0xB0F668] < MEMORY[0xB0F660] /*0x71e786*/
+  if ( g_TActionClassState < MEMORY[0xB0F660] /*0x71e786*/
     || (MEMORY[0xB0F665] || !MEMORY[0xB0F660])
     && MEMORY[0xB0F66C] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F658] + 8))(
-         &MEMORY[0xB0F658],
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(TActionClass_Array + 8))(
+         &TActionClass_Array,
          MEMORY[0xB0F660] + MEMORY[0xB0F66C],
          0) )
   {
-    v6 = MEMORY[0xB0F668]++; /*0x71e793*/
+    v6 = g_TActionClassState++; /*0x71e793*/
     *((_DWORD *)MEMORY[0xB0F65C] + v6) = this; /*0x71e7a2*/
   }
-  if ( MEMORY[0xB0F680] < MEMORY[0xB0F678] /*0x71e7d9*/
-    || (MEMORY[0xB0F67D] || !MEMORY[0xB0F678])
-    && MEMORY[0xB0F684] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F670] + 8))(
-         &MEMORY[0xB0F670],
-         MEMORY[0xB0F678] + MEMORY[0xB0F684],
+  if ( g_AnimManager < g_AnimTypePool /*0x71e7d9*/
+    || (g_AnimPoolLocked || !g_AnimTypePool)
+    && g_AnimManagerConfig > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_AnimPoolManager + 8))(
+         &g_AnimPoolManager,
+         g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v7 = MEMORY[0xB0F680]++; /*0x71e7e6*/
-    *((_DWORD *)MEMORY[0xB0F674] + v7) = this; /*0x71e7f5*/
+    v7 = g_AnimManager++; /*0x71e7e6*/
+    *((_DWORD *)g_AnimPoolCount + v7) = this; /*0x71e7f5*/
   }
   this->TActionClass_field_34 = 0; /*0x71e7f8*/
   return this; /*0x71e7fd*/

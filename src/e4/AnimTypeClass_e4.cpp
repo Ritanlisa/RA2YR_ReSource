@@ -169,16 +169,16 @@ _DWORD *__thiscall AnimTypeClass::Construct(_DWORD *this, AbstractClass *aP1)
     v3 = (AnimTypeClass *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62260])++; /*0x4277bd*/
     *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * (_DWORD)v3) = this; /*0x4277cc*/
   }
-  if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x427803*/
-    || (MEMORY[0xB077F8].__pad_579C[9961] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9956])
-    && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
-         &MEMORY[0xB077F8].__pad_579C[9948],
-         *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9956] + *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9968],
+  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[9964] < *(int *)&g_OverlayTypeConfig.__pad_579C[9956] /*0x427803*/
+    || (g_OverlayTypeConfig.__pad_579C[9961] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956])
+    && *(int *)&g_OverlayTypeConfig.__pad_579C[9968] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9948] + 8))(
+         &g_OverlayTypeConfig.__pad_579C[9948],
+         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9968],
          0) )
   {
-    v4 = (*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9964])++; /*0x427810*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9952] + 4 * v4) = this; /*0x42781f*/
+    v4 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9964])++; /*0x427810*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952] + 4 * v4) = this; /*0x42781f*/
   }
   v5 = 0; /*0x427828*/
   if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] <= 0 ) /*0x42782c*/
@@ -267,7 +267,7 @@ char __thiscall AnimTypeClass::_vt40(int this, int a2)
       this->LoopEnd = this->End; /*0x427c5c*/
     this->MiddleFrameWidth = *(__int16 *)(v6 + 6) / 2; /*0x427c6b*/
     this->MiddleFrameHeight = -1; /*0x427c74*/
-    *(_DWORD *)(this + 672) = -1; /*0x427c7a*/
+    this->q2A0 = -1; /*0x427c7a*/
     LOBYTE(v3) = -1; /*0x427c71*/
   }
   return v3; /*0x427c80*/
@@ -367,7 +367,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   {
     this->Shadow = Bool_Overwrite;
     if ( Bool_Overwrite )
-      *(int *)(this + 704) /= 2;
+      this->q2C0 /= 2;
     else
       this->End *= 2;
     v5 = this->End;
@@ -901,7 +901,7 @@ LABEL_70:
       v62 = 900 / v60;
     this->RandomRate.Max = v62;
   }
-  if ( *(int *)(this + 744) < 0 )
+  if ( this->q2E8 < 0 )
     this->RandomRate.Max = 0;
   v61 = *(RandomStruct **)(this + 744);
   if ( this->RandomRate > (int)v61 )
@@ -935,13 +935,13 @@ int __stdcall AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 712)); /*0x428866*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 772)); /*0x428877*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 776)); /*0x428888*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 768)); /*0x428899*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 752)); /*0x4288aa*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 816)); /*0x4288bb*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 824)); /*0x4288cc*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 712)); /*0x428866*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 772)); /*0x428877*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 776)); /*0x428888*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 768)); /*0x428899*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 752)); /*0x4288aa*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 816)); /*0x4288bb*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 824)); /*0x4288cc*/
     if ( !*(_BYTE *)(a1 + 862) ) /*0x4288d1*/
     {
       if ( *(_BYTE *)(a1 + 556) ) /*0x4288db*/
@@ -951,12 +951,12 @@ int __stdcall AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
           0,
           0,
           (const char *)(a1 + 36),
-          (const char *)&off_7E1BC6 + 112 * *((_DWORD *)MEMORY[0xA8B230] + 1174));
+          (const char *)&off_7E1BC6 + 112 * *((_DWORD *)g_ScenarioClass_Instance + 1174));
         *(_DWORD *)(a1 + 164) = SearchMIXFile(Buffer, 1); /*0x428923*/
         return 0; /*0x428932*/
       }
       if ( *(_BYTE *)(a1 + 567) ) /*0x428935*/
-        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 160))(a1, *((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x42894f*/
+        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 160))(a1, *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x42894f*/
     }
     return 0; /*0x428955*/
   }
@@ -1008,7 +1008,7 @@ int __thiscall AnimTypeClass::_vt13(int this, int *a2)
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/
   Power::FlagProcess(a2, v12); /*0x428a73*/
   Power::TimerProcess(this->MiddleFrameWidth); /*0x428a81*/
-  Checksummer::Add_double((unsigned int *)a2, this->Damage, *(_DWORD *)(this + 684)); /*0x428a96*/
+  Checksummer::Add_double((unsigned int *)a2, this->Damage, this->q2AC); /*0x428a96*/
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
   Power::FlagProcess(a2, v13); /*0x428aa4*/
   Power::TimerProcess(this->Rate); /*0x428ab2*/
@@ -1091,11 +1091,11 @@ int __thiscall AnimTypeClass::_vt39(char *this)
     _makepath(Buffer, 0, 0, v3, Ext); /*0x428c8b*/
     if ( this->q22C ) /*0x428c90*/
     {
-      _makepath(Buffer, 0, 0, this + 36, (const char *)&off_7E1BC6 + 112 * *((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x428ccc*/
+      _makepath(Buffer, 0, 0, this + 36, (const char *)&off_7E1BC6 + 112 * *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x428ccc*/
     }
     else if ( this->q237 ) /*0x428cd6*/
     {
-      TheaterObjectTypeClassSpecificID(Buffer, *((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x428cf3*/
+      TheaterObjectTypeClassSpecificID(Buffer, *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x428cf3*/
     }
     CCFileClass::Construct(v7, Buffer); /*0x428d04*/
     EntireFile = CCFileClass::ReadEntireFile(v7); /*0x428d0d*/
@@ -1118,7 +1118,7 @@ int __thiscall AnimTypeClass::_vt39(char *this)
       v10[0] = &off_7E1668; /*0x428d7f*/
       BufferIOFileClass::Dtor(v10); /*0x428d87*/
     }
-    (*(void (__thiscall **)(char *, _DWORD))(this->Strength)(this, *((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x428d9c*/
+    (*(void (__thiscall **)(char *, _DWORD))(this->Strength)(this, *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x428d9c*/
     v6 = this->Image; /*0x428da2*/
     v7[0] = &vt_CCFileClass; /*0x428dac*/
     v9 = 0; /*0x428db4*/

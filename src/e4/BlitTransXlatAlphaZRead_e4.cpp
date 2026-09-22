@@ -25,16 +25,16 @@ _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(
   result = a6; /*0x494924*/
   if ( a4 > 0 ) /*0x49492a*/
   {
-    v12 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x494938*/
+    v12 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x494938*/
     a6a = (_WORD *)a4; /*0x49493e*/
     do /*0x49499a*/
     {
       v13 = *a2++; /*0x494942*/
       if ( v13 && *result ) /*0x49494d*/
       {
-        *a1 = (*(_WORD *)(this + 2) & (*a1 >> 1)) /*0x494978*/
-            + (*(_WORD *)(this + 2) & (*(_WORD *)(this->BlitTransXlatAlphaZRead_ushort_field_0x04 + 2 * v13) >> 1));
-        v12 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x49497b*/
+        *a1 = (this->q008 & (*a1 >> 1)) /*0x494978*/
+            + (this->q008 & (*(_WORD *)(this->BlitTransXlatAlphaZRead_ushort_field_0x04 + 2 * v13) >> 1));
+        v12 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x49497b*/
       }
       ++result; /*0x494984*/
       ++a1; /*0x494987*/
@@ -71,16 +71,16 @@ _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(
   result = a6; /*0x494a44*/
   if ( a4 > 0 ) /*0x494a4a*/
   {
-    v12 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x494a58*/
+    v12 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x494a58*/
     a6a = (_WORD *)a4; /*0x494a5e*/
     do /*0x494aba*/
     {
       v13 = *a2++; /*0x494a62*/
       if ( v13 && !*result ) /*0x494a6d*/
       {
-        *a1 = (*(_WORD *)(this + 2) & (*a1 >> 1)) /*0x494a98*/
-            + (*(_WORD *)(this + 2) & (*(_WORD *)(this->BlitTransXlatAlphaZRead_ushort_field_0x04 + 2 * v13) >> 1));
-        v12 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x494a9b*/
+        *a1 = (this->q008 & (*a1 >> 1)) /*0x494a98*/
+            + (this->q008 & (*(_WORD *)(this->BlitTransXlatAlphaZRead_ushort_field_0x04 + 2 * v13) >> 1));
+        v12 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x494a9b*/
       }
       ++result; /*0x494aa4*/
       ++a1; /*0x494aa7*/
@@ -123,7 +123,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt01(
   v17 = result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
-    v13 = MEMORY[0x887644]; /*0x494bab*/
+    v13 = g_ZBufferDescriptor; /*0x494bab*/
     v16 = a4; /*0x494bb1*/
     do /*0x494c31*/
     {
@@ -131,14 +131,14 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt01(
       if ( a5 < v15 && *a3 ) /*0x494bd1*/
       {
         *a2 = *(_WORD *)(this->q004 + 2 * ((unsigned __int8)*a3 | *(unsigned __int16 *)(v17 + 2 * *a7))); /*0x494bf9*/
-        v13 = MEMORY[0x887644]; /*0x494bfc*/
+        v13 = g_ZBufferDescriptor; /*0x494bfc*/
       }
       ++a2; /*0x494c06*/
       ++a3; /*0x494c0a*/
       if ( (unsigned int)a6 >= v13[7] ) /*0x494c13*/
         a6 = (unsigned __int16 *)((char *)a6 - v13[8]); /*0x494c15*/
-      if ( (unsigned int)++a7 >= *((_DWORD *)MEMORY[0x87E8A4] + 7) ) /*0x494c23*/
-        a7 = (unsigned __int16 *)((char *)a7 - *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x494c25*/
+      if ( (unsigned int)++a7 >= *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x494c23*/
+        a7 = (unsigned __int16 *)((char *)a7 - *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x494c25*/
       result = --v16; /*0x494c2c*/
     }
     while ( v16 ); /*0x494c31*/
@@ -177,7 +177,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::BlitRect(
   v18 = result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
-    v14 = MEMORY[0x887644]; /*0x494c8b*/
+    v14 = g_ZBufferDescriptor; /*0x494c8b*/
     v17 = a4; /*0x494c91*/
     do /*0x494d16*/
     {
@@ -185,14 +185,14 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::BlitRect(
       if ( a5 < v16 && *a3 ) /*0x494cb1*/
       {
         *a2 = a10 | *(_WORD *)(this->q004 + 2 * ((unsigned __int8)*a3 | *(unsigned __int16 *)(v18 + 2 * *a7))); /*0x494cde*/
-        v14 = MEMORY[0x887644]; /*0x494ce1*/
+        v14 = g_ZBufferDescriptor; /*0x494ce1*/
       }
       ++a2; /*0x494ceb*/
       ++a3; /*0x494cef*/
       if ( (unsigned int)a6 >= v14[7] ) /*0x494cf8*/
         a6 = (unsigned __int16 *)((char *)a6 - v14[8]); /*0x494cfa*/
-      if ( (unsigned int)++a7 >= *((_DWORD *)MEMORY[0x87E8A4] + 7) ) /*0x494d08*/
-        a7 = (unsigned __int16 *)((char *)a7 - *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x494d0a*/
+      if ( (unsigned int)++a7 >= *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x494d08*/
+        a7 = (unsigned __int16 *)((char *)a7 - *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x494d0a*/
       result = --v17; /*0x494d11*/
     }
     while ( v17 ); /*0x494d16*/

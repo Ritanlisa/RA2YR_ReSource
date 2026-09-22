@@ -11,40 +11,40 @@ unsigned __int8 __usercall sub_6BB8E0@<al>(int a1@<esi>)
 {
   unsigned __int8 result; // al
 
-  result = MEMORY[0x8A0DEF]; /*0x6bb8e0*/
-  if ( MEMORY[0x8A0DEF] ) /*0x6bb8ea*/
+  result = g_DDraw_Force3D; /*0x6bb8e0*/
+  if ( g_DDraw_Force3D ) /*0x6bb8ea*/
     result = DDraw::CleanupSurfaces(); /*0x6bb8ec*/
   if ( !MEMORY[0xB0BCF5] ) /*0x6bb8f7*/
   {
-    if ( MEMORY[0x88730C] ) /*0x6bb905*/
+    if ( g_DSurface_Hidden ) /*0x6bb905*/
     {
-      (**(void (__thiscall ***)(int, int))MEMORY[0x88730C])(MEMORY[0x88730C], 1); /*0x6bb90b*/
-      MEMORY[0x88730C] = 0; /*0x6bb90d*/
+      (**(void (__thiscall ***)(int, int))g_DSurface_Hidden)(g_DSurface_Hidden, 1); /*0x6bb90b*/
+      g_DSurface_Hidden = 0; /*0x6bb90d*/
     }
-    if ( MEMORY[0x887310] ) /*0x6bb91b*/
+    if ( DSurface_Alternate ) /*0x6bb91b*/
     {
-      (**(void (__thiscall ***)(int, int))MEMORY[0x887310])(MEMORY[0x887310], 1); /*0x6bb921*/
-      MEMORY[0x887310] = 0; /*0x6bb923*/
+      (**(void (__thiscall ***)(int, int))DSurface_Alternate)(DSurface_Alternate, 1); /*0x6bb921*/
+      DSurface_Alternate = 0; /*0x6bb923*/
     }
-    if ( MEMORY[0x8872FC] ) /*0x6bb931*/
+    if ( DSurface_Tile ) /*0x6bb931*/
     {
-      (**(void (__thiscall ***)(int, int))MEMORY[0x8872FC])(MEMORY[0x8872FC], 1); /*0x6bb937*/
-      MEMORY[0x8872FC] = 0; /*0x6bb939*/
+      (**(void (__thiscall ***)(int, int))DSurface_Tile)(DSurface_Tile, 1); /*0x6bb937*/
+      DSurface_Tile = 0; /*0x6bb939*/
     }
-    if ( MEMORY[0x887300] ) /*0x6bb947*/
+    if ( DSurface_Sidebar ) /*0x6bb947*/
     {
-      (**(void (__thiscall ***)(int, int))MEMORY[0x887300])(MEMORY[0x887300], 1); /*0x6bb94d*/
-      MEMORY[0x887300] = 0; /*0x6bb94f*/
+      (**(void (__thiscall ***)(int, int))DSurface_Sidebar)(DSurface_Sidebar, 1); /*0x6bb94d*/
+      DSurface_Sidebar = 0; /*0x6bb94f*/
     }
-    if ( MEMORY[0x88731C] ) /*0x6bb95d*/
+    if ( DSurface_Composite ) /*0x6bb95d*/
     {
-      (**(void (__thiscall ***)(int, int))MEMORY[0x88731C])(MEMORY[0x88731C], 1); /*0x6bb963*/
-      MEMORY[0x88731C] = 0; /*0x6bb965*/
+      (**(void (__thiscall ***)(int, int))DSurface_Composite)(DSurface_Composite, 1); /*0x6bb963*/
+      DSurface_Composite = 0; /*0x6bb965*/
     }
-    if ( MEMORY[0x887308] ) /*0x6bb973*/
+    if ( g_DSurface_Primary ) /*0x6bb973*/
     {
-      (**(void (__thiscall ***)(int, int))MEMORY[0x887308])(MEMORY[0x887308], 1); /*0x6bb979*/
-      MEMORY[0x887308] = 0; /*0x6bb97b*/
+      (**(void (__thiscall ***)(int, int))g_DSurface_Primary)(g_DSurface_Primary, 1); /*0x6bb979*/
+      g_DSurface_Primary = 0; /*0x6bb97b*/
     }
     result = (unsigned __int8)sub_4A44F0(a1); /*0x6bb981*/
     MEMORY[0xB0BCF5] = 1; /*0x6bb986*/

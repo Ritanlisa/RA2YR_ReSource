@@ -151,7 +151,7 @@ void __thiscall sub_7714B0(_DWORD *this, int a2, char a3, int a4)
   v12 = *(this + 6 * a2 + 227); /*0x771540*/
   if ( v12 > 0 )
   {
-    v13 = v12 == 1 ? 0 : Random::Range(MEMORY[0x886B88], 0, v12 - 1);
+    v13 = v12 == 1 ? 0 : Random::Range(Randomizer_Global, 0, v12 - 1);
     if ( Map_Remove_770CE0(v11, *(_DWORD *)(*(this + 6 * a2 + 224) + 4 * v13), (char **)v17) ) /*0x77156f*/
     {
       if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77157c*/

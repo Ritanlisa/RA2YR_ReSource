@@ -21,7 +21,7 @@ int __thiscall sub_433880(int this, char *Source)
   *(_BYTE *)(this + 65) = 1; /*0x4338b4*/
   *(_DWORD *)(this + 24) = 1; /*0x4338b7*/
   *(_DWORD *)(this + 28) = 1; /*0x4338ba*/
-  *(_DWORD *)(this + 32) = 0; /*0x4338bd*/
+  this->m_CharHeight = 0; /*0x4338bd*/
   this->BitTextClass_field_0C = 0; /*0x4338c0*/
   this->m_CharHeight = 0; /*0x4338c3*/
   SetRect((LPRECT)(this + 48), 0, 0, 0, 0); /*0x4338c6*/
@@ -44,7 +44,7 @@ int __thiscall sub_433880(int this, char *Source)
     *(_BYTE *)(this + 65) = 1; /*0x433919*/
     *(_DWORD *)(this + 24) = 1; /*0x43391c*/
     *(_DWORD *)(this + 28) = 1; /*0x43391f*/
-    *(_DWORD *)(this + 32) = 0; /*0x433922*/
+    this->m_CharHeight = 0; /*0x433922*/
     this->BitTextClass_field_0C = 0; /*0x433925*/
     this->m_CharHeight = 0; /*0x433928*/
     SetRect(v3, 0, 0, 0, 0); /*0x43392b*/

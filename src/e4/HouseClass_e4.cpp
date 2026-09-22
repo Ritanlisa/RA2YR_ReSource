@@ -85,7 +85,7 @@ void __stdcall HouseClass_ResetObjectOrders(char a1, int a2)
       if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)(v4 + 540)) ) /*0x4adf34*/
         break; /*0x4adf34*/
       if ( (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 6 /*0x4adfa5*/
-        && *((_BYTE *)MEMORY[0x8871E0] + 6119)
+        && *((_BYTE *)g_RulesClass_Instance + 6119)
         && (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(v4 + 540), HouseClass_Player) )
       {
         (*(void (__thiscall **)(int, _DWORD, int, _DWORD, _DWORD))(*(_DWORD *)v4 + 1164))(v4, 0, a2, 0, 0); /*0x4adfb9*/
@@ -136,7 +136,7 @@ int __stdcall HouseClass_RevealShroudForAllies(char a1, int a2)
           (*((void (__thiscall **)(#375 **, _DWORD, int))*v4 + 72))(v4, 0, a2); /*0x4ae04d*/
       }
       else if ( (*((int (__thiscall **)(#375 **))*v4 + 11))(v4) == 6 /*0x4ae07d*/
-             && HIBYTE(MEMORY[0x8871E0][1].?[2])
+             && HIBYTE(g_RulesClass_Instance[1].?[2])
              && (unsigned __int8)HouseClass::IsAlliedWith(v4[135], HouseClass_Player) )
       {
         (*((void (__thiscall **)(#375 **, int, _DWORD))*v4 + 72))(v4, a2, 0); /*0x4ae08d*/
@@ -332,7 +332,7 @@ char __thiscall HouseClass::DestroyAllBuildings(void *this)
                                  v5,
                                  &v8,
                                  0,
-                                 MEMORY[0x8871E0]->?[5],
+                                 g_RulesClass_Instance->?[5],
                                  0,
                                  1,
                                  1,
@@ -384,7 +384,7 @@ char __thiscall HouseClass::DestroyAllNonBuildingsNonNaval(void *this)
                                  v5,
                                  &v8,
                                  0,
-                                 MEMORY[0x8871E0]->?[5],
+                                 g_RulesClass_Instance->?[5],
                                  0,
                                  1,
                                  1,
@@ -436,7 +436,7 @@ char __thiscall HouseClass::DestroyAllNonBuildingsNaval(void *this)
                                  v5,
                                  &v8,
                                  0,
-                                 MEMORY[0x8871E0]->?[5],
+                                 g_RulesClass_Instance->?[5],
                                  0,
                                  1,
                                  1,
@@ -476,7 +476,7 @@ bool __thiscall HouseClass::CanAlly(int this, HouseClass *aP1)
     }
   }
   if ( *(_DWORD *)(aP1->relatedTagsCapacity + 188) == HouseTypeClass::Find(&g_INI_Key_Easy.unknown30) /*0x501598*/
-    && MEMORY[0xA8B238] )
+    && g_GameMode_Current )
   {
     return 0; /*0x50159b*/
   }
@@ -531,14 +531,14 @@ char HouseClass_CanDetect()
   int j; // edi
   char v6; // cl
 
-  LOBYTE(v0) = (_BYTE)MEMORY[0x8871E0]; /*0x501640*/
-  v1 = *((_BYTE *)MEMORY[0x8871E0] + 5301); /*0x50164d*/
+  LOBYTE(v0) = (_BYTE)g_RulesClass_Instance; /*0x501640*/
+  v1 = *((_BYTE *)g_RulesClass_Instance + 5301); /*0x50164d*/
   if ( MEMORY[0xA8B23C] /*0x501662*/
     && (LOBYTE(v0) = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 4))(MEMORY[0xA8B23C]), (_BYTE)v0)
     || v1 )
   {
-    LOBYTE(v0) = (_BYTE)MEMORY[0xA8B230]; /*0x501668*/
-    if ( !*((_BYTE *)MEMORY[0xA8B230] + 4576) ) /*0x50166d*/
+    LOBYTE(v0) = (_BYTE)g_ScenarioClass_Instance; /*0x501668*/
+    if ( !*((_BYTE *)g_ScenarioClass_Instance + 4576) ) /*0x50166d*/
     {
       v2 = HouseClass_Count; /*0x50167b*/
       for ( i = 0; i < v2; ++i ) /*0x501685*/
@@ -550,7 +550,7 @@ char HouseClass_CanDetect()
           if ( !(_BYTE)v0 ) /*0x5016a8*/
           {
             LOBYTE(v0) = v4[492]; /*0x5016b5*/
-            if ( !MEMORY[0xA8B238] ) /*0x5016bb*/
+            if ( !g_GameMode_Current ) /*0x5016bb*/
               LOBYTE(v0) = (_BYTE)v0 || v4[493]; /*0x5016cf*/
             if ( !(_BYTE)v0 ) /*0x5016d3*/
             {
@@ -562,7 +562,7 @@ char HouseClass_CanDetect()
                 if ( v0 && !v0[501] ) /*0x5016f3*/
                 {
                   v6 = v0[492]; /*0x501705*/
-                  if ( !MEMORY[0xA8B238] ) /*0x50170b*/
+                  if ( !g_GameMode_Current ) /*0x50170b*/
                     v6 = v6 || v0[493]; /*0x50171f*/
                   if ( v6 ) /*0x501728*/
                     LOBYTE(v0) = HouseClass::SetAlliance((int)v4, (int)v0, 0); /*0x50172a*/
@@ -789,22 +789,22 @@ HRESULT __stdcall HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
     CounterClass::Load((_DWORD *)(v2 + 21940), (int)v9);
     CounterClass::Load((_DWORD *)(v2 + 21960), (int)v9);
     CounterClass::Load((_DWORD *)(v2 + 21980), (int)v9);
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 52));
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21424));
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21428));
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21420));
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21432));
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21436));
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21440));
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21444));
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21448));
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21452));
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21728));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 52));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21424));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21428));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21420));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21432));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21436));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21440));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21444));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21448));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21452));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21728));
     v11 = (int *)(v2 + 528);
     v12 = 12;
     do
     {
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v11++);
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v11++);
       --v12;
     }
     while ( v12 );
@@ -845,7 +845,7 @@ LABEL_41:
               {
 LABEL_51:
                 for ( k = 0; k < *(_DWORD *)(v2 + 22036); ++k )
-                  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(_DWORD *)(v2 + 22024) + 8 * k));
+                  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v2 + 22024) + 8 * k));
                 v35 = *(_DWORD *)v9->__pad_0;
                 v133 = 0;
                 result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v35 + 12))(v9, &v133, 4, 0);
@@ -859,7 +859,7 @@ LABEL_63:
                     for ( m = 0; m < v41; ++m )
                     {
                       ObjectPtr::RegisterForTracking(
-                        (int)&MEMORY[0xB0C110],
+                        (int)&SwizzleManagerClass_Instance,
                         (int *)(*(_DWORD *)(v2 + 22048) + 8 * v41 - 8));
                       v41 = *(_DWORD *)(v2 + 22060);
                     }
@@ -1009,59 +1009,59 @@ LABEL_175:
 LABEL_187:
                                                                     for ( n = 0; n < *(_DWORD *)(v2 + 612); ++n )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 600) + 4 * n));
                                                                     for ( ii = 0; ii < *(_DWORD *)(v2 + 72); ++ii )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 60) + 4 * ii));
                                                                     for ( jj = 0; jj < *(_DWORD *)(v2 + 96); ++jj )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 84) + 4 * jj));
                                                                     for ( kk = 0; kk < *(_DWORD *)(v2 + 120); ++kk )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 108) + 4 * kk));
                                                                     for ( mm = 0; mm < *(_DWORD *)(v2 + 144); ++mm )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 132) + 4 * mm));
                                                                     for ( nn = 0; nn < *(_DWORD *)(v2 + 168); ++nn )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 156) + 4 * nn));
                                                                     for ( i1 = 0; i1 < *(_DWORD *)(v2 + 192); ++i1 )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 180) + 4 * i1));
                                                                     for ( i2 = 0; i2 < *(_DWORD *)(v2 + 216); ++i2 )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 204) + 4 * i2));
                                                                     for ( i3 = 0; i3 < *(_DWORD *)(v2 + 240); ++i3 )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 228) + 4 * i3));
                                                                     for ( i4 = 0; i4 < *(_DWORD *)(v2 + 264); ++i4 )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 252) + 4 * i4));
                                                                     for ( i5 = 0; i5 < *(_DWORD *)(v2 + 288); ++i5 )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 276) + 4 * i5));
                                                                     for ( i6 = 0; i6 < *(_DWORD *)(v2 + 312); ++i6 )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 300) + 4 * i6));
                                                                     for ( i7 = 0; i7 < *(_DWORD *)(v2 + 336); ++i7 )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         (int *)(*(_DWORD *)(v2 + 324) + 4 * i7));
                                                                     for ( i8 = 0; i8 < *(_DWORD *)(v2 + 380); ++i8 )
                                                                       ObjectPtr::RegisterForTracking(
-                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int)&SwizzleManagerClass_Instance,
                                                                         *(int **)(*(_DWORD *)(v2 + 368) + 4 * i8));
                                                                     v130 = *(_DWORD *)v9->__pad_0;
                                                                     v136 = 0;
@@ -1792,8 +1792,8 @@ char __thiscall HouseClass::UpdatePower(int this)
 
   v2 = this->powerOutput; /*0x508c39*/
   v3 = this->powerDrain; /*0x508c3f*/
-  v14 = v2 < v3 && v3 && (!v2 || (double)v2 / (double)*(int *)(this + 21416) < 1.0); /*0x508c75*/
-  *(_BYTE *)(this + 22392) = 0; /*0x508c79*/
+  v14 = v2 < v3 && v3 && (!v2 || (double)v2 / (double)this->powerDrain < 1.0); /*0x508c75*/
+  this->q5778 = 0; /*0x508c79*/
   this->powerOutput = 0; /*0x508c7f*/
   this->powerDrain = 0; /*0x508c85*/
   v4 = 0; /*0x508c8f*/
@@ -1806,7 +1806,7 @@ char __thiscall HouseClass::UpdatePower(int this)
       v5 = *(_DWORD *)(this->absorbersCount + 4 * v4); /*0x508ca5*/
       if ( v5 && !*(_BYTE *)(v5 + 129) && *(_BYTE *)(v5 + 116) ) /*0x508cb8*/
       {
-        if ( MEMORY[0xA8B238][0] ) /*0x508cc5*/
+        if ( g_GameMode_Current[0] ) /*0x508cc5*/
         {
           if ( (#375 *)this != HouseClass_Player ) /*0x508ce4*/
             goto LABEL_18; /*0x508ce4*/
@@ -1820,7 +1820,7 @@ LABEL_18:
             v12 = 1; /*0x508d32*/
           goto LABEL_21; /*0x508d32*/
         }
-        if ( *(_BYTE *)(v5 + 1051) || MEMORY[0xA8B238][0] ) /*0x508cf0*/
+        if ( *(_BYTE *)(v5 + 1051) || g_GameMode_Current[0] ) /*0x508cf0*/
           goto LABEL_18; /*0x508cf0*/
       }
 LABEL_21:
@@ -1830,12 +1830,12 @@ LABEL_21:
   }
   *(_BYTE *)(this + 22395) = v12; /*0x508d45*/
   v6 = this->powerBlackoutTimer; /*0x508d50*/
-  v7 = *(_DWORD *)(this + 684); /*0x508d56*/
+  v7 = this->q0AB; /*0x508d56*/
   if ( v6 != -1 ) /*0x508d5f*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v6 >= v7 ) /*0x508d6b*/
+    if ( (int)g_CurrentFrame - v6 >= v7 ) /*0x508d6b*/
       goto LABEL_26; /*0x508d6b*/
-    v7 -= (int)MEMORY[0xA8ED84] - v6; /*0x508d6d*/
+    v7 -= (int)g_CurrentFrame - v6; /*0x508d6d*/
   }
   if ( v7 ) /*0x508d71*/
   {
@@ -1851,7 +1851,7 @@ LABEL_28:
   HouseClass::UpdateTeamProductionSpeed((void *)this); /*0x508d88*/
   v8 = this->powerOutput; /*0x508d8d*/
   v9 = this->powerDrain; /*0x508d93*/
-  v10 = v8 < v9 && v9 && (!v8 || (double)*(int *)(this + 21412) / (double)*(int *)(this + 21416) < 1.0); /*0x508dc9*/
+  v10 = v8 < v9 && v9 && (!v8 || (double)this->powerOutput / (double)this->powerDrain < 1.0); /*0x508dc9*/
   if ( v14 != v10 ) /*0x508dd7*/
     LOBYTE(v10) = SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this); /*0x508ddb*/
   *(_BYTE *)(this + 22393) = 1; /*0x508de0*/
@@ -1882,14 +1882,14 @@ void * HouseClass::CanTogglePower()
   result = HouseClass_Player; /*0x508df7*/
   if ( (#375 *)this == HouseClass_Player ) /*0x508e01*/
   {
-    v2 = *(_DWORD *)(this + 696); /*0x508e07*/
+    v2 = this->q2B8; /*0x508e07*/
     v3 = this->radarBlackoutTimer; /*0x508e10*/
     LOBYTE(v10) = 0; /*0x508e1a*/
     if ( v3 != -1 ) /*0x508e1f*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v3 >= v2 ) /*0x508e2b*/
+      if ( (int)g_CurrentFrame - v3 >= v2 ) /*0x508e2b*/
         goto LABEL_6; /*0x508e2b*/
-      v2 -= (int)MEMORY[0xA8ED84] - v3; /*0x508e2d*/
+      v2 -= (int)g_CurrentFrame - v3; /*0x508e2d*/
     }
     if ( v2 ) /*0x508e31*/
     {
@@ -1900,11 +1900,11 @@ LABEL_30:
       return result; /*0x508f4f*/
     }
 LABEL_6:
-    if ( *((_BYTE *)MEMORY[0xA8B230] + 13476) ) /*0x508e3c*/
+    if ( *((_BYTE *)g_ScenarioClass_Instance + 13476) ) /*0x508e3c*/
       goto LABEL_29; /*0x508e3c*/
     v4 = this->powerOutput; /*0x508e4a*/
     v5 = this->powerDrain; /*0x508e50*/
-    if ( v4 >= v5 || !v5 || v4 && (double)*(int *)(this + 21412) / (double)*(int *)(this + 21416) >= 1.0 ) /*0x508e81*/
+    if ( v4 >= v5 || !v5 || v4 && (double)this->powerOutput / (double)this->powerDrain >= 1.0 ) /*0x508e81*/
     {
       v6 = this->bunkersCount; /*0x508e87*/
       v7 = 0; /*0x508e8a*/
@@ -1919,9 +1919,9 @@ LABEL_6:
             && *(_BYTE *)(*(_DWORD *)(v9 + 1312) + 5796)
             && !*(_BYTE *)(v9 + 129)
             && *(_BYTE *)(v9 + 116)
-            && (!MEMORY[0xA8B238][0] && !this->currentPlayer && !this->playerControl
+            && (!g_GameMode_Current[0] && !this->currentPlayer && !this->playerControl
              || *(_BYTE *)(v9 + 1051)
-             || MEMORY[0xA8B238][0])
+             || g_GameMode_Current[0])
             && *(_DWORD *)(v9 + 172) != 19
             && *(_DWORD *)(v9 + 180) != 19 )
           {
@@ -1965,7 +1965,7 @@ char __thiscall HouseClass::UpdateAITryFireSW(int this)
   int v14; // [esp+14h] [ebp-4h] BYREF
 
   LOBYTE(v2) = this->currentPlayer; /*0x5098fe*/
-  if ( !MEMORY[0xA8B238] ) /*0x509904*/
+  if ( !g_GameMode_Current ) /*0x509904*/
     LOBYTE(v2) = (_BYTE)v2 || this->playerControl; /*0x509918*/
   if ( !(_BYTE)v2 )
   {
@@ -1983,7 +1983,7 @@ char __thiscall HouseClass::UpdateAITryFireSW(int this)
             {
               v5 = (unsigned short)this->preferredTargetCell == *(_WORD *)&MEMORY[0xA8D63C].__pad_14B0[1196]; /*0x509980*/
               v11 = *(CellStruct **)&MEMORY[0xA8D63C].__pad_14B0[1196]; /*0x509987*/
-              if ( v5 && *(_WORD *)(this + 21746) == *(_WORD *)&MEMORY[0xA8D63C].__pad_14B0[1198] )
+              if ( v5 && this->q54F2 == *(_WORD *)&MEMORY[0xA8D63C].__pad_14B0[1198] )
               {
                 v7 = (CellStruct **)(this->preferredTargetType == 1
                                    ? HouseClass::FindSWBuilding((_DWORD *)this, (HouseClass *)&v13)
@@ -2066,11 +2066,11 @@ int __thiscall HouseClass::CreatePowerOutage(int this, int a2)
   wchar_t *v2; // eax
   int v4; // [esp+8h] [ebp-8h]
 
-  v2 = MEMORY[0xA8ED84]; /*0x50bc90*/
-  *(_BYTE *)(this + 22392) = 1; /*0x50bc9c*/
+  v2 = g_CurrentFrame; /*0x50bc90*/
+  this->q5778 = 1; /*0x50bc9c*/
   this->powerBlackoutTimer = v2; /*0x50bcaa*/
-  *(_DWORD *)(this + 680) = v4; /*0x50bcb4*/
-  *(_DWORD *)(this + 684) = a2; /*0x50bcb7*/
+  this->q2A8 = v4; /*0x50bcb4*/
+  this->q0AB = a2; /*0x50bcb7*/
   return v4; /*0x50bcba*/
 }
 }
@@ -2086,11 +2086,11 @@ int __thiscall HouseClass::CreateRadarOutage(int this, int a2)
   wchar_t *v2; // eax
   int v4; // [esp+8h] [ebp-8h]
 
-  v2 = MEMORY[0xA8ED84]; /*0x50bcd0*/
+  v2 = g_CurrentFrame; /*0x50bcd0*/
   *(_BYTE *)(this + 22393) = 1; /*0x50bcdc*/
   this->radarBlackoutTimer = v2; /*0x50bcea*/
   *(_DWORD *)(this + 692) = v4; /*0x50bcf4*/
-  *(_DWORD *)(this + 696) = a2; /*0x50bcf7*/
+  this->q2B8 = a2; /*0x50bcf7*/
   return v4; /*0x50bcfa*/
 }
 }
@@ -2142,7 +2142,7 @@ int __usercall HouseClass::RespawnStartingBuildings@<eax>(
           v10,
           v21,
           0,
-          MEMORY[0x8871E0]->?[5],
+          g_RulesClass_Instance->?[5],
           0,
           0,
           0,
@@ -2266,7 +2266,7 @@ int HouseClass::GetInfSelfHealStep()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall HouseClass::GetInfSelfHealStep(_DWORD *this)
 {
-  return this->q059 * MEMORY[0x8871E0]->SelfHealInfantryAmount; /*0x50d9ef*/
+  return this->q059 * g_RulesClass_Instance->SelfHealInfantryAmount; /*0x50d9ef*/
 }
 }
 } // namespace gamemd
@@ -2278,7 +2278,7 @@ int HouseClass::GetUnitSelfHealStep()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall HouseClass::GetUnitSelfHealStep(_DWORD *this)
 {
-  return this->q05A * MEMORY[0x8871E0]->SelfHealUnitAmount; /*0x50d9ff*/
+  return this->q05A * g_RulesClass_Instance->SelfHealUnitAmount; /*0x50d9ff*/
 }
 }
 } // namespace gamemd
@@ -2318,9 +2318,9 @@ void __thiscall HouseClass::LostPoweredCenter(int this, int a2)
           --v5; /*0x50e14b*/
         }
         while ( v5 >= 0 ); /*0x50e14c*/
-        if ( v4 && MEMORY[0xA8E9A0] ) /*0x50e15a*/
+        if ( v4 && g_WTFMode ) /*0x50e15a*/
         {
-          if ( MEMORY[0xA8B238][0] ) /*0x50e163*/
+          if ( g_GameMode_Current[0] ) /*0x50e163*/
           {
             if ( (#375 *)this != HouseClass_Player ) /*0x50e186*/
               return; /*0x50e186*/
@@ -2329,7 +2329,7 @@ void __thiscall HouseClass::LostPoweredCenter(int this, int a2)
           if ( this->currentPlayer || this->playerControl ) /*0x50e16f*/
           {
 LABEL_16:
-            if ( !MEMORY[0xA8E7AC] ) /*0x50e18f*/
+            if ( !g_IKnowWhatImDoing ) /*0x50e18f*/
               VoxClass::FindAndPlay(unk_824E4C, -1); /*0x50e19b*/
           }
         }
@@ -2673,7 +2673,7 @@ void sub_5EE9D0()
 
   Multiplayer::FindStartPositions(&v17); /*0x5ee9d9*/
   v0 = 0; /*0x5ee9e4*/
-  v1 = (char *)MEMORY[0xA8B230] + 4480; /*0x5ee9e6*/
+  v1 = (char *)g_ScenarioClass_Instance + 4480; /*0x5ee9e6*/
   do /*0x5eea04*/
     v16[v0++] = *v1++ != -1; /*0x5ee9f1*/
   while ( v0 < 16 ); /*0x5eea04*/
@@ -2686,7 +2686,7 @@ void sub_5EE9D0()
       v5 = 0; /*0x5eea47*/
       v6 = -1; /*0x5eea49*/
       v7 = 0; /*0x5eea4c*/
-      v8 = (char *)MEMORY[0xA8B230] + 4480; /*0x5eea4e*/
+      v8 = (char *)g_ScenarioClass_Instance + 4480; /*0x5eea4e*/
       do /*0x5eea63*/
       {
         if ( *v8 == i ) /*0x5eea56*/

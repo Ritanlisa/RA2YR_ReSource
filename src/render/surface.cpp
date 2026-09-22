@@ -1055,7 +1055,7 @@ char __thiscall DSurface_Unlock(int *this)
   int v5; // eax
   int v6; // eax
 
-  if ( MEMORY[0x89F978] || MEMORY[0xA8ED80] )
+  if ( g_lpDirectDraw7 || g_DDraw_Initialized )
   {
     v2 = this->q01C;
     if ( v2 )

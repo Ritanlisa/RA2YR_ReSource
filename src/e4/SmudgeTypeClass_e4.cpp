@@ -24,7 +24,7 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
   this->vtable2 = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
   this->vtable3 = &vt_SmudgeTypeClass; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
-  *(_WORD *)(this + 559) = 1; /*0x6b52ba*/
+  this->q22F = 1; /*0x6b52ba*/
   this->LegalTarget = 0; /*0x6b52c7*/
   this->Insignificant = 1; /*0x6b52ce*/
   this->q233 = 1; /*0x6b52d4*/
@@ -97,7 +97,7 @@ void __thiscall SmudgeTypeClass::vt_entry_A0(_DWORD *this, int *a2, int *a3, int
     v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], a6); /*0x6b5674*/
     v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
-    DrawToSurfaceSHP(MEMORY[0x887314], v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
+    DrawToSurfaceSHP(g_DSurface_Hidden_2, v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
   }
 }
 }
@@ -142,7 +142,7 @@ char __thiscall SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
                               &g_INI_Key_Height,
                               *(INIClass **)(this + 668));
   if ( this->Theater ) /*0x6b5764*/
-    _makepath(Buffer, 0, 0, (const char *)(this + 504), (const char *)&off_7E1BC6 + 112 * MEMORY[0xA8B230]->theater); /*0x6b57b4*/
+    _makepath(Buffer, 0, 0, (const char *)(this + 504), (const char *)&off_7E1BC6 + 112 * g_ScenarioClass_Instance->theater); /*0x6b57b4*/
   else
     _makepath(Buffer, 0, 0, (const char *)(this + 504), Ext); /*0x6b5784*/
   this->Image = SearchMIXFile(Buffer, 0); /*0x6b57c7*/

@@ -742,14 +742,14 @@ LABEL_17:
   {
     do /*0x74dff7*/
     {
-      v6 = __2_YAPAXI_Z(8 * MEMORY[0x8871E0]->AircraftFogReveal); /*0x74df08*/
+      v6 = __2_YAPAXI_Z(8 * g_RulesClass_Instance->AircraftFogReveal); /*0x74df08*/
       if ( !v6 ) /*0x74df12*/
         v6 = 0; /*0x74df1b*/
       *(_DWORD *)(*((_DWORD *)MEMORY[0xB1D294] + v5) + 180) = v6; /*0x74df28*/
       v7 = __2_YAPAXI_Z(0x14u); /*0x74df33*/
       if ( v7 ) /*0x74df3a*/
       {
-        VeinholeShrinkRate = MEMORY[0x8871E0]->AircraftFogReveal; /*0x74df42*/
+        VeinholeShrinkRate = g_RulesClass_Instance->AircraftFogReveal; /*0x74df42*/
         v7[3] = 0; /*0x74df48*/
         v7[1] = VeinholeShrinkRate; /*0x74df4b*/
         v7[4] = -1; /*0x74df4e*/

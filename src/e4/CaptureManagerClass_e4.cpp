@@ -13,19 +13,19 @@ int __thiscall CaptureManagerClass::CaptureManagerClass(int this, TechnoClass *a
   int v5; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
-  *(_BYTE *)(this + 48) = 1; /*0x4717e2*/
+  this->owner = 1; /*0x4717e2*/
   this->controlNodeCount = 0; /*0x4717e6*/
   this->controlNodeCapacity = 0; /*0x4717e9*/
-  *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
+  this->q031 = 0; /*0x4717ec*/
   this->controlNodes = &vt_DynamicVectorClass_ControlNode; /*0x4717ef*/
-  *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
+  this->CaptureManagerClass_field_30 = 10; /*0x4717f6*/
   this->originalOwner = 0; /*0x4717fd*/
   this->overloadCount = aP1; /*0x471800*/
   *(_DWORD *)this = &CaptureManagerClass::`vftable'; /*0x471807*/
   this->vtable1 = &CaptureManagerClass::`vftable'; /*0x47180d*/
   this->vtable2 = &CaptureManagerClass::`vftable'; /*0x471814*/
   this->vtable3 = &vt_CaptureManagerClass; /*0x47181b*/
-  *(_DWORD *)(this + 60) = a3; /*0x471822*/
+  this->q03C = a3; /*0x471822*/
   this->CaptureManagerClass_field_40 = a4; /*0x471825*/
   this->CaptureManagerClass_field_41 = 0; /*0x471828*/
   this->linkCount = 30; /*0x47182b*/
@@ -95,13 +95,13 @@ char __thiscall ProcessCashCrateEffect(int this)
     {
       v5 = this->originalOwner; /*0x471a88*/
       v6 = 0; /*0x471a8b*/
-      v7 = (_DWORD *)MEMORY[0x8871E0]->?[1]; /*0x471a8d*/
+      v7 = (_DWORD *)g_RulesClass_Instance->?[1]; /*0x471a8d*/
       v20 = 0; /*0x471a93*/
       if ( v5 > *v7 ) /*0x471a99*/
       {
         do /*0x471aaf*/
         {
-          if ( v6 >= MEMORY[0x8871E0]->?[0] - 1 ) /*0x471aa4*/
+          if ( v6 >= g_RulesClass_Instance->?[0] - 1 ) /*0x471aa4*/
             break; /*0x471aa4*/
           v8 = v7[1]; /*0x471aa6*/
           ++v7; /*0x471aa9*/
@@ -110,8 +110,8 @@ char __thiscall ProcessCashCrateEffect(int this)
         while ( v5 > v8 ); /*0x471aaf*/
         v20 = v6; /*0x471ab1*/
       }
-      this->linkCount = *(_DWORD *)(HIDWORD(MEMORY[0x8871E0]->?) + 4 * v6); /*0x471abe*/
-      v2 = *(_DWORD *)(MEMORY[0x8871E0]->?[0] + 4 * v6); /*0x471acd*/
+      this->linkCount = *(_DWORD *)(HIDWORD(g_RulesClass_Instance->?) + 4 * v6); /*0x471abe*/
+      v2 = *(_DWORD *)(g_RulesClass_Instance->?[0] + 4 * v6); /*0x471acd*/
       v23 = v2; /*0x471ad2*/
       if ( v2 <= 0 ) /*0x471ad6*/
       {
@@ -125,7 +125,7 @@ char __thiscall ProcessCashCrateEffect(int this)
           v9,
           &v23,
           0,
-          MEMORY[0x8871E0]->?[5],
+          g_RulesClass_Instance->?[5],
           0,
           0,
           0,
@@ -136,7 +136,7 @@ char __thiscall ProcessCashCrateEffect(int this)
           v24 = *v10; /*0x471b1d*/
           v25 = v10[1]; /*0x471b2a*/
           v26 = v10[2]; /*0x471b35*/
-          StartAudioControllerAt(MEMORY[0x8871E0]->?, (int)&v24, 0); /*0x471b3f*/
+          StartAudioControllerAt(g_RulesClass_Instance->?, (int)&v24, 0); /*0x471b3f*/
           this->CaptureManagerClass_field_41 = 1; /*0x471b44*/
         }
         v22 = 5; /*0x471b48*/
@@ -149,18 +149,18 @@ char __thiscall ProcessCashCrateEffect(int this)
           v13 = v11[2]; /*0x471b7a*/
           v28 = *v11; /*0x471b88*/
           v30 = v13; /*0x471b8c*/
-          v14 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, -200, 200); /*0x471b98*/
+          v14 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -200, 200); /*0x471b98*/
           v15 = (int *)(this->overloadCount + 156); /*0x471b9a*/
           v24 = *v15; /*0x471bac*/
           v25 = v15[1]; /*0x471bb8*/
           v26 = v15[2]; /*0x471bc5*/
-          v16 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, -200, 200); /*0x471bc9*/
+          v16 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -200, 200); /*0x471bc9*/
           v27[0] = v24 + v16; /*0x471bde*/
           v27[1] = v14 + v12; /*0x471be2*/
           v27[2] = v13 + 100; /*0x471be6*/
           v17 = __2_YAPAXI_Z(0x100u); /*0x471bea*/
           if ( v17 ) /*0x471bf4*/
-            ParticleSystemClass::Constructor((int)v17, MEMORY[0x8871E0]->?, v27, 0, 0, &stru_89E138, 0); /*0x471c15*/
+            ParticleSystemClass::Constructor((int)v17, g_RulesClass_Instance->?, v27, 0, 0, &stru_89E138, 0); /*0x471c15*/
           --v22; /*0x471c1f*/
         }
         while ( v22 ); /*0x471c23*/
@@ -170,7 +170,7 @@ char __thiscall ProcessCashCrateEffect(int this)
           v21 = 0.015; /*0x471c41*/
           if ( v2 != 1 ) /*0x471c49*/
             v21 = 0.029999999; /*0x471c4b*/
-          v2 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 100); /*0x471c62*/
+          v2 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 100); /*0x471c62*/
           v18 = v21; /*0x471c67*/
           if ( v2 < 50 ) /*0x471c6e*/
             v18 = -v18; /*0x471c70*/
@@ -216,7 +216,7 @@ bool __thiscall CaptureManagerClass::CanCapture(int this, _DWORD *a2)
       && !a2[179]
       && !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*a2 + 352))(a2) )
     {
-      if ( this->CaptureManagerClass_field_40 || (v5 = *(_DWORD *)(this + 60), this->originalOwner < v5) || v5 == 1 ) /*0x471d1c*/
+      if ( this->CaptureManagerClass_field_40 || (v5 = this->q03C, this->originalOwner < v5) || v5 == 1 ) /*0x471d1c*/
       {
         v6 = a2[43]; /*0x471d1e*/
         if ( v6 != 19 && v6 != 18 ) /*0x471d2c*/
@@ -276,7 +276,7 @@ char __thiscall CaptureManagerClass::CaptureUnit(int this, int a2)
   result = CaptureManagerClass::CanCapture(this, (_DWORD *)v5); /*0x471d6e*/
   if ( result )
   {
-    if ( *(_DWORD *)(this + 60) == 1 ) /*0x471d85*/
+    if ( this->q03C == 1 ) /*0x471d85*/
     {
       for ( i = this->originalOwner - 1; i >= 0; --i ) /*0x471d8b*/
         CaptureManagerClass::FreeUnit( /*0x471d98*/
@@ -307,8 +307,8 @@ char __thiscall CaptureManagerClass::CaptureUnit(int this, int a2)
       *v12 = v5; /*0x471df0*/
       v14 = *(IUnknown **)(this + 44); /*0x471df3*/
       if ( this->originalOwner < (int)v14 /*0x471e18*/
-        || (*(_BYTE *)(this + 49) || !v14)
-        && (v15 = *(_DWORD *)(this + 56), v15 > 0)
+        || (this->q031 || !v14)
+        && (v15 = this->CaptureManagerClass_field_30, v15 > 0)
         && (*(unsigned __int8 (__thiscall **)(int, char *, _DWORD))(this->controlNodes + 8))(
              this + 36,
              (char *)v14 + v15,
@@ -520,7 +520,7 @@ char CaptureManagerClass::DrawLinks(int a1, ...)
       v9 = v6[2]; /*0x47219b*/
       if ( v9 == -1 ) /*0x4721a1*/
         goto LABEL_5; /*0x4721a1*/
-      if ( (int)MEMORY[0xA8ED84] - v9 < v8 ) /*0x4721ad*/
+      if ( (int)g_CurrentFrame - v9 < v8 ) /*0x4721ad*/
         break; /*0x4721ad*/
 LABEL_7:
       if ( *(_BYTE *)(v7 + 131) ) /*0x4721b7*/
@@ -559,7 +559,7 @@ LABEL_7:
       if ( --v4 < 0 ) /*0x47228c*/
         return v3; /*0x47228c*/
     }
-    v8 -= (int)MEMORY[0xA8ED84] - v9; /*0x4721af*/
+    v8 -= (int)g_CurrentFrame - v9; /*0x4721af*/
 LABEL_5:
     if ( v8 > 0 ) /*0x4721b3*/
       v5 = 1; /*0x4721b5*/
@@ -579,7 +579,7 @@ bool CaptureManagerClass::CannotControlAnyMore()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall CaptureManagerClass::CannotControlAnyMore(int this)
 {
-  return !this->CaptureManagerClass_field_40 && this->originalOwner >= *(_DWORD *)(this + 60); /*0x4722a7*/
+  return !this->CaptureManagerClass_field_40 && this->originalOwner >= this->q03C; /*0x4722a7*/
 }
 }
 } // namespace game
@@ -656,7 +656,7 @@ void __thiscall CaptureManagerClass::DecideUnitFate(_DWORD *this, IUnknown *aP1)
   {
     v9 = (AbstractClass **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3744); /*0x47245f*/
   }
-  v10 = Random::Range(&MEMORY[0xA8B230]->random[1], (IUnknown *)1, (IUnknown *)0x64); /*0x4724f7*/
+  v10 = Random::Range(&g_ScenarioClass_Instance->random[1], (IUnknown *)1, (IUnknown *)0x64); /*0x4724f7*/
   v24 = 0; /*0x4724f9*/
   if ( v10 <= 0 )
   {
@@ -774,13 +774,13 @@ char __thiscall CaptureManagerClass::NeedsToDrawLinks(_DWORD *this)
       v8 = *(_DWORD *)(v6 + 16); /*0x472693*/
       if ( v7 == -1 ) /*0x472699*/
         goto LABEL_12; /*0x472699*/
-      if ( (int)MEMORY[0xA8ED84] - v7 < v8 ) /*0x4726a1*/
+      if ( (int)g_CurrentFrame - v7 < v8 ) /*0x4726a1*/
         break; /*0x4726a1*/
 LABEL_13:
       if ( --v4 < 0 ) /*0x4726af*/
         return 0; /*0x4726af*/
     }
-    v8 -= (int)MEMORY[0xA8ED84] - v7; /*0x4726a3*/
+    v8 -= (int)g_CurrentFrame - v7; /*0x4726a3*/
 LABEL_12:
     if ( v8 > 0 ) /*0x4726a7*/
       return 1; /*0x4726a7*/
@@ -800,7 +800,7 @@ char CaptureManagerClass::IsOverloading(bool * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CaptureManagerClass::IsOverloading(int this, bool *a2)
 {
-  if ( !this->CaptureManagerClass_field_40 || this->originalOwner <= *(_DWORD *)(this + 60) ) /*0x4726cf*/
+  if ( !this->CaptureManagerClass_field_40 || this->originalOwner <= this->q03C ) /*0x4726cf*/
     return 0; /*0x4726e4*/
   *a2 = this->overloadLimit > 0; /*0x4726dd*/
   return 1; /*0x4726e1*/
@@ -854,7 +854,7 @@ int __stdcall CaptureManagerClass::LoadFromStream(int a1, int *a2)
       *(_DWORD *)(v3 + 8) = &CaptureManagerClass::`vftable'; /*0x47277a*/
       *(_DWORD *)(v3 + 12) = &vt_CaptureManagerClass; /*0x472781*/
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v3 + 72)); /*0x472791*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v3 + 72)); /*0x472791*/
     v6 = *v2; /*0x472796*/
     a1 = 0; /*0x4727a1*/
     result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v6 + 12))(v2, &a1, 4, 0); /*0x4727a5*/
@@ -872,9 +872,9 @@ LABEL_19:
           do /*0x4728c4*/
           {
             ObjectPtr::RegisterForTracking( /*0x4728a9*/
-              (int)&MEMORY[0xB0C110],
+              (int)&SwizzleManagerClass_Instance,
               (int *)(*(_DWORD *)(*(_DWORD *)(v3 + 40) + 4 * v15) + 4));
-            ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], *(int **)(*(_DWORD *)(v3 + 40) + 4 * v15++)); /*0x4728ba*/
+            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, *(int **)(*(_DWORD *)(v3 + 40) + 4 * v15++)); /*0x4728ba*/
           }
           while ( v15 < a1 ); /*0x4728c4*/
         }
@@ -887,7 +887,7 @@ LABEL_19:
           v8 = __2_YAPAXI_Z(0x14u); /*0x4727ca*/
           if ( v8 ) /*0x4727d4*/
           {
-            v9 = MEMORY[0xA8ED84]; /*0x4727d6*/
+            v9 = g_CurrentFrame; /*0x4727d6*/
             v8[4] = 0; /*0x4727dc*/
             v8[2] = v9; /*0x4727df*/
             v5 = v8; /*0x4727e2*/
@@ -904,7 +904,7 @@ LABEL_19:
             break; /*0x472818*/
           v5[1] = a2; /*0x472825*/
           *v5 = v16; /*0x47282c*/
-          v5[2] = MEMORY[0xA8ED84]; /*0x472833*/
+          v5[2] = g_CurrentFrame; /*0x472833*/
           v5[3] = v19; /*0x47283e*/
           v5[4] = 0; /*0x472841*/
           v11 = *(_DWORD *)(v3 + 44); /*0x472844*/

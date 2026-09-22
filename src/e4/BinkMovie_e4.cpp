@@ -65,11 +65,11 @@ int __thiscall BinkMovie_Stop(int this)
     BinkClose(this->BinkMovie_field_0x4); /*0x43272a*/
     this->BinkMovie_field_0x4 = 0; /*0x432730*/
   }
-  result = *(_DWORD *)(this + 40); /*0x432737*/
+  result = this->q00A; /*0x432737*/
   if ( result != -1 ) /*0x43273d*/
   {
     result = CloseHandle(*(HANDLE *)(this + 40)); /*0x432740*/
-    *(_DWORD *)(this + 40) = -1; /*0x432746*/
+    this->q00A = -1; /*0x432746*/
   }
   return result; /*0x43274d*/
 }
@@ -126,12 +126,12 @@ char __thiscall sub_432750(int this, LPCSTR *FullPath)
     BinkClose(this->BinkMovie_field_0x4); /*0x43277d*/
     this->BinkMovie_field_0x4 = 0; /*0x432783*/
   }
-  if ( *(_DWORD *)(this + 40) != -1 ) /*0x43278c*/
+  if ( this->q00A != -1 ) /*0x43278c*/
   {
     CloseHandle(*(HANDLE *)(this + 40)); /*0x43278f*/
-    *(_DWORD *)(this + 40) = -1; /*0x432795*/
+    this->q00A = -1; /*0x432795*/
   }
-  *(_DWORD *)(this + 48) = 0; /*0x43279c*/
+  this->q00C = 0; /*0x43279c*/
   if ( Audio::IsSoundEnabled() ) /*0x43279f*/
   {
     v5 = Audio::GetDirectSound(); /*0x4327a8*/
@@ -153,11 +153,11 @@ LABEL_14:
   if ( (unsigned __int8)LookupFileInfoCache(&FullPath, lDistanceToMove, 0) == 1 ) /*0x43280a*/
   {
     FileA = CreateFileA(FullPath[3], 0x80000000, 3u, 0, 3u, 0x8000080u, 0); /*0x432824*/
-    *(_DWORD *)(this + 40) = FileA; /*0x43282d*/
+    this->q00A = FileA; /*0x43282d*/
     if ( FileA != (HANDLE)-1 ) /*0x432830*/
     {
       SetFilePointer(FileA, lDistanceToMove[0], 0, 0); /*0x43283a*/
-      v9 = BinkOpen(*(_DWORD *)(this + 40), &unk_800000); /*0x432849*/
+      v9 = BinkOpen(this->q00A, &unk_800000); /*0x432849*/
       goto LABEL_14; /*0x432849*/
     }
   }
@@ -167,7 +167,7 @@ LABEL_15:
     flt_89C490 = MEMORY[0xA8EB9C]; /*0x43287c*/
     v13 = Math::RoundToInt(*(float *)&MEMORY[0xA8EB9C] * 32768.0); /*0x43288d*/
     BinkSetVolume(this->BinkMovie_field_0x4, v13); /*0x432897*/
-    *(_DWORD *)(this + 36) = 0x3C /*0x4328b5*/
+    this->q024 = 0x3C /*0x4328b5*/
                            / (unsigned int)(*(_DWORD *)(this->BinkMovie_field_0x4 + 20)
                                           / *(_DWORD *)(this->BinkMovie_field_0x4 + 24));
     v14 = (_DWORD *)BinkMovie::CreateSurfaceTracker(v6); /*0x4328b8*/
@@ -182,14 +182,14 @@ LABEL_15:
     {
       if ( v14 && *v14 ) /*0x4328d9*/
       {
-        v20 = MEMORY[0x88730C]; /*0x4328e3*/
-        this->BinkMovie_field_0xC = MEMORY[0x88730C]; /*0x4328e5*/
+        v20 = g_DSurface_Hidden; /*0x4328e3*/
+        this->BinkMovie_field_0xC = g_DSurface_Hidden; /*0x4328e5*/
         v16 = ((*(int (__thiscall **)(int))(*(_DWORD *)v20 + 124))(v20) - v17) / 2; /*0x4328f9*/
         v21 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 128))(this->BinkMovie_field_0xC); /*0x4328fb*/
       }
       else
       {
-        this->BinkMovie_field_0xC = MEMORY[0x887308]; /*0x43290d*/
+        this->BinkMovie_field_0xC = g_DSurface_Primary; /*0x43290d*/
         GetClientRect(g_hWnd, &Rect); /*0x432917*/
         v16 = (Rect.right - Rect.left - v17) / 2; /*0x432936*/
         v21 = Rect.bottom - Rect.top; /*0x432938*/
@@ -247,9 +247,9 @@ LABEL_40:
     }
     this->BinkMovie_field_0x10 = left; /*0x432a29*/
     this->BinkMovie_field_0x14 = v22; /*0x432a2c*/
-    *(_DWORD *)(this + 24) = v27; /*0x432a2f*/
-    *(_DWORD *)(this + 28) = bottom; /*0x432a32*/
-    this->BinkMovie_field_0x8 = BinkDDSurfaceType(*(_DWORD *)(MEMORY[0x887308] + 28)); /*0x432a44*/
+    this->q018 = v27; /*0x432a2f*/
+    this->q007 = bottom; /*0x432a32*/
+    this->BinkMovie_field_0x8 = BinkDDSurfaceType(*(_DWORD *)(g_DSurface_Primary + 28)); /*0x432a44*/
     return 1; /*0x432a4a*/
   }
   else
@@ -313,7 +313,7 @@ int __thiscall BinkMovie_Play(_BYTE *this)
 
   if ( this->BinkMovie_field_0x4 )
   {
-    Timer::PumpMessages(MEMORY[0x87F770]); /*0x432c9f*/
+    Timer::PumpMessages(g_BinkMoviePlayer); /*0x432c9f*/
     v4 = (void (__stdcall *)(HWND, LPPOINT))ClientToScreen; /*0x432caa*/
     this->q02C = 1; /*0x432cb0*/
     this->q02D = 0; /*0x432cb4*/
@@ -327,7 +327,7 @@ int __thiscall BinkMovie_Play(_BYTE *this)
       if ( GameLoopMessagePump(&Msg, 0, 0, 0, 0) ) /*0x432ceb*/
       {
         if ( !IsMessageDialog(&Msg, 0, 0) ) /*0x432d05*/
-          return Timer::PumpMessages(MEMORY[0x87F770]); /*0x432d05*/
+          return Timer::PumpMessages(g_BinkMoviePlayer); /*0x432d05*/
         TranslateMessage(&Msg); /*0x432d10*/
         DispatchMessageA(&Msg); /*0x432d1b*/
       }
@@ -336,7 +336,7 @@ int __thiscall BinkMovie_Play(_BYTE *this)
         if ( !this->q02C ) /*0x432d23*/
           Sleep(0x21u); /*0x432d2c*/
         v7 = this->BinkMovie_field_0xC; /*0x432d32*/
-        if ( v7 == MEMORY[0x887308] ) /*0x432d3d*/
+        if ( v7 == g_DSurface_Primary ) /*0x432d3d*/
         {
           GetClientRect(g_hWnd, &Rect); /*0x432d4a*/
           v4(g_hWnd, (LPPOINT)&Rect); /*0x432d58*/
@@ -356,8 +356,8 @@ int __thiscall BinkMovie_Play(_BYTE *this)
           v10 = this->BinkMovie_field_0xC; /*0x432dd3*/
           v11[1] = v13.top + v9; /*0x432dd6*/
           v11[0] = v13.left + v8; /*0x432de1*/
-          (*(void (__thiscall **)(int, _DWORD *, int, _BYTE *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x432dec*/
-            MEMORY[0x887308],
+          (*(void (__thiscall **)(int, _DWORD *, int, _BYTE *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x432dec*/
+            g_DSurface_Primary,
             v11,
             v10,
             this + 16,
@@ -365,15 +365,15 @@ int __thiscall BinkMovie_Play(_BYTE *this)
             1);
           v4 = (void (__stdcall *)(HWND, LPPOINT))ClientToScreen; /*0x432def*/
         }
-        if ( (unsigned __int16)EventQueue::Process(MEMORY[0x87F770]) /*0x432e21*/
+        if ( (unsigned __int16)EventQueue::Process(g_BinkMoviePlayer) /*0x432e21*/
           && !*this
-          && (unsigned __int16)EventQueue::Read(MEMORY[0x87F770]) == 2075 )
+          && (unsigned __int16)EventQueue::Read(g_BinkMoviePlayer) == 2075 )
         {
-          return Timer::PumpMessages(MEMORY[0x87F770]); /*0x432e21*/
+          return Timer::PumpMessages(g_BinkMoviePlayer); /*0x432e21*/
         }
       }
     }
-    return Timer::PumpMessages(MEMORY[0x87F770]); /*0x432e27*/
+    return Timer::PumpMessages(g_BinkMoviePlayer); /*0x432e27*/
   }
   else
   {
@@ -412,14 +412,14 @@ bool __thiscall BinkMovie::RenderLoop(int this, DSurface *aP1, int a3, int a4)
     v5 = Math::RoundToInt(*(float *)&MEMORY[0xA8D63C].__pad_14B0[176] * 32768.0); /*0x432e70*/
     BinkSetVolume(this->BinkMovie_field_0x4, v5); /*0x432e7a*/
   }
-  v6 = *(_BYTE *)(this + 44); /*0x432e87*/
+  v6 = this->q02C; /*0x432e87*/
   if ( MEMORY[0xA8D63C].__pad_14B0[660] ) /*0x432e8a*/
   {
     if ( !v6 ) /*0x432eb8*/
     {
       Debug::Log(); /*0x432ebf*/
       v8 = this->BinkMovie_field_0x4; /*0x432ec4*/
-      *(_BYTE *)(this + 44) = 1; /*0x432eca*/
+      this->q02C = 1; /*0x432eca*/
       BinkPause(v8, 0); /*0x432ed1*/
       v9 = this->BinkMovie_field_0xC; /*0x432ed7*/
       if ( v9 == *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9404] ) /*0x432ee2*/
@@ -443,22 +443,22 @@ bool __thiscall BinkMovie::RenderLoop(int this, DSurface *aP1, int a3, int a4)
   {
     Debug::Log(); /*0x432e99*/
     v7 = this->BinkMovie_field_0x4; /*0x432e9e*/
-    *(_BYTE *)(this + 44) = 0; /*0x432ea4*/
+    this->q02C = 0; /*0x432ea4*/
     BinkPause(v7, 1); /*0x432eab*/
   }
-  if ( *(_BYTE *)(this + 45) || (result = BinkWait(this->BinkMovie_field_0x4) == 0) ) /*0x432f49*/
+  if ( this->q02D || (result = BinkWait(this->BinkMovie_field_0x4) == 0) ) /*0x432f49*/
   {
     do /*0x43300d*/
     {
       BinkDoFrame(this->BinkMovie_field_0x4); /*0x432f62*/
       v12 = *(_DWORD **)(this + 32); /*0x432f68*/
       v13 = 0; /*0x432f6b*/
-      *(_BYTE *)(this + 45) = 0; /*0x432f6f*/
+      this->q02D = 0; /*0x432f6f*/
       if ( v12 ) /*0x432f73*/
       {
         v13 = BinkMovie::CheckKeyframeTransition( /*0x432f85*/
                 v12,
-                (CellStruct *)(*(_DWORD *)(this + 36) * *(_DWORD *)(this->BinkMovie_field_0x4 + 12)));
+                (CellStruct *)(this->q024 * *(_DWORD *)(this->BinkMovie_field_0x4 + 12)));
         if ( v13 ) /*0x432f89*/
           BinkMovie::AdjustSurfaceFormat((int *)this, aP1); /*0x432f8e*/
       }
@@ -475,7 +475,7 @@ bool __thiscall BinkMovie::RenderLoop(int this, DSurface *aP1, int a3, int a4)
       }
       BinkMovie::BlitToTarget((_DWORD *)this, aP1); /*0x432fec*/
       v17 = this->BinkMovie_field_0x4; /*0x432ff4*/
-      *(_DWORD *)(this + 48) = *(_DWORD *)(v17 + 12); /*0x432ff8*/
+      this->q00C = *(_DWORD *)(v17 + 12); /*0x432ff8*/
       BinkNextFrame(v17); /*0x432ffb*/
     }
     while ( !BinkWait(this->BinkMovie_field_0x4) ); /*0x43300d*/
@@ -916,7 +916,7 @@ LABEL_7:
           v5[24] = 0;
         }
         ScreenDialogToClient(v66, &X);
-        v70 = CreateMovie(v68, MEMORY[0x887310], 0);
+        v70 = CreateMovie(v68, DSurface_Alternate, 0);
         v5[22] = v70;
         if ( v70 )
           goto LABEL_165;
@@ -962,7 +962,7 @@ LABEL_7:
           v5[24] = 0;
         }
         ScreenDialogToClient(v66, &X);
-        v70 = CreateMovie(lParam, MEMORY[0x887310], 0);
+        v70 = CreateMovie(lParam, DSurface_Alternate, 0);
         v5[22] = v70;
         if ( v70 )
         {
@@ -1040,8 +1040,8 @@ LABEL_165:
           X.top = 0;
           X.right = v85.right + 1;
           v88 = v85.right + 1;
-          (*(void (__thiscall **)(int, LONG *, int, struct tagRECT *, _DWORD, int))(*(_DWORD *)MEMORY[0x887310] + 8))(
-            MEMORY[0x887310],
+          (*(void (__thiscall **)(int, LONG *, int, struct tagRECT *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))(
+            DSurface_Alternate,
             &left,
             v65,
             &X,
@@ -1141,7 +1141,7 @@ LABEL_165:
         (*(void (__thiscall **)(_DWORD *, struct tagRECT *, int, struct tagRECT *, _DWORD, int))(*v20 + 8))(
           v20,
           &v85,
-          MEMORY[0x887310],
+          DSurface_Alternate,
           &v81,
           0,
           1);
@@ -1155,10 +1155,10 @@ LABEL_165:
         v85.bottom = v84.bottom - v84.top;
         v22 = v5[46];
         v85.right = v84.right - v84.left;
-        (*(void (__thiscall **)(int, struct tagRECT *, int))(*(_DWORD *)MEMORY[0x887310] + 20))(
-          MEMORY[0x887310],
+        (*(void (__thiscall **)(int, struct tagRECT *, int))(*(_DWORD *)DSurface_Alternate + 20))(
+          DSurface_Alternate,
           &v85,
-          (*((unsigned __int8 *)v5 + 184) >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0])
+          (*((unsigned __int8 *)v5 + 184) >> g_BitShift_Green_0 << MEMORY[0x8A0DD0])
         | (BYTE1(v22) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
         | (BYTE2(v22) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
       }
@@ -1182,7 +1182,7 @@ LABEL_165:
           if ( (WindowLongA & 0x8000000) != 0 )
             v42 = MEMORY[0xAC1CB4];
           PrintFontLayout(
-            MEMORY[0x887310],
+            DSurface_Alternate,
             (unsigned __int16 *)v5[10],
             &v84,
             (_DWORD *)v5[25],
@@ -1227,8 +1227,8 @@ LABEL_165:
           top = v85.top;
           v89 = v85.bottom - v85.top;
           v88 = v85.right - v85.left;
-          (*(void (__thiscall **)(int, struct tagRECT *, _DWORD, LONG *, _DWORD, int))(*(_DWORD *)MEMORY[0x887310] + 8))(
-            MEMORY[0x887310],
+          (*(void (__thiscall **)(int, struct tagRECT *, _DWORD, LONG *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))(
+            DSurface_Alternate,
             &Rect,
             v5[4],
             &left,
@@ -1254,9 +1254,9 @@ LABEL_165:
               }
               Surface::BlitTransparent(
                 &v81.left,
-                MEMORY[0x887310],
+                DSurface_Alternate,
                 v28,
-                (255 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) | (255 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
+                (255 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) | (255 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
               ValidateRect(hWnd, 0);
               return 0;
             }
@@ -1279,12 +1279,12 @@ LABEL_165:
                 v34 = (Rect.bottom - v81.left) / 2 + Rect.top;
               v81.left = v32;
               v81.top = v34;
-              v36 = (struct tagRECT *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)MEMORY[0x887310] + 120))(
-                                        MEMORY[0x887310],
+              v36 = (struct tagRECT *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)DSurface_Alternate + 120))(
+                                        DSurface_Alternate,
                                         v91);
               v37 = v5[38];
               X = *v36;
-              DrawToSurfaceSHP(MEMORY[0x887310], v82, v31, v37, &v81.left, &X.left, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+              DrawToSurfaceSHP(DSurface_Alternate, v82, v31, v37, &v81.left, &X.left, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
               if ( v77 )
               {
                 if ( *((_BYTE *)v5 + 168) )

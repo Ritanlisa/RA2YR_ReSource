@@ -40,16 +40,16 @@ void __thiscall ThemeManager::Cleanup(int this)
   int v4; // eax
   _DWORD *v5; // ecx
 
-  while ( *(int *)(this + 36) > 0 ) /*0x720778*/
+  while ( this->q009 > 0 ) /*0x720778*/
   {
     __3_YAXPAX_Z(**(void ***)(this + 24)); /*0x720780*/
-    v2 = *(_DWORD *)(this + 36); /*0x720785*/
+    v2 = this->q009; /*0x720785*/
     if ( v2 > 0 ) /*0x72078d*/
     {
       v3 = v2 - 1; /*0x72078f*/
       v4 = 0; /*0x720792*/
-      for ( *(_DWORD *)(this + 36) = v3; /*0x720799*/
-            v4 < *(_DWORD *)(this + 36);
+      for ( this->q009 = v3; /*0x720799*/
+            v4 < this->q009;
             *(_DWORD *)(*(_DWORD *)(this + 24) + 4 * v4 - 4) = *(_DWORD *)(*(_DWORD *)(this + 24) + 4 * v4) )
       {
         ++v4; /*0x72079e*/

@@ -18,7 +18,7 @@ char __fastcall SkirmishSetup_Setup(HWND hWnd, int a2)
   int i; // [esp+14h] [ebp-8h]
 
   SendMessageA(hWnd, 0x184u, 0, 0); /*0x5d614d*/
-  v8 = MEMORY[0xA8B238][0] == 5; /*0x5d6156*/
+  v8 = g_GameMode_Current[0] == 5; /*0x5d6156*/
   v3 = 0; /*0x5d615b*/
   for ( i = 0; ; v3 = i ) /*0x5d615d*/
   {
@@ -44,8 +44,8 @@ char __fastcall SkirmishSetup_Setup(HWND hWnd, int a2)
       atexit(MultiplayerConfig::Cleanup); /*0x5d61f3*/
     }
     v5 = *((_DWORD *)MEMORY[0xABFDA4] + v3); /*0x5d6200*/
-    if ( (*(_BYTE *)(v5 + 61) || MEMORY[0xA8B238][0] != 4 || !Network::IsMultiplayerActive()) /*0x5d6267*/
-      && (*(_BYTE *)(v5 + 62) || MEMORY[0xA8B238][0] != 4 || !Network::IsLobbyFeature())
+    if ( (*(_BYTE *)(v5 + 61) || g_GameMode_Current[0] != 4 || !Network::IsMultiplayerActive()) /*0x5d6267*/
+      && (*(_BYTE *)(v5 + 62) || g_GameMode_Current[0] != 4 || !Network::IsLobbyFeature())
       && (MEMORY[0x8316A4]
        || *(_DWORD *)(MEMORY[0xA8DA90] + 107) != -1
        || (*(unsigned __int8 (__thiscall **)(LPARAM))(*(_DWORD *)v5 + 188))(v5))
@@ -412,7 +412,7 @@ char __thiscall SkirmishSetup::PlayButtonClickAnim(HWND this)
   bool v6; // al
   HWND v7; // [esp+8h] [ebp-4h] BYREF
 
-  if ( SessionClass::GetGameSpeed(MEMORY[0xA8B238]) ) /*0x60826a*/
+  if ( SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x60826a*/
     return 0; /*0x60826a*/
   v7 = this; /*0x608278*/
   if ( !MEMORY[0xAC1B04] ) /*0x60827e*/
@@ -433,7 +433,7 @@ char __thiscall SkirmishSetup::PlayButtonClickAnim(HWND this)
   v6 = IsWindowVisible(this); /*0x6082eb*/
   if ( !v5 || !v6 ) /*0x6082f4*/
     return 0; /*0x6082b8*/
-  PlayVocClass(MEMORY[0x8871E0]->VoiceIFVRepair, 0x2000, 1.0, 0); /*0x60830f*/
+  PlayVocClass(g_RulesClass_Instance->VoiceIFVRepair, 0x2000, 1.0, 0); /*0x60830f*/
   LOBYTE(v7) = IsWindowEnabled(this); /*0x608329*/
   EnableWindow(this, 0); /*0x60832d*/
   EnumChildWindows(this, Dialog::MapControlToAction, 1); /*0x60833d*/

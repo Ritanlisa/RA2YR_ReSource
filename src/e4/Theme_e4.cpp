@@ -22,11 +22,11 @@ char __thiscall Theme::QueueSong(int this, IUnknown *aP1)
       if ( !MEMORY[0xA8D63C].__pad_14B0[632] ) /*0x720b3c*/
       {
         LOBYTE(IsSoundEnabled) = (_BYTE)aP1; /*0x720b3e*/
-        *(_DWORD *)(this + 8) = aP1; /*0x720b45*/
+        this->q002 = aP1; /*0x720b45*/
         if ( aP1 != (IUnknown *)-1 && aP1 != (IUnknown *)-2 && aP1 != *(IUnknown **)(this + 4) ) /*0x720b52*/
         {
           Debug::Log(); /*0x720b5a*/
-          v4 = *(_DWORD *)(this + 44); /*0x720b5f*/
+          v4 = this->audioSample; /*0x720b5f*/
           if ( v4 ) /*0x720b67*/
           {
             if ( *(_BYTE *)(this + 17) && !AudioSample::IsBuffering(v4) ) /*0x720b70*/
@@ -107,7 +107,7 @@ bool Theme::IsPlaying()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall Theme_IsPlaying(int this)
 {
-  if ( !*(_DWORD *)(this + 44) ) /*0x720fd3*/
+  if ( !this->audioSample ) /*0x720fd3*/
     return 0; /*0x721002*/
   if ( *(_BYTE *)(this + 17) ) /*0x720fda*/
   {

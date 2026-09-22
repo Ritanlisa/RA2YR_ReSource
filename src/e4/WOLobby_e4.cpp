@@ -364,7 +364,7 @@ LABEL_56:
       }
       goto LABEL_21;
     case 0x497u:
-      if ( MEMORY[0xA8B238][0] == 4 )
+      if ( g_GameMode_Current[0] == 4 )
       {
         if ( dword_B76B24 || (v163 = BYTE1(dword_B76B30) & 1, (dword_B76B30 & 0x100) != 0) )
         {
@@ -418,7 +418,7 @@ LABEL_320:
       MapSkirmishDialogPlayerToControl(hDlg, MEMORY[0xA8DA8C]);
       FillLobbyFactionComboBox(hDlg, MEMORY[0xA8DA8C]);
       SetupMultiplayerLobbyPlayers(hDlg, (int)&MEMORY[0xA8B4BC]);
-      if ( MEMORY[0xA8B238][0] == 4 )
+      if ( g_GameMode_Current[0] == 4 )
       {
         if ( dword_B76B24 || (v163 = BYTE1(dword_B76B30) & 1, (dword_B76B30 & 0x100) != 0) )
         {
@@ -466,7 +466,7 @@ LABEL_320:
       PlayerCount = ReadPlayerCountMap(MEMORY[0xA8B254]);
       if ( !MEMORY[0xA8B23C]
         || !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 4))(MEMORY[0xA8B23C])
-        || (v132 = *((_DWORD *)MEMORY[0xA8B230] + 1145), v132 > PlayerCount) )
+        || (v132 = *((_DWORD *)g_ScenarioClass_Instance + 1145), v132 > PlayerCount) )
       {
         v132 = PlayerCount;
       }
@@ -766,7 +766,7 @@ LABEL_384:
           WideString::Reassign_Alt((void **)&v162, v21);
           DeleteAndZero::Alt(&v171);
           v22 = WideString::GetOrEmpty((wchar_t **)&v162);
-          if ( !wcscmp(v22, &MEMORY[0x887734]) )
+          if ( !wcscmp(v22, &g_TypeClass_DefaultString) )
           {
             OwnerName = GetSkirmishMenuOwnerName((wchar_t **)&v170, hDlg, v20);
             WideString::Reassign_Alt((void **)&v162, (const wchar_t **)OwnerName);
@@ -832,16 +832,16 @@ LABEL_293:
       if ( (unsigned __int16)nIDDlgItem == 1474 )
       {
         v100 = (HWND)CreateDialog(0xCFu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))OnlineLobbyDlgProcWOL, 0);
-        MEMORY[0xA8ED9C] = 1;
-        Timer::PumpMessages((HWND *)MEMORY[0x87F770]);
+        g_GameActive = 1;
+        Timer::PumpMessages((HWND *)g_BinkMoviePlayer);
         ShowWindow(v100, 1);
         GameUI = Dialog::FindGameUI();
         v102 = Dialog::UpdateGameUI;
         if ( !GameUI )
           v102 = Dialog::PumpMessages;
         MessageDialogLoopAlt(v100, (unsigned __int8 (*)(void))v102, 0, 1, 1);
-        Timer::PumpMessages((HWND *)MEMORY[0x87F770]);
-        MEMORY[0xA8ED9C] = *((_BYTE *)MEMORY[0xA8B230] + 13730);
+        Timer::PumpMessages((HWND *)g_BinkMoviePlayer);
+        g_GameActive = *((_BYTE *)g_ScenarioClass_Instance + 13730);
         MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2);
         return 0;
       }
@@ -910,7 +910,7 @@ LABEL_284:
           v111 = ReadPlayerCountMap(MEMORY[0xA8B254]);
           if ( !MEMORY[0xA8B23C]
             || !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 4))(MEMORY[0xA8B23C])
-            || (v112 = *((_DWORD *)MEMORY[0xA8B230] + 1145), v112 > v111) )
+            || (v112 = *((_DWORD *)g_ScenarioClass_Instance + 1145), v112 > v111) )
           {
             v112 = v111;
           }
@@ -971,7 +971,7 @@ LABEL_272:
     if ( byte_B77DEC == 1 )
       return 0;
     SaveMultiplayerLobbySettings(hDlg, (int)&MEMORY[0xA8B4BC]);
-    SaveConfigWOL((int)MEMORY[0xA8B238]);
+    SaveConfigWOL((int)g_GameMode_Current);
     RefreshLobbyAll(hDlg, 1);
     v58 = MEMORY[0xA8DA84];
     v59 = 0;
@@ -1053,7 +1053,7 @@ LABEL_184:
       if ( (int)g_WOL_State <= 0 )
       {
 LABEL_188:
-        if ( MEMORY[0xA8B238][0] != 4 || MEMORY[0xA8B244] != 3 )
+        if ( g_GameMode_Current[0] != 4 || MEMORY[0xA8B244] != 3 )
           goto LABEL_201;
         if ( (int)g_WOL_State < dword_B76B18 )
         {
@@ -1098,12 +1098,12 @@ LABEL_201:
             unknown_libname_74(&v162);
             if ( (*(unsigned __int8 (__thiscall **)(int, const wchar_t **))(*(_DWORD *)v81 + 20))(v81, &v162) )
             {
-              if ( MEMORY[0xA8B238][0] != 4 )
+              if ( g_GameMode_Current[0] != 4 )
                 goto LABEL_233;
               v163 = BYTE1(dword_B76B30) & 1;
               if ( (dword_B76B30 & 0x100) == 0 )
                 goto LABEL_233;
-              LOBYTE(Rect.left) = MEMORY[0x889F64];
+              LOBYTE(Rect.left) = g_INI_DefaultBuffer;
               memset((char *)&Rect.left + 1, 0, 9);
               v85 = 0;
               v166 = 0;
@@ -1175,7 +1175,7 @@ LABEL_201:
               {
 LABEL_233:
                 (*(void (__thiscall **)(int))(*(_DWORD *)v81 + 104))(v81);
-                Player::RandomAssign(MEMORY[0xA8B238]);
+                Player::RandomAssign(g_GameMode_Current);
                 Lobby::BuildPlayerList();
                 CheckGameSettingsChanged(1, 1);
                 (*(void (__thiscall **)(int))(*(_DWORD *)v81 + 100))(v81);
@@ -1273,7 +1273,7 @@ LABEL_134:
         ReadChatMessage((wchar_t **)&v162, hWnd);
         if ( HIWORD(nIDDlgItem) != 1281 )
           goto LABEL_134;
-        SendMessageA(hWnd, 0x4B2u, 0, (LPARAM)&MEMORY[0x887734]);
+        SendMessageA(hWnd, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString);
         if ( !WideString::Length(&v162) )
           goto LABEL_134;
         v30 = WideString::GetOrEmpty((wchar_t **)&v162);
@@ -1447,7 +1447,7 @@ LABEL_250:
     if ( v5 )
       return 0;
     SaveMultiplayerLobbySettings(hDlg, (int)&MEMORY[0xA8B4BC]);
-    SaveConfigWOL((int)MEMORY[0xA8B238]);
+    SaveConfigWOL((int)g_GameMode_Current);
     v28 = MEMORY[0xAC1154];
     if ( MEMORY[0xAC1154] )
     {
@@ -1469,7 +1469,7 @@ LABEL_250:
       return 0;
     v13 = GetDlgItem(hDlg, 1344);
     ReadChatMessage((wchar_t **)&v162, v13);
-    SendMessageA(v13, 0x4B2u, 0, (LPARAM)&MEMORY[0x887734]);
+    SendMessageA(v13, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString);
     SetFocus(v13);
     InvalidateRect(v13, 0, 0);
     v14 = 3166463;

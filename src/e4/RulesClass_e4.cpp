@@ -8,7 +8,7 @@ double RulesClass::GetFiringDistance()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double RulesClass_GetFiringDistance()
 {
-  return (double)*((int *)MEMORY[0x8871E0] + 1454) * 0.5; /*0x48ad01*/
+  return (double)*((int *)g_RulesClass_Instance + 1454) * 0.5; /*0x48ad01*/
 }
 }
 
@@ -1054,10 +1054,10 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
   this->ExtraAircraftLight = 768;
   this->Paranoid = 0x7FFFFFFF;
   this->FineDiffControl = 250;
-  *((_QWORD *)this + 755) = 0x384000000C8LL;
+  this->SeparateAircraft = 0x384000000C8LL;
   this->HoverBrake = 90;
   this->EngineerCaptureLevel = 10;
-  *((_QWORD *)this + 757) = 0x30000000ALL;
+  this->TalkBubbleTime = 0x30000000ALL;
   this->RadApplicationDelay = 1;
   this->RadLevelMax = 0;
   this->RadLevelDelay = 10;

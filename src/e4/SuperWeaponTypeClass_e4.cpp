@@ -465,7 +465,7 @@ char __thiscall SuperWeaponTypeClass::SD_vt25(int this, unsigned __int8 ***aP1)
   {
     v17 = v16; /*0x6cebd8*/
   }
-  v18 = *(float *)(this + 248); /*0x6cebda*/
+  v18 = this->q0F8; /*0x6cebda*/
   this->StartSound = v17; /*0x6cebe5*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x6cebf4*/
                        (int)aP1,
@@ -473,7 +473,7 @@ char __thiscall SuperWeaponTypeClass::SD_vt25(int this, unsigned __int8 ***aP1)
                        (unsigned __int8 *)&stru_830620.__pad_579C[51412],
                        (INIClass *)LODWORD(v18));
   v20 = *(CCINIClass **)(this + 252); /*0x6cebf9*/
-  *(float *)(this + 248) = Double_Overwrite; /*0x6cec01*/
+  this->q0F8 = Double_Overwrite; /*0x6cec01*/
   this->LineMultiplier = INIClass::ReadInt_Overwrite( /*0x6cec13*/
                               (int)aP1,
                               (unsigned __int8 *)(this + 36),

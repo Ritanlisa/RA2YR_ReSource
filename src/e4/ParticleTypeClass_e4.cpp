@@ -13,12 +13,12 @@ void __thiscall ParticleTypeClass::_vt03(int this)
 
   v2 = *(void **)(this + 4); /*0x477906*/
   this->ParticleTypeClass_field_0x10 = 0; /*0x477909*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x477910*/
+  if ( v2 && this->ParticleTypeClass_field_2BC ) /*0x477910*/
   {
     __3_YAXPAX_Z(v2); /*0x477916*/
     this->ParticleTypeClass_field_28C = 0; /*0x47791e*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x477921*/
+  this->ParticleTypeClass_field_2BC = 0; /*0x477921*/
   this->BehavesLike = 0; /*0x477924*/
 }
 }
@@ -551,14 +551,14 @@ int __thiscall ParticleTypeClass::ProcessPower(int this, int *a2)
   Power::TimerProcess(this->ParticleTypeClass_field_0x2F0); /*0x64552f*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x2F4); /*0x64553d*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x2F8); /*0x64554b*/
-  Checksummer::Add_float(*(_DWORD *)(this + 764)); /*0x645559*/
+  Checksummer::Add_float(this->q0BF); /*0x645559*/
   Checksummer::Add_float(this->ParticleTypeClass_field_0x300); /*0x645567*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x304); /*0x645575*/
   LOBYTE(v3) = *(_BYTE *)(this + 776); /*0x64557a*/
   Power::FlagProcess(a2, v3); /*0x645583*/
   LOBYTE(v4) = *(_BYTE *)(this + 777); /*0x645588*/
   v5 = Power::FinalizeDrain(a2, v4); /*0x645591*/
-  LOBYTE(v5) = *(_BYTE *)(this + 778); /*0x645596*/
+  LOBYTE(v5) = this->q30A; /*0x645596*/
   Power::FinalizeDrain(a2, v5); /*0x64559f*/
   LOBYTE(v6) = *(_BYTE *)(this + 779); /*0x6455a4*/
   Power::FinalizeDrain(a2, v6); /*0x6455ad*/
@@ -609,7 +609,7 @@ int __stdcall ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
       *(_DWORD *)(v3 + 8) = &ParticleTypeClass::`vftable'; /*0x6456b0*/
       *(_DWORD *)(v3 + 12) = &vt_ParticleTypeClass; /*0x6456b7*/
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v3 + 740)); /*0x6456ca*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v3 + 740)); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/
     a1 = 0; /*0x6456db*/
     result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v5 + 12))(v2, &a1, 4, 0); /*0x6456df*/

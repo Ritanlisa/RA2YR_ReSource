@@ -89,19 +89,19 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
         if ( hWnd == GetDlgItem(hDlg, 1327) ) /*0x6b664c*/
         {
           v37 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b6674*/
-          Options::SetScoreVolume((float *)MEMORY[0xA8EB60], v37, 1); /*0x6b6677*/
+          Options::SetScoreVolume((float *)g_GameModeOptions, v37, 1); /*0x6b6677*/
           return 0; /*0x6b6688*/
         }
         if ( hWnd == GetDlgItem(hDlg, 1330) ) /*0x6b6695*/
         {
           v38 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b66bd*/
-          Options::SetSoundVolume((float *)MEMORY[0xA8EB60], v38, 1); /*0x6b66c0*/
+          Options::SetSoundVolume((float *)g_GameModeOptions, v38, 1); /*0x6b66c0*/
           return 0; /*0x6b66d1*/
         }
         if ( hWnd == GetDlgItem(hDlg, 1334) ) /*0x6b66de*/
         {
           v39 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b670a*/
-          Options::SetVoiceVolume((float *)MEMORY[0xA8EB60], v39, 1); /*0x6b670d*/
+          Options::SetVoiceVolume((float *)g_GameModeOptions, v39, 1); /*0x6b670d*/
           return 0; /*0x6b671e*/
         }
       }
@@ -146,7 +146,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
         SendMessageA(v14, 0x405u, 1u, v15); /*0x6b647f*/
         v9(v14, IsSoundEnabled); /*0x6b6483*/
       }
-      if ( MEMORY[0xA8E9A0] ) /*0x6b648c*/
+      if ( g_WTFMode ) /*0x6b648c*/
       {
         v16 = GetDlgItem(hDlg, 1331); /*0x6b64a5*/
         if ( v16 ) /*0x6b64a9*/
@@ -279,7 +279,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   if ( v33 ) /*0x6b68d9*/
   {
     v40 = (double)SendMessageA(v33, 0x400u, 0, 0) * 0.1; /*0x6b68fd*/
-    Options::SetScoreVolume((float *)MEMORY[0xA8EB60], v40, 0); /*0x6b6900*/
+    Options::SetScoreVolume((float *)g_GameModeOptions, v40, 0); /*0x6b6900*/
     if ( MEMORY[0xA8EBA0] == 0.0 ) /*0x6b6916*/
     {
       v34 = dword_A83D14; /*0x6b6918*/
@@ -293,13 +293,13 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   if ( v35 ) /*0x6b6948*/
   {
     v41 = (double)SendMessageA(v35, 0x400u, 0, 0) * 0.1; /*0x6b696c*/
-    Options::SetSoundVolume((float *)MEMORY[0xA8EB60], v41, 0); /*0x6b696f*/
+    Options::SetSoundVolume((float *)g_GameModeOptions, v41, 0); /*0x6b696f*/
   }
   v36 = GetDlgItem(hDlg, 1334); /*0x6b697a*/
   if ( v36 ) /*0x6b697e*/
   {
     v42 = (double)SendMessageA(v36, 0x400u, 0, 0) * 0.1; /*0x6b69a2*/
-    Options::SetVoiceVolume((float *)MEMORY[0xA8EB60], v42, 0); /*0x6b69a5*/
+    Options::SetVoiceVolume((float *)g_GameModeOptions, v42, 0); /*0x6b69a5*/
   }
   *(_DWORD *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/
   return 0; /*0x6b6619*/

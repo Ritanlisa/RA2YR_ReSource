@@ -32,7 +32,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
     char *v4;
     v3 = (void *)*(this + 3);
     *(void**)this = &vt_ScoreFontClass;
-    if ( v3 && (unsigned char)*(int *)(this + 16) == 1 )
+    if ( v3 && (unsigned char)this->q010 == 1 )
   {
     __3_YAXPAX_Z(v3);
     *(this + 3) = 0;

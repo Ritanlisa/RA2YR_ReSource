@@ -208,8 +208,8 @@ char sub_610B50()
   v1[1] = 0; /*0x610ba2*/
   v3 = MEMORY[0xAC1CB8]; /*0x610bab*/
   v2 = *((_QWORD *)&MEMORY[0xAC1CB8] + 1); /*0x610bc8*/
-  (*(void (__thiscall **)(int, __int128 *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x610bd3*/
-    MEMORY[0x887308],
+  (*(void (__thiscall **)(int, __int128 *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x610bd3*/
+    g_DSurface_Primary,
     &v3,
     MEMORY[0xAC1CC8],
     v1,
@@ -242,8 +242,8 @@ char sub_610BF0()
     v1[0] = 0; /*0x610c53*/
     v1[1] = 0; /*0x610c57*/
     v2 = *((_QWORD *)&MEMORY[0xAC1CB8] + 1); /*0x610c5b*/
-    (*(void (__thiscall **)(int, __int128 *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x610c66*/
-      MEMORY[0x887308],
+    (*(void (__thiscall **)(int, __int128 *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x610c66*/
+      g_DSurface_Primary,
       &v3,
       MEMORY[0xAC1CC8],
       v1,
@@ -503,19 +503,19 @@ int __stdcall NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned
         (*(void (__thiscall **)(_DWORD *, _DWORD *, int, _DWORD *, _DWORD, int))(*v12 + 8))( /*0x61d860*/
           v12,
           v16,
-          MEMORY[0x887310],
+          DSurface_Alternate,
           v15,
           0,
           1);
       }
-      (*(void (__thiscall **)(int, _DWORD *, _DWORD, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887310] + 8))( /*0x61d87d*/
-        MEMORY[0x887310],
+      (*(void (__thiscall **)(int, _DWORD *, _DWORD, _DWORD *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x61d87d*/
+        DSurface_Alternate,
         v15,
         v6[4],
         v16,
         0,
         1);
-      UI_Helper_6217E0(255 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0], (v6[60] << 16) / (v6[59] - v6[58])); /*0x61d8e3*/
+      UI_Helper_6217E0(255 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0], (v6[60] << 16) / (v6[59] - v6[58])); /*0x61d8e3*/
       ValidateRect(v4, 0); /*0x61d8eb*/
       return 0; /*0x61d8f3*/
     case 0x401u: /*0x61d75b*/
@@ -611,7 +611,7 @@ int __stdcall RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lPa
               (*(void (__thiscall **)(_DWORD *, _DWORD *, int, int *, _DWORD, int))(*v14 + 8))( /*0x61ee97*/
                 v14,
                 v22,
-                MEMORY[0x887310],
+                DSurface_Alternate,
                 v19,
                 0,
                 1);
@@ -620,14 +620,14 @@ int __stdcall RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lPa
             FormatHotkeyDisplayString(v15, String); /*0x61eeb7*/
             v16 = *(_DWORD *)(v10 + 16); /*0x61eebc*/
             if ( v16 ) /*0x61eec1*/
-              (*(void (__thiscall **)(int, int *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887310] + 8))( /*0x61eeda*/
-                MEMORY[0x887310],
+              (*(void (__thiscall **)(int, int *, int, _DWORD *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x61eeda*/
+                DSurface_Alternate,
                 v19,
                 v16,
                 v22,
                 0,
                 1);
-            DrawDialogGradient((int *)MEMORY[0x887310], v19, 2, -1); /*0x61eeeb*/
+            DrawDialogGradient((int *)DSurface_Alternate, v19, 2, -1); /*0x61eeeb*/
             if ( wcslen(String) ) /*0x61eef5*/
             {
               Rect.left += 4; /*0x61ef16*/

@@ -34,8 +34,8 @@ int __usercall Render_Load@<eax>(char *Source@<ecx>, char a2@<dl>, int a3@<ebp>)
   int v7; // [esp+0h] [ebp-8h]
   int v8; // [esp+4h] [ebp-4h]
 
-  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x88730C] + 24))(MEMORY[0x88730C], 0); /*0x52ffa0*/
-  result = ScoreScreen::DrawSHPBackground(Source, (int *)MEMORY[0x88730C], a2, a3, (int)&MEMORY[0x886080], v7, v8); /*0x52ffb0*/
+  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x52ffa0*/
+  result = ScoreScreen::DrawSHPBackground(Source, (int *)g_DSurface_Hidden, a2, a3, (int)&MEMORY[0x886080], v7, v8); /*0x52ffb0*/
   if ( a2 ) /*0x52ffb9*/
   {
     LOBYTE(v6) = 1; /*0x52ffc3*/
@@ -272,18 +272,18 @@ int __stdcall Render_DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, in
 
   v31 = 0; /*0x70527a*/
   v32 = 0; /*0x705282*/
-  Coord::To_Screen(MEMORY[0x887324], &a1, &v29); /*0x70529b*/
-  Coord::To_Screen(MEMORY[0x887324], &a4, &v33); /*0x7052b3*/
-  v30 += MEMORY[0x886FA4]; /*0x7052ce*/
-  v34 += MEMORY[0x886FA4]; /*0x70530d*/
-  v8 = ((unsigned __int8)a7 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x705348*/
+  Coord::To_Screen(g_TacticalClass_Instance, &a1, &v29); /*0x70529b*/
+  Coord::To_Screen(g_TacticalClass_Instance, &a4, &v33); /*0x7052b3*/
+  v30 += g_Map_VisibleRect; /*0x7052ce*/
+  v34 += g_Map_VisibleRect; /*0x70530d*/
+  v8 = ((unsigned __int8)a7 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x705348*/
      | (BYTE2(a7) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8])
      | (BYTE1(a7) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0]);
   v27 = (unsigned __int8)word_A83CDA; /*0x705363*/
   v43[0] = v29; /*0x70538d*/
   v9 = (HIBYTE(word_A83CDA) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x705397*/
      | ((unsigned __int8)word_A83CDA >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-     | ((unsigned __int8)byte_A83CD9 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+     | ((unsigned __int8)byte_A83CD9 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
   v10 = a8; /*0x705399*/
   v43[1] = v30 + 1; /*0x7053b0*/
   v44[0] = v33; /*0x7053b4*/
@@ -298,12 +298,12 @@ int __stdcall Render_DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, in
     v40 = v12[1]; /*0x705405*/
     v41 = v12[2]; /*0x70540c*/
     v42 = v12[3]; /*0x70541e*/
-    v13 = ClipRectIntersection(v54, &MEMORY[0x886FA0], &v39, 0, 0); /*0x705428*/
+    v13 = ClipRectIntersection(v54, &DSurface_ViewBounds, &v39, 0, 0); /*0x705428*/
     v35 = *v13; /*0x705430*/
     v36 = v13[1]; /*0x705437*/
     v37 = v13[2]; /*0x70543e*/
     v38 = v13[3]; /*0x70544b*/
-    (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 20))(MEMORY[0x88731C], &v35, v8); /*0x705456*/
+    (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)DSurface_Composite + 20))(DSurface_Composite, &v35, v8); /*0x705456*/
     v27 = -2; /*0x705462*/
     v28 = -2; /*0x705466*/
     v14 = Coord2D::Add(&v27, v52, v44); /*0x70547d*/
@@ -312,24 +312,24 @@ int __stdcall Render_DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, in
     v36 = v15[1]; /*0x70549c*/
     v37 = v15[2]; /*0x7054a8*/
     v38 = v15[3]; /*0x7054bb*/
-    v16 = ClipRectIntersection(v53, &MEMORY[0x886FA0], &v35, 0, 0); /*0x7054bf*/
+    v16 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x7054bf*/
     v39 = *v16; /*0x7054c6*/
     v40 = v16[1]; /*0x7054cd*/
     v41 = v16[2]; /*0x7054d4*/
     v42 = v16[3]; /*0x7054e1*/
-    (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 20))(MEMORY[0x88731C], &v39, v9); /*0x7054ed*/
+    (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7054ed*/
   }
-  v51[0] = MEMORY[0x886FA0]; /*0x705501*/
-  v51[1] = MEMORY[0x886FA4]; /*0x70550b*/
-  v51[2] = MEMORY[0x886FA8]; /*0x705511*/
-  v51[3] = MEMORY[0x886FAC]; /*0x705518*/
+  v51[0] = DSurface_ViewBounds; /*0x705501*/
+  v51[1] = g_Map_VisibleRect; /*0x70550b*/
+  v51[2] = g_Map_VisibleRectOffset; /*0x705511*/
+  v51[3] = g_DSurface_WindowOffset; /*0x705518*/
   if ( v10 && ClipLine(v43, v44, v51) ) /*0x70552e*/
   {
-    if ( *(_DWORD *)(MEMORY[0x87F6C4] + 4) == 1 ) /*0x705540*/
-      v17 = **(unsigned __int8 **)(MEMORY[0x87F6C4] + 372); /*0x70554c*/
+    if ( *(_DWORD *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x705540*/
+      v17 = **(unsigned __int8 **)(g_FileSystem_THEATER_PAL + 372); /*0x70554c*/
     else
-      v17 = **(unsigned __int16 **)(MEMORY[0x87F6C4] + 372); /*0x705558*/
-    (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 48))(MEMORY[0x88731C], v43, v44, v17); /*0x70556e*/
+      v17 = **(unsigned __int16 **)(g_FileSystem_THEATER_PAL + 372); /*0x705558*/
+    (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)DSurface_Composite + 48))(DSurface_Composite, v43, v44, v17); /*0x70556e*/
   }
   v27 = v29 - 2; /*0x705583*/
   v28 = v30 - 2; /*0x70558b*/
@@ -338,12 +338,12 @@ int __stdcall Render_DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, in
   v36 = v18[1]; /*0x7055a9*/
   v37 = v18[2]; /*0x7055b0*/
   v38 = v18[3]; /*0x7055c2*/
-  v19 = ClipRectIntersection(v53, &MEMORY[0x886FA0], &v35, 0, 0); /*0x7055cc*/
+  v19 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x7055cc*/
   v39 = *v19; /*0x7055d4*/
   v40 = v19[1]; /*0x7055db*/
   v41 = v19[2]; /*0x7055e2*/
   v42 = v19[3]; /*0x7055ef*/
-  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 20))(MEMORY[0x88731C], &v39, v9); /*0x7055fa*/
+  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7055fa*/
   v28 = v34 - 2; /*0x705611*/
   v27 = v33 - 2; /*0x70561f*/
   v20 = Rect::Construct(v54, &v27, 3, 3); /*0x705623*/
@@ -351,12 +351,12 @@ int __stdcall Render_DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, in
   v36 = v20[1]; /*0x705635*/
   v37 = v20[2]; /*0x70563c*/
   v38 = v20[3]; /*0x70564e*/
-  v21 = ClipRectIntersection(v53, &MEMORY[0x886FA0], &v35, 0, 0); /*0x705658*/
+  v21 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x705658*/
   v39 = *v21; /*0x705660*/
   v40 = v21[1]; /*0x705667*/
   v41 = v21[2]; /*0x70566e*/
   v42 = v21[3]; /*0x70567b*/
-  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 20))(MEMORY[0x88731C], &v39, v8); /*0x705686*/
+  (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)DSurface_Composite + 20))(DSurface_Composite, &v39, v8); /*0x705686*/
   v45 = a1; /*0x70569e*/
   v46 = a2; /*0x7056a2*/
   v47 = a3; /*0x7056a6*/
@@ -368,10 +368,10 @@ int __stdcall Render_DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, in
     v48 = (v22 * a4 + v23 * a1) / 64; /*0x7056ec*/
     v49 = (v22 * a5 + v23 * a2) / 64; /*0x705705*/
     v50 = (v22 * a6 + v23 * a3) / 64; /*0x705728*/
-    Coord::To_Screen(MEMORY[0x887324], &v45, &v29); /*0x705732*/
-    Coord::To_Screen(MEMORY[0x887324], &v48, &v33); /*0x705747*/
-    v30 += MEMORY[0x886FA4]; /*0x705761*/
-    v34 += MEMORY[0x886FA4]; /*0x70576e*/
+    Coord::To_Screen(g_TacticalClass_Instance, &v45, &v29); /*0x705732*/
+    Coord::To_Screen(g_TacticalClass_Instance, &v48, &v33); /*0x705747*/
+    v30 += g_Map_VisibleRect; /*0x705761*/
+    v34 += g_Map_VisibleRect; /*0x70576e*/
     if ( ClipLine(&v29, &v33, v51) ) /*0x705772*/
     {
       v31 = a7; /*0x705794*/
@@ -380,11 +380,11 @@ int __stdcall Render_DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, in
       if ( v24 >= 254 ) /*0x70579f*/
         v25 = -2; /*0x7057a1*/
       Color::Lerp((unsigned __int8 *)&v31, v25, (unsigned __int8 *)&byte_A83CD9); /*0x7057b0*/
-      (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 48))( /*0x70581e*/
-        MEMORY[0x88731C],
+      (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)DSurface_Composite + 48))( /*0x70581e*/
+        DSurface_Composite,
         &v29,
         &v33,
-        ((unsigned __int8)v31 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0])
+        ((unsigned __int8)v31 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0])
       | (HIBYTE(v31) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
       | (v32 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
     }
@@ -1149,13 +1149,13 @@ char sub_731BF0()
     IsButtonDown = 1; /*0x731c5d*/
   if ( v1 && IsButtonDown ) /*0x731c66*/
   {
-    v3 = MEMORY[0xA8ECC8]; /*0x731c68*/
+    v3 = g_SelectionManager; /*0x731c68*/
     v4 = 0; /*0x731c6e*/
-    if ( (int)MEMORY[0xA8ECC8] <= 0 ) /*0x731c72*/
+    if ( (int)g_SelectionManager <= 0 ) /*0x731c72*/
       return 1; /*0x731ca2*/
     while ( 1 ) /*0x731c79*/
     {
-      v5 = (_BYTE *)*((_DWORD *)MEMORY[0xA8ECBC] + v4); /*0x731c79*/
+      v5 = (_BYTE *)*((_DWORD *)g_ObjectClass_CurrentCount + v4); /*0x731c79*/
       if ( v5 ) /*0x731c7e*/
       {
         if ( (v5[20] & 1) != 0 && !(*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v5 + 1216))(v5) ) /*0x731c8e*/
@@ -1406,9 +1406,9 @@ char sub_53D850()
   int i; // esi
   int v6; // [esp+4h] [ebp-8h] BYREF
 
-  if ( (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887314] + 116))(MEMORY[0x887314]) != unk_AA0150 ) /*0x53d865*/
+  if ( (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) != unk_AA0150 ) /*0x53d865*/
   {
-    v0 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887314] + 116))(MEMORY[0x887314]); /*0x53d874*/
+    v0 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2); /*0x53d874*/
     dword_A9FAE8[0] = 0; /*0x53d876*/
     unk_AA0150 = v0; /*0x53d880*/
     v1 = 1; /*0x53d886*/
@@ -1562,15 +1562,15 @@ int __stdcall sub_642BB0(unsigned int a1)
   unsigned int PlayerColor; // eax
 
   result = 0; /*0x642bba*/
-  if ( (MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4) /*0x642bd8*/
+  if ( (g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4) /*0x642bd8*/
     && *(_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * a1) + 107) == -1 )
   {
-    return *((_DWORD *)MEMORY[0xB054D4] + SessionClass::GetPlayerColorScheme(0xFFFFFFFE)); /*0x642bed*/
+    return *((_DWORD *)BuildingTypeClass_AnimTable + SessionClass::GetPlayerColorScheme(0xFFFFFFFE)); /*0x642bed*/
   }
   if ( a1 < 8 ) /*0x642bf5*/
   {
     PlayerColor = SessionClass::GetPlayerColor(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * a1)); /*0x642bff*/
-    return *((_DWORD *)MEMORY[0xB054D4] + SessionClass::GetPlayerColorScheme(PlayerColor)); /*0x642c15*/
+    return *((_DWORD *)BuildingTypeClass_AnimTable + SessionClass::GetPlayerColorScheme(PlayerColor)); /*0x642c15*/
   }
   return result; /*0x642bec*/
 }
@@ -1598,9 +1598,9 @@ int sub_660000()
     v4 = *(_DWORD *)(v2 + 56); /*0x660018*/
     if ( v3 != -1 ) /*0x66001e*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v3 >= v4 ) /*0x66002a*/
+      if ( (int)g_CurrentFrame - v3 >= v4 ) /*0x66002a*/
         goto LABEL_6; /*0x66002a*/
-      v4 -= (int)MEMORY[0xA8ED84] - v3; /*0x66002c*/
+      v4 -= (int)g_CurrentFrame - v3; /*0x66002c*/
     }
     if ( v4 > 0 ) /*0x660030*/
       goto LABEL_7; /*0x660030*/
@@ -1642,9 +1642,9 @@ void sub_6603B0()
       v4 = *(_DWORD *)(v2 + 44); /*0x6603d0*/
       if ( v3 != -1 ) /*0x6603d6*/
       {
-        if ( (int)MEMORY[0xA8ED84] - v3 >= v4 ) /*0x6603e2*/
+        if ( (int)g_CurrentFrame - v3 >= v4 ) /*0x6603e2*/
           goto LABEL_7; /*0x6603e2*/
-        v4 -= (int)MEMORY[0xA8ED84] - v3; /*0x6603e4*/
+        v4 -= (int)g_CurrentFrame - v3; /*0x6603e4*/
       }
       if ( !v4 ) /*0x6603e8*/
       {

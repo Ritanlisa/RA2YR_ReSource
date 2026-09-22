@@ -880,7 +880,7 @@ bool __thiscall LaunchMultiplayerHost(int this, unsigned __int8 *a2)
   Waypoint::InitInvalid(v23); /*0x663dd2*/
   Debug::Log(); /*0x663ddc*/
   GetStartupInfoA(&StartupInfo); /*0x663de9*/
-  if ( !(*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887628] + 72))(MEMORY[0x887628]) ) /*0x663df7*/
+  if ( !(*(int (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 72))(g_NetworkInterface) ) /*0x663df7*/
     return 0; /*0x663e07*/
   if ( a2 ) /*0x663e15*/
   {
@@ -905,7 +905,7 @@ bool __thiscall LaunchMultiplayerHost(int this, unsigned __int8 *a2)
   }
   if ( !MEMORY[0xA8DA84] ) /*0x663e22*/
   {
-    v4 = (unsigned __int8 *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x887628] + 76))(MEMORY[0x887628], 0); /*0x663e2d*/
+    v4 = (unsigned __int8 *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)g_NetworkInterface + 76))(g_NetworkInterface, 0); /*0x663e2d*/
     sprintf(CommandLine, MEMORY[0x839B84], *v4, v4[1], v4[2], v4[3]); /*0x663e54*/
     goto LABEL_11; /*0x663e5c*/
   }

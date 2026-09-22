@@ -23,7 +23,7 @@ char __thiscall FactoryClass::UpdateProduction(int this)
   LOBYTE(Speed) = this->isSuspended; /*0x4c9b28*/
   if ( !(_BYTE)Speed ) /*0x4c9b2d*/
   {
-    Speed = *(_DWORD *)(this + 88); /*0x4c9b33*/
+    Speed = this->q058; /*0x4c9b33*/
     if ( Speed ) /*0x4c9b38*/
     {
       if ( this->production == 54 ) /*0x4c9b4d*/
@@ -39,17 +39,17 @@ char __thiscall FactoryClass::UpdateProduction(int this)
       Speed = CDTimerClass::TimeRemaining((int *)(this + 44)); /*0x4c9b68*/
       if ( Speed || (Speed = this->queuedCapacity) == 0 ) /*0x4c9b76*/
       {
-        *(_BYTE *)(this + 40) = 0; /*0x4c9bba*/
+        this->q028 = 0; /*0x4c9bba*/
       }
       else
       {
         this->production += this->object; /*0x4c9b82*/
-        *(_BYTE *)(this + 40) = 1; /*0x4c9b89*/
-        *v3 = MEMORY[0xA8ED84]; /*0x4c9b92*/
+        this->q028 = 1; /*0x4c9b89*/
+        *v3 = g_CurrentFrame; /*0x4c9b92*/
         this->queuedObjects = v11; /*0x4c9b94*/
         this->queuedCount = Speed; /*0x4c9b97*/
-        v4 = *(_DWORD *)(this + 88); /*0x4c9b9a*/
-        *(_BYTE *)(this + 93) = 1; /*0x4c9b9f*/
+        v4 = this->q058; /*0x4c9b9a*/
+        this->q174 = 1; /*0x4c9b9f*/
         if ( v4 ) /*0x4c9ba2*/
         {
           v5 = this->production; /*0x4c9ba4*/
@@ -68,23 +68,23 @@ char __thiscall FactoryClass::UpdateProduction(int this)
         {
           HouseClass::ProcessPowerDrain(this->owner, v6); /*0x4c9bf5*/
           v8 = this->balance; /*0x4c9bfa*/
-          *(_BYTE *)(this + 92) = 0; /*0x4c9bfd*/
+          this->q05C = 0; /*0x4c9bfd*/
           Speed = v8 - v6; /*0x4c9c01*/
           this->balance = Speed; /*0x4c9c03*/
         }
         else
         {
           v7 = this->production; /*0x4c9be5*/
-          *(_BYTE *)(this + 92) = 1; /*0x4c9be8*/
+          this->q05C = 1; /*0x4c9be8*/
           Speed = v7 - 1; /*0x4c9beb*/
           this->production = Speed; /*0x4c9bec*/
         }
         if ( this->production == 54 ) /*0x4c9c0a*/
         {
           this->isSuspended = 1; /*0x4c9c0c*/
-          v9 = MEMORY[0xA8ED84]; /*0x4c9c0f*/
+          v9 = g_CurrentFrame; /*0x4c9c0f*/
           this->queuedCapacity = 0; /*0x4c9c19*/
-          *(_DWORD *)(this + 44) = v9; /*0x4c9c1c*/
+          this->q02C = v9; /*0x4c9c1c*/
           this->queuedObjects = v11; /*0x4c9c22*/
           this->queuedCount = 0; /*0x4c9c25*/
           LOBYTE(Speed) = HouseClass::ProcessPowerDrain(this->owner, this->balance); /*0x4c9c2f*/
@@ -138,50 +138,50 @@ bool __thiscall FactoryClass::DemandProduction(int this, int a2, #375 *a3, char 
     FactoryClass::AbandonProduction(this); /*0x4c9c89*/
   if ( (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) == 7 /*0x4c9ccf*/
     || (!this->queuedCapacity || this->isSuspended)
-    && *(int *)(this + 80) <= 0
-    && (!*(_DWORD *)(this + 88) || !this->isSuspended)
+    && this->q050 <= 0
+    && (!this->q058 || !this->isSuspended)
     || a4 )
   {
-    *(_BYTE *)(this + 93) = 1; /*0x4c9d6e*/
+    this->q174 = 1; /*0x4c9d6e*/
     this->isSuspended = 1; /*0x4c9d72*/
-    *(_DWORD *)(this + 44) = MEMORY[0xA8ED84]; /*0x4c9d85*/
+    this->q02C = g_CurrentFrame; /*0x4c9d85*/
     this->queuedCapacity = 0; /*0x4c9d8b*/
     this->queuedObjects = v17; /*0x4c9d8e*/
     this->queuedCount = 0; /*0x4c9d92*/
     this->production = 0; /*0x4c9d95*/
-    *(_DWORD *)(this + 88) = (*(int (__thiscall **)(int, #375 *))(*(_DWORD *)a2 + 140))(a2, a3); /*0x4c9da4*/
+    this->q058 = (*(int (__thiscall **)(int, #375 *))(*(_DWORD *)a2 + 140))(a2, a3); /*0x4c9da4*/
     if ( !(unsigned __int8)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
     {
-      v12 = *(_DWORD *)(this + 88); /*0x4c9db1*/
+      v12 = this->q058; /*0x4c9db1*/
       if ( v12 ) /*0x4c9db6*/
       {
         if ( (*(int (__thiscall **)(int))(*(_DWORD *)v12 + 44))(v12) == 6 ) /*0x4c9dc0*/
-          *(_BYTE *)(*(_DWORD *)(this + 88) + 1738) = 1; /*0x4c9dc5*/
+          *(_BYTE *)(this->q058 + 1738) = 1; /*0x4c9dc5*/
       }
     }
-    v13 = *(_DWORD *)(this + 88); /*0x4c9dcc*/
+    v13 = this->q058; /*0x4c9dcc*/
     if ( v13 ) /*0x4c9dd1*/
     {
       v14 = *(_DWORD *)(v13 + 540); /*0x4c9dd3*/
       this->owner = v14; /*0x4c9ddb*/
       v15 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a2 + 132))(a2, v14); /*0x4c9de1*/
-      v16 = *(_DWORD *)(this + 88); /*0x4c9de7*/
+      v16 = this->q058; /*0x4c9de7*/
       this->balance = v15; /*0x4c9dea*/
       *(_DWORD *)(v16 + 768) = v15; /*0x4c9ded*/
     }
-    return *(_DWORD *)(this + 88) != 0; /*0x4c9dfc*/
+    return this->q058 != 0; /*0x4c9dfc*/
   }
-  else if ( *(_DWORD *)(this + 80) >= MEMORY[0x8871E0]->BaseUnderAttackSound /*0x4c9cea*/
+  else if ( this->q050 >= g_RulesClass_Instance->BaseUnderAttackSound /*0x4c9cea*/
          || HouseClass::ShouldDisableCameo(*(_DWORD **)(this + 108), a2) )
   {
     if ( (unsigned __int8)House::IsHumanPlayer(a3) ) /*0x4c9d3f*/
-      PlayVocClass(MEMORY[0x8871E0]->?[3], 0x2000, 1.0, 0); /*0x4c9d5f*/
+      PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x4c9d5f*/
     return 0; /*0x4c9d65*/
   }
   else
   {
-    v5 = *(_DWORD *)(this + 72); /*0x4c9cf3*/
-    v6 = *(_DWORD *)(this + 80); /*0x4c9cf6*/
+    v5 = this->q048; /*0x4c9cf3*/
+    v6 = this->q050; /*0x4c9cf6*/
     v7 = this + 64; /*0x4c9cf9*/
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(_BYTE *)(v7 + 13) || !v5)
@@ -210,16 +210,16 @@ char __thiscall FactoryClass::SetObject(int this, int a2)
   int v5; // [esp+8h] [ebp-8h]
 
   FactoryClass::AbandonProduction(this); /*0x4c9e16*/
-  *(_DWORD *)(this + 88) = a2; /*0x4c9e21*/
+  this->q058 = a2; /*0x4c9e21*/
   v3 = *(_DWORD *)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
   this->owner = v3; /*0x4c9e30*/
-  *(_DWORD *)(this + 44) = MEMORY[0xA8ED84]; /*0x4c9e38*/
+  this->q02C = g_CurrentFrame; /*0x4c9e38*/
   this->queuedCapacity = 0; /*0x4c9e3e*/
   this->queuedObjects = v5; /*0x4c9e41*/
   this->queuedCount = 0; /*0x4c9e46*/
   this->production = 54; /*0x4c9e49*/
-  *(_BYTE *)(this + 93) = 1; /*0x4c9e50*/
+  this->q174 = 1; /*0x4c9e50*/
   this->isSuspended = 1; /*0x4c9e53*/
   return 1; /*0x4c9e56*/
 }
@@ -240,9 +240,9 @@ char __thiscall FactoryClass_StartProduction(int this, char a2)
     return 0; /*0x4c9e98*/
   this->isManual = a2; /*0x4c9e71*/
   this->isSuspended = 1; /*0x4c9e74*/
-  v2 = MEMORY[0xA8ED84]; /*0x4c9e78*/
+  v2 = g_CurrentFrame; /*0x4c9e78*/
   this->queuedCapacity = 0; /*0x4c9e80*/
-  *(_DWORD *)(this + 44) = v2; /*0x4c9e83*/
+  this->q02C = v2; /*0x4c9e83*/
   this->queuedObjects = v4; /*0x4c9e89*/
   this->queuedCount = 0; /*0x4c9e8e*/
   return 1; /*0x4c9e92*/
@@ -329,11 +329,11 @@ LABEL_14:
         if ( v6 > 0 ) /*0x4ca378*/
         {
           do /*0x4ca390*/
-            ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(_DWORD *)(v3 + 68) + 4 * v12++)); /*0x4ca386*/
+            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v3 + 68) + 4 * v12++)); /*0x4ca386*/
           while ( v12 < a1 ); /*0x4ca390*/
         }
-        ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v3 + 108)); /*0x4ca39b*/
-        ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v3 + 88)); /*0x4ca3a9*/
+        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v3 + 108)); /*0x4ca39b*/
+        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v3 + 88)); /*0x4ca3a9*/
         return 0; /*0x4ca3ae*/
       }
       else
@@ -449,23 +449,23 @@ char __thiscall FactoryClass::StartProduction_2(int this)
   int v9; // [esp-Ch] [ebp-14h]
   char v10; // [esp-8h] [ebp-10h]
 
-  v2 = *(_DWORD *)(this + 80); /*0x4ca5a4*/
+  v2 = this->q050; /*0x4ca5a4*/
   if ( v2 ) /*0x4ca5a9*/
   {
-    v2 = *(_DWORD *)(this + 88); /*0x4ca5ab*/
+    v2 = this->q058; /*0x4ca5ab*/
     if ( !v2 ) /*0x4ca5b0*/
     {
       if ( !this->queuedCapacity || (LOBYTE(v2) = this->isSuspended, (_BYTE)v2) ) /*0x4ca5be*/
       {
         v3 = **(_BYTE ***)(this + 68); /*0x4ca5c3*/
-        v4 = *(_DWORD *)(this + 80); /*0x4ca5c5*/
+        v4 = this->q050; /*0x4ca5c5*/
         if ( v4 > 0 ) /*0x4ca5ca*/
         {
           v5 = v4 - 1; /*0x4ca5cc*/
           v6 = 0; /*0x4ca5cf*/
-          for ( *(_DWORD *)(this + 80) = v5; /*0x4ca5d6*/
-                v6 < *(_DWORD *)(this + 80);
-                *(_DWORD *)(*(_DWORD *)(this + 68) + 4 * v6 - 4) = *(_DWORD *)(*(_DWORD *)(this + 68) + 4 * v6) )
+          for ( this->q050 = v5; /*0x4ca5d6*/
+                v6 < this->q050;
+                *(_DWORD *)(this->q044 + 4 * v6 - 4) = *(_DWORD *)(this->q044 + 4 * v6) )
           {
             ++v6; /*0x4ca5db*/
           }
@@ -573,18 +573,18 @@ FactoryClass *__thiscall FactoryClass::CopyTo(void **this, char a2)
     }
     while ( v3 < MEMORY[0xA83E40] ); /*0x4ca7dd*/
   }
-  if ( MEMORY[0xA8E9A0] ) /*0x4ca7e6*/
+  if ( g_WTFMode ) /*0x4ca7e6*/
     FactoryClass::AbandonProduction((int)this); /*0x4ca7ea*/
   v7 = this; /*0x4ca7ff*/
-  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F720] + 16))(&MEMORY[0xB0F720], &v7); /*0x4ca803*/
-  if ( v4 != -1 && v4 < MEMORY[0xB0F730] && v4 < --MEMORY[0xB0F730] ) /*0x4ca81e*/
+  v4 = (*(int (__thiscall **)(int *, void ***))(AbstractClass_Array + 16))(&AbstractClass_Array, &v7); /*0x4ca803*/
+  if ( v4 != -1 && v4 < g_AlphaShapePool && v4 < --g_AlphaShapePool ) /*0x4ca81e*/
   {
     do /*0x4ca836*/
     {
       ++v4; /*0x4ca826*/
       *((_DWORD *)MEMORY[0xB0F724] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F724] + v4); /*0x4ca82a*/
     }
-    while ( v4 < MEMORY[0xB0F730] ); /*0x4ca836*/
+    while ( v4 < g_AlphaShapePool ); /*0x4ca836*/
   }
   v5 = this->q011; /*0x4ca838*/
   this->uniqueId = &vt_VectorClass_TechnoTypeClass_const; /*0x4ca83b*/
@@ -617,17 +617,17 @@ char __thiscall sub_635060(int this, int a2)
   if ( *(_BYTE *)(a2 + 12) ) /*0x63506c*/
   {
     *(_BYTE *)(a2 + 12) = 0; /*0x635073*/
-    v3 = *(_DWORD *)(this + 168) - 1; /*0x63507d*/
-    *(_DWORD *)(this + 168) = v3; /*0x63507e*/
+    v3 = this->q0A8 - 1; /*0x63507d*/
+    this->q0A8 = v3; /*0x63507e*/
     if ( !v3 ) /*0x635084*/
-      *(_DWORD *)(this + 176) = -1; /*0x635086*/
+      this->q0B0 = -1; /*0x635086*/
   }
   v4 = *(_DWORD *)(a2 + 8); /*0x63508c*/
   if ( v4 != -1 ) /*0x635091*/
   {
     v4 = *(_DWORD *)(this->production + 4 * v4); /*0x635096*/
     *(_DWORD *)(v4 + 116) = -1; /*0x635099*/
-    *(_DWORD *)(this + 180) = -1; /*0x63509c*/
+    this->q0B4 = -1; /*0x63509c*/
     v5 = *(_DWORD *)(v4 + 112) - 1; /*0x6350a5*/
     *(_DWORD *)(v4 + 112) = v5; /*0x6350a6*/
     if ( !v5 ) /*0x6350a9*/
@@ -637,13 +637,13 @@ char __thiscall sub_635060(int this, int a2)
         LOBYTE(v4) = (unsigned char)this->referenceCount; /*0x6350af*/
         if ( !(_BYTE)v4 ) /*0x6350b4*/
         {
-          *(_BYTE *)(this + 28) = 1; /*0x6350b6*/
+          this->referenceCount = 1; /*0x6350b6*/
           LOBYTE(v4) = MEMORY[0xAC4CA0]; /*0x6350ba*/
           if ( MEMORY[0xAC4CA8] < MEMORY[0xAC4CA0] /*0x6350f4*/
             || (MEMORY[0xAC4CA5] || !MEMORY[0xAC4CA0])
             && MEMORY[0xAC4CAC] > 0
-            && (LOBYTE(v4) = (*(int (__thiscall **)(int *, int, _DWORD))(MEMORY[0xAC4C98] + 8))(
-                               &MEMORY[0xAC4C98],
+            && (LOBYTE(v4) = (*(int (__thiscall **)(int *, int, _DWORD))(g_ScriptConfig + 8))(
+                               &g_ScriptConfig,
                                MEMORY[0xAC4CA0] + MEMORY[0xAC4CAC],
                                0),
                 (_BYTE)v4) )

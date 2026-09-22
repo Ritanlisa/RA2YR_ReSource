@@ -62,7 +62,7 @@ int __thiscall UnitTypeClass::UnitTypeClass(int this, INIClass *aP1)
   this->ArrayIndex = -1; /*0x7470e3*/
   this->MovementRestrictedTo = -1; /*0x7470eb*/
   this->HalfDamageSmokeLocation = 0; /*0x7470f1*/
-  *(_DWORD *)(this + 3588) = 0; /*0x7470f7*/
+  this->qE04 = 0; /*0x7470f7*/
   *(_DWORD *)(this + 3592) = 0; /*0x7470fd*/
   this->Passive = 0; /*0x747103*/
   this->CrateGoodie = 0; /*0x747109*/
@@ -92,7 +92,7 @@ int __thiscall UnitTypeClass::UnitTypeClass(int this, INIClass *aP1)
   this->AltImage = 0; /*0x7471a5*/
   this->WalkFrames = 12; /*0x7471ab*/
   this->FiringFrames = 0; /*0x7471b2*/
-  *(_BYTE *)(this + 3678) = 0; /*0x7471b8*/
+  this->AltImageFile = 0; /*0x7471b8*/
   *(_DWORD *)this = &UnitTypeClass::`vftable'; /*0x7471bf*/
   this->vtable1 = &UnitTypeClass::`vftable'; /*0x7471c5*/
   this->vtable2 = &UnitTypeClass::`vftable'; /*0x7471cb*/
@@ -141,9 +141,9 @@ LABEL_11:
   *(_BYTE *)(this + 3381) = 0; /*0x747285*/
   *(_BYTE *)(this + 3382) = 0; /*0x74728b*/
   *(_BYTE *)(this + 3387) = 0; /*0x747291*/
-  *(_BYTE *)(this + 3384) = 1; /*0x747297*/
-  *(_BYTE *)(this + 3479) = 0; /*0x74729e*/
-  *(_BYTE *)(this + 3478) = 0; /*0x7472a4*/
+  this->SpawnRegenRate = 1; /*0x747297*/
+  this->DisableShadowCache = 0; /*0x74729e*/
+  this->DisableVoxelCache = 0; /*0x7472a4*/
   *(_BYTE *)(this + 3374) = 1; /*0x7472aa*/
   return this; /*0x7472b1*/
 }

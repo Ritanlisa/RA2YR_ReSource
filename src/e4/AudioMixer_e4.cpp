@@ -11,7 +11,7 @@ int __thiscall AudioMixer::SetVolume(int this)
   int result; // eax
 
   result = 1; /*0x406653*/
-  if ( ((unsigned char)this->AudioMixer_field_10 & 1) == 0 || *(_DWORD *)(this + 76) ) /*0x40665c*/
+  if ( ((unsigned char)this->AudioMixer_field_10 & 1) == 0 || this->q04C ) /*0x40665c*/
     return 0; /*0x406663*/
   return result; /*0x406665*/
 }

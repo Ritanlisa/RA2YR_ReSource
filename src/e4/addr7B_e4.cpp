@@ -382,7 +382,7 @@ LABEL_33:
       do /*0x7b08b9*/
       {
         v28 = *v52++; /*0x7b0853*/
-        v29 = (unsigned __int8)(v28 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x7b086a*/
+        v29 = (unsigned __int8)(v28 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x7b086a*/
         v30 = (unsigned __int8)(v28 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x7b087c*/
         LOBYTE(v28) = (unsigned __int8)(v28 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x7b088e*/
         v27[v114] = v29; /*0x7b0897*/
@@ -632,7 +632,7 @@ int __thiscall sub_7B60E0(const char **this, signed int a2, void **a3)
   *v12 = 0; /*0x7b6198*/
   if ( v10 ) /*0x7b619b*/
     strcpy((char *)*a3, v10); /*0x7b61b3*/
-  v13 = &MEMORY[0x889F64]; /*0x7b61c4*/
+  v13 = &g_INI_DefaultBuffer; /*0x7b61c4*/
   v14 = v20 - a2 + 1; /*0x7b61c9*/
   if ( *a3 ) /*0x7b61c0*/
     v13 = (const char *)*a3; /*0x7b61ce*/
@@ -642,7 +642,7 @@ int __thiscall sub_7B60E0(const char **this, signed int a2, void **a3)
   if ( v13 ) /*0x7b61e4*/
     strncpy(v15, v13, v14); /*0x7b61e9*/
   v16[v14] = 0; /*0x7b61f1*/
-  v17 = &MEMORY[0x889F64]; /*0x7b61f5*/
+  v17 = &g_INI_DefaultBuffer; /*0x7b61f5*/
   if ( v16 ) /*0x7b61fc*/
     v17 = v16; /*0x7b61fe*/
   if ( *a3 ) /*0x7b6200*/
@@ -862,7 +862,7 @@ int __thiscall sub_7B7C00(const wchar_t **this, int a2, void **a3)
   if ( v11 ) /*0x7b7cb6*/
     wcscpy((wchar_t *)*a3, v11); /*0x7b7cbc*/
   v14 = v21 - a2 + 1; /*0x7b7ccd*/
-  v15 = &MEMORY[0x887734]; /*0x7b7cce*/
+  v15 = &g_TypeClass_DefaultString; /*0x7b7cce*/
   if ( *a3 ) /*0x7b7cc8*/
     v15 = (const wchar_t *)*a3; /*0x7b7cd7*/
   v16 = (wchar_t *)__2_YAPAXI_Z(2 * v14 + 2); /*0x7b7cde*/
@@ -871,7 +871,7 @@ int __thiscall sub_7B7C00(const wchar_t **this, int a2, void **a3)
   if ( v15 ) /*0x7b7cef*/
     wcsncpy(v16, v15, v14); /*0x7b7cf4*/
   v17[v14] = 0; /*0x7b7cfc*/
-  v18 = &MEMORY[0x887734]; /*0x7b7d05*/
+  v18 = &g_TypeClass_DefaultString; /*0x7b7d05*/
   if ( v17 ) /*0x7b7d0a*/
     v18 = v17; /*0x7b7d0c*/
   if ( *a3 ) /*0x7b7d0e*/

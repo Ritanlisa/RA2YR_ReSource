@@ -28,14 +28,14 @@ _DWORD *__thiscall CreateTeamCommand::performAction_148(View1CommandClass *this)
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((__int16 *)MEMORY[0xA8B230] + 6728) << 8) + 128; /*0x537378*/
-  v4[0] = (*((__int16 *)MEMORY[0xA8B230] + 6727) << 8) + 128; /*0x53737d*/
+  v1 = (*((__int16 *)g_ScenarioClass_Instance + 6728) << 8) + 128; /*0x537378*/
+  v4[0] = (*((__int16 *)g_ScenarioClass_Instance + 6727) << 8) + 128; /*0x53737d*/
   v4[1] = v1; /*0x537386*/
   GroundHeight = 0; /*0x53738a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53739d*/
-  Tactical::SetTacticalPosition((int)MEMORY[0x887324], v4); /*0x5373a6*/
-  result = MEMORY[0x880990]; /*0x5373ab*/
-  if ( MEMORY[0x880990] ) /*0x5373b2*/
+  Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, v4); /*0x5373a6*/
+  result = g_RadarBlipManager; /*0x5373ab*/
+  if ( g_RadarBlipManager ) /*0x5373b2*/
     return Tactical::MouseMove( /*0x5373c3*/
              (int)&MEMORY[0x87F7E8],
              (MouseClass *)&v3,
@@ -58,14 +58,14 @@ _DWORD *__thiscall CreateTeamCommand::performAction_153(View2CommandClass *this)
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((__int16 *)MEMORY[0xA8B230] + 6730) << 8) + 128; /*0x537468*/
-  v4[0] = (*((__int16 *)MEMORY[0xA8B230] + 6729) << 8) + 128; /*0x53746d*/
+  v1 = (*((__int16 *)g_ScenarioClass_Instance + 6730) << 8) + 128; /*0x537468*/
+  v4[0] = (*((__int16 *)g_ScenarioClass_Instance + 6729) << 8) + 128; /*0x53746d*/
   v4[1] = v1; /*0x537476*/
   GroundHeight = 0; /*0x53747a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53748d*/
-  Tactical::SetTacticalPosition((int)MEMORY[0x887324], v4); /*0x537496*/
-  result = MEMORY[0x880990]; /*0x53749b*/
-  if ( MEMORY[0x880990] ) /*0x5374a2*/
+  Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, v4); /*0x537496*/
+  result = g_RadarBlipManager; /*0x53749b*/
+  if ( g_RadarBlipManager ) /*0x5374a2*/
     return Tactical::MouseMove( /*0x5374b3*/
              (int)&MEMORY[0x87F7E8],
              (MouseClass *)&v3,
@@ -88,14 +88,14 @@ _DWORD *__thiscall CreateTeamCommand::performAction_158(View3CommandClass *this)
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((__int16 *)MEMORY[0xA8B230] + 6732) << 8) + 128; /*0x537558*/
-  v4[0] = (*((__int16 *)MEMORY[0xA8B230] + 6731) << 8) + 128; /*0x53755d*/
+  v1 = (*((__int16 *)g_ScenarioClass_Instance + 6732) << 8) + 128; /*0x537558*/
+  v4[0] = (*((__int16 *)g_ScenarioClass_Instance + 6731) << 8) + 128; /*0x53755d*/
   v4[1] = v1; /*0x537566*/
   GroundHeight = 0; /*0x53756a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53757d*/
-  Tactical::SetTacticalPosition((int)MEMORY[0x887324], v4); /*0x537586*/
-  result = MEMORY[0x880990]; /*0x53758b*/
-  if ( MEMORY[0x880990] ) /*0x537592*/
+  Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, v4); /*0x537586*/
+  result = g_RadarBlipManager; /*0x53758b*/
+  if ( g_RadarBlipManager ) /*0x537592*/
     return Tactical::MouseMove( /*0x5375a3*/
              (int)&MEMORY[0x87F7E8],
              (MouseClass *)&v3,
@@ -232,9 +232,9 @@ char __thiscall sub_6A6A00(_DWORD *this, char a2, int a3)
       return 0; /*0x6a6a3f*/
     }
     v6 = 26; /*0x6a6a68*/
-    if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x6a6a60*/
+    if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6a6a60*/
       v6 = 18; /*0x6a6a6f*/
-    v7 = (MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v6 + MEMORY[0x886F94] - 7) / 50; /*0x6a6aa4*/
+    v7 = (g_DSurface_ViewBounds - g_SidebarBounds - v6 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a6aa4*/
     if ( HouseClass_Player == (#375 *)MEMORY[0xAC1198] ) /*0x6a6aae*/
     {
       if ( v4[17] + v7 / 2 < MEMORY[0x884CF8] ) /*0x6a6ac2*/
@@ -272,7 +272,7 @@ void __thiscall sub_731060(char *this)
     if ( v4 )
     {
       v5 = *(_DWORD *)(v4 + 540); /*0x731083*/
-      if ( MEMORY[0xA8B238][0] ? House::IsHumanPlayer((#375 *)v5) : *(_BYTE *)(v5 + 493) )
+      if ( g_GameMode_Current[0] ? House::IsHumanPlayer((#375 *)v5) : *(_BYTE *)(v5 + 493) )
       {
         if ( *(char **)(v4 + 532) == this - 1 ) /*0x7310a9*/
           *(_DWORD *)(v4 + 532) = -1; /*0x7310ab*/

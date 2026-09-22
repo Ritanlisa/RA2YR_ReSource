@@ -10,11 +10,11 @@ bool __thiscall sub_41D7E0(int this, int a2)
 {
   int v3; // eax
 
-  if ( VeterancyStruct::IsElite((float *)(*(_DWORD *)(this + 76) + 336)) ) /*0x41d7ec*/
-    v3 = *(_DWORD *)(this + 72); /*0x41d7f5*/
+  if ( VeterancyStruct::IsElite((float *)(this->q013 + 336)) ) /*0x41d7ec*/
+    v3 = this->q012; /*0x41d7f5*/
   else
-    v3 = *(_DWORD *)(this + 68); /*0x41d7fa*/
-  return !*(_BYTE *)(this + 60) && v3 + *(_DWORD *)(this + 64) <= (int)MEMORY[0xA8ED84] || a2 != *(_DWORD *)(this + 80); /*0x41d814*/
+    v3 = this->q044; /*0x41d7fa*/
+  return !*(_BYTE *)(this + 60) && v3 + this->q040 <= (int)g_CurrentFrame || a2 != *(_DWORD *)(this + 80); /*0x41d814*/
 }
 }
 
@@ -685,7 +685,7 @@ LABEL_158:
     if ( v85 > 0 )
     {
       v87 = (TechnoTypeClass *)Random::Range(
-                                 &MEMORY[0xA8B230]->random[1],
+                                 &g_ScenarioClass_Instance->random[1],
                                  *(IUnknown **)(v84 + 456),
                                  (IUnknown *)(v85 - 1));
       eax166 = *((_DWORD *)this + 74);
@@ -696,7 +696,7 @@ LABEL_158:
         v139 = 0;
         while ( (int)v87 > 0 )
         {
-          v89 = (int)abs32(Random::State(&MEMORY[0xA8B230]->random[1]))
+          v89 = (int)abs32(Random::State(&g_ScenarioClass_Instance->random[1]))
               % (*(_DWORD *)(4 * (_DWORD)v88 + *(_DWORD *)(eax166 + 428)) + 1);
           v152 = (TechnoTypeClass *)v89;
           if ( v89 >= (int)v87 )
@@ -746,7 +746,7 @@ LABEL_158:
             v141 = COERCE_DOUBLE(__PAIR64__(v96, v95));
             LODWORD(v142) = v97 + 20;
             v98 = Random::Range(
-                    &MEMORY[0xA8B230]->random[1],
+                    &g_ScenarioClass_Instance->random[1],
                     0,
                     (IUnknown *)(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 332) - 1));
             AnimClass::ctor(
@@ -798,7 +798,7 @@ LABEL_158:
             0);
           if ( v105 )
           {
-            al187 = Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x20);
+            al187 = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x20);
             LOBYTE(v106) = 0;
             HIBYTE(v106) = al187;
             *(double *)aP3 = (double)(*(_DWORD *)(v99 + 168) / 10);
@@ -845,7 +845,7 @@ LABEL_158:
                              0);
         if ( v114 )
         {
-          al192 = Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x20);
+          al192 = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x20);
           LOBYTE(v115) = 0;
           HIBYTE(v115) = al192;
           *(double *)aP3 = (double)(*(_DWORD *)(v99 + 168) / 10);
@@ -1210,9 +1210,9 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
         do /*0x46adc7*/
         {
           v76 = *(_DWORD *)(*(int (__thiscall **)(int *, double *))(*this + 440))(this, &v88); /*0x46a962*/
-          v46 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, -2, 2); /*0x46a966*/
+          v46 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -2, 2); /*0x46a966*/
           LOWORD(v76) = v46 + v76; /*0x46a971*/
-          v47 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, -2, 2); /*0x46a980*/
+          v47 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -2, 2); /*0x46a980*/
           v48 = *(_BYTE *)(v13 + 303); /*0x46a985*/
           v49 = *(this + 44); /*0x46a98b*/
           HIWORD(v76) += v47; /*0x46a991*/
@@ -1349,26 +1349,26 @@ int __thiscall Warhead_ProcessDamageArea(int this)
   int v30; // [esp+30h] [ebp-10h]
   _BYTE v31[12]; // [esp+34h] [ebp-Ch] BYREF
 
-  v24 = *((_DWORD *)MEMORY[0x8871E0] + 1540); /*0x65b5a3*/
-  v25 = *((_DWORD *)MEMORY[0x8871E0] + 1541); /*0x65b5a7*/
-  *(_DWORD *)(this + 40) = MEMORY[0xA8ED84]; /*0x65b5ab*/
+  v24 = *((_DWORD *)g_RulesClass_Instance + 1540); /*0x65b5a3*/
+  v25 = *((_DWORD *)g_RulesClass_Instance + 1541); /*0x65b5a7*/
+  *(_DWORD *)(this + 40) = g_CurrentFrame; /*0x65b5ab*/
   *(_DWORD *)(this + 44) = v28; /*0x65b5b3*/
-  *(_DWORD *)(this + 48) = v24; /*0x65b5b9*/
-  *(_DWORD *)(this + 52) = MEMORY[0xA8ED84]; /*0x65b5c2*/
+  this->q00C = v24; /*0x65b5b9*/
+  this->q034 = g_CurrentFrame; /*0x65b5c2*/
   *(_DWORD *)(this + 56) = v28; /*0x65b5c8*/
   *(_DWORD *)(this + 60) = v25; /*0x65b5cb*/
-  v2 = (double *)MEMORY[0x8871E0]; /*0x65b5ce*/
-  v3 = *((unsigned __int8 *)MEMORY[0x8871E0] + 6194); /*0x65b5e2*/
-  v4 = *((unsigned __int8 *)MEMORY[0x8871E0] + 6193); /*0x65b5e8*/
-  v5 = *((unsigned __int8 *)MEMORY[0x8871E0] + 6192); /*0x65b5f5*/
-  if ( *((_DWORD *)MEMORY[0xA8B230] + 1174) == 1 ) /*0x65b5fb*/
+  v2 = (double *)g_RulesClass_Instance; /*0x65b5ce*/
+  v3 = *((unsigned __int8 *)g_RulesClass_Instance + 6194); /*0x65b5e2*/
+  v4 = *((unsigned __int8 *)g_RulesClass_Instance + 6193); /*0x65b5e8*/
+  v5 = *((unsigned __int8 *)g_RulesClass_Instance + 6192); /*0x65b5f5*/
+  if ( *((_DWORD *)g_ScenarioClass_Instance + 1174) == 1 ) /*0x65b5fb*/
   {
     v3 = -128; /*0x65b5fd*/
     v5 = -128; /*0x65b602*/
   }
   v21 = 1000 * v5 / 255; /*0x65b62a*/
-  v6 = (double)*(int *)(this + 76) * *((double *)MEMORY[0x8871E0] + 772); /*0x65b63e*/
-  v26 = *(_DWORD *)(this + 72); /*0x65b679*/
+  v6 = (double)this->q013 * *((double *)g_RulesClass_Instance + 772); /*0x65b63e*/
+  v26 = this->q012; /*0x65b679*/
   v23 = 1000 * v3 / 255; /*0x65b684*/
   if ( v6 > 2000.0 ) /*0x65b68b*/
     v6 = 2000.0; /*0x65b68f*/
@@ -1385,7 +1385,7 @@ int __thiscall Warhead_ProcessDamageArea(int this)
   if ( v11 > 2000.0 ) /*0x65b705*/
     v11 = 2000.0; /*0x65b709*/
   v12 = Math::RoundToInt(v11); /*0x65b70f*/
-  v13 = *(_DWORD *)(this + 108); /*0x65b714*/
+  v13 = this->q01B; /*0x65b714*/
   v14 = v12; /*0x65b71b*/
   *(_DWORD *)(this + 88) = v22; /*0x65b71f*/
   *(_DWORD *)(this + 92) = v10; /*0x65b722*/

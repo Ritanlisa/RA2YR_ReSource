@@ -523,13 +523,13 @@ void LoadOptions::ClearBuffer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall LoadOptions::sub_55A2A0(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x55a2ad*/
+  if ( this->Items && this->IsAllocated ) /*0x55a2ad*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x55a2b3*/
-    *(_DWORD *)(this + 4) = 0; /*0x55a2bb*/
+    this->Items = 0; /*0x55a2bb*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x55a2be*/
-  *(_DWORD *)(this + 8) = 0; /*0x55a2c1*/
+  this->IsAllocated = 0; /*0x55a2be*/
+  this->Capacity = 0; /*0x55a2c1*/
 }
 
 // IDA 0x55A2D0: FindItem — linear search by first dword
@@ -542,9 +542,9 @@ int __thiscall LoadOptions::sub_55A2D0(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x55a2d0*/
+  if ( !this->q00C ) /*0x55a2d0*/
     return 0; /*0x55a2d8*/
-  v3 = *(_DWORD *)(this + 8); /*0x55a2de*/
+  v3 = this->Capacity; /*0x55a2de*/
   result = 0; /*0x55a2e1*/
   if ( v3 <= 0 ) /*0x55a2e5*/
     return -1; /*0x55a2fc*/

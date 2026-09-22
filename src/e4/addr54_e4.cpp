@@ -161,13 +161,13 @@ int __fastcall SurfaceClass_CreatePrimary(int a1, int a2, int a3)
   int v7; // esi
   int v8; // eax
 
-  if ( !MEMORY[0x887308] ) /*0x544e86*/
+  if ( !g_DSurface_Primary ) /*0x544e86*/
     return 0; /*0x544e8b*/
-  if ( a1 == 1000 && a2 == 1000 && a3 == 1000 && MEMORY[0x87F6A8] ) /*0x544ead*/
+  if ( a1 == 1000 && a2 == 1000 && a3 == 1000 && g_SurfaceAnimState ) /*0x544ead*/
     return *(_DWORD *)MEMORY[0x87F69C]; /*0x544eb7*/
   QuantizeColorRGB(&a3); /*0x544ecd*/
   v4 = 1; /*0x544ee4*/
-  if ( MEMORY[0x87F6A8] <= 1 ) /*0x544eeb*/
+  if ( g_SurfaceAnimState <= 1 ) /*0x544eeb*/
   {
 LABEL_14:
     v6 = 53; /*0x544f1c*/
@@ -176,17 +176,17 @@ LABEL_14:
     if ( __2_YAPAXI_Z(0x1B4u) ) /*0x544f37*/
       v7 = LightConvertClass::Constructor( /*0x544f79*/
              &stru_ABBED0,
-             &MEMORY[0x885780],
-             MEMORY[0x887308],
+             &FileSystem_TEMPERAT_PAL,
+             g_DSurface_Primary,
              a1,
              a2,
              a3,
-             MEMORY[0x87F6A8] != 0,
+             g_SurfaceAnimState != 0,
              0,
              v6);
     else
       v7 = 0; /*0x544f7d*/
-    if ( MEMORY[0x87F6A8] < MEMORY[0x87F6A0] /*0x544fb6*/
+    if ( g_SurfaceAnimState < MEMORY[0x87F6A0] /*0x544fb6*/
       || (MEMORY[0x87F6A5] || !MEMORY[0x87F6A0])
       && MEMORY[0x87F6AC] > 0
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0x87F698] + 8))(
@@ -194,7 +194,7 @@ LABEL_14:
            MEMORY[0x87F6A0] + MEMORY[0x87F6AC],
            0) )
     {
-      v8 = MEMORY[0x87F6A8]++; /*0x544fc3*/
+      v8 = g_SurfaceAnimState++; /*0x544fc3*/
       *((_DWORD *)MEMORY[0x87F69C] + v8) = v7; /*0x544fd2*/
     }
     return v7; /*0x544fd5*/
@@ -209,7 +209,7 @@ LABEL_14:
         break; /*0x544f0e*/
       ++v4; /*0x544f14*/
       v5 += 4; /*0x544f15*/
-      if ( v4 >= MEMORY[0x87F6A8] ) /*0x544f1a*/
+      if ( v4 >= g_SurfaceAnimState ) /*0x544f1a*/
         goto LABEL_14; /*0x544f1a*/
     }
   }
@@ -2055,7 +2055,7 @@ int __thiscall UpdateFootMovement(int this)
   v6 = this->M12; /*0x54baa2*/
   v26 = v5; /*0x54baa5*/
   if ( v5 != *(_DWORD *)(v6 + 1376) ) /*0x54bab0*/
-    Coord::ToGridIndex((char *)MEMORY[0x887888], v6, *(_DWORD *)(v6 + 1376), v5); /*0x54bace*/
+    Coord::ToGridIndex((char *)g_CellClassManager, v6, *(_DWORD *)(v6 + 1376), v5); /*0x54bace*/
   if ( v2 < this->M128 ) /*0x54bade*/
   {
     if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 44))(this->M12) == 1 /*0x54bba2*/
@@ -2116,7 +2116,7 @@ int __thiscall UpdateFootMovement(int this)
   }
   else if ( ObjectClass::HasLinkedObject(this->M12) ) /*0x54baea*/
   {
-    v7 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 7); /*0x54bb08*/
+    v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x54bb08*/
     v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v26); /*0x54bb14*/
     v9 = **(_DWORD **)(this + 12); /*0x54bb1f*/
     NeighbourContentCell = Cell::GetNeighbourContent(v8, v7); /*0x54bb23*/

@@ -14,11 +14,11 @@ int __thiscall RocketLocomotionClass::RocketLocomotionClass(int this)
   LocomotionClass::Init((_DWORD *)this); /*0x661ec3*/
   this->MovingDestination = dword_B04E38; /*0x661ed1*/
   *(_DWORD *)(this + 28) = dword_B04E3C; /*0x661eda*/
-  *(_DWORD *)(this + 32) = dword_B04E40; /*0x661ee3*/
-  this->MissionTimer = MEMORY[0xA8ED84]; /*0x661eee*/
+  this->Owner = dword_B04E40; /*0x661ee3*/
+  this->MissionTimer = g_CurrentFrame; /*0x661eee*/
   this->MissionTimer.TimeLeft = 0; /*0x661ef1*/
   this->MissionTimer.Rate = 0; /*0x661ef4*/
-  v2 = MEMORY[0xA8ED84]; /*0x661ef7*/
+  v2 = g_CurrentFrame; /*0x661ef7*/
   this->TrailerTimer.TimeLeft = 0; /*0x661efd*/
   this->TrailerTimer = v2; /*0x661f00*/
   this->CurrentSpeed = 0; /*0x661f03*/
@@ -29,7 +29,7 @@ int __thiscall RocketLocomotionClass::RocketLocomotionClass(int this)
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
   this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
   *(_DWORD *)this = &RocketLocomotionClass::`vftable'; /*0x661f19*/
-  *(_DWORD *)(this + 4) = &vt_RocketLocomotionClass; /*0x661f1f*/
+  this->__pad_004 = &vt_RocketLocomotionClass; /*0x661f1f*/
   return this; /*0x661f28*/
 }
 }

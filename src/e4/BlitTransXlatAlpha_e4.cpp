@@ -33,8 +33,8 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(
     {
       if ( argC < (unsigned __int16)*a5 && *a2 ) /*0x493967*/
       {
-        *a1 = 3 * (*(_WORD *)(this + 2) & (*a1 >> 2)) /*0x493996*/
-            + (*(_WORD *)(this + 2) & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 2));
+        *a1 = 3 * (this->q008 & (*a1 >> 2)) /*0x493996*/
+            + (this->q008 & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 2));
         *a5 = argC; /*0x493999*/
         v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x49399c*/
       }
@@ -87,8 +87,8 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(
       if ( v12 < (unsigned __int16)*a5 && *a2 ) /*0x493a97*/
       {
         v12 = argC; /*0x493ac2*/
-        *a1 = (*(_WORD *)(this + 2) & (*a1 >> 1)) /*0x493ac6*/
-            + (*(_WORD *)(this + 2) & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 1));
+        *a1 = (this->q008 & (*a1 >> 1)) /*0x493ac6*/
+            + (this->q008 & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 1));
         *a5 = argC; /*0x493ac9*/
         v14 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493acc*/
       }
@@ -138,8 +138,8 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(
     {
       if ( argC < (unsigned __int16)*a5 && *a2 ) /*0x493bc7*/
       {
-        *a1 = (*(_WORD *)(this + 2) & (*a1 >> 2)) /*0x493bf6*/
-            + 3 * (*(_WORD *)(this + 2) & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 2));
+        *a1 = (this->q008 & (*a1 >> 2)) /*0x493bf6*/
+            + 3 * (this->q008 & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 2));
         *a5 = argC; /*0x493bf9*/
         v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493bfc*/
       }
@@ -187,7 +187,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt01(
   result = this->q008 + (v11 << 9); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
-    v14 = MEMORY[0x87E8A4]; /*0x493e35*/
+    v14 = g_VisibleSurfaceDescriptor; /*0x493e35*/
     v17 = a4; /*0x493e3b*/
     do /*0x493e8e*/
     {
@@ -195,7 +195,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt01(
       if ( v16 ) /*0x493e4c*/
       {
         *a2 = *(_WORD *)(this->q004 + 2 * (v16 | *(unsigned __int16 *)(result + 2 * *a7))); /*0x493e6c*/
-        v14 = MEMORY[0x87E8A4]; /*0x493e6f*/
+        v14 = g_VisibleSurfaceDescriptor; /*0x493e6f*/
       }
       ++a7; /*0x493e78*/
       ++a2; /*0x493e7b*/

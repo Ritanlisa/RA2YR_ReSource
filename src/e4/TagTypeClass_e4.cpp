@@ -36,28 +36,28 @@ char *__thiscall TagTypeClass::Construct(char *this, ObjectClass *aP1)
     qmemcpy(this + 100, Destination, 0x30u); /*0x6e5bdc*/
     this->q094 = v7; /*0x6e5bde*/
   }
-  this->q098 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6140]; /*0x6e5be6*/
-  if ( *(int *)&MEMORY[0xB077F8].__pad_579C[6140] < *(int *)&MEMORY[0xB077F8].__pad_579C[6132] /*0x6e5c1e*/
-    || (MEMORY[0xB077F8].__pad_579C[6137] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6132])
-    && *(int *)&MEMORY[0xB077F8].__pad_579C[6144] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6124] + 8))(
-         &MEMORY[0xB077F8].__pad_579C[6124],
-         *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6132] + *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6144],
+  this->q098 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6140]; /*0x6e5be6*/
+  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[6140] < *(int *)&g_OverlayTypeConfig.__pad_579C[6132] /*0x6e5c1e*/
+    || (g_OverlayTypeConfig.__pad_579C[6137] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6132])
+    && *(int *)&g_OverlayTypeConfig.__pad_579C[6144] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6124] + 8))(
+         &g_OverlayTypeConfig.__pad_579C[6124],
+         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6132] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6144],
          0) )
   {
-    v3 = (AbstractTypeClass *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6140])++; /*0x6e5c2b*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6128] + 4 * (_DWORD)v3) = this; /*0x6e5c3a*/
+    v3 = (AbstractTypeClass *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6140])++; /*0x6e5c2b*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6128] + 4 * (_DWORD)v3) = this; /*0x6e5c3a*/
   }
-  if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x6e5c71*/
-    || (MEMORY[0xB077F8].__pad_579C[9961] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9956])
-    && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
-         &MEMORY[0xB077F8].__pad_579C[9948],
-         *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9956] + *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9968],
+  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[9964] < *(int *)&g_OverlayTypeConfig.__pad_579C[9956] /*0x6e5c71*/
+    || (g_OverlayTypeConfig.__pad_579C[9961] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956])
+    && *(int *)&g_OverlayTypeConfig.__pad_579C[9968] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9948] + 8))(
+         &g_OverlayTypeConfig.__pad_579C[9948],
+         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9968],
          0) )
   {
-    v4 = (*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9964])++; /*0x6e5c7e*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9952] + 4 * v4) = this; /*0x6e5c8d*/
+    v4 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9964])++; /*0x6e5c7e*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952] + 4 * v4) = this; /*0x6e5c8d*/
   }
   return this; /*0x6e5c92*/
 }
@@ -86,7 +86,7 @@ int __thiscall sub_6E5CA0(int this)
   this->vtable3 = &vt_TagTypeClass; /*0x6e5cbb*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x6e5cc2*/
   v2 = *(_DWORD **)(this + 160); /*0x6e5cc7*/
-  *(_DWORD *)(this + 160) = 0; /*0x6e5ccd*/
+  this->q0A0 = 0; /*0x6e5ccd*/
   if ( v2 ) /*0x6e5cd9*/
   {
     do /*0x6e5cfa*/
@@ -100,9 +100,9 @@ int __thiscall sub_6E5CA0(int this)
     while ( v3 ); /*0x6e5cfa*/
   }
   v4 = 0; /*0x6e5d01*/
-  if ( MEMORY[0xB0E730] > 0 ) /*0x6e5d05*/
+  if ( g_GameObjectCleanup > 0 ) /*0x6e5d05*/
   {
-    v5 = MEMORY[0xB0E724]; /*0x6e5d07*/
+    v5 = g_TagClassCount; /*0x6e5d07*/
     do /*0x6e5d2e*/
     {
       v6 = (_DWORD *)v5[v4]; /*0x6e5d0c*/
@@ -111,35 +111,35 @@ int __thiscall sub_6E5CA0(int this)
         if ( v6 ) /*0x6e5d16*/
         {
           (*(void (__thiscall **)(_DWORD *, int))(*v6 + 32))(v6, 1); /*0x6e5d1c*/
-          v5 = MEMORY[0xB0E724]; /*0x6e5d1f*/
+          v5 = g_TagClassCount; /*0x6e5d1f*/
         }
         --v4; /*0x6e5d24*/
       }
       ++v4; /*0x6e5d2b*/
     }
-    while ( v4 < MEMORY[0xB0E730] ); /*0x6e5d2e*/
+    while ( v4 < g_GameObjectCleanup ); /*0x6e5d2e*/
   }
   v10 = this; /*0x6e5d40*/
-  v7 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v10); /*0x6e5d44*/
-  if ( v7 != -1 && v7 < MEMORY[0xB0F680] && v7 < --MEMORY[0xB0F680] ) /*0x6e5d5f*/
+  v7 = (*(int (__thiscall **)(int *, int *))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v10); /*0x6e5d44*/
+  if ( v7 != -1 && v7 < g_AnimManager && v7 < --g_AnimManager ) /*0x6e5d5f*/
   {
     do /*0x6e5d77*/
     {
       ++v7; /*0x6e5d67*/
-      *((_DWORD *)MEMORY[0xB0F674] + v7 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v7); /*0x6e5d6b*/
+      *((_DWORD *)g_AnimPoolCount + v7 - 1) = *((_DWORD *)g_AnimPoolCount + v7); /*0x6e5d6b*/
     }
-    while ( v7 < MEMORY[0xB0F680] ); /*0x6e5d77*/
+    while ( v7 < g_AnimManager ); /*0x6e5d77*/
   }
   v10 = this; /*0x6e5d89*/
   v8 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0E780] + 16))(&MEMORY[0xB0E780], &v10); /*0x6e5d8d*/
-  if ( v8 != -1 && v8 < MEMORY[0xB0E790] && v8 < --MEMORY[0xB0E790] ) /*0x6e5da8*/
+  if ( v8 != -1 && v8 < g_MultiplayerCleanup && v8 < --g_MultiplayerCleanup ) /*0x6e5da8*/
   {
     do /*0x6e5dc0*/
     {
       ++v8; /*0x6e5db0*/
       *((_DWORD *)MEMORY[0xB0E784] + v8 - 1) = *((_DWORD *)MEMORY[0xB0E784] + v8); /*0x6e5db4*/
     }
-    while ( v8 < MEMORY[0xB0E790] ); /*0x6e5dc0*/
+    while ( v8 < g_MultiplayerCleanup ); /*0x6e5dc0*/
   }
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x6e5dc9*/
 }
@@ -184,12 +184,12 @@ char __thiscall TagTypeClass::_vt25(int this, unsigned __int8 ***a2)
           a2,
           (unsigned __int8 *)MEMORY[0x842C3C],
           (unsigned __int8 *)(this + 36),
-          &MEMORY[0x889F64],
+          &g_INI_DefaultBuffer,
           String,
           128) )
     return 0; /*0x6e6151*/
   strtok(String, MEMORY[0x817F70]); /*0x6e60cb*/
-  *(_DWORD *)(this + 156) = atoi(String); /*0x6e60e1*/
+  this->q09C = atoi(String); /*0x6e60e1*/
   v3 = strtok(0, MEMORY[0x817F70]); /*0x6e60e7*/
   if ( v3 ) /*0x6e60f1*/
   {
@@ -203,10 +203,10 @@ char __thiscall TagTypeClass::_vt25(int this, unsigned __int8 ***a2)
   if ( Destination != (char *)(this + 100) ) /*0x6e6118*/
   {
     qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x6e6123*/
-    *(_BYTE *)(this + 148) = v7; /*0x6e6125*/
+    this->q094 = v7; /*0x6e6125*/
   }
   v4 = strtok(0, MEMORY[0x817F70]); /*0x6e612d*/
-  *(_DWORD *)(this + 160) = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
+  this->q0A0 = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
   return 1; /*0x6e6143*/
 }
 }
@@ -222,9 +222,9 @@ char __thiscall TagTypeClass::_vt26(int this, char *a2)
   int v3; // eax
   CHAR Source[128]; // [esp+4h] [ebp-80h] BYREF
 
-  v3 = *(_DWORD *)(this + 160); /*0x6e6169*/
+  v3 = this->q0A0; /*0x6e6169*/
   if ( v3 ) /*0x6e6171*/
-    wsprintfA(Source, MEMORY[0x842CCC], *(_DWORD *)(this + 156), (const char *)(this + 100), (const char *)(v3 + 36)); /*0x6e61b4*/
+    wsprintfA(Source, MEMORY[0x842CCC], this->q09C, (const char *)(this + 100), (const char *)(v3 + 36)); /*0x6e61b4*/
   else
     wsprintfA(Source, MEMORY[0x842CD8], (const char *)(this + 100)); /*0x6e6181*/
   INIClass::SetString(a2, (unsigned __int8 *)MEMORY[0x842C3C], (char *)(this + 36), Source); /*0x6e6199*/
@@ -272,7 +272,7 @@ int TagTypeClass::PowerDrainUpdate(int * a2)
 int __thiscall TagTypeClass::_vt13(int this, int *a2)
 {
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6e63e9*/
-  return Power::TimerProcess(*(_DWORD *)(this + 156)); /*0x6e63fc*/
+  return Power::TimerProcess(this->q09C); /*0x6e63fc*/
 }
 }
 } // namespace gamemd

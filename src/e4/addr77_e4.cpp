@@ -772,14 +772,14 @@ int __fastcall WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int w
   WCHAR WideCharStr[2]; // [esp+8h] [ebp-4h] BYREF
 
   *(_DWORD *)WideCharStr = a1; /*0x7775c0*/
-  if ( MEMORY[0x887628] ) /*0x7775ce*/
+  if ( g_NetworkInterface ) /*0x7775ce*/
   {
-    v6 = (*(int (__thiscall **)(int, int))(*(_DWORD *)MEMORY[0x887628] + 56))(MEMORY[0x887628], -1); /*0x7775d4*/
+    v6 = (*(int (__thiscall **)(int, int))(*(_DWORD *)g_NetworkInterface + 56))(g_NetworkInterface, -1); /*0x7775d4*/
     if ( Msg == v6 || Msg == 1141 ) /*0x7775e5*/
     {
       v7 = hWnd; /*0x7775f9*/
-      if ( (*(int (__thiscall **)(int, HWND, UINT, signed int, LPARAM))(*(_DWORD *)MEMORY[0x887628] + 64))( /*0x7775ff*/
-             MEMORY[0x887628],
+      if ( (*(int (__thiscall **)(int, HWND, UINT, signed int, LPARAM))(*(_DWORD *)g_NetworkInterface + 64))( /*0x7775ff*/
+             g_NetworkInterface,
              hWnd,
              Msg,
              wParam,
@@ -813,41 +813,41 @@ int __fastcall WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int w
           MainWindowProc_Helper_724000(v9); /*0x7777a3*/
           v11[153] = 7; /*0x7777a8*/
           *v11 = &vt_CCToolTip; /*0x7777b2*/
-          MEMORY[0x887368] = (int)v11; /*0x7777b8*/
+          g_TacticalRender = (int)v11; /*0x7777b8*/
         }
         else
         {
-          MEMORY[0x887368] = 0; /*0x7777c3*/
+          g_TacticalRender = 0; /*0x7777c3*/
         }
         goto LABEL_71; /*0x7777be*/
       case 2u: /*0x7776ae*/
-        if ( MEMORY[0x887368] ) /*0x7777fb*/
+        if ( g_TacticalRender ) /*0x7777fb*/
         {
-          (**(void (__thiscall ***)(int, int))MEMORY[0x887368])(MEMORY[0x887368], 1); /*0x777801*/
-          MEMORY[0x887368] = 0; /*0x777803*/
+          (**(void (__thiscall ***)(int, int))g_TacticalRender)(g_TacticalRender, 1); /*0x777801*/
+          g_TacticalRender = 0; /*0x777803*/
         }
         g_hWnd = 0; /*0x77780e*/
         if ( MEMORY[0xA8EDD8] ) /*0x777816*/
           MEMORY[0xA8EDD8] = 2; /*0x777818*/
         return 0; /*0x777828*/
       case 3u: /*0x7776ae*/
-        if ( MEMORY[0x89F978] != 1 || !MEMORY[0x887640] ) /*0x7777e3*/
+        if ( MEMORY[0x89F978] != 1 || !g_WWMouseClass_Instance ) /*0x7777e3*/
           goto LABEL_72; /*0x7777e3*/
         MouseClass::CalcConfiningRect(); /*0x7777e9*/
         goto LABEL_71; /*0x7777ee*/
       case 0xFu: /*0x7776ae*/
         if ( MEMORY[0xA8EDA0] /*0x777700*/
           || MEMORY[0xA8ED80] != 1 && MEMORY[0x89F978] != 1
-          || !MEMORY[0x887640]
-          || !MEMORY[0x887308]
-          || !MEMORY[0x88730C]
-          || !MEMORY[0x88731C] )
+          || !g_WWMouseClass_Instance
+          || !g_DSurface_Primary
+          || !g_DSurface_Hidden
+          || !DSurface_Composite )
         {
           goto LABEL_26; /*0x777700*/
         }
         if ( MEMORY[0xA8ED5C] == 1 ) /*0x777709*/
         {
-          (*(void (**)(void))(*(_DWORD *)MEMORY[0x887640] + 28))(); /*0x777710*/
+          (*(void (**)(void))(*(_DWORD *)g_WWMouseClass_Instance + 28))(); /*0x777710*/
           Frame::Present(0); /*0x777717*/
           Sidebar::FlushSidebarTooltip(1); /*0x777723*/
           ValidateRect(v9, 0); /*0x77772a*/
@@ -861,7 +861,7 @@ int __fastcall WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int w
         {
           if ( !(unsigned __int8)Render_Draw_774070() ) /*0x777750*/
           {
-            (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 28))(MEMORY[0x887640]); /*0x777768*/
+            (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 28))(g_WWMouseClass_Instance); /*0x777768*/
             Frame::Present(0); /*0x77776f*/
           }
 LABEL_26:
@@ -917,18 +917,18 @@ LABEL_71:
             LOBYTE(v12) = 1; /*0x7778e2*/
             AsyncIO::Read(v12); /*0x7778e4*/
             sub_407020(); /*0x7778e9*/
-            if ( MEMORY[0x887640] ) /*0x7778f6*/
+            if ( g_WWMouseClass_Instance ) /*0x7778f6*/
             {
-              byte_B73560 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 28))(MEMORY[0x887640]); /*0x7778fd*/
+              byte_B73560 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 28))(g_WWMouseClass_Instance); /*0x7778fd*/
               v13 = g_Str_true; /*0x777904*/
               if ( !byte_B73560 ) /*0x777909*/
                 v13 = g_Str_false; /*0x77790b*/
               Debug::Log(MEMORY[0x849E70], v13); /*0x777916*/
-              (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 20))(MEMORY[0x887640]); /*0x777926*/
+              (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 20))(g_WWMouseClass_Instance); /*0x777926*/
             }
             Debug::Log(aFocusLost); /*0x77792e*/
           }
-          MEMORY[0x8A00A0] = 1; /*0x777942*/
+          g_LoadScreenFlag = 1; /*0x777942*/
         }
         return 0; /*0x77794f*/
       case 0x112u: /*0x777836*/
@@ -1658,8 +1658,8 @@ int __fastcall RunWOLMainLoop(char a1)
   int v18; // [esp+18h] [ebp-8h] BYREF
   char v19; // [esp+1Ch] [ebp-4h]
 
-  while ( (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 40))(MEMORY[0x887640]) < 0 ) /*0x77b2b6*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x77b2c0*/
+  while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) < 0 ) /*0x77b2b6*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x77b2c0*/
   RunWOLMainLoop_Helper(); /*0x77b2d2*/
   v2 = dword_A83D14; /*0x77b2d7*/
   if ( dword_A83D14 == -1 ) /*0x77b2e0*/
@@ -1707,7 +1707,7 @@ int __fastcall RunWOLMainLoop(char a1)
         if ( v9 != 1 ) /*0x77b3dc*/
         {
 LABEL_54:
-          MEMORY[0xA8B238][0] = 0; /*0x77b532*/
+          g_GameMode_Current[0] = 0; /*0x77b532*/
           MEMORY[0xA8B244] = 0; /*0x77b538*/
           MEMORY[0xA8B248] = 0; /*0x77b53e*/
           HandleLogoutWOL(); /*0x77b544*/
@@ -1721,7 +1721,7 @@ LABEL_54:
       {
         if ( !MEMORY[0xA8B244] ) /*0x77b3f0*/
         {
-          MEMORY[0xA8B238][0] = 0; /*0x77b562*/
+          g_GameMode_Current[0] = 0; /*0x77b562*/
           HandleLogoutWOL(); /*0x77b568*/
           byte_A83D22 = v16; /*0x77b571*/
           Dialog::CloseAll(); /*0x77b576*/
@@ -1819,7 +1819,7 @@ LABEL_42:
   else
   {
     HandleLogoutWOL(); /*0x77b5c9*/
-    MEMORY[0xA8B238][0] = 0; /*0x77b5d2*/
+    g_GameMode_Current[0] = 0; /*0x77b5d2*/
     byte_A83D22 = v16; /*0x77b5d8*/
     MEMORY[0xA8B244] = 0; /*0x77b5de*/
     MEMORY[0xA8B248] = 0; /*0x77b5e4*/
@@ -2553,16 +2553,16 @@ int sub_77D840()
   char (*v2)(); // edx
 
   Dialog = (HWND)CreateDialog(0xCFu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))OnlineLobbyDlgProcWOL, 0); /*0x77d858*/
-  MEMORY[0xA8ED9C] = 1; /*0x77d85a*/
-  Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x77d861*/
+  g_GameActive = 1; /*0x77d85a*/
+  Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x77d861*/
   ShowWindow(Dialog, 1); /*0x77d869*/
   GameUI = Dialog::FindGameUI(); /*0x77d86f*/
   v2 = Dialog::UpdateGameUI; /*0x77d87c*/
   if ( !GameUI ) /*0x77d881*/
     v2 = Dialog::PumpMessages; /*0x77d883*/
   MessageDialogLoopAlt(Dialog, (unsigned __int8 (*)(void))v2, 0, 1, 1); /*0x77d88a*/
-  Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x77d895*/
-  MEMORY[0xA8ED9C] = *((_BYTE *)MEMORY[0xA8B230] + 13730); /*0x77d8a7*/
+  Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x77d895*/
+  g_GameActive = *((_BYTE *)g_ScenarioClass_Instance + 13730); /*0x77d8a7*/
   return MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2); /*0x77d8b7*/
 }
 }

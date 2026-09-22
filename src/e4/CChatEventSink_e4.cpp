@@ -169,7 +169,7 @@ LABEL_43:
             String::Assign_Bool(&v32, v6 + 52); /*0x7aab0c*/
             CChatEventSink::EncodeString(39); /*0x7aab1f*/
             String::ToLower((const char **)&v32); /*0x7aab28*/
-            if ( MEMORY[0xA8B238][0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x7aab41*/
+            if ( g_GameMode_Current[0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x7aab41*/
             {
               unknown_libname_73(&v37); /*0x7aab4b*/
               v16 = g_WOL_ChatPool; /*0x7aab50*/

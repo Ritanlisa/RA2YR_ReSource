@@ -19,7 +19,7 @@ void __thiscall DSurface::Process(int this, IUnknown *aP1, int *a2)
     (CCINIClass *)a2[1],
     a2[2],
     (IUnknown *)a2[3],
-    *(char *)(this + 283),
+    this->__pad_11B,
     *(__int16 *)(this + 268),
     1,
     0,
@@ -257,14 +257,14 @@ LABEL_8:
       if ( !(*(int (__stdcall **)(int, _DWORD, HWND))(v17 + 32))(MEMORY[0x8A0DCC], 0, ActiveWindow) ) /*0x4ba994*/
         (*(void (__stdcall **)(int, int))(*(_DWORD *)*v8 + 112))(*v8, MEMORY[0x8A0DCC]); /*0x4ba9a7*/
     }
-    qmemcpy(&MEMORY[0x8A0948], (const void *)(v7[8] + 72), 0x20u); /*0x4ba9ba*/
+    qmemcpy(&g_DDraw_PixelFormatDesc, (const void *)(v7[8] + 72), 0x20u); /*0x4ba9ba*/
     if ( (*(int (__thiscall **)(_DWORD *))(*v7 + 112))(v7) != 2 ) /*0x4ba9c7*/
       goto LABEL_65; /*0x4ba9c7*/
     v19 = MEMORY[0x8A0958]; /*0x4ba9cd*/
     v20 = 0; /*0x4ba9d2*/
     v21 = 0; /*0x4ba9d4*/
     MEMORY[0x8A0DD0] = 0; /*0x4ba9d6*/
-    MEMORY[0x8A0DD4] = 0; /*0x4ba9dc*/
+    g_BitShift_Green_0 = 0; /*0x4ba9dc*/
     do /*0x4ba9ec*/
     {
       if ( (v19 & 1) != 0 ) /*0x4ba9e4*/
@@ -285,7 +285,7 @@ LABEL_8:
     v22 = MEMORY[0x8A095C]; /*0x4baa00*/
     v23 = 0; /*0x4baa05*/
     v24 = 0; /*0x4baa07*/
-    MEMORY[0x8A0DD4] = v21; /*0x4baa09*/
+    g_BitShift_Green_0 = v21; /*0x4baa09*/
     MEMORY[0x8A0DE0] = 0; /*0x4baa0f*/
     MEMORY[0x8A0DE4] = 0; /*0x4baa15*/
     do /*0x4baa25*/
@@ -330,13 +330,13 @@ LABEL_8:
     while ( v27 < 8 ); /*0x4baa71*/
     MEMORY[0x8A0DDC] = v27; /*0x4baa83*/
     g_DDraw_PixelFormat = -1; /*0x4baa89*/
-    LOWORD(MEMORY[0x8A0DE8]) = (127 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x4baac1*/
+    LOWORD(MEMORY[0x8A0DE8]) = (127 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x4baac1*/
                              | (127 >> v24 << MEMORY[0x8A0DE0])
                              | (127 >> v27 << v26);
-    HIWORD(MEMORY[0x8A0DE8]) = (63 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x4baaff*/
+    HIWORD(MEMORY[0x8A0DE8]) = (63 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x4baaff*/
                              | (63 >> v24 << MEMORY[0x8A0DE0])
                              | (63 >> v27 << v26);
-    MEMORY[0x8A0DEC] = (31 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x4bab38*/
+    MEMORY[0x8A0DEC] = (31 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x4bab38*/
                      | (31 >> v24 << MEMORY[0x8A0DE0])
                      | (31 >> v27 << v26);
     if ( v26 ) /*0x4bab3f*/
@@ -347,7 +347,7 @@ LABEL_8:
         goto LABEL_65; /*0x4bab55*/
       if ( v24 != 3 ) /*0x4bab5d*/
       {
-        if ( v24 == 2 && MEMORY[0x8A0DD0] == 11 && MEMORY[0x8A0DD4] == 3 ) /*0x4babd2*/
+        if ( v24 == 2 && MEMORY[0x8A0DD0] == 11 && g_BitShift_Green_0 == 3 ) /*0x4babd2*/
         {
           g_DDraw_PixelFormat = 2; /*0x4babd9*/
           Debug::Log(g_Str_DSurface__Create_Primary_done); /*0x4babdf*/
@@ -357,7 +357,7 @@ LABEL_8:
       }
       if ( MEMORY[0x8A0DD0] == 10 ) /*0x4bab66*/
       {
-        if ( MEMORY[0x8A0DD4] == 3 ) /*0x4bab72*/
+        if ( g_BitShift_Green_0 == 3 ) /*0x4bab72*/
         {
           g_DDraw_PixelFormat = 0; /*0x4bab7d*/
           Debug::Log(g_Str_DSurface__Create_Primary_done); /*0x4bab87*/
@@ -365,14 +365,14 @@ LABEL_8:
         }
         goto LABEL_65; /*0x4bab72*/
       }
-      if ( MEMORY[0x8A0DD0] != 11 || MEMORY[0x8A0DD4] != 2 ) /*0x4bac05*/
+      if ( MEMORY[0x8A0DD0] != 11 || g_BitShift_Green_0 != 2 ) /*0x4bac05*/
       {
 LABEL_65:
         Debug::Log(g_Str_DSurface__Create_Primary_done); /*0x4bac11*/
         return v7; /*0x4bac27*/
       }
     }
-    else if ( v27 != 2 || MEMORY[0x8A0DE0] != 6 || v24 != 3 || MEMORY[0x8A0DD0] != 11 || MEMORY[0x8A0DD4] != 3 ) /*0x4babba*/
+    else if ( v27 != 2 || MEMORY[0x8A0DE0] != 6 || v24 != 3 || MEMORY[0x8A0DD0] != 11 || g_BitShift_Green_0 != 3 ) /*0x4babba*/
     {
       goto LABEL_65; /*0x4babba*/
     }
@@ -912,7 +912,7 @@ char __userpurge DSurface_FillRectWithFlags@<al>(int a1@<ecx>, int a2@<ebx>, int
   v40 = v8; /*0x4bb8a8*/
   if ( v39 <= 0 || v8 <= 0 ) /*0x4bb8b0*/
     return 0; /*0x4bb8b2*/
-  v9 = 0xFFu >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]; /*0x4bb8de*/
+  v9 = 0xFFu >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]; /*0x4bb8de*/
   v29 = v9; /*0x4bb8f1*/
   v10 = 0xFFu >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0]; /*0x4bb8f5*/
   v28 = v10; /*0x4bb908*/
@@ -933,7 +933,7 @@ char __userpurge DSurface_FillRectWithFlags@<al>(int a1@<ecx>, int a2@<ebx>, int
   LOWORD(v13) = (unsigned __int8)(a4[1] >> MEMORY[0x8A0DE4]); /*0x4bb9b1*/
   v15 = v13 << MEMORY[0x8A0DE0]; /*0x4bb9b5*/
   v16 = v15 | (a2 << MEMORY[0x8A0DD8]); /*0x4bb9c5*/
-  LOWORD(v15) = (unsigned __int8)(*a4 >> MEMORY[0x8A0DD4]); /*0x4bb9ca*/
+  LOWORD(v15) = (unsigned __int8)(*a4 >> g_BitShift_Green_0); /*0x4bb9ca*/
   v17 = (v15 << MEMORY[0x8A0DD0]) | v16; /*0x4bb9d2*/
   for ( i = v17; v41 < v40; ++v41 ) /*0x4bb9da*/
   {
@@ -1010,7 +1010,7 @@ void __fastcall sub_4BBB00(int a1, int a2, int a3)
         if ( v10 >= 255 ) /*0x4bbbad*/
           v10 = 255; /*0x4bbbaf*/
         a1 += 2; /*0x4bbbba*/
-        *(_WORD *)(a1 - 2) = (v8 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x4bbbec*/
+        *(_WORD *)(a1 - 2) = (v8 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x4bbbec*/
                            | (v9 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
                            | (v10 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
       }
@@ -1213,14 +1213,14 @@ char __fastcall DSurface_DrawLineModulated(
       (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v90[0] + 112))(v90[0]); /*0x4bbf19*/
       v31 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v30 + 92))(v30, v91, HIDWORD(v91)); /*0x4bbf33*/
       v98 = v31; /*0x4bbf37*/
-      if ( MEMORY[0x887644] ) /*0x4bbf3b*/
+      if ( g_ZBufferDescriptor ) /*0x4bbf3b*/
       {
-        v32 = *((_DWORD *)MEMORY[0x887644] + 1); /*0x4bbf45*/
+        v32 = *((_DWORD *)g_ZBufferDescriptor + 1); /*0x4bbf45*/
         v90[2] = HIDWORD(v91); /*0x4bbf4c*/
         v106 = (_WORD *)Audio::GetSamplePosition(v91, HIDWORD(v91) - v32); /*0x4bbf5d*/
         v83 = -1; /*0x4bbf6d*/
-        LOWORD(v33) = *((_WORD *)MEMORY[0x887644] + 2) + *((_WORD *)MEMORY[0x887644] + 18); /*0x4bbf79*/
-        v99 = *((_DWORD *)MEMORY[0x887644] + 10); /*0x4bbf80*/
+        LOWORD(v33) = *((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18); /*0x4bbf79*/
+        v99 = *((_DWORD *)g_ZBufferDescriptor + 10); /*0x4bbf80*/
         v34 = v104; /*0x4bbf8b*/
         v105 = v104 + v33 - HIDWORD(v91) - v94; /*0x4bbf96*/
         if ( v31 ) /*0x4bbf9d*/
@@ -1254,7 +1254,7 @@ char __fastcall DSurface_DrawLineModulated(
             v85 = v42 - v41; /*0x4bc048*/
             if ( v41 > 0 ) /*0x4bc04c*/
             {
-              v44 = MEMORY[0x887644]; /*0x4bc052*/
+              v44 = g_ZBufferDescriptor; /*0x4bc052*/
               v101 = 0; /*0x4bc058*/
               v88 = v41; /*0x4bc05f*/
               do /*0x4bc27e*/
@@ -1262,7 +1262,7 @@ char __fastcall DSurface_DrawLineModulated(
                 if ( (unsigned __int16)v105 < *v106 ) /*0x4bc075*/
                 {
                   v45 = *(_WORD *)(v101 + v98); /*0x4bc092*/
-                  LOBYTE(v90[1]) = (unsigned __int8)(v45 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4bc0ab*/
+                  LOBYTE(v90[1]) = (unsigned __int8)(v45 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4bc0ab*/
                   BYTE1(v90[1]) = (unsigned __int8)(v45 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4bc0cc*/
                   BYTE2(v90[1]) = (unsigned __int8)(v45 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x4bc0d2*/
                   v46 = ((a6 * LOBYTE(v90[1])) >> 8) + LOBYTE(v90[1]); /*0x4bc0f7*/
@@ -1276,10 +1276,10 @@ char __fastcall DSurface_DrawLineModulated(
                     v46 = 255; /*0x4bc143*/
                   *(_WORD *)(v101 + v98) = (v47 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4bc17b*/
                                          | (v48 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                         | (v46 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                         | (v46 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
                   if ( a9 ) /*0x4bc188*/
                     *v106 = v105; /*0x4bc199*/
-                  v44 = MEMORY[0x887644]; /*0x4bc19c*/
+                  v44 = g_ZBufferDescriptor; /*0x4bc19c*/
                 }
                 v49 = v87[0]; /*0x4bc1a2*/
                 if ( v87[0] <= 0 ) /*0x4bc1a8*/
@@ -1333,7 +1333,7 @@ char __fastcall DSurface_DrawLineModulated(
             v87[0] = v43 - v39; /*0x4bc50b*/
             if ( v39 > 0 ) /*0x4bc50f*/
             {
-              v67 = MEMORY[0x887644]; /*0x4bc515*/
+              v67 = g_ZBufferDescriptor; /*0x4bc515*/
               v103 = 0; /*0x4bc51b*/
               v86 = v39; /*0x4bc522*/
               do /*0x4bc728*/
@@ -1341,7 +1341,7 @@ char __fastcall DSurface_DrawLineModulated(
                 if ( (unsigned __int16)v105 < *v106 ) /*0x4bc538*/
                 {
                   v68 = *(_WORD *)(v103 + v98); /*0x4bc555*/
-                  LOBYTE(v90[1]) = (unsigned __int8)(v68 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4bc56e*/
+                  LOBYTE(v90[1]) = (unsigned __int8)(v68 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4bc56e*/
                   BYTE1(v90[1]) = (unsigned __int8)(v68 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4bc58f*/
                   BYTE2(v90[1]) = (unsigned __int8)(v68 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x4bc595*/
                   v69 = ((a6 * LOBYTE(v90[1])) >> 8) + LOBYTE(v90[1]); /*0x4bc5ba*/
@@ -1355,10 +1355,10 @@ char __fastcall DSurface_DrawLineModulated(
                     v69 = 255; /*0x4bc606*/
                   *(_WORD *)(v103 + v98) = (v70 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4bc63e*/
                                          | (v71 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                         | (v69 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                         | (v69 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
                   if ( a9 ) /*0x4bc64b*/
                     *v106 = v105; /*0x4bc65c*/
-                  v67 = MEMORY[0x887644]; /*0x4bc65f*/
+                  v67 = g_ZBufferDescriptor; /*0x4bc65f*/
                 }
                 v72 = v88; /*0x4bc665*/
                 if ( v88 <= 0 ) /*0x4bc66b*/
@@ -1414,13 +1414,13 @@ LABEL_48:
             (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v90[0] + 96))(v90[0]); /*0x4bc284*/
             return 1; /*0x4bc296*/
           }
-          v57 = MEMORY[0x887644]; /*0x4bc2c0*/
+          v57 = g_ZBufferDescriptor; /*0x4bc2c0*/
           while ( 1 ) /*0x4bc2c6*/
           {
             if ( (unsigned __int16)v105 < *v106 ) /*0x4bc2d8*/
             {
               v58 = *(_WORD *)(v98 + 2 * v102); /*0x4bc2f5*/
-              LOBYTE(v90[1]) = (unsigned __int8)(v58 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4bc30e*/
+              LOBYTE(v90[1]) = (unsigned __int8)(v58 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4bc30e*/
               BYTE1(v90[1]) = (unsigned __int8)(v58 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4bc32f*/
               BYTE2(v90[1]) = (unsigned __int8)(v58 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x4bc335*/
               v59 = ((a6 * LOBYTE(v90[1])) >> 8) + LOBYTE(v90[1]); /*0x4bc35a*/
@@ -1434,10 +1434,10 @@ LABEL_48:
                 v59 = 255; /*0x4bc3a6*/
               *(_WORD *)(v98 + 2 * v102) = (v60 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4bc3de*/
                                          | (v61 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                         | (v59 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                         | (v59 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
               if ( a9 ) /*0x4bc3eb*/
                 *v106 = v105; /*0x4bc3fc*/
-              v57 = MEMORY[0x887644]; /*0x4bc3ff*/
+              v57 = g_ZBufferDescriptor; /*0x4bc3ff*/
             }
             v62 = v88; /*0x4bc405*/
             if ( v88 <= 0 ) /*0x4bc40b*/
@@ -1821,18 +1821,18 @@ char __thiscall DSurface_DrawLineFaded(
   v38 = v211; /*0x4bca88*/
   v39 = (*(int (__thiscall **)(void *, int, int))(*(_DWORD *)v211 + 92))(v211, v34, v35); /*0x4bca9e*/
   v178 = v39; /*0x4bcaa2*/
-  if ( !MEMORY[0x887644] ) /*0x4bcaa6*/
+  if ( !g_ZBufferDescriptor ) /*0x4bcaa6*/
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)v38 + 96))(v38); /*0x4bcaac*/
     return 0; /*0x4bcabb*/
   }
-  v41 = *((_DWORD *)MEMORY[0x887644] + 1); /*0x4bcac2*/
+  v41 = *((_DWORD *)g_ZBufferDescriptor + 1); /*0x4bcac2*/
   v218 = v206; /*0x4bcac9*/
   v160 = (_WORD *)Audio::GetSamplePosition(v205, v206 - v41); /*0x4bcadf*/
-  v42 = (_WORD *)StreamClass::ReadAndSeek(v205 - *(_DWORD *)MEMORY[0x87E8A4], v206 - *((_DWORD *)MEMORY[0x87E8A4] + 1)); /*0x4bcaf6*/
+  v42 = (_WORD *)StreamClass::ReadAndSeek(v205 - *(_DWORD *)g_VisibleSurfaceDescriptor, v206 - *((_DWORD *)g_VisibleSurfaceDescriptor + 1)); /*0x4bcaf6*/
   v172 = v42; /*0x4bcb0c*/
-  v43 = *((_DWORD *)MEMORY[0x887644] + 10); /*0x4bcb14*/
-  LOWORD(v42) = *((_WORD *)MEMORY[0x887644] + 2) + *((_WORD *)MEMORY[0x887644] + 18); /*0x4bcb17*/
+  v43 = *((_DWORD *)g_ZBufferDescriptor + 10); /*0x4bcb14*/
+  LOWORD(v42) = *((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18); /*0x4bcb17*/
   v212 = v43; /*0x4bcb1b*/
   v203 = -1; /*0x4bcb22*/
   v171 = (int)v42 + v151 - v226 - v206; /*0x4bcb36*/
@@ -1876,7 +1876,7 @@ char __thiscall DSurface_DrawLineFaded(
         v220 = v127; /*0x4bda4a*/
         if ( v49 > 0 ) /*0x4bda51*/
         {
-          v128 = MEMORY[0x887644]; /*0x4bda57*/
+          v128 = g_ZBufferDescriptor; /*0x4bda57*/
           v170 = 0; /*0x4bda61*/
           v200 = -v127; /*0x4bda65*/
           v155 = 0; /*0x4bda69*/
@@ -1894,11 +1894,11 @@ char __thiscall DSurface_DrawLineFaded(
               v133 = *(_DWORD *)((char *)&MEMORY[0x8A0D80] - v130); /*0x4bdaec*/
               v192 = *(int *)((char *)MEMORY[0x8A0980] + v130); /*0x4bdaf2*/
               LOWORD(v130) = *(_WORD *)(v170 + v178); /*0x4bdafd*/
-              LOBYTE(v209) = (unsigned __int8)((unsigned __int16)v130 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4bdb15*/
+              LOBYTE(v209) = (unsigned __int8)((unsigned __int16)v130 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4bdb15*/
               BYTE1(v209) = (unsigned __int8)((unsigned __int16)v130 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4bdb26*/
               BYTE2(v209) = (unsigned __int8)((unsigned __int16)v130 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x4bdb42*/
               LOWORD(v130) = *(_WORD *)(v170 + v178 + 2); /*0x4bdb46*/
-              LOBYTE(v217) = (unsigned __int8)((unsigned __int16)v130 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4bdb66*/
+              LOBYTE(v217) = (unsigned __int8)((unsigned __int16)v130 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4bdb66*/
               v134 = (unsigned __int8)v209; /*0x4bdb8a*/
               BYTE1(v217) = (unsigned __int8)((unsigned __int16)v130 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4bdb90*/
               v135 = BYTE1(v209); /*0x4bdb9b*/
@@ -1935,7 +1935,7 @@ char __thiscall DSurface_DrawLineFaded(
                 v134 = 255; /*0x4bdcdf*/
               *(_WORD *)(v178 + v170) = (v138 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4bdd25*/
                                       | (v135 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                      | (v134 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                      | (v134 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
               if ( v137 > 255 ) /*0x4bdd29*/
                 v137 = 255; /*0x4bdd2b*/
               v139 = v183; /*0x4bdd30*/
@@ -1946,10 +1946,10 @@ char __thiscall DSurface_DrawLineFaded(
                 v140 = 255; /*0x4bdd4d*/
               *(_WORD *)(v178 + v170 + 2) = (v137 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4bdd8f*/
                                           | (v139 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                          | (v140 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                          | (v140 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
               if ( a8 ) /*0x4bdd94*/
                 *v160 = v171; /*0x4bdd9f*/
-              v128 = MEMORY[0x887644]; /*0x4bdda2*/
+              v128 = g_ZBufferDescriptor; /*0x4bdda2*/
             }
             v141 = v162 - v220; /*0x4bddb7*/
             v162 -= v220; /*0x4bddbd*/
@@ -1969,8 +1969,8 @@ char __thiscall DSurface_DrawLineFaded(
               if ( (unsigned int)(v160 + 1) >= v128[7] ) /*0x4bddfa*/
                 v143 = (_WORD *)((char *)v143 - v128[8]); /*0x4bddfc*/
               v144 = v172 + 1; /*0x4bde03*/
-              if ( (unsigned int)(v172 + 1) >= *((_DWORD *)MEMORY[0x87E8A4] + 7) ) /*0x4bde0f*/
-                v144 = (_WORD *)((char *)v144 - *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4bde11*/
+              if ( (unsigned int)(v172 + 1) >= *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x4bde0f*/
+                v144 = (_WORD *)((char *)v144 - *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4bde11*/
             }
             v145 = v201; /*0x4bde1e*/
             v146 = v171; /*0x4bde22*/
@@ -1999,14 +1999,14 @@ char __thiscall DSurface_DrawLineFaded(
             if ( v212 <= 0 ) /*0x4bde86*/
             {
               v150 = v149; /*0x4bdea1*/
-              if ( (unsigned int)v149 < *((_DWORD *)MEMORY[0x87E8A4] + 6) ) /*0x4bdea6*/
-                v150 = (_WORD *)((char *)v149 + *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4bdeab*/
+              if ( (unsigned int)v149 < *((_DWORD *)g_VisibleSurfaceDescriptor + 6) ) /*0x4bdea6*/
+                v150 = (_WORD *)((char *)v149 + *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4bdeab*/
               v172 = v150; /*0x4bdead*/
             }
             else
             {
-              if ( (unsigned int)v149 >= *((_DWORD *)MEMORY[0x87E8A4] + 7) ) /*0x4bde90*/
-                v149 = (_WORD *)((char *)v149 - *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4bde92*/
+              if ( (unsigned int)v149 >= *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x4bde90*/
+                v149 = (_WORD *)((char *)v149 - *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4bde92*/
               v172 = v149; /*0x4bde95*/
             }
             v100 = v177 == 1; /*0x4bdebb*/
@@ -2024,8 +2024,8 @@ char __thiscall DSurface_DrawLineFaded(
         v176 = 0; /*0x4bd58a*/
         if ( v44 > 0 ) /*0x4bd592*/
         {
-          v102 = MEMORY[0x887644]; /*0x4bd598*/
-          v103 = MEMORY[0x87E8A4]; /*0x4bd59e*/
+          v102 = g_ZBufferDescriptor; /*0x4bd598*/
+          v103 = g_VisibleSurfaceDescriptor; /*0x4bd59e*/
           v204 = -v101; /*0x4bd5aa*/
           v154 = 2 * v50; /*0x4bd5ae*/
           v199 = 0; /*0x4bd5b2*/
@@ -2042,11 +2042,11 @@ char __thiscall DSurface_DrawLineFaded(
               v108 = *(_DWORD *)((char *)&MEMORY[0x8A0D80] - v105); /*0x4bd635*/
               v191 = *(int *)((char *)MEMORY[0x8A0980] + v105); /*0x4bd63b*/
               LOWORD(v105) = *(_WORD *)(v178 + 2 * v176); /*0x4bd646*/
-              LOBYTE(v209) = (unsigned __int8)((unsigned __int16)v105 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4bd65e*/
+              LOBYTE(v209) = (unsigned __int8)((unsigned __int16)v105 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4bd65e*/
               BYTE1(v209) = (unsigned __int8)((unsigned __int16)v105 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4bd66f*/
               BYTE2(v209) = (unsigned __int8)((unsigned __int16)v105 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x4bd68b*/
               LOWORD(v105) = *(_WORD *)(v154 + v178); /*0x4bd68f*/
-              LOBYTE(v202[0]) = (unsigned __int8)((unsigned __int16)v105 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4bd6ae*/
+              LOBYTE(v202[0]) = (unsigned __int8)((unsigned __int16)v105 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4bd6ae*/
               BYTE1(v202[0]) = (unsigned __int8)((unsigned __int16)v105 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4bd6cb*/
               BYTE2(v202[0]) = (unsigned __int8)((unsigned __int16)v105 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x4bd6d1*/
               v186 = (unsigned __int8)v209; /*0x4bd6ea*/
@@ -2082,7 +2082,7 @@ char __thiscall DSurface_DrawLineFaded(
                 v109 = 255; /*0x4bd815*/
               *(_WORD *)(v178 + 2 * v176) = (v113 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4bd85b*/
                                           | (v110 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                          | (v109 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                          | (v109 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
               if ( v112 > 255 ) /*0x4bd85f*/
                 v112 = 255; /*0x4bd861*/
               v114 = v182; /*0x4bd866*/
@@ -2093,11 +2093,11 @@ char __thiscall DSurface_DrawLineFaded(
                 v115 = 255; /*0x4bd883*/
               *(_WORD *)(v154 + v178) = (v112 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4bd8c0*/
                                       | (v114 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                      | (v115 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                      | (v115 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
               if ( a8 ) /*0x4bd8cd*/
                 *v160 = v171; /*0x4bd8d8*/
-              v102 = MEMORY[0x887644]; /*0x4bd8db*/
-              v103 = MEMORY[0x87E8A4]; /*0x4bd8e1*/
+              v102 = g_ZBufferDescriptor; /*0x4bd8db*/
+              v103 = g_VisibleSurfaceDescriptor; /*0x4bd8e1*/
             }
             v116 = v162 - v220; /*0x4bd8f6*/
             v162 -= v220; /*0x4bd8fc*/
@@ -2173,8 +2173,8 @@ char __thiscall DSurface_DrawLineFaded(
         v190 = Math::RoundToInt((double)v168 / (double)v49 * 256.0); /*0x4bd0de*/
         if ( v49 > 0 ) /*0x4bd0e2*/
         {
-          v77 = MEMORY[0x887644]; /*0x4bd0f3*/
-          v78 = MEMORY[0x87E8A4]; /*0x4bd0f9*/
+          v77 = g_ZBufferDescriptor; /*0x4bd0f3*/
+          v78 = g_VisibleSurfaceDescriptor; /*0x4bd0f9*/
           v198 = v203 + v214; /*0x4bd103*/
           v157 = 0; /*0x4bd10d*/
           v203 = 0; /*0x4bd115*/
@@ -2192,11 +2192,11 @@ char __thiscall DSurface_DrawLineFaded(
               v83 = *(_DWORD *)((char *)&MEMORY[0x8A0D80] - v80); /*0x4bd198*/
               v153 = *(int *)((char *)MEMORY[0x8A0980] + v80); /*0x4bd19e*/
               LOWORD(v80) = *(_WORD *)(v157 + v178); /*0x4bd1a9*/
-              LOBYTE(v202[0]) = (unsigned __int8)((unsigned __int16)v80 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4bd1c1*/
+              LOBYTE(v202[0]) = (unsigned __int8)((unsigned __int16)v80 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4bd1c1*/
               BYTE1(v202[0]) = (unsigned __int8)((unsigned __int16)v80 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4bd1d2*/
               BYTE2(v202[0]) = (unsigned __int8)((unsigned __int16)v80 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x4bd1ee*/
               LOWORD(v80) = *(_WORD *)(v157 + v178 + 2); /*0x4bd1f2*/
-              LOBYTE(v204) = (unsigned __int8)((unsigned __int16)v80 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4bd212*/
+              LOBYTE(v204) = (unsigned __int8)((unsigned __int16)v80 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4bd212*/
               v84 = LOBYTE(v202[0]); /*0x4bd233*/
               BYTE1(v204) = (unsigned __int8)((unsigned __int16)v80 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4bd239*/
               v85 = BYTE1(v202[0]); /*0x4bd241*/
@@ -2233,7 +2233,7 @@ char __thiscall DSurface_DrawLineFaded(
                 v84 = 255; /*0x4bd379*/
               *(_WORD *)(v178 + v157) = (v88 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4bd3bf*/
                                       | (v85 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                      | (v84 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                      | (v84 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
               if ( v87 > 255 ) /*0x4bd3c3*/
                 v87 = 255; /*0x4bd3c5*/
               v89 = v181; /*0x4bd3ca*/
@@ -2244,11 +2244,11 @@ char __thiscall DSurface_DrawLineFaded(
                 v90 = 255; /*0x4bd3e7*/
               *(_WORD *)(v178 + v157 + 2) = (v87 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4bd429*/
                                           | (v89 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                          | (v90 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                          | (v90 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
               if ( a8 ) /*0x4bd42e*/
                 *v160 = v171; /*0x4bd439*/
-              v77 = MEMORY[0x887644]; /*0x4bd43c*/
-              v78 = MEMORY[0x87E8A4]; /*0x4bd442*/
+              v77 = g_ZBufferDescriptor; /*0x4bd43c*/
+              v78 = g_VisibleSurfaceDescriptor; /*0x4bd442*/
             }
             v91 = v161 - v190; /*0x4bd454*/
             v161 -= v190; /*0x4bd45a*/
@@ -2315,7 +2315,7 @@ char __thiscall DSurface_DrawLineFaded(
         v179 = 0; /*0x4bcc36*/
         if ( v44 > 0 ) /*0x4bcc3e*/
         {
-          v54 = MEMORY[0x887644]; /*0x4bcc44*/
+          v54 = g_ZBufferDescriptor; /*0x4bcc44*/
           v156 = 0; /*0x4bcc4a*/
           v195 = -v53; /*0x4bcc54*/
           v163 = 2 * v50; /*0x4bcc5c*/
@@ -2332,11 +2332,11 @@ char __thiscall DSurface_DrawLineFaded(
               v197 = *(int *)((char *)MEMORY[0x8A0980] + v57); /*0x4bccd0*/
               v174 = *(_DWORD *)((char *)&MEMORY[0x8A0D80] - v57); /*0x4bcce1*/
               LOWORD(v57) = *(_WORD *)(v178 + 2 * v179); /*0x4bcce9*/
-              LOBYTE(v204) = (unsigned __int8)((unsigned __int16)v57 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4bcd08*/
+              LOBYTE(v204) = (unsigned __int8)((unsigned __int16)v57 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4bcd08*/
               BYTE1(v204) = (unsigned __int8)((unsigned __int16)v57 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4bcd29*/
               BYTE2(v204) = (unsigned __int8)((unsigned __int16)v57 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x4bcd33*/
               LOWORD(v57) = *(_WORD *)(v163 + v178); /*0x4bcd3b*/
-              LOBYTE(v202[0]) = (unsigned __int8)((unsigned __int16)v57 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4bcd5a*/
+              LOBYTE(v202[0]) = (unsigned __int8)((unsigned __int16)v57 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4bcd5a*/
               BYTE1(v202[0]) = (unsigned __int8)((unsigned __int16)v57 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4bcd7b*/
               v59 = BYTE1(v204); /*0x4bcd83*/
               v180 = BYTE1(v204); /*0x4bcd8b*/
@@ -2373,7 +2373,7 @@ char __thiscall DSurface_DrawLineFaded(
                 v60 = 255; /*0x4bceb4*/
               *(_WORD *)(v178 + 2 * v179) = (v64 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4bcefa*/
                                           | (v61 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                          | (v60 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                          | (v60 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
               if ( v63 > 255 ) /*0x4bcefe*/
                 v63 = 255; /*0x4bcf00*/
               if ( v59 > 255 ) /*0x4bcf0b*/
@@ -2383,10 +2383,10 @@ char __thiscall DSurface_DrawLineFaded(
                 v65 = 255; /*0x4bcf1e*/
               *(_WORD *)(v163 + v178) = (v63 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4bcf5b*/
                                       | (v59 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                      | (v65 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                      | (v65 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
               if ( a8 ) /*0x4bcf68*/
                 *v160 = v171; /*0x4bcf73*/
-              v54 = MEMORY[0x887644]; /*0x4bcf76*/
+              v54 = g_ZBufferDescriptor; /*0x4bcf76*/
             }
             v66 = v161 - v189; /*0x4bcf88*/
             v161 -= v189; /*0x4bcf8e*/
@@ -2397,7 +2397,7 @@ char __thiscall DSurface_DrawLineFaded(
               v73 = v171; /*0x4bd043*/
               v72 = v172; /*0x4bd047*/
               v70 = v160; /*0x4bd04b*/
-              v71 = MEMORY[0x87E8A4]; /*0x4bd04f*/
+              v71 = g_VisibleSurfaceDescriptor; /*0x4bd04f*/
             }
             else
             {
@@ -2421,17 +2421,17 @@ char __thiscall DSurface_DrawLineFaded(
               if ( v212 <= 0 ) /*0x4bcfff*/
               {
                 v74 = &v172[v212]; /*0x4bd023*/
-                if ( (unsigned int)v69 < *((_DWORD *)MEMORY[0x87E8A4] + 6) ) /*0x4bd028*/
-                  v74 = (_WORD *)((char *)v69 + *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4bd02d*/
-                v71 = MEMORY[0x87E8A4]; /*0x4bd033*/
+                if ( (unsigned int)v69 < *((_DWORD *)g_VisibleSurfaceDescriptor + 6) ) /*0x4bd028*/
+                  v74 = (_WORD *)((char *)v69 + *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4bd02d*/
+                v71 = g_VisibleSurfaceDescriptor; /*0x4bd033*/
                 v72 = v74; /*0x4bd039*/
                 v73 = v203 + v171; /*0x4bd03f*/
               }
               else
               {
-                v71 = MEMORY[0x87E8A4]; /*0x4bd001*/
-                if ( (unsigned int)v69 >= *((_DWORD *)MEMORY[0x87E8A4] + 7) ) /*0x4bd00a*/
-                  v69 = (_WORD *)((char *)v69 - *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4bd00c*/
+                v71 = g_VisibleSurfaceDescriptor; /*0x4bd001*/
+                if ( (unsigned int)v69 >= *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x4bd00a*/
+                  v69 = (_WORD *)((char *)v69 - *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4bd00c*/
                 v72 = v69; /*0x4bd017*/
                 v73 = v203 + v171; /*0x4bd019*/
               }
@@ -2645,17 +2645,17 @@ char __thiscall DSurface_DrawLineZBufColored(
   (*(void (__thiscall **)(void *))(this->q01C)(this); /*0x4be24f*/
   v33 = (*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, v87, HIDWORD(v87)); /*0x4be269*/
   v96 = v33; /*0x4be26d*/
-  if ( !MEMORY[0x887644] ) /*0x4be274*/
+  if ( !g_ZBufferDescriptor ) /*0x4be274*/
     return 0; /*0x4be274*/
-  v34 = *((_DWORD *)MEMORY[0x887644] + 1); /*0x4be27e*/
+  v34 = *((_DWORD *)g_ZBufferDescriptor + 1); /*0x4be27e*/
   v86[2] = HIDWORD(v87); /*0x4be285*/
   v35 = (_WORD *)Audio::GetSamplePosition(v87, HIDWORD(v87) - v34); /*0x4be29c*/
-  v36 = *((_DWORD *)MEMORY[0x87E8A4] + 1); /*0x4be2a2*/
+  v36 = *((_DWORD *)g_VisibleSurfaceDescriptor + 1); /*0x4be2a2*/
   v86[2] = HIDWORD(v87); /*0x4be2a5*/
   v37 = (_WORD *)StreamClass::ReadAndSeek(v87, HIDWORD(v87) - v36); /*0x4be2b6*/
   v70 = -1; /*0x4be2c1*/
-  LOWORD(v36) = *((_WORD *)MEMORY[0x887644] + 2) + *((_WORD *)MEMORY[0x887644] + 18); /*0x4be2cd*/
-  v93 = *((_DWORD *)MEMORY[0x887644] + 10); /*0x4be2d4*/
+  LOWORD(v36) = *((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18); /*0x4be2cd*/
+  v93 = *((_DWORD *)g_ZBufferDescriptor + 10); /*0x4be2d4*/
   v99 = v97 + v36 - HIDWORD(v87) - v90; /*0x4be2ea*/
   if ( !v33 ) /*0x4be2f1*/
     return 0; /*0x4be9b9*/
@@ -2689,7 +2689,7 @@ char __thiscall DSurface_DrawLineZBufColored(
       if ( v41 > 0 ) /*0x4be7c3*/
       {
         v86[1] = v41; /*0x4be7d0*/
-        v60 = MEMORY[0x887644]; /*0x4be7d4*/
+        v60 = g_ZBufferDescriptor; /*0x4be7d4*/
         v68 = 0; /*0x4be7da*/
         v73 = 2 * v93; /*0x4be7e5*/
         do /*0x4be99b*/
@@ -2700,7 +2700,7 @@ char __thiscall DSurface_DrawLineZBufColored(
             v58 = v84; /*0x4be89e*/
             LOWORD(v61) = *v37; /*0x4be7f6*/
             *(_WORD *)(v68 + v96) = BlendColorPack((v75 * v61) >> 7, (v74 * v61) >> 7); /*0x4be8a2*/
-            v60 = MEMORY[0x887644]; /*0x4be8a6*/
+            v60 = g_ZBufferDescriptor; /*0x4be8a6*/
             v59 = v80; /*0x4be8ac*/
           }
           if ( v58 > 0 ) /*0x4be8b2*/
@@ -2737,13 +2737,13 @@ char __thiscall DSurface_DrawLineZBufColored(
           if ( v93 <= 0 ) /*0x4be959*/
           {
             v63 = v37; /*0x4be970*/
-            if ( (unsigned int)v37 < *((_DWORD *)MEMORY[0x87E8A4] + 6) ) /*0x4be975*/
-              v63 = (_WORD *)((char *)v37 + *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4be97a*/
+            if ( (unsigned int)v37 < *((_DWORD *)g_VisibleSurfaceDescriptor + 6) ) /*0x4be975*/
+              v63 = (_WORD *)((char *)v37 + *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4be97a*/
             v37 = v63; /*0x4be97c*/
           }
-          else if ( (unsigned int)v37 >= *((_DWORD *)MEMORY[0x87E8A4] + 7) ) /*0x4be963*/
+          else if ( (unsigned int)v37 >= *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x4be963*/
           {
-            v37 = (_WORD *)((char *)v37 - *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4be965*/
+            v37 = (_WORD *)((char *)v37 - *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4be965*/
           }
           v50 = v86[1] == 1; /*0x4be98f*/
           v99 += v70; /*0x4be990*/
@@ -2760,7 +2760,7 @@ char __thiscall DSurface_DrawLineZBufColored(
       v67 = 0; /*0x4be5cd*/
       if ( v71 > 0 ) /*0x4be5d5*/
       {
-        v53 = MEMORY[0x887644]; /*0x4be5db*/
+        v53 = g_ZBufferDescriptor; /*0x4be5db*/
         do /*0x4be78f*/
         {
           HIWORD(v54) = 0; /*0x4be5e9*/
@@ -2769,7 +2769,7 @@ char __thiscall DSurface_DrawLineZBufColored(
             v52 = v83; /*0x4be696*/
             LOWORD(v54) = *v37; /*0x4be5ee*/
             *(_WORD *)(v96 + 2 * v67) = BlendColorPack((v75 * v54) >> 7, (v74 * v54) >> 7); /*0x4be69a*/
-            v53 = MEMORY[0x887644]; /*0x4be69e*/
+            v53 = g_ZBufferDescriptor; /*0x4be69e*/
           }
           if ( v52 > 0 ) /*0x4be6a6*/
           {
@@ -2791,13 +2791,13 @@ char __thiscall DSurface_DrawLineZBufColored(
             if ( v93 <= 0 ) /*0x4be6fe*/
             {
               v56 = v37; /*0x4be715*/
-              if ( (unsigned int)v37 < *((_DWORD *)MEMORY[0x87E8A4] + 6) ) /*0x4be71a*/
-                v56 = (_WORD *)((char *)v37 + *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4be71f*/
+              if ( (unsigned int)v37 < *((_DWORD *)g_VisibleSurfaceDescriptor + 6) ) /*0x4be71a*/
+                v56 = (_WORD *)((char *)v37 + *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4be71f*/
               v37 = v56; /*0x4be721*/
             }
-            else if ( (unsigned int)v37 >= *((_DWORD *)MEMORY[0x87E8A4] + 7) ) /*0x4be708*/
+            else if ( (unsigned int)v37 >= *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x4be708*/
             {
-              v37 = (_WORD *)((char *)v37 - *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4be70a*/
+              v37 = (_WORD *)((char *)v37 - *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4be70a*/
             }
             v99 += v70; /*0x4be730*/
           }
@@ -2827,7 +2827,7 @@ char __thiscall DSurface_DrawLineZBufColored(
     v72 = v95 - v42; /*0x4be3c8*/
     if ( v42 > 0 ) /*0x4be3cc*/
     {
-      v45 = MEMORY[0x887644]; /*0x4be3d2*/
+      v45 = g_ZBufferDescriptor; /*0x4be3d2*/
       v66 = 0; /*0x4be3d8*/
       HIDWORD(v78) = v42; /*0x4be3e0*/
       do /*0x4be58d*/
@@ -2840,7 +2840,7 @@ char __thiscall DSurface_DrawLineZBufColored(
           v43 = v78; /*0x4be499*/
           v44 = v72; /*0x4be49d*/
           *(_WORD *)(v66 + v96) = v47; /*0x4be4a1*/
-          v45 = MEMORY[0x887644]; /*0x4be4a5*/
+          v45 = g_ZBufferDescriptor; /*0x4be4a5*/
         }
         if ( v43 > 0 ) /*0x4be4ad*/
         {
@@ -2862,13 +2862,13 @@ char __thiscall DSurface_DrawLineZBufColored(
           if ( v93 <= 0 ) /*0x4be4f9*/
           {
             v49 = v37; /*0x4be510*/
-            if ( (unsigned int)v37 < *((_DWORD *)MEMORY[0x87E8A4] + 6) ) /*0x4be515*/
-              v49 = (_WORD *)((char *)v37 + *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4be51a*/
+            if ( (unsigned int)v37 < *((_DWORD *)g_VisibleSurfaceDescriptor + 6) ) /*0x4be515*/
+              v49 = (_WORD *)((char *)v37 + *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4be51a*/
             v37 = v49; /*0x4be51c*/
           }
-          else if ( (unsigned int)v37 >= *((_DWORD *)MEMORY[0x87E8A4] + 7) ) /*0x4be503*/
+          else if ( (unsigned int)v37 >= *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x4be503*/
           {
-            v37 = (_WORD *)((char *)v37 - *((_DWORD *)MEMORY[0x87E8A4] + 8)); /*0x4be505*/
+            v37 = (_WORD *)((char *)v37 - *((_DWORD *)g_VisibleSurfaceDescriptor + 8)); /*0x4be505*/
           }
           v44 = v72; /*0x4be52b*/
           v99 += v70; /*0x4be52f*/
@@ -3373,21 +3373,21 @@ LABEL_15:
   (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v84[0] + 112))(v84[0]); /*0x4bffdf*/
   v33 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)v84[0] + 92))(v84[0], v85, HIDWORD(v85)); /*0x4c0001*/
   v97 = v33; /*0x4c0005*/
-  if ( !MEMORY[0x887644] ) /*0x4c000c*/
+  if ( !g_ZBufferDescriptor ) /*0x4c000c*/
     return 0; /*0x4c000c*/
-  v34 = *((_DWORD *)MEMORY[0x887644] + 1); /*0x4c0016*/
+  v34 = *((_DWORD *)g_ZBufferDescriptor + 1); /*0x4c0016*/
   v84[2] = HIDWORD(v85); /*0x4c001d*/
   v35 = (_WORD *)Audio::GetSamplePosition(v85, HIDWORD(v85) - v34); /*0x4c0034*/
-  v36 = *((_DWORD *)MEMORY[0x87E8A4] + 1); /*0x4c003a*/
+  v36 = *((_DWORD *)g_VisibleSurfaceDescriptor + 1); /*0x4c003a*/
   v84[2] = HIDWORD(v85); /*0x4c003d*/
   v37 = (_WORD *)StreamClass::ReadAndSeek(v85, HIDWORD(v85) - v36); /*0x4c004e*/
   v76 = -1; /*0x4c0055*/
-  LOWORD(v38) = *((_WORD *)MEMORY[0x887644] + 2) + *((_WORD *)MEMORY[0x887644] + 18); /*0x4c0061*/
-  v91 = *((_DWORD *)MEMORY[0x887644] + 10); /*0x4c0068*/
+  LOWORD(v38) = *((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18); /*0x4c0061*/
+  v91 = *((_DWORD *)g_ZBufferDescriptor + 10); /*0x4c0068*/
   v99 = v32 + v38 - HIDWORD(v85) - v88; /*0x4c0076*/
   if ( !v33 ) /*0x4c007d*/
     return 0; /*0x4c073e*/
-  LOBYTE(v84[1]) = (unsigned __int8)(a6 >> MEMORY[0x8A0DD0]) << MEMORY[0x8A0DD4]; /*0x4c00a5*/
+  LOBYTE(v84[1]) = (unsigned __int8)(a6 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x4c00a5*/
   BYTE1(v84[1]) = (unsigned __int8)(a6 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x4c00c6*/
   v39 = HIDWORD(v86) - HIDWORD(v85); /*0x4c00ce*/
   BYTE2(v84[1]) = (unsigned __int8)(a6 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x4c00d6*/
@@ -3421,9 +3421,9 @@ LABEL_15:
       v84[1] = 2 * v43 - v42; /*0x4c055f*/
       if ( v42 > 0 ) /*0x4c0563*/
       {
-        v63 = MEMORY[0x87E8A4]; /*0x4c0569*/
+        v63 = g_VisibleSurfaceDescriptor; /*0x4c0569*/
         v73 = v42; /*0x4c056f*/
-        v64 = MEMORY[0x887644]; /*0x4c0573*/
+        v64 = g_ZBufferDescriptor; /*0x4c0573*/
         v96 = 0; /*0x4c0579*/
         do /*0x4c0720*/
         {
@@ -3440,12 +3440,12 @@ LABEL_15:
               v65 = v99; /*0x4c05f2*/
               *(_WORD *)(v96 + v97) = ((v83 * v66) >> 7 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4c060b*/
                                     | ((v80 * v66) >> 7 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                    | ((v79 * v66) >> 7 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                                    | ((v79 * v66) >> 7 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
             }
             if ( a9 ) /*0x4c0634*/
               *v35 = v65; /*0x4c0636*/
-            v64 = MEMORY[0x887644]; /*0x4c0639*/
-            v63 = MEMORY[0x87E8A4]; /*0x4c063f*/
+            v64 = g_ZBufferDescriptor; /*0x4c0639*/
+            v63 = g_VisibleSurfaceDescriptor; /*0x4c063f*/
           }
           if ( v62 > 0 ) /*0x4c0647*/
           {
@@ -3503,8 +3503,8 @@ LABEL_15:
       v78 = v70 - v94; /*0x4c0398*/
       if ( v94 > 0 ) /*0x4c039c*/
       {
-        v55 = MEMORY[0x887644]; /*0x4c03a2*/
-        v56 = MEMORY[0x87E8A4]; /*0x4c03a8*/
+        v55 = g_ZBufferDescriptor; /*0x4c03a2*/
+        v56 = g_VisibleSurfaceDescriptor; /*0x4c03a8*/
         do /*0x4c053c*/
         {
           v57 = (unsigned __int16)*v37; /*0x4c03bb*/
@@ -3515,12 +3515,12 @@ LABEL_15:
             else
               v58 = ((v83 * v57) >> 7 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4c041f*/
                   | ((v80 * v57) >> 7 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                  | ((v79 * v57) >> 7 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                  | ((v79 * v57) >> 7 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
             *(_WORD *)(v97 + 2 * v72) = v58; /*0x4c0436*/
             if ( a9 ) /*0x4c0443*/
               *v35 = v99; /*0x4c044d*/
-            v55 = MEMORY[0x887644]; /*0x4c0450*/
-            v56 = MEMORY[0x87E8A4]; /*0x4c0456*/
+            v55 = g_ZBufferDescriptor; /*0x4c0450*/
+            v56 = g_VisibleSurfaceDescriptor; /*0x4c0456*/
           }
           if ( v54 > 0 ) /*0x4c045e*/
           {
@@ -3577,8 +3577,8 @@ LABEL_15:
     v71 = v44 - v43; /*0x4c019b*/
     if ( v43 > 0 ) /*0x4c019f*/
     {
-      v46 = MEMORY[0x887644]; /*0x4c01a5*/
-      v47 = MEMORY[0x87E8A4]; /*0x4c01ab*/
+      v46 = g_ZBufferDescriptor; /*0x4c01a5*/
+      v47 = g_VisibleSurfaceDescriptor; /*0x4c01ab*/
       v95 = 0; /*0x4c01b1*/
       v84[1] = v43; /*0x4c01bc*/
       do /*0x4c0358*/
@@ -3591,12 +3591,12 @@ LABEL_15:
           else
             v49 = ((v83 * v48) >> 7 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]) /*0x4c0231*/
                 | ((v80 * v48) >> 7 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                | ((v79 * v48) >> 7 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]);
+                | ((v79 * v48) >> 7 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]);
           *(_WORD *)(v95 + v97) = v49; /*0x4c024b*/
           if ( a9 ) /*0x4c0258*/
             *v35 = v99; /*0x4c0262*/
-          v46 = MEMORY[0x887644]; /*0x4c0265*/
-          v47 = MEMORY[0x87E8A4]; /*0x4c026b*/
+          v46 = g_ZBufferDescriptor; /*0x4c0265*/
+          v47 = g_VisibleSurfaceDescriptor; /*0x4c026b*/
         }
         if ( v45 > 0 ) /*0x4c0273*/
         {
@@ -4956,7 +4956,7 @@ int __thiscall DSurface_CommitBuffers(int this)
     (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1976), 0); /*0x7be0b8*/
   }
   v9 = 0; /*0x7be0c6*/
-  for ( i = *(_DWORD *)(this + 1764); v9 < *(_DWORD *)(this + 136); i = v11 ) /*0x7be0d1*/
+  for ( i = *(_DWORD *)(this + 1764); v9 < this->q022; i = v11 ) /*0x7be0d1*/
   {
     if ( !i ) /*0x7be0d5*/
       break; /*0x7be0d5*/

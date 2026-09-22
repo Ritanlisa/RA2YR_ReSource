@@ -47,7 +47,7 @@ signed int SyncDelay::Start()
       v1 -= v3; /*0x55e191*/
   }
   MEMORY[0xA8E314] += v1; /*0x55e1a7*/
-  if ( MEMORY[0xA8B238][0] && MEMORY[0xA8B238][0] != 5 ) /*0x55e1b6*/
+  if ( g_GameMode_Current[0] && g_GameMode_Current[0] != 5 ) /*0x55e1b6*/
   {
     while ( 1 ) /*0x55e1c7*/
     {
@@ -80,7 +80,7 @@ LABEL_23:
     {
       InputManager_ProcessEvents::Vtable((int *)&MEMORY[0x87F7E8], &v22, v24, &v23); /*0x55e253*/
       SyncDelayClass::ProcessNetworkSync(&v22); /*0x55e25c*/
-      ((void (__thiscall *)(LPPERSISTSTREAM))MEMORY[0x887324]->__tail_0[2].GetSizeMax)(MEMORY[0x887324]); /*0x55e269*/
+      ((void (__thiscall *)(LPPERSISTSTREAM))g_TacticalClass_Instance->__tail_0[2].GetSizeMax)(g_TacticalClass_Instance); /*0x55e269*/
       TacticalMap::Redraw(&MEMORY[0x87F7E8]); /*0x55e271*/
       goto LABEL_19; /*0x55e276*/
     }

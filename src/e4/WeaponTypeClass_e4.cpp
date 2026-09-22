@@ -175,15 +175,15 @@ int __thiscall sub_771F50(int this)
   this->Projectile = 0; /*0x771f7d*/
   this->Warhead = 0; /*0x771f83*/
   v7 = this; /*0x771f95*/
-  v2 = (*(int (__thiscall **)(WeaponTypeClass **, int *))&MEMORY[0x887568]->__pad_0[16])(&MEMORY[0x887568], &v7); /*0x771f99*/
-  if ( v2 != -1 && v2 < MEMORY[0x887578] && v2 < --MEMORY[0x887578] ) /*0x771fb4*/
+  v2 = (*(int (__thiscall **)(WeaponTypeClass **, int *))&WeaponTypeClass_Array->__pad_0[16])(&WeaponTypeClass_Array, &v7); /*0x771f99*/
+  if ( v2 != -1 && v2 < g_WeaponTypePool && v2 < --g_WeaponTypePool ) /*0x771fb4*/
   {
     do /*0x771fcc*/
     {
       ++v2; /*0x771fbc*/
-      *((_DWORD *)MEMORY[0x88756C] + v2 - 1) = *((_DWORD *)MEMORY[0x88756C] + v2); /*0x771fc0*/
+      *((_DWORD *)g_WeaponTypeConfig + v2 - 1) = *((_DWORD *)g_WeaponTypeConfig + v2); /*0x771fc0*/
     }
-    while ( v2 < MEMORY[0x887578] ); /*0x771fcc*/
+    while ( v2 < g_WeaponTypePool ); /*0x771fcc*/
   }
   v3 = *(void **)(this + 248); /*0x771fce*/
   this->Anim = &vt_VectorClass_AnimTypeClass_const; /*0x771fd4*/
@@ -356,14 +356,14 @@ int __userpurge WeaponTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, int *a2, in
       (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, &a3, 4, 0); /*0x772dfc*/
       DynamicVector::Add_Alt(v4 + 54, &a3); /*0x772e06*/
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4 + 43); /*0x772e1e*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4 + 40); /*0x772e2f*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4 + 71); /*0x772e40*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4 + 69); /*0x772e51*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4 + 68); /*0x772e62*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4 + 70); /*0x772e73*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 43); /*0x772e1e*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 40); /*0x772e2f*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 71); /*0x772e40*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 69); /*0x772e51*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 68); /*0x772e62*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 70); /*0x772e73*/
     for ( m = 0; m < v4[65]; ++m ) /*0x772e83*/
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v4[62] + 4 * m)); /*0x772e94*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4[62] + 4 * m)); /*0x772e94*/
     return 0; /*0x772ea4*/
   }
   return result; /*0x772ea6*/

@@ -334,7 +334,7 @@ void __fastcall ProcessGameResults(char a1)
   else
     inited = 0;
   LinkedList::PushFront(v262, (IUnknown *)inited);
-  if ( MEMORY[0xA8B238] == (CellStruct *)4 && MEMORY[0xA8B244] == 3 )
+  if ( g_GameMode_Current == (CellStruct *)4 && MEMORY[0xA8B244] == 3 )
   {
     v5 = MEMORY[0xA8B240];
     v6 = (char *)__2_YAPAXI_Z(0x10u);
@@ -364,7 +364,7 @@ void __fastcall ProcessGameResults(char a1)
   else
     v13 = 0;
   LinkedList::PushFront(v262, (IUnknown *)v13);
-  if ( MEMORY[0xA8B238] == (CellStruct *)4 && MEMORY[0xA8B244] == 3 && a1 )
+  if ( g_GameMode_Current == (CellStruct *)4 && MEMORY[0xA8B244] == 3 && a1 )
     dword_B779C4 = 0;
   LOBYTE(v264.vfptr) = MEMORY[0xA8B8C2] == 1;
   v14 = (char *)__2_YAPAXI_Z(0x10u);
@@ -380,7 +380,7 @@ void __fastcall ProcessGameResults(char a1)
   else
     v17 = 0;
   LinkedList::PushFront(v262, (IUnknown *)v17);
-  v19 = (ObjectClass *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12448] / 0x3Cu);
+  v19 = (ObjectClass *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12448] / 0x3Cu);
   eax31 = (char *)__2_YAPAXI_Z(0x10u);
   if ( eax31 )
     v20 = TerrainInitMap(eax31, (RandomStruct *)&stru_830620.__pad_579C[49976], (IUnknown *)v19);
@@ -631,10 +631,10 @@ LABEL_95:
   else
     v84 = 0;
   LinkedList::PushFront(v262, (IUnknown *)v84);
-  if ( *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12448] / 60 )
+  if ( *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12448] / 60 )
   {
     v86 = (IUnknown *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]
-                     / (unsigned int)(*(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12448] / 60));
+                     / (unsigned int)(*(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12448] / 60));
     eax130 = (char *)__2_YAPAXI_Z(0x10u);
     if ( eax130 )
     {
@@ -1243,7 +1243,7 @@ LABEL_343:
       v104 = v268;
     }
   }
-  vfptr = (char *)Event_Process_625C00((int)v262, (size_t *)&MEMORY[0xB077F8].__pad_14B0[12520]);
+  vfptr = (char *)Event_Process_625C00((int)v262, (size_t *)&g_OverlayTypeConfig.__pad_14B0[12520]);
   v264.vfptr = vfptr;
   if ( *(&g_MatrixTransformState + 2264) )
   {
@@ -1254,77 +1254,77 @@ LABEL_343:
         &byte_B77CE8,
         dword_B75F5C,
         vfptr,
-        *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12520]);
+        *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12520]);
     else
       (*(void (__stdcall **)(_DWORD, char *, CCINIClass *, char *, _DWORD))(X + 12))(
         *(&g_MatrixTransformState + 2264),
         byte_B77930,
         dword_B76184,
         vfptr,
-        *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12520]);
+        *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12520]);
   }
-  if ( *(int *)&MEMORY[0xB077F8].__pad_14B0[12520] <= 0x8000
+  if ( *(int *)&g_OverlayTypeConfig.__pad_14B0[12520] <= 0x8000
     && vfptr
-    && *(int *)&MEMORY[0xB077F8].__pad_14B0[12520] >= 1 )
+    && *(int *)&g_OverlayTypeConfig.__pad_14B0[12520] >= 1 )
   {
-    v290[1] = *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12520];
-    v244 = MEMORY[0xB077F8].__pad_14B0[12520];
+    v290[1] = *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12520];
+    v244 = g_OverlayTypeConfig.__pad_14B0[12520];
     v290[0] = 0;
-    v245 = *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12520] >> 2;
-    qmemcpy(&v290[2], vfptr, 4 * (*(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12520] >> 2));
+    v245 = *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12520] >> 2;
+    qmemcpy(&v290[2], vfptr, 4 * (*(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12520] >> 2));
     v247 = &vfptr[4 * v245];
     v246 = &v290[v245 + 2];
     LOBYTE(v245) = v244;
-    v248 = *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12460];
+    v248 = *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12460];
     qmemcpy(v246, v247, v245 & 3);
-    v249 = *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456];
-    v269 = *(IUnknown **)&MEMORY[0xB077F8].__pad_14B0[12456];
-    if ( *(int *)&MEMORY[0xB077F8].__pad_14B0[12456] < v248 )
+    v249 = *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456];
+    v269 = *(IUnknown **)&g_OverlayTypeConfig.__pad_14B0[12456];
+    if ( *(int *)&g_OverlayTypeConfig.__pad_14B0[12456] < v248 )
     {
-      v255 = *(char **)&MEMORY[0xB077F8].__pad_14B0[12464];
+      v255 = *(char **)&g_OverlayTypeConfig.__pad_14B0[12464];
     }
     else
     {
-      v250 = 2 * *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456];
-      if ( 2 * *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456] < 10 )
+      v250 = 2 * *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456];
+      if ( 2 * *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456] < 10 )
         v250 = 10;
       v251 = (char *)__2_YAPAXI_Z(32776 * v250);
       memset(v251, 0, 4 * ((unsigned int)(32776 * v250) >> 2));
-      v252 = *(AbstractClass **)&MEMORY[0xB077F8].__pad_14B0[12464];
-      if ( *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12464] )
+      v252 = *(AbstractClass **)&g_OverlayTypeConfig.__pad_14B0[12464];
+      if ( *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12464] )
       {
-        v253 = 8 * MEMORY[0xB077F8].__pad_14B0[12456];
-        v254 = (unsigned int)(32776 * *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456]) >> 2;
-        qmemcpy(v251, *(const void **)&MEMORY[0xB077F8].__pad_14B0[12464], 4 * v254);
+        v253 = 8 * g_OverlayTypeConfig.__pad_14B0[12456];
+        v254 = (unsigned int)(32776 * *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456]) >> 2;
+        qmemcpy(v251, *(const void **)&g_OverlayTypeConfig.__pad_14B0[12464], 4 * v254);
         qmemcpy(&v251[4 * v254], (char *)v252 + 4 * v254, v253 & 3);
-        v252 = *(AbstractClass **)&MEMORY[0xB077F8].__pad_14B0[12464];
+        v252 = *(AbstractClass **)&g_OverlayTypeConfig.__pad_14B0[12464];
       }
       __3_YAXPAX_Z(v252);
-      v249 = *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456];
+      v249 = *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456];
       v255 = v251;
-      *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12464] = v251;
-      *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12460] = v250;
-      if ( *(int *)&MEMORY[0xB077F8].__pad_14B0[12456] >= v250 )
+      *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12464] = v251;
+      *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12460] = v250;
+      if ( *(int *)&g_OverlayTypeConfig.__pad_14B0[12456] >= v250 )
       {
-        v256 = 2 * *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456];
-        if ( 2 * *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456] < 10 )
+        v256 = 2 * *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456];
+        if ( 2 * *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456] < 10 )
           v256 = 10;
         v257 = (char *)__2_YAPAXI_Z(32776 * v256);
         memset(v257, 0, 4 * ((unsigned int)(32776 * v256) >> 2));
-        v258 = *(AbstractClass **)&MEMORY[0xB077F8].__pad_14B0[12464];
-        if ( *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12464] )
+        v258 = *(AbstractClass **)&g_OverlayTypeConfig.__pad_14B0[12464];
+        if ( *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12464] )
         {
-          v259 = 8 * MEMORY[0xB077F8].__pad_14B0[12456];
-          v260 = (unsigned int)(32776 * *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456]) >> 2;
-          qmemcpy(v257, *(const void **)&MEMORY[0xB077F8].__pad_14B0[12464], 4 * v260);
+          v259 = 8 * g_OverlayTypeConfig.__pad_14B0[12456];
+          v260 = (unsigned int)(32776 * *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456]) >> 2;
+          qmemcpy(v257, *(const void **)&g_OverlayTypeConfig.__pad_14B0[12464], 4 * v260);
           qmemcpy(&v257[4 * v260], (char *)v258 + 4 * v260, v259 & 3);
-          v258 = *(AbstractClass **)&MEMORY[0xB077F8].__pad_14B0[12464];
+          v258 = *(AbstractClass **)&g_OverlayTypeConfig.__pad_14B0[12464];
         }
         __3_YAXPAX_Z(v258);
-        v249 = *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456];
+        v249 = *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456];
         v255 = v257;
-        *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12464] = v257;
-        *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12460] = v256;
+        *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12464] = v257;
+        *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12460] = v256;
       }
       if ( (int)v269 < v249 )
       {
@@ -1332,18 +1332,18 @@ LABEL_343:
           &v255[32776 * ((_DWORD)&v269->field_0 + 1)],
           &v255[32776 * (_DWORD)v269],
           32776 * v249 - 32776 * (_DWORD)v269);
-        v255 = *(char **)&MEMORY[0xB077F8].__pad_14B0[12464];
-        v249 = *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456];
+        v255 = *(char **)&g_OverlayTypeConfig.__pad_14B0[12464];
+        v249 = *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456];
       }
     }
     v261 = &v255[32776 * (_DWORD)v269];
     if ( v261 )
     {
       qmemcpy(v261, v290, 0x8008u);
-      v249 = *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456];
+      v249 = *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456];
     }
     vfptr = (char *)v264.vfptr;
-    *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[12456] = v249 + 1;
+    *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[12456] = v249 + 1;
   }
   __3_YAXPAX_Z(vfptr);
   MEMORY[0xA8D63C].__pad_14B0[3604] = 1;
@@ -1818,7 +1818,7 @@ _DWORD *__fastcall sub_6CFD60(_DWORD *a1, int a2)
   v4 = MEMORY[0xB0CC24]; /*0x6cfd82*/
   v5 = *((_DWORD *)MEMORY[0xB0FC68] + 2); /*0x6cfd8f*/
   v6 = *((_DWORD *)MEMORY[0xB0FC68] + 3); /*0x6cfd92*/
-  *a1 = *(_DWORD *)MEMORY[0xB0FC68] + MEMORY[0xB0CC38] * MEMORY[0xB0CB78][a2]; /*0x6cfd95*/
+  *a1 = *(_DWORD *)MEMORY[0xB0FC68] + MEMORY[0xB0CC38] * g_ObjectTrackingPool[a2]; /*0x6cfd95*/
   a1[1] = v4; /*0x6cfd97*/
   a1[2] = v5; /*0x6cfd9a*/
   a1[3] = v6; /*0x6cfd9d*/

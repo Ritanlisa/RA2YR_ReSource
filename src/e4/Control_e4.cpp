@@ -133,7 +133,7 @@ LABEL_5:
     if ( v5 == (void *)188 ) /*0x60bc40*/
     {
 LABEL_75:
-      result = SessionClass::GetGameSpeed(MEMORY[0xA8B238]); /*0x60bce4*/
+      result = SessionClass::GetGameSpeed(g_GameMode_Current); /*0x60bce4*/
       if ( result ) /*0x60bcf0*/
         return result; /*0x60bcf0*/
       ++v3; /*0x60bcf6*/
@@ -154,7 +154,7 @@ LABEL_75:
 LABEL_74:
       if ( v5 == (void *)189 || v5 == (void *)258 || v5 == (void *)3014 || v5 == (void *)261 || v5 == (void *)107 ) /*0x60bcda*/
         goto LABEL_75; /*0x60bcda*/
-      result = SessionClass::GetGameSpeed(MEMORY[0xA8B238]); /*0x60bd1c*/
+      result = SessionClass::GetGameSpeed(g_GameMode_Current); /*0x60bd1c*/
       if ( result ) /*0x60bd23*/
         return result; /*0x60bd23*/
       v3 += 7; /*0x60bd2d*/

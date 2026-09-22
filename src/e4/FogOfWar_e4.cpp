@@ -53,7 +53,7 @@ int __thiscall FogOfWar::RevealArea(int this, RadarClass *aP1)
   if ( !HouseClass_Player ) /*0x655c62*/
     return (int)result; /*0x655c62*/
   result = (IUnknown *)(*(int (__thiscall **)(_DWORD, char *))(**(_DWORD **)(this + 4636) + 120))( /*0x655c75*/
-                         *(_DWORD *)(this + 4636),
+                         this->q487,
                          v40);
   v5 = aP1->field_0; /*0x655c7e*/
   aP1a = (RadarClass *)aP1->field_0; /*0x655c82*/
@@ -117,10 +117,10 @@ LABEL_26:
     if ( v34 ) /*0x655e84*/
     {
       v15 = (*(int (__thiscall **)(_DWORD, RadarClass *))(**(_DWORD **)(this + 4640) + 40))( /*0x655e93*/
-              *(_DWORD *)(this + 4640),
+              this->q488,
               aP1);
       (*(void (__thiscall **)(_DWORD, RadarClass *, unsigned int))(**(_DWORD **)(this + 4636) + 36))( /*0x655f40*/
-        *(_DWORD *)(this + 4636),
+        this->q487,
         aP1,
         ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]) >> 1) >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656])
       | ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]) >> 1) >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
@@ -134,9 +134,9 @@ LABEL_26:
     {
       v20 = **(_DWORD **)(this + 4636); /*0x65606f*/
       v21 = (*(int (__thiscall **)(_DWORD, RadarClass *))(**(_DWORD **)(this + 4640) + 40))( /*0x656071*/
-              *(_DWORD *)(this + 4640),
+              this->q488,
               aP1);
-      (*(void (__thiscall **)(_DWORD, RadarClass *, int))(v20 + 36))(*(_DWORD *)(this + 4636), aP1, v21); /*0x65607c*/
+      (*(void (__thiscall **)(_DWORD, RadarClass *, int))(v20 + 36))(this->q487, aP1, v21); /*0x65607c*/
     }
     goto LABEL_45; /*0x655f43*/
   }
@@ -165,7 +165,7 @@ LABEL_37:
       goto LABEL_41; /*0x65603a*/
     }
     (*(void (__thiscall **)(_DWORD, RadarClass *, int))(**(_DWORD **)(this + 4636) + 36))( /*0x656048*/
-      *(_DWORD *)(this + 4636),
+      this->q487,
       aP1,
       ~v17);
   }
@@ -257,7 +257,7 @@ int __thiscall sub_656150(int this)
   int v22; // [esp+10h] [ebp-8h]
   int v23; // [esp+14h] [ebp-4h]
 
-  v2 = *(_DWORD *)(this + 4636); /*0x65615f*/
+  v2 = this->q487; /*0x65615f*/
   v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 128))(v2); /*0x65616f*/
   v4 = v3 * (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 124))(v2); /*0x65617b*/
   v5 = *(char **)(this + 4724); /*0x65617f*/
@@ -281,17 +281,17 @@ int __thiscall sub_656150(int this)
       {
         v13 = (_DWORD *)*(v12 - 1); /*0x6561c8*/
         v14 = *v12 /*0x6561d8*/
-            + v12[1] * (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 4636) + 124))(*(_DWORD *)(this + 4636));
+            + v12[1] * (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 4636) + 124))(this->q487);
         v15 = 1 << (v14 & 7); /*0x6561e2*/
         v16 = (_BYTE *)(*(_DWORD *)(this + 4724) + (v14 >> 3)); /*0x6561ed*/
         if ( (*v16 & (unsigned __int8)v15) == 0 ) /*0x6561f3*/
         {
           *v16 |= v15; /*0x6561fb*/
-          BuildingAnimByName = *((_DWORD *)MEMORY[0xB054D4] + *(_DWORD *)(v13[135] + 90196)); /*0x656211*/
+          BuildingAnimByName = *((_DWORD *)BuildingTypeClass_AnimTable + *(_DWORD *)(v13[135] + 90196)); /*0x656211*/
           if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*v13 + 196))(v13) ) /*0x656216*/
           {
             if ( (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 208))(v13, 0) ) /*0x656226*/
-              BuildingAnimByName = *((_DWORD *)MEMORY[0xB054D4] /*0x656248*/
+              BuildingAnimByName = *((_DWORD *)BuildingTypeClass_AnimTable /*0x656248*/
                                    + *(_DWORD *)((*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 208))(v13, 0) + 90196));
             else
               BuildingAnimByName = FindBuildingAnimByName(MEMORY[0x836ECC], 1); /*0x65625c*/
@@ -304,7 +304,7 @@ int __thiscall sub_656150(int this)
           else
             v21 = *(unsigned __int16 *)(v20 + 2 * v18); /*0x656281*/
           (*(void (__thiscall **)(_DWORD, _DWORD *, int))(**(_DWORD **)(this + 4636) + 36))( /*0x65628f*/
-            *(_DWORD *)(this + 4636),
+            this->q487,
             v12,
             v21);
         }
@@ -337,12 +337,12 @@ void __thiscall FogOfWar::RevealCell(int this, IUnknown *aP1)
   int v9; // edx
 
   if ( aP1->field_0 >= 0 /*0x656310*/
-    && aP1->field_0 < (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 4636) + 124))(*(_DWORD *)(this + 4636))
+    && aP1->field_0 < (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 4636) + 124))(this->q487)
     && aP1->field_4 >= 0
-    && aP1->field_4 < (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 4636) + 128))(*(_DWORD *)(this + 4636)) )
+    && aP1->field_4 < (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 4636) + 128))(this->q487) )
   {
     v3 = aP1->field_0 /*0x656329*/
-       + aP1->field_4 * (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 4636) + 124))(*(_DWORD *)(this + 4636));
+       + aP1->field_4 * (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 4636) + 124))(this->q487);
     v4 = 1 << (v3 & 7); /*0x656333*/
     v5 = (_BYTE *)(*(_DWORD *)(this + 4724) + (v3 >> 3)); /*0x65633e*/
     if ( (*v5 & (unsigned __int8)v4) == 0 ) /*0x656344*/

@@ -80,7 +80,7 @@ int __thiscall Session::PrepareGame(HWND this)
     __3_YAXPAX_Z(v1); /*0x5e7500*/
   }
   MEMORY[0xAC1154] = 0; /*0x5e7513*/
-  switch ( MEMORY[0xA8B238][0] ) /*0x5e7521*/
+  switch ( g_GameMode_Current[0] ) /*0x5e7521*/
   {
     case 1: /*0x5e7521*/
     case 2: /*0x5e7521*/
@@ -179,7 +179,7 @@ LABEL_42:
           goto LABEL_44; /*0x5e783f*/
         }
       }
-      if ( IsRandMap::Sed2((int)MEMORY[0xA8B238]) ) /*0x5e76ef*/
+      if ( IsRandMap::Sed2((int)g_GameMode_Current) ) /*0x5e76ef*/
         return InvalidateRect(this, 0, 0); /*0x5e76ef*/
       v8 = (ObjectClass *)MEMORY[0xAC1154]; /*0x5e76fc*/
       if ( !MEMORY[0xAC1154] ) /*0x5e7704*/
@@ -211,7 +211,7 @@ LABEL_44:
       }
       if ( MEMORY[0xAC1154] ) /*0x5e78b0*/
       {
-        if ( IsRandMap::Sed2((int)MEMORY[0xA8B238]) ) /*0x5e78b7*/
+        if ( IsRandMap::Sed2((int)g_GameMode_Current) ) /*0x5e78b7*/
         {
           ScenarioClass::CopyStartPositions(); /*0x5e78f5*/
           return InvalidateRect(this, 0, 0); /*0x5e78fa*/
@@ -226,7 +226,7 @@ LABEL_44:
   }
   while ( 1 ) /*0x5e757e*/
   {
-    if ( MEMORY[0xA8B238][0] == 3 ) /*0x5e7584*/
+    if ( g_GameMode_Current[0] == 3 ) /*0x5e7584*/
     {
       v3 = Network::SendMessage((int)MEMORY[0xA8E9C0], (int)Str, 47, 1, (int)&MEMORY[0xA8BB1C], 0, 0); /*0x5e759d*/
     }

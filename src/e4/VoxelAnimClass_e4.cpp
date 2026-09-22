@@ -96,7 +96,7 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
   this->vtable4 = &vt_VoxelAnimClass; /*0x749a0a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x749a11*/
   v6 = (VoxelAnimClass *)this; /*0x749a26*/
-  v2 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(MEMORY[0x887388] + 16))(&MEMORY[0x887388], &v6); /*0x749a2a*/
+  v2 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(VoxelAnimClass_Array + 16))(&VoxelAnimClass_Array, &v6); /*0x749a2a*/
   if ( v2 != -1 && v2 < MEMORY[0x887398] && v2 < --MEMORY[0x887398] ) /*0x749a45*/
   {
     do /*0x749a5d*/
@@ -112,22 +112,22 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
     (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 248))(v3); /*0x749a6b*/
     this->VoxelAnimClass_field_0x108 = 0; /*0x749a71*/
   }
-  if ( MEMORY[0xA8E9A0] ) /*0x749a82*/
+  if ( g_WTFMode ) /*0x749a82*/
     ObjectClass::Undeploy(this); /*0x749a86*/
   Mixer::ReleaseChannel((int **)this + 69); /*0x749a95*/
   Mixer::ReleaseChannel((int **)this + 74); /*0x749aa2*/
   AudioFileClass::Release((_DWORD *)this + 69); /*0x749aa9*/
   AudioFileClass::Release((_DWORD *)this + 74); /*0x749ab0*/
   v6 = (VoxelAnimClass *)this; /*0x749ac5*/
-  v4 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x749ac9*/
-  if ( v4 != -1 && v4 < MEMORY[0xB0F680] && v4 < --MEMORY[0xB0F680] ) /*0x749ae6*/
+  v4 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v6); /*0x749ac9*/
+  if ( v4 != -1 && v4 < g_AnimManager && v4 < --g_AnimManager ) /*0x749ae6*/
   {
     do /*0x749afe*/
     {
       ++v4; /*0x749aee*/
-      *((_DWORD *)MEMORY[0xB0F674] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v4); /*0x749af2*/
+      *((_DWORD *)g_AnimPoolCount + v4 - 1) = *((_DWORD *)g_AnimPoolCount + v4); /*0x749af2*/
     }
-    while ( v4 < MEMORY[0xB0F680] ); /*0x749afe*/
+    while ( v4 < g_AnimManager ); /*0x749afe*/
   }
   this->VoxelAnimClass_field_0x104 = 0; /*0x749b02*/
   return ObjectClass::Dtor(this); /*0x749b11*/
@@ -178,7 +178,7 @@ char __thiscall VoxelAnimClass::_vt69(int *this, int *a2, _DWORD *a3)
   float v38[12]; // [esp+50h] [ebp-60h] BYREF
   float v39[12]; // [esp+80h] [ebp-30h] BYREF
 
-  if ( (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) == 0 /*0x749bb6*/
+  if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) == 0 /*0x749bb6*/
     || (v25 = this->q027, v26 = this->q028, v27 = this->q029, LOBYTE(v4) = Game::Stub3((int)&v25), !(_BYTE)v4) )
   {
     v5 = a2[1]; /*0x749bcb*/
@@ -198,13 +198,13 @@ char __thiscall VoxelAnimClass::_vt69(int *this, int *a2, _DWORD *a3)
       v27 = MEMORY[0xB1D1BC] + GroundHeight + 1; /*0x749c4a*/
       v25 = v30; /*0x749c4e*/
       v26 = v31; /*0x749c5b*/
-      Coord::To_Screen(MEMORY[0x887324], &v25, v36); /*0x749c60*/
+      Coord::To_Screen(g_TacticalClass_Instance, &v25, v36); /*0x749c60*/
     }
     else
     {
 LABEL_6:
       v33 = GroundHeight; /*0x749c62*/
-      Coord::To_Screen(MEMORY[0x887324], &v30, v36); /*0x749c76*/
+      Coord::To_Screen(g_TacticalClass_Instance, &v30, v36); /*0x749c76*/
     }
     LOBYTE(v4) = this->q13C; /*0x749c7b*/
     if ( !(_BYTE)v4 ) /*0x749c83*/
@@ -231,7 +231,7 @@ LABEL_6:
         v22 = -4 - ZCoordToScreenY(v33); /*0x749d36*/
         SHPFrame = (int *)BuildingClass::GetSHPFrame((_DWORD *)MEMORY[0x87F6B4], 8193); /*0x749d4e*/
         v7 = Miles::DriverGet(); /*0x749d5c*/
-        BlitterDrawSHP((int *)MEMORY[0x887314], MEMORY[0x87F6B4], v7, v37, &v25, a3, 0, SHPFrame, v22, 0, 1000, 0, 0); /*0x749d6e*/
+        BlitterDrawSHP((int *)g_DSurface_Hidden_2, MEMORY[0x87F6B4], v7, v37, &v25, a3, 0, SHPFrame, v22, 0, 1000, 0, 0); /*0x749d6e*/
         qmemcpy(v38, VoxelAnimClass::QuaternionToMatrix((float *)this + 44, v39), sizeof(v38)); /*0x749d95*/
         globalHelper_053C80(v6, 0, 0, v38, (float *)&MEMORY[0x887470]); /*0x749da3*/
         Viewport::Clear(); /*0x749da8*/
@@ -251,11 +251,11 @@ LABEL_6:
         v14 = v12[133]; /*0x749e38*/
         if ( v13 ) /*0x749e41*/
         {
-          v15 = *(_DWORD **)(*((_DWORD *)MEMORY[0xB054D4] + *(_DWORD *)(v13 + 90196)) + 780); /*0x749e52*/
+          v15 = *(_DWORD **)(*((_DWORD *)BuildingTypeClass_AnimTable + *(_DWORD *)(v13 + 90196)) + 780); /*0x749e52*/
         }
         else if ( *(_BYTE *)(this->q104 + 768) ) /*0x749e60*/
         {
-          v15 = (_DWORD *)MEMORY[0x87F6BC]; /*0x749e6a*/
+          v15 = (_DWORD *)FileSystem_GRFTXT_TIBERIUM_PAL; /*0x749e6a*/
         }
         else
         {
@@ -270,7 +270,7 @@ LABEL_6:
         v23 = -2 - ZCoordToScreenY(v17); /*0x749eb8*/
         v21 = (int *)BuildingClass::GetSHPFrame(v15, v9); /*0x749ec8*/
         v18 = Miles::DriverGet(); /*0x749ed6*/
-        LOBYTE(v4) = BlitterDrawSHP((int *)MEMORY[0x887314], (int)v15, v18, v37, &v25, a3, 0, v21, v23, 0, v24, 0, 0); /*0x749ee4*/
+        LOBYTE(v4) = BlitterDrawSHP((int *)g_DSurface_Hidden_2, (int)v15, v18, v37, &v25, a3, 0, v21, v23, 0, v24, 0, 0); /*0x749ee4*/
       }
     }
   }
@@ -351,9 +351,9 @@ int __thiscall VoxelAnimClass::_vt13(int this, int *a2)
   }
   v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->VoxelAnimClass_field_0x10C + 4) + 16))(this->VoxelAnimClass_field_0x10C + 4); /*0x74aa8b*/
   Power::TimerProcess(v6); /*0x74aa91*/
-  LOBYTE(v7) = *(_BYTE *)(this + 272); /*0x74aa96*/
+  LOBYTE(v7) = this->q110; /*0x74aa96*/
   v8 = Power::FlagProcess(a2, v7); /*0x74aa9f*/
-  LOBYTE(v8) = *(_BYTE *)(this + 316); /*0x74aaa4*/
+  LOBYTE(v8) = this->q13C; /*0x74aaa4*/
   Power::FlagProcess(a2, v8); /*0x74aaad*/
   return Power::TimerProcess(this->VoxelAnimClass_field_0x140); /*0x74aac0*/
 }
@@ -381,18 +381,18 @@ int __thiscall sub_75AA90(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x75aa93*/
   this->VoxelAnimClass_field_0x1C = g_AsyncMovieState; /*0x75aaa1*/
-  *(_DWORD *)(this + 32) = MEMORY[0xB45BEC]; /*0x75aaaa*/
-  *(_DWORD *)(this + 36) = MEMORY[0xB45BF0]; /*0x75aab6*/
-  *(_DWORD *)(this + 40) = g_AsyncMovieState; /*0x75aabe*/
-  *(_DWORD *)(this + 44) = MEMORY[0xB45BEC]; /*0x75aac6*/
-  *(_DWORD *)(this + 48) = MEMORY[0xB45BF0]; /*0x75aace*/
-  *(_BYTE *)(this + 52) = 0; /*0x75aad3*/
-  *(_BYTE *)(this + 53) = 0; /*0x75aad6*/
-  *(_BYTE *)(this + 54) = 0; /*0x75aad9*/
-  *(_DWORD *)(this + 56) = 0; /*0x75aadc*/
+  this->needsSave = MEMORY[0xB45BEC]; /*0x75aaaa*/
+  this->q024 = MEMORY[0xB45BF0]; /*0x75aab6*/
+  this->q028 = g_AsyncMovieState; /*0x75aabe*/
+  this->q02C = MEMORY[0xB45BEC]; /*0x75aac6*/
+  this->nextObject = MEMORY[0xB45BF0]; /*0x75aace*/
+  this->attachedTag = 0; /*0x75aad3*/
+  this->q0D4 = 0; /*0x75aad6*/
+  this->q0D8 = 0; /*0x75aad9*/
+  this->q038 = 0; /*0x75aadc*/
   *(_DWORD *)this = &WalkLocomotionClass::`vftable'; /*0x75aadf*/
   this->VoxelAnimClass_field_0x4 = &WalkLocomotionClass::`vftable'; /*0x75aae5*/
-  *(_DWORD *)(this + 24) = &vt_WalkLocomotionClass; /*0x75aaec*/
+  this->nextArrayIndex = &vt_WalkLocomotionClass; /*0x75aaec*/
   return this; /*0x75aaf5*/
 }
 }
@@ -408,36 +408,36 @@ int __thiscall sub_75EBE0(int this)
   int v2; // eax
 
   ObjectClass::ctor((_DWORD *)this); /*0x75ebe4*/
-  *(_BYTE *)(this + 300) = 1; /*0x75ebeb*/
-  *(_DWORD *)(this + 312) = 0; /*0x75ebf2*/
+  this->q12C = 1; /*0x75ebeb*/
+  this->q138 = 0; /*0x75ebf2*/
   this->VoxelAnimClass_field_0x140 = 0; /*0x75ebf8*/
-  *(_DWORD *)(this + 172) = 0; /*0x75ebfe*/
-  *(_BYTE *)(this + 301) = 0; /*0x75ec04*/
-  *(_DWORD *)(this + 304) = 100; /*0x75ec0a*/
-  *(_DWORD *)(this + 316) = 0; /*0x75ec14*/
-  *(_DWORD *)(this + 324) = 0; /*0x75ec1a*/
-  *(_DWORD *)(this + 328) = 0; /*0x75ec20*/
-  *(_DWORD *)(this + 332) = 0; /*0x75ec26*/
-  *(_DWORD *)(this + 416) = 0; /*0x75ec2c*/
-  *(_DWORD *)(this + 420) = 0; /*0x75ec32*/
-  *(_DWORD *)(this + 424) = 0; /*0x75ec38*/
-  *(_DWORD *)(this + 464) = 0; /*0x75ec44*/
-  *(_DWORD *)(this + 468) = 0; /*0x75ec4a*/
+  this->q0AC = 0; /*0x75ebfe*/
+  this->q12D = 0; /*0x75ec04*/
+  this->q130 = 100; /*0x75ec0a*/
+  this->q13C = 0; /*0x75ec14*/
+  this->q144 = 0; /*0x75ec1a*/
+  this->q148 = 0; /*0x75ec20*/
+  this->q053 = 0; /*0x75ec26*/
+  this->bombVisible = 0; /*0x75ec2c*/
+  this->alignmentPadding69 = 0; /*0x75ec32*/
+  this->q06A = 0; /*0x75ec38*/
+  this->isOnMap = 0; /*0x75ec44*/
+  this->Audio4 = 0; /*0x75ec4a*/
   FrameSnapshot::Init((_WORD *)(this + 472)); /*0x75ec50*/
   *(_DWORD *)(this + 500) = 0; /*0x75ec57*/
   *(_DWORD *)(this + 504) = 5; /*0x75ec5d*/
   *(_BYTE *)(this + 508) = 1; /*0x75ec67*/
   *(_BYTE *)(this + 509) = 0; /*0x75ec6e*/
-  *(_DWORD *)(this + 496) = &vt_VectorClass_CellClass; /*0x75ec74*/
+  this->q7C0 = &vt_VectorClass_CellClass; /*0x75ec74*/
   *(_DWORD *)(this + 500) = __2_YAPAXI_Z(0x14u); /*0x75ec83*/
   *(_BYTE *)(this + 509) = 1; /*0x75ec89*/
-  *(_DWORD *)(this + 496) = &vt_DynamicVectorClass_CellClass; /*0x75ec90*/
-  *(_DWORD *)(this + 516) = 10; /*0x75ec9a*/
-  *(_DWORD *)(this + 512) = 0; /*0x75eca4*/
+  this->q7C0 = &vt_DynamicVectorClass_CellClass; /*0x75ec90*/
+  this->q081 = 10; /*0x75ec9a*/
+  this->q200 = 0; /*0x75eca4*/
   *(_DWORD *)this = &WaveClass::`vftable'; /*0x75ecaa*/
   this->VoxelAnimClass_field_0x4 = &WaveClass::`vftable'; /*0x75ecb0*/
   this->VoxelAnimClass_field_0x8 = &vt_WaveClass; /*0x75ecb7*/
-  *(_DWORD *)(this + 12) = &off_7F6BC8; /*0x75ecbe*/
+  this->vtable4 = &off_7F6BC8; /*0x75ecbe*/
   if ( MEMORY[0xA8EC48] < MEMORY[0xA8EC40] /*0x75ecfb*/
     || (MEMORY[0xA8EC45] || !MEMORY[0xA8EC40])
     && MEMORY[0xA8EC4C] > 0

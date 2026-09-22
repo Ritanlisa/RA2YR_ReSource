@@ -483,7 +483,7 @@ LABEL_5:
   }
   else
   {
-    v8 = MEMORY[0xA83D84]; /*0x5fd9d1*/
+    v8 = g_BuildingTypeClass_Array; /*0x5fd9d1*/
     while ( *(_DWORD *)v8->vtable0 != this->Object_field_0xAC ) /*0x5fd9d9*/
     {
       ++v7; /*0x5fd9db*/
@@ -493,7 +493,7 @@ LABEL_5:
     }
   }
   v9 = 0; /*0x5fd9ec*/
-  v10 = *(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * v7]; /*0x5fd9ee*/
+  v10 = *(_DWORD *)&g_BuildingTypeClass_Array->vtable0[4 * v7]; /*0x5fd9ee*/
   if ( *(_BYTE *)(v10 + 681) || *(_BYTE *)(v10 + 680) || *(_DWORD *)(v10 + 660) == 126 || *(_BYTE *)(v10 + 682) ) /*0x5fda0a*/
     v9 = -12; /*0x5fda12*/
   if ( *(_DWORD *)(v10 + 664) == 9 ) /*0x5fda1e*/
@@ -502,7 +502,7 @@ LABEL_5:
     --v9; /*0x5fda26*/
   v11 = v9 + a2[1]; /*0x5fda30*/
   v30 = *a2; /*0x5fda32*/
-  v31 = MEMORY[0x886FA4] + v11; /*0x5fda42*/
+  v31 = g_Map_VisibleRect + v11; /*0x5fda42*/
   v12 = this->Object_field_0xAC; /*0x5fda46*/
   if ( *(_BYTE *)(v12 + 681) ) /*0x5fda4c*/
   {
@@ -514,7 +514,7 @@ LABEL_20:
     }
     else
     {
-      v14 = MEMORY[0xA83D84]; /*0x5fda60*/
+      v14 = g_BuildingTypeClass_Array; /*0x5fda60*/
       while ( *(_DWORD *)v14->vtable0 != v12 ) /*0x5fda68*/
       {
         ++v13; /*0x5fda6a*/
@@ -523,9 +523,9 @@ LABEL_20:
           goto LABEL_20; /*0x5fda70*/
       }
     }
-    v15 = *(_DWORD *)&MEMORY[0xB0F4EC]->__pad_0[4 * FindBuildingByTiberiumType(v13)]; /*0x5fda8b*/
-    v16 = *((_DWORD *)MEMORY[0xB054D4] + *(_DWORD *)(v15 + 192)); /*0x5fda93*/
-    v17 = *(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * *(_DWORD *)(*(_DWORD *)(v15 + 224) + 660)]; /*0x5fdaa8*/
+    v15 = *(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * FindBuildingByTiberiumType(v13)]; /*0x5fda8b*/
+    v16 = *((_DWORD *)BuildingTypeClass_AnimTable + *(_DWORD *)(v15 + 192)); /*0x5fda93*/
+    v17 = *(_DWORD *)&g_BuildingTypeClass_Array->vtable0[4 * *(_DWORD *)(*(_DWORD *)(v15 + 224) + 660)]; /*0x5fdaa8*/
     v18 = (*(int (__thiscall **)(int))(*(_DWORD *)v17 + 156))(v17); /*0x5fdaad*/
     if ( !v18 ) /*0x5fdab5*/
     {
@@ -534,7 +534,7 @@ LABEL_20:
         v18 = (*(int (__thiscall **)(int))(*(_DWORD *)v19 + 156))(v19); /*0x5fdac9*/
     }
     DrawToSurfaceSHP( /*0x5fdb03*/
-      MEMORY[0x887314],
+      g_DSurface_Hidden_2,
       *(_DWORD *)(v16 + 780),
       v18,
       0,
@@ -558,10 +558,10 @@ LABEL_20:
     v32 = *v4; /*0x5fdb2b*/
     v33 = *(_DWORD *)(this + 160); /*0x5fdb32*/
     v34 = *(_DWORD *)(this + 164); /*0x5fdb41*/
-    v20 = (char *)MEMORY[0xB054D4] + 4 * *((_DWORD *)HouseClass_Player + 22549); /*0x5fdb60*/
+    v20 = (char *)BuildingTypeClass_AnimTable + 4 * *((_DWORD *)HouseClass_Player + 22549); /*0x5fdb60*/
     v27 = *((__int16 *)Coord::To_Cell(&MEMORY[0x87F7E8], &v32) + 134); /*0x5fdb7c*/
     DrawToSurfaceSHP( /*0x5fdb9a*/
-      MEMORY[0x887314],
+      g_DSurface_Hidden_2,
       *(_DWORD *)(*(_DWORD *)v20 + 780),
       v5,
       0,
@@ -596,21 +596,21 @@ LABEL_20:
     }
     else
     {
-      v26 = (__int16 *)Tactical::PixelToCell((int)MEMORY[0x887324], &a2, &v30); /*0x5fdc21*/
+      v26 = (__int16 *)Tactical::PixelToCell((int)g_TacticalClass_Instance, &a2, &v30); /*0x5fdc21*/
       if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], v26) ) /*0x5fdc2c*/
       {
-        v28 = (__int16 *)Tactical::PixelToCell((int)MEMORY[0x887324], &a2, &v30); /*0x5fdc4a*/
+        v28 = (__int16 *)Tactical::PixelToCell((int)g_TacticalClass_Instance, &a2, &v30); /*0x5fdc4a*/
         v25 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v28); /*0x5fdc4b*/
       }
       else
       {
         LOWORD(a2) = 1; /*0x5fdc58*/
-        HIWORD(a2) = MEMORY[0x87F8DC]; /*0x5fdc5f*/
+        HIWORD(a2) = g_Cell_PositionLUT; /*0x5fdc5f*/
         v25 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2); /*0x5fdc6a*/
       }
     }
     DrawToSurfaceSHP( /*0x5fdcaa*/
-      MEMORY[0x887314],
+      g_DSurface_Hidden_2,
       v25[13],
       v5,
       0,
@@ -669,7 +669,7 @@ OverlayClass *__thiscall Object::DrawObject(void **this, char a2)
     }
     while ( v3 < MEMORY[0xA8EC60] ); /*0x5fdfdd*/
   }
-  if ( MEMORY[0xA8E9A0] ) /*0x5fdfe6*/
+  if ( g_WTFMode ) /*0x5fdfe6*/
     ObjectClass::Undeploy((#374 *)this); /*0x5fdfea*/
   this->q0AC = 0; /*0x5fdff1*/
   ObjectClass::Dtor(this); /*0x5fdffb*/
@@ -733,7 +733,7 @@ LABEL_39:
     v12 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)(*(_DWORD *)(this + 40) + 904), &v26) >> 12) + 1) >> 1) & 7; /*0x62ad3a*/
     v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 40) + 444))(*(_DWORD *)(this + 40)); /*0x62ad43*/
     NeighbourContentCell = Cell::GetNeighbourContent(v13, v12); /*0x62ad50*/
-    if ( !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 132))(*(_DWORD *)(this + 36)) + 3278) ) /*0x62ad5a*/
+    if ( !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 132))(this->q090) + 3278) ) /*0x62ad5a*/
     {
       v15 = NeighbourContentCell[59]; /*0x62ad64*/
       if ( v15 == 2 || v15 == 6 || v15 == 3 ) /*0x62ad77*/
@@ -755,7 +755,7 @@ LABEL_39:
     v18 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*NeighbourContentCell + 72))(NeighbourContentCell, v30); /*0x62adde*/
     v19 = ObjectPlacement::CalcPosition(NeighbourContentCell, v31, v18, 0, 0, 0); /*0x62ade9*/
     v27 = *v19; /*0x62adf0*/
-    v20 = *(_DWORD *)(this + 36); /*0x62adf4*/
+    v20 = this->q090; /*0x62adf4*/
     v28 = v19[1]; /*0x62adfa*/
     v29 = v19[2]; /*0x62ae03*/
     if ( v20 && (*(int (__thiscall **)(int))(*(_DWORD *)v20 + 44))(v20) == 1 ) /*0x62ae11*/
@@ -771,7 +771,7 @@ LABEL_39:
       if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v27) + 80) & 0x100) != 0 ) /*0x62ae67*/
       {
         v29 += MEMORY[0xAC497C]; /*0x62ae75*/
-        *(_BYTE *)(*(_DWORD *)(this + 36) + 140) = 1; /*0x62ae7c*/
+        *(_BYTE *)(this->q090 + 140) = 1; /*0x62ae7c*/
         goto LABEL_34; /*0x62ae83*/
       }
       goto LABEL_29; /*0x62ae67*/
@@ -782,15 +782,15 @@ LABEL_39:
       if ( v29 >= *(_DWORD *)(v23 + 8) ) /*0x62aec1*/
       {
 LABEL_29:
-        *(_BYTE *)(*(_DWORD *)(this + 36) + 140) = 0; /*0x62ae85*/
+        *(_BYTE *)(this->q090 + 140) = 0; /*0x62ae85*/
         goto LABEL_34; /*0x62ae8f*/
       }
       v29 += MEMORY[0xAC497C]; /*0x62aec9*/
-      *(_BYTE *)(*(_DWORD *)(this + 36) + 140) = 1; /*0x62aed0*/
+      *(_BYTE *)(this->q090 + 140) = 1; /*0x62aed0*/
     }
     else
     {
-      *(_BYTE *)(*(_DWORD *)(this + 36) + 140) = 0; /*0x62aedc*/
+      *(_BYTE *)(this->q090 + 140) = 0; /*0x62aedc*/
     }
 LABEL_34:
     v4 = MEMORY[0xAC4948]; /*0x62aee3*/
@@ -809,7 +809,7 @@ LABEL_34:
   }
   v6 = (int *)(*(_DWORD *)(this + 40) + 156); /*0x62ac63*/
   v27 = *v6; /*0x62ac6a*/
-  v7 = *(_DWORD *)(this + 36); /*0x62ac6e*/
+  v7 = this->q090; /*0x62ac6e*/
   v28 = v6[1]; /*0x62ac74*/
   v29 = v6[2]; /*0x62ac7d*/
   if ( v7 ) /*0x62ac81*/
@@ -828,9 +828,9 @@ LABEL_34:
     }
   }
   if ( *(_BYTE *)(*(_DWORD *)(this + 40) + 140) ) /*0x62acd6*/
-    *(_BYTE *)(*(_DWORD *)(this + 36) + 140) = 1; /*0x62ace3*/
+    *(_BYTE *)(this->q090 + 140) = 1; /*0x62ace3*/
   else
-    *(_BYTE *)(*(_DWORD *)(this + 36) + 140) = 0; /*0x62acef*/
+    *(_BYTE *)(this->q090 + 140) = 0; /*0x62acef*/
   *a2 = v27; /*0x62ad03*/
   a2[1] = v28; /*0x62ad0a*/
   a2[2] = v29; /*0x62ad11*/

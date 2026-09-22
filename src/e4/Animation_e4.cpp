@@ -193,17 +193,17 @@ double __thiscall Animation::GetProgress(int this)
   int v3; // edx
   int v4; // eax
 
-  if ( !*(_BYTE *)(this + 24) ) /*0x4a52f0*/
+  if ( !this->q018 ) /*0x4a52f0*/
     return 1.0; /*0x4a5352*/
-  v1 = *(_DWORD *)(this + 20); /*0x4a52fb*/
+  v1 = this->q014; /*0x4a52fb*/
   if ( !v1 ) /*0x4a5304*/
     return 1.0; /*0x4a5310*/
-  v3 = *(_DWORD *)(this + 8); /*0x4a5311*/
-  v4 = *(_DWORD *)(this + 16); /*0x4a5314*/
+  v3 = this->q008; /*0x4a5311*/
+  v4 = this->q010; /*0x4a5314*/
   if ( v3 != -1 ) /*0x4a531a*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v3 < v4 ) /*0x4a5326*/
-      return (double)(v1 - (v4 - ((int)MEMORY[0xA8ED84] - v3))) / (double)v1; /*0x4a533c*/
+    if ( (int)g_CurrentFrame - v3 < v4 ) /*0x4a5326*/
+      return (double)(v1 - (v4 - ((int)g_CurrentFrame - v3))) / (double)v1; /*0x4a533c*/
     v4 = 0; /*0x4a533d*/
   }
   return (double)(v1 - v4) / (double)v1; /*0x4a530d*/

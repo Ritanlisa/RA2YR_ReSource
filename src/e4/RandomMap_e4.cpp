@@ -1767,7 +1767,7 @@ char __thiscall sub_5905D0(int this)
   LOBYTE(v2) = (unsigned char)this->RandomMap_field_0x14; /*0x5905dd*/
   if ( (_BYTE)v2 ) /*0x5905e2*/
   {
-    v3 = *(_DWORD *)(this + 4); /*0x5905e8*/
+    v3 = this->Items; /*0x5905e8*/
     v4 = *(_DWORD *)(v3 + 16); /*0x5905eb*/
     LOBYTE(v2) = v4 - 1; /*0x5905ee*/
     if ( v4 - 1 > 0 ) /*0x5905f3*/
@@ -1861,7 +1861,7 @@ LABEL_28:
   }
   else
   {
-    v16 = *(_DWORD *)(this + 4); /*0x59072b*/
+    v16 = this->Items; /*0x59072b*/
     v17 = 0; /*0x59072e*/
     v42 = 0; /*0x590730*/
     if ( *(int *)(v16 + 16) > 0 ) /*0x590737*/
@@ -2829,7 +2829,7 @@ void __thiscall CleanupRandomMapData(int this)
   {
     ComPtr::Dtor(*(_DWORD **)(this + 380)); /*0x59598a*/
     __3_YAXPAX_Z(v7); /*0x595990*/
-    *(_DWORD *)(this + 380) = 0; /*0x595998*/
+    this->q17C = 0; /*0x595998*/
   }
   *(_DWORD *)(this + 736) = &vt_VectorClass_BuildingTypeClass_const; /*0x5959a4*/
   DynamicVectorClass::Destroy(this + 736); /*0x5959aa*/
@@ -2840,86 +2840,86 @@ void __thiscall CleanupRandomMapData(int this)
   *(_DWORD *)(this + 644) = &vt_VectorClass_int; /*0x5959d8*/
   VectorClass::Destroy(this + 644); /*0x5959da*/
   v8 = *(void **)(this + 620); /*0x5959df*/
-  *(_DWORD *)(this + 616) = &vt_VectorClass_int; /*0x5959e5*/
+  this->q268 = &vt_VectorClass_int; /*0x5959e5*/
   if ( v8 && *(_BYTE *)(this + 629) ) /*0x5959ef*/
   {
     __3_YAXPAX_Z(v8); /*0x5959f8*/
-    *(_DWORD *)(this + 620) = 0; /*0x595a00*/
+    this->q26C = 0; /*0x595a00*/
   }
   *(_BYTE *)(this + 629) = 0; /*0x595a06*/
-  *(_DWORD *)(this + 624) = 0; /*0x595a0c*/
+  this->q270 = 0; /*0x595a0c*/
   v9 = *(void **)(this + 592); /*0x595a12*/
-  *(_DWORD *)(this + 588) = &vt_VectorClass_int; /*0x595a18*/
+  this->q24C = &vt_VectorClass_int; /*0x595a18*/
   if ( v9 && *(_BYTE *)(this + 601) ) /*0x595a22*/
   {
     __3_YAXPAX_Z(v9); /*0x595a2b*/
-    *(_DWORD *)(this + 592) = 0; /*0x595a33*/
+    this->q250 = 0; /*0x595a33*/
   }
   *(_BYTE *)(this + 601) = 0; /*0x595a39*/
-  *(_DWORD *)(this + 596) = 0; /*0x595a3f*/
+  this->q254 = 0; /*0x595a3f*/
   v10 = *(void **)(this + 564); /*0x595a45*/
-  *(_DWORD *)(this + 560) = &vt_VectorClass_int; /*0x595a4b*/
+  this->q230 = &vt_VectorClass_int; /*0x595a4b*/
   if ( v10 && *(_BYTE *)(this + 573) ) /*0x595a55*/
   {
     __3_YAXPAX_Z(v10); /*0x595a5e*/
-    *(_DWORD *)(this + 564) = 0; /*0x595a66*/
+    this->q234 = 0; /*0x595a66*/
   }
   *(_BYTE *)(this + 573) = 0; /*0x595a6c*/
-  *(_DWORD *)(this + 568) = 0; /*0x595a72*/
+  this->q238 = 0; /*0x595a72*/
   v11 = *(void **)(this + 536); /*0x595a78*/
-  *(_DWORD *)(this + 532) = &vt_VectorClass_int; /*0x595a7e*/
+  this->q214 = &vt_VectorClass_int; /*0x595a7e*/
   if ( v11 && *(_BYTE *)(this + 545) ) /*0x595a88*/
   {
     __3_YAXPAX_Z(v11); /*0x595a91*/
-    *(_DWORD *)(this + 536) = 0; /*0x595a99*/
+    this->q218 = 0; /*0x595a99*/
   }
   *(_BYTE *)(this + 545) = 0; /*0x595a9f*/
-  *(_DWORD *)(this + 540) = 0; /*0x595aa5*/
+  this->q21C = 0; /*0x595aa5*/
   v12 = *(void **)(this + 508); /*0x595aab*/
-  *(_DWORD *)(this + 504) = &vt_VectorClass_int; /*0x595ab1*/
+  this->q1F8 = &vt_VectorClass_int; /*0x595ab1*/
   if ( v12 && *(_BYTE *)(this + 517) ) /*0x595abb*/
   {
     __3_YAXPAX_Z(v12); /*0x595ac4*/
-    *(_DWORD *)(this + 508) = 0; /*0x595acc*/
+    this->q1FC = 0; /*0x595acc*/
   }
   *(_BYTE *)(this + 517) = 0; /*0x595ad2*/
-  *(_DWORD *)(this + 512) = 0; /*0x595ad8*/
+  this->q200 = 0; /*0x595ad8*/
   v13 = *(void **)(this + 480); /*0x595ade*/
-  *(_DWORD *)(this + 476) = &vt_VectorClass_int; /*0x595ae4*/
+  this->q1DC = &vt_VectorClass_int; /*0x595ae4*/
   if ( v13 && *(_BYTE *)(this + 489) ) /*0x595aee*/
   {
     __3_YAXPAX_Z(v13); /*0x595af7*/
-    *(_DWORD *)(this + 480) = 0; /*0x595aff*/
+    this->q1E0 = 0; /*0x595aff*/
   }
   *(_BYTE *)(this + 489) = 0; /*0x595b05*/
-  *(_DWORD *)(this + 484) = 0; /*0x595b0b*/
+  this->q1E4 = 0; /*0x595b0b*/
   v14 = *(void **)(this + 452); /*0x595b11*/
-  *(_DWORD *)(this + 448) = &vt_VectorClass_int; /*0x595b17*/
+  this->q1C0 = &vt_VectorClass_int; /*0x595b17*/
   if ( v14 && *(_BYTE *)(this + 461) ) /*0x595b21*/
   {
     __3_YAXPAX_Z(v14); /*0x595b2a*/
-    *(_DWORD *)(this + 452) = 0; /*0x595b32*/
+    this->q1C4 = 0; /*0x595b32*/
   }
   *(_BYTE *)(this + 461) = 0; /*0x595b38*/
-  *(_DWORD *)(this + 456) = 0; /*0x595b3e*/
+  this->q1C8 = 0; /*0x595b3e*/
   v15 = *(void **)(this + 424); /*0x595b44*/
-  *(_DWORD *)(this + 420) = &vt_VectorClass_int; /*0x595b4a*/
+  this->q1A4 = &vt_VectorClass_int; /*0x595b4a*/
   if ( v15 && *(_BYTE *)(this + 433) ) /*0x595b54*/
   {
     __3_YAXPAX_Z(v15); /*0x595b5d*/
-    *(_DWORD *)(this + 424) = 0; /*0x595b65*/
+    this->q1A8 = 0; /*0x595b65*/
   }
   *(_BYTE *)(this + 433) = 0; /*0x595b6b*/
-  *(_DWORD *)(this + 428) = 0; /*0x595b71*/
+  this->q1AC = 0; /*0x595b71*/
   v16 = *(void **)(this + 396); /*0x595b77*/
-  *(_DWORD *)(this + 392) = &vt_VectorClass_int; /*0x595b7d*/
+  this->q188 = &vt_VectorClass_int; /*0x595b7d*/
   if ( v16 && *(_BYTE *)(this + 405) ) /*0x595b87*/
   {
     __3_YAXPAX_Z(v16); /*0x595b90*/
-    *(_DWORD *)(this + 396) = 0; /*0x595b98*/
+    this->q18C = 0; /*0x595b98*/
   }
   *(_BYTE *)(this + 405) = 0; /*0x595ba0*/
-  *(_DWORD *)(this + 400) = 0; /*0x595ba6*/
+  this->q190 = 0; /*0x595ba6*/
   LoadOptions::Cleanup((_DWORD *)this); /*0x595bac*/
 }
 }
@@ -3118,7 +3118,7 @@ char __stdcall RandomMap_LoadInfo(wchar_t *Destination, int a2)
     BufferIOFileClass::Dtor(v10); /*0x597f64*/
     return 0; /*0x597f6b*/
   }
-  if ( INIClass::ParseValue_Wide((int)g_INI_Key_RandomMap, (int)stru_81B1A4, &MEMORY[0x887734], Source, 0x80u) <= 0 ) /*0x597e58*/
+  if ( INIClass::ParseValue_Wide((int)g_INI_Key_RandomMap, (int)stru_81B1A4, &g_TypeClass_DefaultString, Source, 0x80u) <= 0 ) /*0x597e58*/
   {
     *Destination = 0; /*0x597e7f*/
     *((_BYTE *)Destination + 437) = 1; /*0x597e82*/
@@ -3472,7 +3472,7 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
          (unsigned __int8 ***)v3,
          (unsigned __int8 *)off_82B134,
          (unsigned __int8 *)aTemperateorepa,
-         &MEMORY[0x889F64],
+         &g_INI_DefaultBuffer,
          String,
          128) )
   {
@@ -3503,7 +3503,7 @@ int __thiscall RandomMap_LoadConfig(_DWORD *this)
          (unsigned __int8 ***)v3,
          (unsigned __int8 *)off_82B134,
          (unsigned __int8 *)aSnoworepatchla,
-         &MEMORY[0x889F64],
+         &g_INI_DefaultBuffer,
          String,
          128) )
   {
@@ -3593,8 +3593,8 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   qmemcpy(&g_TileSystemInit, v38, 0x18u); /*0x5989c9*/
   if ( off_82AF14 ) /*0x5989cb*/
     off_82AF14(); /*0x5989cd*/
-  v35 = *((_BYTE *)MEMORY[0xA8B230] + 13720) == 0; /*0x5989e7*/
-  if ( !*((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x5989dc*/
+  v35 = *((_BYTE *)g_ScenarioClass_Instance + 13720) == 0; /*0x5989e7*/
+  if ( !*((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x5989dc*/
   {
     ProgressAnim::Init(0, 1079574528, 1, hDlg); /*0x5989fb*/
     SHPClass::Load(aProgbar2Shp, 0, 0); /*0x598a0c*/
@@ -3610,12 +3610,12 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   RandomMap::SetupTheater(a2); /*0x598a74*/
   if ( off_82AF14 ) /*0x598a80*/
     off_82AF14(); /*0x598a82*/
-  ++MEMORY[0xA8E7AC]; /*0x598a9a*/
+  ++g_IKnowWhatImDoing; /*0x598a9a*/
   if ( a2 ) /*0x598aa0*/
   {
     MiniMap::Render((char **)g_Map_TiberiumConfig); /*0x598aa8*/
     SendMessageA(hDlg, 0xFu, 0, 0); /*0x598ab2*/
-    if ( MEMORY[0xA8B238] == 4 && MEMORY[0xA8B244] == 3 ) /*0x598ac4*/
+    if ( g_GameMode_Current == 4 && MEMORY[0xA8B244] == 3 ) /*0x598ac4*/
       MapPreview::Upload((int *)g_Map_TiberiumConfig); /*0x598acc*/
   }
   if ( off_82AF14 ) /*0x598ad8*/
@@ -3633,8 +3633,8 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
     RandomMap::FinalizeMapData(this); /*0x598aff*/
   }
   FindMapCell(this); /*0x598b14*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x598b1e*/
-    Multiplayer::ShowProgress(&MEMORY[0xA8B238], 154); /*0x598b30*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x598b1e*/
+    Multiplayer::ShowProgress(&g_GameMode_Current, 154); /*0x598b30*/
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 55.0, NAN); /*0x598b4b*/
   if ( off_82AF14 ) /*0x598b57*/
@@ -3643,13 +3643,13 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   {
     MiniMap::Render((char **)g_Map_TiberiumConfig); /*0x598b6a*/
     SendMessageA(hDlg, 0xFu, 0, 0); /*0x598b74*/
-    if ( MEMORY[0xA8B238] == 4 && MEMORY[0xA8B244] == 3 ) /*0x598b86*/
+    if ( g_GameMode_Current == 4 && MEMORY[0xA8B244] == 3 ) /*0x598b86*/
       MapPreview::Upload((int *)g_Map_TiberiumConfig); /*0x598b8e*/
   }
   if ( off_82AF14 ) /*0x598b9a*/
     off_82AF14(); /*0x598b9c*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x598ba4*/
-    Multiplayer::ShowProgress(&MEMORY[0xA8B238], 159); /*0x598bb6*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x598ba4*/
+    Multiplayer::ShowProgress(&g_GameMode_Current, 159); /*0x598bb6*/
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 60.0, NAN); /*0x598bd1*/
   if ( off_82AF14 ) /*0x598bdd*/
@@ -3658,7 +3658,7 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   {
     MiniMap::Render((char **)g_Map_TiberiumConfig); /*0x598bf0*/
     SendMessageA(hDlg, 0xFu, 0, 0); /*0x598bfa*/
-    if ( MEMORY[0xA8B238] == 4 && MEMORY[0xA8B244] == 3 ) /*0x598c0c*/
+    if ( g_GameMode_Current == 4 && MEMORY[0xA8B244] == 3 ) /*0x598c0c*/
       MapPreview::Upload((int *)g_Map_TiberiumConfig); /*0x598c14*/
   }
   if ( off_82AF14 ) /*0x598c20*/
@@ -3702,8 +3702,8 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   }
   LOBYTE(v10) = 0; /*0x598cfa*/
   Map_Helper_58D010(v10); /*0x598cfc*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x598d07*/
-    Multiplayer::ShowProgress(&MEMORY[0xA8B238], 164); /*0x598d19*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x598d07*/
+    Multiplayer::ShowProgress(&g_GameMode_Current, 164); /*0x598d19*/
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 65.0, NAN); /*0x598d34*/
   if ( off_82AF14 ) /*0x598d40*/
@@ -3718,8 +3718,8 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
     CreateMapObject(0, -1); /*0x598d7b*/
     MapClass::FindPassableNeighbor(v37); /*0x598d82*/
   }
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x598d8d*/
-    Multiplayer::ShowProgress(&MEMORY[0xA8B238], 169); /*0x598d9f*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x598d8d*/
+    Multiplayer::ShowProgress(&g_GameMode_Current, 169); /*0x598d9f*/
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 70.0, NAN); /*0x598dba*/
   if ( off_82AF14 ) /*0x598dc6*/
@@ -3728,7 +3728,7 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   {
     MiniMap::Render((char **)g_Map_TiberiumConfig); /*0x598dd9*/
     SendMessageA(hDlg, 0xFu, 0, 0); /*0x598dea*/
-    if ( MEMORY[0xA8B238] == 4 && MEMORY[0xA8B244] == 3 ) /*0x598e00*/
+    if ( g_GameMode_Current == 4 && MEMORY[0xA8B244] == 3 ) /*0x598e00*/
       MapPreview::Upload((int *)g_Map_TiberiumConfig); /*0x598e08*/
   }
   if ( off_82AF14 ) /*0x598e14*/
@@ -3740,8 +3740,8 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
     House::AnnounceUpgrade(k, -1); /*0x598e48*/
   if ( off_82AF14 ) /*0x598e62*/
     off_82AF14(); /*0x598e64*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x598e6c*/
-    Multiplayer::ShowProgress(&MEMORY[0xA8B238], 174); /*0x598e7e*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x598e6c*/
+    Multiplayer::ShowProgress(&g_GameMode_Current, 174); /*0x598e7e*/
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 75.0, NAN); /*0x598e99*/
   Debug::Log(); /*0x598ea3*/
@@ -3807,8 +3807,8 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x598fd0*/
   for ( n = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); n; n = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x598fe1*/
     House::AnnounceUpgrade(n, -1); /*0x598fe7*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x598fff*/
-    Multiplayer::ShowProgress(&MEMORY[0xA8B238], 179); /*0x599011*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x598fff*/
+    Multiplayer::ShowProgress(&g_GameMode_Current, 179); /*0x599011*/
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 80.0, NAN); /*0x59902c*/
   if ( off_82AF14 ) /*0x599038*/
@@ -3818,7 +3818,7 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
     MiniMap::Render((char **)g_Map_TiberiumConfig); /*0x59904b*/
     v24 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x599057*/
     SendMessageA(hDlg, 0xFu, 0, 0); /*0x599062*/
-    if ( MEMORY[0xA8B238] == 4 && MEMORY[0xA8B244] == 3 ) /*0x599079*/
+    if ( g_GameMode_Current == 4 && MEMORY[0xA8B244] == 3 ) /*0x599079*/
       MapPreview::Upload((int *)g_Map_TiberiumConfig); /*0x599081*/
   }
   else
@@ -3827,8 +3827,8 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   }
   if ( off_82AF14 ) /*0x59909a*/
     off_82AF14(); /*0x59909c*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x5990a4*/
-    Multiplayer::ShowProgress(&MEMORY[0xA8B238], 184); /*0x5990b6*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x5990a4*/
+    Multiplayer::ShowProgress(&g_GameMode_Current, 184); /*0x5990b6*/
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 85.0, NAN); /*0x5990d1*/
   if ( off_82AF14 ) /*0x5990dd*/
@@ -3837,7 +3837,7 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   {
     MiniMap::Render((char **)g_Map_TiberiumConfig); /*0x5990f0*/
     v24(hDlg, 0xFu, 0, 0); /*0x599101*/
-    if ( MEMORY[0xA8B238] == 4 && MEMORY[0xA8B244] == 3 ) /*0x599112*/
+    if ( g_GameMode_Current == 4 && MEMORY[0xA8B244] == 3 ) /*0x599112*/
       MapPreview::Upload((int *)g_Map_TiberiumConfig); /*0x59911a*/
   }
   if ( off_82AF14 ) /*0x599126*/
@@ -3851,8 +3851,8 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   Debug::Log(); /*0x599176*/
   v26 = v37; /*0x59917b*/
   GenerateTerrainHeightMap(v37); /*0x599184*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x59918f*/
-    Multiplayer::ShowProgress(&MEMORY[0xA8B238], 189); /*0x5991a1*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x59918f*/
+    Multiplayer::ShowProgress(&g_GameMode_Current, 189); /*0x5991a1*/
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 90.0, NAN); /*0x5991bc*/
   if ( off_82AF14 ) /*0x5991c8*/
@@ -3861,7 +3861,7 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   {
     MiniMap::Render((char **)g_Map_TiberiumConfig); /*0x5991db*/
     v24(hDlg, 0xFu, 0, 0); /*0x5991ec*/
-    if ( MEMORY[0xA8B238] == 4 && MEMORY[0xA8B244] == 3 ) /*0x5991fd*/
+    if ( g_GameMode_Current == 4 && MEMORY[0xA8B244] == 3 ) /*0x5991fd*/
       MapPreview::Upload((int *)g_Map_TiberiumConfig); /*0x599205*/
   }
   if ( off_82AF14 ) /*0x599211*/
@@ -3888,8 +3888,8 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   }
   if ( off_82AF14 ) /*0x5992b7*/
     off_82AF14(); /*0x5992b9*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x5992c1*/
-    Multiplayer::ShowProgress(&MEMORY[0xA8B238], 194); /*0x5992d3*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x5992c1*/
+    Multiplayer::ShowProgress(&g_GameMode_Current, 194); /*0x5992d3*/
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 95.0, NAN); /*0x5992ee*/
   if ( off_82AF14 ) /*0x5992fa*/
@@ -3898,10 +3898,10 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   {
     MiniMap::Render((char **)g_Map_TiberiumConfig); /*0x59930d*/
     v24(hDlg, 0xFu, 0, 0); /*0x59931e*/
-    if ( MEMORY[0xA8B238] == 4 && MEMORY[0xA8B244] == 3 ) /*0x59932f*/
+    if ( g_GameMode_Current == 4 && MEMORY[0xA8B244] == 3 ) /*0x59932f*/
       MapPreview::Upload((int *)g_Map_TiberiumConfig); /*0x599337*/
   }
-  --MEMORY[0xA8E7AC]; /*0x59934a*/
+  --g_IKnowWhatImDoing; /*0x59934a*/
   if ( off_82AF14 ) /*0x599350*/
     off_82AF14(); /*0x599352*/
   Debug::Log(); /*0x599359*/
@@ -3944,8 +3944,8 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
   Debug::Log(); /*0x599456*/
   Shroud::ProcessCellVisibility(&MEMORY[0x87F7E8], (int)&MEMORY[0x87F8E4]); /*0x599468*/
   RadarClass::RecreateSurface((int)&MEMORY[0x87F7E8], 0); /*0x599472*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x59947e*/
-    Multiplayer::ShowProgress(&MEMORY[0xA8B238], 199); /*0x599490*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x59947e*/
+    Multiplayer::ShowProgress(&g_GameMode_Current, 199); /*0x599490*/
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 100.0, NAN); /*0x5994ab*/
   Debug::Log(); /*0x5994b5*/
@@ -3955,8 +3955,8 @@ char __thiscall RandomMap_Generate(int *this, char a2, HWND hDlg)
     v34 = GetDlgItem(hDlg, 1592); /*0x5994d2*/
     if ( v34 ) /*0x5994da*/
       ShowWindow(v34, 0); /*0x5994de*/
-    if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) ) /*0x5994ea*/
-      Multiplayer::ShowProgress(&MEMORY[0xA8B238], 99); /*0x5994f9*/
+    if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) ) /*0x5994ea*/
+      Multiplayer::ShowProgress(&g_GameMode_Current, 99); /*0x5994f9*/
     else
       Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 0.0, NAN); /*0x599510*/
     return VtableStub::643E70(MEMORY[0xAC4F58]); /*0x59951a*/
@@ -4131,7 +4131,7 @@ char *__thiscall RandomMap::SetupTheater(int *this, char a2)
   INIClass::SetDouble((char *)v79, (unsigned __int8 *)g_INI_Key_Lighting, g_INI_Key_IonBlue, 0.75);
   INIClass::SetDouble((char *)v79, (unsigned __int8 *)g_INI_Key_Lighting, g_INI_Key_IonGround, 0.0);
   INIClass::SetDouble((char *)v79, (unsigned __int8 *)g_INI_Key_Lighting, g_INI_Key_IonLevel, 0.0);
-  if ( !*((_BYTE *)MEMORY[0xA8B230] + 13720) )
+  if ( !*((_BYTE *)g_ScenarioClass_Instance + 13720) )
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 1.0, NAN);
   if ( off_82AF14 )
     off_82AF14();
@@ -4139,28 +4139,28 @@ char *__thiscall RandomMap::SetupTheater(int *this, char a2)
   BuildingClass::FreeUpgradeQueue2();
   if ( !a2 )
   {
-    ++MEMORY[0xA8E7AC];
-    ScenarioClass::SetFileName((char *)MEMORY[0xA8B230], &MEMORY[0x889F64]);
+    ++g_IKnowWhatImDoing;
+    ScenarioClass::SetFileName((char *)g_ScenarioClass_Instance, &g_INI_DefaultBuffer);
     if ( MEMORY[0xA8ED6B] )
       ResetScenario();
     ScenarioClass::LoadMap(1, (int)v79, v10);
     PostLoadInitScenario(SLODWORD(v9));
-    HIWORD(v69) = MEMORY[0x87F8E0] / 2 + MEMORY[0x87F8DC] / 2;
+    HIWORD(v69) = g_CellPositionOffset / 2 + g_Cell_PositionLUT / 2;
     LOWORD(v69) = HIWORD(v69) + 1;
-    ScenarioClass::Set_Waypoint((char *)MEMORY[0xA8B230], 700, v69);
-    Waypoint_Location = ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], v73, 700);
-    ScenarioClass::Set_Waypoint((char *)MEMORY[0xA8B230], *((_DWORD *)MEMORY[0xA8B230] + 131), *Waypoint_Location);
+    ScenarioClass::Set_Waypoint((char *)g_ScenarioClass_Instance, 700, v69);
+    Waypoint_Location = ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, v73, 700);
+    ScenarioClass::Set_Waypoint((char *)g_ScenarioClass_Instance, *((_DWORD *)g_ScenarioClass_Instance + 131), *Waypoint_Location);
     v12 = (__int16 *)ScenarioClass::Get_Waypoint_Location(
-                       (char *)MEMORY[0xA8B230],
+                       (char *)g_ScenarioClass_Instance,
                        v73,
-                       *((_DWORD *)MEMORY[0xA8B230] + 131));
+                       *((_DWORD *)g_ScenarioClass_Instance + 131));
     v13 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v12);
     v13[80] |= 4u;
-    WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v73, *((_DWORD *)MEMORY[0xA8B230] + 131));
+    WorldCoords = Cell::GetWorldCoords((__int16 *)g_ScenarioClass_Instance, v73, *((_DWORD *)g_ScenarioClass_Instance + 131));
     TacticalClass::SetPositionThunk((int)WorldCoords);
     goto LABEL_153;
   }
-  ScenarioClass::InitTimer((int)MEMORY[0xA8B230]);
+  ScenarioClass::InitTimer((int)g_ScenarioClass_Instance);
   v15 = v74;
   if ( !*(_DWORD *)&v74[95] )
   {
@@ -4171,13 +4171,13 @@ char *__thiscall RandomMap::SetupTheater(int *this, char a2)
       v17 = 0;
     v74[95] = (MapResourceClass)v17;
   }
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) )
-    Multiplayer::ShowProgress(MEMORY[0xA8B238], 101);
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) )
+    Multiplayer::ShowProgress(g_GameMode_Current, 101);
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 2.0, NAN);
   v18 = (_DWORD *)v15[94];
   v19 = v15[14];
-  v20 = *((_DWORD *)MEMORY[0xA8B230] + 1174);
+  v20 = *((_DWORD *)g_ScenarioClass_Instance + 1174);
   LODWORD(v73[0]) = v19;
   v67 = 1;
   v70 = v20;
@@ -4253,8 +4253,8 @@ LABEL_59:
       while ( v24 < MEMORY[0xA8ED38] );
     }
   }
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) )
-    Multiplayer::ShowProgress(MEMORY[0xA8B238], 104);
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) )
+    Multiplayer::ShowProgress(g_GameMode_Current, 104);
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 5.0, NAN);
   if ( off_82AF14 )
@@ -4264,23 +4264,23 @@ LABEL_59:
     MouseClass::HandleClick((int)&MEMORY[0x87F7E8]);
     CellClass::DrawWrapper(&MEMORY[0x87F7E8].field_0, v78, 1, 0, 1);
     Shroud::ProcessCellVisibility(&MEMORY[0x87F7E8], (int)v75);
-    if ( MEMORY[0x887324] )
-      (*(void (__thiscall **)(LPPERSISTSTREAM, int))(*(_DWORD *)MEMORY[0x887324] + 32))(MEMORY[0x887324], 1);
+    if ( g_TacticalClass_Instance )
+      (*(void (__thiscall **)(LPPERSISTSTREAM, int))(*(_DWORD *)g_TacticalClass_Instance + 32))(g_TacticalClass_Instance, 1);
     v28 = __2_YAPAXI_Z(0xE18u);
     if ( v28 )
       v29 = (IPersistStream *)TacticalMap::Construct((int)v28);
     else
       v29 = 0;
-    MEMORY[0x887324] = v29;
+    g_TacticalClass_Instance = v29;
     Map_Setup_6DA980();
   }
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) )
-    Multiplayer::ShowProgress(MEMORY[0xA8B238], 109);
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) )
+    Multiplayer::ShowProgress(g_GameMode_Current, 109);
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 10.0, NAN);
-  for ( i = MEMORY[0x8B4118]; MEMORY[0x8B4118] > 0; i = MEMORY[0x8B4118] )
+  for ( i = g_HouseClass_BuildState; g_HouseClass_BuildState > 0; i = g_HouseClass_BuildState )
   {
-    v31 = *((_DWORD *)MEMORY[0x8B410C] + i - 1);
+    v31 = *((_DWORD *)g_UnitClassPool + i - 1);
     if ( v31 )
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v31 + 32))(v31, 1);
   }
@@ -4316,45 +4316,45 @@ LABEL_59:
   }
   if ( off_82AF14 )
     off_82AF14();
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) )
-    Multiplayer::ShowProgress(MEMORY[0xA8B238], 114);
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) )
+    Multiplayer::ShowProgress(g_GameMode_Current, 114);
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 15.0, NAN);
   MapClass::ProcessRegion(&MEMORY[0x87F7E8]);
   Terrain::ConnectivityGraph(&MEMORY[0x87F7E8]);
   MapClass::BuildSubzones(&MEMORY[0x87F7E8]);
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) )
-    Multiplayer::ShowProgress(MEMORY[0xA8B238], 119);
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) )
+    Multiplayer::ShowProgress(g_GameMode_Current, 119);
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 20.0, NAN);
   if ( off_82AF14 )
     off_82AF14();
-  ScenarioClass::ClearAllWaypoints((char *)MEMORY[0xA8B230]);
-  HIWORD(v72) = MEMORY[0x87F8E0] / 2 + MEMORY[0x87F8DC] / 2;
+  ScenarioClass::ClearAllWaypoints((char *)g_ScenarioClass_Instance);
+  HIWORD(v72) = g_CellPositionOffset / 2 + g_Cell_PositionLUT / 2;
   LOWORD(v72) = HIWORD(v72) + 1;
-  ScenarioClass::Set_Waypoint((char *)MEMORY[0xA8B230], 700, (int)v72);
-  v39 = ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v72, 700);
-  ScenarioClass::Set_Waypoint((char *)MEMORY[0xA8B230], 699, *v39);
-  v40 = (__int16 *)ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v72, 699);
+  ScenarioClass::Set_Waypoint((char *)g_ScenarioClass_Instance, 700, (int)v72);
+  v39 = ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v72, 700);
+  ScenarioClass::Set_Waypoint((char *)g_ScenarioClass_Instance, 699, *v39);
+  v40 = (__int16 *)ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v72, 699);
   v41 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v40);
   v41[80] |= 4u;
-  v42 = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v83, 699);
+  v42 = Cell::GetWorldCoords((__int16 *)g_ScenarioClass_Instance, v83, 699);
   TacticalClass::SetPositionThunk((int)v42);
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) )
-    Multiplayer::ShowProgress(MEMORY[0xA8B238], 124);
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) )
+    Multiplayer::ShowProgress(g_GameMode_Current, 124);
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 25.0, NAN);
   if ( off_82AF14 )
     off_82AF14();
   v43 = LODWORD(v73[0]);
-  ++MEMORY[0xA8E7AC];
-  if ( LODWORD(v73[0]) != *((_DWORD *)MEMORY[0xA8B230] + 1174) )
+  ++g_IKnowWhatImDoing;
+  if ( LODWORD(v73[0]) != *((_DWORD *)g_ScenarioClass_Instance + 1174) )
   {
     LoadTheaterClassMIX(SLODWORD(v73[0]));
-    *((_DWORD *)MEMORY[0xA8B230] + 1174) = v43;
+    *((_DWORD *)g_ScenarioClass_Instance + 1174) = v43;
   }
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) )
-    Multiplayer::ShowProgress(MEMORY[0xA8B238], 129);
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) )
+    Multiplayer::ShowProgress(g_GameMode_Current, 129);
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 30.0, NAN);
   if ( off_82AF14 )
@@ -4362,11 +4362,11 @@ LABEL_59:
   v44 = v74;
   if ( !*(_DWORD *)&v74[94] || v43 != v70 || v67 )
   {
-    ResetRules(MEMORY[0x8871E0]);
-    ScenarioClass::ReadGlobalVariables((char *)MEMORY[0xA8B230], (char *)MEMORY[0x887048]);
+    ResetRules(g_RulesClass_Instance);
+    ScenarioClass::ReadGlobalVariables((char *)g_ScenarioClass_Instance, (char *)MEMORY[0x887048]);
   }
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) )
-    Multiplayer::ShowProgress(MEMORY[0xA8B238], 134);
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) )
+    Multiplayer::ShowProgress(g_GameMode_Current, 134);
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 35.0, NAN);
   v45 = (IUnknown *)off_82AF14;
@@ -4398,13 +4398,13 @@ LABEL_59:
     }
     if ( v45 )
       ((void (__stdcall *)())v45)();
-    LoadObjectTypeClassTheaterSHP(*((_DWORD *)MEMORY[0xA8B230] + 1174));
-    v49 = *((_DWORD *)MEMORY[0xA8B230] + 1174);
+    LoadObjectTypeClassTheaterSHP(*((_DWORD *)g_ScenarioClass_Instance + 1174));
+    v49 = *((_DWORD *)g_ScenarioClass_Instance + 1174);
     if ( v49 == dword_822CF8 )
       ResetAllTechnoField776();
     else
       LoadTerrainTypeClassTheatre(v49, 1);
-    LoadBuildingTypeClassSHPs(*((_DWORD *)MEMORY[0xA8B230] + 1174));
+    LoadBuildingTypeClassSHPs(*((_DWORD *)g_ScenarioClass_Instance + 1174));
     if ( off_82AF14 )
     {
       off_82AF14();
@@ -4418,20 +4418,20 @@ LABEL_59:
     BuildingTypeClass::LoadRepairAnimations(v66);
     if ( off_82AF14 )
       off_82AF14();
-    LoadBuildingTypeClassTheatreSHP(*((_DWORD *)MEMORY[0xA8B230] + 1174));
+    LoadBuildingTypeClassTheatreSHP(*((_DWORD *)g_ScenarioClass_Instance + 1174));
     if ( off_82AF14 )
       off_82AF14();
-    LoadFactoryClassTheaterSHP(*((_DWORD *)MEMORY[0xA8B230] + 1174));
+    LoadFactoryClassTheaterSHP(*((_DWORD *)g_ScenarioClass_Instance + 1174));
     if ( off_82AF14 )
       off_82AF14();
     LoadMapClassIsometricTiles(0, 1);
   }
-  dword_822CF8 = *((_DWORD *)MEMORY[0xA8B230] + 1174);
+  dword_822CF8 = *((_DWORD *)g_ScenarioClass_Instance + 1174);
 LABEL_153:
   v50 = v74;
-  --MEMORY[0xA8E7AC];
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) )
-    Multiplayer::ShowProgress(MEMORY[0xA8B238], 139);
+  --g_IKnowWhatImDoing;
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) )
+    Multiplayer::ShowProgress(g_GameMode_Current, 139);
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 40.0, NAN);
   if ( off_82AF14 )
@@ -4492,8 +4492,8 @@ LABEL_153:
     *((_DWORD *)g_MapTileArray + 20 * SLOWORD(v73[0]) + 20 * unk_89C2DC * SWORD1(v73[0])) = LODWORD(v73[0]);
     *(_BYTE *)(ii + 283) = v50[195].__tail_0[0];
   }
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) )
-    Multiplayer::ShowProgress(MEMORY[0xA8B238], 144);
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) )
+    Multiplayer::ShowProgress(g_GameMode_Current, 144);
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 45.0, NAN);
   if ( off_82AF14 )
@@ -4537,25 +4537,25 @@ LABEL_153:
     v60 = *(_DWORD *)(*(_DWORD *)&v50[113] + 4 * *(_DWORD *)&v50[18]);
   else
     v60 = *(_DWORD *)(*(_DWORD *)&v50[106] + 4 * *(_DWORD *)&v50[18]);
-  *((_DWORD *)MEMORY[0xA8B230] + 3402) = v60;
-  *((_DWORD *)MEMORY[0xA8B230] + 3409) = *(_DWORD *)(*(_DWORD *)&v50[99] + 4 * *(_DWORD *)&v50[18]);
+  *((_DWORD *)g_ScenarioClass_Instance + 3402) = v60;
+  *((_DWORD *)g_ScenarioClass_Instance + 3409) = *(_DWORD *)(*(_DWORD *)&v50[99] + 4 * *(_DWORD *)&v50[18]);
   if ( v50[14] )
     v61 = *(_DWORD *)(*(_DWORD *)&v50[141] + 4 * *(_DWORD *)&v50[18]);
   else
     v61 = *(_DWORD *)(*(_DWORD *)&v50[120] + 4 * *(_DWORD *)&v50[18]);
-  *((_DWORD *)MEMORY[0xA8B230] + 3405) = v61;
+  *((_DWORD *)g_ScenarioClass_Instance + 3405) = v61;
   if ( v50[14] )
     v62 = *(_DWORD *)(*(_DWORD *)&v50[148] + 4 * *(_DWORD *)&v50[18]);
   else
     v62 = *(_DWORD *)(*(_DWORD *)&v50[127] + 4 * *(_DWORD *)&v50[18]);
-  *((_DWORD *)MEMORY[0xA8B230] + 3406) = v62;
+  *((_DWORD *)g_ScenarioClass_Instance + 3406) = v62;
   if ( v50[14] )
     v63 = *(_DWORD *)(*(_DWORD *)&v50[155] + 4 * *(_DWORD *)&v50[18]);
   else
     v63 = *(_DWORD *)(*(_DWORD *)&v50[134] + 4 * *(_DWORD *)&v50[18]);
-  *((_DWORD *)MEMORY[0xA8B230] + 3407) = v63;
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13720) )
-    Multiplayer::ShowProgress(MEMORY[0xA8B238], 149);
+  *((_DWORD *)g_ScenarioClass_Instance + 3407) = v63;
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) )
+    Multiplayer::ShowProgress(g_GameMode_Current, 149);
   else
     Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 0, 50.0, NAN);
   if ( !wcslen((const wchar_t *)&v50[30]) )
@@ -4787,7 +4787,7 @@ void __thiscall RandomMap::ArrangeBuildingGrid(int *this)
     v19 = (BuildingTypeClass *)(2 * v24 * (_DWORD)v25); /*0x59ae8d*/
     v11 = Math::RoundToInt(((double)(unsigned int)v8 * 2.328306437080797e-10 * 0.05 + 0.45) * (double)(int)v19); /*0x59ae9c*/
     aP3[0] = (MapResourceClass)&v23->__pad_0[*(_DWORD *)&aP2 + 1 + v10 / 2 + (int)v9 / 2]; /*0x59aecd*/
-    aP3[1] = (MapResourceClass)&v23->__pad_0[MEMORY[0x87F8DC] + (int)v9 / 2 - v10 / 2 - *(_DWORD *)&aP2]; /*0x59aed1*/
+    aP3[1] = (MapResourceClass)&v23->__pad_0[g_Cell_PositionLUT + (int)v9 / 2 - v10 / 2 - *(_DWORD *)&aP2]; /*0x59aed1*/
     v12 = 0; /*0x59aed5*/
     do /*0x59af1f*/
     {
@@ -4875,7 +4875,7 @@ void __thiscall RandomMap::FillTerrainProgressively(MapResourceClass *this)
   v20 = (1.0 - v3 * 0.01) * (0.5 - 0.45) + 0.45; /*0x59affb*/
   v21 = (double)v2; /*0x59b003*/
   v16 = Math::RoundToInt(v21 * 0.03 * v20); /*0x59b016*/
-  v4 = MEMORY[0x87F8E0] / 2 + MEMORY[0x87F8DC] / 2; /*0x59b030*/
+  v4 = g_CellPositionOffset / 2 + g_Cell_PositionLUT / 2; /*0x59b030*/
   v18 = v4; /*0x59b038*/
   aP3 = (MapResourceClass)(v4 + 1); /*0x59b03f*/
   LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x59b043*/
@@ -5033,7 +5033,7 @@ int __thiscall RandomMap_PlaceTerrainFeatures(int *this)
     v27 = v25[1]; /*0x59b3c2*/
     v28 = v25[2]; /*0x59b3cb*/
     v29 = v25[3]; /*0x59b3d5*/
-    v3 = v27 + MEMORY[0x87F8DC] + v29 / 2 - v28 / 2 - v26; /*0x59b3fd*/
+    v3 = v27 + g_Cell_PositionLUT + v29 / 2 - v28 / 2 - v26; /*0x59b3fd*/
     v32 = v26 + v29 / 2 + v28 / 2 + v27 + 1; /*0x59b3ff*/
     v33 = v3; /*0x59b403*/
     v36 = v32; /*0x59b407*/
@@ -5068,10 +5068,10 @@ int __thiscall RandomMap_PlaceTerrainFeatures(int *this)
         v22 += RandomMap::PlaceTerrain(v35, v5, &v26, (int)&v36, 1, (int)&v31, 0.75, 1); /*0x59b52d*/
         v20 = 0; /*0x59b540*/
         ++v23; /*0x59b55a*/
-        v6 = 2 * v26 - MEMORY[0x87F8DC] + 1; /*0x59b562*/
+        v6 = 2 * v26 - g_Cell_PositionLUT + 1; /*0x59b562*/
         v7 = 50000; /*0x59b563*/
         v47 = v6 + 2 * v28 + 2; /*0x59b572*/
-        v8 = MEMORY[0x87F8DC] + 2 * v27 + 1; /*0x59b57d*/
+        v8 = g_Cell_PositionLUT + 2 * v27 + 1; /*0x59b57d*/
         v51 = v8 + 2 * v29 + 2; /*0x59b585*/
         v39 = (double)v22 / v50; /*0x59b58c*/
         if ( unk_89C2DC * unk_89C2DC > 0 ) /*0x59b590*/
@@ -5677,9 +5677,9 @@ LABEL_27:
     v82 = 0; /*0x59bc85*/
     while ( 1 ) /*0x59bc97*/
     {
-      v16 = MEMORY[0x87F8DC] - 1; /*0x59bc97*/
-      *(_QWORD *)&v95 = (unsigned int)MEMORY[0x87F8DC]; /*0x59bc9d*/
-      v98 = (double)(unsigned int)MEMORY[0x87F8DC]; /*0x59bca5*/
+      v16 = g_Cell_PositionLUT - 1; /*0x59bc97*/
+      *(_QWORD *)&v95 = (unsigned int)g_Cell_PositionLUT; /*0x59bc9d*/
+      v98 = (double)(unsigned int)g_Cell_PositionLUT; /*0x59bca5*/
       do /*0x59bcdc*/
       {
         *(_QWORD *)&v94 = (unsigned int)Random::State(&g_Randomizer); /*0x59bcb6*/
@@ -5687,9 +5687,9 @@ LABEL_27:
         v18 = v17; /*0x59bcd8*/
       }
       while ( v17 > v16 ); /*0x59bcdc*/
-      v19 = MEMORY[0x87F8E0] - 1; /*0x59bcec*/
-      v90 = (unsigned int)MEMORY[0x87F8E0]; /*0x59bcf2*/
-      v98 = (double)(unsigned int)MEMORY[0x87F8E0]; /*0x59bcfa*/
+      v19 = g_CellPositionOffset - 1; /*0x59bcec*/
+      v90 = (unsigned int)g_CellPositionOffset; /*0x59bcf2*/
+      v98 = (double)(unsigned int)g_CellPositionOffset; /*0x59bcfa*/
       do /*0x59bd2f*/
       {
         v89 = (unsigned int)Random::State(&g_Randomizer); /*0x59bd0b*/
@@ -5697,11 +5697,11 @@ LABEL_27:
       }
       while ( v20 > v19 ); /*0x59bd2f*/
       HIWORD(v91) = -v18; /*0x59bd3c*/
-      HIWORD(v92) = MEMORY[0x87F8DC]; /*0x59bd41*/
+      HIWORD(v92) = g_Cell_PositionLUT; /*0x59bd41*/
       LOWORD(v93) = v18 + 1; /*0x59bd51*/
-      WORD1(v93) = MEMORY[0x87F8DC] - v18; /*0x59bd56*/
+      WORD1(v93) = g_Cell_PositionLUT - v18; /*0x59bd56*/
       v21 = v20 + v18 + 1; /*0x59bd63*/
-      v22 = MEMORY[0x87F8DC] - v18 + v20; /*0x59bd65*/
+      v22 = g_Cell_PositionLUT - v18 + v20; /*0x59bd65*/
       LOWORD(v86) = v21; /*0x59bd67*/
       HIWORD(v86) = v22; /*0x59bd6c*/
       v78 = v86; /*0x59bd75*/
@@ -7396,7 +7396,7 @@ LABEL_9:
     if ( LoadScenarioClassByIndex(v5) == 1 ) /*0x5b9e1f*/
     {
       MEMORY[0xA8B254] = v5; /*0x5b9e2f*/
-      v11 = (char *)MEMORY[0xA8B230]; /*0x5b9e3b*/
+      v11 = (char *)g_ScenarioClass_Instance; /*0x5b9e3b*/
       strcpy(&MEMORY[0xA8B8E0], aRandmapSed); /*0x5b9e51*/
       strcpy(v11 + 4700, &MEMORY[0xA8B8E0]); /*0x5b9e79*/
       v12 = CCFileClass::Construct(v17, &MEMORY[0xA8B8E0]); /*0x5b9e86*/
@@ -7418,7 +7418,7 @@ LABEL_9:
         PostMessageA(*(HWND *)this, 0xFu, 0, 0); /*0x5b9efb*/
       }
     }
-    *(_BYTE *)(this + 9) = 1; /*0x5b9f07*/
+    this->q024 = 1; /*0x5b9f07*/
   }
   MEMORY[0x8316D4] = 1; /*0x5b9f10*/
   Debug::Log(); /*0x5b9f17*/

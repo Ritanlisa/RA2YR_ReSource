@@ -80,7 +80,7 @@ void __thiscall Skirmish::SetupAllSpawnLocations(HWND this)
     {
       PlayerColor = MEMORY[0xA8B2BC][v1]; /*0x46f927*/
     }
-    else if ( v4 == (SessionClass *)MEMORY[0xAC119C] ) /*0x46f936*/
+    else if ( v4 == (SessionClass *)g_HouseClass_ObserverFlags ) /*0x46f936*/
     {
       PlayerColor = -2; /*0x46f938*/
     }
@@ -115,7 +115,7 @@ void __thiscall Skirmish::SetupAllSpawnLocations(HWND this)
       {
         v12 = *v8; /*0x46f9a2*/
       }
-      else if ( v10 == (SessionClass *)MEMORY[0xAC119C] ) /*0x46f9ac*/
+      else if ( v10 == (SessionClass *)g_HouseClass_ObserverFlags ) /*0x46f9ac*/
       {
         v12 = -2; /*0x46f9ae*/
       }
@@ -388,9 +388,9 @@ int __thiscall Skirmish::RenderPreview(_DWORD *this, SkirmishDialog *aP1)
     }
     v25 = VtableStub_72E280(); /*0x6408c3*/
     BuildingAnimByName = FindBuildingAnimByName(stru_820524, 1); /*0x6408c7*/
-    v15 = MEMORY[0xA8B230]; /*0x6408cc*/
+    v15 = g_ScenarioClass_Instance; /*0x6408cc*/
     v16 = BuildingAnimByName; /*0x6408d2*/
-    result = MEMORY[0xA8B230]->numberStartingPoints; /*0x6408d4*/
+    result = g_ScenarioClass_Instance->numberStartingPoints; /*0x6408d4*/
     if ( result > 0 && result <= 8 ) /*0x6408e5*/
     {
       v17 = 0; /*0x6408eb*/
@@ -439,9 +439,9 @@ int __thiscall Skirmish::RenderPreview(_DWORD *this, SkirmishDialog *aP1)
                         v16,
                         8,
                         25);
-        v15 = MEMORY[0xA8B230]; /*0x640a1a*/
+        v15 = g_ScenarioClass_Instance; /*0x640a1a*/
       }
-      while ( v17 < MEMORY[0xA8B230]->numberStartingPoints ); /*0x640a29*/
+      while ( v17 < g_ScenarioClass_Instance->numberStartingPoints ); /*0x640a29*/
     }
   }
   return result; /*0x640a2f*/

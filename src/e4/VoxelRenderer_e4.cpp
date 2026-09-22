@@ -72,12 +72,12 @@ BOOL __thiscall sub_759FB0(int this, int a2, _DWORD *a3, int a4)
       goto LABEL_13;
     case 3: /*0x759fc6*/
       v6 = (*(int (__thiscall **)(int, _DWORD *, int))(this->VoxelRenderer_field_0x04 + 32))(this + 4, a3, 1) != 0; /*0x759fdf*/
-      *(_BYTE *)(this + 112) = v6; /*0x759fe4*/
+      this->__pad_01C = v6; /*0x759fe4*/
       result = !v6; /*0x759fec*/
       break; /*0x759fef*/
     case 4: /*0x759fc6*/
       (*(void (__thiscall **)(int))(this->VoxelRenderer_field_0x04 + 52))(this + 4); /*0x75a0cf*/
-      *(_BYTE *)(this + 112) = 0; /*0x75a0d4*/
+      this->__pad_01C = 0; /*0x75a0d4*/
       result = 0; /*0x75a0d2*/
       break; /*0x75a0d2*/
     case 5: /*0x759fc6*/

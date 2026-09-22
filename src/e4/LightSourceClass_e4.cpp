@@ -64,11 +64,11 @@ int __thiscall sub_554830(int this)
   this->LightTint.Green = 0; /*0x554843*/
   this->LightTint.Blue = 0; /*0x554846*/
   this->Location = dword_ABCA00; /*0x55484f*/
-  *(_DWORD *)(this + 60) = dword_ABCA04; /*0x554857*/
+  this->q03C = dword_ABCA04; /*0x554857*/
   v2 = dword_ABCA08; /*0x55485a*/
   this->LightVisibility = 0; /*0x554860*/
   this->Activated = 0; /*0x554863*/
-  *(_DWORD *)(this + 64) = v2; /*0x554866*/
+  this->uniqueId = v2; /*0x554866*/
   *(_DWORD *)this = &LightSourceClass::`vftable'; /*0x554869*/
   this->vtable1 = &LightSourceClass::`vftable'; /*0x55486f*/
   this->vtable2 = &LightSourceClass::`vftable'; /*0x554876*/
@@ -176,9 +176,9 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
     }
     while ( v3 < g_BridgeCellPool );
   }
-    if ( *(char *)(this + 72) )
+    if ( this->Activated )
   {
-    *(char *)(this + 72) = 0;
+    this->Activated = 0;
     TacticalClass::ScrollView(this, 0);
   }
     AbstractClass::DTOR(this);

@@ -37,8 +37,8 @@ char AsyncIO_Shutdown()
     AudioTimer::DecrementAll(); /*0x5bf4bb*/
     ProcessAudioTimer(); /*0x5bf4c0*/
     Mixer::RequestAllBuffers(); /*0x5bf4c5*/
-    RequestBufferMixer((unsigned int *)MEMORY[0x87E758], 0x4000); /*0x5bf4d5*/
-    RequestBufferMixer((unsigned int *)MEMORY[0x87E750], 0x4000); /*0x5bf4e5*/
+    RequestBufferMixer((unsigned int *)g_MixerState, 0x4000); /*0x5bf4d5*/
+    RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000); /*0x5bf4e5*/
     result = AudioMixer::Pump(); /*0x5bf4ea*/
     MEMORY[0xABF35C] = 0; /*0x5bf4ef*/
   }

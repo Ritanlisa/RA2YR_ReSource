@@ -13,42 +13,42 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
   void *v4; // eax
   void *v5; // eax
 
-  v2 = *(_BYTE *)(this + 258152); /*0x7b1ab6*/
+  v2 = this->q3F068; /*0x7b1ab6*/
   *(_DWORD *)this = &vt_WinsockInterfaceClass; /*0x7b1abc*/
   if ( v2 ) /*0x7b1ac4*/
   {
     NetworkClass::UnregisterAsync((SOCKET *)this); /*0x7b1ac6*/
     (*(void (__thiscall **)(int))(this->Initialized)(this); /*0x7b1ad0*/
     WSACleanup(); /*0x7b1ad3*/
-    *(_BYTE *)(this + 258152) = 0; /*0x7b1ad8*/
+    this->q3F068 = 0; /*0x7b1ad8*/
   }
   v3 = *(void **)(this + 60); /*0x7b1ade*/
   *(_DWORD *)(this + 56) = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1ae1*/
-  if ( v3 && *(_BYTE *)(this + 69) ) /*0x7b1aec*/
+  if ( v3 && this->q045 ) /*0x7b1aec*/
   {
     __3_YAXPAX_Z(v3); /*0x7b1af2*/
-    *(_DWORD *)(this + 60) = 0; /*0x7b1afa*/
+    this->q03C = 0; /*0x7b1afa*/
   }
-  *(_BYTE *)(this + 69) = 0; /*0x7b1afd*/
-  *(_DWORD *)(this + 64) = 0; /*0x7b1b00*/
+  this->q045 = 0; /*0x7b1afd*/
+  this->q040 = 0; /*0x7b1b00*/
   v4 = *(void **)(this + 36); /*0x7b1b03*/
-  *(_DWORD *)(this + 32) = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1b06*/
-  if ( v4 && *(_BYTE *)(this + 45) ) /*0x7b1b11*/
+  this->LocalAddress = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1b06*/
+  if ( v4 && this->q02D ) /*0x7b1b11*/
   {
     __3_YAXPAX_Z(v4); /*0x7b1b17*/
-    *(_DWORD *)(this + 36) = 0; /*0x7b1b1f*/
+    this->q024 = 0; /*0x7b1b1f*/
   }
-  *(_BYTE *)(this + 45) = 0; /*0x7b1b22*/
-  *(_DWORD *)(this + 40) = 0; /*0x7b1b25*/
+  this->q02D = 0; /*0x7b1b22*/
+  this->q028 = 0; /*0x7b1b25*/
   v5 = *(void **)(this + 12); /*0x7b1b28*/
   this->LocalAddress = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1b2b*/
-  if ( v5 && *(_BYTE *)(this + 21) ) /*0x7b1b36*/
+  if ( v5 && this->q015 ) /*0x7b1b36*/
   {
     __3_YAXPAX_Z(v5); /*0x7b1b3c*/
-    *(_DWORD *)(this + 12) = 0; /*0x7b1b44*/
+    this->q00C = 0; /*0x7b1b44*/
   }
-  *(_BYTE *)(this + 21) = 0; /*0x7b1b47*/
-  *(_DWORD *)(this + 16) = 0; /*0x7b1b4a*/
+  this->q015 = 0; /*0x7b1b47*/
+  this->q010 = 0; /*0x7b1b4a*/
 }
 }
 

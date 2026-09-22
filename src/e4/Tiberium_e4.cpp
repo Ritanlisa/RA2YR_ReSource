@@ -133,12 +133,12 @@ char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2
   }
   else
   {
-    *(_WORD *)&v94.__tail_0[2] = MEMORY[0x87F8DC];
-    LOWORD(v84) = MEMORY[0x87F8E0];
-    HIWORD(v84) = MEMORY[0x87F8E0];
+    *(_WORD *)&v94.__tail_0[2] = g_Cell_PositionLUT;
+    LOWORD(v84) = g_CellPositionOffset;
+    HIWORD(v84) = g_CellPositionOffset;
     *(_WORD *)&aP1.__tail_0[2] = 0;
-    LOWORD(v79) = MEMORY[0x87F8E0] + MEMORY[0x87F8DC] + 1;
-    HIWORD(v79) = MEMORY[0x87F8E0];
+    LOWORD(v79) = g_CellPositionOffset + g_Cell_PositionLUT + 1;
+    HIWORD(v79) = g_CellPositionOffset;
     *(_WORD *)aP1.__tail_0 = v79 - 2;
     do
     {
@@ -146,9 +146,9 @@ char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2
       LODWORD(v85) = Math::RoundToInt((double)*(__int64 *)&v77 * 9.31322574832319e-10);
     }
     while ( LODWORD(v85) > 3 );
-    v5 = MEMORY[0x87F8DC] - 1;
-    *(_QWORD *)&v77 = (unsigned int)MEMORY[0x87F8DC];
-    v92 = (double)(unsigned int)MEMORY[0x87F8DC];
+    v5 = g_Cell_PositionLUT - 1;
+    *(_QWORD *)&v77 = (unsigned int)g_Cell_PositionLUT;
+    v92 = (double)(unsigned int)g_Cell_PositionLUT;
     do
     {
       *(_QWORD *)&v77 = (unsigned int)Random::State(&g_Randomizer);
@@ -156,9 +156,9 @@ char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2
       v7 = v6;
     }
     while ( v6 > v5 );
-    v8 = MEMORY[0x87F8E0] - 1;
-    *(_QWORD *)&v77 = (unsigned int)MEMORY[0x87F8E0];
-    v92 = (double)(unsigned int)MEMORY[0x87F8E0];
+    v8 = g_CellPositionOffset - 1;
+    *(_QWORD *)&v77 = (unsigned int)g_CellPositionOffset;
+    v92 = (double)(unsigned int)g_CellPositionOffset;
     do
     {
       *(_QWORD *)&v77 = (unsigned int)Random::State(&g_Randomizer);

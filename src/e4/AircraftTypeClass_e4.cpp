@@ -120,7 +120,7 @@ char __userpurge AircraftTypeClass::vt_25_@<al>(int a1@<ecx>, double a2@<st0>, u
          (unsigned __int8 ***)&MEMORY[0x887180],
          (unsigned __int8 *)(a1 + 504),
          (unsigned __int8 *)unk_81800C,
-         &MEMORY[0x889F64],
+         &g_INI_DefaultBuffer,
          Destination,
          128) )
   {

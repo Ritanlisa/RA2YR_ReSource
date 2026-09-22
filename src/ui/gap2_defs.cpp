@@ -663,11 +663,11 @@ char __thiscall DropListClass::_vt38(_DWORD *this, int C)
         if ( C != 32 ) /*0x4c349f*/
         {
 LABEL_11:
-          if ( (*(_BYTE *)(this + 12) & 8) != 0 && isalpha(C) ) /*0x4c34b3*/
+          if ( (this->q00C & 8) != 0 && isalpha(C) ) /*0x4c34b3*/
             v3 = toupper(C); /*0x4c34c8*/
-          if ( (*(_BYTE *)(this + 12) & 2) != 0 && isdigit(v3) /*0x4c3506*/
-            || (*(_BYTE *)(this + 12) & 1) != 0 && isalpha(v3)
-            || (*(_BYTE *)(this + 12) & 4) != 0 && !isalnum(v3)
+          if ( (this->q00C & 2) != 0 && isdigit(v3) /*0x4c3506*/
+            || (this->q00C & 1) != 0 && isalpha(v3)
+            || (this->q00C & 4) != 0 && !isalnum(v3)
             || v3 == 32 )
           {
             *(_WORD *)(this->q034 + 2 * this->q03C) = v3; /*0x4c350e*/
@@ -3077,23 +3077,23 @@ int __thiscall PowerClass::updatePowerBarAnimation(int this, SidebarClass *aP1, 
 
   if ( !MEMORY[0x87F8E4].__pad_125C[16461] ) /*0x63feaf*/
     return TacticalClass::MouseInput((_DWORD *)this, (PowerClass *)aP1, a2); /*0x63feaf*/
-  if ( !*(_BYTE *)(this + 5432) && *(int *)(this + 5404) > 0 ) /*0x63fec9*/
+  if ( !this->q1538 && this->q151C > 0 ) /*0x63fec9*/
   {
-    v4 = *(_DWORD *)(this + 5400); /*0x63fed1*/
-    if ( *(_DWORD *)(this + 5392) != -1 ) /*0x63feda*/
+    v4 = this->q1518; /*0x63fed1*/
+    if ( this->q1510 != -1 ) /*0x63feda*/
     {
-      v5 = Timer::GetTicks() - *(_DWORD *)(this + 5392); /*0x63fee7*/
+      v5 = Timer::GetTicks() - this->q1510; /*0x63fee7*/
       if ( v5 >= v4 ) /*0x63feef*/
       {
 LABEL_8:
-        v6 = *(_DWORD *)(this + 5404); /*0x63fef7*/
-        *(_BYTE *)(this + 5388) = 1; /*0x63fefd*/
-        *(_DWORD *)(this + 5404) = v6 - 1; /*0x63ff06*/
+        v6 = this->q151C; /*0x63fef7*/
+        this->q150C = 1; /*0x63fefd*/
+        this->q151C = v6 - 1; /*0x63ff06*/
         MEMORY[0x87F8E4].__pad_125C[16462] = 1; /*0x63ff11*/
         MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x63ff17*/
-        *(_DWORD *)(this + 5392) = Timer::GetTicks(); /*0x63ff25*/
-        *(_DWORD *)(this + 5396) = v45; /*0x63ff34*/
-        *(_DWORD *)(this + 5400) = 3; /*0x63ff3a*/
+        this->q1510 = Timer::GetTicks(); /*0x63ff25*/
+        this->q1514 = v45; /*0x63ff34*/
+        this->q1518 = 3; /*0x63ff3a*/
         goto LABEL_9; /*0x63ff3a*/
       }
       v4 -= v5; /*0x63fef1*/
@@ -3102,31 +3102,31 @@ LABEL_8:
       goto LABEL_8; /*0x63fef5*/
   }
 LABEL_9:
-  if ( (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 36))(&HouseClass_Player->field_24) == *(_DWORD *)(this + 5436) /*0x63ff76*/
-    && (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 32))(&HouseClass_Player->field_24) == *(_DWORD *)(this + 5440)
-    && !*(_BYTE *)(this + 5432) )
+  if ( (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 36))(&HouseClass_Player->field_24) == this->q153C /*0x63ff76*/
+    && (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 32))(&HouseClass_Player->field_24) == this->q1540
+    && !this->q1538 )
   {
     return TacticalClass::MouseInput((_DWORD *)this, (PowerClass *)aP1, a2); /*0x63ff76*/
   }
-  *(_BYTE *)(this + 5388) = 1; /*0x63ff7c*/
+  this->q150C = 1; /*0x63ff7c*/
   MEMORY[0x87F8E4].__pad_125C[16462] = 1; /*0x63ff89*/
   MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x63ff8f*/
-  if ( (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 36))(&HouseClass_Player->field_24) != *(_DWORD *)(this + 5436) /*0x63ffc2*/
-    || (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 32))(&HouseClass_Player->field_24) != *(_DWORD *)(this + 5440) )
+  if ( (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 36))(&HouseClass_Player->field_24) != this->q153C /*0x63ffc2*/
+    || (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 32))(&HouseClass_Player->field_24) != this->q1540 )
   {
-    *(_BYTE *)(this + 5432) = 1; /*0x63ffc8*/
-    *(_DWORD *)(this + 5404) = 10; /*0x63ffce*/
-    *(_DWORD *)(this + 5392) = Timer::GetTicks(); /*0x63ffe8*/
-    *(_DWORD *)(this + 5396) = v45; /*0x63ffee*/
-    *(_DWORD *)(this + 5400) = 3; /*0x63fff1*/
+    this->q1538 = 1; /*0x63ffc8*/
+    this->q151C = 10; /*0x63ffce*/
+    this->q1510 = Timer::GetTicks(); /*0x63ffe8*/
+    this->q1514 = v45; /*0x63ffee*/
+    this->q1518 = 3; /*0x63fff1*/
   }
-  *(_DWORD *)(this + 5436) = (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 36))(&HouseClass_Player->field_24); /*0x640004*/
-  *(_DWORD *)(this + 5440) = (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 32))(&HouseClass_Player->field_24); /*0x640018*/
+  this->q153C = (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 36))(&HouseClass_Player->field_24); /*0x640004*/
+  this->q1540 = (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 32))(&HouseClass_Player->field_24); /*0x640018*/
   PowerBar::ComputeFill(&v43, &v44, &v40); /*0x64002f*/
   v7 = *(ObjectClass **)(this + 5416); /*0x64003a*/
-  if ( *(_DWORD *)(this + 5408) != -1 ) /*0x640043*/
+  if ( this->q1520 != -1 ) /*0x640043*/
   {
-    v8 = Timer::GetTicks() - *(_DWORD *)(this + 5408); /*0x640050*/
+    v8 = Timer::GetTicks() - this->q1520; /*0x640050*/
     if ( v8 >= (int)v7 ) /*0x640058*/
       goto LABEL_19; /*0x640058*/
     v7 = (ObjectClass *)((char *)v7 - v8); /*0x64005a*/
@@ -3134,27 +3134,27 @@ LABEL_9:
   if ( v7 ) /*0x64005e*/
     return TacticalClass::MouseInput((_DWORD *)this, (PowerClass *)aP1, a2); /*0x64005e*/
 LABEL_19:
-  v9 = *(_DWORD *)(this + 5428); /*0x640064*/
+  v9 = this->q1534; /*0x640064*/
   v10 = v9 == v40; /*0x64006e*/
   v11 = v9 <= v40; /*0x64006e*/
-  *(_BYTE *)(this + 5432) = 0; /*0x640070*/
+  this->q1538 = 0; /*0x640070*/
   if ( !v10 ) /*0x640077*/
   {
-    *(_BYTE *)(this + 5432) = 1; /*0x64007d*/
+    this->q1538 = 1; /*0x64007d*/
     if ( !v11 ) /*0x640083*/
     {
-      *(_DWORD *)(this + 5428) = v9 - 1; /*0x64008a*/
+      this->q1534 = v9 - 1; /*0x64008a*/
       PowerBar::ComputeFill(&v41, &v42, &v39); /*0x64009d*/
-      v12 = *(_DWORD *)(this + 5428); /*0x6400a2*/
+      v12 = this->q1534; /*0x6400a2*/
       if ( v12 < (int)v39 ) /*0x6400ae*/
       {
-        *(_DWORD *)(this + 5428) = v12 + 1; /*0x6400b1*/
+        this->q1534 = v12 + 1; /*0x6400b1*/
         goto LABEL_62; /*0x6400b7*/
       }
-      v13 = *(_DWORD *)(this + 5420); /*0x6400bc*/
+      v13 = this->q152C; /*0x6400bc*/
       if ( v13 < (int)v41 ) /*0x6400c8*/
       {
-        *(_DWORD *)(this + 5420) = v13 + 1; /*0x6400cb*/
+        this->q152C = v13 + 1; /*0x6400cb*/
         goto LABEL_62; /*0x6400d1*/
       }
       v14 = *(ObjectClass **)(this + 5424); /*0x6400d6*/
@@ -3162,23 +3162,23 @@ LABEL_19:
       {
         v15 = &v14->__pad_0[1]; /*0x6400e8*/
 LABEL_61:
-        *(_DWORD *)(this + 5424) = v15; /*0x640314*/
+        this->q1530 = v15; /*0x640314*/
         goto LABEL_62; /*0x640314*/
       }
       goto LABEL_62; /*0x6400e2*/
     }
-    *(_DWORD *)(this + 5428) = v9 + 1; /*0x6400f3*/
+    this->q1534 = v9 + 1; /*0x6400f3*/
     PowerBar::ComputeFill(&v42, &v39, &v41); /*0x640106*/
-    v16 = *(_DWORD *)(this + 5420); /*0x64010b*/
+    v16 = this->q152C; /*0x64010b*/
     if ( v16 > v42 ) /*0x640117*/
     {
-      *(_DWORD *)(this + 5420) = v16 - 1; /*0x64011a*/
+      this->q152C = v16 - 1; /*0x64011a*/
       goto LABEL_62; /*0x640120*/
     }
-    v17 = *(_DWORD *)(this + 5428); /*0x640125*/
+    v17 = this->q1534; /*0x640125*/
     if ( v17 > (int)v41 ) /*0x640131*/
     {
-      *(_DWORD *)(this + 5428) = v17 - 1; /*0x640134*/
+      this->q1534 = v17 - 1; /*0x640134*/
       goto LABEL_62; /*0x64013a*/
     }
     v18 = *(ObjectClass **)(this + 5424); /*0x64013f*/
@@ -3188,7 +3188,7 @@ LABEL_60:
     v15 = (char *)&v18[-1].lineTrailer + 3; /*0x640313*/
     goto LABEL_61; /*0x640313*/
   }
-  v19 = *(_DWORD *)(this + 5420); /*0x640156*/
+  v19 = this->q152C; /*0x640156*/
   v20 = v19 <= v43; /*0x640160*/
   if ( v19 == v43 ) /*0x640162*/
   {
@@ -3196,21 +3196,21 @@ LABEL_60:
     v27 = (int)v26 <= (int)v44; /*0x64024b*/
     if ( v26 == v44 ) /*0x64024d*/
       goto LABEL_62; /*0x64024d*/
-    *(_BYTE *)(this + 5432) = 1; /*0x640253*/
+    this->q1538 = 1; /*0x640253*/
     if ( !v27 ) /*0x640259*/
     {
-      *(_DWORD *)(this + 5424) = (char *)v26 - 1; /*0x640260*/
+      this->q1530 = (char *)v26 - 1; /*0x640260*/
       PowerBar::ComputeFill(&v41, &v39, &v42); /*0x640273*/
-      v28 = *(_DWORD *)(this + 5428); /*0x640278*/
+      v28 = this->q1534; /*0x640278*/
       if ( v28 < v42 ) /*0x640284*/
       {
-        *(_DWORD *)(this + 5428) = v28 + 1; /*0x640287*/
+        this->q1534 = v28 + 1; /*0x640287*/
         goto LABEL_62; /*0x64028d*/
       }
-      v29 = *(_DWORD *)(this + 5420); /*0x640292*/
+      v29 = this->q152C; /*0x640292*/
       if ( v29 < (int)v41 ) /*0x64029e*/
       {
-        *(_DWORD *)(this + 5420) = v29 + 1; /*0x6402a1*/
+        this->q152C = v29 + 1; /*0x6402a1*/
         goto LABEL_62; /*0x6402a7*/
       }
       v30 = *(ObjectClass **)(this + 5424); /*0x6402a9*/
@@ -3221,18 +3221,18 @@ LABEL_60:
       }
       goto LABEL_62; /*0x6402b5*/
     }
-    *(_DWORD *)(this + 5424) = &v26->__pad_0[1]; /*0x6402bf*/
+    this->q1530 = &v26->__pad_0[1]; /*0x6402bf*/
     PowerBar::ComputeFill(&v42, &v39, &v41); /*0x6402d2*/
-    v31 = *(_DWORD *)(this + 5420); /*0x6402d7*/
+    v31 = this->q152C; /*0x6402d7*/
     if ( v31 > v42 ) /*0x6402e3*/
     {
-      *(_DWORD *)(this + 5420) = v31 - 1; /*0x6402e6*/
+      this->q152C = v31 - 1; /*0x6402e6*/
       goto LABEL_62; /*0x6402ec*/
     }
-    v32 = *(_DWORD *)(this + 5428); /*0x6402ee*/
+    v32 = this->q1534; /*0x6402ee*/
     if ( v32 > (int)v41 ) /*0x6402fa*/
     {
-      *(_DWORD *)(this + 5428) = v32 - 1; /*0x6402fd*/
+      this->q1534 = v32 - 1; /*0x6402fd*/
       goto LABEL_62; /*0x640303*/
     }
     v18 = *(ObjectClass **)(this + 5424); /*0x640305*/
@@ -3240,21 +3240,21 @@ LABEL_60:
       goto LABEL_62; /*0x640311*/
     goto LABEL_60; /*0x640311*/
   }
-  *(_BYTE *)(this + 5432) = 1; /*0x640168*/
+  this->q1538 = 1; /*0x640168*/
   if ( v20 ) /*0x64016e*/
   {
-    *(_DWORD *)(this + 5420) = v19 + 1; /*0x6401de*/
+    this->q152C = v19 + 1; /*0x6401de*/
     PowerBar::ComputeFill(&v42, &v39, &v41); /*0x6401f1*/
-    v24 = *(_DWORD *)(this + 5420); /*0x6401f6*/
+    v24 = this->q152C; /*0x6401f6*/
     if ( v24 > v42 ) /*0x640202*/
     {
-      *(_DWORD *)(this + 5420) = v24 - 1; /*0x640205*/
+      this->q152C = v24 - 1; /*0x640205*/
       goto LABEL_62; /*0x64020b*/
     }
-    v25 = *(_DWORD *)(this + 5428); /*0x640210*/
+    v25 = this->q1534; /*0x640210*/
     if ( v25 > (int)v41 ) /*0x64021c*/
     {
-      *(_DWORD *)(this + 5428) = v25 - 1; /*0x64021f*/
+      this->q1534 = v25 - 1; /*0x64021f*/
       goto LABEL_62; /*0x640225*/
     }
     v18 = *(ObjectClass **)(this + 5424); /*0x64022a*/
@@ -3262,18 +3262,18 @@ LABEL_60:
       goto LABEL_62; /*0x640236*/
     goto LABEL_60; /*0x640236*/
   }
-  *(_DWORD *)(this + 5420) = v19 - 1; /*0x640175*/
+  this->q152C = v19 - 1; /*0x640175*/
   PowerBar::ComputeFill(&v41, &v39, &v42); /*0x640188*/
-  v21 = *(_DWORD *)(this + 5428); /*0x64018d*/
+  v21 = this->q1534; /*0x64018d*/
   if ( v21 < v42 ) /*0x640199*/
   {
-    *(_DWORD *)(this + 5428) = v21 + 1; /*0x64019c*/
+    this->q1534 = v21 + 1; /*0x64019c*/
     goto LABEL_62; /*0x6401a2*/
   }
-  v22 = *(_DWORD *)(this + 5420); /*0x6401a7*/
+  v22 = this->q152C; /*0x6401a7*/
   if ( v22 < (int)v41 ) /*0x6401b3*/
   {
-    *(_DWORD *)(this + 5420) = v22 + 1; /*0x6401b6*/
+    this->q152C = v22 + 1; /*0x6401b6*/
     goto LABEL_62; /*0x6401bc*/
   }
   v23 = *(ObjectClass **)(this + 5424); /*0x6401c1*/
@@ -3283,10 +3283,10 @@ LABEL_60:
     goto LABEL_61; /*0x6401d4*/
   }
 LABEL_62:
-  if ( *(_BYTE *)(this + 5432) ) /*0x64031a*/
+  if ( this->q1538 ) /*0x64031a*/
   {
     v33 = (ObjectClass *)PowerBar::CalcFill(); /*0x640326*/
-    v34 = (ObjectClass *)(*(_DWORD *)(this + 5428) + *(_DWORD *)(this + 5420) + *(_DWORD *)(this + 5424)); /*0x64033f*/
+    v34 = (ObjectClass *)(this->q1534 + this->q152C + this->q1530); /*0x64033f*/
     v42 = (int)v33; /*0x640341*/
     v39 = v34; /*0x640347*/
     if ( (int)v34 > (int)v33 ) /*0x64034b*/
@@ -3294,9 +3294,9 @@ LABEL_62:
     Ticks = (ObjectClass *)Timer::GetTicks(); /*0x64035e*/
     v36 = Math::RoundToInt((double)(int)v39 / (double)v42 * 5.0); /*0x64036a*/
     v37 = v45; /*0x64036f*/
-    *(_DWORD *)(this + 5408) = Ticks; /*0x640373*/
-    *(_DWORD *)(this + 5412) = v37; /*0x640379*/
-    *(_DWORD *)(this + 5416) = v36; /*0x64037f*/
+    this->q1520 = Ticks; /*0x640373*/
+    this->q1524 = v37; /*0x640379*/
+    this->q1528 = v36; /*0x64037f*/
   }
   return TacticalClass::MouseInput((_DWORD *)this, (PowerClass *)aP1, a2); /*0x640396*/
 }
@@ -3402,8 +3402,8 @@ int __thiscall SidebarClass_Load(int this, int a2)
       {
         VectorClass::PointConstructor(0, 0); /*0x6568f4*/
         *(_DWORD *)v5 = &DynamicVectorClass<Point2D>::`vftable'; /*0x6568f9*/
-        *(_DWORD *)(this + 4720) = 10; /*0x6568ff*/
-        *(_DWORD *)(this + 4716) = 0; /*0x656906*/
+        this->q1270 = 10; /*0x6568ff*/
+        this->q126C = 0; /*0x656906*/
       }
       v19 = 0; /*0x65690d*/
       if ( a2 <= 0 ) /*0x656913*/
@@ -3417,8 +3417,8 @@ LABEL_14:
           {
             VectorClass::CellConstructor((_DWORD *)(this + 4644), 0, 0); /*0x6569a4*/
             *(_DWORD *)v10 = &vt_DynamicVectorClass_Cell; /*0x6569a9*/
-            *(_DWORD *)(this + 4664) = 10; /*0x6569af*/
-            *(_DWORD *)(this + 4660) = 0; /*0x6569b6*/
+            this->q1238 = 10; /*0x6569af*/
+            this->q1234 = 0; /*0x6569b6*/
           }
           v11 = 0; /*0x6569bd*/
           if ( a2 <= 0 ) /*0x6569c1*/
@@ -3494,14 +3494,14 @@ LABEL_26:
           if ( result < 0 ) /*0x656925*/
             break; /*0x656925*/
           v6 = *(_DWORD *)(this + 4708); /*0x65692b*/
-          if ( *(_DWORD *)(this + 4716) < v6 /*0x65694d*/
+          if ( this->q126C < v6 /*0x65694d*/
             || (*(_BYTE *)(this + 4713) || !v6)
-            && (v7 = *(_DWORD *)(this + 4720), v7 > 0)
+            && (v7 = this->q1270, v7 > 0)
             && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v5 + 8))(this + 4700, v6 + v7, 0) )
           {
-            v8 = *(_DWORD *)(this + 4716); /*0x656954*/
-            v9 = *(_DWORD *)(this + 4704); /*0x656957*/
-            *(_DWORD *)(this + 4716) = v8 + 1; /*0x65695d*/
+            v8 = this->q126C; /*0x656954*/
+            v9 = this->q1260; /*0x656957*/
+            this->q126C = v8 + 1; /*0x65695d*/
             *(_DWORD *)(v9 + 8 * v8) = v22[0]; /*0x656964*/
             *(_DWORD *)(v9 + 8 * v8 + 4) = v22[1]; /*0x65696b*/
           }
@@ -5124,7 +5124,7 @@ char __thiscall sub_6AA600(int this)
   char v50[112]; // [esp+74h] [ebp-E0h] BYREF
   char v51[112]; // [esp+E4h] [ebp-70h] BYREF
 
-  if ( MEMORY[0xA8ED6B] || !*(_DWORD *)(this + 84) ) /*0x6aa617*/
+  if ( MEMORY[0xA8ED6B] || !this->q054 ) /*0x6aa617*/
     return 0; /*0x6aaca5*/
   v40 = 0; /*0x6aa629*/
   v2 = 26; /*0x6aa634*/
@@ -5163,8 +5163,8 @@ char __thiscall sub_6AA600(int this)
     v37 = v43; /*0x6aa6d5*/
     do /*0x6aa70f*/
     {
-      v8 = v7 + 2 * *(_DWORD *)(this + 68); /*0x6aa6df*/
-      if ( v8 < *(_DWORD *)(this + 84) ) /*0x6aa6e4*/
+      v8 = v7 + 2 * this->CellIterator_NextY; /*0x6aa6df*/
+      if ( v8 < this->q054 ) /*0x6aa6e4*/
       {
         v3 = v48; /*0x6aa6ed*/
         qmemcpy(v37, (const void *)(this + 52 * v8 + 88), 0x34u); /*0x6aa6fd*/
@@ -5176,7 +5176,7 @@ char __thiscall sub_6AA600(int this)
   }
   v39 = 0; /*0x6aa714*/
   v46 = 0; /*0x6aa71b*/
-  if ( *(int *)(this + 84) > 0 ) /*0x6aa71f*/
+  if ( this->q054 > 0 ) /*0x6aa71f*/
   {
     v9 = (int *)(this + 88); /*0x6aa725*/
     v45 = 52; /*0x6aa734*/
@@ -5263,11 +5263,11 @@ LABEL_25:
           }
           while ( v15 ); /*0x6aa99b*/
         }
-        v16 = *(_DWORD *)(this + 84); /*0x6aa99d*/
+        v16 = this->q054; /*0x6aa99d*/
         if ( v16 > 1 && v46 < v16 - 1 ) /*0x6aa9ae*/
           memcpy(v9, Src, 52 * v16 - v45); /*0x6aa9c6*/
         v39 = 1; /*0x6aa9d1*/
-        v17 = *(_DWORD *)(this + 84) - 1; /*0x6aa9d6*/
+        v17 = this->q054 - 1; /*0x6aa9d6*/
         v40 = 1; /*0x6aa9d7*/
         v18 = (_DWORD *)(this + 52 * v17); /*0x6aa9e2*/
         v18[25] = 0; /*0x6aa9ea*/
@@ -5282,10 +5282,10 @@ LABEL_25:
         v18[30] = v19; /*0x6aaa17*/
         v18[31] = 0; /*0x6aaa1a*/
         v18[34] = 0; /*0x6aaa25*/
-        --*(_DWORD *)(this + 84); /*0x6aaa37*/
+        --this->q054; /*0x6aaa37*/
         --v46; /*0x6aaa3e*/
         v45 -= 52; /*0x6aaa46*/
-        *(_BYTE *)(this + 60) = 1; /*0x6aaa54*/
+        this->q03C = 1; /*0x6aaa54*/
         v47 -= 13; /*0x6aaa58*/
         v41 -= 13; /*0x6aaa5c*/
         Src -= 52; /*0x6aaa60*/
@@ -5294,7 +5294,7 @@ LABEL_25:
       v45 += 52; /*0x6aaa6d*/
       v47 += 13; /*0x6aaa85*/
       v9 += 13; /*0x6aaa91*/
-      v20 = ++v46 < *(_DWORD *)(this + 84); /*0x6aaa97*/
+      v20 = ++v46 < this->q054; /*0x6aaa97*/
       v41 += 13; /*0x6aaa9d*/
       Src += 52; /*0x6aaaa1*/
       v38 = v9; /*0x6aaaa5*/
@@ -5305,9 +5305,9 @@ LABEL_25:
       }
     }
   }
-  if ( MEMORY[0x880D80][997 * *(_DWORD *)(this + 56)] <= 0 ) /*0x6aaaca*/
+  if ( MEMORY[0x880D80][997 * this->q038] <= 0 ) /*0x6aaaca*/
   {
-    DialogControl::Show((_BYTE *)&MEMORY[0xB07C48] + 96 * *(_DWORD *)(this + 56)); /*0x6aaae7*/
+    DialogControl::Show((_BYTE *)&MEMORY[0xB07C48] + 96 * this->q038); /*0x6aaae7*/
     v21 = 0; /*0x6aaaec*/
     v22 = MEMORY[0x880D80]; /*0x6aaaee*/
     v23 = 0; /*0x6aaaf3*/
@@ -5361,7 +5361,7 @@ LABEL_58:
       if ( v24 >= v3 ) /*0x6aabf4*/
         goto LABEL_79; /*0x6aabf4*/
     }
-    v26 = *(_DWORD *)(this + 84); /*0x6aabf8*/
+    v26 = this->q054; /*0x6aabf8*/
     if ( v26 && (v27 = 0, v26 > 0) ) /*0x6aac03*/
     {
       v28 = &v43[52 * v24]; /*0x6aac0b*/
@@ -5370,12 +5370,12 @@ LABEL_58:
       {
         ++v27; /*0x6aac2a*/
         v29 += 13; /*0x6aac2b*/
-        if ( v27 >= *(_DWORD *)(this + 84) ) /*0x6aac30*/
+        if ( v27 >= this->q054 ) /*0x6aac30*/
           goto LABEL_79; /*0x6aac30*/
       }
-      v30 = (v24 - v27) / -2 + *(_DWORD *)(this + 68); /*0x6aac44*/
-      v31 = *(_DWORD *)(this + 84) - v48; /*0x6aac4e*/
-      *(_DWORD *)(this + 68) = v30; /*0x6aac50*/
+      v30 = (v24 - v27) / -2 + this->CellIterator_NextY; /*0x6aac44*/
+      v31 = this->q054 - v48; /*0x6aac4e*/
+      this->CellIterator_NextY = v30; /*0x6aac50*/
       v32 = v31 / 2; /*0x6aac53*/
       v33 = v30; /*0x6aac57*/
       if ( v30 >= v31 / 2 ) /*0x6aac59*/
@@ -5384,17 +5384,17 @@ LABEL_58:
       {
         if ( v30 < v32 ) /*0x6aac6a*/
           v32 = v30; /*0x6aac6c*/
-        *(_DWORD *)(this + 68) = v32; /*0x6aac6e*/
+        this->CellIterator_NextY = v32; /*0x6aac6e*/
       }
       else
       {
-        *(_DWORD *)(this + 68) = 0; /*0x6aac63*/
+        this->CellIterator_NextY = 0; /*0x6aac63*/
       }
     }
     else
     {
 LABEL_79:
-      *(_DWORD *)(this + 68) = 0; /*0x6aac73*/
+      this->CellIterator_NextY = 0; /*0x6aac73*/
     }
     MEMORY[0x884B8F] = 1; /*0x6aac76*/
   }
@@ -7209,17 +7209,17 @@ int __thiscall SidebarClass_GetProductionState(int this)
 
   if ( !*(_BYTE *)(this + 109) ) /*0x6cbeeb*/
     return 0; /*0x6cc064*/
-  v1 = *(_DWORD *)(this + 40); /*0x6cbef1*/
+  v1 = this->q028; /*0x6cbef1*/
   if ( !*(_BYTE *)(v1 + 229) ) /*0x6cbefc*/
   {
     if ( *(_BYTE *)(this + 111) ) /*0x6cbfe5*/
       return 54; /*0x6cbff7*/
-    v11 = *(_DWORD *)(this + 36); /*0x6cbff8*/
+    v11 = this->q024; /*0x6cbff8*/
     v12 = v11; /*0x6cbffe*/
     if ( v11 == -1 ) /*0x6cc000*/
       v12 = *(_DWORD *)(v1 + 176); /*0x6cc002*/
-    v13 = *(_DWORD *)(this + 56); /*0x6cc008*/
-    v14 = *(_DWORD *)(this + 48); /*0x6cc00b*/
+    v13 = this->q038; /*0x6cc008*/
+    v14 = this->q030; /*0x6cc00b*/
     if ( v14 != -1 ) /*0x6cc011*/
     {
       if ( (int)MEMORY[0xA8ED84] - v14 >= v13 ) /*0x6cc01d*/
@@ -7236,12 +7236,12 @@ int __thiscall SidebarClass_GetProductionState(int this)
   }
   if ( *(_DWORD *)(this + 124) != 2 ) /*0x6cbf06*/
   {
-    v6 = *(_DWORD *)(this + 36); /*0x6cbf85*/
+    v6 = this->q024; /*0x6cbf85*/
     v7 = v6; /*0x6cbf8b*/
     if ( v6 == -1 ) /*0x6cbf8d*/
       v7 = *(_DWORD *)(v1 + 176); /*0x6cbf8f*/
-    v8 = *(_DWORD *)(this + 56); /*0x6cbf95*/
-    v9 = *(_DWORD *)(this + 48); /*0x6cbf98*/
+    v8 = this->q038; /*0x6cbf95*/
+    v9 = this->q030; /*0x6cbf98*/
     if ( v9 != -1 ) /*0x6cbf9e*/
     {
       if ( (int)MEMORY[0xA8ED84] - v9 >= v8 ) /*0x6cbfaa*/
@@ -7255,13 +7255,13 @@ int __thiscall SidebarClass_GetProductionState(int this)
       v5 = (double)(v7 - v8) / (double)v6; /*0x6cbfc5*/
     goto LABEL_37; /*0x6cbfc9*/
   }
-  v2 = *(_DWORD *)(this + 36); /*0x6cbf08*/
+  v2 = this->q024; /*0x6cbf08*/
   if ( v2 == -1 ) /*0x6cbf0e*/
     v16 = *(_DWORD *)(v1 + 176); /*0x6cbf1c*/
   else
-    v16 = *(_DWORD *)(this + 36); /*0x6cbf10*/
-  v3 = *(_DWORD *)(this + 56); /*0x6cbf20*/
-  v4 = *(_DWORD *)(this + 48); /*0x6cbf23*/
+    v16 = this->q024; /*0x6cbf10*/
+  v3 = this->q038; /*0x6cbf20*/
+  v4 = this->q030; /*0x6cbf23*/
   if ( v4 != -1 ) /*0x6cbf29*/
   {
     if ( (int)MEMORY[0xA8ED84] - v4 >= v3 ) /*0x6cbf34*/
@@ -8691,7 +8691,7 @@ namespace gamemd { void WWMouseClass::AddRef(void* a1, int a2, int a3) {
         {
           this->ImageFrameIndex = a3;
           this->RefCount = a4;
-          *(_QWORD *)(this + 15) = *(_QWORD *)a2;
+          this->q03C = *(_QWORD *)a2;
         }
       }
 }

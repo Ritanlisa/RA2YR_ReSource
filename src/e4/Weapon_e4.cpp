@@ -63,21 +63,21 @@ bool __usercall sub_659CA0@<al>(int a1@<ecx>, int a2@<ebx>)
         LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 193) >> MEMORY[0x8A0DE4]); /*0x659d28*/
         LODWORD(v4) = (_DWORD)v4 << MEMORY[0x8A0DE0]; /*0x659d30*/
         v5 = v4 | (a2 << MEMORY[0x8A0DD8]); /*0x659d40*/
-        LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 192) >> MEMORY[0x8A0DD4]); /*0x659d45*/
+        LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 192) >> g_BitShift_Green_0); /*0x659d45*/
         a2 = ((_DWORD)v4 << MEMORY[0x8A0DD0]) | v5; /*0x659d55*/
-        Coord::To_Screen(MEMORY[0x887324], (_DWORD *)(a1 + 156), v14); /*0x659d57*/
-        Coord::To_Screen(MEMORY[0x887324], (_DWORD *)(a1 + 168), v13); /*0x659d68*/
-        v15[1] = MEMORY[0x886FA4]; /*0x659d7e*/
-        v15[0] = MEMORY[0x886FA0]; /*0x659d86*/
-        v15[2] = MEMORY[0x886FA8]; /*0x659d8f*/
-        v15[3] = MEMORY[0x886FAC]; /*0x659d9c*/
+        Coord::To_Screen(g_TacticalClass_Instance, (_DWORD *)(a1 + 156), v14); /*0x659d57*/
+        Coord::To_Screen(g_TacticalClass_Instance, (_DWORD *)(a1 + 168), v13); /*0x659d68*/
+        v15[1] = g_Map_VisibleRect; /*0x659d7e*/
+        v15[0] = DSurface_ViewBounds; /*0x659d86*/
+        v15[2] = g_Map_VisibleRectOffset; /*0x659d8f*/
+        v15[3] = g_DSurface_WindowOffset; /*0x659d9c*/
         if ( ClipLine(v14, v13, v15) ) /*0x659da0*/
         {
           v6 = *(_DWORD *)(a1 + 12) - ZCoordToScreenY(*(_DWORD *)(a1 + 164)) - 2; /*0x659db9*/
           v7 = ZCoordToScreenY(*(_DWORD *)(a1 + 176)); /*0x659dbc*/
-          (*(void (__thiscall **)(int, int *, int *, int *, _DWORD, int, int, _DWORD))(*(_DWORD *)MEMORY[0x887314] + 52))( /*0x659de7*/
-            MEMORY[0x887314],
-            &MEMORY[0x886FA0],
+          (*(void (__thiscall **)(int, int *, int *, int *, _DWORD, int, int, _DWORD))(*(_DWORD *)g_DSurface_Hidden_2 + 52))( /*0x659de7*/
+            g_DSurface_Hidden_2,
+            &DSurface_ViewBounds,
             v14,
             v13,
             (__int16)a2,
@@ -232,7 +232,7 @@ int *__thiscall Weapon::DestroyTerrain(int *this, int *a1, IUnknown *aP2, Infant
       HIWORD(v54) = v60 / 256; /*0x70c802*/
       v58 = v54; /*0x70c811*/
       v13 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v58); /*0x70c815*/
-      if ( (v13[80] & 0x100) != 0 && v61 >= *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[7072] * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
+      if ( (v13[80] & 0x100) != 0 && v61 >= *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[7072] * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
         v14 = v13[58]; /*0x70c83e*/
       else
         v14 = v13[57]; /*0x70c846*/
@@ -377,7 +377,7 @@ LABEL_55:
         && CellClass::IsActiveOrNext(aP3) )
       {
         v40 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6092); /*0x70cc1e*/
-        if ( Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x63) < v40 ) /*0x70cc31*/
+        if ( Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x63) < v40 ) /*0x70cc31*/
           LayerClass::DestroyCliff((int *)&MEMORY[0x87F7E8], v41, (int)aP3); /*0x70cc39*/
       }
       v42 = v66; /*0x70cc45*/
@@ -398,7 +398,7 @@ LABEL_55:
   if ( CellClass::IsActiveOrNext(v32) ) /*0x70cae9*/
   {
     v33 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6092); /*0x70cb01*/
-    if ( Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x63) < v33 ) /*0x70cb14*/
+    if ( Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x63) < v33 ) /*0x70cb14*/
     {
       v34 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v59); /*0x70cb20*/
       LayerClass::DestroyCliff((int *)&MEMORY[0x87F7E8], v35, (int)v34); /*0x70cb2b*/

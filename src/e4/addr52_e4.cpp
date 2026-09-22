@@ -364,7 +364,7 @@ char **__thiscall sub_529E70(_DWORD *this, char **a2, char *Source, char **a4, c
   v6 = String::GetOrEmpty_Alt(a4); /*0x529e85*/
   a4 = (char **)v6; /*0x529e87*/
   v7 = String::GetOrEmpty_Alt((char **)Source); /*0x529e90*/
-  Source = &MEMORY[0x889F64]; /*0x529e98*/
+  Source = &g_INI_DefaultBuffer; /*0x529e98*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x529eb0*/
     goto LABEL_18; /*0x529eb0*/
   if ( v7 == (char *)*(this + 1) ) /*0x529ebc*/
@@ -456,7 +456,7 @@ float *__thiscall sub_52A110(_DWORD *this, float *a2, unsigned __int8 *a3, float
   _DWORD v24[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  Source = &MEMORY[0x889F64]; /*0x52a11f*/
+  Source = &g_INI_DefaultBuffer; /*0x52a11f*/
   if ( !Destination ) /*0x52a127*/
     goto LABEL_18; /*0x52a127*/
   v6 = a3; /*0x52a12d*/
@@ -567,7 +567,7 @@ float *__thiscall sub_52A2F0(_DWORD *this, float *a2, float Source, char **a4, f
   v6 = String::GetOrEmpty_Alt(a4); /*0x52a305*/
   a4 = (char **)v6; /*0x52a307*/
   v7 = String::GetOrEmpty_Alt((char **)LODWORD(Source)); /*0x52a310*/
-  Source = COERCE_FLOAT(&MEMORY[0x889F64]); /*0x52a318*/
+  Source = COERCE_FLOAT(&g_INI_DefaultBuffer); /*0x52a318*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x52a330*/
     goto LABEL_18; /*0x52a330*/
   if ( v7 == (char *)*(this + 1) ) /*0x52a33c*/
@@ -1792,7 +1792,7 @@ int __stdcall sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned i
         }
         return 0; /*0x52d909*/
       }
-      GameOptionsClass::PopulateMovieList(MEMORY[0xA8EB60], DlgItem); /*0x52d8de*/
+      GameOptionsClass::PopulateMovieList(g_GameModeOptions, DlgItem); /*0x52d8de*/
       if ( SendMessageA(DlgItem, 0x186u, wParam, 0) == -1 ) /*0x52d8f7*/
         SendMessageA(DlgItem, 0x186u, 0, 0); /*0x52d903*/
     }
@@ -2882,14 +2882,14 @@ int Random_Init()
   if ( MEMORY[0xA8B8B8] || (MEMORY[0xA8D5F8] & 2) != 0 || UI_Update() ) /*0x52fc4f*/
   {
     SeedInitRNG(MEMORY[0xA8ED94]); /*0x52fe66*/
-    qmemcpy((char *)MEMORY[0xA8B230] + 536, v3, 0x3F4u); /*0x52fe80*/
+    qmemcpy((char *)g_ScenarioClass_Instance + 536, v3, 0x3F4u); /*0x52fe80*/
     SeedInitRNG(MEMORY[0xA8ED94]); /*0x52fe8d*/
-    qmemcpy(&MEMORY[0x886B88], v3, 0x3F4u); /*0x52feab*/
+    qmemcpy(&Randomizer_Global, v3, 0x3F4u); /*0x52feab*/
     return Debug::Log(MEMORY[0x8265F0], MEMORY[0xA8ED94]); /*0x52fead*/
   }
   else
   {
-    if ( !MEMORY[0xA8B238] || MEMORY[0xA8B238] == 5 ) /*0x52fc68*/
+    if ( !g_GameMode_Current || g_GameMode_Current == 5 ) /*0x52fc68*/
     {
       GetSystemTime(&SystemTime); /*0x52fc73*/
       Random::AdvanceRandomBytes(SystemTime.wMilliseconds); /*0x52fc83*/
@@ -2918,9 +2918,9 @@ int Random_Init()
     }
     Debug::Log(MEMORY[0x8265F0], MEMORY[0xA8ED94]); /*0x52fe05*/
     SeedInitRNG(MEMORY[0xA8ED94]); /*0x52fe17*/
-    qmemcpy((char *)MEMORY[0xA8B230] + 536, v3, 0x3F4u); /*0x52fe31*/
+    qmemcpy((char *)g_ScenarioClass_Instance + 536, v3, 0x3F4u); /*0x52fe31*/
     result = SeedInitRNG(MEMORY[0xA8ED94]); /*0x52fe3e*/
-    qmemcpy(&MEMORY[0x886B88], v3, 0x3F4u); /*0x52fe51*/
+    qmemcpy(&Randomizer_Global, v3, 0x3F4u); /*0x52fe51*/
   }
   return result; /*0x52fe53*/
 }
@@ -2937,7 +2937,7 @@ int __fastcall sub_52FFD0(char a1)
   int result; // eax
   Frame *v3; // ecx
 
-  result = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x88730C] + 24))(MEMORY[0x88730C], 0); /*0x52ffdd*/
+  result = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x52ffdd*/
   if ( a1 ) /*0x52ffe3*/
   {
     LOBYTE(v3) = 1; /*0x52ffed*/

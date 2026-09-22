@@ -35,13 +35,13 @@ int InGameUI_Open()
   LONG dwNewLong; // [esp+0h] [ebp-4h] BYREF
 
   dwNewLong = 0; /*0x4f10e9*/
-  if ( !MEMORY[0xA8B238] || MEMORY[0xA8B238] == 5 ) /*0x4f10f6*/
+  if ( !g_GameMode_Current || g_GameMode_Current == 5 ) /*0x4f10f6*/
   {
     v0 = 181; /*0x4f1130*/
   }
   else
   {
-    if ( MEMORY[0xA8B238] != 4 ) /*0x4f10fb*/
+    if ( g_GameMode_Current != 4 ) /*0x4f10fb*/
     {
       v1 = (HWND)CreateDialog(0xBBAu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))Options::DlgProc, 0); /*0x4f1127*/
       goto LABEL_10; /*0x4f1127*/
@@ -71,7 +71,7 @@ LABEL_16:
     Dialog::Destroy(v2); /*0x4f1178*/
   }
   if ( dwNewLong == 1004 ) /*0x4f1189*/
-    ScenarioClass::ShowMissionBriefing(MEMORY[0xA8B230]); /*0x4f1191*/
+    ScenarioClass::ShowMissionBriefing(g_ScenarioClass_Instance); /*0x4f1191*/
   return MapClass::MarkForRedraw(2); /*0x4f11a2*/
 }
 }
@@ -165,11 +165,11 @@ int __stdcall sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned i
       v7 = GetDlgItem(hDlg, 1810); /*0x4f1938*/
       v8 = 0; /*0x4f193f*/
       MEMORY[0xA8EE80] = 0; /*0x4f1943*/
-      if ( MEMORY[0xA8B238][0] ) /*0x4f1949*/
+      if ( g_GameMode_Current[0] ) /*0x4f1949*/
       {
-        if ( MEMORY[0xA8B238][0] == 5 ) /*0x4f197d*/
+        if ( g_GameMode_Current[0] == 5 ) /*0x4f197d*/
           goto LABEL_18; /*0x4f197d*/
-        if ( MEMORY[0xA8B238][0] != 3 && MEMORY[0xA8B238][0] != 4 ) /*0x4f198d*/
+        if ( g_GameMode_Current[0] != 3 && g_GameMode_Current[0] != 4 ) /*0x4f198d*/
           goto LABEL_19; /*0x4f198d*/
         if ( HouseClass_Count <= 0 ) /*0x4f199a*/
           goto LABEL_18; /*0x4f199a*/
@@ -493,33 +493,33 @@ int __thiscall ProcessGraphicMenu(int this)
   v2 = String::GetOrEmpty((char **)(this + 80)); /*0x4f230c*/
   StringList = StringList::Find(&g_BuildingTypeClass_Count, v2); /*0x4f2317*/
   ThemeClass::Play(&g_BuildingTypeClass_Count, StringList); /*0x4f2322*/
-  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x887310] + 24))(MEMORY[0x887310], 0); /*0x4f2331*/
-  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x88730C] + 24))(MEMORY[0x88730C], 0); /*0x4f233e*/
-  (*(void (__thiscall **)(int, int, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 4))( /*0x4f2354*/
-    MEMORY[0x887308],
-    MEMORY[0x88730C],
+  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Alternate + 24))(DSurface_Alternate, 0); /*0x4f2331*/
+  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x4f233e*/
+  (*(void (__thiscall **)(int, int, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 4))( /*0x4f2354*/
+    g_DSurface_Primary,
+    g_DSurface_Hidden,
     0,
     1);
   v16 = 0; /*0x4f235d*/
   v4 = 0; /*0x4f2362*/
-  Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x4f2364*/
+  Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x4f2364*/
   v5 = this->M84; /*0x4f2369*/
   if ( v5 ) /*0x4f236e*/
     MSEngine::ProcessEvents((_DWORD *)(this + 4), v5, 300000); /*0x4f2379*/
-  v6 = (*(int (__thiscall **)(int, void ***))(*(_DWORD *)MEMORY[0x887310] + 120))(MEMORY[0x887310], &v24); /*0x4f238e*/
+  v6 = (*(int (__thiscall **)(int, void ***))(*(_DWORD *)DSurface_Alternate + 120))(DSurface_Alternate, &v24); /*0x4f238e*/
   Team::ReleaseAll((int *)(this + 4), v6); /*0x4f2394*/
   DSurface::Flip2(); /*0x4f239b*/
   do /*0x4f25fd*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x4f23a8*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x4f23a8*/
     DDraw::HandleSuspend((_DWORD *)(this + 4)); /*0x4f23ad*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x4f23ba*/
-    v7 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 48))(MEMORY[0x887640]); /*0x4f23ce*/
-    v17[0] = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 44))(MEMORY[0x887640]); /*0x4f23db*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x4f23ba*/
+    v7 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance); /*0x4f23ce*/
+    v17[0] = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance); /*0x4f23db*/
     v17[1] = v7; /*0x4f23df*/
-    if ( EventQueue::Process(MEMORY[0x87F770]) ) /*0x4f23e3*/
+    if ( EventQueue::Process(g_BinkMoviePlayer) ) /*0x4f23e3*/
     {
-      EventQueue = EventQueue::Read(MEMORY[0x87F770]); /*0x4f23f7*/
+      EventQueue = EventQueue::Read(g_BinkMoviePlayer); /*0x4f23f7*/
       v9 = EventQueue; /*0x4f23ff*/
       if ( EventQueue == 1 || EventQueue == 13 ) /*0x4f2411*/
       {

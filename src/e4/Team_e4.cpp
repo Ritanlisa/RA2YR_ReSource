@@ -54,15 +54,15 @@ char __usercall sub_561180@<al>(int xRight@<ecx>, int yBottom@<edx>, int a3@<ebx
   dwNewLong[1] = xRight; /*0x561191*/
   dwNewLong[0] = -1; /*0x561195*/
   Debug::Log(); /*0x56119d*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x5611ad*/
-  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x88730C] + 24))(MEMORY[0x88730C], 0); /*0x5611ba*/
-  Frame::Present(MEMORY[0x88730C], a3, yBottom, a4, 0, v11, v13, v15); /*0x5611c7*/
+  (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x5611ad*/
+  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x5611ba*/
+  Frame::Present(g_DSurface_Hidden, a3, yBottom, a4, 0, v11, v13, v15); /*0x5611c7*/
   result = ChangeVideoMode(xRight, yBottom); /*0x5611d0*/
   if ( result ) /*0x5611d7*/
   {
-    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x88730C] + 24))(MEMORY[0x88730C], 0); /*0x5611ea*/
-    Frame::Present(MEMORY[0x88730C], a3, yBottom, a4, 0, v12, v14, v16); /*0x5611f7*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x561204*/
+    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x5611ea*/
+    Frame::Present(g_DSurface_Hidden, a3, yBottom, a4, 0, v12, v14, v16); /*0x5611f7*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x561204*/
     Screen::Capture(1, 0, a3, yBottom); /*0x56120b*/
     Dialog = (HWND)CreateDialog(0xD9u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_561350, 0); /*0x561221*/
     if ( !Dialog ) /*0x561225*/
@@ -101,14 +101,14 @@ LABEL_9:
     {
 LABEL_13:
       Debug::Log(); /*0x561331*/
-      MEMORY[0x887314] = MEMORY[0x88730C]; /*0x56133e*/
+      g_DSurface_Hidden_2 = g_DSurface_Hidden; /*0x56133e*/
       return 1; /*0x561343*/
     }
     else
     {
       Debug::Log(); /*0x5612f8*/
       ChangeVideoMode(MEMORY[0xA8EB84], MEMORY[0xA8EB88]); /*0x56130c*/
-      MEMORY[0x887314] = MEMORY[0x88730C]; /*0x56131b*/
+      g_DSurface_Hidden_2 = g_DSurface_Hidden; /*0x56131b*/
       return 0; /*0x561317*/
     }
   }
@@ -370,7 +370,7 @@ _UNKNOWN **__thiscall sub_637640(_UNKNOWN **this)
   _UNKNOWN *retaddr; // [esp+10h] [ebp+0h] BYREF
 
   v5 = this; /*0x637647*/
-  v1 = (*(int (__thiscall **)(int *, _UNKNOWN ***))(MEMORY[0xAC4C98] + 16))(&MEMORY[0xAC4C98], &v5); /*0x637655*/
+  v1 = (*(int (__thiscall **)(int *, _UNKNOWN ***))(g_ScriptConfig + 16))(&g_ScriptConfig, &v5); /*0x637655*/
   if ( v1 != -1 && v1 < MEMORY[0xAC4CA8] && v1 < --MEMORY[0xAC4CA8] ) /*0x637670*/
   {
     do /*0x637688*/
@@ -402,12 +402,12 @@ _UNKNOWN **__thiscall sub_637640(_UNKNOWN **this)
     while ( v3 < MEMORY[0xAC4C28] ); /*0x637712*/
   }
   result = v5; /*0x637714*/
-  if ( (_UNKNOWN **)MEMORY[0xAC4CCC] == v5 ) /*0x637722*/
-    MEMORY[0xAC4CCC] = 0; /*0x637724*/
-  if ( (_UNKNOWN **)MEMORY[0xAC4C38] == v5 ) /*0x637730*/
-    MEMORY[0xAC4C38] = 0; /*0x637732*/
-  if ( (_UNKNOWN **)MEMORY[0xAC4BF0] == v5 ) /*0x63773e*/
-    MEMORY[0xAC4BF0] = 0; /*0x637740*/
+  if ( (_UNKNOWN **)g_ScriptPool == v5 ) /*0x637722*/
+    g_ScriptPool = 0; /*0x637724*/
+  if ( (_UNKNOWN **)g_ScriptState == v5 ) /*0x637730*/
+    g_ScriptState = 0; /*0x637732*/
+  if ( (_UNKNOWN **)g_ScriptActionPool == v5 ) /*0x63773e*/
+    g_ScriptActionPool = 0; /*0x637740*/
   return result; /*0x637747*/
 }
 }

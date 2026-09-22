@@ -88,9 +88,9 @@ int __thiscall GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
     *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228],
     this->Width,
     this->Height,
-    *(_DWORD *)(this + 20),
+    this->Visible,
     this->ID);
-  v3 = *(_DWORD *)(this + 20); /*0x55796b*/
+  v3 = this->Visible; /*0x55796b*/
   v4 = this->Height; /*0x55796e*/
   v9[0] = this->Width; /*0x557971*/
   v5 = this->ID; /*0x557975*/
@@ -98,18 +98,18 @@ int __thiscall GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
   v9[3] = v5; /*0x55797c*/
   v9[1] = v4; /*0x55798b*/
   DrawBuildingTilesSHP(v9, 4, 1); /*0x55798f*/
-  if ( *(_DWORD *)(this + 68) ) /*0x557994*/
+  if ( this->q044 ) /*0x557994*/
   {
-    for ( i = 0; i < *(_DWORD *)(this + 80); ++i ) /*0x5579a2*/
+    for ( i = 0; i < this->q050; ++i ) /*0x5579a2*/
     {
-      v7 = i + *(_DWORD *)(this + 368); /*0x5579ad*/
-      if ( *(_DWORD *)(this + 68) > v7 ) /*0x5579b1*/
+      v7 = i + this->q170; /*0x5579ad*/
+      if ( this->q044 > v7 ) /*0x5579b1*/
         (*(void (__thiscall **)(int, int, int, int, int, bool))(this->q0C8)( /*0x5579e0*/
           this,
           v7,
           this->Width + 1,
-          i * *(_DWORD *)(this + 76) + this->Height + 1,
-          *(_DWORD *)(this + 20) - 2,
+          i * this->q130 + this->Height + 1,
+          this->Visible - 2,
           v7 == *(_DWORD *)(this + 364));
     }
   }

@@ -49,19 +49,19 @@ int __thiscall sub_690400(int *this)
   v6[1] = v3 + Rect.top; /*0x69045b*/
   v6[2] = 640; /*0x690467*/
   v5[2] = 640; /*0x69046b*/
-  if ( MEMORY[0x887640] ) /*0x69046f*/
-    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)MEMORY[0x887640] + 60))(MEMORY[0x887640], MEMORY[0x88730C], 0); /*0x69047c*/
-  result = (*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x69049c*/
-             MEMORY[0x887308],
+  if ( g_WWMouseClass_Instance ) /*0x69046f*/
+    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 60))(g_WWMouseClass_Instance, g_DSurface_Hidden, 0); /*0x69047c*/
+  result = (*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x69049c*/
+             g_DSurface_Primary,
              v6,
-             MEMORY[0x88730C],
+             g_DSurface_Hidden,
              v5,
              0,
              1);
-  if ( MEMORY[0x887640] ) /*0x6904a7*/
-    return (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)MEMORY[0x887640] + 64))( /*0x6904b4*/
-             MEMORY[0x887640],
-             MEMORY[0x88730C],
+  if ( g_WWMouseClass_Instance ) /*0x6904a7*/
+    return (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 64))( /*0x6904b4*/
+             g_WWMouseClass_Instance,
+             g_DSurface_Hidden,
              0);
   return result; /*0x6904b7*/
 }
@@ -156,7 +156,7 @@ char __fastcall Network_RequestFile(char *a1, int a2, int a3)
     v45 = 0; /*0x693c04*/
     v43[0] = 16; /*0x693c05*/
     CopyWideToChar(&v43[1], *(char **)MEMORY[0xA8DA78], -1); /*0x693c19*/
-    if ( MEMORY[0xA8B238] == 3 ) /*0x693c25*/
+    if ( g_GameMode_Current == 3 ) /*0x693c25*/
     {
       Network::SendMessage((int)MEMORY[0xA8E9C0], (int)v43, 455, 1, (int)&MEMORY[0xA8BB1C], 0, 0); /*0x693c42*/
     }
@@ -229,7 +229,7 @@ LABEL_24:
       if ( Network::Send((int)MEMORY[0xA8E9C0], (int)&v48, (int)&v37, (int)v39, (int)v38) ) /*0x693ddc*/
       {
         v13 = NetworkID::Compare((int)v39, (int)&MEMORY[0xA8BB1C]); /*0x693dee*/
-        if ( MEMORY[0xA8B238] == 4 ) /*0x693df9*/
+        if ( g_GameMode_Current == 4 ) /*0x693df9*/
         {
           v14 = GameSettings::FindFlagged(); /*0x693dfb*/
           v13 = v14 && !_strcmpi(v14 + 36, v49); /*0x693e20*/
@@ -299,7 +299,7 @@ LABEL_54:
     v45 = 0; /*0x693fc2*/
     v43[0] = 21; /*0x693fc8*/
     strcpy((char *)&v43[1], ToWideStringChar(*(char **)MEMORY[0xA8DA78])); /*0x693ff7*/
-    if ( MEMORY[0xA8B238] == 4 ) /*0x694007*/
+    if ( g_GameMode_Current == 4 ) /*0x694007*/
     {
       v22 = GameSettings::FindFlagged(); /*0x694009*/
       if ( v22 ) /*0x694010*/
@@ -429,7 +429,7 @@ char __fastcall ReceiveNetworkFile(RawFileClass *a1, DWORD a2, int a3, char a4)
   v32.CampaignScore_field_0x04 = Timer::GetTicks(); /*0x69432b*/
   v32.CampaignScore_field_0x08 = v32.CampaignScore_field_0x20; /*0x694333*/
   v32.CampaignScore_field_0x0C = v10; /*0x69433f*/
-  if ( MEMORY[0xA8B238] == (CellStruct *)4 ) /*0x694343*/
+  if ( g_GameMode_Current == (CellStruct *)4 ) /*0x694343*/
   {
     IPXManagerClass::createConnection(&MEMORY[0xA8D63C].__pad_1258[300]); /*0x69434a*/
     TacticalClass::SetCameraPosition(&MEMORY[0xA8D63C].__pad_1258[300], 120, -1, 1200); /*0x69435d*/
@@ -506,7 +506,7 @@ LABEL_43:
   if ( !Network::Send((int)&MEMORY[0xA8D63C].__pad_1258[300], v6, (int)&v29, (TechnoTypeClass *)v34, (int)v24) ) /*0x6943ca*/
     goto LABEL_43; /*0x6943ca*/
   v13 = NetworkID::Compare((int)v34, (int)&MEMORY[0xA8BB1C]); /*0x6943e0*/
-  if ( MEMORY[0xA8B238] == (CellStruct *)4 ) /*0x6943ec*/
+  if ( g_GameMode_Current == (CellStruct *)4 ) /*0x6943ec*/
   {
     Flagged = GameSettings::FindFlagged(); /*0x6943ee*/
     v13 = Flagged && !_strcmpi(Flagged + 36, (char *)(v6 + 4)); /*0x69440f*/
@@ -555,7 +555,7 @@ LABEL_43:
       0,
       (ProgressScreenClass *)0x40590000);
 LABEL_54:
-  if ( MEMORY[0xA8B238] == (CellStruct *)4 ) /*0x6946b4*/
+  if ( g_GameMode_Current == (CellStruct *)4 ) /*0x6946b4*/
     IPXManagerClass::destroyConnection(&MEMORY[0xA8D63C].__pad_1258[300]); /*0x6946bb*/
   FileClass::Write2((int *)v35, lpBuffer, (IUnknown *)nNumberOfBytesToWrite); /*0x6946ce*/
   __3_YAXPAX_Z((void *)lpBuffer); /*0x6946d8*/
@@ -865,7 +865,7 @@ LABEL_62:
   }
   v29 = v58; /*0x694ce7*/
   Timer::GetTicks(); /*0x694d03*/
-  if ( MEMORY[0xA8B238] == 4 ) /*0x694d20*/
+  if ( g_GameMode_Current == 4 ) /*0x694d20*/
   {
     IPXManagerClass::createConnection(MEMORY[0xA8E9C0]); /*0x694d27*/
     TacticalClass::SetCameraPosition(240, -1, 1200); /*0x694d3d*/
@@ -1032,7 +1032,7 @@ LABEL_121:
   if ( a4 ) /*0x695127*/
     Network::UpdateLatencyDisplay((int)&MEMORY[0xAC4F58], 0, 100.0, NAN); /*0x69513f*/
 LABEL_122:
-  if ( MEMORY[0xA8B238] == 4 ) /*0x69517c*/
+  if ( g_GameMode_Current == 4 ) /*0x69517c*/
     IPXManagerClass::destroyConnection(MEMORY[0xA8E9C0]); /*0x695183*/
   v49 = MEMORY[0x83EA38]; /*0x69518a*/
   if ( !v48 ) /*0x69518f*/
@@ -1355,7 +1355,7 @@ LABEL_38:
   }
   else
   {
-    v16 = &MEMORY[0x889F64]; /*0x695a1a*/
+    v16 = &g_INI_DefaultBuffer; /*0x695a1a*/
   }
   v11(v14, 0x4B4u, 0, (LPARAM)v16); /*0x695a28*/
   SetFocus(v14); /*0x695a2b*/
@@ -1565,7 +1565,7 @@ int __thiscall sub_69B690(_DWORD *this)
 
   while ( 1 ) /*0x69b6aa*/
   {
-    result = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 7); /*0x69b6aa*/
+    result = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x69b6aa*/
     if ( result == -2 ) /*0x69b6b1*/
       return result; /*0x69b6fa*/
     v3 = *(this + 2579); /*0x69b6b3*/
@@ -1658,10 +1658,10 @@ void *__thiscall sub_69F0C0(int *this, void *a2)
     v5 = *(this + 11); /*0x69f0e3*/
     if ( v4 != -1 ) /*0x69f0ef*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v4 >= v5 ) /*0x69f0f7*/
+      if ( (int)g_CurrentFrame - v4 >= v5 ) /*0x69f0f7*/
         v5 = 0; /*0x69f0fd*/
       else
-        v5 -= (int)MEMORY[0xA8ED84] - v4; /*0x69f0f9*/
+        v5 -= (int)g_CurrentFrame - v4; /*0x69f0f9*/
     }
     if ( (double)(v3 - v5) / (double)*(this + 12) < 1.0 ) /*0x69f118*/
     {
@@ -1672,10 +1672,10 @@ void *__thiscall sub_69F0C0(int *this, void *a2)
         v9 = *(this + 11); /*0x69f130*/
         if ( v8 != -1 ) /*0x69f136*/
         {
-          if ( (int)MEMORY[0xA8ED84] - v8 >= v9 ) /*0x69f13e*/
+          if ( (int)g_CurrentFrame - v8 >= v9 ) /*0x69f13e*/
             v9 = 0; /*0x69f144*/
           else
-            v9 -= (int)MEMORY[0xA8ED84] - v8; /*0x69f140*/
+            v9 -= (int)g_CurrentFrame - v8; /*0x69f140*/
         }
         v7 = (double)(v6 - v9) / (double)*(this + 12); /*0x69f150*/
       }

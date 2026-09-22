@@ -78,7 +78,7 @@ int sub_539760()
   }
   unk_A9FA25 = 0; /*0x539847*/
   unk_A9FA20 = 0; /*0x53984d*/
-  *((_DWORD *)MEMORY[0xA8B230] + 3404) = *((_DWORD *)MEMORY[0xA8B230] + 3402); /*0x539859*/
+  *((_DWORD *)g_ScenarioClass_Instance + 3404) = *((_DWORD *)g_ScenarioClass_Instance + 3402); /*0x539859*/
   if ( unk_A9FA9C ) /*0x539867*/
     (**(void (__thiscall ***)(int, int))unk_A9FA9C)(unk_A9FA9C, 1); /*0x53986d*/
   unk_A9FA98 = 0; /*0x539875*/
@@ -394,7 +394,7 @@ void sub_68C050()
   v0 = 0; /*0x68c059*/
   if ( unk_8B41F0 > 0 ) /*0x68c05d*/
   {
-    WarRatio_high = HIDWORD(MEMORY[0x8871E0]->?); /*0x68c069*/
+    WarRatio_high = HIDWORD(g_RulesClass_Instance->?); /*0x68c069*/
     if ( WarRatio_high > 0 && WarRatio_high >= unk_8B41F0 ) /*0x68c079*/
     {
       VectorClass::Construct(&v13, 0, 0); /*0x68c086*/
@@ -403,7 +403,7 @@ void sub_68C050()
       v18 = 10; /*0x68c09e*/
       v17 = 0; /*0x68c0a2*/
       v3 = 0; /*0x68c0ac*/
-      if ( SHIDWORD(MEMORY[0x8871E0]->?) > 0 ) /*0x68c0b0*/
+      if ( SHIDWORD(g_RulesClass_Instance->?) > 0 ) /*0x68c0b0*/
       {
         v4 = v15; /*0x68c0b2*/
         while ( 1 ) /*0x68c0bc*/
@@ -413,7 +413,7 @@ void sub_68C050()
           if ( (v16 || !v4) && v2 > 0 ) /*0x68c0d0*/
             break; /*0x68c0d0*/
 LABEL_14:
-          if ( ++v3 >= SHIDWORD(MEMORY[0x8871E0]->?) ) /*0x68c109*/
+          if ( ++v3 >= SHIDWORD(g_RulesClass_Instance->?) ) /*0x68c109*/
             goto LABEL_15; /*0x68c109*/
           v2 = v18; /*0x68c0b8*/
         }
@@ -432,7 +432,7 @@ LABEL_15:
       {
         while ( 1 ) /*0x68c12f*/
         {
-          v7 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, v17 - 1); /*0x68c12f*/
+          v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v17 - 1); /*0x68c12f*/
           if ( v7 < v17 ) /*0x68c13a*/
           {
             v8 = v7; /*0x68c13d*/
@@ -446,21 +446,21 @@ LABEL_15:
               while ( v8 < v17 ); /*0x68c159*/
             }
           }
-          HelipadRatio = MEMORY[0x8871E0]->?; /*0x68c164*/
+          HelipadRatio = g_RulesClass_Instance->?; /*0x68c164*/
           if ( v7 + 1 <= HelipadRatio ) /*0x68c16c*/
             break; /*0x68c16c*/
           v10 = v7 - HelipadRatio; /*0x68c16e*/
-          v11 = *(_DWORD *)MEMORY[0x8871E0]->?; /*0x68c170*/
+          v11 = *(_DWORD *)g_RulesClass_Instance->?; /*0x68c170*/
           if ( v10 + 1 <= v11 ) /*0x68c17b*/
           {
-            v0 = *(_DWORD *)(LODWORD(MEMORY[0x8871E0]->?) + 4 * v10); /*0x68c19a*/
+            v0 = *(_DWORD *)(LODWORD(g_RulesClass_Instance->?) + 4 * v10); /*0x68c19a*/
           }
           else
           {
             v7 = v10 - v11; /*0x68c183*/
-            if ( v7 + 1 <= MEMORY[0x8871E0]->? ) /*0x68c18a*/
+            if ( v7 + 1 <= g_RulesClass_Instance->? ) /*0x68c18a*/
             {
-              AirstripRatio_high = *(_DWORD *)MEMORY[0x8871E0]->?; /*0x68c18c*/
+              AirstripRatio_high = *(_DWORD *)g_RulesClass_Instance->?; /*0x68c18c*/
 LABEL_25:
               v0 = *(_DWORD *)(AirstripRatio_high + 4 * v7); /*0x68c1a5*/
             }
@@ -470,7 +470,7 @@ LABEL_25:
           if ( ++v6 >= unk_8B41F0 ) /*0x68c1c3*/
             goto LABEL_29; /*0x68c1c3*/
         }
-        AirstripRatio_high = HIDWORD(MEMORY[0x8871E0]->?); /*0x68c19f*/
+        AirstripRatio_high = HIDWORD(g_RulesClass_Instance->?); /*0x68c19f*/
         goto LABEL_25; /*0x68c19f*/
       }
 LABEL_29:
@@ -499,11 +499,11 @@ char sub_55CF10()
   DWORD Ticks; // [esp+0h] [ebp-Ch]
 
   Debug::Log(); /*0x55cf18*/
-  result = MEMORY[0xA8B238][0]; /*0x55cf1d*/
-  if ( MEMORY[0xA8B238][0] == 4 ) /*0x55cf28*/
+  result = g_GameMode_Current[0]; /*0x55cf1d*/
+  if ( g_GameMode_Current[0] == 4 ) /*0x55cf28*/
   {
-    result = MEMORY[0x887628]; /*0x55cf2e*/
-    if ( MEMORY[0x887628] ) /*0x55cf35*/
+    result = g_NetworkInterface; /*0x55cf2e*/
+    if ( g_NetworkInterface ) /*0x55cf35*/
     {
       result = MEMORY[0xA8DBA0]; /*0x55cf3b*/
       if ( MEMORY[0xA8DBA0] ) /*0x55cf42*/
@@ -624,7 +624,7 @@ int sub_5C98A0()
       if ( !*(_BYTE *)(v2 + 501) ) /*0x5c99fb*/
       {
         v16 = MEMORY[0xA8D25C][v4]; /*0x5c9a05*/
-        MEMORY[0xA8D25C][v4] = v16 + v16 / 2 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, v16 / 2, v16); /*0x5c9a2a*/
+        MEMORY[0xA8D25C][v4] = v16 + v16 / 2 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, v16 / 2, v16); /*0x5c9a2a*/
       }
       Debug::Log(); /*0x5c9a6e*/
       result = i; /*0x5c9a73*/
@@ -707,7 +707,7 @@ LABEL_39:
       return 0; /*0x5ec9d2*/
   }
   if ( !v9 /*0x5ec98a*/
-    || v9 == (wchar_t *)MEMORY[0xAC119C]
+    || v9 == (wchar_t *)g_HouseClass_ObserverFlags
     || v9 == (wchar_t *)MEMORY[0xAC11A0]
     || v9 == (wchar_t *)MEMORY[0xAC11B4]
     || v9 == MEMORY[0xAC11B0] )
@@ -1017,25 +1017,25 @@ int __fastcall sub_6B4240(int a1, int a2)
   v2 = (__int16)v26 - dword_8759A8; /*0x6b4267*/
   v3 = SHIWORD(v26) - dword_8759AC; /*0x6b4269*/
   v4 = v3 * dword_8759A4 + v2; /*0x6b4275*/
-  v5 = *((_DWORD *)MEMORY[0xB0B6EC] + 2 * v4); /*0x6b4284*/
-  v29[0] = *((_BYTE *)MEMORY[0xB0B6EC] + 8 * v4 + 4); /*0x6b4287*/
-  v29[1] = *((_BYTE *)MEMORY[0xB0B6EC] + 8 * v4 + 5); /*0x6b428f*/
-  v30 = *((_DWORD *)MEMORY[0xB0B6EC] + 2 * v4 + 2); /*0x6b4297*/
-  v6 = *((_BYTE *)MEMORY[0xB0B6EC] + 8 * v4 + 12); /*0x6b429b*/
-  LOBYTE(v4) = *((_BYTE *)MEMORY[0xB0B6EC] + 8 * v4 + 13); /*0x6b429f*/
+  v5 = *((_DWORD *)g_SlaveManagerPool + 2 * v4); /*0x6b4284*/
+  v29[0] = *((_BYTE *)g_SlaveManagerPool + 8 * v4 + 4); /*0x6b4287*/
+  v29[1] = *((_BYTE *)g_SlaveManagerPool + 8 * v4 + 5); /*0x6b428f*/
+  v30 = *((_DWORD *)g_SlaveManagerPool + 2 * v4 + 2); /*0x6b4297*/
+  v6 = *((_BYTE *)g_SlaveManagerPool + 8 * v4 + 12); /*0x6b429b*/
+  LOBYTE(v4) = *((_BYTE *)g_SlaveManagerPool + 8 * v4 + 13); /*0x6b429f*/
   v31 = v6; /*0x6b42a3*/
   v32 = v4; /*0x6b42a7*/
   v7 = dword_8759A4 * (v3 + 1) + v2; /*0x6b42ab*/
   v28[4] = v5; /*0x6b42ae*/
   v28[0] = v5; /*0x6b42b2*/
-  v8 = *((_DWORD *)MEMORY[0xB0B6EC] + 2 * v7 + 2); /*0x6b42ba*/
-  v9 = *((_DWORD *)MEMORY[0xB0B6EC] + 2 * v7); /*0x6b42be*/
-  v34 = *((_BYTE *)MEMORY[0xB0B6EC] + 8 * v7 + 12); /*0x6b42c1*/
-  v10 = *((_BYTE *)MEMORY[0xB0B6EC] + 8 * v7 + 13); /*0x6b42c5*/
+  v8 = *((_DWORD *)g_SlaveManagerPool + 2 * v7 + 2); /*0x6b42ba*/
+  v9 = *((_DWORD *)g_SlaveManagerPool + 2 * v7); /*0x6b42be*/
+  v34 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 12); /*0x6b42c1*/
+  v10 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 13); /*0x6b42c5*/
   v33 = v8; /*0x6b42c9*/
   v35 = v10; /*0x6b42cd*/
-  v11 = *((_BYTE *)MEMORY[0xB0B6EC] + 8 * v7 + 4); /*0x6b42d1*/
-  v12 = *((_BYTE *)MEMORY[0xB0B6EC] + 8 * v7 + 5); /*0x6b42d5*/
+  v11 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 4); /*0x6b42d1*/
+  v12 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 5); /*0x6b42d5*/
   v36 = v9; /*0x6b42dd*/
   v37 = v11; /*0x6b42e1*/
   v38 = v12; /*0x6b42e5*/
@@ -1173,10 +1173,10 @@ char __stdcall sub_63AB60(int a1, int a2)
     return 0; /*0x63ab73*/
   if ( MEMORY[0xAC4CB0] ) /*0x63ab7d*/
     return 0; /*0x63ab85*/
-  v3 = MEMORY[0xAC4C38]; /*0x63ab8e*/
-  if ( !MEMORY[0xAC4CCC] ) /*0x63ab98*/
+  v3 = g_ScriptState; /*0x63ab8e*/
+  if ( !g_ScriptPool ) /*0x63ab98*/
     goto LABEL_11; /*0x63ab98*/
-  Coords = ScriptAction::GetCoords((_DWORD **)MEMORY[0xAC4CCC], v10); /*0x63aba3*/
+  Coords = ScriptAction::GetCoords((_DWORD **)g_ScriptPool, v10); /*0x63aba3*/
   v9[0] = *Coords; /*0x63abaa*/
   v9[1] = Coords[1]; /*0x63abb5*/
   v9[2] = Coords[2]; /*0x63abc0*/
@@ -1187,7 +1187,7 @@ char __stdcall sub_63AB60(int a1, int a2)
   if ( a1 < v11[0] - 4 ) /*0x63ac0b*/
     goto LABEL_11; /*0x63ac0b*/
   if ( a1 < v11[2] + 8 + v11[0] - 4 && a2 >= v6 && a2 < v11[3] + 8 + v6 ) /*0x63ac1f*/
-    v7 = MEMORY[0xAC4CCC]; /*0x63ac21*/
+    v7 = g_ScriptPool; /*0x63ac21*/
   else
 LABEL_11:
     v7 = 0; /*0x63ac28*/
@@ -1558,24 +1558,24 @@ void sub_6DA980()
   char *v3; // esi
   char *v4; // edi
 
-  v0 = MEMORY[0xB0CE88]; /*0x6da980*/
-  while ( MEMORY[0xB0CE88] > 0 ) /*0x6da988*/
+  v0 = g_CraterCreationState; /*0x6da980*/
+  while ( g_CraterCreationState > 0 ) /*0x6da988*/
   {
     v1 = 0; /*0x6da98f*/
-    MEMORY[0xB0CE88] = v0 - 1; /*0x6da993*/
+    g_CraterCreationState = v0 - 1; /*0x6da993*/
     if ( v0 - 1 <= 0 ) /*0x6da999*/
       break; /*0x6da999*/
     v2 = 0; /*0x6da99b*/
     do /*0x6da9bd*/
     {
       ++v1; /*0x6da9a3*/
-      v3 = (char *)MEMORY[0xB0CE7C] + v2 + 20; /*0x6da9a4*/
-      v4 = (char *)MEMORY[0xB0CE7C] + v2; /*0x6da9a8*/
+      v3 = (char *)g_CraterPool + v2 + 20; /*0x6da9a4*/
+      v4 = (char *)g_CraterPool + v2; /*0x6da9a8*/
       v2 += 20; /*0x6da9b0*/
       qmemcpy(v4, v3, 0x14u); /*0x6da9b3*/
-      v0 = MEMORY[0xB0CE88]; /*0x6da9b5*/
+      v0 = g_CraterCreationState; /*0x6da9b5*/
     }
-    while ( v1 < MEMORY[0xB0CE88] ); /*0x6da9bd*/
+    while ( v1 < g_CraterCreationState ); /*0x6da9bd*/
   }
 }
 }

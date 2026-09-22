@@ -22,13 +22,13 @@ unsigned int __thiscall StreamClass::ReadAndSeek(int this, MouseClass *aP1, Mous
   unsigned int result; // eax
 
   v4 = (*(int (__thiscall **)(_DWORD, MouseClass *, MouseClass *))(**(_DWORD **)(this + 20) + 92))( /*0x4114c9*/
-         *(_DWORD *)(this + 20),
+         this->q014,
          aP1,
          aP2);
-  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)(this + 20) + 96))(*(_DWORD *)(this + 20)); /*0x4114cd*/
+  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)(this + 20) + 96))(this->q014); /*0x4114cd*/
   result = v4 + this->StreamClass_field_0C; /*0x4114d6*/
   if ( result >= *(_DWORD *)(this + 28) ) /*0x4114da*/
-    result -= *(_DWORD *)(this + 32); /*0x4114dc*/
+    result -= this->m_Position; /*0x4114dc*/
   return result; /*0x4114df*/
 }
 }

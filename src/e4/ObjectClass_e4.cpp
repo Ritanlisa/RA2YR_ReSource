@@ -1045,15 +1045,15 @@ void __thiscall ObjectClass::Dtor(_DWORD *this)
   if ( v2 ) /*0x5f3ba4*/
     ObjectClass::CleanupAudioAndRefs((int)v2); /*0x5f3ba6*/
   v9 = this; /*0x5f3bbb*/
-  v3 = (*(int (__thiscall **)(char *, _DWORD **))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9988] + 16))( /*0x5f3bbf*/
-         &MEMORY[0xB077F8].__pad_579C[9988],
+  v3 = (*(int (__thiscall **)(char *, _DWORD **))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9988] + 16))( /*0x5f3bbf*/
+         &g_OverlayTypeConfig.__pad_579C[9988],
          &v9);
-  if ( v3 != -1 && v3 < *(int *)&MEMORY[0xB077F8].__pad_579C[10004] ) /*0x5f3bcf*/
+  if ( v3 != -1 && v3 < *(int *)&g_OverlayTypeConfig.__pad_579C[10004] ) /*0x5f3bcf*/
   {
-    --*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10004]; /*0x5f3bd4*/
+    --*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[10004]; /*0x5f3bd4*/
     for ( ; /*0x5f3bda*/
-          v3 < *(int *)&MEMORY[0xB077F8].__pad_579C[10004];
-          *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9992] + 4 * v3 - 4) = *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9992]
+          v3 < *(int *)&g_OverlayTypeConfig.__pad_579C[10004];
+          *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9992] + 4 * v3 - 4) = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9992]
                                                                                               + 4 * v3) )
     {
       ++v3; /*0x5f3be2*/
@@ -1075,45 +1075,45 @@ void __thiscall ObjectClass::Dtor(_DWORD *this)
     }
   }
   v9 = this; /*0x5f3c4d*/
-  v5 = (*(int (__thiscall **)(char *, _DWORD **))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10124] + 16))( /*0x5f3c51*/
-         &MEMORY[0xB077F8].__pad_579C[10124],
+  v5 = (*(int (__thiscall **)(char *, _DWORD **))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[10124] + 16))( /*0x5f3c51*/
+         &g_OverlayTypeConfig.__pad_579C[10124],
          &v9);
-  if ( v5 != -1 && v5 < *(int *)&MEMORY[0xB077F8].__pad_579C[10140] ) /*0x5f3c61*/
+  if ( v5 != -1 && v5 < *(int *)&g_OverlayTypeConfig.__pad_579C[10140] ) /*0x5f3c61*/
   {
-    --*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10140]; /*0x5f3c66*/
+    --*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[10140]; /*0x5f3c66*/
     for ( ; /*0x5f3c6c*/
-          v5 < *(int *)&MEMORY[0xB077F8].__pad_579C[10140];
-          *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10128] + 4 * v5 - 4) = *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10128]
+          v5 < *(int *)&g_OverlayTypeConfig.__pad_579C[10140];
+          *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[10128] + 4 * v5 - 4) = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[10128]
                                                                                                + 4 * v5) )
     {
       ++v5; /*0x5f3c74*/
     }
   }
   v9 = this; /*0x5f3c96*/
-  v6 = (*(int (__thiscall **)(char *, _DWORD **))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9948] + 16))( /*0x5f3c9a*/
-         &MEMORY[0xB077F8].__pad_579C[9948],
+  v6 = (*(int (__thiscall **)(char *, _DWORD **))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9948] + 16))( /*0x5f3c9a*/
+         &g_OverlayTypeConfig.__pad_579C[9948],
          &v9);
-  if ( v6 != -1 && v6 < *(int *)&MEMORY[0xB077F8].__pad_579C[9964] ) /*0x5f3caa*/
+  if ( v6 != -1 && v6 < *(int *)&g_OverlayTypeConfig.__pad_579C[9964] ) /*0x5f3caa*/
   {
-    --*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9964]; /*0x5f3caf*/
+    --*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9964]; /*0x5f3caf*/
     for ( ; /*0x5f3cb5*/
-          v6 < *(int *)&MEMORY[0xB077F8].__pad_579C[9964];
-          *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9952] + 4 * v6 - 4) = *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9952]
+          v6 < *(int *)&g_OverlayTypeConfig.__pad_579C[9964];
+          *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952] + 4 * v6 - 4) = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952]
                                                                                               + 4 * v6) )
     {
       ++v6; /*0x5f3cbd*/
     }
   }
   v9 = this; /*0x5f3cdf*/
-  v7 = (*(int (__thiscall **)(char *, _DWORD **))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9860] + 16))( /*0x5f3ce3*/
-         &MEMORY[0xB077F8].__pad_579C[9860],
+  v7 = (*(int (__thiscall **)(char *, _DWORD **))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9860] + 16))( /*0x5f3ce3*/
+         &g_OverlayTypeConfig.__pad_579C[9860],
          &v9);
-  if ( v7 != -1 && v7 < *(int *)&MEMORY[0xB077F8].__pad_579C[9876] ) /*0x5f3cf3*/
+  if ( v7 != -1 && v7 < *(int *)&g_OverlayTypeConfig.__pad_579C[9876] ) /*0x5f3cf3*/
   {
-    --*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9876]; /*0x5f3cf8*/
+    --*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9876]; /*0x5f3cf8*/
     for ( ; /*0x5f3cfe*/
-          v7 < *(int *)&MEMORY[0xB077F8].__pad_579C[9876];
-          *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9864] + 4 * v7 - 4) = *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9864]
+          v7 < *(int *)&g_OverlayTypeConfig.__pad_579C[9876];
+          *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9864] + 4 * v7 - 4) = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9864]
                                                                                               + 4 * v7) )
     {
       ++v7; /*0x5f3d06*/
@@ -1132,7 +1132,7 @@ void __thiscall ObjectClass::Dtor(_DWORD *this)
     this->lineTrailer = 0; /*0x5f3d5b*/
   }
   if ( this->isInLogic ) /*0x5f3d65*/
-    VectorClass::RemoveItem((int *)&MEMORY[0x87F778], (ObjectClass *)this); /*0x5f3d75*/
+    VectorClass::RemoveItem((int *)&g_GameConfigManager, (ObjectClass *)this); /*0x5f3d75*/
   AbstractClass::DTOR(this); /*0x5f3d7c*/
 }
 }
@@ -1235,7 +1235,7 @@ int __thiscall ObjectClass::GetBoundsRect(#374 *this)
   _DWORD *v39; // [esp+50h] [ebp+4h]
 
   v2 = (_DWORD *)(*(int (__stdcall **)(int *))(this->q0AC)(&v32); /*0x5f4887*/
-  Coord::To_Screen(MEMORY[0x887324], v2, v31); /*0x5f4894*/
+  Coord::To_Screen(g_TacticalClass_Instance, v2, v31); /*0x5f4894*/
   v3 = (*(int (__thiscall **)(#374 *))(this->parachute)(this); /*0x5f489d*/
   v4 = (__int16 *)(*(int (__thiscall **)(int))(*(_DWORD *)v3 + 156))(v3); /*0x5f48ad*/
   if ( !v4 ) /*0x5f48b1*/
@@ -1880,7 +1880,7 @@ void CleanupSidebarResources()
   }
   while ( (int)v0 < (int)&MEMORY[0xB07DC8] ); /*0x6a5eb6*/
   ScenarioClass::FreeConfig((int)MEMORY[0xB0B328]); /*0x6a5ebd*/
-  ScenarioClass::FreeConfig((int)MEMORY[0xB0B408]); /*0x6a5ec7*/
+  ScenarioClass::FreeConfig((int)g_SidebarFlag); /*0x6a5ec7*/
 }
 }
 } // namespace game
@@ -2132,7 +2132,7 @@ char __thiscall ObjectClass_FindPlacementPosition(_DWORD *this, int a2, int a3, 
             v6,
             &v38,
             0,
-            *((_DWORD *)MEMORY[0x8871E0] + 1002),
+            *((_DWORD *)g_RulesClass_Instance + 1002),
             0,
             1,
             0,
@@ -2149,7 +2149,7 @@ char __thiscall ObjectClass_FindPlacementPosition(_DWORD *this, int a2, int a3, 
             this->vtable4,
             &v40,
             0,
-            *((_DWORD *)MEMORY[0x8871E0] + 1002),
+            *((_DWORD *)g_RulesClass_Instance + 1002),
             0,
             1,
             0,
@@ -2169,7 +2169,7 @@ char __thiscall ObjectClass_FindPlacementPosition(_DWORD *this, int a2, int a3, 
           v6,
           &v39,
           0,
-          *((_DWORD *)MEMORY[0x8871E0] + 1002),
+          *((_DWORD *)g_RulesClass_Instance + 1002),
           0,
           1,
           0,
@@ -2187,7 +2187,7 @@ char __thiscall ObjectClass_FindPlacementPosition(_DWORD *this, int a2, int a3, 
     v40 = v38; /*0x7184b1*/
     v41 = (__int16 *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v40); /*0x7184c0*/
     LOBYTE(v39) = ObjectClass::processPointerInvalid != 0; /*0x7184d1*/
-    if ( v7 != -1 && !*(_BYTE *)(*((_DWORD *)MEMORY[0xA83D84] + v7) + 681) && !ObjectClass::processPointerInvalid /*0x7184f4*/
+    if ( v7 != -1 && !*(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array + v7) + 681) && !ObjectClass::processPointerInvalid /*0x7184f4*/
       || (_BYTE)a5 )
     {
       v14 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->vtable4 + 132))(this->vtable4) + 1460); /*0x718505*/

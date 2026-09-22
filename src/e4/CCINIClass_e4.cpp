@@ -90,7 +90,7 @@ LABEL_13:
         v13 = *(_DWORD *)&MEMORY[0xA8B204]->__pad_0[4 * v12]; /*0x41f43f*/
         if ( v13 ) /*0x41f444*/
           *(_BYTE *)(v13 + 164) = INIClass::ReadBool_Overwrite((int)a1, (unsigned __int8 *)aAitriggertypes_0, v11, 0) /*0x41f46c*/
-                               || MEMORY[0xA8B238];
+                               || g_GameMode_Current;
       }
 LABEL_28:
       result = i; /*0x41f473*/

@@ -293,7 +293,7 @@ LRESULT __fastcall InitSkirmishDialogControls(HWND hDlg, int a2)
   {
     ComPtr::Constructor(&wParam); /*0x5e3047*/
     wParam = (WPARAM)&vt_rc_ptr_WDTTerritory; /*0x5e3059*/
-    if ( MEMORY[0xA8B238][0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x5e3066*/
+    if ( g_GameMode_Current[0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x5e3066*/
     {
       WDTTerritoryClass = FindWDTTerritoryClass(v17, *(int *)MEMORY[0xA8B240]); /*0x5e3072*/
       ComPtr::Set(&wParam, WDTTerritoryClass[1]); /*0x5e307f*/
@@ -338,16 +338,16 @@ LRESULT __fastcall InitSkirmishDialogControls(HWND hDlg, int a2)
       1026,
       0x406u,
       1u,
-      *(unsigned __int16 *)&MEMORY[0x8871E0]->__pad_C3C[2116]
-    | (*(unsigned __int16 *)&MEMORY[0x8871E0]->__pad_C3C[2124] << 16));
-    SendDlgItemMessageA(hDlg, 1026, 0x4ABu, 0, *(_DWORD *)&MEMORY[0x8871E0]->__pad_C3C[2128]); /*0x5e3198*/
+      *(unsigned __int16 *)&g_RulesClass_Instance->__pad_C3C[2116]
+    | (*(unsigned __int16 *)&g_RulesClass_Instance->__pad_C3C[2124] << 16));
+    SendDlgItemMessageA(hDlg, 1026, 0x4ABu, 0, *(_DWORD *)&g_RulesClass_Instance->__pad_C3C[2128]); /*0x5e3198*/
     SendDlgItemMessageA( /*0x5e31c4*/
       hDlg,
       1359,
       0x406u,
       1u,
-      *(unsigned __int16 *)&MEMORY[0x8871E0]->__pad_C3C[2132]
-    | (*(unsigned __int16 *)&MEMORY[0x8871E0]->__pad_C3C[2140] << 16));
+      *(unsigned __int16 *)&g_RulesClass_Instance->__pad_C3C[2132]
+    | (*(unsigned __int16 *)&g_RulesClass_Instance->__pad_C3C[2140] << 16));
     wParam = (WPARAM)&vt_rc_ptr_WDTTerritory; /*0x5e31ca*/
     ComPtr::Release(&wParam); /*0x5e31d2*/
   }
@@ -2874,7 +2874,7 @@ void ExchangeMultiplayerGameInfo()
   Debug::Log(); /*0x5e7964*/
   while ( 1 ) /*0x5e7977*/
   {
-    if ( MEMORY[0xA8B238][0] == 3 ) /*0x5e7977*/
+    if ( g_GameMode_Current[0] == 3 ) /*0x5e7977*/
     {
       v0 = Network::SendMessage((int)MEMORY[0xA8E9C0], (int)v15, 455, 1, (int)&MEMORY[0xA8BB1C], 0, 0); /*0x5e7996*/
     }
@@ -3095,7 +3095,7 @@ wchar_t *LoadNetworkShareStrings()
     MEMORY[0xAC1190] = GetStringCSF(MEMORY[0x831C40], 0, MEMORY[0x8317D8], 4083); /*0x5e885b*/
     MEMORY[0xAC1194] = GetStringCSF(MEMORY[0x831C2C], 0, MEMORY[0x8317D8], 4084); /*0x5e8865*/
   }
-  if ( !MEMORY[0xAC119C] ) /*0x5e8872*/
+  if ( !g_HouseClass_ObserverFlags ) /*0x5e8872*/
   {
     v0 = (wchar_t *)__2_YAPAXI_Z(0x85u); /*0x5e8879*/
     v1 = v0; /*0x5e887e*/
@@ -3103,7 +3103,7 @@ wchar_t *LoadNetworkShareStrings()
       Waypoint::InitInvalid((_BYTE *)v0 + 40); /*0x5e888a*/
     else
       v1 = 0; /*0x5e8891*/
-    MEMORY[0xAC119C] = (LPARAM)v1; /*0x5e8898*/
+    g_HouseClass_ObserverFlags = (LPARAM)v1; /*0x5e8898*/
     wcscpy(v1, MEMORY[0xAC117C]); /*0x5e88a0*/
   }
   if ( !MEMORY[0xAC11A0] ) /*0x5e88af*/
@@ -3223,7 +3223,7 @@ int __fastcall Player_AssignColor(HWND hDlg, void *nIDDlgItem)
         v7 = *v6; /*0x5e9c36*/
         if ( *v6 ) /*0x5e9c36*/
         {
-          if ( v7 != (wchar_t *)MEMORY[0xAC119C] /*0x5e9c7b*/
+          if ( v7 != (wchar_t *)g_HouseClass_ObserverFlags /*0x5e9c7b*/
             && v7 != (wchar_t *)MEMORY[0xAC11A0]
             && v7 != MEMORY[0xAC11B0]
             && v7 != (wchar_t *)MEMORY[0xAC11B4]
@@ -3249,7 +3249,7 @@ int __fastcall Player_AssignColor(HWND hDlg, void *nIDDlgItem)
       SelectedRaw = -2; /*0x5e9c9d*/
     }
 LABEL_19:
-    SessionClass::AssignColor(MEMORY[0xA8B238], SelectedRaw, 0); /*0x5e9ca2*/
+    SessionClass::AssignColor(g_GameMode_Current, SelectedRaw, 0); /*0x5e9ca2*/
     result = MEMORY[0xA8DA84]; /*0x5e9caf*/
     if ( MEMORY[0xA8DA84] ) /*0x5e9cb6*/
       return SessionClass::SetPlayerColor(*(_DWORD *)MEMORY[0xA8DA78], SelectedRaw); /*0x5e9cc0*/
@@ -3289,7 +3289,7 @@ int __fastcall Player_AssignSide(HWND hDlg, int nIDDlgItem)
         v7 = *v6; /*0x5e9d16*/
         if ( *v6 ) /*0x5e9d16*/
         {
-          if ( v7 != (wchar_t *)MEMORY[0xAC119C] /*0x5e9d5b*/
+          if ( v7 != (wchar_t *)g_HouseClass_ObserverFlags /*0x5e9d5b*/
             && v7 != (wchar_t *)MEMORY[0xAC11A0]
             && v7 != MEMORY[0xAC11B0]
             && v7 != (wchar_t *)MEMORY[0xAC11B4]
@@ -3670,7 +3670,7 @@ LABEL_25:
       ++v25; /*0x5ea566*/
       if ( (int)v26 >= (int)&MEMORY[0xA8DAB0] ) /*0x5ea56d*/
       {
-        if ( MEMORY[0xA8B238][0] == 4 ) /*0x5ea576*/
+        if ( g_GameMode_Current[0] == 4 ) /*0x5ea576*/
           RefreshLobbyAll_Set(); /*0x5ea578*/
         if ( MEMORY[0xA8B23C] ) /*0x5ea585*/
           (*(void (__thiscall **)(int, HWND))(*(_DWORD *)MEMORY[0xA8B23C] + 120))(MEMORY[0xA8B23C], hDlg); /*0x5ea592*/
@@ -3718,7 +3718,7 @@ LABEL_40:
   if ( wcscmp(&MEMORY[0xAC0D44], &MEMORY[0xAC0B94]) ) /*0x5ea656*/
   {
     Lobby::UpdatePlayerLabels(hDlg); /*0x5ea668*/
-    if ( MEMORY[0xA8B238][0] == 4 ) /*0x5ea674*/
+    if ( g_GameMode_Current[0] == 4 ) /*0x5ea674*/
       RefreshLobbyAll_Set(); /*0x5ea676*/
   }
   for ( n = 0; n < 8; ++n ) /*0x5ea67b*/
@@ -3777,14 +3777,14 @@ int __fastcall sub_5EA920(int a1)
 
   result = -2; /*0x5ea924*/
   v3 = (wchar_t *)*(&MEMORY[0xA8DA90] + a1); /*0x5ea92f*/
-  if ( MEMORY[0xA8B23C] && (MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4) ) /*0x5ea948*/
+  if ( MEMORY[0xA8B23C] && (g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4) ) /*0x5ea948*/
     result = (*(int (**)(void))(*(_DWORD *)MEMORY[0xA8B23C] + 40))(); /*0x5ea94c*/
   if ( v3 /*0x5ea969*/
     && (v3 == (wchar_t *)MEMORY[0xAC11A4] || v3 == (wchar_t *)MEMORY[0xAC11A8] || v3 == (wchar_t *)MEMORY[0xAC11AC]) )
   {
     return MEMORY[0xA8B29C][a1]; /*0x5ea96b*/
   }
-  if ( v3 != (wchar_t *)MEMORY[0xAC119C] && v3 != (wchar_t *)MEMORY[0xAC11A0] && v3 != MEMORY[0xAC11B0] ) /*0x5ea98b*/
+  if ( v3 != (wchar_t *)g_HouseClass_ObserverFlags && v3 != (wchar_t *)MEMORY[0xAC11A0] && v3 != MEMORY[0xAC11B0] ) /*0x5ea98b*/
   {
     if ( v3 == (wchar_t *)MEMORY[0xAC11B4] ) /*0x5ea993*/
       return -3; /*0x5ea996*/
@@ -3900,7 +3900,7 @@ int __fastcall UpdateMultiplayerLobbySlots(HWND hDlg, char *a2, int nIDDlgItem)
       v7 = *(&MEMORY[0xA8DA90] + (_DWORD)v5); /*0x5eb93d*/
       nIDDlgItemb = v7 == MEMORY[0xAC11B4] /*0x5eb971*/
                  || v7
-                 && v7 != MEMORY[0xAC119C]
+                 && v7 != g_HouseClass_ObserverFlags
                  && v7 != MEMORY[0xAC11A0]
                  && (wchar_t *)v7 != MEMORY[0xAC11B0]
                  && *(_DWORD *)(v7 + 107) == -1;
@@ -3917,7 +3917,7 @@ int __fastcall UpdateMultiplayerLobbySlots(HWND hDlg, char *a2, int nIDDlgItem)
       {
         ShowWindow(v9, 5); /*0x5eb9bc*/
         ShowWindow(v12, 5); /*0x5eb9c5*/
-        if ( MEMORY[0xA8B238][0] != 4 || !Network::IsLobbyFeature() ) /*0x5eb9d0*/
+        if ( g_GameMode_Current[0] != 4 || !Network::IsLobbyFeature() ) /*0x5eb9d0*/
           ShowWindow(v14, 5); /*0x5eb9e0*/
       }
       result = ShowWindow(v20, 5); /*0x5eb9e9*/
@@ -5057,7 +5057,7 @@ int __fastcall Lobby_RefreshPlayerSlots(unsigned int a1)
             goto LABEL_24; /*0x5ee5be*/
           if ( v5 && (v5 == MEMORY[0xAC11A4] || v5 == MEMORY[0xAC11A8] || v5 == MEMORY[0xAC11AC]) ) /*0x5ee5de*/
             break; /*0x5ee5de*/
-          if ( v5 == MEMORY[0xAC119C] || v5 == MEMORY[0xAC11B4] ) /*0x5ee608*/
+          if ( v5 == g_HouseClass_ObserverFlags || v5 == MEMORY[0xAC11B4] ) /*0x5ee608*/
           {
             *i = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 44))(MEMORY[0xA8B23C]); /*0x5ee667*/
             v8 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 44))(MEMORY[0xA8B23C]); /*0x5ee671*/

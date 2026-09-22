@@ -19,9 +19,9 @@ BOOL __thiscall TimerClass_Active(int this)
   v2 = this->TimerClass_field_0x10; /*0x4c948a*/
   if ( v1 != -1 ) /*0x4c9490*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v1 >= v2 ) /*0x4c949c*/
+    if ( (int)g_CurrentFrame - v1 >= v2 ) /*0x4c949c*/
       return 0; /*0x4c949c*/
-    v2 -= (int)MEMORY[0xA8ED84] - v1; /*0x4c949e*/
+    v2 -= (int)g_CurrentFrame - v1; /*0x4c949e*/
   }
   return v2 != 0; /*0x4c94a9*/
 }

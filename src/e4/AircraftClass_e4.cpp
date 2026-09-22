@@ -351,17 +351,17 @@ int __thiscall AircraftClass::ValidateLandingCell(int this, _DWORD *a2, int a3, 
      || (*(_BYTE *)(v8 + 20) & 1) == 0
      || (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(v8 + 540), *(#375 **)(this + 540))
      || *(_DWORD *)(v8 + 544) != 2
-     && !MEMORY[0xA8E7AC]
+     && !g_IKnowWhatImDoing
      && ((*(int (__thiscall **)(int))(*(_DWORD *)v8 + 44))(v8) != 6 || !*(_BYTE *)(*(_DWORD *)(v8 + 1312) + 3226)))
     && !Cell::IsBuildable((int)a2, 4, 0, 0, -1, 0, -1, 1) )
   {
     return 7; /*0x419761*/
   }
-  if ( MEMORY[0xA8B238][0] ) /*0x41976b*/
+  if ( g_GameMode_Current[0] ) /*0x41976b*/
     return 0; /*0x41976b*/
-  if ( !*(_BYTE *)(this + 1050) ) /*0x41976d*/
+  if ( !this->isOwnedByCurrentPlayer ) /*0x41976d*/
     return 0; /*0x41976d*/
-  if ( *(_BYTE *)(this + 980) ) /*0x419777*/
+  if ( this->isALoaner ) /*0x419777*/
     return 0; /*0x419777*/
   v10 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*a2 + 72))(a2, v11); /*0x41978a*/
   if ( !Cell::IsPassable(v10) ) /*0x419793*/
@@ -606,10 +606,10 @@ LABEL_4:
   }
   if ( v4 ) /*0x41ae19*/
     goto LABEL_4; /*0x41ae19*/
-  result = *(_DWORD *)MEMORY[0xA8B230]; /*0x41aeaa*/
-  if ( (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) != 0 ) /*0x41aeaf*/
+  result = *(_DWORD *)g_ScenarioClass_Instance; /*0x41aeaa*/
+  if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) != 0 ) /*0x41aeaf*/
   {
-    CrateImg = MEMORY[0x8871E0]->GUIMainButtonSound; /*0x41aec5*/
+    CrateImg = g_RulesClass_Instance->GUIMainButtonSound; /*0x41aec5*/
     v17 = this->q027; /*0x41aecd*/
     v18 = this->owningHouseIndex; /*0x41aed6*/
     v11 = *this; /*0x41aeda*/
@@ -622,7 +622,7 @@ LABEL_4:
       0,
       0,
       1,
-      v12 < MEMORY[0x8871E0]->BuildWeapons[3] / 2,
+      v12 < g_RulesClass_Instance->BuildWeapons[3] / 2,
       0);
     v13 = this->owningHouseIndex; /*0x41af21*/
     v14 = this->q029; /*0x41af24*/
@@ -638,7 +638,7 @@ LABEL_4:
              0,
              0,
              1,
-             v16 < MEMORY[0x8871E0]->BuildWeapons[3] / 2,
+             v16 < g_RulesClass_Instance->BuildWeapons[3] / 2,
              1);
   }
   return result; /*0x41ae9b*/

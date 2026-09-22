@@ -16,9 +16,9 @@ int __thiscall AbstractTypeClass::Constructor(int this, AbstractClass *aP1)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x410809*/
   v3 = (RandomStruct *)(this + 36); /*0x410812*/
-  *(_BYTE *)(this + 36) = 0; /*0x410817*/
-  *(_BYTE *)(this + 61) = 0; /*0x41081a*/
-  *(_BYTE *)(this + 100) = 0; /*0x41081e*/
+  this->q024 = 0; /*0x410817*/
+  this->UINameLabel = 0; /*0x41081a*/
+  this->Name = 0; /*0x41081e*/
   *(_DWORD *)this = &AbstractTypeClass::`vftable'; /*0x410822*/
   this->vtable1 = &AbstractTypeClass::`vftable'; /*0x410829*/
   this->vtable2 = &AbstractTypeClass::`vftable'; /*0x410830*/
@@ -60,7 +60,7 @@ LABEL_9:
   if ( Destination != (char *)(this + 100) ) /*0x4108e0*/
   {
     qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x4108eb*/
-    *(_BYTE *)(this + 148) = v8; /*0x4108ed*/
+    this->q094 = v8; /*0x4108ed*/
   }
   this->UIName = &stru_87C374.__pad_579C[23588]; /*0x4108ee*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22212] < *(int *)&HouseClass_Player.__pad_5568[22204] /*0x410929*/
@@ -141,7 +141,7 @@ char __thiscall AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
   if ( Destination != (char *)v3 ) /*0x410ad2*/
   {
     qmemcpy(v3, Destination, 0x30u); /*0x410add*/
-    *(_BYTE *)(this + 148) = v7; /*0x410adf*/
+    this->q094 = v7; /*0x410adf*/
   }
   v4 = (char *)(this + 61); /*0x410aeb*/
   INIClass::GetString( /*0x410afb*/

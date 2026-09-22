@@ -4120,8 +4120,8 @@ void __thiscall sub_50E010(int this, int a2)
   int v5; // ebp
   int v6; // esi
 
-  v3 = *(_DWORD *)(this + 728) + 1; /*0x50e01c*/
-  *(_DWORD *)(this + 728) = v3; /*0x50e01e*/
+  v3 = this->slaveManager + 1; /*0x50e01c*/
+  this->slaveManager = v3; /*0x50e01e*/
   if ( v3 == 1 ) /*0x50e027*/
   {
     if ( a2 ) /*0x50e033*/
@@ -4151,7 +4151,7 @@ void __thiscall sub_50E010(int this, int a2)
               return; /*0x50e0bb*/
             goto LABEL_16; /*0x50e0bb*/
           }
-          if ( *(_BYTE *)(this + 492) || *(_BYTE *)(this + 493) ) /*0x50e0a4*/
+          if ( this->disguiseBlinkTimer || this->q1ED ) /*0x50e0a4*/
           {
 LABEL_16:
             if ( !MEMORY[0xA8E7AC] ) /*0x50e0c4*/
@@ -4200,7 +4200,7 @@ void __thiscall sub_50E1C0(int this, int a2)
             return; /*0x50e253*/
           goto LABEL_15; /*0x50e253*/
         }
-        if ( *(_BYTE *)(this + 492) || *(_BYTE *)(this + 493) ) /*0x50e23c*/
+        if ( this->disguiseBlinkTimer || this->q1ED ) /*0x50e23c*/
         {
 LABEL_15:
           if ( !MEMORY[0xA8E7AC] ) /*0x50e25c*/
@@ -4783,9 +4783,9 @@ namespace ra2 { namespace game { int RadioClass::Constructor() {
       this->q0D0 = 0;
       this->missionTimer = v2;
       *(_DWORD *)this = &MissionClass::`vftable';
-      *(_DWORD *)(this + 4) = &MissionClass::`vftable';
-      *(_DWORD *)(this + 8) = &MissionClass::`vftable';
-      *(_DWORD *)(this + 12) = &MissionClass::`vftable';
+      this->vtable2 = &MissionClass::`vftable';
+      this->vtable3 = &MissionClass::`vftable';
+      this->vtable4 = &MissionClass::`vftable';
       return this;
 }
 } } }
@@ -4845,11 +4845,11 @@ char __thiscall ObjectClass_ProcessCloaking(int this)
   int v6; // [esp+Ch] [ebp-8h]
 
   ObjectClass::DetectCloaked((int *)this); /*0x5b3067*/
-  LOBYTE(v2) = *(_BYTE *)(this + 144); /*0x5b306c*/
+  LOBYTE(v2) = this->isAliveFlag; /*0x5b306c*/
   if ( !(_BYTE)v2 ) /*0x5b3074*/
     return v2; /*0x5b3074*/
-  v3 = *(_DWORD *)(this + 200); /*0x5b307a*/
-  v2 = *(_DWORD *)(this + 208); /*0x5b3080*/
+  v3 = this->q0C8; /*0x5b307a*/
+  v2 = this->q0D0; /*0x5b3080*/
   v4 = (_DWORD *)(this + 200); /*0x5b3086*/
   if ( v3 == -1 ) /*0x5b308f*/
     goto LABEL_5; /*0x5b308f*/
@@ -4860,180 +4860,180 @@ LABEL_5:
     if ( v2 ) /*0x5b30a1*/
       return v2; /*0x5b30a1*/
   }
-  v2 = *(_DWORD *)(this + 108); /*0x5b30a7*/
+  v2 = this->health; /*0x5b30a7*/
   if ( v2 > 0 ) /*0x5b30ac*/
   {
-    switch ( *(_DWORD *)(this + 172) ) /*0x5b30c1*/
+    switch ( this->q0AC ) /*0x5b30c1*/
     {
       case 1: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->hasParachute)(this); /*0x5b3176*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b3183*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3189*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b318c*/
+        this->q0CC = v6; /*0x5b3189*/
+        this->q0D0 = v2; /*0x5b318c*/
         break; /*0x5b3193*/
       case 2: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->q08B)(this); /*0x5b3352*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b335f*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3365*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3368*/
+        this->q0CC = v6; /*0x5b3365*/
+        this->q0D0 = v2; /*0x5b3368*/
         break; /*0x5b336f*/
       case 4: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->onBridge)(this); /*0x5b3198*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b31a5*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b31ab*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b31ae*/
+        this->q0CC = v6; /*0x5b31ab*/
+        this->q0D0 = v2; /*0x5b31ae*/
         break; /*0x5b31b5*/
       case 5: /*0x5b30c1*/
       case 6: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->q21C)(this); /*0x5b32ec*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b32f9*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b32ff*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3302*/
+        this->q0CC = v6; /*0x5b32ff*/
+        this->q0D0 = v2; /*0x5b3302*/
         break; /*0x5b3309*/
       case 7: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->isAliveFlag)(this); /*0x5b3110*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b311d*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3123*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3126*/
+        this->q0CC = v6; /*0x5b3123*/
+        this->q0D0 = v2; /*0x5b3126*/
         break; /*0x5b312d*/
       case 8: /*0x5b30c1*/
       case 0x11: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->q214)(this); /*0x5b330e*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b331b*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3321*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3324*/
+        this->q0CC = v6; /*0x5b3321*/
+        this->q0D0 = v2; /*0x5b3324*/
         break; /*0x5b332b*/
       case 9: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->q218)(this); /*0x5b3330*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b333d*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3343*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3346*/
+        this->q0CC = v6; /*0x5b3343*/
+        this->q0D0 = v2; /*0x5b3346*/
         break; /*0x5b334d*/
       case 0xA: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 548))(this); /*0x5b31ba*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b31c7*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b31cd*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b31d0*/
+        this->q0CC = v6; /*0x5b31cd*/
+        this->q0D0 = v2; /*0x5b31d0*/
         break; /*0x5b31d7*/
       case 0xB: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->q220)(this); /*0x5b31dc*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b31e9*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b31ef*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b31f2*/
+        this->q0CC = v6; /*0x5b31ef*/
+        this->q0D0 = v2; /*0x5b31f2*/
         break; /*0x5b31f9*/
       case 0xC: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->isFallingDown)(this); /*0x5b31fe*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b320b*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3211*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3214*/
+        this->q0CC = v6; /*0x5b3211*/
+        this->q0D0 = v2; /*0x5b3214*/
         break; /*0x5b321b*/
       case 0xD: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->wasFallingDown)(this); /*0x5b3220*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b322d*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3233*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3236*/
+        this->q0CC = v6; /*0x5b3233*/
+        this->q0D0 = v2; /*0x5b3236*/
         break; /*0x5b323d*/
       case 0xE: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->isSelected)(this); /*0x5b3242*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b324f*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3255*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3258*/
+        this->q0CC = v6; /*0x5b3255*/
+        this->q0D0 = v2; /*0x5b3258*/
         break; /*0x5b325f*/
       case 0xF: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->q08A)(this); /*0x5b3374*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b3381*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3387*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b338a*/
+        this->q0CC = v6; /*0x5b3387*/
+        this->q0D0 = v2; /*0x5b338a*/
         break; /*0x5b3391*/
       case 0x10: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->isBomb)(this); /*0x5b3264*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b3271*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3277*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b327a*/
+        this->q0CC = v6; /*0x5b3277*/
+        this->q0D0 = v2; /*0x5b327a*/
         break; /*0x5b3281*/
       case 0x12: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->alignmentPadding91)(this); /*0x5b3132*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b313f*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3145*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3148*/
+        this->q0CC = v6; /*0x5b3145*/
+        this->q0D0 = v2; /*0x5b3148*/
         break; /*0x5b314f*/
       case 0x13: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 584))(this); /*0x5b3154*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b3161*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3167*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b316a*/
+        this->q0CC = v6; /*0x5b3167*/
+        this->q0D0 = v2; /*0x5b316a*/
         break; /*0x5b3171*/
       case 0x14: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 588))(this); /*0x5b3286*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b3293*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3299*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b329c*/
+        this->q0CC = v6; /*0x5b3299*/
+        this->q0D0 = v2; /*0x5b329c*/
         break; /*0x5b32a3*/
       case 0x15: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 600))(this); /*0x5b3396*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b33a3*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b33a9*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b33ac*/
+        this->q0CC = v6; /*0x5b33a9*/
+        this->q0D0 = v2; /*0x5b33ac*/
         break; /*0x5b33b3*/
       case 0x16: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->lastLayer)(this); /*0x5b32ca*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b32d7*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b32dd*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b32e0*/
+        this->q0CC = v6; /*0x5b32dd*/
+        this->q0D0 = v2; /*0x5b32e0*/
         break; /*0x5b32e7*/
       case 0x17: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->inOpenToppedTransport)(this); /*0x5b30ee*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b30fb*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3101*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3104*/
+        this->q0CC = v6; /*0x5b3101*/
+        this->q0D0 = v2; /*0x5b3104*/
         break; /*0x5b310b*/
       case 0x18: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 596))(this); /*0x5b32a8*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b32b5*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b32bb*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b32be*/
+        this->q0CC = v6; /*0x5b32bb*/
+        this->q0D0 = v2; /*0x5b32be*/
         break; /*0x5b32c5*/
       case 0x19: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->q25C)(this); /*0x5b33b8*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b33c5*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b33cb*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b33ce*/
+        this->q0CC = v6; /*0x5b33cb*/
+        this->q0D0 = v2; /*0x5b33ce*/
         break; /*0x5b33d5*/
       case 0x1A: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->q260)(this); /*0x5b33da*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b33e7*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b33ed*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b33f0*/
+        this->q0CC = v6; /*0x5b33ed*/
+        this->q0D0 = v2; /*0x5b33f0*/
         break; /*0x5b33f7*/
       case 0x1B: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->isVisible)(this); /*0x5b33fc*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b3409*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b340f*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3412*/
+        this->q0CC = v6; /*0x5b340f*/
+        this->q0D0 = v2; /*0x5b3412*/
         break; /*0x5b3419*/
       case 0x1C: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->alignmentPadding99)(this); /*0x5b3462*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b346f*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3475*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3478*/
+        this->q0CC = v6; /*0x5b3475*/
+        this->q0D0 = v2; /*0x5b3478*/
         break; /*0x5b347f*/
       case 0x1E: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 620))(this); /*0x5b341e*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b342b*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3431*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3434*/
+        this->q0CC = v6; /*0x5b3431*/
+        this->q0D0 = v2; /*0x5b3434*/
         break; /*0x5b343b*/
       case 0x1F: /*0x5b30c1*/
         v2 = (*(int (__thiscall **)(int))(this->q270)(this); /*0x5b3440*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b344d*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b3453*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b3456*/
+        this->q0CC = v6; /*0x5b3453*/
+        this->q0D0 = v2; /*0x5b3456*/
         break; /*0x5b345d*/
       default:
         v2 = (*(int (__thiscall **)(int))(this->inLimbo)(this); /*0x5b34c8*/
         *v4 = MEMORY[0xA8ED84]; /*0x5b34d4*/
-        *(_DWORD *)(this + 204) = v6; /*0x5b34da*/
-        *(_DWORD *)(this + 208) = v2; /*0x5b34dd*/
+        this->q0CC = v6; /*0x5b34da*/
+        this->q0D0 = v2; /*0x5b34dd*/
         break; /*0x5b34dd*/
     }
   }
@@ -8269,9 +8269,9 @@ namespace ra2 { namespace game { void AbstractClass::ProcessData() {
 
       v2 = this->q044;
       *(_DWORD *)this = &ParasiteClass::`vftable';
-      *(_DWORD *)(this + 4) = &ParasiteClass::`vftable';
-      *(_DWORD *)(this + 8) = &ParasiteClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_ParasiteClass;
+      this->vtable2 = &ParasiteClass::`vftable';
+      this->vtable3 = &ParasiteClass::`vftable';
+      this->vtable4 = &vt_ParasiteClass;
       this->q04C = 0;
       this->q050 = 0;
       this->q048 = 0;
@@ -8356,9 +8356,9 @@ namespace ra2 { namespace game { int ObjectClass::ProcessUpdate() {
       this->q130 = 0;
       this->q131 = 0;
       *(_DWORD *)this = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 4) = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 8) = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_ParticleClass;
+      this->vtable2 = &ParticleClass::`vftable';
+      this->vtable3 = &ParticleClass::`vftable';
+      this->vtable4 = &vt_ParticleClass;
       if ( DataGlobal_A83DD8 < DataGlobal_A83DD0
         || (DataGlobal_A83DD5 || !DataGlobal_A83DD0)
         && DataGlobal_A83DDC > 0
@@ -8462,13 +8462,13 @@ int __thiscall ObjectClass::ProcessGroupInput(int this, RadioClass *aP1, int a3,
   _DWORD *v16; // esi
   _DWORD *j; // ecx
 
-  v5 = *(_DWORD *)(this + 212); /*0x65a829*/
+  v5 = this->q0D4; /*0x65a829*/
   if ( a3 != v5 ) /*0x65a831*/
   {
-    v6 = *(_DWORD *)(this + 216); /*0x65a833*/
-    *(_DWORD *)(this + 216) = v5; /*0x65a839*/
-    *(_DWORD *)(this + 220) = v6; /*0x65a83f*/
-    *(_DWORD *)(this + 212) = a3; /*0x65a845*/
+    v6 = this->q0D8; /*0x65a833*/
+    this->q0D8 = v5; /*0x65a839*/
+    this->q0DC = v6; /*0x65a83f*/
+    this->q0D4 = a3; /*0x65a845*/
   }
   if ( a3 == 3 ) /*0x65a852*/
   {
@@ -8482,17 +8482,17 @@ int __thiscall ObjectClass::ProcessGroupInput(int this, RadioClass *aP1, int a3,
           return ObjectClass::ProcessInputKey((#374 *)this); /*0x65a870*/
       }
       ObjectClass::ProcessInputKey((#374 *)this); /*0x65a890*/
-      *(_DWORD *)(*(_DWORD *)(this + 228) + 4 * v8) = 0; /*0x65a8a0*/
+      *(_DWORD *)(this->q0E4 + 4 * v8) = 0; /*0x65a8a0*/
       return 1; /*0x65a8aa*/
     }
     return ObjectClass::ProcessInputKey((#374 *)this); /*0x65a883*/
   }
-  if ( a3 != 2 || !*(_DWORD *)(this + 108) ) /*0x65a8b2*/
+  if ( a3 != 2 || !this->health ) /*0x65a8b2*/
     return ObjectClass::ProcessInputKey((#374 *)this); /*0x65a8b7*/
   if ( !Object::IsAlliedWithObjectHouse((_DWORD *)aP1[2].customSound_controller[1], (IUnknown *)this) ) /*0x65a8c4*/
     return 10; /*0x65a8d5*/
   if ( this /*0x65a8e9*/
-    && (*(_BYTE *)(this + 20) & 1) != 0
+    && (this->abstractFlags & 1) != 0
     && !Object::IsAlliedWithObjectHouse(*(_DWORD **)(this + 540), (IUnknown *)aP1) )
   {
     return 10; /*0x65a8e9*/
@@ -9236,9 +9236,9 @@ namespace ra2 { namespace game { int MissionClass::Construct(int a1, int a2, int
       this->isSelected = 0;
       this->hasParachute = 0;
       *(_DWORD *)this = &TeamClass::`vftable';
-      *(_DWORD *)(this + 4) = &TeamClass::`vftable';
-      *(_DWORD *)(this + 8) = &TeamClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_TeamClass;
+      this->vtable2 = &TeamClass::`vftable';
+      this->vtable3 = &TeamClass::`vftable';
+      this->vtable4 = &vt_TeamClass;
       if ( *(int *)&stru_89E138.__pad_579C[67620] < *(int *)&stru_89E138.__pad_579C[67612]
         || (stru_89E138.__pad_579C[67617] || !*(_DWORD *)&stru_89E138.__pad_579C[67612])
         && *(int *)&stru_89E138.__pad_579C[67624] > 0
@@ -11431,24 +11431,24 @@ int __thiscall sub_71BDF0(int this)
   int Vtable3; // [esp+14h] [ebp-4h]
 
   ObjectClass::ctor((_DWORD *)this); /*0x71bdf9*/
-  *(_DWORD *)(this + 172) = 0; /*0x71be03*/
-  *(_BYTE *)(this + 176) = 0; /*0x71be09*/
+  this->q0AC = 0; /*0x71be03*/
+  this->q0B0 = 0; /*0x71be09*/
   v2 = MEMORY[0xA8ED84]; /*0x71be0f*/
-  *(_DWORD *)(this + 188) = 0; /*0x71be14*/
-  *(_DWORD *)(this + 180) = v2; /*0x71be1a*/
-  *(_DWORD *)(this + 192) = 0; /*0x71be20*/
-  *(_DWORD *)(this + 196) = 1; /*0x71be26*/
-  *(_DWORD *)(this + 200) = 0; /*0x71be30*/
-  *(_BYTE *)(this + 204) = 0; /*0x71be36*/
+  this->q0BC = 0; /*0x71be14*/
+  this->q0B4 = v2; /*0x71be1a*/
+  this->q0C0 = 0; /*0x71be20*/
+  this->q0C4 = 1; /*0x71be26*/
+  this->q0C8 = 0; /*0x71be30*/
+  this->q0CC = 0; /*0x71be36*/
   *(_BYTE *)(this + 205) = 0; /*0x71be3c*/
-  *(_DWORD *)(this + 208) = 0; /*0x71be42*/
-  *(_DWORD *)(this + 212) = 0; /*0x71be48*/
-  *(_DWORD *)(this + 216) = 0; /*0x71be4e*/
-  *(_DWORD *)(this + 220) = 0; /*0x71be54*/
+  this->q0D0 = 0; /*0x71be42*/
+  this->q0D4 = 0; /*0x71be48*/
+  this->q0D8 = 0; /*0x71be4e*/
+  this->q0DC = 0; /*0x71be54*/
   *(_DWORD *)this = &TerrainClass::`vftable'; /*0x71be5a*/
-  *(_DWORD *)(this + 4) = &off_7F5200; /*0x71be60*/
-  *(_DWORD *)(this + 8) = &TerrainClass::`vftable'; /*0x71be66*/
-  *(_DWORD *)(this + 12) = &vt_TerrainClass; /*0x71be6d*/
+  this->vtable2 = &off_7F5200; /*0x71be60*/
+  this->vtable3 = &TerrainClass::`vftable'; /*0x71be66*/
+  this->vtable4 = &vt_TerrainClass; /*0x71be6d*/
   if ( MEMORY[0xA8E998] < MEMORY[0xA8E990] /*0x71bea8*/
     || (MEMORY[0xA8E995] || !MEMORY[0xA8E990])
     && MEMORY[0xA8E99C] > 0
@@ -11663,11 +11663,11 @@ void __thiscall sub_729AA0(int this)
   _BYTE *v5; // eax
   _DWORD *v6; // ecx
 
-  v2 = *(_DWORD *)(this + 52); /*0x729aa7*/
+  v2 = this->attachedTag; /*0x729aa7*/
   if ( !v2 ) /*0x729ab0*/
     goto LABEL_7; /*0x729ab0*/
-  v3 = *(_DWORD *)(this + 40); /*0x729ab2*/
-  v4 = *(_DWORD *)(this + 48); /*0x729ab5*/
+  v3 = this->owningHouseIndex; /*0x729ab2*/
+  v4 = this->nextObject; /*0x729ab5*/
   if ( v3 != -1 ) /*0x729abb*/
   {
     if ( (int)MEMORY[0xA8ED84] - v3 >= v4 ) /*0x729ac7*/
@@ -11675,16 +11675,16 @@ void __thiscall sub_729AA0(int this)
     else
       v4 -= (int)MEMORY[0xA8ED84] - v3; /*0x729ac9*/
   }
-  if ( (double)(v2 - v4) / (double)*(int *)(this + 52) == 1.0 ) /*0x729ae8*/
+  if ( (double)(v2 - v4) / (double)this->attachedTag == 1.0 ) /*0x729ae8*/
   {
 LABEL_7:
-    (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 396))(*(_DWORD *)(this + 12), 2); /*0x729af1*/
+    (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 396))(this->vtable4, 2); /*0x729af1*/
     v5 = *(_BYTE **)(this + 12); /*0x729af7*/
     if ( v5[144] && !v5[129] && !v5[141] ) /*0x729b0e*/
     {
-      (*(void (__stdcall **)(int))(*(_DWORD *)(this + 4) + 72))(this + 4); /*0x729b1f*/
+      (*(void (__stdcall **)(int))(this->vtable2 + 72))(this + 4); /*0x729b1f*/
       v6 = *(_DWORD **)(this + 12); /*0x729b22*/
-      *(_DWORD *)(this + 24) = 0; /*0x729b25*/
+      this->nextArrayIndex = 0; /*0x729b25*/
       FootClass::ClearPathIndex(v6); /*0x729b2c*/
     }
   }
@@ -12238,9 +12238,9 @@ namespace ra2 { namespace game { int ObjectClass::Initialize() {
       this->q13C = 0;
       this->q140 = 0;
       *(_DWORD *)this = &VoxelAnimClass::`vftable';
-      *(_DWORD *)(this + 4) = &VoxelAnimClass::`vftable';
-      *(_DWORD *)(this + 8) = &VoxelAnimClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_VoxelAnimClass;
+      this->vtable2 = &VoxelAnimClass::`vftable';
+      this->vtable3 = &VoxelAnimClass::`vftable';
+      this->vtable4 = &vt_VoxelAnimClass;
       AbstractClass::GenerateUniqueID(this + 4);
       AudioController::Init((_DWORD *)(this + 276));
       AudioController::Init((_DWORD *)(this + 296));
@@ -12479,9 +12479,9 @@ namespace ra2 { namespace game { int AbstractClass::ProcessInit() {
       int v8;
 
       *(_DWORD *)this = &WarheadTypeClass::`vftable';
-      *(_DWORD *)(this + 4) = &WarheadTypeClass::`vftable';
-      *(_DWORD *)(this + 8) = &WarheadTypeClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_WarheadTypeClass;
+      this->vtable2 = &WarheadTypeClass::`vftable';
+      this->vtable3 = &WarheadTypeClass::`vftable';
+      this->vtable4 = &vt_WarheadTypeClass;
       AbstractClass::AnnounceExpiredPointer((void **)this, 1);
       v8 = this;
       v2 = (*(int (__thiscall **)(WarheadTypeClass **, int *))&WarheadTypeClass_Array->__pad_0[16])(&WarheadTypeClass_Array, &v8);
@@ -12506,7 +12506,7 @@ namespace ra2 { namespace game { int AbstractClass::ProcessInit() {
         while ( v3 < g_AnimManager );
       }
       v4 = *(void **)(this + 428);
-      *(_DWORD *)(this + 424) = &vt_VectorClass_int;
+      this->q6A0 = &vt_VectorClass_int;
       if ( v4 && this->q1B5 )
       {
         __3_YAXPAX_Z(v4);
@@ -12515,7 +12515,7 @@ namespace ra2 { namespace game { int AbstractClass::ProcessInit() {
       this->q1B5 = 0;
       this->q1B0 = 0;
       v5 = *(void **)(this + 400);
-      *(_DWORD *)(this + 396) = &vt_VectorClass_VoxelAnimTypeClass_const;
+      this->q630 = &vt_VectorClass_VoxelAnimTypeClass_const;
       if ( v5 && this->q199 )
       {
         __3_YAXPAX_Z(v5);
@@ -12524,7 +12524,7 @@ namespace ra2 { namespace game { int AbstractClass::ProcessInit() {
       this->q199 = 0;
       this->q194 = 0;
       v6 = *(void **)(this + 264);
-      *(_DWORD *)(this + 260) = &vt_VectorClass_AnimTypeClass_const;
+      this->q104 = &vt_VectorClass_AnimTypeClass_const;
       if ( v6 && this->q111 )
       {
         __3_YAXPAX_Z(v6);

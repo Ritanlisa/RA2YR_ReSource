@@ -331,8 +331,8 @@ char __usercall AbstractClass::sub_5C03D0@<al>(int a1@<ebx>, int a2@<ebp>, int a
   result = MEMORY[0xABF3F4]; /*0x5c03d0*/
   if ( MEMORY[0xABF3F4] ) /*0x5c03da*/
   {
-    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)MEMORY[0x887310] + 24))(MEMORY[0x887310], 0); /*0x5c03ea*/
-    Frame::Present(MEMORY[0x887310], a1, a2, a3, 0, v7, v8, v9); /*0x5c03f7*/
+    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Alternate + 24))(DSurface_Alternate, 0); /*0x5c03ea*/
+    Frame::Present(DSurface_Alternate, a1, a2, a3, 0, v7, v8, v9); /*0x5c03f7*/
     result = TestBitArray(15); /*0x5c0401*/
     if ( !result ) /*0x5c0408*/
     {
@@ -345,8 +345,8 @@ char __usercall AbstractClass::sub_5C03D0@<al>(int a1@<ebx>, int a2@<ebp>, int a
       v8 = v5; /*0x5c0454*/
       v7 = Rect.left + v6; /*0x5c045e*/
       v10 = v4; /*0x5c0462*/
-      return (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))( /*0x5c0477*/
-               MEMORY[0x887308],
+      return (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x5c0477*/
+               g_DSurface_Primary,
                &v7,
                *(_DWORD *)(MEMORY[0xABF3F4] + 8),
                MEMORY[0xABF3F4] + 36,
@@ -478,9 +478,9 @@ void __fastcall AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
         (*(void (__thiscall **)(_DWORD *, _DWORD))(*v5 + 968))(v5, 0); /*0x70d547*/
     }
   }
-  for ( j = MEMORY[0x8B40F8] - 1; j >= 0; --j ) /*0x70d560*/
+  for ( j = g_HouseClass_AIProductionState - 1; j >= 0; --j ) /*0x70d560*/
   {
-    v8 = *((_DWORD *)MEMORY[0x8B40EC] + j); /*0x70d567*/
+    v8 = *((_DWORD *)g_TeamClassPool + j); /*0x70d567*/
     if ( *(_DWORD *)(v8 + 60) == a1 ) /*0x70d56d*/
       *(_DWORD *)(v8 + 60) = 0; /*0x70d56f*/
     if ( *(_DWORD *)(v8 + 64) == a1 ) /*0x70d575*/

@@ -247,7 +247,7 @@ int sub_452D40()
     v2 = *((_DWORD *)MEMORY[0xA8EB44] + i); /*0x452d52*/
     if ( v2 /*0x452d7c*/
       && *(_BYTE *)(*(_DWORD *)(v2 + 1312) + 5822)
-      && !MEMORY[0xA8E7AC]
+      && !g_IKnowWhatImDoing
       && *(_BYTE *)(v2 + 144)
       && !*(_BYTE *)(v2 + 129) )
     {

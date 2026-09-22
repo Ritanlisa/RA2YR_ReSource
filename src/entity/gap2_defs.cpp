@@ -710,8 +710,8 @@ namespace gamemd { int AnimClass::SimpleCtor() {
       this->q19D = 0;
       this->q19E = 0;
       *(_DWORD *)this = &AnimClass::`vftable';
-      *(_DWORD *)(this + 4) = &AnimClass::`vftable';
-      *(_DWORD *)(this + 8) = &vt_AnimClass;
+      this->vtable2 = &AnimClass::`vftable';
+      this->vtable3 = &vt_AnimClass;
       this->q00C = &off_7E3328;
       if ( g_AnimClassCount < DataGlobal_A8E9B0
         || (DataGlobal_A8E9B5 || !DataGlobal_A8E9B0)
@@ -1266,7 +1266,7 @@ bool __thiscall AnimClass::updateAnimation(int this, IUnknown *aP1)
   unsigned __int8 v12; // [esp+7h] [ebp-5h]
   int v13; // [esp+8h] [ebp-4h]
 
-  v3 = *(_DWORD *)(*(_DWORD *)(this + 1312) + 3768); /*0x44807c*/
+  v3 = *(_DWORD *)(this->q520 + 3768); /*0x44807c*/
   v13 = v3; /*0x448084*/
   if ( !v3 ) /*0x448088*/
   {
@@ -1274,7 +1274,7 @@ bool __thiscall AnimClass::updateAnimation(int this, IUnknown *aP1)
     return v4; /*0x448090*/
   }
   v12 = *(_BYTE *)(this + 979); /*0x44809a*/
-  v5 = *(_DWORD *)(this + 540); /*0x44809e*/
+  v5 = this->q21C; /*0x44809e*/
   v6 = *(_DWORD *)(v5 + 120); /*0x4480a6*/
   v7 = 0; /*0x4480a9*/
   if ( v6 <= 0 ) /*0x4480ad*/
@@ -1290,7 +1290,7 @@ bool __thiscall AnimClass::updateAnimation(int this, IUnknown *aP1)
     v10 = *(_DWORD *)(v9 + 1312); /*0x4480cf*/
     if ( *(_DWORD *)(v10 + 3768) != v3 ) /*0x4480db*/
       goto LABEL_13; /*0x4480db*/
-    if ( !*(_BYTE *)(*(_DWORD *)(this + 1312) + 3278) ) /*0x4480e3*/
+    if ( !*(_BYTE *)(this->q520 + 3278) ) /*0x4480e3*/
       break; /*0x4480e3*/
     if ( *(_BYTE *)(v10 + 3278) ) /*0x4480ed*/
       goto LABEL_15; /*0x4480f4*/
@@ -1310,7 +1310,7 @@ LABEL_15:
 LABEL_17:
     *(_BYTE *)(this + 979) = 1; /*0x44811d*/
   }
-  if ( *(_DWORD *)(*(_DWORD *)(this + 1312) + 3768) == 7 ) /*0x448134*/
+  if ( *(_DWORD *)(this->q520 + 3768) == 7 ) /*0x448134*/
     House::ChooseHouseEnemy(*(int **)(this + 540), (BuildingClass *)this); /*0x44813d*/
   return *(_BYTE *)(this + 979) != v12; /*0x44808c*/
 }
@@ -1440,11 +1440,11 @@ void __thiscall sub_729370(int this)
   int v9; // [esp+14h] [ebp-8h]
   int v10; // [esp+18h] [ebp-4h]
 
-  v2 = *(_DWORD *)(this + 52); /*0x729377*/
+  v2 = this->attachedTag; /*0x729377*/
   if ( !v2 ) /*0x729380*/
     goto LABEL_7; /*0x729380*/
-  v3 = *(_DWORD *)(this + 40); /*0x729382*/
-  v4 = *(_DWORD *)(this + 48); /*0x729385*/
+  v3 = this->q028; /*0x729382*/
+  v4 = this->q030; /*0x729385*/
   if ( v3 != -1 ) /*0x72938b*/
   {
     if ( (int)MEMORY[0xA8ED84] - v3 >= v4 ) /*0x729397*/
@@ -1452,15 +1452,15 @@ void __thiscall sub_729370(int this)
     else
       v4 -= (int)MEMORY[0xA8ED84] - v3; /*0x729399*/
   }
-  if ( (double)(v2 - v4) / (double)*(int *)(this + 52) == 1.0 ) /*0x7293b8*/
+  if ( (double)(v2 - v4) / (double)this->attachedTag == 1.0 ) /*0x7293b8*/
   {
 LABEL_7:
     (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1348))( /*0x7293ca*/
-      *(_DWORD *)(this + 12),
+      this->vtable4,
       0,
       1072693248);
     v5 = *(int **)(this + 12); /*0x7293d0*/
-    *(_DWORD *)(this + 24) = 3; /*0x7293d3*/
+    this->q018 = 3; /*0x7293d3*/
     v5 += 39; /*0x7293da*/
     v8 = *v5; /*0x7293e4*/
     v9 = v5[1]; /*0x7293ef*/
@@ -1469,13 +1469,13 @@ LABEL_7:
     v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x72940f*/
     if ( v6 ) /*0x729419*/
     {
-      v7 = (int *)(*(_DWORD *)(this + 12) + 156); /*0x729420*/
+      v7 = (int *)(this->vtable4 + 156); /*0x729420*/
       v8 = *v7; /*0x729433*/
       v9 = v7[1]; /*0x72943a*/
       v10 = v7[2]; /*0x729446*/
       AnimClass::ctor(v6, (void *)MEMORY[0x8871E0]->?[3], &v8, 0, 1, (void *)0x600, 0, 0); /*0x729459*/
     }
-    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 220))(*(_DWORD *)(this + 12), 0); /*0x729465*/
+    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 220))(this->vtable4, 0); /*0x729465*/
   }
 }
 } }
@@ -8090,15 +8090,15 @@ char __thiscall BulletClass::Fire(int this, char a2)
 
   v3 = 0; /*0x468d87*/
   v4 = this + 156; /*0x468d8a*/
-  v27 = *(_DWORD *)(this + 156); /*0x468d96*/
+  v27 = this->q09C; /*0x468d96*/
   v5 = *(AbstractClass **)(this + 268); /*0x468d9a*/
   v6 = *(_DWORD *)(v4 + 4); /*0x468da0*/
   v7 = *(_DWORD *)(v4 + 8); /*0x468da5*/
   v28 = v6; /*0x468da8*/
   v29 = v7; /*0x468dac*/
   if ( v5 && (*(unsigned __int8 (__thiscall **)(AbstractClass *))(*(_DWORD *)v5->__pad_0 + 84))(v5) ) /*0x468db4*/
-    v3 = *(_DWORD *)(this + 268); /*0x468dbb*/
-  if ( !*(_BYTE *)(*(_DWORD *)(this + 172) + 674) ) /*0x468dc7*/
+    v3 = this->q10C; /*0x468dbb*/
+  if ( !*(_BYTE *)(this->q0AC + 674) ) /*0x468dc7*/
   {
     v8 = *(AbstractClass **)(this + 268); /*0x468dd5*/
     if ( v8 ) /*0x468ddd*/
@@ -8111,11 +8111,11 @@ char __thiscall BulletClass::Fire(int this, char a2)
       v11 = Math::Sqrt((double)v30 * (double)v30 + (double)v32 * (double)v32 + (double)v31 * (double)v31); /*0x468e4f*/
       if ( (int)Math::RoundToInt(v11) < 32 ) /*0x468e5f*/
       {
-        v12 = *(_DWORD *)(this + 172); /*0x468e61*/
+        v12 = this->q0AC; /*0x468e61*/
         if ( !*(_BYTE *)(v12 + 660) && !*(_BYTE *)(v12 + 674) ) /*0x468e71*/
         {
           v13 = (int *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 268) + 72))( /*0x468e88*/
-                         *(_DWORD *)(this + 268),
+                         this->q10C,
                          v34);
           v27 = *v13; /*0x468e8d*/
           v28 = v13[1]; /*0x468e94*/
@@ -8123,19 +8123,19 @@ char __thiscall BulletClass::Fire(int this, char a2)
         }
       }
     }
-    if ( !*(_BYTE *)(*(_DWORD *)(this + 296) + 340) ) /*0x468ea5*/
+    if ( !*(_BYTE *)(this->WeaponType + 340) ) /*0x468ea5*/
     {
-      v14 = *(_DWORD *)(this + 172); /*0x468eb3*/
+      v14 = this->q0AC; /*0x468eb3*/
       if ( !*(_BYTE *)(v14 + 660) ) /*0x468eb9*/
       {
         if ( !a2 /*0x468f05*/
           && !*(_BYTE *)(v14 + 667)
           && *(int *)(v14 + 732) <= 0
-          && (*(_DWORD *)(this + 208) != dword_89DE30 || *(_QWORD *)(this + 212) != qword_89DE34) )
+          && (this->q0D0 != dword_89DE30 || this->q0D4 != qword_89DE34) )
         {
-          v15 = *(_DWORD *)(this + 212); /*0x468f11*/
-          v27 = *(_DWORD *)(this + 208); /*0x468f14*/
-          v16 = *(_DWORD *)(this + 216); /*0x468f18*/
+          v15 = this->q0D4; /*0x468f11*/
+          v27 = this->q0D0; /*0x468f14*/
+          v16 = this->q0D8; /*0x468f18*/
           v28 = v15; /*0x468f1b*/
           v29 = v16; /*0x468f1f*/
         }
@@ -8146,12 +8146,12 @@ char __thiscall BulletClass::Fire(int this, char a2)
           v17 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v3 + 164))(v3, v34); /*0x468f55*/
           goto LABEL_29; /*0x468f5b*/
         }
-        if ( *(_DWORD *)(this + 268) ) /*0x468f60*/
+        if ( this->q10C ) /*0x468f60*/
         {
           if ( ObjectClass::DistanceTo((void *)this, *(AbstractClass **)(this + 268)) < 42 ) /*0x468f79*/
           {
             v18 = (int *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 268) + 88))( /*0x468f88*/
-                           *(_DWORD *)(this + 268),
+                           this->q10C,
                            v34);
             v27 = *v18; /*0x468f8d*/
             v19 = *(AbstractClass **)(this + 268); /*0x468f91*/
@@ -8177,7 +8177,7 @@ LABEL_29:
     }
   }
 LABEL_30:
-  v21 = *(_DWORD *)(this + 172); /*0x468ff4*/
+  v21 = this->q0AC; /*0x468ff4*/
   if ( *(_BYTE *)(v21 + 660) ) /*0x468ffa*/
   {
     LOBYTE(v21) = Warhead::ApplyDamage((char *)this, (ObjectClass *)&v27); /*0x4690a1*/
@@ -8193,14 +8193,14 @@ LABEL_30:
       do /*0x46908f*/
       {
         Warhead::ApplyDamage((char *)this, (ObjectClass *)&v27); /*0x469033*/
-        LOBYTE(v21) = *(_BYTE *)(this + 144); /*0x469038*/
+        LOBYTE(v21) = this->q090; /*0x469038*/
         if ( !(_BYTE)v21 ) /*0x469040*/
           break; /*0x469040*/
         v23 = Random::Range(&MEMORY[0xA8B230]->random[1], (IUnknown *)0x100, (IUnknown *)0x200); /*0x469057*/
         v24 = RandomCoordScatter(v34, &v30, v23, 0); /*0x469067*/
         ++v22; /*0x46906e*/
         v27 = *v24; /*0x46906f*/
-        v25 = *(_DWORD *)(this + 172); /*0x469073*/
+        v25 = this->q0AC; /*0x469073*/
         v28 = v24[1]; /*0x46907c*/
         v29 = v24[2]; /*0x469083*/
         v21 = *(_DWORD *)(v25 + 684); /*0x469087*/
@@ -12098,7 +12098,7 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
       this->q0F4 = *(_DWORD *)aP2->__pad_0;
       this->q0F8 = *(_DWORD *)&aP2->field_2[2];
       this->q0FC = aP2->field_8;
-      *(_QWORD *)(this + 256) = *((_QWORD *)&g_MatrixTransformState + 2937);
+      this->q100 = *((_QWORD *)&g_MatrixTransformState + 2937);
       this->q108 = *(&g_MatrixTransformState + 5876);
       v7 = (double)(*(_DWORD *)&v6->vtable0[8] - (unsigned int)aP2->field_8);
       v8 = *(_DWORD *)&v6->vtable0[4] - *(_DWORD *)&aP2->field_2[2];
@@ -12122,9 +12122,9 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
       this->q130 = 0;
       this->q131 = 0;
       *(_DWORD *)this = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 4) = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 8) = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_ParticleClass;
+      this->vtable2 = &ParticleClass::`vftable';
+      this->vtable3 = &ParticleClass::`vftable';
+      this->vtable4 = &vt_ParticleClass;
       AbstractClass::GenerateUniqueID(this + 4);
       if ( *(int *)&HouseClass_Player.__pad_74[24] < *(int *)&HouseClass_Player.__pad_74[16]
         || (HouseClass_Player.__pad_74[21] || !*(_DWORD *)&HouseClass_Player.__pad_74[16])
@@ -12565,10 +12565,10 @@ namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3
       this->q0C4 = 0;
       this->q0C8 = 1;
       this->q0C9 = 0;
-      *(_DWORD *)(this + 188) = &vt_DynamicVectorClass_ParticleClass;
+      this->Particles = &vt_DynamicVectorClass_ParticleClass;
       this->Target = 10;
       this->Owner = 0;
-      *(_QWORD *)(this + 212) = *((_QWORD *)&(&g_MatrixTransformState)[492] + 1);
+      this->SpawnFrames = *((_QWORD *)&(&g_MatrixTransformState)[492] + 1);
       v9 = (int)*(&g_MatrixTransformState + 5908);
       v10 = *(ParticleSystemTypeClass **)(this + 172);
       this->SpotlightRadius = 0;
@@ -12582,8 +12582,8 @@ namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3
       this->q0F9 = 0;
       this->OwnerHouse = 0;
       *(_DWORD *)this = &ParticleSystemClass::`vftable';
-      *(_DWORD *)(this + 4) = &ParticleSystemClass::`vftable';
-      *(_DWORD *)(this + 8) = &vt_ParticleSystemClass;
+      this->vtable2 = &ParticleSystemClass::`vftable';
+      this->vtable3 = &vt_ParticleSystemClass;
       this->IsInitialized = &off_7EFB70;
       AbstractClass::GenerateUniqueID(this + 4);
       if ( g_GameCleanupState < DataGlobal_A80210
@@ -12673,7 +12673,7 @@ namespace gamemd { int ParticleClass::ProcessCreation() {
       this->q0C4 = 0;
       this->q0C8 = 1;
       this->q0C9 = 0;
-      *(_DWORD *)(this + 188) = &vt_DynamicVectorClass_ParticleClass;
+      this->q0BC = &vt_DynamicVectorClass_ParticleClass;
       this->q0D0 = 10;
       this->q0CC = 0;
       this->q0D4 = DataGlobal_AC4A58;
@@ -12690,8 +12690,8 @@ namespace gamemd { int ParticleClass::ProcessCreation() {
       this->q0F8 = 0;
       this->q0F9 = 0;
       *(_DWORD *)this = &ParticleSystemClass::`vftable';
-      *(_DWORD *)(this + 4) = &ParticleSystemClass::`vftable';
-      *(_DWORD *)(this + 8) = &vt_ParticleSystemClass;
+      this->vtable2 = &ParticleSystemClass::`vftable';
+      this->vtable3 = &vt_ParticleSystemClass;
       this->q00C = &off_7EFB70;
       (*(void (**)(void))(v3 + 12))();
       if ( g_GameCleanupState < DataGlobal_A80210
@@ -13784,8 +13784,8 @@ namespace gamemd { int TerrainClass::CleanupMembers() {
 
       v2 = this + 4;
       *(_DWORD *)this = &TerrainClass::`vftable';
-      *(_DWORD *)(this + 8) = &TerrainClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_TerrainClass;
+      this->vtable3 = &TerrainClass::`vftable';
+      this->vtable4 = &vt_TerrainClass;
       this->q004 = &off_7F5200;
       AbstractClass::AnnounceExpiredPointer((void **)this, 1);
       v13[0] = this;
@@ -14065,9 +14065,9 @@ char __userpurge TerrainClass::CheckNearbyObjects@<al>(int this@<ecx>, MouseClas
       v4 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(this->Animation)(this, v9); /*0x71c00d*/
       Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], v4, (IUnknown *)(this + 216)); /*0x71c01a*/
       v5 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 180); /*0x71c02d*/
-      v6 = *(_DWORD *)(this + 220); /*0x71c035*/
-      *(_DWORD *)(this + 216) += *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 176); /*0x71c03a*/
-      *(_DWORD *)(this + 220) = v5 + v6; /*0x71c03c*/
+      v6 = this->q0DC; /*0x71c035*/
+      this->q0D8 += *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 176); /*0x71c03a*/
+      this->q0DC = v5 + v6; /*0x71c03c*/
       return 1; /*0x71c045*/
     }
   }
@@ -14777,9 +14777,9 @@ namespace gamemd { int TiberiumClass::CleanupMembers() {
       int v11;
 
       *(_DWORD *)this = &TiberiumClass::`vftable';
-      *(_DWORD *)(this + 4) = &TiberiumClass::`vftable';
-      *(_DWORD *)(this + 8) = &TiberiumClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_TiberiumClass;
+      this->vtable2 = &TiberiumClass::`vftable';
+      this->vtable3 = &TiberiumClass::`vftable';
+      this->vtable4 = &vt_TiberiumClass;
       AbstractClass::AnnounceExpiredPointer((void **)this, 1);
       v11 = this;
       v2 = (*(int (__thiscall **)(int *, int *))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v11);
@@ -14841,7 +14841,7 @@ namespace gamemd { int TiberiumClass::CleanupMembers() {
       }
       this->q10C = 0;
       v8 = *(void **)(this + 200);
-      *(_DWORD *)(this + 196) = &vt_VectorClass_AnimTypeClass_const;
+      this->q0C4 = &vt_VectorClass_AnimTypeClass_const;
       if ( v8 && this->q0D1 )
       {
         __3_YAXPAX_Z(v8);
@@ -15089,11 +15089,11 @@ void __thiscall sub_729370(int this)
   int v9; // [esp+14h] [ebp-8h]
   int v10; // [esp+18h] [ebp-4h]
 
-  v2 = *(_DWORD *)(this + 52); /*0x729377*/
+  v2 = this->attachedTag; /*0x729377*/
   if ( !v2 ) /*0x729380*/
     goto LABEL_7; /*0x729380*/
-  v3 = *(_DWORD *)(this + 40); /*0x729382*/
-  v4 = *(_DWORD *)(this + 48); /*0x729385*/
+  v3 = this->q028; /*0x729382*/
+  v4 = this->q030; /*0x729385*/
   if ( v3 != -1 ) /*0x72938b*/
   {
     if ( (int)MEMORY[0xA8ED84] - v3 >= v4 ) /*0x729397*/
@@ -15101,15 +15101,15 @@ void __thiscall sub_729370(int this)
     else
       v4 -= (int)MEMORY[0xA8ED84] - v3; /*0x729399*/
   }
-  if ( (double)(v2 - v4) / (double)*(int *)(this + 52) == 1.0 ) /*0x7293b8*/
+  if ( (double)(v2 - v4) / (double)this->attachedTag == 1.0 ) /*0x7293b8*/
   {
 LABEL_7:
     (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1348))( /*0x7293ca*/
-      *(_DWORD *)(this + 12),
+      this->vtable4,
       0,
       1072693248);
     v5 = *(int **)(this + 12); /*0x7293d0*/
-    *(_DWORD *)(this + 24) = 3; /*0x7293d3*/
+    this->q018 = 3; /*0x7293d3*/
     v5 += 39; /*0x7293da*/
     v8 = *v5; /*0x7293e4*/
     v9 = v5[1]; /*0x7293ef*/
@@ -15118,13 +15118,13 @@ LABEL_7:
     v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x72940f*/
     if ( v6 ) /*0x729419*/
     {
-      v7 = (int *)(*(_DWORD *)(this + 12) + 156); /*0x729420*/
+      v7 = (int *)(this->vtable4 + 156); /*0x729420*/
       v8 = *v7; /*0x729433*/
       v9 = v7[1]; /*0x72943a*/
       v10 = v7[2]; /*0x729446*/
       AnimClass::ctor(v6, (void *)MEMORY[0x8871E0]->?[3], &v8, 0, 1, (void *)0x600, 0, 0); /*0x729459*/
     }
-    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 220))(*(_DWORD *)(this + 12), 0); /*0x729465*/
+    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 220))(this->vtable4, 0); /*0x729465*/
   }
 }
 } }
@@ -15252,8 +15252,8 @@ namespace gamemd { int WaveClass::Destructor() {
       int v5;
 
       *(_DWORD *)this = &WaveClass::`vftable';
-      *(_DWORD *)(this + 4) = &WaveClass::`vftable';
-      *(_DWORD *)(this + 8) = &vt_WaveClass;
+      this->vtable2 = &WaveClass::`vftable';
+      this->vtable3 = &vt_WaveClass;
       this->nextObject = &off_7F6BC8;
       AbstractClass::AnnounceExpiredPointer((void **)this, 1);
       v5 = this;
@@ -15269,7 +15269,7 @@ namespace gamemd { int WaveClass::Destructor() {
       }
       (*(void (__thiscall **)(int))(this->q1F0 + 12))(this + 496);
       v3 = *(void **)(this + 500);
-      *(_DWORD *)(this + 496) = &vt_VectorClass_CellClass;
+      this->q1F0 = &vt_VectorClass_CellClass;
       if ( v3 && this->q1FD )
       {
         __3_YAXPAX_Z(v3);

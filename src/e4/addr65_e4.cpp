@@ -116,8 +116,8 @@ int __fastcall Trigger_AllocateLog(int a1)
     v3 = 828 * a1 + 11298400;
     v83 = (_DWORD *)v3;
     *(_DWORD *)v3 = *(_DWORD *)MEMORY[0xAC51FC];
-    MEMORY[0xAC6664][207 * a1] = Random::State((_DWORD *)MEMORY[0xA8B230] + 134);
-    MEMORY[0xAC6664][207 * a1 + 1] = MEMORY[0xA8ED84];
+    MEMORY[0xAC6664][207 * a1] = Random::State((_DWORD *)g_ScenarioClass_Instance + 134);
+    MEMORY[0xAC6664][207 * a1 + 1] = g_CurrentFrame;
     v4 = 0;
     v5 = 828 * a1 + 11298412;
     do
@@ -147,7 +147,7 @@ int __fastcall Trigger_AllocateLog(int a1)
         *(_BYTE *)(v5 + 20) = v9;
         strncpy(
           (char *)(v5 + 21),
-          *(const char **)(*((_DWORD *)MEMORY[0xB054D4] + *(_DWORD *)(*((_DWORD *)HouseClass_Array + v4) + 90196)) + 772),
+          *(const char **)(*((_DWORD *)BuildingTypeClass_AnimTable + *(_DWORD *)(*((_DWORD *)HouseClass_Array + v4) + 90196)) + 772),
           0x1Fu);
         *(_DWORD *)(v5 + 56) = v4;
         *(_BYTE *)(v5 + 91) = 0;
@@ -163,7 +163,7 @@ int __fastcall Trigger_AllocateLog(int a1)
     }
     while ( v4 < 8 );
     v10 = MEMORY[0x87F788];
-    v11 = MEMORY[0xA8EB50] + MEMORY[0xA8E3A0] + MEMORY[0xA83DF8] + MEMORY[0x8B4118];
+    v11 = MEMORY[0xA8EB50] + MEMORY[0xA8E3A0] + MEMORY[0xA83DF8] + g_HouseClass_BuildState;
     v12 = MEMORY[0x8A0370];
     do
     {
@@ -249,12 +249,12 @@ int __fastcall Trigger_AllocateLog(int a1)
       v15 += 104;
     }
     v80 = 0;
-    v83[189] = MEMORY[0x8B4118];
-    if ( MEMORY[0x8B4118] > 0 )
+    v83[189] = g_HouseClass_BuildState;
+    if ( g_HouseClass_BuildState > 0 )
     {
       do
       {
-        v28 = *((_DWORD *)MEMORY[0x8B410C] + v80);
+        v28 = *((_DWORD *)g_UnitClassPool + v80);
         v29 = *(_DWORD *)(v28 + 156);
         v30 = *(_DWORD *)(v28 + 160);
         v86 = *(_DWORD *)(v28 + 164);
@@ -323,7 +323,7 @@ int __fastcall Trigger_AllocateLog(int a1)
           *(_BYTE *)(v15 + 40) = 0;
         }
         v15 += 104;
-        v39 = v80 + 1 < MEMORY[0x8B4118];
+        v39 = v80 + 1 < g_HouseClass_BuildState;
         ++v78;
         ++v80;
       }
@@ -542,7 +542,7 @@ int __fastcall Trigger_AllocateLog(int a1)
   }
   else
   {
-    result = Random::State((_DWORD *)MEMORY[0xA8B230] + 134);
+    result = Random::State((_DWORD *)g_ScenarioClass_Instance + 134);
     dword_AFA26C = result;
   }
   return result;
@@ -892,8 +892,8 @@ int sub_6586D0()
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   Dialog = (HWND)CreateDialog(0x73u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))Diplomacy::DlgProc, 0); /*0x6586e9*/
-  MEMORY[0xA8ED9C] = 1; /*0x6586eb*/
-  Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x6586f2*/
+  g_GameActive = 1; /*0x6586eb*/
+  Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x6586f2*/
   if ( Dialog ) /*0x6586f9*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x658703*/
@@ -908,8 +908,8 @@ int sub_6586D0()
 LABEL_7:
     Dialog::Destroy(Dialog); /*0x658733*/
   }
-  Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x658740*/
-  MEMORY[0xA8ED9C] = *((_BYTE *)MEMORY[0xA8B230] + 13730); /*0x658758*/
+  Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x658740*/
+  g_GameActive = *((_BYTE *)g_ScenarioClass_Instance + 13730); /*0x658758*/
   return MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2); /*0x658763*/
 }
 }
@@ -997,7 +997,7 @@ void UpdateProjectileTrails()
       {
         if ( *((_BYTE *)v9 + 9) ) /*0x6592d6*/
         {
-          v13 = Random::Range(MEMORY[0x886B88], 0, 99); /*0x6592e8*/
+          v13 = Random::Range(Randomizer_Global, 0, 99); /*0x6592e8*/
           if ( v13 < (int)Math::RoundToInt(v21 * 100.0) ) /*0x6592fb*/
             *((_BYTE *)Block + 9) = 0; /*0x659301*/
           v9 = Block; /*0x659304*/
@@ -1041,7 +1041,7 @@ LABEL_23:
         *(_DWORD *)((*(_BYTE *)(v16 + 20) & 1) != 0 ? v16 + 0x510 : 1296) = 0;
         *((_DWORD *)Block + 1) = 0; /*0x659380*/
       }
-      v17 = (*(int (__thiscall **)(int *, void **))(MEMORY[0xB04A60] + 16))(&MEMORY[0xB04A60], &Block); /*0x659393*/
+      v17 = (*(int (__thiscall **)(int *, void **))(RadBeam_Array + 16))(&RadBeam_Array, &Block); /*0x659393*/
       if ( v17 != -1 && v17 < MEMORY[0xB04A70] && v17 < --MEMORY[0xB04A70] ) /*0x6593ae*/
       {
         do /*0x6593c6*/
@@ -1073,20 +1073,20 @@ char __thiscall sub_659590(_DWORD *this, _DWORD *a2, _DWORD *a3, __int16 a4)
   int v9[2]; // [esp+14h] [ebp-18h] BYREF
   int v10[4]; // [esp+1Ch] [ebp-10h] BYREF
 
-  Coord::To_Screen(MEMORY[0x887324], a2, v9); /*0x6595a8*/
-  Coord::To_Screen(MEMORY[0x887324], a3, v8); /*0x6595bd*/
-  v10[0] = MEMORY[0x886FA0]; /*0x6595d3*/
-  v10[1] = MEMORY[0x886FA4]; /*0x6595dd*/
-  v10[2] = MEMORY[0x886FA8]; /*0x6595e5*/
-  v10[3] = MEMORY[0x886FAC]; /*0x6595e9*/
+  Coord::To_Screen(g_TacticalClass_Instance, a2, v9); /*0x6595a8*/
+  Coord::To_Screen(g_TacticalClass_Instance, a3, v8); /*0x6595bd*/
+  v10[0] = DSurface_ViewBounds; /*0x6595d3*/
+  v10[1] = g_Map_VisibleRect; /*0x6595dd*/
+  v10[2] = g_Map_VisibleRectOffset; /*0x6595e5*/
+  v10[3] = g_DSurface_WindowOffset; /*0x6595e9*/
   result = ClipLine(v9, v8, v10); /*0x6595f6*/
   if ( result ) /*0x6595fd*/
   {
     v6 = *(this + 3) - ZCoordToScreenY(a2[2]) - 2; /*0x65960f*/
     v7 = ZCoordToScreenY(a3[2]); /*0x659612*/
-    return (*(int (__thiscall **)(int, int *, int *, int *, _DWORD, int, int, _DWORD))(*(_DWORD *)MEMORY[0x887314] + 52))( /*0x65963f*/
-             MEMORY[0x887314],
-             &MEMORY[0x886FA0],
+    return (*(int (__thiscall **)(int, int *, int *, int *, _DWORD, int, int, _DWORD))(*(_DWORD *)g_DSurface_Hidden_2 + 52))( /*0x65963f*/
+             g_DSurface_Hidden_2,
+             &DSurface_ViewBounds,
              v9,
              v8,
              a4,
@@ -2249,10 +2249,10 @@ int __fastcall PlaceAircraftOnMap(unsigned int *a1, int a2, int a3, int a4, int 
   {
     while ( 1 )
     {
-      ++MEMORY[0xA8E7AC]; /*0x65e8c6*/
+      ++g_IKnowWhatImDoing; /*0x65e8c6*/
       v12 = (*(int (__thiscall **)(int, unsigned int *))(*(_DWORD *)v9 + 140))(v9, v10); /*0x65e8cf*/
       v13 = v12; /*0x65e8db*/
-      --MEMORY[0xA8E7AC]; /*0x65e8e0*/
+      --g_IKnowWhatImDoing; /*0x65e8e0*/
       if ( !v12 ) /*0x65e8e6*/
         break; /*0x65e8e6*/
       v14 = *(_BYTE *)(v12 + 20) & 4; /*0x65e8f3*/
@@ -2291,12 +2291,12 @@ int __fastcall PlaceAircraftOnMap(unsigned int *a1, int a2, int a3, int a4, int 
       if ( a5 ) /*0x65e985*/
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v13 + 968))(v13, a5); /*0x65e98c*/
       v31[0] = ((__int16)v16 << 8) + 128; /*0x65e9ad*/
-      ++MEMORY[0xA8E7AC]; /*0x65e9b7*/
+      ++g_IKnowWhatImDoing; /*0x65e9b7*/
       v18 = *(_DWORD *)v13; /*0x65e9bd*/
       v31[1] = (SHIWORD(v27) << 8) + 128; /*0x65e9c3*/
       v31[2] = 0; /*0x65e9ca*/
       v19 = (*(int (__thiscall **)(int, _DWORD *, _DWORD))(v18 + 216))(v13, v31, 0); /*0x65e9ce*/
-      --MEMORY[0xA8E7AC]; /*0x65e9e2*/
+      --g_IKnowWhatImDoing; /*0x65e9e2*/
       if ( !v19 ) /*0x65e9e8*/
       {
         if ( v13 ) /*0x65ea8d*/

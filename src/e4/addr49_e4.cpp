@@ -286,8 +286,8 @@ int __thiscall sub_491B40(
     v14 = &a2[v17]; /*0x491b84*/
     v18 = a4 - v17; /*0x491b86*/
     result = a7 + 2 * v17; /*0x491b88*/
-    if ( (unsigned int)result >= *((_DWORD *)MEMORY[0x887644] + 7) ) /*0x491b91*/
-      result -= *((_DWORD *)MEMORY[0x887644] + 8); /*0x491b93*/
+    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x491b91*/
+      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x491b93*/
     v15 = result; /*0x491b96*/
   }
   while ( v18 > 0 ) /*0x491ba0*/
@@ -310,9 +310,9 @@ int __thiscall sub_491B40(
       v15 += 2 * v20; /*0x491bc1*/
       a11 += v20; /*0x491bc4*/
     }
-    result = (int)MEMORY[0x887644]; /*0x491bf6*/
-    if ( v15 >= *((_DWORD *)MEMORY[0x887644] + 7) ) /*0x491bfe*/
-      v15 -= *((_DWORD *)MEMORY[0x887644] + 8); /*0x491c00*/
+    result = (int)g_ZBufferDescriptor; /*0x491bf6*/
+    if ( v15 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x491bfe*/
+      v15 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x491c00*/
   }
   return result; /*0x491c07*/
 }
@@ -2275,7 +2275,7 @@ LABEL_44:
   v20 = this->M68; /*0x49c448*/
   this->M104 = Int_Overwrite; /*0x49c44b*/
   if ( !MEMORY[0x89F578] ) /*0x49c455*/
-    CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49c45c*/
+    CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49c45c*/
   if ( v20 < 0 || v20 >= MEMORY[0x89F574] ) /*0x49c46f*/
   {
     this->M64 = 0; /*0x49c550*/
@@ -2348,7 +2348,7 @@ char __thiscall sub_49CCF0(
   int v33; // [esp+14h] [ebp+4h]
 
   if ( !MEMORY[0x89F578] ) /*0x49ccfd*/
-    CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49cd04*/
+    CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49cd04*/
   if ( a2 >= 0 && a2 < MEMORY[0x89F574] ) /*0x49cd1d*/
   {
     v12 = MEMORY[0x89F570]; /*0x49cd23*/
@@ -2749,7 +2749,7 @@ char __thiscall SerializeCampaignOptions(char *this)
     return 0; /*0x49d68b*/
   v3 = this->M68; /*0x49d6a3*/
   if ( !MEMORY[0x89F578] ) /*0x49d6a8*/
-    CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49d6af*/
+    CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49d6af*/
   v4 = 0; /*0x49d6b4*/
   if ( v3 < 0 || v3 >= MEMORY[0x89F574] ) /*0x49d6c0*/
     return 0; /*0x49d694*/

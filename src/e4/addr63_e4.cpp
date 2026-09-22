@@ -279,7 +279,7 @@ _DWORD *__fastcall SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
               ++v23; /*0x630632*/
               ++v24; /*0x630633*/
               v63 += 2; /*0x63065f*/
-              *(_WORD *)(v63 - 2) = (v25 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x630665*/
+              *(_WORD *)(v63 - 2) = (v25 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x630665*/
                                   | (v26 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
                                   | (v27 << MEMORY[0x8A0DD8]);
             }
@@ -533,14 +533,14 @@ int __stdcall PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a3,
                 MEMORY[0xA8DABC] = v7; /*0x630d19*/
                 if ( v7 > -1 ) /*0x630d1e*/
                 {
-                  if ( v7 < (int)MEMORY[0xA8DB44] && v7 < (int)--MEMORY[0xA8DB44] ) /*0x630d37*/
+                  if ( v7 < (int)DataGlobal_A8DB44 && v7 < (int)--DataGlobal_A8DB44 ) /*0x630d37*/
                   {
                     do /*0x630d4f*/
                     {
                       ++v7; /*0x630d3f*/
                       *((_DWORD *)MEMORY[0xA8DB38] + v7 - 1) = *((_DWORD *)MEMORY[0xA8DB38] + v7); /*0x630d43*/
                     }
-                    while ( v7 < (int)MEMORY[0xA8DB44] ); /*0x630d4f*/
+                    while ( v7 < (int)DataGlobal_A8DB44 ); /*0x630d4f*/
                   }
                   *(_BYTE *)(WindowLongA + 8) = 1; /*0x630d53*/
                   PhoneEditor::PopulateList((HWND *)WindowLongA); /*0x630d57*/
@@ -549,7 +549,7 @@ int __stdcall PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a3,
                     v8 = GetDlgItem(*(HWND *)WindowLongA, 1509); /*0x630d71*/
                     if ( v8 ) /*0x630d75*/
                     {
-                      SendMessageA(v8, 0x4B4u, 0, (LPARAM)&MEMORY[0x889F64]); /*0x630d88*/
+                      SendMessageA(v8, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x630d88*/
                       return 0; /*0x630d90*/
                     }
                   }
@@ -626,14 +626,14 @@ void __thiscall sub_631640(int this)
     MEMORY[0xA8DABC] = v3; /*0x63166e*/
     if ( v3 > -1 ) /*0x631673*/
     {
-      if ( v3 < (int)MEMORY[0xA8DB44] && v3 < (int)--MEMORY[0xA8DB44] ) /*0x631688*/
+      if ( v3 < (int)DataGlobal_A8DB44 && v3 < (int)--DataGlobal_A8DB44 ) /*0x631688*/
       {
         do /*0x6316a0*/
         {
           ++v3; /*0x631690*/
           *((_DWORD *)MEMORY[0xA8DB38] + v3 - 1) = *((_DWORD *)MEMORY[0xA8DB38] + v3); /*0x631694*/
         }
-        while ( v3 < (int)MEMORY[0xA8DB44] ); /*0x6316a0*/
+        while ( v3 < (int)DataGlobal_A8DB44 ); /*0x6316a0*/
       }
       *(_BYTE *)(this + 8) = 1; /*0x6316a4*/
       PhoneEditor::PopulateList((HWND *)this); /*0x6316a8*/
@@ -641,7 +641,7 @@ void __thiscall sub_631640(int this)
       {
         v4 = GetDlgItem(*(HWND *)this, 1509); /*0x6316be*/
         if ( v4 ) /*0x6316c2*/
-          SendMessageA(v4, 0x4B4u, 0, (LPARAM)&MEMORY[0x889F64]); /*0x6316d1*/
+          SendMessageA(v4, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x6316d1*/
       }
     }
   }
@@ -865,8 +865,8 @@ int __thiscall sub_635560(_DWORD *this, int a2)
   v19 = v11; /*0x635607*/
   do /*0x63566d*/
   {
-    result = (*(int (__thiscall **)(int, _DWORD *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 84))( /*0x635620*/
-               MEMORY[0x88731C],
+    result = (*(int (__thiscall **)(int, _DWORD *, int *, int))(*(_DWORD *)DSurface_Composite + 84))( /*0x635620*/
+               DSurface_Composite,
                v21,
                &v17,
                a2);
@@ -944,8 +944,8 @@ int __thiscall sub_635680(_DWORD **this, int a2)
   v7 = 3; /*0x63574c*/
   do /*0x6357b8*/
   {
-    result = (*(int (__thiscall **)(int, _DWORD *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 84))( /*0x63576b*/
-               MEMORY[0x88731C],
+    result = (*(int (__thiscall **)(int, _DWORD *, int *, int))(*(_DWORD *)DSurface_Composite + 84))( /*0x63576b*/
+               DSurface_Composite,
                v20,
                &v12,
                a2);
@@ -1068,8 +1068,8 @@ char ExecutePlanningQueue()
 
   SelectScriptNode(); /*0x637276*/
   v0 = 0; /*0x637281*/
-  if ( MEMORY[0xAC4BF0] && (int)MEMORY[0xA8ECC8] > 0 ) /*0x63728d*/
-    MEMORY[0xAC4BF0] = 0; /*0x63728f*/
+  if ( g_ScriptActionPool && (int)g_SelectionManager > 0 ) /*0x63728d*/
+    g_ScriptActionPool = 0; /*0x63728f*/
   v1 = MEMORY[0xAC4C88]; /*0x637294*/
   v30 = MEMORY[0xAC4C88]; /*0x6372a0*/
   v27 = 0; /*0x6372a4*/
@@ -1156,7 +1156,7 @@ LABEL_23:
       if ( v15 && !*(_BYTE *)(v15 + 28) ) /*0x6373ad*/
       {
         *(_BYTE *)(v15 + 28) = 1; /*0x6373b8*/
-        VectorClass::Append(&MEMORY[0xAC4C98], &v29); /*0x6373c2*/
+        VectorClass::Append(&g_ScriptConfig, &v29); /*0x6373c2*/
       }
       TeamClass::Cleanup(v3); /*0x6373ca*/
 LABEL_34:
@@ -1188,7 +1188,7 @@ LABEL_37:
     while ( v22 ); /*0x637438*/
   }
   MEMORY[0xAC4CA8] = 0; /*0x63743f*/
-  result = BlowPipe_23::Clear_1(&MEMORY[0xAC4C98]); /*0x637449*/
+  result = BlowPipe_23::Clear_1(&g_ScriptConfig); /*0x637449*/
   v24 = MEMORY[0xAC4C90]; /*0x63744e*/
   if ( MEMORY[0xAC4C90] != -1 ) /*0x637457*/
   {
@@ -1203,7 +1203,7 @@ LABEL_37:
           MEMORY[0xAC4C08] = 1; /*0x6374de*/
           StringCSF = GetStringCSF(MEMORY[0x836B9C], 0, MEMORY[0x836BD4], 3233); /*0x6374e5*/
           AddMessageListPlayerMessage(StringCSF, 480); /*0x6374f1*/
-          result = PlayVocClass(MEMORY[0x8871E0]->?[3], 0x2000, 1.0, 0); /*0x63750e*/
+          result = PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63750e*/
         }
       }
       else if ( v24 == 2 ) /*0x637518*/
@@ -1219,7 +1219,7 @@ LABEL_37:
         MEMORY[0xAC4C08] = 1; /*0x63748a*/
         v25 = GetStringCSF(MEMORY[0x836BB8], 0, MEMORY[0x836BD4], 3233); /*0x637491*/
         AddMessageListPlayerMessage(v25, 480); /*0x63749d*/
-        result = PlayVocClass(MEMORY[0x8871E0]->?[3], 0x2000, 1.0, 0); /*0x6374b8*/
+        result = PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x6374b8*/
       }
     }
     MEMORY[0xAC4C90] = -1; /*0x637524*/
@@ -1736,8 +1736,8 @@ void sub_638E60()
 
   if ( !MEMORY[0xAC4CB0] ) /*0x638e6b*/
   {
-    v0 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 44))(MEMORY[0x887640]); /*0x638e85*/
-    v1 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 48))(MEMORY[0x887640]); /*0x638e8c*/
+    v0 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance); /*0x638e85*/
+    v1 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance); /*0x638e8c*/
     v2 = 0; /*0x638e93*/
     v6 = MEMORY[0xAC4C28]; /*0x638e95*/
     if ( MEMORY[0xAC4C28] <= 0 ) /*0x638e9b*/
@@ -1763,18 +1763,18 @@ LABEL_8:
           goto LABEL_8; /*0x638f1a*/
       }
     }
-    if ( v3 != MEMORY[0xAC4CCC] ) /*0x638f28*/
+    if ( v3 != g_ScriptPool ) /*0x638f28*/
     {
       MEMORY[0xAC4C3C] = 0; /*0x638f2c*/
       if ( v3 /*0x638f66*/
         && (*(#375 **)(***(_DWORD ***)(v3 + 4) + 540) != HouseClass_Player
-         || MEMORY[0xAC4C38] && MEMORY[0xAC4C38] != v3
+         || g_ScriptState && g_ScriptState != v3
          || BuildingClass::CheckBuildability((void *)v3) != -1) )
       {
         MEMORY[0xAC4C3C] = v3; /*0x638f68*/
         v3 = 0; /*0x638f6e*/
       }
-      MEMORY[0xAC4CCC] = v3; /*0x638f72*/
+      g_ScriptPool = v3; /*0x638f72*/
       if ( v3 ) /*0x638f78*/
         Team_Get((int *)v3); /*0x638f7c*/
     }
@@ -1802,13 +1802,13 @@ char sub_639040()
 
   if ( !MEMORY[0xAC4CF4] ) /*0x63904b*/
     return 1; /*0x63904f*/
-  v1 = MEMORY[0xA8ECC8]; /*0x639054*/
-  if ( !MEMORY[0xA8ECC8] ) /*0x63905c*/
+  v1 = g_SelectionManager; /*0x639054*/
+  if ( !g_SelectionManager ) /*0x63905c*/
     return 1; /*0x63905e*/
   v2 = 0; /*0x639065*/
-  if ( (int)MEMORY[0xA8ECC8] > 0 ) /*0x639069*/
+  if ( (int)g_SelectionManager > 0 ) /*0x639069*/
   {
-    for ( i = (int *)MEMORY[0xA8ECBC]; ; ++i ) /*0x63906f*/
+    for ( i = (int *)g_ObjectClass_CurrentCount; ; ++i ) /*0x63906f*/
     {
       v4 = *i; /*0x639075*/
       if ( *i ) /*0x639075*/
@@ -1816,14 +1816,14 @@ char sub_639040()
         if ( (*(_BYTE *)(v4 + 20) & 1) != 0 ) /*0x639085*/
           break; /*0x639085*/
       }
-      if ( ++v2 >= (int)MEMORY[0xA8ECC8] ) /*0x63908d*/
+      if ( ++v2 >= (int)g_SelectionManager ) /*0x63908d*/
         return 0; /*0x639095*/
     }
     Type = (int *)BuildingClass::GetPlanningToken((_DWORD *)v4); /*0x63909b*/
     v6 = 0; /*0x63909d*/
     while ( 1 ) /*0x6390a4*/
     {
-      v7 = *((_DWORD *)MEMORY[0xA8ECBC] + v6); /*0x6390a4*/
+      v7 = *((_DWORD *)g_ObjectClass_CurrentCount + v6); /*0x6390a4*/
       if ( !v7 ) /*0x6390a9*/
         break; /*0x6390a9*/
       if ( (*(_BYTE *)(v7 + 20) & 1) == 0 ) /*0x6390b5*/
@@ -1839,7 +1839,7 @@ char sub_639040()
       MEMORY[0xAC4C08] = 1; /*0x6390ea*/
       StringCSF = GetStringCSF(MEMORY[0x836C50], 0, MEMORY[0x836BD4], 3233); /*0x6390f1*/
       AddMessageListPlayerMessage(StringCSF, 480); /*0x6390fd*/
-      PlayVocClass(MEMORY[0x8871E0]->?[3], 0x2000, 1.0, 0); /*0x639119*/
+      PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x639119*/
     }
   }
   return 0; /*0x63904d*/
@@ -1869,11 +1869,11 @@ char sub_639130()
   v1 = 0; /*0x639157*/
   if ( v0 < 0x18 ) /*0x63915d*/
     v1 = MEMORY[0xAC4B84][v0]; /*0x63915f*/
-  v2 = MEMORY[0xA8ECC8]; /*0x639166*/
+  v2 = g_SelectionManager; /*0x639166*/
   v3 = 0; /*0x63916c*/
   for ( i = 0; i < (int)v2; ++i ) /*0x639172*/
   {
-    v5 = *((_DWORD *)MEMORY[0xA8ECBC] + i); /*0x63917a*/
+    v5 = *((_DWORD *)g_ObjectClass_CurrentCount + i); /*0x63917a*/
     if ( v5 ) /*0x63917f*/
     {
       if ( (*(_BYTE *)(v5 + 20) & 1) != 0 ) /*0x63918b*/
@@ -1891,7 +1891,7 @@ char sub_639130()
     MEMORY[0xAC4C08] = 1; /*0x6391cb*/
     StringCSF = GetStringCSF(MEMORY[0x836C6C], 0, MEMORY[0x836BD4], 3233); /*0x6391d2*/
     AddMessageListPlayerMessage(StringCSF, 480); /*0x6391de*/
-    PlayVocClass(MEMORY[0x8871E0]->?[3], 0x2000, 1.0, 0); /*0x6391fa*/
+    PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x6391fa*/
   }
   return 0; /*0x639202*/
 }
@@ -2446,13 +2446,13 @@ int ExportSelectionAsScriptAction()
   _BYTE v37[112]; // [esp+B4h] [ebp-E0h] BYREF
   _BYTE v38[112]; // [esp+124h] [ebp-70h] BYREF
 
-  v0 = MEMORY[0xAC4C38]; /*0x63ad56*/
-  v32[2] = MEMORY[0xAC4C38]; /*0x63ad67*/
-  MEMORY[0xAC4C38] = 0; /*0x63ad6b*/
-  v32[0] = MEMORY[0xA8ECC8]; /*0x63ad75*/
-  if ( (int)MEMORY[0xA8ECC8] <= 0 ) /*0x63ad79*/
+  v0 = g_ScriptState; /*0x63ad56*/
+  v32[2] = g_ScriptState; /*0x63ad67*/
+  g_ScriptState = 0; /*0x63ad6b*/
+  v32[0] = g_SelectionManager; /*0x63ad75*/
+  if ( (int)g_SelectionManager <= 0 ) /*0x63ad79*/
   {
-    MEMORY[0xAC4BF0] = v0; /*0x63b02f*/
+    g_ScriptActionPool = v0; /*0x63b02f*/
     return Team_Get_63A1B0(4); /*0x63b034*/
   }
   EventClass::resetEvent(&v24, 0, 0); /*0x63ad87*/
@@ -2463,7 +2463,7 @@ int ExportSelectionAsScriptAction()
   v30 = 0; /*0x63ada6*/
   do /*0x63af15*/
   {
-    v2 = *((_DWORD *)MEMORY[0xA8ECBC] + v1); /*0x63adb6*/
+    v2 = *((_DWORD *)g_ObjectClass_CurrentCount + v1); /*0x63adb6*/
     if ( v2 ) /*0x63adbb*/
     {
       if ( *(_BYTE *)(v2 + 20) & 1 ) /*0x63adc7*/
@@ -2622,7 +2622,7 @@ void E4Recv_63B080::sub_63B080()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_63B080(void *this)
 {
-  MEMORY[0xAC4BF0] = (int)this; /*0x63b080*/
+  g_ScriptActionPool = (int)this; /*0x63b080*/
 }
 }
 } // namespace gamemd
@@ -2703,8 +2703,8 @@ void sub_63B150()
         v20 = 0; /*0x63b263*/
         v21 = 0; /*0x63b267*/
       }
-      (*(void (__thiscall **)(int, _DWORD *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 16))( /*0x63b2a0*/
-        MEMORY[0x88731C],
+      (*(void (__thiscall **)(int, _DWORD *, int *, int))(*(_DWORD *)DSurface_Composite + 16))( /*0x63b2a0*/
+        DSurface_Composite,
         v22,
         &v18,
         DrawColor);
@@ -2756,12 +2756,12 @@ int RenderScriptActionHighlight()
   int v25[4]; // [esp+40h] [ebp-20h] BYREF
   char v26[16]; // [esp+50h] [ebp-10h] BYREF
 
-  v0 = (_DWORD **)MEMORY[0xAC4CCC]; /*0x63b31c*/
-  result = (unsigned __int8)byte_A80220 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]; /*0x63b34b*/
+  v0 = (_DWORD **)g_ScriptPool; /*0x63b31c*/
+  result = (unsigned __int8)byte_A80220 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]; /*0x63b34b*/
   v2 = result /*0x63b34d*/
      | ((unsigned __int8)word_A80221 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
      | (HIBYTE(word_A80221) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
-  if ( MEMORY[0xAC4CCC] ) /*0x63b351*/
+  if ( g_ScriptPool ) /*0x63b351*/
   {
     Viewport = Display::GetViewport(v25); /*0x63b35b*/
     v21 = *Viewport; /*0x63b362*/
@@ -2780,8 +2780,8 @@ int RenderScriptActionHighlight()
     v9 = 3; /*0x63b3c5*/
     do /*0x63b42a*/
     {
-      result = (*(int (__thiscall **)(int, int *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 84))( /*0x63b3dd*/
-                 MEMORY[0x88731C],
+      result = (*(int (__thiscall **)(int, int *, int *, int))(*(_DWORD *)DSurface_Composite + 84))( /*0x63b3dd*/
+                 DSurface_Composite,
                  &v21,
                  &v17,
                  v2);
@@ -2804,7 +2804,7 @@ int RenderScriptActionHighlight()
     }
     while ( v9 ); /*0x63b42a*/
   }
-  if ( MEMORY[0xAC4BF0] ) /*0x63b434*/
+  if ( g_ScriptActionPool ) /*0x63b434*/
   {
     v10 = Display::GetViewport(&v21); /*0x63b43e*/
     v25[0] = *v10; /*0x63b445*/
@@ -2829,8 +2829,8 @@ int RenderScriptActionHighlight()
     v12 = 3; /*0x63b4e1*/
     do /*0x63b546*/
     {
-      result = (*(int (__thiscall **)(int, int *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 84))( /*0x63b4f9*/
-                 MEMORY[0x88731C],
+      result = (*(int (__thiscall **)(int, int *, int *, int))(*(_DWORD *)DSurface_Composite + 84))( /*0x63b4f9*/
+                 DSurface_Composite,
                  v25,
                  &v17,
                  v2);
@@ -2880,7 +2880,7 @@ int __thiscall sub_63CF10(_DWORD *this)
   v6 = *(_BYTE *)(v3 + 2); /*0x63cf56*/
   Color::Lerp((unsigned __int8 *)&v5, 0x50u, (unsigned __int8 *)&byte_A83CD9); /*0x63cf5a*/
   return (HIBYTE(v5) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0]) /*0x63cf80*/
-       | ((unsigned __int8)v5 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0])
+       | ((unsigned __int8)v5 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0])
        | (v6 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
 }
 }
@@ -2908,7 +2908,7 @@ int __thiscall sub_63CFC0(_DWORD *this)
   v6 = *(_BYTE *)(v3 + 2); /*0x63d006*/
   Color::Lerp((unsigned __int8 *)&v5, 0x64u, (unsigned __int8 *)&byte_A80220); /*0x63d00a*/
   return (HIBYTE(v5) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0]) /*0x63d030*/
-       | ((unsigned __int8)v5 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0])
+       | ((unsigned __int8)v5 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0])
        | (v6 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
 }
 }
@@ -2963,8 +2963,8 @@ void __fastcall Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, in
     v19 = v12 - 10 + 1; /*0x63d6de*/
     v21 = 19; /*0x63d6f2*/
     v22 = 19; /*0x63d6f6*/
-    (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 84))( /*0x63d701*/
-      MEMORY[0x88731C],
+    (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)DSurface_Composite + 84))( /*0x63d701*/
+      DSurface_Composite,
       &v23,
       &v19,
       a1);
@@ -2982,8 +2982,8 @@ void __fastcall Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, in
       v21 = 0; /*0x63d71f*/
       v22 = 0; /*0x63d723*/
     }
-    (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)MEMORY[0x88731C] + 16))( /*0x63d76b*/
-      MEMORY[0x88731C],
+    (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)DSurface_Composite + 16))( /*0x63d76b*/
+      DSurface_Composite,
       &v23,
       &v19,
       a2);
@@ -2997,7 +2997,7 @@ void __fastcall Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, in
     a3 = v12 - *((__int16 *)MEMORY[0xABF294] + 1) / 2 - 1; /*0x63d7ed*/
     a4 = v16; /*0x63d7f4*/
     DrawToSurfaceSHP( /*0x63d7fb*/
-      MEMORY[0x88731C],
+      DSurface_Composite,
       MEMORY[0x87F6C8],
       (int)MEMORY[0xABF294],
       a7,

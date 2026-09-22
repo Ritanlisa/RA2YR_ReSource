@@ -184,16 +184,16 @@ _BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
     g_BulletTypeInitState = (BulletTypeClass *)((char *)g_BulletTypeInitState + 1); /*0x46bd75*/
     *(_DWORD *)&dword_A83C84->__pad_0[4 * (_DWORD)v3] = this; /*0x46bd81*/
   }
-  if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x46bdb8*/
-    || (MEMORY[0xB077F8].__pad_579C[9961] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9956])
-    && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
-         &MEMORY[0xB077F8].__pad_579C[9948],
-         *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9956] + *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9968],
+  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[9964] < *(int *)&g_OverlayTypeConfig.__pad_579C[9956] /*0x46bdb8*/
+    || (g_OverlayTypeConfig.__pad_579C[9961] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956])
+    && *(int *)&g_OverlayTypeConfig.__pad_579C[9968] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9948] + 8))(
+         &g_OverlayTypeConfig.__pad_579C[9948],
+         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9968],
          0) )
   {
-    v4 = (*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9964])++; /*0x46bdc5*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9952] + 4 * v4) = this; /*0x46bdd4*/
+    v4 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9964])++; /*0x46bdc5*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952] + 4 * v4) = this; /*0x46bdd4*/
   }
   return this; /*0x46bdd9*/
 }
@@ -531,7 +531,7 @@ int __thiscall BulletTypeClass::ProcessPower(int this, int *a2)
   Power::FlagProcess(a2, v16); /*0x46c62d*/
   LOBYTE(v17) = this->bouncy; /*0x46c632*/
   Power::FlagProcess(a2, v17); /*0x46c63b*/
-  Checksummer::Add_double(this->elasticity, *(_DWORD *)(this + 716)); /*0x46c650*/
+  Checksummer::Add_double(this->elasticity, this->Acceleration); /*0x46c650*/
   Power::TimerProcess(this->acceleration); /*0x46c65e*/
   Power::TimerProcess(this->rot); /*0x46c66c*/
   Power::TimerProcess(this->arm); /*0x46c67a*/
@@ -639,7 +639,7 @@ char __stdcall WalkLocomotionClass_Process(int a1)
       v11 = *(_DWORD **)(v1 + 8); /*0x69fd7f*/
       if ( v11[43] != 5 /*0x69fddc*/
         || *(_BYTE *)(v1 + 95)
-        || *(_DWORD *)(v1 + 48) == MEMORY[0xB077F8] && *(_QWORD *)(v1 + 52) == MEMORY[0xB077FC]
+        || *(_DWORD *)(v1 + 48) == g_OverlayTypeConfig && *(_QWORD *)(v1 + 52) == MEMORY[0xB077FC]
         || v11[39] != *(_DWORD *)(v1 + 48)
         || v11[40] != *(_DWORD *)(v1 + 52)
         || v11[41] != *(_DWORD *)(v1 + 56) )
@@ -670,9 +670,9 @@ char __stdcall WalkLocomotionClass_Process(int a1)
           {
             if ( *(_BYTE *)(v17 + 973) ) /*0x69ffe7*/
             {
-              if ( *(_DWORD *)(v2 + 64) != MEMORY[0xB077F8] || *(_QWORD *)(v2 + 68) != MEMORY[0xB077FC] ) /*0x6a0006*/
+              if ( *(_DWORD *)(v2 + 64) != g_OverlayTypeConfig || *(_QWORD *)(v2 + 68) != MEMORY[0xB077FC] ) /*0x6a0006*/
               {
-                *(_DWORD *)(v2 + 64) = MEMORY[0xB077F8]; /*0x6a0015*/
+                *(_DWORD *)(v2 + 64) = g_OverlayTypeConfig; /*0x6a0015*/
                 *(_QWORD *)(v2 + 68) = MEMORY[0xB077FC]; /*0x6a001d*/
                 *(_BYTE *)(v2 + 99) = 0; /*0x6a0029*/
               }
@@ -702,9 +702,9 @@ char __stdcall WalkLocomotionClass_Process(int a1)
                 *(_DWORD *)(v1 + 8),
                 v1 + 48) )
         {
-          if ( *(_DWORD *)(v2 + 64) != MEMORY[0xB077F8] || *(_QWORD *)(v2 + 68) != MEMORY[0xB077FC] ) /*0x6a00cc*/
+          if ( *(_DWORD *)(v2 + 64) != g_OverlayTypeConfig || *(_QWORD *)(v2 + 68) != MEMORY[0xB077FC] ) /*0x6a00cc*/
           {
-            *(_DWORD *)(v2 + 64) = MEMORY[0xB077F8]; /*0x6a00db*/
+            *(_DWORD *)(v2 + 64) = g_OverlayTypeConfig; /*0x6a00db*/
             *(_QWORD *)(v2 + 68) = MEMORY[0xB077FC]; /*0x6a00e3*/
             *(_BYTE *)(v2 + 99) = 0; /*0x6a00ef*/
           }
@@ -769,13 +769,13 @@ LABEL_81:
 LABEL_32:
   if ( (*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)v1 + 128))(v1) ) /*0x69fe3c*/
   {
-    if ( !((int)MEMORY[0xA8ED84] % 8) /*0x69fe6e*/
+    if ( !((int)g_CurrentFrame % 8) /*0x69fe6e*/
       && !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v1 + 8) + 132))(*(_DWORD *)(v1 + 8)) + 3433) )
     {
       v12 = *(_BYTE **)(v1 + 8); /*0x69fe76*/
       if ( !v12[140] && *(_DWORD *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v12 + 444))(v12) + 236) == 2 ) /*0x69fe90*/
       {
-        if ( MEMORY[0x8871E0]->InfantryBrute ) /*0x69fe97*/
+        if ( g_RulesClass_Instance->InfantryBrute ) /*0x69fe97*/
         {
           v13 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x69fea4*/
           if ( v13 ) /*0x69feae*/
@@ -784,15 +784,15 @@ LABEL_32:
             v23 = *v14; /*0x69fec5*/
             v24 = v14[1]; /*0x69fecc*/
             v25 = v14[2]; /*0x69fed8*/
-            AnimClass::ctor(v13, (void *)MEMORY[0x8871E0]->InfantryBrute, &v23, 0, 1, (void *)0x600, 0, 0); /*0x69feeb*/
+            AnimClass::ctor(v13, (void *)g_RulesClass_Instance->InfantryBrute, &v23, 0, 1, (void *)0x600, 0, 0); /*0x69feeb*/
           }
         }
       }
     }
   }
-  if ( *(_DWORD *)(v1 + 48) == MEMORY[0xB077F8] /*0x69ff1e*/
+  if ( *(_DWORD *)(v1 + 48) == g_OverlayTypeConfig /*0x69ff1e*/
     && *(_DWORD *)(v1 + 52) == (_DWORD)MEMORY[0xB077FC]
-    && *(_QWORD *)(v1 + 56) == __PAIR64__(MEMORY[0xB077F8], HIDWORD(MEMORY[0xB077FC]))
+    && *(_QWORD *)(v1 + 56) == __PAIR64__(g_OverlayTypeConfig, HIDWORD(MEMORY[0xB077FC]))
     && *(_QWORD *)(v1 + 64) == MEMORY[0xB077FC] )
   {
     v15 = *(_DWORD *)(v1 + 8); /*0x69ff25*/

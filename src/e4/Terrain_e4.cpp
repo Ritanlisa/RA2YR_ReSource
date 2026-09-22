@@ -383,7 +383,7 @@ LABEL_44:
             if ( v50 ) /*0x56958a*/
             {
               aP3 = (IUnknown *)v44[9]; /*0x569596*/
-              Object::SpawnAtCell(v50, MEMORY[0xA83D84][1].headNode[1], (__int16 *)&aP3, -1); /*0x5695a9*/
+              Object::SpawnAtCell(v50, g_BuildingTypeClass_Array[1].headNode[1], (__int16 *)&aP3, -1); /*0x5695a9*/
             }
           }
           else
@@ -392,7 +392,7 @@ LABEL_44:
             if ( v51 ) /*0x5695b5*/
             {
               v71 = (IUnknown *)v44[9]; /*0x5695be*/
-              Object::SpawnAtCell(v51, MEMORY[0xA83D84][1].headNode[2], (__int16 *)&v71, -1); /*0x5695d1*/
+              Object::SpawnAtCell(v51, g_BuildingTypeClass_Array[1].headNode[2], (__int16 *)&v71, -1); /*0x5695d1*/
             }
           }
         }
@@ -1544,10 +1544,10 @@ void __thiscall Terrain::ProcessCellModification(int *this, IUnknown *aP1)
     while ( 1 ) /*0x5703ba*/
     {
       v33 = v81[1] + (__int16)v32; /*0x5703ba*/
-      if ( v33 <= MEMORY[0x87F8DC] /*0x5703e8*/
-        || (__int16)v32 - v81[1] >= MEMORY[0x87F8DC]
-        || v81[1] - (__int16)v32 >= MEMORY[0x87F8DC]
-        || v33 > MEMORY[0x87F8DC] + 2 * MEMORY[0x87F8E0] )
+      if ( v33 <= g_Cell_PositionLUT /*0x5703e8*/
+        || (__int16)v32 - v81[1] >= g_Cell_PositionLUT
+        || v81[1] - (__int16)v32 >= g_Cell_PositionLUT
+        || v33 > g_Cell_PositionLUT + 2 * g_CellPositionOffset )
       {
         goto LABEL_139; /*0x5703e8*/
       }
@@ -2425,10 +2425,10 @@ char __thiscall Terrain::CreateCrater(_DWORD *this, IUnknown *aP1)
   {
     LOBYTE(v10) = BYTE2(aP1); /*0x57695a*/
     v23 = SHIWORD(aP1) + (__int16)v21; /*0x576962*/
-    if ( v23 <= MEMORY[0x87F8DC] /*0x576990*/
-      || (__int16)v21 - SHIWORD(aP1) >= MEMORY[0x87F8DC]
-      || SHIWORD(aP1) - (__int16)v21 >= MEMORY[0x87F8DC]
-      || v23 > MEMORY[0x87F8DC] + 2 * MEMORY[0x87F8E0] )
+    if ( v23 <= g_Cell_PositionLUT /*0x576990*/
+      || (__int16)v21 - SHIWORD(aP1) >= g_Cell_PositionLUT
+      || SHIWORD(aP1) - (__int16)v21 >= g_Cell_PositionLUT
+      || v23 > g_Cell_PositionLUT + 2 * g_CellPositionOffset )
     {
       return v10; /*0x576990*/
     }

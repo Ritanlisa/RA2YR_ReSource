@@ -72,7 +72,7 @@ LABEL_9:
     *(_DWORD *)(*(_DWORD *)this + 8 * this->SortedArray_field_0x04) = *(_DWORD *)aP1->__pad_0; /*0x53885b*/
     *(_DWORD *)(*(_DWORD *)this + 8 * this->SortedArray_field_0x04 + 4) = *a2; /*0x538875*/
     v11 = this->SortedArray_field_0x04 + 1; /*0x53887c*/
-    *(_BYTE *)(this + 12) = 0; /*0x53887d*/
+    this->q00C = 0; /*0x53887d*/
     this->SortedArray_field_0x04 = v11; /*0x538881*/
     return 1; /*0x53888a*/
   }
@@ -132,7 +132,7 @@ char __thiscall SortedArray::RemoveByKey(int this, DynamicVector *aP1)
   {
     qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5388c2*/
     this->SortedArray_field_0x10 = 0; /*0x5388ca*/
-    *(_BYTE *)(this + 12) = 1; /*0x5388d1*/
+    this->q00C = 1; /*0x5388d1*/
   }
   v4 = this->SortedArray_field_0x04; /*0x5388d9*/
   v5 = *(_DWORD **)this; /*0x5388e0*/
@@ -201,7 +201,7 @@ char __thiscall SortedArray_FindPair(int this, int *a2)
   {
     qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5389bb*/
     this->SortedArray_field_0x10 = 0; /*0x5389c3*/
-    *(_BYTE *)(this + 12) = 1; /*0x5389ca*/
+    this->q00C = 1; /*0x5389ca*/
   }
   v6 = this->SortedArray_field_0x04; /*0x5389ce*/
   v7 = *a2; /*0x5389d1*/

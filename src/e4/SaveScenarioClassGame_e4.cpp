@@ -35,10 +35,10 @@ char __fastcall SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr,
   Map_Save_6810A0(v15, Source); /*0x67cf8a*/
   Map_Save(v15, 1); /*0x67cf98*/
   Map_Save_6810D0(v15, *(wchar_t **)(*((_DWORD *)HouseClass_Player + 13) + 96)); /*0x67cfb1*/
-  Map_Save_681110(v15, *((_DWORD *)MEMORY[0xA8B230] + 3379)); /*0x67cfca*/
-  Map_Save_681130(v15, *((_DWORD *)MEMORY[0xA8B230] + 1173)); /*0x67cfe2*/
+  Map_Save_681110(v15, *((_DWORD *)g_ScenarioClass_Instance + 3379)); /*0x67cfca*/
+  Map_Save_681130(v15, *((_DWORD *)g_ScenarioClass_Instance + 1173)); /*0x67cfe2*/
   Map_Save_6811C0((char *)v15, MEMORY[0x83D5BC]); /*0x67cff3*/
-  Map_Save_6812C0(v15, MEMORY[0xA8B238][0]); /*0x67d006*/
+  Map_Save_6812C0(v15, g_GameMode_Current[0]); /*0x67d006*/
   CoFileTimeNow(&FileTime); /*0x67d010*/
   Map_Save_681280(v15, &FileTime); /*0x67d022*/
   Map_Save_681200(v15, &FileTime); /*0x67d033*/

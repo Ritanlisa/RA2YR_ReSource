@@ -447,25 +447,25 @@ int __stdcall sub_568140(int *a1, int a2)
           LOWORD(v21) = v10 + v19; /*0x56820c*/
           HIWORD(v21) = v9 + v20; /*0x568211*/
           v14 = ((__int16)(v9 + v20) << 9) + (__int16)(v10 + v19); /*0x568223*/
-          if ( v14 >= 0x40000 || (v15 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v14)) == 0 ) /*0x56823b*/
+          if ( v14 >= 0x40000 || (v15 = *(_DWORD **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x56823b*/
           {
             g_Map_GlobalCellIndex = v21; /*0x56823d*/
             v15 = g_CellClassArray; /*0x568243*/
           }
           v15[76] = 0; /*0x56824a*/
-          if ( v14 >= 0x40000 || (v16 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v14)) == 0 ) /*0x568264*/
+          if ( v14 >= 0x40000 || (v16 = *(_DWORD **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x568264*/
           {
             g_Map_GlobalCellIndex = v21; /*0x568266*/
             v16 = g_CellClassArray; /*0x56826c*/
           }
           v16[77] = 0; /*0x568273*/
-          if ( v14 >= 0x40000 || (v17 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v14)) == 0 ) /*0x56828d*/
+          if ( v14 >= 0x40000 || (v17 = *(_DWORD **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x56828d*/
           {
             g_Map_GlobalCellIndex = v21; /*0x56828f*/
             v17 = g_CellClassArray; /*0x568295*/
           }
           v17[75] |= 0x10u; /*0x56829a*/
-          if ( v14 >= 0x40000 || (v18 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v14)) == 0 ) /*0x5682b7*/
+          if ( v14 >= 0x40000 || (v18 = *(_DWORD **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x5682b7*/
           {
             g_Map_GlobalCellIndex = v21; /*0x5682b9*/
             v18 = g_CellClassArray; /*0x5682bf*/

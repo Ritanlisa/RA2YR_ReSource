@@ -40,32 +40,32 @@ void *sub_7221B0()
   int v6; // edx
   int v7; // [esp+8h] [ebp-8h]
 
-  result = MEMORY[0xA8B230]; /*0x7221b0*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13478) ) /*0x7221b8*/
+  result = g_ScenarioClass_Instance; /*0x7221b0*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13478) ) /*0x7221b8*/
   {
-    result = (void *)MEMORY[0xB0F4F8]; /*0x7221c3*/
-    for ( i = 0; i < MEMORY[0xB0F4F8]; ++i ) /*0x7221cc*/
+    result = (void *)g_CrateProcessState; /*0x7221c3*/
+    for ( i = 0; i < g_CrateProcessState; ++i ) /*0x7221cc*/
     {
-      v2 = *(_DWORD *)&MEMORY[0xB0F4EC]->__pad_0[4 * i]; /*0x7221da*/
+      v2 = *(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * i]; /*0x7221da*/
       v3 = *(_DWORD *)(v2 + 256); /*0x7221dd*/
       v4 = *(_DWORD *)(v2 + 264); /*0x7221e3*/
       if ( v3 != -1 ) /*0x7221ec*/
       {
-        if ( (int)MEMORY[0xA8ED84] - v3 >= v4 ) /*0x7221f8*/
+        if ( (int)g_CurrentFrame - v3 >= v4 ) /*0x7221f8*/
           goto LABEL_7; /*0x7221f8*/
-        v4 -= (int)MEMORY[0xA8ED84] - v3; /*0x7221fa*/
+        v4 -= (int)g_CurrentFrame - v3; /*0x7221fa*/
       }
       if ( !v4 ) /*0x7221fe*/
       {
 LABEL_7:
         PropagateCellOccupancy(v2); /*0x722200*/
-        v5 = (_DWORD *)(*(_DWORD *)&MEMORY[0xB0F4EC]->__pad_0[4 * i] + 256); /*0x722216*/
-        v6 = *(_DWORD *)(*(_DWORD *)&MEMORY[0xB0F4EC]->__pad_0[4 * i] + 156); /*0x72221c*/
-        *v5 = MEMORY[0xA8ED84]; /*0x722222*/
+        v5 = (_DWORD *)(*(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * i] + 256); /*0x722216*/
+        v6 = *(_DWORD *)(*(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * i] + 156); /*0x72221c*/
+        *v5 = g_CurrentFrame; /*0x722222*/
         v5[1] = v7; /*0x722224*/
         v5[2] = v6; /*0x722227*/
       }
-      result = (void *)MEMORY[0xB0F4F8]; /*0x72222a*/
+      result = (void *)g_CrateProcessState; /*0x72222a*/
     }
   }
   return result; /*0x722236*/
@@ -92,38 +92,38 @@ void *sub_722C40()
   wchar_t **v9; // ecx
   wchar_t *v10; // [esp+8h] [ebp-8h]
 
-  result = MEMORY[0xA8B230]; /*0x722c40*/
-  if ( *((_BYTE *)MEMORY[0xA8B230] + 13478) ) /*0x722c48*/
+  result = g_ScenarioClass_Instance; /*0x722c40*/
+  if ( *((_BYTE *)g_ScenarioClass_Instance + 13478) ) /*0x722c48*/
   {
-    result = (void *)MEMORY[0xB0F4F8]; /*0x722c57*/
-    for ( i = 0; i < MEMORY[0xB0F4F8]; ++i ) /*0x722c60*/
+    result = (void *)g_CrateProcessState; /*0x722c57*/
+    for ( i = 0; i < g_CrateProcessState; ++i ) /*0x722c60*/
     {
-      v2 = *(_DWORD *)&MEMORY[0xB0F4EC]->__pad_0[4 * i]; /*0x722c73*/
+      v2 = *(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * i]; /*0x722c73*/
       v3 = *(_DWORD *)(v2 + 284); /*0x722c76*/
       v4 = *(_DWORD *)(v2 + 292); /*0x722c7c*/
       if ( v3 != -1 ) /*0x722c85*/
       {
-        if ( (int)MEMORY[0xA8ED84] - v3 >= v4 ) /*0x722c91*/
+        if ( (int)g_CurrentFrame - v3 >= v4 ) /*0x722c91*/
           goto LABEL_7; /*0x722c91*/
-        v4 -= (int)MEMORY[0xA8ED84] - v3; /*0x722c93*/
+        v4 -= (int)g_CurrentFrame - v3; /*0x722c93*/
       }
       if ( !v4 ) /*0x722c97*/
       {
 LABEL_7:
         RebuildBuildingOccupancy(v2); /*0x722c99*/
-        if ( (*(_BYTE *)MEMORY[0xA8B230] & 0x40) != 0 ) /*0x722ca7*/
+        if ( (*(_BYTE *)g_ScenarioClass_Instance & 0x40) != 0 ) /*0x722ca7*/
           v5 = 0.3; /*0x722ca9*/
         else
           v5 = 1.0; /*0x722cb1*/
-        v6 = MEMORY[0xB0F4EC]; /*0x722cb7*/
-        v7 = MEMORY[0xA8ED84]; /*0x722cbd*/
+        v6 = BuildingClass_InstanceArray; /*0x722cb7*/
+        v7 = g_CurrentFrame; /*0x722cbd*/
         v8 = (wchar_t *)Math::RoundToInt(v5); /*0x722cce*/
         v9 = (wchar_t **)(*(_DWORD *)&v6->__pad_0[4 * i] + 284); /*0x722cd6*/
         *v9 = v7; /*0x722cde*/
         v9[1] = v10; /*0x722ce0*/
         v9[2] = v8; /*0x722ce3*/
       }
-      result = (void *)MEMORY[0xB0F4F8]; /*0x722ce6*/
+      result = (void *)g_CrateProcessState; /*0x722ce6*/
     }
   }
   return result; /*0x722cf7*/
@@ -224,7 +224,7 @@ void sub_728200()
   _WORD *v3; // edi
   int i; // [esp+8h] [ebp-4h]
 
-  v0 = MEMORY[0x8B4148]; /*0x728203*/
+  v0 = g_Tubes_Count; /*0x728203*/
   v1 = 0; /*0x728209*/
   for ( i = -1; v1 < v0; ++v1 ) /*0x728215*/
   {
@@ -272,7 +272,7 @@ unsigned __int8 LoadMouseClassResources()
     MEMORY[0xB0FAC4] = LoadFileSHP(MEMORY[0x844CD4], (bool *)&MEMORY[0xB0FC95]); /*0x72ab2a*/
     MEMORY[0xB0F9DC] = LoadFileSHP(MEMORY[0x844CD8], (bool *)&MEMORY[0xB0FC96]); /*0x72ab3f*/
     MEMORY[0xB0FAC0] = LoadFileSHP(MEMORY[0x844CDC], (bool *)&MEMORY[0xB0FC97]); /*0x72ab54*/
-    MEMORY[0xB0FB50] = LoadFileSHP(MEMORY[0x844CE0], (bool *)&MEMORY[0xB0FC98]); /*0x72ab69*/
+    g_DialogControlPool = LoadFileSHP(MEMORY[0x844CE0], (bool *)&MEMORY[0xB0FC98]); /*0x72ab69*/
     MEMORY[0xB0FA04] = LoadFileSHP(MEMORY[0x844CE4], (bool *)&MEMORY[0xB0FC99]); /*0x72ab7e*/
     MEMORY[0xB0FAF8] = LoadFileSHP(MEMORY[0x844CE8], (bool *)&MEMORY[0xB0FC9A]); /*0x72ab93*/
     MEMORY[0xB0FA74] = LoadFileSHP(MEMORY[0x844CEC], (bool *)&MEMORY[0xB0FC9B]); /*0x72aba8*/
@@ -355,7 +355,7 @@ int __fastcall Palette_LoadSimple(char *Source, _DWORD *a2, _DWORD *a3)
     }
     __3_YAXPAX_Z(v4); /*0x72ae9e*/
     if ( __2_YAPAXI_Z(0x188u) ) /*0x72aea8*/
-      v12 = ConvertClass::Construct(*a2, *a2, MEMORY[0x887310], 1, 0); /*0x72aecb*/
+      v12 = ConvertClass::Construct(*a2, *a2, DSurface_Alternate, 1, 0); /*0x72aecb*/
     else
       v12 = 0; /*0x72aed2*/
     *a3 = v12; /*0x72aedb*/
@@ -442,8 +442,8 @@ int *LoadingScreen_InitResources()
   MEMORY[0xB0FC14] = 0; /*0x72dff3*/
   __3_YAXPAX_Z(MEMORY[0xB0FC18]); /*0x72dffa*/
   MEMORY[0xB0FC18] = 0; /*0x72e004*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC1C]); /*0x72e00b*/
-  MEMORY[0xB0FC1C] = 0; /*0x72e016*/
+  __3_YAXPAX_Z(g_GadgetAnimState); /*0x72e00b*/
+  g_GadgetAnimState = 0; /*0x72e016*/
   __3_YAXPAX_Z(MEMORY[0xB0FC20]); /*0x72e01d*/
   MEMORY[0xB0FC20] = 0; /*0x72e028*/
   __3_YAXPAX_Z(MEMORY[0xB0FC24]); /*0x72e02f*/
@@ -460,7 +460,7 @@ LABEL_3:
     MEMORY[0xB0FAC4] = LoadFileSHP(MEMORY[0x844CD4], (bool *)&MEMORY[0xB0FC95]); /*0x72e091*/
     MEMORY[0xB0F9DC] = LoadFileSHP(MEMORY[0x844CD8], (bool *)&MEMORY[0xB0FC96]); /*0x72e0a6*/
     MEMORY[0xB0FAC0] = LoadFileSHP(MEMORY[0x844CDC], (bool *)&MEMORY[0xB0FC97]); /*0x72e0bb*/
-    MEMORY[0xB0FB50] = LoadFileSHP(MEMORY[0x844CE0], (bool *)&MEMORY[0xB0FC98]); /*0x72e0d0*/
+    g_DialogControlPool = LoadFileSHP(MEMORY[0x844CE0], (bool *)&MEMORY[0xB0FC98]); /*0x72e0d0*/
     MEMORY[0xB0FA04] = LoadFileSHP(MEMORY[0x844CE4], (bool *)&MEMORY[0xB0FC99]); /*0x72e0e5*/
     MEMORY[0xB0FAF8] = LoadFileSHP(MEMORY[0x844CE8], (bool *)&MEMORY[0xB0FC9A]); /*0x72e0fa*/
     MEMORY[0xB0FA74] = LoadFileSHP(MEMORY[0x844CEC], (bool *)&MEMORY[0xB0FC9B]); /*0x72e10f*/
@@ -819,11 +819,11 @@ int *__fastcall MouseClass_SetupResources(int a1, int a2)
   v32 = a1 == 640; /*0x72eceb*/
   v33 = a2 == 480; /*0x72ecf9*/
   if ( a1 == 640 ) /*0x72ecfd*/
-    v3 = *((__int16 *)MEMORY[0xB0FB50] + 1); /*0x72ecff*/
+    v3 = *((__int16 *)g_DialogControlPool + 1); /*0x72ecff*/
   else
     v3 = *((__int16 *)MEMORY[0xB0FA04] + 1); /*0x72ed05*/
   if ( a2 == 480 ) /*0x72ed0b*/
-    v4 = *((__int16 *)MEMORY[0xB0FB50] + 2); /*0x72ed0d*/
+    v4 = *((__int16 *)g_DialogControlPool + 2); /*0x72ed0d*/
   else
     v4 = *((__int16 *)MEMORY[0xB0FA04] + 2); /*0x72ed13*/
   v5 = (int *)__2_YAPAXI_Z(0x10u); /*0x72ed19*/
@@ -833,11 +833,11 @@ int *__fastcall MouseClass_SetupResources(int a1, int a2)
     *v5 = v35; /*0x72ed2c*/
     v5[2] = v3; /*0x72ed2e*/
     v5[3] = v4; /*0x72ed31*/
-    MEMORY[0xB0FC1C] = v5; /*0x72ed34*/
+    g_GadgetAnimState = v5; /*0x72ed34*/
   }
   else
   {
-    MEMORY[0xB0FC1C] = 0; /*0x72ed3b*/
+    g_GadgetAnimState = 0; /*0x72ed3b*/
   }
   v6 = *((__int16 *)MEMORY[0xB0FAF8] + 1); /*0x72ed4c*/
   v7 = *((__int16 *)MEMORY[0xB0FAF8] + 2); /*0x72ed50*/

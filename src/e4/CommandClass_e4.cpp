@@ -58,7 +58,7 @@ char __thiscall CommandClass_BuildBar(void *this)
   }
   while ( (int)v2 < (int)&MEMORY[0xB0CB20] ); /*0x6d1224*/
   (*(void (__thiscall **)(void *, _DWORD *))(this->q00C)(this, MEMORY[0xB0CCB0]); /*0x6d122f*/
-  v3 = MEMORY[0xB0CB78][MEMORY[0xB0CD24]]; /*0x6d1238*/
+  v3 = g_ObjectTrackingPool[MEMORY[0xB0CD24]]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
     v4 = (_DWORD *)((char *)&MEMORY[0xB0C1C0] + 96 * v3); /*0x6d124e*/
@@ -75,11 +75,11 @@ char __thiscall CommandClass_BuildBar(void *this)
       v37 = v6; /*0x6d1283*/
       v42 = MEMORY[0x8428DC]; /*0x6d1287*/
       v40 = v8; /*0x6d128f*/
-      HashTable::Remove((int *)MEMORY[0x887368], v6); /*0x6d1293*/
-      CommandClass::AddAction(MEMORY[0x887368], (int)&v37); /*0x6d12a3*/
+      HashTable::Remove((int *)g_TacticalRender, v6); /*0x6d1293*/
+      CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d12a3*/
     }
   }
-  v9 = MEMORY[0xB0CB78][MEMORY[0xB0CB3C]]; /*0x6d12ad*/
+  v9 = g_ObjectTrackingPool[MEMORY[0xB0CB3C]]; /*0x6d12ad*/
   if ( v9 <= 0x18 ) /*0x6d12b6*/
   {
     v10 = (_DWORD *)((char *)&MEMORY[0xB0C1C0] + 96 * v9); /*0x6d12c3*/
@@ -96,11 +96,11 @@ char __thiscall CommandClass_BuildBar(void *this)
       v37 = v12; /*0x6d12f8*/
       v42 = MEMORY[0x8428D0]; /*0x6d12fc*/
       v41 = v14; /*0x6d1304*/
-      HashTable::Remove((int *)MEMORY[0x887368], v12); /*0x6d1308*/
-      CommandClass::AddAction(MEMORY[0x887368], (int)&v37); /*0x6d1318*/
+      HashTable::Remove((int *)g_TacticalRender, v12); /*0x6d1308*/
+      CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d1318*/
     }
   }
-  v15 = MEMORY[0xB0CB78][MEMORY[0xB0C1B8]]; /*0x6d1323*/
+  v15 = g_ObjectTrackingPool[MEMORY[0xB0C1B8]]; /*0x6d1323*/
   if ( v15 <= 0x18 ) /*0x6d132c*/
   {
     v16 = (_DWORD *)((char *)&MEMORY[0xB0C1C0] + 96 * v15); /*0x6d1339*/
@@ -117,11 +117,11 @@ char __thiscall CommandClass_BuildBar(void *this)
       v37 = v18; /*0x6d136e*/
       v42 = MEMORY[0x8428C4]; /*0x6d1372*/
       v40 = v20; /*0x6d137a*/
-      HashTable::Remove((int *)MEMORY[0x887368], v18); /*0x6d137e*/
-      CommandClass::AddAction(MEMORY[0x887368], (int)&v37); /*0x6d138e*/
+      HashTable::Remove((int *)g_TacticalRender, v18); /*0x6d137e*/
+      CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d138e*/
     }
   }
-  v21 = MEMORY[0xB0CB78][MEMORY[0xB0CB20]]; /*0x6d1398*/
+  v21 = g_ObjectTrackingPool[MEMORY[0xB0CB20]]; /*0x6d1398*/
   if ( v21 <= 0x18 ) /*0x6d13a1*/
   {
     v22 = (_DWORD *)((char *)&MEMORY[0xB0C1C0] + 96 * v21); /*0x6d13ae*/
@@ -138,17 +138,17 @@ char __thiscall CommandClass_BuildBar(void *this)
       v37 = v24; /*0x6d13e3*/
       v42 = MEMORY[0x8428B8]; /*0x6d13e7*/
       v41 = v26; /*0x6d13ef*/
-      HashTable::Remove((int *)MEMORY[0x887368], v24); /*0x6d13f3*/
-      CommandClass::AddAction(MEMORY[0x887368], (int)&v37); /*0x6d1403*/
+      HashTable::Remove((int *)g_TacticalRender, v24); /*0x6d13f3*/
+      CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d1403*/
     }
   }
-  v27 = MEMORY[0xB0CB78][MEMORY[0xB0CB68]]; /*0x6d1410*/
+  v27 = g_ObjectTrackingPool[MEMORY[0xB0CB68]]; /*0x6d1410*/
   if ( v27 > 0x18 ) /*0x6d1419*/
     v28 = 0; /*0x6d142e*/
   else
     v28 = (_DWORD *)((char *)&MEMORY[0xB0C1C0] + 96 * v27); /*0x6d1426*/
   PushCommandClass::Execute(v28, (int)MEMORY[0x8428AC]); /*0x6d1435*/
-  v29 = MEMORY[0xB0CB78][MEMORY[0xB0CC1C]]; /*0x6d1440*/
+  v29 = g_ObjectTrackingPool[MEMORY[0xB0CC1C]]; /*0x6d1440*/
   if ( v29 > 0x18 ) /*0x6d1449*/
     v30 = 0; /*0x6d145e*/
   else

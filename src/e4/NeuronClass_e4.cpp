@@ -13,10 +13,10 @@ int __thiscall NeuronClass::NeuronClass(int this)
   int v3; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x43a353*/
-  *(_DWORD *)(this + 36) = 0; /*0x43a358*/
-  *(_DWORD *)(this + 40) = 0; /*0x43a35f*/
-  *(_DWORD *)(this + 44) = 0; /*0x43a366*/
-  *(_DWORD *)(this + 48) = MEMORY[0xA8ED84]; /*0x43a372*/
+  this->q024 = 0; /*0x43a358*/
+  this->q028 = 0; /*0x43a35f*/
+  this->q02C = 0; /*0x43a366*/
+  this->q030 = g_CurrentFrame; /*0x43a372*/
   *(_DWORD *)this = &NeuronClass::`vftable'; /*0x43a375*/
   this->NeuronClass_field_0x04 = &NeuronClass::`vftable'; /*0x43a37b*/
   this->NeuronClass_field_0x08 = &NeuronClass::`vftable'; /*0x43a382*/
@@ -32,16 +32,16 @@ int __thiscall NeuronClass::NeuronClass(int this)
     v2 = MEMORY[0xB0F5E8]++; /*0x43a3d2*/
     *((_DWORD *)MEMORY[0xB0F5DC] + v2) = this; /*0x43a3e1*/
   }
-  if ( MEMORY[0xB0F680] < MEMORY[0xB0F678] /*0x43a41b*/
-    || (MEMORY[0xB0F67D] || !MEMORY[0xB0F678])
-    && MEMORY[0xB0F684] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F670] + 8))(
-         &MEMORY[0xB0F670],
-         MEMORY[0xB0F678] + MEMORY[0xB0F684],
+  if ( g_AnimManager < g_AnimTypePool /*0x43a41b*/
+    || (g_AnimPoolLocked || !g_AnimTypePool)
+    && g_AnimManagerConfig > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_AnimPoolManager + 8))(
+         &g_AnimPoolManager,
+         g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v3 = MEMORY[0xB0F680]++; /*0x43a428*/
-    *((_DWORD *)MEMORY[0xB0F674] + v3) = this; /*0x43a437*/
+    v3 = g_AnimManager++; /*0x43a428*/
+    *((_DWORD *)g_AnimPoolCount + v3) = this; /*0x43a437*/
   }
   return this; /*0x43a43c*/
 }
@@ -62,15 +62,15 @@ NeuronClass *__thiscall NeuronClass::Reset(_DWORD *this, char a2)
   this->vtable3 = &NeuronClass::`vftable'; /*0x43a9da*/
   this->vtable4 = &vt_NeuronClass; /*0x43a9e1*/
   v6 = this; /*0x43a9ef*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x43a9f3*/
-  if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x43aa0e*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v6); /*0x43a9f3*/
+  if ( v3 != -1 && v3 < g_AnimManager && v3 < --g_AnimManager ) /*0x43aa0e*/
   {
     do /*0x43aa26*/
     {
       ++v3; /*0x43aa16*/
-      *((_DWORD *)MEMORY[0xB0F674] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v3); /*0x43aa1a*/
+      *((_DWORD *)g_AnimPoolCount + v3 - 1) = *((_DWORD *)g_AnimPoolCount + v3); /*0x43aa1a*/
     }
-    while ( v3 < MEMORY[0xB0F680] ); /*0x43aa26*/
+    while ( v3 < g_AnimManager ); /*0x43aa26*/
   }
   v6 = this; /*0x43aa38*/
   v4 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F5D8] + 16))(&MEMORY[0xB0F5D8], &v6); /*0x43aa3c*/

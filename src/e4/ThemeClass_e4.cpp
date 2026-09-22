@@ -118,7 +118,7 @@ void *__thiscall sub_720590(int this, char *a2)
            (unsigned __int8 ***)v2,
            (unsigned __int8 *)MEMORY[0x844760],
            StringByIndex,
-           &MEMORY[0x889F64],
+           &g_INI_DefaultBuffer,
            Destination,
            32) )
     {
@@ -127,11 +127,11 @@ void *__thiscall sub_720590(int this, char *a2)
       if ( !strlen(Destination) ) /*0x7205f7*/
         goto LABEL_10; /*0x7205f7*/
       v7 = 0; /*0x720606*/
-      if ( *(int *)(this + 36) <= 0 ) /*0x72060a*/
+      if ( this->q024 <= 0 ) /*0x72060a*/
         goto LABEL_10; /*0x72060a*/
       while ( _strcmpi(*(const void **)(*(_DWORD *)(this + 24) + 4 * v7), Destination) ) /*0x720622*/
       {
-        if ( ++v7 >= *(_DWORD *)(this + 36) ) /*0x72062a*/
+        if ( ++v7 >= this->q024 ) /*0x72062a*/
           goto LABEL_10; /*0x72062a*/
       }
       if ( v7 == -1 ) /*0x720631*/
@@ -154,14 +154,14 @@ LABEL_10:
         }
         strcpy(v9, Destination); /*0x7206a0*/
         v10 = *(_DWORD *)(this + 28); /*0x7206a9*/
-        if ( *(_DWORD *)(this + 36) < v10 /*0x7206d1*/
+        if ( this->q024 < v10 /*0x7206d1*/
           || (*(_BYTE *)(this + 33) || !v10)
           && (v11 = this->ThemeClass_field_28, v11 > 0)
-          && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 20) + 8))(this + 20, v10 + v11, 0) )
+          && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->q014 + 8))(this + 20, v10 + v11, 0) )
         {
-          v12 = *(_DWORD *)(this + 36); /*0x7206d8*/
+          v12 = this->q024; /*0x7206d8*/
           v13 = *(_DWORD *)(this + 24); /*0x7206db*/
-          *(_DWORD *)(this + 36) = v12 + 1; /*0x7206e1*/
+          this->q024 = v12 + 1; /*0x7206e1*/
           *(_DWORD *)(v13 + 4 * v12) = v9; /*0x7206e4*/
         }
       }
@@ -185,8 +185,8 @@ LABEL_10:
     if ( result ) /*0x720735*/
     {
       SetAudioFileName((int)result, MEMORY[0x844750]); /*0x72073e*/
-      AudioQueue::IsEmpty(this->ThemeClass_field_2C, MEMORY[0x87E744]); /*0x72074c*/
-      return (void *)AudioQueue::IsNotEmpty(this->ThemeClass_field_2C, MEMORY[0x87E754]); /*0x72075a*/
+      AudioQueue::IsEmpty(this->ThemeClass_field_2C, g_MixerChannel_Theme); /*0x72074c*/
+      return (void *)AudioQueue::IsNotEmpty(this->ThemeClass_field_2C, g_MixerChannel_Stream); /*0x72075a*/
     }
   }
   return result; /*0x72075f*/
@@ -208,11 +208,11 @@ int __cdecl ThemeClass_ClearQueues()
   result = MEMORY[0xB1D4BC]; /*0x752370*/
   if ( MEMORY[0xB1D4BC] ) /*0x752377*/
   {
-    if ( MEMORY[0xB1D4B8] ) /*0x75238c*/
+    if ( DataGlobal_B1D4B8 ) /*0x75238c*/
     {
-      *(_DWORD *)(*((_DWORD *)MEMORY[0xB1D4B8] + 3) + 80) = 2; /*0x752391*/
-      __3_YAXPAX_Z(MEMORY[0xB1D4B8]); /*0x75239b*/
-      MEMORY[0xB1D4B8] = 0; /*0x7523a3*/
+      *(_DWORD *)(*((_DWORD *)DataGlobal_B1D4B8 + 3) + 80) = 2; /*0x752391*/
+      __3_YAXPAX_Z(DataGlobal_B1D4B8); /*0x75239b*/
+      DataGlobal_B1D4B8 = 0; /*0x7523a3*/
     }
     for ( i = AudioQueue::GetNext(&MEMORY[0xB1D3F0]); i; i = AudioQueue::GetNext(&MEMORY[0xB1D3F0]) ) /*0x7523bb*/
     {
