@@ -700,7 +700,7 @@ int DisplayClass::checkScreenBounds(int a2)
 {
 
   int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 184))(a2); /*0x5f6234*/
-  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 184))(this) > v3; /*0x5f623e*/
+  return this->HandlePlayerAction() > v3; /*0x5f623e*/
 }
 }
 

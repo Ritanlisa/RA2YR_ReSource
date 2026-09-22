@@ -22129,7 +22129,7 @@ int BuildingClass::ProcessUpgradeTargeting()
         {
           int v6 = *(_DWORD *)(v5 + 1404);
           if ( v6 != -1 )
-            return (*(int (__thiscall **)(#377 *, int))(*(_DWORD *)this + 852))(this, v6);
+            return this->SetMoveDestination(v6);
         }
       }
     }

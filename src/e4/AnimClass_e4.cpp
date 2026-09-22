@@ -1436,8 +1436,8 @@ LABEL_80:
     bool v102 = this->hasParachute;
     if ( (v102 & v101) != 0 )
       this->hasParachute = v102 & ~v101;
-    v103 = (BuildingTypeClass *)(*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 484))(this);
-    eax175 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 444))(this);
+    v103 = (BuildingTypeClass *)this->COMStub_Return0_121();
+    eax175 = this->GetCellCoords();
     v104 = (BuildingTypeClass *)(*(int (__thiscall **)(#377 *, _DWORD))(this->q119)(
                                   this,
                                   *(__int16 *)(eax175 + 266));

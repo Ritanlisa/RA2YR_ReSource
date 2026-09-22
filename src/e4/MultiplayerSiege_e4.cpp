@@ -174,12 +174,8 @@ LABEL_26:
     if ( !*(_BYTE *)(v10[13] + 422) && v10 != v7 ) /*0x5ca910*/
     {
       Debug::Log(); /*0x5ca91c*/
-      v11 = (int *)(*(int (__thiscall **)(void *, char *, int, void ***, _DWORD *))(*(_DWORD *)this + 196))( /*0x5ca939*/
-                     this,
-                     &a2,
-                     i,
-                     &v14,
-                     v13);
+      v11 = (int *)this->FindStartingCell(/*0x5ca939*/
+                     this, &a2, i, &v14, v13);
       HouseClass::SetMapSeed(v10, *v11); /*0x5ca944*/
     }
   }

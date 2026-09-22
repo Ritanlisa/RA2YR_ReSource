@@ -62,7 +62,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     a1a = -1; /*0x7ba92c*/
   }
   a2a = (int *)(*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this); /*0x7ba947*/
-  v14 = (_WORD *)(*(int (__thiscall **)(void *, int, int))(*(_DWORD *)this + 92))(this, v7, v40); /*0x7ba94f*/
+  v14 = (_WORD *)this->Lock(v7, v40); /*0x7ba94f*/
   v43 = v14; /*0x7ba954*/
   if ( v14 )
   {
@@ -188,7 +188,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
         }
       }
     }
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this); /*0x7bab1e*/
+    this->Unlock(); /*0x7bab1e*/
   }
   return v13; /*0x7bab23*/
 }
@@ -373,7 +373,7 @@ int XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   if ( a2[3] <= 0 ) /*0x7bb071*/
     return 0; /*0x7bb071*/
   int v45[4]; // [esp+2Ch] [ebp-4Ch] BYREF
-  int * v6 = (int *)(*(int (__thiscall **)(void *, int *))(*(_DWORD *)this + 120))(this, v45); /*0x7bb07f*/
+  int * v6 = (int *)this->GetRect(v45); /*0x7bb07f*/
   int v50; // [esp+5Ch] [ebp-1Ch] BYREF
   int * v7 = ClipRectIntersection(&v50, (int *)aP1->__pad_0, v6, 0, 0); /*0x7bb08f*/
   int v46[4]; // [esp+3Ch] [ebp-3Ch] BYREF

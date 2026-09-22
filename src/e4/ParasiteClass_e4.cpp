@@ -365,7 +365,7 @@ LABEL_47:
               IUnknown *v35 = this->q028; /*0x629da3*/
               if ( v35 ) /*0x629da8*/
               {
-                int v36 = (*(int (__thiscall **)(int))(*(_DWORD *)v35 + 444))(v35); /*0x629db8*/
+                int v36 = v35->GetCellCoords(); /*0x629db8*/
                 if ( this->q028 != v34[51] ) /*0x629dbf*/
                 {
                   BuildingClass::AimTurret(v34, this->q028); /*0x629dc4*/
@@ -608,7 +608,7 @@ int ParasiteClass::CanExistOnVictimCell()
   IUnknown *v2 = this->q028; /*0x62ab44*/
   if ( !v2 ) /*0x62ab49*/
     return 0; /*0x62ab4f*/
-  if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v2 + 84))(v2) ) /*0x62ab52*/
+  if ( v2->IsHeightAboveThreshold() ) /*0x62ab52*/
     return 0; /*0x62ab5d*/
   if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->creationFrame + 132))(this->creationFrame) + 3278) ) /*0x62ab69*/
     goto LABEL_20; /*0x62ab69*/

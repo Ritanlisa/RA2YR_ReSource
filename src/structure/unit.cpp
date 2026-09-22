@@ -14124,7 +14124,7 @@ LABEL_51:
         AbstractClass *v40 = this->focus;
         LOBYTE(v68) = v39;
   _BYTE v80[12]; // [esp+90h] [ebp-3Ch] BYREF
-        _DWORD * v41 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v40 + 72))(v40, v80);
+        _DWORD * v41 = (_DWORD *)v40->GetInvalidCoord(v80);
         void * v42 = Coord::To_Cell(DataGlobal_87F7E8, v41);
         int v43 = this->FootClass_field_5DC;
         int v44 = v68;

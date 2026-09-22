@@ -8920,7 +8920,7 @@ LABEL_30:
       if ( v2 > -1 && dword_81FFB0 != v2 ) /*0x4a8393*/
       {
         dword_81FFB0 = v2; /*0x4a8395*/
-        return (*(int (__thiscall **)(void *, int))(*(_DWORD *)v3 + 8))(v3, v2); /*0x4a83aa*/
+        return v3->LoadScenarioMixFiles(v2); /*0x4a83aa*/
       }
       return 1; /*0x4a8393*/
     }

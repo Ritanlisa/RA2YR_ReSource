@@ -4470,7 +4470,7 @@ LABEL_45:
   {
     v2[29].__tail_0[0] = 0; /*0x543727*/
     if ( v2 ) /*0x54372b*/
-      (*(void (__thiscall **)(IsometricTileClass *, int))(*(_DWORD *)v2 + 32))(v2, 1); /*0x543733*/
+      v2->COMStub_8(1); /*0x543733*/
   }
   return 1; /*0x543736*/
 }
@@ -4768,7 +4768,7 @@ LABEL_5:
         this->q0D0 = v2; /*0x5b3346*/
         break; /*0x5b334d*/
       case 0xA: /*0x5b30c1*/
-        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 548))(this); /*0x5b31ba*/
+        v2 = this->COMStub_137(); /*0x5b31ba*/
         *v4 = g_CurrentFrame; /*0x5b31c7*/
         this->q0CC = v6; /*0x5b31cd*/
         this->q0D0 = v2; /*0x5b31d0*/
@@ -5489,7 +5489,7 @@ namespace ra2 { namespace game { int ObjectClass::DetectCloaked() {
     {
       this->q029 = v7; /*0x5f3f60*/
     }
-    if ( (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 456))(this) <= 0 ) /*0x5f3f72*/
+    if ( this->GetZAboveGround() <= 0 ) /*0x5f3f72*/
     {
       (*(void (__thiscall **)(#374 *, _DWORD))(this->q073)(this, 0); /*0x5f3f7a*/
       v9 = *(ObjectClass **)this; /*0x5f3f80*/
@@ -5989,7 +5989,7 @@ LABEL_23:
           result = (*(int (__thiscall **)(#374 *, IUnknown *, int))(this->q0D8)(this, v1, 128); /*0x5f5a3d*/
           if ( (_BYTE)result ) /*0x5f5a45*/
           {
-            (*(void (__thiscall **)(#374 *, IUnknown *))(*(_DWORD *)this + 436))(this, v1); /*0x5f5a50*/
+            this->SetPosition(v1); /*0x5f5a50*/
             if ( (*(int (__thiscall **)(#374 *))(this->fallRate)(this) == 8 ) /*0x5f5a60*/
             {
               result = __2_YAPAXI_Z(0x1C8u); /*0x5f5a67*/

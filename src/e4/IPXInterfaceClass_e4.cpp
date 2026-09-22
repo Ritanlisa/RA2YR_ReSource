@@ -111,7 +111,7 @@ int IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned in
       if ( HIWORD(fromlen) ) /*0x7b140c*/
       {
 LABEL_6:
-        (*(void (__thiscall **)(u_short *, _DWORD))(*(_DWORD *)this + 36))(this, this->q3F06C); /*0x7b1411*/
+        this->GetAddress_0(this->q3F06C); /*0x7b1411*/
         return 0; /*0x7b1429*/
       }
       if ( this->LocalNode ) /*0x7b142c*/
@@ -171,7 +171,7 @@ LABEL_6:
   }
   if ( HIWORD(fromlen) ) /*0x7b153f*/
   {
-    (*(void (__thiscall **)(u_short *, _DWORD))(*(_DWORD *)this + 36))(this, this->q3F06C); /*0x7b1550*/
+    this->GetAddress_0(this->q3F06C); /*0x7b1550*/
     return 0; /*0x7b155c*/
   }
   v11 = this->q3F06C; /*0x7b1577*/
@@ -182,7 +182,7 @@ LABEL_6:
   {
     if ( WSAGetLastError() != 10035 ) /*0x7b159e*/
     {
-      (*(void (__thiscall **)(u_short *, _DWORD))(*(_DWORD *)this + 36))(this, this->q3F06C); /*0x7b15b0*/
+      this->GetAddress_0(this->q3F06C); /*0x7b15b0*/
       return 0; /*0x7b15bc*/
     }
     return 0; /*0x7b159e*/
@@ -218,7 +218,7 @@ LABEL_6:
   v18->sectionHead[0] = v26 - 4; /*0x7b1646*/
   v18->sectionCount = this->qFC1D; /*0x7b1651*/
   qmemcpy(v18->__pad_20, this + 129084, v26 - 4); /*0x7b1657*/
-  if ( (*(unsigned __int8 (__thiscall **)(u_short *, CCINIClass *))(*(_DWORD *)this + 88))(this, v18) ) /*0x7b1665*/
+  if ( this->VerifyCRC(v18) ) /*0x7b1665*/
   {
     NetworkID::Assign(v18, (IPXManagerClass *)&a3, (int)&v27, 0); /*0x7b16d0*/
     bool v19 = this->Initialized; /*0x7b16d5*/
@@ -494,7 +494,7 @@ int IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceCla
     }
     v10 = this->q3F06C; /*0x7b25a9*/
   }
-  v15 = (*(int (__thiscall **)(int, int))(*(_DWORD *)this + 56))(this, v10); /*0x7b25b9*/
+  v15 = this->COMStub_Ret1139(v10); /*0x7b25b9*/
   SendMessageA((HWND)g_hWnd, v15, 0, 2); /*0x7b25c3*/
   return EventQueue::Process(g_BinkMoviePlayer); /*0x7b25d4*/
 }

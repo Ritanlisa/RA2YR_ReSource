@@ -25,7 +25,8 @@ from collections import defaultdict
 import sys as _sys, pathlib as _pathlib
 _sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
 from _blockspan import block_span, find_marker
-from _vtable import slot_name, load_name_ret, VT_OPEN, balance_paren, split_args
+from _vtable import (slot_name, load_name_ret, VT_OPEN, balance_paren,
+                     split_args, rewrite_vt_text, merge_load_call)
 
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'src'
@@ -260,57 +261,11 @@ def normalize(body, cls, addr):
     body = R_DEREF.sub(lambda m: rw(m, False), body)
     body = R_INDEX.sub(lambda m: rw(m, True), body)
 
-    # ---- virtual calls: (*(CC **)(RECV + SLOT))(args) -> RECV->Name(args)
-    def rewrite_vt_line(ln):
-        pos = 0
-        changed_any = False
-        while True:
-            m = VT_OPEN.search(ln, pos)
-            if not m:
-                return ln, changed_any
-            recv = m.group(1)
-            slot = int(m.group(2), 0)
-            obj = None
-            tgt = None
-            if recv in ('this', '*this'):
-                obj, tgt = 'this', env.get('this')
-            elif recv in vt_of:
-                src_obj = vt_of[recv]
-                obj = src_obj
-                tgt = env.get(src_obj) or env.get(recv)
-            elif recv in env:
-                obj, tgt = recv, env[recv]
-            name = slot_name(tgt, slot) if tgt else None
-            if not name:
-                pos = m.end()
-                continue
-            call_open = m.end() - 1
-            call_close = balance_paren(ln, call_open)
-            if call_close < 0:
-                pos = m.end()
-                continue
-            args = split_args(ln[call_open + 1:call_close])
-            first = (args[0] if args else '').strip()
-            if first == obj or first == recv:
-                args = args[1:]
-            # extend the match head left to the deref opener `(*(` so the
-            # whole construct (including the cast) is consumed
-            head = ln.rfind('(*(', 0, m.start())
-            start = head if (head >= 0 and
-                             ln[head:m.start()].count('(') >=
-                             ln[head:m.start()].count(')')) else m.start()
-            new_call = '%s->%s(%s)' % (obj, name, ', '.join(args))
-            ln = ln[:start] + new_call + ln[call_close + 1:]
-            changed_any = True
-            stats['vt_calls'] += 1
-            pos = start + len(new_call)
-
-    new_lines = []
-    for ln in body.split(chr(10)):
-        if '**)(' in ln:
-            ln, ch = rewrite_vt_line(ln)
-        new_lines.append(ln)
-    body = chr(10).join(new_lines)
+    # ---- virtual calls + load/call merge (segment-level, multi-line safe)
+    body, vt_n = rewrite_vt_text(body, cls, env, vt_of)
+    stats['vt_calls'] += vt_n
+    body, mc_n = merge_load_call(body, cls, env)
+    stats['vt_merged'] += mc_n
 
     # local retype: plain decls and merged declarations
     def ret_swap(type_and_name):
@@ -499,6 +454,7 @@ for p in sorted(SRC.rglob('*.cpp')):
 
 print('blocks normalized:', nblk)
 print('vt calls rewritten:', tot.get('vt_calls', 0))
+print('load+call merged:', tot.get('vt_merged', 0))
 print('typed vars:', tot['typed_vars'])
 print('offset rewrites (param/local receivers):', tot['offsets'])
 print('locals retyped:', tot['retyped'])

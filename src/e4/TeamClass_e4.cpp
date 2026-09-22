@@ -2396,7 +2396,7 @@ int TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
               if ( this != *(_DWORD *)(v10 + 1492) ) /*0x6eaf97*/
               {
                 _DWORD * v11 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v10 + 72))(v10, &v39); /*0x6eafa7*/
-                _DWORD * v12 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v6 + 72))(v6, v42); /*0x6eafb0*/
+                _DWORD * v12 = (_DWORD *)v6->GetInvalidCoord(v42); /*0x6eafb0*/
                 v13 = Coord::Subtract( /*0x6eafd0*/
                         v43,
                         (IUnknown *)(*v12 - *v11),
@@ -2438,7 +2438,7 @@ int TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
               if ( this != *(_DWORD *)(v15 + 1492) ) /*0x6eb096*/
               {
                 _DWORD * v16 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v15 + 72))(v15, v43); /*0x6eb0aa*/
-                _DWORD * v17 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v6 + 72))(v6, v42); /*0x6eb0b3*/
+                _DWORD * v17 = (_DWORD *)v6->GetInvalidCoord(v42); /*0x6eb0b3*/
                 v18 = Coord::Subtract( /*0x6eb0d3*/
                         &v39,
                         (IUnknown *)(*v17 - *v16),
@@ -2497,7 +2497,7 @@ int TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
           {
             if ( *(_DWORD *)&g_NetworkPlayerBuffer[4464] || (v3 = v6->q081, !(_BYTE)v3) ) /*0x6eb1f7*/
             {
-              if ( *(_BYTE *)(v6 + 1673) || (v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 44))(v6), v3 == 2) ) /*0x6eb211*/
+              if ( *(_BYTE *)(v6 + 1673) || (v3 = v6->getAltitude(), v3 == 2) ) /*0x6eb211*/
               {
                 LOBYTE(v3) = *(_BYTE *)(v6 + 981); /*0x6eb217*/
                 if ( (_BYTE)v3 ) /*0x6eb21f*/
@@ -2524,8 +2524,8 @@ int TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
                     ++v22; /*0x6eb2a5*/
                     v33 = (BuildingTypeClass *)((char *)v33 + v40); /*0x6eb2a6*/
                   }
-                  if ( *(int *)((*(int (__thiscall **)(int))(*(_DWORD *)v6 + 132))(v6) + 1504) <= 0 /*0x6eb2c8*/
-                    || (v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 132))(v6), !*(_BYTE *)(v3 + 3278)) )
+                  if ( *(int *)(v6->GetSpecialValue() + 1504) <= 0 /*0x6eb2c8*/
+                    || (v3 = v6->GetSpecialValue(), !*(_BYTE *)(v3 + 3278)) )
                   {
                     v3 = BuildingClass::SquaredDistanceTo((void *)v6, this->focus); /*0x6eb2dc*/
                     if ( !v36 || v3 < v36 ) /*0x6eb2eb*/
@@ -2760,20 +2760,20 @@ void TeamClass::UpdateMembers()
             {
               if ( !v2->FootClass_field_5A4 ) /*0x6ebb99*/
               {
-                (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v2 + 488))(v2, 2, 0); /*0x6ebbab*/
-                (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v2 + 968))(v2, 0); /*0x6ebbb7*/
-                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v2 + 1152))(v2, this->spawnCell, 1); /*0x6ebbc7*/
+                v2->MissionDispatch(2, 0); /*0x6ebbab*/
+                v2->AssignTarget_SyncLog(0); /*0x6ebbb7*/
+                v2->AssignDestination(this->spawnCell, 1); /*0x6ebbc7*/
               }
               v11 = 0; /*0x6ebbcd*/
             }
           }
-          if ( (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 388))(v2) == 16 || v2->queuedMission == 16 ) /*0x6ebbeb*/
+          if ( v2->GetPrimaryOrFallback() == 16 || v2->queuedMission == 16 ) /*0x6ebbeb*/
             v11 = 0; /*0x6ebbed*/
           if ( !v2->isAliveFlag /*0x6ebc5c*/
             || !v2->health
             || !g_IKnowWhatImDoing && v2->inLimbo
-            || !v2->isTeamLeader && (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) != 2
-            || (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 388))(v2) == 16
+            || !v2->isTeamLeader && v2->getAltitude() != 2
+            || v2->GetPrimaryOrFallback() == 16
             || v2->queuedMission == 16 )
           {
             goto LABEL_80; /*0x6ebc5c*/
@@ -2784,21 +2784,21 @@ void TeamClass::UpdateMembers()
             int v13 = *((_DWORD *)g_RulesClass_Instance + 1480); /*0x6ebca4*/
           else
             v13 = *((_DWORD *)g_RulesClass_Instance + 1479); /*0x6ebc87*/
-          if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v2 + 84))(v2) ) /*0x6ebcac*/
+          if ( v2->IsHeightAboveThreshold_0() ) /*0x6ebcac*/
             v13 *= 2; /*0x6ebcba*/
           v12 = 1; /*0x6ebcc4*/
           int v14 = ObjectClass::DistanceTo((void *)v2, this->focus); /*0x6ebcd2*/
           if ( v14 <= v13 /*0x6ebcfc*/
-            && ((*(int (__thiscall **)(int))(*(_DWORD *)v2 + 456))(v2) >= 0
+            && (v2->GetZAboveGround() >= 0
   _BYTE v17[8]; // [esp+4Ah] [ebp-1Ch] BYREF
              || *(_DWORD *)ScriptClass::GetNextAction(v17) == 3) )
           {
-            if ( (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) != 2 ) /*0x6ebd0c*/
+            if ( v2->getAltitude() != 2 ) /*0x6ebd0c*/
               break; /*0x6ebd0c*/
-            if ( (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 464))(v2) <= 0 ) /*0x6ebd1a*/
+            if ( v2->GetMember41() <= 0 ) /*0x6ebd1a*/
               break; /*0x6ebd1a*/
   _BYTE v19[12]; // [esp+5Ah] [ebp-Ch] BYREF
-            _DWORD * v7 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v2 + 72))(v2, v19); /*0x6ebd25*/
+            _DWORD * v7 = (_DWORD *)v2->GetCoords_0(v19); /*0x6ebd25*/
             if ( Coord::To_Cell(&DataGlobal_87F7E8, v7) == this->focus /*0x6ebd48*/
   _BYTE v18[8]; // [esp+52h] [ebp-14h] BYREF
               || *(_DWORD *)ScriptClass::GetNextAction(v18) == 3 )
@@ -2810,33 +2810,33 @@ void TeamClass::UpdateMembers()
             goto LABEL_55; /*0x6ebdf1*/
           if ( v2->FootClass_field_bool_68E ) /*0x6ebdf3*/
           {
-            (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v2 + 968))(v2, 0); /*0x6ebe07*/
+            v2->AssignTarget_SyncLog(0); /*0x6ebe07*/
 LABEL_55:
-            if ( (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 388))(v2) != 2 ) /*0x6ebe1a*/
+            if ( v2->GetPrimaryOrFallback() != 2 ) /*0x6ebe1a*/
             {
-              (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v2 + 488))(v2, 2, 0); /*0x6ebe24*/
-              if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v2 + 512))(v2) ) /*0x6ebe2e*/
-                (*(void (__thiscall **)(int))(*(_DWORD *)v2 + 492))(v2); /*0x6ebe3c*/
+              v2->MissionDispatch(2, 0); /*0x6ebe24*/
+              if ( v2->getCurrentMission() ) /*0x6ebe2e*/
+                v2->AdvanceState(); /*0x6ebe3c*/
             }
             if ( !v2->FootClass_field_5A4 ) /*0x6ebe42*/
-              (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v2 + 1152))(v2, this->focus, 1); /*0x6ebe56*/
+              v2->AssignDestination(this->focus, 1); /*0x6ebe56*/
             int v8 = v2->FootClass_field_5A4; /*0x6ebe5c*/
             if ( v8 != this->focus /*0x6ebe9a*/
-              && (*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v2 + 132))(v2) + 3434)
+              && (*(_BYTE *)(v2->Vt34Thunk() + 3434)
                || v8 != this->focus
-               && (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) == 2
-               && v8 == (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 444))(v2)) )
+               && v2->getAltitude() == 2
+               && v8 == v2->GetCellCoords()) )
             {
-              (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v2 + 1152))(v2, this->focus, 1); /*0x6ebea6*/
+              v2->AssignDestination(this->focus, 1); /*0x6ebea6*/
             }
             v11 = 0; /*0x6ebeac*/
 LABEL_67:
   bool v9; // bl
-            v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) == 2 /*0x6ebecf*/
-              && v2->FootClass_field_5A4 == (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 444))(v2);
+            v9 = v2->getAltitude() == 2 /*0x6ebecf*/
+              && v2->FootClass_field_5A4 == v2->GetCellCoords();
   bool v10; // al
             v10 = (v2->abstractFlags & 1) != 0 /*0x6ebefb*/
-               && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v2 + 132))(v2) + 3434)
+               && *(_BYTE *)(v2->Vt34Thunk() + 3434)
                && v14 < v13;
             if ( v2->FootClass_field_5A4 && !v9 && !v10 ) /*0x6ebf11*/
               v11 = 0; /*0x6ebf13*/
@@ -2853,7 +2853,7 @@ LABEL_80:
             return; /*0x6ebf3e*/
           }
         }
-        if ( (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 388))(v2) == 2 ) /*0x6ebd5b*/
+        if ( v2->GetPrimaryOrFallback() == 2 ) /*0x6ebd5b*/
         {
           if ( !v2->FootClass_field_5A4 ) /*0x6ebd61*/
             goto LABEL_87; /*0x6ebd61*/
@@ -2866,8 +2866,8 @@ LABEL_80:
 LABEL_87:
               if ( !v2->q2B4 ) /*0x6ebdad*/
               {
-                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v2 + 1152))(v2, 0, 1); /*0x6ebdc3*/
-                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v2 + 1156))(v2, 0, 1); /*0x6ebdd1*/
+                v2->AssignDestination(0, 1); /*0x6ebdc3*/
+                v2->ValidatePlacement(0, 1); /*0x6ebdd1*/
               }
             }
           }
@@ -2900,7 +2900,7 @@ int TeamClass::ProcessMemberPositions()
         if ( v3->isAliveFlag /*0x6ebfc3*/
           && v3->health
           && (g_IKnowWhatImDoing || !v3->inLimbo)
-          && (v3->isTeamLeader || (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) == 2) )
+          && (v3->isTeamLeader || v3->getAltitude() == 2) )
         {
   _DWORD v14[3]; // [esp+24h] [ebp-2Ch] BYREF
           int v4 = *SessionClass::GetEntry(this->currentScript, v14); /*0x6ebfd6*/
@@ -2908,10 +2908,10 @@ int TeamClass::ProcessMemberPositions()
             int v5 = g_RulesClass_Instance[1].?[1]; /*0x6ebff5*/
           else
             v5 = g_RulesClass_Instance[1].?[0]; /*0x6ebfe8*/
-          if ( (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) == 2 ) /*0x6ec005*/
+          if ( v3->getAltitude() == 2 ) /*0x6ec005*/
             v5 *= 3; /*0x6ec007*/
           if ( *(_BYTE *)(this->buildingType + 167) /*0x6ec01c*/
-            && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v3 + 1248))(v3) )
+            && !v3->vt_entry_4E0() )
           {
             v5 /= 3; /*0x6ec034*/
           }
@@ -2921,7 +2921,7 @@ int TeamClass::ProcessMemberPositions()
   _BYTE v17[12]; // [esp+38h] [ebp-18h] BYREF
                            v17);
   _BYTE v18[12]; // [esp+44h] [ebp-Ch] BYREF
-          _DWORD * v7 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v3 + 72))(v3, v18); /*0x6ec04e*/
+          _DWORD * v7 = (_DWORD *)v3->GetCoords_0(v18); /*0x6ec04e*/
           int v8 = *v7 - *v6; /*0x6ec055*/
           int v9 = v7[1]; /*0x6ec057*/
           int v10 = v7[2]; /*0x6ec05a*/
@@ -2932,18 +2932,18 @@ int TeamClass::ProcessMemberPositions()
           double v12 = Math::Sqrt((double)v8 * (double)v8 + (double)v15 * (double)v15 + (double)v11 * (double)v11); /*0x6ec09b*/
           if ( (int)Math::RoundToInt(v12) <= v5 ) /*0x6ec0aa*/
           {
-            if ( (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 388))(v3) != 5 ) /*0x6ec0e8*/
+            if ( v3->GetPrimaryOrFallback() != 5 ) /*0x6ec0e8*/
             {
-              (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v3 + 488))(v3, 5, 0); /*0x6ec0f2*/
-              (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v3 + 1152))(v3, 0, 1); /*0x6ec100*/
+              v3->MissionDispatch(5, 0); /*0x6ec0f2*/
+              v3->AssignDestination(0, 1); /*0x6ec100*/
             }
           }
           else
           {
             if ( !v3->FootClass_field_5A4 ) /*0x6ec0ac*/
             {
-              (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v3 + 488))(v3, 2, 0); /*0x6ec0be*/
-              (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v3 + 1152))(v3, this->unknown38, 1); /*0x6ec0ce*/
+              v3->MissionDispatch(2, 0); /*0x6ec0be*/
+              v3->AssignDestination(this->unknown38, 1); /*0x6ec0ce*/
             }
             v13 = 1; /*0x6ec0d4*/
           }

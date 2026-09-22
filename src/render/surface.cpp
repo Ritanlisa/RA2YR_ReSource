@@ -1395,14 +1395,14 @@ int XSurface::SetPixel(const Point2D& point, uint32_t color)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  _WORD * v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+  _WORD * v4 = (_WORD *)this->Lock(*a2, a2[1]);
   if ( !v4 )
     return 0;
   if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
     *v4 = a3;
   else
     *(_BYTE *)v4 = a3;
-  (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+  this->Unlock();
   return 1;
 }
 
@@ -1467,17 +1467,17 @@ int XSurface::GetPixel(const Point2D& point)
 {
 
   int v3 = 0;
-  _WORD * v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+  _WORD * v4 = (_WORD *)this->Lock(*a2, a2[1]);
   if ( v4 )
   {
     if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
     {
       LOWORD(v3) = *v4;
-      (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+      this->Unlock();
       return v3;
     }
     v3 = *(unsigned __int8 *)v4;
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+    this->Unlock();
   }
   return v3;
 }
@@ -1550,14 +1550,14 @@ int XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStru
     return 0;
   if ( v5 >= v6 + a4[3] )
     return 0;
-  _WORD * v7 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+  _WORD * v7 = (_WORD *)this->Lock(*a2, a2[1]);
   if ( !v7 )
     return 0;
   if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
     *v7 = a3;
   else
     *(_BYTE *)v7 = a3;
-  (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+  this->Unlock();
   return 1;
 }
 
@@ -1648,17 +1648,17 @@ int XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip
     int v6 = a3[1];
     if ( v5 >= v6 && v5 < v6 + a3[3] )
     {
-      _WORD * v7 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+      _WORD * v7 = (_WORD *)this->Lock(*a2, a2[1]);
       if ( v7 )
       {
         if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
         {
           LOWORD(v4) = *v7;
-          (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+          this->Unlock();
           return v4;
         }
         v4 = *(unsigned __int8 *)v7;
-        (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this);
+        this->Unlock();
       }
     }
   }
@@ -1992,7 +1992,7 @@ int XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
 
   _BYTE v7[16]; // [esp+4h] [ebp-10h] BYREF
-  int v5 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v7);
+  int v5 = this->GetRect(v7);
   return XSurface::DrawLineEx(this, v5, a2, a3, a4);
 }
 
@@ -2276,7 +2276,7 @@ int XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 {
 
   _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
-  int v4 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v6);
+  int v4 = this->GetRect(v6);
   return XSurface::DrawRectEx(this, v4, a2, a3);
 }
 
@@ -2387,7 +2387,7 @@ int XSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
 
   _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
-  int * v4 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v6);
+  int * v4 = (int *)this->GetRect(v6);
   return XSurface::FillRectEx(this, a2, v4, a3);
 }
 

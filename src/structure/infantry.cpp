@@ -697,11 +697,7 @@ LABEL_42:
           {
             v5 = this->q169;
             if ( !v5 )
-              LOBYTE(v5) = (*(int (__thiscall **)(int *, int *, int, _DWORD))(*this + 372))(
-                             this,
-                             &DataGlobal_A8F200,
-                             1,
-                             0);
+              LOBYTE(v5) = this->FindMoveTarget(&DataGlobal_A8F200, 1, 0);
           }
         }
       }
@@ -1952,15 +1948,7 @@ int InfantryClass::FireAtTargetPos(int a2, int a3, int a4)
   int v6; // [esp+0h] [ebp-4h] BYREF
   v4 = *this;
   v6 = *(_DWORD *)(*(this + 432) + 160);
-  return (*(int (__thiscall **)(int *, int *, _DWORD, _DWORD, _DWORD, int, _DWORD, int))(v4 + 364))(
-           this,
-           &v6,
-           0,
-           *(_DWORD *)(DataGlobal_87F7E8[7806] + 4008),
-           0,
-           1,
-           0,
-           a3);
+  return this->ProcessDeployment(&v6, 0, *(_DWORD *)(DataGlobal_87F7E8[7806] + 4008), 0, 1, 0, a3);
 }
 
 /* ASM:

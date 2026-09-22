@@ -127,14 +127,8 @@ LABEL_14:
   _BYTE v117[4]; // [esp+C4h] [ebp-48h] BYREF
           int * v17 = (int *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)this->q169 + 72))(this->q169, v117);
   int *v18; // eax
-          v18 = (int *)(*(int (__thiscall **)(int *, _BYTE *, _DWORD, _DWORD, _DWORD, _DWORD))(*this + 176))(
-                         this,
-  _BYTE v115[4]; // [esp+ACh] [ebp-60h] BYREF
-                         v115,
-                         0,
-                         0,
-                         0,
-                         0);
+          v18 = (int *)this->ComputeTransform(_BYTE v115[4]; // [esp+ACh] [ebp-60h] BYREF
+                         v115, 0, 0, 0, 0);
           if ( *v18 == *v17 && v18[1] == v17[1] )
             LOWORD(v100) = 0;
           double v19 = Math::CalcAngle((double)v18[1] - (double)v17[1], (double)*v17 - (double)*v18);

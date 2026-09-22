@@ -249,7 +249,7 @@ LABEL_71:
       *((_BYTE *)v13 + 23) = v39; /*0x7b3fa0*/
       *((_BYTE *)v13 + 24) = 0; /*0x7b3fa6*/
       qmemcpy(v13 + 8, this + 258168, v27 - 4); /*0x7b3fab*/
-      if ( !(*(unsigned __int8 (__thiscall **)(char *, _DWORD *))(*(_DWORD *)this + 88))(this, v13) ) /*0x7b3fb9*/
+      if ( !this->VerifyCRC(v13) ) /*0x7b3fb9*/
       {
         v13[1] = *(_DWORD *)&netshort.sa_data[2]; /*0x7b3fc4*/
         ntohs(*(u_short *)netshort.sa_data); /*0x7b3fd4*/

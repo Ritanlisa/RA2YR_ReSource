@@ -240,7 +240,7 @@ int GameClass::GetRelatedObject()
 
   Pipe *v1 = this->q004; /*0x631d30*/
   if ( v1 ) /*0x631d35*/
-    return (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 4))(v1); /*0x631d39*/
+    return v1->GetRelatedObject(); /*0x631d39*/
   else
     return 0; /*0x631d3c*/
 }

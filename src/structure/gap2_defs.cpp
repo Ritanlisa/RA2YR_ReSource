@@ -1109,12 +1109,8 @@ namespace gamemd { int BuildingClass::HandleFactoryCommand() {
       result = (int)aP1; /*0x443424*/
       if ( aP1 ) /*0x44342d*/
       {
-        result = (*(int (__thiscall **)(#377 *, int, IUnknown *, _DWORD, _DWORD))(*(_DWORD *)this + 888))( /*0x44343c*/
-                   this,
-                   1,
-                   aP1,
-                   0,
-                   0);
+        result = this->ExecuteMissionCmd(/*0x44343c*/
+                   this, 1, aP1, 0, 0);
         LOBYTE(result) = 1; /*0x443442*/
         return result; /*0x44344d*/
       }
@@ -1136,19 +1132,15 @@ namespace gamemd { int BuildingClass::HandleFactoryCommand() {
         }
       }
       if ( *(_BYTE *)(this->gattlingValue + 3281) ) /*0x4434ff*/
-        (*(void (__thiscall **)(#377 *, int, IUnknown *, _DWORD, _DWORD))(*(_DWORD *)this + 888))(this, 16, aP1, 0, 0); /*0x443514*/
+        this->ExecuteMissionCmd(16, aP1, 0, 0); /*0x443514*/
       v6 = (BuildingTypeClass *)this->gattlingValue; /*0x44351a*/
       if ( v6->UnitAbsorb || v6->InfantryAbsorb ) /*0x44352a*/
-        (*(void (__thiscall **)(#377 *, int, IUnknown *, _DWORD, _DWORD))(*(_DWORD *)this + 888))(this, 16, aP1, 0, 0); /*0x44353f*/
+        this->ExecuteMissionCmd(16, aP1, 0, 0); /*0x44353f*/
       result = (*(int (__thiscall **)(#377 *))(this->q408)(this); /*0x443549*/
       if ( result > 0 ) /*0x443551*/
       {
-        result = (*(int (__thiscall **)(#377 *, int, IUnknown *, _DWORD, _DWORD))(*(_DWORD *)this + 888))( /*0x443562*/
-                   this,
-                   16,
-                   aP1,
-                   0,
-                   0);
+        result = this->ExecuteMissionCmd(/*0x443562*/
+                   this, 16, aP1, 0, 0);
         LOBYTE(result) = 1; /*0x443568*/
         return result; /*0x443573*/
       }
@@ -3734,7 +3726,7 @@ namespace gamemd { int InfantryClass::Update() {
   }
   v6 = this->auxParticles2; /*0x51bb6e*/
   if ( v6 ) /*0x51bb76*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 92))(v6); /*0x51bb7a*/
+    v6->ProcessTimeWarp(); /*0x51bb7a*/
   if ( !(*(unsigned __int8 (__thiscall **)(int))(this->isDisguisedFlag)(this) /*0x51bb99*/
     && (!(*(unsigned __int8 (__thiscall **)(int))(this->q1D4)(this) || !this->firingParticles) )
   {
