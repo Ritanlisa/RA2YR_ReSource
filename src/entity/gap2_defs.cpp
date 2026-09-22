@@ -988,10 +988,10 @@ namespace gamemd { int AnimClass::setLoopCount() {
       this->vt311(0);
       this->vt122(5, 0);
       v3 = this->q520;
-      if ( !*(_BYTE *)(v3 + 5823) )
+      if ( !v3->LaserFence )
       {
         LOBYTE(v4) = 0;
-        HIBYTE(v4) = *(_BYTE *)(v3 + 3800);
+        HIBYTE(v4) = v3->OccupyHeight;
         v7 = v4;
         FacingClass::Set_SyncLog(&v7);
       }
@@ -1238,27 +1238,27 @@ char __thiscall BulletClass::ProcessNukeExplosion(int *this)
   float v184[12]; // [esp+194h] [ebp-30h] BYREF
 
   ObjectClass::DetectCloaked((#374 *)this);
-  LOBYTE(v2) = *((_BYTE *)this + 144);
+  LOBYTE(v2) = this->q090;
   if ( !(_BYTE)v2 )
     return v2;
-  if ( !*((_BYTE *)this + 344) )
+  if ( !this->q158 )
   {
     v4 = *(this + 43);
     HIBYTE(v159) = 0;
     LOBYTE(v158) = 0;
     if ( *(_BYTE *)(v4 + 668) )
-      LOBYTE(v158) = *((_BYTE *)this + 141) == 0;
+      LOBYTE(v158) = this->isFallingDown == 0;
     if ( *(_BYTE *)(v4 + 756) || *(_BYTE *)(v4 + 757) )
     {
-      v5 = *((_BYTE *)this + 301) - 1;
-      *((_BYTE *)this + 301) = v5;
+      v5 = this->q12D - 1;
+      this->q12D = v5;
       if ( !v5 )
       {
-        v6 = *((_BYTE *)this + 300) + 1;
-        *((_BYTE *)this + 301) = *(_BYTE *)(v4 + 758);
-        *((_BYTE *)this + 300) = v6;
+        v6 = this->q12C + 1;
+        this->q12D = *(_BYTE *)(v4 + 758);
+        this->q12C = v6;
         if ( v6 > *(_BYTE *)(v4 + 757) )
-          *((_BYTE *)this + 300) = *(_BYTE *)(v4 + 756);
+          this->q12C = *(_BYTE *)(v4 + 756);
       }
     }
     v161 = *(double *)(this + 39);
@@ -1309,9 +1309,9 @@ LABEL_23:
       else if ( *(this + 68) >= 40 || (double)GroundHeight <= v171[0] + 0.5 )
       {
 LABEL_31:
-        *((_BYTE *)this + 261) = 0;
+        this->CourseLock = 0;
       }
-      v18 = *((_BYTE *)this + 261);
+      v18 = this->CourseLock;
       v19 = *(_DWORD *)(v15 + 720);
       v169 = (_DWORD *)v19;
       if ( v18 && !*(_DWORD *)(v15 + 736) )
@@ -1386,7 +1386,7 @@ LABEL_50:
           v165 = v162;
           v39 = v38 && (*(int (__thiscall **)(int))(*(_DWORD *)v38 + 44))(v38) == 2;
           LOBYTE(v40) = 0;
-          HIBYTE(v40) = *((_BYTE *)this + 261) == 0 ? v32 : 0;
+          HIBYTE(v40) = this->CourseLock == 0 ? v32 : 0;
           v41 = (char *)*(this + 43);
           LOWORD(GroundHeight) = v40;
           GroundHeight = Movement::CalcVelocity(
@@ -1409,12 +1409,12 @@ LABEL_50:
           v44 = *v12;
           *(double *)v166 = (double)GroundHeight;
           v45 = Math::Sqrt(v44 * v44 + v43 * v43 + v42 * v42) * 0.5;
-          if ( v45 >= *(double *)v166 || (*(int (__thiscall **)(int *))(*this + 456))(this) <= 0 )
+          if ( v45 >= *(double *)v166 || this->GetZAboveGround() <= 0 )
           {
             v46 = *this;
             LOBYTE(v158) = 1;
             v160 = 1;
-            if ( (*(int (__thiscall **)(int *))(v46 + 456))(this) > 0
+            if ( this->GetZAboveGround() > 0
               && !*(_BYTE *)(*(this + 43) + 660)
               && (LODWORD(v163[0]) != DataGlobal_87F7E8[31122]
                || *(_QWORD *)((char *)v163 + 4) != *(_QWORD *)&DataGlobal_87F7E8[31123]) )
@@ -1425,7 +1425,7 @@ LABEL_50:
           }
           if ( LODWORD(v163[0]) == DataGlobal_87F7E8[31122]
             && *(_QWORD *)((char *)v163 + 4) == *(_QWORD *)&DataGlobal_87F7E8[31123]
-            && (*(int (__thiscall **)(int *))(*this + 456))(this) >= *(_DWORD *)(DataGlobal_87F7E8[7806] + 1440) )
+            && this->GetZAboveGround() >= *(_DWORD *)(DataGlobal_87F7E8[7806] + 1440) )
           {
             LOBYTE(v158) = 1;
             v160 = 1;
@@ -1454,7 +1454,7 @@ LABEL_50:
           v167 = v53;
           v54 = Math::Sqrt((double)v53 * (double)v53 + (double)v52 * (double)v52 + (double)v166[0] * (double)v166[0]);
           GroundHeight = v50 - Math::RoundToInt(v54);
-          if ( !*((_BYTE *)this + 261) )
+          if ( !this->CourseLock )
           {
             v55 = *(this + 70);
             if ( v55 >= 60 )
@@ -1502,12 +1502,12 @@ LABEL_184:
           v116 = *this;
           if ( v160 == 2 )
           {
-            (*(void (__thiscall **)(int *, int))(v116 + 292))(this, 2);
+            this->UpdateMirrorState(2);
           }
           else
           {
-            (*(void (__thiscall **)(int *, int))(v116 + 292))(this, 2);
-            (*(void (__thiscall **)(int *, double *))(*this + 436))(this, &v161);
+            this->UpdateMirrorState(2);
+            this->SetPosition(&v161);
             if ( (_BYTE)v158
               || (v164 = *(double *)(this + 39),
                   v165 = *(this + 41),
@@ -1518,8 +1518,8 @@ LABEL_184:
                   (*(void (__thiscall **)(int *, double *))(v118 + 436))(this, &v164),
                   v119) )
             {
-              if ( (*(int (__thiscall **)(int *))(*this + 456))(this) < 0 )
-                (*(void (__thiscall **)(int *, _DWORD))(*this + 460))(this, 0);
+              if ( this->GetZAboveGround() < 0 )
+                this->SetZ(0);
             }
             v120 = *(this + 43);
             if ( *(int *)(v120 + 732) > 0 || *(_BYTE *)(v120 + 672) )
@@ -1586,14 +1586,14 @@ LABEL_184:
                 {
                   v136 = *this;
                   v137 = (*(int (__thiscall **)(_DWORD, double *))(*(_DWORD *)*(this + 67) + 72))(*(this + 67), v163);
-                  (*(void (__thiscall **)(int *, int))(v136 + 436))(this, v137);
+                  this->SetPosition(v137);
                 }
               }
             }
             if ( AbstractTypeClass::NameEquals(*(this + 74), aNuke) )
             {
-              if ( (*(int (__thiscall **)(int *))(*this + 456))(this) < 0 )
-                (*(void (__thiscall **)(int *, _DWORD))(*this + 460))(this, 0);
+              if ( this->GetZAboveGround() < 0 )
+                this->SetZ(0);
               Entity_Process();
               v138 = ((__int64 (__thiscall *)(int *, double *))*(_DWORD *)(*this + 440))(this, v171);
               CreateTriggerClassIfFarEnough(13, SHIDWORD(v138), *(_DWORD *)v138);
@@ -1619,7 +1619,7 @@ LABEL_184:
                     v144 = 0;
                   }
                   *(this + 85) = (int)v144;
-                  *((_BYTE *)this + 344) = 1;
+                  this->q158 = 1;
                   if ( dword_A8ED54[131613] < dword_A8ED54[131611]
                     || (BYTE1(dword_A8ED54[131612]) || !dword_A8ED54[131611])
                     && dword_A8ED54[131614] > 0
@@ -1637,7 +1637,7 @@ LABEL_184:
             }
             BulletClass::Fire((int)this, v158);
           }
-          (*(void (__thiscall **)(int *))(*this + 248))(this);
+          this->ProcessCraterFormation();
 LABEL_233:
           LOWORD(GroundHeight) = SLODWORD(v161) / 256;
           v2 = SHIDWORD(v161) / 256;
@@ -1719,7 +1719,7 @@ LABEL_233:
       v162 += v76;
       if ( v162 <= *(_DWORD *)(v77 + 700) )
       {
-        if ( (*(int (__thiscall **)(int *))(*this + 456))(this) >= 0 )
+        if ( this->GetZAboveGround() >= 0 )
         {
           v78 = Cell::GetGroundHeight(&v161) + DataGlobal_87F7E8[31135];
           if ( (*((_DWORD *)Coord::To_Cell(DataGlobal_87F7E8, &v161) + 80) & 0x100) != 0
@@ -1764,7 +1764,7 @@ LABEL_152:
       if ( (unsigned __int16)(SLODWORD(v161) / 256) == (_WORD)v99
         && (unsigned __int16)(SHIDWORD(v161) / 256) == (_WORD)v100
         && !*(_BYTE *)(*(this + 43) + 704)
-        && (*(int (__thiscall **)(int *))(*this + 456))(this) < 2 * DataGlobal_87F7E8[31138]
+        && this->GetZAboveGround() < 2 * DataGlobal_87F7E8[31138]
         || (v101 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v180),
             v102 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)v171),
             v103 = Cell::IsBridge(v101),
@@ -1772,7 +1772,7 @@ LABEL_152:
             v103)
         && !*(_BYTE *)(*(this + 43) + 704)
         && v103 == v104
-        && (*(int (__thiscall **)(int *))(*this + 456))(this) < 2 * DataGlobal_87F7E8[31138] )
+        && this->GetZAboveGround() < 2 * DataGlobal_87F7E8[31138] )
       {
         v160 = 1;
         LOBYTE(v158) = 1;
@@ -1833,7 +1833,7 @@ LABEL_152:
                *((double *)this + 29) * *((double *)this + 29)
              + *((double *)this + 30) * *((double *)this + 30)
              + *((double *)this + 31) * *((double *)this + 31)) < 10.0
-          && (*(int (__thiscall **)(int *))(*this + 456))(this) < 10 )
+          && this->GetZAboveGround() < 10 )
         {
           v160 = 1;
           goto LABEL_183;
@@ -1997,9 +1997,9 @@ LABEL_151:
         ++v3;
       }
     }
-    *((_BYTE *)this + 344) = 0;
+    this->q158 = 0;
     BulletClass::Fire((int)this, 0);
-    LOBYTE(v2) = (*(char (__thiscall **)(int *))(*this + 248))(this);
+    LOBYTE(v2) = this->ProcessCraterFormation();
   }
   return v2;
 }
@@ -4269,27 +4269,27 @@ char __thiscall BulletClass::ProcessNukeExplosion(int *this)
   float v184[12]; // [esp+194h] [ebp-30h] BYREF
 
   ObjectClass::DetectCloaked((#374 *)this);
-  LOBYTE(v2) = *((_BYTE *)this + 144);
+  LOBYTE(v2) = this->q090;
   if ( !(_BYTE)v2 )
     return v2;
-  if ( !*((_BYTE *)this + 344) )
+  if ( !this->q158 )
   {
     v4 = *(this + 43);
     HIBYTE(v159) = 0;
     LOBYTE(v158) = 0;
     if ( *(_BYTE *)(v4 + 668) )
-      LOBYTE(v158) = *((_BYTE *)this + 141) == 0;
+      LOBYTE(v158) = this->isFallingDown == 0;
     if ( *(_BYTE *)(v4 + 756) || *(_BYTE *)(v4 + 757) )
     {
-      v5 = *((_BYTE *)this + 301) - 1;
-      *((_BYTE *)this + 301) = v5;
+      v5 = this->q12D - 1;
+      this->q12D = v5;
       if ( !v5 )
       {
-        v6 = *((_BYTE *)this + 300) + 1;
-        *((_BYTE *)this + 301) = *(_BYTE *)(v4 + 758);
-        *((_BYTE *)this + 300) = v6;
+        v6 = this->q12C + 1;
+        this->q12D = *(_BYTE *)(v4 + 758);
+        this->q12C = v6;
         if ( v6 > *(_BYTE *)(v4 + 757) )
-          *((_BYTE *)this + 300) = *(_BYTE *)(v4 + 756);
+          this->q12C = *(_BYTE *)(v4 + 756);
       }
     }
     v161 = *(double *)(this + 39);
@@ -4340,9 +4340,9 @@ LABEL_23:
       else if ( *(this + 68) >= 40 || (double)GroundHeight <= v171[0] + 0.5 )
       {
 LABEL_31:
-        *((_BYTE *)this + 261) = 0;
+        this->CourseLock = 0;
       }
-      v18 = *((_BYTE *)this + 261);
+      v18 = this->CourseLock;
       v19 = *(_DWORD *)(v15 + 720);
       v169 = (_DWORD *)v19;
       if ( v18 && !*(_DWORD *)(v15 + 736) )
@@ -4417,7 +4417,7 @@ LABEL_50:
           v165 = v162;
           v39 = v38 && (*(int (__thiscall **)(int))(*(_DWORD *)v38 + 44))(v38) == 2;
           LOBYTE(v40) = 0;
-          HIBYTE(v40) = *((_BYTE *)this + 261) == 0 ? v32 : 0;
+          HIBYTE(v40) = this->CourseLock == 0 ? v32 : 0;
           v41 = (char *)*(this + 43);
           LOWORD(GroundHeight) = v40;
           GroundHeight = Movement::CalcVelocity(
@@ -4440,12 +4440,12 @@ LABEL_50:
           v44 = *v12;
           *(double *)v166 = (double)GroundHeight;
           v45 = Math::Sqrt(v44 * v44 + v43 * v43 + v42 * v42) * 0.5;
-          if ( v45 >= *(double *)v166 || (*(int (__thiscall **)(int *))(*this + 456))(this) <= 0 )
+          if ( v45 >= *(double *)v166 || this->GetZAboveGround() <= 0 )
           {
             v46 = *this;
             LOBYTE(v158) = 1;
             v160 = 1;
-            if ( (*(int (__thiscall **)(int *))(v46 + 456))(this) > 0
+            if ( this->GetZAboveGround() > 0
               && !*(_BYTE *)(*(this + 43) + 660)
               && (LODWORD(v163[0]) != DataGlobal_87F7E8[31122]
                || *(_QWORD *)((char *)v163 + 4) != *(_QWORD *)&DataGlobal_87F7E8[31123]) )
@@ -4456,7 +4456,7 @@ LABEL_50:
           }
           if ( LODWORD(v163[0]) == DataGlobal_87F7E8[31122]
             && *(_QWORD *)((char *)v163 + 4) == *(_QWORD *)&DataGlobal_87F7E8[31123]
-            && (*(int (__thiscall **)(int *))(*this + 456))(this) >= *(_DWORD *)(DataGlobal_87F7E8[7806] + 1440) )
+            && this->GetZAboveGround() >= *(_DWORD *)(DataGlobal_87F7E8[7806] + 1440) )
           {
             LOBYTE(v158) = 1;
             v160 = 1;
@@ -4485,7 +4485,7 @@ LABEL_50:
           v167 = v53;
           v54 = Math::Sqrt((double)v53 * (double)v53 + (double)v52 * (double)v52 + (double)v166[0] * (double)v166[0]);
           GroundHeight = v50 - Math::RoundToInt(v54);
-          if ( !*((_BYTE *)this + 261) )
+          if ( !this->CourseLock )
           {
             v55 = *(this + 70);
             if ( v55 >= 60 )
@@ -4533,12 +4533,12 @@ LABEL_184:
           v116 = *this;
           if ( v160 == 2 )
           {
-            (*(void (__thiscall **)(int *, int))(v116 + 292))(this, 2);
+            this->UpdateMirrorState(2);
           }
           else
           {
-            (*(void (__thiscall **)(int *, int))(v116 + 292))(this, 2);
-            (*(void (__thiscall **)(int *, double *))(*this + 436))(this, &v161);
+            this->UpdateMirrorState(2);
+            this->SetPosition(&v161);
             if ( (_BYTE)v158
               || (v164 = *(double *)(this + 39),
                   v165 = *(this + 41),
@@ -4549,8 +4549,8 @@ LABEL_184:
                   (*(void (__thiscall **)(int *, double *))(v118 + 436))(this, &v164),
                   v119) )
             {
-              if ( (*(int (__thiscall **)(int *))(*this + 456))(this) < 0 )
-                (*(void (__thiscall **)(int *, _DWORD))(*this + 460))(this, 0);
+              if ( this->GetZAboveGround() < 0 )
+                this->SetZ(0);
             }
             v120 = *(this + 43);
             if ( *(int *)(v120 + 732) > 0 || *(_BYTE *)(v120 + 672) )
@@ -4617,14 +4617,14 @@ LABEL_184:
                 {
                   v136 = *this;
                   v137 = (*(int (__thiscall **)(_DWORD, double *))(*(_DWORD *)*(this + 67) + 72))(*(this + 67), v163);
-                  (*(void (__thiscall **)(int *, int))(v136 + 436))(this, v137);
+                  this->SetPosition(v137);
                 }
               }
             }
             if ( AbstractTypeClass::NameEquals(*(this + 74), aNuke) )
             {
-              if ( (*(int (__thiscall **)(int *))(*this + 456))(this) < 0 )
-                (*(void (__thiscall **)(int *, _DWORD))(*this + 460))(this, 0);
+              if ( this->GetZAboveGround() < 0 )
+                this->SetZ(0);
               Entity_Process();
               v138 = ((__int64 (__thiscall *)(int *, double *))*(_DWORD *)(*this + 440))(this, v171);
               CreateTriggerClassIfFarEnough(13, SHIDWORD(v138), *(_DWORD *)v138);
@@ -4650,7 +4650,7 @@ LABEL_184:
                     v144 = 0;
                   }
                   *(this + 85) = (int)v144;
-                  *((_BYTE *)this + 344) = 1;
+                  this->q158 = 1;
                   if ( dword_A8ED54[131613] < dword_A8ED54[131611]
                     || (BYTE1(dword_A8ED54[131612]) || !dword_A8ED54[131611])
                     && dword_A8ED54[131614] > 0
@@ -4668,7 +4668,7 @@ LABEL_184:
             }
             BulletClass::Fire((int)this, v158);
           }
-          (*(void (__thiscall **)(int *))(*this + 248))(this);
+          this->ProcessCraterFormation();
 LABEL_233:
           LOWORD(GroundHeight) = SLODWORD(v161) / 256;
           v2 = SHIDWORD(v161) / 256;
@@ -4750,7 +4750,7 @@ LABEL_233:
       v162 += v76;
       if ( v162 <= *(_DWORD *)(v77 + 700) )
       {
-        if ( (*(int (__thiscall **)(int *))(*this + 456))(this) >= 0 )
+        if ( this->GetZAboveGround() >= 0 )
         {
           v78 = Cell::GetGroundHeight(&v161) + DataGlobal_87F7E8[31135];
           if ( (*((_DWORD *)Coord::To_Cell(DataGlobal_87F7E8, &v161) + 80) & 0x100) != 0
@@ -4795,7 +4795,7 @@ LABEL_152:
       if ( (unsigned __int16)(SLODWORD(v161) / 256) == (_WORD)v99
         && (unsigned __int16)(SHIDWORD(v161) / 256) == (_WORD)v100
         && !*(_BYTE *)(*(this + 43) + 704)
-        && (*(int (__thiscall **)(int *))(*this + 456))(this) < 2 * DataGlobal_87F7E8[31138]
+        && this->GetZAboveGround() < 2 * DataGlobal_87F7E8[31138]
         || (v101 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v180),
             v102 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)v171),
             v103 = Cell::IsBridge(v101),
@@ -4803,7 +4803,7 @@ LABEL_152:
             v103)
         && !*(_BYTE *)(*(this + 43) + 704)
         && v103 == v104
-        && (*(int (__thiscall **)(int *))(*this + 456))(this) < 2 * DataGlobal_87F7E8[31138] )
+        && this->GetZAboveGround() < 2 * DataGlobal_87F7E8[31138] )
       {
         v160 = 1;
         LOBYTE(v158) = 1;
@@ -4864,7 +4864,7 @@ LABEL_152:
                *((double *)this + 29) * *((double *)this + 29)
              + *((double *)this + 30) * *((double *)this + 30)
              + *((double *)this + 31) * *((double *)this + 31)) < 10.0
-          && (*(int (__thiscall **)(int *))(*this + 456))(this) < 10 )
+          && this->GetZAboveGround() < 10 )
         {
           v160 = 1;
           goto LABEL_183;
@@ -5028,9 +5028,9 @@ LABEL_151:
         ++v3;
       }
     }
-    *((_BYTE *)this + 344) = 0;
+    this->q158 = 0;
     BulletClass::Fire((int)this, 0);
-    LOBYTE(v2) = (*(char (__thiscall **)(int *))(*this + 248))(this);
+    LOBYTE(v2) = this->ProcessCraterFormation();
   }
   return v2;
 }
@@ -7462,13 +7462,13 @@ namespace gamemd { int BulletClass::ProcessObstacle(void* a1, void* a2) {
           {
             v24 = *this;
             v25 = (*(int (__thiscall **)(_DWORD *, double *))(*FirstObstacle + 72))(FirstObstacle, &a0_4);
-            (*(void (__thiscall **)(_DWORD *, int))(v24 + 436))(this, v25);
+            this->SetPosition(v25);
           }
           else
           {
-            (*(void (__thiscall **)(_DWORD *, int *))(*this + 436))(this, &a1);
+            this->SetPosition(&a1);
           }
-          (*(void (__thiscall **)(_DWORD *, int *))(*this + 436))(this, &a1);
+          this->SetPosition(&a1);
           this->q110 = 0;
           if ( *((double *)this + 29) == 0.0 && *((double *)this + 30) == 0.0 && *((double *)this + 31) == 0.0 )
           {
@@ -7489,7 +7489,7 @@ namespace gamemd { int BulletClass::ProcessObstacle(void* a1, void* a2) {
           GroundHeight = Cell::GetGroundHeight((IUnknown *)&v37[1]);
           v22 = *this;
           v38 = GroundHeight;
-          (*(void (__thiscall **)(_DWORD *, _DWORD *))(v22 + 436))(this, &v37[1]);
+          this->SetPosition(&v37[1]);
         }
       }
       v27 = this->Target;
@@ -7578,7 +7578,7 @@ namespace gamemd { bool BulletClass::CheckBulletCollision(void* a1) {
         }
         v4 = aP1a;
       }
-      if ( (*(int (__thiscall **)(_DWORD *))(*this + 456))(this) <= -4 * DataGlobal_89DE70 )
+      if ( this->GetZAboveGround() <= -4 * DataGlobal_89DE70 )
         return 1;
       v11 = (AbstractClass *)this->Target;
       if ( v11 )
@@ -7591,7 +7591,7 @@ namespace gamemd { bool BulletClass::CheckBulletCollision(void* a1) {
           v15[0] = v12;
           if ( v13 < *(_DWORD *)((*(int (__thiscall **)(AbstractClass *, _DWORD *))(*(_DWORD *)v11->__pad_0 + 88))(v11, v15)
                                + 8)
-            && (*(int (__thiscall **)(_DWORD *))(*this + 456))(this) < 0 )
+            && this->GetZAboveGround() < 0 )
           {
             return 1;
           }
@@ -11895,7 +11895,7 @@ namespace gamemd { void ParticleClass::CheckWaterImpact() {
       }
       else
       {
-        (*(void (__thiscall **)(_DWORD *, int *))(*this + 436))(this, &v15);
+        this->SetPosition(&v15);
       }
 }
 } }
@@ -12358,11 +12358,11 @@ namespace gamemd { void ParticleSystemClass::UpdateAllParticles() {
 
       v1 = this;
       for ( i = this->Owner - 1; i >= 0; --i )
-        ParticleClass::Dispatch(*(_DWORD *)(*(_DWORD *)(v1 + 192) + 4 * i));
-      v3 = *(_DWORD *)(v1 + 204) - 1;
+        ParticleClass::Dispatch(*(_DWORD *)(v1->TargetCoords + 4 * i));
+      v3 = v1->Owner - 1;
       for ( j = v3; v3 >= 0; j = v3 )
       {
-        v4 = *(_DWORD *)(v1 + 192);
+        v4 = v1->TargetCoords;
         v5 = *(_DWORD *)(v4 + 4 * v3);
         if ( *(_BYTE *)(v5 + 305) )
         {
@@ -13561,12 +13561,12 @@ namespace gamemd { void TerrainClass::Draw(void* a1, void* a2) {
       int v19;
       int v20;
 
-      v17 = *(_DWORD *)(*(int (__thiscall **)(unsigned int *, _DWORD **))(*this + 440))(this, &v18);
+      v17 = *(_DWORD *)this->GetCellCoords_Alt(&v18);
       v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v17);
       v5 = *this;
       v6 = (int)v4;
       v18 = v4;
-      v16 = (*(int (__thiscall **)(unsigned int *))(v5 + 108))(this);
+      v16 = this->HasC4();
       if ( v16 )
       {
         if ( *(_BYTE *)(this->q0C8 + 691) )
@@ -13585,7 +13585,7 @@ namespace gamemd { void TerrainClass::Draw(void* a1, void* a2) {
         v9 = *this;
         v19 = *a2;
         v20 = v8;
-        v10 = (*(int (__thiscall **)(unsigned int *))(v9 + 464))(this);
+        v10 = this->GetMember41();
         v11 = -(int)ZCoordToScreenY(v10);
         if ( !*(_DWORD *)(v6 + 52) )
           TacticalClass::SetView(v6, 0, 0x10000, 0, 1000, 1000, 1000);
