@@ -776,7 +776,7 @@ LABEL_47:
 
 // 0x663DB0
 namespace gamemd {
-int E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
+AbstractClass * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

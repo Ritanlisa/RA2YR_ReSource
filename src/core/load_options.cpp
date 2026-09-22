@@ -365,7 +365,7 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 
 // IDA 0x55A1F0: CopyItems — resize vector, preserve existing entries
 // 0x55a1f0
-int LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
+AbstractClass * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x55a1f0
 {

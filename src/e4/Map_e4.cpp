@@ -52,7 +52,7 @@
 
 // 0x539760
 namespace gamemd {
-void sub_539760()
+AbstractClass * sub_539760()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -355,7 +355,7 @@ LABEL_5:
 
 // 0x68C050
 namespace gamemd {
-void sub_68C050()
+AbstractClass * sub_68C050()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -596,7 +596,7 @@ void sub_5C98A0()
 
 // 0x5EC880
 namespace gamemd {
-void Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
+SkirmishDialog * Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -832,7 +832,7 @@ void Map_Helper_59BAB0()
 
 // 0x5A7D00
 namespace gamemd {
-void sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
+AbstractClass * sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1319,7 +1319,7 @@ LABEL_7:
 
 // 0x5549A0
 namespace gamemd {
-void sub_5549A0()
+AbstractClass * sub_5549A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1568,7 +1568,7 @@ void * Map_WorldDominationTour_20::Constructor_0(char a2)
 
 // 0x76A3F0
 namespace gamemd {
-int Map_WorldDominationTour_43::Release(int a2, char * a3)
+AbstractClass * Map_WorldDominationTour_43::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

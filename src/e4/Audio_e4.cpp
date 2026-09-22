@@ -35,7 +35,7 @@ int Audio::GetChannelStatus()
     return -2146500608; /*0x40272c*/
   if ( !*(_DWORD *)(this + 360) ) /*0x402733*/
     return -2147024896; /*0x40273d*/
-  Audio::InitChannels((char *)(this + 16)); /*0x402748*/
+  ((Audio *)((char *)this + 16)).InitChannels((char *)(this + 16)); /*0x402748*/
   ObjectClass::Cleanup((int *)this); /*0x40274f*/
   (*(void (__thiscall **)(int))(*(_DWORD *)(this + 212) + 40))(this); /*0x40275c*/
   int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)(this + 212) + 12))(this); /*0x40276a*/
@@ -385,7 +385,7 @@ void sub_53E1D0()
 
 // 0x5D0470
 namespace gamemd {
-int Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
+ObjectClass * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1726,7 +1726,7 @@ LABEL_6:
 
 // 0x7C3270
 namespace gamemd {
-void Audio_Process_7C3270(int a1, int a2, unsigned int a3, ObjectClass * aP3, int a5, int a6)
+BuildingTypeClass * Audio_Process_7C3270(int a1, int a2, unsigned int a3, ObjectClass * aP3, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2108,7 +2108,7 @@ int sub_7DFD00(int a1)
 
 // 0x6C6D00
 namespace gamemd {
-void sub_6C6D00()
+AbstractClass * sub_6C6D00()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2153,7 +2153,7 @@ void sub_6C6D00()
 
 // 0x6C6DE0
 namespace gamemd {
-void sub_6C6DE0()
+AbstractClass * sub_6C6DE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

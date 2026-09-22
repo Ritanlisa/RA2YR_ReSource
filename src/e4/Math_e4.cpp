@@ -201,7 +201,7 @@ int Math::DistSq2D(TechnoClass * aP1)
 {
 
   _BYTE v6[8]; // [esp+4h] [ebp-Ch] BYREF
-  int * v2 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 72))(this, v6); /*0x5f656e*/
+  int * v2 = (int *)this->vt_slot_72(v6); /*0x5f656e*/
   int v3 = *v2; /*0x5f6574*/
   int v4 = v2[1]; /*0x5f6576*/
   int v7 = v2[2]; /*0x5f657c*/

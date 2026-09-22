@@ -194,7 +194,7 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
 
 // 0x5D2650
 namespace gamemd {
-void E4Recv_5D2650::sub_5D2650(void * a2, int a3)
+void* E4Recv_5D2650::sub_5D2650(void * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -222,7 +222,7 @@ void E4Recv_5D2650::sub_5D2650(void * a2, int a3)
 
 // 0x5D4510
 namespace gamemd {
-void ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, unsigned short a4)
+CampaignScore * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, unsigned short a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -576,7 +576,7 @@ LABEL_12:
 
 // 0x5D4F20
 namespace gamemd {
-int E4Recv_5D4F20::sub_5D4F20()
+AbstractClass * E4Recv_5D4F20::sub_5D4F20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -653,7 +653,7 @@ char sub_5D6000(HWND hWnd, int a2)
 
 // 0x5D7590
 namespace gamemd {
-void LoadMultiplayerModesList(AbstractClass * a1, int edx0)
+Coord * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1006,7 +1006,7 @@ int E4Recv_5D9060::sub_5D9060(int a2)
 
 // 0x5D9DB0
 namespace gamemd {
-void DetectPortAllocationPattern(int a1, short * a2, unsigned short * a3, unsigned char * a4, unsigned char * a5)
+AbstractClass * DetectPortAllocationPattern(int a1, short * a2, unsigned short * a3, unsigned char * a4, unsigned char * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1588,7 +1588,7 @@ LABEL_6:
 
 // 0x5DD8A0
 namespace gamemd {
-void SynchronizeMultiplayerGameStart()
+AbstractClass * SynchronizeMultiplayerGameStart()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

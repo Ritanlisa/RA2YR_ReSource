@@ -29,7 +29,7 @@ int sub_710860(unsigned int * a1, unsigned int * a2)
 
 // 0x7187A0
 namespace gamemd {
-int E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
+UnitTypeClass * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

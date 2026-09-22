@@ -32,7 +32,7 @@ int Warhead::RemoveFromDamageList(int a2)
 {
 
   _DWORD * v2 = this + 411; /*0x452827*/
-  int v3 = (*(int (__thiscall **)(_DWORD *, int *))(this->q66C + 16))(this + 411, &a2); /*0x452834*/
+  int v3 = this->q66C->vt_slot_16(&a2); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/
   {
     int v4 = v2[4]; /*0x45283c*/
@@ -876,10 +876,10 @@ int Warhead::ApplyPostDamageEffects()
       v76 = 3; /*0x46a340*/
     }
   }
-  result = (*(int (__thiscall **)(int *))(*this + 444))(this); /*0x46a3da*/
+  result = this->vt_slot_444(); /*0x46a3da*/
   if ( *(_DWORD *)(result + 228) ) /*0x46a3e0*/
   {
-    int v11 = (*(int (__thiscall **)(int *))(*this + 444))(this); /*0x46a3f2*/
+    int v11 = this->vt_slot_444(); /*0x46a3f2*/
     result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v11 + 228) + 44))(*(_DWORD *)(v11 + 228)); /*0x46a400*/
     if ( result != 6 ) /*0x46a406*/
     {
@@ -899,7 +899,7 @@ int Warhead::ApplyPostDamageEffects()
       int v13 = *(_DWORD *)(this->q0AC + 692); /*0x46a414*/
       int v99 = *(_DWORD *)(v13 + 160); /*0x46a425*/
   int v83; // [esp+78h] [ebp-68h] BYREF
-      int v14 = *(_DWORD *)(*(int (__thiscall **)(int *, int *))(v12 + 440))(this, &v83); /*0x46a434*/
+      int v14 = *(_DWORD *)this->vt_slot_440(&v83); /*0x46a434*/
       int v15 = *(_DWORD *)(v13 + 180); /*0x46a43c*/
       int v98 = v14; /*0x46a443*/
       int v16 = 0; /*0x46a44c*/
@@ -1061,7 +1061,7 @@ int Warhead::ApplyPostDamageEffects()
         v81 = (_WORD *)(v76 - v16); /*0x46a93e*/
         do /*0x46adc7*/
         {
-          v76 = *(_DWORD *)(*(int (__thiscall **)(int *, double *))(*this + 440))(this, &v88); /*0x46a962*/
+          v76 = *(_DWORD *)this->vt_slot_440(&v88); /*0x46a962*/
           v46 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -2, 2); /*0x46a966*/
           LOWORD(v76) = v46 + v76; /*0x46a971*/
           v47 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -2, 2); /*0x46a980*/

@@ -6,7 +6,7 @@
 
 // 0x6442D0
 namespace gamemd {
-int ParticleSystemTypeClass::GetType(unsigned char *** aP1)
+void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -218,7 +218,7 @@ int ParticleSystemTypeClass::GetType(unsigned char *** aP1)
 
 // 0x644700
 namespace gamemd {
-int ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
+void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

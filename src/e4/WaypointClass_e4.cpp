@@ -6,7 +6,7 @@
 
 // 0x502160
 namespace gamemd {
-int WaypointClass::FindOrAddPath(unsigned int * a2)
+WaypointPathClass * WaypointClass::FindOrAddPath(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

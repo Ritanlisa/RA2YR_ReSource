@@ -30,7 +30,7 @@ int DamageArea::ApplyScatter()
                     &v106);
   _DWORD * v3 = (_DWORD *)(this->q00C + 1376);
   v103 = v2;
-  if ( v2 != *v3 && (*(unsigned __int8 (__stdcall **)(int))(this->q004 + 128))(this + 4) )
+  if ( v2 != *v3 && this->q004->vt_slot_128() )
     Coord::ToGridIndex((char *)g_CellClassManager, this->q00C, *(_DWORD *)(this->q00C + 1376), v2);
   if ( (*(int (__thiscall **)(_DWORD))(*this->q00C + 388))(this->q00C) == 7
     && *(_BYTE *)(this + 92) )
@@ -38,7 +38,7 @@ int DamageArea::ApplyScatter()
     *(_BYTE *)(this + 92) = 0;
   }
   int v4 = this + 4;
-  if ( (*(unsigned __int8 (__stdcall **)(int))(this->q004 + 96))(this + 4)
+  if ( this->q004->vt_slot_96()
     && *(_DWORD *)(this->q00C + 108)
     || !(*(int (__thiscall **)(_DWORD))(*this->q00C + 456))(this->q00C) )
   {

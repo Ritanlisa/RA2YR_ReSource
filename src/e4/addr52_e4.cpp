@@ -295,7 +295,7 @@ LABEL_29:
           this->M56 = v18; /*0x52833a*/
         }
         a2 = (unsigned __int8 *)v16; /*0x528341*/
-        if ( HashTable::BinarySearch(this + 40, (int *)&a2) ) /*0x528348*/
+        if ( ((HashTable *)((char *)this + 40)).BinarySearch((int *)&a2) ) /*0x528348*/
           int * v19 = (int *)(this->M56 + 4); /*0x528354*/
         else
           v19 = (int *)&unk_B7882C; /*0x528359*/
@@ -504,7 +504,7 @@ LABEL_18:
 
 // 0x52A2F0
 namespace gamemd {
-void * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float * a5)
+Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -596,7 +596,7 @@ LABEL_19:
 
 // 0x52A4D0
 namespace gamemd {
-int E4Recv_52A4D0::sub_52A4D0(unsigned char * a2)
+ObjectClass * E4Recv_52A4D0::sub_52A4D0(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -677,7 +677,7 @@ LABEL_19:
 
 // 0x52A610
 namespace gamemd {
-int E4Recv_52A610::sub_52A610(void * a2)
+ObjectClass * E4Recv_52A610::sub_52A610(void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2749,7 +2749,7 @@ LABEL_67:
 
 // 0x52FC20
 namespace gamemd {
-void Random_Init()
+Straw * Random_Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

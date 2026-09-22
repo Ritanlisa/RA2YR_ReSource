@@ -142,7 +142,7 @@ LABEL_27:
 }
 
 // 0x4D0C40
-void * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4)
+AbstractClass * * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -384,20 +384,20 @@ LABEL_11:
     *(_BYTE *)(*Anims + 409) = 1; /*0x4d1189*/
     aP1a = *(BuildingClass **)(*Anims + 200); /*0x4d119a*/
   int v55[4]; // [esp+50h] [ebp-10h] BYREF
-    int v22 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)*Anims + 296))(*Anims, v55); /*0x4d11a3*/
+    HouseClass *v22 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)*Anims + 296))(*Anims, v55); /*0x4d11a3*/
     v23 = (BuildingClass **)(this + 64); /*0x4d11ac*/
     if ( this->q048 <= 0 || this->q04C <= 0 ) /*0x4d11bc*/
     {
       v32 = *(BuildingClass **)v22; /*0x4d1266*/
-      v33 = *(_DWORD *)(v22 + 4); /*0x4d1268*/
-      v34 = *(_DWORD *)(v22 + 8); /*0x4d126b*/
+      v33 = v22->vtable2; /*0x4d1268*/
+      v34 = v22->vtable3; /*0x4d126b*/
     }
     else
     {
-      aP2b = *(FoggedObjectClass **)(v22 + 8); /*0x4d11c7*/
+      aP2b = v22->vtable3; /*0x4d11c7*/
       if ( (int)aP2b > 0 ) /*0x4d11cb*/
       {
-        int v48 = *(_DWORD *)(v22 + 12); /*0x4d11d6*/
+        int v48 = v22->vtable4; /*0x4d11d6*/
         if ( v48 > 0 ) /*0x4d11da*/
         {
           v24 = *v23; /*0x4d11dc*/
@@ -412,7 +412,7 @@ LABEL_11:
             v24 = *(BuildingClass **)v22; /*0x4d11f9*/
             v50 = v28; /*0x4d11fb*/
           }
-          int v29 = *(_DWORD *)(v22 + 4); /*0x4d11ff*/
+          int v29 = v22->vtable2; /*0x4d11ff*/
           int v47 = v29; /*0x4d1204*/
           if ( v25 > v29 ) /*0x4d1208*/
           {
@@ -436,7 +436,7 @@ LABEL_11:
       v33 = this->q044; /*0x4d125e*/
       v34 = this->q048; /*0x4d1261*/
     }
-    v31 = *(_DWORD *)(v22 + 12); /*0x4d126e*/
+    v31 = v22->vtable4; /*0x4d126e*/
 LABEL_41:
     LOBYTE(v53) = 0; /*0x4d1271*/
     this->q040 = v32; /*0x4d1279*/
@@ -479,7 +479,7 @@ LABEL_47:
 }
 
 // 0x4D1370
-int FoggedObjectClass::InitDrawRecord(unsigned int * a2)
+AbstractClass * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -704,7 +704,7 @@ LABEL_22:
 }
 
 // 0x4D2810
-int FoggedObjectClass::PowerDrainUpdate(int a2)
+HouseClass * FoggedObjectClass::PowerDrainUpdate(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -741,7 +741,7 @@ unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * a2)
 }
 
 // 0x4D2BC0
-int FoggedObjectClass::ResizeArray(int a2, char * a3)
+AbstractClass * FoggedObjectClass::ResizeArray(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -87,7 +87,7 @@ LABEL_11:
 }
 
 // 0x5FE770
-int OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
+AnimTypeClass * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -249,7 +249,7 @@ int OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
 }
 
 // 0x5FEAF0
-int OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
+ScenarioClass * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -297,7 +297,7 @@ int OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 }
 
 // 0x5FEDE0
-void * OverlayTypeClass::GetCategory()
+AnimTypeClass * * OverlayTypeClass::GetCategory()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

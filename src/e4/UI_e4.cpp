@@ -359,7 +359,7 @@ void * sub_730FE0()
 
 // 0x7318F0
 namespace gamemd {
-void * sub_7318F0()
+AbstractClass * * sub_7318F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -49,7 +49,7 @@ void CaptureManagerClass__vt_06_(int a2)
 
 // 0x4770E0
 namespace gamemd {
-void * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned char *** edx0, INIClass * a3, unsigned char * a2, VectorClass a5, int a6, int a7, int a8)
+VectorClass * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned char *** edx0, INIClass * a3, unsigned char * a2, VectorClass a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -204,7 +204,7 @@ void SoundWarning_Set(int a1)
 
 // 0x479740
 namespace gamemd {
-void E4Recv_479740::sub_479740(DWORD BytesReturned)
+AbstractClass * E4Recv_479740::sub_479740(DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -264,7 +264,7 @@ LABEL_18:
 
 // 0x479BA0
 namespace gamemd {
-void sub_479BA0(DWORD BytesReturned)
+AbstractClass * sub_479BA0(DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -325,7 +325,7 @@ LABEL_17:
 
 // 0x479D60
 namespace gamemd {
-void sub_479D60(DWORD BytesReturned)
+AbstractClass * sub_479D60(DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -389,7 +389,7 @@ LABEL_13:
 
 // 0x479EF0
 namespace gamemd {
-void sub_479EF0(DWORD BytesReturned)
+AbstractClass * sub_479EF0(DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -454,7 +454,7 @@ LABEL_13:
 // 0x47A080
 namespace ra2 {
 namespace game {
-void ObjectClass::sub_47A080(DWORD a2)
+AbstractClass * ObjectClass::sub_47A080(DWORD a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

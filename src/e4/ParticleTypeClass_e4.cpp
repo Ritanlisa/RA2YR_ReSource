@@ -27,7 +27,7 @@ void ParticleTypeClass::GetClassIdentifier()
 
 // 0x4784F0
 namespace gamemd {
-int ParticleTypeClass::Release(int a2, char * a3)
+AbstractClass * ParticleTypeClass::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

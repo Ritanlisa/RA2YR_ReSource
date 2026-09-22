@@ -1911,7 +1911,7 @@ LABEL_8:
 
 // 0x49C0D0
 namespace gamemd {
-int E4Recv_49C0D0::CampaignClass_LoadCoopSave()
+AbstractClass * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2095,7 +2095,7 @@ LABEL_44:
 
 // 0x49CCF0
 namespace gamemd {
-int E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
+AbstractClass * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         int this,
@@ -2470,7 +2470,7 @@ LABEL_5:
 
 // 0x49D680
 namespace gamemd {
-int E4Recv_49D680::SerializeCampaignOptions()
+AbstractClass * E4Recv_49D680::SerializeCampaignOptions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2619,7 +2619,7 @@ int E4Recv_49D680::SerializeCampaignOptions()
 
 // 0x49E7C0
 namespace gamemd {
-void * E4Recv_49E7C0::sub_49E7C0(char a2)
+AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

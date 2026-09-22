@@ -21,7 +21,7 @@ int Session::RemoveTeam(MSShapeAnim * aP1)
   if ( aP1 ) /*0x5d1d87*/
   {
     _DWORD * v3 = this + 6; /*0x5d1d8c*/
-    result = (MSShapeAnim *)(*(int (__thiscall **)(_DWORD *, MSShapeAnim **))(this->q018 + 16))(this + 6, &aP1); /*0x5d1d96*/
+    result = (MSShapeAnim *)this->q018->vt_slot_16(&aP1); /*0x5d1d96*/
     if ( result != (MSShapeAnim *)-1 ) /*0x5d1d9c*/
     {
       result = (MSShapeAnim *)(*(int (__thiscall **)(_DWORD *, MSShapeAnim **))(*v3 + 16))(v3, &aP1); /*0x5d1da7*/

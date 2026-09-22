@@ -103,7 +103,7 @@ unsigned int * CreateTeamCommand::performAction_158()
 
 // 0x5386A0
 namespace gamemd {
-int CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
+AbstractClass * CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -209,7 +209,7 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
       if ( *(this + 997 * v3 + 1378) ) /*0x6a6a3a*/
       {
         --*(this + 997 * v3 + 1379); /*0x6a6a4b*/
-        (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 56))(this, 0); /*0x6a6a50*/
+        this->vt_slot_56(0); /*0x6a6a50*/
         return 1; /*0x6a6a57*/
       }
       return 0; /*0x6a6a3f*/
@@ -227,7 +227,7 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
     {
 LABEL_13:
       ++v4[18]; /*0x6a6ad4*/
-      (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 56))(this, 0); /*0x6a6adf*/
+      this->vt_slot_56(0); /*0x6a6adf*/
       return 1; /*0x6a6ae6*/
     }
   }

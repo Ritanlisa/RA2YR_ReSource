@@ -14,7 +14,7 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1)
     if ( !*((_BYTE *)this + 13) && v3 ) /*0x512f36*/
       return 0; /*0x512f36*/
     int v4 = this->q014; /*0x512f38*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x512f48*/
+    if ( v4 <= 0 || !this->vt_slot_8(v3 + v4, 0) ) /*0x512f48*/
       return 0; /*0x512f4f*/
   }
   int v6 = this->q010; /*0x512f55*/

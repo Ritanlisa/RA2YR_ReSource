@@ -40,7 +40,7 @@ void AddMessageListPlayerMessage(CellStruct * a1, int a2)
 
 // 0x730AF0
 namespace gamemd {
-void ProcessSelectionExperience()
+AbstractClass * ProcessSelectionExperience()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -169,7 +169,7 @@ LABEL_47:
 
 // 0x730D60
 namespace gamemd {
-void sub_730D60()
+CellStruct * sub_730D60()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -267,7 +267,7 @@ LABEL_17:
 
 // 0x731AA0
 namespace gamemd {
-void sub_731AA0()
+AbstractClass * sub_731AA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -114,7 +114,7 @@ LABEL_7:
 
 // 0x49C5A0
 namespace gamemd {
-int CampaignClass::SaveProgress()
+AbstractClass * CampaignClass::SaveProgress()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -130,7 +130,7 @@ int CampaignClass::SaveProgress()
     return 0; /*0x49c5ac*/
   if ( !*this ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
-  char * v2 = this + 28; /*0x49c5c4*/
+  int32_t *v2 = this + 28; /*0x49c5c4*/
   if ( !this->referenceCount ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
   int v3 = this->alignmentPadding_3; /*0x49c5d4*/
@@ -198,7 +198,7 @@ int CampaignClass::SaveProgress()
   }
   g_IsWindowed[v5] = 0; /*0x49c720*/
   strcpy(Block, g_IsWindowed); /*0x49c73a*/
-  char * v13 = this + 28; /*0x49c743*/
+  int32_t *v13 = this + 28; /*0x49c743*/
   int v14 = 0; /*0x49c745*/
   for ( i = *v2; i; ++v13 )
   {

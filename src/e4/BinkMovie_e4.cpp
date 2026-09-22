@@ -79,7 +79,7 @@ int BinkMovie::Stop()
 
 // 0x432750
 namespace gamemd {
-int BinkMovie::InitFromFile(LPCSTR * FullPath)
+AbstractClass * BinkMovie::InitFromFile(LPCSTR * FullPath)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -277,7 +277,7 @@ int BinkMovie::IsAtEnd()
 
 // 0x432C70
 namespace gamemd {
-int BinkMovie::Play()
+AbstractClass * BinkMovie::Play()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -691,7 +691,7 @@ LABEL_46:
 
 // 0x6153E0
 namespace gamemd {
-int BinkMovie::WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
+AbstractClass * BinkMovie::WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1537,7 +1537,7 @@ int BinkMovie::CheckKeyframeTransition(CellStruct * aP1)
 
 // 0x6C9D40
 namespace gamemd {
-void BinkMovie::ProcessKeyframe(ObjectClass * aP1)
+AbstractClass * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1561,8 +1561,8 @@ void BinkMovie::ProcessKeyframe(ObjectClass * aP1)
       (AbstractClass *)(((int)(unsigned __int8)*(_DWORD *)&aP1->__pad_0[8] >> g_CellDirectionOffsets[5964] << g_CellDirectionOffsets[5960])
                       | ((unsigned __int8)BYTE2(*(_DWORD *)&aP1->__pad_0[8]) >> g_CellDirectionOffsets[5956] << g_CellDirectionOffsets[5952])
                       | ((unsigned __int8)BYTE1(*(_DWORD *)&aP1->__pad_0[8]) >> g_CellDirectionOffsets[5972] << g_CellDirectionOffsets[5968])));
-    v6 = (ObjectClass *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q004 + 124))(this->q004); /*0x6c9dca*/
-    *(_DWORD *)&aP2[4] = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q004 + 128))(this->q004); /*0x6c9dd6*/
+    v6 = (ObjectClass *)this->q004->vt_slot_124(); /*0x6c9dca*/
+    *(_DWORD *)&aP2[4] = this->q004->vt_slot_128(); /*0x6c9dd6*/
     aP2.NeedsSaveOrLink = *(void **)&aP2[4]; /*0x6c9ddc*/
     aP2.abstractFlags = 0; /*0x6c9de4*/
     aP2.nextArrayIndex = 0; /*0x6c9de8*/

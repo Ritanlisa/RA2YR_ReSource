@@ -89,23 +89,20 @@ int SaveGame::SaveTriggerEvents()
 
   int v2 = *this; /*0x6607e0*/
   int v5 = g_TriggerEventState; /*0x6607e6*/
-  if ( (*(int (__stdcall **)(int *, int *, int, _DWORD))(v2 + 16))(this, &v5, 4, 0) < 0 ) /*0x6607ef*/
+  if ( this->vt_slot_16(&v5, 4, 0) < 0 ) /*0x6607ef*/
     return 0; /*0x6607f6*/
   int v4 = 0; /*0x6607fb*/
   if ( v5 > 0 ) /*0x6607ff*/
   {
-    while ( (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*this + 16))( /*0x660817*/
-              this,
-              *((_DWORD *)g_TriggerPool + v4),
-              64,
-              0) >= 0 )
+    while ( this->vt_slot_16(/*0x660817*/
+              this, *((_DWORD *)g_TriggerPool + v4), 64, 0) >= 0 )
     {
       if ( ++v4 >= v5 ) /*0x660820*/
-        return (*(int (__stdcall **)(int *, __int16 *, int, _DWORD))(*this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x660820*/
+        return this->vt_slot_16(&word_B04D78, 4, 0) >= 0; /*0x660820*/
     }
     return 0; /*0x660817*/
   }
-  return (*(int (__stdcall **)(int *, __int16 *, int, _DWORD))(*this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x6607f1*/
+  return this->vt_slot_16(&word_B04D78, 4, 0) >= 0; /*0x6607f1*/
 }
 }
 } // namespace gamemd
@@ -894,31 +891,31 @@ int SaveGame::LoadMainGameState()
 {
   int result; // eax
   wchar_t *v10; // [esp+A0h] [ebp-4h] BYREF
-  result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(*this + 16))(this, &DataGlobal_A8ED78, 4, 0); /*0x67f7f1*/
+  result = this->vt_slot_16(&DataGlobal_A8ED78, 4, 0); /*0x67f7f1*/
   if ( result >= 0 )
   {
-    result = (*(int (__stdcall **)(int *, #375 **, int, _DWORD))(*this + 16))(this, &HouseClass_Player, 4, 0); /*0x67f808*/
+    result = this->vt_slot_16(&HouseClass_Player, 4, 0); /*0x67f808*/
     if ( result >= 0 )
     {
-      result = (*(int (__stdcall **)(int *, wchar_t **, int, _DWORD))(*this + 16))(this, &g_CurrentFrame, 4, 0); /*0x67f81f*/
+      result = this->vt_slot_16(&g_CurrentFrame, 4, 0); /*0x67f81f*/
       if ( result >= 0 )
       {
         int v3 = *this; /*0x67f82f*/
         v10 = g_SelectionManager; /*0x67f83b*/
-        result = (*(int (__stdcall **)(int *, wchar_t **, int, _DWORD))(v3 + 16))(this, &v10, 4, 0); /*0x67f83f*/
+        result = this->vt_slot_16(&v10, 4, 0); /*0x67f83f*/
         if ( result >= 0 )
         {
           int v4 = 0; /*0x67f84e*/
           if ( (int)v10 <= 0 )
           {
 LABEL_8:
-            result = (*(int (__stdcall **)(int *, float *, int, _DWORD))(*this + 16))(this, DataGlobal_89EA40, 432, 0); /*0x67f879*/
+            result = this->vt_slot_16(DataGlobal_89EA40, 432, 0); /*0x67f879*/
             if ( result >= 0 )
             {
               SuperWeaponClass::LoadFromSaveStream(this); /*0x67f895*/
               int v5 = *this; /*0x67f8a0*/
               v10 = (wchar_t *)g_ScenarioUpdateState; /*0x67f8ac*/
-              result = (*(int (__stdcall **)(int *, wchar_t **, int, _DWORD))(v5 + 16))(this, &v10, 4, 0); /*0x67f8b0*/
+              result = this->vt_slot_16(&v10, 4, 0); /*0x67f8b0*/
               if ( result >= 0 )
               {
                 int v6 = 0; /*0x67f8bf*/
@@ -927,54 +924,36 @@ LABEL_8:
 LABEL_13:
                   int v7 = *this; /*0x67f8ea*/
                   v10 = (wchar_t *)dword_8B41B8; /*0x67f8fc*/
-                  result = (*(int (__stdcall **)(int *, wchar_t **, int, _DWORD))(v7 + 16))(this, &v10, 4, 0); /*0x67f900*/
+                  result = this->vt_slot_16(&v10, 4, 0); /*0x67f900*/
                   if ( result >= 0 )
                   {
                     int v8 = 0; /*0x67f90f*/
                     if ( (int)v10 <= 0 )
                     {
 LABEL_17:
-                      result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(*this + 16))( /*0x67f93a*/
-                                 this,
-                                 &dword_81DA8C,
-                                 76,
-                                 0);
+                      result = this->vt_slot_16(/*0x67f93a*/
+                                 this, &dword_81DA8C, 76, 0);
                       if ( result >= 0 )
                       {
-                        result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(*this + 16))( /*0x67f959*/
-                                   this,
-                                   dword_81DAD8,
-                                   76,
-                                   0);
+                        result = this->vt_slot_16(/*0x67f959*/
+                                   this, dword_81DAD8, 76, 0);
                         if ( result >= 0 )
                         {
-                          result = (*(int (__stdcall **)(int *, double *, int, _DWORD))(*this + 16))( /*0x67f96f*/
-                                     this,
-                                     DataGlobal_89EC28,
-                                     152,
-                                     0);
+                          result = this->vt_slot_16(/*0x67f96f*/
+                                     this, DataGlobal_89EC28, 152, 0);
                           if ( result >= 0 )
                           {
-                            result = (*(int (__stdcall **)(int *, char *, int, _DWORD))(*this + 16))( /*0x67f982*/
-                                       this,
-                                       DataGlobal_89ECC0,
-                                       19,
-                                       0);
+                            result = this->vt_slot_16(/*0x67f982*/
+                                       this, DataGlobal_89ECC0, 19, 0);
                             if ( result >= 0 )
                             {
-                              result = (*(int (__stdcall **)(int *, void *, int, _DWORD))(*this + 16))( /*0x67f998*/
-                                         this,
-                                         &DataGlobal_A8E3A8,
-                                         1024,
-                                         0);
+                              result = this->vt_slot_16(/*0x67f998*/
+                                         this, &DataGlobal_A8E3A8, 1024, 0);
                               if ( result >= 0 )
                               {
   int v9; // eax
-                                v9 = (*(int (__stdcall **)(int *, int *, int, _DWORD))(*this + 16))( /*0x67f9ab*/
-                                       this,
-                                       &DataGlobal_B07784,
-                                       4,
-                                       0);
+                                v9 = this->vt_slot_16(/*0x67f9ab*/
+                                       this, &DataGlobal_B07784, 4, 0);
                                 return v9 >= 0 ? 0 : v9;
                               }
                             }
@@ -986,11 +965,8 @@ LABEL_17:
                     {
                       while ( 1 ) /*0x67f926*/
                       {
-                        result = (*(int (__stdcall **)(int *, char *, int, _DWORD))(*this + 16))( /*0x67f926*/
-                                   this,
-                                   (char *)unk_8B41AC + 4 * v8,
-                                   4,
-                                   0);
+                        result = this->vt_slot_16(/*0x67f926*/
+                                   this, (char *)unk_8B41AC + 4 * v8, 4, 0);
                         if ( result < 0 ) /*0x67f92b*/
                           break; /*0x67f92b*/
                         if ( ++v8 >= (int)v10 ) /*0x67f938*/
@@ -1003,11 +979,8 @@ LABEL_17:
                 {
                   while ( 1 ) /*0x67f8d6*/
                   {
-                    result = (*(int (__stdcall **)(int *, char *, int, _DWORD))(*this + 16))( /*0x67f8d6*/
-                               this,
-                               (char *)DataGlobal_8B40CC + 4 * v6,
-                               4,
-                               0);
+                    result = this->vt_slot_16(/*0x67f8d6*/
+                               this, (char *)DataGlobal_8B40CC + 4 * v6, 4, 0);
                     if ( result < 0 ) /*0x67f8db*/
                       break; /*0x67f8db*/
                     if ( ++v6 >= (int)v10 ) /*0x67f8e8*/
@@ -1021,11 +994,8 @@ LABEL_17:
           {
             while ( 1 ) /*0x67f865*/
             {
-              result = (*(int (__stdcall **)(int *, char *, int, _DWORD))(*this + 16))( /*0x67f865*/
-                         this,
-                         (char *)g_ObjectClass_CurrentCount + 4 * v4,
-                         4,
-                         0);
+              result = this->vt_slot_16(/*0x67f865*/
+                         this, (char *)g_ObjectClass_CurrentCount + 4 * v4, 4, 0);
               if ( result < 0 ) /*0x67f86a*/
                 break; /*0x67f86a*/
               if ( ++v4 >= (int)v10 ) /*0x67f877*/
@@ -1051,12 +1021,12 @@ int SaveGame::LoadVeinholeData()
 
   int v2 = *this; /*0x74ed74*/
   int v13 = g_VeinholePool; /*0x74ed7a*/
-  if ( (*(int (__stdcall **)(int *, int *, int, _DWORD))(v2 + 16))(this, &v13, 4, 0) < 0 ) /*0x74ed83*/
+  if ( this->vt_slot_16(&v13, 4, 0) < 0 ) /*0x74ed83*/
     return 0; /*0x74ed8e*/
   int v4 = Object::ComputeAllocationSize(); /*0x74ed9a*/
   int v5 = *this; /*0x74ed9c*/
   int v15 = v4; /*0x74eda3*/
-  if ( (*(int (__stdcall **)(int *, void *, int, _DWORD))(v5 + 16))(this, g_VeinholeMonsterPool, v4, 0) < 0 ) /*0x74edac*/
+  if ( this->vt_slot_16(g_VeinholeMonsterPool, v4, 0) < 0 ) /*0x74edac*/
     return 0; /*0x74edac*/
   int v6 = 0; /*0x74edbc*/
   int v14 = 0; /*0x74edc0*/
@@ -1066,21 +1036,10 @@ int SaveGame::LoadVeinholeData()
     {
       int v7 = *this; /*0x74edd6*/
       int v16 = *((_DWORD *)g_VoxelDrawState + v6); /*0x74ede5*/
-      if ( (*(int (__stdcall **)(int *, int *, int, _DWORD))(v7 + 16))(this, &v16, 4, 0) < 0 /*0x74ee50*/
-        || (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*this + 16))(
-             this,
-             *((_DWORD *)g_VoxelDrawState + v6),
-             264,
-             0) < 0
-        || (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*this + 16))(
-             this,
-             *(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v6) + 196),
-             v4,
-             0) < 0
-        || (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*this + 16))(
-             this,
-             *(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v6) + 180),
-             8 * g_RulesClass_Instance->AircraftFogReveal,
+      if ( this->vt_slot_16(&v16, 4, 0) < 0 /*0x74ee50*/
+        || this->vt_slot_16(*((_DWORD *)g_VoxelDrawState + v6), 264, 0) < 0
+        || this->vt_slot_16(*(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v6) + 196), v4, 0) < 0
+        || this->vt_slot_16(*(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v6) + 180), 8 * g_RulesClass_Instance->AircraftFogReveal,
              0) < 0 )
       {
         break; /*0x74ee50*/
@@ -1088,14 +1047,14 @@ int SaveGame::LoadVeinholeData()
       int v8 = *((_DWORD *)g_VoxelDrawState + v6); /*0x74ee62*/
       int v9 = *(_DWORD *)(v8 + 176); /*0x74ee65*/
       int v10 = *(_DWORD *)(v8 + 180); /*0x74ee6b*/
-      if ( (*(int (__stdcall **)(int *, int, int, _DWORD))(*this + 16))(this, v9, 4, 0) >= 0 /*0x74ee8a*/
-        && (*(int (__stdcall **)(int *, int, int, _DWORD))(*this + 16))(this, v9 + 4, 4, 0) >= 0 )
+      if ( this->vt_slot_16(v9, 4, 0) >= 0 /*0x74ee8a*/
+        && this->vt_slot_16(v9 + 4, 4, 0) >= 0 )
       {
         for ( i = 0; i < *(_DWORD *)(v9 + 4); ++i ) /*0x74ee93*/
         {
           int v12 = *this; /*0x74ee98*/
           int v17 = (*(_DWORD *)(*(_DWORD *)(v9 + 8) + 4 * i) - v10) >> 3; /*0x74eeac*/
-          if ( (*(int (__stdcall **)(int *, int *, int, _DWORD))(v12 + 16))(this, &v17, 4, 0) < 0 ) /*0x74eeb5*/
+          if ( this->vt_slot_16(&v17, 4, 0) < 0 ) /*0x74eeb5*/
             break; /*0x74eeb5*/
         }
         v6 = v14; /*0x74eebf*/
@@ -1122,7 +1081,7 @@ int SaveGame::SaveAudioQueueItems()
   char *SampleName; // ebx
 
   int v11 = SaveGame::CountLinkedList(DataGlobal_B1D320); /*0x751637*/
-  int v2 = (*(int (__stdcall **)(int *, int *, int, _DWORD))(*this + 16))(this, &v11, 4, 0); /*0x751647*/
+  int v2 = this->vt_slot_16(&v11, 4, 0); /*0x751647*/
   if ( v2 >= 0 )
   {
     for ( i = (int *)AudioQueue::GetNext(DataGlobal_B1D320); i; i = (int *)AudioQueue::GetNextAlt(i) )
@@ -1161,7 +1120,7 @@ LABEL_11:
       int v9 = *this; /*0x7516cf*/
       v12[2] = i[9]; /*0x7516d2*/
       v12[3] = i[10]; /*0x7516e1*/
-      v2 = (*(int (__stdcall **)(int *, _DWORD *, int, _DWORD))(v9 + 16))(this, v12, 16, 0); /*0x7516e8*/
+      v2 = this->vt_slot_16(v12, 16, 0); /*0x7516e8*/
       if ( v2 < 0 ) /*0x7516ec*/
         break; /*0x7516ec*/
     }

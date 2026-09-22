@@ -379,7 +379,7 @@ void TechnoClass::Uncloak(bool play_sound)
 }
 
 // 0x6f3330
-int TechnoClass::SelectWeapon(AbstractClass* target) const
+AbstractClass * TechnoClass::SelectWeapon(AbstractClass* target) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f3330
@@ -1165,7 +1165,6 @@ int TechnoClass::CreateUnit()
   int v122; // [esp+54h] [ebp-4Ch] BYREF
   int v123; // [esp+58h] [ebp-48h]
   int v124; // [esp+5Ch] [ebp-44h]
-
   if ( !this->q198 && *(_DWORD *)(this->missionTimer + 760) != -1 )
   {
     int v2 = (*(int (__thiscall **)(#361 *, int *))(this->q048)(this, &v122);
@@ -4481,7 +4480,7 @@ int TechnoClass::CanInitiateSell() const { return false; }
 // 0x6f3280
 int TechnoClass::IsNotAircraftOrBuilding() const { return false; }
 // 0x6f3330
-int TechnoClass::SelectWeapon() {
+AbstractClass * TechnoClass::SelectWeapon() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f3330
 {

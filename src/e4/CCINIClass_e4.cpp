@@ -108,7 +108,7 @@ int CCINIClass::GetDB()
 
 // 0x4741F0
 namespace gamemd {
-int CCINIClass::Load(MultiplayerGameMode * aP1, char a3, char aP2)
+MultiplayerGameMode * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, char aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

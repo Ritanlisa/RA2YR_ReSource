@@ -761,7 +761,7 @@ int House::IsCurrentPlayer()
 
 // 0x50DB00
 namespace gamemd {
-int House::ChooseHouseEnemy(BuildingClass * aP1)
+AbstractClass * House::ChooseHouseEnemy(BuildingClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -949,7 +949,7 @@ int House::LookupObject(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  _DWORD * v2 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this); /*0x544be2*/
+  _DWORD * v2 = (_DWORD *)this->vt_slot_156(); /*0x544be2*/
   int v3; // ecx
   if ( v2 && (v3 = v2[a2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x544c03*/
     return dword_8288E4[*(char *)(v3 + 41)]; /*0x544c09*/
@@ -968,7 +968,7 @@ int House::LoadMapFileData(int a2, char a3)
 
   if ( a3 && !this->__pad_029 && *((_BYTE *)this + 756) ) /*0x544c35*/
     MapClass::LoadFileData((int)this); /*0x544c3f*/
-  _DWORD * v4 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 156))(this); /*0x544c48*/
+  _DWORD * v4 = (_DWORD *)this->vt_slot_156(); /*0x544c48*/
   return v4 && a2 < *v4 * v4[1] && v4[a2 + 4]; /*0x544c50*/
 }
 }

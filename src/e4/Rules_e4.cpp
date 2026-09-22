@@ -2205,7 +2205,7 @@ int Rules::ReadMiscINI()
 
 // 0x66BBB0
 namespace gamemd {
-int Rules::ReadCombatINI()
+IUnknown * Rules::ReadCombatINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3295,7 +3295,7 @@ unsigned int * Rules::CopyDataArray(VectorClass * aP1)
 
   if ( this == (_DWORD *)aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x67a57e*/
+  this->vt_slot_12(); /*0x67a57e*/
   int v3 = aP1->Capacity; /*0x67a581*/
   *(this + 2) = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/

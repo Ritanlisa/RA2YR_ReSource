@@ -114,7 +114,7 @@ void ** TemporalClass::ProcessTimeWarp()
   _BYTE v43[12]; // [esp+2Ch] [ebp-18h] BYREF
     _DWORD * v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*v2 + 72))(v2, v43); /*0x71a7c9*/
   _BYTE v44[12]; // [esp+38h] [ebp-Ch] BYREF
-    _DWORD * v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)this->creationFrame + 72))(this->creationFrame, v44); /*0x71a7d2*/
+    _DWORD * v6 = (_DWORD *)*(_DWORD *)this->creationFrame->vt_slot_72(this->creationFrame, v44); /*0x71a7d2*/
     int v7 = v5[1]; /*0x71a7d9*/
     int v8 = *v6 - *v5; /*0x71a7dc*/
     int v9 = v6[1]; /*0x71a7de*/
@@ -171,10 +171,10 @@ LABEL_10:
         }
         if ( this->q028 )
         {
-          if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->creationFrame + 132))(this->creationFrame) + 3214) ) /*0x71a922*/
+          if ( *(_BYTE *)(this->creationFrame->vt_slot_132() + 3214) ) /*0x71a922*/
           {
             int v23 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q028 + 132))(this->q028); /*0x71a938*/
-            int v24 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->creationFrame + 132))(this->creationFrame); /*0x71a944*/
+            int v24 = this->creationFrame->vt_slot_132(); /*0x71a944*/
             int v39 = *(_DWORD *)(this->q028 + 540); /*0x71a94f*/
             int v25 = (*(int (__thiscall **)(int))(*(_DWORD *)v23 + 132))(v23); /*0x71a952*/
   int v26; // eax

@@ -37,7 +37,7 @@ int Terrain::GetTileType(AnimClass * aP1)
 
 // 0x568E40
 namespace gamemd {
-void Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
+AbstractClass * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -255,7 +255,7 @@ LABEL_85:
       v29 = g_CellClassArray; /*0x569259*/
     }
     *((_BYTE *)v29 + 283) += 4; /*0x56926c*/
-    int v74 = (ObjectClass *)CellStruct::Add(v77, (IUnknown *)&v74, &g_CellDirectionOffsets)->field_0; /*0x569280*/
+    ObjectClass *v74 = (ObjectClass *)CellStruct::Add(v77, (IUnknown *)&v74, &g_CellDirectionOffsets)->field_0; /*0x569280*/
     v71 = (IUnknown *)v30; /*0x569282*/
     unsigned int v31 = (__int16)v30 + (SHIWORD(v30) << 9); /*0x569291*/
   _DWORD *v32; // eax
@@ -436,7 +436,7 @@ LABEL_44:
 
 // 0x56C510
 namespace gamemd {
-int Terrain::ConnectivityGraph()
+AbstractClass * Terrain::ConnectivityGraph()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1185,7 +1185,7 @@ LABEL_82:
 
 // 0x570050
 namespace gamemd {
-void Terrain::ProcessCellModification(IUnknown * aP1)
+AbstractClass * Terrain::ProcessCellModification(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1642,7 +1642,7 @@ LABEL_101:
 
 // 0x573540
 namespace gamemd {
-void Terrain::RecursiveModify(IUnknown * aP1)
+AbstractClass * Terrain::RecursiveModify(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2305,7 +2305,7 @@ LABEL_64:
 
 // 0x579620
 namespace gamemd {
-int Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
+VectorClass * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

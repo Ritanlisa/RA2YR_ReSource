@@ -205,7 +205,7 @@ LABEL_17:
 }
 
 // 0x7AE0E0
-void ComStreamClass::readData()
+AbstractClass * ComStreamClass::readData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

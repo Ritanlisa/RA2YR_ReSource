@@ -19,7 +19,7 @@ int SlaveManagerClass::Check()
   int result; // eax
 
   if ( this->q02B != 10 ) /*0x522d07*/
-    return (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*this + 488))(this, 10, 0); /*0x522d0f*/
+    return this->vt_slot_488(10, 0); /*0x522d0f*/
   return result; /*0x522d15*/
 }
 }
@@ -59,7 +59,7 @@ int SlaveManagerClass::IsMasterHarvester()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 388))(this) == 10; /*0x522fd2*/
+  return this->vt_slot_388() == 10; /*0x522fd2*/
 }
 }
 } // namespace game
@@ -68,7 +68,7 @@ int SlaveManagerClass::IsMasterHarvester()
 // 0x6AF1A0
 namespace ra2 {
 namespace game {
-int SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
+void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -331,7 +331,7 @@ LABEL_5:
 
 // 0x6AF6C0
 namespace gamemd {
-void SlaveManagerClass_ProcessSlaves()
+TechnoClass * SlaveManagerClass_ProcessSlaves()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -745,7 +745,7 @@ int SlaveManagerClass::AssignTask(AbstractClass * aP1)
 // 0x6B1170
 namespace ra2 {
 namespace game {
-int SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
+AbstractClass * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

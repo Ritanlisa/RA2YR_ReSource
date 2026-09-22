@@ -137,7 +137,7 @@ int Game::SendCampaignOptions()
 
 // 0x534450
 namespace gamemd {
-int Game::DestroyAllObjects()
+AbstractClass * Game::DestroyAllObjects()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -440,7 +440,7 @@ int Game::MakeScreenshot(int a1)
 
 // 0x5B7090
 namespace gamemd {
-int Game::StartModemMultiplayer(char a2)
+HashTable * Game::StartModemMultiplayer(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -546,7 +546,7 @@ LABEL_31:
 
 // 0x5BA660
 namespace gamemd {
-int Game::BuildGameSetupPacket()
+AbstractClass * Game::BuildGameSetupPacket()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1051,7 +1051,7 @@ LABEL_6:
 
 // 0x67F9C0
 namespace gamemd {
-int Game::SerializeGameSaveState()
+CellStruct * Game::SerializeGameSaveState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1322,7 +1322,7 @@ void sub_685120()
 
 // 0x698CB0
 namespace gamemd {
-void Game_DumpMultiplayerGameInfo()
+CellStruct * Game_DumpMultiplayerGameInfo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1528,7 +1528,7 @@ LABEL_16:
 
 // 0x77F900
 namespace gamemd {
-int Game::ProcessIdle()
+Coord * Game::ProcessIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1882,7 +1882,7 @@ void Game_Setup(CCINIClass * aP0, CCINIClass * aP1, char * Buffera, char * a3)
 
 // 0x7A2330
 namespace gamemd {
-int Game::SetupWOLTournament()
+AbstractClass * Game::SetupWOLTournament()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

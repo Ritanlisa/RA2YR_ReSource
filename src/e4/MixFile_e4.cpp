@@ -10,7 +10,7 @@
 
 // 0x530460
 namespace gamemd {
-int MixFile::LoadAll()
+MixFileClass * MixFile::LoadAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -448,7 +448,7 @@ LABEL_149:
 
 // 0x534FA0
 namespace gamemd {
-int MixFile::LoadSide()
+AbstractClass * MixFile::LoadSide()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

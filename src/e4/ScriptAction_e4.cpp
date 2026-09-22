@@ -88,7 +88,7 @@ int ScriptAction::CreatePlacementAction(AbstractClass * aP1, const void * a2)
   if ( this->q010 < v7 /*0x634024*/
     || (this->q034 || !v7)
     && (v8 = this->q014, v8 > 0)
-    && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v7 + v8, 0) )
+    && this->vt_slot_8(v7 + v8, 0) )
   {
     int v9 = this->q010; /*0x63402b*/
     v10 = (AbstractClass *)this->q004; /*0x63402e*/
@@ -386,7 +386,7 @@ int ScriptAction::FindBuildingMatch(AbstractClass * aP1)
 
 // 0x634E10
 namespace gamemd {
-int ScriptAction::PlaceObject(AbstractClass * aP1)
+ObjectClass * ScriptAction::PlaceObject(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -465,7 +465,7 @@ int ScriptAction::PlaceObject(AbstractClass * aP1)
         || (*(_BYTE *)(this + 45) || !v18)
   int v19; // ecx
         && (v19 = this->q034, v19 > 0)
-        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->q008 + 8))(this + 32, v18 + v19, 0) )
+        && this->q008->vt_slot_8(v18 + v19, 0) )
       {
         int v20 = this->ScriptAction_field_0x30; /*0x634f23*/
         int v21 = this->ScriptAction_field_0x24; /*0x634f26*/
@@ -660,7 +660,7 @@ int ScriptAction::ClearBuildingState()
 
 // 0x637E00
 namespace gamemd {
-int ScriptAction::DispatchBuilding()
+TechnoClass * ScriptAction::DispatchBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -708,11 +708,11 @@ int ScriptAction::DispatchBuilding()
   }
   else if ( v2 == 42 ) /*0x637ea1*/
   {
-    BuildingLoadQueue = BuildingLoadQueue::Find(this + 7); /*0x637eaa*/
+    BuildingLoadQueue = ((BuildingLoadQueue *)((char *)this + 7)).Find(); /*0x637eaa*/
     v32 = (int)BuildingLoadQueue; /*0x637eb1*/
     if ( BuildingLoadQueue ) /*0x637eb5*/
     {
-      BuildingLoadQueue = BuildingLoadQueue::GetNext(this + 12); /*0x637ebe*/
+      BuildingLoadQueue = ((BuildingLoadQueue *)((char *)this + 12)).GetNext(); /*0x637ebe*/
       if ( BuildingLoadQueue ) /*0x637ec5*/
       {
         BuildingLoadQueue = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*BuildingLoadQueue + 88))( /*0x637ed4*/
@@ -960,7 +960,7 @@ int ScriptAction::ExecutePlacement(int a1, int a2, int a3, long long a4, int a5,
 
 // 0x63A8E0
 namespace gamemd {
-int ScriptAction::HitTest(MouseClass * aP0, int a2)
+AbstractClass * ScriptAction::HitTest(MouseClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1469,7 +1469,7 @@ int ScriptAction::DrawPlacementMarker()
 
 // 0x6DD300
 namespace gamemd {
-int ScriptAction::Serialize(char * Buffer)
+AbstractClass * ScriptAction::Serialize(char * Buffer)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2082,7 +2082,7 @@ unsigned char * ScriptAction::GetWaypointCoords(IUnknown * aP1)
 
 // 0x6FFBE0
 namespace gamemd {
-int ScriptAction::ExecuteMissionCmd()
+TechnoClass * ScriptAction::ExecuteMissionCmd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2095,7 +2095,7 @@ int ScriptAction::ExecuteMissionCmd()
   IUnknown *v19; // [esp+A4h] [ebp+Ch]
   IUnknown *aP1; // [esp+A8h] [ebp+10h]
 
-  bool v2 = Render_Draw_731BF0() && (*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 1216))(this); /*0x6ffc03*/
+  bool v2 = Render_Draw_731BF0() && this->vt_slot_1216(); /*0x6ffc03*/
   int v3 = v17; /*0x6ffc09*/
   if ( (v17 == 2 || v17 == 1) && v2 ) /*0x6ffc1c*/
     v3 = 29; /*0x6ffc1e*/
@@ -2163,29 +2163,29 @@ int ScriptAction::ExecuteMissionCmd()
       switch ( v3 ) /*0x6ffcd4*/
       {
         case 10: /*0x6ffcd4*/
-          (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 860))(this); /*0x6ffcda*/
+          this->vt_slot_860(); /*0x6ffcda*/
           break;
         case 1: /*0x6ffcd4*/
-          (*(void (__thiscall **)(#377 *, IUnknown *))(*(_DWORD *)this + 880))(this, v18); /*0x6ffcef*/
+          this->vt_slot_880(v18); /*0x6ffcef*/
           break;
         case 2: /*0x6ffcd4*/
         case 29: /*0x6ffcd4*/
-          (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 872))(this); /*0x6ffd9f*/
+          this->vt_slot_872(); /*0x6ffd9f*/
           break;
         case 7: /*0x6ffcd4*/
-          (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 856))(this); /*0x6ffd15*/
+          this->vt_slot_856(); /*0x6ffd15*/
           break;
         case 8: /*0x6ffcd4*/
-          (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 868))(this); /*0x6ffd29*/
+          this->vt_slot_868(); /*0x6ffd29*/
           break;
         case 16: /*0x6ffcd4*/
-          (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 876))(this); /*0x6ffd3a*/
+          this->vt_slot_876(); /*0x6ffd3a*/
           break;
         default:
-          if ( *(int *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 1200) > 0 ) /*0x6ffd59*/
+          if ( *(int *)(this->vt_slot_132() + 1200) > 0 ) /*0x6ffd59*/
           {
             unsigned int v6 = Random::State(&stru_87C374[43028]); /*0x6ffd65*/
-            int v7 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this); /*0x6ffd6b*/
+            int v7 = this->vt_slot_132(); /*0x6ffd6b*/
             v11[0] = *(_DWORD *)this; /*0x6ffd7b*/
             (*(void (__thiscall **)(#377 *, _DWORD))(v11[0] + 852))( /*0x6ffd93*/
               this,

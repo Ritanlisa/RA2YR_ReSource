@@ -176,7 +176,7 @@ void TacticalClass::DrawCellTerrainOverlay(int * a2, int * a3)
 
 // 0x4AC380
 namespace gamemd {
-int TacticalClass::ProcessScroll(int * a2)
+void* TacticalClass::ProcessScroll(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -202,7 +202,7 @@ int TacticalClass::ProcessScroll(int * a2)
         if ( !v8 && !this->q11B4 ) /*0x4ac4af*/
         {
           BYTE1(g_TacticalClass_Instance[863].__tail_0) = 1; /*0x4ac4c0*/
-          TacticalClass::InitScrollBounds(this + 4564); /*0x4ac4cc*/
+          ((TacticalClass *)((char *)this + 4564)).InitScrollBounds(); /*0x4ac4cc*/
           LOBYTE(v3) = Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0); /*0x4ac4da*/
         }
       }
@@ -423,7 +423,7 @@ void TacticalClass::InterpolateView()
 
 // 0x4F45B0
 namespace gamemd {
-void TacticalClass_RenderFrame()
+AbstractClass * TacticalClass_RenderFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -838,7 +838,7 @@ LABEL_11:
 
 // 0x6D6D10
 namespace gamemd {
-void * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
+void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1089,7 +1089,6 @@ void * TacticalClass::IsOccupiedByTechno(unsigned int * a2)
   MouseClass *v18; // [esp+14h] [ebp-20h]
   Tactical *v19; // [esp+18h] [ebp-1Ch]
   int v21; // [esp+24h] [ebp-10h] BYREF
-
   _DWORD * v2 = a2; /*0x6da385*/
   v19 = (Tactical *)(*a2 + this->visibleArea); /*0x6da39b*/
   v18 = 0; /*0x6da3a7*/
@@ -1172,7 +1171,7 @@ LABEL_15:
 
 // 0x6DBE20
 namespace gamemd {
-void TacticalClass::DrawPlacementCircles()
+void* TacticalClass::DrawPlacementCircles()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

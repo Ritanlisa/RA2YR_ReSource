@@ -249,7 +249,7 @@ void * AirstrikeClass::CopyTo(char a2)
 // 0x420E90
 namespace ra2 {
 namespace game {
-int AirstrikeClass::UpdateAll()
+AbstractClass * AirstrikeClass::UpdateAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

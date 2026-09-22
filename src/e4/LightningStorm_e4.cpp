@@ -87,7 +87,7 @@ int LightningStorm::IsActive()
 
 // 0x53A140
 namespace gamemd {
-int LightningStorm::Strike(IUnknown * aP0)
+AnimClass * LightningStorm::Strike(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

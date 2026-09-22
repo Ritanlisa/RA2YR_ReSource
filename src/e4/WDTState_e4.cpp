@@ -5,7 +5,7 @@
 
 // 0x76BA70
 namespace gamemd {
-int WDTState_4::Release(int a2, unsigned int * a3)
+AbstractClass * WDTState_4::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

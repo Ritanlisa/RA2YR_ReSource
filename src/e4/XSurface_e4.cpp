@@ -39,7 +39,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     v13 = (a6 + v11) % 16; /*0x7ba927*/
     a1a = -1; /*0x7ba92c*/
   }
-  a2a = (int *)(*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this); /*0x7ba947*/
+  a2a = (int *)this->vt_slot_112(); /*0x7ba947*/
   v14 = (_WORD *)this->Lock(v7, v40); /*0x7ba94f*/
   v43 = v14; /*0x7ba954*/
   if ( v14 )
@@ -67,9 +67,9 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     else if ( v7 == v8 )
     {
       if ( v40 <= v9 ) /*0x7ba9ac*/
-        int v18 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x7ba9be*/
+        int v18 = this->vt_slot_116(); /*0x7ba9be*/
       else
-        v18 = -(*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x7ba9b5*/
+        v18 = -this->vt_slot_116(); /*0x7ba9b5*/
       int v19 = abs32(v9 - v40); /*0x7ba9cb*/
       if ( v19 >= 0 )
       {
@@ -97,7 +97,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     {
       int v22 = v9 - v40; /*0x7baa1d*/
       int v23 = v8 - v7; /*0x7baa23*/
-      int v24 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x7baa27*/
+      int v24 = this->vt_slot_116(); /*0x7baa27*/
       int v25 = v24; /*0x7baa2a*/
       int v39 = v24; /*0x7baa2e*/
       if ( v22 < 0 ) /*0x7baa32*/
@@ -174,7 +174,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
 }
 
 // 0x7BAB90
-int XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__thiscall *a5)(int *) a4)
+void* XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__thiscall *a5)(int *) a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -318,7 +318,7 @@ int XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__thi
 }
 
 // 0x7BB050
-int XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
+XSurface * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -559,7 +559,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
   int v63; // [esp+70h] [ebp+10h]
   _WORD *v64; // [esp+70h] [ebp+10h]
   _WORD *v65; // [esp+70h] [ebp+10h]
-  v54 = (*(int (__fastcall **)(int *))(*this + 116))(this) >> 1; /*0x7bb374*/
+  v54 = this->vt_slot_116() >> 1; /*0x7bb374*/
   int v12 = a3 + a5; /*0x7bb378*/
   v63 = a3 + a5; /*0x7bb37d*/
   if ( a2 >= a6 && a2 < a6 + a8 && v12 >= a7 && v12 < a9 + a7 ) /*0x7bb39d*/
@@ -738,7 +738,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
 }
 
 // 0x7BBB90
-int XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)
+XSurface * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -789,7 +789,7 @@ int XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int 
 }
 
 // 0x7BBCF0
-int XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
+XSurface * XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

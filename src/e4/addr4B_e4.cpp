@@ -375,7 +375,7 @@ int E4Recv_4B6BF0::sub_4B6BF0()
 
 // 0x4B9890
 namespace gamemd {
-void DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a2, wchar_t * a3, char a4)
+CampaignScore * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a2, wchar_t * a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

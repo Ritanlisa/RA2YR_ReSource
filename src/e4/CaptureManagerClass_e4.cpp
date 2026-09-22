@@ -51,7 +51,7 @@ C CaptureManagerClass::CaptureManagerClass(TechnoClass * aP1, int a3, char a4)
 // 0x471A50
 namespace ra2 {
 namespace game {
-int CaptureManagerClass::HandleOverload()
+ScenarioClass * CaptureManagerClass::HandleOverload()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -207,7 +207,7 @@ int CaptureManagerClass::CanCapture(unsigned int * a2)
 // 0x471D40
 namespace ra2 {
 namespace game {
-int CaptureManagerClass::CaptureUnit(int a2)
+void* CaptureManagerClass::CaptureUnit(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -343,7 +343,7 @@ int CaptureManagerClass::CaptureUnit(int a2)
 // 0x471FF0
 namespace ra2 {
 namespace game {
-int CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
+AnimClass * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -522,7 +522,7 @@ int CaptureManagerClass::CannotControlAnyMore()
 // 0x4723B0
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::DecideUnitFate(IUnknown * aP1)
+AbstractClass * CaptureManagerClass::DecideUnitFate(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -727,7 +727,7 @@ int CaptureManagerClass::IsOverloading(bool * a2)
 // 0x472720
 namespace ra2 {
 namespace game {
-int CaptureManagerClass::LoadFromStream(int a1, int * a2)
+TechnoClass * CaptureManagerClass::LoadFromStream(int a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

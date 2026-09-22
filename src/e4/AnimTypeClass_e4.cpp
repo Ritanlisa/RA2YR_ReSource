@@ -204,7 +204,7 @@ LABEL_17:
 
 // 0x427B50
 namespace gamemd {
-int AnimTypeClass::GetWarhead(int a2)
+void* AnimTypeClass::GetWarhead(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -878,7 +878,7 @@ LABEL_70:
 
 // 0x428800
 namespace gamemd {
-int AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
+ScenarioClass * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -992,7 +992,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
 
 // 0x428B80
 namespace gamemd {
-void * AnimTypeClass::FindOrCreate()
+AnimTypeClass * * AnimTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

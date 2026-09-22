@@ -173,9 +173,9 @@ int LocomotionClass::Update()
   *(_DWORD *)(this + 24) = &vt_JumpjetLocomotionClass; /*0x54acd0*/
   int v4; // [esp+Ch] [ebp-4h] BYREF
   LOWORD(v4) = 0x4000; /*0x54acd7*/
-  FacingClass::Update((char *)(this + 84), &v4); /*0x54acdc*/
+  ((FacingClass *)((char *)this + 84)).Update((char *)(this + 84), &v4); /*0x54acdc*/
   LOWORD(v4) = 0x4000; /*0x54ace8*/
-  FacingClass::Set_SyncLog((char *)(this + 84), &v4); /*0x54aced*/
+  ((FacingClass *)((char *)this + 84)).Set_SyncLog((char *)(this + 84), &v4); /*0x54aced*/
   return this; /*0x54acf4*/
 }
 }

@@ -21,7 +21,7 @@
 
 // 0x743270
 namespace gamemd {
-void PlaceScenarioUnits()
+Coord * PlaceScenarioUnits()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -757,7 +757,7 @@ int _::AddRef(int a2)
 
 // 0x74F400
 namespace gamemd {
-int _::Release(int a2, unsigned int * a3)
+AbstractClass * _::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -798,7 +798,7 @@ int _::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x74f4a2*/
+    this->vt_slot_12(); /*0x74f4a2*/
     return 1; /*0x74f4a8*/
   }
 }
@@ -860,7 +860,7 @@ unsigned int _::Write(int a2)
 
 // 0x74FAE0
 namespace gamemd {
-void * E4Recv_74FAE0::sub_74FAE0()
+AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

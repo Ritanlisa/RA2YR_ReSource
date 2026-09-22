@@ -44,7 +44,7 @@ unsigned int * AircraftClass::Update()
           if ( v6 >= v8 ) /*0x413fc1*/
             goto LABEL_9; /*0x413fc1*/
         }
-        Power::ChangedHouse(this + 84, 1); /*0x413fcd*/
+        ((Power *)((char *)this + 84)).ChangedHouse(1); /*0x413fcd*/
       }
     }
 LABEL_9:
@@ -169,7 +169,7 @@ void AircraftClass_DeployWithAnim()
 
 // 0x417CC0
 namespace gamemd {
-int AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3)
+AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -367,7 +367,7 @@ int AircraftClass::EvaluateTargetingState()
 
 // 0x41AA80
 namespace gamemd {
-void AircraftClass_AssignDestination_SyncLog()
+void* AircraftClass_AssignDestination_SyncLog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -579,7 +579,7 @@ LABEL_4:
 
 // 0x41B430
 namespace gamemd {
-int AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
+void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

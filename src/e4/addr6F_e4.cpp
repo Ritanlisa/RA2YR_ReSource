@@ -336,7 +336,7 @@ LABEL_70:
 
 // 0x6F8960
 namespace gamemd {
-void SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IUnknown * a2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP3a, IUnknown * aP6, int * a7, int a9)
+AbstractClass * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IUnknown * a2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP3a, IUnknown * aP6, int * a7, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

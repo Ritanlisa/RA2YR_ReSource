@@ -59,7 +59,7 @@ void unknown_libname_36()
 
 // 0x764B90
 namespace gamemd {
-void * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
+HashTable * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -227,7 +227,7 @@ void * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
 
 // 0x765000
 namespace gamemd {
-void * E4Recv_765000::sub_765000(ScoreScreen * aP1)
+AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -285,7 +285,7 @@ void * E4Recv_765000::sub_765000(ScoreScreen * aP1)
 
 // 0x7651D0
 namespace gamemd {
-void * E4Recv_7651D0::sub_7651D0()
+AbstractClass * * E4Recv_7651D0::sub_7651D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -883,11 +883,10 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   _DWORD *v8; // eax
   int v9; // eax
   int v10; // edi
-
   _DWORD * v2 = a2; /*0x76b7b1*/
   if ( this == a2 ) /*0x76b7bc*/
     return this; /*0x76b7bc*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x76b7c4*/
+  this->vt_slot_12(); /*0x76b7c4*/
   int v4 = a2[2]; /*0x76b7c7*/
   *(this + 2) = v4; /*0x76b7cc*/
   if ( !v4 ) /*0x76b7cf*/
@@ -941,7 +940,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
 
 // 0x76F970
 namespace gamemd {
-void * WorldDominationTour__Territory::Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5)
+SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1436,7 +1435,7 @@ int sub_764A00()
 // 0x764A20
 namespace ra2 {
 namespace game {
-void * ObjectClass::sub_764A20()
+AbstractClass * * ObjectClass::sub_764A20()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

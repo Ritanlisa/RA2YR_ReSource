@@ -9,7 +9,7 @@
 #include "e4/classes/Team_e4.hpp"
 
 // 0x416D50
-int Carryall::MissionStateMachine()
+FootClass * Carryall::MissionStateMachine()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -205,7 +205,7 @@ LABEL_44:
           (*(void (__thiscall **)(IUnknown *))(Building->field_0 + 212))(Building); /*0x417283*/
           Building->__pad_8C[0] = 0; /*0x417290*/
           Building->__pad_3BC[104] = 1; /*0x417297*/
-          CellClass::AddObject(this + 69, Building); /*0x41729e*/
+          ((CellClass *)((char *)this + 69)).AddObject(Building); /*0x41729e*/
         }
         else
         {

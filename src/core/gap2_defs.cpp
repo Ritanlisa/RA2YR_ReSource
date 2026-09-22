@@ -64,7 +64,7 @@ LABEL_8:
     *(_BYTE *)(this + 61) = 0; /*0x41dbcd*/
     if ( v6 ) /*0x41dbd2*/
     {
-      v1 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*v6 + 44))(v6); /*0x41dbd8*/
+      v1 = (_DWORD *)v6->vt_slot_44(); /*0x41dbd8*/
       if ( v1 == (_DWORD *)6 && v6[165] == this ) /*0x41dbe6*/
       {
         LOBYTE(v1) = DataGlobal_889FC8; /*0x41dbe8*/
@@ -85,7 +85,7 @@ LABEL_8:
         }
         v6[165] = v7; /*0x41dc10*/
         if ( !v7 && g_WTFMode ) /*0x41dc1e*/
-          LOBYTE(v1) = (*(int (__thiscall **)(_DWORD *, int))(*v6 + 292))(v6, 2); /*0x41dc26*/
+          LOBYTE(v1) = v6->vt_slot_292(2); /*0x41dc26*/
         if ( v6[165] == this ) /*0x41dc32*/
           v6[165] = 0; /*0x41dc34*/
       }

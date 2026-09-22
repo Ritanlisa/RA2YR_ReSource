@@ -301,7 +301,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 
 // 0x4A2370
 namespace gamemd {
-void DrawSidebarCreditsTimer()
+AbstractClass * DrawSidebarCreditsTimer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -515,7 +515,7 @@ void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
 
 // 0x4A38D0
 namespace gamemd {
-void * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
+AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -562,7 +562,7 @@ LABEL_6:
 
 // 0x4A3970
 namespace gamemd {
-void FileClass_LoadToBuffer(char ** a1, bool * a2)
+AbstractClass * FileClass_LoadToBuffer(char ** a1, bool * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -714,7 +714,7 @@ LABEL_18:
 
 // 0x4A4130
 namespace gamemd {
-void int sub_4A4130()
+INIClass * int sub_4A4130()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1182,7 +1182,7 @@ void globalHelper_0A6010()
 
 // 0x4A6360
 namespace gamemd {
-int * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, unsigned int * a4, int * a5, short a6, int a7, int a8, unsigned int a9, unsigned int * a10)
+ControlClass * * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, unsigned int * a4, int * a5, short a6, int a7, int a8, unsigned int a9, unsigned int * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1346,7 +1346,7 @@ int * * sub_4A67E0(char a1, int a2)
 
 // 0x4A6840
 namespace gamemd {
-void * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
+AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1905,7 +1905,7 @@ LABEL_11:
 
 // 0x4AC4F0
 namespace gamemd {
-void * sub_4AC4F0()
+ScenarioClass * * sub_4AC4F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1976,7 +1976,7 @@ void * sub_4AC4F0()
 
 // 0x4AE750
 namespace gamemd {
-void DispatchSelectionWaypointMove()
+AbstractClass * DispatchSelectionWaypointMove()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

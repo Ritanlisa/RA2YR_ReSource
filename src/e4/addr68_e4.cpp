@@ -522,7 +522,7 @@ void * * ScenarioClass_SetTimer(int a1)
 
 // 0x684290
 namespace gamemd {
-void Mouse_Update()
+ScenarioClass * Mouse_Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1121,7 +1121,7 @@ void SaveScenarioToINI()
 
 // 0x687F10
 namespace gamemd {
-void SessionClass_AssignHouses()
+AbstractClass * SessionClass_AssignHouses()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1358,7 +1358,6 @@ void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
   IUnknown *v41; // [esp+44h] [ebp-28h]
   int v42; // [esp+48h] [ebp-24h] BYREF
   int v43; // [esp+4Ch] [ebp-20h]
-
   v3 = a2; /*0x688ed7*/
   v34 = a2; /*0x688ee3*/
   int * v35 = a1; /*0x688ee7*/

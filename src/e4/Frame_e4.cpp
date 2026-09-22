@@ -4,7 +4,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x4F4780
-int Frame::Present(IUnknown * aP1)
+TechnoTypeClass * Frame::Present(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -937,7 +937,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
 
 // 0x5A6510
 namespace gamemd {
-void MapSeed_PlaceBuildingsScatter2(int a1)
+FootClass * MapSeed_PlaceBuildingsScatter2(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

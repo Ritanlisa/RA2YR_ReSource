@@ -398,7 +398,7 @@ LABEL_36:
 
 // 0x606800
 namespace gamemd {
-int Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
+AbstractClass * Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -724,7 +724,7 @@ int Dialog::StopBink()
 
 // 0x608070
 namespace gamemd {
-int Dialog::IdleProcess()
+AbstractClass * Dialog::IdleProcess()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -917,7 +917,7 @@ LABEL_33:
 
 // 0x60A5B0
 namespace gamemd {
-int Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
+AbstractClass * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1130,7 +1130,7 @@ LABEL_74:
 
 // 0x60F760
 namespace gamemd {
-int Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
+AbstractClass * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1225,7 +1225,7 @@ LABEL_22:
 
 // 0x60F9A0
 namespace gamemd {
-int Dialog::InitializeControls(HWND hWnd, LPARAM a2)
+AbstractClass * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1524,7 +1524,7 @@ LABEL_71:
 
 // 0x610360
 namespace gamemd {
-int Dialog::DestroyDialogSystem()
+AbstractClass * Dialog::DestroyDialogSystem()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1618,7 +1618,7 @@ LABEL_22:
 
 // 0x6137D0
 namespace gamemd {
-void Dialog_TabControlPaint()
+AbstractClass * Dialog_TabControlPaint()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1998,7 +1998,7 @@ LABEL_43:
 
 // 0x6213A0
 namespace gamemd {
-int Dialog::Resize()
+AbstractClass * Dialog::Resize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2062,7 +2062,7 @@ int Dialog::Resize()
 
 // 0x621E90
 namespace gamemd {
-void Dialog::DrawBackground()
+AbstractClass * Dialog::DrawBackground()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2389,7 +2389,7 @@ int Dialog::Destroy()
 
 // 0x6233A0
 namespace gamemd {
-void Dialog::CleanupTree()
+CampaignClass * Dialog::CleanupTree()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2456,7 +2456,7 @@ int Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
 
 // 0x624BE0
 namespace gamemd {
-void Dialog::GrowBuffer()
+AbstractClass * Dialog::GrowBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2508,7 +2508,7 @@ void Dialog::GrowBuffer()
 
 // 0x624CA0
 namespace gamemd {
-int Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
+AbstractClass * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2692,7 +2692,7 @@ LABEL_41:
 
 // 0x671EA0
 namespace gamemd {
-int Dialog::ReadMultiplayerDialogSettings()
+INIClass * Dialog::ReadMultiplayerDialogSettings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

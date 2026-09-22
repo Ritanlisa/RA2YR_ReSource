@@ -7,7 +7,7 @@
 
 // 0x5ACD30
 namespace gamemd {
-int MSEngine::Release(int a2, char * a3)
+AbstractClass * MSEngine::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -83,7 +83,7 @@ int MSEngine::Release(int a2, char * a3)
 
 // 0x5ACED0
 namespace gamemd {
-int MSEngine::SetCapacity(int a2, char * a3)
+AbstractClass * MSEngine::SetCapacity(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -156,7 +156,7 @@ int MSEngine::SetCapacity(int a2, char * a3)
 
 // 0x5CEE60
 namespace gamemd {
-void MSEngine::Destructor()
+CampaignClass * MSEngine::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -225,8 +225,8 @@ unsigned int * MSEngine::Construct()
   *this = &vt_MSEngine; /*0x5d1b01*/
   this->q004 = 0; /*0x5d1b07*/
   (*(void (__thiscall **)(char *, int, _DWORD))(v3 + 8))(v2, 20, 0); /*0x5d1b0a*/
-  (*(void (__thiscall **)(_DWORD *))(this->q006 + 12))(this + 6); /*0x5d1b11*/
-  (*(void (__thiscall **)(_DWORD *))(this->q00C + 12))(this + 12); /*0x5d1b18*/
+  this->q006->vt_slot_12(); /*0x5d1b11*/
+  this->q00C->vt_slot_12(); /*0x5d1b18*/
   return this; /*0x5d1b1b*/
 }
 }
@@ -253,7 +253,7 @@ void MSEngine::Destruct()
     }
   }
   _DWORD * v5 = this + 12; /*0x5d1b6c*/
-  (*(void (__thiscall **)(_DWORD *))(this->q00C + 12))(this + 12); /*0x5d1b71*/
+  this->q00C->vt_slot_12(); /*0x5d1b71*/
   for ( i = 0; i < this->q00A; ++i ) /*0x5d1b7b*/
   {
     v7 = *(void (__thiscall ****)(_DWORD, int))(this->q007 + 4 * i); /*0x5d1b80*/
@@ -261,7 +261,7 @@ void MSEngine::Destruct()
       (**v7)(v7, 1); /*0x5d1b8b*/
   }
   _DWORD * v8 = this + 6; /*0x5d1b98*/
-  (*(void (__thiscall **)(_DWORD *))(this->q006 + 12))(this + 6); /*0x5d1b9d*/
+  this->q006->vt_slot_12(); /*0x5d1b9d*/
   int v9 = this->q008; /*0x5d1ba0*/
   _DWORD * v10 = this + 2; /*0x5d1ba3*/
   (*(void (__thiscall **)(_DWORD *))(v9 + 12))(v10); /*0x5d1ba8*/
@@ -308,7 +308,7 @@ int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
   int v4 = a3; /*0x5d1e01*/
   while ( 1 ) /*0x5d1e19*/
   {
-    result = (*(int (__thiscall **)(_DWORD *, MSVQAnim **))(this->q006 + 16))(this + 6, &aP1); /*0x5d1e19*/
+    result = this->q006->vt_slot_16(&aP1); /*0x5d1e19*/
     if ( result == -1 ) /*0x5d1e1f*/
       break; /*0x5d1e1f*/
     int v6 = *(_DWORD *)(this->q007 + 4 * result); /*0x5d1e24*/

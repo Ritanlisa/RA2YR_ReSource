@@ -31,7 +31,7 @@
 
 // 0x4880F0
 namespace gamemd {
-int E4Recv_4880F0::sub_4880F0(int a2)
+ConvertClass * E4Recv_4880F0::sub_4880F0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -187,7 +187,6 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
   IUnknown *j; // [esp+D4h] [ebp-4Ch] BYREF
   __int64 v143; // [esp+D8h] [ebp-48h] BYREF
   float v144; // [esp+E0h] [ebp-40h]
-
   v120 = (TechnoClass *)aP1;
   aP2 = (CoordStruct *)aP0;
   sub_48B070(&v117, 0, 0);
@@ -898,7 +897,7 @@ LABEL_213:
 
 // 0x48A620
 namespace gamemd {
-void CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7)
+AbstractClass * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -993,7 +992,7 @@ void Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
 
 // 0x48B0E0
 namespace gamemd {
-void * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a5)
+AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1123,7 +1122,7 @@ int CompareFuncInt(unsigned int * a1, unsigned int * a2)
 
 // 0x48C8B0
 namespace gamemd {
-void Main_Game_Frame()
+AbstractClass * Main_Game_Frame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1461,7 +1460,7 @@ LABEL_7:
 
 // 0x48E0B0
 namespace gamemd {
-void * sub_48E0B0()
+CellStruct * * sub_48E0B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

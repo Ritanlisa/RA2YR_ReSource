@@ -441,7 +441,7 @@ LABEL_11:
         (*(void (__thiscall **)(_BYTE *, _DWORD, int))(*(_DWORD *)v15 + 1152))(v15, 0, 1);
       }
       (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*this->q00C + 1348))(this->q00C, 0, 0);
-      LOBYTE(v9) = (*(int (__stdcall **)(int))(this->num_sections + 72))(this + 4);
+      LOBYTE(v9) = this->num_sections->vt_slot_72();
       return v9;
     }
 LABEL_37:
@@ -769,7 +769,7 @@ LABEL_67:
       {
         *(_DWORD *)(this->q00C + 1504) = -1;
         (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*this->q00C + 1348))(this->q00C, 0, 0);
-        (*(void (__stdcall **)(int))(this->num_sections + 72))(this + 4);
+        this->num_sections->vt_slot_72();
         *(_BYTE *)(this->q00C + 1674) = 0;
         v9 = this->q00C;
         *(_BYTE *)(v9 + 1674) = 0;

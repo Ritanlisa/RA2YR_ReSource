@@ -6,7 +6,7 @@
 
 // 0x453E20
 namespace gamemd {
-int BuildingClass::LoadFromStream()
+void* BuildingClass::LoadFromStream()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -537,7 +537,7 @@ int BuildingClass::processCapture()
 
 // 0x739EC0
 namespace gamemd {
-void BuildingClass_ProcessSell()
+void* BuildingClass_ProcessSell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

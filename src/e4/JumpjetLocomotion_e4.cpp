@@ -10,7 +10,7 @@
 
 // 0x4B0AD0
 namespace gamemd {
-int JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
+AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2414,7 +2414,7 @@ unsigned int * JumpjetLocomotion::TransformCoords(IUnknown * aP1, IUnknown * aP2
 
 // 0x54CA90
 namespace gamemd {
-int JumpjetLocomotion::Land()
+void* JumpjetLocomotion::Land()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2451,7 +2451,7 @@ int JumpjetLocomotion::Land()
   {
     v52 = Math::RoundToInt((double)v52 - this->q0A0); /*0x54cb0a*/
     LOWORD(v48) = *(_WORD *)ProgressTimer::GetValue((_WORD *)(this + 84), &v49) + 11520; /*0x54cb2a*/
-    FacingClass::Update((char *)(this + 84), &v48); /*0x54cb39*/
+    ((FacingClass *)((char *)this + 84)).Update((char *)(this + 84), &v48); /*0x54cb39*/
   }
   int v9 = dword_ABC5DC + Cell::GetGroundHeight(&v50); /*0x54cb5e*/
   char v44; // [esp+32h] [ebp-24h]
@@ -2696,7 +2696,7 @@ LABEL_74:
 
 // 0x54D0F0
 namespace gamemd {
-int JumpjetLocomotion::UpdateFacing()
+void* JumpjetLocomotion::UpdateFacing()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

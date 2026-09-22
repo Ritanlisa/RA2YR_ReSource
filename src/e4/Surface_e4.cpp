@@ -295,7 +295,7 @@ void sub_626C60()
 } // namespace gamemd
 
 // 0x641DB0
-int Surface::LoadToSurfaceSHP(char * Source)
+AbstractClass * Surface::LoadToSurfaceSHP(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -913,7 +913,7 @@ LABEL_43:
 }
 
 // 0x707480
-void Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6)
+TechnoClass * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -958,7 +958,7 @@ void Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, Tec
   a1a = 0; /*0x70751a*/
   if ( (v12 & 8) != 0 ) /*0x707522*/
   {
-    int v14 = (*(int (__stdcall **)(_BYTE *))(this->Width + 16))(this + 4); /*0x707534*/
+    int v14 = this->Width->vt_slot_16(); /*0x707534*/
     a1a = (int)(v14 + Math::RoundToInt(*((float *)this + 147))) % 400; /*0x707545*/
   }
   if ( (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 44))(this) == 1 ) /*0x707557*/
@@ -1034,7 +1034,7 @@ void Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, Tec
     int v24 = *(_DWORD *)this; /*0x7076e3*/
     v35[3] = (unsigned __int16)a1[3]; /*0x7076e5*/
     v25 = (AbstractClass *)(*(int (__thiscall **)(_BYTE *))(v24 + 752))(this); /*0x707703*/
-    eax24a = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 748))(this); /*0x707706*/
+    eax24a = this->vt_slot_748(); /*0x707706*/
     BlitterRLEBlitSHP( /*0x707736*/
       *(int *)&DataGlobal_87F8E4[31280],
       (int *)aP3->__pad_0,
@@ -1557,22 +1557,22 @@ LABEL_57:
   *(_DWORD *)(this + 340) |= 1u; /*0x7bd90f*/
   _DWORD * v21 = 0; /*0x7bd91b*/
   *(_DWORD *)(this + 1896) = (*(_DWORD *)(this + 266) + 16) & 0xFFFFFFFC; /*0x7bd927*/
-  int v22 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, v49); /*0x7bd92d*/
+  int v22 = this->vt_slot_68(2, 0, v49); /*0x7bd92d*/
   *(_DWORD *)(this + 1776) = v22; /*0x7bd935*/
   if ( !v22 ) /*0x7bd93b*/
     goto LABEL_103; /*0x7bd93b*/
-  (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v22, *(_DWORD *)(this + 1908)); /*0x7bd95c*/
+  this->vt_slot_68(4, v22, *(_DWORD *)(this + 1908)); /*0x7bd95c*/
   this->q00C += *(_DWORD *)(this + 1908); /*0x7bd96d*/
   v56 = 0; /*0x7bd978*/
   if ( *(int *)(this + 140) > 0 ) /*0x7bd97c*/
   {
     while ( 1 ) /*0x7bd991*/
     {
-      int v23 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, *(_DWORD *)(this + 1896) + 24); /*0x7bd991*/
+      int v23 = this->vt_slot_68(2, 0, *(_DWORD *)(this + 1896) + 24); /*0x7bd991*/
       _DWORD * v24 = (_DWORD *)v23; /*0x7bd994*/
       if ( !v23 ) /*0x7bd99b*/
         goto LABEL_103; /*0x7bd99b*/
-      (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v23, *(_DWORD *)(this + 1896) + 24); /*0x7bd9af*/
+      this->vt_slot_68(4, v23, *(_DWORD *)(this + 1896) + 24); /*0x7bd9af*/
       this->q00C += *(_DWORD *)(this + 1896) + 24; /*0x7bd9c4*/
       memset(v24, 0, 0x18u); /*0x7bd9cc*/
       *v24 = v24 + 6; /*0x7bd9d6*/
@@ -1628,7 +1628,7 @@ LABEL_57:
   LOBYTE(v30) = v30 & 0xFC; /*0x7bdab1*/
   *(_DWORD *)(this + 340) |= 2u; /*0x7bdab6*/
   *(_DWORD *)(this + 1900) = v30; /*0x7bdabc*/
-  v31 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, v50); /*0x7bdac2*/
+  v31 = this->vt_slot_68(2, 0, v50); /*0x7bdac2*/
   *(_DWORD *)(this + 1768) = v31; /*0x7bdaca*/
   if ( !v31 ) /*0x7bdad0*/
   {
@@ -1636,7 +1636,7 @@ LABEL_103:
     DSurface::CommitBuffers(this); /*0x7bdf14*/
     return -8; /*0x7bdf27*/
   }
-  (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v31, *(_DWORD *)(this + 1912)); /*0x7bdaf1*/
+  this->vt_slot_68(4, v31, *(_DWORD *)(this + 1912)); /*0x7bdaf1*/
   this->q00C += *(_DWORD *)(this + 1912); /*0x7bdb02*/
   v57 = 0; /*0x7bdb0d*/
   if ( *(int *)(this + 136) > 0 ) /*0x7bdb11*/
@@ -1644,18 +1644,12 @@ LABEL_103:
     while ( 1 ) /*0x7bdb30*/
     {
   _DWORD *v32; // ebp
-      v32 = (_DWORD *)(*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))( /*0x7bdb30*/
-                        this,
-                        2,
-                        0,
-                        *(_DWORD *)(this + 1904) + *(_DWORD *)(this + 1900) + 44);
+      v32 = (_DWORD *)this->vt_slot_68(/*0x7bdb30*/
+                        this, 2, 0, *(_DWORD *)(this + 1904) + *(_DWORD *)(this + 1900) + 44);
       if ( !v32 ) /*0x7bdb37*/
         goto LABEL_103; /*0x7bdb37*/
-      (*(void (__cdecl **)(int, int, _DWORD *, int))(this + 68))( /*0x7bdb52*/
-        this,
-        4,
-        v32,
-        *(_DWORD *)(this + 1904) + *(_DWORD *)(this + 1900) + 44);
+      this->vt_slot_68(/*0x7bdb52*/
+        this, 4, v32, *(_DWORD *)(this + 1904) + *(_DWORD *)(this + 1900) + 44);
       this->q00C += *(_DWORD *)(this + 1904) + *(_DWORD *)(this + 1900) + 44; /*0x7bdb71*/
       memset(v32, 0, 0x2Cu); /*0x7bdb79*/
       *v32 = v32 + 11; /*0x7bdb7e*/
@@ -1735,51 +1729,51 @@ LABEL_103:
       }
       else
       {
-        int v42 = (*(int (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 2, 0, *(_DWORD *)(this + 152)); /*0x7bdcf5*/
+        int v42 = this->vt_slot_68(2, 0, *(_DWORD *)(this + 152)); /*0x7bdcf5*/
         *(_DWORD *)(this + 1932) = v42; /*0x7bdcfb*/
         if ( !v42 ) /*0x7bdd03*/
           goto LABEL_103; /*0x7bdd03*/
-        (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v42, *(_DWORD *)(this + 152)); /*0x7bdd24*/
+        this->vt_slot_68(4, v42, *(_DWORD *)(this + 152)); /*0x7bdd24*/
         this->q00C += *(_DWORD *)(this + 152); /*0x7bdd35*/
       }
       int v51 = *(_DWORD *)(this + 152) / *(_DWORD *)(this + 156); /*0x7bdd4d*/
       *(_DWORD *)(this + 1948) = v51; /*0x7bdd53*/
-      int v43 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, v51); /*0x7bdd59*/
+      int v43 = this->vt_slot_68(2, 0, v51); /*0x7bdd59*/
       *(_DWORD *)(this + 1940) = v43; /*0x7bdd5f*/
       if ( !v43 ) /*0x7bdd67*/
         goto LABEL_103; /*0x7bdd67*/
-      (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v43, *(_DWORD *)(this + 1948)); /*0x7bdd88*/
+      this->vt_slot_68(4, v43, *(_DWORD *)(this + 1948)); /*0x7bdd88*/
       this->q00C += *(_DWORD *)(this + 1948); /*0x7bdd96*/
       memset(*(void **)(this + 1940), 0, *(_DWORD *)(this + 1948)); /*0x7bddac*/
-      int v44 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, 2 * *(_DWORD *)(this + 1948)); /*0x7bddc3*/
+      int v44 = this->vt_slot_68(2, 0, 2 * *(_DWORD *)(this + 1948)); /*0x7bddc3*/
       *(_DWORD *)(this + 1944) = v44; /*0x7bddc9*/
       if ( !v44 ) /*0x7bddd1*/
         goto LABEL_103; /*0x7bddd1*/
-      (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v44, 2 * *(_DWORD *)(this + 1948)); /*0x7bddf4*/
+      this->vt_slot_68(4, v44, 2 * *(_DWORD *)(this + 1948)); /*0x7bddf4*/
       this->q00C += 2 * *(_DWORD *)(this + 1948); /*0x7bde04*/
       memset(*(void **)(this + 1944), 0, 2 * *(_DWORD *)(this + 1948)); /*0x7bde1c*/
       unsigned int v48 = 2 * (*(_DWORD *)(this + 1996) / (unsigned int)*(unsigned __int8 *)(this + 244)) + 100; /*0x7bde3b*/
       *(_DWORD *)(this + 1972) = v48; /*0x7bde41*/
-      int v45 = (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 68))(this, 2, 0, v48); /*0x7bde47*/
+      int v45 = this->vt_slot_68(2, 0, v48); /*0x7bde47*/
       *(_DWORD *)(this + 1960) = v45; /*0x7bde4d*/
       if ( !v45 ) /*0x7bde55*/
         goto LABEL_103; /*0x7bde55*/
-      (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v45, *(_DWORD *)(this + 1972)); /*0x7bde76*/
+      this->vt_slot_68(4, v45, *(_DWORD *)(this + 1972)); /*0x7bde76*/
       this->q00C += *(_DWORD *)(this + 1972); /*0x7bde84*/
-      int v46 = (*(int (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 2, 0, *(_DWORD *)(this + 156)); /*0x7bde93*/
+      int v46 = this->vt_slot_68(2, 0, *(_DWORD *)(this + 156)); /*0x7bde93*/
       *(_DWORD *)(this + 1976) = v46; /*0x7bde99*/
       if ( !v46 ) /*0x7bdea1*/
         goto LABEL_103; /*0x7bdea1*/
-      (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 4, v46, *(_DWORD *)(this + 156)); /*0x7bdec2*/
+      this->vt_slot_68(4, v46, *(_DWORD *)(this + 156)); /*0x7bdec2*/
       memset(*(void **)(this + 1976), 0, *(_DWORD *)(this + 156)); /*0x7bded8*/
       this->q00C += *(_DWORD *)(this + 156); /*0x7bdeef*/
     }
   }
-  v47 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdf04*/
+  v47 = this->vt_slot_68(2, 0, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdf04*/
   *(_DWORD *)(this + 1892) = v47; /*0x7bdf0a*/
   if ( !v47 ) /*0x7bdf12*/
     goto LABEL_103; /*0x7bdf12*/
-  (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v47, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdf4d*/
+  this->vt_slot_68(4, v47, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdf4d*/
   this->q00C += 4 * *(unsigned __int16 *)(this + 236); /*0x7bdf65*/
   return -1; /*0x7bd6a3*/
 }

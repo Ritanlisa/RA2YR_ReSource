@@ -30,7 +30,7 @@ void * WarheadTypeClass::loadWarheadINI(CCINIClass * aP1, unsigned char * a2, CC
 }
 
 // 0x525300
-int WarheadTypeClass::Release(int a2, unsigned int * a3)
+AbstractClass * WarheadTypeClass::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -75,7 +75,7 @@ int WarheadTypeClass::Release(int a2, unsigned int * a3)
 }
 
 // 0x52AB80
-void * WarheadTypeClass::parseVerses()
+AbstractClass * * WarheadTypeClass::parseVerses()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -256,7 +256,7 @@ void * WarheadTypeClass::ReadParticleSystems(char a2)
 }
 
 // 0x644630
-int WarheadTypeClass::applyDamage()
+ParticleSystemTypeClass * WarheadTypeClass::applyDamage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -381,7 +381,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1)
   this->WarheadTypeClass_field_0x4 = &WarheadTypeClass::`vftable'; /*0x75d0c1*/
   this->WarheadTypeClass_field_0x8 = &WarheadTypeClass::`vftable'; /*0x75d0c7*/
   this->WarheadTypeClass_field_0xC = &vt_WarheadTypeClass; /*0x75d0ce*/
-  AbstractClass::GenerateUniqueID(this + 4); /*0x75d0d5*/
+  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x75d0d5*/
   (*(void (__thiscall **)(int))(this->DebrisTypes + 12))(this + 396); /*0x75d0de*/
   (*(void (__thiscall **)(int))(*(_DWORD *)(this + 424) + 12))(this + 424); /*0x75d0e5*/
   if ( *(int *)&DataGlobal_87F8E4[31724] < *(int *)&DataGlobal_87F8E4[31716] /*0x75d11c*/
@@ -414,7 +414,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1)
 }
 
 // 0x75DEC0
-int WarheadTypeClass::ProcessPower(int * a2)
+void* WarheadTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -642,7 +642,7 @@ int WarheadTypeClass::GetDamage(int a2, int a3)
 }
 
 // 0x75E510
-void * WarheadTypeClass::Destructor(char a2)
+CampaignClass * * WarheadTypeClass::Destructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -711,7 +711,7 @@ void * WarheadTypeClass::Destructor(char a2)
 
 // 0x772080
 namespace gamemd {
-void WarheadTypeClass_ReadINI()
+void* WarheadTypeClass_ReadINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!

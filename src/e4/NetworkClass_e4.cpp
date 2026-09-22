@@ -48,7 +48,7 @@ LABEL_10:
 
 // 0x6FFE00
 namespace gamemd {
-int NetworkClass::RecordEvent()
+AbstractClass * NetworkClass::RecordEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -92,7 +92,7 @@ int NetworkClass::RecordEvent()
 
 // 0x7B1C50
 namespace gamemd {
-int NetworkClass::UnregisterAsync()
+AnimClass * NetworkClass::UnregisterAsync()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

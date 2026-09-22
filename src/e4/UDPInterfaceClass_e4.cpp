@@ -98,7 +98,7 @@ LABEL_7:
 }
 
 // 0x7B3A20
-int UDPInterfaceClass::Flush()
+AbstractClass * UDPInterfaceClass::Flush()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -132,7 +132,7 @@ int UDPInterfaceClass::Flush()
 }
 
 // 0x7B3AA0
-int UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
+AbstractClass * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -163,7 +163,7 @@ int UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5
       int v8 = 0; /*0x7b3ad1*/
       if ( v7 > 0 ) /*0x7b3ad5*/
       {
-        _DWORD * v9 = this + 258816; /*0x7b3ad7*/
+        Game *v9 = this + 258816; /*0x7b3ad7*/
         while ( *v9 != a4 ) /*0x7b3adf*/
         {
           ++v8; /*0x7b3ae1*/
@@ -289,7 +289,7 @@ LABEL_60:
     int v11 = 0; /*0x7b3b42*/
     if ( this->q3F330 > 0 ) /*0x7b3b46*/
     {
-      _DWORD * v12 = this + 258816; /*0x7b3b48*/
+      Game *v12 = this + 258816; /*0x7b3b48*/
       do /*0x7b3b76*/
       {
         if ( *v12 == this->q3F334 ) /*0x7b3b58*/
@@ -447,7 +447,7 @@ int UDPInterfaceClass::Receive()
 }
 
 // 0x7B4170
-void * UDPInterfaceClass::Destructor(char a2)
+CampaignClass * * UDPInterfaceClass::Destructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -536,7 +536,7 @@ unsigned int UDPInterfaceClass::reset(int a2)
 }
 
 // 0x7B44A0
-int UDPInterfaceClass::flush(int a2, unsigned int * a3)
+AbstractClass * UDPInterfaceClass::flush(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -602,7 +602,7 @@ int UDPInterfaceClass::sendPacket(unsigned int * a2)
 }
 
 // 0x7B3450
-int UDPInterfaceClass_Destru::Bind(int a2)
+AbstractClass * UDPInterfaceClass_Destru::Bind(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -801,7 +801,7 @@ int UDPInterfaceClass_Destru::Receive()
     v3 = this + 64704; /*0x7b38aa*/
     while ( 1 ) /*0x7b38b8*/
     {
-      v4 = (*(int (__thiscall **)(SOCKET *, int))(*this + 56))(this, -1); /*0x7b38b8*/
+      v4 = this->vt_slot_56(-1); /*0x7b38b8*/
       if ( WSAAsyncSelect(*v3, g_hWnd, v4, 3) == -1 ) /*0x7b38ce*/
         break; /*0x7b38ce*/
       ++v2; /*0x7b38d6*/
@@ -827,7 +827,7 @@ int UDPInterfaceClass_Destru::CheckStatus()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   NetworkClass::UnregisterAsync(this); /*0x7b3903*/
-  return (*(int (__thiscall **)(SOCKET *))(*this + 112))(this); /*0x7b390f*/
+  return this->vt_slot_112(); /*0x7b390f*/
 }
 }
 

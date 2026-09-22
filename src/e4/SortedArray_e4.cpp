@@ -99,7 +99,7 @@ LABEL_9:
 }
 
 // 0x5388A0
-int SortedArray::RemoveByKey(DynamicVector * aP1)
+ObjectClass * SortedArray::RemoveByKey(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

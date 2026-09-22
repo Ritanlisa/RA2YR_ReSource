@@ -89,7 +89,7 @@ LABEL_12:
 }
 
 // 0x41EE90
-int AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
+DynamicVector * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -266,7 +266,7 @@ int AITriggerTypeClass::HouseCredits(int a2, int a3)
 }
 
 // 0x41F580
-int AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
+ObjectClass * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

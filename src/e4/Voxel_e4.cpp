@@ -88,7 +88,7 @@ int Voxel::BuildIndexTable()
 
 // 0x754510
 namespace gamemd {
-void * Voxel::RenderFrame()
+AbstractClass * * Voxel::RenderFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -465,7 +465,7 @@ int Voxel::Projection_Setup()
 
 // 0x755DB0
 namespace gamemd {
-int Voxel::SortDepth(ObjectClass * aP1, int a3)
+AbstractClass * Voxel::SortDepth(ObjectClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -902,7 +902,7 @@ int Voxel::ProcessColor(unsigned int * a2, float * a3)
 
 // 0x75C240
 namespace gamemd {
-int Voxel::DrawHelper(IUnknown * aP1)
+void* Voxel::DrawHelper(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -938,7 +938,7 @@ int Voxel::DrawHelper(IUnknown * aP1)
   }
   else
   {
-    (*(void (__stdcall **)(_DWORD *))(*(_DWORD *)this->q00C + 244))(this + 10); /*0x75c276*/
+    *(_DWORD *)this->q00C->vt_slot_244(); /*0x75c276*/
   }
   aP1a = 0; /*0x75c2aa*/
   v38[0] = aP1->field_0; /*0x75c2b3*/
@@ -955,11 +955,11 @@ int Voxel::DrawHelper(IUnknown * aP1)
   }
   else
   {
-    if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 8 /*0x75c33c*/
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 9
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 7
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 11
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 25 )
+    if ( this->q00C->vt_slot_388() == 8 /*0x75c33c*/
+      || this->q00C->vt_slot_388() == 9
+      || this->q00C->vt_slot_388() == 7
+      || this->q00C->vt_slot_388() == 11
+      || this->q00C->vt_slot_388() == 25 )
     {
       v7 = (BuildingTypeClass *)this->q00C; /*0x75c342*/
       int v8 = *(_DWORD *)&v7->DebrisTypes[656]; /*0x75c345*/
@@ -1065,7 +1065,7 @@ int Voxel::DrawHelper(IUnknown * aP1)
   }
   else
   {
-    (*(void (__thiscall **)(_DWORD, IUnknown *))(*(_DWORD *)this->q00C + 240))(this->q00C, v3); /*0x75c5f1*/
+    *(_DWORD *)this->q00C->vt_slot_240(this->q00C, v3); /*0x75c5f1*/
     return 1; /*0x75c5f9*/
   }
 }
@@ -1155,7 +1155,7 @@ int Voxel::loadSectionData()
 
 // 0x75F4C0
 namespace gamemd {
-int Voxel::renderSection(ObjectClass * aP1)
+CellStruct * Voxel::renderSection(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1548,7 +1548,7 @@ int Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
 
 // 0x7609E0
 namespace gamemd {
-void Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
+AbstractClass * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1752,7 +1752,7 @@ void Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
 
 // 0x7610F0
 namespace gamemd {
-void Voxel::FaceBlit()
+void* Voxel::FaceBlit()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1981,7 +1981,7 @@ int Voxel::SectionProject(int * a2, int a3)
   *(this + 45) = v9; /*0x761b27*/
   *(this + 46) = v59; /*0x761b2d*/
   *(this + 47) = v60; /*0x761b34*/
-  (*(void (__thiscall **)(_DWORD *, _DWORD *))(*this + 436))(this, this + 45); /*0x761b3b*/
+  this->vt_slot_436(this + 45); /*0x761b3b*/
   int v12 = v61; /*0x761b41*/
   int v13 = v62; /*0x761b45*/
   *(this + 82) = 6; /*0x761b55*/
@@ -2090,10 +2090,10 @@ int Voxel::SectionProject(int * a2, int a3)
   *(this + 72) = v39; /*0x761f77*/
   *(this + 73) = v53; /*0x761f85*/
   *(this + 74) = v40; /*0x761f88*/
-  Coord::To_Screen(this + 63, this + 55); /*0x761f91*/
-  Coord::To_Screen(this + 66, this + 57); /*0x761faa*/
-  Coord::To_Screen(this + 69, this + 59); /*0x761fc3*/
-  Coord::To_Screen(this + 72, this + 61); /*0x761fdc*/
+  ((Coord *)((char *)this + 63)).To_Screen(this + 55); /*0x761f91*/
+  ((Coord *)((char *)this + 66)).To_Screen(this + 57); /*0x761faa*/
+  ((Coord *)((char *)this + 69)).To_Screen(this + 59); /*0x761fc3*/
+  ((Coord *)((char *)this + 72)).To_Screen(this + 61); /*0x761fdc*/
   _DWORD * v41 = (_DWORD *)*(this + 83); /*0x761fe1*/
   *v41 = *(this + 55); /*0x761fe9*/
   v41[1] = *(this + 56); /*0x761fee*/
@@ -2114,7 +2114,7 @@ int Voxel::SectionProject(int * a2, int a3)
 
 // 0x762070
 namespace gamemd {
-int Voxel::LightRender(AbstractClass ** a2, int a3)
+AbstractClass * Voxel::LightRender(AbstractClass ** a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2263,7 +2263,7 @@ int Voxel::LightRender(AbstractClass ** a2, int a3)
   *(this + 45) = a1; /*0x7625bb*/
   *(this + 46) = v57; /*0x7625c1*/
   *(this + 47) = v58; /*0x7625c8*/
-  (*(void (__thiscall **)(_DWORD *, _DWORD *))(*this + 436))(this, this + 45); /*0x7625cf*/
+  this->vt_slot_436(this + 45); /*0x7625cf*/
   v10 = var94; /*0x7625d5*/
   v11 = v59; /*0x7625d9*/
   *(this + 82) = 4; /*0x7625e3*/
@@ -2396,7 +2396,7 @@ int Voxel::LightRender(AbstractClass ** a2, int a3)
 
 // 0x762AF0
 namespace gamemd {
-int Voxel::TransformMatrix()
+DynamicVectorClass * Voxel::TransformMatrix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2534,7 +2534,7 @@ LABEL_22:
       *(double *)(this + 320) = v57; /*0x7630d6*/
   char v59; // c0
       if ( !v59 ) /*0x7630e1*/
-        return (*(int (__thiscall **)(int))(*(_DWORD *)this + 248))(this); /*0x7630e1*/
+        return this->vt_slot_248(); /*0x7630e1*/
       int v60 = Math::RoundToInt(v57); /*0x76311c*/
       int v61 = Math::RoundToInt(v57); /*0x76312a*/
       int v62 = *(_DWORD *)(this + 332); /*0x76312f*/
@@ -2583,7 +2583,7 @@ LABEL_22:
   *(double *)(this + 320) = v33; /*0x762e9a*/
   char v35; // c0
   if ( !v35 ) /*0x762ea5*/
-    return (*(int (__thiscall **)(int))(*(_DWORD *)this + 248))(this); /*0x762eba*/
+    return this->vt_slot_248(); /*0x762eba*/
   int v37 = Math::RoundToInt(v33); /*0x762ee0*/
   int v38 = Math::RoundToInt(v33); /*0x762eee*/
   int v39 = *(_DWORD *)(this + 332); /*0x762ef3*/
@@ -2613,7 +2613,7 @@ int Voxel::freeSectionMemory(unsigned int * a2)
     if ( !this->q0D0 && v3 ) /*0x763346*/
       return 0; /*0x763346*/
     int v4 = this->q014; /*0x763348*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x763358*/
+    if ( v4 <= 0 || !this->vt_slot_8(v3 + v4, 0) ) /*0x763358*/
       return 0; /*0x76335f*/
   }
   int v6 = this->q010; /*0x763365*/

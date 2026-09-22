@@ -5,7 +5,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x4549B0
-void Animation::UpdateBuildingAnimations()
+BuildingClass * Animation::UpdateBuildingAnimations()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -15,7 +15,7 @@ void Animation::UpdateBuildingAnimations()
   TechnoClass *v25; // ebp
   int j; // edi
 
-  bool v2 = (*(unsigned __int8 (__thiscall **)(int *))(*this + 848))(this) == 0; /*0x4549bd*/
+  bool v2 = this->vt_slot_848() == 0; /*0x4549bd*/
   int v3 = this->q148; /*0x4549bf*/
   int v4 = *(_DWORD *)(v3 + 1036); /*0x4549c5*/
   if ( !v2 ) /*0x4549cb*/
@@ -41,7 +41,7 @@ void Animation::UpdateBuildingAnimations()
       }
     }
     if ( v5[3281] && !*((_BYTE *)this + 617) ) /*0x454a4b*/
-      (*(void (__thiscall **)(int *))(*this + 1044))(this); /*0x454a59*/
+      this->vt_slot_1044(); /*0x454a59*/
     int v7 = this->q148; /*0x454a5f*/
     if ( *(_BYTE *)(v7 + 5491) && *(int *)(v7 + 3812) > 0 ) /*0x454a77*/
       BuildingClass::ProcessAnimationStates((int)this); /*0x454a7b*/
@@ -100,7 +100,7 @@ void Animation::UpdateBuildingAnimations()
   {
     if ( *((_BYTE *)this + 617) ) /*0x454b9b*/
     {
-      (*(void (__thiscall **)(int *))(*this + 1048))(this); /*0x454ba9*/
+      this->vt_slot_1048(); /*0x454ba9*/
       if ( *((_BYTE *)this + 616) ) /*0x454baf*/
       {
         int v17 = this->q087; /*0x454bb9*/
@@ -109,7 +109,7 @@ void Animation::UpdateBuildingAnimations()
         *(_BYTE *)(v17 + 22392) = 1; /*0x454bcd*/
         int v18 = *this; /*0x454bda*/
         this->q09B = *(char *)(this->q148 + 3282); /*0x454be5*/
-        (*(void (__thiscall **)(int *))(v18 + 1044))(this); /*0x454beb*/
+        this->vt_slot_1044(); /*0x454beb*/
       }
     }
   }
@@ -192,7 +192,7 @@ int Animation::GetProgress()
 }
 
 // 0x770550
-void Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
+ObjectClass * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

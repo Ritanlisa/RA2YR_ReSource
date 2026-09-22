@@ -89,7 +89,7 @@ LABEL_12:
 }
 
 // 0x79C650
-void MapSeed::InsertName()
+AbstractClass * MapSeed::InsertName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

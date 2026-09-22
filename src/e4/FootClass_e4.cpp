@@ -8,7 +8,7 @@
 // 0x4D3590
 namespace ra2 {
 namespace game {
-int FootClass::Destruct()
+AbstractClass * FootClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

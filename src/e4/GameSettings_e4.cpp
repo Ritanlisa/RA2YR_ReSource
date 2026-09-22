@@ -6,7 +6,7 @@
 #include "e4/classes/Network_e4.hpp"
 
 // 0x5FA620
-void * GameSettings::Read()
+AbstractClass * * GameSettings::Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -54,7 +54,7 @@
 
 // 0x4011C0
 namespace gamemd {
-void * LoadAudioFile(const char * a1, const char * a2)
+AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -178,7 +178,7 @@ LABEL_24:
 
 // 0x401C00
 namespace gamemd {
-void * AudioMixer_LoadSample(unsigned int * a1, int a2)
+ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -334,7 +334,7 @@ int E4Recv_401F80::_EnterCriticalRegionHelper_ContextBase_details_Concurrency__U
 
 // 0x402990
 namespace gamemd {
-void sub_402990()
+ObjectClass * sub_402990()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -402,7 +402,7 @@ void sub_402990()
 
 // 0x402C70
 namespace gamemd {
-void * CreateAudioChannel(int a1, const void * a2)
+ObjectClass * * CreateAudioChannel(int a1, const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -513,7 +513,7 @@ void * CreateAudioChannel(int a1, const void * a2)
 
 // 0x403210
 namespace gamemd {
-void * sub_403210()
+ObjectClass * * sub_403210()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -975,7 +975,7 @@ LABEL_59:
 
 // 0x404BB0
 namespace gamemd {
-int E4Recv_404BB0::sub_404BB0()
+TechnoTypeClass * E4Recv_404BB0::sub_404BB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1206,7 +1206,7 @@ return DataGlobal_816108;
 
 // 0x406760
 namespace gamemd {
-void * E4Recv_406760::sub_406760(void (__thiscall *this)(char *) a1)
+INIClass * * E4Recv_406760::sub_406760(void (__thiscall *this)(char *) a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1447,7 +1447,7 @@ int sub_407040(int a1)
 
 // 0x407B60
 namespace gamemd {
-void ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int a3)
+RawFileClass * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1647,7 +1647,7 @@ LABEL_51:
 
 // 0x408610
 namespace gamemd {
-void sub_408610(int a1, unsigned int * a2, size_t * a3)
+AbstractClass * sub_408610(int a1, unsigned int * a2, size_t * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2514,7 +2514,7 @@ LABEL_47:
 
 // 0x40A090
 namespace gamemd {
-int E4Recv_40A090::sub_40A090()
+AudioController * E4Recv_40A090::sub_40A090()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

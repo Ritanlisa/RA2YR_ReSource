@@ -9,7 +9,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x7AA870
-int CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
+Coord * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -4191,7 +4191,7 @@ void toupper(Color * aP0)
 
 // 0x7C9842
 namespace gamemd {
-void toupper_0(int C)
+ControlClass * toupper_0(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4494,7 +4494,7 @@ long long long _atoi64(const char * String)
 
 // 0x7C9CC2
 namespace gamemd {
-void * strtok(char * String, ObjectClass * aP1)
+ObjectClass * * strtok(char * String, ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4556,7 +4556,7 @@ void atof(CCINIClass * aP0)
 
 // 0x7C9DD4
 namespace gamemd {
-void strtoxl(unsigned char * a1, unsigned char ** a2, int a3, int a4)
+ControlClass * strtoxl(unsigned char * a1, unsigned char ** a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4671,7 +4671,7 @@ LABEL_44:
 
 // 0x7CA090
 namespace gamemd {
-void * memcpy(void * a0, AbstractClass * aP1, size_t Size)
+EditClass * * memcpy(void * a0, AbstractClass * aP1, size_t Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5278,7 +5278,7 @@ void tolower(int C)
 
 // 0x7CB063
 namespace gamemd {
-void tolower_0(int C)
+ControlClass * tolower_0(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5664,7 +5664,7 @@ main_loop_1:
 
 // 0x7CB673
 namespace gamemd {
-void _splitpath(const char * FullPath, char * Drive, char * Dir, ObjectClass * aP3, char * Ext)
+AbstractClass * _splitpath(const char * FullPath, char * Drive, char * Dir, ObjectClass * aP3, char * Ext)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6505,7 +6505,7 @@ void * * _Gettnames()
 
 // 0x7CCB2E
 namespace gamemd {
-void _expandtime(char a1, unsigned int * a2, unsigned int * a3, unsigned int * a4, unsigned char ** a5)
+exception * _expandtime(char a1, unsigned int * a2, unsigned int * a3, unsigned int * a4, unsigned char ** a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -9055,7 +9055,7 @@ void * __sbh_alloc_new_region()
 
 // 0x7CFFC8
 namespace gamemd {
-void __sbh_resize_block(unsigned int * a0, CCINIClass * aP1, AbstractClass * aP2)
+AbstractClass * __sbh_resize_block(unsigned int * a0, CCINIClass * aP1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

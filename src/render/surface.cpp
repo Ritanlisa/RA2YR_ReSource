@@ -1052,8 +1052,8 @@ int DSurface::Unlock()
     if ( v2 )
     {
       if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v2 + 96))(this->q01C) == -2005532222
-        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 108))(this->q01C)
-        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 96))(this->q01C) )
+        && !this->q01C->vt_slot_108()
+        && !this->q01C->vt_slot_96() )
       {
         int v3 = this->q00C;
         if ( v3 > 0 )
@@ -1075,7 +1075,7 @@ int DSurface::Unlock()
   this->q00C = v6;
   if ( !v6 )
   {
-    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->q01C + 128))(this->q01C, this->q014);
+    *(_DWORD *)this->q01C->vt_slot_128(this->q01C, this->q014);
     this->q014 = 0;
   }
   return 1;
@@ -1180,7 +1180,7 @@ int DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
     v6[0] = 108;
     if ( (*(int (__stdcall **)(int, _DWORD, _DWORD *, _DWORD, _DWORD))(*(_DWORD *)v4 + 100))(v4, 0, v6, 0, 0) )
       return 0;
-    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->q01C + 128))(this->q01C, v6[9]);
+    *(_DWORD *)this->q01C->vt_slot_128(this->q01C, v6[9]);
   }
   return 1;
 }
@@ -1398,7 +1398,7 @@ int XSurface::SetPixel(const Point2D& point, uint32_t color)
   _WORD * v4 = (_WORD *)this->Lock(*a2, a2[1]);
   if ( !v4 )
     return 0;
-  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
+  if ( this->vt_slot_112() == 2 )
     *v4 = a3;
   else
     *(_BYTE *)v4 = a3;
@@ -1470,7 +1470,7 @@ int XSurface::GetPixel(const Point2D& point)
   _WORD * v4 = (_WORD *)this->Lock(*a2, a2[1]);
   if ( v4 )
   {
-    if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
+    if ( this->vt_slot_112() == 2 )
     {
       LOWORD(v3) = *v4;
       this->Unlock();
@@ -1553,7 +1553,7 @@ int XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStru
   _WORD * v7 = (_WORD *)this->Lock(*a2, a2[1]);
   if ( !v7 )
     return 0;
-  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
+  if ( this->vt_slot_112() == 2 )
     *v7 = a3;
   else
     *(_BYTE *)v7 = a3;
@@ -1651,7 +1651,7 @@ int XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip
       _WORD * v7 = (_WORD *)this->Lock(*a2, a2[1]);
       if ( v7 )
       {
-        if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
+        if ( this->vt_slot_112() == 2 )
         {
           LOWORD(v4) = *v7;
           this->Unlock();

@@ -65,7 +65,7 @@ void * E4Recv_645B60::sub_645B60()
 
 // 0x645D60
 namespace gamemd {
-void * E4Recv_645D60::sub_645D60(float * a2)
+ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -260,7 +260,7 @@ char sub_646F70(IUnknown * a1, int a2, int a3, char a4, int a5, int a6, int a7)
 
 // 0x647260
 namespace gamemd {
-void ProcessNetworkEvents()
+AbstractClass * ProcessNetworkEvents()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -562,7 +562,7 @@ LABEL_23:
 
 // 0x648710
 namespace gamemd {
-void QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, int arg4, ScenarioClass * a4, int a6, short arg10, int * a7)
+AbstractClass * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, int arg4, ScenarioClass * a4, int a6, short arg10, int * a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1487,7 +1487,7 @@ LABEL_116:
 
 // 0x649CA0
 namespace gamemd {
-void BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short a5)
+AbstractClass * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1654,7 +1654,7 @@ void Network_SendFrameSync(int * a1, short a2)
 
 // 0x64A0C0
 namespace gamemd {
-void Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int a4, int a5, unsigned int * a6)
+AbstractClass * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int a4, int a5, unsigned int * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2028,7 +2028,7 @@ LABEL_10:
 
 // 0x64B240
 namespace gamemd {
-void Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4)
+AbstractClass * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2175,7 +2175,7 @@ LABEL_21:
 
 // 0x64B660
 namespace gamemd {
-void Network_CompressMegaMission(int a1, int a2, int a3, int a4, int a5, unsigned int * a6)
+AbstractClass * Network_CompressMegaMission(int a1, int a2, int a3, int a4, int a5, unsigned int * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2385,7 +2385,7 @@ LABEL_47:
 
 // 0x64BDD0
 namespace gamemd {
-void Network_DecodeEvents(char * a1, unsigned int a2)
+AbstractClass * Network_DecodeEvents(char * a1, unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

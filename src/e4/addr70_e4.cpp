@@ -195,7 +195,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
 
 // 0x704E40
 namespace gamemd {
-void DrawTacticalLaserLine()
+void* DrawTacticalLaserLine()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
@@ -470,7 +470,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
 
 // 0x709550
 namespace gamemd {
-void __usercall SelectTargetByWeight(unsigned int *a1@<ecx> a1, int a2@<esi> a2)
+AbstractClass * __usercall SelectTargetByWeight(unsigned int *a1@<ecx> a1, int a2@<esi> a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

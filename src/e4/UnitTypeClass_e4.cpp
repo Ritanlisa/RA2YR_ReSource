@@ -7,7 +7,7 @@
 #include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x6B4DD0
-int UnitTypeClass::ReadINIEntry()
+INIClass * UnitTypeClass::ReadINIEntry()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -93,7 +93,7 @@ U UnitTypeClass::UnitTypeClass(INIClass * aP1)
   this->vtable1 = &UnitTypeClass::`vftable'; /*0x7471c5*/
   this->vtable2 = &UnitTypeClass::`vftable'; /*0x7471cb*/
   this->vtable3 = &vt_UnitTypeClass; /*0x7471d2*/
-  AbstractClass::GenerateUniqueID(this + 4); /*0x7471d9*/
+  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x7471d9*/
   this->RotCount = 32; /*0x7471de*/
   v3 = (HouseClass *)g_CrateCount; /*0x7471e8*/
   if ( (int)g_CrateCount < dword_A83CE8 /*0x747226*/
@@ -166,7 +166,7 @@ void UnitTypeClass_ConstructUnit()
 
 // 0x747620
 namespace gamemd {
-void UnitTypeClass_LoadFromINI()
+void* UnitTypeClass_LoadFromINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -380,7 +380,7 @@ void UnitTypeClass_LoadFromINI()
 } // namespace gamemd
 
 // 0x74B960
-void * UnitTypeClass::FindOrCreate()
+VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

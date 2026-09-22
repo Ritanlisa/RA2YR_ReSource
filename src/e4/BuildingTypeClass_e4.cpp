@@ -218,7 +218,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
   this->vtable1 = &BuildingTypeClass::`vftable'; /*0x45e2d3*/
   this->vtable2 = &BuildingTypeClass::`vftable'; /*0x45e2d9*/
   this->vtable3 = &vt_BuildingTypeClass; /*0x45e2e1*/
-  AbstractClass::GenerateUniqueID(this + 4); /*0x45e2e8*/
+  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x45e2e8*/
   int v4 = g_TriggerClassCount; /*0x45e2ed*/
   if ( g_TriggerClassCount < dword_A83C70 /*0x45e32b*/
     || (byte_A83C75 || !dword_A83C70)
@@ -378,7 +378,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
 }
 
 // 0x45E580
-int BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractClass * a2)
+AbstractClass * BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -460,7 +460,7 @@ int BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractClass * a2)
 }
 
 // 0x45E970
-void BuildingTypeClass::LoadRepairAnimations(void * this)
+AbstractClass * BuildingTypeClass::LoadRepairAnimations(void * this)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -570,7 +570,7 @@ void BuildingTypeClass::LoadRepairAnimations(void * this)
 }
 
 // 0x45F230
-int BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
+void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1201,7 +1201,7 @@ int BuildingTypeClass::UpdatePower()
 }
 
 // 0x465010
-int BuildingTypeClass::SaveLoad_Prefix()
+AbstractClass * BuildingTypeClass::SaveLoad_Prefix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1335,7 +1335,7 @@ LABEL_32:
 }
 
 // 0x4653C0
-void * BuildingTypeClass::FindOrCreate()
+BuildingTypeClass * * BuildingTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1492,7 +1492,7 @@ LABEL_15:
 }
 
 // 0x5FEC70
-void * BuildingTypeClass::FindOrCreate2()
+OverlayTypeClass * * BuildingTypeClass::FindOrCreate2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1518,7 +1518,7 @@ LABEL_6:
 }
 
 // 0x644890
-void * BuildingTypeClass::LoadOrGet()
+ParticleSystemTypeClass * * BuildingTypeClass::LoadOrGet()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1559,7 +1559,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   this->eliteWeapon2 = 0; /*0x644c25*/
   this->ammo = 1; /*0x644c2b*/
   this->sight = 0; /*0x644c31*/
-  BuildingTypeClass::loadBuildingProperty_b_5478850(this + 174, 0, 0); /*0x644c37*/
+  ((BuildingTypeClass *)((char *)this + 174)).loadBuildingProperty_b_5478850(0, 0); /*0x644c37*/
   this->speed = 10; /*0x644c3c*/
   this->pipScale = 0; /*0x644c43*/
   this->cost = &vt_TypeList_RGBClass; /*0x644c46*/
@@ -1620,7 +1620,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
 }
 
 // 0x645430
-int BuildingTypeClass::FindOrCreateEx()
+ParticleTypeClass * BuildingTypeClass::FindOrCreateEx()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1661,7 +1661,7 @@ LABEL_5:
 }
 
 // 0x7171A0
-int BuildingTypeClass::ProcessPower(AbstractClass * aP1)
+void* BuildingTypeClass::ProcessPower(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1911,7 +1911,7 @@ int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
 }
 
 // 0x7480D0
-void * BuildingTypeClass::FindOrCreateAlt()
+AbstractClass * * BuildingTypeClass::FindOrCreateAlt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

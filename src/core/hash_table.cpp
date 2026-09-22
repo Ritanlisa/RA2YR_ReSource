@@ -32,7 +32,7 @@ int Hash::InsertOrdered(void* table, const void* entry)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  if ( (*(unsigned __int8 (__thiscall **)(void *, int))(*(_DWORD *)this + 44))(this, a2) )
+  if ( this->vt_slot_44(a2) )
     return 0;
   if ( DataGlobal_A8EF54 )
     (*(void (__thiscall **)(int, int))(*(_DWORD *)a2 + 16))(a2, DataGlobal_A8EF54);
@@ -115,7 +115,7 @@ void SHA1::Init()
 
 // IDA 0x69DA00: Process
 // 0x69d960
-int SHA1::Process(const void* data, uint32_t size)
+EditClass * SHA1::Process(const void* data, uint32_t size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

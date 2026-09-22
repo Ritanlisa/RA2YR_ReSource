@@ -124,7 +124,7 @@ int VoxelAnimClass::CleanupMembers()
 
 // 0x749B70
 namespace gamemd {
-int VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
+Coord * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -292,7 +292,7 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
 
 // 0x74AA30
 namespace gamemd {
-int VoxelAnimClass::GetFrameCount(int * a2)
+AbstractClass * VoxelAnimClass::GetFrameCount(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

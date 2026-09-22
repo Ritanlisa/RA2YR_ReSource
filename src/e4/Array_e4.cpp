@@ -201,7 +201,7 @@ int Array::CleanupArrayWOL()
 
 // 0x7AD790
 namespace gamemd {
-int Array::InsertElement(const void * a1, ObjectClass * aP2)
+AbstractClass * Array::InsertElement(const void * a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -67,7 +67,7 @@ void InfantryClass::ProcessDeploy()
 
 // IDA: 0x51D6F0 (ProcessDeployAction, 1013B) — validates weapon, checks mission, sets loco
 // 0x51d6f0
-int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
+InfantryTypeClass * InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51d6f0
@@ -634,7 +634,7 @@ retn    0Ch
 
 // IDA: 0x5200B0 (ProcessIdleDeploy, 428B)
 // 0x5200b0
-int InfantryClass::ProcessIdleDeploy()
+AnimClass * InfantryClass::ProcessIdleDeploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -705,7 +705,7 @@ LABEL_42:
 }
 
 // 0x521b60
-bool InfantryClass::CanInitiateDeploy()
+AnimClass * InfantryClass::CanInitiateDeploy()
 {
     // IDA: 0x521B60 — check deploy preconditions
     // Check type flags, cell passability, deploy animation
@@ -713,42 +713,42 @@ bool InfantryClass::CanInitiateDeploy()
 }
 
 // 0x5221d0
-bool InfantryClass::CanDeployAtCell()
+AnimClass * InfantryClass::CanDeployAtCell()
 {
     // IDA: 0x5221D0 — check cell for deploy
     return true;
 }
 
 // 0x521eb0
-bool InfantryClass::CheckDeployPath()
+AnimClass * InfantryClass::CheckDeployPath()
 {
     // IDA: 0x521EB0 — path check for deploy
     return true;
 }
 
 // 0x522fe0
-int InfantryClass::CreateDeployLocomotor()
+AnimClass * InfantryClass::CreateDeployLocomotor()
 {
     // IDA: 0x522FE0 — create deploy locomotor COM object
     return 0;
 }
 
 // 0x522c00
-bool InfantryClass::StartBombDeploy()
+AnimClass * InfantryClass::StartBombDeploy()
 {
     // IDA: 0x522C00 — start Ivan bomb deploy sequence
     return false;
 }
 
 // 0x5228d0
-bool InfantryClass::IsBombDeployMission()
+AnimClass * InfantryClass::IsBombDeployMission()
 {
     // IDA: 0x5228D0 — check if current mission is bomb deploy
     return false;
 }
 
 // 0x514310
-void InfantryClass::DeployAnimation()
+AnimClass * InfantryClass::DeployAnimation()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x514310
@@ -1845,7 +1845,7 @@ retn    4
 }
 
 // 0x521d80
-int InfantryClass::ComputeDeploySpeedFactor()
+AnimClass * InfantryClass::ComputeDeploySpeedFactor()
 {
     int v2;
     v2 = TechnoClass::ComputeSpeedFactorEx((double *)this);
@@ -1861,7 +1861,7 @@ int InfantryClass::ComputeDeploySpeedFactor()
 }
 
 // 0x5218e0
-int InfantryClass::GetDeployWeaponIndex()
+AnimClass * InfantryClass::GetDeployWeaponIndex()
 {
     InfantryTypeClass *v3;
     int v4;
@@ -1937,7 +1937,7 @@ retn    4
 }
 
 // 0x522600
-int InfantryClass::FireAtTargetPos(int a2, int a3, int a4)
+AnimClass * InfantryClass::FireAtTargetPos(int a2, int a3, int a4)
 {
   int v4; // eax
   int v6; // [esp+0h] [ebp-4h] BYREF
@@ -5054,7 +5054,7 @@ retn
 }
 
 // 0x51dbd0
-int InfantryClass::CalcFacingToTarget()
+void* InfantryClass::CalcFacingToTarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51dbd0
@@ -6608,7 +6608,7 @@ retn    14h
 }
 
 // 0x51e140
-int InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
+BuildingTypeClass * InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51e140

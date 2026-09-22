@@ -268,7 +268,7 @@ void SetDialogPlayerName(HWND hDlg, int a2)
 
 // 0x5E3010
 namespace gamemd {
-void InitSkirmishDialogControls(HWND hDlg, int a2)
+AbstractClass * InitSkirmishDialogControls(HWND hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -457,7 +457,7 @@ LABEL_11:
 
 // 0x5E39C0
 namespace gamemd {
-void ValidateNetworkLobbyHostMap()
+ObjectClass * ValidateNetworkLobbyHostMap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -2125,7 +2125,7 @@ LABEL_13:
 
 // 0x5E5F10
 namespace gamemd {
-void RehashGenericHashMap(HWND hWnd, int a2)
+AbstractClass * RehashGenericHashMap(HWND hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2397,7 +2397,7 @@ LABEL_30:
 
 // 0x5E6520
 namespace gamemd {
-void Map_ReadPlayerCount(int a1)
+AbstractClass * Map_ReadPlayerCount(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2554,7 +2554,7 @@ LABEL_20:
 
 // 0x5E7160
 namespace gamemd {
-int E4Recv_5E7160::HandleMultiplayerMapSelection()
+SkirmishDialog * E4Recv_5E7160::HandleMultiplayerMapSelection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2922,7 +2922,7 @@ LABEL_9:
 
 // 0x5E87A0
 namespace gamemd {
-void * LoadNetworkShareStrings()
+HashTable * * LoadNetworkShareStrings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4201,7 +4201,7 @@ LABEL_43:
 
 // 0x5EC9F0
 namespace gamemd {
-void PlayerSkirmishSlotHandler()
+AbstractClass * PlayerSkirmishSlotHandler()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -4264,7 +4264,7 @@ LABEL_18:
 
 // 0x5ED400
 namespace gamemd {
-void SaveMultiplayerLobbySettings(ReferenceCounted * hDlg, int a2)
+AbstractClass * SaveMultiplayerLobbySettings(ReferenceCounted * hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

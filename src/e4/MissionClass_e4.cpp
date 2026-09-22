@@ -5,7 +5,7 @@
 // 0x5B3760
 namespace ra2 {
 namespace game {
-int MissionClass::LoadFromINI(unsigned int * a2)
+AbstractClass * MissionClass::LoadFromINI(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

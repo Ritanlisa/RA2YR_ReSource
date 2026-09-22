@@ -6,7 +6,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x5A5B50
-int MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
+MapSeedClass * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -46,7 +46,7 @@ int TeamTypeClass::Construct()
   this->vtable1 = &FactoryClass::`vftable'; /*0x4c9920*/
   this->vtable2 = &FactoryClass::`vftable'; /*0x4c9926*/
   this->vtable3 = &vt_FactoryClass; /*0x4c992d*/
-  AbstractClass::GenerateUniqueID(this + 4); /*0x4c9934*/
+  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x4c9934*/
   if ( g_TeamTypeCapacity < DataGlobal_A83E38 /*0x4c996d*/
     || (DataGlobal_A83E3D || !DataGlobal_A83E38)
     && DataGlobal_A83E44 > 0
@@ -158,7 +158,7 @@ LABEL_17:
 
 // 0x6E85F0
 namespace gamemd {
-void * TeamTypeClass::FindOrCreateTaskForce()
+AbstractClass * * TeamTypeClass::FindOrCreateTaskForce()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -252,7 +252,7 @@ int TeamTypeClass::GetTeam(int a2, int a3)
 
 // 0x6F1090
 namespace gamemd {
-int TeamTypeClass::LoadFromINI(unsigned char *** aP1)
+AbstractClass * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -571,7 +571,7 @@ int TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 
 // 0x6F1550
 namespace gamemd {
-int TeamTypeClass::GetMaxCount(CCINIClass * aP1)
+AbstractClass * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -914,7 +914,7 @@ TeamTypeClass * TeamTypeClass::ddtor(char a2)
 
 // 0x6F22F0
 namespace gamemd {
-int TeamTypeClass_28::Release(int a2, int * a3)
+AbstractClass * TeamTypeClass_28::Release(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1016,7 +1016,7 @@ int TeamTypeClass_28::Release(int a2, int * a3)
 
 // 0x6F24B0
 namespace gamemd {
-int TeamTypeClass_28::SetCapacity(int a2, int * a3)
+AbstractClass * TeamTypeClass_28::SetCapacity(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

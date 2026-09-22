@@ -4,7 +4,7 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x5BF450
-int AsyncIO::Shutdown()
+AbstractClass * AsyncIO::Shutdown()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

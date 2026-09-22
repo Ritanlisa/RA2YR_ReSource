@@ -9,7 +9,7 @@ int PlayerClass::SetHouse(int a2)
 {
   char result; // al
 
-  result = (*(int (__thiscall **)(_DWORD *, int))(*this + 4))(this, a2); /*0x5d8cbb*/
+  result = this->vt_slot_4(a2); /*0x5d8cbb*/
   if ( result ) /*0x5d8cc0*/
   {
     *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * a2) + 107) = this->q008; /*0x5d8cd5*/

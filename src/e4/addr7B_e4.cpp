@@ -73,7 +73,7 @@ void * * sub_7B0340()
 
 // 0x7B05C0
 namespace gamemd {
-void Screenshot_Compress(int * a1, int * a2, void * Src)
+AbstractClass * Screenshot_Compress(int * a1, int * a2, void * Src)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -457,7 +457,7 @@ LABEL_16:
 
 // 0x7B2E50
 namespace gamemd {
-void E4Recv_7B2E50::sub_7B2E50()
+CampaignClass * E4Recv_7B2E50::sub_7B2E50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -534,7 +534,7 @@ void unknown_libname_73()
 
 // 0x7B60E0
 namespace gamemd {
-int E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
+AbstractClass * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -731,7 +731,7 @@ void unknown_libname_74()
 
 // 0x7B7C00
 namespace gamemd {
-int E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
+AbstractClass * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -816,7 +816,7 @@ int E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
 
 // 0x7B9530
 namespace gamemd {
-int E4Recv_7B9530::sub_7B9530()
+AbstractClass * E4Recv_7B9530::sub_7B9530()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -969,7 +969,7 @@ void IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
 
 // 0x7BC040
 namespace gamemd {
-void CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a4, IUnknown * aP5, unsigned char * a6, int * a7, int * a8)
+void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a4, IUnknown * aP5, unsigned char * a6, int * a7, int * a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1222,7 +1222,7 @@ LABEL_14:
 
 // 0x7BC580
 namespace gamemd {
-void sub_7BC580()
+AbstractClass * sub_7BC580()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!

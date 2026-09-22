@@ -37,7 +37,7 @@ int Factory::GetLinkedIndex(DynamicVector * aP1)
 
 // 0x718B70
 namespace gamemd {
-void Factory_CalculateExitCell()
+void* Factory_CalculateExitCell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -52,7 +52,6 @@ void Factory_CalculateExitCell()
   int v75; // [esp+60h] [ebp-24h] BYREF
   int v76; // [esp+64h] [ebp-20h] BYREF
   int v77; // [esp+68h] [ebp-1Ch]
-
   int * v7 = a1 + 10; /*0x718b80*/
   if ( a1[10] == DataGlobal_B0EBF8 && a1[11] == DataGlobal_B0EBFC && a1[12] == DataGlobal_B0EC00 ) /*0x718b9d*/
   {
@@ -109,11 +108,11 @@ void Factory_CalculateExitCell()
         v71 = *(__int16 **)(a1[3] + 1444); /*0x718cf4*/
         if ( v71 ) /*0x718cf8*/
         {
-          if ( (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v71 + 44))(v71) == 1 ) /*0x718d02*/
+          if ( v71->vt_slot_44() == 1 ) /*0x718d02*/
           {
             int v14 = *v9; /*0x718d13*/
             v70 = v9[1] / 256; /*0x718d28*/
-            if ( *(_DWORD *)(*(int (__thiscall **)(__int16 *, _DWORD *))(*(_DWORD *)v71 + 440))(v71, v73) == __PAIR32__(v70, v14 / 256) ) /*0x718d3c*/
+            if ( *(_DWORD *)v71->vt_slot_440(v73) == __PAIR32__(v70, v14 / 256) ) /*0x718d3c*/
               a6 = 1; /*0x718d49*/
           }
         }

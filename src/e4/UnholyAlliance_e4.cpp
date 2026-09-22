@@ -4,7 +4,7 @@
 
 // 0x5CB440
 namespace gamemd {
-void UnholyAlliance_GetResult()
+AbstractClass * UnholyAlliance_GetResult()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

@@ -6,7 +6,7 @@
 
 // 0x6E5B60
 namespace gamemd {
-void * TagTypeClass::Construct(ObjectClass * aP1)
+AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -65,7 +65,7 @@ void * TagTypeClass::Construct(ObjectClass * aP1)
 
 // 0x6E5CA0
 namespace gamemd {
-int TagTypeClass::CleanupMembers()
+AbstractClass * TagTypeClass::CleanupMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -158,7 +158,7 @@ int TagTypeClass::GetEvent(int a2, int a3)
 
 // 0x6E6080
 namespace gamemd {
-int TagTypeClass::GetAction(unsigned char *** a2)
+void* TagTypeClass::GetAction(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -220,7 +220,7 @@ int TagTypeClass::GetParameter(char * a2)
 
 // 0x6E6310
 namespace gamemd {
-void * TagTypeClass::FindOrCreate()
+AbstractTypeClass * * TagTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -271,7 +271,7 @@ int TagTypeClass::GetAuxField()
 
 // 0x727AA0
 namespace gamemd {
-void * TagTypeClass::FindOrCreateTriggerType()
+TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

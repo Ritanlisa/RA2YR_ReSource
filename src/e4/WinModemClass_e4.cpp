@@ -166,7 +166,7 @@ int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
 }
 
 // 0x774CD0
-int WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
+WinModemClass * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -327,7 +327,7 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
 }
 
 // 0x775110
-int WinModemClass::Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8)
+AbstractClass * WinModemClass::Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

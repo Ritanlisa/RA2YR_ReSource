@@ -6,7 +6,7 @@
 
 // 0x526810
 namespace gamemd {
-int INIClass::BinarySearchSection(INIClass * aP1)
+ObjectClass * INIClass::BinarySearchSection(INIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -93,7 +93,7 @@ LABEL_19:
 
 // 0x526960
 namespace gamemd {
-int INIClass::GetKeyCount(INIClass * aP1)
+VoxelStruct * INIClass::GetKeyCount(INIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -304,7 +304,7 @@ unsigned int * INIClass::INIClass()
   _DWORD *result; // eax
 
   result = this; /*0x535aa0*/
-  _DWORD * v2 = this + 4; /*0x535aa6*/
+  INILinkNode *v2 = this + 4; /*0x535aa6*/
   _DWORD * v3 = result + 7; /*0x535aa9*/
   result[1] = 0; /*0x535aac*/
   result[2] = 0; /*0x535aaf*/

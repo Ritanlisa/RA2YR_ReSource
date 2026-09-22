@@ -278,7 +278,7 @@ unsigned int * Power::UpdateAll()
 
 // 0x68B940
 namespace gamemd {
-int Power::ComputeHousePowerChecksum(unsigned int * a2)
+void* Power::ComputeHousePowerChecksum(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

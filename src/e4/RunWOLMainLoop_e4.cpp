@@ -8,7 +8,7 @@
 
 // 0x77E110
 namespace gamemd {
-void sub_77E110()
+Coord * sub_77E110()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -143,7 +143,7 @@ void sub_785EA0()
 
 // 0x798DE0
 namespace gamemd {
-void RunWOLMainLoop_Read()
+Coord * RunWOLMainLoop_Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

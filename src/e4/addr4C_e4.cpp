@@ -501,7 +501,7 @@ void sub_4C2830()
 
 // 0x4C29E0
 namespace gamemd {
-void sub_4C29E0()
+ParticleSystemClass * sub_4C29E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -595,7 +595,7 @@ LABEL_6:
 
 // 0x4C3DD0
 namespace gamemd {
-int E4Recv_4C3DD0::sub_4C3DD0(int a2)
+AbstractClass * E4Recv_4C3DD0::sub_4C3DD0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -785,7 +785,7 @@ void sub_4CB4C0()
 
 // 0x4CB580
 namespace gamemd {
-void * E4Recv_4CB580::sub_4CB580(char * Source, int a3)
+AbstractClass * * E4Recv_4CB580::sub_4CB580(char * Source, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

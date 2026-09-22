@@ -30,7 +30,7 @@ int Trigger::EnableOnce(AbstractClass * aP1)
 
 // 0x5CBD20
 namespace gamemd {
-void * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7)
+MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

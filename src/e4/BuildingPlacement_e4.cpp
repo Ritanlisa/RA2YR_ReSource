@@ -8,7 +8,7 @@
 #include "e4/classes/Tactical_e4.hpp"
 
 // 0x4FB840
-int BuildingPlacement::Activate(int a2, unsigned int * a3)
+void* BuildingPlacement::Activate(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -44,7 +44,7 @@ int BuildingPlacement::Activate(int a2, unsigned int * a3)
 }
 
 // 0x54C550
-int BuildingPlacement::ProcessBuildingPlacementAction()
+VectorClass * BuildingPlacement::ProcessBuildingPlacementAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -155,7 +155,7 @@ int BuildingPlacement::ProcessBuildingPlacementAction()
             LOBYTE(v25) = 0; /*0x54c78d*/
             HIBYTE(v25) = g_RulesClass_Instance->DeployDir; /*0x54c793*/
             LOWORD(v48) = v25; /*0x54c799*/
-            FacingClass::Update((char *)(this + 84), &v48); /*0x54c79e*/
+            ((FacingClass *)((char *)this + 84)).Update((char *)(this + 84), &v48); /*0x54c79e*/
           }
         }
       }

@@ -21,7 +21,7 @@
 
 // 0x7A0430
 namespace gamemd {
-void int CollectWOLConnectionTokens()
+Coord * int CollectWOLConnectionTokens()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -390,7 +390,7 @@ void E4Recv_7A0DD0::sub_7A0DD0()
 
 // 0x7A1060
 namespace gamemd {
-void WOL_ProcessPingRequests()
+Coord * WOL_ProcessPingRequests()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -519,7 +519,7 @@ LABEL_37:
 
 // 0x7A1330
 namespace gamemd {
-void UpdateWOLLobbyPings()
+Coord * UpdateWOLLobbyPings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -668,7 +668,7 @@ LABEL_40:
 
 // 0x7A16B0
 namespace gamemd {
-void HandleWOLMatchMessage()
+ObjectClass * HandleWOLMatchMessage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -677,7 +677,7 @@ void HandleWOLMatchMessage()
 
 // 0x7A1BB0
 namespace gamemd {
-void WOL_MatchGame()
+AbstractClass * WOL_MatchGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -866,7 +866,7 @@ LABEL_25:
 
 // 0x7A2830
 namespace gamemd {
-int E4Recv_7A2830::sub_7A2830()
+Coord * E4Recv_7A2830::sub_7A2830()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1101,7 +1101,7 @@ LABEL_51:
 
 // 0x7A4C10
 namespace gamemd {
-void CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3)
+CampaignScore * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1211,7 +1211,7 @@ LABEL_16:
 
 // 0x7AF640
 namespace gamemd {
-int E4Recv_7AF640::sub_7AF640(int a2)
+AbstractClass * E4Recv_7AF640::sub_7AF640(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1361,7 +1361,7 @@ LABEL_14:
 
 // 0x7AF970
 namespace gamemd {
-void sub_7AF970()
+AbstractClass * sub_7AF970()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

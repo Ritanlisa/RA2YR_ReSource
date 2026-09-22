@@ -4,7 +4,7 @@
 
 // 0x6BB8E0
 namespace gamemd {
-void WinMainSetup_Setup_6BB8E0()
+AbstractClass * WinMainSetup_Setup_6BB8E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

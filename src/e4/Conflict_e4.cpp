@@ -95,7 +95,7 @@ LABEL_14:
 
 // 0x766DC0
 namespace gamemd {
-int Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
+AbstractClass * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

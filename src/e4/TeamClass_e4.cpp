@@ -239,7 +239,7 @@ int TeamClass::GetLeaderIndex()
 
 // 0x6340B0
 namespace gamemd {
-void TeamClass::DestroyAllMembers(TechnoClass * aP1)
+AbstractClass * TeamClass::DestroyAllMembers(TechnoClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -537,7 +537,7 @@ int TeamClass::Reset(ObjectClass * aP1)
 
 // 0x636120
 namespace gamemd {
-int TeamClass::RemoveAllMembers()
+TechnoClass * TeamClass::RemoveAllMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -613,7 +613,7 @@ int TeamClass::RemoveAllMembers()
       while ( v13 < DataGlobal_AC4C50 ); /*0x6362d6*/
     }
   }
-  result = (*(int (__thiscall **)(int))(this->vtable1 + 12))(this + 4); /*0x6362e3*/
+  result = this->vtable1->vt_slot_12(); /*0x6362e3*/
   this->q08C = -1; /*0x6362e6*/
   this->buildingType = -1; /*0x6362ec*/
   this->q250 = -1; /*0x6362f2*/
@@ -747,7 +747,7 @@ LABEL_13:
 
 // 0x636980
 namespace gamemd {
-int TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
+TeamClass * TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -862,7 +862,7 @@ LABEL_13:
 
 // 0x636B50
 namespace gamemd {
-int TeamClass::Cleanup(BuildingClass * aP1)
+CampaignClass * TeamClass::Cleanup(BuildingClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2161,7 +2161,7 @@ int TeamClass::LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractCla
 
 // 0x6EAA90
 namespace gamemd {
-int TeamClass::RecruitMember(int a2)
+TeamTypeClass * TeamClass::RecruitMember(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2335,7 +2335,7 @@ int TeamClass::RecruitMember(int a2)
 
 // 0x6EAEE0
 namespace gamemd {
-int TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
+AbstractClass * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2499,7 +2499,7 @@ int TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
                   v33 = (BuildingTypeClass *)((char *)v33 + v26); /*0x6eb25e*/
                   ++v22; /*0x6eb262*/
                   if ( *(_BYTE *)(this->buildingType + 167) /*0x6eb271*/
-                    && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v6 + 1248))(v6) )
+                    && v6->vt_slot_1248() )
                   {
                     v5 += *v24; /*0x6eb27f*/
                     v40 = v6->q0A0; /*0x6eb287*/
@@ -2538,7 +2538,7 @@ int TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
         *(_DWORD *)aP1->__pad_0 = v28; /*0x6eb33c*/
         if ( !v23 ) /*0x6eb33e*/
           v23 = this->firstUnit; /*0x6eb34b*/
-        v3 = (*(int (__thiscall **)(int, void *, int, int, _DWORD, int))(*(_DWORD *)v23 + 428))(v23, v28, -1, -1, 0, 1); /*0x6eb35a*/
+        v3 = v23->vt_slot_428(v28, -1, -1, 0, 1); /*0x6eb35a*/
         if ( v3 ) /*0x6eb362*/
           *(_DWORD *)aP1->__pad_0 = v23; /*0x6eb364*/
       }
@@ -2556,7 +2556,7 @@ int TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
 
 // 0x6EB490
 namespace gamemd {
-int TeamClass::AttackCoordinator()
+void* TeamClass::AttackCoordinator()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2710,7 +2710,7 @@ LABEL_67:
 
 // 0x6EBAD0
 namespace gamemd {
-void TeamClass::UpdateMembers()
+AbstractClass * TeamClass::UpdateMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -94,7 +94,7 @@ void Weapon_Update()
 } // namespace gamemd
 
 // 0x70C690
-void * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass * aP3, IUnknown * aP4)
+AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass * aP3, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

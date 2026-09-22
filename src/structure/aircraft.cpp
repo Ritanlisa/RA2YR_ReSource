@@ -37,7 +37,7 @@ AircraftClass::AircraftClass() noexcept
 
 // IDA: 0x417FE0 (Mission_Attack, 3445B)
 // 0x417fe0
-int AircraftClass::Mission_Attack()
+AbstractClass * AircraftClass::Mission_Attack()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x417fe0
@@ -98,8 +98,8 @@ LABEL_107:
       this->AircraftClass_field_bool_6D2 = 0;
       if ( !v11 || !this->q0BF )
         goto LABEL_83;
-      int * v12 = this + 432;
-      if ( (*(int (__stdcall **)(int *))(this->q1B0 + 24))(this + 432) )
+      ProgressTimer *v12 = this + 432;
+      if ( this->q1B0->vt_slot_24() )
       {
         int v13 = *(_DWORD *)this->SelectVocOrSfx(0);
         if ( ObjectClass::ComputeDistance(this, this->q2B4) < *(_DWORD *)(v13 + 180) )
@@ -112,7 +112,7 @@ LABEL_14:
       }
       else
       {
-        if ( (*(int (__stdcall **)(int *))(*v12 + 28))(this + 432) )
+        if ( v12->vt_slot_28() )
           goto LABEL_14;
         if ( !this->locomotor )
           WinAPI::Wrapper(-2147467261);
@@ -125,7 +125,7 @@ LABEL_14:
         if ( v14 >= 512 )
         {
   _BYTE v117[4]; // [esp+C4h] [ebp-48h] BYREF
-          int * v17 = (int *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)this->q169 + 72))(this->q169, v117);
+          int * v17 = (int *)*(_DWORD *)this->q169->vt_slot_72(this->q169, v117);
   int *v18; // eax
           v18 = (int *)this->ComputeTransform(_BYTE v115[4]; // [esp+ACh] [ebp-60h] BYREF
                          v115, 0, 0, 0, 0);
@@ -133,14 +133,14 @@ LABEL_14:
             LOWORD(v100) = 0;
           double v19 = Math::CalcAngle((double)v18[1] - (double)v17[1], (double)*v17 - (double)*v18);
           LOWORD(v100) = Math::RoundToInt((v19 - 1.570796326794897) * -10430.06004058427);
-          FacingClass::Update((char *)this + 928, &v100);
+          ((FacingClass *)((char *)this + 928)).Update(&v100);
           return 1;
         }
         else
         {
   int v113; // [esp+A4h] [ebp-68h] BYREF
           int * v15 = ObjectClass::CalcTargetFacing(this, &v113, this->q2B4);
-          FacingClass::Update((char *)this + 928, v15);
+          ((FacingClass *)((char *)this + 928)).Update(v15);
           if ( v14 >= 16 )
           {
             return 1;
@@ -162,15 +162,15 @@ LABEL_14:
     case 4:
       if ( !this->q2B4 || !this->q0BF )
         goto LABEL_83;
-      int * v20 = this + 432;
-      if ( !(*(int (__stdcall **)(int *))(this->q1B0 + 24))(this + 432) )
+      ProgressTimer *v20 = this + 432;
+      if ( !this->q1B0->vt_slot_24() )
       {
   int v109; // [esp+94h] [ebp-78h] BYREF
         int * v21 = ObjectClass::CalcTargetFacing(this, &v109, this->q2B4);
-        FacingClass::Update((char *)this + 904, v21);
+        ((FacingClass *)((char *)this + 904)).Update(v21);
   int v112; // [esp+A0h] [ebp-6Ch] BYREF
         int * v22 = ObjectClass::CalcTargetFacing(this, &v112, this->q2B4);
-        FacingClass::Update((char *)this + 928, v22);
+        ((FacingClass *)((char *)this + 928)).Update(v22);
       }
       int v23 = *this;
       int v24 = this->SelectWeapon(this->q2B4, 1);
@@ -206,14 +206,14 @@ LABEL_14:
                             v103);
           _DWORD * v33 = Coord::To_Cell(DataGlobal_87F7E8, v32);
           Cell::ApplyDamage(v33, 1, 0, 0, v98);
-          if ( (*(int (__cdecl **)(int *))(*v20 + 24))(this + 432) )
+          if ( v20->vt_slot_24() )
           {
             int v34 = *this;
             this->missionStatus = 6;
             this->AircraftClass_field_bool_6D2 = 1;
             return *(_DWORD *)(*(_DWORD *)this->SelectVocOrSfx(0) + 176);
           }
-          if ( !(*(int (__stdcall **)(int *))(*v20 + 28))(this + 432) )
+          if ( !v20->vt_slot_28() )
             goto LABEL_54;
           bool v35 = this->q0BF;
           bool v36 = v35 == 0;
@@ -229,11 +229,11 @@ LABEL_14:
             return 1;
           }
           if ( !this->CheckCellPassable2(this->q2B4)
-            || (*(int (__stdcall **)(int *))(*v20 + 24))(this + 432) )
+            || v20->vt_slot_24() )
           {
             this->missionStatus = 1;
           }
-          else if ( (*(int (__stdcall **)(int *))(*v20 + 28))(this + 432) )
+          else if ( v20->vt_slot_28() )
           {
             this->missionStatus = 4;
           }
@@ -241,7 +241,7 @@ LABEL_14:
           {
             this->missionStatus = *(_BYTE *)(DataGlobal_87F7E8[7806] + 6113) != 0 ? 1 : 4;
           }
-          if ( !(*(int (__stdcall **)(int *))(*v20 + 24))(this + 432) )
+          if ( !v20->vt_slot_24() )
             return 1;
           return 45;
         case 3:
@@ -255,7 +255,7 @@ LABEL_14:
             this->missionStatus = 10;
             return 1;
           }
-          if ( (*(int (__stdcall **)(int *))(*v20 + 24))(this + 432) )
+          if ( v20->vt_slot_24() )
             return 1;
 LABEL_54:
           this->missionStatus = 5;
@@ -268,10 +268,10 @@ LABEL_54:
       {
   int v114; // [esp+A8h] [ebp-64h] BYREF
         int * v39 = ObjectClass::CalcTargetFacing(this, &v114, this->q2B4);
-        FacingClass::Update((char *)this + 904, v39);
+        ((FacingClass *)((char *)this + 904)).Update(v39);
   int v111; // [esp+9Ch] [ebp-70h] BYREF
         int * v40 = ObjectClass::CalcTargetFacing(this, &v111, this->q2B4);
-        FacingClass::Update((char *)this + 928, v40);
+        ((FacingClass *)((char *)this + 928)).Update(v40);
         int v41 = *this;
         int v42 = this->SelectWeapon(this->q2B4, 1);
         switch ( this->ReadINI_3(this->q2B4, v42) )
@@ -294,7 +294,7 @@ LABEL_54:
             if ( !this->q0BF )
               goto LABEL_107;
             if ( !this->CheckCellPassable2(this->q2B4)
-              || (*(int (__stdcall **)(int *))(this->q1B0 + 24))(this + 432) )
+              || this->q1B0->vt_slot_24() )
             {
               this->missionStatus = 1;
             }
@@ -304,7 +304,7 @@ LABEL_54:
               LOBYTE(v43) = v43 & 0xFD;
               this->missionStatus = v43 + 4;
             }
-            if ( !(*(int (__stdcall **)(int *))(this->q1B0 + 24))(this + 432) )
+            if ( !this->q1B0->vt_slot_24() )
               goto LABEL_108;
             result = 45;
             break;
@@ -2471,7 +2471,7 @@ retn
 
 // IDA: 0x419C80 (Mission_Transport, 1215B)
 // 0x419c80
-int AircraftClass::Mission_Transport()
+ILocomotion * AircraftClass::Mission_Transport()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4364,7 +4364,7 @@ int AircraftClass::PowerDrainUpdate(int a2)
 
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
 // 0x41b660
-int AircraftClass::HandleTargetDestroyed()
+AircraftTypeClass * AircraftClass::HandleTargetDestroyed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4408,7 +4408,7 @@ retn    8
 
 // IDA: 0x414A80 (ProcessMissionTimeout, 302B)
 // 0x414a80
-int AircraftClass::ProcessMissionTimeout()
+AbstractClass * AircraftClass::ProcessMissionTimeout()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x414a80

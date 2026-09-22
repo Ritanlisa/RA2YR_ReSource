@@ -21,7 +21,7 @@
 
 // 0x530000
 namespace gamemd {
-void sub_530000()
+MixFileClass * sub_530000()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -404,7 +404,7 @@ LABEL_16:
 
 // 0x532150
 namespace gamemd {
-void InitCommands()
+CreateTeamCommand * InitCommands()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1741,7 +1741,7 @@ void InitCommands()
 
 // 0x533FD0
 namespace gamemd {
-void AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClass * aP2, int a4, char a5)
+DSurface * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClass * aP2, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2075,7 +2075,7 @@ void TheaterClass_LoadMIX(int a1)
 
 // 0x5353D0
 namespace gamemd {
-void Radar_FindClosestEnemy(short * a1, int a2)
+ObjectClass * Radar_FindClosestEnemy(short * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2252,7 +2252,7 @@ void sub_538D40()
 
 // 0x538E70
 namespace gamemd {
-int E4Recv_538E70::sub_538E70(double a2)
+AbstractClass * E4Recv_538E70::sub_538E70(double a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2630,7 +2630,7 @@ LABEL_52:
 
 // 0x53AF40
 namespace gamemd {
-void PsyDom::Update()
+AnimClass * PsyDom::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2728,7 +2728,7 @@ void sub_53B460(int a1)
 
 // 0x53B560
 namespace gamemd {
-void UpdateChronosphereEffect()
+AnimClass * UpdateChronosphereEffect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

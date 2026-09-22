@@ -261,7 +261,7 @@ int Options::PrepareSaveLoadDlg()
 
 // 0x55FAA0
 namespace gamemd {
-void Options::Screen_Save()
+AbstractClass * Options::Screen_Save()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -527,7 +527,7 @@ int Options::ReadOptionValue()
 
 // 0x625560
 namespace gamemd {
-void * Options::DestroyComposite(char a2)
+AbstractClass * * Options::DestroyComposite(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

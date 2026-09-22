@@ -57,7 +57,7 @@ unsigned int * sub_6B2430(int * a1, int a2)
 
 // 0x6B2700
 namespace gamemd {
-void InitializeBuildabilityGrid(int a1)
+CellClass * InitializeBuildabilityGrid(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -192,7 +192,7 @@ LABEL_24:
 
 // 0x6B2A70
 namespace gamemd {
-void SlaveManager_InitGrid()
+AbstractClass * SlaveManager_InitGrid()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -389,7 +389,7 @@ void SlaveManager_InitGrid()
 
 // 0x6B2F30
 namespace gamemd {
-void sub_6B2F30(char a1, int a2, int a3)
+AbstractClass * sub_6B2F30(char a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1172,7 +1172,7 @@ LABEL_20:
 
 // 0x6B3E60
 namespace gamemd {
-void ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int a4)
+AbstractClass * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1958,7 +1958,7 @@ int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned cha
 
 // 0x6B9D00
 namespace gamemd {
-void Palette_LoadFromFile(int a1, int a2, char * Source, int a4, int a5)
+AbstractClass * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

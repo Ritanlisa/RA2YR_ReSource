@@ -1884,7 +1884,7 @@ namespace gamemd { int MouseClass::LoadGameAssets() {
               result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(v52 + 12))(v48, &v75, 4, 0); /*0x5be3bd*/
               if ( result >= 0 ) /*0x5be3c4*/
               {
-                (*(void (__thiscall **)(int *))(this->q014 + 12))(this + 20); /*0x5be3d2*/
+                this->q014->vt_slot_12(); /*0x5be3d2*/
                 pStm = 0; /*0x5be3d9*/
                 if ( v75 <= 0 ) /*0x5be3df*/
                 {
@@ -2032,10 +2032,7 @@ LABEL_99:
                       || (this->q05D || !v54)
   int v55; // eax
                       && (v55 = this->q064, v55 > 0)
-                      && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(this->q014 + 8))(
-                           this + 20,
-                           v55 + v54,
-                           0) )
+                      && this->q014->vt_slot_8(v55 + v54, 0) )
                     {
                       int v56 = this->q018; /*0x5be447*/
                       int v57 = v80; /*0x5be44a*/
@@ -4020,7 +4017,7 @@ namespace gamemd { void SidebarClass::UpdateStrips(void* a1, void* a2) {
   if ( !g_NetworkPlayerBuffer[5935] ) /*0x6a77a8*/
   {
     (*(void (__thiscall **)(char *, int))(this->q0D8)(this, 1); /*0x6a77b0*/
-    char * v5 = this + 5444; /*0x6a77b6*/
+    HouseClass *v5 = this + 5444; /*0x6a77b6*/
     int v6 = 4; /*0x6a77bc*/
     do /*0x6a77d9*/
     {
@@ -6970,10 +6967,9 @@ namespace gamemd { void* TabClass::Constructor() {
   int v33; // ebp
   const char **v34; // edi
   int v35; // eax
-
   TabClass::initTabData(); /*0x6cfe2b*/
   this->q1546 = &vt_INoticeSink; /*0x6cfe3c*/
-  TabClass::initStripClass(this + 5447); /*0x6cfe42*/
+  ((TabClass *)((char *)this + 5447)).initStripClass(); /*0x6cfe42*/
   this->q552C = g_CurrentFrame; /*0x6cfe4e*/
   this->q154D = 0; /*0x6cfe54*/
   v2 = g_CurrentFrame; /*0x6cfe5a*/

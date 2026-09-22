@@ -455,7 +455,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     (MultiplayerGameMode *)aP4,
     0,
     (MultiplayerGameMode *)aP6);
-  AbstractClass::updateAnimationState(this + 22, 0, 0); /*0x5c14a0*/
+  ((AbstractClass *)((char *)this + 22)).updateAnimationState(0, 0); /*0x5c14a0*/
   this->q058 = &vt_DynamicVectorClass_NodeNameType; /*0x5c14a5*/
   this->q06C = 10; /*0x5c14ab*/
   this->q068 = 0; /*0x5c14b2*/
@@ -493,7 +493,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   }
   while ( v13 ); /*0x5c151f*/
   v14 = (VectorClass *)(this + 201); /*0x5c1521*/
-  CoopCampaignVector::Construct(this + 201, 0, 0); /*0x5c152b*/
+  ((CoopCampaignVector *)((char *)this + 201)).Construct(0, 0); /*0x5c152b*/
   this->q324 = &vt_DynamicVectorClass_CoopCampaignClass; /*0x5c1530*/
   this->q0CE = 10; /*0x5c1536*/
   this->q0CD = 0; /*0x5c153d*/
@@ -553,7 +553,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
 
 // 0x5C1640
 namespace gamemd {
-void MPCooperative_Cleanup(MPCooperative * aP0, int a2)
+AbstractClass * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -713,7 +713,7 @@ int MPCooperative::Read()
 
 // 0x5C1A10
 namespace gamemd {
-int MPCooperative::CopyTo()
+CampaignClass * MPCooperative::CopyTo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -887,7 +887,7 @@ LABEL_10:
 
 // 0x5C1DC0
 namespace gamemd {
-int MPCooperative::Seek()
+CampaignClass * MPCooperative::Seek()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1604,7 +1604,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
 
 // 0x5C2EF0
 namespace gamemd {
-int MPCooperative::GetPlayerCount(int a1)
+AbstractClass * MPCooperative::GetPlayerCount(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1693,7 +1693,7 @@ LABEL_17:
 
 // 0x5C30C0
 namespace gamemd {
-int MPCooperative::BroadcastMessage()
+ScenarioClass * MPCooperative::BroadcastMessage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1758,7 +1758,7 @@ int MPCooperative::BroadcastMessage()
 
 // 0x5C3220
 namespace gamemd {
-int MPCooperative::GetMapData()
+AbstractClass * MPCooperative::GetMapData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2209,7 +2209,7 @@ LABEL_22:
 
 // 0x5C4110
 namespace gamemd {
-int MPCooperative::ProcessChat()
+AbstractClass * MPCooperative::ProcessChat()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2508,7 +2508,7 @@ void MPCooperative::ShowScoreScreen(int a2)
 
 // 0x5C4CA0
 namespace gamemd {
-int MPCooperative::InitializePlayers()
+IPXInterfaceClass * MPCooperative::InitializePlayers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

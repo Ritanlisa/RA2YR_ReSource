@@ -310,7 +310,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
 
 // 0x594B50
 namespace gamemd {
-void RandomMap_DistributeTerrain()
+ObjectClass * RandomMap_DistributeTerrain()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -475,7 +475,7 @@ void RandomMap_DistributeTerrain()
 
 // 0x595CE0
 namespace gamemd {
-void CleanupRandomMapCache()
+AbstractTypeClass * CleanupRandomMapCache()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -762,7 +762,7 @@ LABEL_39:
 
 // 0x59A8F0
 namespace gamemd {
-void ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
+AbstractClass * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

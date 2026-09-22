@@ -146,7 +146,7 @@ LABEL_10:
           || (*(_BYTE *)(this + 33) || !v10)
   int v11; // ecx
           && (v11 = this->ThemeClass_field_28, v11 > 0)
-          && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->q014 + 8))(this + 20, v10 + v11, 0) )
+          && this->q014->vt_slot_8(v10 + v11, 0) )
         {
           int v12 = this->q024; /*0x7206d8*/
           int v13 = *(_DWORD *)(this + 24); /*0x7206db*/

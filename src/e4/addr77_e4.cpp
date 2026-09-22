@@ -675,7 +675,7 @@ void E4Recv_776570::sub_776570()
 
 // 0x777080
 namespace gamemd {
-void SetDialogParent(HWND hWnd, HWND a2)
+AbstractClass * SetDialogParent(HWND hWnd, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -951,7 +951,7 @@ void * E4Recv_777BB0::sub_777BB0()
 
 // 0x777C30
 namespace gamemd {
-void InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yBottom)
+ObjectClass * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yBottom)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1235,7 +1235,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
 
 // 0x778F30
 namespace gamemd {
-void LocalizeWOLDateString(char ** a1, void ** a2)
+CampaignScore * LocalizeWOLDateString(char ** a1, void ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1397,7 +1397,7 @@ void LocalizeWOLDateString(char ** a1, void ** a2)
 
 // 0x779230
 namespace gamemd {
-void ConvertDateMonthNames(wchar_t ** a1, void ** a2)
+CampaignScore * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2475,7 +2475,7 @@ void OpenURLWOL(INIClass * a1, int a2)
 
 // 0x77E900
 namespace gamemd {
-void AssignWOLPlayerSide(const char ** a1, int a2)
+Coord * AssignWOLPlayerSide(const char ** a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2633,7 +2633,7 @@ void SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, 
     WideString::Assign(&v28, (CampaignScore *)v7->GameMode[0]); /*0x77ed26*/
     ToWideStringCharAlt(&v26, (const wchar_t **)&v28); /*0x77ed33*/
     DeleteAndZero::Alt((void **)&v28); /*0x77ed3c*/
-    int v30 = (ObjectClass *)String::ToLowerCopy((const char **)&v26, (ObjectClass *)&v30); /*0x77ed4a*/
+    ObjectClass *v30 = (ObjectClass *)String::ToLowerCopy((const char **)&v26, (ObjectClass *)&v30); /*0x77ed4a*/
     bool v9 = String::Compare((const char **)&v27, (const char **)v8); /*0x77ed5d*/
     DeleteAndZero((int)&v30); /*0x77ed5f*/
     if ( v9 ) /*0x77ed66*/
@@ -2905,7 +2905,7 @@ LABEL_5:
 
 // 0x77F320
 namespace gamemd {
-void WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
+AbstractClass * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

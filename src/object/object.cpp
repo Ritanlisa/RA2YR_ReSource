@@ -74,7 +74,7 @@ bool ObjectClass::Remove()
 
 // IDA: 0x5F65F0 -- ObjectClass::Destroy (146B)
 // 0x5f65f0
-int ObjectClass::Destroy()
+AbstractClass * ObjectClass::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f65f0

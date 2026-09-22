@@ -28,7 +28,7 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 
 // 0x5116A0
 namespace gamemd {
-int HouseTypeClass::Dtor()
+AbstractClass * HouseTypeClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -83,7 +83,7 @@ int HouseTypeClass::Dtor()
 
 // 0x511850
 namespace gamemd {
-int HouseTypeClass::LoadFromINI(unsigned char *** aP1)
+void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -510,7 +510,7 @@ int HouseTypeClass::LoadFromINI(unsigned char *** aP1)
 
 // 0x512170
 namespace gamemd {
-int HouseTypeClass::ProcessPower(int * a2)
+AbstractClass * HouseTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

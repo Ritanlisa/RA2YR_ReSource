@@ -67,7 +67,7 @@ LABEL_18:
 
 // 0x7B73F0
 namespace gamemd {
-int WideString::Replace(CampaignScore * aP1, wchar_t * String)
+AbstractClass * WideString::Replace(CampaignScore * aP1, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

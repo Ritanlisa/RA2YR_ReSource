@@ -35,7 +35,7 @@
 
 // 0x690400
 namespace gamemd {
-int E4Recv_690400::sub_690400()
+AbstractClass * E4Recv_690400::sub_690400()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -77,7 +77,7 @@ int E4Recv_690400::sub_690400()
 
 // 0x693B70
 namespace gamemd {
-void Network_RequestFile(char * a1, int a2, int a3)
+CampaignClass * Network_RequestFile(char * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -991,7 +991,7 @@ LABEL_122:
 
 // 0x6951F0
 namespace gamemd {
-void FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a2, int a4, char a5)
+AbstractClass * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a2, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

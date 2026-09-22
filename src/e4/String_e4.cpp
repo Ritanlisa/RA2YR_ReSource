@@ -62,7 +62,7 @@ void String::Release()
 
 // 0x5D0380
 namespace gamemd {
-int String::SplitComma(ObjectClass * aP1)
+ObjectClass * String::SplitComma(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -144,7 +144,7 @@ LABEL_6:
 
 // 0x763690
 namespace gamemd {
-int String::To_Waypoint()
+ControlClass * String::To_Waypoint()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -199,7 +199,7 @@ unsigned int String::Length()
 
 // 0x7B57A0
 namespace gamemd {
-int String::Replace(char * SubStr, const char * a3)
+AbstractClass * String::Replace(char * SubStr, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -325,7 +325,7 @@ LABEL_35:
 
 // 0x7B5F10
 namespace gamemd {
-int String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
+AbstractClass * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -410,7 +410,7 @@ int String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 
 // 0x7B7A60
 namespace gamemd {
-int String::Tokenize2(int a2, wchar_t * Str, void ** a4)
+AbstractClass * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -502,7 +502,7 @@ int String::Tokenize2(int a2, wchar_t * Str, void ** a4)
 
 // 0x7CCA34
 namespace gamemd {
-void int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
+exception * int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

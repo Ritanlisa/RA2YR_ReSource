@@ -2212,7 +2212,7 @@ LABEL_135:
           return 0; /*0x4f80c6*/
       }
       v46 = (DynamicVector *)(*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 64))(aP1); /*0x4f80d1*/
-      int v47 = DynamicVector::GetOrGrow(this + 5450, v46); /*0x4f80e4*/
+      int v47 = ((DynamicVector *)((char *)this + 5450)).GetOrGrow(v46); /*0x4f80e4*/
       if ( aP1->__pad_DFC[202] ) /*0x4f80e6*/
       {
         for ( i = 0; i < *(int *)&g_CellDirectionOffsets[84616]; ++i ) /*0x4f80f9*/
@@ -5306,7 +5306,6 @@ namespace gamemd { int HouseClass::CompleteProduction(void* a1, int a2, int a3, 
   char v27; // [esp+2Dh] [ebp-29h]
   int var14; // [esp+42h] [ebp-14h]
   BuildingTypeClass *v31; // [esp+46h] [ebp-10h]
-
   v27 = 0; /*0x4fb0ef*/
   if ( (int)aP2 >= 0 ) /*0x4fb0f4*/
   {
@@ -6173,7 +6172,7 @@ namespace gamemd { int HouseClass::FindBuildingOfType(int a1, int a2) {
   ObjectClass *v8; // ecx
   ObjectClass *v9; // eax
   ObjectClass *v11; // [esp+10h] [ebp-10h]
-  if ( DynamicVector::GetOrGrow(this + 5440, aP1) <= 0 ) /*0x4fd07b*/
+  if ( ((DynamicVector *)((char *)this + 5440)).GetOrGrow(aP1) <= 0 ) /*0x4fd07b*/
     return 0; /*0x4fd07b*/
   int v4 = 0; /*0x4fd080*/
   v11 = (ObjectClass *)this->bunkersCount; /*0x4fd084*/
@@ -6602,7 +6601,7 @@ LABEL_96:
       }
     }
 LABEL_98:
-    (*(void (__stdcall **)(int))(this->vtable5 + 56))(this + 36); /*0x4fe3c2*/
+    this->vtable5->vt_slot_56(); /*0x4fe3c2*/
     return 0; /*0x4fe3c9*/
   }
   v44 = *(_DWORD *)&DataGlobal_87F8E4[30972] + 2876; /*0x4fe0c3*/
@@ -7156,7 +7155,7 @@ LABEL_6:
             v31 = (*(int (__thiscall **)(_DWORD, AbstractClass *))(**(_DWORD **)&g_UnitTypeCount2->__pad_0[4 * v27] + 132))( /*0x4fedde*/
                     *(_DWORD *)&g_UnitTypeCount2->__pad_0[4 * v27],
                     this);
-            if ( v31 <= (*(int (__stdcall **)(_DWORD *))(this->vtable5 + 24))((_DWORD *)this + 9) ) /*0x4fedeb*/
+            if ( v31 <= this->vtable5->vt_slot_24((_DWORD *)this + 9) ) /*0x4fedeb*/
             {
               if ( v34 == -1 || v34 < v28 ) /*0x4fedf8*/
               {
@@ -8048,7 +8047,6 @@ namespace gamemd { void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
   int v53; // [esp+50h] [ebp-48h] BYREF
   int v54; // [esp+54h] [ebp-44h]
   int v55; // [esp+58h] [ebp-40h]
-
   v53 = *(_DWORD *)&g_NetworkPlayerBuffer[6588]; /*0x501ae0*/
   int v4 = this->q1526; /*0x501ae4*/
   v54 = *(_DWORD *)&g_NetworkPlayerBuffer[6592]; /*0x501af1*/
@@ -10770,7 +10768,7 @@ namespace gamemd { int HouseClass::UpdateBuildState(int a1) {
   switch ( v3 ) /*0x509748*/
   {
     case 0: /*0x509748*/
-      v3 = (*(int (__stdcall **)(int))(this->vtable5 + 24))(this + 36); /*0x5098b2*/
+      v3 = this->vtable5->vt_slot_24(); /*0x5098b2*/
       if ( v3 < *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 4864) ) /*0x5098c1*/
       {
         v3 = (aP1 == (BuildingTypeClass *)6) + 1; /*0x5098cf*/
@@ -10778,14 +10776,14 @@ namespace gamemd { int HouseClass::UpdateBuildState(int a1) {
       }
       return v3; /*0x5098d0*/
     case 1: /*0x509748*/
-      v3 = (*(int (__stdcall **)(int))(this->vtable5 + 24))(this + 36); /*0x509756*/
+      v3 = this->vtable5->vt_slot_24(); /*0x509756*/
       if ( v3 >= *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 4864) ) /*0x509765*/
         goto LABEL_34; /*0x509765*/
       if ( aP1 == (BuildingTypeClass *)6 ) /*0x509770*/
         this->HouseClass_field_1E4 = 2; /*0x509776*/
       return v3; /*0x509783*/
     case 2: /*0x509748*/
-      v3 = (*(int (__stdcall **)(int))(this->vtable5 + 24))(this + 36); /*0x50978d*/
+      v3 = this->vtable5->vt_slot_24(); /*0x50978d*/
       v4 = *(AbstractClass **)&DataGlobal_87F8E4[30972]; /*0x509790*/
       if ( v3 >= *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 4864) ) /*0x50979c*/
         goto LABEL_34; /*0x50979c*/
@@ -10795,7 +10793,7 @@ namespace gamemd { int HouseClass::UpdateBuildState(int a1) {
         goto LABEL_20; /*0x5097ae*/
       break; /*0x5097ae*/
     case 3: /*0x509748*/
-      v3 = (*(int (__stdcall **)(int))(this->vtable5 + 24))(this + 36); /*0x50988a*/
+      v3 = this->vtable5->vt_slot_24(); /*0x50988a*/
       if ( v3 > *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 4864) ) /*0x509899*/
 LABEL_34:
         this->HouseClass_field_1E4 = 0; /*0x50989b*/

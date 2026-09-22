@@ -6,7 +6,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x4791F0
-int LinkedList::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
+AbstractClass * LinkedList::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -230,7 +230,7 @@ void * LinkedList::MoveNode(void * a2)
 {
   if ( a2 != this ) /*0x55660a*/
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 36))(this); /*0x55660e*/
+    this->vt_slot_36(); /*0x55660e*/
     (*(void (__thiscall **)(void *, void *))(this->q00C)(this, a2); /*0x556616*/
   }
   return this; /*0x55661b*/
@@ -260,19 +260,19 @@ unsigned int * LinkedList::FindPrev()
 }
 
 // 0x5566A0
-int LinkedList::InsertAfter(int a2)
+LinkClass * LinkedList::InsertAfter(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x5566a5*/
+  this->vt_slot_36(); /*0x5566a5*/
   int v3 = *(_DWORD *)(a2 + 4); /*0x5566ac*/
   *(_DWORD *)(a2 + 4) = this; /*0x5566af*/
   this->q008 = a2; /*0x5566b4*/
   this->Tail = v3; /*0x5566b7*/
   if ( v3 ) /*0x5566ba*/
     *(_DWORD *)(v3 + 8) = this; /*0x5566bc*/
-  return (*(int (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x5566c6*/
+  return this->vt_slot_24(); /*0x5566c6*/
 }
 }
 
@@ -282,7 +282,7 @@ unsigned int * LinkedList::Attach(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x5566d5*/
+  this->vt_slot_36(); /*0x5566d5*/
   int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 24))(a2); /*0x5566de*/
   *(_DWORD *)(v3 + 8) = this; /*0x5566e1*/
   this->Tail = v3; /*0x5566e4*/
@@ -292,18 +292,18 @@ unsigned int * LinkedList::Attach(int a2)
 }
 
 // 0x556700
-int LinkedList::Append(int a2)
+LinkClass * LinkedList::Append(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x556705*/
+  this->vt_slot_36(); /*0x556705*/
   int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 28))(a2); /*0x55670e*/
   *(_DWORD *)(v3 + 4) = this; /*0x556711*/
   this->q008 = v3; /*0x556714*/
   int v4 = *this; /*0x556717*/
   this->Tail = 0; /*0x55671b*/
-  return (*(int (__thiscall **)(_DWORD *))(v4 + 24))(this); /*0x556725*/
+  return this->vt_slot_24(); /*0x556725*/
 }
 }
 
@@ -313,8 +313,8 @@ int LinkedList::RemoveNode()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v2 = (*(int (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x55673e*/
-  int v3 = (*(int (__thiscall **)(_DWORD *))(*this + 28))(this); /*0x556740*/
+  int v2 = this->vt_slot_24(); /*0x55673e*/
+  int v3 = this->vt_slot_28(); /*0x556740*/
   LinkClass *v4 = this->q008; /*0x556743*/
   if ( v4 ) /*0x55674a*/
     v4->m_Next = this->Tail; /*0x55674f*/

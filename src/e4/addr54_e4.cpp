@@ -40,7 +40,7 @@ int E4Recv_540C50::sub_540C50()
 
 // 0x541170
 namespace gamemd {
-int E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
+AbstractClass * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -148,7 +148,7 @@ LABEL_12:
 
 // 0x544E70
 namespace gamemd {
-void SurfaceClass_CreatePrimary(int a1, int a2, int a3)
+AbstractClass * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1786,7 +1786,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
 {
 
   memset(*a3, 0, a5 * a4); /*0x549859*/
-  _DWORD * v6 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this); /*0x549866*/
+  _DWORD * v6 = (_DWORD *)this->vt_slot_156(); /*0x549866*/
   _DWORD * v7 = v6; /*0x54986c*/
   if ( v6 ) /*0x549870*/
   {
@@ -1796,7 +1796,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
     int v8 = v6[v27 + 4]; /*0x549887*/
     if ( !v8 ) /*0x54988d*/
       return 0; /*0x54988d*/
-    _DWORD * v9 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this); /*0x549897*/
+    _DWORD * v9 = (_DWORD *)this->vt_slot_156(); /*0x549897*/
     _DWORD * v10 = v9; /*0x54989d*/
     if ( v9 ) /*0x5498a1*/
     {
@@ -1918,7 +1918,7 @@ int sub_549B30()
 
 // 0x54BA30
 namespace gamemd {
-int E4Recv_54BA30::UpdateFootMovement()
+AbstractClass * E4Recv_54BA30::UpdateFootMovement()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1971,7 +1971,7 @@ int E4Recv_54BA30::UpdateFootMovement()
       double v18 = Math::CalcAngle((double)v30 - (double)*(int *)(this + 68), (double)v28 - (double)v29); /*0x54bc26*/
       LOWORD(v28) = Math::RoundToInt((v18 - 1.570796326794897) * -10430.06004058427); /*0x54bc3f*/
       v27 = v28; /*0x54bc50*/
-      FacingClass::Update((char *)(this + 84), &v27); /*0x54bc54*/
+      ((FacingClass *)((char *)this + 84)).Update((char *)(this + 84), &v27); /*0x54bc54*/
       MemberTeam = Team::GetMember(*(_DWORD **)(this + 12), 0); /*0x54bc5e*/
       int v20 = MemberTeam; /*0x54bc63*/
       if ( MemberTeam ) /*0x54bc67*/

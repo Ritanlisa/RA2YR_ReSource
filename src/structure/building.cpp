@@ -135,7 +135,7 @@ BuildingClass::BuildingClass() noexcept
 
 // IDA 0x43b740
 // 0x43b740
-int BuildingClass::Construct()
+AbstractClass * BuildingClass::Construct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x43b740
@@ -249,7 +249,7 @@ int BuildingClass::Construct()
   this->vtable2 = &BuildingClass_Vtable2;
   this->vtable3 = &BuildingClass_Vtable3;
   this->vtable4 = &BuildingClass_Vtable4;
-  AbstractClass::GenerateUniqueID(this + 4);
+  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID();
   this->Upgrades = 0;
   LOBYTE(v6) = 0;
   this->q17C = 0;
@@ -262,7 +262,7 @@ int BuildingClass::Construct()
   {
     HIBYTE(v6) = *(_BYTE *)(v7 + 5904);
     LOWORD(a3) = v6;
-    FacingClass::Update((char *)(this + 880), &a3);
+    ((FacingClass *)((char *)this + 880)).Update((char *)(this + 880), &a3);
   }
   memset((void *)(this + 1372), 0, 0x54u);
   memset((void *)(this + 1480), 0, 0x20u);
@@ -275,7 +275,7 @@ int BuildingClass::Construct()
   AudioController::Init((_DWORD *)(this + 1696));
   AudioController::Init((_DWORD *)(this + 1716));
   LOWORD(a3) = 0x4000;
-  FacingClass::Update((char *)(this + 880), &a3);
+  ((FacingClass *)((char *)this + 880)).Update((char *)(this + 880), &a3);
   this->RepairProgress = 0;
   if ( DataGlobal_87F7E8[539866] < DataGlobal_87F7E8[539864]
     || (BYTE1(DataGlobal_87F7E8[539865]) || !DataGlobal_87F7E8[539864])
@@ -311,7 +311,7 @@ int BuildingClass::Construct()
     int v10 = dword_A8ED54[131613]++;
     *(_DWORD *)(dword_A8ED54[131610] + 4 * v10) = this;
   }
-  Vtable3 = AbstractClass::GetVtable3(this + 4);
+  Vtable3 = ((AbstractClass *)((char *)this + 4)).GetVtable3();
   if ( dword_A8ED54[130748] + 1 <= dword_A8ED54[130749] )
     goto LABEL_29;
   if ( dword_A8ED54[130749] )
@@ -767,7 +767,7 @@ int BuildingClass::Dtor()
   Mixer::ReleaseChannel((int **)this + 429);
   Mixer::ReleaseChannel((int **)this + 424);
   AudioFileClass::Release(v2);
-  AudioFileClass::Release(this + 424);
+  ((AudioFileClass *)((char *)this + 424)).Release();
   int v4 = (int)this->LightSource;
   if ( v4 )
   {
@@ -1294,7 +1294,7 @@ int BuildingClass::Activate()
 
 // IDA 0x452480: deactivate building power
 // 0x452480
-void BuildingClass::Deactivate()
+BuildingTypeClass * BuildingClass::Deactivate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1991,7 +1991,7 @@ int BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 
 // IDA 0x44d310: validate placement passes all checks
 // 0x480630
-void BuildingClass::ValidatePlacement() {
+AbstractClass * BuildingClass::ValidatePlacement() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v4; // esi
@@ -2564,7 +2564,7 @@ bool BuildingClass::ValidatePlacementEx() { return ValidateFoundation(); }
 
 // IDA 0x449820: find cells occupied by building foundation
 // 0x7447b0
-int BuildingClass::FindPlacementCells()
+void* BuildingClass::FindPlacementCells()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6603,7 +6603,7 @@ retn    8
 
 // IDA 0x449850: visualize placement footprint
 // 0x485af0
-void BuildingClass::VisualizePlacement()
+void* BuildingClass::VisualizePlacement()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x485af0
@@ -9075,7 +9075,7 @@ void BuildingClass::ReassignFlagPosition() {}
 
 // IDA 0x44f620: toggle primary factory status
 // 0x447e90
-int BuildingClass::TogglePrimaryFactory()
+BuildingTypeClass * BuildingClass::TogglePrimaryFactory()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x447e90
@@ -9122,7 +9122,7 @@ int BuildingClass::Mission_Construction()
 
 // IDA 0x459ec0: returns 6 (wait timer constant)
 // 0x443c60
-int BuildingClass::UpdateConstruction()
+VectorClass * BuildingClass::UpdateConstruction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x443c60
@@ -12516,7 +12516,7 @@ retn
 
 // IDA 0x44d2c0: sell effects at location
 // 0x480cb0
-int BuildingClass::SellEffects()
+AbstractClass * BuildingClass::SellEffects()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -13496,7 +13496,7 @@ void BuildingClass::Disappear_PrismForward() {}
 
 // IDA 0x43c2d0: main mission controller (handles production, sell, repair, etc.)
 // 0x43c2d0
-int BuildingClass::MissionController()
+BuildingTypeClass * BuildingClass::MissionController()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x43c2d0
@@ -15519,7 +15519,7 @@ bool BuildingClass::IsPoweredOn()
 // power during low-power conditions, buildings in a power-outage grace period,
 // buildings under construction or being sold (unless they have an engineer).
 // 0x4555d0
-int BuildingClass::IsPoweredActive()
+BuildingTypeClass * BuildingClass::IsPoweredActive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4555d0
@@ -15692,7 +15692,7 @@ int BuildingClass::GetPowerFrame()
 
 // IDA 0x447780: start production of type_index
 // 0x447780
-int BuildingClass::StartProduction(int type_index)
+BuildingTypeClass * BuildingClass::StartProduction(int type_index)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x447780
@@ -16195,7 +16195,7 @@ retn    4
 
 // IDA 0x447ab0: update production timer
 // 0x4496b0
-int BuildingClass::CheckState1()
+BuildingTypeClass * BuildingClass::CheckState1()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4496b0
@@ -17801,7 +17801,7 @@ void BuildingClass::EjectCrew()
     v7 = this->inAirFlag;
     if ( v7 > 0 )
     {
-      v7 = LinkedList::Pop(this + 69);
+      v7 = ((LinkedList *)((char *)this + 69)).Pop();
       for ( i = v7; v7; i = v7 )
       {
   int *v12; // eax
@@ -17863,7 +17863,7 @@ void BuildingClass::EjectCrew()
             (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)i + 488))(i, 15, 0);
         }
         --DataGlobal_87F7E8[539633];
-        v7 = LinkedList::Pop(this + 69);
+        v7 = ((LinkedList *)((char *)this + 69)).Pop();
       }
     }
   }
@@ -18870,7 +18870,7 @@ void BuildingClass::AcquireTarget() {}
 
 // IDA 0x445f00: select target type flags
 // 0x445f00
-int BuildingClass::SelectTargetTypeFlags()
+BuildingTypeClass * BuildingClass::SelectTargetTypeFlags()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x445f00
@@ -18930,7 +18930,7 @@ bool BuildingClass::CheckBridge() { return false; }
 
 // IDA 0x4576f0: destroy building on bridge collapse
 // 0x4576f0
-int BuildingClass::DestroyOnBridgeCollapse()
+ObjectClass * BuildingClass::DestroyOnBridgeCollapse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -19039,7 +19039,7 @@ CoordStruct* BuildingClass::GetBridgeAwareCoords(CoordStruct* out) const
 
 // IDA 0x44ced0: deploy building
 // 0x62a4a0
-int BuildingClass::Deploy()
+BuildingTypeClass * BuildingClass::Deploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -19780,14 +19780,14 @@ retn    10h
 
 // IDA 0x451f60: sync crate visual state
 // 0x451f60
-int BuildingClass::SyncCrateVisuals()
+BuildingTypeClass * BuildingClass::SyncCrateVisuals()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
   int v11 = 21;
-  _DWORD * v4 = this + 1372;
+  AnimClass *v4 = this + 1372;
   do
   {
     _DWORD * v5 = (_DWORD *)*v4;
@@ -19802,7 +19802,7 @@ int BuildingClass::SyncCrateVisuals()
       char v7 = this->Translucency;
       if ( v7 == 15 && (*(int (__thiscall **)(char *, _DWORD, _DWORD))(this->bombVisible)(this, 0, 0) == 5 )
         LOBYTE(v7) = 16;
-      char * v8 = this + 1372;
+      AnimClass *v8 = this + 1372;
       int v9 = 21;
       do
       {
@@ -20363,7 +20363,7 @@ void BuildingClass::Update()
 
 // IDA 0x44e8f0: object expired notification
 // 0x44e8f0
-int BuildingClass::OnObjectExpired(ObjectClass* obj)
+BuildingTypeClass * BuildingClass::OnObjectExpired(ObjectClass* obj)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x44e8f0
@@ -21297,7 +21297,7 @@ void BuildingClass::ReadConstructionData() {}
 
 // IDA 0x4527d0: check if has occupant audio
 // 0x4527d0
-int BuildingClass::HasOccupantAudio()
+BuildingTypeClass * BuildingClass::HasOccupantAudio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4527d0
@@ -21983,7 +21983,7 @@ retn    8
 
 // IDA 0x459c20: process upgrade targeting
 // 0x459c20
-int BuildingClass::ProcessUpgradeTargeting()
+BuildingTypeClass * BuildingClass::ProcessUpgradeTargeting()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -22510,7 +22510,7 @@ int BuildingClass::GetCursorAction() { return 0; }
 
 // IDA 0x70f6e0: update threat bounds for AI
 // 0x70f6e0
-void BuildingClass::UpdateThreatBounds()
+BuildingTypeClass * BuildingClass::UpdateThreatBounds()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x70f6e0

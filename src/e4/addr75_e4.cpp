@@ -29,7 +29,7 @@
 
 // 0x750920
 namespace gamemd {
-void VocClass_Play(int a1, int a2, float a3, int a4)
+AbstractClass * VocClass_Play(int a1, int a2, float a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -765,7 +765,7 @@ void TransformVoxelVertex(unsigned int * a1, SomeVoxelCache * a2, SomeVoxelCache
 
 // 0x7542F0
 namespace gamemd {
-void InitializeAudioOcclusion(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
+AbstractClass * InitializeAudioOcclusion(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1785,7 +1785,7 @@ void ProcessVoxelScanSamples()
 
 // 0x758AD0
 namespace gamemd {
-int E4Recv_758AD0::sub_758AD0(int * a2)
+AbstractClass * E4Recv_758AD0::sub_758AD0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

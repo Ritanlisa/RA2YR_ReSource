@@ -155,14 +155,14 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   _DWORD * v3 = this + 9;
   if ( this->q024 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
   {
-    (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
+    *(_DWORD *)this->m_State->vt_slot_244(this->m_State, this + 9);
     *v3 = g_ScoreDisplayState1;
     this->q028 = g_ScoreDisplayState2;
     this->q0B0 = g_ScoreDisplayState3;
   }
-  if ( (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)this->m_State + 896))(this->m_State) )
+  if ( this->m_State->vt_slot_896() )
     return 7;
-  if ( !(*(unsigned __int8 (__stdcall **)(int *))(this->q004 + 16))(this + 1)
+  if ( !this->q004->vt_slot_16()
     || this->MovementAI_field_18 == g_ScoreDisplayState1 && this->q01C == g_ScoreDisplayState2 && this->q008 == g_ScoreDisplayState3 )
   {
     return 0;
@@ -191,12 +191,12 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
       *(this + 21) = 0;
       *(this + 19) = 0;
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v32 + 1348))(v32, 0, 0);
-      (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1);
+      *(_DWORD *)this->m_State->vt_slot_1152(this->m_State, 0, 1);
       return 7;
     }
     else
     {
-      (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)this->m_State + 292))(this->m_State, 0);
+      *(_DWORD *)this->m_State->vt_slot_292(this->m_State, 0);
       _DWORD * v8 = (_DWORD *)this->m_State;
       v99 = v8[39];
       v100 = v8[40];
@@ -243,7 +243,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
       *v19 = v102 + v18;
       v19[1] = v23;
       v19[2] = v25 + v24;
-      int v26 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->m_State + 464))(this->m_State);
+      int v26 = this->m_State->vt_slot_464();
       int * v27 = (int *)(this->m_State + 156);
       v102 = *v27;
       v103 = v27[1];
@@ -270,7 +270,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   *v3 = ((__int16)(LOWORD(Direction_X_Offsets[v34]) + *v33) << 8) + 128;
   this->q028 = (v35 << 8) + 128;
   this->q0B0 = 0;
-  int v36 = Cell::GetGroundHeight(this + 9);
+  int v36 = ((Cell *)((char *)this + 9)).GetGroundHeight();
   int * v37 = (int *)this->m_State;
   this->q0B0 = v36;
   v37 += 39;
@@ -292,12 +292,12 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
         *v3 = g_ScoreDisplayState1;
         this->q028 = g_ScoreDisplayState2;
         this->q0B0 = g_ScoreDisplayState3;
-        (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1);
+        *(_DWORD *)this->m_State->vt_slot_1152(this->m_State, 0, 1);
         this->MovementAI_field_14 = 0;
         *(this + 18) = 0;
         *(this + 21) = 0;
         *(this + 19) = 0;
-        (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)this->m_State + 1348))(this->m_State, 0, 0);
+        *(_DWORD *)this->m_State->vt_slot_1348(this->m_State, 0, 0);
         return 7;
       }
       return 7;
@@ -339,7 +339,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   int v113; // [esp+80h] [ebp-8h]
   int v109; // [esp+68h] [ebp-20h]
     case 0:
-      (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)this->m_State + 396))(this->m_State, 2);
+      *(_DWORD *)this->m_State->vt_slot_396(this->m_State, 2);
       _BYTE * v65 = (_BYTE *)this->m_State;
       if ( !v65[144] || v65[129] || v65[141] )
         return 7;
@@ -366,7 +366,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v48 + 1348))(v48, 0, 0);
         if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
         {
-          (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
+          *(_DWORD *)this->m_State->vt_slot_244(this->m_State, this + 9);
           *v3 = g_ScoreDisplayState1;
           this->q028 = g_ScoreDisplayState2;
           this->q0B0 = g_ScoreDisplayState3;
@@ -393,7 +393,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v51 + 1348))(v51, 0, 0);
         if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
         {
-          (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->m_State + 244))(this->m_State, v3);
+          *(_DWORD *)this->m_State->vt_slot_244(this->m_State, v3);
           *v3 = g_ScoreDisplayState1;
           v3[1] = g_ScoreDisplayState2;
           v3[2] = g_ScoreDisplayState3;
@@ -412,7 +412,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v78 + 1348))(v78, 0, 0);
       if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
       {
-        (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
+        *(_DWORD *)this->m_State->vt_slot_244(this->m_State, this + 9);
         *v3 = g_ScoreDisplayState1;
         this->q028 = g_ScoreDisplayState2;
         this->q0B0 = g_ScoreDisplayState3;
@@ -492,7 +492,7 @@ LABEL_97:
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v67 + 1348))(v67, 0, 0);
         if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
         {
-          (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
+          *(_DWORD *)this->m_State->vt_slot_244(this->m_State, this + 9);
           *v3 = g_ScoreDisplayState1;
           this->q028 = g_ScoreDisplayState2;
           this->q0B0 = g_ScoreDisplayState3;
@@ -543,7 +543,7 @@ LABEL_97:
       if ( !a2 )
       {
   char v111[12]; // [esp+70h] [ebp-18h] BYREF
-        _DWORD * v56 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->m_State + 72))(this->m_State, v111);
+        _DWORD * v56 = (_DWORD *)*(_DWORD *)this->m_State->vt_slot_72(this->m_State, v111);
   int v112; // [esp+7Ch] [ebp-Ch] BYREF
         int * v57 = Coord::Subtract(&v112, *v56 - this->MovementAI_field_18, v56[1] - this->q01C, v56[2] - this->q008);
         int v105 = *v57;
@@ -562,8 +562,8 @@ LABEL_97:
             v110 = v58[2];
             if ( *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v108) + 59) != 10 )
             {
-              (*(void (__stdcall **)(int *))(this->q004 + 72))(this + 1);
-              (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1);
+              this->q004->vt_slot_72();
+              *(_DWORD *)this->m_State->vt_slot_1152(this->m_State, 0, 1);
               return 7;
             }
           }
@@ -601,7 +601,7 @@ LABEL_61:
             return v96;
         }
 LABEL_62:
-        (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->m_State + 244))(this->m_State, v3);
+        *(_DWORD *)this->m_State->vt_slot_244(this->m_State, v3);
         *v3 = g_ScoreDisplayState1;
         v3[1] = g_ScoreDisplayState2;
         v3[2] = g_ScoreDisplayState3;
@@ -619,7 +619,7 @@ LABEL_62:
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v54 + 1348))(v54, 0, 0);
       if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
       {
-        (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
+        *(_DWORD *)this->m_State->vt_slot_244(this->m_State, this + 9);
         *v3 = g_ScoreDisplayState1;
         this->q028 = g_ScoreDisplayState2;
         this->q0B0 = g_ScoreDisplayState3;
@@ -2006,7 +2006,7 @@ namespace gamemd { int MovementAI::StepFootClass(int a1) {
     if ( *(_WORD *)result == (_WORD)v6 && *(_WORD *)(result + 2) == (_WORD)v7 ) /*0x51654a*/
     {
   __int64 v8; // rax
-      v8 = *(_DWORD *)((*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)this->m_State + 76))( /*0x516569*/
+      v8 = *(_DWORD *)(*(_DWORD *)this->m_State->vt_slot_76(/*0x516569*/
                          this->m_State,
                          &aP0,
                          0)
@@ -2015,8 +2015,8 @@ namespace gamemd { int MovementAI::StepFootClass(int a1) {
       result = (HIDWORD(v8) ^ v8) - HIDWORD(v8); /*0x51656c*/
       if ( result < 2 * *(_DWORD *)&HouseClass_Player[46196] ) /*0x516573*/
       {
-        (*(void (__stdcall **)(int *))(this->q004 + 72))(this + 1); /*0x51657c*/
-        return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5166e4*/
+        this->q004->vt_slot_72(); /*0x51657c*/
+        return *(_DWORD *)this->m_State->vt_slot_1152(this->m_State, 0, 1); /*0x5166e4*/
       }
     }
   }
@@ -2031,11 +2031,11 @@ namespace gamemd { int MovementAI::StepFootClass(int a1) {
   }
   int v9 = *v4 / 256; /*0x5165dd*/
   int v10 = this->q01C / 256; /*0x5165e0*/
-  _WORD * v11 = (_WORD *)(*(int (__thiscall **)(_DWORD, IUnknown **))(*(_DWORD *)this->m_State + 440))(this->m_State, &v61); /*0x5165e3*/
+  _WORD * v11 = (_WORD *)*(_DWORD *)this->m_State->vt_slot_440(this->m_State, &v61); /*0x5165e3*/
   if ( *v11 == (_WORD)v9 && v11[1] == (_WORD)v10 ) /*0x5165f2*/
   {
   __int64 v12; // rax
-    v12 = *(_DWORD *)((*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)this->m_State + 76))(this->m_State, &aP0, 0) /*0x516611*/
+    v12 = *(_DWORD *)(*(_DWORD *)this->m_State->vt_slot_76(this->m_State, &aP0, 0) /*0x516611*/
                     + 8)
         - this->q008;
     result = (HIDWORD(v12) ^ v12) - HIDWORD(v12); /*0x516614*/
@@ -2066,7 +2066,7 @@ LABEL_19:
     *ecx45 = v28; /*0x5168fa*/
     ecx45[1] = v31; /*0x5168fc*/
     ecx45[2] = v29; /*0x516904*/
-    _DWORD * v32 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->m_State + 72))(this->m_State, v67); /*0x51690c*/
+    _DWORD * v32 = (_DWORD *)*(_DWORD *)this->m_State->vt_slot_72(this->m_State, v67); /*0x51690c*/
     int v33 = *(_DWORD *)(this->m_State + 1504) & 7; /*0x516939*/
     LOWORD(aP4a) = *v32 / 256 + *(_WORD *)&stru_89E138[5296][4 * v33 + 160]; /*0x516955*/
     HIWORD(aP4a) = v32[1] / 256 + *(_WORD *)&stru_89E138[5296][4 * v33 + 162]; /*0x516961*/
@@ -2103,7 +2103,7 @@ LABEL_19:
         {
           if ( Object::IsAlliedWithObjectHouse(*(_DWORD **)(this->m_State + 540), ClosestObjectCell) ) /*0x516a58*/
           {
-            _DWORD * v42 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->m_State + 72))(this->m_State, v67); /*0x516a6f*/
+            _DWORD * v42 = (_DWORD *)*(_DWORD *)this->m_State->vt_slot_72(this->m_State, v67); /*0x516a6f*/
             int v43 = this->q01C; /*0x516a76*/
             v44 = (IUnknown *)(*v42 - *v4); /*0x516a79*/
             int v45 = v42[1]; /*0x516a7b*/
@@ -2131,8 +2131,8 @@ LABEL_19:
                 v66 = v49[2]; /*0x516b30*/
                 if ( *((_DWORD *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)&aP0) + 59) != 10 ) /*0x516b46*/
                 {
-                  (*(void (__stdcall **)(int *))(this->q004 + 72))(this + 1); /*0x516b4f*/
-                  return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1); /*0x516b6a*/
+                  this->q004->vt_slot_72(); /*0x516b4f*/
+                  return *(_DWORD *)this->m_State->vt_slot_1152(this->m_State, 0, 1); /*0x516b6a*/
                 }
               }
             }
@@ -2165,11 +2165,11 @@ LABEL_19:
     *ecx20 = v15; /*0x5166b5*/
     ecx20[1] = v18; /*0x5166b7*/
     ecx20[2] = v16; /*0x5166ba*/
-    if ( !(*(unsigned __int8 (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 716))(this->m_State, this + 6) ) /*0x5166c2*/
-      return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5166ca*/
+    if ( !*(_DWORD *)this->m_State->vt_slot_716(this->m_State, this + 6) ) /*0x5166c2*/
+      return *(_DWORD *)this->m_State->vt_slot_1152(this->m_State, 0, 1); /*0x5166ca*/
     if ( FootClass::ClearSomeVector2((void *)this->m_State) ) /*0x5166ea*/
       goto LABEL_28; /*0x5166ea*/
-    _DWORD * v19 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 72))(this->m_State, &aP0); /*0x516701*/
+    _DWORD * v19 = (_DWORD *)*(_DWORD *)this->m_State->vt_slot_72(this->m_State, &aP0); /*0x516701*/
     v21 = Coord::Subtract( /*0x516721*/
             v67,
             (IUnknown *)(*v19 - *v4),
@@ -2186,10 +2186,10 @@ LABEL_19:
                                          + (double)(int)v61 * (double)(int)v61));
     if ( (int)Math::RoundToInt(st7_23) >= *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5912) ) /*0x51677b*/
       goto LABEL_28; /*0x51677b*/
-    if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->m_State + 388))(this->m_State) == 2 /*0x51679b*/
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->m_State + 388))(this->m_State) == 11 )
+    if ( this->m_State->vt_slot_388() == 2 /*0x51679b*/
+      || this->m_State->vt_slot_388() == 11 )
     {
-      (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5167a6*/
+      *(_DWORD *)this->m_State->vt_slot_1152(this->m_State, 0, 1); /*0x5167a6*/
       result = this->m_State; /*0x5167ac*/
       if ( !*(_BYTE *)(result + 144) ) /*0x5167b7*/
         return result; /*0x5167b7*/
@@ -2214,7 +2214,7 @@ LABEL_28:
         *(_DWORD *)&v25[1].__pad_115[23] = eax28 - 1; /*0x5167cd*/
       }
     }
-    if ( !(*(unsigned __int8 (__stdcall **)(int *))(this->q004 + 16))(this + 1) ) /*0x516829*/
+    if ( !this->q004->vt_slot_16() ) /*0x516829*/
     {
       v27 = (TechnoClass *)this->m_State; /*0x516830*/
       if ( v27->sprayOffsetIndex ) /*0x516833*/
@@ -2227,7 +2227,7 @@ LABEL_28:
           ecx37 = *(_DWORD **)(this->m_State + 1492); /*0x516857*/
           if ( ecx37 ) /*0x51685f*/
             TeamClass::WakeUpAllMembers(ecx37); /*0x516861*/
-          (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)this->m_State + 968))(this->m_State, 0); /*0x51686d*/
+          *(_DWORD *)this->m_State->vt_slot_968(this->m_State, 0); /*0x51686d*/
         }
       }
     }
@@ -2235,12 +2235,12 @@ LABEL_28:
       || this->q028 != *(_DWORD *)&HouseClass_Player[46136]
       || this->q0B0 != *(_DWORD *)&HouseClass_Player[46140] )
     {
-      (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9); /*0x5168a1*/
+      *(_DWORD *)this->m_State->vt_slot_244(this->m_State, this + 9); /*0x5168a1*/
       this->q024 = *(_DWORD *)&HouseClass_Player[46132]; /*0x5168ad*/
       this->q028 = *(_DWORD *)&HouseClass_Player[46136]; /*0x5168b5*/
       this->q0B0 = *(_DWORD *)&HouseClass_Player[46140]; /*0x5168bd*/
     }
-    return (*(int (__stdcall **)(int *))(this->q004 + 72))(this + 1); /*0x5168c3*/
+    return this->q004->vt_slot_72(); /*0x5168c3*/
   }
   return result; /*0x5166dd*/
 }
@@ -8389,104 +8389,104 @@ namespace gamemd { int RulesClass::SaveLoad_Prefix_0(int a1) {
   int i146; // edi
   int v169; // [esp+D50h] [ebp-4h] BYREF
   _DWORD * v3 = this + 1125;
-  (*(void (__thiscall **)(int *))(this->q465 + 12))(this + 1125);
-  (*(void (__thiscall **)(int *))(this->q11B0 + 12))(this + 1132);
-  (*(void (__thiscall **)(int *))(this->q11CC + 12))(this + 1139);
-  (*(void (__thiscall **)(int *))(this->q11E8 + 12))(this + 1146);
-  (*(void (__thiscall **)(int *))(this->q481 + 12))(this + 1153);
-  (*(void (__thiscall **)(int *))(this->q1220 + 12))(this + 1160);
-  (*(void (__thiscall **)(int *))(this->q123C + 12))(this + 1167);
-  (*(void (__thiscall **)(int *))(this->q1258 + 12))(this + 1174);
-  (*(void (__thiscall **)(int *))(this->q1274 + 12))(this + 1181);
-  (*(void (__thiscall **)(int *))(this->q1290 + 12))(this + 1188);
-  (*(void (__thiscall **)(int *))(this->q12AC + 12))(this + 1195);
-  (*(void (__thiscall **)(int *))(this->q12C8 + 12))(this + 1202);
-  (*(void (__thiscall **)(int *))(this->q12E4 + 12))(this + 1209);
-  (*(void (__thiscall **)(int *))(this->q13F0 + 12))(this + 1276);
-  (*(void (__thiscall **)(int *))(this->q1158 + 12))(this + 1110);
-  (*(void (__thiscall **)(int *))(this->AttackInterval + 12))(this + 618);
-  (*(void (__thiscall **)(int *))(this->q360 + 12))(this + 864);
-  (*(void (__thiscall **)(int *))(this->qD9C + 12))(this + 871);
-  (*(void (__thiscall **)(int *))(this->qDB8 + 12))(this + 878);
-  (*(void (__thiscall **)(int *))(this->qEE8 + 12))(this + 954);
-  (*(void (__thiscall **)(int *))(this->qF04 + 12))(this + 961);
-  (*(void (__thiscall **)(int *))(this->q3C8 + 12))(this + 968);
-  (*(void (__thiscall **)(int *))(this->qE10 + 12))(this + 900);
-  (*(void (__thiscall **)(int *))(this->qEC4 + 12))(this + 945);
-  (*(void (__thiscall **)(int *))(this->qE2C + 12))(this + 907);
-  (*(void (__thiscall **)(int *))(this->qDD4 + 12))(this + 885);
-  (*(void (__thiscall **)(int *))(this->q1390 + 12))(this + 1252);
-  (*(void (__thiscall **)(int *))(this->q13AC + 12))(this + 1259);
-  (*(void (__thiscall **)(int *))(this->qE4C + 12))(this + 915);
-  (*(void (__thiscall **)(int *))(this->qE68 + 12))(this + 922);
+  this->q465->vt_slot_12();
+  this->q11B0->vt_slot_12();
+  this->q11CC->vt_slot_12();
+  this->q11E8->vt_slot_12();
+  this->q481->vt_slot_12();
+  this->q1220->vt_slot_12();
+  this->q123C->vt_slot_12();
+  this->q1258->vt_slot_12();
+  this->q1274->vt_slot_12();
+  this->q1290->vt_slot_12();
+  this->q12AC->vt_slot_12();
+  this->q12C8->vt_slot_12();
+  this->q12E4->vt_slot_12();
+  this->q13F0->vt_slot_12();
+  this->q1158->vt_slot_12();
+  this->AttackInterval->vt_slot_12();
+  this->q360->vt_slot_12();
+  this->qD9C->vt_slot_12();
+  this->qDB8->vt_slot_12();
+  this->qEE8->vt_slot_12();
+  this->qF04->vt_slot_12();
+  this->q3C8->vt_slot_12();
+  this->qE10->vt_slot_12();
+  this->qEC4->vt_slot_12();
+  this->qE2C->vt_slot_12();
+  this->qDD4->vt_slot_12();
+  this->q1390->vt_slot_12();
+  this->q13AC->vt_slot_12();
+  this->qE4C->vt_slot_12();
+  this->qE68->vt_slot_12();
   (*(void (__thiscall **)(int *))(this->q3A1 + 12))(this + 929);
-  (*(void (__thiscall **)(int *))(this->qEA0 + 12))(this + 936);
-  (*(void (__thiscall **)(int *))(this->q1304 + 12))(this + 1217);
-  (*(void (__thiscall **)(int *))(this->q1320 + 12))(this + 1224);
-  (*(void (__thiscall **)(int *))(this->q133C + 12))(this + 1231);
-  (*(void (__thiscall **)(int *))(this->q1358 + 12))(this + 1238);
-  (*(void (__thiscall **)(int *))(this->q1374 + 12))(this + 1245);
-  (*(void (__thiscall **)(int *))(this->q13C8 + 12))(this + 1266);
-  (*(void (__thiscall **)(int *))(this->q1174 + 12))(this + 1117);
-  (*(void (__thiscall **)(int *))(this->q43C + 12))(this + 271);
-  (*(void (__thiscall **)(int *))(this->q458 + 12))(this + 278);
-  (*(void (__thiscall **)(int *))(this->q474 + 12))(this + 285);
-  (*(void (__thiscall **)(int *))(this->BombAttachSound + 12))(this + 384);
-  (*(void (__thiscall **)(int *))(this->q358 + 12))(this + 214);
-  (*(void (__thiscall **)(int *))(this->q374 + 12))(this + 221);
-  (*(void (__thiscall **)(int *))(this->CreateUnitSound + 12))(this + 228);
-  (*(void (__thiscall **)(int *))(this->q3AC + 12))(this + 235);
-  (*(void (__thiscall **)(int *))(this->q3C8 + 12))(this + 242);
-  (*(void (__thiscall **)(int *))(this->q3E4 + 12))(this + 249);
-  (*(void (__thiscall **)(int *))(this->HealCrateSound + 12))(this + 435);
-  (*(void (__thiscall **)(int *))(this->q734 + 12))(this + 461);
+  this->qEA0->vt_slot_12();
+  this->q1304->vt_slot_12();
+  this->q1320->vt_slot_12();
+  this->q133C->vt_slot_12();
+  this->q1358->vt_slot_12();
+  this->q1374->vt_slot_12();
+  this->q13C8->vt_slot_12();
+  this->q1174->vt_slot_12();
+  this->q43C->vt_slot_12();
+  this->q458->vt_slot_12();
+  this->q474->vt_slot_12();
+  this->BombAttachSound->vt_slot_12();
+  this->q358->vt_slot_12();
+  this->q374->vt_slot_12();
+  this->CreateUnitSound->vt_slot_12();
+  this->q3AC->vt_slot_12();
+  this->q3C8->vt_slot_12();
+  this->q3E4->vt_slot_12();
+  this->HealCrateSound->vt_slot_12();
+  this->q734->vt_slot_12();
   (*(void (__thiscall **)(int *))(this->q1F1 + 12))(this + 497);
   this->Dig->GetClassIdentifier();
   this->Parachute->GetClassIdentifier();
-  (*(void (__thiscall **)(int *))(this->ChronoReinfDelay + 12))(this + 518);
+  this->ChronoReinfDelay->vt_slot_12();
   this->ThirdDisguise->GetClassIdentifier();
-  (*(void (__thiscall **)(int *))(this->ConditionRedSparkingProbability + 12))(this + 532);
+  this->ConditionRedSparkingProbability->vt_slot_12();
   this->MutateWarhead->vt[03]();
   this->IonCannonWarhead->vt[03]();
-  (*(void (__thiscall **)(int *))(this->CHRONOSK_SHP + 12))(this + 562);
-  (*(void (__thiscall **)(int *))(this->q8E4 + 12))(this + 569);
-  (*(void (__thiscall **)(int *))(this->q900 + 12))(this + 576);
-  (*(void (__thiscall **)(int *))(this->q91C + 12))(this + 583);
-  (*(void (__thiscall **)(int *))(this->q938 + 12))(this + 590);
-  (*(void (__thiscall **)(int *))(this->q954 + 12))(this + 597);
-  (*(void (__thiscall **)(int *))(this->MyEffectivenessCoefficientDefault + 12))(this + 604);
-  (*(void (__thiscall **)(int *))(this->q98C + 12))(this + 611);
-  (*(void (__thiscall **)(int *))(this->q9C4 + 12))(this + 625);
-  (*(void (__thiscall **)(int *))(this->TeslaLimit + 12))(this + 632);
-  (*(void (__thiscall **)(int *))(this->WarRatio + 12))(this + 639);
-  (*(void (__thiscall **)(int *))(this->RefineryRatio + 12))(this + 646);
-  (*(void (__thiscall **)(int *))(this->TreeStrength + 12))(this + 653);
-  (*(void (__thiscall **)(int *))(this->qA50 + 12))(this + 660);
-  (*(void (__thiscall **)(int *))(this->SuperWeapons + 12))(this + 667);
-  (*(void (__thiscall **)(int *))(this->Aircraft + 12))(this + 674);
-  (*(void (__thiscall **)(int *))(this->CrateMinimum + 12))(this + 681);
-  (*(void (__thiscall **)(int *))(this->MinUnitCount + 12))(this + 688);
-  (*(void (__thiscall **)(int *))(this->TiberiumGrows + 12))(this + 695);
-  (*(void (__thiscall **)(int *))(this->qB58 + 12))(this + 726);
-  (*(void (__thiscall **)(int *))(this->qB74 + 12))(this + 733);
-  (*(void (__thiscall **)(int *))(this->qB90 + 12))(this + 740);
-  (*(void (__thiscall **)(int *))(this->qBC0 + 12))(this + 752);
+  this->CHRONOSK_SHP->vt_slot_12();
+  this->q8E4->vt_slot_12();
+  this->q900->vt_slot_12();
+  this->q91C->vt_slot_12();
+  this->q938->vt_slot_12();
+  this->q954->vt_slot_12();
+  this->MyEffectivenessCoefficientDefault->vt_slot_12();
+  this->q98C->vt_slot_12();
+  this->q9C4->vt_slot_12();
+  this->TeslaLimit->vt_slot_12();
+  this->WarRatio->vt_slot_12();
+  this->RefineryRatio->vt_slot_12();
+  this->TreeStrength->vt_slot_12();
+  this->qA50->vt_slot_12();
+  this->SuperWeapons->vt_slot_12();
+  this->Aircraft->vt_slot_12();
+  this->CrateMinimum->vt_slot_12();
+  this->MinUnitCount->vt_slot_12();
+  this->TiberiumGrows->vt_slot_12();
+  this->qB58->vt_slot_12();
+  this->qB74->vt_slot_12();
+  this->qB90->vt_slot_12();
+  this->qBC0->vt_slot_12();
   (*(void (__thiscall **)(int *))(this->q2C8 + 12))(this + 712);
-  (*(void (__thiscall **)(int *))(this->qFF8 + 12))(this + 1022);
-  (*(void (__thiscall **)(int *))(this->HarvesterLoadRate + 12))(this + 719);
-  (*(void (__thiscall **)(int *))(this->qD00 + 12))(this + 832);
-  (*(void (__thiscall **)(int *))(this->qD1C + 12))(this + 839);
-  (*(void (__thiscall **)(int *))(this->qD38 + 12))(this + 846);
-  (*(void (__thiscall **)(int *))(this->VeteranROF + 12))(this + 402);
-  (*(void (__thiscall **)(int *))(this->qC04 + 12))(this + 769);
-  (*(void (__thiscall **)(int *))(this->qC20 + 12))(this + 776);
+  this->qFF8->vt_slot_12();
+  this->HarvesterLoadRate->vt_slot_12();
+  this->qD00->vt_slot_12();
+  this->qD1C->vt_slot_12();
+  this->qD38->vt_slot_12();
+  this->VeteranROF->vt_slot_12();
+  this->qC04->vt_slot_12();
+  this->qC20->vt_slot_12();
   (*(void (__thiscall **)(int *))(this->qC3C + 12))(this + 783);
-  (*(void (__thiscall **)(int *))(this->qC58 + 12))(this + 790);
-  (*(void (__thiscall **)(int *))(this->qC74 + 12))(this + 797);
-  (*(void (__thiscall **)(int *))(this->qC90 + 12))(this + 804);
-  (*(void (__thiscall **)(int *))(this->qCAC + 12))(this + 811);
-  (*(void (__thiscall **)(int *))(this->qCC8 + 12))(this + 818);
-  (*(void (__thiscall **)(int *))(this->qCE4 + 12))(this + 825);
+  this->qC58->vt_slot_12();
+  this->qC74->vt_slot_12();
+  this->qC90->vt_slot_12();
+  this->qCAC->vt_slot_12();
+  this->qCC8->vt_slot_12();
+  this->qCE4->vt_slot_12();
   int v4 = i;
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)i + 12))(i, this, 6336, 0);
   if ( this )
@@ -8501,844 +8501,844 @@ namespace gamemd { int RulesClass::SaveLoad_Prefix_0(int a1) {
     DynamicVector::Add_Alt(v3, &v169);
   }
   if ( this != (int *)-4528 )
-    TypeList::Construct(this + 1132);
+    ((TypeList *)((char *)this + 1132)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( j = 0; j < i; ++j )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1132, &v169);
+    ((DynamicVector *)((char *)this + 1132)).Add_Alt(&v169);
   }
   if ( this != (int *)-4556 )
-    TypeList::Construct(this + 1139);
+    ((TypeList *)((char *)this + 1139)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( k = 0; k < i; ++k )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1139, &v169);
+    ((DynamicVector *)((char *)this + 1139)).Add_Alt(&v169);
   }
   if ( this != (int *)-4584 )
-    TypeList::Construct(this + 1146);
+    ((TypeList *)((char *)this + 1146)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( m = 0; m < i; ++m )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1146, &v169);
+    ((DynamicVector *)((char *)this + 1146)).Add_Alt(&v169);
   }
   if ( this != (int *)-4612 )
-    TypeList::Construct(this + 1153);
+    ((TypeList *)((char *)this + 1153)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( n = 0; n < i; ++n )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1153, &v169);
+    ((DynamicVector *)((char *)this + 1153)).Add_Alt(&v169);
   }
   if ( this != (int *)-4640 )
-    TypeList::Construct(this + 1160);
+    ((TypeList *)((char *)this + 1160)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( ii = 0; ii < i; ++ii )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1160, &v169);
+    ((DynamicVector *)((char *)this + 1160)).Add_Alt(&v169);
   }
   if ( this != (int *)-4668 )
-    TypeList::Construct(this + 1167);
+    ((TypeList *)((char *)this + 1167)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( jj = 0; jj < i; ++jj )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1167, &v169);
+    ((DynamicVector *)((char *)this + 1167)).Add_Alt(&v169);
   }
   if ( this != (int *)-4696 )
-    TypeList::Construct(this + 1174);
+    ((TypeList *)((char *)this + 1174)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( kk = 0; kk < i; ++kk )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1174, &v169);
+    ((DynamicVector *)((char *)this + 1174)).Add_Alt(&v169);
   }
   if ( this != (int *)-4724 )
-    TypeList::Construct(this + 1181);
+    ((TypeList *)((char *)this + 1181)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( mm = 0; mm < i; ++mm )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1181, &v169);
+    ((DynamicVector *)((char *)this + 1181)).Add_Alt(&v169);
   }
   if ( this != (int *)-4752 )
-    TypeList::Construct(this + 1188);
+    ((TypeList *)((char *)this + 1188)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( nn = 0; nn < i; ++nn )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1188, &v169);
+    ((DynamicVector *)((char *)this + 1188)).Add_Alt(&v169);
   }
   if ( this != (int *)-4780 )
-    TypeList::Construct(this + 1195);
+    ((TypeList *)((char *)this + 1195)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i1 = 0; i1 < i; ++i1 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1195, &v169);
+    ((DynamicVector *)((char *)this + 1195)).Add_Alt(&v169);
   }
   if ( this != (int *)-4808 )
-    TypeList::Construct(this + 1202);
+    ((TypeList *)((char *)this + 1202)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i2 = 0; i2 < i; ++i2 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1202, &v169);
+    ((DynamicVector *)((char *)this + 1202)).Add_Alt(&v169);
   }
   if ( this != (int *)-4836 )
-    TypeList::Construct(this + 1209);
+    ((TypeList *)((char *)this + 1209)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i3 = 0; i3 < i; ++i3 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1209, &v169);
+    ((DynamicVector *)((char *)this + 1209)).Add_Alt(&v169);
   }
   if ( this != (int *)-5104 )
-    TypeList::Construct(this + 1276);
+    ((TypeList *)((char *)this + 1276)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i4 = 0; i4 < i; ++i4 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1276, &v169);
+    ((DynamicVector *)((char *)this + 1276)).Add_Alt(&v169);
   }
   if ( this != (int *)-4440 )
-    TypeList::Construct(this + 1110);
+    ((TypeList *)((char *)this + 1110)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i5 = 0; i5 < i; ++i5 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1110, &v169);
+    ((DynamicVector *)((char *)this + 1110)).Add_Alt(&v169);
   }
   if ( this != (int *)-2472 )
-    TypeList::Construct(this + 618);
+    ((TypeList *)((char *)this + 618)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i6 = 0; i6 < i; ++i6 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 618, &v169);
+    ((DynamicVector *)((char *)this + 618)).Add_Alt(&v169);
   }
   if ( this != (int *)-3456 )
-    TypeList::Construct(this + 864);
+    ((TypeList *)((char *)this + 864)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i7 = 0; i7 < i; ++i7 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 864, &v169);
+    ((DynamicVector *)((char *)this + 864)).Add_Alt(&v169);
   }
   if ( this != (int *)-3484 )
-    TypeList::Construct(this + 871);
+    ((TypeList *)((char *)this + 871)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i8 = 0; i8 < i; ++i8 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 871, &v169);
+    ((DynamicVector *)((char *)this + 871)).Add_Alt(&v169);
   }
   if ( this != (int *)-3512 )
-    TypeList::Construct(this + 878);
+    ((TypeList *)((char *)this + 878)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i9 = 0; i9 < i; ++i9 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 878, &v169);
+    ((DynamicVector *)((char *)this + 878)).Add_Alt(&v169);
   }
   if ( this != (int *)-3816 )
-    TypeList::Construct(this + 954);
+    ((TypeList *)((char *)this + 954)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i10 = 0; i10 < i; ++i10 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 954, &v169);
+    ((DynamicVector *)((char *)this + 954)).Add_Alt(&v169);
   }
   if ( this != (int *)-3844 )
-    TypeList::Construct(this + 961);
+    ((TypeList *)((char *)this + 961)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i11 = 0; i11 < i; ++i11 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 961, &v169);
+    ((DynamicVector *)((char *)this + 961)).Add_Alt(&v169);
   }
   if ( this != (int *)-3872 )
-    TypeList::Construct(this + 968);
+    ((TypeList *)((char *)this + 968)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i12 = 0; i12 < i; ++i12 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 968, &v169);
+    ((DynamicVector *)((char *)this + 968)).Add_Alt(&v169);
   }
   if ( this != (int *)-3600 )
-    TypeList::Construct(this + 900);
+    ((TypeList *)((char *)this + 900)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i13 = 0; i13 < i; ++i13 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 900, &v169);
+    ((DynamicVector *)((char *)this + 900)).Add_Alt(&v169);
   }
   if ( this != (int *)-3780 )
-    TypeList::Construct(this + 945);
+    ((TypeList *)((char *)this + 945)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i14 = 0; i14 < i; ++i14 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 945, &v169);
+    ((DynamicVector *)((char *)this + 945)).Add_Alt(&v169);
   }
   if ( this != (int *)-3628 )
-    TypeList::Construct(this + 907);
+    ((TypeList *)((char *)this + 907)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i15 = 0; i15 < i; ++i15 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 907, &v169);
+    ((DynamicVector *)((char *)this + 907)).Add_Alt(&v169);
   }
   if ( this != (int *)-3540 )
-    TypeList::Construct(this + 885);
+    ((TypeList *)((char *)this + 885)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i16 = 0; i16 < i; ++i16 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 885, &v169);
+    ((DynamicVector *)((char *)this + 885)).Add_Alt(&v169);
   }
   if ( this != (int *)-5008 )
-    TypeList::Construct(this + 1252);
+    ((TypeList *)((char *)this + 1252)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i17 = 0; i17 < i; ++i17 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1252, &v169);
+    ((DynamicVector *)((char *)this + 1252)).Add_Alt(&v169);
   }
   if ( this != (int *)-5036 )
-    TypeList::Construct(this + 1259);
+    ((TypeList *)((char *)this + 1259)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i18 = 0; i18 < i; ++i18 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1259, &v169);
+    ((DynamicVector *)((char *)this + 1259)).Add_Alt(&v169);
   }
   if ( this != (int *)-3660 )
-    TypeList::Construct(this + 915);
+    ((TypeList *)((char *)this + 915)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i19 = 0; i19 < i; ++i19 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 915, &v169);
+    ((DynamicVector *)((char *)this + 915)).Add_Alt(&v169);
   }
   if ( this != (int *)-3688 )
-    TypeList::Construct(this + 922);
+    ((TypeList *)((char *)this + 922)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i20 = 0; i20 < i; ++i20 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 922, &v169);
+    ((DynamicVector *)((char *)this + 922)).Add_Alt(&v169);
   }
   if ( this != (int *)-3716 )
-    TypeList::Construct(this + 929);
+    ((TypeList *)((char *)this + 929)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i21 = 0; i21 < i; ++i21 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 929, &v169);
+    ((DynamicVector *)((char *)this + 929)).Add_Alt(&v169);
   }
   if ( this != (int *)-3744 )
-    TypeList::Construct(this + 936);
+    ((TypeList *)((char *)this + 936)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i22 = 0; i22 < i; ++i22 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 936, &v169);
+    ((DynamicVector *)((char *)this + 936)).Add_Alt(&v169);
   }
   if ( this != (int *)-4868 )
-    TypeList::Construct(this + 1217);
+    ((TypeList *)((char *)this + 1217)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i23 = 0; i23 < i; ++i23 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1217, &v169);
+    ((DynamicVector *)((char *)this + 1217)).Add_Alt(&v169);
   }
   if ( this != (int *)-4896 )
-    TypeList::Construct(this + 1224);
+    ((TypeList *)((char *)this + 1224)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i24 = 0; i24 < i; ++i24 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1224, &v169);
+    ((DynamicVector *)((char *)this + 1224)).Add_Alt(&v169);
   }
   if ( this != (int *)-4924 )
-    TypeList::Construct(this + 1231);
+    ((TypeList *)((char *)this + 1231)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i25 = 0; i25 < i; ++i25 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1231, &v169);
+    ((DynamicVector *)((char *)this + 1231)).Add_Alt(&v169);
   }
   if ( this != (int *)-4952 )
-    TypeList::Construct(this + 1238);
+    ((TypeList *)((char *)this + 1238)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i26 = 0; i26 < i; ++i26 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1238, &v169);
+    ((DynamicVector *)((char *)this + 1238)).Add_Alt(&v169);
   }
   if ( this != (int *)-4980 )
-    TypeList::Construct(this + 1245);
+    ((TypeList *)((char *)this + 1245)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i27 = 0; i27 < i; ++i27 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1245, &v169);
+    ((DynamicVector *)((char *)this + 1245)).Add_Alt(&v169);
   }
   if ( this != (int *)-5064 )
-    TypeList::Construct(this + 1266);
+    ((TypeList *)((char *)this + 1266)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i28 = 0; i28 < i; ++i28 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1266, &v169);
+    ((DynamicVector *)((char *)this + 1266)).Add_Alt(&v169);
   }
   if ( this != (int *)-4468 )
-    TypeList::Construct(this + 1117);
+    ((TypeList *)((char *)this + 1117)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i29 = 0; i29 < i; ++i29 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 1117, &v169);
+    ((DynamicVector *)((char *)this + 1117)).Add_Alt(&v169);
   }
   if ( this != (int *)-1084 )
-    TypeList::Construct(this + 271);
+    ((TypeList *)((char *)this + 271)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i30 = 0; i30 < i; ++i30 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 271, &v169);
+    ((DynamicVector *)((char *)this + 271)).Add_Alt(&v169);
   }
   if ( this != (int *)-1112 )
-    TypeList::Construct(this + 278);
+    ((TypeList *)((char *)this + 278)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i31 = 0; i31 < i; ++i31 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 278, &v169);
+    ((DynamicVector *)((char *)this + 278)).Add_Alt(&v169);
   }
   if ( this != (int *)-1140 )
-    TypeList::Construct(this + 285);
+    ((TypeList *)((char *)this + 285)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i32 = 0; i32 < i; ++i32 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 285, &v169);
+    ((DynamicVector *)((char *)this + 285)).Add_Alt(&v169);
   }
   if ( this != (int *)-88 )
-    TypeList::VoxelAnimConstructor(this + 22);
+    ((TypeList *)((char *)this + 22)).VoxelAnimConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i33 = 0; i33 < i; ++i33 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add2(this + 22, &v169);
+    ((DynamicVector *)((char *)this + 22)).Add2(&v169);
   }
   if ( this != (int *)-1536 )
-    TypeList::VoxelAnimConstructor(this + 384);
+    ((TypeList *)((char *)this + 384)).VoxelAnimConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i34 = 0; i34 < i; ++i34 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add2(this + 384, &v169);
+    ((DynamicVector *)((char *)this + 384)).Add2(&v169);
   }
   if ( this != (int *)-856 )
-    TypeList::Construct(this + 214);
+    ((TypeList *)((char *)this + 214)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i35 = 0; i35 < i; ++i35 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 214, &v169);
+    ((DynamicVector *)((char *)this + 214)).Add_Alt(&v169);
   }
   if ( this != (int *)-884 )
-    TypeList::Construct(this + 221);
+    ((TypeList *)((char *)this + 221)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i36 = 0; i36 < i; ++i36 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 221, &v169);
+    ((DynamicVector *)((char *)this + 221)).Add_Alt(&v169);
   }
   if ( this != (int *)-912 )
-    TypeList::Construct(this + 228);
+    ((TypeList *)((char *)this + 228)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i37 = 0; i37 < i; ++i37 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 228, &v169);
+    ((DynamicVector *)((char *)this + 228)).Add_Alt(&v169);
   }
   if ( this != (int *)-940 )
-    TypeList::Construct(this + 235);
+    ((TypeList *)((char *)this + 235)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i38 = 0; i38 < i; ++i38 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 235, &v169);
+    ((DynamicVector *)((char *)this + 235)).Add_Alt(&v169);
   }
   if ( this != (int *)-968 )
-    TypeList::Construct(this + 242);
+    ((TypeList *)((char *)this + 242)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i39 = 0; i39 < i; ++i39 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 242, &v169);
+    ((DynamicVector *)((char *)this + 242)).Add_Alt(&v169);
   }
   if ( this != (int *)-996 )
-    TypeList::Construct(this + 249);
+    ((TypeList *)((char *)this + 249)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i40 = 0; i40 < i; ++i40 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 249, &v169);
+    ((DynamicVector *)((char *)this + 249)).Add_Alt(&v169);
   }
   if ( this != (int *)-1740 )
-    TypeList::Construct(this + 435);
+    ((TypeList *)((char *)this + 435)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i41 = 0; i41 < i; ++i41 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 435, &v169);
+    ((DynamicVector *)((char *)this + 435)).Add_Alt(&v169);
   }
   if ( this != (int *)-1844 )
-    TypeList::Construct(this + 461);
+    ((TypeList *)((char *)this + 461)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i42 = 0; i42 < i; ++i42 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 461, &v169);
+    ((DynamicVector *)((char *)this + 461)).Add_Alt(&v169);
   }
   if ( this != (int *)-1988 )
-    TypeList::ConstructSmudge(this + 497);
+    ((TypeList *)((char *)this + 497)).ConstructSmudge();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i43 = 0; i43 < i; ++i43 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    SmudgeTypeVector::Add(this + 497, &v169);
+    ((SmudgeTypeVector *)((char *)this + 497)).Add(&v169);
   }
   if ( this != (int *)-2016 )
-    TypeList::ConstructSmudge(this + 504);
+    ((TypeList *)((char *)this + 504)).ConstructSmudge();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i44 = 0; i44 < i; ++i44 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    SmudgeTypeVector::Add(this + 504, &v169);
+    ((SmudgeTypeVector *)((char *)this + 504)).Add(&v169);
   }
   if ( this != (int *)-2044 )
-    TypeList::ConstructSmudge(this + 511);
+    ((TypeList *)((char *)this + 511)).ConstructSmudge();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i45 = 0; i45 < i; ++i45 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    SmudgeTypeVector::Add(this + 511, &v169);
+    ((SmudgeTypeVector *)((char *)this + 511)).Add(&v169);
   }
   if ( this != (int *)-2072 )
-    TypeList::ConstructSmudge(this + 518);
+    ((TypeList *)((char *)this + 518)).ConstructSmudge();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i46 = 0; i46 < i; ++i46 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    SmudgeTypeVector::Add(this + 518, &v169);
+    ((SmudgeTypeVector *)((char *)this + 518)).Add(&v169);
   }
   if ( this != (int *)-2100 )
-    TypeList::ConstructSmudge(this + 525);
+    ((TypeList *)((char *)this + 525)).ConstructSmudge();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i47 = 0; i47 < i; ++i47 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    SmudgeTypeVector::Add(this + 525, &v169);
+    ((SmudgeTypeVector *)((char *)this + 525)).Add(&v169);
   }
   if ( this != (int *)-2128 )
-    TypeList::BuildingTypeConstructor(this + 532);
+    ((TypeList *)((char *)this + 532)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i48 = 0; i48 < i; ++i48 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 532, &v169);
+    ((DynamicVector *)((char *)this + 532)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2176 )
-    TypeList::BuildingTypeConstructor(this + 544);
+    ((TypeList *)((char *)this + 544)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i49 = 0; i49 < i; ++i49 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 544, &v169);
+    ((DynamicVector *)((char *)this + 544)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2220 )
-    TypeList::BuildingTypeConstructor(this + 555);
+    ((TypeList *)((char *)this + 555)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i50 = 0; i50 < i; ++i50 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 555, &v169);
+    ((DynamicVector *)((char *)this + 555)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2248 )
-    TypeList::BuildingTypeConstructor(this + 562);
+    ((TypeList *)((char *)this + 562)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i51 = 0; i51 < i; ++i51 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 562, &v169);
+    ((DynamicVector *)((char *)this + 562)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2276 )
-    TypeList::BuildingTypeConstructor(this + 569);
+    ((TypeList *)((char *)this + 569)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i52 = 0; i52 < i; ++i52 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 569, &v169);
+    ((DynamicVector *)((char *)this + 569)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2304 )
-    TypeList::BuildingTypeConstructor(this + 576);
+    ((TypeList *)((char *)this + 576)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i53 = 0; i53 < i; ++i53 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 576, &v169);
+    ((DynamicVector *)((char *)this + 576)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2332 )
-    TypeList::BuildingTypeConstructor(this + 583);
+    ((TypeList *)((char *)this + 583)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i54 = 0; i54 < i; ++i54 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 583, &v169);
+    ((DynamicVector *)((char *)this + 583)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2360 )
-    TypeList::BuildingTypeConstructor(this + 590);
+    ((TypeList *)((char *)this + 590)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i55 = 0; i55 < i; ++i55 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 590, &v169);
+    ((DynamicVector *)((char *)this + 590)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2388 )
-    TypeList::BuildingTypeConstructor(this + 597);
+    ((TypeList *)((char *)this + 597)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i56 = 0; i56 < i; ++i56 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 597, &v169);
+    ((DynamicVector *)((char *)this + 597)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2416 )
-    TypeList::BuildingTypeConstructor(this + 604);
+    ((TypeList *)((char *)this + 604)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i57 = 0; i57 < i; ++i57 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 604, &v169);
+    ((DynamicVector *)((char *)this + 604)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2444 )
-    TypeList::BuildingTypeConstructor(this + 611);
+    ((TypeList *)((char *)this + 611)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i58 = 0; i58 < i; ++i58 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 611, &v169);
+    ((DynamicVector *)((char *)this + 611)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2500 )
-    TypeList::BuildingTypeConstructor(this + 625);
+    ((TypeList *)((char *)this + 625)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i59 = 0; i59 < i; ++i59 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 625, &v169);
+    ((DynamicVector *)((char *)this + 625)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2528 )
-    TypeList::BuildingTypeConstructor(this + 632);
+    ((TypeList *)((char *)this + 632)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i60 = 0; i60 < i; ++i60 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 632, &v169);
+    ((DynamicVector *)((char *)this + 632)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2556 )
-    TypeList::BuildingTypeConstructor(this + 639);
+    ((TypeList *)((char *)this + 639)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i61 = 0; i61 < i; ++i61 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 639, &v169);
+    ((DynamicVector *)((char *)this + 639)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2584 )
-    TypeList::BuildingTypeConstructor(this + 646);
+    ((TypeList *)((char *)this + 646)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i62 = 0; i62 < i; ++i62 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 646, &v169);
+    ((DynamicVector *)((char *)this + 646)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2612 )
-    TypeList::BuildingTypeConstructor(this + 653);
+    ((TypeList *)((char *)this + 653)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i63 = 0; i63 < i; ++i63 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 653, &v169);
+    ((DynamicVector *)((char *)this + 653)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2640 )
-    TypeList::BuildingTypeConstructor(this + 660);
+    ((TypeList *)((char *)this + 660)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i64 = 0; i64 < i; ++i64 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 660, &v169);
+    ((DynamicVector *)((char *)this + 660)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2668 )
-    TypeList::BuildingTypeConstructor(this + 667);
+    ((TypeList *)((char *)this + 667)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i65 = 0; i65 < i; ++i65 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 667, &v169);
+    ((DynamicVector *)((char *)this + 667)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2696 )
-    TypeList::BuildingTypeConstructor(this + 674);
+    ((TypeList *)((char *)this + 674)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i66 = 0; i66 < i; ++i66 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 674, &v169);
+    ((DynamicVector *)((char *)this + 674)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2724 )
-    TypeList::BuildingTypeConstructor(this + 681);
+    ((TypeList *)((char *)this + 681)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i67 = 0; i67 < i; ++i67 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 681, &v169);
+    ((DynamicVector *)((char *)this + 681)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2752 )
-    TypeList::BuildingTypeConstructor(this + 688);
+    ((TypeList *)((char *)this + 688)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i68 = 0; i68 < i; ++i68 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 688, &v169);
+    ((DynamicVector *)((char *)this + 688)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2780 )
-    TypeList::BuildingTypeConstructor(this + 695);
+    ((TypeList *)((char *)this + 695)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i69 = 0; i69 < i; ++i69 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 695, &v169);
+    ((DynamicVector *)((char *)this + 695)).Add_Alt3(&v169);
   }
   if ( this != (int *)-2904 )
-    HouseTypeClass::readStartUnit(this + 726);
+    ((HouseTypeClass *)((char *)this + 726)).readStartUnit();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i70 = 0; i70 < i; ++i70 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    HouseTypeClass::readPowerPlants(this + 726, &v169);
+    ((HouseTypeClass *)((char *)this + 726)).readPowerPlants(&v169);
   }
   if ( this != (int *)-2932 )
-    AnimTypeList::Constructor(this + 733);
+    ((AnimTypeList *)((char *)this + 733)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i71 = 0; i71 < i; ++i71 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt4(this + 733, &v169);
+    ((DynamicVector *)((char *)this + 733)).Add_Alt4(&v169);
   }
   if ( this != (int *)-2960 )
-    AnimTypeList::Constructor(this + 740);
+    ((AnimTypeList *)((char *)this + 740)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i72 = 0; i72 < i; ++i72 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt4(this + 740, &v169);
+    ((DynamicVector *)((char *)this + 740)).Add_Alt4(&v169);
   }
   if ( this != (int *)-3008 )
-    AnimTypeList::Constructor(this + 752);
+    ((AnimTypeList *)((char *)this + 752)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i73 = 0; i73 < i; ++i73 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt4(this + 752, &v169);
+    ((DynamicVector *)((char *)this + 752)).Add_Alt4(&v169);
   }
   if ( this != (int *)-2848 )
-    UnitTypeList::Constructor(this + 712);
+    ((UnitTypeList *)((char *)this + 712)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i74 = 0; i74 < i; ++i74 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    VectorClass::PushBack(this + 712, &v169);
+    ((VectorClass *)((char *)this + 712)).PushBack(&v169);
   }
   if ( this != (int *)-4088 )
-    RulesClass::readParticles(this + 1022);
+    ((RulesClass *)((char *)this + 1022)).readParticles();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i75 = 0; i75 < i; ++i75 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    RulesClass::readAI(this + 1022, &v169);
+    ((RulesClass *)((char *)this + 1022)).readAI(&v169);
   }
   if ( this != (int *)-2876 )
-    UnitTypeList::Constructor(this + 719);
+    ((UnitTypeList *)((char *)this + 719)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i76 = 0; i76 < i; ++i76 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    VectorClass::PushBack(this + 719, &v169);
+    ((VectorClass *)((char *)this + 719)).PushBack(&v169);
   }
   if ( this != (int *)-3328 )
-    TypeList::InfantryConstructor(this + 832);
+    ((TypeList *)((char *)this + 832)).InfantryConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i77 = 0; i77 < i; ++i77 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    InfantryTypeVector::Add(this + 832, &v169);
+    ((InfantryTypeVector *)((char *)this + 832)).Add(&v169);
   }
   if ( this != (int *)-3356 )
-    UnitTypeList::Constructor(this + 839);
+    ((UnitTypeList *)((char *)this + 839)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i78 = 0; i78 < i; ++i78 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    VectorClass::PushBack(this + 839, &v169);
+    ((VectorClass *)((char *)this + 839)).PushBack(&v169);
   }
   if ( this != (int *)-3384 )
-    TypeList::BuildingTypeConstructor(this + 846);
+    ((TypeList *)((char *)this + 846)).BuildingTypeConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i79 = 0; i79 < i; ++i79 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt3(this + 846, &v169);
+    ((DynamicVector *)((char *)this + 846)).Add_Alt3(&v169);
   }
   if ( this != (int *)-288 )
-    AnimTypeList::Constructor(this + 72);
+    ((AnimTypeList *)((char *)this + 72)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i80 = 0; i80 < i; ++i80 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt4(this + 72, &v169);
+    ((DynamicVector *)((char *)this + 72)).Add_Alt4(&v169);
   }
   if ( this != (int *)-260 )
-    AnimTypeList::Constructor(this + 65);
+    ((AnimTypeList *)((char *)this + 65)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i81 = 0; i81 < i; ++i81 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt4(this + 65, &v169);
+    ((DynamicVector *)((char *)this + 65)).Add_Alt4(&v169);
   }
   if ( this != (int *)-316 )
-    AnimTypeList::Constructor(this + 79);
+    ((AnimTypeList *)((char *)this + 79)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i82 = 0; i82 < i; ++i82 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt4(this + 79, &v169);
+    ((DynamicVector *)((char *)this + 79)).Add_Alt4(&v169);
   }
   if ( this != (int *)-344 )
-    AnimTypeList::Constructor(this + 86);
+    ((AnimTypeList *)((char *)this + 86)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i83 = 0; i83 < i; ++i83 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt4(this + 86, &v169);
+    ((DynamicVector *)((char *)this + 86)).Add_Alt4(&v169);
   }
   if ( this != (int *)-1608 )
-    TypeList::Construct(this + 402);
+    ((TypeList *)((char *)this + 402)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i84 = 0; i84 < i; ++i84 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 402, &v169);
+    ((DynamicVector *)((char *)this + 402)).Add_Alt(&v169);
   }
   if ( this != (int *)-3076 )
-    TypeList::InfantryConstructor(this + 769);
+    ((TypeList *)((char *)this + 769)).InfantryConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i85 = 0; i85 < i; ++i85 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    InfantryTypeVector::Add(this + 769, &v169);
+    ((InfantryTypeVector *)((char *)this + 769)).Add(&v169);
   }
   if ( this != (int *)-3104 )
-    TypeList::Construct(this + 776);
+    ((TypeList *)((char *)this + 776)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i86 = 0; i86 < i; ++i86 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 776, &v169);
+    ((DynamicVector *)((char *)this + 776)).Add_Alt(&v169);
   }
   if ( this != (int *)-3132 )
-    TypeList::InfantryConstructor(this + 783);
+    ((TypeList *)((char *)this + 783)).InfantryConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i87 = 0; i87 < i; ++i87 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    InfantryTypeVector::Add(this + 783, &v169);
+    ((InfantryTypeVector *)((char *)this + 783)).Add(&v169);
   }
   if ( this != (int *)-3160 )
-    TypeList::Construct(this + 790);
+    ((TypeList *)((char *)this + 790)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i88 = 0; i88 < i; ++i88 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 790, &v169);
+    ((DynamicVector *)((char *)this + 790)).Add_Alt(&v169);
   }
   if ( this != (int *)-3188 )
-    TypeList::InfantryConstructor(this + 797);
+    ((TypeList *)((char *)this + 797)).InfantryConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i89 = 0; i89 < i; ++i89 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    InfantryTypeVector::Add(this + 797, &v169);
+    ((InfantryTypeVector *)((char *)this + 797)).Add(&v169);
   }
   if ( this != (int *)-3216 )
-    TypeList::Construct(this + 804);
+    ((TypeList *)((char *)this + 804)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i90 = 0; i90 < i; ++i90 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 804, &v169);
+    ((DynamicVector *)((char *)this + 804)).Add_Alt(&v169);
   }
   if ( this != (int *)-3244 )
-    TypeList::InfantryConstructor(this + 811);
+    ((TypeList *)((char *)this + 811)).InfantryConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i91 = 0; i91 < i; ++i91 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    InfantryTypeVector::Add(this + 811, &v169);
+    ((InfantryTypeVector *)((char *)this + 811)).Add(&v169);
   }
   if ( this != (int *)-3272 )
-    TypeList::Construct(this + 818);
+    ((TypeList *)((char *)this + 818)).Construct();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i92 = 0; i92 < i; ++i92 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt(this + 818, &v169);
+    ((DynamicVector *)((char *)this + 818)).Add_Alt(&v169);
   }
   if ( this != (int *)-3300 )
-    TypeList::InfantryConstructor(this + 825);
+    ((TypeList *)((char *)this + 825)).InfantryConstructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i93 = 0; i93 < i; ++i93 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    InfantryTypeVector::Add(this + 825, &v169);
+    ((InfantryTypeVector *)((char *)this + 825)).Add(&v169);
   }
   if ( this != (int *)-672 )
-    AnimTypeList::Constructor(this + 168);
+    ((AnimTypeList *)((char *)this + 168)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i94 = 0; i94 < i; ++i94 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt4(this + 168, &v169);
+    ((DynamicVector *)((char *)this + 168)).Add_Alt4(&v169);
   }
   if ( this != (int *)-700 )
-    AnimTypeList::Constructor(this + 175);
+    ((AnimTypeList *)((char *)this + 175)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i95 = 0; i95 < i; ++i95 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt4(this + 175, &v169);
+    ((DynamicVector *)((char *)this + 175)).Add_Alt4(&v169);
   }
   if ( this != (int *)-728 )
-    AnimTypeList::Constructor(this + 182);
+    ((AnimTypeList *)((char *)this + 182)).Constructor();
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &i, 4, 0);
   for ( i96 = 0; i96 < i; ++i96 )
   {
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v4 + 12))(v4, &v169, 4, 0);
-    DynamicVector::Add_Alt4(this + 182, &v169);
+    ((DynamicVector *)((char *)this + 182)).Add_Alt4(&v169);
   }
   char * v110 = (char *)(this + 1565);
   int v111 = 16;

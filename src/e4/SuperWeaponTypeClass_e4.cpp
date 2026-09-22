@@ -9,7 +9,7 @@
 
 // 0x4F6540
 namespace gamemd {
-int SuperWeaponTypeClass::IsAvailable()
+AbstractClass * SuperWeaponTypeClass::IsAvailable()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -61,11 +61,11 @@ LABEL_5:
     }
     v9 = *(_DWORD *)(v7 + 4 * v6); /*0x4f65f4*/
   }
-  if ( DynamicVector::GetOrGrow(this + 5465, *(DynamicVector **)(v9 + 3576)) ) /*0x4f65cc*/
+  if ( ((DynamicVector *)((char *)this + 5465)).GetOrGrow(*(DynamicVector **)(v9 + 3576)) ) /*0x4f65cc*/
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
     return 1; /*0x4f65f3*/
-  v11 = (*(int (__stdcall **)(_DWORD *))(this->ActionValue + 24))(this + 9); /*0x4f6603*/
+  v11 = this->ActionValue->vt_slot_24(); /*0x4f6603*/
   v38 = v11; /*0x4f6612*/
   BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4f6616*/
                          this,
@@ -307,7 +307,7 @@ LABEL_16:
 
 // 0x6CEA20
 namespace gamemd {
-int SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
+void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

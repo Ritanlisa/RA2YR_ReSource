@@ -374,7 +374,7 @@ LABEL_38:
 
 // 0x6E0B60
 namespace gamemd {
-int TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4)
+AbstractClass * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -463,7 +463,7 @@ int TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown
 
 // 0x6E1CC0
 namespace gamemd {
-int TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
+AnimClass * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -501,7 +501,7 @@ int TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, Abst
 
 // 0x6E2290
 namespace gamemd {
-int TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
+AnimClass * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -539,7 +539,7 @@ int TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
 
 // 0x6E2390
 namespace gamemd {
-int TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
+AbstractClass * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -594,7 +594,7 @@ int TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown 
 
 // 0x6E2C40
 namespace gamemd {
-int TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
+ScenarioClass * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -724,7 +724,7 @@ int TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
 
 // 0x6E4150
 namespace gamemd {
-int TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4)
+AbstractClass * TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

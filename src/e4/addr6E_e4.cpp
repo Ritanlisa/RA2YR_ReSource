@@ -422,7 +422,7 @@ LABEL_19:
 
 // 0x6EFC70
 namespace gamemd {
-void E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3)
+AbstractClass * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

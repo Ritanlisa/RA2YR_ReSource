@@ -108,7 +108,7 @@ void ConnectionClass::dtor()
 }
 
 // 0x48BF40
-int ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
+AbstractClass * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -211,14 +211,8 @@ LABEL_40:
         Debug::Log(); /*0x48c2c6*/
         int v24 = DataGlobal_A8EA0C; /*0x48c2cb*/
         LOBYTE(v24) = this == (_DWORD *)DataGlobal_A8EA0C; /*0x48c2d7*/
-        (*(void (__thiscall **)(_DWORD *, __int16 *, int, _DWORD, _DWORD, int, _DWORD))(*this + 36))( /*0x48c2ea*/
-          this,
-          &v25,
-          14,
-          0,
-          0,
-          v24,
-          0);
+        this->vt_slot_36(/*0x48c2ea*/
+          this, &v25, 14, 0, 0, v24, 0);
         return 1; /*0x48c2f9*/
       }
       _DWORD * v13 = (_DWORD *)this->PlayerIndex; /*0x48c1a1*/
@@ -391,14 +385,8 @@ int ConnectionClass::serviceSendQueue()
         int v11 = DataGlobal_A8EA0C; /*0x48c4bd*/
         LOWORD(v10) = *(_WORD *)(v8 + 32); /*0x48c4c3*/
         LOBYTE(v11) = this == (unsigned int *)DataGlobal_A8EA0C; /*0x48c4cb*/
-        (*(void (__thiscall **)(unsigned int *, _DWORD, _DWORD, _DWORD, _DWORD, int, int))(*this + 36))( /*0x48c4e2*/
-          this,
-          *(_DWORD *)(v8 + 20),
-          *(_DWORD *)(v8 + 16),
-          *(_DWORD *)(v8 + 28),
-          *(_DWORD *)(v8 + 24),
-          v11,
-          v10);
+        this->vt_slot_36(/*0x48c4e2*/
+          this, *(_DWORD *)(v8 + 20), *(_DWORD *)(v8 + 16), *(_DWORD *)(v8 + 28), *(_DWORD *)(v8 + 24), v11, v10);
         int v12 = *(_DWORD *)(v8 + 12); /*0x48c4e5*/
         *(_DWORD *)(v8 + 8) = v9; /*0x48c4e8*/
         if ( v12 ) /*0x48c4ed*/

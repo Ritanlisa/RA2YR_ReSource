@@ -1240,7 +1240,7 @@ LABEL_5:
 
 // 0x6035F0
 namespace gamemd {
-void DispatchDialogControlAction(int a1, HWND a2)
+AbstractClass * DispatchDialogControlAction(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1328,7 +1328,7 @@ LABEL_5:
 
 // 0x603870
 namespace gamemd {
-void * GetDialogControlSHP(int a1, HWND a2, bool * a3)
+AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1580,7 +1580,7 @@ wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
 
 // 0x6040B0
 namespace gamemd {
-void * DlgSkirmishMenuProc(HWND a1, HWND a2)
+AbstractClass * * DlgSkirmishMenuProc(HWND a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2923,7 +2923,7 @@ int Dialog_SetActiveFlag(int a1, char a2)
 
 // 0x6071E0
 namespace gamemd {
-void GadgetClass_RenderAnimation(HWND a1, char a2)
+AbstractClass * GadgetClass_RenderAnimation(HWND a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3435,7 +3435,7 @@ LABEL_116:
 
 // 0x608500
 namespace gamemd {
-void ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
+AbstractClass * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4692,7 +4692,7 @@ void sub_60A250(HWND hWnd, LPARAM a2)
 
 // 0x60B000
 namespace gamemd {
-void RepositionGameSpeedIndicator(HWND hWnd, int a2)
+AbstractClass * RepositionGameSpeedIndicator(HWND hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4985,7 +4985,7 @@ int SkirmishDialog::ResizeDialogAndEnum()
 
 // 0x60F4B0
 namespace gamemd {
-void InitializeDialogControls(HWND a1, LPARAM a2)
+AbstractClass * InitializeDialogControls(HWND a1, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

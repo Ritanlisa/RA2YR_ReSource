@@ -9,7 +9,7 @@
 
 // 0x71E940
 namespace gamemd {
-int TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
+DynamicVector * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

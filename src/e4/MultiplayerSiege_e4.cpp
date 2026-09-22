@@ -106,7 +106,7 @@ LABEL_12:
 }
 
 // 0x5CA800
-int MultiplayerSiege::ProcessTurn(char a2)
+AbstractClass * MultiplayerSiege::ProcessTurn(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

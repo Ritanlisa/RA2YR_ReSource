@@ -161,7 +161,7 @@ namespace gamemd { void* BulletClass::FlightUpdate(int a1, int a2) {
         double v47 = COERCE_DOUBLE(__PAIR64__(HIDWORD(v32), *(unsigned int *)v53)); /*0x4162ca*/
         *(double *)(v51 + 240) = v34 * *(double *)(v51 + 240); /*0x4162cb*/
         *(double *)(v51 + 248) = Math::SinCos(v47) * v54; /*0x4162de*/
-        double v35 = (double)*(int *)(*(_DWORD *)(*(int (__thiscall **)(void *, _DWORD))(*(_DWORD *)this + 1016))(this, 0) + 168); /*0x4162ed*/
+        double v35 = (double)*(int *)(*(_DWORD *)this->vt_slot_1016(0) + 168); /*0x4162ed*/
         v54 = v35; /*0x4162f3*/
         BulletClass::NormalizeZeroVector((double *)v25->vtable0); /*0x4162f7*/
         Vector3::Magnitude((double *)v25->vtable0); /*0x4162fe*/

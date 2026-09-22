@@ -642,7 +642,7 @@ int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
 
 // 0x581140
 namespace gamemd {
-int LayerClass::DestroyCliff(int * a1, int a2, int a3)
+void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

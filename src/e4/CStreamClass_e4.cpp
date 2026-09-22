@@ -4,7 +4,7 @@
 #include "e4/classes/CStreamClass_16_e4.hpp"
 
 // 0x4A2CD0
-int CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4)
+ModemGame * CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

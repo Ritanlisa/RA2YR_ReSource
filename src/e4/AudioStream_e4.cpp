@@ -34,7 +34,7 @@ int AudioStream::Stop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  return (*(int (**)(void))(this->q0D4 + 44))();
+  return this->q0D4->vt_slot_44();
 }
 }
 } // namespace gamemd
@@ -45,9 +45,9 @@ int AudioStream::ReleaseChannel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  (*(void (**)(void))(this->q0D4 + 40))(); /*0x4026f9*/
+  this->q0D4->vt_slot_40(); /*0x4026f9*/
   this->q029 &= ~0x10u; /*0x402705*/
-  return (*(int (__thiscall **)(_DWORD *))(this->q0D4 + 44))(this);
+  return this->q0D4->vt_slot_44();
 }
 }
 } // namespace gamemd
@@ -410,7 +410,7 @@ void AudioStream::InitNodeFields()
   this->q004 = 0; /*0x4084e4*/
   this->q014 = 0; /*0x4084e7*/
   this->q018 = 0; /*0x4084ea*/
-  DListNode::Init(this + 2); /*0x4084f0*/
+  ((DListNode *)((char *)this + 2)).Init(); /*0x4084f0*/
 }
 }
 } // namespace gamemd
@@ -554,7 +554,7 @@ int AudioStream::ReadSamples(const void * a2)
 
 // 0x4BEAC0
 namespace gamemd {
-int AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8)
+MouseClass * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -703,7 +703,7 @@ int AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IU
   int v70 = (char *)v80 - (char *)aP1a; /*0x4bee0c*/
   v95 = v81 - v79; /*0x4bee19*/
   aP2b = (IUnknown *)((char *)aP3a - (char *)aP2a); /*0x4bee2b*/
-  int v35 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4bee32*/
+  int v35 = this->vt_slot_116(); /*0x4bee32*/
   int v64 = v35; /*0x4bee3c*/
   if ( v95 < 0 ) /*0x4bee42*/
   {
@@ -974,7 +974,7 @@ int AudioStream::SetFlag4C()
 {
   int result; // eax
 
-  (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 88))(this, 4, 0, 0); /*0x7bd27a*/
+  this->vt_slot_88(4, 0, 0); /*0x7bd27a*/
   result = *(_DWORD *)(this + 1980); /*0x7bd27d*/
   LOBYTE(result) = result | 0x40; /*0x7bd286*/
   *(_DWORD *)(this + 1980) = result; /*0x7bd288*/
@@ -1166,11 +1166,8 @@ int AudioStream::ProcessStream()
             }
             if ( (*(_DWORD *)(v2 + 20) & 0x200) != 0 ) /*0x7bed35*/
             {
-              (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(v1 + 72))( /*0x7bed45*/
-                v1,
-                5,
-                *(_DWORD *)(v2 + 28),
-                v1->q048);
+              v1->vt_slot_72(/*0x7bed45*/
+                v1, 5, *(_DWORD *)(v2 + 28), v1->q048);
               int v27 = *(_DWORD *)(v2 + 20); /*0x7bed48*/
               BYTE1(v27) &= ~2u; /*0x7bed4e*/
               *(_DWORD *)(v2 + 20) = v27; /*0x7bed51*/
@@ -1265,7 +1262,7 @@ unsigned int AudioStream::GetPosition()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  return (unsigned int)(60 * (*(int (__cdecl **)(int))(this + 80))(this)) / this->q1E0 /*0x7c3982*/
+  return (unsigned int)(60 * this->vt_slot_80()) / this->q1E0 /*0x7c3982*/
        + *(_DWORD *)(this + 328);
 }
 }

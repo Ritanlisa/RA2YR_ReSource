@@ -189,7 +189,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 
   if ( this == (_DWORD *)aP1 ) /*0x68c2bb*/
     return this; /*0x68c2bb*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x68c2bf*/
+  this->vt_slot_12(); /*0x68c2bf*/
   int v3 = *(_DWORD *)&aP1->__pad_0[8]; /*0x68c2c2*/
   this->q002 = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/

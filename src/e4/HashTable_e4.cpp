@@ -26,7 +26,7 @@ int HashTable::Get(IUnknown * aP1, IUnknown * aP2)
 }
 
 // 0x624FC0
-void HashTable::Grow2()
+AbstractClass * HashTable::Grow2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -76,7 +76,7 @@ void HashTable::Grow2()
 }
 
 // 0x625090
-int HashTable::RemoveAndResize(unsigned int * a2, unsigned char * a3)
+AbstractClass * HashTable::RemoveAndResize(unsigned int * a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -362,7 +362,7 @@ int HashTable::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
 }
 
 // 0x6B9530
-void HashTable::Clear()
+CampaignClass * HashTable::Clear()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -372,7 +372,6 @@ void HashTable::Clear()
   unsigned int v26; // edx
   unsigned int v27; // eax
   void *v30; // [esp+14h] [ebp-318h] BYREF
-
   unknown_libname_73(&v30); /*0x6b9540*/
   while ( 1 ) /*0x6b9545*/
   {
@@ -440,7 +439,7 @@ void HashTable::Clear()
   int v23; // eax
               do /*0x6b9689*/
               {
-                int v21 = (*(int (__thiscall **)(int))(this + 24))(v20) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6b966c*/
+                int v21 = this->vt_slot_24(v20) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6b966c*/
                 int v22 = *(_DWORD *)(*(_DWORD *)this + 4 * v21); /*0x6b9671*/
                 *(_DWORD *)(*(_DWORD *)this + 4 * v21) = v20; /*0x6b9677*/
                 v23 = *(_DWORD *)(v20 + 776); /*0x6b9679*/
@@ -540,7 +539,7 @@ LABEL_7:
 }
 
 // 0x6BA230
-void HashTable::RemoveEntry(const char * a2)
+CampaignClass * HashTable::RemoveEntry(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -554,7 +553,7 @@ void HashTable::RemoveEntry(const char * a2)
     goto LABEL_24; /*0x6ba257*/
   int v4; // esi
   v4 = *(_DWORD *)(*(_DWORD *)this /*0x6ba273*/
-                 + 4 * ((*(int (__thiscall **)(void **))(this + 24))(&v16) & ((1 << this->HashTable_field_0x0C) - 1)));
+                 + 4 * (this->vt_slot_24(&v16) & ((1 << this->HashTable_field_0x0C) - 1)));
   if ( !v4 ) /*0x6ba278*/
     goto LABEL_24; /*0x6ba278*/
   while ( !String::Compare((const char **)v4, (const char **)&v16) ) /*0x6ba28c*/
@@ -572,7 +571,7 @@ void HashTable::RemoveEntry(const char * a2)
     int v7 = this->HashTable_field_0x08; /*0x6ba2c3*/
     __int64 v17 = (unsigned int)(v6 - 1); /*0x6ba2c7*/
     *(float *)&v17 = (double)v17 / (double)v7; /*0x6ba2e3*/
-    int v8 = (*(int (__thiscall **)(void **))(this + 24))(&v16) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6ba2f5*/
+    int v8 = this->vt_slot_24(&v16) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6ba2f5*/
     int v9 = *(_DWORD *)(*(_DWORD *)this + 4 * v8); /*0x6ba2f9*/
     if ( v9 ) /*0x6ba2fe*/
     {
@@ -626,7 +625,7 @@ LABEL_24:
 }
 
 // 0x6BAC40
-int HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
+AbstractClass * HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -783,7 +782,7 @@ LABEL_24:
 }
 
 // 0x6BAEF0
-void HashTable::RebuildEx()
+AbstractClass * HashTable::RebuildEx()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -833,7 +832,7 @@ void HashTable::RebuildEx()
 }
 
 // 0x724730
-void HashTable::Remove(int a2)
+ObjectClass * HashTable::Remove(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -874,7 +873,7 @@ LABEL_13:
   Block = v9; /*0x7247b2*/
   if ( v10 == v9 && v10 ) /*0x7247ba*/
   {
-    (*(void (__thiscall **)(int *, int *))(*this + 8))(this, this + 6); /*0x7247c5*/
+    this->vt_slot_8(this + 6); /*0x7247c5*/
     v9 = Block; /*0x7247c8*/
   }
   int * v11 = (int *)v9; /*0x7247cd*/
@@ -1102,7 +1101,7 @@ int HashTable::LookupString(const char ** a2, unsigned int * a3)
 }
 
 // 0x7ADCD0
-int HashTable::Insert(ObjectClass * aP1, void * a2)
+AbstractClass * HashTable::Insert(ObjectClass * aP1, void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1259,7 +1258,7 @@ LABEL_24:
 }
 
 // 0x7AE1F0
-int HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
+AbstractClass * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1409,7 +1408,7 @@ LABEL_23:
 }
 
 // 0x7AE510
-void HashTable::Grow()
+AbstractClass * HashTable::Grow()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1459,7 +1458,7 @@ void HashTable::Grow()
 }
 
 // 0x7AE950
-int HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
+AbstractClass * HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -433,7 +433,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
 
 // 0x630C10
 namespace gamemd {
-void PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
+ObjectClass * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -557,7 +557,7 @@ void PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned
 
 // 0x631300
 namespace gamemd {
-int E4Recv_631300::sub_631300()
+AbstractClass * E4Recv_631300::sub_631300()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -589,7 +589,7 @@ int E4Recv_631300::sub_631300()
 
 // 0x631640
 namespace gamemd {
-void E4Recv_631640::sub_631640()
+AbstractClass * E4Recv_631640::sub_631640()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -789,7 +789,7 @@ LABEL_11:
 
 // 0x635560
 namespace gamemd {
-int E4Recv_635560::sub_635560(int a2)
+AbstractClass * E4Recv_635560::sub_635560(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1196,7 +1196,7 @@ int E4Recv_6375B0::sub_6375B0()
 
 // 0x637920
 namespace gamemd {
-void sub_637920()
+AbstractClass * sub_637920()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1604,7 +1604,7 @@ void FactoryClass_ClearProduction(unsigned int * a1, int a2)
 
 // 0x638E60
 namespace gamemd {
-void sub_638E60()
+AbstractClass * sub_638E60()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1913,7 +1913,7 @@ void sub_639470(int a1, int a2, int a3)
 
 // 0x639800
 namespace gamemd {
-void CompleteBuildingProduction(IUnknown * a1, int edx0)
+TechnoClass * CompleteBuildingProduction(IUnknown * a1, int edx0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2091,7 +2091,7 @@ int FactoryClass_DecCounter(unsigned int a1)
 
 // 0x63A5A0
 namespace gamemd {
-void HandlePlanningModeClick(MouseClass * aP0, int a2)
+AbstractClass * HandlePlanningModeClick(MouseClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2217,7 +2217,7 @@ LABEL_31:
 
 // 0x63AD50
 namespace gamemd {
-void ExportSelectionAsScriptAction()
+AbstractClass * ExportSelectionAsScriptAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2422,7 +2422,7 @@ void E4Recv_63B080::sub_63B080()
 
 // 0x63B150
 namespace gamemd {
-void sub_63B150()
+AbstractClass * sub_63B150()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2674,7 +2674,7 @@ int E4Recv_63CFC0::sub_63CFC0()
 
 // 0x63D630
 namespace gamemd {
-void Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, int a6, unsigned int a7)
+AbstractClass * Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, int a6, unsigned int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2760,7 +2760,7 @@ void Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, int a6, unsig
 
 // 0x63D810
 namespace gamemd {
-void DrawTacticalLine2D(int a1, ObjectClass * aP1, int aP0, int aP0_4, int aP0_8, int aP0_12, char aP0_16)
+void* DrawTacticalLine2D(int a1, ObjectClass * aP1, int aP0, int aP0_4, int aP0_8, int aP0_12, char aP0_16)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2812,7 +2812,7 @@ void DrawTacticalLine2D(int a1, ObjectClass * aP1, int aP0, int aP0_4, int aP0_8
 
 // 0x63F080
 namespace gamemd {
-void Voxel_ProcessVertexData(unsigned int * a1, int * a2)
+AbstractClass * Voxel_ProcessVertexData(unsigned int * a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

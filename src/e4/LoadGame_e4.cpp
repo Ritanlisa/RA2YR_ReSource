@@ -968,7 +968,7 @@ int LoadGame::RestoreAudioState()
   }
   AudioMixer::Shutdown(); /*0x751765*/
   int v14; // [esp+28h] [ebp-28h] BYREF
-  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)v1 + 12))(v1, &v14, 4, 0); /*0x751776*/
+  result = v1->vt_slot_12(&v14, 4, 0); /*0x751776*/
   if ( result >= 0 ) /*0x75177b*/
   {
     int v13 = 0; /*0x751785*/
@@ -977,7 +977,7 @@ int LoadGame::RestoreAudioState()
       while ( 1 ) /*0x7517a1*/
       {
   _DWORD v18[4]; // [esp+40h] [ebp-10h] BYREF
-        result = (*(int (__stdcall **)(void *, _DWORD *, int, _DWORD))(*(_DWORD *)v1 + 12))(v1, v18, 16, 0); /*0x7517a1*/
+        result = v1->vt_slot_12(v18, 16, 0); /*0x7517a1*/
         int v16 = result; /*0x7517a6*/
         if ( result < 0 ) /*0x7517aa*/
           break; /*0x7517aa*/

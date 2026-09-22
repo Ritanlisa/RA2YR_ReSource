@@ -18,7 +18,7 @@ unsigned int * AudioQueue::CreateNode()
   DListNode::InitEmpty(v2); /*0x402b0e*/
   v2[4] = 0; /*0x402b13*/
   v2[3] = this; /*0x402b1c*/
-  if ( (*(int (__thiscall **)(_DWORD *))(this + 20))(v2) ) /*0x402b1f*/
+  if ( this->vt_slot_20(v2) ) /*0x402b1f*/
   {
     if ( v2 ) /*0x402b28*/
     {
@@ -201,7 +201,7 @@ LABEL_10:
 
 // 0x771620
 namespace gamemd {
-void AudioQueue::Update()
+RandomStruct * AudioQueue::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -258,7 +258,7 @@ LABEL_5:
 
 // 0x7B1D10
 namespace gamemd {
-void AudioQueue::Cleanup()
+CampaignClass * AudioQueue::Cleanup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -448,13 +448,12 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsi
 
 // 0x7B23B0
 namespace gamemd {
-int AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, const void * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
+AnimClass * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, const void * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v14; // eax
   UINT v19; // eax
-
   _BYTE * v9 = AudioQueue::AllocBuffer((_DWORD *)this, aP5); /*0x7b23c4*/
   qmemcpy(v9 + 32, aP1, arg4); /*0x7b23d5*/
   *((_DWORD *)v9 + 4) = arg4; /*0x7b23e6*/
@@ -462,7 +461,7 @@ int AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, cons
   v9[24] = a7; /*0x7b23f8*/
   qmemcpy(v9, a3, a5); /*0x7b23fb*/
   *((_WORD *)v9 + 13) = a8; /*0x7b2409*/
-  (*(void (__thiscall **)(int, _BYTE *))(*(_DWORD *)this + 84))(this, v9); /*0x7b2411*/
+  this->vt_slot_84(v9); /*0x7b2411*/
   if ( (_BYTE)aP5 ) /*0x7b241a*/
   {
     int v10 = *(_DWORD *)(this + 64); /*0x7b241c*/
@@ -495,7 +494,7 @@ int AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, cons
     }
     v14 = *(_DWORD *)(this + 258156); /*0x7b24a0*/
   }
-  v19 = (*(int (__thiscall **)(int, int))(*(_DWORD *)this + 56))(this, v14); /*0x7b24af*/
+  v19 = this->vt_slot_56(v14); /*0x7b24af*/
   SendMessageA((HWND)g_hWnd, v19, 0, 2); /*0x7b24b9*/
   return EventQueue::Process(g_BinkMoviePlayer); /*0x7b24ca*/
 }

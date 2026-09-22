@@ -95,7 +95,7 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
 
 // 0x4A1280
 namespace gamemd {
-int ConnectionPointClass_9::Release(int a2, unsigned int * a3)
+AbstractClass * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

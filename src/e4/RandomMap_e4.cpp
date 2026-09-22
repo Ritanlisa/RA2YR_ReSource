@@ -351,7 +351,7 @@ LABEL_84:
 
 // 0x58D1C0
 namespace gamemd {
-int RandomMap::ExpandTerrainCells(int a2, int a3)
+MapClass * RandomMap::ExpandTerrainCells(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -578,7 +578,7 @@ unsigned int * RandomMap::TerrainAlloc()
 
 // 0x58E740
 namespace gamemd {
-int RandomMap::CollectTerrainCells(int a2)
+RandomMap * RandomMap::CollectTerrainCells(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -687,7 +687,7 @@ int RandomMap::CollectTerrainCells(int a2)
 
 // 0x58E9B0
 namespace gamemd {
-int RandomMap::PlaceRandomMapTerrain()
+AbstractClass * RandomMap::PlaceRandomMapTerrain()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -786,7 +786,7 @@ LABEL_12:
 
 // 0x58F0C0
 namespace gamemd {
-void RandomMap::CollectBorderCells()
+void* RandomMap::CollectBorderCells()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -900,7 +900,7 @@ void RandomMap::CollectBorderCells()
 
 // 0x58F2C0
 namespace gamemd {
-int RandomMap::PlaceBuildings(int a2, int a3)
+void* RandomMap::PlaceBuildings(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2135,7 +2135,7 @@ int RandomMap::CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector
 
 // 0x592440
 namespace gamemd {
-int RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
+ObjectClass * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2474,7 +2474,7 @@ int RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
 
 // 0x5958E0
 namespace gamemd {
-void RandomMap::CleanupRandomMapData()
+CampaignClass * RandomMap::CleanupRandomMapData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2526,13 +2526,13 @@ void RandomMap::CleanupRandomMapData()
     this->q17C = 0; /*0x595998*/
   }
   *(_DWORD *)(this + 736) = &vt_VectorClass_BuildingTypeClass_const; /*0x5959a4*/
-  DynamicVectorClass::Destroy(this + 736); /*0x5959aa*/
+  ((DynamicVectorClass *)((char *)this + 736)).Destroy(); /*0x5959aa*/
   *(_DWORD *)(this + 708) = &vt_VectorClass_BuildingTypeClass_const; /*0x5959b5*/
-  DynamicVectorClass::Destroy(this + 708); /*0x5959bb*/
+  ((DynamicVectorClass *)((char *)this + 708)).Destroy(); /*0x5959bb*/
   *(_DWORD *)(this + 672) = &vt_VectorClass_int; /*0x5959cb*/
-  VectorClass::Destroy(this + 672); /*0x5959cd*/
+  ((VectorClass *)((char *)this + 672)).Destroy(); /*0x5959cd*/
   *(_DWORD *)(this + 644) = &vt_VectorClass_int; /*0x5959d8*/
-  VectorClass::Destroy(this + 644); /*0x5959da*/
+  ((VectorClass *)((char *)this + 644)).Destroy(); /*0x5959da*/
   void * v8 = this->q26C; /*0x5959df*/
   this->q268 = &vt_VectorClass_int; /*0x5959e5*/
   if ( v8 && *(_BYTE *)(this + 629) ) /*0x5959ef*/
@@ -2764,7 +2764,7 @@ int RandomMap::SetupDialog(HWND hDlg)
 
 // 0x597D60
 namespace gamemd {
-int RandomMap::LoadInfo(wchar_t * Destination, int a2)
+AbstractClass * RandomMap::LoadInfo(wchar_t * Destination, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2837,7 +2837,7 @@ int RandomMap::LoadInfo(wchar_t * Destination, int a2)
 
 // 0x5981F0
 namespace gamemd {
-int RandomMap::LoadConfig()
+WeaponStruct * RandomMap::LoadConfig()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2890,7 +2890,7 @@ int RandomMap::LoadConfig()
   }
   INIClass::ResetSection(v3); /*0x598231*/
   CCINIClass::Load(v3, (int)v39, 0, 0); /*0x598241*/
-  (*(void (__thiscall **)(_DWORD *))(this->q188 + 12))(this + 98); /*0x598254*/
+  this->q188->vt_slot_12(); /*0x598254*/
   (*(void (__thiscall **)(_DWORD *))(*(this + 161) + 12))(this + 161); /*0x598265*/
   (*(void (__thiscall **)(_DWORD *))(*(this + 168) + 12))(this + 168); /*0x598274*/
   int v4 = *(this + 177); /*0x598277*/
@@ -2899,8 +2899,8 @@ int RandomMap::LoadConfig()
   int v5 = *(this + 184); /*0x59828a*/
   v35 = this + 184; /*0x598296*/
   (*(void (**)(void))(v5 + 12))(); /*0x59829a*/
-  (*(void (__thiscall **)(_DWORD *))(this->q1A4 + 12))(this + 105); /*0x5982a9*/
-  (*(void (__thiscall **)(_DWORD *))(this->q1C0 + 12))(this + 112); /*0x5982b8*/
+  this->q1A4->vt_slot_12(); /*0x5982a9*/
+  this->q1C0->vt_slot_12(); /*0x5982b8*/
   Int_Overwrite = INIClass::ReadInt_Overwrite(off_82B134, DataGlobal_82BDB8, *(this + 175)); /*0x5982d0*/
   int v7 = this->q02C; /*0x5982d5*/
   *(this + 175) = Int_Overwrite; /*0x5982db*/
@@ -2920,7 +2920,7 @@ int RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  TypeList::Copy(this + 98, IntList); /*0x598332*/
+  ((TypeList *)((char *)this + 98)).Copy(IntList); /*0x598332*/
   v8 = IntList; /*0x598337*/
   *(this + 102) = IntList[4]; /*0x59833e*/
   *(this + 103) = v8[5]; /*0x598344*/
@@ -2942,7 +2942,7 @@ int RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  TypeList::Copy(this + 161, IntList); /*0x598397*/
+  ((TypeList *)((char *)this + 161)).Copy(IntList); /*0x598397*/
   v9 = IntList; /*0x59839c*/
   *(this + 165) = IntList[4]; /*0x5983a3*/
   *(this + 166) = v9[5]; /*0x5983a9*/
@@ -2964,7 +2964,7 @@ int RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  TypeList::Copy(this + 168, IntList); /*0x5983fd*/
+  ((TypeList *)((char *)this + 168)).Copy(IntList); /*0x5983fd*/
   v10 = IntList; /*0x598402*/
   *(this + 172) = IntList[4]; /*0x598409*/
   *(this + 173) = v10[5]; /*0x59840f*/
@@ -2986,7 +2986,7 @@ int RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  TypeList::Copy(this + 105, IntList); /*0x598463*/
+  ((TypeList *)((char *)this + 105)).Copy(IntList); /*0x598463*/
   v11 = IntList; /*0x598468*/
   *(this + 109) = IntList[4]; /*0x59846f*/
   *(this + 110) = v11[5]; /*0x598475*/
@@ -3008,7 +3008,7 @@ int RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  TypeList::Copy(this + 112, IntList); /*0x5984c9*/
+  ((TypeList *)((char *)this + 112)).Copy(IntList); /*0x5984c9*/
   v12 = IntList; /*0x5984ce*/
   *(this + 116) = IntList[4]; /*0x5984d5*/
   *(this + 117) = v12[5]; /*0x5984db*/
@@ -3030,7 +3030,7 @@ int RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  TypeList::Copy(this + 119, IntList); /*0x59852f*/
+  ((TypeList *)((char *)this + 119)).Copy(IntList); /*0x59852f*/
   v13 = IntList; /*0x598534*/
   *(this + 123) = IntList[4]; /*0x59853b*/
   *(this + 124) = v13[5]; /*0x598541*/
@@ -3052,7 +3052,7 @@ int RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  TypeList::Copy(this + 126, IntList); /*0x598595*/
+  ((TypeList *)((char *)this + 126)).Copy(IntList); /*0x598595*/
   v14 = IntList; /*0x59859a*/
   *(this + 130) = IntList[4]; /*0x5985a1*/
   this->q20C = v14[5]; /*0x5985a7*/
@@ -3074,7 +3074,7 @@ int RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  TypeList::Copy(this + 133, IntList); /*0x5985fb*/
+  ((TypeList *)((char *)this + 133)).Copy(IntList); /*0x5985fb*/
   v15 = IntList; /*0x598600*/
   *(this + 137) = IntList[4]; /*0x598607*/
   *(this + 138) = v15[5]; /*0x59860d*/
@@ -3096,7 +3096,7 @@ int RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  TypeList::Copy(this + 140, IntList); /*0x598661*/
+  ((TypeList *)((char *)this + 140)).Copy(IntList); /*0x598661*/
   v16 = IntList; /*0x598666*/
   this->q024 = IntList[4]; /*0x59866d*/
   *(this + 145) = v16[5]; /*0x598673*/
@@ -3118,7 +3118,7 @@ int RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  TypeList::Copy(this + 147, IntList); /*0x5986c7*/
+  ((TypeList *)((char *)this + 147)).Copy(IntList); /*0x5986c7*/
   v17 = IntList; /*0x5986cc*/
   *(this + 151) = IntList[4]; /*0x5986d3*/
   *(this + 152) = v17[5]; /*0x5986d9*/
@@ -3141,7 +3141,7 @@ int RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  TypeList::Copy(this + 154, IntList); /*0x59873d*/
+  ((TypeList *)((char *)this + 154)).Copy(IntList); /*0x59873d*/
   v18 = IntList; /*0x598742*/
   *(this + 158) = IntList[4]; /*0x598749*/
   *(this + 159) = v18[5]; /*0x59874f*/
@@ -3221,7 +3221,7 @@ int RandomMap::LoadConfig()
 
 // 0x598960
 namespace gamemd {
-int RandomMap::Generate(char a2, HWND hDlg)
+AbstractClass * RandomMap::Generate(char a2, HWND hDlg)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3633,7 +3633,7 @@ int RandomMap::Generate(char a2, HWND hDlg)
 
 // 0x599650
 namespace gamemd {
-void * RandomMap::SetupTheater(char a2)
+AbstractClass * * RandomMap::SetupTheater(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6112,7 +6112,7 @@ int RandomMap::PlaceRandomMapTiberium()
 
 // 0x5A3AE0
 namespace gamemd {
-int RandomMap::PlaceResources()
+VectorClass * RandomMap::PlaceResources()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6526,7 +6526,7 @@ LABEL_27:
 
 // 0x5A80B0
 namespace gamemd {
-int RandomMap::PlaceMapSeedBuildings()
+VectorClass * RandomMap::PlaceMapSeedBuildings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6641,7 +6641,7 @@ LABEL_19:
 
 // 0x5B9C90
 namespace gamemd {
-void RandomMap::RegenerateRandomMapPreview()
+AbstractClass * RandomMap::RegenerateRandomMapPreview()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

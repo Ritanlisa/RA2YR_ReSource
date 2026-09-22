@@ -207,7 +207,7 @@ void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsi
 
 // 0x4C6CB0
 namespace gamemd {
-void EventClass::ProcessEvent()
+AbstractClass * EventClass::ProcessEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1010,7 +1010,7 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
 {
   int result; // eax
 
-  result = (*(int (__thiscall **)(_DWORD *, int))(*this + 24))(this, a2); /*0x54228c*/
+  result = this->vt_slot_24(a2); /*0x54228c*/
   if ( result != -1 && result < this->q044 ) /*0x542297*/
   {
     int * v5 = (int *)(*(this + result + 10) + 76); /*0x5422a1*/
@@ -1087,7 +1087,7 @@ int EventClass::CheckFlag()
 
 // 0x664440
 namespace gamemd {
-int EventClass::validateEventType()
+AbstractClass * EventClass::validateEventType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

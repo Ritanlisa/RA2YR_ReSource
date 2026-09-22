@@ -107,7 +107,7 @@ LABEL_5:
 
 // 0x420F40
 namespace gamemd {
-void UpdateSpotlightsFoo(int * a1, int * a2)
+AbstractClass * UpdateSpotlightsFoo(int * a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -359,7 +359,7 @@ LABEL_23:
 
 // 0x424CE0
 namespace gamemd {
-void ProductionCompletionCallback()
+void* ProductionCompletionCallback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Production completion callback (543B). Handles audio, special building anims, unit creation.
@@ -370,7 +370,6 @@ void ProductionCompletionCallback()
   int *p_Location_X; // esi
   __int16 *v15; // ebx
   int v18; // [esp+Ch] [ebp-24h] BYREF
-
   (*(void (__thiscall **)(BuildingClass_Full *, int))(*(_DWORD *)this->_pad_base + 292))(this, 2); /*0x424ceb*/
   if ( BYTE2(this->IronTintTimer_Padding) || *(_DWORD *)(this->MissionTimer_StartTime + 760) == -1 ) /*0x424d08*/
   {
@@ -453,7 +452,7 @@ void ProductionCompletionCallback()
 
 // 0x424F00
 namespace gamemd {
-void CreateUnitOnCompletion()
+AbstractClass * CreateUnitOnCompletion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Create unit at completion (583B). Calculates exit cell, foundation offsets, spawns unit.
@@ -834,7 +833,7 @@ void sub_4261D0()
 
 // 0x4267F0
 namespace gamemd {
-void sub_4267F0()
+AbstractClass * sub_4267F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -906,7 +905,7 @@ void sub_4267F0()
 
 // 0x426ED0
 namespace gamemd {
-int E4Recv_426ED0::sub_426ED0(int a2)
+AbstractClass * E4Recv_426ED0::sub_426ED0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1211,7 +1210,7 @@ unsigned int * PathClass_WalkPath(unsigned int * a1, int * a2, int a3, int * a4)
 
 // 0x42A900
 namespace gamemd {
-void E4Recv_42A900::sub_42A900()
+AbstractClass * E4Recv_42A900::sub_42A900()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1454,7 +1453,7 @@ void sub_42B080(short * a1, int a2)
 
 // 0x42B420
 namespace gamemd {
-void GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int a4, int a5, int ** a6)
+AbstractClass * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int a4, int a5, int ** a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1761,7 +1760,7 @@ LABEL_11:
 
 // 0x42BE20
 namespace gamemd {
-void WalkLineOfSight(char * a1, int a2, unsigned int * a3, short * a4, unsigned int * a5, int a6, char a7)
+LocomotionClass * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short * a4, unsigned int * a5, int a6, char a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2051,7 +2050,7 @@ LABEL_18:
 
 // 0x42CCD0
 namespace gamemd {
-void E4Recv_42CCD0::sub_42CCD0(int a2)
+AbstractClass * E4Recv_42CCD0::sub_42CCD0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

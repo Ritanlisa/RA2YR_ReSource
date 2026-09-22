@@ -7,7 +7,7 @@
 
 // 0x6E4F60
 namespace gamemd {
-void TagClass::Destructor(void ** a1, AbstractClass * a2)
+TriggerClass * TagClass::Destructor(void ** a1, AbstractClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -237,7 +237,7 @@ int TagClass::HasValidHouse()
 
 // 0x71ADE0
 namespace gamemd {
-int TagClass::Unlink()
+Coord * TagClass::Unlink()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

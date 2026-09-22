@@ -420,7 +420,7 @@ LABEL_37:
 
 // 0x7D0A20
 namespace gamemd {
-void * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
+exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -762,7 +762,7 @@ LABEL_22:
 
 // 0x7D10C2
 namespace gamemd {
-void __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, ObjectClass * aP2, int cchSrc, LPSTR lpDestStr, int cchDest, UINT CodePage, int a8)
+ControlClass * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, ObjectClass * aP2, int cchSrc, LPSTR lpDestStr, int cchDest, UINT CodePage, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         CampaignScore *aP0,
@@ -932,7 +932,7 @@ main_loop_2:
 
 // 0x7D170D
 namespace gamemd {
-void _input(FILE * Stream, char * a2, int a3)
+ControlClass * _input(FILE * Stream, char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1677,7 +1677,7 @@ void int _hextodec(int C)
 
 // 0x7D21BE
 namespace gamemd {
-void _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
+AbstractClass * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2743,7 +2743,7 @@ void* setSBCS()
 
 // 0x7D36D5
 namespace gamemd {
-void int setSBUpLow()
+ControlClass * int setSBUpLow()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2948,7 +2948,7 @@ void iswctype(wint_t C, wctype_t Type)
 
 // 0x7D3A6D
 namespace gamemd {
-void _winput(FILE * File, CampaignScore * aP1, int a3)
+ControlClass * _winput(FILE * File, CampaignScore * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3872,7 +3872,7 @@ LABEL_32:
 
 // 0x7D4C00
 namespace gamemd {
-void * strcat(CCINIClass * aP0, ObjectClass * aP1)
+ObjectClass * * strcat(CCINIClass * aP0, ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4994,7 +4994,7 @@ void* __init_time()
 
 // 0x7D6624
 namespace gamemd {
-void __init_numeric()
+AbstractClass * __init_numeric()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5062,7 +5062,7 @@ void __init_numeric()
 
 // 0x7D6AA2
 namespace gamemd {
-void __init_ctype()
+AbstractClass * __init_ctype()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6927,7 +6927,7 @@ void __crtGetStringTypeA(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, LPWORD 
 
 // 0x7D9872
 namespace gamemd {
-void __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int a6, int a7)
+ControlClass * __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -7530,7 +7530,7 @@ void __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINICl
 
 // 0x7DA2B6
 namespace gamemd {
-void __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, CampaignScore * aP2, int cchSrc, CampaignScore * aP4, CampaignScore * aP5, CampaignScore * aP6)
+ControlClass * __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, CampaignScore * aP2, int cchSrc, CampaignScore * aP4, CampaignScore * aP5, CampaignScore * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         CampaignScore *aP0,
@@ -7902,7 +7902,7 @@ void __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cc
 
 // 0x7DA9CD
 namespace gamemd {
-void __crtsetenv(char * Str, int a2)
+AbstractClass * __crtsetenv(char * Str, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -8213,7 +8213,7 @@ LABEL_9:
 
 // 0x7DB207
 namespace gamemd {
-void _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
+AbstractClass * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -10134,7 +10134,7 @@ LABEL_171:
 
 // 0x7DDCD6
 namespace gamemd {
-void * _wcsupr(CampaignScore * aP0)
+BlowStraw * * _wcsupr(CampaignScore * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

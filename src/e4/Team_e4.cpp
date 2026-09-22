@@ -247,7 +247,7 @@ void sub_6219D0(int * a1, int a2, int a3, int a4)
 
 // 0x634B20
 namespace gamemd {
-void E4Recv_634B20::sub_634B20()
+Game * E4Recv_634B20::sub_634B20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

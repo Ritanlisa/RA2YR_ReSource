@@ -33,7 +33,7 @@ LABEL_5:
     ++this->RefCount_field_04; /*0x49fa51*/
     return *(_DWORD *)(v5 + 4 * a2); /*0x49fa59*/
   }
-  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, a2 + 10, 0) ) /*0x49fa1a*/
+  if ( this->vt_slot_8(a2 + 10, 0) ) /*0x49fa1a*/
   {
     for ( i = v3; i < this->q008; *(_DWORD *)(this->RefCount_field_04 + 4 * i - 4) = 0 ) /*0x49fa28*/
       ++i; /*0x49fa2d*/

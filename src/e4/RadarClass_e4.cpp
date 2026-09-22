@@ -4,13 +4,13 @@
 
 // 0x652C00
 namespace gamemd {
-int RadarClass::Destruct()
+CampaignClass * RadarClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *this = &vt_RadarClass; /*0x652c0c*/
-  AudioFileClass::Release(this + 1328); /*0x652c12*/
+  ((AudioFileClass *)((char *)this + 1328)).Release(); /*0x652c12*/
   TacticalClass::FreeResources(this); /*0x652c19*/
   char * v2 = (char *)(this + 1314); /*0x652c1e*/
   int v3 = 22; /*0x652c24*/

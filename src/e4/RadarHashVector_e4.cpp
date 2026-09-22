@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x658B10
-int RadarHashVector::ComputeHashIndex(int a2, char * a3)
+AbstractClass * RadarHashVector::ComputeHashIndex(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

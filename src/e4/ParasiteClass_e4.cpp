@@ -276,7 +276,7 @@ LABEL_20:
           int v28 = *(_DWORD *)v27; /*0x629c67*/
           v27[973] = 1; /*0x629c69*/
           (*(void (__thiscall **)(_BYTE *, _DWORD))(v28 + 952))(v27, this->creationFrame); /*0x629c76*/
-          (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)v27 + 928))(v27); /*0x629c80*/
+          v27->vt_slot_928(); /*0x629c80*/
           AnimClass *v29 = this->q044; /*0x629c86*/
           this->q04C = 0; /*0x629c89*/
           this->q050 = 0; /*0x629c8e*/
@@ -310,12 +310,8 @@ LABEL_20:
         {
           IUnknown *v32 = this->q028; /*0x629d27*/
           int v44 = *(_DWORD *)(v43[1] + 164); /*0x629d2a*/
-          (*(void (__thiscall **)(int, int *, _DWORD, _DWORD, _DWORD, _DWORD, int, _DWORD))(*(_DWORD *)v32 + 364))( /*0x629d3b*/
-            v32,
-            &v44,
-            0,
-            v43[0],
-            this->creationFrame,
+          v32->vt_slot_364(/*0x629d3b*/
+            v32, &v44, 0, v43[0], this->creationFrame,
             0,
             1,
             0);
@@ -454,11 +450,8 @@ LABEL_8:
   {
     IUnknown *v11 = this->q028; /*0x62a0b7*/
     v22[0] = v11[27]; /*0x62a0c3*/
-    (*(void (__stdcall **)(_DWORD *, _DWORD, int, _DWORD, int, int, _DWORD))(*v11 + 364))( /*0x62a0ce*/
-      v22,
-      0,
-      v5,
-      this->creationFrame,
+    v11->vt_slot_364(/*0x62a0ce*/
+      v22, 0, v5, this->creationFrame,
       1,
       1,
       0);
@@ -495,7 +488,7 @@ LABEL_8:
     v31 = v23; /*0x62a203*/
     IUnknown *v20 = this->q028; /*0x62a207*/
     int v32 = v17; /*0x62a20a*/
-    (*(void (__thiscall **)(int, int *, int, _DWORD))(*(_DWORD *)v20 + 984))(v20, &v30, 1069547520, 0); /*0x62a21c*/
+    v20->vt_slot_984(&v30, 1069547520, 0); /*0x62a21c*/
     int v21 = this->creationFrame; /*0x62a228*/
     v22[0] = v4[41]; /*0x62a22f*/
     (*(void (__stdcall **)(_DWORD *, _DWORD, int, int, _DWORD, int, _DWORD))(*this->q028 + 364))( /*0x62a247*/
@@ -515,7 +508,7 @@ LABEL_8:
 // 0x62A980
 namespace ra2 {
 namespace game {
-int ParasiteClass::TryInfect(unsigned int * a2)
+AbstractClass * ParasiteClass::TryInfect(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -696,7 +689,7 @@ void * ParasiteClass::UpdateParasite(char a2)
 // 0x62BD50
 namespace ra2 {
 namespace game {
-int ParasiteClass::Update()
+Coord * ParasiteClass::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -785,7 +778,7 @@ int ParasiteClass::Update()
   v42 = Math::RoundToInt(v57); /*0x62bed7*/
   int v11 = Math::RoundToInt(v56); /*0x62bed8*/
   Coord3D::Set(v60, v11, v42, v45); /*0x62bee2*/
-  Vector3::AddAssign(this + 204); /*0x62beec*/
+  ((Vector3 *)((char *)this + 204)).AddAssign(); /*0x62beec*/
   v46 = Math::RoundToInt(v58); /*0x62befe*/
   v43 = Math::RoundToInt(v57); /*0x62bf08*/
   int v12 = Math::RoundToInt(v56); /*0x62bf09*/
@@ -954,8 +947,8 @@ LABEL_50:
   v38 = this->q02B; /*0x62c316*/
   v39 = *(_DWORD *)(v38 + 736) /*0x62c33f*/
       - this->q025
-      + (*(int (__stdcall **)(char *))(this->vtable1 + 16))(this + 4);
-  if ( !(v39 % (*(char *)(v38 + 779) + ((*(int (__stdcall **)(char *))(this->vtable1 + 16))(this + 4) & 1))) ) /*0x62c355*/
+      + this->vtable1->vt_slot_16();
+  if ( !(v39 % (*(char *)(v38 + 779) + (this->vtable1->vt_slot_16() & 1))) ) /*0x62c355*/
     ++*(this + 302); /*0x62c35b*/
   result = *(this + 302); /*0x62c361*/
   if ( result == *(_BYTE *)(v38 + 777) ) /*0x62c36f*/

@@ -15,7 +15,7 @@ int MSPCXAnim::Stub()
 
 // 0x5D09C0
 namespace gamemd {
-int MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
+AbstractClass * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

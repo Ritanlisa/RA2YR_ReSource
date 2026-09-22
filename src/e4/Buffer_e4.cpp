@@ -250,7 +250,7 @@ int Buffer::AllocateCodecFrameBuffers()
 {
 
   int v28; // [esp+28h] [ebp-8h] BYREF
-  if ( (*(int (__cdecl **)(int, int, int *, int))(this + 64))(this, 5, &v28, 8) ) /*0x7c1743*/
+  if ( this->vt_slot_64(5, &v28, 8) ) /*0x7c1743*/
     return -2; /*0x7c1759*/
   if ( v28 != 1212371789 ) /*0x7c1762*/
     return -4; /*0x7c1770*/
@@ -258,36 +258,36 @@ int Buffer::AllocateCodecFrameBuffers()
   unsigned int v29; // [esp+2Ch] [ebp-4h]
   unsigned int v4 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c179e*/
   LOBYTE(v4) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c179f*/
-  if ( (*(int (__cdecl **)(int, int, int, unsigned int))(this + 64))(this, 5, this + 1852, v4) ) /*0x7c17a6*/
+  if ( this->vt_slot_64(5, this + 1852, v4) ) /*0x7c17a6*/
     return -4; /*0x7c17bc*/
   unsigned int v5 = *v3; /*0x7c17bd*/
   if ( !*v3 ) /*0x7c17bd*/
     goto LABEL_16; /*0x7c17bd*/
   int v6 = 16 * v5; /*0x7c17cc*/
-  int v7 = (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 68))(this, 2, 0, 16 * v5); /*0x7c17d3*/
+  int v7 = this->vt_slot_68(2, 0, 16 * v5); /*0x7c17d3*/
   *(_DWORD *)(this + 1860) = v7; /*0x7c17db*/
   if ( !v7 ) /*0x7c17e1*/
     return -8; /*0x7c17ef*/
-  (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v7, v6); /*0x7c17f5*/
+  this->vt_slot_68(4, v7, v6); /*0x7c17f5*/
   this->Buffer_field_0C += v6; /*0x7c17ff*/
-  if ( (*(int (__cdecl **)(int, int, int *, int))(this + 64))(this, 5, &v28, 8) ) /*0x7c180a*/
+  if ( this->vt_slot_64(5, &v28, 8) ) /*0x7c180a*/
     return -2; /*0x7c1820*/
   if ( v28 != 1413698381 ) /*0x7c1829*/
     return -4; /*0x7c1837*/
   unsigned int v8 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c185f*/
   LOBYTE(v8) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c1860*/
-  if ( (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 64))(this, 5, *(_DWORD *)(this + 1860), v8) ) /*0x7c186d*/
+  if ( this->vt_slot_64(5, *(_DWORD *)(this + 1860), v8) ) /*0x7c186d*/
     return -4; /*0x7c187a*/
 LABEL_16:
   unsigned int v9 = *v3; /*0x7c1884*/
   unsigned int v27 = v9; /*0x7c1888*/
   if ( !v9 ) /*0x7c188c*/
     return -1; /*0x7c19de*/
-  int v10 = (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 68))(this, 2, 0, 12 * v9); /*0x7c189d*/
+  int v10 = this->vt_slot_68(2, 0, 12 * v9); /*0x7c189d*/
   *(_DWORD *)(this + 1864) = v10; /*0x7c18a5*/
   if ( v10 ) /*0x7c18ab*/
   {
-    (*(void (__cdecl **)(int, int, int, unsigned int))(this + 68))(this, 4, v10, 12 * v9); /*0x7c18bf*/
+    this->vt_slot_68(4, v10, 12 * v9); /*0x7c18bf*/
     this->Buffer_field_0C += 12 * v9; /*0x7c18cc*/
     int v24 = 0; /*0x7c18cf*/
     int v11 = 0; /*0x7c18d9*/
@@ -303,20 +303,20 @@ LABEL_16:
       {
         *(_DWORD *)(v11 + v13) = v12; /*0x7c1911*/
         *(_DWORD *)(v11 + v13 + 4) = 0; /*0x7c191d*/
-        int v14 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, 12 * v12); /*0x7c1925*/
+        int v14 = this->vt_slot_68(2, 0, 12 * v12); /*0x7c1925*/
         int v15 = v14; /*0x7c1928*/
         if ( !v14 ) /*0x7c192f*/
           return -8; /*0x7c192f*/
-        (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v14, 12 * v12); /*0x7c193a*/
+        this->vt_slot_68(4, v14, 12 * v12); /*0x7c193a*/
         this->Buffer_field_0C += 12 * v12; /*0x7c194d*/
         unsigned int v16 = v12 * ((v23 + 1) & 0xFFFFFFFE); /*0x7c1957*/
         int * v26 = (int *)(v22 + v25 + 8); /*0x7c1964*/
         *v26 = v15; /*0x7c1968*/
-        int v17 = (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 68))(this, 2, 0, v16); /*0x7c196a*/
+        int v17 = this->vt_slot_68(2, 0, v16); /*0x7c196a*/
         int v18 = v17; /*0x7c196d*/
         if ( !v17 ) /*0x7c1974*/
           return -8; /*0x7c1974*/
-        (*(void (__cdecl **)(int, int, int, unsigned int))(this + 68))(this, 4, v17, v16); /*0x7c197f*/
+        this->vt_slot_68(4, v17, v16); /*0x7c197f*/
         this->Buffer_field_0C += v16; /*0x7c198c*/
         int v19 = 0; /*0x7c1991*/
         do /*0x7c19b1*/

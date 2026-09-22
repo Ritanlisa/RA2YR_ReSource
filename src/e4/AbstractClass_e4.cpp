@@ -116,7 +116,7 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 
 // 0x4FB9B0
 namespace gamemd {
-void AbstractClass_RemoveObjectFromHouse()
+VectorClass * AbstractClass_RemoveObjectFromHouse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -275,7 +275,7 @@ void AbstractClass_RemoveObjectFromHouse()
 
 // 0x5C03D0
 namespace gamemd {
-void AbstractClass_getPathDirection()
+ObjectClass * AbstractClass_getPathDirection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -438,7 +438,7 @@ void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
 
 // 0x7258D0
 namespace gamemd {
-void AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1)
+AbstractClass * AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

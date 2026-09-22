@@ -2085,43 +2085,33 @@ namespace gamemd { int HouseClass::CanBuild(int a1, int a2, int a3) {
   DynamicVector *v40; // eax
   int v41; // esi
   CCINIClass *v42; // eax
-  _DWORD *v43; // ecx
   FactoryClass *v44; // eax
   DynamicVector *v45; // eax
   DynamicVector *v46; // eax
-  int v47; // ebp
   int i; // edi
-  int v49; // esi
-  int v50; // eax
   CCINIClass *v51; // eax
   int v52; // ecx
   FactoryClass *v53; // eax
-  int v54; // esi
   DynamicVector *v55; // eax
   DynamicVector *v56; // eax
   CCINIClass *v57; // eax
-  _DWORD *v58; // ecx
   FactoryClass *v59; // eax
-  int v60; // esi
   DynamicVector *v61; // eax
   DynamicVector *v62; // eax
   CCINIClass *v63; // eax
-  _DWORD *v64; // ecx
   FactoryClass *Type; // eax
   void **v67; // [esp+14h] [ebp-38h] BYREF
   void *Block; // [esp+18h] [ebp-34h]
-  int v69; // [esp+1Ch] [ebp-30h]
-  char v70; // [esp+21h] [ebp-2Bh]
-  int v71; // [esp+24h] [ebp-28h]
   void **v72; // [esp+30h] [ebp-1Ch] BYREF
-  void *v73; // [esp+34h] [ebp-18h]
-  char v74; // [esp+3Dh] [ebp-Fh]
-  int v75; // [esp+40h] [ebp-Ch]
   AbstractClass *aP2a; // [esp+54h] [ebp+8h]
 
   HouseClass *v4 = this; /*0x4f7879*/
   if ( !(_BYTE)aP2 ) /*0x4f7883*/
   {
+  char v74; // [esp+3Dh] [ebp-Fh]
+  void *v73; // [esp+34h] [ebp-18h]
+  char v70; // [esp+21h] [ebp-2Bh]
+  int v69; // [esp+1Ch] [ebp-30h]
   _DWORD *v17; // eax
   void *v13; // eax
   bool v10; // zf
@@ -2133,6 +2123,7 @@ namespace gamemd { int HouseClass::CanBuild(int a1, int a2, int a3) {
     DynamicVectorClass::Copy(&v72, (DynamicVector *)&aP1->__pad_524[304]); /*0x4f78a6*/
     int v6 = 0; /*0x4f78b4*/
     v72 = &vt_TypeList_int; /*0x4f78b6*/
+  int v75; // [esp+40h] [ebp-Ch]
     if ( v75 > 0 ) /*0x4f78bc*/
     {
       while ( DynamicVector::GetOrGrow(v4 + 5460, *((DynamicVector **)v73 + v6)) <= 0 ) /*0x4f78d5*/
@@ -2277,6 +2268,7 @@ LABEL_124:
       return 1; /*0x4f7bda*/
     }
     aP2a = 0; /*0x4f7bf5*/
+  int v71; // [esp+24h] [ebp-28h]
     if ( v71 > 0 ) /*0x4f7bfb*/
     {
       while ( 1 ) /*0x4f7c18*/
@@ -2468,7 +2460,7 @@ LABEL_135:
   switch ( (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1) ) /*0x4f7fbd*/
   {
     case 3: /*0x4f7fbd*/
-      v60 = aP1->field_3B8; /*0x4f8289*/
+      int v60 = aP1->field_3B8; /*0x4f8289*/
       if ( v60 <= 0 ) /*0x4f8291*/
       {
         v61 = (DynamicVector *)(*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 64))(aP1); /*0x4f8297*/
@@ -2485,7 +2477,7 @@ LABEL_135:
           v63 = g_TeamTypeCount; /*0x4f82f9*/
           while ( 1 ) /*0x4f82fe*/
           {
-            v64 = *(_DWORD **)&v63->__pad_0[4 * v41]; /*0x4f82fe*/
+            _DWORD * v64 = *(_DWORD **)&v63->__pad_0[4 * v41]; /*0x4f82fe*/
             if ( (_DWORD *)v64[27] == v4 ) /*0x4f8304*/
             {
               if ( AbstractClass::GetType(v64) ) /*0x4f8306*/
@@ -2503,7 +2495,7 @@ LABEL_135:
       }
       return -1; /*0x4f82f7*/
     case 7: /*0x4f7fbd*/
-      v54 = aP1->field_3B8; /*0x4f81be*/
+      int v54 = aP1->field_3B8; /*0x4f81be*/
       if ( v54 <= 0 ) /*0x4f81c6*/
       {
         v55 = (DynamicVector *)(*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 64))(aP1); /*0x4f81cc*/
@@ -2520,7 +2512,7 @@ LABEL_135:
           v57 = g_TeamTypeCount; /*0x4f8236*/
           while ( 1 ) /*0x4f823b*/
           {
-            v58 = *(_DWORD **)&v57->__pad_0[4 * v41]; /*0x4f823b*/
+            _DWORD * v58 = *(_DWORD **)&v57->__pad_0[4 * v41]; /*0x4f823b*/
             if ( (_DWORD *)v58[27] == v4 ) /*0x4f8241*/
             {
               if ( AbstractClass::GetType(v58) ) /*0x4f8243*/
@@ -2545,12 +2537,12 @@ LABEL_135:
           return 0; /*0x4f80c6*/
       }
       v46 = (DynamicVector *)(*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 64))(aP1); /*0x4f80d1*/
-      v47 = DynamicVector::GetOrGrow(this + 5450, v46); /*0x4f80e4*/
+      int v47 = ((DynamicVector *)((char *)this + 5450)).GetOrGrow(v46); /*0x4f80e4*/
       if ( aP1->__pad_DFC[202] ) /*0x4f80e6*/
       {
         for ( i = 0; i < *(int *)&g_CellDirectionOffsets[84616]; ++i ) /*0x4f80f9*/
         {
-          v49 = *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84604] + 4 * i); /*0x4f8105*/
+          int v49 = *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84604] + 4 * i); /*0x4f8105*/
           if ( *(_DWORD **)(v49 + 540) == this /*0x4f811d*/
             && *(_DWORD *)(v49 + 824) == (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 64))(aP1) )
           {
@@ -2558,7 +2550,7 @@ LABEL_135:
           }
         }
       }
-      v50 = aP1->field_3B8; /*0x4f812a*/
+      int v50 = aP1->field_3B8; /*0x4f812a*/
       if ( v50 <= 0 || v47 < v50 ) /*0x4f813a*/
         return 1; /*0x4f813a*/
       if ( !(_BYTE)aP3 ) /*0x4f8146*/
@@ -2588,7 +2580,7 @@ LABEL_135:
           v42 = g_TeamTypeCount; /*0x4f803c*/
           while ( 1 ) /*0x4f8041*/
           {
-            v43 = *(_DWORD **)&v42->__pad_0[4 * v41]; /*0x4f8041*/
+            _DWORD * v43 = *(_DWORD **)&v42->__pad_0[4 * v41]; /*0x4f8041*/
             if ( (_DWORD *)v43[27] == v4 ) /*0x4f8047*/
             {
               if ( AbstractClass::GetType(v43) ) /*0x4f8049*/

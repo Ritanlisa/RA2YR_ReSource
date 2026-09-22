@@ -7,7 +7,7 @@ int LinkClass::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  (*(void (__thiscall **)(_DWORD *))(*this + 84))(this); /*0x4e1485*/
+  this->vt_slot_84(); /*0x4e1485*/
   return LinkedList::RemoveNode(this); /*0x4e148f*/
 }
 }

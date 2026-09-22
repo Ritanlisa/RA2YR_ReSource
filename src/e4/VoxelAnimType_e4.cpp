@@ -8,7 +8,7 @@
 
 // 0x5F7A90
 namespace gamemd {
-int VoxelAnimType::LoadSection(const char * a2, int a3)
+AbstractClass * VoxelAnimType::LoadSection(const char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -121,7 +121,7 @@ int VoxelAnimType::LoadSection(const char * a2, int a3)
 
 // 0x5F7DB0
 namespace gamemd {
-int VoxelAnimType::LoadBarrel(const char * a2, int a3)
+AbstractClass * VoxelAnimType::LoadBarrel(const char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -307,9 +307,9 @@ int VoxelAnimType::LoadAnim()
   {
     v50 = 1; /*0x5f8272*/
   }
-  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) != 40 || *(this + 3233) ) /*0x5f8287*/
+  if ( this->vt_slot_44() != 40 || *(this + 3233) ) /*0x5f8287*/
   {
-    if ( (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) != 40 /*0x5f8657*/
+    if ( this->vt_slot_44() != 40 /*0x5f8657*/
       || !HouseClass::HasPower(this)
       || *(this + 3285) )
     {
@@ -495,9 +495,9 @@ LABEL_92:
     }
   }
 LABEL_93:
-  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) != 40 || *(this + 3233) ) /*0x5f8850*/
+  if ( this->vt_slot_44() != 40 || *(this + 3233) ) /*0x5f8850*/
   {
-    if ( (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) == 40 /*0x5f8873*/
+    if ( this->vt_slot_44() == 40 /*0x5f8873*/
       && HouseClass::HasPower(this)
       && !*(this + 3285) )
     {
@@ -589,7 +589,7 @@ LABEL_123:
       __3_YAXPAX_Z(v43); /*0x5f8a9c*/
       *((_DWORD *)this + 45) = 0; /*0x5f8aa4*/
     }
-    if ( (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) == 40 /*0x5f8ac1*/
+    if ( this->vt_slot_44() == 40 /*0x5f8ac1*/
       && HouseClass::HasPower(this)
       && !*(this + 3285) )
     {

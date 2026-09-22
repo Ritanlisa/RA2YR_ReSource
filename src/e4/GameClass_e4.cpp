@@ -154,7 +154,7 @@ int GameClass::FrameLoop(int a2)
     do /*0x5d24dc*/
     {
       Event::Dispatch(); /*0x5d2437*/
-      (*(void (__thiscall **)(int *))(*this + 8))(this); /*0x5d2440*/
+      this->vt_slot_8(); /*0x5d2440*/
       DDraw::WaitForIdle(); /*0x5d2443*/
       DSurface::RenderToSurface(this, *(ObjectClass **)&DataGlobal_87F8E4[31272]); /*0x5d2451*/
       GameClass::loadScenarioFiles(this, *(ObjectClass **)&DataGlobal_87F8E4[31272]); /*0x5d245f*/
@@ -213,13 +213,13 @@ int GameClass::FindOpenSlot()
     int v4 = *(_DWORD *)(g_MultiplayerGameState + 4 * v2); /*0x5d6387*/
     if ( IsRandMap::Sed(v4) ) /*0x5d638c*/
     {
-      v5 = (*(int (__thiscall **)(char *))(*(_DWORD *)this + 60))(this); /*0x5d6399*/
+      v5 = this->vt_slot_60(); /*0x5d6399*/
     }
     else
     {
       if ( !*(_BYTE *)(v4 + 380) && Network::IsMultiplayerActive() ) /*0x5d63a8*/
         goto LABEL_8; /*0x5d63af*/
-      v5 = GameClass::initPlayerData(this + 48); /*0x5d63b7*/
+      v5 = ((GameClass *)((char *)this + 48)).initPlayerData(); /*0x5d63b7*/
     }
     if ( v5 ) /*0x5d63be*/
       return v2; /*0x5d63c5*/
@@ -402,7 +402,7 @@ int GameClass::initPlayerData(const char ** a2)
 
 // 0x6BEC60
 namespace gamemd {
-void GameClass::Shutdown()
+ObjectClass * GameClass::Shutdown()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

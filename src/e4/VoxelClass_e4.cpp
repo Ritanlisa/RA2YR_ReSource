@@ -4,7 +4,7 @@
 
 // 0x73C5F0
 namespace gamemd {
-void VoxelClass_RenderObject()
+void* VoxelClass_RenderObject()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

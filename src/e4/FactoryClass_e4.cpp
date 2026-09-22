@@ -337,7 +337,7 @@ LABEL_14:
 
 // 0x4CA430
 namespace gamemd {
-int FactoryClass::Stat(int * a2)
+AbstractClass * FactoryClass::Stat(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -355,7 +355,7 @@ int FactoryClass::Stat(int * a2)
   Debug::Log(); /*0x4ca4c3*/
   (*(void (__stdcall **)(int))(*(_DWORD *)(this->owner + 4) + 16))(this->owner + 4); /*0x4ca4d4*/
   Debug::Log(); /*0x4ca4dd*/
-  (*(void (__stdcall **)(char *))(this->vtable1 + 16))((char *)this + 4); /*0x4ca4ec*/
+  this->vtable1->vt_slot_16((char *)this + 4); /*0x4ca4ec*/
   Debug::Log(); /*0x4ca4f5*/
   int v3 = AbstractClass::ProcessPower(this); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/

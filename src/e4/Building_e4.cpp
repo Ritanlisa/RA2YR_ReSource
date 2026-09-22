@@ -7,7 +7,7 @@
 
 // 0x425D10
 namespace gamemd {
-void * Building::ComputePosition(AnimClass * aP1)
+AnimClass * * Building::ComputePosition(AnimClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

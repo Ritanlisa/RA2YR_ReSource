@@ -167,7 +167,7 @@ LABEL_24:
 
 // 0x4CB920
 namespace gamemd {
-int File::Dispatch()
+File * File::Dispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -221,7 +221,7 @@ unsigned int * File::LoadFileHVA(ObjectClass * aP1)
 
 // 0x5BD5C0
 namespace gamemd {
-int File::ParseFileHVA(int a2)
+AbstractClass * File::ParseFileHVA(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -302,7 +302,7 @@ LABEL_15:
 
 // 0x625AF0
 namespace gamemd {
-void * File::LoadPaletteData(ObjectClass * aP1)
+File * * File::LoadPaletteData(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -378,7 +378,7 @@ int File::FindByPrefix(char * Str1, unsigned char * a3)
 
 // 0x734990
 namespace gamemd {
-int File::ParseCSFString()
+AbstractClass * File::ParseCSFString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -566,7 +566,7 @@ unsigned int * File::LoadFileVXL(ObjectClass * aP1, SomeVoxelCache * aP2)
 
 // 0x76AC90
 namespace gamemd {
-void * File::LoadWDT(ObjectClass * aP1)
+AbstractClass * * File::LoadWDT(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -697,7 +697,7 @@ LABEL_25:
 
 // 0x76B0A0
 namespace gamemd {
-int File::LoadWDTDecompress(CCINIClass * aP1, int a3)
+AbstractClass * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -792,62 +792,62 @@ int File::ParseAudioFileRIFF()
   unsigned int v50; // [esp+44h] [ebp-Ch]
   int v51; // [esp+48h] [ebp-8h] BYREF
   unsigned int v52; // [esp+4Ch] [ebp-4h]
-  if ( (*(int (__cdecl **)(int, int, int *, int))(this + 64))(this, 5, &v51, 8) ) /*0x7c12c3*/
+  if ( this->vt_slot_64(5, &v51, 8) ) /*0x7c12c3*/
     return -2; /*0x7c12d9*/
   if ( v51 != 1212368461 ) /*0x7c12e2*/
     return -4; /*0x7c12f0*/
   int * v3 = (int *)(this + 1824); /*0x7c12f5*/
   unsigned int v4 = ((((v52 << 16) | v52 & 0xFF00) << 8) | ((HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1; /*0x7c131e*/
   LOBYTE(v4) = (HIBYTE(v52) + 1) & 0xFE; /*0x7c131f*/
-  if ( (*(int (__cdecl **)(int, int, int, unsigned int))(this + 64))(this, 5, this + 1824, v4) ) /*0x7c1326*/
+  if ( this->vt_slot_64(5, this + 1824, v4) ) /*0x7c1326*/
     return -4; /*0x7c133c*/
   int v5 = *v3; /*0x7c133d*/
   if ( *v3 ) /*0x7c133d*/
   {
     int v6 = 24 * v5; /*0x7c134c*/
-    int v7 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, 24 * v5); /*0x7c1354*/
+    int v7 = this->vt_slot_68(2, 0, 24 * v5); /*0x7c1354*/
     *(_DWORD *)(this + 1840) = v7; /*0x7c135c*/
     if ( !v7 ) /*0x7c1362*/
       return -8; /*0x7c1370*/
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v7, v6); /*0x7c1376*/
+    this->vt_slot_68(4, v7, v6); /*0x7c1376*/
     *(_DWORD *)(this + 48) += v6; /*0x7c1388*/
-    if ( (*(int (__cdecl **)(int, int, int *, int))(this + 64))(this, 5, &v51, 8) ) /*0x7c138b*/
+    if ( this->vt_slot_64(5, &v51, 8) ) /*0x7c138b*/
       return -2; /*0x7c13a1*/
     if ( v51 != 1145259597 ) /*0x7c13aa*/
       return -4; /*0x7c13b8*/
     unsigned int v8 = ((((v52 << 16) | v52 & 0xFF00) << 8) | ((HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1; /*0x7c13e0*/
     LOBYTE(v8) = (HIBYTE(v52) + 1) & 0xFE; /*0x7c13e1*/
-    if ( (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 64))(this, 5, *(_DWORD *)(this + 1840), v8) ) /*0x7c13ee*/
+    if ( this->vt_slot_64(5, *(_DWORD *)(this + 1840), v8) ) /*0x7c13ee*/
       return -4; /*0x7c1404*/
   }
   int v9 = *(_DWORD *)(this + 1828); /*0x7c1405*/
   if ( v9 ) /*0x7c140d*/
   {
     int v10 = 16 * v9; /*0x7c1413*/
-    int v11 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, v10); /*0x7c141b*/
+    int v11 = this->vt_slot_68(2, 0, v10); /*0x7c141b*/
     *(_DWORD *)(this + 1844) = v11; /*0x7c1423*/
     if ( !v11 ) /*0x7c1429*/
       return -8; /*0x7c1437*/
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v11, v10); /*0x7c143d*/
+    this->vt_slot_68(4, v11, v10); /*0x7c143d*/
     *(_DWORD *)(this + 48) += v10; /*0x7c144f*/
-    if ( (*(int (__cdecl **)(int, int, int *, int))(this + 64))(this, 5, &v51, 8) ) /*0x7c1452*/
+    if ( this->vt_slot_64(5, &v51, 8) ) /*0x7c1452*/
       return -2; /*0x7c1468*/
     if ( v51 != 1413695053 ) /*0x7c1471*/
       return -4; /*0x7c147f*/
     unsigned int v12 = ((((v52 << 16) | v52 & 0xFF00) << 8) | ((HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1; /*0x7c14a7*/
     LOBYTE(v12) = (HIBYTE(v52) + 1) & 0xFE; /*0x7c14a8*/
-    if ( (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 64))(this, 5, *(_DWORD *)(this + 1844), v12) ) /*0x7c14b5*/
+    if ( this->vt_slot_64(5, *(_DWORD *)(this + 1844), v12) ) /*0x7c14b5*/
       return -4; /*0x7c14cb*/
   }
   unsigned int v13 = *(_DWORD *)(this + 1828); /*0x7c14cc*/
   v50 = v13; /*0x7c14d4*/
   if ( !v13 ) /*0x7c14d8*/
     return -1; /*0x7c1728*/
-  int v14 = (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 68))(this, 2, 0, 12 * v13); /*0x7c14e9*/
+  int v14 = this->vt_slot_68(2, 0, 12 * v13); /*0x7c14e9*/
   *(_DWORD *)(this + 1848) = v14; /*0x7c14f1*/
   if ( !v14 ) /*0x7c14f7*/
     return -8; /*0x7c14f7*/
-  (*(void (__cdecl **)(int, int, int, unsigned int))(this + 68))(this, 4, v14, 12 * v13); /*0x7c150b*/
+  this->vt_slot_68(4, v14, 12 * v13); /*0x7c150b*/
   *(_DWORD *)(this + 48) += 12 * v13; /*0x7c1518*/
   v46 = 0; /*0x7c151b*/
   int v15 = 0; /*0x7c1525*/
@@ -935,20 +935,20 @@ LABEL_53:
   v27 = 12 * v19; /*0x7c1654*/
   *(_DWORD *)(v38 + v44) = v19; /*0x7c165c*/
   *(_DWORD *)(v38 + v44 + 4) = 0; /*0x7c1660*/
-  v28 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, 12 * v19); /*0x7c1668*/
+  v28 = this->vt_slot_68(2, 0, 12 * v19); /*0x7c1668*/
   v29 = v28; /*0x7c166b*/
   if ( v28 ) /*0x7c1672*/
   {
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v28, v27); /*0x7c167d*/
+    this->vt_slot_68(4, v28, v27); /*0x7c167d*/
     *(_DWORD *)(this + 48) += v27; /*0x7c1697*/
     unsigned int v30 = v37 * ((v45 + 1) & 0xFFFFFFFE); /*0x7c169a*/
     int * v31 = (int *)(v38 + v44 + 8); /*0x7c16a0*/
     *v31 = v29; /*0x7c16a9*/
-    int v32 = (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 68))(this, 2, 0, v30); /*0x7c16ac*/
+    int v32 = this->vt_slot_68(2, 0, v30); /*0x7c16ac*/
     int v33 = v32; /*0x7c16af*/
     if ( v32 ) /*0x7c16b6*/
     {
-      (*(void (__cdecl **)(int, int, int, unsigned int))(this + 68))(this, 4, v32, v30); /*0x7c16c1*/
+      this->vt_slot_68(4, v32, v30); /*0x7c16c1*/
       *(_DWORD *)(this + 48) += v30; /*0x7c16cc*/
       int v34 = v37; /*0x7c16cf*/
       if ( v37 > 0 ) /*0x7c16d5*/

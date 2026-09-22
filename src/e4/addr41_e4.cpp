@@ -234,7 +234,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
 
 // 0x411B20
 namespace gamemd {
-void sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
+AbstractClass * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -637,7 +637,7 @@ bool sub_413CD0(int a1)
 
 // 0x41B110
 namespace gamemd {
-void PlaceAircraftFromINI()
+INIClass * PlaceAircraftFromINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

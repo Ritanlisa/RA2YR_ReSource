@@ -22,7 +22,7 @@ unsigned int * IPXInterfaceClass::Construct()
 }
 
 // 0x7B0DD0
-int IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
+AbstractClass * IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -87,7 +87,7 @@ int IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
 }
 
 // 0x7B13D0
-int IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen)
+AbstractClass * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -324,7 +324,7 @@ void * IPXInterfaceClass::bindSocket()
 }
 
 // 0x7B1B80
-int IPXInterfaceClass::AddRef()
+AnimClass * IPXInterfaceClass::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -346,7 +346,7 @@ int IPXInterfaceClass::AddRef()
 }
 
 // 0x7B1BC0
-int IPXInterfaceClass::Receive()
+AbstractClass * IPXInterfaceClass::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -447,7 +447,7 @@ unsigned char * IPXInterfaceClass::processPacket()
 }
 
 // 0x7B24E0
-int IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3)
+AnimClass * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -498,7 +498,7 @@ int IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceCla
 }
 
 // 0x7B2A20
-int IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
+AbstractClass * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

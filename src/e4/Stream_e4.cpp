@@ -12,13 +12,13 @@ int Stream::FlushAndReset()
   int v2 = *this; /*0x439114*/
   int v3 = this->Stream_field_08; /*0x439116*/
   this->Stream_field_0C = 45; /*0x439119*/
-  (*(void (**)(void))(v2 + 12))(); /*0x439120*/
-  (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v1 + 8))(v1, v3, 0); /*0x43912a*/
+  this->vt_slot_12(); /*0x439120*/
+  v1->vt_slot_8(v3, 0); /*0x43912a*/
   int v4 = v1[6]; /*0x43912d*/
   int v5 = v1[8]; /*0x439130*/
   v1 += 6; /*0x439133*/
   (*(void (__thiscall **)(_DWORD *))(v4 + 12))(v1); /*0x439138*/
-  return (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*v1 + 8))(v1, v5, 0); /*0x439145*/
+  return v1->vt_slot_8(v5, 0); /*0x439145*/
 }
 }
 
@@ -92,7 +92,7 @@ void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int 
 {
 
   CCFileClass::Construct3((int)(this + 4)); /*0x75926a*/
-  Stream::CopyFromTemplate(this + 376); /*0x759275*/
+  ((Stream *)((char *)this + 376)).CopyFromTemplate(); /*0x759275*/
   this->q52C = aP2; /*0x759282*/
   *((_DWORD *)this + 121) = this; /*0x759288*/
   char v19; // [esp+13h] [ebp-1h] BYREF

@@ -11,7 +11,7 @@
 
 // 0x49CAF0
 namespace gamemd {
-int Movie::SetupScreen(CCINIClass * aP1)
+AbstractClass * Movie::SetupScreen(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -83,7 +83,7 @@ int Movie::SetupScreen(CCINIClass * aP1)
 
 // 0x49E3B0
 namespace gamemd {
-int Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
+CampaignClass * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -278,7 +278,7 @@ void Movie_PlayWrapper()
 
 // 0x7209D0
 namespace gamemd {
-int Movie::Update()
+AbstractClass * Movie::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

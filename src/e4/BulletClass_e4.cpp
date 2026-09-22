@@ -14,7 +14,7 @@ B BulletClass::BulletClass()
   this->BulletClass_field_0xAC = 0; /*0x466391*/
   this->BulletClass_field_0xB0 = 0; /*0x466397*/
   this->q0B4 = 0; /*0x46639d*/
-  BulletClass::ResetDetonationTimer(this + 184); /*0x4663a3*/
+  ((BulletClass *)((char *)this + 184)).ResetDetonationTimer(); /*0x4663a3*/
   this->WH = 0; /*0x4663aa*/
   this->q104 = 1; /*0x4663b0*/
   this->CourseLock = 1; /*0x4663b6*/
@@ -38,7 +38,7 @@ B BulletClass::BulletClass()
   this->BulletClass_field_0x4 = &BulletClass::`vftable'; /*0x46642b*/
   this->BulletClass_field_0x8 = &BulletClass::`vftable'; /*0x466431*/
   this->vtable4 = &vt_BulletClass; /*0x466438*/
-  AbstractClass::GenerateUniqueID(this + 4); /*0x46643f*/
+  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x46643f*/
   this->q134 = 0; /*0x466444*/
   this->TargetCoords = 0; /*0x46644a*/
   this->q13C = 0; /*0x466450*/
@@ -63,7 +63,7 @@ B BulletClass::BulletClass()
 
 // 0x466560
 namespace gamemd {
-int BulletClass::Dtor()
+BulletClass * BulletClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

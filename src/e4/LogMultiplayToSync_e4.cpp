@@ -8,7 +8,7 @@
 
 // 0x6516F0
 namespace gamemd {
-void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, unsigned char *a2@<edx> a2, CellStruct *a3@<ebp> a3)
+CellStruct * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, unsigned char *a2@<edx> a2, CellStruct *a3@<ebp> a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

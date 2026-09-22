@@ -138,7 +138,7 @@ char DisplayClass::ddtor()
 }
 
 // 0x4A9890
-int DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
+Tactical * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -311,7 +311,7 @@ LABEL_34:
 }
 
 // 0x4A9DD0
-int DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown * aP2)
+VectorClass * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

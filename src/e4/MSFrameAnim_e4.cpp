@@ -20,7 +20,7 @@ void * MSFrameAnim::QueryInterface(char a2)
 
 // 0x769FE0
 namespace gamemd {
-int MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
+AbstractClass * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

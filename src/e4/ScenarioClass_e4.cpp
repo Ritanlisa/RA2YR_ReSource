@@ -19,7 +19,7 @@
 
 // 0x58BB30
 namespace gamemd {
-void * ScenarioClass::CopyStartPositions()
+ScenarioClass * * ScenarioClass::CopyStartPositions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -75,7 +75,7 @@ void * ScenarioClass::CopyStartPositions()
 
 // 0x5CC330
 namespace gamemd {
-void ScenarioClass_AnimateConstructionStage()
+CampaignClass * ScenarioClass_AnimateConstructionStage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -230,7 +230,7 @@ int ScenarioClass::MissionStubReturnZero3()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 108))(this);
+  return this->vt_slot_108();
 }
 }
 } // namespace gamemd
@@ -270,7 +270,7 @@ int ScenarioClass::AssignStartPositions(char a1)
 
 // 0x6832C0
 namespace gamemd {
-int ScenarioClass::Constructor()
+TimerStruct * ScenarioClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -657,7 +657,7 @@ void ScenarioClass_Construct()
 
 // 0x686B20
 namespace gamemd {
-void ScenarioClass_LoadMap()
+ScenarioClass * ScenarioClass_LoadMap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1784,10 +1784,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
         || (*(_BYTE *)(this + 13593) || !v47)
   int v48; // eax
         && (v48 = this->ionLevel, v48 > 0)
-        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->ionAmbient + 8))(
-             this + 13580,
-             v47 + v48,
-             0) )
+        && this->ionAmbient->vt_slot_8(v47 + v48, 0) )
       {
         int v49 = this->ionGround;
         int v50 = this->ionRed;

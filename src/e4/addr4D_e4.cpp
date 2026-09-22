@@ -11,7 +11,7 @@
 
 // 0x4D1650
 namespace gamemd {
-void DestructFoggedObjectClass(FoggedObjectClass * aP0)
+void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

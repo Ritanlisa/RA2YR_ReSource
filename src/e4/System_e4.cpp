@@ -325,7 +325,7 @@ void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, i
 
 // 0x68C9C0
 namespace gamemd {
-void System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
+AbstractClass * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

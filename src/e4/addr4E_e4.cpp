@@ -1980,7 +1980,7 @@ LABEL_10:
 
 // 0x4E9240
 namespace gamemd {
-void HouseClass__vt_02_(int a2, unsigned int * a3)
+AbstractClass * HouseClass__vt_02_(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2030,7 +2030,7 @@ void HouseClass__vt_02_(int a2, unsigned int * a3)
 
 // 0x4E9E20
 namespace gamemd {
-void ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
+AbstractClass * ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

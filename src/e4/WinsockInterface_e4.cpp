@@ -108,8 +108,8 @@ int WinsockInterface::Init()
     v5 = v3; /*0x7b1e5a*/
     v12 = v3; /*0x7b1e61*/
     *(this + 64539) = -1; /*0x7b1e65*/
-    (*(void (__thiscall **)(_DWORD *))(v4 + 20))(this); /*0x7b1e6f*/
-    (*(void (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x7b1e76*/
+    this->vt_slot_20(); /*0x7b1e6f*/
+    this->vt_slot_24(); /*0x7b1e76*/
     Debug::Log(DataGlobal_84DFB4); /*0x7b1e7e*/
     int v6 = WSAStartup(0x101u, v5); /*0x7b1e8c*/
     if ( v6 ) /*0x7b1e93*/

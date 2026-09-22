@@ -703,7 +703,7 @@ int Network::SendOffer()
 
 // 0x52F3F0
 namespace gamemd {
-int Network::Init()
+AbstractClass * Network::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -943,7 +943,7 @@ int sub_53F830(int a1, int a2)
 
 // 0x540C60
 namespace gamemd {
-int Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4)
+AbstractClass * Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -955,7 +955,7 @@ int Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP
   Debug::Log(); /*0x540c7e*/
   Debug::Log(); /*0x540c8e*/
   if ( (_BYTE)aP4 ) /*0x540c9c*/
-    (*(void (__thiscall **)(int *, _DWORD, _DWORD, _DWORD))(*this + 56))(this, this->q058, this->q05C, this->q018); /*0x540cae*/
+    this->vt_slot_56(this->q058, this->q05C, this->q018); /*0x540cae*/
   int v6 = 0; /*0x540cb4*/
   if ( this->q044 > 0 ) /*0x540cb8*/
   {
@@ -1134,7 +1134,7 @@ int Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
 
 // 0x541260
 namespace gamemd {
-int Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String2)
+AbstractClass * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1397,13 +1397,13 @@ LABEL_14:
                           (int *)&g_NetworkEventQueue,
                           *(DynamicVector **)(*(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[1084] + 4 * v10) + 111),
                           v12);
-                        (*(void (__thiscall **)(_DWORD, DynamicVector *, __int16))(*(_DWORD *)this->q048 + 64))( /*0x541abb*/
+                        *(_DWORD *)this->q048->vt_slot_64(/*0x541abb*/
                           this->q048,
                           &aP2,
                           v13);
                         int v14 = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[1084] + 4 * v10); /*0x541ac7*/
                         LOWORD(v14) = *(_WORD *)(v14 + 40); /*0x541acc*/
-                        (*(void (__thiscall **)(_DWORD, DynamicVector *, int))(*(_DWORD *)this->q048 + 64))( /*0x541ad6*/
+                        *(_DWORD *)this->q048->vt_slot_64(/*0x541ad6*/
                           this->q048,
                           &aP2,
                           v14);
@@ -1538,7 +1538,7 @@ LABEL_91:
       {
         if ( v51[0] == 2 ) /*0x541d90*/
         {
-          (*(void (__thiscall **)(_DWORD, __int16 *, unsigned int))(*(_DWORD *)this->q050 + 12))( /*0x541da0*/
+          *(_DWORD *)this->q050->vt_slot_12(/*0x541da0*/
             this->q050,
             &v50,
             v2);
@@ -1547,7 +1547,7 @@ LABEL_91:
         {
           Network::FormatAddress((unsigned __int16 *)&aP2, 0); /*0x541e46*/
           Debug::Log(); /*0x541e59*/
-          if ( !(*(int (__thiscall **)(_DWORD, __int16 *, unsigned int))(*(_DWORD *)this->q028 + 12))( /*0x541e6f*/
+          if ( !*(_DWORD *)this->q028->vt_slot_12(/*0x541e6f*/
                   this->q028,
                   &v50,
                   v2) )
@@ -1590,9 +1590,9 @@ LABEL_60:
             *v35 = *(_DWORD *)aP2[0]; /*0x542117*/
             v35[1] = *(_DWORD *)&aP2.field_1[3]; /*0x54211d*/
             v35[2] = aP2.field_8; /*0x542124*/
-            if ( (*(int (__thiscall **)(_DWORD *, int))(*this + 24))(this, v44) != -1 ) /*0x542131*/
+            if ( this->vt_slot_24(v44) != -1 ) /*0x542131*/
             {
-              _DWORD * v36 = (_DWORD *)(*(this + (*(int (__thiscall **)(_DWORD *, int))(*this + 24))(this, v30) + 10) + 76); /*0x542143*/
+              _DWORD * v36 = (_DWORD *)(*(this + this->vt_slot_24(v30) + 10) + 76); /*0x542143*/
               *v36 = *(_DWORD *)aP2[0]; /*0x542146*/
               v36[1] = *(_DWORD *)&aP2.field_1[3]; /*0x54214c*/
               v36[2] = aP2.field_8; /*0x542153*/
@@ -1689,7 +1689,7 @@ LABEL_92:
   int v38 = 0; /*0x54219a*/
   if ( v37 && *(_DWORD *)&DataGlobal_87F8E4[32068] && !(*(int (__thiscall **)(int))(*(_DWORD *)v37 + 20))(v37) ) /*0x5421aa*/
   {
-    (*(void (__thiscall **)(_DWORD))(*(_DWORD *)this->q048 + 24))(this->q048); /*0x5421b6*/
+    this->q048->vt_slot_24(); /*0x5421b6*/
     aP2.field_10 = 0; /*0x5421b9*/
   }
   if ( g_NetworkPlayerBuffer[1380] ) /*0x5421c4*/
@@ -1699,7 +1699,7 @@ LABEL_92:
     {
       if ( !(*(int (__thiscall **)(int))(*(_DWORD *)v39 + 20))(v39) ) /*0x5421cf*/
       {
-        (*(void (__thiscall **)(_DWORD))(*(_DWORD *)this->q04C + 24))(this->q04C); /*0x5421db*/
+        this->q04C->vt_slot_24(); /*0x5421db*/
         aP2.field_10 = 0; /*0x5421de*/
       }
       if ( !g_NetworkPlayerBuffer[3220] ) /*0x5421e9*/
@@ -1839,7 +1839,7 @@ int Network::validateConnection(int a2, int a3)
 
 // 0x5C46E0
 namespace gamemd {
-int Network::SetupRematch()
+AbstractClass * Network::SetupRematch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2064,7 +2064,7 @@ int Network::dispatchEvent()
 
 // 0x5D9410
 namespace gamemd {
-int Network::ResolveAndConnect(unsigned char * a2)
+IPXConnClass * Network::ResolveAndConnect(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2800,7 +2800,7 @@ LABEL_20:
 
 // 0x5EF4E0
 namespace gamemd {
-void Network_ModemConnectionDialog()
+AbstractClass * Network_ModemConnectionDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3398,7 +3398,7 @@ int Network::AddFrameEvent()
 
 // 0x6475F0
 namespace gamemd {
-void Network::QueueProcessingLoop()
+AbstractClass * Network::QueueProcessingLoop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4042,7 +4042,7 @@ int Network::syncGameState()
 
 // 0x64C380
 namespace gamemd {
-int Network::ProcessEventList(int a1, int * a2, int a3)
+AbstractClass * Network::ProcessEventList(int a1, int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4445,7 +4445,7 @@ LABEL_95:
 
 // 0x6521C0
 namespace gamemd {
-int Network::RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27)
+AbstractClass * Network::RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         __int64 a1,
@@ -4653,7 +4653,7 @@ int Network::SendMasterPlayerList()
 
 // 0x6640E0
 namespace gamemd {
-void * Network::ProcessAddressChange()
+HashTable * * Network::ProcessAddressChange()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4804,7 +4804,7 @@ unsigned int * Network::processGameEvent()
 
 // 0x792F10
 namespace gamemd {
-void Network::SyncPlayerList()
+AbstractClass * Network::SyncPlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4880,7 +4880,7 @@ void Network::SyncPlayerList()
 
 // 0x79C3A0
 namespace gamemd {
-void int sub_79C3A0()
+AbstractClass * int sub_79C3A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5048,7 +5048,7 @@ void sub_7A2730()
 
 // 0x53F540
 namespace gamemd {
-void sub_53F540()
+AbstractClass * sub_53F540()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6003,7 +6003,7 @@ char * sub_652110(int a1, int a2)
 
 // 0x664390
 namespace gamemd {
-int Network::handleDisconnect(IUnknown * aP1)
+AbstractClass * Network::handleDisconnect(IUnknown * aP1)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

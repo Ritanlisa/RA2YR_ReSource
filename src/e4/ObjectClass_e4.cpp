@@ -566,7 +566,7 @@ LABEL_6:
 // 0x4DE1D0
 namespace ra2 {
 namespace game {
-void * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2, int a4, int a5, char a6)
+void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2, int a4, int a5, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -768,7 +768,7 @@ void ObjectClass_IsHeightAboveThreshold_0()
 // 0x513F40
 namespace ra2 {
 namespace game {
-void * ObjectClass::BuildTransform(unsigned int * a1, float * a2, unsigned int * a3)
+AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -934,7 +934,7 @@ void * ObjectClass::checkLimbo()
 // 0x5F3B80
 namespace ra2 {
 namespace game {
-void ObjectClass::Dtor()
+ObjectClass * ObjectClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1028,10 +1028,10 @@ void ObjectClass::Dtor()
   }
   this->nextObject = 0; /*0x5f3d1d*/
   this->isAliveFlag = 0; /*0x5f3d26*/
-  AudioController::Stop(this + 15); /*0x5f3d2d*/
-  AudioController::Stop(this + 20); /*0x5f3d37*/
-  AudioFileClass::Release(this + 15); /*0x5f3d3e*/
-  AudioFileClass::Release(this + 20); /*0x5f3d45*/
+  ((AudioController *)((char *)this + 15)).Stop(); /*0x5f3d2d*/
+  ((AudioController *)((char *)this + 20)).Stop(); /*0x5f3d37*/
+  ((AudioFileClass *)((char *)this + 15)).Release(); /*0x5f3d3e*/
+  ((AudioFileClass *)((char *)this + 20)).Release(); /*0x5f3d45*/
   _DWORD * v8 = (_DWORD *)this->lineTrailer; /*0x5f3d4a*/
   if ( v8 ) /*0x5f3d54*/
   {
@@ -1254,7 +1254,7 @@ LABEL_39:
 // 0x5F4D30
 namespace ra2 {
 namespace game {
-int ObjectClass::Undeploy()
+AbstractClass * ObjectClass::Undeploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1276,7 +1276,7 @@ int ObjectClass::Undeploy()
       && *(_BYTE *)((*(int (__thiscall **)(#374 *))(this->parachute)(this) + 564)
       && (!*(_DWORD *)&HouseClass_Player[29932]
        || *(_DWORD *)&HouseClass_Player[29932] == 5
-       || (*(int (__stdcall **)(char *))(this->vtable1 + 16))((char *)this + 4) != -2) )
+       || this->vtable1->vt_slot_16((char *)this + 4) != -2) )
     {
       VectorClass::RemoveItem((int *)&stru_87C374[13316], (ObjectClass *)this); /*0x5f4dd3*/
     }
@@ -1314,7 +1314,7 @@ int ObjectClass::Undeploy()
 // 0x5F4EC0
 namespace ra2 {
 namespace game {
-int ObjectClass::Deploy()
+AbstractClass * ObjectClass::Deploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1395,7 +1395,7 @@ LABEL_41:
          || (*(int (__thiscall **)(#374 *))(this->fallRate)(this) == 36 && v6[4].__pad_0[1])
         && (!*(_DWORD *)&HouseClass_Player[29932]
          || *(_DWORD *)&HouseClass_Player[29932] == 5
-         || (*(int (__stdcall **)(char *))(this->vtable1 + 16))((char *)this + 4) != -2) )
+         || this->vtable1->vt_slot_16((char *)this + 4) != -2) )
       {
         ObjectClass::SetDeployState((ObjectClass *)this, 0); /*0x5f5040*/
       }
@@ -1468,7 +1468,7 @@ LABEL_41:
 // 0x5F5280
 namespace ra2 {
 namespace game {
-int ObjectClass::Destroy2()
+AbstractClass * ObjectClass::Destroy2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1488,7 +1488,7 @@ int ObjectClass::Destroy2()
   if ( aP1 ) /*0x5f52b0*/
     goto LABEL_10; /*0x5f52b0*/
   if ( this && ((unsigned char)this->abstractFlags & 1) != 0 ) /*0x5f52c0*/
-    v4 = (*(unsigned __int8 (__thiscall **)(#374 *))(*(_DWORD *)this + 808))(this) != 0; /*0x5f52d0*/
+    v4 = this->vt_slot_808() != 0; /*0x5f52d0*/
   if ( !v3 || !(unsigned __int8)House::IsHumanPlayer((#375 *)v3) && !v4 ) /*0x5f52e3*/
 LABEL_10:
     (*(void (__thiscall **)(#374 *))(this->q150)(this); /*0x5f52e9*/
@@ -1606,7 +1606,7 @@ int ObjectClass::resetObjectState(SidebarClass * aP1)
 // 0x6A5BF0
 namespace ra2 {
 namespace game {
-void ObjectClass::CleanupSidebarResources()
+ConvertClass * ObjectClass::CleanupSidebarResources()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1873,7 +1873,7 @@ unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP
 // 0x718260
 namespace ra2 {
 namespace game {
-int ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
+void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1897,13 +1897,13 @@ int ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     }
     else
     {
-      (*(void (__stdcall **)(_DWORD *))(*(_DWORD *)this->vtable4 + 244))(this + 10); /*0x718689*/
+      *(_DWORD *)this->vtable4->vt_slot_244(); /*0x718689*/
     }
     _DWORD * v32 = (_DWORD *)(this->vtable4 + 648); /*0x7186be*/
     *v30 = *v32; /*0x7186c6*/
     this->fallRate = v32[1]; /*0x7186cb*/
     this->nextObject = v32[2]; /*0x7186d1*/
-    this->nextObject = Cell::GetGroundHeight(this + 10); /*0x7186e4*/
+    this->nextObject = ((Cell *)((char *)this + 10)).GetGroundHeight(); /*0x7186e4*/
     if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, this + 10) + 80) & 0x100) == 0 /*0x7186fa*/
   int v33; // eax
       || (v33 = this->vtable4, *(_BYTE *)(v33 + 140)) )
@@ -1915,7 +1915,7 @@ int ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
       *(_BYTE *)(v33 + 140) = 1; /*0x718704*/
       this->nextObject += DataGlobal_B0EC2C; /*0x718711*/
     }
-    (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->vtable4 + 240))(this->vtable4, this + 10); /*0x718726*/
+    *(_DWORD *)this->vtable4->vt_slot_240(this->vtable4, this + 10); /*0x718726*/
   }
   else
   {
@@ -1931,7 +1931,7 @@ int ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     {
       if ( !(*(unsigned __int8 (__thiscall **)(int *))(*v6 + 352))(v6) /*0x718305*/
         && (*(int (__thiscall **)(int *))(*v6 + 44))(v6) == 15
-        && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->vtable4 + 44))(this->vtable4) == 15 )
+        && this->vtable4->vt_slot_44() == 15 )
       {
         _DWORD * v8 = (_DWORD *)(*(int (__thiscall **)(int *, int *))(*v6 + 72))(v6, &v44); /*0x718310*/
         if ( a2 == *v8 && a3 == v8[1] && a4 == v8[2] ) /*0x718339*/
@@ -1954,7 +1954,7 @@ int ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
       {
         if ( (*(unsigned __int8 (__thiscall **)(int *))(*v6 + 352))(v6) ) /*0x7183d4*/
         {
-          v40 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->vtable4 + 132))(this->vtable4) + 160); /*0x7183f5*/
+          v40 = *(_DWORD *)(this->vtable4->vt_slot_132() + 160); /*0x7183f5*/
           (*(void (__thiscall **)(_DWORD, int *, _DWORD, _DWORD, _DWORD, int, _DWORD, _DWORD))(*(_DWORD *)this->vtable4 /*0x71840f*/
                                                                                              + 364))(
             this->vtable4,
@@ -1992,7 +1992,7 @@ int ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     {
       LOBYTE(a5) = 1; /*0x71846e*/
     }
-    _DWORD * v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->vtable4 + 72))(this->vtable4, &v44); /*0x71847d*/
+    _DWORD * v13 = (_DWORD *)*(_DWORD *)this->vtable4->vt_slot_72(this->vtable4, &v44); /*0x71847d*/
     LOWORD(v38) = *v13 / 256; /*0x718490*/
     HIWORD(v38) = v13[1] / 256; /*0x7184a8*/
     v40 = v38; /*0x7184b1*/
@@ -2001,7 +2001,7 @@ int ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     if ( v7 != -1 && !*(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array + v7) + 681) && !ObjectClass::processPointerInvalid /*0x7184f4*/
       || (_BYTE)a5 )
     {
-      int v14 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->vtable4 + 132))(this->vtable4) + 1460); /*0x718505*/
+      int v14 = *(_DWORD *)(this->vtable4->vt_slot_132() + 1460); /*0x718505*/
       switch ( v14 ) /*0x71850e*/
       {
         case 9: /*0x71850e*/

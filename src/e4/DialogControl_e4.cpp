@@ -22,7 +22,7 @@ int DialogControl::Show()
 {
   *(this + 30) = 1; /*0x4e1462*/
   this->q01C = 1; /*0x4e1465*/
-  return (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 84))(this);
+  return this->vt_slot_84();
 }
 }
 

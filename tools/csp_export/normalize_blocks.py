@@ -27,7 +27,8 @@ _sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
 from _blockspan import block_span, find_marker
 from _vtable import (slot_name, load_name_ret, VT_OPEN, balance_paren,
                      split_args, rewrite_vt_text, merge_load_call,
-                     rewrite_static_sub, rewrite_partial)
+                     rewrite_static_sub, rewrite_partial, rewrite_cast_call,
+                     save_fillers)
 
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'src'
@@ -202,6 +203,17 @@ def build_types(body, cls, addr):
                 env[v] = env[vm.group(1)]
                 grew = True
                 continue
+            # sub-object pointer: `vN = this + OFF` -> member type at OFF
+            sm = re.match(r'^(?:\(\s*(?:int|_DWORD|[A-Za-z_]\w*)\s*\*\s*\)\s*)?this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)$', rhs)
+            if sm and cls:
+                off = int(sm.group(1), 0)
+                info = (mtab.get(cls) or {}).get('members', {}).get(str(off))
+                if info:
+                    t = (info.get('type') or '').strip().rstrip('*').strip()
+                    if is_cls(t):
+                        env[v] = t
+                        grew = True
+                        continue
             # vtable value: `vN = *this` / `vN = *recv` (vtable holder)
             vtm = re.match(r'^\*(this|[a-z]\w*)$', rhs)
             if vtm and (vtm.group(1) == 'this' or vtm.group(1) in env):
@@ -265,12 +277,15 @@ def normalize(body, cls, addr):
     # ---- virtual calls + load/call merge (segment-level, multi-line safe)
     body, vt_n = rewrite_partial(body)
     stats['vt_partial'] += vt_n
+    body, cc_n = rewrite_cast_call(body)
+    stats['cast_calls'] += cc_n
     body, vt_n = rewrite_vt_text(body, cls, env, vt_of, mtab)
     stats['vt_calls'] += vt_n
     body, ss_n = rewrite_static_sub(body, cls, mtab)
     stats['static_sub'] += ss_n
     body, mc_n = merge_load_call(body, cls, env)
     stats['vt_merged'] += mc_n
+    save_fillers()
 
     # local retype: plain decls and merged declarations
     def ret_swap(type_and_name):
@@ -462,6 +477,7 @@ print('vt calls rewritten:', tot.get('vt_calls', 0))
 print('load+call merged:', tot.get('vt_merged', 0))
 print('static-sub calls:', tot.get('static_sub', 0))
 print('partial repairs:', tot.get('vt_partial', 0))
+print('cast-calls removed:', tot.get('cast_calls', 0))
 print('typed vars:', tot['typed_vars'])
 print('offset rewrites (param/local receivers):', tot['offsets'])
 print('locals retyped:', tot['retyped'])

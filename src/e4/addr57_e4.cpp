@@ -55,7 +55,7 @@ LABEL_20:
 
 // 0x575EE0
 namespace gamemd {
-void sub_575EE0(void * a1, int a2)
+Coord * sub_575EE0(void * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -200,7 +200,7 @@ void sub_575EE0(void * a1, int a2)
 
 // 0x578E60
 namespace gamemd {
-void CreateMapObject(ProgressScreenClass * aP0, int aP1)
+void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -291,7 +291,7 @@ void CreateMapObject(ProgressScreenClass * aP0, int aP1)
 
 // 0x57A430
 namespace gamemd {
-void RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUnknown * aP2, int aP1a, int a5)
+MapClass * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUnknown * aP2, int aP1a, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -487,7 +487,7 @@ void RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUnknown 
 
 // 0x57ACF0
 namespace gamemd {
-void GenerateMapClassCliffTransitions()
+MapClass * GenerateMapClassCliffTransitions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
@@ -752,7 +752,7 @@ LABEL_71:
 
 // 0x57B440
 namespace gamemd {
-void GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
+MapClass * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         MouseClass *aP0,
@@ -1179,7 +1179,7 @@ void sub_57DC20(int a1)
 
 // 0x57DD50
 namespace gamemd {
-void CreateCliffRampMap(IUnknown * aP0)
+AbstractClass * CreateCliffRampMap(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1458,7 +1458,7 @@ void CreateCliffRampMap(IUnknown * aP0)
 
 // 0x57E2A0
 namespace gamemd {
-void CreateCliffStraightMap(IUnknown * aP0)
+void* CreateCliffStraightMap(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1737,7 +1737,7 @@ void CreateCliffStraightMap(IUnknown * aP0)
 
 // 0x57E7A0
 namespace gamemd {
-void CreateCliffBridgeMap(IUnknown * aP0)
+AbstractClass * CreateCliffBridgeMap(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2016,7 +2016,7 @@ void CreateCliffBridgeMap(IUnknown * aP0)
 
 // 0x57ED00
 namespace gamemd {
-void CreateCliffStraightBridgeMap(IUnknown * aP0)
+void* CreateCliffStraightBridgeMap(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

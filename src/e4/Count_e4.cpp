@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x408E70
-int Count::DecrementRefCountsAudio()
+AbstractClass * Count::DecrementRefCountsAudio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

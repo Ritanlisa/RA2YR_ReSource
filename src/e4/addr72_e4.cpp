@@ -136,7 +136,7 @@ int CompareFunc2Int(unsigned int * a1, unsigned int * a2)
 
 // 0x725C70
 namespace gamemd {
-void sub_725C70()
+AbstractClass * sub_725C70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -216,7 +216,7 @@ void sub_728200()
     else
     {
       if ( v2 ) /*0x72823e*/
-        (*(void (__thiscall **)(__int16 *, int))(*(_DWORD *)v2 + 32))(v2, 1); /*0x728246*/
+        v2->vt_slot_32(1); /*0x728246*/
       --v0; /*0x728249*/
       v3[139] = -1; /*0x72824a*/
       --v1; /*0x728253*/
@@ -515,7 +515,7 @@ void DrawScoreScreenStats(ConvertClass * aP0, int a2)
 
 // 0x72E450
 namespace gamemd {
-void RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
+AbstractClass * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -865,7 +865,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
 
 // 0x72F540
 namespace gamemd {
-void RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
+AbstractClass * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

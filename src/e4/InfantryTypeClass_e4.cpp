@@ -9,7 +9,7 @@
 #include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x5236A0
-int InfantryTypeClass::Constructor(ObjectClass * aP1)
+InfantryTypeClass * InfantryTypeClass::Constructor(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -67,7 +67,7 @@ int InfantryTypeClass::Constructor(ObjectClass * aP1)
   this->vtable1 = &InfantryTypeClass::`vftable'; /*0x5237ee*/
   this->vtable2 = &InfantryTypeClass::`vftable'; /*0x5237f4*/
   this->vtable3 = &vt_InfantryTypeClass; /*0x5237fb*/
-  AbstractClass::GenerateUniqueID(this + 4); /*0x523802*/
+  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x523802*/
   v3 = *(InfantryTypeClass **)&g_NetworkPlayerBuffer[3356]; /*0x523807*/
   if ( *(int *)&g_NetworkPlayerBuffer[3356] < *(int *)&g_NetworkPlayerBuffer[3348] /*0x523845*/
     || (g_NetworkPlayerBuffer[3353] || !*(_DWORD *)&g_NetworkPlayerBuffer[3348])
@@ -529,7 +529,7 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2)
 
 // 0x524960
 namespace gamemd {
-void InfantryTypeClass_LoadTypeData()
+ObjectTypeClass * InfantryTypeClass_LoadTypeData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -611,7 +611,7 @@ void InfantryTypeClass_LoadTypeData()
 
 // 0x524B60
 namespace gamemd {
-void InfantryTypeClass_SaveLoad_Prefix()
+TechnoTypeClass * InfantryTypeClass_SaveLoad_Prefix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -742,7 +742,7 @@ LABEL_8:
 }
 
 // 0x772FA0
-void * InfantryTypeClass::Find()
+WeaponTypeClass * * InfantryTypeClass::Find()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

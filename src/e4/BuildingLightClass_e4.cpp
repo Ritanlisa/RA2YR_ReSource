@@ -134,7 +134,6 @@ signed int BuildingLightClass::UpdateOscillation()
   int GroundHeight; // edi
   signed int result; // eax
   RulesClass *v22; // ecx
-
   int v24 = (*(int (__thiscall **)(_DWORD))(*this->vtable4 + 456))(this->vtable3); /*0x513d3a*/
   int v26 = v24; /*0x513d3e*/
   int v2 = this->vtable3; /*0x513d42*/
@@ -185,7 +184,7 @@ signed int BuildingLightClass::UpdateOscillation()
   v22 = g_RulesClass_Instance; /*0x513e8f*/
   if ( v26 < SHIDWORD(g_RulesClass_Instance->ShakeScreen) ) /*0x513e9b*/
   {
-    if ( StreamClass::GetDirty(this + 4) ) /*0x513ea1*/
+    if ( ((StreamClass *)((char *)this + 4)).GetDirty() ) /*0x513ea1*/
       this->q060 = ((double)SHIDWORD(g_RulesClass_Instance->ShakeScreen) /*0x513ec8*/
                               + (double)SHIDWORD(g_RulesClass_Instance->ShakeScreen)
                               - (double)v26)

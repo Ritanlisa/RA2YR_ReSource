@@ -93,7 +93,7 @@ unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
 
 // 0x6E8220
 namespace gamemd {
-void * TaskForceClass::LoadFromINI(char * a1, int a2)
+AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

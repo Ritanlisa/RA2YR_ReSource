@@ -828,7 +828,7 @@ LABEL_7:
 
 // 0x6591B0
 namespace gamemd {
-void UpdateProjectileTrails()
+AbstractClass * UpdateProjectileTrails()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1059,7 +1059,7 @@ int RAMFileClass::nullsub_0_2(int a2)
 
 // 0x65C3A0
 namespace gamemd {
-int RAMFileClass::nullsub_0_3(void * a1, signed int Size)
+AbstractClass * RAMFileClass::nullsub_0_3(void * a1, signed int Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1095,7 +1095,7 @@ LABEL_7:
 
 // 0x65C420
 namespace gamemd {
-int RAMFileClass::nullsub_0_4(int a2, int a3)
+AbstractClass * RAMFileClass::nullsub_0_4(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1618,7 +1618,6 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
   ScriptTypeClass *v50; // [esp+30h] [ebp-64h]
   int v51; // [esp+34h] [ebp-60h] BYREF
   int v52; // [esp+38h] [ebp-5Ch]
-
   v4 = aP0; /*0x65e016*/
   v5 = aP1; /*0x65e019*/
   char v6 = aP0->scriptActions[32]; /*0x65e01b*/
@@ -2121,7 +2120,7 @@ void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a
 
 // 0x65EC30
 namespace gamemd {
-void ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
+void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

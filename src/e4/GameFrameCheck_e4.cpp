@@ -72,7 +72,7 @@ int sub_6863E0()
 
 // 0x686570
 namespace gamemd {
-void sub_686570()
+AbstractClass * sub_686570()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -36,13 +36,8 @@ unsigned int * WWMouseClass::initSurface()
         v9[1] = v7 + v5; /*0x7b9097*/
         v8[2] = v6; /*0x7b909b*/
         v8[3] = v4; /*0x7b909f*/
-        return (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)v2 + 8))( /*0x7b90ab*/
-                           v2,
-                           v9,
-                           v3,
-                           v8,
-                           0,
-                           1);
+        return (_DWORD *)v2->vt_slot_8(/*0x7b90ab*/
+                           v2, v9, v3, v8, 0, 1);
       }
     }
   }
@@ -86,13 +81,8 @@ int WWMouseClass::hideCursor()
             v10[1] = v7; /*0x7b99fd*/
             v9[2] = v5; /*0x7b9a01*/
             v9[3] = v6; /*0x7b9a05*/
-            (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)v2 + 8))( /*0x7b9a11*/
-              v2,
-              v10,
-              v3,
-              v9,
-              0,
-              1);
+            v2->vt_slot_8(/*0x7b9a11*/
+              v2, v10, v3, v9, 0, 1);
           }
         }
       }
@@ -110,7 +100,7 @@ int WWMouseClass::hideCursor()
 }
 
 // 0x7B9A60
-void WWMouseClass::captureMouse()
+void* WWMouseClass::captureMouse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -1708,7 +1708,7 @@ int result;
 }
 
 // 0x66D150
-int RulesClass::readAudioVisual()
+void* RulesClass::readAudioVisual()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1754,7 +1754,7 @@ int RulesClass::readAudioVisual()
 }
 
 // 0x673E80
-int RulesClass::ReadPowerupsSection()
+INIClass * RulesClass::ReadPowerupsSection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1839,7 +1839,7 @@ int RulesClass::ReadPowerupsSection()
 }
 
 // 0x6743D0
-int RulesClass::readDifficulty()
+INIClass * RulesClass::readDifficulty()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1911,7 +1911,7 @@ int RulesClass::readDifficulty()
 }
 
 // 0x674550
-int RulesClass::ReadMovies()
+INIClass * RulesClass::ReadMovies()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2048,7 +2048,7 @@ void * RulesClass::readAircraftTypes(int * a2)
 
   if ( this != a2 ) /*0x67a19a*/
   {
-    (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a19e*/
+    this->vt_slot_12(); /*0x67a19e*/
     int v3 = a2[2]; /*0x67a1a1*/
     this->DetailBufferZoneWidth = v3; /*0x67a1a6*/
     if ( v3 ) /*0x67a1a9*/
@@ -2092,7 +2092,7 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
 
   if ( this != a2 ) /*0x67a21a*/
   {
-    (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a21e*/
+    this->vt_slot_12(); /*0x67a21e*/
     int v3 = a2[2]; /*0x67a221*/
     this->DetailBufferZoneWidth = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
@@ -2136,7 +2136,7 @@ void * RulesClass::readBuildingTypes(int * a2)
 
   if ( this != a2 ) /*0x67a31a*/
   {
-    (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a31e*/
+    this->vt_slot_12(); /*0x67a31e*/
     int v3 = a2[2]; /*0x67a321*/
     this->DetailBufferZoneWidth = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
@@ -2200,7 +2200,7 @@ int RulesClass::readAI(unsigned int * a2)
     if ( !this->SelfHealInfantryAmount && v3 ) /*0x67b496*/
       return 0; /*0x67b496*/
     int v4 = this->SmallVisceroid; /*0x67b498*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x67b4a8*/
+    if ( v4 <= 0 || !this->vt_slot_8(v3 + v4, 0) ) /*0x67b4a8*/
       return 0; /*0x67b4af*/
   }
   int v6 = this->LargeVisceroid; /*0x67b4b5*/

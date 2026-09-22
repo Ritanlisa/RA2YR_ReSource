@@ -7,7 +7,7 @@
 
 // 0x610570
 namespace gamemd {
-void DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
+AbstractClass * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -212,7 +212,7 @@ void sub_610B50()
 
 // 0x610BF0
 namespace gamemd {
-void sub_610BF0()
+AbstractClass * sub_610BF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -321,7 +321,7 @@ void sub_612930()
 
 // 0x612A60
 namespace gamemd {
-void sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
+AbstractClass * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -385,7 +385,7 @@ LABEL_10:
 
 // 0x61D6D0
 namespace gamemd {
-void NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+AbstractClass * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -495,7 +495,7 @@ void NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 
 // 0x61ECA0
 namespace gamemd {
-void RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
+AbstractClass * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

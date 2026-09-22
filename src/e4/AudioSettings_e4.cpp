@@ -29,7 +29,7 @@ void AudioSettings::SetFlag68(char a2)
 }
 
 // 0x6B6300
-int AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
+AbstractClass * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

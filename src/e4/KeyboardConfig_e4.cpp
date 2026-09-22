@@ -87,7 +87,7 @@ LABEL_14:
 }
 
 // 0x538B80
-int KeyboardConfig::ReleaseBuffer(int a2)
+AbstractClass * KeyboardConfig::ReleaseBuffer(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

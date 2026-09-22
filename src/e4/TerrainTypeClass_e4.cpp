@@ -292,7 +292,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
 }
 
 // 0x71E2A0
-void * TerrainTypeClass::FindOrCreate()
+TerrainTypeClass * * TerrainTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

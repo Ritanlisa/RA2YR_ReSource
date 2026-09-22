@@ -513,7 +513,7 @@ int SidebarClass::SwitchTab(int a2)
 }
 
 // 0x6ABD30
-int SidebarClass::LoadResources()
+GadgetClass * SidebarClass::LoadResources()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

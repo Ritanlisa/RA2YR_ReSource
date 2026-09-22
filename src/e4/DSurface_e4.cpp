@@ -9,7 +9,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x480180
-void DSurface::Process(IUnknown * aP1, int * a2)
+AbstractClass * DSurface::Process(IUnknown * aP1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -36,7 +36,7 @@ void DSurface::Process(IUnknown * aP1, int * a2)
 }
 
 // 0x4BA5A0
-void * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5)
+AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -388,7 +388,7 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
     this->q020 = v3; /*0x4bac9f*/
     memset(v3, 0, 0x6Cu); /*0x4baca2*/
     *(_DWORD *)this->q020 = 108; /*0x4bacaa*/
-    if ( !(*(int (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->q01C + 88))(this->q01C, this->q020) ) /*0x4bacba*/
+    if ( !*(_DWORD *)this->q01C->vt_slot_88(this->q01C, this->q020) ) /*0x4bacba*/
     {
       _DWORD * v4 = (_DWORD *)this->q020; /*0x4bacc2*/
       this->q010 = (unsigned int)(v4[21] + 7) >> 3; /*0x4bacce*/
@@ -421,8 +421,8 @@ int DSurface::RestoreIfLost()
   int v3 = this->q01C; /*0x4bb01b*/
   if ( v3 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v3 + 96))(this->q01C) == -2005532222 ) /*0x4bb02d*/
   {
-    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 108))(this->q01C) /*0x4bb042*/
-      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 96))(this->q01C) )
+    if ( this->q01C->vt_slot_108() /*0x4bb042*/
+      || this->q01C->vt_slot_96() )
     {
       return 0; /*0x4bb01a*/
     }
@@ -442,7 +442,7 @@ int DSurface::RestoreIfLost()
 }
 
 // 0x4BB0D0
-int DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * aP5, int a7, char a8)
+DSurface * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * aP5, int a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -485,7 +485,7 @@ int DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * a
   int v11; // ebx
     || (v11 = (*(int (__thiscall **)(_DWORD *))(*a3 + 112))(a3),
   bool v12; // zf
-        v12 = (*(int (__thiscall **)(int *))(*this + 112))(this) == v11,
+        v12 = this->vt_slot_112() == v11,
         v10 = (void **)a3,
         !v12) )
   {
@@ -509,8 +509,8 @@ int DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * a
   int v14 = this->q01C; /*0x4bb215*/
   if ( v14 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v14 + 96))(this->q01C) == -2005532222 ) /*0x4bb227*/
   {
-    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 108))(this->q01C) /*0x4bb240*/
-      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 96))(this->q01C) )
+    if ( this->q01C->vt_slot_108() /*0x4bb240*/
+      || this->q01C->vt_slot_96() )
     {
       return 0; /*0x4bb245*/
     }
@@ -671,7 +671,7 @@ LABEL_71:
 }
 
 // 0x4BB620
-int DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
+void* DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -682,7 +682,7 @@ int DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   {
     if ( !g_DDraw_UseHWBlit /*0x4bb675*/
       || this->IsLocked()
-      || (*(int (__stdcall **)(_DWORD, int))(*(_DWORD *)this->q01C + 52))(this->q01C, 1) )
+      || *(_DWORD *)this->q01C->vt_slot_52(this->q01C, 1) )
     {
       return XSurface::FillRectEx(this, aP1, a2, aP3); /*0x4bb81d*/
     }
@@ -691,8 +691,8 @@ int DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
       int v5 = this->q01C; /*0x4bb696*/
       if ( !v5 || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v5 + 96))(this->q01C) != -2005532222 ) /*0x4bb6a8*/
         goto LABEL_15; /*0x4bb6a8*/
-      if ( !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 108))(this->q01C) /*0x4bb6c1*/
-        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 96))(this->q01C) )
+      if ( !this->q01C->vt_slot_108() /*0x4bb6c1*/
+        && !this->q01C->vt_slot_96() )
       {
         int v6 = this->q00C; /*0x4bb6cc*/
         if ( v6 > 0 ) /*0x4bb6d1*/
@@ -894,7 +894,7 @@ void DSurface::BlitStretch(int a1, int a2, int a3)
 }
 
 // 0x4BBCA0
-int DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9)
+Coord * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1262,7 +1262,7 @@ LABEL_69:
 }
 
 // 0x4BC750
-int DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12)
+Coord * DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         void *this,
@@ -1430,7 +1430,7 @@ int DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char *
   int v45 = v216 - v206; /*0x4bcb5f*/
   int v168 = v215 - v205; /*0x4bcb65*/
   int v46 = v173 - v151; /*0x4bcb69*/
-  int v47 = (*(int (__thiscall **)(void *))(*(_DWORD *)v211 + 116))(v211); /*0x4bcb6b*/
+  int v47 = v211->vt_slot_116(); /*0x4bcb6b*/
   int v48 = v47; /*0x4bcb6e*/
   v213 = v47; /*0x4bcb72*/
   if ( v45 < 0 ) /*0x4bcb79*/
@@ -2064,7 +2064,7 @@ int DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char *
 }
 
 // 0x4BDF00
-int DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8)
+void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         void *this,
@@ -2198,7 +2198,7 @@ int DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, 
   v71 = v88 - v87; /*0x4be305*/
   int v38 = HIDWORD(v88) - HIDWORD(v87); /*0x4be310*/
   int v39 = v98 - v97; /*0x4be31a*/
-  int v40 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4be31c*/
+  int v40 = this->vt_slot_116(); /*0x4be31c*/
   v65 = v40; /*0x4be321*/
   if ( v38 < 0 ) /*0x4be325*/
   {
@@ -2437,7 +2437,7 @@ int DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, 
 }
 
 // 0x4BF750
-int DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int a5, int arg10, float * a6, float * a7)
+void* DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int a5, int arg10, float * a6, float * a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2480,7 +2480,7 @@ int DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int a
       v61 = v63; /*0x4bf7f6*/
       v63 = v14; /*0x4bf7fa*/
     }
-    if ( (*(int (__thiscall **)(void *))(*(_DWORD *)v8 + 112))(v8) == 2 ) /*0x4bf809*/
+    if ( v8->vt_slot_112() == 2 ) /*0x4bf809*/
     {
       v15 = (IUnknown *)v8->Lock(v60, v61); /*0x4bf821*/
       aP1a = v15; /*0x4bf825*/
@@ -2530,9 +2530,9 @@ LABEL_17:
         if ( v60 == a1 ) /*0x4bf960*/
         {
           if ( (int)v61 <= (int)v63 ) /*0x4bf968*/
-            int v24 = (*(int (__thiscall **)(void *))(*(_DWORD *)v8 + 116))(v8); /*0x4bf97b*/
+            int v24 = v8->vt_slot_116(); /*0x4bf97b*/
           else
-            v24 = -(*(int (__thiscall **)(void *))(*(_DWORD *)v8 + 116))(v8); /*0x4bf972*/
+            v24 = -v8->vt_slot_116(); /*0x4bf972*/
           a2a = (_DWORD *)v24; /*0x4bf982*/
           int v25 = abs32(v63 - v61); /*0x4bf98f*/
           if ( v25 < 0 ) /*0x4bf991*/
@@ -2574,7 +2574,7 @@ LABEL_31:
         int v34 = v63 - v61; /*0x4bfaa1*/
         int v35 = a1 - v60; /*0x4bfaa6*/
         int v58 = a1 - v60; /*0x4bfaaa*/
-        int v36 = (*(int (__thiscall **)(void *))(*(_DWORD *)v8 + 116))(v8); /*0x4bfaae*/
+        int v36 = v8->vt_slot_116(); /*0x4bfaae*/
         a2b = v36; /*0x4bfab3*/
         if ( v34 < 0 ) /*0x4bfab7*/
           a2b = -v36; /*0x4bfabb*/
@@ -3188,9 +3188,9 @@ int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6
       if ( v7 == (MouseClass *)v9 )
       {
         if ( v8 <= v10 ) /*0x4c08cb*/
-          int v24 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c08dd*/
+          int v24 = this->vt_slot_116(); /*0x4c08dd*/
         else
-          v24 = -(*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c08d4*/
+          v24 = -this->vt_slot_116(); /*0x4c08d4*/
         int v25 = abs32(v10 - v8); /*0x4c08e6*/
         if ( v25 >= 0 )
         {
@@ -3230,7 +3230,7 @@ int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6
       }
       int v31 = v9 - (_DWORD)v7; /*0x4c096f*/
       int v32 = v10 - v8; /*0x4c0971*/
-      int v33 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0975*/
+      int v33 = this->vt_slot_116(); /*0x4c0975*/
       int v79 = v33; /*0x4c097a*/
       if ( v32 < 0 ) /*0x4c097e*/
         v79 = -v33; /*0x4c0982*/
@@ -3375,9 +3375,9 @@ LABEL_154:
       if ( v7 == (MouseClass *)v9 )
       {
         if ( v8 <= v10 ) /*0x4c0bbe*/
-          int v54 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0bd0*/
+          int v54 = this->vt_slot_116(); /*0x4c0bd0*/
         else
-          v54 = -(*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0bc7*/
+          v54 = -this->vt_slot_116(); /*0x4c0bc7*/
         int v55 = abs32(v10 - v8); /*0x4c0bd9*/
         if ( v55 >= 0 )
         {
@@ -3417,7 +3417,7 @@ LABEL_154:
       }
       int v61 = v9 - (_DWORD)v7; /*0x4c0c62*/
       int v62 = v10 - v8; /*0x4c0c64*/
-      int v63 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0c68*/
+      int v63 = this->vt_slot_116(); /*0x4c0c68*/
       int v80 = v63; /*0x4c0c6d*/
       if ( v62 < 0 ) /*0x4c0c71*/
         v80 = -v63; /*0x4c0c75*/
@@ -3526,7 +3526,7 @@ LABEL_155:
 }
 
 // 0x4C0E30
-int DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, DSurface * aP4)
+MouseClass * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, DSurface * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3640,9 +3640,9 @@ int DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, D
     else if ( v63 == aP1 ) /*0x4c0fcf*/
     {
       if ( v64 <= v66 ) /*0x4c0fd7*/
-        int v17 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0fef*/
+        int v17 = this->vt_slot_116(); /*0x4c0fef*/
       else
-        v17 = -(*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0fe3*/
+        v17 = -this->vt_slot_116(); /*0x4c0fe3*/
       int v18 = abs32(v66 - v64); /*0x4c0ffe*/
       if ( v18 >= 0 ) /*0x4c1000*/
       {
@@ -3676,7 +3676,7 @@ int DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, D
     {
       int v22 = (char *)aP1 - (char *)v63; /*0x4c1063*/
       int v23 = v66 - v64; /*0x4c1067*/
-      int v24 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c1069*/
+      int v24 = this->vt_slot_116(); /*0x4c1069*/
       aP4a = v24; /*0x4c106e*/
       if ( v23 < 0 ) /*0x4c1072*/
         aP4a = -v24; /*0x4c1076*/
@@ -3798,9 +3798,9 @@ int DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, D
   else if ( v63 == aP1 ) /*0x4c123e*/
   {
     if ( v64 <= v66 ) /*0x4c1246*/
-      int v38 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c125e*/
+      int v38 = this->vt_slot_116(); /*0x4c125e*/
     else
-      v38 = -(*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c1252*/
+      v38 = -this->vt_slot_116(); /*0x4c1252*/
     int v39 = abs32(v66 - v64); /*0x4c126d*/
     if ( v39 >= 0 ) /*0x4c126f*/
     {
@@ -3834,7 +3834,7 @@ int DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, D
   {
     int v43 = (char *)aP1 - (char *)v63; /*0x4c12cf*/
     int v44 = v66 - v64; /*0x4c12d5*/
-    int v45 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c12d9*/
+    int v45 = this->vt_slot_116(); /*0x4c12d9*/
     int v46 = v45; /*0x4c12dc*/
     int v59 = v45; /*0x4c12e0*/
     if ( v44 < 0 ) /*0x4c12e4*/
@@ -3964,7 +3964,7 @@ void * DSurface::loc_4C1AC0(char a2)
 }
 
 // 0x5D1E70
-int DSurface::RenderToSurface(ObjectClass * aP1)
+ObjectClass * DSurface::RenderToSurface(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3974,7 +3974,6 @@ int DSurface::RenderToSurface(ObjectClass * aP1)
   int j; // ebp
   void (__thiscall ***v17)(_DWORD, int); // ecx
   int v21; // [esp+3Ch] [ebp-20h] BYREF
-
   if ( g_CellDirectionOffsets[2576] == 1 ) /*0x5d1e83*/
   {
     g_CellDirectionOffsets[2576] = 0; /*0x5d1e89*/

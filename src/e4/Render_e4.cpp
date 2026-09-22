@@ -141,7 +141,7 @@ void sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, 
 
 // 0x652230
 namespace gamemd {
-void Render_Show(CCINIClass * aP0, int a2)
+AbstractClass * Render_Show(CCINIClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -203,7 +203,7 @@ void Render_Show(CCINIClass * aP0, int a2)
 } // namespace gamemd
 
 // 0x705270
-int Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
+AbstractClass * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1196,7 +1196,7 @@ int sub_778120()
 
 // 0x6CA310
 namespace gamemd {
-void Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
+WinModemClass * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1352,7 +1352,7 @@ void sub_53D850()
 
 // 0x5541C0
 namespace gamemd {
-void Render_Render_5541C0(unsigned short * a0, int a2, AbstractClass * aP2, int a4, AbstractClass * aP4, char a6, char a7)
+CampaignScore * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClass * aP2, int a4, AbstractClass * aP4, char a6, char a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1421,7 +1421,7 @@ void Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, un
 
 // 0x63B0A0
 namespace gamemd {
-void sub_63B0A0()
+AbstractClass * sub_63B0A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

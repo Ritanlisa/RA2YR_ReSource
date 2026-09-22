@@ -8,7 +8,7 @@
 
 // 0x6ACEE0
 namespace gamemd {
-void DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog * hWnd, int nIDDlgItem, int a3, int a4)
+AbstractClass * DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog * hWnd, int nIDDlgItem, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

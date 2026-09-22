@@ -308,7 +308,7 @@ int CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bo
     v10 = *((_BYTE *)this + 46)
         ? (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance)
         : (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
-    if ( (*(int (__thiscall **)(int *, int))(*this + 160))(this, v10 - this->q038) < this->attached3 )
+    if ( this->vt_slot_160(v10 - this->q038) < this->attached3 )
     {
   int v12; // eax
       do
@@ -321,7 +321,7 @@ int CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bo
             ? (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance)
             : (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
       }
-      while ( (*(int (__thiscall **)(int *, int))(*this + 160))(this, v12 - this->q038) < this->attached3 );
+      while ( this->vt_slot_160(v12 - this->q038) < this->attached3 );
     }
   }
   if ( *((_BYTE *)this + 46) )
@@ -329,7 +329,7 @@ int CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bo
   else
     v13 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
   int v14 = *this;
-  int v15 = (*(int (__thiscall **)(int *, int))(*this + 160))(this, v13 - this->q038);
+  int v15 = this->vt_slot_160(v13 - this->q038);
   if ( this->MissionStub11(v15) )
     return CellClass::Draw((int)this, v6, a3, 0);
   CellClass::Draw((int)this, 0, a3, 0);

@@ -5,7 +5,7 @@
 
 // 0x5D55A0
 namespace gamemd {
-int MSFont_18::SetCapacity8(int a2, unsigned int * a3)
+AbstractClass * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

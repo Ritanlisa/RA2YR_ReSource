@@ -18,6 +18,29 @@ try:
 except Exception:
     cdb = {}
 
+try:
+    VTOFF = json.loads((ROOT / 'tools/vtable_offsets.json').read_text(encoding='utf-8'))
+except Exception:
+    VTOFF = {}
+
+# slot fillers discovered from tree evidence: cls -> {byte: 'vt_slot_N'}
+FILLERS_PATH = ROOT / 'anchors/vtable_slot_fillers.json'
+try:
+    FILLERS = json.loads(FILLERS_PATH.read_text(encoding='utf-8'))
+except Exception:
+    FILLERS = {}
+_fillers_dirty = False
+
+
+def save_fillers():
+    global _fillers_dirty
+    if _fillers_dirty:
+        FILLERS_PATH.write_text(
+            json.dumps(FILLERS, ensure_ascii=False, indent=1),
+            encoding='utf-8')
+        _fillers_dirty = False
+
+
 _slot_cache = {}
 
 
@@ -71,6 +94,18 @@ def slot_name(cls, slot_bytes):
                     name = _class_slots(cand).get(slot_bytes)
                     if name:
                         return name
+    if name is None and cls:
+        # tree-evidence slot filler: the dispatch itself proves the slot
+        # exists at this byte offset for this class (G29.13). The generated
+        # name is declared on the canon class by gen_cpp_canon and resolved
+        # by the verifier through vtable_offsets.
+        name = 'vt_slot_%d' % slot_bytes
+        entry = FILLERS.setdefault(cls, {})
+        if entry.get(str(slot_bytes)) != name:
+            entry[str(slot_bytes)] = name
+            _fillers_dirty = True
+        VTOFF.setdefault(cls, {})
+        VTOFF[cls].setdefault(name, slot_bytes)
     return name
 
 
@@ -345,9 +380,11 @@ def merge_load_call(text, cls, env=None):
 
 
 # static-form sub-object call: FacingClass::Update((char *)this + 904, v21)
+# tolerant of the parenthesized forms IDA emits:
+#   (char *)this + 928   |   (char *)(this + 928)
 STATIC_SUB = re.compile(
-    r'([A-Za-z_]\w*)::([A-Za-z_]\w*)\(\s*(?:\(\s*char\s*\*\s*\))?'
-    r'this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*')
+    r'\b([A-Za-z_]\w*)::([A-Za-z_]\w*)\(\s*(?:\(\s*char\s*\*\s*\)\s*)?'
+    r'(?:\(\s*)?this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)(?:\s*\))?\s*')
 
 
 def rewrite_static_sub(text, cls, mtab):
@@ -363,10 +400,11 @@ def rewrite_static_sub(text, cls, mtab):
             break
         c1, meth, off = m.group(1), m.group(2), int(m.group(3), 0)
         info = (mtab.get(cls) or {}).get('members', {}).get(str(off))
-        if not info or (info.get('type') or '').strip() != c1:
-            pos = m.end()
-            continue
-        call_open = m.end() - 1
+        if info and (info.get('type') or '').strip() != c1:
+            # member exists but carries a different declared type: trust the
+            # call site (the adjusted this IS the callee's class)
+            pass
+        call_open = text.index('(', m.start())
         call_close = balance_paren(text, call_open)
         if call_close < 0:
             pos = m.end()
@@ -397,3 +435,18 @@ def rewrite_partial(text):
         n += 1
         return '%s)' % m.group(1)
     return VT_PARTIAL.sub(s, text), n
+
+
+CAST_CALL = re.compile(
+    r'\(\s*\(\s*[A-Za-z_][\w\s]*?\)\s*([A-Za-z_][\w:>]*)\s*\)\s*\(')
+
+
+def rewrite_cast_call(text):
+    """((CC *)FuncName)(args) -> FuncName(args): a function-name cast-call is
+    a redundant typing wrapper (the target is already a plain function)."""
+    n = 0
+    def s(m):
+        nonlocal n
+        n += 1
+        return m.group(1) + '('
+    return CAST_CALL.sub(s, text), n

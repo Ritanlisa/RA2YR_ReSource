@@ -698,7 +698,7 @@ LABEL_21:
 
 // 0x6214B0
 namespace gamemd {
-void SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
+AbstractClass * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1014,7 +1014,7 @@ void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
 
 // 0x622820
 namespace gamemd {
-void SetupDialog(CoordStruct * hWnd, int a2)
+AbstractClass * SetupDialog(CoordStruct * hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1132,7 +1132,7 @@ void SetupDialog(CoordStruct * hWnd, int a2)
 
 // 0x622B50
 namespace gamemd {
-void BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2)
+CampaignScore * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1467,7 +1467,7 @@ LABEL_15:
 
 // 0x623880
 namespace gamemd {
-void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, ObjectClass * aP3, unsigned int * a4, int ecx0, signed int * a6, int a8, int a9, int a10, int a11)
+CampaignScore * DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, ObjectClass * aP3, unsigned int * a4, int ecx0, signed int * a6, int a8, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1712,7 +1712,7 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
 
 // 0x623E40
 namespace gamemd {
-void * GetDialogText(HWND hWnd, void ** a2)
+AbstractClass * * GetDialogText(HWND hWnd, void ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2115,7 +2115,7 @@ void E4Recv_629530::sub_629530()
 
 // 0x62E070
 namespace gamemd {
-void DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
+AbstractClass * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

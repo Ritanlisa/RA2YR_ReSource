@@ -35,7 +35,7 @@
 
 // 0x5C00E0
 namespace gamemd {
-void sub_5C00E0()
+ObjectClass * sub_5C00E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -154,7 +154,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
 
 // 0x5C17B0
 namespace gamemd {
-void MPCooperative___vt07(int a2)
+CampaignClass * MPCooperative___vt07(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2513,7 +2513,7 @@ LABEL_20:
 
 // 0x5CD850
 namespace gamemd {
-void * WrapWideStringText(const wchar_t ** ecx0, int * a2, int a3)
+MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

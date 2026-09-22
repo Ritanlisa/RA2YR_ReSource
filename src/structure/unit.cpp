@@ -44,7 +44,7 @@ UnitClass::UnitClass() noexcept
 // Merged: Westwood combined harvest + unload into a single 5-case state machine.
 // Case 3 handles unloading logic (pop cargo, apply overlay, handle team members).
 // No separate Mission_Unload override exists in the binary (vtable slot = Return450J).
-int UnitClass::Mission_Harvest()
+ILocomotion * UnitClass::Mission_Harvest()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4151e0
@@ -86,7 +86,7 @@ int UnitClass::Mission_Harvest()
         {
           if ( this->ValidateTargetCell(this->q169) )
           {
-            DB = CCINIClass::GetDB(this + 69);
+            DB = ((CCINIClass *)((char *)this + 69)).GetDB();
             int v14 = DB;
             if ( DB
   int v15; // eax
@@ -172,7 +172,7 @@ int UnitClass::Mission_Harvest()
           }
           else
           {
-            int v26 = LinkedList::Pop(this + 69);
+            int v26 = ((LinkedList *)((char *)this + 69)).Pop();
   _BYTE v33[4]; // [esp+1Ch] [ebp-14h] BYREF
             _WORD * v27 = (_WORD *)this->GetCellCoords_Alt(v33, this);
   char *v29; // [esp+0h] [ebp-30h]
@@ -2545,7 +2545,7 @@ retn    8
 
 // IDA: 0x7192F0 (Deploy, 2302B)
 // 0x7192f0
-int UnitClass::Deploy()
+void* UnitClass::Deploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2891,7 +2891,7 @@ LABEL_82:
 }
 }
 // 0x738d30
-int UnitClass::DeployToBuilding()
+AbstractClass * UnitClass::DeployToBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -9342,7 +9342,7 @@ retn
 
 // IDA: 0x743A50 (Scatter, 1622B)
 // 0x743a50
-int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
+void* UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -12743,7 +12743,7 @@ retn
 
 // IDA: 0x6B4A50 (Create, 234B static)
 // 0x6b4a50
-int UnitClass::Create(void* aP0, void* aP1, int aP2)
+AbstractClass * UnitClass::Create(void* aP0, void* aP1, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -13551,7 +13551,7 @@ retn    4
 
 // IDA: 0x746810 (PerFrameUpdate, 167B)
 // 0x746810
-int UnitClass::PerFrameUpdate(int _DWORD *a1@<ecx>, int int a2@<edi>)
+UnitTypeClass * UnitClass::PerFrameUpdate(int _DWORD *a1@<ecx>, int int a2@<edi>)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -13873,7 +13873,7 @@ retn
 
 // IDA: 0x4D4280 (ApproachEvaluate, 2177B)
 // 0x4d4280
-int UnitClass::ApproachEvaluate()
+AbstractClass * UnitClass::ApproachEvaluate()
 {
 {
 {
@@ -14065,7 +14065,7 @@ LABEL_38:
       {
         int v24 = *this;
   _BYTE v77[12]; // [esp+6Ch] [ebp-60h] BYREF
-        int v25 = (*(int (__thiscall **)(_DWORD, _BYTE *, _DWORD))(*(_DWORD *)this->FootClass_field_5DC + 72))(this->FootClass_field_5DC, v77, 0);
+        int v25 = *(_DWORD *)this->FootClass_field_5DC->vt_slot_72(this->FootClass_field_5DC, v77, 0);
         int v26 = this->SelectAutoTarget_Cloaked(2, v25);
         int v27 = v26;
         v68 = v26;
@@ -14142,7 +14142,7 @@ LABEL_51:
     case 2:
       int v49 = *this;
   _BYTE v82[12]; // [esp+A8h] [ebp-24h] BYREF
-      int v50 = (*(int (__thiscall **)(_DWORD, _BYTE *, _DWORD))(*(_DWORD *)this->FootClass_field_5DC + 72))(this->FootClass_field_5DC, v82, 0);
+      int v50 = *(_DWORD *)this->FootClass_field_5DC->vt_slot_72(this->FootClass_field_5DC, v82, 0);
       int v51 = this->SelectAutoTarget_Cloaked(2, v50);
       v68 = v51;
       if ( v51 )

@@ -7,7 +7,7 @@
 
 // 0x4A8BF0
 namespace gamemd {
-int Mouse::SetBounds(IUnknown * aP1)
+Tactical * Mouse::SetBounds(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -143,7 +143,7 @@ int Mouse::ReleaseCapture()
 
 // 0x7B93F0
 namespace gamemd {
-void Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
+AbstractClass * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

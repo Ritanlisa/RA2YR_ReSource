@@ -451,7 +451,7 @@ LABEL_22:
 
 // 0x4F2300
 namespace gamemd {
-int E4Recv_4F2300::ProcessGraphicMenu()
+ObjectClass * E4Recv_4F2300::ProcessGraphicMenu()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -606,7 +606,7 @@ int E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int) a1)
   if ( v3 ) /*0x4f264e*/
     result = UI_Load_5D1C90(this + 1, v3, a2); /*0x4f2654*/
   else
-    result = PriorityQueue::Add(this + 1, (int)a2); /*0x4f2664*/
+    result = ((PriorityQueue *)((char *)this + 1)).Add((int)a2); /*0x4f2664*/
   *(this + 21) = a2; /*0x4f2659*/
   return result; /*0x4f265c*/
 }
@@ -747,7 +747,7 @@ void ParseINIAnimGadgetDefinition()
 
 // 0x4F3140
 namespace gamemd {
-void ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned int * a2, ObjectClass a4)
+ReferenceCounted * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned int * a2, ObjectClass a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -867,7 +867,7 @@ void ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned in
 
 // 0x4F3460
 namespace gamemd {
-int E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
+MSAnim * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         int this,
@@ -1203,7 +1203,7 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
 
 // 0x4FBD80
 namespace gamemd {
-int E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
+AbstractClass * E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

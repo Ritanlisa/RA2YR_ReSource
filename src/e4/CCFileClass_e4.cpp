@@ -4,7 +4,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x4325C0
-int CCFileClass::Close()
+AudioController * CCFileClass::Close()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

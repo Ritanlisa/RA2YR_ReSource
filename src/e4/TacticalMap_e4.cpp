@@ -8,7 +8,7 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x484680
-int TacticalMap::ComputeScreenTint()
+ScenarioClass * TacticalMap::ComputeScreenTint()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -112,7 +112,7 @@ int TacticalMap::Redraw()
   {
     TacticalMap::Render((int)g_TacticalClass_Instance, DSurface_Composite, v6, 0); /*0x4f44df*/
     TacticalMap::Render((int)g_TacticalClass_Instance, DSurface_Composite, v6, 1); /*0x4f44f4*/
-    (*(void (__thiscall **)(_DWORD *, bool))(*this + 64))(this, v7); /*0x4f4502*/
+    this->vt_slot_64(v7); /*0x4f4502*/
     TacticalMap::Render((int)g_TacticalClass_Instance, DSurface_Composite, v6, 2); /*0x4f4515*/
   }
   if ( DataGlobal_B0B519 && !ArmageddonMode ) /*0x4f452b*/
@@ -132,7 +132,7 @@ int TacticalMap::Redraw()
     DrawHUD(v4); /*0x4f457e*/
   }
   (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 60))(g_WWMouseClass_Instance, DSurface_Composite, 0); /*0x4f4593*/
-  result = (*(int (__thiscall **)(_DWORD *))(*this + 68))(this); /*0x4f459a*/
+  result = this->vt_slot_68(); /*0x4f459a*/
   g_DSurface_Hidden_2 = v1; /*0x4f459d*/
   return result; /*0x4f45a3*/
 }
@@ -236,7 +236,7 @@ int TacticalMap::Construct()
   this->qD98 = 0; /*0x6d1d18*/
   this->qD9C = 0; /*0x6d1d1e*/
   this->qDA0 = 0; /*0x6d1d2a*/
-  *(_DWORD *)(this + 3492) = Timer::GetTicks(this + 3496); /*0x6d1d35*/
+  *(_DWORD *)(this + 3492) = ((Timer *)((char *)this + 3496)).GetTicks(); /*0x6d1d35*/
   *(_DWORD *)(this + 3500) = 0; /*0x6d1d3b*/
   *(_DWORD *)(this + 3504) = 0; /*0x6d1d4e*/
   *(_DWORD *)this = &Tactical::`vftable'; /*0x6d1d54*/
@@ -246,7 +246,7 @@ int TacticalMap::Construct()
   memset((void *)(this + 228), 0, 0xC80u); /*0x6d1d6f*/
   this->q024 = 0; /*0x6d1d77*/
   *(_DWORD *)(this + 164) = -1; /*0x6d1d7d*/
-  Matrix3x4::Identity(this + 3508); /*0x6d1d87*/
+  ((Matrix3x4 *)((char *)this + 3508)).Identity(); /*0x6d1d87*/
   float v3 = DataGlobal_B0CD88; /*0x6d1d95*/
   Matrix3x3::RotateX(v3); /*0x6d1d98*/
   float v4 = DataGlobal_B0CE98; /*0x6d1da6*/
@@ -271,7 +271,7 @@ int TacticalMap::Construct()
 }
 
 // 0x6D2B60
-int TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
+void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -396,7 +396,7 @@ int TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
 
 // 0x6D3D10
 namespace gamemd {
-void TacticalMap_Render()
+AbstractClass * TacticalMap_Render()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

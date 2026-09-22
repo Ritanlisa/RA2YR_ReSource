@@ -162,7 +162,7 @@ LABEL_20:
 
 // 0x5F2CE0
 namespace gamemd {
-void WaitModemConnection()
+AbstractClass * WaitModemConnection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -518,7 +518,7 @@ LABEL_11:
 
 // 0x5FDDF0
 namespace gamemd {
-void sub_5FDDF0()
+AbstractClass * sub_5FDDF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -669,7 +669,7 @@ void sub_5FF390()
 
 // 0x5FF420
 namespace gamemd {
-void * GenerateRangeRingTextures()
+AbstractClass * * GenerateRangeRingTextures()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

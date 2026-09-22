@@ -419,7 +419,7 @@ DynamicVectorClass<MixFileClass*>& MixFileClass::GetMixPool()
 
 REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", "None")
 // 0x5301a0
-int MixFileClass::Bootstrap()
+MixFileClass * MixFileClass::Bootstrap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5301a0

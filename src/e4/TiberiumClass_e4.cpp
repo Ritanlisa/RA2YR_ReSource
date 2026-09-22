@@ -137,7 +137,7 @@ unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->q0B8 = 0; /*0x721713*/
   this->Growth = 0; /*0x721719*/
   this->GrowthPercentage = 0; /*0x72171f*/
-  AnimTypeVector::Constructor(this + 49, 0, 0); /*0x721725*/
+  ((AnimTypeVector *)((char *)this + 49)).Constructor(0, 0); /*0x721725*/
   this->Image = 10; /*0x72172a*/
   this->Debris = 0; /*0x721731*/
   this->q0C4 = &vt_TypeList_AnimTypeClass_const; /*0x721734*/
@@ -342,7 +342,7 @@ LABEL_19:
 
 // 0x721E80
 namespace gamemd {
-int TiberiumClass::SaveLoad_Prefix(int a1, int a2)
+AbstractClass * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

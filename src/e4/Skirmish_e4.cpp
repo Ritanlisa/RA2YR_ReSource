@@ -54,7 +54,7 @@ LABEL_9:
 }
 
 // 0x46F8F0
-void Skirmish::SetupAllSpawnLocations()
+CampaignClass * Skirmish::SetupAllSpawnLocations()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -232,7 +232,7 @@ int Skirmish::ReadSettings(HWND hDlg)
 }
 
 // 0x597260
-int Skirmish::RandomizeSettings(ObjectClass * aP1)
+TechnoTypeClass * Skirmish::RandomizeSettings(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -494,7 +494,7 @@ int Skirmish::EnableSpawnButtons()
 }
 
 // 0x6AE3F0
-int Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
+ReferenceCounted * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -613,7 +613,7 @@ int Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
 }
 
 // 0x6AE6E0
-int Skirmish::SetupGame(int a2)
+AbstractClass * Skirmish::SetupGame(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

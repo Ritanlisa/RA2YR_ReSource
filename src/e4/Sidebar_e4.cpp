@@ -8,7 +8,7 @@
 
 // 0x4FA350
 namespace gamemd {
-int Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5)
+AbstractClass * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -290,7 +290,7 @@ LABEL_3:
 
 // 0x533F50
 namespace gamemd {
-int Sidebar::ScrollSidebarSkipGame()
+CreateTeamCommand * Sidebar::ScrollSidebarSkipGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -319,7 +319,7 @@ int Sidebar::ScrollSidebarSkipGame()
 
 // 0x636310
 namespace gamemd {
-void Sidebar::CancelSidebarProductionQueue()
+TechnoClass * Sidebar::CancelSidebarProductionQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -363,7 +363,7 @@ void Sidebar::CancelSidebarProductionQueue()
     VectorClass::EraseAt((int *)&g_MatrixTransformState + 6028, (IUnknown *)&Blocka); /*0x6363e4*/
   }
   _DWORD * v10 = this + 1; /*0x6363ec*/
-  (*(void (__thiscall **)(int *))(this->q004 + 12))(this + 1); /*0x6363f1*/
+  this->q004->vt_slot_12(); /*0x6363f1*/
   *((_BYTE *)this + 152) = 0; /*0x6363f7*/
   *(this + 35) = -1; /*0x636400*/
   this->q024 = -1; /*0x636406*/
@@ -447,7 +447,7 @@ int Sidebar::RemoveItem(int a2)
 
 // 0x63FB20
 namespace gamemd {
-int Sidebar::Render(char a2)
+ObjectClass * Sidebar::Render(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -650,7 +650,7 @@ int Sidebar::ActivateTab(IUnknown * aP1)
 
 // 0x6A70E0
 namespace gamemd {
-void Sidebar::FlushSidebarTooltip(char a2)
+AbstractClass * Sidebar::FlushSidebarTooltip(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

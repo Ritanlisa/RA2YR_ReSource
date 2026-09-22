@@ -121,7 +121,7 @@ unsigned int * sub_5B3FF0(unsigned int * a1, unsigned int * a2)
 
 // 0x5B40B0
 namespace gamemd {
-void SearchMIXFile(char * Source, IUnknown * aP1)
+AbstractClass * SearchMIXFile(char * Source, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -222,7 +222,7 @@ LABEL_9:
 
 // 0x5B4430
 namespace gamemd {
-void FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4, unsigned int * a5)
+ObjectClass * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4, unsigned int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -453,7 +453,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
 
 // 0x5B67F0
 namespace gamemd {
-void ApplyGameOptions(CampaignScore * aP0)
+AbstractClass * ApplyGameOptions(CampaignScore * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -573,7 +573,7 @@ LABEL_33:
 
 // 0x5BB290
 namespace gamemd {
-void __usercall GenerateRandomMapPreview(int a1@<esi> a1)
+LZOPipe * __usercall GenerateRandomMapPreview(int a1@<esi> a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1062,7 +1062,7 @@ void sub_5BF390(int a1, char a2)
 
 // 0x5BF8C0
 namespace gamemd {
-void sub_5BF8C0()
+ObjectClass * sub_5BF8C0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1097,7 +1097,7 @@ void sub_5BF8C0()
 
 // 0x5BF950
 namespace gamemd {
-void sub_5BF950()
+AbstractClass * sub_5BF950()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1167,7 +1167,7 @@ void sub_5BF950()
 
 // 0x5BFAA0
 namespace gamemd {
-void * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int a6, int a7, int a8, IUnknown * a9, int a10, int a11, char a12)
+void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int a6, int a7, int a8, IUnknown * a9, int a10, int a11, char a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

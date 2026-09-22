@@ -232,7 +232,7 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
 
 // 0x484180
 namespace gamemd {
-int Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8)
+ScenarioClass * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -391,7 +391,6 @@ unsigned int * Tactical::MouseMove(MouseClass * aP1, MouseClass * aP2)
   __int16 v27; // ax
   MouseClass *v28; // [esp+10h] [ebp-14h] BYREF
   int v29; // [esp+14h] [ebp-10h] BYREF
-
   v3 = (MouseClass *)aP2->field_0; /*0x4a91ba*/
   bool v4 = (unsigned __int16)aP2->field_0 == *(_WORD *)&g_CellDirectionOffsets[3432]; /*0x4a91bd*/
   aP2 = (MouseClass *)aP2->field_0; /*0x4a91c6*/
@@ -545,7 +544,7 @@ void * Tactical::GetCellData()
 
 // 0x640A40
 namespace gamemd {
-void Tactical_Radar_Render()
+void* Tactical_Radar_Render()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -905,7 +904,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
 
 // 0x6930A0
 namespace gamemd {
-int Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4)
+MouseClass * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1417,7 +1416,7 @@ int Tactical::AddCellToDrawList(IUnknown * aP1)
 
 // 0x6DB210
 namespace gamemd {
-int Tactical::DrawTacticalConnectorLines()
+void* Tactical::DrawTacticalConnectorLines()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

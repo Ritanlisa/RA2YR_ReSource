@@ -278,7 +278,7 @@ int VectorClass::GetAtChecked(IUnknown * aP1)
 
 // 0x42F6F0
 namespace gamemd {
-int VectorClass_Cell::Release(int a2, unsigned int * a3)
+AbstractClass * VectorClass_Cell::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -337,7 +337,7 @@ int VectorClass_Cell::Release(int a2, unsigned int * a3)
 
 // 0x4E0840
 namespace gamemd {
-int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a3)
+AbstractClass * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -439,7 +439,7 @@ int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Cel
 
 // 0x4E0B10
 namespace gamemd {
-int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity(int a2, int * a3)
+AbstractClass * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -565,7 +565,7 @@ unsigned int * VectorClass_K_8::Constructor()
 
 // 0x5AD010
 namespace gamemd {
-int VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
+AbstractClass * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -600,7 +600,7 @@ int VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5ad09e*/
+    this->vt_slot_12(); /*0x5ad09e*/
   }
   int v7 = *((_DWORD *)this + 2); /*0x5ad0a1*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x5ad0a9*/
@@ -965,7 +965,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
 
 // 0x50F520
 namespace gamemd {
-int VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, unsigned int * a3)
+AbstractClass * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1015,7 +1015,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, unsigned int
 
 // 0x50F660
 namespace gamemd {
-int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(int a2, unsigned int * a3)
+AbstractClass * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1062,7 +1062,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(int a2, unsign
 
 // 0x6288F0
 namespace gamemd {
-int VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, unsigned char * a2)
+AbstractClass * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1215,7 +1215,7 @@ void VectorClass_ptr_ConvertClass::MarkDirty()
 
 // 0x63E090
 namespace gamemd {
-int VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned int * a3)
+AbstractClass * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1353,7 +1353,7 @@ LABEL_14:
 
 // 0x5D8470
 namespace gamemd {
-int VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
+AbstractClass * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1388,7 +1388,7 @@ int VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d84fe*/
+    this->vt_slot_12(); /*0x5d84fe*/
   }
   int v7 = *((_DWORD *)this + 2); /*0x5d8501*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x5d8509*/
@@ -1400,7 +1400,7 @@ int VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x5D8730
 namespace gamemd {
-int VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
+AbstractClass * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1435,7 +1435,7 @@ int VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d87be*/
+    this->vt_slot_12(); /*0x5d87be*/
   }
   int v7 = *((_DWORD *)this + 2); /*0x5d87c1*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x5d87c9*/
@@ -1447,7 +1447,7 @@ int VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x5D8590
 namespace gamemd {
-int VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
+AbstractClass * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1488,7 +1488,7 @@ int VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d8632*/
+    this->vt_slot_12(); /*0x5d8632*/
     return 1; /*0x5d8638*/
   }
 }
@@ -1497,7 +1497,7 @@ int VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x4E9840
 namespace gamemd {
-int VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
+AbstractClass * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1532,7 +1532,7 @@ int VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4e98ce*/
+    this->vt_slot_12(); /*0x4e98ce*/
   }
   int v7 = *((_DWORD *)this + 2); /*0x4e98d1*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x4e98d9*/
@@ -1544,7 +1544,7 @@ int VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x6DC850
 namespace gamemd {
-int VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, char * a2)
+AbstractClass * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1645,7 +1645,7 @@ LABEL_26:
 
 // 0x6B44A0
 namespace gamemd {
-int VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3)
+AbstractClass * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1740,7 +1740,7 @@ LABEL_14:
 
 // 0x6B4650
 namespace gamemd {
-int VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int * a3)
+AbstractClass * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

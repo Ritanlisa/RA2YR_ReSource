@@ -6,7 +6,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x5F8CE0
-int Turret::LoadVoxelTurretAndBarrel()
+AbstractClass * Turret::LoadVoxelTurretAndBarrel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -15,10 +15,10 @@ int Turret::LoadVoxelTurretAndBarrel()
   char Buffer[256]; // [esp+14Ch] [ebp-204h] BYREF
   char Source[260]; // [esp+24Ch] [ebp-104h] BYREF
 
-  int v2 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 44))(this); /*0x5f8cec*/
+  int v2 = this->vt_slot_44(); /*0x5f8cec*/
   if ( v2 == 40 ) /*0x5f8cf2*/
   {
-    v2 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this); /*0x5f8cfc*/
+    v2 = this->vt_slot_156(); /*0x5f8cfc*/
     if ( v2 ) /*0x5f8d04*/
     {
       LOBYTE(v2) = *((_BYTE *)this + 3233); /*0x5f8d0a*/

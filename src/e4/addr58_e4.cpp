@@ -25,7 +25,7 @@
 
 // 0x5835D0
 namespace gamemd {
-void * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
+VectorClass * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -133,7 +133,7 @@ LABEL_28:
 
 // 0x583AD0
 namespace gamemd {
-int E4Recv_583AD0::sub_583AD0(int * a2)
+AbstractClass * E4Recv_583AD0::sub_583AD0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -768,7 +768,7 @@ int * sub_58B810()
 
 // 0x58B820
 namespace gamemd {
-void * ComputeMapCameraBounds()
+ScenarioClass * * ComputeMapCameraBounds()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -816,12 +816,10 @@ void * ComputeMapCameraBounds()
     {
       if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, j + 18, 1) ) /*0x58b953*/
       {
-        int v14 = (*(int (__thiscall **)(__int16 *))(*(_DWORD *)j + 72))(j); /*0x58b973*/
+        int v14 = j->vt_slot_72(); /*0x58b973*/
   int *v15; // eax
-        v15 = (int *)(*(int (__thiscall **)(__int16 *, char *, _DWORD))(*(_DWORD *)j + 72))( /*0x58b983*/
-                       j,
-                       v27,
-                       *(_DWORD *)(v14 + 4));
+        v15 = (int *)j->vt_slot_72(/*0x58b983*/
+                       j, v27, *(_DWORD *)(v14 + 4));
   char v30[12]; // [esp+2Ch] [ebp-Ch] BYREF
         IsoCoord::ToScreenOffset(*v15, (int)v30, &v25, (int *)&k); /*0x58b98f*/
         int v16 = (int)k / 30; /*0x58b9c2*/
@@ -889,7 +887,7 @@ void * ComputeMapCameraBounds()
 
 // 0x58EBC0
 namespace gamemd {
-void BuildRandomMapTiles()
+AbstractClass * BuildRandomMapTiles()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1052,7 +1050,7 @@ LABEL_32:
 
 // 0x58EF10
 namespace gamemd {
-void sub_58EF10()
+AbstractClass * sub_58EF10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

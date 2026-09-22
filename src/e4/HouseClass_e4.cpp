@@ -549,7 +549,7 @@ int HouseClass::CanDetect()
 
 // 0x503040
 namespace gamemd {
-int HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
+AbstractClass * HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1574,7 +1574,7 @@ LABEL_20:
 
 // 0x506EF0
 namespace gamemd {
-void HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
+AbstractClass * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (v3 export truncated pseudocode — commented out; live version via get_context)
@@ -1785,7 +1785,7 @@ LABEL_29:
 
 // 0x5098F0
 namespace gamemd {
-int HouseClass::UpdateAITryFireSW()
+CellStruct * HouseClass::UpdateAITryFireSW()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2159,7 +2159,7 @@ int HouseClass::GetCameoTypeIndex(int a2)
 
 // 0x5D70F0
 namespace gamemd {
-int HouseClass::AIDecision(ObjectClass * aP0, int * a1)
+AbstractClass * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2414,7 +2414,7 @@ int HouseClass::InitAlliances()
 
 // 0x5EE9D0
 namespace gamemd {
-void HouseClass::FindStartPositions()
+AbstractClass * HouseClass::FindStartPositions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

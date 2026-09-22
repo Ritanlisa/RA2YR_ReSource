@@ -19,7 +19,7 @@ unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4)
 
 // 0x642130
 namespace gamemd {
-void Palette_Preview_Generate()
+AbstractClass * Palette_Preview_Generate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

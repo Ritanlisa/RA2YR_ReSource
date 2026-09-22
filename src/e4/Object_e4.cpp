@@ -384,7 +384,7 @@ void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * a
 
 // 0x5FD970
 namespace gamemd {
-void Object::HandleAction(int * a2, int * a3)
+void* Object::HandleAction(int * a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -605,7 +605,7 @@ void * Object::DrawObject(char a2)
 
 // 0x62AC30
 namespace gamemd {
-void * Object::CalculateObjectPlacementPosition(int * a2)
+void* * Object::CalculateObjectPlacementPosition(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

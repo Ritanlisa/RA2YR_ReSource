@@ -472,7 +472,7 @@ void sub_568140(int * a1, int a2)
 
 // 0x56AF40
 namespace gamemd {
-void * E4Recv_56AF40::sub_56AF40(int a2)
+BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -541,7 +541,7 @@ void * E4Recv_56AF40::sub_56AF40(int a2)
 
 // 0x56B250
 namespace gamemd {
-int E4Recv_56B250::sub_56B250(int a2)
+BombClass * E4Recv_56B250::sub_56B250(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

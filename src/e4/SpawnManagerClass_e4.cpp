@@ -105,7 +105,7 @@ S SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5
 // 0x6B6EA0
 namespace ra2 {
 namespace game {
-int SpawnManagerClass::Constructor()
+void* SpawnManagerClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -345,7 +345,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
 // 0x6B7F10
 namespace ra2 {
 namespace game {
-int SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1_4)
+AbstractClass * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1_4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

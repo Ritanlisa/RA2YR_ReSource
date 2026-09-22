@@ -17,7 +17,7 @@
 #include "e4/classes/WalkLocomotion_e4.hpp"
 
 // 0x439B00
-int JumpjetLocomotionClass::Update2()
+void* JumpjetLocomotionClass::Update2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -347,7 +347,7 @@ int JumpjetLocomotionClass::AdjustClimbFacing(unsigned int * a2)
 }
 
 // 0x485080
-int JumpjetLocomotionClass::FindClosestOccupiableCell()
+AbstractClass * JumpjetLocomotionClass::FindClosestOccupiableCell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -869,7 +869,7 @@ int JumpjetLocomotionClass::StubReturnZero_6()
 }
 
 // 0x4CCC80
-int JumpjetLocomotionClass::UpdateFootLocomotion(int a1, int a2, int a3, int a4)
+Coord * JumpjetLocomotionClass::UpdateFootLocomotion(int a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1030,7 +1030,7 @@ LABEL_54:
 }
 
 // 0x4CCFD0
-int JumpjetLocomotionClass::ComputeMoveToPosition(int a1)
+TechnoClass * JumpjetLocomotionClass::ComputeMoveToPosition(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1154,14 +1154,14 @@ LABEL_21:
 }
 
 // 0x4CE5A0
-void JumpjetLocomotionClass::ProcessRotation()
+BuildingClass * JumpjetLocomotionClass::ProcessRotation()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( *(_BYTE *)(this + 83) && *(int *)(this->LinkedTo + 108) > 0 ) /*0x4ce5b9*/
   {
-    if ( (*(unsigned __int8 (__stdcall **)(int))(this->vtable2 + 96))(this + 4) ) /*0x4ce5c6*/
+    if ( this->vtable2->vt_slot_96() ) /*0x4ce5c6*/
     {
       _DWORD * v5 = this->LinkedTo; /*0x4ce636*/
       *(_BYTE *)(this + 83) = 0; /*0x4ce639*/
@@ -1438,7 +1438,7 @@ int JumpjetLocomotionClass::DispatchVirtualCall_2(int a1)
 }
 
 // 0x54AEC0
-int JumpjetLocomotionClass::DispatchLocomotion(unsigned int * a1)
+Coord * JumpjetLocomotionClass::DispatchLocomotion(unsigned int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1698,7 +1698,7 @@ int JumpjetLocomotionClass::SmoothObjectPlacement(int a1, int a2, int a3, int a4
 }
 
 // 0x54B4D0
-int JumpjetLocomotionClass::MoveToDestination(int a1)
+Coord * JumpjetLocomotionClass::MoveToDestination(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1790,7 +1790,7 @@ int JumpjetLocomotionClass::MoveToDestination(int a1)
 }
 
 // 0x54D6D0
-void * JumpjetLocomotionClass::ProcessLanding(int * a2, unsigned int * a3)
+void* * JumpjetLocomotionClass::ProcessLanding(int * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2307,7 +2307,7 @@ int JumpjetLocomotionClass::StubReturnZero_16()
   this->q13F = g_CurrentFrame; /*0x7094a9*/
   _BYTE v6[12]; // [esp+8h] [ebp-Ch] BYREF
   int v4 = this->MoveToDestination(v6, 1); /*0x7094af*/
-  result = (*(int (__thiscall **)(_DWORD *, int))(v3 + 924))(this, v4); /*0x7094b5*/
+  result = this->vt_slot_924(v4); /*0x7094b5*/
   if ( result ) /*0x7094be*/
   {
     if ( this->q2B4 != v2 ) /*0x7094c6*/
@@ -2355,7 +2355,7 @@ LABEL_5:
 }
 
 // 0x729B40
-void * JumpjetLocomotionClass::ComputeTurretTransform(unsigned int * a1, void * a2, int * a3)
+void* * JumpjetLocomotionClass::ComputeTurretTransform(unsigned int * a1, void * a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5688,7 +5688,7 @@ int JumpjetLocomotionClass::ShortFunc_718090()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
-  return (*(unsigned __int8 (__stdcall **)(_DWORD *))(this->vtable2 + 16))(this + 1) == 0; /*0x71809e*/
+  return this->vtable2->vt_slot_16() == 0; /*0x71809e*/
 }
 }
 

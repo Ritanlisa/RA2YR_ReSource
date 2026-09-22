@@ -242,7 +242,7 @@ void sub_452D40()
 
 // 0x456980
 namespace gamemd {
-void DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int a5, int a6, float a7, char a8, char a9)
+void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int a5, int a6, float a7, char a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -414,7 +414,7 @@ LABEL_20:
 
 // 0x456FB0
 namespace gamemd {
-void sub_456FB0(unsigned int * a1, int a2, int a3)
+BuildingTypeClass * sub_456FB0(unsigned int * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

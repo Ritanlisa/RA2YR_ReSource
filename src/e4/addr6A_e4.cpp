@@ -70,7 +70,7 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
     v8 = v14[18] - v12; /*0x6a6ba3*/
 LABEL_18:
     v7[18] = v8; /*0x6a6c09*/
-    (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 56))(this, 0); /*0x6a6c14*/
+    this->vt_slot_56(0); /*0x6a6c14*/
     return 1; /*0x6a6c20*/
   }
   return 0; /*0x6a6c1d*/
@@ -199,7 +199,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
 
 // 0x6A93F0
 namespace gamemd {
-int E4Recv_6A93F0::sub_6A93F0()
+BombClass * E4Recv_6A93F0::sub_6A93F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

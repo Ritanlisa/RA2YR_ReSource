@@ -96,7 +96,7 @@ namespace gamemd { int AircraftClass::Construct(int a1, void* a2) {
   this->vtable3 = &AircraftClass::`vftable'; /*0x413d94*/
   this->vtable4 = &AircraftClass::`vftable'; /*0x413d9b*/
   this->vtable5 = &vt_AircraftClass; /*0x413da2*/
-  AbstractClass::GenerateUniqueID(this + 4); /*0x413dac*/
+  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x413dac*/
   v4 = this->Type; /*0x413db1*/
   if ( v4 ) /*0x413db9*/
   {
@@ -128,7 +128,7 @@ namespace gamemd { int AircraftClass::Construct(int a1, void* a2) {
     int v9 = (*(_DWORD *)&g_NetworkPlayerBuffer[3428])++; /*0x413e76*/
     *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[3416] + 4 * v9) = this; /*0x413e85*/
   }
-  aP2 = (AbstractClass *)AbstractClass::GetVtable3(this + 4); /*0x413e94*/
+  aP2 = (AbstractClass *)((AbstractClass *)((char *)this + 4)).GetVtable3(); /*0x413e94*/
   if ( *(_DWORD *)&g_OverlayTypeConfig[28748] + 1 <= *(int *)&g_OverlayTypeConfig[28752] ) /*0x413ea0*/
     goto LABEL_25; /*0x413ea0*/
   if ( *(_DWORD *)&g_OverlayTypeConfig[28752] ) /*0x413ea8*/
@@ -1854,7 +1854,7 @@ namespace gamemd { int InfantryClass::Construct(int a1, void* a2) {
   this->vtable2 = &InfantryClass::`vftable'; /*0x517ad2*/
   this->vtable3 = &vt_InfantryClass; /*0x517ad8*/
   this->vtable4 = &off_7EB02C; /*0x517adf*/
-  AbstractClass::GenerateUniqueID(this + 4); /*0x517ae6*/
+  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x517ae6*/
   if ( *(int *)&HouseClass_Player[172] < *(int *)&HouseClass_Player[164] /*0x517b1e*/
     || (HouseClass_Player[169] || !*(_DWORD *)&HouseClass_Player[164])
     && *(int *)&HouseClass_Player[176] > 0

@@ -104,7 +104,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
 
 // 0x6CF720
 namespace gamemd {
-int SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
+AbstractClass * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

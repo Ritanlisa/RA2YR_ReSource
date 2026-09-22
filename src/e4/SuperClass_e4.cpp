@@ -131,7 +131,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
   this->SuperClass_field_0x4 = &SuperClass::`vftable'; /*0x6caffd*/
   this->SuperClass_field_0x8 = &SuperClass::`vftable'; /*0x6cb003*/
   this->vtable4 = &vt_SuperClass; /*0x6cb00a*/
-  AbstractClass::GenerateUniqueID(this + 4); /*0x6cb011*/
+  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
     || (byte_A83CC5 || !dword_A83CC0)
     && dword_A83CCC > 0
@@ -172,7 +172,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
 
 // 0x6CB120
 namespace gamemd {
-void SuperClass::CleanupMembers()
+SuperClass * SuperClass::CleanupMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -250,7 +250,7 @@ void SuperClass::CleanupMembers()
 
 // 0x6CB560
 namespace gamemd {
-int SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+AbstractClass * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -421,7 +421,7 @@ int SuperClass::Lose()
 
 // 0x6CB830
 namespace gamemd {
-int SuperClass::StopPreclickAnim(IUnknown * aP1)
+AbstractClass * SuperClass::StopPreclickAnim(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1970,7 +1970,7 @@ LABEL_180:
 
 // 0x6CE0B0
 namespace gamemd {
-void * SuperClass::Reset()
+AbstractClass * * SuperClass::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

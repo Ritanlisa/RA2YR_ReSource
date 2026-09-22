@@ -173,7 +173,7 @@ int ZCoordToScreenY(int z_world)
 //       cell = (start_col, start_row) where col in [0, viewWidth]
 // Each cell is checked for screen bounds intersection.
 // 0x6d7560
-int TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
+void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1943,7 +1943,7 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
 // IDA: 0x4D1890 -- TacticalClass::DrawBuildings
 // Draws all buildings in sorted order (Y-sort for isometric depth).
 // 0x4d1890
-int TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
+void* TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4d1890
@@ -4244,7 +4244,7 @@ retn
 // IDA: 0x6D8B30 -- TacticalClass::CalcViewportCells
 // Calculates which cells are visible in the current viewport.
 // 0x6d8b30
-int TacticalClass::CalcViewportCells()
+BuildingTypeClass * TacticalClass::CalcViewportCells()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4900,7 +4900,7 @@ retn    18h
 // IDA: 0x4A8960 -- TacticalClass::SetViewDimensions
 // Sets viewport dimensions and recalculates visible area.
 // 0x4a8960
-void TacticalClass::SetViewDimensions(int width, int height)
+AbstractClass * TacticalClass::SetViewDimensions(int width, int height)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4a8960
@@ -5346,7 +5346,7 @@ retn    4
 // IDA: 0x6D2540 -- TacticalClass::ScrollViewport
 // Scrolls the viewport by a delta amount.
 // 0x6d2540
-int TacticalClass::ScrollViewport(int dx, int dy)
+AbstractClass * TacticalClass::ScrollViewport(int dx, int dy)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6d2540

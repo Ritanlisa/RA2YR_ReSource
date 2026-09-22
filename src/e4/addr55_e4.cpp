@@ -958,7 +958,7 @@ unsigned int int sub_552640(unsigned char * a1, unsigned int a2)
 
 // 0x554400
 namespace gamemd {
-int E4Recv_554400::sub_554400(int a2, int a3)
+ObjectClass * E4Recv_554400::sub_554400(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1163,7 +1163,7 @@ int E4Recv_557380::sub_557380(int a2)
 
 // 0x557B10
 namespace gamemd {
-void CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
+ControlClass * CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1810,7 +1810,7 @@ LABEL_14:
 
 // 0x55CFD0
 namespace gamemd {
-void Game_Frame_Check()
+AbstractClass * Game_Frame_Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2405,7 +2405,7 @@ LABEL_128:
 
 // 0x55F1E0
 namespace gamemd {
-void * DrawHUD()
+BitFont * * DrawHUD()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2742,7 +2742,7 @@ void* unknown_libname_21()
 
 // 0x55FDB0
 namespace gamemd {
-void Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
+AbstractClass * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

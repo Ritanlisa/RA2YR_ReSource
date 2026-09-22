@@ -11,7 +11,7 @@
 #include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x46C790
-void * ObjectTypeClass::FindOrCreate()
+BulletTypeClass * * ObjectTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -290,7 +290,7 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
 }
 
 // 0x5F7400
-int ObjectTypeClass::Destruct()
+SomeVoxelCache * ObjectTypeClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -472,7 +472,7 @@ void ObjectTypeClass::UnloadPipsSHP()
 }
 
 // 0x5F9070
-int ObjectTypeClass::Load2DArt()
+AbstractClass * ObjectTypeClass::Load2DArt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -580,7 +580,7 @@ LABEL_41:
 }
 
 // 0x5F92D0
-int ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
+void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -933,7 +933,7 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
 }
 
 // 0x712040
-int ObjectTypeClass::SelectArtOrAlt()
+SHPStruct * ObjectTypeClass::SelectArtOrAlt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

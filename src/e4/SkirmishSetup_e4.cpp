@@ -433,7 +433,7 @@ int SkirmishSetup::PlayButtonClickAnim()
 
 // 0x5E8590
 namespace gamemd {
-void * SkirmishSetup_Setup_5E8590()
+AbstractClass * * SkirmishSetup_Setup_5E8590()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

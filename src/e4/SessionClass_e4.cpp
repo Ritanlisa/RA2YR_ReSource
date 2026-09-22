@@ -216,7 +216,7 @@ LABEL_17:
 }
 
 // 0x5CEEF0
-int SessionClass::LoadMapSelection(char ** a1)
+AbstractClass * SessionClass::LoadMapSelection(char ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -279,7 +279,7 @@ int SessionClass::LoadMapSelection(char ** a1)
       || (v2[13] || !v9)
   int v10; // eax
       && (v10 = v2->SessionClass_field_14, v10 > 0)
-      && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)v2 + 8))(v2, v9 + v10, 0) )
+      && v2->vt_slot_8(v9 + v10, 0) )
     {
       int v11 = v2->SessionClass_field_10; /*0x5cf03f*/
       int v12 = v2->MPGameMode; /*0x5cf042*/
@@ -511,7 +511,7 @@ int SessionClass::Destruct()
       __3_YAXPAX_Z(v7); /*0x5cf660*/
     }
   }
-  (*(void (__thiscall **)(_DWORD *))(this->q02C + 12))(this + 11); /*0x5cf676*/
+  this->q02C->vt_slot_12(); /*0x5cf676*/
   for ( k = 0; k < this->SessionClass_field_10; ++k ) /*0x5cf680*/
   {
     int v9 = this->MPGameMode; /*0x5cf682*/
@@ -522,12 +522,12 @@ int SessionClass::Destruct()
       __3_YAXPAX_Z(v10); /*0x5cf694*/
     }
   }
-  return (*(int (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x5cf6ab*/
+  return this->vt_slot_12(); /*0x5cf6ab*/
 }
 }
 
 // 0x5D0070
-void SessionClass::loadSettings()
+CampaignClass * SessionClass::loadSettings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -661,7 +661,7 @@ unsigned int SessionClass::initPlayers()
 }
 
 // 0x663B40
-int SessionClass::BuildLobbyPlayerList()
+AbstractClass * SessionClass::BuildLobbyPlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -996,7 +996,7 @@ S * SessionClass::SessionClass()
   this->q1A4 = &vt_DynamicVectorClass_MultiMission; /*0x697206*/
   *((_DWORD *)this + 425) = 10; /*0x697210*/
   *((_DWORD *)this + 424) = 0; /*0x697216*/
-  Waypoint::InitInvalid(this + 2276); /*0x69721c*/
+  ((Waypoint *)((char *)this + 2276)).InitInvalid(); /*0x69721c*/
   *((_DWORD *)this + 573) = 0; /*0x697227*/
   *((_DWORD *)this + 574) = 0; /*0x69722d*/
   this->q8FC = 1; /*0x697233*/
@@ -1004,11 +1004,11 @@ S * SessionClass::SessionClass()
   *((_DWORD *)this + 572) = &vt_DynamicVectorClass_GlobalPacketType; /*0x697240*/
   *((_DWORD *)this + 577) = 10; /*0x69724a*/
   *((_DWORD *)this + 576) = 0; /*0x697250*/
-  SessionClass::saveSettings(this + 2600); /*0x697256*/
-  Waypoint::InitInvalid(this + 7876); /*0x697261*/
+  ((SessionClass *)((char *)this + 2600)).saveSettings(); /*0x697256*/
+  ((Waypoint *)((char *)this + 7876)).InitInvalid(); /*0x697261*/
   CCFileClass::Construct3((int)(this + 9044)); /*0x69726c*/
-  Waypoint::InitInvalid(this + 9160); /*0x697277*/
-  Waypoint::InitInvalid(this + 9676); /*0x697282*/
+  ((Waypoint *)((char *)this + 9160)).InitInvalid(); /*0x697277*/
+  ((Waypoint *)((char *)this + 9676)).InitInvalid(); /*0x697282*/
   this->unknown_vector_280C.Items = 0; /*0x69728c*/
   this->unknown_vector_280C.Capacity = 0; /*0x697292*/
   this->q2818 = 1; /*0x697298*/
@@ -1051,9 +1051,9 @@ S * SessionClass::SessionClass()
   *((_DWORD *)this + 2635) = &vt_DynamicVectorClass_unsigned_short_const; /*0x69738a*/
   *((_DWORD *)this + 2640) = 10; /*0x697394*/
   *((_DWORD *)this + 2639) = 0; /*0x69739a*/
-  Waypoint::InitInvalid(this + 10604); /*0x6973a0*/
-  Waypoint::InitInvalid(this + 10616); /*0x6973ab*/
-  Waypoint::InitInvalid(this + 10632); /*0x6973b6*/
+  ((Waypoint *)((char *)this + 10604)).InitInvalid(); /*0x6973a0*/
+  ((Waypoint *)((char *)this + 10616)).InitInvalid(); /*0x6973ab*/
+  ((Waypoint *)((char *)this + 10632)).InitInvalid(); /*0x6973b6*/
   _BYTE * v9 = this + 10644; /*0x6973bb*/
   int v10 = 8; /*0x6973c1*/
   do /*0x6973d1*/
@@ -1353,7 +1353,7 @@ LABEL_9:
 }
 
 // 0x699980
-void * SessionClass::LoadMissionList()
+AbstractClass * * SessionClass::LoadMissionList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1690,7 +1690,7 @@ void * SessionClass::LoadMissionList()
 }
 
 // 0x69A980
-void * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8)
+ObjectClass * * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2216,7 +2216,7 @@ LABEL_58:
 }
 
 // 0x78F000
-void SessionClass::BuildLaunchString()
+Coord * SessionClass::BuildLaunchString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

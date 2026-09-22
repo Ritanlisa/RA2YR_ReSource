@@ -139,7 +139,7 @@ void AnimClass::Destruct(void * this, AbstractClass * a2)
 
 // 0x422CA0
 namespace gamemd {
-void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
+void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -779,7 +779,7 @@ void AnimClass::FreeRenderBuffer()
 
 // 0x448260
 namespace gamemd {
-int AnimClass::drawFrame()
+BuildingTypeClass * AnimClass::drawFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

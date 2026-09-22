@@ -10,7 +10,7 @@
 
 // 0x6A01A0
 namespace gamemd {
-int WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
+AbstractClass * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

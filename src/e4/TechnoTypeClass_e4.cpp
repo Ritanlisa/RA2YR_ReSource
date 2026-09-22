@@ -7,7 +7,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x48DCD0
-int TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
+AbstractClass * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -725,7 +725,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
 }
 
 // 0x711840
-int TechnoTypeClass::Construct(ObjectTypeClass * aP1)
+AbstractClass * TechnoTypeClass::Construct(ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1000,7 +1000,7 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
 }
 
 // 0x7162F0
-int TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
+DynamicVectorClass * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
