@@ -161,20 +161,20 @@ wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
     CampaignScore *v13;
     CampaignScore Destinationa[5];
     v2 = Destination;
-    if ( *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[21064] + 16) && Source )
+    if ( *(int *)(*(int *)&DataGlobal_B05488[43492] + 16) && Source )
   {
     wcscpy((wchar_t *)Destinationa, Source);
     _wcsupr(Destinationa);
-    v3 = *(const wchar_t **)&HouseClass_Player.__pad_5568[23060];
-    if ( *(int *)&HouseClass_Player.__pad_5568[23060] )
+    v3 = *(const wchar_t **)&HouseClass_Player[44924];
+    if ( *(int *)&HouseClass_Player[44924] )
     {
     v6 = 0;
     v7 = 0;
-    if ( *(int *)&HouseClass_Player.__pad_5568[23060] > 0 )
+    if ( *(int *)&HouseClass_Player[44924] > 0 )
       {
     do
         {
-    v8 = *(int *)(*(int *)&HouseClass_Player.__pad_5568[23048] + 4 * v7);
+    v8 = *(int *)(*(int *)&HouseClass_Player[44912] + 4 * v7);
     if ( v8 )
           {
     if ( (*(char *)(v8 + 20) & 1) != 0 )
@@ -189,18 +189,18 @@ wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
         }
     while ( v7 < (int)v3 );
       }
-    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_579C[63536], 0, &DataGlobal_830620.__pad_579C[63452], 1052);
+    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620[85964], 0, &DataGlobal_830620[85880], 1052);
     return (wchar_t *)swprintf(v2, (const size_t)StringCSF, v3, Destinationa);
     }
     else
     {
-    v4 = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_579C[63552], 0, &DataGlobal_830620.__pad_579C[63452], 1032);
+    v4 = GetStringCSF((wchar_t *)&DataGlobal_830620[85980], 0, &DataGlobal_830620[85880], 1032);
     return (wchar_t *)swprintf(v2, (const size_t)v4, (const wchar_t *const)Destinationa, v13);
     }
   }
     else
   {
-    v12 = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_579C[63520], 0, &DataGlobal_830620.__pad_579C[63452], 1022);
+    v12 = GetStringCSF((wchar_t *)&DataGlobal_830620[85948], 0, &DataGlobal_830620[85880], 1022);
     return wcscpy(v2, v12);
   }
 }
@@ -559,7 +559,7 @@ char * ToWideStringChar(IUnknown * aP0)
     char v4;
     if ( !aP0 )
     return 0;
-    result = &DataGlobal_B05488.__pad_579C[1024 * DataGlobal_B1CF90 + 21104];
+    result = &DataGlobal_B05488[22428][1024 * DataGlobal_B1CF90 + 21104];
     v2 = 1024;
     v3 = result;
     while ( LOWORD(aP0->field_0) )

@@ -24,9 +24,6 @@ int DamageArea::ApplyScatter()
   int v107; // [esp+80h] [ebp-20h]
   double v108; // [esp+88h] [ebp-18h] BYREF
   unsigned int v109; // [esp+90h] [ebp-10h]
-  int v110; // [esp+94h] [ebp-Ch] BYREF
-  int v111; // [esp+98h] [ebp-8h]
-  int v112; // [esp+9Ch] [ebp-4h]
   int v2; // edi
   v2 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, double *))(*this->q00C + 440))(
                     this->q00C,
@@ -118,6 +115,7 @@ LABEL_34:
     WORD1(v102) = SHIDWORD(v108) / 256;
     if ( LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v102)
   int *v36; // eax
+  int v110; // [esp+94h] [ebp-Ch] BYREF
       || (v36 = RandomCoordScatter(&v110, (int *)&v108, 64, 0),
           v108 = *(double *)v36,
           v109 = v36[2],
@@ -145,7 +143,7 @@ LABEL_50:
     }
     int v41 = this->q070;
     int v42 = this->q008;
-    v112 = *(_DWORD *)(this + 36);
+    int v112 = *(_DWORD *)(this + 36);
     _DWORD * v43 = (_DWORD *)(this->q00C + 156);
     int v44 = *(_DWORD *)(this->q00C + 160);
     LODWORD(v106) = v41 - *v43;
@@ -426,7 +424,7 @@ LABEL_105:
           _DWORD * v65 = (_DWORD *)(this->q00C + 156);
           v110 = ((__int16)(this->q070 / 256) << 8) + 128;
           LODWORD(v106) = *v65;
-          v111 = ((__int16)(v64 / 256) << 8) + 128;
+          int v111 = ((__int16)(v64 / 256) << 8) + 128;
           HIDWORD(v106) = v65[1];
           v101 = (double)SLODWORD(v106);
           int v66 = v65[2];

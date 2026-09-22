@@ -801,8 +801,6 @@ unsigned char Game::ManageGameSpeed()
   char v16; // [esp+12h] [ebp-1Eh]
   unsigned __int8 v17; // [esp+13h] [ebp-1Dh]
   _BYTE *v18; // [esp+14h] [ebp-1Ch] BYREF
-  int v19[2]; // [esp+18h] [ebp-18h] BYREF
-  _BYTE v20[16]; // [esp+20h] [ebp-10h] BYREF
 
   _BYTE * v2 = 0; /*0x6579ef*/
   char v3 = *(_BYTE *)(this + 5309); /*0x6579f1*/
@@ -817,8 +815,10 @@ unsigned char Game::ManageGameSpeed()
   if ( *(_BYTE *)(this + 5338) == 1 && !*(_BYTE *)(this + 5309) ) /*0x657a22*/
   {
     int v5 = VtableStub::72F510(); /*0x657a35*/
+  int v19[2]; // [esp+18h] [ebp-18h] BYREF
     v19[0] = *(_DWORD *)(this + 4580); /*0x657a4d*/
     v19[1] = *(_DWORD *)(this + 4588); /*0x657a5f*/
+  _BYTE v20[16]; // [esp+20h] [ebp-10h] BYREF
     int * v6 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, v20); /*0x657a6a*/
     DrawToSurfaceSHP(DSurface_Sidebar, v5, DataGlobal_B04A38, 0x20u, v19, v6, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x657a84*/
     int v7 = *(_DWORD *)(this + 4588); /*0x657a95*/
@@ -1422,7 +1422,6 @@ void Game::EncodeGameSetupState()
   SessionClass *v6; // esi
   int edi11; // edi
   SessionClass *v9; // esi
-  char *v8; // eax
   SessionClass *v13; // esi
   ObjectClass *v14; // [esp-20h] [ebp-78h]
   wchar_t *v11; // [esp+10h] [ebp-48h] BYREF
@@ -1430,16 +1429,12 @@ void Game::EncodeGameSetupState()
   int var40; // [esp+18h] [ebp-40h] BYREF
   int var3C; // [esp+1Ch] [ebp-3Ch] BYREF
   IUnknown *aP0; // [esp+20h] [ebp-38h]
-  void *v16; // [esp+24h] [ebp-34h]
-  int v17; // [esp+28h] [ebp-30h]
-  int v18; // [esp+2Ch] [ebp-2Ch]
   int Option2; // [esp+30h] [ebp-28h]
   int Option; // [esp+34h] [ebp-24h]
   int PlayerColor; // [esp+38h] [ebp-20h]
   int PlayerSide; // [esp+3Ch] [ebp-1Ch]
   int v23; // [esp+40h] [ebp-18h]
   Game *v24; // [esp+44h] [ebp-14h]
-  int a1; // [esp+48h] [ebp-10h] BYREF
   _DWORD v26[3]; // [esp+4Ch] [ebp-Ch] BYREF
 
   Game *v1 = this; /*0x77e43a*/
@@ -1484,14 +1479,14 @@ void Game::EncodeGameSetupState()
       Option = SessionClass::GetOption((int)v6); /*0x77e59e*/
       edi11 = 0; /*0x77e5a9*/
       Option2 = SessionClass::GetOption2((int)v6); /*0x77e5ab*/
-      v17 = 0; /*0x77e5af*/
-      v18 = 0; /*0x77e5b3*/
+      int v17 = 0; /*0x77e5af*/
+      int v18 = 0; /*0x77e5b3*/
       v9 = (SessionClass *)&HouseClass_Player[40260]; /*0x77e5b7*/
       while ( 1 ) /*0x77e5c4*/
       {
         aP0 = (IUnknown *)v9->GameMode[0]; /*0x77e5c4*/
-        v16 = ToWideStringChar(*(IUnknown **)(*(_DWORD *)&HouseClass_Player[40236] + 4 * v4)); /*0x77e5d4*/
-        v8 = ToWideStringChar(aP0); /*0x77e5d8*/
+        void * v16 = ToWideStringChar(*(IUnknown **)(*(_DWORD *)&HouseClass_Player[40236] + 4 * v4)); /*0x77e5d4*/
+        char * v8 = ToWideStringChar(aP0); /*0x77e5d8*/
         if ( !_strcmpi(v16, v8) ) /*0x77e5e3*/
           break; /*0x77e5e3*/
         v9 = (SessionClass *)((char *)v9 + 4); /*0x77e5ef*/
@@ -1499,6 +1494,7 @@ void Game::EncodeGameSetupState()
         if ( (int)v9 >= (int)&HouseClass_Player[40292] ) /*0x77e5f9*/
           goto LABEL_16; /*0x77e5f9*/
       }
+  int a1; // [esp+48h] [ebp-10h] BYREF
       Network::GetAddress((_DWORD *)(12 * edi11 + 11066316), &a1, (ObjectClass *)v26, &v11); /*0x77e61e*/
 LABEL_16:
       WideString::Assign(&v12, *(CampaignScore **)(*(_DWORD *)&HouseClass_Player[40236] + 4 * v4)); /*0x77e635*/

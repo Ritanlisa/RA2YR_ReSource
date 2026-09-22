@@ -12,8 +12,6 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
   int v18; // ebx
   unsigned __int8 v19; // dl
   unsigned __int8 v20; // dl
-  int v21; // esi
-  int v22; // esi
   int v23; // [esp+18h] [ebp+4h]
   unsigned __int8 *a2a; // [esp+1Ch] [ebp+8h]
 
@@ -50,7 +48,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
     if ( v19 ) /*0x497abf*/
     {
       arg0 += 2; /*0x497ae8*/
-      v22 = a2a[v19] | *(unsigned __int16 *)(v23 + 2 * *result); /*0x497b03*/
+      int v22 = a2a[v19] | *(unsigned __int16 *)(v23 + 2 * *result); /*0x497b03*/
       --v18; /*0x497b09*/
       ++result; /*0x497b0a*/
       *(_WORD *)(arg0 - 2) = *(_WORD *)(this->RLEBlitTransZRemapXlatAlpha_ushort_field_0x08 + 2 * v22); /*0x497b14*/
@@ -59,7 +57,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
     {
       v20 = *a2++; /*0x497ac1*/
       v18 -= v20; /*0x497ad3*/
-      v21 = 2 * v20; /*0x497ad5*/
+      int v21 = 2 * v20; /*0x497ad5*/
       arg0 += v21; /*0x497ad7*/
       result = (unsigned __int16 *)((char *)result + v21); /*0x497ad9*/
     }

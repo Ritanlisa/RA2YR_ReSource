@@ -18,25 +18,16 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   int *PlacementRectBuildingClass; // edi
   int *StartCoordsHouse; // eax
   int v8; // edx
-  int v9; // ecx
-  int v10; // ebp
-  int v11; // ebx
-  int v12; // eax
-  int v13; // edi
   int v14; // ebp
   int v15; // ecx
   int v16; // edi
   HouseClass *v17; // ebp
   int v18; // edi
-  int v19; // eax
   int v20; // ecx
   int v21; // eax
   int v22; // edi
-  int v24; // [esp+18h] [ebp-28h]
   int v25[4]; // [esp+20h] [ebp-20h] BYREF
   int v26[4]; // [esp+30h] [ebp-10h] BYREF
-  int v27; // [esp+44h] [ebp+4h]
-  int v28; // [esp+48h] [ebp+8h]
   AbstractClass::Constructor((AbstractClass *)this); /*0x4d0989*/
   this->LastSight = a3; /*0x4d099e*/
   this->House = 0; /*0x4d09a1*/
@@ -69,7 +60,8 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   }
   else
   {
-    v28 = PlacementRectBuildingClass[2]; /*0x4d0a59*/
+    int v28 = PlacementRectBuildingClass[2]; /*0x4d0a59*/
+  int v27; // [esp+44h] [ebp+4h]
     if ( v28 <= 0 || (v27 = PlacementRectBuildingClass[3], v27 <= 0) ) /*0x4d0a68*/
     {
       v8 = *StartCoordsHouse; /*0x4d0ad2*/
@@ -80,18 +72,18 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
     else
     {
       v8 = *StartCoordsHouse; /*0x4d0a6a*/
-      v9 = *PlacementRectBuildingClass; /*0x4d0a6c*/
-      v10 = StartCoordsHouse[2]; /*0x4d0a6e*/
-      v11 = StartCoordsHouse[1]; /*0x4d0a71*/
-      v12 = StartCoordsHouse[3]; /*0x4d0a74*/
-      v24 = v10; /*0x4d0a79*/
+      int v9 = *PlacementRectBuildingClass; /*0x4d0a6c*/
+      int v10 = StartCoordsHouse[2]; /*0x4d0a6e*/
+      int v11 = StartCoordsHouse[1]; /*0x4d0a71*/
+      int v12 = StartCoordsHouse[3]; /*0x4d0a74*/
+      int v24 = v10; /*0x4d0a79*/
       if ( v8 > *PlacementRectBuildingClass ) /*0x4d0a7d*/
       {
         v10 += v8 - v9; /*0x4d0a81*/
         v8 = *PlacementRectBuildingClass; /*0x4d0a83*/
         v24 = v10; /*0x4d0a85*/
       }
-      v13 = PlacementRectBuildingClass[1]; /*0x4d0a89*/
+      int v13 = PlacementRectBuildingClass[1]; /*0x4d0a89*/
       if ( v11 > v13 ) /*0x4d0a92*/
       {
         v12 += v11 - v13; /*0x4d0a96*/
@@ -125,7 +117,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
          DataGlobal_8B3D24 + DataGlobal_8B3D18,
          0) )
   {
-    v19 = g_FootClassConfig++; /*0x4d0b7c*/
+    int v19 = g_FootClassConfig++; /*0x4d0b7c*/
     *((_DWORD *)DataGlobal_8B3D14 + v19) = this; /*0x4d0b8b*/
   }
   v20 = (__int16)(this->q034 / 256); /*0x4d0bb4*/
@@ -158,7 +150,6 @@ void * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4)
   int v16; // ebp
   AbstractClass *v17; // ebx
   int i; // eax
-  _DWORD *v19; // ecx
   int v21; // [esp+10h] [ebp-24h] BYREF
   int v22; // [esp+14h] [ebp-20h]
   _DWORD a1[2]; // [esp+18h] [ebp-1Ch] BYREF
@@ -240,6 +231,7 @@ void * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4)
   v17 = (AbstractClass *)__2_YAPAXI_Z(8 * (v16 + *(_DWORD *)&g_CellDirectionOffsets[83512])); /*0x4d0e44*/
   if ( v17 ) /*0x4d0e4b*/
   {
+  _DWORD *v19; // ecx
     for ( i = 0; i < *(int *)&g_CellDirectionOffsets[83508]; *(_DWORD *)&v17->__pad_0[8 * i - 4] = v19[1] ) /*0x4d0e64*/
     {
       v19 = (_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[83504] + 8 * i++); /*0x4d0e6c*/
@@ -281,15 +273,11 @@ int FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2)
   bool v43; // zf
   int *v45; // [esp+20h] [ebp-40h]
   int v46; // [esp+24h] [ebp-3Ch]
-  int v47; // [esp+28h] [ebp-38h]
-  int v48; // [esp+2Ch] [ebp-34h]
   _DWORD v49[2]; // [esp+30h] [ebp-30h] BYREF
   HouseClass *v50; // [esp+38h] [ebp-28h]
-  int v51; // [esp+3Ch] [ebp-24h]
   char v52[8]; // [esp+40h] [ebp-20h] BYREF
   BuildingClass *v53; // [esp+48h] [ebp-18h]
   BuildingClass *v54; // [esp+4Ch] [ebp-14h]
-  int v55[4]; // [esp+50h] [ebp-10h] BYREF
   BuildingClass *aP1a; // [esp+64h] [ebp+4h]
   FoggedObjectClass *aP2a; // [esp+68h] [ebp+8h]
   FoggedObjectClass *aP2b; // [esp+68h] [ebp+8h]
@@ -395,6 +383,7 @@ LABEL_11:
       goto LABEL_47; /*0x4d1183*/
     *(_BYTE *)(*Anims + 409) = 1; /*0x4d1189*/
     aP1a = *(BuildingClass **)(*Anims + 200); /*0x4d119a*/
+  int v55[4]; // [esp+50h] [ebp-10h] BYREF
     int v22 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)*Anims + 296))(*Anims, v55); /*0x4d11a3*/
     v23 = (BuildingClass **)(this + 64); /*0x4d11ac*/
     if ( this->q048 <= 0 || this->q04C <= 0 ) /*0x4d11bc*/
@@ -408,14 +397,14 @@ LABEL_11:
       aP2b = *(FoggedObjectClass **)(v22 + 8); /*0x4d11c7*/
       if ( (int)aP2b > 0 ) /*0x4d11cb*/
       {
-        v48 = *(_DWORD *)(v22 + 12); /*0x4d11d6*/
+        int v48 = *(_DWORD *)(v22 + 12); /*0x4d11d6*/
         if ( v48 > 0 ) /*0x4d11da*/
         {
           v24 = *v23; /*0x4d11dc*/
           HouseClass *v25 = this->q044; /*0x4d11de*/
           HouseClass *v26 = this->q048; /*0x4d11e1*/
           v50 = v26; /*0x4d11e4*/
-          v51 = this->q04C; /*0x4d11eb*/
+          int v51 = this->q04C; /*0x4d11eb*/
           v27 = *(BuildingClass **)v22; /*0x4d11ef*/
           if ( (int)v24 > *(_DWORD *)v22 ) /*0x4d11f3*/
           {
@@ -424,7 +413,7 @@ LABEL_11:
             v50 = v28; /*0x4d11fb*/
           }
           int v29 = *(_DWORD *)(v22 + 4); /*0x4d11ff*/
-          v47 = v29; /*0x4d1204*/
+          int v47 = v29; /*0x4d1204*/
           if ( v25 > v29 ) /*0x4d1208*/
           {
             int v30 = v25 - v29 + v51; /*0x4d1210*/
@@ -497,7 +486,6 @@ int FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   int v17; // ebp
   _DWORD *v18; // ebx
   signed int i; // eax
-  _DWORD *v20; // ecx
   _DWORD v22[2]; // [esp+10h] [ebp-10h] BYREF
   int v23; // [esp+18h] [ebp-8h]
   AbstractClass::Constructor((AbstractClass *)this); /*0x4d1379*/
@@ -583,6 +571,7 @@ int FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   v18 = __2_YAPAXI_Z(8 * (v17 + DataGlobal_8B3CC8)); /*0x4d15a2*/
   if ( v18 ) /*0x4d15a9*/
   {
+  _DWORD *v20; // ecx
     for ( i = 0; i < (int)g_MissionState; v18[2 * i - 1] = v20[1] ) /*0x4d15c2*/
     {
       v20 = (char *)g_MissionPool + 8 * i++; /*0x4d15ca*/

@@ -331,22 +331,20 @@ void System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, in
 {
   int v6; // esi
   IUnknown *v7; // eax
-  bool v8; // zf
-  char *v9; // eax
   while ( 1 ) /*0x68c9d8*/
   {
     v6 = 0; /*0x68c9d8*/
     if ( *(int *)stru_B05488[88] > 0 ) /*0x68c9dc*/
       break; /*0x68c9dc*/
 LABEL_6:
-    v9 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x68ca15*/
+    char * v9 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x68ca15*/
     if ( v9 ) /*0x68ca24*/
       FontClass::InitMetrics(v9, aP0->__pad_0, a1, aP3, a4, a5, 1); /*0x68ca37*/
   }
   v7 = (IUnknown *)stru_B05488.field_4C; /*0x68c9de*/
   while ( 1 ) /*0x68c9f6*/
   {
-    v8 = _strcmpi(aP0, *(const void **)(*(&v7->field_0 + v6) + 772)) == 0; /*0x68c9f6*/
+    bool v8 = _strcmpi(aP0, *(const void **)(*(&v7->field_0 + v6) + 772)) == 0; /*0x68c9f6*/
     v7 = (IUnknown *)stru_B05488.field_4C; /*0x68c9f8*/
     if ( v8 && *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * v6) + 784) == a5 ) /*0x68ca08*/
       return v6; /*0x68ca40*/

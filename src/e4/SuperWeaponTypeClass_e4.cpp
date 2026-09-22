@@ -21,15 +21,7 @@ int SuperWeaponTypeClass::IsAvailable()
   int v15; // eax
   int v16; // edx
   int v17; // ecx
-  int v18; // edi
-  int v19; // ebp
   int v20; // ecx
-  int v21; // edi
-  int v22; // edx
-  int v23; // ecx
-  int v24; // eax
-  int v25; // edi
-  int v26; // ebp
   int v27; // edi
   _DWORD *v28; // eax
   AbstractClass *v29; // ebx
@@ -91,8 +83,8 @@ LABEL_17:
   }
   else
   {
-    v18 = *(_DWORD *)(v13 + 4); /*0x4f664e*/
-    v19 = v18; /*0x4f6651*/
+    int v18 = *(_DWORD *)(v13 + 4); /*0x4f664e*/
+    int v19 = v18; /*0x4f6651*/
     while ( (v16 & *(_DWORD *)(*(_DWORD *)v19 + 1740)) == 0 ) /*0x4f665c*/
     {
       ++v17; /*0x4f665e*/
@@ -109,18 +101,18 @@ LABEL_17:
   v35 = v20 != 0; /*0x4f6673*/
   if ( v20 ) /*0x4f6677*/
   {
-    v21 = *(_DWORD *)&DataGlobal_87F8E4[30972] + 2876; /*0x4f668c*/
-    v22 = 1 << SuperWeaponTypeClass::FindByName((void *)(this->SidebarImageFile_0x18 + 152)); /*0x4f669e*/
-    v23 = *(_DWORD *)(v21 + 16); /*0x4f66a0*/
-    v24 = 0; /*0x4f66a3*/
+    int v21 = *(_DWORD *)&DataGlobal_87F8E4[30972] + 2876; /*0x4f668c*/
+    int v22 = 1 << SuperWeaponTypeClass::FindByName((void *)(this->SidebarImageFile_0x18 + 152)); /*0x4f669e*/
+    int v23 = *(_DWORD *)(v21 + 16); /*0x4f66a0*/
+    int v24 = 0; /*0x4f66a3*/
     if ( v23 <= 0 ) /*0x4f66a7*/
     {
       v27 = (*(int (__thiscall **)(_DWORD, _DWORD *))(MEMORY[0] + 132))(0, this); /*0x4f6702*/
     }
     else
     {
-      v25 = *(_DWORD *)(v21 + 4); /*0x4f66a9*/
-      v26 = v25; /*0x4f66ac*/
+      int v25 = *(_DWORD *)(v21 + 4); /*0x4f66a9*/
+      int v26 = v25; /*0x4f66ac*/
       while ( (v22 & *(_DWORD *)(*(_DWORD *)v26 + 1740)) == 0 ) /*0x4f66b7*/
       {
         ++v24; /*0x4f66b9*/

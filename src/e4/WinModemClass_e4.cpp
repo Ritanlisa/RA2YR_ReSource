@@ -15,9 +15,6 @@ int WinModemClass::ReadSerial()
   NullModemClass *v8; // ecx
   DWORD cbOutQue; // eax
   bool v10; // zf
-  void *v11; // ecx
-  BOOL v12; // eax
-  bool v13; // dl
   DWORD i; // eax
   DWORD NumberOfBytesTransferred; // [esp+10h] [ebp-18h] BYREF
   DWORD v16; // [esp+14h] [ebp-14h]
@@ -80,10 +77,10 @@ int WinModemClass::ReadSerial()
   }
   while ( 1 ) /*0x774a86*/
   {
-    v11 = this->q05C; /*0x774a86*/
+    void * v11 = this->q05C; /*0x774a86*/
     NumberOfBytesTransferred = 0; /*0x774a95*/
-    v12 = ReadFile(v11, (LPVOID)(this + 108), cbInQue, &NumberOfBytesTransferred, (LPOVERLAPPED)(this + 40)); /*0x774a99*/
-    v13 = v12; /*0x774aa1*/
+    BOOL v12 = ReadFile(v11, (LPVOID)(this + 108), cbInQue, &NumberOfBytesTransferred, (LPOVERLAPPED)(this + 40)); /*0x774a99*/
+    bool v13 = v12; /*0x774aa1*/
     if ( !v12 ) /*0x774aa6*/
       break; /*0x774aa6*/
     if ( NumberOfBytesTransferred ) /*0x774aae*/

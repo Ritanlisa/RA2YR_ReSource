@@ -716,7 +716,7 @@ int __thiscall TechnoClass::FireWeaponBurst(#377 *this, int a2, int a3)
 // ==== 0x00741490  TechnoClass::checkTargetValidity  this=TechnoClass  sig=csp ====
 int __thiscall TechnoClass::sub_741490(_DWORD *this)
 {
-  return this->q6C4; /*0x741496*/
+  return this->type; /*0x741496*/
 }
 
 
@@ -2390,7 +2390,7 @@ LABEL_7:
                    (int)&v38,
                    &v38,
                    (__int16 *)&v39,
-                   *(_DWORD *)(this->q6C4 + 1660),
+                   *(_DWORD *)(this->type + 1660),
                    -1,
                    0,
                    v11,
@@ -4257,7 +4257,7 @@ char __thiscall TechnoClass::TransferSlavedUnit(int this, HouseClass *aP1, int a
 // ==== 0x00746400  TechnoClass::processParasiteAttachment  this=TechnoClass  sig=csp ====
 bool __thiscall TechnoClass::sub_746400(_DWORD *this)
 {
-  return *(_BYTE *)(this->q6C4 + 3611) == 0; /*0x746415*/
+  return *(_BYTE *)(this->type + 3611) == 0; /*0x746415*/
 }
 
 
@@ -4740,7 +4740,7 @@ int __thiscall TechnoClass::sub_746CD0(int this, int a2)
 // ==== 0x00746D00  TechnoClass::updateSpawnManager  this=TechnoClass  sig=csp ====
 char __thiscall sub_746D00(_DWORD *this)
 {
-  return *(_BYTE *)(this->q6C4 + 1708); /*0x746d0c*/
+  return *(_BYTE *)(this->type + 1708); /*0x746d0c*/
 }
 
 

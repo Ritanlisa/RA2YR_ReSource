@@ -772,32 +772,19 @@ void ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
   int v8; // esi
   int v9; // edi
   VectorClass *v10; // ecx
-  int v11; // eax
   VectorClass *v12; // eax
-  int v13; // edi
-  char *v14; // esi
-  int v15; // eax
   int v16; // edi
-  int v17; // ecx
-  int v18; // eax
-  int v19; // ecx
-  int v20; // eax
-  _DWORD *v21; // edx
-  bool v22; // zf
   int v23; // [esp+18h] [ebp-74h]
   int v24; // [esp+1Ch] [ebp-70h]
   __int64 v25; // [esp+20h] [ebp-6Ch]
   int v26; // [esp+28h] [ebp-64h]
   int v27; // [esp+2Ch] [ebp-60h]
-  int v28; // [esp+30h] [ebp-5Ch]
   int v29; // [esp+38h] [ebp-54h]
   int v30; // [esp+3Ch] [ebp-50h]
   int v31; // [esp+40h] [ebp-4Ch]
   int j; // [esp+40h] [ebp-4Ch]
   MapResourceClass v33; // [esp+44h] [ebp-48h]
   MapResourceClass v34; // [esp+48h] [ebp-44h]
-  __int64 v35; // [esp+4Ch] [ebp-40h]
-  double v36; // [esp+54h] [ebp-38h]
   void **v37; // [esp+5Ch] [ebp-30h] BYREF
   void *Block; // [esp+60h] [ebp-2Ch]
   int v39; // [esp+64h] [ebp-28h]
@@ -806,7 +793,6 @@ void ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
   CCINIClass *v42; // [esp+70h] [ebp-1Ch]
   void **v43; // [esp+74h] [ebp-18h] BYREF
   void *v44; // [esp+78h] [ebp-14h]
-  int v45; // [esp+7Ch] [ebp-10h]
   char v46; // [esp+81h] [ebp-Bh]
   int v47; // [esp+84h] [ebp-8h]
   int v48; // [esp+88h] [ebp-4h]
@@ -868,12 +854,13 @@ void ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
   {
     do /*0x59aacf*/
     {
+  int v45; // [esp+7Ch] [ebp-10h]
       if ( v47 < v45 /*0x59aa69*/
         || (v46 || !v45)
         && v48 > 0
         && ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v43[2])(&v43, v48 + v45, 0) )
       {
-        v11 = v47++; /*0x59aa74*/
+        int v11 = v47++; /*0x59aa74*/
         *((_DWORD *)v44 + v11) = v5; /*0x59aa7f*/
       }
       if ( (int)i < v39 /*0x59aaaf*/
@@ -892,14 +879,15 @@ void ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
   }
   if ( v8 > 0 ) /*0x59aadb*/
   {
-    v13 = v8; /*0x59aae1*/
+    int v13 = v8; /*0x59aae1*/
     do /*0x59ab62*/
     {
-      v14 = &v10[-1].__tail_E[1]; /*0x59aae3*/
-      v36 = (double)(unsigned int)v10; /*0x59aaf9*/
+  int v15; // eax
+      char * v14 = &v10[-1].__tail_E[1]; /*0x59aae3*/
+      double v36 = (double)(unsigned int)v10; /*0x59aaf9*/
       do /*0x59ab28*/
       {
-        v35 = (unsigned int)Random::State(&g_Randomizer); /*0x59ab07*/
+        __int64 v35 = (unsigned int)Random::State(&g_Randomizer); /*0x59ab07*/
         v15 = Math::RoundToInt((double)v35 * v36 * 2.328306437080797e-10); /*0x59ab21*/
       }
       while ( v15 > (unsigned int)v14 ); /*0x59ab28*/
@@ -921,7 +909,7 @@ void ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
   v16 = 0; /*0x59ab6c*/
   for ( j = 0; v16 < v23; j = v16 ) /*0x59ab74*/
   {
-    v17 = *((_DWORD *)v44 + v16); /*0x59ab85*/
+    int v17 = *((_DWORD *)v44 + v16); /*0x59ab85*/
     if ( v17 < v5 ) /*0x59ab8a*/
     {
       if ( SHIDWORD(v25) <= 0 ) /*0x59ab92*/
@@ -931,18 +919,20 @@ void ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
     }
     if ( v17 > 0 ) /*0x59abbe*/
     {
-      v28 = *((_DWORD *)v44 + v16); /*0x59abc8*/
+  bool v22; // zf
+      int v28 = *((_DWORD *)v44 + v16); /*0x59abc8*/
       do /*0x59ac53*/
       {
-        v18 = *(_DWORD *)(a1 + 8); /*0x59abda*/
+        int v18 = *(_DWORD *)(a1 + 8); /*0x59abda*/
         if ( *(_DWORD *)(a1 + 16) < v18 /*0x59ac02*/
           || (*(_BYTE *)(a1 + 13) || !v18)
+  int v19; // ecx
           && (v19 = *(_DWORD *)(a1 + 20), v19 > 0)
           && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a1 + 8))(a1, v18 + v19, 0) )
         {
-          v20 = *(_DWORD *)(a1 + 16); /*0x59ac09*/
+          int v20 = *(_DWORD *)(a1 + 16); /*0x59ac09*/
           *(_DWORD *)(a1 + 16) = v20 + 1; /*0x59ac0f*/
-          v21 = (_DWORD *)(*(_DWORD *)(a1 + 4) + 16 * v20); /*0x59ac1a*/
+          _DWORD * v21 = (_DWORD *)(*(_DWORD *)(a1 + 4) + 16 * v20); /*0x59ac1a*/
           *v21 = *(_DWORD *)&v33 + 2; /*0x59ac23*/
           v21[1] = *(_DWORD *)&v34 + 2; /*0x59ac25*/
           v21[2] = v24 - 4; /*0x59ac28*/

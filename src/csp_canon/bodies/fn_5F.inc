@@ -1661,7 +1661,7 @@ void Options::SetScoreVolume(float volume, int pad)
     v4 = volume;
     *(float *)&this->__pad_34[12] = v4;
     v5 = Math::RoundToInt(v4 * 16384.0);
-    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3872], v5);
+    EndBufferMixer(*(int **)&DataGlobal_87C374[9168], v5);
     v6 = Math::RoundToInt(*(float *)&this->__pad_34[12] * 255.0);
     GameSettings::SetScoreVolume(&g_BuildingTypeClass_Count, v6);
     Debug::Log();
@@ -1680,9 +1680,9 @@ void Options::SetSoundVolume(float volume, int pad)
     v3 = volume;
     *(float *)&this->__pad_34[4] = v3;
     v4 = Math::RoundToInt(v3 * 16384.0);
-    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3876], v4);
+    EndBufferMixer(*(int **)&DataGlobal_87C374[9172], v4);
     if ( (char)pad )
-    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 1808), 0x2000, 1.0, 0);
+    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374[44652] + 1808), 0x2000, 1.0, 0);
     Debug::Log();
 }
 }
@@ -1702,9 +1702,9 @@ void Options::SetVoiceVolume(float volume, int pad)
     v5 = Math::RoundToInt(v4 * 255.0);
     ThemeClass::GetField(v5);
     v6 = Math::RoundToInt(*(float *)&this->__pad_34[8] * 16384.0);
-    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3868], v6);
+    EndBufferMixer(*(int **)&DataGlobal_87C374[9164], v6);
     if ( (char)pad )
-    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 1808), 0x2000, *(float *)&this->__pad_34[8], 0);
+    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374[44652] + 1808), 0x2000, *(float *)&this->__pad_34[8], 0);
     Debug::Log();
 }
 }
@@ -2019,7 +2019,7 @@ int Object::LoadObject(ObjectClass * aP1, int aP1a)
     *(int *)&aP1->__pad_0[8] = (unsigned int)vt_OverlayClass;
     *(int *)&aP1->__pad_0[12] = &vt_OverlayClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP1[1]);
   }
     return (int)Register->__pad_0;
 }

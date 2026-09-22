@@ -115,8 +115,6 @@ int MultiplayerSiege::ProcessTurn(char a2)
   _DWORD *v7; // ebx
   int v8; // eax
   int i; // esi
-  _DWORD *v10; // edi
-  int *v11; // eax
   _DWORD v13[4]; // [esp+10h] [ebp-28h] BYREF
   void **v14; // [esp+20h] [ebp-18h] BYREF
   void *Block; // [esp+24h] [ebp-14h]
@@ -170,10 +168,11 @@ LABEL_26:
   HouseClass::SetMapSeed(v7, v8); /*0x5ca8e8*/
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x5ca8f6*/
   {
-    v10 = *(_DWORD **)&HouseClass_Array->__pad_0[4 * i]; /*0x5ca8fe*/
+    _DWORD * v10 = *(_DWORD **)&HouseClass_Array->__pad_0[4 * i]; /*0x5ca8fe*/
     if ( !*(_BYTE *)(v10[13] + 422) && v10 != v7 ) /*0x5ca910*/
     {
       Debug::Log(); /*0x5ca91c*/
+  int *v11; // eax
       v11 = (int *)this->FindStartingCell(/*0x5ca939*/
                      this, &a2, i, &v14, v13);
       HouseClass::SetMapSeed(v10, *v11); /*0x5ca944*/

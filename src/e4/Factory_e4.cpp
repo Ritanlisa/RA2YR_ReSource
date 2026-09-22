@@ -52,10 +52,6 @@ void Factory_CalculateExitCell()
   int v75; // [esp+60h] [ebp-24h] BYREF
   int v76; // [esp+64h] [ebp-20h] BYREF
   int v77; // [esp+68h] [ebp-1Ch]
-  int v78; // [esp+6Ch] [ebp-18h] BYREF
-  int v79; // [esp+70h] [ebp-14h] BYREF
-  int v80; // [esp+74h] [ebp-10h] BYREF
-  int v81[3]; // [esp+78h] [ebp-Ch] BYREF
 
   int * v7 = a1 + 10; /*0x718b80*/
   if ( a1[10] == DataGlobal_B0EBF8 && a1[11] == DataGlobal_B0EBFC && a1[12] == DataGlobal_B0EC00 ) /*0x718b9d*/
@@ -84,6 +80,7 @@ void Factory_CalculateExitCell()
   }
   else
   {
+  int v81[3]; // [esp+78h] [ebp-Ch] BYREF
   int v72; // [esp+50h] [ebp-34h] BYREF
     if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v73) + 80) & 0x100) == 0 /*0x718c6e*/
   int *v11; // edx
@@ -146,10 +143,11 @@ void Factory_CalculateExitCell()
         }
       }
       v77 = *v7; /*0x718dee*/
-      v78 = a1[11]; /*0x718dfa*/
+      int v78 = a1[11]; /*0x718dfa*/
       char v62 = a6; /*0x718e05*/
-      v79 = a1[12]; /*0x718e06*/
+      int v79 = a1[12]; /*0x718e06*/
       _DWORD * v21 = Coord::To_Cell(&DataGlobal_87F7E8, &v74); /*0x718e1e*/
+  int v80; // [esp+74h] [ebp-10h] BYREF
       int * v22 = ObjectPlacement::CalcPosition(v21, &v80, &v74, v62, (char)v67, 0); /*0x718e25*/
       *v7 = *v22; /*0x718e32*/
       a1[11] = v22[1]; /*0x718e3b*/

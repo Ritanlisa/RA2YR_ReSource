@@ -23,23 +23,21 @@ int INIClass::WOLobby_Play()
   int v2; // ebx
   int result; // eax
   int i; // esi
-  char *v6; // eax
-  char v7[108]; // [esp+14h] [ebp-234h] BYREF
-  _DWORD v8[113]; // [esp+80h] [ebp-1C8h] BYREF
   __int16 v9; // [esp+244h] [ebp-4h]
-  char v10; // [esp+246h] [ebp-2h]
   v2 = (int)*(&g_MatrixTransformState + 2263); /*0x5e3857*/
   if ( *(&g_MatrixTransformState + 2263) ) /*0x5e3864*/
   {
+  char v7[108]; // [esp+14h] [ebp-234h] BYREF
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/
     strcpy(&v7[36], this->__pad_0); /*0x5e3892*/
     return (*(int (__stdcall **)(int, char *, const char *))(*(_DWORD *)v2 + 56))(v2, v7, v1); /*0x5e38a3*/
   }
   else
   {
+  _DWORD v8[113]; // [esp+80h] [ebp-1C8h] BYREF
     memset(v8, 0, sizeof(v8)); /*0x5e38c6*/
     v9 = 0; /*0x5e38c8*/
-    v10 = 0; /*0x5e38ca*/
+    char v10 = 0; /*0x5e38ca*/
     v8[0] = 24; /*0x5e38d5*/
     strcpy((char *)&v8[1], &HouseClass_Player[30260]); /*0x5e38f6*/
     strcpy((char *)&v8[11] + 3, v1); /*0x5e3915*/
@@ -48,7 +46,7 @@ int INIClass::WOLobby_Play()
     result = *(_DWORD *)&HouseClass_Player[40248]; /*0x5e393c*/
     for ( i = 1; i < *(int *)&HouseClass_Player[40248]; ++i ) /*0x5e3948*/
     {
-      v6 = ToWideStringChar(*(IUnknown **)(*(_DWORD *)&HouseClass_Player[40236] + 4 * i)); /*0x5e3953*/
+      char * v6 = ToWideStringChar(*(IUnknown **)(*(_DWORD *)&HouseClass_Player[40236] + 4 * i)); /*0x5e3953*/
       if ( !_strcmpi(v6, this) ) /*0x5e3959*/
       {
         Debug::Log(); /*0x5e3974*/
@@ -174,13 +172,9 @@ int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, H
   const wchar_t *v162; // [esp+10h] [ebp-24Ch] BYREF
   char v163; // [esp+17h] [ebp-245h]
   void (__stdcall **v164)(LPVOID, char *, int, char **); // [esp+18h] [ebp-244h] BYREF
-  int v165; // [esp+1Ch] [ebp-240h]
-  char *v166; // [esp+20h] [ebp-23Ch]
   void (__stdcall **v167)(LPVOID, char *, int, char **); // [esp+24h] [ebp-238h]
   size_t v168; // [esp+28h] [ebp-234h]
   struct tagRECT Rect; // [esp+2Ch] [ebp-230h] BYREF
-  void *v170; // [esp+4Ch] [ebp-210h] BYREF
-  void *v171; // [esp+50h] [ebp-20Ch] BYREF
   struct in_addr String[32]; // [esp+54h] [ebp-208h] BYREF
   wchar_t Destination[66]; // [esp+D4h] [ebp-188h] BYREF
   wchar_t String1[130]; // [esp+158h] [ebp-104h] BYREF
@@ -710,12 +704,13 @@ LABEL_384:
         v20 = v19;
         if ( v19 )
         {
-          v21 = (const wchar_t **)WOLobby_Setup(&v171, hDlg, v19);
+          void * v171 = (const wchar_t **)WOLobby_Setup(&v171, hDlg, v19);
           WideString::Reassign_Alt((void **)&v162, v21);
           DeleteAndZero::Alt(&v171);
           v22 = WideString::GetOrEmpty((wchar_t **)&v162);
           if ( !wcscmp(v22, &g_TypeClass_DefaultString) )
           {
+  void *v170; // [esp+4Ch] [ebp-210h] BYREF
             OwnerName = GetSkirmishMenuOwnerName((wchar_t **)&v170, hDlg, v20);
             WideString::Reassign_Alt((void **)&v162, (const wchar_t **)OwnerName);
             DeleteAndZero::Alt(&v170);
@@ -810,6 +805,7 @@ LABEL_293:
         v163 = 0;
 LABEL_260:
   char v104; // al
+  int v165; // [esp+1Ch] [ebp-240h]
         if ( !v103 || (v104 = (*(int (__thiscall **)(int))(*(_DWORD *)v103 + 188))(v103), HIBYTE(v165) = 0, v104) )
           HIBYTE(v165) = 1;
         strcpy((char *)Destination, &Destination);
@@ -1058,7 +1054,7 @@ LABEL_201:
               LOBYTE(Rect.left) = g_INI_DefaultBuffer;
               memset((char *)&Rect.left + 1, 0, 9);
               int v85 = 0;
-              v166 = 0;
+              char * v166 = 0;
               v168 = 0;
               v164 = 0;
               v167 = 0;

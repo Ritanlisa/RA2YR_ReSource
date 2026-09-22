@@ -843,7 +843,7 @@ namespace gamemd { int BuildingLightClass::Draw_Start(int a1, int a2) {
                       v25 = v24[2];
                       v26 = *this;
                       v67 = v25;
-                      v27 = (_DWORD *)(*(int (__thiscall **)(int *, double *))(v26 + 72))(this, &v80);
+                      v27 = (_DWORD *)this->GetCoords_0(&v80);
                       v28 = (float *)Coord::Subtract(v83, *v27 - v65, v27[1] - v66, v27[2] - v25);
                       v61 = *v28;
                       v62 = v28[1];
@@ -995,10 +995,10 @@ namespace gamemd { int BuildingLightClass::SD_vt05(void* a1, int a2) {
           *(_DWORD *)&aP1->__pad_0[12] = &vt_BuildingLightClass;
         }
         ObjectPtr::RegisterForTracking(
-          (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+          (SwizzleManagerClass *)&stru_B05488[27784],
           (MouseClass *)&aP1[1].attachedBomb);
         ObjectPtr::RegisterForTracking(
-          (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+          (SwizzleManagerClass *)&stru_B05488[27784],
           (MouseClass *)&aP1[1].attachedTag);
       }
       return (int)Register->__pad_0;
@@ -1342,9 +1342,9 @@ int BombClass::Write(AbstractClass * aP0, int aP1)
     }
     AudioController::Init(&aP0[1].nextArrayIndex);
     *(int *)&aP0[2].__pad_0[12] = 0;
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[8]);
   }
     return (int)Prefix_0->__pad_0;
 }

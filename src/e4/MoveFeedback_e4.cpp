@@ -11,19 +11,9 @@ int MoveFeedback::ProcessCommand()
 {
   int Height; // eax
   _DWORD *v3; // esi
-  int v4; // ebp
-  int v5; // ebx
-  int v6; // edi
-  int v7; // ecx
-  int v8; // edx
-  _DWORD *v9; // eax
-  int v10; // edi
-  int v11; // ebp
   int v12; // ebp
   int i; // edi
-  int v14; // ecx
   char v16; // [esp+13h] [ebp-9h]
-  int v18; // [esp+18h] [ebp-4h] BYREF
   char v1 = g_MoveFeedback; /*0x7327d9*/
   v16 = g_MoveFeedback; /*0x7327e8*/
   g_MoveFeedback = 0; /*0x7327ec*/
@@ -31,7 +21,7 @@ int MoveFeedback::ProcessCommand()
   {
     Height = (int)__2_YAPAXI_Z(0x18u); /*0x7327fb*/
     v3 = (_DWORD *)Height; /*0x732800*/
-    v4 = 0; /*0x732802*/
+    int v4 = 0; /*0x732802*/
     if ( Height ) /*0x732809*/
     {
       LOBYTE(Height) = (unsigned __int8)EventClass::resetEvent((_DWORD *)Height, 0, 0); /*0x73280f*/
@@ -43,16 +33,16 @@ int MoveFeedback::ProcessCommand()
     {
       v3 = 0; /*0x732826*/
     }
-    v5 = g_SidebarState; /*0x732828*/
+    int v5 = g_SidebarState; /*0x732828*/
     if ( g_SidebarState > 0 ) /*0x732830*/
     {
       do /*0x732887*/
       {
-        v6 = *((_DWORD *)g_TechnoClass_Count + v4); /*0x73283b*/
+        int v6 = *((_DWORD *)g_TechnoClass_Count + v4); /*0x73283b*/
         LOBYTE(Height) = StepTechnoClassCleanupIfHuman(v6, this); /*0x732840*/
         if ( (_BYTE)Height ) /*0x732847*/
         {
-          v7 = v3[2]; /*0x732849*/
+          int v7 = v3[2]; /*0x732849*/
           if ( v3[4] < v7 /*0x732873*/
             || ((LOBYTE(Height) = *((_BYTE *)v3 + 13), (_BYTE)Height) || !v7)
             && (Height = v3[5], Height > 0)
@@ -60,7 +50,7 @@ int MoveFeedback::ProcessCommand()
                 (_BYTE)Height) )
           {
             Height = v3[4]; /*0x732875*/
-            v8 = v3[1]; /*0x732878*/
+            int v8 = v3[1]; /*0x732878*/
             v3[4] = Height + 1; /*0x73287e*/
             *(_DWORD *)(v8 + 4 * Height) = v6; /*0x732881*/
           }
@@ -73,9 +63,9 @@ int MoveFeedback::ProcessCommand()
   }
   else
   {
-    v9 = __2_YAPAXI_Z(0x18u); /*0x73288f*/
+    _DWORD * v9 = __2_YAPAXI_Z(0x18u); /*0x73288f*/
     v3 = v9; /*0x732894*/
-    v10 = 0; /*0x732896*/
+    int v10 = 0; /*0x732896*/
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
@@ -88,7 +78,7 @@ int MoveFeedback::ProcessCommand()
       v3 = 0; /*0x7328ba*/
     }
     Height = GetHeightMap(g_TacticalClass_Instance); /*0x7328c2*/
-    v11 = Height; /*0x7328c7*/
+    int v11 = Height; /*0x7328c7*/
     if ( Height > 0 ) /*0x7328cb*/
     {
       do /*0x73290b*/
@@ -98,7 +88,7 @@ int MoveFeedback::ProcessCommand()
         {
           if ( (*(_BYTE *)(Height + 20) & 1) != 0 ) /*0x7328e7*/
           {
-            v18 = Height; /*0x7328ef*/
+            int v18 = Height; /*0x7328ef*/
             LOBYTE(Height) = StepTechnoClassCleanupIfHuman(Height, this); /*0x7328f3*/
             if ( (_BYTE)Height ) /*0x7328fa*/
               LOBYTE(Height) = DynamicVector::AddItem(v3, &v18); /*0x732903*/
@@ -112,7 +102,7 @@ int MoveFeedback::ProcessCommand()
   v12 = v3[4]; /*0x73290d*/
   for ( i = 0; i < v12; ++i ) /*0x732914*/
   {
-    v14 = *(_DWORD *)(v3[1] + 4 * i); /*0x732919*/
+    int v14 = *(_DWORD *)(v3[1] + 4 * i); /*0x732919*/
     LOBYTE(Height) = (*(int (__thiscall **)(int))(*(_DWORD *)v14 + 332))(v14); /*0x73291e*/
   }
   if ( v3 ) /*0x73292b*/

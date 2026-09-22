@@ -1542,8 +1542,8 @@ char UI_Handle(MouseClass * aP0, int a2)
     *((char *)&g_MatrixTransformState + 24224) = 1;
     if ( *((char *)&(&g_MatrixTransformState)[506] + 4) )
   {
-    result = HouseClass_Player.__pad_5568[23060];
-    if ( *(int *)&HouseClass_Player.__pad_5568[23060] <= 0 )
+    result = HouseClass_Player[44924];
+    if ( *(int *)&HouseClass_Player[44924] <= 0 )
     {
     *((__int64 *)&(&g_MatrixTransformState)[503] + 1) = __PAIR64__(a2, (unsigned int)aP0);
     return (char)aP0;
@@ -1626,9 +1626,9 @@ int ColorLerpAndPack(short * a1, unsigned char * a2, ObjectClass * aP1)
     v5[2] = *((char *)(a1) + 2);
     *(short *)v5 = v3;
     Color::Lerp(v5, aP1, a2);
-    return (v5[0] >> g_CellDirectionOffsets.__pad_14B0[660] << g_CellDirectionOffsets.__pad_14B0[656])
-    | (v5[1] >> g_CellDirectionOffsets.__pad_14B0[676] << g_CellDirectionOffsets.__pad_14B0[672])
-    | (v5[2] >> g_CellDirectionOffsets.__pad_14B0[668] << g_CellDirectionOffsets.__pad_14B0[664]);
+    return (v5[0] >> g_CellDirectionOffsets[5956] << g_CellDirectionOffsets[5952])
+    | (v5[1] >> g_CellDirectionOffsets[5972] << g_CellDirectionOffsets[5968])
+    | (v5[2] >> g_CellDirectionOffsets[5964] << g_CellDirectionOffsets[5960]);
 }
 }
 
@@ -1666,9 +1666,9 @@ int * ActionScenarioClassCoordToScreen(BuildingClass * aP0, const void * a1, int
     a1a[1] = v8;
     a1a[0] = v7;
     a1a[2] = v9;
-    Coord::To_Screen(*(int **)&DataGlobal_87C374.__pad_579C[22548], a1a, (IUnknown *)v13);
-    v3 = *(int *)&DataGlobal_87C374.__pad_579C[21648] + v13[0];
-    v5 = *(int *)&DataGlobal_87C374.__pad_579C[21652] + v13[1];
+    Coord::To_Screen(*(int **)&DataGlobal_87C374[44976], a1a, (IUnknown *)v13);
+    v3 = *(int *)&DataGlobal_87C374[44076] + v13[0];
+    v5 = *(int *)&DataGlobal_87C374[44080] + v13[1];
   }
     *(int *)aP0->__pad_0 = v3;
     *(int *)&aP0->__pad_0[4] = v5;
@@ -1737,7 +1737,7 @@ int DSurface::DrawMarker(AbstractClass * aP1, ObjectClass * aP2)
     v7[0] = (char *)aP1 - 3;
     v7[1] = (char *)aP2 - 3;
     v7[3] = 6;
-    return (*(int (__thiscall **)(int, int *, int *, void *))(**(int **)&DataGlobal_87F8E4.__pad_5568[9424] + 84))( *(int *)&DataGlobal_87F8E4.__pad_5568[9424], v8, v7, this);
+    return (*(int (__thiscall **)(int, int *, int *, void *))(**(int **)&DataGlobal_87F8E4[31288] + 84))( *(int *)&DataGlobal_87F8E4[31288], v8, v7, this);
 }
 }
 

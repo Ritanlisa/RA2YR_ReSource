@@ -436,7 +436,6 @@ void UI_Get_60B1D0(HWND hWnd, HWND a2)
   LONG top; // esi
   HWND *v9; // eax
   int v10; // eax
-  _DWORD *v12; // eax
   HWND v13; // [esp+10h] [ebp-2Ch] BYREF
   int v14; // [esp+14h] [ebp-28h]
   int v15; // [esp+18h] [ebp-24h]
@@ -471,7 +470,7 @@ void UI_Get_60B1D0(HWND hWnd, HWND a2)
         if ( !v9 ) /*0x60b2dc*/
           goto LABEL_9; /*0x60b2dc*/
       }
-      v12 = v9 + 1; /*0x60b327*/
+      _DWORD * v12 = v9 + 1; /*0x60b327*/
       if ( v12 ) /*0x60b32c*/
       {
         v10 = v12[55]; /*0x60b32e*/

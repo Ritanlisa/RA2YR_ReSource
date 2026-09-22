@@ -21,7 +21,6 @@ int MixFile::LoadAll()
   _BYTE v70[12]; // [esp+90h] [ebp-140h] BYREF
   int v71; // [esp+9Ch] [ebp-134h]
   int v72; // [esp+A4h] [ebp-12Ch]
-  int v73[9]; // [esp+A8h] [ebp-128h] BYREF
   char Buffer[260]; // [esp+CCh] [ebp-104h] BYREF
 
   _DWORD * v0 = CCFileClass::Construct(v69, aConqmdMix); /*0x530473*/
@@ -305,6 +304,7 @@ LABEL_100:
   if ( LOBYTE(DataGlobal_87F7E8[31470]) == 1 ) /*0x530d0c*/
   {
     strcpy(Buffer, g_Str_File_MOVMD__MIX); /*0x530d37*/
+  int v73[9]; // [esp+A8h] [ebp-128h] BYREF
     _DWORD * v43 = RawFileClass::Construct(v73, (int)aMovies01Mix); /*0x530d47*/
     char v44 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v43 + 20))(v43, 0); /*0x530d5b*/
     RawFileClass::Dtor(v73); /*0x530d5d*/
@@ -455,18 +455,11 @@ int MixFile::LoadSide()
   MixFile *v2; // ebx
   unsigned int YR; // eax
   _DWORD *v12; // eax
-  _DWORD *v13; // eax
-  char v14; // bl
-  _DWORD *v15; // eax
-  char v16; // al
   MixFile *v17; // [esp+1Ch] [ebp-11Ch]
   char Buffer[64]; // [esp+20h] [ebp-118h] BYREF
   _DWORD v19[22]; // [esp+60h] [ebp-D8h] BYREF
   _BYTE v20[12]; // [esp+B8h] [ebp-80h] BYREF
   int v21; // [esp+C4h] [ebp-74h]
-  _DWORD v22[22]; // [esp+CCh] [ebp-6Ch] BYREF
-  _BYTE v23[12]; // [esp+124h] [ebp-14h] BYREF
-  int v24; // [esp+130h] [ebp-8h]
   VoxClass::SetEVAIndex(); /*0x534fac*/
   if ( this == 2 ) /*0x534fb4*/
     this = 1; /*0x534fb6*/
@@ -558,11 +551,13 @@ int MixFile::LoadSide()
   }
   if ( v12 ) /*0x53522c*/
   {
+  int v24; // [esp+130h] [ebp-8h]
+  _BYTE v23[12]; // [esp+124h] [ebp-14h] BYREF
     ReturnTrue(0); /*0x53524b*/
     sprintf(Buffer, stru_827DD4, v5); /*0x53525b*/
     Debug::Log(); /*0x53526a*/
-    v13 = CCFileClass::Construct(v19, Buffer); /*0x53527b*/
-    v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x535294*/
+    _DWORD * v13 = CCFileClass::Construct(v19, Buffer); /*0x53527b*/
+    char v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x535294*/
     v19[0] = &vt_CCFileClass; /*0x535296*/
     v21 = 0; /*0x53529a*/
     Vector::Clear((int)v20); /*0x5352a1*/
@@ -570,7 +565,7 @@ int MixFile::LoadSide()
     BufferIOFileClass::Dtor(v19); /*0x5352ae*/
     if ( v14 ) /*0x5352b5*/
     {
-      v15 = __2_YAPAXI_Z(0x28u); /*0x5352b9*/
+      _DWORD * v15 = __2_YAPAXI_Z(0x28u); /*0x5352b9*/
       if ( v15 ) /*0x5352c3*/
         DataGlobal_884E78 = (int)MixFileClass::FromFile(v15, Buffer, (int)&DataGlobal_886980); /*0x5352d6*/
       else
@@ -578,10 +573,11 @@ int MixFile::LoadSide()
     }
     House_Load(); /*0x5352e3*/
     Game::InitializeToolTipColor(v17); /*0x5352ec*/
+  _DWORD v22[22]; // [esp+CCh] [ebp-6Ch] BYREF
     CCFileClass::Construct(v22, unk_827DC8); /*0x5352fd*/
     if ( CCINIClass::Load(&CCINIClass_INI_UIMD, (int)v22, 0, 0) ) /*0x535311*/
     {
-      v16 = g_GameMode_Current[0] && g_GameMode_Current[0] != 5; /*0x53532f*/
+      char v16 = g_GameMode_Current[0] && g_GameMode_Current[0] != 5; /*0x53532f*/
       SidebarClass::ReadButtonList(&CCINIClass_INI_UIMD, v16); /*0x53533d*/
       SidebarClass::LoadButtonSHPs(&DataGlobal_87F7E8); /*0x535347*/
       v22[0] = &vt_CCFileClass; /*0x535353*/

@@ -17,9 +17,7 @@ int DSP_AudioMixBuffers(int a1, int a2)
   unsigned __int16 *v108; // edx
   int v117; // [esp+20h] [ebp-10h]
   __int16 v118; // [esp+24h] [ebp-Ch] BYREF
-  int v119; // [esp+26h] [ebp-Ah]
   __int16 v120; // [esp+2Ah] [ebp-6h]
-  int v121; // [esp+2Ch] [ebp-4h]
 
   int v3 = *(_DWORD *)(a1 + 132);
   _DWORD * v4 = *(_DWORD **)(a1 + 368);
@@ -588,11 +586,13 @@ LABEL_123:
         if ( v47 > 0xC || (*(int (__cdecl **)(int, int, __int16 *, unsigned int))(a1 + 64))(a1, 5, &v118, v47) )
           return -4;
         v48 = v118;
+  int v119; // [esp+26h] [ebp-Ah]
         *(_DWORD *)(a1 + 2000) = v119;
         *(_WORD *)(a1 + 2004) = v48;
         if ( *(_BYTE *)(a1 + 62) == 2 )
         {
           v49 = v120;
+  int v121; // [esp+2Ch] [ebp-4h]
           *(_DWORD *)(a1 + 2006) = v121;
           *(_WORD *)(a1 + 2010) = v49;
         }

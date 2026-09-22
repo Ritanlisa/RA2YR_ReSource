@@ -131,7 +131,6 @@ void SearchMIXFile(char * Source, IUnknown * aP1)
   CoordStruct *v9; // esi
   int *p_Y; // edx
   void *SHPFile; // edi
-  void *v12; // eax
   char v13; // [esp+13h] [ebp-17Dh]
   unsigned int v14[3]; // [esp+14h] [ebp-17Ch] BYREF
   _DWORD v15[22]; // [esp+20h] [ebp-170h] BYREF
@@ -190,7 +189,7 @@ LABEL_9:
     }
     if ( v13 || strstr(&Str, Ext) ) /*0x5b41f5*/
     {
-      v12 = (void *)__2_YAPAXI_Z(0x24u); /*0x5b4210*/
+      void * v12 = (void *)__2_YAPAXI_Z(0x24u); /*0x5b4210*/
       if ( v12 ) /*0x5b421a*/
         SHPFile = LoadSHPFile(v12, Source); /*0x5b4224*/
       else
@@ -228,7 +227,6 @@ void FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigned int * a3,
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v10; // edx
-  int v11; // eax
   unsigned int v14[3]; // [esp+18h] [ebp-110h] BYREF
   char String[260]; // [esp+24h] [ebp-104h] BYREF
 
@@ -287,7 +285,7 @@ LABEL_14:
     *a4 = *(_DWORD *)(v10 + 4); /*0x5b4546*/
   if ( a2 ) /*0x5b454a*/
   {
-    v11 = v6[9]; /*0x5b454c*/
+    int v11 = v6[9]; /*0x5b454c*/
     if ( v11 ) /*0x5b4551*/
       *a2 = v11 + *(_DWORD *)(v10 + 4); /*0x5b4558*/
   }
@@ -620,8 +618,8 @@ void __usercall GenerateRandomMapPreview(int a1@<esi> a1)
     while ( 1 ) /*0x5bb392*/
     {
       Event::Dispatch(); /*0x5bb392*/
-  _BYTE v14[4]; // [esp+48h] [ebp-248h] BYREF
   _DWORD v19[63]; // [esp+194h] [ebp-FCh] BYREF
+  _BYTE v14[4]; // [esp+48h] [ebp-248h] BYREF
       if ( ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v19, (int)v14) > 0 && v19[0] == 118 ) /*0x5bb3b9*/
         break; /*0x5bb3b9*/
       a1 = v10; /*0x5bb3bf*/

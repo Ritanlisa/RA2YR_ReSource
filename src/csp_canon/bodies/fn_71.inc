@@ -1036,12 +1036,12 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TemporalClass;
     *(int *)&aP0->__pad_0[12] = &vt_TemporalClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].referenceCount);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].NeedsSaveOrLink);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].abstractFlags);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].nextArrayIndex);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].referenceCount);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].NeedsSaveOrLink);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].abstractFlags);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].nextArrayIndex);
   }
     return (int)Prefix_0->__pad_0;
 }
@@ -1179,7 +1179,7 @@ int TemporalClass::StubReturn80() const { return 80; }
 // ==== BACKFILL 0x0071B1A0  TemporalClass::StubReturn70  cls=TemporalClass  sig=csp  renamed_refs=0  residual=- ====
 int TemporalClass::StubReturn70() const { return 70; }
 
-// ==== BACKFILL 0x0071B7B0  TerrainClass::CleanupMembers  cls=TerrainClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x0071B7B0  TerrainClass::CleanupMembers  cls=TerrainClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int TerrainClass::CleanupMembers() {
 {
       int v2;
@@ -1196,8 +1196,8 @@ namespace gamemd { int TerrainClass::CleanupMembers() {
 
       v2 = this + 4;
       *(_DWORD *)this = &TerrainClass::`vftable';
-      *(_DWORD *)(this + 8) = &TerrainClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_TerrainClass;
+      this->vtable4 = &TerrainClass::`vftable';
+      this->vtable4 = &vt_TerrainClass;
       this->vtable2 = &off_7F5200;
       AbstractClass::AnnounceExpiredPointer((void **)this, 1);
       v13[0] = this;
@@ -1338,7 +1338,7 @@ namespace gamemd { int TerrainClass::PlayAmbientAnimation() {
         aP2.Z = v8 + 80;
         v9 = AnimClass::ctor(
                v4,
-               *(CoordStruct **)(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9108] + 2964) + 4 * (v3 & 1)),
+               *(CoordStruct **)(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 2964) + 4 * (v3 & 1)),
                &aP2,
                0,
                (CoordStruct *)0xFF,
@@ -1582,7 +1582,7 @@ namespace gamemd { int CCINIClass::LoadTypeFromINI() {
     for ( i = result; (int)v3 < i; v3 = (CCINIClass *)((char *)(v3) + 1) )
   {
     StringByIndex = (unsigned char *)INIClass::GetStringByIndex(this, (CCINIClass *)aTerrain, v3);
-    if ( INIClass::GetString( (unsigned char ***)this, (INIClass *)aTerrain, StringByIndex, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    if ( INIClass::GetString( (unsigned char ***)this, (INIClass *)aTerrain, StringByIndex, (INIClass *)&DataGlobal_87F8E4[42624], Destination, 128) )
     {
     v5 = TerrainTypeClass::FindOrCreate(Destination[0].__pad_0);
     }
@@ -1590,7 +1590,7 @@ namespace gamemd { int CCINIClass::LoadTypeFromINI() {
     {
     v5 = 0;
     }
-    if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[656] < 4 )
+    if ( *(int *)&g_NetworkPlayerBuffer[5952] < 4 )
     {
     v7 = atoi((const char *)StringByIndex);
     LOWORD(v11) = v7 % 128;
@@ -1627,10 +1627,10 @@ int ObjectTypeClass::ReadDestroyAnim()
     char v6[4];
     char Buffer[12];
     INIClass::ClearSection((int)this, (INIClass *)aTerrain, 0);
-    result = *(int *)&g_NetworkPlayerBuffer.__pad_1258[260];
-    for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer.__pad_1258[260]; ++i )
+    result = *(int *)&g_NetworkPlayerBuffer[4956];
+    for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer[4956]; ++i )
   {
-    v4 = *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_1258[248] + 4 * i);
+    v4 = *(int *)(*(int *)&g_NetworkPlayerBuffer[4944] + 4 * i);
     if ( v4 && !*(char *)(v4 + 129) )
     {
     if ( *(char *)(v4 + 144) )
@@ -1640,7 +1640,7 @@ int ObjectTypeClass::ReadDestroyAnim()
     INIClass::SetString(this, (INIClass *)aTerrain, (INIClass *)Buffer, (INIClass *)(*(int *)(v4 + 200) + 36));
       }
     }
-    result = *(int *)&g_NetworkPlayerBuffer.__pad_1258[260];
+    result = *(int *)&g_NetworkPlayerBuffer[4956];
   }
     return result;
 }
@@ -1880,11 +1880,11 @@ int Terrain::LookupByName()
     if ( !this )
     return -1;
     v2 = 0;
-    if ( *(int *)&HouseClass_Player.__pad_5568[20596] <= 0 )
+    if ( *(int *)&HouseClass_Player[42460] <= 0 )
     return -1;
-    while ( _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[20584] + 4 * v2) + 36)) )
+    while ( _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player[42448] + 4 * v2) + 36)) )
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20596] )
+    if ( ++v2 >= *(int *)&HouseClass_Player[42460] )
     return -1;
   }
     return v2;
@@ -1908,7 +1908,7 @@ TerrainClass * TerrainTypeClass::GetTileIndex(int a2)
     void **v3;
     v3 = (void **)__2_YAPAXI_Z(0xE0u);
     if ( v3 )
-    return TerrainClass::Construct(v3, this, (TerrainClass *)&DataGlobal_B05488.__pad_579C[16728]);
+    return TerrainClass::Construct(v3, this, (TerrainClass *)&DataGlobal_B05488[39156]);
     else
     return 0;
 }
@@ -2206,9 +2206,9 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TEventClass;
     *(int *)&aP0->__pad_0[12] = &vt_TEventClass;
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[12]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[12]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[12]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[12]);
     return 0;
   }
     return result;

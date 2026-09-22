@@ -60,8 +60,8 @@ namespace ra2 { namespace game { int AbstractClass::selectWeapon() {
           v12 = v6 - 1;
           v13 = *(_DWORD *)&this->__pad_0[20] + v5 + 2;
           v14 = *(_DWORD *)&this->__pad_0[24] + v6 + 2;
-          (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&DataGlobal_87F8E4.__pad_5568[9416] + 88))(
-            *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9416],
+          (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 88))(
+            *(_DWORD *)&DataGlobal_87F8E4[31280],
             &v11,
             v4);
         }
@@ -119,10 +119,10 @@ namespace ra2 { namespace game { void* AbstractClass::fireWeapon(int a2) {
             BYTE1(v5) |= 1u;
             v8 = v5;
             v7 = result;
-            v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)&DataGlobal_87F8E4.__pad_5568[9416] + 120))(
-                             *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9416],
+            v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 120))(
+                             *(_DWORD *)&DataGlobal_87F8E4[31280],
                              v11);
-            return globalHelper_0A6010(&v10, a2, *(int *)&DataGlobal_87F8E4.__pad_5568[9416], v6, (int)v9, (int)v7, 0, v8, 1);
+            return globalHelper_0A6010(&v10, a2, *(int *)&DataGlobal_87F8E4[31280], v6, (int)v9, (int)v7, 0, v8, 1);
           }
         }
       }
@@ -360,21 +360,6 @@ void E4Recv_722A20::sub_722A20()
 }
 }
 
-// ==== BACKFILL 0x00722AB0  CellClass::ClearCrateStateForAll  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int CellClass::ClearCrateStateForAll() {
-{
-    int result;
-    int i;
-    result = Cell::PosToIndex(this);
-    for ( i = 0;
-    i < g_CrateProcessState;
-    *(char *)(*(int *)(*(int *)&BuildingClass_InstanceArray->__pad_0[4 * i - 4] + 248) + result) = 0 ) {
-    ++i;
-  }
-    return result;
-}
-} }
-
 // ==== BACKFILL 0x00723510  sub_723510  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_723510::sub_723510()
 {
@@ -442,7 +427,7 @@ namespace gamemd { void* ScriptTypeClass::SetField(void* a1) {
       result = aP1;
       if ( aP1 )
       {
-        sscanf((const char *const)aP1, g_INI_Key_Digest.__pad_20, &aP1, &v5);
+        sscanf((const char *const)aP1, g_INI_Key_Digest[32], &aP1, &v5);
         result = aP1;
         v4 = v5;
         *this = aP1;
@@ -457,7 +442,7 @@ namespace gamemd { int ScriptTypeClass::FormatToString(void* aP1) {
 {
     if ( !aP1 )
     return 0;
-    sprintf(aP1->__pad_0, (ObjectClass *)g_INI_Key_Digest.__pad_20, (INIClass *)*(void**)this);
+    sprintf(aP1->__pad_0, (ObjectClass *)g_INI_Key_Digest[32], (INIClass *)*(void**)this);
     return strlen(aP1->__pad_0);
 }
 } }
@@ -648,51 +633,6 @@ Iostream_init * E4Recv_724F90::__0Iostream_init_QAE_XZ_6()
 }
 }
 
-// ==== BACKFILL 0x00724FC0  CommandClass::BinarySearchAction  cls=CommandClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int CommandClass::BinarySearchAction() {
-{
-      size_t result;
-      ObjectClass *v4;
-      ObjectClass *v5;
-      int v6;
-      ObjectClass *v7;
-
-      result = (size_t)this->q004;
-      if ( result )
-      {
-        if ( !this->q00C )
-        {
-          qsort(*this, result, 8u, CompareFunc2Int);
-          this->q010 = 0;
-          this->q00C = 1;
-        }
-        v4 = (ObjectClass *)*this;
-        v5 = *(ObjectClass **)aP1->__pad_0;
-        v6 = (int)this->q004;
-        if ( v6 <= 0 )
-          return 0;
-        while ( 1 )
-        {
-          v7 = *(ObjectClass **)&v4->__pad_0[8 * (v6 / 2)];
-          if ( v7 <= v5 )
-          {
-            if ( v7 == v5 )
-              return (size_t)v4 + 8 * (v6 / 2);
-            v4 = (ObjectClass *)((char *)v4 + 8 * (v6 / 2) + 8);
-            v6 += -1 - v6 / 2;
-          }
-          else
-          {
-            v6 /= 2;
-          }
-          if ( v6 <= 0 )
-            return 0;
-        }
-      }
-      return result;
-}
-} }
-
 // ==== BACKFILL 0x00726690  TriggerClass::FireAction  cls=TriggerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TriggerClass::FireAction(int aP1, int a3) {
 {
@@ -816,9 +756,9 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TriggerClass;
     *(int *)&aP0->__pad_0[12] = &vt_TriggerClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[8]);
     return 0;
   }
     return result;
@@ -897,27 +837,27 @@ namespace gamemd { void* TriggerTypeClass::Construct(void* a1) {
       *(this + 1) = &TriggerTypeClass::`vftable';
       *(this + 2) = &TriggerTypeClass::`vftable';
       *(this + 3) = &vt_TriggerTypeClass;
-      if ( *(int *)&stru_B05488.__pad_579C[19012] < *(int *)&stru_B05488.__pad_579C[19004]
-        || (stru_B05488.__pad_579C[19009] || !*(_DWORD *)&stru_B05488.__pad_579C[19004])
-        && *(int *)&stru_B05488.__pad_579C[19016] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[18996] + 8))(
-             &stru_B05488.__pad_579C[18996],
-             *(_DWORD *)&stru_B05488.__pad_579C[19004] + *(_DWORD *)&stru_B05488.__pad_579C[19016],
+      if ( *(int *)&stru_B05488[41440] < *(int *)&stru_B05488[41432]
+        || (stru_B05488[41437] || !*(_DWORD *)&stru_B05488[41432])
+        && *(int *)&stru_B05488[41444] > 0
+        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41424] + 8))(
+             &stru_B05488[41424],
+             *(_DWORD *)&stru_B05488[41432] + *(_DWORD *)&stru_B05488[41444],
              0) )
       {
-        v3 = (*(_DWORD *)&stru_B05488.__pad_579C[19012])++;
-        *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19000] + 4 * v3) = this;
+        v3 = (*(_DWORD *)&stru_B05488[41440])++;
+        *(_DWORD *)(*(_DWORD *)&stru_B05488[41428] + 4 * v3) = this;
       }
-      if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028]
-        || (stru_B05488.__pad_579C[19033] || !*(_DWORD *)&stru_B05488.__pad_579C[19028])
-        && *(int *)&stru_B05488.__pad_579C[19040] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19020] + 8))(
-             &stru_B05488.__pad_579C[19020],
-             *(_DWORD *)&stru_B05488.__pad_579C[19028] + *(_DWORD *)&stru_B05488.__pad_579C[19040],
+      if ( *(int *)&stru_B05488[41464] < *(int *)&stru_B05488[41456]
+        || (stru_B05488[41461] || !*(_DWORD *)&stru_B05488[41456])
+        && *(int *)&stru_B05488[41468] > 0
+        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41448] + 8))(
+             &stru_B05488[41448],
+             *(_DWORD *)&stru_B05488[41456] + *(_DWORD *)&stru_B05488[41468],
              0) )
       {
-        v4 = (*(_DWORD *)&stru_B05488.__pad_579C[19036])++;
-        *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19024] + 4 * v4) = this;
+        v4 = (*(_DWORD *)&stru_B05488[41464])++;
+        *(_DWORD *)(*(_DWORD *)&stru_B05488[41452] + 4 * v4) = this;
       }
       this->ArrayIndex = g_MultiplayerLogBuffer;
       if ( g_MultiplayerLogBuffer < LightConvertClass_Array
@@ -935,7 +875,7 @@ namespace gamemd { void* TriggerTypeClass::Construct(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x00726E00  TriggerClass::ProcessEvents  cls=TriggerTypeClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00726E00  TriggerClass::ProcessEvents  cls=TriggerTypeClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int TriggerClass::ProcessEvents() {
 {
       int v2;
@@ -948,9 +888,9 @@ namespace gamemd { int TriggerClass::ProcessEvents() {
       int v10;
 
       *(_DWORD *)this = &TriggerTypeClass::`vftable';
-      *(_DWORD *)(this + 4) = &TriggerTypeClass::`vftable';
-      *(_DWORD *)(this + 8) = &TriggerTypeClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_TriggerTypeClass;
+      this->vtable3 = &TriggerTypeClass::`vftable';
+      this->vtable4 = &TriggerTypeClass::`vftable';
+      this->vtable4 = &vt_TriggerTypeClass;
       AbstractClass::AnnounceExpiredPointer((void **)this, 1);
       v10 = this;
       v2 = (*(int (__thiscall **)(int *, int *))(DataGlobal_8B4178 + 16))(&DataGlobal_8B4178, &v10);
@@ -1081,12 +1021,12 @@ ObjectClass * E4Recv_727190::sub_727190()
     ObjectClass *v2;
     const void **v3;
     v2 = 0;
-    v3 = (const void **)&DataGlobal_830620.__pad_579C[60476];
+    v3 = (const void **)&DataGlobal_830620[82904];
     while ( _strcmpi(this, *v3) )
   {
     ++v3;
     v2 = (ObjectClass *)((char *)(v2) + 1);
-    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[60488] )
+    if ( (int)v3 >= (int)&DataGlobal_830620[82916] )
     return 0;
   }
     return v2;
@@ -1234,10 +1174,10 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     *(int *)&aP0->vtable1[8] = (unsigned int)vt_TriggerTypeClass;
     *(int *)&aP0->vtable1[12] = &vt_TriggerTypeClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].uniqueId);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].abstractFlags);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].nextArrayIndex);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].vtable1[12]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].uniqueId);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].abstractFlags);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].nextArrayIndex);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].vtable1[12]);
     return 0;
   }
     return result;
@@ -1345,7 +1285,7 @@ namespace gamemd { int ScenarioClass::LoadWaypoints() {
       v1 = this;
       v16 = this;
       INIClass::ResetSection(this);
-      result = INIClass::GetKeyCount(v1->__pad_0, *(INIClass **)&stru_830620.__pad_579C[60580]);
+      result = INIClass::GetKeyCount(v1->__pad_0, *(INIClass **)&stru_830620[83008]);
       v3 = 0;
       v17 = result;
       aP2 = 0;
@@ -1355,11 +1295,11 @@ namespace gamemd { int ScenarioClass::LoadWaypoints() {
         {
           StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(
                                                v1->__pad_0,
-                                               *(CCINIClass **)&stru_830620.__pad_579C[60580],
+                                               *(CCINIClass **)&stru_830620[83008],
                                                aP2);
           INIClass::GetString(
             (unsigned __int8 ***)v1,
-            *(INIClass **)&stru_830620.__pad_579C[60580],
+            *(INIClass **)&stru_830620[83008],
             StringByIndex,
             0,
             String,
@@ -1375,21 +1315,21 @@ namespace gamemd { int ScenarioClass::LoadWaypoints() {
           {
             v6 = 0;
           }
-          v7 = strtok(String[0].__pad_0, Delimiter.__pad_0);
+          v7 = strtok(String[0].__pad_0, Delimiter[0]);
           *(_WORD *)v6[1].__pad_0 = atoi(v7);
-          v8 = strtok(0, Delimiter.__pad_0);
+          v8 = strtok(0, Delimiter[0]);
           *(_WORD *)&v6[1].__pad_0[2] = atoi(v8);
-          v9 = strtok(0, Delimiter.__pad_0);
+          v9 = strtok(0, Delimiter[0]);
           *(_DWORD *)&v6[1].__pad_0[8] = atoi(v9);
-          v10 = strtok(0, Delimiter.__pad_0);
+          v10 = strtok(0, Delimiter[0]);
           *(_WORD *)&v6[1].__pad_0[4] = atoi(v10);
-          v11 = strtok(0, Delimiter.__pad_0);
+          v11 = strtok(0, Delimiter[0]);
           *(_WORD *)&v6[1].__pad_0[6] = atoi(v11);
           v6[12].uniqueId = -1;
           v12 = (int *)&v6[1].__pad_0[12];
           do
           {
-            v13 = strtok(0, Delimiter.__pad_0);
+            v13 = strtok(0, Delimiter[0]);
             *v12 = atoi(v13);
             ++v6[12].uniqueId;
             if ( *v12 == -1 )
@@ -1750,6 +1690,12 @@ int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
 }
 }
 
+// ==== BACKFILL 0x0072A1A0  JumpjetLocomotionClass::ShortFunc_72A1A0  cls=TunnelLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
+int JumpjetLocomotionClass::ShortFunc_72A1A0(int a1)
+{
+  return *(_DWORD *)(a1 + 20) != 4 ? 2 : 0;
+}
+
 // ==== BACKFILL 0x0072A1C0  JumpjetLocomotionClass::ShortFunc_72A1C0  cls=TunnelLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::ShortFunc_72A1C0(int a1)
 {
@@ -1856,10 +1802,10 @@ namespace ra2 { namespace game { int ObjectClass::DrawTypewriterText(int a1) {
       v8 = *(_DWORD *)&this->__pad_2C[12];
       v21[0] = v6;
       if ( v8 < 0 )
-        v8 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4.__pad_5568[9416] + 124))(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9416]);
+        v8 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 124))(*(_DWORD *)&DataGlobal_87F8E4[31280]);
       v22 = v8;
       referenceCount = v7->referenceCount;
-      v9 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4.__pad_5568[9416] + 124))(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9416]);
+      v9 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 124))(*(_DWORD *)&DataGlobal_87F8E4[31280]);
       if ( v22 + v21[0] - v9 > 0 )
       {
         v22 = v9 - v21[0];
@@ -1888,12 +1834,12 @@ namespace ra2 { namespace game { int ObjectClass::DrawTypewriterText(int a1) {
         if ( v14 != v15 )
           this->field_48 = Time;
         if ( v15 <= v12 )
-          PlayVocClass(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9108] + 1732), 0x2000, 1.0, 0);
+          PlayVocClass(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 1732), 0x2000, 1.0, 0);
       }
       v18 = this->field_44;
       v16 = this->vt22();
       DrawTextRendererMultiline(
-        *(_DWORD **)&DataGlobal_87F8E4.__pad_5568[9416],
+        *(_DWORD **)&DataGlobal_87F8E4[31280],
         v21,
         *(wchar_t **)&this->__pad_2C[4],
         v12,
@@ -2050,9 +1996,9 @@ char * LoadingScreen::GetBackgroundImage(ScenarioClass * aP1)
 {
 {
     char *result;
-    result = *(char **)&DataGlobal_830620.__pad_579C[61048];
+    result = *(char **)&DataGlobal_830620[83476];
     if ( this != (void *)640 )
-    return *(char **)&DataGlobal_830620.__pad_579C[61052];
+    return *(char **)&DataGlobal_830620[83480];
     return result;
 }
 }
@@ -2062,9 +2008,9 @@ char * LoadingScreen::GetOverlayImage(ScenarioClass * aP1)
 {
 {
     char *result;
-    result = *(char **)&DataGlobal_830620.__pad_579C[61056];
+    result = *(char **)&DataGlobal_830620[83484];
     if ( this != (void *)640 )
-    return *(char **)&DataGlobal_830620.__pad_579C[61060];
+    return *(char **)&DataGlobal_830620[83488];
     return result;
 }
 }
@@ -2836,9 +2782,9 @@ void UI_Draw_72E730(ConvertClass * aP0, int * a1, int a3, int aP2, int a5)
     v11 = (ConvertClass *)((v7 - 800) / 2 + 800);
     if ( v5 > 600 )
     v12 = (v5 - 600) / 2 + 600;
-    v8 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
-    v9 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2748] == 640 )
+    v8 = **(int **)&DataGlobal_B05488[42900];
+    v9 = *(int *)(*(int *)&DataGlobal_B05488[42900] + 4);
+    if ( *(int *)&DataGlobal_89E138[8044] == 640 )
     DrawToSurfaceSHP( (int)aP0, a3, (ConvertClass *)aP2, 0, (ConvertClass *)&v8, (ConvertClass *)v10, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
     else
     DrawToSurfaceSHP( (int)aP0, a3, (ConvertClass *)a5, 0, (ConvertClass *)&v8, (ConvertClass *)v10, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
@@ -2850,7 +2796,7 @@ void Render_Draw(ConvertClass * a1, int * a2, char a3)
 {
 {
     RenderScoreScreen(a1, a2, a3);
-    UI_Draw_72E730( a1, a2, *(int *)&DataGlobal_B05488.__pad_579C[20392], *(int *)&DataGlobal_B05488.__pad_579C[20268], *(int *)&DataGlobal_B05488.__pad_579C[19936]);
+    UI_Draw_72E730( a1, a2, *(int *)&DataGlobal_B05488[42820], *(int *)&DataGlobal_B05488[42696], *(int *)&DataGlobal_B05488[42364]);
 }
 }
 
@@ -2862,9 +2808,9 @@ void UI_Draw_72E860(int a1, ConvertClass * a2)
     int v3;
     v2 = 0;
     v3 = 0;
-    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20464];
-    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20464] + 4);
-    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20392], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[19896], 0, (ConvertClass *)&v2, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+    v2 = **(int **)&DataGlobal_B05488[42892];
+    v3 = *(int *)(*(int *)&DataGlobal_B05488[42892] + 4);
+    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488[42820], *(ConvertClass **)&DataGlobal_B05488[42324], 0, (ConvertClass *)&v2, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
 }
 }
 
@@ -2876,9 +2822,9 @@ void UI_Draw_72E8C0(int a1, ConvertClass * a2)
     int v3;
     v2 = 0;
     v3 = 0;
-    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20476];
-    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20476] + 4);
-    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20392], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20180], 1u, (ConvertClass *)&v2, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+    v2 = **(int **)&DataGlobal_B05488[42904];
+    v3 = *(int *)(*(int *)&DataGlobal_B05488[42904] + 4);
+    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488[42820], *(ConvertClass **)&DataGlobal_B05488[42608], 1u, (ConvertClass *)&v2, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
 }
 }
 
@@ -2891,12 +2837,12 @@ void UI_Draw_72E920(int a1, ConvertClass * a2)
     int v4;
     v3 = 0;
     v4 = 0;
-    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
-    v3 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
-    v4 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2748] >= 800 )
+    v2 = **(int **)&DataGlobal_B05488[42900];
+    v3 = **(int **)&DataGlobal_B05488[42900];
+    v4 = *(int *)(*(int *)&DataGlobal_B05488[42900] + 4);
+    if ( *(int *)&DataGlobal_89E138[8044] >= 800 )
     v3 = v2 + 80;
-    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20356], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20188], 0, (ConvertClass *)&v3, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488[42784], *(ConvertClass **)&DataGlobal_B05488[42616], 0, (ConvertClass *)&v3, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
 }
 }
 
@@ -2910,9 +2856,9 @@ void Map_Load_72E9F0(ConvertClass * a1, int * a2)
     RenderScoreScreen(a1, a2, 0);
     v4 = 0;
     v5 = 0;
-    v4 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
-    v5 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
-    DrawToSurfaceSHP( (int)a1, *(int *)&DataGlobal_B05488.__pad_579C[20356], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20240], 0, (ConvertClass *)&v4, (ConvertClass *)a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+    v4 = **(int **)&DataGlobal_B05488[42900];
+    v5 = *(int *)(*(int *)&DataGlobal_B05488[42900] + 4);
+    DrawToSurfaceSHP( (int)a1, *(int *)&DataGlobal_B05488[42784], *(ConvertClass **)&DataGlobal_B05488[42668], 0, (ConvertClass *)&v4, (ConvertClass *)a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
 }
 }
 
@@ -2926,9 +2872,9 @@ void Map_Load_72EAD0(ConvertClass * a1, int * a2)
     RenderScoreScreen(a1, a2, 0);
     v4 = 0;
     v5 = 0;
-    v4 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
-    v5 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
-    DrawToSurfaceSHP( (int)a1, *(int *)&DataGlobal_B05488.__pad_579C[20368], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20216], 0, (ConvertClass *)&v4, (ConvertClass *)a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+    v4 = **(int **)&DataGlobal_B05488[42900];
+    v5 = *(int *)(*(int *)&DataGlobal_B05488[42900] + 4);
+    DrawToSurfaceSHP( (int)a1, *(int *)&DataGlobal_B05488[42796], *(ConvertClass **)&DataGlobal_B05488[42644], 0, (ConvertClass *)&v4, (ConvertClass *)a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
 }
 }
 

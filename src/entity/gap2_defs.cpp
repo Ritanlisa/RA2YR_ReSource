@@ -8014,7 +8014,6 @@ namespace gamemd { int BulletClass::Fire(int a1) {
   int v30; // [esp+24h] [ebp-24h] BYREF
   int v31; // [esp+28h] [ebp-20h]
   int v32; // [esp+2Ch] [ebp-1Ch]
-  char v33[12]; // [esp+30h] [ebp-18h] BYREF
   int v34[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
   int v3 = 0; /*0x468d87*/
@@ -8032,6 +8031,7 @@ namespace gamemd { int BulletClass::Fire(int a1) {
     v8 = this->q10C; /*0x468dd5*/
     if ( v8 ) /*0x468ddd*/
     {
+  char v33[12]; // [esp+30h] [ebp-18h] BYREF
       _DWORD * v9 = (_DWORD *)(*(int (__thiscall **)(AbstractClass *, char *))(*(_DWORD *)v8->__pad_0 + 72))(v8, v33); /*0x468dea*/
       v10 = Coord::Subtract(v34, (IUnknown *)(v27 - *v9), (IUnknown *)(v28 - v9[1]), (IUnknown *)(v29 - v9[2])); /*0x468e0e*/
       v30 = v10->field_0; /*0x468e18*/
@@ -10926,55 +10926,26 @@ namespace gamemd { void TerrainClass::ProcessSlope(void* a1) {
   __int16 v8; // dx
   _DWORD *v11; // edi
   int v12; // eax
-  int v13; // eax
   __int16 v14; // dx
   __int16 v15; // si
-  _WORD *v16; // ecx
-  int v17; // eax
   bool v18; // sf
-  int v19; // eax
-  _DWORD *v20; // eax
   __int16 v21; // bp
   __int16 v22; // bx
-  int v23; // eax
-  int v24; // eax
-  _DWORD *v25; // eax
   __int16 v26; // dx
-  unsigned int v27; // eax
-  _DWORD *v28; // eax
-  bool v29; // cc
   int v30; // eax
   ObjectClass *v31; // eax
   CCINIClass *v32; // ebx
   __int16 v33; // si
-  int v34; // ecx
-  int v35; // ecx
-  _DWORD *v36; // ecx
-  int v37; // eax
   __int16 v38; // cx
-  int v39; // edi
   ObjectClass *v40; // edx
-  int v41; // ecx
-  int v42; // ecx
-  unsigned int v43; // eax
   ObjectClass *v44; // eax
   ObjectClass *v45; // edx
-  int v46; // eax
   __int16 v47; // cx
-  int v48; // ebp
   int i; // esi
   __int16 v50; // ax
-  int v51; // ecx
-  unsigned int v52; // eax
-  _DWORD *v53; // eax
   _DWORD *ebx68; // ebx
   TerrainClass *v54; // esi
-  int v56; // eax
-  int v57; // eax
-  int v58; // esi
-  int v59; // ebp
   __int16 v60; // ax
-  int v61; // esi
   ObjectClass *v62; // [esp+14h] [ebp-30h] BYREF
   ObjectClass *v63; // [esp+18h] [ebp-2Ch]
   ObjectClass *v64; // [esp+1Ch] [ebp-28h]
@@ -10983,8 +10954,6 @@ namespace gamemd { void TerrainClass::ProcessSlope(void* a1) {
   CCINIClass *v67; // [esp+28h] [ebp-1Ch] BYREF
   void **v69; // [esp+2Ch] [ebp-18h] BYREF
   void *Block; // [esp+30h] [ebp-14h]
-  char v71; // [esp+39h] [ebp-Bh]
-  int v72; // [esp+3Ch] [ebp-8h]
   ObjectClass *v73; // [esp+40h] [ebp-4h]
   v2 = this; /*0x574006*/
   v3 = (IUnknown *)-2; /*0x57400d*/
@@ -11033,15 +11002,16 @@ namespace gamemd { void TerrainClass::ProcessSlope(void* a1) {
     v67 = 0; /*0x5740e5*/
     while ( 1 ) /*0x5740fa*/
     {
-      v13 = (unsigned __int8)v63 & 7; /*0x5740fa*/
+      int v13 = (unsigned __int8)v63 & 7; /*0x5740fa*/
       v14 = *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v13) + *(_WORD *)v5->__pad_0; /*0x574105*/
       v15 = *(_WORD *)&v5->__pad_0[2] + *((_WORD *)&DataGlobal_89F68A + 2 * v13); /*0x57410d*/
-      v16 = (_WORD *)(4 * v13 + 9041544); /*0x574111*/
-      v17 = v15 << 9; /*0x57411e*/
+      _WORD * v16 = (_WORD *)(4 * v13 + 9041544); /*0x574111*/
+      int v17 = v15 << 9; /*0x57411e*/
       v18 = v14 + v17 < 0; /*0x574121*/
-      v19 = v14 + v17; /*0x574121*/
+      int v19 = v14 + v17; /*0x574121*/
       LOWORD(v64) = v14; /*0x574123*/
       HIWORD(v64) = v15; /*0x574128*/
+  _DWORD *v20; // eax
       if ( v18 || v19 >= 0x40000 || (v20 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v19)) == 0 ) /*0x574141*/
       {
         v11 = g_CellClassArray; /*0x57414b*/
@@ -11055,11 +11025,12 @@ namespace gamemd { void TerrainClass::ProcessSlope(void* a1) {
         break; /*0x57415e*/
       v21 = v15 + v16[1]; /*0x57416b*/
       v22 = v14 + *v16; /*0x57416e*/
-      v23 = v21 << 9; /*0x574177*/
+      int v23 = v21 << 9; /*0x574177*/
       v18 = v22 + v23 < 0; /*0x57417a*/
-      v24 = v22 + v23; /*0x57417a*/
+      int v24 = v22 + v23; /*0x57417a*/
       LOWORD(v65) = v22; /*0x57417c*/
       HIWORD(v65) = v21; /*0x574181*/
+  _DWORD *v25; // eax
       if ( v18 || v24 >= 0x40000 || (v25 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v24)) == 0 ) /*0x57419a*/
       {
         v11 = g_CellClassArray; /*0x5741a4*/
@@ -11074,7 +11045,8 @@ namespace gamemd { void TerrainClass::ProcessSlope(void* a1) {
       v26 = v22 + *v16; /*0x5741c7*/
       HIWORD(v66) = v21 + v16[1]; /*0x5741cd*/
       LOWORD(v66) = v26; /*0x5741d2*/
-      v27 = v26 + (SHIWORD(v66) << 9); /*0x5741dd*/
+      unsigned int v27 = v26 + (SHIWORD(v66) << 9); /*0x5741dd*/
+  _DWORD *v28; // eax
       if ( v27 < 0x40000 && (v28 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v27)) != 0 ) /*0x5741f3*/
       {
         v11 = v28; /*0x5741f5*/
@@ -11085,6 +11057,7 @@ namespace gamemd { void TerrainClass::ProcessSlope(void* a1) {
         g_Map_GlobalCellIndex = (IUnknown *)v66; /*0x574202*/
       }
       if ( (v11[80] & 0x500) != 0 /*0x574227*/
+  bool v29; // cc
         || (v29 = (int)&v67->__pad_0[1] < 8,
             v63 = (ObjectClass *)(((_BYTE)v63 + 1) & 7),
             v67 = (CCINIClass *)((char *)v67 + 1),
@@ -11119,10 +11092,11 @@ LABEL_34:
         LOWORD(aP1.field_0) = (_WORD)v32 + *((_WORD *)&Direction_X_Offsets.field_0 + 2 * ((unsigned __int8)v65 & 7)); /*0x5742a6*/
         HIWORD(aP1.field_0) = v33; /*0x5742ab*/
         LOWORD(v32) = aP1.field_0; /*0x5742b0*/
-        v34 = v33 << 9; /*0x5742b4*/
+        int v34 = v33 << 9; /*0x5742b4*/
         v18 = SLOWORD(aP1.field_0) + v34 < 0; /*0x5742b7*/
-        v35 = SLOWORD(aP1.field_0) + v34; /*0x5742b7*/
+        int v35 = SLOWORD(aP1.field_0) + v34; /*0x5742b7*/
         v67 = (CCINIClass *)aP1.field_0; /*0x5742b9*/
+  _DWORD *v36; // ecx
         if ( v18 || v35 >= 0x40000 || (v36 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v35)) == 0 ) /*0x5742d3*/
         {
           g_Map_GlobalCellIndex = (IUnknown *)aP1.field_0; /*0x5742d9*/
@@ -11135,31 +11109,31 @@ LABEL_34:
           return; /*0x5742fc*/
       }
       v2 = this; /*0x57430c*/
-      v37 = ((_BYTE)v65 - 4) & 7; /*0x574316*/
+      int v37 = ((_BYTE)v65 - 4) & 7; /*0x574316*/
       v38 = *((_WORD *)&DataGlobal_89F68A + 2 * v37); /*0x574332*/
       LOWORD(aP1.field_0) += *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v37) /*0x57433c*/
                            + *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v37);
       HIWORD(aP1.field_0) = v33 + v38 + v38; /*0x574341*/
       v31 = (ObjectClass *)aP1.field_0; /*0x574346*/
     }
-    v39 = (v11[80] & 0x800) != 0 ? 6 : 0;
+    int v39 = (v11[80] & 0x800) != 0 ? 6 : 0;
     v62 = v31; /*0x574365*/
     VectorClass::CellConstructor(&v69, 0, 0); /*0x574369*/
     v40 = v62; /*0x57436e*/
-    v41 = *(_DWORD *)&v2->__pad_11C[8]; /*0x574372*/
+    int v41 = *(_DWORD *)&v2->__pad_11C[8]; /*0x574372*/
     v69 = &vt_DynamicVectorClass_Cell; /*0x57437d*/
     v73 = (ObjectClass *)10; /*0x574385*/
-    v72 = 0; /*0x57438d*/
+    int v72 = 0; /*0x57438d*/
     if ( (__int16)v62 >= v41 ) /*0x574395*/
     {
       do /*0x5743a1*/
       {
         if ( (__int16)v40 > v41 + *(_DWORD *)&v2->__pad_11C[16] ) /*0x5743a8*/
           break; /*0x5743a8*/
-        v42 = *(_DWORD *)&v2->__pad_11C[12]; /*0x5743b3*/
+        int v42 = *(_DWORD *)&v2->__pad_11C[12]; /*0x5743b3*/
         if ( SHIWORD(v62) < v42 || SHIWORD(v62) > v42 + v2->field_130 ) /*0x5743cb*/
           break; /*0x5743cb*/
-        v43 = (__int16)v40 + (SHIWORD(v62) << 9); /*0x5743da*/
+        unsigned int v43 = (__int16)v40 + (SHIWORD(v62) << 9); /*0x5743da*/
         if ( *(_DWORD *)(*(_DWORD *)&v2->__pad_134[8] + 4 * v43) ) /*0x5743dc*/
         {
           if ( v43 < 0x40000 && (v44 = *(ObjectClass **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v43)) != 0 ) /*0x5743f8*/
@@ -11175,7 +11149,7 @@ LABEL_34:
                  (int)v45->attachedBomb - *(_DWORD *)&g_NetworkPlayerBuffer[79852] + 1,
                  (int)v45) )
           {
-            v48 = ((_BYTE)v39 - 4) & 7; /*0x574471*/
+            int v48 = ((_BYTE)v39 - 4) & 7; /*0x574471*/
             aP1.field_0 = (int)v62; /*0x574474*/
             for ( i = 0; i < 3; ++i ) /*0x574478*/
             {
@@ -11187,9 +11161,10 @@ LABEL_34:
               v50 = *((_WORD *)&Direction_X_Offsets.field_0 + 2 * (((_BYTE)v39 - 4) & 7)) + LOWORD(aP1.field_0); /*0x5744ac*/
               HIWORD(v67) = *((_WORD *)&DataGlobal_89F68A + 2 * (((_BYTE)v39 - 4) & 7)) + HIWORD(aP1.field_0); /*0x5744b2*/
               LOWORD(v67) = v50; /*0x5744b7*/
-              v51 = v50; /*0x5744c0*/
+              int v51 = v50; /*0x5744c0*/
               aP1.field_0 = (int)v67; /*0x5744c5*/
-              v52 = v50 + (SHIWORD(v67) << 9); /*0x5744cc*/
+              unsigned int v52 = v50 + (SHIWORD(v67) << 9); /*0x5744cc*/
+  _DWORD *v53; // eax
               if ( v52 < 0x40000 && (v53 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v52)) != 0 ) /*0x5744e2*/
               {
                 ebx68 = v53; /*0x5744e4*/
@@ -11200,23 +11175,23 @@ LABEL_34:
                 ebx68 = g_CellClassArray; /*0x5744ee*/
               }
               v54 = this; /*0x5744f3*/
-              v56 = *(_DWORD *)&this->__pad_11C[8]; /*0x5744f7*/
+              int v56 = *(_DWORD *)&this->__pad_11C[8]; /*0x5744f7*/
               if ( v51 < v56 ) /*0x5744ff*/
                 break; /*0x5744ff*/
               if ( v51 > v56 + *(_DWORD *)&this->__pad_11C[16] ) /*0x57450f*/
                 goto LABEL_79; /*0x57450f*/
-              v57 = *(_DWORD *)&this->__pad_11C[12]; /*0x574519*/
+              int v57 = *(_DWORD *)&this->__pad_11C[12]; /*0x574519*/
               if ( SHIWORD(v67) < v57 || SHIWORD(v67) > v57 + this->field_130 ) /*0x574531*/
                 goto LABEL_79; /*0x574531*/
-              v58 = ebx68[14] - *(_DWORD *)&g_NetworkPlayerBuffer[79852] + 1; /*0x57453f*/
+              int v58 = ebx68[14] - *(_DWORD *)&g_NetworkPlayerBuffer[79852] + 1; /*0x57453f*/
               if ( globalHelper_074600(v58, v48, (int)ebx68) ) /*0x574544*/
               {
                 if ( v58 != -1 ) /*0x574554*/
                 {
-                  v59 = ((_BYTE)v48 - 4) & 7; /*0x57455e*/
+                  int v59 = ((_BYTE)v48 - 4) & 7; /*0x57455e*/
                   v60 = *((_WORD *)&DataGlobal_89F68A + 2 * v59); /*0x574570*/
                   LOWORD(v67) = *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v59) + LOWORD(aP1.field_0); /*0x574578*/
-                  v61 = 0; /*0x574582*/
+                  int v61 = 0; /*0x574582*/
                   HIWORD(v67) = HIWORD(aP1.field_0) + v60; /*0x574584*/
                   aP1.field_0 = (int)v67; /*0x57458d*/
                   do /*0x5745a7*/
@@ -11239,7 +11214,7 @@ LABEL_79:
           }
           LOWORD(v40) = (_WORD)v62; /*0x57441e*/
         }
-        v46 = v39 & 7; /*0x574424*/
+        int v46 = v39 & 7; /*0x574424*/
         v47 = HIWORD(v62) + *((_WORD *)&DataGlobal_89F68A + 2 * v46); /*0x57443a*/
         LOWORD(aP1.field_0) = (_WORD)v40 + *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v46); /*0x574442*/
         HIWORD(aP1.field_0) = v47; /*0x57444a*/
@@ -11253,6 +11228,7 @@ LABEL_79:
     v69 = &vt_VectorClass_Cell; /*0x5745d5*/
     if ( Block ) /*0x5745df*/
     {
+  char v71; // [esp+39h] [ebp-Bh]
       if ( v71 ) /*0x5745e7*/
         __3_YAXPAX_Z(Block); /*0x5745ea*/
     }
@@ -13702,8 +13678,6 @@ namespace gamemd { int TerrainClass::UpdateAnims(int a1, int a2, int a3, int a4,
   int v8; // ebp
   AbstractClass *v9; // edi
   int i; // eax
-  _DWORD *v11; // ecx
-  int a1; // [esp+10h] [ebp-Ch] BYREF
   void *v14; // [esp+14h] [ebp-8h]
   AbstractClass *v15; // [esp+18h] [ebp-4h]
   TerrainClass *aP2a; // [esp+24h] [ebp+8h]
@@ -13734,7 +13708,7 @@ namespace gamemd { int TerrainClass::UpdateAnims(int a1, int a2, int a3, int a4,
   {
     int v5 = (*(__int16 *)aP2->__pad_0 << 8) + 128; /*0x71bc61*/
     v14 = (void *)((*(__int16 *)&aP2->__pad_0[2] << 8) + 128); /*0x71bc66*/
-    a1 = v5; /*0x71bc6e*/
+    int a1 = v5; /*0x71bc6e*/
     v15 = 0; /*0x71bc72*/
     if ( !TerrainClass::ProcessSpawnAnim((int)this, &a1, 0) ) /*0x71bc76*/
       ObjectClass::Destroy((#374 *)this); /*0x71bc81*/
@@ -13771,6 +13745,7 @@ namespace gamemd { int TerrainClass::UpdateAnims(int a1, int a2, int a3, int a4,
   v9 = (AbstractClass *)__2_YAPAXI_Z(8 * (v8 + *(_DWORD *)&stru_B05488[37824])); /*0x71bd38*/
   if ( v9 ) /*0x71bd3f*/
   {
+  _DWORD *v11; // ecx
     for ( i = 0; i < *(int *)&stru_B05488[37820]; *(_DWORD *)&v9->__pad_0[8 * i - 4] = v11[1] ) /*0x71bd58*/
     {
       v11 = (_DWORD *)(*(_DWORD *)&stru_B05488[37816] + 8 * i++); /*0x71bd60*/
@@ -13799,8 +13774,6 @@ namespace gamemd { void* TerrainClass::Construct(void* a1, void* a2) {
   int v8; // ebp
   AbstractClass *v9; // edi
   int i; // eax
-  _DWORD *v11; // ecx
-  int a1; // [esp+10h] [ebp-Ch] BYREF
   void *v14; // [esp+14h] [ebp-8h]
   AbstractClass *v15; // [esp+18h] [ebp-4h]
   TerrainClass *aP2a; // [esp+24h] [ebp+8h]
@@ -13831,7 +13804,7 @@ namespace gamemd { void* TerrainClass::Construct(void* a1, void* a2) {
   {
     int v5 = (*(__int16 *)aP2->__pad_0 << 8) + 128; /*0x71bc61*/
     v14 = (void *)((*(__int16 *)&aP2->__pad_0[2] << 8) + 128); /*0x71bc66*/
-    a1 = v5; /*0x71bc6e*/
+    int a1 = v5; /*0x71bc6e*/
     v15 = 0; /*0x71bc72*/
     if ( !TerrainClass::ProcessSpawnAnim((int)this, &a1, 0) ) /*0x71bc76*/
       ObjectClass::Destroy((#374 *)this); /*0x71bc81*/
@@ -13868,6 +13841,7 @@ namespace gamemd { void* TerrainClass::Construct(void* a1, void* a2) {
   v9 = (AbstractClass *)__2_YAPAXI_Z(8 * (v8 + *(_DWORD *)&stru_B05488[37824])); /*0x71bd38*/
   if ( v9 ) /*0x71bd3f*/
   {
+  _DWORD *v11; // ecx
     for ( i = 0; i < *(int *)&stru_B05488[37820]; *(_DWORD *)&v9->__pad_0[8 * i - 4] = v11[1] ) /*0x71bd58*/
     {
       v11 = (_DWORD *)(*(_DWORD *)&stru_B05488[37816] + 8 * i++); /*0x71bd60*/

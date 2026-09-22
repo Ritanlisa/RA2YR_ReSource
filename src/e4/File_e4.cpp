@@ -780,36 +780,15 @@ int File::ParseAudioFileRIFF()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   signed int v19; // ecx
-  _WORD *v20; // ebp
-  int v21; // edi
-  int v22; // eax
-  unsigned int *v23; // ebx
-  unsigned int v24; // ecx
-  int v25; // edx
-  int v26; // eax
   int v27; // edi
   int v28; // eax
   int v29; // ebx
-  unsigned int v30; // edi
-  int *v31; // ebp
-  int v32; // eax
-  int v33; // ebx
-  int v34; // ecx
-  int v35; // eax
-  bool v36; // cf
   int v37; // [esp+10h] [ebp-40h]
   int v38; // [esp+14h] [ebp-3Ch]
-  int v39; // [esp+18h] [ebp-38h]
   int v40; // [esp+1Ch] [ebp-34h]
-  unsigned int v41; // [esp+20h] [ebp-30h]
-  unsigned int v42; // [esp+24h] [ebp-2Ch]
-  int v43; // [esp+28h] [ebp-28h]
   int v44; // [esp+2Ch] [ebp-24h]
   int v45; // [esp+30h] [ebp-20h]
   int v46; // [esp+34h] [ebp-1Ch]
-  int v47; // [esp+38h] [ebp-18h]
-  unsigned int v48; // [esp+3Ch] [ebp-14h]
-  unsigned int v49; // [esp+40h] [ebp-10h]
   unsigned int v50; // [esp+44h] [ebp-Ch]
   int v51; // [esp+48h] [ebp-8h] BYREF
   unsigned int v52; // [esp+4Ch] [ebp-4h]
@@ -876,23 +855,25 @@ int File::ParseAudioFileRIFF()
   v40 = 0; /*0x7c152b*/
   while ( 2 ) /*0x7c152f*/
   {
+  unsigned int v41; // [esp+20h] [ebp-30h]
+  int v21; // edi
     int v16 = *(_DWORD *)(this + 1844); /*0x7c152f*/
     v44 = *(_DWORD *)(this + 1848); /*0x7c153b*/
     unsigned int v17 = *(_DWORD *)(v15 + v16 + 4); /*0x7c153f*/
     v45 = *(_DWORD *)(v15 + v16 + 8); /*0x7c1549*/
-    v48 = v17; /*0x7c154d*/
+    unsigned int v48 = v17; /*0x7c154d*/
     if ( !v17 ) /*0x7c1551*/
       goto LABEL_53; /*0x7c1551*/
-    v39 = 0; /*0x7c156a*/
+    int v39 = 0; /*0x7c156a*/
     unsigned int v18 = *(unsigned __int16 *)(this + 1812); /*0x7c156e*/
-    v42 = *(_DWORD *)(this + 1824); /*0x7c1575*/
-    v49 = (unsigned __int16)v18; /*0x7c1579*/
-    v43 = 0; /*0x7c157d*/
+    unsigned int v42 = *(_DWORD *)(this + 1824); /*0x7c1575*/
+    unsigned int v49 = (unsigned __int16)v18; /*0x7c1579*/
+    int v43 = 0; /*0x7c157d*/
     v19 = (*(_DWORD *)(this + 136) - 1) / v17 + 1; /*0x7c1589*/
     v37 = v19; /*0x7c158c*/
     if ( !(_WORD)v18 ) /*0x7c1590*/
       goto LABEL_47; /*0x7c1590*/
-    v20 = (_WORD *)(*(_DWORD *)(this + 1820) + 2); /*0x7c1596*/
+    _WORD * v20 = (_WORD *)(*(_DWORD *)(this + 1820) + 2); /*0x7c1596*/
     while ( 1 ) /*0x7c159d*/
     {
       v21 = -1; /*0x7c159d*/
@@ -904,17 +885,18 @@ LABEL_44:
       if ( ++v43 >= v18 ) /*0x7c1630*/
         goto LABEL_47; /*0x7c1630*/
     }
-    v22 = *(_DWORD *)(v15 + *(_DWORD *)(this + 1844)); /*0x7c15b2*/
-    v23 = *(unsigned int **)(this + 1840); /*0x7c15b5*/
-    v47 = v22; /*0x7c15bb*/
+    int v22 = *(_DWORD *)(v15 + *(_DWORD *)(this + 1844)); /*0x7c15b2*/
+    unsigned int * v23 = *(unsigned int **)(this + 1840); /*0x7c15b5*/
+    int v47 = v22; /*0x7c15bb*/
     do /*0x7c1600*/
     {
       if ( v23[1] == v47 ) /*0x7c15c8*/
       {
-        v24 = *v23; /*0x7c15ca*/
-        v25 = (unsigned __int16)*(v20 - 1); /*0x7c15ce*/
+        unsigned int v24 = *v23; /*0x7c15ca*/
+        int v25 = (unsigned __int16)*(v20 - 1); /*0x7c15ce*/
         if ( *v23 >= (unsigned __int16)v25 ) /*0x7c15d4*/
         {
+  int v26; // eax
           HIWORD(v26) = 0; /*0x7c15d6*/
           if ( v24 > (unsigned __int16)*v20 ) /*0x7c15de*/
             break; /*0x7c15de*/
@@ -941,7 +923,7 @@ LABEL_47:
     {
 LABEL_53:
       v15 = v40 + 16; /*0x7c16f7*/
-      v36 = ++v46 < v50; /*0x7c170e*/
+      bool v36 = ++v46 < v50; /*0x7c170e*/
       v40 += 16; /*0x7c1714*/
       v38 += 12; /*0x7c1718*/
       if ( !v36 ) /*0x7c171c*/
@@ -959,19 +941,19 @@ LABEL_53:
   {
     (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v28, v27); /*0x7c167d*/
     *(_DWORD *)(this + 48) += v27; /*0x7c1697*/
-    v30 = v37 * ((v45 + 1) & 0xFFFFFFFE); /*0x7c169a*/
-    v31 = (int *)(v38 + v44 + 8); /*0x7c16a0*/
+    unsigned int v30 = v37 * ((v45 + 1) & 0xFFFFFFFE); /*0x7c169a*/
+    int * v31 = (int *)(v38 + v44 + 8); /*0x7c16a0*/
     *v31 = v29; /*0x7c16a9*/
-    v32 = (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 68))(this, 2, 0, v30); /*0x7c16ac*/
-    v33 = v32; /*0x7c16af*/
+    int v32 = (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 68))(this, 2, 0, v30); /*0x7c16ac*/
+    int v33 = v32; /*0x7c16af*/
     if ( v32 ) /*0x7c16b6*/
     {
       (*(void (__cdecl **)(int, int, int, unsigned int))(this + 68))(this, 4, v32, v30); /*0x7c16c1*/
       *(_DWORD *)(this + 48) += v30; /*0x7c16cc*/
-      v34 = v37; /*0x7c16cf*/
+      int v34 = v37; /*0x7c16cf*/
       if ( v37 > 0 ) /*0x7c16d5*/
       {
-        v35 = 0; /*0x7c16d7*/
+        int v35 = 0; /*0x7c16d7*/
         do /*0x7c16f5*/
         {
           v35 += 12; /*0x7c16dc*/

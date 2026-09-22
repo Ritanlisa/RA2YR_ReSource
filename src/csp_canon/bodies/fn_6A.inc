@@ -95,7 +95,7 @@ char JumpjetLocomotionClass::MoveToChecked_0(ShipLocomotionClass * aP0, int a2)
 {
     char result;
     result = (char)aP0 + 60;
-    if ( aP0->Dest[2] != *(int *)&DataGlobal_B05488.__pad_14B0[3776] || aP0->HeadToCoord[0] != *(int *)&DataGlobal_B05488.__pad_14B0[3780] || aP0->HeadToCoord[1] != *(int *)&DataGlobal_B05488.__pad_14B0[3784] )
+    if ( aP0->Dest[2] != *(int *)&DataGlobal_B05488[9072] || aP0->HeadToCoord[0] != *(int *)&DataGlobal_B05488[9076] || aP0->HeadToCoord[1] != *(int *)&DataGlobal_B05488[9080] )
   {
     return WalkLocomotion::MoveTo((int)&aP0[-1].Piggybackee, (IUnknown *)&aP0->Dest[2], a2);
   }
@@ -812,7 +812,7 @@ namespace gamemd { int TabClass::drawTabBackground() {
 
       this->q014 = 0;
       this->q018 = 0;
-      v2 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+      v2 = *(IUnknown **)&HouseClass_Player[45112];
       this->q024 = 0;
       this->q01C = v2;
       this->q028 = 0;

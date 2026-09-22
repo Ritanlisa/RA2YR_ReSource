@@ -22,18 +22,13 @@ void * Building::ComputePosition(AnimClass * aP1)
   int v24; // edx
   AnimClass *v26; // edi
   int v27; // esi
-  int v28; // edx
   __int16 v29; // cx
-  int v30; // [esp+14h] [ebp-34h]
   int v31; // [esp+18h] [ebp-30h]
   IUnknown *v32; // [esp+20h] [ebp-28h] BYREF
-  _WORD v34[2]; // [esp+24h] [ebp-24h] BYREF
   __int16 v35[2]; // [esp+28h] [ebp-20h] BYREF
   int v36; // [esp+2Ch] [ebp-1Ch]
   IUnknown *v37; // [esp+30h] [ebp-18h] BYREF
   void *v38; // [esp+34h] [ebp-14h]
-  char *v39; // [esp+3Ch] [ebp-Ch]
-  int v40; // [esp+40h] [ebp-8h]
   int v41; // [esp+44h] [ebp-4h]
   int * v2 = this + 39; /*0x425d1d*/
   int v3 = v2[1]; /*0x425d29*/
@@ -53,7 +48,7 @@ void * Building::ComputePosition(AnimClass * aP1)
   if ( (int)v8 < (__int16)v5 + 5 ) /*0x425d79*/
   {
     int v10 = (__int16)v9; /*0x425d7f*/
-    v30 = (__int16)v9; /*0x425d82*/
+    int v30 = (__int16)v9; /*0x425d82*/
     int v11 = (__int16)v9 + 5; /*0x425d86*/
     do /*0x425ec0*/
     {
@@ -62,6 +57,7 @@ void * Building::ComputePosition(AnimClass * aP1)
       {
         do /*0x425eb2*/
         {
+  _WORD v34[2]; // [esp+24h] [ebp-24h] BYREF
           v34[0] = (_WORD)v8; /*0x425da0*/
           v34[1] = v12; /*0x425da5*/
           if ( LayerClass::IsWithinUsableArea(&stru_87C374[13428], (IUnknown *)v34, (TechnoClass *)1) ) /*0x425daa*/
@@ -82,8 +78,8 @@ void * Building::ComputePosition(AnimClass * aP1)
               }
               else
               {
-                v40 = v12 - v30; /*0x425e44*/
-                v39 = (char *)v8 - v31; /*0x425e48*/
+                int v40 = v12 - v30; /*0x425e44*/
+                char * v39 = (char *)v8 - v31; /*0x425e48*/
                 double v15 = ((double (__cdecl *)(double))Math::Sqrt)((double)((int)v8 - v31) * (double)((int)v8 - v31) + (double)(v12 - v30) * (double)(v12 - v30)); /*0x425e68*/
                 v16 = Math::RoundToInt(v15); /*0x425e70*/
               }
@@ -167,7 +163,7 @@ LABEL_39:
   v27 = 0; /*0x426034*/
   while ( 1 ) /*0x426046*/
   {
-    v28 = (((int)v26 + v27) % 8) & 7; /*0x426046*/
+    int v28 = (((int)v26 + v27) % 8) & 7; /*0x426046*/
     v29 = (_WORD)v38 + *(_WORD *)&stru_89E138[5296][4 * v28 + 160]; /*0x426058*/
     LOWORD(v28) = HIWORD(v38) + *(_WORD *)&stru_89E138[5296][4 * v28 + 162]; /*0x426061*/
     LOWORD(v37) = v29; /*0x426066*/

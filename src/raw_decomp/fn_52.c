@@ -2038,7 +2038,7 @@ BOOL __thiscall sub_522CB0(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = this->q6C4; /*0x522cb0*/
+  v1 = this->type; /*0x522cb0*/
   return v1 == 11 /*0x522cea*/
       || v1 == 12
       || v1 == 13

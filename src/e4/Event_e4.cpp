@@ -41,8 +41,8 @@ int Event::Dispatch()
 LABEL_11:
     Stream::ReadPacket((int)&g_EventManager); /*0x48d0e0*/
     if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) /*0x48d10f*/
-  _DWORD v3[6]; // [esp+14h] [ebp-FCh] BYREF
   _BYTE v2[4]; // [esp+10h] [ebp-100h] BYREF
+  _DWORD v3[6]; // [esp+14h] [ebp-FCh] BYREF
       && ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v3, (int)v2) > 0 )
     {
       do /*0x48d15f*/

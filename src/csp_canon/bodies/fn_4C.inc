@@ -309,18 +309,18 @@ EMPulseClass * EMPulseClass::CopyTo(AbstractClass * this, AbstractClass * a2, ch
     *(int *)&this->__pad_0[4] = (unsigned int)vt_EMPulseClass;
     *(int *)&this->__pad_0[8] = (unsigned int)vt_EMPulseClass;
     *(int *)&this->__pad_0[12] = &vt_EMPulseClass;
-    if ( HouseClass_Player.__pad_5568[22252] )
+    if ( HouseClass_Player[44116] )
     EMPulseClass::IterateCellsInRadius((int)this);
     LOBYTE(a2) = 1;
     AbstractClass::AnnounceExpiredPointer(this, a2);
     v6 = this;
-    v4 = (*(int (__thiscall **)(char *, AbstractClass **))(*(int *)&DataGlobal_89E138.__pad_566C[204] + 16))( &DataGlobal_89E138.__pad_566C[204], &v6);
-    if ( v4 != -1 && v4 < *(int *)&DataGlobal_89E138.__pad_566C[220] )
+    v4 = (*(int (__thiscall **)(char *, AbstractClass **))(*(int *)&DataGlobal_89E138[22328] + 16))( &DataGlobal_89E138[22328], &v6);
+    if ( v4 != -1 && v4 < *(int *)&DataGlobal_89E138[22344] )
   {
-    --*(int *)&DataGlobal_89E138.__pad_566C[220];
+    --*(int *)&DataGlobal_89E138[22344];
     for ( ;
-    v4 < *(int *)&DataGlobal_89E138.__pad_566C[220];
-    *(int *)(*(int *)&DataGlobal_89E138.__pad_566C[208] + 4 * v4 - 4) = *(int *)(*(int *)&DataGlobal_89E138.__pad_566C[208] + 4 * v4) ) {
+    v4 < *(int *)&DataGlobal_89E138[22344];
+    *(int *)(*(int *)&DataGlobal_89E138[22332] + 4 * v4 - 4) = *(int *)(*(int *)&DataGlobal_89E138[22332] + 4 * v4) ) {
     ++v4;
     }
   }
@@ -347,7 +347,7 @@ namespace gamemd { void* ScenarioClass::SetEvent(int a1, int a2, int a3, int a4,
       {
         this->q002 = -1;
         *this = 0;
-        this->q003 = *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[664];
+        this->q003 = *(_DWORD *)&g_NetworkPlayerBuffer[5960];
         return this;
       }
       else
@@ -358,7 +358,7 @@ namespace gamemd { void* ScenarioClass::SetEvent(int a1, int a2, int a3, int a4,
         this->q00B = a5;
         this->IsInitialized = a6;
         this->Count = a7;
-        this->q003 = *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[664];
+        this->q003 = *(_DWORD *)&g_NetworkPlayerBuffer[5960];
         return this;
       }
 }
@@ -373,7 +373,7 @@ char * AnimClass::sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int
   {
     BYTE2(this->field_0) = -1;
     LOBYTE(this->field_0) = 0;
-    *(int *)((char *)&this->field_0 + 3) = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664];
+    *(int *)((char *)&this->field_0 + 3) = *(int *)&g_NetworkPlayerBuffer[5960];
     return (char *)this;
   }
     else
@@ -389,7 +389,7 @@ char * AnimClass::sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int
     *(int *)&this->__pad_18[3] = a11;
     BYTE2(this->field_14) = a9;
     *(int *)((char *)&this->field_14 + 3) = a10;
-    *(int *)((char *)&this->field_0 + 3) = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664];
+    *(int *)((char *)&this->field_0 + 3) = *(int *)&g_NetworkPlayerBuffer[5960];
     return (char *)this;
   }
 }
@@ -802,7 +802,7 @@ double globalHelper_0CB3D0(AbstractClass * aP0, AbstractClass * aP1)
     if ( v6 >= 4097 )
     result = 1.5707964;
     else
-    result = *(float *)&DataGlobal_84DD9C.__pad_579C[4 * v6 + 56188];
+    result = *(float *)&DataGlobal_84DD9C[22428][4 * v6 + 56188];
     if ( *(float *)&aP1 < 0.0 )
     result = 3.141592653589793 - result;
     if ( *(float *)&aP0 < 0.0 )

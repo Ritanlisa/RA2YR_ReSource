@@ -3441,13 +3441,6 @@ void ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
 {
   int DlgCtrlID; // eax
   _DWORD *v6; // eax
-  int v7; // eax
-  int v8; // eax
-  int v9; // eax
-  int v10; // eax
-  int v11; // eax
-  int v12; // eax
-  int v13; // eax
   int v15; // [esp+8h] [ebp-8h] BYREF
   int v16; // [esp+Ch] [ebp-4h] BYREF
 
@@ -3461,11 +3454,13 @@ void ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
   DlgCtrlID = GetDlgCtrlID(a2); /*0x608537*/
   if ( v4 != 148 ) /*0x608543*/
   {
+  int v13; // eax
+  int v9; // eax
     if ( v4 == 259 ) /*0x6086da*/
     {
       if ( DlgCtrlID != 1835 ) /*0x6086e1*/
         return 0; /*0x6086e1*/
-      v7 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x6086f8*/
+      int v7 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x6086f8*/
       if ( g_DDraw_Active >= 800 ) /*0x608700*/
       {
         if ( v7 ) /*0x608704*/
@@ -3491,7 +3486,7 @@ LABEL_47:
     {
       if ( DlgCtrlID != 1835 ) /*0x608741*/
         return 0; /*0x608741*/
-      v8 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x608753*/
+      int v8 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x608753*/
       if ( g_DDraw_Active >= 800 ) /*0x608761*/
       {
         if ( v8 ) /*0x608765*/
@@ -3542,6 +3537,9 @@ LABEL_45:
     }
     else
     {
+  int v12; // eax
+  int v11; // eax
+  int v10; // eax
       if ( v4 != 189 ) /*0x6088fa*/
       {
         if ( v4 == 194 ) /*0x60893f*/
@@ -4994,9 +4992,7 @@ void InitializeDialogControls(HWND a1, LPARAM a2)
   LPARAM v2; // edi
   int **v6; // eax
   _DWORD *v7; // eax
-  _DWORD *v8; // eax
   _DWORD *v9; // eax
-  void *v10; // eax
   int **v11; // eax
   int **i; // eax
   int v14; // [esp+10h] [ebp-20Ch] BYREF
@@ -5041,7 +5037,7 @@ LABEL_5:
     SymbolTable::Insert(&g_DialogHashMap_Base, &v14, v17); /*0x60f59b*/
     if ( g_DialogHashMap_Count ) /*0x60f5a6*/
     {
-      v8 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v14)); /*0x60f5bd*/
+      _DWORD * v8 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v14)); /*0x60f5bd*/
       if ( v8 ) /*0x60f5c2*/
       {
         while ( *v8 != v14 ) /*0x60f5ca*/
@@ -5083,7 +5079,7 @@ LABEL_20:
     memset(v17, 0, sizeof(v17)); /*0x60f667*/
     v17[26] = (int **)11; /*0x60f67c*/
     v17[25] = (int **)aP0; /*0x60f687*/
-    v10 = __2_YAPAXI_Z(4u); /*0x60f68e*/
+    void * v10 = __2_YAPAXI_Z(4u); /*0x60f68e*/
     if ( v10 ) /*0x60f698*/
       v11 = (int **)unknown_libname_74(v10); /*0x60f69c*/
     else

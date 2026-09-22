@@ -15,9 +15,6 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   void *v8; // eax
   unsigned int *v9; // eax
   int result; // eax
-  _DWORD *v11; // eax
-  int v12; // eax
-  int v13; // eax
   int v14; // [esp-14h] [ebp-38h]
   int v15; // [esp-Ch] [ebp-30h]
   int v16; // [esp+10h] [ebp-14h] BYREF
@@ -55,7 +52,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
     result = this->AirstrikeClass_field_5C; /*0x41d939*/
     if ( result ) /*0x41d93e*/
     {
-      v11 = (_DWORD *)(result + 156); /*0x41d940*/
+      _DWORD * v11 = (_DWORD *)(result + 156); /*0x41d940*/
       v18[0] = *v11; /*0x41d949*/
       v18[1] = v11[1]; /*0x41d956*/
       v18[2] = v11[2]; /*0x41d961*/
@@ -67,7 +64,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
       result = (*(int (__thiscall **)(int *))(*a2 + 44))(a2); /*0x41d97f*/
       if ( result == 6 ) /*0x41d985*/
       {
-        v12 = *a2; /*0x41d98b*/
+        int v12 = *a2; /*0x41d98b*/
         a2[165] = this; /*0x41d994*/
         (*(void (__thiscall **)(int *, int))(v12 + 348))(a2, 100000); /*0x41d99a*/
         *((_BYTE *)a2 + 1784) = *((_BYTE *)&g_RulesClass_Instance[1].?[12] /*0x41d9b8*/
@@ -77,7 +74,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
                                 + 2 * g_RulesClass_Instance[1].?[10]
                                 + g_RulesClass_Instance[1].?[10]
                                 + 1);
-        v13 = *a2; /*0x41d9f1*/
+        int v13 = *a2; /*0x41d9f1*/
         *((_BYTE *)a2 + 1786) = *((_BYTE *)&g_RulesClass_Instance[1].?[12] /*0x41d9f5*/
                                 + 2 * g_RulesClass_Instance[1].?[10]
                                 + g_RulesClass_Instance[1].?[10]
@@ -101,11 +98,6 @@ int AirstrikeClass::ReassignTarget(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // eax
-  _DWORD *v9; // esi
-  int v10; // eax
-  int v11; // eax
-  int *v12; // esi
-  int v13; // edi
   int v3 = this->AirstrikeClass_field_5C; /*0x41da26*/
   int v4; // eax
   if ( v3 && (v4 = *(_DWORD *)(v3 + 1496)) != 0 )
@@ -128,12 +120,12 @@ LABEL_6:
     else
       v7 = 0; /*0x41da56*/
     if ( a2 )
-      v9 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) == 6 ? (_DWORD *)a2 : 0;
+      _DWORD * v9 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) == 6 ? (_DWORD *)a2 : 0;
     else
       v9 = 0; /*0x41da84*/
     if ( v7 ) /*0x41da9e*/
     {
-      v10 = *v7; /*0x41daa0*/
+      int v10 = *v7; /*0x41daa0*/
       v7[165] = 0; /*0x41daa4*/
       (*(void (__thiscall **)(_DWORD *))(v10 + 344))(v7); /*0x41daae*/
       (*(void (__thiscall **)(_DWORD *, int))(*v7 + 292))(v7, 2); /*0x41daba*/
@@ -141,14 +133,14 @@ LABEL_6:
     this->AirstrikeClass_field_50 = 0; /*0x41dac2*/
     if ( v9 ) /*0x41dac9*/
     {
-      v11 = *v9; /*0x41dacb*/
+      int v11 = *v9; /*0x41dacb*/
       v9[165] = this; /*0x41dad4*/
       (*(void (__thiscall **)(_DWORD *, int))(v11 + 348))(v9, 100000); /*0x41dada*/
       (*(void (__thiscall **)(_DWORD *, int))(*v9 + 292))(v9, 2); /*0x41dae6*/
     }
     v8 = this->EliteAirstrikeTeamTypeIndex; /*0x41daec*/
-    v12 = this->AirstrikeClass_field_5C; /*0x41daef*/
-    v13 = 0; /*0x41daf2*/
+    int * v12 = this->AirstrikeClass_field_5C; /*0x41daef*/
+    int v13 = 0; /*0x41daf2*/
     for ( this->AirstrikeClass_field_50 = a2; v13 < v8; ++v13 ) /*0x41daf9*/
     {
       if ( v12 ) /*0x41dafd*/

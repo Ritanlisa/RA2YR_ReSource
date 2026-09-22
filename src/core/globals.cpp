@@ -1015,9 +1015,9 @@ int HashString(const char* str) {
   }
   for ( j = 0; j < v4; ++j )
     Destination[j] = ~byte_832C0C[j & 7] & (Destination[j] | byte_832C14[j & 7]);
-  char v17; // al
   char v15; // cl
   char v16; // si
+  char v17; // al
   for ( k = 0; k < v4; Destination[k - 1] = (v17 + v16) ^ v15 )
   {
     char v12 = Destination[k];

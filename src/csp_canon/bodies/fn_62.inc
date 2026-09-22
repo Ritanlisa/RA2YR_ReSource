@@ -24,9 +24,9 @@ void DrawScrollArrowUI(int * a0, unsigned int * a1, ObjectClass * aP2, int a4, c
     if ( a4 )
     v7 = 112;
     if ( aP2 )
-    sprintf(Buffer, (ObjectClass *)&DataGlobal_830620.__pad_579C[1572], (INIClass *)v7);
+    sprintf(Buffer, (ObjectClass *)&DataGlobal_830620[24000], (INIClass *)v7);
     else
-    sprintf(Buffer, (ObjectClass *)&DataGlobal_830620.__pad_579C[1556], (INIClass *)v7);
+    sprintf(Buffer, (ObjectClass *)&DataGlobal_830620[23984], (INIClass *)v7);
     v8 = (ObjectClass *)HashTable::Find(&g_MatrixTransformState + 5774, &Buffer[a5 == 0], 0);
     if ( v8 )
     {
@@ -67,7 +67,7 @@ int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned 
     v9 = (AbstractClass *)(yTop[3] - yTop[1]);
     yTopa = (int *)yTop[1];
     v10 = (AbstractClass *)(v8 - *yTop);
-    aP1a = (AbstractClass *)(((unsigned char)aP1 >> DataGlobal_89E138.__pad_14B0[6124] << DataGlobal_89E138.__pad_14B0[6120]) | (BYTE2(aP1) >> DataGlobal_89E138.__pad_14B0[6132] << DataGlobal_89E138.__pad_14B0[6128]) | (BYTE1(aP1) >> DataGlobal_89E138.__pad_14B0[6140] << DataGlobal_89E138.__pad_14B0[6136]));
+    aP1a = (AbstractClass *)(((unsigned char)aP1 >> DataGlobal_89E138[11420] << DataGlobal_89E138[11416]) | (BYTE2(aP1) >> DataGlobal_89E138[11428] << DataGlobal_89E138[11424]) | (BYTE1(aP1) >> DataGlobal_89E138[11436] << DataGlobal_89E138[11432]));
     v12 = *yTop;
     if ( !a3 )
     v6 = ::aP0;
@@ -862,7 +862,7 @@ int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
     int i;
     int v7;
     ObjectClass String;
-    String::CopyUpper(String.__pad_0, aP1);
+    String::CopyUpper(String[0], aP1);
     v3 = this->M12;
     v4 = *(int *)(v3) + 24 * ((*(int (__thiscall **)(ObjectClass *))(v3 + 4))(&String) % *(int *)(v3 + 8));
     v5 = *(int *)(v4 + 16) - 1;
@@ -1082,7 +1082,7 @@ namespace gamemd { void* FileSystem::writeFile(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x006293E0  AbstractClass::ProcessData  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x006293E0  AbstractClass::ProcessData  cls=AbstractClass  sig=csp  renamed_refs=2  residual=- ====
 namespace ra2 { namespace game { void AbstractClass::ProcessData() {
 {
       int v2;
@@ -1092,9 +1092,9 @@ namespace ra2 { namespace game { void AbstractClass::ProcessData() {
 
       v2 = this->q044;
       *(_DWORD *)this = &ParasiteClass::`vftable';
-      *(_DWORD *)(this + 4) = &ParasiteClass::`vftable';
-      *(_DWORD *)(this + 8) = &ParasiteClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_ParasiteClass;
+      this->vtable3 = &ParasiteClass::`vftable';
+      this->vtable4 = &ParasiteClass::`vftable';
+      this->vtable4 = &vt_ParasiteClass;
       this->q04C = 0;
       this->q050 = 0;
       this->q048 = 0;
@@ -1148,24 +1148,24 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
     if ( a0 )
     {
     AbstractClass::InitVtables(a0, (IUnknown *)&aP1);
-    v4 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+    v4 = *(IUnknown **)&HouseClass_Player[45112];
     *((int*)(a0) + 13) = 0;
     *((int*)(a0) + 11) = (int)v4;
-    *((int*)(a0) + 14) = *(int *)&HouseClass_Player.__pad_5568[23248];
+    *((int*)(a0) + 14) = *(int *)&HouseClass_Player[45112];
     *((int*)(a0) + 16) = 0;
     *a0 = (int)(unsigned int)vt_ParasiteClass;
     a0[1] = (unsigned int)vt_ParasiteClass;
     a0[2] = (unsigned int)vt_ParasiteClass;
     *((int*)(a0) + 3) = (int)&vt_ParasiteClass;
     }
-    if ( *((int*)(a0) + 17) && (*(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0)) )
+    if ( *((int*)(a0) + 17) && (*(int *)&DataGlobal_B05488[41280] < *(int *)&DataGlobal_B05488[41272] || (DataGlobal_B05488[41277] || !*(int *)&DataGlobal_B05488[41272]) && *(int *)&DataGlobal_B05488[41284] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488[41264] + 8))( &DataGlobal_B05488[41264], *(int *)&DataGlobal_B05488[41272] + *(int *)&DataGlobal_B05488[41284], 0)) )
     {
-    v5 = (*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
-    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * v5) = a0;
+    v5 = (*(int *)&DataGlobal_B05488[41280])++;
+    *(int *)(*(int *)&DataGlobal_B05488[41268] + 4 * v5) = a0;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 9));
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 10));
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 17));
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)(a0 + 9));
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)(a0 + 10));
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)(a0 + 17));
     return v3;
   }
     return result;
@@ -1251,7 +1251,7 @@ int ParasiteClass::StubReturn88() const { return 88; }
 // ==== BACKFILL 0x0062AF60  ParasiteClass::StubReturn67  cls=ParasiteClass  sig=csp  renamed_refs=0  residual=- ====
 int ParasiteClass::StubReturn67() const { return 67; }
 
-// ==== BACKFILL 0x0062B5E0  ParticleClass::Construct  cls=ParticleClass  sig=csp  renamed_refs=19  residual=- ====
+// ==== BACKFILL 0x0062B5E0  ParticleClass::Construct  cls=ParticleClass  sig=csp  renamed_refs=21  residual=- ====
 namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
 {
       BuildingTypeClass *v6;
@@ -1307,7 +1307,7 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
       this->q0F4 = *(_DWORD *)aP2->__pad_0;
       this->q0F8 = *(_DWORD *)&aP2->field_2[2];
       this->q0FC = aP2->field_8;
-      *(_QWORD *)(this + 256) = *((_QWORD *)&g_MatrixTransformState + 2937);
+      this->q100 = *((_QWORD *)&g_MatrixTransformState + 2937);
       this->q108 = *(&g_MatrixTransformState + 5876);
       v7 = (double)(*(_DWORD *)&v6->vtable1[8] - (unsigned int)aP2->field_8);
       v8 = *(_DWORD *)&v6->vtable1[4] - *(_DWORD *)&aP2->field_2[2];
@@ -1331,33 +1331,33 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
       this->q130 = 0;
       this->q131 = 0;
       *(_DWORD *)this = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 4) = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 8) = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_ParticleClass;
+      this->vtable3 = &ParticleClass::`vftable';
+      this->vtable4 = &ParticleClass::`vftable';
+      this->vtable4 = &vt_ParticleClass;
       AbstractClass::GenerateUniqueID(this + 4);
-      if ( *(int *)&HouseClass_Player.__pad_74[24] < *(int *)&HouseClass_Player.__pad_74[16]
-        || (HouseClass_Player.__pad_74[21] || !*(_DWORD *)&HouseClass_Player.__pad_74[16])
-        && *(int *)&HouseClass_Player.__pad_74[28] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_74[8] + 8))(
-             &HouseClass_Player.__pad_74[8],
-             *(_DWORD *)&HouseClass_Player.__pad_74[28] + *(_DWORD *)&HouseClass_Player.__pad_74[16],
+      if ( *(int *)&HouseClass_Player[140] < *(int *)&HouseClass_Player[132]
+        || (HouseClass_Player[137] || !*(_DWORD *)&HouseClass_Player[132])
+        && *(int *)&HouseClass_Player[144] > 0
+        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player[124] + 8))(
+             &HouseClass_Player[124],
+             *(_DWORD *)&HouseClass_Player[144] + *(_DWORD *)&HouseClass_Player[132],
              0) )
       {
-        v14 = (*(_DWORD *)&HouseClass_Player.__pad_74[24])++;
-        *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_74[12] + 4 * v14) = this;
+        v14 = (*(_DWORD *)&HouseClass_Player[140])++;
+        *(_DWORD *)(*(_DWORD *)&HouseClass_Player[128] + 4 * v14) = this;
       }
       if ( *(_DWORD *)(this->q0AC + 788) == 1 )
-        this->q0E4 = (double)(Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536)) % 2)
+        this->q0E4 = (double)(Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536)) % 2)
                                + this->q0E4;
       v15 = this->q0AC;
       this->q12A = *(_WORD *)(v15 + 732);
       if ( *(_DWORD *)(v15 + 788) == 4 )
         v16 = *(_WORD *)(this->q0AC + 736)
-            + abs32(Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536)) % 10);
+            + abs32(Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536)) % 10);
       else
         v16 = *(_WORD *)(this->q0AC + 736)
             + abs32(
-                Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536))
+                Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536))
               % *(_DWORD *)(this->q0AC + 736));
       this->q128 = v16;
       v28 = aP2->field_8;
@@ -1415,7 +1415,7 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
           || *(_BYTE *)(v23 + 729) )
         {
           *(float *)&v27 = (double)Random::Range(
-                                     (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
+                                     (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                                      0,
                                      (IUnknown *)0x7FFFFFFE)
                          * 4.656612877414201e-10;
@@ -1435,7 +1435,7 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
 }
 } }
 
-// ==== BACKFILL 0x0062BB20  ObjectClass::ProcessUpdate  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0062BB20  ObjectClass::ProcessUpdate  cls=ObjectClass  sig=csp  renamed_refs=2  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::ProcessUpdate() {
 {
       int v2;
@@ -1481,9 +1481,9 @@ namespace ra2 { namespace game { int ObjectClass::ProcessUpdate() {
       this->q130 = 0;
       this->q131 = 0;
       *(_DWORD *)this = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 4) = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 8) = &ParticleClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_ParticleClass;
+      this->vtable3 = &ParticleClass::`vftable';
+      this->vtable4 = &ParticleClass::`vftable';
+      this->vtable4 = &vt_ParticleClass;
       if ( DataGlobal_A83DD8 < DataGlobal_A83DD0
         || (DataGlobal_A83DD5 || !DataGlobal_A83DD0)
         && DataGlobal_A83DDC > 0
@@ -1760,8 +1760,8 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
     *(int *)&aP1->__pad_0[8] = (unsigned int)vt_ParticleClass;
     *(int *)&aP1->__pad_0[12] = &vt_ParticleClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP1[1].spawnStatus);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP1[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP1[1].spawnStatus);
     return 0;
   }
     return result;
@@ -1860,15 +1860,15 @@ namespace gamemd { void* ParticleClass::UpdateParticle(int a1) {
       AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, v3);
       this->q0AC = 0;
       v6 = this;
-      v4 = (*(int (__thiscall **)(char *, void ***))(*(_DWORD *)&HouseClass_Player.__pad_74[8] + 16))(
-             &HouseClass_Player.__pad_74[8],
+      v4 = (*(int (__thiscall **)(char *, void ***))(*(_DWORD *)&HouseClass_Player[124] + 16))(
+             &HouseClass_Player[124],
              &v6);
-      if ( v4 != -1 && v4 < *(int *)&HouseClass_Player.__pad_74[24] )
+      if ( v4 != -1 && v4 < *(int *)&HouseClass_Player[140] )
       {
-        --*(_DWORD *)&HouseClass_Player.__pad_74[24];
+        --*(_DWORD *)&HouseClass_Player[140];
         for ( ;
-              v4 < *(int *)&HouseClass_Player.__pad_74[24];
-              *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_74[12] + 4 * v4 - 4) = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_74[12]
+              v4 < *(int *)&HouseClass_Player[140];
+              *(_DWORD *)(*(_DWORD *)&HouseClass_Player[128] + 4 * v4 - 4) = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[128]
                                                                                                + 4 * v4) )
         {
           ++v4;
@@ -1881,7 +1881,7 @@ namespace gamemd { void* ParticleClass::UpdateParticle(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0062DC50  ParticleSystemClass::Constructor  cls=ParticleSystemClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x0062DC50  ParticleSystemClass::Constructor  cls=ParticleSystemClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3, void* a4, void* a5, int a6) {
 {
       int *v8;
@@ -1911,10 +1911,10 @@ namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3
       this->q0C4 = 0;
       this->q0C8 = 1;
       this->q0C9 = 0;
-      *(_DWORD *)(this + 188) = &vt_DynamicVectorClass_ParticleClass;
+      this->Particles = &vt_DynamicVectorClass_ParticleClass;
       this->Target = 10;
       this->Owner = 0;
-      *(_QWORD *)(this + 212) = *((_QWORD *)&(&g_MatrixTransformState)[492] + 1);
+      this->SpawnFrames = *((_QWORD *)&(&g_MatrixTransformState)[492] + 1);
       v9 = (int)*(&g_MatrixTransformState + 5908);
       v10 = *(ParticleSystemTypeClass **)(this + 172);
       this->SpotlightRadius = 0;
@@ -1928,8 +1928,8 @@ namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3
       this->ParticleSystemClass_field_bool_F9 = 0;
       this->OwnerHouse = 0;
       *(_DWORD *)this = &ParticleSystemClass::`vftable';
-      *(_DWORD *)(this + 4) = &ParticleSystemClass::`vftable';
-      *(_DWORD *)(this + 8) = &vt_ParticleSystemClass;
+      this->vtable3 = &ParticleSystemClass::`vftable';
+      this->vtable4 = &vt_ParticleSystemClass;
       this->vtable4 = &off_7EFB70;
       AbstractClass::GenerateUniqueID(this + 4);
       if ( g_GameCleanupState < DataGlobal_A80210
@@ -1952,7 +1952,7 @@ namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3
         this->Lifetime = v12[1];
         this->SparkSpawnFrames = v12[2];
         v13 = (IUnknown *)(*(int (__thiscall **)(IUnknown *, _BYTE *))(aP3->field_0 + 72))(aP3, v24);
-        if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], v13) + 80) & 0x100) != 0
+        if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374[13428], v13) + 80) & 0x100) != 0
           && (*(int (__thiscall **)(IUnknown *))(aP3->field_0 + 44))(aP3) == 11 )
         {
           this->SparkSpawnFrames += *(&g_MatrixTransformState + 5919);
@@ -1990,22 +1990,22 @@ namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3
         this->q0B4 = v21;
         this->q0B8 = v18 - v20;
       }
-      if ( *(int *)&stru_B05488.__pad_579C[19212] < *(int *)&stru_B05488.__pad_579C[19204]
-        || (stru_B05488.__pad_579C[19209] || !*(_DWORD *)&stru_B05488.__pad_579C[19204])
-        && *(int *)&stru_B05488.__pad_579C[19216] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19196] + 8))(
-             &stru_B05488.__pad_579C[19196],
-             *(_DWORD *)&stru_B05488.__pad_579C[19216] + *(_DWORD *)&stru_B05488.__pad_579C[19204],
+      if ( *(int *)&stru_B05488[41640] < *(int *)&stru_B05488[41632]
+        || (stru_B05488[41637] || !*(_DWORD *)&stru_B05488[41632])
+        && *(int *)&stru_B05488[41644] > 0
+        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41624] + 8))(
+             &stru_B05488[41624],
+             *(_DWORD *)&stru_B05488[41644] + *(_DWORD *)&stru_B05488[41632],
              0) )
       {
-        v22 = (*(_DWORD *)&stru_B05488.__pad_579C[19212])++;
-        *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19200] + 4 * v22) = this;
+        v22 = (*(_DWORD *)&stru_B05488[41640])++;
+        *(_DWORD *)(*(_DWORD *)&stru_B05488[41628] + 4 * v22) = this;
       }
       return (ParticleSystemClass *)this;
 }
 } }
 
-// ==== BACKFILL 0x0062DF20  ParticleClass::ProcessCreation  cls=ParticleSystemClass  sig=csp  renamed_refs=10  residual=- ====
+// ==== BACKFILL 0x0062DF20  ParticleClass::ProcessCreation  cls=ParticleSystemClass  sig=csp  renamed_refs=13  residual=- ====
 namespace gamemd { int ParticleClass::ProcessCreation() {
 {
       int v2;
@@ -2019,7 +2019,7 @@ namespace gamemd { int ParticleClass::ProcessCreation() {
       this->q0C4 = 0;
       this->q0C8 = 1;
       this->q0C9 = 0;
-      *(_DWORD *)(this + 188) = &vt_DynamicVectorClass_ParticleClass;
+      this->Particles = &vt_DynamicVectorClass_ParticleClass;
       this->Target = 10;
       this->Owner = 0;
       this->SpawnFrames = DataGlobal_AC4A58;
@@ -2036,8 +2036,8 @@ namespace gamemd { int ParticleClass::ProcessCreation() {
       this->q0F8 = 0;
       this->ParticleSystemClass_field_bool_F9 = 0;
       *(_DWORD *)this = &ParticleSystemClass::`vftable';
-      *(_DWORD *)(this + 4) = &ParticleSystemClass::`vftable';
-      *(_DWORD *)(this + 8) = &vt_ParticleSystemClass;
+      this->vtable3 = &ParticleSystemClass::`vftable';
+      this->vtable4 = &vt_ParticleSystemClass;
       this->vtable4 = &off_7EFB70;
       (*(void (**)(void))(v3 + 12))();
       if ( g_GameCleanupState < DataGlobal_A80210
@@ -2134,7 +2134,7 @@ namespace gamemd { int ParticleSystemClass::CreateParticle(void* a1, void* a2) {
         return 0;
       v5 = ParticleClass::Construct(
              v4,
-             *(ParticleClass **)(*(_DWORD *)&HouseClass_Player.__pad_3C[20] + 4 * *(_DWORD *)(this->Type + 660)),
+             *(ParticleClass **)(*(_DWORD *)&HouseClass_Player[80] + 4 * *(_DWORD *)(this->Type + 660)),
              (ParticleClass *)aP1,
              (AbstractClass *)aP2,
              (IUnknown *)this);
@@ -2182,7 +2182,7 @@ namespace gamemd { int ParticleClass::CreateInstance(void* a1, float a2, int a3)
         return 0;
       v6 = ParticleClass::Construct(
              v5,
-             *(ParticleClass **)(*(_DWORD *)&HouseClass_Player.__pad_3C[20] + 4 * *(_DWORD *)(this->q0AC + 660)),
+             *(ParticleClass **)(*(_DWORD *)&HouseClass_Player[80] + 4 * *(_DWORD *)(this->q0AC + 660)),
              (ParticleClass *)aP1,
              (AbstractClass *)LODWORD(aP3),
              (IUnknown *)this);
@@ -2206,7 +2206,7 @@ namespace gamemd { int ParticleClass::CreateInstance(void* a1, float a2, int a3)
       v13 = *(CoordStruct **)(this + 192);
       if ( (int)v12 < a4 )
         v7 = v12;
-      v14 = (int)abs32(Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536))) % (int)v7;
+      v14 = (int)abs32(Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536))) % (int)v7;
       v15 = (char *)&v12[-1].isDisguisedFlag_as_house + 2;
       v16 = &v12->__pad_0[-v14];
       if ( (int)v15 > (int)(v16 - 2) )
@@ -2526,14 +2526,14 @@ namespace gamemd { int ParticleSystemClass::SpawnParticle() {
             v75 = v21 * v23;
             v82 = v75;
             LODWORD(v68) = Random::Range(
-                             (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
+                             (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                              0,
                              (IUnknown *)0x7FFFFFFE);
             LODWORD(v76) = Random::Range(
-                             (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
+                             (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                              0,
                              (IUnknown *)0x7FFFFFFE);
-            v77 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)0x7FFFFFFE);
+            v77 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)0x7FFFFFFE);
             v22 = *(ParticleSystemTypeClass **)(this + 172);
             st7_15a = ((double)v77 * 4.656612877414201e-10 - 0.5) * *(double *)&v22->__pad_2D4[12];
             *(float *)&aP3.referenceCount = ((double)SLODWORD(v76) * 4.656612877414201e-10 - 0.5)
@@ -2541,7 +2541,7 @@ namespace gamemd { int ParticleSystemClass::SpawnParticle() {
             *(float *)&aP3.NeedsSaveOrLink = ((double)SLODWORD(v68) * 4.656612877414201e-10 - 0.5)
                                            * *(double *)&v22->__pad_2D4[12];
             edx15b = this->q0A0;
-            *(_DWORD *)&aP3.__pad_0[12] = this->location;
+            *(_DWORD *)&aP3[12] = this->location;
             aP3.uniqueId = edx15b;
             v25 = *(BuildingTypeClass **)(this + 164);
             v81 = *(float *)&aP3.referenceCount + v81;
@@ -2550,14 +2550,14 @@ namespace gamemd { int ParticleSystemClass::SpawnParticle() {
             v26 = (BuildingTypeClass *)Math::RoundToInt(st7_15a + v73);
             v29 = Math::RoundToInt(v81);
             v28 = (BuildingTypeClass *)Math::RoundToInt(v82);
-            v31 = Color::RGBFromFloat(&v90.__pad_0[12], (IUnknown *)(this + 212), *(float *)&v69);
+            v31 = Color::RGBFromFloat(&v90[12], (IUnknown *)(this + 212), *(float *)&v69);
             v32 = v31[1];
             ecx15 = *v31;
             v34 = v31[2];
-            *(_DWORD *)&aP3.__pad_0[4] = v29 + v32;
+            *(_DWORD *)&aP3[4] = v29 + v32;
             v33 = *(ParticleSystemTypeClass **)(this + 172);
-            *(_DWORD *)aP3.__pad_0 = (char *)v26 + ecx15;
-            *(_DWORD *)&aP3.__pad_0[8] = (char *)v28 + v34;
+            *(_DWORD *)aP3[0] = (char *)v26 + ecx15;
+            *(_DWORD *)&aP3[8] = (char *)v28 + v34;
             if ( v33->field_294 == -1 )
             {
               ebx16 = 0;
@@ -2570,7 +2570,7 @@ namespace gamemd { int ParticleSystemClass::SpawnParticle() {
               {
                 v62 = (ScenarioClass *)ParticleClass::Construct(
                                          eax17,
-                                         *(ParticleClass **)(*(_DWORD *)&HouseClass_Player.__pad_3C[20]
+                                         *(ParticleClass **)(*(_DWORD *)&HouseClass_Player[80]
                                                            + 4 * *(_DWORD *)(this->Type + 660)),
                                          (ParticleClass *)&aP3,
                                          &aP3,
@@ -2593,15 +2593,15 @@ namespace gamemd { int ParticleSystemClass::SpawnParticle() {
             ebx16->altNextScenario[3] = v71;
             *(float *)&ebx16->altNextScenario[4] = v72;
             v77 = Random::Range(
-                    (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
+                    (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                     (IUnknown *)aP0[0],
                     (IUnknown *)aP0[1]);
             LODWORD(v76) = Random::Range(
-                             (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
+                             (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                              0,
                              (IUnknown *)0x7FFFFFFE);
             LODWORD(v68) = Random::Range(
-                             (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
+                             (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                              0,
                              (IUnknown *)0x7FFFFFFE);
             v37 = *(ParticleSystemTypeClass **)(this + 172);
@@ -2635,7 +2635,7 @@ namespace gamemd { int ParticleSystemClass::SpawnParticle() {
             *(float *)&ebx16->altNextScenario[3] = v44;
             *(float *)&ebx16->altNextScenario[4] = v45;
             LODWORD(v68) = Random::Range(
-                             (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
+                             (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                              0,
                              (IUnknown *)0x7FFFFFFE);
             v43 = *(ParticleSystemTypeClass **)(this + 172);

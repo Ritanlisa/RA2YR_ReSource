@@ -216,7 +216,6 @@ int SHA1::Compute(uint8_t digest[20])
   unsigned __int16 v7; // cx
   unsigned int *v8; // ecx
   int v9; // esi
-  unsigned int v10; // eax
   _BYTE v12[20]; // [esp+14h] [ebp-54h] BYREF
   _DWORD v13[16]; // [esp+28h] [ebp-40h] BYREF
 
@@ -249,7 +248,7 @@ int SHA1::Compute(uint8_t digest[20])
   v9 = 5;
   do
   {
-    v10 = *v8++;
+    unsigned int v10 = *v8++;
     --v9;
     *(v8 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((HIWORD(v10) | v10 & 0xFF0000) >> 8);
   }

@@ -133,10 +133,10 @@ int VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   int GroundHeight; // [esp+28h] [ebp-88h]
 
   if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) == 0 /*0x749bb6*/
-  int v26; // [esp+10h] [ebp-A0h]
   int v27; // [esp+14h] [ebp-9Ch]
   int v4; // eax
   int v25; // [esp+Ch] [ebp-A4h] BYREF
+  int v26; // [esp+10h] [ebp-A0h]
     || (v25 = this->q027, v26 = this->q028, v27 = this->q029, LOBYTE(v4) = Game::Stub3((int)&v25), !(_BYTE)v4) )
   {
   int v36[2]; // [esp+38h] [ebp-78h] BYREF

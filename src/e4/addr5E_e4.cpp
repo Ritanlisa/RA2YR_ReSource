@@ -284,7 +284,6 @@ void InitSkirmishDialogControls(HWND hDlg, int a2)
   LPARAM v14; // [esp+14h] [ebp-14h]
   WPARAM wParam; // [esp+18h] [ebp-10h] BYREF
   int v16; // [esp+1Ch] [ebp-Ch]
-  _DWORD v17[2]; // [esp+20h] [ebp-8h] BYREF
 
   v14 = g_Rules_MultiEngineer; /*0x5e3022*/
   lParam = g_Rules_Bases; /*0x5e3032*/
@@ -295,6 +294,7 @@ void InitSkirmishDialogControls(HWND hDlg, int a2)
     wParam = (WPARAM)&vt_rc_ptr_WDTTerritory; /*0x5e3059*/
     if ( g_GameMode_Current[0] == 4 && g_GameOptionsFlags == 3 ) /*0x5e3066*/
     {
+  _DWORD v17[2]; // [esp+20h] [ebp-8h] BYREF
       WDTTerritoryClass = FindWDTTerritoryClass(v17, *(int *)g_GameDifficulty); /*0x5e3072*/
       ComPtr::Set(&wParam, WDTTerritoryClass[1]); /*0x5e307f*/
       v17[0] = &vt_rc_ptr_WDTTerritory; /*0x5e3088*/
@@ -722,9 +722,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
   _BYTE v198[176]; // [esp+10h] [ebp-3E4h] BYREF
   INIClass aP0_160; // [esp+D0h] [ebp-324h] BYREF
   int v200[22]; // [esp+110h] [ebp-2E4h] BYREF
-  char v201[8]; // [esp+168h] [ebp-28Ch] BYREF
   int v202; // [esp+170h] [ebp-284h]
-  int v203; // [esp+174h] [ebp-280h]
   CCINIClass *v238; // [esp+1B0h] [ebp-244h]
   CCINIClass *v239; // [esp+1C0h] [ebp-234h]
   int v206; // [esp+1D0h] [ebp-224h]
@@ -1519,7 +1517,8 @@ LABEL_171:
             HashTable::DestroyHashTableINIClass((void **)&v198[108]);
           }
           v200[0] = (int)&vt_CCFileClass;
-          v203 = 0;
+          int v203 = 0;
+  char v201[8]; // [esp+168h] [ebp-28Ch] BYREF
           Vector::Clear((int)v201);
           v200[0] = (int)&off_7E1668;
           BufferIOFileClass::Dtor(v200);
@@ -2571,7 +2570,6 @@ int E4Recv_5E7160::HandleMultiplayerMapSelection()
   SkirmishDialog *v13; // ecx
   char bl20; // bl
   char v14; // al
-  char *v15; // ecx
   CellStruct *StringCSF; // edi
   wchar_t *v17; // ebx
   wchar_t *v18; // eax
@@ -2581,7 +2579,6 @@ int E4Recv_5E7160::HandleMultiplayerMapSelection()
   CampaignScore *v23; // eax
   LPARAM ebx47; // ebx
   HWND v24; // eax
-  int v25; // [esp+0h] [ebp-20h]
   char v26; // [esp+13h] [ebp-Dh]
   CampaignScore *v27; // [esp+14h] [ebp-Ch]
   char v28; // [esp+18h] [ebp-8h]
@@ -2650,12 +2647,13 @@ int E4Recv_5E7160::HandleMultiplayerMapSelection()
   }
   if ( v14 ) /*0x5e72d2*/
   {
-    v15 = &stru_830620[5164]; /*0x5e72d6*/
+    char * v15 = &stru_830620[5164]; /*0x5e72d6*/
     if ( bl20 ) /*0x5e72db*/
       v15 = &stru_830620[5144]; /*0x5e72dd*/
     StringCSF = (CellStruct *)GetStringCSF((wchar_t *)v15, 0, &stru_830620[4536], 2963); /*0x5e7304*/
     v17 = GetStringCSF((wchar_t *)&stru_830620[5136], 0, &stru_830620[4536], 2964); /*0x5e731c*/
     v18 = GetStringCSF(aGuiCancel, 0, &stru_830620[4536], 2965); /*0x5e731e*/
+  int v25; // [esp+0h] [ebp-20h]
     if ( Dialog::ShowMessageBox((int)StringCSF, v17, (Movie *)v18, 0, 0, v25) ) /*0x5e7336*/
       return 0; /*0x5e7348*/
   }
@@ -3850,7 +3848,6 @@ char sub_5EC290(SkirmishDialog * hDlg, int a2)
 {
   int v4; // ebp
   int i; // esi
-  int v6; // edx
 
   if ( *(_DWORD *)&HouseClass_Player[29932] == 4 ) /*0x5ec2a0*/
   {
@@ -3865,6 +3862,7 @@ char sub_5EC290(SkirmishDialog * hDlg, int a2)
   }
   for ( i = a2; i < 8; ++i )
   {
+  int v6; // edx
     if ( i )
     {
       switch ( i )
@@ -3924,17 +3922,11 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
 {
   int PlayerCountMap; // esi
   char v7; // bl
-  int v8; // eax
   int v9; // edi
   int v10; // esi
-  int v11; // eax
   INIClass *ResourceID2; // esi
   HWND DlgItem; // eax
   int ResourceIDCSF; // esi
-  int v15; // ebx
-  int v16; // edi
-  int v17; // esi
-  int v18; // edx
   ReferenceCounted *v19; // esi
   wchar_t **v20; // eax
   CampaignScore *v21; // eax
@@ -3975,6 +3967,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
     && !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)&HouseClass_Player[29936] + 64))(*(_DWORD *)&HouseClass_Player[29936])
     || Network::IsMultiplayerActive() )
   {
+  int v8; // eax
     v7 = 0; /*0x5ec437*/
     if ( *(_DWORD *)&HouseClass_Player[29932] == 4 ) /*0x5ec43c*/
     {
@@ -4004,6 +3997,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
   v24 = 0; /*0x5ec499*/
   if ( !*(_DWORD *)&stru_830620[4228] ) /*0x5ec49d*/
   {
+  int v11; // eax
     if ( v7 ) /*0x5ec4a1*/
     {
 LABEL_40:
@@ -4063,7 +4057,8 @@ LABEL_43:
     }
     else
     {
-      v15 = v10 + v22; /*0x5ec5a3*/
+  int v16; // edi
+      int v15 = v10 + v22; /*0x5ec5a3*/
       if ( *(_DWORD *)&HouseClass_Player[29932] == 4 ) /*0x5ec5a6*/
       {
         if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5ec5b1*/
@@ -4075,11 +4070,12 @@ LABEL_43:
       {
         v16 = 8; /*0x5ec5c8*/
       }
-      v17 = v10 + v22; /*0x5ec5d0*/
+      int v17 = v10 + v22; /*0x5ec5d0*/
       if ( v15 < 8 )
       {
         do
         {
+  int v18; // edx
           if ( v17 )
           {
             switch ( v17 )
@@ -4879,33 +4875,11 @@ unsigned int * AssignRandomMapStartPositions(MouseClass * aP0, IUnknown * aP1, i
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v9; // esi
-  int v10; // eax
   int v12; // eax
   int v13; // edx
-  int v14; // eax
-  int v15; // edi
-  int v16; // eax
-  int v17; // esi
-  int v18; // eax
-  double v19; // st7
-  double v20; // st7
-  int v21; // edi
-  int v22; // eax
-  int v23; // esi
-  int v24; // eax
-  double v25; // st7
-  double v26; // st7
   int v28; // [esp+1Ch] [ebp-14h]
-  int v29; // [esp+1Ch] [ebp-14h]
-  int v30; // [esp+1Ch] [ebp-14h]
   int v31; // [esp+20h] [ebp-10h]
-  int v32; // [esp+20h] [ebp-10h]
-  int v33; // [esp+20h] [ebp-10h]
   MouseClass *v34; // [esp+24h] [ebp-Ch]
-  int v35; // [esp+28h] [ebp-8h]
-  int v36; // [esp+28h] [ebp-8h]
-  int v37; // [esp+2Ch] [ebp-4h]
-  int v38; // [esp+2Ch] [ebp-4h]
 
   int v6 = *(_DWORD *)(a3 + 16); /*0x5ee705*/
   int v7 = 0; /*0x5ee708*/
@@ -4930,7 +4904,7 @@ unsigned int * AssignRandomMapStartPositions(MouseClass * aP0, IUnknown * aP1, i
 LABEL_8:
     if ( a5 ) /*0x5ee739*/
     {
-      v10 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)(v6 - 1)); /*0x5ee74e*/
+      int v10 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)(v6 - 1)); /*0x5ee74e*/
       *(_BYTE *)(v10 + v9) = 1; /*0x5ee757*/
       *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4 * v10 + 4480) = aP1; /*0x5ee761*/
       aP0->field_0 = *(_DWORD *)(*(_DWORD *)(a3 + 4) + 4 * v10); /*0x5ee770*/
@@ -4941,31 +4915,31 @@ LABEL_8:
   if ( v7 != 2 || a5 ) /*0x5ee785*/
   {
 LABEL_17:
-    v14 = -1; /*0x5ee7cf*/
-    v29 = -1; /*0x5ee7d5*/
-    v35 = -1; /*0x5ee7d9*/
+    int v14 = -1; /*0x5ee7cf*/
+    int v29 = -1; /*0x5ee7d5*/
+    int v35 = -1; /*0x5ee7d9*/
     if ( v7 == 1 ) /*0x5ee7dd*/
     {
-      v15 = 0; /*0x5ee7e3*/
+      int v15 = 0; /*0x5ee7e3*/
       if ( v6 > 0 ) /*0x5ee7e7*/
       {
         do /*0x5ee888*/
         {
           if ( !*(_BYTE *)(v15 + v9) ) /*0x5ee7ed*/
           {
-            v16 = 0; /*0x5ee7f7*/
-            v17 = 0; /*0x5ee7f9*/
-            v32 = 0; /*0x5ee7fd*/
+            int v16 = 0; /*0x5ee7f7*/
+            int v17 = 0; /*0x5ee7f9*/
+            int v32 = 0; /*0x5ee7fd*/
             if ( v6 > 0 ) /*0x5ee801*/
             {
               do /*0x5ee865*/
               {
                 if ( *(_BYTE *)(v17 + a4) ) /*0x5ee806*/
                 {
-                  v18 = *(_DWORD *)(a3 + 4); /*0x5ee80c*/
-                  v19 = (double)(__int16)(*(_WORD *)(v18 + 4 * v15 + 2) - *(_WORD *)(v18 + 4 * v17 + 2)); /*0x5ee82e*/
-                  v37 = (__int16)(*(_WORD *)(v18 + 4 * v15) - *(_WORD *)(v18 + 4 * v17)); /*0x5ee832*/
-                  v20 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)v37 * (double)v37 + v19 * v19)); /*0x5ee84b*/
+                  int v18 = *(_DWORD *)(a3 + 4); /*0x5ee80c*/
+                  double v19 = (double)(__int16)(*(_WORD *)(v18 + 4 * v15 + 2) - *(_WORD *)(v18 + 4 * v17 + 2)); /*0x5ee82e*/
+                  int v37 = (__int16)(*(_WORD *)(v18 + 4 * v15) - *(_WORD *)(v18 + 4 * v17)); /*0x5ee832*/
+                  double v20 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)v37 * (double)v37 + v19 * v19)); /*0x5ee84b*/
                   v32 += (__int16)Math::RoundToInt(v20); /*0x5ee85b*/
                 }
                 ++v17; /*0x5ee862*/
@@ -4993,28 +4967,28 @@ LABEL_17:
     }
     else
     {
-      v21 = 0; /*0x5ee8e6*/
-      v36 = -1; /*0x5ee8e8*/
-      v30 = -1; /*0x5ee8ee*/
+      int v21 = 0; /*0x5ee8e6*/
+      int v36 = -1; /*0x5ee8e8*/
+      int v30 = -1; /*0x5ee8ee*/
       if ( v6 > 0 ) /*0x5ee8f2*/
       {
         do /*0x5ee98d*/
         {
           if ( !*(_BYTE *)(v21 + v9) ) /*0x5ee8f8*/
           {
-            v22 = 0; /*0x5ee902*/
-            v23 = 0; /*0x5ee904*/
-            v33 = 0; /*0x5ee908*/
+            int v22 = 0; /*0x5ee902*/
+            int v23 = 0; /*0x5ee904*/
+            int v33 = 0; /*0x5ee908*/
             if ( v6 > 0 ) /*0x5ee90c*/
             {
               do /*0x5ee970*/
               {
                 if ( *(_BYTE *)(v23 + a4) ) /*0x5ee911*/
                 {
-                  v24 = *(_DWORD *)(a3 + 4); /*0x5ee917*/
-                  v25 = (double)(__int16)(*(_WORD *)(v24 + 4 * v21 + 2) - *(_WORD *)(v24 + 4 * v23 + 2)); /*0x5ee939*/
-                  v38 = (__int16)(*(_WORD *)(v24 + 4 * v21) - *(_WORD *)(v24 + 4 * v23)); /*0x5ee93d*/
-                  v26 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)v38 * (double)v38 + v25 * v25)); /*0x5ee956*/
+                  int v24 = *(_DWORD *)(a3 + 4); /*0x5ee917*/
+                  double v25 = (double)(__int16)(*(_WORD *)(v24 + 4 * v21 + 2) - *(_WORD *)(v24 + 4 * v23 + 2)); /*0x5ee939*/
+                  int v38 = (__int16)(*(_WORD *)(v24 + 4 * v21) - *(_WORD *)(v24 + 4 * v23)); /*0x5ee93d*/
+                  double v26 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)v38 * (double)v38 + v25 * v25)); /*0x5ee956*/
                   v33 += (__int16)Math::RoundToInt(v26); /*0x5ee966*/
                 }
                 ++v23; /*0x5ee96d*/

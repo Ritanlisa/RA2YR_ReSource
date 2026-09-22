@@ -174,7 +174,6 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
   IUnknown *v121; // [esp+88h] [ebp-98h]
   int var94; // [esp+8Ch] [ebp-94h]
   __int64 v130; // [esp+90h] [ebp-90h] BYREF
-  float v131; // [esp+98h] [ebp-88h]
   __int64 v132; // [esp+9Ch] [ebp-84h] BYREF
   float v133; // [esp+A4h] [ebp-7Ch]
   int v134; // [esp+A8h] [ebp-78h] BYREF
@@ -188,11 +187,6 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
   IUnknown *j; // [esp+D4h] [ebp-4Ch] BYREF
   __int64 v143; // [esp+D8h] [ebp-48h] BYREF
   float v144; // [esp+E0h] [ebp-40h]
-  int v145[3]; // [esp+E4h] [ebp-3Ch] BYREF
-  char v146[12]; // [esp+F0h] [ebp-30h] BYREF
-  int v147[3]; // [esp+FCh] [ebp-24h] BYREF
-  int v148[3]; // [esp+108h] [ebp-18h] BYREF
-  char v149[12]; // [esp+114h] [ebp-Ch] BYREF
 
   v120 = (TechnoClass *)aP1;
   aP2 = (CoordStruct *)aP0;
@@ -387,6 +381,7 @@ LABEL_58:
         }
         eax61a = (_DWORD *)(*((int (__thiscall **)(VectorClass *, __int64 *))aP1a->vtable0 + 18))(aP1a, &v130);
         v32 = Coord::Subtract(
+  int v148[3]; // [esp+108h] [ebp-18h] BYREF
                 v148,
                 (IUnknown *)(*(_DWORD *)aP0->__pad_0 - *eax61a),
                 (IUnknown *)(*(_DWORD *)&aP0->__pad_0[4] - eax61a[1]),
@@ -428,8 +423,10 @@ LABEL_67:
         }
         goto LABEL_80;
       }
+  char v149[12]; // [esp+114h] [ebp-Ch] BYREF
       eax63 = (_DWORD *)(*((int (__thiscall **)(VectorClass *, char *))aP1a->vtable0 + 18))(aP1a, v149);
       v37 = Coord::Subtract(
+  int v145[3]; // [esp+E4h] [ebp-3Ch] BYREF
               v145,
               (IUnknown *)(*(_DWORD *)aP0->__pad_0 - *eax63),
               (IUnknown *)(*(_DWORD *)&aP0->__pad_0[4] - eax63[1]),
@@ -444,8 +441,10 @@ LABEL_67:
     }
     else
     {
+  char v146[12]; // [esp+F0h] [ebp-30h] BYREF
       eax64 = (_DWORD *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v26 + 164))(v26, v146);
       v43 = Coord::Subtract(
+  int v147[3]; // [esp+FCh] [ebp-24h] BYREF
               v147,
               (IUnknown *)(*(_DWORD *)aP0->__pad_0 - *eax64),
               (IUnknown *)(*(_DWORD *)&aP0->__pad_0[4] - eax64[1]),
@@ -575,7 +574,7 @@ LABEL_82:
                     *(float *)&v130 = (float)v122[0];
                     v122[0] = v65;
                     *((float *)&v130 + 1) = (float)((char *)v62 - (char *)v129);
-                    v131 = (float)v65;
+                    float v131 = (float)v65;
   double v66; // st7
                     v66 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
                                                         *(float *)&v130 * *(float *)&v130

@@ -213,7 +213,6 @@ void Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
   Animation *v22; // [esp+10h] [ebp-10h]
   void *v23; // [esp+14h] [ebp-Ch] BYREF
   ObjectClass *v24; // [esp+18h] [ebp-8h] BYREF
-  int v25; // [esp+1Ch] [ebp-4h]
   v3 = aP2; /*0x770554*/
   v4 = (ObjectClass *)a1; /*0x770559*/
   v22 = this; /*0x77055f*/
@@ -270,6 +269,7 @@ void Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
     nextObject = v22[5].nextObject; /*0x7706d0*/
     objectTypeFlags = v22[5].objectTypeFlags; /*0x7706d3*/
     v22[5].nextObject = (char *)nextObject + 1; /*0x7706d9*/
+  int v25; // [esp+1Ch] [ebp-4h]
     *(_DWORD *)(objectTypeFlags + 4 * (_DWORD)nextObject) = v25; /*0x7706e0*/
   }
   DeleteAndZero((void **)&aP2); /*0x770702*/

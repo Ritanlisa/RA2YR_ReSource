@@ -743,9 +743,6 @@ void Map_Helper_584030(IUnknown * aP0)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // esi
-  unsigned int v6; // eax
-  _DWORD *v7; // eax
-  int v8; // eax
   int v10; // [esp+10h] [ebp-4h]
   ObjectClass *aP0a; // [esp+18h] [ebp+4h]
 
@@ -768,13 +765,14 @@ LABEL_10:
   {
     HIWORD(aP0a) = v4 + aP0->field_4; /*0x58405e*/
     LOWORD(aP0a) = v5 + aP0->field_0; /*0x584063*/
-    v6 = (__int16)aP0a + (SHIWORD(aP0a) << 9); /*0x584071*/
+    unsigned int v6 = (__int16)aP0a + (SHIWORD(aP0a) << 9); /*0x584071*/
+  _DWORD *v7; // eax
     if ( v6 >= 0x40000 || (v7 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v6)) == 0 ) /*0x584081*/
     {
       g_Map_GlobalCellIndex = (IUnknown *)aP0a; /*0x584087*/
       v7 = g_CellClassArray; /*0x58408c*/
     }
-    v8 = v7[19]; /*0x584091*/
+    int v8 = v7[19]; /*0x584091*/
     if ( v8 != 4 && v8 != 3 ) /*0x58409c*/
       return 0; /*0x5840ac*/
     if ( ++v5 >= v3 ) /*0x5840a1*/
@@ -1444,12 +1442,9 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v6; // esi
-  int v7; // ebx
   _DWORD *v8; // ebx
-  int v9; // ebx
   int i; // esi
   void (__thiscall ***v12)(_DWORD, int); // ecx
-  _DWORD *v13; // [esp+10h] [ebp-4h]
   int v3 = a2; /*0x769e33*/
   if ( !a2 ) /*0x769e3d*/
   {
@@ -1463,7 +1458,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
     v6 = a3 + 1; /*0x769e95*/
     if ( a2 - 1 >= 0 ) /*0x769ea1*/
     {
-      v9 = a2; /*0x769ea3*/
+      int v9 = a2; /*0x769ea3*/
       do /*0x769eb7*/
       {
         ComPtr::Constructor(v6); /*0x769ea8*/
@@ -1485,10 +1480,10 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
     }
     *v5 = a2; /*0x769e63*/
     v6 = v5 + 1; /*0x769e65*/
-    v13 = v5 + 1; /*0x769e6b*/
+    _DWORD * v13 = v5 + 1; /*0x769e6b*/
     if ( a2 - 1 >= 0 ) /*0x769e71*/
     {
-      v7 = a2; /*0x769e73*/
+      int v7 = a2; /*0x769e73*/
       do /*0x769e87*/
       {
         ComPtr::Constructor(v6); /*0x769e78*/

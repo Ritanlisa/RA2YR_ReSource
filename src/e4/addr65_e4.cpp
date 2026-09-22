@@ -574,9 +574,9 @@ void RenderScoreboardSidebar()
                       25);
     v27 = *(IUnknown **)&stru_87C374[44940]; /*0x654057*/
     StringCSF = GetStringCSF((wchar_t *)&stru_830620[36184], 0, &stru_830620[36200], 1268); /*0x654069*/
-  int a0; // [esp+30h] [ebp-98h] BYREF
   int v33; // [esp+8h] [ebp-C0h]
   int v38; // [esp+10h] [ebp-B8h]
+  int a0; // [esp+30h] [ebp-98h] BYREF
     TextRenderer::DrawText(&a0, (size_t)StringCSF, v27, v30, v33, v35, v38, (int)v41); /*0x654074*/
     int v10 = a1[1150]; /*0x654079*/
     int v11 = a1[1148]; /*0x65407f*/
@@ -1596,39 +1596,21 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
   ObjectClass *v7; // ebx
   int *v10; // eax
   ScriptTypeClass *v11; // eax
-  int v12; // eax
   ScriptTypeClass *nextObject; // edi
   char v14; // bl
   __int16 v15; // si
-  int v16; // edx
-  unsigned int v17; // esi
-  int v18; // edx
   ScriptTypeClass *v19; // esi
-  void *v20; // eax
-  int v21; // ecx
-  _DWORD *v22; // eax
   ObjectClass *Coords; // eax
-  int v24; // ecx
-  int v25; // edx
-  int v26; // eax
   ScriptTypeClass *v27; // edx
-  int v28; // eax
   ScriptTypeClass *v29; // edx
   ScriptTypeClass *v30; // esi
-  void *v31; // eax
-  char v32; // al
   ScriptTypeClass *v33; // ebx
-  _DWORD *v34; // eax
   ObjectClass *v35; // eax
   ScriptTypeClass *v36; // edx
-  int v37; // esi
-  int v38; // eax
   __int16 v39; // dx
   IUnknown *v40; // esi
-  int v41; // ecx
   __int16 v42; // ax
   ScriptTypeClass *v43; // ebx
-  void *v44; // eax
   int *scriptActions; // eax
   ScriptTypeClass *v46; // esi
   __int16 v48; // [esp+2Ah] [ebp-6Ah]
@@ -1636,16 +1618,6 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
   ScriptTypeClass *v50; // [esp+30h] [ebp-64h]
   int v51; // [esp+34h] [ebp-60h] BYREF
   int v52; // [esp+38h] [ebp-5Ch]
-  unsigned int v53; // [esp+3Ch] [ebp-58h]
-  int *v54; // [esp+40h] [ebp-54h]
-  int *v55; // [esp+44h] [ebp-50h]
-  unsigned int v56; // [esp+48h] [ebp-4Ch]
-  _DWORD v57[3]; // [esp+4Ch] [ebp-48h] BYREF
-  _DWORD v58[3]; // [esp+58h] [ebp-3Ch] BYREF
-  _DWORD v59[3]; // [esp+64h] [ebp-30h] BYREF
-  _DWORD v60[3]; // [esp+70h] [ebp-24h] BYREF
-  int v61[3]; // [esp+7Ch] [ebp-18h] BYREF
-  int v62[3]; // [esp+88h] [ebp-Ch] BYREF
 
   v4 = aP0; /*0x65e016*/
   v5 = aP1; /*0x65e019*/
@@ -1681,7 +1653,7 @@ LABEL_5:
   {
     v11 = *(ScriptTypeClass **)v5->__pad_0; /*0x65e0e5*/
     aP1_4 = 0; /*0x65e0ee*/
-    v12 = ((int (__thiscall *)(ObjectClass *))v11->scriptActions[21])(v5); /*0x65e0fe*/
+    int v12 = ((int (__thiscall *)(ObjectClass *))v11->scriptActions[21])(v5); /*0x65e0fe*/
     v10 = (int *)*LayerClass::Pathfinding_Find( /*0x65e122*/
                     (IUnknown *)&stru_87C374[13428],
                     (IUnknown *)&v51,
@@ -1721,6 +1693,8 @@ LABEL_5:
   {
     while ( 1 ) /*0x65e1d5*/
     {
+  char v32; // al
+  unsigned int v17; // esi
       while ( 1 ) /*0x65e15e*/
       {
         if ( v49 == (int *)dword_B04C38 || !v5 ) /*0x65e17f*/
@@ -1729,10 +1703,12 @@ LABEL_5:
           goto LABEL_53; /*0x65e611*/
         }
         v15 = v52; /*0x65e185*/
-        v16 = *(_DWORD *)v5->__pad_0; /*0x65e189*/
+        int v16 = *(_DWORD *)v5->__pad_0; /*0x65e189*/
+  unsigned int v53; // [esp+3Ch] [ebp-58h]
         LOWORD(v53) = (_WORD)v52 << 13; /*0x65e191*/
         if ( (*(int (__thiscall **)(ObjectClass *))(v16 + 44))(v5) == 2 ) /*0x65e19e*/
         {
+  unsigned int v56; // [esp+48h] [ebp-4Ch]
           LOWORD(v56) = ((v15 << 13) - 24577) & 0xE000; /*0x65e1af*/
           v17 = v56; /*0x65e1b4*/
           v53 = v56; /*0x65e1b8*/
@@ -1744,13 +1720,14 @@ LABEL_5:
         ++*(_DWORD *)&HouseClass_Player[43616]; /*0x65e1cf*/
         if ( !(_BYTE)v48 ) /*0x65e1d5*/
           break; /*0x65e1d5*/
-        v18 = *(_DWORD *)v5->__pad_0; /*0x65e1e5*/
+        int v18 = *(_DWORD *)v5->__pad_0; /*0x65e1e5*/
+  _DWORD v57[3]; // [esp+4Ch] [ebp-48h] BYREF
         v57[2] = 0; /*0x65e1e8*/
         v57[0] = ((__int16)v49 << 8) + 128; /*0x65e1fb*/
         v57[1] = (SHIWORD(v49) << 8) + 128; /*0x65e209*/
         (*(void (__thiscall **)(ObjectClass *, _DWORD *))(v18 + 436))(v5, v57); /*0x65e210*/
         v19 = *(ScriptTypeClass **)v5->__pad_0; /*0x65e216*/
-        v20 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v49); /*0x65e225*/
+        void * v20 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v49); /*0x65e225*/
         ((void (__thiscall *)(ObjectClass *, void *, int))v19[2].scriptActions[52])(v5, v20, 1); /*0x65e22d*/
         if ( !*(_DWORD *)&v5[9].bombVisible ) /*0x65e23d*/
           WinAPI::Wrapper(-2147467261); /*0x65e260*/
@@ -1766,8 +1743,9 @@ LABEL_5:
           0,
           0,
           0);
+  _DWORD v58[3]; // [esp+58h] [ebp-3Ch] BYREF
         v58[0] = v5->location[0]; /*0x65e29d*/
-        v21 = v5[3].customSound_controller[3]; /*0x65e2a1*/
+        int v21 = v5[3].customSound_controller[3]; /*0x65e2a1*/
         v58[1] = v5->location[1]; /*0x65e2ad*/
         v58[2] = v5->location[2]; /*0x65e2c1*/
         MapClass::RevealArea2(&stru_87C374[13428], (IUnknown *)v58, 0, (MouseClass *)(v21 + 3), 0); /*0x65e2c5*/
@@ -1782,11 +1760,12 @@ LABEL_31:
         }
         if ( (_BYTE)v48 ) /*0x65e477*/
         {
-          v37 = 0; /*0x65e47d*/
+          int v37 = 0; /*0x65e47d*/
           while ( 1 ) /*0x65e486*/
           {
-            v38 = v37 & 7; /*0x65e486*/
+            int v38 = v37 & 7; /*0x65e486*/
             v39 = HIWORD(v49) + *(_WORD *)&stru_89E138[5296][4 * v38 + 162]; /*0x65e499*/
+  int *v54; // [esp+40h] [ebp-54h]
             LOWORD(v54) = *(_WORD *)&stru_89E138[5296][4 * v38 + 160] + (_WORD)v49; /*0x65e4a5*/
             HIWORD(v54) = v39; /*0x65e4b1*/
             a2 = v54; /*0x65e4c0*/
@@ -1813,11 +1792,13 @@ LABEL_46:
       }
       if ( HIBYTE(v48) ) /*0x65e2d9*/
       {
-        v22 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v49); /*0x65e2ee*/
+        _DWORD * v22 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v49); /*0x65e2ee*/
+  int v61[3]; // [esp+7Ch] [ebp-18h] BYREF
         Coords = (ObjectClass *)CellClass::GetCoords(v22, (IUnknown *)v61); /*0x65e2f5*/
-        v24 = *(_DWORD *)Coords->__pad_0; /*0x65e2fa*/
-        v25 = *(_DWORD *)&Coords->__pad_0[4]; /*0x65e2fc*/
-        v26 = *(_DWORD *)&Coords->__pad_0[8]; /*0x65e2ff*/
+        int v24 = *(_DWORD *)Coords->__pad_0; /*0x65e2fa*/
+        int v25 = *(_DWORD *)&Coords->__pad_0[4]; /*0x65e2fc*/
+        int v26 = *(_DWORD *)&Coords->__pad_0[8]; /*0x65e2ff*/
+  _DWORD v59[3]; // [esp+64h] [ebp-30h] BYREF
         v59[1] = v25; /*0x65e302*/
         v27 = *(ScriptTypeClass **)v5->__pad_0; /*0x65e306*/
         v59[2] = v26 - 400; /*0x65e312*/
@@ -1828,14 +1809,15 @@ LABEL_46:
                        (unsigned __int8)(((v17 >> 7) + 1) >> 1));
         if ( !(_BYTE)a2 ) /*0x65e339*/
           goto LABEL_39; /*0x65e339*/
-        v28 = (*(int (__thiscall **)(ObjectClass *))(*(_DWORD *)v5->__pad_0 + 464))(v5); /*0x65e344*/
+        int v28 = (*(int (__thiscall **)(ObjectClass *))(*(_DWORD *)v5->__pad_0 + 464))(v5); /*0x65e344*/
+  _DWORD v60[3]; // [esp+70h] [ebp-24h] BYREF
         v60[0] = v5->location[0]; /*0x65e35b*/
         v60[1] = v5->location[1]; /*0x65e367*/
         v29 = *(ScriptTypeClass **)v5->__pad_0; /*0x65e36b*/
         v60[2] = v5->location[2] + -256 - v28; /*0x65e373*/
         ((void (__thiscall *)(ObjectClass *, _DWORD *))v29->scriptActions[97])(v5, v60); /*0x65e379*/
         v30 = *(ScriptTypeClass **)v5->__pad_0; /*0x65e37f*/
-        v31 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v49); /*0x65e38e*/
+        void * v31 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v49); /*0x65e38e*/
         ((void (__thiscall *)(ObjectClass *, void *, int))v30[2].scriptActions[52])(v5, v31, 1); /*0x65e396*/
         (*(void (__thiscall **)(ObjectClass *, _DWORD, int))(*(_DWORD *)v5->__pad_0 + 1348))(v5, 0, 1072693248); /*0x65e3a8*/
         if ( !*(_DWORD *)&v5[9].bombVisible ) /*0x65e3b8*/
@@ -1851,7 +1833,8 @@ LABEL_46:
       else
       {
         v33 = *(ScriptTypeClass **)v5->__pad_0; /*0x65e40a*/
-        v34 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v49); /*0x65e425*/
+        _DWORD * v34 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v49); /*0x65e425*/
+  int v62[3]; // [esp+88h] [ebp-Ch] BYREF
         v35 = (ObjectClass *)CellClass::GetCoords(v34, (IUnknown *)v62); /*0x65e42c*/
         v32 = ((int (__thiscall *)(ObjectClass *, ObjectClass *, _DWORD))v33->scriptActions[42])( /*0x65e434*/
                 v5,
@@ -1864,15 +1847,16 @@ LABEL_39:
       v40 = 0; /*0x65e506*/
       while ( 1 ) /*0x65e50f*/
       {
-        v41 = (unsigned __int8)v40 & 7; /*0x65e50f*/
+        int v41 = (unsigned __int8)v40 & 7; /*0x65e50f*/
         v42 = *(_WORD *)&stru_89E138[5296][4 * v41 + 162]; /*0x65e521*/
+  int *v55; // [esp+44h] [ebp-50h]
         LOWORD(v55) = *(_WORD *)&stru_89E138[5296][4 * v41 + 160] + (_WORD)v49; /*0x65e529*/
         HIWORD(v55) = HIWORD(v49) + v42; /*0x65e53b*/
         a2 = v55; /*0x65e544*/
         if ( !LayerClass::CoordinatesLegal(&stru_87C374[13428], (IUnknown *)&a2) ) /*0x65e550*/
         {
           v43 = *(ScriptTypeClass **)v5->__pad_0; /*0x65e559*/
-          v44 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&a2); /*0x65e570*/
+          void * v44 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&a2); /*0x65e570*/
           if ( !((int (__thiscall *)(ObjectClass *, void *, IUnknown *, int, _DWORD, int))v43->scriptActions[95])( /*0x65e578*/
                   v5,
                   v44,

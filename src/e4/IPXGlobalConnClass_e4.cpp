@@ -78,8 +78,6 @@ int IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClas
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // esi
-  int v9; // ebp
-  int v10; // edi
   char LinkedIndex; // al
   int v12; // edi
   int v13; // edx
@@ -89,7 +87,6 @@ int IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClas
   IPXManagerClass v18; // [esp+1Ch] [ebp-18h] BYREF
   int v19; // [esp+24h] [ebp-10h]
   IPXManagerClass v20; // [esp+28h] [ebp-Ch] BYREF
-  int v21; // [esp+30h] [ebp-4h]
   IPXGlobalConnClass *v7 = this; /*0x5403f4*/
   aP1_4 = this; /*0x5403fc*/
   Waypoint::InitInvalid(&v18); /*0x540400*/
@@ -111,11 +108,11 @@ int IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClas
     if ( !*(_BYTE *)(a2 + 3) ) /*0x540489*/
     {
       v20 = v18; /*0x5404a0*/
-      v21 = v19; /*0x5404b6*/
+      int v21 = v19; /*0x5404b6*/
       Network::CopyAddress(&v20, &v15, (int)v17); /*0x5404ba*/
       NetworkID::Assign(&v20, (IPXManagerClass *)&v15, (int)v17, (IPXManagerClass *)aP3); /*0x5404d2*/
-      v9 = -1; /*0x5404dc*/
-      v10 = 0; /*0x5404df*/
+      int v9 = -1; /*0x5404dc*/
+      int v10 = 0; /*0x5404df*/
       if ( *(int *)&HouseClass_Player[40248] > 0 ) /*0x5404e3*/
       {
         while ( !GUID::Compare( /*0x5404fd*/

@@ -81,6 +81,12 @@ def lower_block(lines, lo, hi):
                 k += 1
             cp = cp[:k]
         cp = tuple(cp)
+        if paths[j][:len(cp)] == cp:
+            # decl already sits inside the common block: nothing to do
+            # (previous run placed it here -- idempotency for the
+            # common-ancestor placement case)
+            skipped += 1
+            continue
         if paths[uses[0]] == cp:
             target = uses[0]
         else:

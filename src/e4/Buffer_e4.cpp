@@ -21,7 +21,6 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
   int v55; // [esp+1Ch] [ebp-8h]
   int v56; // [esp+20h] [ebp-4h]
   int aP2a; // [esp+2Ch] [ebp+8h]
-  char *v58; // [esp+30h] [ebp+Ch]
 
   signed int v5 = this->q028; /*0x7bcb60*/
   int v52 = this->Buffer_field_04 / 2 % v5; /*0x7bcb72*/
@@ -123,7 +122,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     char * v27 = (char *)aP2 + v24 / 2 / v25; /*0x7bcd1f*/
     v28 = (unsigned __int16 *)this->Buffer_field_18; /*0x7bcd21*/
     unsigned int v29 = (unsigned int)v28 + v26; /*0x7bcd24*/
-    v58 = v27; /*0x7bcd26*/
+    char * v58 = v27; /*0x7bcd26*/
     if ( v29 < (unsigned int)v28 ) /*0x7bcd2c*/
       v29 += this->Buffer_field_08; /*0x7bcd2e*/
     if ( v29 >= this->Buffer_field_1C ) /*0x7bcd34*/

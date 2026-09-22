@@ -80,12 +80,10 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
   int v29; // [esp+14h] [ebp-138h]
   int v30; // [esp+18h] [ebp-134h]
   void **v31; // [esp+1Ch] [ebp-130h] BYREF
-  int v32; // [esp+20h] [ebp-12Ch]
   int var128; // [esp+24h] [ebp-128h]
   void **v34; // [esp+28h] [ebp-124h] BYREF
   void ***v35; // [esp+2Ch] [ebp-120h]
   int v36; // [esp+30h] [ebp-11Ch]
-  int v37; // [esp+34h] [ebp-118h] BYREF
   void **v38; // [esp+38h] [ebp-114h] BYREF
   void ***var110; // [esp+3Ch] [ebp-110h]
   ObjectClass *v33; // [esp+40h] [ebp-10Ch]
@@ -97,16 +95,9 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
   ObjectClass *v39; // [esp+58h] [ebp-F4h]
   void **v47; // [esp+5Ch] [ebp-F0h] BYREF
   void *v48; // [esp+60h] [ebp-ECh]
-  int v49; // [esp+64h] [ebp-E8h]
   char v50; // [esp+69h] [ebp-E3h]
   MSShapeAnim *v51; // [esp+6Ch] [ebp-E0h]
   int v52; // [esp+70h] [ebp-DCh]
-  _DWORD v53[22]; // [esp+74h] [ebp-D8h] BYREF
-  _BYTE v54[12]; // [esp+CCh] [ebp-80h] BYREF
-  int v55; // [esp+D8h] [ebp-74h]
-  _DWORD v56[22]; // [esp+E0h] [ebp-6Ch] BYREF
-  _BYTE v57[12]; // [esp+138h] [ebp-14h] BYREF
-  int v58; // [esp+144h] [ebp-8h]
   v5 = 0; /*0x76d4da*/
   int v8 = Count::Get((_DWORD *)(this + 1112)); /*0x76d4e3*/
   VectorCursor::Construct(&v28, v8 + 44, 0); /*0x76d4f0*/
@@ -132,6 +123,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
   VectorCursor::Construct(&v31, v11 + 44, 0); /*0x76d58d*/
   while ( ((unsigned __int8 (__thiscall *)(void ***))v31[1])(&v31) )
   {
+  int v32; // [esp+20h] [ebp-12Ch]
     unsigned int v12 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(v32 + 4) + 8 * var128 + 4) + 8); /*0x76d5bc*/
     CellType = WDTClass::GetCellType(*(_DWORD **)(this + 1164), v12); /*0x76d5cd*/
     int v14 = WDTClass::GetCellType(*(_DWORD **)(a4 + 4), v12); /*0x76d5d7*/
@@ -154,6 +146,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
       ebp18 = *(_DWORD *)(*(_DWORD *)(this + 1116) + 72) + *(_DWORD *)(v16 + 20); /*0x76d69a*/
       if ( *(_DWORD *)(this + 1136) ) /*0x76d68f*/
       {
+  _DWORD v53[22]; // [esp+74h] [ebp-D8h] BYREF
         CCFileClass::Construct2(v53, *(char ***)(this + 1136)); /*0x76d6a9*/
         if ( CCFileClass::Open(v53, 0) ) /*0x76d6b3*/
         {
@@ -168,6 +161,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
                                   3,
                                   512,
                                   (MSShapeAnim *)(this + 24));
+  int v49; // [esp+64h] [ebp-E8h]
           if ( (int)v51 < v49 /*0x76d71b*/
             || (v50 || !v49)
             && v52 > 0
@@ -180,11 +174,13 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
           v5 = 0; /*0x76d734*/
         }
         v53[0] = &vt_CCFileClass; /*0x76d73d*/
-        v55 = 0; /*0x76d745*/
+        int v55 = 0; /*0x76d745*/
+  _BYTE v54[12]; // [esp+CCh] [ebp-80h] BYREF
         Vector::Clear((int)v54); /*0x76d74c*/
         v53[0] = &off_7E1668; /*0x76d755*/
         BufferIOFileClass::Dtor(v53); /*0x76d75d*/
       }
+  _DWORD v56[22]; // [esp+E0h] [ebp-6Ch] BYREF
       CCFileClass::Construct2(v56, *(char ***)(this + 1140)); /*0x76d770*/
       if ( CCFileClass::Open(v56, 0) )
       {
@@ -214,7 +210,8 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
         }
       }
       v56[0] = &vt_CCFileClass; /*0x76d841*/
-      v58 = 0; /*0x76d84c*/
+      int v58 = 0; /*0x76d84c*/
+  _BYTE v57[12]; // [esp+138h] [ebp-14h] BYREF
       Vector::Clear((int)v57); /*0x76d853*/
       BufferIOFileClass::Destruct(v56); /*0x76d85f*/
     }
@@ -246,6 +243,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
         }
         else
         {
+  int v37; // [esp+34h] [ebp-118h] BYREF
           String::Assign((char **)&v37, aTargetzoom); /*0x76d944*/
           if ( String::NotEquals((const char **)&v37, 0) ) /*0x76d94e*/
           {

@@ -150,10 +150,7 @@ void Screenshot_Compress(int * a1, int * a2, void * Src)
   __int16 v111; // [esp+A8h] [ebp-348h]
   char v112; // [esp+AAh] [ebp-346h]
   _BYTE v113[53]; // [esp+ABh] [ebp-345h] BYREF
-  int v114; // [esp+E0h] [ebp-310h]
-  int v115; // [esp+E4h] [ebp-30Ch]
   char *v116; // [esp+E8h] [ebp-308h]
-  _BYTE v117[768]; // [esp+F0h] [ebp-300h] BYREF
 
   int v5 = 0; /*0x7b05cd*/
   int v6 = *a2; /*0x7b05cf*/
@@ -331,6 +328,7 @@ LABEL_33:
     (*(void (__thiscall **)(int *, char *, int))(v41 + 48))(a1, &v47, 1); /*0x7b0a9f*/
     if ( (*(int (__thiscall **)(int *))(*a2 + 112))(a2) == 1 ) /*0x7b0aac*/
     {
+  _BYTE v117[768]; // [esp+F0h] [ebp-300h] BYREF
       memcpy(v117, Src, sizeof(v117)); /*0x7b0ac3*/
       (*(void (__thiscall **)(int *, _BYTE *, int))(*a1 + 48))(a1, v117, 768); /*0x7b0add*/
     }
@@ -349,8 +347,8 @@ LABEL_33:
     {
   int v31; // eax
       _BYTE * v27 = v49; /*0x7b0828*/
-      v114 = (_BYTE *)Block - (_BYTE *)v49; /*0x7b0834*/
-      v115 = (_BYTE *)v51 - (_BYTE *)v49; /*0x7b0841*/
+      int v114 = (_BYTE *)Block - (_BYTE *)v49; /*0x7b0834*/
+      int v115 = (_BYTE *)v51 - (_BYTE *)v49; /*0x7b0841*/
       do /*0x7b08b9*/
       {
         v28 = *v52++; /*0x7b0853*/

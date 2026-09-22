@@ -14,17 +14,11 @@ int Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseCla
 {
   IUnknown *v6; // ebx
   int v7; // esi
-  int v8; // eax
   int v9; // ebp
   int v10; // esi
-  int v11; // eax
   int result; // eax
   char v13; // bl
-  int v14; // ecx
   IUnknown *Status; // eax
-  char v16; // bl
-  int v17; // eax
-  int v18; // eax
   int v19; // ecx
   int v20; // ecx
   char v21; // [esp+23h] [ebp-11h]
@@ -34,7 +28,7 @@ int Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseCla
   if ( (int)aP2 >= 0 ) /*0x4fa35f*/
   {
     v6 = (IUnknown *)a1; /*0x4fa36d*/
-    v8 = TechnoTypeClass::GetByTypeAndIndex((int)a1, (int)aP2); /*0x4fa375*/
+    int v8 = TechnoTypeClass::GetByTypeAndIndex((int)a1, (int)aP2); /*0x4fa375*/
     if ( a1 == (void *)6 || a1 == (void *)7 ) /*0x4fa382*/
       v22 = *(_DWORD *)(v8 + 3592); /*0x4fa394*/
     else
@@ -119,7 +113,7 @@ LABEL_40:
   }
   if ( !v10 ) /*0x4fa4e3*/
   {
-    v11 = __2_YAPAXI_Z(0x74u); /*0x4fa4e7*/
+    int v11 = __2_YAPAXI_Z(0x74u); /*0x4fa4e7*/
     if ( !v11 ) /*0x4fa4f1*/
       goto LABEL_40; /*0x4fa4f1*/
     v10 = TeamTypeClass::Construct(v11); /*0x4fa4fa*/
@@ -158,7 +152,7 @@ LABEL_40:
   v13 = 0; /*0x4fa5a8*/
   if ( *(_BYTE *)(v10 + 112) ) /*0x4fa5a8*/
   {
-    v14 = *(_DWORD *)(v10 + 88); /*0x4fa5b1*/
+    int v14 = *(_DWORD *)(v10 + 88); /*0x4fa5b1*/
     if ( v14 ) /*0x4fa5b6*/
     {
       if ( (*(int (__thiscall **)(int))(*(_DWORD *)v14 + 132))(v14) == v9 ) /*0x4fa5c2*/
@@ -167,11 +161,12 @@ LABEL_40:
 LABEL_55:
         if ( !*(_DWORD *)(v10 + 80) || a5 || v13 ) /*0x4fa5f6*/
         {
-          v16 = *(_BYTE *)(v10 + 112); /*0x4fa622*/
+          char v16 = *(_BYTE *)(v10 + 112); /*0x4fa622*/
           ProductionClass::StartTimer(v10, v24); /*0x4fa628*/
           if ( !v16 && g_GameMode_Current && *(_BYTE *)(this + 492) ) /*0x4fa63a*/
           {
-            v17 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v10 + 88) + 132))(*(_DWORD *)(v10 + 88)); /*0x4fa649*/
+            int v17 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v10 + 88) + 132))(*(_DWORD *)(v10 + 88)); /*0x4fa649*/
+  int v18; // eax
             v18 = (int)(54 * ((int)DataGlobal_A8B558 * (int)g_ScenarioState / 0x3Cu)) /*0x4fa67b*/
                 / (*(int (__thiscall **)(int))(*(_DWORD *)v17 + 136))(v17);
             if ( v18 >= 53 ) /*0x4fa680*/

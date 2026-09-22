@@ -35,14 +35,6 @@ int E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
 {
   _DWORD *i; // edi
   _DWORD *v12; // eax
-  int *v13; // ecx
-  int v14; // edi
-  void *v15; // eax
-  int *v16; // eax
-  _DWORD *v17; // ecx
-  int v18; // ecx
-  int v19; // eax
-  int v20; // ecx
   char v22; // [esp+31h] [ebp-5h]
   int v23; // [esp+32h] [ebp-4h] BYREF
   for ( i = (_DWORD *)*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &a2) + 57); i; i = (_DWORD *)i[12] ) /*0x7187bf*/
@@ -87,21 +79,21 @@ int E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
     || (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &a2) + 80) & 0x100) != 0
     || *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &a2) + 59) == 1 )
   {
-    v13 = *(this + 3); /*0x718a01*/
+    int * v13 = *(this + 3); /*0x718a01*/
     LOWORD(v23) = a2 / 256; /*0x718a14*/
     HIWORD(v23) = a3 / 256; /*0x718a2f*/
-    v14 = *v13; /*0x718a3c*/
-    v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v23); /*0x718a46*/
+    int v14 = *v13; /*0x718a3c*/
+    void * v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v23); /*0x718a46*/
     if ( (*(int (__thiscall **)(_DWORD, void *, int, int, _DWORD, int))(v14 + 428))(*(this + 3), v15, -1, -1, 0, 1) == 7 /*0x718a60*/
       || (LOBYTE(v12) = v22) != 0 )
     {
       LOWORD(v23) = a2 / 256; /*0x718a80*/
       HIWORD(v23) = a3 / 256; /*0x718a95*/
-      v16 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v23); /*0x718aa2*/
+      int * v16 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v23); /*0x718aa2*/
       if ( !Cell::IsGroundTypeRange(v16) || (*(int (__thiscall **)(_DWORD))(**(this + 3) + 44))(*(this + 3)) == 15 ) /*0x718abd*/
       {
-        v19 = (*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)); /*0x718b23*/
-        v20 = (int)*(this + 3); /*0x718b2f*/
+        int v19 = (*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)); /*0x718b23*/
+        int v20 = (int)*(this + 3); /*0x718b2f*/
         v23 = *(_DWORD *)(v19 + 160); /*0x718b32*/
         LOBYTE(v12) = (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, _DWORD, _DWORD))(*(_DWORD *)v20 + 364))( /*0x718b53*/
                         v20,
@@ -118,11 +110,11 @@ int E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
         *((_BYTE *)*(this + 3) + 973) = 1; /*0x718ac2*/
         (*(void (__thiscall **)(_DWORD))(**(this + 3) + 928))(*(this + 3)); /*0x718ace*/
         v12 = *(this + 3); /*0x718ad4*/
-        v17 = (_DWORD *)v12[182]; /*0x718ad7*/
+        _DWORD * v17 = (_DWORD *)v12[182]; /*0x718ad7*/
         if ( v17 ) /*0x718adf*/
         {
           TechnoClass::MutateAll(v17, v12[266], v12[267]); /*0x718aef*/
-          v18 = (*(this + 3))[182]; /*0x718af7*/
+          int v18 = (*(this + 3))[182]; /*0x718af7*/
           if ( v18 ) /*0x718aff*/
             (*(void (__thiscall **)(int, int))(*(_DWORD *)v18 + 32))(v18, 1); /*0x718b05*/
           v12 = *(this + 3); /*0x718b08*/

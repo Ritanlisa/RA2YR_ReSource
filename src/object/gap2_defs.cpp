@@ -385,10 +385,6 @@ namespace ra2 { namespace game { int TechnoClass::SmokeUpdate() {
   int v29; // [esp+44h] [ebp-24h] BYREF
   int v30; // [esp+48h] [ebp-20h]
   int v31; // [esp+4Ch] [ebp-1Ch]
-  int v32; // [esp+50h] [ebp-18h] BYREF
-  int v33; // [esp+54h] [ebp-14h]
-  int v34; // [esp+58h] [ebp-10h]
-  int v35[3]; // [esp+5Ch] [ebp-Ch] BYREF
 
   switch ( this->q02B ) /*0x414bcd*/
   {
@@ -463,6 +459,9 @@ LABEL_70:
       LOBYTE(v4) = this->isAliveFlag; /*0x414da8*/
       if ( (_BYTE)v4 )
       {
+  int v34; // [esp+58h] [ebp-10h]
+  int v33; // [esp+54h] [ebp-14h]
+  int v32; // [esp+50h] [ebp-18h] BYREF
         if ( this->q3CD ) /*0x414db6*/
         {
           v29 = this->q027; /*0x414dce*/
@@ -494,6 +493,7 @@ LABEL_70:
               AnimClass::ctor(v14, *((void **)g_RulesClass_Instance + 37), (int)&v29, 0, 1, (void *)0x600, 0, 0); /*0x414ecb*/
           }
         }
+  int v35[3]; // [esp+5Ch] [ebp-Ch] BYREF
         v35[0] = this->q027; /*0x414ede*/
         v35[1] = this->owningHouseIndex; /*0x414ee5*/
         int v15 = this->q1B1; /*0x414ee9*/
@@ -1102,12 +1102,8 @@ namespace ra2 { namespace game { int FootClass::DrawPlacementPreview() {
   float v113; // [esp+DAh] [ebp-ECh]
   float v114; // [esp+DEh] [ebp-E8h]
   float v115; // [esp+E2h] [ebp-E4h] BYREF
-  float v116; // [esp+E6h] [ebp-E0h]
-  float v117; // [esp+EAh] [ebp-DCh]
   float v118; // [esp+EEh] [ebp-D8h] BYREF
   float v119; // [esp+F2h] [ebp-D4h]
-  float v120; // [esp+F6h] [ebp-D0h]
-  float v121[12]; // [esp+FAh] [ebp-CCh] BYREF
   float v122[12]; // [esp+12Ah] [ebp-9Ch] BYREF
   _BYTE v123[12]; // [esp+15Ah] [ebp-6Ch] BYREF
   float v124[12]; // [esp+166h] [ebp-60h] BYREF
@@ -1308,6 +1304,8 @@ LABEL_31:
     if ( (result != 19 || (result = this->radioContact, result <= 0)) && !v36
       || (LOBYTE(result) = *(_BYTE *)(v35 + 5834), (_BYTE)result) )
     {
+  float v117; // [esp+EAh] [ebp-DCh]
+  float v116; // [esp+E6h] [ebp-E0h]
   unsigned int v38; // edi
   unsigned int v37; // ebx
       if ( LOBYTE(DataGlobal_87F7E8[7948]) )
@@ -1336,6 +1334,7 @@ LABEL_31:
       }
       int v43 = ((unsigned __int8)v103 << 16) | v37;
       int v44 = ((unsigned __int8)v40 << 16) | v38;
+  float v121[12]; // [esp+FAh] [ebp-CCh] BYREF
       Matrix3x4::Identity(v121);
       result = this->gattlingValue;
       if ( *(_DWORD *)(result + 184) )
@@ -1467,7 +1466,7 @@ LABEL_31:
         v113 = -v121[7];
         v115 = v112;
         v114 = -v121[11];
-        v120 = v121[11];
+        float v120 = v121[11];
         v116 = v113;
         v117 = v114;
         Matrix3x3::Multiply(v121, &v115);
@@ -8926,7 +8925,6 @@ namespace ra2 { namespace game { int ObjectClass::ReadINIEntry(int a1, int a2, i
   int *missionTimer_text; // edi
   char *v7; // esi
   char Destination[32]; // [esp+Ch] [ebp-40h] BYREF
-  char v10[32]; // [esp+2Ch] [ebp-20h] BYREF
 
   v5 = (RandomStruct *)(this + 109); /*0x6e15f8*/
   if ( *(this + 109) && this != (const char *)-109 ) /*0x6e1604*/
@@ -8944,6 +8942,7 @@ LABEL_10:
   }
   else
   {
+  char v10[32]; // [esp+2Ch] [ebp-20h] BYREF
     Destination[0] = 0; /*0x6e1611*/
     g_ScenarioClass_Instance->missionTimer_text_csf = &DataGlobal_87F8E4[32336]; /*0x6e1617*/
     if ( &DataGlobal_87F8E4 == (MouseClass *)-42624 ) /*0x6e1621*/
@@ -10776,7 +10775,6 @@ namespace ra2 { namespace game { int TechnoClass::DrawPowerIndicator() {
   void *v19; // [esp+28h] [ebp-128h]
   void *v20; // [esp+2Ch] [ebp-124h]
   CampaignScore *v21; // [esp+30h] [ebp-120h]
-  _DWORD v22[3]; // [esp+34h] [ebp-11Ch] BYREF
   _DWORD v23[4]; // [esp+40h] [ebp-110h] BYREF
   CampaignScore Buffer[7]; // [esp+54h] [ebp-FCh] BYREF
   int *a2; // [esp+158h] [ebp+8h]
@@ -10803,6 +10801,7 @@ LABEL_5:
       (const size_t)StringCSF,
       *(const wchar_t *const *)&v17[12],
       (CampaignScore *)v17.uniqueId);
+  _DWORD v22[3]; // [esp+34h] [ebp-11Ch] BYREF
     TextBoundingRect = (void **)GetTextBoundingRect(v22, Buffer, *a2, a2[1], 329, 4, 2); /*0x70ab0a*/
     v18 = *TextBoundingRect; /*0x70ab13*/
     v19 = TextBoundingRect[1]; /*0x70ab1d*/
@@ -11204,7 +11203,6 @@ namespace ra2 { namespace game { int ObjectClass::ProcessFoggedState() {
   int v4; // ebp
   #374 *v5; // edi
   signed int i; // eax
-  _DWORD *v7; // ecx
   int Vtable3; // [esp+14h] [ebp-4h]
 
   ObjectClass::ctor((_DWORD *)this); /*0x71bdf9*/
@@ -11253,6 +11251,7 @@ namespace ra2 { namespace game { int ObjectClass::ProcessFoggedState() {
   v5 = (#374 *)__2_YAPAXI_Z(8 * (v4 + g_BuildingLoadQueue_Capacity)); /*0x71bf09*/
   if ( v5 ) /*0x71bf10*/
   {
+  _DWORD *v7; // ecx
     for ( i = 0; i < (int)g_BuildingLoadQueue_Count; *((_DWORD *)v5 + 2 * i - 1) = v7[1] ) /*0x71bf29*/
     {
       v7 = (_DWORD *)((char *)g_BuildingLoadQueue_Array + 8 * i++); /*0x71bf31*/
@@ -11624,36 +11623,21 @@ namespace ra2 { namespace game { int TechnoClass::Draw(void* a1, void* a2) {
   VectorClass *v11; // edi
   int v14; // edi
   Tactical **v15; // ebp
-  int v16; // edi
   Tactical **ebp29; // ebp
   AbstractClass *v17; // edx
-  unsigned int v19; // edi
-  int *v20; // ebx
-  int v21; // edi
-  double v22; // st7
-  double v23; // st7
-  unsigned int v24; // edi
-  int v25; // eax
   ConvertClass *ebx37; // ebx
   AbstractClass *v26; // eax
   int referenceCount; // eax
   AbstractClass *v28; // edi
   int v30; // edx
-  int v31; // edi
-  int v32; // edx
   ConvertClass *v33; // eax
   int v34; // edx
-  unsigned int v36; // [esp-30h] [ebp-84h]
   ConvertClass *v37; // [esp-14h] [ebp-68h]
   int v38; // [esp+14h] [ebp-40h] BYREF
-  double v39; // [esp+18h] [ebp-3Ch] BYREF
   Tactical *v40; // [esp+20h] [ebp-34h]
   AbstractClass *v41; // [esp+24h] [ebp-30h]
-  double a1; // [esp+28h] [ebp-2Ch] BYREF
-  int v43; // [esp+30h] [ebp-24h]
   _DWORD v44[2]; // [esp+34h] [ebp-20h] BYREF
   _DWORD v45[3]; // [esp+3Ch] [ebp-18h] BYREF
-  int v46[3]; // [esp+48h] [ebp-Ch] BYREF
 
   if ( (unk_B1CF9C & 1) == 0 ) /*0x73ced0*/
   {
@@ -11703,7 +11687,7 @@ namespace ra2 { namespace game { int TechnoClass::Draw(void* a1, void* a2) {
   else if ( ebx8 < unk_B1D0AC ) /*0x73cfb7*/
   {
 LABEL_25:
-    v16 = 0; /*0x73d078*/
+    int v16 = 0; /*0x73d078*/
     if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v38) + 80) & 0x10000) != 0 /*0x73d099*/
       && !this->IsHeightAboveThreshold() )
     {
@@ -11747,20 +11731,22 @@ LABEL_29:
     WinAPI::Wrapper(-2147467261); /*0x73d106*/
   if ( !this->q674->COMStub_Return0_32() ) /*0x73d114*/
   {
-    v19 = (unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, (IUnknown *)&v39) >> 12) + 1) >> 1 << 13; /*0x73d145*/
-    v20 = (int *)this->GetCoordsThunk2(v46); /*0x73d157*/
+  double v39; // [esp+18h] [ebp-3Ch] BYREF
+    unsigned int v19 = (unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, (IUnknown *)&v39) >> 12) + 1) >> 1 << 13; /*0x73d145*/
+  int v46[3]; // [esp+48h] [ebp-Ch] BYREF
+    int * v20 = (int *)this->GetCoordsThunk2(v46); /*0x73d157*/
     LODWORD(v39) = (__int16)v19 - 0x3FFF; /*0x73d159*/
-    v21 = v20[2]; /*0x73d161*/
-    a1 = (double)SLODWORD(v39) * -0.00009587672516830327; /*0x73d16a*/
+    int v21 = v20[2]; /*0x73d161*/
+    double a1 = (double)SLODWORD(v39) * -0.00009587672516830327; /*0x73d16a*/
     v39 = (double)v20[1]; /*0x73d17b*/
-    v22 = Math::SinCos((IUnknown *)LODWORD(a1)); /*0x73d17f*/
+    double v22 = Math::SinCos((IUnknown *)LODWORD(a1)); /*0x73d17f*/
     LODWORD(v39) = Math::RoundToInt(v39 - v22 * 30.0); /*0x73d197*/
-    v23 = Math::ArcTan2((IUnknown *)LODWORD(a1)); /*0x73d1a1*/
+    double v23 = Math::ArcTan2((IUnknown *)LODWORD(a1)); /*0x73d1a1*/
     LODWORD(a1) = Math::RoundToInt(v23 * 30.0 + (double)*v20); /*0x73d1ba*/
     HIDWORD(a1) = LODWORD(v39); /*0x73d1c6*/
-    v43 = v21; /*0x73d1d2*/
+    int v43 = v21; /*0x73d1d2*/
     Coord::To_Screen(*(_DWORD **)&stru_87C374[44976], &a1, (IUnknown *)v45); /*0x73d1d6*/
-    v24 = 7 - (((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, (IUnknown *)&v39) >> 12) + 1) >> 1) & 7); /*0x73d1fd*/
+    unsigned int v24 = 7 - (((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, (IUnknown *)&v39) >> 12) + 1) >> 1) & 7); /*0x73d1fd*/
     if ( this->temporalTargetingMe /*0x73d219*/
       || this->GetShroudByte()
       || this->GetFogByte() )
@@ -11771,7 +11757,7 @@ LABEL_29:
     else
     {
       v37 = (ConvertClass *)aP10; /*0x73d232*/
-      v25 = this->GetDrawHeight(); /*0x73d236*/
+      int v25 = this->GetDrawHeight(); /*0x73d236*/
       ebx37 = aP5; /*0x73d23c*/
       DrawToSurfaceSHP( /*0x73d283*/
         *(int *)&stru_87C374[44960],
@@ -11848,9 +11834,9 @@ LABEL_39:
   this->q1B1 = (int)aP5; /*0x73d3a2*/
   if ( v30 != -1 ) /*0x73d3a8*/
   {
-    v31 = stru_B05488.field_4C + 4 * *(_DWORD *)(*(_DWORD *)&HouseClass_Array->__pad_0[4 * v30] + 90196); /*0x73d3dc*/
-    v32 = *(_DWORD *)&HouseClass_Player[45112] % 14; /*0x73d3e5*/
-    v36 = *(_DWORD *)&HouseClass_Player[45112] % 14; /*0x73d3ec*/
+    int v31 = stru_B05488.field_4C + 4 * *(_DWORD *)(*(_DWORD *)&HouseClass_Array->__pad_0[4 * v30] + 90196); /*0x73d3dc*/
+    int v32 = *(_DWORD *)&HouseClass_Player[45112] % 14; /*0x73d3e5*/
+    unsigned int v36 = *(_DWORD *)&HouseClass_Player[45112] % 14; /*0x73d3ec*/
     LOBYTE(v32) = 0; /*0x73d3ed*/
     v33 = (ConvertClass *)SearchMIXFile(&stru_830620[86744], (IUnknown *)v32); /*0x73d3ef*/
     DrawToSurfaceSHP( /*0x73d403*/

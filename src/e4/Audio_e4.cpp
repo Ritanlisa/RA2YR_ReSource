@@ -1364,23 +1364,12 @@ int sub_7BE830(int a1, int a2)
   bool v9; // zf
   int result; // eax
   int v11; // ebp
-  int v12; // ebx
-  int *v13; // eax
-  int v14; // ecx
-  int v15; // eax
-  _DWORD *v16; // edi
-  int v17; // [esp+10h] [ebp-10h]
-  int v18; // [esp+10h] [ebp-10h]
-  int v19; // [esp+14h] [ebp-Ch]
-  int v20; // [esp+14h] [ebp-Ch]
-  int v21; // [esp+18h] [ebp-8h]
-  int v22; // [esp+18h] [ebp-8h]
 
   int v3 = 0; /*0x7be838*/
   if ( *(_DWORD *)(a1 + 1828) ) /*0x7be83b*/
   {
-    v17 = 0; /*0x7be849*/
-    v21 = *(_DWORD *)(a1 + 1828); /*0x7be84d*/
+    int v17 = 0; /*0x7be849*/
+    int v21 = *(_DWORD *)(a1 + 1828); /*0x7be84d*/
     do /*0x7be8b7*/
     {
       int v4 = *(_DWORD *)(*(_DWORD *)(a1 + 1844) + v3); /*0x7be861*/
@@ -1390,7 +1379,7 @@ int sub_7BE830(int a1, int a2)
       if ( v7 ) /*0x7be86f*/
       {
         _DWORD * v8 = (_DWORD *)(v6 + 4); /*0x7be871*/
-        v19 = v7; /*0x7be874*/
+        int v19 = v7; /*0x7be874*/
         do /*0x7be89e*/
         {
           if ( v8[1] == a2 ) /*0x7be881*/
@@ -1411,18 +1400,18 @@ int sub_7BE830(int a1, int a2)
   v11 = 0; /*0x7be8bf*/
   if ( result ) /*0x7be8c3*/
   {
-    v18 = 0; /*0x7be8c5*/
-    v20 = *(_DWORD *)(a1 + 1852); /*0x7be8c9*/
+    int v18 = 0; /*0x7be8c5*/
+    int v20 = *(_DWORD *)(a1 + 1852); /*0x7be8c9*/
     do /*0x7be933*/
     {
-      v12 = *(_DWORD *)(*(_DWORD *)(a1 + 1860) + v11); /*0x7be8dd*/
-      v13 = (int *)(*(_DWORD *)(a1 + 1864) + v18); /*0x7be8e0*/
-      v14 = v13[2]; /*0x7be8e3*/
-      v15 = *v13; /*0x7be8e7*/
+      int v12 = *(_DWORD *)(*(_DWORD *)(a1 + 1860) + v11); /*0x7be8dd*/
+      int * v13 = (int *)(*(_DWORD *)(a1 + 1864) + v18); /*0x7be8e0*/
+      int v14 = v13[2]; /*0x7be8e3*/
+      int v15 = *v13; /*0x7be8e7*/
       if ( v15 ) /*0x7be8eb*/
       {
-        v16 = (_DWORD *)(v14 + 4); /*0x7be8ed*/
-        v22 = v15; /*0x7be8f0*/
+        _DWORD * v16 = (_DWORD *)(v14 + 4); /*0x7be8ed*/
+        int v22 = v15; /*0x7be8f0*/
         do /*0x7be91a*/
         {
           if ( v16[1] == a2 ) /*0x7be8fd*/
@@ -1987,8 +1976,8 @@ int sub_7DF8C0(int a1)
         while ( v13 ) /*0x7df97c*/
         {
           BYTE1(v13) = *v12; /*0x7df97e*/
-  unsigned int v18; // eax
   char v19; // dl
+  unsigned int v18; // eax
           for ( i = v12 - 1; BYTE1(v13); g_VoxelRenderBuffer[v18] = v19 ) /*0x7df983*/
           {
             LOBYTE(v13) = v13 - 1; /*0x7df987*/

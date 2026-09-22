@@ -705,8 +705,8 @@ int SessionClass::BuildLobbyPlayerList()
           if ( v9 >= Game_PlayerCount ) /*0x663c1a*/
             goto LABEL_15; /*0x663c1a*/
         }
-  int v17; // [esp+14h] [ebp-8h] BYREF
   int v16; // [esp+10h] [ebp-Ch] BYREF
+  int v17; // [esp+14h] [ebp-8h] BYREF
         Network::CopyAddress((_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * v9) + 40), &v16, (int)&v17); /*0x663c34*/
         *(_DWORD *)(v7 + 33) = v17; /*0x663c3d*/
         *(_WORD *)(v7 + 37) = *((_WORD *)&Network_PlayerPorts + v9); /*0x663c48*/
@@ -1382,13 +1382,11 @@ void * SessionClass::LoadMissionList()
   HANDLE hFindFileb; // [esp+20h] [ebp-5C4h]
   int j; // [esp+28h] [ebp-5BCh]
   char v70[64]; // [esp+E8h] [ebp-4FCh] BYREF
-  char v71[32]; // [esp+128h] [ebp-4BCh] BYREF
   wchar_t Source[44]; // [esp+148h] [ebp-49Ch] BYREF
   struct _WIN32_FIND_DATAA FindFileData; // [esp+1A0h] [ebp-444h] BYREF
   wchar_t Buffer[64]; // [esp+2E0h] [ebp-304h] BYREF
   wchar_t v75[64]; // [esp+360h] [ebp-284h] BYREF
   char Destination[260]; // [esp+3E0h] [ebp-204h] BYREF
-  char v77[256]; // [esp+4E4h] [ebp-100h] BYREF
 
   Description = 0; /*0x69998b*/
   int v60[3]; // [esp+34h] [ebp-5B0h] BYREF
@@ -1650,12 +1648,14 @@ void * SessionClass::LoadMissionList()
           (unsigned __int8 *)g_INI_Key_Digest,
           (unsigned __int8 *)DataGlobal_831898,
           g_Str_No_Digest,
+  char v71[32]; // [esp+128h] [ebp-4BCh] BYREF
           v71,
           32);
         BulkCharToWide(v75, (unsigned __int8 *)v70, -1); /*0x69a0aa*/
         LOBYTE(v56) = INIClass::ReadBool_Overwrite(g_INI_Key_Basic, g_INI_Key_Official, 0); /*0x69a0c8*/
         int v59 = 2; /*0x69a0f0*/
         int v58 = 4; /*0x69a0f8*/
+  char v77[256]; // [esp+4E4h] [ebp-100h] BYREF
         ParseMapFileHeader(v45, v71, v77, (int)&v56, (int)&v59, (int)&v58); /*0x69a0fc*/
         v46 = (wchar_t *)__2_YAPAXI_Z(0x1BCu); /*0x69a106*/
         if ( v46 ) /*0x69a110*/
@@ -1913,10 +1913,8 @@ void SessionClass::SetupNetwork()
   int v58; // [esp+2Ch] [ebp-38h]
   int v59; // [esp+30h] [ebp-34h]
   _DWORD v60[3]; // [esp+34h] [ebp-30h] BYREF
-  _DWORD v61[3]; // [esp+40h] [ebp-24h] BYREF
   void **v62; // [esp+4Ch] [ebp-18h] BYREF
   void *Block; // [esp+50h] [ebp-14h]
-  int v64; // [esp+54h] [ebp-10h]
   char v65; // [esp+59h] [ebp-Bh]
   int v66; // [esp+5Ch] [ebp-8h]
   int v67; // [esp+60h] [ebp-4h]
@@ -1979,6 +1977,7 @@ LABEL_10:
   int v49 = 0; /*0x69beb4*/
   if ( v7 > 0 ) /*0x69beb8*/
   {
+  int v64; // [esp+54h] [ebp-10h]
     int v8 = v64; /*0x69bebe*/
     while ( 1 ) /*0x69bec2*/
     {
@@ -2030,6 +2029,7 @@ LABEL_26:
     {
       int v17 = 0; /*0x69bf9f*/
       _DWORD * v18 = (_DWORD *)(*((_DWORD *)Block + v15) + 40); /*0x69bfa4*/
+  _DWORD v61[3]; // [esp+40h] [ebp-24h] BYREF
       v61[0] = *v18; /*0x69bfab*/
       v61[1] = v18[1]; /*0x69bfb2*/
       v61[2] = v18[2]; /*0x69bfb9*/

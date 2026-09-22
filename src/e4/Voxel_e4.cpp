@@ -20,7 +20,6 @@ int Voxel::BuildIndexTable()
   char v12; // [esp+8h] [ebp-18h]
   char v13; // [esp+Ch] [ebp-14h]
   char v14; // [esp+10h] [ebp-10h]
-  int v15; // [esp+14h] [ebp-Ch]
   int i; // [esp+18h] [ebp-8h]
   __int16 j; // [esp+1Ch] [ebp-4h]
 
@@ -63,7 +62,7 @@ int Voxel::BuildIndexTable()
     int v3 = 0; /*0x7482d1*/
     int v4 = v1 << v12; /*0x7482d3*/
     v5 = 32 * v1; /*0x7482d5*/
-    v15 = 0; /*0x7482d8*/
+    int v15 = 0; /*0x7482d8*/
     for ( j = v5; ; v5 = j ) /*0x7482dc*/
     {
       int v6 = 0; /*0x7482ee*/
@@ -492,9 +491,6 @@ int Voxel::SortDepth(ObjectClass * aP1, int a3)
   int v117; // [esp+118h] [ebp-50h]
   int v118[12]; // [esp+11Ch] [ebp-4Ch] BYREF
   char v119[16]; // [esp+14Ch] [ebp-1Ch] BYREF
-  int v120; // [esp+15Ch] [ebp-Ch]
-  int v121; // [esp+160h] [ebp-8h]
-  int v122; // [esp+164h] [ebp-4h]
   unsigned int v4 = 0; /*0x755dbc*/
   if ( this->uniqueId ) /*0x755dbe*/
     __3_YAXPAX_Z((void *)this->uniqueId); /*0x755dc6*/
@@ -801,8 +797,11 @@ LABEL_70:
   while ( (*(int (__thiscall **)(ObjectClass *, char *, int))(*(_DWORD *)aP1->__pad_0 + 36))(aP1, v119, 28) == 28 ) /*0x75606d*/
   {
     ++v4; /*0x756079*/
+  int v120; // [esp+15Ch] [ebp-Ch]
     *(_DWORD *)(this->uniqueId + v24) = v120; /*0x75607a*/
+  int v121; // [esp+160h] [ebp-8h]
     *(_DWORD *)(this->uniqueId + v24 + 4) = v121; /*0x756087*/
+  int v122; // [esp+164h] [ebp-4h]
     *(_BYTE *)(this->uniqueId + v24 + 8) = v122; /*0x756095*/
     v24 += 12; /*0x75609c*/
     if ( v4 >= *(_DWORD *)&this->__pad_0[4] ) /*0x7560a1*/
@@ -1777,11 +1776,7 @@ void Voxel::FaceBlit()
   rc_ptr_base v41; // [esp+30h] [ebp-48h] BYREF
   double i; // [esp+40h] [ebp-38h]
   int v46; // [esp+48h] [ebp-30h] BYREF
-  int v47; // [esp+4Ch] [ebp-2Ch]
-  int v48; // [esp+50h] [ebp-28h]
   _DWORD v49[3]; // [esp+54h] [ebp-24h] BYREF
-  _DWORD v50[3]; // [esp+60h] [ebp-18h] BYREF
-  _DWORD v51[3]; // [esp+6Ch] [ebp-Ch] BYREF
 
   int * v2 = (int *)(this + 496); /*0x761105*/
   (*(void (__thiscall **)(int))(*(_DWORD *)(this + 496) + 12))(this + 496); /*0x76110d*/
@@ -1833,10 +1828,10 @@ void Voxel::FaceBlit()
           0.050000001 * 0.5 + *(double *)(this + 312) >= i;
           i = i + 0.050000001 )
     {
-      v48 = *(_DWORD *)&g_AsyncMovieState[1640]; /*0x761392*/
+      int v48 = *(_DWORD *)&g_AsyncMovieState[1640]; /*0x761392*/
       v16 = *(MouseClass **)(this + 460); /*0x761396*/
       v46 = *(_DWORD *)&g_AsyncMovieState[1632]; /*0x76139c*/
-      v47 = *(_DWORD *)&g_AsyncMovieState[1636]; /*0x7613a2*/
+      int v47 = *(_DWORD *)&g_AsyncMovieState[1636]; /*0x7613a2*/
       if ( (int)v16 < 4 ) /*0x7613a6*/
       {
         double v17 = i; /*0x7613ac*/
@@ -1863,6 +1858,7 @@ void Voxel::FaceBlit()
       int v32 = Math::RoundToInt(i); /*0x7614f0*/
       v29 = (MouseClass *)Math::RoundToInt(v22); /*0x761508*/
       v23 = (IUnknown *)Math::RoundToInt(v22); /*0x761515*/
+  _DWORD v50[3]; // [esp+60h] [ebp-18h] BYREF
       int * v24 = Coord3D::Set(v50, v23, v29, v32); /*0x761523*/
       v46 = *v24; /*0x76152c*/
       v47 = v24[1]; /*0x761533*/
@@ -1876,6 +1872,7 @@ void Voxel::FaceBlit()
       }
       if ( *(int *)(this + 460) >= 4 ) /*0x7615a1*/
       {
+  _DWORD v51[3]; // [esp+6Ch] [ebp-Ch] BYREF
         int * v25 = Color::RGBFromFloat(v51, (IUnknown *)(this + 264), *(float *)&v37.vfptr); /*0x7615b3*/
         v46 = *v25; /*0x7615ba*/
         v47 = v25[1]; /*0x7615c6*/
@@ -2404,9 +2401,6 @@ int Voxel::TransformMatrix()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v71; // [esp+20h] [ebp-1Ch] BYREF
-  int v72; // [esp+24h] [ebp-18h]
-  int v73; // [esp+28h] [ebp-14h]
-  int v74; // [esp+2Ch] [ebp-10h]
   _BYTE v75[12]; // [esp+30h] [ebp-Ch] BYREF
 
   if ( *(double *)(this + 312) - *(double *)(this + 320) > 0.1 && !this->q02C ) /*0x762b18*/
@@ -2438,10 +2432,10 @@ int Voxel::TransformMatrix()
                      *(_DWORD *)(this + 172),
                      v75);
     int v10 = v8 - v9[2]; /*0x762bdb*/
-    v72 = v6 - *v9; /*0x762bdd*/
+    int v72 = v6 - *v9; /*0x762bdd*/
     int v11 = v7 - v9[1]; /*0x762be4*/
-    v74 = v10; /*0x762be6*/
-    v73 = v11; /*0x762bea*/
+    int v74 = v10; /*0x762be6*/
+    int v73 = v11; /*0x762bea*/
     double v12 = Math::Sqrt((double)v72 * (double)v72 + (double)v10 * (double)v10 + (double)v11 * (double)v11); /*0x762c16*/
     v71 = Math::RoundToInt(v12); /*0x762c23*/
     if ( DataGlobal_B45D80 * 6.0 < (double)v71 ) /*0x762c3e*/

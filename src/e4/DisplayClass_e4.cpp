@@ -560,10 +560,6 @@ void * DisplayClass::Draw(int a2)
 {
   wchar_t *result; // eax
   int v9; // esi
-  _DWORD *v10; // eax
-  _WORD *v11; // eax
-  int *v12; // eax
-  int v13; // [esp-4h] [ebp-38h]
   int v14; // [esp+8h] [ebp-2Ch] BYREF
   int v15; // [esp+Ch] [ebp-28h] BYREF
   int v16; // [esp+10h] [ebp-24h] BYREF
@@ -597,9 +593,9 @@ void * DisplayClass::Draw(int a2)
     {
       if ( *(_DWORD *)(v15 + 544) == 2 ) /*0x4ae629*/
       {
-        v13 = *((_DWORD *)HouseClass_Player + 12); /*0x4ae635*/
-        v10 = (_DWORD *)(*(int (__stdcall **)(_BYTE *))(*(_DWORD *)v15 + 72))(v18); /*0x4ae63b*/
-        v11 = Coord::To_Cell(&DataGlobal_87F7E8, v10); /*0x4ae644*/
+        int v13 = *((_DWORD *)HouseClass_Player + 12); /*0x4ae635*/
+        _DWORD * v10 = (_DWORD *)(*(int (__stdcall **)(_BYTE *))(*(_DWORD *)v15 + 72))(v18); /*0x4ae63b*/
+        _WORD * v11 = Coord::To_Cell(&DataGlobal_87F7E8, v10); /*0x4ae644*/
         if ( !Cell::IsPassableOffset(v11, v13) ) /*0x4ae64b*/
           return 0; /*0x4ae64b*/
       }
@@ -617,7 +613,7 @@ void * DisplayClass::Draw(int a2)
   result = (wchar_t *)(*(int (__thiscall **)(int))(*(_DWORD *)v8 + 144))(v8); /*0x4ae672*/
   if ( !v9 ) /*0x4ae67a*/
   {
-    v12 = (int *)CellCoord::To_CellObj(this, (__int16 *)&v16); /*0x4ae683*/
+    int * v12 = (int *)CellCoord::To_CellObj(this, (__int16 *)&v16); /*0x4ae683*/
     return (wchar_t *)CellClass::GetUIName(v12); /*0x4ae68a*/
   }
   return result; /*0x4ae5b9*/

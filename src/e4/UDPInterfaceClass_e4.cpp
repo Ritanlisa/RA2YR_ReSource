@@ -142,27 +142,9 @@ int UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5
   u_short v15; // ax
   int v16; // edx
   int v17; // ecx
-  _DWORD *v18; // eax
-  _WORD *v19; // edi
   int v20; // ecx
-  int v21; // ecx
-  int v22; // eax
-  int v23; // ecx
-  int v24; // ecx
-  int v25; // eax
-  int v26; // eax
-  int v27; // esi
-  int v28; // ecx
-  int v29; // eax
   _DWORD **v30; // edx
-  int v31; // edi
   u_long v32; // eax
-  bool v33; // ecx
-  int v34; // eax
-  char *v35; // ebp
-  int v36; // eax
-  int v37; // eax
-  int v38; // edx
   char v39; // [esp+13h] [ebp-1Dh]
   int fromlen; // [esp+14h] [ebp-1Ch] BYREF
   int v41; // [esp+18h] [ebp-18h]
@@ -213,8 +195,8 @@ LABEL_22:
       return 0; /*0x7b3ba5*/
     }
     fromlen = 16; /*0x7b3ee4*/
-    v26 = recvfrom(v6, this + 258164, 640, 0, &netshort, &fromlen); /*0x7b3eec*/
-    v27 = v26; /*0x7b3ef1*/
+    int v26 = recvfrom(v6, this + 258164, 640, 0, &netshort, &fromlen); /*0x7b3eec*/
+    int v27 = v26; /*0x7b3ef1*/
     if ( v26 == -1 ) /*0x7b3ef6*/
     {
       (*(void (__thiscall **)(char *, SOCKET))(this->q024)(this, v6); /*0x7b3efe*/
@@ -224,8 +206,8 @@ LABEL_22:
     {
       if ( !v39 && !g_Network_IsHosting ) /*0x7b3f24*/
       {
-        v28 = this->qFD58; /*0x7b3f26*/
-        v29 = 0; /*0x7b3f2c*/
+        int v28 = this->qFD58; /*0x7b3f26*/
+        int v29 = 0; /*0x7b3f2c*/
         if ( v28 > 0 ) /*0x7b3f30*/
         {
           v30 = (_DWORD **)this->q3F554; /*0x7b3f32*/
@@ -240,7 +222,7 @@ LABEL_22:
         }
       }
 LABEL_71:
-      v31 = Network_Process_7B2730(); /*0x7b3f50*/
+      int v31 = Network_Process_7B2730(); /*0x7b3f50*/
       if ( v31 > 0 && Random::Range(Randomizer_Global, 0, 99) <= v31 ) /*0x7b3f6b*/
         return 0; /*0x7b3f76*/
       v13 = (_DWORD *)IPXInterfaceClass::processPacket(this); /*0x7b3f80*/
@@ -283,16 +265,17 @@ LABEL_60:
         *((_WORD *)v13 + 13) = ntohs(*(u_short *)netshort.sa_data); /*0x7b4084*/
         v13[1] = *(_DWORD *)&netshort.sa_data[2]; /*0x7b408c*/
       }
-      v33 = this->Initialized; /*0x7b408f*/
-      v34 = this->BoundPort; /*0x7b4092*/
-      v35 = this + 8; /*0x7b4095*/
+      bool v33 = this->Initialized; /*0x7b408f*/
+      int v34 = this->BoundPort; /*0x7b4092*/
+      char * v35 = this + 8; /*0x7b4095*/
       if ( v34 < v33 /*0x7b40b8*/
         || (v35[13] || !v33)
+  int v36; // eax
         && (v36 = *((_DWORD *)v35 + 5), v36 > 0)
         && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)v35 + 8))(v35, v33 + v36, 0) )
       {
-        v37 = *((_DWORD *)v35 + 4); /*0x7b40bf*/
-        v38 = *((_DWORD *)v35 + 1); /*0x7b40c2*/
+        int v37 = *((_DWORD *)v35 + 4); /*0x7b40bf*/
+        int v38 = *((_DWORD *)v35 + 1); /*0x7b40c2*/
         *((_DWORD *)v35 + 4) = v37 + 1; /*0x7b40c8*/
         *(_DWORD *)(v38 + 4 * v37) = v13; /*0x7b40cb*/
       }
@@ -384,8 +367,8 @@ LABEL_43:
   }
   else
   {
-    v18 = this + 259436; /*0x7b3ce5*/
-    v19 = this + 259500; /*0x7b3ceb*/
+    _DWORD * v18 = this + 259436; /*0x7b3ce5*/
+    _WORD * v19 = this + 259500; /*0x7b3ceb*/
     while ( v44 != *v19 || v41 != *v18 ) /*0x7b3d03*/
     {
       v13 = (_DWORD *)v45; /*0x7b3d09*/
@@ -401,11 +384,11 @@ LABEL_43:
   }
   if ( !v39 ) /*0x7b3e01*/
   {
-    v23 = this->q00C; /*0x7b3e5f*/
+    int v23 = this->q00C; /*0x7b3e5f*/
     if ( v23 > 0 ) /*0x7b3e64*/
     {
-      v24 = v23 - 1; /*0x7b3e66*/
-      v25 = 0; /*0x7b3e67*/
+      int v24 = v23 - 1; /*0x7b3e66*/
+      int v25 = 0; /*0x7b3e67*/
       for ( this->q00C = v24; /*0x7b3e6e*/
             v25 < this->q00C;
             *(_DWORD *)(this->q024 + 4 * v25 - 4) = *(_DWORD *)(this->q024 + 4 * v25) )
@@ -423,8 +406,8 @@ LABEL_43:
   v20 = *((_DWORD *)this + 18); /*0x7b3e03*/
   if ( v20 > 0 ) /*0x7b3e08*/
   {
-    v21 = v20 - 1; /*0x7b3e0a*/
-    v22 = 0; /*0x7b3e0b*/
+    int v21 = v20 - 1; /*0x7b3e0a*/
+    int v22 = 0; /*0x7b3e0b*/
     for ( *((_DWORD *)this + 18) = v21; /*0x7b3e12*/
           v22 < *((_DWORD *)this + 18);
           *(_DWORD *)(this->q03C + 4 * v22 - 4) = *(_DWORD *)(this->q03C + 4 * v22) )

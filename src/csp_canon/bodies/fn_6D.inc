@@ -130,7 +130,7 @@ namespace gamemd { void* HouseClass::updateFactoryQueue() {
       v1 = this;
       v2 = *this;
       this->q5545 = 1;
-      (*(void (__stdcall **)(_DWORD))(v2 + 56))(0);
+      this->SetCapacity_5(0);
       result = g_CurrentFrame;
       v1 += 5454;
       *v1 = g_CurrentFrame;
@@ -277,7 +277,7 @@ int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
     v6 = aP1->field_4;
     v2 = (-60 * v6 / 2 + 60 * aP1->field_0 / 2) / 256;
     v3 = (30 * v6 / 2 + 30 * aP1->field_0 / 2) / 256;
-    v4 = v3 - Math::RoundToInt((double)aP1->field_8 * *(double *)&DataGlobal_B05488.__pad_579C[8484] + (double)(aP1->field_8 >= 728) + 0.5);
+    v4 = v3 - Math::RoundToInt((double)aP1->field_8 * *(double *)&DataGlobal_B05488[30912] + (double)(aP1->field_8 >= 728) + 0.5);
     *(int *)aP0->__pad_0 = v2;
     *(int *)&aP0->__pad_0[4] = v4;
     return (int *)aP0->__pad_0;
@@ -288,7 +288,7 @@ int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
 long long ZCoordToScreenY(IUnknown * aP0)
 {
 {
-    return Math::RoundToInt((double)(int)aP0 * *(double *)&DataGlobal_B05488.__pad_579C[8484] + (double)((int)aP0 >= 728) + 0.5);
+    return Math::RoundToInt((double)(int)aP0 * *(double *)&DataGlobal_B05488[30912] + (double)((int)aP0 >= 728) + 0.5);
 }
 }
 
@@ -314,11 +314,11 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
     float v12[3];
     AbstractClass *aP2a;
     aP2a = *(AbstractClass **)aP2->__pad_0;
-    if ( (int)aP2a >= *(int *)&g_OverlayTypeConfig.__pad_5554[228] || (v8 = *(int *)&aP2->__pad_0[4], v8 >= *(int *)&g_OverlayTypeConfig.__pad_5554[232]) )
+    if ( (int)aP2a >= *(int *)&g_OverlayTypeConfig[22072] || (v8 = *(int *)&aP2->__pad_0[4], v8 >= *(int *)&g_OverlayTypeConfig[22076]) )
   {
-    *(int *)aP1->__pad_0 = *(int *)&g_OverlayTypeConfig.__pad_5554[188];
-    *(int *)&aP1->__pad_0[4] = *(int *)&g_OverlayTypeConfig.__pad_5554[192];
-    *(int *)&aP1->__pad_0[8] = *(int *)&g_OverlayTypeConfig.__pad_5554[196];
+    *(int *)aP1->__pad_0 = *(int *)&g_OverlayTypeConfig[22032];
+    *(int *)&aP1->__pad_0[4] = *(int *)&g_OverlayTypeConfig[22036];
+    *(int *)&aP1->__pad_0[8] = *(int *)&g_OverlayTypeConfig[22040];
     return aP1->__pad_0;
   }
     else
@@ -354,7 +354,7 @@ namespace gamemd { int TacticalClass::SetPosition(void* a1, int a2) {
       IUnknown *v12;
 
       this->TacticalClass_field_DC = 0;
-      this->TacticalClass_field_D8 = *(_DWORD *)&stru_830620.__pad_579C[4 * (_DWORD)aP2 + 52016];
+      this->TacticalClass_field_D8 = *(_DWORD *)&stru_830620[22428][4 * (_DWORD)aP2 + 52016];
       v12 = (IUnknown *)aP1->field_4;
       v4 = (-60 * (int)v12 / 2 + 60 * aP1->field_0 / 2) / 256;
       v5 = (30 * (int)v12 / 2 + 30 * aP1->field_0 / 2) / 256;
@@ -424,7 +424,7 @@ namespace gamemd { int TacticalClass::ClickFindBuilding(void* a1, void* a2, int 
           v21 = v18[2];
           v6 = Coord::To_ScreenRaw(&v17, &v19);
           v7 = *v6 - this->visibleArea - 30;
-          v24 = *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[8536] + v6[1] - this->q0B4;
+          v24 = *(_DWORD *)&DataGlobal_87F8E4[30400] + v6[1] - this->q0B4;
           v28 = v24;
           v23 = v7;
           v27 = v7;
@@ -438,18 +438,18 @@ namespace gamemd { int TacticalClass::ClickFindBuilding(void* a1, void* a2, int 
         }
         while ( v16 < this->visibleCellCount );
       }
-      if ( *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[36] && *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[36] - 1 >= 0 )
+      if ( *(_DWORD *)&g_OverlayTypeConfig[22160] && *(_DWORD *)&g_OverlayTypeConfig[22160] - 1 >= 0 )
       {
-        v8 = *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[36];
-        v9 = 20 * (*(_DWORD *)&g_OverlayTypeConfig.__pad_566C[36] - 1);
+        v8 = *(_DWORD *)&g_OverlayTypeConfig[22160];
+        v9 = 20 * (*(_DWORD *)&g_OverlayTypeConfig[22160] - 1);
         do
         {
-          v19 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[24]);
-          v20 = *(IUnknown **)(v9 + *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[24] + 4);
-          v21 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[24] + 8);
-          v22 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[24] + 12);
-          v20 = (IUnknown *)((char *)v20 + *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[8536]);
-          v10 = ClipRectIntersection(&v23, (int *)&DataGlobal_87F8E4.__pad_5568[8532], &v19, 0, 0);
+          v19 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig[22148]);
+          v20 = *(IUnknown **)(v9 + *(_DWORD *)&g_OverlayTypeConfig[22148] + 4);
+          v21 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig[22148] + 8);
+          v22 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig[22148] + 12);
+          v20 = (IUnknown *)((char *)v20 + *(_DWORD *)&DataGlobal_87F8E4[30400]);
+          v10 = ClipRectIntersection(&v23, (int *)&DataGlobal_87F8E4[30396], &v19, 0, 0);
           v19 = *v10;
           v20 = (IUnknown *)v10[1];
           v21 = v10[2];
@@ -474,8 +474,8 @@ namespace gamemd { int TacticalClass::ClickFindBuilding(void* a1, void* a2, int 
       if ( a4 )
         return TacticalClass::FindBuilding(
                  1,
-                 (int *)&DataGlobal_87F8E4.__pad_5568[8532],
-                 (int *)&DataGlobal_87F8E4.__pad_5568[8532]);
+                 (int *)&DataGlobal_87F8E4[30396],
+                 (int *)&DataGlobal_87F8E4[30396]);
       if ( *(int *)&aP1->__pad_0[8] > 0 && *(int *)&aP1->__pad_0[12] > 0 )
         TacticalClass::FindBuilding(1, (int *)aP1->__pad_0, (int *)aP1->__pad_0);
       result = (int)a2;
@@ -531,7 +531,7 @@ namespace gamemd { int TacticalClass::ClickFindOverlay(void* a1, void* a2, int a
           v21 = v18[2];
           v6 = Coord::To_ScreenRaw(&v17, &v19);
           v7 = *v6 - this->visibleArea - 30;
-          v24 = *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[8536] + v6[1] - this->q0B4;
+          v24 = *(_DWORD *)&DataGlobal_87F8E4[30400] + v6[1] - this->q0B4;
           v28 = v24;
           v23 = v7;
           v27 = v7;
@@ -545,18 +545,18 @@ namespace gamemd { int TacticalClass::ClickFindOverlay(void* a1, void* a2, int a
         }
         while ( v16 < this->visibleCellCount );
       }
-      if ( *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[36] && *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[36] - 1 >= 0 )
+      if ( *(_DWORD *)&g_OverlayTypeConfig[22160] && *(_DWORD *)&g_OverlayTypeConfig[22160] - 1 >= 0 )
       {
-        v8 = *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[36];
-        v9 = 20 * (*(_DWORD *)&g_OverlayTypeConfig.__pad_566C[36] - 1);
+        v8 = *(_DWORD *)&g_OverlayTypeConfig[22160];
+        v9 = 20 * (*(_DWORD *)&g_OverlayTypeConfig[22160] - 1);
         do
         {
-          v19 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[24]);
-          v20 = *(IUnknown **)(v9 + *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[24] + 4);
-          v21 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[24] + 8);
-          v22 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig.__pad_566C[24] + 12);
-          v20 = (IUnknown *)((char *)v20 + *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[8536]);
-          v10 = ClipRectIntersection(&v23, (int *)&DataGlobal_87F8E4.__pad_5568[8532], &v19, 0, 0);
+          v19 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig[22148]);
+          v20 = *(IUnknown **)(v9 + *(_DWORD *)&g_OverlayTypeConfig[22148] + 4);
+          v21 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig[22148] + 8);
+          v22 = *(_DWORD *)(v9 + *(_DWORD *)&g_OverlayTypeConfig[22148] + 12);
+          v20 = (IUnknown *)((char *)v20 + *(_DWORD *)&DataGlobal_87F8E4[30400]);
+          v10 = ClipRectIntersection(&v23, (int *)&DataGlobal_87F8E4[30396], &v19, 0, 0);
           v19 = *v10;
           v20 = (IUnknown *)v10[1];
           v21 = v10[2];
@@ -581,8 +581,8 @@ namespace gamemd { int TacticalClass::ClickFindOverlay(void* a1, void* a2, int a
       if ( a4 )
         return TacticalClass::FindOverlay(
                  1,
-                 (int *)&DataGlobal_87F8E4.__pad_5568[8532],
-                 (int *)&DataGlobal_87F8E4.__pad_5568[8532]);
+                 (int *)&DataGlobal_87F8E4[30396],
+                 (int *)&DataGlobal_87F8E4[30396]);
       if ( aP1->field_8 > 0 && aP1->field_C > 0 )
         TacticalClass::FindOverlay(1, &aP1->field_0, &aP1->field_0);
       result = (int)a2;
@@ -682,25 +682,25 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
       int v58;
 
       v40 = 0;
-      if ( *(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3800] )
+      if ( *(_DWORD *)&DataGlobal_87F8E4[4268] )
       {
-        v3 = (AbstractClass *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)&DataGlobal_87F8E4.__pad_5568[10228] + 52))(
-                                *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[10228],
+        v3 = (AbstractClass *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)&DataGlobal_87F8E4[32092] + 52))(
+                                *(_DWORD *)&DataGlobal_87F8E4[32092],
                                 v52);
         v4 = *(_DWORD *)v3->__pad_0;
         v5 = *(_DWORD *)&v3->__pad_0[4];
-        if ( v4 < *(int *)&DataGlobal_87F8E4.__pad_5568[8532] )
+        if ( v4 < *(int *)&DataGlobal_87F8E4[30396] )
           return v4;
-        if ( v4 >= *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[8532] + *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[8540] )
+        if ( v4 >= *(_DWORD *)&DataGlobal_87F8E4[30396] + *(_DWORD *)&DataGlobal_87F8E4[30404] )
           return v4;
-        LOBYTE(v4) = DataGlobal_87F8E4.__pad_5568[8536];
-        if ( v5 < *(int *)&DataGlobal_87F8E4.__pad_5568[8536] )
+        LOBYTE(v4) = DataGlobal_87F8E4[30400];
+        if ( v5 < *(int *)&DataGlobal_87F8E4[30400] )
           return v4;
-        LOBYTE(v4) = DataGlobal_87F8E4.__pad_5568[8544] + DataGlobal_87F8E4.__pad_5568[8536];
-        if ( v5 >= *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[8544] + *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[8536] )
+        LOBYTE(v4) = DataGlobal_87F8E4[30408] + DataGlobal_87F8E4[30400];
+        if ( v5 >= *(_DWORD *)&DataGlobal_87F8E4[30408] + *(_DWORD *)&DataGlobal_87F8E4[30400] )
           return v4;
-        if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4.__pad_1D4[3800] + 44))(*(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3800]) == 7
-          && *(_BYTE *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3800] + 5815) )
+        if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[4268] + 44))(*(_DWORD *)&DataGlobal_87F8E4[4268]) == 7
+          && *(_BYTE *)(*(_DWORD *)&DataGlobal_87F8E4[4268] + 5815) )
         {
           LOWORD(v6) = 3;
           v43 = 3;
@@ -708,7 +708,7 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
         }
         else
         {
-          v6 = *CoordList::GetBounds(&v49, *(__int16 **)&DataGlobal_87F8E4.__pad_1D4[3756]);
+          v6 = *CoordList::GetBounds(&v49, *(__int16 **)&DataGlobal_87F8E4[4224]);
           v43 = HIWORD(v6);
         }
         v7 = (__int16)v40;
@@ -722,10 +722,10 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
           {
             do
             {
-              LOWORD(v47.vfptr) = v7 + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3748];
-              HIWORD(v47.vfptr) = *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3750] + v10;
-              LOWORD(v46) = *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3752] + v7 + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3748];
-              HIWORD(v46) = *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3750] + v10 + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3754];
+              LOWORD(v47.vfptr) = v7 + *(_WORD *)&DataGlobal_87F8E4[4216];
+              HIWORD(v47.vfptr) = *(_WORD *)&DataGlobal_87F8E4[4218] + v10;
+              LOWORD(v46) = *(_WORD *)&DataGlobal_87F8E4[4220] + v7 + *(_WORD *)&DataGlobal_87F8E4[4216];
+              HIWORD(v46) = *(_WORD *)&DataGlobal_87F8E4[4218] + v10 + *(_WORD *)&DataGlobal_87F8E4[4222];
               v49 = v46;
               Coord::Subtract(
                 &v53,
@@ -747,7 +747,7 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
                 if ( !BuildingPlacement::RenderBuildingPlacementPreview(
                         (int)v14,
                         (IUnknown *)&v48,
-                        (IUnknown *)&DataGlobal_87F8E4.__pad_5568[8532],
+                        (IUnknown *)&DataGlobal_87F8E4[30396],
                         aP3)
                   || (v15 = v41, v41 = 1, !v15) )
                 {
@@ -761,30 +761,30 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
             v8 = HIWORD(v40);
           }
         }
-        v16 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4.__pad_1D4[3800] + 44))(*(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3800]);
-        if ( g_NetworkPlayerBuffer.__pad_14B0[639] && *(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3796] )
+        v16 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[4268] + 44))(*(_DWORD *)&DataGlobal_87F8E4[4268]);
+        if ( g_NetworkPlayerBuffer[5935] && *(_DWORD *)&DataGlobal_87F8E4[4264] )
         {
-          LOWORD(v49) = (_WORD)v40 + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3748];
-          HIWORD(v49) = v8 + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3750];
-          v53 = ((__int16)(*(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3752]
+          LOWORD(v49) = (_WORD)v40 + *(_WORD *)&DataGlobal_87F8E4[4216];
+          HIWORD(v49) = v8 + *(_WORD *)&DataGlobal_87F8E4[4218];
+          v53 = ((__int16)(*(_WORD *)&DataGlobal_87F8E4[4220]
                          + (_WORD)v40
-                         + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3748]) << 8)
+                         + *(_WORD *)&DataGlobal_87F8E4[4216]) << 8)
               + 128;
-          v54 = ((__int16)(v8 + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3750] + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3754]) << 8)
+          v54 = ((__int16)(v8 + *(_WORD *)&DataGlobal_87F8E4[4218] + *(_WORD *)&DataGlobal_87F8E4[4222]) << 8)
               + 128;
           GroundHeight = 0;
           if ( v16 == 7 )
           {
             Coord::Subtract(
               &v56,
-              (IUnknown *)(((((__int16)(*(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3752]
+              (IUnknown *)(((((__int16)(*(_WORD *)&DataGlobal_87F8E4[4220]
                                       + (_WORD)v40
-                                      + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3748]) << 8)
+                                      + *(_WORD *)&DataGlobal_87F8E4[4216]) << 8)
                            + 128)
                           / 256) << 8),
               (IUnknown *)(((((__int16)(v8
-                                      + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3750]
-                                      + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3754]) << 8)
+                                      + *(_WORD *)&DataGlobal_87F8E4[4218]
+                                      + *(_WORD *)&DataGlobal_87F8E4[4222]) << 8)
                            + 128)
                           / 256) << 8),
               0);
@@ -793,8 +793,8 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
             GroundHeight = v58;
           }
           GroundHeight = Cell::GetGroundHeight(&v53);
-          (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)&DataGlobal_87F8E4.__pad_1D4[3796] + 436))(
-            *(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3796],
+          (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)&DataGlobal_87F8E4[4264] + 436))(
+            *(_DWORD *)&DataGlobal_87F8E4[4264],
             &v53);
           v17 = Coord::To_ScreenRaw(v52, &v53);
           v18 = this->q0B0;
@@ -804,28 +804,28 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
           v48 = (IUnknown *)((char *)v48 - v18);
           v51 = v20 - v19;
           if ( v16 != 18 )
-            (*(void (__thiscall **)(_DWORD, IUnknown **, char *))(**(_DWORD **)&DataGlobal_87F8E4.__pad_1D4[3796] + 280))(
-              *(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3796],
+            (*(void (__thiscall **)(_DWORD, IUnknown **, char *))(**(_DWORD **)&DataGlobal_87F8E4[4264] + 280))(
+              *(_DWORD *)&DataGlobal_87F8E4[4264],
               &v48,
-              &DataGlobal_87F8E4.__pad_5568[8532]);
+              &DataGlobal_87F8E4[30396]);
         }
         if ( v41
-          && *(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3796]
-          && (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4.__pad_1D4[3796] + 44))(*(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3796]) == 6 )
+          && *(_DWORD *)&DataGlobal_87F8E4[4264]
+          && (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[4264] + 44))(*(_DWORD *)&DataGlobal_87F8E4[4264]) == 6 )
         {
-          v21 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3796] + 1312);
+          v21 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[4264] + 1312);
           if ( *(_BYTE *)(v21 + 5822) )
           {
             eax29 = CellStruct::Set(&v47, (__int16)v40, v8);
-            v22 = CellStruct::Add(eax29, (IUnknown *)&v46, (IUnknown *)&DataGlobal_87F8E4.__pad_1D4[3748]);
-            v23 = CellStruct::Add(v22, (IUnknown *)&v49, (IUnknown *)&DataGlobal_87F8E4.__pad_1D4[3752]);
+            v22 = CellStruct::Add(eax29, (IUnknown *)&v46, (IUnknown *)&DataGlobal_87F8E4[4216]);
+            v23 = CellStruct::Add(v22, (IUnknown *)&v49, (IUnknown *)&DataGlobal_87F8E4[4220]);
             RenderBridgeRadarBlips(this, (AbstractClass *)aP3, (AbstractClass *)v23->field_0);
           }
           else if ( *(_BYTE *)(v21 + 5824) )
           {
             eax31 = CellStruct::Set(&v47, (__int16)v40, v8);
-            v25 = CellStruct::Add(eax31, (IUnknown *)&v46, (IUnknown *)&DataGlobal_87F8E4.__pad_1D4[3748]);
-            v26 = CellStruct::Add(v25, (IUnknown *)&v49, (IUnknown *)&DataGlobal_87F8E4.__pad_1D4[3752]);
+            v25 = CellStruct::Add(eax31, (IUnknown *)&v46, (IUnknown *)&DataGlobal_87F8E4[4216]);
+            v26 = CellStruct::Add(v25, (IUnknown *)&v49, (IUnknown *)&DataGlobal_87F8E4[4220]);
             RadarClass::DrawBlip(this, (char)aP3, (AbstractClass *)v26->field_0);
           }
           else
@@ -834,8 +834,8 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
             if ( v28 && *(_BYTE *)(v28 + 680) )
             {
               eax34 = CellStruct::Set(&v47, (__int16)v40, v8);
-              v29 = CellStruct::Add(eax34, (IUnknown *)&v46, (IUnknown *)&DataGlobal_87F8E4.__pad_1D4[3748]);
-              v30 = CellStruct::Add(v29, (IUnknown *)&v49, (IUnknown *)&DataGlobal_87F8E4.__pad_1D4[3752]);
+              v29 = CellStruct::Add(eax34, (IUnknown *)&v46, (IUnknown *)&DataGlobal_87F8E4[4216]);
+              v30 = CellStruct::Add(v29, (IUnknown *)&v49, (IUnknown *)&DataGlobal_87F8E4[4220]);
               RenderRadarBlips(this, (char)aP3, (AbstractClass *)v30->field_0);
             }
           }
@@ -845,11 +845,11 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
       {
         v8 = 0;
       }
-      LOBYTE(v4) = g_NetworkPlayerBuffer.__pad_14B0[639];
-      if ( !g_NetworkPlayerBuffer.__pad_14B0[639] && *(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3780] )
+      LOBYTE(v4) = g_NetworkPlayerBuffer[5935];
+      if ( !g_NetworkPlayerBuffer[5935] && *(_DWORD *)&DataGlobal_87F8E4[4248] )
       {
-        if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4.__pad_1D4[3780] + 44))(*(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3780]) == 7
-          && *(_BYTE *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_1D4[3780] + 5815) )
+        if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[4248] + 44))(*(_DWORD *)&DataGlobal_87F8E4[4248]) == 7
+          && *(_BYTE *)(*(_DWORD *)&DataGlobal_87F8E4[4248] + 5815) )
         {
           LOWORD(v4) = 3;
           v49 = (IUnknown *)-1;
@@ -859,7 +859,7 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
         }
         else
         {
-          v4 = *CoordList::GetBounds(&v49, *(__int16 **)&DataGlobal_87F8E4.__pad_1D4[3772]);
+          v4 = *CoordList::GetBounds(&v49, *(__int16 **)&DataGlobal_87F8E4[4240]);
           var3C_2a = HIWORD(v4);
         }
         v32 = (IUnknown *)(__int16)v40;
@@ -877,13 +877,13 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
             {
               while ( 1 )
               {
-                HIWORD(v48) = (_WORD)vfptr + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3764];
-                LOWORD(v49) = *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3766]
-                            + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3762]
+                HIWORD(v48) = (_WORD)vfptr + *(_WORD *)&DataGlobal_87F8E4[4232];
+                LOWORD(v49) = *(_WORD *)&DataGlobal_87F8E4[4234]
+                            + *(_WORD *)&DataGlobal_87F8E4[4230]
                             + (_WORD)v32;
-                HIWORD(v49) = *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3768]
+                HIWORD(v49) = *(_WORD *)&DataGlobal_87F8E4[4236]
                             + (_WORD)vfptr
-                            + *(_WORD *)&DataGlobal_87F8E4.__pad_1D4[3764];
+                            + *(_WORD *)&DataGlobal_87F8E4[4232];
                 v46 = v49;
                 v35 = 15360 * ((((__int16)v49 << 8) + 128) / 256);
                 v36 = v35 - HIDWORD(v35);
@@ -899,7 +899,7 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
                   BuildingPlacement::RenderBuildingPlacementPreview(
                     (int)v39,
                     (IUnknown *)v52,
-                    (IUnknown *)&DataGlobal_87F8E4.__pad_5568[8532],
+                    (IUnknown *)&DataGlobal_87F8E4[30396],
                     aP3);
                 }
                 LOBYTE(v4) = var3C_2a;
@@ -956,9 +956,9 @@ unsigned int * Terrain::ClimbCheck(AbstractClass * aP0, AbstractClass * aP1)
     LOWORD(aP1) = v2;
     v3 = (IUnknown *)(((short)v2 << 8) + 128);
     v4 = (IUnknown *)((SHIWORD(aP1) << 8) + 128);
-    v5 = (*((int *)CellCoord::To_CellObj(&DataGlobal_87C374.__pad_14B0[8132], (short *)&aP1) + 80) & 0x1000) != 0;
+    v5 = (*((int *)CellCoord::To_CellObj(&DataGlobal_87C374[13428], (short *)&aP1) + 80) & 0x1000) != 0;
     v6 = (int)&v4->__pad_524[220];
-    v14 = *((char *)CellCoord::To_CellObj(&DataGlobal_87C374.__pad_14B0[8132], (short *)&aP1) + 283);
+    v14 = *((char *)CellCoord::To_CellObj(&DataGlobal_87C374[13428], (short *)&aP1) + 283);
     v7 = (int)&v3->__pad_524[220];
     v15 = 0;
     while ( 1 )
@@ -968,7 +968,7 @@ unsigned int * Terrain::ClimbCheck(AbstractClass * aP0, AbstractClass * aP1)
     LOWORD(v13) = v7 / 256;
     HIWORD(v13) = v6 / 256;
     v12 = v13;
-    v8 = CellCoord::To_CellObj(&DataGlobal_87C374.__pad_14B0[8132], (short *)&v12);
+    v8 = CellCoord::To_CellObj(&DataGlobal_87C374[13428], (short *)&v12);
     v9 = *((char *)(v8) + 283) - v14;
     if ( v5 )
     v9 += 4 * ((v8[80] >> 8) & 1);
@@ -1005,7 +1005,7 @@ long long sub_6D6A90(unsigned int * a1)
 int CellClass::GetByte284(IUnknown * aP0)
 {
 {
-    return *((unsigned char *)Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], aP0) + 284);
+    return *((unsigned char *)Coord::To_Cell(&DataGlobal_87C374[13428], aP0) + 284);
 }
 }
 
@@ -1046,12 +1046,12 @@ char ClampCoordMap(AbstractClass * aP0)
     AbstractClass *v4;
     char v5;
     AbstractClass *v6;
-    v1 = *(int *)&DataGlobal_87C374.__pad_579C[21656] / 2 + 30 * (2 * *(int *)&DataGlobal_87C374.__pad_14B0[8384] - *(int *)&DataGlobal_87C374.__pad_14B0[8376]);
-    v2 = v1 + 60 * *(int *)&DataGlobal_87C374.__pad_14B0[8392] - *(int *)&DataGlobal_87C374.__pad_579C[21656];
-    v3 = (AbstractClass *)(*(int *)&DataGlobal_87C374.__pad_579C[21660] / 2 + 15 * (*(int *)&DataGlobal_87C374.__pad_14B0[8376] + 2 * *(int *)&DataGlobal_87C374.__pad_14B0[8388] - 5));
+    v1 = *(int *)&DataGlobal_87C374[44084] / 2 + 30 * (2 * *(int *)&DataGlobal_87C374[13680] - *(int *)&DataGlobal_87C374[13672]);
+    v2 = v1 + 60 * *(int *)&DataGlobal_87C374[13688] - *(int *)&DataGlobal_87C374[44084];
+    v3 = (AbstractClass *)(*(int *)&DataGlobal_87C374[44088] / 2 + 15 * (*(int *)&DataGlobal_87C374[13672] + 2 * *(int *)&DataGlobal_87C374[13684] - 5));
     v4 = *(AbstractClass **)&aP0->__pad_0[4];
     v5 = 0;
-    v6 = (AbstractClass *)((char *)(v3) + (60 * *(int *)&DataGlobal_87C374.__pad_14B0[8396] + 270) / 2 - *(int *)&DataGlobal_87C374.__pad_579C[21660]);
+    v6 = (AbstractClass *)((char *)(v3) + (60 * *(int *)&DataGlobal_87C374[13692] + 270) / 2 - *(int *)&DataGlobal_87C374[44088]);
     if ( (int)v4 >= (int)v3 )
   {
     if ( (int)v4 > (int)v6 )
@@ -1113,16 +1113,16 @@ int TacticalClass::FindOverlay(int a1, IUnknown * aP1, IUnknown * aP2)
     v16 = v3[1];
     v17 = v3[2];
     v4 = (Tactical *)v3[3];
-    result = *(int *)&DataGlobal_89E138.__pad_14B0[3512] - 1;
+    result = *(int *)&DataGlobal_89E138[8808] - 1;
     v18 = v4;
-    for ( aP1a = (IUnknown *)(*(int *)&DataGlobal_89E138.__pad_14B0[3512] - 1);
+    for ( aP1a = (IUnknown *)(*(int *)&DataGlobal_89E138[8808] - 1);
     (int)aP1a >= 0;
     aP1a = (IUnknown *)((char *)aP1a - 1) ) {
-    v6 = *(char **)(*(int *)&DataGlobal_89E138.__pad_14B0[3500] + 4 * result);
+    v6 = *(char **)(*(int *)&DataGlobal_89E138[8796] + 4 * result);
     if ( (*(int (__thiscall **)(char *))(*(int *)(v6) + 44))(v6) == 36 && !(*(unsigned char (__thiscall **)(char *))(*(int *)(v6) + 68))(v6) && !*(char *)(*((int *)(v6) + 50) + 691) && !v6[205] )
     {
-    v7 = *(IUnknown **)&DataGlobal_87C374.__pad_579C[21648];
-    v8 = *(int *)&DataGlobal_87C374.__pad_579C[21652];
+    v7 = *(IUnknown **)&DataGlobal_87C374[44076];
+    v8 = *(int *)&DataGlobal_87C374[44080];
     v9 = (int *)(*(int (__thiscall **)(char *, char *))(*(int *)(v6) + 300))(v6, v20);
     v10 = v8 + v9[1];
     v11 = (char *)(v7) + *v9;
@@ -1175,13 +1175,13 @@ int TacticalClass::FindBuilding(int a1, IUnknown * aP1, IUnknown * aP2)
     v4 = (Tactical *)v3[3];
     result = 0;
     v18 = v4;
-    for ( aP1a = 0; (int)aP1a < *(int *)&DataGlobal_89E138.__pad_14B0[3512]; aP1a = (IUnknown *)((char *)(aP1a) + 1) )
+    for ( aP1a = 0; (int)aP1a < *(int *)&DataGlobal_89E138[8808]; aP1a = (IUnknown *)((char *)(aP1a) + 1) )
   {
-    v6 = *(char **)(*(int *)&DataGlobal_89E138.__pad_14B0[3500] + 4 * result);
-    if ( (*(int (__thiscall **)(char *))(*(int *)(v6) + 44))(v6) == 6 && (!v6[1767] || HouseClass_Player.__pad_5568[23223]) )
+    v6 = *(char **)(*(int *)&DataGlobal_89E138[8796] + 4 * result);
+    if ( (*(int (__thiscall **)(char *))(*(int *)(v6) + 44))(v6) == 6 && (!v6[1767] || HouseClass_Player[45087]) )
     {
-    v7 = *(IUnknown **)&DataGlobal_87C374.__pad_579C[21648];
-    v8 = *(int *)&DataGlobal_87C374.__pad_579C[21652];
+    v7 = *(IUnknown **)&DataGlobal_87C374[44076];
+    v8 = *(int *)&DataGlobal_87C374[44080];
     v9 = (int *)(*(int (__thiscall **)(char *, char *))(*(int *)(v6) + 300))(v6, v20);
     v10 = v8 + v9[1];
     v11 = (char *)(v7) + *v9;
@@ -1406,20 +1406,20 @@ int * Tactical::ScrollMap(Tactical * aP0, int a2)
 {
 {
     int *result;
-    result = (int *)&DataGlobal_B05488.__pad_579C[8868];
+    result = (int *)&DataGlobal_B05488[31296];
     do
   {
     if ( (Tactical *)*result == aP0 )
     *result = 0;
     result += 3;
   }
-    while ( (int)result < (int)&DataGlobal_B05488.__pad_579C[14868] );
-    if ( aP0 == *(Tactical **)&DataGlobal_87C374.__pad_14B0[12628] )
+    while ( (int)result < (int)&DataGlobal_B05488[37296] );
+    if ( aP0 == *(Tactical **)&DataGlobal_87C374[17924] )
   {
-    result = (int *)MIXClass::CopyHeader((int)&DataGlobal_87C374.__pad_14B0[8132], 0);
-    *(int *)&DataGlobal_87C374.__pad_14B0[12628] = 0;
-    *(int *)&DataGlobal_87C374.__pad_14B0[12632] = 0;
-    *(int *)&DataGlobal_87C374.__pad_14B0[12636] = -1;
+    result = (int *)MIXClass::CopyHeader((int)&DataGlobal_87C374[13428], 0);
+    *(int *)&DataGlobal_87C374[17924] = 0;
+    *(int *)&DataGlobal_87C374[17928] = 0;
+    *(int *)&DataGlobal_87C374[17932] = -1;
   }
     return result;
 }

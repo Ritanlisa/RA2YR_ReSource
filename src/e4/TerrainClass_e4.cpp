@@ -63,28 +63,15 @@ void TerrainClass_ProcessUpdate()
   IUnknown **v114; // eax
   int v116; // edi
   int v117; // esi
-  _DWORD *v118; // ecx
   CellStruct **v119; // eax
   AnimClass *v120; // eax
-  int v121; // [esp-8h] [ebp-258h]
-  char v122; // [esp-4h] [ebp-254h]
-  int v123; // [esp+0h] [ebp-250h]
-  _DWORD *v124; // [esp+4h] [ebp-24Ch]
-  int v125; // [esp+8h] [ebp-248h]
   IUnknown *v112; // [esp+10h] [ebp-240h] BYREF
   CellStruct *v113; // [esp+14h] [ebp-23Ch] BYREF
   CellStruct *v128; // [esp+18h] [ebp-238h]
   CellStruct *GroundHeight; // [esp+1Ch] [ebp-234h]
   rc_ptr_base v130; // [esp+20h] [ebp-230h] BYREF
   CellStruct *v131; // [esp+24h] [ebp-22Ch] BYREF
-  int v132; // [esp+28h] [ebp-228h]
-  int v133; // [esp+2Ch] [ebp-224h]
-  char v134[4]; // [esp+30h] [ebp-220h] BYREF
-  _DWORD v135[3]; // [esp+34h] [ebp-21Ch] BYREF
   char Destination[32]; // [esp+40h] [ebp-210h] BYREF
-  char v137[32]; // [esp+60h] [ebp-1F0h] BYREF
-  char v138[32]; // [esp+80h] [ebp-1D0h] BYREF
-  char v139[32]; // [esp+A0h] [ebp-1B0h] BYREF
   AbstractClass aP0[11]; // [esp+C0h] [ebp-190h] BYREF
 
   result = 1;
@@ -94,9 +81,10 @@ void TerrainClass_ProcessUpdate()
     v9 = 0;
   switch ( *(_DWORD *)(a1 + 44) )
   {
+  char v134[4]; // [esp+30h] [ebp-220h] BYREF
     case 1:
       v22 = (IUnknown *)HouseClass_Player.field_0;
-      v122 = 0;
+      char v122 = 0;
       if ( *(_DWORD *)(a1 + 144) != *(_DWORD *)(*(_DWORD *)(HouseClass_Player.field_0 + 52) + 184) )
         goto LABEL_60;
       goto LABEL_162;
@@ -165,7 +153,7 @@ LABEL_162:
       PlayerColorScheme = SessionClass::GetPlayerColorScheme((ObjectClass *)v45);
       if ( !v44 )
         return 1;
-      v121 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5312) * 900.0);
+      int v121 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5312) * 900.0);
       StringCSF = GetStringCSF(v44, 0, &stru_830620[75224], 1766);
       MessageListClass::AddMessage(
         &HouseClass_Player[32532],
@@ -261,7 +249,9 @@ LABEL_162:
       Timer::Start(&v131, (DynamicVector *)(15 * *(_DWORD *)(a1 + 144) + v57));
       int v58 = *(_DWORD *)&HouseClass_Player[29924] + 4584;
       *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4584) = v131;
+  int v132; // [esp+28h] [ebp-228h]
       *(_DWORD *)(v58 + 4) = v132;
+  int v133; // [esp+2Ch] [ebp-224h]
       *(_DWORD *)(v58 + 8) = v133;
       ObjectClass::PreDraw(&stru_87C374[13428]);
       return 1;
@@ -300,6 +290,7 @@ LABEL_162:
       }
       v61->missionTimer_text_csf = &stru_87C374[46016];
       ScriptAction::CopyStringField(Destination, &stru_87C374[56304]);
+  char v137[32]; // [esp+60h] [ebp-1F0h] BYREF
       ScriptAction::CopyStructField((void *)(*(_DWORD *)&HouseClass_Player[29924] + 4600), v137, Destination);
       ObjectClass::PreDraw(&stru_87C374[13428]);
       return 1;
@@ -801,6 +792,7 @@ LABEL_60:
                             *(char **)&HouseClass_Player[29924],
                             &v130,
                             *(_DWORD *)(a1 + 68));
+  _DWORD v135[3]; // [esp+34h] [ebp-21Ch] BYREF
       v101 = (CellStruct **)CoordStruct::Set2(v135, (IUnknown *)&v112, 0);
       v113 = *v101;
       v128 = v101[1];
@@ -977,6 +969,7 @@ LABEL_60:
                                                                                2242);
         ScriptAction::CopyStructField(
           (void *)(*(_DWORD *)&HouseClass_Player[29924] + 4600),
+  char v138[32]; // [esp+80h] [ebp-1D0h] BYREF
           v138,
           Destination);
       }
@@ -984,6 +977,7 @@ LABEL_60:
       {
         *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4596) = &stru_87C374[46016];
         ScriptAction::CopyStringField(v137, &stru_87C374[56304]);
+  char v139[32]; // [esp+A0h] [ebp-1B0h] BYREF
         ScriptAction::CopyStructField((void *)(*(_DWORD *)&HouseClass_Player[29924] + 4600), v139, v137);
       }
       ObjectClass::PreDraw(&stru_87C374[13428]);
@@ -1112,6 +1106,9 @@ LABEL_290:
     case 0x7D:
       return TActionClass::executeForceShieldAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x7E:
+  int v123; // [esp+0h] [ebp-250h]
+  _DWORD *v124; // [esp+4h] [ebp-24Ch]
+  int v125; // [esp+8h] [ebp-248h]
       return CreateHouseClass((int)aP1, v9, a5, (IUnknown *)aP4, v123, v124, v125);
     case 0x7F:
       globalHelper_03B460(*(_DWORD *)(a1 + 144));
@@ -1160,7 +1157,7 @@ LABEL_290:
       {
         if ( !*(_BYTE *)(v117 + 129) )
         {
-          v118 = *(_DWORD **)(v117 + 52);
+          _DWORD * v118 = *(_DWORD **)(v117 + 52);
           if ( v118 )
           {
             if ( LinkedList::Contains(v118, a5) )

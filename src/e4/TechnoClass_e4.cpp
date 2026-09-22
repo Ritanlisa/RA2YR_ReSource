@@ -1125,25 +1125,14 @@ void TechnoClass_DrawVoxel()
   size_t v31; // eax
   bool v32; // al
   ParticleSystemClass *v33; // esi
-  float *v34; // eax
-  float *v35; // eax
   ObjectClass *v36; // esi
   TechnoClass *v37; // edi
   BuildingTypeClass *v38; // edi
   TechnoClass *v39; // esi
   __int16 v40; // ax
-  int v41; // edi
-  int *v42; // eax
   BuildingTypeClass *v43; // eax
   int v44; // edx
   BuildingTypeClass *v45; // esi
-  int v46; // eax
-  int v47; // ecx
-  int v48; // eax
-  int v49; // edx
-  int v50; // ecx
-  int v51; // esi
-  int v52; // esi
   int v53; // esi
   int v54; // eax
   int v55; // ecx
@@ -1151,41 +1140,12 @@ void TechnoClass_DrawVoxel()
   int v57; // edx
   int v58; // ecx
   int v59; // eax
-  int v60; // edx
   int v61; // ecx
   AbstractClass *v62; // esi
   ObjectClass *v63; // eax
-  int v64; // eax
-  int v65; // eax
-  int v66; // eax
-  const void *v67; // eax
-  int *v68; // eax
-  int v69; // ecx
-  int v70; // eax
-  int v71; // edi
   VectorClass *v72; // esi
-  void *v73; // eax
-  int v74; // eax
-  int v75; // eax
-  bool v76; // cc
-  int v77; // eax
-  int v78; // esi
-  int v79; // eax
-  float *v80; // eax
-  int v81; // esi
-  int v82; // eax
-  float *v83; // eax
-  float *v85; // [esp+E4h] [ebp-1D8h]
-  float *v86; // [esp+E4h] [ebp-1D8h]
-  float *v87; // [esp+E8h] [ebp-1D4h]
-  float *v88; // [esp+E8h] [ebp-1D4h]
   BuildingTypeClass *v89; // [esp+ECh] [ebp-1D0h]
   BuildingTypeClass *v90; // [esp+ECh] [ebp-1D0h]
-  int v91; // [esp+ECh] [ebp-1D0h]
-  int v92; // [esp+ECh] [ebp-1D0h]
-  int v93; // [esp+F0h] [ebp-1CCh]
-  int v94; // [esp+F0h] [ebp-1CCh]
-  float aP1; // [esp+F4h] [ebp-1C8h]
   float aP1a; // [esp+F4h] [ebp-1C8h]
   float aP1b; // [esp+F4h] [ebp-1C8h]
   int aP1c; // [esp+F4h] [ebp-1C8h]
@@ -1196,8 +1156,6 @@ void TechnoClass_DrawVoxel()
   float aP1_4; // [esp+F8h] [ebp-1C4h]
   float v104; // [esp+FCh] [ebp-1C0h]
   bool v105; // [esp+109h] [ebp-1B3h]
-  char v106; // [esp+109h] [ebp-1B3h]
-  char v107; // [esp+109h] [ebp-1B3h]
   unsigned __int8 v108; // [esp+109h] [ebp-1B3h]
   unsigned __int8 v109; // [esp+109h] [ebp-1B3h]
   char v110; // [esp+10Ah] [ebp-1B2h]
@@ -1209,12 +1167,10 @@ void TechnoClass_DrawVoxel()
   ObjectClass *v116; // [esp+110h] [ebp-1ACh] BYREF
   int v117; // [esp+114h] [ebp-1A8h] BYREF
   double v118; // [esp+118h] [ebp-1A4h] BYREF
-  float v119; // [esp+120h] [ebp-19Ch]
   TechnoClass *v120; // [esp+124h] [ebp-198h]
   __int64 v121; // [esp+128h] [ebp-194h] BYREF
   int v122; // [esp+130h] [ebp-18Ch] BYREF
   double v123; // [esp+134h] [ebp-188h] BYREF
-  float v124; // [esp+13Ch] [ebp-180h]
   int v125; // [esp+144h] [ebp-178h]
   int v126; // [esp+148h] [ebp-174h] BYREF
   int v127; // [esp+14Ch] [ebp-170h]
@@ -1229,7 +1185,6 @@ void TechnoClass_DrawVoxel()
   float v136; // [esp+174h] [ebp-148h] BYREF
   float v137; // [esp+178h] [ebp-144h]
   float v138; // [esp+17Ch] [ebp-140h]
-  int v139; // [esp+180h] [ebp-13Ch]
   int v140; // [esp+184h] [ebp-138h]
   AbstractClass *v141; // [esp+188h] [ebp-134h]
   float v142[12]; // [esp+18Ch] [ebp-130h] BYREF
@@ -1304,7 +1259,7 @@ LABEL_10:
     int v20 = *ecx0;
     v90 = started;
     inited = (float *)AudioConfig::InitDefault(v144);
-    v88 = MultiplyMatrix3x4((ObjectClass *)v145, inited, v142);
+    float * v88 = MultiplyMatrix3x4((ObjectClass *)v145, inited, v142);
     (*(void (__thiscall **)(_DWORD *, int, int, TechnoClass *, int, int *, __int64 *, float *, BuildingTypeClass *, int, _DWORD))(v20 + 1296))(
       ecx0,
       v10 + 176,
@@ -1324,7 +1279,7 @@ LABEL_10:
     aP3 = (TechnoClass *)((unsigned int)aP3 | 0x10000);
     int v18 = *ecx0;
     float * v19 = (float *)AudioConfig::InitDefault(v144);
-    v87 = MultiplyMatrix3x4((ObjectClass *)v145, v19, v142);
+    float * v87 = MultiplyMatrix3x4((ObjectClass *)v145, v19, v142);
     (*(void (__thiscall **)(_DWORD *, int, int, TechnoClass *, int, int *, __int64 *, float *, BuildingTypeClass *, int, _DWORD))(v18 + 1296))(
       ecx0,
       v10 + 184,
@@ -1361,7 +1316,7 @@ LABEL_10:
       double v24 = (double)(int)v116 * -0.1963495408493621;
       v118 = v24;
       TechnoClass::CalcFacingFromMatrix((IUnknown *)v142);
-      aP1 = -(v118 - v24);
+      float aP1 = -(v118 - v24);
       ((void (__thiscall *)(float *, float))Matrix3D::RotateZ)(v142, aP1);
       aP1a = (double)*(int *)((*(int (__thiscall **)(_DWORD *, _DWORD))(*ecx0 + 1016))(ecx0, 0) + 12) * unk_B1D008;
       aP1b = (double)*(int *)((*(int (__thiscall **)(_DWORD *, _DWORD, _DWORD, _DWORD))(*ecx0 + 1016))(
@@ -1482,8 +1437,8 @@ LABEL_56:
     *((float *)&v118 + 1) = -v142[7];
     v136 = v142[3];
     v123 = v118;
-    v119 = -v142[11];
-    v124 = v119;
+    float v119 = -v142[11];
+    float v124 = v119;
     Matrix3x3::Multiply(v145, (float *)&v123);
     v116 = (ObjectClass *)((((unsigned int)((*ProgressTimer::GetValue((_WORD *)ecx0 + 440, (IUnknown *)&v118) >> 10) + 1) >> 1)
                           & 0x1F)
@@ -1491,14 +1446,15 @@ LABEL_56:
     aP1f = -((double)(int)v116 * -0.1963495408493621);
     ((void (__thiscall *)(float *, float))Matrix3D::RotateZ)(v145, aP1f);
     Matrix3x3::Multiply(v145, &v136);
-    v34 = (float *)AudioConfig::InitDefault(v148);
+    float * v34 = (float *)AudioConfig::InitDefault(v148);
     qmemcpy(v144, MultiplyMatrix3x4((ObjectClass *)v147, v34, v142), sizeof(v144));
-    v35 = (float *)AudioConfig::InitDefault(v147);
+    float * v35 = (float *)AudioConfig::InitDefault(v147);
     v33 = (ParticleSystemClass *)MultiplyMatrix3x4((ObjectClass *)v148, v35, v145);
   }
   qmemcpy(v146, v33, sizeof(v146));
   if ( !TechnoClass::OwnerHasPower(ecx0) || *(_BYTE *)(ecx0[433] + 3285) )
   {
+  char v107; // [esp+109h] [ebp-1B3h]
     if ( (((unsigned int)((*ProgressTimer::GetValue((_WORD *)ecx0 + 464, (IUnknown *)&v118) >> 13) + 1) >> 1) & 3) == 0
       || (((unsigned int)((*ProgressTimer::GetValue((_WORD *)ecx0 + 464, (IUnknown *)a1) >> 13) + 1) >> 1) & 3) == 3 )
     {
@@ -1551,6 +1507,7 @@ LABEL_56:
   }
   else
   {
+  char v106; // [esp+109h] [ebp-1B3h]
     if ( (((unsigned int)((*ProgressTimer::GetValue((_WORD *)ecx0 + 464, (IUnknown *)&v118) >> 13) + 1) >> 1) & 3) == 0
       || (((unsigned int)((*ProgressTimer::GetValue((_WORD *)ecx0 + 464, (IUnknown *)a1) >> 13) + 1) >> 1) & 3) == 3 )
     {
@@ -1618,12 +1575,12 @@ LABEL_81:
   }
   else
   {
-    v41 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44976] + 180);
+    int v41 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44976] + 180);
     v136 = 0.0;
-    v139 = v40 - v41;
+    int v139 = v40 - v41;
     v137 = 0.0;
     v138 = *(float *)&stru_87C374[44084];
-    v42 = ClipRectIntersection((IUnknown *)&v123, (IUnknown *)&v126, (IUnknown *)&v136, 0, 0);
+    int * v42 = ClipRectIntersection((IUnknown *)&v123, (IUnknown *)&v126, (IUnknown *)&v136, 0, 0);
     v126 = *v42;
     v127 = v42[1];
     v128 = v42[2];
@@ -1635,13 +1592,17 @@ LABEL_81:
   started = v43;
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD, _DWORD))(v44 + 352))(ecx0, LODWORD(aP1_4), LODWORD(v104)) )
   {
+  int v52; // esi
+  int v51; // esi
+  int v50; // ecx
+  int v49; // edx
     started = Techno::StartInvulnerability(ecx0, v45);
-    v46 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 6312);
-    v47 = *(_DWORD *)&stru_87C374[44652] + 2 * v46;
+    int v46 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 6312);
+    int v47 = *(_DWORD *)&stru_87C374[44652] + 2 * v46;
     v113 = *(_BYTE *)(v46 + v47 + 6260);
     v111 = *(_BYTE *)(v46 + v47 + 4174 + 2087);
     v108 = *(_BYTE *)(v46 + v47 + 6262);
-    v48 = DDraw::GetStatus() - 1;
+    int v48 = DDraw::GetStatus() - 1;
     if ( v48 )
     {
       if ( --v48 )
@@ -1692,7 +1653,7 @@ LABEL_94:
     LOWORD(v57) = v114;
     v59 = v109;
     LOWORD(v58) = v109;
-    v60 = v58 | (v57 << 6);
+    int v60 = v58 | (v57 << 6);
     LOWORD(v58) = v112;
     v57 = v58 | (32 * v60);
     v53 |= v57;
@@ -1740,8 +1701,9 @@ LABEL_102:
   *((_BYTE *)ecx0 + 1747) = 0;
   if ( !(_BYTE)v63 )
   {
-    v64 = ecx0[433];
+    int v64 = ecx0[433];
     v118 = *(double *)&a2;
+  int v65; // eax
     if ( *(_BYTE *)(v64 + 3434) || (v65 = *(_DWORD *)(v64 + 1660), v65 == 1) || v65 == 2 )
     {
       aP3 = (TechnoClass *)v140;
@@ -1751,11 +1713,12 @@ LABEL_102:
       aP3 = (TechnoClass *)(32 * v140);
       if ( !ecx0[413] )
         WinAPI::Wrapper(-2147467261);
-      v66 = (*(int (__stdcall **)(_DWORD, double *))(*(_DWORD *)ecx0[413] + 48))(ecx0[413], &v123);
+      int v66 = (*(int (__stdcall **)(_DWORD, double *))(*(_DWORD *)ecx0[413] + 48))(ecx0[413], &v123);
       aP3 = (TechnoClass *)(((unsigned __int8)*(_DWORD *)(v66 + 4) - 16) & 0x1F | (unsigned int)aP3);
     }
     if ( !ecx0[413] )
       WinAPI::Wrapper(-2147467261);
+  const void *v67; // eax
     v67 = (const void *)(*(int (__stdcall **)(_DWORD, float *, TechnoClass **))(*(_DWORD *)ecx0[413] + 40))(
                           ecx0[413],
                           v147,
@@ -1771,15 +1734,15 @@ LABEL_102:
       Coord::To_Screen(*(_DWORD **)&stru_87C374[44976], a1, (IUnknown *)&v118);
       if ( !ecx0[413] )
         WinAPI::Wrapper(-2147467261);
-      v68 = (int *)(*(int (__stdcall **)(_DWORD, double *))(*(_DWORD *)ecx0[413] + 48))(ecx0[413], &v123);
-      v69 = *v68;
-      v70 = v68[1];
+      int * v68 = (int *)(*(int (__stdcall **)(_DWORD, double *))(*(_DWORD *)ecx0[413] + 48))(ecx0[413], &v123);
+      int v69 = *v68;
+      int v70 = v68[1];
       LODWORD(v118) += v69;
       HIDWORD(v118) += v70;
     }
     if ( *((_BYTE *)ecx0 + 1060) )
       HIDWORD(v118) -= 14;
-    v71 = (*(int (__thiscall **)(_DWORD *))(*ecx0 + 456))(ecx0);
+    int v71 = (*(int (__thiscall **)(_DWORD *))(*ecx0 + 456))(ecx0);
     v136 = *((float *)ecx0 + 39);
     v137 = *((float *)ecx0 + 40);
     v138 = *((float *)ecx0 + 41);
@@ -1788,7 +1751,7 @@ LABEL_102:
     {
       if ( !*((_BYTE *)ecx0 + 140) && v71 >= unk_B1D0AC )
       {
-        v73 = v72[20].vtable0;
+        void * v73 = v72[20].vtable0;
         if ( ((unsigned __int16)v73 & 0x100) != 0
           && ((BYTE1(v73) & 8) != 0 && (*((_DWORD *)Cell::GetNeighbourContent(v72, 0) + 80) & 0x100) != 0
            || ((int)v72[20].vtable0 & 0x800) == 0 && (*((_DWORD *)Cell::GetNeighbourContent(v72, 6u) + 80) & 0x100) != 0) )
@@ -1803,8 +1766,9 @@ LABEL_102:
     }
     else
     {
-      v74 = ecx0[433];
+      int v74 = ecx0[433];
       v117 = (int)v116;
+  int v75; // eax
       if ( *(_BYTE *)(v74 + 3434) || (v75 = *(_DWORD *)(v74 + 1660), v75 == 1) || v75 == 2 )
       {
         if ( (*(int (__thiscall **)(_DWORD *))(*ecx0 + 456))(ecx0) > 0 )
@@ -1813,23 +1777,24 @@ LABEL_102:
           aP3 = (TechnoClass *)((unsigned int)aP3 | 0x80000000);
       }
     }
-    v76 = (*(int (__thiscall **)(_DWORD *))(*ecx0 + 456))(ecx0) <= 0;
-    v77 = ecx0[413];
+    bool v76 = (*(int (__thiscall **)(_DWORD *))(*ecx0 + 456))(ecx0) <= 0;
+    int v77 = ecx0[413];
     if ( v76 )
     {
       if ( !v77 )
         WinAPI::Wrapper(-2147467261);
       if ( !ecx0[413] )
         WinAPI::Wrapper(-2147467261);
-      v81 = ecx0[413];
-      v82 = (*(int (__stdcall **)(int))(*(_DWORD *)v81 + 48))(v81);
+      int v81 = ecx0[413];
+      int v82 = (*(int (__stdcall **)(int))(*(_DWORD *)v81 + 48))(v81);
+  int v94; // [esp+F0h] [ebp-1CCh]
       v94 = *(_DWORD *)(*(int (__stdcall **)(int, int *, _DWORD))(*(_DWORD *)v81 + 48))(
                          v81,
                          &v133,
                          *(_DWORD *)(v82 + 4));
-      v92 = v117;
-      v83 = (float *)AudioConfig::InitDefault(v147);
-      v86 = MultiplyMatrix3x4((ObjectClass *)v148, v83, v142);
+      int v92 = v117;
+      float * v83 = (float *)AudioConfig::InitDefault(v147);
+      float * v86 = MultiplyMatrix3x4((ObjectClass *)v148, v83, v142);
       TechnoClass::QueueDrawVoiceResponse(
         ecx0,
         (_BYTE **)(v10 + 176),
@@ -1850,15 +1815,16 @@ LABEL_102:
         WinAPI::Wrapper(-2147467261);
       if ( !ecx0[413] )
         WinAPI::Wrapper(-2147467261);
-      v78 = ecx0[413];
-      v79 = (*(int (__stdcall **)(int))(*(_DWORD *)v78 + 48))(v78);
+      int v78 = ecx0[413];
+      int v79 = (*(int (__stdcall **)(int))(*(_DWORD *)v78 + 48))(v78);
+  int v93; // [esp+F0h] [ebp-1CCh]
       v93 = *(_DWORD *)(*(int (__stdcall **)(int, int *, int))(*(_DWORD *)v78 + 48))(
                          v78,
                          &v133,
                          *(_DWORD *)(v79 + 4) + 1);
-      v91 = v117;
-      v80 = (float *)AudioConfig::InitDefault(v147);
-      v85 = MultiplyMatrix3x4((ObjectClass *)v148, v80, v142);
+      int v91 = v117;
+      float * v80 = (float *)AudioConfig::InitDefault(v147);
+      float * v85 = MultiplyMatrix3x4((ObjectClass *)v148, v80, v142);
       TechnoClass::QueueDrawVoiceResponse(
         ecx0,
         (_BYTE **)(v10 + 176),

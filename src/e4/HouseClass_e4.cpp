@@ -2426,7 +2426,6 @@ void HouseClass::FindStartPositions()
   _BYTE v16[16]; // [esp+Ch] [ebp-28h] BYREF
   void **v17; // [esp+1Ch] [ebp-18h] BYREF
   void *Block; // [esp+20h] [ebp-14h]
-  char v19; // [esp+29h] [ebp-Bh]
   Multiplayer::FindStartPositions(&v17); /*0x5ee9d9*/
   int v0 = 0; /*0x5ee9e4*/
   _DWORD * v1 = (char *)g_ScenarioClass_Instance + 4480; /*0x5ee9e6*/
@@ -2492,6 +2491,7 @@ void HouseClass::FindStartPositions()
   v17 = &vt_VectorClass_Cell; /*0x5eeb8b*/
   if ( Block ) /*0x5eeb94*/
   {
+  char v19; // [esp+29h] [ebp-Bh]
     if ( v19 ) /*0x5eeb9c*/
       __3_YAXPAX_Z(Block); /*0x5eeb9f*/
   }

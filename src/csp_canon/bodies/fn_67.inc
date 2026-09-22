@@ -2259,7 +2259,7 @@ int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, 
 {
 {
     INIClass Destination[2];
-    if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&DataGlobal_87F8E4[42624], Destination, 128) )
     return WarheadTypeClass::FindOrCreate(Destination[0].__pad_0);
     else
     return a4;
@@ -2271,7 +2271,7 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 {
 {
     INIClass Destination[2];
-    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374.__pad_579C[33876], Destination, 128) )
+    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374[56304], Destination, 128) )
     return KeywordType::FindOrCreate2((ObjectClass *)Destination);
     else
     return (InfantryTypeClass *)a4;
@@ -2283,7 +2283,7 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 {
 {
     INIClass Destination[2];
-    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374.__pad_579C[33876], Destination, 128) )
+    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374[56304], Destination, 128) )
     return BuildingTypeClass::FindOrCreate(Destination[0].__pad_0);
     else
     return (BuildingTypeClass *)a4;
@@ -2295,7 +2295,7 @@ AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, uns
 {
 {
     INIClass Destination[2];
-    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374.__pad_579C[33876], Destination, 128) )
+    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374[56304], Destination, 128) )
     return KeywordClass::FindOrCreate((ObjectClass *)Destination);
     else
     return (AircraftTypeClass *)a4;
@@ -2307,7 +2307,7 @@ TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsig
 {
 {
     INIClass Destination[2];
-    if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&DataGlobal_87F8E4[42624], Destination, 128) )
     return TerrainTypeClass::FindOrCreate(Destination[0].__pad_0);
     else
     return (TerrainTypeClass *)a4;

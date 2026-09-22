@@ -86,7 +86,7 @@ ObjectClass * UI_Setup_793A10(void * a1, short a2)
     ObjectClass *result;
     Debug::Log();
     v4 = 0;
-    v5 = (SessionClass *)&HouseClass_Player.__pad_5568[18396];
+    v5 = (SessionClass *)&HouseClass_Player[40260];
     while ( 1 )
   {
     v6 = ToWideStringChar((IUnknown *)v5->GameMode[0]);
@@ -95,10 +95,10 @@ ObjectClass * UI_Setup_793A10(void * a1, short a2)
     break;
     v5 = (SessionClass *)((char *)(v5) + 4);
     ++v4;
-    if ( (int)v5 >= (int)&HouseClass_Player.__pad_5568[18428] )
+    if ( (int)v5 >= (int)&HouseClass_Player[40292] )
     return result;
   }
-    *(short *)&HouseClass_Player.__pad_5568[2 * v4 + 19868] = a2;
+    *(short *)&HouseClass_Player[21864][2 * v4 + 19868] = a2;
     return result;
 }
 }

@@ -16,7 +16,6 @@ int InfantryClass::ScanTarget(int * a1)
   int result; // eax
   int v17; // [esp+48h] [ebp-24h] BYREF
   int v18; // [esp+4Ch] [ebp-20h]
-  int v19; // [esp+50h] [ebp-1Ch]
   _BYTE v20[12]; // [esp+54h] [ebp-18h] BYREF
   _BYTE v21[12]; // [esp+60h] [ebp-Ch] BYREF
 
@@ -33,7 +32,7 @@ int InfantryClass::ScanTarget(int * a1)
     v17 = a1[39]; /*0x4d4e21*/
     int v5 = *a1; /*0x4d4e25*/
     v18 = a1[40]; /*0x4d4e2a*/
-    v19 = a1[41]; /*0x4d4e36*/
+    int v19 = a1[41]; /*0x4d4e36*/
     int v6 = (*(int (__thiscall **)(int *, int, int *, _DWORD))(v5 + 964))(a1, 1, &v17, 0); /*0x4d4e3e*/
     if ( v6 ) /*0x4d4e46*/
     {

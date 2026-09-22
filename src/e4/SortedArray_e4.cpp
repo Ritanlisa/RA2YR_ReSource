@@ -55,17 +55,13 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   int v5; // ebx
   int v6; // edi
   int i; // ecx
-  int v8; // eax
-  _DWORD *v9; // edx
-  int v10; // eax
-  int v11; // eax
   int v4 = this->SortedArray_field_0x08; /*0x5387da*/
   if ( this->SortedArray_field_0x04 + 1 <= v4 ) /*0x5387e0*/
   {
 LABEL_9:
     *(_DWORD *)(*(_DWORD *)this + 8 * this->SortedArray_field_0x04) = *(_DWORD *)aP1->__pad_0; /*0x53885b*/
     *(_DWORD *)(*(_DWORD *)this + 8 * this->SortedArray_field_0x04 + 4) = *a2; /*0x538875*/
-    v11 = this->SortedArray_field_0x04 + 1; /*0x53887c*/
+    int v11 = this->SortedArray_field_0x04 + 1; /*0x53887c*/
     this->q00C = 0; /*0x53887d*/
     this->SortedArray_field_0x04 = v11; /*0x538881*/
     return 1; /*0x53888a*/
@@ -83,6 +79,8 @@ LABEL_9:
   v6 = __2_YAPAXI_Z(8 * (v4 + v5)); /*0x538807*/
   if ( v6 ) /*0x53880e*/
   {
+  int v8; // eax
+  _DWORD *v9; // edx
     for ( i = 0; i < this->SortedArray_field_0x04; *(_DWORD *)(v8 + v6 + 4) = v9[1] ) /*0x53881c*/
     {
       v8 = 8 * i; /*0x538820*/
@@ -90,7 +88,7 @@ LABEL_9:
       *(_DWORD *)(v8 + v6) = *v9; /*0x53882e*/
     }
     __3_YAXPAX_Z(*(void **)this); /*0x538842*/
-    v10 = this->SortedArray_field_0x08; /*0x538847*/
+    int v10 = this->SortedArray_field_0x08; /*0x538847*/
     *(_DWORD *)this = v6; /*0x53884f*/
     this->SortedArray_field_0x08 = v5 + v10; /*0x538851*/
     this->SortedArray_field_0x10 = 0; /*0x538854*/
@@ -110,7 +108,6 @@ int SortedArray::RemoveByKey(DynamicVector * aP1)
   char *v7; // ecx
   int v9; // ecx
   int i; // ecx
-  int v11; // edi
   int v12; // eax
   ObjectClass *v13; // edi
   int v14; // eax
@@ -153,7 +150,7 @@ LABEL_9:
     return 0; /*0x538920*/
   for ( i = v9 + 1; i < this->SortedArray_field_0x04; *(_DWORD *)(v12 - 4) = *(_DWORD *)(v12 + 4) ) /*0x538939*/
   {
-    v11 = *(_DWORD *)(*(_DWORD *)this + 8 * i); /*0x53893d*/
+    int v11 = *(_DWORD *)(*(_DWORD *)this + 8 * i); /*0x53893d*/
     v12 = *(_DWORD *)this + 8 * i++; /*0x538940*/
     *(_DWORD *)(v12 - 8) = v11; /*0x538944*/
   }

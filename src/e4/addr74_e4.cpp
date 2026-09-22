@@ -625,17 +625,10 @@ int InitializeVeinholeSystem(char a1)
   int i; // esi
   void *v4; // eax
   int v5; // ebp
-  void *v6; // eax
-  _DWORD *v7; // esi
   int VeinholeShrinkRate; // eax
-  void *v9; // eax
-  int v10; // ecx
-  int v11; // eax
-  _DWORD *v12; // eax
   int j; // ecx
   int k; // eax
   int m; // esi
-  int v16; // ecx
   int result; // eax
   int n; // esi
   size_t v19; // [esp+10h] [ebp-8h]
@@ -662,11 +655,11 @@ LABEL_17:
   {
     do /*0x74dff7*/
     {
-      v6 = __2_YAPAXI_Z(8 * g_RulesClass_Instance->AircraftFogReveal); /*0x74df08*/
+      void * v6 = __2_YAPAXI_Z(8 * g_RulesClass_Instance->AircraftFogReveal); /*0x74df08*/
       if ( !v6 ) /*0x74df12*/
         v6 = 0; /*0x74df1b*/
       *(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v5) + 180) = v6; /*0x74df28*/
-      v7 = __2_YAPAXI_Z(0x14u); /*0x74df33*/
+      _DWORD * v7 = __2_YAPAXI_Z(0x14u); /*0x74df33*/
       if ( v7 ) /*0x74df3a*/
       {
         VeinholeShrinkRate = g_RulesClass_Instance->AircraftFogReveal; /*0x74df42*/
@@ -674,10 +667,10 @@ LABEL_17:
         v7[1] = VeinholeShrinkRate; /*0x74df4b*/
         v7[4] = -1; /*0x74df4e*/
         *v7 = 0; /*0x74df5c*/
-        v9 = __2_YAPAXI_Z(4 * VeinholeShrinkRate + 4); /*0x74df5f*/
-        v10 = v7[1]; /*0x74df64*/
+        void * v9 = __2_YAPAXI_Z(4 * VeinholeShrinkRate + 4); /*0x74df5f*/
+        int v10 = v7[1]; /*0x74df64*/
         v7[2] = v9; /*0x74df67*/
-        v11 = 0; /*0x74df6d*/
+        int v11 = 0; /*0x74df6d*/
         if ( v10 >= 0 ) /*0x74df71*/
         {
           do /*0x74df80*/
@@ -695,7 +688,7 @@ LABEL_17:
       *(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v5) + 176) = v7; /*0x74df90*/
       *(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v5) + 196) = __2_YAPAXI_Z(v2); /*0x74dfa9*/
       memset(*(void **)(*((_DWORD *)g_VoxelDrawState + v5) + 196), 0, v2); /*0x74dfc5*/
-      v12 = *(_DWORD **)(*((_DWORD *)g_VoxelDrawState + v5) + 176); /*0x74dfd6*/
+      _DWORD * v12 = *(_DWORD **)(*((_DWORD *)g_VoxelDrawState + v5) + 176); /*0x74dfd6*/
       for ( j = 0; j <= *v12; *(_DWORD *)(v12[2] + 4 * j - 4) = 0 ) /*0x74dfe0*/
         ++j; /*0x74dfe5*/
       v2 = v19; /*0x74dff0*/
@@ -714,7 +707,7 @@ LABEL_18:
   memset(g_VeinholeMonsterPool, 0, v2); /*0x74e05c*/
   for ( m = g_VeinholePool - 1; m >= 0; --m ) /*0x74e06f*/
   {
-    v16 = *((_DWORD *)g_VoxelDrawState + m); /*0x74e077*/
+    int v16 = *((_DWORD *)g_VoxelDrawState + m); /*0x74e077*/
     if ( *(_BYTE *)(v16 + 256) ) /*0x74e07a*/
       RulesClass::Reset(); /*0x74e084*/
     else

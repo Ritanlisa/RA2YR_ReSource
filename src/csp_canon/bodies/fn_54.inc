@@ -25,6 +25,27 @@ int IPXGlobalConnClass::CheckStatus()
 }
 }
 
+// ==== BACKFILL 0x005402B0  Network_Init_5402B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_5402B0::Network_Init_5402B0(int a2) {
+{
+    int result;
+    result = DataGlobal_AA05A4;
+    if ( DataGlobal_AA05A4 )
+    this->M196 = 0;
+    return result;
+}
+
+/* ASM:
+mov     eax, dword_A8ED54+11850h
+test    eax, eax
+jz      short locret_5402C3
+mov     dword ptr [ecx+0C4h], 0
+
+locret_5402C3:                          ; CODE XREF: Network_Init_5402B0+7↑j
+retn    4
+*/
+} }
+
 // ==== BACKFILL 0x005402D0  IPXGlobalConnClass::Send  cls=IPXGlobalConnClass  sig=csp  renamed_refs=3  residual=- ====
 int IPXGlobalConnClass::Send()
 {
@@ -271,23 +292,23 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
     DataGlobal_AA0674 |= 1u;
     DataGlobal_AA06B0 = htonl((IUnknown *)0x7F000001);
   }
-    if ( *(int *)&HouseClass_Player.__pad_5568[8068] != 4 || !HouseClass_Player.__pad_5568[18668] || !DataGlobal_B052EC )
+    if ( *(int *)&HouseClass_Player[29932] != 4 || !HouseClass_Player[40532] || !DataGlobal_B052EC )
     return 0;
-    if ( *(unsigned short *)&aP0[1].Initialized == *(int *)&DataGlobal_830620.__pad_579C[49536] )
+    if ( *(unsigned short *)&aP0[1].Initialized == *(int *)&DataGlobal_830620[71964] )
   {
     *(short *)&aP0[1].Initialized = (short)aP4;
     aP0[1].Socket = *(int *)(a4 + 4);
     Network::FormatAddress((unsigned short *)a4, 0);
     Debug::Log();
-    LOWORD(v6) = *(short *)&DataGlobal_830620.__pad_579C[49536];
-    (*(void (__thiscall **)(int, IPXManagerClass *, int, void *, int, int, int, int))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 12))( *(int *)&DataGlobal_87C374.__pad_579C[23320], aP1, a3, &DataGlobal_AA06AC, 12, 0, 1, v6);
+    LOWORD(v6) = *(short *)&DataGlobal_830620[71964];
+    (*(void (__thiscall **)(int, IPXManagerClass *, int, void *, int, int, int, int))(**(int **)&DataGlobal_87C374[45748] + 12))( *(int *)&DataGlobal_87C374[45748], aP1, a3, &DataGlobal_AA06AC, 12, 0, 1, v6);
     return 1;
   }
     if ( !*(short *)&aP0[1].Initialized )
     return 0;
-    Network::CopyAddress_Small((char *)(**(int **)&HouseClass_Player.__pad_5568[18372] + 40), &aP1a);
+    Network::CopyAddress_Small((char *)(**(int **)&HouseClass_Player[40236] + 40), &aP1a);
     v8 = aP0 + 1;
-    if ( aP1a.Socket == aP0[1].Socket && *(short *)&HouseClass_Player.__pad_5568[20478] == *(short *)&aP0[1].Initialized )
+    if ( aP1a.Socket == aP0[1].Socket && *(short *)&HouseClass_Player[42342] == *(short *)&aP0[1].Initialized )
   {
     Debug::Log();
     return 0;
@@ -303,7 +324,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
     v8->Socket = 0;
     Network::FormatAddress((unsigned short *)v11, 0);
     Debug::Log();
-    (*(void (__thiscall **)(int, IPXManagerClass *, int, char *, int, int, int, short))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 12))( *(int *)&DataGlobal_87C374.__pad_579C[23320], aP1, a3, v11, 12, 0, 1, (short)v5);
+    (*(void (__thiscall **)(int, IPXManagerClass *, int, char *, int, int, int, short))(**(int **)&DataGlobal_87C374[45748] + 12))( *(int *)&DataGlobal_87C374[45748], aP1, a3, v11, 12, 0, 1, (short)v5);
     return 1;
 }
 }
@@ -328,11 +349,47 @@ namespace gamemd { int HouseClass::GetUpgradeValue() {
 }
 } }
 
+// ==== BACKFILL 0x00542FC0  Network_Init_542FC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_542FC0::Network_Init_542FC0(int a2) {
+{
+    int *v2;
+    int result;
+    v2 = (int *)this->M72;
+    if ( v2 )
+    return Network_Init_5402B0(v2, a2);
+    return result;
+}
+
+/* ASM:
+mov     ecx, [ecx+48h]
+test    ecx, ecx
+jz      short locret_542FD1
+mov     eax, [esp+arg_0]
+push    eax
+call    Network_Init_5402B0
+
+locret_542FD1:                          ; CODE XREF: Network_Init_542FC0+5↑j
+retn    4
+*/
+} }
+
 // ==== BACKFILL 0x00543040  IPXManagerClass::StubReturnFalse  cls=IPXManagerClass  sig=csp  renamed_refs=0  residual=- ====
 void IPXManagerClass::StubReturnFalse(int a1, int a2)
 {
   ;
 }
+
+// ==== BACKFILL 0x005430C0  StartGameWOL_Start  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_5430C0::StartGameWOL_Start(int a2) {
+{
+    int v2;
+    int result;
+    v2 = this->M72;
+    if ( v2 )
+    return (*(int (__thiscall **)(int, int))(*(int *)(v2) + 68))(v2, a2);
+    return result;
+}
+} }
 
 // ==== BACKFILL 0x005430E0  IPXManagerClass::QueryInterface  cls=IPXManagerClass  sig=csp  renamed_refs=0  residual=- ====
 IPXManagerClass * IPXManagerClass::QueryInterface(char a2)
@@ -361,7 +418,7 @@ namespace ra2 { namespace game { int AbstractClass::COMStub_5(void* a1, int a2) 
           *(_DWORD *)&aP1->__pad_0[8] = &IsometricTileClass::`vftable';
           *(_DWORD *)&aP1->__pad_0[12] = &vt_IsometricTileClass;
         }
-        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]);
+        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&aP1[1]);
       }
       return (int)Register->__pad_0;
 }
@@ -442,6 +499,68 @@ void nullsub_154(int a1, int a2)
 {
   ;
 }
+
+// ==== BACKFILL 0x00544CE0  Entity_Read  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_544CE0::Entity_Read() {
+{
+    int v2;
+    if ( !this )
+    return 0xFFFF;
+    v2 = 0;
+    if ( *(int *)&HouseClass_Player[45036] <= 0 )
+    return 0xFFFF;
+    while ( _strcmpi((const void *)(*(int *)(*(int *)&HouseClass_Player[45024] + 4 * v2) + 36), this) )
+  {
+    if ( ++v2 >= *(int *)&HouseClass_Player[45036] )
+    return 0xFFFF;
+  }
+    return v2;
+}
+} }
+
+// ==== BACKFILL 0x00544E00  Map_Get  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { void* Gap2Recv_544E00::Map_Get(int a2) {
+{
+    int v2;
+    int v3;
+    int *result;
+    v2 = this->M752;
+    v3 = a2;
+    if ( a2 > v2 - 1 )
+    v3 = a2 % v2;
+    for ( result = this; v3; --v3 )
+    result = (int *)result[175];
+    return result;
+}
+
+/* ASM:
+mov     eax, [esp+arg_0]
+push    esi
+mov     esi, [ecx+2F0h]
+push    edi
+mov     edx, eax
+lea     edi, [esi-1]
+cmp     eax, edi
+jle     short loc_544E18
+cdq
+idiv    esi
+
+loc_544E18:                             ; CODE XREF: Map_Get+13↑j
+pop     edi
+pop     esi
+test    edx, edx
+mov     eax, ecx
+jz      short locret_544E29
+
+loc_544E20:                             ; CODE XREF: Map_Get+27↓j
+mov     eax, [eax+2BCh]
+dec     edx
+jnz     short loc_544E20
+
+locret_544E29:                          ; CODE XREF: Map_Get+1E↑j
+retn    4
+*/
+} }
 
 // ==== BACKFILL 0x005471F0  CellClass::GetTerrainFlag  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::GetTerrainFlag(int a1) {
@@ -2629,6 +2748,37 @@ int IsometricTileTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[3] = -1252326136;
   return 0;
 }
+
+// ==== BACKFILL 0x00549E50  Map_Get_549E50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_549E50::Map_Get_549E50(int a2, int a3) {
+{
+    if ( !*(int *)(this + 164) && *(char *)(this + 756) )
+    MapClass::LoadFileData(this);
+    return *(int *)(*(int *)(this + 680) + 4 * a2) + 4 * a3;
+}
+
+/* ASM:
+push    esi
+mov     esi, ecx
+mov     eax, [esi+0A4h]
+test    eax, eax
+jnz     short loc_549E6C
+mov     al, [esi+2F4h]
+test    al, al
+jz      short loc_549E6C
+call    MapClass__LoadFileData
+
+loc_549E6C:                             ; CODE XREF: Map_Get_549E50+B↑j
+; Map_Get_549E50+15↑j
+mov     eax, [esi+2A8h]
+mov     ecx, [esp+4+arg_0]
+mov     edx, [esp+4+arg_4]
+pop     esi
+mov     eax, [eax+ecx*4]
+lea     eax, [eax+edx*4]
+retn    8
+*/
+} }
 
 // ==== BACKFILL 0x00549E90  TerrainClass::InitTheatre  cls=TerrainClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TerrainClass::InitTheatre() {

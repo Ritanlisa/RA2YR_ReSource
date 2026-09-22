@@ -63,12 +63,12 @@ namespace gamemd { int TeamClass::CreateOneOf(int a1) {
             return 0;
         }
       }
-      if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[21752] )
+      if ( !*(_DWORD *)&HouseClass_Player[43616] )
       {
         v4 = this->q0B8;
         if ( v4 >= 0 )
         {
-          if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] )
+          if ( *(_DWORD *)&HouseClass_Player[29932] )
           {
             if ( TeamClass::CountActiveTeamsForType(OwnerHouse, (ObjectClass *)this) >= this->q0B8 )
               return 0;
@@ -95,14 +95,14 @@ int TeamTypeClass::FindByName()
     if ( !this )
     return 0;
     v2 = 0;
-    if ( *(int *)&HouseClass_Player.__pad_5568[23036] <= 0 )
+    if ( *(int *)&HouseClass_Player[44900] <= 0 )
     return 0;
-    while ( _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2) + 36)) && _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2) + 100)) )
+    while ( _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player[44888] + 4 * v2) + 36)) && _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player[44888] + 4 * v2) + 100)) )
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[23036] )
+    if ( ++v2 >= *(int *)&HouseClass_Player[44900] )
     return 0;
   }
-    return *(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2);
+    return *(int *)(*(int *)&HouseClass_Player[44888] + 4 * v2);
 }
 }
 
@@ -118,27 +118,27 @@ TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
     int j;
     ObjectClass *v10;
     char Buffer[32];
-    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080]);
+    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&DataGlobal_830620[76508]);
     for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
   {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)&DataGlobal_830620.__pad_579C[54080], i);
-    INIClass::GetString( (unsigned char ***)a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], StringByIndex, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], (INIClass *)Buffer, 32);
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)&DataGlobal_830620[76508], i);
+    INIClass::GetString( (unsigned char ***)a1, (INIClass *)&DataGlobal_830620[76508], StringByIndex, (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)Buffer, 32);
     INIClass::ClearSection((int)a1, (INIClass *)Buffer, 0);
   }
-    INIClass::ClearSection((int)a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], 0);
-    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer.__pad_14B0[452];
+    INIClass::ClearSection((int)a1, (INIClass *)&DataGlobal_830620[76508], 0);
+    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer[5748];
     v8 = 0;
-    for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer.__pad_14B0[452]; ++j )
+    for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer[5748]; ++j )
   {
-    if ( *(int *)(*(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 232) == a2 )
+    if ( *(int *)(*(int *)(*(int *)&g_NetworkPlayerBuffer[5736] + 4 * j) + 232) == a2 )
     {
     v10 = (ObjectClass *)v8;
     v8 = (INIClass *)((char *)(v8) + 1);
     sprintf(Buffer, g_Str_Trace__d, v10);
-    INIClass::SetString( a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], (INIClass *)Buffer, (INIClass *)(*(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 36));
-    (*(void (__thiscall **)(int, char *))(**(int **)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 104))( *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j), a1);
+    INIClass::SetString( a1, (INIClass *)&DataGlobal_830620[76508], (INIClass *)Buffer, (INIClass *)(*(int *)(*(int *)&g_NetworkPlayerBuffer[5736] + 4 * j) + 36));
+    (*(void (__thiscall **)(int, char *))(**(int **)(*(int *)&g_NetworkPlayerBuffer[5736] + 4 * j) + 104))( *(int *)(*(int *)&g_NetworkPlayerBuffer[5736] + 4 * j), a1);
     }
-    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer.__pad_14B0[452];
+    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer[5748];
   }
     return result;
 }
@@ -172,10 +172,10 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TeamTypeClass;
     *(int *)&aP0->__pad_0[12] = &vt_TeamTypeClass;
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_24[8]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_24[20]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[11]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[15]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_24[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_24[20]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[11]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[15]);
     return 0;
   }
     return result;
@@ -240,13 +240,13 @@ int TeamTypeClass::FlashAllInstances(AnimClass * aP1)
     int result;
     int i;
     int v5;
-    result = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
-    for ( i = 0; i < *(int *)&g_CellDirectionOffsets.__pad_579C[62156]; ++i )
+    result = *(int *)&g_CellDirectionOffsets[84584];
+    for ( i = 0; i < *(int *)&g_CellDirectionOffsets[84584]; ++i )
   {
-    v5 = *(int *)(*(int *)&g_CellDirectionOffsets.__pad_579C[62144] + 4 * i);
+    v5 = *(int *)(*(int *)&g_CellDirectionOffsets[84572] + 4 * i);
     if ( *(void **)(v5 + 36) == this )
     TeamTypeClass::Check((int *)v5, (int)aP1);
-    result = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
+    result = *(int *)&g_CellDirectionOffsets[84584];
   }
     return result;
 }
@@ -597,7 +597,7 @@ namespace ra2 { namespace game { int TechnoClass::ExecuteMoveCommand() {
   {
     v3 = (void **)this->attachedTag;
     if ( v3 )
-    TeamClass::Update_0(v3, 33, (AbstractClass *)this, *(IUnknown **)&g_OverlayTypeConfig.__pad_579C[6844], 0, 0);
+    TeamClass::Update_0(v3, 33, (AbstractClass *)this, *(IUnknown **)&g_OverlayTypeConfig[29272], 0, 0);
     if ( (unsigned char)House::IsHumanPlayer(*((HouseClass **)(this) + 135)) || *(char *)(*(int *)(this->owner + 52) + 422) )
     {
     if ( g_MoveFeedback )

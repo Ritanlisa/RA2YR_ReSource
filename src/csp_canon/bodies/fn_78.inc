@@ -34,7 +34,7 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
     char v7[108];
     if ( wParam == -1 )
   {
-    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_14B0[14568], 0, g_Str_File_wonline_cpp, 3050);
+    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620[19864], 0, g_Str_File_wonline_cpp, 3050);
   }
     else
   {
@@ -45,7 +45,7 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
     FormatWOLPlayerInfo(a1, v7);
     return (CampaignScore *)a1;
     }
-    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_14B0[14568], 0, g_Str_File_wonline_cpp, 3055);
+    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620[19864], 0, g_Str_File_wonline_cpp, 3055);
   }
     WideString::Assign(a1, (CampaignScore *)StringCSF);
     return (CampaignScore *)a1;

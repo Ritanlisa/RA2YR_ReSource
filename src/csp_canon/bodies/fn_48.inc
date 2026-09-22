@@ -141,6 +141,15 @@ namespace gamemd { int CellClass::DamageAllObjects() {
 }
 } }
 
+// ==== BACKFILL 0x00483610  ObjectClass::processPointerInvalid  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int ObjectClass::processPointerInvalid()
+{
+int ObjectClass::processPointerInvalid()
+{
+  return (this->q140 >> 8) & 1;
+}
+}
+
 // ==== BACKFILL 0x00483620  BuildingClass::IsTiberiumCollectorEligible  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
 bool BuildingClass::IsTiberiumCollectorEligible() {
 if (!*((_BYTE*)g_ScenarioClass_Instance + 13478))
@@ -315,12 +324,12 @@ char E4Recv_483710::sub_483710()
     int BuildingByTiberiumType;
     int v3;
     IUnknown *v4;
-    if ( !*(char *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 13478) )
+    if ( !*(char *)(*(int *)&HouseClass_Player[29924] + 13478) )
     return 0;
     BuildingByTiberiumType = FindBuildingByTiberiumType(*(IUnknown **)(this + 68));
     if ( BuildingByTiberiumType == -1 )
     return 0;
-    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18632] + 4 * BuildingByTiberiumType);
+    v3 = *(int *)(*(int *)&DataGlobal_B05488[41060] + 4 * BuildingByTiberiumType);
     if ( (unsigned char)this->M284 || *(unsigned char *)(this + 286) >= *(int *)(v3 + 228) - 1 || *(double *)(v3 + 176) < 0.00001 )
   {
     return 0;
@@ -346,13 +355,13 @@ namespace gamemd { int CellClass::SpawnTiberiumTree(int a1) {
 
       if ( !a2 )
       {
-        if ( (char)**(_BYTE **)&HouseClass_Player.__pad_5568[8060] >= 0 )
+        if ( (char)**(_BYTE **)&HouseClass_Player[29924] >= 0 )
           return 0;
         BuildingByTiberiumType = FindBuildingByTiberiumType(*(IUnknown **)(this + 68));
         if ( BuildingByTiberiumType == -1
           || *(unsigned __int8 *)(this + 286) <= BuildingByTiberiumType / 2
           || this->slopeIndex
-          || *(double *)(*(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[18632] + 4 * BuildingByTiberiumType) + 160) < 0.00001
+          || *(double *)(*(_DWORD *)(*(_DWORD *)&stru_B05488[41060] + 4 * BuildingByTiberiumType) + 160) < 0.00001
           || this->firstObject )
         {
           return 0;
@@ -372,8 +381,8 @@ namespace gamemd { int CellClass::SpawnTiberiumTree(int a1) {
       {
         return 0;
       }
-      aP1 = *(ObjectClass **)(*(_DWORD *)&stru_B05488.__pad_579C[18632] + 4 * v5);
-      v7 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)7);
+      aP1 = *(ObjectClass **)(*(_DWORD *)&stru_B05488[41060] + 4 * v5);
+      v7 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)7);
       v8 = 0;
       while ( 1 )
       {
@@ -381,10 +390,10 @@ namespace gamemd { int CellClass::SpawnTiberiumTree(int a1) {
         if ( v9 < 8 )
         {
           v12 = this->smudgeTypeIndex;
-          LOWORD(v11) = *(_WORD *)&stru_89E138.__pad_14B0[4 * v9 + 160] + v12;
-          HIWORD(v11) = HIWORD(v12) + *(_WORD *)&stru_89E138.__pad_14B0[4 * v9 + 162];
+          LOWORD(v11) = *(_WORD *)&stru_89E138[5296][4 * v9 + 160] + v12;
+          HIWORD(v11) = HIWORD(v12) + *(_WORD *)&stru_89E138[5296][4 * v9 + 162];
           v12 = v11;
-          v10 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v12);
+          v10 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v12);
         }
         else
         {
@@ -1108,7 +1117,7 @@ namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
       int v55[4];
       int v56[4];
 
-      v4 = *(ObjectClass **)(*(_DWORD *)&stru_B05488.__pad_579C[18632] + 4 * (_DWORD)aP1);
+      v4 = *(ObjectClass **)(*(_DWORD *)&stru_B05488[41060] + 4 * (_DWORD)aP1);
       aP1a.NeedsSaveOrLink = v4;
       if ( a3 >= (int)v4[1].attachedBomb )
         return 0;
@@ -1120,7 +1129,7 @@ namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
           if ( v5 )
           {
             v46 = this->q024;
-            v6 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)1);
+            v6 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)1);
             Object::SpawnAtCell(
               v5,
               *(IUnknown **)(HouseClass_Player.field_38
@@ -1140,7 +1149,7 @@ namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
           if ( v7 )
           {
             v46 = this->q024;
-            v8 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)0xB);
+            v8 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)0xB);
             Object::SpawnAtCell(
               v7,
               *(IUnknown **)(HouseClass_Player.field_38 + 4 * (v8 + *((_DWORD *)v4[1].attachedTag + 165))),
@@ -1159,11 +1168,11 @@ namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
         v47[1] = v9[1];
         v48 = (AbstractClass *)v9[2];
         v10 = (MouseClass *)v9[3];
-        aP1a.NeedsSaveOrLink = *(void **)&stru_87C374.__pad_579C[21648];
+        aP1a.NeedsSaveOrLink = *(void **)&stru_87C374[44076];
         v49 = v10;
         v40 = v10;
         v38 = v48;
-        v53 = *(_DWORD *)&stru_87C374.__pad_579C[21652];
+        v53 = *(_DWORD *)&stru_87C374[44080];
         v11 = CellStruct::Copy(v47, (IUnknown *)&v50);
         v12 = (IUnknown *)Coord2D::Sub(v11, &aP1a, (IUnknown *)&aP1a.NeedsSaveOrLink);
         v13 = Rect::Construct(v54, v12, v38, (AbstractClass *)v40);
@@ -1173,15 +1182,15 @@ namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
           *(_DWORD *)&v13->__pad_0[8],
           *(_DWORD *)&v13->__pad_0[12],
           0);
-        BuildingClass::AddUpgrade((int)&stru_87C374.__pad_14B0[8132], (IUnknown *)(this + 36));
+        BuildingClass::AddUpgrade((int)&stru_87C374[13428], (IUnknown *)(this + 36));
         return 1;
       }
-      if ( !*(_BYTE *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 13478) )
+      if ( !*(_BYTE *)(*(_DWORD *)&HouseClass_Player[29924] + 13478) )
         return 0;
       BuildingByTiberiumType = FindBuildingByTiberiumType(*(IUnknown **)(this + 68));
       if ( BuildingByTiberiumType == -1 )
         return 0;
-      v16 = *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[18632] + 4 * BuildingByTiberiumType);
+      v16 = *(_DWORD *)(*(_DWORD *)&stru_B05488[41060] + 4 * BuildingByTiberiumType);
       if ( this->q11C
         || *(unsigned __int8 *)(this + 286) >= *(_DWORD *)(v16 + 228) - 1
         || *(double *)(v16 + 176) < 0.00001
@@ -1207,7 +1216,7 @@ namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
       else
       {
         v46 = v20[2];
-        if ( v46 <= 0 || (*(_DWORD *)aP1a.__pad_0 = v20[3], *(int *)aP1a.__pad_0 <= 0) )
+        if ( v46 <= 0 || (*(_DWORD *)aP1a[0] = v20[3], *(int *)aP1a[0] <= 0) )
         {
           v30 = (IUnknown *)ScreenRect[1];
           v21 = *ScreenRect;
@@ -1241,8 +1250,8 @@ namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
             v28 = (int)v48;
           else
             v28 = v22 - v21 + v46 + 1;
-          if ( (int)v24 + v25 < *(_DWORD *)aP1a.__pad_0 + v50 )
-            v25 = *(_DWORD *)aP1a.__pad_0 + v50 - (_DWORD)v24 + 1;
+          if ( (int)v24 + v25 < *(_DWORD *)aP1a[0] + v50 )
+            v25 = *(_DWORD *)aP1a[0] + v50 - (_DWORD)v24 + 1;
           v51 = v24;
           v29 = v28;
         }
@@ -1258,7 +1267,7 @@ namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
       else
       {
         v46 = v31[2];
-        if ( v46 <= 0 || (*(_DWORD *)aP1a.__pad_0 = v31[3], *(int *)aP1a.__pad_0 <= 0) )
+        if ( v46 <= 0 || (*(_DWORD *)aP1a[0] = v31[3], *(int *)aP1a[0] <= 0) )
         {
           v36 = v51;
           v35 = v25;
@@ -1289,17 +1298,17 @@ namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
           if ( v21 + v29 < v32 + v46 )
             v29 = v32 - v21 + v46 + 1;
           v35 = (int)v49;
-          if ( (int)v33 + (int)v49 < v50 + *(_DWORD *)aP1a.__pad_0 )
-            v35 = v50 + *(_DWORD *)aP1a.__pad_0 - (_DWORD)v33 + 1;
+          if ( (int)v33 + (int)v49 < v50 + *(_DWORD *)aP1a[0] )
+            v35 = v50 + *(_DWORD *)aP1a[0] - (_DWORD)v33 + 1;
           v36 = v33;
         }
       }
       aP1a.abstractFlags = (int)v36;
-      *(_DWORD *)&aP1a.__pad_0[4] = *(_DWORD *)&stru_87C374.__pad_579C[21652];
+      *(_DWORD *)&aP1a[4] = *(_DWORD *)&stru_87C374[44080];
       aP1a.referenceCount = v35;
       aP1a.uniqueId = v21;
       aP1a.nextArrayIndex = v29;
-      *(_DWORD *)aP1a.__pad_0 = *(_DWORD *)&stru_87C374.__pad_579C[21648];
+      *(_DWORD *)aP1a[0] = *(_DWORD *)&stru_87C374[44076];
       v37 = Bounds::Subtract(&aP1a.uniqueId, (IUnknown *)v55, &aP1a);
       Cell::CreateCrater(*v37, v37[1], v37[2], v37[3], 0);
       BuildingClass::AddOccupancy((int)aP1a.NeedsSaveOrLink, (__int16 *)(this + 36));
@@ -1793,25 +1802,25 @@ int GetWarheadVersusMultiplier(CoordStruct * aP0, BuildingTypeClass * aP1, Coord
     v4 = aP0;
     if ( !aP0 || !aP1 )
     return 0;
-    if ( aP2 == (CoordStruct *)2 && aP1->__pad_14D[0] && (*((int *)Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)aP3) + 80) & 0x100) == 0 && (int)aP3->field_8 < Cell::GetGroundHeight((IUnknown *)aP3) + 2 * *(int *)&DataGlobal_89E138.__pad_71C[28] )
+    if ( aP2 == (CoordStruct *)2 && aP1->__pad_14D[0] && (*((int *)Coord::To_Cell(&DataGlobal_87C374[13428], (IUnknown *)aP3) + 80) & 0x100) == 0 && (int)aP3->field_8 < Cell::GetGroundHeight((IUnknown *)aP3) + 2 * *(int *)&DataGlobal_89E138[1848] )
   {
-    v6 = *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 3024);
+    v6 = *(int *)(*(int *)&DataGlobal_87C374[44652] + 3024);
     if ( v6 )
     {
     v7 = 35 * v6 - 1;
     if ( (int)v4 < v7 )
     v7 = (int)v4;
-    return *(int *)(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 3012) + 4 * (v7 / 35));
+    return *(int *)(*(int *)(*(int *)&DataGlobal_87C374[44652] + 3012) + 4 * (v7 / 35));
     }
     return 0;
   }
-    if ( aP1 == *(BuildingTypeClass **)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 6068) )
-    return *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 756);
+    if ( aP1 == *(BuildingTypeClass **)(*(int *)&DataGlobal_87C374[44652] + 6068) )
+    return *(int *)(*(int *)&DataGlobal_87C374[44652] + 756);
     v9 = aP1->ChargerBarrels[4];
     if ( !v9 )
     return 0;
     if ( aP1->__pad_14D[7] )
-    return *(int *)(aP1->ChargerBarrels[1] + 4 * Random::Range( (int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)(v9 - 1)));
+    return *(int *)(aP1->ChargerBarrels[1] + 4 * Random::Range( (int *)(*(int *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)(v9 - 1)));
     v10 = 25 * v9 - 1;
     if ( (int)v4 >= v10 )
     v4 = (CoordStruct *)v10;

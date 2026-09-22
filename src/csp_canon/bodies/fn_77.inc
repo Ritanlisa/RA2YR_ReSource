@@ -23,7 +23,7 @@ void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClas
     v6 = StaticString::Factory(*(void**)this);
     ConcatStringAlloc(&a2a, (const char **)v6, v16);
     unknown_libname_73(&v17);
-    String::Assign((char **)&aP4, &DataGlobal_87F8E4.__pad_5568[20760]);
+    String::Assign((char **)&aP4, &DataGlobal_87F8E4[42624]);
     INIClass::ReadString((ObjectClass *)a1, (ObjectClass *)a2, (ObjectClass *)&a2a, (ReferenceCounted *)&aP4, (int)&v17);
     DeleteAndZero((void **)&aP4);
     v7 = (int)*(this + 6 * a4 + 223);
@@ -392,7 +392,7 @@ namespace gamemd { void INIClass::ReadTokenizedPair(void* a1, void* a2, void* a3
       String::Concat((const char **)v8, &a2, (IUnknown *)v26);
       DeleteAndZero((int)&aP3);
       unknown_libname_73(&aP5);
-      String::Assign((char **)&aP3, &stru_87C374.__pad_579C[33876]);
+      String::Assign((char **)&aP3, &stru_87C374[56304]);
       INIClass::ReadString(aP1, aP2, (ObjectClass *)&a2, (ReferenceCounted *)&aP3, (int)&aP5);
       DeleteAndZero((int)&aP3);
       v9 = this + 12 * a5;
@@ -428,7 +428,7 @@ namespace gamemd { void INIClass::ReadTokenizedPair(void* a1, void* a2, void* a3
       }
       DeleteAndZero((int)&aP3);
       String::Append((const char **)&a2, (CCINIClass *)&g_Str_WWD_Allied.sectionHead[2]);
-      String::Assign((char **)&aP3, &stru_87C374.__pad_579C[33876]);
+      String::Assign((char **)&aP3, &stru_87C374[56304]);
       INIClass::ReadString(aP1, aP2, (ObjectClass *)&a2, (ReferenceCounted *)&aP3, (int)&aP5);
       DeleteAndZero((int)&aP3);
       v17 = v9 + 7;
@@ -1014,7 +1014,7 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
     CloseHandle(*((HANDLE *)(this) + 23));
     *((int *)(this) + 23) = -1;
   }
-    if ( *(int *)(this + 36) )
+    if ( this->q024 )
     __3_YAXPAX_Z(*((void **)(this) + 9));
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

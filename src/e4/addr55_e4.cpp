@@ -161,35 +161,15 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   BuildingTypeClass *v1; // ebx
   ObjectClass *v2; // eax
   unsigned int v11; // edx
-  unsigned int v12; // ecx
   unsigned __int8 v13; // cl
   unsigned __int8 v14; // dl
   int referenceCount; // eax
   Tactical *v16; // edi
   CoordStruct *v17; // eax
-  int v18; // eax
-  int v19; // ecx
-  int v20; // esi
-  int v21; // edi
-  int v22; // eax
-  int v23; // ebx
-  int v24; // esi
-  int v25; // ecx
-  int v26; // eax
-  int v27; // ecx
-  int v28; // eax
-  float v29; // esi
-  int v30; // esi
-  unsigned int v31; // esi
-  int v32; // ecx
   __int16 v33; // ax
   __int16 v34; // ax
-  int v35; // ebp
-  int v36; // edi
-  int v37; // esi
   CoordStruct *v38; // esi
   CoordStruct *v39; // edi
-  float aP2; // [esp+38h] [ebp-158h]
   float aP2a; // [esp+38h] [ebp-158h]
   float aP2b; // [esp+38h] [ebp-158h]
   float aP2c; // [esp+38h] [ebp-158h]
@@ -306,7 +286,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   {
     unsigned int v10 = 2 * (unsigned __int8)v1->UINameLabel[6]; /*0x550c64*/
     v11 = 2 * (unsigned __int8)v1->UINameLabel[4]; /*0x550c66*/
-    v12 = 2 * (unsigned __int8)v1->UINameLabel[5]; /*0x550c68*/
+    unsigned int v12 = 2 * (unsigned __int8)v1->UINameLabel[5]; /*0x550c68*/
     if ( v10 > 0xFF ) /*0x550c6f*/
       LOBYTE(v10) = -1; /*0x550c71*/
     if ( v12 > 0xFF ) /*0x550c7c*/
@@ -346,18 +326,18 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     {
       if ( v17 ) /*0x550d33*/
       {
-        v18 = 4 * (_DWORD)v16; /*0x550d3f*/
-        v19 = dword_ABC7F8[4 * (_DWORD)v16]; /*0x550d42*/
-        v20 = dword_ABC7FC[4 * (_DWORD)v16]; /*0x550d48*/
+        int v18 = 4 * (_DWORD)v16; /*0x550d3f*/
+        int v19 = dword_ABC7F8[4 * (_DWORD)v16]; /*0x550d42*/
+        int v20 = dword_ABC7FC[4 * (_DWORD)v16]; /*0x550d48*/
         v68 += v19; /*0x550d52*/
         v69 += v20; /*0x550d5a*/
-        v21 = dword_ABC800[4 * (_DWORD)v16]; /*0x550d5e*/
-        v22 = dword_ABC804[v18]; /*0x550d64*/
+        int v21 = dword_ABC800[4 * (_DWORD)v16]; /*0x550d5e*/
+        int v22 = dword_ABC804[v18]; /*0x550d64*/
         v63 += v21; /*0x550d6c*/
         v64 += v22; /*0x550d76*/
         LODWORD(v62) = v19 + v62; /*0x550d84*/
-        v23 = v20 + HIDWORD(v62); /*0x550d8c*/
-        v24 = v21 + v67; /*0x550d92*/
+        int v23 = v20 + HIDWORD(v62); /*0x550d8c*/
+        int v24 = v21 + v67; /*0x550d92*/
         v16 = v59; /*0x550d94*/
         HIDWORD(v62) = v23; /*0x550d9a*/
         v1 = (BuildingTypeClass *)v72[0]; /*0x550d9e*/
@@ -366,8 +346,8 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
       }
       else if ( (v70 & 1) != 0 ) /*0x550db3*/
       {
-        v25 = dword_ABC7F8[4 * (_DWORD)v16]; /*0x550dbc*/
-        v26 = dword_ABC804[4 * (_DWORD)v16]; /*0x550dc2*/
+        int v25 = dword_ABC7F8[4 * (_DWORD)v16]; /*0x550dbc*/
+        int v26 = dword_ABC804[4 * (_DWORD)v16]; /*0x550dc2*/
         v68 += v25; /*0x550dca*/
         v64 += v26; /*0x550dd4*/
         LODWORD(v62) = v25 + v62; /*0x550de4*/
@@ -375,8 +355,8 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
       }
       else
       {
-        v27 = dword_ABC7FC[4 * (_DWORD)v16]; /*0x550df5*/
-        v28 = dword_ABC800[4 * (_DWORD)v16]; /*0x550dfb*/
+        int v27 = dword_ABC7FC[4 * (_DWORD)v16]; /*0x550df5*/
+        int v28 = dword_ABC800[4 * (_DWORD)v16]; /*0x550dfb*/
         v69 += v27; /*0x550e03*/
         v63 += v28; /*0x550e0d*/
         HIDWORD(v62) += v27; /*0x550e1d*/
@@ -386,7 +366,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
       {
         if ( v54 ) /*0x550e38*/
         {
-          v29 = v65; /*0x550e3e*/
+          float v29 = v65; /*0x550e3e*/
           (*(void (__thiscall **)(_DWORD, char *, int *, __int64 *, __int16 *, float, int, int))(**(_DWORD **)&stru_87C374[44960] /*0x550e61*/
                                                                                                + 64))(
             *(_DWORD *)&stru_87C374[44960],
@@ -413,6 +393,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
           v57[2] = v11; /*0x550e98*/
           *(_WORD *)v57 = v55; /*0x550ea0*/
           Color::Lerp(v57, aP1, a2); /*0x550eab*/
+  int v30; // esi
           v30 = (v57[0] >> stru_89E138[11420] << stru_89E138[11416]) /*0x550f09*/
               | (v57[1] >> stru_89E138[11436] << stru_89E138[11432])
               | (v57[2] >> stru_89E138[11428] << stru_89E138[11424]);
@@ -446,7 +427,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
         else
         {
           v11 = v56 >> 1; /*0x550f8f*/
-          v31 = v54 != 0 ? 8 : 64;
+          unsigned int v31 = v54 != 0 ? 8 : 64;
           if ( (unsigned __int8)v55 >> 1 < v31 && HIBYTE(v55) >> 1 < v31 && v11 < v31 ) /*0x550fa7*/
           {
 LABEL_37:
@@ -460,7 +441,7 @@ LABEL_37:
           v56 >>= 1; /*0x550fb9*/
         }
       }
-      v32 = v1->referenceCount; /*0x550fc1*/
+      int v32 = v1->referenceCount; /*0x550fc1*/
       if ( ++v70 > v32 ) /*0x550fcb*/
         goto LABEL_37; /*0x550fcb*/
     }
@@ -475,9 +456,9 @@ LABEL_37:
     *(_QWORD *)aP4 = (unsigned __int16)(v4 + v34 - v76 - *(_WORD *)&stru_87C374[44080]); /*0x551036*/
     *(_QWORD *)v72 = (unsigned __int16)(v5 + v34 - WORD2(v74) - *(_WORD *)&stru_87C374[44080]); /*0x551053*/
     *(float *)aP4 = (double)*(__int64 *)aP4 * 0.000015259022; /*0x551064*/
-    v35 = ((int)aP1 * v61) >> 8; /*0x551086*/
-    v36 = ((int)aP1 * HIBYTE(v60)) >> 8; /*0x551089*/
-    v37 = ((int)aP1 * (unsigned __int8)v60) >> 8; /*0x55108c*/
+    int v35 = ((int)aP1 * v61) >> 8; /*0x551086*/
+    int v36 = ((int)aP1 * HIBYTE(v60)) >> 8; /*0x551089*/
+    int v37 = ((int)aP1 * (unsigned __int8)v60) >> 8; /*0x55108c*/
     *(float *)v72 = (double)*(__int64 *)v72 * 0.000015259022; /*0x55108f*/
     ColorStruct::SetRGB( /*0x55109d*/
       &v77,
@@ -487,7 +468,7 @@ LABEL_37:
     ColorStruct::SetRGB(&v78, v37, v36, v35); /*0x5510ac*/
     v38 = aP4[0]; /*0x5510b1*/
     *(float *)&aP0a = (float)v69; /*0x5510bf*/
-    aP2 = (float)v68; /*0x5510ce*/
+    float aP2 = (float)v68; /*0x5510ce*/
     Tactical::SetCellTransform(v77[0], 0, (CoordStruct *)LODWORD(aP2), (int)aP0a, aP4[0], 0, 0); /*0x5510d3*/
     *(float *)&v48 = (float)v64; /*0x5510e5*/
     aP2a = (float)v63; /*0x5510f4*/
@@ -1657,29 +1638,20 @@ void DecodeBlockLCW(AbstractClass * aP0, Pipe * aP1, unsigned char * a2, unsigne
   AbstractClass *v7; // ebp
   unsigned int v8; // edx
   char *v9; // eax
-  int v10; // edx
   unsigned __int8 v11; // cl
   unsigned __int8 v12; // cl
   unsigned __int8 *v13; // esi
   unsigned __int8 *v14; // eax
   unsigned __int8 v15; // cl
-  char *v16; // eax
-  int v17; // ecx
   _BYTE *v18; // ecx
-  _BYTE *v19; // esi
-  int v20; // ecx
   _BYTE *v21; // edi
   int v22; // edx
-  int v23; // edx
   unsigned __int8 v24; // cl
   _BYTE *v25; // edi
-  int v26; // edx
   unsigned __int8 v27; // cl
   _BYTE *v28; // edi
   unsigned __int8 *v29; // eax
   _BYTE *v30; // edi
-  _BYTE *v32; // esi
-  _BYTE *v33; // edi
   v5 = aP0; /*0x55c0e5*/
   *a3 = 0; /*0x55c0e8*/
   _BYTE * v6 = a2; /*0x55c0ef*/
@@ -1696,7 +1668,7 @@ LABEL_3:
   {
     if ( !v8 ) /*0x55c119*/
     {
-      v10 = 15; /*0x55c11d*/
+      int v10 = 15; /*0x55c11d*/
       if ( !*v9 ) /*0x55c11b*/
       {
         do /*0x55c132*/
@@ -1720,7 +1692,7 @@ LABEL_3:
     *v13 = v15; /*0x55c14b*/
     v6 = v13 + 1; /*0x55c14d*/
 LABEL_9:
-    v16 = &v5->__pad_0[1]; /*0x55c14e*/
+    char * v16 = &v5->__pad_0[1]; /*0x55c14e*/
     do /*0x55c156*/
     {
       *v6++ = *v16++; /*0x55c151*/
@@ -1731,13 +1703,13 @@ LABEL_9:
     v9 = v16 + 1; /*0x55c15c*/
     if ( v8 < 0x10 ) /*0x55c160*/
     {
-      v17 = (int)&v6[-(v8 >> 2) + -4 * (unsigned __int8)*v9]; /*0x55c170*/
+      int v17 = (int)&v6[-(v8 >> 2) + -4 * (unsigned __int8)*v9]; /*0x55c170*/
       v5 = (AbstractClass *)(v9 + 1); /*0x55c17e*/
       *v6++ = *(_BYTE *)(v17 - 2049); /*0x55c17f*/
       v18 = (_BYTE *)(v17 - 2049 + 1); /*0x55c182*/
 LABEL_13:
       *v6 = *v18; /*0x55c183*/
-      v19 = v6 + 1; /*0x55c18a*/
+      _BYTE * v19 = v6 + 1; /*0x55c18a*/
       *v19 = v18[1]; /*0x55c18b*/
       v6 = v19 + 1; /*0x55c18d*/
       goto LABEL_14; /*0x55c18d*/
@@ -1757,7 +1729,7 @@ LABEL_13:
     v22 = v8 & 0x1F; /*0x55c1eb*/
     if ( !v22 ) /*0x55c1ee*/
     {
-      v23 = 31; /*0x55c1f2*/
+      int v23 = 31; /*0x55c1f2*/
       if ( !*v9 ) /*0x55c1f0*/
       {
         do /*0x55c207*/
@@ -1774,10 +1746,10 @@ LABEL_13:
     v5 = (AbstractClass *)(v9 + 2); /*0x55c227*/
 LABEL_33:
     *v6 = *v21; /*0x55c28e*/
-    v32 = v6 + 1; /*0x55c295*/
+    _BYTE * v32 = v6 + 1; /*0x55c295*/
     *v32 = v21[1]; /*0x55c297*/
     v6 = v32 + 1; /*0x55c299*/
-    v33 = v21 + 2; /*0x55c29a*/
+    _BYTE * v33 = v21 + 2; /*0x55c29a*/
     do /*0x55c2a2*/
     {
       *v6++ = *v33++; /*0x55c29d*/
@@ -1785,7 +1757,7 @@ LABEL_33:
     }
     while ( v22 ); /*0x55c2a2*/
 LABEL_14:
-    v20 = BYTE2(v5[-1].NeedsSaveOrLink) & 3; /*0x55c18e*/
+    int v20 = BYTE2(v5[-1].NeedsSaveOrLink) & 3; /*0x55c18e*/
     if ( (BYTE2(v5[-1].NeedsSaveOrLink) & 3) == 0 ) /*0x55c194*/
       goto LABEL_3; /*0x55c194*/
     do /*0x55c1a1*/
@@ -1808,7 +1780,7 @@ LABEL_14:
   v22 = v8 & 7; /*0x55c236*/
   if ( !v22 ) /*0x55c239*/
   {
-    v26 = 7; /*0x55c23d*/
+    int v26 = 7; /*0x55c23d*/
     if ( !*v9 ) /*0x55c23b*/
     {
       do /*0x55c252*/
@@ -2004,22 +1976,12 @@ void GameFrameLoop()
   unsigned __int8 v32; // cl
   int Object; // eax
   int v38; // eax
-  int v39; // eax
   int v40; // eax
   int v41; // edx
   int Time; // [esp+10h] [ebp-1B4h] BYREF
   int v43; // [esp+14h] [ebp-1B0h] BYREF
-  int v44; // [esp+18h] [ebp-1ACh]
-  int v45; // [esp+1Ch] [ebp-1A8h] BYREF
   int i; // [esp+20h] [ebp-1A4h] BYREF
   int v47; // [esp+24h] [ebp-1A0h] BYREF
-  _BYTE v48[8]; // [esp+28h] [ebp-19Ch] BYREF
-  int v49; // [esp+30h] [ebp-194h] BYREF
-  int v50; // [esp+34h] [ebp-190h] BYREF
-  int v51; // [esp+38h] [ebp-18Ch] BYREF
-  int v52; // [esp+3Ch] [ebp-188h] BYREF
-  int v53; // [esp+40h] [ebp-184h] BYREF
-  _DWORD v54[2]; // [esp+44h] [ebp-180h] BYREF
   char Str[264]; // [esp+4Ch] [ebp-178h] BYREF
   _BYTE Buffer[112]; // [esp+154h] [ebp-70h] BYREF
 
@@ -2087,6 +2049,7 @@ LABEL_61:
   }
   else
   {
+  int v44; // [esp+18h] [ebp-1ACh]
     if ( DataGlobal_87F7E8[536412] ) /*0x55d499*/
     {
       int v2 = 60 / DataGlobal_87F7E8[536412]; /*0x55d507*/
@@ -2244,6 +2207,9 @@ LABEL_72:
   char v20 = DataGlobal_87F7E8[538500]; /*0x55d878*/
   if ( (DataGlobal_87F7E8[538500] & 2) == 0 && !dword_A8ED54[19] && LOBYTE(dword_A8ED54[11]) ) /*0x55d895*/
   {
+  int v51; // [esp+38h] [ebp-18Ch] BYREF
+  int v52; // [esp+3Ch] [ebp-188h] BYREF
+  int v53; // [esp+40h] [ebp-184h] BYREF
     InputManager_ProcessEvents::Vtable(DataGlobal_87F7E8, &v51, &v53, &v52); /*0x55d8ab*/
     SyncDelayClass::ProcessNetworkSync(&v51); /*0x55d8b4*/
     if ( LOBYTE(DataGlobal_87F7E8[536627]) ) /*0x55d8c0*/
@@ -2257,6 +2223,10 @@ LABEL_72:
   BYTE1(dword_A8ED54[18]) = 0; /*0x55d903*/
   if ( (v20 & 1) != 0 || (v20 & 2) != 0 ) /*0x55d912*/
   {
+  _DWORD v54[2]; // [esp+44h] [ebp-180h] BYREF
+  int v49; // [esp+30h] [ebp-194h] BYREF
+  _BYTE v48[8]; // [esp+28h] [ebp-19Ch] BYREF
+  int v45; // [esp+1Ch] [ebp-1A8h] BYREF
     if ( (v20 & 1) != 0 ) /*0x55d91a*/
     {
       int * v21 = RequestMapSnapshot((_DWORD *)DataGlobal_87F7E8[7887], v54); /*0x55d92b*/
@@ -2313,6 +2283,7 @@ LABEL_72:
             v33 = -1; /*0x55dac6*/
           ++v30; /*0x55dae8*/
         }
+  int v50; // [esp+34h] [ebp-190h] BYREF
         CCFileClass::Read(&DataGlobal_87F7E8[538473], &v50, 4); /*0x55dafd*/
         if ( v50 != i ) /*0x55db0c*/
           MapClass::UnselectAll_ClearLimboLaunchers(); /*0x55db0e*/
@@ -2389,7 +2360,7 @@ LABEL_128:
     {
       if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[536213] + 4))(DataGlobal_87F7E8[536213]) ) /*0x55ddc5*/
       {
-        v39 = *(_DWORD *)((DataGlobal_87F7E8[61] << 11) + DataGlobal_87F7E8[79] + 10268); /*0x55dde1*/
+        int v39 = *(_DWORD *)((DataGlobal_87F7E8[61] << 11) + DataGlobal_87F7E8[79] + 10268); /*0x55dde1*/
         if ( v39 ) /*0x55dde5*/
         {
           if ( *(_DWORD *)(v39 + 304) != 1 || (*(_BYTE *)(v39 + 300) & 0x18) != 0 ) /*0x55ddf7*/

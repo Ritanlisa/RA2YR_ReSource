@@ -254,7 +254,7 @@ retn    10h
 int TacticalClass::SetPositionThunk(MouseClass * aP0)
 {
 {
-    return Tactical::SetTacticalPosition(*(int *)&DataGlobal_87C374.__pad_579C[22548], (IUnknown *)aP0);
+    return Tactical::SetTacticalPosition(*(int *)&DataGlobal_87C374[44976], (IUnknown *)aP0);
 }
 }
 
@@ -1166,7 +1166,7 @@ namespace gamemd { void RadSiteClass::Constructor() {
     this->vtable2 = (unsigned int)vt_RadSiteClass;
     this->vtable3 = (unsigned int)vt_RadSiteClass;
     this->vtable4 = &vt_RadSiteClass;
-    v2 = CellCoord::To_CellObj(&DataGlobal_87C374.__pad_14B0[8132], (short *)(this) + 32);
+    v2 = CellCoord::To_CellObj(&DataGlobal_87C374[13428], (short *)(this) + 32);
     TerrainClass::SetFieldF8(v2, 0);
     LOBYTE(v3) = 1;
     AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, v3);
@@ -1222,17 +1222,17 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 )
     {
     AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    v3 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+    v3 = *(IUnknown **)&HouseClass_Player[45112];
     *(int *)&aP0[1].vtable1[12] = 0;
     *(int *)&aP0[1].vtable1[4] = v3;
-    aP0[1].uniqueId = *(int *)&HouseClass_Player.__pad_5568[23248];
+    aP0[1].uniqueId = *(int *)&HouseClass_Player[45112];
     aP0[1].nextArrayIndex = 0;
     *(int *)aP0->vtable1 = (unsigned int)vt_RadSiteClass;
     *(int *)&aP0->vtable1[4] = (unsigned int)vt_RadSiteClass;
     *(int *)&aP0->vtable1[8] = (unsigned int)vt_RadSiteClass;
     *(int *)&aP0->vtable1[12] = &vt_RadSiteClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
   }
     return (int)Prefix_0->vtable1;
 }
@@ -1256,6 +1256,11 @@ int RadSiteClass::ddtor(int a1, unsigned int * a2)
   a2[2] = -1610598260;
   a2[3] = 1153315785;
   return 0;
+}
+
+// ==== BACKFILL 0x0065B4B0  RadSiteClass::GetSpread  cls=RadSiteClass  sig=csp  renamed_refs=0  residual=- ====
+int RadSiteClass::GetSpread() const {
+    return this->Spread;
 }
 
 // ==== BACKFILL 0x0065BED0  RadSiteClass::ProcessEvent  cls=RadSiteClass  sig=csp  renamed_refs=0  residual=- ====
@@ -1319,7 +1324,7 @@ void AbstractClass::resetTeamState()
 char * RAMFileClass::nullsub_0_5()
 {
 {
-    return &DataGlobal_830620.__pad_579C[14464];
+    return &DataGlobal_830620[36892];
 }
 }
 
@@ -1572,36 +1577,36 @@ int globalHelper_05EAB0(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a
     int v16;
     int v17;
     int v18[3];
-    v7 = *(int *)(*(int *)&HouseClass_Player.__pad_5568[8040] + 4 * a2);
+    v7 = *(int *)(*(int *)&HouseClass_Player[29904] + 4 * a2);
     v16 = v7;
     v15 = 0;
     if ( (int)aP2 > 0 )
   {
     while ( 1 )
     {
-    ++*(int *)&HouseClass_Player.__pad_5568[21752];
+    ++*(int *)&HouseClass_Player[43616];
     v8 = (*(int (__thiscall **)(int, unsigned int *))(*(int *)(v7) + 140))(v7, a0);
     v9 = v8;
-    --*(int *)&HouseClass_Player.__pad_5568[21752];
+    --*(int *)&HouseClass_Player[43616];
     if ( !v8 )
     break;
     *(char *)(v8 + 980) = 1;
     TransitionCount = (MouseClass *)*((int*)(a0) + 120);
     if ( (unsigned int)TransitionCount >= 4 )
     TransitionCount = (MouseClass *)HouseClass::GetTransitionCount(a0);
-    v11 = *CellClass::FindOpenNeighbor( (int *)&DataGlobal_87C374.__pad_14B0[8132], (MouseClass *)&v17, TransitionCount, (int)&DataGlobal_B04C38, (int)&DataGlobal_B04C38, 4, 1, 0);
+    v11 = *CellClass::FindOpenNeighbor( (int *)&DataGlobal_87C374[13428], (MouseClass *)&v17, TransitionCount, (int)&DataGlobal_B04C38, (int)&DataGlobal_B04C38, 4, 1, 0);
     (*(void (__thiscall **)(int, int, int))(*(int *)(v9) + 488))(v9, a4, 0);
     if ( a6 )
     (*(void (__thiscall **)(int, int, int))(*(int *)(v9) + 1152))(v9, a6, 1);
     if ( a5 )
     (*(void (__thiscall **)(int, int))(*(int *)(v9) + 968))(v9, a5);
     v18[0] = ((short)v11 << 8) + 128;
-    ++*(int *)&HouseClass_Player.__pad_5568[21752];
+    ++*(int *)&HouseClass_Player[43616];
     v12 = *(int *)v9;
     v18[1] = (SHIWORD(v11) << 8) + 128;
     v18[2] = 0;
     v13 = (*(int (__thiscall **)(int, int *, int))(v12 + 216))(v9, v18, 0);
-    --*(int *)&HouseClass_Player.__pad_5568[21752];
+    --*(int *)&HouseClass_Player[43616];
     if ( !v13 )
       {
     if ( v9 )

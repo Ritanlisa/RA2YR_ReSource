@@ -177,7 +177,6 @@ int Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnkno
   IUnknown *v72; // ebp
   int v101; // [esp+3Ch] [ebp-38h] BYREF
   _DWORD *v102; // [esp+40h] [ebp-34h]
-  int v103; // [esp+44h] [ebp-30h]
   int v104; // [esp+48h] [ebp-2Ch] BYREF
   int v105; // [esp+4Ch] [ebp-28h] BYREF
   int v106; // [esp+50h] [ebp-24h]
@@ -378,6 +377,7 @@ LABEL_33:
     if ( v49 == v9 ) /*0x58289b*/
     {
       v51 = v49; /*0x5828a5*/
+  int v103; // [esp+44h] [ebp-30h]
       HIWORD(v103) = (_WORD)aP5a; /*0x5828a7*/
       LOWORD(v103) = v49 + 1; /*0x5828b3*/
       v95 = v103; /*0x5828c0*/

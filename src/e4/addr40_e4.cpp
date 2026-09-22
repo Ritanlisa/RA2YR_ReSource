@@ -679,17 +679,11 @@ void Audio_Process()
   void ***v16; // eax
   unsigned int v30; // edx
   void **v31; // esi
-  int v32; // eax
-  int v33; // eax
-  int v34; // ebx
   void **v35; // edi
   void **v36; // ebp
-  int v37; // eax
-  int v38; // eax
   void **v39; // [esp+0h] [ebp-8h]
   void **v40; // [esp+0h] [ebp-8h]
   int v41; // [esp+4h] [ebp-4h]
-  int v42; // [esp+4h] [ebp-4h]
   result = g_AudioConfigState; /*0x4041d0*/
   if ( !g_AudioConfigState ) /*0x4041da*/
     return result; /*0x4041da*/
@@ -915,15 +909,16 @@ LABEL_59:
         if ( !result ) /*0x4045c2*/
         {
           PrefetchAudioSamples(v31); /*0x4045ca*/
-          v32 = AudioStream::SetupPlayback(v31); /*0x4045d1*/
+          int v32 = AudioStream::SetupPlayback(v31); /*0x4045d1*/
           v31[82] = (void *)v32; /*0x4045d8*/
           if ( !v32 ) /*0x4045de*/
           {
+  int v37; // eax
             do /*0x40466b*/
             {
-              v42 = 0; /*0x4045ed*/
-              v33 = PollNextAudioQueue((char *)v31[85] + *((_DWORD *)v31[9] + 16)); /*0x4045fa*/
-              v34 = v33; /*0x4045ff*/
+              int v42 = 0; /*0x4045ed*/
+              int v33 = PollNextAudioQueue((char *)v31[85] + *((_DWORD *)v31[9] + 16)); /*0x4045fa*/
+              int v34 = v33; /*0x4045ff*/
               if ( !v33 ) /*0x404603*/
                 break; /*0x404603*/
               LinkedList::Init(v33 + 164); /*0x40460b*/
@@ -951,7 +946,7 @@ LABEL_59:
             }
             while ( !v37 ); /*0x40466b*/
           }
-          v38 = AudioStream::SetupPlayback(v31); /*0x404673*/
+          int v38 = AudioStream::SetupPlayback(v31); /*0x404673*/
           v31[82] = (void *)v38; /*0x40467a*/
           if ( !v38 || (result = Audio::UpdatePlaybackPosition(v31)) == 0 ) /*0x40468d*/
           {
@@ -988,9 +983,6 @@ int E4Recv_404BB0::sub_404BB0()
   int v16; // eax
   int v17; // edi
   int v18; // ecx
-  _DWORD *v19; // eax
-  int v20; // eax
-  int v21; // edi
   _DWORD * v2 = *(_DWORD **)(this + 36); /*0x404bb6*/
   int v3 = v2[4]; /*0x404bc5*/
   char v4 = v3; /*0x404bca*/
@@ -1069,8 +1061,8 @@ LABEL_29:
   if ( ((unsigned char)this->M24 & 8) == 0 && *(int *)(this + 624) <= 0 ) /*0x404cf0*/
   {
 LABEL_34:
-    v20 = this->M624; /*0x404d5d*/
-    v21 = *(_DWORD *)(this + 4 * v20 + 488); /*0x404d63*/
+    int v20 = this->M624; /*0x404d5d*/
+    int v21 = *(_DWORD *)(this + 4 * v20 + 488); /*0x404d63*/
     this->M624 = v20 + 1; /*0x404d6b*/
     return v21; /*0x404d71*/
   }
@@ -1083,7 +1075,7 @@ LABEL_30:
   v18 = v16; /*0x404d2f*/
   if ( v16 < this->M616 - 1 ) /*0x404d31*/
   {
-    v19 = (_DWORD *)(this + 4 * v16 + 488); /*0x404d33*/
+    _DWORD * v19 = (_DWORD *)(this + 4 * v16 + 488); /*0x404d33*/
     do /*0x404d47*/
     {
       ++v18; /*0x404d38*/
@@ -1464,7 +1456,6 @@ void ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int a3)
   int v24; // eax
   int v25; // eax
   int v26; // ecx
-  int v27; // eax
   int v28; // edx
   int v29; // eax
   int v30; // edx
@@ -1472,11 +1463,6 @@ void ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int a3)
   int v32; // eax
   int *v33; // ecx
   int v34; // ecx
-  int v35; // eax
-  _DWORD *v36; // ecx
-  _DWORD *v37; // ecx
-  _DWORD *v38; // ecx
-  _DWORD *v39; // ecx
   int v41; // eax
   int v42; // edx
   void (__thiscall ***v43)(_DWORD, int); // ecx
@@ -1595,7 +1581,7 @@ void ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int a3)
   a1[39] = v26; /*0x407e0a*/
   if ( v26 <= 0 || v25 == 2 || !v25 ) /*0x407e1b*/
   {
-    v27 = a1[3]; /*0x407e1d*/
+    int v27 = a1[3]; /*0x407e1d*/
     LOBYTE(v27) = v27 & 0xFB; /*0x407e20*/
     a1[3] = v27; /*0x407e22*/
   }
@@ -1603,13 +1589,13 @@ void ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int a3)
   if ( !a3 ) /*0x407e36*/
   {
 LABEL_51:
-    v38 = (_DWORD *)a1[13]; /*0x407ed4*/
+    _DWORD * v38 = (_DWORD *)a1[13]; /*0x407ed4*/
     if ( v38 ) /*0x407ed9*/
     {
       Count::DecrementRefCountsAudio(v38); /*0x407edb*/
       a1[13] = 0; /*0x407ee0*/
     }
-    v39 = (_DWORD *)a1[14]; /*0x407ee3*/
+    _DWORD * v39 = (_DWORD *)a1[14]; /*0x407ee3*/
     if ( v39 ) /*0x407ee8*/
     {
       Count::DecrementRefCountsAudio(v39); /*0x407eea*/
@@ -1636,12 +1622,12 @@ LABEL_51:
   a1[3] |= 1u; /*0x407ea6*/
   if ( Audio::GetChannelStatus(v34) ) /*0x407ea9*/
   {
-    v35 = a1[3]; /*0x407eb2*/
-    v36 = (_DWORD *)a1[13]; /*0x407eb5*/
+    int v35 = a1[3]; /*0x407eb2*/
+    _DWORD * v36 = (_DWORD *)a1[13]; /*0x407eb5*/
     LOBYTE(v35) = v35 & 0xFE; /*0x407eb8*/
     a1[3] = v35; /*0x407eba*/
     Count::DecrementRefCountsAudio(v36); /*0x407ebd*/
-    v37 = (_DWORD *)a1[14]; /*0x407ec2*/
+    _DWORD * v37 = (_DWORD *)a1[14]; /*0x407ec2*/
     a1[13] = 0; /*0x407ec7*/
     Count::DecrementRefCountsAudio(v37); /*0x407eca*/
     a1[14] = 0; /*0x407ecf*/
@@ -2029,8 +2015,6 @@ int E4Recv_409100::sub_409100()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v9; // edx
-  int v10; // edx
-  _DWORD *v11; // edx
   int v1 = *(this + 11); /*0x409101*/
   if ( !v1 ) /*0x409106*/
     return 0; /*0x409108*/
@@ -2052,9 +2036,9 @@ int E4Recv_409100::sub_409100()
     v1 -= v8; /*0x409146*/
     *v9 = v5[6]; /*0x40914b*/
     v9[1] = v5[7]; /*0x409150*/
-    v10 = v5[12]; /*0x409153*/
+    int v10 = v5[12]; /*0x409153*/
     v5 = (_DWORD *)*v5; /*0x409156*/
-    v11 = (_DWORD *)(v10 + 4); /*0x409158*/
+    _DWORD * v11 = (_DWORD *)(v10 + 4); /*0x409158*/
     if ( v5 == v11 ) /*0x40915d*/
     {
       v5 = (_DWORD *)*v5; /*0x40915f*/

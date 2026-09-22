@@ -13,12 +13,7 @@ int WaypointClass::FindOrAddPath(unsigned int * a2)
   _DWORD *v7; // ecx
   int v8; // edi
   int *Element; // eax
-  int v10; // kr08_4
-  int v11; // eax
   char result; // al
-  bool v13; // esi
-  void *v14; // eax
-  int v15; // eax
   signed int v16; // [esp+10h] [ebp-Ch]
   __int16 v18; // [esp+1Ah] [ebp-2h]
   int * v2 = (int *)(this + 132); /*0x502171*/
@@ -47,12 +42,12 @@ LABEL_13:
     v16 = v4; /*0x502225*/
     if ( v4 >= 12 ) /*0x502229*/
     {
-      v13 = this->q083; /*0x502233*/
+      bool v13 = this->q083; /*0x502233*/
       if ( !*(this + v13 + 132) ) /*0x502239*/
       {
-        v14 = __2_YAPAXI_Z(0x40u); /*0x502246*/
+        void * v14 = __2_YAPAXI_Z(0x40u); /*0x502246*/
         if ( v14 ) /*0x502250*/
-          v15 = WaypointPathClass::Construct((int)v14, v13); /*0x502255*/
+          int v15 = WaypointPathClass::Construct((int)v14, v13); /*0x502255*/
         else
           v15 = 0; /*0x50225c*/
         *(this + v13 + 132) = v15; /*0x50225e*/
@@ -63,8 +58,8 @@ LABEL_13:
   while ( 1 ) /*0x5021cf*/
   {
     Element = (int *)Array::GetElement(v7, v8); /*0x5021cf*/
-    v10 = *Element; /*0x5021e1*/
-    v11 = Element[1] / 256; /*0x5021f2*/
+    int v10 = *Element; /*0x5021e1*/
+    int v11 = Element[1] / 256; /*0x5021f2*/
     if ( (unsigned __int16)(v10 / 256) == (_WORD)v3 && (_WORD)v11 == v18 ) /*0x5021ff*/
     {
       result = v16; /*0x502205*/

@@ -229,34 +229,12 @@ void ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, unsigned short 
   CellStruct *v5; // esi
   void (__thiscall ***v8)(_DWORD, int); // ecx
   int v12; // ebx
-  int v13; // eax
-  int v14; // eax
-  int v15; // ecx
-  int v16; // edx
-  int v17; // eax
-  int v18; // edx
-  int v19; // eax
-  int v20; // ecx
-  int v21; // eax
   void (__thiscall ***v22)(_DWORD, int); // ecx
-  int v23; // edi
-  int *v24; // eax
-  int v25; // edx
   AbstractClass *v26; // ecx
-  int v27; // edx
-  int v28; // eax
   AbstractClass *v29; // eax
   void (__thiscall ***v30)(_DWORD, int); // ecx
-  int v31; // edi
-  int *v32; // eax
-  int v33; // edx
-  int v34; // eax
   void (__thiscall ***v35)(_DWORD, int); // ecx
-  int v36; // edi
-  int *v37; // eax
-  int v38; // edx
   AbstractClass *v39; // eax
-  int v40; // eax
   int v4 = 0; /*0x5d451a*/
   v5 = aP0; /*0x5d451f*/
   if ( !a4 ) /*0x5d4521*/
@@ -314,7 +292,7 @@ void ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, unsigned short 
   {
     LOWORD(aP0) = *(_WORD *)a2; /*0x5d45d6*/
     v12 = (unsigned __int8)Event_Process(*(_BYTE **)&stru_87C374[13308], (CCINIClass *)aP0); /*0x5d45eb*/
-    v13 = *a2; /*0x5d45f1*/
+    int v13 = *a2; /*0x5d45f1*/
     if ( (*a2 & 0x1000) != 0 && v12 >= 48 && v12 <= 57 ) /*0x5d4605*/
     {
       BYTE1(v13) &= ~0x10u; /*0x5d4609*/
@@ -322,7 +300,7 @@ void ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, unsigned short 
     }
     else if ( (*a2 & 0x1000) != 0 || (v13 & 0x8000) != 0 || v12 < 32 ) /*0x5d461c*/
     {
-      v14 = (unsigned __int8)*a2; /*0x5d461e*/
+      int v14 = (unsigned __int8)*a2; /*0x5d461e*/
       if ( v14 != 13 && v14 != 8 && v14 != 27 && (_BYTE)v12 != 8 ) /*0x5d4635*/
       {
         *a2 = 0; /*0x5d463b*/
@@ -337,7 +315,7 @@ void ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, unsigned short 
       v39 = (AbstractClass *)v5->field_2B0; /*0x5d495f*/
       if ( (int)v39 > v5->field_2B4 ) /*0x5d496d*/
       {
-        v40 = (int)&v39[-1].NeedsSaveOrLink + 3; /*0x5d496f*/
+        int v40 = (int)&v39[-1].NeedsSaveOrLink + 3; /*0x5d496f*/
         v4 = 2; /*0x5d4970*/
         v5->field_2B0 = v40; /*0x5d4975*/
         *(_WORD *)&v5->__pad_8[2 * v40 + 32] = 0; /*0x5d497b*/
@@ -356,8 +334,9 @@ void ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, unsigned short 
       {
         if ( *(_WORD *)&v5->__pad_8[2 * v5->field_2B0 + 32] ) /*0x5d468a*/
         {
-          v15 = v5->field_2B4; /*0x5d4694*/
-          v16 = *(_DWORD *)&v5->__pad_8[8] - 1; /*0x5d469a*/
+  int v17; // eax
+          int v15 = v5->field_2B4; /*0x5d4694*/
+          int v16 = *(_DWORD *)&v5->__pad_8[8] - 1; /*0x5d469a*/
           do /*0x5d46b2*/
           {
             if ( v5->field_2B0 - v15 >= v16 ) /*0x5d46a9*/
@@ -370,19 +349,20 @@ void ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, unsigned short 
         if ( v5->field_2B0 - v5->field_2B4 >= *(_DWORD *)&v5->__pad_8[8] - 1 ) /*0x5d46cf*/
           goto LABEL_46; /*0x5d46cf*/
         *(_WORD *)&v5->__pad_8[2 * v5->field_2B0 + 32] = v12; /*0x5d46d1*/
-        v18 = v5->field_2B0 + 1; /*0x5d46dc*/
+        int v18 = v5->field_2B0 + 1; /*0x5d46dc*/
         v4 = 1; /*0x5d46dd*/
         v5->field_2B0 = v18; /*0x5d46e4*/
         *(_WORD *)&v5->__pad_8[2 * v18 + 32] = 0; /*0x5d46ea*/
         TextRenderer::GetInstance(); /*0x5d46f5*/
         if ( Text::MeasureWidth((CampaignScore *)&v5->field_28, 0) >= v5->field_2C4 - 10 ) /*0x5d4711*/
         {
-          v19 = v5->field_2B0 - 1; /*0x5d4719*/
+          int v19 = v5->field_2B0 - 1; /*0x5d4719*/
           v5->field_2B0 = v19; /*0x5d471a*/
           *(_WORD *)&v5->__pad_8[2 * v19 + 32] = 0; /*0x5d4720*/
 LABEL_46:
           if ( v5->__pad_8[16] ) /*0x5d4725*/
           {
+  int v20; // ecx
             v20 = v5->field_2B0 /*0x5d475f*/
                 - WideString::WordWrap(
                     (wchar_t *)&v5->field_16C,
@@ -392,7 +372,7 @@ LABEL_46:
                     1);
             v5->field_2B0 = v20; /*0x5d4768*/
             *(_WORD *)&v5->__pad_8[2 * v20 + 32] = v12; /*0x5d476e*/
-            v21 = v5->field_2B0 + 1; /*0x5d4779*/
+            int v21 = v5->field_2B0 + 1; /*0x5d4779*/
             v5->field_2B0 = v21; /*0x5d477a*/
             *(_WORD *)&v5->__pad_8[2 * v21 + 32] = 0; /*0x5d4780*/
             *a2 = 0; /*0x5d4788*/
@@ -419,15 +399,15 @@ LABEL_77:
       return 2; /*0x5d48c1*/
     }
     if ( v5->__pad_8[17] ) /*0x5d47d2*/
-      v23 = *(_DWORD *)v5->__pad_8 + *(_DWORD *)&v5->__pad_8[12]; /*0x5d47df*/
+      int v23 = *(_DWORD *)v5->__pad_8 + *(_DWORD *)&v5->__pad_8[12]; /*0x5d47df*/
     else
       v23 = *(_DWORD *)v5->__pad_8; /*0x5d47e3*/
-    v24 = (int *)v5->field_0; /*0x5d47e6*/
+    int * v24 = (int *)v5->field_0; /*0x5d47e6*/
     if ( v5->field_0 ) /*0x5d47e6*/
     {
       do /*0x5d4801*/
       {
-        v25 = *v24; /*0x5d47f0*/
+        int v25 = *v24; /*0x5d47f0*/
         v24[4] = v23; /*0x5d47f4*/
         v24 = (int *)(*(int (__thiscall **)(int *))(v25 + 4))(v24); /*0x5d47f7*/
         v23 += *(_DWORD *)&v5->__pad_8[12]; /*0x5d47fd*/
@@ -443,7 +423,8 @@ LABEL_76:
     v5->field_2B0 = (int)v26; /*0x5d4818*/
   if ( *(_WORD *)&v5->__pad_8[2 * v5->field_2B0 + 32] ) /*0x5d4824*/
   {
-    v27 = *(_DWORD *)&v5->__pad_8[8] - 1; /*0x5d482e*/
+  int v28; // eax
+    int v27 = *(_DWORD *)&v5->__pad_8[8] - 1; /*0x5d482e*/
     do /*0x5d4846*/
     {
       if ( v5->field_2B0 - (int)v26 >= v27 ) /*0x5d483d*/
@@ -467,15 +448,15 @@ LABEL_76:
     if ( !v5->__pad_8[18] ) /*0x5d4879*/
       goto LABEL_77; /*0x5d487e*/
     if ( v5->__pad_8[17] ) /*0x5d4880*/
-      v31 = *(_DWORD *)v5->__pad_8 + *(_DWORD *)&v5->__pad_8[12]; /*0x5d488d*/
+      int v31 = *(_DWORD *)v5->__pad_8 + *(_DWORD *)&v5->__pad_8[12]; /*0x5d488d*/
     else
       v31 = *(_DWORD *)v5->__pad_8; /*0x5d4891*/
-    v32 = (int *)v5->field_0; /*0x5d4894*/
+    int * v32 = (int *)v5->field_0; /*0x5d4894*/
     if ( v5->field_0 ) /*0x5d4894*/
     {
       do /*0x5d48ab*/
       {
-        v33 = *v32; /*0x5d489a*/
+        int v33 = *v32; /*0x5d489a*/
         v32[4] = v31; /*0x5d489e*/
         v32 = (int *)(*(int (__thiscall **)(int *))(v33 + 4))(v32); /*0x5d48a1*/
         v31 += *(_DWORD *)&v5->__pad_8[12]; /*0x5d48a7*/
@@ -487,7 +468,7 @@ LABEL_76:
   if ( (char *)v29 - (char *)v26 < *(_DWORD *)&v5->__pad_8[8] - 1 ) /*0x5d48ce*/
   {
     *(_WORD *)&v5->__pad_8[2 * (_DWORD)v29 + 32] = 32; /*0x5d48d0*/
-    v34 = v5->field_2B0 + 1; /*0x5d48dd*/
+    int v34 = v5->field_2B0 + 1; /*0x5d48dd*/
     v5->field_2B0 = v34; /*0x5d48de*/
     *(_WORD *)&v5->__pad_8[2 * v34 + 32] = 0; /*0x5d48e4*/
   }
@@ -502,15 +483,15 @@ LABEL_76:
     if ( v5->__pad_8[18] ) /*0x5d490b*/
     {
       if ( v5->__pad_8[17] ) /*0x5d4912*/
-        v36 = *(_DWORD *)v5->__pad_8 + *(_DWORD *)&v5->__pad_8[12]; /*0x5d491f*/
+        int v36 = *(_DWORD *)v5->__pad_8 + *(_DWORD *)&v5->__pad_8[12]; /*0x5d491f*/
       else
         v36 = *(_DWORD *)v5->__pad_8; /*0x5d4923*/
-      v37 = (int *)v5->field_0; /*0x5d4926*/
+      int * v37 = (int *)v5->field_0; /*0x5d4926*/
       if ( v5->field_0 ) /*0x5d4926*/
       {
         do /*0x5d493d*/
         {
-          v38 = *v37; /*0x5d492c*/
+          int v38 = *v37; /*0x5d492c*/
           v37[4] = v36; /*0x5d4930*/
           v37 = (int *)(*(int (__thiscall **)(int *))(v38 + 4))(v37); /*0x5d4933*/
           v36 += *(_DWORD *)&v5->__pad_8[12]; /*0x5d4939*/
@@ -1856,8 +1837,8 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
       || !strcmp(g_GameSetupBuffer, ToWideStringChar((char *)DataGlobal_AC118C))
       || !strcmp(g_GameSetupBuffer, ToWideStringChar((char *)DataGlobal_AC1190))
       || !strcmp(g_GameSetupBuffer, ToWideStringChar((char *)DataGlobal_AC1194))
-  char v6; // bl
   void *v9; // [esp+10h] [ebp-1DCh] BYREF
+  char v6; // bl
       || (String::Assign((char **)&v9, g_GameSetupBuffer), v6 = Network_Send(&v9), DeleteAndZero(&v9), v6) )
     {
       v8 = GetStringCSF(DataGlobal_831580, 0, g_Str_File_netdlg2_cpp, 3742); /*0x5df82c*/

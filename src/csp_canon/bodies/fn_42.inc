@@ -59,7 +59,7 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AlphaShapeClass;
     *(int *)&aP0->__pad_0[12] = &vt_AlphaShapeClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
     aP0[1].q014 = 0;
   }
     return (int)Prefix_0->__pad_0;
@@ -190,7 +190,7 @@ int VectorClass_ptr_AlphaShapeClass::FindItemIndex(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00422720  AnimClass::SimpleCtor  cls=AnimClass  sig=csp  renamed_refs=6  residual=- ====
+// ==== BACKFILL 0x00422720  AnimClass::SimpleCtor  cls=AnimClass  sig=csp  renamed_refs=8  residual=- ====
 namespace gamemd { int AnimClass::SimpleCtor() {
 {
       wchar_t *v2;
@@ -239,8 +239,8 @@ namespace gamemd { int AnimClass::SimpleCtor() {
       this->q19D = 0;
       this->q19E = 0;
       *(_DWORD *)this = &AnimClass::`vftable';
-      *(_DWORD *)(this + 4) = &AnimClass::`vftable';
-      *(_DWORD *)(this + 8) = &vt_AnimClass;
+      this->vtable3 = &AnimClass::`vftable';
+      this->vtable4 = &vt_AnimClass;
       this->vtable4 = &off_7E3328;
       if ( g_AnimClassCount < DataGlobal_A8E9B0
         || (DataGlobal_A8E9B5 || !DataGlobal_A8E9B0)
@@ -456,7 +456,7 @@ retn
 */
 }
 
-// ==== BACKFILL 0x00425280  AnimClass::SaveLoad_Prefix  cls=AnimClass  sig=csp  renamed_refs=10  residual=- ====
+// ==== BACKFILL 0x00425280  AnimClass::SaveLoad_Prefix  cls=AnimClass  sig=csp  renamed_refs=9  residual=- ====
 namespace gamemd { int AnimClass::SaveLoad_Prefix(int a1, int a2) {
 {
       ObjectClass *Register;
@@ -479,16 +479,16 @@ namespace gamemd { int AnimClass::SaveLoad_Prefix(int a1, int a2) {
         AudioController::Init(&aP1[2].q03C[3]);
         AudioController::Init(&aP1[2].q050[3]);
         ObjectPtr::RegisterForTracking(
-          (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+          (SwizzleManagerClass *)&stru_B05488[27784],
           (MouseClass *)&aP1[1].q01C);
         ObjectPtr::RegisterForTracking(
-          (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+          (SwizzleManagerClass *)&stru_B05488[27784],
           (MouseClass *)&aP1[1].NeedsSaveOrLink);
         ObjectPtr::RegisterForTracking(
-          (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-          (MouseClass *)&aP1[2].q024);
+          (SwizzleManagerClass *)&stru_B05488[27784],
+          (MouseClass *)&aP1[2].objectTypeFlags);
         ObjectPtr::RegisterForTracking(
-          (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+          (SwizzleManagerClass *)&stru_B05488[27784],
           (MouseClass *)&aP1[2].q028);
         fallRate = aP1[1].q02C;
         if ( fallRate <= -1 )
@@ -508,7 +508,7 @@ namespace gamemd { int AnimClass::SaveLoad_Prefix(int a1, int a2) {
           }
           aP1[1].q028 = 0;
         }
-        else if ( fallRate < *(int *)stru_B05488.__pad_58 )
+        else if ( fallRate < *(int *)stru_B05488[88] )
         {
           aP1[1].q028 = *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * fallRate) + 780);
           return (int)Register->__pad_0;
@@ -588,7 +588,7 @@ namespace gamemd { int AnimClass::Undeploy() {
         v5[0] = this->q09C;
         v5[1] = this->q0A0;
         v5[2] = this->q0A4;
-        v3 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v5);
+        v3 = Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v5);
         v3[80] &= ~0x20000u;
       }
       if ( !(unsigned __int8)ObjectClass::Undeploy(this) )
@@ -1209,11 +1209,11 @@ int AnimTypeClass::FindIndex()
     if ( !this )
     return -1;
     v2 = 0;
-    if ( *(int *)&DataGlobal_89E138.__pad_1600D[27] <= 0 )
+    if ( *(int *)&DataGlobal_89E138[90152] <= 0 )
     return -1;
-    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_89E138.__pad_1600D[15] + 4 * v2) + 36), this) )
+    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_89E138[90140] + 4 * v2) + 36), this) )
   {
-    if ( ++v2 >= *(int *)&DataGlobal_89E138.__pad_1600D[27] )
+    if ( ++v2 >= *(int *)&DataGlobal_89E138[90152] )
     return -1;
   }
     return v2;
@@ -1501,15 +1501,6 @@ int E4Recv_429500::sub_429500()
   }
     *v4 = v2;
     return 0;
-}
-}
-
-// ==== BACKFILL 0x00429550  COMStub_429550  cls=ApplicationClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_429550::COMStub_429550()
-{
-{
-    int *v2;
-    return SwizzleManagerClass::Process((int)&g_OverlayTypeConfig.__pad_14B0[13416], &IID_ISwizzle, v2);
 }
 }
 
@@ -1827,7 +1818,7 @@ namespace gamemd { int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
     ObjectClass *v10;
     INIClass Buffer[2];
     INIClass::SetInt(a1->__pad_0, Block, (char *)&DataGlobal_818994.headNode[2], this->referenceCount, 0);
-    INIClass::SetInt(a1->__pad_0, Block, DataGlobal_818994.__pad_0, this->abstractFlags, 0);
+    INIClass::SetInt(a1->__pad_0, Block, DataGlobal_818994[0], this->abstractFlags, 0);
     result = this->abstractFlags;
     v5 = 0;
     if ( result > 0 )
@@ -1843,7 +1834,7 @@ namespace gamemd { int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
     if ( *(int *)v7 < 0 )
     sprintf((char *const)&Buffer[0].headNode[2], (const char *const)&DataGlobal_818994.sectionCount, v8, v9, v10);
     else
-    sprintf( (char *const)&Buffer[0].headNode[2], &DataGlobal_818994.__pad_20[8], *((int *)(g_TriggerTypeCount) + v8) + 36, v9, v10);
+    sprintf( (char *const)&Buffer[0].headNode[2], &DataGlobal_818994[40], *((int *)(g_TriggerTypeCount) + v8) + 36, v9, v10);
     INIClass::SetString(a1->__pad_0, (INIClass *)Block, Buffer, (INIClass *)&Buffer[0].headNode[2]);
     result = this->abstractFlags;
     v5 = (INIClass *)((char *)(v5) + 1);

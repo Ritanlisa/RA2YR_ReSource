@@ -39,7 +39,7 @@ int sub_561350(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 }
 
-// ==== BACKFILL 0x00565090  RadarClass::RenderMapPreview  cls=MapClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x00565090  RadarClass::RenderMapPreview  cls=MapClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int RadarClass::RenderMapPreview() {
 {
       _DWORD *v2;
@@ -49,7 +49,7 @@ namespace gamemd { int RadarClass::RenderMapPreview() {
 
       RadarClass::initRadarSurface((_DWORD *)this);
       RadarClass::drawRadarTerrain((_DWORD *)(this + 80), 0, 0);
-      *(_DWORD *)(this + 80) = &DynamicVectorClass<ZoneConnectionClass>::`vftable';
+      this->q140 = &DynamicVectorClass<ZoneConnectionClass>::`vftable';
       this->q064 = 10;
       this->q060 = 0;
       v2 = (_DWORD *)(this + 140);
@@ -65,14 +65,14 @@ namespace gamemd { int RadarClass::RenderMapPreview() {
       }
       while ( v3 );
       VectorClass::CellConstructor((_DWORD *)(this + 212), 0, 0);
-      *(_DWORD *)(this + 212) = &vt_DynamicVectorClass_Cell;
+      this->q0D4 = &vt_DynamicVectorClass_Cell;
       this->q0E8 = 10;
       this->q0E4 = 0;
       this->q13C = 0;
       this->q140 = 0;
       this->q144 = 1;
       this->q145 = 0;
-      *(_DWORD *)(this + 312) = &vt_VectorClass_CellClass;
+      this->MaxLevel = &vt_VectorClass_CellClass;
       v4 = (_WORD *)(this + 356);
       v5 = 256;
       do
@@ -87,7 +87,7 @@ namespace gamemd { int RadarClass::RenderMapPreview() {
       this->q1164 = 0;
       this->q1168 = 1;
       this->q1169 = 0;
-      *(_DWORD *)(this + 4444) = &vt_DynamicVectorClass_Cell;
+      this->q115C = &vt_DynamicVectorClass_Cell;
       this->q1170 = 10;
       this->q116C = 0;
       *(_DWORD *)this = &vt_MapClass;
@@ -129,10 +129,10 @@ namespace gamemd { void* RadarClass::Render(int a1) {
       }
       while ( v5 );
       VectorClass::CellConstructor((_DWORD *)this + 53, 0, 0);
-      *((_DWORD *)this + 53) = &vt_DynamicVectorClass_Cell;
+      this->CellStructs1 = &vt_DynamicVectorClass_Cell;
       this->q0E8 = 10;
       this->q0E4 = 0;
-      *((_DWORD *)this + 78) = &vt_VectorClass_CellClass;
+      this->MaxLevel = &vt_VectorClass_CellClass;
       v6 = this + 356;
       v7 = 256;
       do
@@ -147,7 +147,7 @@ namespace gamemd { void* RadarClass::Render(int a1) {
       this->q1164 = 0;
       this->q1168 = 1;
       this->q1169 = 0;
-      *((_DWORD *)this + 1111) = &vt_DynamicVectorClass_Cell;
+      this->q115C = &vt_DynamicVectorClass_Cell;
       this->q1170 = 10;
       this->q116C = 0;
       *(_DWORD *)this = &vt_MapClass;
@@ -370,6 +370,216 @@ namespace gamemd { void* CellClass::BuildPathfindingGraph() {
       }
       while ( v8 >= 0 );
       return MapClass::AllocArrays(g_AudioInitFlag);
+}
+} }
+
+// ==== BACKFILL 0x0056A080  PlaceTerrainCliffsRegion  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
+{
+      ObjectClass *result;
+      ObjectClass *v3;
+      AbstractClass *v4;
+      AbstractClass *v5;
+      ObjectClass *v6;
+      ObjectClass *v7;
+      ObjectClass *v8;
+      int v9;
+      unsigned int v10;
+      _DWORD *v11;
+      _DWORD *v12;
+      AbstractClass *v13;
+      __int16 v14;
+      __int16 v15;
+      unsigned int v16;
+      _DWORD *v17;
+      unsigned int v18;
+      _DWORD *v19;
+      unsigned int v20;
+      _DWORD *v21;
+      ObjectClass *v22;
+      unsigned int v23;
+      _DWORD *v24;
+      ObjectClass *v25;
+      unsigned int v26;
+      _DWORD *v27;
+      _BYTE *v28;
+      int v29;
+      ObjectClass *v30;
+      ObjectClass *v31;
+      ObjectClass *v32;
+      ObjectClass *v33;
+      ObjectClass *v34;
+      IUnknown *v35;
+      IUnknown *v36;
+      IUnknown *v37;
+      IUnknown *v38;
+      IUnknown *v39;
+      int v40;
+      int v41;
+      int v42;
+      int v43;
+
+      result = this->M296;
+      v3 = (ObjectClass *)((char *)this->M304 + (_DWORD)result);
+      v33 = result;
+      if ( (int)result < (int)v3 )
+      {
+        v4 = (AbstractClass *)g_TerrainSoundTable2;
+        v5 = *(AbstractClass **)&g_NetworkPlayerBuffer[80364];
+        do
+        {
+          v6 = this->M292;
+          v7 = (ObjectClass *)((char *)this->M300 + (_DWORD)v6);
+          v32 = v6;
+          if ( (int)v6 < (int)v7 )
+          {
+            v8 = (ObjectClass *)((__int16)result << 9);
+            v34 = v8;
+            while ( 1 )
+            {
+              v9 = (int)this->M316;
+              HIWORD(v31) = (_WORD)result;
+              LOWORD(v31) = (_WORD)v6;
+              if ( *(_DWORD *)(v9 + 4 * ((_DWORD)v8 + (__int16)v6)) )
+              {
+                v10 = (unsigned int)&v34->__pad_0[(__int16)v6];
+                if ( v10 < 0x40000 && (v11 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v10)) != 0 )
+                {
+                  v12 = v11;
+                }
+                else
+                {
+                  v12 = g_CellClassArray;
+                  g_Map_GlobalCellIndex = (IUnknown *)v31;
+                }
+                v13 = (AbstractClass *)(v12[14] - *(_DWORD *)&g_NetworkPlayerBuffer[79852] + 1);
+                if ( (v13 == (AbstractClass *)DataGlobal_ABC2B4 || v13 == *(AbstractClass **)&g_NetworkPlayerBuffer[80628])
+                  && *((_BYTE *)v12 + 282) == 8 )
+                {
+                  Terrain::PlaceCliffs(this, (int)v12, 2, 0);
+                  v4 = (AbstractClass *)g_TerrainSoundTable2;
+                  v5 = *(AbstractClass **)&g_NetworkPlayerBuffer[80364];
+                }
+                if ( (v13 == v4
+                   || v13 == (AbstractClass *)&v4->__pad_0[3]
+                   || v13 == (AbstractClass *)&v4->__pad_0[4]
+                   || v13 == (AbstractClass *)&v4->__pad_0[1]
+                   || v13 == (AbstractClass *)&v4->__pad_0[2])
+                  && *((_BYTE *)v12 + 282) == 5 )
+                {
+                  if ( v13 == (AbstractClass *)&v4->__pad_0[4] )
+                  {
+                    Cell::SetTileType(
+                      (__int16 *)&v31,
+                      (int)&v4->__pad_0[*(_DWORD *)&g_NetworkPlayerBuffer[79852] - 1],
+                      -1,
+                      -1,
+                      0);
+                    v14 = HIWORD(v31) + *(_WORD *)&g_CellDirectionOffsets[18];
+                    LOWORD(v35) = *(_WORD *)g_CellDirectionOffsets[16] + (_WORD)v31;
+                    HIWORD(v35) = HIWORD(v31) + *(_WORD *)&g_CellDirectionOffsets[18];
+                    v15 = *(_WORD *)g_CellDirectionOffsets[16] + (_WORD)v31;
+                    v16 = (__int16)(*(_WORD *)g_CellDirectionOffsets[16] + (_WORD)v31)
+                        + ((__int16)(HIWORD(v31) + *(_WORD *)&g_CellDirectionOffsets[18]) << 9);
+                    if ( v16 >= 0x40000 || (v17 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v16)) == 0 )
+                    {
+                      g_Map_GlobalCellIndex = v35;
+                      v17 = g_CellClassArray;
+                    }
+                    *((_BYTE *)v17 + 283) += 4;
+                    LOWORD(v36) = v15 + LOWORD(Direction_X_Offsets.field_0);
+                    HIWORD(v36) = DataGlobal_89F68A + v14;
+                    v18 = (__int16)(v15 + LOWORD(Direction_X_Offsets.field_0)) + ((__int16)(DataGlobal_89F68A + v14) << 9);
+                    if ( v18 >= 0x40000 || (v19 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v18)) == 0 )
+                    {
+                      g_Map_GlobalCellIndex = v36;
+                      v19 = g_CellClassArray;
+                    }
+                    *((_BYTE *)v19 + 283) += 4;
+                    HIWORD(v37) = HIWORD(g_CellDirectionOffsets.field_8) + v14;
+                    LOWORD(v37) = v15 + LOWORD(g_CellDirectionOffsets.field_8);
+                    v20 = (__int16)(v15 + LOWORD(g_CellDirectionOffsets.field_8))
+                        + ((__int16)(HIWORD(g_CellDirectionOffsets.field_8) + v14) << 9);
+                    if ( v20 >= 0x40000 || (v21 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v20)) == 0 )
+                    {
+                      g_Map_GlobalCellIndex = v37;
+                      v21 = g_CellClassArray;
+                    }
+                    *((_BYTE *)v21 + 283) += 4;
+                  }
+                  Terrain::PlaceCliffs(this, (int)v12, 2, 0);
+                  v4 = (AbstractClass *)g_TerrainSoundTable2;
+                  v5 = *(AbstractClass **)&g_NetworkPlayerBuffer[80364];
+                }
+                if ( (v13 == *(AbstractClass **)&g_NetworkPlayerBuffer[81676]
+                   || v13 == *(AbstractClass **)&g_NetworkPlayerBuffer[78084])
+                  && *((_BYTE *)v12 + 282) == 12 )
+                {
+                  Terrain::PlaceCliffs(this, (int)v12, 4, 0);
+                  v4 = (AbstractClass *)g_TerrainSoundTable2;
+                  v5 = *(AbstractClass **)&g_NetworkPlayerBuffer[80364];
+                }
+                if ( (v13 == v5
+                   || v13 == (AbstractClass *)&v5->__pad_0[3]
+                   || v13 == (AbstractClass *)&v5->__pad_0[4]
+                   || v13 == (AbstractClass *)&v5->__pad_0[2]
+                   || v13 == (AbstractClass *)&v5->__pad_0[1])
+                  && *((_BYTE *)v12 + 282) == 7 )
+                {
+                  if ( v13 == (AbstractClass *)&v5->__pad_0[4] )
+                  {
+                    Cell::SetTileType(
+                      (__int16 *)&v31,
+                      (int)&v5->__pad_0[*(_DWORD *)&g_NetworkPlayerBuffer[79852] - 1],
+                      -1,
+                      -1,
+                      0);
+                    v22 = (ObjectClass *)CellStruct::Add(&v31, (IUnknown *)&v41, &Direction_X_Offsets)->field_0;
+                    v39 = (IUnknown *)v22;
+                    v38 = (IUnknown *)v22;
+                    v23 = (__int16)v22 + (SHIWORD(v22) << 9);
+                    if ( v23 >= 0x40000 || (v24 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v23)) == 0 )
+                    {
+                      g_Map_GlobalCellIndex = (IUnknown *)v22;
+                      v24 = g_CellClassArray;
+                    }
+                    *((_BYTE *)v24 + 283) += 4;
+                    v25 = (ObjectClass *)CellStruct::Add(&v38, (IUnknown *)&v42, &g_CellDirectionOffsets)->field_0;
+                    v39 = (IUnknown *)v25;
+                    v26 = (__int16)v25 + (SHIWORD(v25) << 9);
+                    if ( v26 >= 0x40000 || (v27 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v26)) == 0 )
+                    {
+                      g_Map_GlobalCellIndex = (IUnknown *)v25;
+                      v27 = g_CellClassArray;
+                    }
+                    *((_BYTE *)v27 + 283) += 4;
+                    v40 = CellStruct::Add(&v38, (IUnknown *)&v43, (IUnknown *)g_CellDirectionOffsets[16])->field_0;
+                    v28 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v40);
+                    v28[283] += 4;
+                  }
+                  Terrain::PlaceCliffs(this, (int)v12, 4, 0);
+                  v4 = (AbstractClass *)g_TerrainSoundTable2;
+                  v5 = *(AbstractClass **)&g_NetworkPlayerBuffer[80364];
+                }
+                v6 = v32;
+              }
+              v6 = (ObjectClass *)((char *)v6 + 1);
+              v29 = (int)&(this->M300)->__pad_0[(_DWORD)this->M292];
+              v32 = v6;
+              if ( (int)v6 >= v29 )
+                break;
+              v8 = v34;
+              LOWORD(result) = (_WORD)v33;
+            }
+            result = v33;
+          }
+          result = (ObjectClass *)((char *)result + 1);
+          v30 = (ObjectClass *)((char *)this->M304 + (_DWORD)this->M296);
+          v33 = result;
+        }
+        while ( (int)result < (int)v30 );
+      }
+      return result;
 }
 } }
 
@@ -753,7 +963,7 @@ int CellClass::GetTileData(IUnknown * aP0, IUnknown * aP1)
     unsigned int v2;
     int *v3;
     v2 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9);
-    if ( v2 >= 0x40000 || (v3 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v2)) == 0 )
+    if ( v2 >= 0x40000 || (v3 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v2)) == 0 )
   {
     g_Map_GlobalCellIndex = (IUnknown *)aP0->field_0;
     v3 = g_CellClassArray;
@@ -865,7 +1075,7 @@ namespace gamemd { int CellClass::CreateBuildingCrater(void* a1) {
             }
           }
           v22 = v14;
-          Cell::CreateCrater(v18, v14 - *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[8536], v15, v16, 0);
+          Cell::CreateCrater(v18, v14 - *(_DWORD *)&DataGlobal_87F8E4[30400], v15, v16, 0);
           *(_DWORD *)&v7->__pad_3C[8] = -1;
           v7->field_11B[3] = 0;
           return 1;
@@ -882,6 +1092,224 @@ int Cell::DecodeFlags()
 }
 }
 
+// ==== BACKFILL 0x0056D3F0  CellToTileIndexMap  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_56D3F0::CellToTileIndexMap(void* a2) {
+{
+    int result;
+    int v3;
+    result = *a2 + *((int*)(a2) + 1) * (this->M248 + this->M244 + 1);
+    if ( result < 0 )
+    return 0;
+    v3 = this->M108;
+    if ( result >= v3 )
+    return v3 - 1;
+    return result;
+}
+
+/* ASM:
+mov     eax, [ecx+0F8h]
+mov     edx, [ecx+0F4h]
+push    esi
+lea     eax, [eax+edx+1]
+mov     edx, [esp+4+arg_0]
+movsx   esi, word ptr [edx+2]
+movsx   edx, word ptr [edx]
+imul    eax, esi
+add     eax, edx
+pop     esi
+jns     short loc_56D419
+xor     eax, eax
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_56D419:                             ; CODE XREF: CellToTileIndexMap+22↑j
+mov     ecx, [ecx+6Ch]
+cmp     eax, ecx
+jl      short locret_56D423
+lea     eax, [ecx-1]
+
+locret_56D423:                          ; CODE XREF: CellToTileIndexMap+2E↑j
+retn    4
+*/
+} }
+
+// ==== BACKFILL 0x0056DB70  InvalidateTileRegionMap  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { char Gap2Recv_56DB70::InvalidateTileRegionMap(void* a2) {
+{
+    int Region;
+    int v6;
+    int v7;
+    char v8;
+    char *v9;
+    char v10;
+    Region = GetRegionMap(this, a2, 3, 0);
+    if ( Region == -1 )
+  {
+    MapClass::ProcessRegion(this);
+    Region = GetRegionMap(this, a2, 3, 0);
+    if ( Region == -1 )
+    return 0;
+  }
+    v10 = 0;
+    do
+  {
+    v6 = this->M84;
+    v7 = 16 * Region;
+    v8 = *(char *)(v6 + 16 * Region + 8);
+    v9 = (char *)(v6 + 16 * Region + 8);
+    if ( !v8 )
+    {
+    *v9 = 1;
+    BuildTileAdjacencyTable(v7 + this->M84);
+    if ( !MapSeed::CheckTileMatch( this, (short *)(this->M84 + v7), (short *)(this->M84 + v7 + 4), 0, 0, 0, 0) )
+    v10 = 1;
+    }
+    Region = GetRegionMap(this, a2, 3, Region + 1);
+  }
+    while ( Region != -1 );
+    return v10;
+}
+
+/* ASM:
+push    ebx
+mov     ebx, [esp+4+arg_0]
+push    ebp
+push    esi
+push    0
+push    3
+mov     esi, ecx
+push    ebx
+call    GetRegionMap
+mov     ebp, eax
+cmp     ebp, 0FFFFFFFFh
+jnz     short loc_56DBAC
+mov     ecx, esi
+call    MapClass__ProcessRegion
+push    0
+push    3
+push    ebx
+mov     ecx, esi
+call    GetRegionMap
+mov     ebp, eax
+cmp     ebp, 0FFFFFFFFh
+jnz     short loc_56DBAC
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    4
+; ---------------------------------------------------------------------------
+
+loc_56DBAC:                             ; CODE XREF: InvalidateTileRegionMap+18↑j
+; InvalidateTileRegionMap+32↑j
+cmp     ebp, 0FFFFFFFFh
+mov     byte ptr [esp+0Ch+arg_0], 0
+jz      short loc_56DC12
+push    edi
+
+loc_56DBB7:                             ; CODE XREF: InvalidateTileRegionMap+9F↓j
+mov     eax, [esi+54h]
+mov     edi, ebp
+shl     edi, 4
+mov     cl, [eax+edi+8]
+lea     eax, [eax+edi+8]
+test    cl, cl
+jnz     short loc_56DBFE
+mov     byte ptr [eax], 1
+mov     ecx, [esi+54h]
+add     ecx, edi
+push    ecx
+mov     ecx, esi
+call    BuildTileAdjacencyTable
+mov     edx, [esi+54h]
+push    0
+push    0
+push    0
+lea     eax, [edx+edi]
+push    0
+lea     ecx, [eax+4]
+push    ecx
+push    eax
+mov     ecx, esi
+call    MapSeed__CheckTileMatch
+test    al, al
+jnz     short loc_56DBFE
+mov     byte ptr [esp+10h+arg_0], 1
+
+loc_56DBFE:                             ; CODE XREF: InvalidateTileRegionMap+59↑j
+; InvalidateTileRegionMap+87↑j
+inc     ebp
+mov     ecx, esi
+push    ebp
+push    3
+push    ebx
+call    GetRegionMap
+mov     ebp, eax
+cmp     ebp, 0FFFFFFFFh
+jnz     short loc_56DBB7
+pop     edi
+
+loc_56DC12:                             ; CODE XREF: InvalidateTileRegionMap+44↑j
+mov     al, byte ptr [esp+0Ch+arg_0]
+pop     esi
+pop     ebp
+pop     ebx
+retn    4
+*/
+} }
+
+// ==== BACKFILL 0x0056E890  ProcessDataHouseClass  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { char Gap2Recv_56E890::ProcessDataHouseClass(void* a2, void* a3, void* a4) {
+{
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int *StartCoords;
+    int v10;
+    int v12[3];
+    if ( *(int *)a2 == g_MapSeedState )
+    return 0;
+    v4 = this->M244;
+    v5 = *a2;
+    v6 = *((int*)(a2) + 1);
+    if ( v6 + v5 <= v4 )
+    return 0;
+    if ( v5 - v6 >= v4 )
+    return 0;
+    if ( v6 - v5 >= v4 )
+    return 0;
+    if ( v6 + v5 > v4 + 2 *(void**)this->M248 )
+    return 0;
+    v7 = 0;
+    if ( HouseClass_Count <= 0 )
+    return 0;
+    while ( 1 )
+  {
+    v8 = *(int *)&HouseClass_Array->__pad_0[4 * v7];
+    if ( v8 )
+    {
+    if ( !*(char *)(v8 + 501) )
+      {
+    StartCoords = HouseClass::GetStartCoords(*(int **)&HouseClass_Array->__pad_0[4 * v7], v12);
+    if ( *StartCoords != DataGlobal_ABDC10 || StartCoords[1] != DataGlobal_ABDC14 || StartCoords[2] != DataGlobal_ABDC18 )
+        {
+    v10 = sub_4FFD90((int *)v8, a2);
+    *a4 = v10;
+    if ( v10 != -1 )
+    break;
+        }
+      }
+    }
+    if ( ++v7 >= HouseClass_Count )
+    return 0;
+  }
+    *a3 = *(int *)(*(int *)(v8 + 52) + 184);
+    return 1;
+}
+} }
+
 // ==== BACKFILL 0x0056ED40  globalHelper_06ED40  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char globalHelper_06ED40(IUnknown * aP0, int a2)
 {
@@ -893,12 +1321,12 @@ char globalHelper_06ED40(IUnknown * aP0, int a2)
     unsigned char v6;
     int v7;
     v2 = a2 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    v3 = *(short *)&DataGlobal_89E138[5296][4 * v2 + 160];
+    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138[5296][4 * v2 + 162];
     LOWORD(a2) = LOWORD(aP0->field_0) + v3;
     HIWORD(a2) = v2;
     v4 = (short)a2 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v4)) == 0 )
   {
     g_Map_GlobalCellIndex = (IUnknown *)a2;
     v5 = g_CellClassArray;
@@ -943,12 +1371,12 @@ char globalHelper_06EE40(IUnknown * aP0, int a2)
     unsigned char v6;
     int v7;
     v2 = a2 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    v3 = *(short *)&DataGlobal_89E138[5296][4 * v2 + 160];
+    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138[5296][4 * v2 + 162];
     LOWORD(a2) = LOWORD(aP0->field_0) + v3;
     HIWORD(a2) = v2;
     v4 = (short)a2 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v4)) == 0 )
   {
     g_Map_GlobalCellIndex = (IUnknown *)a2;
     v5 = g_CellClassArray;
@@ -993,12 +1421,12 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
     unsigned char v6;
     int v7;
     v2 = (unsigned char)aP1 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    v3 = *(short *)&DataGlobal_89E138[5296][4 * v2 + 160];
+    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138[5296][4 * v2 + 162];
     LOWORD(aP1) = LOWORD(aP0->field_0) + v3;
     HIWORD(aP1) = v2;
     v4 = (short)aP1 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v4)) == 0 )
   {
     g_Map_GlobalCellIndex = aP1;
     v5 = g_CellClassArray;

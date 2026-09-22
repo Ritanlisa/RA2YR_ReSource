@@ -773,80 +773,60 @@ void * ObjectClass::BuildTransform(unsigned int * a1, float * a2, unsigned int *
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   float *v7; // eax
-  double v8; // st7
-  int v9; // edx
-  double v10; // st7
-  int v11; // eax
-  double v12; // st7
-  int v13; // ecx
-  double v14; // st7
-  int v15; // esi
-  int v16; // eax
-  int v17; // ecx
   float *Transform; // eax
-  float *v19; // eax
-  float *v20; // esi
   float v21; // [esp+4h] [ebp-154h]
-  float v22; // [esp+8h] [ebp-150h]
-  float v23; // [esp+8h] [ebp-150h]
-  float v24; // [esp+8h] [ebp-150h]
-  float v25; // [esp+18h] [ebp-140h]
-  int v26; // [esp+18h] [ebp-140h]
-  float v27; // [esp+1Ch] [ebp-13Ch]
-  int v28; // [esp+1Ch] [ebp-13Ch]
   float v29; // [esp+20h] [ebp-138h] BYREF
-  int v30; // [esp+24h] [ebp-134h]
-  float v31; // [esp+28h] [ebp-130h]
   _DWORD v32[3]; // [esp+2Ch] [ebp-12Ch] BYREF
   float v33[12]; // [esp+38h] [ebp-120h] BYREF
   float v34[12]; // [esp+68h] [ebp-F0h] BYREF
-  float v35[12]; // [esp+98h] [ebp-C0h] BYREF
-  float v36[12]; // [esp+C8h] [ebp-90h] BYREF
-  float v37[12]; // [esp+F8h] [ebp-60h] BYREF
-  float v38[12]; // [esp+128h] [ebp-30h] BYREF
 
   int v3 = a1[2]; /*0x513f50*/
   if ( fabs(*(float *)(v3 + 808)) >= 0.005 || fabs(*(float *)(v3 + 812)) >= 0.005 ) /*0x513f7f*/
   {
     if ( a3 ) /*0x5140a0*/
       *a3 = -1; /*0x5140a2*/
+  float v35[12]; // [esp+98h] [ebp-C0h] BYREF
     Matrix3x4::Identity(v35); /*0x5140af*/
     Matrix3x4::Identity(v33); /*0x5140b8*/
-    v25 = *(double *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)a1[2] + 132))(a1[2]) + 864); /*0x5140d3*/
-    v27 = *(double *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)a1[2] + 132))(a1[2]) + 872); /*0x5140e9*/
-    v8 = Math::ArcTan2(*(float *)(a1[2] + 812)); /*0x5140f6*/
-    v9 = a1[2]; /*0x5140fb*/
-    v31 = v8; /*0x5140fe*/
-    v10 = Math::SinCos(*(float *)(v9 + 812)); /*0x51410b*/
-    v11 = a1[2]; /*0x514110*/
+    float v25 = *(double *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)a1[2] + 132))(a1[2]) + 864); /*0x5140d3*/
+    float v27 = *(double *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)a1[2] + 132))(a1[2]) + 872); /*0x5140e9*/
+    double v8 = Math::ArcTan2(*(float *)(a1[2] + 812)); /*0x5140f6*/
+    int v9 = a1[2]; /*0x5140fb*/
+    float v31 = v8; /*0x5140fe*/
+    double v10 = Math::SinCos(*(float *)(v9 + 812)); /*0x51410b*/
+    int v11 = a1[2]; /*0x514110*/
+  int v30; // [esp+24h] [ebp-134h]
     *(float *)&v30 = v10; /*0x514113*/
-    v12 = Math::ArcTan2(*(float *)(v11 + 808)); /*0x514120*/
-    v13 = a1[2]; /*0x514125*/
+    double v12 = Math::ArcTan2(*(float *)(v11 + 808)); /*0x514120*/
+    int v13 = a1[2]; /*0x514125*/
     v29 = v12; /*0x514128*/
-    v14 = Math::SinCos(*(float *)(v13 + 808)); /*0x514135*/
+    double v14 = Math::SinCos(*(float *)(v13 + 808)); /*0x514135*/
     v30 = Math::RoundToInt(fabs(v14) * v25 + fabs(*(float *)&v30) * v27); /*0x51415c*/
     LODWORD(v31) = Math::RoundToInt(v31 * v27); /*0x514165*/
-    v15 = Math::RoundToInt(v27 - (double)SLODWORD(v31)); /*0x51417e*/
-    v28 = v15; /*0x514180*/
+    int v15 = Math::RoundToInt(v27 - (double)SLODWORD(v31)); /*0x51417e*/
+    int v28 = v15; /*0x514180*/
     LODWORD(v29) = Math::RoundToInt(v29 * v25); /*0x514189*/
-    v16 = Math::RoundToInt(v25 - (double)SLODWORD(v29)); /*0x514195*/
-    v17 = a1[2]; /*0x51419a*/
-    v26 = v16; /*0x51419f*/
+    int v16 = Math::RoundToInt(v25 - (double)SLODWORD(v29)); /*0x514195*/
+    int v17 = a1[2]; /*0x51419a*/
+    int v26 = v16; /*0x51419f*/
     if ( *(float *)(v17 + 812) < 0.0 ) /*0x5141b4*/
       v28 = -v15; /*0x5141b8*/
     if ( *(float *)(v17 + 808) > 0.0 ) /*0x5141cd*/
       v26 = -v16; /*0x5141d1*/
-    v22 = (float)v30; /*0x5141e1*/
+    float v22 = (float)v30; /*0x5141e1*/
     Matrix3x3::ApplyCol1(v35, v22); /*0x5141e4*/
-    v23 = (float)v28; /*0x5141f2*/
+    float v23 = (float)v28; /*0x5141f2*/
     Matrix3x4::Translate(v33, v23); /*0x5141f5*/
-    v24 = (float)v26; /*0x514203*/
+    float v24 = (float)v26; /*0x514203*/
     Matrix3x3::ApplyCol0(v33, v24); /*0x514206*/
     Matrix3x3::RotateX(v33, *(float *)(a1[2] + 808)); /*0x514219*/
     Matrix3D::RotateZ(v33, *(float *)(a1[2] + 812)); /*0x51422c*/
+  float v36[12]; // [esp+C8h] [ebp-90h] BYREF
     Transform = Turret::GetTransform((signed int)a1, v36, a3); /*0x51423b*/
     Transform::Copy(v34, Transform); /*0x514245*/
-    v19 = MultiplyMatrix3x4(v37, v35, v34); /*0x514262*/
+  float v37[12]; // [esp+F8h] [ebp-60h] BYREF
+    float * v19 = MultiplyMatrix3x4(v37, v35, v34); /*0x514262*/
+  float v38[12]; // [esp+128h] [ebp-30h] BYREF
     v7 = MultiplyMatrix3x4(v38, v19, v33); /*0x514270*/
     goto LABEL_16; /*0x514270*/
   }
@@ -854,7 +834,7 @@ void * ObjectClass::BuildTransform(unsigned int * a1, float * a2, unsigned int *
   {
     v7 = Turret::GetTransform((signed int)a1, v34, a3); /*0x51408d*/
 LABEL_16:
-    v20 = v7; /*0x514275*/
+    float * v20 = v7; /*0x514275*/
     qmemcpy(a2, v20, 0x30u); /*0x514285*/
     return a2; /*0x514277*/
   }
@@ -1347,7 +1327,6 @@ int ObjectClass::Deploy()
   AbstractClass *v12; // ebp
   AbstractClass *aP3; // [esp+30h] [ebp-28h]
   _DWORD a1[3]; // [esp+40h] [ebp-18h] BYREF
-  char v26[12]; // [esp+4Ch] [ebp-Ch] BYREF
   IUnknown *aP1; // [esp+5Ch] [ebp+4h]
   __int16 aP1a; // [esp+5Ch] [ebp+4h]
 
@@ -1422,6 +1401,7 @@ LABEL_41:
       }
       if ( *(_DWORD *)v6[1].__pad_0 ) /*0x5f5045*/
       {
+  char v26[12]; // [esp+4Ch] [ebp-Ch] BYREF
         _DWORD * v8 = (_DWORD *)(*(int (__thiscall **)(#374 *, char *))(this->q048)(this, v26); /*0x5f505c*/
         a1[0] = *v8; /*0x5f5061*/
         a1[1] = v8[1]; /*0x5f5073*/
@@ -1900,13 +1880,7 @@ int ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
   int TileIndex; // eax
   int *v35; // ebp
   int v36; // edx
-  int v37; // [esp-28h] [ebp-60h]
-  int v38; // [esp+14h] [ebp-24h] BYREF
-  int v39; // [esp+18h] [ebp-20h] BYREF
-  int v40; // [esp+1Ch] [ebp-1Ch] BYREF
   __int16 *v41; // [esp+20h] [ebp-18h]
-  int v42; // [esp+24h] [ebp-14h] BYREF
-  int v43; // [esp+28h] [ebp-10h] BYREF
   int v44; // [esp+2Ch] [ebp-Ch] BYREF
   int v45; // [esp+30h] [ebp-8h]
   int v46; // [esp+34h] [ebp-4h]
@@ -1945,6 +1919,9 @@ int ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
   }
   else
   {
+  int v40; // [esp+1Ch] [ebp-1Ch] BYREF
+  int v39; // [esp+18h] [ebp-20h] BYREF
+  int v38; // [esp+14h] [ebp-24h] BYREF
     if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &a2) + 80) & 0x100) != 0 ) /*0x71828d*/
       int * v6 = (int *)*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &a2) + 58); /*0x71829e*/
     else
@@ -2043,12 +2020,14 @@ int ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
       v40 = a5; /*0x71857b*/
       int v15 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v40) + 80) >> 8; /*0x7185ad*/
       LOBYTE(v15) = v15 & 1; /*0x7185b0*/
-      v37 = v15; /*0x7185b5*/
+      int v37 = v15; /*0x7185b5*/
       TileIndex = MapClass::GetTileIndex(&DataGlobal_87F7E8, v41 + 18, v14, v39); /*0x7185bf*/
+  int v42; // [esp+24h] [ebp-14h] BYREF
       v42 = *LayerClass::Pathfinding_Find( /*0x7185e6*/
                &DataGlobal_87F7E8,
   int v17; // edx
                v17,
+  int v43; // [esp+28h] [ebp-10h] BYREF
                &v43,
                (__int16 *)&a5,
                1,

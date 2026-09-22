@@ -26,6 +26,168 @@ char E4Recv_520260::sub_520260()
 }
 }
 
+// ==== BACKFILL 0x005202F0  ProcessTechnoSquadResponse  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
+{
+      FootClass *v2;
+      FootClass *v3;
+      int *v4;
+      FootClass *v5;
+      int v6;
+      int *v7;
+      _DWORD *v8;
+      _DWORD *v9;
+      IUnknown *v10;
+      void **attachedTag;
+      _DWORD *v12;
+      _DWORD *v14;
+      _DWORD *v15;
+      IUnknown *v16;
+      bool v17;
+      int v18;
+      int *v19;
+      int v20;
+      int v21;
+      int v22;
+      int *v23;
+      int v24;
+      int v25;
+      int v26;
+      _DWORD *v27;
+      IUnknown *v28;
+      int *v29;
+      int v30;
+      int v31;
+      int v32;
+      _DWORD *v33;
+      int v34;
+      int v35;
+      _DWORD *v36;
+      int v37;
+      int v38;
+      int v39;
+      _DWORD v40[3];
+      _BYTE v41[12];
+      _DWORD v42[3];
+
+      if ( !BYTE1((this->M1728)[2].gattlingStage) )
+        return 0;
+      v2 = this->M1444;
+      if ( !v2 )
+        return 0;
+      if ( (*(int (__thiscall **)(FootClass *))(*(_DWORD *)v2->__pad_0 + 44))(v2) != 1 )
+        return 0;
+      v3 = this->M1444;
+      if ( Object::IsAlliedWithObjectHouse(this->M540, (IUnknown *)v3) )
+        return 0;
+      v4 = (int *)(*(int (__thiscall **)(FootClass *, _DWORD *, FootClass **))(*(_DWORD *)v3->__pad_0 + 76))(v3, v40, this);
+      v37 = *v4;
+      v5 = *this;
+      v38 = v4[1];
+      v6 = v4[2];
+      v7 = (int *)((int (__thiscall *)(FootClass **, _DWORD *))v5->ambientSoundController[3])(this, v40);
+      v37 = *v7;
+      v38 = v7[1];
+      if ( (int)abs32(v6 - v7[2]) >= *(int *)&g_NetworkPlayerBuffer[7172]
+        || (v8 = (_DWORD *)(*(int (__thiscall **)(FootClass *, _DWORD *))(*(_DWORD *)v3->__pad_0 + 72))(v3, v40),
+            v9 = (_DWORD *)((int (__thiscall *)(FootClass **, _BYTE *))(*this)->ambientSoundController[3])(this, v41),
+            v10 = Coord::Subtract(v42, (IUnknown *)(*v9 - *v8), (IUnknown *)(v9[1] - v8[1]), (IUnknown *)(v9[2] - v8[2])),
+            v37 = v10->field_0,
+            v38 = v10->field_4,
+            v39 = v10->field_8,
+            (int)Coord::Length(&v37) >= 128) )
+      {
+        v14 = (_DWORD *)(*(int (__thiscall **)(FootClass *, _DWORD *))(*(_DWORD *)v3->__pad_0 + 72))(v3, v42);
+        v15 = (_DWORD *)((int (__thiscall *)(FootClass **, _BYTE *))(*this)->ambientSoundController[3])(this, v41);
+        v16 = Coord::Subtract(v40, (IUnknown *)(*v15 - *v14), (IUnknown *)(v15[1] - v14[1]), (IUnknown *)(v15[2] - v14[2]));
+        v37 = v16->field_0;
+        v38 = v16->field_4;
+        v39 = v16->field_8;
+        v17 = (int)Coord::Length(&v37) < 512;
+        v18 = (int)this->M1652;
+        if ( v17 )
+        {
+          if ( !v18 )
+            WinAPI::Wrapper(-2147467261);
+          v19 = (int *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->M1652)->__pad_0 + 20))(
+                         this->M1652,
+                         v42);
+          v20 = *v19;
+          v21 = v19[1];
+          v22 = v19[2];
+          if ( v20 != *(_DWORD *)&g_NetworkPlayerBuffer[7108]
+            || v21 != *(_DWORD *)&g_NetworkPlayerBuffer[7112]
+            || v22 != *(_DWORD *)&g_NetworkPlayerBuffer[7116] )
+          {
+            if ( !this->M1652 )
+              WinAPI::Wrapper(-2147467261);
+            v23 = (int *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->M1652)->__pad_0 + 20))(
+                           this->M1652,
+                           v42);
+            v24 = *v23;
+            v25 = v23[1];
+            v26 = *(_DWORD *)v3->__pad_0;
+            v39 = v23[2];
+            v27 = (_DWORD *)(*(int (__thiscall **)(FootClass *, _BYTE *))(v26 + 72))(v3, v41);
+            v28 = Coord::Subtract(v40, (IUnknown *)(*v27 - v24), (IUnknown *)(v27[1] - v25), (IUnknown *)(v27[2] - v39));
+            v37 = v28->field_0;
+            v38 = v28->field_4;
+            v39 = v28->field_8;
+            if ( (int)Coord::Length(&v37) <= 128 )
+              return 0;
+          }
+          ((void (__thiscall *)(FootClass **, _DWORD, int))(*this)->audioController4[1])(this, this->M1444, 1);
+        }
+        else
+        {
+          if ( !v18 )
+            WinAPI::Wrapper(-2147467261);
+          v29 = (int *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->M1652)->__pad_0 + 20))(
+                         this->M1652,
+                         v42);
+          v30 = *v29;
+          v31 = v29[1];
+          v32 = v29[2];
+          if ( v30 != *(_DWORD *)&g_NetworkPlayerBuffer[7108]
+            || v31 != *(_DWORD *)&g_NetworkPlayerBuffer[7112]
+            || v32 != *(_DWORD *)&g_NetworkPlayerBuffer[7116] )
+          {
+            if ( !this->M1652 )
+              WinAPI::Wrapper(-2147467261);
+            v33 = (_DWORD *)(*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)(this->M1652)->__pad_0 + 20))(
+                              this->M1652,
+                              v42);
+            v34 = *v33 / 256;
+            v35 = v33[1] / 256;
+            v36 = (_DWORD *)(*(int (__thiscall **)(FootClass *, _BYTE *, FootClass **))(*(_DWORD *)v3->__pad_0 + 76))(
+                              v3,
+                              v41,
+                              this);
+            if ( (unsigned __int16)(*v36 / 256) == (_WORD)v34 && (unsigned __int16)(v36[1] / 256) == (_WORD)v35 )
+              return 0;
+          }
+        }
+        ((void (__thiscall *)(FootClass **, _DWORD, int))(*this)->audioController4[1])(this, this->M1444, 1);
+        return 0;
+      }
+      attachedTag = (void **)v3->attachedTag;
+      if ( attachedTag )
+        TeamClass::Update_0(attachedTag, 1, (AbstractClass *)this, *(IUnknown **)&g_NetworkPlayerBuffer[7076], 0, 0);
+      (*(void (__thiscall **)(FootClass *, int))(*(_DWORD *)v3->__pad_0 + 628))(v3, 3);
+      (*(void (__thiscall **)(FootClass *, _DWORD))(*(_DWORD *)v3->__pad_0 + 220))(v3, 0);
+      v12 = this->M52;
+      if ( v12 )
+      {
+        if ( TechnoClass::HasAnyMission(v12) )
+          ObjectClass::SetReference(v3, (int)this->M52);
+      }
+      (*(void (__thiscall **)(FootClass *, _DWORD, int))(*(_DWORD *)v3->__pad_0 + 980))(v3, this->M540, 1);
+      v3->waveEffect = (void *)(this->M1728)[2].spawnStatus;
+      ((void (__thiscall *)(FootClass **))(*this)->passengers[1])(this);
+      return 1;
+}
+} }
+
 // ==== BACKFILL 0x00521320  InfantryClass::GetIdleTimer  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::GetIdleTimer()
 {
@@ -1162,11 +1324,11 @@ int Factory::FindExitCellByName()
     if ( !_strcmpi(this, g_Str_none) )
     return -1;
     v2 = 0;
-    if ( *(int *)&HouseClass_Player.__pad_5568[20644] <= 0 )
+    if ( *(int *)&HouseClass_Player[42508] <= 0 )
     return -1;
-    while ( _strcmpi((const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[20632] + 4 * v2) + 36), this) )
+    while ( _strcmpi((const void *)(*(int *)(*(int *)&HouseClass_Player[42496] + 4 * v2) + 36), this) )
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20644] )
+    if ( ++v2 >= *(int *)&HouseClass_Player[42508] )
     return -1;
   }
     return v2;
@@ -1752,32 +1914,32 @@ namespace gamemd { int INIClass::ReadBase64Data(void* a1, int a2, int a3) {
       if ( !Block || !aP2 || (int)aP3 < 1 )
         return 0;
       INIClass::ClearSection((int)this, (INIClass *)Block, 0);
-      *(_DWORD *)&aP1.__pad_0[4] = 0;
-      *(_DWORD *)&aP1.__pad_0[8] = 0;
-      Buffer::Init(&aP1.__pad_0[12], (int)aP2, (AbstractClass *)aP3);
+      *(_DWORD *)&aP1[4] = 0;
+      *(_DWORD *)&aP1[8] = 0;
+      Buffer::Init(&aP1[12], (int)aP2, (AbstractClass *)aP3);
       aP1.nextArrayIndex = 0;
-      *(_DWORD *)aP1.__pad_0 = &vt_BufferStraw;
+      *(_DWORD *)aP1[0] = &vt_BufferStraw;
       memset(&aP1.NeedsSaveOrLink, 0, 16);
       aP1.referenceCount = (int)&Base64Straw::`vftable';
       Delegate::Set(&aP1.referenceCount, &aP1);
       v5 = (INIClass *)1;
-      v6 = BitmapClass::ProcessFrame((Base64Straw *)&aP1.referenceCount, &aP1.__pad_24[20], 70);
-      aP1.__pad_24[v6 + 20] = 0;
+      v6 = BitmapClass::ProcessFrame((Base64Straw *)&aP1.referenceCount, &aP1[56], 70);
+      aP1[36][v6 + 20] = 0;
       if ( v6 )
       {
         do
         {
           sprintf(&aP1.Name[28], g_Str_Trace__d, v5);
-          INIClass::SetString(this, (INIClass *)Block, (INIClass *)&aP1.Name[28], (INIClass *)&aP1.__pad_24[20]);
+          INIClass::SetString(this, (INIClass *)Block, (INIClass *)&aP1.Name[28], (INIClass *)&aP1[56]);
           v5 = (INIClass *)((char *)v5 + 1);
-          v7 = BitmapClass::ProcessFrame((Base64Straw *)&aP1.referenceCount, &aP1.__pad_24[20], 70);
-          aP1.__pad_24[v7 + 20] = 0;
+          v7 = BitmapClass::ProcessFrame((Base64Straw *)&aP1.referenceCount, &aP1[56], 70);
+          aP1[36][v7 + 20] = 0;
         }
         while ( v7 );
       }
       Straw::Dtor(&aP1.referenceCount);
-      Vector::Clear((int)&aP1.__pad_0[12]);
-      Straw::Dtor((int *)aP1.__pad_0);
+      Vector::Clear((int)&aP1[12]);
+      Straw::Dtor((int *)aP1[0]);
       return 1;
 }
 } }
@@ -1800,10 +1962,10 @@ namespace gamemd { int INIClass::ReadIntList2(void* a1, void* a2) {
   {
     if ( !*v4 )
     break;
-    strncpy(Buffer.__pad_20, v4, 0x4Bu);
+    strncpy(Buffer[32], v4, 0x4Bu);
     v11 = 0;
-    sprintf(Buffer.__pad_0, g_Str_Trace__d, i);
-    v6 = strlen(Buffer.__pad_20) + 1;
+    sprintf(Buffer[0], g_Str_Trace__d, i);
+    v6 = strlen(Buffer[32]) + 1;
     v7 = v6 - 1;
     if ( (int)(v6 - 1) <= 0 )
     break;
@@ -1811,7 +1973,7 @@ namespace gamemd { int INIClass::ReadIntList2(void* a1, void* a2) {
     {
     while ( 1 )
       {
-    v8 = Buffer.__pad_20[v7];
+    v8 = Buffer[32][v7];
     if ( v8 )
         {
     if ( (unsigned char)v8 <= 0x20u )
@@ -1822,10 +1984,10 @@ namespace gamemd { int INIClass::ReadIntList2(void* a1, void* a2) {
       }
     if ( !v7 )
     return 1;
-    Buffer.__pad_20[v7] = 0;
+    Buffer[32][v7] = 0;
     }
-    String::Trim(Buffer.__pad_20);
-    INIClass::SetString(this, a1, &Buffer, (INIClass *)Buffer.__pad_20);
+    String::Trim(Buffer[32]);
+    INIClass::SetString(this, a1, &Buffer, (INIClass *)Buffer[32]);
     i = (INIClass *)((char *)(i) + 1);
   }
     return 1;
@@ -1845,7 +2007,7 @@ namespace gamemd { int INIClass::SetInt(void* aP1, void* aP2, int aP3, int a5) {
       else
       {
         if ( a5 == 2 )
-          v7 = (ObjectClass *)&stru_825BAC.__pad_0[4];
+          v7 = (ObjectClass *)&stru_825BAC[4];
         else
           v7 = (ObjectClass *)&stru_817F40.fallRate;
         sprintf(Buffer[0].__pad_0, v7, aP3);
@@ -1910,7 +2072,7 @@ namespace gamemd { int INIClass::ReadDouble(void* a1, void* a2, void* a3) {
 namespace gamemd { int INIClass::SetRect(void* a1, void* a2, void* a3) {
 {
     INIClass Buffer;
-    sprintf( Buffer.__pad_0, g_Str_Trace__d__d__d__d, *(int *)a3->__pad_0, a3->headNode[0], a3->headNode[1], a3->headNode[2]);
+    sprintf( Buffer[0], g_Str_Trace__d__d__d__d, *(int *)a3->__pad_0, a3->headNode[0], a3->headNode[1], a3->headNode[2]);
     return INIClass::SetString(this, a1, (INIClass *)a2, &Buffer);
 }
 } }
@@ -1923,7 +2085,7 @@ namespace gamemd { int INIClass::ReadFloat(void* a1, void* a2, void* a3) {
     INIClass Buffer;
     v5 = (INIClass *)String::GetOrEmpty_Alt(a3);
     v6 = (INIClass *)String::GetOrEmpty_Alt(a2);
-    sprintf(Buffer.__pad_0, g_Str_Trace__d__d__d__d, *a4, *((int*)(a4) + 1), *((int*)(a4) + 2), *((int*)(a4) + 3));
+    sprintf(Buffer[0], g_Str_Trace__d__d__d__d, *a4, *((int*)(a4) + 1), *((int*)(a4) + 2), *((int*)(a4) + 3));
     return INIClass::SetString(this, v6, v5, &Buffer);
 }
 } }
@@ -2047,7 +2209,7 @@ namespace gamemd { int INIClass::ReadBool3(void* a1, void* a2, int a3) {
 namespace gamemd { int INIEntry::Write2Integers(void* a1, void* a2, void* a3) {
 {
     char Buffer[56];
-    sprintf(Buffer, g_INI_Key_Digest.__pad_20, *(int *)a3->__pad_0, a3->headNode[0]);
+    sprintf(Buffer, g_INI_Key_Digest[32], *(int *)a3->__pad_0, a3->headNode[0]);
     return INIClass::SetString(this, (INIClass *)Block, (INIClass *)a2, (INIClass *)Buffer);
 }
 } }
@@ -2061,7 +2223,7 @@ char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
     char Buffer[56];
     v5 = (INIClass *)String::GetOrEmpty_Alt(a3);
     v6 = (INIClass *)String::GetOrEmpty_Alt(a2);
-    sprintf(Buffer, g_INI_Key_Digest.__pad_20, *a4, *((int*)(a4) + 1));
+    sprintf(Buffer, g_INI_Key_Digest[32], *a4, *((int*)(a4) + 1));
     return INIClass::SetString(this, v6, v5, (INIClass *)Buffer);
 }
 }
@@ -2108,6 +2270,96 @@ namespace gamemd { int INIClass::ReadBool(void* a1, void* a2, void* a3) {
     sprintf(Buffer, (const char *const)&g_Str_no.headNode[1], *a4, *((int*)(a4) + 1), *((int*)(a4) + 2));
     return INIClass::SetString(this, v6, v5, (INIClass *)Buffer);
 }
+} }
+
+// ==== BACKFILL 0x0052A670  WinMain_Init  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { void* Gap2Recv_52A670::WinMain_Init(void* a2, char a3) {
+{
+    int v5[129];
+    char v6[512];
+    int v7[64];
+    InitArrayWithValue(v5, 0, 64);
+    InitArrayWithValue(&v5[64], 0, 64);
+    v5[128] = 0;
+    if ( a3 )
+  {
+    InitArrayWithValue(v7, 65537, 64);
+    EncodeVarInt((int)v7, v6, 64);
+  }
+    else
+  {
+    INIClass::GetBase64Data(this, aPrivatekey, (int)v6, 512);
+  }
+    System_Init_632030(v5, v6);
+    INIClass::GetBase64Data(this, aPublickey, (int)v6, 512);
+    System_Init_632000(v5, v6);
+    qmemcpy(a2, v5, 0x204u);
+    return a2;
+}
+
+/* ASM:
+sub     esp, 504h
+push    esi
+mov     esi, ecx
+push    edi
+push    40h ; '@'
+xor     edx, edx
+lea     ecx, [esp+510h+var_504]
+call    InitArrayWithValue
+push    40h ; '@'
+xor     edx, edx
+lea     ecx, [esp+510h+var_404]
+call    InitArrayWithValue
+mov     al, [esp+50Ch+arg_4]
+mov     [esp+50Ch+var_304], 0
+test    al, al
+jz      short loc_52A6DF
+push    40h ; '@'
+mov     edx, 10001h
+lea     ecx, [esp+510h+var_100]
+call    InitArrayWithValue
+push    40h ; '@'
+lea     edx, [esp+510h+var_300]
+lea     ecx, [esp+510h+var_100]
+call    EncodeVarInt
+lea     eax, [esp+50Ch+var_300]
+push    eax
+jmp     short loc_52A700
+; ---------------------------------------------------------------------------
+
+loc_52A6DF:                             ; CODE XREF: WinMain_Init+3B↑j
+lea     ecx, [esp+50Ch+var_300]
+push    200h            ; Size
+push    ecx             ; int
+push    offset aPrivatekey ; "PrivateKey"
+mov     ecx, esi
+call    INIClass__GetBase64Data
+lea     edx, [esp+50Ch+var_300]
+push    edx
+
+loc_52A700:                             ; CODE XREF: WinMain_Init+6D↑j
+lea     ecx, [esp+510h+var_504]
+call    System_Init_632030
+lea     eax, [esp+50Ch+var_300]
+push    200h            ; Size
+push    eax             ; int
+push    offset aPublickey ; "PublicKey"
+mov     ecx, esi
+call    INIClass__GetBase64Data
+lea     ecx, [esp+50Ch+var_300]
+push    ecx
+lea     ecx, [esp+510h+var_504]
+call    System_Init_632000
+mov     eax, [esp+50Ch+arg_0]
+mov     ecx, 81h
+lea     esi, [esp+50Ch+var_504]
+mov     edi, eax
+rep movsd
+pop     edi
+pop     esi
+add     esp, 504h
+retn    8
+*/
 } }
 
 // ==== BACKFILL 0x0052A940  INIClass::SaveTimeField  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====

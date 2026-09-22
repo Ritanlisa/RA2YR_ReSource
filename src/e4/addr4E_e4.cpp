@@ -814,7 +814,6 @@ void SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v3; // eax
-  int v4; // edx
 
   int v2 = DataGlobal_A8B3B4; /*0x4e48e7*/
   if ( DataGlobal_A8B3B8 == -2 ) /*0x4e48f0*/
@@ -852,7 +851,7 @@ void SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
   }
   if ( g_GameMode_Current == 3 || g_GameMode_Current == 4 ) /*0x4e496b*/
   {
-    v4 = *(&g_NetworkPlayerName + a2); /*0x4e496d*/
+    int v4 = *(&g_NetworkPlayerName + a2); /*0x4e496d*/
     if ( v4 == g_Lobby_MaxPlayers && *(_DWORD *)(v4 + 107) == -1 ) /*0x4e4982*/
       v2 = 8; /*0x4e4984*/
   }
@@ -869,15 +868,11 @@ void SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
 {
   HWND v4; // ebp
   int v5; // eax
-  int v6; // eax
   int v7; // edx
   int *v8; // ecx
   WPARAM v9; // edi
   LRESULT v10; // ebp
-  int v11; // esi
   int i; // esi
-  int v13; // edx
-  int v14; // eax
   char result; // al
   bool v16; // [esp+Bh] [ebp-Dh]
   LRESULT v18; // [esp+10h] [ebp-8h]
@@ -910,7 +905,7 @@ void SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
       v5 = 6; /*0x4e4a28*/
       break;
     default:
-      v6 = -(nIDDlgItem != 1320); /*0x4e4a38*/
+      int v6 = -(nIDDlgItem != 1320); /*0x4e4a38*/
       LOBYTE(v6) = v6 & 0xF8; /*0x4e4a3a*/
       v5 = v6 + 7; /*0x4e4a3c*/
       break;
@@ -943,6 +938,7 @@ LABEL_22:
     SendDlgItemMessageA(hDlg, nIDDlgItem, 0x14Eu, v9, 0); /*0x4e4ac2*/
     if ( v10 != -2 )
     {
+  int v11; // esi
       switch ( nIDDlgItem )
       {
         case 1698:
@@ -979,6 +975,7 @@ LABEL_44:
     ShowWindow(hWnd, 5); /*0x4e4b63*/
   for ( i = 0; i < 8; ++i )
   {
+  int v13; // edx
     if ( i )
     {
       switch ( i )
@@ -1011,6 +1008,7 @@ LABEL_44:
       v13 = 1698; /*0x4e4b6f*/
     }
     if ( (g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4) /*0x4e4bf7*/
+  int v14; // eax
       && ((v14 = *(&g_NetworkPlayerName + i), v14 == g_Lobby_MaxPlayers) || *(_DWORD *)(v14 + 107) == -1) )
     {
       result = FillListBox(v4, v13); /*0x4e4c04*/
@@ -1032,15 +1030,12 @@ void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
-  int v5; // eax
   int v6; // edx
   int *v7; // ecx
   LRESULT v8; // eax
   LRESULT v9; // eax
   int v10; // esi
   int i; // esi
-  int v12; // edx
-  int v13; // eax
   char result; // al
 
   switch ( nIDDlgItem ) /*0x4e4c2c*/
@@ -1067,7 +1062,7 @@ void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
       v4 = 6; /*0x4e4c85*/
       break;
     default:
-      v5 = -(nIDDlgItem != 1320); /*0x4e4c95*/
+      int v5 = -(nIDDlgItem != 1320); /*0x4e4c95*/
       LOBYTE(v5) = v5 & 0xF8; /*0x4e4c97*/
       v4 = v5 + 7; /*0x4e4c99*/
       break;
@@ -1117,6 +1112,7 @@ LABEL_22:
     DataGlobal_8B4040[3 * v9] = v10; /*0x4e4d67*/
   for ( i = 0; i < 8; ++i )
   {
+  int v12; // edx
     if ( i )
     {
       switch ( i )
@@ -1149,6 +1145,7 @@ LABEL_22:
       v12 = 1698; /*0x4e4d74*/
     }
     if ( (g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4) /*0x4e4dfc*/
+  int v13; // eax
       && ((v13 = *(&g_NetworkPlayerName + i), v13 == g_Lobby_MaxPlayers) || *(_DWORD *)(v13 + 107) == -1) )
     {
       result = FillListBox(hDlg, v12); /*0x4e4e09*/
@@ -1247,7 +1244,6 @@ void Lobby_FillFactionComboBox(HWND a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v3; // eax
-  int v4; // edx
 
   int v2 = -2; /*0x4e53d4*/
   if ( a2 )
@@ -1283,7 +1279,7 @@ void Lobby_FillFactionComboBox(HWND a1, int a2)
   }
   if ( g_GameMode_Current == 3 || g_GameMode_Current == 4 ) /*0x4e544b*/
   {
-    v4 = *(&g_NetworkPlayerName + a2); /*0x4e544d*/
+    int v4 = *(&g_NetworkPlayerName + a2); /*0x4e544d*/
     if ( v4 == g_Lobby_MaxPlayers && *(_DWORD *)(v4 + 107) == -1 ) /*0x4e5462*/
       v2 = 8; /*0x4e5464*/
   }
@@ -1300,15 +1296,11 @@ void SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
 {
   SessionClass *v4; // ebp
   int v5; // eax
-  int v6; // eax
   int v7; // edx
   char *v8; // ecx
   WPARAM v9; // edi
   LRESULT v10; // ebp
-  int v11; // esi
   int i; // esi
-  int v13; // edx
-  int v14; // eax
   char result; // al
   bool v16; // [esp+Bh] [ebp-Dh]
   LRESULT v18; // [esp+10h] [ebp-8h]
@@ -1341,7 +1333,7 @@ void SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
       v5 = 6; /*0x4e5508*/
       break;
     default:
-      v6 = -(nIDDlgItem != 1707); /*0x4e5518*/
+      int v6 = -(nIDDlgItem != 1707); /*0x4e5518*/
       LOBYTE(v6) = v6 & 0xF8; /*0x4e551a*/
       v5 = v6 + 7; /*0x4e551c*/
       break;
@@ -1374,6 +1366,7 @@ LABEL_22:
     SendDlgItemMessageA((HWND)aP0, nIDDlgItem, 0x14Eu, v9, 0); /*0x4e55a2*/
     if ( v10 != -2 )
     {
+  int v11; // esi
       switch ( nIDDlgItem )
       {
         case 1699:
@@ -1410,6 +1403,7 @@ LABEL_44:
     ShowWindow(hWnd, 5); /*0x4e5643*/
   for ( i = 0; i < 8; ++i )
   {
+  int v13; // edx
     if ( i )
     {
       switch ( i )
@@ -1442,6 +1436,7 @@ LABEL_44:
       v13 = 1699; /*0x4e564f*/
     }
     if ( (*(_DWORD *)&HouseClass_Player[29932] == 3 || *(_DWORD *)&HouseClass_Player[29932] == 4) /*0x4e56d7*/
+  int v14; // eax
       && ((v14 = *(_DWORD *)&HouseClass_Player[21864][4 * i + 18396],
            (CoordStruct *)v14 == *(&g_MatrixTransformState + 2281))
        || *(_DWORD *)(v14 + 107) == -1) )
@@ -1465,15 +1460,12 @@ void FillComboBoxSides(HWND hDlg, int nIDDlgItem)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
-  int v5; // eax
   int v6; // edx
   int *v7; // ecx
   LRESULT v8; // eax
   LRESULT v9; // eax
   int v10; // esi
   int i; // esi
-  int v12; // edx
-  int v13; // eax
   char result; // al
 
   switch ( nIDDlgItem ) /*0x4e570c*/
@@ -1500,7 +1492,7 @@ void FillComboBoxSides(HWND hDlg, int nIDDlgItem)
       v4 = 6; /*0x4e5765*/
       break;
     default:
-      v5 = -(nIDDlgItem != 1707); /*0x4e5775*/
+      int v5 = -(nIDDlgItem != 1707); /*0x4e5775*/
       LOBYTE(v5) = v5 & 0xF8; /*0x4e5777*/
       v4 = v5 + 7; /*0x4e5779*/
       break;
@@ -1550,6 +1542,7 @@ LABEL_22:
     DataGlobal_8B3F38[3 * v9] = v10; /*0x4e5847*/
   for ( i = 0; i < 8; ++i )
   {
+  int v12; // edx
     if ( i )
     {
       switch ( i )
@@ -1582,6 +1575,7 @@ LABEL_22:
       v12 = 1699; /*0x4e5854*/
     }
     if ( (g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4) /*0x4e58dc*/
+  int v13; // eax
       && ((v13 = *(&g_NetworkPlayerName + i), v13 == g_Lobby_MaxPlayers) || *(_DWORD *)(v13 + 107) == -1) )
     {
       result = SetupComboBoxRandomAlliance(hDlg, v12); /*0x4e58e9*/
@@ -1671,7 +1665,6 @@ void Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v3; // eax
-  int v4; // edx
 
   int v2 = -1; /*0x4e5e22*/
   if ( a2 )
@@ -1707,7 +1700,7 @@ void Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
   }
   if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x4e5e99*/
   {
-    v4 = *(&g_NetworkPlayerName + a2); /*0x4e5e9b*/
+    int v4 = *(&g_NetworkPlayerName + a2); /*0x4e5e9b*/
     if ( v4 == g_Lobby_MaxPlayers && *(_DWORD *)(v4 + 107) == -1 ) /*0x4e5eaf*/
       v2 = 4; /*0x4e5eb1*/
   }

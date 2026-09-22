@@ -10370,7 +10370,7 @@ void __thiscall ConnectAndLoginWOL_Connect(SimpleWonlineDialogControl *this)
 }
 
 
-// ==== 0x0077D200  ObjectClass::j_Game_ProcessIdle  this=SimpleWonlineDialogControl  sig=ida-proto ====
+// ==== 0x0077D200  j_Game_ProcessIdle  this=SimpleWonlineDialogControl  sig=ida-proto ====
 // attributes: thunk
 char __thiscall ObjectClass::j_Game_ProcessIdle(SimpleWonlineDialogControl *this)
 {

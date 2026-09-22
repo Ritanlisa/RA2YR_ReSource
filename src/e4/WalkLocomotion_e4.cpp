@@ -172,9 +172,6 @@ int WalkLocomotion::ProcessCollision(char a2)
   double varD0; // [esp+54h] [ebp-D0h] BYREF
   IUnknown *v183; // [esp+5Ch] [ebp-C8h]
   ObjectClass aP3; // [esp+60h] [ebp-C4h] BYREF
-  _DWORD v186[4]; // [esp+10Ch] [ebp-18h] BYREF
-  int v187; // [esp+11Ch] [ebp-8h]
-  int v188; // [esp+120h] [ebp-4h]
   if ( (!*(_BYTE *)(this + 99) || this->WalkLocomotion_field_0x58 == -1) && *(_DWORD *)(this->q00C + 1504) != 8
     || *(_BYTE *)(this + 98)
     && !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3233) )
@@ -417,6 +414,7 @@ LABEL_37:
     if ( (*(unsigned __int8 (__thiscall **)(_DWORD))(*this->q00C + 192))(this->q00C) )
     {
       v52 = this->q00C;
+  _DWORD v186[4]; // [esp+10Ch] [ebp-18h] BYREF
       v186[0] = *(_DWORD *)&v52->__pad_74[40];
       v186[1] = *(_DWORD *)&v52->__pad_74[44];
       v186[2] = *(_DWORD *)&v52->__pad_74[48];
@@ -467,8 +465,8 @@ LABEL_37:
     int v64 = *(_DWORD *)&v62->__pad_74[40];
     int v65 = *(_DWORD *)&v62->__pad_74[44];
     *(_WORD *)&aP3.isOnMap = aP3.nextArrayIndex / 256;
-    v187 = v65;
-    v188 = *(_DWORD *)&v62->__pad_74[48];
+    int v187 = v65;
+    int v188 = *(_DWORD *)&v62->__pad_74[48];
     *(_WORD *)&aP3.alignmentPadding75[1] = v63 / 256;
     aP3.nextObject = *(void **)&aP3.isOnMap;
     if ( *(_WORD *)&aP3.isOnMap != (unsigned __int16)(v64 / 256)
@@ -1021,8 +1019,6 @@ int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
   int ClosestObject; // eax
   __int16 v60; // cx
   _DWORD *v75; // ecx
-  _DWORD *v76; // ecx
-  __int64 v77; // rax
   int *v78; // eax
   int v79; // edx
   int v80; // eax
@@ -1041,50 +1037,13 @@ int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
   int v93; // eax
   int v94; // edx
   int v95; // esi
-  int v96; // edx
-  _DWORD *v97; // ebx
-  int v98; // eax
-  int v99; // eax
-  _DWORD *v100; // edx
-  int v101; // ecx
-  int v102; // ecx
-  int v103; // edi
-  int v104; // esi
-  int v105; // eax
-  int v106; // edx
-  int v107; // eax
-  char v108; // bl
-  _DWORD *v109; // ecx
   _DWORD *v110; // edx
   wchar_t *v111; // eax
-  _DWORD *v112; // eax
-  _DWORD *v113; // eax
-  int v114; // edx
-  int v115; // eax
-  double v116; // st7
-  _DWORD *v117; // ecx
-  __int64 v118; // rax
-  _DWORD *v119; // ecx
-  _DWORD *v120; // edx
-  int v121; // esi
-  int v122; // ecx
-  _DWORD *v123; // eax
-  _DWORD *v124; // eax
-  char v125; // al
-  int v126; // ecx
   wchar_t *v127; // esi
   wchar_t *v128; // eax
   wchar_t *v129; // ecx
   wchar_t **v130; // edx
-  _DWORD *v131; // eax
-  _DWORD *v132; // eax
   int Object; // eax
-  int *v134; // ecx
-  int v135; // esi
-  _DWORD *v136; // eax
-  int v137; // eax
-  int v138; // esi
-  void *v139; // eax
   _DWORD *v140; // eax
   int *Coords; // eax
   int v142; // esi
@@ -1095,68 +1054,22 @@ int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
   double v148; // st7
   unsigned __int8 v149; // c0
   unsigned __int8 v150; // c3
-  double *v151; // ecx
   int v152; // ecx
   _DWORD *v153; // ecx
   unsigned int v154; // esi
-  _DWORD *v155; // eax
-  int v156; // edi
-  int v157; // ecx
-  int v158; // edx
-  int v159; // eax
-  int v160; // ecx
-  double v161; // st7
-  char v162; // dl
-  int v163; // ecx
-  int v164; // ecx
   _DWORD *NeighbourContent; // eax
   int v166; // eax
   int v167; // eax
   unsigned int v168; // eax
-  _DWORD *v169; // eax
-  int v170; // eax
-  int v171; // esi
-  int *v172; // edi
-  int v173; // eax
-  int v174; // ecx
-  int v175; // edi
-  void *v176; // eax
-  int v177; // ebx
-  _DWORD *v178; // ecx
-  _DWORD *v179; // eax
-  int v180; // edi
-  _DWORD *v181; // ecx
-  int v182; // edx
-  int v183; // eax
-  int v184; // eax
-  double v185; // st7
-  _DWORD *v186; // ecx
-  __int64 v187; // rax
-  _DWORD *v188; // ecx
-  _DWORD *v189; // ecx
-  _DWORD *v190; // edx
-  int v191; // edi
-  __int64 v192; // rax
-  _DWORD *v193; // eax
-  _BYTE *v194; // edx
   int *v195; // esi
   int v196; // edx
   int v197; // eax
-  int v198; // ecx
   int v199; // ecx
   int v200; // edx
   bool v201; // zf
   int v202; // eax
-  _DWORD *v203; // eax
   int v204; // ecx
-  int v205; // [esp+70h] [ebp-6Ch]
   int LandHeight; // [esp+74h] [ebp-68h]
-  int v207; // [esp+74h] [ebp-68h]
-  _BYTE *v208; // [esp+74h] [ebp-68h]
-  int v209; // [esp+74h] [ebp-68h]
-  char v210; // [esp+7Ch] [ebp-60h]
-  int v211; // [esp+7Ch] [ebp-60h]
-  int v212; // [esp+7Ch] [ebp-60h]
   int v213; // [esp+80h] [ebp-5Ch]
   char v214; // [esp+93h] [ebp-49h]
   int v215; // [esp+94h] [ebp-48h] BYREF
@@ -1536,8 +1449,8 @@ LABEL_31:
   {
     _BYTE * v61 = this->q00C;
     int v62 = *(_DWORD *)v61;
-    v207 = ObjectClass::GetLandHeight(v61);
-    v205 = *(_DWORD *)(this->q00C + 1504);
+    int v207 = ObjectClass::GetLandHeight(v61);
+    int v205 = *(_DWORD *)(this->q00C + 1504);
     void * v63 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v218);
   int v64; // eax
     v64 = (*(int (__thiscall **)(_DWORD, void *, int, int, _DWORD, int))(v62 + 428))(
@@ -1608,11 +1521,13 @@ LABEL_31:
             }
           }
           if ( (v66[80] & 0x100) == 0
+  _DWORD *v76; // ecx
             || (v76 = this->q00C,
                 LOBYTE(v216) = 1,
                 v76 += 39,
                 v226 = (_DWORD *)*v76,
                 v227 = (wchar_t *)v76[1],
+  __int64 v77; // rax
                 v77 = v76[2] / DataGlobal_B07838 - *((char *)v66 + 283),
                 (int)((HIDWORD(v77) ^ v77) - HIDWORD(v77)) <= 2) )
           {
@@ -1724,7 +1639,7 @@ LABEL_148:
 LABEL_153:
     if ( v94 == 3 )
     {
-      v96 = this->q00C;
+      int v96 = this->q00C;
       a4 = v215;
       Cell::IsPassableAllied(v96, (__int16 *)&a4);
       goto LABEL_155;
@@ -1733,7 +1648,7 @@ LABEL_153:
     {
       if ( !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3220) )
       {
-        v109 = this->q00C;
+        _DWORD * v109 = this->q00C;
         if ( (_BYTE)a3 )
         {
           v109[376] = -1;
@@ -1742,23 +1657,27 @@ LABEL_153:
           v111 = v227;
           goto LABEL_327;
         }
-        v112 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*v109 + 72))(v109, &v226);
+        _DWORD * v112 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*v109 + 72))(v109, &v226);
+  _DWORD *v113; // eax
         v113 = Coord::Subtract(
                  &v229,
                  *v112 - *(_DWORD *)(this + 52),
                  v112[1] - *(_DWORD *)(this + 56),
                  v112[2] - *(_DWORD *)(this + 60));
         v220 = (_DWORD *)*v113;
-        v114 = v113[1];
-        v115 = v113[2];
+        int v114 = v113[1];
+        int v115 = v113[2];
         v221 = v114;
         v222 = v115;
+  double v116; // st7
         v116 = Math::Sqrt((double)v115 * (double)v115 + (double)v114 * (double)v114 + (double)(int)v220
                                                                                     * (double)(int)v220);
         if ( (int)Math::RoundToInt(v116) >= *((_DWORD *)g_RulesClass_Instance + 1478)
+  _DWORD *v117; // ecx
           || (v117 = (_DWORD *)(this->q00C + 156),
               v226 = (_DWORD *)*v117,
               v227 = (wchar_t *)v117[1],
+  __int64 v118; // rax
               v118 = *(_DWORD *)(this + 60) - v117[2],
               (int)((HIDWORD(v118) ^ v118) - HIDWORD(v118)) >= 2 * DataGlobal_B07838)
           || (v220 = (_DWORD *)*v117,
@@ -1767,18 +1686,21 @@ LABEL_153:
               *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v220) + 59) == 10) )
         {
           if ( (*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 80) & 0x100) == 0
+  _DWORD *v120; // edx
             || (v120 = (_DWORD *)(this->q00C + 156),
                 v226 = (_DWORD *)*v120,
                 v227 = (wchar_t *)v120[1],
+  int v121; // esi
                 v121 = v120[2],
+  int v122; // ecx
                 v122 = *((char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 283),
                 LOBYTE(a4) = 1,
                 (int)abs32(v121 / DataGlobal_B07838 - v122) <= 2) )
           {
             LOBYTE(a4) = 0;
           }
-          v210 = a4;
-          v123 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+          char v210 = a4;
+          _DWORD * v123 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           Cell::ApplyDamage(v123, (int)&g_OverlayTypeConfig, 1, 1, v210);
         }
         else
@@ -1792,7 +1714,7 @@ LABEL_153:
             this->q048 = DataGlobal_00B07800;
             *(_BYTE *)(this + 99) = 0;
           }
-          v119 = this->q00C;
+          _DWORD * v119 = this->q00C;
           if ( v119[358] )
           {
             FootClass::ClearPathIndex(v119);
@@ -1811,33 +1733,33 @@ LABEL_153:
         }
       }
 LABEL_155:
-      v97 = (_DWORD *)(this + 64);
+      _DWORD * v97 = (_DWORD *)(this + 64);
       if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
         || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
         || this->q048 != DataGlobal_00B07800 )
       {
         *v97 = g_OverlayTypeConfig;
         this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
-        v98 = DataGlobal_00B07800;
+        int v98 = DataGlobal_00B07800;
         *(_BYTE *)(this + 99) = 0;
         this->q048 = v98;
       }
       if ( LODWORD(v216) == 2 )
       {
-        v99 = this->q00C;
+        int v99 = this->q00C;
         if ( !*(_BYTE *)(v99 + 1719) )
         {
           *(_BYTE *)(v99 + 1719) = 1;
-          v100 = (_DWORD *)(this->q00C + 1640);
-          v101 = *((_DWORD *)g_RulesClass_Instance + 1498);
+          _DWORD * v100 = (_DWORD *)(this->q00C + 1640);
+          int v101 = *((_DWORD *)g_RulesClass_Instance + 1498);
           *v100 = g_CurrentFrame;
           v100[1] = v230;
           v100[2] = v101;
         }
-        v102 = this->q00C;
-        v103 = (int)g_CurrentFrame;
-        v104 = *(_DWORD *)(v102 + 1600);
-        v105 = *(_DWORD *)(v102 + 1608);
+        int v102 = this->q00C;
+        int v103 = (int)g_CurrentFrame;
+        int v104 = *(_DWORD *)(v102 + 1600);
+        int v105 = *(_DWORD *)(v102 + 1608);
         if ( v104 != -1 )
         {
           if ( (int)g_CurrentFrame - v104 >= v105 )
@@ -1846,11 +1768,12 @@ LABEL_155:
         }
         if ( !v105 )
         {
+  char v108; // bl
 LABEL_166:
           if ( *(_BYTE *)(v102 + 1719) )
           {
-            v106 = *(_DWORD *)(v102 + 1640);
-            v107 = *(_DWORD *)(v102 + 1648);
+            int v106 = *(_DWORD *)(v102 + 1640);
+            int v107 = *(_DWORD *)(v102 + 1648);
             if ( v106 != -1 )
             {
               v103 = (int)g_CurrentFrame - v106;
@@ -1861,8 +1784,8 @@ LABEL_171:
 LABEL_199:
                 LOWORD(a4) = *(_DWORD *)(this + 52) / 256;
                 HIWORD(a4) = *(_DWORD *)(this + 56) / 256;
-                v125 = FootClass::MovementStep(v102, v103, a4, 0, (v108 != 0) + 1, v213);
-                v126 = this->q00C;
+                char v125 = FootClass::MovementStep(v102, v103, a4, 0, (v108 != 0) + 1, v213);
+                int v126 = this->q00C;
                 if ( !v126 )
                 {
                   *a2 = 1;
@@ -1905,21 +1828,21 @@ LABEL_209:
       {
         v220 = 0;
         v221 = 0;
-        v131 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+        _DWORD * v131 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
         if ( Object::FindObjectCell(v131, &v220, 0) )
         {
           v220 = 0;
           v221 = 0;
-          v132 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+          _DWORD * v132 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           Object = Object::FindObjectCell(v132, &v220, 0);
           if ( !Object::IsAlliedWithObjectHouse(*(_DWORD **)(this->q00C + 540), Object) )
           {
-            v134 = this->q00C;
+            int * v134 = this->q00C;
             v220 = 0;
             v221 = 0;
-            v135 = *v134;
-            v136 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
-            v137 = Object::FindObjectCell(v136, &v220, 0);
+            int v135 = *v134;
+            _DWORD * v136 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+            int v137 = Object::FindObjectCell(v136, &v220, 0);
             (*(void (__thiscall **)(_DWORD, int, int, _DWORD))(v135 + 500))(this->q00C, 1, v137, 0);
           }
         }
@@ -1928,8 +1851,8 @@ LABEL_209:
                              + *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 17))
                            + 680) )
         {
-          v138 = *this->q00C;
-          v139 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+          int v138 = *this->q00C;
+          void * v139 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           (*(void (__thiscall **)(_DWORD, int, void *, _DWORD))(v138 + 500))(this->q00C, 1, v139, 0);
         }
 LABEL_219:
@@ -1973,11 +1896,11 @@ LABEL_327:
     }
     if ( v94 != 1 )
       goto LABEL_155;
-    v124 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+    _DWORD * v124 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
     CellClass::DamageAllObjects(v124);
     if ( (_BYTE)a3 )
     {
-      v208 = a2;
+      _BYTE * v208 = a2;
       *(_DWORD *)(this->q00C + 1504) = -1;
       return WalkLocomotion::Update(v208, 0, 0);
     }
@@ -2053,7 +1976,7 @@ LABEL_242:
   }
   if ( this->q058 >= 64 )
   {
-    v151 = this->q00C;
+    double * v151 = this->q00C;
     if ( v148 != v151[175] )
       (*(void (__thiscall **)(double *, _DWORD, _DWORD))(*(_DWORD *)v151 + 1348))(v151, LODWORD(v216), HIDWORD(v216));
   }
@@ -2069,15 +1992,16 @@ LABEL_242:
   v154 = v153[377];
   if ( v154 == -1 )
   {
-    v155 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v153 + 72))(v153, &v229);
-    v156 = *(_DWORD *)(this + 56);
-    v157 = *v155 - *(_DWORD *)(this + 52);
-    v158 = v155[1];
-    v159 = v155[2];
+    _DWORD * v155 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v153 + 72))(v153, &v229);
+    int v156 = *(_DWORD *)(this + 56);
+    int v157 = *v155 - *(_DWORD *)(this + 52);
+    int v158 = v155[1];
+    int v159 = v155[2];
     LODWORD(v216) = v157;
-    v160 = *(_DWORD *)(this + 60);
+    int v160 = *(_DWORD *)(this + 60);
     HIDWORD(v216) = v158 - v156;
     v217 = v159 - v160;
+  double v161; // st7
     v161 = Math::Sqrt(
              (double)(v159 - v160) * (double)(v159 - v160)
            + (double)(v158 - v156) * (double)(v158 - v156)
@@ -2088,14 +2012,14 @@ LABEL_262:
       v154 = v6;
       goto LABEL_263;
     }
-    v162 = *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3220);
-    v163 = this->q00C;
+    char v162 = *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3220);
+    int v163 = this->q00C;
     LOWORD(v216) = *(_DWORD *)(this + 52) / 256;
     WORD1(v216) = *(_DWORD *)(this + 56) / 256;
     result = FootClass::MovementStep(v163, v156, SLODWORD(v216), v162 != 0, 0, v213);
     if ( !result )
     {
-      v164 = this->q00C;
+      int v164 = this->q00C;
       if ( !v164 )
       {
         *a2 = 1;
@@ -2133,23 +2057,25 @@ LABEL_263:
     this->WalkLocomotion_field_0x58 = 9 * v6;
   if ( (dword_7F2A48[3 * this->WalkLocomotion_field_0x58] & 8) != 0 )
   {
-    v211 = this->q00C;
-    v169 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+  int v171; // esi
+    int v211 = this->q00C;
+    _DWORD * v169 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+  int v170; // eax
     if ( CrateClass::ProcessPickup(v169, v211) || (v170 = this->q00C, *(_BYTE *)(v170 + 129)) )
     {
-      v172 = this->q00C;
+      int * v172 = this->q00C;
       if ( !*((_BYTE *)v172 + 144) )
         return 0;
-      v173 = v154 & 7;
-      v174 = v224 + DataGlobal_89F6DC[2 * v173];
+      int v173 = v154 & 7;
+      int v174 = v224 + DataGlobal_89F6DC[2 * v173];
       v223 += DataGlobal_89F6D8[2 * v173];
       v224 = v174;
       LOWORD(a4) = v223 / 256;
       HIWORD(a4) = v174 / 256;
-      v209 = v219;
+      int v209 = v219;
       v215 = a4;
-      v175 = *v172;
-      v176 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+      int v175 = *v172;
+      void * v176 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
       v171 = (*(int (__thiscall **)(_DWORD, void *, unsigned int, int, _DWORD, int))(v175 + 428))(
                this->q00C,
                v176,
@@ -2177,7 +2103,7 @@ LABEL_263:
       return 0;
     if ( v171 )
     {
-      v177 = a3;
+      int v177 = a3;
       switch ( v171 )
       {
         case 3:
@@ -2189,7 +2115,7 @@ LABEL_263:
         case 6:
           if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*v75 + 132))(v75) + 3220) )
             goto LABEL_291;
-          v178 = this->q00C;
+          _DWORD * v178 = this->q00C;
           if ( (_BYTE)v177 )
           {
             v178[376] = -1;
@@ -2198,23 +2124,26 @@ LABEL_263:
             v111 = v230;
             goto LABEL_327;
           }
-          v179 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v178 + 72))(v178, &v229);
-          v180 = *(_DWORD *)(this + 56);
-          v181 = (_DWORD *)(*v179 - *(_DWORD *)(this + 52));
-          v182 = v179[1];
-          v183 = v179[2];
+          _DWORD * v179 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v178 + 72))(v178, &v229);
+          int v180 = *(_DWORD *)(this + 56);
+          _DWORD * v181 = (_DWORD *)(*v179 - *(_DWORD *)(this + 52));
+          int v182 = v179[1];
+          int v183 = v179[2];
           v220 = v181;
-          v184 = v183 - *(_DWORD *)(this + 60);
+          int v184 = v183 - *(_DWORD *)(this + 60);
           v221 = v182 - v180;
           v222 = v184;
+  double v185; // st7
           v185 = Math::Sqrt(
                    (double)(int)v181 * (double)(int)v181
                  + (double)v184 * (double)v184
                  + (double)(v182 - v180) * (double)(v182 - v180));
           if ( (int)Math::RoundToInt(v185) >= *((_DWORD *)g_RulesClass_Instance + 1478)
+  _DWORD *v186; // ecx
             || (v186 = (_DWORD *)(this->q00C + 156),
                 v226 = (_DWORD *)*v186,
                 v227 = (wchar_t *)v186[1],
+  __int64 v187; // rax
                 v187 = *(_DWORD *)(this + 60) - v186[2],
                 (int)((HIDWORD(v187) ^ v187) - HIDWORD(v187)) >= 2 * DataGlobal_B07838)
             || (v226 = (_DWORD *)*v186,
@@ -2222,14 +2151,17 @@ LABEL_263:
                 v228 = v186[2],
                 *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v226) + 59) == 10) )
           {
-            v189 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+            _DWORD * v189 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
             if ( (v189[80] & 0x100) == 0
+  _DWORD *v190; // edx
               || (v190 = this->q00C,
                   LOBYTE(a4) = 1,
                   v190 += 39,
+  int v191; // edi
                   v191 = *((char *)v189 + 283),
                   v226 = (_DWORD *)*v190,
                   v227 = (wchar_t *)v190[1],
+  __int64 v192; // rax
                   v192 = v190[2] / DataGlobal_B07838 - v191,
                   (int)((HIDWORD(v192) ^ v192) - HIDWORD(v192)) <= 2) )
             {
@@ -2255,7 +2187,7 @@ LABEL_291:
             this->q048 = DataGlobal_00B07800;
             *(_BYTE *)(this + 99) = 0;
           }
-          v188 = this->q00C;
+          _DWORD * v188 = this->q00C;
           if ( !v188[358] )
           {
             (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*v188 + 1152))(v188, 0, 1);
@@ -2269,11 +2201,11 @@ LABEL_291:
             goto LABEL_291;
           return 1;
         case 1:
-          v193 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+          _DWORD * v193 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           CellClass::DamageAllObjects(v193);
           if ( (_BYTE)a3 )
           {
-            v194 = a2;
+            _BYTE * v194 = a2;
             *(_DWORD *)(this->q00C + 1504) = -1;
             return WalkLocomotion::Update(v194, 0, 0);
           }
@@ -2347,7 +2279,7 @@ LABEL_336:
   {
     *v195 = g_OverlayTypeConfig;
     this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
-    v198 = DataGlobal_00B07800;
+    int v198 = DataGlobal_00B07800;
     *(_BYTE *)(this + 99) = 0;
     this->q048 = v198;
     v197 = g_OverlayTypeConfig;
@@ -2362,8 +2294,8 @@ LABEL_336:
     *v195 = v199;
     this->WalkLocomotion_field_0x44 = v202;
     this->q048 = v200;
-    v212 = this->q00C;
-    v203 = Coord::To_Cell(&DataGlobal_87F7E8, &v223);
+    int v212 = this->q00C;
+    _DWORD * v203 = Coord::To_Cell(&DataGlobal_87F7E8, &v223);
     if ( CrateClass::ProcessPickup(v203, v212) && !*(_BYTE *)(this->q00C + 129) )
     {
       WalkLocomotion::MoveTo(&v223, 1);

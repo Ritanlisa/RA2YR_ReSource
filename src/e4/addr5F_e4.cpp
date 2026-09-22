@@ -680,22 +680,22 @@ void * GenerateRangeRingTextures()
   int i; // [esp+32h] [ebp-50h]
   int v20; // [esp+36h] [ebp-4Ch]
   int v21; // [esp+3Eh] [ebp-44h] BYREF
-  int v22; // [esp+42h] [ebp-40h] BYREF
-  int v23; // [esp+46h] [ebp-3Ch]
-  int v24; // [esp+4Ah] [ebp-38h]
-  int v25; // [esp+4Eh] [ebp-34h]
-  int v26; // [esp+52h] [ebp-30h] BYREF
-  int v27; // [esp+56h] [ebp-2Ch]
-  int v28; // [esp+5Ah] [ebp-28h]
-  int v29; // [esp+5Eh] [ebp-24h]
-  int v30[3]; // [esp+62h] [ebp-20h] BYREF
-  int v31; // [esp+6Eh] [ebp-14h]
-  int v32; // [esp+72h] [ebp-10h]
-  _DWORD v33[3]; // [esp+76h] [ebp-Ch] BYREF
 
   int v0 = 0; /*0x5ff429*/
   if ( !DataGlobal_AC1834 ) /*0x5ff430*/
   {
+  _DWORD v33[3]; // [esp+76h] [ebp-Ch] BYREF
+  int v32; // [esp+72h] [ebp-10h]
+  int v31; // [esp+6Eh] [ebp-14h]
+  int v30[3]; // [esp+62h] [ebp-20h] BYREF
+  int v29; // [esp+5Eh] [ebp-24h]
+  int v28; // [esp+5Ah] [ebp-28h]
+  int v27; // [esp+56h] [ebp-2Ch]
+  int v26; // [esp+52h] [ebp-30h] BYREF
+  int v25; // [esp+4Eh] [ebp-34h]
+  int v24; // [esp+4Ah] [ebp-38h]
+  int v23; // [esp+46h] [ebp-3Ch]
+  int v22; // [esp+42h] [ebp-40h] BYREF
     int * v1 = DataGlobal_AC1698; /*0x5ff43b*/
     for ( i = 1; i < 129; i += 2 ) /*0x5ff440*/
     {

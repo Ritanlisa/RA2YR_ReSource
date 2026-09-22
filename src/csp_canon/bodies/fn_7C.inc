@@ -1108,6 +1108,12 @@ int SetRect()
 }
 }
 
+// ==== BACKFILL 0x007C85F0  PostMessageA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
+int PostMessageA()
+{
+  return __imp_PostMessageA(hWnd, Msg, wParam, lParam);
+}
+
 // ==== BACKFILL 0x007C85F6  GetDlgItem  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetDlgItem()
 {
@@ -2422,6 +2428,12 @@ int GetFileVersionInfoSizeA()
 }
 }
 
+// ==== BACKFILL 0x007C8A10  ImageList::DragShowNolock  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
+int ImageList_DragShowNolock()
+{
+  return ImageList_DragShowNolock(fShow);
+}
+
 // ==== BACKFILL 0x007C8A8E  ??1type_info_UAE_XZ  cls=type_info  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_7C8A8E::__1type_info_UAE_XZ()
 {
@@ -2733,7 +2745,7 @@ LPVOID _heap_alloc(IUnknown * aP0)
     IUnknown *v1;
     int *v2;
     v1 = aP0;
-    if ( (unsigned int)aP0 <= *(int *)&DataGlobal_87C374.__pad_1D8[56] )
+    if ( (unsigned int)aP0 <= *(int *)&DataGlobal_87C374[528] )
   {
     _lock(9);
     v2 = __sbh_alloc_block(aP0);

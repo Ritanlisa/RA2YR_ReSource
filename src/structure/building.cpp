@@ -143,10 +143,7 @@ int BuildingClass::Construct()
   __int16 v6; // cx
   int v11; // ebp
   int v12; // edi
-  int v13; // eax
-  _DWORD *v14; // ecx
   int v15; // eax
-  int v16; // eax
   int Vtable3; // [esp+18h] [ebp+4h]
 
   TechnoClass::TechnoClass((_DWORD *)this, a3);
@@ -331,13 +328,13 @@ int BuildingClass::Construct()
   v12 = __2_YAPAXI_Z(8 * (v11 + dword_A8ED54[130749]));
   if ( v12 )
   {
-    v13 = 0;
+    int v13 = 0;
     --a3;
     if ( dword_A8ED54[130748] > 0 )
     {
       do
       {
-        v14 = (_DWORD *)(dword_A8ED54[130747] + 8 * v13++);
+        _DWORD * v14 = (_DWORD *)(dword_A8ED54[130747] + 8 * v13++);
         *(_DWORD *)(v12 + 8 * v13 - 8) = *v14;
         *(_DWORD *)(v12 + 8 * v13 - 4) = v14[1];
       }
@@ -357,7 +354,7 @@ LABEL_30:
   v15 = this->Type;
   if ( v15 )
   {
-    v16 = *(_DWORD *)(v15 + 6016);
+    int v16 = *(_DWORD *)(v15 + 6016);
     if ( v16 < 1 )
       v16 = 1;
     RadioClass::SetLinkCount((_DWORD *)this, v16);
@@ -1387,25 +1384,23 @@ int BuildingClass::AfterDestruction()
   int *StartCoordsHouse; // eax
   char result; // al
   int v22; // [esp+10h] [ebp-40h] BYREF
-  int v23; // [esp+14h] [ebp-3Ch]
-  int v24; // [esp+18h] [ebp-38h] BYREF
-  int v25; // [esp+1Ch] [ebp-34h]
   _DWORD v26[2]; // [esp+20h] [ebp-30h] BYREF
   char v27[4]; // [esp+28h] [ebp-28h] BYREF
   char v28[4]; // [esp+2Ch] [ebp-24h] BYREF
   int v29[4]; // [esp+30h] [ebp-20h] BYREF
-  _DWORD v30[4]; // [esp+40h] [ebp-10h] BYREF
 
   BuildingClass *v1 = this;
   v26[0] = this;
   if ( (unsigned __int8)((_DWORD (__stdcall *)(char *, char *))BuildingClass::GetPlacementCoords)(v28, v27) )
   {
+  int v24; // [esp+18h] [ebp-38h] BYREF
   int v16; // edi
   int v14; // eax
   int v12; // edx
   int v10; // ecx
     _WORD * v2 = (_WORD *)v1->GetOrCreateResHandle(0);
     _DWORD * v3 = (_DWORD *)v1->GetBuildCoordsAdjusted(v29);
+  int v23; // [esp+14h] [ebp-3Ch]
     LOWORD(v23) = *v3 / 256;
     HIWORD(v23) = v3[1] / 256;
     v22 = v23;
@@ -1429,6 +1424,7 @@ int BuildingClass::AfterDestruction()
     _DWORD * v7 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v22);
     v7[16] = v1[328];
     PlacementRectBuildingClass = BuildingClass::GetPlacementRect((int)v7, v29);
+  _DWORD v30[4]; // [esp+40h] [ebp-10h] BYREF
     StartCoordsHouse = House::GetStartCoords((int)v7, v30);
     if ( StartCoordsHouse[2] <= 0 || StartCoordsHouse[3] <= 0 )
     {
@@ -1440,6 +1436,7 @@ int BuildingClass::AfterDestruction()
     else
     {
       v23 = PlacementRectBuildingClass[2];
+  int v25; // [esp+1Ch] [ebp-34h]
       if ( v23 <= 0 || (v25 = PlacementRectBuildingClass[3], v25 <= 0) )
       {
         v10 = *StartCoordsHouse;
@@ -1903,9 +1900,9 @@ int BuildingClass::Size()
   int SizeMax; // ebp
   int result; // eax
 
+  int v8; // [esp+3Ch] [ebp+8h]
   int v9; // [esp+40h] [ebp+Ch] BYREF
   _DWORD *v7; // [esp+38h] [ebp+4h]
-  int v8; // [esp+3Ch] [ebp+8h]
   SizeMax = IPersistStream::GetSizeMax((int)v7, v8, v9);
   if ( SizeMax < 0 )
     return SizeMax;
@@ -2577,88 +2574,17 @@ int BuildingClass::FindPlacementCells()
   void *v19; // eax
   void *v20; // edi
   int v21; // eax
-  void *v22; // edi
-  int v23; // eax
-  int v24; // ecx
-  int v25; // eax
-  void *v26; // edi
-  int v27; // eax
-  int v28; // ecx
-  int v29; // eax
-  int v30; // edx
   int v31; // ecx
   int v32; // eax
-  int v33; // eax
-  int v34; // edx
   int v35; // ecx
   int result; // eax
-  int v37; // edx
-  int v38; // ecx
-  int v39; // eax
-  int v40; // eax
-  int v41; // eax
-  int v42; // ecx
-  int v43; // eax
-  int v44; // eax
   int v45; // ecx
   __int16 *v46; // ecx
-  int v47; // eax
   void *v48; // eax
   int v49; // eax
   int v50; // eax
   int v51; // eax
-  void *v52; // edi
-  int v53; // eax
-  int v54; // ecx
-  int v55; // eax
-  int v56; // edx
-  int v57; // eax
-  void *v58; // edi
-  int v59; // eax
-  int v60; // ecx
-  int v61; // eax
-  int v62; // edx
-  int v63; // eax
-  int v64; // eax
   int TileIndex; // eax
-  int v66; // eax
-  int v67; // eax
-  int v68; // eax
-  int v69; // eax
-  int v70; // eax
-  int v71; // eax
-  void *v72; // edi
-  int v73; // eax
-  int v74; // ecx
-  int v75; // eax
-  int v76; // edx
-  int v77; // eax
-  void *v78; // edi
-  int v79; // eax
-  int v80; // ecx
-  int v81; // eax
-  int v82; // edx
-  int v83; // eax
-  int v84; // eax
-  int v85; // eax
-  int v86; // eax
-  int v87; // eax
-  int v88; // eax
-  int v89; // eax
-  void *v90; // edi
-  int v91; // eax
-  int v92; // ecx
-  int v93; // eax
-  int v94; // edx
-  int v95; // eax
-  int v96; // eax
-  void *v97; // edi
-  int v98; // eax
-  int v99; // ecx
-  int v100; // eax
-  int v101; // edx
-  int v102; // eax
-  int v103; // eax
   char v104; // [esp+12h] [ebp-2Eh]
   char v105; // [esp+13h] [ebp-2Dh]
   int v106; // [esp+14h] [ebp-2Ch] BYREF
@@ -2771,7 +2697,7 @@ LABEL_69:
         if ( v110 != g_UnitSelectionState )
           goto LABEL_77;
         v112 = 0;
-        v66 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
+        int v66 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
         v111 = *LayerClass::Pathfinding_Find(
                   &DataGlobal_87F7E8,
                   (int)&v113,
@@ -2798,7 +2724,7 @@ LABEL_69:
         if ( IsBuildableAdvanced || !BuildingTypeClass::IsPlacementValid(v2, (__int16 *)&v106, (__int16 *)&v107) )
           goto LABEL_40;
         v112 = 0;
-        v67 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v107, 0, 0);
+        int v67 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v107, 0, 0);
         a2 = *LayerClass::Pathfinding_Find(
                 &DataGlobal_87F7E8,
                 (int)&v113,
@@ -2849,7 +2775,7 @@ LABEL_69:
           goto LABEL_40;
         }
         v112 = 0;
-        v68 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
+        int v68 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
         v111 = *LayerClass::Pathfinding_Find(
                   &DataGlobal_87F7E8,
                   (int)&v113,
@@ -2888,7 +2814,7 @@ LABEL_218:
         goto LABEL_40;
       }
       v112 = 0;
-      v69 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
+      int v69 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
       v109 = *LayerClass::Pathfinding_Find(
                 &DataGlobal_87F7E8,
                 (int)&v113,
@@ -2908,7 +2834,8 @@ LABEL_218:
                 0,
                 0);
       v112 = 0;
-      v70 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&a2, 0, 0);
+      int v70 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&a2, 0, 0);
+  int v71; // eax
       v71 = *LayerClass::Pathfinding_Find(
                &DataGlobal_87F7E8,
                (int)&v113,
@@ -2930,15 +2857,16 @@ LABEL_218:
       v110 = v71;
       if ( v109 != g_UnitSelectionState && __PAIR32__(HIWORD(v110), v71) != g_UnitSelectionState )
       {
-        v72 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
-        v73 = v3[2];
+        void * v72 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
+        int v73 = v3[2];
         if ( v3[4] < v73
           || (*((_BYTE *)v3 + 13) || !v73)
+  int v74; // ecx
           && (v74 = v3[5], v74 > 0)
           && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v74 + v73, 0) )
         {
-          v75 = v3[4];
-          v76 = v3[1];
+          int v75 = v3[4];
+          int v76 = v3[1];
           v3[4] = v75 + 1;
           *(_DWORD *)(v76 + 4 * v75) = v72;
         }
@@ -2950,7 +2878,7 @@ LABEL_218:
         if ( v109 == g_UnitSelectionState )
         {
           v112 = 0;
-          v84 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
+          int v84 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
           v111 = *LayerClass::Pathfinding_Find(
                     &DataGlobal_87F7E8,
                     (int)&v113,
@@ -2975,6 +2903,7 @@ LABEL_218:
         else
         {
           v112 = 0;
+  int v77; // eax
           v77 = *LayerClass::Pathfinding_Find(
                    &DataGlobal_87F7E8,
                    (int)&v112,
@@ -2996,22 +2925,23 @@ LABEL_218:
           v110 = v77;
           if ( v77 != g_UnitSelectionState && v109 != v77 )
           {
-            v78 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
-            v79 = v3[2];
+            void * v78 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
+            int v79 = v3[2];
             if ( v3[4] < v79
               || (*((_BYTE *)v3 + 13) || !v79)
+  int v80; // ecx
               && (v80 = v3[5], v80 > 0)
               && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v80 + v79, 0) )
             {
-              v81 = v3[4];
-              v82 = v3[1];
+              int v81 = v3[4];
+              int v82 = v3[1];
               v3[4] = v81 + 1;
               *(_DWORD *)(v82 + 4 * v81) = v78;
             }
             goto LABEL_38;
           }
           v112 = 0;
-          v83 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
+          int v83 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
           v111 = *LayerClass::Pathfinding_Find(
                     &DataGlobal_87F7E8,
                     (int)&v113,
@@ -3046,7 +2976,7 @@ LABEL_218:
         if ( !BuildingTypeClass::IsPlacementValid(v2, (__int16 *)&v106, (__int16 *)&v107) )
           goto LABEL_40;
         v112 = 0;
-        v87 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
+        int v87 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
         a2 = *LayerClass::Pathfinding_Find(
                 &DataGlobal_87F7E8,
                 (int)&v113,
@@ -3066,7 +2996,8 @@ LABEL_218:
                 0,
                 0);
         v112 = 0;
-        v88 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v107, 0, 0);
+        int v88 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v107, 0, 0);
+  int v89; // eax
         v89 = *LayerClass::Pathfinding_Find(
                  &DataGlobal_87F7E8,
                  (int)&v113,
@@ -3088,15 +3019,16 @@ LABEL_218:
         v110 = v89;
         if ( a2 != g_UnitSelectionState && __PAIR32__(HIWORD(v110), v89) != g_UnitSelectionState )
         {
-          v90 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
-          v91 = v3[2];
+          void * v90 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
+          int v91 = v3[2];
           if ( v3[4] < v91
             || (*((_BYTE *)v3 + 13) || !v91)
+  int v92; // ecx
             && (v92 = v3[5], v92 > 0)
             && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v92 + v91, 0) )
           {
-            v93 = v3[4];
-            v94 = v3[1];
+            int v93 = v3[4];
+            int v94 = v3[1];
             v3[4] = v93 + 1;
             *(_DWORD *)(v94 + 4 * v93) = v90;
           }
@@ -3126,7 +3058,7 @@ LABEL_39:
         if ( a2 == g_UnitSelectionState )
         {
           v112 = 0;
-          v103 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
+          int v103 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
           v111 = *LayerClass::Pathfinding_Find(
                     &DataGlobal_87F7E8,
                     (int)&v113,
@@ -3151,6 +3083,7 @@ LABEL_39:
         else
         {
           v112 = 0;
+  int v96; // eax
           v96 = *LayerClass::Pathfinding_Find(
                    &DataGlobal_87F7E8,
                    (int)&v112,
@@ -3172,22 +3105,23 @@ LABEL_39:
           v110 = v96;
           if ( v96 != g_UnitSelectionState && a2 != v96 )
           {
-            v97 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
-            v98 = v3[2];
+            void * v97 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
+            int v98 = v3[2];
             if ( v3[4] < v98
               || (*((_BYTE *)v3 + 13) || !v98)
+  int v99; // ecx
               && (v99 = v3[5], v99 > 0)
               && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v99 + v98, 0) )
             {
-              v100 = v3[4];
-              v101 = v3[1];
+              int v100 = v3[4];
+              int v101 = v3[1];
               v3[4] = v100 + 1;
               *(_DWORD *)(v101 + 4 * v100) = v97;
             }
             goto LABEL_38;
           }
           v112 = 0;
-          v102 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
+          int v102 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
           v111 = *LayerClass::Pathfinding_Find(
                     &DataGlobal_87F7E8,
                     (int)&v113,
@@ -3214,7 +3148,7 @@ LABEL_39:
       if ( !BuildingTypeClass::IsPlacementValid(v2, (__int16 *)&v106, (__int16 *)&v107) )
         goto LABEL_40;
       a2 = 0;
-      v85 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
+      int v85 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
       v112 = *LayerClass::Pathfinding_Find(
                 &DataGlobal_87F7E8,
                 (int)&v113,
@@ -3238,7 +3172,7 @@ LABEL_39:
         if ( MapSeed::CheckTileMatch(&DataGlobal_87F7E8, (__int16 *)&v106, (__int16 *)&v107, 0, 0, 0, 0) )
           goto LABEL_40;
         a2 = 0;
-        v86 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
+        int v86 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
         v111 = *LayerClass::Pathfinding_Find(
                   &DataGlobal_87F7E8,
                   (int)&v113,
@@ -3273,13 +3207,14 @@ LABEL_17:
       goto LABEL_198;
     }
 LABEL_200:
-    v95 = v3[4];
+    int v95 = v3[4];
     v3[4] = v95 + 1;
     *(_DWORD *)(v3[1] + 4 * v95) = v20;
     goto LABEL_39;
   }
   if ( (_BYTE)a2 )
   {
+  void *v22; // edi
     a2 = *Pathfinding::SelectRegionPath(&v112, (__int16 *)&v106, (int)&v107);
     v111 = *Pathfinding::SelectRegionPath(&v112, (__int16 *)&v107, (int)&v107);
     if ( !BuildingTypeClass::IsPlacementValid(v2, (__int16 *)&a2, (__int16 *)&v111) )
@@ -3287,17 +3222,17 @@ LABEL_200:
       if ( a2 == v106 )
         goto LABEL_63;
       v22 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
-      v41 = v3[2];
+      int v41 = v3[2];
       if ( v3[4] >= v41 )
       {
         if ( !*((_BYTE *)v3 + 13) && v41 )
           goto LABEL_63;
-        v42 = v3[5];
+        int v42 = v3[5];
         if ( v42 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v42 + v41, 0) )
           goto LABEL_63;
       }
 LABEL_62:
-      v43 = v3[4];
+      int v43 = v3[4];
       v3[4] = v43 + 1;
       *(_DWORD *)(v3[1] + 4 * v43) = v22;
 LABEL_63:
@@ -3371,12 +3306,12 @@ LABEL_16:
       if ( a2 == v106 )
         goto LABEL_63;
       v22 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
-      v23 = v3[2];
+      int v23 = v3[2];
       if ( v3[4] >= v23 )
       {
         if ( !*((_BYTE *)v3 + 13) && v23 )
           goto LABEL_63;
-        v24 = v3[5];
+        int v24 = v3[5];
         if ( v24 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v24 + v23, 0) )
           goto LABEL_63;
       }
@@ -3385,7 +3320,7 @@ LABEL_16:
     if ( v109 == g_UnitSelectionState )
     {
       v112 = 0;
-      v40 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
+      int v40 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
       v108 = (_DWORD **)*LayerClass::Pathfinding_Find(
                            &DataGlobal_87F7E8,
                            (int)&v113,
@@ -3413,6 +3348,7 @@ LABEL_52:
       return 0;
     }
     v112 = 0;
+  int v25; // eax
     v25 = *LayerClass::Pathfinding_Find(
              &DataGlobal_87F7E8,
              (int)&v112,
@@ -3435,7 +3371,7 @@ LABEL_52:
     if ( v25 == g_UnitSelectionState || v109 == v25 )
     {
       v112 = 0;
-      v39 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
+      int v39 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
       v108 = (_DWORD **)*LayerClass::Pathfinding_Find(
                            &DataGlobal_87F7E8,
                            (int)&v113,
@@ -3458,15 +3394,16 @@ LABEL_52:
         goto LABEL_52;
       return 0;
     }
-    v26 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
-    v27 = v3[2];
+    void * v26 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
+    int v27 = v3[2];
     if ( v3[4] < v27
       || (*((_BYTE *)v3 + 13) || !v27)
+  int v28; // ecx
       && (v28 = v3[5], v28 > 0)
       && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v28 + v27, 0) )
     {
-      v29 = v3[4];
-      v30 = v3[1];
+      int v29 = v3[4];
+      int v30 = v3[1];
       v3[4] = v29 + 1;
       *(_DWORD *)(v30 + 4 * v29) = v26;
     }
@@ -3480,7 +3417,7 @@ LABEL_38:
     if ( BuildingTypeClass::IsPlacementValid(v2, (__int16 *)&a2, (__int16 *)&v107) )
     {
       v112 = 0;
-      v44 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&a2, 0, 0);
+      int v44 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&a2, 0, 0);
       v111 = *LayerClass::Pathfinding_Find(
                 &DataGlobal_87F7E8,
                 (int)&v113,
@@ -3525,7 +3462,7 @@ LABEL_134:
         goto LABEL_40;
       }
       v112 = 0;
-      v47 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
+      int v47 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
       v110 = *LayerClass::Pathfinding_Find(
                 &DataGlobal_87F7E8,
                 (int)&v113,
@@ -3606,15 +3543,16 @@ LABEL_79:
   v110 = v51;
   if ( v109 != g_UnitSelectionState && __PAIR32__(HIWORD(v110), v51) != g_UnitSelectionState )
   {
-    v52 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
-    v53 = v3[2];
+    void * v52 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
+    int v53 = v3[2];
     if ( v3[4] < v53
       || (*((_BYTE *)v3 + 13) || !v53)
+  int v54; // ecx
       && (v54 = v3[5], v54 > 0)
       && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v53 + v54, 0) )
     {
-      v55 = v3[4];
-      v56 = v3[1];
+      int v55 = v3[4];
+      int v56 = v3[1];
       v3[4] = v55 + 1;
       *(_DWORD *)(v56 + 4 * v55) = v52;
     }
@@ -3633,7 +3571,7 @@ LABEL_135:
     if ( v109 == g_UnitSelectionState )
     {
       v112 = 0;
-      v64 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
+      int v64 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
       v111 = *LayerClass::Pathfinding_Find(
                 &DataGlobal_87F7E8,
                 (int)&v113,
@@ -3658,6 +3596,7 @@ LABEL_135:
     else
     {
       v112 = 0;
+  int v57; // eax
       v57 = *LayerClass::Pathfinding_Find(
                &DataGlobal_87F7E8,
                (int)&v112,
@@ -3679,22 +3618,23 @@ LABEL_135:
       v110 = v57;
       if ( v57 != g_UnitSelectionState && v57 != v109 )
       {
-        v58 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
-        v59 = v3[2];
+        void * v58 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
+        int v59 = v3[2];
         if ( v3[4] < v59
           || (*((_BYTE *)v3 + 13) || !v59)
+  int v60; // ecx
           && (v60 = v3[5], v60 > 0)
           && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v59 + v60, 0) )
         {
-          v61 = v3[4];
-          v62 = v3[1];
+          int v61 = v3[4];
+          int v62 = v3[1];
           v3[4] = v61 + 1;
           *(_DWORD *)(v62 + 4 * v61) = v58;
         }
         goto LABEL_38;
       }
       v112 = 0;
-      v63 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
+      int v63 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
       v111 = *LayerClass::Pathfinding_Find(
                 &DataGlobal_87F7E8,
                 (int)&v113,
@@ -3730,8 +3670,8 @@ LABEL_40:
     && (v32 = v3[5], v32 > 0)
     && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v32 + v31, 0) )
   {
-    v33 = v3[4];
-    v34 = v3[1];
+    int v33 = v3[4];
+    int v34 = v3[1];
     v3[4] = v33 + 1;
     *(_DWORD *)(v34 + 4 * v33) = v6;
   }
@@ -3739,8 +3679,8 @@ LABEL_40:
   result = *v2[355];
   if ( v35 > 0 )
   {
-    v37 = v35 - 1;
-    v38 = 0;
+    int v37 = v35 - 1;
+    int v38 = 0;
     for ( v3[4] = v37; v38 < v3[4]; *(_DWORD *)(v3[1] + 4 * v38 - 4) = *(_DWORD *)(v3[1] + 4 * v38) )
       ++v38;
   }
@@ -6672,86 +6612,24 @@ void BuildingClass::VisualizePlacement()
   _DWORD *StartCoords; // eax
   int v7; // eax
   char v8; // al
-  signed int v9; // ebx
   _DWORD *NeighbourContent; // esi
-  int v11; // eax
   int BridgeBitfield; // edi
-  int v13; // eax
-  int *v14; // ebp
-  int *v15; // eax
-  int v16; // ecx
-  int v17; // edx
-  int v18; // ebx
-  int v19; // edi
-  int v20; // eax
-  bool v21; // cc
-  int v22; // ebp
-  int v23; // edx
-  int v24; // eax
-  int *v25; // edi
-  int *v26; // eax
-  int v27; // edx
-  int v28; // ecx
-  int v29; // ebp
-  int v30; // ebx
-  int v31; // edi
-  int v32; // eax
-  int v33; // ecx
-  int *v34; // eax
-  _DWORD *v35; // eax
-  int *v36; // eax
-  int *v37; // eax
-  int v38; // eax
-  int *v39; // eax
-  int v40; // edx
-  int v41; // eax
-  int *v42; // eax
-  int *v43; // eax
   int v44; // eax
   int *v45; // eax
   int *v46; // eax
-  int *v47; // [esp-Ch] [ebp-1C4h]
   int *v48; // [esp-Ch] [ebp-1C4h]
-  int v49; // [esp-8h] [ebp-1C0h]
-  int v50; // [esp-4h] [ebp-1BCh]
-  int *v51; // [esp-4h] [ebp-1BCh]
-  _DWORD *v52; // [esp-4h] [ebp-1BCh]
   _DWORD *v53; // [esp-4h] [ebp-1BCh]
-  int v54; // [esp+10h] [ebp-1A8h]
-  int v55; // [esp+10h] [ebp-1A8h]
-  signed int v56; // [esp+34h] [ebp-184h]
-  int v57; // [esp+38h] [ebp-180h] BYREF
-  int v58; // [esp+3Ch] [ebp-17Ch]
-  int v59; // [esp+40h] [ebp-178h]
-  int v60; // [esp+44h] [ebp-174h]
-  int v61; // [esp+48h] [ebp-170h]
-  int v62; // [esp+4Ch] [ebp-16Ch]
   int v63; // [esp+50h] [ebp-168h]
   BuildingClass *v64; // [esp+54h] [ebp-164h]
   _DWORD rcDst[6]; // [esp+58h] [ebp-160h] BYREF
   int v66; // [esp+74h] [ebp-144h]
-  int v67; // [esp+80h] [ebp-138h]
-  int v68; // [esp+84h] [ebp-134h]
-  _DWORD v69[2]; // [esp+88h] [ebp-130h] BYREF
   int v70; // [esp+90h] [ebp-128h] BYREF
-  int v71; // [esp+98h] [ebp-120h]
   int v72; // [esp+A0h] [ebp-118h] BYREF
-  int v73; // [esp+A8h] [ebp-110h]
   _DWORD v74[2]; // [esp+B0h] [ebp-108h] BYREF
-  int v75; // [esp+B8h] [ebp-100h] BYREF
   __int128 rcSrc1; // [esp+C0h] [ebp-F8h] BYREF
-  int v77[4]; // [esp+D0h] [ebp-E8h] BYREF
   __int128 v78; // [esp+E0h] [ebp-D8h] BYREF
   _DWORD v79[4]; // [esp+F0h] [ebp-C8h] BYREF
-  int v80; // [esp+100h] [ebp-B8h] BYREF
   int v81[4]; // [esp+108h] [ebp-B0h] BYREF
-  int v82[4]; // [esp+118h] [ebp-A0h] BYREF
-  int v83[4]; // [esp+128h] [ebp-90h] BYREF
-  int v84[4]; // [esp+138h] [ebp-80h] BYREF
-  int v85[4]; // [esp+148h] [ebp-70h] BYREF
-  int v86[4]; // [esp+168h] [ebp-50h] BYREF
-  int v87[4]; // [esp+178h] [ebp-40h] BYREF
-  int v88[4]; // [esp+1A8h] [ebp-10h] BYREF
 
   BuildingClass *v1 = this;
   v64 = this;
@@ -6794,13 +6672,13 @@ LABEL_14:
   v1->q011 = 126;
   if ( !v8 )
   {
-    v9 = 0;
+    signed int v9 = 0;
     v1[286] = (int)abs32(Random::State((_DWORD *)(DataGlobal_87F7E8[536210] + 536))) % 3 + 48;
-    v56 = 0;
+    signed int v56 = 0;
     while ( 1 )
     {
       NeighbourContent = Cell::GetNeighbourContent(v1, v9);
-      v11 = NeighbourContent[17];
+      int v11 = NeighbourContent[17];
       if ( v11 == 126 )
       {
         if ( *((_BYTE *)NeighbourContent + 286) < 0x30u )
@@ -6811,26 +6689,30 @@ LABEL_14:
 LABEL_21:
         if ( *((_BYTE *)NeighbourContent + 284) )
         {
+  int v57; // [esp+38h] [ebp-180h] BYREF
           Rect::Set(&v57, 0, 0, 0, 0);
-          v51 = BuildingClass::GetPlacementRect((int)NeighbourContent, v84);
+  int v84[4]; // [esp+138h] [ebp-80h] BYREF
+          int * v51 = BuildingClass::GetPlacementRect((int)NeighbourContent, v84);
+  int v87[4]; // [esp+178h] [ebp-40h] BYREF
           House::GetStartCoords((int)NeighbourContent, v87);
-          v38 = Rect::Union(v51);
-          v39 = (int *)Rect::Union(v38);
+          int v38 = Rect::Union(v51);
+          int * v39 = (int *)Rect::Union(v38);
           v57 = *v39;
-          v58 = v39[1];
-          v59 = v39[2];
-          v40 = v39[3];
+          int v58 = v39[1];
+          int v59 = v39[2];
+          int v40 = v39[3];
           NeighbourContent[17] = 126;
-          v60 = v40;
+          int v60 = v40;
           *((_BYTE *)NeighbourContent + 286) = 2 * *((_BYTE *)NeighbourContent + 284)
                                              + (abs32(Random::State((_DWORD *)(DataGlobal_87F7E8[536210] + 536))) & 1)
                                              + 51;
-          v52 = CellStruct::Copy(&DataGlobal_87F7E8[7662], v74);
-          v47 = BuildingClass::GetPlacementRect((int)NeighbourContent, v77);
+          _DWORD * v52 = CellStruct::Copy(&DataGlobal_87F7E8[7662], v74);
+  int v77[4]; // [esp+D0h] [ebp-E8h] BYREF
+          int * v47 = BuildingClass::GetPlacementRect((int)NeighbourContent, v77);
           House::GetStartCoords((int)NeighbourContent, v79);
-          v41 = Rect::Union(v47);
-          v42 = (int *)Rect::Union(v41);
-          v43 = Bounds::Subtract(v42, &rcSrc1, v52);
+          int v41 = Rect::Union(v47);
+          int * v42 = (int *)Rect::Union(v41);
+          int * v43 = Bounds::Subtract(v42, &rcSrc1, v52);
           v57 = *v43;
           v58 = v43[1];
           v59 = v43[2];
@@ -6840,12 +6722,18 @@ LABEL_21:
         else
         {
           BridgeBitfield = CellClass::GetBridgeBitfield(NeighbourContent);
-          v13 = NeighbourContent[17];
-          v61 = BridgeBitfield;
+          int v13 = NeighbourContent[17];
+          int v61 = BridgeBitfield;
           if ( v13 == -1 || BridgeBitfield <= 15 && *((unsigned __int8 *)NeighbourContent + 286) / 3 != BridgeBitfield )
           {
-            v14 = BuildingClass::GetPlacementRect((int)NeighbourContent, v88);
-            v15 = House::GetStartCoords((int)NeighbourContent, v83);
+  int v67; // [esp+80h] [ebp-138h]
+  int v62; // [esp+4Ch] [ebp-16Ch]
+  bool v21; // cc
+  int v20; // eax
+  int v88[4]; // [esp+1A8h] [ebp-10h] BYREF
+            int * v14 = BuildingClass::GetPlacementRect((int)NeighbourContent, v88);
+  int v83[4]; // [esp+128h] [ebp-90h] BYREF
+            int * v15 = House::GetStartCoords((int)NeighbourContent, v83);
             if ( v15[2] <= 0 || v15[3] <= 0 )
             {
               v67 = v14[2];
@@ -6853,29 +6741,29 @@ LABEL_21:
             }
             else
             {
-              v54 = v14[2];
+              int v54 = v14[2];
               if ( v54 <= 0 || (v62 = v14[3], v62 <= 0) )
               {
-                v23 = v15[2];
+                int v23 = v15[2];
                 v20 = v15[3];
                 v67 = v23;
               }
               else
               {
-                v16 = *v15;
-                v17 = *v14;
-                v18 = v15[2];
-                v19 = v15[1];
+                int v16 = *v15;
+                int v17 = *v14;
+                int v18 = v15[2];
+                int v19 = v15[1];
                 v20 = v15[3];
                 v21 = v16 <= *v14;
-                v71 = v18;
+                int v71 = v18;
                 if ( !v21 )
                 {
                   v18 += v16 - v17;
                   v16 = v17;
                   v71 = v18;
                 }
-                v22 = v14[1];
+                int v22 = v14[1];
                 v63 = v22;
                 if ( v19 > v22 )
                 {
@@ -6889,15 +6777,18 @@ LABEL_21:
                 v67 = v71;
               }
             }
-            v68 = v20;
+            int v68 = v20;
             NeighbourContent[17] = 126;
-            v24 = Random::State((_DWORD *)(DataGlobal_87F7E8[536210] + 536));
+            int v24 = Random::State((_DWORD *)(DataGlobal_87F7E8[536210] + 536));
             *((_BYTE *)NeighbourContent + 286) = 3 * v61 + abs32(v24 % 3);
             House::AnnounceUpgrade((int)NeighbourContent, (_DWORD *)0xFFFFFFFF);
+  _DWORD v69[2]; // [esp+88h] [ebp-130h] BYREF
             v69[0] = DataGlobal_87F7E8[7662];
             v69[1] = DataGlobal_87F7E8[7663];
-            v25 = House::GetStartCoords((int)NeighbourContent, v85);
-            v26 = BuildingClass::GetPlacementRect((int)NeighbourContent, v86);
+  int v85[4]; // [esp+148h] [ebp-70h] BYREF
+            int * v25 = House::GetStartCoords((int)NeighbourContent, v85);
+  int v86[4]; // [esp+168h] [ebp-50h] BYREF
+            int * v26 = BuildingClass::GetPlacementRect((int)NeighbourContent, v86);
             if ( v25[2] <= 0 || v25[3] <= 0 )
             {
               rcDst[0] = *v26;
@@ -6907,7 +6798,7 @@ LABEL_21:
             }
             else
             {
-              v55 = v26[2];
+              int v55 = v26[2];
               if ( v55 <= 0 || (v61 = v26[3], v61 <= 0) )
               {
                 rcDst[0] = *v25;
@@ -6917,20 +6808,20 @@ LABEL_21:
               }
               else
               {
-                v27 = *v25;
-                v28 = *v26;
-                v29 = v25[2];
-                v30 = v25[1];
-                v31 = v25[3];
+                int v27 = *v25;
+                int v28 = *v26;
+                int v29 = v25[2];
+                int v30 = v25[1];
+                int v31 = v25[3];
                 v21 = v27 <= *v26;
-                v73 = v29;
+                int v73 = v29;
                 if ( !v21 )
                 {
                   v29 += v27 - v28;
                   v27 = v28;
                   v73 = v29;
                 }
-                v32 = v26[1];
+                int v32 = v26[1];
                 v62 = v32;
                 if ( v30 > v32 )
                 {
@@ -6938,7 +6829,7 @@ LABEL_21:
                   v30 = v32;
                 }
                 if ( v27 + v29 >= v28 + v55 )
-                  v33 = v73;
+                  int v33 = v73;
                 else
                   v33 = v28 - v27 + v55 + 1;
                 if ( v31 + v30 < v62 + v61 )
@@ -6949,12 +6840,15 @@ LABEL_21:
                 rcDst[3] = v31;
               }
             }
-            v34 = (int *)Rect::Union(rcDst);
-            v50 = v34[3];
-            v49 = v34[2];
-            v35 = CellStruct::Copy(v34, &v75);
-            v36 = Coord2D::Sub(v35, &v80, v69);
-            v37 = Rect::Construct(v82, v36, v49, v50);
+            int * v34 = (int *)Rect::Union(rcDst);
+            int v50 = v34[3];
+            int v49 = v34[2];
+  int v75; // [esp+B8h] [ebp-100h] BYREF
+            _DWORD * v35 = CellStruct::Copy(v34, &v75);
+  int v80; // [esp+100h] [ebp-B8h] BYREF
+            int * v36 = Coord2D::Sub(v35, &v80, v69);
+  int v82[4]; // [esp+118h] [ebp-A0h] BYREF
+            int * v37 = Rect::Construct(v82, v36, v49, v50);
             Cell::CreateCrater(*v37, v37[1], v37[2], v37[3], 0);
             v9 = v56;
             v1 = v64;
@@ -8962,14 +8856,7 @@ int BuildingClass::CheckExitPath()
   int v6; // edi
   int v7; // ebx
   int v8; // esi
-  _DWORD *v9; // edx
-  int v10; // edx
-  int v11; // esi
-  int v12; // ecx
-  int v13; // edx
-  int v14; // esi
   int i; // ecx
-  int v16; // eax
   int v17; // [esp+10h] [ebp-8h]
   _DWORD *v18; // [esp+14h] [ebp-4h]
   result = BuildingClass::GetPlanningToken(this);
@@ -8996,7 +8883,7 @@ int BuildingClass::CheckExitPath()
   {
     while ( 1 )
     {
-      v9 = *(_DWORD **)(*(_DWORD *)(v6 + 4) + 4 * v8);
+      _DWORD * v9 = *(_DWORD **)(*(_DWORD *)(v6 + 4) + 4 * v8);
       result = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*v9 + 1216))(*v9);
       if ( (_BYTE)result )
         break;
@@ -9005,15 +8892,16 @@ int BuildingClass::CheckExitPath()
     }
     if ( v5 < v17 )
     {
+  int v13; // edx
       while ( 1 )
       {
-        v10 = v5;
-        v11 = v18[5];
+        int v10 = v5;
+        int v11 = v18[5];
         if ( !v11 )
           break;
         if ( v5 >= v11 )
         {
-          v12 = v18[37];
+          int v12 = v18[37];
           if ( v12 < 0 )
             break;
           v10 = v12 + (v5 - v12) % v18[36];
@@ -9022,10 +8910,10 @@ int BuildingClass::CheckExitPath()
           break;
         v13 = *(_DWORD *)(v18[2] + 4 * v10);
 LABEL_21:
-        v14 = *(_DWORD *)(v13 + 16);
+        int v14 = *(_DWORD *)(v13 + 16);
         for ( i = 0; i < v14; ++i )
         {
-          v16 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(v13 + 4) + 4 * i) + 4);
+          int v16 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(v13 + 4) + 4 * i) + 4);
           if ( *(_BYTE *)(v16 + 12) == 2 )
             *(_BYTE *)(v16 + 12) = 29;
         }
@@ -9322,7 +9210,6 @@ int BuildingClass::UpdateConstruction()
       int v26 = this->gattlingValue;
       if ( !*(_BYTE *)(v26 + 5825) && !*(_BYTE *)(v26 + 5826) )
       {
-  _DWORD *v9; // ecx
         int v27 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v245 + 44))(v245);
         HouseClass::UpdateBuildState(this->owner, v27);
         if ( (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v245 + 44))(v245) == 1 )
@@ -9841,6 +9728,7 @@ LABEL_99:
       }
       else
       {
+  _DWORD *v9; // ecx
         if ( *(_BYTE *)(*((_DWORD *)v3 + 433) + 3597) )
           return 0;
         LOWORD(v213) = DataGlobal_87F7E8[64];
@@ -12635,23 +12523,12 @@ int BuildingClass::SellEffects()
   int *PlacementRect; // esi
   int *StartCoords; // eax
   int v9; // edx
-  int v10; // ecx
-  int v11; // ebp
-  int v12; // ebx
   int v13; // eax
-  bool v14; // cc
-  int v15; // esi
-  int v16; // esi
   int v17; // ecx
   int v18; // ebx
   unsigned __int8 v19; // al
   int v20; // ecx
-  int v21; // esi
-  bool v22; // cf
   BuildingClass *v23; // eax
-  int v24; // ecx
-  int v25; // ecx
-  int v26; // eax
   void **v27; // eax
   void **v28; // eax
   void **v29; // eax
@@ -12659,13 +12536,10 @@ int BuildingClass::SellEffects()
   int v31; // ebx
   bool v32; // cf
   BuildingClass *v33; // eax
-  int v34; // edx
   __int16 v35; // ax
-  int v37; // [esp+10h] [ebp-40h]
   int v38; // [esp+14h] [ebp-3Ch] BYREF
   int v39; // [esp+18h] [ebp-38h] BYREF
   __int16 v40[6]; // [esp+1Ch] [ebp-34h] BYREF
-  int v41; // [esp+28h] [ebp-28h]
   int v42[4]; // [esp+30h] [ebp-20h] BYREF
   _DWORD v43[4]; // [esp+40h] [ebp-10h] BYREF
 
@@ -12694,7 +12568,7 @@ int BuildingClass::SellEffects()
   }
   else
   {
-    v37 = PlacementRect[2];
+    int v37 = PlacementRect[2];
     if ( v37 <= 0 || (v39 = PlacementRect[3], v39 <= 0) )
     {
       v9 = *StartCoords;
@@ -12705,19 +12579,19 @@ int BuildingClass::SellEffects()
     else
     {
       v9 = *StartCoords;
-      v10 = *PlacementRect;
-      v11 = StartCoords[2];
-      v12 = StartCoords[1];
+      int v10 = *PlacementRect;
+      int v11 = StartCoords[2];
+      int v12 = StartCoords[1];
       v13 = StartCoords[3];
-      v14 = v9 <= *PlacementRect;
-      v41 = v11;
+      bool v14 = v9 <= *PlacementRect;
+      int v41 = v11;
       if ( !v14 )
       {
         v11 += v9 - v10;
         v9 = v10;
         v41 = v11;
       }
-      v15 = PlacementRect[1];
+      int v15 = PlacementRect[1];
       v38 = v15;
       if ( v12 > v15 )
       {
@@ -12725,7 +12599,7 @@ int BuildingClass::SellEffects()
         v12 = v15;
       }
       if ( v9 + v11 >= v10 + v37 )
-        v16 = v41;
+        int v16 = v41;
       else
         v16 = v10 - v9 + v37 + 1;
       if ( v13 + v12 < v39 + v38 )
@@ -12742,8 +12616,8 @@ int BuildingClass::SellEffects()
   v20 = *(_DWORD *)(v4 + 672);
   if ( v19 >> 4 == v20 - 1 && v20 > 2 )
   {
-    v21 = 0;
-    v22 = 1;
+    int v21 = 0;
+    bool v22 = 1;
     do
     {
       if ( v22 )
@@ -12756,7 +12630,7 @@ int BuildingClass::SellEffects()
       {
         v23 = (_DWORD *)this;
       }
-      v24 = v23[17];
+      int v24 = v23[17];
       if ( v24 != -1
         && *(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array + v24) + 680)
         && v24 == this->q044
@@ -12771,8 +12645,8 @@ int BuildingClass::SellEffects()
   }
   if ( a2 != -1 )
   {
-    v25 = *(_DWORD *)(v4 + 672);
-    v26 = this->q11E >> 4;
+    int v25 = *(_DWORD *)(v4 + 672);
+    int v26 = this->q11E >> 4;
     if ( v26 < v25 && (v26 != v25 - 1 || (this->q11E & 0xF) != 0) )
       return 0;
   }
@@ -12807,7 +12681,7 @@ int BuildingClass::SellEffects()
   {
     if ( v32 )
     {
-      v34 = v31 & 7;
+      int v34 = v31 & 7;
       *(_DWORD *)v40 = this->objectTypeFlags;
       v35 = v40[1] + HIWORD(Direction_X_Offsets[v34]);
       LOWORD(a2) = v40[0] + LOWORD(Direction_X_Offsets[v34]);
@@ -17908,9 +17782,6 @@ void BuildingClass::EjectCrew()
   int v56[3]; // [esp+48h] [ebp-48h] BYREF
   int v57[3]; // [esp+54h] [ebp-3Ch] BYREF
   int v58[3]; // [esp+60h] [ebp-30h] BYREF
-  int v59[3]; // [esp+6Ch] [ebp-24h] BYREF
-  int v60[3]; // [esp+78h] [ebp-18h] BYREF
-  int v61[3]; // [esp+84h] [ebp-Ch] BYREF
 
   int v49; // [esp+2Ch] [ebp-64h] BYREF
   int v3 = *(_DWORD *)this->GetCellCoords_Alt(&v49);
@@ -18034,6 +17905,7 @@ void BuildingClass::EjectCrew()
           v50 = ((__int16)v43 << 8) + 128;
           v51 = (SHIWORD(v43) << 8) + 164;
           _DWORD * v29 = Coord::To_Cell(DataGlobal_87F7E8, &v50);
+  int v59[3]; // [esp+6Ch] [ebp-24h] BYREF
           int * v30 = ObjectPlacement::CalcPosition(v29, v59, &v50, 0, 0, 0);
           v50 = *v30;
           int v31 = v30[1];
@@ -18079,6 +17951,7 @@ void BuildingClass::EjectCrew()
           v57[1] = (SHIWORD(v43) << 8) + 128;
           v57[0] = ((__int16)v43 << 8) + 128;
           v57[2] = 0;
+  int v61[3]; // [esp+84h] [ebp-Ch] BYREF
           int * v39 = RandomCoordScatter(v61, v57, 128, 0);
           int v40 = *v39;
           int v41 = v39[1];
@@ -18092,6 +17965,7 @@ void BuildingClass::EjectCrew()
           v53 = ((__int16)v43 << 8) + 128;
           v54 = (SHIWORD(v43) << 8) + 128;
           v55 = 0;
+  int v60[3]; // [esp+78h] [ebp-18h] BYREF
           int * v36 = RandomCoordScatter(v60, &v53, 128, 0);
           int v37 = *v36;
           int v38 = v36[1];
@@ -18903,8 +18777,6 @@ int BuildingClass::GetFacingToTarget()
 // 0x445e50
 {
   int v9; // [esp+24h] [ebp-1Ch] BYREF
-  char v10[12]; // [esp+28h] [ebp-18h] BYREF
-  char v11[12]; // [esp+34h] [ebp-Ch] BYREF
   int *v12; // [esp+44h] [ebp+4h]
   int v2; // ecx
   if ( (*(unsigned __int8 (__thiscall **)(#377 *))(this->q0FF)(this) || (v2 = this->target) == 0 )
@@ -18915,7 +18787,9 @@ int BuildingClass::GetFacingToTarget()
   }
   else
   {
+  char v10[12]; // [esp+28h] [ebp-18h] BYREF
     int * v3 = (int *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v2 + 72))(v2, v10);
+  char v11[12]; // [esp+34h] [ebp-Ch] BYREF
     int * v4 = (int *)(*(int (__thiscall **)(#377 *, char *))(this->q048)(this, v11);
     int v8 = *v3;
     v9 = *v4;
@@ -19004,7 +18878,6 @@ int BuildingClass::SelectTargetTypeFlags()
   _DWORD **v2; // eax
   int v4; // edi
   _DWORD **v5; // eax
-  int v6; // eax
   int v8; // [esp+Ch] [ebp+4h]
   int v9; // [esp+10h] [ebp+8h]
   char v10; // [esp+14h] [ebp+Ch]
@@ -19022,6 +18895,7 @@ int BuildingClass::SelectTargetTypeFlags()
   if ( *(_DWORD *)(*(int (__thiscall **)(#377 *, int))(this->barrelRecoil)(this, 1) )
   {
     v5 = (_DWORD **)(*(int (__thiscall **)(#377 *, int))(this->barrelRecoil)(this, 1);
+  int v6; // eax
     LOBYTE(v6) = Building::GetRenderType(*v5);
     v4 |= v6;
   }
@@ -19180,7 +19054,6 @@ int BuildingClass::Deploy()
   int v40; // [esp+48h] [ebp-18h] BYREF
   int v41; // [esp+4Ch] [ebp-14h]
   int v42; // [esp+50h] [ebp-10h]
-  _BYTE v43[4]; // [esp+54h] [ebp-Ch] BYREF
   int v44; // [esp+58h] [ebp-8h]
 
   char v4 = *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 36) + 132))(*(_DWORD *)(a1 + 36)) + 3278);
@@ -19246,6 +19119,7 @@ LABEL_11:
   if ( v35 != DataGlobal_AC4928 )
   {
     void * v18 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v35);
+  _BYTE v43[4]; // [esp+54h] [ebp-Ch] BYREF
     int * v19 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v18 + 72))(v18, v43);
     v15 = *v19;
     v40 = *v19;
@@ -20050,9 +19924,9 @@ int BuildingClass::IronCurtain()
     this->q52C = v3;
     this->ammoReloadTimer = 0;
   }
-  char v6; // [esp+18h] [ebp+Ch]
   int v4; // [esp+10h] [ebp+4h]
   int v5; // [esp+14h] [ebp+8h]
+  char v6; // [esp+18h] [ebp+Ch]
   return TechnoClass::IronCurtain(v4, v5, v6);
 }
 

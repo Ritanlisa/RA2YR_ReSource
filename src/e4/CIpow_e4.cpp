@@ -11,13 +11,8 @@ void CIpow_Helper()
 {
   long double result; // st7
   int v14; // ecx
-  int v15; // eax
   unsigned __int8 v17; // cl
   unsigned __int8 v18; // ch
-  char v19; // cl
-  _BYTE *v20; // [esp+10h] [ebp-7Ch]
-  long double *v21; // [esp+10h] [ebp-7Ch]
-  _BYTE v22[116]; // [esp+14h] [ebp-78h] BYREF
   int v23; // [esp+88h] [ebp-4h]
 
   int v7 = CW; /*0x7c8fd2*/
@@ -43,9 +38,11 @@ LABEL_21:
     {
       if ( !v14 ) /*0x7c90cf*/
       {
-        v20 = v22; /*0x7c90d6*/
+  _BYTE v22[116]; // [esp+14h] [ebp-78h] BYREF
+        _BYTE * v20 = v22; /*0x7c90d6*/
         __asm { fsave byte ptr [ecx+8] } /*0x7c90e1*/
-        v15 = _powhlp(a2, a3, v22); /*0x7c90e5*/
+        int v15 = _powhlp(a2, a3, v22); /*0x7c90e5*/
+  long double *v21; // [esp+10h] [ebp-7Ch]
         _ECX = v21; /*0x7c90ed*/
         __asm { frstor byte ptr [ecx+8] } /*0x7c90ee*/
         result = *v21; /*0x7c90f1*/
@@ -74,6 +71,7 @@ LABEL_15:
   }
   if ( (v9 & 0x7FF00000) != 0 || a4 | a5 & 0xFFFFF ) /*0x7c9111*/
   {
+  char v19; // cl
     if ( a5 >= 0 || (CIpow_Helper_Helper(a3), a2 = -a2, v19) ) /*0x7c918b*/
     {
       result = __FYL2X__(a2, a3); /*0x7c901f*/

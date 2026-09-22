@@ -259,35 +259,16 @@ void EventClass::ProcessEvent()
   AbstractClass *v74; // esi
   int v75; // ecx
   HouseClass **v76; // ecx
-  int v77; // ebx
-  char *v78; // edi
-  int v79; // eax
-  int v80; // esi
-  int v81; // eax
-  _DWORD *v82; // ecx
-  int v83; // eax
-  int v84; // edx
   IUnknown *v85; // eax
-  int v86; // eax
-  int v87; // eax
-  int v88; // eax
   int i; // ecx
   wchar_t *v90; // [esp-Eh] [ebp-390h]
   CampaignScore *_2; // [esp+2h] [ebp-380h]
-  int a1; // [esp+16h] [ebp-36Ch] BYREF
   HouseClass *v91; // [esp+1Ah] [ebp-368h] BYREF
   HouseClass *aP2_4; // [esp+1Eh] [ebp-364h]
   AnimClass *GroundHeight; // [esp+22h] [ebp-360h]
-  int v96; // [esp+26h] [ebp-35Ch] BYREF
   __int16 v97; // [esp+2Ah] [ebp-358h]
   AbstractClass v98; // [esp+2Eh] [ebp-354h] BYREF
-  int v99; // [esp+52h] [ebp-330h]
-  _DWORD v100[3]; // [esp+56h] [ebp-32Ch] BYREF
-  char v101[4]; // [esp+62h] [ebp-320h] BYREF
-  char v102[12]; // [esp+66h] [ebp-31Ch] BYREF
-  _BYTE v103[108]; // [esp+72h] [ebp-310h] BYREF
   __int16 v104; // [esp+DEh] [ebp-2A4h]
-  char v105; // [esp+E0h] [ebp-2A2h]
   wchar_t Buffer[80]; // [esp+E2h] [ebp-2A0h] BYREF
   wchar_t v107[256]; // [esp+182h] [ebp-200h] BYREF
 
@@ -296,6 +277,8 @@ void EventClass::ProcessEvent()
   int v5 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v4];
   switch ( *(_BYTE *)this )
   {
+  int a1; // [esp+16h] [ebp-36Ch] BYREF
+  int v86; // eax
     case 1:
       Building = (BuildingClass *)BuildingLoadQueue::FindBuilding((_BYTE *)(this + 7));
       ClearFactoryClassProduction(Building, 0);
@@ -520,6 +503,7 @@ void EventClass::ProcessEvent()
           if ( !v51->__pad_34[77] && !v51[1].__pad_FC[84] && !*(_DWORD *)&v51[1].__pad_170[204] )
           {
             if ( v51->__pad_34[88]
+  _DWORD v100[3]; // [esp+56h] [ebp-32Ch] BYREF
               || (v100[0] = *(_DWORD *)&v51->__pad_34[104],
                   v100[1] = *(_DWORD *)&v51->__pad_34[108],
                   v100[2] = *(_DWORD *)&v51->__pad_34[112],
@@ -529,6 +513,7 @@ void EventClass::ProcessEvent()
               int v53 = *(_DWORD *)&v51->__pad_34[120];
               if ( v53 != 18 && v53 != 19 && (*(int (__thiscall **)(CellStruct *))(v51->field_0 + 44))(v51) != 2 )
               {
+  char v101[4]; // [esp+62h] [ebp-320h] BYREF
                 a1 = *(_DWORD *)(*(int (__thiscall **)(CellStruct *, char *))(v51->field_0 + 440))(v51, v101);
                 if ( a1 == *(_DWORD *)&stru_89E138[22624]
   _DWORD *v54; // eax
@@ -685,6 +670,7 @@ void EventClass::ProcessEvent()
         if ( (*(int (__thiscall **)(CellStruct *))(v12->field_0 + 44))(v12) == 6
           || ((*(int (__thiscall **)(CellStruct *))(v12->field_0 + 44))(v12) == 1
            || (*(int (__thiscall **)(CellStruct *))(v12->field_0 + 44))(v12) == 2)
+  char v102[12]; // [esp+66h] [ebp-31Ch] BYREF
           && (v13 = (IUnknown *)(*(int (__thiscall **)(CellStruct *, char *))(v12->field_0 + 72))(v12, v102),
   _DWORD *v14; // eax
               v14 = Coord::To_Cell(&stru_87C374[13428], v13),
@@ -726,7 +712,7 @@ void EventClass::ProcessEvent()
       if ( !*(_DWORD *)&HouseClass_Player[45140] )
       {
         Timer::GetTicks();
-        v99 = 60;
+        int v99 = 60;
         aP2_4 = (HouseClass *)v98.NeedsSaveOrLink;
         GroundHeight = (AnimClass *)60;
         v98.referenceCount = Timer::GetTicks();
@@ -792,6 +778,7 @@ LABEL_173:
         *(_DWORD *)&HouseClass_Player[29868] = 0;
       }
       *(_DWORD *)&HouseClass_Player[29840] = v86;
+  int v87; // eax
       HIWORD(v87) = 0;
       *(_DWORD *)&HouseClass_Player[30732] = this->q007;
       LOWORD(v87) = this->q024;
@@ -801,7 +788,7 @@ LABEL_173:
       *(_DWORD *)&HouseClass_Player[30728] = this->q00B;
       return;
     case 0x21:
-      v88 = 0;
+      int v88 = 0;
       if ( *(int *)&HouseClass_Player[40248] <= 0 )
         return;
       for ( i = *(_DWORD *)&HouseClass_Player[40236]; v4 != *(_DWORD *)(*(_DWORD *)i + 111); i += 4 )
@@ -872,7 +859,8 @@ LABEL_164:
       Debug::Log();
       if ( SessionClass::IsValidHouse((int)&HouseClass_Player[29932], 0) )
       {
-        v77 = *(_DWORD *)(HouseClass_Player.field_0 + 48);
+  _BYTE v103[108]; // [esp+72h] [ebp-310h] BYREF
+        int v77 = *(_DWORD *)(HouseClass_Player.field_0 + 48);
         Debug::Log();
         if ( v77 < 0 )
         {
@@ -887,11 +875,11 @@ LABEL_164:
         *(_DWORD *)&v103[3] = *(_DWORD *)&HouseClass_Player[45112];
         if ( Networking_LastEventIndex < 128 )
         {
-          v78 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex];
+          char * v78 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex];
           qmemcpy(v78, v103, 0x6Cu);
           v78 += 108;
           *(_WORD *)v78 = v104;
-          v78[2] = v105;
+          char v105 = v105;
           g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime();
           Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F;
           ++Networking_LastEventIndex;
@@ -899,21 +887,21 @@ LABEL_164:
         HouseClass_Player[42340] = 1;
       }
       HouseClass_Player[42372] = 1;
-      v79 = EventClass::validateEventType((int *)&g_NetworkEventQueue);
-      v80 = v79;
+      int v79 = EventClass::validateEventType((int *)&g_NetworkEventQueue);
+      int v80 = v79;
       if ( v79 == -1 )
         goto LABEL_214;
-      v81 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v79];
-      v96 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v80];
+      int v81 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v79];
+      int v96 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v80];
       if ( !v81 )
         goto LABEL_213;
       if ( *(int *)&HouseClass_Player[40248] <= 2 )
         goto LABEL_211;
-      v82 = 0;
-      v83 = 0;
+      _DWORD * v82 = 0;
+      int v83 = 0;
       if ( *(int *)&HouseClass_Player[40248] <= 0 )
         goto LABEL_209;
-      v84 = *(_DWORD *)&HouseClass_Player[40236];
+      int v84 = *(_DWORD *)&HouseClass_Player[40236];
       while ( *(_DWORD *)(*(_DWORD *)v84 + 111) != v80 )
       {
         ++v83;

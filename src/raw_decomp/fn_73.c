@@ -6951,7 +6951,7 @@ char __thiscall UnitClass_DeployToBuilding(_DWORD *this)
   _BYTE v30[4]; // [esp+24h] [ebp-10h] BYREF
   _BYTE v31[12]; // [esp+28h] [ebp-Ch] BYREF
 
-  if ( !*(_DWORD *)(this->q6C4 + 1028) ) /*0x738d41*/
+  if ( !*(_DWORD *)(this->type + 1028) ) /*0x738d41*/
     return 1; /*0x738d52*/
   (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 292))(this, 0); /*0x738d58*/
   v3 = 0; /*0x738d64*/
@@ -6959,7 +6959,7 @@ char __thiscall UnitClass_DeployToBuilding(_DWORD *this)
   if ( v4 <= 0 ) /*0x738d6e*/
     goto LABEL_7; /*0x738d6e*/
   v5 = (_DWORD *)MEMORY[0x8871E0]->IvanWarhead[2]; /*0x738d76*/
-  while ( *v5 != *(_DWORD *)(this->q6C4 + 1028) ) /*0x738d84*/
+  while ( *v5 != *(_DWORD *)(this->type + 1028) ) /*0x738d84*/
   {
     ++v3; /*0x738d8a*/
     ++v5; /*0x738d8b*/
@@ -7036,7 +7036,7 @@ LABEL_7:
       HIWORD(v27) = v6[1] / 256; /*0x738dd7*/
       v26 = v27; /*0x738de4*/
       v7 = CellStruct::Add(&v26, &v29, &MEMORY[0x89F6A4]); /*0x738de9*/
-      v8 = this->q6C4; /*0x738df0*/
+      v8 = this->type; /*0x738df0*/
       v28 = *v7; /*0x738df6*/
       if ( (*(unsigned __int8 (__thiscall **)(_DWORD, int *, _DWORD))(**(_DWORD **)(v8 + 1028) + 168))( /*0x738e08*/
              *(_DWORD *)(v8 + 1028),
@@ -7100,7 +7100,7 @@ LABEL_7:
           v29 = v27; /*0x739308*/
           LOWORD(v26) = MEMORY[0x89F6A4] + v27; /*0x73930e*/
           HIWORD(v26) = HIWORD(MEMORY[0x89F6A4]) + v21; /*0x739313*/
-          v22 = this->q6C4; /*0x73931c*/
+          v22 = this->type; /*0x73931c*/
           v28 = v26; /*0x739322*/
           if ( (*(unsigned __int8 (__thiscall **)(_DWORD, int *, _DWORD))(**(_DWORD **)(v22 + 1028) + 168))( /*0x739333*/
                  *(_DWORD *)(v22 + 1028),

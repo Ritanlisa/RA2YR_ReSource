@@ -13,7 +13,6 @@ int Mission::ExecuteTechnoMissionAction()
   int result; // eax
   __int16 v18; // [esp+14h] [ebp-1Ch] BYREF
   _DWORD v19[3]; // [esp+18h] [ebp-18h] BYREF
-  char v20; // [esp+24h] [ebp-Ch] BYREF
   int v2 = *(this + 433); /*0x520ae9*/
   if ( v2 == -1 || *(this + 62) >= *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 36 * v2 + 4) ) /*0x520b0d*/
   {
@@ -51,7 +50,7 @@ int Mission::ExecuteTechnoMissionAction()
                           * ((unsigned int)Random::State((_DWORD *)g_ScenarioClass_Instance + 134)
                            % g_RulesClass_Instance->BuildingGarrisonedSound[1]));
             v8 = *this; /*0x520c94*/
-            v6 = &v20; /*0x520c96*/
+            char v20 = &v20; /*0x520c96*/
 LABEL_19:
             int * v9 = (int *)(*(int (__thiscall **)(_DWORD *, char *))(v8 + 72))(this, v6); /*0x520c9a*/
             AnimClass::ctor(v4, v7, v9, 0, 1, (void *)0x600, 0, 0); /*0x520ca4*/
@@ -186,11 +185,8 @@ char Mission::ProcessUnitMissionAI()
 {
   int (__stdcall ***v12)(_DWORD, void *, int *); // eax
   int v17; // eax
-  int v19; // [esp+4Ch] [ebp-30h]
-  int v20; // [esp+58h] [ebp-24h]
   __int16 v21; // [esp+5Ch] [ebp-20h] BYREF
   int v22; // [esp+60h] [ebp-1Ch] BYREF
-  int v23; // [esp+64h] [ebp-18h] BYREF
   int v24; // [esp+68h] [ebp-14h] BYREF
   _BYTE v25[16]; // [esp+6Ch] [ebp-10h] BYREF
 
@@ -220,7 +216,7 @@ char Mission::ProcessUnitMissionAI()
     LOWORD(v22) = *v5 / 256; /*0x520fd8*/
     HIWORD(v22) = v5[1] / 256; /*0x520fec*/
     LOBYTE(v5) = *((_BYTE *)this + 1756); /*0x520ff1*/
-    v23 = v22; /*0x520ffd*/
+    int v23 = v22; /*0x520ffd*/
     if ( !(_BYTE)v5 /*0x521022*/
   int v6; // esi
       || (v6 = *this,
@@ -238,11 +234,12 @@ char Mission::ProcessUnitMissionAI()
           if ( *((_BYTE *)this + 981) ) /*0x52106c*/
           {
             _DWORD * v8 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 76))(this); /*0x521086*/
+  int v20; // [esp+58h] [ebp-24h]
             LOWORD(v20) = *v8 / 256; /*0x521099*/
             HIWORD(v20) = v8[1] / 256; /*0x5210af*/
             int v9 = *this; /*0x5210b8*/
             v22 = v20; /*0x5210bb*/
-            v19 = (*(int (__thiscall **)(_DWORD *))(v9 + 800))(this); /*0x5210c9*/
+            int v19 = (*(int (__thiscall **)(_DWORD *))(v9 + 800))(this); /*0x5210c9*/
             int v10 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, &v21) + 80) >> 8; /*0x5210de*/
             LOBYTE(v10) = v10 & 1; /*0x5210e1*/
             char v11 = (*(int (__thiscall **)(_DWORD *, _DWORD, int, int))(*this + 188))(this, 0, v10, v19); /*0x5210e9*/

@@ -11,8 +11,6 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
 {
   CampaignScore *v6; // ebp
   int v9; // ebx
-  char *v10; // esi
-  char *v11; // edx
   if ( a3 <= 0 ) /*0x5d4b27*/
     return 0; /*0x5d4b2c*/
   v6 = aP1; /*0x5d4b31*/
@@ -25,7 +23,7 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
     v9 = v8; /*0x5d4b79*/
     if ( v8 >= a3 ) /*0x5d4b7b*/
     {
-      v11 = &aP1->__pad_0[2 * v8 - 2]; /*0x5d4b7d*/
+      char * v11 = &aP1->__pad_0[2 * v8 - 2]; /*0x5d4b7d*/
       while ( !*(_WORD *)v11 || *(_WORD *)v11 > 0x20u ) /*0x5d4b8d*/
       {
         --v9; /*0x5d4b8f*/
@@ -41,7 +39,7 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
     v9 = a3; /*0x5d4b57*/
     if ( a3 <= v8 ) /*0x5d4b59*/
     {
-      v10 = &aP1->__pad_0[2 * a3 - 2]; /*0x5d4b5b*/
+      char * v10 = &aP1->__pad_0[2 * a3 - 2]; /*0x5d4b5b*/
       while ( !*(_WORD *)v10 || *(_WORD *)v10 > 0x20u ) /*0x5d4b6b*/
       {
         ++v9; /*0x5d4b6d*/

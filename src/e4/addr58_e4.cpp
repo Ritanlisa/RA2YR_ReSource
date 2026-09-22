@@ -467,41 +467,31 @@ void globalHelper_088570(MouseClass * aP0, VectorClass * aP1, MouseClass * aP2)
 {
   MouseClass *v4; // ebp
   int v5; // eax
-  _WORD *v6; // edi
-  unsigned int v7; // esi
-  _DWORD *v8; // ecx
   VectorClass *v9; // edx
-  _DWORD *v10; // esi
-  _DWORD *v11; // ecx
-  int v12; // ebx
   __int16 v13; // si
-  int *v14; // eax
-  int v15; // edx
-  int v17; // [esp+10h] [ebp-28h]
-  int v18; // [esp+14h] [ebp-24h]
   __int16 v19; // [esp+16h] [ebp-22h]
   IUnknown *v20; // [esp+18h] [ebp-20h]
   int i; // [esp+24h] [ebp-14h]
-  int v22; // [esp+28h] [ebp-10h]
-  _DWORD v23[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
   char v3 = 0; /*0x588575*/
   for ( i = 0; i < 8; i += 2 ) /*0x588579*/
   {
     v4 = aP2; /*0x588581*/
-    v18 = 0; /*0x588585*/
+    int v18 = 0; /*0x588585*/
     v5 = *(int *)&aP2->__pad_1D4[996] >> 8; /*0x588595*/
-    v17 = aP0->field_0; /*0x58859a*/
-    v22 = v5; /*0x58859e*/
+    int v17 = aP0->field_0; /*0x58859a*/
+    int v22 = v5; /*0x58859e*/
     if ( v5 > 0 ) /*0x5885a2*/
     {
-      v6 = (_WORD *)(4 * (v3 & 7) + 9041544); /*0x5885ab*/
+      _WORD * v6 = (_WORD *)(4 * (v3 & 7) + 9041544); /*0x5885ab*/
       while ( 1 ) /*0x5885c3*/
       {
+  _DWORD *v11; // ecx
         HIWORD(v20) = HIWORD(v17) + v6[1]; /*0x5885c3*/
         LOWORD(v20) = v17 + *v6; /*0x5885c8*/
         v17 = (int)v20; /*0x5885da*/
-        v7 = (SHIWORD(v20) << 9) + (__int16)v20; /*0x5885de*/
+        unsigned int v7 = (SHIWORD(v20) << 9) + (__int16)v20; /*0x5885de*/
+  _DWORD *v8; // ecx
         if ( v7 >= 0x40000 || (v8 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v7)) == 0 ) /*0x5885f7*/
         {
           g_Map_GlobalCellIndex = v20; /*0x5885f9*/
@@ -518,6 +508,7 @@ void globalHelper_088570(MouseClass * aP0, VectorClass * aP1, MouseClass * aP2)
               break; /*0x588629*/
           }
         }
+  _DWORD *v10; // esi
         if ( v7 < 0x40000 && (v10 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v7)) != 0 ) /*0x588641*/
         {
           v11 = v10; /*0x588643*/
@@ -540,17 +531,18 @@ void globalHelper_088570(MouseClass * aP0, VectorClass * aP1, MouseClass * aP2)
         }
         goto LABEL_21; /*0x58867b*/
       }
-      v12 = v18; /*0x588686*/
+      int v12 = v18; /*0x588686*/
       if ( v18 > 0 ) /*0x58868c*/
       {
         v13 = *v6 + LOWORD(aP0->field_0); /*0x5886ae*/
         v19 = HIWORD(aP0->field_0) + v6[1]; /*0x5886b4*/
         while ( 1 ) /*0x5886ca*/
         {
-          v14 = (int *)(*(int (__thiscall **)(MouseClass *, VectorClass *))(v4->field_0 + 140))(v4, aP1); /*0x5886ca*/
+          int * v14 = (int *)(*(int (__thiscall **)(MouseClass *, VectorClass *))(v4->field_0 + 140))(v4, aP1); /*0x5886ca*/
+  _DWORD v23[3]; // [esp+2Ch] [ebp-Ch] BYREF
           v23[1] = (v19 << 8) + 128; /*0x5886ef*/
           v23[0] = (v13 << 8) + 128; /*0x5886f7*/
-          v15 = *v14; /*0x5886fb*/
+          int v15 = *v14; /*0x5886fb*/
           v23[2] = 0; /*0x588700*/
           (*(void (__thiscall **)(int *, _DWORD *, _DWORD))(v15 + 216))(v14, v23, 0); /*0x588708*/
           LOWORD(v5) = v19 + v6[1]; /*0x588718*/

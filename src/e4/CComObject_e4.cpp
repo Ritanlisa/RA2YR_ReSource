@@ -1024,16 +1024,11 @@ int CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a2, int a3, wch
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool v6; // bl
-  bool v7; // zf
-  int v8; // eax
   int Type; // ebx
-  int v10; // eax
   HWND Current; // esi
   HWND DlgItem; // eax
   char **ChatCommand; // ebx
   HWND v14; // esi
-  char *v15; // eax
-  int v16; // esi
   wchar_t *v17; // eax
   void *v18; // [esp+Ch] [ebp-204h] BYREF
   wchar_t Buffer[256]; // [esp+10h] [ebp-200h] BYREF
@@ -1058,8 +1053,8 @@ int CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a2, int a3, wch
     }
     else
     {
-      v7 = WideString::IsASCII((const wchar_t **)&v18) == 0; /*0x7a95c5*/
-      v8 = dword_B779C0; /*0x7a95c7*/
+      bool v7 = WideString::IsASCII((const wchar_t **)&v18) == 0; /*0x7a95c5*/
+      int v8 = dword_B779C0; /*0x7a95c7*/
       if ( v7 ) /*0x7a95cc*/
         v8 = dword_B779DC; /*0x7a95ce*/
       v6 = v8 != 0; /*0x7a95d5*/
@@ -1078,7 +1073,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a2, int a3, wch
   {
     swprintf(Buffer, (const size_t)g_Str_Trace___hs_, (const wchar_t *const)(a3 + 36), String); /*0x7a9625*/
     Type = BuildingAnim::GetType(); /*0x7a9638*/
-    v10 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].__pad_A0 * 900.0); /*0x7a9648*/
+    int v10 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].__pad_A0 * 900.0); /*0x7a9648*/
     MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, Buffer, Type, 22, v10, 0); /*0x7a965f*/
     MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0); /*0x7a966b*/
     Dialog::ShowStatusText(0xFFFFFF, (size_t)g_Str_Trace___hs_, a3 + 36, String); /*0x7a967d*/
@@ -1111,14 +1106,14 @@ LABEL_27:
     DlgItem = GetDlgItem(Current, 1343); /*0x7a975d*/
     ChatCommand = ExtractChatCommand((char **)&v18, DlgItem); /*0x7a9770*/
     v14 = GetDlgItem(Current, 1816); /*0x7a9776*/
-    v15 = String::GetOrEmpty_Alt(ChatCommand); /*0x7a9778*/
+    char * v15 = String::GetOrEmpty_Alt(ChatCommand); /*0x7a9778*/
     SendMessageA(v14, 0x4B4u, 0, (LPARAM)v15); /*0x7a9786*/
     DeleteAndZero(&v18); /*0x7a9790*/
     v5 = a3; /*0x7a9795*/
   }
   if ( byte_B77E40 ) /*0x7a97a3*/
   {
-    v16 = *(_DWORD *)ppv; /*0x7a97ab*/
+    int v16 = *(_DWORD *)ppv; /*0x7a97ab*/
     v17 = WideString::GetOrEmpty((wchar_t **)&dword_B76230); /*0x7a97b2*/
     (*(void (__stdcall **)(LPVOID, int, wchar_t *))(v16 + 236))(ppv, v5, v17); /*0x7a97c0*/
   }
@@ -2006,7 +2001,6 @@ int CComObject_CChatEventSink___ATL::QueryInterface()
   int result; // eax
   BOOL v4; // ebp
   int (__stdcall *v5)(char *, _DWORD *, char **, void *); // eax
-  void *v6; // eax
   char *v7; // esi
   char *v8; // [esp+14h] [ebp+4h]
   _DWORD *v9; // [esp+18h] [ebp+8h]
@@ -2029,7 +2023,7 @@ int CComObject_CChatEventSink___ATL::QueryInterface()
     if ( !*v1 || *v3 == *v9 && v3[1] == v9[1] && v3[2] == v9[2] && v3[3] == v9[3] ) /*0x7ac7a0*/
       break; /*0x7ac7a0*/
 LABEL_17:
-    v6 = v1[5]; /*0x7ac7c3*/
+    void * v6 = v1[5]; /*0x7ac7c3*/
     v1 += 3; /*0x7ac7c6*/
     if ( !v6 ) /*0x7ac7cb*/
       return -2147467262; /*0x7ac7cd*/

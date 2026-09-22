@@ -213,8 +213,6 @@ int String::Replace(char * SubStr, const char * a3)
   char *v22; // eax
   char *Block; // [esp+10h] [ebp-Ch]
   size_t Count; // [esp+14h] [ebp-8h]
-  char *v27; // [esp+18h] [ebp-4h]
-  char *v28; // [esp+24h] [ebp+8h]
   v3 = (void **)this; /*0x7b57a6*/
   char * v4 = 0; /*0x7b57a8*/
   const char * v5 = *this; /*0x7b57ae*/
@@ -225,12 +223,12 @@ int String::Replace(char * SubStr, const char * a3)
   while ( *v5 ) /*0x7b57c6*/
   {
     char * v6 = strstr(v5, SubStr); /*0x7b57d2*/
-    v27 = v6; /*0x7b57da*/
+    char * v27 = v6; /*0x7b57da*/
     if ( !v6 ) /*0x7b57e0*/
     {
       const char * v16 = v4; /*0x7b5924*/
       unsigned int v17 = strlen(v5) + 1; /*0x7b5926*/
-      v28 = v4; /*0x7b592b*/
+      char * v28 = v4; /*0x7b592b*/
       v18 = v17; /*0x7b5931*/
       if ( v4 ) /*0x7b5934*/
         v18 = strlen(v4) + v17; /*0x7b5940*/

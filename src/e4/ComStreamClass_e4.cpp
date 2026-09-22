@@ -162,7 +162,6 @@ int ComStreamClass::QueryInterface()
   int result; // eax
   BOOL v4; // ebp
   int (__stdcall *v5)(char *, _DWORD *, char **, void *); // eax
-  void *v6; // eax
   char *v7; // esi
   char *v8; // [esp+14h] [ebp+4h]
   _DWORD *v9; // [esp+18h] [ebp+8h]
@@ -185,7 +184,7 @@ int ComStreamClass::QueryInterface()
     if ( !*v1 || *v3 == *v9 && v3[1] == v9[1] && v3[2] == v9[2] && v3[3] == v9[3] ) /*0x7ac910*/
       break; /*0x7ac910*/
 LABEL_17:
-    v6 = v1[5]; /*0x7ac933*/
+    void * v6 = v1[5]; /*0x7ac933*/
     v1 += 3; /*0x7ac936*/
     if ( !v6 ) /*0x7ac93b*/
       return -2147467262; /*0x7ac93d*/

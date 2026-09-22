@@ -57,19 +57,16 @@ int SidebarClass::CalcBounds(char a1)
 {
   int v1; // ebx
   int v2; // eax
-  _DWORD *v3; // eax
-  int v4; // ecx
-  int v5; // esi
   int v6; // esi
   int v7; // ecx
   int result; // eax
-  _BYTE v9[16]; // [esp+8h] [ebp-10h] BYREF
 
   if ( a1 ) /*0x6a513b*/
   {
-    v3 = (_DWORD *)SidebarClass::calcSidebarRect(v9); /*0x6a5199*/
-    v4 = v3[1]; /*0x6a51a2*/
-    v5 = v3[3]; /*0x6a51a8*/
+  _BYTE v9[16]; // [esp+8h] [ebp-10h] BYREF
+    _DWORD * v3 = (_DWORD *)SidebarClass::calcSidebarRect(v9); /*0x6a5199*/
+    int v4 = v3[1]; /*0x6a51a2*/
+    int v5 = v3[3]; /*0x6a51a8*/
     v1 = v3[2] + *v3; /*0x6a51ab*/
     DataGlobal_886F98 = 168; /*0x6a51bb*/
     DSurface_SidebarBounds = v1; /*0x6a51c0*/
@@ -235,13 +232,8 @@ int SidebarClass::Redraw(char a2)
   char v10; // dl
   _BYTE *v11; // eax
   char v12; // al
-  unsigned int v14; // [esp-34h] [ebp-64h]
-  unsigned int v15; // [esp-34h] [ebp-64h]
-  unsigned int v16; // [esp-34h] [ebp-64h]
   unsigned __int8 v17; // [esp+Ch] [ebp-24h]
   int v19; // [esp+14h] [ebp-1Ch]
-  int v20; // [esp+18h] [ebp-18h] BYREF
-  int v21; // [esp+1Ch] [ebp-14h]
   int v22[4]; // [esp+20h] [ebp-10h] BYREF
   char v23; // [esp+34h] [ebp+4h]
   int v2 = (int)this; /*0x6a6c3b*/
@@ -261,6 +253,8 @@ int SidebarClass::Redraw(char a2)
     v23 = 1; /*0x6a6cc7*/
   if ( *(_BYTE *)(v2 + 21413) && v23 && !ArmageddonMode ) /*0x6a6ce8*/
   {
+  int v21; // [esp+1Ch] [ebp-14h]
+  int v20; // [esp+18h] [ebp-18h] BYREF
     if ( *(_BYTE *)(v2 + 21415) ) /*0x6a6cee*/
     {
       v21 = g_DSurface_SidebarBounds; /*0x6a6d1f*/
@@ -352,7 +346,7 @@ int SidebarClass::Redraw(char a2)
     if ( *(_DWORD *)(v2 + 21400) ) /*0x6a6ec7*/
     {
       v21 = g_SidebarBounds; /*0x6a6eef*/
-      v14 = *(_DWORD *)(v2 + 21396); /*0x6a6f0a*/
+      unsigned int v14 = *(_DWORD *)(v2 + 21396); /*0x6a6f0a*/
       v20 = 0; /*0x6a6f18*/
       DrawToSurfaceSHP( /*0x6a6f1c*/
         DSurface_Sidebar,
@@ -372,7 +366,7 @@ int SidebarClass::Redraw(char a2)
         0,
         0);
       v21 = g_SidebarBounds; /*0x6a6f3a*/
-      v15 = *(_DWORD *)(v2 + 21396); /*0x6a6f55*/
+      unsigned int v15 = *(_DWORD *)(v2 + 21396); /*0x6a6f55*/
       v20 = 0; /*0x6a6f63*/
       DrawToSurfaceSHP( /*0x6a6f67*/
         DSurface_Sidebar,
@@ -392,7 +386,7 @@ int SidebarClass::Redraw(char a2)
         0,
         0);
       v21 = g_SidebarBounds; /*0x6a6f85*/
-      v16 = *(_DWORD *)(v2 + 21396); /*0x6a6fa0*/
+      unsigned int v16 = *(_DWORD *)(v2 + 21396); /*0x6a6fa0*/
       v20 = 0; /*0x6a6fae*/
       DrawToSurfaceSHP( /*0x6a6fb2*/
         DSurface_Sidebar,

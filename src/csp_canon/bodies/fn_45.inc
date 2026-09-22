@@ -3,20 +3,16 @@
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
 // ==== BACKFILL 0x00451690  BuildingClass::ClearSuperWeaponAnim  cls=BuildingClass  sig=csp  renamed_refs=2  residual=- ====
-char BuildingClass::ClearSuperWeaponAnim()
+void BuildingClass::ClearSuperWeaponAnim()
 {
 {
     char result;
-    int v3;
-    bool v4;
-    int v5;
-    char v6;
     result = this->UpgradeLevel;
     if ( result )
   {
-    v3 = result;
-    v4 = 0;
-    v5 = *(int *)(this + 4 * result + 1512);
+    int v3 = result;
+    bool v4 = 0;
+    int v5 = *(int *)(this + 4 * result + 1512);
     if ( v5 && (v4 = *(int *)(v5 + 5872) != -1, *(char *)(v5 + 3233)) )
     {
     BuildingClass::ClearAnims((int *)this, (TechnoClass *)9);
@@ -32,7 +28,7 @@ char BuildingClass::ClearSuperWeaponAnim()
     else
     {
     BuildingClass::ClearAnims((int *)this, (TechnoClass *)(v3 - 1));
-    v6 = this->UpgradeLevel - 1;
+    char v6 = this->UpgradeLevel - 1;
     this->UpgradeLevel = v6;
     *(int *)(this + 4 * v6 + 1516) = 0;
     if ( v4 )
@@ -537,13 +533,13 @@ namespace ra2 { namespace game { int ObjectClass::GetScreenCoords() {
       v23 = v4;
       v5 = v2[2];
       v24 = v5;
-      lpVtbl = *(Tactical **)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9432] + 176);
-      v17 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9432] + 180);
+      lpVtbl = *(Tactical **)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 176);
+      v17 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 180);
       if ( v3
         && v4 == this->q650
         && v5 == this->q654
-        && *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9432] + 176) == this->q658
-        && *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9432] + 180) == this->q65C )
+        && *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 176) == this->q658
+        && *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 180) == this->q65C )
       {
         v6 = (char *)this + 1596;
         v7 = (BuildingTypeClass *)this->q63C;
@@ -553,7 +549,7 @@ namespace ra2 { namespace game { int ObjectClass::GetScreenCoords() {
       }
       else
       {
-        Coord::To_Screen(*(_DWORD **)&DataGlobal_87F8E4.__pad_5568[9432], &a1, (IUnknown *)&v18);
+        Coord::To_Screen(*(_DWORD **)&DataGlobal_87F8E4[31296], &a1, (IUnknown *)&v18);
         v11 = CalculateBuildingFoundationBounds(*((int **)this + 328), (BuildingTypeClass *)v25);
         v7 = (BuildingTypeClass *)(v18 + *v11);
         v8 = (BuildingTypeClass *)((char *)v19 + v11[1]);

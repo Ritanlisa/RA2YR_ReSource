@@ -66,8 +66,6 @@ unsigned int ConnectionClass::initQueue(unsigned int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
-  unsigned int v5; // esi
-  unsigned int v6; // eax
   unsigned int result; // eax
 
   int v2 = this->q018; /*0x48ba10*/
@@ -79,8 +77,8 @@ unsigned int ConnectionClass::initQueue(unsigned int a2)
   }
   else
   {
-    v5 = v2 + 1; /*0x48ba4e*/
-    v6 = a2 + this->PacketsReceived; /*0x48ba56*/
+    unsigned int v5 = v2 + 1; /*0x48ba4e*/
+    unsigned int v6 = a2 + this->PacketsReceived; /*0x48ba56*/
     this->q018 = v5; /*0x48ba58*/
     this->PacketsReceived = v6; /*0x48ba5b*/
     v4 = v6 / v5; /*0x48ba5e*/
@@ -309,7 +307,6 @@ int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
 {
   int TileType; // eax
   int v7; // ecx
-  char v8; // dl
   signed int v10; // edx
   bool v11; // zf
   int v4 = 0; /*0x48c326*/
@@ -322,7 +319,7 @@ int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
     if ( !TileType || (*(_BYTE *)TileType & 2) != 0 ) /*0x48c33f*/
       goto LABEL_7; /*0x48c33f*/
     v7 = *(_DWORD *)(TileType + 12); /*0x48c341*/
-    v8 = *(_BYTE *)(v7 + 2); /*0x48c344*/
+    char v8 = *(_BYTE *)(v7 + 2); /*0x48c344*/
     if ( !v8 && *(_DWORD *)(v7 + 4) == this->q012 + 1 ) /*0x48c354*/
       break; /*0x48c354*/
     if ( v8 == 1 ) /*0x48c359*/

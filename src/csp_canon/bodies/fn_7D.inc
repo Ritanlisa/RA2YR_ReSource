@@ -1044,11 +1044,11 @@ struct tm * gmtime(CampaignScore * aP0)
     }
   }
     v7->tm_year = v10;
-    v11 = &DataGlobal_87C374.__pad_1140[204];
+    v11 = &DataGlobal_87C374[4620];
     v7->tm_yday = v9 / 86400;
     v12 = v9 % 86400;
     if ( !v2 )
-    v11 = &DataGlobal_87C374.__pad_1140[256];
+    v11 = &DataGlobal_87C374[4672];
     v13 = 1;
     for ( i = (int *)(v11 + 4); *i < v7->tm_yday; ++i )
     ++v13;
@@ -1217,17 +1217,17 @@ LONG _XcptFilter(ObjectClass * aP0, struct _EXCEPTION_POINTERS * ExceptionInfo)
     v6 = v3[1];
     if ( v6 == 8 )
       {
-    v7 = *(int *)&DataGlobal_87C374.__pad_71C[264];
-    if ( *(int *)&DataGlobal_87C374.__pad_71C[264] < *(int *)&DataGlobal_87C374.__pad_71C[264] + *(int *)&DataGlobal_87C374.__pad_71C[268] )
+    v7 = *(int *)&DataGlobal_87C374[2084];
+    if ( *(int *)&DataGlobal_87C374[2084] < *(int *)&DataGlobal_87C374[2084] + *(int *)&DataGlobal_87C374[2088] )
         {
-    v8 = 12 * *(int *)&DataGlobal_87C374.__pad_71C[264];
+    v8 = 12 * *(int *)&DataGlobal_87C374[2084];
     do
           {
     v8 += 12;
     *(int *)(v8 + v2->customSound_controller[0] - 4) = 0;
     ++v7;
           }
-    while ( v7 < *(int *)&DataGlobal_87C374.__pad_71C[264] + *(int *)&DataGlobal_87C374.__pad_71C[268] );
+    while ( v7 < *(int *)&DataGlobal_87C374[2084] + *(int *)&DataGlobal_87C374[2088] );
         }
     v9 = *v3;
     v10 = v2->customSound_controller[2];
@@ -1273,9 +1273,9 @@ unsigned int * xcptlookup(ObjectClass * aP0, unsigned int * a1)
   {
     do
     result += 3;
-    while ( result < &a1[3 * *(int *)&DataGlobal_87C374.__pad_71C[276]] && (ObjectClass *)*result != aP0 );
+    while ( result < &a1[3 * *(int *)&DataGlobal_87C374[2096]] && (ObjectClass *)*result != aP0 );
   }
-    if ( result >= &a1[3 * *(int *)&DataGlobal_87C374.__pad_71C[276]] || (ObjectClass *)*result != aP0 )
+    if ( result >= &a1[3 * *(int *)&DataGlobal_87C374[2096]] || (ObjectClass *)*result != aP0 )
     return 0;
     return result;
 }
@@ -1391,11 +1391,11 @@ int _get_lc_time(CCINIClass * aP0)
     int v43;
     LCID unknown38_low;
     LCID Locale;
-    Locale = *(unsigned short *)&CRTGlobal_B78508.__pad_35[1];
+    Locale = *(unsigned short *)&CRTGlobal_B78508[54];
     unknown38_low = LOWORD(CRTGlobal_B78508.unknown38);
     if ( !aP0 )
     return -1;
-    v2 = __getlocaleinfo(1, *(unsigned short *)&CRTGlobal_B78508.__pad_35[1], 0x31u, (CCINIClass *)aP0->headNode);
+    v2 = __getlocaleinfo(1, *(unsigned short *)&CRTGlobal_B78508[54], 0x31u, (CCINIClass *)aP0->headNode);
     v3 = __getlocaleinfo(1, Locale, 0x32u, (CCINIClass *)&aP0->headNode[1]) | v2;
     v4 = __getlocaleinfo(1, Locale, 0x33u, (CCINIClass *)&aP0->headNode[2]) | v3;
     v5 = __getlocaleinfo(1, Locale, 0x34u, (CCINIClass *)aP0->sectionHead) | v4;

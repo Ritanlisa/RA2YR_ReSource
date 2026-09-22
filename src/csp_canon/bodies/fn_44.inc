@@ -189,8 +189,8 @@ return 2;
 // ==== BACKFILL 0x00449410  BuildingClass::GetBoundingSizeExt  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 int __thiscall BuildingClass::GetBoundingSizeExt(#377 *this)
 {
-  return (*(_BYTE *)(*((_DWORD *)this + 328) + 5829) != 0 ? 0x20 : 0)
-       - (*(_BYTE *)(*((_DWORD *)this + 328) + 5815) != 0 ? 0x10 : 0)
+  return (*(_BYTE *)(this->Type + 5829) != 0 ? 0x20 : 0)
+       - (*(_BYTE *)(this->Type + 5815) != 0 ? 0x10 : 0)
        + ObjectClass::GetBoundingSize(this);
 }
 
@@ -219,6 +219,18 @@ if (ObjectClass::HasLocation(this)) {
     }
 }
 return result;
+}
+
+// ==== BACKFILL 0x0044B760  AbstractClass::COMStub_133  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
+int AbstractClass_COMStub_133()
+{
+  return IPersistStream::StubReturn450();
+}
+
+// ==== BACKFILL 0x0044B770  AbstractClass::COMStub_137  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
+int AbstractClass_COMStub_137()
+{
+  return AircraftClass::CheckMissionStatus();
 }
 
 // ==== BACKFILL 0x0044D5D0  BuildingClass::CaptureBuilding  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
@@ -519,13 +531,13 @@ int INIClass::sub_44FE60()
     int i;
     int v4;
     INIClass::ClearSection((int)this, (INIClass *)aStructures, 0);
-    result = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100];
-    for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100]; ++i )
+    result = *(int *)&g_NetworkPlayerBuffer[5396];
+    for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer[5396]; ++i )
   {
-    v4 = *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[88] + 4 * i);
+    v4 = *(int *)(*(int *)&g_NetworkPlayerBuffer[5384] + 4 * i);
     if ( !*(char *)(v4 + 129) && !*(char *)(*(int *)(v4 + 1312) + 5823) )
     BuildingClass::ReadConstructionData(v4, this);
-    result = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100];
+    result = *(int *)&g_NetworkPlayerBuffer[5396];
   }
     return result;
 }

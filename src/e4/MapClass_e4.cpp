@@ -351,15 +351,10 @@ int MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass * aP2, int * a3)
   int v9; // eax
   int v10; // esi
   int result; // eax
-  int v12; // esi
-  double v13; // st7
-  int *v14; // esi
   VectorClass *v15; // [esp+14h] [ebp-2Ch]
   int v16; // [esp+18h] [ebp-28h]
   int i; // [esp+1Ch] [ebp-24h]
   BuildingTypeClass *v18; // [esp+20h] [ebp-20h]
-  double v19; // [esp+28h] [ebp-18h]
-  int v20; // [esp+38h] [ebp-8h]
   int v21; // [esp+3Ch] [ebp-4h]
   if ( a2 <= 0 ) /*0x506d61*/
     a2 = 1; /*0x506d63*/
@@ -393,19 +388,20 @@ int MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass * aP2, int * a3)
   {
     if ( v6 < (int)v15 ) /*0x506e0e*/
     {
-      v12 = (v10 - v8) * (v10 - v8); /*0x506e16*/
-      v20 = v12; /*0x506e19*/
+      int v12 = (v10 - v8) * (v10 - v8); /*0x506e16*/
+      int v20 = v12; /*0x506e19*/
       do /*0x506eba*/
       {
+  double v19; // [esp+28h] [ebp-18h]
         v19 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)(v12 /*0x506e3f*/
                                                                        + (v6 - (__int16)(v4 / 256))
                                                                        * (v6 - (__int16)(v4 / 256)))));
         if ( v19 < 6.0 ) /*0x506e51*/
         {
-          v13 = v19; /*0x506e53*/
+          double v13 = v19; /*0x506e53*/
           if ( v19 < 1.0 ) /*0x506e75*/
             v13 = 1.0; /*0x506e79*/
-          v14 = (int *)&aP2->vtable0[4 * (v6 - *a3) + 4 * (i - a3[1]) * a3[2]]; /*0x506ea1*/
+          int * v14 = (int *)&aP2->vtable0[4 * (v6 - *a3) + 4 * (i - a3[1]) * a3[2]]; /*0x506ea1*/
           *v14 = Math::RoundToInt((double)a2 / ((v13 - 1.0) * 0.1 + 1.0) + (double)*v14); /*0x506ead*/
           v12 = v20; /*0x506eaf*/
         }
@@ -1878,9 +1874,6 @@ int MapClass::CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v11; // esi
-  unsigned int v12; // eax
-  _DWORD *v13; // eax
-  _DWORD *v14; // ecx
   IUnknown *aP6a; // [esp+2Ch] [ebp+1Ch]
 
   int v9 = 0; /*0x56e7c6*/
@@ -1897,9 +1890,11 @@ LABEL_11:
   }
   while ( 1 ) /*0x56e7f5*/
   {
+  _DWORD *v14; // ecx
     HIWORD(aP6a) = v11 + HIWORD(aP0->field_0); /*0x56e7f5*/
     LOWORD(aP6a) = v9 + LOWORD(aP0->field_0); /*0x56e7fa*/
-    v12 = (__int16)aP6a + (SHIWORD(aP6a) << 9); /*0x56e808*/
+    unsigned int v12 = (__int16)aP6a + (SHIWORD(aP6a) << 9); /*0x56e808*/
+  _DWORD *v13; // eax
     if ( v12 < 0x40000 && (v13 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v12)) != 0 ) /*0x56e81e*/
     {
       v14 = v13; /*0x56e820*/
@@ -1928,18 +1923,12 @@ int MapClass::TransitionCliff(MouseClass * aP0)
   _DWORD *v5; // eax
   int result; // eax
   __int16 v7; // dx
-  int v8; // eax
   __int16 v9; // ax
   __int16 v10; // cx
-  int v11; // eax
   __int16 v12; // dx
   __int16 v13; // dx
-  int v14; // eax
   __int16 v15; // ax
   __int16 v16; // cx
-  int v17; // eax
-  int v18; // [esp+8h] [ebp-8h] BYREF
-  int v19; // [esp+Ch] [ebp-4h] BYREF
   v2 = aP0; /*0x574784*/
   _DWORD * v1 = v1; /*0x574789*/
   v4 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9); /*0x574795*/
@@ -1954,13 +1943,13 @@ int MapClass::TransitionCliff(MouseClass * aP0)
     v7 = HIWORD(aP0->field_0); /*0x5747dc*/
     LOWORD(aP0) = aP0->field_0; /*0x5747e0*/
     HIWORD(aP0) = v7 - 1; /*0x5747eb*/
-    v8 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0) + 17); /*0x574803*/
+    int v8 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0) + 17); /*0x574803*/
     if ( v8 >= 74 && v8 <= 101 ) /*0x57480e*/
     {
       v10 = HIWORD(v2->field_0) - 2; /*0x574846*/
       LOWORD(aP0) = v2->field_0; /*0x57484a*/
       HIWORD(aP0) = v10; /*0x57484f*/
-      v11 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0) + 17); /*0x57486b*/
+      int v11 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0) + 17); /*0x57486b*/
       if ( v11 >= 74 && v11 <= 101 ) /*0x574876*/
       {
         v12 = HIWORD(v2->field_0); /*0x57488b*/
@@ -1986,17 +1975,18 @@ int MapClass::TransitionCliff(MouseClass * aP0)
     v13 = LOWORD(aP0->field_0) - 1; /*0x5748db*/
     HIWORD(aP0) = HIWORD(aP0->field_0); /*0x5748dd*/
     LOWORD(aP0) = v13; /*0x5748e2*/
-    v14 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0) + 17); /*0x5748fe*/
+    int v14 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0) + 17); /*0x5748fe*/
     if ( v14 >= 74 && v14 <= 101 ) /*0x574909*/
     {
       v16 = LOWORD(v2->field_0) - 2; /*0x574941*/
       HIWORD(aP0) = HIWORD(v2->field_0); /*0x574945*/
       LOWORD(aP0) = v16; /*0x57494a*/
-      v17 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0) + 17); /*0x574966*/
+      int v17 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0) + 17); /*0x574966*/
       if ( v17 >= 74 && v17 <= 101 ) /*0x574971*/
       {
         aP0 = (MouseClass *)1; /*0x57498f*/
-        v18 = CellStruct::Sub((__int16 *)v2, (IUnknown *)&v19, (IUnknown *)&aP0)->field_0; /*0x5749a8*/
+  int v19; // [esp+Ch] [ebp-4h] BYREF
+        int v18 = CellStruct::Sub((__int16 *)v2, (IUnknown *)&v19, (IUnknown *)&aP0)->field_0; /*0x5749a8*/
         return CellClass::ApplyCliffMod(v3, &v18); /*0x5749af*/
       }
       else
@@ -2029,55 +2019,26 @@ void MapClass::ApplyTerrainDamage(IUnknown *this@<ecx> a1, IUnknown aP1)
   __int16 v8; // dx
   _DWORD *v11; // edi
   int v12; // eax
-  int v13; // eax
   __int16 v14; // dx
   __int16 v15; // si
-  _WORD *v16; // ecx
-  int v17; // eax
   bool v18; // sf
-  int v19; // eax
-  _DWORD *v20; // eax
   __int16 v21; // bp
   __int16 v22; // bx
-  int v23; // eax
-  int v24; // eax
-  _DWORD *v25; // eax
   __int16 v26; // dx
-  unsigned int v27; // eax
-  _DWORD *v28; // eax
-  bool v29; // cc
   int v30; // eax
   ObjectClass *v31; // eax
   CCINIClass *v32; // ebx
   __int16 v33; // si
-  int v34; // ecx
-  int v35; // ecx
-  _DWORD *v36; // ecx
-  int v37; // eax
   __int16 v38; // cx
-  int v39; // edi
   ObjectClass *v40; // edx
-  int v41; // ecx
-  int v42; // ecx
-  unsigned int v43; // eax
   ObjectClass *v44; // eax
   ObjectClass *v45; // edx
-  int v46; // eax
   __int16 v47; // cx
-  int v48; // ebp
   int i; // esi
   __int16 v50; // ax
-  int v51; // ecx
-  unsigned int v52; // eax
-  _DWORD *v53; // eax
   _DWORD *ebx68; // ebx
   MapClass *v54; // esi
-  int v56; // eax
-  int v57; // eax
-  int v58; // esi
-  int v59; // ebp
   __int16 v60; // ax
-  int v61; // esi
   ObjectClass *v62; // [esp+14h] [ebp-30h] BYREF
   ObjectClass *v63; // [esp+18h] [ebp-2Ch]
   ObjectClass *v64; // [esp+1Ch] [ebp-28h]
@@ -2086,8 +2047,6 @@ void MapClass::ApplyTerrainDamage(IUnknown *this@<ecx> a1, IUnknown aP1)
   CCINIClass *v67; // [esp+28h] [ebp-1Ch] BYREF
   void **v69; // [esp+2Ch] [ebp-18h] BYREF
   void *Block; // [esp+30h] [ebp-14h]
-  char v71; // [esp+39h] [ebp-Bh]
-  int v72; // [esp+3Ch] [ebp-8h]
   ObjectClass *v73; // [esp+40h] [ebp-4h]
   v2 = this; /*0x574c26*/
   v3 = (IUnknown *)-2; /*0x574c2d*/
@@ -2136,15 +2095,16 @@ void MapClass::ApplyTerrainDamage(IUnknown *this@<ecx> a1, IUnknown aP1)
     v67 = 0; /*0x574d01*/
     while ( 1 ) /*0x574d16*/
     {
-      v13 = (unsigned __int8)v63 & 7; /*0x574d16*/
+      int v13 = (unsigned __int8)v63 & 7; /*0x574d16*/
       v14 = *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v13) + *(_WORD *)v5->__pad_0; /*0x574d21*/
       v15 = *(_WORD *)&v5->__pad_0[2] + *((_WORD *)&DataGlobal_89F68A + 2 * v13); /*0x574d29*/
-      v16 = (_WORD *)(4 * v13 + 9041544); /*0x574d2d*/
-      v17 = v15 << 9; /*0x574d3a*/
+      _WORD * v16 = (_WORD *)(4 * v13 + 9041544); /*0x574d2d*/
+      int v17 = v15 << 9; /*0x574d3a*/
       v18 = v14 + v17 < 0; /*0x574d3d*/
-      v19 = v14 + v17; /*0x574d3d*/
+      int v19 = v14 + v17; /*0x574d3d*/
       LOWORD(v64) = v14; /*0x574d3f*/
       HIWORD(v64) = v15; /*0x574d44*/
+  _DWORD *v20; // eax
       if ( v18 || v19 >= 0x40000 || (v20 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v19)) == 0 ) /*0x574d5d*/
       {
         v11 = g_CellClassArray; /*0x574d67*/
@@ -2158,11 +2118,12 @@ void MapClass::ApplyTerrainDamage(IUnknown *this@<ecx> a1, IUnknown aP1)
         break; /*0x574d7a*/
       v21 = v15 + v16[1]; /*0x574d87*/
       v22 = v14 + *v16; /*0x574d8a*/
-      v23 = v21 << 9; /*0x574d93*/
+      int v23 = v21 << 9; /*0x574d93*/
       v18 = v22 + v23 < 0; /*0x574d96*/
-      v24 = v22 + v23; /*0x574d96*/
+      int v24 = v22 + v23; /*0x574d96*/
       LOWORD(v65) = v22; /*0x574d98*/
       HIWORD(v65) = v21; /*0x574d9d*/
+  _DWORD *v25; // eax
       if ( v18 || v24 >= 0x40000 || (v25 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v24)) == 0 ) /*0x574db6*/
       {
         v11 = g_CellClassArray; /*0x574dc0*/
@@ -2177,7 +2138,8 @@ void MapClass::ApplyTerrainDamage(IUnknown *this@<ecx> a1, IUnknown aP1)
       v26 = v22 + *v16; /*0x574de3*/
       HIWORD(v66) = v21 + v16[1]; /*0x574de9*/
       LOWORD(v66) = v26; /*0x574dee*/
-      v27 = v26 + (SHIWORD(v66) << 9); /*0x574df9*/
+      unsigned int v27 = v26 + (SHIWORD(v66) << 9); /*0x574df9*/
+  _DWORD *v28; // eax
       if ( v27 < 0x40000 && (v28 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v27)) != 0 ) /*0x574e0f*/
       {
         v11 = v28; /*0x574e11*/
@@ -2188,6 +2150,7 @@ void MapClass::ApplyTerrainDamage(IUnknown *this@<ecx> a1, IUnknown aP1)
         g_Map_GlobalCellIndex = (IUnknown *)v66; /*0x574e1e*/
       }
       if ( (v11[80] & 0x500) != 0 /*0x574e43*/
+  bool v29; // cc
         || (v29 = (int)&v67->__pad_0[1] < 8,
             v63 = (ObjectClass *)(((_BYTE)v63 + 1) & 7),
             v67 = (CCINIClass *)((char *)v67 + 1),
@@ -2222,10 +2185,11 @@ LABEL_34:
         LOWORD(aP1.field_0) = (_WORD)v32 + *((_WORD *)&Direction_X_Offsets.field_0 + 2 * ((unsigned __int8)v65 & 7)); /*0x574ec2*/
         HIWORD(aP1.field_0) = v33; /*0x574ec7*/
         LOWORD(v32) = aP1.field_0; /*0x574ecc*/
-        v34 = v33 << 9; /*0x574ed0*/
+        int v34 = v33 << 9; /*0x574ed0*/
         v18 = SLOWORD(aP1.field_0) + v34 < 0; /*0x574ed3*/
-        v35 = SLOWORD(aP1.field_0) + v34; /*0x574ed3*/
+        int v35 = SLOWORD(aP1.field_0) + v34; /*0x574ed3*/
         v67 = (CCINIClass *)aP1.field_0; /*0x574ed5*/
+  _DWORD *v36; // ecx
         if ( v18 || v35 >= 0x40000 || (v36 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v35)) == 0 ) /*0x574eef*/
         {
           g_Map_GlobalCellIndex = (IUnknown *)aP1.field_0; /*0x574ef5*/
@@ -2238,31 +2202,31 @@ LABEL_34:
           return; /*0x574f18*/
       }
       v2 = this; /*0x574f28*/
-      v37 = ((_BYTE)v65 - 4) & 7; /*0x574f32*/
+      int v37 = ((_BYTE)v65 - 4) & 7; /*0x574f32*/
       v38 = *((_WORD *)&DataGlobal_89F68A + 2 * v37); /*0x574f4e*/
       LOWORD(aP1.field_0) += *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v37) /*0x574f58*/
                            + *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v37);
       HIWORD(aP1.field_0) = v33 + v38 + v38; /*0x574f5d*/
       v31 = (ObjectClass *)aP1.field_0; /*0x574f62*/
     }
-    v39 = (v11[80] & 0x800) != 0 ? 6 : 0;
+    int v39 = (v11[80] & 0x800) != 0 ? 6 : 0;
     v62 = v31; /*0x574f81*/
     VectorClass::CellConstructor(&v69, 0, 0); /*0x574f85*/
     v40 = v62; /*0x574f8a*/
-    v41 = *(_DWORD *)&v2->__pad_11C[8]; /*0x574f8e*/
+    int v41 = *(_DWORD *)&v2->__pad_11C[8]; /*0x574f8e*/
     v69 = &vt_DynamicVectorClass_Cell; /*0x574f99*/
     v73 = (ObjectClass *)10; /*0x574fa1*/
-    v72 = 0; /*0x574fa9*/
+    int v72 = 0; /*0x574fa9*/
     if ( (__int16)v62 >= v41 ) /*0x574fb1*/
     {
       do /*0x574fbd*/
       {
         if ( (__int16)v40 > v41 + *(_DWORD *)&v2->__pad_11C[16] ) /*0x574fc4*/
           break; /*0x574fc4*/
-        v42 = *(_DWORD *)&v2->__pad_11C[12]; /*0x574fcf*/
+        int v42 = *(_DWORD *)&v2->__pad_11C[12]; /*0x574fcf*/
         if ( SHIWORD(v62) < v42 || SHIWORD(v62) > v42 + v2->field_130 ) /*0x574fe7*/
           break; /*0x574fe7*/
-        v43 = (__int16)v40 + (SHIWORD(v62) << 9); /*0x574ff6*/
+        unsigned int v43 = (__int16)v40 + (SHIWORD(v62) << 9); /*0x574ff6*/
         if ( *(_DWORD *)(*(_DWORD *)&v2->__pad_134[8] + 4 * v43) ) /*0x574ff8*/
         {
           if ( v43 < 0x40000 && (v44 = *(ObjectClass **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v43)) != 0 ) /*0x575014*/
@@ -2276,7 +2240,7 @@ LABEL_34:
           }
           if ( globalHelper_0746C0((int)v45->attachedBomb - g_TerrainBridgeIndex + 1, (int)v45) ) /*0x575031*/
           {
-            v48 = ((_BYTE)v39 - 4) & 7; /*0x57508d*/
+            int v48 = ((_BYTE)v39 - 4) & 7; /*0x57508d*/
             aP1.field_0 = (int)v62; /*0x575090*/
             for ( i = 0; i < 3; ++i ) /*0x575094*/
             {
@@ -2288,9 +2252,10 @@ LABEL_34:
               v50 = *((_WORD *)&Direction_X_Offsets.field_0 + 2 * (((_BYTE)v39 - 4) & 7)) + LOWORD(aP1.field_0); /*0x5750c8*/
               HIWORD(v67) = *((_WORD *)&DataGlobal_89F68A + 2 * (((_BYTE)v39 - 4) & 7)) + HIWORD(aP1.field_0); /*0x5750ce*/
               LOWORD(v67) = v50; /*0x5750d3*/
-              v51 = v50; /*0x5750dc*/
+              int v51 = v50; /*0x5750dc*/
               aP1.field_0 = (int)v67; /*0x5750e1*/
-              v52 = v50 + (SHIWORD(v67) << 9); /*0x5750e8*/
+              unsigned int v52 = v50 + (SHIWORD(v67) << 9); /*0x5750e8*/
+  _DWORD *v53; // eax
               if ( v52 < 0x40000 && (v53 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v52)) != 0 ) /*0x5750fe*/
               {
                 ebx68 = v53; /*0x575100*/
@@ -2301,23 +2266,23 @@ LABEL_34:
                 ebx68 = g_CellClassArray; /*0x57510a*/
               }
               v54 = this; /*0x57510f*/
-              v56 = *(_DWORD *)&this->__pad_11C[8]; /*0x575113*/
+              int v56 = *(_DWORD *)&this->__pad_11C[8]; /*0x575113*/
               if ( v51 < v56 ) /*0x57511b*/
                 break; /*0x57511b*/
               if ( v51 > v56 + *(_DWORD *)&this->__pad_11C[16] ) /*0x57512b*/
                 goto LABEL_79; /*0x57512b*/
-              v57 = *(_DWORD *)&this->__pad_11C[12]; /*0x575135*/
+              int v57 = *(_DWORD *)&this->__pad_11C[12]; /*0x575135*/
               if ( SHIWORD(v67) < v57 || SHIWORD(v67) > v57 + this->field_130 ) /*0x57514d*/
                 goto LABEL_79; /*0x57514d*/
-              v58 = ebx68[14] - g_TerrainBridgeIndex + 1; /*0x57515b*/
+              int v58 = ebx68[14] - g_TerrainBridgeIndex + 1; /*0x57515b*/
               if ( globalHelper_074600(v58, v48, (int)ebx68) ) /*0x575160*/
               {
                 if ( v58 != -1 ) /*0x575170*/
                 {
-                  v59 = ((_BYTE)v48 - 4) & 7; /*0x57517a*/
+                  int v59 = ((_BYTE)v48 - 4) & 7; /*0x57517a*/
                   v60 = *((_WORD *)&DataGlobal_89F68A + 2 * v59); /*0x57518c*/
                   LOWORD(v67) = *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v59) + LOWORD(aP1.field_0); /*0x575194*/
-                  v61 = 0; /*0x57519e*/
+                  int v61 = 0; /*0x57519e*/
                   HIWORD(v67) = HIWORD(aP1.field_0) + v60; /*0x5751a0*/
                   aP1.field_0 = (int)v67; /*0x5751a9*/
                   do /*0x5751c3*/
@@ -2340,7 +2305,7 @@ LABEL_79:
           }
           LOWORD(v40) = (_WORD)v62; /*0x57503a*/
         }
-        v46 = v39 & 7; /*0x575040*/
+        int v46 = v39 & 7; /*0x575040*/
         v47 = HIWORD(v62) + *((_WORD *)&DataGlobal_89F68A + 2 * v46); /*0x575056*/
         LOWORD(aP1.field_0) = (_WORD)v40 + *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v46); /*0x57505e*/
         HIWORD(aP1.field_0) = v47; /*0x575066*/
@@ -2354,6 +2319,7 @@ LABEL_79:
     v69 = &vt_VectorClass_Cell; /*0x5751f1*/
     if ( Block ) /*0x5751fb*/
     {
+  char v71; // [esp+39h] [ebp-Bh]
       if ( v71 ) /*0x575203*/
         __3_YAXPAX_Z(Block); /*0x575206*/
     }
@@ -3065,11 +3031,6 @@ int MapClass::IsAreaFree(int * a2, int a3)
 {
   int v6; // edi
   int v7; // ebp
-  int v8; // eax
-  bool v9; // sf
-  int v10; // eax
-  _DWORD *v11; // eax
-  _DWORD *v12; // esi
   int v14; // [esp+0h] [ebp-8h]
   int v16; // [esp+Ch] [ebp+4h]
   int v17; // [esp+10h] [ebp+8h]
@@ -3096,10 +3057,12 @@ LABEL_20:
   v7 = (__int16)v4; /*0x5867d9*/
   while ( 1 ) /*0x5867df*/
   {
-    v8 = (__int16)v6 << 9; /*0x5867df*/
-    v9 = v7 + v8 < 0; /*0x5867e2*/
-    v10 = v7 + v8; /*0x5867e2*/
+  _DWORD *v12; // esi
+    int v8 = (__int16)v6 << 9; /*0x5867df*/
+    bool v9 = v7 + v8 < 0; /*0x5867e2*/
+    int v10 = v7 + v8; /*0x5867e2*/
     HIWORD(v17) = v6; /*0x5867e4*/
+  _DWORD *v11; // eax
     if ( v9 || v10 >= 0x40000 || (v11 = *(_DWORD **)(g_Shroud_CellArray + 4 * v10)) == 0 ) /*0x5867fd*/
     {
       v12 = g_CellClassArray; /*0x586807*/
@@ -3133,13 +3096,6 @@ int MapClass::AllocateCellDataBuffer(int a2, char * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *v8; // edi
-  char *v9; // eax
-  int v10; // ecx
-  int v12; // ecx
-  int v13; // eax
-  _DWORD *v14; // ecx
-  char *v15; // edx
-  int v16; // [esp+10h] [ebp-4h]
   int v3 = a2; /*0x589373*/
   if ( !a2 ) /*0x58937f*/
   {
@@ -3152,8 +3108,8 @@ int MapClass::AllocateCellDataBuffer(int a2, char * a3)
   {
     if ( a2 - 1 >= 0 ) /*0x5893d6*/
     {
-      v9 = a3 + 2; /*0x5893d8*/
-      v10 = a2; /*0x5893db*/
+      char * v9 = a3 + 2; /*0x5893d8*/
+      int v10 = a2; /*0x5893db*/
       do /*0x5893f8*/
       {
         *((_WORD *)v9 - 1) = 0; /*0x5893df*/
@@ -3202,17 +3158,17 @@ LABEL_14:
     return 0; /*0x58940b*/
   if ( this->MapClass_field_0x4 ) /*0x589412*/
   {
-    v12 = this->MapClass_field_0x8; /*0x589417*/
+    int v12 = this->MapClass_field_0x8; /*0x589417*/
     if ( a2 < v12 ) /*0x58941c*/
       v12 = a2; /*0x58941e*/
     if ( v12 > 0 ) /*0x589422*/
     {
-      v13 = 0; /*0x589424*/
-      v16 = v12; /*0x589426*/
+      int v13 = 0; /*0x589424*/
+      int v16 = v12; /*0x589426*/
       do /*0x589456*/
       {
-        v14 = (_DWORD *)(this->MapClass_field_0x4 + v13); /*0x58942f*/
-        v15 = &v8[v13]; /*0x589431*/
+        _DWORD * v14 = (_DWORD *)(this->MapClass_field_0x4 + v13); /*0x58942f*/
+        char * v15 = &v8[v13]; /*0x589431*/
         v13 += 16; /*0x589434*/
         *(_DWORD *)v15 = *v14; /*0x589439*/
         *((_DWORD *)v15 + 1) = v14[1]; /*0x58943e*/
@@ -3242,17 +3198,8 @@ int MapClass::AllocateMapDataBuffer(int a2, int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v8; // esi
-  _DWORD *v9; // esi
-  int v10; // eax
-  _DWORD *v11; // edi
-  int v12; // ebx
-  int *v13; // esi
-  _DWORD *v14; // ecx
   int v15; // eax
-  int v17; // [esp+10h] [ebp-8h]
   _DWORD *v18; // [esp+10h] [ebp-8h]
-  int v19; // [esp+10h] [ebp-8h]
-  int v20; // [esp+14h] [ebp-4h]
   int v3 = a2; /*0x589a67*/
   if ( !a2 ) /*0x589a6f*/
   {
@@ -3263,10 +3210,10 @@ int MapClass::AllocateMapDataBuffer(int a2, int * a3)
   if ( a3 ) /*0x589a7f*/
   {
     *a3 = a2; /*0x589ad2*/
-    v9 = a3 + 1; /*0x589adc*/
+    _DWORD * v9 = a3 + 1; /*0x589adc*/
     if ( a2 - 1 >= 0 ) /*0x589ade*/
     {
-      v19 = a2; /*0x589ae1*/
+      int v19 = a2; /*0x589ae1*/
       do /*0x589af8*/
       {
         MapClass::allocateMapBuffers(v9); /*0x589ae7*/
@@ -3287,7 +3234,7 @@ int MapClass::AllocateMapDataBuffer(int a2, int * a3)
       _DWORD * v7 = v5 + 1; /*0x589aa0*/
       if ( a2 - 1 >= 0 ) /*0x589aa4*/
       {
-        v17 = a2; /*0x589aa7*/
+        int v17 = a2; /*0x589aa7*/
         do /*0x589abe*/
         {
           MapClass::allocateMapBuffers(v7); /*0x589aad*/
@@ -3309,17 +3256,17 @@ LABEL_14:
     return 0; /*0x589bbf*/
   if ( this->MapClass_field_0x4 ) /*0x589b0e*/
   {
-    v10 = this->MapClass_field_0x8; /*0x589b15*/
+    int v10 = this->MapClass_field_0x8; /*0x589b15*/
     if ( a2 < v10 ) /*0x589b1a*/
       v10 = a2; /*0x589b1c*/
     if ( v10 > 0 ) /*0x589b20*/
     {
-      v11 = v8 + 7; /*0x589b27*/
-      v12 = -28 - (_DWORD)v8; /*0x589b2a*/
-      v20 = v10; /*0x589b2c*/
+      _DWORD * v11 = v8 + 7; /*0x589b27*/
+      int v12 = -28 - (_DWORD)v8; /*0x589b2a*/
+      int v20 = v10; /*0x589b2c*/
       do /*0x589b5f*/
       {
-        v13 = (_DWORD *)((char *)v11 + v12 + this->MapClass_field_0x4); /*0x589b38*/
+        int * v13 = (_DWORD *)((char *)v11 + v12 + this->MapClass_field_0x4); /*0x589b38*/
         Radar::CopyDataArray(v11 - 7, v13); /*0x589b3b*/
         *((_WORD *)v11 - 2) = *((_WORD *)v13 + 12); /*0x589b44*/
         *v11 = v13[7]; /*0x589b4b*/
@@ -3333,7 +3280,7 @@ LABEL_14:
     }
     if ( this->IsAllocated ) /*0x589b69*/
     {
-      v14 = (_DWORD *)this->MapClass_field_0x4; /*0x589b70*/
+      _DWORD * v14 = (_DWORD *)this->MapClass_field_0x4; /*0x589b70*/
       if ( v14 ) /*0x589b75*/
         SubzoneConnectionVector::Destruct(v14, 3); /*0x589b79*/
       this->MapClass_field_0x4 = 0; /*0x589b7e*/

@@ -509,8 +509,6 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
   int v9; // eax
   int v10; // ebx
   int v11; // ebx
-  int v12; // edi
-  int v13; // eax
   int v15; // [esp+10h] [ebp-Ch]
   _DWORD v16[2]; // [esp+14h] [ebp-8h] BYREF
   int v17; // [esp+28h] [ebp+Ch]
@@ -569,9 +567,9 @@ LABEL_11:
                    0);
   if ( this->field48 != -1 )
   {
-    v12 = a3[1];
+    int v12 = a3[1];
     v16[0] = v16[0] + 30 - *a3;
-    v13 = this->field48;
+    int v13 = this->field48;
     v16[1] = v11 + g_Map_VisibleRect - v12;
     LOBYTE(v4) = (*(int (__thiscall **)(_DWORD, _DWORD *, _DWORD *, _DWORD, int, int))(**((_DWORD **)FactoryClass_Array
                                                                                         + v13)
@@ -1248,8 +1246,8 @@ int TacticalClass::DrawTerrain(const RectangleStruct& viewRect)
   int v9 = Math::RoundToInt(v39);
   int v41; // [esp+44h] [ebp-24h] BYREF
   Coord::Subtract(&v41, v8, v9, 0);
-  int v33; // [esp+20h] [ebp-48h] BYREF
   int v42; // [esp+48h] [ebp-20h]
+  int v33; // [esp+20h] [ebp-48h] BYREF
   int v10 = *(_DWORD *)CellStruct::Set(&v33, v41 / 256, v42 / 256);
   int v11 = this->visibleArea;
   _DWORD v34[2]; // [esp+24h] [ebp-44h]
@@ -1611,13 +1609,7 @@ int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect)
   int v19; // [esp+20h] [ebp-40h] BYREF
   int v20; // [esp+24h] [ebp-3Ch]
   signed int v21; // [esp+28h] [ebp-38h]
-  int v22; // [esp+2Ch] [ebp-34h]
-  int v23[4]; // [esp+30h] [ebp-30h] BYREF
-  int v24[2]; // [esp+40h] [ebp-20h] BYREF
-  int v25; // [esp+48h] [ebp-18h]
-  int v26; // [esp+4Ch] [ebp-14h]
   _DWORD v27[4]; // [esp+50h] [ebp-10h] BYREF
-  int v28; // [esp+6Ch] [ebp+Ch]
 
   if ( a4 )
   {
@@ -1632,7 +1624,7 @@ int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect)
   }
   if ( (int)this->visibleCellCount > 0 && !a4 )
   {
-    v28 = 0;
+    int v28 = 0;
     _DWORD * v5 = this + 57;
     do
     {
@@ -1650,16 +1642,18 @@ int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect)
       int v7 = this->q0B4;
       int v8 = *v6 - this->visibleArea;
       int v9 = v6[1];
+  int v23[4]; // [esp+30h] [ebp-30h] BYREF
       v23[0] = v8 - 30;
       v23[3] = 30;
       v23[1] = v9 - v7 + g_Map_VisibleRect;
       v23[2] = 60;
       int * v10 = ClipRectIntersection(v27, &DSurface_ViewBounds, v23, 0, 0);
+  int v24[2]; // [esp+40h] [ebp-20h] BYREF
       v24[0] = *v10;
       v24[1] = v10[1];
-      v25 = v10[2];
+      int v25 = v10[2];
       int v11 = v10[3];
-      v26 = v11;
+      int v26 = v11;
       if ( v25 > 0 && v11 > 0 )
         TacticalClass::DrawTerrain((int)this, v24, v24);
       ++v5;
@@ -1680,7 +1674,7 @@ int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect)
         v19 = *(_DWORD *)((char *)g_CraterPool + v14);
         v20 = *(_DWORD *)((char *)g_CraterPool + v14 + 4);
         v21 = *(_DWORD *)((char *)g_CraterPool + v14 + 8);
-        v22 = *(_DWORD *)((char *)g_CraterPool + v14 + 12);
+        int v22 = *(_DWORD *)((char *)g_CraterPool + v14 + 12);
         v20 += g_Map_VisibleRect;
         int * v15 = ClipRectIntersection(v27, &DSurface_ViewBounds, &v19, 0, 0);
         v19 = *v15;
@@ -4474,8 +4468,6 @@ int TacticalClass::ScreenToCellLookup(const Point2D& screen) const
   int result; // eax
   _DWORD v14[3]; // [esp+18h] [ebp-Ch] BYREF
   _DWORD *retaddr; // [esp+24h] [ebp+0h]
-  int v16; // [esp+28h] [ebp+4h]
-  int v17; // [esp+30h] [ebp+Ch]
   int v4 = *a2 - this->q149C;
   int v5 = a2[1] - this->q14A0;
   int v6 = *this->q1258 + 24 * (unsigned __int8)(v4 - 5 * v5);
@@ -4503,6 +4495,7 @@ LABEL_8:
   if ( *a4 )
   {
     _DWORD * v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *, _DWORD))(*(_DWORD *)*a4 + 76))(*a4, v14, 0);
+  int v16; // [esp+28h] [ebp+4h]
     LOWORD(v16) = *v11 / 256;
     HIWORD(v16) = v11[1] / 256;
     *retaddr = v16;
@@ -4511,6 +4504,7 @@ LABEL_8:
   else
   {
     double v13 = (double)v4 / *(float *)(this + 5256) - (double)*(int *)(this + 5264);
+  int v17; // [esp+30h] [ebp+Ch]
     LOWORD(v17) = Math::RoundToInt(v13);
     result = Math::RoundToInt(v13);
     HIWORD(v17) = result;
@@ -4661,9 +4655,6 @@ int TacticalClass::SetView(int view_x, int view_y, int view_width, int view_heig
   __int16 v19; // cx
   int v21; // [esp+4h] [ebp-14h] BYREF
   int v22; // [esp+8h] [ebp-10h] BYREF
-  int v23; // [esp+Ch] [ebp-Ch]
-  int v24; // [esp+10h] [ebp-8h]
-  int v25; // [esp+14h] [ebp-4h] BYREF
 
   int v7 = a2;
   if ( a2 )
@@ -4701,9 +4692,9 @@ LABEL_20:
     Tactical::CalculateTacticalLighting(&a3, &a4, &a5, &a6, &a7, &a2, &v21, &v22);
     if ( !this->field34 )
       goto LABEL_18;
-    v23 = a2;
-    v24 = v21;
-    v25 = v22;
+    int v23 = a2;
+    int v24 = v21;
+    int v25 = v22;
     QuantizeColorRGB(&v25);
     _DWORD * v11 = this->field34;
     if ( v11[102] != v23 || v11[103] != v24 || v11[104] != v25 )
@@ -5363,8 +5354,6 @@ int TacticalClass::ScrollViewport(int dx, int dy)
   unsigned int Ticks; // eax
   int v22; // [esp+8h] [ebp-14h] BYREF
   int v23; // [esp+Ch] [ebp-10h]
-  int v24; // [esp+10h] [ebp-Ch] BYREF
-  int v25; // [esp+14h] [ebp-8h]
   int v1; // eax
   LOBYTE(v1) = DataGlobal_87F7E8[538500];
   char v2 = 0;
@@ -5372,6 +5361,7 @@ int TacticalClass::ScrollViewport(int dx, int dy)
     return v1;
   if ( this->TacticalClass_field_A8 != dword_A8ED54[12] )
   {
+  int v25; // [esp+14h] [ebp-8h]
     if ( LOBYTE(dword_A8ED54[2]) )
     {
       _DWORD * v4 = (_DWORD *)(this + 208);
@@ -5385,6 +5375,7 @@ int TacticalClass::ScrollViewport(int dx, int dy)
         if ( v5 > 1.0 )
           this->TacticalClass_field_DC = 1065353216;
         _DWORD * v6 = (_DWORD *)(this + 200);
+  int v24; // [esp+10h] [ebp-Ch] BYREF
         int * v7 = TacticalClass::CalcInverseAlpha(&v24, this + 208, this->TacticalClass_field_DC);
         double v8 = this->TacticalClass_field_DC;
         int v9 = *v7;

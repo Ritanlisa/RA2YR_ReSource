@@ -289,9 +289,6 @@ int TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
   ObjectClass *v28; // [esp+20h] [ebp-50h] BYREF
   int v29; // [esp+24h] [ebp-4Ch]
   AbstractClass aP1; // [esp+28h] [ebp-48h] BYREF
-  int v31; // [esp+4Ch] [ebp-24h]
-  _DWORD v32[4]; // [esp+50h] [ebp-20h] BYREF
-  _DWORD v33[4]; // [esp+60h] [ebp-10h] BYREF
 
   if ( !arg0 ) /*0x6d2b6f*/
   {
@@ -317,11 +314,13 @@ int TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v23 = *(AbstractClass **)&DataGlobal_87F8E4[30408]; /*0x6d2bf5*/
           v22 = *(AbstractClass **)&DataGlobal_87F8E4[30404]; /*0x6d2bfa*/
           v8 = (IUnknown *)Coord2D::Sub(&v28, &aP1, (IUnknown *)&v25); /*0x6d2c05*/
+  _DWORD v32[4]; // [esp+50h] [ebp-20h] BYREF
           v9 = Rect::Construct(v32, v8, v22, v23); /*0x6d2c0f*/
           aP1.nextArrayIndex = *(_DWORD *)v9->__pad_0; /*0x6d2c18*/
           aP1.referenceCount = *(_DWORD *)&v9->__pad_0[4]; /*0x6d2c21*/
           aP1.NeedsSaveOrLink = *(void **)&v9->__pad_0[8]; /*0x6d2c28*/
-          v31 = *(_DWORD *)&v9->__pad_0[12]; /*0x6d2c37*/
+          int v31 = *(_DWORD *)&v9->__pad_0[12]; /*0x6d2c37*/
+  _DWORD v33[4]; // [esp+60h] [ebp-10h] BYREF
           _DWORD * v10 = ClipRectIntersection(v33, &aP1.nextArrayIndex, (int *)&aP1[8], 0, 0); /*0x6d2c40*/
           *(_DWORD *)&aP1[8] = *v10; /*0x6d2c49*/
           *(_DWORD *)&aP1[12] = v10[1]; /*0x6d2c50*/
@@ -415,26 +414,10 @@ int TacticalMap::RenderAllObjects(int a2)
   LPPERSISTSTREAM v53; // ebp
   int result; // eax
   int v85; // [esp+4Ch] [ebp-C8h]
-  int v86; // [esp+50h] [ebp-C4h] BYREF
-  int v87; // [esp+54h] [ebp-C0h]
-  int v88; // [esp+58h] [ebp-BCh]
   int v89; // [esp+5Ch] [ebp-B8h] BYREF
-  int v90; // [esp+60h] [ebp-B4h]
-  int v91; // [esp+64h] [ebp-B0h] BYREF
-  int v92; // [esp+68h] [ebp-ACh]
   int v96; // [esp+8Ch] [ebp-88h]
-  _DWORD v97[2]; // [esp+90h] [ebp-84h] BYREF
-  _DWORD v98[4]; // [esp+98h] [ebp-7Ch] BYREF
-  int v99[3]; // [esp+A8h] [ebp-6Ch] BYREF
-  int v100; // [esp+B4h] [ebp-60h]
   _BYTE v101[12]; // [esp+B8h] [ebp-5Ch] BYREF
   _BYTE v102[12]; // [esp+C4h] [ebp-50h] BYREF
-  int v103; // [esp+D0h] [ebp-44h] BYREF
-  char v104[12]; // [esp+D8h] [ebp-3Ch] BYREF
-  char v105[12]; // [esp+E4h] [ebp-30h] BYREF
-  char v106[12]; // [esp+F0h] [ebp-24h] BYREF
-  char v107[12]; // [esp+FCh] [ebp-18h] BYREF
-  char v108[12]; // [esp+108h] [ebp-Ch] BYREF
 
   int v2 = g_Map_VisibleRectOffset; /*0x6d8db7*/
   int v3 = this->q0B0; /*0x6d8dc4*/
@@ -489,6 +472,9 @@ int TacticalMap::RenderAllObjects(int a2)
     {
       while ( 1 ) /*0x6d8f43*/
       {
+  int v88; // [esp+58h] [ebp-BCh]
+  int v87; // [esp+54h] [ebp-C0h]
+  int v86; // [esp+50h] [ebp-C4h] BYREF
         int * v15 = *(int **)(*(int *)((char *)DataGlobal_8A0364 + v14) + 4 * v85); /*0x6d8f43*/
         *((_BYTE *)v15 + 153) = 0; /*0x6d8f48*/
         if ( v15 ) /*0x6d8f4f*/
@@ -508,14 +494,17 @@ int TacticalMap::RenderAllObjects(int a2)
               goto LABEL_53; /*0x6d8f9e*/
             if ( v17 >= v12 + v94 ) /*0x6d8fac*/
               goto LABEL_53; /*0x6d8fac*/
+  char v107[12]; // [esp+FCh] [ebp-18h] BYREF
             (*(void (__thiscall **)(int *, char *, _DWORD))(*v15 + 76))(v15, v107, 0); /*0x6d8fc0*/
             if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) != 0 ) /*0x6d8fce*/
             {
               if ( Game::Stub3((int)&v86) ) /*0x6d8fda*/
                 goto LABEL_53; /*0x6d8fe1*/
             }
+  char v104[12]; // [esp+D8h] [ebp-3Ch] BYREF
             _DWORD * v18 = (_DWORD *)(*(int (__thiscall **)(int *, char *))(*v15 + 72))(v15, v104); /*0x6d8ff3*/
             v19 = g_TacticalClass_Instance; /*0x6d8ff6*/
+  int v103; // [esp+D0h] [ebp-44h] BYREF
             int * v20 = Coord::To_ScreenRaw(&v103, v18); /*0x6d9007*/
             v77 = *v20; /*0x6d9010*/
             v78 = v20[1]; /*0x6d9017*/
@@ -542,7 +531,9 @@ int TacticalMap::RenderAllObjects(int a2)
             {
               int v25 = *v15; /*0x6d90fd*/
               *((_BYTE *)v15 + 153) = 1; /*0x6d9111*/
+  char v106[12]; // [esp+F0h] [ebp-24h] BYREF
               _DWORD * v26 = (_DWORD *)(*(int (__thiscall **)(int *, char *))(v25 + 72))(v15, v106); /*0x6d9118*/
+  int v99[3]; // [esp+A8h] [ebp-6Ch] BYREF
               if ( Coord::To_Screen(g_TacticalClass_Instance, v26, v99) ) /*0x6d9122*/
               {
                 (*(void (__thiscall **)(int *, int *, int *))(*v15 + 268))(v15, v99, &DSurface_ViewBounds); /*0x6d913c*/
@@ -556,6 +547,7 @@ int TacticalMap::RenderAllObjects(int a2)
         int v27 = (*(int (__thiscall **)(int *))(*v15 + 44))(v15); /*0x6d917b*/
         if ( v27 == 4 ) /*0x6d9181*/
         {
+  char v108[12]; // [esp+108h] [ebp-Ch] BYREF
           int * v28 = (int *)(*(int (__thiscall **)(int *, char *))(*v15 + 72))(v15, v108); /*0x6d9196*/
           int v29 = *v28; /*0x6d9198*/
           v86 = v29; /*0x6d919a*/
@@ -569,6 +561,7 @@ int TacticalMap::RenderAllObjects(int a2)
             if ( v31 /*0x6d920e*/
               || !*(_BYTE *)(v15[50] + 884)
   int v32; // eax
+  char v105[12]; // [esp+E4h] [ebp-30h] BYREF
               || (v32 = (*(int (__thiscall **)(int *, char *))(*v15 + 72))(v15, v105), !Game::Stub3(v32)) )
             {
               (*(void (__thiscall **)(int *, int *, int, _DWORD))(*v15 + 260))(v15, &DSurface_ViewBounds, a2, 0); /*0x6d921f*/
@@ -608,12 +601,13 @@ int TacticalMap::RenderAllObjects(int a2)
           int v42 = *v41; /*0x6d932d*/
           int v43 = v41[1]; /*0x6d932f*/
           int v44 = v40[2]; /*0x6d9332*/
-          v100 = v43; /*0x6d9335*/
+          int v100 = v43; /*0x6d9335*/
           int v45 = v42; /*0x6d9343*/
           int v46 = ZCoordToScreenY(v44); /*0x6d934a*/
-          v91 = v45 / 256; /*0x6d935f*/
-          v92 = v100 / 256 - v46; /*0x6d936e*/
+          int v91 = v45 / 256; /*0x6d935f*/
+          int v92 = v100 / 256 - v46; /*0x6d936e*/
           lpVtbl = v39[45].__tail_0; /*0x6d9378*/
+  _DWORD v97[2]; // [esp+90h] [ebp-84h] BYREF
           v97[0] = v39[44].__tail_0; /*0x6d9383*/
           v97[1] = lpVtbl; /*0x6d938a*/
           Vector2::Subtract(&v91, v97); /*0x6d9391*/
@@ -659,13 +653,14 @@ LABEL_53:
             int v58 = (BYTE4(v57) + (int)v57) >> 8; /*0x6d94a9*/
             int v59 = ZCoordToScreenY(v54[2]); /*0x6d94ac*/
             v89 = v58; /*0x6d94be*/
-            v90 = v96 / 256 - v59; /*0x6d94c9*/
+            int v90 = v96 / 256 - v59; /*0x6d94c9*/
             int v60 = v58 - (unsigned int)v53[44].__tail_0; /*0x6d94d9*/
             int v61 = v90 - (unsigned int)v53[45].__tail_0; /*0x6d94db*/
             v89 = v60; /*0x6d94e3*/
             v90 = v61; /*0x6d94e7*/
             if ( v60 >= -360 && v60 <= DataGlobal_B0CE30 + 360 && v61 >= -180 && v61 <= DataGlobal_B0CE34 + 180 ) /*0x6d9516*/
             {
+  _DWORD v98[4]; // [esp+98h] [ebp-7Ch] BYREF
               v98[2] = g_Map_VisibleRectOffset; /*0x6d952a*/
               v98[0] = DSurface_ViewBounds; /*0x6d9539*/
               v98[1] = g_Map_VisibleRect; /*0x6d9540*/

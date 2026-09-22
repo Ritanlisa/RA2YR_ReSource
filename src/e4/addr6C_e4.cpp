@@ -59,184 +59,77 @@ int ProcessGameResults(char a1)
   IUnknown *v86; // esi
   char *eax130; // eax
   char *v87; // eax
-  char *v88; // eax
   IUnknown *v89; // esi
   char *v90; // eax
   char *v91; // eax
   char *ModuleInternalVersion; // eax
   char *v93; // eax
   char *v94; // eax
-  char *v95; // eax
-  char *v96; // eax
   char *v97; // eax
   char *v98; // eax
-  char *v99; // eax
-  char *v100; // eax
   IUnknown *v101; // esi
-  char *v102; // eax
-  char *v103; // eax
   IUnknown *v104; // eax
-  int v105; // esi
-  char v106; // bl
-  char *v107; // eax
-  char *v108; // eax
   ObjectClass *v110; // edi
   char *eax169; // eax
-  char *v111; // eax
   ObjectClass *v113; // edi
   char *eax172; // eax
-  char *v114; // eax
   ObjectClass *v116; // edi
   char *eax175; // eax
-  char *v117; // eax
   IUnknown *v118; // edi
-  char *v119; // eax
-  char *v120; // eax
-  char *v121; // eax
-  char *v122; // eax
-  char v123; // al
-  char *v124; // eax
-  char *v125; // eax
   ObjectClass *v127; // edi
   char *eax191; // eax
-  char *v128; // eax
   ObjectClass *v130; // edi
   char *eax194; // eax
-  char *v131; // eax
-  int v132; // edi
-  char *v133; // eax
-  char *v134; // eax
-  int v135; // ebp
-  int v136; // edi
   ObjectClass *v138; // edi
   char *eax204; // eax
-  char *v139; // eax
-  int v140; // ebp
-  int v141; // edi
   ObjectClass *v143; // edi
   char *eax211; // eax
-  char *v144; // eax
-  int v145; // ebp
-  int v146; // edi
   ObjectClass *v148; // edi
   char *eax218; // eax
-  char *v149; // eax
-  int v150; // ebp
-  int v151; // edi
   ObjectClass *v153; // edi
   char *eax225; // eax
-  char *v154; // eax
   int i; // edi
-  int v156; // eax
   int j; // edi
-  int v158; // eax
-  int v159; // eax
   int k; // edi
-  int v161; // eax
-  int v162; // ebp
   int m; // edi
-  int v164; // ebx
-  int v165; // edi
   ObjectClass *v167; // edi
   char *eax247; // eax
-  char *v168; // eax
-  int v169; // ebx
-  int v170; // ebp
   int n; // edi
   ObjectClass *v173; // edi
   char *eax254; // eax
-  char *v174; // eax
-  int v175; // ebx
-  int v176; // ebp
   int ii; // edi
   ObjectClass *v179; // edi
   char *eax261; // eax
-  char *v180; // eax
-  int v181; // ebx
-  int v182; // ebp
   int jj; // edi
   ObjectClass *v185; // edi
   char *eax268; // eax
-  char *v186; // eax
-  int v187; // edi
-  int v188; // ebx
   ObjectClass *v190; // edi
   char *eax275; // eax
-  char *v191; // eax
-  int v192; // ebx
-  int v193; // ebp
   int kk; // edi
   ObjectClass *v196; // edi
   char *eax282; // eax
-  char *v197; // eax
-  int v198; // ebx
-  int v199; // ebp
   int mm; // edi
   ObjectClass *v202; // edi
   char *eax289; // eax
-  char *v203; // eax
-  int v204; // ebx
-  int v205; // ebp
   int nn; // edi
   ObjectClass *v208; // edi
   char *eax296; // eax
-  char *v209; // eax
-  int v210; // ebx
-  int v211; // edi
   ObjectClass *v213; // edi
   char *eax303; // eax
-  char *v214; // eax
-  int v215; // ebx
-  int v216; // edi
   ObjectClass *v218; // edi
   char *eax310; // eax
-  char *v219; // eax
-  char v220; // bl
   ObjectClass *v222; // esi
   char *eax313; // eax
-  char *v223; // eax
   IUnknown *v224; // edi
   IUnknown *v225; // ebp
   IUnknown *v226; // esi
-  char *v227; // eax
-  char *v228; // eax
-  char *v229; // eax
-  unsigned int v230; // esi
-  char *v231; // eax
-  char *v232; // eax
-  char *v233; // eax
   SIZE_T dwTotalPhys; // esi
-  char *v235; // eax
-  char *v236; // eax
-  char *v237; // eax
-  unsigned int v238; // esi
-  char *v239; // eax
-  char *v240; // eax
-  char *v241; // eax
   char *vfptr; // esi
   int X; // ecx
-  char v244; // al
-  int v245; // ecx
-  _DWORD *v246; // edi
-  char *v247; // esi
-  int v248; // eax
-  int v249; // ecx
-  int v250; // ebx
-  char *v251; // ebp
   AbstractClass *v252; // esi
-  char v253; // al
-  unsigned int v254; // ecx
-  char *v255; // edx
-  int v256; // ebx
-  char *v257; // ebp
   AbstractClass *v258; // esi
-  char v259; // al
-  unsigned int v260; // ecx
-  char *v261; // edx
   _DWORD v262[3]; // [esp+24h] [ebp-8394h] BYREF
-  char v263; // [esp+33h] [ebp-8385h]
   rc_ptr_base v264; // [esp+34h] [ebp-8384h] BYREF
-  int v265; // [esp+38h] [ebp-8380h]
   char v266; // [esp+3Fh] [ebp-8379h]
   ObjectClass *aP2; // [esp+40h] [ebp-8378h]
   IUnknown *v268; // [esp+44h] [ebp-8374h]
@@ -258,10 +151,7 @@ int ProcessGameResults(char a1)
   IUnknown *v284[8]; // [esp+9Ch] [ebp-831Ch]
   struct _MEMORYSTATUS Buffer; // [esp+BCh] [ebp-82FCh] BYREF
   CHAR v286[128]; // [esp+DCh] [ebp-82DCh] BYREF
-  int v287[15]; // [esp+15Ch] [ebp-825Ch] BYREF
-  int v288; // [esp+198h] [ebp-8220h]
   CHAR Filename[280]; // [esp+298h] [ebp-8120h] BYREF
-  _DWORD v290[8194]; // [esp+3B0h] [ebp-8008h] BYREF
 
   v266 = a1;
   v262[0] = 0;
@@ -520,6 +410,7 @@ LABEL_95:
     LoadPlayerProfile(&v264, (const char **)&g_WebBrowser);
     if ( !v266 )
     {
+  int v265; // [esp+38h] [ebp-8380h]
       if ( !DataGlobal_A8B8C1 || HouseClass_Player->__pad_1D8[48] )
       {
         Event_Process_77A8B0(v265, 1);
@@ -591,7 +482,7 @@ LABEL_95:
   }
   else
   {
-    v88 = (char *)__2_YAPAXI_Z(0x10u);
+    char * v88 = (char *)__2_YAPAXI_Z(0x10u);
     if ( v88 )
     {
       v87 = NetMessage::Pack4(v88, (RandomStruct *)&stru_830620[72284], 0);
@@ -633,9 +524,9 @@ LABEL_135:
   {
     LastWriteTime.dwLowDateTime = htonl(LastWriteTime.dwLowDateTime);
     LastWriteTime.dwHighDateTime = htonl(LastWriteTime.dwHighDateTime);
-    v95 = (char *)__2_YAPAXI_Z(0x10u);
+    char * v95 = (char *)__2_YAPAXI_Z(0x10u);
     if ( v95 )
-      v96 = NetMessage::Pack(v95, &stru_830620[72256], (IUnknown *)&LastWriteTime, (IUnknown *)8);
+      char * v96 = NetMessage::Pack(v95, &stru_830620[72256], (IUnknown *)&LastWriteTime, (IUnknown *)8);
     else
       v96 = 0;
     LinkedList::PushFront(v262, (IUnknown *)v96);
@@ -644,7 +535,7 @@ LABEL_135:
   {
     if ( g_GameOptionsFlags == 2 )
     {
-      v99 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v99 = (char *)__2_YAPAXI_Z(0x10u);
       if ( v99 )
       {
         v98 = TerrainInitMap(v99, (RandomStruct *)&stru_830620[72248], (IUnknown *)4);
@@ -655,7 +546,7 @@ LABEL_135:
     {
       if ( g_GameOptionsFlags != 4 )
         goto LABEL_158;
-      v100 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v100 = (char *)__2_YAPAXI_Z(0x10u);
       if ( v100 )
       {
         v98 = TerrainInitMap(v100, (RandomStruct *)&stru_830620[72248], (IUnknown *)1);
@@ -676,9 +567,9 @@ LABEL_158:
   if ( g_GameStateFlags )
   {
     v101 = (IUnknown *)(*(int (__thiscall **)(SkirmishDialog *))(*(_DWORD *)g_GameStateFlags->__pad_0 + 184))(g_GameStateFlags);
-    v102 = (char *)__2_YAPAXI_Z(0x10u);
+    char * v102 = (char *)__2_YAPAXI_Z(0x10u);
     if ( v102 )
-      v103 = TerrainInitMap(v102, (RandomStruct *)&stru_830620[72240], v101);
+      char * v103 = TerrainInitMap(v102, (RandomStruct *)&stru_830620[72240], v101);
     else
       v103 = 0;
     LinkedList::PushFront(v262, (IUnknown *)v103);
@@ -689,13 +580,17 @@ LABEL_158:
   {
     while ( 1 )
     {
-      v105 = *(_DWORD *)&v283[4 * (_DWORD)v104 - 4];
-      v106 = (_BYTE)v104 + 48;
-      v263 = (_BYTE)v104 + 48;
+  char *v240; // eax
+  char *v236; // eax
+  char *v232; // eax
+  char *v228; // eax
+      int v105 = *(_DWORD *)&v283[4 * (_DWORD)v104 - 4];
+      char v106 = (_BYTE)v104 + 48;
+      char v263 = (_BYTE)v104 + 48;
       stru_830620[71971] = (_BYTE)v104 + 48;
-      v107 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v107 = (char *)__2_YAPAXI_Z(0x10u);
       if ( v107 )
-        v108 = BuildResultPacket(v107, &stru_830620[71968], (IUnknown *)(v105 + 90100));
+        char * v108 = BuildResultPacket(v107, &stru_830620[71968], (IUnknown *)(v105 + 90100));
       else
         v108 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v108);
@@ -703,7 +598,7 @@ LABEL_158:
       stru_830620[72147] = v106;
       eax169 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax169 )
-        v111 = TerrainInitMap(eax169, (RandomStruct *)&stru_830620[72144], (IUnknown *)v110);
+        char * v111 = TerrainInitMap(eax169, (RandomStruct *)&stru_830620[72144], (IUnknown *)v110);
       else
         v111 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v111);
@@ -711,7 +606,7 @@ LABEL_158:
       stru_830620[72155] = v106;
       eax172 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax172 )
-        v114 = TerrainInitMap(eax172, (RandomStruct *)&stru_830620[72152], (IUnknown *)v113);
+        char * v114 = TerrainInitMap(eax172, (RandomStruct *)&stru_830620[72152], (IUnknown *)v113);
       else
         v114 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v114);
@@ -719,7 +614,7 @@ LABEL_158:
       v116 = *(ObjectClass **)(v105 + 488);
       eax175 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax175 )
-        v117 = TerrainInitMap(eax175, (RandomStruct *)&stru_830620[71976], (IUnknown *)v116);
+        char * v117 = TerrainInitMap(eax175, (RandomStruct *)&stru_830620[71976], (IUnknown *)v116);
       else
         v117 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v117);
@@ -727,27 +622,27 @@ LABEL_158:
       v118 = v268;
       if ( dword_B779C4 == (IUnknown *)2 )
         v118 = *(IUnknown **)(v105 + 516);
-      v119 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v119 = (char *)__2_YAPAXI_Z(0x10u);
       if ( v119 )
-        v120 = TerrainInitMap(v119, (RandomStruct *)&stru_830620[71984], v118);
+        char * v120 = TerrainInitMap(v119, (RandomStruct *)&stru_830620[71984], v118);
       else
         v120 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v120);
       stru_830620[72139] = v106;
-      v121 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v121 = (char *)__2_YAPAXI_Z(0x10u);
       if ( v121 )
-        v122 = TerrainInitMap(v121, (RandomStruct *)&stru_830620[72136], v284[(_DWORD)v268]);
+        char * v122 = TerrainInitMap(v121, (RandomStruct *)&stru_830620[72136], v284[(_DWORD)v268]);
       else
         v122 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v122);
       stru_830620[72163] = v106;
-      v123 = *(_BYTE *)(v105 + 520);
+      char v123 = *(_BYTE *)(v105 + 520);
       LOBYTE(v270) = 0;
       if ( v123 )
         LOBYTE(v270) = *(_BYTE *)(v105 + 583) == 0;
-      v124 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v124 = (char *)__2_YAPAXI_Z(0x10u);
       if ( v124 )
-        v125 = String::AllocAndCopy(v124, (RandomStruct *)&stru_830620[72160], v270);
+        char * v125 = String::AllocAndCopy(v124, (RandomStruct *)&stru_830620[72160], v270);
       else
         v125 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v125);
@@ -755,7 +650,7 @@ LABEL_158:
       v127 = *(ObjectClass **)(v105 + 90196);
       eax191 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax191 )
-        v128 = TerrainInitMap(eax191, (RandomStruct *)&stru_830620[71992], (IUnknown *)v127);
+        char * v128 = TerrainInitMap(eax191, (RandomStruct *)&stru_830620[71992], (IUnknown *)v127);
       else
         v128 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v128);
@@ -763,15 +658,15 @@ LABEL_158:
       v130 = *(ObjectClass **)(*(_DWORD *)(v105 + 52) + 184);
       eax194 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax194 )
-        v131 = TerrainInitMap(eax194, (RandomStruct *)&stru_830620[72000], (IUnknown *)v130);
+        char * v131 = TerrainInitMap(eax194, (RandomStruct *)&stru_830620[72000], (IUnknown *)v130);
       else
         v131 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v131);
       stru_830620[72011] = v106;
-      v132 = (*(int (__stdcall **)(int))(*(_DWORD *)(v105 + 36) + 24))(v105 + 36);
-      v133 = (char *)__2_YAPAXI_Z(0x10u);
+      int v132 = (*(int (__stdcall **)(int))(*(_DWORD *)(v105 + 36) + 24))(v105 + 36);
+      char * v133 = (char *)__2_YAPAXI_Z(0x10u);
       if ( v133 )
-        v134 = NetMessage::Pack4(v133, (RandomStruct *)&stru_830620[72008], v132);
+        char * v134 = NetMessage::Pack4(v133, (RandomStruct *)&stru_830620[72008], v132);
       else
         v134 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v134);
@@ -783,8 +678,8 @@ LABEL_158:
       HouseClass::NetworkConvert((_DWORD *)(v105 + 4920));
       HouseClass::NetworkConvert((_DWORD *)(v105 + 808));
       HouseClass::NetworkConvert((_DWORD *)(v105 + 6976));
-      v135 = *(_DWORD *)(v105 + 4912);
-      v136 = 0;
+      int v135 = *(_DWORD *)(v105 + 4912);
+      int v136 = 0;
       for ( v264.vfptr = 0; v136 < v135; ++v136 )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 2864)) + v136) )
@@ -793,6 +688,7 @@ LABEL_158:
       v138 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 2864));
       eax204 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax204 )
+  char *v139; // eax
         v139 = NetMessage::Pack(
                  eax204,
                  &stru_830620[72056],
@@ -801,8 +697,8 @@ LABEL_158:
       else
         v139 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v139);
-      v140 = *(_DWORD *)(v105 + 6968);
-      v141 = 0;
+      int v140 = *(_DWORD *)(v105 + 6968);
+      int v141 = 0;
       for ( v264.vfptr = 0; v141 < v140; ++v141 )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 4920)) + v141) )
@@ -811,6 +707,7 @@ LABEL_158:
       v143 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 4920));
       eax211 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax211 )
+  char *v144; // eax
         v144 = NetMessage::Pack(
                  eax211,
                  &stru_830620[72048],
@@ -819,8 +716,8 @@ LABEL_158:
       else
         v144 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v144);
-      v145 = *(_DWORD *)(v105 + 2856);
-      v146 = 0;
+      int v145 = *(_DWORD *)(v105 + 2856);
+      int v146 = 0;
       for ( v264.vfptr = 0; v146 < v145; ++v146 )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 808)) + v146) )
@@ -829,6 +726,7 @@ LABEL_158:
       v148 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 808));
       eax218 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax218 )
+  char *v149; // eax
         v149 = NetMessage::Pack(
                  eax218,
                  &stru_830620[72064],
@@ -837,8 +735,8 @@ LABEL_158:
       else
         v149 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v149);
-      v150 = *(_DWORD *)(v105 + 9024);
-      v151 = 0;
+      int v150 = *(_DWORD *)(v105 + 9024);
+      int v151 = 0;
       for ( v264.vfptr = 0; v151 < v150; ++v151 )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 6976)) + v151) )
@@ -847,6 +745,7 @@ LABEL_158:
       v153 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 6976));
       eax225 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax225 )
+  char *v154; // eax
         v154 = NetMessage::Pack(
                  eax225,
                  &stru_830620[72072],
@@ -865,27 +764,27 @@ LABEL_158:
       Array::Zero((_DWORD *)(v105 + 6976));
       for ( i = 0; i < *(int *)&g_CellDirectionOffsets[84616]; ++i )
       {
-        v156 = *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84604] + 4 * i);
+        int v156 = *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84604] + 4 * i);
         if ( v105 == *(_DWORD *)(v156 + 540) )
           HouseClass::IncrementStat((_DWORD *)(v105 + 4920), *(_DWORD *)(*(_DWORD *)(v156 + 1732) + 3576));
       }
       for ( j = 0; j < (int)g_BuildingClass_Count; ++j )
       {
-        v158 = *(_DWORD *)&g_InfantryClassLimit->__pad_0[4 * j];
+        int v158 = *(_DWORD *)&g_InfantryClassLimit->__pad_0[4 * j];
         if ( v105 == *(_DWORD *)(v158 + 540) )
         {
-          v159 = *(_DWORD *)(v158 + 1728);
+          int v159 = *(_DWORD *)(v158 + 1728);
           if ( !*(_BYTE *)(v159 + 3777) )
             HouseClass::IncrementStat((_DWORD *)(v105 + 2864), *(_DWORD *)(v159 + 3576));
         }
       }
       for ( k = 0; k < *(int *)&g_NetworkPlayerBuffer[3428]; ++k )
       {
-        v161 = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[3416] + 4 * k);
+        int v161 = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[3416] + 4 * k);
         if ( v105 == *(_DWORD *)(v161 + 540) )
           HouseClass::IncrementStat((_DWORD *)(v105 + 808), *(_DWORD *)(*(_DWORD *)(v161 + 1732) + 3576));
       }
-      v162 = *(_DWORD *)(v105 + 120);
+      int v162 = *(_DWORD *)(v105 + 120);
       for ( m = 0; m < v162; ++m )
         HouseClass::IncrementStat(
           (_DWORD *)(v105 + 6976),
@@ -898,8 +797,8 @@ LABEL_158:
       stru_830620[72019] = v106;
       stru_830620[72035] = v106;
       stru_830620[72043] = v106;
-      v164 = *(_DWORD *)(v105 + 4912);
-      v165 = 0;
+      int v164 = *(_DWORD *)(v105 + 4912);
+      int v165 = 0;
       for ( v264.vfptr = 0; v165 < v164; ++v165 )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 2864)) + v165) )
@@ -908,6 +807,7 @@ LABEL_158:
       v167 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 2864));
       eax247 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax247 )
+  char *v168; // eax
         v168 = NetMessage::Pack(
                  eax247,
                  &stru_830620[72024],
@@ -916,8 +816,8 @@ LABEL_158:
       else
         v168 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v168);
-      v169 = *(_DWORD *)(v105 + 6968);
-      v170 = 0;
+      int v169 = *(_DWORD *)(v105 + 6968);
+      int v170 = 0;
       for ( n = 0; n < v169; ++n )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 4920)) + n) )
@@ -926,12 +826,12 @@ LABEL_158:
       v173 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 4920));
       eax254 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax254 )
-        v174 = NetMessage::Pack(eax254, &stru_830620[72016], (IUnknown *)v173, (IUnknown *)(4 * v170));
+        char * v174 = NetMessage::Pack(eax254, &stru_830620[72016], (IUnknown *)v173, (IUnknown *)(4 * v170));
       else
         v174 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v174);
-      v175 = *(_DWORD *)(v105 + 2856);
-      v176 = 0;
+      int v175 = *(_DWORD *)(v105 + 2856);
+      int v176 = 0;
       for ( ii = 0; ii < v175; ++ii )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 808)) + ii) )
@@ -940,12 +840,12 @@ LABEL_158:
       v179 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 808));
       eax261 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax261 )
-        v180 = NetMessage::Pack(eax261, &stru_830620[72032], (IUnknown *)v179, (IUnknown *)(4 * v176));
+        char * v180 = NetMessage::Pack(eax261, &stru_830620[72032], (IUnknown *)v179, (IUnknown *)(4 * v176));
       else
         v180 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v180);
-      v181 = *(_DWORD *)(v105 + 9024);
-      v182 = 0;
+      int v181 = *(_DWORD *)(v105 + 9024);
+      int v182 = 0;
       for ( jj = 0; jj < v181; ++jj )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 6976)) + jj) )
@@ -954,7 +854,7 @@ LABEL_158:
       v185 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 6976));
       eax268 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax268 )
-        v186 = NetMessage::Pack(eax268, &stru_830620[72040], (IUnknown *)v185, (IUnknown *)(4 * v182));
+        char * v186 = NetMessage::Pack(eax268, &stru_830620[72040], (IUnknown *)v185, (IUnknown *)(4 * v182));
       else
         v186 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v186);
@@ -962,12 +862,12 @@ LABEL_158:
       HouseClass::NetworkConvert((_DWORD *)(v105 + 13144));
       HouseClass::NetworkConvert((_DWORD *)(v105 + 9032));
       HouseClass::NetworkConvert((_DWORD *)(v105 + 15200));
-      v187 = 0;
+      int v187 = 0;
       stru_830620[72091] = v263;
       stru_830620[72083] = v263;
       stru_830620[72099] = v263;
       stru_830620[72107] = v263;
-      v188 = *(_DWORD *)(v105 + 13136);
+      int v188 = *(_DWORD *)(v105 + 13136);
       v264.vfptr = 0;
       if ( v188 > 0 )
       {
@@ -982,6 +882,7 @@ LABEL_158:
       v190 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 11088));
       eax275 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax275 )
+  char *v191; // eax
         v191 = NetMessage::Pack(
                  eax275,
                  &stru_830620[72088],
@@ -990,8 +891,8 @@ LABEL_158:
       else
         v191 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v191);
-      v192 = *(_DWORD *)(v105 + 15192);
-      v193 = 0;
+      int v192 = *(_DWORD *)(v105 + 15192);
+      int v193 = 0;
       for ( kk = 0; kk < v192; ++kk )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 13144)) + kk) )
@@ -1000,12 +901,12 @@ LABEL_158:
       v196 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 13144));
       eax282 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax282 )
-        v197 = NetMessage::Pack(eax282, &stru_830620[72080], (IUnknown *)v196, (IUnknown *)(4 * v193));
+        char * v197 = NetMessage::Pack(eax282, &stru_830620[72080], (IUnknown *)v196, (IUnknown *)(4 * v193));
       else
         v197 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v197);
-      v198 = *(_DWORD *)(v105 + 11080);
-      v199 = 0;
+      int v198 = *(_DWORD *)(v105 + 11080);
+      int v199 = 0;
       for ( mm = 0; mm < v198; ++mm )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 9032)) + mm) )
@@ -1014,12 +915,12 @@ LABEL_158:
       v202 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 9032));
       eax289 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax289 )
-        v203 = NetMessage::Pack(eax289, &stru_830620[72096], (IUnknown *)v202, (IUnknown *)(4 * v199));
+        char * v203 = NetMessage::Pack(eax289, &stru_830620[72096], (IUnknown *)v202, (IUnknown *)(4 * v199));
       else
         v203 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v203);
-      v204 = *(_DWORD *)(v105 + 17248);
-      v205 = 0;
+      int v204 = *(_DWORD *)(v105 + 17248);
+      int v205 = 0;
       for ( nn = 0; nn < v204; ++nn )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 15200)) + nn) )
@@ -1028,14 +929,14 @@ LABEL_158:
       v208 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 15200));
       eax296 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax296 )
-        v209 = NetMessage::Pack(eax296, &stru_830620[72104], (IUnknown *)v208, (IUnknown *)(4 * v205));
+        char * v209 = NetMessage::Pack(eax296, &stru_830620[72104], (IUnknown *)v208, (IUnknown *)(4 * v205));
       else
         v209 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v209);
       stru_830620[72115] = v263;
       HouseClass::NetworkConvert((_DWORD *)(v105 + 17256));
-      v210 = *(_DWORD *)(v105 + 19304);
-      v211 = 0;
+      int v210 = *(_DWORD *)(v105 + 19304);
+      int v211 = 0;
       for ( v264.vfptr = 0; v211 < v210; ++v211 )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 17256)) + v211) )
@@ -1044,6 +945,7 @@ LABEL_158:
       v213 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 17256));
       eax303 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax303 )
+  char *v214; // eax
         v214 = NetMessage::Pack(
                  eax303,
                  &stru_830620[72112],
@@ -1054,8 +956,8 @@ LABEL_158:
       LinkedList::PushFront(v262, (IUnknown *)v214);
       stru_830620[72123] = v263;
       HouseClass::NetworkConvert((_DWORD *)(v105 + 19312));
-      v215 = *(_DWORD *)(v105 + 21360);
-      v216 = 0;
+      int v215 = *(_DWORD *)(v105 + 21360);
+      int v216 = 0;
       for ( v264.vfptr = 0; v216 < v215; ++v216 )
       {
         if ( *((_DWORD *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 19312)) + v216) )
@@ -1064,6 +966,7 @@ LABEL_158:
       v218 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 19312));
       eax310 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax310 )
+  char *v219; // eax
         v219 = NetMessage::Pack(
                  eax310,
                  &stru_830620[72120],
@@ -1072,12 +975,12 @@ LABEL_158:
       else
         v219 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v219);
-      v220 = v263;
+      char v220 = v263;
       stru_830620[72131] = v263;
       v222 = *(ObjectClass **)(v105 + 736);
       eax313 = (char *)__2_YAPAXI_Z(0x10u);
       if ( eax313 )
-        v223 = TerrainInitMap(eax313, (RandomStruct *)&stru_830620[72128], (IUnknown *)v222);
+        char * v223 = TerrainInitMap(eax313, (RandomStruct *)&stru_830620[72128], (IUnknown *)v222);
       else
         v223 = 0;
       LinkedList::PushFront(v262, (IUnknown *)v223);
@@ -1087,7 +990,7 @@ LABEL_158:
       if ( v269 == v268 )
       {
         v226 = (IUnknown *)DataGlobal_84E863;
-        v227 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v227 = (char *)__2_YAPAXI_Z(0x10u);
         if ( v227 )
         {
           v228 = TerrainInitMap(v227, (RandomStruct *)&stru_830620[72168], v226);
@@ -1096,7 +999,7 @@ LABEL_158:
       }
       else
       {
-        v229 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v229 = (char *)__2_YAPAXI_Z(0x10u);
         if ( v229 )
         {
           v228 = NetMessage::Pack4(v229, (RandomStruct *)&stru_830620[72168], -1);
@@ -1109,8 +1012,8 @@ LABEL_322:
       stru_830620[72179] = v220;
       if ( v224 == v225 )
       {
-        v230 = Performance::MeasureTicks();
-        v231 = (char *)__2_YAPAXI_Z(0x10u);
+        unsigned int v230 = Performance::MeasureTicks();
+        char * v231 = (char *)__2_YAPAXI_Z(0x10u);
         if ( v231 )
         {
           v232 = NetMessage::Pack4(v231, (RandomStruct *)&stru_830620[72176], v230);
@@ -1119,7 +1022,7 @@ LABEL_322:
       }
       else
       {
-        v233 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v233 = (char *)__2_YAPAXI_Z(0x10u);
         if ( v233 )
         {
           v232 = NetMessage::Pack4(v233, (RandomStruct *)&stru_830620[72176], -1);
@@ -1135,14 +1038,14 @@ LABEL_328:
         Buffer.dwLength = 32;
         GlobalMemoryStatus(&Buffer);
         dwTotalPhys = Buffer.dwTotalPhys;
-        v235 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v235 = (char *)__2_YAPAXI_Z(0x10u);
         if ( !v235 )
           goto LABEL_333;
         v236 = NetMessage::Pack4(v235, (RandomStruct *)&stru_830620[72184], dwTotalPhys);
       }
       else
       {
-        v237 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v237 = (char *)__2_YAPAXI_Z(0x10u);
         if ( !v237 )
         {
 LABEL_333:
@@ -1156,6 +1059,7 @@ LABEL_334:
       stru_830620[72195] = v220;
       if ( v224 == v225 && *(_DWORD *)&g_CellDirectionOffsets[2564] )
       {
+  int v287[15]; // [esp+15Ch] [ebp-825Ch] BYREF
         v287[0] = 316;
         if ( (*(int (__stdcall **)(_DWORD, int *, _DWORD))(**(_DWORD **)&g_CellDirectionOffsets[2564] + 44))(
                *(_DWORD *)&g_CellDirectionOffsets[2564],
@@ -1164,8 +1068,9 @@ LABEL_334:
         {
           goto LABEL_343;
         }
-        v238 = (v288 + 0xFFFFF) & 0xFFF00000;
-        v239 = (char *)__2_YAPAXI_Z(0x10u);
+  int v288; // [esp+198h] [ebp-8220h]
+        unsigned int v238 = (v288 + 0xFFFFF) & 0xFFF00000;
+        char * v239 = (char *)__2_YAPAXI_Z(0x10u);
         if ( !v239 )
         {
 LABEL_341:
@@ -1176,7 +1081,7 @@ LABEL_341:
       }
       else
       {
-        v241 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v241 = (char *)__2_YAPAXI_Z(0x10u);
         if ( !v241 )
           goto LABEL_341;
         v240 = NetMessage::Pack4(v241, (RandomStruct *)&stru_830620[72192], -1);
@@ -1214,17 +1119,19 @@ LABEL_343:
     && vfptr
     && *(int *)&g_OverlayTypeConfig[17816] >= 1 )
   {
+  char *v255; // edx
+  _DWORD v290[8194]; // [esp+3B0h] [ebp-8008h] BYREF
     v290[1] = *(_DWORD *)&g_OverlayTypeConfig[17816];
-    v244 = g_OverlayTypeConfig[17816];
+    char v244 = g_OverlayTypeConfig[17816];
     v290[0] = 0;
-    v245 = *(_DWORD *)&g_OverlayTypeConfig[17816] >> 2;
+    int v245 = *(_DWORD *)&g_OverlayTypeConfig[17816] >> 2;
     qmemcpy(&v290[2], vfptr, 4 * (*(_DWORD *)&g_OverlayTypeConfig[17816] >> 2));
-    v247 = &vfptr[4 * v245];
-    v246 = &v290[v245 + 2];
+    char * v247 = &vfptr[4 * v245];
+    _DWORD * v246 = &v290[v245 + 2];
     LOBYTE(v245) = v244;
-    v248 = *(_DWORD *)&g_OverlayTypeConfig[17756];
+    int v248 = *(_DWORD *)&g_OverlayTypeConfig[17756];
     qmemcpy(v246, v247, v245 & 3);
-    v249 = *(_DWORD *)&g_OverlayTypeConfig[17752];
+    int v249 = *(_DWORD *)&g_OverlayTypeConfig[17752];
     v269 = *(IUnknown **)&g_OverlayTypeConfig[17752];
     if ( *(int *)&g_OverlayTypeConfig[17752] < v248 )
     {
@@ -1232,16 +1139,16 @@ LABEL_343:
     }
     else
     {
-      v250 = 2 * *(_DWORD *)&g_OverlayTypeConfig[17752];
+      int v250 = 2 * *(_DWORD *)&g_OverlayTypeConfig[17752];
       if ( 2 * *(_DWORD *)&g_OverlayTypeConfig[17752] < 10 )
         v250 = 10;
-      v251 = (char *)__2_YAPAXI_Z(32776 * v250);
+      char * v251 = (char *)__2_YAPAXI_Z(32776 * v250);
       memset(v251, 0, 4 * ((unsigned int)(32776 * v250) >> 2));
       v252 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
       if ( *(_DWORD *)&g_OverlayTypeConfig[17760] )
       {
-        v253 = 8 * g_OverlayTypeConfig[17752];
-        v254 = (unsigned int)(32776 * *(_DWORD *)&g_OverlayTypeConfig[17752]) >> 2;
+        char v253 = 8 * g_OverlayTypeConfig[17752];
+        unsigned int v254 = (unsigned int)(32776 * *(_DWORD *)&g_OverlayTypeConfig[17752]) >> 2;
         qmemcpy(v251, *(const void **)&g_OverlayTypeConfig[17760], 4 * v254);
         qmemcpy(&v251[4 * v254], (char *)v252 + 4 * v254, v253 & 3);
         v252 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
@@ -1253,16 +1160,16 @@ LABEL_343:
       *(_DWORD *)&g_OverlayTypeConfig[17756] = v250;
       if ( *(int *)&g_OverlayTypeConfig[17752] >= v250 )
       {
-        v256 = 2 * *(_DWORD *)&g_OverlayTypeConfig[17752];
+        int v256 = 2 * *(_DWORD *)&g_OverlayTypeConfig[17752];
         if ( 2 * *(_DWORD *)&g_OverlayTypeConfig[17752] < 10 )
           v256 = 10;
-        v257 = (char *)__2_YAPAXI_Z(32776 * v256);
+        char * v257 = (char *)__2_YAPAXI_Z(32776 * v256);
         memset(v257, 0, 4 * ((unsigned int)(32776 * v256) >> 2));
         v258 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
         if ( *(_DWORD *)&g_OverlayTypeConfig[17760] )
         {
-          v259 = 8 * g_OverlayTypeConfig[17752];
-          v260 = (unsigned int)(32776 * *(_DWORD *)&g_OverlayTypeConfig[17752]) >> 2;
+          char v259 = 8 * g_OverlayTypeConfig[17752];
+          unsigned int v260 = (unsigned int)(32776 * *(_DWORD *)&g_OverlayTypeConfig[17752]) >> 2;
           qmemcpy(v257, *(const void **)&g_OverlayTypeConfig[17760], 4 * v260);
           qmemcpy(&v257[4 * v260], (char *)v258 + 4 * v260, v259 & 3);
           v258 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
@@ -1283,7 +1190,7 @@ LABEL_343:
         v249 = *(_DWORD *)&g_OverlayTypeConfig[17752];
       }
     }
-    v261 = &v255[32776 * (_DWORD)v269];
+    char * v261 = &v255[32776 * (_DWORD)v269];
     if ( v261 )
     {
       qmemcpy(v261, v290, 0x8008u);

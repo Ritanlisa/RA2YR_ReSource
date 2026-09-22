@@ -18,51 +18,14 @@ int HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
   int *v40; // eax
   _DWORD *v41; // esi
   int v42; // eax
-  int v43; // eax
   int m; // esi
-  char *v45; // eax
-  int v46; // edi
-  int v47; // eax
-  int v48; // eax
   __int16 v49; // ax
-  int v50; // edi
-  int v51; // edi
   #72 *StringCSF; // eax
-  int v53; // edx
-  int v54; // esi
-  char v55; // al
-  int v56; // esi
-  int v57; // eax
-  int v58; // eax
-  int v59; // ecx
   int j; // eax
-  _DWORD *v61; // eax
-  int v62; // eax
-  int v63; // eax
-  int v64; // ecx
   int k; // eax
-  _DWORD *v66; // eax
-  int v67; // eax
-  int v68; // edi
-  int v69; // esi
-  int v70; // eax
-  int v71; // eax
-  int v72; // [esp-8h] [ebp-134h]
   _DWORD *v73; // [esp+10h] [ebp-11Ch]
-  int v74; // [esp+10h] [ebp-11Ch]
-  int v75; // [esp+10h] [ebp-11Ch]
-  int v76; // [esp+10h] [ebp-11Ch]
   int i; // [esp+10h] [ebp-11Ch]
   __int64 v78; // [esp+14h] [ebp-118h] BYREF
-  void *v79[3]; // [esp+1Ch] [ebp-110h] BYREF
-  _DWORD v80[10]; // [esp+28h] [ebp-104h] BYREF
-  char v81; // [esp+50h] [ebp-DCh]
-  int v82; // [esp+54h] [ebp-D8h]
-  int v83; // [esp+58h] [ebp-D4h]
-  char v84; // [esp+5Ch] [ebp-D0h]
-  _BYTE v85[12]; // [esp+74h] [ebp-B8h] BYREF
-  int v86; // [esp+80h] [ebp-ACh]
-  int v87[9]; // [esp+88h] [ebp-A4h] BYREF
   _BYTE lParam[128]; // [esp+ACh] [ebp-80h] BYREF
 
   result = BaseDialogProc(hWnd, a2, a3, a4); /*0x5fb34c*/
@@ -73,15 +36,15 @@ int HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
   {
     if ( a2 == 1127 ) /*0x5fbe06*/
     {
-      v68 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1223); /*0x5fbe4f*/
+      int v68 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1223); /*0x5fbe4f*/
       ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v68, 331, 0, 0); /*0x5fbe59*/
       for ( i = 0; i < dword_87F5D8[36]; ++i ) /*0x5fbe6a*/
       {
-        v69 = *(_DWORD *)(dword_87F5D8[33] + 4 * i); /*0x5fbe76*/
-        v70 = (*(int (__thiscall **)(int))(*(_DWORD *)v69 + 12))(v69); /*0x5fbe7d*/
+        int v69 = *(_DWORD *)(dword_87F5D8[33] + 4 * i); /*0x5fbe76*/
+        int v70 = (*(int (__thiscall **)(int))(*(_DWORD *)v69 + 12))(v69); /*0x5fbe7d*/
         if ( ((int (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v68, 1214, 0, v70) == -1 ) /*0x5fbe8e*/
         {
-          v71 = (*(int (__thiscall **)(int))(*(_DWORD *)v69 + 12))(v69); /*0x5fbe94*/
+          int v71 = (*(int (__thiscall **)(int))(*(_DWORD *)v69 + 12))(v69); /*0x5fbe94*/
           ((void (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v68, 1218, 0, v71); /*0x5fbea0*/
         }
       }
@@ -99,14 +62,15 @@ int HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
   }
   if ( a2 == 1126 ) /*0x5fb372*/
   {
-    v46 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fbacc*/
-    v47 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v46, 392, 0, 0); /*0x5fbad6*/
+  int v51; // edi
+    int v46 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fbacc*/
+    int v47 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v46, 392, 0, 0); /*0x5fbad6*/
     if ( v47 == -1 ) /*0x5fbadb*/
       return 1; /*0x5fbadb*/
-    v76 = ((int (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v46, 409, v47, 0); /*0x5fbaf2*/
-    v48 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fbaf6*/
+    int v76 = ((int (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v46, 409, v47, 0); /*0x5fbaf2*/
+    int v48 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fbaf6*/
     v49 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v48, 1026, 0, 0); /*0x5fbb02*/
-    v50 = (unsigned __int8)v49; /*0x5fbb0a*/
+    int v50 = (unsigned __int8)v49; /*0x5fbb0a*/
     if ( (v49 & 0x400) != 0 ) /*0x5fbb13*/
       v50 = (unsigned __int8)v49 | 0x400; /*0x5fbb15*/
     if ( (v49 & 0x200) != 0 ) /*0x5fbb1e*/
@@ -119,10 +83,11 @@ int HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
     {
       if ( sub_48BB60(v50) ) /*0x5fbb66*/
       {
-        v53 = dword_87F5D8[43]; /*0x5fbbac*/
-        v54 = 0; /*0x5fbbb4*/
+        int v53 = dword_87F5D8[43]; /*0x5fbbac*/
+        int v54 = 0; /*0x5fbbb4*/
         if ( dword_87F5D8[43] > 0 ) /*0x5fbbb8*/
         {
+  char v55; // al
           while ( 1 ) /*0x5fbbbe*/
           {
             v55 = dword_87F5D8[45]; /*0x5fbbbe*/
@@ -139,7 +104,7 @@ int HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
             if ( ++v54 >= v53 ) /*0x5fbc04*/
               goto LABEL_127; /*0x5fbc04*/
           }
-          v56 = *(_DWORD *)(dword_87F5D8[42] + 8 * v54); /*0x5fbc0b*/
+          int v56 = *(_DWORD *)(dword_87F5D8[42] + 8 * v54); /*0x5fbc0b*/
           if ( v53 ) /*0x5fbc11*/
           {
             if ( !v55 ) /*0x5fbc19*/
@@ -150,17 +115,18 @@ int HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
               LOBYTE(dword_87F5D8[45]) = 1; /*0x5fbc38*/
             }
             LODWORD(v78) = v56; /*0x5fbc4a*/
-            v57 = HotkeyOptions_Helper(dword_87F5D8[42], v53, (int *)&v78); /*0x5fbc4e*/
+            int v57 = HotkeyOptions_Helper(dword_87F5D8[42], v53, (int *)&v78); /*0x5fbc4e*/
+  int v58; // eax
             if ( !v57 || (v58 = (v57 - dword_87F5D8[42]) >> 3, v58 == -1) ) /*0x5fbc63*/
             {
               v53 = dword_87F5D8[43]; /*0x5fbcc1*/
             }
             else
             {
-              v59 = v58 + 1; /*0x5fbc65*/
+              int v59 = v58 + 1; /*0x5fbc65*/
               for ( j = dword_87F5D8[43]; v59 < dword_87F5D8[43]; j = dword_87F5D8[43] ) /*0x5fbc6f*/
               {
-                v61 = (_DWORD *)(dword_87F5D8[42] + 8 * v59++); /*0x5fbc77*/
+                _DWORD * v61 = (_DWORD *)(dword_87F5D8[42] + 8 * v59++); /*0x5fbc77*/
                 *(v61 - 2) = *v61; /*0x5fbc7d*/
                 *(v61 - 1) = v61[1]; /*0x5fbc83*/
               }
@@ -185,17 +151,18 @@ LABEL_127:
               LOBYTE(dword_87F5D8[45]) = 1; /*0x5fbd03*/
             }
             LODWORD(v78) = v50; /*0x5fbd15*/
-            v62 = HotkeyOptions_Helper(dword_87F5D8[42], v53, (int *)&v78); /*0x5fbd19*/
+            int v62 = HotkeyOptions_Helper(dword_87F5D8[42], v53, (int *)&v78); /*0x5fbd19*/
+  int v63; // eax
             if ( !v62 || (v63 = (v62 - dword_87F5D8[42]) >> 3, v63 == -1) ) /*0x5fbd2e*/
             {
               v53 = dword_87F5D8[43]; /*0x5fbd8c*/
             }
             else
             {
-              v64 = v63 + 1; /*0x5fbd30*/
+              int v64 = v63 + 1; /*0x5fbd30*/
               for ( k = dword_87F5D8[43]; v64 < dword_87F5D8[43]; k = dword_87F5D8[43] ) /*0x5fbd3a*/
               {
-                v66 = (_DWORD *)(dword_87F5D8[42] + 8 * v64++); /*0x5fbd42*/
+                _DWORD * v66 = (_DWORD *)(dword_87F5D8[42] + 8 * v64++); /*0x5fbd42*/
                 *(v66 - 2) = *v66; /*0x5fbd48*/
                 *(v66 - 1) = v66[1]; /*0x5fbd4e*/
               }
@@ -206,7 +173,7 @@ LABEL_127:
               v53 = dword_87F5D8[43]; /*0x5fbd84*/
             }
           }
-          v67 = dword_87F5D8[44]; /*0x5fbd92*/
+          int v67 = dword_87F5D8[44]; /*0x5fbd92*/
           if ( v53 + 1 > dword_87F5D8[44] ) /*0x5fbd9c*/
           {
             if ( !dword_87F5D8[44] ) /*0x5fbda0*/
@@ -245,7 +212,7 @@ LABEL_127:
         ((void (__stdcall *)(int, int, int, _BYTE *))SendMessageA)(v19, 1203, 64, lParam); /*0x5fb53b*/
         int v20 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fb547*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v20, 388, 0, 0); /*0x5fb551*/
-        v75 = 0; /*0x5fb55a*/
+        int v75 = 0; /*0x5fb55a*/
         if ( dword_87F5D8[36] > 0 ) /*0x5fb562*/
         {
           do /*0x5fb5bf*/
@@ -288,6 +255,7 @@ LABEL_127:
         ((void (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v8, 1202, 0, v9); /*0x5fb3eb*/
         int v10 = dword_87F5D8[43]; /*0x5fb3ed*/
         int v11 = 0; /*0x5fb3f2*/
+  int v74; // [esp+10h] [ebp-11Ch]
         LOWORD(v74) = 0; /*0x5fb3f6*/
         if ( dword_87F5D8[43] > 0 ) /*0x5fb3fa*/
         {
@@ -338,6 +306,7 @@ LABEL_16:
   }
   if ( (unsigned __int16)a3 > 0x4CDu ) /*0x5fb644*/
   {
+  void *v79[3]; // [esp+1Ch] [ebp-110h] BYREF
     if ( (unsigned __int16)a3 == 1231 ) /*0x5fb8df*/
     {
       ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1126, 0, 0); /*0x5fba96*/
@@ -354,7 +323,8 @@ LABEL_16:
         KeyboardConfig::LoadINI(); /*0x5fba32*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1127, 0, 0); /*0x5fba41*/
         v79[0] = &CCFileClass::`vftable'; /*0x5fba4b*/
-        v86 = 0; /*0x5fba53*/
+        int v86 = 0; /*0x5fba53*/
+  _BYTE v85[12]; // [esp+74h] [ebp-B8h] BYREF
         Vector::Clear((int)v85); /*0x5fba5e*/
         v79[0] = &off_7E1668; /*0x5fba67*/
         BufferIOFileClass::Dtor(v79); /*0x5fba6f*/
@@ -365,16 +335,17 @@ LABEL_16:
     {
       v79[1] = 0; /*0x5fb906*/
       v79[2] = 0; /*0x5fb90a*/
+  _DWORD v80[10]; // [esp+28h] [ebp-104h] BYREF
       GenericList::Constructor(v80); /*0x5fb90e*/
       v80[0] = &List<INIClass::INISection *>::`vftable'; /*0x5fb919*/
       memset(&v80[7], 0, 12); /*0x5fb921*/
-      v81 = 0; /*0x5fb92d*/
-      v82 = 0; /*0x5fb932*/
-      v83 = 0; /*0x5fb936*/
-      v84 = 0; /*0x5fb93a*/
+      char v81 = 0; /*0x5fb92d*/
+      int v82 = 0; /*0x5fb932*/
+      int v83 = 0; /*0x5fb936*/
+      char v84 = 0; /*0x5fb93a*/
       v79[0] = &CCINIClass_Vtable; /*0x5fb93f*/
       INIClass::ClearSection((int)v79, 0, 0); /*0x5fb947*/
-      v43 = dword_87F5D8[43]; /*0x5fb94c*/
+      int v43 = dword_87F5D8[43]; /*0x5fb94c*/
       for ( m = 0; m < dword_87F5D8[43]; ++m ) /*0x5fb955*/
       {
         if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fb95f*/
@@ -383,11 +354,12 @@ LABEL_16:
           dword_87F5D8[46] = 0; /*0x5fb978*/
           LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb97e*/
         }
-        v72 = *(_DWORD *)(dword_87F5D8[42] + 8 * m); /*0x5fb992*/
-        v45 = (char *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(dword_87F5D8[42] + 8 * m + 4) + 4))(*(_DWORD *)(dword_87F5D8[42] + 8 * m + 4)); /*0x5fb995*/
+        int v72 = *(_DWORD *)(dword_87F5D8[42] + 8 * m); /*0x5fb992*/
+        char * v45 = (char *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(dword_87F5D8[42] + 8 * m + 4) + 4))(*(_DWORD *)(dword_87F5D8[42] + 8 * m + 4)); /*0x5fb995*/
         INIClass::SetInt((char *)v79, (unsigned __int8 *)g_INI_Key_Hotkey, v45, v72, 0); /*0x5fb9a2*/
         v43 = dword_87F5D8[43]; /*0x5fb9a7*/
       }
+  int v87[9]; // [esp+88h] [ebp-A4h] BYREF
       RawFileClass::Construct(v87, (int)aKeyboardmdIni_0); /*0x5fb9bd*/
       INIClass::WriteDigest((char *)v79, (int)v87, 0); /*0x5fb9cf*/
       *v73 = 1; /*0x5fb9d8*/

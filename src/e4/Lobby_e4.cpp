@@ -70,21 +70,13 @@ void Lobby::UpdatePlayerLabels()
   int v1; // esi
   int v2; // eax
   int PlayerCount; // esi
-  int v4; // eax
-  int v5; // eax
-  int v6; // ebp
   Lobby *v7; // ebx
   HWND DlgItem; // esi
   wchar_t *v9; // ebx
   wchar_t *v10; // ebp
   wchar_t *String; // eax
-  char *v12; // eax
   LRESULT v13; // eax
-  char *v14; // eax
-  int v15; // eax
   int v16; // ebp
-  int v17; // ebx
-  int v18; // eax
   wchar_t *v19; // eax
   LRESULT v20; // eax
   wchar_t *v21; // eax
@@ -100,11 +92,8 @@ void Lobby::UpdatePlayerLabels()
   LRESULT v31; // eax
   wchar_t *v32; // eax
   char v33; // [esp+1h] [ebp-13h]
-  char v34; // [esp+2h] [ebp-12h]
-  bool v35; // [esp+3h] [ebp-11h]
   int v36; // [esp+4h] [ebp-10h]
   int v37; // [esp+8h] [ebp-Ch]
-  void *v38; // [esp+Ch] [ebp-8h] BYREF
   HWND hDlg; // [esp+10h] [ebp-4h]
 
   hDlg = this; /*0x5eb063*/
@@ -158,7 +147,8 @@ LABEL_26:
   v36 = 0; /*0x5eb124*/
   do
   {
-    v34 = 0; /*0x5eb13d*/
+  int v6; // ebp
+    char v34 = 0; /*0x5eb13d*/
     if ( v36 == g_MPCooperativeState ) /*0x5eb142*/
     {
       if ( g_GameRulesOptions == -1 ) /*0x5eb151*/
@@ -170,7 +160,7 @@ LABEL_26:
         PlayerCount = ReadPlayerCountMap(g_GameRulesOptions); /*0x5eb165*/
         if ( g_GameStateFlags ) /*0x5eb169*/
         {
-          v4 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5eb16d*/
+          int v4 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5eb16d*/
           if ( v4 != -1 && v4 < PlayerCount ) /*0x5eb17a*/
             PlayerCount = v4; /*0x5eb17c*/
         }
@@ -188,7 +178,7 @@ LABEL_26:
       }
       if ( v36 > PlayerCount ) /*0x5eb1a5*/
       {
-        v5 = *(&g_NetworkPlayerName + v36); /*0x5eb1a7*/
+        int v5 = *(&g_NetworkPlayerName + v36); /*0x5eb1a7*/
         if ( v5 != g_HouseClass_ObserverFlags /*0x5eb1d2*/
           && (!v5 || v5 != g_Lobby_PlayerTeam && v5 != g_Lobby_PlayerSide && v5 != g_Lobby_PlayerColor) )
         {
@@ -231,7 +221,7 @@ LABEL_26:
     }
     v7 = hDlg; /*0x5eb259*/
     DlgItem = GetDlgItem(hDlg, v6); /*0x5eb265*/
-    v35 = !ShowWindow(DlgItem, 0); /*0x5eb27d*/
+    bool v35 = !ShowWindow(DlgItem, 0); /*0x5eb27d*/
     SendDlgItemMessageA(v7, v6, 0x14Bu, 0, 0); /*0x5eb282*/
     v9 = (wchar_t *)*(&g_NetworkPlayerName + v36); /*0x5eb291*/
     v10 = v9; /*0x5eb29a*/
@@ -273,8 +263,9 @@ LABEL_79:
     {
       v10 = GetStringCSF(g_Str_GUI_Open, 0, g_Str_File_netshare_cpp, 5455); /*0x5eb398*/
     }
+  void *v38; // [esp+Ch] [ebp-8h] BYREF
     WideString::Assign((wchar_t **)&v38, v10); /*0x5eb39f*/
-    v12 = CharToWideString(g_GameSetupBuffer); /*0x5eb3a9*/
+    char * v12 = CharToWideString(g_GameSetupBuffer); /*0x5eb3a9*/
     if ( !wcscmp((const wchar_t *)v12, g_CurrentPlayerName) ) /*0x5eb3b4*/
     {
       if ( v9 /*0x5eb3fe*/
@@ -289,13 +280,14 @@ LABEL_79:
         v13 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v10); /*0x5eb409*/
         SendMessageA(DlgItem, 0x151u, v13, (LPARAM)v9); /*0x5eb413*/
       }
-      v14 = CharToWideString(g_GameSetupBuffer); /*0x5eb41a*/
-      v15 = wcscmp(v10, (const wchar_t *)v14); /*0x5eb421*/
+      char * v14 = CharToWideString(g_GameSetupBuffer); /*0x5eb41a*/
+      int v15 = wcscmp(v10, (const wchar_t *)v14); /*0x5eb421*/
       v16 = v36; /*0x5eb426*/
       if ( v15 ) /*0x5eb42f*/
       {
         if ( v36 < v37 ) /*0x5eb439*/
         {
+  int v17; // ebx
           if ( !v34 || v36 != g_MPCooperativeState ) /*0x5eb44d*/
             goto LABEL_111; /*0x5eb44d*/
           if ( g_GameRulesOptions == -1 ) /*0x5eb458*/
@@ -307,7 +299,7 @@ LABEL_79:
             v17 = ReadPlayerCountMap(g_GameRulesOptions); /*0x5eb46c*/
             if ( g_GameStateFlags ) /*0x5eb470*/
             {
-              v18 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5eb474*/
+              int v18 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5eb474*/
               if ( v18 != -1 && v18 < v17 ) /*0x5eb481*/
                 v17 = v18; /*0x5eb483*/
             }

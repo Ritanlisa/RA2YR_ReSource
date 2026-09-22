@@ -24,16 +24,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   int i; // eax
   _DWORD *v40; // esi
   bool v41; // zf
-  int v42; // eax
-  int v43; // eax
-  int v44; // ecx
-  int v45; // eax
-  _DWORD *v46; // ecx
   CCINIClass *v47; // eax
-  int v48; // edx
-  int v50; // ecx
-  char v51; // [esp+13h] [ebp-4Dh]
-  _DWORD v53[2]; // [esp+18h] [ebp-48h] BYREF
   CCINIClass *v54; // [esp+20h] [ebp-40h]
   _DWORD *v55; // [esp+24h] [ebp-3Ch]
   void **v56; // [esp+28h] [ebp-38h] BYREF
@@ -43,10 +34,6 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   int v60; // [esp+38h] [ebp-28h]
   int v61; // [esp+3Ch] [ebp-24h]
   void **v62; // [esp+44h] [ebp-1Ch] BYREF
-  void *v63; // [esp+48h] [ebp-18h]
-  char v64; // [esp+51h] [ebp-Fh]
-  int v65; // [esp+54h] [ebp-Ch]
-  int v66; // [esp+58h] [ebp-8h]
   IUnknown *aP2; // [esp+5Ch] [ebp-4h]
 
   int v3 = 0; /*0x6f0ab6*/
@@ -80,6 +67,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     }
     int v9 = 4 * *(_DWORD *)(a2 + 388); /*0x6f0b5b*/
     int v10 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5068); /*0x6f0b5e*/
+  _DWORD v53[2]; // [esp+18h] [ebp-48h] BYREF
     LOBYTE(v53[0]) = 0; /*0x6f0b64*/
     if ( v6 < *(_DWORD *)(v10 + v9) || v3 < v6 / 2 ) /*0x6f0b77*/
     {
@@ -122,11 +110,11 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
       int v17 = 0; /*0x6f0bfa*/
       Team_Helper_6F27F0(&v62, 0, 0); /*0x6f0c02*/
       v62 = &vt_DynamicVectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass; /*0x6f0c0b*/
-      v66 = 10; /*0x6f0c13*/
-      v65 = 0; /*0x6f0c1b*/
+      int v66 = 10; /*0x6f0c13*/
+      int v65 = 0; /*0x6f0c1b*/
       aP2 = 0; /*0x6f0c1f*/
       TeamTypeClass_28::ClearBuffer((int)&v62); /*0x6f0c23*/
-      v51 = 0; /*0x6f0c2e*/
+      char v51 = 0; /*0x6f0c2e*/
       if ( *(int *)&HouseClass_Player[29892] > 0 ) /*0x6f0c34*/
       {
   int v20; // edi
@@ -169,6 +157,7 @@ LABEL_35:
       int v23 = 0; /*0x6f0cf3*/
       if ( v65 <= 0 ) /*0x6f0cfb*/
         goto LABEL_58; /*0x6f0cfb*/
+  void *v63; // [esp+48h] [ebp-18h]
       _DWORD * v24 = (char *)v63 + 4; /*0x6f0d05*/
       while ( 1 ) /*0x6f0d08*/
       {
@@ -216,6 +205,7 @@ LABEL_51:
       }
 LABEL_58:
       v62 = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass; /*0x6f0dc2*/
+  char v64; // [esp+51h] [ebp-Fh]
       if ( v63 && v64 ) /*0x6f0dd8*/
         Team_Helper_6F26E0((char *)v63, 3); /*0x6f0de0*/
     }
@@ -240,7 +230,7 @@ LABEL_71:
     if ( !v41 ) /*0x6f0e84*/
     {
       VectorClass::ClearAndFree3((int)v40); /*0x6f0e8c*/
-      v42 = v58; /*0x6f0e92*/
+      int v42 = v58; /*0x6f0e92*/
       v41 = v58 == 0; /*0x6f0e96*/
       v40[2] = v58; /*0x6f0e98*/
       if ( v41 ) /*0x6f0e9b*/
@@ -250,12 +240,12 @@ LABEL_71:
       }
       else
       {
-        v43 = __2_YAPAXI_Z(4 * v42); /*0x6f0ea5*/
+        int v43 = __2_YAPAXI_Z(4 * v42); /*0x6f0ea5*/
         v40[1] = v43; /*0x6f0eaf*/
         if ( v43 ) /*0x6f0eb2*/
         {
-          v44 = v40[2]; /*0x6f0eb8*/
-          v45 = 0; /*0x6f0ebb*/
+          int v44 = v40[2]; /*0x6f0eb8*/
+          int v45 = 0; /*0x6f0ebb*/
           *((_BYTE *)v40 + 13) = 1; /*0x6f0ebf*/
           if ( v44 > 0 ) /*0x6f0ec3*/
           {
@@ -270,7 +260,7 @@ LABEL_71:
       }
       v31 = (CCINIClass *)Block; /*0x6f0f77*/
     }
-    v50 = v61; /*0x6f0f7f*/
+    int v50 = v61; /*0x6f0f7f*/
     v40[4] = v60; /*0x6f0f85*/
     v40[5] = v50; /*0x6f0f88*/
     *v40 = &vt_TypeList_TeamTypeClass_const; /*0x6f0f8b*/
@@ -317,7 +307,7 @@ LABEL_70:
       Block = 0; /*0x6f0efe*/
     }
     v40 = v55; /*0x6f0f02*/
-    v46 = v55; /*0x6f0f0b*/
+    _DWORD * v46 = v55; /*0x6f0f0b*/
     v59 = 0; /*0x6f0f0d*/
     v58 = 0; /*0x6f0f12*/
     v55[1] = 0; /*0x6f0f16*/
@@ -329,7 +319,7 @@ LABEL_70:
     *v40 = &vt_TypeList_TeamTypeClass_const; /*0x6f0f2f*/
     v56 = &vt_VectorClass_TeamTypeClass_const; /*0x6f0f35*/
     v47 = (CCINIClass *)Block; /*0x6f0f3d*/
-    v48 = v61; /*0x6f0f45*/
+    int v48 = v61; /*0x6f0f45*/
     v41 = Block == 0; /*0x6f0f49*/
     v40[4] = v60; /*0x6f0f4b*/
     v40[5] = v48; /*0x6f0f4e*/

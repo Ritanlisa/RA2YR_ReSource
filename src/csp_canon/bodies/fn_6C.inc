@@ -1378,14 +1378,14 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   {
     while ( 1 )
     {
-    v10 = Map_Append(v16, (int)&g_OverlayTypeConfig.__pad_14B0[12584], *(int *)(a3 + 16));
+    v10 = Map_Append(v16, (int)&g_OverlayTypeConfig[17880], *(int *)(a3 + 16));
     v11 = (char *)this->Buffer_field_08;
     if ( (unsigned int)&v11[v10] > this->Buffer_field_04 + *(void**)this || (this->Buffer_field_08 = &v11[v10], !v11) )
       {
     (*(void (__thiscall **)(AbstractClass *))(*(int *)v8->__pad_0 + 96))(v8);
     return 0;
       }
-    qmemcpy(v11, &g_OverlayTypeConfig.__pad_14B0[12584], v10);
+    qmemcpy(v11, &g_OverlayTypeConfig[17880], v10);
     v13 = *(int *)aP1->__pad_0;
     v12 = ++v14;
     v16 += (*(int (__thiscall **)(AbstractClass *))(v13 + 116))(aP1);
@@ -1704,7 +1704,7 @@ int * BinkMovie::CreateSurfaceTracker()
     v2[7] = 0;
     v2[8] = 0;
     _splitpath(this, 0, 0, &Filename, 0);
-    if ( BinkMovie::InitKeyframeTracking(v2, Filename.__pad_0) == 1 )
+    if ( BinkMovie::InitKeyframeTracking(v2, Filename[0]) == 1 )
   {
     v3 = (int *)__2_YAPAXI_Z(0x20u);
     v4 = v3;
@@ -1796,16 +1796,16 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     v5->__pad_194[1] = 0;
     this->SuperClass_field_0x68 = 0;
     v9 = this;
-    v6 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 16))( &DataGlobal_B05488.__pad_579C[18836], &v9);
+    v6 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(int *)&DataGlobal_B05488[41264] + 16))( &DataGlobal_B05488[41264], &v9);
     if ( v6 != (IUnknown *)-1 )
-    DynamicVector::RemoveItem(&DataGlobal_B05488.__pad_579C[18836], v6);
+    DynamicVector::RemoveItem(&DataGlobal_B05488[41264], v6);
   }
     if ( (unsigned char)this->SuperClass_field_0x6C )
   {
     v9 = this;
-    v7 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 16))( &DataGlobal_B05488.__pad_579C[18836], &v9);
+    v7 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(int *)&DataGlobal_B05488[41264] + 16))( &DataGlobal_B05488[41264], &v9);
     if ( v7 != (IUnknown *)-1 )
-    DynamicVector::RemoveItem(&DataGlobal_B05488.__pad_579C[18836], v7);
+    DynamicVector::RemoveItem(&DataGlobal_B05488[41264], v7);
     this->q06C = 0;
   }
     result = (void **)__2_YAPAXI_Z(0x1C8u);
@@ -1814,15 +1814,15 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     aP2a.X = (int)aP1;
     aP2a.Y = (int)aP2;
     aP2a.Z = a4 + 5;
-    result = (void **)AnimClass::ctor( result, *(CoordStruct **)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 816), &aP2a, 0, (CoordStruct *)1, (void *)0x600, 0, 0);
+    result = (void **)AnimClass::ctor( result, *(CoordStruct **)(*(int *)&DataGlobal_87C374[44652] + 816), &aP2a, 0, (CoordStruct *)1, (void *)0x600, 0, 0);
     if ( result )
     {
     this->SuperClass_field_0x68 = result;
-    result = *(void ***)&DataGlobal_B05488.__pad_579C[18844];
-    if ( *(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (result = (void **)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0), (char)result) )
+    result = *(void ***)&DataGlobal_B05488[41272];
+    if ( *(int *)&DataGlobal_B05488[41280] < *(int *)&DataGlobal_B05488[41272] || (DataGlobal_B05488[41277] || !*(int *)&DataGlobal_B05488[41272]) && *(int *)&DataGlobal_B05488[41284] > 0 && (result = (void **)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488[41264] + 8))( &DataGlobal_B05488[41264], *(int *)&DataGlobal_B05488[41272] + *(int *)&DataGlobal_B05488[41284], 0), (char)result) )
       {
-    result = (void **)(*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
-    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * (int)result) = this;
+    result = (void **)(*(int *)&DataGlobal_B05488[41280])++;
+    *(int *)(*(int *)&DataGlobal_B05488[41268] + 4 * (int)result) = this;
       }
     }
   }
@@ -1847,17 +1847,17 @@ char SuperClass::SetOnHold(CoordStruct * aP1)
     if ( v3 != (IUnknown *)-1 )
     {
     v4 = this->SuperClass_field_0x38;
-    if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664] - (int)v3 >= v4 )
+    if ( *(int *)&g_NetworkPlayerBuffer[5960] - (int)v3 >= v4 )
     v5 = 0;
     else
-    v5 = v4 - (*(int *)&g_NetworkPlayerBuffer.__pad_14B0[664] - (int)v3);
+    v5 = v4 - (*(int *)&g_NetworkPlayerBuffer[5960] - (int)v3);
     this->SuperClass_field_0x38 = v5;
     this->SuperClass_field_0x30 = -1;
     }
   }
     else if ( this->SuperClass_field_0x30 == -1 )
   {
-    this->SuperClass_field_0x30 = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664];
+    this->SuperClass_field_0x30 = *(int *)&g_NetworkPlayerBuffer[5960];
     this->q070 = 0;
     return 1;
   }
@@ -2117,14 +2117,14 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_SuperClass;
     *(int *)&aP0->__pad_0[12] = &vt_SuperClass;
     }
-    if ( aP0[2].NeedsSaveOrLink && (*(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0)) )
+    if ( aP0[2].NeedsSaveOrLink && (*(int *)&DataGlobal_B05488[41280] < *(int *)&DataGlobal_B05488[41272] || (DataGlobal_B05488[41277] || !*(int *)&DataGlobal_B05488[41272]) && *(int *)&DataGlobal_B05488[41284] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488[41264] + 8))( &DataGlobal_B05488[41264], *(int *)&DataGlobal_B05488[41272] + *(int *)&DataGlobal_B05488[41284], 0)) )
     {
-    v3 = (*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
-    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * v3) = aP0;
+    v3 = (*(int *)&DataGlobal_B05488[41280])++;
+    *(int *)(*(int *)&DataGlobal_B05488[41268] + 4 * v3) = aP0;
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].NeedsSaveOrLink);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].NeedsSaveOrLink);
     *(int *)aP0[2].__pad_0 = 0;
     *(int *)&aP0[2].__pad_0[4] = 0;
     return 0;
@@ -2354,12 +2354,12 @@ ObjectClass * E4Recv_6CE570::sub_6CE570()
     ObjectClass *v2;
     const void **v3;
     v2 = 0;
-    v3 = (const void **)&DataGlobal_830620.__pad_579C[51204];
+    v3 = (const void **)&DataGlobal_830620[73632];
     while ( _strcmpi(*v3, this) )
   {
     ++v3;
     v2 = (ObjectClass *)((char *)(v2) + 1);
-    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[51252] )
+    if ( (int)v3 >= (int)&DataGlobal_830620[73680] )
     return (ObjectClass *)-1;
   }
     return v2;
@@ -2402,11 +2402,11 @@ int SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
     this->vtable3 = (unsigned int)vt_SuperWeaponTypeClass;
     this->vtable4 = &vt_SuperWeaponTypeClass;
     AbstractClass::GenerateUniqueID(this + 4);
-    this->vtable1 = *(int *)&g_NetworkPlayerBuffer.__pad_BC0[324];
-    if ( *(int *)&g_NetworkPlayerBuffer.__pad_BC0[324] < *(int *)&g_NetworkPlayerBuffer.__pad_BC0[316] || (g_NetworkPlayerBuffer.__pad_BC0[321] || !*(int *)&g_NetworkPlayerBuffer.__pad_BC0[316]) && *(int *)&g_NetworkPlayerBuffer.__pad_BC0[328] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&g_NetworkPlayerBuffer.__pad_BC0[308] + 8))( &g_NetworkPlayerBuffer.__pad_BC0[308], *(int *)&g_NetworkPlayerBuffer.__pad_BC0[316] + *(int *)&g_NetworkPlayerBuffer.__pad_BC0[328], 0) )
+    this->vtable1 = *(int *)&g_NetworkPlayerBuffer[3332];
+    if ( *(int *)&g_NetworkPlayerBuffer[3332] < *(int *)&g_NetworkPlayerBuffer[3324] || (g_NetworkPlayerBuffer[3329] || !*(int *)&g_NetworkPlayerBuffer[3324]) && *(int *)&g_NetworkPlayerBuffer[3336] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&g_NetworkPlayerBuffer[3316] + 8))( &g_NetworkPlayerBuffer[3316], *(int *)&g_NetworkPlayerBuffer[3324] + *(int *)&g_NetworkPlayerBuffer[3336], 0) )
   {
-    v3 = (*(int *)&g_NetworkPlayerBuffer.__pad_BC0[324])++;
-    *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_BC0[312] + 4 * v3) = this;
+    v3 = (*(int *)&g_NetworkPlayerBuffer[3332])++;
+    *(int *)(*(int *)&g_NetworkPlayerBuffer[3320] + 4 * v3) = this;
   }
     if ( this + 36 != this + 204 )
     qmemcpy((void *)(this + 204), (const void *)(this + 36), 0x19u);

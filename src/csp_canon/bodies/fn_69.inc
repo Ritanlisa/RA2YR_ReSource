@@ -126,7 +126,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
     char *v4;
     v3 = (void *)*(this + 3);
     *(void**)this = &vt_ScoreFontClass;
-    if ( v3 && (unsigned char)*(int *)(this + 16) == 1 )
+    if ( v3 && (unsigned char)this->q010 == 1 )
   {
     __3_YAXPAX_Z(v3);
     *(this + 3) = 0;
@@ -187,16 +187,16 @@ namespace gamemd { void* ScriptClass::Construct(int a1) {
       *(_DWORD *)&this->__pad_0[4] = &ScriptClass::`vftable';
       *(_DWORD *)&this->__pad_0[8] = &ScriptClass::`vftable';
       *(_DWORD *)&this->__pad_0[12] = &vt_ScriptClass;
-      if ( *(int *)&DataGlobal_87F8E4.__pad_5568[9332] < *(int *)&DataGlobal_87F8E4.__pad_5568[9324]
-        || (DataGlobal_87F8E4.__pad_5568[9329] || !*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9324])
-        && *(int *)&DataGlobal_87F8E4.__pad_5568[9336] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9316] + 8))(
-             &DataGlobal_87F8E4.__pad_5568[9316],
-             *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9324] + *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9336],
+      if ( *(int *)&DataGlobal_87F8E4[31196] < *(int *)&DataGlobal_87F8E4[31188]
+        || (DataGlobal_87F8E4[31193] || !*(_DWORD *)&DataGlobal_87F8E4[31188])
+        && *(int *)&DataGlobal_87F8E4[31200] > 0
+        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&DataGlobal_87F8E4[31180] + 8))(
+             &DataGlobal_87F8E4[31180],
+             *(_DWORD *)&DataGlobal_87F8E4[31188] + *(_DWORD *)&DataGlobal_87F8E4[31200],
              0) )
       {
-        v3 = (*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9332])++;
-        *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9320] + 4 * v3) = this;
+        v3 = (*(_DWORD *)&DataGlobal_87F8E4[31196])++;
+        *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31184] + 4 * v3) = this;
       }
       return this;
 }
@@ -258,7 +258,7 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_ScriptClass;
     *(int *)&aP0->__pad_0[12] = &vt_ScriptClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
     return 0;
   }
     return result;
@@ -332,7 +332,7 @@ namespace gamemd { int ScriptTypeClass::GetEvent(void* a1) {
                     aP1,
                     (INIClass *)(this + 36),
                     (unsigned __int8 *)Buffer,
-                    (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760],
+                    (INIClass *)&DataGlobal_87F8E4[42624],
                     Destination,
                     128) > 0 )
         {
@@ -542,7 +542,7 @@ namespace gamemd { int MouseClass::GetButtonState(int a1) {
       v2 = (ScrollClass *)this;
       if ( !this->q5558 )
         return TacticalClass::DispatchMode((int *)this, aP1);
-      LOBYTE(this) = DataGlobal_87F8E4.__pad_125C[16900];
+      LOBYTE(this) = DataGlobal_87F8E4[21600];
       result = (*(int (__thiscall **)(ScrollClass *, _DWORD, _BYTE *))(v2->m_ScrollX + 72))(v2, 0, this);
       LOBYTE(v2[1365].m_MaxX) = 0;
       return result;
@@ -824,9 +824,9 @@ unsigned int SessionClass::GetPlayerColorScheme(ObjectClass * aP0)
     ObjectClass *result;
     result = aP0;
     if ( aP0 == (ObjectClass *)-2 )
-    return DataGlobal_830620.__pad_579C[36704];
+    return DataGlobal_830620[59132];
     if ( (unsigned int)aP0 < 9 )
-    return DataGlobal_830620.__pad_579C[(int)aP0 + 36696];
+    return DataGlobal_830620[22428][(int)aP0 + 36696];
     return (unsigned int)result;
 }
 }
@@ -1740,7 +1740,7 @@ bool JumpjetLocomotionClass::StubReturnTrue_6(InfantryClass * aP0)
     if ( TimerClass::Active(*(int *)&aP0->__pad_0[8] + 904) )
     return 1;
     return (*(unsigned char (__stdcall **)(InfantryClass *))(*(int *)aP0->__pad_0 + 16))(aP0)
-    && (aP0->ambientSoundController[0] != *(int *)&DataGlobal_B05488.__pad_14B0[3776] || aP0->ambientSoundController[1] != *(int *)&DataGlobal_B05488.__pad_14B0[3780] || aP0->ambientSoundController[2] != *(int *)&DataGlobal_B05488.__pad_14B0[3784])
+    && (aP0->ambientSoundController[0] != *(int *)&DataGlobal_B05488[9072] || aP0->ambientSoundController[1] != *(int *)&DataGlobal_B05488[9076] || aP0->ambientSoundController[2] != *(int *)&DataGlobal_B05488[9080])
     && (*(int (__thiscall **)(int))(**(int **)&aP0->__pad_0[8] + 1336))(*(int *)&aP0->__pad_0[8]) > 0;
 }
 }
@@ -1820,15 +1820,15 @@ unsigned int * JumpjetLocomotionClass::ConvertCoordToCell_2(int arg0, unsigned i
     *(int *)(arg0 + 48) = a1;
     *(int *)(arg0 + 52) = v5;
     *(int *)(arg0 + 56) = v6;
-    if ( result != *(int **)&DataGlobal_B05488.__pad_14B0[3776] || v5 != *(int *)&DataGlobal_B05488.__pad_14B0[3780] || v6 != *(IUnknown **)&DataGlobal_B05488.__pad_14B0[3784] )
+    if ( result != *(int **)&DataGlobal_B05488[9072] || v5 != *(int *)&DataGlobal_B05488[9076] || v6 != *(IUnknown **)&DataGlobal_B05488[9080] )
           {
     a1 = result;
     aP1_4 = v5;
     aP3 = v6;
-    result = Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a1);
+    result = Coord::To_Cell(&DataGlobal_87C374[13428], (IUnknown *)&a1);
     if ( (result[80] & 0x100) != 0 )
             {
-    result = (int *)(*(int *)&DataGlobal_B05488.__pad_14B0[3828] + *(int *)(arg0 + 56));
+    result = (int *)(*(int *)&DataGlobal_B05488[9124] + *(int *)(arg0 + 56));
     *(int *)(arg0 + 56) = result;
             }
           }

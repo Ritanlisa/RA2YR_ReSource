@@ -46,7 +46,6 @@ int E4Recv_522100::sub_522100()
 {
   int (__stdcall ***v2)(_DWORD, void *, int *); // eax
   int v4; // eax
-  int v5; // edi
   bool v6; // bl
   int v7; // [esp+14h] [ebp-18h] BYREF
   int v8; // [esp+18h] [ebp-14h] BYREF
@@ -61,7 +60,7 @@ int E4Recv_522100::sub_522100()
   int v3 = (**v2)(v2, &unk_818858, &v8); /*0x52213d*/
   if ( v3 >= 0 ) /*0x522141*/
   {
-    v5 = v8; /*0x522150*/
+    int v5 = v8; /*0x522150*/
     ComPtr::Release_Alt(&v7); /*0x522158*/
     v4 = v5; /*0x52215d*/
   }
@@ -129,20 +128,17 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
   VectorClass *v16; // ecx
   bool v18; // zf
   void *v19; // eax
-  int v20; // ecx
   VectorClass *v22; // [esp+Ch] [ebp-9Ch] BYREF
   void *Block; // [esp+10h] [ebp-98h]
-  int v24; // [esp+14h] [ebp-94h]
-  char v25; // [esp+19h] [ebp-8Fh]
-  int v26; // [esp+1Ch] [ebp-8Ch]
-  int v27; // [esp+20h] [ebp-88h]
   INIClass String[2]; // [esp+28h] [ebp-80h] BYREF
 
   if ( INIClass::GetString(edx0, aP1, a2, (INIClass *)&DataGlobal_87F8E4[42624], String, 128) ) /*0x52545c*/
   {
+  char v25; // [esp+19h] [ebp-8Fh]
+  int v24; // [esp+14h] [ebp-94h]
     VectorClass::Construct(&v22, 0, 0); /*0x525471*/
-    v27 = 10; /*0x52547a*/
-    v26 = 0; /*0x525488*/
+    int v27 = 10; /*0x52547a*/
+    int v26 = 0; /*0x525488*/
     v22 = (VectorClass *)&vt_TypeList_int; /*0x52548c*/
     for ( i = strtok(String[0].__pad_0, Delimiter[0]); i; i = strtok(0, Delimiter[0]) ) /*0x52549e*/
     {
@@ -192,7 +188,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     TypeList::Copy((_DWORD *)a1, &a5); /*0x525596*/
     *(_DWORD *)a1 = &vt_TypeList_int; /*0x52559b*/
     a5 = &vt_VectorClass_int; /*0x5255a1*/
-    v20 = a10; /*0x5255af*/
+    int v20 = a10; /*0x5255af*/
     *(_DWORD *)(a1 + 16) = a9; /*0x5255b6*/
     v19 = a6; /*0x5255b9*/
     v18 = a6 == 0; /*0x5255c0*/
@@ -330,24 +326,12 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // ebx
-  unsigned int v9; // kr04_4
-  unsigned int *v10; // eax
-  int v11; // ebx
-  int v12; // eax
-  char *v13; // eax
   char *v14; // ecx
   char *v15; // edx
   char *v16; // esi
-  unsigned int v17; // kr0C_4
-  unsigned int *v18; // eax
-  int v19; // edi
   unsigned __int8 *v21; // [esp-Ch] [ebp-7Ch]
   int v22; // [esp+0h] [ebp-70h] BYREF
-  int v23; // [esp+Ch] [ebp-64h] BYREF
-  int v24; // [esp+10h] [ebp-60h] BYREF
   char *v25; // [esp+14h] [ebp-5Ch] BYREF
-  int v26[3]; // [esp+18h] [ebp-58h] BYREF
-  int v27[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
   char * v6 = String::GetOrEmpty_Alt(a4); /*0x529e85*/
@@ -362,11 +346,13 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   }
   else
   {
-    v17 = strlen(v7) + 1; /*0x529fab*/
-    v18 = KeyValuePair::Init(v26, 0); /*0x529fb7*/
-    v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x529fca*/
-    v23 = v19; /*0x529fcf*/
+    unsigned int v17 = strlen(v7) + 1; /*0x529fab*/
+  int v26[3]; // [esp+18h] [ebp-58h] BYREF
+    unsigned int * v18 = KeyValuePair::Init(v26, 0); /*0x529fb7*/
+    int v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x529fca*/
+    int v23 = v19; /*0x529fcf*/
     if ( !HashTable::BinarySearch((int)(this + 10), &v23) /*0x529ff0*/
+  int v24; // [esp+10h] [ebp-60h] BYREF
       || (v24 = v19, (v8 = *(_DWORD *)SortedArray::FindValue((int)(this + 10), &v24)) == 0) )
     {
       *(this + 1) = 0; /*0x52a006*/
@@ -379,17 +365,18 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   }
   if ( v8 ) /*0x529ec7*/
   {
-    v9 = strlen(v6) + 1; /*0x529ece*/
+    unsigned int v9 = strlen(v6) + 1; /*0x529ece*/
     v21 = (unsigned __int8 *)a4; /*0x529edb*/
-    v10 = KeyValuePair::Init(v27, 0); /*0x529ee2*/
-    v11 = v8 + 44; /*0x529ef5*/
+  int v27[3]; // [esp+24h] [ebp-4Ch] BYREF
+    unsigned int * v10 = KeyValuePair::Init(v27, 0); /*0x529ee2*/
+    int v11 = v8 + 44; /*0x529ef5*/
     a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1); /*0x529efb*/
     if ( SortedArray::Find(v11, (int *)&a4) ) /*0x529f02*/
     {
-      v12 = *(_DWORD *)SortedArray::BinarySearch2(v11, (int *)&a4); /*0x529f1a*/
+      int v12 = *(_DWORD *)SortedArray::BinarySearch2(v11, (int *)&a4); /*0x529f1a*/
       if ( v12 ) /*0x529f1e*/
       {
-        v13 = *(char **)(v12 + 16); /*0x529f20*/
+        char * v13 = *(char **)(v12 + 16); /*0x529f20*/
         if ( v13 ) /*0x529f25*/
           Source = v13; /*0x529f27*/
       }
@@ -426,12 +413,6 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
 {
   unsigned __int8 *v6; // ebx
   int v8; // esi
-  unsigned int v9; // kr04_4
-  unsigned int *v10; // eax
-  int v11; // esi
-  int v12; // eax
-  char *v13; // eax
-  double v15; // st7
   unsigned __int8 *v16; // esi
   float v17; // ecx
   unsigned __int8 *v18; // [esp-8h] [ebp-78h]
@@ -440,7 +421,6 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   float v21; // [esp+18h] [ebp-58h] BYREF
   float v22; // [esp+1Ch] [ebp-54h]
   float v23; // [esp+20h] [ebp-50h]
-  _DWORD v24[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
   Source = &g_INI_DefaultBuffer; /*0x52a11f*/
@@ -476,17 +456,18 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   }
   if ( v8 ) /*0x52a155*/
   {
-    v9 = strlen(v7) + 1; /*0x52a15e*/
+    unsigned int v9 = strlen(v7) + 1; /*0x52a15e*/
     v18 = (unsigned __int8 *)v7; /*0x52a164*/
-    v10 = KeyValuePair::Init(v24, 0); /*0x52a16a*/
+  _DWORD v24[3]; // [esp+24h] [ebp-4Ch] BYREF
+    unsigned int * v10 = KeyValuePair::Init(v24, 0); /*0x52a16a*/
     a4 = COERCE_FLOAT(Checksummer::Add_Buffer(v10, v18, v9 - 1)); /*0x52a176*/
-    v11 = v8 + 44; /*0x52a17a*/
+    int v11 = v8 + 44; /*0x52a17a*/
     if ( SortedArray::Find(v11, (int *)&a4) ) /*0x52a184*/
     {
-      v12 = *(_DWORD *)SortedArray::BinarySearch2(v11, (int *)&a4); /*0x52a199*/
+      int v12 = *(_DWORD *)SortedArray::BinarySearch2(v11, (int *)&a4); /*0x52a199*/
       if ( v12 ) /*0x52a19d*/
       {
-        v13 = *(char **)(v12 + 16); /*0x52a19f*/
+        char * v13 = *(char **)(v12 + 16); /*0x52a19f*/
         if ( v13 ) /*0x52a1a4*/
           Source = v13; /*0x52a1a6*/
       }
@@ -503,7 +484,7 @@ LABEL_11:
       sscanf(Destination, g_Str_Trace__f__f__f, &a4, &a3, &a5); /*0x52a209*/
       v21 = a4; /*0x52a21f*/
       v22 = *(float *)&a3; /*0x52a22d*/
-      v15 = *(float *)&a5; /*0x52a231*/
+      double v15 = *(float *)&a5; /*0x52a231*/
       *a2 = a4; /*0x52a238*/
       v23 = v15; /*0x52a23e*/
       a2[1] = v22; /*0x52a242*/
@@ -528,24 +509,13 @@ void * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float * a
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // ebx
-  unsigned int v9; // kr04_4
-  unsigned int *v10; // eax
-  int v11; // ebx
-  int v12; // eax
-  char *v13; // eax
   float v14; // ecx
   float *v15; // edx
   float v16; // esi
-  unsigned int v17; // kr0C_4
-  unsigned int *v18; // eax
-  int v19; // edi
   unsigned __int8 *v21; // [esp-Ch] [ebp-7Ch]
   int v22; // [esp+0h] [ebp-70h] BYREF
-  int v23; // [esp+Ch] [ebp-64h] BYREF
-  int v24; // [esp+10h] [ebp-60h] BYREF
   float v25; // [esp+14h] [ebp-5Ch] BYREF
   float v26[3]; // [esp+18h] [ebp-58h] BYREF
-  int v27[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
   char * v6 = String::GetOrEmpty_Alt(a4); /*0x52a305*/
@@ -560,11 +530,12 @@ void * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float * a
   }
   else
   {
-    v17 = strlen(v7) + 1; /*0x52a443*/
-    v18 = KeyValuePair::Init(v26, 0); /*0x52a44f*/
-    v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x52a462*/
-    v23 = v19; /*0x52a467*/
+    unsigned int v17 = strlen(v7) + 1; /*0x52a443*/
+    unsigned int * v18 = KeyValuePair::Init(v26, 0); /*0x52a44f*/
+    int v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x52a462*/
+    int v23 = v19; /*0x52a467*/
     if ( !HashTable::BinarySearch((int)(this + 10), &v23) /*0x52a488*/
+  int v24; // [esp+10h] [ebp-60h] BYREF
       || (v24 = v19, (v8 = *(_DWORD *)SortedArray::FindValue((int)(this + 10), &v24)) == 0) )
     {
       *(this + 1) = 0; /*0x52a49e*/
@@ -577,17 +548,18 @@ void * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float * a
   }
   if ( v8 ) /*0x52a347*/
   {
-    v9 = strlen(v6) + 1; /*0x52a34e*/
+    unsigned int v9 = strlen(v6) + 1; /*0x52a34e*/
     v21 = (unsigned __int8 *)a4; /*0x52a35b*/
-    v10 = KeyValuePair::Init(v27, 0); /*0x52a362*/
-    v11 = v8 + 44; /*0x52a375*/
+  int v27[3]; // [esp+24h] [ebp-4Ch] BYREF
+    unsigned int * v10 = KeyValuePair::Init(v27, 0); /*0x52a362*/
+    int v11 = v8 + 44; /*0x52a375*/
     a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1); /*0x52a37b*/
     if ( SortedArray::Find(v11, (int *)&a4) ) /*0x52a382*/
     {
-      v12 = *(_DWORD *)SortedArray::BinarySearch2(v11, (int *)&a4); /*0x52a39a*/
+      int v12 = *(_DWORD *)SortedArray::BinarySearch2(v11, (int *)&a4); /*0x52a39a*/
       if ( v12 ) /*0x52a39e*/
       {
-        v13 = *(char **)(v12 + 16); /*0x52a3a0*/
+        char * v13 = *(char **)(v12 + 16); /*0x52a3a0*/
         if ( *(float *)&v13 != 0.0 ) /*0x52a3a5*/
           Source = *(float *)&v13; /*0x52a3a7*/
       }
@@ -800,18 +772,8 @@ void InitGame()
   char v79; // [esp+4h] [ebp-2F3Ch]
   char v80; // [esp+8h] [ebp-2F38h]
   _DWORD v81[2]; // [esp+10h] [ebp-2F30h] BYREF
-  _BYTE v82[4]; // [esp+18h] [ebp-2F28h] BYREF
-  _BYTE v83[4]; // [esp+1Ch] [ebp-2F24h] BYREF
-  _BYTE v84[4]; // [esp+20h] [ebp-2F20h] BYREF
-  _BYTE v85[4]; // [esp+24h] [ebp-2F1Ch] BYREF
-  _BYTE v86[4]; // [esp+28h] [ebp-2F18h] BYREF
-  _BYTE v87[4]; // [esp+2Ch] [ebp-2F14h] BYREF
-  int v88; // [esp+30h] [ebp-2F10h] BYREF
-  _BYTE v89[4]; // [esp+34h] [ebp-2F0Ch] BYREF
   _DWORD v90[7]; // [esp+38h] [ebp-2F08h] BYREF
   MultiplayerGameMode aP1; // [esp+54h] [ebp-2EECh] BYREF
-  _BYTE v92[12]; // [esp+ACh] [ebp-2E94h] BYREF
-  int v93; // [esp+B8h] [ebp-2E88h]
   MultiplayerGameMode v94; // [esp+C0h] [ebp-2E80h] BYREF
   _BYTE v95[12]; // [esp+118h] [ebp-2E28h] BYREF
   int v96; // [esp+124h] [ebp-2E1Ch]
@@ -883,6 +845,7 @@ LABEL_3:
   {
     esi20 = &stru_87C374[22428][3 * (i % 256) + 18544];
     v9 = (ObjectClass *)Palette::SixBitTo16Bit(
+  _BYTE v89[4]; // [esp+34h] [ebp-2F0Ch] BYREF
                           v89,
                           4 * *esi20,
                           4 * stru_87C374[22428][3 * (i % 256) + 18545],
@@ -915,6 +878,7 @@ LABEL_3:
   {
     char * v19 = &stru_87C374[22428][3 * (k % 256) + 13936];
     v17 = (ObjectClass *)Palette::SixBitTo16Bit(
+  _BYTE v87[4]; // [esp+2Ch] [ebp-2F14h] BYREF
                            v87,
                            4 * *v19,
                            4 * stru_87C374[22428][3 * (k % 256) + 13937],
@@ -928,6 +892,7 @@ LABEL_3:
   char * v22 = &stru_B1D188[76273];
   do
   {
+  _BYTE v85[4]; // [esp+24h] [ebp-2F1Ch] BYREF
     v20 = (ObjectClass *)Palette::SixBitTo16Bit(v85, *(v22 - 1), *v22, v22[1]);
     ecx26 = &stru_87C374[22428][3 * (v21 % 256) + 19312];
     v22 += 3;
@@ -963,6 +928,7 @@ LABEL_3:
     v24 = (ConvertClass *)(3 * (m % 256));
     _BYTE * v30 = &a0[(_DWORD)v24];
     v26 = (ObjectClass *)Palette::SixBitTo16Bit(
+  _BYTE v82[4]; // [esp+18h] [ebp-2F28h] BYREF
                            v82,
                            4 * a0[(_DWORD)v24],
                            4 * a0[(_DWORD)v24 + 1],
@@ -989,6 +955,7 @@ LABEL_3:
     v29 = (ConvertClass *)(3 * (n % 256));
     _BYTE * v37 = &a0[(_DWORD)v29];
     v31 = (ObjectClass *)Palette::SixBitTo16Bit(
+  _BYTE v83[4]; // [esp+1Ch] [ebp-2F24h] BYREF
                            v83,
                            4 * a0[(_DWORD)v29],
                            4 * a0[(_DWORD)v29 + 1],
@@ -1015,6 +982,7 @@ LABEL_3:
     v34 = (ConvertClass *)(3 * (ii % 256));
     esi41 = &a0[(_DWORD)v34];
     v36 = (ObjectClass *)Palette::SixBitTo16Bit(
+  _BYTE v84[4]; // [esp+20h] [ebp-2F20h] BYREF
                            v84,
                            4 * a0[(_DWORD)v34],
                            4 * a0[(_DWORD)v34 + 1],
@@ -1041,6 +1009,7 @@ LABEL_3:
     v39 = (ConvertClass *)(3 * (jj % 256));
     _BYTE * v51 = &a0[(_DWORD)v39];
     v41 = (ObjectClass *)Palette::SixBitTo16Bit(
+  _BYTE v86[4]; // [esp+28h] [ebp-2F18h] BYREF
                            v86,
                            4 * a0[(_DWORD)v39],
                            4 * a0[(_DWORD)v39 + 1],
@@ -1067,6 +1036,7 @@ LABEL_3:
     v44 = (ConvertClass *)(3 * (kk % 256));
     GameDirectoryCD = &a0[(_DWORD)v44];
     v46 = (ObjectClass *)Palette::SixBitTo16Bit(
+  int v88; // [esp+30h] [ebp-2F10h] BYREF
                            &v88,
                            4 * a0[(_DWORD)v44],
                            4 * a0[(_DWORD)v44 + 1],
@@ -1259,7 +1229,8 @@ LABEL_89:
 LABEL_93:
     *(_DWORD *)aP1[0] = &vt_CCFileClass;
 LABEL_94:
-    v93 = 0;
+    int v93 = 0;
+  _BYTE v92[12]; // [esp+ACh] [ebp-2E94h] BYREF
     Vector::Clear((int)v92);
     BufferIOFileClass::Destruct(&aP1);
     return -1;
@@ -1441,7 +1412,6 @@ void InitRules()
   int v20; // [esp+24h] [ebp-2F8h]
   int v21; // [esp+28h] [ebp-2F4h]
   MultiplayerGameMode aP1[2]; // [esp+2Ch] [ebp-2F0h] BYREF
-  char v23; // [esp+6Ch] [ebp-2B0h]
   _BYTE v24[12]; // [esp+84h] [ebp-298h] BYREF
   int v25; // [esp+90h] [ebp-28Ch]
   MultiplayerGameMode v26; // [esp+98h] [ebp-284h] BYREF
@@ -1621,7 +1591,7 @@ LABEL_36:
   if ( CCFileClass::Open(&v29, 0) == 1 ) /*0x52d245*/
   {
     INIClass::INIClass(aP1); /*0x52d24f*/
-    v23 = 0; /*0x52d25b*/
+    char v23 = 0; /*0x52d25b*/
     *(_DWORD *)aP1[0].__pad_0 = &CCINIClass_Vtable; /*0x52d267*/
     if ( CCINIClass::Load(aP1, &v29, 1, 0) > 1 ) /*0x52d277*/
     {
@@ -2565,28 +2535,19 @@ char CommandLine_Parse(int a1, int a2)
 {
   char **v4; // esi
   char *v5; // esi
-  int v6; // eax
-  int v7; // edi
-  char *v8; // eax
-  int *v9; // eax
   __int16 v10; // ax
   unsigned __int16 v11; // ax
-  int v12; // eax
   char *v13; // esi
   char v14; // al
-  bool v15; // cc
   const wchar_t *v17; // eax
   const wchar_t *v18; // eax
   const wchar_t *v19; // eax
   const wchar_t *v20; // eax
   const wchar_t *v21; // eax
   const wchar_t *v22; // eax
-  char v23; // [esp+10h] [ebp-28h] BYREF
   int v24; // [esp+14h] [ebp-24h]
   char **v25; // [esp+18h] [ebp-20h]
-  _BYTE v26[4]; // [esp+1Ch] [ebp-1Ch] BYREF
   int v27; // [esp+20h] [ebp-18h]
-  int v28; // [esp+24h] [ebp-14h] BYREF
   __int16 v29; // [esp+28h] [ebp-10h]
 
   v27 = a1; /*0x52f630*/
@@ -2605,7 +2566,7 @@ char CommandLine_Parse(int a1, int a2)
     RestartNetworkSession(1); /*0x52f67f*/
 LABEL_64:
     v4 = v25 + 1; /*0x52fb17*/
-    v15 = ++v24 < v27; /*0x52fb27*/
+    bool v15 = ++v24 < v27; /*0x52fb27*/
     ++v25; /*0x52fb2d*/
     if ( !v15 ) /*0x52fb31*/
       return 1; /*0x52fb31*/
@@ -2655,7 +2616,7 @@ LABEL_64:
   }
   if ( Checksummer::HashString(v5) == -648255326 ) /*0x52f787*/
   {
-    v6 = g_IntroMovieObject; /*0x52f789*/
+    int v6 = g_IntroMovieObject; /*0x52f789*/
     LOBYTE(v6) = g_IntroMovieObject | 4; /*0x52f78e*/
     g_IntroMovieObject = v6; /*0x52f790*/
     goto LABEL_64; /*0x52f795*/
@@ -2668,12 +2629,14 @@ LABEL_64:
   }
   if ( strstr(v5, DataGlobal_82659C) ) /*0x52f7c6*/
   {
-    v7 = 0; /*0x52f7df*/
-    v8 = strtok(v5 + 8, stru_826598); /*0x52f7e1*/
+    int v7 = 0; /*0x52f7df*/
+    char * v8 = strtok(v5 + 8, stru_826598); /*0x52f7e1*/
     if ( v8 ) /*0x52f7eb*/
     {
+  _BYTE v26[4]; // [esp+1Ch] [ebp-1Ch] BYREF
       do /*0x52f82c*/
       {
+  char v23; // [esp+10h] [ebp-28h] BYREF
         sscanf(v8, DataGlobal_825BD4, &v23); /*0x52f7fc*/
         if ( v7 >= 4 ) /*0x52f807*/
           *((_BYTE *)&v27 + v7) = v23; /*0x52f817*/
@@ -2685,10 +2648,10 @@ LABEL_64:
       while ( v8 ); /*0x52f82c*/
       if ( v7 >= 4 ) /*0x52f831*/
       {
-        v28 = -1; /*0x52f83e*/
+        int v28 = -1; /*0x52f83e*/
         v29 = -1; /*0x52f847*/
         DataGlobal_A8D5FC = 1; /*0x52f852*/
-        v9 = (int *)NetworkAddress::Assign(v26, &v28, 0); /*0x52f85c*/
+        int * v9 = (int *)NetworkAddress::Assign(v26, &v28, 0); /*0x52f85c*/
         DataGlobal_A8D600 = *v9; /*0x52f863*/
         DataGlobal_A8D604 = v9[1]; /*0x52f86c*/
         DataGlobal_A8D608 = v9[2]; /*0x52f875*/
@@ -2735,7 +2698,7 @@ LABEL_64:
   }
   if ( strstr(v5, aAttract) ) /*0x52f9df*/
   {
-    v12 = g_NetworkEventPending; /*0x52f9eb*/
+    int v12 = g_NetworkEventPending; /*0x52f9eb*/
     LOBYTE(v12) = g_NetworkEventPending | 4; /*0x52f9f0*/
     g_NetworkEventPending = v12; /*0x52f9f2*/
     goto LABEL_64; /*0x52f9f7*/

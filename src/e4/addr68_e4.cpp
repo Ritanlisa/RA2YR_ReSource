@@ -551,15 +551,7 @@ void WaitForMultiplayerLoadSync()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v0; // ebx
-  int v1; // esi
-  int v2; // eax
-  double v3; // st7
-  char v5; // c0
-  int v6; // esi
-  int v7; // eax
   int i; // esi
-  char *v10; // edi
-  int v11; // edi
   double AverageProgress; // [esp+10h] [ebp-40h]
   DWORD v13; // [esp+20h] [ebp-30h]
   int v14; // [esp+28h] [ebp-28h]
@@ -585,17 +577,18 @@ void WaitForMultiplayerLoadSync()
       Debug::Log(); /*0x684524*/
       return 0; /*0x684535*/
     }
-    v1 = v14; /*0x684422*/
+    int v1 = v14; /*0x684422*/
     if ( v13 != -1 ) /*0x68442b*/
     {
-      v2 = Timer::GetTicks() - v13; /*0x684436*/
+      int v2 = Timer::GetTicks() - v13; /*0x684436*/
       if ( v2 >= v14 ) /*0x68443c*/
         break; /*0x68443c*/
       v1 = v14 - v2; /*0x684442*/
     }
     if ( v1 <= 0 ) /*0x684446*/
       break; /*0x684446*/
-    v3 = Progress::GetAverage((int)g_UIManager); /*0x684451*/
+    double v3 = Progress::GetAverage((int)g_UIManager); /*0x684451*/
+  char v5; // c0
     if ( !v5 )
     {
       Multiplayer::ShowProgress(g_GameMode_Current, *((_BYTE *)g_ScenarioClass_Instance + 13501) != 0 ? 200 : 100);
@@ -607,10 +600,10 @@ void WaitForMultiplayerLoadSync()
       v14 = 7200; /*0x684498*/
       AverageProgress = v3; /*0x6844a4*/
     }
-    v6 = v16; /*0x6844b0*/
+    int v6 = v16; /*0x6844b0*/
     if ( TicksTimer != -1 ) /*0x6844b6*/
     {
-      v7 = Timer::GetTicks() - TicksTimer; /*0x6844c1*/
+      int v7 = Timer::GetTicks() - TicksTimer; /*0x6844c1*/
       if ( v7 >= v16 ) /*0x6844c7*/
         goto LABEL_18; /*0x6844c7*/
       v6 = v16 - v7; /*0x6844c9*/
@@ -627,11 +620,11 @@ LABEL_18:
   {
     if ( Progress::GetWeighted((int)g_UIManager, v0) < 0.999 ) /*0x68455b*/
     {
-      v10 = *(char **)(Game_PlayerInfoArray + 4 * i); /*0x684562*/
+      char * v10 = *(char **)(Game_PlayerInfoArray + 4 * i); /*0x684562*/
       ToWideStringChar(v10); /*0x684567*/
       ToWideStringChar(v10); /*0x684570*/
       Debug::Log(); /*0x68457c*/
-      v11 = *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * i) + 111); /*0x684591*/
+      int v11 = *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * i) + 111); /*0x684591*/
       HandleNetworkPlayerDisconnect(v11, 1); /*0x684596*/
       if ( SessionClass::IsValidHouse((int)g_GameMode_Current, *(#375 **)&HouseClass_Array->__pad_0[4 * v11]) ) /*0x6845aa*/
       {
@@ -1137,16 +1130,11 @@ void SessionClass_AssignHouses()
   wchar_t *String; // eax
   int v22; // esi
   void *v23; // esi
-  int v24; // eax
   int v25; // esi
-  int v27; // [esp+8h] [ebp-4Ch]
-  void *v28; // [esp+Ch] [ebp-48h] BYREF
-  void *v29; // [esp+10h] [ebp-44h] BYREF
   int i; // [esp+14h] [ebp-40h]
   LPARAM v31; // [esp+18h] [ebp-3Ch]
   _DWORD v32[2]; // [esp+1Ch] [ebp-38h]
   char Destination[20]; // [esp+24h] [ebp-30h] BYREF
-  char v34; // [esp+38h] [ebp-1Ch]
   char v35[20]; // [esp+3Ch] [ebp-18h] BYREF
   char v36; // [esp+50h] [ebp-4h]
   int v0 = Game_PlayerCount; /*0x687f15*/
@@ -1166,7 +1154,7 @@ void SessionClass_AssignHouses()
     do /*0x688146*/
     {
       int v3 = -1; /*0x687f63*/
-      v27 = -1; /*0x687f66*/
+      int v27 = -1; /*0x687f66*/
       int v4 = 0; /*0x687f6e*/
       int v5 = Game_PlayerInfoArray; /*0x687f70*/
       do /*0x687f95*/
@@ -1189,7 +1177,10 @@ void SessionClass_AssignHouses()
         v8 = 0; /*0x687fcc*/
       if ( g_GameMode_Current[0] == 4 ) /*0x687fd5*/
       {
+  char v34; // [esp+38h] [ebp-1Ch]
+  void *v28; // [esp+Ch] [ebp-48h] BYREF
         WideString::Assign((wchar_t **)&v28, (wchar_t *)v6); /*0x687fdc*/
+  void *v29; // [esp+10h] [ebp-44h] BYREF
         ToWideStringCharAlt((char **)&v29, (const wchar_t **)&v28); /*0x687fe9*/
         DeleteAndZero::Alt(&v28); /*0x687ff2*/
         char * v9 = String::GetOrEmpty((char **)&v29); /*0x687ffb*/
@@ -1323,7 +1314,7 @@ void SessionClass_AssignHouses()
   v23 = __2_YAPAXI_Z(0x160B8u); /*0x68832f*/
   if ( v23 ) /*0x688336*/
   {
-    v24 = SuperWeaponTypeClass::FindByName(g_INI_Key_Special); /*0x68833d*/
+    int v24 = SuperWeaponTypeClass::FindByName(g_INI_Key_Special); /*0x68833d*/
     v25 = HouseClass::Construct((int)v23, *((_DWORD *)g_SuperWeaponTypeCount + v24)); /*0x688356*/
   }
   else
@@ -1364,13 +1355,9 @@ void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
   RadarClass *v34; // [esp+28h] [ebp-44h]
   IUnknown *v38; // [esp+38h] [ebp-34h]
   int v39; // [esp+3Ch] [ebp-30h] BYREF
-  int v40; // [esp+40h] [ebp-2Ch]
   IUnknown *v41; // [esp+44h] [ebp-28h]
   int v42; // [esp+48h] [ebp-24h] BYREF
   int v43; // [esp+4Ch] [ebp-20h]
-  int v44; // [esp+50h] [ebp-1Ch]
-  _DWORD v45[3]; // [esp+54h] [ebp-18h] BYREF
-  _DWORD v46[3]; // [esp+60h] [ebp-Ch] BYREF
 
   v3 = a2; /*0x688ed7*/
   v34 = a2; /*0x688ee3*/
@@ -1378,7 +1365,7 @@ void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
   if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (IUnknown *)a2, (TechnoClass *)1) ) /*0x688eeb*/
   {
     v39 = 0; /*0x688f07*/
-    v40 = 0; /*0x688f0b*/
+    int v40 = 0; /*0x688f0b*/
     _DWORD * v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)v3); /*0x688f0f*/
     ClosestObjectCell = Object::FindClosestObjectCell(v5, (IUnknown *)&v39, 0, 0); /*0x688f16*/
     if ( !ClosestObjectCell /*0x688f39*/
@@ -1388,7 +1375,7 @@ void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
       int v7 = SHIWORD(v3->field_0) << 8; /*0x688f4f*/
       v42 = (SLOWORD(v3->field_0) << 8) + 128; /*0x688f52*/
       v43 = v7 + 128; /*0x688f62*/
-      v44 = 0; /*0x688f66*/
+      int v44 = 0; /*0x688f66*/
       GroundHeight = (IUnknown *)Cell::GetGroundHeight(&v42); /*0x688f6a*/
       int v9 = SHIWORD(v3->field_0); /*0x688f72*/
       int v10 = (SLOWORD(v3->field_0) << 8) + 128; /*0x688f79*/
@@ -1529,8 +1516,10 @@ LABEL_8:
           || (*(int (__thiscall **)(int))(*(_DWORD *)v26 + 44))(v26) == 15
           && (*(int (__thiscall **)(int *))(*v24 + 44))(v24) == 15 )
         {
+  _DWORD v45[3]; // [esp+54h] [ebp-18h] BYREF
           Coord::Subtract(v45, (IUnknown *)(((__int16)v28 << 8) + 128), (IUnknown *)((SHIWORD(v28) << 8) + 128), 0); /*0x68923d*/
           v27 = (IUnknown *)Cell::GetGroundHeight(v45); /*0x68924c*/
+  _DWORD v46[3]; // [esp+60h] [ebp-Ch] BYREF
           Coord::Subtract(v46, (IUnknown *)(((__int16)v28 << 8) + 128), (IUnknown *)((SHIWORD(v28) << 8) + 128), v27); /*0x689274*/
           if ( (*(unsigned __int8 (__thiscall **)(int *, _DWORD *, _DWORD))(*v24 + 216))(v24, v46, 0) ) /*0x689283*/
             return 1; /*0x68928b*/

@@ -86,17 +86,10 @@ int BinkMovie::InitFromFile(LPCSTR * FullPath)
   int v9; // eax
   HANDLE FileA; // eax
   const char *Error; // eax
-  int v13; // eax
-  _DWORD *v14; // eax
   AbstractClass *v15; // ecx
   LONG v16; // edi
-  int v17; // ebx
   LONG v18; // edx
-  int v19; // ecx
-  int v20; // ecx
-  int v21; // eax
   LPCSTR *v22; // ecx
-  int v23; // edx
   LPCSTR v24; // eax
   LONG bottom; // edi
   LONG left; // eax
@@ -104,7 +97,6 @@ int BinkMovie::InitFromFile(LPCSTR * FullPath)
   LONG lDistanceToMove[5]; // [esp+10h] [ebp-68h] BYREF
   struct tagRECT Rect; // [esp+24h] [ebp-54h] BYREF
   LONG v30; // [esp+40h] [ebp-38h]
-  _BYTE v31[16]; // [esp+44h] [ebp-34h] BYREF
   _BYTE v32[36]; // [esp+54h] [ebp-24h] BYREF
 
   int v3 = 0; /*0x432759*/
@@ -159,24 +151,25 @@ LABEL_15:
   if ( this->BinkMovie_field_0x4 )
   {
     flt_89C490 = DataGlobal_A8EB9C; /*0x43287c*/
-    v13 = Math::RoundToInt(*(float *)&DataGlobal_A8EB9C * 32768.0); /*0x43288d*/
+    int v13 = Math::RoundToInt(*(float *)&DataGlobal_A8EB9C * 32768.0); /*0x43288d*/
     BinkSetVolume(this->BinkMovie_field_0x4, v13); /*0x432897*/
     this->q024 = 0x3C /*0x4328b5*/
                            / (unsigned int)(*(_DWORD *)(this->BinkMovie_field_0x4 + 20)
                                           / *(_DWORD *)(this->BinkMovie_field_0x4 + 24));
-    v14 = (_DWORD *)BinkMovie::CreateSurfaceTracker(v6); /*0x4328b8*/
+    _DWORD * v14 = (_DWORD *)BinkMovie::CreateSurfaceTracker(v6); /*0x4328b8*/
     v15 = this->q004; /*0x4328bd*/
     this->BinkMovie_field_0x20 = v14; /*0x4328c0*/
     v16 = 0; /*0x4328c3*/
-    v17 = *v15; /*0x4328c5*/
+    int v17 = *v15; /*0x4328c5*/
     v18 = v15[1]; /*0x4328c7*/
-    v19 = this->BinkMovie_field_0xC; /*0x4328ca*/
+    int v19 = this->BinkMovie_field_0xC; /*0x4328ca*/
     v30 = v18; /*0x4328cd*/
     if ( !v19 ) /*0x4328d3*/
     {
+  int v21; // eax
       if ( v14 && *v14 ) /*0x4328d9*/
       {
-        v20 = g_DSurface_Hidden; /*0x4328e3*/
+        int v20 = g_DSurface_Hidden; /*0x4328e3*/
         this->BinkMovie_field_0xC = g_DSurface_Hidden; /*0x4328e5*/
         v16 = ((*(int (__thiscall **)(int))(*(_DWORD *)v20 + 124))(v20) - v17) / 2; /*0x4328f9*/
         v21 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 128))(this->BinkMovie_field_0xC); /*0x4328fb*/
@@ -192,12 +185,13 @@ LABEL_15:
     }
     FullPath = (LPCSTR *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*this->q00C + 120))( /*0x43295e*/
                            this->BinkMovie_field_0xC,
+  _BYTE v31[16]; // [esp+44h] [ebp-34h] BYREF
                            v31);
     Rect::Set(0, 0, 0, 0); /*0x432965*/
     v22 = (LPCSTR *)v3; /*0x43296e*/
     Rect.bottom = v30; /*0x432974*/
     Rect.left = v16; /*0x432978*/
-    v23 = (int)FullPath[2]; /*0x43297c*/
+    int v23 = (int)FullPath[2]; /*0x43297c*/
     if ( v23 <= 0 ) /*0x432981*/
       goto LABEL_40; /*0x432981*/
     lDistanceToMove[0] = (LONG)FullPath[3]; /*0x43298c*/
@@ -746,7 +740,6 @@ int BinkMovie::WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
   int v88; // [esp+86h] [ebp-28h]
   int v89; // [esp+8Ah] [ebp-24h]
   struct tagRECT X; // [esp+8Eh] [ebp-20h] BYREF
-  _DWORD v91[4]; // [esp+9Eh] [ebp-10h] BYREF
 
   v4 = hWnd;
   _DWORD * v5 = 0;
@@ -1175,6 +1168,7 @@ LABEL_165:
               v81.top = v34;
               v36 = (struct tagRECT *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)DSurface_Alternate + 120))(
                                         DSurface_Alternate,
+  _DWORD v91[4]; // [esp+9Eh] [ebp-10h] BYREF
                                         v91);
               unsigned int v37 = v5[38];
               X = *v36;

@@ -614,30 +614,11 @@ void * Object::CalculateObjectPlacementPosition(int * a2)
   int *v5; // ecx
   int *v6; // eax
   int v7; // ecx
-  void *v8; // eax
-  int *v9; // eax
-  int v10; // edx
-  int v11; // eax
-  unsigned int v12; // esi
-  _DWORD *v13; // ebp
   _DWORD *NeighbourContentCell; // esi
-  int v15; // eax
-  bool v16; // bl
-  int v17; // eax
-  _DWORD *v18; // eax
-  int *v19; // eax
-  int v20; // ecx
-  void *v21; // eax
-  int *v22; // eax
-  int v23; // eax
-  int v24; // esi
-  int v25; // edi
-  int v26; // [esp+10h] [ebp-28h] BYREF
   int v27; // [esp+14h] [ebp-24h] BYREF
   int v28; // [esp+18h] [ebp-20h]
   int v29; // [esp+1Ch] [ebp-1Ch]
   _BYTE v30[12]; // [esp+20h] [ebp-18h] BYREF
-  int v31[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
   if ( !*(_DWORD *)(this + 40) ) /*0x62ac39*/
   {
@@ -652,17 +633,19 @@ LABEL_39:
   }
   if ( !(unsigned __int8)ParasiteClass::CanExistOnVictimCell(this) ) /*0x62ac5a*/
   {
-    v12 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)(*(_DWORD *)(this + 40) + 904), &v26) >> 12) + 1) >> 1) & 7; /*0x62ad3a*/
-    v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 40) + 444))(*(_DWORD *)(this + 40)); /*0x62ad43*/
+  int v26; // [esp+10h] [ebp-28h] BYREF
+    unsigned int v12 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)(*(_DWORD *)(this + 40) + 904), &v26) >> 12) + 1) >> 1) & 7; /*0x62ad3a*/
+    _DWORD * v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 40) + 444))(*(_DWORD *)(this + 40)); /*0x62ad43*/
     NeighbourContentCell = Cell::GetNeighbourContent(v13, v12); /*0x62ad50*/
     if ( !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q090 + 132))(this->q090) + 3278) ) /*0x62ad5a*/
     {
-      v15 = NeighbourContentCell[59]; /*0x62ad64*/
+      int v15 = NeighbourContentCell[59]; /*0x62ad64*/
       if ( v15 == 2 || v15 == 6 || v15 == 3 ) /*0x62ad77*/
       {
+  bool v16; // bl
         v16 = (*(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 40) + 444))(*(_DWORD *)(this + 40)) + 320) /*0x62ad90*/
              & 0x100) == 0;
-        v17 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 40) + 444))(*(_DWORD *)(this + 40)) + 68); /*0x62ad9d*/
+        int v17 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 40) + 444))(*(_DWORD *)(this + 40)) + 68); /*0x62ad9d*/
         if ( v17 >= 74 && v17 <= 99 ) /*0x62ada8*/
           v16 = 0; /*0x62adaa*/
         if ( (v17 < 205 || v17 > 230) && v16 ) /*0x62adbc*/
@@ -674,16 +657,17 @@ LABEL_39:
         }
       }
     }
-    v18 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*NeighbourContentCell + 72))(NeighbourContentCell, v30); /*0x62adde*/
-    v19 = ObjectPlacement::CalcPosition(NeighbourContentCell, v31, v18, 0, 0, 0); /*0x62ade9*/
+    _DWORD * v18 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*NeighbourContentCell + 72))(NeighbourContentCell, v30); /*0x62adde*/
+  int v31[3]; // [esp+2Ch] [ebp-Ch] BYREF
+    int * v19 = ObjectPlacement::CalcPosition(NeighbourContentCell, v31, v18, 0, 0, 0); /*0x62ade9*/
     v27 = *v19; /*0x62adf0*/
-    v20 = this->q090; /*0x62adf4*/
+    int v20 = this->q090; /*0x62adf4*/
     v28 = v19[1]; /*0x62adfa*/
     v29 = v19[2]; /*0x62ae03*/
     if ( v20 && (*(int (__thiscall **)(int))(*(_DWORD *)v20 + 44))(v20) == 1 ) /*0x62ae11*/
     {
-      v21 = Coord::To_Cell(&DataGlobal_87F7E8, &v27); /*0x62ae1d*/
-      v22 = (int *)(*(int (__thiscall **)(void *, int *))(*(_DWORD *)v21 + 72))(v21, v31); /*0x62ae2b*/
+      void * v21 = Coord::To_Cell(&DataGlobal_87F7E8, &v27); /*0x62ae1d*/
+      int * v22 = (int *)(*(int (__thiscall **)(void *, int *))(*(_DWORD *)v21 + 72))(v21, v31); /*0x62ae2b*/
       v27 = *v22; /*0x62ae30*/
       v28 = v22[1]; /*0x62ae37*/
       v29 = v22[2]; /*0x62ae3e*/
@@ -700,7 +684,7 @@ LABEL_39:
     }
     if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v27) + 80) & 0x100) != 0 ) /*0x62aea9*/
     {
-      v23 = (*(int (__thiscall **)(_DWORD *, int *))(*v13 + 72))(v13, v31); /*0x62aeb5*/
+      int v23 = (*(int (__thiscall **)(_DWORD *, int *))(*v13 + 72))(v13, v31); /*0x62aeb5*/
       if ( v29 >= *(_DWORD *)(v23 + 8) ) /*0x62aec1*/
       {
 LABEL_29:
@@ -716,8 +700,8 @@ LABEL_29:
     }
 LABEL_34:
     v4 = DataGlobal_AC4948; /*0x62aee3*/
-    v24 = v28; /*0x62aeed*/
-    v25 = v29; /*0x62aef1*/
+    int v24 = v28; /*0x62aeed*/
+    int v25 = v29; /*0x62aef1*/
     if ( v27 != DataGlobal_AC4948 || v28 != DataGlobal_AC494C || v29 != DataGlobal_AC4950 ) /*0x62af07*/
     {
       *a2 = v27; /*0x62af0f*/
@@ -738,12 +722,12 @@ LABEL_34:
   {
     if ( (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 44))(v7) == 1 ) /*0x62ac8b*/
     {
-      v8 = Coord::To_Cell(&DataGlobal_87F7E8, &v27); /*0x62ac97*/
-      v9 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v8 + 72))(v8, v30); /*0x62aca5*/
+      void * v8 = Coord::To_Cell(&DataGlobal_87F7E8, &v27); /*0x62ac97*/
+      int * v9 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v8 + 72))(v8, v30); /*0x62aca5*/
       v27 = *v9; /*0x62acaa*/
-      v10 = *(_DWORD *)(this + 40); /*0x62acae*/
+      int v10 = *(_DWORD *)(this + 40); /*0x62acae*/
       v28 = v9[1]; /*0x62acb4*/
-      v11 = v9[2]; /*0x62acb8*/
+      int v11 = v9[2]; /*0x62acb8*/
       v29 = v11; /*0x62acbb*/
       if ( *(_BYTE *)(v10 + 140) ) /*0x62acbf*/
         v29 = DataGlobal_AC497C + v11; /*0x62accf*/
@@ -770,7 +754,6 @@ void sub_639E30(int * a1, unsigned int * a2)
   int v9; // ebp
   int v10; // edi
   int v11; // eax
-  int v12; // esi
   int v13; // edi
   int v14; // eax
   int v15; // ecx
@@ -824,7 +807,7 @@ LABEL_20:
     goto LABEL_27; /*0x639ec0*/
   if ( v11 >= v10 ) /*0x639ec4*/
   {
-    v12 = a2[37]; /*0x639ec6*/
+    int v12 = a2[37]; /*0x639ec6*/
     if ( v12 >= 0 ) /*0x639ece*/
     {
       v11 = v12 + (v11 - v12) % a2[36]; /*0x639edd*/
@@ -906,17 +889,9 @@ void Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, 
 {
   MouseClass *v6; // esi
   int v9; // eax
-  int v10; // ebx
-  char v11; // dl
-  unsigned int v12; // ebx
-  unsigned int v13; // eax
-  int v14; // edx
-  unsigned int v15; // ecx
   int v17; // [esp+4h] [ebp-18h]
-  unsigned int v18; // [esp+8h] [ebp-14h]
   _WORD *v19; // [esp+Ch] [ebp-10h]
   MouseClass *v20; // [esp+10h] [ebp-Ch]
-  int v22; // [esp+18h] [ebp-4h]
   v17 = 0; /*0x7def10*/
   v6 = aP0; /*0x7def17*/
   v20 = aP0; /*0x7def1a*/
@@ -924,7 +899,7 @@ void Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, 
   v19 = a1; /*0x7def20*/
   do
   {
-    v22 = a5; /*0x7def26*/
+    int v22 = a5; /*0x7def26*/
   unsigned int v8; // ebx
     HIWORD(v8) = 0; /*0x7def2b*/
     do
@@ -934,16 +909,16 @@ void Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, 
       {
         LOWORD(v8) = *v7; /*0x7def33*/
         LOBYTE(v17) = v6->field_0; /*0x7def36*/
-        v18 = v8; /*0x7def39*/
-        v10 = (v8 >> 8) & 0xF8; /*0x7def45*/
-        v11 = v10; /*0x7def50*/
-        v12 = (unsigned int)(v17 * v10) >> 8; /*0x7def5c*/
-        v13 = (v17 * ((v18 >> 3) & 0xFC)) >> 8; /*0x7def5f*/
+        unsigned int v18 = v8; /*0x7def39*/
+        int v10 = (v8 >> 8) & 0xF8; /*0x7def45*/
+        char v11 = v10; /*0x7def50*/
+        unsigned int v12 = (unsigned int)(v17 * v10) >> 8; /*0x7def5c*/
+        unsigned int v13 = (v17 * ((v18 >> 3) & 0xFC)) >> 8; /*0x7def5f*/
         LOBYTE(v12) = !__CFADD__(v11, (_BYTE)v12) ? (unsigned __int8)(v11 + v12) : -1;
         LOBYTE(v13) = !__CFADD__((v18 >> 3) & 0xFC, (_BYTE)v13) ? (unsigned __int8)(((v18 >> 3) & 0xFC) + v13) : -1;
         v8 = v12 >> 3 << 11; /*0x7def7a*/
-        v14 = (unsigned __int8)(8 * v18); /*0x7def8e*/
-        v15 = (unsigned int)(v17 * v14) >> 8; /*0x7def94*/
+        int v14 = (unsigned __int8)(8 * v18); /*0x7def8e*/
+        unsigned int v15 = (unsigned int)(v17 * v14) >> 8; /*0x7def94*/
         LOBYTE(v15) = !__CFADD__((_BYTE)v14, (_BYTE)v15) ? (unsigned __int8)(v14 + v15) : -1;
         v9 = (v15 >> 3) | v8 | (32 * (v13 >> 2)); /*0x7defa3*/
         *v7 = v9; /*0x7defa5*/
@@ -973,17 +948,9 @@ void Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
 {
   MouseClass *v6; // esi
   int v9; // eax
-  int v10; // ebx
-  char v11; // dl
-  unsigned int v12; // ebx
-  unsigned int v13; // eax
-  int v14; // edx
-  unsigned int v15; // ecx
   int v17; // [esp+4h] [ebp-18h]
-  unsigned int v18; // [esp+8h] [ebp-14h]
   _WORD *v19; // [esp+Ch] [ebp-10h]
   MouseClass *v20; // [esp+10h] [ebp-Ch]
-  int v22; // [esp+18h] [ebp-4h]
   v17 = 0; /*0x7defed*/
   v6 = aP0; /*0x7deff4*/
   v20 = aP0; /*0x7deff7*/
@@ -991,7 +958,7 @@ void Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   v19 = a1; /*0x7deffd*/
   do
   {
-    v22 = a5; /*0x7df003*/
+    int v22 = a5; /*0x7df003*/
   unsigned int v8; // ebx
     HIWORD(v8) = 0; /*0x7df008*/
     do
@@ -1001,16 +968,16 @@ void Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
       {
         LOWORD(v8) = *v7; /*0x7df010*/
         LOBYTE(v17) = v6->field_0; /*0x7df013*/
-        v18 = v8; /*0x7df016*/
-        v10 = (v8 >> 8) & 0xFC; /*0x7df022*/
-        v11 = v10; /*0x7df02d*/
-        v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df039*/
-        v13 = (v17 * ((v18 >> 2) & 0xF8)) >> 8; /*0x7df03c*/
+        unsigned int v18 = v8; /*0x7df016*/
+        int v10 = (v8 >> 8) & 0xFC; /*0x7df022*/
+        char v11 = v10; /*0x7df02d*/
+        unsigned int v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df039*/
+        unsigned int v13 = (v17 * ((v18 >> 2) & 0xF8)) >> 8; /*0x7df03c*/
         LOBYTE(v12) = !__CFADD__(v11, (_BYTE)v12) ? (unsigned __int8)(v11 + v12) : -1;
         LOBYTE(v13) = !__CFADD__((v18 >> 2) & 0xF8, (_BYTE)v13) ? (unsigned __int8)(((v18 >> 2) & 0xF8) + v13) : -1;
         v8 = v12 >> 2 << 10; /*0x7df057*/
-        v14 = (unsigned __int8)(8 * v18); /*0x7df06b*/
-        v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df071*/
+        int v14 = (unsigned __int8)(8 * v18); /*0x7df06b*/
+        unsigned int v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df071*/
         LOBYTE(v15) = !__CFADD__((_BYTE)v14, (_BYTE)v15) ? (unsigned __int8)(v14 + v15) : -1;
         v9 = (v15 >> 3) | v8 | (32 * (v13 >> 3)); /*0x7df080*/
         *v7 = v9; /*0x7df082*/
@@ -1040,17 +1007,9 @@ void Object_Calc_7DF0B4(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
 {
   MouseClass *v6; // esi
   int v9; // eax
-  int v10; // ebx
-  char v11; // dl
-  unsigned int v12; // ebx
-  unsigned int v13; // eax
-  int v14; // edx
-  unsigned int v15; // ecx
   int v17; // [esp+4h] [ebp-18h]
-  unsigned int v18; // [esp+8h] [ebp-14h]
   _WORD *v19; // [esp+Ch] [ebp-10h]
   MouseClass *v20; // [esp+10h] [ebp-Ch]
-  int v22; // [esp+18h] [ebp-4h]
   v17 = 0; /*0x7df0ca*/
   v6 = aP0; /*0x7df0d1*/
   v20 = aP0; /*0x7df0d4*/
@@ -1058,7 +1017,7 @@ void Object_Calc_7DF0B4(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   v19 = a1; /*0x7df0da*/
   do
   {
-    v22 = a5; /*0x7df0e0*/
+    int v22 = a5; /*0x7df0e0*/
   unsigned int v8; // ebx
     HIWORD(v8) = 0; /*0x7df0e5*/
     do
@@ -1068,16 +1027,16 @@ void Object_Calc_7DF0B4(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
       {
         LOWORD(v8) = *v7; /*0x7df0ed*/
         LOBYTE(v17) = v6->field_0; /*0x7df0f0*/
-        v18 = v8; /*0x7df0f3*/
-        v10 = (v8 >> 8) & 0xF8; /*0x7df0ff*/
-        v11 = v10; /*0x7df10a*/
-        v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df116*/
-        v13 = (v17 * ((v18 >> 3) & 0xF8)) >> 8; /*0x7df119*/
+        unsigned int v18 = v8; /*0x7df0f3*/
+        int v10 = (v8 >> 8) & 0xF8; /*0x7df0ff*/
+        char v11 = v10; /*0x7df10a*/
+        unsigned int v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df116*/
+        unsigned int v13 = (v17 * ((v18 >> 3) & 0xF8)) >> 8; /*0x7df119*/
         LOBYTE(v12) = !__CFADD__(v11, (_BYTE)v12) ? (unsigned __int8)(v11 + v12) : -1;
         LOBYTE(v13) = !__CFADD__((v18 >> 3) & 0xF8, (_BYTE)v13) ? (unsigned __int8)(((v18 >> 3) & 0xF8) + v13) : -1;
         v8 = v12 >> 3 << 11; /*0x7df134*/
-        v14 = (unsigned __int8)(4 * v18); /*0x7df148*/
-        v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df14e*/
+        int v14 = (unsigned __int8)(4 * v18); /*0x7df148*/
+        unsigned int v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df14e*/
         LOBYTE(v15) = !__CFADD__((_BYTE)v14, (_BYTE)v15) ? (unsigned __int8)(v14 + v15) : -1;
         v9 = (v15 >> 2) | v8 | (v13 >> 3 << 6); /*0x7df15d*/
         *v7 = v9; /*0x7df15f*/
@@ -1107,17 +1066,9 @@ void Object_Calc_7DF191(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
 {
   MouseClass *v6; // esi
   int v9; // eax
-  int v10; // ebx
-  char v11; // dl
-  unsigned int v12; // ebx
-  unsigned int v13; // eax
-  int v14; // edx
-  unsigned int v15; // ecx
   int v17; // [esp+4h] [ebp-18h]
-  unsigned int v18; // [esp+8h] [ebp-14h]
   _WORD *v19; // [esp+Ch] [ebp-10h]
   MouseClass *v20; // [esp+10h] [ebp-Ch]
-  int v22; // [esp+18h] [ebp-4h]
   v17 = 0; /*0x7df1a7*/
   v6 = aP0; /*0x7df1ae*/
   v20 = aP0; /*0x7df1b1*/
@@ -1125,7 +1076,7 @@ void Object_Calc_7DF191(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   v19 = a1; /*0x7df1b7*/
   do
   {
-    v22 = a5; /*0x7df1bd*/
+    int v22 = a5; /*0x7df1bd*/
   unsigned int v8; // ebx
     HIWORD(v8) = 0; /*0x7df1c2*/
     do
@@ -1135,16 +1086,16 @@ void Object_Calc_7DF191(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
       {
         LOWORD(v8) = *v7; /*0x7df1ca*/
         LOBYTE(v17) = v6->field_0; /*0x7df1cd*/
-        v18 = v8; /*0x7df1d0*/
-        v10 = (v8 >> 7) & 0xF8; /*0x7df1dc*/
-        v11 = v10; /*0x7df1e7*/
-        v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df1f3*/
-        v13 = (v17 * ((v18 >> 2) & 0xF8)) >> 8; /*0x7df1f6*/
+        unsigned int v18 = v8; /*0x7df1d0*/
+        int v10 = (v8 >> 7) & 0xF8; /*0x7df1dc*/
+        char v11 = v10; /*0x7df1e7*/
+        unsigned int v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df1f3*/
+        unsigned int v13 = (v17 * ((v18 >> 2) & 0xF8)) >> 8; /*0x7df1f6*/
         LOBYTE(v12) = !__CFADD__(v11, (_BYTE)v12) ? (unsigned __int8)(v11 + v12) : -1;
         LOBYTE(v13) = !__CFADD__((v18 >> 2) & 0xF8, (_BYTE)v13) ? (unsigned __int8)(((v18 >> 2) & 0xF8) + v13) : -1;
         v8 = v12 >> 3 << 10; /*0x7df211*/
-        v14 = (unsigned __int8)(8 * v18); /*0x7df225*/
-        v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df22b*/
+        int v14 = (unsigned __int8)(8 * v18); /*0x7df225*/
+        unsigned int v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df22b*/
         LOBYTE(v15) = !__CFADD__((_BYTE)v14, (_BYTE)v15) ? (unsigned __int8)(v14 + v15) : -1;
         v9 = (v15 >> 3) | v8 | (32 * (v13 >> 3)); /*0x7df23a*/
         *v7 = v9; /*0x7df23c*/
@@ -1180,7 +1131,6 @@ void Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a
   __m64 v16; // [esp+Ch] [ebp-1Ch]
   _BYTE *v17; // [esp+18h] [ebp-10h]
   MouseClass *v18; // [esp+1Ch] [ebp-Ch]
-  int v20; // [esp+24h] [ebp-4h]
   v16.m64_u64 = 0; /*0x7df296*/
   v8 = aP0; /*0x7df2b2*/
   v18 = aP0; /*0x7df2b5*/
@@ -1189,7 +1139,7 @@ void Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a
 LABEL_2:
   while ( 2 ) /*0x7df2c1*/
   {
-    v20 = a5; /*0x7df2c1*/
+    int v20 = a5; /*0x7df2c1*/
   int v11; // ebx
     HIWORD(v11) = 0; /*0x7df2c9*/
     do /*0x7df39c*/
@@ -1256,7 +1206,6 @@ void Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a
   __m64 v16; // [esp+Ch] [ebp-1Ch]
   _BYTE *v17; // [esp+18h] [ebp-10h]
   MouseClass *v18; // [esp+1Ch] [ebp-Ch]
-  int v20; // [esp+24h] [ebp-4h]
   v16.m64_u64 = 0; /*0x7df3d8*/
   v8 = aP0; /*0x7df3f4*/
   v18 = aP0; /*0x7df3f7*/
@@ -1265,7 +1214,7 @@ void Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a
 LABEL_2:
   while ( 2 ) /*0x7df403*/
   {
-    v20 = a5; /*0x7df403*/
+    int v20 = a5; /*0x7df403*/
   int v11; // ebx
     HIWORD(v11) = 0; /*0x7df40b*/
     do /*0x7df4da*/
@@ -1332,7 +1281,6 @@ void Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a
   __m64 v16; // [esp+Ch] [ebp-1Ch]
   _BYTE *v17; // [esp+18h] [ebp-10h]
   MouseClass *v18; // [esp+1Ch] [ebp-Ch]
-  int v20; // [esp+24h] [ebp-4h]
   v16.m64_u64 = 0; /*0x7df516*/
   v8 = aP0; /*0x7df532*/
   v18 = aP0; /*0x7df535*/
@@ -1341,7 +1289,7 @@ void Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a
 LABEL_2:
   while ( 2 ) /*0x7df541*/
   {
-    v20 = a5; /*0x7df541*/
+    int v20 = a5; /*0x7df541*/
   int v11; // ebx
     HIWORD(v11) = 0; /*0x7df549*/
     do /*0x7df61a*/
@@ -1408,7 +1356,6 @@ void Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a
   __m64 v16; // [esp+Ch] [ebp-1Ch]
   _BYTE *v17; // [esp+18h] [ebp-10h]
   MouseClass *v18; // [esp+1Ch] [ebp-Ch]
-  int v20; // [esp+24h] [ebp-4h]
   v16.m64_u64 = 0; /*0x7df656*/
   v8 = aP0; /*0x7df672*/
   v18 = aP0; /*0x7df675*/
@@ -1417,7 +1364,7 @@ void Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a
 LABEL_2:
   while ( 2 ) /*0x7df681*/
   {
-    v20 = a5; /*0x7df681*/
+    int v20 = a5; /*0x7df681*/
   int v11; // ebx
     HIWORD(v11) = 0; /*0x7df689*/
     do /*0x7df75b*/

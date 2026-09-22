@@ -145,22 +145,13 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   int v95; // [esp+2Ch] [ebp-5Ch] BYREF
   int v96; // [esp+30h] [ebp-58h] BYREF
   int v97; // [esp+34h] [ebp-54h] BYREF
-  _DWORD v98[2]; // [esp+38h] [ebp-50h] BYREF
   int v99; // [esp+40h] [ebp-48h] BYREF
   int v100; // [esp+44h] [ebp-44h]
-  int v101; // [esp+48h] [ebp-40h]
   int v102; // [esp+4Ch] [ebp-3Ch] BYREF
   int v103; // [esp+50h] [ebp-38h]
   int v104; // [esp+54h] [ebp-34h]
-  int v105; // [esp+58h] [ebp-30h] BYREF
-  int v106; // [esp+5Ch] [ebp-2Ch]
-  int v107; // [esp+60h] [ebp-28h]
   int v108; // [esp+64h] [ebp-24h] BYREF
-  int v109; // [esp+68h] [ebp-20h]
   int v110; // [esp+6Ch] [ebp-1Ch]
-  char v111[12]; // [esp+70h] [ebp-18h] BYREF
-  int v112; // [esp+7Ch] [ebp-Ch] BYREF
-  int v113; // [esp+80h] [ebp-8h]
   _DWORD * v3 = this + 9;
   if ( this->q024 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
   {
@@ -209,7 +200,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
       _DWORD * v8 = (_DWORD *)this->m_State;
       v99 = v8[39];
       v100 = v8[40];
-      v101 = v8[41];
+      int v101 = v8[41];
       (*(void (__thiscall **)(_DWORD *, int *))(*v8 + 244))(v8, &v99);
       v97 = *((_DWORD *)g_PathClass_State + v95);
       v96 = *(_DWORD *)(v97 + 40);
@@ -345,6 +336,8 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
           1);
   switch ( v96 )
   {
+  int v113; // [esp+80h] [ebp-8h]
+  int v109; // [esp+68h] [ebp-20h]
     case 0:
       (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)this->m_State + 396))(this->m_State, 2);
       _BYTE * v65 = (_BYTE *)this->m_State;
@@ -514,6 +507,7 @@ LABEL_97:
         v96 = result;
         return result;
       }
+  _DWORD v98[2]; // [esp+38h] [ebp-50h] BYREF
       v98[0] = 0;
       v98[1] = 0;
       _DWORD * v69 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v95);
@@ -548,11 +542,13 @@ LABEL_97:
     case 6:
       if ( !a2 )
       {
+  char v111[12]; // [esp+70h] [ebp-18h] BYREF
         _DWORD * v56 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->m_State + 72))(this->m_State, v111);
+  int v112; // [esp+7Ch] [ebp-Ch] BYREF
         int * v57 = Coord::Subtract(&v112, *v56 - this->MovementAI_field_18, v56[1] - this->q01C, v56[2] - this->q008);
-        v105 = *v57;
-        v106 = v57[1];
-        v107 = v57[2];
+        int v105 = *v57;
+        int v106 = v57[1];
+        int v107 = v57[2];
         if ( (int)Coord::Length(&v105) < *((_DWORD *)g_RulesClass_Instance + 1478) )
         {
           int * v58 = (int *)(this->m_State + 156);
@@ -1993,7 +1989,6 @@ namespace gamemd { int MovementAI::StepFootClass(int a1) {
   BuildingTypeClass *v63; // [esp+4Ch] [ebp-1Ch]
   int aP0; // [esp+50h] [ebp-18h] BYREF
   IUnknown *v65; // [esp+54h] [ebp-14h]
-  int v66; // [esp+58h] [ebp-10h]
   _DWORD v67[3]; // [esp+5Ch] [ebp-Ch] BYREF
 
   MovementAI::MarkOccupiedPathCell(this); /*0x5164d9*/
@@ -2098,7 +2093,7 @@ LABEL_19:
         int v39 = edx47[2]; /*0x5169ed*/
         v65 = (IUnknown *)((SHIWORD(aP1) << 8) + 128); /*0x5169fd*/
         aP0 = ((__int16)aP1 << 8) + 128; /*0x516a13*/
-        v66 = 0; /*0x516a17*/
+        int v66 = 0; /*0x516a17*/
         v61 = 0; /*0x516a1b*/
         v62 = 0; /*0x516a1f*/
         LOBYTE(v40) = v39 > 3 * *(_DWORD *)&HouseClass_Player[46196] /*0x516a3a*/

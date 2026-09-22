@@ -453,10 +453,6 @@ int IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceCla
 {
   UDPInterfaceClass *v5; // ebx
   int v10; // eax
-  int v11; // ecx
-  int v12; // eax
-  int v13; // eax
-  int v14; // edx
   UINT v15; // eax
   v5 = (UDPInterfaceClass *)AudioQueue::AllocBuffer((_DWORD *)this, (WinsockInterfaceClass *)aP3); /*0x7b24f4*/
   qmemcpy(&v5[4], a1, a3); /*0x7b2505*/
@@ -481,14 +477,15 @@ int IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceCla
   }
   else
   {
-    v11 = *(_DWORD *)(this + 40); /*0x7b256b*/
+    int v11 = *(_DWORD *)(this + 40); /*0x7b256b*/
     if ( this->LocalNode < v11 /*0x7b2593*/
       || (this->q02D || !v11)
+  int v12; // eax
       && (v12 = this->IsAllocated, v12 > 0)
       && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->LocalNetwork + 8))(this + 32, v11 + v12, 0) )
     {
-      v13 = this->LocalNode; /*0x7b259a*/
-      v14 = *(_DWORD *)(this + 36); /*0x7b259d*/
+      int v13 = this->LocalNode; /*0x7b259a*/
+      int v14 = *(_DWORD *)(this + 36); /*0x7b259d*/
       this->LocalNode = v13 + 1; /*0x7b25a3*/
       *(_DWORD *)(v14 + 4 * v13) = v5; /*0x7b25a6*/
     }

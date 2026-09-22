@@ -24,9 +24,9 @@ int sub_491100(ObjectClass * aP0, char a2, int a3, ObjectClass * aP3, short a5, 
     v20 = v8;
     result = 0;
     v11 = v7;
-    for ( i = 0; (int)result < *(int *)&DataGlobal_89E138.__pad_BC0[16]; i = result )
+    for ( i = 0; (int)result < *(int *)&DataGlobal_89E138[3024]; i = result )
   {
-    v12 = *(int **)(*(int *)&DataGlobal_89E138.__pad_BC0[4] + 4 * (int)result);
+    v12 = *(int **)(*(int *)&DataGlobal_89E138[3012] + 4 * (int)result);
     v21 = (int)v12;
     if ( v12[1] == 2 )
     {
@@ -39,18 +39,18 @@ int sub_491100(ObjectClass * aP0, char a2, int a3, ObjectClass * aP3, short a5, 
     HIWORD(v16) = HIWORD(v9);
     v17 = *v13++ >> v11;
     v18 = (unsigned char)((unsigned short)v9 >> a2) << (char)aP0;
-    LOWORD(v9) = (unsigned char)((unsigned char)((unsigned char)((unsigned short)v9 >> (char)aP3) << a3) >> DataGlobal_89E138.__pad_14B0[6132]);
-    LOWORD(v15) = (unsigned char)((unsigned char)((char)v17 << v20) >> DataGlobal_89E138.__pad_14B0[6124]);
-    LOWORD(v16) = (unsigned char)(v18 >> DataGlobal_89E138.__pad_14B0[6140]);
-    v9 = (v16 << DataGlobal_89E138.__pad_14B0[6136])
-    | (v15 << DataGlobal_89E138.__pad_14B0[6120])
-    | (v9 << DataGlobal_89E138.__pad_14B0[6128]);
+    LOWORD(v9) = (unsigned char)((unsigned char)((unsigned char)((unsigned short)v9 >> (char)aP3) << a3) >> DataGlobal_89E138[11428]);
+    LOWORD(v15) = (unsigned char)((unsigned char)((char)v17 << v20) >> DataGlobal_89E138[11420]);
+    LOWORD(v16) = (unsigned char)(v18 >> DataGlobal_89E138[11436]);
+    v9 = (v16 << DataGlobal_89E138[11432])
+    | (v15 << DataGlobal_89E138[11416])
+    | (v9 << DataGlobal_89E138[11424]);
     --v14;
     *(v13 - 1) = v9;
       }
     while ( v14 );
-    v12[96] = *(unsigned short *)&DataGlobal_89E138.__pad_14B0[6144];
-    v12[97] = *(unsigned short *)&DataGlobal_89E138.__pad_14B0[6146];
+    v12[96] = *(unsigned short *)&DataGlobal_89E138[11440];
+    v12[97] = *(unsigned short *)&DataGlobal_89E138[11442];
     COMClass::RegisterAll(v12);
     ConvertClass::InitTables(v21);
     result = i;
@@ -917,14 +917,14 @@ unsigned short * E4Recv_492A10::sub_492A10(unsigned short * a1, unsigned char * 
     if ( a4 > 0 )
   {
     v12 = a4;
-    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     do
     {
     v14 = *result++;
     if ( argC < v14 )
       {
     *a1 = *(short *)(this->M4 + 2 * *a2);
-    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++a2;
     ++a1;
@@ -1032,7 +1032,7 @@ unsigned short * E4Recv_492C00::sub_492C00(unsigned short * a1, unsigned char * 
     v15 = **((int **)(this) + 1);
     if ( a4 > 0 )
   {
-    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     a5a = (unsigned short *)a4;
     do
     {
@@ -1040,7 +1040,7 @@ unsigned short * E4Recv_492C00::sub_492C00(unsigned short * a1, unsigned char * 
     if ( argC < v14 && *a2 )
       {
     *a1 = *(short *)(this->M8 + 2 * *(unsigned char *)((unsigned char)*a2 + v15));
-    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++a2;
     ++a1;
@@ -1089,7 +1089,7 @@ unsigned short * E4Recv_492D20::sub_492D20(unsigned short * a1, unsigned char * 
     result = a5;
     if ( a4 > 0 )
   {
-    v10 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v10 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     v12 = a4;
     do
     {
@@ -1097,7 +1097,7 @@ unsigned short * E4Recv_492D20::sub_492D20(unsigned short * a1, unsigned char * 
     if ( argC < v14 && *a2 )
       {
     *a1 = (unsigned short)this->M1 & (*a1 >> 1);
-    v10 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v10 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++a2;
     ++a1;
@@ -1146,7 +1146,7 @@ int E4Recv_492E10::sub_492E10(unsigned short * a1, unsigned char * a2, int a4, i
     result = a4;
     if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     a5a = (unsigned short *)a4;
     do
     {
@@ -1155,7 +1155,7 @@ int E4Recv_492E10::sub_492E10(unsigned short * a1, unsigned char * a2, int a4, i
       {
     *a1 = 3 * ((unsigned short)this->M2 & (*a1 >> 2))
     + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++a2;
     ++a1;
@@ -1205,7 +1205,7 @@ unsigned short * E4Recv_492F30::sub_492F30(unsigned short * a1, unsigned char * 
     result = a5;
     if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     a5a = (unsigned short *)a4;
     do
     {
@@ -1214,7 +1214,7 @@ unsigned short * E4Recv_492F30::sub_492F30(unsigned short * a1, unsigned char * 
       {
     *a1 = ((unsigned short)this->M2 & (*a1 >> 1))
     + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 1));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++a2;
     ++a1;
@@ -1263,7 +1263,7 @@ int E4Recv_493050::sub_493050(unsigned short * a1, unsigned char * a2, int a4, i
     result = a4;
     if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     a5a = (unsigned short *)a4;
     do
     {
@@ -1272,7 +1272,7 @@ int E4Recv_493050::sub_493050(unsigned short * a1, unsigned char * a2, int a4, i
       {
     *a1 = ((unsigned short)this->M2 & (*a1 >> 2))
     + 3 * ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++a2;
     ++a1;
@@ -1322,7 +1322,7 @@ int E4Recv_493170::sub_493170(unsigned short * a1, unsigned char * a2, int a4, i
     result = a4;
     if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     a5a = (unsigned short *)a4;
     do
     {
@@ -1331,7 +1331,7 @@ int E4Recv_493170::sub_493170(unsigned short * a1, unsigned char * a2, int a4, i
       {
     *a1 = 3 * ((unsigned short)this->M2 & (a1[a9] >> 2))
     + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++a2;
     ++a1;
@@ -1381,7 +1381,7 @@ unsigned short * E4Recv_4932A0::sub_4932A0(unsigned short * a1, unsigned char * 
     result = a5;
     if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     a5a = (unsigned short *)a4;
     do
     {
@@ -1390,7 +1390,7 @@ unsigned short * E4Recv_4932A0::sub_4932A0(unsigned short * a1, unsigned char * 
       {
     *a1 = ((unsigned short)this->M2 & (a1[a9] >> 1))
     + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 1));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++a2;
     ++a1;
@@ -1439,7 +1439,7 @@ int E4Recv_4933D0::sub_4933D0(unsigned short * a1, unsigned char * a2, int a4, i
     result = a4;
     if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     a5a = (unsigned short *)a4;
     do
     {
@@ -1448,7 +1448,7 @@ int E4Recv_4933D0::sub_4933D0(unsigned short * a1, unsigned char * a2, int a4, i
       {
     *a1 = ((unsigned short)this->M2 & (a1[a9] >> 2))
     + 3 * ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++a2;
     ++a1;
@@ -1497,7 +1497,7 @@ unsigned short * E4Recv_493500::sub_493500(unsigned short * a1, unsigned char * 
     result = a5;
     if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     a5a = (short *)a4;
     do
     {
@@ -1505,7 +1505,7 @@ unsigned short * E4Recv_493500::sub_493500(unsigned short * a1, unsigned char * 
       {
     *a1 = *(short *)(this->M4 + 2 * *a2);
     *result = (unsigned char)argC;
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++result;
     ++a2;
@@ -1613,7 +1613,7 @@ unsigned short * E4Recv_493710::sub_493710(unsigned short * a1, unsigned char * 
     v10 = **((int **)(this) + 1);
     if ( a4 > 0 )
   {
-    v11 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v11 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     a5a = (short *)a4;
     do
     {
@@ -1621,7 +1621,7 @@ unsigned short * E4Recv_493710::sub_493710(unsigned short * a1, unsigned char * 
       {
     *a1 = *(short *)(this->M8 + 2 * *(unsigned char *)((unsigned char)*a2 + v10));
     *result = argC;
-    v11 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v11 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++result;
     ++a2;
@@ -1670,7 +1670,7 @@ unsigned short * E4Recv_493830::sub_493830(unsigned short * a1, unsigned char * 
     result = a5;
     if ( a4 > 0 )
   {
-    v10 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v10 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
     a5a = (short *)a4;
     do
     {
@@ -1678,7 +1678,7 @@ unsigned short * E4Recv_493830::sub_493830(unsigned short * a1, unsigned char * 
       {
     *a1 = (unsigned short)this->M1 & (*a1 >> 1);
     *result = argC;
-    v10 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    v10 = *(TacticalMap **)&DataGlobal_87F8E4[32096];
       }
     ++result;
     ++a2;
@@ -1840,8 +1840,8 @@ int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTr
     v18 = (RLEBlitTransDarkenZRead_G *)((char *)aP3 - v17);
     v14 = &a1[v17];
     result = a7 + 2 * v17;
-    if ( (unsigned int)result >= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 28) )
-    result -= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 32);
+    if ( (unsigned int)result >= *(int *)(*(int *)&DataGlobal_87C374[45776] + 28) )
+    result -= *(int *)(*(int *)&DataGlobal_87C374[45776] + 32);
     v12 = result;
   }
     while ( (int)v18 > 0 )
@@ -1863,9 +1863,9 @@ int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTr
     v14 += v20;
     v12 += 2 * v20;
     }
-    result = *(int *)&DataGlobal_87C374.__pad_579C[23348];
-    if ( v12 >= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 28) )
-    v12 -= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 32);
+    result = *(int *)&DataGlobal_87C374[45776];
+    if ( v12 >= *(int *)(*(int *)&DataGlobal_87C374[45776] + 28) )
+    v12 -= *(int *)(*(int *)&DataGlobal_87C374[45776] + 32);
   }
     return result;
 }
@@ -2663,7 +2663,7 @@ int SideClass::FindByName()
 {
     int v3;
     int v4;
-    if ( !_strcmpi(this, &g_INI_Key_Digest.__pad_20[8]) )
+    if ( !_strcmpi(this, &g_INI_Key_Digest[40]) )
     return -2;
     if ( !this )
     return -1;
@@ -2976,7 +2976,7 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
     IUnknown *aP2a;
     v18 = a0;
     LOWORD(a0[0]) = 0;
-    v5 = Random::State((int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536));
+    v5 = Random::State((int *)(*(int *)&HouseClass_Player[29924] + 536));
     LOBYTE(v6) = 0;
     HIBYTE(v6) = v5;
     v7 = (IUnknown *)aP1->field_8;
@@ -3022,9 +3022,9 @@ IUnknown * globalHelper_09F550(int * a1, IUnknown * a2, int a3)
     int v9;
     int v10;
     IUnknown *v11;
-    v4 = *(int *)&DataGlobal_89E138.__pad_14B0[8 * a3 + 240] + a2->field_0;
+    v4 = *(int *)&DataGlobal_89E138[5296][8 * a3 + 240] + a2->field_0;
     v5 = (IUnknown *)a2->field_8;
-    v10 = a2->field_4 + *(int *)&DataGlobal_89E138.__pad_14B0[8 * a3 + 244];
+    v10 = a2->field_4 + *(int *)&DataGlobal_89E138[5296][8 * a3 + 244];
     v9 = v4;
     v11 = v5;
     v6 = (char *)v5 - Cell::GetGroundHeight(a2);

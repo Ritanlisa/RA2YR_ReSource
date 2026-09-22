@@ -779,13 +779,9 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3(int
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
-  void *v5; // eax
-  int *v6; // edx
   bool v7; // zf
   int v8; // esi
   int v9; // eax
-  void *v10; // eax
-  int *v11; // edx
   int v13; // [esp+8h] [ebp-20h] BYREF
   int v14; // [esp+Ch] [ebp-1Ch] BYREF
   int v15; // [esp+10h] [ebp-18h]
@@ -807,8 +803,8 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3(int
   }
   else
   {
-    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v13); /*0x4f6c2f*/
-    v6 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v5 + 72))(v5, v18); /*0x4f6c40*/
+    void * v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v13); /*0x4f6c2f*/
+    int * v6 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v5 + 72))(v5, v18); /*0x4f6c40*/
     v4 = *v6; /*0x4f6c49*/
     v16 = v6[1]; /*0x4f6c4e*/
     v17 = v6[2]; /*0x4f6c5b*/
@@ -828,8 +824,8 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3(int
   }
   else
   {
-    v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v14); /*0x4f6cc4*/
-    v11 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v10 + 72))(v10, v18); /*0x4f6cd5*/
+    void * v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v14); /*0x4f6cc4*/
+    int * v11 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v10 + 72))(v10, v18); /*0x4f6cd5*/
     v15 = *v11; /*0x4f6cd9*/
     v9 = v11[1]; /*0x4f6cdd*/
   }
@@ -847,13 +843,9 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4(int
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
-  void *v5; // eax
-  int *v6; // edx
   bool v7; // zf
   int v8; // esi
   int v9; // eax
-  void *v10; // eax
-  int *v11; // edx
   int v13; // [esp+8h] [ebp-20h] BYREF
   int v14; // [esp+Ch] [ebp-1Ch] BYREF
   int v15; // [esp+10h] [ebp-18h]
@@ -875,8 +867,8 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4(int
   }
   else
   {
-    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v13); /*0x4f6d7f*/
-    v6 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v5 + 72))(v5, v18); /*0x4f6d90*/
+    void * v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v13); /*0x4f6d7f*/
+    int * v6 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v5 + 72))(v5, v18); /*0x4f6d90*/
     v4 = *v6; /*0x4f6d99*/
     v16 = v6[1]; /*0x4f6d9e*/
     v17 = v6[2]; /*0x4f6dab*/
@@ -896,8 +888,8 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4(int
   }
   else
   {
-    v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v14); /*0x4f6e14*/
-    v11 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v10 + 72))(v10, v18); /*0x4f6e25*/
+    void * v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v14); /*0x4f6e14*/
+    int * v11 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v10 + 72))(v10, v18); /*0x4f6e25*/
     v15 = *v11; /*0x4f6e29*/
     v9 = v11[1]; /*0x4f6e2d*/
   }
@@ -1278,12 +1270,9 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v6; // esi
-  int v7; // ebx
   _DWORD *v8; // ebx
-  int v9; // ebx
   int i; // esi
   void (__thiscall ***v12)(_DWORD, int); // ecx
-  _DWORD *v13; // [esp+10h] [ebp-4h]
   int v3 = a2; /*0x76b8c3*/
   if ( !a2 ) /*0x76b8cd*/
   {
@@ -1297,7 +1286,7 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
     v6 = a3 + 1; /*0x76b925*/
     if ( a2 - 1 >= 0 ) /*0x76b931*/
     {
-      v9 = a2; /*0x76b933*/
+      int v9 = a2; /*0x76b933*/
       do /*0x76b947*/
       {
         ComPtr::Constructor(v6); /*0x76b938*/
@@ -1319,10 +1308,10 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
     }
     *v5 = a2; /*0x76b8f3*/
     v6 = v5 + 1; /*0x76b8f5*/
-    v13 = v5 + 1; /*0x76b8fb*/
+    _DWORD * v13 = v5 + 1; /*0x76b8fb*/
     if ( a2 - 1 >= 0 ) /*0x76b901*/
     {
-      v7 = a2; /*0x76b903*/
+      int v7 = a2; /*0x76b903*/
       do /*0x76b917*/
       {
         ComPtr::Constructor(v6); /*0x76b908*/
@@ -1564,9 +1553,6 @@ int VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, char * a2)
   char *v7; // ebx
   CCINIClass *v8; // ebx
   CCINIClass *v9; // edx
-  int v10; // eax
-  char *v11; // edi
-  const void *v12; // esi
   int v13; // eax
   char *v15; // [esp+10h] [ebp-4h]
   v3 = aP1; /*0x6dc855*/
@@ -1627,11 +1613,11 @@ LABEL_14:
       v9 = aP1; /*0x6dc8f4*/
     if ( (int)v9 > 0 ) /*0x6dc8f8*/
     {
-      v10 = 0; /*0x6dc8fa*/
+      int v10 = 0; /*0x6dc8fa*/
       do /*0x6dc90f*/
       {
-        v11 = &v7[v10]; /*0x6dc8ff*/
-        v12 = (const void *)(v10 + this->Items); /*0x6dc902*/
+        char * v11 = &v7[v10]; /*0x6dc8ff*/
+        const void * v12 = (const void *)(v10 + this->Items); /*0x6dc902*/
         v10 += 20; /*0x6dc909*/
         v9 = (CCINIClass *)((char *)v9 - 1); /*0x6dc90c*/
         qmemcpy(v11, v12, 0x14u); /*0x6dc90d*/
@@ -1664,11 +1650,6 @@ int VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v8; // edi
-  int v9; // ecx
-  int v11; // ecx
-  int v12; // eax
-  _DWORD *v13; // ebx
-  _DWORD *v14; // edx
   int v3 = a2; /*0x6b44a2*/
   if ( !a2 ) /*0x6b44ae*/
   {
@@ -1681,7 +1662,7 @@ int VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3)
   {
     if ( a2 - 1 >= 0 ) /*0x6b44f8*/
     {
-      v9 = a2; /*0x6b44fe*/
+      int v9 = a2; /*0x6b44fe*/
       do /*0x6b450b*/
       {
         *v5 = 0; /*0x6b44ff*/
@@ -1724,16 +1705,16 @@ LABEL_14:
     return 0; /*0x6b451e*/
   if ( this->Items ) /*0x6b4524*/
   {
-    v11 = this->Capacity; /*0x6b4529*/
+    int v11 = this->Capacity; /*0x6b4529*/
     if ( a2 < v11 ) /*0x6b452e*/
       v11 = a2; /*0x6b4530*/
     if ( v11 > 0 ) /*0x6b4534*/
     {
-      v12 = 0; /*0x6b4536*/
+      int v12 = 0; /*0x6b4536*/
       do /*0x6b4554*/
       {
-        v13 = &v8[v12]; /*0x6b453b*/
-        v14 = (_DWORD *)(v12 * 4 + this->Items); /*0x6b453e*/
+        _DWORD * v13 = &v8[v12]; /*0x6b453b*/
+        _DWORD * v14 = (_DWORD *)(v12 * 4 + this->Items); /*0x6b453e*/
         v12 += 3; /*0x6b4540*/
         --v11; /*0x6b4543*/
         *v13 = *v14; /*0x6b4546*/
@@ -1764,11 +1745,7 @@ int VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v8; // edi
-  int v9; // ecx
   AbstractClass *v10; // ecx
-  int v11; // eax
-  _DWORD *v12; // ebx
-  _DWORD *v13; // edx
   AbstractClass *v14; // eax
   int v3 = a2; /*0x6b4652*/
   if ( !a2 ) /*0x6b465e*/
@@ -1782,7 +1759,7 @@ int VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int * a3)
   {
     if ( a2 - 1 >= 0 ) /*0x6b46a8*/
     {
-      v9 = a2; /*0x6b46ae*/
+      int v9 = a2; /*0x6b46ae*/
       do /*0x6b46bb*/
       {
         *v5 = 0; /*0x6b46af*/
@@ -1829,11 +1806,11 @@ LABEL_14:
       v10 = a2; /*0x6b46d7*/
     if ( v10 > 0 ) /*0x6b46db*/
     {
-      v11 = 0; /*0x6b46dd*/
+      int v11 = 0; /*0x6b46dd*/
       do /*0x6b46fb*/
       {
-        v12 = &v8[v11]; /*0x6b46e2*/
-        v13 = (_DWORD *)(v11 * 4 + this->Items); /*0x6b46e5*/
+        _DWORD * v12 = &v8[v11]; /*0x6b46e2*/
+        _DWORD * v13 = (_DWORD *)(v11 * 4 + this->Items); /*0x6b46e5*/
         v11 += 3; /*0x6b46e7*/
         --v10; /*0x6b46ea*/
         *v12 = *v13; /*0x6b46ed*/

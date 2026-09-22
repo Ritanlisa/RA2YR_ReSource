@@ -9673,14 +9673,14 @@ BOOL __thiscall sub_50D9D0(_DWORD *this)
 // ==== 0x0050D9E0  HouseClass::GetInfSelfHealStep  this=HouseClass  sig=csp ====
 int __thiscall HouseClass::GetInfSelfHealStep(_DWORD *this)
 {
-  return this->q059 * MEMORY[0x8871E0]->SelfHealInfantryAmount; /*0x50d9ef*/
+  return this->techInfiltrationFlags * MEMORY[0x8871E0]->SelfHealInfantryAmount; /*0x50d9ef*/
 }
 
 
 // ==== 0x0050D9F0  HouseClass::GetUnitSelfHealStep  this=HouseClass  sig=csp ====
 int __thiscall HouseClass::GetUnitSelfHealStep(_DWORD *this)
 {
-  return this->q05A * MEMORY[0x8871E0]->SelfHealUnitAmount; /*0x50d9ff*/
+  return this->productionInfiltrationFlags * MEMORY[0x8871E0]->SelfHealUnitAmount; /*0x50d9ff*/
 }
 
 

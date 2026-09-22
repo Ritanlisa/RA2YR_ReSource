@@ -229,11 +229,7 @@ int Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, cha
   int v45; // [esp+74h] [ebp-50h] BYREF
   int v46; // [esp+78h] [ebp-4Ch]
   int v47; // [esp+7Ch] [ebp-48h]
-  int v48; // [esp+80h] [ebp-44h] BYREF
-  int v49; // [esp+84h] [ebp-40h]
-  int v50; // [esp+88h] [ebp-3Ch]
   int v51[4]; // [esp+8Ch] [ebp-38h] BYREF
-  _DWORD v52[2]; // [esp+9Ch] [ebp-28h] BYREF
   _DWORD v53[4]; // [esp+A4h] [ebp-20h] BYREF
   _DWORD v54[4]; // [esp+B4h] [ebp-10h] BYREF
 
@@ -261,6 +257,7 @@ int Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, cha
   {
     v27 = -2; /*0x7053cb*/
     v28 = -2; /*0x7053dc*/
+  _DWORD v52[2]; // [esp+9Ch] [ebp-28h] BYREF
     _DWORD * v11 = Coord2D::Add(&v27, v52, v43); /*0x7053e6*/
     int * v12 = Rect::Construct(v53, v11, 3, 3); /*0x7053f3*/
     v39 = *v12; /*0x7053fc*/
@@ -334,9 +331,9 @@ int Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, cha
   int v24 = 252; /*0x7056b4*/
   do /*0x705841*/
   {
-    v48 = (v22 * a4 + v23 * a1) / 64; /*0x7056ec*/
-    v49 = (v22 * a5 + v23 * a2) / 64; /*0x705705*/
-    v50 = (v22 * a6 + v23 * a3) / 64; /*0x705728*/
+    int v48 = (v22 * a4 + v23 * a1) / 64; /*0x7056ec*/
+    int v49 = (v22 * a5 + v23 * a2) / 64; /*0x705705*/
+    int v50 = (v22 * a6 + v23 * a3) / 64; /*0x705728*/
     Coord::To_Screen(g_TacticalClass_Instance, &v45, &v29); /*0x705732*/
     Coord::To_Screen(g_TacticalClass_Instance, &v48, &v33); /*0x705747*/
     v30 += g_Map_VisibleRect; /*0x705761*/

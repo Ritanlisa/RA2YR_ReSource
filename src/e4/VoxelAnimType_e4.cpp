@@ -14,9 +14,6 @@ int VoxelAnimType::LoadSection(const char * a2, int a3)
 {
   _BYTE v16[12]; // [esp+6Ch] [ebp-284h] BYREF
   int v17; // [esp+78h] [ebp-278h]
-  _DWORD v18[22]; // [esp+80h] [ebp-270h] BYREF
-  _BYTE v19[12]; // [esp+D8h] [ebp-218h] BYREF
-  int v20; // [esp+E4h] [ebp-20Ch]
   char Buffer[256]; // [esp+ECh] [ebp-204h] BYREF
   char Source[260]; // [esp+1ECh] [ebp-104h] BYREF
 
@@ -29,6 +26,8 @@ int VoxelAnimType::LoadSection(const char * a2, int a3)
   CCFileClass::Construct(v15, Source); /*0x5f7b11*/
   if ( (unsigned __int8)CCFileClass::Open(0) ) /*0x5f7b1b*/
   {
+  int v20; // [esp+E4h] [ebp-20Ch]
+  _BYTE v19[12]; // [esp+D8h] [ebp-218h] BYREF
     void * v4 = (void *)*(this + 2 * a3 + 50); /*0x5f7b46*/
     if ( v4 ) /*0x5f7b4f*/
     {
@@ -49,6 +48,7 @@ int VoxelAnimType::LoadSection(const char * a2, int a3)
     else
       sprintf(Buffer, g_Str_Trace__sTUR, a2); /*0x5f7bb8*/
     _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f7bf7*/
+  _DWORD v18[22]; // [esp+80h] [ebp-270h] BYREF
     CCFileClass::Construct(v18, Source); /*0x5f7c0e*/
     void * v6 = (void *)*(this + 2 * a3 + 51); /*0x5f7c13*/
     if ( v6 ) /*0x5f7c1c*/
@@ -127,9 +127,6 @@ int VoxelAnimType::LoadBarrel(const char * a2, int a3)
 {
   _BYTE v13[12]; // [esp+6Ch] [ebp-284h] BYREF
   int v14; // [esp+78h] [ebp-278h]
-  _DWORD v15[22]; // [esp+80h] [ebp-270h] BYREF
-  _BYTE v16[12]; // [esp+D8h] [ebp-218h] BYREF
-  int v17; // [esp+E4h] [ebp-20Ch]
   char Buffer[256]; // [esp+ECh] [ebp-204h] BYREF
   char Source[260]; // [esp+1ECh] [ebp-104h] BYREF
 
@@ -142,6 +139,8 @@ int VoxelAnimType::LoadBarrel(const char * a2, int a3)
   CCFileClass::Construct(v12, Source); /*0x5f7e31*/
   if ( (unsigned __int8)CCFileClass::Open(0) ) /*0x5f7e3b*/
   {
+  int v17; // [esp+E4h] [ebp-20Ch]
+  _BYTE v16[12]; // [esp+D8h] [ebp-218h] BYREF
     char v11 = 0; /*0x5f7e7b*/
     if ( __2_YAPAXI_Z(0x1Cu) ) /*0x5f7e80*/
       _BYTE * v5 = (_BYTE *)File::LoadFileVXL(v12, 0); /*0x5f7e94*/
@@ -155,6 +154,7 @@ int VoxelAnimType::LoadBarrel(const char * a2, int a3)
     else
       sprintf(Buffer, g_Str_Trace__sBARL, a2); /*0x5f7ec4*/
     _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f7efc*/
+  _DWORD v15[22]; // [esp+80h] [ebp-270h] BYREF
     CCFileClass::Construct(v15, Source); /*0x5f7f13*/
     char v6 = 0; /*0x5f7f1a*/
     if ( __2_YAPAXI_Z(0x10u) ) /*0x5f7f1c*/

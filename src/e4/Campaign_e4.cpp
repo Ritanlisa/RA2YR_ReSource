@@ -14,12 +14,9 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v6; // esi
-  int v7; // ebx
   _DWORD *v8; // ebx
-  int v9; // ebx
   int i; // esi
   void (__thiscall ***v12)(_DWORD, int); // ecx
-  _DWORD *v13; // [esp+10h] [ebp-4h]
   int v3 = a2; /*0x765843*/
   if ( !a2 ) /*0x76584d*/
   {
@@ -33,7 +30,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
     v6 = a3 + 1; /*0x7658a5*/
     if ( a2 - 1 >= 0 ) /*0x7658b1*/
     {
-      v9 = a2; /*0x7658b3*/
+      int v9 = a2; /*0x7658b3*/
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
@@ -55,10 +52,10 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
     }
     *v5 = a2; /*0x765873*/
     v6 = v5 + 1; /*0x765875*/
-    v13 = v5 + 1; /*0x76587b*/
+    _DWORD * v13 = v5 + 1; /*0x76587b*/
     if ( a2 - 1 >= 0 ) /*0x765881*/
     {
-      v7 = a2; /*0x765883*/
+      int v7 = a2; /*0x765883*/
       do /*0x765897*/
       {
         ComPtr::Constructor(v6); /*0x765888*/

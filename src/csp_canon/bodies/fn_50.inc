@@ -27,7 +27,7 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
     v6 = (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 732))(aP1);
     v7 = (*(int (__thiscall **)(IUnknown *))(v4->field_0 + 728))(v4) + v6;
     if ( (*(int (__thiscall **)(IUnknown *))(v4->field_0 + 724))(v4) + v7 )
-    v8 = Random::Range((int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536), (IUnknown *)1, (IUnknown *)4);
+    v8 = Random::Range((int *)(*(int *)&HouseClass_Player[29924] + 536), (IUnknown *)1, (IUnknown *)4);
     else
     v8 = 0;
     AttackCoords = HouseClass::GenerateAttackCoords(v5, (MouseClass *)&aP1, v8);
@@ -40,8 +40,8 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
     v19 = v10[2];
     LOWORD(aP1) = v11 / 256;
     HIWORD(aP1) = v12 / 256;
-    TileIndex = (IUnknown *)MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP1, 0, 0);
-    v14 = *LayerClass::Pathfinding_Find( (IUnknown *)&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)v18, (IUnknown *)v18, (IUnknown *)&v17, (IUnknown *)1, TileIndex, 0, 0, (IUnknown *)1, (IUnknown *)1, 0, 0, 0, (IUnknown *)1, (IUnknown *)v16, 0, 0);
+    TileIndex = (IUnknown *)MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&aP1, 0, 0);
+    v14 = *LayerClass::Pathfinding_Find( (IUnknown *)&DataGlobal_87C374[13428], (IUnknown *)v18, (IUnknown *)v18, (IUnknown *)&v17, (IUnknown *)1, TileIndex, 0, 0, (IUnknown *)1, (IUnknown *)1, 0, 0, 0, (IUnknown *)1, (IUnknown *)v16, 0, 0);
     *a0 = v14;
     return a0;
 }
@@ -210,6 +210,45 @@ namespace gamemd { int SidebarClass::getTypeProductionCount(int a1, int a2, int 
 }
 } }
 
+// ==== BACKFILL 0x00500910  HouseClass::GetFactoryCount  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+int HouseClass::GetFactoryCount(int a1, int a2)
+{
+    int *v3;
+    int result;
+
+    switch (a1) {
+    case 1:
+    case 40:
+        if (a2) {
+            v3 = &this->numShipyards;
+        } else {
+            v3 = &this->numWarFactories;
+        }
+        break;
+    case 2:
+    case 3:
+        v3 = &this->numAirpads;
+        break;
+    case 6:
+    case 7:
+        v3 = &this->numConYards;
+        break;
+    case 15:
+    case 16:
+        v3 = &this->numBarracks;
+        break;
+    default:
+        v3 = 0;
+        break;
+    }
+    if (!v3) {
+        result = 0;
+    } else {
+        result = *v3;
+    }
+    return result;
+}
+
 // ==== BACKFILL 0x005009B0  HouseClass::LoadTypeList  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::LoadTypeList() {
 {
@@ -244,7 +283,7 @@ namespace gamemd { int HouseClass::LoadTypeList() {
             (unsigned __int8 ***)this,
             (INIClass *)&g_INI_Key_Country.headNode[1],
             StringByIndex,
-            (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760],
+            (INIClass *)&DataGlobal_87F8E4[42624],
             (INIClass *)Source,
             20);
           v4 = (CCINIClass *)SuperWeaponTypeClass::FindOrCreate(
@@ -329,9 +368,9 @@ IUnknown * CCINIClass::WriteHouses()
     result = HouseClass_Count;
     for ( i = 0; (int)i < (int)HouseClass_Count; i = (INIClass *)((char *)(i) + 1) )
   {
-    strcpy(Source.__pad_0, (const char *)(*(int *)&HouseClass_Array->__pad_0[4 * (int)i] + 90100));
-    sprintf(Source.__pad_20, g_Str_Trace__d, i);
-    INIClass::SetString(this->__pad_0, (INIClass *)&g_INI_Key_Country.headNode[1], (INIClass *)Source.__pad_20, &Source);
+    strcpy(Source[0], (const char *)(*(int *)&HouseClass_Array->__pad_0[4 * (int)i] + 90100));
+    sprintf(Source[32], g_Str_Trace__d, i);
+    INIClass::SetString(this->__pad_0, (INIClass *)&g_INI_Key_Country.headNode[1], (INIClass *)Source[32], &Source);
     result = HouseClass_Count;
   }
     v4 = 0;
@@ -364,14 +403,14 @@ namespace gamemd { int HouseClass::SaveToINI(void* a1) {
       INIClass::SetString(aP1->__pad_0, (INIClass *)Block, &g_INI_Key_Country, (INIClass *)(this->relatedTagsCapacity + 36));
       INIClass::SetInt(aP1->__pad_0, (unsigned __int8 *)Block, aTechlevel[0].__pad_0, this->q1D4, 0);
       INIClass::SetInt(aP1->__pad_0, (unsigned __int8 *)Block, aCredits[0].__pad_0, this->q1DC / 100, 0);
-      INIClass::SetInt(aP1->__pad_0, (unsigned __int8 *)Block, g_INI_Key_IQ.__pad_0, this->q1D0, 0);
+      INIClass::SetInt(aP1->__pad_0, (unsigned __int8 *)Block, g_INI_Key_IQ[0], this->q1D0, 0);
       HouseClass::updateBuildingProduction(aP1->__pad_0, (INIClass *)Block, aEdge, *(CCINIClass **)(this + 480));
       LOBYTE(v4) = this->playerControl;
       INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, (char *)&g_INI_Key_IQ.unknown50, v4);
       HouseClass::WriteBuildingTypeNameToINI(
         aP1->__pad_0,
         (INIClass *)Block,
-        stru_81B138.__pad_0,
+        stru_81B138[0],
         this->startingCell);
       v5 = 0;
       if ( (int)HouseClass_Count > 0 )
@@ -702,6 +741,59 @@ namespace gamemd { int HouseClass::EnsurePlanningPathExists(int a1) {
 }
 } }
 
+// ==== BACKFILL 0x00504860  Team_Helper  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_504860::Team_Helper(int a2) {
+{
+    __int64 v2;
+    int v3;
+    v2 = (unsigned int)this->M22060;
+    if ( (int)v2 > 0 )
+  {
+    do
+    {
+    LODWORD(v2) = this->M22048;
+    v3 = *(int *)(v2 + 8 * HIDWORD(v2));
+    LODWORD(v2) = v2 + 8 * HIDWORD(v2);
+    if ( v3 == a2 )
+    *(char *)(v2 + 4) = 1;
+    LODWORD(v2) = this->M22060;
+    ++HIDWORD(v2);
+    }
+    while ( SHIDWORD(v2) < (int)v2 );
+  }
+    return v2;
+}
+
+/* ASM:
+mov     eax, [ecx+562Ch]
+xor     edx, edx
+test    eax, eax
+jle     short locret_504893
+push    esi
+mov     esi, [esp+4+arg_0]
+push    edi
+
+loc_504872:                             ; CODE XREF: Team_Helper+2F↓j
+mov     eax, [ecx+5620h]
+mov     edi, [eax+edx*8]
+lea     eax, [eax+edx*8]
+cmp     edi, esi
+jnz     short loc_504886
+mov     byte ptr [eax+4], 1
+
+loc_504886:                             ; CODE XREF: Team_Helper+20↑j
+mov     eax, [ecx+562Ch]
+inc     edx
+cmp     edx, eax
+jl      short loc_504872
+pop     edi
+pop     esi
+
+locret_504893:                          ; CODE XREF: Team_Helper+A↑j
+retn    4
+*/
+} }
+
 // ==== BACKFILL 0x00505180  TechnoClass::checkBuildLimit  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void TechnoClass::checkBuildLimit() {
 {
@@ -1020,9 +1112,9 @@ int HouseClass::sub_5092F0(int a2)
     this->radarVisibleTo[0] |= 1 << *(int *)(*(int *)(a2 + 52) + 184);
     if ( a2 == HouseClass_Player.field_0 )
   {
-    for ( i = 0; i < *(int *)&HouseClass_Player.__pad_5568[22996]; ++i )
+    for ( i = 0; i < *(int *)&HouseClass_Player[44860]; ++i )
     {
-    v5 = *(int *)(*(int *)&HouseClass_Player.__pad_5568[22984] + 4 * i);
+    v5 = *(int *)(*(int *)&HouseClass_Player[44848] + 4 * i);
     if ( v5 && !*(char *)(v5 + 129) && *(HouseClass **)(v5 + 540) == this )
       {
     v8[0] = *(int *)(v5 + 156);
@@ -1030,10 +1122,10 @@ int HouseClass::sub_5092F0(int a2)
     v6 = *(ObjectClass **)v5;
     v8[2] = *(int *)(v5 + 164);
     v7 = (*(int (__thiscall **)(int))&v6->hasParachute)(v5);
-    MapClass::RevealArea0( (int *)&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)v8, *(MouseClass **)(v7 + 1512), this, 0, 0, 0, 1, 1);
+    MapClass::RevealArea0( (int *)&DataGlobal_87C374[13428], (IUnknown *)v8, *(MouseClass **)(v7 + 1512), this, 0, 0, 0, 1, 1);
       }
     }
-    return MapClass::MarkForRedraw(&DataGlobal_87C374.__pad_14B0[8132], 2);
+    return MapClass::MarkForRedraw(&DataGlobal_87C374[13428], 2);
   }
     return result;
 }
@@ -1176,10 +1268,10 @@ int TeamClass::CountActiveTeamsForType(ObjectClass * aP1)
     int *v4;
     int v5;
     result = 0;
-    if ( *(int *)&g_CellDirectionOffsets.__pad_579C[62156] - 1 >= 0 )
+    if ( *(int *)&g_CellDirectionOffsets[84584] - 1 >= 0 )
   {
-    v3 = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
-    v4 = (int *)(*(int *)&g_CellDirectionOffsets.__pad_579C[62144] + 4 * (*(int *)&g_CellDirectionOffsets.__pad_579C[62156] - 1));
+    v3 = *(int *)&g_CellDirectionOffsets[84584];
+    v4 = (int *)(*(int *)&g_CellDirectionOffsets[84572] + 4 * (*(int *)&g_CellDirectionOffsets[84584] - 1));
     do
     {
     v5 = *v4;
@@ -1220,15 +1312,15 @@ namespace gamemd { int TriggerClass::ValidateTeamTriggerConditions(int aP1) {
     v5 = attachedBomb[v10];
     if ( !v5 || !(*(int (__thiscall **)(int, int, int, int, void *))(*(int *)(v5) + 148))(v5, 1, 1, 0, this) )
       {
-    if ( *(int *)&HouseClass_Player.__pad_5568[8068] )
+    if ( *(int *)&HouseClass_Player[29932] )
     return 0;
-    v6 = *(int *)&DataGlobal_89E138.__pad_579C[66812] - 1;
-    if ( *(int *)&DataGlobal_89E138.__pad_579C[66812] - 1 < 0 )
+    v6 = *(int *)&DataGlobal_89E138[89240] - 1;
+    if ( *(int *)&DataGlobal_89E138[89240] - 1 < 0 )
     return 0;
     while ( 1 )
         {
-    v7 = *(TechnoClass **)(*(int *)&DataGlobal_89E138.__pad_579C[66800] + 4 * v6);
-    if ( v7->focus == this && v5 == (*(int (__thiscall **)(int))(*(int *)v7->__pad_0 + 132))(*(int *)(*(int *)&DataGlobal_89E138.__pad_579C[66800] + 4 * v6)) && TriggerClass::EvaluateObjectForTrigger((int)aP1, v7, (int)this) )
+    v7 = *(TechnoClass **)(*(int *)&DataGlobal_89E138[89228] + 4 * v6);
+    if ( v7->focus == this && v5 == (*(int (__thiscall **)(int))(*(int *)v7->__pad_0 + 132))(*(int *)(*(int *)&DataGlobal_89E138[89228] + 4 * v6)) && TriggerClass::EvaluateObjectForTrigger((int)aP1, v7, (int)this) )
           {
     break;
           }
@@ -1259,9 +1351,9 @@ namespace gamemd { void HouseClass::Find(int a1) {
 
       if ( this->enemyHouseIndex != -1 )
       {
-        v3 = this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
-        v7 = *(CellStruct **)&g_NetworkPlayerBuffer.__pad_14B0[1196];
-        if ( v3 && this->q54F2 == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1198] )
+        v3 = this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer[6492];
+        v7 = *(CellStruct **)&g_NetworkPlayerBuffer[6492];
+        if ( v3 && this->q54F2 == *(_WORD *)&g_NetworkPlayerBuffer[6494] )
         {
           if ( this->preferredTargetType == 1 )
             SWBuilding = (CellStruct **)HouseClass::FindSWBuilding((_DWORD *)this, (HouseClass *)&v8);
@@ -1277,7 +1369,7 @@ namespace gamemd { void HouseClass::Find(int a1) {
           v4 = *(CellStruct **)(this + 21744);
         }
         v7 = v4;
-        if ( v4 != *(CellStruct **)&g_NetworkPlayerBuffer.__pad_14B0[1196] )
+        if ( v4 != *(CellStruct **)&g_NetworkPlayerBuffer[6492] )
         {
           v6 = (AbstractClass *)(*(int (__thiscall **)(int, char *))(this->supers + 16))(this + 596, &a2);
           SuperWeapon::FireSuperWeaponHouseClass((void *)this, v6, (AbstractClass *)&v7);
@@ -1298,9 +1390,9 @@ namespace gamemd { void HouseClass::FireStoredSW(int a1) {
 
       if ( this->enemyHouseIndex != -1 )
       {
-        v3 = this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
-        v7 = *(CellStruct **)&g_NetworkPlayerBuffer.__pad_14B0[1196];
-        if ( v3 && this->q54F2 == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1198] )
+        v3 = this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer[6492];
+        v7 = *(CellStruct **)&g_NetworkPlayerBuffer[6492];
+        if ( v3 && this->q54F2 == *(_WORD *)&g_NetworkPlayerBuffer[6494] )
         {
           if ( this->preferredTargetType == 1 )
             SWBuilding = (CellStruct **)HouseClass::FindSWBuilding((_DWORD *)this, (HouseClass *)&v8);
@@ -1316,7 +1408,7 @@ namespace gamemd { void HouseClass::FireStoredSW(int a1) {
           v4 = *(CellStruct **)(this + 21744);
         }
         v7 = v4;
-        if ( v4 != *(CellStruct **)&g_NetworkPlayerBuffer.__pad_14B0[1196] )
+        if ( v4 != *(CellStruct **)&g_NetworkPlayerBuffer[6492] )
         {
           v6 = (AbstractClass *)(*(int (__thiscall **)(int, char *))(this->supers + 16))(this + 596, &a2);
           SuperWeapon::FireSuperWeaponHouseClass((void *)this, v6, (AbstractClass *)&v7);
@@ -1350,15 +1442,15 @@ namespace gamemd { int HouseClass::Fire_ParaDrop(int a2) {
       v3 = this->enemyHouseIndex;
       if ( v3 != -1 )
         this = *(_DWORD **)&HouseClass_Array->__pad_0[4 * v3];
-      v4 = *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
-      v5 = LOWORD(v2->preferredTargetCell[0]) == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
-      v10 = *(CellStruct **)&g_NetworkPlayerBuffer.__pad_14B0[1196];
-      if ( v5 && HIWORD(v2->preferredTargetCell[0]) == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1198] )
+      v4 = *(_WORD *)&g_NetworkPlayerBuffer[6492];
+      v5 = LOWORD(v2->preferredTargetCell[0]) == *(_WORD *)&g_NetworkPlayerBuffer[6492];
+      v10 = *(CellStruct **)&g_NetworkPlayerBuffer[6492];
+      if ( v5 && HIWORD(v2->preferredTargetCell[0]) == *(_WORD *)&g_NetworkPlayerBuffer[6494] )
       {
         if ( v2->preferredTargetType == 1 )
         {
-          if ( this->baseCenter == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196]
-            && this->q5496 == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1198] )
+          if ( this->baseCenter == *(_WORD *)&g_NetworkPlayerBuffer[6492]
+            && this->q5496 == *(_WORD *)&g_NetworkPlayerBuffer[6494] )
           {
             v6 = (CellStruct *)this->baseSpawnCell;
           }
@@ -1393,14 +1485,14 @@ namespace gamemd { int HouseClass::Fire_ParaDrop(int a2) {
         {
           v10 = (CellStruct *)*HouseClass::FindSWTarget(v2, (HouseClass *)&v11, (HouseClass *)v2->preferredTargetType);
         }
-        v4 = *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
+        v4 = *(_WORD *)&g_NetworkPlayerBuffer[6492];
       }
       else
       {
         v10 = (CellStruct *)v2->preferredTargetCell[0];
       }
       if ( (_WORD)v10 != v4
-        || (result = g_NetworkPlayerBuffer.__pad_14B0[1198], HIWORD(v10) != *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1198]) )
+        || (result = g_NetworkPlayerBuffer[6494], HIWORD(v10) != *(_WORD *)&g_NetworkPlayerBuffer[6494]) )
       {
         v9 = (AbstractClass *)(*(int (__thiscall **)(int *, char *))(v2->supers[0] + 16))(v2->supers, &a2);
         return SuperWeapon::FireSuperWeaponHouseClass(v2, v9, (AbstractClass *)&v10);
@@ -1423,9 +1515,9 @@ namespace gamemd { int HouseClass::Fire_LightningStorm(int a1) {
       result = LightningStorm::IsActive();
       if ( !result && this->enemyHouseIndex != -1 )
       {
-        v4 = this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
-        v8 = *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
-        if ( v4 && this->q54F2 == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1198] )
+        v4 = this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer[6492];
+        v8 = *(_DWORD *)&g_NetworkPlayerBuffer[6492];
+        if ( v4 && this->q54F2 == *(_WORD *)&g_NetworkPlayerBuffer[6494] )
         {
           if ( this->preferredTargetType == 1 )
             SWBuilding = HouseClass::FindSWBuilding((_DWORD *)this, (HouseClass *)&v9);
@@ -1438,8 +1530,8 @@ namespace gamemd { int HouseClass::Fire_LightningStorm(int a1) {
           v5 = this->preferredTargetCell;
         }
         v8 = v5;
-        if ( (_WORD)v5 != *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196]
-          || (result = g_NetworkPlayerBuffer.__pad_14B0[1198], HIWORD(v8) != *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1198]) )
+        if ( (_WORD)v5 != *(_WORD *)&g_NetworkPlayerBuffer[6492]
+          || (result = g_NetworkPlayerBuffer[6494], HIWORD(v8) != *(_WORD *)&g_NetworkPlayerBuffer[6494]) )
         {
           v7 = (AbstractClass *)(*(int (__thiscall **)(int, char *))(this->supers + 16))(this + 596, &a2);
           return SuperWeapon::FireSuperWeaponHouseClass((void *)this, v7, (AbstractClass *)&v8);
@@ -1467,13 +1559,13 @@ namespace gamemd { int HouseClass::Fire_GenMutator(int a1) {
       AbstractClass *v15;
       _BYTE v17[32];
 
-      LOBYTE(v2) = g_NetworkPlayerBuffer.__pad_14B0[1196];
-      *(_DWORD *)v17 = *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
+      LOBYTE(v2) = g_NetworkPlayerBuffer[6492];
+      *(_DWORD *)v17 = *(_DWORD *)&g_NetworkPlayerBuffer[6492];
       *(_DWORD *)&v17[8] = 0;
-      if ( this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196] )
+      if ( this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer[6492] )
       {
         v2 = this->q54F2;
-        if ( v2 == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1198] )
+        if ( v2 == *(_WORD *)&g_NetworkPlayerBuffer[6494] )
         {
           v4 = (int)&g_BuildingClass_Count[-1].lineTrailer + 3;
           *(_DWORD *)&v17[24] = (char *)g_BuildingClass_Count - 1;
@@ -1536,7 +1628,7 @@ namespace gamemd { int HouseClass::Fire_GenMutator(int a1) {
             LOBYTE(v2) = v17[8];
             if ( *(_DWORD *)&v17[8] )
             {
-              if ( *(_DWORD *)v17 != *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196] )
+              if ( *(_DWORD *)v17 != *(_DWORD *)&g_NetworkPlayerBuffer[6492] )
               {
                 LOBYTE(v2) = LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (IUnknown *)v17, (TechnoClass *)1);
                 if ( (_BYTE)v2 )
@@ -1582,23 +1674,23 @@ namespace gamemd { int HouseClass::Fire_PsyDom(int a1) {
       LOBYTE(v3) = PsyDom::IsActive();
       if ( !(_BYTE)v3 && this->enemyHouseIndex != -1 )
       {
-        LOBYTE(v3) = g_NetworkPlayerBuffer.__pad_14B0[1196];
+        LOBYTE(v3) = g_NetworkPlayerBuffer[6492];
         v20 = 0;
-        v4 = this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
-        v18 = *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
+        v4 = this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer[6492];
+        v18 = *(_DWORD *)&g_NetworkPlayerBuffer[6492];
         if ( v4 )
         {
           v3 = this->q54F2;
-          if ( v3 == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1198] )
+          if ( v3 == *(_WORD *)&g_NetworkPlayerBuffer[6494] )
           {
-            v5 = *(_DWORD *)&g_CellDirectionOffsets.__pad_579C[61348] - 1;
-            v23 = *(_DWORD *)&g_CellDirectionOffsets.__pad_579C[61348] - 1;
-            if ( *(_DWORD *)&g_CellDirectionOffsets.__pad_579C[61348] - 1 >= 0 )
+            v5 = *(_DWORD *)&g_CellDirectionOffsets[83776] - 1;
+            v23 = *(_DWORD *)&g_CellDirectionOffsets[83776] - 1;
+            if ( *(_DWORD *)&g_CellDirectionOffsets[83776] - 1 >= 0 )
             {
               do
               {
                 v19 = 0;
-                v6 = *(_BYTE **)(*(_DWORD *)&g_CellDirectionOffsets.__pad_579C[61336] + 4 * v5);
+                v6 = *(_BYTE **)(*(_DWORD *)&g_CellDirectionOffsets[83764] + 4 * v5);
                 if ( !v6[129] )
                 {
                   v7 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 444))(v6);
@@ -1645,7 +1737,7 @@ namespace gamemd { int HouseClass::Fire_PsyDom(int a1) {
               LOBYTE(v3) = v20;
               if ( v20 )
               {
-                if ( v18 != *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196] )
+                if ( v18 != *(_DWORD *)&g_NetworkPlayerBuffer[6492] )
                 {
                   LOBYTE(v3) = LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (IUnknown *)&v18, (TechnoClass *)1);
                   if ( (_BYTE)v3 )
@@ -1691,14 +1783,14 @@ namespace gamemd { int HouseClass::FireSuperWeaponAtBestTarget(int a1) {
         v4 = 0;
         v15 = -1;
         v5 = *(MouseClass **)&HouseClass_Array->__pad_0[4 * TileData];
-        LOBYTE(TileData) = HouseClass_Player.__pad_5568[22684];
+        LOBYTE(TileData) = HouseClass_Player[44548];
         v16 = v5;
-        v6 = *(_DWORD *)&HouseClass_Player.__pad_5568[22684] - 1;
-        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[22684] - 1 >= 0 )
+        v6 = *(_DWORD *)&HouseClass_Player[44548] - 1;
+        if ( *(_DWORD *)&HouseClass_Player[44548] - 1 >= 0 )
         {
           do
           {
-            v7 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22672] + 4 * v6);
+            v7 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44536] + 4 * v6);
             if ( *(MouseClass **)(v7 + 540) == v16 )
             {
               v8 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v7 + 72))(v7, v18);
@@ -1708,7 +1800,7 @@ namespace gamemd { int HouseClass::FireSuperWeaponAtBestTarget(int a1) {
               TileData = CellClass::GetTileData((IUnknown *)&v17, (IUnknown *)this);
               if ( *(_BYTE *)(v7 + 1773) == 15 )
                 TileData = Random::Range(
-                             (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
+                             (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                              0,
                              (IUnknown *)0x64);
               if ( TileData > v15 )
@@ -1754,8 +1846,8 @@ namespace gamemd { int HouseClass::RecordCratePlacement(void* a1) {
       int v11;
       int v13;
 
-      LOBYTE(Type) = g_NetworkPlayerBuffer.__pad_14B0[639];
-      if ( !g_NetworkPlayerBuffer.__pad_14B0[639] )
+      LOBYTE(Type) = g_NetworkPlayerBuffer[5935];
+      if ( !g_NetworkPlayerBuffer[5935] )
       {
         v3 = 0;
         v4 = this->q5714;
@@ -1781,7 +1873,7 @@ namespace gamemd { int HouseClass::RecordCratePlacement(void* a1) {
               v10 = *(_WORD *)(v8 + v9 + 4) == (unsigned __int16)v13;
               v11 = v8 + v9 + 4;
               if ( v10 && *(_WORD *)(v11 + 2) == HIWORD(v13) )
-                *(_DWORD *)v11 = *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
+                *(_DWORD *)v11 = *(_DWORD *)&g_NetworkPlayerBuffer[6492];
             }
             ++v7;
             v8 += 16;
@@ -1795,7 +1887,7 @@ namespace gamemd { int HouseClass::RecordCratePlacement(void* a1) {
             {
               *(_DWORD *)(v6 + this->q5708) = -1;
               Type = this->q5708;
-              *(_DWORD *)(v6 + Type + 4) = *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196];
+              *(_DWORD *)(v6 + Type + 4) = *(_DWORD *)&g_NetworkPlayerBuffer[6492];
             }
           }
         }
@@ -1966,10 +2058,10 @@ namespace gamemd { int HouseClass::NotifyImpactWater() {
     int v1;
     int i;
     AnimClass **v4;
-    v1 = *(int *)&g_EventManager.__pad_1B8[96];
+    v1 = *(int *)&g_EventManager[536];
     for ( i = 0; i < v1; ++i )
   {
-    v4 = *(AnimClass ***)(*(int *)&g_EventManager.__pad_1B8[84] + 4 * i);
+    v4 = *(AnimClass ***)(*(int *)&g_EventManager[524] + 4 * i);
     if ( v4 && v4[135] == this )
     (*(void (__thiscall **)(AnimClass **, int))&(*v4)->__pad_361[39])(v4, 0);
   }
@@ -2019,6 +2111,34 @@ int TActionClass::executeAttackAction(int a2)
 }
 }
 
+// ==== BACKFILL 0x0050D9C0  IsTechInfiltrated  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+bool HouseClass::IsTechInfiltrated()
+{
+    return this->techInfiltrationFlags > 0;
+}
+
+// ==== BACKFILL 0x0050D9D0  IsProductionInfiltrated  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+bool HouseClass::IsProductionInfiltrated()
+{
+    return this->productionInfiltrationFlags > 0;
+}
+
+// ==== BACKFILL 0x0050DA10  GlobalHelper_0E4440_Helper  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_50DA10::GlobalHelper_0E4440_Helper() {
+{
+    int result;
+    result = g_ControlGroupState;
+    this->M21744 = g_ControlGroupState;
+    return result;
+}
+
+/* ASM:
+mov     eax, dword_A8ED54+244h
+mov     [ecx+54F0h], eax
+retn
+*/
+} }
+
 // ==== BACKFILL 0x0050DA40  sub_50DA40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_50DA40::sub_50DA40(int a2)
 {
@@ -2027,6 +2147,27 @@ int E4Recv_50DA40::sub_50DA40(int a2)
     return a2;
 }
 }
+
+// ==== BACKFILL 0x0050DA50  GlobalHelper_0E44C0_Helper  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_50DA50::GlobalHelper_0E44C0_Helper() {
+{
+    int result;
+    result = g_ControlGroupState;
+    this->M21756 = -100;
+    this->M21748 = result;
+    this->M21752 = g_ControlGroupState;
+    return result;
+}
+
+/* ASM:
+mov     eax, dword_A8ED54+244h
+mov     dword ptr [ecx+54FCh], 0FFFFFF9Ch
+mov     [ecx+54F4h], eax
+mov     edx, dword_A8ED54+244h
+mov     [ecx+54F8h], edx
+retn
+*/
+} }
 
 // ==== BACKFILL 0x0050DA80  HouseClass::GetTransitionCount  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::GetTransitionCount() {
@@ -2054,8 +2195,8 @@ unsigned int FootClass::checkTurning()
 // ==== BACKFILL 0x0050DEF0  HouseClass::GetCurrentOption  cls=HouseClass  sig=csp  renamed_refs=0  residual=q5496 ====
 namespace gamemd { void* HouseClass::GetCurrentOption(void* aP1) {
 {
-      if ( this->baseCenter == *(_WORD *)&HouseClass_Player.__pad_5568[23780]
-        && this->q5496 == *(_WORD *)&HouseClass_Player.__pad_5568[23782] )
+      if ( this->baseCenter == *(_WORD *)&HouseClass_Player[45644]
+        && this->q5496 == *(_WORD *)&HouseClass_Player[45646] )
       {
         aP1->field_0 = this->baseSpawnCell;
         return (ObjectClass *)aP1;
@@ -2077,8 +2218,8 @@ namespace gamemd { void* HouseClass::GetStartCoords(void* aP1) {
       ObjectClass *v6;
       _BYTE v7[12];
 
-      if ( this->baseCenter == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1196]
-        && this->q5496 == *(_WORD *)&g_NetworkPlayerBuffer.__pad_14B0[1198] )
+      if ( this->baseCenter == *(_WORD *)&g_NetworkPlayerBuffer[6492]
+        && this->q5496 == *(_WORD *)&g_NetworkPlayerBuffer[6494] )
       {
         v2 = (ObjectClass *)this->baseSpawnCell;
       }
@@ -2087,11 +2228,11 @@ namespace gamemd { void* HouseClass::GetStartCoords(void* aP1) {
         v2 = (ObjectClass *)this->baseCenter;
       }
       v6 = v2;
-      if ( v2 == *(ObjectClass **)&g_NetworkPlayerBuffer.__pad_14B0[1196] )
+      if ( v2 == *(ObjectClass **)&g_NetworkPlayerBuffer[6492] )
       {
-        *(_DWORD *)aP1->__pad_0 = *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[1292];
-        *(_DWORD *)&aP1->__pad_0[4] = *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[1296];
-        *(_DWORD *)&aP1->__pad_0[8] = *(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[1300];
+        *(_DWORD *)aP1->__pad_0 = *(_DWORD *)&g_NetworkPlayerBuffer[6588];
+        *(_DWORD *)&aP1->__pad_0[4] = *(_DWORD *)&g_NetworkPlayerBuffer[6592];
+        *(_DWORD *)&aP1->__pad_0[8] = *(_DWORD *)&g_NetworkPlayerBuffer[6596];
         return aP1->__pad_0;
       }
       else
@@ -2104,6 +2245,22 @@ namespace gamemd { void* HouseClass::GetStartCoords(void* aP1) {
         return aP1->__pad_0;
       }
 }
+} }
+
+// ==== BACKFILL 0x0050DFF0  GlobalHelper_0E4540_Helper  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_50DFF0::GlobalHelper_0E4540_Helper() {
+{
+    int result;
+    result = g_ControlGroupState;
+    this->M21652 = g_ControlGroupState;
+    return result;
+}
+
+/* ASM:
+mov     eax, dword_A8ED54+244h
+mov     [ecx+5494h], eax
+retn
+*/
 } }
 
 // ==== BACKFILL 0x0050E000  HouseClass::SetMapSeed  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====

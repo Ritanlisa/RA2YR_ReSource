@@ -217,7 +217,6 @@ int TiberiumClass::LoadFromINI(unsigned char *** aP1)
   int v24; // [esp+1Ch] [ebp-A8h]
   int v25; // [esp+20h] [ebp-A4h]
   VectorClass *v26; // [esp+24h] [ebp-A0h]
-  _DWORD v27[7]; // [esp+28h] [ebp-9Ch] BYREF
   INIClass String[2]; // [esp+44h] [ebp-80h] BYREF
 
   INIClass::ResetSection(aP1); /*0x721a63*/
@@ -276,6 +275,7 @@ int TiberiumClass::LoadFromINI(unsigned char *** aP1)
          String,
          128) )
   {
+  _DWORD v27[7]; // [esp+28h] [ebp-9Ch] BYREF
     DynamicVectorClass::AnimTypeConstructor(v27, 0, 0); /*0x721b6c*/
     v27[0] = &vt_TypeList_AnimTypeClass_const; /*0x721b7b*/
     for ( i = (AbstractClass *)strtok(String[0].__pad_0, Delimiter[0]); /*0x721b8d*/

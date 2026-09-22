@@ -711,7 +711,6 @@ int FacingClass::Set_SyncLog(unsigned int* a1)
   unsigned int v8; // ecx
   CDTimerClass *p_RotationTimer; // esi
   char result; // al
-  unsigned int v11; // [esp+8h] [ebp-10h]
   int v12; // [esp+10h] [ebp-8h]
   if ( SLOWORD(this->ROT) > 0 ) /*0x4c930c*/
   {
@@ -719,7 +718,7 @@ int FacingClass::Set_SyncLog(unsigned int* a1)
     if ( CDTimerClass::TimeRemaining(&this->RotationTimer.StartTime) ) /*0x4c9313*/
     {
       int v4 = abs16(LOWORD(this->DesiredFacing) - LOWORD(this->StartFacing)) / SLOWORD(this->ROT); /*0x4c9333*/
-      v11 = this->DesiredFacing; /*0x4c9337*/
+      unsigned int v11 = this->DesiredFacing; /*0x4c9337*/
       if ( (__int16)v4 <= 0 ) /*0x4c933e*/
       {
 LABEL_9:

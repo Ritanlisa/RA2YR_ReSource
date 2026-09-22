@@ -17,35 +17,20 @@ void PsyDom::Fire()
   void **v6; // eax
   int v7; // eax
   AnimClass *v8; // esi
-  int *v9; // ebp
-  int v10; // eax
-  _DWORD *v11; // eax
   IUnknown *i; // esi
-  int v13; // edx
-  int v14; // edi
-  int *v15; // eax
-  int v16; // ecx
-  int v17; // edx
-  int v18; // eax
   void **v19; // eax
   AnimClass *v20; // eax
   AnimClass *v23; // eax
-  int v22; // esi
   int j; // esi
-  int v24; // [esp+4h] [ebp-60h]
   IUnknown *v25; // [esp+8h] [ebp-5Ch]
   IUnknown *v26; // [esp+Ch] [ebp-58h]
-  int v27; // [esp+10h] [ebp-54h]
   IUnknown **a5; // [esp+14h] [ebp-50h]
   AnimClass *v29; // [esp+18h] [ebp-4Ch]
   IUnknown **v30; // [esp+1Ch] [ebp-48h] BYREF
-  _DWORD v31[2]; // [esp+20h] [ebp-44h] BYREF
   CoordStruct aP2; // [esp+28h] [ebp-3Ch] BYREF
   CoordStruct v33; // [esp+34h] [ebp-30h] BYREF
-  char v34[12]; // [esp+40h] [ebp-24h] BYREF
   void **v35; // [esp+4Ch] [ebp-18h] BYREF
   void *Block; // [esp+50h] [ebp-14h]
-  int v37; // [esp+54h] [ebp-10h]
   int v38; // [esp+58h] [ebp-Ch]
   AnimClass *v39; // [esp+5Ch] [ebp-8h]
   int v40; // [esp+60h] [ebp-4h]
@@ -86,20 +71,22 @@ void PsyDom::Fire()
   v39 = 0; /*0x53b1aa*/
   if ( (int)v8 > 0 )
   {
-    v9 = dword_ABD490; /*0x53b1b4*/
+    int * v9 = dword_ABD490; /*0x53b1b4*/
     v29 = v8; /*0x53b1b9*/
     do
     {
-      v10 = *v9; /*0x53b1bd*/
+      int v10 = *v9; /*0x53b1bd*/
       HIWORD(v30) = HIWORD(*v9); /*0x53b1c6*/
       HIWORD(a5) = unk_A9FA4A + HIWORD(v30); /*0x53b1dd*/
       LOWORD(a5) = word_A9FA48 + v10; /*0x53b1e2*/
       v30 = a5; /*0x53b1f7*/
+  _DWORD v31[2]; // [esp+20h] [ebp-44h] BYREF
       v31[0] = 0; /*0x53b1fb*/
       v31[1] = 0; /*0x53b1ff*/
-      v11 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v30); /*0x53b203*/
+      _DWORD * v11 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v30); /*0x53b203*/
       for ( i = (IUnknown *)Object::FindClosestObjectCell(v11, (IUnknown *)v31, 0, 0);
             i;
+  int v22; // esi
             i = (*(_BYTE *)(v22 + 20) & 1) != 0 ? (IUnknown *)v22 : 0 )
       {
         if ( (*(int (__thiscall **)(IUnknown *))(i->field_0 + 44))(i) != 6 /*0x53b26b*/
@@ -109,15 +96,18 @@ void PsyDom::Fire()
           && !(*(unsigned __int8 (__thiscall **)(IUnknown *))(i->field_0 + 84))(i) )
         {
           if ( *(_DWORD *)&i->__pad_2B8[8] ) /*0x53b276*/
+  int v24; // [esp+4h] [ebp-60h]
+  int v27; // [esp+10h] [ebp-54h]
             CaptureManagerClass::FreeUnit(i, v24, v25, v26, v27, a5); /*0x53b287*/
           (*(void (__thiscall **)(IUnknown *, #375 *, int))(i->field_0 + 980))(i, unk_A9FAC8, 1); /*0x53b298*/
-          v13 = i->field_0; /*0x53b29e*/
+          int v13 = i->field_0; /*0x53b29e*/
           i->__pad_2B8[12] = 1; /*0x53b2a2*/
-          v14 = *(_DWORD *)((*(int (__thiscall **)(IUnknown *))(v13 + 132))(i) + 1548); /*0x53b2af*/
-          v15 = (int *)(*(int (__thiscall **)(IUnknown *, char *))(i->field_0 + 72))(i, v34); /*0x53b2be*/
-          v16 = *v15; /*0x53b2c1*/
-          v17 = v15[1]; /*0x53b2c3*/
-          v18 = v15[2]; /*0x53b2c6*/
+          int v14 = *(_DWORD *)((*(int (__thiscall **)(IUnknown *))(v13 + 132))(i) + 1548); /*0x53b2af*/
+  char v34[12]; // [esp+40h] [ebp-24h] BYREF
+          int * v15 = (int *)(*(int (__thiscall **)(IUnknown *, char *))(i->field_0 + 72))(i, v34); /*0x53b2be*/
+          int v16 = *v15; /*0x53b2c1*/
+          int v17 = v15[1]; /*0x53b2c3*/
+          int v18 = v15[2]; /*0x53b2c6*/
           v33.X = v16; /*0x53b2d0*/
           v33.Y = v17; /*0x53b2d4*/
           v33.Z = v14 + v18; /*0x53b2d8*/
@@ -137,6 +127,7 @@ void PsyDom::Fire()
           *(_DWORD *)&i->__pad_2B8[16] = v20; /*0x53b311*/
           if ( v20 ) /*0x53b317*/
             BuildingClass::AimTurret(v20, i); /*0x53b31c*/
+  int v37; // [esp+54h] [ebp-10h]
           if ( (int)v39 < v37 /*0x53b34b*/
             || (BYTE1(v38) || !v37)
             && v40 > 0

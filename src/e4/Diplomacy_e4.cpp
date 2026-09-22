@@ -24,20 +24,11 @@ int Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
   HWND v20; // eax
   int DlgCtrlID; // eax
   int v26; // esi
-  int *v27; // ecx
-  int v28; // edx
-  unsigned int v29; // edi
   HWND hWnd; // [esp+10h] [ebp-14h]
-  int v31; // [esp+14h] [ebp-10h]
-  int v32; // [esp+18h] [ebp-Ch]
-  int v33; // [esp+1Ch] [ebp-8h]
   unsigned __int8 IsAlliedWith; // [esp+20h] [ebp-4h]
   #375 *hDlga; // [esp+28h] [ebp+4h]
   HWND hDlgb; // [esp+28h] [ebp+4h]
   HWND hDlgc; // [esp+28h] [ebp+4h]
-  int v38; // [esp+2Ch] [ebp+8h]
-  char v39; // [esp+30h] [ebp+Ch]
-  char v40; // [esp+34h] [ebp+10h]
   result = BaseDialogProc(hDlg, a2, a3, (unsigned int)a4); /*0x657dbd*/
   if ( result ) /*0x657dc4*/
     return result; /*0x657dc4*/
@@ -59,17 +50,17 @@ int Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
         v8 = GetDlgItem(hDlg, *(int *)((char *)&DataGlobal_83921C + i)); /*0x657e1a*/
         SendMessageA(v8, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x657e29*/
       }
-      v40 = 0; /*0x657e3e*/
-      v39 = 0; /*0x657e43*/
-      v33 = HouseClass_Count; /*0x657e48*/
-      v32 = 1; /*0x657e4c*/
-      v38 = 0; /*0x657e54*/
+      char v40 = 0; /*0x657e3e*/
+      char v39 = 0; /*0x657e43*/
+      int v33 = HouseClass_Count; /*0x657e48*/
+      int v32 = 1; /*0x657e4c*/
+      int v38 = 0; /*0x657e54*/
       do /*0x65807d*/
       {
         v9 = GetDlgItem(hDlg, DataGlobal_839240[v38]); /*0x657e6a*/
         hWnd = GetDlgItem(hDlg, DataGlobal_839260[v38]); /*0x657e84*/
         int v10 = v32; /*0x657e8b*/
-        v31 = v32; /*0x657e8d*/
+        int v31 = v32; /*0x657e8d*/
         if ( v32 == *((_DWORD *)HouseClass_Player + 12) ) /*0x657e91*/
         {
           v31 = 0; /*0x657e93*/
@@ -204,7 +195,7 @@ int Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
         {
           if ( DlgCtrlID == 1840 ) /*0x6582d8*/
           {
-            v29 = HIWORD(a3); /*0x6582da*/
+            unsigned int v29 = HIWORD(a3); /*0x6582da*/
             if ( HIWORD(a3) <= 1u ) /*0x6582e0*/
             {
               if ( g_GameMode_Current[0] == 3 ) /*0x6582ee*/
@@ -221,8 +212,8 @@ int Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
       }
       if ( HIWORD(a3) != 1 && HIWORD(a3) ) /*0x65828e*/
         return 0; /*0x65828e*/
-      v27 = &DataGlobal_83925C; /*0x658298*/
-      v28 = 0; /*0x6582a0*/
+      int * v27 = &DataGlobal_83925C; /*0x658298*/
+      int v28 = 0; /*0x6582a0*/
       while ( *v27 != DlgCtrlID ) /*0x6582a4*/
       {
         ++v27; /*0x6582a6*/

@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x004D02B0  VoxelAnimClass::UpdateMatrix  cls=VoxelAnimClass  sig=csp  renamed_refs=3  residual=- ====
+// ==== BACKFILL 0x004D02B0  VoxelAnimClass::UpdateMatrix  cls=VoxelAnimClass  sig=csp  renamed_refs=2  residual=- ====
 char VoxelAnimClass::UpdateMatrix()
 {
 {
@@ -13,7 +13,7 @@ char VoxelAnimClass::UpdateMatrix()
     int v7;
     int v8;
     int v9;
-    if ( this->q024 > Cell::GetGroundHeight(this + 7) + 120 )
+    if ( this->objectTypeFlags > Cell::GetGroundHeight(this + 7) + 120 )
     return 1;
     v3 = this->vtable4;
     if ( *(int *)(v3 + 692) && *(int *)(v3 + 764) )

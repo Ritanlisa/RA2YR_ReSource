@@ -27,11 +27,8 @@ int EventQueue::Read()
   int v3; // ecx
   int v4; // edi
   __int16 result; // ax
-  int v6; // edx
   unsigned __int16 v7; // cx
-  int v8; // ebx
   unsigned __int16 v9; // dx
-  int v10; // ecx
   __int16 v11; // dx
 
   do /*0x54f086*/
@@ -57,14 +54,14 @@ int EventQueue::Read()
   }
   if ( (unsigned __int8)result == 1 || (unsigned __int8)result == 4 || (unsigned __int8)result == 2 ) /*0x54f106*/
   {
-    v6 = this->q314; /*0x54f108*/
+    int v6 = this->q314; /*0x54f108*/
     v7 = 0; /*0x54f10e*/
     if ( v6 != v4 ) /*0x54f112*/
     {
       v7 = *((_WORD *)this + v6 + 138); /*0x54f114*/
       this->q314 = (v6 + 1) % 256; /*0x54f12d*/
     }
-    v8 = this->q314; /*0x54f134*/
+    int v8 = this->q314; /*0x54f134*/
     v9 = 0; /*0x54f140*/
     *this = v7; /*0x54f144*/
     if ( v8 != v4 ) /*0x54f146*/
@@ -78,7 +75,7 @@ int EventQueue::Read()
   }
   else if ( (unsigned __int8)result == 10 ) /*0x54f17e*/
   {
-    v10 = this->q314; /*0x54f180*/
+    int v10 = this->q314; /*0x54f180*/
     v11 = 0; /*0x54f186*/
     if ( v10 != v4 ) /*0x54f18a*/
     {

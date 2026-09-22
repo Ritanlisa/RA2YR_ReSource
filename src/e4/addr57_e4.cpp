@@ -62,37 +62,13 @@ void sub_575EE0(void * a1, int a2)
   unsigned __int16 v2; // bp
   void *v4; // eax
   unsigned __int16 v5; // di
-  unsigned int v6; // eax
-  void *v7; // eax
   void **v8; // ecx
-  unsigned int v9; // eax
-  void *v10; // eax
   void **v11; // ecx
-  int v12; // ecx
-  unsigned int v13; // eax
-  void *v14; // eax
-  void *v15; // esi
   void **v16; // ecx
-  int v17; // ecx
-  unsigned int v18; // eax
   void **v19; // ecx
-  int v20; // ecx
-  unsigned int v21; // eax
-  void *v22; // eax
   void **v23; // ecx
-  int v24; // ecx
-  unsigned int v25; // eax
-  void *v26; // eax
-  void *v27; // esi
   void **v28; // ecx
   void **v29; // ecx
-  int v31; // [esp+14h] [ebp-18h] BYREF
-  int v32; // [esp+18h] [ebp-14h] BYREF
-  int v33; // [esp+1Ch] [ebp-10h] BYREF
-  int v34; // [esp+20h] [ebp-Ch] BYREF
-  int v35; // [esp+24h] [ebp-8h] BYREF
-  int v36; // [esp+28h] [ebp-4h] BYREF
-  int v37; // [esp+30h] [ebp+4h]
   v2 = HIWORD(a2); /*0x575eea*/
   char v3 = 0; /*0x575eef*/
   if ( HIWORD(a1) == HIWORD(a2) ) /*0x575ef6*/
@@ -122,7 +98,8 @@ void sub_575EE0(void * a1, int a2)
   a2 = (int)v4; /*0x575f37*/
   while ( a2 != __PAIR32__(v2, v5) ) /*0x575f43*/
   {
-    v6 = (__int16)a2 + (SHIWORD(a2) << 9); /*0x575f5b*/
+    unsigned int v6 = (__int16)a2 + (SHIWORD(a2) << 9); /*0x575f5b*/
+  void *v7; // eax
     if ( v6 >= 0x40000 || (v7 = *(void **)(g_Shroud_CellArray + 4 * v6)) == 0 ) /*0x575f71*/
     {
       g_Map_GlobalCellIndex = a2; /*0x575f77*/
@@ -133,10 +110,13 @@ void sub_575EE0(void * a1, int a2)
       TeamClass::Update_0(v8, 31, 0, g_MapSeedState, 0, 0); /*0x575f97*/
     if ( v3 ) /*0x575f9e*/
     {
-      v9 = (__int16)(g_DirectionOffsetPool + a2) + ((__int16)(HIWORD(a2) + HIWORD(g_DirectionOffsetPool)) << 9); /*0x575fcd*/
+  void *v15; // esi
+      unsigned int v9 = (__int16)(g_DirectionOffsetPool + a2) + ((__int16)(HIWORD(a2) + HIWORD(g_DirectionOffsetPool)) << 9); /*0x575fcd*/
+  void *v10; // eax
       if ( v9 >= 0x40000 || (v10 = *(void **)(g_Shroud_CellArray + 4 * v9)) == 0 ) /*0x575fe3*/
       {
         v10 = &g_CellClassArray; /*0x575fe9*/
+  int v37; // [esp+30h] [ebp+4h]
         LOWORD(v37) = g_DirectionOffsetPool + a2; /*0x575fba*/
         HIWORD(v37) = HIWORD(a2) + HIWORD(g_DirectionOffsetPool); /*0x575fc2*/
         g_Map_GlobalCellIndex = v37; /*0x575fee*/
@@ -144,8 +124,10 @@ void sub_575EE0(void * a1, int a2)
       v11 = (void **)*((_DWORD *)v10 + 15); /*0x575ff4*/
       if ( v11 ) /*0x575ff9*/
         TeamClass::Update_0(v11, 31, 0, g_MapSeedState, 0, 0); /*0x576009*/
-      v12 = *CellStruct::Add(&a2, &v32, Direction_X_Offsets); /*0x576021*/
-      v13 = (__int16)v12 + (SHIWORD(v12) << 9); /*0x576032*/
+  int v32; // [esp+18h] [ebp-14h] BYREF
+      int v12 = *CellStruct::Add(&a2, &v32, Direction_X_Offsets); /*0x576021*/
+      unsigned int v13 = (__int16)v12 + (SHIWORD(v12) << 9); /*0x576032*/
+  void *v14; // eax
       if ( v13 < 0x40000 && (v14 = *(void **)(g_Shroud_CellArray + 4 * v13)) != 0 ) /*0x576048*/
       {
         v15 = v14; /*0x57604a*/
@@ -158,8 +140,9 @@ void sub_575EE0(void * a1, int a2)
       v16 = (void **)*((_DWORD *)v15 + 15); /*0x576059*/
       if ( v16 ) /*0x57605e*/
         TeamClass::Update_0(v16, 31, 0, g_MapSeedState, 0, 0); /*0x57606e*/
-      v17 = *CellStruct::Add((_WORD *)v15 + 18, &v33, Direction_X_Offsets); /*0x576085*/
-      v18 = (__int16)v17 + (SHIWORD(v17) << 9); /*0x576096*/
+  int v33; // [esp+1Ch] [ebp-10h] BYREF
+      int v17 = *CellStruct::Add((_WORD *)v15 + 18, &v33, Direction_X_Offsets); /*0x576085*/
+      unsigned int v18 = (__int16)v17 + (SHIWORD(v17) << 9); /*0x576096*/
       if ( v18 >= 0x40000 || (v4 = *(void **)(g_Shroud_CellArray + 4 * v18)) == 0 ) /*0x5760ac*/
       {
         g_Map_GlobalCellIndex = v17; /*0x5760ae*/
@@ -172,8 +155,11 @@ void sub_575EE0(void * a1, int a2)
     }
     else
     {
-      v20 = *CellStruct::Add(&a2, &v34, &g_CellDirectionOffsets); /*0x5760f0*/
-      v21 = (__int16)v20 + (SHIWORD(v20) << 9); /*0x576101*/
+  void *v27; // esi
+  int v34; // [esp+20h] [ebp-Ch] BYREF
+      int v20 = *CellStruct::Add(&a2, &v34, &g_CellDirectionOffsets); /*0x5760f0*/
+      unsigned int v21 = (__int16)v20 + (SHIWORD(v20) << 9); /*0x576101*/
+  void *v22; // eax
       if ( v21 >= 0x40000 || (v22 = *(void **)(g_Shroud_CellArray + 4 * v21)) == 0 ) /*0x576117*/
       {
         g_Map_GlobalCellIndex = v20; /*0x576119*/
@@ -182,8 +168,10 @@ void sub_575EE0(void * a1, int a2)
       v23 = (void **)*((_DWORD *)v22 + 15); /*0x576124*/
       if ( v23 ) /*0x576129*/
         TeamClass::Update_0(v23, 31, 0, g_MapSeedState, 0, 0); /*0x576139*/
-      v24 = *CellStruct::Add(&a2, &v35, &Direction_Y_Offsets); /*0x576151*/
-      v25 = (__int16)v24 + (SHIWORD(v24) << 9); /*0x576162*/
+  int v35; // [esp+24h] [ebp-8h] BYREF
+      int v24 = *CellStruct::Add(&a2, &v35, &Direction_Y_Offsets); /*0x576151*/
+      unsigned int v25 = (__int16)v24 + (SHIWORD(v24) << 9); /*0x576162*/
+  void *v26; // eax
       if ( v25 < 0x40000 && (v26 = *(void **)(g_Shroud_CellArray + 4 * v25)) != 0 ) /*0x576178*/
       {
         v27 = v26; /*0x57617a*/
@@ -196,7 +184,8 @@ void sub_575EE0(void * a1, int a2)
       v28 = (void **)*((_DWORD *)v27 + 15); /*0x576189*/
       if ( v28 ) /*0x57618e*/
         TeamClass::Update_0(v28, 31, 0, g_MapSeedState, 0, 0); /*0x57619e*/
-      v31 = *CellStruct::Add((_WORD *)v27 + 18, &v36, &Direction_Y_Offsets); /*0x5761c1*/
+  int v36; // [esp+28h] [ebp-4h] BYREF
+      int v31 = *CellStruct::Add((_WORD *)v27 + 18, &v36, &Direction_Y_Offsets); /*0x5761c1*/
       v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v31); /*0x5761c5*/
       v29 = (void **)*((_DWORD *)v4 + 15); /*0x5761ca*/
       if ( v29 ) /*0x5761cf*/
@@ -512,25 +501,14 @@ void GenerateMapClassCliffTransitions()
   bool IsValidHeight; // al
   VectorClass *v17; // esi
   VectorClass *v18; // edi
-  bool v19; // al
   VectorClass *v20; // esi
   VectorClass *v21; // edi
-  bool v22; // al
   VectorClass *v23; // esi
   VectorClass *v24; // edi
-  bool v25; // al
   IUnknown *v26; // esi
   int v27; // ecx
   __int16 v28; // dx
   __int16 v29; // ax
-  bool v31; // [esp+13h] [ebp-Dh]
-  bool v32; // [esp+13h] [ebp-Dh]
-  bool v33; // [esp+13h] [ebp-Dh]
-  bool v34; // [esp+13h] [ebp-Dh]
-  bool v35; // [esp+13h] [ebp-Dh]
-  bool v36; // [esp+13h] [ebp-Dh]
-  bool v37; // [esp+13h] [ebp-Dh]
-  bool v38; // [esp+13h] [ebp-Dh]
   _DWORD v39[2]; // [esp+14h] [ebp-Ch] BYREF
   int v40; // [esp+1Ch] [ebp-4h] BYREF
   v39[1] = a0; /*0x57ad00*/
@@ -551,10 +529,11 @@ void GenerateMapClassCliffTransitions()
       v39[0] = 1; /*0x57ae1e*/
       NeighbourContent = (VectorClass *)Cell::GetNeighbourContent(aP2, 4u); /*0x57ae2b*/
       v15 = (VectorClass *)Cell::GetNeighbourContent(NeighbourContent, 2u); /*0x57ae38*/
-      v31 = !Cell::IsValidHeight((int *)NeighbourContent->vtable0); /*0x57ae43*/
+      bool v31 = !Cell::IsValidHeight((int *)NeighbourContent->vtable0); /*0x57ae43*/
       IsValidHeight = Cell::IsValidHeight((int *)v15->vtable0); /*0x57ae48*/
       if ( v31 ) /*0x57ae53*/
       {
+  bool v32; // [esp+13h] [ebp-Dh]
         do /*0x57ae93*/
         {
           if ( !IsValidHeight ) /*0x57ae57*/
@@ -579,10 +558,11 @@ void GenerateMapClassCliffTransitions()
       v39[0] = 1; /*0x57aedd*/
       v17 = (VectorClass *)Cell::GetNeighbourContent(aP2, 4u); /*0x57aeea*/
       v18 = (VectorClass *)Cell::GetNeighbourContent(v17, 6u); /*0x57aef7*/
-      v33 = !Cell::IsValidHeight((int *)v17->vtable0); /*0x57af02*/
-      v19 = Cell::IsValidHeight((int *)v18->vtable0); /*0x57af07*/
+      bool v33 = !Cell::IsValidHeight((int *)v17->vtable0); /*0x57af02*/
+      bool v19 = Cell::IsValidHeight((int *)v18->vtable0); /*0x57af07*/
       if ( v33 ) /*0x57af12*/
       {
+  bool v34; // [esp+13h] [ebp-Dh]
         do /*0x57af52*/
         {
           if ( !v19 ) /*0x57af16*/
@@ -607,10 +587,11 @@ void GenerateMapClassCliffTransitions()
       v39[0] = 1; /*0x57af97*/
       v20 = (VectorClass *)Cell::GetNeighbourContent(aP2, 2u); /*0x57afa4*/
       v21 = (VectorClass *)Cell::GetNeighbourContent(v20, 4u); /*0x57afb1*/
-      v35 = !Cell::IsValidHeight((int *)v20->vtable0); /*0x57afbc*/
-      v22 = Cell::IsValidHeight((int *)v21->vtable0); /*0x57afc1*/
+      bool v35 = !Cell::IsValidHeight((int *)v20->vtable0); /*0x57afbc*/
+      bool v22 = Cell::IsValidHeight((int *)v21->vtable0); /*0x57afc1*/
       if ( v35 ) /*0x57afcc*/
       {
+  bool v36; // [esp+13h] [ebp-Dh]
         do /*0x57b00c*/
         {
           if ( !v22 ) /*0x57afd0*/
@@ -658,10 +639,11 @@ LABEL_61:
       v39[0] = 1; /*0x57b04a*/
       v23 = (VectorClass *)Cell::GetNeighbourContent(aP2, 2u); /*0x57b057*/
       v24 = (VectorClass *)Cell::GetNeighbourContent(v23, 0); /*0x57b064*/
-      v37 = !Cell::IsValidHeight((int *)v23->vtable0); /*0x57b06f*/
-      v25 = Cell::IsValidHeight((int *)v24->vtable0); /*0x57b074*/
+      bool v37 = !Cell::IsValidHeight((int *)v23->vtable0); /*0x57b06f*/
+      bool v25 = Cell::IsValidHeight((int *)v24->vtable0); /*0x57b074*/
       if ( v37 ) /*0x57b07f*/
       {
+  bool v38; // [esp+13h] [ebp-Dh]
         do /*0x57b0bf*/
         {
           if ( !v25 ) /*0x57b083*/
@@ -787,14 +769,7 @@ void GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
   int v16; // ebp
   MouseClass *TileDataField14; // eax
   MapClass *v18; // edi
-  int v19; // eax
-  int v20; // ecx
-  __int64 v21; // rax
-  int v22; // eax
-  int v23; // edi
-  int v24; // ebp
   int v25; // eax
-  int v26; // ecx
   int v28; // eax
   MouseClass *v29; // [esp+10h] [ebp-1Ch]
   int v30; // [esp+14h] [ebp-18h]
@@ -851,7 +826,7 @@ LABEL_39:
 LABEL_37:
     v6 = v29; /*0x57b678*/
 LABEL_38:
-    v26 = *(_DWORD *)&v6->__pad_1D4[272]; /*0x57b67c*/
+    int v26 = *(_DWORD *)&v6->__pad_1D4[272]; /*0x57b67c*/
     v9 = ++v32; /*0x57b686*/
     if ( v32 >= v26 ) /*0x57b68d*/
       goto LABEL_39; /*0x57b68d*/
@@ -871,8 +846,8 @@ LABEL_18:
     goto LABEL_20; /*0x57b5e8*/
   if ( aP3 != (MouseClass *)-1 ) /*0x57b5ed*/
   {
-    v23 = v14[14] - (_DWORD)dword_ABAD28; /*0x57b603*/
-    v24 = *(_DWORD *)&v29->__pad_1D4[192] - (_DWORD)dword_ABAD28; /*0x57b605*/
+    int v23 = v14[14] - (_DWORD)dword_ABAD28; /*0x57b603*/
+    int v24 = *(_DWORD *)&v29->__pad_1D4[192] - (_DWORD)dword_ABAD28; /*0x57b605*/
     if ( !Cell::IsEmpty(v14) ) /*0x57b60e*/
     {
       if ( v23 < 0 || v24 < 0 || v23 > 41 || v24 > 41 || dword_82A7F4[v23] != dword_82A7F4[v24] ) /*0x57b703*/
@@ -890,12 +865,12 @@ LABEL_19:
   if ( TileDataField14 == (MouseClass *)v18 ) /*0x57b586*/
   {
 LABEL_20:
-    v19 = v14[14] - (_DWORD)dword_ABAD28; /*0x57b58c*/
-    v20 = *(_DWORD *)&v29->__pad_1D4[192] - (_DWORD)dword_ABAD28; /*0x57b5a1*/
+    int v19 = v14[14] - (_DWORD)dword_ABAD28; /*0x57b58c*/
+    int v20 = *(_DWORD *)&v29->__pad_1D4[192] - (_DWORD)dword_ABAD28; /*0x57b5a1*/
     if ( v19 >= 0 && v20 >= 0 && v19 <= 41 && v20 <= 41 ) /*0x57b5b7*/
     {
-      v21 = dword_82A89C[v19] - dword_82A89C[v20]; /*0x57b5c9*/
-      v22 = (HIDWORD(v21) ^ v21) - HIDWORD(v21); /*0x57b5cc*/
+      __int64 v21 = dword_82A89C[v19] - dword_82A89C[v20]; /*0x57b5c9*/
+      int v22 = (HIDWORD(v21) ^ v21) - HIDWORD(v21); /*0x57b5cc*/
       if ( v22 >= 3 && v22 <= 5 ) /*0x57b5d6*/
       {
         LOBYTE(aP4->field_0) = 0; /*0x57b72b*/
@@ -943,13 +918,8 @@ void sub_57C870(int a1)
   __int16 v2; // bx
   __int16 v3; // dx
   bool v5; // sf
-  int v6; // eax
-  _DWORD *v7; // eax
   int v8; // eax
   __int16 v9; // dx
-  int v10; // eax
-  int v11; // eax
-  _DWORD *v12; // eax
   int v13; // eax
   int v15; // [esp+10h] [ebp-Ch]
   int v16; // [esp+10h] [ebp-Ch]
@@ -966,8 +936,9 @@ void sub_57C870(int a1)
     v2 += LOWORD(Direction_X_Offsets[0]); /*0x57c8aa*/
     int v4 = (__int16)(HIWORD(a1) + HIWORD(Direction_X_Offsets[0])) << 9; /*0x57c8ae*/
     v5 = v2 + v4 < 0; /*0x57c8b1*/
-    v6 = v2 + v4; /*0x57c8b1*/
+    int v6 = v2 + v4; /*0x57c8b1*/
     HIWORD(a1) += HIWORD(Direction_X_Offsets[0]); /*0x57c8b3*/
+  _DWORD *v7; // eax
     if ( v5 || v6 >= 0x40000 || (v7 = *(_DWORD **)(g_Shroud_CellArray + 4 * v6)) == 0 ) /*0x57c8cb*/
     {
       g_Map_GlobalCellIndex = v15; /*0x57c8cd*/
@@ -985,10 +956,11 @@ void sub_57C870(int a1)
     LOWORD(v16) = v1 + g_DirectionOffsetPool; /*0x57c914*/
     HIWORD(v16) = v19 + HIWORD(g_DirectionOffsetPool); /*0x57c91f*/
     LOWORD(v1) = v1 + g_DirectionOffsetPool; /*0x57c924*/
-    v10 = (__int16)(v19 + HIWORD(g_DirectionOffsetPool)) << 9; /*0x57c928*/
+    int v10 = (__int16)(v19 + HIWORD(g_DirectionOffsetPool)) << 9; /*0x57c928*/
     v5 = (__int16)v1 + v10 < 0; /*0x57c92b*/
-    v11 = (__int16)v1 + v10; /*0x57c92b*/
+    int v11 = (__int16)v1 + v10; /*0x57c92b*/
     v19 += HIWORD(g_DirectionOffsetPool); /*0x57c92d*/
+  _DWORD *v12; // eax
     if ( v5 || v11 >= 0x40000 || (v12 = *(_DWORD **)(g_Shroud_CellArray + 4 * v11)) == 0 ) /*0x57c945*/
     {
       g_Map_GlobalCellIndex = v16; /*0x57c947*/
@@ -1013,13 +985,8 @@ void sub_57C990(int a1)
   __int16 v2; // bx
   __int16 v3; // dx
   bool v5; // sf
-  int v6; // eax
-  _DWORD *v7; // eax
   int v8; // eax
   __int16 v9; // dx
-  int v10; // eax
-  int v11; // eax
-  _DWORD *v12; // eax
   int v13; // eax
   int v15; // [esp+10h] [ebp-Ch]
   int v16; // [esp+10h] [ebp-Ch]
@@ -1036,8 +1003,9 @@ void sub_57C990(int a1)
     v2 += Direction_Y_Offsets; /*0x57c9ca*/
     int v4 = (__int16)(HIWORD(a1) + HIWORD(Direction_Y_Offsets)) << 9; /*0x57c9ce*/
     v5 = v2 + v4 < 0; /*0x57c9d1*/
-    v6 = v2 + v4; /*0x57c9d1*/
+    int v6 = v2 + v4; /*0x57c9d1*/
     HIWORD(a1) += HIWORD(Direction_Y_Offsets); /*0x57c9d3*/
+  _DWORD *v7; // eax
     if ( v5 || v6 >= 0x40000 || (v7 = *(_DWORD **)(g_Shroud_CellArray + 4 * v6)) == 0 ) /*0x57c9eb*/
     {
       g_Map_GlobalCellIndex = v15; /*0x57c9ed*/
@@ -1055,10 +1023,11 @@ void sub_57C990(int a1)
     LOWORD(v16) = v1 + g_CellDirectionOffsets; /*0x57ca34*/
     HIWORD(v16) = v19 + HIWORD(g_CellDirectionOffsets); /*0x57ca3f*/
     LOWORD(v1) = v1 + g_CellDirectionOffsets; /*0x57ca44*/
-    v10 = (__int16)(v19 + HIWORD(g_CellDirectionOffsets)) << 9; /*0x57ca48*/
+    int v10 = (__int16)(v19 + HIWORD(g_CellDirectionOffsets)) << 9; /*0x57ca48*/
     v5 = (__int16)v1 + v10 < 0; /*0x57ca4b*/
-    v11 = (__int16)v1 + v10; /*0x57ca4b*/
+    int v11 = (__int16)v1 + v10; /*0x57ca4b*/
     v19 += HIWORD(g_CellDirectionOffsets); /*0x57ca4d*/
+  _DWORD *v12; // eax
     if ( v5 || v11 >= 0x40000 || (v12 = *(_DWORD **)(g_Shroud_CellArray + 4 * v11)) == 0 ) /*0x57ca65*/
     {
       g_Map_GlobalCellIndex = v16; /*0x57ca67*/
@@ -1083,13 +1052,8 @@ void sub_57DAF0(int a1)
   __int16 v2; // bx
   __int16 v3; // dx
   bool v5; // sf
-  int v6; // eax
-  _DWORD *v7; // eax
   int v8; // eax
   __int16 v9; // dx
-  int v10; // eax
-  int v11; // eax
-  _DWORD *v12; // eax
   int v13; // eax
   int v15; // [esp+10h] [ebp-Ch]
   int v16; // [esp+10h] [ebp-Ch]
@@ -1106,8 +1070,9 @@ void sub_57DAF0(int a1)
     v2 += LOWORD(Direction_X_Offsets[0]); /*0x57db2a*/
     int v4 = (__int16)(HIWORD(a1) + HIWORD(Direction_X_Offsets[0])) << 9; /*0x57db2e*/
     v5 = v2 + v4 < 0; /*0x57db31*/
-    v6 = v2 + v4; /*0x57db31*/
+    int v6 = v2 + v4; /*0x57db31*/
     HIWORD(a1) += HIWORD(Direction_X_Offsets[0]); /*0x57db33*/
+  _DWORD *v7; // eax
     if ( v5 || v6 >= 0x40000 || (v7 = *(_DWORD **)(g_Shroud_CellArray + 4 * v6)) == 0 ) /*0x57db4b*/
     {
       g_Map_GlobalCellIndex = v15; /*0x57db4d*/
@@ -1125,10 +1090,11 @@ void sub_57DAF0(int a1)
     LOWORD(v16) = v1 + g_DirectionOffsetPool; /*0x57db98*/
     HIWORD(v16) = v19 + HIWORD(g_DirectionOffsetPool); /*0x57dba3*/
     LOWORD(v1) = v1 + g_DirectionOffsetPool; /*0x57dba8*/
-    v10 = (__int16)(v19 + HIWORD(g_DirectionOffsetPool)) << 9; /*0x57dbac*/
+    int v10 = (__int16)(v19 + HIWORD(g_DirectionOffsetPool)) << 9; /*0x57dbac*/
     v5 = (__int16)v1 + v10 < 0; /*0x57dbaf*/
-    v11 = (__int16)v1 + v10; /*0x57dbaf*/
+    int v11 = (__int16)v1 + v10; /*0x57dbaf*/
     v19 += HIWORD(g_DirectionOffsetPool); /*0x57dbb1*/
+  _DWORD *v12; // eax
     if ( v5 || v11 >= 0x40000 || (v12 = *(_DWORD **)(g_Shroud_CellArray + 4 * v11)) == 0 ) /*0x57dbc9*/
     {
       g_Map_GlobalCellIndex = v16; /*0x57dbcb*/
@@ -1153,13 +1119,8 @@ void sub_57DC20(int a1)
   __int16 v2; // bx
   __int16 v3; // dx
   bool v5; // sf
-  int v6; // eax
-  _DWORD *v7; // eax
   int v8; // eax
   __int16 v9; // dx
-  int v10; // eax
-  int v11; // eax
-  _DWORD *v12; // eax
   int v13; // eax
   int v15; // [esp+10h] [ebp-Ch]
   int v16; // [esp+10h] [ebp-Ch]
@@ -1176,8 +1137,9 @@ void sub_57DC20(int a1)
     v2 += Direction_Y_Offsets; /*0x57dc5a*/
     int v4 = (__int16)(HIWORD(a1) + HIWORD(Direction_Y_Offsets)) << 9; /*0x57dc5e*/
     v5 = v2 + v4 < 0; /*0x57dc61*/
-    v6 = v2 + v4; /*0x57dc61*/
+    int v6 = v2 + v4; /*0x57dc61*/
     HIWORD(a1) += HIWORD(Direction_Y_Offsets); /*0x57dc63*/
+  _DWORD *v7; // eax
     if ( v5 || v6 >= 0x40000 || (v7 = *(_DWORD **)(g_Shroud_CellArray + 4 * v6)) == 0 ) /*0x57dc7b*/
     {
       g_Map_GlobalCellIndex = v15; /*0x57dc7d*/
@@ -1195,10 +1157,11 @@ void sub_57DC20(int a1)
     LOWORD(v16) = v1 + g_CellDirectionOffsets; /*0x57dcc8*/
     HIWORD(v16) = v19 + HIWORD(g_CellDirectionOffsets); /*0x57dcd3*/
     LOWORD(v1) = v1 + g_CellDirectionOffsets; /*0x57dcd8*/
-    v10 = (__int16)(v19 + HIWORD(g_CellDirectionOffsets)) << 9; /*0x57dcdc*/
+    int v10 = (__int16)(v19 + HIWORD(g_CellDirectionOffsets)) << 9; /*0x57dcdc*/
     v5 = (__int16)v1 + v10 < 0; /*0x57dcdf*/
-    v11 = (__int16)v1 + v10; /*0x57dcdf*/
+    int v11 = (__int16)v1 + v10; /*0x57dcdf*/
     v19 += HIWORD(g_CellDirectionOffsets); /*0x57dce1*/
+  _DWORD *v12; // eax
     if ( v5 || v11 >= 0x40000 || (v12 = *(_DWORD **)(g_Shroud_CellArray + 4 * v11)) == 0 ) /*0x57dcf9*/
     {
       g_Map_GlobalCellIndex = v16; /*0x57dcfb*/

@@ -67,8 +67,8 @@ unsigned int * CreateTeamCommand::Construct(int a2)
 ObjectClass * CreateTeamCommand::AddRef()
 {
 {
-    sprintf(&HouseClass_Player.__pad_5568[25344], &DataGlobal_826F84, (INIClass *)this->q004);
-    return (ObjectClass *)&HouseClass_Player.__pad_5568[25344];
+    sprintf(&HouseClass_Player[47208], &DataGlobal_826F84, (INIClass *)this->q004);
+    return (ObjectClass *)&HouseClass_Player[47208];
 }
 }
 
@@ -175,7 +175,7 @@ char CreateTeamCommand::performAction_6()
     int _7342A0;
     int v2;
     int *v4;
-    LOBYTE(_7342A0) = PlayerClass::HasPlayers(&DataGlobal_87F8E4.__pad_125C[492]);
+    LOBYTE(_7342A0) = PlayerClass::HasPlayers(&DataGlobal_87F8E4[5192]);
     if ( (char)_7342A0 )
   {
     SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 0);
@@ -230,7 +230,7 @@ char CreateTeamCommand::performAction_11()
     int _7342B0;
     int v2;
     int *v4;
-    LOBYTE(_7342B0) = PlayerClass::HasPlayers(&DataGlobal_87F8E4.__pad_125C[4480]);
+    LOBYTE(_7342B0) = PlayerClass::HasPlayers(&DataGlobal_87F8E4[9180]);
     if ( (char)_7342B0 )
   {
     SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 1);
@@ -281,7 +281,7 @@ int CreateTeamCommand::performAction_16()
 {
 {
     int result;
-    result = PlayerClass::HasPlayers(&DataGlobal_87F8E4.__pad_125C[8468]);
+    result = PlayerClass::HasPlayers(&DataGlobal_87F8E4[13168]);
     if ( (char)result )
     return SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 2);
     return result;
@@ -323,7 +323,7 @@ int CreateTeamCommand::performAction_21()
 {
 {
     int result;
-    result = PlayerClass::HasPlayers(&DataGlobal_87F8E4.__pad_125C[12456]);
+    result = PlayerClass::HasPlayers(&DataGlobal_87F8E4[17156]);
     if ( (char)result )
     return SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 3);
     return result;
@@ -522,8 +522,8 @@ unsigned char * CreateTeamCommand::performAction_30()
     TacticalClass::SetDisplayMode(&DataGlobal_87F7E8, 0, 0);
     BuildingClass::TogglePower2(&DataGlobal_87F7E8, 0);
     BuildingClass::TogglePower(&DataGlobal_87F7E8, 0);
-    if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[476] )
-    v1 = **(char ***)&g_NetworkPlayerBuffer.__pad_14B0[464];
+    if ( *(int *)&g_NetworkPlayerBuffer[5772] )
+    v1 = **(char ***)&g_NetworkPlayerBuffer[5760];
     else
     v1 = 0;
     result = sub_4AA2B0(v1);
@@ -865,8 +865,8 @@ unsigned char * CreateTeamCommand::performAction_69()
     TacticalClass::SetDisplayMode(&DataGlobal_87F7E8, 0, 0);
     BuildingClass::TogglePower2(&DataGlobal_87F7E8, 0);
     BuildingClass::TogglePower(&DataGlobal_87F7E8, 0);
-    if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[476] )
-    v1 = **(char ***)&g_NetworkPlayerBuffer.__pad_14B0[464];
+    if ( *(int *)&g_NetworkPlayerBuffer[5772] )
+    v1 = **(char ***)&g_NetworkPlayerBuffer[5760];
     else
     v1 = 0;
     result = sub_4AA380(v1);
@@ -1103,8 +1103,8 @@ wchar_t * CreateTeamCommand::performAction_99()
 {
 {
     ParticleSystemClass *result;
-    result = *(ParticleSystemClass **)&g_NetworkPlayerBuffer.__pad_14B0[476];
-    if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[476] > 0 )
+    result = *(ParticleSystemClass **)&g_NetworkPlayerBuffer[5772];
+    if ( *(int *)&g_NetworkPlayerBuffer[5772] > 0 )
   {
     TacticalClass::InterpolateView();
     return (wchar_t *)MapClass::MarkForRedraw(&DataGlobal_87F7E8, 1);
@@ -1583,10 +1583,10 @@ void * CreateTeamCommand::performAction_167()
     ScenarioClass *result;
     int v4[2];
     int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
     v5[0] = *v1;
     v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], (AbstractClass *)v4, (IUnknown *)v5);
+    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
     result = g_ScenarioClass_Instance;
     *(int *)((char *)&g_ScenarioClass_Instance->localVariables[1024] + 2) = v2;
     return result;
@@ -1632,10 +1632,10 @@ void * CreateTeamCommand::performAction_172()
     ScenarioClass *result;
     int v4[2];
     int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
     v5[0] = *v1;
     v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], (AbstractClass *)v4, (IUnknown *)v5);
+    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
     result = g_ScenarioClass_Instance;
     *(int *)((char *)g_ScenarioClass_Instance->view1 + 2) = v2;
     return result;
@@ -1681,10 +1681,10 @@ void * CreateTeamCommand::performAction_177()
     ScenarioClass *result;
     int v4[2];
     int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
     v5[0] = *v1;
     v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], (AbstractClass *)v4, (IUnknown *)v5);
+    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
     result = g_ScenarioClass_Instance;
     *(int *)((char *)g_ScenarioClass_Instance->view2 + 2) = v2;
     return result;
@@ -1730,10 +1730,10 @@ void * CreateTeamCommand::performAction_182()
     ScenarioClass *result;
     int v4[2];
     int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
     v5[0] = *v1;
     v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], (AbstractClass *)v4, (IUnknown *)v5);
+    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
     result = g_ScenarioClass_Instance;
     *(int *)((char *)g_ScenarioClass_Instance->view3 + 2) = v2;
     return result;
@@ -1774,10 +1774,10 @@ wchar_t * CreateTeamCommand::performAction_186()
 bool CreateTeamCommand::performAction_187()
 {
 {
-    if ( !*(int *)&g_NetworkPlayerBuffer.__pad_14B0[476] || MapClass::GetScrollMode((int)&DataGlobal_87F7E8) )
+    if ( !*(int *)&g_NetworkPlayerBuffer[5772] || MapClass::GetScrollMode((int)&DataGlobal_87F7E8) )
     return MapClass::SetScrollMode((int)&DataGlobal_87F7E8, 0);
     else
-    return MapClass::SetScrollMode((int)&DataGlobal_87F7E8, **(MouseClass ***)&g_NetworkPlayerBuffer.__pad_14B0[464]);
+    return MapClass::SetScrollMode((int)&DataGlobal_87F7E8, **(MouseClass ***)&g_NetworkPlayerBuffer[5760]);
 }
 }
 
@@ -2633,9 +2633,9 @@ int UpdateSurfaceAnimations(int a1, AnimClass * aP1, int a3, int a4)
     int v14[2];
     char v15;
     int k;
-    for ( i = 0; i < *(int *)&DataGlobal_87C374.__pad_14B0[7812]; ++i )
-    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(**(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[7800] + 4 * i) + 4))( *(int *)(*(int *)&DataGlobal_87C374.__pad_14B0[7800] + 4 * i), a1, aP1, a3, a4);
-    for ( j = 0; j < *(int *)DataGlobal_B05488.__pad_58; ++j )
+    for ( i = 0; i < *(int *)&DataGlobal_87C374[13108]; ++i )
+    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(**(int **)(*(int *)&DataGlobal_87C374[13096] + 4 * i) + 4))( *(int *)(*(int *)&DataGlobal_87C374[13096] + 4 * i), a1, aP1, a3, a4);
+    for ( j = 0; j < *(int *)DataGlobal_B05488[88]; ++j )
   {
     v9 = *(int *)(DataGlobal_B05488.field_4C + 4 * j);
     if ( *(int *)(v9 + 784) > 1 )
@@ -2660,7 +2660,7 @@ int UpdateSurfaceAnimations(int a1, AnimClass * aP1, int a3, int a4)
     }
   }
     MapClass::UpdateLightingPostProcess();
-    return MapClass::MarkForRedraw(&DataGlobal_87C374.__pad_14B0[8132], 1);
+    return MapClass::MarkForRedraw(&DataGlobal_87C374[13428], 1);
 }
 }
 
@@ -2671,6 +2671,163 @@ bool PsyDom::IsActive()
     return PsyDom_Status != 0;
 }
 }
+
+// ==== BACKFILL 0x0053B780  ApplyChronoScreenColorShift  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
+{
+      int result;
+      void *v2;
+      int v3;
+      int v4;
+      int v5;
+      int v6;
+      int v7;
+      unsigned int v8;
+      unsigned int v9;
+      unsigned int v10;
+      int v11;
+      _WORD *v12;
+      _WORD *v13;
+      _WORD *v14;
+      int v15;
+      int v16;
+      int v18;
+      int v19;
+      int v20;
+      int v21;
+      int v22;
+      int v23;
+      int v24;
+
+      result = ChronoScreenEffect_Status;
+      v2 = this;
+      if ( ChronoScreenEffect_Status == 3 )
+      {
+        v15 = this->vt31();
+        v3 = (*(int (__thiscall **)(void *))(*(_DWORD *)v2 + 128))(v2) - 32;
+        v4 = ((*(int (__thiscall **)(void *))(*(_DWORD *)v2 + 116))(v2) - 2 * v15) / 2;
+        v18 = v4;
+        v5 = (*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)v2 + 92))(v2, 0, 0);
+        v16 = 255 * ChronoScreenEffect_Duration / DataGlobal_A9FAA8;
+        v6 = DDraw::GetStatus() - 1;
+        if ( v6 )
+        {
+          if ( v6 == 1 )
+          {
+            v13 = (_WORD *)v5;
+            if ( v3 > 0 )
+            {
+              v20 = v3;
+              do
+              {
+                HIWORD(v9) = HIWORD(v15);
+                if ( v15 > 0 )
+                {
+                  v23 = v15;
+                  do
+                  {
+                    v5 += 2;
+                    LOWORD(v9) = *v13;
+                    *(_WORD *)(v5 - 2) = ((*v13 & 0x1F) + (((unsigned __int16)v16 * (31 - (*v13 & 0x1F))) >> 8))
+                                       | (32
+                                        * (((v9 >> 5) & 0x3F)
+                                         + ((int)((unsigned __int16)v16 * (63 - ((v9 >> 5) & 0x3F))) >> 8)))
+                                       | (((*v13 >> 11)
+                                         + (unsigned __int16)(((unsigned __int16)v16 * (31 - (*v13 >> 11))) >> 8)) << 11);
+                    v9 = v23 - 1;
+                    ++v13;
+                    v23 = v9;
+                  }
+                  while ( v9 );
+                  v4 = v18;
+                  v2 = this;
+                }
+                v5 += 2 * v4;
+                v13 += v4;
+                --v20;
+              }
+              while ( v20 );
+            }
+          }
+          else
+          {
+            v12 = (_WORD *)v5;
+            if ( v3 > 0 )
+            {
+              v22 = v3;
+              do
+              {
+                if ( v15 > 0 )
+                {
+                  v19 = v15;
+                  do
+                  {
+                    HIWORD(v8) = HIWORD(v12);
+                    v5 += 2;
+                    LOWORD(v8) = *v12;
+                    *(_WORD *)(v5 - 2) = ((*v12 & 0x1F) + (((unsigned __int16)v16 * (31 - (*v12 & 0x1F))) >> 8))
+                                       | (32
+                                        * (((v8 >> 5) & 0x1F)
+                                         + ((int)((unsigned __int16)v16 * (31 - ((v8 >> 5) & 0x1F))) >> 8)))
+                                       | ((((v8 >> 10) & 0x1F)
+                                         + (unsigned __int16)((int)((unsigned __int16)v16 * (31 - ((v8 >> 10) & 0x1F))) >> 8)) << 10);
+                    ++v12;
+                    --v19;
+                  }
+                  while ( v19 );
+                  v2 = this;
+                  v4 = v18;
+                }
+                v5 += 2 * v4;
+                v12 += v4;
+                --v22;
+              }
+              while ( v22 );
+            }
+          }
+        }
+        else
+        {
+          v14 = (_WORD *)v5;
+          if ( v3 > 0 )
+          {
+            v21 = v3;
+            do
+            {
+              if ( v15 > 0 )
+              {
+                v24 = v15;
+                do
+                {
+                  HIWORD(v10) = HIWORD(v14);
+                  v5 += 2;
+                  LOWORD(v10) = *v14;
+                  LOWORD(v7) = *v14 >> 11;
+                  v11 = v7 + (((unsigned __int16)v16 * (31 - (unsigned __int16)v7)) >> 8);
+                  v7 = (*v14 & 0x3F) + (((unsigned __int16)v16 * (63 - (*v14 & 0x3F))) >> 8);
+                  *(_WORD *)(v5 - 2) = v7
+                                     | ((((v10 >> 6) & 0x1F)
+                                       + (unsigned __int16)((int)((unsigned __int16)v16 * (31 - ((v10 >> 6) & 0x1F))) >> 8)) << 6)
+                                     | ((_WORD)v11 << 11);
+                  ++v14;
+                  --v24;
+                }
+                while ( v24 );
+                v2 = this;
+                v4 = v18;
+              }
+              v5 += 2 * v4;
+              v14 += v4;
+              --v21;
+            }
+            while ( v21 );
+          }
+        }
+        return (*(int (__thiscall **)(void *))(*(_DWORD *)v2 + 96))(v2);
+      }
+      return result;
+}
+} }
 
 // ==== BACKFILL 0x0053D310  ProcessIonCannonEffect  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_53D310()
@@ -2876,6 +3033,41 @@ void ** Object::RemoveObjectArray()
 }
 }
 
+// ==== BACKFILL 0x0053E4F0  WinMain_Helper_53E4F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { bool WinMain_Helper_53E4F0(char* FileName) {
+{
+    if ( !g_StreamPool || Stream )
+    return 0;
+    EnterCriticalSection(&DataGlobal_AA0418);
+    Stream = fopen(FileName, aWb);
+    if ( Stream )
+    g_StreamBufferState = 1;
+    LeaveCriticalSection(&DataGlobal_AA0418);
+    return Stream != 0;
+}
+} }
+
+// ==== BACKFILL 0x0053E550  WinMain_Write  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { bool WinMain_Write(char* FileName) {
+{
+    signed int SampleSize;
+    if ( !g_StreamPool || Stream )
+    return 0;
+    EnterCriticalSection(&DataGlobal_AA0418);
+    Stream = fopen(FileName, aRb);
+    DataGlobal_AA046C = 0;
+    if ( Stream )
+  {
+    g_StreamBufferState = 2;
+    SampleSize = Audio::GetSampleSize((int *)DataGlobal_AA0460);
+    if ( WriteAudioStreamToFile(DataGlobal_AA0460, Stream, SampleSize, 0) != 1 )
+    DataGlobal_AA046C = 1;
+  }
+    LeaveCriticalSection(&DataGlobal_AA0418);
+    return Stream != 0;
+}
+} }
+
 // ==== BACKFILL 0x0053E6B0  WinMain_Write_53E6B0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void sub_53E6B0()
 {
@@ -3009,10 +3201,10 @@ char * Network::FormatAddress(IUnknown * aP1)
     v2 = (IUnknown *)this;
     v3 = v2->field_4;
     if ( DataGlobal_828140 == 1 )
-    sprintf( &g_NetworkPlayerBuffer.__pad_579C[54948], DataGlobal_828158, (unsigned char)v2->field_0, BYTE1(v2->field_0), (unsigned char)BYTE2(v2->field_0), HIBYTE(v2->field_0), (unsigned char)v3, BYTE1(v3), BYTE2(v3), HIBYTE(v3), (unsigned char)LOWORD(v2->field_8), HIBYTE(LOWORD(v2->field_8)));
+    sprintf( &g_NetworkPlayerBuffer[77376], DataGlobal_828158, (unsigned char)v2->field_0, BYTE1(v2->field_0), (unsigned char)BYTE2(v2->field_0), HIBYTE(v2->field_0), (unsigned char)v3, BYTE1(v3), BYTE2(v3), HIBYTE(v3), (unsigned char)LOWORD(v2->field_8), HIBYTE(LOWORD(v2->field_8)));
     else
-    sprintf( &g_NetworkPlayerBuffer.__pad_579C[54948], DataGlobal_828144, (unsigned char)v3, BYTE1(v3), BYTE2(v3), HIBYTE(v3), *(void**)this);
-    return &g_NetworkPlayerBuffer.__pad_579C[54948];
+    sprintf( &g_NetworkPlayerBuffer[77376], DataGlobal_828144, (unsigned char)v3, BYTE1(v3), BYTE2(v3), HIBYTE(v3), *(void**)this);
+    return &g_NetworkPlayerBuffer[77376];
 }
 }
 
@@ -3053,6 +3245,60 @@ int sub_53F4F0(short a1, int a2, int a3, int a4, int a5, int a6, int a7)
     return a6;
 }
 }
+
+// ==== BACKFILL 0x0053FA90  Network_Init_53FA90  cls=IPXGlobalConnClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { void* Gap2Recv_53FA90::Network_Init_53FA90(int aP1, int aP2, int aP3, short aP4, short a6) {
+{
+    int v7;
+    int v8;
+    IPXManagerClass *v9;
+    IPXManagerClass *v10;
+    int v11;
+    int v12;
+    IPXConnClass::constructor( this, (int)aP1, (SessionClass *)aP2, (IPXConnClass *)&aP3->__pad_0[2], (IPXConnClass *)a6, 0, 0, (wchar_t *)&DataGlobal_87F8E4[32336], 12);
+    *(void**)this = (int)&vt_IPXGlobalConnClass;
+    this->M184 = (short)aP4;
+    this->M196 = 0;
+    this->M200 = 1;
+    this->M212 = (int)aP2;
+    v7 = __2_YAPAXI_Z(4 * (int)aP2);
+    v8 = this->M212;
+    this->M208 = v7;
+    v9 = (IPXManagerClass *)__2_YAPAXI_Z(12 * v8);
+    if ( v9 )
+  {
+    v10 = v9;
+    if ( v8 - 1 >= 0 )
+    {
+    do
+      {
+    Waypoint::InitInvalid(v10);
+    v10 = (IPXManagerClass *)((char *)(v10) + 12);
+    --v8;
+      }
+    while ( v8 );
+    }
+  }
+    else
+  {
+    v9 = 0;
+  }
+    v11 = this->M212;
+    v12 = 0;
+    this->M204 = (int)v9;
+    if ( v11 > 0 )
+  {
+    do
+    {
+    ++v12;
+    *(int *)(this->M208 + 4 * v12 - 4) = -1;
+    }
+    while ( v12 < this->M212 );
+  }
+    this->M216 = 0;
+    return this;
+}
+} }
 
 // ==== BACKFILL 0x0053FFA0  TerrainTypeClass::GetTileData  cls=IPXGlobalConnClass  sig=csp  renamed_refs=0  residual=- ====
 int TerrainTypeClass::GetTileData(AnimClass * aP1, void * a2, signed int * a3, unsigned int * a4, unsigned short * a5, unsigned int * a6)

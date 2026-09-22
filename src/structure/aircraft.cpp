@@ -185,13 +185,12 @@ LABEL_14:
           if ( *(int *)(*(_DWORD *)this->SelectVocOrSfx(v27) + 156) > 0 )
           {
   int v31; // eax
-  int v30; // edi
             do
             {
               int v28 = *this;
               int v29 = this->SelectWeapon(this->q2B4);
               this->FireWeapon(this->q2B4, v29);
-              v30 = *this;
+              int v30 = *this;
               ++v26;
               v31 = this->SelectWeapon(this->q2B4);
             }

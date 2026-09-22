@@ -472,7 +472,7 @@ int MapClass::MarkForRedraw(int a2)
 bool COMObject::IsSameType(GScreenClass * aP0)
 {
 {
-    return *(int *)&HouseClass_Player.__pad_5568[23712] == (*(int (__thiscall **)(GScreenClass *))(aP0->parent_gap[0] + 24))(aP0);
+    return *(int *)&HouseClass_Player[45576] == (*(int (__thiscall **)(GScreenClass *))(aP0->parent_gap[0] + 24))(aP0);
 }
 }
 
@@ -691,7 +691,7 @@ double HouseClass::GiveTiberium_Storage(AbstractClass * aP1, BuildingClass * aP2
 {
 {
     this->siloMoney = Math::RoundToInt(*(float *)&aP1 * 5.0 + (double)(int)this->siloMoney);
-    this->balance = Math::RoundToInt( (double)*(int *)(*(int *)(*(int *)&g_OverlayTypeConfig.__pad_579C[9560] + 4 * (int)aP2) + 184) * *(float *)(this->relatedTagsCapacity + 328) * *(float *)&aP1 + (double)(int)this->balance);
+    this->balance = Math::RoundToInt( (double)*(int *)(*(int *)(*(int *)&g_OverlayTypeConfig[31988] + 4 * (int)aP2) + 184) * *(float *)(this->relatedTagsCapacity + 328) * *(float *)&aP1 + (double)(int)this->balance);
     return *(float *)&aP1;
 }
 }
@@ -832,6 +832,24 @@ int HouseClass::MakeAlly(int a2, char a3)
 }
 }
 
+// ==== BACKFILL 0x004F9F70  COMStub_4F9F70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { char Gap2Recv_4F9F70::COMStub_4F9F70(int a2, char a3) {
+{
+    return HouseClass::SetAlliance((int)this, *(int *)(DataGlobal_87F7E8[524945] + 4 * a2), a3);
+}
+
+/* ASM:
+mov     eax, [esp+arg_4]
+mov     edx, [esp+arg_0]
+push    eax
+mov     eax, ds:0A8022Ch
+mov     edx, [eax+edx*4]
+push    edx
+call    HouseClass__SetAlliance
+retn    8
+*/
+} }
+
 // ==== BACKFILL 0x004FA2E0  HouseClass::SetThreat_Bounds  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::SetThreat_Bounds(int a1, int a2) {
 {
@@ -893,11 +911,11 @@ namespace gamemd { int SuperWeapon::SelectSuperWeaponTarget(int a1) {
       v4 = -1;
       v5 = 0;
       v12 = 0;
-      if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100] > 0 )
+      if ( *(int *)&g_NetworkPlayerBuffer[5396] > 0 )
       {
         do
         {
-          v6 = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer.__pad_14B0[88] + 4 * v5);
+          v6 = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5384] + 4 * v5);
           if ( v6 && !*(_BYTE *)(v6 + 129) && *(_DWORD *)(v6 + 108) )
           {
             v7 = (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 60))(v6);
@@ -920,7 +938,7 @@ namespace gamemd { int SuperWeapon::SelectSuperWeaponTarget(int a1) {
           }
           v5 = ++v12;
         }
-        while ( v12 < *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100] );
+        while ( v12 < *(int *)&g_NetworkPlayerBuffer[5396] );
         if ( v3 )
         {
           v10 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v3 + 72))(v3, v15);
@@ -1248,7 +1266,7 @@ char HouseClass::DroppedFlag(UnitClass * aP1, int a3)
     productionFactory_plants_capacity = v5->productionFactory_plants_capacity;
     v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
     v7 = HouseClass::MarkCellBuildable((int)v6, productionFactory_plants_capacity);
-    if ( v7 || (a3 = 0, aP1 = (UnitClass *)*LayerClass::Pathfinding_Find( &DataGlobal_87F7E8, 0, &v12, (short *)v3, 1, -1, 0, 0, 1, 1, 0, 0, 0, 1, (short *)&a3, 0, 0), aP1 != *(UnitClass **)&g_NetworkPlayerBuffer.__pad_14B0[1196]) && (v11 = *(int *)(this->relatedTagsCapacity + 184), v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1), (v7 = HouseClass::MarkCellBuildable((int)v8, v11)) != 0) )
+    if ( v7 || (a3 = 0, aP1 = (UnitClass *)*LayerClass::Pathfinding_Find( &DataGlobal_87F7E8, 0, &v12, (short *)v3, 1, -1, 0, 0, 1, 1, 0, 0, 0, 1, (short *)&a3, 0, 0), aP1 != *(UnitClass **)&g_NetworkPlayerBuffer[6492]) && (v11 = *(int *)(this->relatedTagsCapacity + 184), v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1), (v7 = HouseClass::MarkCellBuildable((int)v8, v11)) != 0) )
   {
     this->ourFlagCoords = (int)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
   }
@@ -1396,9 +1414,9 @@ namespace gamemd { int HouseClass::AIInfantryProduction() {
       memset(v29, 0, sizeof(v29));
       memset32(v30, 0x7FFFFFFF, 0x64u);
       v3 = 0;
-      for ( i = 0; v3 < *(int *)&g_CellDirectionOffsets.__pad_579C[62156]; i = v3 )
+      for ( i = 0; v3 < *(int *)&g_CellDirectionOffsets[84584]; i = v3 )
       {
-        v4 = *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets.__pad_579C[62144] + 4 * v3);
+        v4 = *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84572] + 4 * v3);
         if ( v4 )
         {
           if ( (v5 = *(_DWORD *)(v4 + 80), *(_BYTE *)(*(_DWORD *)(v4 + 36) + 171)) && !*(_BYTE *)(v4 + 121)
@@ -1459,19 +1477,19 @@ namespace gamemd { int HouseClass::AIInfantryProduction() {
       v18 = -1;
       v15 = 0;
       v21 = (CCINIClass *)0x7FFFFFFF;
-      if ( *(int *)&g_NetworkPlayerBuffer.__pad_BC0[348] > 0 )
+      if ( *(int *)&g_NetworkPlayerBuffer[3356] > 0 )
       {
         do
         {
           v16 = v29[v15];
           if ( v16 > 0 )
           {
-            if ( HouseClass::CanBuild(this, *(IUnknown **)(*(_DWORD *)&g_NetworkPlayerBuffer.__pad_BC0[336] + 4 * v15), 0, 0) )
+            if ( HouseClass::CanBuild(this, *(IUnknown **)(*(_DWORD *)&g_NetworkPlayerBuffer[3344] + 4 * v15), 0, 0) )
             {
-              v20 = (*(int (__thiscall **)(_DWORD, AbstractClass *))(**(_DWORD **)(*(_DWORD *)&g_NetworkPlayerBuffer.__pad_BC0[336]
+              v20 = (*(int (__thiscall **)(_DWORD, AbstractClass *))(**(_DWORD **)(*(_DWORD *)&g_NetworkPlayerBuffer[3344]
                                                                                  + 4 * v15)
                                                                    + 132))(
-                      *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer.__pad_BC0[336] + 4 * v15),
+                      *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[3344] + 4 * v15),
                       this);
               if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->vtable5 + 24))((_DWORD *)this + 9) )
               {
@@ -1491,10 +1509,10 @@ namespace gamemd { int HouseClass::AIInfantryProduction() {
           }
           ++v15;
         }
-        while ( v15 < *(int *)&g_NetworkPlayerBuffer.__pad_BC0[348] );
+        while ( v15 < *(int *)&g_NetworkPlayerBuffer[3356] );
         v1 = this;
       }
-      if ( (double)*(int *)(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9108] + 5108) + 4 * v1[10].referenceCount)
+      if ( (double)*(int *)(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 5108) + 4 * v1[10].referenceCount)
          * 0.01 <= (double)Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x7FFFFFFE) * 4.656612877414201e-10 )
       {
         if ( v14 )
@@ -1547,9 +1565,9 @@ namespace gamemd { int HouseClass::AIAircraftProduction() {
       memset(v29, 0, sizeof(v29));
       memset32(v30, 0x7FFFFFFF, 0x64u);
       v3 = 0;
-      for ( i = 0; v3 < *(int *)&g_CellDirectionOffsets.__pad_579C[62156]; i = v3 )
+      for ( i = 0; v3 < *(int *)&g_CellDirectionOffsets[84584]; i = v3 )
       {
-        v4 = *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets.__pad_579C[62144] + 4 * v3);
+        v4 = *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84572] + 4 * v3);
         if ( v4 )
         {
           if ( (v5 = *(_DWORD *)(v4 + 80), *(_BYTE *)(*(_DWORD *)(v4 + 36) + 171)) && !*(_BYTE *)(v4 + 121)
@@ -1596,9 +1614,9 @@ namespace gamemd { int HouseClass::AIAircraftProduction() {
         }
         ++v3;
       }
-      for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer.__pad_BC0[420]; ++j )
+      for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer[3428]; ++j )
       {
-        v12 = *(_DWORD **)(*(_DWORD *)&g_NetworkPlayerBuffer.__pad_BC0[408] + 4 * j);
+        v12 = *(_DWORD **)(*(_DWORD *)&g_NetworkPlayerBuffer[3416] + 4 * j);
         if ( v12 && (int)v29[*(_DWORD *)(v12[433] + 3576)] > 0 && FootClass::CanBeRecruited(v12, v1) )
         {
           v13 = &v29[*(_DWORD *)(v12[433] + 3576)];
@@ -1643,7 +1661,7 @@ namespace gamemd { int HouseClass::AIAircraftProduction() {
         while ( v15 < (int)g_TypeClass_FindCache );
         v1 = this;
       }
-      if ( (double)*(int *)(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9108] + 5108) + 4 * v1[10].referenceCount)
+      if ( (double)*(int *)(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 5108) + 4 * v1[10].referenceCount)
          * 0.01 <= (double)Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x7FFFFFFE) * 4.656612877414201e-10 )
       {
         if ( v14 )

@@ -34,7 +34,6 @@ int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, 
   int result; // eax
   BOOL v6; // ebp
   int (__stdcall *v7)(char *, _DWORD *, char **, void *); // eax
-  void *v8; // eax
   char *v9; // esi
   v3 = &off_7F7638; /*0x7ad69a*/
   if ( !a3 ) /*0x7ad69f*/
@@ -53,7 +52,7 @@ int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, 
     if ( !*v3 || *v5 == *a2 && v5[1] == a2[1] && v5[2] == a2[2] && v5[3] == a2[3] ) /*0x7ad730*/
       break; /*0x7ad730*/
 LABEL_17:
-    v8 = v3[5]; /*0x7ad753*/
+    void * v8 = v3[5]; /*0x7ad753*/
     v3 += 3; /*0x7ad756*/
     if ( !v8 ) /*0x7ad75b*/
       return -2147467262; /*0x7ad75d*/

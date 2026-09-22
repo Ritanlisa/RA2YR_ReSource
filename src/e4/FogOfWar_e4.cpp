@@ -21,7 +21,6 @@ int FogOfWar::RevealArea(RadarClass * aP1)
   #375 *v18; // edx
   RadarClass *v26; // ecx
   int v27; // edx
-  bool v28; // cc
   RadarClass *v29; // edi
   IUnknown *v30; // ebx
   IUnknown *v31; // ebp
@@ -186,7 +185,7 @@ LABEL_45:
   else
   {
     v27 = *(_DWORD *)v24; /*0x6560c2*/
-    v28 = *(_DWORD *)v24 <= v25; /*0x6560c5*/
+    bool v28 = *(_DWORD *)v24 <= v25; /*0x6560c5*/
     v29 = *(RadarClass **)(v24 + 4); /*0x6560c7*/
     v30 = *(IUnknown **)(v24 + 8); /*0x6560ca*/
     GroundHeight = v30; /*0x6560cd*/
@@ -339,7 +338,6 @@ int FogOfWar::Render()
   int result; // eax
   int i; // [esp+10h] [ebp-24h]
   _DWORD v11[6]; // [esp+14h] [ebp-20h] BYREF
-  _BYTE v12[8]; // [esp+2Ch] [ebp-8h] BYREF
 
   if ( g_hWnd ) /*0x657cf0*/
   {
@@ -368,6 +366,7 @@ int FogOfWar::Render()
     int * v2 = this->q487; /*0x657cf2*/
     int v3 = *v2; /*0x657d06*/
     int v4 = (*(int (__thiscall **)(_DWORD, _DWORD *, _DWORD, int))(*this->q488 + 120))(this->q488, v11, 0, 1); /*0x657d0d*/
+  _BYTE v12[8]; // [esp+2Ch] [ebp-8h] BYREF
     int v5 = (*(int (__thiscall **)(int *, _BYTE *, _DWORD, int))(*v2 + 120))(v2, v12, this->q488, v4); /*0x657d21*/
     (*(void (__thiscall **)(_DWORD, int))(v3 + 8))(this->q487, v5); /*0x657d2b*/
     return FogOfWar::RenderCell((int)this); /*0x657d30*/

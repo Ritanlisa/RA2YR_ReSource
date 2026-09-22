@@ -216,11 +216,7 @@ int JumpjetLocomotion::ProcessCollision(char a2)
   int aP3_160; // [esp+100h] [ebp-30h]
   int aP3_164; // [esp+104h] [ebp-2Ch]
   int aP3_168; // [esp+108h] [ebp-28h] BYREF
-  _DWORD v227[3]; // [esp+10Ch] [ebp-24h] BYREF
-  int v228; // [esp+118h] [ebp-18h]
   TechnoClass *v229; // [esp+120h] [ebp-10h]
-  int v230; // [esp+128h] [ebp-8h]
-  int v231; // [esp+12Ch] [ebp-4h]
   if ( (!*(_BYTE *)(this + 99) || this->JumpjetLocomotion_field_0x58 == -1) && *(_DWORD *)(this->q00C + 1504) != 8
     || *(_BYTE *)(this + 98)
     && !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3233) )
@@ -463,6 +459,7 @@ LABEL_37:
     if ( (*(unsigned __int8 (__thiscall **)(_DWORD))(*this->q00C + 192))(this->q00C) )
     {
       v52 = this->q00C;
+  _DWORD v227[3]; // [esp+10Ch] [ebp-24h] BYREF
       v227[0] = *(_DWORD *)&v52->__pad_74[40];
       v227[1] = *(_DWORD *)&v52->__pad_74[44];
       v227[2] = *(_DWORD *)&v52->__pad_74[48];
@@ -511,15 +508,15 @@ LABEL_37:
     v64 = this->q00C;
     int v65 = *v63 - v61;
     int v66 = v63[1] - v62;
-    v228 = *(_DWORD *)&v64->__pad_74[40];
+    int v228 = *(_DWORD *)&v64->__pad_74[40];
     v67 = *(TechnoClass **)&v64->__pad_74[48];
     aP3_40 = v66 + *(_DWORD *)&v64->__pad_74[44];
     v229 = v67;
     aP3_44 = v67;
     aP3_36 = v228 + v65;
-    v230 = *(_DWORD *)&v64->__pad_74[44];
+    int v230 = *(_DWORD *)&v64->__pad_74[44];
     int v68 = *(_DWORD *)&v64->__pad_74[40];
-    v231 = *(_DWORD *)&v64->__pad_74[48];
+    int v231 = *(_DWORD *)&v64->__pad_74[48];
     LOWORD(aP3_112) = (v228 + v65) / 256;
     HIWORD(aP3_112) = aP3_40 / 256;
     aP3_56 = aP3_112;
@@ -1080,8 +1077,6 @@ int JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4)
   int ClosestObject; // eax
   __int16 v60; // cx
   _DWORD *v75; // ecx
-  _DWORD *v76; // ecx
-  __int64 v77; // rax
   int *v78; // eax
   int v79; // ecx
   char *v80; // eax
@@ -1099,50 +1094,13 @@ int JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4)
   int v92; // eax
   int v93; // edx
   int v94; // esi
-  int v95; // edx
-  _DWORD *v96; // ebx
-  int v97; // eax
-  int v98; // eax
-  _DWORD *v99; // edx
-  int v100; // ecx
-  int v101; // ecx
-  int v102; // edi
-  int v103; // esi
-  int v104; // eax
-  int v105; // edx
-  int v106; // eax
-  char v107; // bl
-  _DWORD *v108; // ecx
   _DWORD *v109; // edx
   wchar_t *v110; // eax
-  _DWORD *v111; // eax
-  _DWORD *v112; // eax
-  int v113; // edx
-  int v114; // eax
-  double v115; // st7
-  _DWORD *v116; // ecx
-  __int64 v117; // rax
-  _DWORD *v118; // ecx
-  _DWORD *v119; // edx
-  int v120; // esi
-  int v121; // ecx
-  _DWORD *v122; // eax
-  _DWORD *v123; // eax
-  char v124; // al
-  int v125; // ecx
   wchar_t *v126; // esi
   wchar_t *v127; // eax
   wchar_t *v128; // ecx
   wchar_t **v129; // edx
-  _DWORD *v130; // eax
-  _DWORD *v131; // eax
   int Object; // eax
-  int *v133; // ecx
-  int v134; // esi
-  _DWORD *v135; // eax
-  int v136; // eax
-  int v137; // esi
-  void *v138; // eax
   _DWORD *v139; // eax
   int *Coords; // eax
   int v141; // esi
@@ -1153,69 +1111,23 @@ int JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4)
   double v147; // st7
   unsigned __int8 v148; // c0
   unsigned __int8 v149; // c3
-  double *v150; // ecx
   int v151; // ecx
   _DWORD *v152; // ecx
   unsigned int v153; // esi
-  _DWORD *v154; // eax
-  int v155; // edi
-  int v156; // ecx
-  int v157; // edx
-  int v158; // eax
-  int v159; // ecx
-  double v160; // st7
-  char v161; // dl
-  int v162; // ecx
-  int v163; // ecx
   _DWORD *NeighbourContent; // eax
   _DWORD *v165; // edi
   int v166; // eax
   int v167; // eax
   unsigned int v168; // eax
-  _DWORD *v169; // eax
-  int v170; // eax
-  int v171; // esi
-  int *v172; // edi
-  int v173; // edx
-  int v174; // ecx
-  int v175; // edi
-  void *v176; // eax
-  int v177; // ebx
-  _DWORD *v178; // ecx
-  _DWORD *v179; // eax
-  int v180; // edi
-  _DWORD *v181; // ecx
-  int v182; // edx
-  int v183; // eax
-  int v184; // eax
-  double v185; // st7
-  _DWORD *v186; // ecx
-  __int64 v187; // rax
-  _DWORD *v188; // ecx
-  _DWORD *v189; // ecx
-  _DWORD *v190; // edx
-  int v191; // edi
-  __int64 v192; // rax
-  _DWORD *v193; // eax
-  _BYTE *v194; // edx
   int *v195; // esi
   int v196; // edx
   int v197; // eax
-  int v198; // ecx
   int v199; // ecx
   int v200; // edx
   bool v201; // zf
   int v202; // eax
-  _DWORD *v203; // eax
   int v204; // ecx
-  int v205; // [esp+70h] [ebp-6Ch]
   int LandHeight; // [esp+74h] [ebp-68h]
-  int v207; // [esp+74h] [ebp-68h]
-  _BYTE *v208; // [esp+74h] [ebp-68h]
-  int v209; // [esp+74h] [ebp-68h]
-  char v210; // [esp+7Ch] [ebp-60h]
-  int v211; // [esp+7Ch] [ebp-60h]
-  int v212; // [esp+7Ch] [ebp-60h]
   int v213; // [esp+80h] [ebp-5Ch]
   char v214; // [esp+93h] [ebp-49h]
   int v215; // [esp+94h] [ebp-48h] BYREF
@@ -1592,8 +1504,8 @@ LABEL_31:
   {
     _BYTE * v61 = this->q00C;
     int v62 = *(_DWORD *)v61;
-    v207 = ObjectClass::GetLandHeight(v61);
-    v205 = *(_DWORD *)(this->q00C + 1504);
+    int v207 = ObjectClass::GetLandHeight(v61);
+    int v205 = *(_DWORD *)(this->q00C + 1504);
     void * v63 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v218);
   int v64; // eax
     v64 = (*(int (__thiscall **)(_DWORD, void *, int, int, _DWORD, int))(v62 + 428))(
@@ -1664,11 +1576,13 @@ LABEL_31:
             }
           }
           if ( (v66[80] & 0x100) == 0
+  _DWORD *v76; // ecx
             || (v76 = this->q00C,
                 LOBYTE(v216) = 1,
                 v76 += 39,
                 v226 = (_DWORD *)*v76,
                 v227 = (wchar_t *)v76[1],
+  __int64 v77; // rax
                 v77 = v76[2] / DataGlobal_8A07D0 - *((char *)v66 + 283),
                 (int)((HIDWORD(v77) ^ v77) - HIDWORD(v77)) <= 2) )
           {
@@ -1779,7 +1693,7 @@ LABEL_148:
 LABEL_153:
     if ( v93 == 3 )
     {
-      v95 = this->q00C;
+      int v95 = this->q00C;
       a4 = v215;
       Cell::IsPassableAllied(v95, (__int16 *)&a4);
       goto LABEL_155;
@@ -1788,7 +1702,7 @@ LABEL_153:
     {
       if ( !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3220) )
       {
-        v108 = this->q00C;
+        _DWORD * v108 = this->q00C;
         if ( (_BYTE)a3 )
         {
           v108[376] = -1;
@@ -1797,23 +1711,27 @@ LABEL_153:
           v110 = v227;
           goto LABEL_329;
         }
-        v111 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*v108 + 72))(v108, &v226);
+        _DWORD * v111 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*v108 + 72))(v108, &v226);
+  _DWORD *v112; // eax
         v112 = Coord::Subtract(
                  &v229,
                  *v111 - *(_DWORD *)(this + 52),
                  v111[1] - *(_DWORD *)(this + 56),
                  v111[2] - *(_DWORD *)(this + 60));
         v220 = (_DWORD *)*v112;
-        v113 = v112[1];
-        v114 = v112[2];
+        int v113 = v112[1];
+        int v114 = v112[2];
         v221 = v113;
         v222 = v114;
+  double v115; // st7
         v115 = Math::Sqrt((double)v114 * (double)v114 + (double)v113 * (double)v113 + (double)(int)v220
                                                                                     * (double)(int)v220);
         if ( (int)Math::RoundToInt(v115) >= *((_DWORD *)g_RulesClass_Instance + 1478)
+  _DWORD *v116; // ecx
           || (v116 = (_DWORD *)(this->q00C + 156),
               v226 = (_DWORD *)*v116,
               v227 = (wchar_t *)v116[1],
+  __int64 v117; // rax
               v117 = *(_DWORD *)(this + 60) - v116[2],
               (int)((HIDWORD(v117) ^ v117) - HIDWORD(v117)) >= 2 * DataGlobal_8A07D0)
           || (v220 = (_DWORD *)*v116,
@@ -1822,18 +1740,21 @@ LABEL_153:
               *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v220) + 59) == 10) )
         {
           if ( (*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 80) & 0x100) == 0
+  _DWORD *v119; // edx
             || (v119 = (_DWORD *)(this->q00C + 156),
                 v226 = (_DWORD *)*v119,
                 v227 = (wchar_t *)v119[1],
+  int v120; // esi
                 v120 = v119[2],
+  int v121; // ecx
                 v121 = *((char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 283),
                 LOBYTE(a4) = 1,
                 (int)abs32(v120 / DataGlobal_8A07D0 - v121) <= 2) )
           {
             LOBYTE(a4) = 0;
           }
-          v210 = a4;
-          v122 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+          char v210 = a4;
+          _DWORD * v122 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           Cell::ApplyDamage(v122, (int)&g_DDraw_ClipRect, 1, 1, v210);
         }
         else
@@ -1847,7 +1768,7 @@ LABEL_153:
             this->q048 = DataGlobal_008A0798;
             *(_BYTE *)(this + 99) = 0;
           }
-          v118 = this->q00C;
+          _DWORD * v118 = this->q00C;
           if ( v118[358] )
           {
             FootClass::ClearPathIndex(v118);
@@ -1866,33 +1787,33 @@ LABEL_153:
         }
       }
 LABEL_155:
-      v96 = (_DWORD *)(this + 64);
+      _DWORD * v96 = (_DWORD *)(this + 64);
       if ( this->JumpjetLocomotion_field_0x40 != g_DDraw_ClipRect
         || this->JumpjetLocomotion_field_0x44 != DataGlobal_8A0794
         || this->q048 != DataGlobal_008A0798 )
       {
         *v96 = g_DDraw_ClipRect;
         this->JumpjetLocomotion_field_0x44 = DataGlobal_8A0794;
-        v97 = DataGlobal_008A0798;
+        int v97 = DataGlobal_008A0798;
         *(_BYTE *)(this + 99) = 0;
         this->q048 = v97;
       }
       if ( LODWORD(v216) == 2 )
       {
-        v98 = this->q00C;
+        int v98 = this->q00C;
         if ( !*(_BYTE *)(v98 + 1719) )
         {
           *(_BYTE *)(v98 + 1719) = 1;
-          v99 = (_DWORD *)(this->q00C + 1640);
-          v100 = *((_DWORD *)g_RulesClass_Instance + 1498);
+          _DWORD * v99 = (_DWORD *)(this->q00C + 1640);
+          int v100 = *((_DWORD *)g_RulesClass_Instance + 1498);
           *v99 = g_CurrentFrame;
           v99[1] = v230;
           v99[2] = v100;
         }
-        v101 = this->q00C;
-        v102 = (int)g_CurrentFrame;
-        v103 = *(_DWORD *)(v101 + 1600);
-        v104 = *(_DWORD *)(v101 + 1608);
+        int v101 = this->q00C;
+        int v102 = (int)g_CurrentFrame;
+        int v103 = *(_DWORD *)(v101 + 1600);
+        int v104 = *(_DWORD *)(v101 + 1608);
         if ( v103 != -1 )
         {
           if ( (int)g_CurrentFrame - v103 >= v104 )
@@ -1901,11 +1822,12 @@ LABEL_155:
         }
         if ( !v104 )
         {
+  char v107; // bl
 LABEL_166:
           if ( *(_BYTE *)(v101 + 1719) )
           {
-            v105 = *(_DWORD *)(v101 + 1640);
-            v106 = *(_DWORD *)(v101 + 1648);
+            int v105 = *(_DWORD *)(v101 + 1640);
+            int v106 = *(_DWORD *)(v101 + 1648);
             if ( v105 != -1 )
             {
               v102 = (int)g_CurrentFrame - v105;
@@ -1916,8 +1838,8 @@ LABEL_171:
 LABEL_199:
                 LOWORD(a4) = *(_DWORD *)(this + 52) / 256;
                 HIWORD(a4) = *(_DWORD *)(this + 56) / 256;
-                v124 = FootClass::MovementStep(v101, v102, a4, 0, (v107 != 0) + 1, v213);
-                v125 = this->q00C;
+                char v124 = FootClass::MovementStep(v101, v102, a4, 0, (v107 != 0) + 1, v213);
+                int v125 = this->q00C;
                 if ( !v125 )
                 {
                   *a2 = 1;
@@ -1960,21 +1882,21 @@ LABEL_209:
       {
         v220 = 0;
         v221 = 0;
-        v130 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+        _DWORD * v130 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
         if ( Object::FindObjectCell(v130, &v220, 0) )
         {
           v220 = 0;
           v221 = 0;
-          v131 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+          _DWORD * v131 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           Object = Object::FindObjectCell(v131, &v220, 0);
           if ( !Object::IsAlliedWithObjectHouse(*(_DWORD **)(this->q00C + 540), Object) )
           {
-            v133 = this->q00C;
+            int * v133 = this->q00C;
             v220 = 0;
             v221 = 0;
-            v134 = *v133;
-            v135 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
-            v136 = Object::FindObjectCell(v135, &v220, 0);
+            int v134 = *v133;
+            _DWORD * v135 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+            int v136 = Object::FindObjectCell(v135, &v220, 0);
             (*(void (__thiscall **)(_DWORD, int, int, _DWORD))(v134 + 500))(this->q00C, 1, v136, 0);
           }
         }
@@ -1983,8 +1905,8 @@ LABEL_209:
                              + *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 17))
                            + 680) )
         {
-          v137 = *this->q00C;
-          v138 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+          int v137 = *this->q00C;
+          void * v138 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           (*(void (__thiscall **)(_DWORD, int, void *, _DWORD))(v137 + 500))(this->q00C, 1, v138, 0);
         }
 LABEL_219:
@@ -2028,11 +1950,11 @@ LABEL_329:
     }
     if ( v93 != 1 )
       goto LABEL_155;
-    v123 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+    _DWORD * v123 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
     CellClass::DamageAllObjects(v123);
     if ( (_BYTE)a3 )
     {
-      v208 = a2;
+      _BYTE * v208 = a2;
       *(_DWORD *)(this->q00C + 1504) = -1;
       return JumpjetLocomotion::Update(v208, 0, 0);
     }
@@ -2108,7 +2030,7 @@ LABEL_242:
   }
   if ( this->q058 >= 64 )
   {
-    v150 = this->q00C;
+    double * v150 = this->q00C;
     if ( v147 != v150[175] )
       (*(void (__thiscall **)(double *, _DWORD, _DWORD))(*(_DWORD *)v150 + 1348))(v150, LODWORD(v216), HIDWORD(v216));
   }
@@ -2124,15 +2046,16 @@ LABEL_242:
   v153 = v152[377];
   if ( v153 == -1 )
   {
-    v154 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v152 + 72))(v152, &v229);
-    v155 = *(_DWORD *)(this + 56);
-    v156 = *v154 - *(_DWORD *)(this + 52);
-    v157 = v154[1];
-    v158 = v154[2];
+    _DWORD * v154 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v152 + 72))(v152, &v229);
+    int v155 = *(_DWORD *)(this + 56);
+    int v156 = *v154 - *(_DWORD *)(this + 52);
+    int v157 = v154[1];
+    int v158 = v154[2];
     LODWORD(v216) = v156;
-    v159 = *(_DWORD *)(this + 60);
+    int v159 = *(_DWORD *)(this + 60);
     HIDWORD(v216) = v157 - v155;
     v217 = v158 - v159;
+  double v160; // st7
     v160 = Math::Sqrt(
              (double)(v158 - v159) * (double)(v158 - v159)
            + (double)(v157 - v155) * (double)(v157 - v155)
@@ -2143,14 +2066,14 @@ LABEL_262:
       v153 = v6;
       goto LABEL_263;
     }
-    v161 = *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3220);
-    v162 = this->q00C;
+    char v161 = *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3220);
+    int v162 = this->q00C;
     LOWORD(v216) = *(_DWORD *)(this + 52) / 256;
     WORD1(v216) = *(_DWORD *)(this + 56) / 256;
     result = FootClass::MovementStep(v162, v155, SLODWORD(v216), v161 != 0, 0, v213);
     if ( !result )
     {
-      v163 = this->q00C;
+      int v163 = this->q00C;
       if ( !v163 )
       {
         *a2 = 1;
@@ -2190,23 +2113,25 @@ LABEL_263:
     this->JumpjetLocomotion_field_0x58 = 9 * v6;
   if ( (dword_7E7B30[3 * this->JumpjetLocomotion_field_0x58] & 8) != 0 )
   {
-    v211 = this->q00C;
-    v169 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+  int v171; // esi
+    int v211 = this->q00C;
+    _DWORD * v169 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+  int v170; // eax
     if ( CrateClass::ProcessPickup(v169, v211) || (v170 = this->q00C, *(_BYTE *)(v170 + 129)) )
     {
-      v172 = this->q00C;
+      int * v172 = this->q00C;
       if ( !*((_BYTE *)v172 + 144) )
         return 0;
-      v173 = v153 & 7;
-      v174 = DataGlobal_89F6DC[2 * v173];
+      int v173 = v153 & 7;
+      int v174 = DataGlobal_89F6DC[2 * v173];
       v223 += DataGlobal_89F6D8[2 * v173];
       v224 += v174;
       LOWORD(a4) = v223 / 256;
-      v209 = v219;
+      int v209 = v219;
       HIWORD(a4) = v224 / 256;
       v215 = a4;
-      v175 = *v172;
-      v176 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+      int v175 = *v172;
+      void * v176 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
       v171 = (*(int (__thiscall **)(_DWORD, void *, unsigned int, int, _DWORD, int))(v175 + 428))(
                this->q00C,
                v176,
@@ -2234,7 +2159,7 @@ LABEL_263:
       return 0;
     if ( v171 )
     {
-      v177 = a3;
+      int v177 = a3;
       switch ( v171 )
       {
         case 3:
@@ -2246,7 +2171,7 @@ LABEL_263:
         case 6:
           if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*v75 + 132))(v75) + 3220) )
             goto LABEL_293;
-          v178 = this->q00C;
+          _DWORD * v178 = this->q00C;
           if ( (_BYTE)v177 )
           {
             v178[376] = -1;
@@ -2255,23 +2180,26 @@ LABEL_263:
             v110 = v230;
             goto LABEL_329;
           }
-          v179 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v178 + 72))(v178, &v229);
-          v180 = *(_DWORD *)(this + 56);
-          v181 = (_DWORD *)(*v179 - *(_DWORD *)(this + 52));
-          v182 = v179[1];
-          v183 = v179[2];
+          _DWORD * v179 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v178 + 72))(v178, &v229);
+          int v180 = *(_DWORD *)(this + 56);
+          _DWORD * v181 = (_DWORD *)(*v179 - *(_DWORD *)(this + 52));
+          int v182 = v179[1];
+          int v183 = v179[2];
           v220 = v181;
-          v184 = v183 - *(_DWORD *)(this + 60);
+          int v184 = v183 - *(_DWORD *)(this + 60);
           v221 = v182 - v180;
           v222 = v184;
+  double v185; // st7
           v185 = Math::Sqrt(
                    (double)(int)v181 * (double)(int)v181
                  + (double)v184 * (double)v184
                  + (double)(v182 - v180) * (double)(v182 - v180));
           if ( (int)Math::RoundToInt(v185) >= *((_DWORD *)g_RulesClass_Instance + 1478)
+  _DWORD *v186; // ecx
             || (v186 = (_DWORD *)(this->q00C + 156),
                 v226 = (_DWORD *)*v186,
                 v227 = (wchar_t *)v186[1],
+  __int64 v187; // rax
                 v187 = *(_DWORD *)(this + 60) - v186[2],
                 (int)((HIDWORD(v187) ^ v187) - HIDWORD(v187)) >= 2 * DataGlobal_8A07D0)
             || (v226 = (_DWORD *)*v186,
@@ -2279,14 +2207,17 @@ LABEL_263:
                 v228 = v186[2],
                 *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v226) + 59) == 10) )
           {
-            v189 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+            _DWORD * v189 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
             if ( (v189[80] & 0x100) == 0
+  _DWORD *v190; // edx
               || (v190 = this->q00C,
                   LOBYTE(a4) = 1,
                   v190 += 39,
+  int v191; // edi
                   v191 = *((char *)v189 + 283),
                   v226 = (_DWORD *)*v190,
                   v227 = (wchar_t *)v190[1],
+  __int64 v192; // rax
                   v192 = v190[2] / DataGlobal_8A07D0 - v191,
                   (int)((HIDWORD(v192) ^ v192) - HIDWORD(v192)) <= 2) )
             {
@@ -2312,7 +2243,7 @@ LABEL_293:
             this->q048 = DataGlobal_008A0798;
             *(_BYTE *)(this + 99) = 0;
           }
-          v188 = this->q00C;
+          _DWORD * v188 = this->q00C;
           if ( !v188[358] )
           {
             (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*v188 + 1152))(v188, 0, 1);
@@ -2326,11 +2257,11 @@ LABEL_293:
             goto LABEL_293;
           return 1;
         case 1:
-          v193 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
+          _DWORD * v193 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           CellClass::DamageAllObjects(v193);
           if ( (_BYTE)a3 )
           {
-            v194 = a2;
+            _BYTE * v194 = a2;
             *(_DWORD *)(this->q00C + 1504) = -1;
             return JumpjetLocomotion::Update(v194, 0, 0);
           }
@@ -2404,7 +2335,7 @@ LABEL_338:
   {
     *v195 = g_DDraw_ClipRect;
     this->JumpjetLocomotion_field_0x44 = DataGlobal_8A0794;
-    v198 = DataGlobal_008A0798;
+    int v198 = DataGlobal_008A0798;
     *(_BYTE *)(this + 99) = 0;
     this->q048 = v198;
     v197 = g_DDraw_ClipRect;
@@ -2419,8 +2350,8 @@ LABEL_338:
     *v195 = v199;
     this->JumpjetLocomotion_field_0x44 = v202;
     this->q048 = v200;
-    v212 = this->q00C;
-    v203 = Coord::To_Cell(&DataGlobal_87F7E8, &v223);
+    int v212 = this->q00C;
+    _DWORD * v203 = Coord::To_Cell(&DataGlobal_87F7E8, &v223);
     if ( CrateClass::ProcessPickup(v203, v212) && !*(_BYTE *)(this->q00C + 129) )
     {
       JumpjetLocomotion::MoveTo(&v223, 1);
@@ -2773,17 +2704,9 @@ int JumpjetLocomotion::UpdateFacing()
   unsigned __int8 v8; // c3
   int GroundHeight; // ebx
   int v23; // edi
-  int v24; // ebp
-  int v25; // ecx
-  int v26; // eax
-  int *v27; // eax
-  int v28; // ebx
-  int v29; // ecx
-  int v30; // ebp
   int v31; // ebp
   int v32; // ebx
   _WORD *v33; // eax
-  int v34; // ecx
   int *v35; // eax
   double v36; // st7
   int v37; // edi
@@ -2794,12 +2717,8 @@ int JumpjetLocomotion::UpdateFacing()
   int v42; // eax
   int v43; // ecx
   _BYTE *v44; // ecx
-  int v45; // edi
-  int v46; // eax
-  int *v47; // ecx
   int result; // eax
   double v49; // [esp+0h] [ebp-58h]
-  int *v50; // [esp+4h] [ebp-54h]
   _DWORD *Value; // [esp+4h] [ebp-54h]
   char v52; // [esp+19h] [ebp-3Fh]
   char v53; // [esp+1Ah] [ebp-3Eh]
@@ -2902,19 +2821,19 @@ int JumpjetLocomotion::UpdateFacing()
   v54 = 0; /*0x54d35e*/
   if ( v23 < SLODWORD(v57) ) /*0x54d363*/
   {
-    v24 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 456))(this->q00C); /*0x54d377*/
-    v25 = this->q00C + 156; /*0x54d379*/
+    int v24 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 456))(this->q00C); /*0x54d377*/
+    int v25 = this->q00C + 156; /*0x54d379*/
     v59 = *(double *)v25; /*0x54d381*/
     v60 = *(_DWORD *)(v25 + 8); /*0x54d394*/
     if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v59) + 80) & 0x100) != 0 ) /*0x54d3ab*/
     {
-      v26 = this->q00C; /*0x54d3ad*/
+      int v26 = this->q00C; /*0x54d3ad*/
       if ( !*(_BYTE *)(v26 + 140) ) /*0x54d3b0*/
       {
-        v27 = (int *)(v26 + 156); /*0x54d3ba*/
+        int * v27 = (int *)(v26 + 156); /*0x54d3ba*/
         v61 = *v27; /*0x54d3c3*/
         v62 = v27[1]; /*0x54d3ca*/
-        v28 = v27[2]; /*0x54d3ce*/
+        int v28 = v27[2]; /*0x54d3ce*/
         v59 = *(double *)v27; /*0x54d3d3*/
         v60 = v27[2]; /*0x54d3eb*/
         if ( v28 >= dword_ABC5DC + Cell::GetGroundHeight(&v59) ) /*0x54d3ff*/
@@ -2923,7 +2842,7 @@ int JumpjetLocomotion::UpdateFacing()
     }
     if ( !v24 ) /*0x54d405*/
     {
-      v29 = this->q00C; /*0x54d407*/
+      int v29 = this->q00C; /*0x54d407*/
       v59 = *(double *)(v29 + 156); /*0x54d416*/
       v60 = *(_DWORD *)(v29 + 164); /*0x54d424*/
       (*(void (__thiscall **)(int, double *))(*(_DWORD *)v29 + 244))(v29, &v59); /*0x54d42f*/
@@ -2939,6 +2858,7 @@ LABEL_49:
   }
   if ( v23 > SLODWORD(v57) )
   {
+  int v30; // ebp
     if ( (double)SLODWORD(v57) <= (double)SLODWORD(v58) - this->q090 ) /*0x54d48b*/
     {
       v56 = Math::RoundToInt((double)v56 - this->q090); /*0x54d4a3*/
@@ -2962,7 +2882,7 @@ LABEL_50:
                    &v58);
   if ( *v33 != (_WORD)v31 || v33[1] != (_WORD)v32 ) /*0x54d4fb*/
   {
-    v34 = LODWORD(v57); /*0x54d4fd*/
+    int v34 = LODWORD(v57); /*0x54d4fd*/
     if ( v23 < SLODWORD(v57) / 2 ) /*0x54d50a*/
     {
       *(_DWORD *)(this + 112) = 0; /*0x54d50e*/
@@ -3005,14 +2925,17 @@ LABEL_50:
   {
     if ( v44
       && (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v44 + 44))(v44) == 15
+  int v45; // edi
       && ((v45 = this->q00C) != 0
+  int v46; // eax
         ? (v46 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v45 + 44))(this->q00C) == 15 ? v45 : 0)
         : (v46 = 0),
           *(_BYTE *)(*(_DWORD *)(v46 + 1728) + 3787)
        && this->q140 == 2
+  int *v47; // ecx
        && (v47 = this->q00C, v47[173])) )
     {
-      v50 = ObjectClass::CalcTargetFacing(v47, (int *)&v58, v47[173]); /*0x54d675*/
+      int * v50 = ObjectClass::CalcTargetFacing(v47, (int *)&v58, v47[173]); /*0x54d675*/
       FacingClass::Set_SyncLog(v50); /*0x54d679*/
     }
     else

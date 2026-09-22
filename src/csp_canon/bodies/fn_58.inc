@@ -82,7 +82,7 @@ namespace gamemd { void* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int
       _DWORD v26[6];
 
       v5 = *a2 + (a2[1] << 9);
-      if ( v5 < 0x40000 && (v6 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4.__pad_3C[4] + 4 * v5)) != 0 )
+      if ( v5 < 0x40000 && (v6 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v5)) != 0 )
       {
         v7 = v6;
       }
@@ -269,7 +269,7 @@ bool Cell::IsPassable(IUnknown * aP0)
     HIWORD(aP0a) = aP0->field_4 / 256 - v2;
     LOWORD(aP0a) = v9 - v2;
     v3 = (short)(v9 - v2) + (SHIWORD(aP0a) << 9);
-    if ( v3 < 0x40000 && (v4 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v3)) != 0 )
+    if ( v3 < 0x40000 && (v4 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v3)) != 0 )
     {
     v5 = v4;
     }
@@ -288,7 +288,7 @@ bool Cell::IsPassable(IUnknown * aP0)
     HIWORD(aP0b) = aP0->field_4 / 256 - v1 / 2;
     LOWORD(aP0b) = v10 - v1 / 2;
     v7 = (short)aP0b + (SHIWORD(aP0b) << 9);
-    if ( v7 >= 0x40000 || (NeighbourContent = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v7)) == 0 )
+    if ( v7 >= 0x40000 || (NeighbourContent = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v7)) == 0 )
     {
     g_Map_GlobalCellIndex = aP0b;
     NeighbourContent = g_CellClassArray;
@@ -318,7 +318,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     v2 = v1 / 2 + 1;
     HIWORD(aP0) = aP0->field_4 / 256 - v2;
     v3 = (short)(v8 - v2) + (SHIWORD(aP0) << 9);
-    if ( v3 >= 0x40000 || (v4 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v3)) == 0 )
+    if ( v3 >= 0x40000 || (v4 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v3)) == 0 )
     {
     LOWORD(aP0) = v8 - v2;
     g_Map_GlobalCellIndex = aP0;
@@ -334,7 +334,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     HIWORD(aP0a) = aP0->field_4 / 256 - v1 / 2;
     LOWORD(aP0a) = v9 - v1 / 2;
     v6 = (short)aP0a + (SHIWORD(aP0a) << 9);
-    if ( v6 >= 0x40000 || (NeighbourContent = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v6)) == 0 )
+    if ( v6 >= 0x40000 || (NeighbourContent = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v6)) == 0 )
     {
     g_Map_GlobalCellIndex = aP0a;
     NeighbourContent = g_CellClassArray;
@@ -370,7 +370,7 @@ int CellClass::SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP
     do
   {
     v6 = v5 + (v3 << 9);
-    if ( v6 < 0x40000 && (v7 = *(short **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v6)) != 0 )
+    if ( v6 < 0x40000 && (v7 = *(short **)(*(int *)&DataGlobal_87C374[13744] + 4 * v6)) != 0 )
     {
     v8 = v7;
     }
@@ -383,7 +383,7 @@ int CellClass::SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP
     if ( result >= v4 - 2 && result <= v4 )
     {
     if ( (char)aP2 )
-    CellClass::RevealFogRect((int)&DataGlobal_87C374.__pad_14B0[8132], v8 + 18);
+    CellClass::RevealFogRect((int)&DataGlobal_87C374[13428], v8 + 18);
     v10[0] = 0;
     v10[1] = 0;
     result = Object::FindClosestObjectCell(v8, (IUnknown *)v10, 0, 0);
@@ -436,7 +436,7 @@ namespace gamemd { void LayerClass::Update_Pathfinding_2(int a1) {
           *(_WORD *)(this->q070 + 10 * v6) = 0;
           v8 = (__int16 *)(v5 + v2->field_4);
           v9 = *v8 + (v8[1] << 9);
-          if ( v9 >= 0x40000 || (v10 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4.__pad_3C[4] + 4 * v9)) == 0 )
+          if ( v9 >= 0x40000 || (v10 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v9)) == 0 )
           {
             v10 = g_CellClassArray;
             g_Map_GlobalCellIndex = *(IUnknown **)v8;
@@ -510,7 +510,7 @@ namespace gamemd { void* HouseClass::ClampToUsableCell(void* a1, void* a2) {
       v13 = (__int16)v3 + v11;
       LOWORD(aP2) = v3;
       HIWORD(aP2) = v5;
-      if ( v12 || v13 >= 0x40000 || (v14 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4.__pad_3C[4] + 4 * v13)) == 0 )
+      if ( v12 || v13 >= 0x40000 || (v14 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v13)) == 0 )
       {
         v15 = g_CellClassArray;
         g_Map_GlobalCellIndex = (IUnknown *)aP2;
@@ -1428,7 +1428,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
     {
     if ( *((char *)(v2) + 68) )
       {
-    v5 = CellCoord::To_CellObj(&DataGlobal_87C374.__pad_14B0[8132], v2);
+    v5 = CellCoord::To_CellObj(&DataGlobal_87C374[13428], v2);
     if ( Cell::IsEmpty(v5) )
     break;
       }

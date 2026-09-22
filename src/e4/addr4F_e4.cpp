@@ -889,13 +889,10 @@ int E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3
   ObjectClass *v17; // ebx
   unsigned int v18; // eax
   _DWORD *v19; // ebp
-  _DWORD *v20; // eax
   MSAnim *v21; // eax
   ObjectClass *v22; // ebx
-  _DWORD *v23; // eax
   MSAnim *v24; // eax
   ObjectClass *v25; // ebx
-  _DWORD *v26; // eax
   MSAnim *v27; // eax
   char v10 = 0; /*0x4f3469*/
   GraphicMenuItem::Constructor((_DWORD *)this, (GraphicMenuAnimItem *)aP1); /*0x4f3472*/
@@ -933,7 +930,7 @@ int E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3
   v19 = a3; /*0x4f3525*/
   if ( v18 )
   {
-    v20 = (_DWORD *)__2_YAPAXI_Z(0x3Cu); /*0x4f352f*/
+    _DWORD * v20 = (_DWORD *)__2_YAPAXI_Z(0x3Cu); /*0x4f352f*/
     v21 = v20 ? (MSAnim *)MSPCXAnim::Construct(v20, v17, (MSAnim *)&v12->__pad_4[20], v19, 1) : 0;
     this->M40 = v21; /*0x4f3550*/
     if ( v21 ) /*0x4f3553*/
@@ -945,7 +942,7 @@ int E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3
   v22 = (ObjectClass *)a5; /*0x4f3569*/
   if ( String::Length(a5) )
   {
-    v23 = (_DWORD *)__2_YAPAXI_Z(0x3Cu); /*0x4f357a*/
+    _DWORD * v23 = (_DWORD *)__2_YAPAXI_Z(0x3Cu); /*0x4f357a*/
     v24 = v23 ? (MSAnim *)MSPCXAnim::Construct(v23, v22, (MSAnim *)&v12->__pad_4[20], v19, 1) : 0;
     this->M36 = v24; /*0x4f359b*/
     if ( v24 ) /*0x4f359e*/
@@ -954,7 +951,7 @@ int E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3
   v25 = (ObjectClass *)a7; /*0x4f35a8*/
   if ( String::Length(a7) ) /*0x4f35ae*/
   {
-    v26 = (_DWORD *)__2_YAPAXI_Z(0x3Cu); /*0x4f35b9*/
+    _DWORD * v26 = (_DWORD *)__2_YAPAXI_Z(0x3Cu); /*0x4f35b9*/
     if ( v26 ) /*0x4f35c3*/
       v27 = (MSAnim *)MSPCXAnim::Construct(v26, v25, (MSAnim *)&v12->__pad_4[20], v19, 1); /*0x4f35cf*/
     MSAnim *v27 = 0; /*0x4f35d6*/
@@ -1040,7 +1037,6 @@ int E4Recv_4F3D40::sub_4F3D40()
 {
   const char **v4; // esi
   int v5; // ebx
-  int v7; // eax
   void *v8; // [esp+Ch] [ebp-8h] BYREF
   void *v9; // [esp+10h] [ebp-4h] BYREF
   int v1 = 0; /*0x4f3d4b*/
@@ -1070,6 +1066,7 @@ int E4Recv_4F3D40::sub_4F3D40()
   unsigned int v2 = String::Length((const char **)&v8); /*0x4f3e12*/
   if ( v2 ) /*0x4f3e1a*/
   {
+  int v7; // eax
     if ( v2 == 1 ) /*0x4f3e1d*/
     {
       v7 = sub_7B5410((const char **)&v8, 0) - 32; /*0x4f3e7d*/
@@ -1144,14 +1141,10 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool v4; // zf
-  int v5; // eax
-  int v6; // ecx
-  int v7; // eax
   int v8; // ecx
   CCINIClass *v9; // eax
   CCINIClass *v11; // [esp+8h] [ebp-1Ch] BYREF
   void *Block; // [esp+Ch] [ebp-18h]
-  int v13; // [esp+10h] [ebp-14h]
   char v14; // [esp+15h] [ebp-Fh]
   int v15; // [esp+18h] [ebp-Ch]
   int v16; // [esp+1Ch] [ebp-8h]
@@ -1164,6 +1157,7 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   if ( (CCINIClass **)a2 != &v11 ) /*0x4fa244*/
   {
     VectorClass::ClearAndFree3(a2); /*0x4fa248*/
+  int v13; // [esp+10h] [ebp-14h]
     int v3 = v13; /*0x4fa24e*/
     v4 = v13 == 0; /*0x4fa252*/
     *(_DWORD *)(a2 + 8) = v13; /*0x4fa254*/
@@ -1174,12 +1168,12 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
     }
     else
     {
-      v5 = __2_YAPAXI_Z(4 * v3); /*0x4fa261*/
+      int v5 = __2_YAPAXI_Z(4 * v3); /*0x4fa261*/
       *(_DWORD *)(a2 + 4) = v5; /*0x4fa26b*/
       if ( v5 ) /*0x4fa26e*/
       {
-        v6 = *(_DWORD *)(a2 + 8); /*0x4fa270*/
-        v7 = 0; /*0x4fa273*/
+        int v6 = *(_DWORD *)(a2 + 8); /*0x4fa270*/
+        int v7 = 0; /*0x4fa273*/
         *(_BYTE *)(a2 + 13) = 1; /*0x4fa277*/
         if ( v6 > 0 ) /*0x4fa27b*/
         {

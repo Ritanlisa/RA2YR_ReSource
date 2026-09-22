@@ -69,14 +69,6 @@ void * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
   char **RegionString; // [esp-4h] [ebp-D4h]
   unsigned int v24; // [esp+10h] [ebp-C0h] BYREF
   void *v25[2]; // [esp+14h] [ebp-BCh] BYREF
-  _DWORD v26[2]; // [esp+1Ch] [ebp-B4h] BYREF
-  _DWORD v27[2]; // [esp+24h] [ebp-ACh] BYREF
-  _DWORD v28[2]; // [esp+2Ch] [ebp-A4h] BYREF
-  void *v29[3]; // [esp+34h] [ebp-9Ch] BYREF
-  _DWORD v30[10]; // [esp+40h] [ebp-90h] BYREF
-  int v31; // [esp+68h] [ebp-68h]
-  int v32; // [esp+6Ch] [ebp-64h]
-  int v33; // [esp+70h] [ebp-60h]
   _DWORD v34[22]; // [esp+74h] [ebp-5Ch] BYREF
   int v35; // [esp+CCh] [ebp-4h]
 
@@ -103,6 +95,7 @@ void * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
   if ( v5[3] ) /*0x764c2c*/
   {
     OwnerHouse = Conflict::GetOwnerHouse(v5); /*0x764c3a*/
+  _DWORD v28[2]; // [esp+2Ch] [ebp-A4h] BYREF
     ActivateScreenWDT((int)v28, OwnerHouse); /*0x764c47*/
     int v7 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(a3 + 4) + 12) + 32); /*0x764c58*/
     unsigned int v8 = v7 - 1; /*0x764c5a*/
@@ -114,6 +107,7 @@ void * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
       {
         if ( WDTClass::GetCellType((_DWORD *)v28[1], v8) == 1 ) /*0x764c74*/
         {
+  _DWORD v26[2]; // [esp+1Ch] [ebp-B4h] BYREF
   _DWORD *v9; // ebp
           if ( v8 >= *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(a3 + 4) + 12) + 60) ) /*0x764c89*/
           {
@@ -141,6 +135,7 @@ void * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
           }
           if ( v25[1] ) /*0x764d07*/
           {
+  _DWORD v27[2]; // [esp+24h] [ebp-ACh] BYREF
             Team_Create_765F60(v27, v25); /*0x764d11*/
             int v12 = this->M32; /*0x764d16*/
             if ( this->M40 < v12 /*0x764d3b*/
@@ -176,14 +171,17 @@ void * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
   int v16 = 0; /*0x764daf*/
   if ( File::IsReady(v34, 0) )
   {
+  void *v29[3]; // [esp+34h] [ebp-9Ch] BYREF
     v29[1] = 0; /*0x764dc7*/
     v29[2] = 0; /*0x764dcb*/
+  _DWORD v30[10]; // [esp+40h] [ebp-90h] BYREF
     GenericList::Constructor(v30); /*0x764dcf*/
     v30[0] = &vt_List_INIClass_INISection; /*0x764dde*/
     memset(&v30[7], 0, 12); /*0x764de6*/
+  int v31; // [esp+68h] [ebp-68h]
     LOBYTE(v31) = 0; /*0x764df2*/
-    v32 = 0; /*0x764df7*/
-    v33 = 0; /*0x764dfb*/
+    int v32 = 0; /*0x764df7*/
+    int v33 = 0; /*0x764dfb*/
     v29[0] = &vt_INIClass; /*0x764dff*/
     FileStraw::Open(v29, (int)v34, 0); /*0x764e07*/
     CCFileClass::Close(v34); /*0x764e10*/
@@ -567,11 +565,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   int v65; // [esp+50h] [ebp-118h] BYREF
   void **v66; // [esp+54h] [ebp-114h] BYREF
   void ***v67; // [esp+58h] [ebp-110h]
-  void *v68; // [esp+5Ch] [ebp-10Ch]
   void *v69; // [esp+60h] [ebp-108h] BYREF
-  _DWORD v70[2]; // [esp+64h] [ebp-104h] BYREF
-  int v71; // [esp+6Ch] [ebp-FCh]
-  int v72; // [esp+70h] [ebp-F8h]
   const char **v73; // [esp+74h] [ebp-F4h]
   void *v74[3]; // [esp+78h] [ebp-F0h] BYREF
   void **v75; // [esp+84h] [ebp-E4h] BYREF
@@ -757,7 +751,7 @@ LABEL_67:
           {
             ((void (__thiscall *)(void ***))v51[3])(&v51); /*0x7698e2*/
           }
-          v68 = v69; /*0x7698ed*/
+          void * v68 = v69; /*0x7698ed*/
           v67 = &v51; /*0x7698fa*/
           v66 = &vt_VectorCursor_TRect_int_VectorClass_TRect_int; /*0x7698fe*/
           if ( (unsigned __int8)Map_WorldDominationTour_38::AddRef(&v66) ) /*0x769902*/
@@ -795,8 +789,8 @@ LABEL_67:
           bool v35 = *v28 <= v49; /*0x769997*/
           int v36 = v28[1]; /*0x769999*/
           int v37 = v28[2]; /*0x76999c*/
-          v71 = v37; /*0x76999f*/
-          v72 = v28[3]; /*0x7699a6*/
+          int v71 = v37; /*0x76999f*/
+          int v72 = v28[3]; /*0x7699a6*/
           if ( !v35 ) /*0x7699aa*/
           {
             v37 += v34 - v49; /*0x7699ae*/
@@ -848,6 +842,7 @@ LABEL_68:
       FromStringInt((char **)&v63, g_DDraw_Active); /*0x769a90*/
       _DWORD * v44 = (_DWORD *)Map_Load_7694C0(&v66); /*0x769aa0*/
       int v45 = v44[1]; /*0x769aa9*/
+  _DWORD v70[2]; // [esp+64h] [ebp-104h] BYREF
       v70[0] = *v44; /*0x769aac*/
       v70[1] = v45; /*0x769ab0*/
       v46 = String::Assign((char **)&v64, stru_848BDC); /*0x769acc*/

@@ -24,8 +24,6 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
 {
   _DWORD *v7; // eax
   int v8; // edx
-  int v9; // eax
-  int v10; // esi
   int v12; // [esp+0h] [ebp-8h]
   _DWORD *v14; // [esp+10h] [ebp+8h]
   int v3 = a3; /*0x6a6af3*/
@@ -47,10 +45,10 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
     v12 = 1; /*0x6a6b7d*/
   if ( !(_BYTE)aP1 ) /*0x6a6b8b*/
   {
-    v9 = 26; /*0x6a6ba9*/
+    int v9 = 26; /*0x6a6ba9*/
     if ( v6 ) /*0x6a6bae*/
       v9 = 18; /*0x6a6bb0*/
-    v10 = *(_DWORD *)&stru_87C374[44072] - *(_DWORD *)&stru_B05488[24688] - v9; /*0x6a6bb5*/
+    int v10 = *(_DWORD *)&stru_87C374[44072] - *(_DWORD *)&stru_B05488[24688] - v9; /*0x6a6bb5*/
     if ( (CoordStruct *)HouseClass_Player.field_0 == *(&g_MatrixTransformState + 2274) ) /*0x6a6bd0*/
     {
       v7 = v14; /*0x6a6bdd*/
@@ -248,13 +246,9 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
-  int v5; // eax
   int v6; // edi
   int ResourceIDCSF; // ebx
-  int v8; // eax
-  int v9; // ebx
   char *i; // edi
-  int v11; // eax
   LRESULT v12; // eax
   HWND DlgItem; // ebx
   HWND v14; // ebp
@@ -287,7 +281,7 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
       v4 = 5; /*0x6adc7b*/
       break;
     default:
-      v5 = -(nIDDlgItem != 1309); /*0x6adc8b*/
+      int v5 = -(nIDDlgItem != 1309); /*0x6adc8b*/
       LOBYTE(v5) = v5 & 0xF9; /*0x6adc8d*/
       v4 = v5 + 6; /*0x6adc8f*/
       break;
@@ -300,8 +294,8 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
   ResourceID4CSF = (HWND)GetResourceID4CSF((void *)v6); /*0x6adcc1*/
   if ( hDlg && *(_DWORD *)&HouseClass_Player[29936] ) /*0x6adcce*/
   {
-    v8 = 1; /*0x6adcd2*/
-    v9 = 8; /*0x6adcd7*/
+    int v8 = 1; /*0x6adcd2*/
+    int v9 = 8; /*0x6adcd7*/
     if ( v6 > 0 && v6 < 8 ) /*0x6adce0*/
     {
       v8 = v6; /*0x6adce2*/
@@ -309,7 +303,7 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
     }
     for ( i = (char *)v8; (int)i < v9; ++i ) /*0x6adceb*/
     {
-      v11 = GetResourceID4CSF(i); /*0x6adcef*/
+      int v11 = GetResourceID4CSF(i); /*0x6adcef*/
       if ( *(_DWORD *)&HouseClass_Player[29936] /*0x6adcfe*/
         && *(_BYTE *)(*(_DWORD *)&HouseClass_Player[29936] + 60) )
       {

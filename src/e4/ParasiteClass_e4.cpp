@@ -133,7 +133,6 @@ void ParasiteClass::DeploySquad()
   void **v21; // edi
   int i; // [esp+10h] [ebp-58h]
   int v54; // [esp+60h] [ebp-8h]
-  int v55; // [esp+64h] [ebp-4h]
   int savedregs; // [esp+68h] [ebp+0h] BYREF
 
   _DWORD * v2 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD))(*this->creationFrame + 1016))(this->creationFrame, 0); /*0x629807*/
@@ -238,7 +237,7 @@ LABEL_20:
           int v20 = Math::RoundToInt(v47 * v48 + v18 * v49); /*0x629b2a*/
           int v53 = v19 + v50; /*0x629b44*/
           v54 = v51 + v20; /*0x629b48*/
-          v55 = v52; /*0x629b4c*/
+          int v55 = v52; /*0x629b4c*/
           v21 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x629b55*/
           if ( v21 ) /*0x629b5c*/
           {
@@ -410,16 +409,11 @@ void ParasiteClass::TickDamage()
 {
   void **v15; // eax
   _DWORD v22[3]; // [esp+10h] [ebp-3Ch] BYREF
-  int v23; // [esp+1Ch] [ebp-30h] BYREF
   int v24; // [esp+20h] [ebp-2Ch]
-  double v25; // [esp+24h] [ebp-28h]
-  double v26; // [esp+2Ch] [ebp-20h]
   int v27; // [esp+34h] [ebp-18h] BYREF
   int v28; // [esp+38h] [ebp-14h]
   int v29; // [esp+3Ch] [ebp-10h]
-  int v30; // [esp+40h] [ebp-Ch] BYREF
   int v31; // [esp+44h] [ebp-8h]
-  int v32; // [esp+48h] [ebp-4h]
   if ( !this->q028 ) /*0x629fde*/
     return; /*0x629fde*/
   if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->creationFrame + 132))(this->creationFrame) + 3278) /*0x62a004*/
@@ -474,6 +468,7 @@ LABEL_8:
     void * v12 = __2_YAPAXI_Z(0x100u); /*0x62a0d8*/
     if ( v12 ) /*0x62a0e2*/
       ParticleSystemClass::Constructor((int)v12, g_RulesClass_Instance->?, &v27, 0, 0, &DataGlobal_AC4948, 0); /*0x62a103*/
+  int v23; // [esp+1Ch] [ebp-30h] BYREF
     unsigned int v13 = *ProgressTimer::GetValue((_WORD *)(this->q028 + 904), &v23); /*0x62a11b*/
     if ( v4[65] ) /*0x62a11d*/
     {
@@ -491,15 +486,15 @@ LABEL_8:
     int v17 = v29; /*0x62a19e*/
     v23 = v16 + 2; /*0x62a1a2*/
     *(double *)&v22[1] = (double)v22[1] * -0.00009587672516830327; /*0x62a1ac*/
-    v26 = (double)v28; /*0x62a1be*/
-    v25 = (double)(v16 + 2); /*0x62a1c6*/
+    double v26 = (double)v28; /*0x62a1be*/
+    double v25 = (double)(v16 + 2); /*0x62a1c6*/
     double v18 = Math::SinCos(*(double *)&v22[1]); /*0x62a1ca*/
     v23 = Math::RoundToInt(v26 - v18 * v25); /*0x62a1dc*/
     double v19 = Math::ArcTan2(*(double *)&v22[1]); /*0x62a1e6*/
-    v30 = Math::RoundToInt(v19 * v25 + (double)v27); /*0x62a1ff*/
+    int v30 = Math::RoundToInt(v19 * v25 + (double)v27); /*0x62a1ff*/
     v31 = v23; /*0x62a203*/
     IUnknown *v20 = this->q028; /*0x62a207*/
-    v32 = v17; /*0x62a20a*/
+    int v32 = v17; /*0x62a20a*/
     (*(void (__thiscall **)(int, int *, int, _DWORD))(*(_DWORD *)v20 + 984))(v20, &v30, 1069547520, 0); /*0x62a21c*/
     int v21 = this->creationFrame; /*0x62a228*/
     v22[0] = v4[41]; /*0x62a22f*/
@@ -707,29 +702,14 @@ int ParasiteClass::Update()
 {
   int Byte284; // eax
   int v24; // eax
-  bool v25; // eax
-  int *v26; // esi
-  int v27; // edx
-  int v28; // edi
-  int v29; // eax
-  int v30; // ecx
-  int *v31; // edi
-  int v32; // ecx
-  bool v33; // eax
-  int v34; // edx
-  bool v35; // eax
-  int v36; // ebx
-  __int64 v37; // rax
   bool v38; // edi
   int v39; // ebx
   char result; // al
-  int v41; // [esp-Ch] [ebp-100h]
   int v42; // [esp+0h] [ebp-F4h]
   int v43; // [esp+0h] [ebp-F4h]
   int v44; // [esp+0h] [ebp-F4h]
   int v45; // [esp+4h] [ebp-F0h]
   int v46; // [esp+4h] [ebp-F0h]
-  int v47; // [esp+4h] [ebp-F0h]
   bool v48; // [esp+19h] [ebp-DBh]
   char v49; // [esp+1Ah] [ebp-DAh]
   char v50; // [esp+1Bh] [ebp-D9h]
@@ -746,7 +726,6 @@ int ParasiteClass::Update()
   int v61; // [esp+48h] [ebp-ACh]
   _DWORD v62[3]; // [esp+4Ch] [ebp-A8h] BYREF
   float v63[2]; // [esp+58h] [ebp-9Ch] BYREF
-  int v64; // [esp+60h] [ebp-94h]
   float v65[12]; // [esp+64h] [ebp-90h] BYREF
   float v66[12]; // [esp+94h] [ebp-60h] BYREF
   float v67[12]; // [esp+C4h] [ebp-30h] BYREF
@@ -921,39 +900,40 @@ LABEL_40:
 LABEL_50:
   if ( !--*((_WORD *)this + 149) ) /*0x62c207*/
   {
-    v25 = this->q02B; /*0x62c215*/
+    bool v25 = this->q02B; /*0x62c215*/
     if ( *(_DWORD *)(v25 + 744) ) /*0x62c21b*/
     {
       *((_WORD *)this + 149) = *(_WORD *)(v25 + 732); /*0x62c236*/
       v60[0] = *((_DWORD *)this + 39); /*0x62c23f*/
       v60[1] = this->q028; /*0x62c250*/
       v61 = this->q0A4; /*0x62c257*/
-      v26 = (int *)*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v60) + 57); /*0x62c260*/
+      int * v26 = (int *)*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v60) + 57); /*0x62c260*/
       if ( v26 ) /*0x62c268*/
       {
+  int *v31; // edi
         do /*0x62c30d*/
         {
-          v27 = v26[39]; /*0x62c276*/
-          v28 = v26[40]; /*0x62c278*/
-          v64 = v26[41]; /*0x62c286*/
-          v29 = *((_DWORD *)this + 39) - v27; /*0x62c28c*/
-          v30 = this->q028 - v28; /*0x62c291*/
+          int v27 = v26[39]; /*0x62c276*/
+          int v28 = v26[40]; /*0x62c278*/
+          int v64 = v26[41]; /*0x62c286*/
+          int v29 = *((_DWORD *)this + 39) - v27; /*0x62c28c*/
+          int v30 = this->q028 - v28; /*0x62c291*/
           v31 = (int *)v26[12]; /*0x62c293*/
           v64 = this->q0A4; /*0x62c299*/
-          v32 = abs32(v29) + abs32(v30); /*0x62c2af*/
+          int v32 = abs32(v29) + abs32(v30); /*0x62c2af*/
           if ( *((_BYTE *)v26 + 144) && v26[27] > 0 ) /*0x62c2c0*/
           {
-            v33 = this->q049; /*0x62c2c2*/
+            bool v33 = this->q049; /*0x62c2c2*/
             if ( v33 ) /*0x62c2ca*/
-              v34 = *(_DWORD *)(v33 + 252); /*0x62c2cc*/
+              int v34 = *(_DWORD *)(v33 + 252); /*0x62c2cc*/
             else
               v34 = 0; /*0x62c2d4*/
-            v35 = this->q02B; /*0x62c2d6*/
-            v47 = v34; /*0x62c2dc*/
+            bool v35 = this->q02B; /*0x62c2d6*/
+            int v47 = v34; /*0x62c2dc*/
             v54 = *(float *)(v35 + 744); /*0x62c2e9*/
-            v36 = *v26; /*0x62c2f3*/
-            v41 = *(_DWORD *)(v35 + 740); /*0x62c2f5*/
-            v37 = ZCoordToScreenY(v32); /*0x62c2f6*/
+            int v36 = *v26; /*0x62c2f3*/
+            int v41 = *(_DWORD *)(v35 + 740); /*0x62c2f5*/
+            __int64 v37 = ZCoordToScreenY(v32); /*0x62c2f6*/
             (*(void (__fastcall **)(int *, _DWORD, float *, _DWORD, int, _DWORD, _DWORD, _DWORD, int))(v36 + 364))( /*0x62c303*/
               v26,
               HIDWORD(v37),

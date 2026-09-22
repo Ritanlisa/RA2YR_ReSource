@@ -393,13 +393,13 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
     void (__thiscall ***v5)(int, int);
     void *v6;
     v3 = 0;
-    for ( *(int *)this = &vt_MultiplayerGameMode; v3 < *(int *)(this + 24); ++v3 )
+    for ( *(int *)this = &vt_MultiplayerGameMode; v3 < this->q018; ++v3 )
   {
-    v4 = *(void (__thiscall ****)(int, int))(*(int *)(this + 12) + 4 * v3);
+    v4 = *(void (__thiscall ****)(int, int))(this->q00C + 4 * v3);
     if ( v4 )
     (**v4)(v4, 1);
   }
-    (*(void (__thiscall **)(char *))(*(int *)(this + 8) + 12))(this + 8);
+    (*(void (__thiscall **)(char *))(this->q008 + 12))(this + 8);
     v5 = (void (__thiscall ***)(int, int))*((int *)(this) + 14);
     if ( v5 )
     (**v5)(v5, 1);
@@ -407,15 +407,15 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
     DeleteAndZero((void **)(this) + 11);
     DeleteAndZero::Alt((void **)(this) + 9);
     DeleteAndZero::Alt((void **)(this) + 8);
-    v6 = (void *)*(int *)(this + 12);
-    *(int *)(this + 8) = &vt_VectorClass_MultiplayerTeam;
+    v6 = (void *)this->q00C;
+    this->q008 = &vt_VectorClass_MultiplayerTeam;
     if ( v6 && *(this + 21) )
   {
     __3_YAXPAX_Z(v6);
-    *(int *)(this + 12) = 0;
+    this->q00C = 0;
   }
     *(this + 21) = 0;
-    *(int *)(this + 16) = 0;
+    this->q010 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (MultiplayerGameMode *)this;
@@ -575,26 +575,6 @@ unsigned int * AbstractClass::checkRevealCell(const wchar_t ** a1, const wchar_t
 }
 }
 
-// ==== BACKFILL 0x005D8520  ScenarioClass::setupPlayers  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int ScenarioClass::setupPlayers(int * a2) {
-{
-      int v2;
-      int result;
-      _DWORD *i;
-
-      v2 = this->q010;
-      result = 0;
-      if ( v2 <= 0 )
-        return -1;
-      for ( i = (_DWORD *)this->Items; *i != *a2; ++i )
-      {
-        if ( ++result >= v2 )
-          return -1;
-      }
-      return result;
-}
-} }
-
 // ==== BACKFILL 0x005D8640  VectorClass::ddtor  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass::ddtor()
 {
@@ -721,17 +701,17 @@ char Network::QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4)
     short v12;
     bool v13;
     v10 = 43;
-    strcpy(v11, &DataGlobal_830620.__pad_690[64]);
-    (*(void (__thiscall **)(int, int))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 116))( *(int *)&DataGlobal_87C374.__pad_579C[23320], a2);
+    strcpy(v11, &DataGlobal_830620[1744]);
+    (*(void (__thiscall **)(int, int))(**(int **)&DataGlobal_87C374[45748] + 116))( *(int *)&DataGlobal_87C374[45748], a2);
     v12 = a2;
     v13 = a4 == 1;
-    QueueCount = Network::GetQueueCount((int)&HouseClass_Player.__pad_5568[22284]);
+    QueueCount = Network::GetQueueCount((int)&HouseClass_Player[44148]);
     Network::FormatAddress((unsigned short *)aP0, 0);
     Debug::Log();
     LOWORD(v5) = aP0->Socket;
-    Network::SendMessage((int)&HouseClass_Player.__pad_5568[22284], (int)&v10, 56, 0, (int)aP0, v5, a3);
+    Network::SendMessage((int)&HouseClass_Player[44148], (int)&v10, 56, 0, (int)aP0, v5, a3);
     Ticks = Timer::GetTicks();
-    while ( Network::GetQueueCount((int)&HouseClass_Player.__pad_5568[22284]) > QueueCount || *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23320] + 48) )
+    while ( Network::GetQueueCount((int)&HouseClass_Player[44148]) > QueueCount || *(int *)(*(int *)&DataGlobal_87C374[45748] + 48) )
   {
     v6 = 180;
     if ( Ticks != -1 )
@@ -743,10 +723,10 @@ char Network::QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4)
     }
     if ( !v6 )
     break;
-    Network::ReceiveLoop(&HouseClass_Player.__pad_5568[22284]);
+    Network::ReceiveLoop(&HouseClass_Player[44148]);
     Event::Dispatch();
   }
-    (*(void (__thiscall **)(int, int))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 116))( *(int *)&DataGlobal_87C374.__pad_579C[23320], 0);
+    (*(void (__thiscall **)(int, int))(**(int **)&DataGlobal_87C374[45748] + 116))( *(int *)&DataGlobal_87C374[45748], 0);
     return 1;
 }
 }

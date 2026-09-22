@@ -146,16 +146,10 @@ namespace gamemd { int TriggerClass::EvaluateCondition(void* a1, int a2, int a3)
   _DWORD *v8; // edi
   char result; // al
   int v10; // eax
-  int v11; // eax
   int v12; // eax
   bool v13; // eax
   int v14; // eax
   char v15; // al
-  int v16; // eax
-  bool v17; // eax
-  int v18; // eax
-  int v19; // [esp+1Ch] [ebp+Ch]
-  int v20; // [esp+1Ch] [ebp+Ch]
   bool v5 = this->q037; /*0x41e726*/
   bool v7 = 1; /*0x41e74e*/
   if ( !v5 || !*(_BYTE *)(v5 + 246) ) /*0x41e730*/
@@ -192,7 +186,7 @@ LABEL_17:
   {
     if ( !this->timer ) /*0x41e7e1*/
       return 0; /*0x41e7f1*/
-    v11 = v8[97]; /*0x41e809*/
+    int v11 = v8[97]; /*0x41e809*/
     if ( !v11 ) /*0x41e811*/
     {
 LABEL_28:
@@ -260,13 +254,13 @@ LABEL_36:
         v15 = AITriggerTypeClass::OwnerHouseOwns(v8, a3); /*0x41e921*/
         break; /*0x41e926*/
       case 2: /*0x41e908*/
-        v19 = (*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 36))(a3 + 36); /*0x41e93b*/
+        int v19 = (*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 36))(a3 + 36); /*0x41e93b*/
         if ( (double)((*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 32))(a3 + 36) - v19) >= 100.0 ) /*0x41e95b*/
           goto LABEL_58; /*0x41e95b*/
         v15 = 1; /*0x41e95d*/
         break; /*0x41e95f*/
       case 3: /*0x41e908*/
-        v20 = (*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 36))(a3 + 36); /*0x41e975*/
+        int v20 = (*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 36))(a3 + 36); /*0x41e975*/
         if ( (double)((*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 32))(a3 + 36) - v20) >= 0.0 ) /*0x41e995*/
 LABEL_58:
           v15 = 0; /*0x41e961*/
@@ -303,7 +297,7 @@ LABEL_70:
   result = globalHelper_01FEE0(this->q037, v8, a3); /*0x41e9ea*/
   if ( result ) /*0x41e9fc*/
   {
-    v16 = this->q038; /*0x41ea05*/
+    int v16 = this->q038; /*0x41ea05*/
     if ( !v16 || (result = globalHelper_01FEE0(v16, v8, a3)) != 0 ) /*0x41ea1b*/
     {
       result = TriggerClass::ValidateTeamTriggerConditions(this->q037); /*0x41ea2d*/
@@ -312,7 +306,7 @@ LABEL_70:
         if ( !this->q038 /*0x41ea51*/
           || (result = TriggerClass::ValidateTeamTriggerConditions(this->q038)) != 0 )
         {
-          v17 = this->q037; /*0x41ea5a*/
+          bool v17 = this->q037; /*0x41ea5a*/
           if ( v17 /*0x41ea82*/
             && *(int *)(v17 + 184) >= 0
             && TeamClass::CountActiveTeamsForType(this->q037) >= *(_DWORD *)(this->q037 + 184) )
@@ -321,7 +315,7 @@ LABEL_70:
           }
           else
           {
-            v18 = this->q038; /*0x41ea8d*/
+            int v18 = this->q038; /*0x41ea8d*/
             return !v18 /*0x41eaba*/
                 || *(int *)(v18 + 184) < 0
                 || TeamClass::CountActiveTeamsForType(this->q038) < *(_DWORD *)(this->q038

@@ -370,10 +370,6 @@ void ProductionCompletionCallback()
   int *p_Location_X; // esi
   __int16 *v15; // ebx
   int v18; // [esp+Ch] [ebp-24h] BYREF
-  int v19; // [esp+10h] [ebp-20h]
-  int v20; // [esp+14h] [ebp-1Ch]
-  char v21[12]; // [esp+18h] [ebp-18h] BYREF
-  char v22[12]; // [esp+24h] [ebp-Ch] BYREF
 
   (*(void (__thiscall **)(BuildingClass_Full *, int))(*(_DWORD *)this->_pad_base + 292))(this, 2); /*0x424ceb*/
   if ( BYTE2(this->IronTintTimer_Padding) || *(_DWORD *)(this->MissionTimer_StartTime + 760) == -1 ) /*0x424d08*/
@@ -395,11 +391,14 @@ void ProductionCompletionCallback()
     LOBYTE(v3) = *(_BYTE *)(this->MissionTimer_StartTime + 855); /*0x424d73*/
     if ( (_BYTE)v3 ) /*0x424d7b*/
     {
+  char v21[12]; // [esp+18h] [ebp-18h] BYREF
       _DWORD * v4 = (_DWORD *)(*(int (__thiscall **)(BuildingClass_Full *, char *))(*(_DWORD *)this->_pad_base + 72))(this, v21); /*0x424d8a*/
       v5 = (IUnknown *)Coord::To_Cell(&DataGlobal_87F7E8, v4); /*0x424d98*/
       v3 = BuildingClass::FindByCellHash(v5); /*0x424d9c*/
       if ( v3 != -1 ) /*0x424da4*/
       {
+  int v20; // [esp+14h] [ebp-1Ch]
+  int v19; // [esp+10h] [ebp-20h]
         _DWORD * v6 = *(_DWORD **)&BuildingClass_InstanceArray->__pad_0[4 * v3]; /*0x424db3*/
         CellClass::ReduceTiberium((int)v5, (unsigned __int8)v5->__pad_8C[146] + 1); /*0x424dc0*/
         if ( (int)v6[53] > 0 && !((int)abs32(Random::State((_DWORD *)g_ScenarioClass_Instance + 134)) % 3) ) /*0x424def*/
@@ -410,6 +409,7 @@ void ProductionCompletionCallback()
   int *v8; // eax
             v8 = (int *)(*(int (__thiscall **)(BuildingClass_Full *, char *))(*(_DWORD *)this->_pad_base + 72))( /*0x424e16*/
                           this,
+  char v22[12]; // [esp+24h] [ebp-Ch] BYREF
                           v22);
             int v9 = *v8; /*0x424e19*/
             int v10 = v8[1]; /*0x424e1b*/
@@ -579,39 +579,15 @@ int E4Recv_425670::ConstructionPositionTracker()
   int Location_Y; // ecx
   IUnknown *v7; // eax
   int v18; // eax
-  int v19; // edx
-  int v20; // ebx
   BuildingTypeClass *v21; // eax
-  int v22; // eax
-  double v23; // st7
-  double v24; // st7
   int GroundHeight; // eax
-  int v26; // edx
-  int v27; // eax
-  int v28; // ecx
-  int v29; // ebx
-  int v30; // ecx
-  int v31; // eax
-  int v32; // eax
-  int v33; // ecx
-  int v34; // edx
   __int16 v35; // bp
   AnimClass *v36; // ecx
-  void *v37; // edx
-  void *v38; // ebx
-  int v39; // ecx
   IUnknown *v40; // eax
-  unsigned int v41; // ecx
-  int *v42; // eax
-  int v43; // edx
-  double v44; // st7
   CoordStruct *MissionTimer_StartTime; // edi
   IUnknown *v47; // [esp+Ch] [ebp-44h]
   double v48; // [esp+24h] [ebp-2Ch] BYREF
   _BYTE v49[12]; // [esp+2Ch] [ebp-24h] BYREF
-  int v50; // [esp+38h] [ebp-18h] BYREF
-  int v51; // [esp+3Ch] [ebp-14h]
-  int v52; // [esp+40h] [ebp-10h]
   int v53; // [esp+44h] [ebp-Ch] BYREF
   int v54; // [esp+48h] [ebp-8h]
   int Location_Z; // [esp+4Ch] [ebp-4h]
@@ -635,13 +611,13 @@ int E4Recv_425670::ConstructionPositionTracker()
       if ( this->ProductionBlocked ) /*0x425b61*/
         goto LABEL_47; /*0x425b69*/
       v36 = (AnimClass *)Building::ComputePosition((int *)this->_pad_base, (AnimClass *)&v53); /*0x425b7b*/
-      v37 = v36->field_4; /*0x425b7f*/
-      v38 = v36->field_8; /*0x425b82*/
+      void * v37 = v36->field_4; /*0x425b7f*/
+      void * v38 = v36->field_8; /*0x425b82*/
       if ( v36->field_0 == unk_89A178 && v37 == (void *)qword_89A17C && v38 == (void *)HIDWORD(qword_89A17C) ) /*0x425b9d*/
       {
         v3->field_0 = unk_89A178; /*0x425bad*/
         *(_DWORD *)&this->_pad_D8[56] = qword_89A17C; /*0x425bb4*/
-        v39 = HIDWORD(qword_89A17C); /*0x425bb7*/
+        int v39 = HIDWORD(qword_89A17C); /*0x425bb7*/
         this->ProductionBlocked = 1; /*0x425bbd*/
         *(_DWORD *)&this->_pad_D8[60] = v39; /*0x425bc4*/
         v40 = *(IUnknown **)&g_NetworkPlayerBuffer[5960]; /*0x425bc7*/
@@ -661,6 +637,8 @@ int E4Recv_425670::ConstructionPositionTracker()
   }
   else
   {
+  int v52; // [esp+40h] [ebp-10h]
+  int v51; // [esp+3Ch] [ebp-14h]
     p_Location_X = &this->Location_X; /*0x4256e2*/
     Location_X = this->Location_X; /*0x4256ee*/
     Location_Y = this->Location_Y; /*0x4256f0*/
@@ -668,26 +646,26 @@ int E4Recv_425670::ConstructionPositionTracker()
     v53 = v3->field_0; /*0x4256fc*/
     v47 = (IUnknown *)(Location_Y - *(_DWORD *)&this->_pad_D8[56]); /*0x425708*/
     Location_Z = *(_DWORD *)&this->_pad_D8[60]; /*0x425709*/
-    v7 = Coord::Subtract(&v50, (IUnknown *)(Location_X - v53), v47, 0); /*0x425718*/
+    int v50 = Coord::Subtract(&v50, (IUnknown *)(Location_X - v53), v47, 0); /*0x425718*/
     v53 = v7->field_0; /*0x42571f*/
     v54 = v7->field_4; /*0x42572a*/
     Location_Z = v7->field_8; /*0x425731*/
     if ( (int)Coord::Length(&v53) > 18 ) /*0x42573d*/
     {
       v53 = *p_Location_X; /*0x4258f3*/
-      v19 = *(_DWORD *)this->_pad_base; /*0x4258f7*/
+      int v19 = *(_DWORD *)this->_pad_base; /*0x4258f7*/
       v54 = this->Location_Y; /*0x4258fc*/
-      v20 = this->Location_Z; /*0x425904*/
+      int v20 = this->Location_Z; /*0x425904*/
       v21 = (BuildingTypeClass *)(*(int (__thiscall **)(BuildingClass_Full *, int *))(v19 + 72))(this, &v53); /*0x42590a*/
-      v22 = *(_DWORD *)Cell::GetHeight(v49, v21, (int *)&this->_pad_D8[52]); /*0x425917*/
+      int v22 = *(_DWORD *)Cell::GetHeight(v49, v21, (int *)&this->_pad_D8[52]); /*0x425917*/
       v53 = *p_Location_X; /*0x42591d*/
       v54 = this->Location_Y; /*0x425924*/
       Location_Z = this->Location_Z; /*0x425938*/
       *(double *)v49 = (double)((__int16)v22 - 0x3FFF) * -0.00009587672516830327; /*0x425946*/
       v48 = (double)v54; /*0x425958*/
-      v23 = Math::SinCos(*(double *)v49); /*0x42595c*/
+      double v23 = Math::SinCos(*(double *)v49); /*0x42595c*/
       LODWORD(v48) = Math::RoundToInt(v48 - v23 * 18.0); /*0x425974*/
-      v24 = Math::ArcTan2(*(double *)v49); /*0x42597e*/
+      double v24 = Math::ArcTan2(*(double *)v49); /*0x42597e*/
       v50 = Math::RoundToInt(v24 * 18.0 + (double)v53); /*0x42599d*/
       v51 = LODWORD(v48); /*0x4259a5*/
       v52 = Location_Z; /*0x4259af*/
@@ -695,7 +673,7 @@ int E4Recv_425670::ConstructionPositionTracker()
         GroundHeight = unk_89A1B4 + Cell::GetGroundHeight(&v50); /*0x4259e5*/
       else
         GroundHeight = Cell::GetGroundHeight(&v50); /*0x4259cf*/
-      v26 = *(_DWORD *)this->_pad_base; /*0x4259eb*/
+      int v26 = *(_DWORD *)this->_pad_base; /*0x4259eb*/
       v52 = GroundHeight; /*0x4259ed*/
       (*(void (__thiscall **)(BuildingClass_Full *, int *))(v26 + 436))(this, &v50); /*0x4259f8*/
     }
@@ -750,25 +728,25 @@ int E4Recv_425670::ConstructionPositionTracker()
     }
     if ( !this->_pad_base[141] ) /*0x4259fe*/
     {
-      v27 = *p_Location_X; /*0x425a0e*/
-      v28 = this->Location_Y; /*0x425a10*/
+      int v27 = *p_Location_X; /*0x425a0e*/
+      int v28 = this->Location_Y; /*0x425a10*/
       Location_Z = this->Location_Z; /*0x425a16*/
       LOWORD(v48) = v27 / 256; /*0x425a26*/
-      v29 = v28 / 256; /*0x425a3a*/
-      v30 = *p_Location_X; /*0x425a3d*/
+      int v29 = v28 / 256; /*0x425a3a*/
+      int v30 = *p_Location_X; /*0x425a3d*/
       WORD1(v48) = v29; /*0x425a3f*/
       v50 = v30; /*0x425a44*/
       v51 = this->Location_Y; /*0x425a4d*/
-      v31 = this->Location_Z; /*0x425a53*/
+      int v31 = this->Location_Z; /*0x425a53*/
       v53 = *p_Location_X; /*0x425a56*/
       v52 = v31; /*0x425a5a*/
       v54 = this->Location_Y; /*0x425a65*/
       Location_Z = this->Location_Z; /*0x425a6d*/
-      v32 = Cell::GetGroundHeight(&v53); /*0x425a76*/
+      int v32 = Cell::GetGroundHeight(&v53); /*0x425a76*/
       if ( v52 >= unk_89A1B4 + v32 ) /*0x425a89*/
       {
-        v33 = this->Location_Y; /*0x425a92*/
-        v34 = this->Location_Z; /*0x425a95*/
+        int v33 = this->Location_Y; /*0x425a92*/
+        int v34 = this->Location_Z; /*0x425a95*/
         v53 = *p_Location_X; /*0x425a98*/
         v54 = v33; /*0x425aa0*/
         Location_Z = v34; /*0x425aaa*/
@@ -791,16 +769,16 @@ int E4Recv_425670::ConstructionPositionTracker()
 LABEL_41:
   if ( !this->ProductionBlocked ) /*0x425c02*/
   {
-    v41 = 0; /*0x425c18*/
+    unsigned int v41 = 0; /*0x425c18*/
     if ( v3->field_0 != unk_89A178 /*0x425c35*/
       || *(_DWORD *)&this->_pad_D8[56] != (_DWORD)qword_89A17C
       || *(_DWORD *)&this->_pad_D8[60] != HIDWORD(qword_89A17C) )
     {
-      v42 = (int *)(*(int (__thiscall **)(BuildingClass_Full *, int *))(*(_DWORD *)this->_pad_base + 72))(this, &v53); /*0x425c40*/
-      v43 = *v42; /*0x425c45*/
+      int * v42 = (int *)(*(int (__thiscall **)(BuildingClass_Full *, int *))(*(_DWORD *)this->_pad_base + 72))(this, &v53); /*0x425c40*/
+      int v43 = *v42; /*0x425c45*/
       LODWORD(v48) = v3->field_0; /*0x425c47*/
       *(_DWORD *)v49 = v43; /*0x425c4b*/
-      v44 = Math::CalcAngle((double)v42[1] - (double)*(int *)&this->_pad_D8[56], (double)SLODWORD(v48) - (double)v43); /*0x425c6a*/
+      double v44 = Math::CalcAngle((double)v42[1] - (double)*(int *)&this->_pad_D8[56], (double)SLODWORD(v48) - (double)v43); /*0x425c6a*/
       *(_WORD *)v49 = Math::RoundToInt((v44 - 1.570796326794897) * -10430.06004058427); /*0x425c83*/
       v41 = *(_DWORD *)(this->MissionTimer_StartTime + 848) /*0x425ca3*/
           * ((-1 - (((unsigned int)((*(_DWORD *)v49 >> 12) + 1) >> 1) & 7)) & 7);
@@ -1493,11 +1471,7 @@ void GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int a4, int a5, 
   int **v44; // ebp
   int *v50; // [esp+18h] [ebp-30h] BYREF
   int v51; // [esp+1Ch] [ebp-2Ch]
-  int v52; // [esp+20h] [ebp-28h]
   int v53; // [esp+24h] [ebp-24h]
-  int *v54; // [esp+28h] [ebp-20h]
-  int *v55; // [esp+2Ch] [ebp-1Ch]
-  int *v56; // [esp+30h] [ebp-18h]
   int v57; // [esp+34h] [ebp-14h] BYREF
   int TileDataCellClass; // [esp+38h] [ebp-10h] BYREF
   int v59; // [esp+3Ch] [ebp-Ch]
@@ -1591,9 +1565,10 @@ LABEL_20:
   {
   bool v26; // bl
     v21 = *v20; /*0x42b549*/
-    v52 = v19; /*0x42b54d*/
+    int v52 = v19; /*0x42b54d*/
     v22 = v18 + v21; /*0x42b551*/
     v23 = HIWORD(v49) + v20[1]; /*0x42b558*/
+  int *v54; // [esp+28h] [ebp-20h]
     LOWORD(v54) = v22; /*0x42b55d*/
     HIWORD(v54) = v23; /*0x42b564*/
     v50 = v54; /*0x42b579*/
@@ -1650,6 +1625,7 @@ LABEL_52:
       v27 = (_WORD)v50 + *v20; /*0x42b5ff*/
       --v52; /*0x42b605*/
       v28 = HIWORD(v50) + v20[1]; /*0x42b60d*/
+  int *v55; // [esp+2Ch] [ebp-1Ch]
       LOWORD(v55) = v27; /*0x42b612*/
       HIWORD(v55) = v28; /*0x42b61b*/
       v50 = v55; /*0x42b624*/
@@ -1666,6 +1642,7 @@ LABEL_52:
     while ( !v26 ); /*0x42b655*/
     int v30 = v59 & 7; /*0x42b66e*/
     v31 = HIWORD(v49) + HIWORD(Direction_X_Offsets[v30]); /*0x42b688*/
+  int *v56; // [esp+30h] [ebp-18h]
     LOWORD(v56) = LOWORD(Direction_X_Offsets[v30]) + (_WORD)v49; /*0x42b694*/
     HIWORD(v56) = v31; /*0x42b69d*/
     v18 = (__int16)v56; /*0x42b6a2*/
@@ -1793,22 +1770,12 @@ void WalkLineOfSight(char * a1, int a2, unsigned int * a3, short * a4, unsigned 
   int v17; // esi
   bool v18; // cl
   _DWORD *v19; // eax
-  int v20; // ecx
-  _DWORD *v21; // edi
-  int v22; // eax
-  int v23; // ecx
-  _DWORD *v24; // edi
-  int v25; // eax
-  int v26; // ecx
-  bool v27; // cc
   signed int v29; // [esp+28h] [ebp-34h]
   signed int v30; // [esp+2Ch] [ebp-30h]
   int v31; // [esp+30h] [ebp-2Ch]
   int v32; // [esp+34h] [ebp-28h]
   int v33; // [esp+38h] [ebp-24h]
   int v34; // [esp+3Ch] [ebp-20h]
-  _DWORD *v35; // [esp+40h] [ebp-1Ch]
-  _DWORD *v36; // [esp+44h] [ebp-18h]
   int v37; // [esp+48h] [ebp-14h]
   int v38; // [esp+4Ch] [ebp-10h]
   double v39; // [esp+54h] [ebp-8h]
@@ -1845,11 +1812,11 @@ void WalkLineOfSight(char * a1, int a2, unsigned int * a3, short * a4, unsigned 
     if ( v29 ) /*0x42befb*/
       break; /*0x42befb*/
 LABEL_49:
-    v26 = v32; /*0x42c121*/
+    int v26 = v32; /*0x42c121*/
     v32 = v33; /*0x42c129*/
     v29 = v30; /*0x42c131*/
     v33 = v26; /*0x42c13a*/
-    v27 = v38 + 1 < 2; /*0x42c13e*/
+    bool v27 = v38 + 1 < 2; /*0x42c13e*/
     v30 = v16; /*0x42c141*/
     ++v38; /*0x42c145*/
     if ( !v27 ) /*0x42c149*/
@@ -1866,18 +1833,19 @@ LABEL_49:
     {
       if ( v18 ) /*0x42bf23*/
         break; /*0x42bf23*/
-      v20 = v32 & 7; /*0x42bf2d*/
+      int v20 = v32 & 7; /*0x42bf2d*/
+  _DWORD *v35; // [esp+40h] [ebp-1Ch]
       LOWORD(v35) = (_WORD)v19 + LOWORD(Direction_X_Offsets[v20]); /*0x42bf46*/
       HIWORD(v35) = HIWORD(a5) + HIWORD(Direction_X_Offsets[v20]); /*0x42bf55*/
       a5 = v35; /*0x42bf5e*/
-      v21 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a5); /*0x42bf6c*/
+      _DWORD * v21 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a5); /*0x42bf6c*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData((__int16 *)&a5, v37) * v39 >= 0.01 ) /*0x42bfa1*/
         ++v31; /*0x42bfa3*/
       v18 = (*(int (__thiscall **)(_DWORD *, _DWORD *, int, int, _DWORD, int))(*v15 + 428))(v15, v21, v32, v17, 0, 1) /*0x42bfe5*/
          || (v21[80] & 0x40000) != 0
          || v31 > 3
          || !a7 && v31 > 0;
-      v22 = *((char *)v21 + 283); /*0x42bfe7*/
+      int v22 = *((char *)v21 + 283); /*0x42bfe7*/
       --v16; /*0x42bff0*/
       if ( v17 - v22 == 4 ) /*0x42bff4*/
       {
@@ -1894,11 +1862,12 @@ LABEL_49:
   {
     while ( !v18 ) /*0x42c026*/
     {
-      v23 = v33 & 7; /*0x42c030*/
+      int v23 = v33 & 7; /*0x42c030*/
+  _DWORD *v36; // [esp+44h] [ebp-18h]
       LOWORD(v36) = LOWORD(Direction_X_Offsets[v23]) + (_WORD)v19; /*0x42c053*/
       HIWORD(v36) = HIWORD(a5) + HIWORD(Direction_X_Offsets[v23]); /*0x42c058*/
       a5 = v36; /*0x42c067*/
-      v24 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a5); /*0x42c070*/
+      _DWORD * v24 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a5); /*0x42c070*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData((__int16 *)&a5, v37) * v39 >= 0.01 ) /*0x42c0a5*/
         ++v31; /*0x42c0a7*/
       v18 = (*(int (__thiscall **)(_DWORD *, _DWORD *, int, int, _DWORD, int))(*v15 + 428))(v15, v24, v33, v17, 0, 1) /*0x42c0e9*/
@@ -1906,7 +1875,7 @@ LABEL_49:
          || v31 > 3
          || !a7 && v31 > 0;
       --v34; /*0x42c0eb*/
-      v25 = *((char *)v24 + 283); /*0x42c0ef*/
+      int v25 = *((char *)v24 + 283); /*0x42c0ef*/
       if ( v17 - v25 != 4 || (v17 = v25 + 4, (v24[80] & 0x100) == 0) ) /*0x42c109*/
         v17 = *((char *)v24 + 283); /*0x42c10b*/
       if ( v34 <= 0 ) /*0x42c113*/

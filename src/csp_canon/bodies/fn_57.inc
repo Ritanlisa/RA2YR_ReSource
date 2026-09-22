@@ -13,12 +13,12 @@ char globalHelper_072230(ObjectClass * aP0, int a2)
     unsigned char v6;
     int v7;
     v2 = a2 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = *(short *)&aP0->__pad_0[2] + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    v3 = *(short *)&DataGlobal_89E138[5296][4 * v2 + 160];
+    LOWORD(v2) = *(short *)&aP0->__pad_0[2] + *(short *)&DataGlobal_89E138[5296][4 * v2 + 162];
     LOWORD(a2) = *(short *)aP0->__pad_0 + v3;
     HIWORD(a2) = v2;
     v4 = (short)a2 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v4)) == 0 )
   {
     g_Map_GlobalCellIndex = (IUnknown *)a2;
     v5 = g_CellClassArray;
@@ -63,12 +63,12 @@ char globalHelper_072330(IUnknown * aP0, int a2)
     unsigned char v6;
     int v7;
     v2 = a2 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    v3 = *(short *)&DataGlobal_89E138[5296][4 * v2 + 160];
+    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138[5296][4 * v2 + 162];
     LOWORD(a2) = LOWORD(aP0->field_0) + v3;
     HIWORD(a2) = v2;
     v4 = (short)a2 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v4)) == 0 )
   {
     g_Map_GlobalCellIndex = (IUnknown *)a2;
     v5 = g_CellClassArray;
@@ -113,12 +113,12 @@ char CellClass::SetTileType13(IUnknown * aP0, int a2)
     unsigned char v6;
     int v7;
     v2 = a2 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    v3 = *(short *)&DataGlobal_89E138[5296][4 * v2 + 160];
+    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138[5296][4 * v2 + 162];
     LOWORD(a2) = LOWORD(aP0->field_0) + v3;
     HIWORD(a2) = v2;
     v4 = (short)a2 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v4)) == 0 )
   {
     g_Map_GlobalCellIndex = (IUnknown *)a2;
     v5 = g_CellClassArray;
@@ -166,12 +166,12 @@ char CellClass::SetTileType14(IUnknown * aP0, int a2)
     unsigned char v6;
     int v7;
     v2 = a2 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    v3 = *(short *)&DataGlobal_89E138[5296][4 * v2 + 160];
+    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138[5296][4 * v2 + 162];
     LOWORD(a2) = LOWORD(aP0->field_0) + v3;
     HIWORD(a2) = v2;
     v4 = (short)a2 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v4)) == 0 )
   {
     g_Map_GlobalCellIndex = (IUnknown *)a2;
     v5 = g_CellClassArray;
@@ -231,7 +231,7 @@ namespace gamemd { int CellClass::ApplyTerrainModTile(int a1) {
 
       v2 = aP1;
       v4 = SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9);
-      if ( v4 >= 0x40000 || (v5 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4.__pad_3C[4] + 4 * v4)) == 0 )
+      if ( v4 >= 0x40000 || (v5 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v4)) == 0 )
       {
         g_Map_GlobalCellIndex = (IUnknown *)aP1->field_0;
         v5 = g_CellClassArray;
@@ -319,7 +319,7 @@ int Cell::GetGroundHeight(IUnknown * aP0)
     v6[1] = v1;
     v2 = aP0->field_4 / 256;
     v3 = v6[0] / 256 + (v2 << 9);
-    if ( v3 < 0 || v3 >= *(int *)&DataGlobal_87C374.__pad_14B0[8452] || (v4 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v3)) == 0 )
+    if ( v3 < 0 || v3 >= *(int *)&DataGlobal_87C374[13748] || (v4 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v3)) == 0 )
   {
     LOWORD(aP0a) = v6[0] / 256;
     HIWORD(aP0a) = v2;
@@ -329,6 +329,166 @@ int Cell::GetGroundHeight(IUnknown * aP0)
     return Isometric::InitTables((int)v4, (IUnknown *)v6);
 }
 }
+
+// ==== BACKFILL 0x005785F0  IsCoordVisibleMap  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { bool Gap2Recv_5785F0::IsCoordVisibleMap(void* a2) {
+{
+    int *v2;
+    v2 = a2;
+    LOWORD(a2) = *a2 / 256;
+    HIWORD(a2) = v2[1] / 256;
+    return LayerClass::IsWithinUsableArea(this, (short *)&a2, 1);
+}
+
+/* ASM:
+push    esi
+mov     esi, [esp+4+arg_0]
+push    1
+mov     eax, [esi]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+8+arg_0], ax
+mov     eax, [esi+4]
+cdq
+and     edx, 0FFh
+add     eax, edx
+lea     edx, [esp+8+arg_0]
+sar     eax, 8
+mov     word ptr [esp+8+arg_0+2], ax
+mov     eax, [esp+8+arg_0]
+push    edx
+mov     [esp+0Ch+arg_0], eax
+call    LayerClass__IsWithinUsableArea
+pop     esi
+retn    4
+*/
+} }
+
+// ==== BACKFILL 0x00578640  Math_Helper  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { bool Gap2Recv_578640::Math_Helper(void* a2, void* a3, char a4) {
+{
+    int v4;
+    int v5;
+    int v6;
+    unsigned int v7;
+    int *v8;
+    int v9;
+    int v10;
+    v4 = *((int*)(a3) + 1);
+    v5 = 0;
+    v6 = *a3;
+    if ( a4 )
+  {
+    v7 = v6 + (v4 << 9);
+    if ( v7 >= 0x40000 || (v8 = *(int **)(g_Shroud_CellArray + 4 * v7)) == 0 )
+    {
+    g_Map_GlobalCellIndex = *(int *)a3;
+    v8 = g_CellClassArray;
+    }
+    v5 = *((char *)(v8) + 283);
+    if ( *((char *)(v8) + 284) && v4 + v6 < v5 + this->M244 + 2 * *((int*)(a2) + 1) + 4 )
+    ++v5;
+  }
+    v9 = *((int*)(a2) + 1);
+    v10 = this->M244;
+    return v4 + v6 > v5 + v10 + 2 * v9 && v4 + v6 <= v5 + v10 + 2 * (v9 + *((int*)(a2) + 3)) + 2 && v6 - v4 < 2 * (*a2 + *((int*)(a2) + 2)) - v10 && v4 - v6 < v10 - 2 * *a2;
+}
+
+/* ASM:
+mov     al, [esp+arg_8]
+push    ebx
+mov     ebx, [esp+4+arg_4]
+push    ebp
+mov     ebp, [esp+8+arg_0]
+push    esi
+movsx   edx, word ptr [ebx+2]
+xor     esi, esi
+push    edi
+movsx   edi, word ptr [ebx]
+test    al, al
+jz      short loc_5786AE
+mov     eax, edx
+shl     eax, 9
+add     eax, edi
+js      short loc_57867A
+cmp     eax, 40000h
+jge     short loc_57867A
+mov     esi, ds:87F924h
+mov     eax, [esi+eax*4]
+test    eax, eax
+jnz     short loc_578686
+
+loc_57867A:                             ; CODE XREF: Math_Helper+24↑j
+; Math_Helper+2B↑j
+mov     eax, [ebx]
+mov     dword_A8ED54+2EF20h, eax
+mov     eax, (offset dword_A8ED54+2EEFCh)
+
+loc_578686:                             ; CODE XREF: Math_Helper+38↑j
+mov     bl, [eax+11Ch]
+movsx   esi, byte ptr [eax+11Bh]
+test    bl, bl
+jz      short loc_5786AE
+mov     eax, [ebp+4]
+mov     ebx, [ecx+0F4h]
+lea     eax, [ebx+eax*2+4]
+lea     ebx, [edx+edi]
+add     eax, esi
+cmp     ebx, eax
+jge     short loc_5786AE
+inc     esi
+
+loc_5786AE:                             ; CODE XREF: Math_Helper+1B↑j
+; Math_Helper+55↑j ...
+mov     ebx, [ebp+4]
+mov     eax, [ecx+0F4h]
+lea     ecx, [edx+edi]
+lea     ebp, [eax+ebx*2]
+add     ebp, esi
+cmp     ecx, ebp
+jle     short loc_578700
+mov     ebp, [esp+10h+arg_0]
+mov     ebp, [ebp+0Ch]
+add     ebp, ebx
+lea     ebx, [eax+ebp*2+2]
+add     ebx, esi
+cmp     ecx, ebx
+jg      short loc_578700
+mov     esi, [esp+10h+arg_0]
+mov     ebx, edi
+sub     ebx, edx
+mov     ecx, [esi]
+mov     esi, [esi+8]
+add     esi, ecx
+shl     esi, 1
+sub     esi, eax
+cmp     ebx, esi
+jge     short loc_578700
+add     ecx, ecx
+sub     edx, edi
+sub     eax, ecx
+cmp     edx, eax
+jge     short loc_578700
+pop     edi
+pop     esi
+pop     ebp
+mov     al, 1
+pop     ebx
+retn    0Ch
+; ---------------------------------------------------------------------------
+
+loc_578700:                             ; CODE XREF: Math_Helper+81↑j
+; Math_Helper+94↑j ...
+pop     edi
+pop     esi
+pop     ebp
+xor     al, al
+pop     ebx
+retn    0Ch
+*/
+} }
 
 // ==== BACKFILL 0x00578B70  sub_578B70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_578B70::sub_578B70(short * a2)
@@ -466,7 +626,7 @@ int MapClass::TriggerEVA(IUnknown * aP0)
     if ( (short)result <= 5 )
       {
     v5 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9);
-    if ( v5 < 0x40000 && (result = *(int *)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v5)) != 0 )
+    if ( v5 < 0x40000 && (result = *(int *)(*(int *)&DataGlobal_87C374[13744] + 4 * v5)) != 0 )
         {
     v6 = (int *)result;
         }
@@ -1791,7 +1951,7 @@ namespace gamemd { void CellClass::ApplyCliffTileModifications(int a1) {
 
       v2 = aP1;
       v4 = SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9);
-      if ( v4 >= 0x40000 || (v5 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4.__pad_3C[4] + 4 * v4)) == 0 )
+      if ( v4 >= 0x40000 || (v5 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v4)) == 0 )
       {
         g_Map_GlobalCellIndex = (IUnknown *)aP1->field_0;
         v5 = g_CellClassArray;
@@ -1886,7 +2046,7 @@ namespace gamemd { void CellClass::ApplyTileMod58(int a1) {
 
       v2 = aP1;
       v4 = SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9);
-      if ( v4 >= 0x40000 || (v5 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4.__pad_3C[4] + 4 * v4)) == 0 )
+      if ( v4 >= 0x40000 || (v5 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v4)) == 0 )
       {
         g_Map_GlobalCellIndex = (IUnknown *)aP1->field_0;
         v5 = g_CellClassArray;

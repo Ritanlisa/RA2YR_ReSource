@@ -262,7 +262,6 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
   int v18; // edi
   unsigned __int8 v19; // al
   unsigned __int8 v20; // al
-  int v21; // ebp
   result = a5; /*0x491b41*/
   _BYTE * v14 = a2; /*0x491b58*/
   unsigned int v15 = a7; /*0x491b5f*/
@@ -294,7 +293,7 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
     if ( v19 ) /*0x491bab*/
     {
       v15 += 2; /*0x491bcf*/
-      v21 = a6 - *a11++; /*0x491bd2*/
+      int v21 = a6 - *a11++; /*0x491bd2*/
       if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x491bdd*/
         *v14 = *(_BYTE *)(v19 + *(this + 1)); /*0x491bf2*/
       ++v14; /*0x491bf4*/
@@ -338,7 +337,6 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
   TacticalMap *v14; // ecx
   int v19; // edi
   unsigned __int8 v20; // al
-  int v21; // ebp
   unsigned __int8 v24; // [esp+20h] [ebp+Ch]
   unsigned __int8 v25; // [esp+20h] [ebp+Ch]
   char *a10a; // [esp+3Ch] [ebp+28h]
@@ -378,7 +376,7 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
     if ( v20 ) /*0x491cc8*/
     {
       v16 += 2; /*0x491cf5*/
-      v21 = a6 - *a10; /*0x491cfb*/
+      int v21 = a6 - *a10; /*0x491cfb*/
       result = (int)++a10; /*0x491d03*/
       if ( v21 < *(unsigned __int16 *)(v16 - 2) ) /*0x491d0a*/
       {
@@ -510,7 +508,6 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
   int v18; // edi
   unsigned __int8 v19; // al
   unsigned __int8 v20; // al
-  int v21; // ebp
   result = a5; /*0x491ea1*/
   int v14 = arg0; /*0x491eb8*/
   unsigned int v15 = a7; /*0x491ebf*/
@@ -542,7 +539,7 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
     if ( v19 ) /*0x491f0b*/
     {
       v15 += 2; /*0x491f2f*/
-      v21 = a6 - *a10++; /*0x491f32*/
+      int v21 = a6 - *a10++; /*0x491f32*/
       ++v14; /*0x491f56*/
       --v18; /*0x491f57*/
       if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x491f41*/
@@ -643,8 +640,6 @@ unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4,
   int v18; // ebx
   unsigned __int8 v19; // cl
   unsigned __int8 v20; // cl
-  int v21; // ecx
-  char *v22; // edi
   __int16 v23; // cx
   unsigned __int8 *a2a; // [esp+1Ch] [ebp+8h]
   unsigned __int8 v26; // [esp+20h] [ebp+Ch]
@@ -680,8 +675,8 @@ unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4,
     v26 = v19; /*0x492170*/
     if ( v19 ) /*0x492178*/
     {
-      v21 = arg10 - *a10; /*0x49219e*/
-      v22 = a10 + 1; /*0x4921a5*/
+      int v21 = arg10 - *a10; /*0x49219e*/
+      char * v22 = a10 + 1; /*0x4921a5*/
       if ( v21 >= *result ) /*0x4921a8*/
       {
         a10 = v22 + 1; /*0x4921e4*/
@@ -877,8 +872,6 @@ int E4Recv_496310::sub_496310()
   unsigned __int8 *v4; // edi
   int v7; // ebx
   unsigned __int8 v8; // al
-  int v9; // eax
-  int v10; // ecx
   int v11; // [esp+10h] [ebp+4h]
   unsigned __int8 *v12; // [esp+14h] [ebp+8h]
   int v13; // [esp+18h] [ebp+Ch]
@@ -911,11 +904,11 @@ int E4Recv_496310::sub_496310()
     v14 = v8; /*0x496355*/
     if ( v8 ) /*0x496359*/
     {
-      v9 = this->M4; /*0x496376*/
+      int v9 = this->M4; /*0x496376*/
   int v1; // esi
       LOWORD(v1) = (unsigned short)this->M8; /*0x496379*/
       v3 += 2; /*0x496383*/
-      v10 = *(unsigned __int16 *)(v9 + 2 * v14); /*0x496386*/
+      int v10 = *(unsigned __int16 *)(v9 + 2 * v14); /*0x496386*/
       LOWORD(v9) = *(_WORD *)(v3 - 2) >> 2; /*0x49638e*/
       result = 3 * (v1 & v9); /*0x49639a*/
       --v7; /*0x49639f*/
@@ -944,8 +937,6 @@ int E4Recv_4964D0::sub_4964D0()
   unsigned __int8 *v4; // edi
   int v7; // ebx
   unsigned __int8 v8; // al
-  int v9; // eax
-  int v10; // eax
   __int16 v11; // cx
   int v12; // [esp+10h] [ebp+4h]
   unsigned __int8 *v13; // [esp+14h] [ebp+8h]
@@ -979,12 +970,12 @@ int E4Recv_4964D0::sub_4964D0()
     v15 = v8; /*0x496515*/
     if ( v8 ) /*0x496519*/
     {
-      v9 = this->M4; /*0x496536*/
+      int v9 = this->M4; /*0x496536*/
   int v1; // esi
       LOWORD(v1) = (unsigned short)this->M8; /*0x496539*/
       v3 += 2; /*0x496543*/
       LOWORD(v9) = *(_WORD *)(v9 + 2 * v15) >> 2; /*0x49654a*/
-      v10 = v1 & v9; /*0x49654e*/
+      int v10 = v1 & v9; /*0x49654e*/
       v11 = 3 * v10; /*0x496550*/
       LOWORD(v10) = *(_WORD *)(v3 - 2) >> 2; /*0x496557*/
       result = v1 & v10; /*0x49655b*/
@@ -1025,7 +1016,6 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
   int v18; // ebx
   unsigned __int8 v19; // al
   unsigned __int8 v20; // al
-  int v21; // esi
   result = a5; /*0x4965b1*/
   unsigned int v12 = a7; /*0x4965b5*/
   _WORD * v15 = a1; /*0x4965c9*/
@@ -1065,7 +1055,7 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
     if ( v19 ) /*0x49661a*/
     {
       v12 += 2; /*0x496641*/
-      v21 = a6 - *a10++; /*0x496644*/
+      int v21 = a6 - *a10++; /*0x496644*/
       if ( v21 < *(unsigned __int16 *)(v12 - 2) ) /*0x49664f*/
         *v15 = *(_WORD *)(*(this + 1) + 2 * v19); /*0x496665*/
       ++v15; /*0x496668*/
@@ -1110,7 +1100,6 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
   int v18; // ebx
   unsigned __int8 v19; // al
   unsigned __int8 v20; // al
-  int v21; // esi
   unsigned __int8 *a2a; // [esp+1Ch] [ebp+8h]
 
   result = a5; /*0x4966e7*/
@@ -1145,7 +1134,7 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
     if ( v19 ) /*0x496749*/
     {
       v15 += 2; /*0x496770*/
-      v21 = a6 - *a10++; /*0x496773*/
+      int v21 = a6 - *a10++; /*0x496773*/
       v14 += 2; /*0x496794*/
       --v18; /*0x496797*/
       if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x496782*/
@@ -1699,9 +1688,6 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
   int v18; // ebx
   unsigned __int8 v19; // cl
   unsigned __int8 v20; // cl
-  int v21; // ecx
-  int v22; // ecx
-  char *v23; // edi
   __int16 v24; // cx
   unsigned __int8 *a2a; // [esp+1Ch] [ebp+8h]
   unsigned __int8 v27; // [esp+20h] [ebp+Ch]
@@ -1737,8 +1723,8 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
     v27 = v19; /*0x4972a1*/
     if ( v19 ) /*0x4972a9*/
     {
-      v22 = arg10 - *a10; /*0x4972d1*/
-      v23 = a10 + 1; /*0x4972d8*/
+      int v22 = arg10 - *a10; /*0x4972d1*/
+      char * v23 = a10 + 1; /*0x4972d8*/
       if ( v22 >= *result ) /*0x4972db*/
       {
         a10 = v23 + 1; /*0x49731b*/
@@ -1761,7 +1747,7 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
       v20 = *a2++; /*0x4972ab*/
       v18 -= v20; /*0x4972bd*/
       a10 += v20; /*0x4972bf*/
-      v21 = 2 * v20; /*0x4972c1*/
+      int v21 = 2 * v20; /*0x4972c1*/
       v14 += v21; /*0x4972c4*/
       result = (unsigned __int16 *)((char *)result + v21); /*0x4972c6*/
     }
@@ -1858,7 +1844,6 @@ void FillScoreScreenStats(IUnknown * Destination, char a2)
   int v9; // edx
   int *v10; // ecx
   IUnknown *v11; // edx
-  int v12; // ebp
   int Count; // ebp
   int v14; // ebp
   int v15; // ebp
@@ -1901,7 +1886,7 @@ LABEL_8:
   v11 = v2; /*0x49b87b*/
   do /*0x49b885*/
   {
-    v12 = *v10++; /*0x49b87d*/
+    int v12 = *v10++; /*0x49b87d*/
     v7 += v12; /*0x49b882*/
     v11 = (IUnknown *)((char *)v11 - 1); /*0x49b884*/
   }

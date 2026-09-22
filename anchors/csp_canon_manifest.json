@@ -93280,9 +93280,9 @@
   "cls": null
  },
  "0x0077D200": {
-  "name": "ObjectClass::j_Game_ProcessIdle",
+  "name": "j_Game_ProcessIdle",
   "sig": "ida-proto",
-  "cls": "ObjectClass"
+  "cls": null
  },
  "0x0077D710": {
   "name": "GameLoop::Thunk",

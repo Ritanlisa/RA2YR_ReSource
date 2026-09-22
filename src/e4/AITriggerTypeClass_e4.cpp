@@ -278,15 +278,9 @@ int AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   unsigned int v15; // edi
   bool v16; // zf
   char *v17; // esi
-  int v18; // ecx
-  char v19; // dl
-  char v20; // al
   char *v21; // eax
-  double v22; // st7
   char *v23; // eax
-  double v24; // st7
   char *v25; // eax
-  double v26; // st7
   char *v27; // eax
   char *v28; // eax
   char *v29; // eax
@@ -295,15 +289,12 @@ int AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   char *v32; // eax
   char *v33; // eax
   int v34; // eax
-  int v35; // esi
   int MaxBuildLevel; // eax
   int v37; // eax
-  int v38; // esi
   char v40[4]; // [esp+10h] [ebp-270h] BYREF
   __int64 v41; // [esp+14h] [ebp-26Ch] BYREF
   char v42[23]; // [esp+1Ch] [ebp-264h] BYREF
   char v43; // [esp+33h] [ebp-24Dh]
-  char v44[24]; // [esp+34h] [ebp-24Ch] BYREF
   char Destination[48]; // [esp+4Ch] [ebp-234h] BYREF
   char v46; // [esp+7Ch] [ebp-204h]
   char String[512]; // [esp+80h] [ebp-200h] BYREF
@@ -415,11 +406,11 @@ LABEL_26:
       if ( isspace(*v17) ) /*0x41f822*/
       {
         do /*0x41f834*/
-          v18 = *++v17; /*0x41f82e*/
+          int v18 = *++v17; /*0x41f82e*/
         while ( isspace(v18) ); /*0x41f834*/
       }
-      v19 = *v17; /*0x41f840*/
-      v20 = *++v17; /*0x41f842*/
+      char v19 = *v17; /*0x41f840*/
+      char v20 = *++v17; /*0x41f842*/
       v40[0] = v19; /*0x41f848*/
       if ( v20 ) /*0x41f84c*/
       {
@@ -440,21 +431,21 @@ LABEL_26:
   v21 = strtok(0, Delimiter); /*0x41f886*/
   if ( v21 ) /*0x41f890*/
   {
-    v22 = atof(v21); /*0x41f893*/
+    double v22 = atof(v21); /*0x41f893*/
     v41 = (unsigned int)Math::RoundToInt(v22); /*0x41f8a0*/
     this->q0B8 = (double)v41; /*0x41f8ac*/
   }
   v23 = strtok(0, Delimiter); /*0x41f8b8*/
   if ( v23 ) /*0x41f8c2*/
   {
-    v24 = atof(v23); /*0x41f8c5*/
+    double v24 = atof(v23); /*0x41f8c5*/
     v41 = (unsigned int)Math::RoundToInt(v24); /*0x41f8d2*/
     this->q0C0 = (double)v41; /*0x41f8de*/
   }
   v25 = strtok(0, Delimiter); /*0x41f8ea*/
   if ( v25 ) /*0x41f8f4*/
   {
-    v26 = atof(v25); /*0x41f8f7*/
+    double v26 = atof(v25); /*0x41f8f7*/
     v41 = (unsigned int)Math::RoundToInt(v26); /*0x41f904*/
     this->q0C8 = (double)v41; /*0x41f910*/
   }
@@ -471,6 +462,7 @@ LABEL_26:
   v30 = strtok(0, Delimiter); /*0x41f994*/
   if ( v30 ) /*0x41f99e*/
   {
+  char v44[24]; // [esp+34h] [ebp-24Ch] BYREF
     strncpy(v44, v30, 0x18u); /*0x41f9a8*/
     v44[23] = 0; /*0x41f9b4*/
     String::Trim(v44); /*0x41f9b8*/
@@ -490,7 +482,7 @@ LABEL_26:
   v34 = this->q0DC; /*0x41fa5c*/
   if ( v34 ) /*0x41fa64*/
   {
-    v35 = this->q0B0; /*0x41fa6c*/
+    int v35 = this->q0B0; /*0x41fa6c*/
     if ( v35 <= HouseClass::GetMaxBuildLevel(*(int **)(v34 + 228)) ) /*0x41fa79*/
       MaxBuildLevel = HouseClass::GetMaxBuildLevel(*(int **)(this->q0DC + 228)); /*0x41fa8b*/
     else
@@ -500,7 +492,7 @@ LABEL_26:
   v37 = this->q0E0; /*0x41fa96*/
   if ( v37 ) /*0x41fa9e*/
   {
-    v38 = this->q0B0; /*0x41faa6*/
+    int v38 = this->q0B0; /*0x41faa6*/
     if ( v38 > HouseClass::GetMaxBuildLevel(*(int **)(v37 + 228)) ) /*0x41fab3*/
     {
       this->q0B0 = v38; /*0x41fab8*/

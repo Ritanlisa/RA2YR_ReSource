@@ -119,22 +119,16 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
   int v140; // [esp+24h] [ebp-84h]
   double v141; // [esp+28h] [ebp-80h] BYREF
   double v142; // [esp+30h] [ebp-78h]
-  char v143; // [esp+3Bh] [ebp-6Dh]
   int v144; // [esp+3Ch] [ebp-6Ch]
   IUnknown *aP3[2]; // [esp+40h] [ebp-68h]
-  double v146; // [esp+48h] [ebp-60h]
   LPVOID ppv[2]; // [esp+50h] [ebp-58h] BYREF
   TechnoClass *aP4[2]; // [esp+58h] [ebp-50h] BYREF
-  int v149; // [esp+60h] [ebp-48h]
   InfantryClass *v153; // [esp+68h] [ebp-40h] BYREF
   CoordStruct aP2; // [esp+6Ch] [ebp-3Ch] BYREF
   TechnoTypeClass *v152; // [esp+78h] [ebp-30h]
   double var2C; // [esp+7Ch] [ebp-2Ch] BYREF
   __int64 v154; // [esp+84h] [ebp-24h]
   InfantryClass *aP5; // [esp+8Ch] [ebp-1Ch]
-  double v156; // [esp+90h] [ebp-18h] BYREF
-  double v157; // [esp+98h] [ebp-10h]
-  double v158; // [esp+A0h] [ebp-8h]
   int savedregs; // [esp+A8h] [ebp+0h] BYREF
 
   v144 = 1;
@@ -306,7 +300,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
         && ((v28->abstractFlags & 4) == 0
          || !*((v28->abstractFlags & 4) != 0 ? (char *)&v28[1].targetingTimer[2] + 1 : (_BYTE *)1709)) )
       {
-        v143 = 0;
+        char v143 = 0;
         if ( v29 && (*(int (__thiscall **)(int))(*(_DWORD *)v29 + 44))(v29) == 1 )
         {
           int v30 = *((_DWORD *)this + 67);
@@ -422,13 +416,14 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
       aP4[0] = (TechnoClass *)v49[39];
       aP4[1] = (TechnoClass *)v49[40];
       _DWORD * v51 = (_DWORD *)(*((_DWORD *)this + 44) + 156);
-      v149 = v49[41];
+      int v149 = v49[41];
       int v52 = v51[1];
       v140 = *v51 - (unsigned int)aP4[0];
       int v53 = v51[2] - v149;
       *(float *)aP3 = (float)v140;
       v140 = v53;
       *(float *)&aP3[1] = (float)(v52 - (unsigned int)aP4[1]);
+  double v146; // [esp+48h] [ebp-60h]
       *(float *)&v146 = (float)v53;
   double v54; // st7
       v54 = Math::Sqrt(*(float *)aP3 * *(float *)aP3 + *(float *)&aP3[1] * *(float *)&aP3[1] + *(float *)&v146
@@ -692,6 +687,9 @@ LABEL_158:
     Instance = this->q0AC;
     if ( *(_BYTE *)(Instance + 660) )
     {
+  double v158; // [esp+A0h] [ebp-8h]
+  double v157; // [esp+98h] [ebp-10h]
+  double v156; // [esp+90h] [ebp-18h] BYREF
       int v99 = *(_DWORD *)(Instance + 688);
       int v100 = *(_DWORD *)this;
       unsigned int v101 = 0;
@@ -838,33 +836,15 @@ int Warhead::ApplyPostDamageEffects()
   __int16 v47; // ax
   __int16 v58; // bp
   int v76; // [esp+54h] [ebp-8Ch] BYREF
-  double v77; // [esp+58h] [ebp-88h]
-  double v78; // [esp+60h] [ebp-80h]
   LPVOID v79; // [esp+68h] [ebp-78h] BYREF
-  int v80; // [esp+6Ch] [ebp-74h]
-  _WORD *v81; // [esp+70h] [ebp-70h]
   LPVOID v82; // [esp+74h] [ebp-6Ch] BYREF
-  int v83; // [esp+78h] [ebp-68h] BYREF
   int v84; // [esp+7Ch] [ebp-64h] BYREF
   int v85; // [esp+80h] [ebp-60h]
   int v86; // [esp+84h] [ebp-5Ch]
-  double v87; // [esp+88h] [ebp-58h]
-  double v88; // [esp+90h] [ebp-50h] BYREF
-  int v89; // [esp+9Ch] [ebp-44h]
   int v90; // [esp+A0h] [ebp-40h] BYREF
-  int v91; // [esp+A4h] [ebp-3Ch]
   int v92; // [esp+A8h] [ebp-38h]
   int v93; // [esp+ACh] [ebp-34h] BYREF
-  int v94; // [esp+B0h] [ebp-30h]
-  int v95; // [esp+B4h] [ebp-2Ch]
   LPVOID ppv; // [esp+B8h] [ebp-28h] BYREF
-  void *v97; // [esp+BCh] [ebp-24h]
-  int v98; // [esp+C0h] [ebp-20h]
-  int v99; // [esp+C4h] [ebp-1Ch]
-  int v100; // [esp+C8h] [ebp-18h]
-  int v101; // [esp+CCh] [ebp-14h]
-  int v102; // [esp+D0h] [ebp-10h]
-  _BYTE v103[12]; // [esp+D4h] [ebp-Ch] BYREF
 
   int v2 = this->q0AC; /*0x46a322*/
   int v3 = *(_DWORD *)(v2 + 696); /*0x46a328*/
@@ -903,20 +883,30 @@ int Warhead::ApplyPostDamageEffects()
     result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v11 + 228) + 44))(*(_DWORD *)(v11 + 228)); /*0x46a400*/
     if ( result != 6 ) /*0x46a406*/
     {
+  _BYTE v103[12]; // [esp+D4h] [ebp-Ch] BYREF
+  int v95; // [esp+B4h] [ebp-2Ch]
+  int v94; // [esp+B0h] [ebp-30h]
+  int v91; // [esp+A4h] [ebp-3Ch]
+  double v88; // [esp+90h] [ebp-50h] BYREF
+  double v87; // [esp+88h] [ebp-58h]
+  _WORD *v81; // [esp+70h] [ebp-70h]
+  double v78; // [esp+60h] [ebp-80h]
+  double v77; // [esp+58h] [ebp-88h]
   double v75; // [esp+4Ch] [ebp-94h]
   double v74; // [esp+44h] [ebp-9Ch]
   double v73; // [esp+3Ch] [ebp-A4h] BYREF
       int v12 = *this; /*0x46a412*/
       int v13 = *(_DWORD *)(this->q0AC + 692); /*0x46a414*/
-      v99 = *(_DWORD *)(v13 + 160); /*0x46a425*/
+      int v99 = *(_DWORD *)(v13 + 160); /*0x46a425*/
+  int v83; // [esp+78h] [ebp-68h] BYREF
       int v14 = *(_DWORD *)(*(int (__thiscall **)(int *, int *))(v12 + 440))(this, &v83); /*0x46a434*/
       int v15 = *(_DWORD *)(v13 + 180); /*0x46a43c*/
-      v98 = v14; /*0x46a443*/
+      int v98 = v14; /*0x46a443*/
       int v16 = 0; /*0x46a44c*/
       int v17 = v15 / 256; /*0x46a44e*/
       v83 = v17; /*0x46a454*/
-      v89 = 0; /*0x46a458*/
-      v80 = 1; /*0x46a45c*/
+      int v89 = 0; /*0x46a458*/
+      int v80 = 1; /*0x46a45c*/
       if ( v17 >= 1 ) /*0x46a464*/
       {
         int * v18 = &dword_7ED3D4; /*0x46a46a*/
@@ -926,7 +916,7 @@ int Warhead::ApplyPostDamageEffects()
           int v19 = *(v18 - 1); /*0x46a475*/
           bool v20 = v19 < *v18; /*0x46a478*/
           LODWORD(v78) = *v18; /*0x46a47a*/
-          v100 = v19; /*0x46a47e*/
+          int v100 = v19; /*0x46a47e*/
           if ( v20 ) /*0x46a485*/
           {
             _WORD * v21 = (_WORD *)(4 * v19 + 11261072); /*0x46a48b*/
@@ -934,6 +924,7 @@ int Warhead::ApplyPostDamageEffects()
             do /*0x46a906*/
             {
               v22 = HIWORD(v98) + v21[1]; /*0x46a4a5*/
+  void *v97; // [esp+BCh] [ebp-24h]
               LOWORD(v97) = v98 + *v21; /*0x46a4ad*/
               HIWORD(v97) = v22; /*0x46a4b5*/
               v82 = v97; /*0x46a4c8*/
@@ -946,7 +937,8 @@ int Warhead::ApplyPostDamageEffects()
                   char v25 = *(_BYTE *)(v13 + 303); /*0x46a515*/
                   int v26 = *(_DWORD *)(v13 + 164); /*0x46a51b*/
                   int v27 = *(_DWORD *)(v13 + 168); /*0x46a521*/
-                  v102 = *(_DWORD *)(v13 + 172); /*0x46a527*/
+                  int v102 = *(_DWORD *)(v13 + 172); /*0x46a527*/
+  int v101; // [esp+CCh] [ebp-14h]
                   LOBYTE(v101) = v25; /*0x46a53b*/
                   int v28 = *(this + 44); /*0x46a542*/
                   LODWORD(v88) = v26; /*0x46a551*/

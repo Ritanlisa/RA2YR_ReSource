@@ -199,7 +199,6 @@ int AudioStream::SelectRandom()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v9; // ecx
-  int v10; // ecx
   int v12; // eax
   _DWORD * v2 = this->q024; /*0x4047b3*/
   int v3 = v2[4]; /*0x4047b9*/
@@ -236,7 +235,7 @@ int AudioStream::SelectRandom()
   }
   if ( (v3 & 1) != 0 && ((unsigned char)this->AudioStream_field_0x18 & 0x20) == 0 ) /*0x404855*/
   {
-    v10 = v2[19]; /*0x404857*/
+    int v10 = v2[19]; /*0x404857*/
     if ( !v10 || *(_DWORD *)(this + 484) < v10 - 1 ) /*0x404867*/
     {
       ++*(_DWORD *)(this + 484); /*0x404872*/
@@ -597,8 +596,6 @@ int AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IU
   IUnknown *aP4c; // [esp+8Ch] [ebp+10h]
   int v95; // [esp+90h] [ebp+14h]
   int v96; // [esp+90h] [ebp+14h]
-  int v97; // [esp+94h] [ebp+18h]
-  int v98; // [esp+94h] [ebp+18h]
   int v99; // [esp+94h] [ebp+18h]
   int v100; // [esp+98h] [ebp+1Ch]
   if ( a6 < 8 ) /*0x4bead5*/
@@ -652,6 +649,7 @@ int AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IU
     Vector::TwoDMagnitudeMath((int *)&v74); /*0x4bec07*/
     int v22 = v22; /*0x4bec10*/
     Vector::TwoDMagnitudeMath(v73); /*0x4bec17*/
+  int v97; // [esp+94h] [ebp+18h]
     int v23 = abs32(Math::RoundToInt((double)v23 / (double)v97 * (double)(v19 - v15))); /*0x4bec4d*/
     if ( v19 >= v15 ) /*0x4bec51*/
   unsigned int v24; // eax
@@ -668,6 +666,7 @@ int AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IU
     Vector::TwoDMagnitudeMath((int *)&v76); /*0x4beca3*/
     int v25 = v25; /*0x4becac*/
     Vector::TwoDMagnitudeMath((int *)&v74); /*0x4becb3*/
+  int v98; // [esp+94h] [ebp+18h]
     int v26 = abs32(Math::RoundToInt((double)v26 / (double)v98 * (double)(v19 - v15))); /*0x4bece9*/
     if ( v15 <= v19 ) /*0x4beced*/
   unsigned int v27; // eax

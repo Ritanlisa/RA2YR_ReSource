@@ -247,25 +247,13 @@ void DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v10; // eax
-  double v11; // st7
   int v12; // esi
   double *v13; // edx
   int v14; // eax
-  double v15; // st7
-  double *v16; // ebx
-  double v17; // st7
-  double v18; // st7
-  int v19; // eax
   IUnknown *v20; // ecx
   Tactical *v21; // edx
-  char *v22; // esi
   Tactical *v23; // eax
-  double v24; // st7
-  double v25; // st7
-  int v26; // esi
-  int v27; // eax
   Tactical *v28; // edi
-  double v29; // st7
   float aP0_4; // [esp+5Ch] [ebp-8Ch]
   char v32; // [esp+6Eh] [ebp-7Ah]
   char v33; // [esp+6Fh] [ebp-79h]
@@ -275,11 +263,6 @@ void DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int 
   unsigned __int8 v37[8]; // [esp+80h] [ebp-68h] BYREF
   Tactical *v38; // [esp+88h] [ebp-60h] BYREF
   IUnknown *v39; // [esp+8Ch] [ebp-5Ch]
-  double v40; // [esp+90h] [ebp-58h]
-  double v41; // [esp+98h] [ebp-50h]
-  double v42; // [esp+A0h] [ebp-48h]
-  double v43; // [esp+A8h] [ebp-40h]
-  double v44; // [esp+B0h] [ebp-38h]
   _DWORD v45[4]; // [esp+B8h] [ebp-30h] BYREF
   double v46; // [esp+C8h] [ebp-20h] BYREF
   _DWORD v47[4]; // [esp+D8h] [ebp-10h] BYREF
@@ -296,7 +279,7 @@ void DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int 
   else
   {
     v46 = v9 + 0.5; /*0x4569c6*/
-    v11 = Math::Sqrt(0); /*0x4569ca*/
+    double v11 = Math::Sqrt(0); /*0x4569ca*/
     v10 = Math::RoundToInt(v46 / v11 * 60.0); /*0x4569dc*/
   }
   v12 = v10; /*0x4569e1*/
@@ -355,29 +338,31 @@ void DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int 
     LOBYTE(v14) = v33; /*0x456bee*/
     if ( v33 ) /*0x456bf4*/
     {
-      v15 = (double)v35; /*0x456bfa*/
+      double v15 = (double)v35; /*0x456bfa*/
       v35 = 0; /*0x456bfe*/
-      v16 = (double *)dword_818CC8; /*0x456c06*/
-      v41 = v15; /*0x456c0b*/
-      v40 = (double)SLODWORD(v36); /*0x456c13*/
+      double * v16 = (double *)dword_818CC8; /*0x456c06*/
+      double v41 = v15; /*0x456c0b*/
+      double v40 = (double)SLODWORD(v36); /*0x456c13*/
       do /*0x456c23*/
       {
+  char *v22; // esi
+  double v18; // st7
         LODWORD(v36) = v35 + *(_DWORD *)&HouseClass_Player[45112]; /*0x456c23*/
-        v17 = (double)(v35 + *(_DWORD *)&HouseClass_Player[45112]) * 0.005; /*0x456c2b*/
+        double v17 = (double)(v35 + *(_DWORD *)&HouseClass_Player[45112]) * 0.005; /*0x456c2b*/
         v36 = v17 - (double)(int)Math::RoundToInt(v17) * 6.283185307179586; /*0x456c4e*/
         if ( fabs(v36 - 1.570796326794897) >= 0.001 ) /*0x456c6b*/
         {
           if ( fabs(v36 - 4.71238898038469) >= 0.001 ) /*0x456ca1*/
           {
-            v24 = Math::Sin(v36); /*0x456cb3*/
-            v43 = v40 * v40; /*0x456cc0*/
-            v42 = v41 * v41; /*0x456ccc*/
-            v44 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(1.0 / (v24 * v24 / v43 + 1.0 / v42))); /*0x456cf4*/
-            v25 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((1.0 - v44 * v44 / v42) * v43)); /*0x456d0f*/
+            double v24 = Math::Sin(v36); /*0x456cb3*/
+            double v43 = v40 * v40; /*0x456cc0*/
+            double v42 = v41 * v41; /*0x456ccc*/
+            double v44 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(1.0 / (v24 * v24 / v43 + 1.0 / v42))); /*0x456cf4*/
+            double v25 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((1.0 - v44 * v44 / v42) * v43)); /*0x456d0f*/
             if ( v36 < 3.141592653589793 ) /*0x456d54*/
               v25 = -v25; /*0x456d5a*/
-            v26 = Math::RoundToInt(v25); /*0x456d61*/
-            v27 = Math::RoundToInt(v25); /*0x456d63*/
+            int v26 = Math::RoundToInt(v25); /*0x456d61*/
+            int v27 = Math::RoundToInt(v25); /*0x456d63*/
             v21 = v38; /*0x456d68*/
             v20 = v39; /*0x456d6c*/
             v28 = (Tactical *)((char *)v38 + v26); /*0x456d70*/
@@ -391,13 +376,13 @@ void DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int 
         {
           v18 = -v40; /*0x456c71*/
         }
-        v19 = Math::RoundToInt(v18); /*0x456c73*/
+        int v19 = Math::RoundToInt(v18); /*0x456c73*/
         v20 = v39; /*0x456c78*/
         v21 = v38; /*0x456c7c*/
         v22 = (char *)v39 + v19; /*0x456c80*/
         v23 = v38; /*0x456c83*/
 LABEL_20:
-        v29 = *v16; /*0x456d78*/
+        double v29 = *v16; /*0x456d78*/
         v45[0] = (char *)v23 - *(_DWORD *)&stru_87C374[44076]; /*0x456d88*/
         HIDWORD(v46) = (char *)v20 - *(_DWORD *)&stru_87C374[44080]; /*0x456d91*/
         LODWORD(v46) = (char *)v21 - *(_DWORD *)&stru_87C374[44076]; /*0x456da3*/

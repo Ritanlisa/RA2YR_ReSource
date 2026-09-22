@@ -260,13 +260,12 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v3; // esi
-  int v4; // eax
   if ( *(this + 4) >= 5 ) /*0x4b69f1*/
     return 0; /*0x4b69f1*/
   int v2 = *((_DWORD *)g_ScenarioClass_Instance + 3385); /*0x4b6a01*/
   if ( v2 ) /*0x4b6a09*/
   {
-    v4 = 0; /*0x4b6a10*/
+    int v4 = 0; /*0x4b6a10*/
     if ( v2 > 0 ) /*0x4b6a14*/
     {
       while ( *(_DWORD *)(*((_DWORD *)g_ScenarioClass_Instance + 3382) + 4 * v4) != a2 /*0x4b6a2c*/

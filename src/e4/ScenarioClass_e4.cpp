@@ -523,9 +523,7 @@ int ScenarioClass::CleanupTemporary()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *v0; // ecx
-  _DWORD *v1; // esi
   DWORD Ticks; // eax
-  int v3; // ecx
   DWORD v4; // eax
   sub_406F00(); /*0x683eb1*/
   DataGlobal_83D834 = sub_4072B0((_DWORD *)g_MixerState); /*0x683ecc*/
@@ -536,11 +534,11 @@ int ScenarioClass::CleanupTemporary()
       Timer::GetTicks(); /*0x683f04*/
     Debug::Log(); /*0x683f13*/
     v0 = g_ScenarioClass_Instance; /*0x683f18*/
-    v1 = (char *)g_ScenarioClass_Instance + 1556; /*0x683f27*/
+    _DWORD * v1 = (char *)g_ScenarioClass_Instance + 1556; /*0x683f27*/
     if ( *((_DWORD *)g_ScenarioClass_Instance + 389) != -1 ) /*0x683f31*/
     {
       Ticks = Timer::GetTicks(); /*0x683f36*/
-      v3 = v1[2]; /*0x683f3d*/
+      int v3 = v1[2]; /*0x683f3d*/
       v4 = Ticks - *v1; /*0x683f40*/
       *v1 = -1; /*0x683f42*/
       v0 = (void *)(v4 + v3); /*0x683f48*/
@@ -689,7 +687,6 @@ void ScenarioClass_LoadMap()
   MultiplayerGameMode aP1[3]; // [esp+84h] [ebp-F0h] BYREF
   _DWORD v65[3]; // [esp+DCh] [ebp-98h] BYREF
   ObjectClass *v69; // [esp+E8h] [ebp-8Ch]
-  _DWORD v67[4]; // [esp+F0h] [ebp-84h] BYREF
   INIClass Filename; // [esp+100h] [ebp-74h] BYREF
   _BYTE var34[16]; // [esp+140h] [ebp-34h] BYREF
   wchar_t Buffer[18]; // [esp+150h] [ebp-24h] BYREF
@@ -996,6 +993,7 @@ void ScenarioClass_LoadMap()
           *(_DWORD *)&DataGlobal_87F8E4[30564]);
       AssignSessionHouses();
       v3 = a2;
+  _DWORD v67[4]; // [esp+F0h] [ebp-84h] BYREF
       v67[0] = 1;
       v67[1] = 1;
       v67[2] = 50;

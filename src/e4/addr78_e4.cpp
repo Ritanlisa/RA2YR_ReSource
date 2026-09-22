@@ -372,8 +372,6 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
   void *v26; // [esp+1Ch] [ebp-80h] BYREF
   void *v27; // [esp+20h] [ebp-7Ch] BYREF
   void *v28; // [esp+24h] [ebp-78h] BYREF
-  void *v29; // [esp+28h] [ebp-74h] BYREF
-  void *v30; // [esp+2Ch] [ebp-70h] BYREF
   const wchar_t *v31[27]; // [esp+30h] [ebp-6Ch] BYREF
 
   void *v23; // [esp+10h] [ebp-8Ch] BYREF
@@ -402,8 +400,8 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     v22 = FormatWideString((wchar_t **)&v26, v31[7]); /*0x780c36*/
     v21 = WideString::Assign((wchar_t **)&v27, (wchar_t *)stru_82083C); /*0x780c49*/
     StringCSF = GetStringCSF(g_Str_TXT_RANK, 0, g_Str_File_wonline_cpp, 2937); /*0x780c59*/
-    v13 = WideString::Assign((wchar_t **)&v30, StringCSF); /*0x780c63*/
-    v14 = WideString::ConcatAlloc((const wchar_t **)v13, (wchar_t **)&v29, (const wchar_t **)v21); /*0x780c6a*/
+    void * v30 = WideString::Assign((wchar_t **)&v30, StringCSF); /*0x780c63*/
+    void * v29 = WideString::ConcatAlloc((const wchar_t **)v13, (wchar_t **)&v29, (const wchar_t **)v21); /*0x780c6a*/
     v15 = WideString::ConcatAlloc((const wchar_t **)v14, (wchar_t **)&v28, (const wchar_t **)v22); /*0x780c71*/
     WideString::Append((wchar_t **)&v24, (const wchar_t **)v15); /*0x780c7b*/
     DeleteAndZero::Alt(&v28); /*0x780c84*/
@@ -1762,25 +1760,6 @@ int FindBuddyList(int a1, char a2)
 {
   ObjectClass *v3; // eax
   bool v9; // sf
-  int v10; // ebx
-  unsigned int v11; // kr0C_4
-  unsigned int v12; // kr10_4
-  signed int v13; // ecx
-  int v14; // ebx
-  unsigned int v15; // kr14_4
-  unsigned int v16; // kr18_4
-  signed int v17; // ecx
-  int v18; // ebx
-  unsigned int v19; // kr1C_4
-  unsigned int v20; // kr20_4
-  signed int v21; // ecx
-  int v22; // ebx
-  unsigned int v23; // kr24_4
-  unsigned int v24; // kr28_4
-  signed int v25; // ebp
-  int v26; // ebx
-  unsigned int v27; // kr2C_4
-  unsigned int v28; // kr30_4
   signed int aP2; // [esp+Ch] [ebp-78h]
   signed int v31; // [esp+14h] [ebp-70h]
   _BYTE v32[108]; // [esp+18h] [ebp-6Ch] BYREF
@@ -1804,6 +1783,8 @@ int FindBuddyList(int a1, char a2)
   }
   if ( (*(_BYTE *)a1 & 1) == 0 ) /*0x782c38*/
   {
+  unsigned int v28; // kr30_4
+  unsigned int v27; // kr2C_4
     aP2 = v4; /*0x782e3d*/
     if ( v4 >= 0 && v4 < (int)g_WOL_State ) /*0x782e45*/
       qmemcpy(v32, &g_WOL_ConnectionFlags[3 * v4], sizeof(v32)); /*0x782e60*/
@@ -1811,11 +1792,11 @@ int FindBuddyList(int a1, char a2)
     {
       if ( v4 >= (int)g_WOL_State ) /*0x782e70*/
         return DynamicClass::Insert((int *)&g_WOL_State, (HashTable *)a1, (IUnknown *)aP2); /*0x782e70*/
-      v18 = 3 * v4; /*0x782e7d*/
+      int v18 = 3 * v4; /*0x782e7d*/
       while ( 1 ) /*0x782e89*/
       {
-        v19 = strlen(&v32[87]) + 1; /*0x782e89*/
-        v20 = strlen((const char *)(a1 + 87)) + 1; /*0x782e9e*/
+        unsigned int v19 = strlen(&v32[87]) + 1; /*0x782e89*/
+        unsigned int v20 = strlen((const char *)(a1 + 87)) + 1; /*0x782e9e*/
         if ( v19 == 1 ) /*0x782ea5*/
           break; /*0x782ea5*/
         if ( v20 == 1 ) /*0x782ead*/
@@ -1827,7 +1808,7 @@ int FindBuddyList(int a1, char a2)
         {
           break; /*0x782ebf*/
         }
-        v21 = aP2 + 1; /*0x782ec9*/
+        signed int v21 = aP2 + 1; /*0x782ec9*/
         v9 = v18 * 36 + 108 < 0; /*0x782eca*/
         v18 += 3; /*0x782eca*/
         ++aP2; /*0x782ecd*/
@@ -1841,11 +1822,11 @@ int FindBuddyList(int a1, char a2)
     {
       if ( v4 >= (int)g_WOL_State ) /*0x782f12*/
         return DynamicClass::Insert((int *)&g_WOL_State, (HashTable *)a1, (IUnknown *)aP2); /*0x782f12*/
-      v22 = 3 * v4; /*0x782f23*/
+      int v22 = 3 * v4; /*0x782f23*/
       while ( 1 ) /*0x782f2f*/
       {
-        v23 = strlen(&v32[87]) + 1; /*0x782f2f*/
-        v24 = strlen((const char *)(a1 + 87)) + 1; /*0x782f44*/
+        unsigned int v23 = strlen(&v32[87]) + 1; /*0x782f2f*/
+        unsigned int v24 = strlen((const char *)(a1 + 87)) + 1; /*0x782f44*/
         if ( v23 == 1 ) /*0x782f4b*/
           break; /*0x782f4b*/
         if ( v24 == 1 ) /*0x782f4f*/
@@ -1867,10 +1848,10 @@ int FindBuddyList(int a1, char a2)
           return DynamicClass::Insert((int *)&g_WOL_State, (HashTable *)a1, (IUnknown *)aP2); /*0x782f8d*/
       }
     }
-    v25 = aP2; /*0x782f9b*/
+    signed int v25 = aP2; /*0x782f9b*/
     if ( aP2 >= v31 ) /*0x782fa5*/
       return DynamicClass::Insert((int *)&g_WOL_State, (HashTable *)a1, (IUnknown *)aP2); /*0x782fa5*/
-    v26 = 3 * aP2; /*0x782fb2*/
+    int v26 = 3 * aP2; /*0x782fb2*/
     while ( 1 ) /*0x782fbe*/
     {
       v27 = strlen(&v32[87]) + 1; /*0x782fbe*/
@@ -1939,11 +1920,11 @@ LABEL_91:
   {
     if ( v4 <= 0 ) /*0x782cfa*/
       return DynamicClass::Insert((int *)&g_WOL_State, (HashTable *)a1, (IUnknown *)aP2); /*0x782cfa*/
-    v10 = 0; /*0x782d00*/
+    int v10 = 0; /*0x782d00*/
     while ( 1 ) /*0x782d0b*/
     {
-      v11 = strlen(&v32[87]) + 1; /*0x782d0b*/
-      v12 = strlen((const char *)(a1 + 87)) + 1; /*0x782d20*/
+      unsigned int v11 = strlen(&v32[87]) + 1; /*0x782d0b*/
+      unsigned int v12 = strlen((const char *)(a1 + 87)) + 1; /*0x782d20*/
       if ( v11 == 1 ) /*0x782d27*/
         break; /*0x782d27*/
       if ( v12 == 1 ) /*0x782d2b*/
@@ -1955,7 +1936,7 @@ LABEL_91:
       {
         break; /*0x782d3d*/
       }
-      v13 = aP2 + 1; /*0x782d43*/
+      signed int v13 = aP2 + 1; /*0x782d43*/
       v9 = v10 * 36 + 108 < 0; /*0x782d44*/
       v10 += 3; /*0x782d44*/
       ++aP2; /*0x782d47*/
@@ -1967,7 +1948,9 @@ LABEL_91:
   }
   if ( aP2 < v4 ) /*0x782d83*/
   {
-    v14 = 3 * aP2; /*0x782d8f*/
+  unsigned int v16; // kr18_4
+  unsigned int v15; // kr14_4
+    int v14 = 3 * aP2; /*0x782d8f*/
     while ( 1 ) /*0x782d9b*/
     {
       v15 = strlen(&v32[87]) + 1; /*0x782d9b*/
@@ -1981,7 +1964,7 @@ LABEL_91:
 LABEL_43:
       if ( _strcmpi(&v32[36], (char *)(a1 + 36)) < 0 ) /*0x782de8*/
       {
-        v17 = aP2 + 1; /*0x782df2*/
+        signed int v17 = aP2 + 1; /*0x782df2*/
         v9 = v14 * 36 + 108 < 0; /*0x782df3*/
         v14 += 3; /*0x782df3*/
         ++aP2; /*0x782df6*/
@@ -2432,14 +2415,10 @@ void WOL_LoginFlow()
   HWND DlgItem; // eax
   const char **v18; // ebp
   int v24; // eax
-  char *v25; // esi
-  char *v26; // eax
   HWND v27; // eax
   HWND Current; // eax
   HWND v29; // eax
   unsigned __int8 v30; // [esp-8h] [ebp-50h]
-  void *v31; // [esp-4h] [ebp-4Ch]
-  int v32; // [esp-4h] [ebp-4Ch]
   char v33; // [esp+13h] [ebp-35h]
   void *v34[3]; // [esp+14h] [ebp-34h] BYREF
   int v35; // [esp+20h] [ebp-28h]
@@ -2502,7 +2481,7 @@ void WOL_LoginFlow()
           {
             if ( strlen((const char *)v36) ) /*0x78715b*/
             {
-              v31 = v36; /*0x787165*/
+              void * v31 = v36; /*0x787165*/
               char * v5 = String::GetOrEmpty_Alt((char **)v34); /*0x78716a*/
               if ( !_strcmpi(v5, v31) ) /*0x787170*/
                 break; /*0x787170*/
@@ -2750,10 +2729,10 @@ LABEL_87:
     goto LABEL_96; /*0x78761b*/
   if ( byte_B77E68 && Flag::IsNot2(&v36) ) /*0x78762e*/
   {
-    v32 = *(_DWORD *)(v39 + 16); /*0x787644*/
+    int v32 = *(_DWORD *)(v39 + 16); /*0x787644*/
     v30 = dword_84A238; /*0x787645*/
-    v25 = String::GetOrEmpty(&g_WebBrowserConfig); /*0x787655*/
-    v26 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x787657*/
+    char * v25 = String::GetOrEmpty(&g_WebBrowserConfig); /*0x787655*/
+    char * v26 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x787657*/
     FindChannelWOL(v26, (int)v25, v30, v32); /*0x787660*/
     SaveConfigWOL((int)g_GameMode_Current); /*0x78766a*/
   }
@@ -3210,7 +3189,6 @@ void WOL_FindLobbyID(char a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v3; // ebx
-  _DWORD *v4; // ebp
   char **v5; // eax
   int v6; // ebp
   wchar_t **v7; // edi
@@ -3222,20 +3200,10 @@ void WOL_FindLobbyID(char a1)
   void *v15; // [esp+1Ch] [ebp-284h] BYREF
   unsigned int v16; // [esp+20h] [ebp-280h]
   int v17; // [esp+24h] [ebp-27Ch]
-  void *v18[4]; // [esp+28h] [ebp-278h] BYREF
-  _DWORD v19[3]; // [esp+38h] [ebp-268h] BYREF
-  _DWORD v20[6]; // [esp+44h] [ebp-25Ch] BYREF
-  char v21; // [esp+5Ch] [ebp-244h]
-  int v22; // [esp+60h] [ebp-240h]
-  int v23; // [esp+64h] [ebp-23Ch]
   char Buffer[32]; // [esp+68h] [ebp-238h] BYREF
   char Source[32]; // [esp+88h] [ebp-218h] BYREF
   char Destination[32]; // [esp+A8h] [ebp-1F8h] BYREF
   wchar_t String2[32]; // [esp+C8h] [ebp-1D8h] BYREF
-  _DWORD v28[22]; // [esp+108h] [ebp-198h] BYREF
-  _BYTE v29[12]; // [esp+160h] [ebp-140h] BYREF
-  int v30; // [esp+16Ch] [ebp-134h]
-  char v31[32]; // [esp+174h] [ebp-12Ch] BYREF
   _DWORD v32[67]; // [esp+194h] [ebp-10Ch] BYREF
 
   int v1 = g_WOL_AuthPool; /*0x788189*/
@@ -3250,20 +3218,24 @@ void WOL_FindLobbyID(char a1)
     _DWORD * v2 = __2_YAPAXI_Z(0x28u); /*0x7881fb*/
     v3 = 0; /*0x788200*/
     if ( v2 ) /*0x788207*/
-      v4 = MixFileClass::FromFile(v2, g_Str_File_WDT_MIX, (int)&DataGlobal_886980); /*0x78821a*/
+      _DWORD * v4 = MixFileClass::FromFile(v2, g_Str_File_WDT_MIX, (int)&DataGlobal_886980); /*0x78821a*/
     else
       v4 = 0; /*0x78821e*/
+  void *v18[4]; // [esp+28h] [ebp-278h] BYREF
     v18[1] = 0; /*0x788224*/
     v18[2] = 0; /*0x788228*/
+  _DWORD v19[3]; // [esp+38h] [ebp-268h] BYREF
     GenericNode::Constructor(v19); /*0x78822c*/
+  _DWORD v20[6]; // [esp+44h] [ebp-25Ch] BYREF
     GenericNode::Constructor(v20); /*0x788235*/
     LinkedList::Prepend(v19, (int)v20); /*0x78824b*/
     v18[3] = &vt_List_INIClass_INISection; /*0x788257*/
     memset(&v20[3], 0, 12); /*0x788264*/
-    v21 = 0; /*0x788270*/
-    v22 = 0; /*0x788275*/
-    v23 = 0; /*0x788279*/
+    char v21 = 0; /*0x788270*/
+    int v22 = 0; /*0x788275*/
+    int v23 = 0; /*0x788279*/
     v18[0] = &vt_INIClass; /*0x78827d*/
+  _DWORD v28[22]; // [esp+108h] [ebp-198h] BYREF
     CCFileClass::Construct(v28, aWdtmapmdIni); /*0x788285*/
     FileStraw::Open(v18, (int)v28, 0); /*0x788297*/
     sprintf(Buffer, DataGlobal_84B62C, *(_DWORD *)g_GameDifficulty); /*0x7882ad*/
@@ -3289,6 +3261,7 @@ void WOL_FindLobbyID(char a1)
       (unsigned __int8 *)Destination,
       (unsigned __int8 *)g_INI_Key_Name,
       stru_84B608,
+  char v31[32]; // [esp+174h] [ebp-12Ch] BYREF
       v31,
       32);
     BulkCharToWide(String2, (unsigned __int8 *)v31, -1); /*0x78834d*/
@@ -3296,7 +3269,8 @@ void WOL_FindLobbyID(char a1)
     if ( v4 ) /*0x788369*/
       (*(void (__thiscall **)(_DWORD *, int))*v4)(v4, 1); /*0x788372*/
     v28[0] = &vt_CCFileClass; /*0x78837b*/
-    v30 = 0; /*0x788386*/
+    int v30 = 0; /*0x788386*/
+  _BYTE v29[12]; // [esp+160h] [ebp-140h] BYREF
     Vector::Clear((int)v29); /*0x78838d*/
     v28[0] = &off_7E1668; /*0x788399*/
     BufferIOFileClass::Dtor(v28); /*0x7883a4*/
@@ -4278,7 +4252,6 @@ void CreateGameWOL()
   AbstractClass *v29; // ebx
   int v30; // esi
   int v31; // edi
-  char *v32; // eax
   AbstractClass *v33; // eax
   u_long nextArrayIndex; // edx
   u_long v35; // eax
@@ -4553,7 +4526,7 @@ LABEL_72:
   {
     if ( v31 >= 0 && v30 < v28 ) /*0x78a256*/
       v29 = &g_WOL_ConnectionFlags[v31]; /*0x78a25e*/
-    v32 = String::GetOrEmpty_Alt((char **)&g_WebBrowser); /*0x78a26a*/
+    char * v32 = String::GetOrEmpty_Alt((char **)&g_WebBrowser); /*0x78a26a*/
     if ( !_strcmpi(v32, &v29[1]) ) /*0x78a270*/
       break; /*0x78a270*/
     v28 = g_WOL_State; /*0x78a27c*/
@@ -4659,7 +4632,6 @@ void OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
   wchar_t *v40; // [esp+14h] [ebp-F4h] BYREF
   char lParam[9]; // [esp+18h] [ebp-F0h] BYREF
   char v42; // [esp+21h] [ebp-E7h]
-  int v43; // [esp+28h] [ebp-E0h]
   LPARAM v44[27]; // [esp+30h] [ebp-D8h] BYREF
   char v45[108]; // [esp+9Ch] [ebp-6Ch] BYREF
 
@@ -4718,6 +4690,7 @@ void OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
         v33 = GetDlgItem(hDlg, 1344); /*0x78d8f0*/
         SetFocus(v33); /*0x78d8f3*/
         dword_B76478 = (CellStruct *)Timer::GetTicks(); /*0x78d902*/
+  int v43; // [esp+28h] [ebp-E0h]
         dword_B7647C = v43; /*0x78d90f*/
         dword_B76480 = 0; /*0x78d915*/
         return 0; /*0x78d924*/

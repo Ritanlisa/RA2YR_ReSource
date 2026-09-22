@@ -2523,24 +2523,8 @@ int Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
   int CCINIClass_field_4C; // ebx
   _DWORD *i; // eax
   void **v18; // esi
-  bool v19; // c0
-  bool v20; // c3
-  unsigned int v21; // esi
-  int *v22; // ebx
-  int v23; // ecx
-  void *v24; // edi
-  unsigned int v25; // edx
-  int *v26; // edi
-  unsigned int v27; // ebx
-  int v28; // esi
-  int v29; // edx
-  int v30; // ecx
-  int v31; // eax
   IUnknown *v32; // esi
-  char v33; // bl
-  int v35; // edx
   IUnknown *v36; // [esp+10h] [ebp-14h]
-  int v37; // [esp+10h] [ebp-14h]
   int v38; // [esp+14h] [ebp-10h]
   CCINIClass *v39; // [esp+18h] [ebp-Ch]
   CCINIClass *v40; // [esp+1Ch] [ebp-8h]
@@ -2569,7 +2553,7 @@ int Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
     aP1a = (IUnknown *)&v7->field_4; /*0x624d27*/
     v40 = (CCINIClass *)aP2->field_34; /*0x624d2e*/
     Block = *(void **)aP2->__pad_28; /*0x624d35*/
-    v37 = *(_DWORD *)aP2->__pad_3C; /*0x624d3c*/
+    int v37 = *(_DWORD *)aP2->__pad_3C; /*0x624d3c*/
     if ( !v11 ) /*0x624d40*/
     {
       qmemcpy(aP2, v10, 0x200u); /*0x624d4f*/
@@ -2608,36 +2592,37 @@ int Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
       v6 = v38; /*0x624dff*/
     }
     *(_DWORD *)(*this + 4 * v6) = CCINIClass_field_4C; /*0x624e0d*/
-    v19 = *(float *)&v39 < this->q010; /*0x624e13*/
-    v20 = *(float *)&v39 == this->q010; /*0x624e13*/
+    bool v19 = *(float *)&v39 < this->q010; /*0x624e13*/
+    bool v20 = *(float *)&v39 == this->q010; /*0x624e13*/
     --this->q010; /*0x624e17*/
     if ( v19 || v20 ) /*0x624e1c*/
     {
-      v21 = this->q008; /*0x624e25*/
+      unsigned int v21 = this->q008; /*0x624e25*/
       if ( v21 > this->q00C && this->q005 != 1 ) /*0x624e37*/
       {
-        v22 = (int *)*this; /*0x624e40*/
+        int * v22 = (int *)*this; /*0x624e40*/
         Blocka = (int *)*this; /*0x624e45*/
-        v23 = this->q00C - 1; /*0x624e4b*/
+        int v23 = this->q00C - 1; /*0x624e4b*/
         this->q008 = v21 >> 1; /*0x624e4c*/
         this->q00C = v23; /*0x624e56*/
-        v24 = (void *)__2_YAPAXI_Z(4 * (v21 >> 1)); /*0x624e62*/
-        v25 = 4 * this->q008; /*0x624e67*/
+        void * v24 = (void *)__2_YAPAXI_Z(4 * (v21 >> 1)); /*0x624e62*/
+        unsigned int v25 = 4 * this->q008; /*0x624e67*/
         *this = v24; /*0x624e6e*/
         memset(v24, 0, v25); /*0x624e74*/
         if ( (int)v21 > 0 ) /*0x624e7f*/
         {
-          v26 = v22; /*0x624e81*/
-          v27 = v21; /*0x624e83*/
+          int * v26 = v22; /*0x624e81*/
+          unsigned int v27 = v21; /*0x624e83*/
           do /*0x624ebe*/
           {
-            v28 = *v26; /*0x624e85*/
+            int v28 = *v26; /*0x624e85*/
             if ( *v26 ) /*0x624e85*/
             {
+  int v31; // eax
               do /*0x624eb8*/
               {
-                v29 = ((int (__thiscall *)(int))this->q006)(v28) & ((1 << this->q00C) - 1); /*0x624e9b*/
-                v30 = *(_DWORD *)(*this + 4 * v29); /*0x624ea0*/
+                int v29 = ((int (__thiscall *)(int))this->q006)(v28) & ((1 << this->q00C) - 1); /*0x624e9b*/
+                int v30 = *(_DWORD *)(*this + 4 * v29); /*0x624ea0*/
                 *(_DWORD *)(*this + 4 * v29) = v28; /*0x624ea6*/
                 v31 = *(_DWORD *)(v28 + 516); /*0x624ea8*/
                 *(_DWORD *)(v28 + 516) = v30; /*0x624eae*/
@@ -2659,7 +2644,7 @@ int Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
   else
   {
     v32 = *(IUnknown **)&v7->__pad_1D8[44]; /*0x624ed9*/
-    v33 = 0; /*0x624edf*/
+    char v33 = 0; /*0x624edf*/
     aP1b = v32; /*0x624ee3*/
     if ( v32 ) /*0x624ee7*/
     {
@@ -2673,7 +2658,7 @@ int Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
         v32 = *(IUnknown **)&v32->__pad_1D8[44]; /*0x624ef3*/
       }
       v11 = aP2 == (IUnknown *)&v32->field_4; /*0x624f19*/
-      v35 = aP2->field_34; /*0x624f1e*/
+      int v35 = aP2->field_34; /*0x624f1e*/
       Blockb = *(void **)aP2->__pad_28; /*0x624f21*/
       v41 = *(CCINIClass **)aP2->__pad_3C; /*0x624f28*/
       if ( !v11 ) /*0x624f2c*/

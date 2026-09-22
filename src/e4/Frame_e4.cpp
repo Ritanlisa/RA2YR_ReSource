@@ -20,16 +20,10 @@ int Frame::Present(IUnknown * aP1)
   char *v35; // [esp+42h] [ebp-3Ch]
   char *v36; // [esp+46h] [ebp-38h]
   double v37; // [esp+4Ah] [ebp-34h] BYREF
-  int v38; // [esp+52h] [ebp-2Ch]
-  unsigned int v39; // [esp+56h] [ebp-28h]
-  char *v40; // [esp+5Ah] [ebp-24h] BYREF
   char *v41; // [esp+5Eh] [ebp-20h] BYREF
   LONG v42; // [esp+62h] [ebp-1Ch]
   LONG v43; // [esp+66h] [ebp-18h]
-  int v44; // [esp+6Ah] [ebp-14h]
   struct tagRECT Rect; // [esp+6Eh] [ebp-10h] BYREF
-  int *v46; // [esp+8Eh] [ebp+10h]
-  int v47; // [esp+8Eh] [ebp+10h]
   int v2 = v2; /*0x4f478a*/
   if ( !aP1 ) /*0x4f4790*/
   {
@@ -50,7 +44,7 @@ int Frame::Present(IUnknown * aP1)
       int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 128))(v3); /*0x4f4811*/
       v7 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 124))(v3); /*0x4f4817*/
       v8 = DataGlobal_87F7F0; /*0x4f4828*/
-      v40 = v35; /*0x4f4830*/
+      char * v40 = v35; /*0x4f4830*/
       v41 = v36; /*0x4f4834*/
       v42 = v7; /*0x4f4838*/
       int v6 = v6; /*0x4f483c*/
@@ -105,18 +99,19 @@ LABEL_18:
             v7 = v42; /*0x4f48ed*/
             v40 = v14; /*0x4f48f1*/
           }
+  int *v46; // [esp+8Eh] [ebp+10h]
           int v15 = *v46; /*0x4f48f9*/
           v16 = v46[1]; /*0x4f48fb*/
           v17 = v46[2]; /*0x4f48fe*/
           Rect.right = v46[3]; /*0x4f4904*/
-          v44 = v15; /*0x4f4910*/
+          int v44 = v15; /*0x4f4910*/
           Rect.left = v16; /*0x4f4914*/
           Rect.top = v17; /*0x4f4918*/
           if ( *(_DWORD *)&DataGlobal_87F8E4[31296] /*0x4f4934*/
             && (*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 192)
              || *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 196) != 1072693248) )
           {
-            v47 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 124))(v3); /*0x4f4941*/
+            int v47 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 124))(v3); /*0x4f4941*/
             int v18 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 128))(v3); /*0x4f4949*/
             double v19 = (double)v47; /*0x4f494f*/
             v25 = *(AbstractClass **)&DataGlobal_87F8E4[31296]; /*0x4f4953*/
@@ -152,6 +147,8 @@ LABEL_18:
           {
             if ( Frame::Init(*(_DWORD **)&DataGlobal_87F8E4[31364]) ) /*0x4f4a0b*/
             {
+  unsigned int v39; // [esp+56h] [ebp-28h]
+  int v38; // [esp+52h] [ebp-2Ch]
               v8 = DataGlobal_87F7F0; /*0x4f4a14*/
               al44 = 1; /*0x4f4a1a*/
 LABEL_47:

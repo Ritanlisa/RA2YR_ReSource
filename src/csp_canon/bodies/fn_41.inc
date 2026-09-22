@@ -250,7 +250,7 @@ int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
     result = (*(int (__stdcall **)(AbstractClass *, AbstractClass **, int, int))(*(int *)aP1->__pad_0 + 12))( aP1, &aP1, 4, 0);
     if ( result >= 0 )
   {
-    SwizzleManagerClass::Here_I_Am((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], aP1, aP0);
+    SwizzleManagerClass::Here_I_Am((SwizzleManagerClass *)&DataGlobal_B05488[27784], aP1, aP0);
     referenceCount = aP0->referenceCount;
     v5 = *(int *)v2->__pad_0;
     v6 = (*(int (__thiscall **)(AbstractClass *, int))(*(int *)aP0->__pad_0 + 48))(aP0, 0);
@@ -473,7 +473,7 @@ int AbstractTypeClass::Init(AbstractTypeClass * aP1)
     if ( v3 )
     this->vtable2 = GetStringCSF((wchar_t *)(this + 61), 0, DataGlobal_817830, 127);
     else
-    this->vtable2 = &DataGlobal_87F8E4.__pad_5568[10472];
+    this->vtable2 = &DataGlobal_87F8E4[32336];
     return this;
 }
 }
@@ -922,7 +922,7 @@ int GadgetGrid::InsertItem(ObjectClass * aP1)
     v8 = 19;
     if ( v7 <= 19 )
     v8 = v7;
-    v9 = v6 / (*(int *)&DataGlobal_87F8E4.__pad_31[3] / 20);
+    v9 = v6 / (*(int *)&DataGlobal_87F8E4[52] / 20);
     if ( v9 > 19 )
     v9 = 19;
     v10 = 3 * (v8 + 20 * v9);
@@ -967,7 +967,7 @@ int GadgetGrid::RemoveItem(IUnknown * aP1)
     char v14[4];
     v3 = *(int *)(*(int (__thiscall **)(IUnknown *, char *))(aP1->field_0 + 756))(aP1, v14);
     v13 = HIWORD(v3);
-    (*(void (__thiscall **)(IUnknown *, int))(aP1->field_0 + 760))(aP1, *(int *)&DataGlobal_87F8E4.__pad_5568[10756]);
+    (*(void (__thiscall **)(IUnknown *, int))(aP1->field_0 + 760))(aP1, *(int *)&DataGlobal_87F8E4[32620]);
     if ( (v3 & 0x8000u) == 0 )
     v3 = (short)v3;
     else
@@ -980,7 +980,7 @@ int GadgetGrid::RemoveItem(IUnknown * aP1)
     v6 = 19;
     if ( v5 <= 19 )
     v6 = v5;
-    v7 = v4 / (*(int *)&DataGlobal_87F8E4.__pad_31[3] / 20);
+    v7 = v4 / (*(int *)&DataGlobal_87F8E4[52] / 20);
     if ( v7 > 19 )
     v7 = 19;
     v8 = *(this + 120 * v7 + 6 * v6);
@@ -1357,6 +1357,12 @@ int AircraftClass::IsBelowScreen()
 }
 }
 
+// ==== BACKFILL 0x0041B9E0  TechnoClass::updateROFTimer  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+int TechnoClass::updateROFTimer()
+{
+    return this->q6D5;
+}
+
 // ==== BACKFILL 0x0041BDD0  ObjectClass::GetCoordsThunk1  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk1() {
 {
@@ -1559,6 +1565,12 @@ int TacticalClass::StubReturnFalse10()
 }
 }
 
+// ==== BACKFILL 0x0041C050  TacticalClass::ProcessTick  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
+bool TacticalClass::ProcessTick()
+{
+    return this->q5D4 != 0;
+}
+
 // ==== BACKFILL 0x0041C060  BuildingClass::vt_entry_4E4  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::vt_entry_4E4()  { return false; }
 
@@ -1590,6 +1602,13 @@ void FootClass::vt_entry_534() {}
 
 // ==== BACKFILL 0x0041C140  FootClass::vt_entry_540  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
 void FootClass::vt_entry_540() {}
+
+// ==== BACKFILL 0x0041C150  TacticalClass::ProcessTick2  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
+void *TacticalClass::ProcessTick2(int *a1)
+{
+    *a1 = this->q560;
+    return a1;
+}
 
 // ==== BACKFILL 0x0041C160  TacticalClass::ProcessTick3  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TacticalClass::ProcessTick3(int a1) {
@@ -1926,7 +1945,7 @@ int AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AircraftTypeClass;
     *(int *)&aP0->__pad_0[12] = &vt_AircraftTypeClass;
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[5].ChargerBarrels[6]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[5].ChargerBarrels[6]);
     VoxelAnimType::LoadAnim(aP0->__pad_0);
     ObjectTypeClass::Load2DArt(aP0->__pad_0);
     return 0;
@@ -2068,10 +2087,10 @@ int AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
     this->vtable2 = (unsigned int)vt_AirstrikeClass;
     this->vtable3 = (unsigned int)vt_AirstrikeClass;
     this->vtable4 = &vt_AirstrikeClass;
-    if ( *(int *)&DataGlobal_87F8E4.__pad_5568[20860] < *(int *)&DataGlobal_87F8E4.__pad_5568[20852] || (DataGlobal_87F8E4.__pad_5568[20857] || !*(int *)&DataGlobal_87F8E4.__pad_5568[20852]) && *(int *)&DataGlobal_87F8E4.__pad_5568[20864] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_87F8E4.__pad_5568[20844] + 8))( &DataGlobal_87F8E4.__pad_5568[20844], *(int *)&DataGlobal_87F8E4.__pad_5568[20852] + *(int *)&DataGlobal_87F8E4.__pad_5568[20864], 0) )
+    if ( *(int *)&DataGlobal_87F8E4[42724] < *(int *)&DataGlobal_87F8E4[42716] || (DataGlobal_87F8E4[42721] || !*(int *)&DataGlobal_87F8E4[42716]) && *(int *)&DataGlobal_87F8E4[42728] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_87F8E4[42708] + 8))( &DataGlobal_87F8E4[42708], *(int *)&DataGlobal_87F8E4[42716] + *(int *)&DataGlobal_87F8E4[42728], 0) )
   {
-    v3 = (*(int *)&DataGlobal_87F8E4.__pad_5568[20860])++;
-    *(int *)(*(int *)&DataGlobal_87F8E4.__pad_5568[20848] + 4 * v3) = this;
+    v3 = (*(int *)&DataGlobal_87F8E4[42724])++;
+    *(int *)(*(int *)&DataGlobal_87F8E4[42712] + 4 * v3) = this;
   }
     this->AirstrikeClass_field_3C = 0;
     this->owner = aP1;
@@ -2110,7 +2129,7 @@ namespace ra2 { namespace game { int ObjectClass::CleanupAirstrikeTarget(int a1)
       AudioController *j;
       _DWORD v10[3];
 
-      if ( g_NetworkPlayerBuffer.__pad_1258[268] )
+      if ( g_NetworkPlayerBuffer[4964] )
       {
         if ( aP1 )
         {
@@ -2134,7 +2153,7 @@ namespace ra2 { namespace game { int ObjectClass::CleanupAirstrikeTarget(int a1)
             v10[0] = *v6;
             v10[1] = v6[1];
             v10[2] = v6[2];
-            StartAudioControllerAt(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9108] + 604), (int)v10, 0);
+            StartAudioControllerAt(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 604), (int)v10, 0);
           }
           WTFMode::ResetUnitFlags(this);
           for ( i = *(AudioController **)(this + 92); i; i = *(AudioController **)(this + 92) )
@@ -2197,11 +2216,11 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AirstrikeClass;
     *(int *)&aP0->__pad_0[12] = &vt_AirstrikeClass;
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[8]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[12]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].uniqueId);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].abstractFlags);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[12]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].uniqueId);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].abstractFlags);
   }
     return (int)Prefix_0->__pad_0;
 }
@@ -2276,7 +2295,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
     for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
   {
     StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, i);
-    INIClass::GetString( (unsigned char ***)a1, (INIClass *)aAitriggertypes, StringByIndex, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], (INIClass *)Destination, 32);
+    INIClass::GetString( (unsigned char ***)a1, (INIClass *)aAitriggertypes, StringByIndex, (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)Destination, 32);
     INIClass::ClearSection((int)a1, (INIClass *)Destination, 0);
   }
     INIClass::ClearSection((int)a1, (INIClass *)aAitriggertypes, 0);
@@ -2429,14 +2448,14 @@ bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
     aP0 = *(IUnknown **)CurrentOption->__pad_0;
     if ( !v3->__pad_EC[5] )
       {
-    TileIndex = (MouseClass *)MapClass::GetTileIndex( &DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP0, (IUnknown *)v6, 0);
-    return MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)v6, 0) == (int)TileIndex;
+    TileIndex = (MouseClass *)MapClass::GetTileIndex( &DataGlobal_87C374[13428], (IUnknown *)&aP0, (IUnknown *)v6, 0);
+    return MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&a2, (IUnknown *)v6, 0) == (int)TileIndex;
       }
-    v7 = MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP0, (IUnknown *)v6, 0);
-    if ( MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)v6, 0) == v7 )
+    v7 = MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&aP0, (IUnknown *)v6, 0);
+    if ( MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&a2, (IUnknown *)v6, 0) == v7 )
     return 0;
-    v8 = (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP0, (IUnknown *)5, 0);
-    if ( (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)5, 0) != v8 )
+    v8 = (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&aP0, (IUnknown *)5, 0);
+    if ( (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&a2, (IUnknown *)5, 0) != v8 )
     return 0;
     }
   }

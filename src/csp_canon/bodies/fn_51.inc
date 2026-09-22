@@ -272,7 +272,7 @@ int SuperWeaponTypeClass::FindByName()
 {
     int v3;
     int *v4;
-    if ( !_strcmpi(this, &g_INI_Key_Digest.__pad_20[8]) )
+    if ( !_strcmpi(this, &g_INI_Key_Digest[40]) )
     return -2;
     if ( !this )
     return -1;
@@ -1115,8 +1115,8 @@ char JumpjetLocomotionClass::RandomizeLocomotionParam(HoverLocomotionClass * aP0
     if ( !(*(unsigned char (__stdcall **)(HoverLocomotionClass *, HoverLocomotionClass *))(*(int *)aP0->__pad_0 + 104))( aP0, aP1) )
     return 0;
     LOBYTE(aP0->CurrentWobbles[1]) = 1;
-    *(int *)&aP0->HoverLocomotionClass_field_bool_68 = Random::Range( (int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536), (IUnknown *)0x14, (IUnknown *)0x1E);
-    if ( Random::Range((int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)0x63) < 50 )
+    *(int *)&aP0->HoverLocomotionClass_field_bool_68 = Random::Range( (int *)(*(int *)&HouseClass_Player[29924] + 536), (IUnknown *)0x14, (IUnknown *)0x1E);
+    if ( Random::Range((int *)(*(int *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)0x63) < 50 )
     *(int *)&aP0->HoverLocomotionClass_field_bool_68 = -*(int *)&aP0->HoverLocomotionClass_field_bool_68;
     return 1;
 }
@@ -1172,7 +1172,7 @@ int E4Recv_517110::sub_517110()
     int result;
     char v8[4];
     v5 = 1;
-    if ( this->M36 != *(int *)&g_NetworkPlayerBuffer.__pad_14B0[1684] || this->M40 != *(int *)&g_NetworkPlayerBuffer.__pad_14B0[1688] || this->M44 != *(int *)&g_NetworkPlayerBuffer.__pad_14B0[1692] )
+    if ( this->M36 != *(int *)&g_NetworkPlayerBuffer[6980] || this->M40 != *(int *)&g_NetworkPlayerBuffer[6984] || this->M44 != *(int *)&g_NetworkPlayerBuffer[6988] )
   {
     v2 = this->M36 / 256;
     v3 = this->M40 / 256;
@@ -1263,10 +1263,44 @@ LocomotionClass * LocomotionClass::ProcessMove(char a2)
 }
 }
 
+// ==== BACKFILL 0x005175F0  ReadRegistryOptionsWOL  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { char Gap2Recv_5175F0::ReadRegistryOptionsWOL() {
+{
+    int v2;
+    BYTE Data[4];
+    HKEY phkResult;
+    DWORD cbData;
+    DWORD Type;
+    CHAR SubKey[128];
+    this->M4 = 0;
+    strcpy(SubKey, g_Str_SOFTWARE_Westwood_WOLAPI_);
+    cbData = 4;
+    if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0xF003Fu, &phkResult) )
+  {
+    *(int *)Data = 0;
+    if ( !RegQueryValueExA(phkResult, g_INI_Key_Options, 0, &Type, Data, &cbData) && Type == 4 )
+    {
+    v2 = *(int *)Data;
+    this->M4 = 1;
+    *(int *)this = v2;
+    }
+    RegCloseKey(phkResult);
+  }
+    return this->M4;
+}
+} }
+
 // ==== BACKFILL 0x005176A0  InfantryClass::SetField6  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool InfantryClass::SetField6() {
 {
     return (*(void**)this & 1) == 0;
+}
+} }
+
+// ==== BACKFILL 0x005176C0  WinMain_Helper  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { bool Gap2Recv_5176C0::WinMain_Helper() {
+{
+    return (~(unsigned char)*(void**)this & 4) != 0;
 }
 } }
 
@@ -2024,3 +2058,187 @@ InfantryTypeClass* InfantryClass::GetTypePtr()
     /* IDA truth: return *(this + 432);  // this[432] dword = byte 1728 = Type */
     return Type;
 }
+
+// ==== BACKFILL 0x0051FB00  PlaceScenarioInfantry  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_51FB00::PlaceScenarioInfantry() {
+{
+      int result;
+      CCINIClass *v3;
+      unsigned __int8 *StringByIndex;
+      char *v5;
+      int v6;
+      IUnknown *v7;
+      char *v8;
+      INIClass *ExitCellByName;
+      int v10;
+      InfantryClass *v11;
+      char *v12;
+      char *v13;
+      __int16 v14;
+      char *v15;
+      int v16;
+      int v17;
+      char *v18;
+      int v19;
+      char *v20;
+      int v21;
+      int v22;
+      int v23;
+      char *v24;
+      CCINIClass *v25;
+      char *v26;
+      CCINIClass *v27;
+      char *v28;
+      void *v29;
+      int v30;
+      char *v31;
+      CCINIClass *v32;
+      char *v33;
+      char *v34;
+      char v35;
+      CCINIClass *GroundHeight;
+      char *v37;
+      char *v38;
+      int *Type;
+      int v40;
+      int v41;
+      int v42;
+      int v43;
+      int v44;
+      INIClass *v45;
+      int i;
+      int v47;
+      VectorClass *v48;
+      INIClass String[2];
+
+      INIClass::ResetSection(this);
+      result = INIClass::GetKeyCount(this, (INIClass *)g_INI_Key_Infantry);
+      v3 = 0;
+      v47 = result;
+      for ( i = 0; i < v47; ++i )
+      {
+        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(this, (CCINIClass *)g_INI_Key_Infantry, v3);
+        INIClass::GetString((unsigned __int8 ***)this, (INIClass *)g_INI_Key_Infantry, StringByIndex, 0, String, 128);
+        v5 = strtok(String[0].__pad_0, Delimiter[0]);
+        v6 = HouseClass::FindByName(v5);
+        if ( v6 != -1 )
+        {
+          v7 = *(IUnknown **)&HouseClass_Array->__pad_0[4 * v6];
+          v8 = strtok(0, Delimiter[0]);
+          ExitCellByName = (INIClass *)Factory::FindExitCellByName(v8);
+          if ( ExitCellByName != (INIClass *)-1 )
+          {
+            v10 = __2_YAPAXI_Z(0x6F0u);
+            if ( v10 )
+            {
+              v11 = (InfantryClass *)InfantryClass::Construct(
+                                       v10,
+                                       *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[3344] + 4 * (_DWORD)ExitCellByName),
+                                       v7);
+              if ( v11 )
+              {
+                v12 = strtok(0, Delimiter[0]);
+                v48 = (VectorClass *)atoi(v12);
+                if ( *(int *)&g_NetworkPlayerBuffer[5952] < 4 )
+                {
+                  v18 = strtok(0, Delimiter[0]);
+                  v19 = atoi(v18);
+                  LOWORD(v17) = v19 % 128;
+                  v16 = v19 / 128;
+                  v17 = (__int16)v17;
+                }
+                else
+                {
+                  v13 = strtok(0, Delimiter[0]);
+                  v14 = atoi(v13);
+                  v15 = strtok(0, Delimiter[0]);
+                  LOWORD(v16) = atoi(v15);
+                  v17 = v14;
+                }
+                v43 = (v17 << 8) + 128;
+                v44 = ((__int16)v16 << 8) + 128;
+                v45 = 0;
+                v20 = strtok(0, Delimiter[0]);
+                v21 = atoi(v20);
+                v22 = DataGlobal_89E9F4[3 * v21];
+                v23 = DataGlobal_89E9F8[3 * v21];
+                v43 = DataGlobal_89E9F0[3 * v21] + ((v43 / 256) << 8);
+                v44 = ((v44 / 256) << 8) + v22;
+                v45 = (INIClass *)((char *)v45 + v23);
+                v24 = strtok(0, Delimiter[0]);
+                v25 = (CCINIClass *)LookupWaypointName(v24);
+                v26 = strtok(0, Delimiter[0]);
+                if ( v26 )
+                  v27 = (CCINIClass *)atoi(v26);
+                else
+                  v27 = 0;
+                v28 = strtok(0, Delimiter[0]);
+                if ( v28 )
+                {
+                  v29 = (void *)ObjectTypeClass::FindByName(v28);
+                  if ( v29 )
+                  {
+                    v30 = TeamClass::FindOrCreate(v29);
+                    if ( v30 )
+                      ObjectClass::SetReference(v11, v30);
+                  }
+                }
+                v31 = strtok(0, Delimiter[0]);
+                if ( v31 )
+                {
+                  v32 = (CCINIClass *)atoi(v31);
+                  FootClass::SetField((float *)&v11->initialOwner, v32);
+                }
+                v33 = strtok(0, Delimiter[0]);
+                if ( v33 )
+                  v11->displayProductionTo[0] = atoi(v33);
+                v34 = strtok(0, Delimiter[0]);
+                if ( v34 )
+                {
+                  v35 = atoi(v34) != 0;
+                  v11->onBridge = v35;
+                  if ( v35 )
+                    GroundHeight = (CCINIClass *)(*(_DWORD *)&g_NetworkPlayerBuffer[7160] + Cell::GetGroundHeight(&v43));
+                  else
+                    GroundHeight = (CCINIClass *)Cell::GetGroundHeight(&v43);
+                  v45 = (INIClass *)GroundHeight;
+                }
+                v37 = strtok(0, Delimiter[0]);
+                if ( v37 )
+                  v11->__pad_3F7[42] = atoi(v37) != 0;
+                v38 = strtok(0, Delimiter[0]);
+                if ( v38 )
+                  v11->__pad_3F7[43] = atoi(v38) != 0;
+                if ( Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&v43) == g_CellClassArray
+                  || !(*(unsigned __int8 (__thiscall **)(InfantryClass *, int *, CCINIClass *))(*(_DWORD *)v11->__pad_0 + 216))(
+                        v11,
+                        &v43,
+                        v27) )
+                {
+                  (*(void (__thiscall **)(InfantryClass *, int))(*(_DWORD *)v11->__pad_0 + 32))(v11, 1);
+                }
+                else
+                {
+                  Type = (int *)v11->Type;
+                  v40 = Math::RoundToInt((double)(int)v48 * 0.00390625 * (double)Type[40]);
+                  v11->health = v40;
+                  v41 = Type[40];
+                  if ( v40 > v41 - 3 )
+                    v11->health = v41;
+                  if ( v11->health < 1 )
+                    v11->health = 1;
+                  v42 = *(_DWORD *)v11->__pad_0;
+                  v11->estimatedHealth = v11->health;
+                  (*(void (__thiscall **)(InfantryClass *, CCINIClass *, _DWORD))(v42 + 488))(v11, v25, 0);
+                  (*(void (__thiscall **)(InfantryClass *))(*(_DWORD *)v11->__pad_0 + 492))(v11);
+                }
+              }
+            }
+          }
+        }
+        result = v47;
+        v3 = (CCINIClass *)(i + 1);
+      }
+      return result;
+}
+} }

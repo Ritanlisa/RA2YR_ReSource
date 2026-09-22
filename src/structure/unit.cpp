@@ -2902,8 +2902,6 @@ int UnitClass::DeployToBuilding()
   int v27; // [esp+18h] [ebp-1Ch] BYREF
   int v28; // [esp+1Ch] [ebp-18h] BYREF
   int v29; // [esp+20h] [ebp-14h] BYREF
-  _BYTE v30[4]; // [esp+24h] [ebp-10h] BYREF
-  _BYTE v31[12]; // [esp+28h] [ebp-Ch] BYREF
 
   if ( !*(_DWORD *)(this->Type + 1028) ) /*0x738d41*/
     return 1; /*0x738d52*/
@@ -2985,6 +2983,7 @@ int UnitClass::DeployToBuilding()
 LABEL_7:
     if ( !this->FootClass_field_5A4 ) /*0x738d92*/
     {
+  _BYTE v31[12]; // [esp+28h] [ebp-Ch] BYREF
       _DWORD * v6 = (_DWORD *)this->GetCoords_0(v31); /*0x738da7*/
       LOWORD(v27) = *v6 / 256; /*0x738dbf*/
       HIWORD(v27) = v6[1] / 256; /*0x738dd7*/
@@ -3047,6 +3046,7 @@ LABEL_7:
         int * v19 = &unk_B1D010; /*0x7392ca*/
         while ( 1 ) /*0x7392d8*/
         {
+  _BYTE v30[4]; // [esp+24h] [ebp-10h] BYREF
           _WORD * v20 = (_WORD *)this->GetCellCoords_Alt(v30); /*0x7392d8*/
           v21 = v20[1] + *((_WORD *)v19 + 1); /*0x7392e8*/
           LOWORD(v27) = *v20 + *(_WORD *)v19; /*0x7392ed*/
@@ -4566,23 +4566,19 @@ void UnitClass::CalcMoveTarget()
   __int16 *v61; // eax
   int Type; // eax
   double v72[2]; // [esp+30h] [ebp-50h] BYREF
-  double v73; // [esp+40h] [ebp-40h] BYREF
-  int v74; // [esp+50h] [ebp-30h] BYREF
-  void *v75; // [esp+54h] [ebp-2Ch]
-  int v76; // [esp+58h] [ebp-28h] BYREF
   void **v77; // [esp+5Ch] [ebp-24h] BYREF
   void *Block; // [esp+60h] [ebp-20h]
   int v79; // [esp+64h] [ebp-1Ch]
-  int v80; // [esp+68h] [ebp-18h]
-  int v81; // [esp+6Ch] [ebp-14h]
   int v82; // [esp+70h] [ebp-10h] BYREF
   int v83; // [esp+74h] [ebp-Ch] BYREF
   int v84; // [esp+78h] [ebp-8h]
   int v85; // [esp+7Ch] [ebp-4h]
   if ( *(_DWORD *)(*((_DWORD *)g_PathClass_State + this->FootClass_field_684) + 4 * this->unknownBool685 + 48) != -1 )
   {
+  double v73; // [esp+40h] [ebp-40h] BYREF
     _DWORD * v2 = (_DWORD *)this->GetCoords_0();
     int * v3 = this + 346;
+  int v76; // [esp+58h] [ebp-28h] BYREF
     int * v4 = Vector3::Subtract(v2, &v76, this + 346);
     Coord::Length(v4);
     _DWORD * v5 = (_DWORD *)*((_DWORD *)g_PathClass_State + this->FootClass_field_684);
@@ -4592,11 +4588,11 @@ void UnitClass::CalcMoveTarget()
     LODWORD(v72[0]) = *(_DWORD *)Height;
     int v63 = Math::RoundToInt((double)*(int *)(v8 + 1656) * 1.5);
     int v65 = v5[10];
-    v74 = ((__int16)v65 << 8) + 128;
+    int v74 = ((__int16)v65 << 8) + 128;
     int v9 = (__int16)v5[9];
     int v10 = (SHIWORD(v65) << 8) + 128;
     int v66 = v5[9];
-    v75 = (void *)v10;
+    void * v75 = (void *)v10;
     v76 = 0;
     v79 = 0;
     int v11 = v5[112];
@@ -4711,11 +4707,12 @@ void UnitClass::CalcMoveTarget()
     int v50 = 10;
     v77 = &DynamicVectorClass<ObjectClass *>::`vftable';
     v82 = 10;
-    v81 = 0;
+    int v81 = 0;
     while ( 1 )
     {
       if ( v81 < v49 )
         goto LABEL_24;
+  int v80; // [esp+68h] [ebp-18h]
       if ( (BYTE1(v80) || !v49) && v50 > 0 )
         break;
 LABEL_26:
@@ -9354,10 +9351,7 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
   IUnknown *v10; // ecx
   int v11; // esi
   void *v12; // eax
-  double v13; // st7
-  char v14; // al
   char v15; // di
-  unsigned int v16; // esi
   int v17; // edx
   int v18; // edi
   _DWORD *v19; // eax
@@ -9365,11 +9359,7 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
   int v21; // esi
   int v22; // eax
   char v23; // si
-  int v24; // esi
-  int v25; // ecx
   __int16 v26; // ax
-  void *v27; // edi
-  int v28; // ebx
   int LandHeight; // eax
   int v30; // kr04_4
   _DWORD *v31; // eax
@@ -9487,7 +9477,7 @@ LABEL_7:
   aP14.field_4 = *v8; /*0x743d43*/
   if ( aP14.field_4 == unk_B1CFE8 && v8[1] == unk_B1CFEC && v8[2] == unk_B1CFF0 ) /*0x743d60*/
   {
-    v16 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, (IUnknown *)&v40) >> 12) + 1) >> 1) & 7; /*0x743dfc*/
+    unsigned int v16 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, (IUnknown *)&v40) >> 12) + 1) >> 1) & 7; /*0x743dfc*/
     v15 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)2) + v16 - 1; /*0x743e04*/
   }
   else
@@ -9497,9 +9487,9 @@ LABEL_7:
     *(_DWORD *)&aP1[12] = this->q0A4; /*0x743d86*/
     *((double *)&aP0_4 + 1) = (double)*(int *)&aP1[4] - (double)aP14.field_4; /*0x743d8a*/
     *(double *)&aP0_4 = (double)v8[1] - (double)*(int *)&aP1[8]; /*0x743d95*/
-    v13 = Math::CalcAngle((AbstractClass *)aP0_4, *(double *)((char *)&aP0_4 + 4)); /*0x743d98*/
+    double v13 = Math::CalcAngle((AbstractClass *)aP0_4, *(double *)((char *)&aP0_4 + 4)); /*0x743d98*/
     LOWORD(aP14.field_4) = Math::RoundToInt((v13 - 1.570796326794897) * -10430.06004058427); /*0x743dba*/
-    v14 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)2); /*0x743dc5*/
+    char v14 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)2); /*0x743dc5*/
     v15 = v14 + ((((unsigned int)aP14.field_4 >> 12) + 1) >> 1) - 1; /*0x743dd4*/
   }
   v17 = *this; /*0x743e08*/
@@ -9520,16 +9510,16 @@ LABEL_7:
   v39 = 0; /*0x743eb2*/
   while ( 1 ) /*0x743ec3*/
   {
-    v24 = ((_BYTE)v18 + v23) & 7; /*0x743ec3*/
-    v25 = v24 & 7; /*0x743ec8*/
+    int v24 = ((_BYTE)v18 + v23) & 7; /*0x743ec3*/
+    int v25 = v24 & 7; /*0x743ec8*/
     v26 = *(_WORD *)&stru_89E138[5296][4 * v25 + 162]; /*0x743eda*/
     LOWORD(v38) = *(_WORD *)&stru_89E138[5296][4 * v25 + 160] + v35; /*0x743ee2*/
     HIWORD(v38) = HIWORD(v35) + v26; /*0x743ef1*/
     aP14.field_4 = (int)v38; /*0x743efa*/
-    v27 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP14.field_4); /*0x743f08*/
+    void * v27 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP14.field_4); /*0x743f08*/
     if ( !LayerClass::IsWithinUsableArea(&stru_87C374[13428], (IUnknown *)&aP14.field_4, (TechnoClass *)1) ) /*0x743f16*/
       goto LABEL_56; /*0x743f16*/
-    v28 = *this; /*0x743f23*/
+    int v28 = *this; /*0x743f23*/
     LandHeight = ObjectClass::GetLandHeight(this); /*0x743f2c*/
     if ( this->Destru_vt107(v27, v24, LandHeight, 0, 1) ) /*0x743f36*/
       goto LABEL_56; /*0x743f3e*/

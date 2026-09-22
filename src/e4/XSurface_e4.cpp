@@ -11,29 +11,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
 {
   int v13; // esi
   _WORD *v14; // eax
-  int v15; // edi
-  int v16; // ecx
-  int v17; // esi
-  int v18; // ecx
-  int v19; // eax
-  int v20; // eax
-  int v21; // esi
-  int v22; // ebp
-  int v23; // edi
-  int v24; // eax
-  int v25; // ebx
-  int v26; // eax
-  int v27; // ebp
-  int v28; // eax
-  int v29; // ecx
   int i; // eax
-  int v31; // esi
-  int v32; // edx
-  int v33; // ecx
-  int v34; // edi
-  int v35; // esi
-  int v38; // [esp+14h] [ebp-Ch]
-  int v39; // [esp+18h] [ebp-8h]
   int v40; // [esp+1Ch] [ebp-4h]
   int a1a; // [esp+24h] [ebp+4h]
   int *a2a; // [esp+28h] [ebp+8h]
@@ -68,13 +46,13 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
   {
     if ( v40 == v9 )
     {
-      v15 = v8 - v7; /*0x7ba966*/
+      int v15 = v8 - v7; /*0x7ba966*/
       if ( v15 >= 0 )
       {
-        v16 = v15 + 1; /*0x7ba972*/
+        int v16 = v15 + 1; /*0x7ba972*/
         do
         {
-          v17 = v13 + (v13 < 0 ? 0x10 : 0);
+          int v17 = v13 + (v13 < 0 ? 0x10 : 0);
           if ( v17 >= 16 ) /*0x7ba983*/
             v17 -= 16; /*0x7ba985*/
           if ( *(_BYTE *)(a5 + v17) ) /*0x7ba988*/
@@ -89,16 +67,16 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     else if ( v7 == v8 )
     {
       if ( v40 <= v9 ) /*0x7ba9ac*/
-        v18 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x7ba9be*/
+        int v18 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x7ba9be*/
       else
         v18 = -(*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x7ba9b5*/
-      v19 = abs32(v9 - v40); /*0x7ba9cb*/
+      int v19 = abs32(v9 - v40); /*0x7ba9cb*/
       if ( v19 >= 0 )
       {
-        v20 = v19 + 1; /*0x7ba9db*/
+        int v20 = v19 + 1; /*0x7ba9db*/
         do
         {
-          v21 = v13 + (v13 < 0 ? 0x10 : 0);
+          int v21 = v13 + (v13 < 0 ? 0x10 : 0);
           if ( v21 >= 16 ) /*0x7ba9e6*/
             v21 -= 16; /*0x7ba9e8*/
           if ( *(_BYTE *)(a5 + v21) ) /*0x7ba9eb*/
@@ -117,30 +95,30 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     }
     else
     {
-      v22 = v9 - v40; /*0x7baa1d*/
-      v23 = v8 - v7; /*0x7baa23*/
-      v24 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x7baa27*/
-      v25 = v24; /*0x7baa2a*/
-      v39 = v24; /*0x7baa2e*/
+      int v22 = v9 - v40; /*0x7baa1d*/
+      int v23 = v8 - v7; /*0x7baa23*/
+      int v24 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x7baa27*/
+      int v25 = v24; /*0x7baa2a*/
+      int v39 = v24; /*0x7baa2e*/
       if ( v22 < 0 ) /*0x7baa32*/
       {
         v25 = -v24; /*0x7baa34*/
         v39 = -v24; /*0x7baa36*/
       }
-      v26 = v22; /*0x7baa3a*/
-      v27 = 2 * v23; /*0x7baa3c*/
-      v28 = abs32(v26); /*0x7baa42*/
-      v38 = 2 * v28; /*0x7baa49*/
+      int v26 = v22; /*0x7baa3a*/
+      int v27 = 2 * v23; /*0x7baa3c*/
+      int v28 = abs32(v26); /*0x7baa42*/
+      int v38 = 2 * v28; /*0x7baa49*/
       if ( v23 <= v28 )
       {
-        v32 = 0; /*0x7baabd*/
-        v33 = v27 - v28; /*0x7baabf*/
+        int v32 = 0; /*0x7baabd*/
+        int v33 = v27 - v28; /*0x7baabf*/
         if ( v28 > 0 )
         {
-          v34 = v28; /*0x7baac5*/
+          int v34 = v28; /*0x7baac5*/
           do
           {
-            v35 = v13 + (v13 < 0 ? 0x10 : 0);
+            int v35 = v13 + (v13 < 0 ? 0x10 : 0);
             if ( v35 >= 16 ) /*0x7baad5*/
               v35 -= 16; /*0x7baad7*/
             if ( *(_BYTE *)(a5 + v35) ) /*0x7baade*/
@@ -165,7 +143,8 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
       }
       else
       {
-        v29 = 2 * v28 - v23; /*0x7baa4f*/
+        int v29 = 2 * v28 - v23; /*0x7baa4f*/
+  int v31; // esi
         for ( i = 0; i < v23; v13 = a1a + v31 )
         {
           v31 = v13 + (v13 < 0 ? 0x10 : 0);
@@ -552,18 +531,11 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
         int a10)
 {
   int v28; // ebp
-  int v29; // eax
   int v30; // eax
   int v31; // ecx
   int v32; // ebp
   int v33; // esi
   int v34; // edx
-  int v35; // edi
-  int v36; // ecx
-  int v37; // edi
-  int v38; // ecx
-  int v39; // ecx
-  int v40; // ecx
   _WORD *v42; // [esp+28h] [ebp-38h]
   _WORD *v43; // [esp+28h] [ebp-38h]
   _WORD *v44; // [esp+2Ch] [ebp-34h]
@@ -694,7 +666,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
   if ( a2 - a4 >= v27 && a2 - a4 < v27 + a8 && v28 >= a7 && v28 < a9 + a7 ) /*0x7bb6da*/
   {
     v59 = a2 - a4; /*0x7bb6e5*/
-    v29 = *this; /*0x7bb6e9*/
+    int v29 = *this; /*0x7bb6e9*/
     v60 = v28; /*0x7bb6f0*/
     this->SetPixel(&v59, a10); /*0x7bb6f4*/
   }
@@ -713,6 +685,8 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
   v45 = (_WORD *)(v19 + 2 * (a2 + v31)); /*0x7bb767*/
   while ( 1 ) /*0x7bb775*/
   {
+  int v37; // edi
+  int v35; // edi
     v30 += v56 + v47; /*0x7bb775*/
     if ( v30 < 0 ) /*0x7bb777*/
     {
@@ -738,7 +712,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
     v45 += v54; /*0x7bb80f*/
     if ( v47 > v35 ) /*0x7bb813*/
       break; /*0x7bb813*/
-    v36 = v58 + a3; /*0x7bb821*/
+    int v36 = v58 + a3; /*0x7bb821*/
     if ( v34 < a6 || v34 >= a6 + a8 ) /*0x7bb82f*/
     {
       v37 = a7; /*0x7bb852*/
@@ -749,13 +723,13 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
       if ( v36 >= a7 && v36 < a7 + a9 ) /*0x7bb841*/
         *v65 = a10; /*0x7bb84c*/
     }
-    v38 = a3 - v58; /*0x7bb85e*/
+    int v38 = a3 - v58; /*0x7bb85e*/
     if ( v33 >= a6 && v33 < a6 + a8 && v38 >= v37 && v38 < v37 + a9 ) /*0x7bb87a*/
       *v62 = a10; /*0x7bb885*/
-    v39 = a3 - v58; /*0x7bb891*/
+    int v39 = a3 - v58; /*0x7bb891*/
     if ( v34 >= a6 && v34 < a6 + a8 && v39 >= v37 && v39 < v37 + a9 ) /*0x7bb8ad*/
       *v43 = a10; /*0x7bb8b8*/
-    v40 = a3 + v58; /*0x7bb8c4*/
+    int v40 = a3 + v58; /*0x7bb8c4*/
     if ( v33 >= a6 && v33 < a6 + a8 && v40 >= v37 && v40 < a9 + v37 ) /*0x7bb8ec*/
       *v45 = a10; /*0x7bb8fb*/
   }

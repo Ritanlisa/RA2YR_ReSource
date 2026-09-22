@@ -1632,15 +1632,15 @@ namespace gamemd { int ScenarioClass::ReadINIEntry(int a1) {
       this->q620 = Timer::GetTicks();
       this->q628 = 0;
       TechnoTypeVector::Construct((_DWORD *)(this + 13524), 0, 0);
-      *(_DWORD *)(this + 13524) = &vt_TypeList_TechnoTypeClass;
+      this->allowableUnits = &vt_TypeList_TechnoTypeClass;
       DynamicVectorClass::Construct((_DWORD *)(this + 13552), 0, 0);
-      *(_DWORD *)(this + 13552) = &vt_TypeList_int;
+      this->ambientCurrent = &vt_TypeList_int;
       DynamicVectorClass::Construct((_DWORD *)(this + 13580), 0, 0);
-      *(_DWORD *)(this + 13580) = &vt_TypeList_int;
+      this->ionAmbient = &vt_TypeList_int;
       if ( this->missionTimer_text )
-        this->missionTimer_text_csf = GetStringCSF((wchar_t *)(this + 4600), 0, &stru_830620.__pad_579C[31356], 344);
+        this->missionTimer_text_csf = GetStringCSF((wchar_t *)(this + 4600), 0, &stru_830620[53784], 344);
       else
-        this->missionTimer_text_csf = &DataGlobal_87F8E4.__pad_5568[10472];
+        this->missionTimer_text_csf = &DataGlobal_87F8E4[32336];
       return this;
 }
 } }
@@ -2007,18 +2007,18 @@ namespace gamemd { int ScenarioClass::ReadGlobalVariables(ScenarioClass * aP1) {
     CCINIClass *v3;
     CCINIClass *StringByIndex;
     int v5;
-    if ( INIClass::GetKeyCount((char *)aP1, (INIClass *)&DataGlobal_830620.__pad_579C[31336]) >= 50 )
+    if ( INIClass::GetKeyCount((char *)aP1, (INIClass *)&DataGlobal_830620[53764]) >= 50 )
     KeyCount = 50;
     else
-    KeyCount = INIClass::GetKeyCount((char *)aP1, (INIClass *)&DataGlobal_830620.__pad_579C[31336]);
+    KeyCount = INIClass::GetKeyCount((char *)aP1, (INIClass *)&DataGlobal_830620[53764]);
     v3 = 0;
     if ( KeyCount <= 0 )
     return 1;
     do
   {
-    StringByIndex = (CCINIClass *)INIClass::GetStringByIndex( (char *)aP1, (CCINIClass *)&DataGlobal_830620.__pad_579C[31336], v3);
+    StringByIndex = (CCINIClass *)INIClass::GetStringByIndex( (char *)aP1, (CCINIClass *)&DataGlobal_830620[53764], v3);
     v5 = atoi(StringByIndex->__pad_0);
-    INIClass::GetString( (unsigned char ***)aP1, (INIClass *)&DataGlobal_830620.__pad_579C[31336], (unsigned char *)StringByIndex, 0, (INIClass *)(this + 40 * v5 + v5 + 7304), 40);
+    INIClass::GetString( (unsigned char ***)aP1, (INIClass *)&DataGlobal_830620[53764], (unsigned char *)StringByIndex, 0, (INIClass *)(this + 40 * v5 + v5 + 7304), 40);
     v3 = (CCINIClass *)((char *)(v3) + 1);
   }
     while ( (int)v3 < KeyCount );
@@ -2123,10 +2123,10 @@ namespace gamemd { int ScenarioClass::ReadLocalVariables(CCINIClass * aP1) {
         --v4;
       }
       while ( v4 );
-      if ( INIClass::GetKeyCount(aP1->__pad_0, (INIClass *)&stru_830620.__pad_579C[31336]) >= 100 )
+      if ( INIClass::GetKeyCount(aP1->__pad_0, (INIClass *)&stru_830620[53764]) >= 100 )
         KeyCount = 100;
       else
-        KeyCount = INIClass::GetKeyCount(aP1->__pad_0, (INIClass *)&stru_830620.__pad_579C[31336]);
+        KeyCount = INIClass::GetKeyCount(aP1->__pad_0, (INIClass *)&stru_830620[53764]);
       aP2 = 0;
       if ( KeyCount <= 0 )
         return 1;
@@ -2134,19 +2134,19 @@ namespace gamemd { int ScenarioClass::ReadLocalVariables(CCINIClass * aP1) {
       {
         StringByIndex = (CCINIClass *)INIClass::GetStringByIndex(
                                         aP1->__pad_0,
-                                        (CCINIClass *)&stru_830620.__pad_579C[31336],
+                                        (CCINIClass *)&stru_830620[53764],
                                         aP2);
         v6 = (CCINIClass *)atoi(StringByIndex->__pad_0);
         INIClass::GetString(
           (unsigned __int8 ***)aP1,
-          (INIClass *)&stru_830620.__pad_579C[31336],
+          (INIClass *)&stru_830620[53764],
           (unsigned __int8 *)StringByIndex,
           0,
           String,
           128);
         v7 = (char *)v2 + 40 * (_DWORD)v6 + (_DWORD)v6;
-        strcpy(v7 + 9354, strtok(String[0].__pad_0, Delimiter.__pad_0));
-        v8 = strtok(0, Delimiter.__pad_0);
+        strcpy(v7 + 9354, strtok(String[0].__pad_0, Delimiter[0]));
+        v8 = strtok(0, Delimiter[0]);
         if ( v8 )
           v7[9394] = atoi(v8) != 0;
         aP2 = (CCINIClass *)((char *)aP2 + 1);
@@ -2386,12 +2386,12 @@ namespace gamemd { void* FontClass::InitMetrics(void* a1, int a2, int a3, int a4
                                   aP3,
                                   a5,
                                   this + 4,
-                                  *(int *)&DataGlobal_87F8E4.__pad_5568[9404],
+                                  *(int *)&DataGlobal_87F8E4[31268],
                                   a6,
                                   1000,
                                   1000,
                                   1000,
-                                  (int)&stru_830620.__pad_579C[33776]);
+                                  (int)&stru_830620[56204]);
       if ( a7 )
       {
         if ( g_AnimClass_SaveState < DataGlobal_B054D8
@@ -2419,7 +2419,7 @@ int FindBuildingAnimByName(AbstractClass * aP0, int a2)
     IUnknown *v5;
     bool v6;
     v2 = 0;
-    if ( *(int *)DataGlobal_B05488.__pad_58 <= 0 )
+    if ( *(int *)DataGlobal_B05488[88] <= 0 )
     return 0;
     v5 = (IUnknown *)DataGlobal_B05488.field_4C;
     while ( 1 )
@@ -2428,7 +2428,7 @@ int FindBuildingAnimByName(AbstractClass * aP0, int a2)
     v5 = (IUnknown *)DataGlobal_B05488.field_4C;
     if ( v6 && *(int *)(*(int *)(DataGlobal_B05488.field_4C + 4 * v2) + 784) == a2 )
     break;
-    if ( ++v2 >= *(int *)DataGlobal_B05488.__pad_58 )
+    if ( ++v2 >= *(int *)DataGlobal_B05488[88] )
     return 0;
   }
     if ( v2 < 0 )
@@ -2446,7 +2446,7 @@ int Network_Assign(void * a1, int a2)
     IUnknown *v5;
     bool v6;
     v2 = 0;
-    if ( *(int *)DataGlobal_B05488.__pad_58 <= 0 )
+    if ( *(int *)DataGlobal_B05488[88] <= 0 )
     return -1;
     v5 = (IUnknown *)DataGlobal_B05488.field_4C;
     while ( 1 )
@@ -2455,7 +2455,7 @@ int Network_Assign(void * a1, int a2)
     v5 = (IUnknown *)DataGlobal_B05488.field_4C;
     if ( v6 && *(int *)(*(int *)(DataGlobal_B05488.field_4C + 4 * v2) + 784) == a2 )
     break;
-    if ( ++v2 >= *(int *)DataGlobal_B05488.__pad_58 )
+    if ( ++v2 >= *(int *)DataGlobal_B05488[88] )
     return -1;
   }
     return v2;

@@ -858,36 +858,9 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   int **v6; // esi
   void *NearbyCell; // eax
   int v23; // ebx
-  int v24; // edi
-  int v25; // ebp
-  int *v26; // ecx
-  int *v27; // eax
-  int v28; // ebx
-  int *v29; // eax
-  int v30; // ecx
-  int v31; // eax
-  int v32; // eax
-  int *v33; // ecx
-  int *v34; // eax
   float *Height; // eax
-  char *v36; // ecx
   int *v37; // eax
-  int v38; // eax
-  double v39; // st7
   int v40; // ebp
-  int v41; // eax
-  int *v42; // ecx
-  bool v43; // cc
-  int v44; // eax
-  int v45; // eax
-  int *v46; // ecx
-  int v47; // edx
-  int *v48; // edi
-  int v49; // eax
-  int v50; // edx
-  int v51; // eax
-  int v52; // ecx
-  int v53; // ecx
   int v55; // [esp+50h] [ebp-38h] BYREF
   int *v56; // [esp+54h] [ebp-34h] BYREF
   float v57; // [esp+58h] [ebp-30h] BYREF
@@ -977,24 +950,25 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   v56 = v22; /*0x4cf18c*/
   if ( !v55 || !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 32))(v55) ) /*0x4cf197*/
   {
-    v24 = LODWORD(a4); /*0x4cf1a2*/
-    v25 = a5; /*0x4cf1a6*/
-    v26 = *v6; /*0x4cf1ae*/
+    int v24 = LODWORD(a4); /*0x4cf1a2*/
+    int v25 = a5; /*0x4cf1a6*/
+    int * v26 = *v6; /*0x4cf1ae*/
     v60 = a4; /*0x4cf1b4*/
     v61 = a5; /*0x4cf1b9*/
     v62 = a6; /*0x4cf1bd*/
-    v27 = (int *)(*(int (__thiscall **)(int *, int *))(*v26 + 72))(v26, v63); /*0x4cf1c8*/
-    v28 = *(_DWORD *)Cell::GetHeight(&v58, v27, (int *)&v60); /*0x4cf1d5*/
+    int * v27 = (int *)(*(int (__thiscall **)(int *, int *))(*v26 + 72))(v26, v63); /*0x4cf1c8*/
+    int v28 = *(_DWORD *)Cell::GetHeight(&v58, v27, (int *)&v60); /*0x4cf1d5*/
     if ( !v55 ) /*0x4cf1dd*/
       goto LABEL_32; /*0x4cf1dd*/
     if ( !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 24))(v55) ) /*0x4cf1e2*/
       goto LABEL_32; /*0x4cf1e2*/
-    v29 = (int *)(*(int (__thiscall **)(int *, int *))(**v6 + 72))(*v6, v63); /*0x4cf1f2*/
-    v30 = *v29; /*0x4cf1f5*/
-    v31 = v29[1] - v25; /*0x4cf1fc*/
+    int * v29 = (int *)(*(int (__thiscall **)(int *, int *))(**v6 + 72))(*v6, v63); /*0x4cf1f2*/
+    int v30 = *v29; /*0x4cf1f5*/
+    int v31 = v29[1] - v25; /*0x4cf1fc*/
     LODWORD(v60) = v30 - v24; /*0x4cf1fe*/
     v61 = v31; /*0x4cf206*/
     Vector::TwoDMagnitudeMath((int *)&v60); /*0x4cf20a*/
+  int v32; // eax
     if ( v32 > 768 /*0x4cf248*/
       || (LOWORD(v58) = 0x2000,
           LOWORD(v57) = v28 - *(_WORD *)ProgressTimer::GetValue((_WORD *)*v6 + 452, &v60),
@@ -1002,12 +976,12 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     {
 LABEL_32:
       v63[2] = a6; /*0x4cf259*/
-      v33 = *v6; /*0x4cf25d*/
+      int * v33 = *v6; /*0x4cf25d*/
       v63[0] = v24; /*0x4cf260*/
       v63[1] = v25; /*0x4cf264*/
-      v34 = (int *)(*(int (__thiscall **)(int *, _DWORD *))(*v33 + 72))(v33, v64); /*0x4cf26f*/
+      int * v34 = (int *)(*(int (__thiscall **)(int *, _DWORD *))(*v33 + 72))(v33, v64); /*0x4cf26f*/
       Height = (float *)Cell::GetHeight(&v60, v34, v63); /*0x4cf277*/
-      v36 = (char *)(*v6 + 226); /*0x4cf285*/
+      char * v36 = (char *)(*v6 + 226); /*0x4cf285*/
       v58 = *Height; /*0x4cf28b*/
       FacingClass::Update(v36, &v58); /*0x4cf28f*/
     }
@@ -1017,9 +991,9 @@ LABEL_32:
   {
     if ( !v55 || !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 32))(v55) ) /*0x4cf363*/
     {
-      v38 = (*(int (__thiscall **)(int *, _DWORD *))(**v6 + 72))(*v6, v64); /*0x4cf373*/
+      int v38 = (*(int (__thiscall **)(int *, _DWORD *))(**v6 + 72))(*v6, v64); /*0x4cf373*/
       v58 = *(float *)v38; /*0x4cf37f*/
-      v39 = Math::CalcAngle((double)*(int *)(v38 + 4) - (double)a5, (double)SLODWORD(a4) - (double)SLODWORD(v58)); /*0x4cf398*/
+      double v39 = Math::CalcAngle((double)*(int *)(v38 + 4) - (double)a5, (double)SLODWORD(a4) - (double)SLODWORD(v58)); /*0x4cf398*/
       LOWORD(a4) = Math::RoundToInt((v39 - 1.570796326794897) * -10430.06004058427); /*0x4cf3b1*/
       v57 = a4; /*0x4cf3ba*/
       v37 = (int *)&v57; /*0x4cf3be*/
@@ -1059,22 +1033,23 @@ LABEL_52:
   v40 = v59; /*0x4cf3d0*/
   if ( !*(_BYTE *)(v59 + 92) || v23 >= 768 ) /*0x4cf3e1*/
   {
-    v41 = (*(int (__thiscall **)(int *))(**v6 + 132))(*v6); /*0x4cf402*/
-    v42 = *v6; /*0x4cf410*/
+  int v44; // eax
+    int v41 = (*(int (__thiscall **)(int *))(**v6 + 132))(*v6); /*0x4cf402*/
+    int * v42 = *v6; /*0x4cf410*/
     if ( *(_BYTE *)(v41 + 3221) ) /*0x4cf408*/
     {
-      v43 = v23 < *(_DWORD *)((*(int (__thiscall **)(int *))(*v42 + 132))(v42) + 760); /*0x4cf426*/
+      bool v43 = v23 < *(_DWORD *)((*(int (__thiscall **)(int *))(*v42 + 132))(v42) + 760); /*0x4cf426*/
       v44 = **v6; /*0x4cf42a*/
       if ( v43 ) /*0x4cf42c*/
       {
-        v45 = (*(int (**)(void))(v44 + 132))(); /*0x4cf432*/
-        v46 = *v6; /*0x4cf443*/
-        v47 = **v6; /*0x4cf445*/
+        int v45 = (*(int (**)(void))(v44 + 132))(); /*0x4cf432*/
+        int * v46 = *v6; /*0x4cf443*/
+        int v47 = **v6; /*0x4cf445*/
         a4 = (float)(v23 / *(_DWORD *)(v45 + 760)); /*0x4cf44f*/
-        v48 = (int *)(*(int (__thiscall **)(int *))(v47 + 132))(v46); /*0x4cf45b*/
-        v49 = (*(int (__thiscall **)(int *))(**v6 + 132))(*v6); /*0x4cf45f*/
+        int * v48 = (int *)(*(int (__thiscall **)(int *))(v47 + 132))(v46); /*0x4cf45b*/
+        int v49 = (*(int (__thiscall **)(int *))(**v6 + 132))(*v6); /*0x4cf45f*/
         v59 = (*(int (__thiscall **)(int))(*(_DWORD *)v49 + 188))(v49) / 3; /*0x4cf481*/
-        v50 = *v48; /*0x4cf485*/
+        int v50 = *v48; /*0x4cf485*/
         v58 = (double)v59 * (1.0 - a4); /*0x4cf497*/
         v59 = (*(int (__thiscall **)(int *))(v50 + 188))(v48); /*0x4cf4a1*/
         *(_DWORD *)(v40 + 56) = Math::RoundToInt((double)v59 * a4 + v58); /*0x4cf4b6*/
@@ -1085,7 +1060,7 @@ LABEL_52:
     {
       v44 = *v42; /*0x4cf4bd*/
     }
-    v51 = (*(int (**)(void))(v44 + 132))(); /*0x4cf4bf*/
+    int v51 = (*(int (**)(void))(v44 + 132))(); /*0x4cf4bf*/
     *(_DWORD *)(v40 + 56) = (*(int (__thiscall **)(int))(*(_DWORD *)v51 + 188))(v51); /*0x4cf4cf*/
     goto LABEL_60; /*0x4cf4cf*/
   }
@@ -1125,12 +1100,13 @@ LABEL_60:
   {
     if ( !(unsigned __int8)House::IsHumanPlayer((#375 *)(*v6)[135]) ) /*0x4cf573*/
     {
-      v52 = (int)(*v6 + 39); /*0x4cf57e*/
+      int v52 = (int)(*v6 + 39); /*0x4cf57e*/
       a4 = *(float *)v52; /*0x4cf586*/
       a5 = *(_DWORD *)(v52 + 4); /*0x4cf592*/
       a6 = *(_DWORD *)(v52 + 8); /*0x4cf599*/
       if ( Cell::IsPassable(&a4) /*0x4cf5dd*/
         || (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) != 0
+  int v53; // ecx
         && (v53 = (int)(*v6 + 39),
             a4 = *(float *)v53,
             a5 = *(_DWORD *)(v53 + 4),

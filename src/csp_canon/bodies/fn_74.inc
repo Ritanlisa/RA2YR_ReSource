@@ -608,7 +608,7 @@ namespace gamemd { int HouseClass::NetworkConvert() {
 }
 } }
 
-// ==== BACKFILL 0x007498D0  ObjectClass::Initialize  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x007498D0  ObjectClass::Initialize  cls=ObjectClass  sig=csp  renamed_refs=2  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::Initialize() {
 {
       int v2;
@@ -630,9 +630,9 @@ namespace ra2 { namespace game { int ObjectClass::Initialize() {
       this->q13C = 0;
       this->q140 = 0;
       *(_DWORD *)this = &VoxelAnimClass::`vftable';
-      *(_DWORD *)(this + 4) = &VoxelAnimClass::`vftable';
-      *(_DWORD *)(this + 8) = &VoxelAnimClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_VoxelAnimClass;
+      this->vtable3 = &VoxelAnimClass::`vftable';
+      this->vtable4 = &VoxelAnimClass::`vftable';
+      this->vtable4 = &vt_VoxelAnimClass;
       AbstractClass::GenerateUniqueID(this + 4);
       AudioController::Init((_DWORD *)(this + 276));
       AudioController::Init((_DWORD *)(this + 296));
@@ -741,12 +741,12 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_VoxelAnimTypeClass;
     *(int *)&aP0->__pad_0[12] = &vt_VoxelAnimTypeClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)aP0[1].Name);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[19]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[23]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[27]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[3]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].Name[4]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)aP0[1].Name);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[19]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[23]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[27]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[3]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].Name[4]);
     VoxelAnimType::LoadAnim(aP0->__pad_0);
     return 0;
   }
@@ -1215,12 +1215,12 @@ namespace gamemd { int INIEntry::LookupByName() {
     ObjectClass *v2;
     const void **v3;
     v2 = 0;
-    v3 = (const void **)&DataGlobal_830620.__pad_579C[67068];
+    v3 = (const void **)&DataGlobal_830620[89496];
     while ( _strcmpi(*v3, this) )
   {
     ++v3;
     v2 = (ObjectClass *)((char *)(v2) + 1);
-    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[67140] )
+    if ( (int)v3 >= (int)&DataGlobal_830620[89568] )
     return (ObjectClass *)-1;
   }
     return v2;

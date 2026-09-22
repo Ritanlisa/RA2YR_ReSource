@@ -62,18 +62,18 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
     IUnknown *v6;
     int *v7;
     AbstractClass *v9;
-    v2 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
+    v2 = *(int *)&g_CellDirectionOffsets[4352];
     v4 = (int *)(this + 64);
-    if ( this->M64 != *(int *)&g_CellDirectionOffsets.__pad_DFC[772] || this->M68 != *(int *)&g_CellDirectionOffsets.__pad_DFC[776] || this->M72 != *(int *)&g_CellDirectionOffsets.__pad_DFC[780] )
+    if ( this->M64 != *(int *)&g_CellDirectionOffsets[4352] || this->M68 != *(int *)&g_CellDirectionOffsets[4356] || this->M72 != *(int *)&g_CellDirectionOffsets[4360] )
   {
-    *v4 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
-    this->M68 = *(int *)&g_CellDirectionOffsets.__pad_DFC[776];
-    v5 = *(TechnoClass **)&g_CellDirectionOffsets.__pad_DFC[780];
+    *v4 = *(int *)&g_CellDirectionOffsets[4352];
+    this->M68 = *(int *)&g_CellDirectionOffsets[4356];
+    v5 = *(TechnoClass **)&g_CellDirectionOffsets[4360];
     this->M99 = 0;
     this->M72 = v5;
-    v2 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
+    v2 = *(int *)&g_CellDirectionOffsets[4352];
   }
-    if ( aP1->field_0 != v2 || aP1->field_4 != *(int *)&g_CellDirectionOffsets.__pad_DFC[776] || aP1->field_8 != *(int *)&g_CellDirectionOffsets.__pad_DFC[780] )
+    if ( aP1->field_0 != v2 || aP1->field_4 != *(int *)&g_CellDirectionOffsets[4356] || aP1->field_8 != *(int *)&g_CellDirectionOffsets[4360] )
   {
     *v4 = aP1->field_0;
     this->M68 = aP1->field_4;
@@ -89,9 +89,9 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
     }
     if ( *(char *)(this->M12 + 144) )
     {
-    *v4 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
-    this->M68 = *(int *)&g_CellDirectionOffsets.__pad_DFC[776];
-    this->M72 = *(int *)&g_CellDirectionOffsets.__pad_DFC[780];
+    *v4 = *(int *)&g_CellDirectionOffsets[4352];
+    this->M68 = *(int *)&g_CellDirectionOffsets[4356];
+    this->M72 = *(int *)&g_CellDirectionOffsets[4360];
     this->M99 = 0;
     }
   }
@@ -141,7 +141,7 @@ char JumpjetLocomotionClass::MoveToChecked(DriveLocomotionClass * aP0, int a2)
 {
     char result;
     result = (char)aP0 + 60;
-    if ( aP0->Dest[2] != *(int *)&DataGlobal_89E138.__pad_14B0[4520] || aP0->HeadToCoord[0] != *(int *)&DataGlobal_89E138.__pad_14B0[4524] || aP0->HeadToCoord[1] != *(int *)&DataGlobal_89E138.__pad_14B0[4528] )
+    if ( aP0->Dest[2] != *(int *)&DataGlobal_89E138[9816] || aP0->HeadToCoord[0] != *(int *)&DataGlobal_89E138[9820] || aP0->HeadToCoord[1] != *(int *)&DataGlobal_89E138[9824] )
   {
     return JumpjetLocomotion::MoveTo((int)&aP0[-1].Piggybackee, (IUnknown *)&aP0->Dest[2], a2);
   }

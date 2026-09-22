@@ -10,14 +10,13 @@ int sub_7781B0(short a1)
 {
   CHAR MultiByteStr; // [esp+0h] [ebp-8h] BYREF
   char v4; // [esp+1h] [ebp-7h]
-  char v5; // [esp+2h] [ebp-6h]
   WCHAR WideCharStr[2]; // [esp+4h] [ebp-4h] BYREF
 
   if ( HIBYTE(a1) ) /*0x7781b6*/
   {
     MultiByteStr = HIBYTE(a1); /*0x7781c1*/
     v4 = a1; /*0x7781c1*/
-    v5 = 0; /*0x7781c5*/
+    char v5 = 0; /*0x7781c5*/
   }
   else
   {

@@ -373,15 +373,8 @@ void AircraftClass_AssignDestination_SyncLog()
 {
   IUnknown *ClosestPlacementCell; // edi
   int v6; // eax
-  int v7; // ebx
-  int v8; // eax
-  int v9; // eax
   ObjectClass *v10; // eax
   ObjectClass *v11; // ebx
-  int v12; // eax
-  int v13; // eax
-  int v14; // ebx
-  int v15; // eax
   ClosestPlacementCell = aP1; /*0x41aa83*/
   if ( !aP1 ) /*0x41aa8b*/
   {
@@ -410,7 +403,7 @@ LABEL_53:
         if ( v6 == 1 ) /*0x41ac8a*/
           return v6; /*0x41ac8a*/
         (*(void (__thiscall **)(IUnknown *, int))(a1->field_0 + 628))(a1, 3); /*0x41ac96*/
-        v12 = aP1->field_520; /*0x41ac9c*/
+        int v12 = aP1->field_520; /*0x41ac9c*/
         if ( !*(_BYTE *)(v12 + 5801) && !*(_BYTE *)(v12 + 5802) ) /*0x41acac*/
           goto LABEL_35; /*0x41acb4*/
         TechnoClass::SetFocus(a1, aP1); /*0x41acb9*/
@@ -431,7 +424,7 @@ LABEL_53:
                                                0,
                                                a2);
           (*(void (__thiscall **)(IUnknown *, _DWORD, int))(a1->field_0 + 1152))(a1, 0, 1); /*0x41ab4c*/
-          v7 = 2; /*0x41ab54*/
+          int v7 = 2; /*0x41ab54*/
           if ( ClosestPlacementCell /*0x41ab6b*/
             && (*(int (__thiscall **)(IUnknown *, int, IUnknown *))(a1->field_0 + 632))(a1, 15, ClosestPlacementCell) == 1 )
           {
@@ -453,10 +446,10 @@ LABEL_34:
           ClosestPlacementCell = 0; /*0x41acbe*/
         }
 LABEL_35:
-        v13 = (*(int (__thiscall **)(IUnknown *))(a1->field_0 + 444))(a1); /*0x41acc0*/
+        int v13 = (*(int (__thiscall **)(IUnknown *))(a1->field_0 + 444))(a1); /*0x41acc0*/
         if ( (*(_DWORD *)(v13 + 320) & 0x100) == 0 ) /*0x41acd3*/
         {
-          v14 = *(_DWORD *)(v13 + 228); /*0x41acd9*/
+          int v14 = *(_DWORD *)(v13 + 228); /*0x41acd9*/
           if ( v14 ) /*0x41ace1*/
           {
             while ( (IUnknown *)v14 == a1 || (*(int (__thiscall **)(int))(*(_DWORD *)v14 + 44))(v14) != 6 ) /*0x41acf5*/
@@ -465,7 +458,7 @@ LABEL_35:
               if ( !v14 ) /*0x41acfc*/
                 goto LABEL_53; /*0x41acfc*/
             }
-            v15 = *(_DWORD *)(v14 + 1312); /*0x41ad19*/
+            int v15 = *(_DWORD *)(v14 + 1312); /*0x41ad19*/
             if ( *(_BYTE *)(v15 + 5801) || *(_BYTE *)(v15 + 5802) ) /*0x41ad29*/
             {
               if ( !*(_DWORD *)&a1->__pad_524[336] ) /*0x41ad33*/
@@ -487,14 +480,14 @@ LABEL_35:
       if ( (*(int (__thiscall **)(IUnknown *, int, IUnknown *))(a1->field_0 + 632))(a1, 14, aP1) != 1 ) /*0x41abdf*/
       {
         (*(void (__thiscall **)(IUnknown *, int))(a1->field_0 + 628))(a1, 3); /*0x41abe7*/
-        v8 = aP1->field_520; /*0x41abed*/
+        int v8 = aP1->field_520; /*0x41abed*/
         if ( *(_BYTE *)(v8 + 5801) || *(_BYTE *)(v8 + 5802) ) /*0x41abfd*/
         {
           TechnoClass::SetFocus(a1, aP1); /*0x41ac0a*/
           ClosestPlacementCell = 0; /*0x41ac0f*/
         }
       }
-      v9 = aP1->field_520; /*0x41ac11*/
+      int v9 = aP1->field_520; /*0x41ac11*/
       if ( *(_BYTE *)(v9 + 5801) || *(_BYTE *)(v9 + 5802) ) /*0x41ac21*/
       {
         if ( *(_DWORD *)&a1->__pad_524[128] ) /*0x41ac38*/

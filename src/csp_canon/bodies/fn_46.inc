@@ -2,6 +2,12 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
+// ==== BACKFILL 0x00464AC0  BuildingTypeClass::CanPlacePath  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
+bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
+{
+    return this->PlaceAnywhere || BuildingClass::ValidatePath(this, a2, a3);
+}
+
 // ==== BACKFILL 0x00464AF0  BuildingTypeClass::GetSizeInLeptons  cls=BuildingTypeClass  sig=csp  renamed_refs=2  residual=- ====
 unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
 {
@@ -494,23 +500,23 @@ namespace gamemd { int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
           a1[3] = (int)&vt_BulletClass;
         }
         if ( a1[85]
-          && (*(int *)&stru_B05488.__pad_579C[18852] < *(int *)&stru_B05488.__pad_579C[18844]
-           || (stru_B05488.__pad_579C[18849] || !*(_DWORD *)&stru_B05488.__pad_579C[18844])
-           && *(int *)&stru_B05488.__pad_579C[18856] > 0
-           && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[18836] + 8))(
-                &stru_B05488.__pad_579C[18836],
-                *(_DWORD *)&stru_B05488.__pad_579C[18844] + *(_DWORD *)&stru_B05488.__pad_579C[18856],
+          && (*(int *)&stru_B05488[41280] < *(int *)&stru_B05488[41272]
+           || (stru_B05488[41277] || !*(_DWORD *)&stru_B05488[41272])
+           && *(int *)&stru_B05488[41284] > 0
+           && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41264] + 8))(
+                &stru_B05488[41264],
+                *(_DWORD *)&stru_B05488[41272] + *(_DWORD *)&stru_B05488[41284],
                 0)) )
         {
-          v5 = (*(_DWORD *)&stru_B05488.__pad_579C[18852])++;
-          *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[18840] + 4 * v5) = a1;
+          v5 = (*(_DWORD *)&stru_B05488[41280])++;
+          *(_DWORD *)(*(_DWORD *)&stru_B05488[41268] + 4 * v5) = a1;
         }
-        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)(a1 + 43));
-        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)(a1 + 44));
-        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)(a1 + 74));
-        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)(a1 + 67));
-        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)(a1 + 76));
-        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)(a1 + 85));
+        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)(a1 + 43));
+        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)(a1 + 44));
+        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)(a1 + 74));
+        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)(a1 + 67));
+        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)(a1 + 76));
+        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)(a1 + 85));
         return (int)v4->__pad_0;
       }
       return result;
@@ -946,9 +952,9 @@ int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     }
     VoxelAnimType::LoadAnim(aP0->__pad_0);
     ObjectTypeClass::Load2DArt(aP0->__pad_0);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[7]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].referenceCount);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].NeedsSaveOrLink);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[7]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].referenceCount);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].NeedsSaveOrLink);
     return 0;
   }
     return result;
@@ -1066,7 +1072,7 @@ namespace gamemd { int CampaignClass::GetMapData(void* a1) {
       this->q29C = INIClass::GetBool(
                                   aP1,
                                   (INIClass *)(this + 36),
-                                  (unsigned __int8 *)&stru_81B1A4.__pad_20[4],
+                                  (unsigned __int8 *)&stru_81B1A4[36],
                                   (int)v4);
       INIClass::GetString(
         aP1,

@@ -70,7 +70,7 @@ bool WebBrowser::OpenURL()
     FileA = CreateFileA(TempFileName, 0x40000000u, 0, 0, 2u, 0x80u, 0);
     if ( FileA == (HANDLE)-1 )
     return 0;
-    WriteFile(FileA, &DataGlobal_829748.__pad_0[12], strlen(&DataGlobal_829748.__pad_0[12]), &NumberOfBytesWritten, 0);
+    WriteFile(FileA, &DataGlobal_829748[12], strlen(&DataGlobal_829748[12]), &NumberOfBytesWritten, 0);
     CloseHandle(FileA);
     ExecutableA = FindExecutableA(TempFileName, 0, Result);
     DeleteFileA(TempFileName);
@@ -82,6 +82,86 @@ bool WebBrowser::OpenURL()
     return CreateProcessA(Result, CommandLine, 0, 0, 0, 0, 0, 0, &StartupInfo, &ProcessInformation);
 }
 }
+
+// ==== BACKFILL 0x00551A30  ProcessAutoSave  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_551A30::ProcessAutoSave() {
+{
+    int v2;
+    int result;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    v2 = 0;
+    result = this->M16 - 1;
+    if ( result > 0 )
+  {
+    do
+    {
+    v4 = this->M4;
+    v5 = *(int *)(v4 + 4 * v2 + 4);
+    v6 = *(int *)(v4 + 4 * v2);
+    v7 = (*(int (__thiscall **)(int))(*(int *)(v5) + 184))(v5);
+    if ( v7 < (*(int (__thiscall **)(int))(*(int *)(v6) + 184))(v6) )
+      {
+    *(int *)(this->M4 + 4 * v2 + 4) = v6;
+    *(int *)(this->M4 + 4 * v2) = v5;
+      }
+    ++v2;
+    result = this->M16 - 1;
+    }
+    while ( v2 < result );
+  }
+    return result;
+}
+
+/* ASM:
+push    ecx
+push    ebx
+push    ebp
+mov     ebp, ecx
+xor     ebx, ebx
+mov     eax, [ebp+10h]
+dec     eax
+test    eax, eax
+jle     short loc_551A81
+push    esi
+push    edi
+
+loc_551A41:                             ; CODE XREF: ProcessAutoSave+4D↓j
+mov     eax, [ebp+4]
+mov     esi, [eax+ebx*4+4]
+mov     edi, [eax+ebx*4]
+mov     ecx, esi
+mov     edx, [esi]
+call    dword ptr [edx+0B8h]
+mov     [esp+14h+var_4], eax
+mov     eax, [edi]
+mov     ecx, edi
+call    dword ptr [eax+0B8h]
+cmp     [esp+14h+var_4], eax
+jge     short loc_551A76
+mov     ecx, [ebp+4]
+mov     [ecx+ebx*4+4], edi
+mov     edx, [ebp+4]
+mov     [edx+ebx*4], esi
+
+loc_551A76:                             ; CODE XREF: ProcessAutoSave+37↑j
+mov     eax, [ebp+10h]
+inc     ebx
+dec     eax
+cmp     ebx, eax
+jl      short loc_551A41
+pop     edi
+pop     esi
+
+loc_551A81:                             ; CODE XREF: ProcessAutoSave+D↑j
+pop     ebp
+pop     ebx
+pop     ecx
+retn
+*/
+} }
 
 // ==== BACKFILL 0x00551B20  LayerClass::Save  cls=LayerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int LayerClass::Save(void* a1) {
@@ -176,8 +256,8 @@ namespace gamemd { int TacticalClass::ScrollView(int a1) {
       result = DataGlobal_829AE4;
       if ( DataGlobal_829AE4 )
       {
-        result = g_NetworkPlayerBuffer.__pad_14B0[140];
-        if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[140] >= this->field34 )
+        result = g_NetworkPlayerBuffer[5436];
+        if ( *(int *)&g_NetworkPlayerBuffer[5436] >= this->field34 )
         {
           if ( (_BYTE)aP1 && DataGlobal_ABCA50 )
             UpdateDeferredLightSurfaces(0, 1);
@@ -356,9 +436,9 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
     }
     while ( v3 < g_BridgeCellPool );
   }
-    if ( *(char *)(this + 72) )
+    if ( this->Activated )
   {
-    *(char *)(this + 72) = 0;
+    this->Activated = 0;
     TacticalClass::ScrollView(this, 0);
   }
     AbstractClass::DTOR(this);
@@ -500,6 +580,119 @@ int ObjectClass::updateMissionState(int a2)
 }
 }
 
+// ==== BACKFILL 0x00556B70  Render_Render_556B70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_556B70::Render_Render_556B70() {
+{
+    int v1;
+    int *v2;
+    int v3;
+    int v4;
+    int v5;
+    int *v6;
+    int v7;
+    int *v8;
+    int result;
+    int v10;
+    int *v11;
+    int v12;
+    v1 = this->M4;
+    if ( v1 )
+  {
+    v2 = (int *)(v1 + 156);
+    v3 = *v2;
+    v4 = v2[1];
+    v5 = v2[2];
+    v6 = this + 4 *(void**)this->M12 + 4;
+    if ( v3 != *v6 || v4 != v6[1] || v5 != v6[2] )
+    {
+    v7 = this->M12 - 1;
+    this->M12 = v7;
+    if ( v7 < 0 )
+    this->M12 = 31;
+    v8 = this + 4 *(void**)this->M12 + 4;
+    v8[3] = 255;
+    *v8 = v3;
+    v8[1] = v4;
+    v8[2] = v5;
+    }
+  }
+    result = this->M12;
+    do
+  {
+    v10 = result + 1;
+    v11 = this + 4 * result + 4;
+    v12 = v11[3] - this->M8;
+    v11[3] = v12;
+    if ( v12 < 0 )
+    v11[3] = 0;
+    result = v10;
+    if ( v10 >= 32 )
+    result = 0;
+  }
+    while ( result != this->M12 );
+    return result;
+}
+} }
+
+// ==== BACKFILL 0x00556C00  Render_Render_556C00  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { void* Gap2Recv_556C00::Render_Render_556C00() {
+{
+      int v1;
+      _DWORD *result;
+      int v3;
+      _DWORD *v4;
+      _DWORD *i;
+      int v6;
+      int v7;
+      char *v8;
+      int v10[2];
+      int v11[2];
+
+      v1 = this->M12 + 1;
+      if ( v1 >= 32 )
+        v1 = 0;
+      result = (_DWORD *)(this + 16 * (this->M12 + 1));
+      if ( *result != DataGlobal_ABCB50 || result[1] != DataGlobal_ABCB54 || result[2] != DataGlobal_ABCB58 )
+      {
+        v3 = v1 + 1;
+        v4 = (_DWORD *)(this + 16 * (this->M12 + 1));
+        result = (_DWORD *)result[3];
+        for ( i = (_DWORD *)(this + 16 * v3); result; i = (_DWORD *)(this + 16 * (_DWORD)v8) )
+        {
+          if ( *i == DataGlobal_ABCB50 && i[1] == DataGlobal_ABCB54 )
+          {
+            result = (_DWORD *)i[2];
+            if ( result == (_DWORD *)DataGlobal_ABCB58 )
+              break;
+          }
+          Coord::To_Screen(g_TacticalClass_Instance, v4, v11);
+          Coord::To_Screen(g_TacticalClass_Instance, i, v10);
+          v6 = -2 - ZCoordToScreenY(v4[2]);
+          v7 = ZCoordToScreenY(i[2]);
+          AudioStream::DrawWaveform(
+            (void *)DSurface_Composite,
+            &DSurface_ViewBounds,
+            v11,
+            v10,
+            (unsigned __int8 *)this,
+            v4[3],
+            v6,
+            -2 - v7);
+          result = (_DWORD *)v3;
+          if ( v3 >= 32 )
+            result = 0;
+          if ( result == *(_DWORD **)(this + 12) )
+            break;
+          v3 = (int)result + 1;
+          v4 = i;
+          v8 = (char *)result + 1;
+          result = (_DWORD *)i[3];
+        }
+      }
+      return result;
+}
+} }
+
 // ==== BACKFILL 0x00556D40  Render_Render_556D40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_556D40()
 {
@@ -625,7 +818,7 @@ namespace gamemd { int ListClass::Destru_vt43(int a1) {
       {
         v4 = *this;
         v5 = (*(int (__thiscall **)(int *, int *))(this->q034 + 16))(this + 13, &a2);
-        return (*(int (__thiscall **)(int *, int))(v4 + 168))(this, v5);
+        return this->RemoveItem_0(v5);
       }
       return result;
 }
@@ -1283,7 +1476,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2)
     int v3;
     void *v4;
     v3 = 0;
-    for ( *(int *)this = &vt_LoadOptionsClass; v3 < *(int *)(this + 48); ++v3 )
+    for ( *(int *)this = &vt_LoadOptionsClass; v3 < this->capacity; ++v3 )
     __3_YAXPAX_Z(*(void **)(*((int *)(this) + 9) + 4 * v3));
     (*(void (__thiscall **)(char *))(*((int *)(this) + 8) + 12))(this + 32);
     v4 = (void *)*((int *)(this) + 9);
@@ -1629,6 +1822,18 @@ namespace gamemd { void RadarClass::SetGlobal() {
 }
 } }
 
+// ==== BACKFILL 0x0055AF50  Map_Init  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { void Gap2Recv_55AF50::Map_Init() {
+{
+    DataGlobal_829FF8 = (int)this;
+}
+
+/* ASM:
+mov     dword_829FF8, ecx
+retn
+*/
+} }
+
 // ==== BACKFILL 0x0055B880  Array::RemoveItemByValue  cls=LogicClass  sig=csp  renamed_refs=0  residual=- ====
 void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 {
@@ -1641,11 +1846,11 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
   {
     if ( (*(int (__thiscall **)(AbstractClass *))(*(int *)aP0->__pad_0 + 44))(aP0) == 44 )
     {
-    v2 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67588];
+    v2 = *(ParticleSystemClass **)&DataGlobal_89E138[90016];
     v3 = 0;
-    if ( *(int *)&DataGlobal_89E138.__pad_579C[67588] > 0 )
+    if ( *(int *)&DataGlobal_89E138[90016] > 0 )
       {
-    v4 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67576];
+    v4 = *(ParticleSystemClass **)&DataGlobal_89E138[90004];
     do
         {
     if ( aP0 == *(AbstractClass **)&v4->__pad_0[4 * v3] )
@@ -1654,17 +1859,17 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
             {
     v2 = (ParticleSystemClass *)((char *)v2 - 1);
     v5 = v3;
-    *(int *)&DataGlobal_89E138.__pad_579C[67588] = v2;
+    *(int *)&DataGlobal_89E138[90016] = v2;
     if ( v3 < (int)v2 )
               {
     do
                 {
     *(int *)&v4->__pad_0[4 * v5] = *(int *)&v4->__pad_0[4 * v5 + 4];
-    v2 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67588];
-    v4 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67576];
+    v2 = *(ParticleSystemClass **)&DataGlobal_89E138[90016];
+    v4 = *(ParticleSystemClass **)&DataGlobal_89E138[90004];
     ++v5;
                 }
-    while ( v5 < *(int *)&DataGlobal_89E138.__pad_579C[67588] );
+    while ( v5 < *(int *)&DataGlobal_89E138[90016] );
               }
             }
     --v3;
@@ -1791,6 +1996,35 @@ int WriteCompressionBlock(Pipe * aP0, BlowStraw * aP1, CCINIClass * aP2, int * a
     return result;
 }
 }
+
+// ==== BACKFILL 0x0055F690  CheckNetworkSync  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int Gap2Recv_55F690::CheckNetworkSync(int a2, int a3) {
+{
+    *(int *)this = a3 & 0xFFFFFF;
+    this->M4 = HIBYTE(a3);
+    *(int *)a2 = *(int *)this;
+    *(char *)(a2 + 4) = this->M4;
+    return a2;
+}
+
+/* ASM:
+mov     eax, [esp+arg_4]
+push    esi
+mov     edx, eax
+and     eax, 0FFFFFFh
+sar     edx, 18h
+mov     [ecx], eax
+mov     eax, [esp+4+arg_0]
+mov     [ecx+4], dl
+mov     esi, [ecx]
+mov     edx, eax
+mov     [edx], esi
+mov     cl, [ecx+4]
+pop     esi
+mov     [edx+4], cl
+retn    8
+*/
+} }
 
 // ==== BACKFILL 0x0055F980  sub_55F980  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_55F980(HWND hWnd, unsigned int a2, int a3, unsigned int a4)

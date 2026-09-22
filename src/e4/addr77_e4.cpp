@@ -2393,12 +2393,10 @@ void OpenURLWOL(INIClass * a1, int a2)
   int v7; // eax
   CreateGameDialogControl *v8; // ecx
   HANDLE hProcess; // ebx
-  int v10; // esi
   CreateGameDialogControl *v11; // ecx
   CreateGameDialogControl *v12; // ecx
   CreateGameDialogControl *v13; // ecx
   CreateGameDialogControl *v14; // ecx
-  int v15; // esi
   CreateGameDialogControl *v16; // ecx
   wchar_t *StringCSF; // eax
   CellStruct *v19; // [esp-Ch] [ebp-32Ch]
@@ -2436,7 +2434,7 @@ void OpenURLWOL(INIClass * a1, int a2)
       hProcess = ProcessInformation.hProcess; /*0x77ddc2*/
       if ( ProcessInformation.hProcess ) /*0x77ddc4*/
       {
-        v10 = 0; /*0x77ddca*/
+        int v10 = 0; /*0x77ddca*/
         Game::ProcessIdle(v8); /*0x77ddcc*/
         WaitForInputIdle(hProcess, 0x1388u); /*0x77ddd7*/
         do /*0x77de3f*/
@@ -2459,7 +2457,7 @@ void OpenURLWOL(INIClass * a1, int a2)
           ShowWindow(g_hWnd, 9); /*0x77de71*/
           Game::ProcessIdle(v14); /*0x77de77*/
         }
-        v15 = 10; /*0x77de7c*/
+        int v15 = 10; /*0x77de7c*/
         do /*0x77de8b*/
         {
           Sleep(0x64u); /*0x77de83*/
@@ -2487,8 +2485,6 @@ void AssignWOLPlayerSide(const char ** a1, int a2)
   char *i; // [esp+14h] [ebp-80h] BYREF
   void *v25; // [esp+1Ch] [ebp-78h] BYREF
   void *v26; // [esp+20h] [ebp-74h] BYREF
-  void *v27; // [esp+24h] [ebp-70h] BYREF
-  _BYTE v28[108]; // [esp+28h] [ebp-6Ch] BYREF
 
   bool v4 = String::Length(a1) == 0; /*0x77e913*/
   v5 = a1; /*0x77e915*/
@@ -2537,7 +2533,7 @@ LABEL_16:
       WideString::Assign((wchar_t **)&v25, *(wchar_t **)(Game_PlayerInfoArray + 4 * v12)); /*0x77e9e9*/
       ToWideStringCharAlt(&i, (const wchar_t **)&v25); /*0x77e9f6*/
       DeleteAndZero::Alt(&v25); /*0x77e9ff*/
-      v13 = String::ToLowerCopy((const char **)&i, (char **)&v27); /*0x77ea12*/
+      void * v27 = String::ToLowerCopy((const char **)&i, (char **)&v27); /*0x77ea12*/
       bool v14 = String::Compare((const char **)v13, (const char **)&v26); /*0x77ea22*/
       DeleteAndZero(&v27); /*0x77ea24*/
       if ( v14 ) /*0x77ea2f*/
@@ -2560,6 +2556,7 @@ LABEL_21:
   _DWORD *v18; // ebp
         int v16 = 0; /*0x77eaac*/
         v25 = 0; /*0x77eab2*/
+  _BYTE v28[108]; // [esp+28h] [ebp-6Ch] BYREF
         memset(v28, 0, sizeof(v28)); /*0x77eaba*/
         signed int v17 = 0; /*0x77eabc*/
         for ( i = 0; ; v16 = (int)i ) /*0x77eabe*/
@@ -2626,7 +2623,6 @@ void SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, 
   ObjectClass *v27; // [esp+14h] [ebp-10h] BYREF
   wchar_t *v28; // [esp+18h] [ebp-Ch] BYREF
   SkirmishDialog *v29; // [esp+1Ch] [ebp-8h]
-  int v30; // [esp+20h] [ebp-4h] BYREF
   v29 = (SkirmishDialog *)aP1; /*0x77ed0b*/
   int v5 = -1; /*0x77ed10*/
   String::ToLowerCopy((const char **)aP0, (ObjectClass *)&v27); /*0x77ed13*/
@@ -2637,7 +2633,7 @@ void SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, 
     WideString::Assign(&v28, (CampaignScore *)v7->GameMode[0]); /*0x77ed26*/
     ToWideStringCharAlt(&v26, (const wchar_t **)&v28); /*0x77ed33*/
     DeleteAndZero::Alt((void **)&v28); /*0x77ed3c*/
-    v8 = (ObjectClass *)String::ToLowerCopy((const char **)&v26, (ObjectClass *)&v30); /*0x77ed4a*/
+    int v30 = (ObjectClass *)String::ToLowerCopy((const char **)&v26, (ObjectClass *)&v30); /*0x77ed4a*/
     bool v9 = String::Compare((const char **)&v27, (const char **)v8); /*0x77ed5d*/
     DeleteAndZero((int)&v30); /*0x77ed5f*/
     if ( v9 ) /*0x77ed66*/
@@ -2733,9 +2729,6 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *v8; // ebx
-  void *v9; // eax
-  int v10; // ebp
-  void *v11; // eax
   char *v12; // ecx
   int v13; // [esp+Ch] [ebp-8h]
 
@@ -2758,7 +2751,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
       v7 = 10; /*0x77eff6*/
     v8 = (char *)__2_YAPAXI_Z(4 * v7); /*0x77f00a*/
     memset(v8, 0, 4 * ((unsigned int)(4 * v7) >> 2)); /*0x77f018*/
-    v9 = g_WOL_RequestFlags; /*0x77f021*/
+    void * v9 = g_WOL_RequestFlags; /*0x77f021*/
     if ( g_WOL_RequestFlags ) /*0x77f028*/
     {
       qmemcpy(v8, g_WOL_RequestFlags, 4 * g_WOL_RequestState); /*0x77f034*/
@@ -2772,12 +2765,12 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
   }
   if ( v5 >= v7 ) /*0x77f063*/
   {
-    v10 = 2 * v5; /*0x77f065*/
+    int v10 = 2 * v5; /*0x77f065*/
     if ( 2 * v5 < 10 ) /*0x77f06b*/
       v10 = 10; /*0x77f06d*/
     v8 = (char *)__2_YAPAXI_Z(4 * v10); /*0x77f081*/
     memset(v8, 0, 4 * ((unsigned int)(4 * v10) >> 2)); /*0x77f08f*/
-    v11 = g_WOL_RequestFlags; /*0x77f098*/
+    void * v11 = g_WOL_RequestFlags; /*0x77f098*/
     if ( g_WOL_RequestFlags ) /*0x77f09f*/
     {
       qmemcpy(v8, g_WOL_RequestFlags, 4 * g_WOL_RequestState); /*0x77f0ab*/

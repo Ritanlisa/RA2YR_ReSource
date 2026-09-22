@@ -10,8 +10,6 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // ecx
-  unsigned int v9; // eax
-  _DWORD *v10; // eax
   ObjectClass *aP0a; // [esp+14h] [ebp+4h]
 
   int v3 = SHIWORD(aP0->field_0); /*0x5862d0*/
@@ -33,8 +31,9 @@ LABEL_9:
   HIWORD(aP0a) = v5; /*0x5862f0*/
   while ( 1 ) /*0x5862fb*/
   {
-    v9 = ((__int16)v5 << 9) + (__int16)v8; /*0x5862fb*/
+    unsigned int v9 = ((__int16)v5 << 9) + (__int16)v8; /*0x5862fb*/
     LOWORD(aP0a) = v8; /*0x5862fd*/
+  _DWORD *v10; // eax
     if ( v9 >= 0x40000 || (v10 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v9)) == 0 ) /*0x586311*/
     {
       g_Map_GlobalCellIndex = (IUnknown *)aP0a; /*0x586317*/

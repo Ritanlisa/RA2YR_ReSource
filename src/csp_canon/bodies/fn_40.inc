@@ -880,7 +880,7 @@ namespace ra2 { namespace game { int AudioController::Init() {
 void SetAudioSource(AudioMixer * aP0, unsigned int * a1, int a3)
 {
 {
-    if ( (char *)aP0->AudioMixer_field_0C == &DataGlobal_87C374.__pad_14B0[2672] )
+    if ( (char *)aP0->AudioMixer_field_0C == &DataGlobal_87C374[7968] )
   {
     aP0->AudioMixer_field_00 = (int)a1;
     aP0->AudioMixer_field_08 = a3;
@@ -1045,10 +1045,10 @@ int * sub_406670(void * a1, int a2)
     int *v5;
     int *v6;
     __int64 v7;
-    result = *(int **)&DataGlobal_87C374.__pad_14B0[2684];
-    if ( *(int *)&DataGlobal_87C374.__pad_14B0[2684] )
+    result = *(int **)&DataGlobal_87C374[7980];
+    if ( *(int *)&DataGlobal_87C374[7980] )
   {
-    result = (int *)AudioQueue::GetNext((int *)&DataGlobal_87C374.__pad_14B0[2604]);
+    result = (int *)AudioQueue::GetNext((int *)&DataGlobal_87C374[7900]);
     v5 = result;
     if ( result )
     {
@@ -2378,12 +2378,12 @@ LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectC
     void *v3;
     v3 = (void *)*(this + 1);
     *(void**)this = &vt_VectorClass_ObjectClass;
-    if ( v3 && *(int *)(this + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
     *(this + 1) = 0;
   }
-    *(int *)(this + 13) = 0;
+    this->IsAllocated = 0;
     *(this + 2) = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

@@ -453,10 +453,6 @@ int AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, cons
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v14; // eax
-  int v15; // ecx
-  int v16; // eax
-  int v17; // eax
-  int v18; // edx
   UINT v19; // eax
 
   _BYTE * v9 = AudioQueue::AllocBuffer((_DWORD *)this, aP5); /*0x7b23c4*/
@@ -485,14 +481,15 @@ int AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, cons
   }
   else
   {
-    v15 = *(_DWORD *)(this + 40); /*0x7b2462*/
+    int v15 = *(_DWORD *)(this + 40); /*0x7b2462*/
     if ( *(_DWORD *)(this + 48) < v15 /*0x7b248a*/
       || (*(_BYTE *)(this + 45) || !v15)
+  int v16; // eax
       && (v16 = *(_DWORD *)(this + 52), v16 > 0)
       && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 32) + 8))(this + 32, v15 + v16, 0) )
     {
-      v17 = *(_DWORD *)(this + 48); /*0x7b2491*/
-      v18 = *(_DWORD *)(this + 36); /*0x7b2494*/
+      int v17 = *(_DWORD *)(this + 48); /*0x7b2491*/
+      int v18 = *(_DWORD *)(this + 36); /*0x7b2494*/
       *(_DWORD *)(this + 48) = v17 + 1; /*0x7b249a*/
       *(_DWORD *)(v18 + 4 * v17) = v9; /*0x7b249d*/
     }

@@ -43,9 +43,6 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
   int v28; // [esp+30h] [ebp-4Ch]
   __int64 lParam; // [esp+34h] [ebp-48h]
   struct tagRECT rc; // [esp+3Ch] [ebp-40h] BYREF
-  _DWORD v31[4]; // [esp+4Ch] [ebp-30h] BYREF
-  int v32[4]; // [esp+5Ch] [ebp-20h] BYREF
-  _DWORD v33[4]; // [esp+6Ch] [ebp-10h] BYREF
 
   Debug::Log(); /*0x560c00*/
   lParam = *(_QWORD *)&stru_89E138[8044]; /*0x560c13*/
@@ -129,11 +126,14 @@ LABEL_19:
       Debug::Log(); /*0x560f09*/
       *(_DWORD *)&stru_87C374[44948] = DSurface::CreatePrimary(0); /*0x560f18*/
     }
+  int v32[4]; // [esp+5Ch] [ebp-20h] BYREF
     Viewport = (ObjectClass *)Display::GetViewport(v32); /*0x560fa1*/
     rc.left = 0; /*0x560fa3*/
     rc.top = 0; /*0x560fa8*/
     v8 = *(ObjectClass **)Viewport->__pad_0; /*0x560fac*/
+  _DWORD v31[4]; // [esp+4Ch] [ebp-30h] BYREF
     v31[0] = 0; /*0x560fae*/
+  _DWORD v33[4]; // [esp+6Ch] [ebp-10h] BYREF
     v33[0] = v8; /*0x560fb2*/
     v9 = *(ObjectClass **)&Viewport->__pad_0[4]; /*0x560fbc*/
     rc.right = 168; /*0x560fbf*/

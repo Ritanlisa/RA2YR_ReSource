@@ -54,7 +54,6 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   int v15; // [esp+20h] [ebp-1Ch]
   void **v16; // [esp+24h] [ebp-18h] BYREF
   void *v17; // [esp+28h] [ebp-14h]
-  int v18; // [esp+2Ch] [ebp-10h]
   char v19; // [esp+31h] [ebp-Bh]
   int v20; // [esp+34h] [ebp-8h]
   int v21; // [esp+38h] [ebp-4h]
@@ -122,6 +121,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
       }
       else
       {
+  int v18; // [esp+2Ch] [ebp-10h]
         if ( v20 >= v18 /*0x4d00ab*/
           && (!v19 && v18
            || v21 <= 0

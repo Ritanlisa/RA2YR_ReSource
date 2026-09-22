@@ -300,11 +300,6 @@ unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
 {
   _DWORD *v3; // esi
   int v4; // ebp
-  int v5; // edi
-  int v6; // ecx
-  int v7; // eax
-  int v8; // eax
-  int v9; // edx
   int v13; // [esp+14h] [ebp-4h]
 
   _DWORD * v2 = __2_YAPAXI_Z(0x18u); /*0x731ec0*/
@@ -329,17 +324,18 @@ unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
     return v3; /*0x731f62*/
   do /*0x731f56*/
   {
-    v5 = *((_DWORD *)g_TechnoClass_Count + v4); /*0x731f0a*/
+    int v5 = *((_DWORD *)g_TechnoClass_Count + v4); /*0x731f0a*/
     if ( a1(v5, a2) ) /*0x731f0f*/
     {
-      v6 = v3[2]; /*0x731f17*/
+      int v6 = v3[2]; /*0x731f17*/
       if ( v3[4] < v6 /*0x731f39*/
         || (*((_BYTE *)v3 + 13) || !v6)
+  int v7; // eax
         && (v7 = v3[5], v7 > 0)
         && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v6 + v7, 0) )
       {
-        v8 = v3[4]; /*0x731f40*/
-        v9 = v3[1]; /*0x731f43*/
+        int v8 = v3[4]; /*0x731f40*/
+        int v9 = v3[1]; /*0x731f43*/
         v3[4] = v8 + 1; /*0x731f49*/
         *(_DWORD *)(v9 + 4 * v8) = v5; /*0x731f4c*/
       }
@@ -361,10 +357,6 @@ unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, in
   _DWORD *v3; // esi
   int v4; // ebp
   int CoordData; // edi
-  int v6; // ecx
-  int v7; // eax
-  int v8; // eax
-  int v9; // edx
   int Height; // [esp+18h] [ebp-4h]
 
   _DWORD * v2 = __2_YAPAXI_Z(0x18u); /*0x731f80*/
@@ -392,14 +384,15 @@ unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, in
     CoordData = GetCoordDataMap(v4); /*0x731fd3*/
     if ( CoordData && (*(_BYTE *)(CoordData + 20) & 1) != 0 && a1(CoordData, a2) ) /*0x731fea*/
     {
-      v6 = v3[2]; /*0x731ff2*/
+      int v6 = v3[2]; /*0x731ff2*/
       if ( v3[4] < v6 /*0x732014*/
         || (*((_BYTE *)v3 + 13) || !v6)
+  int v7; // eax
         && (v7 = v3[5], v7 > 0)
         && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v6 + v7, 0) )
       {
-        v8 = v3[4]; /*0x73201b*/
-        v9 = v3[1]; /*0x73201e*/
+        int v8 = v3[4]; /*0x73201b*/
+        int v9 = v3[1]; /*0x73201e*/
         v3[4] = v8 + 1; /*0x732024*/
         *(_DWORD *)(v9 + 4 * v8) = CoordData; /*0x732027*/
       }
@@ -440,19 +433,12 @@ void SelectAllOfType()
 {
   int result; // eax
   _DWORD *v5; // ebx
-  _DWORD *v6; // eax
-  _DWORD *v7; // ebp
   int HeightMap; // ebx
   int i; // esi
   int CoordDataMap; // edi
-  int v11; // edi
-  int v12; // esi
-  _DWORD *v13; // eax
-  int v14; // edi
   int j; // esi
   int v16; // ebp
   int k; // edi
-  int v18; // esi
   int v19; // eax
   wchar_t *v20; // [esp-4h] [ebp-214h]
   wchar_t *StringCSF; // [esp-4h] [ebp-214h]
@@ -499,8 +485,8 @@ void SelectAllOfType()
   }
   else
   {
-    v6 = __2_YAPAXI_Z(0x18u); /*0x7329fc*/
-    v7 = v6; /*0x732a01*/
+    _DWORD * v6 = __2_YAPAXI_Z(0x18u); /*0x7329fc*/
+    _DWORD * v7 = v6; /*0x732a01*/
     if ( v6 ) /*0x732a08*/
     {
       EventClass::resetEvent(v6, 0, 0); /*0x732a0e*/
@@ -523,7 +509,7 @@ void SelectAllOfType()
           DynamicVector::AddItem(v7, &v22); /*0x732a6c*/
       }
     }
-    v11 = 0; /*0x732a79*/
+    int v11 = 0; /*0x732a79*/
     v5 = v7; /*0x732a7d*/
     v22 = v7[4]; /*0x732a7f*/
     if ( v22 <= 0 ) /*0x732a83*/
@@ -535,7 +521,7 @@ LABEL_25:
     {
       while ( 1 ) /*0x732a8c*/
       {
-        v12 = *(_DWORD *)(v7[1] + 4 * v11); /*0x732a8c*/
+        int v12 = *(_DWORD *)(v7[1] + 4 * v11); /*0x732a8c*/
         if ( (unsigned __int8)IDTechnoClassMatches(v12, v23) ) /*0x732a91*/
         {
           if ( !*(_BYTE *)(v12 + 131) ) /*0x732a9a*/
@@ -549,12 +535,12 @@ LABEL_25:
     }
     if ( v7 ) /*0x732ac1*/
       (*(void (__thiscall **)(_DWORD *, int))*v7)(v7, 1); /*0x732aca*/
-    v13 = __2_YAPAXI_Z(0x18u); /*0x732ace*/
+    _DWORD * v13 = __2_YAPAXI_Z(0x18u); /*0x732ace*/
     if ( v13 ) /*0x732ad8*/
       v5 = DynamicVector::Constructor_Techno(v13, 0, 0); /*0x732ae5*/
     else
       v5 = 0; /*0x732ae9*/
-    v14 = g_SidebarState; /*0x732aeb*/
+    int v14 = g_SidebarState; /*0x732aeb*/
     for ( j = 0; j < v14; ++j ) /*0x732af5*/
     {
       v22 = *((_DWORD *)g_TechnoClass_Count + j); /*0x732b01*/
@@ -566,7 +552,7 @@ LABEL_36:
   v16 = v5[4]; /*0x732b1f*/
   for ( k = 0; k < v16; ++k ) /*0x732b26*/
   {
-    v18 = *(_DWORD *)(v5[1] + 4 * k); /*0x732b2b*/
+    int v18 = *(_DWORD *)(v5[1] + 4 * k); /*0x732b2b*/
     if ( (unsigned __int8)IDTechnoClassMatches(v18, v23) ) /*0x732b34*/
       (*(void (__thiscall **)(int))(*(_DWORD *)v18 + 332))(v18); /*0x732b41*/
   }
@@ -606,17 +592,9 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
   int HeightMap; // eax
   _DWORD *v4; // esi
-  int v5; // ebx
-  int v6; // ebp
-  int v7; // edi
-  int v8; // ecx
-  int v9; // edx
-  _DWORD *v10; // eax
-  int v11; // ebx
   int i; // edi
   int v13; // ebp
   int j; // edi
-  int v17; // [esp+18h] [ebp-8h] BYREF
   int (__fastcall *v18)(_DWORD, int); // [esp+1Ch] [ebp-4h]
 
   v18 = a2; /*0x732ffc*/
@@ -624,7 +602,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
   {
     HeightMap = (int)__2_YAPAXI_Z(0x18u); /*0x73300e*/
     v4 = (_DWORD *)HeightMap; /*0x733013*/
-    v5 = 0; /*0x733015*/
+    int v5 = 0; /*0x733015*/
     if ( HeightMap ) /*0x73301c*/
     {
       LOBYTE(HeightMap) = (unsigned __int8)EventClass::resetEvent((_DWORD *)HeightMap, 0, 0); /*0x733022*/
@@ -636,16 +614,16 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
     {
       v4 = 0; /*0x733039*/
     }
-    v6 = g_SidebarState; /*0x73303b*/
+    int v6 = g_SidebarState; /*0x73303b*/
     if ( g_SidebarState > 0 ) /*0x733043*/
     {
       do /*0x73309e*/
       {
-        v7 = *((_DWORD *)g_TechnoClass_Count + v5); /*0x733052*/
+        int v7 = *((_DWORD *)g_TechnoClass_Count + v5); /*0x733052*/
         LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(v7, a1); /*0x733057*/
         if ( (_BYTE)HeightMap ) /*0x73305e*/
         {
-          v8 = v4[2]; /*0x733060*/
+          int v8 = v4[2]; /*0x733060*/
           if ( v4[4] < v8 /*0x73308a*/
             || ((LOBYTE(HeightMap) = *((_BYTE *)v4 + 13), (_BYTE)HeightMap) || !v8)
             && (HeightMap = v4[5], HeightMap > 0)
@@ -653,7 +631,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
                 (_BYTE)HeightMap) )
           {
             HeightMap = v4[4]; /*0x73308c*/
-            v9 = v4[1]; /*0x73308f*/
+            int v9 = v4[1]; /*0x73308f*/
             v4[4] = HeightMap + 1; /*0x733095*/
             *(_DWORD *)(v9 + 4 * HeightMap) = v7; /*0x733098*/
           }
@@ -665,7 +643,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
   }
   else
   {
-    v10 = __2_YAPAXI_Z(0x18u); /*0x7330a5*/
+    _DWORD * v10 = __2_YAPAXI_Z(0x18u); /*0x7330a5*/
     v4 = v10; /*0x7330aa*/
     if ( v10 ) /*0x7330b1*/
     {
@@ -679,7 +657,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
       v4 = 0; /*0x7330d4*/
     }
     HeightMap = GetHeightMap(g_TacticalClass_Instance); /*0x7330dc*/
-    v11 = HeightMap; /*0x7330e1*/
+    int v11 = HeightMap; /*0x7330e1*/
     for ( i = 0; i < v11; ++i ) /*0x7330e7*/
     {
       HeightMap = GetCoordDataMap(i); /*0x7330f0*/
@@ -687,7 +665,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
       {
         if ( (*(_BYTE *)(HeightMap + 20) & 1) != 0 ) /*0x733103*/
         {
-          v17 = HeightMap; /*0x73310b*/
+          int v17 = HeightMap; /*0x73310b*/
           LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(HeightMap, a1); /*0x73310f*/
           if ( (_BYTE)HeightMap ) /*0x733116*/
             LOBYTE(HeightMap) = DynamicVector::AddItem(v4, &v17); /*0x73311f*/
@@ -1290,16 +1268,7 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
 {
   _DWORD *v3; // edi
   int v4; // eax
-  int v5; // ecx
-  int v6; // eax
-  int v7; // edx
-  const char *v8; // ebp
-  int v9; // ecx
-  int v10; // eax
-  int v11; // eax
-  int v12; // edx
   const char **v14; // [esp+Ch] [ebp-14h]
-  int v15; // [esp+10h] [ebp-10h]
   int v16; // [esp+14h] [ebp-Ch]
   int v18; // [esp+1Ch] [ebp-4h]
   E4Recv_733CD0 *v1 = this; /*0x733cd6*/
@@ -1326,11 +1295,11 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
     return v3; /*0x733dfa*/
   while ( 1 ) /*0x733d2e*/
   {
-    v5 = *(_DWORD *)(v1[1] + 4 * v4); /*0x733d2e*/
-    v6 = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 136))(v5); /*0x733d33*/
-    v7 = v3[4]; /*0x733d39*/
-    v8 = (const char *)(v6 + 36); /*0x733d3e*/
-    v15 = 0; /*0x733d43*/
+    int v5 = *(_DWORD *)(v1[1] + 4 * v4); /*0x733d2e*/
+    int v6 = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 136))(v5); /*0x733d33*/
+    int v7 = v3[4]; /*0x733d39*/
+    const char * v8 = (const char *)(v6 + 36); /*0x733d3e*/
+    int v15 = 0; /*0x733d43*/
     if ( v7 <= 0 ) /*0x733d47*/
       goto LABEL_13; /*0x733d47*/
     v14 = (const char **)v3[1]; /*0x733d4c*/
@@ -1344,14 +1313,15 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
     if ( v15 == -1 ) /*0x733da4*/
     {
 LABEL_13:
-      v9 = v3[2]; /*0x733da6*/
+      int v9 = v3[2]; /*0x733da6*/
       if ( v7 < v9 /*0x733dc5*/
         || (*((_BYTE *)v3 + 13) || !v9)
+  int v10; // eax
         && (v10 = v3[5], v10 > 0)
         && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v9 + v10, 0) )
       {
-        v11 = v3[4]; /*0x733dcc*/
-        v12 = v3[1]; /*0x733dcf*/
+        int v11 = v3[4]; /*0x733dcc*/
+        int v12 = v3[1]; /*0x733dcf*/
         v3[4] = v11 + 1; /*0x733dd5*/
         *(_DWORD *)(v12 + 4 * v11) = v8; /*0x733dd8*/
       }
@@ -1373,31 +1343,12 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
 {
   int v6; // ebx
   int v7; // ebp
-  int v8; // ecx
   _DWORD *v9; // eax
   _DWORD *v10; // esi
   _DWORD *v11; // ebx
   int v12; // esi
-  int v13; // ecx
-  int v14; // eax
-  int v15; // eax
-  int v16; // edx
-  _DWORD *v17; // ebp
-  const char *v18; // edi
-  int v19; // eax
-  int v20; // esi
-  int v21; // edi
-  int v22; // ebx
-  int v23; // eax
-  int v24; // eax
-  int v25; // ecx
   int v26; // ebp
   int i; // edi
-  int v28; // eax
-  int v29; // edx
-  int v30; // edi
-  int v31; // eax
-  int *v32; // esi
   const char *v33; // edi
   char *v34; // ebp
   _DWORD *v36; // [esp+10h] [ebp-24h]
@@ -1407,7 +1358,6 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
   int v40; // [esp+20h] [ebp-14h] BYREF
   const char *v41; // [esp+24h] [ebp-10h]
   int v42; // [esp+28h] [ebp-Ch]
-  int v43; // [esp+2Ch] [ebp-8h]
   int v44; // [esp+30h] [ebp-4h]
 
   int v4 = a1; /*0x733e17*/
@@ -1429,7 +1379,7 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
   {
     do /*0x733e81*/
     {
-      v8 = *(_DWORD *)(*(_DWORD *)(v4 + 4) + 4 * v5); /*0x733e52*/
+      int v8 = *(_DWORD *)(*(_DWORD *)(v4 + 4) + 4 * v5); /*0x733e52*/
       v40 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 136))(v8) + 36; /*0x733e64*/
       if ( SelectFactionThemeMusic_Helper(v6, v40) == -1 ) /*0x733e70*/
         SelectFactionThemeMusic_Helper_734390(&v40); /*0x733e79*/
@@ -1459,14 +1409,15 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
   {
     do /*0x733f09*/
     {
-      v13 = v11[2]; /*0x733ec9*/
+      int v13 = v11[2]; /*0x733ec9*/
       if ( v11[4] < v13 /*0x733eee*/
         || (*((_BYTE *)v11 + 13) || !v13)
+  int v14; // eax
         && (v14 = v11[5], v14 > 0)
         && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v11 + 8))(v11, v13 + v14, 0) )
       {
-        v15 = v11[4]; /*0x733ef5*/
-        v16 = v11[1]; /*0x733ef8*/
+        int v15 = v11[4]; /*0x733ef5*/
+        int v16 = v11[1]; /*0x733ef8*/
         v11[4] = v15 + 1; /*0x733efe*/
         *(_DWORD *)(v16 + 4 * v15) = 0; /*0x733f01*/
       }
@@ -1480,10 +1431,11 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
   {
     while ( 1 ) /*0x733f2f*/
     {
-      v17 = *(_DWORD **)(*(_DWORD *)(v4 + 4) + 4 * v39); /*0x733f2f*/
-      v18 = (const char *)((*(int (__thiscall **)(_DWORD *))(*v17 + 136))(v17) + 36); /*0x733f43*/
-      v19 = 0; /*0x733f46*/
-      v43 = *(_DWORD *)(v37 + 16); /*0x733f4d*/
+  int v20; // esi
+      _DWORD * v17 = *(_DWORD **)(*(_DWORD *)(v4 + 4) + 4 * v39); /*0x733f2f*/
+      const char * v18 = (const char *)((*(int (__thiscall **)(_DWORD *))(*v17 + 136))(v17) + 36); /*0x733f43*/
+      int v19 = 0; /*0x733f46*/
+      int v43 = *(_DWORD *)(v37 + 16); /*0x733f4d*/
       if ( v43 <= 0 ) /*0x733f51*/
       {
 LABEL_27:
@@ -1505,12 +1457,12 @@ LABEL_27:
         v11 = v36; /*0x734046*/
         v20 = v19; /*0x73404a*/
       }
-      v21 = v17[135]; /*0x733fb4*/
-      v22 = *(_DWORD *)(v11[1] + 4 * v20); /*0x733fbc*/
-      v23 = (*(int (__thiscall **)(_DWORD *))(*v17 + 136))(v17); /*0x733fbf*/
-      v24 = v22 + (*(int (__thiscall **)(int, int))(*(_DWORD *)v23 + 132))(v23, v21); /*0x733fd0*/
+      int v21 = v17[135]; /*0x733fb4*/
+      int v22 = *(_DWORD *)(v11[1] + 4 * v20); /*0x733fbc*/
+      int v23 = (*(int (__thiscall **)(_DWORD *))(*v17 + 136))(v17); /*0x733fbf*/
+      int v24 = v22 + (*(int (__thiscall **)(int, int))(*(_DWORD *)v23 + 132))(v23, v21); /*0x733fd0*/
       v11 = v36; /*0x733fd2*/
-      v25 = v44; /*0x733fdd*/
+      int v25 = v44; /*0x733fdd*/
       *(_DWORD *)(v36[1] + 4 * v20) = v24; /*0x733fe1*/
       if ( ++v39 >= v25 ) /*0x733fef*/
         break; /*0x733fef*/
@@ -1525,7 +1477,7 @@ LABEL_27:
   {
     if ( strcmp(v41, *(const char **)(*(_DWORD *)(v37 + 4) + 4 * i)) ) /*0x734028*/
     {
-      v28 = *(_DWORD *)(v11[1] + 4 * i); /*0x734061*/
+      int v28 = *(_DWORD *)(v11[1] + 4 * i); /*0x734061*/
       if ( v28 < a3 && v28 > *a4 ) /*0x73406e*/
       {
         *a4 = v28; /*0x734070*/
@@ -1536,12 +1488,12 @@ LABEL_27:
   if ( !*a4 ) /*0x734081*/
   {
 LABEL_39:
-    v29 = 0; /*0x73408a*/
-    v30 = -1; /*0x73408c*/
-    v31 = 0; /*0x73408f*/
+    int v29 = 0; /*0x73408a*/
+    int v30 = -1; /*0x73408c*/
+    int v31 = 0; /*0x73408f*/
     if ( v40 > 0 ) /*0x734093*/
     {
-      v32 = (int *)v11[1]; /*0x734095*/
+      int * v32 = (int *)v11[1]; /*0x734095*/
       do /*0x7340a8*/
       {
         if ( *v32 > v29 ) /*0x73409c*/
@@ -1667,7 +1619,7 @@ int sub_734FC0()
 
 // 0x735120
 namespace gamemd {
-void * CharToWideString(unsigned char * a1)
+void * * CharToWideString(unsigned char * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

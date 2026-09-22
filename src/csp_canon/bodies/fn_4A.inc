@@ -335,9 +335,9 @@ namespace gamemd { int CellClass::DestroyOverlay() {
       if ( v3 == -1 )
         return 0;
       v4 = *(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * v3];
-      if ( v4 != *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9108] + 248)
-        && v4 != *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9108] + 252)
-        && v4 != *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4.__pad_5568[9108] + 256) )
+      if ( v4 != *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 248)
+        && v4 != *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 252)
+        && v4 != *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 256) )
       {
         return 0;
       }
@@ -387,7 +387,7 @@ namespace gamemd { int CellClass::DestroyOverlay() {
         }
       }
       v20 = v10;
-      Cell::CreateCrater((int)v14, v10 - *(_DWORD *)&DataGlobal_87F8E4.__pad_5568[8536], (int)v11, v12, 0);
+      Cell::CreateCrater((int)v14, v10 - *(_DWORD *)&DataGlobal_87F8E4[30400], (int)v11, v12, 0);
       v2->ambientSoundController[2] = -1;
       BYTE2(v2[1].estimatedHealth) = 0;
       return 1;
@@ -790,10 +790,10 @@ HRSRC FindResource(unsigned short a1, const CHAR * a2)
 {
 {
     HRSRC result;
-    result = FindResourceA(*(HMODULE *)&g_CellDirectionOffsets.__pad_2B8[44], (LPCSTR)a1, a2);
+    result = FindResourceA(*(HMODULE *)&g_CellDirectionOffsets[740], (LPCSTR)a1, a2);
     if ( result )
   {
-    result = (HRSRC)LoadResource(*(HMODULE *)&g_CellDirectionOffsets.__pad_2B8[44], result);
+    result = (HRSRC)LoadResource(*(HMODULE *)&g_CellDirectionOffsets[740], result);
     if ( result )
     return (HRSRC)LockResource(result);
   }
@@ -997,16 +997,16 @@ LPDIRECTDRAW Surface::CreateSurfacePalette()
     char *v7;
     char v8;
     char v9;
-    if ( this != (AbstractClass *)&DataGlobal_89E138.__pad_14B0[936] )
-    memcpy(&DataGlobal_89E138.__pad_14B0[936], this, 0x300u);
-    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[2732];
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2732] )
+    if ( this != (AbstractClass *)&DataGlobal_89E138[6232] )
+    memcpy(&DataGlobal_89E138[6232], this, 0x300u);
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138[8028];
+    if ( *(int *)&DataGlobal_89E138[8028] )
   {
-    v3 = *(int *)&DataGlobal_89E138.__pad_14B0[2740];
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2740] )
+    v3 = *(int *)&DataGlobal_89E138[8036];
+    if ( *(int *)&DataGlobal_89E138[8036] )
     {
     v4 = (BombClass *)this;
-    v5 = &DataGlobal_89E138.__pad_14B0[1709];
+    v5 = &DataGlobal_89E138[7005];
     do
       {
     v6 = v4->__pad_0[0];
@@ -1020,16 +1020,16 @@ LPDIRECTDRAW Surface::CreateSurfacePalette()
     *(v5 - 3) = v8;
       }
     while ( (int)v5 < 9044117 );
-    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[1704];
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[1704] )
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138[7000];
+    if ( *(int *)&DataGlobal_89E138[7000] )
       {
-    if ( !DataGlobal_89E138.__pad_14B0[2736] )
+    if ( !DataGlobal_89E138[8032] )
         {
-    (*(void (__stdcall **)(int, int))(*(int *)(v3) + 124))(v3, *(int *)&DataGlobal_89E138.__pad_14B0[1704]);
-    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[1704];
-    DataGlobal_89E138.__pad_14B0[2736] = 1;
+    (*(void (__stdcall **)(int, int))(*(int *)(v3) + 124))(v3, *(int *)&DataGlobal_89E138[7000]);
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138[7000];
+    DataGlobal_89E138[8032] = 1;
         }
-    return ((LPDIRECTDRAW (__stdcall *)(LPDIRECTDRAW, int, int, int, char *))result->lpVtbl->CreateSurface)( result, 0, 0, 256, &DataGlobal_89E138.__pad_14B0[1708]);
+    return ((LPDIRECTDRAW (__stdcall *)(LPDIRECTDRAW, int, int, int, char *))result->lpVtbl->CreateSurface)( result, 0, 0, 256, &DataGlobal_89E138[7004]);
       }
     }
   }
@@ -1186,7 +1186,7 @@ unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int
     v12 = Color::ConvertToRGB((unsigned char *)(a6 + 776), (int)&a6);
     LOWORD(v16) = *(short *)v12;
     BYTE2(v16) = *(char *)(v12 + 2);
-    v13 = RenderTextLabelWordWrap( &v16, (const wchar_t *)aP1, a3, (int *)a4, (int *)a5, ((unsigned char)v16 >> DataGlobal_89E138.__pad_14B0[6124] << DataGlobal_89E138.__pad_14B0[6120]) | (BYTE1(v16) >> DataGlobal_89E138.__pad_14B0[6140] << DataGlobal_89E138.__pad_14B0[6136]) | (BYTE2(v16) >> DataGlobal_89E138.__pad_14B0[6132] << DataGlobal_89E138.__pad_14B0[6128]), a7, a8, a9, (unsigned int *)a10);
+    v13 = RenderTextLabelWordWrap( &v16, (const wchar_t *)aP1, a3, (int *)a4, (int *)a5, ((unsigned char)v16 >> DataGlobal_89E138[11420] << DataGlobal_89E138[11416]) | (BYTE1(v16) >> DataGlobal_89E138[11436] << DataGlobal_89E138[11432]) | (BYTE2(v16) >> DataGlobal_89E138[11428] << DataGlobal_89E138[11424]), a7, a8, a9, (unsigned int *)a10);
     aP0->field_0 = *v13;
     v14 = v13[1];
     aP0->field_4 = v14;
@@ -1210,9 +1210,9 @@ int DiskLaserClass::Write(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_DiskLaserClass;
     *(int *)&aP0->__pad_0[12] = &vt_DiskLaserClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[8]);
   }
     return (int)Prefix_0->__pad_0;
 }
@@ -1369,13 +1369,13 @@ bool DisplayClass::SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3)
     if ( aP1->field_0 )
   {
     if ( !a3 )
-    return DisplayClass::GetCoordDelta(*(int **)&DataGlobal_87C374.__pad_579C[22548], (AbstractClass *)aP0) != -1;
+    return DisplayClass::GetCoordDelta(*(int **)&DataGlobal_87C374[44976], (AbstractClass *)aP0) != -1;
   }
     else if ( !a3 )
   {
     return 0;
   }
-    DisplayClass::ScrollTacticalView(*(int **)&DataGlobal_87C374.__pad_579C[22548], aP0, (IUnknown *)aP1->field_0);
+    DisplayClass::ScrollTacticalView(*(int **)&DataGlobal_87C374[44976], aP0, (IUnknown *)aP1->field_0);
     return 1;
 }
 }
@@ -1539,7 +1539,7 @@ namespace gamemd { int CellClass::ProcessVisibility(void* a1) {
     v5->__pad_11C[5] = -2;
     v5->field_140 = v6;
     if ( (v5->__pad_11C[16] & 8) != 0 )
-    Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], v5);
+    Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4[31296], v5);
     for ( i = 0; i < 8; ++i )
     {
     v8 = i & 7;
@@ -1556,7 +1556,7 @@ namespace gamemd { int CellClass::ProcessVisibility(void* a1) {
         {
     v9->__pad_11C[5] = AdjacentPassableMask;
     v9->field_140 = v11 & 0xFFFFFFFC | 2;
-    Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], v9);
+    Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4[31296], v9);
         }
       }
     else
@@ -1591,7 +1591,7 @@ char MapClass::RevealCell(MouseClass * aP1)
     if ( (v5 & 8) != 0 )
     {
     *(int *)&v4->__pad_11C[16] = v5 & 0xFFFFFFE7;
-    Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+    Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4[31296], v4);
     for ( i = 0; i < 8; ++i )
       {
     v7 = i & 7;
@@ -1602,7 +1602,7 @@ char MapClass::RevealCell(MouseClass * aP1)
     if ( aP1 != (MouseClass *)v2->field_0 )
         {
     *(int *)&v4->__pad_11C[16] &= ~0x10u;
-    LOBYTE(v4) = Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+    LOBYTE(v4) = Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4[31296], v4);
         }
       }
     }
@@ -2195,7 +2195,7 @@ bool JumpjetLocomotionClass::StubReturnTrue_0(InfantryClass * aP0)
     if ( TimerClass::Active(*(int *)&aP0->__pad_0[8] + 904) )
     return 1;
     return (*(unsigned char (__stdcall **)(InfantryClass *))(*(int *)aP0->__pad_0 + 16))(aP0)
-    && (aP0->ambientSoundController[0] != *(int *)&DataGlobal_89E138.__pad_14B0[4520] || aP0->ambientSoundController[1] != *(int *)&DataGlobal_89E138.__pad_14B0[4524] || aP0->ambientSoundController[2] != *(int *)&DataGlobal_89E138.__pad_14B0[4528])
+    && (aP0->ambientSoundController[0] != *(int *)&DataGlobal_89E138[9816] || aP0->ambientSoundController[1] != *(int *)&DataGlobal_89E138[9820] || aP0->ambientSoundController[2] != *(int *)&DataGlobal_89E138[9824])
     && (*(int (__thiscall **)(int))(**(int **)&aP0->__pad_0[8] + 1336))(*(int *)&aP0->__pad_0[8]) > 0;
 }
 }
@@ -2271,15 +2271,15 @@ unsigned int * JumpjetLocomotionClass::ConvertCoordToCell(int arg0, unsigned int
     *(int *)(arg0 + 48) = a1;
     *(int *)(arg0 + 52) = v5;
     *(int *)(arg0 + 56) = v6;
-    if ( result != *(int **)&DataGlobal_89E138.__pad_14B0[4520] || v5 != *(int *)&DataGlobal_89E138.__pad_14B0[4524] || v6 != *(IUnknown **)&DataGlobal_89E138.__pad_14B0[4528] )
+    if ( result != *(int **)&DataGlobal_89E138[9816] || v5 != *(int *)&DataGlobal_89E138[9820] || v6 != *(IUnknown **)&DataGlobal_89E138[9824] )
           {
     a1 = result;
     aP1_4 = v5;
     aP3 = v6;
-    result = Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a1);
+    result = Coord::To_Cell(&DataGlobal_87C374[13428], (IUnknown *)&a1);
     if ( (result[80] & 0x100) != 0 )
             {
-    result = (int *)(*(int *)&DataGlobal_89E138.__pad_14B0[4572] + *(int *)(arg0 + 56));
+    result = (int *)(*(int *)&DataGlobal_89E138[9868] + *(int *)(arg0 + 56));
     *(int *)(arg0 + 56) = result;
             }
           }

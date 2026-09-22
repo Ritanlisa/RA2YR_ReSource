@@ -13,7 +13,6 @@ void sub_77E110()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v0; // eax
-  int v1; // esi
   if ( ppv ) /*0x77e117*/
   {
     (*(void (__stdcall **)(LPVOID, int))(*(_DWORD *)ppv + 124))(ppv, dword_B779BC); /*0x77e123*/
@@ -27,7 +26,7 @@ void sub_77E110()
   {
     if ( !Theme::IsPlaying((int)&g_BuildingTypeClass_Count) ) /*0x77e15a*/
       goto LABEL_5; /*0x77e15a*/
-    v1 = dword_A83D14; /*0x77e17d*/
+    int v1 = dword_A83D14; /*0x77e17d*/
     if ( dword_A83D14 == -1 ) /*0x77e186*/
       v1 = dword_A83D18; /*0x77e188*/
     v0 = StringList::Find(&g_BuildingTypeClass_Count, g_INI_Key_INTRO); /*0x77e198*/
@@ -149,12 +148,8 @@ void RunWOLMainLoop_Read()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BOOL v6; // esi
-  int v8; // [esp+1Ch] [ebp-38h]
-  int v9; // [esp+28h] [ebp-2Ch]
   int v10; // [esp+34h] [ebp-20h] BYREF
   char v11; // [esp+38h] [ebp-1Ch]
-  _DWORD v12[3]; // [esp+3Ch] [ebp-18h] BYREF
-  _DWORD v13[3]; // [esp+48h] [ebp-Ch] BYREF
 
   v10 = 0; /*0x798de9*/
   v11 = 0; /*0x798df1*/
@@ -163,7 +158,7 @@ void RunWOLMainLoop_Read()
   if ( g_UIPointerTable && strlen(g_WOL_ConnectFlag) && String::Length((const char **)&g_WebBrowser) ) /*0x798e27*/
   {
     int v2 = *(_DWORD *)g_UIPointerTable; /*0x798e3f*/
-    v8 = g_NetworkRematchState & 0xFFFF00; /*0x798e49*/
+    int v8 = g_NetworkRematchState & 0xFFFF00; /*0x798e49*/
     char * v3 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x798e4f*/
     (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(v2 + 20))( /*0x798e67*/
       g_UIPointerTable,
@@ -175,7 +170,7 @@ void RunWOLMainLoop_Read()
       0,
       0);
     int v4 = *(_DWORD *)g_UIPointerTable; /*0x798e7c*/
-    v9 = g_NetworkRematchState & 0xFFFF00; /*0x798e7e*/
+    int v9 = g_NetworkRematchState & 0xFFFF00; /*0x798e7e*/
     char * v5 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x798e84*/
     (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(v4 + 56))( /*0x798e9c*/
       g_UIPointerTable,
@@ -187,6 +182,7 @@ void RunWOLMainLoop_Read()
   RunWOLMainLoop_Read_Read(); /*0x798e9f*/
   if ( Flag::IsNot2(&v10) ) /*0x798ea8*/
   {
+  _DWORD v12[3]; // [esp+3Ch] [ebp-18h] BYREF
     SimpleDialogControl::Constructor(v12); /*0x798eb5*/
     v12[0] = &off_7F7624; /*0x798ece*/
     RunDialog(0x10Eu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))GameModeDlgProcMultiplayer, (LPARAM)v12); /*0x798ed2*/
@@ -197,6 +193,7 @@ void RunWOLMainLoop_Read()
   }
   else
   {
+  _DWORD v13[3]; // [esp+48h] [ebp-Ch] BYREF
     SimpleDialogControl::Constructor(v13); /*0x798f04*/
     v13[0] = &off_7F7624; /*0x798f1d*/
     RunDialog(0x11Cu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))Setup2DlgProcMultiplayer, (LPARAM)v13); /*0x798f21*/

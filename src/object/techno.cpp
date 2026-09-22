@@ -1160,21 +1160,11 @@ int TechnoClass::CreateUnit()
   char *ProductionTimeMult; // eax
   int i; // [esp+2Ch] [ebp-74h]
   int v117; // [esp+34h] [ebp-6Ch]
-  int v118; // [esp+38h] [ebp-68h] BYREF
   int v119; // [esp+3Ch] [ebp-64h] BYREF
   double v120; // [esp+40h] [ebp-60h] BYREF
-  float v121; // [esp+48h] [ebp-58h]
   int v122; // [esp+54h] [ebp-4Ch] BYREF
   int v123; // [esp+58h] [ebp-48h]
   int v124; // [esp+5Ch] [ebp-44h]
-  int v125; // [esp+60h] [ebp-40h]
-  int v126; // [esp+64h] [ebp-3Ch]
-  int v127; // [esp+6Ch] [ebp-34h]
-  int v128; // [esp+78h] [ebp-28h]
-  int v129; // [esp+7Ch] [ebp-24h]
-  int v130; // [esp+88h] [ebp-18h]
-  int v131; // [esp+8Ch] [ebp-14h]
-  char v132[16]; // [esp+90h] [ebp-10h] BYREF
 
   if ( !this->q198 && *(_DWORD *)(this->missionTimer + 760) != -1 )
   {
@@ -1238,7 +1228,7 @@ int TechnoClass::CreateUnit()
         if ( *(_DWORD *)(this->missionTimer + 772) )
         {
           v120 = this->locationY;
-          v121 = this->gattlingValue;
+          float v121 = this->gattlingValue;
           v22 = (void **)__2_YAPAXI_Z(456);
           if ( v22 )
           {
@@ -1341,10 +1331,10 @@ int TechnoClass::CreateUnit()
         int v38 = this->missionTimer;
         int v39 = 0;
         int v40 = 0;
-        v125 = 0;
+        int v125 = 0;
         char v41 = *(_BYTE *)(v38 + 856);
-        v126 = 0;
-        v127 = 0;
+        int v126 = 0;
+        int v127 = 0;
         if ( v41 && !v114 )
         {
           int v42 = *(_DWORD *)(v38 + 828);
@@ -1362,7 +1352,7 @@ int TechnoClass::CreateUnit()
                   int v44 = i & 7;
                   LOWORD(v117) = v122 / 256 + LOWORD(DataGlobal_87F7E8[v44 + 32680]);
                   HIWORD(v117) = v123 / 256 + HIWORD(DataGlobal_87F7E8[v44 + 32680]);
-                  v118 = v117;
+                  int v118 = v117;
                   _DWORD * v45 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v118);
                   if ( IsCoordValidMap((int)v45, 0) )
                   {
@@ -1381,13 +1371,14 @@ int TechnoClass::CreateUnit()
                           -1);
                       }
                       *((_BYTE *)v45 + 286) = Random::Range((_DWORD *)(DataGlobal_87F7E8[536210] + 536), 0, 2);
+  char v132[16]; // [esp+90h] [ebp-10h] BYREF
                       StartCoords = House::GetStartCoords((int)v45, v132);
                       int v49 = *StartCoords;
                       int v50 = StartCoords[1] - DataGlobal_87F7E8[7663];
                       int v51 = StartCoords[2];
                       int v52 = StartCoords[3];
-                      v130 = v51;
-                      v131 = v52;
+                      int v130 = v51;
+                      int v131 = v52;
                       if ( v40 <= 0 || v127 <= 0 )
                       {
                         v40 = v51;
@@ -1402,8 +1393,8 @@ int TechnoClass::CreateUnit()
                       {
                         int v53 = v125;
                         int v54 = v126;
-                        v129 = v127;
-                        v128 = v40;
+                        int v129 = v127;
+                        int v128 = v40;
                         if ( v125 > v49 )
                         {
                           v53 = v49;

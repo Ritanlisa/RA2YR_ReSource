@@ -876,7 +876,7 @@ void MPCooperative::Clone(HWND hDlg)
     int ResourceID2CSF;
     if ( hDlg )
   {
-    v3 = *(int *)&g_NetworkPlayerBuffer.__pad_430[24];
+    v3 = *(int *)&g_NetworkPlayerBuffer[1096];
     for ( i = 0; (int)i < v3; ++i )
     {
     ResourceID2CSF = GetResourceID2CSF(i);
@@ -2207,7 +2207,7 @@ char UnholyAlliance::Read()
 BOOL UnholyAlliance::Write(MPCooperative * aP0)
 {
 {
-    return HouseClass_Player.__pad_5568[8100] && ScenarioClass::MissionStubReturnZero2(aP0);
+    return HouseClass_Player[29964] && ScenarioClass::MissionStubReturnZero2(aP0);
 }
 }
 
@@ -2217,14 +2217,6 @@ char UnholyAlliance::Seek()
 {
     Bases = 1;
     return 1;
-}
-}
-
-// ==== BACKFILL 0x005CB6C0  VtableStub::5CB6C0  cls=VtableStub  sig=csp  renamed_refs=0  residual=- ====
-int VtableStub::5CB6C0()
-{
-{
-    *(void**)this = &vt_MSAnim;
 }
 }
 

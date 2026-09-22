@@ -181,7 +181,6 @@ void sub_6E4090(int a1, int a2, int a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // esi
-  _DWORD *v6; // ecx
   int v4 = 0; /*0x6e409b*/
   if ( g_BuildingProductionState <= 0 ) /*0x6e409f*/
     return 0; /*0x6e40e3*/
@@ -194,7 +193,7 @@ void sub_6E4090(int a1, int a2, int a3, int a4)
       {
         if ( !*(_BYTE *)(v5 + 129) ) /*0x6e40be*/
         {
-          v6 = *(_DWORD **)(v5 + 52); /*0x6e40c8*/
+          _DWORD * v6 = *(_DWORD **)(v5 + 52); /*0x6e40c8*/
           if ( v6 ) /*0x6e40cd*/
           {
             if ( LinkedList::Contains(v6, a3) ) /*0x6e40d0*/
@@ -255,7 +254,6 @@ void E4Recv_6EDFD0::sub_6EDFD0(int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char v5; // cl
-  int v6; // [esp+8h] [ebp-4h] BYREF
   do /*0x6ee038*/
   {
     int v4 = this->M84; /*0x6edfd5*/
@@ -266,7 +264,7 @@ void E4Recv_6EDFD0::sub_6EDFD0(int a2, int a3)
     {
       if ( *(int *)(v4 + 108) > 0 && *(_BYTE *)(v4 + 144) && *(_BYTE *)(v4 + 116) && !*(_BYTE *)(v4 + 129) ) /*0x6edff6*/
       {
-        v6 = *(_DWORD *)(v4 + 108); /*0x6ee008*/
+        int v6 = *(_DWORD *)(v4 + 108); /*0x6ee008*/
         (*(void (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, _DWORD, _DWORD))(*(_DWORD *)v4 + 364))( /*0x6ee024*/
           v4,
           &v6,
@@ -434,7 +432,6 @@ void E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3)
   int j; // edx
   int v18; // [esp+14h] [ebp-14h]
   int DefaultTimer; // [esp+18h] [ebp-10h]
-  char v20[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
   v3 = (TechnoClass *)*(this + 21); /*0x6efc76*/
   int v4 = -1; /*0x6efc79*/
@@ -479,6 +476,7 @@ LABEL_16:
   if ( *(_BYTE *)(v11 + 111) && HouseClass::GetPowerRatio(focus) >= 1.0 ) /*0x6efd5f*/
   {
     E4Recv_6EFC70 *v12 = v17; /*0x6efd61*/
+  char v20[12]; // [esp+1Ch] [ebp-Ch] BYREF
     _DWORD * v13 = (_DWORD *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v17[13] + 72))(v17[13], v20); /*0x6efd6f*/
     LOWORD(v18) = *v13 / 256; /*0x6efd82*/
     HIWORD(v18) = v13[1] / 256; /*0x6efd9a*/

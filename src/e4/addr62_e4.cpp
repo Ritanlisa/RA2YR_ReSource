@@ -302,23 +302,8 @@ void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
   int result; // eax
   int v33; // [esp+58h] [ebp-74h] BYREF
   int v34; // [esp+5Ch] [ebp-70h] BYREF
-  int v35; // [esp+60h] [ebp-6Ch]
-  int v36; // [esp+64h] [ebp-68h]
-  _DWORD v37[2]; // [esp+68h] [ebp-64h] BYREF
   int v38; // [esp+70h] [ebp-5Ch]
   int v39; // [esp+74h] [ebp-58h]
-  int v40; // [esp+78h] [ebp-54h]
-  int v41; // [esp+7Ch] [ebp-50h]
-  int v42; // [esp+80h] [ebp-4Ch]
-  _DWORD v43[2]; // [esp+84h] [ebp-48h] BYREF
-  _DWORD v44[2]; // [esp+8Ch] [ebp-40h] BYREF
-  _DWORD v45[2]; // [esp+94h] [ebp-38h] BYREF
-  _DWORD v46[2]; // [esp+9Ch] [ebp-30h] BYREF
-  _DWORD v47[2]; // [esp+A4h] [ebp-28h] BYREF
-  _DWORD v48[2]; // [esp+ACh] [ebp-20h] BYREF
-  _DWORD v49[2]; // [esp+B4h] [ebp-18h] BYREF
-  _DWORD v50[2]; // [esp+BCh] [ebp-10h] BYREF
-  _DWORD v51[2]; // [esp+C4h] [ebp-8h] BYREF
 
   int v4 = a4; /*0x6208f8*/
   if ( a4 == -1 && DataGlobal_AC4624 != -1 ) /*0x620911*/
@@ -358,11 +343,11 @@ void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
   {
     int v14 = result; /*0x620a53*/
     int * v31 = &v33; /*0x620a55*/
-    v36 = a3; /*0x620a5d*/
+    int v36 = a3; /*0x620a5d*/
     int v15 = v39 + v13 - 1; /*0x620a61*/
     int v16 = v13 - result; /*0x620a65*/
     int v27 = v15; /*0x620a67*/
-    v35 = v16; /*0x620a6f*/
+    int v35 = v16; /*0x620a6f*/
     int v28 = v38 + result - 1; /*0x620a77*/
     int * v32 = &v34; /*0x620a7f*/
     while ( 1 ) /*0x620a90*/
@@ -371,13 +356,17 @@ void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
         v4 = *v31; /*0x620a99*/
       int v17 = v16 + v14; /*0x620aa0*/
       int v18 = *a1; /*0x620aa3*/
-      v41 = v28 - 1; /*0x620aaf*/
+      int v41 = v28 - 1; /*0x620aaf*/
+  _DWORD v48[2]; // [esp+ACh] [ebp-20h] BYREF
       v48[0] = v28 - 1; /*0x620ab3*/
       v48[1] = v17; /*0x620ac1*/
+  _DWORD v51[2]; // [esp+C4h] [ebp-8h] BYREF
       v51[0] = v14; /*0x620acc*/
       v51[1] = v17; /*0x620ad3*/
       (*(void (__thiscall **)(int *, _DWORD *, _DWORD *, int))(v18 + 48))(a1, v51, v48, v4); /*0x620ada*/
+  _DWORD v46[2]; // [esp+9Ch] [ebp-30h] BYREF
       v46[1] = v17 + 1; /*0x620ae8*/
+  _DWORD v43[2]; // [esp+84h] [ebp-48h] BYREF
       v43[1] = v27; /*0x620af1*/
       int v19 = *a1; /*0x620af5*/
       v43[0] = v14; /*0x620afb*/
@@ -386,15 +375,19 @@ void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
       if ( a3 == 2 ) /*0x620b0e*/
         v4 = *v32; /*0x620b14*/
       int v20 = *a1; /*0x620b1a*/
+  _DWORD v50[2]; // [esp+BCh] [ebp-10h] BYREF
       v50[0] = v28; /*0x620b1c*/
       v50[1] = v27; /*0x620b27*/
+  _DWORD v44[2]; // [esp+8Ch] [ebp-40h] BYREF
       v44[1] = v27; /*0x620b2e*/
       v44[0] = v14; /*0x620b42*/
       (*(void (__thiscall **)(int *, _DWORD *, _DWORD *, int))(v20 + 48))(a1, v44, v50, v4); /*0x620b46*/
+  _DWORD v45[2]; // [esp+94h] [ebp-38h] BYREF
       v45[0] = v28; /*0x620b51*/
+  _DWORD v47[2]; // [esp+A4h] [ebp-28h] BYREF
       v47[0] = v28; /*0x620b55*/
       int v21 = *a1; /*0x620b59*/
-      v40 = v27 - 1; /*0x620b5e*/
+      int v40 = v27 - 1; /*0x620b5e*/
       v45[1] = v27 - 1; /*0x620b62*/
       v47[1] = v17; /*0x620b73*/
       (*(void (__thiscall **)(int *, _DWORD *, _DWORD *, int))(v21 + 48))(a1, v47, v45, v4); /*0x620b7a*/
@@ -405,7 +398,7 @@ void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
         v23 = (unsigned __int8)(((unsigned __int8)v29 + (unsigned __int8)v30) / 2) /*0x620beb*/
             + ((((v29 & 0xFF0000) + (v30 & 0xFF0000)) / 2) & 0xFF0000)
             + ((((int)v22 - HIDWORD(v22)) >> 1) & 0xFF00);
-        v42 = v23; /*0x620bf0*/
+        int v42 = v23; /*0x620bf0*/
         if ( v23 == -1 ) /*0x620bf4*/
           v4 = -1; /*0x620bf6*/
         else
@@ -413,10 +406,12 @@ void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
              | (BYTE1(v23) >> g_BitMask_Blue << g_BitMask_Green)
              | (BYTE2(v42) >> g_BitShift_Blue << g_BitShift_Blue);
         int v24 = *a1; /*0x620c48*/
+  _DWORD v49[2]; // [esp+B4h] [ebp-18h] BYREF
         v49[0] = v28; /*0x620c4a*/
         v49[1] = v35 + v14; /*0x620c55*/
         (*(void (__thiscall **)(int *, _DWORD *, int))(v24 + 36))(a1, v49, v4); /*0x620c66*/
         int v25 = *a1; /*0x620c69*/
+  _DWORD v37[2]; // [esp+68h] [ebp-64h] BYREF
         v37[1] = v27; /*0x620c74*/
         v37[0] = v14; /*0x620c7b*/
         (*(void (__thiscall **)(int *, _DWORD *, int))(v25 + 36))(a1, v37, v4); /*0x620c7f*/
@@ -1480,45 +1475,22 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
   wchar_t *v17; // edi
   int i; // ecx
   int v19; // eax
-  signed int v20; // edi
-  signed int v21; // edi
   int v22; // eax
   int v23; // edi
   int v24; // ecx
-  bool v25; // sf
   int v26; // edx
   CampaignScore *v27; // edi
-  int v28; // ebp
-  int v29; // eax
-  int v30; // edx
-  int v31; // ecx
-  int v32; // edx
   int *v33; // ebp
-  int v34; // eax
-  int v35; // ecx
-  int v36; // edx
-  int v37; // eax
-  int v38; // ebx
-  int v39; // eax
-  int v40; // ecx
-  int v41; // eax
-  int v42; // ecx
-  int v43; // eax
-  int v44; // ecx
   char result; // al
   int v46; // edi
-  int v47; // ecx
-  int v48; // edx
   int v49; // [esp+10h] [ebp-1030h]
   int v50; // [esp+14h] [ebp-102Ch]
   int v51; // [esp+14h] [ebp-102Ch]
   int v52; // [esp+18h] [ebp-1028h] BYREF
-  int v53; // [esp+1Ch] [ebp-1024h]
   int v54; // [esp+20h] [ebp-1020h] BYREF
   ObjectClass *v55; // [esp+24h] [ebp-101Ch]
   char *v56; // [esp+28h] [ebp-1018h]
   int *a7; // [esp+2Ch] [ebp-1014h]
-  _DWORD v58[4]; // [esp+30h] [ebp-1010h] BYREF
   wchar_t Destination[2048]; // [esp+40h] [ebp-1000h] BYREF
 
   a7 = &aP0->field_0; /*0x62388a*/
@@ -1576,9 +1548,10 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
   }
   if ( *a6 < v16 ) /*0x6239ce*/
   {
+  signed int v21; // edi
     do /*0x623a03*/
     {
-      v20 = *a6; /*0x6239d0*/
+      signed int v20 = *a6; /*0x6239d0*/
       if ( MessageListClass::CountCharsInWidth(a4, &Destination[*a6], a1[2] - 5, 0, 0) >= (int)&v56[-v20] ) /*0x6239f8*/
         break; /*0x6239f8*/
       v21 = v20 + 1; /*0x6239fe*/
@@ -1593,7 +1566,7 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
   v24 = v49; /*0x623a22*/
   if ( v22 < 0 )
   {
-    v25 = v49 + v22 < 0; /*0x623a2c*/
+    bool v25 = v49 + v22 < 0; /*0x623a2c*/
     v22 += v49; /*0x623a2c*/
     v24 = v25 ? 0 : v22;
     v49 = v24; /*0x623a39*/
@@ -1610,14 +1583,15 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
   v27 = (CampaignScore *)&Destination[*a6]; /*0x623a5d*/
   if ( a10 ) /*0x623a6a*/
   {
-    v28 = a1[3] + 2; /*0x623a79*/
-    v29 = Text::MeasureWidth(v27, 0); /*0x623a7c*/
-    v30 = *a1 - 1; /*0x623a89*/
-    v31 = a1[1] - 1; /*0x623a8a*/
+    int v28 = a1[3] + 2; /*0x623a79*/
+    int v29 = Text::MeasureWidth(v27, 0); /*0x623a7c*/
+    int v30 = *a1 - 1; /*0x623a89*/
+    int v31 = a1[1] - 1; /*0x623a8a*/
+  _DWORD v58[4]; // [esp+30h] [ebp-1010h] BYREF
     v58[2] = v29 + 5; /*0x623a8b*/
     v58[1] = v31; /*0x623a8f*/
     v58[0] = v30; /*0x623a97*/
-    v32 = *a7; /*0x623a9f*/
+    int v32 = *a7; /*0x623a9f*/
     v58[3] = v28; /*0x623aa4*/
     (*(void (__thiscall **)(int *, _DWORD *, _DWORD))(v32 + 20))(a7, v58, 0); /*0x623aa8*/
     v24 = v49; /*0x623aab*/
@@ -1625,8 +1599,8 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
   if ( v51 ) /*0x623ab5*/
   {
     v33 = a7; /*0x623abe*/
-    v34 = DrawTextRendererTextAligned(ecx0, a4, (ObjectClass *)a1, (unsigned __int16 *)v27, v51, 0, 0, a7, a11); /*0x623ad9*/
-    v35 = a1[2] - v34; /*0x623ae5*/
+    int v34 = DrawTextRendererTextAligned(ecx0, a4, (ObjectClass *)a1, (unsigned __int16 *)v27, v51, 0, 0, a7, a11); /*0x623ad9*/
+    int v35 = a1[2] - v34; /*0x623ae5*/
     *a1 += v34; /*0x623ae7*/
     a1[2] = v35; /*0x623ae9*/
     if ( v35 < 0 ) /*0x623aec*/
@@ -1640,8 +1614,9 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
   }
   if ( v24 ) /*0x623b08*/
   {
-    v36 = v51 + *a6; /*0x623b14*/
-    v37 = (int)&v56[-v36]; /*0x623b1a*/
+  int v38; // ebx
+    int v36 = v51 + *a6; /*0x623b14*/
+    int v37 = (int)&v56[-v36]; /*0x623b1a*/
     if ( (int)&v56[-v36] < 0 || v37 > v24 ) /*0x623b20*/
     {
       v38 = -1; /*0x623b2e*/
@@ -1654,6 +1629,7 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
     }
     if ( v24 > 0 ) /*0x623b33*/
     {
+  int v39; // eax
       v39 = DrawTextRendererTextAligned( /*0x623b52*/
               (int)*(&g_MatrixTransformState + 5634),
               a4,
@@ -1664,7 +1640,7 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
               0,
               v33,
               a11);
-      v40 = a1[2] - v39; /*0x623b5e*/
+      int v40 = a1[2] - v39; /*0x623b5e*/
       *a1 += v39; /*0x623b60*/
       a1[2] = v40; /*0x623b62*/
       if ( v40 < 0 ) /*0x623b65*/
@@ -1676,6 +1652,7 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
       v54 = *a1; /*0x623b7b*/
       if ( v38 ) /*0x623b7f*/
       {
+  int v41; // eax
         v41 = DrawTextRendererTextAligned( /*0x623b9e*/
                 (int)*(&g_MatrixTransformState + 5634),
                 a4,
@@ -1686,7 +1663,7 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
                 0,
                 v33,
                 a11);
-        v42 = a1[2] - v41; /*0x623baa*/
+        int v42 = a1[2] - v41; /*0x623baa*/
         *a1 += v41; /*0x623bac*/
         a1[2] = v42; /*0x623bae*/
         if ( v42 < 0 ) /*0x623bb1*/
@@ -1701,8 +1678,8 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
   }
   if ( v52 ) /*0x623bcb*/
   {
-    v43 = DrawTextRendererTextAligned(ecx0, a4, (ObjectClass *)a1, (unsigned __int16 *)v27, v52, 0, 0, v33, a11); /*0x623beb*/
-    v44 = a1[2] - v43; /*0x623bf7*/
+    int v43 = DrawTextRendererTextAligned(ecx0, a4, (ObjectClass *)a1, (unsigned __int16 *)v27, v52, 0, 0, v33, a11); /*0x623beb*/
+    int v44 = a1[2] - v43; /*0x623bf7*/
     *a1 += v43; /*0x623bf9*/
     a1[2] = v44; /*0x623bfb*/
     if ( v44 < 0 ) /*0x623bfe*/
@@ -1715,12 +1692,12 @@ void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, Objec
   }
   else
   {
-    v47 = a1[3]; /*0x623c33*/
-    v53 = a1[1]; /*0x623c36*/
+    int v47 = a1[3]; /*0x623c33*/
+    int v53 = a1[1]; /*0x623c36*/
     v55 = (ObjectClass *)(v53 + v47 - 2); /*0x623c4d*/
     v52 = v54; /*0x623c5c*/
     DrawSurfaceLineAlpha((int)v33, &v52, &v54, *((__int16 *)&g_MatrixTransformState + 5406), 0xFFu); /*0x623c60*/
-    v48 = a1[3]; /*0x623c68*/
+    int v48 = a1[3]; /*0x623c68*/
     v53 = a1[1]; /*0x623c6e*/
     v54 = v46 + 1; /*0x623c72*/
     v52 = v46 + 1; /*0x623c76*/
@@ -1965,15 +1942,9 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v11; // eax
-  int v12; // ecx
-  int v13; // edx
-  int v14; // eax
-  int v15; // esi
   _DWORD *v17; // [esp+10h] [ebp-208h]
   char *v18; // [esp+10h] [ebp-208h]
   char String[256]; // [esp+14h] [ebp-204h] BYREF
-  char v20[256]; // [esp+114h] [ebp-104h] BYREF
-  char *v21; // [esp+214h] [ebp-4h]
   v17 = MIXFile::Load(this, a2); /*0x6278de*/
   char * v3 = (char *)__2_YAPAXI_Z(0x104u); /*0x6278e7*/
   if ( v3 ) /*0x6278ee*/
@@ -1996,18 +1967,19 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
   if ( v9 < 0 ) /*0x62794c*/
   {
 LABEL_8:
+  char v20[256]; // [esp+114h] [ebp-104h] BYREF
     String::Copy(v20, String); /*0x62797a*/
-    v12 = *(_DWORD *)(v8 + 8); /*0x62798f*/
-    v21 = v18; /*0x627992*/
+    int v12 = *(_DWORD *)(v8 + 8); /*0x62798f*/
+    char * v21 = v18; /*0x627992*/
     if ( *(_DWORD *)(v8 + 16) < v12 /*0x6279c0*/
       || ((LOBYTE(v11) = *(_BYTE *)(v8 + 13), (_BYTE)v11) || !v12)
       && (v11 = *(_DWORD *)(v8 + 20), v11 > 0)
       && (LOBYTE(v11) = (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v8 + 8))(v8, v12 + v11, 0), (_BYTE)v11) )
     {
-      v13 = 65 * *(_DWORD *)(v8 + 16); /*0x6279cd*/
-      v14 = *(_DWORD *)(v8 + 4); /*0x6279cf*/
+      int v13 = 65 * *(_DWORD *)(v8 + 16); /*0x6279cd*/
+      int v14 = *(_DWORD *)(v8 + 4); /*0x6279cf*/
       ++*(_DWORD *)(v8 + 16); /*0x6279d2*/
-      v15 = v14 + 4 * v13; /*0x6279dc*/
+      int v15 = v14 + 4 * v13; /*0x6279dc*/
       LOBYTE(v11) = (unsigned __int8)String::CopyChecked((char *)v15, v20); /*0x6279e2*/
       *(_DWORD *)(v15 + 256) = v21; /*0x6279ee*/
     }
@@ -2043,7 +2015,6 @@ unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
   ObjectClass *result; // eax
   int uniqueId; // ebp
   int i; // ebx
-  int v14; // eax
   ColorScheme *v15; // edi
   ObjectClass *v16; // ecx
   ObjectClass *v18; // [esp+10h] [ebp-104h]
@@ -2083,7 +2054,7 @@ LABEL_5:
     uniqueId = result->uniqueId; /*0x627aa3*/
     for ( i = 0; i < uniqueId; ++i ) /*0x627aaa*/
     {
-      v14 = *(_DWORD *)(*(_DWORD *)(v9 + 256) + 4); /*0x627ab2*/
+      int v14 = *(_DWORD *)(*(_DWORD *)(v9 + 256) + 4); /*0x627ab2*/
       v15 = *(ColorScheme **)(v14 + 4 * i); /*0x627ab5*/
       if ( v15 ) /*0x627aba*/
       {

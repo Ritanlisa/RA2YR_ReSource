@@ -570,25 +570,17 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   unsigned int v27; // eax
   int v28; // esi
   __int16 v29; // dx
-  void *v30; // eax
   int v31; // eax
   int v32; // eax
   int v33; // eax
   unsigned int v34; // eax
   int *v35; // esi
   _DWORD *v36; // eax
-  int v37; // edx
   int v39; // [esp+10h] [ebp-28h]
   int v40; // [esp+14h] [ebp-24h]
   int v41; // [esp+18h] [ebp-20h]
-  int v42; // [esp+1Ch] [ebp-1Ch]
-  int v43; // [esp+1Ch] [ebp-1Ch]
-  int v44; // [esp+1Ch] [ebp-1Ch]
   int *v46; // [esp+24h] [ebp-14h]
-  int v47; // [esp+24h] [ebp-14h]
   int v48; // [esp+28h] [ebp-10h]
-  int v49; // [esp+2Ch] [ebp-Ch] BYREF
-  int v50; // [esp+30h] [ebp-8h] BYREF
   int v51; // [esp+34h] [ebp-4h] BYREF
 
   _DWORD * v4 = (_DWORD *)a1; /*0x47e04a*/
@@ -626,9 +618,10 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)(v4 + 9)); /*0x47e126*/
   if ( a3 < 8 ) /*0x47e132*/
   {
+  int v42; // [esp+1Ch] [ebp-1Ch]
     LOWORD(v42) = *v46 + LOWORD(Direction_X_Offsets[a3 & 7]); /*0x47e157*/
     HIWORD(v42) = HIWORD(*v46) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e166*/
-    v49 = v42; /*0x47e16f*/
+    int v49 = v42; /*0x47e16f*/
     v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v49); /*0x47e17d*/
   }
   int v13 = v4[80]; /*0x47e18f*/
@@ -658,7 +651,8 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   if ( a3 < 8 ) /*0x47e20d*/
   {
     v19 = Direction_X_Offsets[a3 & 7]; /*0x47e218*/
-    v50 = v4[9]; /*0x47e227*/
+    int v50 = v4[9]; /*0x47e227*/
+  int v43; // [esp+1Ch] [ebp-1Ch]
     LOWORD(v43) = v50 + v19; /*0x47e232*/
     HIWORD(v43) = HIWORD(v50) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e241*/
     v50 = v43; /*0x47e24a*/
@@ -689,6 +683,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   if ( a3 < 8 ) /*0x47e2d3*/
   {
     v51 = v4[9]; /*0x47e2e9*/
+  int v44; // [esp+1Ch] [ebp-1Ch]
     LOWORD(v44) = v51 + LOWORD(Direction_X_Offsets[a3 & 7]); /*0x47e2fc*/
     HIWORD(v44) = HIWORD(v51) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e305*/
     v51 = v44; /*0x47e314*/
@@ -707,10 +702,11 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   {
     v29 = Direction_X_Offsets[v27]; /*0x47e34c*/
     v51 = *v46; /*0x47e35b*/
+  int v47; // [esp+24h] [ebp-14h]
     LOWORD(v47) = v51 + v29; /*0x47e366*/
     HIWORD(v47) = HIWORD(v51) + HIWORD(Direction_X_Offsets[v27]); /*0x47e375*/
     v51 = v47; /*0x47e37e*/
-    v30 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v51); /*0x47e387*/
+    void * v30 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v51); /*0x47e387*/
     v24 = a3; /*0x47e38c*/
     v28 = (int)v30; /*0x47e390*/
   }
@@ -745,7 +741,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     LOWORD(a3) = g_CellDirectionOffsets + a4; /*0x47e424*/
     HIWORD(a3) = HIWORD(g_CellDirectionOffsets) + HIWORD(a4); /*0x47e429*/
     v36 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a3); /*0x47e43c*/
-    v37 = v36[80]; /*0x47e441*/
+    int v37 = v36[80]; /*0x47e441*/
     v36[11] = v48; /*0x47e447*/
     v36[80] = v8 | v37 & 0xFFFEFFFF; /*0x47e452*/
   }
@@ -766,25 +762,17 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   unsigned int v27; // eax
   int v28; // esi
   __int16 v29; // dx
-  void *v30; // eax
   int v31; // eax
   int v32; // eax
   int v33; // eax
   unsigned int v34; // eax
   int *v35; // esi
   _DWORD *v36; // eax
-  int v37; // edx
   int v39; // [esp+10h] [ebp-28h]
   int v40; // [esp+14h] [ebp-24h]
   int v41; // [esp+18h] [ebp-20h]
-  int v42; // [esp+1Ch] [ebp-1Ch]
-  int v43; // [esp+1Ch] [ebp-1Ch]
-  int v44; // [esp+1Ch] [ebp-1Ch]
   int *v46; // [esp+24h] [ebp-14h]
-  int v47; // [esp+24h] [ebp-14h]
   int v48; // [esp+28h] [ebp-10h]
-  int v49; // [esp+2Ch] [ebp-Ch] BYREF
-  int v50; // [esp+30h] [ebp-8h] BYREF
   int v51; // [esp+34h] [ebp-4h] BYREF
 
   _DWORD * v4 = (_DWORD *)a1; /*0x47e47a*/
@@ -822,9 +810,10 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)(v4 + 9)); /*0x47e556*/
   if ( a3 < 8 ) /*0x47e562*/
   {
+  int v42; // [esp+1Ch] [ebp-1Ch]
     LOWORD(v42) = *v46 + LOWORD(Direction_X_Offsets[a3 & 7]); /*0x47e587*/
     HIWORD(v42) = HIWORD(*v46) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e596*/
-    v49 = v42; /*0x47e59f*/
+    int v49 = v42; /*0x47e59f*/
     v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v49); /*0x47e5ad*/
   }
   int v13 = v4[80]; /*0x47e5bf*/
@@ -854,7 +843,8 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   if ( a3 < 8 ) /*0x47e63d*/
   {
     v19 = Direction_X_Offsets[a3 & 7]; /*0x47e648*/
-    v50 = v4[9]; /*0x47e657*/
+    int v50 = v4[9]; /*0x47e657*/
+  int v43; // [esp+1Ch] [ebp-1Ch]
     LOWORD(v43) = v50 + v19; /*0x47e662*/
     HIWORD(v43) = HIWORD(v50) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e671*/
     v50 = v43; /*0x47e67a*/
@@ -885,6 +875,7 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   if ( a3 < 8 ) /*0x47e703*/
   {
     v51 = v4[9]; /*0x47e719*/
+  int v44; // [esp+1Ch] [ebp-1Ch]
     LOWORD(v44) = v51 + LOWORD(Direction_X_Offsets[a3 & 7]); /*0x47e72c*/
     HIWORD(v44) = HIWORD(v51) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e735*/
     v51 = v44; /*0x47e744*/
@@ -903,10 +894,11 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   {
     v29 = Direction_X_Offsets[v27]; /*0x47e77c*/
     v51 = *v46; /*0x47e78b*/
+  int v47; // [esp+24h] [ebp-14h]
     LOWORD(v47) = v51 + v29; /*0x47e796*/
     HIWORD(v47) = HIWORD(v51) + HIWORD(Direction_X_Offsets[v27]); /*0x47e7a5*/
     v51 = v47; /*0x47e7ae*/
-    v30 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v51); /*0x47e7b7*/
+    void * v30 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v51); /*0x47e7b7*/
     v24 = a3; /*0x47e7bc*/
     v28 = (int)v30; /*0x47e7c0*/
   }
@@ -941,7 +933,7 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     LOWORD(a3) = g_CellDirectionOffsets + a4; /*0x47e854*/
     HIWORD(a3) = HIWORD(g_CellDirectionOffsets) + HIWORD(a4); /*0x47e859*/
     v36 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a3); /*0x47e86c*/
-    v37 = v36[80]; /*0x47e871*/
+    int v37 = v36[80]; /*0x47e871*/
     v36[11] = v48; /*0x47e877*/
     v36[80] = v8 | v37 & 0xFFFEFFFF; /*0x47e882*/
   }

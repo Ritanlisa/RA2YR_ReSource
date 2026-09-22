@@ -1283,7 +1283,6 @@ int * * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *v12; // eax
-  int v14; // eax
   int v15[2]; // [esp+8h] [ebp-8h] BYREF
 
   if ( a9 == -1 ) /*0x4a65d0*/
@@ -1292,7 +1291,7 @@ int * * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6
   }
   else
   {
-    v14 = Color::ConvertToRGB((unsigned __int8 *)(*((_DWORD *)BuildingTypeClass_AnimTable + a9) + 776), (int)&a9); /*0x4a6628*/
+    int v14 = Color::ConvertToRGB((unsigned __int8 *)(*((_DWORD *)BuildingTypeClass_AnimTable + a9) + 776), (int)&a9); /*0x4a6628*/
     LOWORD(v15[0]) = *(_WORD *)v14; /*0x4a6630*/
     BYTE2(v15[0]) = *(_BYTE *)(v14 + 2); /*0x4a663e*/
     v12 = RenderTextLabel( /*0x4a66b2*/
@@ -1689,7 +1688,6 @@ void ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, Display
   int FoundationWidth; // eax
   DisplayClass *v8; // eax
   int v10; // edi
-  _DWORD v12[2]; // [esp+10h] [ebp-1Ch] BYREF
   int GroundHeight; // [esp+18h] [ebp-14h]
   int v14; // [esp+20h] [ebp-Ch]
   DisplayClass *aP1a; // [esp+34h] [ebp+8h]
@@ -1728,6 +1726,7 @@ LABEL_14:
   }
   while ( 1 ) /*0x4a913d*/
   {
+  _DWORD v12[2]; // [esp+10h] [ebp-1Ch] BYREF
     v12[1] = ((__int16)v10 << 8) + 128; /*0x4a913d*/
     v12[0] = ((__int16)v9 << 8) + 128; /*0x4a9146*/
     GroundHeight = 0; /*0x4a914a*/
@@ -1815,9 +1814,6 @@ unsigned char * sub_4AA2B0(unsigned char * a1)
 {
   int v2; // ebp
   int v3; // eax
-  int v4; // eax
-  _BYTE *v5; // esi
-  _BYTE *v6; // edi
   _BYTE v8[5]; // [esp+3h] [ebp-5h]
 
   v8[4] = 0; /*0x4aa2b7*/
@@ -1835,11 +1831,11 @@ LABEL_12:
   }
   while ( 1 )
   {
-    v4 = DataGlobal_8A0364[v3]; /*0x4aa2ea*/
-    v5 = *(_BYTE **)(v4 + 4 * v2); /*0x4aa2f0*/
+    int v4 = DataGlobal_8A0364[v3]; /*0x4aa2ea*/
+    _BYTE * v5 = *(_BYTE **)(v4 + 4 * v2); /*0x4aa2f0*/
     if ( !v5 ) /*0x4aa2f5*/
       goto LABEL_11; /*0x4aa2f5*/
-    v6 = (v5[20] & 1) != 0 ? v5 : 0;
+    _BYTE * v6 = (v5[20] & 1) != 0 ? v5 : 0;
     if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)v5 + 100))(*(_DWORD *)(v4 + 4 * v2)) /*0x4aa318*/
       || !v6
       || !(*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 316))(v6) )
@@ -1868,8 +1864,6 @@ unsigned char * sub_4AA380(unsigned char * a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v2; // ebp
-  _BYTE *v3; // esi
-  _BYTE *v4; // edi
   _BYTE v6[5]; // [esp+3h] [ebp-5h]
 
   v6[4] = 0; /*0x4aa387*/
@@ -1886,10 +1880,10 @@ LABEL_12:
   }
   while ( 1 )
   {
-    v3 = *(_BYTE **)(DataGlobal_8A0364[6 * *v1] + 4 * v2); /*0x4aa3c1*/
+    _BYTE * v3 = *(_BYTE **)(DataGlobal_8A0364[6 * *v1] + 4 * v2); /*0x4aa3c1*/
     if ( !v3 ) /*0x4aa3c6*/
       goto LABEL_11; /*0x4aa3c6*/
-    v4 = (v3[20] & 1) != 0 ? v3 : 0;
+    _BYTE * v4 = (v3[20] & 1) != 0 ? v3 : 0;
     if ( !(*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v3 + 100))(v3) /*0x4aa3e8*/
       || !v4
       || !(*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v4 + 316))(v4) )
@@ -1917,12 +1911,10 @@ void * sub_4AC4F0()
 {
   int v6; // ecx
   void *result; // eax
-  int v8; // [esp+8h] [ebp-1Ch]
   int v9; // [esp+8h] [ebp-1Ch]
   int v10; // [esp+Ch] [ebp-18h] BYREF
   int v11; // [esp+10h] [ebp-14h]
   int v12; // [esp+14h] [ebp-10h]
-  _DWORD v13[3]; // [esp+18h] [ebp-Ch] BYREF
 
   int v0 = 0; /*0x4ac4fb*/
   int v1 = 0; /*0x4ac4fd*/
@@ -1933,7 +1925,7 @@ void * sub_4AC4F0()
   if ( g_SidebarState > 0 ) /*0x4ac50f*/
   {
     char * v3 = (char *)g_TechnoClass_Count; /*0x4ac512*/
-    v8 = g_SidebarState; /*0x4ac519*/
+    int v8 = g_SidebarState; /*0x4ac519*/
     do /*0x4ac567*/
     {
       int v4 = *(_DWORD *)v3; /*0x4ac51d*/
@@ -1962,6 +1954,7 @@ void * sub_4AC4F0()
   }
   else
   {
+  _DWORD v13[3]; // [esp+18h] [ebp-Ch] BYREF
     v10 = *HouseClass::GetStartCoords(HouseClass_Player, v13); /*0x4ac5aa*/
     v6 = HouseClass::GetStartCoords(HouseClass_Player, v13)[1]; /*0x4ac5ba*/
     v11 = v6; /*0x4ac5bd*/
@@ -2414,9 +2407,9 @@ int E4Recv_4AF2A0::BlitterDrawSHP()
   v7 = (XSurface *)SHPFrame; /*0x4af308*/
   char v9[16]; // [esp+18h] [ebp-10h] BYREF
   int v5 = (*(int (__thiscall **)(XSurface *, char *))(*(_DWORD *)aP3->__pad_0 + 120))(aP3, v9); /*0x4af313*/
+  int v18; // [esp+4Ch] [ebp+24h]
   int v19; // [esp+50h] [ebp+28h]
   int v20; // [esp+54h] [ebp+2Ch]
-  int v18; // [esp+4Ch] [ebp+24h]
   return BlitterCopySHP((XSurface *)this, aP1, &aP2, aP3, v5, aP5, v7, aP7, aP8, v18, v19, v20); /*0x4af328*/
 }
 }

@@ -8841,7 +8841,7 @@ int __thiscall AircraftClass::IsBelowScreen(#374 *this)
 // ==== 0x0041B9E0  TechnoClass::updateROFTimer  this=TechnoClass  sig=csp ====
 char __thiscall TechnoClass::sub_41B9E0(_BYTE *this)
 {
-  return *(this + 1749); /*0x41b9e6*/
+  return this->q6D5; /*0x41b9e6*/
 }
 
 

@@ -423,9 +423,9 @@ namespace gamemd { int SliderClass::OnTrack(int a1) {
 
       v2 = *this;
       if ( a2 )
-        return (*(int (__stdcall **)(int))(v2 + 140))(this->q034 - this->q048);
+        return this->Draw(this->q034 - this->q048);
       else
-        return (*(int (__stdcall **)(int))(v2 + 140))(this->q034 + this->q048);
+        return this->Draw(this->q034 + this->q048);
 }
 } }
 
@@ -527,7 +527,7 @@ int UnitClass::SaveLoadData(ObjectClass* aP1, int aP1a)
     *(int *)&aP1->__pad_0[8] = (unsigned int)vt_SmudgeClass;
     *(int *)&aP1->__pad_0[12] = (unsigned int)vt_SmudgeClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP1[1]);
   }
     return (int)Register->__pad_0;
 }
@@ -626,7 +626,7 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
     void **v3;
     v3 = (void **)__2_YAPAXI_Z(0xB0u);
     if ( v3 )
-    return UnitClass::Create(v3, this, (AbstractClass *)&DataGlobal_B05488.__pad_579C[2948], -1);
+    return UnitClass::Create(v3, this, (AbstractClass *)&DataGlobal_B05488[25376], -1);
     else
     return 0;
 }
@@ -995,43 +995,43 @@ namespace gamemd { int ScenarioClass::RevealMapForHouse(void* a1) {
     INIClass *v15;
     v3 = (INIClass *)(*(void**)this >> 6);
     LOBYTE(v3) = (*(void**)this & 0x40) != 0;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[29252], v3);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[51680], v3);
     v4 = (INIClass *)(*(void**)this >> 7);
     LOBYTE(v4) = (*(void**)this & 0x80) != 0;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42144], v4);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[64572], v4);
     v5 = (INIClass *)(*(void**)this >> 14);
     LOBYTE(v5) = (*(void**)this & 0x4000) != 0;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[20336], v5);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[42764], v5);
     v6 = (INIClass *)(*(void**)this >> 15);
     LOBYTE(v6) = (*(void**)this & 0x8000) != 0;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42124], v6);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[64552], v6);
     v7 = (INIClass *)(*(void**)this >> 8);
     LOBYTE(v7) = (unsigned char)v7 & 1;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42112], v7);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[64540], v7);
     v8 = (INIClass *)(*(void**)this >> 9);
     LOBYTE(v8) = (*(void**)this & 0x200) != 0;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42096], v8);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[64524], v8);
     v9 = (INIClass *)(*(void**)this >> 10);
     LOBYTE(v9) = (*(void**)this & 0x400) != 0;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42080], v9);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[64508], v9);
     v10 = (INIClass *)(*(void**)this >> 11);
     LOBYTE(v10) = (*(void**)this & 0x800) != 0;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42064], v10);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[64492], v10);
     v11 = (INIClass *)(*(void**)this >> 12);
     LOBYTE(v11) = (*(void**)this & 0x1000) != 0;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[29116], v11);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[51544], v11);
     v12 = (INIClass *)(*(void**)this >> 5);
     LOBYTE(v12) = (*(void**)this & 0x20) != 0;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42056], v12);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[64484], v12);
     v13 = (INIClass *)(*(void**)this >> 17);
     LOBYTE(v13) = (*(void**)this & 0x20000) != 0;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42044], v13);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[64472], v13);
     v14 = (INIClass *)HIWORD(*(void**)this);
     LOBYTE(v14) = (unsigned char)v14 & 1;
-    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42032], v14);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[64460], v14);
     v15 = (INIClass *)(*(void**)this >> 18);
     LOBYTE(v15) = (*(void**)this & 0x40000) != 0;
-    return INIClass::SetBool( a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42020], v15);
+    return INIClass::SetBool( a1->__pad_0, *(INIClass **)&DataGlobal_830620[64424], &DataGlobal_830620[64448], v15);
 }
 } }
 

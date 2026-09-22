@@ -316,12 +316,9 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   _DWORD *v20; // edi
   __int16 v21; // ax
   struct IPersistStreamVtbl *lpVtbl; // esi
-  int *v23; // eax
   unsigned int v24; // ebx
   _DWORD *v25; // esi
   int v26; // edx
-  int v27; // edi
-  int v28; // eax
   int v29; // ecx
   int v30; // edx
   int *v31; // eax
@@ -331,8 +328,6 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   int v36; // [esp-4h] [ebp-140h]
   _DWORD *v37; // [esp+10h] [ebp-12Ch] BYREF
   int v38; // [esp+14h] [ebp-128h]
-  int v39; // [esp+18h] [ebp-124h]
-  int v40; // [esp+1Ch] [ebp-120h]
   int v41; // [esp+20h] [ebp-11Ch] BYREF
   int v42; // [esp+24h] [ebp-118h]
   int v43; // [esp+28h] [ebp-114h]
@@ -342,8 +337,6 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   float v47[12]; // [esp+4Ch] [ebp-F0h] BYREF
   float v48[12]; // [esp+7Ch] [ebp-C0h] BYREF
   int v49[12]; // [esp+ACh] [ebp-90h] BYREF
-  float v50[12]; // [esp+DCh] [ebp-60h] BYREF
-  float v51[12]; // [esp+10Ch] [ebp-30h] BYREF
 
   qmemcpy(v48, a5, sizeof(v48)); /*0x706eeb*/
   int v12 = *a1; /*0x706ef4*/
@@ -364,10 +357,12 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
       if ( v14 ) /*0x706f66*/
       {
         qmemcpy(v47, (const void *)(v14[3] + 48 * (v15 + v14[1] * (a8 % v14[2]))), sizeof(v47)); /*0x706f92*/
+  float v50[12]; // [esp+DCh] [ebp-60h] BYREF
         qmemcpy(v48, MultiplyMatrix3x4(v50, (float *)v49, v47), sizeof(v48)); /*0x706fb3*/
         v13 = v45; /*0x706fb5*/
         v14 = v37; /*0x706fb9*/
       }
+  float v51[12]; // [esp+10Ch] [ebp-30h] BYREF
       float * v16 = MultiplyMatrix3x4(v51, DataGlobal_887430, v48); /*0x706fce*/
       TransformVoxelVertex(v13, v15++, 0, v16); /*0x706fda*/
     }
@@ -419,10 +414,10 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     {
       lpVtbl = g_TacticalClass_Instance[45].__tail_0; /*0x7070f2*/
       v37 = 0; /*0x707100*/
-      v40 = v21 - (_DWORD)lpVtbl; /*0x707104*/
+      int v40 = v21 - (_DWORD)lpVtbl; /*0x707104*/
       v38 = 0; /*0x70710c*/
-      v39 = g_Map_VisibleRectOffset; /*0x707110*/
-      v23 = ClipRectIntersection(v47, &v41, (int *)&v37, 0, 0); /*0x70711e*/
+      int v39 = g_Map_VisibleRectOffset; /*0x707110*/
+      int * v23 = ClipRectIntersection(v47, &v41, (int *)&v37, 0, 0); /*0x70711e*/
       v41 = *v23; /*0x707125*/
       v42 = v23[1]; /*0x70712c*/
       v43 = v23[2]; /*0x707133*/
@@ -437,8 +432,8 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   v26 = 0; /*0x70719c*/
   if ( (v24 & 8) != 0 ) /*0x7071a1*/
   {
-    v27 = (*(int (__stdcall **)(int *))(a1[1] + 16))(a1 + 1); /*0x7071b3*/
-    v28 = v27 + Math::RoundToInt(*((float *)a1 + 147)); /*0x7071ba*/
+    int v27 = (*(int (__stdcall **)(int *))(a1[1] + 16))(a1 + 1); /*0x7071b3*/
+    int v28 = v27 + Math::RoundToInt(*((float *)a1 + 147)); /*0x7071ba*/
     v20 = (_DWORD *)a6; /*0x7071bc*/
     v26 = v28 % 400; /*0x7071c9*/
   }

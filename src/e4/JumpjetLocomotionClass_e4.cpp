@@ -34,14 +34,7 @@ int JumpjetLocomotionClass::Update2()
   int v27; // eax
   int v28; // eax
   int v29; // esi
-  float v30; // ecx
-  float v31; // edx
   Tactical *v32; // ecx
-  int v33; // edx
-  float v34; // ecx
-  int v35; // eax
-  float *v36; // eax
-  double v37; // st7
   float *v38; // eax
   double v39; // st7
   int result; // eax
@@ -55,7 +48,6 @@ int JumpjetLocomotionClass::Update2()
   float v48; // [esp+4h] [ebp-144h]
   int v49; // [esp+4h] [ebp-144h]
   int v50; // [esp+4h] [ebp-144h]
-  float v51; // [esp+8h] [ebp-140h]
   bool v52; // [esp+19h] [ebp-12Fh]
   char v53; // [esp+1Ah] [ebp-12Eh]
   char v54; // [esp+1Bh] [ebp-12Dh]
@@ -75,7 +67,6 @@ int JumpjetLocomotionClass::Update2()
   float v68; // [esp+4Ch] [ebp-FCh]
   _DWORD v69[3]; // [esp+50h] [ebp-F8h] BYREF
   _DWORD v70[2]; // [esp+5Ch] [ebp-ECh] BYREF
-  int v71; // [esp+64h] [ebp-E4h]
   double v72; // [esp+6Ch] [ebp-DCh] BYREF
   float v73[4]; // [esp+78h] [ebp-D0h] BYREF
   float v74[12]; // [esp+88h] [ebp-C0h] BYREF
@@ -109,7 +100,7 @@ int JumpjetLocomotionClass::Update2()
     double v11 = JumpjetLocomotionClass::ComputeVectorLengthMetric_0(v4); /*0x439b75*/
     if ( v11 > v58 ) /*0x439b83*/
     {
-      v51 = v11 / v11; /*0x439b8c*/
+      float v51 = v11 / v11; /*0x439b8c*/
       Coord::Scale((float *)v4, v51); /*0x439b8f*/
     }
   }
@@ -129,6 +120,7 @@ int JumpjetLocomotionClass::Update2()
   v53 = 0; /*0x439c1e*/
   if ( (v14[80] & 0x100) != 0 || (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v70) + 80) & 0x100) != 0 ) /*0x439c46*/
   {
+  int v71; // [esp+64h] [ebp-E4h]
     if ( v69[2] < v61 ) /*0x439c56*/
     {
       if ( v71 >= v61 ) /*0x439c65*/
@@ -240,27 +232,27 @@ LABEL_35:
   if ( *((char *)Coord::To_Cell(&DataGlobal_87F7E8, v69) + 283) - v29 >= 2 /*0x439fb1*/
     && (v68 < -0.0002 && v24[8] > (double)v65 || v68 >= -0.0003 && v68 + v65 + 1.0 < v24[8]) )
   {
-    v30 = v64; /*0x439fbb*/
-    v31 = v65; /*0x439fbf*/
+    float v30 = v64; /*0x439fbb*/
+    float v31 = v65; /*0x439fbf*/
     *v3 = v63; /*0x439fc3*/
     v3[1] = v30; /*0x439fc6*/
     v32 = v66; /*0x439fc9*/
     v3[2] = v31; /*0x439fcf*/
-    v33 = v67; /*0x439fd2*/
+    int v33 = v67; /*0x439fd2*/
     *(_DWORD *)v4 = v32; /*0x439fd6*/
-    v34 = v68; /*0x439fd8*/
+    float v34 = v68; /*0x439fd8*/
     v4->vtable2 = v33; /*0x439fdc*/
     v4->vtable3 = v34; /*0x439fe4*/
     Coord::To_Cell(&DataGlobal_87F7E8, v69); /*0x439ff1*/
-    v35 = JumpjetLocomotionClass::AdjustClimbFacing(v70); /*0x439ff8*/
+    int v35 = JumpjetLocomotionClass::AdjustClimbFacing(v70); /*0x439ff8*/
     if ( v35 != -1 ) /*0x43a000*/
     {
       qmemcpy(v74, (const void *)Locomotor_Update(v76, v35), sizeof(v74)); /*0x43a01f*/
-      v36 = TransformMatrix3x4Point(v73, v74, (float *)v4); /*0x43a02c*/
+      float * v36 = TransformMatrix3x4Point(v73, v74, (float *)v4); /*0x43a02c*/
       *(float *)v4 = *v36; /*0x43a035*/
       v4->vtable2 = v36[1]; /*0x43a03a*/
       v4->vtable3 = v36[2]; /*0x43a040*/
-      v37 = *(double *)v60; /*0x43a047*/
+      double v37 = *(double *)v60; /*0x43a047*/
       *(float *)v4 = v37 * *(float *)v4; /*0x43a04d*/
       v4->vtable2 = v37 * v4->vtable2; /*0x43a054*/
       v4->vtable3 = v37 * v4->vtable3; /*0x43a05a*/
@@ -397,9 +389,6 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double v4; // st7
-  int v5; // edx
-  int v6; // eax
-  int v7; // ecx
   double v8; // st7
   int v9; // edi
   int v10; // eax
@@ -407,26 +396,12 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
   float *v12; // eax
   int v13; // ebx
   int *v14; // ecx
-  int v15; // edi
-  int v16; // eax
-  double v17; // st7
-  int v18; // edi
   const void *v19; // eax
   int v20; // esi
   float *v21; // eax
   float *v22; // edx
   float *v23; // ecx
-  int v24; // ecx
   float *Transform; // eax
-  int v26; // ebx
-  int v27; // edx
-  int v28; // eax
-  int v29; // edx
-  double v30; // st7
-  int v31; // ecx
-  int v32; // eax
-  const void *v33; // eax
-  int v34; // esi
   float v36; // [esp+4h] [ebp-234h]
   float v37; // [esp+4h] [ebp-234h]
   float v38; // [esp+4h] [ebp-234h]
@@ -450,14 +425,13 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
   float v56[12]; // [esp+148h] [ebp-F0h] BYREF
   char v57[48]; // [esp+178h] [ebp-C0h] BYREF
   float v58[12]; // [esp+1A8h] [ebp-90h] BYREF
-  _BYTE v59[48]; // [esp+1D8h] [ebp-60h] BYREF
   float v60[12]; // [esp+208h] [ebp-30h] BYREF
 
   int v3 = a1[11]; /*0x4aff72*/
   if ( v3 ) /*0x4aff7b*/
   {
-    v5 = a1[8]; /*0x4aff85*/
-    v6 = a1[10]; /*0x4aff88*/
+    int v5 = a1[8]; /*0x4aff85*/
+    int v6 = a1[10]; /*0x4aff88*/
     if ( v5 != -1 ) /*0x4aff8e*/
     {
       if ( (int)g_CurrentFrame - v5 >= v6 ) /*0x4aff9a*/
@@ -473,23 +447,24 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
   }
   if ( v4 == 1.0 ) /*0x4affbb*/
   {
-    v7 = a1[2]; /*0x4affbd*/
+    int v7 = a1[2]; /*0x4affbd*/
     if ( fabs(*(float *)(v7 + 808)) < 0.005 && fabs(*(float *)(v7 + 812)) < 0.005 ) /*0x4affe8*/
     {
+  const void *v33; // eax
       if ( a3 && *a3 != -1 ) /*0x4b02bf*/
       {
-        v24 = *a3 << 6; /*0x4b02c1*/
+        int v24 = *a3 << 6; /*0x4b02c1*/
         *a3 = v24; /*0x4b02c4*/
         *a3 = v24 + a1[6]; /*0x4b02cb*/
       }
       Transform = Turret::GetTransform((signed int)a1, v55, a3); /*0x4b02d7*/
       Transform::Copy(v54, Transform); /*0x4b02e4*/
       Matrix3x4::Identity(v50); /*0x4b02ed*/
-      v26 = a1[11]; /*0x4b02f2*/
+      int v26 = a1[11]; /*0x4b02f2*/
       if ( !v26 ) /*0x4b02fb*/
         goto LABEL_48; /*0x4b02fb*/
-      v27 = a1[8]; /*0x4b0301*/
-      v28 = a1[10]; /*0x4b0304*/
+      int v27 = a1[8]; /*0x4b0301*/
+      int v28 = a1[10]; /*0x4b0304*/
       if ( v27 != -1 ) /*0x4b0310*/
       {
         if ( (int)g_CurrentFrame - v27 >= v28 ) /*0x4b0318*/
@@ -499,11 +474,12 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
       }
       if ( (double)(v26 - v28) / (double)(int)a1[11] < 1.0 ) /*0x4b0339*/
       {
-        v29 = a1[11]; /*0x4b033b*/
+  double v30; // st7
+        int v29 = a1[11]; /*0x4b033b*/
         if ( v29 ) /*0x4b0344*/
         {
-          v31 = a1[8]; /*0x4b034e*/
-          v32 = a1[10]; /*0x4b0351*/
+          int v31 = a1[8]; /*0x4b034e*/
+          int v32 = a1[10]; /*0x4b0351*/
           if ( v31 != -1 ) /*0x4b0357*/
           {
             if ( (int)g_CurrentFrame - v31 >= v32 ) /*0x4b035f*/
@@ -522,7 +498,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
       else
       {
 LABEL_48:
-        v34 = a1[6]; /*0x4b0390*/
+        int v34 = a1[6]; /*0x4b0390*/
         if ( !v34 ) /*0x4b0395*/
         {
 LABEL_51:
@@ -575,8 +551,8 @@ LABEL_51:
   v14 = a1 + 8; /*0x4b01b5*/
   if ( v13 ) /*0x4b01be*/
   {
-    v15 = *v14; /*0x4b01c0*/
-    v16 = a1[10]; /*0x4b01c2*/
+    int v15 = *v14; /*0x4b01c0*/
+    int v16 = a1[10]; /*0x4b01c2*/
     if ( *v14 != -1 ) /*0x4b01c8*/
     {
       if ( (int)g_CurrentFrame - v15 >= v16 ) /*0x4b01d4*/
@@ -586,15 +562,17 @@ LABEL_51:
     }
     if ( (double)(v13 - v16) / (double)(int)a1[11] < 1.0 ) /*0x4b01f5*/
     {
+  double v17; // st7
       if ( a1[11] ) /*0x4b01f7*/
       {
-        v18 = a1[11]; /*0x4b0206*/
+        int v18 = a1[11]; /*0x4b0206*/
         v17 = (double)(v18 - Timeout::GetRemaining(v14)) / (double)v18; /*0x4b021c*/
       }
       else
       {
         v17 = 1.0; /*0x4b01fe*/
       }
+  _BYTE v59[48]; // [esp+1D8h] [ebp-60h] BYREF
       v19 = InterpolateVoxelAnimPose(v59, a1[7], a1[6], v17); /*0x4b0234*/
       goto LABEL_29; /*0x4b0239*/
     }
@@ -1197,8 +1175,8 @@ void JumpjetLocomotionClass::ProcessRotation()
     }
     else
     {
-  int v7; // [esp+4h] [ebp-14h] BYREF
   int v8; // [esp+8h] [ebp-10h] BYREF
+  int v7; // [esp+4h] [ebp-14h] BYREF
       LOWORD(v7) = *ProgressTimer::GetValue((_WORD *)(this->LinkedTo + 904), &v8) /*0x4ce5ee*/
                  + ((unsigned __int16)this->q054 << 8);
       FacingClass::Set_SyncLog((char *)(this->LinkedTo + 904), &v7); /*0x4ce605*/
@@ -1817,10 +1795,7 @@ void * JumpjetLocomotionClass::ProcessLanding(int * a2, unsigned int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v6; // esi
-  int v7; // edx
   int v8; // ecx
-  int *v9; // eax
-  int v10; // edx
   int v12; // [esp+4h] [ebp-18h] BYREF
   int v13; // [esp+8h] [ebp-14h]
   int GroundHeight; // [esp+Ch] [ebp-10h]
@@ -1833,7 +1808,7 @@ void * JumpjetLocomotionClass::ProcessLanding(int * a2, unsigned int * a3)
     int * v5 = (int *)(*(int (__thiscall **)(void *, int *))(*(_DWORD *)v4 + 72))(v4, v15); /*0x54d705*/
     v6 = dword_ABC5A8; /*0x54d70a*/
     v12 = *v5; /*0x54d712*/
-    v7 = v5[1]; /*0x54d718*/
+    int v7 = v5[1]; /*0x54d718*/
     v13 = v7; /*0x54d71b*/
     v8 = v5[2]; /*0x54d71f*/
     GroundHeight = v8; /*0x54d722*/
@@ -1851,10 +1826,10 @@ LABEL_13:
   }
   else
   {
-    v9 = ObjectPlacement::CalcPosition_Wrapper(v15, a3, 0); /*0x54d78e*/
+    int * v9 = ObjectPlacement::CalcPosition_Wrapper(v15, a3, 0); /*0x54d78e*/
     v6 = dword_ABC5A8; /*0x54d795*/
     v12 = *v9; /*0x54d79d*/
-    v10 = v9[1]; /*0x54d7a3*/
+    int v10 = v9[1]; /*0x54d7a3*/
     v13 = v10; /*0x54d7a6*/
     v8 = v9[2]; /*0x54d7aa*/
     GroundHeight = v8; /*0x54d7ad*/
@@ -1884,8 +1859,6 @@ void * JumpjetLocomotionClass::ComputeMovementTransform(signed int a1, float * a
 {
   float *Transform; // eax
   float v29[12]; // [esp+B8h] [ebp-90h] BYREF
-  float v30[12]; // [esp+E8h] [ebp-60h] BYREF
-  float v31[12]; // [esp+118h] [ebp-30h] BYREF
 
   if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 132))(*(_DWORD *)(a1 + 8)) + 3362) /*0x54dd13*/
   int v3; // ecx
@@ -1923,9 +1896,11 @@ void * JumpjetLocomotionClass::ComputeMovementTransform(signed int a1, float * a
     Matrix3x3::ApplyCol0(v26, v15); /*0x54de83*/
     Matrix3x3::RotateX(v26, *(float *)(*(_DWORD *)(a1 + 8) + 808)); /*0x54de96*/
     Matrix3D::RotateZ(v26, *(float *)(*(_DWORD *)(a1 + 8) + 812)); /*0x54dea9*/
+  float v30[12]; // [esp+E8h] [ebp-60h] BYREF
     Transform = Turret::GetTransform(a1, v30, a3); /*0x54deb8*/
   float v28[12]; // [esp+88h] [ebp-C0h] BYREF
     Transform::Copy(v28, Transform); /*0x54dec5*/
+  float v31[12]; // [esp+118h] [ebp-30h] BYREF
     float * v9 = MultiplyMatrix3x4(v31, v27, v28); /*0x54dee2*/
     float * v10 = MultiplyMatrix3x4(v29, v9, v26); /*0x54def5*/
     qmemcpy(a2, v10, 0x30u); /*0x54df06*/
@@ -2070,9 +2045,6 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform2(unsigned int * a1, float *
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double v4; // st7
-  int v5; // edx
-  int v6; // eax
-  int v7; // ecx
   double v8; // st7
   int v9; // edi
   int v10; // eax
@@ -2080,26 +2052,12 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform2(unsigned int * a1, float *
   float *v12; // eax
   int v13; // ebx
   int *v14; // ecx
-  int v15; // edi
-  int v16; // eax
-  double v17; // st7
-  int v18; // edi
   const void *v19; // eax
   int v20; // esi
   float *v21; // eax
   float *v22; // edx
   float *v23; // ecx
-  int v24; // ecx
   float *Transform; // eax
-  int v26; // ebx
-  int v27; // edx
-  int v28; // eax
-  int v29; // edx
-  double v30; // st7
-  int v31; // ecx
-  int v32; // eax
-  const void *v33; // eax
-  int v34; // esi
   float v36; // [esp+4h] [ebp-234h]
   float v37; // [esp+4h] [ebp-234h]
   float v38; // [esp+4h] [ebp-234h]
@@ -2123,14 +2081,13 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform2(unsigned int * a1, float *
   float v56[12]; // [esp+148h] [ebp-F0h] BYREF
   char v57[48]; // [esp+178h] [ebp-C0h] BYREF
   float v58[12]; // [esp+1A8h] [ebp-90h] BYREF
-  _BYTE v59[48]; // [esp+1D8h] [ebp-60h] BYREF
   float v60[12]; // [esp+208h] [ebp-30h] BYREF
 
   int v3 = a1[11]; /*0x69f682*/
   if ( v3 ) /*0x69f68b*/
   {
-    v5 = a1[8]; /*0x69f695*/
-    v6 = a1[10]; /*0x69f698*/
+    int v5 = a1[8]; /*0x69f695*/
+    int v6 = a1[10]; /*0x69f698*/
     if ( v5 != -1 ) /*0x69f69e*/
     {
       if ( (int)g_CurrentFrame - v5 >= v6 ) /*0x69f6aa*/
@@ -2146,23 +2103,24 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform2(unsigned int * a1, float *
   }
   if ( v4 == 1.0 ) /*0x69f6cb*/
   {
-    v7 = a1[2]; /*0x69f6cd*/
+    int v7 = a1[2]; /*0x69f6cd*/
     if ( fabs(*(float *)(v7 + 808)) < 0.005 && fabs(*(float *)(v7 + 812)) < 0.005 ) /*0x69f6f8*/
     {
+  const void *v33; // eax
       if ( a3 && *a3 != -1 ) /*0x69f9cf*/
       {
-        v24 = *a3 << 6; /*0x69f9d1*/
+        int v24 = *a3 << 6; /*0x69f9d1*/
         *a3 = v24; /*0x69f9d4*/
         *a3 = v24 + a1[6]; /*0x69f9db*/
       }
       Transform = Turret::GetTransform((signed int)a1, v55, a3); /*0x69f9e7*/
       Transform::Copy(v54, Transform); /*0x69f9f4*/
       Matrix3x4::Identity(v50); /*0x69f9fd*/
-      v26 = a1[11]; /*0x69fa02*/
+      int v26 = a1[11]; /*0x69fa02*/
       if ( !v26 ) /*0x69fa0b*/
         goto LABEL_48; /*0x69fa0b*/
-      v27 = a1[8]; /*0x69fa11*/
-      v28 = a1[10]; /*0x69fa14*/
+      int v27 = a1[8]; /*0x69fa11*/
+      int v28 = a1[10]; /*0x69fa14*/
       if ( v27 != -1 ) /*0x69fa20*/
       {
         if ( (int)g_CurrentFrame - v27 >= v28 ) /*0x69fa28*/
@@ -2172,11 +2130,12 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform2(unsigned int * a1, float *
       }
       if ( (double)(v26 - v28) / (double)(int)a1[11] < 1.0 ) /*0x69fa49*/
       {
-        v29 = a1[11]; /*0x69fa4b*/
+  double v30; // st7
+        int v29 = a1[11]; /*0x69fa4b*/
         if ( v29 ) /*0x69fa54*/
         {
-          v31 = a1[8]; /*0x69fa5e*/
-          v32 = a1[10]; /*0x69fa61*/
+          int v31 = a1[8]; /*0x69fa5e*/
+          int v32 = a1[10]; /*0x69fa61*/
           if ( v31 != -1 ) /*0x69fa67*/
           {
             if ( (int)g_CurrentFrame - v31 >= v32 ) /*0x69fa6f*/
@@ -2195,7 +2154,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform2(unsigned int * a1, float *
       else
       {
 LABEL_48:
-        v34 = a1[6]; /*0x69faa0*/
+        int v34 = a1[6]; /*0x69faa0*/
         if ( !v34 ) /*0x69faa5*/
         {
 LABEL_51:
@@ -2248,8 +2207,8 @@ LABEL_51:
   v14 = a1 + 8; /*0x69f8c5*/
   if ( v13 ) /*0x69f8ce*/
   {
-    v15 = *v14; /*0x69f8d0*/
-    v16 = a1[10]; /*0x69f8d2*/
+    int v15 = *v14; /*0x69f8d0*/
+    int v16 = a1[10]; /*0x69f8d2*/
     if ( *v14 != -1 ) /*0x69f8d8*/
     {
       if ( (int)g_CurrentFrame - v15 >= v16 ) /*0x69f8e4*/
@@ -2259,15 +2218,17 @@ LABEL_51:
     }
     if ( (double)(v13 - v16) / (double)(int)a1[11] < 1.0 ) /*0x69f905*/
     {
+  double v17; // st7
       if ( a1[11] ) /*0x69f907*/
       {
-        v18 = a1[11]; /*0x69f916*/
+        int v18 = a1[11]; /*0x69f916*/
         v17 = (double)(v18 - Timeout::GetRemaining(v14)) / (double)v18; /*0x69f92c*/
       }
       else
       {
         v17 = 1.0; /*0x69f90e*/
       }
+  _BYTE v59[48]; // [esp+1D8h] [ebp-60h] BYREF
       v19 = InterpolateVoxelAnimPose(v59, a1[7], a1[6], v17); /*0x69f944*/
       goto LABEL_29; /*0x69f949*/
     }
@@ -2401,20 +2362,14 @@ void * JumpjetLocomotionClass::ComputeTurretTransform(unsigned int * a1, void * 
   void *result; // eax
   float *Transform; // eax
   double v22; // [esp+14h] [ebp-138h] BYREF
-  int v23; // [esp+1Ch] [ebp-130h]
-  int v24; // [esp+28h] [ebp-124h]
-  _DWORD v25[12]; // [esp+2Ch] [ebp-120h] BYREF
-  float v26[12]; // [esp+5Ch] [ebp-F0h] BYREF
-  float v27[12]; // [esp+8Ch] [ebp-C0h] BYREF
   float v28[12]; // [esp+BCh] [ebp-90h] BYREF
-  char v29[48]; // [esp+ECh] [ebp-60h] BYREF
-  float v30[12]; // [esp+11Ch] [ebp-30h] BYREF
 
   int v3 = a1[5]; /*0x729b52*/
   if ( v3 ) /*0x729b57*/
   {
     switch ( v3 ) /*0x729c61*/
     {
+  int v24; // [esp+28h] [ebp-124h]
   double v16; // st7
   double v13; // st7
       case 2: /*0x729c61*/
@@ -2497,6 +2452,7 @@ void * JumpjetLocomotionClass::ComputeTurretTransform(unsigned int * a1, void * 
         break; /*0x729db2*/
     }
     Transform = Turret::GetTransform((signed int)a1, v28, a3); /*0x729dcc*/
+  float v27[12]; // [esp+8Ch] [ebp-C0h] BYREF
     Transform::Copy(v27, Transform); /*0x729dd9*/
     if ( a3 && *a3 != -1 ) /*0x729de7*/
     {
@@ -2510,17 +2466,21 @@ void * JumpjetLocomotionClass::ComputeTurretTransform(unsigned int * a1, void * 
   }
   else
   {
+  float v26[12]; // [esp+5Ch] [ebp-F0h] BYREF
     int v4 = a1[2] + 156; /*0x729b60*/
     v22 = *(double *)v4; /*0x729b67*/
-    v23 = *(_DWORD *)(v4 + 8); /*0x729b7f*/
+    int v23 = *(_DWORD *)(v4 + 8); /*0x729b7f*/
     int v5 = *((unsigned __int8 *)Coord::To_Cell(&DataGlobal_87F7E8, &v22) + 284); /*0x729b8d*/
     if ( a3 && *a3 != -1 ) /*0x729b9c*/
       *a3 = v5 + (*a3 << 6); /*0x729ba3*/
+  _DWORD v25[12]; // [esp+2Ch] [ebp-120h] BYREF
     Matrix3x4::Identity(v25); /*0x729ba9*/
     if ( v5 ) /*0x729bb1*/
     {
+  float v30[12]; // [esp+11Ch] [ebp-30h] BYREF
       float * v6 = Turret::GetTransform((signed int)a1, v30, a3); /*0x729bbc*/
       Transform::Copy(v26, v6); /*0x729bc6*/
+  char v29[48]; // [esp+ECh] [ebp-60h] BYREF
       float * v7 = (float *)CopyAudioData(v29, v5); /*0x729bd9*/
       float * v8 = MultiplyMatrix3x4(v28, v7, v26); /*0x729bf1*/
       result = a2; /*0x729bf3*/

@@ -35,7 +35,7 @@ int JumpjetLocomotionClass::ConvertCoordToCell_1(int a1, int aP1, IUnknown * aP2
     *(int *)(a1 + 20) = aP1;
     *(int *)(a1 + 24) = v5;
     *(int *)(a1 + 28) = v6;
-    result = (int)Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP1);
+    result = (int)Coord::To_Cell(&DataGlobal_87C374[13428], (IUnknown *)&aP1);
     if ( (*(int *)(result + 320) & 0x100) != 0 )
           {
     result = Coord::ScaleToScreenY((void *)0x3C);
@@ -310,7 +310,7 @@ namespace gamemd { void Movement::UpdateLocomotion(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x005B2DA0  RadioClass::Constructor  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x005B2DA0  RadioClass::Constructor  cls=MissionClass  sig=csp  renamed_refs=2  residual=- ====
 namespace ra2 { namespace game { int RadioClass::Constructor() {
 {
       #72 *v2; // ecx
@@ -327,9 +327,9 @@ namespace ra2 { namespace game { int RadioClass::Constructor() {
       this->q0D0 = 0;
       this->missionTimer = v2;
       *(_DWORD *)this = &MissionClass::`vftable';
-      *(_DWORD *)(this + 4) = &MissionClass::`vftable';
-      *(_DWORD *)(this + 8) = &MissionClass::`vftable';
-      *(_DWORD *)(this + 12) = &MissionClass::`vftable';
+      this->vtable3 = &MissionClass::`vftable';
+      this->vtable4 = &MissionClass::`vftable';
+      this->vtable4 = &MissionClass::`vftable';
       return this;
 }
 } } }

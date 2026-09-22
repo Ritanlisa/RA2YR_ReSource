@@ -1829,8 +1829,8 @@ int Rules::ReadMiscINI()
   int v272; // [esp+D0h] [ebp-4h]
     this->Normal[3] = v272;
     v267 = (void **)&vt_VectorClass_AnimTypeClass_const;
-  void *v268; // [esp+BCh] [ebp-18h]
   char v269; // [esp+C5h] [ebp-Fh]
+  void *v268; // [esp+BCh] [ebp-18h]
     if ( v268 && v269 )
       __3_YAXPAX_Z(v268);
     if ( INIClass::GetString(

@@ -246,14 +246,6 @@ void TeamClass::DestroyAllMembers(TechnoClass * aP1)
   ObjectClass *v5; // edi
   ObjectClass *v6; // ecx
   int v7; // ebp
-  int v8; // eax
-  int v9; // eax
-  int v10; // edi
-  int v11; // eax
-  int v12; // eax
-  int v13; // ecx
-  int v14; // ecx
-  int v15; // eax
   ObjectClass *v16; // eax
   void *Blocka; // [esp+10h] [ebp-4h] BYREF
 
@@ -285,18 +277,18 @@ LABEL_9:
     if ( *(_BYTE *)(v7 + 12) ) /*0x6340fc*/
     {
       *(_BYTE *)(v7 + 12) = 0; /*0x634101*/
-      v8 = this->q0A8 - 1; /*0x63410a*/
+      int v8 = this->q0A8 - 1; /*0x63410a*/
       this->q0A8 = v8; /*0x63410b*/
       if ( !v8 ) /*0x634111*/
         this->q0B0 = -1; /*0x634113*/
     }
-    v9 = *(_DWORD *)(v7 + 8); /*0x63411d*/
+    int v9 = *(_DWORD *)(v7 + 8); /*0x63411d*/
     if ( v9 != -1 ) /*0x634123*/
     {
-      v10 = *(_DWORD *)(this->buildingType + 4 * v9); /*0x634129*/
+      int v10 = *(_DWORD *)(this->buildingType + 4 * v9); /*0x634129*/
       *(_DWORD *)(v10 + 116) = -1; /*0x63412e*/
       TeamClass::Reset(this, 0); /*0x634135*/
-      v11 = *(_DWORD *)(v10 + 112) - 1; /*0x63413d*/
+      int v11 = *(_DWORD *)(v10 + 112) - 1; /*0x63413d*/
       *(_DWORD *)(v10 + 112) = v11; /*0x63413e*/
       if ( !v11 ) /*0x634141*/
       {
@@ -313,13 +305,13 @@ LABEL_9:
     }
     *(_DWORD *)(v7 + 8) = -1; /*0x634163*/
     __3_YAXPAX_Z(*((void **)Blocka + 1)); /*0x634172*/
-    v12 = this->IsClean(&Blocka); /*0x634183*/
+    int v12 = this->IsClean(&Blocka); /*0x634183*/
     if ( v12 != -1 ) /*0x634189*/
     {
-      v13 = this->uniqueId; /*0x63418b*/
+      int v13 = this->uniqueId; /*0x63418b*/
       if ( v12 < v13 ) /*0x634190*/
       {
-        v14 = v13 - 1; /*0x634192*/
+        int v14 = v13 - 1; /*0x634192*/
         for ( this->uniqueId = v14; /*0x634198*/
               v12 < this->uniqueId;
               *(_DWORD *)(this->vtable2 + 4 * v12 - 4) = *(_DWORD *)(this->vtable2 + 4 * v12) )
@@ -333,6 +325,7 @@ LABEL_9:
     {
       FactoryClass::ClearObjects(this); /*0x6341ce*/
       aP1 = (TechnoClass *)this; /*0x6341e3*/
+  int v15; // eax
       v15 = ((int (__thiscall *)(CoordStruct **, TechnoClass **))(*(&g_MatrixTransformState + 6050))[1].Y)( /*0x6341e7*/
               &(&g_MatrixTransformState)[504] + 2,
               &aP1);
@@ -877,15 +870,10 @@ int TeamClass::Cleanup(BuildingClass * aP1)
   int v4; // eax
   int v5; // ebp
   int v6; // eax
-  int v7; // eax
   VectorClass *v8; // esi
   int Value; // eax
-  int v10; // eax
-  int v11; // ebx
-  int v12; // eax
   CCINIClass *v13; // eax
   int result; // eax
-  int v15; // ecx
   CCINIClass *Block; // [esp+8h] [ebp-4h] BYREF
 
   if ( this->abstractFlags == 1 ) /*0x636b59*/
@@ -908,7 +896,7 @@ LABEL_4:
   {
     if ( v3 >= v4 ) /*0x636b79*/
     {
-      v7 = this->buildingType - 1; /*0x636ba6*/
+      int v7 = this->buildingType - 1; /*0x636ba6*/
       this->buildingType = v7; /*0x636ba8*/
       if ( v7 < 3 ) /*0x636bb1*/
       {
@@ -930,13 +918,13 @@ LABEL_4:
   {
     if ( *(_BYTE *)(v5 + 12) ) /*0x636bea*/
       ScriptAction::DecrementRefCount(v8, v5); /*0x636bf4*/
-    v10 = *(_DWORD *)(v5 + 8); /*0x636bf9*/
+    int v10 = *(_DWORD *)(v5 + 8); /*0x636bf9*/
     if ( v10 != -1 ) /*0x636bff*/
     {
-      v11 = *((_DWORD *)v8[2].Items + v10); /*0x636c08*/
+      int v11 = *((_DWORD *)v8[2].Items + v10); /*0x636c08*/
       *(_DWORD *)(v11 + 116) = -1; /*0x636c0b*/
       TeamClass::Reset(v8, 0); /*0x636c12*/
-      v12 = *(_DWORD *)(v11 + 112) - 1; /*0x636c1a*/
+      int v12 = *(_DWORD *)(v11 + 112) - 1; /*0x636c1a*/
       *(_DWORD *)(v11 + 112) = v12; /*0x636c1b*/
       if ( !v12 ) /*0x636c1e*/
         ScriptQueue::PushEntry(v8); /*0x636c22*/
@@ -962,7 +950,7 @@ LABEL_4:
   result = this->abstractFlags; /*0x636ca5*/
   if ( v3 < result ) /*0x636cac*/
   {
-    v15 = result - 1; /*0x636cae*/
+    int v15 = result - 1; /*0x636cae*/
     result = v3; /*0x636cb1*/
     for ( this->abstractFlags = v15; /*0x636cb8*/
           result < this->abstractFlags;
@@ -1023,9 +1011,7 @@ int TeamClass::Update_0(int aP1, AbstractClass * aP2, IUnknown * aP3, AbstractCl
   int v6; // edx
   char v7; // bl
   TriggerClass *v8; // esi
-  int v10; // eax
   int eax8; // eax
-  _DWORD *v12; // eax
   AbstractClass *v11; // eax
   char v15; // [esp+Ah] [ebp-2h]
   char v16; // [esp+Bh] [ebp-1h]
@@ -1046,7 +1032,7 @@ int TeamClass::Update_0(int aP1, AbstractClass * aP2, IUnknown * aP3, AbstractCl
            (int)aP5) )
     {
       v6 = (int)this->buildingType; /*0x6e541d*/
-      v10 = *(_DWORD *)(v6 + 156); /*0x6e5420*/
+      int v10 = *(_DWORD *)(v6 + 156); /*0x6e5420*/
       if ( !v10 ) /*0x6e5429*/
       {
         BuildingClass::ExecuteTriggers((int)v8, (TechnoClass *)aP2, (TriggerClass *)aP3); /*0x6e546d*/
@@ -1082,7 +1068,7 @@ LABEL_14:
       ObjectClass::SetReference(aP2, 0); /*0x6e54a8*/
     if ( aP3 != *(IUnknown **)&stru_B05488[37496] ) /*0x6e54b9*/
     {
-      v12 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP3); /*0x6e54d5*/
+      _DWORD * v12 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP3); /*0x6e54d5*/
       ObjectClass::SetTriggerTarget(v12, 0); /*0x6e54dc*/
     }
   }

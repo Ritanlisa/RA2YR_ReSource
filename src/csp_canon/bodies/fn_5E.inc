@@ -259,20 +259,20 @@ int Network::SendOptionsGame()
   {
     memset(v5, 0, 455);
     v5[0] = 23;
-    strcpy((char *)&v5[1], &HouseClass_Player.__pad_5568[8396]);
-    v2 = *(ObjectClass **)&HouseClass_Player.__pad_5568[8416];
+    strcpy((char *)&v5[1], &HouseClass_Player[30260]);
+    v2 = *(ObjectClass **)&HouseClass_Player[30280];
     strcpy((char *)&v5[11] + 3, this);
     *(int *)((char *)&v5[111] + 3) = v2;
-    *(int *)((char *)&v5[112] + 3) = WideString::Hash((wchar_t *)&HouseClass_Player.__pad_5568[17244]);
-    result = *(int *)&HouseClass_Player.__pad_5568[18384];
-    for ( i = 1; i < *(int *)&HouseClass_Player.__pad_5568[18384]; ++i )
+    *(int *)((char *)&v5[112] + 3) = WideString::Hash((wchar_t *)&HouseClass_Player[39108]);
+    result = *(int *)&HouseClass_Player[40248];
+    for ( i = 1; i < *(int *)&HouseClass_Player[40248]; ++i )
     {
-    v4 = *(IUnknown **)(*(int *)&HouseClass_Player.__pad_5568[18372] + 4 * i);
+    v4 = *(IUnknown **)(*(int *)&HouseClass_Player[40236] + 4 * i);
     ToWideStringChar(v4);
     Debug::Log();
-    Network::SendMessage((int)&HouseClass_Player.__pad_5568[22284], (int)v5, 455, 1, (int)v4->__pad_28, 0, 0);
+    Network::SendMessage((int)&HouseClass_Player[44148], (int)v5, 455, 1, (int)v4->__pad_28, 0, 0);
     Event::Dispatch();
-    result = *(int *)&HouseClass_Player.__pad_5568[18384];
+    result = *(int *)&HouseClass_Player[40248];
     }
   }
     return result;
@@ -1116,7 +1116,7 @@ HWND Network::handleTimeout()
     HWND result;
     unsigned char v5;
     v5 = 1;
-    if ( !*(int *)&g_NetworkPlayerBuffer.__pad_430[84] || *(int *)&g_NetworkPlayerBuffer.__pad_430[88] == -1 || *(int *)&g_NetworkPlayerBuffer.__pad_430[92] == -1 || Modem::OpenPort(&g_NetworkPlayerBuffer.__pad_1258[476], (Modem *)&g_NetworkPlayerBuffer.__pad_430[84]) )
+    if ( !*(int *)&g_NetworkPlayerBuffer[1156] || *(int *)&g_NetworkPlayerBuffer[1160] == -1 || *(int *)&g_NetworkPlayerBuffer[1164] == -1 || Modem::OpenPort(&g_NetworkPlayerBuffer[5172], (Modem *)&g_NetworkPlayerBuffer[1156]) )
   {
     v5 = 0;
   }

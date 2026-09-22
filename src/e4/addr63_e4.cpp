@@ -101,57 +101,26 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
 {
   size_t v6; // ebp
   _DWORD *v12; // esi
-  _DWORD *v13; // eax
-  _DWORD *v14; // ebx
   int v15; // ebx
-  _BYTE *v16; // ebp
   size_t v17; // esi
   unsigned __int8 v18; // bl
-  char *v19; // ecx
-  char v20; // al
-  char v21; // bl
-  unsigned int v22; // edi
   unsigned __int8 *v23; // ebp
   unsigned __int8 *v24; // ebx
-  int v25; // esi
-  int v26; // edx
-  int v27; // eax
   int v28; // edi
-  unsigned int v29; // edx
-  int v30; // eax
-  unsigned int v31; // esi
-  int v32; // ebp
   unsigned __int8 v33; // bl
-  _BYTE *v34; // eax
-  bool v35; // cf
   unsigned __int8 *v36; // eax
-  char v37; // bl
   unsigned int i; // eax
   unsigned __int8 *v39; // eax
-  unsigned int v40; // edi
-  unsigned int v41; // ebp
   unsigned __int8 v42; // cl
-  _BYTE *v43; // eax
   unsigned __int8 *v44; // eax
-  char *v45; // edi
-  int v46; // eax
-  unsigned int v47; // ecx
   unsigned __int8 *v48; // [esp+30h] [ebp-8B4h]
-  _BYTE *v50; // [esp+38h] [ebp-8ACh]
   unsigned __int8 v51; // [esp+38h] [ebp-8ACh]
   unsigned __int8 v52; // [esp+38h] [ebp-8ACh]
   unsigned __int8 v53; // [esp+38h] [ebp-8ACh]
   unsigned int v54; // [esp+3Ch] [ebp-8A8h]
   _DWORD *v55; // [esp+40h] [ebp-8A4h]
   int v56; // [esp+44h] [ebp-8A0h]
-  int v57; // [esp+44h] [ebp-8A0h]
-  int v58; // [esp+44h] [ebp-8A0h]
-  char v59; // [esp+48h] [ebp-89Ch]
-  char v60; // [esp+48h] [ebp-89Ch]
   size_t v61; // [esp+4Ch] [ebp-898h]
-  unsigned int v62; // [esp+4Ch] [ebp-898h]
-  int v63; // [esp+50h] [ebp-894h]
-  int v65[3]; // [esp+58h] [ebp-88Ch] BYREF
   _BYTE v66[4]; // [esp+64h] [ebp-880h] BYREF
   unsigned __int16 v67; // [esp+68h] [ebp-87Ch]
   unsigned __int16 v68; // [esp+6Ah] [ebp-87Ah]
@@ -159,7 +128,6 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   int v70; // [esp+6Eh] [ebp-876h]
   unsigned __int8 v71; // [esp+A5h] [ebp-83Fh]
   int v72; // [esp+A6h] [ebp-83Eh]
-  _BYTE v73[2048]; // [esp+E4h] [ebp-800h] BYREF
   _UNKNOWN *retaddr; // [esp+8E4h] [ebp+0h] BYREF
 
   if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)a1 + 20))(0) ) /*0x630328*/
@@ -178,6 +146,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   {
     if ( (int)(Size / v7 - 1) < v8 ) /*0x6303f7*/
       v8 = Size / v7 - 1; /*0x6303f9*/
+  int v65[3]; // [esp+58h] [ebp-88Ch] BYREF
     Buffer::Init(v65, a3, Size); /*0x630408*/
     _DWORD * v10 = __2_YAPAXI_Z(0x20u); /*0x63040f*/
     _DWORD * v11 = v10; /*0x630414*/
@@ -202,8 +171,8 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   }
   else
   {
-    v13 = __2_YAPAXI_Z(0x20u); /*0x630473*/
-    v14 = v13; /*0x630478*/
+    _DWORD * v13 = __2_YAPAXI_Z(0x20u); /*0x630473*/
+    _DWORD * v14 = v13; /*0x630478*/
     if ( !v13 ) /*0x63047f*/
       return 0; /*0x6304c8*/
     v13[4] = v9; /*0x630481*/
@@ -222,13 +191,14 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   v56 = v15; /*0x6304dc*/
   if ( v15 ) /*0x6304e0*/
   {
+  _BYTE v73[2048]; // [esp+E4h] [ebp-800h] BYREF
     v48 = v73; /*0x6304f1*/
     (*(void (__thiscall **)(int, _BYTE *, int))(*(_DWORD *)a1 + 36))(a1, v73, 2048); /*0x630504*/
-    v63 = v15; /*0x63050e*/
+    int v63 = v15; /*0x63050e*/
     if ( v71 == 3 ) /*0x630514*/
     {
-      v16 = __2_YAPAXI_Z(v6); /*0x630520*/
-      v50 = v16; /*0x630527*/
+      _BYTE * v16 = __2_YAPAXI_Z(v6); /*0x630520*/
+      _BYTE * v50 = v16; /*0x630527*/
       if ( !v16 ) /*0x63052b*/
       {
         (*(void (__thiscall **)(_DWORD *))(*v12 + 96))(v12); /*0x630531*/
@@ -237,14 +207,14 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
       }
       if ( v8 ) /*0x63054d*/
       {
-        v57 = v8; /*0x630553*/
+        int v57 = v8; /*0x630553*/
         do /*0x63067e*/
         {
           v17 = 0; /*0x630557*/
           do /*0x6305ea*/
           {
             v18 = *v48; /*0x630568*/
-            v19 = (char *)++v48; /*0x63056a*/
+            char * v19 = (char *)++v48; /*0x63056a*/
             if ( v48 >= (unsigned __int8 *)&retaddr ) /*0x630571*/
             {
               (*(void (__thiscall **)(int, _BYTE *, int))(*(_DWORD *)a1 + 36))(a1, v73, 2048); /*0x630584*/
@@ -253,9 +223,9 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
             }
             if ( (v18 & 0xC0) == 0xC0 ) /*0x63059a*/
             {
-              v20 = *v19; /*0x63059c*/
-              v21 = v18 & 0x3F; /*0x63059e*/
-              v59 = *v19; /*0x6305ab*/
+              char v20 = *v19; /*0x63059c*/
+              char v21 = v18 & 0x3F; /*0x63059e*/
+              char v59 = *v19; /*0x6305ab*/
               v48 = (unsigned __int8 *)(v19 + 1); /*0x6305af*/
               if ( v19 + 1 >= (char *)&retaddr ) /*0x6305b3*/
               {
@@ -276,17 +246,17 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
             }
           }
           while ( v17 < v61 ); /*0x6305ea*/
-          v22 = 0; /*0x6305fb*/
+          unsigned int v22 = 0; /*0x6305fb*/
           if ( v54 ) /*0x630604*/
           {
             v23 = &v16[(unsigned __int16)v72]; /*0x63060a*/
             v24 = &v50[2 * (unsigned __int16)v72]; /*0x63060c*/
             do /*0x63066f*/
             {
-              v25 = (unsigned __int8)v50[v22]; /*0x63061e*/
-              v26 = *v23; /*0x630626*/
+              int v25 = (unsigned __int8)v50[v22]; /*0x63061e*/
+              int v26 = *v23; /*0x630626*/
               ++v22; /*0x630629*/
-              v27 = (int)*v24 >> g_BitShift_Blue; /*0x63062a*/
+              int v27 = (int)*v24 >> g_BitShift_Blue; /*0x63062a*/
               ++v23; /*0x630632*/
               ++v24; /*0x630633*/
               v63 += 2; /*0x63065f*/
@@ -308,17 +278,18 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
     }
     else
     {
-      v29 = v54; /*0x6306a8*/
-      v30 = (unsigned __int16)v72; /*0x6306ac*/
+  bool v35; // cf
+      unsigned int v29 = v54; /*0x6306a8*/
+      int v30 = (unsigned __int16)v72; /*0x6306ac*/
       if ( (unsigned __int16)v72 == v54 ) /*0x6306b3*/
       {
-        v40 = v54 * v8; /*0x630834*/
-        v41 = 0; /*0x630839*/
-        v62 = v40; /*0x63083b*/
+        unsigned int v40 = v54 * v8; /*0x630834*/
+        unsigned int v41 = 0; /*0x630839*/
+        unsigned int v62 = v40; /*0x63083b*/
         while ( v41 < v40 ) /*0x630841*/
         {
           v42 = *v48; /*0x630856*/
-          v43 = v48 + 1; /*0x630858*/
+          _BYTE * v43 = v48 + 1; /*0x630858*/
           v35 = v48 + 1 < (unsigned __int8 *)&retaddr; /*0x630859*/
           v52 = *v48++; /*0x63085b*/
           if ( !v35 ) /*0x630863*/
@@ -332,20 +303,20 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
           {
             v44 = v43 + 1; /*0x630897*/
             v53 = v42 & 0x3F; /*0x630898*/
-            v60 = *(v44 - 1); /*0x6308a6*/
+            char v60 = *(v44 - 1); /*0x6308a6*/
             v48 = v44; /*0x6308ac*/
             if ( v44 >= (unsigned __int8 *)&retaddr ) /*0x6308b0*/
             {
               (*(void (__thiscall **)(int, _BYTE *, int))(*(_DWORD *)a1 + 36))(a1, v73, 2048); /*0x6308c3*/
               v48 = v73; /*0x6308cd*/
             }
-            v45 = (char *)(v15 + v41); /*0x6308de*/
+            char * v45 = (char *)(v15 + v41); /*0x6308de*/
             LOBYTE(v15) = v60; /*0x6308e1*/
             BYTE1(v15) = v60; /*0x6308e9*/
-            v46 = v15 << 16; /*0x6308f1*/
+            int v46 = v15 << 16; /*0x6308f1*/
             LOWORD(v46) = v15; /*0x6308f4*/
             v15 = v56; /*0x6308f7*/
-            v47 = v53 >> 2; /*0x6308fb*/
+            unsigned int v47 = v53 >> 2; /*0x6308fb*/
             memset32(v45, v46, v47); /*0x6308fe*/
             v41 += v53; /*0x630905*/
             memset(&v45[4 * v47], v46, v53 & 3); /*0x630907*/
@@ -362,12 +333,12 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
       }
       else
       {
-        v31 = 0; /*0x6306b9*/
+        unsigned int v31 = 0; /*0x6306b9*/
         v51 = 0; /*0x6306bb*/
         if ( v8 ) /*0x6306c2*/
         {
-          v32 = v15; /*0x6306c8*/
-          v58 = v8; /*0x6306ca*/
+          int v32 = v15; /*0x6306c8*/
+          int v58 = v8; /*0x6306ca*/
           do /*0x6307ad*/
           {
             v31 = 0; /*0x6306ce*/
@@ -376,7 +347,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
               do /*0x63079c*/
               {
                 v33 = *v48; /*0x6306e7*/
-                v34 = v48 + 1; /*0x6306e9*/
+                _BYTE * v34 = v48 + 1; /*0x6306e9*/
                 v35 = v48 + 1 < (unsigned __int8 *)&retaddr; /*0x6306ea*/
                 v51 = *v48++; /*0x6306ec*/
                 if ( !v35 ) /*0x6306f4*/
@@ -390,7 +361,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
                 {
                   v36 = v34 + 1; /*0x630728*/
                   v51 = v33 & 0x3F; /*0x630729*/
-                  v37 = *(v36 - 1); /*0x63072d*/
+                  char v37 = *(v36 - 1); /*0x63072d*/
                   v48 = v36; /*0x630737*/
                   if ( v36 >= (unsigned __int8 *)&retaddr ) /*0x63073d*/
                   {
@@ -690,8 +661,8 @@ void NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4
           UpdateWindow(hWnd); /*0x631948*/
           ShowWindow(hWnd, 0); /*0x631953*/
           UpdateWindow(g_hWnd); /*0x63195c*/
-  int v6; // [esp+0h] [ebp-408h]
   _DWORD *v7; // [esp+4h] [ebp-404h]
+  int v6; // [esp+0h] [ebp-408h]
           Network::sendGameEvent((Modem *)(v8 + 12), v6, v7); /*0x63196d*/
           ShowWindow(hWnd, 5); /*0x631975*/
           return 0; /*0x631983*/
@@ -1282,16 +1253,12 @@ void ExecuteActionPlanManager(IUnknown * a1, char * a2)
   wchar_t *StringCSF; // eax
   char *v19; // ecx
   AbstractClass *Type; // ebp
-  _DWORD *v21; // eax
   bool v22; // bl
-  void *v23; // ecx
-  int v24; // eax
   int abstractFlags; // eax
   AbstractClass *v25; // eax
   unsigned int eax58; // eax
   VectorClass *v28; // eax
   VectorClass *v27; // edi
-  int v30; // esi
   wchar_t *v31; // eax
   int v32; // eax
   _BYTE v33[112]; // [esp-70h] [ebp-ACh] BYREF
@@ -1411,7 +1378,7 @@ LABEL_67:
   Type = (AbstractClass *)BuildingClass::GetPlanningToken(aP1); /*0x63832c*/
   if ( !Type ) /*0x638330*/
   {
-    v21 = (_DWORD *)__2_YAPAXI_Z(0x9Cu); /*0x638337*/
+    _DWORD * v21 = (_DWORD *)__2_YAPAXI_Z(0x9Cu); /*0x638337*/
     if ( v21 ) /*0x638341*/
       v36 = ScriptAction::Constructor(v21, (AbstractClass *)aP1); /*0x63834b*/
     else
@@ -1423,7 +1390,8 @@ LABEL_67:
   v22 = v34; /*0x638378*/
   if ( v34 ) /*0x63837e*/
   {
-    v23 = (void *)v2[12]; /*0x638380*/
+  int v24; // eax
+    void * v23 = (void *)v2[12]; /*0x638380*/
     if ( v23 == (void *)7 || v23 == (void *)8 || v23 == (void *)9 ) /*0x638391*/
     {
       v24 = 0; /*0x638393*/
@@ -1493,7 +1461,7 @@ LABEL_47:
     {
       *(_DWORD *)&v33[108] = 0; /*0x63849e*/
       *(_DWORD *)&v33[104] = 0; /*0x6384a0*/
-      v30 = *(_DWORD *)(v37 + 3); /*0x6384a2*/
+      int v30 = *(_DWORD *)(v37 + 3); /*0x6384a2*/
       ExecuteActionPlanManager_Helper_63DEC0(v28, 0, 0); /*0x6384a7*/
       v27[1].Capacity = v30; /*0x6384af*/
       *(_DWORD *)&v33[108] = 0; /*0x6384b2*/
@@ -1923,7 +1891,6 @@ void sub_639470(int a1, int a2, int a3)
 {
   int v5; // esi
   _DWORD *ScenarioClassActionCoords; // eax
-  _DWORD v8[3]; // [esp+10h] [ebp-Ch] BYREF
 
   int v3 = DataGlobal_AC4C28; /*0x639475*/
   int v4 = 0; /*0x63947d*/
@@ -1932,6 +1899,7 @@ void sub_639470(int a1, int a2, int a3)
   while ( 1 ) /*0x63948c*/
   {
     v5 = *((_DWORD *)DataGlobal_AC4C1C + v4); /*0x63948c*/
+  _DWORD v8[3]; // [esp+10h] [ebp-Ch] BYREF
     ScenarioClassActionCoords = GetScenarioClassActionCoords(v8, *(_BYTE **)(**(_DWORD **)(v5 + 4) + 4)); /*0x63949b*/
     if ( *ScenarioClassActionCoords == a1 && ScenarioClassActionCoords[1] == a2 && ScenarioClassActionCoords[2] == a3 ) /*0x6394b8*/
       break; /*0x6394b8*/
@@ -2258,18 +2226,11 @@ void ExportSelectionAsScriptAction()
   wchar_t *StringCSF; // eax
   void **v24; // [esp+10h] [ebp-184h] BYREF
   _DWORD *v25; // [esp+14h] [ebp-180h]
-  int v26; // [esp+18h] [ebp-17Ch]
-  char v27; // [esp+1Dh] [ebp-177h]
   int v28; // [esp+20h] [ebp-174h]
   int v29; // [esp+24h] [ebp-170h]
   int v30; // [esp+28h] [ebp-16Ch]
   _DWORD v32[3]; // [esp+30h] [ebp-164h] BYREF
-  _BYTE v33[8]; // [esp+3Ch] [ebp-158h] BYREF
-  char v34[108]; // [esp+44h] [ebp-150h] BYREF
   __int16 v35; // [esp+B0h] [ebp-E4h]
-  char v36; // [esp+B2h] [ebp-E2h]
-  _BYTE v37[112]; // [esp+B4h] [ebp-E0h] BYREF
-  _BYTE v38[112]; // [esp+124h] [ebp-70h] BYREF
 
   int v0 = g_ScriptState; /*0x63ad56*/
   v32[2] = g_ScriptState; /*0x63ad67*/
@@ -2293,6 +2254,8 @@ void ExportSelectionAsScriptAction()
     {
       if ( *(_BYTE *)(v2 + 20) & 1 ) /*0x63adc7*/
       {
+  char v27; // [esp+1Dh] [ebp-177h]
+  int v26; // [esp+18h] [ebp-17Ch]
         TypeBuildingClass = BuildingClass::GetPlanningToken((_DWORD *)v2); /*0x63add3*/
         if ( TypeBuildingClass ) /*0x63adda*/
         {
@@ -2374,6 +2337,8 @@ LABEL_37:
     {
       int v23 = 0; /*0x63af3c*/
       _DWORD * v15 = (_DWORD *)v25[v14]; /*0x63af3e*/
+  _BYTE v37[112]; // [esp+B4h] [ebp-E0h] BYREF
+  _BYTE v38[112]; // [esp+124h] [ebp-70h] BYREF
       qmemcpy(v37, (const void *)Team_Helper_6342E0(v38, 0), 0x6Fu); /*0x63af55*/
       _DWORD * v16 = (_DWORD *)Team_Load_63B050(v37); /*0x63af61*/
       if ( v16 ) /*0x63af68*/
@@ -2384,8 +2349,10 @@ LABEL_37:
   _BYTE v22[108]; // [esp-70h] [ebp-204h] BYREF
         *(_DWORD *)&v22[104] = v18; /*0x63af7f*/
         LOBYTE(v23) = (_BYTE)WaypointCoordsScriptAction; /*0x63af81*/
+  _BYTE v33[8]; // [esp+3Ch] [ebp-158h] BYREF
         _BYTE * v19 = ScriptAction::GetWaypointCoords(v33, v15); /*0x63af88*/
         ScenarioClass::SetEvent( /*0x63afac*/
+  char v34[108]; // [esp+44h] [ebp-150h] BYREF
           v34,
           *((_DWORD *)HouseClass_Player + 12),
           42,
@@ -2395,6 +2362,7 @@ LABEL_37:
           v23);
         qmemcpy(v22, v34, sizeof(v22)); /*0x63afc2*/
         LOWORD(v23) = v35; /*0x63afc4*/
+  char v36; // [esp+B2h] [ebp-E2h]
         BYTE2(v23) = v36; /*0x63afc6*/
         Network::RecordEvent( /*0x63afc7*/
           *(__int64 *)v22,
@@ -2544,9 +2512,6 @@ void RenderScriptActionHighlight()
   int *Viewport; // eax
   int *ScreenPos; // eax
   int v13; // [esp+10h] [ebp-50h] BYREF
-  int v14; // [esp+14h] [ebp-4Ch]
-  int v15; // [esp+18h] [ebp-48h]
-  int v16; // [esp+1Ch] [ebp-44h]
   int v17; // [esp+20h] [ebp-40h] BYREF
   int v18; // [esp+24h] [ebp-3Ch]
   int v19; // [esp+28h] [ebp-38h]
@@ -2556,7 +2521,6 @@ void RenderScriptActionHighlight()
   int v23; // [esp+38h] [ebp-28h]
   int v24; // [esp+3Ch] [ebp-24h]
   int v25[4]; // [esp+40h] [ebp-20h] BYREF
-  char v26[16]; // [esp+50h] [ebp-10h] BYREF
 
   v0 = (_DWORD **)g_ScriptPool; /*0x63b31c*/
   result = (unsigned __int8)byte_A80220 >> g_BitShift_Green_0 << g_DDraw_BlueMask; /*0x63b34b*/
@@ -2614,11 +2578,12 @@ void RenderScriptActionHighlight()
     v25[1] = v10[1]; /*0x63b44c*/
     v25[2] = v10[2]; /*0x63b453*/
     v25[3] = v10[3]; /*0x63b461*/
+  char v26[16]; // [esp+50h] [ebp-10h] BYREF
     int * v11 = (int *)Render_Render_6345A0(v26); /*0x63b465*/
     v13 = *v11; /*0x63b46c*/
-    v14 = v11[1]; /*0x63b473*/
-    v15 = v11[2]; /*0x63b47a*/
-    v16 = v11[3]; /*0x63b485*/
+    int v14 = v11[1]; /*0x63b473*/
+    int v15 = v11[2]; /*0x63b47a*/
+    int v16 = v11[3]; /*0x63b485*/
     ShrinkRect(&v13, 4); /*0x63b48e*/
     v21 = v13; /*0x63b49f*/
     v22 = v14; /*0x63b4a7*/

@@ -221,7 +221,7 @@ unsigned int * AbstractClassVector::Construct(IUnknown * aP1, IUnknown * aP2)
 }
 }
 
-// ==== BACKFILL 0x004E1100  BulletClass::ResetDetonationTimer  cls=BulletClass  sig=csp  renamed_refs=7  residual=- ====
+// ==== BACKFILL 0x004E1100  BulletClass::ResetDetonationTimer  cls=BulletClass  sig=csp  renamed_refs=6  residual=- ====
 namespace gamemd { void* BulletClass::ResetDetonationTimer() {
 {
     *(void**)this = g_CurrentFrame;
@@ -231,7 +231,7 @@ namespace gamemd { void* BulletClass::ResetDetonationTimer() {
     this->q018 = 0;
     this->q01C = 0;
     this->q020 = 0;
-    this->q024 = 0;
+    this->objectTypeFlags = 0;
     return this;
 }
 } }
@@ -277,6 +277,24 @@ int BuildingAnim::GetType()
     return *(int *)v0;
     else
     return 0;
+}
+}
+
+// ==== BACKFILL 0x004E14A0  ObjectClass::InputThunkA  cls=GadgetClass  sig=csp  renamed_refs=0  residual=- ====
+int ObjectClass::InputThunkA()
+{
+int ObjectClass::InputThunkA()
+{
+  return this->GetWidth();
+}
+}
+
+// ==== BACKFILL 0x004E14B0  ObjectClass::InputThunkB  cls=GadgetClass  sig=csp  renamed_refs=0  residual=- ====
+int ObjectClass::InputThunkB()
+{
+int ObjectClass::InputThunkB()
+{
+  return ObjectClass::GetHeight();
 }
 }
 
@@ -714,14 +732,41 @@ LRESULT GetComboBoxSelected(ReferenceCounted * aP0, int nIDDlgItem, WPARAM wPara
     result = SendDlgItemMessageA((HWND)aP0, nIDDlgItem, 0x150u, (WPARAM)v3, 0);
     if ( result < -3 || result > 9 )
   {
-    if ( *(int *)&HouseClass_Player.__pad_5568[8072] )
-    return (*(LRESULT (__thiscall **)(int))(**(int **)&HouseClass_Player.__pad_5568[8072] + 40))(*(int *)&HouseClass_Player.__pad_5568[8072]);
+    if ( *(int *)&HouseClass_Player[29936] )
+    return (*(LRESULT (__thiscall **)(int))(**(int **)&HouseClass_Player[29936] + 40))(*(int *)&HouseClass_Player[29936]);
     else
     return -2;
   }
     return result;
 }
 }
+
+// ==== BACKFILL 0x004E41D0  GetResourceIDCSF  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int GetResourceIDCSF(int rtti) {
+    if (!rtti) {
+        return 1698;
+    }
+    if (rtti == 1) {
+        return 1314;
+    }
+    if (rtti == 2) {
+        return 1315;
+    }
+    if (rtti == 3) {
+        return 1316;
+    }
+    if (rtti == 4) {
+        return 1317;
+    }
+    if (rtti == 5) {
+        return 1318;
+    }
+    if (rtti == 6) {
+        return 1319;
+    }
+    return rtti != 7 ? -1 : 1320;
+}
+} }
 
 // ==== BACKFILL 0x004E43C0  InitGameDropdownColors  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 LPARAM * InitGameDropdownColors()
@@ -791,6 +836,33 @@ LRESULT GetComboBoxSelectedRaw(ReferenceCounted * aP0, int nIDDlgItem, WPARAM wP
 }
 }
 
+// ==== BACKFILL 0x004E4E60  GetResourceID3CSF  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int GetResourceID3CSF(int rtti) {
+    if (!rtti) {
+        return 1699;
+    }
+    if (rtti == 1) {
+        return 1700;
+    }
+    if (rtti == 2) {
+        return 1701;
+    }
+    if (rtti == 3) {
+        return 1702;
+    }
+    if (rtti == 4) {
+        return 1703;
+    }
+    if (rtti == 5) {
+        return 1704;
+    }
+    if (rtti == 6) {
+        return 1706;
+    }
+    return rtti != 7 ? -1 : 1707;
+}
+} }
+
 // ==== BACKFILL 0x004E4EC0  Dialog::SideIDToIndex  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
 int Dialog::SideIDToIndex()
 {
@@ -853,6 +925,33 @@ LRESULT SetComboBoxSelection(HWND hDlg, int nIDDlgItem, WPARAM wParam)
     return SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v3, 0);
 }
 }
+
+// ==== BACKFILL 0x004E5940  GetResourceID4CSF  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int GetResourceID4CSF(int rtti) {
+    if (!rtti) {
+        return 1901;
+    }
+    if (rtti == 1) {
+        return 1902;
+    }
+    if (rtti == 2) {
+        return 1903;
+    }
+    if (rtti == 3) {
+        return 1904;
+    }
+    if (rtti == 4) {
+        return 1905;
+    }
+    if (rtti == 5) {
+        return 1906;
+    }
+    if (rtti == 6) {
+        return 1907;
+    }
+    return rtti != 7 ? -1 : 1908;
+}
+} }
 
 // ==== BACKFILL 0x004E59A0  Dialog::OptionIDToIndex  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
 int Dialog::OptionIDToIndex()

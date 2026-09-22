@@ -92,12 +92,11 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *v4; // eax
-  char v6; // [esp+0h] [ebp-3Ch] BYREF
   char Destination[32]; // [esp+1Ch] [ebp-20h] BYREF
 
   if ( a4 == -1 ) /*0x474f5a*/
   {
-    v6 = 0; /*0x474f6a*/
+    char v6 = 0; /*0x474f6a*/
     v4 = &v6; /*0x474f6f*/
   }
   else
@@ -478,11 +477,9 @@ int ObjectTypeClass::Load2DArt()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char v8; // dl
-  int v9; // eax
   int result; // eax
   __int16 v11; // cx
   char Destination[24]; // [esp+8h] [ebp-220h] BYREF
-  char v13; // [esp+20h] [ebp-208h]
   char Source; // [esp+24h] [ebp-204h] BYREF
   char v15; // [esp+25h] [ebp-203h]
   char Buffer[256]; // [esp+128h] [ebp-100h] BYREF
@@ -491,6 +488,7 @@ int ObjectTypeClass::Load2DArt()
   {
     if ( !this->q212 ) /*0x5f90a0*/
     {
+  char v13; // [esp+20h] [ebp-208h]
       char * v2 = this + 504; /*0x5f90ab*/
       sprintf(Buffer, DataGlobal_832AE8, this + 504); /*0x5f90bf*/
       if ( Buffer ) /*0x5f90d0*/
@@ -542,7 +540,7 @@ int ObjectTypeClass::Load2DArt()
   if ( (*(int (__thiscall **)(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
     || (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) == 5 )
   {
-    v9 = SearchMIXFile(&Source, 1); /*0x5f9267*/
+    int v9 = SearchMIXFile(&Source, 1); /*0x5f9267*/
     this->Image = v9; /*0x5f926e*/
     if ( v9 ) /*0x5f9274*/
       goto LABEL_41; /*0x5f9274*/
@@ -1255,7 +1253,6 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   int TypeMember_5474E40; // eax
   _BYTE *v408; // ecx
   int Info; // eax
-  int v410; // ecx
   VectorClass v412; // [esp-14h] [ebp-398h] BYREF
   _BYTE aP3[12]; // [esp-4h] [ebp-388h]
   INIClass *v414; // [esp+8h] [ebp-37Ch]
@@ -4802,7 +4799,7 @@ LABEL_286:
     {
       Info = VoxelSection::GetInfo(*(_DWORD **)(v4 + 176), 0, 0);
       *(_DWORD *)&aP3[8] = 0;
-      v410 = *(unsigned __int8 *)(Info + 161);
+      int v410 = *(unsigned __int8 *)(Info + 161);
       *(_DWORD *)&aP3[4] = 0;
       *(_DWORD *)aP2[0] = v410;
       *(double *)(v4 + 864) = (double)v410 * 0.5 + 0.5;

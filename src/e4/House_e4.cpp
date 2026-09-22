@@ -464,11 +464,6 @@ int House::UpdateHouseAI()
   int j; // edi
   CellStruct *v34; // [esp+20h] [ebp-30h] BYREF
   _DWORD v35[2]; // [esp+24h] [ebp-2Ch] BYREF
-  int v36; // [esp+2Ch] [ebp-24h]
-  unsigned int v37; // [esp+30h] [ebp-20h]
-  int v38; // [esp+34h] [ebp-1Ch]
-  _DWORD v39[3]; // [esp+38h] [ebp-18h] BYREF
-  _BYTE v40[12]; // [esp+44h] [ebp-Ch] BYREF
 
   v2 = 0; /*0x4fd50d*/
   int v3 = *(_DWORD *)(this + 22080); /*0x4fd50f*/
@@ -498,12 +493,13 @@ LABEL_5:
     {
       void * v6 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v34); /*0x4fd5a6*/
   __int64 v8; // rax
+  _DWORD v39[3]; // [esp+38h] [ebp-18h] BYREF
       LODWORD(v8) = (*(int (__thiscall **)(void *, _DWORD *))(*(_DWORD *)v6 + 72))(v6, v39); /*0x4fd5b4*/
-      v36 = *(_DWORD *)v8; /*0x4fd5c3*/
+      int v36 = *(_DWORD *)v8; /*0x4fd5c3*/
       unsigned int v7 = *(_DWORD *)(v8 + 4); /*0x4fd5c7*/
-      v37 = v7; /*0x4fd5ca*/
+      unsigned int v37 = v7; /*0x4fd5ca*/
       HIDWORD(v8) = *(_DWORD *)(v8 + 8); /*0x4fd5ce*/
-      v38 = HIDWORD(v8); /*0x4fd5d1*/
+      int v38 = HIDWORD(v8); /*0x4fd5d1*/
       if ( v36 != *(_DWORD *)&HouseClass_Player[45740]
         || __PAIR64__(HIDWORD(v8), v7) != *(_QWORD *)&HouseClass_Player[45744] )
       {
@@ -535,6 +531,7 @@ LABEL_5:
                 else
                 {
                   void * v15 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)v35); /*0x4fd68a*/
+  _BYTE v40[12]; // [esp+44h] [ebp-Ch] BYREF
                   int * v16 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v15 + 72))(v15, v40); /*0x4fd69b*/
                   v12 = *v16; /*0x4fd69d*/
                   v13 = v16[1]; /*0x4fd69f*/
@@ -773,7 +770,6 @@ int House::ChooseHouseEnemy(BuildingClass * aP1)
   int v9; // eax
   _BYTE *v10; // esi
   MouseClass *v11; // ecx
-  int *v12; // eax
   int result; // eax
   __int16 *v14; // eax
   int v15; // esi
@@ -839,7 +835,7 @@ LABEL_23:
       && v3 == *(void **)&g_NetworkPlayerBuffer[6592]
       && v6 == v2 )
     {
-      v12 = (int *)(*(int (__thiscall **)(_BYTE *, MouseClass **))(*(_DWORD *)v10 + 72))(v10, &v33); /*0x50dc11*/
+      int * v12 = (int *)(*(int (__thiscall **)(_BYTE *, MouseClass **))(*(_DWORD *)v10 + 72))(v10, &v33); /*0x50dc11*/
       v5 = *v12; /*0x50dc14*/
       v3 = (void *)v12[1]; /*0x50dc16*/
       v6 = (void *)v12[2]; /*0x50dc19*/

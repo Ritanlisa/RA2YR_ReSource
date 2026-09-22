@@ -367,37 +367,11 @@ void HashTable::Clear()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int v3; // edi
-  int v4; // eax
-  int v5; // ebx
-  int *v6; // ecx
   const char **v7; // esi
-  int *v8; // eax
-  _DWORD *v9; // esi
-  int v10; // edi
-  bool v11; // c0
-  bool v12; // c3
-  unsigned int v13; // esi
-  int v14; // ecx
-  int *v15; // ebx
-  void *v16; // edi
-  unsigned int v17; // edx
-  int *v18; // edi
-  unsigned int v19; // ebx
-  int v20; // esi
-  int v21; // edx
-  int v22; // ecx
-  int v23; // eax
-  int v24; // esi
   void **v25; // ebx
   unsigned int v26; // edx
   unsigned int v27; // eax
-  float v28; // [esp+10h] [ebp-31Ch]
-  int *v29; // [esp+10h] [ebp-31Ch]
   void *v30; // [esp+14h] [ebp-318h] BYREF
-  __int64 v31; // [esp+18h] [ebp-314h]
-  int v32; // [esp+20h] [ebp-30Ch]
-  int v33; // [esp+24h] [ebp-308h]
-  _DWORD v34[193]; // [esp+28h] [ebp-304h] BYREF
 
   unknown_libname_73(&v30); /*0x6b9540*/
   while ( 1 ) /*0x6b9545*/
@@ -406,15 +380,15 @@ void HashTable::Clear()
     v3 = 0; /*0x6b9548*/
     if ( !v2 ) /*0x6b954c*/
       break; /*0x6b954c*/
-    v4 = this->HashTable_field_0x08; /*0x6b9552*/
-    v31 = (unsigned int)(v2 - 1); /*0x6b9556*/
-    v32 = v4; /*0x6b9562*/
-    v33 = 0; /*0x6b9566*/
-    v5 = 0; /*0x6b956e*/
-    v28 = (double)v31 / (double)v4; /*0x6b9572*/
+    int v4 = this->HashTable_field_0x08; /*0x6b9552*/
+    __int64 v31 = (unsigned int)(v2 - 1); /*0x6b9556*/
+    int v32 = v4; /*0x6b9562*/
+    int v33 = 0; /*0x6b9566*/
+    int v5 = 0; /*0x6b956e*/
+    float v28 = (double)v31 / (double)v4; /*0x6b9572*/
     if ( v4 <= 0 ) /*0x6b9576*/
       break; /*0x6b9576*/
-    v6 = *(int **)this; /*0x6b957f*/
+    int * v6 = *(int **)this; /*0x6b957f*/
     while ( !*v6 ) /*0x6b9583*/
     {
       ++v5; /*0x6b9585*/
@@ -426,46 +400,48 @@ void HashTable::Clear()
       break; /*0x6b9596*/
     v7 = *(const char ***)(*(_DWORD *)this + 4 * v5); /*0x6b959c*/
     String::Reassign((char **)&v30, v7); /*0x6b95a4*/
-    v8 = *(int **)this; /*0x6b95a9*/
+    int * v8 = *(int **)this; /*0x6b95a9*/
+  _DWORD v34[193]; // [esp+28h] [ebp-304h] BYREF
     qmemcpy(v34, v7 + 1, sizeof(v34)); /*0x6b95b8*/
-    v9 = (_DWORD *)v8[v5]; /*0x6b95ba*/
-    v10 = v9[194]; /*0x6b95bf*/
+    _DWORD * v9 = (_DWORD *)v8[v5]; /*0x6b95ba*/
+    int v10 = v9[194]; /*0x6b95bf*/
     if ( v9 ) /*0x6b95c5*/
     {
       DeleteAndZero((void **)v8[v5]); /*0x6b95c9*/
       __3_YAXPAX_Z(v9); /*0x6b95cf*/
     }
     *(_DWORD *)(*(_DWORD *)this + 4 * v5) = v10; /*0x6b95de*/
-    v11 = v28 < this->q020; /*0x6b95e4*/
-    v12 = v28 == this->q020; /*0x6b95e4*/
+    bool v11 = v28 < this->q020; /*0x6b95e4*/
+    bool v12 = v28 == this->q020; /*0x6b95e4*/
     --this->HashTable_field_0x04; /*0x6b95e8*/
     if ( v11 || v12 ) /*0x6b95ed*/
     {
-      v13 = this->HashTable_field_0x08; /*0x6b95f6*/
+      unsigned int v13 = this->HashTable_field_0x08; /*0x6b95f6*/
       if ( v13 > this->HashTable_field_0x30 && (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x6b9608*/
       {
-        v14 = this->HashTable_field_0x0C; /*0x6b960e*/
-        v15 = *(int **)this; /*0x6b9611*/
-        v29 = *(int **)this; /*0x6b9616*/
+        int v14 = this->HashTable_field_0x0C; /*0x6b960e*/
+        int * v15 = *(int **)this; /*0x6b9611*/
+        int * v29 = *(int **)this; /*0x6b9616*/
         this->HashTable_field_0x08 = v13 >> 1; /*0x6b961d*/
         this->HashTable_field_0x0C = v14 - 1; /*0x6b9627*/
-        v16 = __2_YAPAXI_Z(4 * (v13 >> 1)); /*0x6b9633*/
-        v17 = 4 * this->HashTable_field_0x08; /*0x6b9638*/
+        void * v16 = __2_YAPAXI_Z(4 * (v13 >> 1)); /*0x6b9633*/
+        unsigned int v17 = 4 * this->HashTable_field_0x08; /*0x6b9638*/
         *(_DWORD *)this = v16; /*0x6b963f*/
         memset(v16, 0, v17); /*0x6b9645*/
         if ( (int)v13 > 0 ) /*0x6b9650*/
         {
-          v18 = v15; /*0x6b9652*/
-          v19 = v13; /*0x6b9654*/
+          int * v18 = v15; /*0x6b9652*/
+          unsigned int v19 = v13; /*0x6b9654*/
           do /*0x6b968f*/
           {
-            v20 = *v18; /*0x6b9656*/
+            int v20 = *v18; /*0x6b9656*/
             if ( *v18 ) /*0x6b9656*/
             {
+  int v23; // eax
               do /*0x6b9689*/
               {
-                v21 = (*(int (__thiscall **)(int))(this + 24))(v20) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6b966c*/
-                v22 = *(_DWORD *)(*(_DWORD *)this + 4 * v21); /*0x6b9671*/
+                int v21 = (*(int (__thiscall **)(int))(this + 24))(v20) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6b966c*/
+                int v22 = *(_DWORD *)(*(_DWORD *)this + 4 * v21); /*0x6b9671*/
                 *(_DWORD *)(*(_DWORD *)this + 4 * v21) = v20; /*0x6b9677*/
                 v23 = *(_DWORD *)(v20 + 776); /*0x6b9679*/
                 *(_DWORD *)(v20 + 776) = v22; /*0x6b967f*/
@@ -491,7 +467,7 @@ LABEL_23:
   {
     do /*0x6b96fe*/
     {
-      v24 = *(_DWORD *)(*(_DWORD *)this + 4 * v3); /*0x6b96c6*/
+      int v24 = *(_DWORD *)(*(_DWORD *)this + 4 * v3); /*0x6b96c6*/
       while ( v24 ) /*0x6b96cb*/
       {
         v25 = (void **)v24; /*0x6b96cd*/

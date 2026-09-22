@@ -20,29 +20,19 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   int v8; // ecx
   int v9; // eax
   int *v10; // esi
-  int v11; // ebx
-  _DWORD *v12; // ebp
   void **v13; // esi
-  void *v14; // eax
   void **v16; // eax
   void **v17; // eax
   void **v18; // eax
   _DWORD *VeteranRatio_high; // esi
   void **v20; // ebp
   int Index; // eax
-  _DWORD *v22; // eax
   int ClosestObjectCell; // eax
-  int *v24; // eax
-  unsigned int v25; // ebp
-  unsigned int v26; // eax
   void **v27; // edi
   void *WarheadVersusMultiplier; // eax
   __int64 VeteranSpeed; // [esp-8h] [ebp-48h]
-  void *v30; // [esp-8h] [ebp-48h]
-  void *v31; // [esp-8h] [ebp-48h]
   double v32; // [esp+10h] [ebp-30h] BYREF
   int v33[2]; // [esp+1Ch] [ebp-24h] BYREF
-  int v34; // [esp+24h] [ebp-1Ch]
   int v35; // [esp+28h] [ebp-18h] BYREF
   int v36; // [esp+2Ch] [ebp-14h]
   int v37; // [esp+30h] [ebp-10h]
@@ -99,22 +89,22 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       if ( !((int)g_CurrentFrame % 3) ) /*0x4b5f1f*/
       {
         v32 = 0.0; /*0x4b5f39*/
-        v22 = Coord::To_Cell(&DataGlobal_87F7E8, (_DWORD *)(a1 + 28)); /*0x4b5f41*/
+        _DWORD * v22 = Coord::To_Cell(&DataGlobal_87F7E8, (_DWORD *)(a1 + 28)); /*0x4b5f41*/
         ClosestObjectCell = Object::FindClosestObjectCell(v22, &v32, 0, 0); /*0x4b5f48*/
         if ( !Object::IsAlliedWithObjectHouse(*(_DWORD **)(*(_DWORD *)(a1 + 8) + 540), ClosestObjectCell) ) /*0x4b5f57*/
         {
-          v24 = RandomCoordScatter((int *)&v32, (int *)(a1 + 28), 85, 0); /*0x4b5f6d*/
-          v25 = VeteranRatio_high[51]; /*0x4b5f74*/
+          int * v24 = RandomCoordScatter((int *)&v32, (int *)(a1 + 28), 85, 0); /*0x4b5f6d*/
+          unsigned int v25 = VeteranRatio_high[51]; /*0x4b5f74*/
           v33[0] = *v24; /*0x4b5f7a*/
           v33[1] = v24[1]; /*0x4b5f86*/
-          v34 = v24[2]; /*0x4b5f8d*/
-          v26 = Random::State(Randomizer_Global); /*0x4b5f91*/
+          int v34 = v24[2]; /*0x4b5f8d*/
+          unsigned int v26 = Random::State(Randomizer_Global); /*0x4b5f91*/
           StartAudioControllerAt(*(_DWORD *)(VeteranRatio_high[48] + 4 * (v26 % v25)), (int)&v35, 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v33, 2 * VeteranRatio_high[41], *(_DWORD **)(a1 + 8), VeteranRatio_high[43], 1, 0); /*0x4b5fc7*/
           v27 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5fd6*/
           if ( v27 ) /*0x4b5fdd*/
           {
-            v31 = (void *)Return::HRESULT_Fail(v33[0], v33[1], v34); /*0x4b5ffe*/
+            void * v31 = (void *)Return::HRESULT_Fail(v33[0], v33[1], v34); /*0x4b5ffe*/
             WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier( /*0x4b6020*/
                                                 2 * VeteranRatio_high[41],
                                                 VeteranRatio_high[43],
@@ -134,9 +124,9 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
     v36 = v10[40]; /*0x4b5cab*/
     v37 = v10[41]; /*0x4b5cb2*/
     (*(void (__thiscall **)(int *))(*v10 + 212))(v10); /*0x4b5cba*/
-    v11 = a1 - 4; /*0x4b5cc3*/
+    int v11 = a1 - 4; /*0x4b5cc3*/
     (*(void (__stdcall **)(int))(*(_DWORD *)(a1 - 4) + 4))(a1 - 4); /*0x4b5cc7*/
-    v12 = (_DWORD *)(*(_DWORD *)(a1 + 8) + 1652); /*0x4b5ccd*/
+    _DWORD * v12 = (_DWORD *)(*(_DWORD *)(a1 + 8) + 1652); /*0x4b5ccd*/
     if ( *v12 ) /*0x4b5cd3*/
       (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*v12 + 8))(*v12); /*0x4b5cdd*/
     *v12 = 0; /*0x4b5ce3*/
@@ -170,8 +160,8 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       v13 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5d37*/
       if ( v13 ) /*0x4b5d3e*/
       {
-        v30 = (void *)Return::HRESULT_Fail(v35, v36, v37); /*0x4b5d64*/
-        v14 = (void *)GetWarheadVersusMultiplier(100, g_RulesClass_Instance->?[5], 0, &v35); /*0x4b5d8a*/
+        void * v30 = (void *)Return::HRESULT_Fail(v35, v36, v37); /*0x4b5d64*/
+        void * v14 = (void *)GetWarheadVersusMultiplier(100, g_RulesClass_Instance->?[5], 0, &v35); /*0x4b5d8a*/
         AnimClass::ctor(v13, v14, &v35, 0, 1, (void *)0x2600, v30, 0); /*0x4b5d92*/
         (*(void (__stdcall **)(int))(*(_DWORD *)v11 + 8))(a1 - 4); /*0x4b5d9a*/
         return 1; /*0x4b5da6*/

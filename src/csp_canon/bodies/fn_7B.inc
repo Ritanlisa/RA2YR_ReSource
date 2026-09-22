@@ -720,7 +720,7 @@ char ** FormatStringInt(INIClass * aP0, MPCooperative * aP1, ObjectClass * aP2)
     size_t v5;
     char *v6;
     char Buffer[16];
-    sprintf(Buffer, (ObjectClass *)&DataGlobal_84DD9C.__pad_71C[212], (INIClass *)aP2);
+    sprintf(Buffer, (ObjectClass *)&DataGlobal_84DD9C[2032], (INIClass *)aP2);
     sprintf(Buffer, (ObjectClass *)Buffer, (INIClass *)aP1);
     *(int *)aP0->__pad_0 = 0;
     if ( Buffer )
@@ -778,7 +778,7 @@ char E4Recv_7B6A60::sub_7B6A60(ObjectClass * aP1)
     size_t v5;
     wchar_t *v6;
     v2 = *(wchar_t **)aP1->__pad_0;
-    if ( *(int *)aP1->__pad_0 || (v2 = (wchar_t *)&DataGlobal_87C374.__pad_579C[23588], &DataGlobal_87C374 != (IUnknown *)-46016) )
+    if ( *(int *)aP1->__pad_0 || (v2 = (wchar_t *)&DataGlobal_87C374[46016], &DataGlobal_87C374 != (IUnknown *)-46016) )
   {
     v4 = (ObjectClass *)*(void**)this;
     v5 = wcslen(v2) + 1;
@@ -901,7 +901,7 @@ wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * For
     CampaignScore *v8;
     CampaignScore *v9;
     wchar_t String[32];
-    swprintf(String, (const size_t)&DataGlobal_84DD9C.__pad_71C[220], Format, v9);
+    swprintf(String, (const size_t)&DataGlobal_84DD9C[2040], Format, v9);
     swprintf(String, (const size_t)String, a1, v8);
     *(int *)aP0->__pad_0 = 0;
     if ( String )
@@ -936,7 +936,7 @@ wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1)
     v5 = (AbstractClass *)__2_YAPAXI_Z(2 * v4 + 2);
     v6 = (char *)*a1;
     if ( !*a1 )
-    v6 = &DataGlobal_87C374.__pad_579C[33876];
+    v6 = &DataGlobal_87C374[56304];
     BulkCharToWide(v5, (unsigned char *)v6, v4);
     if ( v5 )
     v7 = wcslen((const wchar_t *)v5) + 1;
@@ -1036,7 +1036,7 @@ wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar
   }
     v9 = (CampaignScore *)*a2;
     if ( !*a2 )
-    v9 = (CampaignScore *)&DataGlobal_87C374.__pad_579C[23588];
+    v9 = (CampaignScore *)&DataGlobal_87C374[46016];
     WString::Append((wchar_t **)&String, v9);
     *(int *)aP0->__pad_0 = 0;
     if ( String )
@@ -1077,7 +1077,7 @@ wchar_t ** ConcatWString(GameSetup * aP0, const wchar_t ** a1, const wchar_t ** 
     wcscpy(v5, *a1);
   }
     v7 = (wchar_t *)*a2;
-    if ( *a2 || (v7 = (wchar_t *)&DataGlobal_87C374.__pad_579C[23588], &DataGlobal_87C374 != (IUnknown *)-46016) )
+    if ( *a2 || (v7 = (wchar_t *)&DataGlobal_87C374[46016], &DataGlobal_87C374 != (IUnknown *)-46016) )
   {
     v8 = (CCINIClass *)v5;
     v9 = wcslen(v7) + 1;
@@ -1628,7 +1628,7 @@ namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
       {
         if ( ((unsigned __int8 (__thiscall *)(IUnknown **))(*this)->field_1C)(this)
           && !((unsigned __int8 (__thiscall *)(IUnknown **))(*this)->field_8)(this)
-          && g_NetworkPlayerBuffer.__pad_14B0[660] )
+          && g_NetworkPlayerBuffer[5956] )
         {
           if ( WaitForSingleObject(hMutex, 0x2710u) == 258 )
             Debug::Log();
@@ -1670,7 +1670,7 @@ namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
         this->q018 = a3;
         if ( ((unsigned __int8 (__thiscall *)(IUnknown **))v12->field_1C)(this)
           && !((unsigned __int8 (__thiscall *)(IUnknown **))(*this)->field_8)(this)
-          && g_NetworkPlayerBuffer.__pad_14B0[660] )
+          && g_NetworkPlayerBuffer[5956] )
         {
           if ( v4(hMutex, 0x2710u) == 258 )
             Debug::Log();
@@ -1722,6 +1722,12 @@ MouseClass * WWMouseClass::updateHotspot(char a2)
     __3_YAXPAX_Z(this);
     return (MouseClass *)this;
 }
+}
+
+// ==== BACKFILL 0x007BA320  IsRefCountNegative  cls=WWMouseClass  sig=csp  renamed_refs=0  residual=- ====
+bool WWMouseClass::IsRefCountNegative()
+{
+    return this->q00C < 0;
 }
 
 // ==== BACKFILL 0x007BA330  WWMouseClass::checkCapture  cls=WWMouseClass  sig=csp  renamed_refs=1  residual=- ====

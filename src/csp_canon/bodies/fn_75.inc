@@ -47,12 +47,12 @@ int StartAudioControllerAt(AudioController * aP0, int a2, int a1)
     int *eax7;
     double v9;
     CCINIClass *v8;
-    if ( !DataGlobal_830620.__pad_579C[67312] )
+    if ( !DataGlobal_830620[89740] )
     return 0;
     v5 = 0;
     v6 = 0;
-    if ( (int)aP0 >= 0 && (int)aP0 < *(int *)&DataGlobal_B1D188.__pad_1D8[40] )
-    v6 = **(int ***)(*(int *)&DataGlobal_B1D188.__pad_1D8[28] + 4 * (int)aP0);
+    if ( (int)aP0 >= 0 && (int)aP0 < *(int *)&DataGlobal_B1D188[512] )
+    v6 = **(int ***)(*(int *)&DataGlobal_B1D188[500] + 4 * (int)aP0);
     v7 = (AudioMixer *)a1;
     if ( a1 )
   {
@@ -118,10 +118,10 @@ int PlayAudioAt2(IUnknown * aP0, unsigned int * a1, int a3)
     v6[10] = *((int*)(a1) + 2);
     v6[11] = a3;
     started = StartAudioControllerAt((AudioController *)aP0, (int)(v6 + 8), (int)(v6 + 3));
-    InsertAfterDListNode((int)&DataGlobal_B1D188.__pad_188[16], v6);
-    v8 = ++*(int *)DataGlobal_B1D188.__pad_220;
-    if ( *(int *)DataGlobal_B1D188.__pad_220 > *(int *)&DataGlobal_B1D188.__pad_220[4] )
-    *(int *)&DataGlobal_B1D188.__pad_220[4] = v8;
+    InsertAfterDListNode((int)&DataGlobal_B1D188[408], v6);
+    v8 = ++*(int *)DataGlobal_B1D188[544];
+    if ( *(int *)DataGlobal_B1D188[544] > *(int *)&DataGlobal_B1D188[548] )
+    *(int *)&DataGlobal_B1D188[548] = v8;
     return started;
   }
     return result;
@@ -223,11 +223,11 @@ int VocClass::FindByName()
     if ( !this )
     return -1;
     v3 = 0;
-    if ( *(int *)&DataGlobal_B1D188.__pad_2B8[112] <= 0 )
+    if ( *(int *)&DataGlobal_B1D188[808] <= 0 )
     return -1;
-    while ( _strcmpi(this, *(const void **)(*(int *)&DataGlobal_B1D188.__pad_2B8[100] + 4 * v3)) )
+    while ( _strcmpi(this, *(const void **)(*(int *)&DataGlobal_B1D188[796] + 4 * v3)) )
   {
-    if ( ++v3 >= *(int *)&DataGlobal_B1D188.__pad_2B8[112] )
+    if ( ++v3 >= *(int *)&DataGlobal_B1D188[808] )
     return -1;
   }
     return v3;
@@ -372,7 +372,7 @@ char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache 
     float v24[3];
     Info = VoxelSection::GetInfo(a0, (SomeVoxelCache *)aP1, aP2);
     v12 = 4;
-    v13 = 72 * *(int *)&DataGlobal_B1D188.__pad_579C[53836] + 11796344;
+    v13 = 72 * *(int *)&DataGlobal_B1D188[76264] + 11796344;
     *(int *)(v13 + 60) = a7;
     *(int *)(v13 + 64) = a8;
     *(int *)v13 = a0;
@@ -400,20 +400,20 @@ char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache 
     *(float *)&v14->field_2[2] = v21;
     *(float *)&v14->field_8 = v22;
     *(float *)&v14->field_2[2] = -*(float *)&v14->field_2[2];
-    if ( *(float *)v14->__pad_0 < (double)*(float *)&DataGlobal_B1D188.__pad_579C[44220] )
-    *(int *)&DataGlobal_B1D188.__pad_579C[44220] = *(int *)v14->__pad_0;
-    if ( *(float *)&v14->field_2[2] < (double)*(float *)&DataGlobal_B1D188.__pad_579C[44224] )
-    *(int *)&DataGlobal_B1D188.__pad_579C[44224] = *(int *)&v14->field_2[2];
-    if ( *(float *)v14->__pad_0 > (double)*(float *)&DataGlobal_B1D188.__pad_579C[45092] )
-    *(int *)&DataGlobal_B1D188.__pad_579C[45092] = *(int *)v14->__pad_0;
-    if ( *(float *)&v14->field_2[2] > (double)*(float *)&DataGlobal_B1D188.__pad_579C[45096] )
-    *(int *)&DataGlobal_B1D188.__pad_579C[45096] = *(int *)&v14->field_2[2];
+    if ( *(float *)v14->__pad_0 < (double)*(float *)&DataGlobal_B1D188[66648] )
+    *(int *)&DataGlobal_B1D188[66648] = *(int *)v14->__pad_0;
+    if ( *(float *)&v14->field_2[2] < (double)*(float *)&DataGlobal_B1D188[66652] )
+    *(int *)&DataGlobal_B1D188[66652] = *(int *)&v14->field_2[2];
+    if ( *(float *)v14->__pad_0 > (double)*(float *)&DataGlobal_B1D188[67520] )
+    *(int *)&DataGlobal_B1D188[67520] = *(int *)v14->__pad_0;
+    if ( *(float *)&v14->field_2[2] > (double)*(float *)&DataGlobal_B1D188[67524] )
+    *(int *)&DataGlobal_B1D188[67524] = *(int *)&v14->field_2[2];
     v15 = (Tactical *)((char *)(v15) + 12);
     v14 = (Tactical *)((char *)(v14) + 12);
     --v12;
   }
     while ( v12 );
-    return (char *)++*(int *)&DataGlobal_B1D188.__pad_579C[53836];
+    return (char *)++*(int *)&DataGlobal_B1D188[76264];
 }
 }
 
@@ -1305,7 +1305,7 @@ LONG JumpjetLocomotionClass::SmallStub_75CC80(int a1)
 }
 }
 
-// ==== BACKFILL 0x0075D230  AbstractClass::ProcessInit  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x0075D230  AbstractClass::ProcessInit  cls=AbstractClass  sig=csp  renamed_refs=2  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::ProcessInit() {
 {
       int v2;
@@ -1316,9 +1316,9 @@ namespace ra2 { namespace game { int AbstractClass::ProcessInit() {
       int v8;
 
       *(_DWORD *)this = &WarheadTypeClass::`vftable';
-      *(_DWORD *)(this + 4) = &WarheadTypeClass::`vftable';
-      *(_DWORD *)(this + 8) = &WarheadTypeClass::`vftable';
-      *(_DWORD *)(this + 12) = &vt_WarheadTypeClass;
+      this->vtable3 = &WarheadTypeClass::`vftable';
+      this->vtable4 = &WarheadTypeClass::`vftable';
+      this->vtable4 = &vt_WarheadTypeClass;
       AbstractClass::AnnounceExpiredPointer((void **)this, 1);
       v8 = this;
       v2 = (*(int (__thiscall **)(WarheadTypeClass **, int *))&WarheadTypeClass_Array->__pad_0[16])(&WarheadTypeClass_Array, &v8);
@@ -1343,7 +1343,7 @@ namespace ra2 { namespace game { int AbstractClass::ProcessInit() {
         while ( v3 < g_AnimManager );
       }
       v4 = *(void **)(this + 428);
-      *(_DWORD *)(this + 424) = &vt_VectorClass_int;
+      this->q6A0 = &vt_VectorClass_int;
       if ( v4 && this->q1B5 )
       {
         __3_YAXPAX_Z(v4);
@@ -1352,7 +1352,7 @@ namespace ra2 { namespace game { int AbstractClass::ProcessInit() {
       this->q1B5 = 0;
       this->q1B0 = 0;
       v5 = *(void **)(this + 400);
-      *(_DWORD *)(this + 396) = &vt_VectorClass_VoxelAnimTypeClass_const;
+      this->q630 = &vt_VectorClass_VoxelAnimTypeClass_const;
       if ( v5 && this->q199 )
       {
         __3_YAXPAX_Z(v5);
@@ -1361,7 +1361,7 @@ namespace ra2 { namespace game { int AbstractClass::ProcessInit() {
       this->q199 = 0;
       this->q194 = 0;
       v6 = *(void **)(this + 264);
-      *(_DWORD *)(this + 260) = &vt_VectorClass_AnimTypeClass_const;
+      this->q104 = &vt_VectorClass_AnimTypeClass_const;
       if ( v6 && this->q111 )
       {
         __3_YAXPAX_Z(v6);
@@ -1390,14 +1390,14 @@ namespace gamemd { int Crate::applyCrateEffect() {
 {
     int v1;
     v1 = 0;
-    if ( *(int *)&DataGlobal_87C374.__pad_579C[22976] <= 0 )
+    if ( *(int *)&DataGlobal_87C374[45404] <= 0 )
     return 0;
-    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22964] + 4 * v1) + 36), this) )
+    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_87C374[45392] + 4 * v1) + 36), this) )
   {
-    if ( ++v1 >= *(int *)&DataGlobal_87C374.__pad_579C[22976] )
+    if ( ++v1 >= *(int *)&DataGlobal_87C374[45404] )
     return 0;
   }
-    return *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22964] + 4 * v1);
+    return *(int *)(*(int *)&DataGlobal_87C374[45392] + 4 * v1);
 }
 } }
 
@@ -1558,7 +1558,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     LOBYTE(v3) = CellClass::IsActiveOrNext(v5);
     if ( (char)v3 )
     {
-    v12 = *(int *)(*(int *)&DataGlobal_87F8E4.__pad_5568[9108] + 6092);
+    v12 = *(int *)(*(int *)&DataGlobal_87F8E4[30972] + 6092);
     v3 = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x63);
     if ( v3 < v12 )
     LOBYTE(v3) = LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v13, (int)v5);

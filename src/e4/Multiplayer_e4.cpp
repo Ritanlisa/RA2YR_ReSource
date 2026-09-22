@@ -26,7 +26,6 @@ void * Multiplayer::FindStartPositions()
   IUnknown *v20; // [esp+14h] [ebp-2Ch]
   Multiplayer *v21; // [esp+18h] [ebp-28h]
   int v23; // [esp+20h] [ebp-20h] BYREF
-  int v24; // [esp+24h] [ebp-1Ch] BYREF
   void **v25; // [esp+28h] [ebp-18h] BYREF
   void *Block; // [esp+2Ch] [ebp-14h]
   int v27; // [esp+30h] [ebp-10h]
@@ -130,6 +129,7 @@ LABEL_24:
         v19 = *LayerClass::Pathfinding_Find( /*0x6885c3*/
                  (IUnknown *)&stru_87C374[13428],
                  (IUnknown *)&v23,
+  int v24; // [esp+24h] [ebp-1Ch] BYREF
                  (IUnknown *)&v24,
                  (IUnknown *)&v19,
                  (IUnknown *)1,

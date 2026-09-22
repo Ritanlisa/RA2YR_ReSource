@@ -338,9 +338,6 @@ int BuildingClass::AnimController()
   int v5; // ebx
   int v6; // ecx
   int v7; // edx
-  int v8; // edx
-  _DWORD *v10; // ecx
-  int v11; // edx
   _DWORD v12[4]; // [esp+Ch] [ebp-10h] BYREF
 
   Value = ProgressTimer::GetValue((_WORD *)(this->owningHouseIndex + 904), v12); /*0x629736*/
@@ -365,16 +362,16 @@ LABEL_8:
   this->abstractFlags = v7; /*0x62976e*/
   if ( v7 >= v6 ) /*0x629773*/
   {
-    v8 = this->q04C; /*0x629775*/
+    int v8 = this->q04C; /*0x629775*/
     this->abstractFlags = 0; /*0x629778*/
     this->q04C = ++v8; /*0x629782*/
     if ( v8 >= 10 ) /*0x629788*/
       return 1; /*0x629792*/
-    v10 = (_DWORD *)this->q011; /*0x629793*/
+    _DWORD * v10 = (_DWORD *)this->q011; /*0x629793*/
     if ( v10 ) /*0x629798*/
     {
       v10[45] = g_CurrentFrame; /*0x6297af*/
-      v11 = v12[2]; /*0x6297b2*/
+      int v11 = v12[2]; /*0x6297b2*/
       v10[48] = 128; /*0x6297b7*/
       v10[46] = v11; /*0x6297bf*/
       v10[47] = 128; /*0x6297c5*/

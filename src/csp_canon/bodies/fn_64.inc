@@ -512,12 +512,12 @@ ObjectClass * E4Recv_644850::sub_644850()
     ObjectClass *v2;
     const void **v3;
     v2 = 0;
-    v3 = (const void **)&DataGlobal_830620.__pad_579C[4388];
+    v3 = (const void **)&DataGlobal_830620[26816];
     while ( _strcmpi(this, *v3) )
   {
     ++v3;
     v2 = (ObjectClass *)((char *)(v2) + 1);
-    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[4408] )
+    if ( (int)v3 >= (int)&DataGlobal_830620[26836] )
     return (ObjectClass *)-1;
   }
     return v2;
@@ -625,12 +625,12 @@ ObjectClass * E4Recv_6458D0::sub_6458D0()
     ObjectClass *v2;
     const void **v3;
     v2 = 0;
-    v3 = (const void **)&DataGlobal_830620.__pad_579C[4864];
+    v3 = (const void **)&DataGlobal_830620[27292];
     while ( _strcmpi(this, *v3) )
   {
     ++v3;
     v2 = (ObjectClass *)((char *)(v2) + 1);
-    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[4884] )
+    if ( (int)v3 >= (int)&DataGlobal_830620[27312] )
     return (ObjectClass *)-1;
   }
     return v2;

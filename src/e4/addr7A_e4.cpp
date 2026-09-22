@@ -324,8 +324,8 @@ LABEL_50:
   v20 = FromStringInt((char **)&v28, g_CommandLineFlags); /*0x7a0bb0*/
   String::Append2((const char **)&v27, v20); /*0x7a0bba*/
   DeleteAndZero(&v28); /*0x7a0bc3*/
-  int v39; // [esp+40h] [ebp-E4h] BYREF
   int v40; // [esp+48h] [ebp-DCh] BYREF
+  int v39; // [esp+40h] [ebp-E4h] BYREF
   Network::GetAddress(DataGlobal_A8DBC0, &v40, (int)&v39, &v38); /*0x7a0bdc*/
   int v21 = v39; /*0x7a0be1*/
   String::Append((const char **)&v27, DataGlobal_84D180); /*0x7a0bee*/
@@ -690,13 +690,11 @@ void WOL_MatchGame()
   HANDLE *v14; // esi
   signed int v15; // eax
   int v16; // ebx
-  char *v17; // eax
   wchar_t *v19; // eax
   wchar_t *v20; // eax
   wchar_t *v21; // eax
   wchar_t *v22; // eax
   char **v23; // [esp-4h] [ebp-230h]
-  char *v24; // [esp-4h] [ebp-230h]
   void *v25; // [esp+10h] [ebp-21Ch] BYREF
   int v26; // [esp+14h] [ebp-218h] BYREF
   int v27; // [esp+18h] [ebp-214h] BYREF
@@ -830,7 +828,7 @@ LABEL_25:
   {
     if ( v16 >= 0 && v0 < v15 ) /*0x7a1edc*/
       qmemcpy(v29, (char *)g_WOL_ConnectionHandler + v16, sizeof(v29)); /*0x7a1ef0*/
-    v17 = String::GetOrEmpty((char **)&v25); /*0x7a1ef6*/
+    char * v17 = String::GetOrEmpty((char **)&v25); /*0x7a1ef6*/
     if ( !_strcmpi(&v29[52], v17) ) /*0x7a1f01*/
       break; /*0x7a1f01*/
     v15 = g_WOL_ChatState; /*0x7a1f11*/
@@ -845,7 +843,7 @@ LABEL_25:
   }
   if ( ValidateJoinWOL(0, (int)v29, v16, v0) ) /*0x7a1fc0*/
   {
-    v24 = v28; /*0x7a1fcf*/
+    char * v24 = v28; /*0x7a1fcf*/
     v20 = GetStringCSF(aWolMatchjoined, 0, g_Str_File_wonline_cpp, 28899); /*0x7a1fdf*/
     Dialog::ShowMessage(-1, (size_t)v20, v24); /*0x7a1fec*/
     g_WOL_GameListState = 0; /*0x7a1ff3*/
