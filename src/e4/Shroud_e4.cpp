@@ -36,7 +36,7 @@ int __thiscall Shroud::ProcessCellVisibility(_DWORD *this, MouseClass *aP1)
   *(this + 1318) = -1; /*0x6544f4*/
   *(this + 1317) = (__int16)(v7 - 1 + v5) - (__int16)(1 - v7 + v6); /*0x654533*/
   *(this + 1316) = v6 - v5; /*0x65453e*/
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x654544*/
+  LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x654544*/
   result = LayerClass::CellIteratorNext(this); /*0x65454b*/
   v9 = result; /*0x654550*/
   if ( result ) /*0x654554*/

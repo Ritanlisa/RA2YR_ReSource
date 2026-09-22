@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x4355B0
 namespace gamemd {
@@ -115,19 +116,19 @@ int *__userpurge Palette::Preview_Generate@<eax>(int *a1@<ecx>, char a2@<sil>, i
           v55[0] = v41; /*0x64220f*/
           Pixel = XSurface::GetPixel(&v60, &v54); /*0x642213*/
           v53[0] = v13; /*0x64222c*/
-          v15 = ((unsigned __int8)(Pixel >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]) /*0x642248*/
+          v15 = ((unsigned __int8)(Pixel >> g_CellDirectionOffsets[5952]) << g_CellDirectionOffsets[5956]) /*0x642248*/
               & 0xF0;
-          v16 = ((unsigned __int8)(Pixel >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]) /*0x64225c*/
+          v16 = ((unsigned __int8)(Pixel >> g_CellDirectionOffsets[5968]) << g_CellDirectionOffsets[5972]) /*0x64225c*/
               & 0xF0;
           v53[1] = v41; /*0x642268*/
-          v17 = ((unsigned __int8)(Pixel >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]) /*0x64227f*/
+          v17 = ((unsigned __int8)(Pixel >> g_CellDirectionOffsets[5960]) << g_CellDirectionOffsets[5964]) /*0x64227f*/
               & 0xF0;
           XSurface::SetPixel( /*0x6422b5*/
             &v60,
             v53,
-            (v17 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664])
-          | (v16 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
-          | (v15 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]));
+            (v17 >> g_CellDirectionOffsets[5964] << g_CellDirectionOffsets[5960])
+          | (v16 >> g_CellDirectionOffsets[5972] << g_CellDirectionOffsets[5968])
+          | (v15 >> g_CellDirectionOffsets[5956] << g_CellDirectionOffsets[5952]));
           v18 = v16 | (16 * v15) | (v17 >> 4); /*0x6422c6*/
           v19 = *(_DWORD *)&v48->__pad_0[4 * v18]; /*0x6422c8*/
           if ( !v19 ) /*0x6422cd*/
@@ -202,9 +203,9 @@ LABEL_37:
       v29 = 0; /*0x6423ed*/
       v45 = -1; /*0x6423ef*/
       v49 = (XSurface *)0xFFFF; /*0x6423f7*/
-      LOBYTE(v54) = (unsigned __int8)(v28 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x642408*/
-      BYTE1(v54) = (unsigned __int8)(v28 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x642429*/
-      BYTE2(v54) = (unsigned __int8)(v28 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x642431*/
+      LOBYTE(v54) = (unsigned __int8)(v28 >> g_CellDirectionOffsets[5952]) << g_CellDirectionOffsets[5956]; /*0x642408*/
+      BYTE1(v54) = (unsigned __int8)(v28 >> g_CellDirectionOffsets[5968]) << g_CellDirectionOffsets[5972]; /*0x642429*/
+      BYTE2(v54) = (unsigned __int8)(v28 >> g_CellDirectionOffsets[5960]) << g_CellDirectionOffsets[5964]; /*0x642431*/
       if ( v20 > 0 ) /*0x642435*/
       {
         v30 = Blocka; /*0x642447*/

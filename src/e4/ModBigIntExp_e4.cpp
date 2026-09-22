@@ -37,11 +37,11 @@ int __fastcall sub_5C7EC0(const void *a1, int a2)
 
   v2 = a2; /*0x5c7ec1*/
   v3 = a2; /*0x5c7ed5*/
-  qmemcpy(&MEMORY[0xABF5B4], a1, v3 * 4); /*0x5c7eda*/
-  v4 = &MEMORY[0xABF5B0][v3]; /*0x5c7ee3*/
+  qmemcpy(&DataGlobal_ABF5B4, a1, v3 * 4); /*0x5c7eda*/
+  v4 = &DataGlobal_ABF5B0[v3]; /*0x5c7ee3*/
   v5 = v2; /*0x5c7ee9*/
-  v6 = &MEMORY[0xABF5B0][v3]; /*0x5c7eeb*/
-  if ( !MEMORY[0xABF5B0][v3] ) /*0x5c7eed*/
+  v6 = &DataGlobal_ABF5B0[v3]; /*0x5c7eeb*/
+  if ( !DataGlobal_ABF5B0[v3] ) /*0x5c7eed*/
   {
     while ( --v5 ) /*0x5c7ef2*/
     {
@@ -58,7 +58,7 @@ LABEL_5:
     goto LABEL_8; /*0x5c7f05*/
   }
   v9 = v5; /*0x5c7f07*/
-  v10 = MEMORY[0xABF5B0][v5]; /*0x5c7f09*/
+  v10 = DataGlobal_ABF5B0[v5]; /*0x5c7f09*/
   v11 = 0x80000000; /*0x5c7f10*/
   v8 = 32 * v9; /*0x5c7f15*/
   if ( v10 >= 0 ) /*0x5c7f1a*/
@@ -71,8 +71,8 @@ LABEL_5:
     while ( (v10 & v11) == 0 ); /*0x5c7f21*/
   }
 LABEL_8:
-  MEMORY[0xABF6B8][0] = v8; /*0x5c7f23*/
-  MEMORY[0xABF59C] = (v8 + 15) / 16; /*0x5c7f34*/
+  DataGlobal_ABF6B8[0] = v8; /*0x5c7f23*/
+  DataGlobal_ABF59C = (v8 + 15) / 16; /*0x5c7f34*/
   v12 = v4; /*0x5c7f39*/
   if ( !*v4 ) /*0x5c7f3b*/
   {
@@ -84,14 +84,14 @@ LABEL_8:
     while ( !*--v12 ); /*0x5c7f4b*/
   }
   v14 = 2; /*0x5c7f56*/
-  MEMORY[0xABF8C8] = MEMORY[0xABF5AC][v2]; /*0x5c7f5e*/
-  v15 = &MEMORY[0xABF8CC]; /*0x5c7f67*/
-  MEMORY[0xABF8CC] = MEMORY[0xABF5B0][v2]; /*0x5c7f6e*/
-  if ( MEMORY[0xABF8CC] ) /*0x5c7f74*/
+  DataGlobal_ABF8C8 = DataGlobal_ABF5AC[v2]; /*0x5c7f5e*/
+  v15 = &DataGlobal_ABF8CC; /*0x5c7f67*/
+  DataGlobal_ABF8CC = DataGlobal_ABF5B0[v2]; /*0x5c7f6e*/
+  if ( DataGlobal_ABF8CC ) /*0x5c7f74*/
   {
 LABEL_16:
     v18 = v14; /*0x5c7f8b*/
-    v19 = MEMORY[0xABF8C4][v14]; /*0x5c7f8d*/
+    v19 = DataGlobal_ABF8C4[v14]; /*0x5c7f8d*/
     v20 = 0x80000000; /*0x5c7f94*/
     v17 = 32 * v18; /*0x5c7f99*/
     if ( v19 >= 0 ) /*0x5c7f9e*/
@@ -113,15 +113,15 @@ LABEL_16:
     }
     v17 = 0; /*0x5c7f87*/
   }
-  MEMORY[0xABF8C4][0] = v17 - 32; /*0x5c7fb1*/
-  RotateBitBufferRight(&MEMORY[0xABF8C8], v17 - 32, 2); /*0x5c7fb7*/
-  DivideBigInteger(&MEMORY[0xABF5A4], (char *)&MEMORY[0xABF8C8], 2); /*0x5c7fc8*/
-  RotateBitBufferRight(&MEMORY[0xABF5A4], 1, 2); /*0x5c7fd9*/
+  DataGlobal_ABF8C4[0] = v17 - 32; /*0x5c7fb1*/
+  RotateBitBufferRight(&DataGlobal_ABF8C8, v17 - 32, 2); /*0x5c7fb7*/
+  DivideBigInteger(&DataGlobal_ABF5A4, (char *)&DataGlobal_ABF8C8, 2); /*0x5c7fc8*/
+  RotateBitBufferRight(&DataGlobal_ABF5A4, 1, 2); /*0x5c7fd9*/
   v21 = 2; /*0x5c7ff5*/
-  MEMORY[0xABF8C4][0] = (MEMORY[0xABF8C4][0] + 15) % 16 + 1; /*0x5c7ffa*/
-  v22 = MEMORY[0xABF5A4] == -1; /*0x5c8006*/
-  v23 = &MEMORY[0xABF5A4]; /*0x5c8007*/
-  ++MEMORY[0xABF5A4]; /*0x5c800c*/
+  DataGlobal_ABF8C4[0] = (DataGlobal_ABF8C4[0] + 15) % 16 + 1; /*0x5c7ffa*/
+  v22 = DataGlobal_ABF5A4 == -1; /*0x5c8006*/
+  v23 = &DataGlobal_ABF5A4; /*0x5c8007*/
+  ++DataGlobal_ABF5A4; /*0x5c800c*/
   for ( ; v22; v22 = (*v23)++ == -1 ) /*0x5c8012*/
   {
     ++v23; /*0x5c8014*/
@@ -129,12 +129,12 @@ LABEL_16:
       break; /*0x5c8018*/
   }
   v24 = 2; /*0x5c8027*/
-  v25 = &MEMORY[0xABF5A8]; /*0x5c802e*/
-  if ( MEMORY[0xABF5A8] ) /*0x5c8033*/
+  v25 = &DataGlobal_ABF5A8; /*0x5c802e*/
+  if ( DataGlobal_ABF5A8 ) /*0x5c8033*/
   {
 LABEL_24:
     v27 = v24; /*0x5c8046*/
-    v28 = MEMORY[0xABF5A0][v24]; /*0x5c8048*/
+    v28 = DataGlobal_ABF5A0[v24]; /*0x5c8048*/
     v29 = 0x80000000; /*0x5c804f*/
     v30 = 32 * v27; /*0x5c8054*/
     if ( v28 >= 0 ) /*0x5c8059*/
@@ -148,8 +148,8 @@ LABEL_24:
     }
     if ( v30 > 0x20 ) /*0x5c8065*/
     {
-      RotateBitBufferRight(&MEMORY[0xABF5A4], 1, 2); /*0x5c8073*/
-      --MEMORY[0xABF8C4][0]; /*0x5c8078*/
+      RotateBitBufferRight(&DataGlobal_ABF5A4, 1, 2); /*0x5c8073*/
+      --DataGlobal_ABF8C4[0]; /*0x5c8078*/
     }
   }
   else
@@ -160,8 +160,8 @@ LABEL_24:
         goto LABEL_24; /*0x5c8040*/
     }
   }
-  LOWORD(MEMORY[0xABF6B4]) = HIWORD(MEMORY[0xABF5A4]); /*0x5c8091*/
-  LOWORD(MEMORY[0xABF5A0][0]) = MEMORY[0xABF5A4]; /*0x5c8091*/
+  LOWORD(DataGlobal_ABF6B4) = HIWORD(DataGlobal_ABF5A4); /*0x5c8091*/
+  LOWORD(DataGlobal_ABF5A0[0]) = DataGlobal_ABF5A4; /*0x5c8091*/
   return 0; /*0x5c809a*/
 }
 }

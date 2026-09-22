@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x5EBEC0
 namespace gamemd {
@@ -20,7 +21,7 @@ char __fastcall SetupMultiplayerLobbyScreen_Setup(SkirmishDialog *hDlg, char *a2
   v3 = a2; /*0x5ebec8*/
   v4 = (int)&a2[nIDDlgItem]; /*0x5ebed0*/
   v11 = (int)&a2[nIDDlgItem]; /*0x5ebedd*/
-  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 ) /*0x5ebee1*/
+  if ( *(_DWORD *)&HouseClass_Player[29932] == 4 ) /*0x5ebee1*/
   {
     if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5ebeec*/
       v10 = 6; /*0x5ebeff*/
@@ -79,7 +80,7 @@ char __fastcall SetupMultiplayerLobbyScreen_Setup(SkirmishDialog *hDlg, char *a2
         || v8 == *(&g_MatrixTransformState + 2281)
         || v8 == *(&g_MatrixTransformState + 2280) )
       {
-        if ( v3 != *(char **)&stru_830620.__pad_DFC[648] ) /*0x5ebfd9*/
+        if ( v3 != *(char **)&stru_830620[4228] ) /*0x5ebfd9*/
         {
           if ( (int)v3 >= v10 ) /*0x5ebfe3*/
             PlayerSkirmishSlotHandler(hDlg, v6, (LPARAM)*(&g_MatrixTransformState + 2276), 0); /*0x5ebfed*/

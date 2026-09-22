@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x4138C0
 namespace gamemd {
@@ -41,10 +42,10 @@ int __thiscall Coord::ToGridIndex(char *this, VectorClass *aP1, VectorClass *aP2
   else
     v5 = 0; /*0x4138f4*/
   v6 = 19; /*0x41390d*/
-  if ( v4 / (*(_DWORD *)&MEMORY[0x87F8E4].field_2D[3] / 20) <= 19 ) /*0x413921*/
-    v6 = v4 / (*(_DWORD *)&MEMORY[0x87F8E4].field_2D[3] / 20); /*0x413923*/
-  v7 = *(_DWORD *)&MEMORY[0x87F8E4].__pad_31[3] / 20; /*0x41393e*/
-  v8 = v5 / (*(_DWORD *)&MEMORY[0x87F8E4].__pad_31[3] / 20); /*0x413941*/
+  if ( v4 / (*(_DWORD *)&DataGlobal_87F8E4.field_2D[3] / 20) <= 19 ) /*0x413921*/
+    v6 = v4 / (*(_DWORD *)&DataGlobal_87F8E4.field_2D[3] / 20); /*0x413923*/
+  v7 = *(_DWORD *)&DataGlobal_87F8E4[52] / 20; /*0x41393e*/
+  v8 = v5 / (*(_DWORD *)&DataGlobal_87F8E4[52] / 20); /*0x413941*/
   if ( v8 > 19 ) /*0x413946*/
     v8 = 19; /*0x413948*/
   v9 = v6 + 20 * v8; /*0x413957*/
@@ -56,7 +57,7 @@ int __thiscall Coord::ToGridIndex(char *this, VectorClass *aP1, VectorClass *aP2
     v11 = SHIWORD(aP3); /*0x413971*/
   else
     v11 = 0; /*0x41396d*/
-  v12 = v10 / (*(_DWORD *)&MEMORY[0x87F8E4].field_2D[3] / 20); /*0x413975*/
+  v12 = v10 / (*(_DWORD *)&DataGlobal_87F8E4.field_2D[3] / 20); /*0x413975*/
   v13 = 19; /*0x413977*/
   if ( v12 <= 19 ) /*0x41397f*/
     v13 = v12; /*0x413981*/
@@ -294,10 +295,10 @@ bool __thiscall Coord::To_Screen(_DWORD *this, _DWORD *a1, IUnknown *aP2)
   aP2->field_4 = v8; /*0x6d221b*/
   if ( v7 < -360 ) /*0x6d222a*/
     return 0; /*0x6d222c*/
-  if ( v7 > *(_DWORD *)&g_OverlayTypeConfig.__pad_5554[228] + 360 ) /*0x6d2242*/
+  if ( v7 > *(_DWORD *)&g_OverlayTypeConfig[22072] + 360 ) /*0x6d2242*/
     return 0; /*0x6d2244*/
   if ( v8 >= -180 ) /*0x6d2251*/
-    return v8 <= *(_DWORD *)&g_OverlayTypeConfig.__pad_5554[232] + 180; /*0x6d2269*/
+    return v8 <= *(_DWORD *)&g_OverlayTypeConfig[22076] + 180; /*0x6d2269*/
   return 0; /*0x6d2220*/
 }
 }
@@ -344,7 +345,7 @@ int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
     v6 = aP1->field_4;
     v2 = (-60 * v6 / 2 + 60 * aP1->field_0 / 2) / 256;
     v3 = (30 * v6 / 2 + 30 * aP1->field_0 / 2) / 256;
-    v4 = v3 - Math::RoundToInt((double)aP1->field_8 * *(double *)&DataGlobal_B05488.__pad_579C[8484] + (double)(aP1->field_8 >= 728) + 0.5);
+    v4 = v3 - Math::RoundToInt((double)aP1->field_8 * *(double *)&DataGlobal_B05488[30912] + (double)(aP1->field_8 >= 728) + 0.5);
     *(int *)aP0->__pad_0 = v2;
     *(int *)&aP0->__pad_0[4] = v4;
     return (int *)aP0->__pad_0;

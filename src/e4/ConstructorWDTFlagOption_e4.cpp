@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x767820
 void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5)

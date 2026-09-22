@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x697AD0
 void BulkData::InitMissionHashing()
@@ -18,7 +19,7 @@ void __thiscall sub_697AD0(_DWORD *this)
   Time = timeGetTime(); /*0x697ae2*/
   v2 = DiskSpace::CheckAvailable(); /*0x697ae6*/
   ComputeHash(&Time, v2); /*0x697af1*/
-  v3 = Object_Init_7CBC11(MEMORY[0x83EF00]); /*0x697afb*/
+  v3 = Object_Init_7CBC11(DataGlobal_83EF00); /*0x697afb*/
   v4 = v3; /*0x697b00*/
   if ( v3 ) /*0x697b07*/
   {

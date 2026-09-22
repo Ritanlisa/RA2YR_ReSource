@@ -6,6 +6,7 @@
 #include <cstring>
 #include <cmath>
 #include "core/reverse_marker.hpp"
+#include "e4/e4_globals.hpp"
 
 namespace ra2 {
 namespace game {
@@ -53,21 +54,21 @@ int __thiscall ObjectClass::Remove(#374 *this)
   if ( (_BYTE)result )
   {
     v4 = this;
-    v3 = (*(int (__thiscall **)(_DWORD *, #374 **))(MEMORY[0x87F7E8][539956] + 16))(&MEMORY[0x87F7E8][539956], &v4);
-    if ( v3 != -1 && v3 < MEMORY[0x87F7E8][539960] )
+    v3 = (*(int (__thiscall **)(_DWORD *, #374 **))(DataGlobal_87F7E8[539956] + 16))(&DataGlobal_87F7E8[539956], &v4);
+    if ( v3 != -1 && v3 < DataGlobal_87F7E8[539960] )
     {
-      --MEMORY[0x87F7E8][539960];
+      --DataGlobal_87F7E8[539960];
       for ( ;
-            v3 < MEMORY[0x87F7E8][539960];
-            *(_DWORD *)(MEMORY[0x87F7E8][539957] + 4 * v3 - 4) = *(_DWORD *)(MEMORY[0x87F7E8][539957] + 4 * v3) )
+            v3 < DataGlobal_87F7E8[539960];
+            *(_DWORD *)(DataGlobal_87F7E8[539957] + 4 * v3 - 4) = *(_DWORD *)(DataGlobal_87F7E8[539957] + 4 * v3) )
       {
         ++v3;
       }
     }
     this->isSelected = 0;
-    result = MapClass::GetScrollMode((int)MEMORY[0x87F7E8]);
+    result = MapClass::GetScrollMode((int)DataGlobal_87F7E8);
     if ( (#374 *)result == this )
-      LOBYTE(result) = MapClass::SetScrollMode((int)MEMORY[0x87F7E8], 0);
+      LOBYTE(result) = MapClass::SetScrollMode((int)DataGlobal_87F7E8, 0);
   }
   return result;
 }
@@ -92,18 +93,18 @@ int __thiscall ObjectClass::Destroy(#374 *this)
   AbstractClass::AnnounceExpiredPointer((void **)this, 1);
   (*(void (__thiscall **)(#374 *))(this->q0D4)(this);
   this->isAliveFlag = 0;
-  result = MEMORY[0xB0F6A0];
-  if ( MEMORY[0xB0F6A8] < MEMORY[0xB0F6A0]
-    || (MEMORY[0xB0F6A5] || !MEMORY[0xB0F6A0])
-    && MEMORY[0xB0F6AC] > 0
-    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F698] + 8))(
-                   &MEMORY[0xB0F698],
-                   MEMORY[0xB0F6A0] + MEMORY[0xB0F6AC],
+  result = DataGlobal_B0F6A0;
+  if ( DataGlobal_B0F6A8 < DataGlobal_B0F6A0
+    || (DataGlobal_B0F6A5 || !DataGlobal_B0F6A0)
+    && DataGlobal_B0F6AC > 0
+    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(DataGlobal_B0F698 + 8))(
+                   &DataGlobal_B0F698,
+                   DataGlobal_B0F6A0 + DataGlobal_B0F6AC,
                    0),
         (_BYTE)result) )
   {
-    result = MEMORY[0xB0F6A8]++;
-    *((_DWORD *)MEMORY[0xB0F69C] + result) = this;
+    result = DataGlobal_B0F6A8++;
+    *((_DWORD *)DataGlobal_B0F69C + result) = this;
   }
   return result;
 }

@@ -605,3 +605,12 @@ this-relative 访问**，参数型 receiver（`a1->X`）架构上不产事件。
 1. 局部变量偏移形态（member-cast-off 2,515 / cast-ptr-plus 1,167）：`v83+1152` 是虚表走（合法 CALL(vfptr+N) 词汇，非成员访问）；`v15+36` 类型化局部需 v 名↔type_map SSA 键桥接（T14 实证桥接率 ~20%，结构性天花板）。
 2. this-offsets 成员表缺口（真代码 163 / pending 2,802）：偏移不在 canon 表，需 member_set 证据逐案补（csp_anchor 通道）。
 3. MEMORY 可见性门外（真代码 264 / pending 18,634）：声明 hpp 不在 TU include 集，机械加 include 有编译风险；pending 部分由翻译期 get_context globals_map（名字+hpp file:line）按需解决。
+
+### G29.5 MEMORY 清零 + 声明前置 + CSP 落实度（2026-09-21，用户三连指令）
+
+1. **MEMORY 全量机械清零**：`gen_memory_decls.py`——残留 2,666 地址生成声明（CSP global_types 类型优先，缺省 DataGlobal_XXXXXXXX[] 对象语义）注入 e4_globals.hpp + 18,895 处 MEMORY→名（两轮合计）；声明可见性门升级为「生成声明 + include 确保注入」。
+2. **重大事故修复：上轮坏正则去重实为数据丢失**。`extern\s+[\w\s\*]+?\s+(\w+)` 对 `unsigned char X[N]` 把 "char" 当名字——9,990 条 uchar 声明被误判为同名 "char" 折叠到 1 条（"3,483 唯一名"是错的，真实唯一 14,764）。已从 git 5a7ea9bb 恢复 15,486 行原件、用正确正则 `extern\s+.*?[\s\*](\w+)\s*(?:=|;|\[)` 重做（真实重复仅 ~700），gen_e4_materialize 同款 4 处正则已修。
+3. **pad 渲染拍平**：`X.__pad_A[B]`/裸 `X.__pad_A` → 平面字节索引 `X[A+B]`（16,258 处 / 271 文件；语义恒等，数组/指针皆可编译）。`->ptr->__pad_0`（COM vptr 成员）为认可词汇保留。
+4. **e4 载体补全**：346 个 bucket 补 1,565 个类 include；生成 `_fwd_e4.hpp`（1,863 前置声明 + windows/STL 头）挂到全部 1,741 个 E2 头。
+5. **临时变量声明前置**：`lower_temp_decls.py`（Step4 第 6 段）——合并到首次赋值/插入首用行前，仅限同 brace 深度（结构安全）；首块 322 移动/76 深层跳过。
+6. **CSP 落实度（3,900 pending 块审计）**：sig=csp 锚定 24.1%（940）；typed this（type_map）474；块内成员偏移 17,020 中 canon 表可解 45.0%（7,662）——这是 CSP 层对翻译的当前真实供给率，缺口=csp_anchor 补锚通道的工作量度量。

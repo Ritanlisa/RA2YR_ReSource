@@ -10,6 +10,7 @@
 #include <cctype>
 #include <cstdlib>
 #include "core/reverse_marker.hpp"
+#include "e4/e4_globals.hpp"
 
 namespace gamemd
 {
@@ -456,19 +457,19 @@ char MixFileClass::Bootstrap()
       v3 = (_DWORD *)__2_YAPAXI_Z(40);
       if ( v3 )
       {
-        v4 = MixFileClass::FromFile(v3, Buffer, (int)&MEMORY[0x87F7E8][7270]);
+        v4 = MixFileClass::FromFile(v3, Buffer, (int)&DataGlobal_87F7E8[7270]);
         if ( v4 )
         {
-          if ( MEMORY[0x87F7E8][5486] < MEMORY[0x87F7E8][5484]
-            || (BYTE1(MEMORY[0x87F7E8][5485]) || !MEMORY[0x87F7E8][5484])
-            && MEMORY[0x87F7E8][5487] > 0
-            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(MEMORY[0x87F7E8][5482] + 8))(
-                 &MEMORY[0x87F7E8][5482],
-                 MEMORY[0x87F7E8][5484] + MEMORY[0x87F7E8][5487],
+          if ( DataGlobal_87F7E8[5486] < DataGlobal_87F7E8[5484]
+            || (BYTE1(DataGlobal_87F7E8[5485]) || !DataGlobal_87F7E8[5484])
+            && DataGlobal_87F7E8[5487] > 0
+            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(DataGlobal_87F7E8[5482] + 8))(
+                 &DataGlobal_87F7E8[5482],
+                 DataGlobal_87F7E8[5484] + DataGlobal_87F7E8[5487],
                  0) )
           {
-            v5 = MEMORY[0x87F7E8][5486]++;
-            *(_DWORD *)(MEMORY[0x87F7E8][5483] + 4 * v5) = v4;
+            v5 = DataGlobal_87F7E8[5486]++;
+            *(_DWORD *)(DataGlobal_87F7E8[5483] + 4 * v5) = v4;
           }
           Debug::Log_0();
         }
@@ -478,61 +479,61 @@ char MixFileClass::Bootstrap()
   v6 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v6 )
   {
-    MEMORY[0x87F7E8][5508] = 0;
+    DataGlobal_87F7E8[5508] = 0;
     return 0;
   }
-  MEMORY[0x87F7E8][5508] = MixFileClass::FromFile(v6, aRa2mdMix, (int)&MEMORY[0x87F7E8][7270]);
-  if ( !MEMORY[0x87F7E8][5508] )
+  DataGlobal_87F7E8[5508] = MixFileClass::FromFile(v6, aRa2mdMix, (int)&DataGlobal_87F7E8[7270]);
+  if ( !DataGlobal_87F7E8[5508] )
     return 0;
   v7 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v7 )
   {
-    MEMORY[0x87F7E8][5509] = 0;
+    DataGlobal_87F7E8[5509] = 0;
     return 0;
   }
-  v8 = MixFileClass::FromFile(v7, aRa2Mix, (int)&MEMORY[0x87F7E8][7270]);
-  MEMORY[0x87F7E8][5509] = v8;
+  v8 = MixFileClass::FromFile(v7, aRa2Mix, (int)&DataGlobal_87F7E8[7270]);
+  DataGlobal_87F7E8[5509] = v8;
   if ( !v8 )
     return 0;
   Debug::Log_0();
   v10 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v10 )
   {
-    MEMORY[0x87F7E8][5528] = 0;
+    DataGlobal_87F7E8[5528] = 0;
     return 0;
   }
-  MEMORY[0x87F7E8][5528] = MixFileClass::FromFile(v10, aCachemdMix, (int)&MEMORY[0x87F7E8][7270]);
-  if ( !MEMORY[0x87F7E8][5528] || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((#345 *)aCachemdMix) )
+  DataGlobal_87F7E8[5528] = MixFileClass::FromFile(v10, aCachemdMix, (int)&DataGlobal_87F7E8[7270]);
+  if ( !DataGlobal_87F7E8[5528] || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((#345 *)aCachemdMix) )
     return 0;
   Debug::Log_0();
   v11 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v11 )
   {
-    MEMORY[0x87F7E8][5529] = 0;
+    DataGlobal_87F7E8[5529] = 0;
     return 0;
   }
-  v12 = MixFileClass::FromFile(v11, aCacheMix_0, (int)&MEMORY[0x87F7E8][7270]);
-  MEMORY[0x87F7E8][5529] = v12;
+  v12 = MixFileClass::FromFile(v11, aCacheMix_0, (int)&DataGlobal_87F7E8[7270]);
+  DataGlobal_87F7E8[5529] = v12;
   if ( !v12 || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((#345 *)aCacheMix_0) )
     return 0;
   Debug::Log_0();
   v13 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v13 )
   {
-    MEMORY[0x87F7E8][5530] = 0;
+    DataGlobal_87F7E8[5530] = 0;
     return 0;
   }
-  MEMORY[0x87F7E8][5530] = MixFileClass::FromFile(v13, aLocalmdMix, (int)&MEMORY[0x87F7E8][7270]);
-  if ( !MEMORY[0x87F7E8][5530] )
+  DataGlobal_87F7E8[5530] = MixFileClass::FromFile(v13, aLocalmdMix, (int)&DataGlobal_87F7E8[7270]);
+  if ( !DataGlobal_87F7E8[5530] )
     return 0;
   v14 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v14 )
   {
-    MEMORY[0x87F7E8][5531] = 0;
+    DataGlobal_87F7E8[5531] = 0;
     return 0;
   }
-  v15 = MixFileClass::FromFile(v14, aLocalMix, (int)&MEMORY[0x87F7E8][7270]);
-  MEMORY[0x87F7E8][5531] = v15;
+  v15 = MixFileClass::FromFile(v14, aLocalMix, (int)&DataGlobal_87F7E8[7270]);
+  DataGlobal_87F7E8[5531] = v15;
   if ( !v15 )
     return 0;
   Debug::Log_0();

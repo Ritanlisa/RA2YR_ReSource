@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x41D860
 namespace ra2 {
@@ -46,7 +47,7 @@ int __thiscall sub_41D860(int this, int *a2)
   LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
   HIWORD(v19) = v7[1] / 256; /*0x41d8f5*/
   v16 = v19; /*0x41d902*/
-  v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v16); /*0x41d907*/
+  v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v16); /*0x41d907*/
   v15 = v17; /*0x41d916*/
   v14 = (int)v8; /*0x41d919*/
   v9 = (unsigned int *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 76) + 60))(this->owner); /*0x41d91f*/
@@ -223,7 +224,7 @@ int __thiscall AirstrikeClass::RemoveAircraft(int this, AudioController *aP1)
   }
   if ( this->EliteAirstrikeTeamTypeIndex <= 0 ) /*0x41dcf0*/
   {
-    v4 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x41dcf2*/
+    v4 = *(IUnknown **)&g_NetworkPlayerBuffer[5960]; /*0x41dcf2*/
     this->AirstrikeClass_field_3C = 0; /*0x41dcf8*/
     this->q040 = v4; /*0x41dcfb*/
     this->AirstrikeClass_field_3D = 0; /*0x41dcfe*/
@@ -250,15 +251,15 @@ AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *this, char a2)
   this->vtable3 = &AirstrikeClass::`vftable'; /*0x41dd6a*/
   this->vtable4 = &vt_AirstrikeClass; /*0x41dd71*/
   v5 = this; /*0x41dd7f*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x889FB8] + 16))(&MEMORY[0x889FB8], &v5); /*0x41dd83*/
-  if ( v3 != -1 && v3 < MEMORY[0x889FC8] && v3 < --MEMORY[0x889FC8] ) /*0x41dd9e*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_889FB8 + 16))(&DataGlobal_889FB8, &v5); /*0x41dd83*/
+  if ( v3 != -1 && v3 < DataGlobal_889FC8 && v3 < --DataGlobal_889FC8 ) /*0x41dd9e*/
   {
     do /*0x41ddb6*/
     {
       ++v3; /*0x41dda6*/
-      *((_DWORD *)MEMORY[0x889FBC] + v3 - 1) = *((_DWORD *)MEMORY[0x889FBC] + v3); /*0x41ddaa*/
+      *((_DWORD *)DataGlobal_889FBC + v3 - 1) = *((_DWORD *)DataGlobal_889FBC + v3); /*0x41ddaa*/
     }
-    while ( v3 < MEMORY[0x889FC8] ); /*0x41ddb6*/
+    while ( v3 < DataGlobal_889FC8 ); /*0x41ddb6*/
   }
   AbstractClass::DTOR(this); /*0x41ddba*/
   if ( (a2 & 1) != 0 ) /*0x41ddc4*/
@@ -306,7 +307,7 @@ char sub_420E90()
         LOBYTE(v3) = 0; /*0x420ee7*/
       }
 LABEL_8:
-      MEMORY[0x88A118][v1++] = v3; /*0x420ef8*/
+      DataGlobal_88A118[v1++] = v3; /*0x420ef8*/
       if ( v1 >= 0x10000 ) /*0x420f05*/
         goto LABEL_9; /*0x420f05*/
     }
@@ -317,14 +318,14 @@ LABEL_9:
   v4 = g_AlphaShapeLimit - 1; /*0x420f07*/
   if ( g_AlphaShapeLimit - 1 >= 0 ) /*0x420f12*/
   {
-    v0 = MEMORY[0x88A0F4]; /*0x420f14*/
+    v0 = DataGlobal_88A0F4; /*0x420f14*/
     do /*0x420f36*/
     {
       v5 = (_BYTE *)v0[v4]; /*0x420f19*/
       if ( v5[60] && v5 ) /*0x420f27*/
       {
         (*(void (__stdcall **)(int))(*(_DWORD *)v5 + 32))(1); /*0x420f2d*/
-        v0 = MEMORY[0x88A0F4]; /*0x420f30*/
+        v0 = DataGlobal_88A0F4; /*0x420f30*/
       }
       --v4; /*0x420f35*/
     }
@@ -359,10 +360,10 @@ int AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
     this->vtable1 = (unsigned int)vt_AirstrikeClass;
     this->vtable2 = (unsigned int)vt_AirstrikeClass;
     this->vtable3 = &vt_AirstrikeClass;
-    if ( *(int *)&DataGlobal_87F8E4.__pad_5568[20860] < *(int *)&DataGlobal_87F8E4.__pad_5568[20852] || (DataGlobal_87F8E4.__pad_5568[20857] || !*(int *)&DataGlobal_87F8E4.__pad_5568[20852]) && *(int *)&DataGlobal_87F8E4.__pad_5568[20864] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_87F8E4.__pad_5568[20844] + 8))( &DataGlobal_87F8E4.__pad_5568[20844], *(int *)&DataGlobal_87F8E4.__pad_5568[20852] + *(int *)&DataGlobal_87F8E4.__pad_5568[20864], 0) )
+    if ( *(int *)&DataGlobal_87F8E4[42724] < *(int *)&DataGlobal_87F8E4[42716] || (DataGlobal_87F8E4[42721] || !*(int *)&DataGlobal_87F8E4[42716]) && *(int *)&DataGlobal_87F8E4[42728] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_87F8E4[42708] + 8))( &DataGlobal_87F8E4[42708], *(int *)&DataGlobal_87F8E4[42716] + *(int *)&DataGlobal_87F8E4[42728], 0) )
   {
-    v3 = (*(int *)&DataGlobal_87F8E4.__pad_5568[20860])++;
-    *(int *)(*(int *)&DataGlobal_87F8E4.__pad_5568[20848] + 4 * v3) = this;
+    v3 = (*(int *)&DataGlobal_87F8E4[42724])++;
+    *(int *)(*(int *)&DataGlobal_87F8E4[42712] + 4 * v3) = this;
   }
     this->AirstrikeClass_field_3C = 0;
     this->owner = aP1;
@@ -422,11 +423,11 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AirstrikeClass;
     *(int *)&aP0->__pad_0[12] = &vt_AirstrikeClass;
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[8]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[12]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].uniqueId);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].abstractFlags);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[12]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].uniqueId);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].abstractFlags);
   }
     return (int)Prefix_0->__pad_0;
 }

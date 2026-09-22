@@ -21,10 +21,10 @@ ObjectClass * TauntCommandClass::AddRef()
 ObjectClass *__thiscall TauntCommandClass::AddRef(_DWORD *this)
 {
   sprintf( /*0x5362be*/
-    &HouseClass_Player.__pad_5568[25344],
+    &HouseClass_Player[47208],
     (ObjectClass *)&stru_8271A0.customSound_controller[2],
     (INIClass *)this->TauntCommandClass_field_00);
-  return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x5362cb*/
+  return (ObjectClass *)&HouseClass_Player[47208]; /*0x5362cb*/
 }
 }
 
@@ -38,9 +38,9 @@ wchar_t *__thiscall TauntCommandClass::_vt02(const wchar_t **this)
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
   v3 = this->TauntCommandClass_field_00; /*0x5362d5*/
-  StringCSF = GetStringCSF(MEMORY[0x827204], 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
-  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x5362f0*/
-  return &MEMORY[0xA8F654]; /*0x5362fd*/
+  StringCSF = GetStringCSF(DataGlobal_827204, 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
+  swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x5362f0*/
+  return &g_TeamCommandBuffer; /*0x5362fd*/
 }
 }
 

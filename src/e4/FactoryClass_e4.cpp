@@ -2,6 +2,11 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/FactoryClass_33_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Sidebar_e4.hpp"
 
 // 0x4C9B20
 namespace gamemd {
@@ -563,15 +568,15 @@ FactoryClass *__thiscall FactoryClass::CopyTo(void **this, char a2)
   this->vtable4 = &vt_FactoryClass; /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x4ca791*/
   v7 = this; /*0x4ca7a6*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83E30] + 16))(&MEMORY[0xA83E30], &v7); /*0x4ca7aa*/
-  if ( v3 != -1 && v3 < MEMORY[0xA83E40] && v3 < --MEMORY[0xA83E40] ) /*0x4ca7c5*/
+  v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83E30 + 16))(&DataGlobal_A83E30, &v7); /*0x4ca7aa*/
+  if ( v3 != -1 && v3 < g_TeamTypeCapacity && v3 < --g_TeamTypeCapacity ) /*0x4ca7c5*/
   {
     do /*0x4ca7dd*/
     {
       ++v3; /*0x4ca7cd*/
-      *((_DWORD *)MEMORY[0xA83E34] + v3 - 1) = *((_DWORD *)MEMORY[0xA83E34] + v3); /*0x4ca7d1*/
+      *((_DWORD *)g_TeamTypeCount + v3 - 1) = *((_DWORD *)g_TeamTypeCount + v3); /*0x4ca7d1*/
     }
-    while ( v3 < MEMORY[0xA83E40] ); /*0x4ca7dd*/
+    while ( v3 < g_TeamTypeCapacity ); /*0x4ca7dd*/
   }
   if ( g_WTFMode ) /*0x4ca7e6*/
     FactoryClass::AbandonProduction((int)this); /*0x4ca7ea*/
@@ -582,7 +587,7 @@ FactoryClass *__thiscall FactoryClass::CopyTo(void **this, char a2)
     do /*0x4ca836*/
     {
       ++v4; /*0x4ca826*/
-      *((_DWORD *)MEMORY[0xB0F724] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F724] + v4); /*0x4ca82a*/
+      *((_DWORD *)DataGlobal_B0F724 + v4 - 1) = *((_DWORD *)DataGlobal_B0F724 + v4); /*0x4ca82a*/
     }
     while ( v4 < g_AlphaShapePool ); /*0x4ca836*/
   }
@@ -638,18 +643,18 @@ char __thiscall sub_635060(int this, int a2)
         if ( !(_BYTE)v4 ) /*0x6350b4*/
         {
           this->referenceCount = 1; /*0x6350b6*/
-          LOBYTE(v4) = MEMORY[0xAC4CA0]; /*0x6350ba*/
-          if ( MEMORY[0xAC4CA8] < MEMORY[0xAC4CA0] /*0x6350f4*/
-            || (MEMORY[0xAC4CA5] || !MEMORY[0xAC4CA0])
-            && MEMORY[0xAC4CAC] > 0
+          LOBYTE(v4) = DataGlobal_AC4CA0; /*0x6350ba*/
+          if ( DataGlobal_AC4CA8 < DataGlobal_AC4CA0 /*0x6350f4*/
+            || (DataGlobal_AC4CA5 || !DataGlobal_AC4CA0)
+            && DataGlobal_AC4CAC > 0
             && (LOBYTE(v4) = (*(int (__thiscall **)(int *, int, _DWORD))(g_ScriptConfig + 8))(
                                &g_ScriptConfig,
-                               MEMORY[0xAC4CA0] + MEMORY[0xAC4CAC],
+                               DataGlobal_AC4CA0 + DataGlobal_AC4CAC,
                                0),
                 (_BYTE)v4) )
           {
-            v4 = MEMORY[0xAC4CA8]++; /*0x6350fc*/
-            *((_DWORD *)MEMORY[0xAC4C9C] + v4) = this; /*0x63510b*/
+            v4 = DataGlobal_AC4CA8++; /*0x6350fc*/
+            *((_DWORD *)DataGlobal_AC4C9C + v4) = this; /*0x63510b*/
           }
         }
       }

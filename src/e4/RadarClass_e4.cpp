@@ -199,8 +199,8 @@ bool __stdcall RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass *aP3)
   {
     if ( v9 ) /*0x6a849f*/
     {
-      v10 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20608] + 4 * a2); /*0x6a84ab*/
-      v11 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20608] + 4 * (_DWORD)aP3); /*0x6a84ae*/
+      v10 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * a2); /*0x6a84ab*/
+      v11 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * (_DWORD)aP3); /*0x6a84ae*/
       v12 = *(_DWORD *)(v10 + 176); /*0x6a84b1*/
       v13 = *(_DWORD *)(v11 + 176); /*0x6a84b7*/
       if ( v12 < v13 ) /*0x6a84bf*/

@@ -42,7 +42,7 @@ int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
 bool COMObject::IsSameType(GScreenClass * aP0)
 {
 {
-    return *(int *)&HouseClass_Player.__pad_5568[23712] == (*(int (__thiscall **)(GScreenClass *))(aP0->parent_gap[0] + 24))(aP0);
+    return *(int *)&HouseClass_Player[45576] == (*(int (__thiscall **)(GScreenClass *))(aP0->parent_gap[0] + 24))(aP0);
 }
 }
 

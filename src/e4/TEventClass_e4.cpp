@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x71E940
 namespace gamemd {
@@ -105,12 +110,12 @@ LABEL_44:
       return this->TEventClass_field_34 <= (int)g_CurrentFrame / 15; /*0x71eb50*/
     case 60: /*0x71e964*/
       v9 = -1; /*0x71e971*/
-      v10 = MEMORY[0xA8EB10] - 1; /*0x71e974*/
+      v10 = DataGlobal_A8EB10 - 1; /*0x71e974*/
       a6 = -1; /*0x71e975*/
-      if ( MEMORY[0xA8EB10] - 1 < 0 ) /*0x71e97b*/
+      if ( DataGlobal_A8EB10 - 1 < 0 ) /*0x71e97b*/
         goto LABEL_8; /*0x71e97b*/
       v11 = (const char *)(this + 14); /*0x71e982*/
-      v12 = (char *)MEMORY[0xA8EB04] + 4 * v10; /*0x71e985*/
+      v12 = (char *)DataGlobal_A8EB04 + 4 * v10; /*0x71e985*/
       while ( strcmp((const char *)(*(_DWORD *)v12 + 36), v11) ) /*0x71e9bb*/
       {
         --v10; /*0x71e9bd*/
@@ -123,19 +128,19 @@ LABEL_44:
       }
       v9 = v10; /*0x71e9cb*/
 LABEL_8:
-      if ( v9 >= MEMORY[0xA8EB10] ) /*0x71e9d3*/
+      if ( v9 >= DataGlobal_A8EB10 ) /*0x71e9d3*/
         return 0; /*0x71e9d3*/
       if ( v9 < 0 ) /*0x71e9db*/
         return 0; /*0x71e9db*/
       v13 = 0; /*0x71e9eb*/
-      v14 = *((_DWORD *)MEMORY[0xA8EB04] + v9); /*0x71e9ed*/
+      v14 = *((_DWORD *)DataGlobal_A8EB04 + v9); /*0x71e9ed*/
       v15 = this->TEventClass_field_34; /*0x71e9f5*/
-      v16 = MEMORY[0xA8EC88] - 1; /*0x71e9f8*/
-      if ( MEMORY[0xA8EC88] - 1 < 0 ) /*0x71e9fd*/
+      v16 = g_SidebarState - 1; /*0x71e9f8*/
+      if ( g_SidebarState - 1 < 0 ) /*0x71e9fd*/
         return 0; /*0x71e9fd*/
       while ( 1 ) /*0x71ea03*/
       {
-        if ( (*(int (__thiscall **)(_DWORD))(**((_DWORD **)MEMORY[0xA8EC7C] + v16) + 132))(*((_DWORD *)MEMORY[0xA8EC7C] /*0x71ea16*/
+        if ( (*(int (__thiscall **)(_DWORD))(**((_DWORD **)g_TechnoClass_Count + v16) + 132))(*((_DWORD *)g_TechnoClass_Count /*0x71ea16*/
                                                                                            + v16)) == v14 )
           ++v13; /*0x71ea18*/
         if ( v13 >= v15 ) /*0x71ea1b*/
@@ -146,12 +151,12 @@ LABEL_8:
       return 1; /*0x71ea1b*/
     case 61: /*0x71e964*/
       v18 = -1; /*0x71ea36*/
-      v19 = MEMORY[0xA8EB10] - 1; /*0x71ea39*/
+      v19 = DataGlobal_A8EB10 - 1; /*0x71ea39*/
       a6 = -1; /*0x71ea3a*/
-      if ( MEMORY[0xA8EB10] - 1 < 0 ) /*0x71ea40*/
+      if ( DataGlobal_A8EB10 - 1 < 0 ) /*0x71ea40*/
         goto LABEL_22; /*0x71ea40*/
       v20 = (const char *)(this + 14); /*0x71ea47*/
-      v21 = (char *)MEMORY[0xA8EB04] + 4 * v19; /*0x71ea4a*/
+      v21 = (char *)DataGlobal_A8EB04 + 4 * v19; /*0x71ea4a*/
       while ( strcmp((const char *)(*(_DWORD *)v21 + 36), v20) ) /*0x71ea80*/
       {
         --v19; /*0x71ea82*/
@@ -164,13 +169,13 @@ LABEL_8:
       }
       v18 = v19; /*0x71ea90*/
 LABEL_22:
-      if ( v18 >= MEMORY[0xA8EB10] || v18 < 0 ) /*0x71eaa0*/
+      if ( v18 >= DataGlobal_A8EB10 || v18 < 0 ) /*0x71eaa0*/
         return 0; /*0x71eaa0*/
-      v22 = *((_DWORD *)MEMORY[0xA8EB04] + v18); /*0x71eab2*/
-      v23 = MEMORY[0xA8EC88] - 1; /*0x71eab5*/
-      if ( MEMORY[0xA8EC88] - 1 < 0 ) /*0x71eaba*/
+      v22 = *((_DWORD *)DataGlobal_A8EB04 + v18); /*0x71eab2*/
+      v23 = g_SidebarState - 1; /*0x71eab5*/
+      if ( g_SidebarState - 1 < 0 ) /*0x71eaba*/
         return 1; /*0x71eaba*/
-      while ( (*(int (__thiscall **)(_DWORD))(**((_DWORD **)MEMORY[0xA8EC7C] + v23) + 132))(*((_DWORD *)MEMORY[0xA8EC7C] /*0x71ead2*/
+      while ( (*(int (__thiscall **)(_DWORD))(**((_DWORD **)g_TechnoClass_Count + v23) + 132))(*((_DWORD *)g_TechnoClass_Count /*0x71ead2*/
                                                                                             + v23)) != v22 )
       {
         if ( --v23 < 0 ) /*0x71ead9*/
@@ -217,7 +222,7 @@ LABEL_22:
           case 53: /*0x71ec93*/
           case 54: /*0x71ec93*/
           case 59: /*0x71ec93*/
-            if ( a2 == v8 && !MEMORY[0xA8ED6B] ) /*0x71eca9*/
+            if ( a2 == v8 && !ArmageddonMode ) /*0x71eca9*/
               break; /*0x71eca9*/
             return 0; /*0x71eca9*/
           default:
@@ -548,16 +553,16 @@ int __thiscall TEventClass::PrepareSaveToINI(int *this, const char *a2)
     v9 = v4 + 36; /*0x71f408*/
     v8 = 1; /*0x71f409*/
     v7 = this->TEventClass_field_2C; /*0x71f40b*/
-    v6 = MEMORY[0x844714]; /*0x71f40c*/
+    v6 = DataGlobal_844714; /*0x71f40c*/
   }
   else
   {
     if ( v3 == 43 ) /*0x71f416*/
-      return wsprintfA((LPSTR)&a2[strlen(a2)], MEMORY[0x8258DC], v2, 2, this->TEventClass_field_34, this + 14); /*0x71f443*/
+      return wsprintfA((LPSTR)&a2[strlen(a2)], DataGlobal_8258DC, v2, 2, this->TEventClass_field_34, this + 14); /*0x71f443*/
     v9 = this->TEventClass_field_34; /*0x71f446*/
     v8 = 0; /*0x71f447*/
     v7 = this->TEventClass_field_2C; /*0x71f449*/
-    v6 = MEMORY[0x8189B0]; /*0x71f44a*/
+    v6 = g_Str_Trace__d__d__d; /*0x71f44a*/
   }
   return wsprintfA((LPSTR)&a2[strlen(a2)], v6, v7, v8, v9); /*0x71f441*/
 }
@@ -610,7 +615,7 @@ TEventClass *__thiscall TEventClass::Fire(void **this, char a2)
     do /*0x71faed*/
     {
       ++v3; /*0x71fadd*/
-      *((_DWORD *)MEMORY[0xB0F65C] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F65C] + v3); /*0x71fae1*/
+      *((_DWORD *)DataGlobal_B0F65C + v3 - 1) = *((_DWORD *)DataGlobal_B0F65C + v3); /*0x71fae1*/
     }
     while ( v3 < g_TActionClassState ); /*0x71faed*/
   }
@@ -626,15 +631,15 @@ TEventClass *__thiscall TEventClass::Fire(void **this, char a2)
     while ( v4 < g_AnimManager ); /*0x71fb36*/
   }
   v7 = this; /*0x71fb48*/
-  v5 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F1A0] + 16))(&MEMORY[0xB0F1A0], &v7); /*0x71fb4c*/
-  if ( v5 != -1 && v5 < MEMORY[0xB0F1B0] && v5 < --MEMORY[0xB0F1B0] ) /*0x71fb67*/
+  v5 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_B0F1A0 + 16))(&DataGlobal_B0F1A0, &v7); /*0x71fb4c*/
+  if ( v5 != -1 && v5 < DataGlobal_B0F1B0 && v5 < --DataGlobal_B0F1B0 ) /*0x71fb67*/
   {
     do /*0x71fb7f*/
     {
       ++v5; /*0x71fb6f*/
-      *((_DWORD *)MEMORY[0xB0F1A4] + v5 - 1) = *((_DWORD *)MEMORY[0xB0F1A4] + v5); /*0x71fb73*/
+      *((_DWORD *)DataGlobal_B0F1A4 + v5 - 1) = *((_DWORD *)DataGlobal_B0F1A4 + v5); /*0x71fb73*/
     }
-    while ( v5 < MEMORY[0xB0F1B0] ); /*0x71fb7f*/
+    while ( v5 < DataGlobal_B0F1B0 ); /*0x71fb7f*/
   }
   AbstractClass::DTOR(this); /*0x71fb83*/
   if ( (a2 & 1) != 0 ) /*0x71fb8d*/
@@ -703,9 +708,9 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TEventClass;
     *(int *)&aP0->__pad_0[12] = &vt_TEventClass;
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[12]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[12]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[12]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[12]);
     return 0;
   }
     return result;

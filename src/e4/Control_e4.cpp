@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x48E620
 int Control::DispatchClick(ControlClass * aP1)
@@ -51,9 +52,9 @@ char __thiscall Control::RepositionControlsDialog(HWND this)
   v3 = v18.top - Rect.top; /*0x60b9ab*/
   nWidth = v18.right - v18.left; /*0x60b9ad*/
   v14 = Parent; /*0x60b9b3*/
-  if ( !MEMORY[0xAC1B04] ) /*0x60b9b7*/
+  if ( !g_DialogHashMap_Count ) /*0x60b9b7*/
     goto LABEL_5; /*0x60b9b7*/
-  v4 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v14) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60b9d8*/
+  v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v14) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60b9d8*/
   if ( !v4 ) /*0x60b9dd*/
     goto LABEL_5; /*0x60b9dd*/
   while ( (HWND)*v4 != v14 ) /*0x60b9e5*/
@@ -256,7 +257,7 @@ LABEL_167:
         return result; /*0x60beee*/
       }
       result = 32; /*0x60befa*/
-      if ( MEMORY[0x8A00A4] < 800 ) /*0x60bf01*/
+      if ( g_DDraw_Active < 800 ) /*0x60bf01*/
         return result; /*0x60bf01*/
       v3 -= 50; /*0x60bf20*/
       goto LABEL_170; /*0x60bf22*/
@@ -325,9 +326,9 @@ char __thiscall Dialog_CheckControlType(void *this)
   void *v5; // [esp+4h] [ebp-4h] BYREF
 
   v5 = this; /*0x60c549*/
-  if ( !MEMORY[0xAC1B04] ) /*0x60c54d*/
+  if ( !g_DialogHashMap_Count ) /*0x60c54d*/
     return 0; /*0x60c54d*/
-  v1 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v5) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60c570*/
+  v1 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v5) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60c570*/
   if ( !v1 ) /*0x60c575*/
     return 0; /*0x60c575*/
   while ( (void *)*v1 != v5 ) /*0x60c57d*/

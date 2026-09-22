@@ -2,6 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/TaskForceClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Factory_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x4C4EF0
 namespace gamemd {
@@ -21,7 +24,7 @@ _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
   v9 = Buffer; /*0x4c4f09*/
   *this = 0; /*0x4c4f0a*/
   this->vtable2 = 0; /*0x4c4f10*/
-  sscanf(v9, MEMORY[0x82085C], &Buffer, v10); /*0x4c4f17*/
+  sscanf(v9, DataGlobal_82085C, &Buffer, v10); /*0x4c4f17*/
   *this = Buffer; /*0x4c4f27*/
   ExitCellByName = Factory::FindExitCellByName(v10); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
@@ -31,7 +34,7 @@ _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
     {
       v8 = TypeClass::FindByName(v10); /*0x4c4f6f*/
       if ( v8 != -1 ) /*0x4c4f77*/
-        this->vtable2 = *((_DWORD *)MEMORY[0xA8B21C] + v8); /*0x4c4f82*/
+        this->vtable2 = *((_DWORD *)g_AircraftTypeCount + v8); /*0x4c4f82*/
       return this; /*0x4c4f85*/
     }
     else
@@ -43,7 +46,7 @@ _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
   }
   else
   {
-    v4 = *((_DWORD *)MEMORY[0xA8E34C] + ExitCellByName); /*0x4c4f39*/
+    v4 = *((_DWORD *)Factory_ExitCellTable + ExitCellByName); /*0x4c4f39*/
     this->vtable2 = v4; /*0x4c4f3e*/
     return this; /*0x4c4f3c*/
   }
@@ -70,16 +73,16 @@ _DWORD *__thiscall TaskForceClass::Construct(_DWORD *this, ObjectClass *aP1)
   this->vtable2 = &TaskForceClass::`vftable'; /*0x6e7eb3*/
   this->vtable3 = &TaskForceClass::`vftable'; /*0x6e7eba*/
   this->vtable4 = &vt_TaskForceClass; /*0x6e7ec1*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[22060] < *(int *)&HouseClass_Player.__pad_5568[22052] /*0x6e7f05*/
-    || (HouseClass_Player.__pad_5568[22057] || !*(_DWORD *)&HouseClass_Player.__pad_5568[22052])
-    && *(int *)&HouseClass_Player.__pad_5568[22064] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_5568[22044] + 8))(
-         &HouseClass_Player.__pad_5568[22044],
-         *(_DWORD *)&HouseClass_Player.__pad_5568[22052] + *(_DWORD *)&HouseClass_Player.__pad_5568[22064],
+  if ( *(int *)&HouseClass_Player[43924] < *(int *)&HouseClass_Player[43916] /*0x6e7f05*/
+    || (HouseClass_Player[43921] || !*(_DWORD *)&HouseClass_Player[43916])
+    && *(int *)&HouseClass_Player[43928] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player[43908] + 8))(
+         &HouseClass_Player[43908],
+         *(_DWORD *)&HouseClass_Player[43916] + *(_DWORD *)&HouseClass_Player[43928],
          0) )
   {
-    v3 = (TaskForceClass *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22060])++; /*0x6e7f12*/
-    *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22048] + 4 * (_DWORD)v3) = this; /*0x6e7f21*/
+    v3 = (TaskForceClass *)(*(_DWORD *)&HouseClass_Player[43924])++; /*0x6e7f12*/
+    *(_DWORD *)(*(_DWORD *)&HouseClass_Player[43912] + 4 * (_DWORD)v3) = this; /*0x6e7f21*/
   }
   v4 = (ObjectTypeClass *)(this + 41); /*0x6e7f28*/
   v5 = 6; /*0x6e7f2a*/
@@ -114,7 +117,7 @@ CCINIClass *__fastcall TaskForceClass::LoadFromINI(char *a1, int a2)
   CCINIClass *v12; // [esp+10h] [ebp-1Ch]
   char Source[24]; // [esp+14h] [ebp-18h] BYREF
 
-  result = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&stru_830620.__pad_579C[53244]); /*0x6e8230*/
+  result = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&stru_830620[75672]); /*0x6e8230*/
   v5 = result; /*0x6e8235*/
   v6 = 0; /*0x6e8237*/
   v12 = result; /*0x6e823b*/
@@ -124,13 +127,13 @@ CCINIClass *__fastcall TaskForceClass::LoadFromINI(char *a1, int a2)
     {
       StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex( /*0x6e824d*/
                                            a1,
-                                           (CCINIClass *)&stru_830620.__pad_579C[53244],
+                                           (CCINIClass *)&stru_830620[75672],
                                            v6);
       result = (CCINIClass *)INIClass::GetString( /*0x6e8266*/
                                (unsigned __int8 ***)a1,
-                               (INIClass *)&stru_830620.__pad_579C[53244],
+                               (INIClass *)&stru_830620[75672],
                                StringByIndex,
-                               (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+                               (INIClass *)&DataGlobal_87F8E4[42624],
                                (INIClass *)Source,
                                24);
       if ( (int)result > 0 ) /*0x6e826d*/
@@ -143,14 +146,14 @@ LABEL_13:
     if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x6e8293*/
       goto LABEL_11; /*0x6e8293*/
     v8 = 0; /*0x6e82a4*/
-    if ( *(int *)&MEMORY[0xA8D63C].__pad_1258[76] > 0 ) /*0x6e82a8*/
+    if ( *(int *)&g_NetworkPlayerBuffer[4772] > 0 ) /*0x6e82a8*/
     {
-      while ( _strcmpi((char *)(*(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_1258[64] + 4 * v8) + 36), Source) ) /*0x6e82c6*/
+      while ( _strcmpi((char *)(*(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[4760] + 4 * v8) + 36), Source) ) /*0x6e82c6*/
       {
-        if ( ++v8 >= *(int *)&MEMORY[0xA8D63C].__pad_1258[76] ) /*0x6e82d0*/
+        if ( ++v8 >= *(int *)&g_NetworkPlayerBuffer[4772] ) /*0x6e82d0*/
           goto LABEL_8; /*0x6e82d0*/
       }
-      v10 = *(TaskForceClass **)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_1258[64] + 4 * v8); /*0x6e82f9*/
+      v10 = *(TaskForceClass **)(*(_DWORD *)&g_NetworkPlayerBuffer[4760] + 4 * v8); /*0x6e82f9*/
       goto LABEL_12; /*0x6e82fc*/
     }
 LABEL_8:
@@ -162,7 +165,7 @@ LABEL_11:
       v10 = 0; /*0x6e82fe*/
 LABEL_12:
     v11 = sub_412610(Source); /*0x6e8300*/
-    SwizzleManagerClass::Here_I_Am((int)&g_OverlayTypeConfig.__pad_14B0[13416], v11, (int)v10); /*0x6e8310*/
+    SwizzleManagerClass::Here_I_Am((int)&g_OverlayTypeConfig[18712], v11, (int)v10); /*0x6e8310*/
     result = (CCINIClass *)(*(int (__thiscall **)(TaskForceClass *, char *))(*(_DWORD *)v10->__pad_0 + 100))(v10, a1); /*0x6e831a*/
     *(_DWORD *)v10->__pad_A0 = a2; /*0x6e831d*/
     v5 = v12; /*0x6e8323*/
@@ -189,15 +192,15 @@ TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **this, char a2)
   this->vtable4 = &vt_TaskForceClass; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6e8811*/
   v5 = this; /*0x6e8826*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8E8D0] + 16))(&MEMORY[0xA8E8D0], &v5); /*0x6e882a*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8E8E0] && v3 < --MEMORY[0xA8E8E0] ) /*0x6e8845*/
+  v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A8E8D0 + 16))(&DataGlobal_A8E8D0, &v5); /*0x6e882a*/
+  if ( v3 != -1 && v3 < g_MultiplayerLogFlags && v3 < --g_MultiplayerLogFlags ) /*0x6e8845*/
   {
     do /*0x6e885d*/
     {
       ++v3; /*0x6e884d*/
-      *((_DWORD *)MEMORY[0xA8E8D4] + v3 - 1) = *((_DWORD *)MEMORY[0xA8E8D4] + v3); /*0x6e8851*/
+      *((_DWORD *)g_MultiplayerLogEntry + v3 - 1) = *((_DWORD *)g_MultiplayerLogEntry + v3); /*0x6e8851*/
     }
-    while ( v3 < MEMORY[0xA8E8E0] ); /*0x6e885d*/
+    while ( v3 < g_MultiplayerLogFlags ); /*0x6e885d*/
   }
   AbstractTypeClass::Dtor(this); /*0x6e8861*/
   if ( (a2 & 1) != 0 ) /*0x6e886b*/
@@ -238,7 +241,7 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
     do
   {
     sprintf(Buffer, g_Str_Trace__d, v3);
-    if ( (int)INIClass::GetString( aP1, (INIClass *)(this + 36), (unsigned char *)Buffer, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) > 0 )
+    if ( (int)INIClass::GetString( aP1, (INIClass *)(this + 36), (unsigned char *)Buffer, (INIClass *)&DataGlobal_87F8E4[42624], Destination, 128) > 0 )
     {
     v4 = TaskForceClass::ParseUnitCountAndType(&v8, Destination[0].__pad_0);
     v5 = *(INIClass **)(this + 156);
@@ -251,7 +254,7 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
     v3 = (INIClass *)((char *)(v3) + 1);
   }
     while ( (int)v3 < 6 );
-    this->TaskForceClass_field_0x98 = INIClass::ReadInt_Overwrite( (int)aP1, (unsigned char *)(this + 36), (CCINIClass *)&DataGlobal_830620.__pad_579C[53256], *(INIClass **)(this + 152));
+    this->TaskForceClass_field_0x98 = INIClass::ReadInt_Overwrite( (int)aP1, (unsigned char *)(this + 36), (CCINIClass *)&DataGlobal_830620[75684], *(INIClass **)(this + 152));
     return 1;
 }
 }
@@ -329,7 +332,7 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
     v4 = 6;
     do
     {
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], v3);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], v3);
     v3 = (MouseClass *)((char *)(v3) + 8);
     --v4;
     }

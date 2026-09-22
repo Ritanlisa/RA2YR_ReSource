@@ -48,21 +48,21 @@ int __thiscall GadgetClass_Dtor(_DWORD *this)
   int v2; // eax
 
   *this = &vt_GadgetClass; /*0x4e1390*/
-  v1 = MEMORY[0x8B3E90]; /*0x4e1396*/
-  if ( this == (_DWORD *)MEMORY[0x8B3E90] ) /*0x4e139f*/
+  v1 = DataGlobal_8B3E90; /*0x4e1396*/
+  if ( this == (_DWORD *)DataGlobal_8B3E90 ) /*0x4e139f*/
   {
     v2 = this->q020; /*0x4e13a1*/
     BYTE1(v2) &= ~1u; /*0x4e13a4*/
     this->q020 = v2; /*0x4e13a7*/
     v1 = 0; /*0x4e13aa*/
-    MEMORY[0x8B3E90] = 0; /*0x4e13ac*/
+    DataGlobal_8B3E90 = 0; /*0x4e13ac*/
   }
-  if ( this == (_DWORD *)MEMORY[0x8B3E88] ) /*0x4e13ba*/
-    MEMORY[0x8B3E88] = 0; /*0x4e13bc*/
-  if ( this == (_DWORD *)MEMORY[0x8B3E8C] ) /*0x4e13cb*/
-    MEMORY[0x8B3E8C] = 0; /*0x4e13cd*/
+  if ( this == (_DWORD *)DataGlobal_8B3E88 ) /*0x4e13ba*/
+    DataGlobal_8B3E88 = 0; /*0x4e13bc*/
+  if ( this == (_DWORD *)DataGlobal_8B3E8C ) /*0x4e13cb*/
+    DataGlobal_8B3E8C = 0; /*0x4e13cd*/
   if ( this == (_DWORD *)v1 ) /*0x4e13d5*/
-    MEMORY[0x8B3E90] = 0; /*0x4e13d7*/
+    DataGlobal_8B3E90 = 0; /*0x4e13d7*/
   return LinkClass::Destruct();
 }
 }
@@ -84,8 +84,8 @@ int __thiscall GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
 
   if ( !GadgetClass::ClearState((_BYTE *)this, aP1) ) /*0x55792e*/
     return 0; /*0x557a0b*/
-  (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 32))( /*0x557965*/
-    *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228],
+  (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(**(_DWORD **)&DataGlobal_87F8E4[32092] + 32))( /*0x557965*/
+    *(_DWORD *)&DataGlobal_87F8E4[32092],
     this->Width,
     this->Height,
     this->Visible,
@@ -113,7 +113,7 @@ int __thiscall GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
           v7 == *(_DWORD *)(this + 364));
     }
   }
-  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 36))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228]); /*0x5579f6*/
+  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[32092] + 36))(*(_DWORD *)&DataGlobal_87F8E4[32092]); /*0x5579f6*/
   return 1; /*0x5579fe*/
 }
 }
@@ -148,9 +148,9 @@ BOOL __stdcall GadgetClass_FindByWindow(HWND hWnd, LPARAM a2)
   v3 = 0; /*0x60aace*/
   v14 = hWnd; /*0x60aad0*/
   v15 = 0; /*0x60aad6*/
-  if ( MEMORY[0xAC1B04] ) /*0x60aada*/
+  if ( g_DialogHashMap_Count ) /*0x60aada*/
   {
-    v4 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v14) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60aafb*/
+    v4 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v14) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60aafb*/
     if ( v4 ) /*0x60ab00*/
     {
       while ( *v4 != v14 ) /*0x60ab08*/
@@ -167,9 +167,9 @@ LABEL_7:
   if ( v3 ) /*0x60ab23*/
   {
     v14 = Parent; /*0x60ab2e*/
-    if ( !MEMORY[0xAC1B04] ) /*0x60ab34*/
+    if ( !g_DialogHashMap_Count ) /*0x60ab34*/
       goto LABEL_12; /*0x60ab34*/
-    v5 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&v14)); /*0x60ab4b*/
+    v5 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v14)); /*0x60ab4b*/
     if ( !v5 ) /*0x60ab50*/
       goto LABEL_12; /*0x60ab50*/
     while ( *v5 != v14 ) /*0x60ab58*/
@@ -231,7 +231,7 @@ LABEL_12:
     v18 = Parent; /*0x60ad12*/
     v15[55] = v8; /*0x60ad16*/
     v14 = 0; /*0x60ad26*/
-    HashTable::Get(&MEMORY[0xAC1B00], &v18, &v14); /*0x60ad2e*/
+    HashTable::Get(&g_DialogHashMap_Base, &v18, &v14); /*0x60ad2e*/
     if ( !v14 ) /*0x60ad39*/
       goto LABEL_86; /*0x60ad39*/
     v10 = *((_DWORD *)v14 + 27); /*0x60ad3f*/
@@ -260,15 +260,15 @@ LABEL_12:
     *((_DWORD *)v14 + 44) = 2; /*0x60adcf*/
     v17 = hWnd; /*0x60ade4*/
     GetClassNameA(hWnd, ClassName, 128); /*0x60ade8*/
-    if ( !strcmp(ClassName, MEMORY[0x833728]) || !strcmp(ClassName, MEMORY[0x833720]) ) /*0x60ae37*/
+    if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x60ae37*/
       goto LABEL_85; /*0x60ae5c*/
-    if ( !strcmp(ClassName, MEMORY[0x833718]) && (v16 = 0, HashTable::Get(&MEMORY[0xAC1B00], &v17, &v16)) ) /*0x60aeab*/
+    if ( !strcmp(ClassName, g_INI_Key_ListBox) && (v16 = 0, HashTable::Get(&g_DialogHashMap_Base, &v17, &v16)) ) /*0x60aeab*/
     {
       v11 = *(_DWORD *)(v16 + 104) == 1; /*0x60aebc*/
     }
     else
     {
-      if ( strcmp(ClassName, MEMORY[0x83370C]) ) /*0x60aed0*/
+      if ( strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x60aed0*/
         goto LABEL_86; /*0x60aef5*/
       v11 = (GetWindowLongA(v17, -16) & 3) != 3; /*0x60af09*/
     }

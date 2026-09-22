@@ -2,6 +2,11 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5B6CD0_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/Voxel_e4.hpp"
 
 // 0x411580
 BOOL Surface::IsLocked()
@@ -253,8 +258,8 @@ int sub_626C60()
   int v11; // eax
   int v12; // ecx
 
-  if ( MEMORY[0xAC48F0] ) /*0x626c68*/
-    return *(_DWORD *)(*((_DWORD *)MEMORY[0xAC48F0] + 1) + 16); /*0x626d93*/
+  if ( g_FileExtensionState ) /*0x626c68*/
+    return *(_DWORD *)(*((_DWORD *)g_FileExtensionState + 1) + 16); /*0x626d93*/
   v0 = __2_YAPAXI_Z(0x10u); /*0x626c70*/
   v1 = v0; /*0x626c75*/
   if ( v0 ) /*0x626c7c*/
@@ -326,12 +331,12 @@ int sub_626C60()
       v7 = 0; /*0x626d6a*/
     }
     v1[3] = v7; /*0x626d6e*/
-    MEMORY[0xAC48F0] = v1; /*0x626d71*/
+    g_FileExtensionState = v1; /*0x626d71*/
     return *(_DWORD *)(v1[1] + 16); /*0x626d7c*/
   }
   else
   {
-    MEMORY[0xAC48F0] = 0; /*0x626d83*/
+    g_FileExtensionState = 0; /*0x626d83*/
     return *(_DWORD *)(MEMORY[4] + 16); /*0x626d8b*/
   }
 }
@@ -499,7 +504,7 @@ LABEL_7:
         v34 = 0; /*0x655368*/
         v31 = 0; /*0x65536d*/
         v32 = 0; /*0x655377*/
-        v11 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v35); /*0x65537c*/
+        v11 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v35); /*0x65537c*/
         v12 = v39 + v40 * *(this + 1168); /*0x655390*/
         GetCellRadarColors((int)v11, (int)&v33, (int)&v31); /*0x65539e*/
         if ( v5 ) /*0x6553ab*/
@@ -942,15 +947,15 @@ LABEL_21:
     v23 = 256; /*0x6ba89a*/
     do /*0x6ba8ef*/
     {
-      LOBYTE(v10) = *(_BYTE *)(v22 + 1) >> MEMORY[0x8A0DDC]; /*0x6ba8a8*/
+      LOBYTE(v10) = *(_BYTE *)(v22 + 1) >> g_BitShift_Blue; /*0x6ba8a8*/
       v22 += 3; /*0x6ba8b0*/
       ++v21; /*0x6ba8b3*/
       LOWORD(v12) = (unsigned __int8)v10; /*0x6ba8b6*/
       LOWORD(v10) = (unsigned __int8)(*(_BYTE *)(v22 - 4) >> v20); /*0x6ba8c9*/
-      v24 = v10 << MEMORY[0x8A0DD0]; /*0x6ba8cd*/
-      v25 = v24 | (v12 << MEMORY[0x8A0DD8]); /*0x6ba8d5*/
-      LOWORD(v24) = (unsigned __int8)(*(_BYTE *)(v22 - 3) >> MEMORY[0x8A0DE4]); /*0x6ba8e2*/
-      v10 = v24 << MEMORY[0x8A0DE0]; /*0x6ba8e6*/
+      v24 = v10 << g_DDraw_BlueMask; /*0x6ba8cd*/
+      v25 = v24 | (v12 << g_BitShift_Blue); /*0x6ba8d5*/
+      LOWORD(v24) = (unsigned __int8)(*(_BYTE *)(v22 - 3) >> g_BitMask_Blue); /*0x6ba8e2*/
+      v10 = v24 << g_BitMask_Green; /*0x6ba8e6*/
       v12 = v10 | v25; /*0x6ba8e8*/
       --v23; /*0x6ba8ea*/
       *(v21 - 1) = v12; /*0x6ba8eb*/
@@ -999,19 +1004,19 @@ LABEL_21:
               v42 = *v41; /*0x6bab21*/
               v43 = v77[(unsigned __int8)v39[v40]]; /*0x6bab27*/
               v44 = 255 - (unsigned __int8)*v39; /*0x6bab48*/
-              v45 = MEMORY[0xAC48B8] /*0x6bab5d*/
-                  & ((v44 * (unsigned __int16)(MEMORY[0xAC48B8] & v42)
-                    + (unsigned __int8)*v39 * (unsigned int)(unsigned __int16)(MEMORY[0xAC48B8] & v43)) >> 8);
+              v45 = g_ScreenSaverState /*0x6bab5d*/
+                  & ((v44 * (unsigned __int16)(g_ScreenSaverState & v42)
+                    + (unsigned __int8)*v39 * (unsigned int)(unsigned __int16)(g_ScreenSaverState & v43)) >> 8);
               g_GameScreenFlags = (unsigned __int8)*v39; /*0x6bab64*/
               g_GameScreenConfig = 255 - g_GameScreenFlags; /*0x6bab6e*/
-              v46 = v44 * (unsigned __int16)(HIWORD(MEMORY[0xAC48B8]) & v42) /*0x6bab79*/
-                  + g_GameScreenFlags * (unsigned __int16)(HIWORD(MEMORY[0xAC48B8]) & v43);
-              v47 = v44 * (unsigned __int16)(MEMORY[0xAC48BC] & v42); /*0x6bab8a*/
+              v46 = v44 * (unsigned __int16)(HIWORD(g_ScreenSaverState) & v42) /*0x6bab79*/
+                  + g_GameScreenFlags * (unsigned __int16)(HIWORD(g_ScreenSaverState) & v43);
+              v47 = v44 * (unsigned __int16)(g_CreditsScreenState & v42); /*0x6bab8a*/
               v39 = v63; /*0x6bab97*/
               v40 = v64 - v65; /*0x6bab9b*/
-              v48 = v47 + g_GameScreenFlags * (unsigned __int16)(MEMORY[0xAC48BC] & v43); /*0x6bab9f*/
+              v48 = v47 + g_GameScreenFlags * (unsigned __int16)(g_CreditsScreenState & v43); /*0x6bab9f*/
               v41 = v61; /*0x6baba1*/
-              v49 = HIWORD(MEMORY[0xAC48B8]) & (v46 >> 8) | v45; /*0x6baba5*/
+              v49 = HIWORD(g_ScreenSaverState) & (v46 >> 8) | v45; /*0x6baba5*/
               v10 = v56; /*0x6baba7*/
               *v61 = (v48 >> 8) | v49; /*0x6babb0*/
             }
@@ -1041,15 +1046,15 @@ LABEL_21:
             v34 = *v52; /*0x6ba9f4*/
             g_GameScreenFlags = (unsigned __int8)*v29; /*0x6baa06*/
             g_GameScreenConfig = 255 - g_GameScreenFlags; /*0x6baa45*/
-            v35 = ((255 - g_GameScreenFlags) * (unsigned __int16)(v33 & MEMORY[0xAC48B8]) /*0x6baa4b*/
-                 + g_GameScreenFlags * (unsigned int)(unsigned __int16)(v34 & MEMORY[0xAC48B8])) >> 8;
-            v36 = ((255 - g_GameScreenFlags) * (unsigned __int16)(v33 & HIWORD(MEMORY[0xAC48B8])) /*0x6baa57*/
-                 + g_GameScreenFlags * (unsigned int)(unsigned __int16)(HIWORD(MEMORY[0xAC48B8]) & v34)) >> 8;
+            v35 = ((255 - g_GameScreenFlags) * (unsigned __int16)(v33 & g_ScreenSaverState) /*0x6baa4b*/
+                 + g_GameScreenFlags * (unsigned int)(unsigned __int16)(v34 & g_ScreenSaverState)) >> 8;
+            v36 = ((255 - g_GameScreenFlags) * (unsigned __int16)(v33 & HIWORD(g_ScreenSaverState)) /*0x6baa57*/
+                 + g_GameScreenFlags * (unsigned int)(unsigned __int16)(HIWORD(g_ScreenSaverState) & v34)) >> 8;
             v10 = v56; /*0x6baa6e*/
-            v37 = (255 - g_GameScreenFlags) * (unsigned __int16)(v33 & MEMORY[0xAC48BC]) /*0x6baa75*/
-                + g_GameScreenFlags * (unsigned __int16)(v34 & MEMORY[0xAC48BC]);
+            v37 = (255 - g_GameScreenFlags) * (unsigned __int16)(v33 & g_CreditsScreenState) /*0x6baa75*/
+                + g_GameScreenFlags * (unsigned __int16)(v34 & g_CreditsScreenState);
             v32 = v58; /*0x6baa77*/
-            *v58 = (v37 >> 8) | HIWORD(MEMORY[0xAC48B8]) & v36 | MEMORY[0xAC48B8] & v35; /*0x6baa80*/
+            *v58 = (v37 >> 8) | HIWORD(g_ScreenSaverState) & v36 | g_ScreenSaverState & v35; /*0x6baa80*/
           }
           ++v32; /*0x6baa8f*/
           v29 = v62 + 1; /*0x6baa92*/
@@ -1141,7 +1146,7 @@ void __thiscall Surface::BlitTechnoTo(
   v36 = &BSurface_Vtable; /*0x7074dd*/
   v12 = (unsigned int)aP4 & 0xFFFFFFEF; /*0x7074e5*/
   if ( (*(int (__thiscall **)(_BYTE *))(v11 + 44))(this) == 1 && *(this + 1747) ) /*0x7074f0*/
-    v13 = *(_DWORD **)&g_OverlayTypeConfig.__pad_579C[65964]; /*0x7074fa*/
+    v13 = *(_DWORD **)&g_OverlayTypeConfig[88392]; /*0x7074fa*/
   else
     v13 = (_DWORD *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 484))(this); /*0x707505*/
   aP4a = (int *)LightConvertClass::SelectRLEBlitter(v13, (IUnknown *)v12); /*0x707516*/
@@ -1159,26 +1164,26 @@ void __thiscall Surface::BlitTechnoTo(
     ecx8 = (unsigned __int16)a1[2]; /*0x70757b*/
     v32 = v15; /*0x70757f*/
     v34 = (unsigned __int16)v17; /*0x707585*/
-    if ( *(int *)&g_OverlayTypeConfig.__pad_579C[65588] > 0 && *(int *)&g_OverlayTypeConfig.__pad_579C[65592] > 0 ) /*0x707597*/
+    if ( *(int *)&g_OverlayTypeConfig[88016] > 0 && *(int *)&g_OverlayTypeConfig[88020] > 0 ) /*0x707597*/
     {
       if ( ecx8 <= 0 || v17 <= 0 ) /*0x7075a7*/
       {
-        eax8 = *(TechnoClass **)&g_OverlayTypeConfig.__pad_579C[65580]; /*0x70764e*/
-        v15 = *(TechnoClass **)&g_OverlayTypeConfig.__pad_579C[65584]; /*0x707653*/
-        ecx8 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65588]; /*0x707659*/
-        v17 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65592]; /*0x70765f*/
+        eax8 = *(TechnoClass **)&g_OverlayTypeConfig[88008]; /*0x70764e*/
+        v15 = *(TechnoClass **)&g_OverlayTypeConfig[88012]; /*0x707653*/
+        ecx8 = *(_DWORD *)&g_OverlayTypeConfig[88016]; /*0x707659*/
+        v17 = *(_DWORD *)&g_OverlayTypeConfig[88020]; /*0x70765f*/
       }
       else
       {
-        v18 = *(TechnoClass **)&g_OverlayTypeConfig.__pad_579C[65580]; /*0x7075b3*/
-        v27 = *(TechnoClass **)&g_OverlayTypeConfig.__pad_579C[65584]; /*0x7075b9*/
-        v29 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65588]; /*0x7075c3*/
-        v26 = *(TechnoClass **)&g_OverlayTypeConfig.__pad_579C[65580]; /*0x7075cf*/
-        v30 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65592]; /*0x7075d3*/
-        if ( *(int *)&g_OverlayTypeConfig.__pad_579C[65580] > (int)eax8 ) /*0x7075d7*/
+        v18 = *(TechnoClass **)&g_OverlayTypeConfig[88008]; /*0x7075b3*/
+        v27 = *(TechnoClass **)&g_OverlayTypeConfig[88012]; /*0x7075b9*/
+        v29 = *(_DWORD *)&g_OverlayTypeConfig[88016]; /*0x7075c3*/
+        v26 = *(TechnoClass **)&g_OverlayTypeConfig[88008]; /*0x7075cf*/
+        v30 = *(_DWORD *)&g_OverlayTypeConfig[88020]; /*0x7075d3*/
+        if ( *(int *)&g_OverlayTypeConfig[88008] > (int)eax8 ) /*0x7075d7*/
         {
           v18 = eax8; /*0x7075e1*/
-          v29 += *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65580] - (_DWORD)eax8; /*0x7075e3*/
+          v29 += *(_DWORD *)&g_OverlayTypeConfig[88008] - (_DWORD)eax8; /*0x7075e3*/
           v26 = eax8; /*0x7075e7*/
         }
         if ( (int)v27 > (int)v15 ) /*0x7075f1*/
@@ -1198,10 +1203,10 @@ void __thiscall Surface::BlitTechnoTo(
         eax8 = v18; /*0x70764a*/
       }
     }
-    *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65580] = eax8; /*0x707661*/
-    *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65584] = v15; /*0x707666*/
-    *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65588] = ecx8; /*0x70766c*/
-    *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[65592] = v17; /*0x707672*/
+    *(_DWORD *)&g_OverlayTypeConfig[88008] = eax8; /*0x707661*/
+    *(_DWORD *)&g_OverlayTypeConfig[88012] = v15; /*0x707666*/
+    *(_DWORD *)&g_OverlayTypeConfig[88016] = ecx8; /*0x70766c*/
+    *(_DWORD *)&g_OverlayTypeConfig[88020] = v17; /*0x707672*/
   }
   if ( aP4a ) /*0x70767e*/
   {
@@ -1224,7 +1229,7 @@ void __thiscall Surface::BlitTechnoTo(
     v25 = (AbstractClass *)(*(int (__thiscall **)(_BYTE *))(v24 + 752))(this); /*0x707703*/
     eax24a = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 748))(this); /*0x707706*/
     BlitterRLEBlitSHP( /*0x707736*/
-      *(int *)&MEMORY[0x87F8E4].__pad_5568[9416],
+      *(int *)&DataGlobal_87F8E4[31280],
       (int *)aP3->__pad_0,
       v35,
       (int)&v36,
@@ -1339,8 +1344,8 @@ void __thiscall Surface::RenderToSurfaceVoxel(int this, _DWORD *a2, int *a3)
   _DWORD *v90; // [esp+4Ch] [ebp+8h]
 
   v58 = ZCoordToScreenY(*(_DWORD *)(this + 188)); /*0x7602f8*/
-  v74 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 92))( /*0x760309*/
-          *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416],
+  v74 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 92))( /*0x760309*/
+          *(_DWORD *)&DataGlobal_87F8E4[31280],
           0,
           0);
   if ( v74 ) /*0x76030d*/
@@ -1358,7 +1363,7 @@ void __thiscall Surface::RenderToSurfaceVoxel(int this, _DWORD *a2, int *a3)
     if ( *(_DWORD *)(this + 424) ) /*0x760374*/
     {
       v7 = *(_DWORD *)(this + 416); /*0x760398*/
-      v8 = v6 + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536] + *(_DWORD *)(this + 420); /*0x76039e*/
+      v8 = v6 + *(_DWORD *)&DataGlobal_87F8E4[30400] + *(_DWORD *)(this + 420); /*0x76039e*/
       v61 = v8; /*0x7603a0*/
       v9 = v7 + v8 - 1; /*0x7603a4*/
       if ( v9 >= a3[3] + a3[1] ) /*0x7603aa*/
@@ -1375,17 +1380,17 @@ void __thiscall Surface::RenderToSurfaceVoxel(int this, _DWORD *a2, int *a3)
       if ( v10 <= 1 || v10 >= 6 ) /*0x7603d1*/
       {
         a4d = (_WORD *)Audio::GetSamplePosition( /*0x7606be*/
-                         *(int *)&MEMORY[0x87F8E4].__pad_5568[10232],
+                         *(int *)&DataGlobal_87F8E4[32096],
                          0,
-                         (MouseClass *)(v8 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]));
-        v35 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 124))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416]); /*0x7606c4*/
-        HIWORD(v36) = *(_WORD *)&MEMORY[0x87F8E4].__pad_5568[10234]; /*0x7606c7*/
+                         (MouseClass *)(v8 - *(_DWORD *)&DataGlobal_87F8E4[30400]));
+        v35 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 124))(*(_DWORD *)&DataGlobal_87F8E4[31280]); /*0x7606c4*/
+        HIWORD(v36) = *(_WORD *)&DataGlobal_87F8E4[32098]; /*0x7606c7*/
         v81 = v9 - v8; /*0x7606d8*/
-        v72 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 40); /*0x7606e0*/
-        if ( (unsigned int)&a4d[v35 + v72 * (v9 - v8 + 1)] >= *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] /*0x7606f6*/
+        v72 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 40); /*0x7606e0*/
+        if ( (unsigned int)&a4d[v35 + v72 * (v9 - v8 + 1)] >= *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] /*0x7606f6*/
                                                                         + 28) )
         {
-          LOWORD(v36) = *(_WORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 36) - v9; /*0x76085b*/
+          LOWORD(v36) = *(_WORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 36) - v9; /*0x76085b*/
           v46 = v9; /*0x76085e*/
           v56 = v9; /*0x760862*/
           v47 = (char *)v36 - v58 - 2; /*0x760866*/
@@ -1409,12 +1414,12 @@ void __thiscall Surface::RenderToSurfaceVoxel(int this, _DWORD *a2, int *a3)
                               + 2
                               * (v50
                                + v56
-                               * ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 116))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416]) >> 1)));
-                v51 = (MouseClass *)(v56 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]); /*0x760910*/
+                               * ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 116))(*(_DWORD *)&DataGlobal_87F8E4[31280]) >> 1)));
+                v51 = (MouseClass *)(v56 - *(_DWORD *)&DataGlobal_87F8E4[30400]); /*0x760910*/
                 aP1b = (MouseClass *)v50; /*0x760914*/
                 for ( i = abs32(v56 - v76 - *(_DWORD *)(this + 208)); v50 >= v60; --a4c ) /*0x760925*/
                 {
-                  if ( *(_WORD *)Audio::GetSamplePosition(*(int *)&MEMORY[0x87F8E4].__pad_5568[10232], aP1b, v51) > (unsigned __int16)v88 ) /*0x760940*/
+                  if ( *(_WORD *)Audio::GetSamplePosition(*(int *)&DataGlobal_87F8E4[32096], aP1b, v51) > (unsigned __int16)v88 ) /*0x760940*/
                     Voxel::BlendColor((_DWORD *)this, v50, aP2, i, a4c); /*0x760950*/
                   --v50; /*0x76095e*/
                   aP1b = (MouseClass *)((char *)aP1b - 1); /*0x76095f*/
@@ -1435,14 +1440,14 @@ void __thiscall Surface::RenderToSurfaceVoxel(int this, _DWORD *a2, int *a3)
         }
         else
         {
-          aP1a = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 116))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416]) >> 1; /*0x760709*/
+          aP1a = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 116))(*(_DWORD *)&DataGlobal_87F8E4[31280]) >> 1; /*0x760709*/
           v37 = (_WORD *)(v74 + 2 * v9 * aP1a); /*0x76071a*/
           v90 = (_DWORD *)(*(_DWORD *)(this + 424) + 8 * v81); /*0x760728*/
-          v87 = *(_WORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 36) - v9 - v58 - 2; /*0x760740*/
+          v87 = *(_WORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 36) - v9 - v58 - 2; /*0x760740*/
           SamplePosition = Audio::GetSamplePosition( /*0x760753*/
-                             *(int *)&MEMORY[0x87F8E4].__pad_5568[10232],
+                             *(int *)&DataGlobal_87F8E4[32096],
                              0,
-                             (MouseClass *)(v9 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]));
+                             (MouseClass *)(v9 - *(_DWORD *)&DataGlobal_87F8E4[30400]));
           v39 = v9; /*0x760755*/
           v55 = v9; /*0x760759*/
           if ( v9 >= v8 ) /*0x76075d*/
@@ -1492,14 +1497,14 @@ void __thiscall Surface::RenderToSurfaceVoxel(int this, _DWORD *a2, int *a3)
       }
       else
       {
-        v86 = *(_WORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 36) - v58 - v8 - 2; /*0x7603f4*/
+        v86 = *(_WORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 36) - v58 - v8 - 2; /*0x7603f4*/
         v11 = Audio::GetSamplePosition( /*0x760406*/
-                *(int *)&MEMORY[0x87F8E4].__pad_5568[10232],
+                *(int *)&DataGlobal_87F8E4[32096],
                 0,
-                (MouseClass *)(v8 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]));
-        v12 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 124))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416]); /*0x76040a*/
-        v70 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 40); /*0x760418*/
-        if ( v11 + 2 * (v12 + v70 * (v9 - v61 + 1)) >= *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x760437*/
+                (MouseClass *)(v8 - *(_DWORD *)&DataGlobal_87F8E4[30400]));
+        v12 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 124))(*(_DWORD *)&DataGlobal_87F8E4[31280]); /*0x76040a*/
+        v70 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 40); /*0x760418*/
+        if ( v11 + 2 * (v12 + v70 * (v9 - v61 + 1)) >= *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 28) ) /*0x760437*/
         {
           v27 = v61; /*0x760557*/
           v54 = v61; /*0x76055d*/
@@ -1525,15 +1530,15 @@ void __thiscall Surface::RenderToSurfaceVoxel(int this, _DWORD *a2, int *a3)
                               + 2
                               * (v32
                                + v27
-                               * ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 116))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416]) >> 1)));
-                v33 = (MouseClass *)(v27 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]); /*0x7605fd*/
-                v85 = (MouseClass *)(v27 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]); /*0x760607*/
+                               * ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 116))(*(_DWORD *)&DataGlobal_87F8E4[31280]) >> 1)));
+                v33 = (MouseClass *)(v27 - *(_DWORD *)&DataGlobal_87F8E4[30400]); /*0x7605fd*/
+                v85 = (MouseClass *)(v27 - *(_DWORD *)&DataGlobal_87F8E4[30400]); /*0x760607*/
                 v34 = abs32(v27 - v76 - *(_DWORD *)(this + 208)); /*0x760616*/
                 if ( v32 <= v63 ) /*0x76061a*/
                 {
                   while ( 1 ) /*0x760622*/
                   {
-                    if ( *(_WORD *)Audio::GetSamplePosition(*(int *)&MEMORY[0x87F8E4].__pad_5568[10232], aP1, v33) > v86 ) /*0x76063b*/
+                    if ( *(_WORD *)Audio::GetSamplePosition(*(int *)&DataGlobal_87F8E4[32096], aP1, v33) > v86 ) /*0x76063b*/
                       Voxel::BlendColor((_DWORD *)this, v32, aP2, v34, a4a); /*0x76064b*/
                     ++v32; /*0x760659*/
                     aP1 = (MouseClass *)((char *)aP1 + 1); /*0x76065a*/
@@ -1556,7 +1561,7 @@ void __thiscall Surface::RenderToSurfaceVoxel(int this, _DWORD *a2, int *a3)
         }
         else
         {
-          v13 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 116))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416]) >> 1; /*0x760448*/
+          v13 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 116))(*(_DWORD *)&DataGlobal_87F8E4[31280]) >> 1; /*0x760448*/
           v80 = v13; /*0x760455*/
           v14 = (_WORD *)(v74 + 2 * v61 * v13); /*0x760459*/
           v15 = v61; /*0x76045c*/
@@ -1608,7 +1613,7 @@ void __thiscall Surface::RenderToSurfaceVoxel(int this, _DWORD *a2, int *a3)
         }
       }
     }
-    (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9416] + 96))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9416]); /*0x7609a7*/
+    (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 96))(*(_DWORD *)&DataGlobal_87F8E4[31280]); /*0x7609a7*/
     if ( *(_DWORD *)(this + 424) ) /*0x7609aa*/
     {
       __3_YAXPAX_Z(*(void **)(this + 424)); /*0x7609b7*/
@@ -2129,16 +2134,16 @@ LPDIRECTDRAW Surface::CreateSurfacePalette()
     char *v7;
     char v8;
     char v9;
-    if ( this != (AbstractClass *)&DataGlobal_89E138.__pad_14B0[936] )
-    memcpy(&DataGlobal_89E138.__pad_14B0[936], this, 0x300u);
-    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[2732];
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2732] )
+    if ( this != (AbstractClass *)&DataGlobal_89E138[6232] )
+    memcpy(&DataGlobal_89E138[6232], this, 0x300u);
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138[8028];
+    if ( *(int *)&DataGlobal_89E138[8028] )
   {
-    v3 = *(int *)&DataGlobal_89E138.__pad_14B0[2740];
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2740] )
+    v3 = *(int *)&DataGlobal_89E138[8036];
+    if ( *(int *)&DataGlobal_89E138[8036] )
     {
     v4 = (BombClass *)this;
-    v5 = &DataGlobal_89E138.__pad_14B0[1709];
+    v5 = &DataGlobal_89E138[7005];
     do
       {
     v6 = v4->__pad_0[0];
@@ -2152,16 +2157,16 @@ LPDIRECTDRAW Surface::CreateSurfacePalette()
     *(v5 - 3) = v8;
       }
     while ( (int)v5 < 9044117 );
-    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[1704];
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[1704] )
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138[7000];
+    if ( *(int *)&DataGlobal_89E138[7000] )
       {
-    if ( !DataGlobal_89E138.__pad_14B0[2736] )
+    if ( !DataGlobal_89E138[8032] )
         {
-    (*(void (__stdcall **)(int, int))(*(int *)(v3) + 124))(v3, *(int *)&DataGlobal_89E138.__pad_14B0[1704]);
-    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[1704];
-    DataGlobal_89E138.__pad_14B0[2736] = 1;
+    (*(void (__stdcall **)(int, int))(*(int *)(v3) + 124))(v3, *(int *)&DataGlobal_89E138[7000]);
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138[7000];
+    DataGlobal_89E138[8032] = 1;
         }
-    return ((LPDIRECTDRAW (__stdcall *)(LPDIRECTDRAW, int, int, int, char *))result->lpVtbl->CreateSurface)( result, 0, 0, 256, &DataGlobal_89E138.__pad_14B0[1708]);
+    return ((LPDIRECTDRAW (__stdcall *)(LPDIRECTDRAW, int, int, int, char *))result->lpVtbl->CreateSurface)( result, 0, 0, 256, &DataGlobal_89E138[7004]);
       }
     }
   }
@@ -2197,7 +2202,7 @@ int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned 
     v9 = (AbstractClass *)(yTop[3] - yTop[1]);
     yTopa = (int *)yTop[1];
     v10 = (AbstractClass *)(v8 - *yTop);
-    aP1a = (AbstractClass *)(((unsigned char)aP1 >> DataGlobal_89E138.__pad_14B0[6124] << DataGlobal_89E138.__pad_14B0[6120]) | (BYTE2(aP1) >> DataGlobal_89E138.__pad_14B0[6132] << DataGlobal_89E138.__pad_14B0[6128]) | (BYTE1(aP1) >> DataGlobal_89E138.__pad_14B0[6140] << DataGlobal_89E138.__pad_14B0[6136]));
+    aP1a = (AbstractClass *)(((unsigned char)aP1 >> DataGlobal_89E138[11420] << DataGlobal_89E138[11416]) | (BYTE2(aP1) >> DataGlobal_89E138[11428] << DataGlobal_89E138[11424]) | (BYTE1(aP1) >> DataGlobal_89E138[11436] << DataGlobal_89E138[11432]));
     v12 = *yTop;
     if ( !a3 )
     v6 = ::aP0;

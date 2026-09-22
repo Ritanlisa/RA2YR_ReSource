@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x5FE250
 unsigned int * OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
@@ -45,20 +51,20 @@ _DWORD *__thiscall OverlayTypeClass::OverlayTypeClass(_DWORD *this, ObjectClass 
   this->Selectable = 0; /*0x5fe317*/
   this->Insignificant = 1; /*0x5fe31d*/
   this->AllowCellContent = 0; /*0x5fe324*/
-  v3 = MEMORY[0xA83D90]; /*0x5fe32a*/
-  if ( (int)MEMORY[0xA83D90] < MEMORY[0xA83D88] /*0x5fe368*/
-    || (MEMORY[0xA83D8D] || !MEMORY[0xA83D88])
-    && MEMORY[0xA83D94] > 0
-    && (v4 = ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))MEMORY[0xA83D80]->field_8)(
-               &MEMORY[0xA83D80],
-               MEMORY[0xA83D88] + MEMORY[0xA83D94],
+  v3 = g_ObjectTypeConfig; /*0x5fe32a*/
+  if ( (int)g_ObjectTypeConfig < DataGlobal_A83D88 /*0x5fe368*/
+    || (DataGlobal_A83D8D || !DataGlobal_A83D88)
+    && DataGlobal_A83D94 > 0
+    && (v4 = ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))DataGlobal_A83D80->field_8)(
+               &DataGlobal_A83D80,
+               DataGlobal_A83D88 + DataGlobal_A83D94,
                0) == 0,
-        v3 = MEMORY[0xA83D90],
+        v3 = g_ObjectTypeConfig,
         !v4) )
   {
-    MEMORY[0xA83D90] = (OverlayTypeClass *)&v3->__pad_0[1]; /*0x5fe36d*/
+    g_ObjectTypeConfig = (OverlayTypeClass *)&v3->__pad_0[1]; /*0x5fe36d*/
     *(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * (_DWORD)v3] = this; /*0x5fe377*/
-    v3 = MEMORY[0xA83D90]; /*0x5fe37a*/
+    v3 = g_ObjectTypeConfig; /*0x5fe37a*/
   }
   v5 = 0; /*0x5fe37f*/
   if ( (int)v3 <= 0 ) /*0x5fe383*/
@@ -122,14 +128,14 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   v3 = (AnimTypeClass *)OverlayTypeClass::ReadINIString( /*0x5fe7ac*/
                           aP1,
                           (INIClass *)(this + 36),
-                          (unsigned __int8 *)&stru_830620.__pad_14B0[6832],
+                          (unsigned __int8 *)&stru_830620[12128],
                           this->CellAnim);
   v4 = *(INIClass **)(this + 676); /*0x5fe7b1*/
   this->CellAnim = v3; /*0x5fe7b7*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x5fe7c6*/
                     (int)aP1,
                     (unsigned __int8 *)(this + 36),
-                    (CCINIClass *)&stru_830620.__pad_14B0[4264],
+                    (CCINIClass *)&stru_830620[9560],
                     v4);
   v23 = this->NoUseTileLandType; /*0x5fe7d3*/
   this->Wall = Int_Overwrite; /*0x5fe7da*/
@@ -148,34 +154,34 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   v8 = INIClass::ReadBool_Overwrite( /*0x5fe814*/
          (int)aP1,
          (unsigned __int8 *)(this + 36),
-         (CCINIClass *)&stru_830620.__pad_14B0[6824],
+         (CCINIClass *)&stru_830620[12120],
          v7);
   v24 = this->ImageLoaded; /*0x5fe821*/
   this->IsVeins = v8; /*0x5fe828*/
   this->ImageLoaded = INIClass::ReadBool_Overwrite( /*0x5fe833*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_830620.__pad_14B0[6808],
+                             (CCINIClass *)&stru_830620[12104],
                              v24);
   v9 = INIClass::ReadBool_Overwrite( /*0x5fe848*/
          (int)aP1,
          (unsigned __int8 *)(this + 36),
-         (CCINIClass *)&stru_830620.__pad_14B0[6796],
+         (CCINIClass *)&stru_830620[12092],
          this->IsRubble);
   v10 = this->q2B2; /*0x5fe84d*/
   this->IsRubble = v9; /*0x5fe853*/
   v11 = INIClass::ReadBool_Overwrite( /*0x5fe862*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_14B0[6784],
+          (CCINIClass *)&stru_830620[12080],
           v10);
   v12 = *(AnimTypeClass **)(this + 668); /*0x5fe867*/
   this->q2B2 = v11; /*0x5fe884*/
   if ( INIClass::GetString( /*0x5fe88a*/
          aP1,
          (INIClass *)(this + 36),
-         (unsigned __int8 *)&stru_830620.__pad_14B0[6772],
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (unsigned __int8 *)&stru_830620[12068],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          (INIClass *)v28.headNode,
          128) )
   {
@@ -187,9 +193,9 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   }
   this->DamageLevels = v13; /*0x5fe8a0*/
   this->Strength = INIClass::ReadInt_Overwrite( /*0x5fe8c3*/
-                              (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                              (int)&DataGlobal_87F8E4[30876],
                               (unsigned __int8 *)(this + 504),
-                              (CCINIClass *)&stru_830620.__pad_14B0[6756],
+                              (CCINIClass *)&stru_830620[12052],
                               *(INIClass **)(this + 672));
   if ( this->IsVeinholeMonster ) /*0x5fe8c9*/
   {
@@ -207,7 +213,7 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
             aP1,
             &v28,
             (INIClass *)(this + 36),
-            (Color *)&stru_830620.__pad_14B0[6744],
+            (Color *)&stru_830620[12040],
             (Color *)(this + 694));
   this->q2B6 = *(_WORD *)Coord; /*0x5fe94f*/
   v25 = this->Explodes; /*0x5fe95e*/
@@ -215,14 +221,14 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   v16 = INIClass::ReadBool_Overwrite( /*0x5fe968*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_14B0[6724],
+          (CCINIClass *)&stru_830620[12020],
           v25);
   v17 = this->ChainReaction; /*0x5fe96d*/
   this->Explodes = v16; /*0x5fe973*/
   v18 = INIClass::ReadBool_Overwrite( /*0x5fe982*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_14B0[6704],
+          (CCINIClass *)&stru_830620[12000],
           v17);
   v26 = this->Overrides; /*0x5fe98f*/
   this->ChainReaction = v18; /*0x5fe996*/
@@ -230,26 +236,26 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   v19 = INIClass::ReadBool_Overwrite( /*0x5fe9b6*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_14B0[6688],
+          (CCINIClass *)&stru_830620[11984],
           this->IsARock);
   v20 = *(_BYTE *)(this + 691); /*0x5fe9bb*/
   this->IsARock = v19; /*0x5fe9c1*/
   v21 = INIClass::ReadBool_Overwrite( /*0x5fe9d0*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_14B0[6676],
+          (CCINIClass *)&stru_830620[11972],
           v20);
   v27 = this->tail_2B5; /*0x5fe9dd*/
   *(_BYTE *)(this + 691) = v21; /*0x5fe9e4*/
   this->tail_2B5 = INIClass::ReadBool_Overwrite( /*0x5fe9ef*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_830620.__pad_14B0[6668],
+                             (CCINIClass *)&stru_830620[11964],
                              v27);
   this->q2B4 = INIClass::ReadBool_Overwrite( /*0x5fea0a*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_830620.__pad_14B0[6656],
+                             (CCINIClass *)&stru_830620[11952],
                              this->q2B4);
   return 1; /*0x5fea11*/
 }
@@ -396,17 +402,17 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
   this->vtable3 = &ParticleSystemTypeClass::`vftable'; /*0x6441a8*/
   this->vtable4 = &vt_ParticleSystemTypeClass; /*0x6441af*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x6441b6*/
-  if ( (int)MEMORY[0xA83D78] < MEMORY[0xA83D70] /*0x6441ef*/
-    || (MEMORY[0xA83D75] || !MEMORY[0xA83D70])
-    && MEMORY[0xA83D7C] > 0
-    && ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))MEMORY[0xA83D68]->field_8)(
-         &MEMORY[0xA83D68],
-         MEMORY[0xA83D70] + MEMORY[0xA83D7C],
+  if ( (int)g_InfantryTypeInitState < DataGlobal_A83D70 /*0x6441ef*/
+    || (DataGlobal_A83D75 || !DataGlobal_A83D70)
+    && DataGlobal_A83D7C > 0
+    && ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))DataGlobal_A83D68->field_8)(
+         &DataGlobal_A83D68,
+         DataGlobal_A83D70 + DataGlobal_A83D7C,
          0) )
   {
-    v3 = MEMORY[0xA83D78]; /*0x6441fc*/
-    MEMORY[0xA83D78] = (ParticleSystemTypeClass *)((char *)MEMORY[0xA83D78] + 1); /*0x6441ff*/
-    *(_DWORD *)&MEMORY[0xA83D6C]->__pad_0[4 * (_DWORD)v3] = this; /*0x64420b*/
+    v3 = g_InfantryTypeInitState; /*0x6441fc*/
+    g_InfantryTypeInitState = (ParticleSystemTypeClass *)((char *)g_InfantryTypeInitState + 1); /*0x6441ff*/
+    *(_DWORD *)&DataGlobal_A83D6C->__pad_0[4 * (_DWORD)v3] = this; /*0x64420b*/
   }
   this->IsLogic = 1; /*0x64420e*/
   return this; /*0x644217*/

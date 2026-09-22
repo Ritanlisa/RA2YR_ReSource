@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/TimerClass_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x4C9480
 namespace gamemd {
@@ -58,7 +59,7 @@ char *__thiscall TimerClass::Construct(
 
   *(_DWORD *)this = 0; /*0x54fe6a*/
   this->q004 = 0; /*0x54fe6c*/
-  this->TimerClass_field_0x8 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x54fe75*/
+  this->TimerClass_field_0x8 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x54fe75*/
   v18 = this + 36; /*0x54fe78*/
   this->TimerClass_field_0x10 = 0; /*0x54fe7b*/
   *(_DWORD *)v18 = a2; /*0x54fe83*/
@@ -90,7 +91,7 @@ char *__thiscall TimerClass::Construct(
   *((_DWORD *)this + 21) = a16; /*0x54fefe*/
   *((_DWORD *)this + 22) = a17; /*0x54ff05*/
   *(_DWORD *)this = 0; /*0x54ff08*/
-  v19 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x54ff0a*/
+  v19 = *(IUnknown **)&g_NetworkPlayerBuffer[5960]; /*0x54ff0a*/
   *((_DWORD *)this + 5) = 1; /*0x54ff10*/
   this->TimerClass_field_0x8 = v19; /*0x54ff13*/
   this->q00C = a3; /*0x54ff1a*/

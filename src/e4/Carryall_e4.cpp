@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
 
 // 0x416D50
 int Carryall::MissionStateMachine()
@@ -95,7 +101,7 @@ LABEL_18:
 LABEL_5:
       MissionControl = MissionClass::GetMissionControl(this); /*0x416d9d*/
       v4 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dc2*/
-      return v4 + Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)2);
+      return v4 + Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)2);
     case 1u: /*0x416d64*/
       v11 = this->q5A4; /*0x416f29*/
       if ( v11 ) /*0x416f31*/
@@ -198,8 +204,8 @@ LABEL_44:
         v27[2] = v21; /*0x417201*/
         v28[1] = this->q028; /*0x41720c*/
         v28[2] = v22; /*0x417216*/
-        v26 = BYTE1(*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v27) + 80)) & 1; /*0x41722f*/
-        v23 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v28); /*0x417236*/
+        v26 = BYTE1(*((_DWORD *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v27) + 80)) & 1; /*0x41722f*/
+        v23 = Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v28); /*0x417236*/
         Building = (IUnknown *)CellClass::FindBuilding(v23, v26); /*0x417242*/
         if ( Building /*0x417270*/
           && Building == (IUnknown *)Team::GetMember(this, 0)

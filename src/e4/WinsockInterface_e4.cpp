@@ -2,6 +2,11 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/WinsockInterface_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x770270
 namespace gamemd {
@@ -52,22 +57,22 @@ char *__thiscall sub_770270(char *this, int a2)
   *((_DWORD *)this + 244) = 0; /*0x770324*/
   *((_DWORD *)this + 246) = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
-  String::Assign((char **)&a2, MEMORY[0x8491C4]); /*0x77033b*/
+  String::Assign((char **)&a2, DataGlobal_8491C4); /*0x77033b*/
   String::Reassign((char **)this + 1, (const char **)&a2); /*0x770348*/
   DeleteAndZero((void **)&a2); /*0x770351*/
-  String::Assign((char **)&a2, MEMORY[0x8491BC]); /*0x77035f*/
+  String::Assign((char **)&a2, DataGlobal_8491BC); /*0x77035f*/
   String::Reassign((char **)this + 38, (const char **)&a2); /*0x77036f*/
   DeleteAndZero((void **)&a2); /*0x770378*/
-  String::Assign((char **)&a2, MEMORY[0x8491B4]); /*0x770386*/
+  String::Assign((char **)&a2, DataGlobal_8491B4); /*0x770386*/
   String::Reassign((char **)this + 75, (const char **)&a2); /*0x770396*/
   DeleteAndZero((void **)&a2); /*0x77039f*/
   String::Assign((char **)&a2, stru_8489C0); /*0x7703ad*/
   String::Reassign((char **)this + 112, (const char **)&a2); /*0x7703bd*/
   DeleteAndZero((void **)&a2); /*0x7703c6*/
-  String::Assign((char **)&a2, MEMORY[0x8491AC]); /*0x7703d4*/
+  String::Assign((char **)&a2, DataGlobal_8491AC); /*0x7703d4*/
   String::Reassign((char **)this + 149, (const char **)&a2); /*0x7703e4*/
   DeleteAndZero((void **)&a2); /*0x7703ed*/
-  String::Assign((char **)&a2, MEMORY[0x8491A0]); /*0x7703fb*/
+  String::Assign((char **)&a2, DataGlobal_8491A0); /*0x7703fb*/
   String::Reassign((char **)this + 186, (const char **)&a2); /*0x77040b*/
   DeleteAndZero((void **)&a2); /*0x770414*/
   return this; /*0x77041b*/
@@ -96,10 +101,10 @@ char __thiscall WinsockInterface_Init(_DWORD *this)
   _BYTE ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
   char v15; // [esp+28h] [ebp-FE8h] BYREF
 
-  Debug::Log(MEMORY[0x84E028]); /*0x7b1df3*/
+  Debug::Log(DataGlobal_84E028); /*0x7b1df3*/
   if ( *((_BYTE *)this + 258152) ) /*0x7b1df8*/
   {
-    Debug::Log(MEMORY[0x84E000]); /*0x7b1e0a*/
+    Debug::Log(DataGlobal_84E000); /*0x7b1e0a*/
     return 1; /*0x7b1e12*/
   }
   else
@@ -107,7 +112,7 @@ char __thiscall WinsockInterface_Init(_DWORD *this)
     if ( dword_B780A0 > 0 && !byte_B7809C ) /*0x7b1e2d*/
     {
       byte_B7809C = 1; /*0x7b1e41*/
-      MessageBoxA(g_hWnd, MEMORY[0x84DFD0], MEMORY[0x81FCC8], 0); /*0x7b1e48*/
+      MessageBoxA(g_hWnd, DataGlobal_84DFD0, Caption, 0); /*0x7b1e48*/
     }
     v3 = (struct WSAData *)__2_YAPAXI_Z(0x590u); /*0x7b1e53*/
     v4 = *this; /*0x7b1e58*/
@@ -116,32 +121,32 @@ char __thiscall WinsockInterface_Init(_DWORD *this)
     *(this + 64539) = -1; /*0x7b1e65*/
     (*(void (__thiscall **)(_DWORD *))(v4 + 20))(this); /*0x7b1e6f*/
     (*(void (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x7b1e76*/
-    Debug::Log(MEMORY[0x84DFB4]); /*0x7b1e7e*/
+    Debug::Log(DataGlobal_84DFB4); /*0x7b1e7e*/
     v6 = WSAStartup(0x101u, v5); /*0x7b1e8c*/
     if ( v6 ) /*0x7b1e93*/
     {
-      Debug::Log(MEMORY[0x84DF84], v6); /*0x7b1e9b*/
+      Debug::Log(DataGlobal_84DF84, v6); /*0x7b1e9b*/
       __3_YAXPAX_Z(v5); /*0x7b1ea1*/
       return 0; /*0x7b1ea9*/
     }
     else
     {
-      Debug::Log(MEMORY[0x84DF6C]); /*0x7b1eb9*/
+      Debug::Log(DataGlobal_84DF6C); /*0x7b1eb9*/
       if ( (unsigned __int8)v5->wVersion != 1 || ((v5->wVersion ^ 0x100) & 0xFFFFFF00) != 0 ) /*0x7b1ee2*/
       {
-        Debug::Log(MEMORY[0x84DEDC]); /*0x7b1fad*/
+        Debug::Log(DataGlobal_84DEDC); /*0x7b1fad*/
         __3_YAXPAX_Z(v5); /*0x7b1fb3*/
         return 0; /*0x7b1fbb*/
       }
       else
       {
-        Debug::Log(MEMORY[0x84DF50], (unsigned __int8)v5->wVersion, HIBYTE(v5->wVersion)); /*0x7b1efa*/
+        Debug::Log(DataGlobal_84DF50, (unsigned __int8)v5->wVersion, HIBYTE(v5->wVersion)); /*0x7b1efa*/
         *(this + 1) = 546; /*0x7b1f0a*/
         dwBufferLength = 4096; /*0x7b1f18*/
         v7 = EnumProtocolsA(&iProtocols, ProtocolBuffer, &dwBufferLength); /*0x7b1f20*/
         if ( v7 == -1 ) /*0x7b1f28*/
         {
-          Debug::Log(MEMORY[0x84DF00]); /*0x7b1f9e*/
+          Debug::Log(DataGlobal_84DF00); /*0x7b1f9e*/
         }
         else
         {
@@ -152,7 +157,7 @@ char __thiscall WinsockInterface_Init(_DWORD *this)
             v10 = v7; /*0x7b1f38*/
             do /*0x7b1f63*/
             {
-              Debug::Log(MEMORY[0x84DF24], v9[1], *v9); /*0x7b1f46*/
+              Debug::Log(DataGlobal_84DF24, v9[1], *v9); /*0x7b1f46*/
               v11 = (int)*v9; /*0x7b1f4b*/
               if ( *v9 && v11 != -1 && v8 >= v11 ) /*0x7b1f5b*/
                 v8 = (int)*v9; /*0x7b1f5d*/

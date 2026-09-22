@@ -1,6 +1,14 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Radar_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
 
 // 0x568300
 namespace gamemd {
@@ -136,7 +144,7 @@ _DWORD *__fastcall LayerClass::Pathfinding_Find(
   if ( aP5 == (IUnknown *)0xFFFF ) /*0x56dc5e*/
     aP5 = (IUnknown *)-1; /*0x56dc60*/
   v20 = (unsigned int)v18 + 512 * (_DWORD)v19; /*0x56dc6e*/
-  if ( v20 >= 0x40000 || (v21 = *(_DWORD **)(*(_DWORD *)&stru_87C374.__pad_14B0[8448] + 4 * v20)) == 0 ) /*0x56dc84*/
+  if ( v20 >= 0x40000 || (v21 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v20)) == 0 ) /*0x56dc84*/
   {
     g_Map_GlobalCellIndex = (IUnknown *)aP3->field_0; /*0x56dc88*/
     v21 = g_CellClassArray; /*0x56dc8d*/
@@ -145,7 +153,7 @@ _DWORD *__fastcall LayerClass::Pathfinding_Find(
   if ( (_BYTE)aP7 ) /*0x56dca6*/
   {
     v22 = SLOWORD(aP3->field_0) + (SHIWORD(aP3->field_0) << 9); /*0x56dcb2*/
-    if ( v22 >= 0x40000 || (v23 = *(_DWORD **)(*(_DWORD *)&stru_87C374.__pad_14B0[8448] + 4 * v22)) == 0 ) /*0x56dcc2*/
+    if ( v22 >= 0x40000 || (v23 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v22)) == 0 ) /*0x56dcc2*/
     {
       v23 = g_CellClassArray; /*0x56dcc6*/
       g_Map_GlobalCellIndex = (IUnknown *)aP3->field_0; /*0x56dccb*/
@@ -166,7 +174,7 @@ _DWORD *__fastcall LayerClass::Pathfinding_Find(
     v26 = -v78; /*0x56dd0f*/
     if ( -v78 <= v78 ) /*0x56dd13*/
     {
-      v86 = &aP0a.__pad_0[4 * v77 + 12]; /*0x56dd24*/
+      v86 = &aP0a[0][4 * v77 + 12]; /*0x56dd24*/
       do /*0x56dd28*/
       {
         if ( (_BYTE)aP15 ) /*0x56dd31*/
@@ -178,7 +186,7 @@ _DWORD *__fastcall LayerClass::Pathfinding_Find(
         v28 = (__int16)((_WORD)v85 + v26) + (v27 << 9); /*0x56dd61*/
         if ( v28 < 0x40000 ) /*0x56dd63*/
         {
-          v29 = *(ObjectClass **)(*(_DWORD *)&stru_87C374.__pad_14B0[8448] + 4 * v28); /*0x56dd72*/
+          v29 = *(ObjectClass **)(*(_DWORD *)&stru_87C374[13744] + 4 * v28); /*0x56dd72*/
           if ( v29 ) /*0x56dd78*/
           {
             v25 = v78; /*0x56dd7a*/
@@ -230,14 +238,14 @@ LABEL_36:
           goto LABEL_103; /*0x56df2f*/
         if ( (_BYTE)aP15 && v26 <= -v25 ) /*0x56df46*/
           goto LABEL_57; /*0x56df46*/
-        *(_WORD *)&aP1a.__pad_0[10] = (_WORD)v81 + v25; /*0x56df5a*/
-        *(_WORD *)&aP1a.__pad_0[8] = (_WORD)v85 + v26; /*0x56df5f*/
+        *(_WORD *)&aP1a[10] = (_WORD)v81 + v25; /*0x56df5a*/
+        *(_WORD *)&aP1a[8] = (_WORD)v85 + v26; /*0x56df5f*/
         v36 = (TagClass *)(__int16)((_WORD)v81 + v25); /*0x56df68*/
-        v75 = *(TagClass **)&aP1a.__pad_0[8]; /*0x56df70*/
+        v75 = *(TagClass **)&aP1a[8]; /*0x56df70*/
         v37 = (__int16)((_WORD)v85 + v26) + ((_DWORD)v36 << 9); /*0x56df77*/
         if ( v37 < 0x40000 ) /*0x56df79*/
         {
-          v38 = *(ObjectClass **)(*(_DWORD *)&stru_87C374.__pad_14B0[8448] + 4 * v37); /*0x56df88*/
+          v38 = *(ObjectClass **)(*(_DWORD *)&stru_87C374[13744] + 4 * v37); /*0x56df88*/
           if ( v38 ) /*0x56df8e*/
           {
             v25 = v78; /*0x56df90*/
@@ -246,7 +254,7 @@ LABEL_36:
           }
           v25 = v78; /*0x56df98*/
         }
-        g_Map_GlobalCellIndex = *(IUnknown **)&aP1a.__pad_0[8]; /*0x56df9c*/
+        g_Map_GlobalCellIndex = *(IUnknown **)&aP1a[8]; /*0x56df9c*/
         v39 = (ObjectClass *)g_CellClassArray; /*0x56dfa2*/
 LABEL_44:
         v91[1] = (int)v36; /*0x56dfa7*/
@@ -272,10 +280,10 @@ LABEL_44:
                 v86 = v41 + 4; /*0x56e0d1*/
                 v77 = v43 + 1; /*0x56e0df*/
                 if ( (_BYTE)aP7 /*0x56e12f*/
-                  || (*(_DWORD *)v89.__pad_0 = (v42 << 8) + 128,
-                      *(_DWORD *)&v89.__pad_0[4] = (SHIWORD(v75) << 8) + 128,
-                      *(_DWORD *)&v89.__pad_0[8] = 0,
-                      v44 = (TagClass **)Terrain::ClimbCheck((AbstractClass *)&aP0a.__pad_0[8], &v89),
+                  || (*(_DWORD *)v89[0] = (v42 << 8) + 128,
+                      *(_DWORD *)&v89[4] = (SHIWORD(v75) << 8) + 128,
+                      *(_DWORD *)&v89[8] = 0,
+                      v44 = (TagClass **)Terrain::ClimbCheck((AbstractClass *)&aP0a[8], &v89),
                       v75 == *v44) )
                 {
                   v76 = 1; /*0x56e13c*/
@@ -294,7 +302,7 @@ LABEL_57:
     v45 = 1 - v25; /*0x56e160*/
     if ( 1 - v25 <= v25 - 1 ) /*0x56e16c*/
     {
-      v46 = &aP0a.__pad_0[4 * v77 + 12]; /*0x56e176*/
+      v46 = &aP0a[0][4 * v77 + 12]; /*0x56e176*/
       do /*0x56e17d*/
       {
         if ( (_BYTE)aP15 ) /*0x56e186*/
@@ -305,7 +313,7 @@ LABEL_57:
         v47 = (__int16)((_WORD)v85 - v78) + ((__int16)(v45 + (_WORD)v81) << 9); /*0x56e1b9*/
         if ( v47 < 0x40000 ) /*0x56e1bb*/
         {
-          v48 = *(ObjectClass **)(*(_DWORD *)&stru_87C374.__pad_14B0[8448] + 4 * v47); /*0x56e1ca*/
+          v48 = *(ObjectClass **)(*(_DWORD *)&stru_87C374[13744] + 4 * v47); /*0x56e1ca*/
           if ( v48 ) /*0x56e1cf*/
           {
             v17 = v80; /*0x56e1d1*/
@@ -339,12 +347,12 @@ LABEL_67:
                 v46 += 4; /*0x56e316*/
                 v77 = v52 + 1; /*0x56e31b*/
                 if ( (_BYTE)aP7 /*0x56e371*/
-                  || (*(_DWORD *)&v89.__pad_0[12] = (v51 << 8) + 128,
+                  || (*(_DWORD *)&v89[12] = (v51 << 8) + 128,
                       v89.uniqueId = (SHIWORD(v75) << 8) + 128,
                       v89.abstractFlags = 0,
                       v53 = (TagClass **)Terrain::ClimbCheck(
-                                           (AbstractClass *)&aP0a.__pad_0[4],
-                                           (AbstractClass *)&v89.__pad_0[12]),
+                                           (AbstractClass *)&aP0a[4],
+                                           (AbstractClass *)&v89[12]),
                       v75 == *v53) )
                 {
                   v76 = 1; /*0x56e37e*/
@@ -362,7 +370,7 @@ LABEL_80:
         v54 = (__int16)(v78 + (_WORD)v85) + ((__int16)(v45 + (_WORD)v81) << 9); /*0x56e3bb*/
         if ( v54 < 0x40000 ) /*0x56e3bd*/
         {
-          v55 = *(ObjectClass **)(*(_DWORD *)&stru_87C374.__pad_14B0[8448] + 4 * v54); /*0x56e3cc*/
+          v55 = *(ObjectClass **)(*(_DWORD *)&stru_87C374[13744] + 4 * v54); /*0x56e3cc*/
           if ( v55 ) /*0x56e3d1*/
           {
             v17 = v80; /*0x56e3d3*/
@@ -396,10 +404,10 @@ LABEL_86:
                 v46 += 4; /*0x56e514*/
                 v77 = v59 + 1; /*0x56e519*/
                 if ( (_BYTE)aP7 /*0x56e566*/
-                  || (*(_DWORD *)&aP1a.__pad_0[12] = (v58 << 8) + 128,
+                  || (*(_DWORD *)&aP1a[12] = (v58 << 8) + 128,
                       aP1a.uniqueId = (SHIWORD(v75) << 8) + 128,
                       aP1a.abstractFlags = 0,
-                      v60 = (TagClass **)Terrain::ClimbCheck(&aP1a, (AbstractClass *)&aP1a.__pad_0[12]),
+                      v60 = (TagClass **)Terrain::ClimbCheck(&aP1a, (AbstractClass *)&aP1a[12]),
                       v75 == *v60) )
                 {
                   v76 = 1; /*0x56e573*/
@@ -429,17 +437,17 @@ LABEL_123:
   v80 = 0; /*0x56e5c5*/
   v81 = 0; /*0x56e5c9*/
   v61 = v96; /*0x56e5da*/
-  v62 = &aP0a.__pad_0[12]; /*0x56e5e1*/
+  v62 = &aP0a[12]; /*0x56e5e1*/
   i = (Tactical *)v95; /*0x56e5e8*/
   v79 = (TagClass *)v77; /*0x56e5ec*/
   do /*0x56e67b*/
   {
     v63 = *(_WORD *)v62; /*0x56e5f0*/
     v64 = *((_WORD *)v62 + 1); /*0x56e5f3*/
-    *(_DWORD *)&aP1a.__pad_0[12] = (*(__int16 *)v62 << 8) + 128; /*0x56e60a*/
+    *(_DWORD *)&aP1a[12] = (*(__int16 *)v62 << 8) + 128; /*0x56e60a*/
     aP1a.uniqueId = ((__int16)v64 << 8) + 128; /*0x56e622*/
     aP1a.abstractFlags = 0; /*0x56e626*/
-    v84 = (TagClass *)*Terrain::ClimbCheck(&aP1a, (AbstractClass *)&aP1a.__pad_0[12]); /*0x56e638*/
+    v84 = (TagClass *)*Terrain::ClimbCheck(&aP1a, (AbstractClass *)&aP1a[12]); /*0x56e638*/
     if ( v84 == (TagClass *)__PAIR32__(v64, v63) ) /*0x56e63c*/
     {
       v65 = (TagClass *)i; /*0x56e645*/
@@ -462,9 +470,9 @@ LABEL_123:
   if ( (TagClass *)aP14->field_0 == g_MapSeedState ) /*0x56e699*/
   {
     if ( v80 ) /*0x56e6b0*/
-      aP2->field_0 = v95[*(_DWORD *)&HouseClass_Player.__pad_5568[23248] % (int)v80]; /*0x56e6c6*/
+      aP2->field_0 = v95[*(_DWORD *)&HouseClass_Player[45112] % (int)v80]; /*0x56e6c6*/
     else
-      aP2->field_0 = v96[*(_DWORD *)&HouseClass_Player.__pad_5568[23248] % (int)v81]; /*0x56e6e5*/
+      aP2->field_0 = v96[*(_DWORD *)&HouseClass_Player[45112] % (int)v81]; /*0x56e6e5*/
     return &aP2->field_0; /*0x56e6b4*/
   }
   else
@@ -473,8 +481,8 @@ LABEL_123:
     if ( !v80 ) /*0x56e6f4*/
       v69 = v81; /*0x56e6f6*/
     v70 = 0; /*0x56e6f8*/
-    *(_DWORD *)aP1a.__pad_0 = 0; /*0x56e6fa*/
-    *(_DWORD *)&aP1a.__pad_0[4] = 1090021888; /*0x56e704*/
+    *(_DWORD *)aP1a[0] = 0; /*0x56e6fa*/
+    *(_DWORD *)&aP1a[4] = 1090021888; /*0x56e704*/
     for ( i = (Tactical *)g_MapSeedState; v70 < (int)v69; ++v70 ) /*0x56e710*/
     {
       v71 = (TagClass **)&v95[v70]; /*0x56e718*/
@@ -485,9 +493,9 @@ LABEL_123:
       v79 = (TagClass *)((_DWORD)v73 * (_DWORD)v73 /*0x56e751*/
                        + (SHIWORD(v72) - SHIWORD(aP14->field_0)) * (SHIWORD(v72) - SHIWORD(aP14->field_0)));
       v74 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)v79)); /*0x56e75c*/
-      if ( v74 < *(double *)aP1a.__pad_0 ) /*0x56e76d*/
+      if ( v74 < *(double *)aP1a[0] ) /*0x56e76d*/
       {
-        *(double *)aP1a.__pad_0 = v74; /*0x56e76f*/
+        *(double *)aP1a[0] = v74; /*0x56e76f*/
         i = (Tactical *)v72; /*0x56e773*/
       }
     }
@@ -527,8 +535,8 @@ void * LayerClass::Reveal(int a2)
   Debug::Log(); /*0x577dd1*/
 LABEL_8:
   if ( g_GameMode_Current[0] != 3 && g_GameMode_Current[0] != 4 /*0x577df4*/
-    || !MEMORY[0xA8B23C]
-    || (v8 = 1, (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 4))(MEMORY[0xA8B23C])) )
+    || !g_GameStateFlags
+    || (v8 = 1, (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 4))(g_GameStateFlags)) )
   {
     v8 = 0; /*0x577dff*/
   }
@@ -537,11 +545,11 @@ LABEL_8:
   {
     HouseClass::ResetObjectOrders(0, 0); /*0x577e1e*/
     *((_BYTE *)HouseClass_Player + 576) = 1; /*0x577e29*/
-    MEMORY[0x87F8F8] = g_Cell_PositionLUT; /*0x577e3a*/
-    MEMORY[0x87F8F4] = 1; /*0x577e42*/
-    MEMORY[0x87F8FC] = g_Cell_PositionLUT - 1; /*0x577e4b*/
-    MEMORY[0x87F900] = (g_Cell_PositionLUT << 11) + g_Shroud_CellArray + 4; /*0x577e5a*/
-    v4 = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x577e60*/
+    DataGlobal_87F8F8 = g_Cell_PositionLUT; /*0x577e3a*/
+    DataGlobal_87F8F4 = 1; /*0x577e42*/
+    DataGlobal_87F8FC = g_Cell_PositionLUT - 1; /*0x577e4b*/
+    DataGlobal_87F900 = (g_Cell_PositionLUT << 11) + g_Shroud_CellArray + 4; /*0x577e5a*/
+    v4 = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x577e60*/
     if ( v4 ) /*0x577e67*/
     {
       while ( 1 ) /*0x577e6e*/
@@ -555,7 +563,7 @@ LABEL_8:
         if ( v6 != this->q0F4 + 5 ) /*0x577e8e*/
           goto LABEL_21; /*0x577e8e*/
 LABEL_24:
-        v4 = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x577ee9*/
+        v4 = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x577ee9*/
         if ( !v4 ) /*0x577ef5*/
           goto LABEL_25; /*0x577ef5*/
       }
@@ -574,8 +582,8 @@ LABEL_23:
     }
 LABEL_25:
     Radar::UpdateReveal(0, 0); /*0x577efc*/
-    FogOfWar::Render((int **)&MEMORY[0x87F7E8]); /*0x577f0d*/
-    return (#375 *)MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2); /*0x577f19*/
+    FogOfWar::Render((int **)&DataGlobal_87F7E8); /*0x577f0d*/
+    return (#375 *)MapClass::MarkForRedraw(&DataGlobal_87F7E8, 2); /*0x577f19*/
   }
   return result; /*0x577f1e*/
 }
@@ -680,7 +688,7 @@ bool __thiscall LayerClass::IsWithinUsableArea(_DWORD *this, IUnknown *aP1, Tech
   if ( (_BYTE)aP2 ) /*0x578477*/
   {
     v6 = v5 + (v4 << 9); /*0x57847e*/
-    if ( v6 >= 0x40000 || (v7 = *(_DWORD **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_3C[4] + 4 * v6)) == 0 ) /*0x578494*/
+    if ( v6 >= 0x40000 || (v7 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v6)) == 0 ) /*0x578494*/
     {
       g_Map_GlobalCellIndex = (IUnknown *)aP1->field_0; /*0x578498*/
       v7 = g_CellClassArray; /*0x57849d*/
@@ -818,7 +826,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
   result = *(_DWORD *)(a3 + 56);
   if ( result == dword_ABC2C8 )
   {
-    v4 = (int *)*((_DWORD *)MEMORY[0xA8ED2C] + dword_ABC2C8);
+    v4 = (int *)*((_DWORD *)g_FrameCounter + dword_ABC2C8);
     v5 = 0;
     v6 = *v4;
     v7 = *(_WORD *)(a3 + 36) - *(unsigned __int8 *)(a3 + 282) % 6;
@@ -839,16 +847,16 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     (*(void (__thiscall **)(_BYTE *, _DWORD))(v9 + 292))(v8, 0);
     if ( v8 )
       (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)v8 + 32))(v8, 1);
-    v10 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)MEMORY[0xA8ED2C] + g_TerrainTypeTable2) + 140))(
-                   *((_DWORD *)MEMORY[0xA8ED2C] + g_TerrainTypeTable2),
+    v10 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_FrameCounter + g_TerrainTypeTable2) + 140))(
+                   *((_DWORD *)g_FrameCounter + g_TerrainTypeTable2),
                    0);
     v104 = v95;
     v105 = v96;
     v11 = *v10;
     v106 = 0;
     (*(void (__thiscall **)(int *, int *, _DWORD))(v11 + 216))(v10, &v104, 0);
-    v12 = (*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)MEMORY[0xA8ED2C] + g_TerrainTypeTable2 + 1) + 140))(
-            *((_DWORD *)MEMORY[0xA8ED2C] + g_TerrainTypeTable2 + 1),
+    v12 = (*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_FrameCounter + g_TerrainTypeTable2 + 1) + 140))(
+            *((_DWORD *)g_FrameCounter + g_TerrainTypeTable2 + 1),
             0);
     v106 = 0;
     v105 = (v93 << 8) + 128;
@@ -856,7 +864,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v12 + 216))(v12, &v104, 0);
     v13 = v94;
     Terrain::ConnectivityGraph(v94);
-    v14 = (_DWORD *)*((_DWORD *)MEMORY[0xA8ED2C] + dword_ABC2C8);
+    v14 = (_DWORD *)*((_DWORD *)g_FrameCounter + dword_ABC2C8);
     v92 = (*(int (__thiscall **)(_DWORD *))(*v14 + 156))(v14);
     if ( (int)v14[186] > 0 )
     {
@@ -934,7 +942,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
               v26 = g_CellClassArray;
             }
             AbstractClass::ClearTargetToMeClearManagerTarget(v26);
-            BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], (int)&a3);
+            BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)&a3);
           }
           v23 = v14[185];
           ++v24;
@@ -1041,7 +1049,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
   }
   else if ( result == dword_ABC2C8 + 1 )
   {
-    v42 = (int *)*((_DWORD *)MEMORY[0xA8ED2C] + dword_ABC2C8 + 1);
+    v42 = (int *)*((_DWORD *)g_FrameCounter + dword_ABC2C8 + 1);
     v43 = *(_WORD *)(a3 + 38) - (*(_BYTE *)(a3 + 282) >> 2);
     v44 = *v42;
     LOWORD(v99) = *(_WORD *)(a3 + 36) - (*(_BYTE *)(a3 + 282) & 3);
@@ -1061,16 +1069,16 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     (*(void (__thiscall **)(_BYTE *, _DWORD))(v46 + 292))(v45, 0);
     if ( v45 )
       (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)v45 + 32))(v45, 1);
-    v47 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)MEMORY[0xA8ED2C] + g_TerrainTypeTable2 + 3) + 140))(
-                   *((_DWORD *)MEMORY[0xA8ED2C] + g_TerrainTypeTable2 + 3),
+    v47 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_FrameCounter + g_TerrainTypeTable2 + 3) + 140))(
+                   *((_DWORD *)g_FrameCounter + g_TerrainTypeTable2 + 3),
                    0);
     v104 = v95;
     v105 = v97;
     v48 = *v47;
     v106 = 0;
     (*(void (__thiscall **)(int *, int *, _DWORD))(v48 + 216))(v47, &v104, 0);
-    v49 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)MEMORY[0xA8ED2C] + g_TerrainTypeTable2 + 2) + 140))(
-                   *((_DWORD *)MEMORY[0xA8ED2C] + g_TerrainTypeTable2 + 2),
+    v49 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_FrameCounter + g_TerrainTypeTable2 + 2) + 140))(
+                   *((_DWORD *)g_FrameCounter + g_TerrainTypeTable2 + 2),
                    0);
     v105 = ((__int16)(HIWORD(v99) + 3) << 8) + 128;
     v104 = (a3 << 8) + 128;
@@ -1079,7 +1087,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     (*(void (__thiscall **)(int *, int *, _DWORD))(v50 + 216))(v49, &v104, 0);
     v51 = v94;
     Terrain::ConnectivityGraph(v94);
-    v52 = (_DWORD *)*((_DWORD *)MEMORY[0xA8ED2C] + dword_ABC2C8 + 1);
+    v52 = (_DWORD *)*((_DWORD *)g_FrameCounter + dword_ABC2C8 + 1);
     v90 = (*(int (__thiscall **)(_DWORD *))(*v52 + 156))(v52);
     for ( k = 0; k < v52[186]; ++k )
     {
@@ -1173,7 +1181,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
               v69 = g_CellClassArray;
             }
             AbstractClass::ClearTargetToMeClearManagerTarget(v69);
-            BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], (int)&v92);
+            BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)&v92);
           }
           v66 = v52[185];
           ++v67;

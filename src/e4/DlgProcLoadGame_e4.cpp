@@ -4,6 +4,7 @@
 #include "e4/classes/E4Recv_6967B0_e4.hpp"
 #include "e4/classes/E4Recv_696AE0_e4.hpp"
 #include "e4/classes/E4Recv_696C40_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x696AE0
 namespace gamemd {

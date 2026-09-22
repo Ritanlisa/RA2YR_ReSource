@@ -6,6 +6,7 @@
 #include "e4/classes/E4Recv_517360_e4.hpp"
 #include "e4/classes/E4Recv_5173F0_e4.hpp"
 #include "e4/classes/E4Recv_5176D0_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x5108F0
 namespace gamemd {
@@ -111,12 +112,12 @@ int __usercall SaveInfantryToINI@<eax>(int a1@<ecx>, int a2@<edi>, int a3@<esi>)
 
   INIClass::ClearSection(a1, (int)g_INI_Key_Infantry, 0); /*0x51ff02*/
   result = 0; /*0x51ff0d*/
-  for ( i = 0; result < MEMORY[0xA83DF8]; i = result ) /*0x51ff15*/
+  for ( i = 0; result < g_BuildingClass_Count; i = result ) /*0x51ff15*/
   {
-    v4 = *((_DWORD *)MEMORY[0xA83DEC] + result); /*0x51ff25*/
+    v4 = *((_DWORD *)g_InfantryClassLimit + result); /*0x51ff25*/
     if ( !*(_BYTE *)(v4 + 129) ) /*0x51ff28*/
     {
-      sprintf(Buffer, MEMORY[0x817F6C], result); /*0x51ff41*/
+      sprintf(Buffer, g_Str_Trace__d, result); /*0x51ff41*/
       if ( (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v4 + 388))(v4, a2, a3) == -1 ) /*0x51ff71*/
         v30 = *(char **)(v4 + 180); /*0x51ff79*/
       else
@@ -725,7 +726,7 @@ int E4Recv_517110::sub_517110()
     int result;
     char v8[4];
     v5 = 1;
-    if ( this->M36 != *(int *)&g_NetworkPlayerBuffer.__pad_14B0[1684] || this->M40 != *(int *)&g_NetworkPlayerBuffer.__pad_14B0[1688] || this->M44 != *(int *)&g_NetworkPlayerBuffer.__pad_14B0[1692] )
+    if ( this->M36 != *(int *)&g_NetworkPlayerBuffer[6980] || this->M40 != *(int *)&g_NetworkPlayerBuffer[6984] || this->M44 != *(int *)&g_NetworkPlayerBuffer[6988] )
   {
     v2 = this->M36 / 256;
     v3 = this->M40 / 256;

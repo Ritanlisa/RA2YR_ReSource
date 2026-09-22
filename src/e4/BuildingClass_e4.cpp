@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x453E20
 namespace gamemd {
@@ -331,15 +333,15 @@ char __fastcall BuildingClass_FindClosestForRepair2(int a1)
   char v16[12]; // [esp+38h] [ebp-18h] BYREF
   char v17[12]; // [esp+44h] [ebp-Ch] BYREF
 
-  v1 = MEMORY[0xA8EB50] - 1; /*0x4dfe0f*/
+  v1 = g_BuildingProductionState - 1; /*0x4dfe0f*/
   v13 = 0; /*0x4dfe17*/
   v3 = 0x7FFFFFFF; /*0x4dfe1f*/
-  v12 = MEMORY[0xA8EB50] - 1; /*0x4dfe24*/
-  if ( MEMORY[0xA8EB50] - 1 < 0 ) /*0x4dfe28*/
+  v12 = g_BuildingProductionState - 1; /*0x4dfe24*/
+  if ( g_BuildingProductionState - 1 < 0 ) /*0x4dfe28*/
     goto LABEL_10; /*0x4dfe28*/
   do
   {
-    v4 = (_DWORD *)*((_DWORD *)MEMORY[0xA8EB44] + v1); /*0x4dfe36*/
+    v4 = (_DWORD *)*((_DWORD *)g_BuildingClass_InstanceCount + v1); /*0x4dfe36*/
     if ( a1 )
       v5 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 15 ? a1 : 0;
     else
@@ -459,106 +461,106 @@ int __stdcall BuildingClass::AllocAndCtor(BuildingClass *aP0, int aP2)
   if ( result >= 0 ) /*0x70bf65*/
   {
     aP0->planningToken = 0; /*0x70bf79*/
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0->focus); /*0x70bf7f*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&aP0->focus); /*0x70bf7f*/
     v3 = (MouseClass *)&aP0->diskLaserTimer[1]; /*0x70bf84*/
     v5 = 8; /*0x70bf8a*/
     do /*0x70bf9e*/
     {
-      ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], v3); /*0x70bf95*/
+      ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], v3); /*0x70bf95*/
       v3 = (MouseClass *)((char *)v3 + 4); /*0x70bf9a*/
       --v5; /*0x70bf9d*/
     }
     while ( v5 ); /*0x70bf9e*/
     ObjectPtr::RegisterForTracking( /*0x70bfac*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->ammoReloadTimer);
     ObjectPtr::RegisterForTracking( /*0x70bfbd*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->spawnManager);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0->Owner); /*0x70bfce*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&aP0->Owner); /*0x70bfce*/
     ObjectPtr::RegisterForTracking( /*0x70bfdf*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->voiceVolumeModifier);
     ObjectPtr::RegisterForTracking( /*0x70bff0*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->sprayOffsetIndex);
     ObjectPtr::RegisterForTracking( /*0x70c001*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->isUncrushable);
     ObjectPtr::RegisterForTracking( /*0x70c012*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->rockerLinkedUnit);
     ObjectPtr::RegisterForTracking( /*0x70c023*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->previousTeam);
     ObjectPtr::RegisterForTracking( /*0x70c034*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->captureManager);
     ObjectPtr::RegisterForTracking( /*0x70c045*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->mindControlledBy_a_unit);
     ObjectPtr::RegisterForTracking( /*0x70c056*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->mindControlRingAnim);
     ObjectPtr::RegisterForTracking( /*0x70c067*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->locomotorTarget);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0->lastTarget); /*0x70c078*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&aP0->lastTarget); /*0x70c078*/
     ObjectPtr::RegisterForTracking( /*0x70c089*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->mindControlledBy_house);
     ObjectPtr::RegisterForTracking( /*0x70c09a*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->mindControlledBy);
     ObjectPtr::RegisterForTracking( /*0x70c0ab*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->disguiseAsType);
     ObjectPtr::RegisterForTracking( /*0x70c0bc*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->isDisguisedFlag_as_house);
     ObjectPtr::RegisterForTracking( /*0x70c0cd*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->__pad_26A[10]);
     ObjectPtr::RegisterForTracking( /*0x70c0de*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->__pad_26A[14]);
     ObjectPtr::RegisterForTracking( /*0x70c0ef*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->owningHouseIndex0);
     ObjectPtr::RegisterForTracking( /*0x70c100*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->isDeactivated);
     ObjectPtr::RegisterForTracking( /*0x70c111*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->drainTarget);
     ObjectPtr::RegisterForTracking( /*0x70c122*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->__pad_115[7]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0->airstrike); /*0x70c133*/
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0->isBerserk); /*0x70c144*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&aP0->airstrike); /*0x70c133*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&aP0->isBerserk); /*0x70c144*/
     ObjectPtr::RegisterForTracking( /*0x70c155*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->isBerserk_duration_left);
     ObjectPtr::RegisterForTracking( /*0x70c166*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->__pad_3F7[49]);
     ObjectPtr::RegisterForTracking( /*0x70c177*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->__pad_3F7[53]);
     ObjectPtr::RegisterForTracking( /*0x70c188*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->__pad_115[3]);
     ObjectPtr::RegisterForTracking( /*0x70c199*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->damageParticles);
     ObjectPtr::RegisterForTracking( /*0x70c1aa*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->__pad_115[27]);
     ObjectPtr::RegisterForTracking( /*0x70c1bb*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0->__pad_115[23]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0->target); /*0x70c1cc*/
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0->drainingMe); /*0x70c1dd*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&aP0->target); /*0x70c1cc*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&aP0->drainingMe); /*0x70c1dd*/
     AudioController::Init(&aP0->audioController4[3]); /*0x70c1e8*/
     *(_DWORD *)&aP0->__pad_491[11] = 1; /*0x70c1f3*/
     *(_DWORD *)&aP0->__pad_491[15] = 0; /*0x70c1fd*/

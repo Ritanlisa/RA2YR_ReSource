@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_623E00_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x53EC40
 namespace gamemd {
@@ -51,11 +52,11 @@ size_t __fastcall Memory_Helper_6149B0(HWND hWnd, WCHAR *a2, int cchWideChar, si
   v4 = 0; /*0x6149bd*/
   lpWideCharStr = a2; /*0x6149c3*/
   hWnda = hWnd; /*0x6149c7*/
-  if ( MEMORY[0xAC1B4C] ) /*0x6149cb*/
+  if ( g_DialogHashMap_Grow ) /*0x6149cb*/
   {
-    v5 = MEMORY[0xAC1B60](&hWnda); /*0x6149d1*/
+    v5 = g_DialogHashMap_Insert(&hWnda); /*0x6149d1*/
     hWnd = hWnda; /*0x6149e4*/
-    v6 = *((_DWORD *)MEMORY[0xAC1B48] + (v5 & ((1 << MEMORY[0xAC1B54]) - 1))); /*0x6149f0*/
+    v6 = *((_DWORD *)g_DialogHashMap_Entries + (v5 & ((1 << g_DialogHashMap_Insert) - 1))); /*0x6149f0*/
     if ( v6 ) /*0x6149f5*/
     {
       while ( *(HWND *)v6 != hWnda ) /*0x6149f9*/
@@ -106,7 +107,7 @@ LABEL_8:
     }
     while ( v15 ); /*0x614aea*/
     if ( v10 != v12 ) /*0x614aee*/
-      wcscat((wchar_t *)v11, MEMORY[0x835950]); /*0x614af6*/
+      wcscat((wchar_t *)v11, DataGlobal_835950); /*0x614af6*/
   }
   v17 = lpWideCharStr; /*0x614afe*/
   wcscpy(lpWideCharStr, (const wchar_t *)v11); /*0x614b04*/

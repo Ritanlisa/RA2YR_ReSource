@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x436BE0
 namespace gamemd {
@@ -61,7 +65,7 @@ _DWORD *__thiscall BuildingLightClass::FindTarget(_DWORD *this, CCINIClass *aP1)
       {
         HIWORD(v18) = v6 + HIWORD(v25); /*0x436c6c*/
         v23 = v18; /*0x436c7b*/
-        v7 = (TechnoClass *)*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23) + 57); /*0x436c84*/
+        v7 = (TechnoClass *)*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v23) + 57); /*0x436c84*/
         if ( v7 ) /*0x436c8c*/
         {
           while ( 1 ) /*0x436c98*/
@@ -192,7 +196,7 @@ signed int __thiscall BuildingLightClass::UpdateOscillation(int this)
     v9 = v6[1]; /*0x513d92*/
     v10 = v6[2]; /*0x513d95*/
     v11 = 8 * v7 + 9041624; /*0x513d98*/
-    v12 = v8 + MEMORY[0x89F6D8][2 * v7]; /*0x513dab*/
+    v12 = v8 + DataGlobal_89F6D8[2 * v7]; /*0x513dab*/
     v29 = v9 + *(_DWORD *)(v11 + 4); /*0x513dad*/
     v28 = v12; /*0x513dbb*/
     v30 = v10; /*0x513dbf*/

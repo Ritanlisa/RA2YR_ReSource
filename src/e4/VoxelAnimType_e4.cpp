@@ -2,6 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/VoxelAnimType_e4.hpp"
+#include "e4/classes/File_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x5F7A90
 namespace gamemd {
@@ -30,9 +33,9 @@ char __thiscall VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
   char Source[260]; // [esp+1ECh] [ebp-104h] BYREF
 
   if ( a3 ) /*0x5f7aa7*/
-    sprintf(Buffer, MEMORY[0x832AB4], a2, a3); /*0x5f7ade*/
+    sprintf(Buffer, DataGlobal_832AB4, a2, a3); /*0x5f7ade*/
   else
-    sprintf(Buffer, MEMORY[0x832ABC], a2); /*0x5f7abe*/
+    sprintf(Buffer, g_Str_Trace__sTUR, a2); /*0x5f7abe*/
   _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f7afd*/
   CCFileClass::Construct(v15, Source); /*0x5f7b11*/
   if ( (unsigned __int8)CCFileClass::Open(0) ) /*0x5f7b1b*/
@@ -53,9 +56,9 @@ char __thiscall VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
     if ( v5 && !*v5 ) /*0x5f7b96*/
       v14 = 1; /*0x5f7b9a*/
     if ( a3 ) /*0x5f7ba1*/
-      sprintf(Buffer, MEMORY[0x832AB4], a2, a3); /*0x5f7bd8*/
+      sprintf(Buffer, DataGlobal_832AB4, a2, a3); /*0x5f7bd8*/
     else
-      sprintf(Buffer, MEMORY[0x832ABC], a2); /*0x5f7bb8*/
+      sprintf(Buffer, g_Str_Trace__sTUR, a2); /*0x5f7bb8*/
     _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f7bf7*/
     CCFileClass::Construct(v18, Source); /*0x5f7c0e*/
     v6 = (void *)*(this + 2 * a3 + 51); /*0x5f7c13*/
@@ -149,9 +152,9 @@ char __thiscall VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
   char Source[260]; // [esp+1ECh] [ebp-104h] BYREF
 
   if ( a3 ) /*0x5f7dc7*/
-    sprintf(Buffer, MEMORY[0x832AC4], a2, a3); /*0x5f7dfe*/
+    sprintf(Buffer, DataGlobal_832AC4, a2, a3); /*0x5f7dfe*/
   else
-    sprintf(Buffer, MEMORY[0x832AD0], a2); /*0x5f7dde*/
+    sprintf(Buffer, g_Str_Trace__sBARL, a2); /*0x5f7dde*/
   _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f7e1d*/
   CCFileClass::Construct(v12, Source); /*0x5f7e31*/
   if ( (unsigned __int8)CCFileClass::Open(0) ) /*0x5f7e3b*/
@@ -165,9 +168,9 @@ char __thiscall VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
     if ( v5 && !*v5 ) /*0x5f7ea8*/
       v11 = 1; /*0x5f7ead*/
     if ( a3 ) /*0x5f7eb4*/
-      sprintf(Buffer, MEMORY[0x832AC4], a2, a3); /*0x5f7edd*/
+      sprintf(Buffer, DataGlobal_832AC4, a2, a3); /*0x5f7edd*/
     else
-      sprintf(Buffer, MEMORY[0x832AD0], a2); /*0x5f7ec4*/
+      sprintf(Buffer, g_Str_Trace__sBARL, a2); /*0x5f7ec4*/
     _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f7efc*/
     CCFileClass::Construct(v15, Source); /*0x5f7f13*/
     v6 = 0; /*0x5f7f1a*/
@@ -360,7 +363,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
       || !HouseClass::HasPower(this)
       || *(this + 3285) )
     {
-      sprintf(Filename, MEMORY[0x832ABC], v2); /*0x5f86a4*/
+      sprintf(Filename, g_Str_Trace__sTUR, v2); /*0x5f86a4*/
       _makepath(Buffer, 0, 0, Filename, g_Str_File__VXL); /*0x5f86c0*/
       CCFileClass::Construct(v51, Buffer); /*0x5f86d4*/
       if ( CCFileClass::Open(v51, 0) ) /*0x5f86de*/
@@ -379,7 +382,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
         *((_DWORD *)this + 46) = v28; /*0x5f8726*/
         if ( !v28 || *(_BYTE *)v28 ) /*0x5f872e*/
           v50 = 1; /*0x5f8732*/
-        sprintf(Filename, MEMORY[0x832ABC], v2); /*0x5f8745*/
+        sprintf(Filename, g_Str_Trace__sTUR, v2); /*0x5f8745*/
         _makepath(Buffer, 0, 0, Filename, g_Str_File__HVA); /*0x5f8761*/
         CCFileClass::Construct(v54, Buffer); /*0x5f8778*/
         v29 = (SomeVoxelCache *)*((_DWORD *)this + 47); /*0x5f877d*/
@@ -425,9 +428,9 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
   }
   else
   {
-    if ( !strcmp(this + 36, MEMORY[0x832AE4]) ) /*0x5f82a1*/
+    if ( !strcmp(this + 36, DataGlobal_832AE4) ) /*0x5f82a1*/
     {
-      sprintf(Filename, MEMORY[0x832AE0], this + 504); /*0x5f82e0*/
+      sprintf(Filename, DataGlobal_832AE0, this + 504); /*0x5f82e0*/
       _makepath(Buffer, 0, 0, Filename, g_Str_File__VXL); /*0x5f82fc*/
       CCFileClass::Construct(v51, Buffer); /*0x5f8310*/
       if ( CCFileClass::Open(v51, 0) ) /*0x5f831a*/
@@ -446,7 +449,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
         *((_DWORD *)this + 46) = v12; /*0x5f8362*/
         if ( !v12 || *(_BYTE *)v12 ) /*0x5f836a*/
           v50 = 1; /*0x5f836e*/
-        sprintf(Filename, MEMORY[0x832AE0], this + 504); /*0x5f8381*/
+        sprintf(Filename, DataGlobal_832AE0, this + 504); /*0x5f8381*/
         _makepath(Buffer, 0, 0, Filename, g_Str_File__HVA); /*0x5f839d*/
         CCFileClass::Construct(v54, Buffer); /*0x5f83b4*/
         v13 = (SomeVoxelCache *)*((_DWORD *)this + 47); /*0x5f83b9*/
@@ -484,7 +487,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
     }
     if ( *(this + 488) ) /*0x5f8480*/
     {
-      sprintf(Filename, MEMORY[0x832AD8], this + 504); /*0x5f84a0*/
+      sprintf(Filename, DataGlobal_832AD8, this + 504); /*0x5f84a0*/
       _makepath(Buffer, 0, 0, Filename, g_Str_File__VXL); /*0x5f84bc*/
       CCFileClass::Construct(v51, Buffer); /*0x5f84d0*/
       if ( CCFileClass::Open(v51, 0) ) /*0x5f84da*/
@@ -503,7 +506,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
         *((_DWORD *)this + 46) = v19; /*0x5f8522*/
         if ( !v19 || *(_BYTE *)v19 ) /*0x5f852a*/
           v50 = 1; /*0x5f852e*/
-        sprintf(Filename, MEMORY[0x832AD8], this + 504); /*0x5f8541*/
+        sprintf(Filename, DataGlobal_832AD8, this + 504); /*0x5f8541*/
         _makepath(Buffer, 0, 0, Filename, g_Str_File__HVA); /*0x5f855d*/
         CCFileClass::Construct(v54, Buffer); /*0x5f8574*/
         v20 = (SomeVoxelCache *)*((_DWORD *)this + 47); /*0x5f8579*/
@@ -562,7 +565,7 @@ LABEL_93:
     }
     else
     {
-      sprintf(Filename, MEMORY[0x832AD0], this + 504); /*0x5f88c0*/
+      sprintf(Filename, g_Str_Trace__sBARL, this + 504); /*0x5f88c0*/
       _makepath(Buffer, 0, 0, Filename, g_Str_File__VXL); /*0x5f88dc*/
       CCFileClass::Construct(v51, Buffer); /*0x5f88f0*/
       if ( CCFileClass::Open(v51, 0) ) /*0x5f88fa*/
@@ -581,7 +584,7 @@ LABEL_93:
         *((_DWORD *)this + 48) = v37; /*0x5f8942*/
         if ( !v37 || *(_BYTE *)v37 ) /*0x5f894a*/
           v50 = 1; /*0x5f894e*/
-        sprintf(Filename, MEMORY[0x832AD0], this + 504); /*0x5f8961*/
+        sprintf(Filename, g_Str_Trace__sBARL, this + 504); /*0x5f8961*/
         _makepath(Buffer, 0, 0, Filename, g_Str_File__HVA); /*0x5f897d*/
         CCFileClass::Construct(v54, Buffer); /*0x5f8994*/
         v38 = (void *)*((_DWORD *)this + 49); /*0x5f8999*/

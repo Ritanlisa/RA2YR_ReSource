@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x728C00
 void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
@@ -37,9 +38,9 @@ void __stdcall TunnelLocomotionClass::ProcessFormationPosition(_DWORD *a1)
     case 3: /*0x728c17*/
       a1[5] = 5; /*0x728dd0*/
 LABEL_11:
-      a1[6] = MEMORY[0xB0F910]; /*0x728de0*/
-      a1[7] = MEMORY[0xB0F914]; /*0x728df0*/
-      a1[8] = MEMORY[0xB0F918]; /*0x728df9*/
+      a1[6] = DataGlobal_B0F910; /*0x728de0*/
+      a1[7] = DataGlobal_B0F914; /*0x728df0*/
+      a1[8] = DataGlobal_B0F918; /*0x728df9*/
       break; /*0x728df9*/
     case 4: /*0x728c17*/
       v2 = a1 + 6; /*0x728c29*/
@@ -49,14 +50,14 @@ LABEL_11:
       v15 = v4; /*0x728c43*/
       v13 = v3 - a1[6]; /*0x728c4b*/
       v5 = Math::Sqrt((double)v13 * (double)v13 + (double)v14 * (double)v14); /*0x728c64*/
-      if ( (double)(int)Math::RoundToInt(v5) > MEMORY[0xB0F8F8] ) /*0x728c84*/
+      if ( (double)(int)Math::RoundToInt(v5) > DataGlobal_B0F8F8 ) /*0x728c84*/
       {
         v8 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)a1[2] + 440))(a1[2], v11); /*0x728c9e*/
         v9[0] = 0; /*0x728cc4*/
         v9[1] = 0; /*0x728cc9*/
-        TileIndexMapClass = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v8, 0, 0); /*0x728cce*/
+        TileIndexMapClass = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v8, 0, 0); /*0x728cce*/
         v7 = *LayerClass::Pathfinding_Find( /*0x728cea*/
-                &MEMORY[0x87F7E8],
+                &DataGlobal_87F7E8,
                 (int)&v12,
                 &v12,
                 (__int16 *)&v8,
@@ -74,14 +75,14 @@ LABEL_11:
                 0,
                 0);
         v16 = HIWORD(v7); /*0x728cf3*/
-        if ( (_WORD)v7 != (_WORD)MEMORY[0xB0F8F0] ) /*0x728cf7*/
+        if ( (_WORD)v7 != (_WORD)DataGlobal_B0F8F0 ) /*0x728cf7*/
           goto LABEL_8; /*0x728cf7*/
-        if ( HIWORD(v7) == HIWORD(MEMORY[0xB0F8F0]) ) /*0x728d09*/
+        if ( HIWORD(v7) == HIWORD(DataGlobal_B0F8F0) ) /*0x728d09*/
         {
           v10[0] = 0; /*0x728d33*/
           v10[1] = 0; /*0x728d38*/
           v7 = *LayerClass::Pathfinding_Find( /*0x728d42*/
-                  &MEMORY[0x87F7E8],
+                  &DataGlobal_87F7E8,
                   (int)v10,
                   &v13,
                   (__int16 *)&v8,
@@ -100,7 +101,7 @@ LABEL_11:
                   0);
           v16 = HIWORD(v7); /*0x728d44*/
         }
-        if ( __PAIR32__(v16, v7) == MEMORY[0xB0F8F0] ) /*0x728d4f*/
+        if ( __PAIR32__(v16, v7) == DataGlobal_B0F8F0 ) /*0x728d4f*/
         {
           (*(void (__stdcall **)(int, _DWORD, int, _DWORD, int, int, _DWORD))(*(_DWORD *)a1[2] + 364))( /*0x728d7c*/
             a1[2] + 108,
@@ -110,9 +111,9 @@ LABEL_11:
             1,
             1,
             0);
-          *v2 = MEMORY[0xB0F910]; /*0x728d88*/
-          a1[7] = MEMORY[0xB0F914]; /*0x728d90*/
-          a1[8] = MEMORY[0xB0F918]; /*0x728d99*/
+          *v2 = DataGlobal_B0F910; /*0x728d88*/
+          a1[7] = DataGlobal_B0F914; /*0x728d90*/
+          a1[8] = DataGlobal_B0F918; /*0x728d99*/
         }
         else
         {

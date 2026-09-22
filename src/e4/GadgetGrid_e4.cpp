@@ -35,7 +35,7 @@ int GadgetGrid::InsertItem(ObjectClass * aP1)
     v8 = 19;
     if ( v7 <= 19 )
     v8 = v7;
-    v9 = v6 / (*(int *)&DataGlobal_87F8E4.__pad_31[3] / 20);
+    v9 = v6 / (*(int *)&DataGlobal_87F8E4[52] / 20);
     if ( v9 > 19 )
     v9 = 19;
     v10 = 3 * (v8 + 20 * v9);
@@ -70,7 +70,7 @@ int GadgetGrid::RemoveItem(IUnknown * aP1)
     char v14[4];
     v3 = *(int *)(*(int (__thiscall **)(IUnknown *, char *))(aP1->field_0 + 756))(aP1, v14);
     v13 = HIWORD(v3);
-    (*(void (__thiscall **)(IUnknown *, int))(aP1->field_0 + 760))(aP1, *(int *)&DataGlobal_87F8E4.__pad_5568[10756]);
+    (*(void (__thiscall **)(IUnknown *, int))(aP1->field_0 + 760))(aP1, *(int *)&DataGlobal_87F8E4[32620]);
     if ( (v3 & 0x8000u) == 0 )
     v3 = (short)v3;
     else
@@ -83,7 +83,7 @@ int GadgetGrid::RemoveItem(IUnknown * aP1)
     v6 = 19;
     if ( v5 <= 19 )
     v6 = v5;
-    v7 = v4 / (*(int *)&DataGlobal_87F8E4.__pad_31[3] / 20);
+    v7 = v4 / (*(int *)&DataGlobal_87F8E4[52] / 20);
     if ( v7 > 19 )
     v7 = 19;
     v8 = *(this + 120 * v7 + 6 * v6);

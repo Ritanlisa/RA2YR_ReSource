@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x7B0D90
 unsigned int * IPXInterfaceClass::Construct()
@@ -48,9 +51,9 @@ int __thiscall IPXInterfaceClass::initSocket(_DWORD *this, IUnknown *aP1, Color 
   }
   *(_DWORD *)optval = 1; /*0x7b0e44*/
   optlen = 4; /*0x7b0e4e*/
-  if ( MEMORY[0x87F8E4].__pad_5568[10200] /*0x7b0e63*/
-    && *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10060] == 4
-    && !*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10064] )
+  if ( DataGlobal_87F8E4[32064] /*0x7b0e63*/
+    && *(_DWORD *)&DataGlobal_87F8E4[31924] == 4
+    && !*(_DWORD *)&DataGlobal_87F8E4[31928] )
   {
     Debug::Log(); /*0x7b0eae*/
   }
@@ -227,7 +230,7 @@ LABEL_6:
       return 0; /*0x7b1605*/
   }
   v17 = Network_Process_7B2730(); /*0x7b1610*/
-  if ( v17 > 0 && Random::Range(&MEMORY[0x87F8E4].__pad_5568[7484], 0, (IUnknown *)0x63) <= v17 ) /*0x7b1626*/
+  if ( v17 > 0 && Random::Range(&DataGlobal_87F8E4[29348], 0, (IUnknown *)0x63) <= v17 ) /*0x7b1626*/
     return 0; /*0x7b1717*/
   v18 = (CCINIClass *)IPXInterfaceClass::processPacket(this); /*0x7b1633*/
   v18->sectionHead[0] = v26 - 4; /*0x7b1646*/

@@ -2,6 +2,10 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Tiberium_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/RandomMap_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x59D510
 namespace gamemd {
@@ -309,7 +313,7 @@ LABEL_50:
           goto LABEL_42;
         if ( !v30[20 * v31 + 14 + 20 * unk_89C2DC * v35] )
         {
-          v36 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v85);
+          v36 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v85);
           IsEmpty = Cell::IsEmpty(v36);
           v30 = g_MapTileArray;
           if ( IsEmpty )
@@ -327,8 +331,8 @@ LABEL_45:
             v30[20 * SLOWORD(v85) + 14 + 20 * unk_89C2DC * SWORD1(v85)] = v81[194];
           v99[0] = v31;
           v99[1] = v34;
-          v39 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v99);
-          v40 = *(Random **)&MEMORY[0xA8D63C].__pad_579C[55648];
+          v39 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v99);
+          v40 = *(Random **)&g_NetworkPlayerBuffer[78076];
           v39[282] = 0;
           *((_DWORD *)v39 + 14) = v40;
           v30 = g_MapTileArray;
@@ -481,8 +485,8 @@ LABEL_100:
         v54 = TiberiumClass::Spread(*(_DWORD *)&v20[194], 1, 0, 0, 512, 512, 0, 0);
         v55 = (MouseClass *)v20[194];
         inited = v54;
-        LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]);
-        for ( i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); i; i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) )
+        LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+        for ( i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); i; i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
         {
           if ( g_MapTileArray )
             v57 = *((_DWORD *)g_MapTileArray + 20 * *(__int16 *)(i + 36) + 20 * unk_89C2DC * *(__int16 *)(i + 38) + 14);
@@ -492,7 +496,7 @@ LABEL_100:
           {
             v58 = *(Random **)(i + 56);
             if ( !v58 || v58 == (Random *)0xFFFF )
-              *(_DWORD *)(i + 56) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57408];
+              *(_DWORD *)(i + 56) = *(_DWORD *)&g_NetworkPlayerBuffer[79836];
           }
         }
       }
@@ -520,8 +524,8 @@ LABEL_100:
   {
 LABEL_151:
     v67 = (MouseClass *)v20[194];
-    LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]);
-    for ( j = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); j; j = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) )
+    LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+    for ( j = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); j; j = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
     {
       v79 = *(_DWORD *)(j + 36);
       v69 = (char *)g_MapTileArray + 80 * (__int16)v79 + 80 * unk_89C2DC * SHIWORD(v79);
@@ -537,8 +541,8 @@ LABEL_151:
     if ( v83 > 0 )
     {
       v70 = *(_DWORD *)&v20[194] - 1;
-      LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]);
-      for ( k = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); k; k = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) )
+      LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+      for ( k = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); k; k = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
       {
         v79 = *(_DWORD *)(k + 36);
         v72 = (char *)g_MapTileArray + 80 * (__int16)v79 + 80 * unk_89C2DC * SHIWORD(v79);
@@ -555,8 +559,8 @@ LABEL_151:
     return 0;
   }
   v60 = (MouseClass *)v20[194];
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]);
-  for ( m = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); m; m = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) )
+  LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+  for ( m = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); m; m = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
   {
     v62 = *(_DWORD *)(m + 36);
     v79 = v62;
@@ -941,7 +945,7 @@ LABEL_6:
               return 1;
             LOWORD(v121) = v29;
             HIWORD(v121) = v117[0];
-            v32 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v121);
+            v32 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v121);
             if ( !Cell::IsEmpty(v32) )
               return 1;
             v28 = g_MapCellHeight_Value;
@@ -975,9 +979,9 @@ LABEL_6:
           }
           while ( v36 > 5 );
           HIWORD(v121) = v117[0];
-          v37 = v36 + *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55648];
+          v37 = v36 + *(_DWORD *)&g_NetworkPlayerBuffer[78076];
           LOWORD(v121) = (_WORD)i;
-          *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v121) + 14) = v37;
+          *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v121) + 14) = v37;
           do
           {
             v139 = (unsigned int)Random::State(&g_Randomizer);
@@ -987,7 +991,7 @@ LABEL_6:
           v39 = v117[0];
           LOWORD(v118) = (_WORD)i;
           HIWORD(v118) = v117[0];
-          *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118) + 282) = v38;
+          *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118) + 282) = v38;
           if ( g_MapTileArray )
             *((_DWORD *)g_MapTileArray + 20 * (__int16)i + 20 * unk_89C2DC * v39 + 14) = aP1;
           v28 = g_MapCellHeight_Value;
@@ -1007,8 +1011,8 @@ LABEL_6:
       if ( inited )
       {
         v41 = (MouseClass *)v124[194];
-        LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]);
-        for ( j = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); j; j = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) )
+        LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+        for ( j = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); j; j = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
         {
           v43 = *(MouseClass **)(j + 36);
           v120 = v43;
@@ -1039,9 +1043,9 @@ LABEL_6:
                 }
                 while ( v48 > 5 );
                 HIWORD(v115) = v117[0];
-                v49 = v48 + *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55648];
+                v49 = v48 + *(_DWORD *)&g_NetworkPlayerBuffer[78076];
                 LOWORD(v115) = k;
-                *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v115) + 14) = v49;
+                *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v115) + 14) = v49;
                 do
                 {
                   v139 = (unsigned int)Random::State(&g_Randomizer);
@@ -1051,7 +1055,7 @@ LABEL_6:
                 v51 = v117[0];
                 LOWORD(v121) = k;
                 HIWORD(v121) = v117[0];
-                *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v121) + 282) = v50;
+                *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v121) + 282) = v50;
                 if ( g_MapTileArray )
                   *((_DWORD *)g_MapTileArray + 20 * (__int16)k + 20 * unk_89C2DC * v51 + 14) = aP1;
                 v45 = g_MapCellHeight_Value;
@@ -1070,36 +1074,36 @@ LABEL_6:
             LOWORD(v120) = (_WORD)v131 - 2;
             HIWORD(v120) = v132 - 4;
             v157 = v120;
-            v97 = *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v157) + 283);
-            *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+            v97 = *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v157) + 283);
+            *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                      + 4
-                                                                     * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58056]);
-            Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v164, (MouseClass *)v117);
+                                                                     * *(_DWORD *)&g_NetworkPlayerBuffer[80484]);
+            Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v164, (MouseClass *)v117);
             v98 = v124;
             GenerateTerrainMap(0, 0x10000, v97, (MapClass *)v124[194], &v116, 0);
             v99 = v129;
             v100 = v129 + 2;
-            v101 = *(IUnknown **)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
-                                + 4 * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58056]
+            v101 = *(IUnknown **)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
+                                + 4 * *(_DWORD *)&g_NetworkPlayerBuffer[80484]
                                 + 12);
             v119[0] = v129 + 2;
-            *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = v101;
+            *(_DWORD *)&DataGlobal_87F8E4[4268] = v101;
             HIWORD(v120) = v117[1];
             LOWORD(v120) = v117[0] + v129 + 2;
             v142 = v120;
-            Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v166, (MouseClass *)&v142);
+            Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v166, (MouseClass *)&v142);
             GenerateTerrainMap(0, 0x10000, v97, (MapClass *)v98[194], &v116, 0);
             HIWORD(v120) = v117[1];
             LOWORD(v120) = v117[0] + 1;
             v144 = v120;
-            *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v144) + 14) = 0xFFFF;
+            *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v144) + 14) = 0xFFFF;
             v119[0] = v100;
             HIWORD(v120) = v117[1];
             LOWORD(v120) = v117[0] + v100;
             v146 = v120;
             v102 = v99 + 2;
             v103 = 0;
-            for ( *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v146) + 14) = 0xFFFF;
+            for ( *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v146) + 14) = 0xFFFF;
                   v103 < v102;
                   v104[283] -= 4 )
             {
@@ -1107,7 +1111,7 @@ LABEL_6:
               LOWORD(v120) = v117[0] + v103 + 1;
               HIWORD(v120) = v117[1];
               v148 = v120;
-              v104 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v148);
+              v104 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v148);
               ++v103;
             }
             HIWORD(v120) = v117[1] + 1;
@@ -1125,10 +1129,10 @@ LABEL_6:
               && v106 - v105 < g_MapCellHeight_Value
               && v106 + v105 <= g_MapCellCount )
             {
-              *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v121) + 14) = 0xFFFF;
-              v108 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v121);
+              *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v121) + 14) = 0xFFFF;
+              v108 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v121);
               v108[283] += 4;
-              *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v121) + 282) = 0;
+              *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v121) + 282) = 0;
               if ( g_MapTileArray )
                 *((_DWORD *)g_MapTileArray + 20 * (__int16)v121 + 20 * unk_89C2DC * SHIWORD(v121) + 14) = v98[194];
               v107 = g_MapCellHeight_Value;
@@ -1139,10 +1143,10 @@ LABEL_6:
               && SHIWORD(v118) - (__int16)v118 < v107
               && v109 <= g_MapCellCount )
             {
-              *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118) + 14) = 0xFFFF;
-              v110 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118);
+              *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118) + 14) = 0xFFFF;
+              v110 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118);
               v110[283] += 4;
-              *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118) + 282) = 0;
+              *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118) + 282) = 0;
               if ( g_MapTileArray )
                 *((_DWORD *)g_MapTileArray + 20 * (__int16)v118 + 20 * unk_89C2DC * SHIWORD(v118) + 14) = v98[194];
             }
@@ -1160,12 +1164,12 @@ LABEL_6:
                   LOWORD(v120) = v117[0] + v114;
                   HIWORD(v120) = v117[1] + 1;
                   v150 = (Random *)v120;
-                  Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v139, (MouseClass *)&v150);
+                  Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v139, (MouseClass *)&v150);
                   ++v111;
                   --v112;
-                  *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+                  *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                            + 4
-                                                                           * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58056]
+                                                                           * *(_DWORD *)&g_NetworkPlayerBuffer[80484]
                                                                            + 4);
                 }
                 else
@@ -1174,12 +1178,12 @@ LABEL_6:
                   LOWORD(v115) = v117[0] + v114;
                   HIWORD(v115) = v117[1] + 1;
                   v152 = v115;
-                  Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v140, (MouseClass *)&v152);
+                  Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v140, (MouseClass *)&v152);
                   v111 += 2;
                   v112 -= 2;
-                  *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+                  *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                            + 4
-                                                                           * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58056]
+                                                                           * *(_DWORD *)&g_NetworkPlayerBuffer[80484]
                                                                            + 8);
                 }
                 GenerateTerrainMap(0, 0x10000, v97, (MapClass *)v124[194], &v116, 0);
@@ -1194,22 +1198,22 @@ LABEL_6:
             v119[1] = v130 + v128;
             HIWORD(v115) = v130 + v128;
             v155 = v115;
-            v53 = *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v155) + 283);
-            *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+            v53 = *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v155) + 283);
+            *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                      + 4
-                                                                     * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55652]);
-            Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v168, (MouseClass *)v119);
+                                                                     * *(_DWORD *)&g_NetworkPlayerBuffer[78080]);
+            Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v168, (MouseClass *)v119);
             v54 = v124;
             GenerateTerrainMap(0, 0x10000, v53, (MapClass *)v124[194], &v116, 0);
-            *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+            *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                      + 4
-                                                                     * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55652]
+                                                                     * *(_DWORD *)&g_NetworkPlayerBuffer[78080]
                                                                      + 12);
             v126 = v52 + 2;
             LOWORD(v115) = v119[0];
             HIWORD(v115) = v119[1] - (v52 + 2);
             v159 = v115;
-            Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v163, (MouseClass *)&v159);
+            Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v163, (MouseClass *)&v159);
             GenerateTerrainMap(0, 0x10000, v53, (MapClass *)v54[194], &v116, 0);
             v55 = v119[1];
             v126 = v52 + 3;
@@ -1225,10 +1229,10 @@ LABEL_6:
               && (int)v57 - v119[0] < g_MapCellHeight_Value
               && (int)v58 <= g_MapCellCount )
             {
-              *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118) + 14) = 0xFFFF;
-              v59 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118);
+              *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118) + 14) = 0xFFFF;
+              v59 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118);
               v59[283] += 4;
-              *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118) + 282) = 0;
+              *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118) + 282) = 0;
               if ( g_MapTileArray )
                 *((_DWORD *)g_MapTileArray + 20 * (__int16)v118 + 20 * unk_89C2DC * SHIWORD(v118) + 14) = v124[194];
               v56 = g_MapCellHeight_Value;
@@ -1237,10 +1241,10 @@ LABEL_6:
             v60 = v117[1] + v117[0];
             if ( v60 > v56 && v117[0] - v117[1] < v56 && v117[1] - v117[0] < v56 && v60 <= g_MapCellCount )
             {
-              *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v117) + 14) = 0xFFFF;
-              v61 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v117);
+              *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v117) + 14) = 0xFFFF;
+              v61 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v117);
               v61[283] += 4;
-              *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v117) + 282) = 0;
+              *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v117) + 282) = 0;
               if ( g_MapTileArray )
                 *((_DWORD *)g_MapTileArray + 20 * v117[0] + 20 * unk_89C2DC * v117[1] + 14) = v124[194];
               v55 = v119[1];
@@ -1258,12 +1262,12 @@ LABEL_6:
                   LOWORD(v115) = v119[0];
                   HIWORD(v115) = v55 - (v62 + 1);
                   v151 = v115;
-                  Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v170, (MouseClass *)&v151);
+                  Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v170, (MouseClass *)&v151);
                   ++v62;
                   --v63;
-                  *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+                  *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                            + 4
-                                                                           * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55652]
+                                                                           * *(_DWORD *)&g_NetworkPlayerBuffer[78080]
                                                                            + 4);
                 }
                 else
@@ -1272,12 +1276,12 @@ LABEL_6:
                   LOWORD(v121) = v119[0];
                   HIWORD(v121) = v55 - (v62 + 2);
                   v156 = v121;
-                  Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v172, (MouseClass *)&v156);
+                  Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v172, (MouseClass *)&v156);
                   v62 += 2;
                   v63 -= 2;
-                  *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+                  *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                            + 4
-                                                                           * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55652]
+                                                                           * *(_DWORD *)&g_NetworkPlayerBuffer[78080]
                                                                            + 8);
                 }
                 GenerateTerrainMap(0, 0x10000, v53, (MapClass *)v124[194], &v116, 0);
@@ -1293,23 +1297,23 @@ LABEL_6:
             v117[0] = (_WORD)v127 - 2;
             LOWORD(v115) = (_WORD)v127 - 2;
             v161 = v115;
-            v84 = *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v161) + 283);
-            *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+            v84 = *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v161) + 283);
+            *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                      + 4
-                                                                     * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57976]);
-            Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v167, (MouseClass *)v117);
+                                                                     * *(_DWORD *)&g_NetworkPlayerBuffer[80404]);
+            Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v167, (MouseClass *)v117);
             v85 = v124;
             GenerateTerrainMap(0, 0x10000, v84, (MapClass *)v124[194], &v116, 0);
             v86 = v129;
-            *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+            *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                      + 4
-                                                                     * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57976]
+                                                                     * *(_DWORD *)&g_NetworkPlayerBuffer[80404]
                                                                      + 12);
             LOWORD(v120) = v129 + 2;
             LOWORD(v115) = v117[0] + v129 + 2;
             HIWORD(v115) = v117[1];
             v147 = v115;
-            Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v175, (MouseClass *)&v147);
+            Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v175, (MouseClass *)&v147);
             GenerateTerrainMap(0, 0x10000, v84, (MapClass *)v85[194], &v116, 0);
             HIWORD(v115) = v117[1];
             LOWORD(v120) = v86 + 4;
@@ -1326,10 +1330,10 @@ LABEL_6:
               && v117[1] - v89 < g_MapCellHeight_Value
               && v90 <= g_MapCellCount )
             {
-              *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v121) + 14) = 0xFFFF;
-              v91 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v121);
+              *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v121) + 14) = 0xFFFF;
+              v91 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v121);
               v91[283] += 4;
-              *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v121) + 282) = 0;
+              *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v121) + 282) = 0;
               if ( g_MapTileArray )
                 *((_DWORD *)g_MapTileArray + 20 * (__int16)v121 + 20 * unk_89C2DC * SHIWORD(v121) + 14) = v85[194];
               v88 = g_MapCellHeight_Value;
@@ -1340,10 +1344,10 @@ LABEL_6:
               && SHIWORD(v118) - (__int16)v118 < v88
               && v92 <= g_MapCellCount )
             {
-              *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118) + 14) = 0xFFFF;
-              v93 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118);
+              *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118) + 14) = 0xFFFF;
+              v93 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118);
               v93[283] += 4;
-              *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118) + 282) = 0;
+              *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118) + 282) = 0;
               if ( g_MapTileArray )
                 *((_DWORD *)g_MapTileArray + 20 * (__int16)v118 + 20 * unk_89C2DC * SHIWORD(v118) + 14) = v85[194];
             }
@@ -1360,12 +1364,12 @@ LABEL_6:
                   LOWORD(v115) = v94 + 2 + v117[0];
                   HIWORD(v115) = v117[1];
                   v149 = v115;
-                  Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v169, (MouseClass *)&v149);
+                  Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v169, (MouseClass *)&v149);
                   ++v94;
                   --v95;
-                  *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+                  *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                            + 4
-                                                                           * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57976]
+                                                                           * *(_DWORD *)&g_NetworkPlayerBuffer[80404]
                                                                            + 4);
                 }
                 else
@@ -1374,12 +1378,12 @@ LABEL_6:
                   LOWORD(v120) = v94 + 2 + v117[0];
                   HIWORD(v120) = v117[1];
                   v141 = v120;
-                  Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v173, (MouseClass *)&v141);
+                  Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v173, (MouseClass *)&v141);
                   v94 += 2;
                   v95 -= 2;
-                  *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+                  *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                            + 4
-                                                                           * *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57976]
+                                                                           * *(_DWORD *)&g_NetworkPlayerBuffer[80404]
                                                                            + 8);
                 }
                 GenerateTerrainMap(0, 0x10000, v84, (MapClass *)v124[194], &v116, 0);
@@ -1394,38 +1398,38 @@ LABEL_6:
             HIWORD(v115) = v130 + v128;
             LOWORD(v115) = (_WORD)v131 - 4;
             v158 = v115;
-            v66 = (MouseClass *)*((char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v158) + 283);
-            v67 = *(IUnknown **)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576] + 4 * (_DWORD)dword_ABB110);
+            v66 = (MouseClass *)*((char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v158) + 283);
+            v67 = *(IUnknown **)(*(_DWORD *)&g_NetworkPlayerBuffer[5872] + 4 * (_DWORD)dword_ABB110);
             v120 = v66;
-            *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = v67;
-            Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v174, (MouseClass *)v119);
+            *(_DWORD *)&DataGlobal_87F8E4[4268] = v67;
+            Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v174, (MouseClass *)v119);
             v68 = v124;
             GenerateTerrainMap(0, 0x10000, (char)v66, (MapClass *)v124[194], &v116, 0);
-            *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+            *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                      + 4 * (_DWORD)dword_ABB110
                                                                      + 12);
             v126 = v65 + 2;
             LOWORD(v115) = v119[0];
             HIWORD(v115) = v119[1] - (v65 + 2);
             v160 = v115;
-            Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v176, (MouseClass *)&v160);
+            Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v176, (MouseClass *)&v160);
             GenerateTerrainMap(0, 0x10000, (char)v66, (MapClass *)v68[194], &v116, 0);
             v115 = (MouseClass *)(*(_DWORD *)v119 - 0x10000);
             v162 = *(_DWORD *)v119 - 0x10000;
-            v69 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v162);
+            v69 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v162);
             v70 = v129 + 2;
             v69[14] = 0xFFFF;
             v126 = v70;
             LOWORD(v115) = v119[0];
             HIWORD(v115) = v119[1] + v70;
             v143 = v115;
-            *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v143) + 14) = 0xFFFF;
+            *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v143) + 14) = 0xFFFF;
             for ( m = 0; m < v65 + 2; v72[283] -= 4 )
             {
               LOWORD(v115) = v119[0];
               HIWORD(v115) = v119[1] - m;
               v154 = v115;
-              v72 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v154);
+              v72 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v154);
               ++m;
             }
             v73 = v119[1];
@@ -1444,10 +1448,10 @@ LABEL_6:
               && v75 - v74 < g_MapCellHeight_Value
               && v75 + v74 <= g_MapCellCount )
             {
-              *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118) + 14) = 0xFFFF;
-              v77 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118);
+              *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118) + 14) = 0xFFFF;
+              v77 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118);
               v77[283] += 4;
-              *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v118) + 282) = 0;
+              *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v118) + 282) = 0;
               if ( g_MapTileArray )
                 *((_DWORD *)g_MapTileArray + 20 * (__int16)v118 + 20 * unk_89C2DC * SHIWORD(v118) + 14) = v124[194];
               v76 = g_MapCellHeight_Value;
@@ -1456,10 +1460,10 @@ LABEL_6:
             v78 = v117[1] + v117[0];
             if ( v78 > v76 && v117[0] - v117[1] < v76 && v117[1] - v117[0] < v76 && v78 <= g_MapCellCount )
             {
-              *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v117) + 14) = 0xFFFF;
-              v79 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v117);
+              *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v117) + 14) = 0xFFFF;
+              v79 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v117);
               v79[283] += 4;
-              *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v117) + 282) = 0;
+              *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v117) + 282) = 0;
               if ( g_MapTileArray )
                 *((_DWORD *)g_MapTileArray + 20 * v117[0] + 20 * unk_89C2DC * v117[1] + 14) = v124[194];
               v73 = v119[1];
@@ -1478,10 +1482,10 @@ LABEL_6:
                   HIWORD(v115) = v73 - (v80 + 1);
                   LOWORD(v115) = v119[0] + 1;
                   v153 = v115;
-                  Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v165, (MouseClass *)&v153);
+                  Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v165, (MouseClass *)&v153);
                   ++v80;
                   --v81;
-                  *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+                  *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                            + 4 * (_DWORD)dword_ABB110
                                                                            + 4);
                 }
@@ -1491,10 +1495,10 @@ LABEL_6:
                   HIWORD(v121) = v73 - (v80 + 2);
                   LOWORD(v121) = v119[0] + 1;
                   v145 = v121;
-                  Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)&v171, (MouseClass *)&v145);
+                  Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v171, (MouseClass *)&v145);
                   v80 += 2;
                   v81 -= 2;
-                  *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3800] = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576]
+                  *(_DWORD *)&DataGlobal_87F8E4[4268] = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872]
                                                                            + 4 * (_DWORD)dword_ABB110
                                                                            + 8);
                 }

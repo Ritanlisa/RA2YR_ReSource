@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/MSEngine_e4.hpp"
+#include "e4/classes/GameClass_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x5ACD30
 namespace gamemd {

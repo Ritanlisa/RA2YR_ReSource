@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x657DA0
 int Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
@@ -60,9 +62,9 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
     {
       for ( i = 0; i < 32; i += 4 ) /*0x657df1*/
       {
-        DlgItem = GetDlgItem(hDlg, *(int *)((char *)&MEMORY[0x8391FC] + i)); /*0x657dfb*/
+        DlgItem = GetDlgItem(hDlg, *(int *)((char *)&DataGlobal_8391FC + i)); /*0x657dfb*/
         SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x657e10*/
-        v8 = GetDlgItem(hDlg, *(int *)((char *)&MEMORY[0x83921C] + i)); /*0x657e1a*/
+        v8 = GetDlgItem(hDlg, *(int *)((char *)&DataGlobal_83921C + i)); /*0x657e1a*/
         SendMessageA(v8, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x657e29*/
       }
       v40 = 0; /*0x657e3e*/
@@ -72,8 +74,8 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
       v38 = 0; /*0x657e54*/
       do /*0x65807d*/
       {
-        v9 = GetDlgItem(hDlg, MEMORY[0x839240][v38]); /*0x657e6a*/
-        hWnd = GetDlgItem(hDlg, MEMORY[0x839260][v38]); /*0x657e84*/
+        v9 = GetDlgItem(hDlg, DataGlobal_839240[v38]); /*0x657e6a*/
+        hWnd = GetDlgItem(hDlg, DataGlobal_839260[v38]); /*0x657e84*/
         v10 = v32; /*0x657e8b*/
         v31 = v32; /*0x657e8d*/
         if ( v32 == *((_DWORD *)HouseClass_Player + 12) ) /*0x657e91*/
@@ -86,8 +88,8 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
           && *(_BYTE *)(*(_DWORD *)(v11 + 52) + 421) )
         {
           if ( !BYTE1(g_RulesClass_Instance[1].InfantryBrute) /*0x657ef9*/
-            || (#375 *)MEMORY[0xAC1198] == HouseClass_Player
-            || MEMORY[0xA8B244] == 2 )
+            || (#375 *)HouseClass_Observer == HouseClass_Player
+            || g_GameOptionsFlags == 2 )
           {
             ShowWindow(v9, 0); /*0x657f73*/
           }
@@ -99,19 +101,19 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
             HouseClass::IsAlliedWith(hDlga, HouseClass_Player); /*0x657f3c*/
             globalHelper_003DD0(v9); /*0x657f45*/
             v40 = 1; /*0x657f4f*/
-            if ( MEMORY[0xA8B538] || !(unsigned __int8)House::IsCurrentPlayer(hDlga) ) /*0x657f5c*/
+            if ( MuteSWLaunches || !(unsigned __int8)House::IsCurrentPlayer(hDlga) ) /*0x657f5c*/
               EnableWindow(v9, 0); /*0x657f68*/
           }
           if ( (unsigned __int8)House::IsCurrentPlayer(hDlga) ) /*0x657f79*/
           {
-            if ( MEMORY[0xA8B538] ) /*0x657f97*/
+            if ( MuteSWLaunches ) /*0x657f97*/
             {
               SendMessageA(hWnd, 0xF1u, 1u, 0); /*0x657fcc*/
               EnableWindow(hWnd, 0); /*0x657fd5*/
             }
             else
             {
-              SendMessageA(hWnd, 0xF1u, *((unsigned __int8 *)&MEMORY[0xA8D108] + v31), 0); /*0x657fb0*/
+              SendMessageA(hWnd, 0xF1u, *((unsigned __int8 *)&DataGlobal_A8D108 + v31), 0); /*0x657fb0*/
             }
             v39 = 1; /*0x657fb6*/
           }
@@ -126,14 +128,14 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
           hDlgb = GetDlgItem(hDlg, ResourceID_Hardcoded); /*0x657ff1*/
           EnableWindow(hDlgb, 0); /*0x657ff5*/
           ShowWindow(hDlgb, 0); /*0x658002*/
-          hDlgc = GetDlgItem(hDlg, MEMORY[0x839200][v38]); /*0x658015*/
+          hDlgc = GetDlgItem(hDlg, DataGlobal_839200[v38]); /*0x658015*/
           EnableWindow(hDlgc, 0); /*0x658019*/
           ShowWindow(hDlgc, 0); /*0x658026*/
           EnableWindow(v9, 0); /*0x65802b*/
           ShowWindow(v9, 0); /*0x658034*/
           EnableWindow(hWnd, 0); /*0x65803d*/
           ShowWindow(hWnd, 0); /*0x658046*/
-          v13 = GetDlgItem(hDlg, MEMORY[0x839220][v38]); /*0x658056*/
+          v13 = GetDlgItem(hDlg, DataGlobal_839220[v38]); /*0x658056*/
           EnableWindow(v13, 0); /*0x65805b*/
           ShowWindow(v13, 0); /*0x658064*/
         }
@@ -160,11 +162,11 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
           ShowWindow(v17, 5); /*0x6580d4*/
           if ( g_GameMode_Current[0] == 3 ) /*0x6580de*/
           {
-            SendMessageA(v17, 0xF1u, (unsigned __int8)MEMORY[0xA8D110], 0); /*0x6580ef*/
+            SendMessageA(v17, 0xF1u, (unsigned __int8)DataGlobal_A8D110, 0); /*0x6580ef*/
           }
           else if ( g_GameMode_Current[0] == 4 ) /*0x6580f4*/
           {
-            SendMessageA(v17, 0xF1u, BYTE1(MEMORY[0xA8D110]), 0); /*0x658106*/
+            SendMessageA(v17, 0xF1u, BYTE1(DataGlobal_A8D110), 0); /*0x658106*/
           }
         }
         else
@@ -176,7 +178,7 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
       if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x658124*/
       {
         v18 = GetDlgItem(hDlg, 1062); /*0x658134*/
-        v19 = WideString::GetOrEmpty_Alt((wchar_t **)(MEMORY[0xA8B23C] + 32)); /*0x658139*/
+        v19 = WideString::GetOrEmpty_Alt((wchar_t **)(g_GameStateFlags + 32)); /*0x658139*/
         SendMessageA(v18, 0x4B2u, 0, (LPARAM)v19); /*0x658147*/
       }
       v20 = GetDlgItem(hDlg, 1819); /*0x658153*/
@@ -197,15 +199,15 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
     }
     return 0; /*0x6581b7*/
   }
-  v22 = &MEMORY[0x83923C]; /*0x6581e1*/
+  v22 = &DataGlobal_83923C; /*0x6581e1*/
   while ( *v22 != DlgCtrlID ) /*0x6581e8*/
   {
-    if ( (int)++v22 >= (int)&MEMORY[0x83925C] ) /*0x6581f3*/
+    if ( (int)++v22 >= (int)&DataGlobal_83925C ) /*0x6581f3*/
     {
-      v23 = &MEMORY[0x83925C]; /*0x6581f5*/
+      v23 = &DataGlobal_83925C; /*0x6581f5*/
       while ( *v23 != DlgCtrlID ) /*0x6581fc*/
       {
-        if ( (int)++v23 >= (int)MEMORY[0x83927C] ) /*0x658207*/
+        if ( (int)++v23 >= (int)g_Str_File_OPTBTN_SHP ) /*0x658207*/
         {
           if ( DlgCtrlID == 1840 ) /*0x6582d8*/
           {
@@ -214,11 +216,11 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
             {
               if ( g_GameMode_Current[0] == 3 ) /*0x6582ee*/
               {
-                LOBYTE(MEMORY[0xA8D110]) = v29 == 1; /*0x6582f9*/
+                LOBYTE(DataGlobal_A8D110) = v29 == 1; /*0x6582f9*/
                 return 0; /*0x658305*/
               }
               if ( g_GameMode_Current[0] == 4 ) /*0x65830b*/
-                BYTE1(MEMORY[0xA8D110]) = v29 == 1; /*0x658313*/
+                BYTE1(DataGlobal_A8D110) = v29 == 1; /*0x658313*/
             }
           }
           return 0; /*0x658313*/
@@ -226,13 +228,13 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
       }
       if ( HIWORD(a3) != 1 && HIWORD(a3) ) /*0x65828e*/
         return 0; /*0x65828e*/
-      v27 = &MEMORY[0x83925C]; /*0x658298*/
+      v27 = &DataGlobal_83925C; /*0x658298*/
       v28 = 0; /*0x6582a0*/
       while ( *v27 != DlgCtrlID ) /*0x6582a4*/
       {
         ++v27; /*0x6582a6*/
         ++v28; /*0x6582a9*/
-        if ( (int)v27 >= (int)MEMORY[0x83927C] ) /*0x6582b0*/
+        if ( (int)v27 >= (int)g_Str_File_OPTBTN_SHP ) /*0x6582b0*/
         {
           v28 = -1; /*0x6582b2*/
           break; /*0x6582b2*/
@@ -240,19 +242,19 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
       }
       if ( v28 == *((_DWORD *)HouseClass_Player + 12) ) /*0x6582bd*/
         v28 = 0; /*0x6582bf*/
-      *((_BYTE *)&MEMORY[0xA8D108] + v28) = HIWORD(a3) == 1; /*0x6582c3*/
+      *((_BYTE *)&DataGlobal_A8D108 + v28) = HIWORD(a3) == 1; /*0x6582c3*/
       return 0; /*0x6582d0*/
     }
   }
   if ( HIWORD(a3) > 1u ) /*0x658214*/
     return 0; /*0x658214*/
   v24 = 0; /*0x65821e*/
-  v25 = &MEMORY[0x83923C]; /*0x658220*/
+  v25 = &DataGlobal_83923C; /*0x658220*/
   while ( *v25 != DlgCtrlID ) /*0x658227*/
   {
     ++v25; /*0x658229*/
     ++v24; /*0x65822c*/
-    if ( (int)v25 >= (int)&MEMORY[0x83925C] ) /*0x658233*/
+    if ( (int)v25 >= (int)&DataGlobal_83925C ) /*0x658233*/
     {
       v26 = -1; /*0x658235*/
       goto LABEL_60; /*0x658235*/

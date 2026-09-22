@@ -13,6 +13,7 @@
 #include "core/load_options.hpp"
 #include "core/math.hpp"
 #include "core/utility_ext.hpp"
+#include "e4/e4_globals.hpp"
 
 // 0x48BAA0
 namespace gamemd { int Rect::SetRedraw(int a1) {
@@ -543,10 +544,10 @@ void __thiscall Player_RandomAssign(_DWORD *this)
   int v17; // [esp+14h] [ebp-4h]
 
   Debug::Log(); /*0x69b8d0*/
-  v1 = MEMORY[0xA8DA84]; /*0x69b8d5*/
+  v1 = Game_PlayerCount; /*0x69b8d5*/
   for ( i = 0; i < v1; ++i ) /*0x69b8e2*/
   {
-    v3 = *(_DWORD *)(MEMORY[0xA8DA78] + 4 * i); /*0x69b8f2*/
+    v3 = *(_DWORD *)(Game_PlayerInfoArray + 4 * i); /*0x69b8f2*/
     v4 = *(_DWORD *)(v3 + 79); /*0x69b8f5*/
     if ( v4 == -3 || *(_DWORD *)(v3 + 75) == -3 ) /*0x69b8ff*/
     {
@@ -564,25 +565,25 @@ void __thiscall Player_RandomAssign(_DWORD *this)
         if ( v5 ) /*0x69b915*/
           *(_DWORD *)(v3 + 75) = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 108))(v5); /*0x69b91c*/
         else
-          *(_DWORD *)(v3 + 75) = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 9); /*0x69b935*/
+          *(_DWORD *)(v3 + 75) = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 9); /*0x69b935*/
       }
       if ( *(_DWORD *)(v3 + 87) == -2 ) /*0x69b941*/
       {
         *(_DWORD *)(v3 + 87) = -1; /*0x69b943*/
         *(_DWORD *)(v3 + 83) = -1; /*0x69b946*/
         do /*0x69b966*/
-          v6 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 7); /*0x69b95e*/
+          v6 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x69b95e*/
         while ( (unsigned __int8)NetworkSession::IsPlayerInGame(v6) ); /*0x69b966*/
         *(_DWORD *)(v3 + 83) = v6; /*0x69b96f*/
       }
     }
     if ( !i ) /*0x69b989*/
-      MEMORY[0xA8B394] = *(_DWORD *)(v3 + 83); /*0x69b98e*/
+      g_TauntCommandState = *(_DWORD *)(v3 + 83); /*0x69b98e*/
     ToWideStringChar((char *)v3); /*0x69b9b1*/
     Debug::Log(); /*0x69b9bd*/
   }
   v17 = 0; /*0x69b9ce*/
-  v7 = MEMORY[0xA8B29C]; /*0x69b9d6*/
+  v7 = g_CampaignPlayerArray; /*0x69b9d6*/
   do /*0x69baa0*/
   {
     if ( *v7 == -2 ) /*0x69b9e4*/
@@ -591,22 +592,22 @@ void __thiscall Player_RandomAssign(_DWORD *this)
       if ( v8 ) /*0x69b9ef*/
         v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 112))(v8); /*0x69b9f3*/
       else
-        v9 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 9); /*0x69ba07*/
+        v9 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 9); /*0x69ba07*/
       *v7 = v9; /*0x69ba0c*/
     }
     if ( v7[8] == -2 ) /*0x69ba11*/
     {
       while ( 1 ) /*0x69ba23*/
       {
-        v10 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 7); /*0x69ba23*/
+        v10 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x69ba23*/
         if ( v10 == -2 ) /*0x69ba2a*/
           break; /*0x69ba2a*/
         v11 = 0; /*0x69ba32*/
-        if ( MEMORY[0xA8DA84] <= 0 ) /*0x69ba36*/
+        if ( Game_PlayerCount <= 0 ) /*0x69ba36*/
         {
 LABEL_32:
           v15 = 33; /*0x69ba5e*/
-          while ( MEMORY[0xA8B238][v15] != v10 ) /*0x69ba69*/
+          while ( g_GameMode_Current[v15] != v10 ) /*0x69ba69*/
           {
             if ( ++v15 >= 41 ) /*0x69ba74*/
               goto LABEL_35; /*0x69ba74*/
@@ -614,7 +615,7 @@ LABEL_32:
         }
         else
         {
-          v12 = MEMORY[0xA8DA78]; /*0x69ba38*/
+          v12 = Game_PlayerInfoArray; /*0x69ba38*/
           while ( 1 ) /*0x69ba3e*/
           {
             v13 = *(_DWORD *)v12; /*0x69ba3e*/
@@ -626,7 +627,7 @@ LABEL_32:
               break; /*0x69ba54*/
             ++v11; /*0x69ba56*/
             v12 += 4; /*0x69ba57*/
-            if ( v11 >= MEMORY[0xA8DA84] ) /*0x69ba5c*/
+            if ( v11 >= Game_PlayerCount ) /*0x69ba5c*/
               goto LABEL_32; /*0x69ba5c*/
           }
         }
@@ -638,7 +639,7 @@ LABEL_35:
     ++v7; /*0x69ba92*/
     ++v17; /*0x69ba9c*/
   }
-  while ( (int)v7 < (int)MEMORY[0xA8B2BC] ); /*0x69baa0*/
+  while ( (int)v7 < (int)g_CampaignConfig ); /*0x69baa0*/
 }
 } }
 // 0x6ABAC0
@@ -1054,7 +1055,7 @@ namespace gamemd { void* COMClass::adviseConnection(void* a1, int a2, void* a3) 
       swprintf((wchar_t *const)&aP0.GameSetup_field_0x04, (const size_t)v8, (const wchar_t *const)v11, v12);
       if ( WideString::Length(a3) )
       {
-        WideString::Assign((wchar_t **)&v14, (CampaignScore *)&stru_830620.__pad_579C[50716]);
+        WideString::Assign((wchar_t **)&v14, (CampaignScore *)&stru_830620[73144]);
         v9 = ConcatWString(&aP0, a3, (const wchar_t **)&v14);
         WideString::AssignConcat((const wchar_t **)v9, (wchar_t **)&v15, (wchar_t *)&aP0.GameSetup_field_0x04);
         DeleteAndZero::Alt((void **)&v15);

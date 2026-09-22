@@ -11,6 +11,11 @@
 #include "e4/classes/E4Recv_6D1E30_e4.hpp"
 #include "e4/classes/E4Recv_721D10_e4.hpp"
 #include "e4/classes/E4Recv_728A00_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/Scenario_e4.hpp"
 
 // 0x6F19B0
 namespace gamemd {
@@ -28,29 +33,29 @@ int __fastcall SmallFunc_6F19B0(char *a1, int a2)
   TeamTypeClass *v9; // esi
   char Source[32]; // [esp+10h] [ebp-20h] BYREF
 
-  result = INIClass::GetKeyCount(a1, (INIClass *)&stru_830620.__pad_579C[54080]); /*0x6f19c1*/
+  result = INIClass::GetKeyCount(a1, (INIClass *)&stru_830620[76508]); /*0x6f19c1*/
   v4 = result; /*0x6f19c6*/
   for ( i = 0; (int)i < v4; *(_DWORD *)v9[2].__pad_0 = a2 ) /*0x6f19cc*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (CCINIClass *)&stru_830620.__pad_579C[54080], i); /*0x6f19db*/
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (CCINIClass *)&stru_830620[76508], i); /*0x6f19db*/
     INIClass::GetString( /*0x6f19f4*/
       (unsigned __int8 ***)a1,
-      (INIClass *)&stru_830620.__pad_579C[54080],
+      (INIClass *)&stru_830620[76508],
       StringByIndex,
-      (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+      (INIClass *)&DataGlobal_87F8E4[42624],
       (INIClass *)Source,
       32);
     if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
     v7 = 0; /*0x6f1a2a*/
-    if ( *(int *)&MEMORY[0xA8D63C].__pad_14B0[452] > 0 ) /*0x6f1a2e*/
+    if ( *(int *)&g_NetworkPlayerBuffer[5748] > 0 ) /*0x6f1a2e*/
     {
-      while ( _strcmpi((char *)(*(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[440] + 4 * v7) + 36), Source) ) /*0x6f1a4c*/
+      while ( _strcmpi((char *)(*(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5736] + 4 * v7) + 36), Source) ) /*0x6f1a4c*/
       {
-        if ( ++v7 >= *(int *)&MEMORY[0xA8D63C].__pad_14B0[452] ) /*0x6f1a56*/
+        if ( ++v7 >= *(int *)&g_NetworkPlayerBuffer[5748] ) /*0x6f1a56*/
           goto LABEL_7; /*0x6f1a56*/
       }
-      v9 = *(TeamTypeClass **)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[440] + 4 * v7); /*0x6f1a7f*/
+      v9 = *(TeamTypeClass **)(*(_DWORD *)&g_NetworkPlayerBuffer[5736] + 4 * v7); /*0x6f1a7f*/
       goto LABEL_11; /*0x6f1a82*/
     }
 LABEL_7:
@@ -194,7 +199,7 @@ int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, 
 {
 {
     INIClass Destination[2];
-    if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&DataGlobal_87F8E4[42624], Destination, 128) )
     return WarheadTypeClass::FindOrCreate(Destination[0].__pad_0);
     else
     return a4;
@@ -208,7 +213,7 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 {
 {
     INIClass Destination[2];
-    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374.__pad_579C[33876], Destination, 128) )
+    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374[56304], Destination, 128) )
     return BuildingTypeClass::FindOrCreate(Destination[0].__pad_0);
     else
     return (BuildingTypeClass *)a4;
@@ -222,7 +227,7 @@ TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsig
 {
 {
     INIClass Destination[2];
-    if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&DataGlobal_87F8E4[42624], Destination, 128) )
     return TerrainTypeClass::FindOrCreate(Destination[0].__pad_0);
     else
     return (TerrainTypeClass *)a4;

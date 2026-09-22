@@ -38,6 +38,14 @@
 #include "e4/classes/E4Recv_7BEA40_e4.hpp"
 #include "e4/classes/E4Recv_7BEFE0_e4.hpp"
 #include "e4/classes/E4Recv_7BF0B0_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/BSurface_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/E4Recv_7BF140_e4.hpp"
 #include "e4/classes/E4Recv_7BF190_e4.hpp"
 
@@ -382,9 +390,9 @@ LABEL_33:
       do /*0x7b08b9*/
       {
         v28 = *v52++; /*0x7b0853*/
-        v29 = (unsigned __int8)(v28 >> MEMORY[0x8A0DD0]) << g_BitShift_Green_0; /*0x7b086a*/
-        v30 = (unsigned __int8)(v28 >> MEMORY[0x8A0DE0]) << MEMORY[0x8A0DE4]; /*0x7b087c*/
-        LOBYTE(v28) = (unsigned __int8)(v28 >> MEMORY[0x8A0DD8]) << MEMORY[0x8A0DDC]; /*0x7b088e*/
+        v29 = (unsigned __int8)(v28 >> g_DDraw_BlueMask) << g_BitShift_Green_0; /*0x7b086a*/
+        v30 = (unsigned __int8)(v28 >> g_BitMask_Green) << g_BitMask_Blue; /*0x7b087c*/
+        LOBYTE(v28) = (unsigned __int8)(v28 >> g_BitShift_Blue) << g_BitShift_Blue; /*0x7b088e*/
         v27[v114] = v29; /*0x7b0897*/
         *v27 = v30; /*0x7b089a*/
         v27[v115] = v28; /*0x7b08a5*/
@@ -695,7 +703,7 @@ char **__fastcall ProcessStringAndCopy(AbstractClass *aP0, CCINIClass *aP1, char
   }
   v7 = *a2; /*0x7b6459*/
   if ( !*a2 ) /*0x7b6459*/
-    v7 = &stru_87C374.__pad_579C[33876]; /*0x7b645f*/
+    v7 = &stru_87C374[56304]; /*0x7b645f*/
   String_Process_7B4A10((const char **)&Block, v7); /*0x7b6469*/
   v8 = (const char *)Block; /*0x7b646e*/
   *(_DWORD *)aP0->__pad_0 = 0; /*0x7b6472*/
@@ -748,8 +756,8 @@ char **__fastcall ConcatStringAlloc(ObjectClass *aP0, const char **a1, char **a2
   }
   else
   {
-    v7 = (ObjectClass *)&stru_87C374.__pad_579C[33876]; /*0x7b6532*/
-    a2a = (ObjectClass *)&stru_87C374.__pad_579C[33876]; /*0x7b6537*/
+    v7 = (ObjectClass *)&stru_87C374[56304]; /*0x7b6532*/
+    a2a = (ObjectClass *)&stru_87C374[56304]; /*0x7b6537*/
   }
   if ( v7 ) /*0x7b6545*/
   {
@@ -2825,7 +2833,7 @@ char ** FormatStringInt(INIClass * aP0, MPCooperative * aP1, ObjectClass * aP2)
     size_t v5;
     char *v6;
     char Buffer[16];
-    sprintf(Buffer, (ObjectClass *)&DataGlobal_84DD9C.__pad_71C[212], (INIClass *)aP2);
+    sprintf(Buffer, (ObjectClass *)&DataGlobal_84DD9C[2032], (INIClass *)aP2);
     sprintf(Buffer, (ObjectClass *)Buffer, (INIClass *)aP1);
     *(int *)aP0->__pad_0 = 0;
     if ( Buffer )
@@ -2889,7 +2897,7 @@ char E4Recv_7B6A60::sub_7B6A60(ObjectClass * aP1)
     size_t v5;
     wchar_t *v6;
     v2 = *(wchar_t **)aP1->__pad_0;
-    if ( *(int *)aP1->__pad_0 || (v2 = (wchar_t *)&DataGlobal_87C374.__pad_579C[23588], &DataGlobal_87C374 != (IUnknown *)-46016) )
+    if ( *(int *)aP1->__pad_0 || (v2 = (wchar_t *)&DataGlobal_87C374[46016], &DataGlobal_87C374 != (IUnknown *)-46016) )
   {
     v4 = (ObjectClass *)*(void**)this;
     v5 = wcslen(v2) + 1;
@@ -3019,7 +3027,7 @@ wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1)
     v5 = (AbstractClass *)__2_YAPAXI_Z(2 * v4 + 2);
     v6 = (char *)*a1;
     if ( !*a1 )
-    v6 = &DataGlobal_87C374.__pad_579C[33876];
+    v6 = &DataGlobal_87C374[56304];
     BulkCharToWide(v5, (unsigned char *)v6, v4);
     if ( v5 )
     v7 = wcslen((const wchar_t *)v5) + 1;
@@ -3123,7 +3131,7 @@ wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar
   }
     v9 = (CampaignScore *)*a2;
     if ( !*a2 )
-    v9 = (CampaignScore *)&DataGlobal_87C374.__pad_579C[23588];
+    v9 = (CampaignScore *)&DataGlobal_87C374[46016];
     WString::Append((wchar_t **)&String, v9);
     *(int *)aP0->__pad_0 = 0;
     if ( String )
@@ -3166,7 +3174,7 @@ wchar_t ** ConcatWString(GameSetup * aP0, const wchar_t ** a1, const wchar_t ** 
     wcscpy(v5, *a1);
   }
     v7 = (wchar_t *)*a2;
-    if ( *a2 || (v7 = (wchar_t *)&DataGlobal_87C374.__pad_579C[23588], &DataGlobal_87C374 != (IUnknown *)-46016) )
+    if ( *a2 || (v7 = (wchar_t *)&DataGlobal_87C374[46016], &DataGlobal_87C374 != (IUnknown *)-46016) )
   {
     v8 = (CCINIClass *)v5;
     v9 = wcslen(v7) + 1;

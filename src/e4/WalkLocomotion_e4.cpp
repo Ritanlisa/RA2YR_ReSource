@@ -2,6 +2,11 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/WalkLocomotion_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
 
 // 0x6A01A0
 namespace gamemd {
@@ -319,7 +324,7 @@ char __thiscall WalkLocomotion::ProcessCollision(int this, char a2)
       *(_DWORD *)v182 = *(_DWORD *)(this + 52);
       *(_DWORD *)&v182[4] = *(_DWORD *)(this + 56);
       *(_DWORD *)&v182[8] = *(_DWORD *)(this + 60);
-      v6 = (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v182) + 80) & 0x100) != 0
+      v6 = (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)v182) + 80) & 0x100) != 0
          ? g_OverlayTypeConfig.field_34
          : 0;
       v7 = v6 + Cell::GetGroundHeight(v182);
@@ -430,7 +435,7 @@ LABEL_37:
   v28 = a2 == 0 ? v26 : 0;
   v29 = *(_DWORD *)&v27->__pad_1D4[1036];
   v30 = *(_DWORD *)(this + 76) + v28;
-  *(_DWORD *)&aP3.__pad_0[4] = v30;
+  *(_DWORD *)&aP3[4] = v30;
   aP3.uniqueId = v29;
   if ( v29 == 8 && this->WalkLocomotion_field_0x58 == -1 )
   {
@@ -447,9 +452,9 @@ LABEL_37:
       this->q048 = v32;
     }
     v33 = *(__int16 *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 444))(this->q00C) + 278);
-    if ( v33 >= 0 && v33 < *(int *)&MEMORY[0x89F690].__pad_579C[62236] )
+    if ( v33 >= 0 && v33 < *(int *)&g_CellDirectionOffsets[84664] )
     {
-      v34 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62224] + 4 * v33);
+      v34 = *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84652] + 4 * v33);
       aP4 = *(ObjectClass **)(v34 + 40);
       v35 = SHIWORD(aP4) << 8;
       *v31 = ((__int16)aP4 << 8) + 128;
@@ -462,10 +467,10 @@ LABEL_37:
       *(_BYTE *)(this->q00C + 1669) = 0;
       v37 = *(_DWORD *)(v34 + 48) & 7;
       aP4 = *(ObjectClass **)(v34 + 36);
-      *(_WORD *)&aP3.__pad_0[8] = *((_WORD *)&MEMORY[0x89F688].field_0 + 2 * v37) + (_WORD)aP4;
-      *(_WORD *)&aP3.__pad_0[10] = HIWORD(aP4) + *((_WORD *)&MEMORY[0x89F68A] + 2 * v37);
-      aP4 = *(ObjectClass **)&aP3.__pad_0[8];
-      v38 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP4);
+      *(_WORD *)&aP3[8] = *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v37) + (_WORD)aP4;
+      *(_WORD *)&aP3[10] = HIWORD(aP4) + *((_WORD *)&DataGlobal_89F68A + 2 * v37);
+      aP4 = *(ObjectClass **)&aP3[8];
+      v38 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&aP4);
       Coords = (ObjectClass *)CellClass::GetCoords(v38, (int *)&aP3.attachedBomb);
       v40 = (_DWORD *)(this->q00C + 1384);
       *v40 = *(_DWORD *)Coords->__pad_0;
@@ -514,7 +519,7 @@ LABEL_37:
   else
     v47 = *v45;
   aP3.objectTypeFlags = 16 * v47;
-  *(_DWORD *)&aP3.__pad_0[8] = dword_7F2960[4 * v47];
+  *(_DWORD *)&aP3[8] = dword_7F2960[4 * v47];
   if ( v29 < -1 || v29 > 8 )
   {
     *(_DWORD *)&v27->__pad_1D4[1036] = -1;
@@ -531,10 +536,10 @@ LABEL_37:
   while ( 1 )
   {
     v49 = this->q05C;
-    v50 = *(IUnknown **)&aP3.__pad_0[8];
-    *(_DWORD *)&aP3.__pad_0[4] -= 7;
-    v51 = *(_DWORD *)(*(_DWORD *)&aP3.__pad_0[8] + 12 * v49 + 4);
-    aP3.health = *(_DWORD *)(*(_DWORD *)&aP3.__pad_0[8] + 12 * v49);
+    v50 = *(IUnknown **)&aP3[8];
+    *(_DWORD *)&aP3[4] -= 7;
+    v51 = *(_DWORD *)(*(_DWORD *)&aP3[8] + 12 * v49 + 4);
+    aP3.health = *(_DWORD *)(*(_DWORD *)&aP3[8] + 12 * v49);
     aP3.estimatedHealth = v51;
     if ( !aP3.health && !v51 && v49 )
       break;
@@ -574,7 +579,7 @@ LABEL_37:
                                                    this->q00C,
                                                    &varD0);
     }
-    aP3.abstractFlags = *(_DWORD *)(*(_DWORD *)&aP3.__pad_0[8] + 12 * this->q05C + 8);
+    aP3.abstractFlags = *(_DWORD *)(*(_DWORD *)&aP3[8] + 12 * this->q05C + 8);
     v60 = WalkLocomotion::TransformCoords(
             (_DWORD *)this,
             (ObjectClass *)&aP3.lastLayer,
@@ -600,11 +605,11 @@ LABEL_37:
       (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 12) + 436))(
         this->q00C,
         &aP3.nextArrayIndex);
-      v66 = (IUnknown *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP3.customSound_controller[3]);
-      v67 = (IUnknown *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP3.nextObject);
+      v66 = (IUnknown *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&aP3.customSound_controller[3]);
+      v67 = (IUnknown *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&aP3.nextObject);
       v68 = SHIBYTE(v67->field_118);
       v69 = SHIBYTE(v66->field_118) - 4;
-      *(_DWORD *)&aP3.__pad_0[12] = v67;
+      *(_DWORD *)&aP3[12] = v67;
       if ( v68 != v69 )
         goto LABEL_78;
       if ( (v67->field_140 & 0x100) == 0 )
@@ -631,11 +636,11 @@ LABEL_79:
                 *(_DWORD *)&aP3.isAliveFlag = *(_DWORD *)&v70->__pad_74[48],
                 (int)v71 >= g_OverlayTypeConfig.field_34 + Cell::GetGroundHeight(&aP3.parachute)) )
           {
-            v72 = (TechnoClass *)*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP3.nextObject) + 58);
+            v72 = (TechnoClass *)*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&aP3.nextObject) + 58);
           }
           else
           {
-            v72 = (TechnoClass *)*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP3.nextObject) + 57);
+            v72 = (TechnoClass *)*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&aP3.nextObject) + 57);
           }
           v73 = v72;
           if ( v72 )
@@ -651,7 +656,7 @@ LABEL_79:
                   v73,
                   &aP3.attachedTag,
                   0,
-                  *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 4008),
+                  *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 4008),
                   0,
                   1,
                   1,
@@ -662,7 +667,7 @@ LABEL_79:
                   v70,
                   &aP3.attachedTag,
                   0,
-                  *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 4008),
+                  *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 4008),
                   0,
                   1,
                   0,
@@ -671,7 +676,7 @@ LABEL_79:
               v73 = nextObject;
             }
             while ( nextObject );
-            v67 = *(IUnknown **)&aP3.__pad_0[12];
+            v67 = *(IUnknown **)&aP3[12];
           }
         }
       }
@@ -736,9 +741,9 @@ LABEL_101:
           LOBYTE(v87) = 0;
           HIBYTE(v87) = *(_BYTE *)(*(_DWORD *)&aP3.bombVisible + 4);
           LOWORD(aP3.fallRate) = v87;
-          *(_DWORD *)&aP3.__pad_0[12] = aP3.uniqueId + 8 * (((((unsigned int)aP3.fallRate >> 12) + 1) >> 1) & 7);
-          v88 = (char *)(12 * *(_DWORD *)&aP3.__pad_0[12] + 8333888);
-          v89 = byte_7F2A40[12 * *(_DWORD *)&aP3.__pad_0[12]];
+          *(_DWORD *)&aP3[12] = aP3.uniqueId + 8 * (((((unsigned int)aP3.fallRate >> 12) + 1) >> 1) & 7);
+          v88 = (char *)(12 * *(_DWORD *)&aP3[12] + 8333888);
+          v89 = byte_7F2A40[12 * *(_DWORD *)&aP3[12]];
           if ( v89 )
           {
             if ( dword_7F2968[4 * v89] )
@@ -749,19 +754,19 @@ LABEL_101:
               aP3.ambientSoundController[2] = *(_DWORD *)&v90->__pad_1D4[932];
               v93 = aP3.uniqueId & 7;
               aP3.ambientSoundController[3] = v92;
-              v94 = *(_DWORD *)&MEMORY[0x89F690].__pad_48[8 * v93] + this->WalkLocomotion_field_0x40;
-              v95 = this->WalkLocomotion_field_0x44 + *(_DWORD *)&MEMORY[0x89F690].__pad_48[8 * v93 + 4];
+              v94 = *(_DWORD *)&g_CellDirectionOffsets[72][8 * v93] + this->WalkLocomotion_field_0x40;
+              v95 = this->WalkLocomotion_field_0x44 + *(_DWORD *)&g_CellDirectionOffsets[72][8 * v93 + 4];
               v96 = *(TechnoClass **)(this + 72);
               *(_DWORD *)v182 = v94;
               *(_DWORD *)&v182[8] = v96;
               *(_DWORD *)&v182[4] = v95;
               LOWORD(aP3.customSound) = v94 / 256;
               HIWORD(aP3.customSound) = v95 / 256;
-              *(_DWORD *)aP3.__pad_0 = aP3.customSound;
+              *(_DWORD *)aP3[0] = aP3.customSound;
               v97 = v90->field_0;
               LandHeight = ObjectClass::GetLandHeight(v90);
               uniqueId = aP3.uniqueId;
-              v98 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)aP3.__pad_0);
+              v98 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)aP3[0]);
               switch ( (*(int (__thiscall **)(_DWORD, void *, int, int, _DWORD, int))(v97 + 428))(
                          this->q00C,
                          v98,
@@ -777,7 +782,7 @@ LABEL_101:
                   {
                     break;
                   }
-                  v99 = *(IUnknown **)&aP3.__pad_0[12];
+                  v99 = *(IUnknown **)&aP3[12];
                   *(_BYTE *)(this + 96) = 0;
                   this->WalkLocomotion_field_0x58 = v99;
                   *(_DWORD *)&aP3.bombVisible = v88;
@@ -786,7 +791,7 @@ LABEL_101:
                   v178 = 0;
                   this->q05C = dword_7F2968[v100] - 1;
                   v101 = *v91 == g_OverlayTypeConfig.field_0;
-                  *(_DWORD *)&aP3.__pad_0[8] = dword_7F2960[v100];
+                  *(_DWORD *)&aP3[8] = dword_7F2960[v100];
                   if ( !v101
                     || this->WalkLocomotion_field_0x44 != g_OverlayTypeConfig.field_4
                     || this->q048 != g_OverlayTypeConfig.field_8 )
@@ -829,7 +834,7 @@ LABEL_101:
                     *v91 = v107;
                     this->WalkLocomotion_field_0x44 = v108;
                     this->q048 = v109;
-                    v110 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v182);
+                    v110 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)v182);
                     if ( !CrateClass::ProcessPickup(v110, v176) || *(_BYTE *)(this->q00C + 129) )
                     {
                       if ( *(_BYTE *)(this->q00C + 144) )
@@ -856,29 +861,29 @@ LABEL_101:
                   }
                   break;
                 case 1:
-                  eax134 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v182);
+                  eax134 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)v182);
                   CellClass::DamageAllObjects(eax134);
                   break;
                 case 3:
                   LOWORD(aP3.spawnStatus) = *(_DWORD *)v182 / 256;
                   v111 = *(MouseClass **)(this + 12);
                   HIWORD(aP3.spawnStatus) = *(_DWORD *)&v182[4] / 256;
-                  *(_DWORD *)&aP3.__pad_0[12] = aP3.spawnStatus;
-                  Cell::IsPassableAllied((int)v111, (__int16 *)&aP3.__pad_0[12]);
+                  *(_DWORD *)&aP3[12] = aP3.spawnStatus;
+                  Cell::IsPassableAllied((int)v111, (__int16 *)&aP3[12]);
                   break;
                 case 6:
-                  if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v182) + 80) & 0x100) == 0
+                  if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)v182) + 80) & 0x100) == 0
                     || (ecx137 = this->q00C + 156,
                         aP3.attachedBomb = *(void **)ecx137,
                         aP3.ambientSoundController[0] = *(_DWORD *)(ecx137 + 4),
                         v113 = *(TechnoClass **)(ecx137 + 8),
-                        v115 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v182) + 283),
+                        v115 = *((char *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)v182) + 283),
                         LOBYTE(aP4) = 1,
                         (int)abs32((int)v113 / g_OverlayTypeConfig.field_40 - v115) <= 2) )
                   {
                     LOBYTE(aP4) = 0;
                   }
-                  v116 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)(this + 64));
+                  v116 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)(this + 64));
                   Cell::ApplyDamage(v116, &g_OverlayTypeConfig, 1, 1, (IUnknown *)aP4);
                   break;
                 default:
@@ -889,7 +894,7 @@ LABEL_101:
         }
       }
     }
-    cc140 = *(_DWORD *)&aP3.__pad_0[4] <= 7;
+    cc140 = *(_DWORD *)&aP3[4] <= 7;
     ++this->q05C;
     if ( cc140 )
       goto LABEL_141;
@@ -899,20 +904,20 @@ LABEL_101:
   v123 = *(_DWORD *)&v120->__pad_74[40];
   v124 = *(_DWORD *)&v120->__pad_74[44];
   aP3.ambientSoundController[1] = *(_DWORD *)&v120->__pad_74[48];
-  *(_DWORD *)aP3.__pad_0 = abs32(this->WalkLocomotion_field_0x44 - v124) + abs32(this->WalkLocomotion_field_0x40 - v123);
-  v125 = Math::RoundToInt((1.0 - (double)*(int *)aP3.__pad_0 * 0.09090909090909091) * 7.0);
-  ebx145 = *(_DWORD *)&aP3.__pad_0[4];
+  *(_DWORD *)aP3[0] = abs32(this->WalkLocomotion_field_0x44 - v124) + abs32(this->WalkLocomotion_field_0x40 - v123);
+  v125 = Math::RoundToInt((1.0 - (double)*(int *)aP3[0] * 0.09090909090909091) * 7.0);
+  ebx145 = *(_DWORD *)&aP3[4];
   v120->__pad_1D4[1250] = 1;
   v126 = *(MouseClass **)(this + 12);
-  *(_DWORD *)&aP3.__pad_0[4] = v125 + ebx145;
+  *(_DWORD *)&aP3[4] = v125 + ebx145;
   v126->__pad_1D4[1251] = 0;
   v127 = *(MouseClass **)(this + 12);
   v129 = *(_DWORD *)&v127->__pad_74[40];
   v130 = *(_DWORD *)&v127->__pad_74[44];
   aP3.ambientSoundController[1] = *(_DWORD *)&v127->__pad_74[48];
-  *(_WORD *)&aP3.__pad_0[2] = v130 / 256;
+  *(_WORD *)&aP3[2] = v130 / 256;
   if ( (unsigned __int16)(v129 / 256) == (unsigned __int16)(this->WalkLocomotion_field_0x40 / 256)
-    && *(_WORD *)&aP3.__pad_0[2] == (unsigned __int16)(this->WalkLocomotion_field_0x44 / 256) )
+    && *(_WORD *)&aP3[2] == (unsigned __int16)(this->WalkLocomotion_field_0x44 / 256) )
   {
     al148 = v127->__pad_74[0];
     v127->__pad_74[0] = 0;
@@ -1004,8 +1009,8 @@ LABEL_101:
   if ( !*(_BYTE *)(this->q00C + 144) )
     return 0;
 LABEL_141:
-  cc140 = *(_DWORD *)&aP3.__pad_0[4] <= 0;
-  *(_DWORD *)(this + 76) = *(_DWORD *)&aP3.__pad_0[4];
+  cc140 = *(_DWORD *)&aP3[4] <= 0;
+  *(_DWORD *)(this + 76) = *(_DWORD *)&aP3[4];
   if ( cc140 )
     return 0;
   v117 = *(IUnknown **)(this + 88);
@@ -1026,7 +1031,7 @@ LABEL_141:
   aP3.customSound_controller[0] = *v146;
   aP3.customSound_controller[1] = v146[1];
   aP3.customSound_controller[2] = v146[2];
-  *(_DWORD *)aP3.__pad_0 = *(_DWORD *)(v144 + 8);
+  *(_DWORD *)aP3[0] = *(_DWORD *)(v144 + 8);
   v147 = *v146;
   v148 = v146[1];
   aP3.ambientSoundController[1] = v146[2];
@@ -1043,7 +1048,7 @@ LABEL_141:
   aP3.ambientSoundController[3] = esi178a + v151;
   aP3.ambientSoundController[2] = v153;
   aP3.ambientSoundController[4] = (int)v154;
-  v155 = (IUnknown *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&aP3.ambientSoundController[2]);
+  v155 = (IUnknown *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&aP3.ambientSoundController[2]);
   v157 = (double)*(int *)(this + 76) * 0.1428571428571428;
   memset(&aP3.location[1], 0, 12);
   v177 = v157;
@@ -1055,9 +1060,9 @@ LABEL_141:
   *(_DWORD *)&aP3.hasParachute = v158;
   HIDWORD(varD0) = aP3.customSound_controller[1] + *(_DWORD *)&aP3.needsRedraw;
   v183 = (IUnknown *)&v158->__pad_0[aP3.customSound_controller[2]];
-  v159 = (IUnknown *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)aP3.customSound_controller);
+  v159 = (IUnknown *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)aP3.customSound_controller);
   aP3.fallRate = (int)v159;
-  v161 = (IUnknown *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&varD0);
+  v161 = (IUnknown *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&varD0);
   v162 = this->q00C + 156;
   *(_DWORD *)v182 = *(_DWORD *)v162;
   edx178 = *(_DWORD *)(v162 + 4);
@@ -1083,7 +1088,7 @@ LABEL_183:
   }
   *(_QWORD *)&aP3.parachute = v165;
   *(_DWORD *)&aP3.isAliveFlag = v163;
-  eax184 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&aP3.parachute);
+  eax184 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&aP3.parachute);
   v166 = *(MouseClass **)(this + 12);
   aP3.owningHouseIndex = (int)eax184;
   v168 = *(_DWORD *)&v166->__pad_74[40];
@@ -1364,12 +1369,12 @@ char __thiscall WalkLocomotion_Update(int this, _BYTE *a2, int a3, int a4)
   {
     *(_BYTE *)(this + 97) = 0;
     if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
-      || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-      || this->q048 != MEMORY[0xB07800] )
+      || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+      || this->q048 != DataGlobal_00B07800 )
     {
       this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
-      this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-      this->q048 = MEMORY[0xB07800];
+      this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+      this->q048 = DataGlobal_00B07800;
       *(_BYTE *)(this + 99) = 0;
     }
     if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 388))(this->q00C) == 2 )
@@ -1381,8 +1386,8 @@ char __thiscall WalkLocomotion_Update(int this, _BYTE *a2, int a3, int a4)
     return 0;
   }
   if ( *(_DWORD *)(this + 52) == g_OverlayTypeConfig
-    && *(_DWORD *)(this + 56) == MEMORY[0xB077FC]
-    && *(_DWORD *)(this + 60) == MEMORY[0xB07800] )
+    && *(_DWORD *)(this + 56) == DataGlobal_B077FC
+    && *(_DWORD *)(this + 60) == DataGlobal_00B07800 )
   {
     return 0;
   }
@@ -1464,8 +1469,8 @@ LABEL_31:
       return 0;
     }
     if ( *v22 == g_OverlayTypeConfig
-      && *(_DWORD *)(this + 56) == MEMORY[0xB077FC]
-      && *(_DWORD *)(this + 60) == MEMORY[0xB07800] )
+      && *(_DWORD *)(this + 56) == DataGlobal_B077FC
+      && *(_DWORD *)(this + 60) == DataGlobal_00B07800 )
     {
       return 0;
     }
@@ -1482,12 +1487,12 @@ LABEL_31:
        || (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 388))(this->q00C) == 11) )
     {
       if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
-        || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-        || this->q048 != MEMORY[0xB07800] )
+        || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+        || this->q048 != DataGlobal_00B07800 )
       {
         this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
-        this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-        this->q048 = MEMORY[0xB07800];
+        this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+        this->q048 = DataGlobal_00B07800;
         *(_BYTE *)(this + 99) = 0;
       }
       v29 = *(_DWORD **)(this + 12);
@@ -1517,17 +1522,17 @@ LABEL_31:
                         &v226);
       v32 = v31[1];
       v33 = ((unsigned int)((*Value >> 12) + 1) >> 1) & 7;
-      LOWORD(a2) = LOWORD(MEMORY[0x89F688][v33]) + *v31 / 256;
-      HIWORD(a2) = v32 / 256 + HIWORD(MEMORY[0x89F688][v33]);
+      LOWORD(a2) = LOWORD(Direction_X_Offsets[v33]) + *v31 / 256;
+      HIWORD(a2) = v32 / 256 + HIWORD(Direction_X_Offsets[v33]);
       a4 = (int)a2;
-      if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (__int16 *)&a4, 1) )
+      if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (__int16 *)&a4, 1) )
       {
         v34 = ProgressTimer::GetValue((_WORD *)(this->q00C + 904), &a2);
         v35 = *(_BYTE **)(this + 12);
         v36 = *(_DWORD *)v35;
         v37 = ((unsigned int)((*v34 >> 12) + 1) >> 1) & 7;
         LandHeight = ObjectClass::GetLandHeight(v35);
-        v38 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a4);
+        v38 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a4);
         v39 = (*(int (__thiscall **)(_DWORD, void *, unsigned int, int, _DWORD, int))(v36 + 428))(
                 this->q00C,
                 v38,
@@ -1543,7 +1548,7 @@ LABEL_31:
         }
         else if ( v39 == 6 )
         {
-          v41 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a4);
+          v41 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a4);
           v42 = (_DWORD *)(this->q00C + 156);
           v226 = (_DWORD *)*v42;
           v43 = v42[2];
@@ -1554,7 +1559,7 @@ LABEL_31:
           LODWORD(v216) = ((__int16)a4 << 8) + 128;
           HIDWORD(v216) = (SHIWORD(a4) << 8) + 128;
           GroundHeight = Cell::GetGroundHeight(&v216);
-          ClosestObject = Object::FindClosestObjectCell(v41, &v220, v43 > GroundHeight + 2 * MEMORY[0xB07838], 0);
+          ClosestObject = Object::FindClosestObjectCell(v41, &v220, v43 > GroundHeight + 2 * DataGlobal_B07838, 0);
           if ( ClosestObject )
           {
             if ( Object::IsAlliedWithObjectHouse(*(_DWORD **)(this->q00C + 540), ClosestObject)
@@ -1579,20 +1584,20 @@ LABEL_31:
                 v226 = (_DWORD *)*v48;
                 v227 = (wchar_t *)v48[1];
                 v49 = *(_DWORD *)(this + 60) - v48[2];
-                if ( (int)((HIDWORD(v49) ^ v49) - HIDWORD(v49)) < 2 * MEMORY[0xB07838] )
+                if ( (int)((HIDWORD(v49) ^ v49) - HIDWORD(v49)) < 2 * DataGlobal_B07838 )
                 {
                   v220 = (_DWORD *)*v48;
                   v221 = v48[1];
                   v222 = v48[2];
-                  if ( *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v220) + 59) != 10 )
+                  if ( *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v220) + 59) != 10 )
                   {
                     if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
-                      || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-                      || this->q048 != MEMORY[0xB07800] )
+                      || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+                      || this->q048 != DataGlobal_00B07800 )
                     {
                       this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
-                      this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-                      this->q048 = MEMORY[0xB07800];
+                      this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+                      this->q048 = DataGlobal_00B07800;
                       *(_BYTE *)(this + 99) = 0;
                     }
                     v50 = *(_DWORD **)(this + 12);
@@ -1615,7 +1620,7 @@ LABEL_31:
                     v51 += 39,
                     v226 = (_DWORD *)*v51,
                     v227 = (wchar_t *)v51[1],
-                    v52 = v51[2] / MEMORY[0xB07838] - *((char *)v41 + 283),
+                    v52 = v51[2] / DataGlobal_B07838 - *((char *)v41 + 283),
                     (int)((HIDWORD(v52) ^ v52) - HIDWORD(v52)) <= 2) )
               {
                 LOBYTE(a2) = 0;
@@ -1630,12 +1635,12 @@ LABEL_31:
       if ( v54 <= 0 )
       {
         if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
-          || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-          || this->q048 != MEMORY[0xB07800] )
+          || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+          || this->q048 != DataGlobal_00B07800 )
         {
           this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
-          this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-          this->q048 = MEMORY[0xB07800];
+          this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+          this->q048 = DataGlobal_00B07800;
           *(_BYTE *)(this + 99) = 0;
         }
         if ( v53[358] )
@@ -1680,12 +1685,12 @@ LABEL_31:
       }
     }
     if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
-      || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-      || this->q048 != MEMORY[0xB07800] )
+      || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+      || this->q048 != DataGlobal_00B07800 )
     {
       this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
-      this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-      this->q048 = MEMORY[0xB07800];
+      this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+      this->q048 = DataGlobal_00B07800;
       *(_BYTE *)(this + 99) = 0;
     }
     this->WalkLocomotion_field_0x58 = -1;
@@ -1697,17 +1702,17 @@ LABEL_31:
   v57 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*v25 + 72))(v25, &v226);
   v58 = v57[1];
   v59 = *(_DWORD *)(this->q00C + 1504) & 7;
-  v60 = HIWORD(MEMORY[0x89F688][v59]);
-  LOWORD(v216) = *v57 / 256 + LOWORD(MEMORY[0x89F688][v59]);
+  v60 = HIWORD(Direction_X_Offsets[v59]);
+  LOWORD(v216) = *v57 / 256 + LOWORD(Direction_X_Offsets[v59]);
   WORD1(v216) = v58 / 256 + v60;
   v218 = LODWORD(v216);
-  if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (__int16 *)&v218, 1) )
+  if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (__int16 *)&v218, 1) )
   {
     v61 = *(_BYTE **)(this + 12);
     v62 = *(_DWORD *)v61;
     v207 = ObjectClass::GetLandHeight(v61);
     v205 = *(_DWORD *)(this->q00C + 1504);
-    v63 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v218);
+    v63 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v218);
     v64 = (*(int (__thiscall **)(_DWORD, void *, int, int, _DWORD, int))(v62 + 428))(
             this->q00C,
             v63,
@@ -1723,7 +1728,7 @@ LABEL_31:
     }
     else if ( v64 == 6 )
     {
-      v66 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v218);
+      v66 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v218);
       v67 = (_DWORD *)(this->q00C + 156);
       LODWORD(v216) = ((__int16)v218 << 8) + 128;
       HIDWORD(v216) = (SHIWORD(v218) << 8) + 128;
@@ -1734,7 +1739,7 @@ LABEL_31:
       v220 = 0;
       v221 = 0;
       v69 = Cell::GetGroundHeight(&v216);
-      v70 = Object::FindClosestObjectCell(v66, &v220, v68 > v69 + 2 * MEMORY[0xB07838], 0);
+      v70 = Object::FindClosestObjectCell(v66, &v220, v68 > v69 + 2 * DataGlobal_B07838, 0);
       if ( v70 )
       {
         if ( Object::IsAlliedWithObjectHouse(*(_DWORD **)(this->q00C + 540), v70)
@@ -1754,22 +1759,22 @@ LABEL_31:
             v226 = (_DWORD *)*v73;
             v227 = (wchar_t *)v73[1];
             v74 = *(_DWORD *)(this + 60) - v73[2];
-            if ( (int)((HIDWORD(v74) ^ v74) - HIDWORD(v74)) < 2 * MEMORY[0xB07838] )
+            if ( (int)((HIDWORD(v74) ^ v74) - HIDWORD(v74)) < 2 * DataGlobal_B07838 )
             {
               v220 = (_DWORD *)*v73;
               v221 = v73[1];
               v222 = v73[2];
-              if ( *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v220) + 59) != 10 )
+              if ( *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v220) + 59) != 10 )
               {
                 if ( this->WalkLocomotion_field_0x40 == g_OverlayTypeConfig
-                  && this->WalkLocomotion_field_0x44 == MEMORY[0xB077FC]
-                  && this->q048 == MEMORY[0xB07800] )
+                  && this->WalkLocomotion_field_0x44 == DataGlobal_B077FC
+                  && this->q048 == DataGlobal_00B07800 )
                 {
                   goto LABEL_118;
                 }
                 this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
-                this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-                this->q048 = MEMORY[0xB07800];
+                this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+                this->q048 = DataGlobal_00B07800;
                 goto LABEL_117;
               }
             }
@@ -1780,7 +1785,7 @@ LABEL_31:
                 v76 += 39,
                 v226 = (_DWORD *)*v76,
                 v227 = (wchar_t *)v76[1],
-                v77 = v76[2] / MEMORY[0xB07838] - *((char *)v66 + 283),
+                v77 = v76[2] / DataGlobal_B07838 - *((char *)v66 + 283),
                 (int)((HIDWORD(v77) ^ v77) - HIDWORD(v77)) <= 2) )
           {
             LOBYTE(v216) = 0;
@@ -1797,8 +1802,8 @@ LABEL_125:
     return 0;
   v78 = Coord::Subtract(
           &v226,
-          *(_DWORD *)(this->q00C + 156) + MEMORY[0x89F6D8][2 * (v6 & 7)],
-          *(_DWORD *)(this->q00C + 160) + MEMORY[0x89F6DC][2 * (v6 & 7)],
+          *(_DWORD *)(this->q00C + 156) + DataGlobal_89F6D8[2 * (v6 & 7)],
+          *(_DWORD *)(this->q00C + 160) + DataGlobal_89F6DC[2 * (v6 & 7)],
           *(_DWORD *)(this->q00C + 164));
   v223 = *v78;
   v224 = v78[1];
@@ -1808,18 +1813,18 @@ LABEL_125:
   v220 = *(_DWORD **)v80;
   v221 = *(_DWORD *)(v80 + 4);
   v222 = *(_DWORD *)(v80 + 8);
-  v81 = (char *)Coord::To_Cell(&MEMORY[0x87F7E8], &v220);
+  v81 = (char *)Coord::To_Cell(&DataGlobal_87F7E8, &v220);
   v82 = this->q00C;
   v83 = v81[283] + (*(_BYTE *)(v82 + 140) != 0 ? 4 : 0);
   v84 = Coord::Subtract(
           &v226,
-          *(_DWORD *)(v82 + 156) + MEMORY[0x89F6D8][2 * (v6 & 7)],
-          *(_DWORD *)(v82 + 160) + MEMORY[0x89F6DC][2 * (v6 & 7)],
+          *(_DWORD *)(v82 + 156) + DataGlobal_89F6D8[2 * (v6 & 7)],
+          *(_DWORD *)(v82 + 160) + DataGlobal_89F6DC[2 * (v6 & 7)],
           *(_DWORD *)(v82 + 164));
   v220 = (_DWORD *)*v84;
   v221 = v84[1];
   v222 = v84[2];
-  v85 = Coord::To_Cell(&MEMORY[0x87F7E8], &v220);
+  v85 = Coord::To_Cell(&DataGlobal_87F7E8, &v220);
   v86 = this->q00C;
   if ( *(_BYTE *)(v86 + 140) != ((v85[80] >> 8) & 1) )
     *(_BYTE *)(v86 + 1675) = 1;
@@ -1840,7 +1845,7 @@ LABEL_125:
   LOWORD(v216) = v223 / 256;
   WORD1(v216) = v224 / 256;
   v215 = LODWORD(v216);
-  v88 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+  v88 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
   v89 = this->q00C;
   v90 = v88;
   v220 = v88;
@@ -1927,36 +1932,36 @@ LABEL_153:
               v226 = (_DWORD *)*v117,
               v227 = (wchar_t *)v117[1],
               v118 = *(_DWORD *)(this + 60) - v117[2],
-              (int)((HIDWORD(v118) ^ v118) - HIDWORD(v118)) >= 2 * MEMORY[0xB07838])
+              (int)((HIDWORD(v118) ^ v118) - HIDWORD(v118)) >= 2 * DataGlobal_B07838)
           || (v220 = (_DWORD *)*v117,
               v221 = v117[1],
               v222 = v117[2],
-              *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v220) + 59) == 10) )
+              *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v220) + 59) == 10) )
         {
-          if ( (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215) + 80) & 0x100) == 0
+          if ( (*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 80) & 0x100) == 0
             || (v120 = (_DWORD *)(this->q00C + 156),
                 v226 = (_DWORD *)*v120,
                 v227 = (wchar_t *)v120[1],
                 v121 = v120[2],
-                v122 = *((char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215) + 283),
+                v122 = *((char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 283),
                 LOBYTE(a4) = 1,
-                (int)abs32(v121 / MEMORY[0xB07838] - v122) <= 2) )
+                (int)abs32(v121 / DataGlobal_B07838 - v122) <= 2) )
           {
             LOBYTE(a4) = 0;
           }
           v210 = a4;
-          v123 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+          v123 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           Cell::ApplyDamage(v123, (int)&g_OverlayTypeConfig, 1, 1, v210);
         }
         else
         {
           if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
-            || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-            || this->q048 != MEMORY[0xB07800] )
+            || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+            || this->q048 != DataGlobal_00B07800 )
           {
             this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
-            this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-            this->q048 = MEMORY[0xB07800];
+            this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+            this->q048 = DataGlobal_00B07800;
             *(_BYTE *)(this + 99) = 0;
           }
           v119 = *(_DWORD **)(this + 12);
@@ -1980,12 +1985,12 @@ LABEL_153:
 LABEL_155:
       v97 = (_DWORD *)(this + 64);
       if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
-        || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-        || this->q048 != MEMORY[0xB07800] )
+        || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+        || this->q048 != DataGlobal_00B07800 )
       {
         *v97 = g_OverlayTypeConfig;
-        this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-        v98 = MEMORY[0xB07800];
+        this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+        v98 = DataGlobal_00B07800;
         *(_BYTE *)(this + 99) = 0;
         this->q048 = v98;
       }
@@ -2072,12 +2077,12 @@ LABEL_209:
       {
         v220 = 0;
         v221 = 0;
-        v131 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+        v131 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
         if ( Object::FindObjectCell(v131, &v220, 0) )
         {
           v220 = 0;
           v221 = 0;
-          v132 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+          v132 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           Object = Object::FindObjectCell(v132, &v220, 0);
           if ( !Object::IsAlliedWithObjectHouse(*(_DWORD **)(this->q00C + 540), Object) )
           {
@@ -2085,18 +2090,18 @@ LABEL_209:
             v220 = 0;
             v221 = 0;
             v135 = *v134;
-            v136 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+            v136 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
             v137 = Object::FindObjectCell(v136, &v220, 0);
             (*(void (__thiscall **)(_DWORD, int, int, _DWORD))(v135 + 500))(this->q00C, 1, v137, 0);
           }
         }
-        else if ( *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215) + 17) != -1
+        else if ( *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 17) != -1
                && *(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array
-                             + *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215) + 17))
+                             + *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 17))
                            + 680) )
         {
           v138 = **(_DWORD **)(this + 12);
-          v139 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+          v139 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           (*(void (__thiscall **)(_DWORD, int, void *, _DWORD))(v138 + 500))(this->q00C, 1, v139, 0);
         }
 LABEL_219:
@@ -2115,12 +2120,12 @@ LABEL_219:
           goto LABEL_327;
         }
         if ( *v97 != g_OverlayTypeConfig
-          || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-          || this->q048 != MEMORY[0xB07800] )
+          || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+          || this->q048 != DataGlobal_00B07800 )
         {
           *v97 = g_OverlayTypeConfig;
-          this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-          this->q048 = MEMORY[0xB07800];
+          this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+          this->q048 = DataGlobal_00B07800;
           goto LABEL_117;
         }
 LABEL_118:
@@ -2140,7 +2145,7 @@ LABEL_327:
     }
     if ( v94 != 1 )
       goto LABEL_155;
-    v124 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+    v124 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
     CellClass::DamageAllObjects(v124);
     if ( (_BYTE)a3 )
     {
@@ -2149,35 +2154,35 @@ LABEL_327:
       return WalkLocomotion::Update(v208, 0, 0);
     }
     if ( this->WalkLocomotion_field_0x40 == g_OverlayTypeConfig
-      && this->WalkLocomotion_field_0x44 == MEMORY[0xB077FC]
-      && this->q048 == MEMORY[0xB07800] )
+      && this->WalkLocomotion_field_0x44 == DataGlobal_B077FC
+      && this->q048 == DataGlobal_00B07800 )
     {
       goto LABEL_118;
     }
     this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
-    this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-    this->q048 = MEMORY[0xB07800];
+    this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+    this->q048 = DataGlobal_00B07800;
 LABEL_117:
     *(_BYTE *)(this + 99) = 0;
     goto LABEL_118;
   }
 LABEL_149:
-  if ( (int)abs32(v83 - *((char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215) + 283)) >= 2 )
+  if ( (int)abs32(v83 - *((char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 283)) >= 2 )
   {
     v219 = v83;
     v95 = 1;
   }
   else
   {
-    v219 = *((char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215) + 283);
-    v95 = *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215) + 59);
+    v219 = *((char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 283);
+    v95 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 59);
   }
-  v216 = MEMORY[0x89EA40][9 * v95
+  v216 = DataGlobal_89EA40[9 * v95
                         + *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(this->q00C)
                                     + 1660)];
   if ( v216 > 1.0 )
     v216 = 1.0;
-  v140 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+  v140 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
   Coords = CellClass::GetCoords(v140, &v229);
   v142 = Cell::GetGroundHeight(Coords);
   v143 = (_DWORD *)(this->q00C + 156);
@@ -2301,22 +2306,22 @@ LABEL_263:
   if ( (dword_7F2A48[3 * this->WalkLocomotion_field_0x58] & 8) != 0 )
   {
     v211 = this->q00C;
-    v169 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+    v169 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
     if ( CrateClass::ProcessPickup(v169, v211) || (v170 = this->q00C, *(_BYTE *)(v170 + 129)) )
     {
       v172 = *(int **)(this + 12);
       if ( !*((_BYTE *)v172 + 144) )
         return 0;
       v173 = v154 & 7;
-      v174 = v224 + MEMORY[0x89F6DC][2 * v173];
-      v223 += MEMORY[0x89F6D8][2 * v173];
+      v174 = v224 + DataGlobal_89F6DC[2 * v173];
+      v223 += DataGlobal_89F6D8[2 * v173];
       v224 = v174;
       LOWORD(a4) = v223 / 256;
       HIWORD(a4) = v174 / 256;
       v209 = v219;
       v215 = a4;
       v175 = *v172;
-      v176 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+      v176 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
       v171 = (*(int (__thiscall **)(_DWORD, void *, unsigned int, int, _DWORD, int))(v175 + 428))(
                this->q00C,
                v176,
@@ -2328,7 +2333,7 @@ LABEL_263:
         && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(this->q00C) + 3220)
         || (v171 == 4 || v171 == 5)
         && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(this->q00C) + 3368)
-        && !*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215) + 17) )
+        && !*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 17) )
       {
         v171 = 0;
       }
@@ -2383,13 +2388,13 @@ LABEL_263:
                 v226 = (_DWORD *)*v186,
                 v227 = (wchar_t *)v186[1],
                 v187 = *(_DWORD *)(this + 60) - v186[2],
-                (int)((HIDWORD(v187) ^ v187) - HIDWORD(v187)) >= 2 * MEMORY[0xB07838])
+                (int)((HIDWORD(v187) ^ v187) - HIDWORD(v187)) >= 2 * DataGlobal_B07838)
             || (v226 = (_DWORD *)*v186,
                 v227 = (wchar_t *)v186[1],
                 v228 = v186[2],
-                *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v226) + 59) == 10) )
+                *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v226) + 59) == 10) )
           {
-            v189 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+            v189 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
             if ( (v189[80] & 0x100) == 0
               || (v190 = *(_DWORD **)(this + 12),
                   LOBYTE(a4) = 1,
@@ -2397,7 +2402,7 @@ LABEL_263:
                   v191 = *((char *)v189 + 283),
                   v226 = (_DWORD *)*v190,
                   v227 = (wchar_t *)v190[1],
-                  v192 = v190[2] / MEMORY[0xB07838] - v191,
+                  v192 = v190[2] / DataGlobal_B07838 - v191,
                   (int)((HIDWORD(v192) ^ v192) - HIDWORD(v192)) <= 2) )
             {
               LOBYTE(a4) = 0;
@@ -2407,19 +2412,19 @@ LABEL_291:
             *(_DWORD *)(this->q00C + 1504) = -1;
             this->WalkLocomotion_field_0x58 = -1;
             v223 = g_OverlayTypeConfig;
-            v224 = MEMORY[0xB077FC];
-            v225 = MEMORY[0xB07800];
+            v224 = DataGlobal_B077FC;
+            v225 = DataGlobal_00B07800;
             if ( v171 == 5 || v171 == 4 )
               return WalkLocomotion::Update(a2, v177, 1);
             goto LABEL_336;
           }
           if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
-            || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-            || this->q048 != MEMORY[0xB07800] )
+            || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+            || this->q048 != DataGlobal_00B07800 )
           {
             this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
-            this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-            this->q048 = MEMORY[0xB07800];
+            this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+            this->q048 = DataGlobal_00B07800;
             *(_BYTE *)(this + 99) = 0;
           }
           v188 = *(_DWORD **)(this + 12);
@@ -2436,7 +2441,7 @@ LABEL_291:
             goto LABEL_291;
           return 1;
         case 1:
-          v193 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v215);
+          v193 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
           CellClass::DamageAllObjects(v193);
           if ( (_BYTE)a3 )
           {
@@ -2445,12 +2450,12 @@ LABEL_291:
             return WalkLocomotion::Update(v194, 0, 0);
           }
           if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
-            || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-            || this->q048 != MEMORY[0xB07800] )
+            || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+            || this->q048 != DataGlobal_00B07800 )
           {
             this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
-            this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-            this->q048 = MEMORY[0xB07800];
+            this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+            this->q048 = DataGlobal_00B07800;
             *(_BYTE *)(this + 99) = 0;
           }
           v75 = *(_DWORD **)(this + 12);
@@ -2471,12 +2476,12 @@ LABEL_119:
         goto LABEL_327;
       }
       if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
-        || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-        || this->q048 != MEMORY[0xB07800] )
+        || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+        || this->q048 != DataGlobal_00B07800 )
       {
         this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
-        this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-        this->q048 = MEMORY[0xB07800];
+        this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+        this->q048 = DataGlobal_00B07800;
         *(_BYTE *)(this + 99) = 0;
       }
       if ( v75[358] )
@@ -2509,12 +2514,12 @@ LABEL_336:
   this->q05C = 0;
   v197 = g_OverlayTypeConfig;
   if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
-    || this->WalkLocomotion_field_0x44 != MEMORY[0xB077FC]
-    || this->q048 != MEMORY[0xB07800] )
+    || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
+    || this->q048 != DataGlobal_00B07800 )
   {
     *v195 = g_OverlayTypeConfig;
-    this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-    v198 = MEMORY[0xB07800];
+    this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+    v198 = DataGlobal_00B07800;
     *(_BYTE *)(this + 99) = 0;
     this->q048 = v198;
     v197 = g_OverlayTypeConfig;
@@ -2523,14 +2528,14 @@ LABEL_336:
   v200 = v225;
   v201 = v223 == v197;
   v202 = v224;
-  if ( !v201 || v224 != MEMORY[0xB077FC] || v225 != MEMORY[0xB07800] )
+  if ( !v201 || v224 != DataGlobal_B077FC || v225 != DataGlobal_00B07800 )
   {
     *(_BYTE *)(this + 99) = 1;
     *v195 = v199;
     this->WalkLocomotion_field_0x44 = v202;
     this->q048 = v200;
     v212 = this->q00C;
-    v203 = Coord::To_Cell(&MEMORY[0x87F7E8], &v223);
+    v203 = Coord::To_Cell(&DataGlobal_87F7E8, &v223);
     if ( CrateClass::ProcessPickup(v203, v212) && !*(_BYTE *)(this->q00C + 129) )
     {
       WalkLocomotion::MoveTo(&v223, 1);
@@ -2539,8 +2544,8 @@ LABEL_336:
     if ( *(_BYTE *)(this->q00C + 144) )
     {
       *v195 = g_OverlayTypeConfig;
-      this->WalkLocomotion_field_0x44 = MEMORY[0xB077FC];
-      this->q048 = MEMORY[0xB07800];
+      this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
+      this->q048 = DataGlobal_00B07800;
       *(_BYTE *)(this + 99) = 0;
     }
   }

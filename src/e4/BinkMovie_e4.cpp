@@ -2,6 +2,11 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BinkMovie_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x432690
 namespace gamemd {
@@ -164,8 +169,8 @@ LABEL_14:
 LABEL_15:
   if ( this->BinkMovie_field_0x4 )
   {
-    flt_89C490 = MEMORY[0xA8EB9C]; /*0x43287c*/
-    v13 = Math::RoundToInt(*(float *)&MEMORY[0xA8EB9C] * 32768.0); /*0x43288d*/
+    flt_89C490 = DataGlobal_A8EB9C; /*0x43287c*/
+    v13 = Math::RoundToInt(*(float *)&DataGlobal_A8EB9C * 32768.0); /*0x43288d*/
     BinkSetVolume(this->BinkMovie_field_0x4, v13); /*0x432897*/
     this->q024 = 0x3C /*0x4328b5*/
                            / (unsigned int)(*(_DWORD *)(this->BinkMovie_field_0x4 + 20)
@@ -406,14 +411,14 @@ bool __thiscall BinkMovie::RenderLoop(int this, DSurface *aP1, int a3, int a4)
   struct tagRECT Rect; // [esp+8h] [ebp-10h] BYREF
   DSurface *aP1a; // [esp+1Ch] [ebp+4h]
 
-  if ( flt_89C490[0] != *(float *)&MEMORY[0xA8D63C].__pad_14B0[176] ) /*0x432e58*/
+  if ( flt_89C490[0] != *(float *)&g_NetworkPlayerBuffer[5472] ) /*0x432e58*/
   {
-    flt_89C490[0] = *(float *)&MEMORY[0xA8D63C].__pad_14B0[176]; /*0x432e5f*/
-    v5 = Math::RoundToInt(*(float *)&MEMORY[0xA8D63C].__pad_14B0[176] * 32768.0); /*0x432e70*/
+    flt_89C490[0] = *(float *)&g_NetworkPlayerBuffer[5472]; /*0x432e5f*/
+    v5 = Math::RoundToInt(*(float *)&g_NetworkPlayerBuffer[5472] * 32768.0); /*0x432e70*/
     BinkSetVolume(this->BinkMovie_field_0x4, v5); /*0x432e7a*/
   }
   v6 = this->q02C; /*0x432e87*/
-  if ( MEMORY[0xA8D63C].__pad_14B0[660] ) /*0x432e8a*/
+  if ( g_NetworkPlayerBuffer[5956] ) /*0x432e8a*/
   {
     if ( !v6 ) /*0x432eb8*/
     {
@@ -422,7 +427,7 @@ bool __thiscall BinkMovie::RenderLoop(int this, DSurface *aP1, int a3, int a4)
       this->q02C = 1; /*0x432eca*/
       BinkPause(v8, 0); /*0x432ed1*/
       v9 = this->BinkMovie_field_0xC; /*0x432ed7*/
-      if ( v9 == *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9404] ) /*0x432ee2*/
+      if ( v9 == *(_DWORD *)&DataGlobal_87F8E4[31268] ) /*0x432ee2*/
       {
         GetClientRect((HWND)g_hWnd, &Rect); /*0x432ef0*/
         ClientToScreen((HWND)g_hWnd, (LPPOINT)&Rect); /*0x432f02*/
@@ -685,9 +690,9 @@ int __fastcall BinkMovie::HandleKeyboard(int a1, HWND a2)
   int v9; // [esp+8h] [ebp-4h] BYREF
 
   v9 = a1; /*0x6033fc*/
-  if ( !MEMORY[0xAC1B04] ) /*0x603400*/
+  if ( !g_DialogHashMap_Count ) /*0x603400*/
     goto LABEL_5; /*0x603400*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v9) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x603421*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603421*/
   if ( !v3 ) /*0x603426*/
     goto LABEL_5; /*0x603426*/
   while ( *v3 != v9 ) /*0x60342e*/
@@ -858,9 +863,9 @@ int __stdcall BinkMovie_WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
   v4 = hWnd;
   v5 = 0;
   v80 = hWnd;
-  if ( MEMORY[0xAC1B04] )
+  if ( g_DialogHashMap_Count )
   {
-    v6 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v80) & ((1 << MEMORY[0xAC1B0C]) - 1)));
+    v6 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v80) & ((1 << g_DialogHashMap_Buckets) - 1)));
     if ( v6 )
     {
       while ( *v6 != v80 )
@@ -898,11 +903,11 @@ LABEL_7:
         v5[41] = lParam;
         return 0;
       case 0x4DFu:
-        if ( wParam < 0 || wParam >= MEMORY[0xABF3A0] )
+        if ( wParam < 0 || wParam >= DataGlobal_ABF3A0 )
           return 0;
         v66 = v4;
         v67 = (void (__thiscall ***)(_DWORD, int))v5[22];
-        v68 = *((_DWORD *)MEMORY[0xABF394] + wParam);
+        v68 = *((_DWORD *)DataGlobal_ABF394 + wParam);
         if ( v67 )
         {
           (**v67)(v67, 1);
@@ -1014,7 +1019,7 @@ LABEL_165:
         if ( lParam != v5[59] )
           InvalidateRect(v4, 0, 0);
         if ( v63 == -1 )
-          v5[59] = MEMORY[0xAC18A4];
+          v5[59] = yTop;
         else
           v5[59] = v63;
         result = 0;
@@ -1067,11 +1072,11 @@ LABEL_165:
   }
   if ( Msg == 1175 )
   {
-    if ( MEMORY[0xAC1B4C] )
+    if ( g_DialogHashMap_Grow )
     {
-      v56 = MEMORY[0xAC1B60](&hWnd);
+      v56 = g_DialogHashMap_Insert(&hWnd);
       v4 = hWnd;
-      for ( i = *((_DWORD *)MEMORY[0xAC1B48] + (v56 & ((1 << MEMORY[0xAC1B54]) - 1))); i; i = *(_DWORD *)(i + 8) )
+      for ( i = *((_DWORD *)g_DialogHashMap_Entries + (v56 & ((1 << g_DialogHashMap_Insert) - 1))); i; i = *(_DWORD *)(i + 8) )
       {
         if ( *(HWND *)i == hWnd )
           break;
@@ -1081,9 +1086,9 @@ LABEL_165:
     v5[28] = 0;
     v59 = hWnd;
     v81.left = (LONG)v58;
-    if ( MEMORY[0xAC1B04] )
+    if ( g_DialogHashMap_Count )
     {
-      for ( j = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v81) & ((1 << MEMORY[0xAC1B0C]) - 1)));
+      for ( j = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v81) & ((1 << g_DialogHashMap_Buckets) - 1)));
             j;
             j = (_DWORD *)j[129] )
       {
@@ -1093,7 +1098,7 @@ LABEL_165:
     }
     GetDlgCtrlID(v59);
     v5[43] = 12;
-    v5[59] = MEMORY[0xAC18A4];
+    v5[59] = yTop;
     return 0;
   }
   if ( Msg <= 0xF )
@@ -1129,7 +1134,7 @@ LABEL_165:
         }
         right = Rect.right;
         v5[4] = v20;
-        ++MEMORY[0xAC48B4];
+        ++g_GameScreenState;
         v81.left = X.left;
         v85.bottom = Rect.bottom + 1;
         v81.bottom = Rect.bottom + 1;
@@ -1158,9 +1163,9 @@ LABEL_165:
         (*(void (__thiscall **)(int, struct tagRECT *, int))(*(_DWORD *)DSurface_Alternate + 20))(
           DSurface_Alternate,
           &v85,
-          (*((unsigned __int8 *)v5 + 184) >> g_BitShift_Green_0 << MEMORY[0x8A0DD0])
-        | (BYTE1(v22) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-        | (BYTE2(v22) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
+          (*((unsigned __int8 *)v5 + 184) >> g_BitShift_Green_0 << g_DDraw_BlueMask)
+        | (BYTE1(v22) >> g_BitMask_Blue << g_BitMask_Green)
+        | (BYTE2(v22) >> g_BitShift_Blue << g_BitShift_Blue));
       }
       v23 = v5[28];
       v24 = v23 == 1;
@@ -1180,7 +1185,7 @@ LABEL_165:
           }
           v42 = v5[59];
           if ( (WindowLongA & 0x8000000) != 0 )
-            v42 = MEMORY[0xAC1CB4];
+            v42 = DataGlobal_AC1CB4;
           PrintFontLayout(
             DSurface_Alternate,
             (unsigned __int16 *)v5[10],
@@ -1256,7 +1261,7 @@ LABEL_165:
                 &v81.left,
                 DSurface_Alternate,
                 v28,
-                (255 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) | (255 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
+                (255 >> g_BitShift_Green_0 << g_DDraw_BlueMask) | (255 >> g_BitShift_Blue << g_BitShift_Blue));
               ValidateRect(hWnd, 0);
               return 0;
             }
@@ -1449,11 +1454,11 @@ LABEL_174:
   }
 LABEL_34:
   v14 = 0;
-  if ( MEMORY[0xAC1B4C] )
+  if ( g_DialogHashMap_Grow )
   {
-    v15 = MEMORY[0xAC1B60](&hWnd);
+    v15 = g_DialogHashMap_Insert(&hWnd);
     v4 = hWnd;
-    v16 = *((_DWORD *)MEMORY[0xAC1B48] + (v15 & ((1 << MEMORY[0xAC1B54]) - 1)));
+    v16 = *((_DWORD *)g_DialogHashMap_Entries + (v15 & ((1 << g_DialogHashMap_Insert) - 1)));
     if ( v16 )
     {
       while ( *(HWND *)v16 != hWnd )
@@ -1546,7 +1551,7 @@ char __thiscall BinkMovie_InitKeyframeTracking(int *this, char *Source)
 
   if ( !Source || !strlen(Source) ) /*0x6c9b64*/
     return 0; /*0x6c9b6a*/
-  CCFileClass::Construct(v7, MEMORY[0x842194]); /*0x6c9b79*/
+  CCFileClass::Construct(v7, DataGlobal_842194); /*0x6c9b79*/
   if ( !(unsigned __int8)CCFileClass::Open(0) ) /*0x6c9b8a*/
   {
 LABEL_6:
@@ -1684,7 +1689,7 @@ void __thiscall BinkMovie::ProcessKeyframe(int *this, ObjectClass *aP1)
   int v14; // [esp+8h] [ebp-28h]
   AbstractClass aP2; // [esp+Ch] [ebp-24h] BYREF
 
-  *(_DWORD *)&aP2.__pad_0[12] = this; /*0x6c9d46*/
+  *(_DWORD *)&aP2[12] = this; /*0x6c9d46*/
   v3 = this->q004; /*0x6c9d4a*/
   if ( v3 ) /*0x6c9d4f*/
   {
@@ -1693,24 +1698,24 @@ void __thiscall BinkMovie::ProcessKeyframe(int *this, ObjectClass *aP1)
     v5 = (BitFont *)aP0; /*0x6c9d6b*/
     Property::Set( /*0x6c9dba*/
       aP0,
-      (AbstractClass *)(((int)(unsigned __int8)*(_DWORD *)&aP1->__pad_0[8] >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664])
-                      | ((unsigned __int8)BYTE2(*(_DWORD *)&aP1->__pad_0[8]) >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656])
-                      | ((unsigned __int8)BYTE1(*(_DWORD *)&aP1->__pad_0[8]) >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])));
+      (AbstractClass *)(((int)(unsigned __int8)*(_DWORD *)&aP1->__pad_0[8] >> g_CellDirectionOffsets[5964] << g_CellDirectionOffsets[5960])
+                      | ((unsigned __int8)BYTE2(*(_DWORD *)&aP1->__pad_0[8]) >> g_CellDirectionOffsets[5956] << g_CellDirectionOffsets[5952])
+                      | ((unsigned __int8)BYTE1(*(_DWORD *)&aP1->__pad_0[8]) >> g_CellDirectionOffsets[5972] << g_CellDirectionOffsets[5968])));
     v6 = (ObjectClass *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q004 + 124))(this->q004); /*0x6c9dca*/
-    *(_DWORD *)&aP2.__pad_0[4] = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q004 + 128))(this->q004); /*0x6c9dd6*/
-    aP2.NeedsSaveOrLink = *(void **)&aP2.__pad_0[4]; /*0x6c9ddc*/
+    *(_DWORD *)&aP2[4] = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q004 + 128))(this->q004); /*0x6c9dd6*/
+    aP2.NeedsSaveOrLink = *(void **)&aP2[4]; /*0x6c9ddc*/
     aP2.abstractFlags = 0; /*0x6c9de4*/
     aP2.nextArrayIndex = 0; /*0x6c9de8*/
     aP2.referenceCount = (int)v6; /*0x6c9def*/
     TextGroup::SetRect(v5, (AbstractClass *)&aP2.abstractFlags); /*0x6c9df3*/
-    *(_DWORD *)&aP2.__pad_0[8] = aP1->abstractFlags; /*0x6c9e0d*/
-    Text::Layout(v5, *(unsigned __int16 **)&aP2.__pad_0[8], &aP2, (AbstractClass *)&aP2.uniqueId, (AbstractClass *)v6); /*0x6c9e11*/
+    *(_DWORD *)&aP2[8] = aP1->abstractFlags; /*0x6c9e0d*/
+    Text::Layout(v5, *(unsigned __int16 **)&aP2[8], &aP2, (AbstractClass *)&aP2.uniqueId, (AbstractClass *)v6); /*0x6c9e11*/
     v14 = 0; /*0x6c9e1e*/
     uniqueId = aP1->uniqueId; /*0x6c9e26*/
     v8 = (ObjectClass *)(v5[2].field_4 * (*(_DWORD *)&aP1->__pad_0[12] - 1)); /*0x6c9e29*/
     if ( uniqueId == 2 ) /*0x6c9e30*/
     {
-      v9 = (int)&v6->__pad_0[-*(_DWORD *)aP2.__pad_0] / 2; /*0x6c9e3d*/
+      v9 = (int)&v6->__pad_0[-*(_DWORD *)aP2[0]] / 2; /*0x6c9e3d*/
     }
     else
     {
@@ -1718,15 +1723,15 @@ void __thiscall BinkMovie::ProcessKeyframe(int *this, ObjectClass *aP1)
       {
 LABEL_7:
         v13 = v6; /*0x6c9e52*/
-        v10 = *(int **)&aP2.__pad_0[12]; /*0x6c9e66*/
+        v10 = *(int **)&aP2[12]; /*0x6c9e66*/
         Font::Print( /*0x6c9e78*/
           (int)v5,
-          *(_DWORD *)(*(_DWORD *)&aP2.__pad_0[12] + 16),
-          *(_WORD **)&aP2.__pad_0[8],
+          *(_DWORD *)(*(_DWORD *)&aP2[12] + 16),
+          *(_WORD **)&aP2[8],
           v14,
           (int)v8,
           (int)v13,
-          *(int *)&aP2.__pad_0[4],
+          *(int *)&aP2[4],
           0,
           0,
           0);
@@ -1734,7 +1739,7 @@ LABEL_7:
         *v10 = *v4; /*0x6c9e85*/
         v10[1] = v4[1]; /*0x6c9e8a*/
         v10[2] = v4[2]; /*0x6c9e90*/
-        v11 = *(_DWORD *)aP2.__pad_0; /*0x6c9e93*/
+        v11 = *(_DWORD *)aP2[0]; /*0x6c9e93*/
         v10[3] = v4[3]; /*0x6c9e9e*/
         v12 = aP2.uniqueId; /*0x6c9ea1*/
         *v4 = v14; /*0x6c9ea5*/
@@ -1743,7 +1748,7 @@ LABEL_7:
         v4[3] = v12; /*0x6c9eae*/
         return; /*0x6c9eae*/
       }
-      v9 = (int)&v6->__pad_0[-*(_DWORD *)aP2.__pad_0]; /*0x6c9e4c*/
+      v9 = (int)&v6->__pad_0[-*(_DWORD *)aP2[0]]; /*0x6c9e4c*/
     }
     v14 = v9; /*0x6c9e4e*/
     goto LABEL_7; /*0x6c9e4e*/
@@ -1797,7 +1802,7 @@ int * BinkMovie::CreateSurfaceTracker()
     v2[7] = 0;
     v2[8] = 0;
     _splitpath(this, 0, 0, &Filename, 0);
-    if ( BinkMovie::InitKeyframeTracking(v2, Filename.__pad_0) == 1 )
+    if ( BinkMovie::InitKeyframeTracking(v2, Filename[0]) == 1 )
   {
     v3 = (int *)__2_YAPAXI_Z(0x20u);
     v4 = v3;

@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AudioClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x7228B0
 namespace gamemd {
@@ -43,8 +45,8 @@ int __thiscall BuildingClass_RebuildOccupancy(int **this)
   *v3 = 0; /*0x7228e0*/
   for ( i = Object::ComputeAllocationSize() - 1; i >= 0; *((_BYTE *)*(this + 62) + i + 1) = 0 ) /*0x7228ec*/
     --i; /*0x7228f4*/
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x722901*/
-  result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x72290b*/
+  LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x722901*/
+  result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x72290b*/
   for ( j = (_DWORD *)result; result; j = (_DWORD *)result ) /*0x722914*/
   {
     if ( (int *)BuildingClass::FindByCellHash(j) == *(this + 38) /*0x722931*/
@@ -90,7 +92,7 @@ int __thiscall BuildingClass_RebuildOccupancy(int **this)
       }
       *((_BYTE *)*(this + 62) + Cell::PosToIndex(v7)) = 1; /*0x7229f7*/
     }
-    result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x722a00*/
+    result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x722a00*/
   }
   return result; /*0x722a11*/
 }

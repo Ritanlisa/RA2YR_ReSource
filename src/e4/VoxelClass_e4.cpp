@@ -126,8 +126,8 @@ LABEL_21:
     v17 = *(__int16 *)(v8 + 6); /*0x73c762*/
     v18 = (*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)a1 + 748))(a1, 0); /*0x73c772*/
     DrawToSurfaceSHP( /*0x73c7a7*/
-      *(int *)&stru_87C374.__pad_579C[22532],
-      *(int *)&stru_87C374.__pad_14B0[7840],
+      *(int *)&stru_87C374[44960],
+      *(int *)&stru_87C374[13136],
       (ConvertClass *)v8,
       v9 + v17 / 2,
       (ConvertClass *)&v57,
@@ -142,8 +142,8 @@ LABEL_21:
       0,
       0,
       v44);
-    v54 = *(_DWORD *)&stru_87C374.__pad_579C[22532]; /*0x73c7bd*/
-    *(_DWORD *)&stru_87C374.__pad_579C[22532] = dword_B1D13C; /*0x73c7c3*/
+    v54 = *(_DWORD *)&stru_87C374[44960]; /*0x73c7bd*/
+    *(_DWORD *)&stru_87C374[44960] = dword_B1D13C; /*0x73c7c3*/
     v56 = 128; /*0x73c7c9*/
     v55[1] = 128; /*0x73c7cd*/
     v19 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD *))(*dword_B1D13C + 120))(dword_B1D13C, v62); /*0x73c7d8*/
@@ -241,7 +241,7 @@ LABEL_21:
       }
       v8 = v54; /*0x73cbff*/
     }
-    v26 = *(_DWORD *)&aP5.__pad_6[6]; /*0x73cc03*/
+    v26 = *(_DWORD *)&aP5[12]; /*0x73cc03*/
     (*(void (__thiscall **)(_BYTE *, int, int, _DWORD *, _DWORD *, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, int))(*(_DWORD *)a1 + 1292))( /*0x73cc36*/
       a1,
       v8,
@@ -253,7 +253,7 @@ LABEL_21:
       0,
       0,
       0,
-      *(_DWORD *)&aP5.__pad_6[6],
+      *(_DWORD *)&aP5[12],
       0,
       0,
       0,
@@ -326,16 +326,16 @@ LABEL_21:
       a2,
       a3,
       a4,
-      *(_DWORD *)aP5.__pad_0,
+      *(_DWORD *)aP5[0],
       *(_DWORD *)&aP5.field_2[2],
-      *(_DWORD *)&aP5.__pad_6[2],
+      *(_DWORD *)&aP5[8],
       v34,
-      *(_DWORD *)&aP5.__pad_6[10]);
-    result = (*(int (__thiscall **)(_DWORD, XSurface *, _DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22532] + 20))( /*0x73cdf0*/
-               *(_DWORD *)&stru_87C374.__pad_579C[22532],
+      *(_DWORD *)&aP5[16]);
+    result = (*(int (__thiscall **)(_DWORD, XSurface *, _DWORD))(**(_DWORD **)&stru_87C374[44960] + 20))( /*0x73cdf0*/
+               *(_DWORD *)&stru_87C374[44960],
                &aP6,
                0);
-    *(_DWORD *)&stru_87C374.__pad_579C[22532] = v42; /*0x73cdf3*/
+    *(_DWORD *)&stru_87C374[44960] = v42; /*0x73cdf3*/
     a1[1747] = 0; /*0x73cdf9*/
   }
   else if ( *(_BYTE *)(v11 + 3606) && TechnoClass::CheckTargetCell(a1) && !TechnoClass::ScanNeighborCells(a1) ) /*0x73ce24*/
@@ -351,7 +351,7 @@ LABEL_21:
              -16,
              0,
              0,
-             *(_DWORD *)&aP5.__pad_6[6],
+             *(_DWORD *)&aP5[12],
              0,
              0,
              0,
@@ -365,7 +365,7 @@ LABEL_21:
     v38 = (*(int (__thiscall **)(_BYTE *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)a1 + 752))( /*0x73ce89*/
             a1,
             0,
-            *(_DWORD *)&aP5.__pad_6[6],
+            *(_DWORD *)&aP5[12],
             0,
             0,
             0,
@@ -376,8 +376,8 @@ LABEL_21:
              a1,
              v8,
              v9,
-             &aP5.__pad_6[14],
-             &aP5.__pad_6[22],
+             &aP5[20],
+             &aP5[28],
              0,
              256,
              0,

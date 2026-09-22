@@ -4,6 +4,10 @@
 #include "e4/classes/E4Recv_4D4FC0_e4.hpp"
 #include "e4/classes/E4Recv_4DB8A0_e4.hpp"
 #include "e4/classes/E4Recv_4DF280_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x4D1650
 namespace gamemd {
@@ -35,15 +39,15 @@ int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
   *(_DWORD *)&aP0->__pad_0[8] = &FoggedObjectClass::`vftable'; /*0x4d1670*/
   *(_DWORD *)&aP0->__pad_0[12] = &vt_FoggedObjectClass; /*0x4d1677*/
   *(_DWORD *)v17 = aP0; /*0x4d1684*/
-  v2 = (*(int (__thiscall **)(char *, __int16 *))(*(_DWORD *)&stru_89E138.__pad_579C[66620] + 16))( /*0x4d1688*/
-         &stru_89E138.__pad_579C[66620],
+  v2 = (*(int (__thiscall **)(char *, __int16 *))(*(_DWORD *)&stru_89E138[89048] + 16))( /*0x4d1688*/
+         &stru_89E138[89048],
          v17);
-  if ( v2 != -1 && v2 < *(int *)&stru_89E138.__pad_579C[66636] ) /*0x4d1698*/
+  if ( v2 != -1 && v2 < *(int *)&stru_89E138[89064] ) /*0x4d1698*/
   {
-    --*(_DWORD *)&stru_89E138.__pad_579C[66636]; /*0x4d169d*/
+    --*(_DWORD *)&stru_89E138[89064]; /*0x4d169d*/
     for ( ; /*0x4d16a3*/
-          v2 < *(int *)&stru_89E138.__pad_579C[66636];
-          *(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_579C[66624] + 4 * v2 - 4) = *(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_579C[66624]
+          v2 < *(int *)&stru_89E138[89064];
+          *(_DWORD *)(*(_DWORD *)&stru_89E138[89052] + 4 * v2 - 4) = *(_DWORD *)(*(_DWORD *)&stru_89E138[89052]
                                                                                           + 4 * v2) )
     {
       ++v2; /*0x4d16ab*/
@@ -53,47 +57,47 @@ int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
   v17[0] = *(_DWORD *)&aP0[1].__pad_0[4] / 256; /*0x4d16df*/
   v17[1] = v3 / 256; /*0x4d16e4*/
   v18 = *(_DWORD *)v17; /*0x4d16f3*/
-  v4 = *(_DWORD *)&stru_89E138.__pad_579C[66544]; /*0x4d170e*/
+  v4 = *(_DWORD *)&stru_89E138[88972]; /*0x4d170e*/
   v5 = 74 * (v17[1] - ((v17[0] + v17[1]) << 9) - v17[0]) - *(_DWORD *)aP0[1].__pad_0 + 0x7FFFFFFF; /*0x4d1714*/
-  if ( *(_DWORD *)&stru_89E138.__pad_579C[66544] ) /*0x4d171c*/
+  if ( *(_DWORD *)&stru_89E138[88972] ) /*0x4d171c*/
   {
-    if ( !stru_89E138.__pad_579C[66552] ) /*0x4d1728*/
+    if ( !stru_89E138[88980] ) /*0x4d1728*/
     {
       qsort( /*0x4d1739*/
-        *(AbstractClass **)&stru_89E138.__pad_579C[66540],
-        *(IUnknown **)&stru_89E138.__pad_579C[66544],
+        *(AbstractClass **)&stru_89E138[88968],
+        *(IUnknown **)&stru_89E138[88972],
         8u,
         globalHelper_0D2ED0);
-      v4 = *(_DWORD *)&stru_89E138.__pad_579C[66544]; /*0x4d173e*/
-      *(_DWORD *)&stru_89E138.__pad_579C[66556] = 0; /*0x4d1747*/
-      stru_89E138.__pad_579C[66552] = 1; /*0x4d174d*/
+      v4 = *(_DWORD *)&stru_89E138[88972]; /*0x4d173e*/
+      *(_DWORD *)&stru_89E138[88984] = 0; /*0x4d1747*/
+      stru_89E138[88980] = 1; /*0x4d174d*/
     }
     *(_DWORD *)v17 = v5; /*0x4d175f*/
-    v6 = sub_4D2F00(*(int *)&stru_89E138.__pad_579C[66540], v4, (int *)v17); /*0x4d1763*/
+    v6 = sub_4D2F00(*(int *)&stru_89E138[88968], v4, (int *)v17); /*0x4d1763*/
     if ( v6 ) /*0x4d176a*/
     {
-      v7 = (v6 - *(_DWORD *)&stru_89E138.__pad_579C[66540]) >> 3; /*0x4d1772*/
+      v7 = (v6 - *(_DWORD *)&stru_89E138[88968]) >> 3; /*0x4d1772*/
       if ( v7 != -1 ) /*0x4d1778*/
       {
         v8 = v7 + 1; /*0x4d177a*/
-        for ( i = *(BuildingTypeClass **)&stru_89E138.__pad_579C[66544]; /*0x4d1784*/
-              v8 < *(int *)&stru_89E138.__pad_579C[66544];
-              i = *(BuildingTypeClass **)&stru_89E138.__pad_579C[66544] )
+        for ( i = *(BuildingTypeClass **)&stru_89E138[88972]; /*0x4d1784*/
+              v8 < *(int *)&stru_89E138[88972];
+              i = *(BuildingTypeClass **)&stru_89E138[88972] )
         {
-          v10 = (_DWORD *)(*(_DWORD *)&stru_89E138.__pad_579C[66540] + 8 * v8++); /*0x4d178c*/
+          v10 = (_DWORD *)(*(_DWORD *)&stru_89E138[88968] + 8 * v8++); /*0x4d178c*/
           *(v10 - 2) = *v10; /*0x4d1792*/
           *(v10 - 1) = v10[1]; /*0x4d1798*/
         }
-        *(_DWORD *)&stru_89E138.__pad_579C[66544] = (char *)i - 1; /*0x4d17ad*/
-        *(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_579C[66540] + 8 * *(_DWORD *)&stru_89E138.__pad_579C[66544]) = 0; /*0x4d17b2*/
-        *(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_579C[66540] + 8 * *(_DWORD *)&stru_89E138.__pad_579C[66544] + 4) = 0; /*0x4d17c2*/
-        *(_DWORD *)&stru_89E138.__pad_579C[66556] = 0; /*0x4d17c6*/
+        *(_DWORD *)&stru_89E138[88972] = (char *)i - 1; /*0x4d17ad*/
+        *(_DWORD *)(*(_DWORD *)&stru_89E138[88968] + 8 * *(_DWORD *)&stru_89E138[88972]) = 0; /*0x4d17b2*/
+        *(_DWORD *)(*(_DWORD *)&stru_89E138[88968] + 8 * *(_DWORD *)&stru_89E138[88972] + 4) = 0; /*0x4d17c2*/
+        *(_DWORD *)&stru_89E138[88984] = 0; /*0x4d17c6*/
       }
     }
   }
   if ( *(_DWORD *)aP0[1].__pad_0 == 6 ) /*0x4d17d0*/
   {
-    v11 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v18); /*0x4d17dc*/
+    v11 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v18); /*0x4d17dc*/
     v12 = Cell::IsBridge(v11); /*0x4d17e3*/
     if ( v12 ) /*0x4d17ea*/
     {
@@ -110,10 +114,10 @@ int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
       while ( edx15 ); /*0x4d180d*/
     }
   }
-  if ( *(_DWORD *)&stru_87C374.__pad_579C[22548] ) /*0x4d1817*/
+  if ( *(_DWORD *)&stru_87C374[44976] ) /*0x4d1817*/
     Cell::CreateCrater( /*0x4d184b*/
-      aP0[1].uniqueId - *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22548] + 176),
-      aP0[1].abstractFlags - *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22548] + 180),
+      aP0[1].uniqueId - *(_DWORD *)(*(_DWORD *)&stru_87C374[44976] + 176),
+      aP0[1].abstractFlags - *(_DWORD *)(*(_DWORD *)&stru_87C374[44976] + 180),
       aP0[1].nextArrayIndex,
       aP0[1].referenceCount,
       0);

@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
 
 // 0x4080C0
 int ThemeClass::RequestBuffer()
@@ -41,8 +44,8 @@ char __thiscall ThemeClass::ReadThemeEntry(int this, unsigned __int8 ***a2)
   INIClass::GetString( /*0x7204bf*/
     a2,
     (INIClass *)this,
-    (unsigned __int8 *)&stru_830620.__pad_579C[59788],
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (unsigned __int8 *)&stru_830620[82216],
+    (INIClass *)&DataGlobal_87F8E4[42624],
     (INIClass *)(this + 256),
     256);
   while ( v3->__pad_0[0] == 36 || v3->__pad_0[0] == 35 ) /*0x7204cc*/
@@ -63,7 +66,7 @@ char __thiscall ThemeClass::ReadThemeEntry(int this, unsigned __int8 ***a2)
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x720535*/
                      (int)a2,
                      (unsigned __int8 *)this,
-                     (CCINIClass *)&stru_830620.__pad_579C[59780],
+                     (CCINIClass *)&stru_830620[82208],
                      *(_BYTE *)(this + 649));
   v6 = *(_DWORD *)(this + 652); /*0x72053a*/
   *(_BYTE *)(this + 649) = Bool_Overwrite; /*0x720540*/
@@ -76,7 +79,7 @@ char __thiscall ThemeClass::ReadThemeEntry(int this, unsigned __int8 ***a2)
     INIClass::GetStringEx( /*0x720577*/
       (int)a2,
       (INIClass *)this,
-      (CCINIClass *)&MEMORY[0x81784C].headNode[1],
+      (CCINIClass *)&g_INI_Key_UIName.headNode[1],
       (CCINIClass *)(this + 512),
       0x40u);
   return 1; /*0x72057c*/
@@ -108,15 +111,15 @@ void *__thiscall sub_720590(int this, char *a2)
   char Destination[32]; // [esp+18h] [ebp-20h] BYREF
 
   v2 = a2; /*0x720597*/
-  KeyCount = INIClass::GetKeyCount(a2, (unsigned __int8 *)MEMORY[0x844760]); /*0x7205a9*/
+  KeyCount = INIClass::GetKeyCount(a2, (unsigned __int8 *)g_INI_Key_Themes); /*0x7205a9*/
   v5 = 0; /*0x7205ab*/
   v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2, (unsigned __int8 *)MEMORY[0x844760], v5); /*0x7205d1*/
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2, (unsigned __int8 *)g_INI_Key_Themes, v5); /*0x7205d1*/
     if ( INIClass::GetString( /*0x7205de*/
            (unsigned __int8 ***)v2,
-           (unsigned __int8 *)MEMORY[0x844760],
+           (unsigned __int8 *)g_INI_Key_Themes,
            StringByIndex,
            &g_INI_DefaultBuffer,
            Destination,
@@ -184,7 +187,7 @@ LABEL_10:
     this->ThemeClass_field_2C = result; /*0x720732*/
     if ( result ) /*0x720735*/
     {
-      SetAudioFileName((int)result, MEMORY[0x844750]); /*0x72073e*/
+      SetAudioFileName((int)result, DataGlobal_844750); /*0x72073e*/
       AudioQueue::IsEmpty(this->ThemeClass_field_2C, g_MixerChannel_Theme); /*0x72074c*/
       return (void *)AudioQueue::IsNotEmpty(this->ThemeClass_field_2C, g_MixerChannel_Stream); /*0x72075a*/
     }
@@ -205,8 +208,8 @@ int __cdecl ThemeClass_ClearQueues()
   int *v3; // edi
   int k; // esi
 
-  result = MEMORY[0xB1D4BC]; /*0x752370*/
-  if ( MEMORY[0xB1D4BC] ) /*0x752377*/
+  result = DataGlobal_B1D4BC; /*0x752370*/
+  if ( DataGlobal_B1D4BC ) /*0x752377*/
   {
     if ( DataGlobal_B1D4B8 ) /*0x75238c*/
     {
@@ -214,19 +217,19 @@ int __cdecl ThemeClass_ClearQueues()
       __3_YAXPAX_Z(DataGlobal_B1D4B8); /*0x75239b*/
       DataGlobal_B1D4B8 = 0; /*0x7523a3*/
     }
-    for ( i = AudioQueue::GetNext(&MEMORY[0xB1D3F0]); i; i = AudioQueue::GetNext(&MEMORY[0xB1D3F0]) ) /*0x7523bb*/
+    for ( i = AudioQueue::GetNext(&DataGlobal_B1D3F0); i; i = AudioQueue::GetNext(&DataGlobal_B1D3F0) ) /*0x7523bb*/
     {
       LinkedList::Init((_DWORD **)i); /*0x7523bf*/
       *(_DWORD *)(*(_DWORD *)(i + 12) + 80) = 2; /*0x7523c8*/
       __3_YAXPAX_Z((void *)i); /*0x7523cb*/
     }
-    for ( j = AudioQueue::GetNext(&MEMORY[0xB1D3C8]); j; j = AudioQueue::GetNext(&MEMORY[0xB1D3C8]) ) /*0x7523f1*/
+    for ( j = AudioQueue::GetNext(&DataGlobal_B1D3C8); j; j = AudioQueue::GetNext(&DataGlobal_B1D3C8) ) /*0x7523f1*/
     {
       LinkedList::Init((_DWORD **)j); /*0x7523f5*/
       *(_DWORD *)(*(_DWORD *)(j + 12) + 80) = 2; /*0x7523fe*/
       __3_YAXPAX_Z((void *)j); /*0x752401*/
     }
-    v3 = (int *)MEMORY[0xB1D450]; /*0x752419*/
+    v3 = (int *)DataGlobal_B1D450; /*0x752419*/
     do /*0x752457*/
     {
       result = AudioQueue::GetNext(v3); /*0x752420*/
@@ -239,7 +242,7 @@ int __cdecl ThemeClass_ClearQueues()
       }
       v3 += 3; /*0x75244e*/
     }
-    while ( (int)v3 < (int)&MEMORY[0xB1D480] ); /*0x752457*/
+    while ( (int)v3 < (int)&DataGlobal_B1D480 ); /*0x752457*/
   }
   return result; /*0x75245c*/
 }

@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/File_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x5F8CE0
 char Turret::LoadVoxelTurretAndBarrel()
@@ -46,7 +49,7 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
       LOBYTE(v2) = *((_BYTE *)this + 3233); /*0x5f8d0a*/
       if ( (_BYTE)v2 ) /*0x5f8d14*/
       {
-        sprintf(Buffer, MEMORY[0x832ABC], (const char *)this + 504); /*0x5f8d30*/
+        sprintf(Buffer, g_Str_Trace__sTUR, (const char *)this + 504); /*0x5f8d30*/
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8d4c*/
         CCFileClass::Construct(v26, Source); /*0x5f8d63*/
         if ( CCFileClass::Open(v26, 0) ) /*0x5f8d70*/
@@ -65,7 +68,7 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
           *((_DWORD *)this + 46) = File; /*0x5f8dbb*/
           if ( File && !*(_BYTE *)File ) /*0x5f8dc7*/
           {
-            sprintf(Buffer, MEMORY[0x832ABC], (const char *)this + 504); /*0x5f8ddd*/
+            sprintf(Buffer, g_Str_Trace__sTUR, (const char *)this + 504); /*0x5f8ddd*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8df9*/
             CCFileClass::Construct(v20, Source); /*0x5f8e0d*/
             v6 = (void *)*((_DWORD *)this + 47); /*0x5f8e12*/
@@ -90,7 +93,7 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
             BufferIOFileClass::Dtor(v20); /*0x5f8e8d*/
           }
         }
-        sprintf(Buffer, MEMORY[0x832AD0], (const char *)this + 504); /*0x5f8ea0*/
+        sprintf(Buffer, g_Str_Trace__sBARL, (const char *)this + 504); /*0x5f8ea0*/
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8ebc*/
         CCFileClass::Construct(v23, Source); /*0x5f8ed0*/
         if ( CCFileClass::Open(v23, 0) ) /*0x5f8edd*/
@@ -109,7 +112,7 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
           *((_DWORD *)this + 48) = v13; /*0x5f8f25*/
           if ( v13 && !*(_BYTE *)v13 ) /*0x5f8f31*/
           {
-            sprintf(Buffer, MEMORY[0x832AD0], (const char *)this + 504); /*0x5f8f47*/
+            sprintf(Buffer, g_Str_Trace__sBARL, (const char *)this + 504); /*0x5f8f47*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8f63*/
             CCFileClass::Construct(v20, Source); /*0x5f8f77*/
             v14 = (void *)*((_DWORD *)this + 49); /*0x5f8f7c*/

@@ -13,6 +13,11 @@
 #include "e4/classes/E4Recv_4B6BE0_e4.hpp"
 #include "e4/classes/E4Recv_4B6BF0_e4.hpp"
 #include "e4/classes/E4Recv_4BAFE0_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/JumpjetLocomotion_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/TimerClass_e4.hpp"
 
 // 0x4B0500
 namespace gamemd {
@@ -87,7 +92,7 @@ char __stdcall JumpjetLocomotionClass_Process(int a1)
       v17 = *(_DWORD **)(v1 + 8); /*0x4b06d5*/
       if ( v17[43] != 5 /*0x4b0732*/
         || *(_BYTE *)(v1 + 95)
-        || *(_DWORD *)(v1 + 48) == g_DDraw_ClipRect && *(_QWORD *)(v1 + 52) == MEMORY[0x8A0794]
+        || *(_DWORD *)(v1 + 48) == g_DDraw_ClipRect && *(_QWORD *)(v1 + 52) == DataGlobal_8A0794
         || v17[39] != *(_DWORD *)(v1 + 48)
         || v17[40] != *(_DWORD *)(v1 + 52)
         || v17[41] != *(_DWORD *)(v1 + 56) )
@@ -118,10 +123,10 @@ char __stdcall JumpjetLocomotionClass_Process(int a1)
           {
             if ( *(_BYTE *)(v23 + 973) ) /*0x4b0921*/
             {
-              if ( *(_DWORD *)(v2 + 64) != g_DDraw_ClipRect || *(_QWORD *)(v2 + 68) != MEMORY[0x8A0794] ) /*0x4b0940*/
+              if ( *(_DWORD *)(v2 + 64) != g_DDraw_ClipRect || *(_QWORD *)(v2 + 68) != DataGlobal_8A0794 ) /*0x4b0940*/
               {
                 *(_DWORD *)(v2 + 64) = g_DDraw_ClipRect; /*0x4b094f*/
-                *(_QWORD *)(v2 + 68) = MEMORY[0x8A0794]; /*0x4b0957*/
+                *(_QWORD *)(v2 + 68) = DataGlobal_8A0794; /*0x4b0957*/
                 *(_BYTE *)(v2 + 99) = 0; /*0x4b0963*/
               }
               *(_DWORD *)(v1 + 76) = 0; /*0x4b0966*/
@@ -150,10 +155,10 @@ char __stdcall JumpjetLocomotionClass_Process(int a1)
                 *(_DWORD *)(v1 + 8),
                 v1 + 48) )
         {
-          if ( *(_DWORD *)(v2 + 64) != g_DDraw_ClipRect || *(_QWORD *)(v2 + 68) != MEMORY[0x8A0794] ) /*0x4b0a03*/
+          if ( *(_DWORD *)(v2 + 64) != g_DDraw_ClipRect || *(_QWORD *)(v2 + 68) != DataGlobal_8A0794 ) /*0x4b0a03*/
           {
             *(_DWORD *)(v2 + 64) = g_DDraw_ClipRect; /*0x4b0a12*/
-            *(_QWORD *)(v2 + 68) = MEMORY[0x8A0794]; /*0x4b0a1a*/
+            *(_QWORD *)(v2 + 68) = DataGlobal_8A0794; /*0x4b0a1a*/
             *(_BYTE *)(v2 + 99) = 0; /*0x4b0a26*/
           }
           v27 = *(_DWORD **)(v2 + 12); /*0x4b0a29*/
@@ -257,9 +262,9 @@ LABEL_39:
     }
   }
   if ( *(_DWORD *)(v1 + 48) == g_DDraw_ClipRect /*0x4b0856*/
-    && *(_DWORD *)(v1 + 52) == (_DWORD)MEMORY[0x8A0794]
-    && *(_QWORD *)(v1 + 56) == __PAIR64__(g_DDraw_ClipRect, HIDWORD(MEMORY[0x8A0794]))
-    && *(_QWORD *)(v1 + 64) == MEMORY[0x8A0794] )
+    && *(_DWORD *)(v1 + 52) == (_DWORD)DataGlobal_8A0794
+    && *(_QWORD *)(v1 + 56) == __PAIR64__(g_DDraw_ClipRect, HIDWORD(DataGlobal_8A0794))
+    && *(_QWORD *)(v1 + 64) == DataGlobal_8A0794 )
   {
     v21 = *(_DWORD *)(v1 + 8); /*0x4b085d*/
     if ( *(_DWORD *)(v21 + 1504) == -1 && *(double *)(v21 + 1400) > 0.0 ) /*0x4b087a*/
@@ -460,28 +465,28 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
   aP5.objectTypeFlags = 190; /*0x4b98be*/
   aP5.owningHouseIndex = 80; /*0x4b98c2*/
   v7 = (CampaignScore *)((int (__thiscall *)(CampaignScore **))v6[3].CampaignScore_field_0x14)(a1); /*0x4b98d2*/
-  v8 = ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 128))(*(_DWORD *)&stru_87C374.__pad_579C[22524]) /*0x4b98e7*/
+  v8 = ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44952] + 128))(*(_DWORD *)&stru_87C374[44952]) /*0x4b98e7*/
       - (int)v7)
      / 2;
   v9 = (CampaignScore *)((int (__thiscall *)(CampaignScore **))(*a1)[3].CampaignScore_field_0x10)(a1); /*0x4b98f2*/
-  v10 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 124))(*(_DWORD *)&stru_87C374.__pad_579C[22524]); /*0x4b98f6*/
+  v10 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44952] + 124))(*(_DWORD *)&stru_87C374[44952]); /*0x4b98f6*/
   aP5.nextArrayIndex = 300; /*0x4b9903*/
-  *(_DWORD *)&aP5.__pad_0[4] = (v10 - (int)v9) / 2; /*0x4b9909*/
+  *(_DWORD *)&aP5[4] = (v10 - (int)v9) / 2; /*0x4b9909*/
   aP5.abstractFlags = 450; /*0x4b9912*/
-  *(_DWORD *)&aP5.__pad_0[8] = v8; /*0x4b992b*/
+  *(_DWORD *)&aP5[8] = v8; /*0x4b992b*/
   v11 = (IUnknown *)Coord2D::Add( /*0x4b992f*/
                       &aP5.abstractFlags,
-                      (AbstractClass *)&aP5.__pad_0[12],
-                      (AbstractClass *)&aP5.__pad_0[4]);
+                      (AbstractClass *)&aP5[12],
+                      (AbstractClass *)&aP5[4]);
   v12 = Rect::Construct(aP5.ambientSoundController, v11, (AbstractClass *)0xBE, (AbstractClass *)0x50); /*0x4b9939*/
   aP5.fallRate = *(_DWORD *)v12->__pad_0; /*0x4b9942*/
   aP5.nextObject = *(void **)&v12->__pad_0[4]; /*0x4b994b*/
   aP5.attachedTag = *(void **)&v12->__pad_0[8]; /*0x4b9958*/
   aP5.attachedBomb = *(void **)&v12->__pad_0[12]; /*0x4b9963*/
   v41 = 0; /*0x4b9967*/
-  *(_DWORD *)aP5.__pad_0 = 0; /*0x4b996b*/
+  *(_DWORD *)aP5[0] = 0; /*0x4b996b*/
   BuildingClass::GetSHPFrame(a2, 0); /*0x4b996f*/
-  result = BlitterDrawSHP(*(IUnknown **)&stru_87C374.__pad_579C[22524]); /*0x4b998e*/
+  result = BlitterDrawSHP(*(IUnknown **)&stru_87C374[44952]); /*0x4b998e*/
   if ( a3 ) /*0x4b999c*/
   {
     swprintf(Buffer, (const size_t)&off_8205BC, a3 + 50, v31); /*0x4b99b3*/
@@ -520,11 +525,11 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
     if ( !a4 ) /*0x4b9a73*/
       p_nextArrayIndex = &stru_820524.abstractFlags; /*0x4b9a75*/
     BuildingAnimByName = (CampaignScore *)FindBuildingAnimByName((AbstractClass *)p_nextArrayIndex, 1); /*0x4b9a87*/
-    *(_DWORD *)aP5.__pad_0 = *(_DWORD *)&aP5.__pad_0[8] + 300; /*0x4b9a97*/
-    v41 = *(_DWORD *)&aP5.__pad_0[4] + 450; /*0x4b9aa8*/
-    v18 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, int *, CampaignScore *, _DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22524] /*0x4b9ab3*/
+    *(_DWORD *)aP5[0] = *(_DWORD *)&aP5[8] + 300; /*0x4b9a97*/
+    v41 = *(_DWORD *)&aP5[4] + 450; /*0x4b9aa8*/
+    v18 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, int *, CampaignScore *, _DWORD))(**(_DWORD **)&stru_87C374[44952] /*0x4b9ab3*/
                                                                                          + 120))(
-                      *(_DWORD *)&stru_87C374.__pad_579C[22524],
+                      *(_DWORD *)&stru_87C374[44952],
                       aP5.ambientSoundController,
                       &v41,
                       BuildingAnimByName,
@@ -532,63 +537,63 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
     TextRenderer::DrawText( /*0x4b9aca*/
       &aP5.nextArrayIndex,
       (size_t)BufferCount,
-      *(IUnknown **)&stru_87C374.__pad_579C[22524],
+      *(IUnknown **)&stru_87C374[44952],
       v18,
       70,
       v35,
       (int)v38,
       v40);
-    *(_DWORD *)&aP5.__pad_0[12] = aP5.abstractFlags + 315; /*0x4b9ae0*/
-    *(_DWORD *)&aP5.__pad_0[8] = aP5.uniqueId + 450; /*0x4b9af8*/
-    v19 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, char *, CampaignScore *, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22524] /*0x4b9b03*/
+    *(_DWORD *)&aP5[12] = aP5.abstractFlags + 315; /*0x4b9ae0*/
+    *(_DWORD *)&aP5[8] = aP5.uniqueId + 450; /*0x4b9af8*/
+    v19 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, char *, CampaignScore *, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] /*0x4b9b03*/
                                                                                                + 120))(
-                      *(_DWORD *)&stru_87C374.__pad_579C[22524],
+                      *(_DWORD *)&stru_87C374[44952],
                       &aP5.ambientSoundController[3],
-                      &aP5.__pad_0[8],
+                      &aP5[8],
                       BuildingAnimByName,
                       0,
                       70);
     TextRenderer::DrawText( /*0x4b9b1a*/
       &aP5.abstractFlags,
       (size_t)&aP5.visibilityFlags,
-      *(IUnknown **)&stru_87C374.__pad_579C[22524],
+      *(IUnknown **)&stru_87C374[44952],
       v19,
       v25,
       v28,
       v36,
       v39);
-    *(_DWORD *)&aP5.__pad_0[8] = aP5.uniqueId + 330; /*0x4b9b30*/
-    *(_DWORD *)&aP5.__pad_0[4] = *(_DWORD *)&aP5.__pad_0[12] + 450; /*0x4b9b48*/
-    v20 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, char *, CampaignScore *, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22524] /*0x4b9b53*/
+    *(_DWORD *)&aP5[8] = aP5.uniqueId + 330; /*0x4b9b30*/
+    *(_DWORD *)&aP5[4] = *(_DWORD *)&aP5[12] + 450; /*0x4b9b48*/
+    v20 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, char *, CampaignScore *, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] /*0x4b9b53*/
                                                                                                + 120))(
-                      *(_DWORD *)&stru_87C374.__pad_579C[22524],
+                      *(_DWORD *)&stru_87C374[44952],
                       &aP5.ambientSoundController[2],
-                      &aP5.__pad_0[4],
+                      &aP5[4],
                       BuildingAnimByName,
                       0,
                       70);
     TextRenderer::DrawText( /*0x4b9b6a*/
       &aP5.uniqueId,
       (size_t)v44,
-      *(IUnknown **)&stru_87C374.__pad_579C[22524],
+      *(IUnknown **)&stru_87C374[44952],
       v20,
       v23,
       v26,
       v29,
       v37);
-    *(_DWORD *)&aP5.__pad_0[4] = *(_DWORD *)&aP5.__pad_0[12] + 345; /*0x4b9b87*/
-    *(_DWORD *)aP5.__pad_0 = *(_DWORD *)&aP5.__pad_0[8] + 450; /*0x4b9b98*/
-    v21 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, ObjectClass *, CampaignScore *, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 120))( /*0x4b9ba3*/
-                      *(_DWORD *)&stru_87C374.__pad_579C[22524],
+    *(_DWORD *)&aP5[4] = *(_DWORD *)&aP5[12] + 345; /*0x4b9b87*/
+    *(_DWORD *)aP5[0] = *(_DWORD *)&aP5[8] + 450; /*0x4b9b98*/
+    v21 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, ObjectClass *, CampaignScore *, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] + 120))( /*0x4b9ba3*/
+                      *(_DWORD *)&stru_87C374[44952],
                       &aP5.ambientSoundController[1],
                       &aP5,
                       BuildingAnimByName,
                       0,
                       70);
     return (unsigned __int8)TextRenderer::DrawText( /*0x4b9bb7*/
-                              (int *)&aP5.__pad_0[12],
+                              (int *)&aP5[12],
                               (size_t)&aP5.ambientSoundController[4],
-                              *(IUnknown **)&stru_87C374.__pad_579C[22524],
+                              *(IUnknown **)&stru_87C374[44952],
                               v21,
                               v22,
                               v24,
@@ -655,9 +660,9 @@ LABEL_17:
     v5 = 255; /*0x4bea67*/
   if ( v4 > 255 ) /*0x4bea72*/
     v4 = 255; /*0x4bea74*/
-  return (v4 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x4bea7f*/
-       | (v5 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-       | (v6 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
+  return (v4 >> g_BitShift_Green_0 << g_DDraw_BlueMask) /*0x4bea7f*/
+       | (v5 >> g_BitMask_Blue << g_BitMask_Green)
+       | (v6 >> g_BitShift_Blue << g_BitShift_Blue);
 }
 }
 } // namespace gamemd
@@ -673,18 +678,18 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
     IUnknown *v6;
     int *v7;
     AbstractClass *v9;
-    v2 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
+    v2 = *(int *)&g_CellDirectionOffsets[4352];
     v4 = (int *)(this + 64);
-    if ( this->M64 != *(int *)&g_CellDirectionOffsets.__pad_DFC[772] || this->M68 != *(int *)&g_CellDirectionOffsets.__pad_DFC[776] || this->M72 != *(int *)&g_CellDirectionOffsets.__pad_DFC[780] )
+    if ( this->M64 != *(int *)&g_CellDirectionOffsets[4352] || this->M68 != *(int *)&g_CellDirectionOffsets[4356] || this->M72 != *(int *)&g_CellDirectionOffsets[4360] )
   {
-    *v4 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
-    this->M68 = *(int *)&g_CellDirectionOffsets.__pad_DFC[776];
-    v5 = *(TechnoClass **)&g_CellDirectionOffsets.__pad_DFC[780];
+    *v4 = *(int *)&g_CellDirectionOffsets[4352];
+    this->M68 = *(int *)&g_CellDirectionOffsets[4356];
+    v5 = *(TechnoClass **)&g_CellDirectionOffsets[4360];
     this->M99 = 0;
     this->M72 = v5;
-    v2 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
+    v2 = *(int *)&g_CellDirectionOffsets[4352];
   }
-    if ( aP1->field_0 != v2 || aP1->field_4 != *(int *)&g_CellDirectionOffsets.__pad_DFC[776] || aP1->field_8 != *(int *)&g_CellDirectionOffsets.__pad_DFC[780] )
+    if ( aP1->field_0 != v2 || aP1->field_4 != *(int *)&g_CellDirectionOffsets[4356] || aP1->field_8 != *(int *)&g_CellDirectionOffsets[4360] )
   {
     *v4 = aP1->field_0;
     this->M68 = aP1->field_4;
@@ -700,9 +705,9 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
     }
     if ( *(char *)(this->M12 + 144) )
     {
-    *v4 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
-    this->M68 = *(int *)&g_CellDirectionOffsets.__pad_DFC[776];
-    this->M72 = *(int *)&g_CellDirectionOffsets.__pad_DFC[780];
+    *v4 = *(int *)&g_CellDirectionOffsets[4352];
+    this->M68 = *(int *)&g_CellDirectionOffsets[4356];
+    this->M72 = *(int *)&g_CellDirectionOffsets[4360];
     this->M99 = 0;
     }
   }

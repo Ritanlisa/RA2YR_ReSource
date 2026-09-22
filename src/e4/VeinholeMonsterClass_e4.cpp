@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x5862C0
 namespace gamemd {
@@ -40,7 +41,7 @@ LABEL_9:
   {
     v9 = ((__int16)v5 << 9) + (__int16)v8; /*0x5862fb*/
     LOWORD(aP0a) = v8; /*0x5862fd*/
-    if ( v9 >= 0x40000 || (v10 = *(_DWORD **)(*(_DWORD *)&stru_87C374.__pad_14B0[8448] + 4 * v9)) == 0 ) /*0x586311*/
+    if ( v9 >= 0x40000 || (v10 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v9)) == 0 ) /*0x586311*/
     {
       g_Map_GlobalCellIndex = (IUnknown *)aP0a; /*0x586317*/
       v10 = g_CellClassArray; /*0x58631c*/

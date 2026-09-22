@@ -38,7 +38,7 @@ char UnholyAlliance::Read()
 BOOL UnholyAlliance::Write(MPCooperative * aP0)
 {
 {
-    return HouseClass_Player.__pad_5568[8100] && ScenarioClass::MissionStubReturnZero2(aP0);
+    return HouseClass_Player[29964] && ScenarioClass::MissionStubReturnZero2(aP0);
 }
 }
 

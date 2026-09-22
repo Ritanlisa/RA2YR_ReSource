@@ -208,7 +208,7 @@ LABEL_14:
   {
     *((_DWORD *)this + 98) = sub_4116A0; /*0x759435*/
     this->q06C = 60; /*0x75943f*/
-    *((_DWORD *)this + 127) = *(unsigned __int16 *)&MEMORY[0xA8D63C].__pad_14B0[188]; /*0x759455*/
+    *((_DWORD *)this + 127) = *(unsigned __int16 *)&g_NetworkPlayerBuffer[5484]; /*0x759455*/
   }
   *((_DWORD *)this + 100) = ManageMultimediaTimer; /*0x759463*/
   *((_DWORD *)this + 117) = 0x2000; /*0x75946d*/

@@ -5,6 +5,7 @@
 #include "e4/classes/E4Recv_77A780_e4.hpp"
 #include "e4/classes/E4Recv_77A7A0_e4.hpp"
 #include "e4/classes/E4Recv_798F50_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x624020
 namespace gamemd {

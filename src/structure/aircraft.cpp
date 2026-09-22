@@ -2,6 +2,7 @@
 
 #include <cstring>
 #include <cmath>
+#include "e4/e4_globals.hpp"
 
 namespace gamemd {
 
@@ -309,7 +310,7 @@ LABEL_14:
                             this->q2B4,
                             v120,
                             v103);
-          v33 = Coord::To_Cell(MEMORY[0x87F7E8], v32);
+          v33 = Coord::To_Cell(DataGlobal_87F7E8, v32);
           Cell::ApplyDamage(v33, 1, 0, 0, v98);
           if ( (*(int (__cdecl **)(int *))(*v20 + 24))(this + 432) )
           {
@@ -344,7 +345,7 @@ LABEL_14:
           }
           else
           {
-            this->missionStatus = *(_BYTE *)(MEMORY[0x87F7E8][7806] + 6113) != 0 ? 1 : 4;
+            this->missionStatus = *(_BYTE *)(DataGlobal_87F7E8[7806] + 6113) != 0 ? 1 : 4;
           }
           if ( !(*(int (__stdcall **)(int *))(*v20 + 24))(this + 432) )
             return 1;
@@ -387,11 +388,11 @@ LABEL_54:
             v106 = this->owningHouseIndex;
             v107 = this->q029;
             v46 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q2B4 + 72))(this->q2B4);
-            v47 = Coord::To_Cell(MEMORY[0x87F7E8], v46);
+            v47 = Coord::To_Cell(DataGlobal_87F7E8, v46);
             Cell::ApplyDamage(v47, (int)v119, (int)&v105, 1, 0);
             if ( !this->q0BF )
               goto LABEL_107;
-            this->missionStatus = *(_BYTE *)(MEMORY[0x87F7E8][7806] + 6113) != 0 ? 1 : 4;
+            this->missionStatus = *(_BYTE *)(DataGlobal_87F7E8[7806] + 6113) != 0 ? 1 : 4;
             goto LABEL_108;
           case 2u:
             if ( !this->q0BF )
@@ -403,7 +404,7 @@ LABEL_54:
             }
             else
             {
-              v43 = -(*(_BYTE *)(MEMORY[0x87F7E8][7806] + 6113) != 0);
+              v43 = -(*(_BYTE *)(DataGlobal_87F7E8[7806] + 6113) != 0);
               LOBYTE(v43) = v43 & 0xFD;
               this->missionStatus = v43 + 4;
             }
@@ -420,7 +421,7 @@ LABEL_54:
             if ( !this->q0BF )
               goto LABEL_107;
             if ( (*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 940))(this, this->q2B4) )
-              this->missionStatus = *(_BYTE *)(MEMORY[0x87F7E8][7806] + 6113) != 0 ? 1 : 4;
+              this->missionStatus = *(_BYTE *)(DataGlobal_87F7E8[7806] + 6113) != 0 ? 1 : 4;
             else
               this->missionStatus = 1;
             goto LABEL_108;
@@ -465,7 +466,7 @@ LABEL_54:
                           1,
                           0,
                           0);
-        v54 = Coord::To_Cell(MEMORY[0x87F7E8], v53);
+        v54 = Coord::To_Cell(DataGlobal_87F7E8, v53);
         Cell::ApplyDamage(v54, v89, v94, v98, v99);
         (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1);
         v55 = *this;
@@ -510,7 +511,7 @@ LABEL_54:
                           1,
                           0,
                           0);
-        v61 = Coord::To_Cell(MEMORY[0x87F7E8], v60);
+        v61 = Coord::To_Cell(DataGlobal_87F7E8, v60);
         Cell::ApplyDamage(v61, v90, v95, v98, v99);
         (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1);
         v62 = *this;
@@ -555,7 +556,7 @@ LABEL_54:
                           1,
                           0,
                           0);
-        v68 = Coord::To_Cell(MEMORY[0x87F7E8], v67);
+        v68 = Coord::To_Cell(DataGlobal_87F7E8, v67);
         Cell::ApplyDamage(v68, v91, v96, v98, v99);
         (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1);
         v69 = *this;
@@ -596,7 +597,7 @@ LABEL_83:
                               1,
                               0,
                               0);
-            v76 = Coord::To_Cell(MEMORY[0x87F7E8], v75);
+            v76 = Coord::To_Cell(DataGlobal_87F7E8, v75);
             Cell::ApplyDamage(v76, v88, v92, v97, v98);
             v77 = *this;
             this->missionStatus = 3;
@@ -645,17 +646,17 @@ LABEL_91:
       this->AircraftClass_field_bool_6D2 = 0;
       TransitionCount = HouseClass::GetTransitionCount(v80);
       OpenNeighbor = CellClass::FindOpenNeighbor(
-                       MEMORY[0x87F7E8],
+                       DataGlobal_87F7E8,
                        &v110,
                        TransitionCount,
-                       (int)&MEMORY[0x87F7E8][10656],
-                       (int)&MEMORY[0x87F7E8][10656],
+                       (int)&DataGlobal_87F7E8[10656],
+                       (int)&DataGlobal_87F7E8[10656],
                        4,
                        1,
                        0);
       v83 = *this;
       v101[0] = *OpenNeighbor;
-      v84 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)v101);
+      v84 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)v101);
       (*(void (__thiscall **)(int *, void *, int))(v83 + 1152))(this, v84, 1);
       v85 = this->airstrike;
       this->AircraftClass_field_bool_6D5 = 0;
@@ -675,7 +676,7 @@ LABEL_91:
 LABEL_108:
       MissionControl = MissionClass::GetMissionControl(this);
       v87 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0);
-      return v87 + Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 2);
+      return v87 + Random::Range((_DWORD *)(DataGlobal_87F7E8[536210] + 536), 0, 2);
   }
 }
 
@@ -2101,9 +2102,9 @@ int __usercall AircraftClass::_vt139@<eax>(int a1@<ecx>, int a2@<ebx>, int a3@<e
         {
 LABEL_15:
           Element = Array::GetElement(
-                      *((_DWORD **)MEMORY[0xA83D4C] + *(_DWORD *)(a1 + 1312) + 132),
+                      *((_DWORD **)HouseClass_Player + *(_DWORD *)(a1 + 1312) + 132),
                       *(char *)(a1 + 1670));
-          v20 = (int *)VectorClass::GetAtChecked(*((int **)MEMORY[0xA83D4C] + *(_DWORD *)(a1 + 1312) + 132), Element);
+          v20 = (int *)VectorClass::GetAtChecked(*((int **)HouseClass_Player + *(_DWORD *)(a1 + 1312) + 132), Element);
           BuildingClass::ValidateFoundation_0(a1, a2, a3, v20, a4, a5);
         }
       }
@@ -2178,7 +2179,7 @@ LABEL_24:
 LABEL_6:
       MissionControl = MissionClass::GetMissionControl((_DWORD *)a1);
       v9 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0);
-      return v9 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
+      return v9 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
   }
   return result;
 }
@@ -4042,7 +4043,7 @@ char __thiscall sub_414310(_DWORD *this, _DWORD *a2, int a3)
   HIBYTE(v10) = v8;
   LOWORD(a2) = v10;
   FacingClass::Set_SyncLog(&a2);
-  this->turretChargeTimer = MEMORY[0xA8ED84];
+  this->turretChargeTimer = g_CurrentFrame;
   v11 = v16;
   this->behindAnim = 1;
   this->currentTurretNumber = v11;
@@ -4600,7 +4601,7 @@ int __thiscall AircraftClass::ProcessMissionTimeout(_DWORD *this)
   {
     if ( this->q2B4 )
       goto LABEL_12;
-    if ( MEMORY[0xA8B238][0] )
+    if ( g_GameMode_Current[0] )
     {
       v5 = *this;
       v9 = this->location;
@@ -4637,7 +4638,7 @@ LABEL_12:
     (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1156))(this, 0, 1);
     MissionControl = MissionClass::GetMissionControl(this);
     v3 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0);
-    return v3 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
+    return v3 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
   }
 }
 
@@ -4811,13 +4812,13 @@ int __thiscall AircraftClass::GetMissionTimer(int this)
       v15 = this->location;
       v16 = this->q0A0;
       v17 = this->q0A4;
-      v7 = Coord::To_Cell(&MEMORY[0x87F7E8], &v15);
+      v7 = Coord::To_Cell(&DataGlobal_87F7E8, &v15);
       (*(void (__thiscall **)(int, void *, int))(v6 + 1152))(this, v7, 1);
       (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 2, 0);
       return 1;
     }
   }
-  if ( MEMORY[0x889ECC] )
+  if ( DataGlobal_00889ECC )
   {
     if ( this->pitchAngle || !(*(unsigned __int8 (__thiscall **)(int))(this->isBerserk)(this) )
       goto LABEL_14;
@@ -4839,7 +4840,7 @@ LABEL_26:
     }
     goto LABEL_14;
   }
-  if ( MEMORY[0x889ECD] )
+  if ( DataGlobal_00889ECD )
   {
     if ( (*(unsigned __int8 (__thiscall **)(int))(this->isBerserk)(this)
       && this->pitchAngle < *(_DWORD *)(this->Type + 1668) / 2 )
@@ -4896,7 +4897,7 @@ LABEL_14:
       {
         v13 = MissionClass::GetMissionControl((_DWORD *)this);
         v14 = Math::RoundToInt(*((double *)v13 + 2) * 900.0);
-        return v14 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
+        return v14 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
       }
     }
     else
@@ -5321,7 +5322,7 @@ int __thiscall AircraftClass::Destruct(void **this)
   this->vtable4 = &AircraftClass::`vftable';
   this->vtable2 = &AircraftClass::`vftable';
   this->q1B0 = &AircraftClass::`vftable';
-  if ( LOBYTE(MEMORY[0x87F7E8][539758]) )
+  if ( LOBYTE(DataGlobal_87F7E8[539758]) )
   {
     v3 = (int)this->q1B1;
     if ( v3 )
@@ -5342,13 +5343,13 @@ int __thiscall AircraftClass::Destruct(void **this)
   }
   AbstractClass::AnnounceExpiredPointer(this, 1);
   v16 = this;
-  v5 = (*(int (__thiscall **)(_DWORD *, void ***))(MEMORY[0x87F7E8][539370] + 16))(&MEMORY[0x87F7E8][539370], &v16);
-  if ( v5 != -1 && v5 < MEMORY[0x87F7E8][539374] )
+  v5 = (*(int (__thiscall **)(_DWORD *, void ***))(DataGlobal_87F7E8[539370] + 16))(&DataGlobal_87F7E8[539370], &v16);
+  if ( v5 != -1 && v5 < DataGlobal_87F7E8[539374] )
   {
-    --MEMORY[0x87F7E8][539374];
+    --DataGlobal_87F7E8[539374];
     for ( ;
-          v5 < MEMORY[0x87F7E8][539374];
-          *(_DWORD *)(MEMORY[0x87F7E8][539371] + 4 * v5 - 4) = *(_DWORD *)(MEMORY[0x87F7E8][539371] + 4 * v5) )
+          v5 < DataGlobal_87F7E8[539374];
+          *(_DWORD *)(DataGlobal_87F7E8[539371] + 4 * v5 - 4) = *(_DWORD *)(DataGlobal_87F7E8[539371] + 4 * v5) )
     {
       ++v5;
     }

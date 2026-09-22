@@ -1,4 +1,5 @@
 #include "network/network_ext.hpp"
+#include "e4/e4_globals.hpp"
 
 namespace gamemd {
 
@@ -312,9 +313,9 @@ int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
             }
           }
           v27 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1492);
-          MEMORY[0x87F7E8][539891] = ((int (__stdcall *)(int, int, _DWORD, _DWORD))v17)(v27, 327, 0, 0);
-          HIWORD(MEMORY[0x87F7E8][539888]) = v40;
-          strcpy((char *)&MEMORY[0x87F7E8][539892], Destination);
+          DataGlobal_87F7E8[539891] = ((int (__stdcall *)(int, int, _DWORD, _DWORD))v17)(v27, 327, 0, 0);
+          HIWORD(DataGlobal_87F7E8[539888]) = v40;
+          strcpy((char *)&DataGlobal_87F7E8[539892], Destination);
           v28 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1495);
           memset(v54, 0, sizeof(v54));
           ((void (__stdcall *)(int, int, int, char *))SendMessageA)(v28, 1205, 8, v54);
@@ -330,41 +331,41 @@ int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
           }
           if ( ((int (__stdcall *)(int, int, int, _DWORD, _DWORD))SendDlgItemMessageA)(hWnd, 1890, 240, 0, 0) == 1 )
           {
-            if ( !LOBYTE(MEMORY[0x87F7E8][539238]) )
+            if ( !LOBYTE(DataGlobal_87F7E8[539238]) )
             {
               v51 = asc_82083C;
               v36 = GetStringCSF((#72 *)g_Str_TXT_OK, 0, g_Str_File_MainOpt_cpp, 1067);
               v31 = GetStringCSF((#72 *)aTxtFirewallSet, 0, g_Str_File_MainOpt_cpp, 1067);
               Dialog::ShowMessageBox(v31, v36, 0, 0, 0);
             }
-            LOBYTE(MEMORY[0x87F7E8][539238]) = 1;
+            LOBYTE(DataGlobal_87F7E8[539238]) = 1;
           }
           else
           {
-            LOBYTE(MEMORY[0x87F7E8][539238]) = 0;
+            LOBYTE(DataGlobal_87F7E8[539238]) = 0;
           }
-          if ( v29 > 0 && !MEMORY[0x87F7E8][539291] )
+          if ( v29 > 0 && !DataGlobal_87F7E8[539291] )
           {
             v50 = asc_82083C;
             v37 = GetStringCSF((#72 *)g_Str_TXT_OK, 0, g_Str_File_MainOpt_cpp, 1078);
             v32 = GetStringCSF((#72 *)aTxtFirewallSet_0, 0, g_Str_File_MainOpt_cpp, 1078);
             Dialog::ShowMessageBox(v32, v37, 0, 0, 0);
           }
-          MEMORY[0x87F7E8][539291] = v29;
+          DataGlobal_87F7E8[539291] = v29;
           __Release__NonReentrantLock_details_Concurrency__QAEXXZ((#350 *)&dword_A8ED54[50269]);
           RawFileClass::Construct(lParam, (int)g_Str_File_RA2MD_INI);
           INIClass::SetBool(
-            (char *)&MEMORY[0x87F7E8][7734],
+            (char *)&DataGlobal_87F7E8[7734],
             (unsigned __int8 *)g_INI_Key_MultiPlayer,
             aSenddelay,
-            MEMORY[0x87F7E8][539238]);
+            DataGlobal_87F7E8[539238]);
           INIClass::SetInt(
-            (char *)&MEMORY[0x87F7E8][7734],
+            (char *)&DataGlobal_87F7E8[7734],
             (unsigned __int8 *)g_INI_Key_MultiPlayer,
             aPortnumberover,
-            MEMORY[0x87F7E8][539291],
+            DataGlobal_87F7E8[539291],
             0);
-          INIClass::WriteDigest((char *)&MEMORY[0x87F7E8][7734], (int)lParam, 0);
+          INIClass::WriteDigest((char *)&DataGlobal_87F7E8[7734], (int)lParam, 0);
           RawFileClass::Dtor(lParam);
           break;
         case 2u:
@@ -391,15 +392,15 @@ int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
     }
     v6 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1492);
     v38 = 0;
-    if ( MEMORY[0x87F7E8][8080]
+    if ( DataGlobal_87F7E8[8080]
       || ((v7 = (_DWORD *)__2_YAPAXI_Z(258832)) == 0 ? (v8 = 0) : (v8 = IPXInterfaceClass::Construct(v7)),
-          MEMORY[0x87F7E8][8080] = v8,
+          DataGlobal_87F7E8[8080] = v8,
           WinsockInterface::Init(v8),
           v38 = 1,
-          MEMORY[0x87F7E8][8080]) )
+          DataGlobal_87F7E8[8080]) )
     {
       Debug::Log();
-      v39 = MEMORY[0x87F7E8][8080];
+      v39 = DataGlobal_87F7E8[8080];
       for ( i = 0; i < 20; ++i )
       {
         if ( NetworkOptions::ApplySettings(v39, i, (char *)lParam, 64) )
@@ -418,8 +419,8 @@ LABEL_20:
           v10 = GetStringCSF((#72 *)aTxtNoBoundNetC, 0, g_Str_File_MainOpt_cpp, 894);
           ((void (__stdcall *)(int, int, _DWORD, #72 *))SendMessageA)(v6, 1218, 0, v10);
         }
-        v11 = MEMORY[0x87F7E8][539891];
-        if ( MEMORY[0x87F7E8][539891] < 0
+        v11 = DataGlobal_87F7E8[539891];
+        if ( DataGlobal_87F7E8[539891] < 0
           || v11 >= ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v6, 326, 0, 0) )
         {
           v11 = 0;
@@ -428,35 +429,35 @@ LABEL_20:
         ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1124, 0, 0);
         dword_82A280 = -1;
         v12 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1489);
-        if ( HIWORD(MEMORY[0x87F7E8][539888]) != 0xFFFF )
+        if ( HIWORD(DataGlobal_87F7E8[539888]) != 0xFFFF )
         {
-          sprintf((char *const)&v46, "%d", HIWORD(MEMORY[0x87F7E8][539888]));
+          sprintf((char *const)&v46, "%d", HIWORD(DataGlobal_87F7E8[539888]));
           ((void (__stdcall *)(int, int, _DWORD, __int128 *))SendMessageA)(v12, 1204, 0, &v46);
         }
         ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v12, 197, 5, 0);
         v13 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1491);
-        if ( strlen((const char *)&MEMORY[0x87F7E8][539892]) )
-          ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v13, 1204, 0, &MEMORY[0x87F7E8][539892]);
+        if ( strlen((const char *)&DataGlobal_87F7E8[539892]) )
+          ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v13, 1204, 0, &DataGlobal_87F7E8[539892]);
         ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v13, 197, 11, 0);
         ((void (__stdcall *)(int, int, int, bool, _DWORD))SendDlgItemMessageA)(
           hWnd,
           1890,
           241,
-          LOBYTE(MEMORY[0x87F7E8][539238]) != 0,
+          LOBYTE(DataGlobal_87F7E8[539238]) != 0,
           0);
         v14 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1495);
-        if ( v14 != -1 && MEMORY[0x87F7E8][539291] )
+        if ( v14 != -1 && DataGlobal_87F7E8[539291] )
         {
-          sprintf((char *const)&v46, "%d", MEMORY[0x87F7E8][539291]);
+          sprintf((char *const)&v46, "%d", DataGlobal_87F7E8[539291]);
           ((void (__stdcall *)(int, int, _DWORD, __int128 *))SendMessageA)(v14, 1204, 0, &v46);
           return 0;
         }
         return 0;
       }
-      if ( MEMORY[0x87F7E8][8080] )
-        (**(void (__thiscall ***)(_DWORD, int))MEMORY[0x87F7E8][8080])(MEMORY[0x87F7E8][8080], 1);
+      if ( DataGlobal_87F7E8[8080] )
+        (**(void (__thiscall ***)(_DWORD, int))DataGlobal_87F7E8[8080])(DataGlobal_87F7E8[8080], 1);
     }
-    MEMORY[0x87F7E8][8080] = 0;
+    DataGlobal_87F7E8[8080] = 0;
     goto LABEL_20;
   }
   return result;

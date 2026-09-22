@@ -5,6 +5,7 @@
 #include "e4/classes/E4Recv_5093C0_e4.hpp"
 #include "e4/classes/E4Recv_50C160_e4.hpp"
 #include "e4/classes/E4Recv_50DA40_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x501750
 namespace gamemd {
@@ -247,9 +248,9 @@ int HouseClass::sub_5092F0(int a2)
     this->radarVisibleTo[0] |= 1 << *(int *)(*(int *)(a2 + 52) + 184);
     if ( a2 == HouseClass_Player.field_0 )
   {
-    for ( i = 0; i < *(int *)&HouseClass_Player.__pad_5568[22996]; ++i )
+    for ( i = 0; i < *(int *)&HouseClass_Player[44860]; ++i )
     {
-    v5 = *(int *)(*(int *)&HouseClass_Player.__pad_5568[22984] + 4 * i);
+    v5 = *(int *)(*(int *)&HouseClass_Player[44848] + 4 * i);
     if ( v5 && !*(char *)(v5 + 129) && *(HouseClass **)(v5 + 540) == this )
       {
     v8[0] = *(int *)(v5 + 156);
@@ -257,10 +258,10 @@ int HouseClass::sub_5092F0(int a2)
     v6 = *(ObjectClass **)v5;
     v8[2] = *(int *)(v5 + 164);
     v7 = (*(int (__thiscall **)(int))&v6->hasParachute)(v5);
-    MapClass::RevealArea0( (int *)&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)v8, *(MouseClass **)(v7 + 1512), this, 0, 0, 0, 1, 1);
+    MapClass::RevealArea0( (int *)&DataGlobal_87C374[13428], (IUnknown *)v8, *(MouseClass **)(v7 + 1512), this, 0, 0, 0, 1, 1);
       }
     }
-    return MapClass::MarkForRedraw(&DataGlobal_87C374.__pad_14B0[8132], 2);
+    return MapClass::MarkForRedraw(&DataGlobal_87C374[13428], 2);
   }
     return result;
 }

@@ -2,6 +2,12 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Session_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x5D1D80
 namespace gamemd {
@@ -73,22 +79,22 @@ int __thiscall Session::PrepareGame(HWND this)
   __int16 v19; // [esp+204h] [ebp-4h]
   char v20; // [esp+206h] [ebp-2h]
 
-  v1 = (ObjectClass *)MEMORY[0xAC1154]; /*0x5e74e9*/
-  if ( MEMORY[0xAC1154] ) /*0x5e74f6*/
+  v1 = (ObjectClass *)g_UIControlState; /*0x5e74e9*/
+  if ( g_UIControlState ) /*0x5e74f6*/
   {
-    ComPtr::Dtor(MEMORY[0xAC1154]); /*0x5e74fa*/
+    ComPtr::Dtor(g_UIControlState); /*0x5e74fa*/
     __3_YAXPAX_Z(v1); /*0x5e7500*/
   }
-  MEMORY[0xAC1154] = 0; /*0x5e7513*/
+  g_UIControlState = 0; /*0x5e7513*/
   switch ( g_GameMode_Current[0] ) /*0x5e7521*/
   {
     case 1: /*0x5e7521*/
     case 2: /*0x5e7521*/
       if ( FindAndValidateMap( /*0x5e774c*/
-             &MEMORY[0xA8B8E0],
-             MEMORY[0xA8BB04],
-             &MEMORY[0xA8BAE2],
-             (unsigned __int8)MEMORY[0xA8BB08],
+             &Destination,
+             g_MultiplayerConfigState,
+             &g_MultiplayerFlags,
+             (unsigned __int8)g_MultiplayerSetupState,
              0) )
       {
         goto LABEL_42; /*0x5e7753*/
@@ -109,8 +115,8 @@ int __thiscall Session::PrepareGame(HWND this)
         }
         if ( !v9 ) /*0x5e77ae*/
           return result; /*0x5e7812*/
-        v10 = Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)Str, 250, 1); /*0x5e77cf*/
-        for ( result = Count::GetCountQueue(&MEMORY[0xA8EA70]); result > 0; result = Count::GetCountQueue(&MEMORY[0xA8EA70]) ) /*0x5e77d8*/
+        v10 = Stream::WriteBlock((int)&g_EventManager, (int)Str, 250, 1); /*0x5e77cf*/
+        for ( result = Count::GetCountQueue(&g_EventManager); result > 0; result = Count::GetCountQueue(&g_EventManager) ) /*0x5e77d8*/
         {
           result = v16; /*0x5e77da*/
           v11 = 1800; /*0x5e77de*/
@@ -132,10 +138,10 @@ int __thiscall Session::PrepareGame(HWND this)
     case 3: /*0x5e7521*/
       if ( Dialog::GetCurrentType() != 189 /*0x5e7550*/
         || FindAndValidateMap(
-             &MEMORY[0xA8B8E0],
-             MEMORY[0xA8BB04],
-             &MEMORY[0xA8BAE2],
-             (unsigned __int8)MEMORY[0xA8BB08],
+             &Destination,
+             g_MultiplayerConfigState,
+             &g_MultiplayerFlags,
+             (unsigned __int8)g_MultiplayerSetupState,
              0) )
       {
         goto LABEL_42; /*0x5e7557*/
@@ -151,46 +157,46 @@ int __thiscall Session::PrepareGame(HWND this)
         goto LABEL_42; /*0x5e7609*/
       v7 = 0; /*0x5e762e*/
       if ( FindAndValidateMap( /*0x5e7630*/
-             &MEMORY[0xA8B8E0],
-             MEMORY[0xA8BB04],
-             &MEMORY[0xA8BAE2],
-             (unsigned __int8)MEMORY[0xA8BB08],
+             &Destination,
+             g_MultiplayerConfigState,
+             &g_MultiplayerFlags,
+             (unsigned __int8)g_MultiplayerSetupState,
              0) )
       {
-        strcpy(Str, &MEMORY[0xA8B8E0]); /*0x5e765a*/
+        strcpy(Str, &Destination); /*0x5e765a*/
         _strupr(Str); /*0x5e7668*/
         Debug::Log(); /*0x5e7677*/
-        if ( !(_BYTE)MEMORY[0xA8BB08] && strstr(Str, MEMORY[0x831A88]) && strstr(Str, MEMORY[0x831A80]) ) /*0x5e76a8*/
+        if ( !(_BYTE)g_MultiplayerSetupState && strstr(Str, DataGlobal_831A88) && strstr(Str, DataGlobal_831A80) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
-        RawFileClass::Construct(v17, (int)&MEMORY[0xA8B8E0]); /*0x5e76c1*/
+        RawFileClass::Construct(v17, (int)&Destination); /*0x5e76c1*/
         if ( FileClass::Open(v17, 0) ) /*0x5e76cc*/
           v7 = 1; /*0x5e76d5*/
         RawFileClass::Dtor(v17); /*0x5e76db*/
         if ( !v7 ) /*0x5e76e2*/
         {
 LABEL_42:
-          v12 = (ObjectClass *)MEMORY[0xAC1154]; /*0x5e7825*/
-          if ( MEMORY[0xAC1154] ) /*0x5e782d*/
+          v12 = (ObjectClass *)g_UIControlState; /*0x5e7825*/
+          if ( g_UIControlState ) /*0x5e782d*/
           {
-            ComPtr::Dtor(MEMORY[0xAC1154]); /*0x5e7831*/
+            ComPtr::Dtor(g_UIControlState); /*0x5e7831*/
             __3_YAXPAX_Z(v12); /*0x5e7837*/
-            MEMORY[0xAC1154] = 0; /*0x5e783f*/
+            g_UIControlState = 0; /*0x5e783f*/
           }
           goto LABEL_44; /*0x5e783f*/
         }
       }
       if ( IsRandMap::Sed2((int)g_GameMode_Current) ) /*0x5e76ef*/
         return InvalidateRect(this, 0, 0); /*0x5e76ef*/
-      v8 = (ObjectClass *)MEMORY[0xAC1154]; /*0x5e76fc*/
-      if ( !MEMORY[0xAC1154] ) /*0x5e7704*/
+      v8 = (ObjectClass *)g_UIControlState; /*0x5e76fc*/
+      if ( !g_UIControlState ) /*0x5e7704*/
         return InvalidateRect(this, 0, 0); /*0x5e7704*/
-      ComPtr::Dtor(MEMORY[0xAC1154]); /*0x5e770c*/
+      ComPtr::Dtor(g_UIControlState); /*0x5e770c*/
       __3_YAXPAX_Z(v8); /*0x5e7712*/
-      MEMORY[0xAC1154] = 0; /*0x5e771a*/
+      g_UIControlState = 0; /*0x5e771a*/
       return InvalidateRect(this, 0, 0); /*0x5e7733*/
     default:
 LABEL_44:
-      v13 = CCFileClass::Construct(Str, &MEMORY[0xA8B8E0]); /*0x5e7845*/
+      v13 = CCFileClass::Construct(Str, &Destination); /*0x5e7845*/
       v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x5e7858*/
       *(_DWORD *)Str = &vt_CCFileClass; /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
@@ -203,13 +209,13 @@ LABEL_44:
         result = (int)__2_YAPAXI_Z(4u); /*0x5e7892*/
         if ( !result ) /*0x5e789c*/
         {
-          MEMORY[0xAC1154] = 0; /*0x5e78e4*/
+          g_UIControlState = 0; /*0x5e78e4*/
           return result; /*0x5e78f4*/
         }
         result = (int)unknown_libname_27((_DWORD *)result); /*0x5e78a0*/
-        MEMORY[0xAC1154] = (void *)result; /*0x5e78a5*/
+        g_UIControlState = (void *)result; /*0x5e78a5*/
       }
-      if ( MEMORY[0xAC1154] ) /*0x5e78b0*/
+      if ( g_UIControlState ) /*0x5e78b0*/
       {
         if ( IsRandMap::Sed2((int)g_GameMode_Current) ) /*0x5e78b7*/
         {
@@ -218,7 +224,7 @@ LABEL_44:
         }
         else
         {
-          PreviewClass::ReadPreview((char **)MEMORY[0xAC1154], &MEMORY[0xA8B8E0]); /*0x5e78cb*/
+          PreviewClass::ReadPreview((char **)g_UIControlState, &Destination); /*0x5e78cb*/
           return InvalidateRect(this, 0, 0); /*0x5e78d3*/
         }
       }
@@ -228,7 +234,7 @@ LABEL_44:
   {
     if ( g_GameMode_Current[0] == 3 ) /*0x5e7584*/
     {
-      v3 = Network::SendMessage((int)MEMORY[0xA8E9C0], (int)Str, 47, 1, (int)&MEMORY[0xA8BB1C], 0, 0); /*0x5e759d*/
+      v3 = Network::SendMessage((int)g_NetworkManager, (int)Str, 47, 1, (int)&g_NetworkRematchObject, 0, 0); /*0x5e759d*/
     }
     else
     {
@@ -236,13 +242,13 @@ LABEL_44:
       if ( !Flagged ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
       v5 = CharToWideString(Flagged + 36); /*0x5e75b0*/
-      v3 = Network::SendToPlayer((int)MEMORY[0xA8E9C0], (int)Str, 47, 1, (wchar_t *)v5); /*0x5e75c4*/
+      v3 = Network::SendToPlayer((int)g_NetworkManager, (int)Str, 47, 1, (wchar_t *)v5); /*0x5e75c4*/
     }
     if ( v3 ) /*0x5e75cb*/
     {
-      for ( result = Network::GetQueueCount((int)MEMORY[0xA8E9C0]); /*0x5e75e0*/
+      for ( result = Network::GetQueueCount((int)g_NetworkManager); /*0x5e75e0*/
             result;
-            result = Network::GetQueueCount((int)MEMORY[0xA8E9C0]) )
+            result = Network::GetQueueCount((int)g_NetworkManager) )
       {
         Event::Dispatch(); /*0x5e75e6*/
       }

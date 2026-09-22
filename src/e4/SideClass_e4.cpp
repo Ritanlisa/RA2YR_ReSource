@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x679A10
 namespace gamemd {
@@ -34,82 +36,82 @@ char __stdcall SideClass::LoadAllFromINI(CCINIClass *aP0)
     (*(void (__thiscall **)(_DWORD, CCINIClass *))(**((_DWORD **)g_SuperWeaponTypeCount + i) + 100))( /*0x679a2d*/
       *((_DWORD *)g_SuperWeaponTypeCount + i),
       aP0);
-  for ( j = 0; j < *(int *)&HouseClass_Player.__pad_5568[20620]; ++j ) /*0x679a43*/
-    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player.__pad_5568[20608] + 4 * j) /*0x679a50*/
+  for ( j = 0; j < *(int *)&HouseClass_Player[42484]; ++j ) /*0x679a43*/
+    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player[42472] + 4 * j) /*0x679a50*/
                                                  + 100))(
-      *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20608] + 4 * j),
+      *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * j),
       aP0);
-  for ( k = 0; k < *(int *)&stru_89E138.__pad_1600D[27]; ++k ) /*0x679a66*/
-    (*(void (__thiscall **)(_DWORD, char *))(**(_DWORD **)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * k) + 100))( /*0x679a77*/
-      *(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * k),
-      &stru_87C374.__pad_579C[22128]);
+  for ( k = 0; k < *(int *)&stru_89E138[90152]; ++k ) /*0x679a66*/
+    (*(void (__thiscall **)(_DWORD, char *))(**(_DWORD **)(*(_DWORD *)&stru_89E138[90140] + 4 * k) + 100))( /*0x679a77*/
+      *(_DWORD *)(*(_DWORD *)&stru_89E138[90140] + 4 * k),
+      &stru_87C374[44556]);
   for ( m = 0; m < (int)g_TriggerClassCount; ++m ) /*0x679a8d*/
     (*(void (__thiscall **)(_DWORD, CCINIClass *))(**((_DWORD **)g_TriggerTypeCount + m) + 100))( /*0x679a9a*/
       *((_DWORD *)g_TriggerTypeCount + m),
       aP0);
-  for ( n = 0; n < *(int *)&HouseClass_Player.__pad_5568[8052]; ++n ) /*0x679ab0*/
-    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player.__pad_5568[8040] + 4 * n) /*0x679abd*/
+  for ( n = 0; n < *(int *)&HouseClass_Player[29916]; ++n ) /*0x679ab0*/
+    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player[29904] + 4 * n) /*0x679abd*/
                                                  + 100))(
-      *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8040] + 4 * n),
+      *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29904] + 4 * n),
       aP0);
   for ( ii = 0; ii < (int)g_CrateCount; ++ii ) /*0x679ad3*/
     (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)&g_UnitTypeCount2->__pad_0[4 * ii] + 100))( /*0x679ae0*/
       *(_DWORD *)&g_UnitTypeCount2->__pad_0[4 * ii],
       aP0);
-  for ( jj = 0; jj < *(int *)&HouseClass_Player.__pad_5568[20644]; ++jj ) /*0x679af6*/
-    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player.__pad_5568[20632] + 4 * jj) /*0x679b03*/
+  for ( jj = 0; jj < *(int *)&HouseClass_Player[42508]; ++jj ) /*0x679af6*/
+    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player[42496] + 4 * jj) /*0x679b03*/
                                                  + 100))(
-      *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20632] + 4 * jj),
+      *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42496] + 4 * jj),
       aP0);
-  for ( kk = 0; kk < *(int *)&stru_87C374.__pad_579C[23144]; ++kk ) /*0x679b19*/
-    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&stru_87C374.__pad_579C[23132] + 4 * kk) /*0x679b26*/
+  for ( kk = 0; kk < *(int *)&stru_87C374[45572]; ++kk ) /*0x679b19*/
+    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&stru_87C374[45560] + 4 * kk) /*0x679b26*/
                                                  + 100))(
-      *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23132] + 4 * kk),
+      *(_DWORD *)(*(_DWORD *)&stru_87C374[45560] + 4 * kk),
       aP0);
   for ( mm = 0; mm < (int)g_BulletTypeInitState; ++mm ) /*0x679b3c*/
     (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)&dword_A83C84->__pad_0[4 * mm] + 100))( /*0x679b49*/
       *(_DWORD *)&dword_A83C84->__pad_0[4 * mm],
       aP0);
-  for ( nn = 0; nn < *(int *)&stru_87C374.__pad_579C[22976]; ++nn ) /*0x679b5f*/
-    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&stru_87C374.__pad_579C[22964] + 4 * nn) /*0x679b6c*/
+  for ( nn = 0; nn < *(int *)&stru_87C374[45404]; ++nn ) /*0x679b5f*/
+    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&stru_87C374[45392] + 4 * nn) /*0x679b6c*/
                                                  + 100))(
-      *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22964] + 4 * nn),
+      *(_DWORD *)(*(_DWORD *)&stru_87C374[45392] + 4 * nn),
       aP0);
-  for ( i1 = 0; i1 < *(int *)&stru_87C374.__pad_579C[23144]; ++i1 ) /*0x679b82*/
-    WeaponTypeClass::CalculateSpeed(*(_DWORD **)(*(_DWORD *)&stru_87C374.__pad_579C[23132] + 4 * i1)); /*0x679b8c*/
+  for ( i1 = 0; i1 < *(int *)&stru_87C374[45572]; ++i1 ) /*0x679b82*/
+    WeaponTypeClass::CalculateSpeed(*(_DWORD **)(*(_DWORD *)&stru_87C374[45560] + 4 * i1)); /*0x679b8c*/
   for ( i2 = 0; i2 < (int)g_TriggerClassCount; ++i2 ) /*0x679ba4*/
     nullsub_7(); /*0x679baf*/
-  for ( i3 = 0; i3 < *(int *)&HouseClass_Player.__pad_5568[20596]; ++i3 ) /*0x679bc7*/
-    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584] + 4 * i3) /*0x679bd5*/
+  for ( i3 = 0; i3 < *(int *)&HouseClass_Player[42460]; ++i3 ) /*0x679bc7*/
+    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player[42448] + 4 * i3) /*0x679bd5*/
                                                  + 100))(
-      *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584] + 4 * i3),
+      *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42448] + 4 * i3),
       aP0);
-  for ( i4 = 0; i4 < *(int *)&HouseClass_Player.__pad_5568[22900]; ++i4 ) /*0x679beb*/
-    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player.__pad_5568[22888] + 4 * i4) /*0x679bf9*/
+  for ( i4 = 0; i4 < *(int *)&HouseClass_Player[44764]; ++i4 ) /*0x679beb*/
+    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player[44752] + 4 * i4) /*0x679bf9*/
                                                  + 100))(
-      *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22888] + 4 * i4),
+      *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44752] + 4 * i4),
       aP0);
-  for ( i5 = 0; i5 < *(int *)&HouseClass_Player.__pad_3C[8]; ++i5 ) /*0x679c0f*/
+  for ( i5 = 0; i5 < *(int *)&HouseClass_Player[68]; ++i5 ) /*0x679c0f*/
     (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(HouseClass_Player.field_38 + 4 * i5) + 100))( /*0x679c1c*/
       *(_DWORD *)(HouseClass_Player.field_38 + 4 * i5),
       aP0);
-  for ( i6 = 0; i6 < *(int *)&HouseClass_Player.__pad_3C[32]; ++i6 ) /*0x679c32*/
-    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player.__pad_3C[20] + 4 * i6) /*0x679c3f*/
+  for ( i6 = 0; i6 < *(int *)&HouseClass_Player[92]; ++i6 ) /*0x679c32*/
+    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player[80] + 4 * i6) /*0x679c3f*/
                                                  + 100))(
-      *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_3C[20] + 4 * i6),
+      *(_DWORD *)(*(_DWORD *)&HouseClass_Player[80] + 4 * i6),
       aP0);
-  for ( i7 = 0; i7 < *(int *)HouseClass_Player.__pad_2C; ++i7 ) /*0x679c55*/
-    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player.__pad_18[8] + 4 * i7) /*0x679c62*/
+  for ( i7 = 0; i7 < *(int *)HouseClass_Player[44]; ++i7 ) /*0x679c55*/
+    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player[32] + 4 * i7) /*0x679c62*/
                                                  + 100))(
-      *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_18[8] + 4 * i7),
+      *(_DWORD *)(*(_DWORD *)&HouseClass_Player[32] + 4 * i7),
       aP0);
-  for ( i8 = 0; i8 < *(int *)&HouseClass_Player.__pad_5568[22660]; ++i8 ) /*0x679c78*/
-    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player.__pad_5568[22648] + 4 * i8) /*0x679c85*/
+  for ( i8 = 0; i8 < *(int *)&HouseClass_Player[44524]; ++i8 ) /*0x679c78*/
+    (*(void (__thiscall **)(_DWORD, CCINIClass *))(**(_DWORD **)(*(_DWORD *)&HouseClass_Player[44512] + 4 * i8) /*0x679c85*/
                                                  + 100))(
-      *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22648] + 4 * i8),
+      *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44512] + 4 * i8),
       aP0);
   v19 = 0; /*0x679c92*/
-  v20 = (int *)&HouseClass_Player.__pad_5568[20724]; /*0x679c94*/
+  v20 = (int *)&HouseClass_Player[42588]; /*0x679c94*/
   do /*0x679cad*/
   {
     *v20 = v19; /*0x679c9c*/
@@ -117,7 +119,7 @@ char __stdcall SideClass::LoadAllFromINI(CCINIClass *aP0)
     v20 += 8; /*0x679ca3*/
     ++v19; /*0x679ca6*/
   }
-  while ( (int)v20 < (int)&HouseClass_Player.__pad_5568[21748] ); /*0x679cad*/
+  while ( (int)v20 < (int)&HouseClass_Player[43612] ); /*0x679cad*/
   return 1; /*0x679caf*/
 }
 }
@@ -145,16 +147,16 @@ _DWORD *__thiscall SideClass::Construct(_DWORD *this, CCINIClass *aP1)
   this->vtable3 = &SideClass::`vftable'; /*0x6a45a3*/
   this->vtable4 = &vt_SideClass; /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x6a45b1*/
-  if ( *(int *)stru_89E138.__pad_15FF8 < *(int *)&stru_89E138.__pad_579C[67668] /*0x6a45ea*/
-    || (BYTE1(stru_89E138.field_15FF4) || !*(_DWORD *)&stru_89E138.__pad_579C[67668])
-    && *(int *)&stru_89E138.__pad_15FF8[4] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_89E138.__pad_579C[67660] + 8))(
-         &stru_89E138.__pad_579C[67660],
-         *(_DWORD *)&stru_89E138.__pad_579C[67668] + *(_DWORD *)&stru_89E138.__pad_15FF8[4],
+  if ( *(int *)stru_89E138[90104] < *(int *)&stru_89E138[90096] /*0x6a45ea*/
+    || (BYTE1(stru_89E138.field_15FF4) || !*(_DWORD *)&stru_89E138[90096])
+    && *(int *)&stru_89E138[90108] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_89E138[90088] + 8))(
+         &stru_89E138[90088],
+         *(_DWORD *)&stru_89E138[90096] + *(_DWORD *)&stru_89E138[90108],
          0) )
   {
-    v3 = (*(_DWORD *)stru_89E138.__pad_15FF8)++; /*0x6a45f7*/
-    *(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_579C[67664] + 4 * v3) = this; /*0x6a4606*/
+    v3 = (*(_DWORD *)stru_89E138[90104])++; /*0x6a45f7*/
+    *(_DWORD *)(*(_DWORD *)&stru_89E138[90092] + 4 * v3) = this; /*0x6a4606*/
   }
   return this; /*0x6a460b*/
 }
@@ -274,15 +276,15 @@ SideClass *__thiscall SideClass::Init(void **this, char a2)
   this->vtable4 = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6a4951*/
   v6 = this; /*0x6a4966*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0x8B4120] + 16))(&MEMORY[0x8B4120], &v6); /*0x6a496a*/
-  if ( v3 != -1 && v3 < MEMORY[0x8B4130] && v3 < --MEMORY[0x8B4130] ) /*0x6a4985*/
+  v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_8B4120 + 16))(&DataGlobal_8B4120, &v6); /*0x6a496a*/
+  if ( v3 != -1 && v3 < g_ObjectTypeList && v3 < --g_ObjectTypeList ) /*0x6a4985*/
   {
     do /*0x6a499d*/
     {
       ++v3; /*0x6a498d*/
-      *((_DWORD *)MEMORY[0x8B4124] + v3 - 1) = *((_DWORD *)MEMORY[0x8B4124] + v3); /*0x6a4991*/
+      *((_DWORD *)DataGlobal_8B4124 + v3 - 1) = *((_DWORD *)DataGlobal_8B4124 + v3); /*0x6a4991*/
     }
-    while ( v3 < MEMORY[0x8B4130] ); /*0x6a499d*/
+    while ( v3 < g_ObjectTypeList ); /*0x6a499d*/
   }
   v4 = this->houseTypesCount; /*0x6a499f*/
   this->houseTypes = &vt_VectorClass_int; /*0x6a49a5*/
@@ -308,7 +310,7 @@ int SideClass::FindByName()
 {
     int v3;
     int v4;
-    if ( !_strcmpi(this, &g_INI_Key_Digest.__pad_20[8]) )
+    if ( !_strcmpi(this, &g_INI_Key_Digest[40]) )
     return -2;
     if ( !this )
     return -1;

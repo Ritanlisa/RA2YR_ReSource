@@ -19,16 +19,16 @@ double *__thiscall RadBeam::Create(rc_ptr_base *this)
     inited = (double *)RadBeam::InitState(v2, this); /*0x65912e*/
   else
     inited = 0; /*0x659132*/
-  if ( MEMORY[0xB04A70] < MEMORY[0xB04A68] /*0x65916a*/
-    || (MEMORY[0xB04A6D] || !MEMORY[0xB04A68])
+  if ( DataGlobal_B04A70 < DataGlobal_B04A68 /*0x65916a*/
+    || (DataGlobal_B04A6D || !DataGlobal_B04A68)
     && unk_B04A74 > 0
     && ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))RadBeam_Array->field_8)(
          &RadBeam_Array,
-         MEMORY[0xB04A68] + unk_B04A74,
+         DataGlobal_B04A68 + unk_B04A74,
          0) )
   {
-    v4 = MEMORY[0xB04A70]++; /*0x659177*/
-    *(_DWORD *)&MEMORY[0xB04A64]->__pad_0[4 * v4] = inited; /*0x659186*/
+    v4 = DataGlobal_B04A70++; /*0x659177*/
+    *(_DWORD *)&DataGlobal_B04A64->__pad_0[4 * v4] = inited; /*0x659186*/
   }
   inited[3] = (double)(this != (rc_ptr_base *)1 ? 20 : 10);
   return inited; /*0x6591a1*/

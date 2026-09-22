@@ -14,6 +14,7 @@
 #include <cmath>
 #include <cstring>
 #include <limits>
+#include "e4/e4_globals.hpp"
 
 namespace gamemd
 {
@@ -300,7 +301,7 @@ int __thiscall CellClass_DrawDispatch(int *this, unsigned int a2, _DWORD *a3, in
     return 0;
   v6 = a2;
   (*(void (__thiscall **)(int *, unsigned int))(*this + 120))(this, a2);
-  if ( (a2 & 1) == 0 && ((a2 & 2) == 0 || (int *)MEMORY[0x8B3E88] != this) )
+  if ( (a2 & 1) == 0 && ((a2 & 2) == 0 || (int *)DataGlobal_8B3E88 != this) )
   {
     v6 = a2 & 0xFFFFFFFD;
     return CellClass::Draw((int)this, v6, a3, 0);
@@ -309,15 +310,15 @@ int __thiscall CellClass_DrawDispatch(int *this, unsigned int a2, _DWORD *a3, in
   {
     v7 = (*(int (__thiscall **)(int *, _DWORD))(*this + 164))(this, this->attached3);
     v8 = *((_BYTE *)this + 46)
-       ? (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 44))(MEMORY[0x887640])
-       : (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 48))(MEMORY[0x887640]);
+       ? (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance)
+       : (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
     if ( v8 <= v7 || (v9 = v8 - v7, v8 - v7 >= (*(int (__thiscall **)(int *))(*this + 152))(this)) )
       this->q038 = 0;
     else
       this->q038 = v9;
     v10 = *((_BYTE *)this + 46)
-        ? (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 44))(MEMORY[0x887640])
-        : (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 48))(MEMORY[0x887640]);
+        ? (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance)
+        : (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
     if ( (*(int (__thiscall **)(int *, int))(*this + 160))(this, v10 - this->q038) < this->attached3 )
     {
       do
@@ -327,16 +328,16 @@ int __thiscall CellClass_DrawDispatch(int *this, unsigned int a2, _DWORD *a3, in
           break;
         this->q038 = v11 - 1;
         v12 = *((_BYTE *)this + 46)
-            ? (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 44))(MEMORY[0x887640])
-            : (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 48))(MEMORY[0x887640]);
+            ? (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance)
+            : (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
       }
       while ( (*(int (__thiscall **)(int *, int))(*this + 160))(this, v12 - this->q038) < this->attached3 );
     }
   }
   if ( *((_BYTE *)this + 46) )
-    v13 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 44))(MEMORY[0x887640]);
+    v13 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance);
   else
-    v13 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 48))(MEMORY[0x887640]);
+    v13 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
   v14 = *this;
   v15 = (*(int (__thiscall **)(int *, int))(*this + 160))(this, v13 - this->q038);
   if ( (*(int (__thiscall **)(int *, int))(v14 + 140))(this, v15) )
@@ -577,7 +578,7 @@ int __thiscall CellClass_DrawWithFlags(_DWORD *this, int a2, _DWORD *a3, int a4)
   else
   {
     v7 = this->q170
-       + ((*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 48))(MEMORY[0x887640]) - this->lightConvert - 1)
+       + ((*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance) - this->lightConvert - 1)
        / this->CellClass_field_4C;
     this->q16C = v7;
     if ( v7 >= this->q044 - 1 )
@@ -754,16 +755,16 @@ _BYTE *__thiscall CellClass_RegisterForRedraw(int this, __int16 *a2)
   float v14; // [esp+14h] [ebp+4h]
 
   v13 = Cell::PosToIndex(a2);
-  result = CellCoord::To_CellObj(&MEMORY[0x87F7E8], a2);
+  result = CellCoord::To_CellObj(&DataGlobal_87F7E8, a2);
   if ( result[286] < 0xBu )
   {
     if ( this->CellClass_field_10C > Object::ComputeAllocationSize() - 10 )
       BuildingClass::RebuildOccupancy2((int **)this);
     *(_DWORD *)(this->unknown118 + 8 * this->CellClass_field_10C) = *(_DWORD *)a2;
-    *(float *)(this->unknown118 + 8 * this->CellClass_field_10C + 4) = (float)((int)MEMORY[0xA8ED84]
+    *(float *)(this->unknown118 + 8 * this->CellClass_field_10C + 4) = (float)((int)g_CurrentFrame
                                                                                   + (int)abs32(
                                                                                            Random::State(
-                                                                                             (_DWORD *)MEMORY[0xA8B230]
+                                                                                             (_DWORD *)g_ScenarioClass_Instance
                                                                                            + 134))
                                                                                   % 50);
     v4 = this->CellClass_field_10C;

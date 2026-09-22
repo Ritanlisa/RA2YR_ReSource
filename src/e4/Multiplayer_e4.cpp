@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x688380
 VectorClass * Multiplayer::FindStartPositions()
@@ -42,13 +47,13 @@ VectorClass *__thiscall Multiplayer::FindStartPositions(VectorClass *this)
   v2 = this; /*0x688389*/
   v21 = this; /*0x688391*/
   VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
-  v3 = *(ScenarioClass **)&HouseClass_Player.__pad_5568[8060]; /*0x68839a*/
+  v3 = *(ScenarioClass **)&HouseClass_Player[29924]; /*0x68839a*/
   v4 = 10; /*0x6883a0*/
   v25 = (void **)&vt_DynamicVectorClass_Cell; /*0x6883a5*/
   v30 = 10; /*0x6883ad*/
   v29 = 0; /*0x6883b1*/
   v5 = 0; /*0x6883b5*/
-  waypoints = (char *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 1586); /*0x6883b7*/
+  waypoints = (char *)(*(_DWORD *)&HouseClass_Player[29924] + 1586); /*0x6883b7*/
   do /*0x6883e9*/
   {
     if ( v5 < 0 ) /*0x6883c6*/
@@ -61,10 +66,10 @@ VectorClass *__thiscall Multiplayer::FindStartPositions(VectorClass *this)
   }
   while ( v5 < 8 ); /*0x6883e9*/
   v7 = 0; /*0x6883f0*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[18384] > 0 ) /*0x6883f4*/
+  if ( *(int *)&HouseClass_Player[40248] > 0 ) /*0x6883f4*/
   {
-    v8 = *(_DWORD *)&HouseClass_Player.__pad_5568[18372]; /*0x6883f6*/
-    v9 = *(_DWORD *)&HouseClass_Player.__pad_5568[18384]; /*0x6883fc*/
+    v8 = *(_DWORD *)&HouseClass_Player[40236]; /*0x6883f6*/
+    v9 = *(_DWORD *)&HouseClass_Player[40248]; /*0x6883fc*/
     do /*0x68840b*/
     {
       if ( *(_DWORD *)(*(_DWORD *)v8 + 107) == -1 ) /*0x688404*/
@@ -76,10 +81,10 @@ VectorClass *__thiscall Multiplayer::FindStartPositions(VectorClass *this)
     v4 = v30; /*0x68840d*/
     v2 = v21; /*0x688411*/
   }
-  if ( (int)v1 <= *(_DWORD *)&HouseClass_Player.__pad_5568[8128] + *(_DWORD *)&HouseClass_Player.__pad_5568[18384] - v7 ) /*0x688421*/
+  if ( (int)v1 <= *(_DWORD *)&HouseClass_Player[29992] + *(_DWORD *)&HouseClass_Player[40248] - v7 ) /*0x688421*/
   {
-    v20 = (IUnknown *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8128] /*0x68842b*/
-                     + *(_DWORD *)&HouseClass_Player.__pad_5568[18384]
+    v20 = (IUnknown *)(*(_DWORD *)&HouseClass_Player[29992] /*0x68842b*/
+                     + *(_DWORD *)&HouseClass_Player[40248]
                      - v7);
     v10 = v20; /*0x68842f*/
   }
@@ -104,12 +109,12 @@ LABEL_22:
       v29 = (IUnknown *)((char *)v29 + 1); /*0x6884ae*/
       *((_DWORD *)Block + (_DWORD)v13) = v12; /*0x6884b6*/
     }
-    v3 = *(ScenarioClass **)&HouseClass_Player.__pad_5568[8060]; /*0x6884b9*/
+    v3 = *(ScenarioClass **)&HouseClass_Player[29924]; /*0x6884b9*/
 LABEL_24:
     v23 = *(_DWORD *)&v3->waypoints[4 * i]; /*0x6884bf*/
     Debug::Log(); /*0x6884d9*/
     v4 = v30; /*0x6884de*/
-    v3 = *(ScenarioClass **)&HouseClass_Player.__pad_5568[8060]; /*0x6884e2*/
+    v3 = *(ScenarioClass **)&HouseClass_Player[29924]; /*0x6884e2*/
     v2 = v21; /*0x6884e8*/
   }
   if ( (char *)v10 - (char *)v29 > 0 ) /*0x688502*/
@@ -120,19 +125,19 @@ LABEL_24:
       do /*0x688643*/
       {
         v14 = Random::Range( /*0x688551*/
-                (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
+                (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                 0,
-                (IUnknown *)(*(_DWORD *)&stru_87C374.__pad_14B0[8436] - 10));
-        LOWORD(v22) = *(_WORD *)&stru_87C374.__pad_14B0[8424] /*0x688573*/
+                (IUnknown *)(*(_DWORD *)&stru_87C374[13732] - 10));
+        LOWORD(v22) = *(_WORD *)&stru_87C374[13720] /*0x688573*/
                     + Random::Range(
-                        (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
+                        (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                         (IUnknown *)0xA,
-                        (IUnknown *)(*(_DWORD *)&stru_87C374.__pad_14B0[8432] - 10));
-        HIWORD(v22) = v14 + *(_WORD *)&stru_87C374.__pad_14B0[8428] + 10; /*0x688588*/
+                        (IUnknown *)(*(_DWORD *)&stru_87C374[13728] - 10));
+        HIWORD(v22) = v14 + *(_WORD *)&stru_87C374[13724] + 10; /*0x688588*/
         v19 = v22; /*0x688594*/
         v23 = 0; /*0x6885ab*/
         v19 = *LayerClass::Pathfinding_Find( /*0x6885c3*/
-                 (IUnknown *)&stru_87C374.__pad_14B0[8132],
+                 (IUnknown *)&stru_87C374[13428],
                  (IUnknown *)&v23,
                  (IUnknown *)&v24,
                  (IUnknown *)&v19,
@@ -248,7 +253,7 @@ void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
   __int16 v14; // [esp+1E0h] [ebp-4h]
   char v15; // [esp+1E2h] [ebp-2h]
 
-  if ( !MEMORY[0xA8ED6B] ) /*0x69aea1*/
+  if ( !ArmageddonMode ) /*0x69aea1*/
   {
     v11 = a2; /*0x69aeb4*/
     if ( *((_BYTE *)g_ScenarioClass_Instance + 13501) ) /*0x69aeb8*/
@@ -267,10 +272,10 @@ void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
           v13[0] = 108; /*0x69b0a2*/
           v7 = Progress::GetWeighted(0); /*0x69b0aa*/
           *(int *)((char *)&v13[6] + 1) = Math::RoundToInt(v7 * 100.0); /*0x69b0c0*/
-          LOBYTE(v13[6]) = MEMORY[0xA8DB30]; /*0x69b0d5*/
+          LOBYTE(v13[6]) = g_EventDispatchState; /*0x69b0d5*/
           Stream::WriteBlock(v13, 250, 0); /*0x69b0d9*/
-          Stream::ReadPacket(&MEMORY[0xA8EA70]); /*0x69b0e3*/
-          while ( Count::GetCountQueue(&MEMORY[0xA8EA70]) > 5 ) /*0x69b0f5*/
+          Stream::ReadPacket(&g_EventManager); /*0x69b0e3*/
+          while ( Count::GetCountQueue(&g_EventManager) > 5 ) /*0x69b0f5*/
           {
             v8 = 240; /*0x69b101*/
             if ( Ticks != -1 ) /*0x69b107*/
@@ -284,7 +289,7 @@ void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
               break; /*0x69b11e*/
             Sleep(0x14u); /*0x69b122*/
             EventQueue::Process(g_BinkMoviePlayer); /*0x69b12a*/
-            Stream::ReadPacket(&MEMORY[0xA8EA70]); /*0x69b134*/
+            Stream::ReadPacket(&g_EventManager); /*0x69b134*/
           }
           break; /*0x69b146*/
         case 3: /*0x69af3e*/
@@ -295,13 +300,13 @@ void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
           v13[0] = 15; /*0x69af5c*/
           v3 = Progress::GetWeighted(0); /*0x69af64*/
           *(int *)((char *)&v13[11] + 3) = Math::RoundToInt(v3 * 100.0); /*0x69af7a*/
-          strcpy((char *)&v13[1], ToWideStringChar(*(char **)MEMORY[0xA8DA78])); /*0x69af9e*/
+          strcpy((char *)&v13[1], ToWideStringChar(*(char **)Game_PlayerInfoArray)); /*0x69af9e*/
           if ( (double)*(int *)((char *)&v13[11] + 3) >= 99.95 ) /*0x69afb6*/
           {
-            for ( i = 1; i < MEMORY[0xA8DA84]; ++i ) /*0x69afdf*/
+            for ( i = 1; i < Game_PlayerCount; ++i ) /*0x69afdf*/
             {
-              Debug::Log(MEMORY[0x83F674]); /*0x69afe6*/
-              Network::SendToPlayer((int)v13, 51, 1, *(wchar_t **)(MEMORY[0xA8DA78] + 4 * i)); /*0x69b006*/
+              Debug::Log(DataGlobal_83F674); /*0x69afe6*/
+              Network::SendToPlayer((int)v13, 51, 1, *(wchar_t **)(Game_PlayerInfoArray + 4 * i)); /*0x69b006*/
             }
           }
           else
@@ -309,7 +314,7 @@ void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
             Network::SendMessage(v13, 51, 0, 0, 0, 0); /*0x69afcc*/
           }
           Event::Dispatch(); /*0x69b015*/
-          while ( Network::GetQueueCount(&MEMORY[0xA8E9C0]) > 5 ) /*0x69b027*/
+          while ( Network::GetQueueCount(&g_NetworkManager) > 5 ) /*0x69b027*/
           {
             v5 = 240; /*0x69b037*/
             if ( Ticks != -1 ) /*0x69b03d*/

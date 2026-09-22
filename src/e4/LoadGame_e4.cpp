@@ -1,6 +1,14 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Display_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/MixFile_e4.hpp"
+#include "e4/classes/VectorClass_Building_e4.hpp"
+#include "e4/classes/VectorClass_ptr_SuperClass_e4.hpp"
 
 // 0x660840
 bool LoadGame::LoadTriggerEvents()
@@ -215,7 +223,7 @@ char __thiscall LoadGame::Start(LPSTREAM this)
     v69[1] = 0;
     AllocateSurfaceScreenSurfaces((int)&DSurface_WindowBounds, (int)v69, (int)v68, (int)v67, 0);
     TacticalClass::SetViewDimensions(v70);
-    LoadGame::LoadBlock68(&MEMORY[0x8A38E0], (int)this);
+    LoadGame::LoadBlock68(&DataGlobal_8A38E0, (int)this);
     LoadTheaterClassMIX(*((_DWORD *)g_ScenarioClass_Instance + 1174));
     RulesClass::SaveLoad_Prefix_0(&g_RulesClass_Instance->DetailMinFrameRateNormal, (int)this);
     if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
@@ -231,7 +239,7 @@ char __thiscall LoadGame::Start(LPSTREAM this)
       return 0;
     }
 LABEL_6:
-    MouseClass::LoadGameAssets(&MEMORY[0x87F7E8].field_0, this);
+    MouseClass::LoadGameAssets(&DataGlobal_87F7E8.field_0, this);
     if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
       return 0;
     v9 = 0;
@@ -247,7 +255,7 @@ LABEL_6:
 LABEL_10:
     if ( Game::SerializeGameSaveState(this) < 0 )
       return 0;
-    MapClass::BuildSubzones(&MEMORY[0x87F7E8]);
+    MapClass::BuildSubzones(&DataGlobal_87F7E8);
     LayerClass::Load(&g_GameConfigManager, this);
     if ( g_TacticalClass_Instance )
     {
@@ -828,8 +836,8 @@ LABEL_188:
       return 0;
     }
 LABEL_192:
-    MEMORY[0xA83D60] = 0;
-    VectorClass_ptr_SuperClass::Remove((int)&MEMORY[0xA83D50]);
+    DataGlobal_A83D60 = 0;
+    VectorClass_ptr_SuperClass::Remove((int)&SuperClass_ShowTimers);
     v54 = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0);
     if ( v54 < 0 )
       return 0;
@@ -845,16 +853,16 @@ LABEL_192:
                 0);
         if ( v54 < 0 )
           break;
-        if ( MEMORY[0xA83D60] < MEMORY[0xA83D58]
-          || (MEMORY[0xA83D5D] || !MEMORY[0xA83D58])
-          && MEMORY[0xA83D64] > 0
-          && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA83D50] + 8))(
-               &MEMORY[0xA83D50],
-               MEMORY[0xA83D64] + MEMORY[0xA83D58],
+        if ( DataGlobal_A83D60 < DataGlobal_A83D58
+          || (DataGlobal_A83D5D || !DataGlobal_A83D58)
+          && DataGlobal_A83D64 > 0
+          && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(SuperClass_ShowTimers + 8))(
+               &SuperClass_ShowTimers,
+               DataGlobal_A83D64 + DataGlobal_A83D58,
                0) )
         {
-          v56 = MEMORY[0xA83D60]++;
-          *((_DWORD *)MEMORY[0xA83D54] + v56) = ppvObj;
+          v56 = DataGlobal_A83D60++;
+          *((_DWORD *)DataGlobal_A83D54 + v56) = ppvObj;
         }
         v57 = v64;
         if ( ++v55 >= v64 )
@@ -866,7 +874,7 @@ LABEL_205:
       if ( v57 > 0 )
       {
         do
-          ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)MEMORY[0xA83D54] + v58++);
+          ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)DataGlobal_A83D54 + v58++);
         while ( v58 < v64 );
       }
     }
@@ -952,8 +960,8 @@ LABEL_222:
         LoadGame::CleanupArray(&g_MissionQueueFrame);
         if ( LoadGame::LoadPointArray(&g_MissionQueueFrame, (int)this) < 0 )
           return 0;
-        Stream::FlushAndReset(&MEMORY[0x87F5D8]);
-        if ( LoadGame::DeserializePointerArrays(&MEMORY[0x87F5D8], (int)this) < 0 )
+        Stream::FlushAndReset(&DataGlobal_87F5D8);
+        if ( LoadGame::DeserializePointerArrays(&DataGlobal_87F5D8, (int)this) < 0 )
           return 0;
         if ( Stream::ReadOLEObjects(this) < 0 )
           return 0;
@@ -962,7 +970,7 @@ LABEL_222:
         if ( g_GameMode_Current[0] == 5 )
         {
           Debug::Log();
-          if ( !LoadGame::LoadBlock300(MEMORY[0xA8B250], (int)this) )
+          if ( !LoadGame::LoadBlock300(g_ScenarioFlags, (int)this) )
           {
             Debug::Log();
             return 0;
@@ -974,9 +982,9 @@ LABEL_222:
           return 0;
         if ( LoadGame_Start((int)this) < 0 )
           return 0;
-        MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2);
+        MapClass::MarkForRedraw(&DataGlobal_87F7E8, 2);
         if ( !g_GameMode_Current[0] )
-          MEMORY[0xABCE08] = 1;
+          DataGlobal_ABCE08 = 1;
         return 1;
       }
     }
@@ -1036,7 +1044,7 @@ int __thiscall sub_751710(void *this)
   _DWORD v18[4]; // [esp+40h] [ebp-10h] BYREF
 
   v1 = this; /*0x751717*/
-  Next = (int *)AudioQueue::GetNext(MEMORY[0xB1D320]); /*0x751727*/
+  Next = (int *)AudioQueue::GetNext(DataGlobal_B1D320); /*0x751727*/
   if ( Next ) /*0x75172b*/
   {
     do /*0x751763*/
@@ -1044,9 +1052,9 @@ int __thiscall sub_751710(void *this)
       NextAlt = AudioQueue::GetNextAlt(Next); /*0x751737*/
       AudioController::Stop(Next + 3); /*0x751739*/
       LinkedList::Init((_DWORD **)Next); /*0x751740*/
-      PushFrontLinkedListAlt(MEMORY[0xB1D3A4], (int)Next); /*0x75174d*/
+      PushFrontLinkedListAlt(DataGlobal_B1D3A4, (int)Next); /*0x75174d*/
       Next = (int *)NextAlt; /*0x751758*/
-      --MEMORY[0xB1D3A8]; /*0x75175d*/
+      --DataGlobal_B1D3A8; /*0x75175d*/
     }
     while ( NextAlt ); /*0x751763*/
   }
@@ -1063,9 +1071,9 @@ int __thiscall sub_751710(void *this)
         v16 = result; /*0x7517a6*/
         if ( result < 0 ) /*0x7517aa*/
           break; /*0x7517aa*/
-        if ( v18[0] != -1 && v18[0] < MEMORY[0xB1D388] && v18[0] >= 0 ) /*0x7517cb*/
+        if ( v18[0] != -1 && v18[0] < g_VocPlayState && v18[0] >= 0 ) /*0x7517cb*/
         {
-          v5 = **((_DWORD **)MEMORY[0xB1D37C] + v18[0]); /*0x7517da*/
+          v5 = **((_DWORD **)g_VocAudioConfig + v18[0]); /*0x7517da*/
           if ( v5 ) /*0x7517de*/
           {
             if ( AudioMixer::SetVolume(v5) ) /*0x7517e4*/
@@ -1076,7 +1084,7 @@ int __thiscall sub_751710(void *this)
               v15 = v18[0]; /*0x751807*/
               if ( v18[0] >= 0 ) /*0x75180b*/
               {
-                v8 = LinkedList::Next((int **)MEMORY[0xB1D3A4]); /*0x751813*/
+                v8 = LinkedList::Next((int **)DataGlobal_B1D3A4); /*0x751813*/
                 v9 = v8; /*0x751818*/
                 if ( v8 ) /*0x75181c*/
                 {
@@ -1089,10 +1097,10 @@ int __thiscall sub_751710(void *this)
                   v9[9] = v7; /*0x751843*/
                   v9[10] = v10; /*0x751846*/
                   StartAudioControllerAt(v15, (int)(v9 + 8), (int)(v9 + 3)); /*0x75184d*/
-                  InsertAfterDListNode((int)MEMORY[0xB1D320], v9); /*0x751859*/
-                  v11 = ++MEMORY[0xB1D3A8]; /*0x751869*/
-                  if ( MEMORY[0xB1D3A8] > MEMORY[0xB1D3AC] ) /*0x751871*/
-                    MEMORY[0xB1D3AC] = v11; /*0x751873*/
+                  InsertAfterDListNode((int)DataGlobal_B1D320, v9); /*0x751859*/
+                  v11 = ++DataGlobal_B1D3A8; /*0x751869*/
+                  if ( DataGlobal_B1D3A8 > DataGlobal_B1D3AC ) /*0x751871*/
+                    DataGlobal_B1D3AC = v11; /*0x751873*/
                   v1 = this; /*0x751878*/
                 }
               }
@@ -1118,10 +1126,10 @@ int __thiscall sub_7533F0(void *this)
   int v3; // [esp+30h] [ebp-10h] BYREF
   _DWORD v4[3]; // [esp+34h] [ebp-Ch] BYREF
 
-  if ( MEMORY[0xB1D4C4] ) /*0x7533fd*/
+  if ( DataGlobal_B1D4C4 ) /*0x7533fd*/
   {
-    *(_DWORD *)(MEMORY[0xB1D4C4] + 80) = 2; /*0x7533ff*/
-    MEMORY[0xB1D4C4] = 0; /*0x753406*/
+    *(_DWORD *)(DataGlobal_B1D4C4 + 80) = 2; /*0x7533ff*/
+    DataGlobal_B1D4C4 = 0; /*0x753406*/
   }
   if ( g_InfantryDrawState ) /*0x753418*/
     Audio::Release(g_InfantryDrawState); /*0x75341a*/

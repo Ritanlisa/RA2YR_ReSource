@@ -38,6 +38,10 @@
 #include "e4/classes/VectorClass_UHashObject_uint_uint_e4.hpp"
 #include "e4/classes/VectorClass_UScoutStruct___33_e4.hpp"
 #include "e4/classes/VectorClass_UScoutStruct_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 #include "e4/classes/VectorClass_USubzoneTrackingStruct_e4.hpp"
 #include "e4/classes/VectorClass_UUndoInfoStruct_e4.hpp"
 #include "e4/classes/VectorClass_UtagCONNECTDATA_e4.hpp"
@@ -751,16 +755,16 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A20(int a1,
 
   v2 = 0; /*0x4f6a27*/
   v3 = 0; /*0x4f6a29*/
-  if ( MEMORY[0xA8EC88] <= 0 ) /*0x4f6a2d*/
+  if ( g_SidebarState <= 0 ) /*0x4f6a2d*/
     return 0; /*0x4f6a71*/
   do /*0x4f6a66*/
   {
-    v4 = (_DWORD *)*((_DWORD *)MEMORY[0xA8EC7C] + v3); /*0x4f6a42*/
+    v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6a42*/
     if ( v4[135] == a1 - 36 && *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4) + 956) == a2 ) /*0x4f6a5b*/
       ++v2; /*0x4f6a5d*/
     ++v3; /*0x4f6a63*/
   }
-  while ( v3 < MEMORY[0xA8EC88] ); /*0x4f6a66*/
+  while ( v3 < g_SidebarState ); /*0x4f6a66*/
   return v2; /*0x4f6a6c*/
 }
 }
@@ -779,16 +783,16 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A80(int a1,
 
   v2 = 0; /*0x4f6a87*/
   v3 = 0; /*0x4f6a89*/
-  if ( MEMORY[0xA8EC88] <= 0 ) /*0x4f6a8d*/
+  if ( g_SidebarState <= 0 ) /*0x4f6a8d*/
     return 0; /*0x4f6ad1*/
   do /*0x4f6ac6*/
   {
-    v4 = (_DWORD *)*((_DWORD *)MEMORY[0xA8EC7C] + v3); /*0x4f6aa2*/
+    v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6aa2*/
     if ( v4[135] == a1 - 40 && *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4) + 956) == a2 ) /*0x4f6abb*/
       ++v2; /*0x4f6abd*/
     ++v3; /*0x4f6ac3*/
   }
-  while ( v3 < MEMORY[0xA8EC88] ); /*0x4f6ac6*/
+  while ( v3 < g_SidebarState ); /*0x4f6ac6*/
   return v2; /*0x4f6acc*/
 }
 }
@@ -808,17 +812,17 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6AE0(int a1,
 
   v2 = 0; /*0x4f6ae7*/
   v3 = 0; /*0x4f6ae9*/
-  if ( MEMORY[0xA8EC88] <= 0 ) /*0x4f6aed*/
+  if ( g_SidebarState <= 0 ) /*0x4f6aed*/
     return 0; /*0x4f6b44*/
   do /*0x4f6b39*/
   {
-    v4 = (_DWORD *)*((_DWORD *)MEMORY[0xA8EC7C] + v3); /*0x4f6afe*/
+    v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6afe*/
     v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4); /*0x4f6b05*/
     if ( v4[135] == a1 - 36 && v5[239] == a2 ) /*0x4f6b1f*/
       v2 += v5[412] + v5[413]; /*0x4f6b2f*/
     ++v3; /*0x4f6b36*/
   }
-  while ( v3 < MEMORY[0xA8EC88] ); /*0x4f6b39*/
+  while ( v3 < g_SidebarState ); /*0x4f6b39*/
   return v2; /*0x4f6b3f*/
 }
 }
@@ -838,17 +842,17 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6B50(int a1,
 
   v2 = 0; /*0x4f6b57*/
   v3 = 0; /*0x4f6b59*/
-  if ( MEMORY[0xA8EC88] <= 0 ) /*0x4f6b5d*/
+  if ( g_SidebarState <= 0 ) /*0x4f6b5d*/
     return 0; /*0x4f6bb4*/
   do /*0x4f6ba9*/
   {
-    v4 = (_DWORD *)*((_DWORD *)MEMORY[0xA8EC7C] + v3); /*0x4f6b6e*/
+    v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6b6e*/
     v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4); /*0x4f6b75*/
     if ( v4[135] == a1 - 40 && v5[239] == a2 ) /*0x4f6b8f*/
       v2 += v5[412] + v5[413]; /*0x4f6b9f*/
     ++v3; /*0x4f6ba6*/
   }
-  while ( v3 < MEMORY[0xA8EC88] ); /*0x4f6ba9*/
+  while ( v3 < g_SidebarState ); /*0x4f6ba9*/
   return v2; /*0x4f6baf*/
 }
 }
@@ -878,26 +882,26 @@ _DWORD *__stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6BC0(int
   int v17; // [esp+18h] [ebp-10h]
   _BYTE v18[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = MEMORY[0xA8EF98]; /*0x4f6bcf*/
-  if ( *(_DWORD *)(a1 + 21616) == MEMORY[0xA8EF98] ) /*0x4f6bdd*/
+  v2 = g_ControlGroupState; /*0x4f6bcf*/
+  if ( *(_DWORD *)(a1 + 21616) == g_ControlGroupState ) /*0x4f6bdd*/
     v3 = *(_DWORD *)(a1 + 21612); /*0x4f6be8*/
   else
     v3 = *(_DWORD *)(a1 + 21616); /*0x4f6bf0*/
   v13 = v3; /*0x4f6bfd*/
-  if ( v3 == MEMORY[0xA8EF98] ) /*0x4f6c01*/
+  if ( v3 == g_ControlGroupState ) /*0x4f6c01*/
   {
-    v4 = MEMORY[0xA8EFF8]; /*0x4f6c10*/
-    v16 = MEMORY[0xA8EFFC]; /*0x4f6c15*/
-    v17 = MEMORY[0xA8F000]; /*0x4f6c1f*/
+    v4 = g_ControlGroupPool; /*0x4f6c10*/
+    v16 = g_ControlGroupConfig; /*0x4f6c15*/
+    v17 = g_ControlGroupLimit; /*0x4f6c1f*/
   }
   else
   {
-    v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v13); /*0x4f6c2f*/
+    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v13); /*0x4f6c2f*/
     v6 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v5 + 72))(v5, v18); /*0x4f6c40*/
     v4 = *v6; /*0x4f6c49*/
     v16 = v6[1]; /*0x4f6c4e*/
     v17 = v6[2]; /*0x4f6c5b*/
-    v2 = MEMORY[0xA8EF98]; /*0x4f6c5b*/
+    v2 = g_ControlGroupState; /*0x4f6c5b*/
   }
   v7 = *(_WORD *)(a1 + 21616) == (unsigned __int16)v2; /*0x4f6c6b*/
   LOWORD(v13) = v4 / 256; /*0x4f6c72*/
@@ -908,12 +912,12 @@ _DWORD *__stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6BC0(int
   v14 = v8; /*0x4f6c97*/
   if ( v8 == v2 ) /*0x4f6c9b*/
   {
-    v15 = MEMORY[0xA8EFF8]; /*0x4f6caf*/
-    v9 = MEMORY[0xA8EFFC]; /*0x4f6cb3*/
+    v15 = g_ControlGroupPool; /*0x4f6caf*/
+    v9 = g_ControlGroupConfig; /*0x4f6cb3*/
   }
   else
   {
-    v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14); /*0x4f6cc4*/
+    v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v14); /*0x4f6cc4*/
     v11 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v10 + 72))(v10, v18); /*0x4f6cd5*/
     v15 = *v11; /*0x4f6cd9*/
     v9 = v11[1]; /*0x4f6cdd*/
@@ -949,26 +953,26 @@ _DWORD *__stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6D10(int
   int v17; // [esp+18h] [ebp-10h]
   _BYTE v18[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = MEMORY[0xA8EF98]; /*0x4f6d1f*/
-  if ( *(_DWORD *)(a1 + 21612) == MEMORY[0xA8EF98] ) /*0x4f6d2d*/
+  v2 = g_ControlGroupState; /*0x4f6d1f*/
+  if ( *(_DWORD *)(a1 + 21612) == g_ControlGroupState ) /*0x4f6d2d*/
     v3 = *(_DWORD *)(a1 + 21608); /*0x4f6d38*/
   else
     v3 = *(_DWORD *)(a1 + 21612); /*0x4f6d40*/
   v13 = v3; /*0x4f6d4d*/
-  if ( v3 == MEMORY[0xA8EF98] ) /*0x4f6d51*/
+  if ( v3 == g_ControlGroupState ) /*0x4f6d51*/
   {
-    v4 = MEMORY[0xA8EFF8]; /*0x4f6d60*/
-    v16 = MEMORY[0xA8EFFC]; /*0x4f6d65*/
-    v17 = MEMORY[0xA8F000]; /*0x4f6d6f*/
+    v4 = g_ControlGroupPool; /*0x4f6d60*/
+    v16 = g_ControlGroupConfig; /*0x4f6d65*/
+    v17 = g_ControlGroupLimit; /*0x4f6d6f*/
   }
   else
   {
-    v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v13); /*0x4f6d7f*/
+    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v13); /*0x4f6d7f*/
     v6 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v5 + 72))(v5, v18); /*0x4f6d90*/
     v4 = *v6; /*0x4f6d99*/
     v16 = v6[1]; /*0x4f6d9e*/
     v17 = v6[2]; /*0x4f6dab*/
-    v2 = MEMORY[0xA8EF98]; /*0x4f6dab*/
+    v2 = g_ControlGroupState; /*0x4f6dab*/
   }
   v7 = *(_WORD *)(a1 + 21612) == (unsigned __int16)v2; /*0x4f6dbb*/
   LOWORD(v13) = v4 / 256; /*0x4f6dc2*/
@@ -979,12 +983,12 @@ _DWORD *__stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6D10(int
   v14 = v8; /*0x4f6de7*/
   if ( v8 == v2 ) /*0x4f6deb*/
   {
-    v15 = MEMORY[0xA8EFF8]; /*0x4f6dff*/
-    v9 = MEMORY[0xA8EFFC]; /*0x4f6e03*/
+    v15 = g_ControlGroupPool; /*0x4f6dff*/
+    v9 = g_ControlGroupConfig; /*0x4f6e03*/
   }
   else
   {
-    v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14); /*0x4f6e14*/
+    v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v14); /*0x4f6e14*/
     v11 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v10 + 72))(v10, v18); /*0x4f6e25*/
     v15 = *v11; /*0x4f6e29*/
     v9 = v11[1]; /*0x4f6e2d*/
@@ -1010,8 +1014,8 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_501400(int a1)
   int v5; // ecx
   int v7; // [esp+8h] [ebp-4h] BYREF
 
-  v1 = MEMORY[0xA8EC88] - 1; /*0x501409*/
-  if ( MEMORY[0xA8EC88] - 1 < 0 ) /*0x50140e*/
+  v1 = g_SidebarState - 1; /*0x501409*/
+  if ( g_SidebarState - 1 < 0 ) /*0x50140e*/
   {
     *(_BYTE *)(a1 + 549) = 1; /*0x501532*/
     return 0; /*0x50152f*/
@@ -1020,11 +1024,11 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_501400(int a1)
   {
     do /*0x50150f*/
     {
-      v2 = (int *)*((_DWORD *)MEMORY[0xA8EC7C] + v1); /*0x501423*/
+      v2 = (int *)*((_DWORD *)g_TechnoClass_Count + v1); /*0x501423*/
       if ( a1 - 36 == v2[135] && *((_BYTE *)v2 + 116) && !*((_BYTE *)v2 + 129) ) /*0x50143d*/
       {
         if ( *((_BYTE *)v2 + 708) /*0x50146d*/
-          && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*v2 + 132))(*((_DWORD *)MEMORY[0xA8EC7C] + v1)) + 562)
+          && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*v2 + 132))(*((_DWORD *)g_TechnoClass_Count + v1)) + 562)
           && !*(_BYTE *)(a1 + 456) )
         {
           v3 = (*(int (__thiscall **)(int *))(*v2 + 132))(v2); /*0x50147b*/
@@ -1303,15 +1307,15 @@ ConvertClass *__thiscall VectorClass_ptr_ConvertClass::Constructor_ConvertClass(
   __3_YAXPAX_Z(v3); /*0x49123c*/
   *(this + 94) = 0; /*0x491244*/
   v6 = this; /*0x49125d*/
-  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0x89ECF8] + 16))(&MEMORY[0x89ECF8], &v6); /*0x491261*/
-  if ( v4 != -1 && v4 < MEMORY[0x89ED08] && v4 < --MEMORY[0x89ED08] ) /*0x49127c*/
+  v4 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_89ECF8 + 16))(&DataGlobal_89ECF8, &v6); /*0x491261*/
+  if ( v4 != -1 && v4 < DataGlobal_89ED08 && v4 < --DataGlobal_89ED08 ) /*0x49127c*/
   {
     do /*0x491294*/
     {
       ++v4; /*0x491284*/
-      *((_DWORD *)MEMORY[0x89ECFC] + v4 - 1) = *((_DWORD *)MEMORY[0x89ECFC] + v4); /*0x491288*/
+      *((_DWORD *)DataGlobal_89ECFC + v4 - 1) = *((_DWORD *)DataGlobal_89ECFC + v4); /*0x491288*/
     }
-    while ( v4 < MEMORY[0x89ED08] ); /*0x491294*/
+    while ( v4 < DataGlobal_89ED08 ); /*0x491294*/
   }
   if ( (a2 & 1) != 0 ) /*0x49129b*/
     __3_YAXPAX_Z(this); /*0x49129e*/

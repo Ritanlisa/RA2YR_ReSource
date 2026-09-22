@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
 
 // 0x5023B0
 namespace gamemd {

@@ -11,6 +11,11 @@
 #include "e4/classes/E4Recv_70F740_e4.hpp"
 #include "e4/classes/E4Recv_70FE40_e4.hpp"
 #include "e4/classes/E4Recv_70FE50_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Voxel_e4.hpp"
 
 // 0x7049C0
 namespace gamemd {
@@ -59,22 +64,22 @@ char __stdcall DrawTacticalMapLine(
   _DWORD v37[4]; // [esp+8Ch] [ebp-20h] BYREF
   _DWORD v38[4]; // [esp+9Ch] [ebp-10h] BYREF
 
-  Coord::To_Screen(*(_DWORD **)&stru_87C374.__pad_579C[22548], &aP0, (IUnknown *)&aP2.__pad_0[8]); /*0x7049dc*/
-  Coord::To_Screen(*(_DWORD **)&stru_87C374.__pad_579C[22548], &a4, (IUnknown *)&aP2); /*0x7049f4*/
-  v9 = *(_DWORD *)&stru_87C374.__pad_579C[21652]; /*0x7049fd*/
+  Coord::To_Screen(*(_DWORD **)&stru_87C374[44976], &aP0, (IUnknown *)&aP2[8]); /*0x7049dc*/
+  Coord::To_Screen(*(_DWORD **)&stru_87C374[44976], &a4, (IUnknown *)&aP2); /*0x7049f4*/
+  v9 = *(_DWORD *)&stru_87C374[44080]; /*0x7049fd*/
   v10 = a9; /*0x704a07*/
-  *(_DWORD *)&aP2.__pad_0[12] += *(_DWORD *)&stru_87C374.__pad_579C[21652]; /*0x704a14*/
-  *(_DWORD *)&aP2.__pad_0[4] += *(_DWORD *)&stru_87C374.__pad_579C[21652]; /*0x704a1f*/
-  aP2.referenceCount = *(_DWORD *)&aP2.__pad_0[12] + 1; /*0x704a23*/
-  aP2.nextArrayIndex = *(_DWORD *)&aP2.__pad_0[8]; /*0x704a30*/
-  aP2.uniqueId = *(_DWORD *)aP2.__pad_0; /*0x704a36*/
-  aP2.abstractFlags = *(_DWORD *)&aP2.__pad_0[4] + 1; /*0x704a3a*/
+  *(_DWORD *)&aP2[12] += *(_DWORD *)&stru_87C374[44080]; /*0x704a14*/
+  *(_DWORD *)&aP2[4] += *(_DWORD *)&stru_87C374[44080]; /*0x704a1f*/
+  aP2.referenceCount = *(_DWORD *)&aP2[12] + 1; /*0x704a23*/
+  aP2.nextArrayIndex = *(_DWORD *)&aP2[8]; /*0x704a30*/
+  aP2.uniqueId = *(_DWORD *)aP2[0]; /*0x704a36*/
+  aP2.abstractFlags = *(_DWORD *)&aP2[4] + 1; /*0x704a3a*/
   if ( a9 ) /*0x704a43*/
   {
-    if ( *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 4) == 1 ) /*0x704a51*/
-      v11 = **(unsigned __int8 **)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 372); /*0x704a5d*/
+    if ( *(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 4) == 1 ) /*0x704a51*/
+      v11 = **(unsigned __int8 **)(*(_DWORD *)&stru_87C374[13136] + 372); /*0x704a5d*/
     else
-      v11 = **(unsigned __int16 **)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 372); /*0x704a69*/
+      v11 = **(unsigned __int16 **)(*(_DWORD *)&stru_87C374[13136] + 372); /*0x704a69*/
     v30 = -2; /*0x704a77*/
     aP2.NeedsSaveOrLink = (void *)-2; /*0x704a89*/
     v12 = (IUnknown *)Coord2D::Add(&aP2.NeedsSaveOrLink, (AbstractClass *)a2, (AbstractClass *)&aP2.nextArrayIndex); /*0x704a8d*/
@@ -83,19 +88,19 @@ char __stdcall DrawTacticalMapLine(
     a2[7] = *(_DWORD *)&v13->__pad_0[4]; /*0x704aa9*/
     a2[8] = *(_DWORD *)&v13->__pad_0[8]; /*0x704ab0*/
     v42 = *(IUnknown **)&v13->__pad_0[12]; /*0x704ac2*/
-    v14 = ClipRectIntersection((IUnknown *)v38, (IUnknown *)&stru_87C374.__pad_579C[21648], (IUnknown *)&a2[6], 0, 0); /*0x704acc*/
+    v14 = ClipRectIntersection((IUnknown *)v38, (IUnknown *)&stru_87C374[44076], (IUnknown *)&a2[6], 0, 0); /*0x704acc*/
     v33 = *v14; /*0x704ad4*/
     v34 = v14[1]; /*0x704adb*/
     v35 = v14[2]; /*0x704ae2*/
     v36 = v14[3]; /*0x704aef*/
-    (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&stru_87C374.__pad_579C[22540] + 20))( /*0x704afa*/
-      *(_DWORD *)&stru_87C374.__pad_579C[22540],
+    (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&stru_87C374[44968] + 20))( /*0x704afa*/
+      *(_DWORD *)&stru_87C374[44968],
       &v33,
       v11);
-    if ( *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 4) == 1 ) /*0x704b05*/
-      v15 = **(unsigned __int8 **)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 372); /*0x704b11*/
+    if ( *(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 4) == 1 ) /*0x704b05*/
+      v15 = **(unsigned __int8 **)(*(_DWORD *)&stru_87C374[13136] + 372); /*0x704b11*/
     else
-      v15 = **(unsigned __int16 **)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 372); /*0x704b1d*/
+      v15 = **(unsigned __int16 **)(*(_DWORD *)&stru_87C374[13136] + 372); /*0x704b1d*/
     aP2.NeedsSaveOrLink = (void *)-2; /*0x704b29*/
     v30 = -2; /*0x704b2d*/
     v16 = (IUnknown *)Coord2D::Add(&aP2.NeedsSaveOrLink, (AbstractClass *)a2, (AbstractClass *)&aP2.uniqueId); /*0x704b41*/
@@ -104,51 +109,51 @@ char __stdcall DrawTacticalMapLine(
     v34 = *(_DWORD *)&v17->__pad_0[4]; /*0x704b60*/
     v35 = *(_DWORD *)&v17->__pad_0[8]; /*0x704b6c*/
     v36 = *(_DWORD *)&v17->__pad_0[12]; /*0x704b7c*/
-    v18 = ClipRectIntersection((IUnknown *)v37, (IUnknown *)&stru_87C374.__pad_579C[21648], (IUnknown *)&v33, 0, 0); /*0x704b80*/
+    v18 = ClipRectIntersection((IUnknown *)v37, (IUnknown *)&stru_87C374[44076], (IUnknown *)&v33, 0, 0); /*0x704b80*/
     a2[6] = *v18; /*0x704b88*/
     a2[7] = v18[1]; /*0x704b8f*/
     a2[8] = v18[2]; /*0x704b9c*/
     v42 = (IUnknown *)v18[3]; /*0x704ba3*/
-    (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&stru_87C374.__pad_579C[22540] + 20))( /*0x704bae*/
-      *(_DWORD *)&stru_87C374.__pad_579C[22540],
+    (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&stru_87C374[44968] + 20))( /*0x704bae*/
+      *(_DWORD *)&stru_87C374[44968],
       &a2[6],
       v15);
-    v9 = *(_DWORD *)&stru_87C374.__pad_579C[21652]; /*0x704bb1*/
+    v9 = *(_DWORD *)&stru_87C374[44080]; /*0x704bb1*/
   }
   a2[3] = v9; /*0x704bc2*/
-  a2[2] = *(_DWORD *)&stru_87C374.__pad_579C[21648]; /*0x704bce*/
-  a2[4] = *(_DWORD *)&stru_87C374.__pad_579C[21656]; /*0x704bd2*/
-  a2[5] = *(_DWORD *)&stru_87C374.__pad_579C[21660]; /*0x704bd6*/
+  a2[2] = *(_DWORD *)&stru_87C374[44076]; /*0x704bce*/
+  a2[4] = *(_DWORD *)&stru_87C374[44084]; /*0x704bd2*/
+  a2[5] = *(_DWORD *)&stru_87C374[44088]; /*0x704bd6*/
   if ( v10 && ClipLine((IUnknown *)&aP2.nextArrayIndex, &aP2.uniqueId, &a2[2]) ) /*0x704be9*/
   {
-    if ( *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 4) == 1 ) /*0x704bfa*/
-      v19 = **(unsigned __int8 **)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 372); /*0x704c04*/
+    if ( *(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 4) == 1 ) /*0x704bfa*/
+      v19 = **(unsigned __int8 **)(*(_DWORD *)&stru_87C374[13136] + 372); /*0x704c04*/
     else
-      v19 = **(unsigned __int16 **)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 372); /*0x704c10*/
-    (*(void (__thiscall **)(_DWORD, int *, int *, int))(**(_DWORD **)&stru_87C374.__pad_579C[22540] + 48))( /*0x704c26*/
-      *(_DWORD *)&stru_87C374.__pad_579C[22540],
+      v19 = **(unsigned __int16 **)(*(_DWORD *)&stru_87C374[13136] + 372); /*0x704c10*/
+    (*(void (__thiscall **)(_DWORD, int *, int *, int))(**(_DWORD **)&stru_87C374[44968] + 48))( /*0x704c26*/
+      *(_DWORD *)&stru_87C374[44968],
       &aP2.nextArrayIndex,
       &aP2.uniqueId,
       v19);
   }
-  v20 = ((unsigned __int8)a7 >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120]) /*0x704c89*/
-      | (BYTE2(a7) >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128])
-      | (BYTE1(a7) >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136]);
+  v20 = ((unsigned __int8)a7 >> stru_89E138[11420] << stru_89E138[11416]) /*0x704c89*/
+      | (BYTE2(a7) >> stru_89E138[11428] << stru_89E138[11424])
+      | (BYTE1(a7) >> stru_89E138[11436] << stru_89E138[11432]);
   aP2.NeedsSaveOrLink = (void *)-2; /*0x704c92*/
   v30 = -2; /*0x704c96*/
-  v21 = (IUnknown *)Coord2D::Add(&aP2.NeedsSaveOrLink, (AbstractClass *)a2, (AbstractClass *)&aP2.__pad_0[8]); /*0x704ca4*/
+  v21 = (IUnknown *)Coord2D::Add(&aP2.NeedsSaveOrLink, (AbstractClass *)a2, (AbstractClass *)&aP2[8]); /*0x704ca4*/
   v22 = Rect::Construct(v38, v21, (AbstractClass *)3, (AbstractClass *)3); /*0x704cb1*/
   v33 = *(_DWORD *)v22->__pad_0; /*0x704cba*/
   v34 = *(_DWORD *)&v22->__pad_0[4]; /*0x704cc3*/
   v35 = *(_DWORD *)&v22->__pad_0[8]; /*0x704cca*/
   v36 = *(_DWORD *)&v22->__pad_0[12]; /*0x704cd9*/
-  v23 = ClipRectIntersection((IUnknown *)v37, (IUnknown *)&stru_87C374.__pad_579C[21648], (IUnknown *)&v33, 0, 0); /*0x704ce3*/
+  v23 = ClipRectIntersection((IUnknown *)v37, (IUnknown *)&stru_87C374[44076], (IUnknown *)&v33, 0, 0); /*0x704ce3*/
   a2[6] = *v23; /*0x704ceb*/
   a2[7] = v23[1]; /*0x704cf2*/
   a2[8] = v23[2]; /*0x704cf9*/
   v42 = (IUnknown *)v23[3]; /*0x704d06*/
-  (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&stru_87C374.__pad_579C[22540] + 20))( /*0x704d11*/
-    *(_DWORD *)&stru_87C374.__pad_579C[22540],
+  (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&stru_87C374[44968] + 20))( /*0x704d11*/
+    *(_DWORD *)&stru_87C374[44968],
     &a2[6],
     v20);
   aP2.NeedsSaveOrLink = (void *)-2; /*0x704d1d*/
@@ -159,38 +164,38 @@ char __stdcall DrawTacticalMapLine(
   v34 = *(_DWORD *)&v25->__pad_0[4]; /*0x704d52*/
   v35 = *(_DWORD *)&v25->__pad_0[8]; /*0x704d5f*/
   v36 = *(_DWORD *)&v25->__pad_0[12]; /*0x704d70*/
-  v26 = ClipRectIntersection((IUnknown *)v37, (IUnknown *)&stru_87C374.__pad_579C[21648], (IUnknown *)&v33, 0, 0); /*0x704d74*/
+  v26 = ClipRectIntersection((IUnknown *)v37, (IUnknown *)&stru_87C374[44076], (IUnknown *)&v33, 0, 0); /*0x704d74*/
   a2[6] = *v26; /*0x704d7c*/
   a2[7] = v26[1]; /*0x704d83*/
   a2[8] = v26[2]; /*0x704d90*/
   v42 = (IUnknown *)v26[3]; /*0x704d97*/
-  (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&stru_87C374.__pad_579C[22540] + 20))( /*0x704da2*/
-    *(_DWORD *)&stru_87C374.__pad_579C[22540],
+  (*(void (__thiscall **)(_DWORD, int *, int))(**(_DWORD **)&stru_87C374[44968] + 20))( /*0x704da2*/
+    *(_DWORD *)&stru_87C374[44968],
     &a2[6],
     v20);
   if ( a8 ) /*0x704dae*/
   {
-    v27 = (0x7FFFFFFF - *(_DWORD *)&HouseClass_Player.__pad_5568[23248]) % 15; /*0x704dc9*/
-    result = ClipLine((IUnknown *)&aP2.__pad_0[8], (int *)aP2.__pad_0, &a2[2]); /*0x704dd4*/
+    v27 = (0x7FFFFFFF - *(_DWORD *)&HouseClass_Player[45112]) % 15; /*0x704dc9*/
+    result = ClipLine((IUnknown *)&aP2[8], (int *)aP2[0], &a2[2]); /*0x704dd4*/
     if ( result ) /*0x704ddb*/
-      return (*(char (__thiscall **)(_DWORD, char *, AbstractClass *, int, char *, int, _DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22540] /*0x704df8*/
+      return (*(char (__thiscall **)(_DWORD, char *, AbstractClass *, int, char *, int, _DWORD))(**(_DWORD **)&stru_87C374[44968] /*0x704df8*/
                                                                                                + 76))(
-               *(_DWORD *)&stru_87C374.__pad_579C[22540],
-               &aP2.__pad_0[8],
+               *(_DWORD *)&stru_87C374[44968],
+               &aP2[8],
                &aP2,
                v20,
-               &stru_830620.__pad_579C[54124],
+               &stru_830620[76552],
                v27,
                0);
   }
   else
   {
-    result = ClipLine((IUnknown *)&aP2.__pad_0[8], (int *)aP2.__pad_0, &a2[2]); /*0x704e14*/
+    result = ClipLine((IUnknown *)&aP2[8], (int *)aP2[0], &a2[2]); /*0x704e14*/
     if ( result ) /*0x704e1b*/
-      return (*(char (__thiscall **)(_DWORD, char *, AbstractClass *, int))(**(_DWORD **)&stru_87C374.__pad_579C[22540] /*0x704e30*/
+      return (*(char (__thiscall **)(_DWORD, char *, AbstractClass *, int))(**(_DWORD **)&stru_87C374[44968] /*0x704e30*/
                                                                           + 48))(
-               *(_DWORD *)&stru_87C374.__pad_579C[22540],
-               &aP2.__pad_0[8],
+               *(_DWORD *)&stru_87C374[44968],
+               &aP2[8],
                &aP2,
                v20);
   }
@@ -258,9 +263,9 @@ int __stdcall TacticalMap_DrawLaserLine(int a1, int a2, int a3, int a4, int a5, 
   v25 += g_Map_VisibleRect; /*0x704ece*/
   v29 = v25 - 2; /*0x704eeb*/
   v28 = v24 - 2; /*0x704f13*/
-  v7 = ((unsigned __int8)a7 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x704f1e*/
-     | (BYTE1(a7) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-     | (BYTE2(a7) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
+  v7 = ((unsigned __int8)a7 >> g_BitShift_Green_0 << g_DDraw_BlueMask) /*0x704f1e*/
+     | (BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green)
+     | (BYTE2(a7) >> g_BitShift_Blue << g_BitShift_Blue);
   v8 = Rect::Construct(v45, &v28, 3, 3); /*0x704f25*/
   v34 = *v8; /*0x704f2e*/
   v35 = v8[1]; /*0x704f37*/
@@ -320,9 +325,9 @@ int __stdcall TacticalMap_DrawLaserLine(int a1, int a2, int a3, int a4, int a5, 
         DSurface_Composite,
         &v24,
         &v21,
-        ((unsigned __int8)v19 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0])
-      | (HIBYTE(v19) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-      | (v20 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
+        ((unsigned __int8)v19 >> g_BitShift_Green_0 << g_DDraw_BlueMask)
+      | (HIBYTE(v19) >> g_BitMask_Blue << g_BitMask_Green)
+      | (v20 >> g_BitShift_Blue << g_BitShift_Blue));
     }
     result = v38; /*0x705229*/
     ++v14; /*0x705235*/
@@ -408,7 +413,7 @@ void *__fastcall TechnoClass_RenderVoxel(
   v45 = (_DWORD *)*a4; /*0x706f45*/
   v13 = v45; /*0x706f34*/
   v37 = v14; /*0x706f49*/
-  Audio_Render(0, (int)v49, (int)MEMORY[0x887430], (int)&MEMORY[0x887470], 3.0); /*0x706f4d*/
+  Audio_Render(0, (int)v49, (int)DataGlobal_887430, (int)&DataGlobal_887470, 3.0); /*0x706f4d*/
   Viewport::Clear(); /*0x706f52*/
   v15 = 0; /*0x706f5a*/
   if ( v45[1] ) /*0x706f57*/
@@ -422,7 +427,7 @@ void *__fastcall TechnoClass_RenderVoxel(
         v13 = v45; /*0x706fb5*/
         v14 = v37; /*0x706fb9*/
       }
-      v16 = MultiplyMatrix3x4(v51, MEMORY[0x887430], v48); /*0x706fce*/
+      v16 = MultiplyMatrix3x4(v51, DataGlobal_887430, v48); /*0x706fce*/
       TransformVoxelVertex(v13, v15++, 0, v16); /*0x706fda*/
     }
     while ( v15 < v13[1] ); /*0x706fe5*/
@@ -935,25 +940,25 @@ DWORD __fastcall TechnoClass_RevealRadarEvent(int a1, int a2)
 
   if ( a1 && a2 ) /*0x70f12c*/
   {
-    MEMORY[0xB0EB3C] = a2; /*0x70f134*/
-    MEMORY[0xB0EB38] = a1; /*0x70f13a*/
+    DataGlobal_B0EB3C = a2; /*0x70f134*/
+    DataGlobal_B0EB38 = a1; /*0x70f13a*/
     v3 = *((_DWORD *)g_RulesClass_Instance + 1536); /*0x70f140*/
     Ticks = Timer::GetTicks(); /*0x70f14a*/
-    MEMORY[0xB0EA74] = v9; /*0x70f161*/
+    DataGlobal_B0EA74 = v9; /*0x70f161*/
     v7 = HouseClass_Player; /*0x70f169*/
-    MEMORY[0xB0EA70] = Ticks; /*0x70f16e*/
-    MEMORY[0xB0EA78] = v3; /*0x70f173*/
+    DataGlobal_B0EA70 = Ticks; /*0x70f16e*/
+    DataGlobal_B0EA78 = v3; /*0x70f173*/
     v5 = (*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a1 + 72))(a1, v8); /*0x70f180*/
     return MapClass::RevealArea0(v5, 2, v7, 0, 0, 0, 1, 1); /*0x70f189*/
   }
   else
   {
-    MEMORY[0xB0EB3C] = 0; /*0x70f198*/
-    MEMORY[0xB0EB38] = 0; /*0x70f1a2*/
+    DataGlobal_B0EB3C = 0; /*0x70f198*/
+    DataGlobal_B0EB38 = 0; /*0x70f1a2*/
     result = Timer::GetTicks(); /*0x70f1ac*/
-    MEMORY[0xB0EA70] = result; /*0x70f1b7*/
-    MEMORY[0xB0EA74] = v9; /*0x70f1bc*/
-    MEMORY[0xB0EA78] = 0; /*0x70f1c2*/
+    DataGlobal_B0EA70 = result; /*0x70f1b7*/
+    DataGlobal_B0EA74 = v9; /*0x70f1bc*/
+    DataGlobal_B0EA78 = 0; /*0x70f1c2*/
   }
   return result; /*0x70f18f*/
 }

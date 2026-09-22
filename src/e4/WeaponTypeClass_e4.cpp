@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x512680
 HouseTypeClass * WeaponTypeClass::Create()
@@ -43,7 +46,7 @@ int __thiscall WeaponTypeClass::Process(ObjectClass *this)
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6cef0c*/
     return 0; /*0x6cef6f*/
   v2 = 0; /*0x6cef1d*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[20620] <= 0 ) /*0x6cef21*/
+  if ( *(int *)&HouseClass_Player[42484] <= 0 ) /*0x6cef21*/
   {
 LABEL_6:
     v3 = __2_YAPAXI_Z(0x100u); /*0x6cef46*/
@@ -51,12 +54,12 @@ LABEL_6:
       return SuperWeaponTypeClass::SuperWeaponTypeClass(v3, this); /*0x6cef61*/
     return 0; /*0x6cef55*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20608] + 4 * v2) + 36), this) ) /*0x6cef3a*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * v2) + 36), this) ) /*0x6cef3a*/
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20620] ) /*0x6cef44*/
+    if ( ++v2 >= *(int *)&HouseClass_Player[42484] ) /*0x6cef44*/
       goto LABEL_6; /*0x6cef44*/
   }
-  return *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20608] + 4 * v2); /*0x6cef5f*/
+  return *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * v2); /*0x6cef5f*/
 }
 }
 
@@ -140,16 +143,16 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   this->vtable3 = &WeaponTypeClass::`vftable'; /*0x771e83*/
   this->vtable4 = &vt_WeaponTypeClass; /*0x771e8a*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x771e91*/
-  if ( *(int *)&stru_87C374.__pad_579C[23144] < *(int *)&stru_87C374.__pad_579C[23136] /*0x771eca*/
-    || (stru_87C374.__pad_579C[23141] || !*(_DWORD *)&stru_87C374.__pad_579C[23136])
-    && *(int *)&stru_87C374.__pad_579C[23148] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_87C374.__pad_579C[23128] + 8))(
-         &stru_87C374.__pad_579C[23128],
-         *(_DWORD *)&stru_87C374.__pad_579C[23136] + *(_DWORD *)&stru_87C374.__pad_579C[23148],
+  if ( *(int *)&stru_87C374[45572] < *(int *)&stru_87C374[45564] /*0x771eca*/
+    || (stru_87C374[45569] || !*(_DWORD *)&stru_87C374[45564])
+    && *(int *)&stru_87C374[45576] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_87C374[45556] + 8))(
+         &stru_87C374[45556],
+         *(_DWORD *)&stru_87C374[45564] + *(_DWORD *)&stru_87C374[45576],
          0) )
   {
-    v3 = (WeaponTypeClass *)(*(_DWORD *)&stru_87C374.__pad_579C[23144])++; /*0x771ed7*/
-    *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23132] + 4 * (_DWORD)v3) = this; /*0x771ee6*/
+    v3 = (WeaponTypeClass *)(*(_DWORD *)&stru_87C374[45572])++; /*0x771ed7*/
+    *(_DWORD *)(*(_DWORD *)&stru_87C374[45560] + 4 * (_DWORD)v3) = this; /*0x771ee6*/
   }
   return this; /*0x771eeb*/
 }
@@ -474,7 +477,7 @@ char WeaponTypeClass::ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a
     char Source[125];
     short v10;
     char v11;
-    Source[0] = DataGlobal_87C374.__pad_579C[33876];
+    Source[0] = DataGlobal_87C374[56304];
     memset(&Source[1], 0, 0x7Cu);
     v10 = 0;
     v11 = 0;

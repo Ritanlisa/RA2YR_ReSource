@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x4FB840
 char BuildingPlacement::Activate(int a2, unsigned int * a3)
@@ -25,20 +30,20 @@ char __thiscall BuildingPlacement_Activate(int this, int a2, _DWORD *a3)
   if ( !a3 ) /*0x4fb871*/
     return 0; /*0x4fb919*/
   MapClass::UnselectAll_ClearLimboLaunchers(); /*0x4fb877*/
-  BuildingClass::TogglePower2(&MEMORY[0x87F7E8], 0); /*0x4fb883*/
-  BuildingClass::TogglePower(&MEMORY[0x87F7E8], 0); /*0x4fb88f*/
-  MEMORY[0x88099A] = 0; /*0x4fb894*/
-  MEMORY[0x88099B] = 0; /*0x4fb89b*/
-  MEMORY[0x88099C] = 0; /*0x4fb8a2*/
+  BuildingClass::TogglePower2(&DataGlobal_87F7E8, 0); /*0x4fb883*/
+  BuildingClass::TogglePower(&DataGlobal_87F7E8, 0); /*0x4fb88f*/
+  DataGlobal_88099A = 0; /*0x4fb894*/
+  DataGlobal_88099B = 0; /*0x4fb89b*/
+  DataGlobal_88099C = 0; /*0x4fb8a2*/
   g_BuildingPlacementState = -1; /*0x4fb8a9*/
   v6 = v5[328]; /*0x4fb8b3*/
   g_RadarBlipPool = (int)v5; /*0x4fb8b9*/
   g_RadarBlipManager = v6; /*0x4fb8bf*/
-  MEMORY[0x880994] = this->q00C; /*0x4fb8c7*/
+  DataGlobal_880994 = this->q00C; /*0x4fb8c7*/
   v7 = (const void *)(*(int (__thiscall **)(_DWORD *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
-  Mouse::SetBounds((int)&MEMORY[0x87F7E8], v7); /*0x4fb8df*/
+  Mouse::SetBounds((int)&DataGlobal_87F7E8, v7); /*0x4fb8df*/
   v8 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v4 + 440))(v4, &a2); /*0x4fb8ed*/
-  Tactical::MouseMove((int)&MEMORY[0x87F7E8], &a3, v8); /*0x4fb8fe*/
+  Tactical::MouseMove((int)&DataGlobal_87F7E8, &a3, v8); /*0x4fb8fe*/
   (*(void (__thiscall **)(int, int))(*(_DWORD *)v4 + 292))(v4, 2); /*0x4fb909*/
   return 1; /*0x4fb90f*/
 }
@@ -101,7 +106,7 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
   int v51; // [esp+68h] [ebp-4h]
 
   v2 = (_DWORD *)(this + 64); /*0x54c55e*/
-  v3 = Coord::To_Cell(&MEMORY[0x87F7E8], (_DWORD *)(this + 64)); /*0x54c562*/
+  v3 = Coord::To_Cell(&DataGlobal_87F7E8, (_DWORD *)(this + 64)); /*0x54c562*/
   v4 = this->BuildingPlacement_field_0x0C; /*0x54c567*/
   v5 = v3; /*0x54c56a*/
   if ( !*(_BYTE *)(v4 + 1709) ) /*0x54c56c*/
@@ -159,7 +164,7 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
     if ( v19[45] != 7 && (*(int (__thiscall **)(_DWORD *))(*v19 + 388))(v19) != 7 ) /*0x54c6d9*/
     {
       if ( !v47 /*0x54c70c*/
-        || (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], (_DWORD *)(this + 64)) + 80) & 0x100) == 0
+        || (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, (_DWORD *)(this + 64)) + 80) & 0x100) == 0
         && (v48 > 2 || v48 == 2 && !this->q090) )
       {
         LOBYTE(v12) = (*(int (__stdcall **)(int))(this->BuildingPlacement_field_0x04 + 72))(this + 4); /*0x54ca43*/
@@ -207,7 +212,7 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
     v49 = *v28; /*0x54c7ce*/
     v50 = v28[1]; /*0x54c7da*/
     v51 = v28[2]; /*0x54c7e6*/
-    v12 = (char *)Coord::To_Cell(&MEMORY[0x87F7E8], &v49); /*0x54c7ea*/
+    v12 = (char *)Coord::To_Cell(&DataGlobal_87F7E8, &v49); /*0x54c7ea*/
     if ( (*((_DWORD *)v12 + 80) & 0x100) != 0 ) /*0x54c7f8*/
     {
       LOBYTE(v12) = dword_ABC5DC; /*0x54c7fa*/
@@ -235,7 +240,7 @@ char __thiscall BuildingPlacementClass::ProcessAction(int this)
       v49 = *v32; /*0x54c888*/
       v50 = v32[1]; /*0x54c894*/
       v51 = v32[2]; /*0x54c8a0*/
-      if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v49) + 80) & 0x100) != 0 ) /*0x54c8b2*/
+      if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v49) + 80) & 0x100) != 0 ) /*0x54c8b2*/
         *(_BYTE *)(this->BuildingPlacement_field_0x0C + 140) = 1; /*0x54c8b7*/
     }
     (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 292))(this->BuildingPlacement_field_0x0C, 1); /*0x54c8c5*/
@@ -601,7 +606,7 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
     v6 = (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 732))(aP1);
     v7 = (*(int (__thiscall **)(IUnknown *))(v4->field_0 + 728))(v4) + v6;
     if ( (*(int (__thiscall **)(IUnknown *))(v4->field_0 + 724))(v4) + v7 )
-    v8 = Random::Range((int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536), (IUnknown *)1, (IUnknown *)4);
+    v8 = Random::Range((int *)(*(int *)&HouseClass_Player[29924] + 536), (IUnknown *)1, (IUnknown *)4);
     else
     v8 = 0;
     AttackCoords = HouseClass::GenerateAttackCoords(v5, (MouseClass *)&aP1, v8);
@@ -614,8 +619,8 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
     v19 = v10[2];
     LOWORD(aP1) = v11 / 256;
     HIWORD(aP1) = v12 / 256;
-    TileIndex = (IUnknown *)MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP1, 0, 0);
-    v14 = *LayerClass::Pathfinding_Find( (IUnknown *)&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)v18, (IUnknown *)v18, (IUnknown *)&v17, (IUnknown *)1, TileIndex, 0, 0, (IUnknown *)1, (IUnknown *)1, 0, 0, 0, (IUnknown *)1, (IUnknown *)v16, 0, 0);
+    TileIndex = (IUnknown *)MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&aP1, 0, 0);
+    v14 = *LayerClass::Pathfinding_Find( (IUnknown *)&DataGlobal_87C374[13428], (IUnknown *)v18, (IUnknown *)v18, (IUnknown *)&v17, (IUnknown *)1, TileIndex, 0, 0, (IUnknown *)1, (IUnknown *)1, 0, 0, 0, (IUnknown *)1, (IUnknown *)v16, 0, 0);
     *a0 = v14;
     return a0;
 }

@@ -2,6 +2,11 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/GameClass_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x437FD0
 namespace gamemd {
@@ -99,9 +104,9 @@ int __thiscall GameClass::loadScenarioFiles(int *this, ObjectClass *aP1)
     GetClientRect((HWND)g_hWnd, &Rect); /*0x5d227e*/
     ClientToScreen((HWND)g_hWnd, (LPPOINT)&Rect); /*0x5d228f*/
     v4 = aP1; /*0x5d229b*/
-    if ( *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228] ) /*0x5d22a1*/
-      (*(void (__thiscall **)(_DWORD, ObjectClass *, _DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 60))( /*0x5d22a8*/
-        *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228],
+    if ( *(_DWORD *)&DataGlobal_87F8E4[32092] ) /*0x5d22a1*/
+      (*(void (__thiscall **)(_DWORD, ObjectClass *, _DWORD))(**(_DWORD **)&DataGlobal_87F8E4[32092] + 60))( /*0x5d22a8*/
+        *(_DWORD *)&DataGlobal_87F8E4[32092],
         aP1,
         0);
     result = this->q004; /*0x5d22ab*/
@@ -120,9 +125,9 @@ int __thiscall GameClass::loadScenarioFiles(int *this, ObjectClass *aP1)
         v4 = aP1; /*0x5d22f3*/
         v8 += Rect.left; /*0x5d22f7*/
         v9 += Rect.top; /*0x5d2301*/
-        (*(void (__thiscall **)(_DWORD, int *, ObjectClass *, int *, _DWORD, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9404] /*0x5d2309*/
+        (*(void (__thiscall **)(_DWORD, int *, ObjectClass *, int *, _DWORD, int))(**(_DWORD **)&DataGlobal_87F8E4[31268] /*0x5d2309*/
                                                                                  + 8))(
-          *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9404],
+          *(_DWORD *)&DataGlobal_87F8E4[31268],
           &v8,
           aP1,
           v6,
@@ -135,9 +140,9 @@ int __thiscall GameClass::loadScenarioFiles(int *this, ObjectClass *aP1)
       while ( v5 < this->q004 ); /*0x5d231d*/
     }
     this->q004 = 0; /*0x5d2320*/
-    if ( *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228] ) /*0x5d2330*/
-      return (*(int (__thiscall **)(_DWORD, ObjectClass *, _DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 64))( /*0x5d2337*/
-               *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228],
+    if ( *(_DWORD *)&DataGlobal_87F8E4[32092] ) /*0x5d2330*/
+      return (*(int (__thiscall **)(_DWORD, ObjectClass *, _DWORD))(**(_DWORD **)&DataGlobal_87F8E4[32092] + 64))( /*0x5d2337*/
+               *(_DWORD *)&DataGlobal_87F8E4[32092],
                v4,
                0);
   }
@@ -171,10 +176,10 @@ int __thiscall GameClass::FrameLoop(int *this, int a2)
       Event::Dispatch(); /*0x5d2437*/
       (*(void (__thiscall **)(int *))(*this + 8))(this); /*0x5d2440*/
       DDraw::WaitForIdle(); /*0x5d2443*/
-      DSurface::RenderToSurface(this, *(ObjectClass **)&MEMORY[0x87F8E4].__pad_5568[9408]); /*0x5d2451*/
-      GameClass::loadScenarioFiles(this, *(ObjectClass **)&MEMORY[0x87F8E4].__pad_5568[9408]); /*0x5d245f*/
+      DSurface::RenderToSurface(this, *(ObjectClass **)&DataGlobal_87F8E4[31272]); /*0x5d2451*/
+      GameClass::loadScenarioFiles(this, *(ObjectClass **)&DataGlobal_87F8E4[31272]); /*0x5d245f*/
       MessageLoop(); /*0x5d2464*/
-      if ( !MEMORY[0xA8D63C].__pad_14B0[660] ) /*0x5d2470*/
+      if ( !g_NetworkPlayerBuffer[5956] ) /*0x5d2470*/
       {
         if ( Ticks != -1 ) /*0x5d2478*/
         {
@@ -223,13 +228,13 @@ int __thiscall GameClass_FindOpenSlot(char *this)
   int v4; // esi
   char v5; // al
 
-  v1 = MEMORY[0xA8B8D8]; /*0x5d6372*/
+  v1 = g_MultiplayerOptions; /*0x5d6372*/
   v2 = 0; /*0x5d6379*/
-  if ( MEMORY[0xA8B8D8] <= 0 ) /*0x5d6380*/
+  if ( g_MultiplayerOptions <= 0 ) /*0x5d6380*/
     return -1; /*0x5d63cc*/
   while ( 1 ) /*0x5d6387*/
   {
-    v4 = *(_DWORD *)(MEMORY[0xA8B8CC] + 4 * v2); /*0x5d6387*/
+    v4 = *(_DWORD *)(g_MultiplayerGameState + 4 * v2); /*0x5d6387*/
     if ( IsRandMap::Sed(v4) ) /*0x5d638c*/
     {
       v5 = (*(int (__thiscall **)(char *))(*(_DWORD *)this + 60))(this); /*0x5d6399*/
@@ -426,7 +431,7 @@ bool __thiscall sub_69AE10(int *this, const char **a2)
 
   v3 = this->q06D; /*0x69ae15*/
   if ( !v3 ) /*0x69ae1d*/
-    return String::Equals_Alt(a2, MEMORY[0x83F668]); /*0x69ae28*/
+    return String::Equals_Alt(a2, DataGlobal_83F668); /*0x69ae28*/
   v5 = 0; /*0x69ae33*/
   if ( v3 <= 0 ) /*0x69ae37*/
     return 0; /*0x69ae5d*/
@@ -454,18 +459,18 @@ void GameClass_Shutdown()
   char *v4; // esi
   int v5; // edi
 
-  MEMORY[0xA8EDD8] = 1; /*0x6bec72*/
+  DataGlobal_A8EDD8 = 1; /*0x6bec72*/
   PostMessageA(g_hWnd, 2u, 0, 0); /*0x6bec78*/
   if ( g_hWnd ) /*0x6bec85*/
   {
     do /*0x6bec9b*/
       MessageLoop(); /*0x6bec87*/
-    while ( MEMORY[0xA8EDD8] == 1 && g_hWnd ); /*0x6bec9b*/
+    while ( DataGlobal_A8EDD8 == 1 && g_hWnd ); /*0x6bec9b*/
   }
-  if ( MEMORY[0x840A74] != -1 ) /*0x6beca5*/
+  if ( dwRegister != -1 ) /*0x6beca5*/
   {
-    RevokeActiveObject(MEMORY[0x840A74], 0); /*0x6becaa*/
-    MEMORY[0x840A74] = -1; /*0x6becb0*/
+    RevokeActiveObject(dwRegister, 0); /*0x6becaa*/
+    dwRegister = -1; /*0x6becb0*/
   }
   CoDisconnectObject(&unk_89A29C, 0); /*0x6becc1*/
   OleUninitialize(); /*0x6becc7*/
@@ -476,15 +481,15 @@ void GameClass_Shutdown()
       (**(void (__thiscall ***)(int, int))g_WWMouseClass_Instance)(g_WWMouseClass_Instance, 1); /*0x6bece9*/
   }
   g_WWMouseClass_Instance = 0; /*0x6becf0*/
-  if ( MEMORY[0xB0BCF4] ) /*0x6becfc*/
+  if ( DataGlobal_B0BCF4 ) /*0x6becfc*/
   {
-    if ( MEMORY[0xB0BCF0] ) /*0x6bed06*/
+    if ( DataGlobal_B0BCF0 ) /*0x6bed06*/
     {
-      v0 = *(_DWORD *)(MEMORY[0xB0BCF0] - 4); /*0x6bed08*/
-      v1 = (void *)(MEMORY[0xB0BCF0] - 4); /*0x6bed0c*/
+      v0 = *(_DWORD *)(DataGlobal_B0BCF0 - 4); /*0x6bed08*/
+      v1 = (void *)(DataGlobal_B0BCF0 - 4); /*0x6bed0c*/
       v2 = 9 * v0; /*0x6bed0f*/
       v3 = v0 - 1; /*0x6bed12*/
-      v4 = (char *)(MEMORY[0xB0BCF0] + 4 * v2); /*0x6bed13*/
+      v4 = (char *)(DataGlobal_B0BCF0 + 4 * v2); /*0x6bed13*/
       if ( v3 >= 0 ) /*0x6bed16*/
       {
         v5 = v3 + 1; /*0x6bed19*/
@@ -498,7 +503,7 @@ void GameClass_Shutdown()
       }
       __3_YAXPAX_Z(v1); /*0x6bed2b*/
     }
-    MEMORY[0xB0BCF4] = 0; /*0x6bed34*/
+    DataGlobal_B0BCF4 = 0; /*0x6bed34*/
   }
   PostQuitMessage(0); /*0x6bed3d*/
   Network::ShutdownInterface(); /*0x6bed43*/
@@ -520,7 +525,7 @@ __int16 __thiscall sub_74F960(int this)
 
   if ( (*(_BYTE *)(this + 68) & 8) == 0 ) /*0x74f96a*/
   {
-    RawFileClass::Construct(v5, (int)MEMORY[0x84635C]); /*0x74f97c*/
+    RawFileClass::Construct(v5, (int)g_Str_File_VERSION_TXT); /*0x74f97c*/
     if ( FileClass::Open(v5, 0) ) /*0x74f988*/
     {
       FileClass::Read(v5, (char *)(this + 42), 16); /*0x74f99b*/
@@ -564,7 +569,7 @@ __int16 __thiscall sub_74FA20(int this)
 
   if ( (*(_BYTE *)(this + 68) & 8) == 0 ) /*0x74fa2a*/
   {
-    RawFileClass::Construct(v5, (int)MEMORY[0x84635C]); /*0x74fa3c*/
+    RawFileClass::Construct(v5, (int)g_Str_File_VERSION_TXT); /*0x74fa3c*/
     if ( FileClass::Open(v5, 0) ) /*0x74fa48*/
     {
       FileClass::Read(v5, (char *)(this + 42), 16); /*0x74fa5b*/
@@ -604,7 +609,7 @@ void __thiscall sub_74FC80(char *this)
 {
   int v2[9]; // [esp+10h] [ebp-24h] BYREF
 
-  RawFileClass::Construct(v2, (int)MEMORY[0x84635C]); /*0x74fc92*/
+  RawFileClass::Construct(v2, (int)g_Str_File_VERSION_TXT); /*0x74fc92*/
   if ( FileClass::Open(v2, 0) ) /*0x74fc9e*/
   {
     FileClass::Read(v2, this + 42, 16); /*0x74fcb1*/

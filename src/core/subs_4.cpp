@@ -4,6 +4,7 @@
 
 #include <cstdint>
 #include <cstddef>
+#include "e4/e4_globals.hpp"
 
 // IDA-named globals referenced (extern stubs)
 extern unsigned char byte_8B40E0;
@@ -1842,7 +1843,7 @@ int ReturnZero5394F0()
 // IDA: int sub_539500()
 //   dword_A9FA30 = 0;
 //   qword_A9FA34 = 0;
-//   MEMORY[0xA9FA38] = 0;
+//   DataGlobal_A9FA38 = 0;
 //   return 0;
 int ReturnZero539500()
 {
@@ -2551,7 +2552,7 @@ int MathRoundToInt54ABA0()
 // IDA: 0x54ABD0  proposal: ReturnZero54ABD0
 // IDA: int sub_54ABD0()
 //   dword_ABC588 = 0;
-//   MEMORY[0xABC58A] = 0;
+//   DataGlobal_ABC58A = 0;
 //   return 0;
 int ReturnZero54ABD0()
 {

@@ -3,6 +3,10 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_600660_e4.hpp"
 #include "e4/classes/E4Recv_60B740_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x600750
 namespace gamemd {
@@ -25,32 +29,32 @@ void __cdecl sub_600750()
   int v11; // ecx
   int v12; // eax
 
-  v0 = MEMORY[0xAC1B50]; /*0x600750*/
-  for ( i = 0; i < MEMORY[0xAC1B50]; v0 = MEMORY[0xAC1B50] ) /*0x60075d*/
+  v0 = DataGlobal_AC1B50; /*0x600750*/
+  for ( i = 0; i < DataGlobal_AC1B50; v0 = DataGlobal_AC1B50 ) /*0x60075d*/
   {
-    v2 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B48] + i); /*0x600764*/
+    v2 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Entries + i); /*0x600764*/
     while ( v2 ) /*0x600769*/
     {
       v3 = v2; /*0x60076b*/
       v2 = (_DWORD *)v2[2]; /*0x60076d*/
       __3_YAXPAX_Z(v3); /*0x600771*/
     }
-    *((_DWORD *)MEMORY[0xAC1B48] + i++) = 0; /*0x600784*/
+    *((_DWORD *)g_DialogHashMap_Entries + i++) = 0; /*0x600784*/
   }
-  v4 = MEMORY[0xAC1B78]; /*0x600795*/
-  MEMORY[0xAC1B4C] = 0; /*0x60079b*/
-  if ( v0 > MEMORY[0xAC1B78] ) /*0x6007a7*/
+  v4 = DataGlobal_AC1B78; /*0x600795*/
+  g_DialogHashMap_Grow = 0; /*0x60079b*/
+  if ( v0 > DataGlobal_AC1B78 ) /*0x6007a7*/
   {
     do /*0x60085a*/
     {
-      if ( MEMORY[0xAC1B5C] || v0 <= v4 ) /*0x6007bd*/
+      if ( DataGlobal_AC1B5C || v0 <= v4 ) /*0x6007bd*/
         break; /*0x6007bd*/
-      v5 = (int *)MEMORY[0xAC1B48]; /*0x6007c9*/
+      v5 = (int *)g_DialogHashMap_Entries; /*0x6007c9*/
       v6 = v0; /*0x6007cf*/
-      MEMORY[0xAC1B50] = v0 >> 1; /*0x6007d4*/
-      --MEMORY[0xAC1B54]; /*0x6007e0*/
-      MEMORY[0xAC1B48] = __2_YAPAXI_Z(4 * (v0 >> 1)); /*0x6007f9*/
-      memset(MEMORY[0xAC1B48], 0, 4 * MEMORY[0xAC1B50]); /*0x600801*/
+      DataGlobal_AC1B50 = v0 >> 1; /*0x6007d4*/
+      --g_DialogHashMap_Insert; /*0x6007e0*/
+      g_DialogHashMap_Entries = __2_YAPAXI_Z(4 * (v0 >> 1)); /*0x6007f9*/
+      memset(g_DialogHashMap_Entries, 0, 4 * DataGlobal_AC1B50); /*0x600801*/
       if ( v6 > 0 ) /*0x600803*/
       {
         v7 = v5; /*0x600805*/
@@ -62,9 +66,9 @@ void __cdecl sub_600750()
           {
             do /*0x60083c*/
             {
-              v10 = MEMORY[0xAC1B60](v9) & ((1 << MEMORY[0xAC1B54]) - 1); /*0x600825*/
-              v11 = *((_DWORD *)MEMORY[0xAC1B48] + v10); /*0x60082c*/
-              *((_DWORD *)MEMORY[0xAC1B48] + v10) = v9; /*0x60082f*/
+              v10 = g_DialogHashMap_Insert(v9) & ((1 << g_DialogHashMap_Insert) - 1); /*0x600825*/
+              v11 = *((_DWORD *)g_DialogHashMap_Entries + v10); /*0x60082c*/
+              *((_DWORD *)g_DialogHashMap_Entries + v10) = v9; /*0x60082f*/
               v12 = *(_DWORD *)(v9 + 8); /*0x600832*/
               *(_DWORD *)(v9 + 8) = v11; /*0x600835*/
               v9 = v12; /*0x60083a*/
@@ -77,12 +81,12 @@ void __cdecl sub_600750()
         while ( v8 ); /*0x600842*/
       }
       __3_YAXPAX_Z(v5); /*0x600845*/
-      v4 = MEMORY[0xAC1B78]; /*0x60084a*/
-      v0 = MEMORY[0xAC1B50]; /*0x600850*/
+      v4 = DataGlobal_AC1B78; /*0x60084a*/
+      v0 = DataGlobal_AC1B50; /*0x600850*/
     }
-    while ( MEMORY[0xAC1B50] > (unsigned int)MEMORY[0xAC1B78] ); /*0x60085a*/
+    while ( DataGlobal_AC1B50 > (unsigned int)DataGlobal_AC1B78 ); /*0x60085a*/
   }
-  __3_YAXPAX_Z(MEMORY[0xAC1B48]); /*0x600866*/
+  __3_YAXPAX_Z(g_DialogHashMap_Entries); /*0x600866*/
 }
 }
 } // namespace gamemd
@@ -108,32 +112,32 @@ void __cdecl sub_600920()
   int v11; // ecx
   int v12; // eax
 
-  v0 = MEMORY[0xAC18C8]; /*0x600920*/
-  for ( i = 0; i < MEMORY[0xAC18C8]; v0 = MEMORY[0xAC18C8] ) /*0x60092d*/
+  v0 = g_DialogBuffer; /*0x600920*/
+  for ( i = 0; i < g_DialogBuffer; v0 = g_DialogBuffer ) /*0x60092d*/
   {
-    v2 = (_DWORD *)*((_DWORD *)MEMORY[0xAC18C0] + i); /*0x600934*/
+    v2 = (_DWORD *)*((_DWORD *)g_DialogPool + i); /*0x600934*/
     while ( v2 ) /*0x600939*/
     {
       v3 = v2; /*0x60093b*/
       v2 = (_DWORD *)v2[2]; /*0x60093d*/
       __3_YAXPAX_Z(v3); /*0x600941*/
     }
-    *((_DWORD *)MEMORY[0xAC18C0] + i++) = 0; /*0x600954*/
+    *((_DWORD *)g_DialogPool + i++) = 0; /*0x600954*/
   }
-  v4 = MEMORY[0xAC18F0]; /*0x600965*/
-  MEMORY[0xAC18C4] = 0; /*0x60096b*/
-  if ( v0 > MEMORY[0xAC18F0] ) /*0x600977*/
+  v4 = DataGlobal_AC18F0; /*0x600965*/
+  g_DialogPoolCount = 0; /*0x60096b*/
+  if ( v0 > DataGlobal_AC18F0 ) /*0x600977*/
   {
     do /*0x600a2a*/
     {
-      if ( MEMORY[0xAC18D4] || v0 <= v4 ) /*0x60098d*/
+      if ( DataGlobal_AC18D4 || v0 <= v4 ) /*0x60098d*/
         break; /*0x60098d*/
-      v5 = (int *)MEMORY[0xAC18C0]; /*0x600999*/
+      v5 = (int *)g_DialogPool; /*0x600999*/
       v6 = v0; /*0x60099f*/
-      MEMORY[0xAC18C8] = v0 >> 1; /*0x6009a4*/
-      --MEMORY[0xAC18CC]; /*0x6009b0*/
-      MEMORY[0xAC18C0] = __2_YAPAXI_Z(4 * (v0 >> 1)); /*0x6009c9*/
-      memset(MEMORY[0xAC18C0], 0, 4 * MEMORY[0xAC18C8]); /*0x6009d1*/
+      g_DialogBuffer = v0 >> 1; /*0x6009a4*/
+      --DataGlobal_AC18CC; /*0x6009b0*/
+      g_DialogPool = __2_YAPAXI_Z(4 * (v0 >> 1)); /*0x6009c9*/
+      memset(g_DialogPool, 0, 4 * g_DialogBuffer); /*0x6009d1*/
       if ( v6 > 0 ) /*0x6009d3*/
       {
         v7 = v5; /*0x6009d5*/
@@ -145,9 +149,9 @@ void __cdecl sub_600920()
           {
             do /*0x600a0c*/
             {
-              v10 = MEMORY[0xAC18D8](v9) & ((1 << MEMORY[0xAC18CC]) - 1); /*0x6009f5*/
-              v11 = *((_DWORD *)MEMORY[0xAC18C0] + v10); /*0x6009fc*/
-              *((_DWORD *)MEMORY[0xAC18C0] + v10) = v9; /*0x6009ff*/
+              v10 = DataGlobal_AC18D8(v9) & ((1 << DataGlobal_AC18CC) - 1); /*0x6009f5*/
+              v11 = *((_DWORD *)g_DialogPool + v10); /*0x6009fc*/
+              *((_DWORD *)g_DialogPool + v10) = v9; /*0x6009ff*/
               v12 = *(_DWORD *)(v9 + 8); /*0x600a02*/
               *(_DWORD *)(v9 + 8) = v11; /*0x600a05*/
               v9 = v12; /*0x600a0a*/
@@ -160,12 +164,12 @@ void __cdecl sub_600920()
         while ( v8 ); /*0x600a12*/
       }
       __3_YAXPAX_Z(v5); /*0x600a15*/
-      v4 = MEMORY[0xAC18F0]; /*0x600a1a*/
-      v0 = MEMORY[0xAC18C8]; /*0x600a20*/
+      v4 = DataGlobal_AC18F0; /*0x600a1a*/
+      v0 = g_DialogBuffer; /*0x600a20*/
     }
-    while ( MEMORY[0xAC18C8] > (unsigned int)MEMORY[0xAC18F0] ); /*0x600a2a*/
+    while ( g_DialogBuffer > (unsigned int)DataGlobal_AC18F0 ); /*0x600a2a*/
   }
-  __3_YAXPAX_Z(MEMORY[0xAC18C0]); /*0x600a36*/
+  __3_YAXPAX_Z(g_DialogPool); /*0x600a36*/
 }
 }
 } // namespace gamemd
@@ -194,11 +198,11 @@ void __cdecl sub_600AF0()
   int v14; // eax
   unsigned int i; // [esp+10h] [ebp-4h]
 
-  v0 = MEMORY[0xAC1B08]; /*0x600af1*/
+  v0 = DataGlobal_AC1B08; /*0x600af1*/
   v1 = 0; /*0x600afa*/
-  for ( i = 0; v1 < MEMORY[0xAC1B08]; v0 = MEMORY[0xAC1B08] ) /*0x600b04*/
+  for ( i = 0; v1 < DataGlobal_AC1B08; v0 = DataGlobal_AC1B08 ) /*0x600b04*/
   {
-    for ( j = *((_DWORD *)MEMORY[0xAC1B00] + v1); j; v1 = i ) /*0x600b10*/
+    for ( j = *((_DWORD *)g_DialogHashMap_Base + v1); j; v1 = i ) /*0x600b10*/
     {
       v3 = j; /*0x600b12*/
       j = *(_DWORD *)(j + 516); /*0x600b14*/
@@ -215,22 +219,22 @@ void __cdecl sub_600AF0()
       __3_YAXPAX_Z((void *)v3); /*0x600b59*/
     }
     i = ++v1; /*0x600b70*/
-    *((_DWORD *)MEMORY[0xAC1B00] + v1 - 1) = 0; /*0x600b74*/
+    *((_DWORD *)g_DialogHashMap_Base + v1 - 1) = 0; /*0x600b74*/
   }
-  v6 = MEMORY[0xAC1B30]; /*0x600b81*/
-  MEMORY[0xAC1B04] = 0; /*0x600b87*/
-  if ( v0 > MEMORY[0xAC1B30] ) /*0x600b8f*/
+  v6 = DataGlobal_AC1B30; /*0x600b81*/
+  g_DialogHashMap_Count = 0; /*0x600b87*/
+  if ( v0 > DataGlobal_AC1B30 ) /*0x600b8f*/
   {
     do /*0x600c46*/
     {
-      if ( MEMORY[0xAC1B14] || v0 <= v6 ) /*0x600ba5*/
+      if ( DataGlobal_AC1B14 || v0 <= v6 ) /*0x600ba5*/
         break; /*0x600ba5*/
-      v7 = (int *)MEMORY[0xAC1B00]; /*0x600bb1*/
+      v7 = (int *)g_DialogHashMap_Base; /*0x600bb1*/
       v8 = v0; /*0x600bb7*/
-      MEMORY[0xAC1B08] = v0 >> 1; /*0x600bbb*/
-      --MEMORY[0xAC1B0C]; /*0x600bc5*/
-      MEMORY[0xAC1B00] = __2_YAPAXI_Z(4 * (v0 >> 1)); /*0x600bdd*/
-      memset(MEMORY[0xAC1B00], 0, 4 * MEMORY[0xAC1B08]); /*0x600be5*/
+      DataGlobal_AC1B08 = v0 >> 1; /*0x600bbb*/
+      --g_DialogHashMap_Buckets; /*0x600bc5*/
+      g_DialogHashMap_Base = __2_YAPAXI_Z(4 * (v0 >> 1)); /*0x600bdd*/
+      memset(g_DialogHashMap_Base, 0, 4 * DataGlobal_AC1B08); /*0x600be5*/
       if ( v8 > 0 ) /*0x600be7*/
       {
         v9 = v7; /*0x600be9*/
@@ -242,9 +246,9 @@ void __cdecl sub_600AF0()
           {
             do /*0x600c26*/
             {
-              v12 = MEMORY[0xAC1B18](v11) & ((1 << MEMORY[0xAC1B0C]) - 1); /*0x600c09*/
-              v13 = *((_DWORD *)MEMORY[0xAC1B00] + v12); /*0x600c10*/
-              *((_DWORD *)MEMORY[0xAC1B00] + v12) = v11; /*0x600c13*/
+              v12 = g_DialogHashMap_Buckets(v11) & ((1 << g_DialogHashMap_Buckets) - 1); /*0x600c09*/
+              v13 = *((_DWORD *)g_DialogHashMap_Base + v12); /*0x600c10*/
+              *((_DWORD *)g_DialogHashMap_Base + v12) = v11; /*0x600c13*/
               v14 = *(_DWORD *)(v11 + 516); /*0x600c16*/
               *(_DWORD *)(v11 + 516) = v13; /*0x600c1c*/
               v11 = v14; /*0x600c24*/
@@ -257,12 +261,12 @@ void __cdecl sub_600AF0()
         while ( v10 ); /*0x600c2c*/
       }
       __3_YAXPAX_Z(v7); /*0x600c31*/
-      v6 = MEMORY[0xAC1B30]; /*0x600c36*/
-      v0 = MEMORY[0xAC1B08]; /*0x600c3c*/
+      v6 = DataGlobal_AC1B30; /*0x600c36*/
+      v0 = DataGlobal_AC1B08; /*0x600c3c*/
     }
-    while ( MEMORY[0xAC1B08] > (unsigned int)MEMORY[0xAC1B30] ); /*0x600c46*/
+    while ( DataGlobal_AC1B08 > (unsigned int)DataGlobal_AC1B30 ); /*0x600c46*/
   }
-  __3_YAXPAX_Z(MEMORY[0xAC1B00]); /*0x600c53*/
+  __3_YAXPAX_Z(g_DialogHashMap_Base); /*0x600c53*/
 }
 }
 } // namespace gamemd
@@ -301,9 +305,9 @@ int __fastcall ValidateDialogEvent(int a1, HWND a2)
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x600cac*/
-  if ( !MEMORY[0xAC1B04] ) /*0x600cb0*/
+  if ( !g_DialogHashMap_Count ) /*0x600cb0*/
     goto LABEL_5; /*0x600cb0*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v8) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x600cd1*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x600cd1*/
   if ( !v3 ) /*0x600cd6*/
     goto LABEL_5; /*0x600cd6*/
   while ( *v3 != v8 ) /*0x600cde*/
@@ -517,9 +521,9 @@ int __fastcall CtlDialogColorHandler(int a1, HWND a2)
   int v9; // [esp+8h] [ebp-4h] BYREF
 
   v9 = a1; /*0x6015ec*/
-  if ( !MEMORY[0xAC1B04] ) /*0x6015f0*/
+  if ( !g_DialogHashMap_Count ) /*0x6015f0*/
     goto LABEL_5; /*0x6015f0*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v9) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x601611*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x601611*/
   if ( !v3 ) /*0x601616*/
     goto LABEL_5; /*0x601616*/
   while ( *v3 != v9 ) /*0x60161e*/
@@ -724,9 +728,9 @@ int __fastcall ValidateDialogControl(int a1, HWND a2)
   int v9; // [esp+8h] [ebp-4h] BYREF
 
   v9 = a1; /*0x601d2c*/
-  if ( !MEMORY[0xAC1B04] ) /*0x601d30*/
+  if ( !g_DialogHashMap_Count ) /*0x601d30*/
     goto LABEL_5; /*0x601d30*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v9) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x601d51*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x601d51*/
   if ( !v3 ) /*0x601d56*/
     goto LABEL_5; /*0x601d56*/
   while ( *v3 != v9 ) /*0x601d5e*/
@@ -932,9 +936,9 @@ int __fastcall sub_6023F0(int a1, HWND a2)
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x6023fc*/
-  if ( !MEMORY[0xAC1B04] ) /*0x602400*/
+  if ( !g_DialogHashMap_Count ) /*0x602400*/
     goto LABEL_5; /*0x602400*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v8) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x602421*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x602421*/
   if ( !v3 ) /*0x602426*/
     goto LABEL_5; /*0x602426*/
   while ( *v3 != v8 ) /*0x60242e*/
@@ -972,9 +976,9 @@ bool __fastcall IsValidActionDialog(int a1, HWND a2)
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x60249c*/
-  if ( !MEMORY[0xAC1B04] ) /*0x6024a0*/
+  if ( !g_DialogHashMap_Count ) /*0x6024a0*/
     goto LABEL_5; /*0x6024a0*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v8) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x6024c1*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6024c1*/
   if ( !v3 ) /*0x6024c6*/
     goto LABEL_5; /*0x6024c6*/
   while ( *v3 != v8 ) /*0x6024ce*/
@@ -1156,9 +1160,9 @@ char __fastcall IsDialogControlHidden(int a1, HWND a2)
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x602ddc*/
-  if ( !MEMORY[0xAC1B04] ) /*0x602de0*/
+  if ( !g_DialogHashMap_Count ) /*0x602de0*/
     goto LABEL_5; /*0x602de0*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v8) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x602e01*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x602e01*/
   if ( !v3 ) /*0x602e06*/
     goto LABEL_5; /*0x602e06*/
   while ( *v3 != v8 ) /*0x602e0e*/
@@ -1246,9 +1250,9 @@ int __fastcall LoadCampaignMissionData(int a1, HWND a2)
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x60304c*/
-  if ( !MEMORY[0xAC1B04] ) /*0x603050*/
+  if ( !g_DialogHashMap_Count ) /*0x603050*/
     goto LABEL_5; /*0x603050*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v8) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x603071*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603071*/
   if ( !v3 ) /*0x603076*/
     goto LABEL_5; /*0x603076*/
   while ( *v3 != v8 ) /*0x60307e*/
@@ -1323,9 +1327,9 @@ int __fastcall DispatchDialogControlAction(int a1, HWND a2)
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x6035fc*/
-  if ( !MEMORY[0xAC1B04] ) /*0x603600*/
+  if ( !g_DialogHashMap_Count ) /*0x603600*/
     goto LABEL_5; /*0x603600*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v8) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x603621*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603621*/
   if ( !v3 ) /*0x603626*/
     goto LABEL_5; /*0x603626*/
   while ( *v3 != v8 ) /*0x60362e*/
@@ -1415,9 +1419,9 @@ void *__fastcall GetDialogControlSHP(int a1, HWND a2, bool *a3)
   int v9; // [esp+8h] [ebp-4h] BYREF
 
   v9 = a1; /*0x60387c*/
-  if ( !MEMORY[0xAC1B04] ) /*0x603880*/
+  if ( !g_DialogHashMap_Count ) /*0x603880*/
     goto LABEL_5; /*0x603880*/
-  v4 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v9) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x6038a1*/
+  v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6038a1*/
   if ( !v4 ) /*0x6038a6*/
     goto LABEL_5; /*0x6038a6*/
   while ( *v4 != v9 ) /*0x6038ae*/
@@ -1465,23 +1469,23 @@ LABEL_5:
      || v5 == 3015)
     && DlgCtrlID == 1820 )
   {
-    return LoadFileSHP(MEMORY[0x833674], a3); /*0x603a08*/
+    return LoadFileSHP(DataGlobal_833674, a3); /*0x603a08*/
   }
   if ( v5 == 148 ) /*0x603a2c*/
   {
     if ( DlgCtrlID == 1770 ) /*0x603a33*/
-      return MEMORY[0xB0FB48]; /*0x603a3d*/
+      return DataGlobal_B0FB48; /*0x603a3d*/
     if ( DlgCtrlID == 1772 ) /*0x603a45*/
-      return MEMORY[0xB0FB10]; /*0x603a4f*/
+      return DataGlobal_B0FB10; /*0x603a4f*/
   }
   else if ( v5 == 259 || v5 == 3015 ) /*0x603a60*/
   {
     if ( DlgCtrlID == 1835 ) /*0x603a67*/
-      return MEMORY[0xB0FB30]; /*0x603a71*/
+      return DataGlobal_B0FB30; /*0x603a71*/
   }
   else if ( v5 == 196 && DlgCtrlID == 1961 ) /*0x603a81*/
   {
-    return (void *)MEMORY[0xB0FAD0]; /*0x603a8b*/
+    return (void *)DataGlobal_B0FAD0; /*0x603a8b*/
   }
   return 0; /*0x603a05*/
 }
@@ -1505,9 +1509,9 @@ int __fastcall IsDialogWindowClass(HWND a1, HWND a2)
   CHAR ClassName[128]; // [esp+10h] [ebp-80h] BYREF
 
   hWnd = a1; /*0x603ab2*/
-  if ( !MEMORY[0xAC1B04] ) /*0x603ab6*/
+  if ( !g_DialogHashMap_Count ) /*0x603ab6*/
     return 0; /*0x603ab6*/
-  v3 = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&hWnd) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x603ad7*/
+  v3 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603ad7*/
   if ( !v3 ) /*0x603adc*/
     return 0; /*0x603adc*/
   while ( *(HWND *)v3 != hWnd ) /*0x603ae4*/
@@ -1545,11 +1549,11 @@ int __fastcall IsDialogWindowClass(HWND a1, HWND a2)
   *(_DWORD *)(v5 + 176) = 2; /*0x603b97*/
   hWnd = a2; /*0x603bac*/
   GetClassNameA(a2, ClassName, 128); /*0x603bb0*/
-  if ( !strcmp(ClassName, MEMORY[0x833728]) || !strcmp(ClassName, MEMORY[0x833720]) ) /*0x603c05*/
+  if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x603c05*/
     return 192; /*0x603c2c*/
-  if ( !strcmp(ClassName, MEMORY[0x833718]) /*0x603c99*/
-    && MEMORY[0xAC1B04]
-    && (v7 = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&hWnd) & ((1 << MEMORY[0xAC1B0C]) - 1)))) != 0 )
+  if ( !strcmp(ClassName, g_INI_Key_ListBox) /*0x603c99*/
+    && g_DialogHashMap_Count
+    && (v7 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
     v8 = hWnd; /*0x603c9b*/
     while ( *(HWND *)v7 != hWnd ) /*0x603ca1*/
@@ -1564,7 +1568,7 @@ int __fastcall IsDialogWindowClass(HWND a1, HWND a2)
   {
     v8 = hWnd; /*0x603cbc*/
 LABEL_37:
-    if ( strcmp(ClassName, MEMORY[0x83370C]) ) /*0x603cd1*/
+    if ( strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x603cd1*/
       return 0; /*0x603cf8*/
     v9 = (GetWindowLongA(v8, -16) & 3) != 3; /*0x603d0c*/
   }
@@ -1585,11 +1589,11 @@ HWND *__fastcall CacheDialogInvalidate(HWND hWnd, HWND a2)
   HWND *result; // eax
   HWND v5; // [esp+8h] [ebp-4h] BYREF
 
-  result = (HWND *)MEMORY[0xAC1B04]; /*0x603d31*/
+  result = (HWND *)g_DialogHashMap_Count; /*0x603d31*/
   v5 = hWnd; /*0x603d3e*/
-  if ( MEMORY[0xAC1B04] ) /*0x603d42*/
+  if ( g_DialogHashMap_Count ) /*0x603d42*/
   {
-    result = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v5) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x603d63*/
+    result = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v5) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603d63*/
     if ( result ) /*0x603d68*/
     {
       while ( *result != v5 ) /*0x603d70*/
@@ -1621,11 +1625,11 @@ _DWORD *__fastcall sub_603E40(int a1, int a2)
   _DWORD *result; // eax
   int v4; // [esp+4h] [ebp-4h] BYREF
 
-  result = (_DWORD *)MEMORY[0xAC1B04]; /*0x603e41*/
+  result = (_DWORD *)g_DialogHashMap_Count; /*0x603e41*/
   v4 = a1; /*0x603e4b*/
-  if ( MEMORY[0xAC1B04] ) /*0x603e4f*/
+  if ( g_DialogHashMap_Count ) /*0x603e4f*/
   {
-    result = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v4) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x603e70*/
+    result = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v4) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603e70*/
     if ( result ) /*0x603e75*/
     {
       while ( *result != v4 ) /*0x603e7d*/
@@ -1656,12 +1660,12 @@ wchar_t **__fastcall GetSkirmishMenuOwnerName(SkirmishDialog *aP0, HWND a2, HWND
   v4 = DlgSkirmishMenuProc(a2, a3); /*0x60406b*/
   if ( v4 ) /*0x604072*/
   {
-    StringCSF = GetStringCSF((wchar_t *)v4, 0, &stru_830620.__pad_14B0[7264], 1957); /*0x604082*/
+    StringCSF = GetStringCSF((wchar_t *)v4, 0, &stru_830620[12560], 1957); /*0x604082*/
     WideString::Assign((wchar_t **)aP0, (CampaignScore *)StringCSF); /*0x60408a*/
   }
   else
   {
-    WideString::Assign((wchar_t **)aP0, (CampaignScore *)&stru_87C374.__pad_579C[23588]); /*0x60409c*/
+    WideString::Assign((wchar_t **)aP0, (CampaignScore *)&stru_87C374[46016]); /*0x60409c*/
   }
   return (wchar_t **)aP0; /*0x604091*/
 }
@@ -1688,9 +1692,9 @@ char *__fastcall DlgSkirmishMenuProc(HWND a1, HWND a2)
   HWND v13; // [esp+8h] [ebp-4h] BYREF
 
   v13 = a1;
-  if ( !MEMORY[0xAC1B04] )
+  if ( !g_DialogHashMap_Count )
     goto LABEL_5;
-  v3 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v13) & ((1 << MEMORY[0xAC1B0C]) - 1)));
+  v3 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v13) & ((1 << g_DialogHashMap_Buckets) - 1)));
   if ( !v3 )
     goto LABEL_5;
   while ( *v3 != v13 )
@@ -1714,59 +1718,59 @@ LABEL_5:
     {
       case 226:
         if ( result == (char *)1667 )
-          return MEMORY[0x835784];
+          return DataGlobal_00835784;
         if ( result == (char *)1668 )
-          return MEMORY[0x83576C];
+          return DataGlobal_0083576C;
         if ( result == (char *)1400 )
-          return MEMORY[0x835754];
+          return DataGlobal_00835754;
         if ( result == (char *)1670 )
-          return MEMORY[0x83573C];
+          return DataGlobal_0083573C;
         if ( result == (char *)1372 )
-          return MEMORY[0x835724];
+          return DataGlobal_00835724;
         if ( result != (char *)1375 )
         {
           if ( result == (char *)1006 )
-            return MEMORY[0x835708];
+            return DataGlobal_00835708;
           return 0;
         }
-        return MEMORY[0x833DE4];
+        return DataGlobal_00833DE4;
       case 256:
         if ( result == (char *)1672 )
-          return MEMORY[0x8356EC];
+          return DataGlobal_008356EC;
         if ( result == (char *)1673 )
-          return MEMORY[0x8356CC];
+          return DataGlobal_008356CC;
         if ( result == (char *)1401 )
-          return MEMORY[0x8356B0];
+          return DataGlobal_008356B0;
         if ( result == (char *)1670 )
-          return MEMORY[0x835698];
+          return DataGlobal_00835698;
         return 0;
       case 148:
         if ( result == (char *)1770 )
           return (char *)aSttAlliedcampa;
         if ( result == (char *)1771 )
-          return MEMORY[0x83567C];
+          return DataGlobal_0083567C;
         if ( result == (char *)1772 )
           return (char *)aSttSovietcampa;
         if ( result == (char *)1295 )
-          return MEMORY[0x83565C];
+          return DataGlobal_0083565C;
         if ( result == (char *)1038 )
-          return MEMORY[0x835644];
+          return DataGlobal_00835644;
         if ( result == (char *)1109 )
-          return MEMORY[0x835630];
+          return DataGlobal_00835630;
         if ( result == (char *)1670 )
-          return MEMORY[0x835618];
+          return DataGlobal_00835618;
         return 0;
       case 183:
         if ( result == (char *)1317 )
-          return MEMORY[0x835608];
+          return DataGlobal_00835608;
         if ( result == (char *)1039 )
-          return MEMORY[0x8355F4];
+          return DataGlobal_008355F4;
         if ( result == (char *)1670 )
-          return MEMORY[0x8355E0];
+          return DataGlobal_008355E0;
         return 0;
       case 258:
         if ( result == (char *)1696 )
-          return MEMORY[0x8355C8];
+          return DataGlobal_008355C8;
         if ( result == (char *)1291
           || result == (char *)1294
           || result == (char *)1302
@@ -1775,7 +1779,7 @@ LABEL_5:
           || result == (char *)1308
           || result == (char *)1309 )
         {
-          return MEMORY[0x8353E4];
+          return DataGlobal_008353E4;
         }
         if ( result == (char *)1754
           || result == (char *)1755
@@ -1786,7 +1790,7 @@ LABEL_5:
           || result == (char *)1760
           || result == (char *)1761 )
         {
-          return MEMORY[0x835400];
+          return DataGlobal_00835400;
         }
         if ( result == (char *)1697
           || result == (char *)1296
@@ -1797,7 +1801,7 @@ LABEL_5:
           || result == (char *)1312
           || result == (char *)1313 )
         {
-          return MEMORY[0x835418];
+          return DataGlobal_00835418;
         }
         if ( result == (char *)1698
           || result == (char *)1314
@@ -1808,7 +1812,7 @@ LABEL_5:
           || result == (char *)1319
           || result == (char *)1320 )
         {
-          return MEMORY[0x835434];
+          return DataGlobal_00835434;
         }
         if ( result != (char *)1699
           && result != (char *)1700
@@ -1829,65 +1833,65 @@ LABEL_5:
             && result != (char *)1908 )
           {
             if ( result == (char *)1321 )
-              return MEMORY[0x8355B0];
+              return DataGlobal_008355B0;
             if ( result == (char *)1297 )
-              return MEMORY[0x835594];
+              return DataGlobal_00835594;
             if ( result == (char *)1292 )
-              return MEMORY[0x83557C];
+              return DataGlobal_0083557C;
             if ( result == (char *)1450 )
-              return MEMORY[0x835560];
+              return DataGlobal_00835560;
             if ( result == (char *)1683 )
-              return MEMORY[0x835544];
+              return DataGlobal_00835544;
             if ( result == (char *)1358 )
-              return MEMORY[0x835528];
+              return DataGlobal_00835528;
             if ( result == (char *)1690 )
-              return MEMORY[0x83550C];
+              return DataGlobal_0083550C;
             if ( result == (char *)1693 )
-              return MEMORY[0x8354EC];
+              return DataGlobal_008354EC;
             if ( result == (char *)1686 )
-              return MEMORY[0x8354D4];
+              return DataGlobal_008354D4;
             if ( result == (char *)1128 )
-              return MEMORY[0x8354B8];
+              return DataGlobal_008354B8;
             if ( result == (char *)1772 )
-              return MEMORY[0x83549C];
+              return DataGlobal_0083549C;
             if ( result == (char *)1448 )
-              return MEMORY[0x835480];
+              return DataGlobal_00835480;
             if ( result == (char *)1559 )
-              return MEMORY[0x835464];
+              return DataGlobal_00835464;
             if ( result == (char *)1472 )
-              return MEMORY[0x83544C];
+              return DataGlobal_0083544C;
             return 0;
           }
-          return MEMORY[0x83377C];
+          return DataGlobal_0083377C;
         }
         return (char *)aSttHostcombost;
       case 187:
         if ( result == (char *)1345 )
-          return MEMORY[0x8353CC];
+          return DataGlobal_008353CC;
         if ( result == (char *)1342 )
-          return (char *)MEMORY[0x8353B8];
+          return (char *)DataGlobal_008353B8;
         if ( result == (char *)1353 )
-          return (char *)MEMORY[0x8353A4];
+          return (char *)DataGlobal_008353A4;
         if ( result == (char *)1343 )
-          return MEMORY[0x835390];
+          return DataGlobal_00835390;
         if ( result == (char *)1344 )
-          return MEMORY[0x83537C];
+          return DataGlobal_0083537C;
         if ( result == (char *)1740 )
-          return MEMORY[0x835368];
+          return DataGlobal_00835368;
         if ( result != (char *)1741 )
         {
           if ( result == (char *)1888 )
-            return MEMORY[0x835354];
+            return g_Str_STT_ObserverToggle;
           if ( result == (char *)1742 )
-            return MEMORY[0x83533C];
+            return DataGlobal_0083533C;
           if ( result == (char *)1472 )
-            return MEMORY[0x835328];
+            return DataGlobal_00835328;
           return 0;
         }
 LABEL_590:
-        if ( !MEMORY[0xAC10C8] )
-          return MEMORY[0x83444C];
-        return MEMORY[0x83533C];
+        if ( !g_MenuStateFlags )
+          return DataGlobal_0083444C;
+        return DataGlobal_0083533C;
       case 188:
       case 194:
         if ( result == (char *)1746
@@ -1899,7 +1903,7 @@ LABEL_590:
           || result == (char *)1752
           || result == (char *)1753 )
         {
-          return MEMORY[0x83374C];
+          return DataGlobal_0083374C;
         }
         if ( result == (char *)1041
           || result == (char *)1042
@@ -1910,7 +1914,7 @@ LABEL_590:
           || result == (char *)1047
           || result == (char *)1048 )
         {
-          return (char *)MEMORY[0x833768];
+          return (char *)g_Str_STT_HostComboPlayer;
         }
         if ( result == (char *)1754
           || result == (char *)1755
@@ -1921,7 +1925,7 @@ LABEL_590:
           || result == (char *)1760
           || result == (char *)1761 )
         {
-          return MEMORY[0x833C04];
+          return DataGlobal_00833C04;
         }
         if ( result == (char *)1697
           || result == (char *)1296
@@ -1932,7 +1936,7 @@ LABEL_590:
           || result == (char *)1312
           || result == (char *)1313 )
         {
-          return MEMORY[0x833C18];
+          return DataGlobal_00833C18;
         }
         if ( result == (char *)1698
           || result == (char *)1314
@@ -1943,7 +1947,7 @@ LABEL_590:
           || result == (char *)1319
           || result == (char *)1320 )
         {
-          return MEMORY[0x833C30];
+          return DataGlobal_00833C30;
         }
         if ( result == (char *)1699
           || result == (char *)1700
@@ -1965,45 +1969,45 @@ LABEL_590:
           || result == (char *)1907
           || result == (char *)1908 )
         {
-          return MEMORY[0x83377C];
+          return DataGlobal_0083377C;
         }
         if ( result == (char *)1321 )
-          return MEMORY[0x8338A4];
+          return DataGlobal_008338A4;
         if ( result == (char *)1026 )
-          return MEMORY[0x83388C];
+          return DataGlobal_0083388C;
         if ( result == (char *)1359 )
-          return MEMORY[0x833878];
+          return DataGlobal_00833878;
         if ( result == (char *)1000 )
-          return MEMORY[0x833860];
+          return DataGlobal_00833860;
         if ( result == (char *)1358 )
-          return MEMORY[0x833848];
+          return DataGlobal_00833848;
         if ( result == (char *)1690 )
-          return MEMORY[0x833830];
+          return DataGlobal_00833830;
         if ( result == (char *)1693 )
-          return MEMORY[0x833814];
+          return DataGlobal_00833814;
         if ( result == (char *)1357 )
-          return MEMORY[0x833800];
+          return DataGlobal_00833800;
         if ( result == (char *)1343 )
-          return MEMORY[0x833C44];
+          return DataGlobal_00833C44;
         if ( result == (char *)1344 )
-          return MEMORY[0x833C58];
+          return DataGlobal_00833C58;
         if ( result == (char *)1128 )
-          return MEMORY[0x8337E8];
+          return DataGlobal_008337E8;
         if ( result == (char *)1448 )
-          return MEMORY[0x8337D0];
+          return DataGlobal_008337D0;
         if ( result == (char *)1416 )
-          return MEMORY[0x8337BC];
+          return DataGlobal_008337BC;
         if ( result == (char *)1450 )
-          return MEMORY[0x8337A4];
+          return DataGlobal_008337A4;
         if ( result == (char *)2 )
         {
           if ( v4 == 194 )
-            return MEMORY[0x833FF0];
+            return g_Str_STT_WOLNewGameCancel;
           else
-            return MEMORY[0x833790];
+            return DataGlobal_00833790;
         }
         if ( result == (char *)1474 )
-          return MEMORY[0x834318];
+          return g_Str_STT_WOLPageButton;
         break;
       case 189:
       case 201:
@@ -2016,7 +2020,7 @@ LABEL_590:
           || result == (char *)1752
           || result == (char *)1753 )
         {
-          return MEMORY[0x8338B8];
+          return DataGlobal_008338B8;
         }
         if ( result == (char *)1041
           || result == (char *)1042
@@ -2027,7 +2031,7 @@ LABEL_590:
           || result == (char *)1047
           || result == (char *)1048 )
         {
-          return (char *)MEMORY[0x8338D4];
+          return (char *)g_Str_STT_GuestComboPlayer;
         }
         if ( result == (char *)1754
           || result == (char *)1755
@@ -2038,7 +2042,7 @@ LABEL_590:
           || result == (char *)1760
           || result == (char *)1761 )
         {
-          return MEMORY[0x8338EC];
+          return DataGlobal_008338EC;
         }
         if ( result == (char *)1697
           || result == (char *)1296
@@ -2049,7 +2053,7 @@ LABEL_590:
           || result == (char *)1312
           || result == (char *)1313 )
         {
-          return MEMORY[0x833904];
+          return DataGlobal_00833904;
         }
         if ( result == (char *)1698
           || result == (char *)1314
@@ -2060,7 +2064,7 @@ LABEL_590:
           || result == (char *)1319
           || result == (char *)1320 )
         {
-          return MEMORY[0x83391C];
+          return DataGlobal_0083391C;
         }
         if ( result == (char *)1699
           || result == (char *)1700
@@ -2071,7 +2075,7 @@ LABEL_590:
           || result == (char *)1706
           || result == (char *)1707 )
         {
-          return MEMORY[0x833930];
+          return DataGlobal_00833930;
         }
         if ( result == (char *)1901
           || result == (char *)1902
@@ -2082,163 +2086,163 @@ LABEL_590:
           || result == (char *)1907
           || result == (char *)1908 )
         {
-          return MEMORY[0x833944];
+          return DataGlobal_00833944;
         }
         if ( result == (char *)1321 )
-          return MEMORY[0x833A80];
+          return DataGlobal_00833A80;
         if ( result == (char *)1026 )
-          return MEMORY[0x833A68];
+          return DataGlobal_00833A68;
         if ( result == (char *)1359 )
-          return MEMORY[0x833A54];
+          return DataGlobal_00833A54;
         if ( result == (char *)1000 )
-          return MEMORY[0x833A3C];
+          return DataGlobal_00833A3C;
         if ( result == (char *)1358 )
-          return MEMORY[0x833A24];
+          return DataGlobal_00833A24;
         if ( result == (char *)1690 )
-          return MEMORY[0x833A0C];
+          return DataGlobal_00833A0C;
         if ( result == (char *)1693 )
-          return MEMORY[0x8339F0];
+          return DataGlobal_008339F0;
         if ( result == (char *)1357 )
-          return MEMORY[0x8339DC];
+          return DataGlobal_008339DC;
         if ( result == (char *)1343 )
-          return MEMORY[0x8339C8];
+          return DataGlobal_008339C8;
         if ( result == (char *)1344 )
-          return MEMORY[0x8339B4];
+          return DataGlobal_008339B4;
         if ( result == (char *)1128 )
-          return MEMORY[0x83399C];
+          return DataGlobal_0083399C;
         if ( result == (char *)1448 )
-          return MEMORY[0x833984];
+          return DataGlobal_00833984;
         if ( result == (char *)1439 )
-          return MEMORY[0x83396C];
+          return DataGlobal_0083396C;
         if ( result == (char *)2 )
         {
           if ( v4 == 201 )
-            return MEMORY[0x833FF0];
+            return g_Str_STT_WOLNewGameCancel;
           else
-            return MEMORY[0x833958];
+            return DataGlobal_00833958;
         }
         if ( result == (char *)1474 )
-          return MEMORY[0x834318];
+          return g_Str_STT_WOLPageButton;
         break;
       case 257:
         if ( result == (char *)1677 )
-          return MEMORY[0x835310];
+          return DataGlobal_00835310;
         if ( result == (char *)1678 )
-          return MEMORY[0x8352F8];
+          return DataGlobal_008352F8;
         if ( result == (char *)1679 )
-          return MEMORY[0x8352DC];
+          return DataGlobal_008352DC;
         if ( result == (char *)1670 )
-          return MEMORY[0x8352C4];
+          return DataGlobal_008352C4;
         return 0;
       case 297:
         if ( result == (char *)1861 )
-          return MEMORY[0x8352B4];
+          return DataGlobal_008352B4;
         if ( result == (char *)1670 )
-          return MEMORY[0x83529C];
+          return DataGlobal_0083529C;
         if ( result == (char *)1860 )
-          return MEMORY[0x83528C];
+          return DataGlobal_0083528C;
         return 0;
       case 213:
         if ( result == (char *)1486 )
-          return MEMORY[0x835270];
+          return DataGlobal_00835270;
         if ( result == (char *)1485 )
-          return MEMORY[0x835254];
+          return DataGlobal_00835254;
         if ( result == (char *)1670 )
-          return MEMORY[0x83523C];
+          return DataGlobal_0083523C;
         if ( result == (char *)1652 )
-          return MEMORY[0x835224];
+          return DataGlobal_00835224;
         if ( result == (char *)1323 )
-          return MEMORY[0x83520C];
+          return DataGlobal_0083520C;
         if ( result == (char *)1773 )
-          return MEMORY[0x8351F4];
+          return DataGlobal_008351F4;
         if ( result == (char *)1321 )
-          return MEMORY[0x8351DC];
+          return DataGlobal_008351DC;
         if ( result == (char *)1295 )
-          return MEMORY[0x8351C0];
+          return DataGlobal_008351C0;
         if ( result == (char *)1537 )
-          return MEMORY[0x8351A4];
+          return DataGlobal_008351A4;
         if ( result == (char *)1540 )
-          return MEMORY[0x83518C];
+          return DataGlobal_0083518C;
         if ( result == (char *)1538 )
-          return MEMORY[0x835174];
+          return DataGlobal_00835174;
         if ( result == (char *)1322 )
-          return MEMORY[0x83515C];
+          return DataGlobal_0083515C;
         if ( result == (char *)1306 )
-          return MEMORY[0x83513C];
+          return DataGlobal_0083513C;
         if ( result == (char *)1327 )
-          return MEMORY[0x835124];
+          return DataGlobal_00835124;
         if ( result == (char *)1330 )
-          return MEMORY[0x83510C];
+          return DataGlobal_0083510C;
         if ( result == (char *)1334 )
-          return MEMORY[0x8350F4];
+          return DataGlobal_008350F4;
         return 0;
       case 215:
         if ( result == (char *)1492 )
-          return MEMORY[0x8350DC];
+          return DataGlobal_008350DC;
         if ( result == (char *)1489 )
-          return MEMORY[0x8350C0];
+          return DataGlobal_008350C0;
         if ( result == (char *)1491 )
-          return MEMORY[0x8350A4];
+          return DataGlobal_008350A4;
         if ( result == (char *)1890 )
-          return MEMORY[0x83508C];
+          return DataGlobal_0083508C;
         if ( result == (char *)1495 )
-          return MEMORY[0x835074];
+          return DataGlobal_00835074;
         if ( result == (char *)1 )
-          return MEMORY[0x83505C];
+          return DataGlobal_0083505C;
         if ( result == (char *)2 )
-          return MEMORY[0x835040];
+          return DataGlobal_00835040;
         return 0;
       case 163:
         if ( result == (char *)1223 )
-          return MEMORY[0x835024];
+          return DataGlobal_00835024;
         if ( result == (char *)1769 )
-          return MEMORY[0x835004];
+          return DataGlobal_00835004;
         if ( result == (char *)1224 )
-          return MEMORY[0x834FE8];
+          return DataGlobal_00834FE8;
         if ( result == (char *)1596 )
-          return MEMORY[0x834FCC];
+          return DataGlobal_00834FCC;
         if ( result == (char *)1597 )
-          return MEMORY[0x834FB4];
+          return DataGlobal_00834FB4;
         if ( result == (char *)1229 )
-          return MEMORY[0x834F9C];
+          return DataGlobal_00834F9C;
         if ( result == (char *)1231 )
-          return MEMORY[0x834F80];
+          return DataGlobal_00834F80;
         if ( result == (char *)1595 )
-          return MEMORY[0x834F64];
+          return DataGlobal_00834F64;
         if ( result == (char *)1232 )
-          return MEMORY[0x834F48];
+          return DataGlobal_00834F48;
         if ( result == (char *)1670 )
-          return MEMORY[0x834F30];
+          return DataGlobal_00834F30;
         return 0;
       case 268:
         if ( result == (char *)1767 )
-          return MEMORY[0x834F14];
+          return DataGlobal_00834F14;
         if ( result == (char *)1059 )
-          return MEMORY[0x834EF8];
+          return DataGlobal_00834EF8;
         return 0;
       case 182:
         if ( result == (char *)1737 )
         {
           v13 = a2;
-          if ( MEMORY[0xAC1B04] )
+          if ( g_DialogHashMap_Count )
           {
-            v7 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v13) & ((1 << MEMORY[0xAC1B0C]) - 1)));
+            v7 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v13) & ((1 << g_DialogHashMap_Buckets) - 1)));
             if ( v7 )
             {
               while ( *v7 != v13 )
               {
                 v7 = (HWND *)v7[129];
                 if ( !v7 )
-                  return MEMORY[0x834EEC];
+                  return DataGlobal_00834EEC;
               }
               v8 = v7 + 1;
               if ( v8 )
               {
                 v9 = v8[48];
                 if ( v9 == 3 )
-                  return MEMORY[0x834ECC];
+                  return DataGlobal_00834ECC;
                 if ( v9 == 2 )
-                  return MEMORY[0x834EB0];
+                  return DataGlobal_00834EB0;
               }
             }
           }
@@ -2248,39 +2252,39 @@ LABEL_590:
           if ( result != (char *)1810 )
           {
             if ( result == (char *)1670 )
-              return MEMORY[0x834E54];
+              return DataGlobal_00834E54;
             return 0;
           }
           v13 = a2;
-          if ( MEMORY[0xAC1B04] )
+          if ( g_DialogHashMap_Count )
           {
-            v10 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v13) & ((1 << MEMORY[0xAC1B0C]) - 1)));
+            v10 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v13) & ((1 << g_DialogHashMap_Buckets) - 1)));
             if ( v10 )
             {
               while ( *v10 != v13 )
               {
                 v10 = (HWND *)v10[129];
                 if ( !v10 )
-                  return MEMORY[0x834EEC];
+                  return DataGlobal_00834EEC;
               }
               v11 = v10 + 1;
               if ( v11 )
               {
                 v12 = v11[48];
                 if ( v12 == 4 )
-                  return MEMORY[0x834E90];
+                  return DataGlobal_00834E90;
                 if ( v12 == 5 )
-                  return MEMORY[0x834E70];
+                  return DataGlobal_00834E70;
               }
             }
           }
         }
-        return MEMORY[0x834EEC];
+        return DataGlobal_00834EEC;
       case 217:
         if ( result == (char *)1473 )
-          return MEMORY[0x834E3C];
+          return DataGlobal_00834E3C;
         if ( result == (char *)1738 )
-          return MEMORY[0x834E20];
+          return DataGlobal_00834E20;
         return 0;
       case 115:
         if ( result == (char *)1041
@@ -2292,7 +2296,7 @@ LABEL_590:
           || result == (char *)1047
           || result == (char *)1048 )
         {
-          return MEMORY[0x834D8C];
+          return DataGlobal_00834D8C;
         }
         if ( result == (char *)1743
           || result == (char *)1744
@@ -2302,7 +2306,7 @@ LABEL_590:
           || result == (char *)1748
           || result == (char *)1749 )
         {
-          return MEMORY[0x834DA8];
+          return DataGlobal_00834DA8;
         }
         if ( result == (char *)1750
           || result == (char *)1751
@@ -2312,7 +2316,7 @@ LABEL_590:
           || result == (char *)1763
           || result == (char *)1764 )
         {
-          return MEMORY[0x834DC0];
+          return DataGlobal_00834DC0;
         }
         if ( result == (char *)1049
           || result == (char *)1050
@@ -2323,86 +2327,86 @@ LABEL_590:
           || result == (char *)1055
           || result == (char *)1056 )
         {
-          return MEMORY[0x834DDC];
+          return DataGlobal_00834DDC;
         }
         if ( result == (char *)1059 )
-          return MEMORY[0x834E04];
+          return DataGlobal_00834E04;
         if ( result == (char *)1840 )
-          return MEMORY[0x834DF4];
+          return DataGlobal_00834DF4;
         return 0;
       case 3003:
         if ( result == (char *)1321 )
-          return MEMORY[0x834D70];
+          return DataGlobal_00834D70;
         if ( result == (char *)1322 )
-          return MEMORY[0x834D54];
+          return DataGlobal_00834D54;
         if ( result == (char *)1323 )
-          return MEMORY[0x834D38];
+          return DataGlobal_00834D38;
         if ( result == (char *)1538 )
-          return MEMORY[0x834D1C];
+          return DataGlobal_00834D1C;
         if ( result == (char *)1537 )
-          return MEMORY[0x834CFC];
+          return DataGlobal_00834CFC;
         if ( result == (char *)1540 )
-          return MEMORY[0x834CE4];
+          return DataGlobal_00834CE4;
         if ( result == (char *)1306 )
-          return MEMORY[0x834CC4];
+          return DataGlobal_00834CC4;
         if ( result == (char *)1325 )
-          return MEMORY[0x834CA8];
+          return DataGlobal_00834CA8;
         if ( result == (char *)1324 )
-          return MEMORY[0x834C8C];
+          return DataGlobal_00834C8C;
         if ( result == (char *)1670 )
-          return MEMORY[0x834C74];
+          return DataGlobal_00834C74;
         return 0;
       case 261:
         if ( result == (char *)1029 )
-          return MEMORY[0x834C58];
+          return DataGlobal_00834C58;
         if ( result == (char *)1002 )
-          return MEMORY[0x834C40];
+          return DataGlobal_00834C40;
         if ( result == (char *)1031 )
-          return MEMORY[0x834C28];
+          return DataGlobal_00834C28;
         if ( result == (char *)1030 )
-          return MEMORY[0x834C10];
+          return DataGlobal_00834C10;
         if ( result == (char *)1032 )
-          return MEMORY[0x834BF4];
+          return DataGlobal_00834BF4;
         if ( result == (char *)1003 )
-          return MEMORY[0x834BD4];
+          return DataGlobal_00834BD4;
         if ( result == (char *)1569 )
-          return MEMORY[0x834BB8];
+          return DataGlobal_00834BB8;
         if ( result == (char *)1568 )
-          return MEMORY[0x834B9C];
+          return DataGlobal_00834B9C;
         if ( result == (char *)1730 )
-          return MEMORY[0x834B80];
+          return DataGlobal_00834B80;
         if ( result == (char *)1731 )
-          return MEMORY[0x834B64];
+          return DataGlobal_00834B64;
         if ( result == (char *)1732 )
-          return MEMORY[0x834B48];
+          return DataGlobal_00834B48;
         if ( result == (char *)1733 )
-          return MEMORY[0x834B2C];
+          return DataGlobal_00834B2C;
         if ( result == (char *)1472 )
-          return MEMORY[0x834B10];
+          return DataGlobal_00834B10;
         return 0;
       case 693:
         if ( result == (char *)1320 )
-          return MEMORY[0x834AF8];
+          return DataGlobal_00834AF8;
         if ( result == (char *)1736 )
-          return MEMORY[0x834AE0];
+          return DataGlobal_00834AE0;
         if ( result == (char *)1670 )
-          return MEMORY[0x83529C];
+          return DataGlobal_0083529C;
         return 0;
       case 692:
         if ( result == (char *)1319 )
-          return MEMORY[0x834AC8];
+          return DataGlobal_00834AC8;
         if ( result == (char *)1318 )
-          return MEMORY[0x834AB4];
+          return DataGlobal_00834AB4;
         if ( result == (char *)1735 )
-          return MEMORY[0x834A9C];
+          return DataGlobal_00834A9C;
         if ( result == (char *)1670 )
-          return MEMORY[0x834A84];
+          return DataGlobal_00834A84;
         return 0;
       case 264:
         if ( result == (char *)1746 )
-          return MEMORY[0x834A6C];
+          return DataGlobal_00834A6C;
         if ( result == (char *)1002 )
-          return MEMORY[0x834A54];
+          return DataGlobal_00834A54;
         if ( result != (char *)1041
           && result != (char *)1042
           && result != (char *)1043
@@ -2450,36 +2454,36 @@ LABEL_590:
                 {
                   goto LABEL_885;
                 }
-                return MEMORY[0x833BA0];
+                return DataGlobal_00833BA0;
               }
-              return MEMORY[0x833B88];
+              return DataGlobal_00833B88;
             }
-            return MEMORY[0x833B70];
+            return DataGlobal_00833B70;
           }
-          return MEMORY[0x833B58];
+          return DataGlobal_00833B58;
         }
-        return MEMORY[0x833B40];
+        return DataGlobal_00833B40;
       case 181:
         if ( result == (char *)1313 )
-          return MEMORY[0x834A34];
+          return DataGlobal_00834A34;
         if ( result == (char *)1310 )
-          return MEMORY[0x834A18];
+          return DataGlobal_00834A18;
         if ( result == (char *)1311 )
-          return MEMORY[0x8349FC];
+          return DataGlobal_008349FC;
         if ( result == (char *)1312 )
-          return MEMORY[0x8349E0];
+          return DataGlobal_008349E0;
         if ( result == (char *)1314 )
-          return MEMORY[0x8349C4];
+          return DataGlobal_008349C4;
         if ( result == (char *)1670 )
-          return MEMORY[0x8349A8];
+          return DataGlobal_008349A8;
         return 0;
       case 3002:
         if ( result == (char *)1313 )
-          return MEMORY[0x834988];
+          return DataGlobal_00834988;
         if ( result == (char *)1314 )
-          return MEMORY[0x83496C];
+          return DataGlobal_0083496C;
         if ( result == (char *)1670 )
-          return MEMORY[0x834950];
+          return DataGlobal_00834950;
         return 0;
       case 234:
         if ( result == (char *)1600
@@ -2491,7 +2495,7 @@ LABEL_590:
           || result == (char *)1606
           || result == (char *)1607 )
         {
-          return MEMORY[0x8348C8];
+          return DataGlobal_008348C8;
         }
         if ( result == (char *)1608
           || result == (char *)1609
@@ -2502,427 +2506,427 @@ LABEL_590:
           || result == (char *)1614
           || result == (char *)1615 )
         {
-          return MEMORY[0x8348E4];
+          return DataGlobal_008348E4;
         }
         if ( result == (char *)1616 )
-          return MEMORY[0x834938];
+          return DataGlobal_00834938;
         if ( result == (char *)1617 )
-          return MEMORY[0x834920];
+          return DataGlobal_00834920;
         if ( result == (char *)2 )
-          return MEMORY[0x834900];
+          return DataGlobal_00834900;
         return 0;
       case 107:
         if ( result == (char *)1771 )
-          return MEMORY[0x8348AC];
+          return DataGlobal_008348AC;
         if ( result == (char *)1363 )
-          return MEMORY[0x834894];
+          return DataGlobal_00834894;
         if ( result == (char *)1128 )
-          return MEMORY[0x834878];
+          return DataGlobal_00834878;
         if ( result == (char *)1733 )
-          return MEMORY[0x83485C];
+          return DataGlobal_0083485C;
         if ( result == (char *)1411 )
-          return MEMORY[0x834840];
+          return DataGlobal_00834840;
         if ( result == (char *)1472 )
-          return MEMORY[0x834824];
+          return DataGlobal_00834824;
         return 0;
       case 184:
         if ( result == (char *)1327 )
-          return MEMORY[0x83480C];
+          return DataGlobal_0083480C;
         if ( result == (char *)1330 )
-          return MEMORY[0x8347F4];
+          return DataGlobal_008347F4;
         if ( result == (char *)1334 )
-          return MEMORY[0x8347DC];
+          return DataGlobal_008347DC;
         if ( result == (char *)1328 )
-          return MEMORY[0x8347C4];
+          return DataGlobal_008347C4;
         if ( result == (char *)1331 )
-          return MEMORY[0x8347AC];
+          return DataGlobal_008347AC;
         if ( result == (char *)1332 )
-          return MEMORY[0x834794];
+          return DataGlobal_00834794;
         if ( result == (char *)1329 )
-          return MEMORY[0x83477C];
+          return DataGlobal_0083477C;
         if ( result == (char *)1333 )
-          return MEMORY[0x834764];
+          return DataGlobal_00834764;
         if ( result == (char *)1670 )
-          return MEMORY[0x83474C];
+          return DataGlobal_0083474C;
         return 0;
       case 259:
         if ( result == (char *)1777 )
-          return MEMORY[0x834734];
+          return DataGlobal_00834734;
         if ( result == (char *)1778 )
-          return MEMORY[0x83471C];
+          return DataGlobal_0083471C;
         if ( result == (char *)1779 )
-          return MEMORY[0x834708];
+          return DataGlobal_00834708;
         if ( result == (char *)1780 )
-          return MEMORY[0x8346F0];
+          return DataGlobal_008346F0;
         if ( result == (char *)1782 )
-          return MEMORY[0x8346DC];
+          return DataGlobal_008346DC;
         if ( result == (char *)1059 )
-          return MEMORY[0x8346C0];
+          return DataGlobal_008346C0;
         return 0;
       case 255:
         if ( result == (char *)1007 )
-          return MEMORY[0x8346A4];
+          return DataGlobal_008346A4;
         if ( result == (char *)1321 )
-          return MEMORY[0x834684];
+          return DataGlobal_00834684;
         if ( result == (char *)1313 )
-          return MEMORY[0x834664];
+          return DataGlobal_00834664;
         if ( result == (char *)1314 )
-          return MEMORY[0x834644];
+          return DataGlobal_00834644;
         if ( result == (char *)1653 )
-          return MEMORY[0x834950];
+          return DataGlobal_00834950;
         return 0;
       case 290:
         if ( result == (char *)1785 )
-          return MEMORY[0x834624];
+          return DataGlobal_00834624;
         if ( result == (char *)1 )
-          return MEMORY[0x83460C];
+          return DataGlobal_0083460C;
         if ( result == (char *)2 )
-          return MEMORY[0x8345F4];
+          return DataGlobal_008345F4;
         return 0;
       case 274:
         if ( result == (char *)1785 )
-          return MEMORY[0x8345D8];
+          return DataGlobal_008345D8;
         if ( result == (char *)1 )
-          return MEMORY[0x8345C4];
+          return DataGlobal_008345C4;
         if ( result == (char *)2 )
-          return MEMORY[0x8345B0];
+          return DataGlobal_008345B0;
         return 0;
       case 278:
         if ( result == (char *)1673 )
-          return MEMORY[0x834598];
+          return DataGlobal_00834598;
         if ( result == (char *)1776 )
-          return MEMORY[0x834584];
+          return DataGlobal_00834584;
         if ( result == (char *)1777 )
-          return MEMORY[0x834570];
+          return DataGlobal_00834570;
         if ( result == (char *)1793 )
-          return MEMORY[0x834558];
+          return DataGlobal_00834558;
         if ( result == (char *)1780 )
-          return MEMORY[0x834544];
+          return DataGlobal_00834544;
         if ( result == (char *)1781 )
-          return MEMORY[0x834530];
+          return DataGlobal_00834530;
         if ( result == (char *)1579 )
-          return MEMORY[0x834518];
+          return DataGlobal_00834518;
         if ( result == (char *)1581 )
-          return MEMORY[0x834504];
+          return DataGlobal_00834504;
         if ( result == (char *)1888 )
-          return MEMORY[0x835354];
+          return g_Str_STT_ObserverToggle;
         if ( result == (char *)1474 )
-          return MEMORY[0x8344F0];
+          return DataGlobal_008344F0;
         if ( result == (char *)1794 )
-          return MEMORY[0x8344E0];
+          return DataGlobal_008344E0;
         if ( result == (char *)1795 )
-          return MEMORY[0x8344CC];
+          return DataGlobal_008344CC;
         if ( result == (char *)1796 )
-          return MEMORY[0x8344B8];
+          return DataGlobal_008344B8;
         if ( result == (char *)1670 )
-          return MEMORY[0x8344A4];
+          return DataGlobal_008344A4;
         return 0;
       case 275:
         if ( result == (char *)1373 )
-          return MEMORY[0x834488];
+          return DataGlobal_00834488;
         if ( result == (char *)1343 )
-          return MEMORY[0x835390];
+          return DataGlobal_00835390;
         if ( result == (char *)1344 )
-          return MEMORY[0x83537C];
+          return DataGlobal_0083537C;
         if ( result == (char *)1005 )
-          return MEMORY[0x834478];
+          return DataGlobal_00834478;
         if ( result == (char *)1341 )
-          return MEMORY[0x834460];
+          return DataGlobal_00834460;
         if ( result == (char *)1579 )
-          return MEMORY[0x835368];
+          return DataGlobal_00835368;
         if ( result != (char *)1581 )
         {
           if ( result == (char *)1888 )
-            return MEMORY[0x835354];
+            return g_Str_STT_ObserverToggle;
           if ( result == (char *)1673 )
-            return MEMORY[0x83443C];
+            return g_Str_STT_WOLBuddy;
           if ( result == (char *)1672 )
-            return MEMORY[0x834430];
+            return DataGlobal_00834430;
           if ( result == (char *)1955 )
-            return MEMORY[0x83441C];
+            return DataGlobal_0083441C;
           if ( result == (char *)1958 )
-            return MEMORY[0x834410];
+            return DataGlobal_00834410;
           if ( result == (char *)1567 )
-            return MEMORY[0x8343FC];
+            return DataGlobal_008343FC;
           if ( result == (char *)1670 )
-            return MEMORY[0x8343E8];
+            return DataGlobal_008343E8;
           if ( result == (char *)1897 )
-            return MEMORY[0x8343D0];
+            return DataGlobal_008343D0;
           if ( result == (char *)1896 )
-            return MEMORY[0x8343B8];
+            return DataGlobal_008343B8;
           if ( result == (char *)1895 )
-            return MEMORY[0x8343A0];
+            return DataGlobal_008343A0;
           if ( result == (char *)1893 )
-            return MEMORY[0x834388];
+            return DataGlobal_00834388;
           if ( result == (char *)1894 )
-            return MEMORY[0x834374];
+            return DataGlobal_00834374;
           if ( result == (char *)1898 )
-            return MEMORY[0x83435C];
+            return DataGlobal_0083435C;
           if ( result == (char *)1899 )
-            return MEMORY[0x834344];
+            return DataGlobal_00834344;
           if ( result == (char *)1900 )
-            return MEMORY[0x83432C];
+            return DataGlobal_0083432C;
           if ( result == (char *)1474 )
-            return MEMORY[0x834318];
+            return g_Str_STT_WOLPageButton;
           return 0;
         }
         goto LABEL_590;
       case 254:
         if ( result == (char *)1008 )
-          return MEMORY[0x8342FC];
+          return g_Str_STT_WOLMyInformationLocale;
         if ( result == (char *)1 )
-          return MEMORY[0x8342EC];
+          return DataGlobal_008342EC;
         if ( result == (char *)2 )
-          return MEMORY[0x8342D8];
+          return DataGlobal_008342D8;
         return 0;
       case 271:
         if ( result == (char *)1576 )
-          return MEMORY[0x8342C0];
+          return DataGlobal_008342C0;
         if ( result == (char *)1836 )
-          return MEMORY[0x8342A8];
+          return DataGlobal_008342A8;
         if ( result == (char *)1837 )
-          return MEMORY[0x834290];
+          return DataGlobal_00834290;
         if ( result == (char *)1337 )
-          return MEMORY[0x83427C];
+          return DataGlobal_0083427C;
         if ( result == (char *)1770 )
-          return MEMORY[0x834268];
+          return g_Str_STT_WOLNewAccount;
         if ( result == (char *)1771 )
-          return MEMORY[0x834254];
+          return DataGlobal_00834254;
         if ( result == (char *)1670 )
-          return MEMORY[0x834240];
+          return DataGlobal_00834240;
         if ( result == (char *)1772 )
-          return MEMORY[0x834228];
+          return g_Str_STT_WOLManageAccount;
         return 0;
       case 285:
         if ( result == (char *)1576 )
-          return MEMORY[0x834218];
+          return DataGlobal_00834218;
         if ( result == (char *)1836 )
-          return MEMORY[0x8342A8];
+          return DataGlobal_008342A8;
         if ( result == (char *)1337 )
-          return MEMORY[0x83427C];
+          return DataGlobal_0083427C;
         if ( result == (char *)1770 )
-          return MEMORY[0x834268];
+          return g_Str_STT_WOLNewAccount;
         if ( result == (char *)1670 )
-          return MEMORY[0x834240];
+          return DataGlobal_00834240;
         if ( result == (char *)1772 )
-          return MEMORY[0x834228];
+          return g_Str_STT_WOLManageAccount;
         if ( result == (char *)1577 )
-          return MEMORY[0x8341FC];
+          return DataGlobal_008341FC;
         if ( result == (char *)1578 )
-          return MEMORY[0x8342FC];
+          return g_Str_STT_WOLMyInformationLocale;
         if ( result == (char *)1697 )
-          return MEMORY[0x8341E0];
+          return DataGlobal_008341E0;
         if ( result == (char *)1698 )
-          return MEMORY[0x8341C4];
+          return DataGlobal_008341C4;
         return 0;
       case 279:
         if ( result == (char *)1343 )
-          return MEMORY[0x8341B0];
+          return DataGlobal_008341B0;
         if ( result == (char *)1472 )
         {
           if ( g_GameMode_Current[0] != 4 )
-            return MEMORY[0x834188];
-          result = MEMORY[0x83419C];
-          if ( MEMORY[0xA8B244] != 3 )
-            return MEMORY[0x834188];
+            return DataGlobal_00834188;
+          result = DataGlobal_0083419C;
+          if ( g_GameOptionsFlags != 3 )
+            return DataGlobal_00834188;
           return result;
         }
         return 0;
       case 276:
         if ( result == (char *)1576 )
-          return MEMORY[0x83416C];
+          return DataGlobal_0083416C;
         if ( result == (char *)1577 )
-          return MEMORY[0x8341FC];
+          return DataGlobal_008341FC;
         if ( result == (char *)1578 )
-          return MEMORY[0x8342FC];
+          return g_Str_STT_WOLMyInformationLocale;
         if ( result == (char *)1697 )
-          return MEMORY[0x8341E0];
+          return DataGlobal_008341E0;
         if ( result == (char *)1698 )
-          return MEMORY[0x8341C4];
+          return DataGlobal_008341C4;
         if ( result == (char *)1791 )
-          return MEMORY[0x83414C];
+          return DataGlobal_0083414C;
         if ( result == (char *)1776 )
-          return MEMORY[0x834130];
+          return DataGlobal_00834130;
         if ( result == (char *)1777 )
-          return MEMORY[0x834114];
+          return DataGlobal_00834114;
         if ( result == (char *)1793 )
-          return MEMORY[0x8340F4];
+          return DataGlobal_008340F4;
         if ( result == (char *)1780 )
-          return MEMORY[0x8340D8];
+          return DataGlobal_008340D8;
         if ( result == (char *)1781 )
-          return MEMORY[0x8340BC];
+          return DataGlobal_008340BC;
         if ( result == (char *)1671 )
-          return MEMORY[0x83443C];
+          return g_Str_STT_WOLBuddy;
         if ( result == (char *)1672 )
-          return MEMORY[0x834430];
+          return DataGlobal_00834430;
         if ( result == (char *)1955 )
-          return MEMORY[0x83441C];
+          return DataGlobal_0083441C;
         if ( result == (char *)1670 )
-          return MEMORY[0x8340A0];
+          return DataGlobal_008340A0;
         if ( result == (char *)1770 )
-          return MEMORY[0x834268];
+          return g_Str_STT_WOLNewAccount;
         if ( result == (char *)1771 )
-          return MEMORY[0x834254];
+          return DataGlobal_00834254;
         if ( result == (char *)1772 )
-          return MEMORY[0x834228];
+          return g_Str_STT_WOLManageAccount;
         if ( result == (char *)1907 )
-          return MEMORY[0x83408C];
+          return DataGlobal_0083408C;
         return 0;
       case 195:
         if ( result == (char *)1352 )
-          return MEMORY[0x834070];
+          return DataGlobal_00834070;
         if ( result == (char *)1836 )
-          return MEMORY[0x834058];
+          return DataGlobal_00834058;
         if ( result == (char *)1577 )
-          return MEMORY[0x83403C];
+          return DataGlobal_0083403C;
         if ( result == (char *)1644 )
-          return MEMORY[0x83401C];
+          return DataGlobal_0083401C;
         if ( result == (char *)1 )
-          return MEMORY[0x834008];
+          return DataGlobal_00834008;
         if ( result == (char *)2 )
-          return MEMORY[0x833FF0];
+          return g_Str_STT_WOLNewGameCancel;
         if ( result == (char *)1822 )
-          return MEMORY[0x833FD0];
+          return DataGlobal_00833FD0;
         return 0;
       case 700:
         if ( result == (char *)1525 )
-          return MEMORY[0x833FBC];
+          return DataGlobal_00833FBC;
         if ( result == (char *)1526 )
-          return MEMORY[0x833F9C];
+          return DataGlobal_00833F9C;
         if ( result == (char *)1527 )
-          return MEMORY[0x833F88];
+          return DataGlobal_00833F88;
         if ( result == (char *)1528 )
-          return MEMORY[0x833F74];
+          return DataGlobal_00833F74;
         if ( result == (char *)1529 )
-          return MEMORY[0x833F54];
+          return DataGlobal_00833F54;
         if ( result == (char *)1 )
-          return MEMORY[0x833F40];
+          return DataGlobal_00833F40;
         if ( result == (char *)1594 )
-          return MEMORY[0x833F24];
+          return DataGlobal_00833F24;
         if ( result == (char *)2 )
-          return MEMORY[0x833F0C];
+          return DataGlobal_00833F0C;
         if ( result == (char *)1773 )
-          return MEMORY[0x8351F4];
+          return DataGlobal_008351F4;
         if ( result == (char *)1530 )
-          return MEMORY[0x833EF0];
+          return DataGlobal_00833EF0;
         if ( result == (char *)1531 )
-          return MEMORY[0x833ED4];
+          return DataGlobal_00833ED4;
         if ( result == (char *)1909 )
-          return MEMORY[0x833EBC];
+          return DataGlobal_00833EBC;
         if ( result == (char *)1908 )
-          return MEMORY[0x833EA0];
+          return DataGlobal_00833EA0;
         return 0;
       case 270:
         if ( result == (char *)1776 )
-          return MEMORY[0x834130];
+          return DataGlobal_00834130;
         if ( result == (char *)1777 )
-          return MEMORY[0x834114];
+          return DataGlobal_00834114;
         if ( result == (char *)1793 )
-          return MEMORY[0x8340F4];
+          return DataGlobal_008340F4;
         if ( result == (char *)1780 )
-          return MEMORY[0x8340D8];
+          return DataGlobal_008340D8;
         if ( result == (char *)1781 )
-          return MEMORY[0x8340BC];
+          return DataGlobal_008340BC;
         if ( result == (char *)1760 )
-          return MEMORY[0x833E84];
+          return DataGlobal_00833E84;
         if ( result == (char *)1761 )
-          return MEMORY[0x833E68];
+          return DataGlobal_00833E68;
         if ( result == (char *)1762 )
-          return MEMORY[0x83443C];
+          return g_Str_STT_WOLBuddy;
         if ( result == (char *)1763 )
-          return MEMORY[0x833E54];
+          return DataGlobal_00833E54;
         if ( result == (char *)1764 )
-          return MEMORY[0x833E38];
+          return DataGlobal_00833E38;
         if ( result == (char *)1670 )
-          return MEMORY[0x833E24];
+          return DataGlobal_00833E24;
         if ( result == (char *)1905 )
-          return MEMORY[0x833E14];
+          return DataGlobal_00833E14;
         if ( result == (char *)1943 )
-          return MEMORY[0x833E00];
+          return DataGlobal_00833E00;
         goto LABEL_797;
       case 284:
         if ( result == (char *)1760 )
-          return MEMORY[0x833E84];
+          return DataGlobal_00833E84;
         if ( result == (char *)1761 )
-          return MEMORY[0x833E68];
+          return DataGlobal_00833E68;
         if ( result == (char *)1762 )
-          return MEMORY[0x83443C];
+          return g_Str_STT_WOLBuddy;
         if ( result == (char *)1763 )
-          return MEMORY[0x833E54];
+          return DataGlobal_00833E54;
         if ( result == (char *)1670 )
-          return MEMORY[0x833E24];
+          return DataGlobal_00833E24;
         if ( result == (char *)1905 )
-          return MEMORY[0x833E14];
+          return DataGlobal_00833E14;
 LABEL_797:
         if ( result != (char *)1375 )
           return 0;
-        return MEMORY[0x833DE4];
+        return DataGlobal_00833DE4;
       case 231:
         if ( result == (char *)1582 )
-          return MEMORY[0x833DCC];
+          return DataGlobal_00833DCC;
         if ( result == (char *)1583 )
-          return MEMORY[0x833DB8];
+          return DataGlobal_00833DB8;
         if ( result == (char *)1584 )
-          return MEMORY[0x833DA0];
+          return DataGlobal_00833DA0;
         if ( result == (char *)1574 )
-          return MEMORY[0x833D88];
+          return DataGlobal_00833D88;
         if ( result == (char *)1585 || result == (char *)1802 )
-          return MEMORY[0x833D1C];
+          return DataGlobal_00833D1C;
         if ( result == (char *)1 )
-          return MEMORY[0x833D6C];
+          return DataGlobal_00833D6C;
         if ( result == (char *)1398 )
-          return MEMORY[0x833D50];
+          return DataGlobal_00833D50;
         if ( result == (char *)2 )
-          return MEMORY[0x833D38];
+          return DataGlobal_00833D38;
         return 0;
       case 230:
       case 243:
       case 244:
         if ( result == (char *)1 )
-          return MEMORY[0x833B2C];
+          return DataGlobal_00833B2C;
         if ( result == (char *)2 )
-          return MEMORY[0x833B14];
+          return DataGlobal_00833B14;
         if ( result == (char *)1576 )
-          return MEMORY[0x833AFC];
+          return DataGlobal_00833AFC;
         if ( result == (char *)1836 )
-          return MEMORY[0x833AE4];
+          return DataGlobal_00833AE4;
         if ( result == (char *)1575 )
-          return MEMORY[0x833ACC];
+          return DataGlobal_00833ACC;
         if ( result == (char *)1509 )
-          return MEMORY[0x833AB0];
+          return DataGlobal_00833AB0;
         if ( result == (char *)1643 || result == (char *)1803 )
-          return MEMORY[0x833A98];
+          return DataGlobal_00833A98;
         return 0;
       case 293:
         if ( result == (char *)1670 )
-          return MEMORY[0x833D08];
+          return DataGlobal_00833D08;
         else
-          return MEMORY[0x833CEC];
+          return DataGlobal_833CEC;
       case 3014:
         if ( result == (char *)1921 || result == (char *)1922 )
-          return MEMORY[0x833B40];
+          return DataGlobal_00833B40;
         if ( result == (char *)1923 || result == (char *)1924 )
-          return MEMORY[0x833B58];
+          return DataGlobal_00833B58;
         if ( result == (char *)1925 || result == (char *)1926 )
-          return MEMORY[0x833B70];
+          return DataGlobal_00833B70;
         if ( result == (char *)1927 || result == (char *)1928 )
-          return MEMORY[0x833B88];
+          return DataGlobal_00833B88;
         if ( result == (char *)1929 || result == (char *)1930 )
-          return MEMORY[0x833BA0];
+          return DataGlobal_00833BA0;
         if ( result == (char *)1843 )
-          return MEMORY[0x833CCC];
+          return DataGlobal_00833CCC;
         if ( result == (char *)1819 )
-          return MEMORY[0x833CB4];
+          return DataGlobal_00833CB4;
         if ( result == (char *)1842 )
-          return MEMORY[0x833C98];
+          return DataGlobal_00833C98;
         if ( result == (char *)1745 )
-          return MEMORY[0x833C80];
+          return DataGlobal_00833C80;
         if ( result == (char *)1472 )
-          return MEMORY[0x833C6C];
+          return DataGlobal_00833C6C;
         if ( result == (char *)1002 )
-          return MEMORY[0x834A54];
+          return DataGlobal_00834A54;
         if ( result == (char *)1041 || result == (char *)1042 )
-          return MEMORY[0x833B40];
+          return DataGlobal_00833B40;
         if ( result != (char *)1754 && result != (char *)1755 )
         {
           if ( result != (char *)1697 && result != (char *)1296 )
@@ -2930,25 +2934,25 @@ LABEL_797:
             if ( result != (char *)1698 && result != (char *)1314 )
             {
               if ( result == (char *)1344 )
-                return MEMORY[0x833C58];
+                return DataGlobal_00833C58;
               if ( result == (char *)1343 )
-                return MEMORY[0x833C44];
+                return DataGlobal_00833C44;
               return 0;
             }
-            return MEMORY[0x833C30];
+            return DataGlobal_00833C30;
           }
-          return MEMORY[0x833C18];
+          return DataGlobal_00833C18;
         }
-        return MEMORY[0x833C04];
+        return DataGlobal_00833C04;
       case 3015:
         if ( result == (char *)1843 )
-          return MEMORY[0x833CCC];
+          return DataGlobal_00833CCC;
         if ( result == (char *)1845 )
-          return MEMORY[0x833BE8];
+          return DataGlobal_00833BE8;
         if ( result == (char *)1842 )
-          return MEMORY[0x833C98];
+          return DataGlobal_00833C98;
         if ( result == (char *)1002 )
-          return MEMORY[0x833BD4];
+          return DataGlobal_00833BD4;
         if ( result != (char *)1041 && result != (char *)1042 && result != (char *)1850 && result != (char *)1849 )
         {
           if ( result != (char *)1049 && result != (char *)1050 )
@@ -2964,23 +2968,23 @@ LABEL_797:
                 {
 LABEL_885:
                   if ( result == (char *)1745 )
-                    return MEMORY[0x833BB8];
+                    return DataGlobal_00833BB8;
                   return 0;
                 }
-                return MEMORY[0x833BA0];
+                return DataGlobal_00833BA0;
               }
-              return MEMORY[0x833B88];
+              return DataGlobal_00833B88;
             }
-            return MEMORY[0x833B70];
+            return DataGlobal_00833B70;
           }
-          return MEMORY[0x833B58];
+          return DataGlobal_00833B58;
         }
-        return MEMORY[0x833B40];
+        return DataGlobal_00833B40;
       default:
         return 0;
     }
     if ( result == (char *)1005 )
-      return MEMORY[0x834478];
+      return DataGlobal_00834478;
     return 0;
   }
   return result;
@@ -2998,11 +3002,11 @@ int __fastcall Dialog_SetActiveFlag(int a1, char a2)
   int result; // eax
   int v4; // [esp+4h] [ebp-4h] BYREF
 
-  result = MEMORY[0xAC1B04]; /*0x606741*/
+  result = g_DialogHashMap_Count; /*0x606741*/
   v4 = a1; /*0x60674b*/
-  if ( MEMORY[0xAC1B04] ) /*0x60674f*/
+  if ( g_DialogHashMap_Count ) /*0x60674f*/
   {
-    result = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v4) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x606770*/
+    result = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v4) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x606770*/
     if ( result ) /*0x606775*/
     {
       while ( *(_DWORD *)result != v4 ) /*0x60677d*/
@@ -3148,11 +3152,11 @@ LRESULT __fastcall GadgetClass_RenderAnimation(HWND a1, char a2)
   v2 = (int)a1;
   hWnd = a1;
   v62 = a1;
-  if ( !MEMORY[0xAC1B04] )
+  if ( !g_DialogHashMap_Count )
     goto LABEL_6;
-  v3 = HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&v62);
-  a1 = (HWND)MEMORY[0xAC1B00];
-  v4 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + v3);
+  v3 = HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v62);
+  a1 = (HWND)g_DialogHashMap_Base;
+  v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + v3);
   if ( !v4 )
     goto LABEL_6;
   a1 = v62;
@@ -3169,11 +3173,11 @@ LRESULT __fastcall GadgetClass_RenderAnimation(HWND a1, char a2)
 LABEL_6:
     v63 = 0;
   v62 = (HWND)v2;
-  if ( !MEMORY[0xAC1B04] )
+  if ( !g_DialogHashMap_Count )
     goto LABEL_17;
-  v5 = HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&v62);
-  a1 = (HWND)MEMORY[0xAC1B00];
-  v6 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + v5);
+  v5 = HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v62);
+  a1 = (HWND)g_DialogHashMap_Base;
+  v6 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + v5);
   if ( !v6 )
     goto LABEL_17;
   a1 = v62;
@@ -3190,11 +3194,11 @@ LABEL_6:
 LABEL_17:
     v60 = 0;
   v62 = (HWND)v2;
-  if ( !MEMORY[0xAC1B04] )
+  if ( !g_DialogHashMap_Count )
     goto LABEL_23;
-  v9 = HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&v62);
-  a1 = (HWND)MEMORY[0xAC1B00];
-  v10 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + v9);
+  v9 = HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v62);
+  a1 = (HWND)g_DialogHashMap_Base;
+  v10 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + v9);
   if ( !v10 )
     goto LABEL_23;
   a1 = v62;
@@ -3212,40 +3216,40 @@ LABEL_23:
     v61 = 0;
   v85 = VtableStub_72E280(a1);
   v65 = (int *)UI_Helper_72E2C0();
-  v79 = MEMORY[0xB0FAF8];
-  v69[0] = (int)MEMORY[0xB0FAC4];
-  v73 = MEMORY[0xB0F9DC];
-  v105 = MEMORY[0xB0FAC0];
+  v79 = DataGlobal_B0FAF8;
+  v69[0] = (int)DataGlobal_B0FAC4;
+  v73 = DataGlobal_B0F9DC;
+  v105 = DataGlobal_B0FAC0;
   v11 = VtableStub_72D450();
-  v12 = MEMORY[0xB0FA20];
-  v80 = MEMORY[0xB0FB00];
+  v12 = DataGlobal_B0FA20;
+  v80 = DataGlobal_B0FB00;
   v62 = (HWND)v11;
   v13 = *(_DWORD *)DSurface_Alternate;
-  v70 = MEMORY[0xB0FA20];
+  v70 = DataGlobal_B0FA20;
   v14 = (int *)(*(int (__thiscall **)(int, int *))(v13 + 120))(DSurface_Alternate, &v82);
   v72[0] = *v14;
   v72[1] = v14[1];
   v72[2] = v14[2];
   v72[3] = v14[3];
-  v109[0] = *(_DWORD *)MEMORY[0xB0FC20];
-  v109[1] = *((_DWORD *)MEMORY[0xB0FC20] + 1);
-  v109[2] = *((_DWORD *)MEMORY[0xB0FC20] + 2);
-  v109[3] = *((_DWORD *)MEMORY[0xB0FC20] + 3);
-  v107[0] = *(_DWORD *)MEMORY[0xB0FC14];
-  v107[1] = *((_DWORD *)MEMORY[0xB0FC14] + 1);
-  v107[2] = *((_DWORD *)MEMORY[0xB0FC14] + 2);
-  v107[3] = *((_DWORD *)MEMORY[0xB0FC14] + 3);
-  v97 = *(_DWORD *)MEMORY[0xB0FC18];
-  v98 = *((_DWORD *)MEMORY[0xB0FC18] + 1);
-  v99 = *((_DWORD *)MEMORY[0xB0FC18] + 2);
-  v100 = *((_DWORD *)MEMORY[0xB0FC18] + 3);
-  v15 = *(_DWORD *)MEMORY[0xB0FC10];
-  v82 = *(_DWORD *)MEMORY[0xB0FC10];
-  v83 = *((_DWORD *)MEMORY[0xB0FC10] + 1);
+  v109[0] = *(_DWORD *)DataGlobal_B0FC20;
+  v109[1] = *((_DWORD *)DataGlobal_B0FC20 + 1);
+  v109[2] = *((_DWORD *)DataGlobal_B0FC20 + 2);
+  v109[3] = *((_DWORD *)DataGlobal_B0FC20 + 3);
+  v107[0] = *(_DWORD *)DataGlobal_B0FC14;
+  v107[1] = *((_DWORD *)DataGlobal_B0FC14 + 1);
+  v107[2] = *((_DWORD *)DataGlobal_B0FC14 + 2);
+  v107[3] = *((_DWORD *)DataGlobal_B0FC14 + 3);
+  v97 = *(_DWORD *)DataGlobal_B0FC18;
+  v98 = *((_DWORD *)DataGlobal_B0FC18 + 1);
+  v99 = *((_DWORD *)DataGlobal_B0FC18 + 2);
+  v100 = *((_DWORD *)DataGlobal_B0FC18 + 3);
+  v15 = *(_DWORD *)DataGlobal_B0FC10;
+  v82 = *(_DWORD *)DataGlobal_B0FC10;
+  v83 = *((_DWORD *)DataGlobal_B0FC10 + 1);
   v16 = v83;
-  v17 = *((_DWORD *)MEMORY[0xB0FC10] + 2);
+  v17 = *((_DWORD *)DataGlobal_B0FC10 + 2);
   v18 = *(_DWORD *)g_GadgetAnimState;
-  v84 = *((_DWORD *)MEMORY[0xB0FC10] + 3);
+  v84 = *((_DWORD *)DataGlobal_B0FC10 + 3);
   v93 = v18;
   v94 = *((_DWORD *)g_GadgetAnimState + 1);
   v95 = *((_DWORD *)g_GadgetAnimState + 2);
@@ -3296,18 +3300,18 @@ LABEL_23:
   if ( a2 )
     v88 = 5;
   v23 = hWnd;
-  MEMORY[0xAC1CAC] = 0;
+  DataGlobal_AC1CAC = 0;
   EnumChildWindows(hWnd, EnumFunc, 0);
   v24 = v70;
-  v74 = MEMORY[0xAC1CAC];
+  v74 = DataGlobal_AC1CAC;
   v75 = v70 - 1;
   v81 = v83;
   if ( v60 )
     v81 = v83 + v84;
-  MEMORY[0xAC4894] = 0;
+  DataGlobal_AC4894 = 0;
   EnumChildWindows(v23, sub_60A250, 0);
-  HIBYTE(v67) = MEMORY[0xAC4894] >= 1;
-  if ( MEMORY[0xAC4894] < 1 )
+  HIBYTE(v67) = DataGlobal_AC4894 >= 1;
+  if ( DataGlobal_AC4894 < 1 )
     ++v75;
   v25 = v24 + 1;
   v101 = v24 + 1;
@@ -3505,7 +3509,7 @@ LABEL_87:
 LABEL_90:
       if ( HIBYTE(v67) )
       {
-        v51 = *((_DWORD *)MEMORY[0xB0FC28] + 1);
+        v51 = *((_DWORD *)DataGlobal_B0FC28 + 1);
         v91[0] = v82;
         v52 = *((_DWORD *)Block + v70 - 1);
         v91[1] = v51 - v84;
@@ -3538,11 +3542,11 @@ LABEL_98:
       {
         if ( a2 )
         {
-          v57 = MEMORY[0xB0FB34];
+          v57 = DataGlobal_B0FB34;
         }
         else
         {
-          if ( MEMORY[0x8A00A4] >= 800 )
+          if ( g_DDraw_Active >= 800 )
             v69[0] += 80;
           v57 = v80;
         }
@@ -3552,19 +3556,19 @@ LABEL_98:
       {
         if ( a2 )
         {
-          if ( MEMORY[0x8A00A4] >= 800 )
+          if ( g_DDraw_Active >= 800 )
             v69[0] += 80;
           v57 = v80;
         }
         else
         {
-          v57 = MEMORY[0xB0FB34];
+          v57 = DataGlobal_B0FB34;
         }
 LABEL_106:
         DrawToSurfaceSHP(DSurface_Alternate, (int)v62, (int)v57, 0, v69, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         goto LABEL_116;
       }
-      if ( MEMORY[0x8A00A4] >= 800 )
+      if ( g_DDraw_Active >= 800 )
         v69[0] += 80;
       DrawToSurfaceSHP(
         DSurface_Alternate,
@@ -3643,7 +3647,7 @@ char __fastcall ControlDialogHandler(int a1, HWND a2, _DWORD *a3)
 
   v16 = a1; /*0x608504*/
   v15 = 0; /*0x60851a*/
-  HashTable::Get(&MEMORY[0xAC1B00], &v16, &v15); /*0x608522*/
+  HashTable::Get(&g_DialogHashMap_Base, &v16, &v15); /*0x608522*/
   if ( v15 ) /*0x60852d*/
     v4 = *(_DWORD *)(v15 + 108); /*0x60852f*/
   else
@@ -3656,7 +3660,7 @@ char __fastcall ControlDialogHandler(int a1, HWND a2, _DWORD *a3)
       if ( DlgCtrlID != 1835 ) /*0x6086e1*/
         return 0; /*0x6086e1*/
       v7 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x6086f8*/
-      if ( MEMORY[0x8A00A4] >= 800 ) /*0x608700*/
+      if ( g_DDraw_Active >= 800 ) /*0x608700*/
       {
         if ( v7 ) /*0x608704*/
         {
@@ -3682,7 +3686,7 @@ LABEL_47:
       if ( DlgCtrlID != 1835 ) /*0x608741*/
         return 0; /*0x608741*/
       v8 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x608753*/
-      if ( MEMORY[0x8A00A4] >= 800 ) /*0x608761*/
+      if ( g_DDraw_Active >= 800 ) /*0x608761*/
       {
         if ( v8 ) /*0x608765*/
           goto LABEL_31; /*0x608765*/
@@ -3718,8 +3722,8 @@ LABEL_45:
       switch ( DlgCtrlID ) /*0x6087fd*/
       {
         case 1839: /*0x6087fd*/
-          v9 = MEMORY[0x8A00A4]; /*0x6087ff*/
-          if ( MEMORY[0x8A00A4] == 640 ) /*0x60880c*/
+          v9 = g_DDraw_Active; /*0x6087ff*/
+          if ( g_DDraw_Active == 640 ) /*0x60880c*/
             goto LABEL_51; /*0x60880c*/
           goto LABEL_80; /*0x60880c*/
         case 1842: /*0x6087fd*/
@@ -3741,7 +3745,7 @@ LABEL_45:
             switch ( DlgCtrlID ) /*0x608975*/
             {
               case 1842: /*0x608975*/
-                if ( MEMORY[0x8A00A4] == 640 ) /*0x608984*/
+                if ( g_DDraw_Active == 640 ) /*0x608984*/
                 {
                   v6 = __2_YAPAXI_Z(0x10u); /*0x608988*/
                   if ( !v6 ) /*0x608992*/
@@ -3753,7 +3757,7 @@ LABEL_116:
                   v6[3] = 22; /*0x608b57*/
                   goto LABEL_143; /*0x608b5e*/
                 }
-                if ( MEMORY[0x8A00A4] != 800 && MEMORY[0x8A00A4] != 1024 ) /*0x6089b1*/
+                if ( g_DDraw_Active != 800 && g_DDraw_Active != 1024 ) /*0x6089b1*/
                   return 0; /*0x6089b1*/
                 v6 = __2_YAPAXI_Z(0x10u); /*0x6089b9*/
                 if ( !v6 ) /*0x6089c3*/
@@ -3771,10 +3775,10 @@ LABEL_111:
             }
             if ( DlgCtrlID != 1932 ) /*0x6089ef*/
               return 0; /*0x6089ef*/
-            v13 = MEMORY[0x8A00A4]; /*0x6089f5*/
-            if ( MEMORY[0x8A00A4] != 640 ) /*0x608a02*/
+            v13 = g_DDraw_Active; /*0x6089f5*/
+            if ( g_DDraw_Active != 640 ) /*0x608a02*/
             {
-              if ( MEMORY[0x8A00A4] != 800 ) /*0x608a0e*/
+              if ( g_DDraw_Active != 800 ) /*0x608a0e*/
                 goto LABEL_95; /*0x608a0e*/
               goto LABEL_96; /*0x608a0e*/
             }
@@ -3785,8 +3789,8 @@ LABEL_135:
             *v6 = 346; /*0x608c50*/
             goto LABEL_141; /*0x608c56*/
           }
-          v9 = MEMORY[0x8A00A4]; /*0x60894c*/
-          if ( MEMORY[0x8A00A4] != 640 ) /*0x608959*/
+          v9 = g_DDraw_Active; /*0x60894c*/
+          if ( g_DDraw_Active != 640 ) /*0x608959*/
             goto LABEL_80; /*0x608959*/
         }
         else
@@ -3798,19 +3802,19 @@ LABEL_135:
             switch ( DlgCtrlID ) /*0x608ad6*/
             {
               case 1842: /*0x608ad6*/
-                v10 = MEMORY[0x8A00A4]; /*0x608adc*/
-                if ( MEMORY[0x8A00A4] != 640 ) /*0x608ae9*/
+                v10 = g_DDraw_Active; /*0x608adc*/
+                if ( g_DDraw_Active != 640 ) /*0x608ae9*/
                 {
-                  if ( MEMORY[0x8A00A4] != 800 ) /*0x608b23*/
+                  if ( g_DDraw_Active != 800 ) /*0x608b23*/
                     goto LABEL_113; /*0x608b23*/
                   goto LABEL_114; /*0x608b23*/
                 }
                 goto LABEL_109; /*0x608ae9*/
               case 1934: /*0x608ad6*/
-                v11 = MEMORY[0x8A00A4]; /*0x608b6a*/
-                if ( MEMORY[0x8A00A4] != 640 ) /*0x608b77*/
+                v11 = g_DDraw_Active; /*0x608b6a*/
+                if ( g_DDraw_Active != 640 ) /*0x608b77*/
                 {
-                  if ( MEMORY[0x8A00A4] != 800 ) /*0x608b9c*/
+                  if ( g_DDraw_Active != 800 ) /*0x608b9c*/
                     goto LABEL_122; /*0x608b9c*/
                   goto LABEL_123; /*0x608b9c*/
                 }
@@ -3821,10 +3825,10 @@ LABEL_119:
                 *v6 = 80; /*0x608b8b*/
                 goto LABEL_141; /*0x608b91*/
               case 1933: /*0x608ad6*/
-                v12 = MEMORY[0x8A00A4]; /*0x608bce*/
-                if ( MEMORY[0x8A00A4] != 640 ) /*0x608bdb*/
+                v12 = g_DDraw_Active; /*0x608bce*/
+                if ( g_DDraw_Active != 640 ) /*0x608bdb*/
                 {
-                  if ( MEMORY[0x8A00A4] != 800 ) /*0x608c00*/
+                  if ( g_DDraw_Active != 800 ) /*0x608c00*/
                     goto LABEL_130; /*0x608c00*/
                   goto LABEL_131; /*0x608c00*/
                 }
@@ -3837,9 +3841,9 @@ LABEL_127:
             }
             if ( DlgCtrlID != 1932 ) /*0x608c2d*/
               return 0; /*0x608c2d*/
-            if ( MEMORY[0x8A00A4] != 640 ) /*0x608c40*/
+            if ( g_DDraw_Active != 640 ) /*0x608c40*/
             {
-              if ( MEMORY[0x8A00A4] != 800 && MEMORY[0x8A00A4] != 1024 ) /*0x608c66*/
+              if ( g_DDraw_Active != 800 && g_DDraw_Active != 1024 ) /*0x608c66*/
                 return 0; /*0x608c66*/
               v6 = __2_YAPAXI_Z(0x10u); /*0x608c6a*/
               if ( !v6 ) /*0x608c74*/
@@ -3853,10 +3857,10 @@ LABEL_141:
             }
             goto LABEL_135; /*0x608c40*/
           }
-          v9 = MEMORY[0x8A00A4]; /*0x608a4a*/
-          if ( MEMORY[0x8A00A4] != 640 ) /*0x608a57*/
+          v9 = g_DDraw_Active; /*0x608a4a*/
+          if ( g_DDraw_Active != 640 ) /*0x608a57*/
           {
-            if ( MEMORY[0x8A00A4] != 800 ) /*0x608a91*/
+            if ( g_DDraw_Active != 800 ) /*0x608a91*/
               goto LABEL_104; /*0x608a91*/
             goto LABEL_105; /*0x608a91*/
           }
@@ -3875,8 +3879,8 @@ LABEL_141:
       switch ( DlgCtrlID ) /*0x608901*/
       {
         case 1839: /*0x608901*/
-          v9 = MEMORY[0x8A00A4]; /*0x608903*/
-          if ( MEMORY[0x8A00A4] == 640 ) /*0x608910*/
+          v9 = g_DDraw_Active; /*0x608903*/
+          if ( g_DDraw_Active == 640 ) /*0x608910*/
           {
 LABEL_51:
             v6 = __2_YAPAXI_Z(0x10u); /*0x608812*/
@@ -3910,10 +3914,10 @@ LABEL_105:
           return 0; /*0x608aab*/
         case 1842: /*0x608901*/
 LABEL_54:
-          v10 = MEMORY[0x8A00A4]; /*0x60884b*/
-          if ( MEMORY[0x8A00A4] != 640 ) /*0x608858*/
+          v10 = g_DDraw_Active; /*0x60884b*/
+          if ( g_DDraw_Active != 640 ) /*0x608858*/
           {
-            if ( MEMORY[0x8A00A4] != 800 ) /*0x608864*/
+            if ( g_DDraw_Active != 800 ) /*0x608864*/
             {
 LABEL_113:
               if ( v10 != 1024 ) /*0x608b2b*/
@@ -3934,10 +3938,10 @@ LABEL_109:
           goto LABEL_111; /*0x608afd*/
         case 1934: /*0x608901*/
 LABEL_58:
-          v11 = MEMORY[0x8A00A4]; /*0x608876*/
-          if ( MEMORY[0x8A00A4] != 640 ) /*0x608883*/
+          v11 = g_DDraw_Active; /*0x608876*/
+          if ( g_DDraw_Active != 640 ) /*0x608883*/
           {
-            if ( MEMORY[0x8A00A4] != 800 ) /*0x60888f*/
+            if ( g_DDraw_Active != 800 ) /*0x60888f*/
             {
 LABEL_122:
               if ( v11 != 1024 ) /*0x608ba4*/
@@ -3953,10 +3957,10 @@ LABEL_123:
           goto LABEL_119; /*0x608883*/
         case 1933: /*0x608901*/
 LABEL_62:
-          v12 = MEMORY[0x8A00A4]; /*0x6088a1*/
-          if ( MEMORY[0x8A00A4] != 640 ) /*0x6088ae*/
+          v12 = g_DDraw_Active; /*0x6088a1*/
+          if ( g_DDraw_Active != 640 ) /*0x6088ae*/
           {
-            if ( MEMORY[0x8A00A4] != 800 ) /*0x6088ba*/
+            if ( g_DDraw_Active != 800 ) /*0x6088ba*/
             {
 LABEL_130:
               if ( v12 != 1024 ) /*0x608c08*/
@@ -3974,10 +3978,10 @@ LABEL_131:
     }
     if ( DlgCtrlID != 1932 ) /*0x6088ca*/
       return 0; /*0x6088ca*/
-    v13 = MEMORY[0x8A00A4]; /*0x6088d0*/
-    if ( MEMORY[0x8A00A4] != 640 ) /*0x6088dd*/
+    v13 = g_DDraw_Active; /*0x6088d0*/
+    if ( g_DDraw_Active != 640 ) /*0x6088dd*/
     {
-      if ( MEMORY[0x8A00A4] != 800 ) /*0x6088e9*/
+      if ( g_DDraw_Active != 800 ) /*0x6088e9*/
       {
 LABEL_95:
         if ( v13 != 1024 ) /*0x608a16*/
@@ -3991,7 +3995,7 @@ LABEL_96:
     }
     goto LABEL_135; /*0x6088dd*/
   }
-  if ( MEMORY[0x8A00A4] < 800 ) /*0x608557*/
+  if ( g_DDraw_Active < 800 ) /*0x608557*/
     return 0; /*0x608557*/
   if ( DlgCtrlID == 1770 ) /*0x608562*/
   {
@@ -4095,9 +4099,9 @@ bool __fastcall IsDialogControlVisible(int a1, HWND a2)
   int v10; // [esp+8h] [ebp-4h] BYREF
 
   v10 = a1; /*0x608cdc*/
-  if ( !MEMORY[0xAC1B04] ) /*0x608ce0*/
+  if ( !g_DialogHashMap_Count ) /*0x608ce0*/
     goto LABEL_5; /*0x608ce0*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v10) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x608d01*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x608d01*/
   if ( !v3 ) /*0x608d06*/
     goto LABEL_5; /*0x608d06*/
   while ( *v3 != v10 ) /*0x608d0e*/
@@ -4374,9 +4378,9 @@ bool __fastcall sub_6096A0(int a1, HWND a2)
   if ( (GetWindowLongA(a2, -16) & 0xB) != 0xB ) /*0x6096b5*/
     return 0; /*0x6096b5*/
   v7 = a2; /*0x6096bc*/
-  if ( !MEMORY[0xAC1B04] ) /*0x6096c2*/
+  if ( !g_DialogHashMap_Count ) /*0x6096c2*/
     return 0; /*0x6096c2*/
-  v4 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v7) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x6096e3*/
+  v4 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6096e3*/
   if ( !v4 ) /*0x6096e8*/
     return 0; /*0x6096e8*/
   while ( *v4 != v7 ) /*0x6096f0*/
@@ -4405,9 +4409,9 @@ bool __fastcall GetDialogDefaultButton(int a1, HWND a2)
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x60973c*/
-  if ( !MEMORY[0xAC1B04] ) /*0x609740*/
+  if ( !g_DialogHashMap_Count ) /*0x609740*/
     goto LABEL_5; /*0x609740*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v8) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x609761*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609761*/
   if ( !v3 ) /*0x609766*/
     goto LABEL_5; /*0x609766*/
   while ( *v3 != v8 ) /*0x60976e*/
@@ -4510,9 +4514,9 @@ bool __fastcall sub_609AA0(int a1, HWND a2)
   if ( (GetWindowLongA(a2, -16) & 0xB) != 0xB ) /*0x609ab5*/
     return 0; /*0x609ab5*/
   v7 = a2; /*0x609abc*/
-  if ( !MEMORY[0xAC1B04] ) /*0x609ac2*/
+  if ( !g_DialogHashMap_Count ) /*0x609ac2*/
     return 0; /*0x609ac2*/
-  v4 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v7) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x609ae3*/
+  v4 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609ae3*/
   if ( !v4 ) /*0x609ae8*/
     return 0; /*0x609ae8*/
   while ( *v4 != v7 ) /*0x609af0*/
@@ -4541,9 +4545,9 @@ bool __fastcall sub_609B30(int a1, HWND a2)
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x609b3c*/
-  if ( !MEMORY[0xAC1B04] ) /*0x609b40*/
+  if ( !g_DialogHashMap_Count ) /*0x609b40*/
     goto LABEL_5; /*0x609b40*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v8) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x609b61*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609b61*/
   if ( !v3 ) /*0x609b66*/
     goto LABEL_5; /*0x609b66*/
   while ( *v3 != v8 ) /*0x609b6e*/
@@ -4582,9 +4586,9 @@ bool __fastcall sub_609BC0(int a1, HWND a2)
   if ( (GetWindowLongA(a2, -16) & 0xB) == 0xB ) /*0x609bea*/
   {
     v9 = a2; /*0x609bf1*/
-    if ( MEMORY[0xAC1B04] ) /*0x609bf7*/
+    if ( g_DialogHashMap_Count ) /*0x609bf7*/
     {
-      v4 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v9) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x609c18*/
+      v4 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609c18*/
       if ( v4 ) /*0x609c1d*/
       {
         while ( *v4 != v9 ) /*0x609c25*/
@@ -4606,9 +4610,9 @@ LABEL_7:
   if ( (GetWindowLongA(a2, -16) & 0xB) != 0xB ) /*0x609c3b*/
     return 0; /*0x609c3b*/
   v9 = a2; /*0x609c46*/
-  if ( !MEMORY[0xAC1B04] ) /*0x609c4c*/
+  if ( !g_DialogHashMap_Count ) /*0x609c4c*/
     return 0; /*0x609c4c*/
-  v5 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v9) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x609c71*/
+  v5 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609c71*/
   if ( !v5 ) /*0x609c76*/
     return 0; /*0x609c76*/
   while ( *v5 != v9 ) /*0x609c7e*/
@@ -4641,9 +4645,9 @@ bool __fastcall sub_609CF0(int a1, HWND a2)
   if ( (GetWindowLongA(a2, -16) & 0xB) == 0xB ) /*0x609d1a*/
   {
     v9 = a2; /*0x609d21*/
-    if ( MEMORY[0xAC1B04] ) /*0x609d27*/
+    if ( g_DialogHashMap_Count ) /*0x609d27*/
     {
-      v4 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v9) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x609d48*/
+      v4 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609d48*/
       if ( v4 ) /*0x609d4d*/
       {
         while ( *v4 != v9 ) /*0x609d55*/
@@ -4665,9 +4669,9 @@ LABEL_7:
   if ( (GetWindowLongA(a2, -16) & 0xB) != 0xB ) /*0x609d6b*/
     return 0; /*0x609d6b*/
   v9 = a2; /*0x609d76*/
-  if ( !MEMORY[0xAC1B04] ) /*0x609d7c*/
+  if ( !g_DialogHashMap_Count ) /*0x609d7c*/
     return 0; /*0x609d7c*/
-  v5 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v9) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x609da1*/
+  v5 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609da1*/
   if ( !v5 ) /*0x609da6*/
     return 0; /*0x609da6*/
   while ( *v5 != v9 ) /*0x609dae*/
@@ -4696,9 +4700,9 @@ bool __fastcall FilterDialogButtonAction(int a1, HWND a2)
   int v9; // [esp+8h] [ebp-4h] BYREF
 
   v9 = a1; /*0x609e2c*/
-  if ( !MEMORY[0xAC1B04] ) /*0x609e30*/
+  if ( !g_DialogHashMap_Count ) /*0x609e30*/
     goto LABEL_5; /*0x609e30*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v9) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x609e51*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609e51*/
   if ( !v3 ) /*0x609e56*/
     goto LABEL_5; /*0x609e56*/
   while ( *v3 != v9 ) /*0x609e5e*/
@@ -4821,9 +4825,9 @@ bool __fastcall sub_60A100(int a1, HWND a2)
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x60a10c*/
-  if ( !MEMORY[0xAC1B04] ) /*0x60a110*/
+  if ( !g_DialogHashMap_Count ) /*0x60a110*/
     goto LABEL_5; /*0x60a110*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v8) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60a131*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60a131*/
   if ( !v3 ) /*0x60a136*/
     goto LABEL_5; /*0x60a136*/
   while ( *v3 != v8 ) /*0x60a13e*/
@@ -4861,9 +4865,9 @@ BOOL __stdcall EnumFunc(HWND hWnd, LPARAM a2)
   if ( (GetWindowLongA(v2, -16) & 0xB) == 0xB ) /*0x60a19d*/
   {
     hWnd = v2; /*0x60a1a4*/
-    if ( MEMORY[0xAC1B04] ) /*0x60a1aa*/
+    if ( g_DialogHashMap_Count ) /*0x60a1aa*/
     {
-      v4 = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&hWnd) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60a1cb*/
+      v4 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60a1cb*/
       if ( v4 ) /*0x60a1d0*/
       {
         while ( *(HWND *)v4 != hWnd ) /*0x60a1d8*/
@@ -4876,7 +4880,7 @@ BOOL __stdcall EnumFunc(HWND hWnd, LPARAM a2)
         if ( v6 && !*(_DWORD *)(v6 + 104) && IsDialogControlVisible((int)Parent, v2) ) /*0x60a204*/
         {
           if ( IsWindowVisible(v2) ) /*0x60a20e*/
-            ++MEMORY[0xAC1CAC]; /*0x60a218*/
+            ++DataGlobal_AC1CAC; /*0x60a218*/
         }
       }
     }
@@ -4903,9 +4907,9 @@ BOOL __stdcall sub_60A250(HWND hWnd, LPARAM a2)
   if ( (GetWindowLongA(v2, -16) & 0xB) == 0xB ) /*0x60a26d*/
   {
     hWnd = v2; /*0x60a274*/
-    if ( MEMORY[0xAC1B04] ) /*0x60a27a*/
+    if ( g_DialogHashMap_Count ) /*0x60a27a*/
     {
-      v4 = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&hWnd) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60a29b*/
+      v4 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60a29b*/
       if ( v4 ) /*0x60a2a0*/
       {
         while ( *(HWND *)v4 != hWnd ) /*0x60a2a8*/
@@ -4918,7 +4922,7 @@ BOOL __stdcall sub_60A250(HWND hWnd, LPARAM a2)
         if ( v6 && !*(_DWORD *)(v6 + 104) && GetDialogDefaultButton((int)Parent, v2) ) /*0x60a2d4*/
         {
           if ( IsWindowVisible(v2) ) /*0x60a2de*/
-            ++MEMORY[0xAC4894]; /*0x60a2e8*/
+            ++DataGlobal_AC4894; /*0x60a2e8*/
         }
       }
     }
@@ -4957,9 +4961,9 @@ BOOL __fastcall RepositionGameSpeedIndicator(HWND hWnd, int a2)
   GetWindowRect(hWnd, &v19); /*0x60b036*/
   if ( GameSpeed )
   {
-    v8 = *((__int16 *)MEMORY[0xB0F9EC] + 2); /*0x60b134*/
-    nWidtha = *((__int16 *)MEMORY[0xB0F9EC] + 1); /*0x60b145*/
-    v12 = MEMORY[0xB0FC48]; /*0x60b149*/
+    v8 = *((__int16 *)DataGlobal_B0F9EC + 2); /*0x60b134*/
+    nWidtha = *((__int16 *)DataGlobal_B0F9EC + 1); /*0x60b145*/
+    v12 = DataGlobal_B0FC48; /*0x60b149*/
     v9 = Rect.right - Rect.left - 147; /*0x60b14d*/
     v10 = GetParent(hWnd); /*0x60b14f*/
     GetWindowRect(v10, &v18); /*0x60b15b*/
@@ -4974,8 +4978,8 @@ BOOL __fastcall RepositionGameSpeedIndicator(HWND hWnd, int a2)
   }
   else
   {
-    v5 = *((_DWORD *)MEMORY[0xB0FC24] + 3); /*0x60b0d8*/
-    v15 = *((_DWORD *)MEMORY[0xB0FC24] + 1); /*0x60b0db*/
+    v5 = *((_DWORD *)DataGlobal_B0FC24 + 3); /*0x60b0d8*/
+    v15 = *((_DWORD *)DataGlobal_B0FC24 + 1); /*0x60b0db*/
     v6 = ((Rect.bottom - Rect.top - 600) / 2 < 0 ? 0 : (Rect.bottom - Rect.top - 600) / 2)
        - ((*(_DWORD *)(a2 + 4) - 600) / 2 < 0 ? 0 : (*(_DWORD *)(a2 + 4) - 600) / 2)
        + v19.top
@@ -4992,8 +4996,8 @@ BOOL __fastcall RepositionGameSpeedIndicator(HWND hWnd, int a2)
            - Rect.left
            - 156,
              v15 + v7 * v5,
-             *((__int16 *)MEMORY[0xB0FAC4] + 1),
-             *((__int16 *)MEMORY[0xB0FAC4] + 2),
+             *((__int16 *)DataGlobal_B0FAC4 + 1),
+             *((__int16 *)DataGlobal_B0FAC4 + 2),
              0);
   }
 }
@@ -5013,9 +5017,9 @@ bool __fastcall sub_60B880(int a1, HWND a2)
   int v7; // [esp+8h] [ebp-4h] BYREF
 
   v7 = a1; /*0x60b88c*/
-  if ( !MEMORY[0xAC1B04] ) /*0x60b890*/
+  if ( !g_DialogHashMap_Count ) /*0x60b890*/
     goto LABEL_5; /*0x60b890*/
-  v3 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v7) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60b8b1*/
+  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60b8b1*/
   if ( !v3 ) /*0x60b8b6*/
     goto LABEL_5; /*0x60b8b6*/
   while ( *v3 != v7 ) /*0x60b8be*/
@@ -5074,7 +5078,7 @@ BOOL __stdcall RepositionDialogControls(HWND hWnd, HWND a2)
 
   v2 = hWnd; /*0x60c0c5*/
   Parent = GetParent(hWnd); /*0x60c0d0*/
-  if ( (HWND)MEMORY[0xAC48A8] != Parent ) /*0x60c0dd*/
+  if ( (HWND)DataGlobal_AC48A8 != Parent ) /*0x60c0dd*/
     return 1; /*0x60c48f*/
   memset(v17, 0, sizeof(v17)); /*0x60c0f0*/
   if ( ControlDialogHandler((int)Parent, v2, v17) ) /*0x60c100*/
@@ -5088,9 +5092,9 @@ BOOL __stdcall RepositionDialogControls(HWND hWnd, HWND a2)
     if ( (GetWindowLongA(v2, -16) & 0xB) != 0xB ) /*0x60c13a*/
       goto LABEL_9; /*0x60c13a*/
     hWnd = v2; /*0x60c141*/
-    if ( !MEMORY[0xAC1B04] ) /*0x60c147*/
+    if ( !g_DialogHashMap_Count ) /*0x60c147*/
       goto LABEL_9; /*0x60c147*/
-    v5 = *((_DWORD *)MEMORY[0xAC1B00] + HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&hWnd)); /*0x60c15e*/
+    v5 = *((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&hWnd)); /*0x60c15e*/
     if ( !v5 ) /*0x60c163*/
       goto LABEL_9; /*0x60c163*/
     while ( *(HWND *)v5 != hWnd ) /*0x60c16b*/
@@ -5116,7 +5120,7 @@ LABEL_9:
         return 1; /*0x60c199*/
       }
       else if ( (GetWindowLongA(v2, -16) & 0xB) == 0xB /*0x60c21c*/
-             && (hWnd = v2, a2 = 0, HashTable::Get(&MEMORY[0xAC1B00], &hWnd, &a2), a2)
+             && (hWnd = v2, a2 = 0, HashTable::Get(&g_DialogHashMap_Base, &hWnd, &a2), a2)
              && !*((_DWORD *)a2 + 26)
              && GetDialogDefaultButton((int)Parent, v2) )
       {
@@ -5133,9 +5137,9 @@ LABEL_9:
       else
       {
         a2 = Parent; /*0x60c271*/
-        if ( !MEMORY[0xAC1B04] ) /*0x60c277*/
+        if ( !g_DialogHashMap_Count ) /*0x60c277*/
           goto LABEL_26; /*0x60c277*/
-        v7 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&a2)); /*0x60c28e*/
+        v7 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&a2)); /*0x60c28e*/
         if ( !v7 ) /*0x60c293*/
           goto LABEL_26; /*0x60c293*/
         while ( *v7 != a2 ) /*0x60c29b*/
@@ -5162,7 +5166,7 @@ LABEL_26:
           v11 = 0; /*0x60c300*/
           hWnd = Parent; /*0x60c309*/
           a2 = 0; /*0x60c30d*/
-          HashTable::Get(&MEMORY[0xAC1B00], &hWnd, &a2); /*0x60c311*/
+          HashTable::Get(&g_DialogHashMap_Base, &hWnd, &a2); /*0x60c311*/
           if ( a2 ) /*0x60c31c*/
             v11 = *((_DWORD *)a2 + 27); /*0x60c31e*/
           v12 = GetDlgCtrlID(v2); /*0x60c322*/
@@ -5175,9 +5179,9 @@ LABEL_26:
           else
           {
             a2 = Parent; /*0x60c35a*/
-            if ( !MEMORY[0xAC1B04] ) /*0x60c360*/
+            if ( !g_DialogHashMap_Count ) /*0x60c360*/
               goto LABEL_41; /*0x60c360*/
-            v13 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&a2)); /*0x60c377*/
+            v13 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&a2)); /*0x60c377*/
             if ( !v13 ) /*0x60c37c*/
               goto LABEL_41; /*0x60c37c*/
             while ( *v13 != a2 ) /*0x60c384*/
@@ -5238,8 +5242,8 @@ BOOL __thiscall ResizeDialogAndEnum(SkirmishDialog *this)
   LPARAM v3; // edi
 
   v3 = v1; /*0x60c4b7*/
-  MoveWindow((HWND)this, 0, 0, MEMORY[0x8A00A4], *(&MEMORY[0x8A00A4] + 1), 0); /*0x60c4ba*/
-  MEMORY[0xAC48A8] = (int)this; /*0x60c4c0*/
+  MoveWindow((HWND)this, 0, 0, g_DDraw_Active, *(&g_DDraw_Active + 1), 0); /*0x60c4ba*/
+  DataGlobal_AC48A8 = (int)this; /*0x60c4c0*/
   return EnumChildWindows((HWND)this, (WNDENUMPROC)RepositionDialogControls, v3); /*0x60c4d3*/
 }
 }
@@ -5269,12 +5273,12 @@ char __fastcall InitializeDialogControls(HWND a1, LPARAM a2)
   v2 = a2; /*0x60f4ba*/
   v16 = a2; /*0x60f4be*/
   DialogClass::RegisterWinClasses(); /*0x60f4c2*/
-  MEMORY[0xAC48A8] = (int)a1; /*0x60f4cd*/
+  DataGlobal_AC48A8 = (int)a1; /*0x60f4cd*/
   EnumChildWindows(a1, Dialog::InitWindow, 1); /*0x60f4db*/
   v14 = (int)a1; /*0x60f4e6*/
   v15 = 0; /*0x60f4ea*/
-  if ( MEMORY[0xAC1B04] /*0x60f514*/
-    && (v4 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v14) & ((1 << MEMORY[0xAC1B0C]) - 1)))) != 0 )
+  if ( g_DialogHashMap_Count /*0x60f514*/
+    && (v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v14) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
     while ( *v4 != v14 ) /*0x60f51c*/
     {
@@ -5299,10 +5303,10 @@ LABEL_5:
     v17[16] = 0; /*0x60f585*/
     v17[23] = 0; /*0x60f589*/
     v17[36] = (int **)-1; /*0x60f590*/
-    SymbolTable::Insert(&MEMORY[0xAC1B00], &v14, v17); /*0x60f59b*/
-    if ( MEMORY[0xAC1B04] ) /*0x60f5a6*/
+    SymbolTable::Insert(&g_DialogHashMap_Base, &v14, v17); /*0x60f59b*/
+    if ( g_DialogHashMap_Count ) /*0x60f5a6*/
     {
-      v8 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&v14)); /*0x60f5bd*/
+      v8 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v14)); /*0x60f5bd*/
       if ( v8 ) /*0x60f5c2*/
       {
         while ( *v8 != v14 ) /*0x60f5ca*/
@@ -5326,8 +5330,8 @@ LABEL_15:
   EnumChildWindows(a1, Dialog::InitWindow, 0); /*0x60f61c*/
   v14 = (int)a1; /*0x60f625*/
   v15 = 0; /*0x60f629*/
-  if ( MEMORY[0xAC1B04] /*0x60f653*/
-    && (v9 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v14) & ((1 << MEMORY[0xAC1B0C]) - 1)))) != 0 )
+  if ( g_DialogHashMap_Count /*0x60f653*/
+    && (v9 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v14) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
     while ( *v9 != v14 ) /*0x60f65b*/
     {
@@ -5353,8 +5357,8 @@ LABEL_20:
     v17[16] = 0; /*0x60f6cc*/
     v17[23] = 0; /*0x60f6d0*/
     v17[36] = (int **)-1; /*0x60f6d7*/
-    SymbolTable::Insert(&MEMORY[0xAC1B00], &v14, v17); /*0x60f6e2*/
-    HashTable::Get(&MEMORY[0xAC1B00], &v14, &v15); /*0x60f6f6*/
+    SymbolTable::Insert(&g_DialogHashMap_Base, &v14, v17); /*0x60f6e2*/
+    HashTable::Get(&g_DialogHashMap_Base, &v14, &v15); /*0x60f6f6*/
     GadgetClass::SetTooltip((void **)v17, 0); /*0x60f700*/
     for ( i = v17[13]; v17[13]; i = v17[13] ) /*0x60f70b*/
       LinkedList::Remove(v17, i); /*0x60f712*/

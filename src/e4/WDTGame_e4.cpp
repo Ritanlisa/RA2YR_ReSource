@@ -12,7 +12,7 @@ wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * For
     CampaignScore *v8;
     CampaignScore *v9;
     wchar_t String[32];
-    swprintf(String, (const size_t)&DataGlobal_84DD9C.__pad_71C[220], Format, v9);
+    swprintf(String, (const size_t)&DataGlobal_84DD9C[2040], Format, v9);
     swprintf(String, (const size_t)String, a1, v8);
     *(int *)aP0->__pad_0 = 0;
     if ( String )

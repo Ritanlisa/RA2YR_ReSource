@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
 
 // 0x7327D0
 char MoveFeedback::ProcessCommand()
@@ -28,7 +30,7 @@ char __thiscall MoveFeedback_Process(void *this)
   v1 = g_MoveFeedback; /*0x7327d9*/
   v16 = g_MoveFeedback; /*0x7327e8*/
   g_MoveFeedback = 0; /*0x7327ec*/
-  if ( MEMORY[0xB0FE64] ) /*0x7327f5*/
+  if ( DataGlobal_B0FE64 ) /*0x7327f5*/
   {
     Height = (int)__2_YAPAXI_Z(0x18u); /*0x7327fb*/
     v3 = (_DWORD *)Height; /*0x732800*/
@@ -44,12 +46,12 @@ char __thiscall MoveFeedback_Process(void *this)
     {
       v3 = 0; /*0x732826*/
     }
-    v5 = MEMORY[0xA8EC88]; /*0x732828*/
-    if ( MEMORY[0xA8EC88] > 0 ) /*0x732830*/
+    v5 = g_SidebarState; /*0x732828*/
+    if ( g_SidebarState > 0 ) /*0x732830*/
     {
       do /*0x732887*/
       {
-        v6 = *((_DWORD *)MEMORY[0xA8EC7C] + v4); /*0x73283b*/
+        v6 = *((_DWORD *)g_TechnoClass_Count + v4); /*0x73283b*/
         LOBYTE(Height) = StepTechnoClassCleanupIfHuman(v6, this); /*0x732840*/
         if ( (_BYTE)Height ) /*0x732847*/
         {

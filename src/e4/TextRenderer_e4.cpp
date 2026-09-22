@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Building_e4.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/Display_e4.hpp"
 
 // 0x4A60D0
 namespace gamemd {
@@ -65,19 +68,19 @@ int *TextRenderer::RenderCentered(
   v12 = v9; /*0x4b96b2*/
   TextRenderer::GetInstance(); /*0x4b96c5*/
   swprintf( /*0x4b96dc*/
-    (wchar_t *const)&stru_89E138.__pad_14B0[4744],
-    (const size_t)&stru_820524.__pad_0[8],
+    (wchar_t *const)&stru_89E138[10040],
+    (const size_t)&stru_820524[8],
     (const wchar_t *const)aP2,
     v11);
   swprintf( /*0x4b96ed*/
-    (wchar_t *const)&stru_89E138.__pad_14B0[4824],
-    (const size_t)&stru_820524.__pad_0[8],
+    (wchar_t *const)&stru_89E138[10120],
+    (const size_t)&stru_820524[8],
     (const wchar_t *const)aP2,
     v12);
   if ( (_BYTE)a3 ) /*0x4b96f7*/
   {
-    v13 = (AbstractClass *)(*(_DWORD *)a2 - Text::MeasureWidth((CampaignScore *)&stru_89E138.__pad_14B0[4744], 0) / 2); /*0x4b971b*/
-    v14 = *(_DWORD *)a2 - Text::MeasureWidth((CampaignScore *)&stru_89E138.__pad_14B0[4824], 0) / 2; /*0x4b972b*/
+    v13 = (AbstractClass *)(*(_DWORD *)a2 - Text::MeasureWidth((CampaignScore *)&stru_89E138[10040], 0) / 2); /*0x4b971b*/
+    v14 = *(_DWORD *)a2 - Text::MeasureWidth((CampaignScore *)&stru_89E138[10120], 0) / 2; /*0x4b972b*/
   }
   else
   {
@@ -103,19 +106,19 @@ int *TextRenderer::RenderCentered(
   v38 = 15; /*0x4b97a4*/
   v34 = 15; /*0x4b97a8*/
   v18 = (*(int (__thiscall **)(int))(v17 + 124))(a1); /*0x4b97b5*/
-  v19 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 124))(*(_DWORD *)&stru_87C374.__pad_579C[22524]); /*0x4b97b9*/
+  v19 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44952] + 124))(*(_DWORD *)&stru_87C374[44952]); /*0x4b97b9*/
   v20 = *(_DWORD *)a1; /*0x4b97c5*/
   v32 += (v19 - v18) / -2; /*0x4b97cd*/
   v21 = (*(int (__thiscall **)(int))(v20 + 128))(a1); /*0x4b97df*/
-  v33 += ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 128))(*(_DWORD *)&stru_87C374.__pad_579C[22524]) /*0x4b97fc*/
+  v33 += ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44952] + 128))(*(_DWORD *)&stru_87C374[44952]) /*0x4b97fc*/
         - v21)
        / -2;
   v30 = 0; /*0x4b982a*/
   v29 = 0; /*0x4b982e*/
-  BlitterDrawSHP(*(IUnknown **)&stru_87C374.__pad_579C[22524]); /*0x4b9832*/
+  BlitterDrawSHP(*(IUnknown **)&stru_87C374[44952]); /*0x4b9832*/
   BuildingAnimByName = FindBuildingAnimByName(&stru_820524, 1); /*0x4b9847*/
-  v23 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *, ObjectClass *, int, _DWORD, AbstractClass *))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 120))( /*0x4b985f*/
-                    *(_DWORD *)&stru_87C374.__pad_579C[22524],
+  v23 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *, ObjectClass *, int, _DWORD, AbstractClass *))(**(_DWORD **)&stru_87C374[44952] + 120))( /*0x4b985f*/
+                    *(_DWORD *)&stru_87C374[44952],
                     v39,
                     aP2,
                     BuildingAnimByName,
@@ -123,8 +126,8 @@ int *TextRenderer::RenderCentered(
                     v27);
   return TextRenderer::DrawText( /*0x4b987c*/
            (int *)&v27,
-           (size_t)&stru_89E138.__pad_14B0[4744],
-           *(IUnknown **)&stru_87C374.__pad_579C[22524],
+           (size_t)&stru_89E138[10040],
+           *(IUnknown **)&stru_87C374[44952],
            v23,
            v25,
            v26,
@@ -187,7 +190,7 @@ char __thiscall TextRenderer::MeasureBuilding(
     v24 = 15; /*0x642d18*/
     do /*0x642d3d*/
     {
-      *(_WORD *)v10 = *(_WORD *)CharToWideString(MEMORY[0x8258C0]); /*0x642d2d*/
+      *(_WORD *)v10 = *(_WORD *)CharToWideString(g_Str_W); /*0x642d2d*/
       v10 = (int *)((char *)v10 + 2); /*0x642d35*/
       --v24; /*0x642d39*/
     }
@@ -269,7 +272,7 @@ int *__thiscall TextRenderer::MeasureBuilding2(ProgressScreenClass *this)
   v20 = 15; /*0x642f62*/
   do /*0x642f86*/
   {
-    *(_WORD *)v10->__pad_0 = *(_WORD *)CharToWideString(MEMORY[0x8258C0]); /*0x642f7b*/
+    *(_WORD *)v10->__pad_0 = *(_WORD *)CharToWideString(g_Str_W); /*0x642f7b*/
     v10 = (CampaignScore *)((char *)v10 + 2); /*0x642f7e*/
     --v20; /*0x642f82*/
   }

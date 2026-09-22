@@ -14,6 +14,9 @@
 #include "e4/classes/E4Recv_6DA9D0_e4.hpp"
 #include "e4/classes/E4Recv_6DC420_e4.hpp"
 #include "e4/classes/LWCViewClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x6D1130
 namespace gamemd {
@@ -24,21 +27,21 @@ int sub_6D1130()
 {
   void *v0; // esi
 
-  MEMORY[0xB0CCD4] = 240; /*0x6d1149*/
-  MEMORY[0xB0CD00] = g_SidebarConfig; /*0x6d1153*/
-  MEMORY[0xB0CCDD] = 0; /*0x6d1158*/
-  MEMORY[0xB0CCE0] = 0; /*0x6d115e*/
-  MEMORY[0xB0CCD0] = 5; /*0x6d1164*/
-  v0 = MEMORY[0xB0FA90]; /*0x6d116c*/
-  Rect_Point::Set(MEMORY[0xB0CCB0], *(_DWORD *)MEMORY[0xB0FC60], *((_DWORD *)MEMORY[0xB0FC60] + 1)); /*0x6d118a*/
-  ShapeButton::SetShape((int)MEMORY[0xB0CCB0], (int)v0, 0, 0); /*0x6d1197*/
-  MEMORY[0xB0CC64] = 241; /*0x6d11a7*/
-  MEMORY[0xB0CC90] = g_SidebarConfig; /*0x6d11b1*/
-  MEMORY[0xB0CC6D] = 0; /*0x6d11b6*/
-  MEMORY[0xB0CC70] = 0; /*0x6d11bc*/
-  MEMORY[0xB0CC60] = 5; /*0x6d11c2*/
-  Rect_Point::Set(MEMORY[0xB0CC40], *(_DWORD *)MEMORY[0xB0FC64], *((_DWORD *)MEMORY[0xB0FC64] + 1)); /*0x6d11e2*/
-  return ShapeButton::SetShape((int)MEMORY[0xB0CC40], (int)v0, 0, 0); /*0x6d11f4*/
+  DataGlobal_B0CCD4 = 240; /*0x6d1149*/
+  DataGlobal_B0CD00 = g_SidebarConfig; /*0x6d1153*/
+  DataGlobal_B0CCDD = 0; /*0x6d1158*/
+  DataGlobal_B0CCE0 = 0; /*0x6d115e*/
+  DataGlobal_B0CCD0 = 5; /*0x6d1164*/
+  v0 = DataGlobal_B0FA90; /*0x6d116c*/
+  Rect_Point::Set(DataGlobal_B0CCB0, *(_DWORD *)DataGlobal_B0FC60, *((_DWORD *)DataGlobal_B0FC60 + 1)); /*0x6d118a*/
+  ShapeButton::SetShape((int)DataGlobal_B0CCB0, (int)v0, 0, 0); /*0x6d1197*/
+  DataGlobal_B0CC64 = 241; /*0x6d11a7*/
+  DataGlobal_B0CC90 = g_SidebarConfig; /*0x6d11b1*/
+  DataGlobal_B0CC6D = 0; /*0x6d11b6*/
+  DataGlobal_B0CC70 = 0; /*0x6d11bc*/
+  DataGlobal_B0CC60 = 5; /*0x6d11c2*/
+  Rect_Point::Set(DataGlobal_B0CC40, *(_DWORD *)DataGlobal_B0FC64, *((_DWORD *)DataGlobal_B0FC64 + 1)); /*0x6d11e2*/
+  return ShapeButton::SetShape((int)DataGlobal_B0CC40, (int)v0, 0, 0); /*0x6d11f4*/
 }
 }
 } // namespace gamemd
@@ -72,7 +75,7 @@ _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
   v3 = 0; /*0x6d6bd3*/
   while ( 1 ) /*0x6d6bdf*/
   {
-    result = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a1); /*0x6d6bdf*/
+    result = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x6d6bdf*/
     v5 = result[80]; /*0x6d6be4*/
     if ( (v5 & 0x80u) != 0 && result[17] && (v5 & 0x800) != 0 ) /*0x6d6bf9*/
       break; /*0x6d6bf9*/
@@ -85,7 +88,7 @@ _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
       v7 = 0; /*0x6d6c25*/
       while ( 1 ) /*0x6d6c31*/
       {
-        result = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a1); /*0x6d6c31*/
+        result = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x6d6c31*/
         v8 = result[80]; /*0x6d6c36*/
         if ( (v8 & 0x80u) != 0 && result[17] && (v8 & 0x800) != 0 ) /*0x6d6c4b*/
           break; /*0x6d6c4b*/
@@ -98,7 +101,7 @@ _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
           v10 = 0; /*0x6d6c79*/
           while ( 1 ) /*0x6d6c85*/
           {
-            result = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a1); /*0x6d6c85*/
+            result = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x6d6c85*/
             v11 = result[80]; /*0x6d6c8a*/
             if ( (v11 & 0x80u) != 0 && result[17] && (v11 & 0x800) == 0 ) /*0x6d6c9f*/
               break; /*0x6d6c9f*/
@@ -111,7 +114,7 @@ _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
               v13 = 0; /*0x6d6cc7*/
               while ( 1 ) /*0x6d6cd3*/
               {
-                result = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a1); /*0x6d6cd3*/
+                result = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x6d6cd3*/
                 v14 = result[80]; /*0x6d6cd8*/
                 if ( (v14 & 0x80u) != 0 && result[17] && (v14 & 0x800) == 0 ) /*0x6d6ced*/
                   break; /*0x6d6ced*/
@@ -511,7 +514,7 @@ namespace gamemd {
 long long ZCoordToScreenY(IUnknown * aP0)
 {
 {
-    return Math::RoundToInt((double)(int)aP0 * *(double *)&DataGlobal_B05488.__pad_579C[8484] + (double)((int)aP0 >= 728) + 0.5);
+    return Math::RoundToInt((double)(int)aP0 * *(double *)&DataGlobal_B05488[30912] + (double)((int)aP0 >= 728) + 0.5);
 }
 }
 } // namespace gamemd
@@ -616,12 +619,12 @@ char ClampCoordMap(AbstractClass * aP0)
     AbstractClass *v4;
     char v5;
     AbstractClass *v6;
-    v1 = *(int *)&DataGlobal_87C374.__pad_579C[21656] / 2 + 30 * (2 * *(int *)&DataGlobal_87C374.__pad_14B0[8384] - *(int *)&DataGlobal_87C374.__pad_14B0[8376]);
-    v2 = v1 + 60 * *(int *)&DataGlobal_87C374.__pad_14B0[8392] - *(int *)&DataGlobal_87C374.__pad_579C[21656];
-    v3 = (AbstractClass *)(*(int *)&DataGlobal_87C374.__pad_579C[21660] / 2 + 15 * (*(int *)&DataGlobal_87C374.__pad_14B0[8376] + 2 * *(int *)&DataGlobal_87C374.__pad_14B0[8388] - 5));
+    v1 = *(int *)&DataGlobal_87C374[44084] / 2 + 30 * (2 * *(int *)&DataGlobal_87C374[13680] - *(int *)&DataGlobal_87C374[13672]);
+    v2 = v1 + 60 * *(int *)&DataGlobal_87C374[13688] - *(int *)&DataGlobal_87C374[44084];
+    v3 = (AbstractClass *)(*(int *)&DataGlobal_87C374[44088] / 2 + 15 * (*(int *)&DataGlobal_87C374[13672] + 2 * *(int *)&DataGlobal_87C374[13684] - 5));
     v4 = *(AbstractClass **)&aP0->__pad_0[4];
     v5 = 0;
-    v6 = (AbstractClass *)((char *)(v3) + (60 * *(int *)&DataGlobal_87C374.__pad_14B0[8396] + 270) / 2 - *(int *)&DataGlobal_87C374.__pad_579C[21660]);
+    v6 = (AbstractClass *)((char *)(v3) + (60 * *(int *)&DataGlobal_87C374[13692] + 270) / 2 - *(int *)&DataGlobal_87C374[44088]);
     if ( (int)v4 >= (int)v3 )
   {
     if ( (int)v4 > (int)v6 )

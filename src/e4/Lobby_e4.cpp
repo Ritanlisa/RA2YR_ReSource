@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x4E5D60
 int Lobby::InvalidatePlayerSlots()
@@ -47,7 +50,7 @@ int __thiscall Lobby_InvalidatePlayerSlots(HWND this)
       v3 = 1901; /*0x4e5d6a*/
     }
     if ( (g_GameMode_Current == 3 || g_GameMode_Current == 4) /*0x4e5df2*/
-      && ((v4 = *(&MEMORY[0xA8DA90] + i), v4 == MEMORY[0xAC11B4]) || *(_DWORD *)(v4 + 107) == -1) )
+      && ((v4 = *(&g_NetworkPlayerName + i), v4 == g_Lobby_MaxPlayers) || *(_DWORD *)(v4 + 107) == -1) )
     {
       result = InitComboBoxNone(this, v3); /*0x4e5dff*/
     }
@@ -107,8 +110,8 @@ void __thiscall Lobby_UpdatePlayerLabels(HWND this)
   HWND hDlg; // [esp+10h] [ebp-4h]
 
   hDlg = this; /*0x5eb063*/
-  if ( MEMORY[0xA8B23C] /*0x5eb07a*/
-    && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 64))(MEMORY[0xA8B23C])
+  if ( g_GameStateFlags /*0x5eb07a*/
+    && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 64))(g_GameStateFlags)
     || (v33 = 1, Network::IsMultiplayerActive()) )
   {
     v33 = 0; /*0x5eb088*/
@@ -125,7 +128,7 @@ void __thiscall Lobby_UpdatePlayerLabels(HWND this)
     v1 = 8; /*0x5eb0bf*/
   }
   v37 = v1; /*0x5eb0c9*/
-  if ( MEMORY[0x8316A4] ) /*0x5eb0cf*/
+  if ( g_MPCooperativeState ) /*0x5eb0cf*/
     goto LABEL_26; /*0x5eb0cf*/
   if ( v33 ) /*0x5eb0d7*/
     goto LABEL_25; /*0x5eb0d7*/
@@ -158,18 +161,18 @@ LABEL_26:
   do
   {
     v34 = 0; /*0x5eb13d*/
-    if ( v36 == MEMORY[0x8316A4] ) /*0x5eb142*/
+    if ( v36 == g_MPCooperativeState ) /*0x5eb142*/
     {
-      if ( MEMORY[0xA8B254] == -1 ) /*0x5eb151*/
+      if ( g_GameRulesOptions == -1 ) /*0x5eb151*/
       {
         PlayerCount = 8; /*0x5eb153*/
       }
       else
       {
-        PlayerCount = ReadPlayerCountMap(MEMORY[0xA8B254]); /*0x5eb165*/
-        if ( MEMORY[0xA8B23C] ) /*0x5eb169*/
+        PlayerCount = ReadPlayerCountMap(g_GameRulesOptions); /*0x5eb165*/
+        if ( g_GameStateFlags ) /*0x5eb169*/
         {
-          v4 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 152))(MEMORY[0xA8B23C]); /*0x5eb16d*/
+          v4 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5eb16d*/
           if ( v4 != -1 && v4 < PlayerCount ) /*0x5eb17a*/
             PlayerCount = v4; /*0x5eb17c*/
         }
@@ -187,15 +190,15 @@ LABEL_26:
       }
       if ( v36 > PlayerCount ) /*0x5eb1a5*/
       {
-        v5 = *(&MEMORY[0xA8DA90] + v36); /*0x5eb1a7*/
+        v5 = *(&g_NetworkPlayerName + v36); /*0x5eb1a7*/
         if ( v5 != g_HouseClass_ObserverFlags /*0x5eb1d2*/
-          && (!v5 || v5 != MEMORY[0xAC11A4] && v5 != MEMORY[0xAC11A8] && v5 != MEMORY[0xAC11AC]) )
+          && (!v5 || v5 != g_Lobby_PlayerTeam && v5 != g_Lobby_PlayerSide && v5 != g_Lobby_PlayerColor) )
         {
           v34 = 1; /*0x5eb1d4*/
         }
       }
-      if ( v36 == MEMORY[0x8316A4] && MEMORY[0xA8B23C] ) /*0x5eb1e9*/
-        (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 188))(MEMORY[0xA8B23C]); /*0x5eb1ed*/
+      if ( v36 == g_MPCooperativeState && g_GameStateFlags ) /*0x5eb1e9*/
+        (*(void (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 188))(g_GameStateFlags); /*0x5eb1ed*/
     }
     if ( v36 )
     {
@@ -232,81 +235,81 @@ LABEL_26:
     DlgItem = GetDlgItem(hDlg, v6); /*0x5eb265*/
     v35 = !ShowWindow(DlgItem, 0); /*0x5eb27d*/
     SendDlgItemMessageA(v7, v6, 0x14Bu, 0, 0); /*0x5eb282*/
-    v9 = (wchar_t *)*(&MEMORY[0xA8DA90] + v36); /*0x5eb291*/
+    v9 = (wchar_t *)*(&g_NetworkPlayerName + v36); /*0x5eb291*/
     v10 = v9; /*0x5eb29a*/
     if ( v9 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x5eb29c*/
     {
-      String = GetStringCSF(MEMORY[0x831C80], 0, MEMORY[0x8317D8], 5436); /*0x5eb2af*/
+      String = GetStringCSF(g_Str_GUI_Open, 0, g_Str_File_netshare_cpp, 5436); /*0x5eb2af*/
     }
-    else if ( v9 == (wchar_t *)MEMORY[0xAC11A0] ) /*0x5eb2ba*/
+    else if ( v9 == (wchar_t *)g_Lobby_PlayerCount ) /*0x5eb2ba*/
     {
-      String = GetStringCSF(MEMORY[0x831C74], 0, MEMORY[0x8317D8], 5438); /*0x5eb2cd*/
+      String = GetStringCSF(g_Str_GUI_Closed, 0, g_Str_File_netshare_cpp, 5438); /*0x5eb2cd*/
     }
-    else if ( v9 == (wchar_t *)MEMORY[0xAC11A4] ) /*0x5eb2d8*/
+    else if ( v9 == (wchar_t *)g_Lobby_PlayerTeam ) /*0x5eb2d8*/
     {
-      String = GetStringCSF(MEMORY[0x831C68], 0, MEMORY[0x8317D8], 5440); /*0x5eb2eb*/
+      String = GetStringCSF(g_Str_GUI_AIEasy, 0, g_Str_File_netshare_cpp, 5440); /*0x5eb2eb*/
     }
-    else if ( v9 == (wchar_t *)MEMORY[0xAC11A8] ) /*0x5eb2f3*/
+    else if ( v9 == (wchar_t *)g_Lobby_PlayerSide ) /*0x5eb2f3*/
     {
-      String = GetStringCSF(MEMORY[0x831C58], 0, MEMORY[0x8317D8], 5442); /*0x5eb306*/
+      String = GetStringCSF(g_Str_GUI_AINormal, 0, g_Str_File_netshare_cpp, 5442); /*0x5eb306*/
     }
-    else if ( v9 == (wchar_t *)MEMORY[0xAC11AC] ) /*0x5eb30e*/
+    else if ( v9 == (wchar_t *)g_Lobby_PlayerColor ) /*0x5eb30e*/
     {
-      String = GetStringCSF(MEMORY[0x831C4C], 0, MEMORY[0x8317D8], 5444); /*0x5eb321*/
+      String = GetStringCSF(g_Str_GUI_AIHard, 0, g_Str_File_netshare_cpp, 5444); /*0x5eb321*/
     }
-    else if ( v9 == MEMORY[0xAC11B0] ) /*0x5eb329*/
+    else if ( v9 == g_Lobby_PlayerReady ) /*0x5eb329*/
     {
-      String = GetStringCSF(MEMORY[0x831C40], 0, MEMORY[0x8317D8], 5446); /*0x5eb33c*/
+      String = GetStringCSF(DataGlobal_831C40, 0, g_Str_File_netshare_cpp, 5446); /*0x5eb33c*/
     }
     else
     {
-      if ( v9 != (wchar_t *)MEMORY[0xAC11B4] ) /*0x5eb344*/
+      if ( v9 != (wchar_t *)g_Lobby_MaxPlayers ) /*0x5eb344*/
         goto LABEL_79; /*0x5eb344*/
-      String = GetStringCSF(MEMORY[0x831C2C], 0, MEMORY[0x8317D8], 5448); /*0x5eb357*/
+      String = GetStringCSF(g_Str_GUI_OpenObserver, 0, g_Str_File_netshare_cpp, 5448); /*0x5eb357*/
     }
     v10 = String; /*0x5eb35c*/
 LABEL_79:
     if ( v9 /*0x5eb380*/
-      && (v9 == (wchar_t *)MEMORY[0xAC11A4] || v9 == (wchar_t *)MEMORY[0xAC11A8] || v9 == (wchar_t *)MEMORY[0xAC11AC])
+      && (v9 == (wchar_t *)g_Lobby_PlayerTeam || v9 == (wchar_t *)g_Lobby_PlayerSide || v9 == (wchar_t *)g_Lobby_PlayerColor)
       && !v33 )
     {
-      v10 = GetStringCSF(MEMORY[0x831C80], 0, MEMORY[0x8317D8], 5455); /*0x5eb398*/
+      v10 = GetStringCSF(g_Str_GUI_Open, 0, g_Str_File_netshare_cpp, 5455); /*0x5eb398*/
     }
     WideString::Assign((wchar_t **)&v38, v10); /*0x5eb39f*/
-    v12 = CharToWideString(MEMORY[0xA8B380]); /*0x5eb3a9*/
-    if ( !wcscmp((const wchar_t *)v12, MEMORY[0xA8D610]) ) /*0x5eb3b4*/
+    v12 = CharToWideString(g_GameSetupBuffer); /*0x5eb3a9*/
+    if ( !wcscmp((const wchar_t *)v12, g_CurrentPlayerName) ) /*0x5eb3b4*/
     {
       if ( v9 /*0x5eb3fe*/
         && v9 != (wchar_t *)g_HouseClass_ObserverFlags
-        && v9 != (wchar_t *)MEMORY[0xAC11A0]
-        && v9 != MEMORY[0xAC11B0]
-        && v9 != (wchar_t *)MEMORY[0xAC11B4]
-        && v9 != (wchar_t *)MEMORY[0xAC11A4]
-        && v9 != (wchar_t *)MEMORY[0xAC11A8]
-        && v9 != (wchar_t *)MEMORY[0xAC11AC] )
+        && v9 != (wchar_t *)g_Lobby_PlayerCount
+        && v9 != g_Lobby_PlayerReady
+        && v9 != (wchar_t *)g_Lobby_MaxPlayers
+        && v9 != (wchar_t *)g_Lobby_PlayerTeam
+        && v9 != (wchar_t *)g_Lobby_PlayerSide
+        && v9 != (wchar_t *)g_Lobby_PlayerColor )
       {
         v13 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v10); /*0x5eb409*/
         SendMessageA(DlgItem, 0x151u, v13, (LPARAM)v9); /*0x5eb413*/
       }
-      v14 = CharToWideString(MEMORY[0xA8B380]); /*0x5eb41a*/
+      v14 = CharToWideString(g_GameSetupBuffer); /*0x5eb41a*/
       v15 = wcscmp(v10, (const wchar_t *)v14); /*0x5eb421*/
       v16 = v36; /*0x5eb426*/
       if ( v15 ) /*0x5eb42f*/
       {
         if ( v36 < v37 ) /*0x5eb439*/
         {
-          if ( !v34 || v36 != MEMORY[0x8316A4] ) /*0x5eb44d*/
+          if ( !v34 || v36 != g_MPCooperativeState ) /*0x5eb44d*/
             goto LABEL_111; /*0x5eb44d*/
-          if ( MEMORY[0xA8B254] == -1 ) /*0x5eb458*/
+          if ( g_GameRulesOptions == -1 ) /*0x5eb458*/
           {
             v17 = 8; /*0x5eb45a*/
           }
           else
           {
-            v17 = ReadPlayerCountMap(MEMORY[0xA8B254]); /*0x5eb46c*/
-            if ( MEMORY[0xA8B23C] ) /*0x5eb470*/
+            v17 = ReadPlayerCountMap(g_GameRulesOptions); /*0x5eb46c*/
+            if ( g_GameStateFlags ) /*0x5eb470*/
             {
-              v18 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 152))(MEMORY[0xA8B23C]); /*0x5eb474*/
+              v18 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5eb474*/
               if ( v18 != -1 && v18 < v17 ) /*0x5eb481*/
                 v17 = v18; /*0x5eb483*/
             }
@@ -325,31 +328,31 @@ LABEL_79:
           if ( v36 < v17 ) /*0x5eb4ac*/
           {
 LABEL_111:
-            v19 = GetStringCSF(MEMORY[0x831C80], 0, MEMORY[0x8317D8], 5479); /*0x5eb4bf*/
+            v19 = GetStringCSF(g_Str_GUI_Open, 0, g_Str_File_netshare_cpp, 5479); /*0x5eb4bf*/
             v20 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v19); /*0x5eb4cd*/
             SendMessageA(DlgItem, 0x151u, v20, g_HouseClass_ObserverFlags); /*0x5eb4dd*/
           }
         }
-        if ( v36 == MEMORY[0x8316A4] ) /*0x5eb4e5*/
+        if ( v36 == g_MPCooperativeState ) /*0x5eb4e5*/
         {
-          v21 = GetStringCSF(MEMORY[0x831C2C], 0, MEMORY[0x8317D8], 5489); /*0x5eb4f8*/
+          v21 = GetStringCSF(g_Str_GUI_OpenObserver, 0, g_Str_File_netshare_cpp, 5489); /*0x5eb4f8*/
           v22 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v21); /*0x5eb506*/
-          SendMessageA(DlgItem, 0x151u, v22, MEMORY[0xAC11B4]); /*0x5eb516*/
+          SendMessageA(DlgItem, 0x151u, v22, g_Lobby_MaxPlayers); /*0x5eb516*/
         }
-        v23 = GetStringCSF(MEMORY[0x831C74], 0, MEMORY[0x8317D8], 5496); /*0x5eb529*/
+        v23 = GetStringCSF(g_Str_GUI_Closed, 0, g_Str_File_netshare_cpp, 5496); /*0x5eb529*/
         v24 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v23); /*0x5eb537*/
-        SendMessageA(DlgItem, 0x151u, v24, MEMORY[0xAC11A0]); /*0x5eb547*/
+        SendMessageA(DlgItem, 0x151u, v24, g_Lobby_PlayerCount); /*0x5eb547*/
         if ( v33 && !v34 ) /*0x5eb55b*/
         {
-          v25 = GetStringCSF(MEMORY[0x831C68], 0, MEMORY[0x8317D8], 5504); /*0x5eb572*/
+          v25 = GetStringCSF(g_Str_GUI_AIEasy, 0, g_Str_File_netshare_cpp, 5504); /*0x5eb572*/
           v26 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25); /*0x5eb580*/
-          SendMessageA(DlgItem, 0x151u, v26, MEMORY[0xAC11A4]); /*0x5eb590*/
-          v27 = GetStringCSF(MEMORY[0x831C58], 0, MEMORY[0x8317D8], 5510); /*0x5eb5a3*/
+          SendMessageA(DlgItem, 0x151u, v26, g_Lobby_PlayerTeam); /*0x5eb590*/
+          v27 = GetStringCSF(g_Str_GUI_AINormal, 0, g_Str_File_netshare_cpp, 5510); /*0x5eb5a3*/
           v28 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v27); /*0x5eb5b1*/
-          SendMessageA(DlgItem, 0x151u, v28, MEMORY[0xAC11A8]); /*0x5eb5c1*/
-          v29 = GetStringCSF(MEMORY[0x831C4C], 0, MEMORY[0x8317D8], 5516); /*0x5eb5d4*/
+          SendMessageA(DlgItem, 0x151u, v28, g_Lobby_PlayerSide); /*0x5eb5c1*/
+          v29 = GetStringCSF(g_Str_GUI_AIHard, 0, g_Str_File_netshare_cpp, 5516); /*0x5eb5d4*/
           v30 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v29); /*0x5eb5e2*/
-          SendMessageA(DlgItem, 0x151u, v30, MEMORY[0xAC11AC]); /*0x5eb5f2*/
+          SendMessageA(DlgItem, 0x151u, v30, g_Lobby_PlayerColor); /*0x5eb5f2*/
         }
       }
     }
@@ -395,11 +398,11 @@ void __thiscall Lobby::SetupPlayerWidgets(HWND this)
   int v18; // [esp+1Ch] [ebp-8h]
   HWND hWnd; // [esp+20h] [ebp-4h]
 
-  v1 = (INIClass *)MEMORY[0x8316A4]; /*0x5eba04*/
-  if ( MEMORY[0x8316A4] >= 0 ) /*0x5eba0f*/
+  v1 = (INIClass *)g_MPCooperativeState; /*0x5eba04*/
+  if ( g_MPCooperativeState >= 0 ) /*0x5eba0f*/
   {
-    if ( !MEMORY[0x8316A4] ) /*0x5eba15*/
-      v1 = (INIClass *)MEMORY[0xA8BB0C]; /*0x5eba17*/
+    if ( !g_MPCooperativeState ) /*0x5eba15*/
+      v1 = (INIClass *)DataGlobal_A8BB0C; /*0x5eba17*/
     if ( (int)v1 < 8 ) /*0x5eba20*/
     {
       if ( v1 ) /*0x5eba2a*/
@@ -455,13 +458,13 @@ void __thiscall Lobby::SetupPlayerWidgets(HWND this)
       ResourceID2CSF = (HWND)GetResourceID2CSF(v1); /*0x5ebad4*/
       ResourceID3CSF = GetResourceID3CSF(v1); /*0x5ebadf*/
       ResourceID4CSF = GetResourceID4CSF(v1); /*0x5ebae3*/
-      v6 = *(&MEMORY[0xA8DA90] + (_DWORD)v1); /*0x5ebae8*/
+      v6 = *(&g_NetworkPlayerName + (_DWORD)v1); /*0x5ebae8*/
       v18 = ResourceID4CSF; /*0x5ebaef*/
-      v10 = v6 == MEMORY[0xAC11B4] /*0x5ebb24*/
+      v10 = v6 == g_Lobby_MaxPlayers /*0x5ebb24*/
          || v6
          && v6 != g_HouseClass_ObserverFlags
-         && v6 != MEMORY[0xAC11A0]
-         && (wchar_t *)v6 != MEMORY[0xAC11B0]
+         && v6 != g_Lobby_PlayerCount
+         && (wchar_t *)v6 != g_Lobby_PlayerReady
          && *(_DWORD *)(v6 + 107) == -1;
       DlgItem = GetDlgItem(this, v3); /*0x5ebb33*/
       v8 = GetDlgItem(this, v4); /*0x5ebb39*/
@@ -514,7 +517,7 @@ int Lobby_BuildPlayerList()
   char Destination[256]; // [esp+18h] [ebp-100h] BYREF
 
   strcpy(Destination, asc_84A480); /*0x77dbb5*/
-  v0 = (wchar_t **)&MEMORY[0xA8DA90]; /*0x77dbbe*/
+  v0 = (wchar_t **)&g_NetworkPlayerName; /*0x77dbbe*/
   do /*0x77dc6e*/
   {
     v1 = *v0; /*0x77dbc3*/
@@ -535,11 +538,11 @@ int Lobby_BuildPlayerList()
     }
     v4 = String::GetOrEmpty((char **)&v6); /*0x77dc35*/
     strncat(Destination, v4, 0x100u); /*0x77dc40*/
-    strncat(Destination, MEMORY[0x817F70], 0x100u); /*0x77dc54*/
+    strncat(Destination, Delimiter, 0x100u); /*0x77dc54*/
     DeleteAndZero(&v6); /*0x77dc60*/
     ++v0; /*0x77dc65*/
   }
-  while ( (int)v0 < (int)&MEMORY[0xA8DAB0] ); /*0x77dc6e*/
-  return (*(int (__stdcall **)(LPVOID, char *))(*(_DWORD *)MEMORY[0xAC116C] + 60))(MEMORY[0xAC116C], Destination); /*0x77dc84*/
+  while ( (int)v0 < (int)&g_PlayerNameListEnd ); /*0x77dc6e*/
+  return (*(int (__stdcall **)(LPVOID, char *))(*(_DWORD *)ppv + 60))(ppv, Destination); /*0x77dc84*/
 }
 }

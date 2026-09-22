@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x6B5260
 char * SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
@@ -29,20 +32,20 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
   this->Insignificant = 1; /*0x6b52ce*/
   this->q233 = 1; /*0x6b52d4*/
   this->q235 = 0; /*0x6b52da*/
-  v3 = *(SmudgeTypeClass **)&MEMORY[0xA8D63C].__pad_14B0[316]; /*0x6b52e1*/
-  if ( *(int *)&MEMORY[0xA8D63C].__pad_14B0[316] < *(int *)&MEMORY[0xA8D63C].__pad_14B0[308] /*0x6b5322*/
-    || (MEMORY[0xA8D63C].__pad_14B0[313] || !*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[308])
-    && *(int *)&MEMORY[0xA8D63C].__pad_14B0[320] > 0
-    && (v4 = (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[300] + 8))(
-               &MEMORY[0xA8D63C].__pad_14B0[300],
-               *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[308] + *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[320],
+  v3 = *(SmudgeTypeClass **)&g_NetworkPlayerBuffer[5612]; /*0x6b52e1*/
+  if ( *(int *)&g_NetworkPlayerBuffer[5612] < *(int *)&g_NetworkPlayerBuffer[5604] /*0x6b5322*/
+    || (g_NetworkPlayerBuffer[5609] || !*(_DWORD *)&g_NetworkPlayerBuffer[5604])
+    && *(int *)&g_NetworkPlayerBuffer[5616] > 0
+    && (v4 = (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_NetworkPlayerBuffer[5596] + 8))(
+               &g_NetworkPlayerBuffer[5596],
+               *(_DWORD *)&g_NetworkPlayerBuffer[5604] + *(_DWORD *)&g_NetworkPlayerBuffer[5616],
                0) == 0,
-        v3 = *(SmudgeTypeClass **)&MEMORY[0xA8D63C].__pad_14B0[316],
+        v3 = *(SmudgeTypeClass **)&g_NetworkPlayerBuffer[5612],
         !v4) )
   {
-    *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[316] = &v3->__pad_0[1]; /*0x6b5327*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[304] + 4 * (_DWORD)v3) = this; /*0x6b5331*/
-    v3 = *(SmudgeTypeClass **)&MEMORY[0xA8D63C].__pad_14B0[316]; /*0x6b5334*/
+    *(_DWORD *)&g_NetworkPlayerBuffer[5612] = &v3->__pad_0[1]; /*0x6b5327*/
+    *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5600] + 4 * (_DWORD)v3) = this; /*0x6b5331*/
+    v3 = *(SmudgeTypeClass **)&g_NetworkPlayerBuffer[5612]; /*0x6b5334*/
   }
   v5 = 0; /*0x6b5339*/
   if ( (int)v3 <= 0 ) /*0x6b533d*/
@@ -53,7 +56,7 @@ LABEL_11:
   }
   else
   {
-    v6 = *(CCINIClass **)&MEMORY[0xA8D63C].__pad_14B0[304]; /*0x6b533f*/
+    v6 = *(CCINIClass **)&g_NetworkPlayerBuffer[5600]; /*0x6b533f*/
     while ( *(char **)v6->__pad_0 != this ) /*0x6b5347*/
     {
       ++v5; /*0x6b5349*/
@@ -94,7 +97,7 @@ void __thiscall SmudgeTypeClass::vt_entry_A0(_DWORD *this, int *a2, int *a3, int
       v14 += -15 * (a4 / v9 + a4 % v9); /*0x6b5659*/
       v13 += 60 * (a4 / v9 - a4 % v9) / 2; /*0x6b5661*/
     }
-    v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], a6); /*0x6b5674*/
+    v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, a6); /*0x6b5674*/
     v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
     DrawToSurfaceSHP(g_DSurface_Hidden_2, v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
@@ -127,7 +130,7 @@ char __thiscall SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
   v5 = INIClass::ReadBool_Overwrite( /*0x6b5725*/
          (int)aP1,
          (unsigned __int8 *)(this + 36),
-         (CCINIClass *)&stru_830620.__pad_579C[41580],
+         (CCINIClass *)&stru_830620[64008],
          v4);
   v7 = *(INIClass **)(this + 664); /*0x6b5732*/
   this->Burn = v5; /*0x6b5739*/
@@ -207,7 +210,7 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
     void **v3;
     v3 = (void **)__2_YAPAXI_Z(0xB0u);
     if ( v3 )
-    return UnitClass::Create(v3, this, (AbstractClass *)&DataGlobal_B05488.__pad_579C[2948], -1);
+    return UnitClass::Create(v3, this, (AbstractClass *)&DataGlobal_B05488[25376], -1);
     else
     return 0;
 }

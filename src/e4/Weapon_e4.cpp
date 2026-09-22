@@ -4,6 +4,9 @@
 #include "e4/classes/E4Recv_659E30_e4.hpp"
 #include "e4/classes/E4Recv_659EE0_e4.hpp"
 #include "e4/classes/E4Recv_659FF0_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x53AE00
 namespace gamemd {
@@ -19,7 +22,7 @@ int sub_53AE00()
   v1 = 3; /*0x53ae1c*/
   if ( HouseClass_Player ) /*0x53ae23*/
     v1 = *((_DWORD *)HouseClass_Player + 22549); /*0x53ae25*/
-  return MessageListClass::AddMessage(MEMORY[0xA8BC60], 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53ae47*/
+  return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53ae47*/
 }
 }
 } // namespace gamemd
@@ -59,12 +62,12 @@ bool __usercall sub_659CA0@<al>(int a1@<ecx>, int a2@<ebx>)
       do /*0x659e01*/
       {
         v4 = Weapon_Update_Update_659FF0(a1); /*0x659ceb*/
-        LOWORD(a2) = (unsigned __int8)(*(_BYTE *)(a1 + 194) >> MEMORY[0x8A0DDC]); /*0x659d13*/
-        LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 193) >> MEMORY[0x8A0DE4]); /*0x659d28*/
-        LODWORD(v4) = (_DWORD)v4 << MEMORY[0x8A0DE0]; /*0x659d30*/
-        v5 = v4 | (a2 << MEMORY[0x8A0DD8]); /*0x659d40*/
+        LOWORD(a2) = (unsigned __int8)(*(_BYTE *)(a1 + 194) >> g_BitShift_Blue); /*0x659d13*/
+        LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 193) >> g_BitMask_Blue); /*0x659d28*/
+        LODWORD(v4) = (_DWORD)v4 << g_BitMask_Green; /*0x659d30*/
+        v5 = v4 | (a2 << g_BitShift_Blue); /*0x659d40*/
         LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 192) >> g_BitShift_Green_0); /*0x659d45*/
-        a2 = ((_DWORD)v4 << MEMORY[0x8A0DD0]) | v5; /*0x659d55*/
+        a2 = ((_DWORD)v4 << g_DDraw_BlueMask) | v5; /*0x659d55*/
         Coord::To_Screen(g_TacticalClass_Instance, (_DWORD *)(a1 + 156), v14); /*0x659d57*/
         Coord::To_Screen(g_TacticalClass_Instance, (_DWORD *)(a1 + 168), v13); /*0x659d68*/
         v15[1] = g_Map_VisibleRect; /*0x659d7e*/
@@ -231,8 +234,8 @@ int *__thiscall Weapon::DestroyTerrain(int *this, int *a1, IUnknown *aP2, Infant
       LOWORD(v54) = v59 / 256; /*0x70c7f9*/
       HIWORD(v54) = v60 / 256; /*0x70c802*/
       v58 = v54; /*0x70c811*/
-      v13 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v58); /*0x70c815*/
-      if ( (v13[80] & 0x100) != 0 && v61 >= *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[7072] * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
+      v13 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v58); /*0x70c815*/
+      if ( (v13[80] & 0x100) != 0 && v61 >= *(_DWORD *)&g_OverlayTypeConfig[29500] * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
         v14 = v13[58]; /*0x70c83e*/
       else
         v14 = v13[57]; /*0x70c846*/
@@ -274,7 +277,7 @@ int *__thiscall Weapon::DestroyTerrain(int *this, int *a1, IUnknown *aP2, Infant
           v23 = Math::Sqrt(v68 * v68 + v81 * v81 + v69 * v69); /*0x70c9c3*/
           v24 = fabs(v64 / v23); /*0x70c9cf*/
         }
-        if ( v24 >= (double)*(int *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1172) /*0x70c9f0*/
+        if ( v24 >= (double)*(int *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 1172) /*0x70c9f0*/
           && (InfantryClass *)v14 != aP3 )
         {
           goto LABEL_31; /*0x70c9f0*/
@@ -376,9 +379,9 @@ LABEL_55:
       if ( (*(int (__thiscall **)(InfantryClass *))(*(_DWORD *)aP3->__pad_0 + 44))(aP3) == 11 /*0x70cc05*/
         && CellClass::IsActiveOrNext(aP3) )
       {
-        v40 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6092); /*0x70cc1e*/
+        v40 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 6092); /*0x70cc1e*/
         if ( Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x63) < v40 ) /*0x70cc31*/
-          LayerClass::DestroyCliff((int *)&MEMORY[0x87F7E8], v41, (int)aP3); /*0x70cc39*/
+          LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v41, (int)aP3); /*0x70cc39*/
       }
       v42 = v66; /*0x70cc45*/
       v48 = &vt_VectorClass_ObjectClass; /*0x70cc4b*/
@@ -394,14 +397,14 @@ LABEL_55:
       return a1; /*0x70cc78*/
     }
   }
-  v32 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v59); /*0x70cae2*/
+  v32 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&v59); /*0x70cae2*/
   if ( CellClass::IsActiveOrNext(v32) ) /*0x70cae9*/
   {
-    v33 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6092); /*0x70cb01*/
+    v33 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 6092); /*0x70cb01*/
     if ( Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x63) < v33 ) /*0x70cb14*/
     {
-      v34 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v59); /*0x70cb20*/
-      LayerClass::DestroyCliff((int *)&MEMORY[0x87F7E8], v35, (int)v34); /*0x70cb2b*/
+      v34 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&v59); /*0x70cb20*/
+      LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v35, (int)v34); /*0x70cb2b*/
     }
   }
   v36 = (CCINIClass *)v60; /*0x70cb37*/
@@ -429,7 +432,7 @@ int sub_53B410()
   v1 = 3; /*0x53b42c*/
   if ( HouseClass_Player ) /*0x53b433*/
     v1 = *((_DWORD *)HouseClass_Player + 22549); /*0x53b435*/
-  return MessageListClass::AddMessage(MEMORY[0xA8BC60], 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53b457*/
+  return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53b457*/
 }
 }
 } // namespace gamemd

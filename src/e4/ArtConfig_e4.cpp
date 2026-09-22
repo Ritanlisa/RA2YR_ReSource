@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x76FC50
 int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3)

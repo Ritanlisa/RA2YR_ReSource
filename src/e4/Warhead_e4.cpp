@@ -1,6 +1,15 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Particle_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
+#include "e4/classes/Trigger_e4.hpp"
 
 // 0x41D7E0
 bool Warhead::GetWarheadSound(int a2)
@@ -227,15 +236,15 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
   v3 = *((_DWORD *)this + 74);
   v4 = *(IUnknown **)(v3 + 380);
   if ( v4 || *(_DWORD *)(v3 + 384) )
-    MEMORY[0x87F7EC] = (TechnoTypeClass *)Random::Range(
-                                            &MEMORY[0x87F8E4].__pad_5568[7484],
+    DataGlobal_87F7EC = (TechnoTypeClass *)Random::Range(
+                                            &DataGlobal_87F8E4[29348],
                                             v4,
                                             *(IUnknown **)(v3 + 384));
   v5 = *((_DWORD *)this + 74);
   v6 = *(IUnknown **)(v5 + 388);
   if ( v6 || *(_DWORD *)(v5 + 392) )
-    MEMORY[0x87F7F0] = (TechnoTypeClass *)Random::Range(
-                                            &MEMORY[0x87F8E4].__pad_5568[7484],
+    DataGlobal_87F7F0 = (TechnoTypeClass *)Random::Range(
+                                            &DataGlobal_87F8E4[29348],
                                             v6,
                                             *(IUnknown **)(v5 + 392));
   v7 = this->q013;
@@ -248,7 +257,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
       LOWORD(v139) = *(_DWORD *)aP1->__pad_0 / 256;
       HIWORD(v139) = *(_DWORD *)&aP1->__pad_0[4] / 256;
       v140 = Math::RoundToInt(*(float *)(*(_DWORD *)(v7 + 172) + 292));
-      v9 = (Concurrency::details::SchedulerBase *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v139);
+      v9 = (Concurrency::details::SchedulerBase *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v139);
       NumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ = (_DWORD *)_GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ(v9);
       if ( NumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ )
       {
@@ -303,13 +312,13 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
              *(_DWORD *)(*((_DWORD *)this + 44) + 700),
              (int)&savedregs,
              *((_DWORD *)this + 67))
-        && *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 532) != -1
+        && *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 532) != -1
         && ((unsigned __int8)House::IsHumanPlayer(*(#375 **)(*((_DWORD *)this + 44) + 540)) || v17) )
       {
         v19 = v16 + 156;
         v141 = *(double *)v19;
         LODWORD(v142) = *(_DWORD *)(v19 + 8);
-        StartAudioControllerAt(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 532), (int)&v141, 0);
+        StartAudioControllerAt(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 532), (int)&v141, 0);
       }
     }
   }
@@ -318,7 +327,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
     v20 = *((_DWORD *)this + 67);
     if ( v20 )
       v20 = (*(_BYTE *)(v20 + 20) & 1) != 0 ? v20 : 0;
-    AbstractClass::Initialize(&MEMORY[0x87F5D8], *((TechnoClass **)this + 44), (TechnoClass *)v20);
+    AbstractClass::Initialize(&DataGlobal_87F5D8, *((TechnoClass **)this + 44), (TechnoClass *)v20);
   }
   else if ( v13[344] )
   {
@@ -414,7 +423,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
             v35 = v34 + 156;
             v141 = *(double *)v35;
             LODWORD(v142) = *(_DWORD *)(v35 + 8);
-            v36 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v141);
+            v36 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&v141);
             if ( Cell::IsBridge(v36) == (_DWORD *)Member )
               v143 = 1;
           }
@@ -492,7 +501,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
     if ( *((_DWORD *)this + 44) && v49 && !(*(unsigned __int8 (__thiscall **)(int *))(*v49 + 352))(v49) )
     {
       v140 = (this->q01B * *((_DWORD *)this + 84)) >> 8;
-      v50 = (double)v140 * *(float *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6324) / dbl_81AEF8;
+      v50 = (double)v140 * *(float *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 6324) / dbl_81AEF8;
       if ( v50 >= 4.0 )
         v131 = 4.0;
       else
@@ -601,7 +610,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
   {
     v141 = *(double *)(this + 156);
     LODWORD(v142) = *((_DWORD *)this + 41);
-    v70 = *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v141) + 59);
+    v70 = *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&v141) + 59);
     if ( v70 == 2 && !v144 )
     {
       v71 = *((_DWORD *)this + 41);
@@ -609,7 +618,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
       LODWORD(v141) = *((_DWORD *)this + 39);
       LODWORD(v142) = v71;
       HIDWORD(v141) = v72;
-      v73 = (_DWORD *)*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v141) + 57);
+      v73 = (_DWORD *)*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&v141) + 57);
       if ( v73 )
       {
         if ( (*(int (__thiscall **)(_DWORD *))(*v73 + 44))(v73) == 1 )
@@ -667,7 +676,7 @@ LABEL_158:
                eax160,
                SBYTE4(Z))) )
       {
-        if ( *((_DWORD *)this + 74) == *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3980) )
+        if ( *((_DWORD *)this + 74) == *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 3980) )
         {
           v83 = (TechnoClass *)*((_DWORD *)this + 44);
           ecx162 = -1;
@@ -748,10 +757,10 @@ LABEL_158:
             v98 = Random::Range(
                     &g_ScenarioClass_Instance->random[1],
                     0,
-                    (IUnknown *)(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 332) - 1));
+                    (IUnknown *)(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 332) - 1));
             AnimClass::ctor(
               (void **)v94,
-              *(CoordStruct **)(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 320) + 4 * v98),
+              *(CoordStruct **)(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 320) + 4 * v98),
               (CoordStruct *)&v141,
               0,
               (CoordStruct *)1,
@@ -877,7 +886,7 @@ LABEL_158:
     }
     return Instance;
   }
-  v124 = *(CoordStruct **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 848);
+  v124 = *(CoordStruct **)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 848);
   if ( v124 )
   {
     Instance = __2_YAPAXI_Z(0x1C8u);
@@ -1078,7 +1087,7 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
               LOWORD(v97) = v98 + *v21; /*0x46a4ad*/
               HIWORD(v97) = v22; /*0x46a4b5*/
               v82 = v97; /*0x46a4c8*/
-              v23 = (_BYTE *)*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v82) + 57); /*0x46a4d7*/
+              v23 = (_BYTE *)*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v82) + 57); /*0x46a4d7*/
               if ( v23 ) /*0x46a4df*/
               {
                 v24 = *(this + 44); /*0x46a4e5*/
@@ -1222,7 +1231,7 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
           LOBYTE(v83) = v48; /*0x46a9a8*/
           LODWORD(v87) = v49; /*0x46a9b0*/
           LODWORD(v78) = v50; /*0x46a9ba*/
-          LODWORD(v77) = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v76); /*0x46a9c3*/
+          LODWORD(v77) = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v76); /*0x46a9c3*/
           v79 = 0; /*0x46a9da*/
           if ( CoCreateInstance(&rclsid, 0, 7u, &IID_IUnknown, &v79) >= 0 ) /*0x46a9ea*/
           {
@@ -1233,7 +1242,7 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
               v73 = 0.0; /*0x46aa31*/
               v74 = 0.0; /*0x46aa41*/
               v75 = 0.0; /*0x46aa51*/
-              v53 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v76); /*0x46aa61*/
+              v53 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v76); /*0x46aa61*/
               v54 = this + 39; /*0x46aa66*/
               v84 = *(this + 39); /*0x46aa70*/
               v85 = *(this + 40); /*0x46aa77*/
@@ -1289,14 +1298,14 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
               v95 = v69; /*0x46ad4d*/
               if ( v70 && *(this + 44) ) /*0x46ad56*/
               {
-                v71 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v76); /*0x46ad75*/
+                v71 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v76); /*0x46ad75*/
                 TechnoClass::CreateFireEffect((_DWORD *)*(this + 44), v71, 0, v13, &v93); /*0x46ad81*/
               }
               if ( *(_BYTE *)(v13 + 337) ) /*0x46ad86*/
               {
                 if ( *(this + 44) ) /*0x46ad90*/
                 {
-                  v72 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v76); /*0x46adad*/
+                  v72 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v76); /*0x46adad*/
                   TechnoClass::CreateRadarBlip((int *)*(this + 44), v72, v13, &v93); /*0x46adb9*/
                 }
               }
@@ -1395,7 +1404,7 @@ int __thiscall Warhead_ProcessDamageArea(int this)
   v15 = v13 / v25; /*0x65b73a*/
   *(_DWORD *)(this + 100) = v15; /*0x65b741*/
   *(_DWORD *)(this + 104) = v7 / v15; /*0x65b749*/
-  v16 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)(this + 64)); /*0x65b750*/
+  v16 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)(this + 64)); /*0x65b750*/
   v17 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v16 + 72))(v16, v31); /*0x65b75e*/
   v27 = *v17; /*0x65b763*/
   v29 = v17[1]; /*0x65b76a*/

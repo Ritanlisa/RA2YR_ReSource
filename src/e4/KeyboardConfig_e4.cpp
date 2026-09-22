@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x533D20
 char KeyboardConfig::LoadINI()
@@ -24,14 +26,14 @@ char KeyboardConfig_LoadINI()
   INIClass::INIClass(v8); /*0x533d2b*/
   v9 = 0; /*0x533d3b*/
   v8[0] = &CCINIClass_Vtable; /*0x533d3f*/
-  CCFileClass::Construct(v10, MEMORY[0x827B88]); /*0x533d47*/
+  CCFileClass::Construct(v10, DataGlobal_827B88); /*0x533d47*/
   if ( CCINIClass::Load(v8, (int)v10, 0, 0) ) /*0x533d57*/
   {
     __3_YAXPAX_Z(Base); /*0x533d6c*/
     v0 = 0; /*0x533d74*/
     Base = 0; /*0x533d7a*/
     NumOfElements = 0; /*0x533d85*/
-    MEMORY[0x87F688] = 0; /*0x533d8b*/
+    DataGlobal_87F688 = 0; /*0x533d8b*/
     g_FileSystemInitFlag = 0; /*0x533d91*/
     g_FileSystemPool = 0; /*0x533d97*/
     for ( i = 0; i < INIClass::GetKeyCount((char *)v8, (unsigned __int8 *)g_INI_Key_Hotkey); v0 = i ) /*0x533da8*/
@@ -51,10 +53,10 @@ char KeyboardConfig_LoadINI()
         v3 = *((_DWORD *)g_CommandClass_Capacity + v2); /*0x533e32*/
         if ( v3 && Int_Overwrite ) /*0x533e3f*/
         {
-          v4 = MEMORY[0x87F688]; /*0x533e47*/
-          if ( (int)(NumOfElements + 1) <= MEMORY[0x87F688] ) /*0x533e4f*/
+          v4 = DataGlobal_87F688; /*0x533e47*/
+          if ( (int)(NumOfElements + 1) <= DataGlobal_87F688 ) /*0x533e4f*/
             goto LABEL_13; /*0x533e4f*/
-          if ( !MEMORY[0x87F688] ) /*0x533e53*/
+          if ( !DataGlobal_87F688 ) /*0x533e53*/
             v4 = 10; /*0x533e55*/
           if ( (unsigned __int8)KeyboardConfig::ReleaseBuffer(v4) ) /*0x533e60*/
           {

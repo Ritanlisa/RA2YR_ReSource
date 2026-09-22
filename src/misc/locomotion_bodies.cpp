@@ -658,13 +658,13 @@ char __thiscall FacingClass::Update(FacingClass *this, DirStruct *desiredFacing)
   TimeLeft = this->RotationTimer.TimeLeft; /*0x4c9243*/
   if ( StartTime != -1 ) /*0x4c924f*/
   {
-    if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - StartTime >= TimeLeft ) /*0x4c9257*/
+    if ( *(_DWORD *)&HouseClass_Player[45112] - StartTime >= TimeLeft ) /*0x4c9257*/
     {
 LABEL_15:
       v11 = (IUnknown *)this->DesiredFacing; /*0x4c92af*/
       goto LABEL_16; /*0x4c92af*/
     }
-    TimeLeft -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - StartTime; /*0x4c9259*/
+    TimeLeft -= *(_DWORD *)&HouseClass_Player[45112] - StartTime; /*0x4c9259*/
   }
   if ( !TimeLeft ) /*0x4c925d*/
     goto LABEL_15; /*0x4c925d*/
@@ -677,12 +677,12 @@ LABEL_15:
     v9 = this->RotationTimer.TimeLeft; /*0x4c9281*/
     if ( v8 != -1 ) /*0x4c9287*/
     {
-      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - v8 >= v9 ) /*0x4c928f*/
+      if ( *(_DWORD *)&HouseClass_Player[45112] - v8 >= v9 ) /*0x4c928f*/
       {
         v10 = 0; /*0x4c92ab*/
         goto LABEL_12; /*0x4c92ad*/
       }
-      LOWORD(v9) = v9 - (*(_WORD *)&HouseClass_Player.__pad_5568[23248] - v8); /*0x4c9291*/
+      LOWORD(v9) = v9 - (*(_WORD *)&HouseClass_Player[45112] - v8); /*0x4c9291*/
     }
     v10 = v9; /*0x4c9293*/
 LABEL_12:
@@ -697,7 +697,7 @@ LABEL_16:
   {
     v13 = abs16(v12.Value - LOWORD(this->StartFacing)) / ROT; /*0x4c92da*/
     p_RotationTimer = &this->RotationTimer; /*0x4c92e0*/
-    p_RotationTimer->StartTime = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x4c92e3*/
+    p_RotationTimer->StartTime = *(_DWORD *)&HouseClass_Player[45112]; /*0x4c92e3*/
     p_RotationTimer->pad_04 = v17; /*0x4c92e5*/
     p_RotationTimer->TimeLeft = v13; /*0x4c92e8*/
   }
@@ -741,12 +741,12 @@ LABEL_9:
       v6 = *(_DWORD *)v3->__pad_0; /*0x4c9343*/
       if ( v6 != -1 ) /*0x4c9348*/
       {
-        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - v6 >= TimeLeft ) /*0x4c9354*/
+        if ( *(_DWORD *)&HouseClass_Player[45112] - v6 >= TimeLeft ) /*0x4c9354*/
         {
           v7 = 0; /*0x4c9371*/
           goto LABEL_8; /*0x4c9373*/
         }
-        LOWORD(TimeLeft) = TimeLeft - (*(_WORD *)&HouseClass_Player.__pad_5568[23248] - v6); /*0x4c9356*/
+        LOWORD(TimeLeft) = TimeLeft - (*(_WORD *)&HouseClass_Player[45112] - v6); /*0x4c9356*/
       }
       v7 = TimeLeft; /*0x4c9358*/
 LABEL_8:
@@ -760,7 +760,7 @@ LABEL_12:
   {
     p_RotationTimer = &this->RotationTimer; /*0x4c93b3*/
     result = 0; /*0x4c93b6*/
-    p_RotationTimer->StartTime = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x4c93b8*/
+    p_RotationTimer->StartTime = *(_DWORD *)&HouseClass_Player[45112]; /*0x4c93b8*/
     p_RotationTimer->pad_04 = v12; /*0x4c93ba*/
   }
   else
@@ -768,7 +768,7 @@ LABEL_12:
     this->DesiredFacing = (unsigned int)*desiredFacing; /*0x4c9382*/
     this->StartFacing = (unsigned int)*desiredFacing; /*0x4c9386*/
     p_RotationTimer = &this->RotationTimer; /*0x4c9390*/
-    p_RotationTimer->StartTime = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x4c9393*/
+    p_RotationTimer->StartTime = *(_DWORD *)&HouseClass_Player[45112]; /*0x4c9393*/
     p_RotationTimer->pad_04 = v12; /*0x4c9399*/
     result = 1; /*0x4c939c*/
   }

@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
 
 // 0x4D3590
 namespace ra2 {
@@ -25,30 +28,30 @@ int __thiscall FootClass::Destruct(void *this)
   this->vtable1 = &FootClass::`vftable'; /*0x4d35a5*/
   this->vtable2 = &FootClass::`vftable'; /*0x4d35ac*/
   this->vtable3 = &vt_FootClass; /*0x4d35b3*/
-  if ( v2 && MEMORY[0xA8D63C].__pad_1258[268] ) /*0x4d35c2*/
+  if ( v2 && g_NetworkPlayerBuffer[4964] ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(v2, (IUnknown *)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
-  v3 = (*(int (__thiscall **)(char *, void **))(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[61332] + 16))( /*0x4d35e1*/
-         &MEMORY[0x89F690].__pad_579C[61332],
+  v3 = (*(int (__thiscall **)(char *, void **))(*(_DWORD *)&g_CellDirectionOffsets[83760] + 16))( /*0x4d35e1*/
+         &g_CellDirectionOffsets[83760],
          &v11);
   if ( v3 != -1 ) /*0x4d35e7*/
-    FootClass::RemoveFromPointerArray(&MEMORY[0x89F690].__pad_579C[61332], v3); /*0x4d35ef*/
+    FootClass::RemoveFromPointerArray(&g_CellDirectionOffsets[83760], v3); /*0x4d35ef*/
   v11 = this; /*0x4d3604*/
-  v4 = (*(int (__thiscall **)(char *, void **))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9796] + 16))( /*0x4d3608*/
-         &g_OverlayTypeConfig.__pad_579C[9796],
+  v4 = (*(int (__thiscall **)(char *, void **))(*(_DWORD *)&g_OverlayTypeConfig[32224] + 16))( /*0x4d3608*/
+         &g_OverlayTypeConfig[32224],
          &v11);
   if ( v4 != -1 ) /*0x4d360e*/
-    DynamicVector::RemoveItem(&g_OverlayTypeConfig.__pad_579C[9796], v4); /*0x4d3616*/
+    DynamicVector::RemoveItem(&g_OverlayTypeConfig[32224], v4); /*0x4d3616*/
   v5 = (AbstractClass *)this->parasiteImUsing; /*0x4d361b*/
   if ( v5 ) /*0x4d3623*/
   {
     (*(void (__thiscall **)(AbstractClass *, int))(*(_DWORD *)v5->__pad_0 + 32))(v5, 1); /*0x4d3629*/
     this->parasiteImUsing = 0; /*0x4d362c*/
   }
-  if ( (unsigned short)this->currentJumpjetMapCoords != *(_WORD *)&MEMORY[0x89F690].__pad_579C[61276] /*0x4d3653*/
-    || (unsigned short)this->FootClass_field_566 != *(_WORD *)&MEMORY[0x89F690].__pad_579C[61278] )
+  if ( (unsigned short)this->currentJumpjetMapCoords != *(_WORD *)&g_CellDirectionOffsets[83704] /*0x4d3653*/
+    || (unsigned short)this->FootClass_field_566 != *(_WORD *)&g_CellDirectionOffsets[83706] )
   {
-    v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)this + 690); /*0x4d365b*/
+    v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)this + 690); /*0x4d365b*/
     if ( (void *)v6[56] == this ) /*0x4d3666*/
       v6[56] = 0; /*0x4d3668*/
   }
@@ -224,14 +227,14 @@ void __userpurge FootClass::FootClass_ImbueLocomotor(
         WinAPI::Wrapper(-2147467261); /*0x710163*/
       (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)*v10 + 156))(*v10, 0); /*0x71016f*/
       v12 = *v10 == 0; /*0x710189*/
-      v32 = MEMORY[0xB0EA98]; /*0x71018b*/
+      v32 = DataGlobal_B0EA98; /*0x71018b*/
       if ( v12 ) /*0x71018f*/
         WinAPI::Wrapper(-2147467261); /*0x710196*/
       (*(void (__stdcall **)(_DWORD, int, int, int, int))(*(_DWORD *)*v10 + 112))( /*0x7101b3*/
         *v10,
         -1,
         g_TechnoClassPool,
-        MEMORY[0xB0EA94],
+        DataGlobal_B0EA94,
         v32);
       v15 = *v6; /*0x7101b6*/
       v16 = (*(int (__thiscall **)(_DWORD *, int *))(*v6 + 72))(v6, &v31); /*0x7101bf*/

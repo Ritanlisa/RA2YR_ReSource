@@ -97,7 +97,7 @@ LABEL_15:
         _check_range_exit(&off_87BED8, 29); /*0x7c9045*/
       return result; /*0x7c9045*/
     }
-    result = *(double *)&MEMORY[0x87C550]; /*0x7c9195*/
+    result = *(double *)&DataGlobal_87C550; /*0x7c9195*/
 LABEL_11:
     if ( !CRTGlobal_B7819C ) /*0x7c9051*/
       _startTwoArgErrorHandling(); /*0x7c9062*/
@@ -114,9 +114,9 @@ LABEL_11:
   v18 = HIBYTE(a5) >> 7; /*0x7c9131*/
   if ( a7 < 0 ) /*0x7c913c*/
   {
-    result = *(double *)&MEMORY[0x87C4F0]; /*0x7c913e*/
+    result = *(double *)&DataGlobal_87C4F0; /*0x7c913e*/
     if ( (v17 & v18) != 0 ) /*0x7c9146*/
-      result = -*(double *)&MEMORY[0x87C4F0]; /*0x7c9148*/
+      result = -*(double *)&DataGlobal_87C4F0; /*0x7c9148*/
     goto LABEL_11; /*0x7c9148*/
   }
   result = 0.0; /*0x7c9154*/

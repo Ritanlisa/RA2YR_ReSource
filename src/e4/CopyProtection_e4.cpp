@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x49F5C0
 bool CopyProtection::CheckLauncher()
@@ -59,8 +60,8 @@ char CopyProtection_NotifyLauncher()
         if ( timeGetTime() > v2 ) /*0x49f6f0*/
           goto LABEL_9; /*0x49f6f0*/
       }
-      MEMORY[0x89F75C] = MapViewOfFileEx((HANDLE)Msg.lParam, 0xF001Fu, 0, 0, 0, 0); /*0x49f723*/
-      if ( MEMORY[0x89F75C] ) /*0x49f728*/
+      lpBaseAddress = MapViewOfFileEx((HANDLE)Msg.lParam, 0xF001Fu, 0, 0, 0, 0); /*0x49f723*/
+      if ( lpBaseAddress ) /*0x49f728*/
         return 1; /*0x49f72d*/
     }
   }

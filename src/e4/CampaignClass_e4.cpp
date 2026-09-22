@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x46CB60
 namespace gamemd {
@@ -30,7 +32,7 @@ int __thiscall CampaignClass::CampaignClass(int this, ObjectClass *aP1)
     *(_DWORD *)&g_CampaignTypeArray->__pad_0[4 * v3] = this; /*0x46cbe8*/
   }
   this->q09C = 0; /*0x46cbf7*/
-  wcscpy((wchar_t *)(this + 672), (const wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472]); /*0x46cbfe*/
+  wcscpy((wchar_t *)(this + 672), (const wchar_t *)&DataGlobal_87F8E4[32336]); /*0x46cbfe*/
   return this; /*0x46cc08*/
 }
 }
@@ -61,7 +63,7 @@ int __thiscall CampaignClass::LoadFromINIList(char *this)
       (unsigned __int8 ***)this,
       (INIClass *)&stru_81B1A4.needsSave_flag,
       StringByIndex,
-      (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+      (INIClass *)&DataGlobal_87F8E4[42624],
       (INIClass *)Source,
       32);
     v5 = 0; /*0x46ce5f*/
@@ -97,7 +99,7 @@ LABEL_7:
           *(_DWORD *)&g_CampaignTypeArray->__pad_0[4 * v7] = v6; /*0x46cf34*/
         }
         LOBYTE(v6[2].sectionCount) = 0; /*0x46cf43*/
-        wcscpy((wchar_t *)v6[10].__pad_20, (const wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472]); /*0x46cf4a*/
+        wcscpy((wchar_t *)v6[10].__pad_20, (const wchar_t *)&DataGlobal_87F8E4[32336]); /*0x46cf4a*/
       }
       else
       {
@@ -168,14 +170,14 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   if ( !this->referenceCount ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
   v3 = this->alignmentPadding_3; /*0x49c5d4*/
-  if ( !MEMORY[0x89F578] ) /*0x49c5d9*/
+  if ( !DataGlobal_89F578 ) /*0x49c5d9*/
     CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49c5e0*/
-  if ( v3 < 0 || v3 >= MEMORY[0x89F574] ) /*0x49c5f5*/
+  if ( v3 < 0 || v3 >= DataGlobal_89F574 ) /*0x49c5f5*/
     return 0; /*0x49cae5*/
-  v27 = MEMORY[0x89F570] + 76 * v3; /*0x49c60d*/
+  v27 = DataGlobal_89F570 + 76 * v3; /*0x49c60d*/
   if ( this->uniqueId == this->q038 ) /*0x49c616*/
     return 1; /*0x49c61b*/
-  CCFileClass::Construct(v36, MEMORY[0x81F0F8]); /*0x49c631*/
+  CCFileClass::Construct(v36, g_Str_File_coopsave_ini); /*0x49c631*/
   v28[1] = 0; /*0x49c63a*/
   v28[2] = 0; /*0x49c63e*/
   INISectionList::Constructor(v29); /*0x49c642*/
@@ -195,28 +197,28 @@ char __thiscall CampaignClass_SaveProgress(char *this)
         break; /*0x49c695*/
       if ( isalnum(*v6) )
       {
-        MEMORY[0x89ED18][v5] = *v6; /*0x49c703*/
+        g_IsWindowed[v5] = *v6; /*0x49c703*/
       }
       else
       {
-        MEMORY[0x89ED18][v5] = 61; /*0x49c6a7*/
+        g_IsWindowed[v5] = 61; /*0x49c6a7*/
         v7 = v5 + 1; /*0x49c6ae*/
         v8 = *v6 >> 4; /*0x49c6b2*/
         if ( (unsigned int)v8 >= 0x10 )
           v9 = 0; /*0x49c6c9*/
         else
           v9 = v8 >= 10 ? v8 + 55 : v8 + 48;
-        MEMORY[0x89ED18][v7] = v9; /*0x49c6cb*/
+        g_IsWindowed[v7] = v9; /*0x49c6cb*/
         v5 = v7 + 1; /*0x49c6d3*/
         v10 = *v6 & 0xF; /*0x49c6d4*/
         if ( v10 > 0xFu )
         {
-          MEMORY[0x89ED18][v5] = 0; /*0x49c6f9*/
+          g_IsWindowed[v5] = 0; /*0x49c6f9*/
         }
         else
         {
           v11 = (*v6 & 0xFu) >= 0xA ? v10 + 55 : v10 + 48;
-          MEMORY[0x89ED18][v5] = v11; /*0x49c6e5*/
+          g_IsWindowed[v5] = v11; /*0x49c6e5*/
         }
       }
       v12 = v6[1]; /*0x49c709*/
@@ -225,8 +227,8 @@ char __thiscall CampaignClass_SaveProgress(char *this)
     }
     while ( v12 );
   }
-  MEMORY[0x89ED18][v5] = 0; /*0x49c720*/
-  strcpy(Block, MEMORY[0x89ED18]); /*0x49c73a*/
+  g_IsWindowed[v5] = 0; /*0x49c720*/
+  strcpy(Block, g_IsWindowed); /*0x49c73a*/
   v13 = this + 28; /*0x49c743*/
   v14 = 0; /*0x49c745*/
   for ( i = *v2; i; ++v13 )
@@ -235,28 +237,28 @@ char __thiscall CampaignClass_SaveProgress(char *this)
       break; /*0x49c753*/
     if ( isalnum(i) )
     {
-      MEMORY[0x89ED18][v14] = *v13; /*0x49c7a4*/
+      g_IsWindowed[v14] = *v13; /*0x49c7a4*/
     }
     else
     {
-      MEMORY[0x89ED18][v14] = 61; /*0x49c765*/
+      g_IsWindowed[v14] = 61; /*0x49c765*/
       v16 = v14 + 1; /*0x49c76c*/
       v17 = *v13 >> 4; /*0x49c770*/
       if ( (unsigned int)v17 >= 0x10 )
         v18 = 0; /*0x49c787*/
       else
         v18 = v17 >= 10 ? v17 + 55 : v17 + 48;
-      MEMORY[0x89ED18][v16] = v18; /*0x49c789*/
+      g_IsWindowed[v16] = v18; /*0x49c789*/
       v14 = v16 + 1; /*0x49c794*/
-      MEMORY[0x89ED18][v14] = EncodeDigitHex(*v13 & 0xF); /*0x49c79a*/
+      g_IsWindowed[v14] = EncodeDigitHex(*v13 & 0xF); /*0x49c79a*/
     }
     i = v13[1]; /*0x49c7aa*/
     ++v14; /*0x49c7ad*/
   }
-  MEMORY[0x89ED18][v14] = 0; /*0x49c7bd*/
-  strcat(Block, MEMORY[0x89ED18]); /*0x49c7df*/
+  g_IsWindowed[v14] = 0; /*0x49c7bd*/
+  strcat(Block, g_IsWindowed); /*0x49c7df*/
   CCFileClass::Construct3((int)v33); /*0x49c7ef*/
-  (*(void (__thiscall **)(_DWORD *, char *))(v33[0] + 8))(v33, MEMORY[0x81F0F8]); /*0x49c807*/
+  (*(void (__thiscall **)(_DWORD *, char *))(v33[0] + 8))(v33, g_Str_File_coopsave_ini); /*0x49c807*/
   (*(void (__thiscall **)(_DWORD *, int))(v33[0] + 28))(v33, 2); /*0x49c81a*/
   INIClass::ClearSection((int)v28, (int)Block, 0); /*0x49c828*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F19C, this->q038, 0); /*0x49c841*/
@@ -265,21 +267,21 @@ char __thiscall CampaignClass_SaveProgress(char *this)
         j < *(char *)(v27 + 8);
         INIClass::SetString((char *)v28, (unsigned __int8 *)Block, Buffer, *(char **)(this->q03C + 4 * j++)) )
   {
-    sprintf(Buffer, MEMORY[0x81F114], j + 1); /*0x49c87d*/
+    sprintf(Buffer, g_Str_Trace_Map_d, j + 1); /*0x49c87d*/
   }
-  v20 = MEMORY[0xA8DA84]; /*0x49c8ac*/
-  if ( MEMORY[0xA8DA84] ) /*0x49c8b4*/
+  v20 = Game_PlayerCount; /*0x49c8ac*/
+  if ( Game_PlayerCount ) /*0x49c8b4*/
   {
-    PlayerSide = (void *)SessionClass::GetPlayerSide(*(_DWORD *)MEMORY[0xA8DA78]); /*0x49c8be*/
+    PlayerSide = (void *)SessionClass::GetPlayerSide(*(_DWORD *)Game_PlayerInfoArray); /*0x49c8be*/
     INIClass::SetHouseName((char *)v28, (unsigned __int8 *)Block, unk_81F17C, PlayerSide); /*0x49c8d2*/
-    PlayerColor = SessionClass::GetPlayerColor(*(_DWORD *)MEMORY[0xA8DA78]); /*0x49c8e1*/
+    PlayerColor = SessionClass::GetPlayerColor(*(_DWORD *)Game_PlayerInfoArray); /*0x49c8e1*/
     INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F174, PlayerColor, 0); /*0x49c8f5*/
-    v20 = MEMORY[0xA8DA84]; /*0x49c8fa*/
+    v20 = Game_PlayerCount; /*0x49c8fa*/
   }
   v23 = 1; /*0x49c900*/
   if ( v20 > 1 ) /*0x49c907*/
   {
-    v24 = &MEMORY[0xA8B2A0]; /*0x49c909*/
+    v24 = &DataGlobal_A8B2A0; /*0x49c909*/
     while ( *v24 != -1 ) /*0x49c911*/
     {
       ++v23; /*0x49c913*/
@@ -287,21 +289,21 @@ char __thiscall CampaignClass_SaveProgress(char *this)
       if ( v23 >= v20 ) /*0x49c919*/
         goto LABEL_47; /*0x49c919*/
     }
-    v25 = (void *)SessionClass::GetPlayerSide(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v23)); /*0x49c925*/
+    v25 = (void *)SessionClass::GetPlayerSide(*(_DWORD *)(Game_PlayerInfoArray + 4 * v23)); /*0x49c925*/
     INIClass::SetHouseName((char *)v28, (unsigned __int8 *)Block, unk_81F16C, v25); /*0x49c939*/
-    v26 = SessionClass::GetPlayerColor(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v23)); /*0x49c949*/
+    v26 = SessionClass::GetPlayerColor(*(_DWORD *)(Game_PlayerInfoArray + 4 * v23)); /*0x49c949*/
     INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F164, v26, 0); /*0x49c95d*/
   }
 LABEL_47:
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F11C], this->q01A, 0); /*0x49c962*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, g_INI_Key_Time, this->q01A, 0); /*0x49c962*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F15C, this->q012, 0); /*0x49c98f*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F154, this->q04C, 0); /*0x49c9a8*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F14C], this->abstractFlags, 0); /*0x49c9c1*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F144], this->q054, 0); /*0x49c9da*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F13C], this->q058, 0); /*0x49c9f3*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F134], this->q017, 0); /*0x49ca0c*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F12C], this->nextArrayIndex, 0); /*0x49ca25*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F124], this->Name, 0); /*0x49ca3e*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, DataGlobal_81F14C, this->abstractFlags, 0); /*0x49c9c1*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, DataGlobal_81F144, this->q054, 0); /*0x49c9da*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, DataGlobal_81F13C, this->q058, 0); /*0x49c9f3*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, DataGlobal_81F134, this->q017, 0); /*0x49ca0c*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, DataGlobal_81F12C, this->nextArrayIndex, 0); /*0x49ca25*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, DataGlobal_81F124, this->Name, 0); /*0x49ca3e*/
   INIClass::WriteDigest(v28, (int)v33, 0); /*0x49ca51*/
   CCFileClass::Reset(v33); /*0x49ca5d*/
   v33[0] = &vt_CCFileClass; /*0x49ca67*/

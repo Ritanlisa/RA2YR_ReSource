@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
 
 // 0x406650
 int AudioMixer::SetVolume()

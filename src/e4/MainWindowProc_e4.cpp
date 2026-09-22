@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_724000_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x777420
 namespace gamemd {
@@ -19,9 +21,9 @@ HWND sub_777420()
   Debug::Log(); /*0x777425*/
   sub_407040(v0); /*0x77742d*/
   Debug::Log(); /*0x77744b*/
-  if ( g_WWMouseClass_Instance && byte_B73560 == 1 && !MEMORY[0xA8ED6B] ) /*0x77746d*/
+  if ( g_WWMouseClass_Instance && byte_B73560 == 1 && !ArmageddonMode ) /*0x77746d*/
     (*(void (**)(void))(*(_DWORD *)g_WWMouseClass_Instance + 24))(); /*0x777471*/
-  if ( !MEMORY[0x89F978] ) /*0x77747c*/
+  if ( !g_lpDirectDraw7 ) /*0x77747c*/
   {
     if ( DSurface_Alternate ) /*0x77748a*/
       DSurface::RestoreIfLost((int *)DSurface_Alternate); /*0x77748c*/
@@ -29,13 +31,13 @@ HWND sub_777420()
       DSurface::RestoreIfLost((int *)g_DSurface_Hidden); /*0x77749b*/
     if ( DSurface_Composite /*0x7774c7*/
       && DSurface::RestoreIfLost((int *)DSurface_Composite)
-      && (!MEMORY[0xA8ED5C] || (int)g_CurrentFrame > 16) )
+      && (!g_BounceClassInit || (int)g_CurrentFrame > 16) )
     {
       (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Composite + 24))(DSurface_Composite, 0); /*0x7774d3*/
     }
     if ( DSurface_Tile /*0x7774f8*/
       && DSurface::RestoreIfLost((int *)DSurface_Tile)
-      && (!MEMORY[0xA8ED5C] || (int)g_CurrentFrame > 16) )
+      && (!g_BounceClassInit || (int)g_CurrentFrame > 16) )
     {
       (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Tile + 24))(DSurface_Tile, 0); /*0x777504*/
     }
@@ -44,13 +46,13 @@ HWND sub_777420()
       if ( DSurface::RestoreIfLost((int *)DSurface_Sidebar) ) /*0x777511*/
       {
         g_CameoRenderFlag = 1; /*0x77751f*/
-        if ( !MEMORY[0xA8ED5C] || (int)g_CurrentFrame > 16 ) /*0x777530*/
+        if ( !g_BounceClassInit || (int)g_CurrentFrame > 16 ) /*0x777530*/
           (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Sidebar + 24))(DSurface_Sidebar, 0); /*0x77753c*/
       }
     }
     if ( g_DSurface_Primary /*0x777561*/
       && DSurface::RestoreIfLost((int *)g_DSurface_Primary)
-      && (!MEMORY[0xA8ED5C] || (int)g_CurrentFrame > 16) )
+      && (!g_BounceClassInit || (int)g_CurrentFrame > 16) )
     {
       (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)g_DSurface_Primary + 20))( /*0x777572*/
         g_DSurface_Primary,
@@ -58,7 +60,7 @@ HWND sub_777420()
         0);
     }
   }
-  MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2); /*0x77757c*/
+  MapClass::MarkForRedraw(&DataGlobal_87F7E8, 2); /*0x77757c*/
   InvalidateRect(g_hWnd, 0, 0); /*0x77758c*/
   LOBYTE(v1) = 0; /*0x777592*/
   AsyncIO::Read(v1); /*0x777594*/
@@ -84,8 +86,8 @@ int sub_5C09A0()
 {
   int result; // eax
 
-  if ( MEMORY[0xABF3F8] ) /*0x5c09a8*/
-    return (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0xABF3F8] + 40))(MEMORY[0xABF3F8]); /*0x5c09ac*/
+  if ( DataGlobal_ABF3F8 ) /*0x5c09a8*/
+    return (*(int (__thiscall **)(int))(*(_DWORD *)DataGlobal_ABF3F8 + 40))(DataGlobal_ABF3F8); /*0x5c09ac*/
   return result; /*0x5c09af*/
 }
 }

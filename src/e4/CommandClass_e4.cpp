@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Array_e4.hpp"
 
 // 0x6D1200
 char CommandClass::BuildBar()
@@ -49,19 +50,19 @@ char __thiscall CommandClass_BuildBar(void *this)
   int v41; // [esp+18h] [ebp-Ch]
   char *v42; // [esp+1Ch] [ebp-8h]
 
-  v2 = (int *)&MEMORY[0xB0C1C0]; /*0x6d1207*/
+  v2 = (int *)&DataGlobal_B0C1C0; /*0x6d1207*/
   do /*0x6d1224*/
   {
     (*(void (__thiscall **)(int *))(*v2 + 32))(v2); /*0x6d1210*/
     (*(void (__thiscall **)(void *, int *))(this->q00C)(this, v2); /*0x6d1218*/
     v2 += 24; /*0x6d121b*/
   }
-  while ( (int)v2 < (int)&MEMORY[0xB0CB20] ); /*0x6d1224*/
-  (*(void (__thiscall **)(void *, _DWORD *))(this->q00C)(this, MEMORY[0xB0CCB0]); /*0x6d122f*/
-  v3 = g_ObjectTrackingPool[MEMORY[0xB0CD24]]; /*0x6d1238*/
+  while ( (int)v2 < (int)&DataGlobal_B0CB20 ); /*0x6d1224*/
+  (*(void (__thiscall **)(void *, _DWORD *))(this->q00C)(this, DataGlobal_B0CCB0); /*0x6d122f*/
+  v3 = g_ObjectTrackingPool[DataGlobal_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
-    v4 = (_DWORD *)((char *)&MEMORY[0xB0C1C0] + 96 * v3); /*0x6d124e*/
+    v4 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v3); /*0x6d124e*/
     if ( v4 ) /*0x6d1256*/
     {
       Struct::Zero25(&v37); /*0x6d125c*/
@@ -73,16 +74,16 @@ char __thiscall CommandClass_BuildBar(void *this)
       v8 = v4[5]; /*0x6d1275*/
       v41 = v7; /*0x6d1278*/
       v37 = v6; /*0x6d1283*/
-      v42 = MEMORY[0x8428DC]; /*0x6d1287*/
+      v42 = DataGlobal_8428DC; /*0x6d1287*/
       v40 = v8; /*0x6d128f*/
       HashTable::Remove((int *)g_TacticalRender, v6); /*0x6d1293*/
       CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d12a3*/
     }
   }
-  v9 = g_ObjectTrackingPool[MEMORY[0xB0CB3C]]; /*0x6d12ad*/
+  v9 = g_ObjectTrackingPool[DataGlobal_B0CB3C]; /*0x6d12ad*/
   if ( v9 <= 0x18 ) /*0x6d12b6*/
   {
-    v10 = (_DWORD *)((char *)&MEMORY[0xB0C1C0] + 96 * v9); /*0x6d12c3*/
+    v10 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v9); /*0x6d12c3*/
     if ( v10 ) /*0x6d12cb*/
     {
       Struct::Zero25(&v37); /*0x6d12d1*/
@@ -94,16 +95,16 @@ char __thiscall CommandClass_BuildBar(void *this)
       v14 = v10[6]; /*0x6d12ea*/
       v40 = v13; /*0x6d12ed*/
       v37 = v12; /*0x6d12f8*/
-      v42 = MEMORY[0x8428D0]; /*0x6d12fc*/
+      v42 = DataGlobal_8428D0; /*0x6d12fc*/
       v41 = v14; /*0x6d1304*/
       HashTable::Remove((int *)g_TacticalRender, v12); /*0x6d1308*/
       CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d1318*/
     }
   }
-  v15 = g_ObjectTrackingPool[MEMORY[0xB0C1B8]]; /*0x6d1323*/
+  v15 = g_ObjectTrackingPool[DataGlobal_B0C1B8]; /*0x6d1323*/
   if ( v15 <= 0x18 ) /*0x6d132c*/
   {
-    v16 = (_DWORD *)((char *)&MEMORY[0xB0C1C0] + 96 * v15); /*0x6d1339*/
+    v16 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v15); /*0x6d1339*/
     if ( v16 ) /*0x6d1341*/
     {
       Struct::Zero25(&v37); /*0x6d1347*/
@@ -115,16 +116,16 @@ char __thiscall CommandClass_BuildBar(void *this)
       v20 = v16[5]; /*0x6d1360*/
       v41 = v19; /*0x6d1363*/
       v37 = v18; /*0x6d136e*/
-      v42 = MEMORY[0x8428C4]; /*0x6d1372*/
+      v42 = DataGlobal_8428C4; /*0x6d1372*/
       v40 = v20; /*0x6d137a*/
       HashTable::Remove((int *)g_TacticalRender, v18); /*0x6d137e*/
       CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d138e*/
     }
   }
-  v21 = g_ObjectTrackingPool[MEMORY[0xB0CB20]]; /*0x6d1398*/
+  v21 = g_ObjectTrackingPool[DataGlobal_B0CB20]; /*0x6d1398*/
   if ( v21 <= 0x18 ) /*0x6d13a1*/
   {
-    v22 = (_DWORD *)((char *)&MEMORY[0xB0C1C0] + 96 * v21); /*0x6d13ae*/
+    v22 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v21); /*0x6d13ae*/
     if ( v22 ) /*0x6d13b6*/
     {
       Struct::Zero25(&v37); /*0x6d13bc*/
@@ -136,35 +137,35 @@ char __thiscall CommandClass_BuildBar(void *this)
       v26 = v22[6]; /*0x6d13d5*/
       v40 = v25; /*0x6d13d8*/
       v37 = v24; /*0x6d13e3*/
-      v42 = MEMORY[0x8428B8]; /*0x6d13e7*/
+      v42 = DataGlobal_8428B8; /*0x6d13e7*/
       v41 = v26; /*0x6d13ef*/
       HashTable::Remove((int *)g_TacticalRender, v24); /*0x6d13f3*/
       CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d1403*/
     }
   }
-  v27 = g_ObjectTrackingPool[MEMORY[0xB0CB68]]; /*0x6d1410*/
+  v27 = g_ObjectTrackingPool[DataGlobal_B0CB68]; /*0x6d1410*/
   if ( v27 > 0x18 ) /*0x6d1419*/
     v28 = 0; /*0x6d142e*/
   else
-    v28 = (_DWORD *)((char *)&MEMORY[0xB0C1C0] + 96 * v27); /*0x6d1426*/
-  PushCommandClass::Execute(v28, (int)MEMORY[0x8428AC]); /*0x6d1435*/
-  v29 = g_ObjectTrackingPool[MEMORY[0xB0CC1C]]; /*0x6d1440*/
+    v28 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v27); /*0x6d1426*/
+  PushCommandClass::Execute(v28, (int)DataGlobal_8428AC); /*0x6d1435*/
+  v29 = g_ObjectTrackingPool[DataGlobal_B0CC1C]; /*0x6d1440*/
   if ( v29 > 0x18 ) /*0x6d1449*/
     v30 = 0; /*0x6d145e*/
   else
-    v30 = (_DWORD *)((char *)&MEMORY[0xB0C1C0] + 96 * v29); /*0x6d1456*/
-  PushCommandClass::Execute(v30, (int)MEMORY[0x842898]); /*0x6d1465*/
-  Entry = GetFontClassEntry(MEMORY[0xB0CB6C]); /*0x6d1470*/
-  PushCommandClass::Execute(Entry, (int)MEMORY[0x84288C]); /*0x6d147c*/
-  v32 = GetFontClassEntry(MEMORY[0xB0CC20]); /*0x6d1487*/
-  PushCommandClass::Execute(v32, (int)MEMORY[0x842880]); /*0x6d1493*/
-  v33 = GetFontClassEntry(MEMORY[0xB0CC28]); /*0x6d149e*/
-  PushCommandClass::Execute(v33, (int)MEMORY[0x842874]); /*0x6d14aa*/
-  v34 = GetFontClassEntry(MEMORY[0xB0CD28]); /*0x6d14b5*/
-  PushCommandClass::Execute(v34, (int)MEMORY[0x842868]); /*0x6d14c1*/
-  v35 = GetFontClassEntry(MEMORY[0xB0CB38]); /*0x6d14cc*/
-  PushCommandClass::Execute(v35, (int)MEMORY[0x842858]); /*0x6d14d8*/
-  return PushCommandClass::Execute(MEMORY[0xB0CCB0], (int)MEMORY[0x842848]); /*0x6d14ec*/
+    v30 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v29); /*0x6d1456*/
+  PushCommandClass::Execute(v30, (int)DataGlobal_842898); /*0x6d1465*/
+  Entry = GetFontClassEntry(DataGlobal_B0CB6C); /*0x6d1470*/
+  PushCommandClass::Execute(Entry, (int)DataGlobal_84288C); /*0x6d147c*/
+  v32 = GetFontClassEntry(DataGlobal_B0CC20); /*0x6d1487*/
+  PushCommandClass::Execute(v32, (int)DataGlobal_842880); /*0x6d1493*/
+  v33 = GetFontClassEntry(DataGlobal_B0CC28); /*0x6d149e*/
+  PushCommandClass::Execute(v33, (int)DataGlobal_842874); /*0x6d14aa*/
+  v34 = GetFontClassEntry(DataGlobal_B0CD28); /*0x6d14b5*/
+  PushCommandClass::Execute(v34, (int)DataGlobal_842868); /*0x6d14c1*/
+  v35 = GetFontClassEntry(DataGlobal_B0CB38); /*0x6d14cc*/
+  PushCommandClass::Execute(v35, (int)DataGlobal_842858); /*0x6d14d8*/
+  return PushCommandClass::Execute(DataGlobal_B0CCB0, (int)DataGlobal_842848); /*0x6d14ec*/
 }
 }
 

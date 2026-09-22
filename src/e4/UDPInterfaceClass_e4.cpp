@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/NetworkClass_e4.hpp"
 
 // 0x7B1B50
 char UDPInterfaceClass::connect()
@@ -83,7 +87,7 @@ void __thiscall UDPInterfaceClass_Destru::_vt29(_DWORD *this, unsigned __int16 a
   int v3; // eax
   _WORD *v4; // edx
 
-  if ( !a2 || a2 == *(_DWORD *)&MEMORY[0x841F30] || (v2 = this->q3F330, v3 = 0, v2 <= 0) ) /*0x7b33f6*/
+  if ( !a2 || a2 == *(_DWORD *)&hostshort || (v2 = this->q3F330, v3 = 0, v2 <= 0) ) /*0x7b33f6*/
   {
 LABEL_7:
     this->q3F334 = -1; /*0x7b340b*/
@@ -238,7 +242,7 @@ LABEL_22:
     }
     if ( v26 ) /*0x7b3f0f*/
     {
-      if ( !v39 && !MEMORY[0xA8DBA0] ) /*0x7b3f24*/
+      if ( !v39 && !g_Network_IsHosting ) /*0x7b3f24*/
       {
         v28 = this->qFD58; /*0x7b3f26*/
         v29 = 0; /*0x7b3f2c*/
@@ -290,9 +294,9 @@ LABEL_60:
       if ( *(_DWORD *)&netshort.sa_data[2] == v32 ) /*0x7b4055*/
       {
         *((_WORD *)v13 + 13) = 0; /*0x7b4057*/
-        *v13 = MEMORY[0xA8DBB0]; /*0x7b4065*/
-        v13[1] = MEMORY[0xA8DBB4]; /*0x7b406c*/
-        v13[2] = MEMORY[0xA8DBB8]; /*0x7b4075*/
+        *v13 = DataGlobal_A8DBB0; /*0x7b4065*/
+        v13[1] = DataGlobal_A8DBB4; /*0x7b406c*/
+        v13[2] = DataGlobal_A8DBB8; /*0x7b4075*/
       }
       else
       {
@@ -363,7 +367,7 @@ LABEL_25:
   {
     if ( *(_DWORD *)&netshort.sa_data[2] != htonl(0x7F000001u) ) /*0x7b3c33*/
     {
-      *(_WORD *)netshort.sa_data = htons(MEMORY[0x841F34]); /*0x7b3c4b*/
+      *(_WORD *)netshort.sa_data = htons(DataGlobal_841F34); /*0x7b3c4b*/
       *(_DWORD *)&netshort.sa_data[2] = htonl(0x7F000001u); /*0x7b3c55*/
     }
   }
@@ -371,13 +375,13 @@ LABEL_25:
   {
     v14 = *((_WORD *)v13 + 13); /*0x7b3c5b*/
     if ( !v14 ) /*0x7b3c62*/
-      v14 = MEMORY[0x841F30]; /*0x7b3c64*/
+      v14 = hostshort; /*0x7b3c64*/
     *(_WORD *)netshort.sa_data = htons(v14); /*0x7b3c75*/
-    if ( v13[1] == MEMORY[0xA8DBB4] /*0x7b3c9a*/
-      && (!MEMORY[0xA8DA84] || GUID::Compare((char *)&MEMORY[0xA8DBB0], *(_DWORD *)MEMORY[0xA8DA78] + 40)) )
+    if ( v13[1] == DataGlobal_A8DBB4 /*0x7b3c9a*/
+      && (!Game_PlayerCount || GUID::Compare((char *)&DataGlobal_A8DBB0, *(_DWORD *)Game_PlayerInfoArray + 40)) )
     {
       *(_DWORD *)&netshort.sa_data[2] = htonl(0x7F000001u); /*0x7b3cb4*/
-      *(_WORD *)netshort.sa_data = htons(MEMORY[0x841F3C]); /*0x7b3cbe*/
+      *(_WORD *)netshort.sa_data = htons(DataGlobal_841F3C); /*0x7b3cbe*/
     }
   }
   v41 = *(_DWORD *)&netshort.sa_data[2]; /*0x7b3ccc*/
@@ -679,7 +683,7 @@ char __thiscall UDPInterfaceClass_Destru::Bind(void ***this, int a2)
 
   if ( *((_BYTE *)this + 258152) || (result = ((int (__thiscall *)(void ***))(*this)[25])(this)) != 0 ) /*0x7b346b*/
   {
-    ((void (__thiscall *)(void ***, _WORD))(*this)[23])(this, *(_WORD *)&stru_830620.__pad_579C[49524]); /*0x7b3483*/
+    ((void (__thiscall *)(void ***, _WORD))(*this)[23])(this, *(_WORD *)&stru_830620[71952]); /*0x7b3483*/
     Debug::Log(); /*0x7b348b*/
     if ( gethostname(name, 128) ) /*0x7b349d*/
       Debug::Log(); /*0x7b34b0*/
@@ -737,7 +741,7 @@ char __thiscall UDPInterfaceClass_Destru::Bind(void ***this, int a2)
     else
     {
       v19.sa_family = 2; /*0x7b361c*/
-      *(_WORD *)v19.sa_data = htons(*(u_short *)&stru_830620.__pad_579C[49532]); /*0x7b362a*/
+      *(_WORD *)v19.sa_data = htons(*(u_short *)&stru_830620[71960]); /*0x7b362a*/
       *(_DWORD *)&v19.sa_data[2] = htonl(0); /*0x7b3639*/
       Debug::Log(); /*0x7b363d*/
       if ( bind((SOCKET)this->q3F070, &v19, 16) == -1 ) /*0x7b365b*/

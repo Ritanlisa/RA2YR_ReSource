@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_7639A0_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
 
 // 0x502160
 namespace gamemd {

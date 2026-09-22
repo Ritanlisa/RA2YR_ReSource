@@ -2,6 +2,13 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/TeamTypeClass_28_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/TaskForceClass_e4.hpp"
+#include "e4/classes/Waypoint_e4.hpp"
 
 // 0x4C98B0
 namespace gamemd {
@@ -45,16 +52,16 @@ int __thiscall TeamTypeClass_Constructor(int this)
   this->vtable2 = &FactoryClass::`vftable'; /*0x4c9926*/
   this->vtable3 = &vt_FactoryClass; /*0x4c992d*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x4c9934*/
-  if ( MEMORY[0xA83E40] < MEMORY[0xA83E38] /*0x4c996d*/
-    || (MEMORY[0xA83E3D] || !MEMORY[0xA83E38])
-    && MEMORY[0xA83E44] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA83E30] + 8))(
-         &MEMORY[0xA83E30],
-         MEMORY[0xA83E38] + MEMORY[0xA83E44],
+  if ( g_TeamTypeCapacity < DataGlobal_A83E38 /*0x4c996d*/
+    || (DataGlobal_A83E3D || !DataGlobal_A83E38)
+    && DataGlobal_A83E44 > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_A83E30 + 8))(
+         &DataGlobal_A83E30,
+         DataGlobal_A83E38 + DataGlobal_A83E44,
          0) )
   {
-    v3 = MEMORY[0xA83E40]++; /*0x4c997a*/
-    *((_DWORD *)MEMORY[0xA83E34] + v3) = this; /*0x4c9989*/
+    v3 = g_TeamTypeCapacity++; /*0x4c997a*/
+    *((_DWORD *)g_TeamTypeCount + v3) = this; /*0x4c9989*/
   }
   v4 = g_CurrentFrame; /*0x4c998c*/
   this->TeamTypeClass_field_38 = 0; /*0x4c9996*/
@@ -62,16 +69,16 @@ int __thiscall TeamTypeClass_Constructor(int this)
   this->TeamTypeClass_field_30 = v7; /*0x4c999f*/
   this->TeamTypeClass_field_34 = 0; /*0x4c99a2*/
   this->TeamTypeClass_field_24 = 0; /*0x4c99a5*/
-  if ( g_AlphaShapePool < MEMORY[0xB0F728] /*0x4c99dc*/
-    || (MEMORY[0xB0F72D] || !MEMORY[0xB0F728])
-    && MEMORY[0xB0F734] > 0
+  if ( g_AlphaShapePool < DataGlobal_B0F728 /*0x4c99dc*/
+    || (DataGlobal_B0F72D || !DataGlobal_B0F728)
+    && DataGlobal_B0F734 > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(AbstractClass_Array + 8))(
          &AbstractClass_Array,
-         MEMORY[0xB0F728] + MEMORY[0xB0F734],
+         DataGlobal_B0F728 + DataGlobal_B0F734,
          0) )
   {
     v5 = g_AlphaShapePool++; /*0x4c99e9*/
-    *((_DWORD *)MEMORY[0xB0F724] + v5) = this; /*0x4c99f8*/
+    *((_DWORD *)DataGlobal_B0F724 + v5) = this; /*0x4c99f8*/
   }
   return this; /*0x4c99fd*/
 }
@@ -170,7 +177,7 @@ TaskForceClass *__thiscall TeamTypeClass::FindOrCreateTaskForce(ObjectClass *thi
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6e860c*/
     return 0; /*0x6e866f*/
   v2 = 0; /*0x6e861d*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[22060] <= 0 ) /*0x6e8621*/
+  if ( *(int *)&HouseClass_Player[43924] <= 0 ) /*0x6e8621*/
   {
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0xD4u); /*0x6e8646*/
@@ -178,12 +185,12 @@ LABEL_6:
       return (TaskForceClass *)TaskForceClass::Construct(v3, this); /*0x6e8661*/
     return 0; /*0x6e8655*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22048] + 4 * v2) + 36), this) ) /*0x6e863a*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[43912] + 4 * v2) + 36), this) ) /*0x6e863a*/
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[22060] ) /*0x6e8644*/
+    if ( ++v2 >= *(int *)&HouseClass_Player[43924] ) /*0x6e8644*/
       goto LABEL_6; /*0x6e8644*/
   }
-  return *(TaskForceClass **)(*(_DWORD *)&HouseClass_Player.__pad_5568[22048] + 4 * v2); /*0x6e865f*/
+  return *(TaskForceClass **)(*(_DWORD *)&HouseClass_Player[43912] + 4 * v2); /*0x6e865f*/
 }
 }
 } // namespace gamemd
@@ -343,121 +350,121 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x6f112b*/
                     (int)aP1,
                     (unsigned __int8 *)(this + 36),
-                    (CCINIClass *)&stru_830620.__pad_579C[54064],
+                    (CCINIClass *)&stru_830620[76492],
                     *(INIClass **)(this + 160));
   v44 = *(CCINIClass **)(this + 192); /*0x6f1138*/
   this->q0A0 = Int_Overwrite; /*0x6f113f*/
   this->q0C0 = INIClass::ReadInt_Overwrite( /*0x6f114a*/
                               (int)aP1,
                               (unsigned __int8 *)(this + 36),
-                              (CCINIClass *)&stru_830620.__pad_579C[54044],
+                              (CCINIClass *)&stru_830620[76472],
                               (INIClass *)v44);
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6f115f*/
                      (int)aP1,
                      (unsigned __int8 *)(this + 36),
-                     (CCINIClass *)&stru_830620.__pad_579C[54032],
+                     (CCINIClass *)&stru_830620[76460],
                      this->q0A4);
   v8 = *(_BYTE *)(this + 165); /*0x6f1164*/
   this->q0A4 = Bool_Overwrite; /*0x6f116a*/
   v9 = INIClass::ReadBool_Overwrite( /*0x6f1179*/
          (int)aP1,
          (unsigned __int8 *)(this + 36),
-         (CCINIClass *)&stru_830620.__pad_579C[54024],
+         (CCINIClass *)&stru_830620[76452],
          v8);
   v45 = *(_BYTE *)(this + 166); /*0x6f1186*/
   *(_BYTE *)(this + 165) = v9; /*0x6f118d*/
   *(_BYTE *)(this + 166) = INIClass::ReadBool_Overwrite( /*0x6f1198*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_830620.__pad_579C[54012],
+                             (CCINIClass *)&stru_830620[76440],
                              v45);
   v10 = INIClass::ReadBool_Overwrite( /*0x6f11ad*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[54000],
+          (CCINIClass *)&stru_830620[76428],
           *(_BYTE *)(this + 167));
   v11 = this->q0A9; /*0x6f11b2*/
   *(_BYTE *)(this + 167) = v10; /*0x6f11b8*/
   v12 = INIClass::ReadBool_Overwrite( /*0x6f11c7*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53988],
+          (CCINIClass *)&stru_830620[76416],
           v11);
   v46 = this->q0AA; /*0x6f11d4*/
   this->q0A9 = v12; /*0x6f11db*/
   this->q0AA = INIClass::ReadBool_Overwrite( /*0x6f11e6*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_830620.__pad_579C[53976],
+                             (CCINIClass *)&stru_830620[76404],
                              v46);
   v13 = INIClass::ReadBool_Overwrite( /*0x6f11fb*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53964],
+          (CCINIClass *)&stru_830620[76392],
           this->q0AB);
   v14 = this->TeamTypeClass_field_2C; /*0x6f1200*/
   this->q0AB = v13; /*0x6f1206*/
   v15 = INIClass::ReadBool_Overwrite( /*0x6f1215*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53956],
+          (CCINIClass *)&stru_830620[76384],
           v14);
   v47 = *(_BYTE *)(this + 177); /*0x6f1222*/
   this->TeamTypeClass_field_2C = v15; /*0x6f1229*/
   *(_BYTE *)(this + 177) = INIClass::ReadBool_Overwrite( /*0x6f1234*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_830620.__pad_579C[53936],
+                             (CCINIClass *)&stru_830620[76364],
                              v47);
   v16 = INIClass::ReadBool_Overwrite( /*0x6f1249*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53924],
+          (CCINIClass *)&stru_830620[76352],
           this->q0A8);
   v17 = this->q02B; /*0x6f124e*/
   this->q0A8 = v16; /*0x6f1254*/
   v18 = INIClass::ReadBool_Overwrite( /*0x6f1263*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53916],
+          (CCINIClass *)&stru_830620[76344],
           v17);
   v48 = this->q0AF; /*0x6f1270*/
   this->q02B = v18; /*0x6f1277*/
   this->q0AF = INIClass::ReadBool_Overwrite( /*0x6f1282*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_830620.__pad_579C[53908],
+                             (CCINIClass *)&stru_830620[76336],
                              v48);
   v19 = INIClass::ReadBool_Overwrite( /*0x6f1297*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53892],
+          (CCINIClass *)&stru_830620[76320],
           *(_BYTE *)(this + 174));
   v20 = *(_BYTE *)(this + 173); /*0x6f129c*/
   *(_BYTE *)(this + 174) = v19; /*0x6f12a2*/
   v21 = INIClass::ReadBool_Overwrite( /*0x6f12b1*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53880],
+          (CCINIClass *)&stru_830620[76308],
           v20);
   v49 = *(_BYTE *)(this + 179); /*0x6f12be*/
   *(_BYTE *)(this + 173) = v21; /*0x6f12c5*/
   *(_BYTE *)(this + 179) = INIClass::ReadBool_Overwrite( /*0x6f12d0*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_830620.__pad_579C[53868],
+                             (CCINIClass *)&stru_830620[76296],
                              v49);
   v22 = INIClass::ReadInt_Overwrite( /*0x6f12e5*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53856],
+          (CCINIClass *)&stru_830620[76284],
           *(INIClass **)(this + 180));
   v23 = *(CCINIClass **)(this + 184); /*0x6f12ea*/
   this->q0B4 = v22; /*0x6f12f0*/
   v24 = INIClass::ReadInt_Overwrite( /*0x6f12ff*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53852],
+          (CCINIClass *)&stru_830620[76280],
           (INIClass *)v23);
   v50 = *(CCINIClass **)(this + 204); /*0x6f130c*/
   this->q0B8 = v24; /*0x6f1313*/
@@ -468,7 +475,7 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
          aP1,
          (INIClass *)(this + 36),
          (unsigned __int8 *)unk_81728C,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          Destination,
          128) )
   {
@@ -483,66 +490,66 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   v29 = INIClass::ReadInt_Overwrite( /*0x6f136c*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53256],
+          (CCINIClass *)&stru_830620[75684],
           (INIClass *)v28);
   v51 = *(_BYTE *)(this + 242); /*0x6f1379*/
   this->q09C = v29; /*0x6f1380*/
   *(_BYTE *)(this + 242) = INIClass::ReadBool_Overwrite( /*0x6f138b*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_830620.__pad_579C[53836],
+                             (CCINIClass *)&stru_830620[76264],
                              v51);
   v30 = INIClass::ReadBool_Overwrite( /*0x6f13a0*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53824],
+          (CCINIClass *)&stru_830620[76252],
           *(_BYTE *)(this + 243));
   v31 = *(_BYTE *)(this + 246); /*0x6f13a5*/
   *(_BYTE *)(this + 243) = v30; /*0x6f13ab*/
   v32 = INIClass::ReadBool_Overwrite( /*0x6f13ba*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&g_INI_Key_Height.__pad_41[3],
+          (CCINIClass *)&g_INI_Key_Height[68],
           v31);
   v52 = this->q0F7; /*0x6f13c7*/
   *(_BYTE *)(this + 246) = v32; /*0x6f13ce*/
   this->q0F7 = INIClass::ReadBool_Overwrite( /*0x6f13d9*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_830620.__pad_579C[53800],
+                             (CCINIClass *)&stru_830620[76228],
                              v52);
   v33 = INIClass::ReadBool_Overwrite( /*0x6f13ee*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53772],
+          (CCINIClass *)&stru_830620[76200],
           this->UINameLabel);
   v34 = *(_BYTE *)(this + 245); /*0x6f13f3*/
   this->UINameLabel = v33; /*0x6f13f9*/
   v35 = INIClass::ReadBool_Overwrite( /*0x6f1408*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[53744],
+          (CCINIClass *)&stru_830620[76172],
           v34);
   v36 = *(CCINIClass **)(this + 212); /*0x6f140d*/
   *(_BYTE *)(this + 245) = v35; /*0x6f141a*/
   v37 = (INIClass *)Waypoint::To_String((int)v36); /*0x6f1420*/
   if ( (int)INIClass::GetString(aP1, (INIClass *)(this + 36), (unsigned __int8 *)&stru_817244, v37, &aP4, 64) > 0 ) /*0x6f1435*/
-    this->q0D4 = String::To_Waypoint(aP4.__pad_0); /*0x6f1440*/
+    this->q0D4 = String::To_Waypoint(aP4[0]); /*0x6f1440*/
   v38 = (INIClass *)Waypoint::To_String(this->q0D8); /*0x6f1453*/
   if ( (int)INIClass::GetString( /*0x6f1468*/
               aP1,
               (INIClass *)(this + 36),
-              (unsigned __int8 *)&stru_830620.__pad_579C[53724],
+              (unsigned __int8 *)&stru_830620[76152],
               v38,
               &aP4,
               64) > 0 )
-    this->q0D8 = String::To_Waypoint(aP4.__pad_0); /*0x6f1473*/
+    this->q0D8 = String::To_Waypoint(aP4[0]); /*0x6f1473*/
   v39 = *(INIClass **)(this + 224); /*0x6f1479*/
   if ( INIClass::GetString( /*0x6f1496*/
          aP1,
          (INIClass *)(this + 36),
          (unsigned __int8 *)&stru_817348,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          Destination,
          128) )
   {
@@ -558,7 +565,7 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
          aP1,
          (INIClass *)(this + 36),
          (unsigned __int8 *)&stru_8172FC,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          Destination,
          128) )
   {
@@ -571,15 +578,15 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   this->q0E4 = TaskForce; /*0x6f14e6*/
   if ( !TaskForce ) /*0x6f14ef*/
   {
-    if ( *(int *)&MEMORY[0xA8D63C].__pad_1258[76] <= 0 ) /*0x6f14f8*/
+    if ( *(int *)&g_NetworkPlayerBuffer[4772] <= 0 ) /*0x6f14f8*/
       return 0; /*0x6f14f8*/
-    this->q0E4 = **(_DWORD **)&MEMORY[0xA8D63C].__pad_1258[64]; /*0x6f1501*/
+    this->q0E4 = **(_DWORD **)&g_NetworkPlayerBuffer[4760]; /*0x6f1501*/
   }
   if ( this->q0E0 ) /*0x6f1507*/
     return 1; /*0x6f1532*/
-  if ( *(int *)&MEMORY[0x89F690].__pad_579C[62380] > 0 ) /*0x6f1518*/
+  if ( *(int *)&g_CellDirectionOffsets[84808] > 0 ) /*0x6f1518*/
   {
-    this->q0E0 = **(_DWORD **)&MEMORY[0x89F690].__pad_579C[62368]; /*0x6f1522*/
+    this->q0E0 = **(_DWORD **)&g_CellDirectionOffsets[84796]; /*0x6f1522*/
     return 1; /*0x6f1522*/
   }
   return 0; /*0x6f1528*/
@@ -640,84 +647,84 @@ char __thiscall TeamTypeClass::GetMaxCount(int this, CCINIClass *aP1)
   INIClass::SetInt( /*0x6f15a9*/
     aP1->__pad_0,
     (INIClass *)(this + 36),
-    (CCINIClass *)&stru_830620.__pad_579C[54064],
+    (CCINIClass *)&stru_830620[76492],
     *(INIClass **)(this + 160),
     0);
   INIClass::SetInt( /*0x6f15bf*/
     aP1->__pad_0,
     (INIClass *)(this + 36),
-    (CCINIClass *)&stru_830620.__pad_579C[54044],
+    (CCINIClass *)&stru_830620[76472],
     *(INIClass **)(this + 192),
     0);
   LOBYTE(v6) = this->q0A4; /*0x6f15c4*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[54032], v6); /*0x6f15d3*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76460], v6); /*0x6f15d3*/
   LOBYTE(v7) = *(_BYTE *)(this + 165); /*0x6f15d8*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[54024], v7); /*0x6f15e7*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76452], v7); /*0x6f15e7*/
   LOBYTE(v8) = *(_BYTE *)(this + 166); /*0x6f15ec*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[54012], v8); /*0x6f15fb*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76440], v8); /*0x6f15fb*/
   LOBYTE(v9) = *(_BYTE *)(this + 167); /*0x6f1600*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[54000], v9); /*0x6f160f*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76428], v9); /*0x6f160f*/
   INIClass::SetHouseName(aP1->__pad_0, (INIClass *)(this + 36), aHouse, (INIClass *)v4); /*0x6f161d*/
   LOBYTE(v10) = this->q0A8; /*0x6f1622*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53924], v10); /*0x6f1631*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76352], v10); /*0x6f1631*/
   LOBYTE(v11) = this->q0A9; /*0x6f1636*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53988], v11); /*0x6f1645*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76416], v11); /*0x6f1645*/
   LOBYTE(v12) = this->q0AA; /*0x6f164a*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53976], v12); /*0x6f1659*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76404], v12); /*0x6f1659*/
   LOBYTE(v13) = this->q0AB; /*0x6f165e*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53964], v13); /*0x6f166d*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76392], v13); /*0x6f166d*/
   LOBYTE(v14) = this->TeamTypeClass_field_2C; /*0x6f1672*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53956], v14); /*0x6f1681*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76384], v14); /*0x6f1681*/
   LOBYTE(v15) = *(_BYTE *)(this + 177); /*0x6f1686*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53936], v15); /*0x6f1695*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76364], v15); /*0x6f1695*/
   LOBYTE(v16) = this->q02B; /*0x6f169a*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53916], v16); /*0x6f16a9*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76344], v16); /*0x6f16a9*/
   LOBYTE(v17) = *(_BYTE *)(this + 174); /*0x6f16ae*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53892], v17); /*0x6f16bd*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76320], v17); /*0x6f16bd*/
   LOBYTE(v18) = *(_BYTE *)(this + 173); /*0x6f16c2*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53880], v18); /*0x6f16d1*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76308], v18); /*0x6f16d1*/
   LOBYTE(v19) = this->q0AF; /*0x6f16d6*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53908], v19); /*0x6f16e5*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76336], v19); /*0x6f16e5*/
   INIClass::SetInt( /*0x6f16fb*/
     aP1->__pad_0,
     (INIClass *)(this + 36),
-    (CCINIClass *)&stru_830620.__pad_579C[53856],
+    (CCINIClass *)&stru_830620[76284],
     *(INIClass **)(this + 180),
     0);
   INIClass::SetInt( /*0x6f1711*/
     aP1->__pad_0,
     (INIClass *)(this + 36),
-    (CCINIClass *)&stru_830620.__pad_579C[53852],
+    (CCINIClass *)&stru_830620[76280],
     *(INIClass **)(this + 184),
     0);
   INIClass::SetInt(aP1->__pad_0, (INIClass *)(this + 36), aTechlevel, *(INIClass **)(this + 204), 0); /*0x6f1727*/
   INIClass::SetInt( /*0x6f173d*/
     aP1->__pad_0,
     (INIClass *)(this + 36),
-    (CCINIClass *)&stru_830620.__pad_579C[53256],
+    (CCINIClass *)&stru_830620[75684],
     *(INIClass **)(this + 156),
     0);
   LOBYTE(v20) = *(_BYTE *)(this + 179); /*0x6f1742*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53868], v20); /*0x6f1751*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76296], v20); /*0x6f1751*/
   LOBYTE(v21) = *(_BYTE *)(this + 242); /*0x6f1756*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53836], v21); /*0x6f1765*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76264], v21); /*0x6f1765*/
   LOBYTE(v22) = *(_BYTE *)(this + 243); /*0x6f176a*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53824], v22); /*0x6f1779*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76252], v22); /*0x6f1779*/
   LOBYTE(v23) = this->UINameLabel; /*0x6f177e*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53772], v23); /*0x6f178d*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76200], v23); /*0x6f178d*/
   LOBYTE(v24) = *(_BYTE *)(this + 245); /*0x6f1792*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53744], v24); /*0x6f17a1*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76172], v24); /*0x6f17a1*/
   LOBYTE(v25) = *(_BYTE *)(this + 246); /*0x6f17a6*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &g_INI_Key_Height.__pad_41[3], v25); /*0x6f17b5*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &g_INI_Key_Height[68], v25); /*0x6f17b5*/
   LOBYTE(v26) = this->q0F7; /*0x6f17ba*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620.__pad_579C[53800], v26); /*0x6f17c9*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76228], v26); /*0x6f17c9*/
   v27 = this->q0D0; /*0x6f17ce*/
   if ( v27 ) /*0x6f17d6*/
     INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), (INIClass *)unk_81728C, (INIClass *)(v27 + 36)); /*0x6f17e4*/
   v28 = (INIClass *)Waypoint::To_String(*(CCINIClass **)(this + 212)); /*0x6f17ef*/
   INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), &stru_817244, v28); /*0x6f17fd*/
   v29 = (INIClass *)Waypoint::To_String(*(CCINIClass **)(this + 216)); /*0x6f1808*/
-  INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), (INIClass *)&stru_830620.__pad_579C[53724], v29); /*0x6f1816*/
+  INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), (INIClass *)&stru_830620[76152], v29); /*0x6f1816*/
   v30 = this->q0E0; /*0x6f181b*/
   if ( v30 ) /*0x6f1823*/
     INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), &stru_817348, (INIClass *)(v30 + 36)); /*0x6f1831*/
@@ -766,7 +773,7 @@ _DWORD *__thiscall TeamTypeClass::GetTransportWaypoint(int *this, _DWORD *a2)
   v2 = this->q0D8; /*0x6f18e1*/
   if ( v2 == -1 ) /*0x6f18ea*/
   {
-    *a2 = MEMORY[0xB0E9C8]; /*0x6f18f6*/
+    *a2 = DataGlobal_B0E9C8; /*0x6f18f6*/
     return a2; /*0x6f18ec*/
   }
   else
@@ -1200,14 +1207,14 @@ int TeamTypeClass::FindByName()
     if ( !this )
     return 0;
     v2 = 0;
-    if ( *(int *)&HouseClass_Player.__pad_5568[23036] <= 0 )
+    if ( *(int *)&HouseClass_Player[44900] <= 0 )
     return 0;
-    while ( _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2) + 36)) && _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2) + 100)) )
+    while ( _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player[44888] + 4 * v2) + 36)) && _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player[44888] + 4 * v2) + 100)) )
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[23036] )
+    if ( ++v2 >= *(int *)&HouseClass_Player[44900] )
     return 0;
   }
-    return *(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2);
+    return *(int *)(*(int *)&HouseClass_Player[44888] + 4 * v2);
 }
 }
 } // namespace gamemd
@@ -1225,27 +1232,27 @@ TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
     int j;
     ObjectClass *v10;
     char Buffer[32];
-    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080]);
+    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&DataGlobal_830620[76508]);
     for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
   {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)&DataGlobal_830620.__pad_579C[54080], i);
-    INIClass::GetString( (unsigned char ***)a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], StringByIndex, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], (INIClass *)Buffer, 32);
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)&DataGlobal_830620[76508], i);
+    INIClass::GetString( (unsigned char ***)a1, (INIClass *)&DataGlobal_830620[76508], StringByIndex, (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)Buffer, 32);
     INIClass::ClearSection((int)a1, (INIClass *)Buffer, 0);
   }
-    INIClass::ClearSection((int)a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], 0);
-    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer.__pad_14B0[452];
+    INIClass::ClearSection((int)a1, (INIClass *)&DataGlobal_830620[76508], 0);
+    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer[5748];
     v8 = 0;
-    for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer.__pad_14B0[452]; ++j )
+    for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer[5748]; ++j )
   {
-    if ( *(int *)(*(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 232) == a2 )
+    if ( *(int *)(*(int *)(*(int *)&g_NetworkPlayerBuffer[5736] + 4 * j) + 232) == a2 )
     {
     v10 = (ObjectClass *)v8;
     v8 = (INIClass *)((char *)(v8) + 1);
     sprintf(Buffer, g_Str_Trace__d, v10);
-    INIClass::SetString( a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], (INIClass *)Buffer, (INIClass *)(*(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 36));
-    (*(void (__thiscall **)(int, char *))(**(int **)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 104))( *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j), a1);
+    INIClass::SetString( a1, (INIClass *)&DataGlobal_830620[76508], (INIClass *)Buffer, (INIClass *)(*(int *)(*(int *)&g_NetworkPlayerBuffer[5736] + 4 * j) + 36));
+    (*(void (__thiscall **)(int, char *))(**(int **)(*(int *)&g_NetworkPlayerBuffer[5736] + 4 * j) + 104))( *(int *)(*(int *)&g_NetworkPlayerBuffer[5736] + 4 * j), a1);
     }
-    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer.__pad_14B0[452];
+    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer[5748];
   }
     return result;
 }
@@ -1283,10 +1290,10 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TeamTypeClass;
     *(int *)&aP0->__pad_0[12] = &vt_TeamTypeClass;
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_24[8]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_24[20]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[11]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[15]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_24[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_24[20]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[11]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[15]);
     return 0;
   }
     return result;
@@ -1316,13 +1323,13 @@ int TeamTypeClass::FlashAllInstances(AnimClass * aP1)
     int result;
     int i;
     int v5;
-    result = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
-    for ( i = 0; i < *(int *)&g_CellDirectionOffsets.__pad_579C[62156]; ++i )
+    result = *(int *)&g_CellDirectionOffsets[84584];
+    for ( i = 0; i < *(int *)&g_CellDirectionOffsets[84584]; ++i )
   {
-    v5 = *(int *)(*(int *)&g_CellDirectionOffsets.__pad_579C[62144] + 4 * i);
+    v5 = *(int *)(*(int *)&g_CellDirectionOffsets[84572] + 4 * i);
     if ( *(void **)(v5 + 36) == this )
     TeamTypeClass::Check((int *)v5, (int)aP1);
-    result = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
+    result = *(int *)&g_CellDirectionOffsets[84584];
   }
     return result;
 }

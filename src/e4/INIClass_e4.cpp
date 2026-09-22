@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x526810
 namespace gamemd {
@@ -397,7 +399,7 @@ int INIClass::GetBool(INIClass * aP1, unsigned char * a2, int a4)
 {
     int result;
     INIClass Destination[2];
-    if ( !INIClass::GetString(this, aP1, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    if ( !INIClass::GetString(this, aP1, a2, (INIClass *)&DataGlobal_87F8E4[42624], Destination, 128) )
     return a4;
     result = LookupNameIndex(Destination);
     if ( result == -1 )
@@ -483,7 +485,7 @@ char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
     char Buffer[56];
     v5 = (INIClass *)String::GetOrEmpty_Alt(a3);
     v6 = (INIClass *)String::GetOrEmpty_Alt(a2);
-    sprintf(Buffer, g_INI_Key_Digest.__pad_20, *a4, *((int*)(a4) + 1));
+    sprintf(Buffer, g_INI_Key_Digest[32], *a4, *((int*)(a4) + 1));
     return INIClass::SetString(this, v6, v5, (INIClass *)Buffer);
 }
 }

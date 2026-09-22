@@ -35,14 +35,14 @@ int __fastcall CCINIClass::ReadTypeList(char *a1, CCINIClass *a2)
       if ( _strcmpi(g_Str_none, StringByIndex->__pad_0) ) /*0x41f335*/
       {
         v8 = 0; /*0x41f34a*/
-        if ( (int)MEMORY[0xA8B210] > 0 ) /*0x41f34e*/
+        if ( (int)g_AnimTypeInitQueue > 0 ) /*0x41f34e*/
         {
-          while ( _strcmpi((char *)(*(_DWORD *)&MEMORY[0xA8B204]->__pad_0[4 * v8] + 36), StringByIndex->__pad_0) ) /*0x41f368*/
+          while ( _strcmpi((char *)(*(_DWORD *)&DataGlobal_A8B204->__pad_0[4 * v8] + 36), StringByIndex->__pad_0) ) /*0x41f368*/
           {
-            if ( ++v8 >= (int)MEMORY[0xA8B210] ) /*0x41f376*/
+            if ( ++v8 >= (int)g_AnimTypeInitQueue ) /*0x41f376*/
               goto LABEL_9; /*0x41f376*/
           }
-          v7 = *(_DWORD **)&MEMORY[0xA8B204]->__pad_0[4 * v8]; /*0x41f431*/
+          v7 = *(_DWORD **)&DataGlobal_A8B204->__pad_0[4 * v8]; /*0x41f431*/
           goto LABEL_11; /*0x41f434*/
         }
 LABEL_9:
@@ -80,14 +80,14 @@ LABEL_13:
     {
       v11 = (CCINIClass *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes_0, v10); /*0x41f3f9*/
       v12 = 0; /*0x41f400*/
-      if ( (int)MEMORY[0xA8B210] > 0 ) /*0x41f404*/
+      if ( (int)g_AnimTypeInitQueue > 0 ) /*0x41f404*/
       {
-        while ( _strcmpi((char *)(*(_DWORD *)&MEMORY[0xA8B204]->__pad_0[4 * v12] + 36), v11->__pad_0) ) /*0x41f41d*/
+        while ( _strcmpi((char *)(*(_DWORD *)&DataGlobal_A8B204->__pad_0[4 * v12] + 36), v11->__pad_0) ) /*0x41f41d*/
         {
-          if ( ++v12 >= (int)MEMORY[0xA8B210] ) /*0x41f427*/
+          if ( ++v12 >= (int)g_AnimTypeInitQueue ) /*0x41f427*/
             goto LABEL_28; /*0x41f427*/
         }
-        v13 = *(_DWORD *)&MEMORY[0xA8B204]->__pad_0[4 * v12]; /*0x41f43f*/
+        v13 = *(_DWORD *)&DataGlobal_A8B204->__pad_0[4 * v12]; /*0x41f43f*/
         if ( v13 ) /*0x41f444*/
           *(_BYTE *)(v13 + 164) = INIClass::ReadBool_Overwrite((int)a1, (unsigned __int8 *)aAitriggertypes_0, v11, 0) /*0x41f46c*/
                                || g_GameMode_Current;
@@ -131,12 +131,12 @@ int __thiscall CCINIClass::Load(_BYTE *this, MultiplayerGameMode *aP1, char a3, 
   v10.headNode[1] = 0; /*0x474217*/
   v10.headNode[2] = (int)aP1; /*0x47421b*/
   LOBYTE(v10.sectionHead[0]) = 0; /*0x47421f*/
-  *(_DWORD *)v10.__pad_0 = &vt_FileStraw; /*0x474223*/
+  *(_DWORD *)v10[0] = &vt_FileStraw; /*0x474223*/
   v5 = (CCINIClass *)INIClass::LoadFile(this, &v10, (INIClass *)aP2); /*0x474230*/
   this->ownsFile = 0; /*0x474232*/
   if ( !v5 || !a3 ) /*0x474244*/
     goto LABEL_7; /*0x474244*/
-  Base64Data = INIClass::GetBase64Data(this, g_INI_Key_Digest.__pad_0, (int)v11, 0x14u); /*0x47425b*/
+  Base64Data = INIClass::GetBase64Data(this, g_INI_Key_Digest[0], (int)v11, 0x14u); /*0x47425b*/
   if ( !Base64Data ) /*0x474262*/
   {
     v7 = (CCINIClass *)2; /*0x474264*/
@@ -151,8 +151,8 @@ int __thiscall CCINIClass::Load(_BYTE *this, MultiplayerGameMode *aP1, char a3, 
   v10.unknown38 = 1732584193; /*0x47429d*/
   v10.INIClass_field_3C = -271733879; /*0x4742a5*/
   *(_DWORD *)&v10.ownsFile = -1732584194; /*0x4742ad*/
-  *(_DWORD *)&v10.__pad_41[3] = 271733878; /*0x4742b5*/
-  *(_DWORD *)v10.__pad_48 = -1009589776; /*0x4742bd*/
+  *(_DWORD *)&v10[68] = 271733878; /*0x4742b5*/
+  *(_DWORD *)v10[72] = -1009589776; /*0x4742bd*/
   v10.sectionHead[1] = (int)&vt_SHAPipe; /*0x4742c5*/
   INIClass::WriteToString(this, (CCINIClass *)&v10.sectionHead[1]); /*0x4742cd*/
   SHA1::ComputeThunk(&v10.sectionHead[1], (ObjectClass *)(this + 65)); /*0x4742da*/
@@ -252,7 +252,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
     for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
   {
     StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, i);
-    INIClass::GetString( (unsigned char ***)a1, (INIClass *)aAitriggertypes, StringByIndex, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], (INIClass *)Destination, 32);
+    INIClass::GetString( (unsigned char ***)a1, (INIClass *)aAitriggertypes, StringByIndex, (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)Destination, 32);
     INIClass::ClearSection((int)a1, (INIClass *)Destination, 0);
   }
     INIClass::ClearSection((int)a1, (INIClass *)aAitriggertypes, 0);
@@ -294,9 +294,9 @@ IUnknown * CCINIClass::WriteHouses()
     result = HouseClass_Count;
     for ( i = 0; (int)i < (int)HouseClass_Count; i = (INIClass *)((char *)(i) + 1) )
   {
-    strcpy(Source.__pad_0, (const char *)(*(int *)&HouseClass_Array->__pad_0[4 * (int)i] + 90100));
-    sprintf(Source.__pad_20, g_Str_Trace__d, i);
-    INIClass::SetString(this->__pad_0, (INIClass *)&g_INI_Key_Country.headNode[1], (INIClass *)Source.__pad_20, &Source);
+    strcpy(Source[0], (const char *)(*(int *)&HouseClass_Array->__pad_0[4 * (int)i] + 90100));
+    sprintf(Source[32], g_Str_Trace__d, i);
+    INIClass::SetString(this->__pad_0, (INIClass *)&g_INI_Key_Country.headNode[1], (INIClass *)Source[32], &Source);
     result = HouseClass_Count;
   }
     v4 = 0;

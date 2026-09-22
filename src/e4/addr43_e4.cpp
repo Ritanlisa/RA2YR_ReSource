@@ -23,6 +23,11 @@
 #include "e4/classes/E4Recv_43ADF0_e4.hpp"
 #include "e4/classes/E4Recv_43AF10_e4.hpp"
 #include "e4/classes/E4Recv_43EE50_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x431BC0
 namespace gamemd {
@@ -267,25 +272,25 @@ char __fastcall BlitterCopySHP(
              (int *)&aP2);
   if ( result ) /*0x437468*/
   {
-    if ( *(_DWORD *)&stru_87C374.__pad_14B0[4224] ) /*0x43747c*/
+    if ( *(_DWORD *)&stru_87C374[9520] ) /*0x43747c*/
     {
       v23 = *(_DWORD *)aP1->__pad_0; /*0x437485*/
-      v24 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 4); /*0x43748d*/
+      v24 = *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 4); /*0x43748d*/
       v71 = v73 + aP1->Width; /*0x437490*/
       v25 = v71 - v24; /*0x437494*/
       v70 = v72 + v23; /*0x43749a*/
       v61 = StreamClass::ReadAndSeek( /*0x4374ac*/
-              *(int *)&stru_87C374.__pad_14B0[4224],
+              *(int *)&stru_87C374[9520],
               (MouseClass *)(v72 + v23),
               (MouseClass *)(v71 - v24));
       v21 = (2 * (v25 & 1)) | ((unsigned __int8)v70 ^ v25) & 1; /*0x4374b7*/
     }
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[23348] ) /*0x4374c3*/
+    if ( *(_DWORD *)&stru_87C374[45776] ) /*0x4374c3*/
     {
       v26 = (MouseClass *)(v72 + *(_DWORD *)aP1->__pad_0); /*0x4374d6*/
-      v27 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 4); /*0x4374d8*/
+      v27 = *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 4); /*0x4374d8*/
       v71 = v73 + aP1->Width; /*0x4374dd*/
-      SamplePosition = Audio::GetSamplePosition(*(int *)&stru_87C374.__pad_579C[23348], v26, (MouseClass *)(v71 - v27)); /*0x4374ea*/
+      SamplePosition = Audio::GetSamplePosition(*(int *)&stru_87C374[45776], v26, (MouseClass *)(v71 - v27)); /*0x4374ea*/
       v64 = 0; /*0x4374f2*/
       v28 = aP8->LockCount; /*0x4374fa*/
       v67 = aP8->Height; /*0x437502*/
@@ -294,8 +299,8 @@ char __fastcall BlitterCopySHP(
       if ( LOBYTE(aP8[1].Width) ) /*0x437513*/
       {
         v18 = aP8->Width /*0x437545*/
-            * ((int)&aP7->__pad_0[(unsigned __int16)(*(_WORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 4)
-                                                   + *(_WORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 36)
+            * ((int)&aP7->__pad_0[(unsigned __int16)(*(_WORD *)(*(_DWORD *)&stru_87C374[45776] + 4)
+                                                   + *(_WORD *)(*(_DWORD *)&stru_87C374[45776] + 36)
                                                    - v73
                                                    - LOWORD(aP1->Width))]
              / aP8->Width);
@@ -303,8 +308,8 @@ char __fastcall BlitterCopySHP(
       else
       {
         v18 = v29 /*0x437585*/
-            * ((int)&aP7->__pad_0[(unsigned __int16)(*(_WORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 4)
-                                                   + *(_WORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 36)
+            * ((int)&aP7->__pad_0[(unsigned __int16)(*(_WORD *)(*(_DWORD *)&stru_87C374[45776] + 4)
+                                                   + *(_WORD *)(*(_DWORD *)&stru_87C374[45776] + 36)
                                                    - v75
                                                    - v73
                                                    - LOWORD(aP1->Width)
@@ -356,10 +361,10 @@ char __fastcall BlitterCopySHP(
       aP7 = (XSurface *)(*(int (__thiscall **)(XSurface *))(*(_DWORD *)aP3->__pad_0 + 116))(aP3); /*0x437649*/
       v37 = (*(int (__thiscall **)(XSurface *))(*(_DWORD *)v30->__pad_0 + 116))(v30); /*0x437654*/
       a4 = v37; /*0x43765d*/
-      if ( *(_DWORD *)&stru_87C374.__pad_579C[23348] ) /*0x437661*/
-        v65 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 40); /*0x437666*/
-      if ( *(_DWORD *)&stru_87C374.__pad_14B0[4224] ) /*0x437671*/
-        v66 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 40); /*0x437676*/
+      if ( *(_DWORD *)&stru_87C374[45776] ) /*0x437661*/
+        v65 = *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 40); /*0x437666*/
+      if ( *(_DWORD *)&stru_87C374[9520] ) /*0x437671*/
+        v66 = *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 40); /*0x437676*/
       if ( (_BYTE)aP5 ) /*0x437680*/
       {
         a4 = -v37; /*0x437690*/
@@ -374,19 +379,19 @@ char __fastcall BlitterCopySHP(
         v42 = v78; /*0x4376d3*/
         v43 = (v75 - 1) * v41 + a7; /*0x4376da*/
         a7 = v43; /*0x4376e3*/
-        if ( *(_DWORD *)&stru_87C374.__pad_579C[23348] ) /*0x4376e7*/
+        if ( *(_DWORD *)&stru_87C374[45776] ) /*0x4376e7*/
         {
-          v44 = SamplePosition + 2 * (v78 + 0x7FFFFFFF * *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 40)); /*0x4376fb*/
-          if ( v44 >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 28) ) /*0x437703*/
-            v44 -= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 32); /*0x437705*/
+          v44 = SamplePosition + 2 * (v78 + 0x7FFFFFFF * *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 40)); /*0x4376fb*/
+          if ( v44 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 28) ) /*0x437703*/
+            v44 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 32); /*0x437705*/
           SamplePosition = v44; /*0x43770d*/
           v18 += 1 - v78; /*0x437713*/
         }
-        if ( *(_DWORD *)&stru_87C374.__pad_14B0[4224] ) /*0x43771d*/
+        if ( *(_DWORD *)&stru_87C374[9520] ) /*0x43771d*/
         {
-          v45 = v61 + 2 * (v78 + 0x7FFFFFFF * *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 40)); /*0x437731*/
-          if ( v45 >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 28) ) /*0x437739*/
-            v45 -= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 32); /*0x43773b*/
+          v45 = v61 + 2 * (v78 + 0x7FFFFFFF * *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 40)); /*0x437731*/
+          if ( v45 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 28) ) /*0x437739*/
+            v45 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 32); /*0x43773b*/
           v61 = v45; /*0x43773e*/
         }
       }
@@ -440,11 +445,11 @@ char __fastcall BlitterCopySHP(
             a7 += a4; /*0x4377e9*/
             v48 = (XSurface *)((char *)aP2 + (_DWORD)aP7); /*0x4377ed*/
             aP2 = (XSurface *)((char *)aP2 + (_DWORD)aP7); /*0x4377f7*/
-            if ( *(_DWORD *)&stru_87C374.__pad_579C[23348] ) /*0x4377fb*/
+            if ( *(_DWORD *)&stru_87C374[45776] ) /*0x4377fb*/
             {
               v51 = v50 + 2 * v65; /*0x437801*/
-              if ( v51 < *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 24) ) /*0x437809*/
-                v51 += *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 32); /*0x43780b*/
+              if ( v51 < *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 24) ) /*0x437809*/
+                v51 += *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 32); /*0x43780b*/
               SamplePosition = v51; /*0x437812*/
               v52 = v67 + v64; /*0x43781a*/
               v64 += v67; /*0x437822*/
@@ -454,11 +459,11 @@ char __fastcall BlitterCopySHP(
                 v64 = v52 - v68; /*0x437831*/
               }
             }
-            if ( *(_DWORD *)&stru_87C374.__pad_14B0[4224] ) /*0x43783d*/
+            if ( *(_DWORD *)&stru_87C374[9520] ) /*0x43783d*/
             {
               v53 = v61 + 2 * v66; /*0x437847*/
-              if ( v53 < *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 24) ) /*0x43784f*/
-                v53 += *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 32); /*0x437851*/
+              if ( v53 < *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 24) ) /*0x43784f*/
+                v53 += *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 32); /*0x437851*/
               v61 = v53; /*0x437854*/
             }
             if ( !--v70 ) /*0x437861*/
@@ -510,11 +515,11 @@ char __fastcall BlitterCopySHP(
           v21 ^= 3u; /*0x4378f9*/
           a7 += a4; /*0x4378fe*/
           aP2 = (XSurface *)((char *)aP2 + (_DWORD)aP7); /*0x437902*/
-          if ( *(_DWORD *)&stru_87C374.__pad_579C[23348] ) /*0x43790e*/
+          if ( *(_DWORD *)&stru_87C374[45776] ) /*0x43790e*/
           {
             v58 = v57 + 2 * v65; /*0x437914*/
-            if ( v58 >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 28) ) /*0x43791c*/
-              v58 -= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 32); /*0x43791e*/
+            if ( v58 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 28) ) /*0x43791c*/
+              v58 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 32); /*0x43791e*/
             SamplePosition = v58; /*0x437925*/
             v59 = v67 + v64; /*0x43792d*/
             v64 += v67; /*0x437935*/
@@ -524,11 +529,11 @@ char __fastcall BlitterCopySHP(
               v64 = v59 - v68; /*0x437944*/
             }
           }
-          if ( *(_DWORD *)&stru_87C374.__pad_14B0[4224] ) /*0x437950*/
+          if ( *(_DWORD *)&stru_87C374[9520] ) /*0x437950*/
           {
             v60 = v61 + 2 * v66; /*0x43795a*/
-            if ( v60 >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 28) ) /*0x437962*/
-              v60 -= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 32); /*0x437964*/
+            if ( v60 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 28) ) /*0x437962*/
+              v60 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 32); /*0x437964*/
             v61 = v60; /*0x437967*/
           }
           if ( !--v70 ) /*0x437974*/
@@ -618,7 +623,7 @@ bool __fastcall BlitterRLEBlitSHP(
   int v62; // [esp+C0h] [ebp+1Ch]
 
   v16 = a5[1]; /*0x437a23*/
-  *(_DWORD *)v56.__pad_0 = *a5; /*0x437a26*/
+  *(_DWORD *)v56[0] = *a5; /*0x437a26*/
   v56.Width = v16; /*0x437a2a*/
   v17 = 0; /*0x437a2e*/
   SamplePosition = 0; /*0x437a33*/
@@ -642,36 +647,36 @@ bool __fastcall BlitterRLEBlitSHP(
   result = IntersectSurfaceRects((IUnknown *)&aP1.nextArrayIndex, (int)a1, &v56, (int)a4); /*0x437ab1*/
   if ( !result ) /*0x437ab8*/
     return result; /*0x437ab8*/
-  v62 = *(_DWORD *)v56.__pad_0 - *a4; /*0x437ad6*/
+  v62 = *(_DWORD *)v56[0] - *a4; /*0x437ad6*/
   v48 = v56.Width - a4[1]; /*0x437ae7*/
   v41 = (AbstractClass *)CellStruct::Copy(&aP1.nextArrayIndex, (IUnknown *)v53); /*0x437afd*/
-  v21 = CellStruct::Copy(a1, (IUnknown *)&aP1.__pad_0[8]); /*0x437b02*/
+  v21 = CellStruct::Copy(a1, (IUnknown *)&aP1[8]); /*0x437b02*/
   v22 = Coord2D::Add(v21, &aP1, v41); /*0x437b09*/
   a4a = (_DWORD *)(*(int (__thiscall **)(IUnknown *, _DWORD, _DWORD))(aP0->field_0 + 92))(aP0, *v22, v22[1]); /*0x437b28*/
   if ( !a4a ) /*0x437b2f*/
     return 0; /*0x437b3a*/
-  if ( *(_DWORD *)&stru_87C374.__pad_579C[23348] ) /*0x437b45*/
+  if ( *(_DWORD *)&stru_87C374[45776] ) /*0x437b45*/
   {
     v23 = (MouseClass *)(*a1 + aP1.nextArrayIndex); /*0x437b5c*/
-    v24 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 4); /*0x437b5e*/
-    *(_DWORD *)&aP1.__pad_0[12] = aP1.referenceCount + a1[1]; /*0x437b61*/
-    v25 = (MouseClass *)(*(_DWORD *)&aP1.__pad_0[12] - v24); /*0x437b67*/
-    SamplePosition = Audio::GetSamplePosition(*(int *)&stru_87C374.__pad_579C[23348], v23, v25); /*0x437b73*/
+    v24 = *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 4); /*0x437b5e*/
+    *(_DWORD *)&aP1[12] = aP1.referenceCount + a1[1]; /*0x437b61*/
+    v25 = (MouseClass *)(*(_DWORD *)&aP1[12] - v24); /*0x437b67*/
+    SamplePosition = Audio::GetSamplePosition(*(int *)&stru_87C374[45776], v23, v25); /*0x437b73*/
     v46 = *(_DWORD *)(v18 + 8); /*0x437b7c*/
     a5a = 0; /*0x437b80*/
     v47 = *(char **)(v18 + 12); /*0x437b91*/
-    v49 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 40); /*0x437b95*/
+    v49 = *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 40); /*0x437b95*/
     v26 = (int)v47 / v46; /*0x437b9e*/
     if ( *(_BYTE *)(v18 + 20) ) /*0x437ba0*/
     {
       v27 = a12; /*0x437bcd*/
       v17 = *(_DWORD *)(v18 + 4) /*0x437bd4*/
-          * ((a8 + (unsigned __int16)(*(_WORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 36) - (_WORD)v25))
+          * ((a8 + (unsigned __int16)(*(_WORD *)(*(_DWORD *)&stru_87C374[45776] + 36) - (_WORD)v25))
            / *(_DWORD *)(v18 + 4));
       if ( a12 ) /*0x437bd9*/
       {
 LABEL_7:
-        v28 = (int *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v27 + 120))(v27, &aP1.__pad_0[8]); /*0x437bdf*/
+        v28 = (int *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v27 + 120))(v27, &aP1[8]); /*0x437bdf*/
         v29 = *v28; /*0x437bed*/
         v50 = v28[2]; /*0x437bf6*/
         v30 = a14 + v28[1]; /*0x437c0d*/
@@ -686,8 +691,8 @@ LABEL_7:
     else
     {
       v17 = a8 /*0x437c67*/
-          + (unsigned __int16)(*(_WORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 4)
-                             + *(_WORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 36)
+          + (unsigned __int16)(*(_WORD *)(*(_DWORD *)&stru_87C374[45776] + 4)
+                             + *(_WORD *)(*(_DWORD *)&stru_87C374[45776] + 36)
                              - *((_WORD *)a1 + 2)
                              - *(_WORD *)&aP2->__pad_0[12]
                              - *(_WORD *)&aP2->__pad_0[4]
@@ -707,12 +712,12 @@ LABEL_7:
     v42 = (char *)&unk_89C568; /*0x437ccc*/
   }
 LABEL_12:
-  if ( *(_DWORD *)&stru_87C374.__pad_14B0[4224] ) /*0x437cdc*/
+  if ( *(_DWORD *)&stru_87C374[9520] ) /*0x437cdc*/
   {
     v31 = (MouseClass *)(*a1 + aP1.nextArrayIndex); /*0x437ce7*/
-    v32 = (MouseClass *)(aP1.referenceCount + a1[1] - *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 4)); /*0x437cfa*/
-    v44 = StreamClass::ReadAndSeek(*(int *)&stru_87C374.__pad_14B0[4224], v31, v32); /*0x437d18*/
-    v51 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 40); /*0x437d1c*/
+    v32 = (MouseClass *)(aP1.referenceCount + a1[1] - *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 4)); /*0x437cfa*/
+    v44 = StreamClass::ReadAndSeek(*(int *)&stru_87C374[9520], v31, v32); /*0x437d18*/
+    v51 = *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 40); /*0x437d1c*/
     v19 = (2 * ((unsigned __int8)v32 & 1)) | ((unsigned __int8)v31 ^ (unsigned __int8)v32) & 1; /*0x437d20*/
   }
   v33 = (unsigned __int16 *)(*(int (__thiscall **)(IUnknown *, _DWORD, _DWORD))(aP3->field_0 + 92))(aP3, 0, 0); /*0x437d36*/
@@ -770,11 +775,11 @@ LABEL_12:
         a4a = (_DWORD *)((char *)a4a + v61); /*0x437e38*/
         v19 ^= 3u; /*0x437e45*/
         v33 = (unsigned __int16 *)((char *)v33 + *v33); /*0x437e48*/
-        if ( *(_DWORD *)&stru_87C374.__pad_579C[23348] ) /*0x437e4c*/
+        if ( *(_DWORD *)&stru_87C374[45776] ) /*0x437e4c*/
         {
           v38 = SamplePosition + 2 * v49; /*0x437e56*/
-          if ( v38 >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 28) ) /*0x437e5e*/
-            v38 -= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 32); /*0x437e60*/
+          if ( v38 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 28) ) /*0x437e5e*/
+            v38 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 32); /*0x437e60*/
           SamplePosition = v38; /*0x437e63*/
           if ( a12 ) /*0x437e70*/
           {
@@ -791,8 +796,8 @@ LABEL_12:
             }
           }
           v40 = v44 + 2 * v51; /*0x437eb6*/
-          if ( v40 >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 28) ) /*0x437ec2*/
-            v40 -= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 32); /*0x437ec4*/
+          if ( v40 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 28) ) /*0x437ec2*/
+            v40 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 32); /*0x437ec4*/
           v44 = v40; /*0x437ec7*/
         }
         aP2a = (TechnoClass *)((char *)aP2a - 1); /*0x437ed3*/

@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x52CB90
 char Credits::Screen()
@@ -25,7 +26,7 @@ char sub_52CB90()
   struct _WIN32_FIND_DATAA FindFileData; // [esp+80h] [ebp-140h] BYREF
 
   v9 = 0; /*0x52cba5*/
-  FirstFileA = FindFirstFileA(MEMORY[0x8261A8], &FindFileData); /*0x52cbaf*/
+  FirstFileA = FindFirstFileA(DataGlobal_8261A8, &FindFileData); /*0x52cbaf*/
   v10 = FirstFileA; /*0x52cbb4*/
   if ( FirstFileA == (HANDLE)-1 ) /*0x52cbb8*/
     goto LABEL_15; /*0x52cbb8*/
@@ -60,7 +61,7 @@ char sub_52CB90()
         v3 = 0; /*0x52cc3e*/
       }
       CCINIClass::Load(v11, 0, 0); /*0x52cc49*/
-      if ( !_strcmpi(cAlternateFileName, MEMORY[0x826198]) ) /*0x52cc54*/
+      if ( !_strcmpi(cAlternateFileName, DataGlobal_826198) ) /*0x52cc54*/
         v9 = 1; /*0x52cc60*/
       CampaignClass::LoadFromINIList(v3); /*0x52cc67*/
       if ( v3 ) /*0x52cc6e*/
@@ -79,7 +80,7 @@ char sub_52CB90()
   if ( !v9 ) /*0x52ccc7*/
   {
 LABEL_15:
-    CCFileClass::Construct(v11, MEMORY[0x826198]); /*0x52ccd6*/
+    CCFileClass::Construct(v11, DataGlobal_826198); /*0x52ccd6*/
     v6 = __2_YAPAXI_Z(0x58u); /*0x52ccdd*/
     v7 = v6; /*0x52cce2*/
     if ( v6 ) /*0x52cce9*/

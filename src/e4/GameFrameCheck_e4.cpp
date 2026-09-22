@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Mission_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x6863E0
 namespace gamemd {
@@ -18,13 +24,13 @@ int sub_6863E0()
   DWORD v7; // [esp+0h] [ebp-18h]
 
   MouseClass::LoadCursors(); /*0x6863e3*/
-  if ( g_CreditsScreenBounds != MEMORY[0xA8EB8C] && g_CreditsScreenConfig != MEMORY[0xA8EB90] ) /*0x686404*/
+  if ( g_CreditsScreenBounds != xRight && g_CreditsScreenConfig != yBottom ) /*0x686404*/
   {
     Debug::Log(); /*0x68640b*/
-    ChangeVideoMode(MEMORY[0xA8EB8C], MEMORY[0xA8EB90]); /*0x68641f*/
+    ChangeVideoMode(xRight, yBottom); /*0x68641f*/
   }
-  MEMORY[0xA8ED5C] = 0; /*0x68642a*/
-  MEMORY[0xA8E378] = 0; /*0x686433*/
+  g_BounceClassInit = 0; /*0x68642a*/
+  DataGlobal_A8E378 = 0; /*0x686433*/
   if ( g_TacticalRender ) /*0x68643a*/
     Tooltip::Enable((void *)g_TacticalRender, 0); /*0x68643e*/
   v0 = (char *)g_ScenarioClass_Instance + 1556; /*0x686450*/
@@ -44,10 +50,10 @@ int sub_6863E0()
   AudioQueue::DrainAll(); /*0x6864be*/
   StopThemeClass(1); /*0x6864c5*/
   ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ(); /*0x6864ca*/
-  Mission::SetAndCall((int *)&MEMORY[0x87F7E8], 0, 0); /*0x6864d8*/
+  Mission::SetAndCall((int *)&DataGlobal_87F7E8, 0, 0); /*0x6864d8*/
   Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x6864e3*/
   ScenarioClass::LoadScenarioAndStart((char *)g_ScenarioClass_Instance + 4700, 0, *((_DWORD *)g_ScenarioClass_Instance + 3379)); /*0x6864fc*/
-  GameResult::CalcScore((int)&MEMORY[0x8A38E0]); /*0x686506*/
+  GameResult::CalcScore((int)&DataGlobal_8A38E0); /*0x686506*/
   while ( 1 ) /*0x68650f*/
   {
     v4 = 60; /*0x68650f*/
@@ -64,8 +70,8 @@ int sub_6863E0()
   }
   Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x686536*/
   if ( g_TacticalRender ) /*0x68654a*/
-    Tooltip::Enable((void *)g_TacticalRender, MEMORY[0xA8EB80]); /*0x686553*/
-  return TacticalMap::Redraw(&MEMORY[0x87F7E8]); /*0x686562*/
+    Tooltip::Enable((void *)g_TacticalRender, DataGlobal_A8EB80); /*0x686553*/
+  return TacticalMap::Redraw(&DataGlobal_87F7E8); /*0x686562*/
 }
 }
 } // namespace gamemd
@@ -87,8 +93,8 @@ char sub_686570()
   char result; // al
 
   v0 = (char *)g_ScenarioClass_Instance + 1556; /*0x686579*/
-  MEMORY[0xA8ED5C] = 0; /*0x68657f*/
-  MEMORY[0xA8E378] = 0; /*0x686585*/
+  g_BounceClassInit = 0; /*0x68657f*/
+  DataGlobal_A8E378 = 0; /*0x686585*/
   if ( *((_DWORD *)g_ScenarioClass_Instance + 389) != -1 ) /*0x68658e*/
   {
     Ticks = Timer::GetTicks(); /*0x686593*/
@@ -102,10 +108,10 @@ char sub_686570()
   Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x6865c5*/
   (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 64))(g_WWMouseClass_Instance, g_DSurface_Hidden, 0); /*0x6865d9*/
   (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 20))(g_WWMouseClass_Instance); /*0x6865e4*/
-  Mission::SetAndCall((int *)&MEMORY[0x87F7E8], 0, 0); /*0x6865ee*/
+  Mission::SetAndCall((int *)&DataGlobal_87F7E8, 0, 0); /*0x6865ee*/
   Theme::Stop(&g_BuildingTypeClass_Count, 1); /*0x6865fa*/
   Audio::GetFlag((unsigned int *)g_MixerState); /*0x686605*/
-  VoxClass::FindAndPlay(MEMORY[0x83DB34], -1); /*0x686616*/
+  VoxClass::FindAndPlay(DataGlobal_83DB34, -1); /*0x686616*/
   Audio::WaitForCallback(g_MixerState); /*0x686621*/
   v4 = g_PerformanceTickOffset; /*0x68662b*/
   if ( g_LastPerformanceTick != -1 ) /*0x686634*/
@@ -126,13 +132,13 @@ char sub_686570()
   AudioQueue::DrainAll(); /*0x68669d*/
   EndBufferMixer((int *)g_MixerState, 0x4000); /*0x6866ad*/
   result = g_CreditsScreenBounds; /*0x6866b2*/
-  if ( g_CreditsScreenBounds != MEMORY[0xA8EB8C] ) /*0x6866c0*/
+  if ( g_CreditsScreenBounds != xRight ) /*0x6866c0*/
   {
-    result = MEMORY[0xA8EB90]; /*0x6866c8*/
-    if ( g_CreditsScreenConfig != MEMORY[0xA8EB90] ) /*0x6866cf*/
+    result = yBottom; /*0x6866c8*/
+    if ( g_CreditsScreenConfig != yBottom ) /*0x6866cf*/
     {
       Debug::Log(); /*0x6866d6*/
-      result = ChangeVideoMode(MEMORY[0xA8EB8C], MEMORY[0xA8EB90]); /*0x6866ea*/
+      result = ChangeVideoMode(xRight, yBottom); /*0x6866ea*/
     }
   }
   g_WTFMode = 0; /*0x6866ef*/

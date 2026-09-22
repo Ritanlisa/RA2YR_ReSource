@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x474810
 CCINIClass * WarheadTypeClass::loadWarheadINI(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
@@ -294,7 +297,7 @@ int __thiscall WarheadTypeClass::applyDamage(ObjectClass *this)
   if ( !_strcmpi(this, &stru_817460.sectionHead[1]) || !strlen(this->__pad_0) ) /*0x644649*/
     return -1; /*0x644653*/
   v2 = 0; /*0x64465a*/
-  if ( *(int *)HouseClass_Player.__pad_2C <= 0 ) /*0x64465e*/
+  if ( *(int *)HouseClass_Player[44] <= 0 ) /*0x64465e*/
   {
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x310u); /*0x644683*/
@@ -303,20 +306,20 @@ LABEL_6:
     else
       v4 = 0; /*0x6446a4*/
     v6 = 0; /*0x6446ac*/
-    if ( *(int *)HouseClass_Player.__pad_2C > 0 ) /*0x6446b0*/
+    if ( *(int *)HouseClass_Player[44] > 0 ) /*0x6446b0*/
     {
-      for ( i = *(ParticleSystemTypeClass ***)&HouseClass_Player.__pad_18[8]; *i != v4; ++i ) /*0x6446b2*/
+      for ( i = *(ParticleSystemTypeClass ***)&HouseClass_Player[32]; *i != v4; ++i ) /*0x6446b2*/
       {
-        if ( ++v6 >= *(int *)HouseClass_Player.__pad_2C ) /*0x6446c2*/
+        if ( ++v6 >= *(int *)HouseClass_Player[44] ) /*0x6446c2*/
           return -1; /*0x6446c2*/
       }
       return v6; /*0x6446cd*/
     }
     return -1; /*0x6446ca*/
   }
-  while ( _strcmpi(this, (const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_18[8] + 4 * v2) + 36)) ) /*0x644677*/
+  while ( _strcmpi(this, (const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[32] + 4 * v2) + 36)) ) /*0x644677*/
   {
-    if ( ++v2 >= *(int *)HouseClass_Player.__pad_2C ) /*0x644681*/
+    if ( ++v2 >= *(int *)HouseClass_Player[44] ) /*0x644681*/
       goto LABEL_6; /*0x644681*/
   }
   return v2; /*0x6446a0*/
@@ -416,27 +419,27 @@ int __thiscall WarheadTypeClass::Construct(int this, ObjectClass *aP1)
   AbstractClass::GenerateUniqueID(this + 4); /*0x75d0d5*/
   (*(void (__thiscall **)(int))(this->DebrisTypes + 12))(this + 396); /*0x75d0de*/
   (*(void (__thiscall **)(int))(*(_DWORD *)(this + 424) + 12))(this + 424); /*0x75d0e5*/
-  if ( *(int *)&MEMORY[0x87F8E4].__pad_5568[9860] < *(int *)&MEMORY[0x87F8E4].__pad_5568[9852] /*0x75d11c*/
-    || (MEMORY[0x87F8E4].__pad_5568[9857] || !*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9852])
-    && *(int *)&MEMORY[0x87F8E4].__pad_5568[9864] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9844] + 8))(
-         &MEMORY[0x87F8E4].__pad_5568[9844],
-         *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9852] + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9864],
+  if ( *(int *)&DataGlobal_87F8E4[31724] < *(int *)&DataGlobal_87F8E4[31716] /*0x75d11c*/
+    || (DataGlobal_87F8E4[31721] || !*(_DWORD *)&DataGlobal_87F8E4[31716])
+    && *(int *)&DataGlobal_87F8E4[31728] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&DataGlobal_87F8E4[31708] + 8))(
+         &DataGlobal_87F8E4[31708],
+         *(_DWORD *)&DataGlobal_87F8E4[31716] + *(_DWORD *)&DataGlobal_87F8E4[31728],
          0) )
   {
-    v3 = (*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9860])++; /*0x75d129*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9848] + 4 * v3) = this; /*0x75d138*/
+    v3 = (*(_DWORD *)&DataGlobal_87F8E4[31724])++; /*0x75d129*/
+    *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31712] + 4 * v3) = this; /*0x75d138*/
   }
-  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[9964] < *(int *)&g_OverlayTypeConfig.__pad_579C[9956] /*0x75d16f*/
-    || (g_OverlayTypeConfig.__pad_579C[9961] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956])
-    && *(int *)&g_OverlayTypeConfig.__pad_579C[9968] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9948] + 8))(
-         &g_OverlayTypeConfig.__pad_579C[9948],
-         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9968],
+  if ( *(int *)&g_OverlayTypeConfig[32392] < *(int *)&g_OverlayTypeConfig[32384] /*0x75d16f*/
+    || (g_OverlayTypeConfig[32389] || !*(_DWORD *)&g_OverlayTypeConfig[32384])
+    && *(int *)&g_OverlayTypeConfig[32396] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig[32376] + 8))(
+         &g_OverlayTypeConfig[32376],
+         *(_DWORD *)&g_OverlayTypeConfig[32384] + *(_DWORD *)&g_OverlayTypeConfig[32396],
          0) )
   {
-    v4 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9964])++; /*0x75d17c*/
-    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952] + 4 * v4) = this; /*0x75d18b*/
+    v4 = (*(_DWORD *)&g_OverlayTypeConfig[32392])++; /*0x75d17c*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[32380] + 4 * v4) = this; /*0x75d18b*/
   }
   this->CausesDelayKill = 0; /*0x75d19b*/
   this->q0A4 = 1072693248; /*0x75d1a0*/
@@ -648,7 +651,7 @@ int __thiscall WarheadTypeClass::FindOrCreate(ObjectClass *this)
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x75e3cc*/
     return 0; /*0x75e42f*/
   v2 = 0; /*0x75e3dd*/
-  if ( *(int *)&stru_87C374.__pad_579C[22976] <= 0 ) /*0x75e3e1*/
+  if ( *(int *)&stru_87C374[45404] <= 0 ) /*0x75e3e1*/
   {
 LABEL_6:
     v3 = __2_YAPAXI_Z(0x1D0u); /*0x75e406*/
@@ -656,12 +659,12 @@ LABEL_6:
       return WarheadTypeClass::Construct(v3, this); /*0x75e421*/
     return 0; /*0x75e415*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22964] + 4 * v2) + 36), this) ) /*0x75e3fa*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[45392] + 4 * v2) + 36), this) ) /*0x75e3fa*/
   {
-    if ( ++v2 >= *(int *)&stru_87C374.__pad_579C[22976] ) /*0x75e404*/
+    if ( ++v2 >= *(int *)&stru_87C374[45404] ) /*0x75e404*/
       goto LABEL_6; /*0x75e404*/
   }
-  return *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22964] + 4 * v2); /*0x75e41f*/
+  return *(_DWORD *)(*(_DWORD *)&stru_87C374[45392] + 4 * v2); /*0x75e41f*/
 }
 }
 
@@ -722,7 +725,7 @@ WarheadTypeClass *__thiscall WarheadTypeClass::Destructor(void **this, char a2)
     do /*0x75e57d*/
     {
       ++v3; /*0x75e56d*/
-      *((_DWORD *)MEMORY[0x8874C4] + v3 - 1) = *((_DWORD *)MEMORY[0x8874C4] + v3); /*0x75e571*/
+      *((_DWORD *)DataGlobal_8874C4 + v3 - 1) = *((_DWORD *)DataGlobal_8874C4 + v3); /*0x75e571*/
     }
     while ( v3 < g_WarheadTypePool ); /*0x75e57d*/
   }
@@ -938,7 +941,7 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
   *(_BYTE *)(a1 + 324) = INIClass::ReadBool_Overwrite(
                            (int)a3,
                            (unsigned __int8 *)(a1 + 36),
-                           (CCINIClass *)&stru_830620.__pad_579C[53908],
+                           (CCINIClass *)&stru_830620[76336],
                            *(_BYTE *)(a1 + 324));
   *(_BYTE *)(a1 + 326) = INIClass::ReadBool_Overwrite(
                            (int)a3,
@@ -963,24 +966,24 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
   *(_DWORD *)(a1 + 176) = INIClass::ReadInt_Overwrite(
                             (int)a3,
                             (unsigned __int8 *)(a1 + 36),
-                            (CCINIClass *)stru_825430.__pad_48,
+                            (CCINIClass *)stru_825430[72],
                             *(INIClass **)(a1 + 176));
   v63 = *(_DWORD *)(a1 + 180);
-  p_unknown50 = (CCINIClass *)&stru_830620.__pad_579C[51412];
+  p_unknown50 = (CCINIClass *)&stru_830620[73840];
   v61 = (CCINIClass *)(a1 + 36);
   *(_DWORD *)(a1 + 180) = INIClass::ReadCoord(*(double *)&v61, v63, v64, v65);
   v63 = *(_DWORD *)(a1 + 184);
   p_unknown50 = (CCINIClass *)&unk_849428;
   v61 = (CCINIClass *)(a1 + 36);
   *(_DWORD *)(a1 + 184) = INIClass::ReadCoord(*(double *)&v61, v63, v64, v65);
-  *(_DWORD *)aP1.__pad_0 = &v57;
+  *(_DWORD *)aP1[0] = &v57;
   IntVector::Copy(&v57, (VectorClass *)(a1 + 188));
-  v4 = *(VectorClass **)aP1.__pad_0;
-  *(_DWORD *)(*(_DWORD *)aP1.__pad_0 + 16) = *(_DWORD *)(a1 + 204);
+  v4 = *(VectorClass **)aP1[0];
+  *(_DWORD *)(*(_DWORD *)aP1[0] + 16) = *(_DWORD *)(a1 + 204);
   v4[1].Items = *(void **)(a1 + 208);
   v4->vtable0 = &vt_TypeList_int;
   v5 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(a1 + 36));
-  *(_DWORD *)aP1.__pad_0 = GetINIClassIntList(
+  *(_DWORD *)aP1[0] = GetINIClassIntList(
                              (int)aP1.headNode,
                              a3,
                              v5,
@@ -992,9 +995,9 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
                              (int)v61,
                              (int)p_unknown50,
                              v63);
-  TypeList::Copy((_DWORD *)(a1 + 188), *(_DWORD **)aP1.__pad_0);
-  v6 = *(VectorClass **)aP1.__pad_0;
-  *(_DWORD *)(a1 + 204) = *(_DWORD *)(*(_DWORD *)aP1.__pad_0 + 16);
+  TypeList::Copy((_DWORD *)(a1 + 188), *(_DWORD **)aP1[0]);
+  v6 = *(VectorClass **)aP1[0];
+  *(_DWORD *)(a1 + 204) = *(_DWORD *)(*(_DWORD *)aP1[0] + 16);
   *(_DWORD *)(a1 + 208) = v6[1].Items;
   v7 = (CCINIClass *)v6[1].Capacity;
   v8 = (CCINIClass *)aP1.headNode[1];
@@ -1002,14 +1005,14 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
   aP1.headNode[0] = (int)&vt_VectorClass_int;
   if ( v8 && BYTE1(aP1.sectionHead[0]) )
     __3_YAXPAX_Z(v8);
-  *(_DWORD *)aP1.__pad_0 = &v57;
+  *(_DWORD *)aP1[0] = &v57;
   IntVector::Copy(&v57, (VectorClass *)(a1 + 216));
-  v9 = *(VectorClass **)aP1.__pad_0;
-  *(_DWORD *)(*(_DWORD *)aP1.__pad_0 + 16) = *(_DWORD *)(a1 + 232);
+  v9 = *(VectorClass **)aP1[0];
+  *(_DWORD *)(*(_DWORD *)aP1[0] + 16) = *(_DWORD *)(a1 + 232);
   v9[1].Items = *(void **)(a1 + 236);
   v9->vtable0 = &vt_TypeList_int;
   v10 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(a1 + 36));
-  *(_DWORD *)aP1.__pad_0 = GetINIClassIntList(
+  *(_DWORD *)aP1[0] = GetINIClassIntList(
                              (int)aP1.headNode,
                              a3,
                              v10,
@@ -1021,9 +1024,9 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
                              (int)v61,
                              (int)p_unknown50,
                              v63);
-  TypeList::Copy((_DWORD *)(a1 + 216), *(_DWORD **)aP1.__pad_0);
-  v11 = *(VectorClass **)aP1.__pad_0;
-  *(_DWORD *)(a1 + 232) = *(_DWORD *)(*(_DWORD *)aP1.__pad_0 + 16);
+  TypeList::Copy((_DWORD *)(a1 + 216), *(_DWORD **)aP1[0]);
+  v11 = *(VectorClass **)aP1[0];
+  *(_DWORD *)(a1 + 232) = *(_DWORD *)(*(_DWORD *)aP1[0] + 16);
   *(_DWORD *)(a1 + 236) = v11[1].Items;
   *(_DWORD *)(a1 + 240) = v11[1].Capacity;
   aP1.headNode[0] = (int)&vt_VectorClass_int;
@@ -1033,7 +1036,7 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
          a3,
          (INIClass *)(a1 + 36),
          aAnim_0,
-         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&stru_87C374[56304],
          (INIClass *)&aP1.unknown50,
          128) )
   {
@@ -1045,26 +1048,26 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
     {
       if ( !i->__pad_0[0] )
         break;
-      *(_DWORD *)aP1.__pad_0 = AnimTypeClass::FindOrCreate(i);
-      if ( *(_DWORD *)aP1.__pad_0 )
+      *(_DWORD *)aP1[0] = AnimTypeClass::FindOrCreate(i);
+      if ( *(_DWORD *)aP1[0] )
         DynamicVector::Add_Alt4(aP1.headNode, (VectorClass *)&aP1);
     }
-    TypeList::AnimTypeCopy(aP1.__pad_20, (VectorClass *)aP1.headNode);
+    TypeList::AnimTypeCopy(aP1[32], (VectorClass *)aP1.headNode);
     aP1.headNode[0] = (int)&vt_VectorClass_AnimTypeClass_const;
     DynamicVectorClass::Destroy_Alt((int)aP1.headNode);
   }
   else
   {
-    TypeList::AnimTypeCopy(aP1.__pad_20, (VectorClass *)(a1 + 244));
+    TypeList::AnimTypeCopy(aP1[32], (VectorClass *)(a1 + 244));
   }
-  VectorClass::CopyDefault((_DWORD *)(a1 + 244), (VectorClass *)aP1.__pad_20);
+  VectorClass::CopyDefault((_DWORD *)(a1 + 244), (VectorClass *)aP1[32]);
   v13 = (CCINIClass *)aP1.unknown30;
   v14 = *(DynamicVector **)&aP1.needsSave_flag;
   *(_DWORD *)(a1 + 268) = aP1.unknown38;
-  v15 = *(void **)&aP1.__pad_20[4];
+  v15 = *(void **)&aP1[36];
   *(_DWORD *)(a1 + 260) = v13;
   *(_DWORD *)(a1 + 264) = v14;
-  *(_DWORD *)aP1.__pad_20 = &vt_VectorClass_AnimTypeClass_const;
+  *(_DWORD *)aP1[32] = &vt_VectorClass_AnimTypeClass_const;
   if ( v15 && BYTE1(aP1.INIClass_field_2C) )
     __3_YAXPAX_Z(v15);
   v16 = *(AnimTypeClass **)(a1 + 276);
@@ -1072,7 +1075,7 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
          a3,
          (INIClass *)(a1 + 36),
          &unk_849410,
-         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&stru_87C374[56304],
          (INIClass *)&aP1.unknown50,
          128) )
   {
@@ -1084,7 +1087,7 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
   }
   v63 = 128;
   p_unknown50 = (CCINIClass *)&aP1.unknown50;
-  v61 = (CCINIClass *)&stru_87C374.__pad_579C[33876];
+  v61 = (CCINIClass *)&stru_87C374[56304];
   p_IntList = (VectorClass *)&unk_849400;
   *(_DWORD *)(a1 + 276) = v17;
   v18 = *(AnimTypeClass **)(a1 + 272);
@@ -1108,7 +1111,7 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
          a3,
          (INIClass *)(a1 + 36),
          &unk_8493F0,
-         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&stru_87C374[56304],
          (INIClass *)&aP1.unknown50,
          128) )
   {
@@ -1141,7 +1144,7 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
   v29 = INIClass::ReadBool_Overwrite(
           (int)a3,
           (unsigned __int8 *)(a1 + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[20484],
+          (CCINIClass *)&stru_830620[42912],
           v28);
   LOBYTE(v63) = *(_BYTE *)(a1 + 297);
   p_unknown50 = &unk_8493AC;
@@ -1200,7 +1203,7 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
   v46 = INIClass::ReadBool_Overwrite(
           (int)a3,
           (unsigned __int8 *)(a1 + 36),
-          (CCINIClass *)stru_84928C.__pad_48,
+          (CCINIClass *)stru_84928C[72],
           *(_BYTE *)(a1 + 338));
   v47 = *(_BYTE *)(a1 + 339);
   *(_BYTE *)(a1 + 338) = v46;
@@ -1210,7 +1213,7 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
           (CCINIClass *)&stru_84928C.needsSave_flag,
           v47);
   LOBYTE(v63) = *(_BYTE *)(a1 + 340);
-  p_unknown50 = (CCINIClass *)&stru_84928C.__pad_20[8];
+  p_unknown50 = (CCINIClass *)&stru_84928C[40];
   v61 = (CCINIClass *)(a1 + 36);
   *(_BYTE *)(a1 + 339) = v48;
   *(_BYTE *)(a1 + 340) = INIClass::ReadBool_Overwrite((int)a3, (unsigned __int8 *)v61, p_unknown50, v63);
@@ -1241,13 +1244,13 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
     20);
   v52 = WarheadTypeClass::applyDamage((ObjectClass *)&aP1.INIClass_field_3C);
   if ( v52 != -1 )
-    *(_DWORD *)(a1 + 284) = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_18[8] + 4 * v52);
+    *(_DWORD *)(a1 + 284) = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[32] + 4 * v52);
   v53 = *(_DWORD *)(a1 + 172);
   if ( INIClass::GetString(
          a3,
          (INIClass *)(a1 + 36),
          &unk_8183B4,
-         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&stru_87C374[56304],
          (INIClass *)&aP1.unknown50,
          128) )
   {
@@ -1260,7 +1263,7 @@ char __fastcall WarheadTypeClass::ReadINI(int a1, int a2, unsigned __int8 ***a3)
   v55 = *(_DWORD *)(a1 + 160);
   v63 = 128;
   p_unknown50 = (CCINIClass *)&aP1.unknown50;
-  v61 = (CCINIClass *)&stru_87C374.__pad_579C[33876];
+  v61 = (CCINIClass *)&stru_87C374[56304];
   p_IntList = (VectorClass *)aProjectile;
   v59 = (CCINIClass *)(a1 + 36);
   *(_DWORD *)(a1 + 172) = v54;

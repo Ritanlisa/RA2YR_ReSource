@@ -26,9 +26,9 @@ _DWORD *__thiscall ProgressTimer::GetValue(_WORD *this, IUnknown *aP1)
   v4 = this->ProgressTimer_field_0x10; /*0x4c93e0*/
   if ( v3 != -1 ) /*0x4c93ec*/
   {
-    if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v3 >= v4 ) /*0x4c93f4*/
+    if ( *(_DWORD *)&g_NetworkPlayerBuffer[5960] - v3 >= v4 ) /*0x4c93f4*/
       goto LABEL_14; /*0x4c93f4*/
-    v4 -= *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v3; /*0x4c93f6*/
+    v4 -= *(_DWORD *)&g_NetworkPlayerBuffer[5960] - v3; /*0x4c93f6*/
   }
   if ( v4 ) /*0x4c93fa*/
   {
@@ -46,12 +46,12 @@ LABEL_12:
     v9 = this->ProgressTimer_field_0x8; /*0x4c9421*/
     if ( v9 != -1 ) /*0x4c9427*/
     {
-      if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v9 >= v8 ) /*0x4c942f*/
+      if ( *(_DWORD *)&g_NetworkPlayerBuffer[5960] - v9 >= v8 ) /*0x4c942f*/
       {
         v10 = 0; /*0x4c9456*/
         goto LABEL_11; /*0x4c9458*/
       }
-      LOWORD(v8) = v8 - (*(_WORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v9); /*0x4c9431*/
+      LOWORD(v8) = v8 - (*(_WORD *)&g_NetworkPlayerBuffer[5960] - v9); /*0x4c9431*/
     }
     v10 = v8; /*0x4c9433*/
 LABEL_11:

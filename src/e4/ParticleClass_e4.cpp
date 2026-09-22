@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x62CEC0
 namespace gamemd {
@@ -40,7 +46,7 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
   {
     if ( g_lParam || (v4 = *(_DWORD *)(this->ParticleClass_field_0xAC + 788), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
     {
-      if ( MEMORY[0xA8ED6B] /*0x62cf58*/
+      if ( ArmageddonMode /*0x62cf58*/
         || !g_hWnd
         || (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) == 0
         || (v27 = this->q027,
@@ -98,9 +104,9 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
                   (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)g_DSurface_Hidden_2 + 36))( /*0x62d288*/
                     g_DSurface_Hidden_2,
                     &v27,
-                    (unsigned __int16)(v23 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0])
-                  | (unsigned __int16)(v24 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                  | (unsigned __int16)(v25 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
+                    (unsigned __int16)(v23 >> g_BitShift_Green_0 << g_DDraw_BlueMask)
+                  | (unsigned __int16)(v24 >> g_BitMask_Blue << g_BitMask_Green)
+                  | (unsigned __int16)(v25 >> g_BitShift_Blue << g_BitShift_Blue));
                 }
               }
             }
@@ -133,7 +139,7 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
             }
             DrawToSurfaceSHP( /*0x62d01d*/
               g_DSurface_Hidden_2,
-              MEMORY[0x87F6C0],
+              DataGlobal_87F6C0,
               v8,
               v10,
               a2,
@@ -266,8 +272,8 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
     *(int *)&aP1->__pad_0[8] = (unsigned int)vt_ParticleClass;
     *(int *)&aP1->__pad_0[12] = &vt_ParticleClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP1[1].spawnStatus);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP1[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP1[1].spawnStatus);
     return 0;
   }
     return result;

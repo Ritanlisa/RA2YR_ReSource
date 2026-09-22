@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Session_e4.hpp"
+#include "e4/classes/Waypoint_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x6ACEE0
 namespace gamemd {
@@ -131,21 +135,21 @@ LABEL_151:
           sub_4E3690((HWND)hWnd, v70);
           break;
         case 1450:
-          Formatc = *(VectorClass **)&HouseClass_Player.__pad_5568[8092];
-          v60 = *(CCINIClass **)&HouseClass_Player.__pad_5568[8096];
-          strcpy((char *)Destination, &HouseClass_Player.__pad_5568[9772]);
-          wcscpy(Destination, (const wchar_t *)&HouseClass_Player.__pad_5568[8302]);
+          Formatc = *(VectorClass **)&HouseClass_Player[29956];
+          v60 = *(CCINIClass **)&HouseClass_Player[29960];
+          strcpy((char *)Destination, &HouseClass_Player[31636]);
+          wcscpy(Destination, (const wchar_t *)&HouseClass_Player[30166]);
           Dialog::IdleProcess(hWnd);
           ShowWindow((HWND)hWnd, 0);
           if ( SkirmishDialog::Show(g_hWnd, (int)v60, (int)hWnd) == (SkirmishDialog *)2 )
           {
-            *(_DWORD *)&HouseClass_Player.__pad_5568[8092] = Formatc;
-            *(_DWORD *)&HouseClass_Player.__pad_5568[8096] = v60;
+            *(_DWORD *)&HouseClass_Player[29956] = Formatc;
+            *(_DWORD *)&HouseClass_Player[29960] = v60;
             LoadScenarioClassByIndex((int)v60);
             Session::PrepareGame((HWND)hWnd);
             ShowWindow((HWND)hWnd, 5);
-            if ( IsRandMap::Sed(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752]
-                                          + 4 * *(_DWORD *)&HouseClass_Player.__pad_5568[8096])) )
+            if ( IsRandMap::Sed(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616]
+                                          + 4 * *(_DWORD *)&HouseClass_Player[29960])) )
             {
               v61 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
               if ( *(&g_MatrixTransformState + 2257) )
@@ -159,7 +163,7 @@ LABEL_151:
               else
                 v63 = 0;
               *(&g_MatrixTransformState + 2257) = (CoordStruct *)v63;
-              Surface::LoadToSurfaceSHP((char **)v63, stru_829ABC.__pad_0);
+              Surface::LoadToSurfaceSHP((char **)v63, stru_829ABC[0]);
               if ( !(*(&g_MatrixTransformState + 2257))->X )
                 Session::PrepareGame((HWND)hWnd);
               InvalidateRect((HWND)hWnd, 0, 0);
@@ -173,25 +177,25 @@ LABEL_151:
           }
           else
           {
-            PlayerCountMap = ReadPlayerCountMap(*(int *)&HouseClass_Player.__pad_5568[8096]);
-            if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)&HouseClass_Player.__pad_5568[8072] + 4))(*(_DWORD *)&HouseClass_Player.__pad_5568[8072])
-              || (v65 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 4580), v65 > PlayerCountMap) )
+            PlayerCountMap = ReadPlayerCountMap(*(int *)&HouseClass_Player[29960]);
+            if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)&HouseClass_Player[29936] + 4))(*(_DWORD *)&HouseClass_Player[29936])
+              || (v65 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4580), v65 > PlayerCountMap) )
             {
               v65 = PlayerCountMap;
             }
             ResetLobbyFactionTable(v65);
             Lobby::InvalidateFactionCombos((HWND)hWnd);
             Lobby::InvalidatePlayerSlots((HWND)hWnd);
-            Skirmish_Setup_6ADDF0((HWND)hWnd, (int)v60, *(int *)&HouseClass_Player.__pad_5568[8096]);
+            Skirmish_Setup_6ADDF0((HWND)hWnd, (int)v60, *(int *)&HouseClass_Player[29960]);
             ShowWindow((HWND)hWnd, 5);
-            if ( LoadScenarioClassByIndex(*(int *)&HouseClass_Player.__pad_5568[8096]) )
+            if ( LoadScenarioClassByIndex(*(int *)&HouseClass_Player[29960]) )
             {
-              v66 = MultiplayerGameMode::Find(*(void **)&HouseClass_Player.__pad_5568[8092]);
+              v66 = MultiplayerGameMode::Find(*(void **)&HouseClass_Player[29956]);
               SetDialogPlayerName((HWND)hWnd, v66);
               Dialog::ShowPlayerName((HWND)hWnd);
               Skirmish::EnableSpawnButtons(0);
-              if ( IsRandMap::Sed(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752]
-                                            + 4 * *(_DWORD *)&HouseClass_Player.__pad_5568[8096])) )
+              if ( IsRandMap::Sed(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616]
+                                            + 4 * *(_DWORD *)&HouseClass_Player[29960])) )
               {
                 v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
                 if ( *(&g_MatrixTransformState + 2257) )
@@ -204,7 +208,7 @@ LABEL_151:
                   else
                     v69 = 0;
                   *(&g_MatrixTransformState + 2257) = (CoordStruct *)v69;
-                  Surface::LoadToSurfaceSHP((char **)v69, stru_829ABC.__pad_0);
+                  Surface::LoadToSurfaceSHP((char **)v69, stru_829ABC[0]);
                   v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
                 }
                 if ( !*(_DWORD *)v67->__pad_0 )
@@ -218,8 +222,8 @@ LABEL_151:
             }
             else
             {
-              *(_DWORD *)&HouseClass_Player.__pad_5568[8096] = v60;
-              *(_DWORD *)&HouseClass_Player.__pad_5568[8092] = Formatc;
+              *(_DWORD *)&HouseClass_Player[29960] = v60;
+              *(_DWORD *)&HouseClass_Player[29956] = Formatc;
             }
           }
           break;
@@ -233,7 +237,7 @@ LABEL_151:
               DlgItem = GetDlgItem((HWND)hWnd, 1559);
               EnableWindow(DlgItem, 0);
             }
-            Format = (VectorClass *)ReadPlayerCountMap(*(int *)&HouseClass_Player.__pad_5568[8096]);
+            Format = (VectorClass *)ReadPlayerCountMap(*(int *)&HouseClass_Player[29960]);
             v75 = 0;
             do
             {
@@ -271,7 +275,7 @@ LABEL_151:
               ++v6;
             }
             while ( v6 < 7 );
-            *(_DWORD *)&HouseClass_Player.__pad_5568[8128] = v75;
+            *(_DWORD *)&HouseClass_Player[29992] = v75;
             v10 = (CampaignScore *)((char *)&v75->vtable0 + 1);
             if ( var244 == 1559 )
             {
@@ -280,11 +284,11 @@ LABEL_151:
                 StringCSF = GetStringCSF(
                               g_Str_TXT_SCENARIO_TOO_SMALL,
                               0,
-                              (CampaignScore *)&stru_830620.__pad_579C[40592],
+                              (CampaignScore *)&stru_830620[63020],
                               1079);
                 swprintf(Destination, (const size_t)StringCSF, (const wchar_t *const)Format, v72);
                 v86 = &stru_82083C;
-                v12 = GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620.__pad_579C[40592], 1080);
+                v12 = GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620[63020], 1080);
                 Dialog::ShowMessageBox((int)Destination, v12, 0, 0, 0, v73);
                 v13 = GetDlgItem((HWND)hWnd, 1559);
                 EnableWindow(v13, 1);
@@ -293,13 +297,13 @@ LABEL_151:
               if ( (int)v10 <= 1 )
               {
                 v14 = GetStringCSF(
-                        (wchar_t *)&stru_830620.__pad_579C[40620],
+                        (wchar_t *)&stru_830620[63048],
                         0,
-                        (CampaignScore *)&stru_830620.__pad_579C[40592],
+                        (CampaignScore *)&stru_830620[63020],
                         1087);
                 swprintf(Destination, (const size_t)v14, (const wchar_t *const)Format, v72);
                 v85 = &stru_82083C;
-                v15 = GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620.__pad_579C[40592], 1088);
+                v15 = GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620[63020], 1088);
                 Dialog::ShowMessageBox((int)Destination, v15, 0, 0, 0, v74);
                 v16 = GetDlgItem((HWND)hWnd, 1559);
                 EnableWindow(v16, 1);
@@ -346,13 +350,13 @@ LABEL_151:
                   if ( ++v17 >= 7 )
                   {
                     v22 = GetStringCSF(
-                            (wchar_t *)&stru_830620.__pad_DFC[52],
+                            (wchar_t *)&stru_830620[3632],
                             0,
-                            (CampaignScore *)&stru_830620.__pad_579C[40592],
+                            (CampaignScore *)&stru_830620[63020],
                             1111);
                     swprintf(Destination, (const size_t)v22, (const wchar_t *const)Format, v72);
                     v89 = &stru_82083C;
-                    v23 = GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620.__pad_579C[40592], 1112);
+                    v23 = GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620[63020], 1112);
                     Dialog::ShowMessageBox((int)Destination, v23, 0, 0, 0, _0c);
                     v24 = GetDlgItem((HWND)hWnd, 1559);
                     EnableWindow(v24, 1);
@@ -361,7 +365,7 @@ LABEL_151:
                 }
               }
             }
-            v25 = *(SkirmishDialog **)&HouseClass_Player.__pad_5568[8072];
+            v25 = *(SkirmishDialog **)&HouseClass_Player[29936];
             unknown_libname_74(&v82);
             if ( !(*(unsigned __int8 (__thiscall **)(SkirmishDialog *, wchar_t **))(*(_DWORD *)v25->__pad_0 + 20))(
                     v25,
@@ -370,7 +374,7 @@ LABEL_151:
               if ( var244 == 1559 )
               {
                 v83 = (VectorClass *)&stru_82083C;
-                v71 = GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620.__pad_579C[40592], 1129);
+                v71 = GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620[63020], 1129);
                 v26 = WideString::GetOrEmpty(&v82);
                 Dialog::ShowMessageBox((int)v26, v71, 0, 0, 0, (int)v72);
                 v27 = GetDlgItem((HWND)hWnd, 1559);
@@ -380,15 +384,15 @@ LABEL_151:
               }
               MultiplayerGameMode::GetFirst();
             }
-            *(_DWORD *)&HouseClass_Player.__pad_5568[8464] = *(_DWORD *)&HouseClass_Player.__pad_5568[8092];
-            *(_DWORD *)&HouseClass_Player.__pad_5568[8468] = *(_DWORD *)&HouseClass_Player.__pad_5568[8096];
-            if ( *(int *)&HouseClass_Player.__pad_5568[8096] >= *(int *)&HouseClass_Player.__pad_5568[9764] )
-              *(_DWORD *)&HouseClass_Player.__pad_5568[8468] = 0;
+            *(_DWORD *)&HouseClass_Player[30328] = *(_DWORD *)&HouseClass_Player[29956];
+            *(_DWORD *)&HouseClass_Player[30332] = *(_DWORD *)&HouseClass_Player[29960];
+            if ( *(int *)&HouseClass_Player[29960] >= *(int *)&HouseClass_Player[31628] )
+              *(_DWORD *)&HouseClass_Player[30332] = 0;
             v28 = GetDlgItem((HWND)hWnd, 1696);
             SendMessageA(v28, 0x4B3u, 0x14u, (LPARAM)lParam);
-            CopyWideToChar(&HouseClass_Player.__pad_5568[8396], lParam, -1);
+            CopyWideToChar(&HouseClass_Player[30260], lParam, -1);
             ComboBoxSelected = GetComboBoxSelected((ReferenceCounted *)hWnd, 1697, 0xFFFFFFFF);
-            SessionClass::AssignSide(&HouseClass_Player.__pad_5568[8068], ComboBoxSelected, (MPCooperative *)1);
+            SessionClass::AssignSide(&HouseClass_Player[29932], ComboBoxSelected, (MPCooperative *)1);
             v30 = 0;
             do
             {
@@ -429,25 +433,25 @@ LABEL_151:
               if ( (unsigned int)SendDlgItemMessageA((HWND)hWnd, v32, 0x150u, v34, 0) <= 2 )
               {
                 v35 = SendDlgItemMessageA((HWND)hWnd, v32, 0x147u, 0, 0);
-                *(_DWORD *)&HouseClass_Player.__pad_5568[4 * v31 + 8136] = SendDlgItemMessageA(
+                *(_DWORD *)&HouseClass_Player[21864][4 * v31 + 8136] = SendDlgItemMessageA(
                                                                              (HWND)hWnd,
                                                                              v32,
                                                                              0x150u,
                                                                              v35,
                                                                              0);
-                *(_DWORD *)&HouseClass_Player.__pad_5568[4 * v31 + 8168] = GetComboBoxSelected(
+                *(_DWORD *)&HouseClass_Player[21864][4 * v31 + 8168] = GetComboBoxSelected(
                                                                              (ReferenceCounted *)hWnd,
                                                                              ResourceID2CSF,
                                                                              0xFFFFFFFF);
-                *(_DWORD *)&HouseClass_Player.__pad_5568[4 * v31 + 8200] = GetComboBoxSelectedRaw(
+                *(_DWORD *)&HouseClass_Player[21864][4 * v31 + 8200] = GetComboBoxSelectedRaw(
                                                                              (ReferenceCounted *)hWnd,
                                                                              (int)Formata,
                                                                              0xFFFFFFFF);
-                *(_DWORD *)&HouseClass_Player.__pad_5568[4 * v31 + 8232] = SetComboBoxSelection(
+                *(_DWORD *)&HouseClass_Player[21864][4 * v31 + 8232] = SetComboBoxSelection(
                                                                              (HWND)hWnd,
                                                                              (int)ResourceID3,
                                                                              0xFFFFFFFF);
-                *(_DWORD *)&HouseClass_Player.__pad_5568[4 * v31 + 8264] = GetComboBoxSelectedRaw2(
+                *(_DWORD *)&HouseClass_Player[21864][4 * v31 + 8264] = GetComboBoxSelectedRaw2(
                                                                              (HWND)hWnd,
                                                                              (int)nIDDlgItema,
                                                                              0xFFFFFFFF);
@@ -456,7 +460,7 @@ LABEL_151:
             }
             while ( v31 < 7 );
             v36 = 0;
-            Formatb = (VectorClass *)&HouseClass_Player.__pad_5568[8508];
+            Formatb = (VectorClass *)&HouseClass_Player[30372];
             do
             {
               if ( v36 )
@@ -520,75 +524,75 @@ LABEL_151:
             v44 = GetComboBoxSelectedRaw((ReferenceCounted *)hWnd, 1698, 0xFFFFFFFF);
             v45 = SetComboBoxSelection((HWND)hWnd, 1699, 0xFFFFFFFF);
             v46 = GetComboBoxSelectedRaw2((HWND)hWnd, 1901, 0xFFFFFFFF);
-            SessionClass::AssignColor(&HouseClass_Player.__pad_5568[8068], v44, (MPCooperative *)1);
-            *(_DWORD *)&HouseClass_Player.__pad_5568[8424] = v45;
-            *(_DWORD *)&HouseClass_Player.__pad_5568[8432] = v46;
+            SessionClass::AssignColor(&HouseClass_Player[29932], v44, (MPCooperative *)1);
+            *(_DWORD *)&HouseClass_Player[30288] = v45;
+            *(_DWORD *)&HouseClass_Player[30296] = v46;
             v47 = __2_YAPAXI_Z(0x85u);
             v48 = v47;
             if ( v47 )
             {
               Waypoint::InitInvalid((_BYTE *)(v47 + 40));
-              v49 = CharToWideString(&HouseClass_Player.__pad_5568[8396]);
+              v49 = CharToWideString(&HouseClass_Player[30260]);
               wcscpy((wchar_t *)v48, (const wchar_t *)v49);
-              *(_DWORD *)(v48 + 75) = *(_DWORD *)&HouseClass_Player.__pad_5568[8440];
-              *(_DWORD *)(v48 + 83) = *(_DWORD *)&HouseClass_Player.__pad_5568[8416];
-              *(_DWORD *)(v48 + 91) = *(_DWORD *)&HouseClass_Player.__pad_5568[8424];
-              *(_DWORD *)(v48 + 99) = *(_DWORD *)&HouseClass_Player.__pad_5568[8432];
+              *(_DWORD *)(v48 + 75) = *(_DWORD *)&HouseClass_Player[30304];
+              *(_DWORD *)(v48 + 83) = *(_DWORD *)&HouseClass_Player[30280];
+              *(_DWORD *)(v48 + 91) = *(_DWORD *)&HouseClass_Player[30288];
+              *(_DWORD *)(v48 + 99) = *(_DWORD *)&HouseClass_Player[30296];
               *(_DWORD *)(v48 + 115) = -1;
-              if ( *(int *)&HouseClass_Player.__pad_5568[18384] < *(int *)&HouseClass_Player.__pad_5568[18376]
-                || (HouseClass_Player.__pad_5568[18381] || !*(_DWORD *)&HouseClass_Player.__pad_5568[18376])
-                && *(int *)&HouseClass_Player.__pad_5568[18388] > 0
-                && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_5568[18368]
+              if ( *(int *)&HouseClass_Player[40248] < *(int *)&HouseClass_Player[40240]
+                || (HouseClass_Player[40245] || !*(_DWORD *)&HouseClass_Player[40240])
+                && *(int *)&HouseClass_Player[40252] > 0
+                && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player[40232]
                                                                           + 8))(
-                     &HouseClass_Player.__pad_5568[18368],
-                     *(_DWORD *)&HouseClass_Player.__pad_5568[18376] + *(_DWORD *)&HouseClass_Player.__pad_5568[18388],
+                     &HouseClass_Player[40232],
+                     *(_DWORD *)&HouseClass_Player[40240] + *(_DWORD *)&HouseClass_Player[40252],
                      0) )
               {
-                v50 = (ObjectClass *)(*(_DWORD *)&HouseClass_Player.__pad_5568[18384])++;
-                *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * (_DWORD)v50) = v48;
+                v50 = (ObjectClass *)(*(_DWORD *)&HouseClass_Player[40248])++;
+                *(_DWORD *)(*(_DWORD *)&HouseClass_Player[40236] + 4 * (_DWORD)v50) = v48;
               }
             }
-            Player::RandomAssign(&HouseClass_Player.__pad_5568[8068]);
+            Player::RandomAssign(&HouseClass_Player[29932]);
             v51 = GetDlgItem((HWND)hWnd, 1321);
             if ( v51 )
             {
-              *(_DWORD *)&HouseClass_Player.__pad_5568[8116] = 6 - SendMessageA(v51, 0x400u, 0, 0);
-              *(_DWORD *)&HouseClass_Player.__pad_5568[22700] = *(_DWORD *)&HouseClass_Player.__pad_5568[8116];
+              *(_DWORD *)&HouseClass_Player[29980] = 6 - SendMessageA(v51, 0x400u, 0, 0);
+              *(_DWORD *)&HouseClass_Player[44564] = *(_DWORD *)&HouseClass_Player[29980];
             }
             v52 = GetDlgItem((HWND)hWnd, 1297);
             if ( v52 )
-              *(_DWORD *)&HouseClass_Player.__pad_5568[8104] = SendMessageA(v52, 0x400u, 0, 0);
+              *(_DWORD *)&HouseClass_Player[29968] = SendMessageA(v52, 0x400u, 0, 0);
             v53 = GetDlgItem((HWND)hWnd, 1292);
             if ( v53 )
-              *(_DWORD *)&HouseClass_Player.__pad_5568[8124] = SendMessageA(v53, 0x400u, 0, 0);
-            *(_DWORD *)&HouseClass_Player.__pad_5568[8472] = *(_DWORD *)&HouseClass_Player.__pad_5568[8116];
-            *(_DWORD *)&HouseClass_Player.__pad_5568[8476] = *(_DWORD *)&HouseClass_Player.__pad_5568[8104];
-            *(_DWORD *)&HouseClass_Player.__pad_5568[8480] = *(_DWORD *)&HouseClass_Player.__pad_5568[8124];
+              *(_DWORD *)&HouseClass_Player[29988] = SendMessageA(v53, 0x400u, 0, 0);
+            *(_DWORD *)&HouseClass_Player[30336] = *(_DWORD *)&HouseClass_Player[29980];
+            *(_DWORD *)&HouseClass_Player[30340] = *(_DWORD *)&HouseClass_Player[29968];
+            *(_DWORD *)&HouseClass_Player[30344] = *(_DWORD *)&HouseClass_Player[29988];
             v54 = GetDlgItem((HWND)hWnd, 1358);
             if ( v54 )
-              HouseClass_Player.__pad_5568[8110] = SendMessageA(v54, 0xF0u, 0, 0) == 1;
+              HouseClass_Player[29974] = SendMessageA(v54, 0xF0u, 0, 0) == 1;
             v55 = GetDlgItem((HWND)hWnd, 1690);
             if ( v55 )
-              HouseClass_Player.__pad_5568[8111] = SendMessageA(v55, 0xF0u, 0, 0) == 1;
+              HouseClass_Player[29975] = SendMessageA(v55, 0xF0u, 0, 0) == 1;
             v56 = GetDlgItem((HWND)hWnd, 1693);
             if ( v56 )
-              HouseClass_Player.__pad_5568[8112] = SendMessageA(v56, 0xF0u, 0, 0) == 1;
+              HouseClass_Player[29976] = SendMessageA(v56, 0xF0u, 0, 0) == 1;
             v57 = GetDlgItem((HWND)hWnd, 1683);
             if ( v57 )
-              HouseClass_Player.__pad_5568[8300] = SendMessageA(v57, 0xF0u, 0, 0) == 1;
+              HouseClass_Player[30164] = SendMessageA(v57, 0xF0u, 0, 0) == 1;
             v58 = GetDlgItem((HWND)hWnd, 1686);
             if ( v58 )
-              HouseClass_Player.__pad_5568[8109] = SendMessageA(v58, 0xF0u, 0, 0) == 1;
+              HouseClass_Player[29973] = SendMessageA(v58, 0xF0u, 0, 0) == 1;
             v59 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
-            HouseClass_Player.__pad_5568[8484] = HouseClass_Player.__pad_5568[8110];
-            HouseClass_Player.__pad_5568[8485] = HouseClass_Player.__pad_5568[8111];
-            HouseClass_Player.__pad_5568[8486] = HouseClass_Player.__pad_5568[8112];
-            HouseClass_Player.__pad_5568[8487] = HouseClass_Player.__pad_5568[8300];
-            HouseClass_Player.__pad_5568[8488] = HouseClass_Player.__pad_5568[8109];
-            HouseClass_Player.__pad_5568[8299] = 0;
-            HouseClass_Player.__pad_5568[8108] = 1;
-            HouseClass_Player.__pad_5568[8297] = 0;
-            HouseClass_Player.__pad_5568[8120] = 0;
+            HouseClass_Player[30348] = HouseClass_Player[29974];
+            HouseClass_Player[30349] = HouseClass_Player[29975];
+            HouseClass_Player[30350] = HouseClass_Player[29976];
+            HouseClass_Player[30351] = HouseClass_Player[30164];
+            HouseClass_Player[30352] = HouseClass_Player[29973];
+            HouseClass_Player[30163] = 0;
+            HouseClass_Player[29972] = 1;
+            HouseClass_Player[30161] = 0;
+            HouseClass_Player[29984] = 0;
             if ( *(&g_MatrixTransformState + 2257) )
             {
               ComPtr::Dtor(*(&g_MatrixTransformState + 2257));

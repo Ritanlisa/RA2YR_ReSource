@@ -33,7 +33,7 @@ BOOL __stdcall DialogClass::Reposition(SkirmishDialog *aP0, LPARAM a2)
 
   GetWindowRect((HWND)aP0, &Rect); /*0x775bdd*/
   GetClassNameA((HWND)aP0, ClassName, 128); /*0x775bea*/
-  if ( !strcmp(ClassName, &stru_830620.__pad_14B0[7228]) ) /*0x775c01*/
+  if ( !strcmp(ClassName, &stru_830620[12524]) ) /*0x775c01*/
     SendMessageA((HWND)aP0, 0x152u, 0, (LPARAM)&Rect); /*0x775c37*/
   if ( a2 ) /*0x775c46*/
   {

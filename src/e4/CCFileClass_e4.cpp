@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x4325C0
 char CCFileClass::Close()
@@ -108,8 +109,8 @@ void __fastcall sub_69E320(unsigned int a1)
   int v10; // eax
   int v11; // eax
 
-  v1 = MEMORY[0xB077B0]; /*0x69e324*/
-  if ( MEMORY[0xB077B0] ) /*0x69e330*/
+  v1 = DataGlobal_B077B0; /*0x69e324*/
+  if ( DataGlobal_B077B0 ) /*0x69e330*/
   {
     do /*0x69e3a1*/
     {
@@ -128,7 +129,7 @@ void __fastcall sub_69E320(unsigned int a1)
             if ( v5 ) /*0x69e368*/
               *(_DWORD *)(v5 + 24) = *((_DWORD *)v3 + 6); /*0x69e36d*/
             else
-              MEMORY[0xB077B0] = (void *)*((_DWORD *)v3 + 6); /*0x69e375*/
+              DataGlobal_B077B0 = (void *)*((_DWORD *)v3 + 6); /*0x69e375*/
             if ( *((_DWORD *)v3 + 2) ) /*0x69e37a*/
             {
               free(*((void **)v3 + 2)); /*0x69e382*/
@@ -144,16 +145,16 @@ void __fastcall sub_69E320(unsigned int a1)
     }
     while ( v1 ); /*0x69e3a1*/
   }
-  v6 = MEMORY[0xB077B4]; /*0x69e3a3*/
-  if ( MEMORY[0xB077B4] ) /*0x69e3ab*/
+  v6 = DataGlobal_B077B4; /*0x69e3a3*/
+  if ( DataGlobal_B077B4 ) /*0x69e3ab*/
   {
-    if ( *(_WORD *)MEMORY[0xB077B4] == 0xFFFF ) /*0x69e3b1*/
+    if ( *(_WORD *)DataGlobal_B077B4 == 0xFFFF ) /*0x69e3b1*/
     {
-      v7 = (char *)MEMORY[0xB077B4] + 16; /*0x69e3b6*/
-      if ( *((_BYTE *)MEMORY[0xB077B4] + 16) ) /*0x69e3b3*/
+      v7 = (char *)DataGlobal_B077B4 + 16; /*0x69e3b6*/
+      if ( *((_BYTE *)DataGlobal_B077B4 + 16) ) /*0x69e3b3*/
       {
-        v8 = (void *)*((_DWORD *)MEMORY[0xB077B4] + 3); /*0x69e3bd*/
-        v9 = (char *)MEMORY[0xB077B4] + 12; /*0x69e3c0*/
+        v8 = (void *)*((_DWORD *)DataGlobal_B077B4 + 3); /*0x69e3bd*/
+        v9 = (char *)DataGlobal_B077B4 + 12; /*0x69e3c0*/
         if ( v8 ) /*0x69e3c5*/
           MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/
         *v9 = 0; /*0x69e3ce*/
@@ -166,7 +167,7 @@ void __fastcall sub_69E320(unsigned int a1)
       if ( v11 ) /*0x69e3e5*/
         *(_DWORD *)(v11 + 24) = *((_DWORD *)v6 + 6); /*0x69e3ea*/
       else
-        MEMORY[0xB077B0] = (void *)*((_DWORD *)v6 + 6); /*0x69e3f2*/
+        DataGlobal_B077B0 = (void *)*((_DWORD *)v6 + 6); /*0x69e3f2*/
       if ( *((_DWORD *)v6 + 2) ) /*0x69e3f7*/
       {
         free(*((void **)v6 + 2)); /*0x69e3ff*/
@@ -174,9 +175,9 @@ void __fastcall sub_69E320(unsigned int a1)
       }
     }
     __3_YAXPAX_Z(v6); /*0x69e40b*/
-    MEMORY[0xB077B4] = 0; /*0x69e413*/
-    MEMORY[0xB077B8] = 0; /*0x69e419*/
-    MEMORY[0xB077BC] = 0; /*0x69e41f*/
+    DataGlobal_B077B4 = 0; /*0x69e413*/
+    DataGlobal_B077B8 = 0; /*0x69e419*/
+    DataGlobal_B077BC = 0; /*0x69e41f*/
   }
 }
 }

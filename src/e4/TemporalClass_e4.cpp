@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
 
 // 0x71A450
 namespace ra2 {
@@ -21,16 +26,16 @@ int __thiscall sub_71A450(int this)
   this->vtable1 = &TemporalClass::`vftable'; /*0x71a46d*/
   this->vtable2 = &TemporalClass::`vftable'; /*0x71a474*/
   this->vtable3 = &vt_TemporalClass; /*0x71a47b*/
-  if ( MEMORY[0xB0EC70] < MEMORY[0xB0EC68] /*0x71a4b7*/
-    || (MEMORY[0xB0EC6D] || !MEMORY[0xB0EC68])
-    && MEMORY[0xB0EC74] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0EC60] + 8))(
-         &MEMORY[0xB0EC60],
-         MEMORY[0xB0EC68] + MEMORY[0xB0EC74],
+  if ( DataGlobal_B0EC70 < DataGlobal_B0EC68 /*0x71a4b7*/
+    || (DataGlobal_B0EC6D || !DataGlobal_B0EC68)
+    && DataGlobal_B0EC74 > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_B0EC60 + 8))(
+         &DataGlobal_B0EC60,
+         DataGlobal_B0EC68 + DataGlobal_B0EC74,
          0) )
   {
-    v3 = MEMORY[0xB0EC70]++; /*0x71a4c4*/
-    *((_DWORD *)MEMORY[0xB0EC64] + v3) = this; /*0x71a4d3*/
+    v3 = DataGlobal_B0EC70++; /*0x71a4c4*/
+    *((_DWORD *)DataGlobal_B0EC64 + v3) = this; /*0x71a4d3*/
   }
   return this; /*0x71a4d8*/
 }
@@ -50,7 +55,7 @@ _DWORD *__thiscall TemporalClass::TemporalClass(_DWORD *this, TechnoClass *aP1)
   int v5; // [esp+Ch] [ebp-8h]
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
-  this->q02C = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x71a4fb*/
+  this->q02C = *(_DWORD *)&HouseClass_Player[45112]; /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   *this = &TemporalClass::`vftable'; /*0x71a501*/
   this->vtable2 = &TemporalClass::`vftable'; /*0x71a507*/
@@ -58,21 +63,21 @@ _DWORD *__thiscall TemporalClass::TemporalClass(_DWORD *this, TechnoClass *aP1)
   this->vtable4 = &vt_TemporalClass; /*0x71a515*/
   this->creationFrame = aP1; /*0x71a51c*/
   this->q028 = 0; /*0x71a51f*/
-  this->q02C = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x71a529*/
+  this->q02C = *(_DWORD *)&HouseClass_Player[45112]; /*0x71a529*/
   this->TemporalClass_field_30 = v5; /*0x71a52c*/
   this->TemporalClass_field_34 = 0; /*0x71a52f*/
   this->uniqueId = 0; /*0x71a532*/
   this->q044 = 0; /*0x71a535*/
-  if ( *(int *)&stru_B05488.__pad_579C[16460] < *(int *)&stru_B05488.__pad_579C[16452] /*0x71a569*/
-    || (stru_B05488.__pad_579C[16457] || !*(_DWORD *)&stru_B05488.__pad_579C[16452])
-    && *(int *)&stru_B05488.__pad_579C[16464] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[16444] + 8))(
-         &stru_B05488.__pad_579C[16444],
-         *(_DWORD *)&stru_B05488.__pad_579C[16452] + *(_DWORD *)&stru_B05488.__pad_579C[16464],
+  if ( *(int *)&stru_B05488[38888] < *(int *)&stru_B05488[38880] /*0x71a569*/
+    || (stru_B05488[38885] || !*(_DWORD *)&stru_B05488[38880])
+    && *(int *)&stru_B05488[38892] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[38872] + 8))(
+         &stru_B05488[38872],
+         *(_DWORD *)&stru_B05488[38880] + *(_DWORD *)&stru_B05488[38892],
          0) )
   {
-    v3 = (*(_DWORD *)&stru_B05488.__pad_579C[16460])++; /*0x71a576*/
-    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[16448] + 4 * v3) = this; /*0x71a585*/
+    v3 = (*(_DWORD *)&stru_B05488[38888])++; /*0x71a576*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488[38876] + 4 * v3) = this; /*0x71a585*/
   }
   this->q048 = 0; /*0x71a588*/
   this->q04C = 0; /*0x71a58b*/
@@ -344,15 +349,15 @@ TemporalClass *__thiscall TemporalClass::ProcessEvent(_DWORD *this, char a2)
   this->vtable3 = &TemporalClass::`vftable'; /*0x71b1ca*/
   this->vtable4 = &vt_TemporalClass; /*0x71b1d1*/
   v5 = this; /*0x71b1df*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0EC60] + 16))(&MEMORY[0xB0EC60], &v5); /*0x71b1e3*/
-  if ( v3 != -1 && v3 < MEMORY[0xB0EC70] && v3 < --MEMORY[0xB0EC70] ) /*0x71b1fe*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_B0EC60 + 16))(&DataGlobal_B0EC60, &v5); /*0x71b1e3*/
+  if ( v3 != -1 && v3 < DataGlobal_B0EC70 && v3 < --DataGlobal_B0EC70 ) /*0x71b1fe*/
   {
     do /*0x71b216*/
     {
       ++v3; /*0x71b206*/
-      *((_DWORD *)MEMORY[0xB0EC64] + v3 - 1) = *((_DWORD *)MEMORY[0xB0EC64] + v3); /*0x71b20a*/
+      *((_DWORD *)DataGlobal_B0EC64 + v3 - 1) = *((_DWORD *)DataGlobal_B0EC64 + v3); /*0x71b20a*/
     }
-    while ( v3 < MEMORY[0xB0EC70] ); /*0x71b216*/
+    while ( v3 < DataGlobal_B0EC70 ); /*0x71b216*/
   }
   AbstractClass::DTOR(this); /*0x71b21a*/
   if ( (a2 & 1) != 0 ) /*0x71b224*/
@@ -393,12 +398,12 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TemporalClass;
     *(int *)&aP0->__pad_0[12] = &vt_TemporalClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].referenceCount);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].NeedsSaveOrLink);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].abstractFlags);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].nextArrayIndex);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].referenceCount);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].NeedsSaveOrLink);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].abstractFlags);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].nextArrayIndex);
   }
     return (int)Prefix_0->__pad_0;
 }

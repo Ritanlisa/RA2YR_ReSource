@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x5AE860
 int Matrix3x4::Identity()
@@ -50,11 +51,11 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
     float v12[3];
     AbstractClass *aP2a;
     aP2a = *(AbstractClass **)aP2->__pad_0;
-    if ( (int)aP2a >= *(int *)&g_OverlayTypeConfig.__pad_5554[228] || (v8 = *(int *)&aP2->__pad_0[4], v8 >= *(int *)&g_OverlayTypeConfig.__pad_5554[232]) )
+    if ( (int)aP2a >= *(int *)&g_OverlayTypeConfig[22072] || (v8 = *(int *)&aP2->__pad_0[4], v8 >= *(int *)&g_OverlayTypeConfig[22076]) )
   {
-    *(int *)aP1->__pad_0 = *(int *)&g_OverlayTypeConfig.__pad_5554[188];
-    *(int *)&aP1->__pad_0[4] = *(int *)&g_OverlayTypeConfig.__pad_5554[192];
-    *(int *)&aP1->__pad_0[8] = *(int *)&g_OverlayTypeConfig.__pad_5554[196];
+    *(int *)aP1->__pad_0 = *(int *)&g_OverlayTypeConfig[22032];
+    *(int *)&aP1->__pad_0[4] = *(int *)&g_OverlayTypeConfig[22036];
+    *(int *)&aP1->__pad_0[8] = *(int *)&g_OverlayTypeConfig[22040];
     return aP1->__pad_0;
   }
     else

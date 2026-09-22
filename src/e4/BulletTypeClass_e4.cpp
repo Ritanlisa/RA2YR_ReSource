@@ -1,6 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/TimerClass_e4.hpp"
+#include "e4/classes/VoxelAnimType_e4.hpp"
+#include "e4/classes/WalkLocomotion_e4.hpp"
 
 // 0x465450
 int BulletTypeClass::ReadArmor()
@@ -59,15 +66,15 @@ int sub_465450()
     v6 = *((_DWORD *)g_TriggerTypeCount + i); /*0x4654f7*/
     Destination[0] = 0; /*0x465500*/
     INIClass::GetString( /*0x46550e*/
-      (unsigned __int8 ***)MEMORY[0x887048],
+      (unsigned __int8 ***)DataGlobal_887048,
       (unsigned __int8 *)(v6 + 36),
       (unsigned __int8 *)aTotile,
       0,
       Destination,
       60);
     v7 = Entity_Read(Destination); /*0x465517*/
-    if ( v7 >= 0 && v7 < MEMORY[0xA8ED38] ) /*0x465526*/
-      *(_DWORD *)(v6 + 3672) = *((_DWORD *)MEMORY[0xA8ED2C] + v7); /*0x465531*/
+    if ( v7 >= 0 && v7 < g_TechnoClassCount ) /*0x465526*/
+      *(_DWORD *)(v6 + 3672) = *((_DWORD *)g_FrameCounter + v7); /*0x465531*/
     result = g_TriggerClassCount; /*0x465537*/
   }
   return result; /*0x465541*/
@@ -92,15 +99,15 @@ int sub_465CC0()
     v2 = *((_DWORD *)g_TriggerTypeCount + i); /*0x465cdc*/
     Destination[0] = 0; /*0x465cef*/
     INIClass::GetString( /*0x465cf5*/
-      (unsigned __int8 ***)MEMORY[0x887048],
+      (unsigned __int8 ***)DataGlobal_887048,
       (unsigned __int8 *)(v2 + 36),
       (unsigned __int8 *)aTotile,
       0,
       Destination,
       60);
     v3 = Entity_Read(Destination); /*0x465cfe*/
-    if ( v3 >= 0 && v3 < MEMORY[0xA8ED38] ) /*0x465d0d*/
-      *(_DWORD *)(v2 + 3672) = *((_DWORD *)MEMORY[0xA8ED2C] + v3); /*0x465d18*/
+    if ( v3 >= 0 && v3 < g_TechnoClassCount ) /*0x465d0d*/
+      *(_DWORD *)(v2 + 3672) = *((_DWORD *)g_FrameCounter + v3); /*0x465d18*/
     result = g_TriggerClassCount; /*0x465d1e*/
   }
   return result; /*0x465d29*/
@@ -184,16 +191,16 @@ _BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
     g_BulletTypeInitState = (BulletTypeClass *)((char *)g_BulletTypeInitState + 1); /*0x46bd75*/
     *(_DWORD *)&dword_A83C84->__pad_0[4 * (_DWORD)v3] = this; /*0x46bd81*/
   }
-  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[9964] < *(int *)&g_OverlayTypeConfig.__pad_579C[9956] /*0x46bdb8*/
-    || (g_OverlayTypeConfig.__pad_579C[9961] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956])
-    && *(int *)&g_OverlayTypeConfig.__pad_579C[9968] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9948] + 8))(
-         &g_OverlayTypeConfig.__pad_579C[9948],
-         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9968],
+  if ( *(int *)&g_OverlayTypeConfig[32392] < *(int *)&g_OverlayTypeConfig[32384] /*0x46bdb8*/
+    || (g_OverlayTypeConfig[32389] || !*(_DWORD *)&g_OverlayTypeConfig[32384])
+    && *(int *)&g_OverlayTypeConfig[32396] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig[32376] + 8))(
+         &g_OverlayTypeConfig[32376],
+         *(_DWORD *)&g_OverlayTypeConfig[32384] + *(_DWORD *)&g_OverlayTypeConfig[32396],
          0) )
   {
-    v4 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9964])++; /*0x46bdc5*/
-    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952] + 4 * v4) = this; /*0x46bdd4*/
+    v4 = (*(_DWORD *)&g_OverlayTypeConfig[32392])++; /*0x46bdc5*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[32380] + 4 * v4) = this; /*0x46bdd4*/
   }
   return this; /*0x46bdd9*/
 }
@@ -352,16 +359,16 @@ char __thiscall BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
               a2,
               (INIClass *)(this + 36),
               (unsigned __int8 *)&g_INI_Key_Image,
-              (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+              (INIClass *)&DataGlobal_87F8E4[42624],
               (INIClass *)(this + 504),
               25) > 0 )
   {
     v37 = *(WeaponTypeClass **)(this + 728); /*0x46c20a*/
     if ( INIClass::GetString( /*0x46c219*/
-           (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+           (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
            (INIClass *)(this + 504),
-           (unsigned __int8 *)MEMORY[0x817F70].location,
-           (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+           (unsigned __int8 *)Delimiter.location,
+           (INIClass *)&DataGlobal_87F8E4[42624],
            Destination,
            128) )
     {
@@ -373,19 +380,19 @@ char __thiscall BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
     }
     this->trailer = v20; /*0x46c231*/
     this->spawnDelay = INIClass::ReadInt_Overwrite( /*0x46c24e*/
-                                (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                                (int)&DataGlobal_87F8E4[30876],
                                 (unsigned __int8 *)(this + 504),
-                                (CCINIClass *)&MEMORY[0x817F70].isAliveFlag,
+                                (CCINIClass *)&Delimiter.isAliveFlag,
                                 *(INIClass **)(this + 740));
     v21 = INIClass::ReadBool_Overwrite( /*0x46c26b*/
-            (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+            (int)&DataGlobal_87F8E4[30876],
             (unsigned __int8 *)(this + 504),
             &unk_81B05C,
             this->noRotate == 0);
     v34 = this->flat; /*0x46c27d*/
     this->noRotate = v21 == 0; /*0x46c287*/
     this->flat = INIClass::ReadBool_Overwrite( /*0x46c292*/
-                               (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                               (int)&DataGlobal_87F8E4[30876],
                                (unsigned __int8 *)(this + 504),
                                &unk_818624,
                                v34);
@@ -395,7 +402,7 @@ char __thiscall BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
          a2,
          (INIClass *)(this + 36),
          &unk_81B04C,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          Destination,
          128) )
   {
@@ -411,7 +418,7 @@ char __thiscall BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
          a2,
          (INIClass *)(this + 36),
          &unk_81B03C,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          Destination,
          128) )
   {
@@ -431,7 +438,7 @@ char __thiscall BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x46c33f*/
                     (int)a2,
                     (unsigned __int8 *)(this + 36),
-                    (CCINIClass *)stru_81AFD0.__pad_48,
+                    (CCINIClass *)stru_81AFD0[72],
                     *(INIClass **)(this + 700));
   v25 = this->vertical; /*0x46c344*/
   this->detonationAltitude = Int_Overwrite; /*0x46c34a*/
@@ -448,24 +455,24 @@ char __thiscall BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
                              (CCINIClass *)&stru_81AFD0.INIClass_field_2C,
                              v36);
   this->animLow = INIClass::ReadInt_Overwrite( /*0x46c399*/
-                             (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                             (int)&DataGlobal_87F8E4[30876],
                              (unsigned __int8 *)(this + 504),
-                             (CCINIClass *)&stru_81AFD0.__pad_20[4],
+                             (CCINIClass *)&stru_81AFD0[36],
                              (INIClass *)*(unsigned __int8 *)(this + 756));
   v27 = INIClass::ReadInt_Overwrite( /*0x46c3b1*/
-          (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+          (int)&DataGlobal_87F8E4[30876],
           (unsigned __int8 *)(this + 504),
           (CCINIClass *)&stru_81AFD0.sectionHead[2],
           (INIClass *)*(unsigned __int8 *)(this + 757));
   v28 = (INIClass *)*(unsigned __int8 *)(this + 758); /*0x46c3bd*/
   this->animHigh = v27; /*0x46c3c3*/
   this->animRate = INIClass::ReadInt_Overwrite( /*0x46c3d5*/
-                             (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                             (int)&DataGlobal_87F8E4[30876],
                              (unsigned __int8 *)(this + 504),
                              (CCINIClass *)&stru_81AFD0.headNode[2],
                              v28);
   this->animPalette = INIClass::ReadBool_Overwrite( /*0x46c3f2*/
-                             (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                             (int)&DataGlobal_87F8E4[30876],
                              (unsigned __int8 *)(this + 504),
                              &stru_81AFD0,
                              this->animPalette);
@@ -639,7 +646,7 @@ char __stdcall WalkLocomotionClass_Process(int a1)
       v11 = *(_DWORD **)(v1 + 8); /*0x69fd7f*/
       if ( v11[43] != 5 /*0x69fddc*/
         || *(_BYTE *)(v1 + 95)
-        || *(_DWORD *)(v1 + 48) == g_OverlayTypeConfig && *(_QWORD *)(v1 + 52) == MEMORY[0xB077FC]
+        || *(_DWORD *)(v1 + 48) == g_OverlayTypeConfig && *(_QWORD *)(v1 + 52) == DataGlobal_B077FC
         || v11[39] != *(_DWORD *)(v1 + 48)
         || v11[40] != *(_DWORD *)(v1 + 52)
         || v11[41] != *(_DWORD *)(v1 + 56) )
@@ -670,10 +677,10 @@ char __stdcall WalkLocomotionClass_Process(int a1)
           {
             if ( *(_BYTE *)(v17 + 973) ) /*0x69ffe7*/
             {
-              if ( *(_DWORD *)(v2 + 64) != g_OverlayTypeConfig || *(_QWORD *)(v2 + 68) != MEMORY[0xB077FC] ) /*0x6a0006*/
+              if ( *(_DWORD *)(v2 + 64) != g_OverlayTypeConfig || *(_QWORD *)(v2 + 68) != DataGlobal_B077FC ) /*0x6a0006*/
               {
                 *(_DWORD *)(v2 + 64) = g_OverlayTypeConfig; /*0x6a0015*/
-                *(_QWORD *)(v2 + 68) = MEMORY[0xB077FC]; /*0x6a001d*/
+                *(_QWORD *)(v2 + 68) = DataGlobal_B077FC; /*0x6a001d*/
                 *(_BYTE *)(v2 + 99) = 0; /*0x6a0029*/
               }
               *(_DWORD *)(v1 + 76) = 0; /*0x6a002c*/
@@ -702,10 +709,10 @@ char __stdcall WalkLocomotionClass_Process(int a1)
                 *(_DWORD *)(v1 + 8),
                 v1 + 48) )
         {
-          if ( *(_DWORD *)(v2 + 64) != g_OverlayTypeConfig || *(_QWORD *)(v2 + 68) != MEMORY[0xB077FC] ) /*0x6a00cc*/
+          if ( *(_DWORD *)(v2 + 64) != g_OverlayTypeConfig || *(_QWORD *)(v2 + 68) != DataGlobal_B077FC ) /*0x6a00cc*/
           {
             *(_DWORD *)(v2 + 64) = g_OverlayTypeConfig; /*0x6a00db*/
-            *(_QWORD *)(v2 + 68) = MEMORY[0xB077FC]; /*0x6a00e3*/
+            *(_QWORD *)(v2 + 68) = DataGlobal_B077FC; /*0x6a00e3*/
             *(_BYTE *)(v2 + 99) = 0; /*0x6a00ef*/
           }
           v21 = *(_DWORD **)(v2 + 12); /*0x6a00f2*/
@@ -791,9 +798,9 @@ LABEL_32:
     }
   }
   if ( *(_DWORD *)(v1 + 48) == g_OverlayTypeConfig /*0x69ff1e*/
-    && *(_DWORD *)(v1 + 52) == (_DWORD)MEMORY[0xB077FC]
-    && *(_QWORD *)(v1 + 56) == __PAIR64__(g_OverlayTypeConfig, HIDWORD(MEMORY[0xB077FC]))
-    && *(_QWORD *)(v1 + 64) == MEMORY[0xB077FC] )
+    && *(_DWORD *)(v1 + 52) == (_DWORD)DataGlobal_B077FC
+    && *(_QWORD *)(v1 + 56) == __PAIR64__(g_OverlayTypeConfig, HIDWORD(DataGlobal_B077FC))
+    && *(_QWORD *)(v1 + 64) == DataGlobal_B077FC )
   {
     v15 = *(_DWORD *)(v1 + 8); /*0x69ff25*/
     if ( *(_DWORD *)(v15 + 1504) == -1 && *(double *)(v15 + 1400) > 0.0 ) /*0x69ff41*/
@@ -844,9 +851,9 @@ int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     }
     VoxelAnimType::LoadAnim(aP0->__pad_0);
     ObjectTypeClass::Load2DArt(aP0->__pad_0);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[7]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].referenceCount);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].NeedsSaveOrLink);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[7]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].referenceCount);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].NeedsSaveOrLink);
     return 0;
   }
     return result;

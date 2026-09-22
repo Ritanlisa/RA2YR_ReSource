@@ -14,6 +14,7 @@
 #include "misc/movement_ext.hpp"
 #include "misc/rules.hpp"
 #include "misc/super_weapon.hpp"
+#include "e4/e4_globals.hpp"
 
 // 0x405170
 namespace gamemd { void* VocClass::GetSampleName() {
@@ -248,17 +249,17 @@ int __thiscall sub_514F70(int *this, char a2)
   int v113; // [esp+80h] [ebp-8h]
 
   v3 = this + 9;
-  if ( this->q024 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
+  if ( this->q024 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
   {
     (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
-    *v3 = MEMORY[0xA8F180];
-    this->q028 = MEMORY[0xA8F184];
-    this->q0B0 = MEMORY[0xA8F188];
+    *v3 = g_ScoreDisplayState1;
+    this->q028 = g_ScoreDisplayState2;
+    this->q0B0 = g_ScoreDisplayState3;
   }
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)this->m_State + 896))(this->m_State) )
     return 7;
   if ( !(*(unsigned __int8 (__stdcall **)(int *))(this->q004 + 16))(this + 1)
-    || this->MovementAI_field_18 == MEMORY[0xA8F180] && this->q01C == MEMORY[0xA8F184] && this->q008 == MEMORY[0xA8F188] )
+    || this->MovementAI_field_18 == g_ScoreDisplayState1 && this->q01C == g_ScoreDisplayState2 && this->q008 == g_ScoreDisplayState3 )
   {
     return 0;
   }
@@ -270,15 +271,15 @@ int __thiscall sub_514F70(int *this, char a2)
     v102 = *v6;
     v103 = v6[1];
     v104 = v6[2];
-    v7 = *((__int16 *)Coord::To_Cell(&MEMORY[0x87F7E8], &v102) + 139);
+    v7 = *((__int16 *)Coord::To_Cell(&DataGlobal_87F7E8, &v102) + 139);
     v95 = v7;
-    if ( v7 < 0 || v7 >= MEMORY[0x8B4148] )
+    if ( v7 < 0 || v7 >= g_Tubes_Count )
     {
       *(_DWORD *)(this->m_State + 1504) = -1;
-      *v3 = MEMORY[0xA8F180];
+      *v3 = g_ScoreDisplayState1;
       v31 = this->m_State;
-      this->q028 = MEMORY[0xA8F184];
-      this->q0B0 = MEMORY[0xA8F188];
+      this->q028 = g_ScoreDisplayState2;
+      this->q0B0 = g_ScoreDisplayState3;
       (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v31 + 1152))(v31, 0, 1);
       v32 = this->m_State;
       this->MovementAI_field_14 = 0;
@@ -297,7 +298,7 @@ int __thiscall sub_514F70(int *this, char a2)
       v100 = v8[40];
       v101 = v8[41];
       (*(void (__thiscall **)(_DWORD *, int *))(*v8 + 244))(v8, &v99);
-      v97 = *((_DWORD *)MEMORY[0x8B413C] + v95);
+      v97 = *((_DWORD *)g_PathClass_State + v95);
       v96 = *(_DWORD *)(v97 + 40);
       v9 = SHIWORD(v96) << 8;
       this->q024 = ((__int16)v96 << 8) + 128;
@@ -317,10 +318,10 @@ int __thiscall sub_514F70(int *this, char a2)
       v96 = *(_DWORD *)(v97 + 36);
       v95 = v96;
       v13 = (__int16)v96 << 8;
-      LOWORD(v96) = v96 + LOWORD(MEMORY[0x89F688][v12]);
+      LOWORD(v96) = v96 + LOWORD(Direction_X_Offsets[v12]);
       v14 = (SHIWORD(v96) << 8) + 128;
-      HIWORD(v96) = HIWORD(v95) + HIWORD(MEMORY[0x89F688][v12]);
-      v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v96);
+      HIWORD(v96) = HIWORD(v95) + HIWORD(Direction_X_Offsets[v12]);
+      v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v96);
       Coords = CellClass::GetCoords(v15, &v108);
       v17 = Coords[1];
       v18 = *Coords - (v13 + 128);
@@ -361,8 +362,8 @@ int __thiscall sub_514F70(int *this, char a2)
   }
   v33 = (_WORD *)(*(int (__thiscall **)(int *, int *))(*v5 + 440))(v5, &v97);
   v34 = v96 & 7;
-  v35 = v33[1] + HIWORD(MEMORY[0x89F688][v34]);
-  *v3 = ((__int16)(LOWORD(MEMORY[0x89F688][v34]) + *v33) << 8) + 128;
+  v35 = v33[1] + HIWORD(Direction_X_Offsets[v34]);
+  *v3 = ((__int16)(LOWORD(Direction_X_Offsets[v34]) + *v33) << 8) + 128;
   this->q028 = (v35 << 8) + 128;
   this->q0B0 = 0;
   v36 = Cell::GetGroundHeight(this + 9);
@@ -372,10 +373,10 @@ int __thiscall sub_514F70(int *this, char a2)
   v102 = *v37;
   v103 = v37[1];
   v104 = v37[2];
-  if ( v104 >= v36 + 2 * MEMORY[0xA8F1C0] + MEMORY[0xA8F1C0] )
-    this->q0B0 = MEMORY[0xA8F1B4] + v36;
+  if ( v104 >= v36 + 2 * DataGlobal_A8F1C0 + DataGlobal_A8F1C0 )
+    this->q0B0 = DataGlobal_A8F1B4 + v36;
   v93 = this->m_State;
-  v38 = Coord::To_Cell(&MEMORY[0x87F7E8], this + 9);
+  v38 = Coord::To_Cell(&DataGlobal_87F7E8, this + 9);
   if ( !CrateClass::ProcessPickup(v38, v93) )
   {
     v39 = this->m_State;
@@ -384,9 +385,9 @@ int __thiscall sub_514F70(int *this, char a2)
       if ( *(_BYTE *)(v39 + 144) && !*(_BYTE *)(v39 + 141) )
       {
         *(_DWORD *)(v39 + 1504) = -1;
-        *v3 = MEMORY[0xA8F180];
-        this->q028 = MEMORY[0xA8F184];
-        this->q0B0 = MEMORY[0xA8F188];
+        *v3 = g_ScoreDisplayState1;
+        this->q028 = g_ScoreDisplayState2;
+        this->q0B0 = g_ScoreDisplayState3;
         (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1);
         this->MovementAI_field_14 = 0;
         *(this + 18) = 0;
@@ -403,13 +404,13 @@ int __thiscall sub_514F70(int *this, char a2)
     return 7;
   v41 = Coord::Subtract(
           &v108,
-          MEMORY[0x89F6D8][2 * v34] + *(_DWORD *)(v40 + 156),
-          *(_DWORD *)(v40 + 160) + MEMORY[0x89F6DC][2 * v34],
+          DataGlobal_89F6D8[2 * v34] + *(_DWORD *)(v40 + 156),
+          *(_DWORD *)(v40 + 160) + DataGlobal_89F6DC[2 * v34],
           *(_DWORD *)(v40 + 164));
   v102 = *v41;
   v103 = v41[1];
   v104 = v41[2];
-  v42 = Coord::To_Cell(&MEMORY[0x87F7E8], &v102);
+  v42 = Coord::To_Cell(&DataGlobal_87F7E8, &v102);
   v43 = this->m_State;
   if ( *(_BYTE *)(v43 + 140) != ((v42[80] >> 8) & 1) )
     *(_BYTE *)(v43 + 1675) = 1;
@@ -420,7 +421,7 @@ int __thiscall sub_514F70(int *this, char a2)
   v45 = *(_DWORD *)v44;
   LandHeight = ObjectClass::GetLandHeight(v44);
   v91 = v96;
-  v46 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
+  v46 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v95);
   v96 = (*(int (__thiscall **)(_DWORD, void *, int, int, _DWORD, int))(v45 + 428))(
           this->m_State,
           v46,
@@ -446,7 +447,7 @@ int __thiscall sub_514F70(int *this, char a2)
       return v96;
     case 1:
     case 7:
-      v47 = Coord::To_Cell(&MEMORY[0x87F7E8], this + 9);
+      v47 = Coord::To_Cell(&DataGlobal_87F7E8, this + 9);
       CellClass::DamageAllObjects(v47);
       if ( a2 )
       {
@@ -456,15 +457,15 @@ int __thiscall sub_514F70(int *this, char a2)
         *(this + 21) = 0;
         *(this + 19) = 0;
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v48 + 1348))(v48, 0, 0);
-        if ( *v3 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
+        if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
         {
           (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
-          *v3 = MEMORY[0xA8F180];
-          this->q028 = MEMORY[0xA8F184];
-          this->q0B0 = MEMORY[0xA8F188];
+          *v3 = g_ScoreDisplayState1;
+          this->q028 = g_ScoreDisplayState2;
+          this->q0B0 = g_ScoreDisplayState3;
         }
         v49 = (_DWORD *)(this->m_State + 1600);
-        *v49 = MEMORY[0xA8ED84];
+        *v49 = g_CurrentFrame;
         v49[1] = v109;
         v49[2] = 0;
         *(_DWORD *)(this->m_State + 1504) = -1;
@@ -473,9 +474,9 @@ int __thiscall sub_514F70(int *this, char a2)
       }
       if ( v96 )
       {
-        *v3 = MEMORY[0xA8F180];
-        this->q028 = MEMORY[0xA8F184];
-        v50 = MEMORY[0xA8F188];
+        *v3 = g_ScoreDisplayState1;
+        this->q028 = g_ScoreDisplayState2;
+        v50 = g_ScoreDisplayState3;
         this->MovementAI_field_14 = 0;
         *(this + 18) = 0;
         this->q0B0 = v50;
@@ -483,57 +484,57 @@ int __thiscall sub_514F70(int *this, char a2)
         *(this + 21) = 0;
         *(this + 19) = 0;
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v51 + 1348))(v51, 0, 0);
-        if ( *v3 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
+        if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
         {
           (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->m_State + 244))(this->m_State, v3);
-          *v3 = MEMORY[0xA8F180];
-          v3[1] = MEMORY[0xA8F184];
-          v3[2] = MEMORY[0xA8F188];
+          *v3 = g_ScoreDisplayState1;
+          v3[1] = g_ScoreDisplayState2;
+          v3[2] = g_ScoreDisplayState3;
         }
       }
       return v96;
     case 2:
-      *v3 = MEMORY[0xA8F180];
-      this->q028 = MEMORY[0xA8F184];
+      *v3 = g_ScoreDisplayState1;
+      this->q028 = g_ScoreDisplayState2;
       v78 = this->m_State;
-      this->q0B0 = MEMORY[0xA8F188];
+      this->q0B0 = g_ScoreDisplayState3;
       this->MovementAI_field_14 = 0;
       *(this + 18) = 0;
       *(this + 21) = 0;
       *(this + 19) = 0;
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v78 + 1348))(v78, 0, 0);
-      if ( *v3 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
+      if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
       {
         (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
-        *v3 = MEMORY[0xA8F180];
-        this->q028 = MEMORY[0xA8F184];
-        this->q0B0 = MEMORY[0xA8F188];
+        *v3 = g_ScoreDisplayState1;
+        this->q028 = g_ScoreDisplayState2;
+        this->q0B0 = g_ScoreDisplayState3;
       }
       v79 = this->m_State;
       if ( !*(_BYTE *)(v79 + 1719) )
       {
         *(_BYTE *)(v79 + 1719) = 1;
         v80 = (_DWORD *)(this->m_State + 1640);
-        v81 = *((_DWORD *)MEMORY[0x8871E0] + 1498);
-        *v80 = MEMORY[0xA8ED84];
+        v81 = *((_DWORD *)g_RulesClass_Instance + 1498);
+        *v80 = g_CurrentFrame;
         v80[1] = v113;
         v80[2] = v81;
       }
       v82 = (_DWORD *)this->m_State;
-      v83 = MEMORY[0xA8ED84];
+      v83 = g_CurrentFrame;
       v84 = v82[400];
       v85 = v82[402];
       if ( v84 == -1 )
         goto LABEL_90;
-      if ( (int)MEMORY[0xA8ED84] - v84 >= v85 )
+      if ( (int)g_CurrentFrame - v84 >= v85 )
         goto LABEL_91;
-      v85 -= (int)MEMORY[0xA8ED84] - v84;
+      v85 -= (int)g_CurrentFrame - v84;
 LABEL_90:
       if ( !v85 )
       {
 LABEL_91:
         v82[376] = -1;
-        v83 = MEMORY[0xA8ED84];
+        v83 = g_CurrentFrame;
       }
       v86 = this->m_State;
       if ( !*(_BYTE *)(v86 + 1719) )
@@ -556,9 +557,9 @@ LABEL_97:
       MovementAI::StepFootClass(this, (v90 != 0) + 1);
       return v96;
     case 3:
-      *v3 = MEMORY[0xA8F180];
-      this->q028 = MEMORY[0xA8F184];
-      this->q0B0 = MEMORY[0xA8F188];
+      *v3 = g_ScoreDisplayState1;
+      this->q028 = g_ScoreDisplayState2;
+      this->q0B0 = g_ScoreDisplayState3;
       Cell::IsPassableAllied(this->m_State, (__int16 *)&v95);
       v52 = this->m_State;
       this->MovementAI_field_14 = 0;
@@ -566,14 +567,14 @@ LABEL_97:
       *(this + 21) = 0;
       *(this + 19) = 0;
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v52 + 1348))(v52, 0, 0);
-      if ( *v3 == MEMORY[0xA8F180] && this->q028 == MEMORY[0xA8F184] )
+      if ( *v3 == g_ScoreDisplayState1 && this->q028 == g_ScoreDisplayState2 )
         goto LABEL_61;
       goto LABEL_62;
     case 4:
     case 5:
-      *v3 = MEMORY[0xA8F180];
-      this->q028 = MEMORY[0xA8F184];
-      this->q0B0 = MEMORY[0xA8F188];
+      *v3 = g_ScoreDisplayState1;
+      this->q028 = g_ScoreDisplayState2;
+      this->q0B0 = g_ScoreDisplayState3;
       if ( a2 )
       {
         v67 = this->m_State;
@@ -582,15 +583,15 @@ LABEL_97:
         *(this + 21) = 0;
         *(this + 19) = 0;
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v67 + 1348))(v67, 0, 0);
-        if ( *v3 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
+        if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
         {
           (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
-          *v3 = MEMORY[0xA8F180];
-          this->q028 = MEMORY[0xA8F184];
-          this->q0B0 = MEMORY[0xA8F188];
+          *v3 = g_ScoreDisplayState1;
+          this->q028 = g_ScoreDisplayState2;
+          this->q0B0 = g_ScoreDisplayState3;
         }
         v68 = (_DWORD *)(this->m_State + 1600);
-        *v68 = MEMORY[0xA8ED84];
+        *v68 = g_CurrentFrame;
         v68[1] = v113;
         v68[2] = 0;
         *(_DWORD *)(this->m_State + 1504) = -1;
@@ -601,12 +602,12 @@ LABEL_97:
       }
       v98[0] = 0;
       v98[1] = 0;
-      v69 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
+      v69 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v95);
       if ( Object::FindObjectCell(v69, v98, 0) )
       {
         v99 = 0;
         v100 = 0;
-        v70 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
+        v70 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v95);
         Object = Object::FindObjectCell(v70, &v99, 0);
         if ( Object::IsAlliedWithObjectHouse(*(_DWORD **)(this->m_State + 540), Object) )
           return v96;
@@ -614,18 +615,18 @@ LABEL_97:
         v102 = 0;
         v103 = 0;
         v73 = *v72;
-        v74 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
+        v74 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v95);
         v75 = Object::FindObjectCell(v74, &v102, 0);
         (*(void (__thiscall **)(_DWORD, int, int, _DWORD))(v73 + 500))(this->m_State, 1, v75, 0);
         return v96;
       }
-      if ( *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95) + 17) != -1
-        && *(_BYTE *)(*((_DWORD *)MEMORY[0xA83D84]
-                      + *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95) + 17))
+      if ( *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v95) + 17) != -1
+        && *(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array
+                      + *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v95) + 17))
                     + 680) )
       {
         v76 = *(_DWORD *)this->m_State;
-        v77 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
+        v77 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v95);
         (*(void (__thiscall **)(_DWORD, int, void *, _DWORD))(v76 + 500))(this->m_State, 1, v77, 0);
         return v96;
       }
@@ -638,18 +639,18 @@ LABEL_97:
         v105 = *v57;
         v106 = v57[1];
         v107 = v57[2];
-        if ( (int)Coord::Length(&v105) < *((_DWORD *)MEMORY[0x8871E0] + 1478) )
+        if ( (int)Coord::Length(&v105) < *((_DWORD *)g_RulesClass_Instance + 1478) )
         {
           v58 = (int *)(this->m_State + 156);
           v105 = *v58;
           v106 = v58[1];
           v59 = this->q008 - v58[2];
-          if ( (int)((HIDWORD(v59) ^ v59) - HIDWORD(v59)) < 2 * MEMORY[0xA8F1C0] )
+          if ( (int)((HIDWORD(v59) ^ v59) - HIDWORD(v59)) < 2 * DataGlobal_A8F1C0 )
           {
             v108 = *v58;
             v109 = v58[1];
             v110 = v58[2];
-            if ( *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v108) + 59) != 10 )
+            if ( *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v108) + 59) != 10 )
             {
               (*(void (__stdcall **)(int *))(this->q004 + 72))(this + 1);
               (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1);
@@ -657,45 +658,45 @@ LABEL_97:
             }
           }
         }
-        if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], this + 9) + 80) & 0x100) == 0
+        if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, this + 9) + 80) & 0x100) == 0
           || (v60 = (int *)(this->m_State + 156),
               v105 = *v60,
               v106 = v60[1],
               v61 = v60[2],
-              v62 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], this + 9) + 283),
+              v62 = *((char *)Coord::To_Cell(&DataGlobal_87F7E8, this + 9) + 283),
               LOBYTE(v97) = 1,
-              (int)abs32(v61 / MEMORY[0xA8F1C0] - v62) <= 2) )
+              (int)abs32(v61 / DataGlobal_A8F1C0 - v62) <= 2) )
         {
           LOBYTE(v97) = 0;
         }
         v94 = v97;
-        v63 = Coord::To_Cell(&MEMORY[0x87F7E8], this + 9);
-        Cell::ApplyDamage(v63, (int)&MEMORY[0xA8F180], 1, 1, v94);
-        *v3 = MEMORY[0xA8F180];
-        this->q028 = MEMORY[0xA8F184];
-        this->q0B0 = MEMORY[0xA8F188];
+        v63 = Coord::To_Cell(&DataGlobal_87F7E8, this + 9);
+        Cell::ApplyDamage(v63, (int)&g_ScoreDisplayState1, 1, 1, v94);
+        *v3 = g_ScoreDisplayState1;
+        this->q028 = g_ScoreDisplayState2;
+        this->q0B0 = g_ScoreDisplayState3;
         v64 = this->m_State;
         this->MovementAI_field_14 = 0;
         *(this + 18) = 0;
         *(this + 21) = 0;
         *(this + 19) = 0;
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v64 + 1348))(v64, 0, 0);
-        if ( *v3 == MEMORY[0xA8F180] && this->q028 == MEMORY[0xA8F184] )
+        if ( *v3 == g_ScoreDisplayState1 && this->q028 == g_ScoreDisplayState2 )
         {
 LABEL_61:
-          if ( this->q0B0 == MEMORY[0xA8F188] )
+          if ( this->q0B0 == g_ScoreDisplayState3 )
             return v96;
         }
 LABEL_62:
         (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->m_State + 244))(this->m_State, v3);
-        *v3 = MEMORY[0xA8F180];
-        v3[1] = MEMORY[0xA8F184];
-        v3[2] = MEMORY[0xA8F188];
+        *v3 = g_ScoreDisplayState1;
+        v3[1] = g_ScoreDisplayState2;
+        v3[2] = g_ScoreDisplayState3;
         return v96;
       }
-      *v3 = MEMORY[0xA8F180];
-      this->q028 = MEMORY[0xA8F184];
-      v53 = MEMORY[0xA8F188];
+      *v3 = g_ScoreDisplayState1;
+      this->q028 = g_ScoreDisplayState2;
+      v53 = g_ScoreDisplayState3;
       this->MovementAI_field_14 = 0;
       *(this + 18) = 0;
       this->q0B0 = v53;
@@ -703,15 +704,15 @@ LABEL_62:
       *(this + 21) = 0;
       *(this + 19) = 0;
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v54 + 1348))(v54, 0, 0);
-      if ( *v3 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
+      if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
       {
         (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
-        *v3 = MEMORY[0xA8F180];
-        this->q028 = MEMORY[0xA8F184];
-        this->q0B0 = MEMORY[0xA8F188];
+        *v3 = g_ScoreDisplayState1;
+        this->q028 = g_ScoreDisplayState2;
+        this->q0B0 = g_ScoreDisplayState3;
       }
       v55 = (_DWORD *)(this->m_State + 1600);
-      *v55 = MEMORY[0xA8ED84];
+      *v55 = g_CurrentFrame;
       v55[1] = v109;
       v55[2] = 0;
       *(_DWORD *)(this->m_State + 1504) = -1;
@@ -2110,10 +2111,10 @@ int __thiscall MovementAI::StepFootClass(int *this, ObjectClass *aP1)
   v3 = (TechnoClass *)this->m_State; /*0x5164de*/
   v4 = this + 6; /*0x5164e4*/
   aP4 = (IUnknown *)v3[1].missionStartTime; /*0x5164ed*/
-  if ( this->MovementAI_field_18 != *(_DWORD *)&HouseClass_Player.__pad_5568[24268] /*0x516511*/
-    || this->q01C != *(_DWORD *)&HouseClass_Player.__pad_5568[24272]
-    || (result = *(_DWORD *)&HouseClass_Player.__pad_5568[24276],
-        this->q008 != *(_DWORD *)&HouseClass_Player.__pad_5568[24276]) )
+  if ( this->MovementAI_field_18 != *(_DWORD *)&HouseClass_Player[46132] /*0x516511*/
+    || this->q01C != *(_DWORD *)&HouseClass_Player[46136]
+    || (result = *(_DWORD *)&HouseClass_Player[46140],
+        this->q008 != *(_DWORD *)&HouseClass_Player[46140]) )
   {
     v6 = *v4 / 256; /*0x516535*/
     v7 = this->q01C / 256; /*0x516538*/
@@ -2127,7 +2128,7 @@ int __thiscall MovementAI::StepFootClass(int *this, ObjectClass *aP1)
                      + 8)
          - this->q008;
       result = (HIDWORD(v8) ^ v8) - HIDWORD(v8); /*0x51656c*/
-      if ( result < 2 * *(_DWORD *)&HouseClass_Player.__pad_5568[24332] ) /*0x516573*/
+      if ( result < 2 * *(_DWORD *)&HouseClass_Player[46196] ) /*0x516573*/
       {
         (*(void (__stdcall **)(int *))(this->q004 + 72))(this + 1); /*0x51657c*/
         return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5166e4*/
@@ -2136,11 +2137,11 @@ int __thiscall MovementAI::StepFootClass(int *this, ObjectClass *aP1)
   }
   if ( aP4 != (IUnknown *)-1 ) /*0x516589*/
     return result; /*0x516589*/
-  if ( *v4 == *(_DWORD *)&HouseClass_Player.__pad_5568[24268] /*0x5165a5*/
-    && this->q01C == *(_DWORD *)&HouseClass_Player.__pad_5568[24272] )
+  if ( *v4 == *(_DWORD *)&HouseClass_Player[46132] /*0x5165a5*/
+    && this->q01C == *(_DWORD *)&HouseClass_Player[46136] )
   {
     result = this->q008; /*0x5165ad*/
-    if ( result == *(_DWORD *)&HouseClass_Player.__pad_5568[24276] ) /*0x5165b2*/
+    if ( result == *(_DWORD *)&HouseClass_Player[46140] ) /*0x5165b2*/
       return result; /*0x5165b2*/
   }
   v9 = *v4 / 256; /*0x5165dd*/
@@ -2152,7 +2153,7 @@ int __thiscall MovementAI::StepFootClass(int *this, ObjectClass *aP1)
                     + 8)
         - this->q008;
     result = (HIDWORD(v12) ^ v12) - HIDWORD(v12); /*0x516614*/
-    if ( result <= 2 * *(_DWORD *)&HouseClass_Player.__pad_5568[24332] ) /*0x51661b*/
+    if ( result <= 2 * *(_DWORD *)&HouseClass_Player[46196] ) /*0x51661b*/
       return result; /*0x51661b*/
   }
   v13 = (TechnoClass *)this->m_State; /*0x516621*/
@@ -2160,9 +2161,9 @@ int __thiscall MovementAI::StepFootClass(int *this, ObjectClass *aP1)
   result = *(_DWORD *)&v13[1].__pad_115[19]; /*0x51662a*/
   if ( v14 != -1 ) /*0x516633*/
   {
-    if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - v14 >= result ) /*0x51663f*/
+    if ( *(_DWORD *)&HouseClass_Player[45112] - v14 >= result ) /*0x51663f*/
       goto LABEL_19; /*0x51663f*/
-    result -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - v14; /*0x516641*/
+    result -= *(_DWORD *)&HouseClass_Player[45112] - v14; /*0x516641*/
   }
   if ( result ) /*0x516645*/
     return result; /*0x516645*/
@@ -2171,8 +2172,8 @@ LABEL_19:
   HIWORD(aP4b) = this->q01C / 256; /*0x51666d*/
   if ( FootClass::MovementStep(aP4b, 0, (int)aP1, (int)v56, _34, v57) ) /*0x51667e*/
   {
-    v28 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x5168d6*/
-    v29 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5984) * 900.0); /*0x5168e8*/
+    v28 = *(_DWORD *)&HouseClass_Player[45112]; /*0x5168d6*/
+    v29 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5984) * 900.0); /*0x5168e8*/
     v31 = (IUnknown *)v67[1]; /*0x5168f0*/
     ecx45 = (_DWORD *)(this->m_State + 1600); /*0x5168f4*/
     *ecx45 = v28; /*0x5168fa*/
@@ -2180,16 +2181,16 @@ LABEL_19:
     ecx45[2] = v29; /*0x516904*/
     v32 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->m_State + 72))(this->m_State, v67); /*0x51690c*/
     v33 = *(_DWORD *)(this->m_State + 1504) & 7; /*0x516939*/
-    LOWORD(aP4a) = *v32 / 256 + *(_WORD *)&stru_89E138.__pad_14B0[4 * v33 + 160]; /*0x516955*/
-    HIWORD(aP4a) = v32[1] / 256 + *(_WORD *)&stru_89E138.__pad_14B0[4 * v33 + 162]; /*0x516961*/
+    LOWORD(aP4a) = *v32 / 256 + *(_WORD *)&stru_89E138[5296][4 * v33 + 160]; /*0x516955*/
+    HIWORD(aP4a) = v32[1] / 256 + *(_WORD *)&stru_89E138[5296][4 * v33 + 162]; /*0x516961*/
     aP1 = (ObjectClass *)aP4a; /*0x516970*/
-    if ( LayerClass::IsWithinUsableArea(&stru_87C374.__pad_14B0[8132], (IUnknown *)&aP1, (TechnoClass *)1) ) /*0x516974*/
+    if ( LayerClass::IsWithinUsableArea(&stru_87C374[13428], (IUnknown *)&aP1, (TechnoClass *)1) ) /*0x516974*/
     {
       v35 = (TechnoClass *)this->m_State; /*0x516981*/
       ebp46 = *(_DWORD *)v35->__pad_0; /*0x51698a*/
       LandHeight = (IUnknown *)ObjectClass::GetLandHeight(v35); /*0x516994*/
       v54 = *(IUnknown **)(this->m_State + 1504); /*0x5169a4*/
-      v36 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP1); /*0x5169a6*/
+      v36 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP1); /*0x5169a6*/
       if ( (*(int (__thiscall **)(TechnoClass *, void *, IUnknown *, IUnknown *, _DWORD, int))(ebp46 + 428))( /*0x5169b7*/
              v35,
              v36,
@@ -2198,7 +2199,7 @@ LABEL_19:
              0,
              1) == 6 )
       {
-        v38 = (IUnknown *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP1); /*0x5169cf*/
+        v38 = (IUnknown *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP1); /*0x5169cf*/
         edx47 = (int *)(this->m_State + 156); /*0x5169d1*/
         aP0 = *edx47; /*0x5169d9*/
         v65 = (IUnknown *)edx47[1]; /*0x5169e5*/
@@ -2208,7 +2209,7 @@ LABEL_19:
         v66 = 0; /*0x516a17*/
         v61 = 0; /*0x516a1b*/
         v62 = 0; /*0x516a1f*/
-        LOBYTE(v40) = v39 > 3 * *(_DWORD *)&HouseClass_Player.__pad_5568[24332] /*0x516a3a*/
+        LOBYTE(v40) = v39 > 3 * *(_DWORD *)&HouseClass_Player[46196] /*0x516a3a*/
                           + Cell::GetGroundHeight((IUnknown *)&aP0);
         ClosestObjectCell = (IUnknown *)Object::FindClosestObjectCell(v38, (IUnknown *)&v61, v40, 0); /*0x516a41*/
         if ( ClosestObjectCell ) /*0x516a48*/
@@ -2228,19 +2229,19 @@ LABEL_19:
                                                 (double)(int)v44 * (double)(int)v44
                                               + (double)v47 * (double)v47
                                               + (double)(v45 - v43) * (double)(v45 - v43)));
-            if ( (int)Math::RoundToInt(v48) < *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5912) /*0x516ade*/
+            if ( (int)Math::RoundToInt(v48) < *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5912) /*0x516ade*/
               && !Team::AllMembersValid((int *)this->m_State) )
             {
               v49 = (int *)(this->m_State + 156); /*0x516aee*/
               aP0 = *v49; /*0x516af8*/
               v65 = (IUnknown *)v49[1]; /*0x516aff*/
               v50 = this->q008 - v49[2]; /*0x516b0b*/
-              if ( (int)((HIDWORD(v50) ^ v50) - HIDWORD(v50)) < 2 * *(_DWORD *)&HouseClass_Player.__pad_5568[24332] ) /*0x516b1a*/
+              if ( (int)((HIDWORD(v50) ^ v50) - HIDWORD(v50)) < 2 * *(_DWORD *)&HouseClass_Player[46196] ) /*0x516b1a*/
               {
                 aP0 = *v49; /*0x516b1e*/
                 v65 = (IUnknown *)v49[1]; /*0x516b25*/
                 v66 = v49[2]; /*0x516b30*/
-                if ( *((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&aP0) + 59) != 10 ) /*0x516b46*/
+                if ( *((_DWORD *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)&aP0) + 59) != 10 ) /*0x516b46*/
                 {
                   (*(void (__stdcall **)(int *))(this->q004 + 72))(this + 1); /*0x516b4f*/
                   return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1); /*0x516b6a*/
@@ -2252,12 +2253,12 @@ LABEL_19:
                   v51 = (int *)(this->m_State + 156),
                   aP0 = *v51,
                   v65 = (IUnknown *)v51[1],
-                  v52 = v51[2] / *(_DWORD *)&HouseClass_Player.__pad_5568[24332] - SHIBYTE(v38->field_118),
+                  v52 = v51[2] / *(_DWORD *)&HouseClass_Player[46196] - SHIBYTE(v38->field_118),
                   (int)((HIDWORD(v52) ^ v52) - HIDWORD(v52)) <= 2) )
             {
               LOBYTE(aP4a) = 0; /*0x516bb0*/
             }
-            Cell::ApplyDamage(v38, (IUnknown *)&HouseClass_Player.__pad_5568[24268], 1, 1, aP4a); /*0x516bc5*/
+            Cell::ApplyDamage(v38, (IUnknown *)&HouseClass_Player[46132], 1, 1, aP4a); /*0x516bc5*/
           }
         }
       }
@@ -2267,8 +2268,8 @@ LABEL_19:
   }
   else
   {
-    v15 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x516690*/
-    v16 = (IUnknown *)Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5984) * 900.0); /*0x5166a2*/
+    v15 = *(IUnknown **)&HouseClass_Player[45112]; /*0x516690*/
+    v16 = (IUnknown *)Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5984) * 900.0); /*0x5166a2*/
     v18 = v65; /*0x5166aa*/
     ecx20 = (IUnknown **)(this->m_State + 1600); /*0x5166ae*/
     *ecx20 = v15; /*0x5166b5*/
@@ -2293,7 +2294,7 @@ LABEL_19:
                                            (double)(int)v23 * (double)(int)v23
                                          + (double)edx23 * (double)edx23
                                          + (double)(int)v61 * (double)(int)v61));
-    if ( (int)Math::RoundToInt(st7_23) >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5912) ) /*0x51677b*/
+    if ( (int)Math::RoundToInt(st7_23) >= *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5912) ) /*0x51677b*/
       goto LABEL_28; /*0x51677b*/
     if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->m_State + 388))(this->m_State) == 2 /*0x51679b*/
       || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->m_State + 388))(this->m_State) == 11 )
@@ -2315,7 +2316,7 @@ LABEL_28:
         if ( !*(_BYTE *)(result + 144) ) /*0x5167ec*/
           return result; /*0x5167ec*/
         if ( *(_BYTE *)(result + 1674) ) /*0x5167f2*/
-          PlayVocClass(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1792), 0x2000, 1.0, 0); /*0x516813*/
+          PlayVocClass(*(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 1792), 0x2000, 1.0, 0); /*0x516813*/
         *(_BYTE *)(this->m_State + 1674) = 0; /*0x51681b*/
       }
       else
@@ -2340,14 +2341,14 @@ LABEL_28:
         }
       }
     }
-    if ( this->q024 != *(_DWORD *)&HouseClass_Player.__pad_5568[24268] /*0x516899*/
-      || this->q028 != *(_DWORD *)&HouseClass_Player.__pad_5568[24272]
-      || this->q0B0 != *(_DWORD *)&HouseClass_Player.__pad_5568[24276] )
+    if ( this->q024 != *(_DWORD *)&HouseClass_Player[46132] /*0x516899*/
+      || this->q028 != *(_DWORD *)&HouseClass_Player[46136]
+      || this->q0B0 != *(_DWORD *)&HouseClass_Player[46140] )
     {
       (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9); /*0x5168a1*/
-      this->q024 = *(_DWORD *)&HouseClass_Player.__pad_5568[24268]; /*0x5168ad*/
-      this->q028 = *(_DWORD *)&HouseClass_Player.__pad_5568[24272]; /*0x5168b5*/
-      this->q0B0 = *(_DWORD *)&HouseClass_Player.__pad_5568[24276]; /*0x5168bd*/
+      this->q024 = *(_DWORD *)&HouseClass_Player[46132]; /*0x5168ad*/
+      this->q028 = *(_DWORD *)&HouseClass_Player[46136]; /*0x5168b5*/
+      this->q0B0 = *(_DWORD *)&HouseClass_Player[46140]; /*0x5168bd*/
     }
     return (*(int (__stdcall **)(int *))(this->q004 + 72))(this + 1); /*0x5168c3*/
   }
@@ -2379,7 +2380,7 @@ namespace gamemd { void* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int
       _DWORD v26[6];
 
       v5 = *a2 + (a2[1] << 9);
-      if ( v5 < 0x40000 && (v6 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4.__pad_3C[4] + 4 * v5)) != 0 )
+      if ( v5 < 0x40000 && (v6 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v5)) != 0 )
       {
         v7 = v6;
       }
@@ -3253,8 +3254,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[29084],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51512],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3289,8 +3290,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[29072],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51500],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3306,8 +3307,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[29056],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51484],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3321,8 +3322,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[29040],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51468],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3357,8 +3358,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[29024],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51452],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3373,8 +3374,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[29012],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51440],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3390,8 +3391,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[29004],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51432],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3406,8 +3407,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28996],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51424],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3442,7 +3443,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                a0,
                &g_INI_Key_General,
                &DataGlobal_825A20,
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3476,8 +3477,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28980],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51408],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3511,8 +3512,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28960],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51388],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3547,8 +3548,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28948],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51376],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3564,8 +3565,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28940],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51368],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3579,8 +3580,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28920],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51348],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3614,8 +3615,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28904],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51332],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3650,8 +3651,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28880],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51308],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3667,8 +3668,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28860],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51288],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3683,8 +3684,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28840],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51268],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3700,8 +3701,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28820],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51248],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3715,17 +3716,17 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         *(_DWORD *)&this->__pad_240[196] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[28792],
+                                             (CCINIClass *)&stru_830620[51220],
                                              *(INIClass **)&this->__pad_240[196]);
         *(_DWORD *)&this->__pad_240[200] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[28768],
+                                             (CCINIClass *)&stru_830620[51196],
                                              *(INIClass **)&this->__pad_240[200]);
         Int_Overwrite = INIClass::ReadInt_Overwrite(
                           (int)a0,
                           (unsigned __int8 *)&g_INI_Key_General,
-                          (CCINIClass *)&stru_830620.__pad_579C[28752],
+                          (CCINIClass *)&stru_830620[51180],
                           *(INIClass **)&this->__pad_240[204]);
         *(_DWORD *)&v258[8] = 128;
         *(_DWORD *)&this->__pad_240[204] = Int_Overwrite;
@@ -3733,8 +3734,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28736],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51164],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3749,8 +3750,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28724],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51152],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3766,8 +3767,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28712],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51140],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3783,8 +3784,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28696],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51124],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3799,8 +3800,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28688],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51116],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3816,8 +3817,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28680],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51108],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3833,8 +3834,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28668],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51096],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3849,8 +3850,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28644],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51072],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3866,8 +3867,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28620],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51048],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3883,8 +3884,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28600],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51028],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3899,8 +3900,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28584],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[51012],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3916,8 +3917,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28568],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50996],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3933,8 +3934,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28552],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50980],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3949,8 +3950,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28536],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50964],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -3966,8 +3967,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28520],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50948],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3983,8 +3984,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28504],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50932],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -3999,8 +4000,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28488],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50916],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4016,8 +4017,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28472],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50900],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4033,8 +4034,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28464],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50892],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4049,8 +4050,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28452],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50880],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4066,8 +4067,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28440],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50868],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4083,8 +4084,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28424],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50852],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4099,8 +4100,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28408],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50836],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4116,8 +4117,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28392],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50820],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4133,8 +4134,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28376],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50804],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4149,8 +4150,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[28360],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50788],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4166,27 +4167,27 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         *(double *)this->TiberiumHeal = INIClass::ReadDouble_Overwrite(
                                           (int)a0,
                                           &g_INI_Key_General,
-                                          (unsigned __int8 *)&stru_830620.__pad_579C[28344],
+                                          (unsigned __int8 *)&stru_830620[50772],
                                           aP3);
         this->SelfHealInfantryFrames = INIClass::ReadInt_Overwrite(
                                          (int)a0,
                                          (unsigned __int8 *)&g_INI_Key_General,
-                                         (CCINIClass *)&stru_830620.__pad_579C[28320],
+                                         (CCINIClass *)&stru_830620[50748],
                                          (INIClass *)this->SelfHealInfantryFrames);
         this->SelfHealInfantryAmount = INIClass::ReadInt_Overwrite(
                                          (int)a0,
                                          (unsigned __int8 *)&g_INI_Key_General,
-                                         (CCINIClass *)&stru_830620.__pad_579C[28296],
+                                         (CCINIClass *)&stru_830620[50724],
                                          (INIClass *)this->SelfHealInfantryAmount);
         this->SelfHealUnitFrames = INIClass::ReadInt_Overwrite(
                                      (int)a0,
                                      (unsigned __int8 *)&g_INI_Key_General,
-                                     (CCINIClass *)&stru_830620.__pad_579C[28276],
+                                     (CCINIClass *)&stru_830620[50704],
                                      (INIClass *)this->SelfHealUnitFrames);
         this->SelfHealUnitAmount = INIClass::ReadInt_Overwrite(
                                      (int)a0,
                                      (unsigned __int8 *)&g_INI_Key_General,
-                                     (CCINIClass *)&stru_830620.__pad_579C[28256],
+                                     (CCINIClass *)&stru_830620[50684],
                                      (INIClass *)this->SelfHealUnitAmount);
         aP0_28.vtable0 = &this->__pad_240[280];
         IntVector::Copy(&v257, (VectorClass *)&this->__pad_240[280]);
@@ -4197,7 +4198,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                               &v288,
                               a0,
                               &g_INI_Key_General,
-                              (unsigned __int8 *)&stru_830620.__pad_579C[28236],
+                              (unsigned __int8 *)&stru_830620[50664],
                               v257);
         aP0_28.vtable0 = &this->__pad_240[280];
         TypeList::Copy(&this->__pad_240[280], v87);
@@ -4216,7 +4217,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                               &v288,
                               a0,
                               &g_INI_Key_General,
-                              (unsigned __int8 *)&stru_830620.__pad_579C[28216],
+                              (unsigned __int8 *)&stru_830620[50644],
                               v257);
         aP0_28.vtable0 = &this->__pad_240[308];
         TypeList::Copy(&this->__pad_240[308], v89);
@@ -4235,7 +4236,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                               &v288,
                               a0,
                               &g_INI_Key_General,
-                              (unsigned __int8 *)&stru_830620.__pad_579C[28192],
+                              (unsigned __int8 *)&stru_830620[50620],
                               v257);
         aP0_28.vtable0 = &this->__pad_240[336];
         TypeList::Copy(&this->__pad_240[336], v91);
@@ -4254,7 +4255,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                               &v288,
                               a0,
                               &g_INI_Key_General,
-                              (unsigned __int8 *)&stru_830620.__pad_579C[28172],
+                              (unsigned __int8 *)&stru_830620[50600],
                               v257);
         aP0_28.vtable0 = &this->__pad_240[364];
         TypeList::Copy(&this->__pad_240[364], v93);
@@ -4273,7 +4274,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                               &v288,
                               a0,
                               &g_INI_Key_General,
-                              (unsigned __int8 *)&stru_830620.__pad_579C[28152],
+                              (unsigned __int8 *)&stru_830620[50580],
                               v257);
         aP0_28.vtable0 = &this->__pad_240[392];
         TypeList::Copy(&this->__pad_240[392], v95);
@@ -4292,7 +4293,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                               &v288,
                               a0,
                               &g_INI_Key_General,
-                              (unsigned __int8 *)&stru_830620.__pad_579C[28132],
+                              (unsigned __int8 *)&stru_830620[50560],
                               v257);
         aP0_28.vtable0 = &this->__pad_240[420];
         TypeList::Copy(&this->__pad_240[420], v97);
@@ -4308,84 +4309,84 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         *(double *)&this->__pad_240[784] = INIClass::ReadDouble_Overwrite(
                                              (int)a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[28116],
+                                             (unsigned __int8 *)&stru_830620[50544],
                                              v99);
         BYTE2(this->ElevationBonusCap[0]) = INIClass::ReadBool_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[28100],
+                                              (CCINIClass *)&stru_830620[50528],
                                               BYTE2(this->ElevationBonusCap[0]));
         HIBYTE(this->ElevationBonusCap[0]) = INIClass::ReadBool_Overwrite(
                                                (int)a0,
                                                (unsigned __int8 *)&g_INI_Key_General,
-                                               (CCINIClass *)&stru_830620.__pad_579C[28068],
+                                               (CCINIClass *)&stru_830620[50496],
                                                HIBYTE(this->ElevationBonusCap[0]));
         this->GUIMainButtonSound = INIClass::ReadInt_Overwrite(
                                      (int)a0,
                                      (unsigned __int8 *)&g_INI_Key_General,
-                                     (CCINIClass *)&stru_830620.__pad_579C[28048],
+                                     (CCINIClass *)&stru_830620[50476],
                                      (INIClass *)this->GUIMainButtonSound);
         *(double *)&v258[4] = *(float *)&this->__pad_240[816];
         *(float *)&this->__pad_240[816] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[28020],
+                                            (unsigned __int8 *)&stru_830620[50448],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[820];
         *(float *)&this->__pad_240[820] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[27992],
+                                            (unsigned __int8 *)&stru_830620[50420],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[824];
         *(float *)&this->__pad_240[824] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[27968],
+                                            (unsigned __int8 *)&stru_830620[50396],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[828];
         *(float *)&this->__pad_240[828] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[27952],
+                                            (unsigned __int8 *)&stru_830620[50380],
                                             *(INIClass **)&v258[4]);
         *(_DWORD *)&this->__pad_240[832] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[27932],
+                                             (CCINIClass *)&stru_830620[50360],
                                              *(INIClass **)&this->__pad_240[832]);
         v100 = (INIClass *)this->TreeFlammability[0];
         *(_DWORD *)&v258[8] = this->TreeFlammability[1];
         *(double *)this->TreeFlammability = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[27912],
+                                              (unsigned __int8 *)&stru_830620[50340],
                                               v100);
         v101 = (INIClass *)this->MissileROTVar[0];
         *(_DWORD *)&v258[8] = this->MissileROTVar[1];
         *(double *)this->MissileROTVar = INIClass::ReadDouble_Overwrite(
                                            (int)a0,
                                            &g_INI_Key_General,
-                                           (unsigned __int8 *)&stru_830620.__pad_579C[27896],
+                                           (unsigned __int8 *)&stru_830620[50324],
                                            v101);
         this->MissileSafetyAltitude = INIClass::ReadInt_Overwrite(
                                         (int)a0,
                                         (unsigned __int8 *)&g_INI_Key_General,
-                                        (CCINIClass *)&stru_830620.__pad_579C[27872],
+                                        (CCINIClass *)&stru_830620[50300],
                                         (INIClass *)this->MissileSafetyAltitude);
         v102 = (INIClass *)this->MissileSpeedVar[0];
         *(_DWORD *)&v258[8] = this->MissileSpeedVar[1];
         *(double *)this->MissileSpeedVar = INIClass::ReadDouble_Overwrite(
                                              (int)a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[27856],
+                                             (unsigned __int8 *)&stru_830620[50284],
                                              v102);
         DropPodWeapon = (WeaponTypeClass *)this->DropPodWeapon;
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27840],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[50268],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4399,19 +4400,19 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         this->DropPodHeight = INIClass::ReadInt_Overwrite(
                                 (int)a0,
                                 (unsigned __int8 *)&g_INI_Key_General,
-                                (CCINIClass *)&stru_830620.__pad_579C[27824],
+                                (CCINIClass *)&stru_830620[50252],
                                 (INIClass *)this->DropPodHeight);
         this->DropPodSpeed = INIClass::ReadInt_Overwrite(
                                (int)a0,
                                (unsigned __int8 *)&g_INI_Key_General,
-                               (CCINIClass *)&stru_830620.__pad_579C[27808],
+                               (CCINIClass *)&stru_830620[50236],
                                (INIClass *)this->DropPodSpeed);
         v105 = (INIClass *)this->DropPodAngle[0];
         *(_DWORD *)&v258[8] = this->DropPodAngle[1];
         Double_Overwrite = INIClass::ReadDouble_Overwrite(
                              (int)a0,
                              &g_INI_Key_General,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[27792],
+                             (unsigned __int8 *)&stru_830620[50220],
                              v105);
         *(double *)this->DropPodAngle = Double_Overwrite;
         if ( Double_Overwrite >= 1.178097245096172 )
@@ -4425,108 +4426,108 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         *(double *)this->CrewEscape = INIClass::ReadDouble_Overwrite(
                                         (int)a0,
                                         &g_INI_Key_General,
-                                        (unsigned __int8 *)&stru_830620.__pad_579C[27780],
+                                        (unsigned __int8 *)&stru_830620[50208],
                                         v107);
         v108 = (INIClass *)this->TunnelSpeed[0];
         *(_DWORD *)&v258[8] = this->TunnelSpeed[1];
         *(double *)this->TunnelSpeed = INIClass::ReadDouble_Overwrite(
                                          (int)a0,
                                          &g_INI_Key_General,
-                                         (unsigned __int8 *)&stru_830620.__pad_579C[27768],
+                                         (unsigned __int8 *)&stru_830620[50196],
                                          v108);
         v109 = (INIClass *)this->HoverDampen[0];
         *(_DWORD *)&v258[8] = this->HoverDampen[1];
         *(double *)this->HoverDampen = INIClass::ReadDouble_Overwrite(
                                          (int)a0,
                                          &g_INI_Key_General,
-                                         (unsigned __int8 *)&stru_830620.__pad_579C[27756],
+                                         (unsigned __int8 *)&stru_830620[50184],
                                          v109);
         v110 = (INIClass *)this->HoverBob[0];
         *(_DWORD *)&v258[8] = this->HoverBob[1];
         *(double *)this->HoverBob = INIClass::ReadDouble_Overwrite(
                                       (int)a0,
                                       &g_INI_Key_General,
-                                      (unsigned __int8 *)&stru_830620.__pad_579C[27744],
+                                      (unsigned __int8 *)&stru_830620[50172],
                                       v110);
         this->HoverHeight = INIClass::ReadInt_Overwrite(
                               (int)a0,
                               (unsigned __int8 *)&g_INI_Key_General,
-                              (CCINIClass *)&stru_830620.__pad_579C[27732],
+                              (CCINIClass *)&stru_830620[50160],
                               (INIClass *)this->HoverHeight);
         v111 = (INIClass *)this->HoverBoost[0];
         *(_DWORD *)&v258[8] = this->HoverBoost[1];
         *(double *)this->HoverBoost = INIClass::ReadDouble_Overwrite(
                                         (int)a0,
                                         &g_INI_Key_General,
-                                        (unsigned __int8 *)&stru_830620.__pad_579C[27720],
+                                        (unsigned __int8 *)&stru_830620[50148],
                                         v111);
         v112 = (INIClass *)this->HoverAcceleration[0];
         *(_DWORD *)&v258[8] = this->HoverAcceleration[1];
         *(double *)this->HoverAcceleration = INIClass::ReadDouble_Overwrite(
                                                (int)a0,
                                                &g_INI_Key_General,
-                                               (unsigned __int8 *)&stru_830620.__pad_579C[27700],
+                                               (unsigned __int8 *)&stru_830620[50128],
                                                v112);
         v113 = (INIClass *)this->HoverBrake[0];
         *(_DWORD *)&v258[8] = this->HoverBrake[1];
         *(double *)this->HoverBrake = INIClass::ReadDouble_Overwrite(
                                         (int)a0,
                                         &g_INI_Key_General,
-                                        (unsigned __int8 *)&stru_830620.__pad_579C[27688],
+                                        (unsigned __int8 *)&stru_830620[50116],
                                         v113);
         *(_DWORD *)&v258[8] = this->OptionsChanged;
         *(double *)&this->SystemError = INIClass::ReadDouble_Overwrite(
                                           (int)a0,
                                           &g_INI_Key_General,
-                                          (unsigned __int8 *)&stru_830620.__pad_579C[27672],
+                                          (unsigned __int8 *)&stru_830620[50100],
                                           (INIClass *)this->SystemError);
         GameForming = (INIClass *)this->GameForming;
         *(_DWORD *)&v258[8] = this->PlayerLeft;
         *(double *)&this->GameForming = INIClass::ReadDouble_Overwrite(
                                           (int)a0,
                                           &g_INI_Key_General,
-                                          (unsigned __int8 *)&stru_830620.__pad_579C[27656],
+                                          (unsigned __int8 *)&stru_830620[50084],
                                           GameForming);
         PlayerJoined = (INIClass *)this->PlayerJoined;
         *(_DWORD *)&v258[8] = this->MessageCharTyped;
         *(double *)&this->PlayerJoined = INIClass::ReadDouble_Overwrite(
                                            (int)a0,
                                            &g_INI_Key_General,
-                                           (unsigned __int8 *)&stru_830620.__pad_579C[27640],
+                                           (unsigned __int8 *)&stru_830620[50068],
                                            PlayerJoined);
         Construction = (INIClass *)this->Construction;
         *(_DWORD *)&v258[8] = this->CreditTicks[0];
         *(double *)&this->Construction = INIClass::ReadDouble_Overwrite(
                                            (int)a0,
                                            &g_INI_Key_General,
-                                           (unsigned __int8 *)&stru_830620.__pad_579C[27624],
+                                           (unsigned __int8 *)&stru_830620[50052],
                                            Construction);
         v117 = (INIClass *)this->CreditTicks[1];
         *(_DWORD *)&v258[8] = this->CreditTicks[2];
         *(double *)&this->CreditTicks[1] = INIClass::ReadDouble_Overwrite(
                                              (int)a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[27608],
+                                             (unsigned __int8 *)&stru_830620[50036],
                                              v117);
         v118 = (INIClass *)this->CreditTicks[3];
         *(_DWORD *)&v258[8] = this->CreditTicks[4];
         *(double *)&this->CreditTicks[3] = INIClass::ReadDouble_Overwrite(
                                              (int)a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[27596],
+                                             (unsigned __int8 *)&stru_830620[50024],
                                              v118);
         v119 = (INIClass *)this->CreditTicks[5];
         *(_DWORD *)&v258[8] = this->BuildingDieSound;
         *(double *)&this->CreditTicks[5] = INIClass::ReadDouble_Overwrite(
                                              (int)a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[27584],
+                                             (unsigned __int8 *)&stru_830620[50012],
                                              v119);
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27560],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49988],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4560,7 +4561,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         v121 = INIClass::ReadInt_Overwrite(
                  (int)a0,
                  (unsigned __int8 *)&g_INI_Key_General,
-                 (CCINIClass *)&stru_830620.__pad_579C[27544],
+                 (CCINIClass *)&stru_830620[49972],
                  (INIClass *)this->VeteranRatio[1]);
         *(_DWORD *)&v258[8] = 128;
         this->VeteranRatio[1] = v121;
@@ -4568,8 +4569,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27528],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49956],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4584,8 +4585,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27508],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49936],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4599,100 +4600,100 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         this->VeteranCombat[0] = INIClass::ReadInt_Overwrite(
                                    (int)a0,
                                    (unsigned __int8 *)&g_INI_Key_General,
-                                   (CCINIClass *)&stru_830620.__pad_579C[27492],
+                                   (CCINIClass *)&stru_830620[49920],
                                    (INIClass *)this->VeteranCombat[0]);
         v126 = (INIClass *)this->VeteranSpeed[0];
         *(_DWORD *)&v258[8] = this->VeteranSpeed[1];
         *(double *)this->VeteranSpeed = INIClass::ReadDouble_Overwrite(
                                           (int)a0,
                                           &g_INI_Key_General,
-                                          (unsigned __int8 *)&stru_830620.__pad_579C[27472],
+                                          (unsigned __int8 *)&stru_830620[49900],
                                           v126);
         v127 = (INIClass *)this->VeteranSight[0];
         *(_DWORD *)&v258[8] = this->VeteranSight[1];
         *(double *)this->VeteranSight = INIClass::ReadDouble_Overwrite(
                                           (int)a0,
                                           &g_INI_Key_General,
-                                          (unsigned __int8 *)&stru_830620.__pad_579C[27452],
+                                          (unsigned __int8 *)&stru_830620[49880],
                                           v127);
         v128 = (INIClass *)this->VeteranArmor[0];
         *(_DWORD *)&v258[8] = this->VeteranArmor[1];
         *(double *)this->VeteranArmor = INIClass::ReadDouble_Overwrite(
                                           (int)a0,
                                           &g_INI_Key_General,
-                                          (unsigned __int8 *)&stru_830620.__pad_579C[27432],
+                                          (unsigned __int8 *)&stru_830620[49860],
                                           v128);
         LOBYTE(this->IncomingMessage) = INIClass::ReadInt_Overwrite(
                                           (int)a0,
                                           (unsigned __int8 *)&g_INI_Key_General,
-                                          (CCINIClass *)&stru_830620.__pad_579C[27408],
+                                          (CCINIClass *)&stru_830620[49836],
                                           (INIClass *)SLOBYTE(this->IncomingMessage));
         v129 = (INIClass *)this->PlacementDelay[0];
         *(_DWORD *)&v258[8] = this->PlacementDelay[1];
         *(double *)this->PlacementDelay = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[27392],
+                                            (unsigned __int8 *)&stru_830620[49820],
                                             v129);
         WindDirection = (INIClass *)this->WindDirection;
         *(_DWORD *)&v258[8] = this->CameraRange;
         *(double *)&this->WindDirection = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[27376],
+                                            (unsigned __int8 *)&stru_830620[49804],
                                             WindDirection);
         FlightLevel = (INIClass *)this->FlightLevel;
         *(_DWORD *)&v258[8] = this->ParachuteMaxFallRate;
         *(double *)&this->FlightLevel = INIClass::ReadDouble_Overwrite(
                                           (int)a0,
                                           &g_INI_Key_General,
-                                          (unsigned __int8 *)&stru_830620.__pad_579C[27360],
+                                          (unsigned __int8 *)&stru_830620[49788],
                                           FlightLevel);
         NoParachuteMaxFallRate = (INIClass *)this->NoParachuteMaxFallRate;
         *(_DWORD *)&v258[8] = this->BuildingDrop;
         *(double *)&this->NoParachuteMaxFallRate = INIClass::ReadDouble_Overwrite(
                                                      (int)a0,
                                                      &g_INI_Key_General,
-                                                     (unsigned __int8 *)&stru_830620.__pad_579C[27344],
+                                                     (unsigned __int8 *)&stru_830620[49772],
                                                      NoParachuteMaxFallRate);
         GDIGateOne = (INIClass *)this->GDIGateOne;
         *(_DWORD *)&v258[8] = this->GDIGateTwo;
         *(double *)&this->GDIGateOne = INIClass::ReadDouble_Overwrite(
                                          (int)a0,
                                          &g_INI_Key_General,
-                                         (unsigned __int8 *)&stru_830620.__pad_579C[27328],
+                                         (unsigned __int8 *)&stru_830620[49756],
                                          GDIGateOne);
         this->BuildNavalYard[0] = INIClass::ReadInt_Overwrite(
                                     (int)a0,
                                     (unsigned __int8 *)&g_INI_Key_General,
-                                    (CCINIClass *)&stru_830620.__pad_579C[27312],
+                                    (CCINIClass *)&stru_830620[49740],
                                     (INIClass *)this->BuildNavalYard[0]);
         *(_DWORD *)&v258[8] = this->GDIWallDefense[0];
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[27300];
+        *(_DWORD *)&v258[4] = &stru_830620[49728];
         *(_DWORD *)v258 = &g_INI_Key_General;
         this->GDIWallDefense[0] = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         this->GDIWallDefense[1] = INIClass::ReadInt_Overwrite(
                                     (int)a0,
                                     (unsigned __int8 *)&g_INI_Key_General,
-                                    (CCINIClass *)&stru_830620.__pad_579C[27288],
+                                    (CCINIClass *)&stru_830620[49716],
                                     (INIClass *)this->GDIWallDefense[1]);
         this->GDIWallDefenseCoefficient[0] = INIClass::ReadInt_Overwrite(
                                                (int)a0,
                                                (unsigned __int8 *)&g_INI_Key_General,
-                                               (CCINIClass *)&stru_830620.__pad_579C[27264],
+                                               (CCINIClass *)&stru_830620[49692],
                                                (INIClass *)this->GDIWallDefenseCoefficient[0]);
         v134 = INIClass::ReadInt_Overwrite(
                  (int)a0,
                  (unsigned __int8 *)&g_INI_Key_General,
-                 (CCINIClass *)&stru_830620.__pad_579C[27240],
+                 (CCINIClass *)&stru_830620[49668],
                  (INIClass *)this->GDIWallDefenseCoefficient[1]);
         *(_DWORD *)&v258[8] = 128;
         this->GDIWallDefenseCoefficient[1] = v134;
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27228],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49656],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4727,8 +4728,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27216],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49644],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4744,8 +4745,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27204],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49632],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4760,8 +4761,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27192],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49620],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4777,8 +4778,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27180],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49608],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4794,8 +4795,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27168],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49596],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4809,8 +4810,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27156],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49584],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4845,8 +4846,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27140],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49568],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4861,8 +4862,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27124],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49552],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4878,8 +4879,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27104],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49532],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4895,8 +4896,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27088],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49516],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4911,8 +4912,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27060],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49488],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -4927,8 +4928,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27048],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49476],
+               (INIClass *)&stru_87C374[56304],
                String,
                *(int *)&v258[8]) )
         {
@@ -4962,8 +4963,8 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         if ( INIClass::GetString(
                a0,
                &g_INI_Key_General,
-               (unsigned __int8 *)&stru_830620.__pad_579C[27032],
-               (INIClass *)&stru_87C374.__pad_579C[33876],
+               (unsigned __int8 *)&stru_830620[49460],
+               (INIClass *)&stru_87C374[56304],
                String,
                128) )
         {
@@ -5001,14 +5002,14 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                (int)&v288,
                                a0,
                                &g_INI_Key_General,
-                               (unsigned __int8 *)&stru_830620.__pad_579C[27020],
+                               (unsigned __int8 *)&stru_830620[49448],
                                &this->Easy[3]);
         RulesClass::readSuperWeaponTypes(&this->Easy[3], CountryName);
         RulesClass::readCountries(&v288);
         this->Normal[18] = (int)GetINIClassInt(
                                   a0,
                                   &g_INI_Key_General,
-                                  (unsigned __int8 *)&stru_830620.__pad_579C[27008],
+                                  (unsigned __int8 *)&stru_830620[49436],
                                   this->Normal[18]);
         INIClassInfantryTypeList = ReadINIClassInfantryTypeList(
                                      (INIClass *)&v288,
@@ -5022,7 +5023,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                  (int)&v288,
                                  a0,
                                  &g_INI_Key_General,
-                                 (unsigned __int8 *)&stru_830620.__pad_579C[26996],
+                                 (unsigned __int8 *)&stru_830620[49424],
                                  &this->__pad_C3C[224]);
         RulesClass::readAircraftTypes((int *)&this->__pad_C3C[224], BuildingTypes);
         RulesClass::readInfantryTypes(&v288);
@@ -5030,7 +5031,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                             (INIClass *)&v288,
                                             a0,
                                             (VectorClass *)&g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[26980],
+                                            (unsigned __int8 *)&stru_830620[49408],
                                             &this->__pad_C3C[252]);
         TypeList::CopyAircraft((int *)&this->__pad_C3C[252], BuildingTypeList);
         RulesClass::readMaximums(&v288);
@@ -5040,69 +5041,69 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         this->Difficult[0] = INIClass::ReadInt_Overwrite(
                                (int)a0,
                                (unsigned __int8 *)&g_INI_Key_General,
-                               (CCINIClass *)&stru_830620.__pad_579C[26968],
+                               (CCINIClass *)&stru_830620[49396],
                                (INIClass *)this->Difficult[0]);
         this->Difficult[1] = INIClass::ReadInt_Overwrite(
                                (int)a0,
                                (unsigned __int8 *)&g_INI_Key_General,
-                               (CCINIClass *)&stru_830620.__pad_579C[26948],
+                               (CCINIClass *)&stru_830620[49376],
                                (INIClass *)this->Difficult[1]);
         this->Difficult[2] = INIClass::ReadInt_Overwrite(
                                (int)a0,
                                (unsigned __int8 *)&g_INI_Key_General,
-                               (CCINIClass *)&stru_830620.__pad_579C[26924],
+                               (CCINIClass *)&stru_830620[49352],
                                (INIClass *)this->Difficult[2]);
         LOBYTE(this->Difficult[3]) = INIClass::ReadBool_Overwrite(
                                        (int)a0,
                                        (unsigned __int8 *)&g_INI_Key_General,
-                                       (CCINIClass *)&stru_830620.__pad_579C[26908],
+                                       (CCINIClass *)&stru_830620[49336],
                                        this->Difficult[3]);
         this->Difficult[4] = INIClass::ReadInt_Overwrite(
                                (int)a0,
                                (unsigned __int8 *)&g_INI_Key_General,
-                               (CCINIClass *)&stru_830620.__pad_579C[26888],
+                               (CCINIClass *)&stru_830620[49316],
                                (INIClass *)this->Difficult[4]);
         this->Difficult[5] = INIClass::ReadInt_Overwrite(
                                (int)a0,
                                (unsigned __int8 *)&g_INI_Key_General,
-                               (CCINIClass *)&stru_830620.__pad_579C[26868],
+                               (CCINIClass *)&stru_830620[49296],
                                (INIClass *)this->Difficult[5]);
         *(_DWORD *)&this->__pad_C3C[284] = GetINIClassInt(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[26852],
+                                             (unsigned __int8 *)&stru_830620[49280],
                                              *(_DWORD *)&this->__pad_C3C[284]);
         *(_DWORD *)&this->__pad_C3C[288] = GetINIClassInt(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[26836],
+                                             (unsigned __int8 *)&stru_830620[49264],
                                              *(_DWORD *)&this->__pad_C3C[288]);
         *(_DWORD *)&this->__pad_C3C[292] = GetINIClassInt(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[26820],
+                                             (unsigned __int8 *)&stru_830620[49248],
                                              *(_DWORD *)&this->__pad_C3C[292]);
         *(_DWORD *)&this->__pad_C3C[296] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[26800],
+                                             (CCINIClass *)&stru_830620[49228],
                                              *(INIClass **)&this->__pad_C3C[296]);
         *(double *)&v258[4] = *(float *)&this->__pad_C3C[300];
         *(float *)&this->__pad_C3C[300] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[26776],
+                                            (unsigned __int8 *)&stru_830620[49204],
                                             *(INIClass **)&v258[4]);
         this->__pad_C3C[304] = INIClass::ReadBool_Overwrite(
                                  (int)a0,
                                  (unsigned __int8 *)&g_INI_Key_General,
-                                 (CCINIClass *)&stru_830620.__pad_579C[26752],
+                                 (CCINIClass *)&stru_830620[49180],
                                  this->__pad_C3C[304]);
         *(double *)&v258[4] = *(float *)&this->__pad_C3C[768];
         *(float *)&this->__pad_C3C[768] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[26736],
+                                            (unsigned __int8 *)&stru_830620[49164],
                                             *(INIClass **)&v258[4]);
         *(_DWORD *)&this->__pad_C3C[820] = GetINIClassInt(
                                              a0,
@@ -5112,44 +5113,44 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         *(_DWORD *)&this->__pad_C3C[816] = GetINIClassInt(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[26724],
+                                             (unsigned __int8 *)&stru_830620[49152],
                                              *(_DWORD *)&this->__pad_C3C[816]);
         *(_DWORD *)&this->__pad_C3C[824] = GetINIClassInt(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[26716],
+                                             (unsigned __int8 *)&stru_830620[49144],
                                              *(_DWORD *)&this->__pad_C3C[824]);
         *(_DWORD *)&this->__pad_C3C[828] = GetINIClassInt(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[26704],
+                                             (unsigned __int8 *)&stru_830620[49132],
                                              *(_DWORD *)&this->__pad_C3C[828]);
         *(_DWORD *)&this->__pad_C3C[832] = GetINIClassInt(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[26692],
+                                             (unsigned __int8 *)&stru_830620[49120],
                                              *(_DWORD *)&this->__pad_C3C[832]);
         *(_DWORD *)&this->__pad_C3C[836] = GetINIClassInt(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[26680],
+                                             (unsigned __int8 *)&stru_830620[49108],
                                              *(_DWORD *)&this->__pad_C3C[836]);
         BYTE1(this->ElevationIncrement) = INIClass::ReadBool_Overwrite(
                                             (int)a0,
                                             (unsigned __int8 *)&g_INI_Key_General,
-                                            (CCINIClass *)&stru_830620.__pad_579C[26664],
+                                            (CCINIClass *)&stru_830620[49092],
                                             BYTE1(this->ElevationIncrement));
         LOBYTE(this->ElevationIncrementBonus[0]) = INIClass::ReadBool_Overwrite(
                                                      (int)a0,
                                                      (unsigned __int8 *)&g_INI_Key_General,
-                                                     (CCINIClass *)&stru_830620.__pad_579C[26648],
+                                                     (CCINIClass *)&stru_830620[49076],
                                                      this->ElevationIncrementBonus[0]);
         VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1308]);
         IntList = (VectorClass *)INIClass::ReadIntList(
                                    a0,
                                    (int)&v288,
                                    &g_INI_Key_General,
-                                   (unsigned __int8 *)&stru_830620.__pad_579C[26636],
+                                   (unsigned __int8 *)&stru_830620[49064],
                                    (void **)v257.vtable0,
                                    v257.Items,
                                    v257.Capacity,
@@ -5164,7 +5165,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[26620],
+                                (unsigned __int8 *)&stru_830620[49048],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5177,31 +5178,31 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         *(_DWORD *)&this->__pad_C3C[1732] = INIClass::ReadInt_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[26584],
+                                              (CCINIClass *)&stru_830620[49012],
                                               *(INIClass **)&this->__pad_C3C[1732]);
         v167 = *(INIClass **)&this->__pad_C3C[1964];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1968];
         *(double *)&this->__pad_C3C[1964] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[26552],
+                                              (unsigned __int8 *)&stru_830620[48980],
                                               v167);
         BYTE1(this->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[26532],
+                                              (CCINIClass *)&stru_830620[48960],
                                               BYTE1(this->ElevationBonusCap[1]));
         BYTE2(this->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[26516],
+                                              (CCINIClass *)&stru_830620[48944],
                                               BYTE2(this->ElevationBonusCap[1]));
         VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1972]);
         v168 = (VectorClass *)INIClass::ReadIntList(
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[26488],
+                                (unsigned __int8 *)&stru_830620[48916],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5216,7 +5217,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[26464],
+                                (unsigned __int8 *)&stru_830620[48892],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5231,7 +5232,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[26440],
+                                (unsigned __int8 *)&stru_830620[48868],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5246,7 +5247,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[26424],
+                                (unsigned __int8 *)&stru_830620[48852],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5259,40 +5260,40 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         HIBYTE(this->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite(
                                                (int)a0,
                                                (unsigned __int8 *)&g_INI_Key_General,
-                                               (CCINIClass *)&stru_830620.__pad_579C[26404],
+                                               (CCINIClass *)&stru_830620[48832],
                                                HIBYTE(this->ElevationBonusCap[1]));
         *(_DWORD *)&this->__pad_C3C[1364] = INIClass::ReadInt_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[26376],
+                                              (CCINIClass *)&stru_830620[48804],
                                               *(INIClass **)&this->__pad_C3C[1364]);
         *(_DWORD *)&this->__pad_C3C[312] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[26360],
+                                             (CCINIClass *)&stru_830620[48788],
                                              *(INIClass **)&this->__pad_C3C[312]);
         *(double *)&v258[4] = *(float *)&this->__pad_C3C[308];
         *(float *)&this->__pad_C3C[308] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[26332],
+                                            (unsigned __int8 *)&stru_830620[48760],
                                             *(INIClass **)&v258[4]);
         *(_DWORD *)&this->__pad_C3C[316] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[26308],
+                                             (CCINIClass *)&stru_830620[48736],
                                              *(INIClass **)&this->__pad_C3C[316]);
         *(_DWORD *)&this->__pad_C3C[320] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[26280],
+                                             (CCINIClass *)&stru_830620[48708],
                                              *(INIClass **)&this->__pad_C3C[320]);
         VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[324]);
         v172 = (VectorClass *)INIClass::ReadIntList(
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[26256],
+                                (unsigned __int8 *)&stru_830620[48684],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5307,7 +5308,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[26232],
+                                (unsigned __int8 *)&stru_830620[48660],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5322,7 +5323,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[26208],
+                                (unsigned __int8 *)&stru_830620[48636],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5337,7 +5338,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[26180],
+                                (unsigned __int8 *)&stru_830620[48608],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5350,49 +5351,49 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         *(_DWORD *)&this->__pad_C3C[436] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[26156],
+                                             (CCINIClass *)&stru_830620[48584],
                                              *(INIClass **)&this->__pad_C3C[436]);
         *(_DWORD *)&this->__pad_C3C[440] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[26136],
+                                             (CCINIClass *)&stru_830620[48564],
                                              *(INIClass **)&this->__pad_C3C[440]);
         *(_DWORD *)&this->__pad_C3C[444] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[26104],
+                                             (CCINIClass *)&stru_830620[48532],
                                              *(INIClass **)&this->__pad_C3C[444]);
         *(_DWORD *)&this->__pad_C3C[448] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[26080],
+                                             (CCINIClass *)&stru_830620[48508],
                                              *(INIClass **)&this->__pad_C3C[448]);
         *(_DWORD *)&this->__pad_C3C[452] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[26056],
+                                             (CCINIClass *)&stru_830620[48484],
                                              *(INIClass **)&this->__pad_C3C[452]);
         *(_DWORD *)&this->__pad_C3C[456] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[26032],
+                                             (CCINIClass *)&stru_830620[48460],
                                              *(INIClass **)&this->__pad_C3C[456]);
         *(_DWORD *)&this->__pad_C3C[460] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[26008],
+                                             (CCINIClass *)&stru_830620[48436],
                                              *(INIClass **)&this->__pad_C3C[460]);
         *(_DWORD *)&this->__pad_C3C[464] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[25984],
+                                             (CCINIClass *)&stru_830620[48412],
                                              *(INIClass **)&this->__pad_C3C[464]);
         VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[468]);
         v176 = (VectorClass *)INIClass::ReadIntList(
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25948],
+                                (unsigned __int8 *)&stru_830620[48376],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5407,7 +5408,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25924],
+                                (unsigned __int8 *)&stru_830620[48352],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5420,43 +5421,43 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         *(_DWORD *)&this->__pad_C3C[524] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[25888],
+                                             (CCINIClass *)&stru_830620[48316],
                                              *(INIClass **)&this->__pad_C3C[524]);
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->MutateExplosion;
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25868];
+        *(_DWORD *)&v258[4] = &stru_830620[48296];
         *(_DWORD *)v258 = &g_INI_Key_General;
         *(_DWORD *)&this->MutateExplosion = INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         *(_DWORD *)&v258[8] = this->CollapseChance;
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25848];
+        *(_DWORD *)&v258[4] = &stru_830620[48276];
         *(_DWORD *)v258 = &g_INI_Key_General;
         this->CollapseChance = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         *(_DWORD *)&v258[8] = this->WeedCapacity;
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25828];
+        *(_DWORD *)&v258[4] = &stru_830620[48256];
         *(_DWORD *)v258 = &g_INI_Key_General;
         this->WeedCapacity = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         *(float *)&v258[8] = this->ExtraUnitLight;
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25808];
+        *(_DWORD *)&v258[4] = &stru_830620[48236];
         *(_DWORD *)v258 = &g_INI_Key_General;
         LODWORD(this->ExtraUnitLight) = INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         *(float *)&v258[8] = this->ExtraInfantryLight;
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25788];
+        *(_DWORD *)&v258[4] = &stru_830620[48216];
         *(_DWORD *)v258 = &g_INI_Key_General;
         LODWORD(this->ExtraInfantryLight) = INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         *(float *)&v258[8] = this->ExtraAircraftLight;
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25760];
+        *(_DWORD *)&v258[4] = &stru_830620[48188];
         *(_DWORD *)v258 = &g_INI_Key_General;
         LODWORD(this->ExtraAircraftLight) = INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         *(_DWORD *)&this->Paranoid = INIClass::ReadInt_Overwrite(
                                        (int)a0,
                                        (unsigned __int8 *)&g_INI_Key_General,
-                                       (CCINIClass *)&stru_830620.__pad_579C[25732],
+                                       (CCINIClass *)&stru_830620[48160],
                                        *(INIClass **)&this->Paranoid);
         VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[648]);
         v178 = (VectorClass *)INIClass::ReadIntList(
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25704],
+                                (unsigned __int8 *)&stru_830620[48132],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5469,10 +5470,10 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         *(_DWORD *)&this->__pad_C3C[676] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[25680],
+                                             (CCINIClass *)&stru_830620[48108],
                                              *(INIClass **)&this->__pad_C3C[676]);
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[680];
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25656];
+        *(_DWORD *)&v258[4] = &stru_830620[48084];
         *(_DWORD *)v258 = &g_INI_Key_General;
         *(_DWORD *)&this->__pad_C3C[680] = INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[528]);
@@ -5480,7 +5481,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25640],
+                                (unsigned __int8 *)&stru_830620[48068],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5495,7 +5496,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25620],
+                                (unsigned __int8 *)&stru_830620[48048],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5510,7 +5511,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25600],
+                                (unsigned __int8 *)&stru_830620[48028],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5525,7 +5526,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25580],
+                                (unsigned __int8 *)&stru_830620[48008],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5538,20 +5539,20 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         *(_DWORD *)&this->__pad_C3C[640] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[25556],
+                                             (CCINIClass *)&stru_830620[47984],
                                              *(INIClass **)&this->__pad_C3C[640]);
         *(double *)&v258[4] = *(float *)&this->__pad_C3C[644];
         *(float *)&this->__pad_C3C[644] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[25532],
+                                            (unsigned __int8 *)&stru_830620[47960],
                                             *(INIClass **)&v258[4]);
         VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1736]);
         v183 = (VectorClass *)INIClass::ReadIntList(
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25516],
+                                (unsigned __int8 *)&stru_830620[47944],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5566,7 +5567,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25496],
+                                (unsigned __int8 *)&stru_830620[47924],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5581,7 +5582,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25476],
+                                (unsigned __int8 *)&stru_830620[47904],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5596,7 +5597,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25452],
+                                (unsigned __int8 *)&stru_830620[47880],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5611,7 +5612,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25432],
+                                (unsigned __int8 *)&stru_830620[47860],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5625,7 +5626,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                  (INIClass *)&v288,
                  a0,
                  &g_INI_Key_General,
-                 (unsigned __int8 *)&stru_830620.__pad_579C[25416],
+                 (unsigned __int8 *)&stru_830620[47844],
                  &this->Difficult[6]);
         TypeList::CopyInfantry(&this->Difficult[6], (CCINIClass *)v188);
         TypeList::InfantryCleanup(&v288);
@@ -5634,7 +5635,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25400],
+                                (unsigned __int8 *)&stru_830620[47828],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5648,7 +5649,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                  (INIClass *)&v288,
                  a0,
                  &g_INI_Key_General,
-                 (unsigned __int8 *)&stru_830620.__pad_579C[25384],
+                 (unsigned __int8 *)&stru_830620[47812],
                  this->__pad_C3C);
         TypeList::CopyInfantry((int *)this->__pad_C3C, (CCINIClass *)v190);
         TypeList::InfantryCleanup(&v288);
@@ -5657,7 +5658,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25368],
+                                (unsigned __int8 *)&stru_830620[47796],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5671,7 +5672,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                  (INIClass *)&v288,
                  a0,
                  &g_INI_Key_General,
-                 (unsigned __int8 *)&stru_830620.__pad_579C[25352],
+                 (unsigned __int8 *)&stru_830620[47780],
                  &this->__pad_C3C[56]);
         TypeList::CopyInfantry((int *)&this->__pad_C3C[56], (CCINIClass *)v192);
         TypeList::InfantryCleanup(&v288);
@@ -5680,7 +5681,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25336],
+                                (unsigned __int8 *)&stru_830620[47764],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5694,7 +5695,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                  (INIClass *)&v288,
                  a0,
                  &g_INI_Key_General,
-                 (unsigned __int8 *)&stru_830620.__pad_579C[25320],
+                 (unsigned __int8 *)&stru_830620[47748],
                  &this->__pad_C3C[112]);
         TypeList::CopyInfantry((int *)&this->__pad_C3C[112], (CCINIClass *)v194);
         TypeList::InfantryCleanup(&v288);
@@ -5703,7 +5704,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25304],
+                                (unsigned __int8 *)&stru_830620[47732],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5717,7 +5718,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                  (INIClass *)&v288,
                  a0,
                  &g_INI_Key_General,
-                 (unsigned __int8 *)&stru_830620.__pad_579C[25288],
+                 (unsigned __int8 *)&stru_830620[47716],
                  &this->__pad_C3C[168]);
         TypeList::CopyInfantry((int *)&this->__pad_C3C[168], (CCINIClass *)v196);
         TypeList::InfantryCleanup(&v288);
@@ -5726,7 +5727,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25264],
+                                (unsigned __int8 *)&stru_830620[47692],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5741,7 +5742,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25236],
+                                (unsigned __int8 *)&stru_830620[47664],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5756,7 +5757,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25212],
+                                (unsigned __int8 *)&stru_830620[47640],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5771,7 +5772,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25184],
+                                (unsigned __int8 *)&stru_830620[47612],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5786,7 +5787,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25156],
+                                (unsigned __int8 *)&stru_830620[47584],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5801,7 +5802,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25132],
+                                (unsigned __int8 *)&stru_830620[47560],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5816,7 +5817,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25104],
+                                (unsigned __int8 *)&stru_830620[47532],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5831,7 +5832,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25084],
+                                (unsigned __int8 *)&stru_830620[47512],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5846,7 +5847,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25064],
+                                (unsigned __int8 *)&stru_830620[47492],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5861,7 +5862,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25036],
+                                (unsigned __int8 *)&stru_830620[47464],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5876,7 +5877,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[25012],
+                                (unsigned __int8 *)&stru_830620[47440],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5891,7 +5892,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[24988],
+                                (unsigned __int8 *)&stru_830620[47416],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5906,7 +5907,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[24964],
+                                (unsigned __int8 *)&stru_830620[47392],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -5921,639 +5922,639 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         *(double *)&this->__pad_C3C[2004] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[24952],
+                                              (unsigned __int8 *)&stru_830620[47380],
                                               v210);
         v211 = *(INIClass **)&this->__pad_C3C[2012];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2016];
         *(double *)&this->__pad_C3C[2012] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[24936],
+                                              (unsigned __int8 *)&stru_830620[47364],
                                               v211);
         v212 = *(INIClass **)&this->__pad_C3C[2020];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2024];
         *(double *)&this->__pad_C3C[2020] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[24924],
+                                              (unsigned __int8 *)&stru_830620[47352],
                                               v212);
         LOBYTE(this->ElevationIncrementBonus[1]) = INIClass::ReadBool_Overwrite(
                                                      (int)a0,
                                                      (unsigned __int8 *)&g_INI_Key_General,
-                                                     (CCINIClass *)&stru_830620.__pad_579C[24904],
+                                                     (CCINIClass *)&stru_830620[47332],
                                                      this->ElevationIncrementBonus[1]);
         v213 = *(INIClass **)&this->__pad_C3C[2204];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2208];
         *(double *)&this->__pad_C3C[2204] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[24884],
+                                              (unsigned __int8 *)&stru_830620[47312],
                                               v213);
         *(_DWORD *)&this->__pad_C3C[2212] = INIClass::ReadInt_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[24868],
+                                              (CCINIClass *)&stru_830620[47296],
                                               *(INIClass **)&this->__pad_C3C[2212]);
         v214 = *(INIClass **)&this->__pad_C3C[2220];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2224];
         *(double *)&this->__pad_C3C[2220] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[24852],
+                                              (unsigned __int8 *)&stru_830620[47280],
                                               v214);
         v215 = *(INIClass **)&this->__pad_C3C[2228];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2232];
         *(double *)&this->__pad_C3C[2228] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[24836],
+                                              (unsigned __int8 *)&stru_830620[47264],
                                               v215);
         *(_DWORD *)&this->__pad_C3C[2236] = INIClass::ReadInt_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[24812],
+                                              (CCINIClass *)&stru_830620[47240],
                                               *(INIClass **)&this->__pad_C3C[2236]);
         *(_DWORD *)&this->__pad_C3C[2240] = INIClass::ReadInt_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[24788],
+                                              (CCINIClass *)&stru_830620[47216],
                                               *(INIClass **)&this->__pad_C3C[2240]);
         *(_DWORD *)&this->__pad_C3C[2244] = INIClass::ReadInt_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[24764],
+                                              (CCINIClass *)&stru_830620[47192],
                                               *(INIClass **)&this->__pad_C3C[2244]);
         v216 = *(INIClass **)&this->__pad_C3C[2252];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2256];
         *(double *)&this->__pad_C3C[2252] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[24752],
+                                              (unsigned __int8 *)&stru_830620[47180],
                                               v216);
         v217 = *(INIClass **)&this->__pad_C3C[2268];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2272];
         *(double *)&this->__pad_C3C[2268] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[24740],
+                                              (unsigned __int8 *)&stru_830620[47168],
                                               v217);
         v218 = *(INIClass **)&this->__pad_C3C[2284];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2288];
         *(double *)&this->__pad_C3C[2284] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[24720],
+                                              (unsigned __int8 *)&stru_830620[47148],
                                               v218);
         *(_DWORD *)&this->__pad_C3C[2276] = INIClass::ReadInt_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[24700],
+                                              (CCINIClass *)&stru_830620[47128],
                                               *(INIClass **)&this->__pad_C3C[2276]);
         LightningDamage = (INIClass *)this->LightningDamage;
         *(_DWORD *)&v258[8] = this->LightningStormDuration;
         *(double *)&this->LightningDamage = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[24688],
+                                              (unsigned __int8 *)&stru_830620[47116],
                                               LightningDamage);
         v220 = (INIClass *)this->RepairPercent[1];
         *(_DWORD *)&v258[8] = this->IRepairStep;
         *(double *)&this->RepairPercent[1] = INIClass::ReadDouble_Overwrite(
                                                (int)a0,
                                                &g_INI_Key_General,
-                                               (unsigned __int8 *)&stru_830620.__pad_579C[24676],
+                                               (unsigned __int8 *)&stru_830620[47104],
                                                v220);
         v221 = (INIClass *)this->GrowthRate[0];
         *(_DWORD *)&v258[8] = this->GrowthRate[1];
         *(double *)this->GrowthRate = INIClass::ReadDouble_Overwrite(
                                         (int)a0,
                                         &g_INI_Key_General,
-                                        (unsigned __int8 *)&stru_830620.__pad_579C[24664],
+                                        (unsigned __int8 *)&stru_830620[47092],
                                         v221);
         v222 = (INIClass *)this->MovieTime[1];
         *(_DWORD *)&v258[8] = this->TiberiumShortScan;
         *(double *)&this->MovieTime[1] = INIClass::ReadDouble_Overwrite(
                                            (int)a0,
                                            &g_INI_Key_General,
-                                           (unsigned __int8 *)&stru_830620.__pad_579C[24648],
+                                           (unsigned __int8 *)&stru_830620[47076],
                                            v222);
         v223 = (INIClass *)this->ConditionYellow[0];
         *(_DWORD *)&v258[8] = this->ConditionYellow[1];
         *(double *)this->ConditionYellow = INIClass::ReadDouble_Overwrite(
                                              (int)a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[24632],
+                                             (unsigned __int8 *)&stru_830620[47060],
                                              v223);
         this->IRepairRate[1] = INIClass::ReadInt_Overwrite(
                                  (int)a0,
                                  (unsigned __int8 *)&g_INI_Key_General,
-                                 (CCINIClass *)&stru_830620.__pad_579C[24620],
+                                 (CCINIClass *)&stru_830620[47048],
                                  (INIClass *)this->IRepairRate[1]);
         this->ConditionRed[0] = INIClass::ReadInt_Overwrite(
                                   (int)a0,
                                   (unsigned __int8 *)&g_INI_Key_General,
-                                  (CCINIClass *)&stru_830620.__pad_579C[24608],
+                                  (CCINIClass *)&stru_830620[47036],
                                   (INIClass *)this->ConditionRed[0]);
         v224 = (INIClass *)this->IdleActionFrequency[0];
         *(_DWORD *)&v258[8] = this->IdleActionFrequency[1];
         *(double *)this->IdleActionFrequency = INIClass::ReadDouble_Overwrite(
                                                  (int)a0,
                                                  &g_INI_Key_General,
-                                                 (unsigned __int8 *)&stru_830620.__pad_579C[24596],
+                                                 (unsigned __int8 *)&stru_830620[47024],
                                                  v224);
         CloseEnough = (INIClass *)this->CloseEnough;
         *(_DWORD *)&v258[8] = this->Stray;
         *(double *)&this->CloseEnough = INIClass::ReadDouble_Overwrite(
                                           (int)a0,
                                           &g_INI_Key_General,
-                                          (unsigned __int8 *)&stru_830620.__pad_579C[24584],
+                                          (unsigned __int8 *)&stru_830620[47012],
                                           CloseEnough);
         RelaxedStray = (INIClass *)this->RelaxedStray;
         *(_DWORD *)&v258[8] = this->GuardModeStray;
         *(double *)&this->RelaxedStray = INIClass::ReadDouble_Overwrite(
                                            (int)a0,
                                            &g_INI_Key_General,
-                                           (unsigned __int8 *)&stru_830620.__pad_579C[24572],
+                                           (unsigned __int8 *)&stru_830620[47000],
                                            RelaxedStray);
         *(_DWORD *)&v258[8] = this->C4Delay[0];
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[24564];
+        *(_DWORD *)&v258[4] = &stru_830620[46992];
         *(_DWORD *)v258 = &g_INI_Key_General;
         this->C4Delay[0] = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         *(_DWORD *)&v258[8] = this->C4Delay[1];
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[24548];
+        *(_DWORD *)&v258[4] = &stru_830620[46976];
         *(_DWORD *)v258 = &g_INI_Key_General;
         this->C4Delay[1] = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         *(_DWORD *)&v258[8] = this->CreditReserve;
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[24532];
+        *(_DWORD *)&v258[4] = &stru_830620[46960];
         *(_DWORD *)v258 = &g_INI_Key_General;
         this->CreditReserve = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         *(_DWORD *)&v258[8] = this->BuildSpeed[1];
-        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[24520];
+        *(_DWORD *)&v258[4] = &stru_830620[46948];
         *(_DWORD *)v258 = &g_INI_Key_General;
         this->BuildSpeed[1] = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
         BYTE2(this->ElevationIncrement) = INIClass::ReadBool_Overwrite(
                                             (int)a0,
                                             (unsigned __int8 *)&g_INI_Key_General,
-                                            (CCINIClass *)&stru_830620.__pad_579C[24508],
+                                            (CCINIClass *)&stru_830620[46936],
                                             BYTE2(this->ElevationIncrement));
         this->AttackingAircraftSightRange = INIClass::ReadInt_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[24480],
+                                              (CCINIClass *)&stru_830620[46908],
                                               (INIClass *)this->AttackingAircraftSightRange);
         this->RepairRate[1] = INIClass::ReadInt_Overwrite(
                                 (int)a0,
                                 (unsigned __int8 *)&g_INI_Key_General,
-                                (CCINIClass *)&stru_830620.__pad_579C[24456],
+                                (CCINIClass *)&stru_830620[46884],
                                 (INIClass *)this->RepairRate[1]);
         this->SpeakDelay[1] = INIClass::ReadInt_Overwrite(
                                 (int)a0,
                                 (unsigned __int8 *)&g_INI_Key_General,
-                                (CCINIClass *)&stru_830620.__pad_579C[24432],
+                                (CCINIClass *)&stru_830620[46860],
                                 (INIClass *)this->SpeakDelay[1]);
         *(_DWORD *)&this->FineDiffControl = INIClass::ReadInt_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[24412],
+                                              (CCINIClass *)&stru_830620[46840],
                                               *(INIClass **)&this->FineDiffControl);
         *(_DWORD *)&this->SeparateAircraft = INIClass::ReadInt_Overwrite(
                                                (int)a0,
                                                (unsigned __int8 *)&g_INI_Key_General,
-                                               (CCINIClass *)&stru_830620.__pad_579C[24396],
+                                               (CCINIClass *)&stru_830620[46824],
                                                *(INIClass **)&this->SeparateAircraft);
         *(_DWORD *)&this->PlayerReturnFire = INIClass::ReadInt_Overwrite(
                                                (int)a0,
                                                (unsigned __int8 *)&g_INI_Key_General,
-                                               (CCINIClass *)&stru_830620.__pad_579C[24372],
+                                               (CCINIClass *)&stru_830620[46800],
                                                *(INIClass **)&this->PlayerReturnFire);
         *(_DWORD *)&this->ShroudGrow = INIClass::ReadInt_Overwrite(
                                          (int)a0,
                                          (unsigned __int8 *)&g_INI_Key_General,
-                                         (CCINIClass *)&stru_830620.__pad_579C[24352],
+                                         (CCINIClass *)&stru_830620[46780],
                                          *(INIClass **)&this->ShroudGrow);
         LODWORD(this->EngineerCaptureLevel) = INIClass::ReadInt_Overwrite(
                                                 (int)a0,
                                                 (unsigned __int8 *)&g_INI_Key_General,
-                                                (CCINIClass *)&stru_830620.__pad_579C[24328],
+                                                (CCINIClass *)&stru_830620[46756],
                                                 (INIClass *)LODWORD(this->EngineerCaptureLevel));
         LODWORD(this->TalkBubbleTime) = INIClass::ReadInt_Overwrite(
                                           (int)a0,
                                           (unsigned __int8 *)&g_INI_Key_General,
-                                          (CCINIClass *)&stru_830620.__pad_579C[24308],
+                                          (CCINIClass *)&stru_830620[46736],
                                           (INIClass *)LODWORD(this->TalkBubbleTime));
         this->RadDurationMultiple = INIClass::ReadInt_Overwrite(
                                       (int)a0,
                                       (unsigned __int8 *)&g_INI_Key_General,
-                                      (CCINIClass *)&stru_830620.__pad_579C[24288],
+                                      (CCINIClass *)&stru_830620[46716],
                                       (INIClass *)this->RadDurationMultiple);
         this->RadLevelMax = SmallFunc_67B500(
                               a0,
                               &g_INI_Key_General,
-                              (unsigned __int8 *)&stru_830620.__pad_579C[24268],
+                              (unsigned __int8 *)&stru_830620[46696],
                               this->RadLevelMax);
         LOBYTE(this->RadApplicationDelay) = INIClass::ReadBool_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[24248],
+                                              (CCINIClass *)&stru_830620[46676],
                                               this->RadApplicationDelay);
         this->RadLevelDelay = INIClass::ReadInt_Overwrite(
                                 (int)a0,
                                 (unsigned __int8 *)&g_INI_Key_General,
-                                (CCINIClass *)&stru_830620.__pad_579C[24228],
+                                (CCINIClass *)&stru_830620[46656],
                                 (INIClass *)this->RadLevelDelay);
         this->RadLightDelay = INIClass::ReadInt_Overwrite(
                                 (int)a0,
                                 (unsigned __int8 *)&g_INI_Key_General,
-                                (CCINIClass *)&stru_830620.__pad_579C[24208],
+                                (CCINIClass *)&stru_830620[46636],
                                 (INIClass *)this->RadLightDelay);
         this->RadLevelFactor[0] = INIClass::ReadInt_Overwrite(
                                     (int)a0,
                                     (unsigned __int8 *)&g_INI_Key_General,
-                                    (CCINIClass *)&stru_830620.__pad_579C[24180],
+                                    (CCINIClass *)&stru_830620[46608],
                                     (INIClass *)this->RadLevelFactor[0]);
         this->RadLevelFactor[1] = INIClass::ReadInt_Overwrite(
                                     (int)a0,
                                     (unsigned __int8 *)&g_INI_Key_General,
-                                    (CCINIClass *)&stru_830620.__pad_579C[24148],
+                                    (CCINIClass *)&stru_830620[46576],
                                     (INIClass *)this->RadLevelFactor[1]);
         LOBYTE(this->RadLightFactor[0]) = INIClass::ReadBool_Overwrite(
                                             (int)a0,
                                             (unsigned __int8 *)&g_INI_Key_General,
-                                            (CCINIClass *)&stru_830620.__pad_579C[24132],
+                                            (CCINIClass *)&stru_830620[46560],
                                             this->RadLightFactor[0]);
         *(_DWORD *)&this->__pad_240[600] = SmallFunc_67BCE0(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[24120],
+                                             (unsigned __int8 *)&stru_830620[46548],
                                              *(_DWORD *)&this->__pad_240[600]);
         *(double *)&v258[4] = (double)*(int *)&this->__pad_240[604];
         v227 = INIClass::ReadDouble_Overwrite(
                  (int)a0,
                  &g_INI_Key_General,
-                 (unsigned __int8 *)&stru_830620.__pad_579C[24096],
+                 (unsigned __int8 *)&stru_830620[46524],
                  *(INIClass **)&v258[4]);
         *(_DWORD *)&this->__pad_240[604] = Math::RoundToInt(v227 * 100.0);
         *(_DWORD *)&this->__pad_240[608] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[24080],
+                                             (CCINIClass *)&stru_830620[46508],
                                              *(INIClass **)&this->__pad_240[608]);
         *(_DWORD *)&this->__pad_240[612] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[24060],
+                                             (CCINIClass *)&stru_830620[46488],
                                              *(INIClass **)&this->__pad_240[612]);
         *(_DWORD *)&this->__pad_240[616] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[24036],
+                                             (CCINIClass *)&stru_830620[46464],
                                              *(INIClass **)&this->__pad_240[616]);
         *(_DWORD *)&this->__pad_240[620] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[24016],
+                                             (CCINIClass *)&stru_830620[46444],
                                              *(INIClass **)&this->__pad_240[620]);
         *(_DWORD *)&this->__pad_240[624] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23996],
+                                             (CCINIClass *)&stru_830620[46424],
                                              *(INIClass **)&this->__pad_240[624]);
         *(_DWORD *)&this->__pad_240[628] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23976],
+                                             (CCINIClass *)&stru_830620[46404],
                                              *(INIClass **)&this->__pad_240[628]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[632];
         *(float *)&this->__pad_240[632] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23952],
+                                            (unsigned __int8 *)&stru_830620[46380],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[636];
         *(float *)&this->__pad_240[636] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23932],
+                                            (unsigned __int8 *)&stru_830620[46360],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[640];
         *(float *)&this->__pad_240[640] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23912],
+                                            (unsigned __int8 *)&stru_830620[46340],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = (double)*(int *)&this->__pad_240[644];
         v228 = INIClass::ReadDouble_Overwrite(
                  (int)a0,
                  &g_INI_Key_General,
-                 (unsigned __int8 *)&stru_830620.__pad_579C[23892],
+                 (unsigned __int8 *)&stru_830620[46320],
                  *(INIClass **)&v258[4]);
         *(_DWORD *)&this->__pad_240[644] = Math::RoundToInt(v228);
         *(double *)&v258[4] = *(float *)&this->__pad_240[648];
         *(float *)&this->__pad_240[648] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23868],
+                                            (unsigned __int8 *)&stru_830620[46296],
                                             *(INIClass **)&v258[4]);
         *(_DWORD *)&this->__pad_240[652] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23848],
+                                             (CCINIClass *)&stru_830620[46276],
                                              *(INIClass **)&this->__pad_240[652]);
         *(_DWORD *)&this->__pad_240[656] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23832],
+                                             (CCINIClass *)&stru_830620[46260],
                                              *(INIClass **)&this->__pad_240[656]);
         *(_DWORD *)&this->__pad_240[660] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23812],
+                                             (CCINIClass *)&stru_830620[46240],
                                              *(INIClass **)&this->__pad_240[660]);
         *(_DWORD *)&this->__pad_240[664] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23792],
+                                             (CCINIClass *)&stru_830620[46220],
                                              *(INIClass **)&this->__pad_240[664]);
         this->__pad_240[668] = INIClass::ReadBool_Overwrite(
                                  (int)a0,
                                  (unsigned __int8 *)&g_INI_Key_General,
-                                 (CCINIClass *)&stru_830620.__pad_579C[23772],
+                                 (CCINIClass *)&stru_830620[46200],
                                  this->__pad_240[668]);
         *(_DWORD *)&this->__pad_240[672] = GetINIClassKeyword(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[23756],
+                                             (unsigned __int8 *)&stru_830620[46184],
                                              *(_DWORD *)&this->__pad_240[672]);
         *(_DWORD *)&this->__pad_240[676] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23736],
+                                             (CCINIClass *)&stru_830620[46164],
                                              *(INIClass **)&this->__pad_240[676]);
         *(_DWORD *)&this->__pad_240[680] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23720],
+                                             (CCINIClass *)&stru_830620[46148],
                                              *(INIClass **)&this->__pad_240[680]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[684];
         *(float *)&this->__pad_240[684] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23700],
+                                            (unsigned __int8 *)&stru_830620[46128],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[688];
         *(float *)&this->__pad_240[688] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23684],
+                                            (unsigned __int8 *)&stru_830620[46112],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[692];
         *(float *)&this->__pad_240[692] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23668],
+                                            (unsigned __int8 *)&stru_830620[46096],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = (double)*(int *)&this->__pad_240[696];
         v229 = INIClass::ReadDouble_Overwrite(
                  (int)a0,
                  &g_INI_Key_General,
-                 (unsigned __int8 *)&stru_830620.__pad_579C[23652],
+                 (unsigned __int8 *)&stru_830620[46080],
                  *(INIClass **)&v258[4]);
         *(_DWORD *)&this->__pad_240[696] = Math::RoundToInt(v229);
         *(double *)&v258[4] = *(float *)&this->__pad_240[700];
         *(float *)&this->__pad_240[700] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23632],
+                                            (unsigned __int8 *)&stru_830620[46060],
                                             *(INIClass **)&v258[4]);
         *(_DWORD *)&this->__pad_240[704] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23616],
+                                             (CCINIClass *)&stru_830620[46044],
                                              *(INIClass **)&this->__pad_240[704]);
         *(_DWORD *)&this->__pad_240[708] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23604],
+                                             (CCINIClass *)&stru_830620[46032],
                                              *(INIClass **)&this->__pad_240[708]);
         *(_DWORD *)&this->__pad_240[712] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23584],
+                                             (CCINIClass *)&stru_830620[46012],
                                              *(INIClass **)&this->__pad_240[712]);
         *(_DWORD *)&this->__pad_240[716] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23568],
+                                             (CCINIClass *)&stru_830620[45996],
                                              *(INIClass **)&this->__pad_240[716]);
         this->__pad_240[720] = INIClass::ReadBool_Overwrite(
                                  (int)a0,
                                  (unsigned __int8 *)&g_INI_Key_General,
-                                 (CCINIClass *)&stru_830620.__pad_579C[23552],
+                                 (CCINIClass *)&stru_830620[45980],
                                  this->__pad_240[720]);
         *(_DWORD *)&this->__pad_240[724] = GetINIClassKeyword(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[23540],
+                                             (unsigned __int8 *)&stru_830620[45968],
                                              *(_DWORD *)&this->__pad_240[724]);
         *(_DWORD *)&this->__pad_240[728] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23520],
+                                             (CCINIClass *)&stru_830620[45948],
                                              *(INIClass **)&this->__pad_240[728]);
         *(_DWORD *)&this->__pad_240[732] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23504],
+                                             (CCINIClass *)&stru_830620[45932],
                                              *(INIClass **)&this->__pad_240[732]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[736];
         *(float *)&this->__pad_240[736] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23484],
+                                            (unsigned __int8 *)&stru_830620[45912],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[740];
         *(float *)&this->__pad_240[740] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23468],
+                                            (unsigned __int8 *)&stru_830620[45896],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = *(float *)&this->__pad_240[744];
         *(float *)&this->__pad_240[744] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23452],
+                                            (unsigned __int8 *)&stru_830620[45880],
                                             *(INIClass **)&v258[4]);
         *(double *)&v258[4] = (double)*(int *)&this->__pad_240[748];
         v230 = INIClass::ReadDouble_Overwrite(
                  (int)a0,
                  &g_INI_Key_General,
-                 (unsigned __int8 *)&stru_830620.__pad_579C[23436],
+                 (unsigned __int8 *)&stru_830620[45864],
                  *(INIClass **)&v258[4]);
         *(_DWORD *)&this->__pad_240[748] = Math::RoundToInt(v230);
         *(double *)&v258[4] = *(float *)&this->__pad_240[700];
         *(float *)&this->__pad_240[752] = INIClass::ReadDouble_Overwrite(
                                             (int)a0,
                                             &g_INI_Key_General,
-                                            (unsigned __int8 *)&stru_830620.__pad_579C[23416],
+                                            (unsigned __int8 *)&stru_830620[45844],
                                             *(INIClass **)&v258[4]);
         *(_DWORD *)&this->__pad_240[756] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23400],
+                                             (CCINIClass *)&stru_830620[45828],
                                              *(INIClass **)&this->__pad_240[756]);
         *(_DWORD *)&this->__pad_240[760] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23388],
+                                             (CCINIClass *)&stru_830620[45816],
                                              *(INIClass **)&this->__pad_240[760]);
         *(_DWORD *)&this->__pad_240[764] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23368],
+                                             (CCINIClass *)&stru_830620[45796],
                                              *(INIClass **)&this->__pad_240[764]);
         *(_DWORD *)&this->__pad_240[768] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23352],
+                                             (CCINIClass *)&stru_830620[45780],
                                              *(INIClass **)&this->__pad_240[768]);
         this->__pad_240[772] = INIClass::ReadBool_Overwrite(
                                  (int)a0,
                                  (unsigned __int8 *)&g_INI_Key_General,
-                                 (CCINIClass *)&stru_830620.__pad_579C[23336],
+                                 (CCINIClass *)&stru_830620[45764],
                                  this->__pad_240[772]);
         *(_DWORD *)&this->__pad_240[776] = GetINIClassKeyword(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[23324],
+                                             (unsigned __int8 *)&stru_830620[45752],
                                              *(_DWORD *)&this->__pad_240[776]);
         *(_DWORD *)&this->__pad_240[780] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[23308],
+                                             (CCINIClass *)&stru_830620[45736],
                                              *(INIClass **)&this->__pad_240[780]);
         this->NodGateOne = (void *)INIClass::ReadInt_Overwrite(
                                      (int)a0,
                                      (unsigned __int8 *)&g_INI_Key_General,
-                                     (CCINIClass *)&stru_830620.__pad_579C[23284],
+                                     (CCINIClass *)&stru_830620[45712],
                                      (INIClass *)this->NodGateOne);
         this->NodGateTwo = (void *)INIClass::ReadInt_Overwrite(
                                      (int)a0,
                                      (unsigned __int8 *)&g_INI_Key_General,
-                                     (CCINIClass *)&stru_830620.__pad_579C[23260],
+                                     (CCINIClass *)&stru_830620[45688],
                                      (INIClass *)this->NodGateTwo);
         WallTower = (INIClass *)this->WallTower;
         *(_DWORD *)&v258[8] = this->BuildConst[0];
         *(double *)&this->WallTower = INIClass::ReadDouble_Overwrite(
                                         (int)a0,
                                         &g_INI_Key_General,
-                                        (unsigned __int8 *)&stru_830620.__pad_579C[23244],
+                                        (unsigned __int8 *)&stru_830620[45672],
                                         WallTower);
         v232 = (INIClass *)this->BuildPower[0];
         *(_DWORD *)&v258[8] = this->BuildRefinery[0];
         *(double *)this->BuildPower = INIClass::ReadDouble_Overwrite(
                                         (int)a0,
                                         &g_INI_Key_General,
-                                        (unsigned __int8 *)&stru_830620.__pad_579C[23220],
+                                        (unsigned __int8 *)&stru_830620[45648],
                                         v232);
         v233 = (INIClass *)this->BuildBarracks[0];
         *(_DWORD *)&v258[8] = this->BuildTech[0];
         *(double *)this->BuildBarracks = INIClass::ReadDouble_Overwrite(
                                            (int)a0,
                                            &g_INI_Key_General,
-                                           (unsigned __int8 *)&stru_830620.__pad_579C[23204],
+                                           (unsigned __int8 *)&stru_830620[45632],
                                            v233);
         this->BuildWeapons[0] = INIClass::ReadInt_Overwrite(
                                   (int)a0,
                                   (unsigned __int8 *)&g_INI_Key_General,
-                                  (CCINIClass *)&stru_830620.__pad_579C[23188],
+                                  (CCINIClass *)&stru_830620[45616],
                                   (INIClass *)this->BuildWeapons[0]);
         this->VeteranCombat[1] = INIClass::ReadInt_Overwrite(
                                    (int)a0,
                                    (unsigned __int8 *)&g_INI_Key_General,
-                                   (CCINIClass *)&stru_830620.__pad_579C[23168],
+                                   (CCINIClass *)&stru_830620[45596],
                                    (INIClass *)this->VeteranCombat[1]);
         v234 = (INIClass *)this->ChargeToDrainRatio[0];
         *(_DWORD *)&v258[8] = this->ChargeToDrainRatio[1];
         *(double *)this->ChargeToDrainRatio = INIClass::ReadDouble_Overwrite(
                                                 (int)a0,
                                                 &g_INI_Key_General,
-                                                (unsigned __int8 *)&stru_830620.__pad_579C[23148],
+                                                (unsigned __int8 *)&stru_830620[45576],
                                                 v234);
         v235 = (INIClass *)this->WallBuildSpeedCoefficient[0];
         *(_DWORD *)&v258[8] = this->WallBuildSpeedCoefficient[1];
         *(double *)this->WallBuildSpeedCoefficient = INIClass::ReadDouble_Overwrite(
                                                        (int)a0,
                                                        &g_INI_Key_General,
-                                                       (unsigned __int8 *)&stru_830620.__pad_579C[23120],
+                                                       (unsigned __int8 *)&stru_830620[45548],
                                                        v235);
         v236 = *(INIClass **)&this->__pad_240[800];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_240[804];
         *(double *)&this->__pad_240[800] = INIClass::ReadDouble_Overwrite(
                                              (int)a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[23084],
+                                             (unsigned __int8 *)&stru_830620[45512],
                                              v236);
         v237 = *(INIClass **)&this->__pad_240[792];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_240[796];
         *(double *)&this->__pad_240[792] = INIClass::ReadDouble_Overwrite(
                                              (int)a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[23052],
+                                             (unsigned __int8 *)&stru_830620[45480],
                                              v237);
         v238 = (INIClass *)this->AITriggerSuccessWeightDelta[0];
         *(_DWORD *)&v258[8] = this->AITriggerSuccessWeightDelta[1];
         *(double *)this->AITriggerSuccessWeightDelta = INIClass::ReadDouble_Overwrite(
                                                          (int)a0,
                                                          &g_INI_Key_General,
-                                                         (unsigned __int8 *)&stru_830620.__pad_579C[23024],
+                                                         (unsigned __int8 *)&stru_830620[45452],
                                                          v238);
         v239 = (INIClass *)this->AITriggerFailureWeightDelta[0];
         *(_DWORD *)&v258[8] = this->AITriggerFailureWeightDelta[1];
         *(double *)this->AITriggerFailureWeightDelta = INIClass::ReadDouble_Overwrite(
                                                          (int)a0,
                                                          &g_INI_Key_General,
-                                                         (unsigned __int8 *)&stru_830620.__pad_579C[22996],
+                                                         (unsigned __int8 *)&stru_830620[45424],
                                                          v239);
         v240 = (INIClass *)this->AITriggerTrackRecordCoefficient[0];
         *(_DWORD *)&v258[8] = this->AITriggerTrackRecordCoefficient[1];
         *(double *)this->AITriggerTrackRecordCoefficient = INIClass::ReadDouble_Overwrite(
                                                              (int)a0,
                                                              &g_INI_Key_General,
-                                                             (unsigned __int8 *)&stru_830620.__pad_579C[22964],
+                                                             (unsigned __int8 *)&stru_830620[45392],
                                                              v240);
         this->RadTintFactor[0] = INIClass::ReadInt_Overwrite(
                                    (int)a0,
                                    (unsigned __int8 *)&g_INI_Key_General,
-                                   (CCINIClass *)&stru_830620.__pad_579C[22948],
+                                   (CCINIClass *)&stru_830620[45376],
                                    (INIClass *)this->RadTintFactor[0]);
         this->InfantryHeadPop = (void *)INIClass::ReadInt_Overwrite(
                                           (int)a0,
                                           (unsigned __int8 *)&g_INI_Key_General,
-                                          (CCINIClass *)&stru_830620.__pad_579C[22932],
+                                          (CCINIClass *)&stru_830620[45360],
                                           (INIClass *)this->InfantryHeadPop);
         this->InfantryNuked = (void *)INIClass::ReadInt_Overwrite(
                                         (int)a0,
                                         (unsigned __int8 *)&g_INI_Key_General,
-                                        (CCINIClass *)&stru_830620.__pad_579C[22908],
+                                        (CCINIClass *)&stru_830620[45336],
                                         (INIClass *)this->InfantryNuked);
         *(double *)&v258[4] = *(float *)&this->InfantryExplode;
         *(float *)&this->InfantryExplode = INIClass::ReadDouble_Overwrite(
                                              (int)a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[22892],
+                                             (unsigned __int8 *)&stru_830620[45320],
                                              *(INIClass **)&v258[4]);
         *(double *)&v258[4] = *(float *)&this->FlamingInfantry;
         *(float *)&this->FlamingInfantry = INIClass::ReadDouble_Overwrite(
                                              (int)a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[22868],
+                                             (unsigned __int8 *)&stru_830620[45296],
                                              *(INIClass **)&v258[4]);
         VectorClass::Copy(&v257, (VectorClass *)&this->__pad_240[508]);
         v241 = (VectorClass *)INIClass::ReadIntList(
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[22836],
+                                (unsigned __int8 *)&stru_830620[45264],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -6568,7 +6569,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[22804],
+                                (unsigned __int8 *)&stru_830620[45232],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -6583,7 +6584,7 @@ namespace gamemd { int RulesClass::LoadFromINI() {
                                 a0,
                                 (int)&v288,
                                 &g_INI_Key_General,
-                                (unsigned __int8 *)&stru_830620.__pad_579C[22784],
+                                (unsigned __int8 *)&stru_830620[45212],
                                 (void **)v257.vtable0,
                                 v257.Items,
                                 v257.Capacity,
@@ -6596,167 +6597,167 @@ namespace gamemd { int RulesClass::LoadFromINI() {
         this->NukeTakeOff = (void *)INIClass::ReadInt_Overwrite(
                                       (int)a0,
                                       (unsigned __int8 *)&g_INI_Key_General,
-                                      (CCINIClass *)&stru_830620.__pad_579C[22764],
+                                      (CCINIClass *)&stru_830620[45192],
                                       (INIClass *)this->NukeTakeOff);
         *(double *)&v258[4] = *(float *)&this->Wake;
         *(float *)&this->Wake = INIClass::ReadDouble_Overwrite(
                                   (int)a0,
                                   &g_INI_Key_General,
-                                  (unsigned __int8 *)&stru_830620.__pad_579C[22740],
+                                  (unsigned __int8 *)&stru_830620[45168],
                                   *(INIClass **)&v258[4]);
         v244 = *(INIClass **)&this->__pad_C3C[1028];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1032];
         *(double *)&this->__pad_C3C[1028] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[22704],
+                                              (unsigned __int8 *)&stru_830620[45132],
                                               v244);
         v245 = *(INIClass **)&this->__pad_C3C[1036];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1040];
         *(double *)&this->__pad_C3C[1036] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[22664],
+                                              (unsigned __int8 *)&stru_830620[45092],
                                               v245);
         v246 = *(INIClass **)&this->__pad_C3C[1044];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1048];
         *(double *)&this->__pad_C3C[1044] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[22624],
+                                              (unsigned __int8 *)&stru_830620[45052],
                                               v246);
         v247 = *(INIClass **)&this->__pad_C3C[1052];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1056];
         *(double *)&this->__pad_C3C[1052] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[22588],
+                                              (unsigned __int8 *)&stru_830620[45016],
                                               v247);
         v248 = *(INIClass **)&this->__pad_C3C[1060];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1064];
         *(double *)&this->__pad_C3C[1060] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[22552],
+                                              (unsigned __int8 *)&stru_830620[44980],
                                               v248);
         v249 = *(INIClass **)&this->__pad_C3C[1068];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1072];
         *(double *)&this->__pad_C3C[1068] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[22520],
+                                              (unsigned __int8 *)&stru_830620[44948],
                                               v249);
         v250 = *(INIClass **)&this->__pad_C3C[1076];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1080];
         *(double *)&this->__pad_C3C[1076] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[22484],
+                                              (unsigned __int8 *)&stru_830620[44912],
                                               v250);
         v251 = *(INIClass **)&this->__pad_C3C[1084];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1088];
         *(double *)&this->__pad_C3C[1084] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[22448],
+                                              (unsigned __int8 *)&stru_830620[44876],
                                               v251);
         v252 = *(INIClass **)&this->__pad_C3C[1092];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1096];
         *(double *)&this->__pad_C3C[1092] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[22416],
+                                              (unsigned __int8 *)&stru_830620[44844],
                                               v252);
         v253 = *(INIClass **)&this->__pad_C3C[1100];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1104];
         *(double *)&this->__pad_C3C[1100] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[22384],
+                                              (unsigned __int8 *)&stru_830620[44812],
                                               v253);
         v254 = *(INIClass **)&this->__pad_C3C[1108];
         *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1112];
         *(double *)&this->__pad_C3C[1108] = INIClass::ReadDouble_Overwrite(
                                               (int)a0,
                                               &g_INI_Key_General,
-                                              (unsigned __int8 *)&stru_830620.__pad_579C[22360],
+                                              (unsigned __int8 *)&stru_830620[44788],
                                               v254);
         this->MaximumQueuedObjects = INIClass::ReadInt_Overwrite(
                                        (int)a0,
                                        (unsigned __int8 *)&g_INI_Key_General,
-                                       (CCINIClass *)&stru_830620.__pad_579C[22336],
+                                       (CCINIClass *)&stru_830620[44764],
                                        (INIClass *)this->MaximumQueuedObjects);
         this->AircraftFogReveal = INIClass::ReadInt_Overwrite(
                                     (int)a0,
                                     (unsigned __int8 *)&g_INI_Key_General,
-                                    (CCINIClass *)&stru_830620.__pad_579C[22316],
+                                    (CCINIClass *)&stru_830620[44744],
                                     (INIClass *)this->AircraftFogReveal);
         this->DigSound = INIClass::ReadInt_Overwrite(
                            (int)a0,
                            (unsigned __int8 *)&g_INI_Key_General,
-                           (CCINIClass *)&stru_830620.__pad_579C[22296],
+                           (CCINIClass *)&stru_830620[44724],
                            (INIClass *)this->DigSound);
         this->CreateUnitSound = INIClass::ReadInt_Overwrite(
                                   (int)a0,
                                   (unsigned __int8 *)&g_INI_Key_General,
-                                  (CCINIClass *)&stru_830620.__pad_579C[22276],
+                                  (CCINIClass *)&stru_830620[44704],
                                   (INIClass *)this->CreateUnitSound);
         this->CreateAircraftSound = INIClass::ReadInt_Overwrite(
                                       (int)a0,
                                       (unsigned __int8 *)&g_INI_Key_General,
-                                      (CCINIClass *)&stru_830620.__pad_579C[22264],
+                                      (CCINIClass *)&stru_830620[44692],
                                       (INIClass *)this->CreateAircraftSound);
         *(_DWORD *)&this->__pad_C3C[952] = SmallFunc_67BD80(
                                              a0,
                                              &g_INI_Key_General,
-                                             (unsigned __int8 *)&stru_830620.__pad_579C[22244],
+                                             (unsigned __int8 *)&stru_830620[44672],
                                              *(_DWORD *)&this->__pad_C3C[952]);
         TypeList = (int *)RulesClass::LoadTypeList(
                             (int)&v288,
                             a0,
                             &g_INI_Key_General,
-                            (unsigned __int8 *)&stru_830620.__pad_579C[22220],
+                            (unsigned __int8 *)&stru_830620[44648],
                             &this->__pad_C3C[956]);
         RulesClass::readBuildingTypes((int *)&this->__pad_C3C[956], TypeList);
         RulesClass::readVehicleTypes(&v288);
         *(_DWORD *)&this->__pad_C3C[984] = INIClass::ReadInt_Overwrite(
                                              (int)a0,
                                              (unsigned __int8 *)&g_INI_Key_General,
-                                             (CCINIClass *)&stru_830620.__pad_579C[22192],
+                                             (CCINIClass *)&stru_830620[44620],
                                              *(INIClass **)&this->__pad_C3C[984]);
         this->BaseUnderAttackSound = INIClass::ReadInt_Overwrite(
                                        (int)a0,
                                        (unsigned __int8 *)&g_INI_Key_General,
-                                       (CCINIClass *)&stru_830620.__pad_579C[22168],
+                                       (CCINIClass *)&stru_830620[44596],
                                        (INIClass *)this->BaseUnderAttackSound);
         this->InfantryVirus = (void *)INIClass::ReadInt_Overwrite(
                                         (int)a0,
                                         (unsigned __int8 *)&g_INI_Key_General,
-                                        (CCINIClass *)&stru_830620.__pad_579C[22144],
+                                        (CCINIClass *)&stru_830620[44572],
                                         (INIClass *)this->InfantryVirus);
         *(_DWORD *)&this->__pad_C3C[1288] = INIClass::ReadInt_Overwrite(
                                               (int)a0,
                                               (unsigned __int8 *)&g_INI_Key_General,
-                                              (CCINIClass *)&stru_830620.__pad_579C[22128],
+                                              (CCINIClass *)&stru_830620[44556],
                                               *(INIClass **)&this->__pad_C3C[1288]);
         *(double *)&v258[4] = *(float *)this->WallPenetratorThreshold;
         *(float *)this->WallPenetratorThreshold = INIClass::ReadDouble_Overwrite(
                                                     (int)a0,
                                                     &g_INI_Key_General,
-                                                    (unsigned __int8 *)&stru_830620.__pad_579C[22104],
+                                                    (unsigned __int8 *)&stru_830620[44532],
                                                     *(INIClass **)&v258[4]);
         *(double *)&v258[4] = *(float *)&this->WallPenetratorThreshold[1];
         *(float *)&this->WallPenetratorThreshold[1] = INIClass::ReadDouble_Overwrite(
                                                         (int)a0,
                                                         &g_INI_Key_General,
-                                                        (unsigned __int8 *)&stru_830620.__pad_579C[22104],
+                                                        (unsigned __int8 *)&stru_830620[44532],
                                                         *(INIClass **)&v258[4]);
         *(_QWORD *)&aP0_28.vtable0 = *(unsigned int *)this->LocalRadarColor;
         *(double *)&v258[4] = (double)*(__int64 *)&aP0_28.vtable0 * 0.016666668;
         v256 = INIClass::ReadDouble_Overwrite(
                  (int)a0,
                  &g_INI_Key_General,
-                 (unsigned __int8 *)&stru_830620.__pad_579C[22088],
+                 (unsigned __int8 *)&stru_830620[44516],
                  *(INIClass **)&v258[4]);
         result = Math::RoundToInt(v256 * 60.0);
         *(_DWORD *)this->LocalRadarColor = result;
@@ -6821,8 +6822,8 @@ int __thiscall sub_672440(RulesClass *this)
   char v26; // [esp+25h] [ebp-Fh]
   char *v27; // [esp+38h] [ebp+4h]
 
-  KeyCount = INIClass::GetKeyCount(v27, (unsigned __int8 *)MEMORY[0x839E00]); /*0x672456*/
-  v20 = MEMORY[0x83D0C8]; /*0x672458*/
+  KeyCount = INIClass::GetKeyCount(v27, (unsigned __int8 *)DataGlobal_00839E00); /*0x672456*/
+  v20 = DataGlobal_0083D0C8; /*0x672458*/
   v22 = KeyCount; /*0x67245d*/
   Debug::Log(); /*0x672461*/
   v2 = 0; /*0x672469*/
@@ -6831,7 +6832,7 @@ int __thiscall sub_672440(RulesClass *this)
   {
     while ( 1 ) /*0x67248e*/
     {
-      StringByIndex = (void *)INIClass::GetStringByIndex(v27, (unsigned __int8 *)MEMORY[0x839E00], v2); /*0x67248e*/
+      StringByIndex = (void *)INIClass::GetStringByIndex(v27, (unsigned __int8 *)DataGlobal_00839E00, v2); /*0x67248e*/
       v4 = HouseTypeClass::Find(StringByIndex); /*0x672492*/
       if ( v4 == -1 ) /*0x67249a*/
       {
@@ -6843,17 +6844,17 @@ int __thiscall sub_672440(RulesClass *this)
       }
       else
       {
-        v6 = (_DWORD *)*((_DWORD *)MEMORY[0x8B4124] + v4); /*0x6724c3*/
+        v6 = (_DWORD *)*((_DWORD *)DataGlobal_8B4124 + v4); /*0x6724c3*/
       }
       v20 = (char *)(v6 + 9); /*0x6724c9*/
       v19 = (char *)v2; /*0x6724ca*/
-      v18 = MEMORY[0x83D0B8]; /*0x6724cb*/
+      v18 = DataGlobal_0083D0B8; /*0x6724cb*/
       Debug::Log(); /*0x6724d0*/
       IntVector::Copy(v16, v6 + 38); /*0x6724e3*/
       v7 = INIClass::ReadSuperWeaponTypeList( /*0x67250f*/
              (unsigned __int8 ***)v27,
              &v23,
-             (unsigned __int8 *)MEMORY[0x839E00],
+             (unsigned __int8 *)DataGlobal_00839E00,
              (unsigned __int8 *)StringByIndex,
              &vt_TypeList_int,
              (void *)v16[1],
@@ -6884,25 +6885,25 @@ int __thiscall sub_672440(RulesClass *this)
         {
           v12 = 0; /*0x672573*/
           v13 = *(_DWORD *)(v6[39] + 4 * v11); /*0x672577*/
-          if ( MEMORY[0x8B4130] <= 0 ) /*0x67257a*/
+          if ( g_ObjectTypeList <= 0 ) /*0x67257a*/
           {
 LABEL_17:
             v12 = -1; /*0x67258e*/
           }
           else
           {
-            v14 = MEMORY[0x8B4124]; /*0x67257c*/
+            v14 = DataGlobal_8B4124; /*0x67257c*/
             while ( (_DWORD *)*v14 != v6 ) /*0x672584*/
             {
               ++v12; /*0x672586*/
               ++v14; /*0x672587*/
-              if ( v12 >= MEMORY[0x8B4130] ) /*0x67258c*/
+              if ( v12 >= g_ObjectTypeList ) /*0x67258c*/
                 goto LABEL_17; /*0x67258c*/
             }
           }
           *(_DWORD *)(*((_DWORD *)g_SuperWeaponTypeCount + v13) + 188) = v12; /*0x67259a*/
           v20 = (char *)(*((_DWORD *)g_SuperWeaponTypeCount + v13) + 36); /*0x6725ab*/
-          v19 = MEMORY[0x83D0B0]; /*0x6725ac*/
+          v19 = DataGlobal_0083D0B0; /*0x6725ac*/
           Debug::Log(); /*0x6725b1*/
           ++v11; /*0x6725bf*/
         }
@@ -9486,223 +9487,223 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
     --v111;
   }
   while ( v111 );
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 995);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 998);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 999);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 993);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 994);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 4);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 5);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 361);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1000);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1002);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1003);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1004);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1005);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1006);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1007);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1008);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1009);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 312);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 325);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 338);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 294);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1010);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1015);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1020);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1030);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1031);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1032);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1033);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1034);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1035);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1036);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1037);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1038);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1021);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 189);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 191);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 192);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 199);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 200);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 201);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 747);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 748);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 749);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 750);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 751);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 759);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 760);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1311);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1106);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 761);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 854);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 855);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 856);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 987);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 988);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 989);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 990);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 991);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 992);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 539);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 540);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 541);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 542);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 543);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 551);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 552);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 553);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 554);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 256);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 996);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 997);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1001);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 391);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 392);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 213);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 39);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 166);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 205);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 202);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 203);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 204);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 167);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 206);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 207);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 208);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 209);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 210);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 211);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 212);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 165);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1533);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 37);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1564);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 40);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 38);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 41);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 42);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 43);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 44);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 45);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 46);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 58);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 21);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 29);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 19);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1517);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 190);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 1549);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 62);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 63);
-  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 64);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 995);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 998);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 999);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 993);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 994);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 4);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 5);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 361);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1000);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1002);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1003);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1004);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1005);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1006);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1007);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1008);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1009);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 312);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 325);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 338);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 294);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1010);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1015);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1020);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1030);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1031);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1032);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1033);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1034);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1035);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1036);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1037);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1038);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1021);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 189);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 191);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 192);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 199);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 200);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 201);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 747);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 748);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 749);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 750);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 751);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 759);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 760);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1311);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1106);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 761);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 854);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 855);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 856);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 987);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 988);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 989);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 990);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 991);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 992);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 539);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 540);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 541);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 542);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 543);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 551);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 552);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 553);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 554);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 256);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 996);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 997);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1001);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 391);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 392);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 213);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 39);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 166);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 205);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 202);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 203);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 204);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 167);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 206);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 207);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 208);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 209);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 210);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 211);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 212);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 165);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1533);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 37);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1564);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 40);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 38);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 41);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 42);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 43);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 44);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 45);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 46);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 58);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 21);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 29);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 19);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1517);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 190);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 1549);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 62);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 63);
+  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, this + 64);
   this->q3F8 = SearchMIXFile(aBombcursShp, 0);
   this->q3F9 = SearchMIXFile(aChronoskShp, 0);
   for ( i97 = 0; i97 < this->DropPodPuff; ++i97 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RadarEventMinRadius + 4 * i97));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->RadarEventMinRadius + 4 * i97));
   for ( i98 = 0; i98 < this->q2E1; ++i98 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2DE + 4 * i98));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q2DE + 4 * i98));
   for ( i99 = 0; i99 < this->q2E8; ++i99 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2E5 + 4 * i99));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q2E5 + 4 * i99));
   for ( i100 = 0; i100 < this->q2F4; ++i100 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2F1 + 4 * i100));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q2F1 + 4 * i100));
   for ( i101 = 0; i101 < this->MaximumBaseDefenseValue; ++i101 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->GDIBaseDefenseCoefficient + 4 * i101));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->GDIBaseDefenseCoefficient + 4 * i101));
   for ( i102 = 0; i102 < this->IonBlast; ++i102 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->OnFire + 4 * i102));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->OnFire + 4 * i102));
   for ( i103 = 0; i103 < this->Paratrooper; ++i103 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->IonBeam + 4 * i103));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->IonBeam + 4 * i103));
   for ( i104 = 0; i104 < this->ChronoRangeMinimum; ++i104 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->ChronoDistanceFactor + 4 * i104));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->ChronoDistanceFactor + 4 * i104));
   for ( i105 = 0; i105 < this->AIMinorSuperReadyPercent; ++i105 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->SpyPowerBlackout + 4 * i105));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->SpyPowerBlackout + 4 * i105));
   for ( i106 = 0; i106 < this->q2CC; ++i106 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2C9 + 4 * i106));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q2C9 + 4 * i106));
   for ( i107 = 0; i107 < this->q402; ++i107 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->qFFC + 4 * i107));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->qFFC + 4 * i107));
   for ( i108 = 0; i108 < this->Easy; ++i108 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2D0 + 4 * i108));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q2D0 + 4 * i108));
   for ( i109 = 0; i109 < this->q344; ++i109 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q341 + 4 * i109));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q341 + 4 * i109));
   for ( i110 = 0; i110 < this->q34B; ++i110 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q348 + 4 * i110));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q348 + 4 * i110));
   for ( i111 = 0; i111 < this->q352; ++i111 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q34F + 4 * i111));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q34F + 4 * i111));
   for ( i112 = 0; i112 < this->AlliedCrew; ++i112 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->Technician + 4 * i112));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->Technician + 4 * i112));
   for ( i113 = 0; i113 < this->TiberiumExplosionDamage; ++i113 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MutateExplosionWarhead + 4 * i113));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->MutateExplosionWarhead + 4 * i113));
   for ( i114 = 0; i114 < this->IvanIconFlickerRate; ++i114 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MinLowPowerProductionSpeed + 4 * i114));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->MinLowPowerProductionSpeed + 4 * i114));
   for ( i115 = 0; i115 < this->q236; ++i115 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->IronCurtainDuration + 4 * i115));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->IronCurtainDuration + 4 * i115));
   for ( i116 = 0; i116 < this->q23D; ++i116 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q8E8 + 4 * i116));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q8E8 + 4 * i116));
   for ( i117 = 0; i117 < this->q244; ++i117 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q241 + 4 * i117));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q241 + 4 * i117));
   for ( i118 = 0; i118 < this->q24B; ++i118 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q248 + 4 * i118));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q248 + 4 * i118));
   for ( i119 = 0; i119 < this->q252; ++i119 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q24F + 4 * i119));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q24F + 4 * i119));
   for ( i120 = 0; i120 < this->q259; ++i120 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q256 + 4 * i120));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q256 + 4 * i120));
   for ( i121 = 0; i121 < this->TargetSpecialThreatCoefficientDefault; ++i121 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q25D + 4 * i121));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q25D + 4 * i121));
   for ( i122 = 0; i122 < this->q267; ++i122 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->TargetDistanceCoefficientDefault + 4 * i122));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->TargetDistanceCoefficientDefault + 4 * i122));
   for ( i123 = 0; i123 < this->HelipadLimit; ++i123 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->AirstripLimit + 4 * i123));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->AirstripLimit + 4 * i123));
   for ( i124 = 0; i124 < this->DefenseRatio; ++i124 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->AARatio + 4 * i124));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->AARatio + 4 * i124));
   for ( i125 = 0; i125 < this->q283; ++i125 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q0A0 + 4 * i125));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q0A0 + 4 * i125));
   for ( i126 = 0; i126 < this->InfantryReserve; ++i126 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q287 + 4 * i126));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q287 + 4 * i126));
   for ( i127 = 0; i127 < this->CloakDelay; ++i127 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->UnitCrateType + 4 * i127));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->UnitCrateType + 4 * i127));
   for ( i128 = 0; i128 < this->q298; ++i128 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->BaseBias + 4 * i128));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->BaseBias + 4 * i128));
   for ( i129 = 0; i129 < this->AutoCrush; ++i129 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q29C + 4 * i129));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q29C + 4 * i129));
   for ( i130 = 0; i130 < this->SilverCrate; ++i130 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->Harvester + 4 * i130));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->Harvester + 4 * i130));
   for ( i131 = 0; i131 < this->q2AD; ++i131 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->CrateMaximum + 4 * i131));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->CrateMaximum + 4 * i131));
   for ( i132 = 0; i132 < this->AIPlayers; ++i132 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2B1 + 4 * i132));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q2B1 + 4 * i132));
   for ( i133 = 0; i133 < this->MessageDelay; ++i133 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MultiEngineer + 4 * i133));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->MultiEngineer + 4 * i133));
   for ( i134 = 0; i134 < this->q2DA; ++i134 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2D7 + 4 * i134));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q2D7 + 4 * i134));
   for ( i135 = 0; i135 < this->YuriMindControlSound; ++i135 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RevealTriggerRadius + 4 * i135));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->RevealTriggerRadius + 4 * i135));
   for ( i136 = 0; i136 < this->FlashFrameTime; ++i136 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->IFVTransformSound + 4 * i136));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->IFVTransformSound + 4 * i136));
   for ( i137 = 0; i137 < this->GUIComboOpenSound; ++i137 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q042 + 4 * i137));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q042 + 4 * i137));
   for ( i138 = 0; i138 < this->ExecutePlanSound; ++i138 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RadarCombatFlashTime + 4 * i138));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->RadarCombatFlashTime + 4 * i138));
   for ( i139 = 0; i139 < this->CrateUnitSound; ++i139 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->CrateFireSound + 4 * i139));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->CrateFireSound + 4 * i139));
   v155 = this->q0B3;
   for ( i140 = 0; i140 < v155; ++i140 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q0B0 + 4 * i140));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q0B0 + 4 * i140));
   v157 = this->q0BA;
   for ( i141 = 0; i141 < v157; ++i141 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2DC + 4 * i141));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q2DC + 4 * i141));
   for ( i142 = 0; i142 < this->q305; ++i142 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q302 + 4 * i142));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q302 + 4 * i142));
   for ( i143 = 0; i143 < this->q313; ++i143 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q0C4 + 4 * i143));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q0C4 + 4 * i143));
   for ( i144 = 0; i144 < this->q321; ++i144 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->qC78 + 4 * i144));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->qC78 + 4 * i144));
   for ( i145 = 0; i145 < this->q32F; ++i145 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->qCB0 + 4 * i145));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->qCB0 + 4 * i145));
   result = this->q33D;
   for ( i146 = 0; i146 < result; ++i146 )
   {
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->qCE8 + 4 * i146));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->qCE8 + 4 * i146));
     result = this->q33D;
   }
   v165 = this->q0AC;
@@ -9711,7 +9712,7 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
   {
     v167 = this + 169;
     do
-      result = ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*v167 + 4 * v166++));
+      result = ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*v167 + 4 * v166++));
     while ( v166 < v165 );
   }
   return result;
@@ -15621,7 +15622,7 @@ LABEL_10:
         {
           v106 = *(double *)(this + 39);
           v107 = *(this + 41);
-          StartAudioControllerAt(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 552), (int)&v106, 0);
+          StartAudioControllerAt(*(_DWORD *)(DataGlobal_87F7E8[7806] + 552), (int)&v106, 0);
           VoxClass::FindAndPlay(aEvaUnitpromote, -1);
         }
       }
@@ -15631,19 +15632,19 @@ LABEL_10:
         {
           v106 = *(double *)(this + 39);
           v107 = *(this + 41);
-          StartAudioControllerAt(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 556), (int)&v106, 0);
+          StartAudioControllerAt(*(_DWORD *)(DataGlobal_87F7E8[7806] + 556), (int)&v106, 0);
           VoxClass::FindAndPlay(aEvaUnitpromote, -1);
         }
-        *(this + 60) = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3048);
+        *(this + 60) = *(_DWORD *)(DataGlobal_87F7E8[7806] + 3048);
       }
     }
     *(this + 79) = FootClass::CheckAccelLimit((float *)this + 84);
   }
   if ( *(this + 116)
     && *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 1517)
-    && !(dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 788)) )
+    && !(dword_A8ED54[12] % *(_DWORD *)(DataGlobal_87F7E8[7806] + 788)) )
   {
-    v10 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 792);
+    v10 = *(_DWORD *)(DataGlobal_87F7E8[7806] + 792);
     if ( (*(int (__stdcall **)(int))(*(_DWORD *)(*(this + 135) + 36) + 24))(*(this + 135) + 36) < v10 )
       v10 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(this + 135) + 36) + 24))(*(this + 135) + 36);
     HouseClass::ProcessPowerDrain(*(this + 135), v10);
@@ -15679,7 +15680,7 @@ LABEL_10:
   LOWORD(v102) = *v16 / 256;
   HIWORD(v102) = v16[1] / 256;
   v105 = v102;
-  v17 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v105);
+  v17 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v105);
   if ( !*(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 1828)
     || !MovementAI::IsPathMovementAllowed(v17)
     || this && (*(int (__thiscall **)(int *))(*this + 44))(this) == 2 )
@@ -15882,7 +15883,7 @@ LABEL_148:
   if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 660))(this) )
   {
     ++*(this + 27);
-    if ( BuildingClass::GetHealthRatio(this) > *(double *)(MEMORY[0x87F7E8][7806] + 5888)
+    if ( BuildingClass::GetHealthRatio(this) > *(double *)(DataGlobal_87F7E8[7806] + 5888)
       || (*(int (__thiscall **)(int *))(*this + 456))(this) < -10 )
     {
       v46 = *(this + 196);
@@ -15902,11 +15903,11 @@ LABEL_148:
        || (*(int (__thiscall **)(int *))(*this + 44))(this) == 1
        && *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3479))
       && !v48
-      && !(dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 48))
+      && !(dword_A8ED54[12] % *(_DWORD *)(DataGlobal_87F7E8[7806] + 48))
       && HouseClass::IsTechInfiltrated((_DWORD *)*(this + 135)) )
     {
   }
-  else if ( !(dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 56))
+  else if ( !(dword_A8ED54[12] % *(_DWORD *)(DataGlobal_87F7E8[7806] + 56))
          && IsProductionInfiltrated((_DWORD *)*(this + 135)) )
   {
   (*(void (__thiscall **)(int *, _DWORD))(*this + 1040))(this, 0);
@@ -15917,7 +15918,7 @@ LABEL_148:
   {
     v97 = *(_DWORD *)(*(this + 135) + 48);
     v55 = (_DWORD *)(*(int (__thiscall **)(int *, double *))(*this + 72))(this, &v106);
-    v56 = Coord::To_Cell(MEMORY[0x87F7E8], v55);
+    v56 = Coord::To_Cell(DataGlobal_87F7E8, v55);
     if ( Cell::HasOccupierBit(v56, v97) )
       (*(void (__thiscall **)(int *))(*this + 1056))(this);
   }
@@ -15925,11 +15926,11 @@ LABEL_148:
   {
     v98 = *(_DWORD *)(*(this + 135) + 48);
     v57 = (_DWORD *)(*(int (__thiscall **)(int *, double *))(*this + 72))(this, &v106);
-    v58 = Coord::To_Cell(MEMORY[0x87F7E8], v57);
+    v58 = Coord::To_Cell(DataGlobal_87F7E8, v57);
     if ( !Cell::HasOccupierBit(v58, v98) )
       (*(void (__thiscall **)(int *))(*this + 1056))(this);
   }
-  if ( !MEMORY[0x87F7E8][536212]
+  if ( !DataGlobal_87F7E8[536212]
     && !(unsigned __int8)House::IsHumanPlayer((#375 *)*(this + 135))
     && this->q2B4
     && !Object::IsAlliedWithObjectSimpleHouse((_DWORD *)*(this + 135), (_BYTE *)this->q2B4)
@@ -15939,7 +15940,7 @@ LABEL_148:
     (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
   }
   if ( this->q2B4
-    && MEMORY[0x87F7E8][536212]
+    && DataGlobal_87F7E8[536212]
     && *(_BYTE *)(*(this + 135) + 492)
 // 0x6f3970
     && TechnoClass::GetValue(this, -1) < 0
@@ -15959,7 +15960,7 @@ LABEL_148:
           || (v61 = v60 + 156,
               v106 = *(double *)v61,
               v107 = *(_DWORD *)(v61 + 8),
-              v62 = Coord::To_Cell(MEMORY[0x87F7E8], &v106),
+              v62 = Coord::To_Cell(DataGlobal_87F7E8, &v106),
               Cell::IsBridge(v62)) )
         {
           (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
@@ -16038,7 +16039,7 @@ LABEL_236:
   v74 = (*(int (__thiscall **)(int *))(*this + 132))(this);
   if ( *(_BYTE *)(v74 + 3215)
 // 0x5f5c60
-    && BuildingClass::GetHealthRatio(this) < *(double *)(MEMORY[0x87F7E8][7806] + 5888)
+    && BuildingClass::GetHealthRatio(this) < *(double *)(DataGlobal_87F7E8[7806] + 5888)
     && (*(int (__thiscall **)(int *))(*this + 456))(this) > -10 )
   {
     v75 = *(_DWORD *)(v74 + 1928);
@@ -16080,19 +16081,19 @@ LABEL_255:
 LABEL_258:
     if ( !*(this + 194) && v119 > 0 )
     {
-      if ( BuildingClass::GetHealthRatio(this) >= *(double *)(MEMORY[0x87F7E8][7806] + 5896) )
+      if ( BuildingClass::GetHealthRatio(this) >= *(double *)(DataGlobal_87F7E8[7806] + 5896) )
       {
-        v82 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1380);
-        LODWORD(v106) = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1376);
+        v82 = *(_DWORD *)(DataGlobal_87F7E8[7806] + 1380);
+        LODWORD(v106) = *(_DWORD *)(DataGlobal_87F7E8[7806] + 1376);
         HIDWORD(v106) = v82;
       }
       else
       {
-        v81 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1372);
-        LODWORD(v106) = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1368);
+        v81 = *(_DWORD *)(DataGlobal_87F7E8[7806] + 1372);
+        LODWORD(v106) = *(_DWORD *)(DataGlobal_87F7E8[7806] + 1368);
         HIDWORD(v106) = v81;
       }
-      v104 = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 2147483646);
+      v104 = Random::Range((_DWORD *)(DataGlobal_87F7E8[536210] + 536), 0, 2147483646);
       if ( (double)v104 * 4.656612877414201e-10 < v106 )
       {
         v83 = __2_YAPAXI_Z(256);
@@ -16107,7 +16108,7 @@ LABEL_258:
           v90 = v86[2];
           v106 = COERCE_DOUBLE(__PAIR64__(v86[1] + v88, v87));
           v107 = v90 + v89;
-          v91 = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, v119 - 1);
+          v91 = Random::Range((_DWORD *)(DataGlobal_87F7E8[536210] + 536), 0, v119 - 1);
           v92 = ParticleSystemClass::Constructor(
                   v83,
                   *((_DWORD *)Block + v91),
@@ -16157,17 +16158,17 @@ LABEL_258:
       {
         if ( this->q674 )
           (*(void (__stdcall **)(_DWORD))(*(_DWORD *)this->q674 + 88))(this->q674);
-        LOBYTE(v15) = MEMORY[0x87F7E8][539764];
-        for ( i = 0; i < MEMORY[0x87F7E8][539764]; ++i )
+        LOBYTE(v15) = DataGlobal_87F7E8[539764];
+        for ( i = 0; i < DataGlobal_87F7E8[539764]; ++i )
         {
-          v94 = *(_DWORD *)(MEMORY[0x87F7E8][539761] + 4 * i);
+          v94 = *(_DWORD *)(DataGlobal_87F7E8[539761] + 4 * i);
           if ( v94
             && *(int **)(v94 + 204) == this
-            && *(_DWORD *)(v94 + 200) == *(_DWORD *)(MEMORY[0x87F7E8][7806] + 6132) )
+            && *(_DWORD *)(v94 + 200) == *(_DWORD *)(DataGlobal_87F7E8[7806] + 6132) )
           {
             *(_BYTE *)(v94 + 405) = 0;
           }
-          LOBYTE(v15) = MEMORY[0x87F7E8][539764];
+          LOBYTE(v15) = DataGlobal_87F7E8[539764];
         }
       }
     }
@@ -17832,7 +17833,7 @@ int __thiscall ThemeClass::Play(int *this, Movie *aP1)
   int v5; // eax
   int v6; // ecx
 
-  if ( MEMORY[0xA8D63C].__pad_14B0[392] && Audio::IsSoundEnabled() && !MEMORY[0xA8D63C].__pad_14B0[632] )
+  if ( g_NetworkPlayerBuffer[5688] && Audio::IsSoundEnabled() && !g_NetworkPlayerBuffer[5928] )
   {
     v3 = this->ThemeClass_field_2C; /*0x720bdc*/
     if ( !v3 ) /*0x720be5*/
@@ -17842,9 +17843,9 @@ int __thiscall ThemeClass::Play(int *this, Movie *aP1)
     if ( !Audio::IsSoundPlaying((_DWORD *)this->ThemeClass_field_2C) || (Movie *)this->ThemeClass_field_04 != aP1 )
     {
 LABEL_13:
-      if ( MEMORY[0xA8D63C].__pad_14B0[392] /*0x720c37*/
+      if ( g_NetworkPlayerBuffer[5688] /*0x720c37*/
         && Audio::IsSoundEnabled()
-        && !MEMORY[0xA8D63C].__pad_14B0[632]
+        && !g_NetworkPlayerBuffer[5928]
         && *this != -1 )
       {
         Debug::Log(); /*0x720c42*/
@@ -17861,23 +17862,23 @@ LABEL_13:
         if ( (int)aP1 <= -1 || this->q030 <= 0 ) /*0x720c8e*/
           goto LABEL_47; /*0x720c8e*/
         this->ThemeClass_field_04 = (int)aP1; /*0x720c94*/
-        v5 = MEMORY[0x89E3A0] ? 0 : Game::CheckForGameCD(0);
+        v5 = DataGlobal_89E3A0 ? 0 : Game::CheckForGameCD(0);
         v6 = this->ThemeClass_field_2C; /*0x720cab*/
         if ( v6 && v5 > -1 ) /*0x720cba*/
         {
           if ( (unsigned int)aP1 >= this->q024 ) /*0x720cbf*/
           {
-            ThreadAudioMixerMain((_DWORD *)this->ThemeClass_field_2C, (RawFileClass *)&MEMORY[0x87F8E4].__pad_5568[20760], 1); /*0x720d02*/
+            ThreadAudioMixerMain((_DWORD *)this->ThemeClass_field_2C, (RawFileClass *)&DataGlobal_87F8E4[42624], 1); /*0x720d02*/
           }
           else
           {
             _makepath( /*0x720cdc*/
-              &MEMORY[0xB077F8].__pad_579C[8804],
+              &g_OverlayTypeConfig[31232],
               0,
               0,
               (const char *)(*(_DWORD *)(*(this + 6) + 4 * (_DWORD)aP1) + 256),
-              &stru_830620.__pad_579C[59820]);
-            ThreadAudioMixerMain((_DWORD *)this->ThemeClass_field_2C, (RawFileClass *)&MEMORY[0xB077F8].__pad_579C[8804], 1); /*0x720ced*/
+              &stru_830620[82248]);
+            ThreadAudioMixerMain((_DWORD *)this->ThemeClass_field_2C, (RawFileClass *)&g_OverlayTypeConfig[31232], 1); /*0x720ced*/
           }
           *this = (int)aP1; /*0x720cf2*/
         }
@@ -17888,11 +17889,11 @@ LABEL_13:
           {
             if ( v5 <= -1 && this->m_Name == -1 ) /*0x720d29*/
             {
-              if ( MEMORY[0xA8D63C].__pad_14B0[392] ) /*0x720d36*/
+              if ( g_NetworkPlayerBuffer[5688] ) /*0x720d36*/
               {
                 if ( Audio::IsSoundEnabled() ) /*0x720d3c*/
                 {
-                  if ( !MEMORY[0xA8D63C].__pad_14B0[632] ) /*0x720d4c*/
+                  if ( !g_NetworkPlayerBuffer[5928] ) /*0x720d4c*/
                   {
                     dword_A83D18 = (IUnknown *)aP1; /*0x720d51*/
                     if ( aP1 != (Movie *)dword_A83D14 ) /*0x720d5f*/

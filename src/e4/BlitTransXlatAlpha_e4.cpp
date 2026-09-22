@@ -27,7 +27,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(
   result = a4; /*0x493930*/
   if ( a4 > 0 ) /*0x49393b*/
   {
-    v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493941*/
+    v11 = *(TacticalMap **)&DataGlobal_87F8E4[32096]; /*0x493941*/
     a5a = (_WORD *)a4; /*0x493952*/
     do /*0x4939c4*/
     {
@@ -36,7 +36,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(
         *a1 = 3 * (this->q008 & (*a1 >> 2)) /*0x493996*/
             + (this->q008 & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 2));
         *a5 = argC; /*0x493999*/
-        v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x49399c*/
+        v11 = *(TacticalMap **)&DataGlobal_87F8E4[32096]; /*0x49399c*/
       }
       ++a1; /*0x4939a6*/
       ++a2; /*0x4939aa*/
@@ -80,7 +80,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(
   if ( a4 > 0 ) /*0x493a6a*/
   {
     v12 = argC; /*0x493a76*/
-    v14 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493a80*/
+    v14 = *(TacticalMap **)&DataGlobal_87F8E4[32096]; /*0x493a80*/
     a5a = (_WORD *)a4; /*0x493a86*/
     do /*0x493aee*/
     {
@@ -90,7 +90,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(
         *a1 = (this->q008 & (*a1 >> 1)) /*0x493ac6*/
             + (this->q008 & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 1));
         *a5 = argC; /*0x493ac9*/
-        v14 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493acc*/
+        v14 = *(TacticalMap **)&DataGlobal_87F8E4[32096]; /*0x493acc*/
       }
       v15 = a5 + 1; /*0x493ad2*/
       ++a2; /*0x493ad8*/
@@ -132,7 +132,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(
   result = a4; /*0x493b90*/
   if ( a4 > 0 ) /*0x493b9b*/
   {
-    v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493ba1*/
+    v11 = *(TacticalMap **)&DataGlobal_87F8E4[32096]; /*0x493ba1*/
     a5a = (_WORD *)a4; /*0x493bb2*/
     do /*0x493c24*/
     {
@@ -141,7 +141,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(
         *a1 = (this->q008 & (*a1 >> 2)) /*0x493bf6*/
             + 3 * (this->q008 & (*(_WORD *)(this->BlitTransXlatAlpha_ushort_field_0x4 + 2 * (unsigned __int8)*a2) >> 2));
         *a5 = argC; /*0x493bf9*/
-        v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493bfc*/
+        v11 = *(TacticalMap **)&DataGlobal_87F8E4[32096]; /*0x493bfc*/
       }
       ++a1; /*0x493c06*/
       ++a2; /*0x493c0a*/

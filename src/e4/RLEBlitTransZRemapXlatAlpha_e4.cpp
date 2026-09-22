@@ -56,8 +56,8 @@ unsigned __int16 *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::AddRef(
     v18 = a4 - v17; /*0x497a93*/
     arg0 += 2 * v17; /*0x497a95*/
     result = &a7[v17]; /*0x497a98*/
-    if ( (unsigned int)result >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 28) ) /*0x497a9e*/
-      result = (unsigned __int16 *)((char *)result - *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 32)); /*0x497aa0*/
+    if ( (unsigned int)result >= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 28) ) /*0x497a9e*/
+      result = (unsigned __int16 *)((char *)result - *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 32)); /*0x497aa0*/
   }
   while ( v18 > 0 ) /*0x497aab*/
   {
@@ -78,8 +78,8 @@ unsigned __int16 *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::AddRef(
       arg0 += v21; /*0x497ad7*/
       result = (unsigned __int16 *)((char *)result + v21); /*0x497ad9*/
     }
-    if ( (unsigned int)result >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 28) ) /*0x497b21*/
-      result = (unsigned __int16 *)((char *)result - *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[4224] + 32)); /*0x497b23*/
+    if ( (unsigned int)result >= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 28) ) /*0x497b21*/
+      result = (unsigned __int16 *)((char *)result - *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 32)); /*0x497b23*/
   }
   return result; /*0x497b2a*/
 }

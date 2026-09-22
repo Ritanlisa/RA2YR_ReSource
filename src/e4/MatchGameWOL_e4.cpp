@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x7A19E0
 namespace gamemd {
@@ -77,7 +79,7 @@ LABEL_12:
     if ( v14[6] ) /*0x7a1b15*/
     {
       v13 = -1; /*0x7a1b27*/
-      (*(void (__stdcall **)(LPVOID, _DWORD, int *))(*(_DWORD *)MEMORY[0xAC1170] + 32))(MEMORY[0xAC1170], v14[6], &v13); /*0x7a1b34*/
+      (*(void (__stdcall **)(LPVOID, _DWORD, int *))(*(_DWORD *)g_UIPointerTable + 32))(g_UIPointerTable, v14[6], &v13); /*0x7a1b34*/
       if ( v13 != -1 ) /*0x7a1b3e*/
       {
         v11 = (void *)v13; /*0x7a1b40*/

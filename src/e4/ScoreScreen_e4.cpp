@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Display_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x690A10
 unsigned int * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
@@ -20,7 +26,7 @@ _DWORD *__thiscall ScoreScreen::LoadScoreFont(_DWORD *this, ScoreFontClass *aP1)
   this->q014 = 0; /*0x690a22*/
   *this = &vt_ScoreFontClass; /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
-  v3 = (IUnknown *)++*(_DWORD *)&stru_B05488.__pad_FC[8]; /*0x690a3b*/
+  v3 = (IUnknown *)++*(_DWORD *)&stru_B05488[260]; /*0x690a3b*/
   LOBYTE(v3) = 0; /*0x690a42*/
   *this = &vt_ScoreFullFontClass; /*0x690a44*/
   this->q010 = 0; /*0x690a4a*/
@@ -63,14 +69,14 @@ _DWORD *__thiscall sub_690AE0(_DWORD *this, int a2)
   this->q014 = 0; /*0x690af2*/
   *this = &vt_ScoreFontClass; /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
-  ++MEMORY[0xB0558C]; /*0x690b0c*/
+  ++DataGlobal_B0558C; /*0x690b0c*/
   *this = &vt_ScoreBigFontClass; /*0x690b14*/
   this->q010 = 0; /*0x690b1a*/
-  v3 = SearchMIXFile(MEMORY[0x83E6DC], 0); /*0x690b1d*/
+  v3 = SearchMIXFile(DataGlobal_83E6DC, 0); /*0x690b1d*/
   this->q00C = v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
   {
-    CCFileClass::Construct(v5, MEMORY[0x83E6DC]); /*0x690b32*/
+    CCFileClass::Construct(v5, DataGlobal_83E6DC); /*0x690b32*/
     this->q00C = CCFileClass::ReadEntireFile(v5); /*0x690b44*/
     this->q010 = 1; /*0x690b47*/
     CCFileClass::Reset(v5); /*0x690b4b*/
@@ -181,7 +187,7 @@ void __thiscall ScoreScreen::RemoveItem(int this, int a2, int a3, ObjectClass *a
       v19 = *(_DWORD *)(v13 + 48); /*0x77140c*/
       if ( v19 > 0 )
       {
-        v20 = v19 == 1 ? 0 : Random::Range(&MEMORY[0x87F8E4].__pad_5568[7484], 0, (IUnknown *)(v19 - 1));
+        v20 = v19 == 1 ? 0 : Random::Range(&DataGlobal_87F8E4[29348], 0, (IUnknown *)(v19 - 1));
         if ( Map_Remove_770CE0(v18, *(_DWORD *)(*(_DWORD *)(v13 + 36) + 4 * v20), (char **)v24) ) /*0x77143b*/
         {
           v21 = *(_DWORD *)(this + 968); /*0x771444*/

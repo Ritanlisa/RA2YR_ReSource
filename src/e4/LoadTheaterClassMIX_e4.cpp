@@ -14,13 +14,13 @@ int sub_717840()
   int i; // edi
   int v2; // esi
 
-  result = MEMORY[0xA8EB10]; /*0x717840*/
-  for ( i = 0; i < MEMORY[0xA8EB10]; ++i ) /*0x71784a*/
+  result = DataGlobal_A8EB10; /*0x717840*/
+  for ( i = 0; i < DataGlobal_A8EB10; ++i ) /*0x71784a*/
   {
-    v2 = *((_DWORD *)MEMORY[0xA8EB04] + i); /*0x717852*/
+    v2 = *((_DWORD *)DataGlobal_A8EB04 + i); /*0x717852*/
     if ( *(_BYTE *)(v2 + 3536) ) /*0x717855*/
       *(_DWORD *)(v2 + 3568) = FileExtension::MapHandler((const char *)(v2 + 3536)); /*0x71786a*/
-    result = MEMORY[0xA8EB10]; /*0x717870*/
+    result = DataGlobal_A8EB10; /*0x717870*/
   }
   return result; /*0x71787b*/
 }

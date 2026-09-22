@@ -5,6 +5,7 @@
 #include "e4/classes/E4Recv_65A7E0_e4.hpp"
 #include "e4/classes/E4Recv_69E900_e4.hpp"
 #include "e4/classes/E4Recv_74CDB0_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x6F2040
 namespace gamemd {
@@ -16,11 +17,11 @@ int sub_6F2040()
   int result; // eax
   int i; // esi
 
-  result = MEMORY[0xA8ECB0]; /*0x6f2040*/
-  for ( i = 0; i < MEMORY[0xA8ECB0]; ++i ) /*0x6f204a*/
+  result = g_MultiplayerLogState; /*0x6f2040*/
+  for ( i = 0; i < g_MultiplayerLogState; ++i ) /*0x6f204a*/
   {
-    TeamTypeClass::ProcessTaskForce(*((_DWORD *)MEMORY[0xA8ECA4] + i)); /*0x6f2054*/
-    result = MEMORY[0xA8ECB0]; /*0x6f2059*/
+    TeamTypeClass::ProcessTaskForce(*((_DWORD *)g_TeamTypePool + i)); /*0x6f2054*/
+    result = g_MultiplayerLogState; /*0x6f2059*/
   }
   return result; /*0x6f2063*/
 }

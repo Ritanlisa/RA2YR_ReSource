@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Array_e4.hpp"
 
 // 0x488520
 namespace gamemd {
@@ -49,16 +50,16 @@ CheckListClass *__userpurge CheckListClass::OnClick@<eax>(
       {
         v10 |= 0x2000u; /*0x4885b4*/
         v12 = *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * (_DWORD)Type) + 796); /*0x4885bd*/
-        if ( *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 4) == 1 ) /*0x4885c9*/
-          v13 = *(unsigned __int8 *)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 372) + v12); /*0x4885d6*/
+        if ( *(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 4) == 1 ) /*0x4885c9*/
+          v13 = *(unsigned __int8 *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 372) + v12); /*0x4885d6*/
         else
-          v13 = *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[7840] + 372) + 2 * v12); /*0x4885e2*/
+          v13 = *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 372) + 2 * v12); /*0x4885e2*/
         v19[0] = a5; /*0x4885f4*/
         v19[3] = a1[19]; /*0x4885fb*/
         v19[1] = a6; /*0x488606*/
         v19[2] = a7; /*0x48860a*/
-        (*(void (__thiscall **)(_DWORD, _DWORD *, int))(**(_DWORD **)&stru_87C374.__pad_579C[22532] + 20))( /*0x488615*/
-          *(_DWORD *)&stru_87C374.__pad_579C[22532],
+        (*(void (__thiscall **)(_DWORD, _DWORD *, int))(**(_DWORD **)&stru_87C374[44960] + 20))( /*0x488615*/
+          *(_DWORD *)&stru_87C374[44960],
           v19,
           v13);
       }
@@ -71,13 +72,13 @@ CheckListClass *__userpurge CheckListClass::OnClick@<eax>(
       v18 = v14; /*0x488643*/
       v20[1] = a6; /*0x488644*/
       v16 = *(_DWORD *)(stru_B05488.field_4C + 4 * (_DWORD)Type); /*0x488659*/
-      v15 = (*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)&stru_87C374.__pad_579C[22532] + 120))( /*0x488662*/
-              *(_DWORD *)&stru_87C374.__pad_579C[22532],
+      v15 = (*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)&stru_87C374[44960] + 120))( /*0x488662*/
+              *(_DWORD *)&stru_87C374[44960],
               v21);
       return (CheckListClass *)FillRectangle( /*0x488675*/
                                  (IUnknown *)v19,
                                  (IUnknown *)v22,
-                                 *(int *)&stru_87C374.__pad_579C[22532],
+                                 *(int *)&stru_87C374[44960],
                                  v15,
                                  (int)v20,
                                  v16,

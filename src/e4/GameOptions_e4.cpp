@@ -18,18 +18,18 @@ int __stdcall sub_682780(int a1, int a2, wchar_t *String)
 
   v9 = 0; /*0x682786*/
   v3 = 0; /*0x68278e*/
-  v4 = &MEMORY[0x83D658]; /*0x682790*/
+  v4 = &DataGlobal_83D658; /*0x682790*/
   while ( *v4 != a2 ) /*0x682797*/
   {
     v4 += 2; /*0x682799*/
     ++v3; /*0x68279c*/
-    if ( (int)v4 >= (int)MEMORY[0x83D6C0] ) /*0x6827a2*/
+    if ( (int)v4 >= (int)g_INI_Key_GameType ) /*0x6827a2*/
     {
       v5 = 0; /*0x6827a4*/
       goto LABEL_5; /*0x6827a4*/
     }
   }
-  v5 = (&MEMORY[0x83D65C])[2 * v3]; /*0x6827db*/
+  v5 = (&DataGlobal_83D65C)[2 * v3]; /*0x6827db*/
 LABEL_5:
   v6 = (*(int (__stdcall **)(int, _UNKNOWN **, int, _DWORD, _DWORD, int *))(*(_DWORD *)a1 + 12))(a1, v5, 18, 0, 0, &v9); /*0x6827a6*/
   if ( v6 >= 0 ) /*0x6827c4*/

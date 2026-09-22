@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Techno_e4.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
 
 // 0x6F2070
 namespace gamemd {

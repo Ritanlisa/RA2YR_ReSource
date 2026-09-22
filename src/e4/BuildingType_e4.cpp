@@ -11,29 +11,29 @@ int BuildingType::FindDefault()
     int result;
     result = 0;
     if ( this == (void *)-2 )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60716], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83144], 0);
     if ( !this )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60724], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83152], 0);
     if ( this == (void *)1 )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60728], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83156], 0);
     if ( this == (void *)2 )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60732], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83160], 0);
     if ( this == (void *)3 )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60736], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83164], 0);
     if ( this == (void *)4 )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60740], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83168], 0);
     if ( this == (void *)5 )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60744], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83172], 0);
     if ( this == (void *)6 )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60748], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83176], 0);
     if ( this == (void *)7 )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60752], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83180], 0);
     if ( this == (void *)8 )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60756], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83184], 0);
     if ( this == (void *)-3 )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60720], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83148], 0);
     if ( this == (void *)9 )
-    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620.__pad_579C[60760], 0);
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&DataGlobal_830620[83188], 0);
     return result;
 }
 }

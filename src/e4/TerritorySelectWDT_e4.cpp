@@ -4,6 +4,10 @@
 #include "e4/classes/E4Recv_7665D0_e4.hpp"
 #include "e4/classes/E4Recv_76FEB0_e4.hpp"
 #include "e4/classes/E4Recv_7714B0_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x7665D0
 namespace gamemd {

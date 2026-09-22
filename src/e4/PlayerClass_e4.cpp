@@ -13,7 +13,7 @@ char __thiscall PlayerClass_SetHouse(_DWORD *this, int a2)
   result = (*(int (__thiscall **)(_DWORD *, int))(*this + 4))(this, a2); /*0x5d8cbb*/
   if ( result ) /*0x5d8cc0*/
   {
-    *(_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * a2) + 107) = this->q008; /*0x5d8cd5*/
+    *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * a2) + 107) = this->q008; /*0x5d8cd5*/
     return 1; /*0x5d8cd8*/
   }
   return result; /*0x5d8cc2*/

@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ToolTipManager_7_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x724AA0
 char ToolTipManager::addRef(int a1)

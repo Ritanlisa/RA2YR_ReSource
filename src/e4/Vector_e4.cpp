@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x4C1B50
 namespace gamemd {

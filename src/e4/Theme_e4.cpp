@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x720B20
 char Theme::QueueSong(IUnknown * aP1)
@@ -12,14 +14,14 @@ char __thiscall Theme::QueueSong(int this, IUnknown *aP1)
   int v4; // ecx
   _DWORD *v5; // ecx
 
-  LOBYTE(IsSoundEnabled) = MEMORY[0xA8D63C].__pad_14B0[392]; /*0x720b20*/
-  if ( MEMORY[0xA8D63C].__pad_14B0[392] ) /*0x720b2a*/
+  LOBYTE(IsSoundEnabled) = g_NetworkPlayerBuffer[5688]; /*0x720b20*/
+  if ( g_NetworkPlayerBuffer[5688] ) /*0x720b2a*/
   {
     IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720b2c*/
     if ( IsSoundEnabled ) /*0x720b33*/
     {
-      LOBYTE(IsSoundEnabled) = MEMORY[0xA8D63C].__pad_14B0[632]; /*0x720b35*/
-      if ( !MEMORY[0xA8D63C].__pad_14B0[632] ) /*0x720b3c*/
+      LOBYTE(IsSoundEnabled) = g_NetworkPlayerBuffer[5928]; /*0x720b35*/
+      if ( !g_NetworkPlayerBuffer[5928] ) /*0x720b3c*/
       {
         LOBYTE(IsSoundEnabled) = (_BYTE)aP1; /*0x720b3e*/
         this->q002 = aP1; /*0x720b45*/
@@ -59,14 +61,14 @@ char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
   _DWORD *v5; // ecx
   _DWORD *v6; // ecx
 
-  LOBYTE(IsSoundEnabled) = MEMORY[0xA8D63C].__pad_14B0[392]; /*0x720ea0*/
-  if ( MEMORY[0xA8D63C].__pad_14B0[392] ) /*0x720eaa*/
+  LOBYTE(IsSoundEnabled) = g_NetworkPlayerBuffer[5688]; /*0x720ea0*/
+  if ( g_NetworkPlayerBuffer[5688] ) /*0x720eaa*/
   {
     IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720eb0*/
     if ( IsSoundEnabled ) /*0x720eb7*/
     {
-      LOBYTE(IsSoundEnabled) = MEMORY[0xA8D63C].__pad_14B0[632]; /*0x720ebd*/
-      if ( !MEMORY[0xA8D63C].__pad_14B0[632] && *this != -1 ) /*0x720ecd*/
+      LOBYTE(IsSoundEnabled) = g_NetworkPlayerBuffer[5928]; /*0x720ebd*/
+      if ( !g_NetworkPlayerBuffer[5928] && *this != -1 ) /*0x720ecd*/
       {
         if ( !(_BYTE)aP1 ) /*0x720ed9*/
           goto LABEL_14; /*0x720ed9*/

@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/WalkLocomotion_e4.hpp"
 
 // 0x6A0310
 char WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long long a4)
@@ -21,30 +23,30 @@ char __stdcall JumpjetLocomotionClass::sub_6A0310(int a1, int a2, unsigned int a
   *(_DWORD *)(a1 + 84) = a2; /*0x6a0323*/
   *(_DWORD *)(a1 + 88) = 0; /*0x6a0326*/
   v4 = g_OverlayTypeConfig; /*0x6a032d*/
-  if ( a3 != g_OverlayTypeConfig || a4 != MEMORY[0xB077FC] ) /*0x6a0340*/
+  if ( a3 != g_OverlayTypeConfig || a4 != DataGlobal_B077FC ) /*0x6a0340*/
   {
     v5 = a1 - 4; /*0x6a0358*/
     v13 = a4; /*0x6a035b*/
     v6 = (unsigned int *)(a1 - 4 + 64); /*0x6a0363*/
     v12 = a3; /*0x6a036a*/
-    if ( *v6 != g_OverlayTypeConfig || __PAIR64__(*(_DWORD *)(a1 - 4 + 72), *(_DWORD *)(a1 + 64)) != MEMORY[0xB077FC] ) /*0x6a0375*/
+    if ( *v6 != g_OverlayTypeConfig || __PAIR64__(*(_DWORD *)(a1 - 4 + 72), *(_DWORD *)(a1 + 64)) != DataGlobal_B077FC ) /*0x6a0375*/
     {
       *v6 = g_OverlayTypeConfig; /*0x6a0386*/
-      *(_DWORD *)(a1 + 64) = MEMORY[0xB077FC]; /*0x6a038d*/
-      v7 = HIDWORD(MEMORY[0xB077FC]); /*0x6a0390*/
+      *(_DWORD *)(a1 + 64) = DataGlobal_B077FC; /*0x6a038d*/
+      v7 = HIDWORD(DataGlobal_B077FC); /*0x6a0390*/
       *(_BYTE *)(v5 + 99) = 0; /*0x6a0396*/
       *(_DWORD *)(a1 - 4 + 72) = v7; /*0x6a039a*/
       v4 = g_OverlayTypeConfig; /*0x6a039d*/
     }
-    if ( __PAIR64__(a4, a3) != __PAIR64__(MEMORY[0xB077FC], v4) /*0x6a03be*/
-      || (LOBYTE(v4) = BYTE4(MEMORY[0xB077FC]), HIDWORD(a4) != HIDWORD(MEMORY[0xB077FC])) )
+    if ( __PAIR64__(a4, a3) != __PAIR64__(DataGlobal_B077FC, v4) /*0x6a03be*/
+      || (LOBYTE(v4) = BYTE4(DataGlobal_B077FC), HIDWORD(a4) != HIDWORD(DataGlobal_B077FC)) )
     {
       v8 = v13; /*0x6a03c4*/
       *(_BYTE *)(v5 + 99) = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(_QWORD *)(a1 + 64) = v8; /*0x6a03d0*/
       v11 = *(_DWORD *)(v5 + 12); /*0x6a03dd*/
-      v9 = Coord::To_Cell(&MEMORY[0x87F7E8], &v12); /*0x6a03e4*/
+      v9 = Coord::To_Cell(&DataGlobal_87F7E8, &v12); /*0x6a03e4*/
       if ( !CrateClass::ProcessPickup(v9, v11) || *(_BYTE *)(*(_DWORD *)(v5 + 12) + 129) ) /*0x6a03f7*/
       {
         LOBYTE(v4) = *(_BYTE *)(*(_DWORD *)(v5 + 12) + 144); /*0x6a043d*/
@@ -52,7 +54,7 @@ char __stdcall JumpjetLocomotionClass::sub_6A0310(int a1, int a2, unsigned int a
         {
           LOBYTE(v4) = g_OverlayTypeConfig; /*0x6a0447*/
           *v6 = g_OverlayTypeConfig; /*0x6a044c*/
-          *(_QWORD *)(a1 + 64) = MEMORY[0xB077FC]; /*0x6a0454*/
+          *(_QWORD *)(a1 + 64) = DataGlobal_B077FC; /*0x6a0454*/
           *(_BYTE *)(v5 + 99) = 0; /*0x6a0460*/
         }
       }
@@ -107,7 +109,7 @@ bool __stdcall JumpjetLocomotionClass::sub_6A3F50(int a1, int a2, int a3, int a4
   v23 = v6; /*0x6a3f75*/
   v24 = v7; /*0x6a3f79*/
   v25 = v8; /*0x6a3f7d*/
-  if ( v6 == g_OverlayTypeConfig && __PAIR64__(v8, v7) == MEMORY[0xB077FC] ) /*0x6a3f89*/
+  if ( v6 == g_OverlayTypeConfig && __PAIR64__(v8, v7) == DataGlobal_B077FC ) /*0x6a3f89*/
     return 0; /*0x6a3f89*/
   if ( !*(_BYTE *)(v4 + 92) ) /*0x6a3f97*/
   {
@@ -137,7 +139,7 @@ bool __stdcall JumpjetLocomotionClass::sub_6A3F50(int a1, int a2, int a3, int a4
             v22 = v18[2]; /*0x6a4033*/
             if ( (unsigned __int16)(v16 / 256) == (unsigned __int16)(a2 / 256) /*0x6a409b*/
               && (unsigned __int16)(v17 / 256) == (unsigned __int16)(a3 / 256)
-              && (int)abs32(v22 - a4) <= MEMORY[0xB07838] )
+              && (int)abs32(v22 - a4) <= DataGlobal_B07838 )
             {
               return 1; /*0x6a40a5*/
             }
@@ -148,7 +150,7 @@ bool __stdcall JumpjetLocomotionClass::sub_6A3F50(int a1, int a2, int a3, int a4
   }
   return (unsigned __int16)(v23 / 256) == (unsigned __int16)(a2 / 256) /*0x6a411e*/
       && (unsigned __int16)(v24 / 256) == (unsigned __int16)(a3 / 256)
-      && (int)abs32(v25 - a4) <= MEMORY[0xB07838];
+      && (int)abs32(v25 - a4) <= DataGlobal_B07838;
 }
 }
 

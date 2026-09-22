@@ -1,6 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/File_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x45DD90
 int BuildingTypeClass::ConstructFull(char * Source)
@@ -642,22 +649,22 @@ int __thiscall BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
         v23 = v5; /*0x45f2d9*/
       }
       if ( v5 > 0 ) /*0x45f2df*/
-        v4 = Math::RoundToInt(*(double *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 5400) * 900.0 / (double)v23); /*0x45f2fc*/
+        v4 = Math::RoundToInt(*(double *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 5400) * 900.0 / (double)v23); /*0x45f2fc*/
       this->BuildingAnimFrame = 0; /*0x45f2fe*/
       this->qF08 = v5; /*0x45f304*/
       this->qF0C = v4; /*0x45f30a*/
     }
   }
   INIClass::GetString( /*0x45f32d*/
-    (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+    (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
     (INIClass *)(this + 504),
     aDeployinganim,
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (INIClass *)&DataGlobal_87F8E4[42624],
     &Filename,
     64);
-  if ( strlen(Filename.__pad_0) ) /*0x45f336*/
+  if ( strlen(Filename[0]) ) /*0x45f336*/
   {
-    _makepath(Source, 0, 0, Filename.__pad_0, ::Ext); /*0x45f357*/
+    _makepath(Source, 0, 0, Filename[0], ::Ext); /*0x45f357*/
     TheaterObjectTypeClassSpecificID(Source, (int)aP1); /*0x45f36a*/
     v6 = (_BYTE *)(this + 5352); /*0x45f375*/
     if ( this->q14E8 && this->q14E4 ) /*0x45f37f*/
@@ -681,15 +688,15 @@ int __thiscall BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
     }
   }
   INIClass::GetString( /*0x45f405*/
-    (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+    (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
     (INIClass *)(this + 504),
     aRoofdeployinga,
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (INIClass *)&DataGlobal_87F8E4[42624],
     &Filename,
     64);
-  if ( strlen(Filename.__pad_0) ) /*0x45f40e*/
+  if ( strlen(Filename[0]) ) /*0x45f40e*/
   {
-    _makepath(Source, 0, 0, Filename.__pad_0, ::Ext); /*0x45f42f*/
+    _makepath(Source, 0, 0, Filename[0], ::Ext); /*0x45f42f*/
     TheaterObjectTypeClassSpecificID(Source, (int)aP1); /*0x45f442*/
     v8 = (_BYTE *)(this + 5376); /*0x45f44d*/
     if ( this->RoofDeployingAnimLoaded && this->RoofDeployingAnim ) /*0x45f457*/
@@ -713,15 +720,15 @@ int __thiscall BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
     }
   }
   INIClass::GetString( /*0x45f4e1*/
-    (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+    (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
     (INIClass *)(this + 504),
     (unsigned __int8 *)&g_INI_Key_Image.unknown50,
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (INIClass *)&DataGlobal_87F8E4[42624],
     &Filename,
     64);
-  if ( strlen(Filename.__pad_0) ) /*0x45f4ea*/
+  if ( strlen(Filename[0]) ) /*0x45f4ea*/
   {
-    _makepath(Source, 0, 0, Filename.__pad_0, ::Ext); /*0x45f507*/
+    _makepath(Source, 0, 0, Filename[0], ::Ext); /*0x45f507*/
     TheaterObjectTypeClassSpecificID(Source, (int)aP1); /*0x45f51a*/
     v10 = SearchMIXFile(Source, 0); /*0x45f525*/
     this->DoorAnim = v10; /*0x45f52c*/
@@ -732,15 +739,15 @@ int __thiscall BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
     }
   }
   INIClass::GetString( /*0x45f565*/
-    (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+    (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
     (INIClass *)(this + 504),
     (unsigned __int8 *)&g_INI_Key_Image.ownsFile,
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (INIClass *)&DataGlobal_87F8E4[42624],
     &Filename,
     64);
-  if ( strlen(Filename.__pad_0) ) /*0x45f56e*/
+  if ( strlen(Filename[0]) ) /*0x45f56e*/
   {
-    _makepath(Source, 0, 0, Filename.__pad_0, ::Ext); /*0x45f58f*/
+    _makepath(Source, 0, 0, Filename[0], ::Ext); /*0x45f58f*/
     TheaterObjectTypeClassSpecificID(Source, (int)aP1); /*0x45f5a2*/
     v11 = (_BYTE *)(this + 5360); /*0x45f5ad*/
     if ( this->q14F0 && this->q14EC ) /*0x45f5b7*/
@@ -771,15 +778,15 @@ int __thiscall BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
     *v13 = 0; /*0x45f649*/
   }
   INIClass::GetString( /*0x45f668*/
-    (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+    (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
     (INIClass *)(this + 504),
     (unsigned __int8 *)&g_INI_Key_Image.unknown38,
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (INIClass *)&DataGlobal_87F8E4[42624],
     &Filename,
     64);
-  if ( strlen(Filename.__pad_0) ) /*0x45f671*/
+  if ( strlen(Filename[0]) ) /*0x45f671*/
   {
-    _makepath(Source, 0, 0, Filename.__pad_0, ::Ext); /*0x45f68e*/
+    _makepath(Source, 0, 0, Filename[0], ::Ext); /*0x45f68e*/
     TheaterObjectTypeClassSpecificID(Source, (int)aP1); /*0x45f6a1*/
     v14 = LoadFileSHP(Source, (bool *)(this + 5368)); /*0x45f6ac*/
     this->q14F4 = v14; /*0x45f6b3*/
@@ -796,15 +803,15 @@ int __thiscall BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
     }
   }
   INIClass::GetString( /*0x45f711*/
-    (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+    (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
     (INIClass *)(this + 504),
-    (unsigned __int8 *)&g_INI_Key_Image.__pad_20[4],
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (unsigned __int8 *)&g_INI_Key_Image[36],
+    (INIClass *)&DataGlobal_87F8E4[42624],
     &Filename,
     64);
-  if ( strlen(Filename.__pad_0) ) /*0x45f71a*/
+  if ( strlen(Filename[0]) ) /*0x45f71a*/
   {
-    _makepath(Source, 0, 0, Filename.__pad_0, ::Ext); /*0x45f73b*/
+    _makepath(Source, 0, 0, Filename[0], ::Ext); /*0x45f73b*/
     TheaterObjectTypeClassSpecificID(Source, (int)aP1); /*0x45f74e*/
     v15 = (_BYTE *)(this + 5384); /*0x45f759*/
     if ( this->UnderRoofDoorAnimLoaded && this->UnderRoofDoorAnim ) /*0x45f763*/
@@ -828,15 +835,15 @@ int __thiscall BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
     }
   }
   INIClass::GetString( /*0x45f7e9*/
-    (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+    (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
     (INIClass *)(this + 504),
     (unsigned __int8 *)&g_INI_Key_Image.sectionHead[1],
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (INIClass *)&DataGlobal_87F8E4[42624],
     &Filename,
     64);
-  if ( strlen(Filename.__pad_0) ) /*0x45f7f2*/
+  if ( strlen(Filename[0]) ) /*0x45f7f2*/
   {
-    _makepath(Source, 0, 0, Filename.__pad_0, ::Ext); /*0x45f80f*/
+    _makepath(Source, 0, 0, Filename[0], ::Ext); /*0x45f80f*/
     TheaterObjectTypeClassSpecificID(Source, (int)aP1); /*0x45f822*/
     v17 = SearchMIXFile(Source, 0); /*0x45f82d*/
     this->SpecialZOverlay = v17; /*0x45f834*/
@@ -847,15 +854,15 @@ int __thiscall BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
     }
   }
   INIClass::GetString( /*0x45f86d*/
-    (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+    (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
     (INIClass *)(this + 504),
     (unsigned __int8 *)&g_INI_Key_Image.headNode[1],
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (INIClass *)&DataGlobal_87F8E4[42624],
     &Filename,
     64);
-  if ( strlen(Filename.__pad_0) ) /*0x45f876*/
+  if ( strlen(Filename[0]) ) /*0x45f876*/
   {
-    _makepath(Source, 0, 0, Filename.__pad_0, ::Ext); /*0x45f897*/
+    _makepath(Source, 0, 0, Filename[0], ::Ext); /*0x45f897*/
     TheaterObjectTypeClassSpecificID(Source, (int)aP1); /*0x45f8aa*/
     v18 = (_BYTE *)(this + 5404); /*0x45f8b5*/
     if ( this->BibShapeLoaded && this->BibShape ) /*0x45f8bf*/
@@ -879,10 +886,10 @@ int __thiscall BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
     }
   }
   INIClass::GetString( /*0x45f945*/
-    (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+    (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
     (INIClass *)(this + 504),
     (unsigned __int8 *)&g_INI_Key_Image,
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (INIClass *)&DataGlobal_87F8E4[42624],
     &Filename,
     64);
   if ( !this->Theater || aP1 == (ObjectTypeClass *)-1 ) /*0x45f95c*/
@@ -890,8 +897,8 @@ int __thiscall BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
   else
     v20 = (const char *)(&off_7E1BC6 + 28 * (_DWORD)aP1); /*0x45f96e*/
   strcpy(Ext, v20); /*0x45f993*/
-  if ( strlen(Filename.__pad_0) ) /*0x45f9a2*/
-    _makepath(Source, 0, 0, Filename.__pad_0, Ext); /*0x45f9bd*/
+  if ( strlen(Filename[0]) ) /*0x45f9a2*/
+    _makepath(Source, 0, 0, Filename[0], Ext); /*0x45f9bd*/
   else
     _makepath(Source, 0, 0, (const char *)(this + 504), Ext); /*0x45f9cd*/
   TheaterObjectTypeClassSpecificID(Source, (int)aP1); /*0x45f9e0*/
@@ -1512,7 +1519,7 @@ LABEL_8:
     {
       LOWORD(a2) = v9; /*0x50b7eb*/
       HIWORD(a2) = v10; /*0x50b7f6*/
-      if ( (v7 & *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2) + 55)) != 0 ) /*0x50b806*/
+      if ( (v7 & *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2) + 55)) != 0 ) /*0x50b806*/
         return 1; /*0x50b806*/
       if ( ++v10 >= a3[1] + v6 + 1 ) /*0x50b81b*/
       {
@@ -1548,24 +1555,24 @@ char __thiscall BuildingTypeClass::CheckPlacementArea(_DWORD *this, ObjectClass 
   v4 = *(_WORD *)aP1->__pad_0; /*0x594027*/
   HIWORD(aP1) = *(_WORD *)&aP1->__pad_0[4]; /*0x59402a*/
   LOWORD(aP1) = v4; /*0x594035*/
-  if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (IUnknown *)&aP1, (TechnoClass *)1) )
+  if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (IUnknown *)&aP1, (TechnoClass *)1) )
   {
     v5 = v3->field_4; /*0x594052*/
     LOWORD(aP1) = v3->field_8 + v3->field_0 - 1; /*0x59405a*/
     HIWORD(aP1) = v5; /*0x594065*/
-    if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (IUnknown *)&aP1, (TechnoClass *)1) )
+    if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (IUnknown *)&aP1, (TechnoClass *)1) )
     {
       v6 = v3->field_4; /*0x59407a*/
       v7 = v3->field_C; /*0x59407d*/
       LOWORD(aP1) = v3->field_0; /*0x594080*/
       HIWORD(aP1) = v6 + v7 - 1; /*0x594095*/
-      if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (IUnknown *)&aP1, (TechnoClass *)1) )
+      if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (IUnknown *)&aP1, (TechnoClass *)1) )
       {
         v8 = v3->field_4; /*0x5940b2*/
         v9 = v3->field_C; /*0x5940b5*/
         LOWORD(aP1) = v3->field_8 + v3->field_0 - 1; /*0x5940b8*/
         HIWORD(aP1) = v8 + v9 - 1; /*0x5940cb*/
-        if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (IUnknown *)&aP1, (TechnoClass *)1) )
+        if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (IUnknown *)&aP1, (TechnoClass *)1) )
         {
           v10 = v3->field_4; /*0x5940dd*/
           if ( v10 >= v3->field_C + v10 ) /*0x5940e9*/
@@ -1589,7 +1596,7 @@ LABEL_15:
                                 : -1);
             if ( v13 != (ObjectClass *)this->vtable3 && v13 != v11 ) /*0x59413b*/
               break; /*0x59413b*/
-            v14 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1); /*0x594147*/
+            v14 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&aP1); /*0x594147*/
             if ( !Cell::IsEmpty(v14) ) /*0x59414e*/
               break; /*0x59414e*/
             if ( ++v12 >= v3->field_0 + v3->field_8 ) /*0x594161*/
@@ -1615,7 +1622,7 @@ OverlayTypeClass *__thiscall BuildingTypeClass::FindOrCreate2(ObjectClass *this)
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x5fec8c*/
     return 0; /*0x5fecef*/
   v2 = 0; /*0x5fec9d*/
-  if ( *(int *)&HouseClass_Player.__pad_3C[8] <= 0 ) /*0x5feca1*/
+  if ( *(int *)&HouseClass_Player[68] <= 0 ) /*0x5feca1*/
   {
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x2BCu); /*0x5fecc6*/
@@ -1625,7 +1632,7 @@ LABEL_6:
   }
   while ( _strcmpi((const void *)(*(_DWORD *)(HouseClass_Player.field_38 + 4 * v2) + 36), this) ) /*0x5fecba*/
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_3C[8] ) /*0x5fecc4*/
+    if ( ++v2 >= *(int *)&HouseClass_Player[68] ) /*0x5fecc4*/
       goto LABEL_6; /*0x5fecc4*/
   }
   return *(OverlayTypeClass **)(HouseClass_Player.field_38 + 4 * v2); /*0x5fecdf*/
@@ -1644,7 +1651,7 @@ ParticleSystemTypeClass *__thiscall BuildingTypeClass::LoadOrGet(ObjectClass *th
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6448ac*/
     return 0; /*0x64490f*/
   v2 = 0; /*0x6448bd*/
-  if ( *(int *)HouseClass_Player.__pad_2C <= 0 ) /*0x6448c1*/
+  if ( *(int *)HouseClass_Player[44] <= 0 ) /*0x6448c1*/
   {
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x310u); /*0x6448e6*/
@@ -1652,12 +1659,12 @@ LABEL_6:
       return (ParticleSystemTypeClass *)OverlayTypeClass::Construct(v3, this); /*0x644901*/
     return 0; /*0x6448f5*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_18[8] + 4 * v2) + 36), this) ) /*0x6448da*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[32] + 4 * v2) + 36), this) ) /*0x6448da*/
   {
-    if ( ++v2 >= *(int *)HouseClass_Player.__pad_2C ) /*0x6448e4*/
+    if ( ++v2 >= *(int *)HouseClass_Player[44] ) /*0x6448e4*/
       goto LABEL_6; /*0x6448e4*/
   }
-  return *(ParticleSystemTypeClass **)(*(_DWORD *)&HouseClass_Player.__pad_18[8] + 4 * v2); /*0x6448ff*/
+  return *(ParticleSystemTypeClass **)(*(_DWORD *)&HouseClass_Player[32] + 4 * v2); /*0x6448ff*/
 }
 }
 
@@ -1712,28 +1719,28 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
   this->vtable2 = &ParticleTypeClass::`vftable'; /*0x644cfa*/
   this->vtable3 = &ParticleTypeClass::`vftable'; /*0x644d01*/
   this->vtable4 = &vt_ParticleTypeClass; /*0x644d08*/
-  if ( (int)MEMORY[0xA83DA8] < MEMORY[0xA83DA0] /*0x644d43*/
-    || (MEMORY[0xA83DA5] || !MEMORY[0xA83DA0])
-    && MEMORY[0xA83DAC] > 0
-    && ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))MEMORY[0xA83D98]->field_8)(
-         &MEMORY[0xA83D98],
-         MEMORY[0xA83DA0] + MEMORY[0xA83DAC],
+  if ( (int)g_BuildingTypeInitState < DataGlobal_A83DA0 /*0x644d43*/
+    || (DataGlobal_A83DA5 || !DataGlobal_A83DA0)
+    && DataGlobal_A83DAC > 0
+    && ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))DataGlobal_A83D98->field_8)(
+         &DataGlobal_A83D98,
+         DataGlobal_A83DA0 + DataGlobal_A83DAC,
          0) )
   {
-    v3 = MEMORY[0xA83DA8]; /*0x644d50*/
-    MEMORY[0xA83DA8] = (ParticleTypeClass *)((char *)MEMORY[0xA83DA8] + 1); /*0x644d53*/
-    *(_DWORD *)&MEMORY[0xA83D9C]->__pad_0[4 * (_DWORD)v3] = this; /*0x644d5f*/
+    v3 = g_BuildingTypeInitState; /*0x644d50*/
+    g_BuildingTypeInitState = (ParticleTypeClass *)((char *)g_BuildingTypeInitState + 1); /*0x644d53*/
+    *(_DWORD *)&g_BuildingProductionQueue->__pad_0[4 * (_DWORD)v3] = this; /*0x644d5f*/
   }
-  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[9964] < *(int *)&g_OverlayTypeConfig.__pad_579C[9956] /*0x644d96*/
-    || (g_OverlayTypeConfig.__pad_579C[9961] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956])
-    && *(int *)&g_OverlayTypeConfig.__pad_579C[9968] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9948] + 8))(
-         &g_OverlayTypeConfig.__pad_579C[9948],
-         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9968],
+  if ( *(int *)&g_OverlayTypeConfig[32392] < *(int *)&g_OverlayTypeConfig[32384] /*0x644d96*/
+    || (g_OverlayTypeConfig[32389] || !*(_DWORD *)&g_OverlayTypeConfig[32384])
+    && *(int *)&g_OverlayTypeConfig[32396] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig[32376] + 8))(
+         &g_OverlayTypeConfig[32376],
+         *(_DWORD *)&g_OverlayTypeConfig[32384] + *(_DWORD *)&g_OverlayTypeConfig[32396],
          0) )
   {
-    v4 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9964])++; /*0x644da3*/
-    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952] + 4 * v4) = this; /*0x644db2*/
+    v4 = (*(_DWORD *)&g_OverlayTypeConfig[32392])++; /*0x644da3*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[32380] + 4 * v4) = this; /*0x644db2*/
   }
   this->IsLogic = 0; /*0x644db5*/
   return this; /*0x644dbd*/
@@ -1755,7 +1762,7 @@ int __thiscall BuildingTypeClass::FindOrCreateEx(AbstractClass *this)
   if ( !_strcmpi(this, &stru_817460.sectionHead[1]) ) /*0x645444*/
     return -1; /*0x645444*/
   v2 = 0; /*0x64544b*/
-  if ( *(int *)&HouseClass_Player.__pad_3C[32] <= 0 ) /*0x64544f*/
+  if ( *(int *)&HouseClass_Player[92] <= 0 ) /*0x64544f*/
   {
 LABEL_5:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x318u); /*0x645474*/
@@ -1764,22 +1771,22 @@ LABEL_5:
     else
       v4 = 0; /*0x645494*/
     v6 = 0; /*0x64549c*/
-    if ( *(int *)&HouseClass_Player.__pad_3C[32] > 0 ) /*0x6454a0*/
+    if ( *(int *)&HouseClass_Player[92] > 0 ) /*0x6454a0*/
     {
-      for ( i = *(ObjectClass **)&HouseClass_Player.__pad_3C[20]; /*0x6454a2*/
+      for ( i = *(ObjectClass **)&HouseClass_Player[80]; /*0x6454a2*/
             *(ParticleTypeClass **)i->__pad_0 != v4;
             i = (ObjectClass *)((char *)i + 4) )
       {
-        if ( ++v6 >= *(int *)&HouseClass_Player.__pad_3C[32] ) /*0x6454b2*/
+        if ( ++v6 >= *(int *)&HouseClass_Player[92] ) /*0x6454b2*/
           return -1; /*0x6454b2*/
       }
       return v6; /*0x6454bb*/
     }
     return -1; /*0x6454b9*/
   }
-  while ( _strcmpi(this, (const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_3C[20] + 4 * v2) + 36)) ) /*0x645468*/
+  while ( _strcmpi(this, (const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[80] + 4 * v2) + 36)) ) /*0x645468*/
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_3C[32] ) /*0x645472*/
+    if ( ++v2 >= *(int *)&HouseClass_Player[92] ) /*0x645472*/
       goto LABEL_5; /*0x645472*/
   }
   return v2; /*0x645491*/
@@ -2041,7 +2048,7 @@ bool __thiscall BuildingTypeClass::IsPlacementValid(void *this, IUnknown *aP1, I
   IUnknown *v6; // eax
 
   if ( (*(int (__fastcall **)(void *))(this->TurretOffset)(this) < 0 /*0x746030*/
-    || !MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)aP1, (__int16 *)aP2, 0, 0, 0, 0) )
+    || !MapSeed::CheckTileMatch(&DataGlobal_87F7E8, (__int16 *)aP1, (__int16 *)aP2, 0, 0, 0, 0) )
   {
     return 1; /*0x746030*/
   }
@@ -2054,12 +2061,12 @@ bool __thiscall BuildingTypeClass::IsPlacementValid(void *this, IUnknown *aP1, I
   if ( v5 == 1 ) /*0x746083*/
     return 0; /*0x74608c*/
   if ( v5 >= 12 /*0x7460ad*/
-    || !LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], aP1, (TechnoClass *)1)
-    || !LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], aP2, (TechnoClass *)1) )
+    || !LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, aP1, (TechnoClass *)1)
+    || !LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, aP2, (TechnoClass *)1) )
   {
     return 1; /*0x7460f7*/
   }
-  v6 = (IUnknown *)(*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)aP2) + 80) >> 8); /*0x7460cd*/
+  v6 = (IUnknown *)(*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)aP2) + 80) >> 8); /*0x7460cd*/
   LOBYTE(v6) = (unsigned __int8)v6 & 1; /*0x7460d0*/
   return Pathfinding::CalcDistance((int)g_AudioInitFlag, aP1, aP2, (TechnoClass *)this, 0, v6, 0) > 15; /*0x746052*/
 }
@@ -2351,7 +2358,7 @@ int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTy
     char Destination[32];
     INIClass::GetString( this, aP1, a2, *(INIClass **)(*(int *)(DataGlobal_B05488.field_4C + 4 * (int)aP3) + 772), (INIClass *)Destination, 32);
     v4 = 0;
-    if ( *(int *)DataGlobal_B05488.__pad_58 <= 0 )
+    if ( *(int *)DataGlobal_B05488[88] <= 0 )
     return (int)aP3->__pad_0;
     v5 = (IUnknown *)DataGlobal_B05488.field_4C;
     while ( 1 )
@@ -2360,7 +2367,7 @@ int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTy
     v5 = (IUnknown *)DataGlobal_B05488.field_4C;
     if ( v6 && *(int *)(*(int *)(DataGlobal_B05488.field_4C + 4 * v4) + 784) != 1 )
     break;
-    if ( ++v4 >= *(int *)DataGlobal_B05488.__pad_58 )
+    if ( ++v4 >= *(int *)DataGlobal_B05488[88] )
     return (int)aP3->__pad_0;
   }
     return v4;

@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Building_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x425D10
 namespace gamemd {
@@ -78,11 +80,11 @@ int *__thiscall Building::ComputePosition(int *this, AnimClass *aP1)
         {
           v34[0] = (_WORD)v8; /*0x425da0*/
           v34[1] = v12; /*0x425da5*/
-          if ( LayerClass::IsWithinUsableArea(&stru_87C374.__pad_14B0[8132], (IUnknown *)v34, (TechnoClass *)1) ) /*0x425daa*/
+          if ( LayerClass::IsWithinUsableArea(&stru_87C374[13428], (IUnknown *)v34, (TechnoClass *)1) ) /*0x425daa*/
           {
             v35[0] = (__int16)v8; /*0x425dbb*/
             v35[1] = v12; /*0x425dc6*/
-            v13 = (VectorClass *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], v35); /*0x425dcb*/
+            v13 = (VectorClass *)CellCoord::To_CellObj(&stru_87C374[13428], v35); /*0x425dcb*/
             v14 = v13; /*0x425dd0*/
             if ( *(_DWORD *)&v13[14].IsInitialized == 2 /*0x425e18*/
               && ((int)v13[20].vtable0 & 0x100) == 0
@@ -176,13 +178,13 @@ LABEL_39:
     *(_QWORD *)&aP1->field_4 = qword_89A17C; /*0x4260a3*/
     return &aP1->field_0; /*0x4260b5*/
   }
-  v26 = (AnimClass *)Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)7); /*0x426032*/
+  v26 = (AnimClass *)Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)7); /*0x426032*/
   v27 = 0; /*0x426034*/
   while ( 1 ) /*0x426046*/
   {
     v28 = (((int)v26 + v27) % 8) & 7; /*0x426046*/
-    v29 = (_WORD)v38 + *(_WORD *)&stru_89E138.__pad_14B0[4 * v28 + 160]; /*0x426058*/
-    LOWORD(v28) = HIWORD(v38) + *(_WORD *)&stru_89E138.__pad_14B0[4 * v28 + 162]; /*0x426061*/
+    v29 = (_WORD)v38 + *(_WORD *)&stru_89E138[5296][4 * v28 + 160]; /*0x426058*/
+    LOWORD(v28) = HIWORD(v38) + *(_WORD *)&stru_89E138[5296][4 * v28 + 162]; /*0x426061*/
     LOWORD(v37) = v29; /*0x426066*/
     HIWORD(v37) = v28; /*0x42606f*/
     v32 = v37; /*0x42607d*/

@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x41E350
 namespace gamemd {
@@ -40,16 +45,16 @@ _DWORD *__thiscall AnimTypeClass::Construct2(_DWORD *this, ObjectClass *aP1)
   this->vtable3 = &AITriggerTypeClass::`vftable'; /*0x41e40e*/
   this->vtable4 = &vt_AITriggerTypeClass; /*0x41e415*/
   memset(this + 57, 0, 0x20u); /*0x41e41c*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[8028] < *(int *)&HouseClass_Player.__pad_5568[8020] /*0x41e452*/
-    || (HouseClass_Player.__pad_5568[8025] || !*(_DWORD *)&HouseClass_Player.__pad_5568[8020])
-    && *(int *)&HouseClass_Player.__pad_5568[8032] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_5568[8012] + 8))(
-         &HouseClass_Player.__pad_5568[8012],
-         *(_DWORD *)&HouseClass_Player.__pad_5568[8020] + *(_DWORD *)&HouseClass_Player.__pad_5568[8032],
+  if ( *(int *)&HouseClass_Player[29892] < *(int *)&HouseClass_Player[29884] /*0x41e452*/
+    || (HouseClass_Player[29889] || !*(_DWORD *)&HouseClass_Player[29884])
+    && *(int *)&HouseClass_Player[29896] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player[29876] + 8))(
+         &HouseClass_Player[29876],
+         *(_DWORD *)&HouseClass_Player[29884] + *(_DWORD *)&HouseClass_Player[29896],
          0) )
   {
-    v3 = (AITriggerTypeClass *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8028])++; /*0x41e45f*/
-    *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8016] + 4 * (_DWORD)v3) = this; /*0x41e46e*/
+    v3 = (AITriggerTypeClass *)(*(_DWORD *)&HouseClass_Player[29892])++; /*0x41e45f*/
+    *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29880] + 4 * (_DWORD)v3) = this; /*0x41e46e*/
   }
   return this; /*0x41e473*/
 }
@@ -158,42 +163,42 @@ _DWORD *__thiscall AnimTypeClass::Construct(_DWORD *this, AbstractClass *aP1)
   this->Insignificant = 1; /*0x42776a*/
   this->Immune = 1; /*0x427771*/
   this->AllowCellContent = 0; /*0x427778*/
-  if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] < *(int *)&MEMORY[0x89F690].__pad_579C[62252] /*0x4277b0*/
-    || (MEMORY[0x89F690].__pad_579C[62257] || !*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62252])
-    && *(int *)&MEMORY[0x89F690].__pad_579C[62264] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62244] + 8))(
-         &MEMORY[0x89F690].__pad_579C[62244],
-         *(_DWORD *)&MEMORY[0x89F690].__pad_579C[62252] + *(_DWORD *)&MEMORY[0x89F690].__pad_579C[62264],
+  if ( *(int *)&g_CellDirectionOffsets[84688] < *(int *)&g_CellDirectionOffsets[84680] /*0x4277b0*/
+    || (g_CellDirectionOffsets[84685] || !*(_DWORD *)&g_CellDirectionOffsets[84680])
+    && *(int *)&g_CellDirectionOffsets[84692] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_CellDirectionOffsets[84672] + 8))(
+         &g_CellDirectionOffsets[84672],
+         *(_DWORD *)&g_CellDirectionOffsets[84680] + *(_DWORD *)&g_CellDirectionOffsets[84692],
          0) )
   {
-    v3 = (AnimTypeClass *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62260])++; /*0x4277bd*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * (_DWORD)v3) = this; /*0x4277cc*/
+    v3 = (AnimTypeClass *)(*(_DWORD *)&g_CellDirectionOffsets[84688])++; /*0x4277bd*/
+    *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84676] + 4 * (_DWORD)v3) = this; /*0x4277cc*/
   }
-  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[9964] < *(int *)&g_OverlayTypeConfig.__pad_579C[9956] /*0x427803*/
-    || (g_OverlayTypeConfig.__pad_579C[9961] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956])
-    && *(int *)&g_OverlayTypeConfig.__pad_579C[9968] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9948] + 8))(
-         &g_OverlayTypeConfig.__pad_579C[9948],
-         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9968],
+  if ( *(int *)&g_OverlayTypeConfig[32392] < *(int *)&g_OverlayTypeConfig[32384] /*0x427803*/
+    || (g_OverlayTypeConfig[32389] || !*(_DWORD *)&g_OverlayTypeConfig[32384])
+    && *(int *)&g_OverlayTypeConfig[32396] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig[32376] + 8))(
+         &g_OverlayTypeConfig[32376],
+         *(_DWORD *)&g_OverlayTypeConfig[32384] + *(_DWORD *)&g_OverlayTypeConfig[32396],
          0) )
   {
-    v4 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9964])++; /*0x427810*/
-    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952] + 4 * v4) = this; /*0x42781f*/
+    v4 = (*(_DWORD *)&g_OverlayTypeConfig[32392])++; /*0x427810*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[32380] + 4 * v4) = this; /*0x42781f*/
   }
   v5 = 0; /*0x427828*/
-  if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] <= 0 ) /*0x42782c*/
+  if ( *(int *)&g_CellDirectionOffsets[84688] <= 0 ) /*0x42782c*/
   {
 LABEL_17:
     v5 = -1; /*0x427840*/
   }
   else
   {
-    v6 = *(ObjectClass **)&MEMORY[0x89F690].__pad_579C[62248]; /*0x42782e*/
+    v6 = *(ObjectClass **)&g_CellDirectionOffsets[84676]; /*0x42782e*/
     while ( *(_DWORD **)v6->__pad_0 != this ) /*0x427836*/
     {
       ++v5; /*0x427838*/
       v6 = (ObjectClass *)((char *)v6 + 4); /*0x427839*/
-      if ( v5 >= *(int *)&MEMORY[0x89F690].__pad_579C[62260] ) /*0x42783e*/
+      if ( v5 >= *(int *)&g_CellDirectionOffsets[84688] ) /*0x42783e*/
         goto LABEL_17; /*0x42783e*/
     }
   }
@@ -379,12 +384,12 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
     if ( !this->Image )
     {
       this->Theater = INIClass::ReadBool_Overwrite(
-                                 (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                                 (int)&DataGlobal_87F8E4[30876],
                                  (unsigned __int8 *)(this + 36),
                                  &unk_818658,
                                  this->Theater);
       this->NewTheater = INIClass::ReadBool_Overwrite(
-                                 (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                                 (int)&DataGlobal_87F8E4[30876],
                                  (unsigned __int8 *)(this + 36),
                                  &unk_81864C,
                                  this->NewTheater);
@@ -397,7 +402,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
                               byte_818644,
                               this->Layer);
   this->AltPalette = INIClass::ReadBool_Overwrite(
-                             (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                             (int)&DataGlobal_87F8E4[30876],
                              (unsigned __int8 *)(this + 36),
                              &unk_818638,
                              this->AltPalette);
@@ -439,7 +444,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   this->ForceBigCraters = INIClass::ReadBool_Overwrite(
                              (int)a2,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)stru_81859C.__pad_48,
+                             (CCINIClass *)stru_81859C[72],
                              this->ForceBigCraters);
   this->Sticky = INIClass::ReadBool_Overwrite(
                              (int)a2,
@@ -459,7 +464,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   this->PsiWarning = INIClass::ReadBool_Overwrite(
                              (int)a2,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_81859C.__pad_20[8],
+                             (CCINIClass *)&stru_81859C[40],
                              this->PsiWarning);
   this->TiberiumChainReaction = INIClass::ReadBool_Overwrite(
                              (int)a2,
@@ -514,11 +519,11 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
          a2,
          (INIClass *)(this + 36),
          &unk_818568,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          Source,
          128) )
   {
-    v9 = globalHelper_028F70(Source[0].__pad_0, (int)&MEMORY[0x89F690].__pad_579C[62244]);
+    v9 = globalHelper_028F70(Source[0].__pad_0, (int)&g_CellDirectionOffsets[84672]);
   }
   else
   {
@@ -556,7 +561,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   this->HideIfNoOre = INIClass::ReadBool_Overwrite(
                              (int)a2,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_8184C8.__pad_41[3],
+                             (CCINIClass *)&stru_8184C8[68],
                              this->HideIfNoOre);
   this->YSortAdjust = INIClass::ReadInt_Overwrite(
                               (int)a2,
@@ -570,7 +575,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
                        (INIClass *)this->Elasticity);
   v15 = *(INIClass **)(this + 808);
   *(double *)(this + 784) = Double_Overwrite;
-  v16 = INIClass::ReadDouble_Overwrite((int)a2, (INIClass *)(this + 36), (unsigned __int8 *)stru_8184C8.__pad_20, v15);
+  v16 = INIClass::ReadDouble_Overwrite((int)a2, (INIClass *)(this + 36), (unsigned __int8 *)stru_8184C8[32], v15);
   edx20a = *(INIClass **)(this + 792);
   *(double *)(this + 808) = v16;
   v18 = INIClass::ReadDouble_Overwrite(
@@ -591,11 +596,11 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
          a2,
          (INIClass *)(this + 36),
          (unsigned __int8 *)&stru_8184C8,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          Source,
          128) )
   {
-    v22 = globalHelper_028F70(Source[0].__pad_0, (int)&MEMORY[0x89F690].__pad_579C[62244]);
+    v22 = globalHelper_028F70(Source[0].__pad_0, (int)&g_CellDirectionOffsets[84672]);
   }
   else
   {
@@ -621,7 +626,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
          a2,
          (INIClass *)(this + 36),
          &unk_81847C,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          Source,
          128) )
   {
@@ -636,7 +641,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   v30 = INIClass::ReadBool_Overwrite(
           (int)a2,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_818424.__pad_41[3],
+          (CCINIClass *)&stru_818424[68],
           v29);
   _FFFFFFF4a = this->ShouldFogRemove;
   this->IsAnimatedTiberium = v30;
@@ -648,7 +653,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   v31 = INIClass::ReadBool_Overwrite(
           (int)a2,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_818424.__pad_20[4],
+          (CCINIClass *)&stru_818424[36],
           this->IsFlamingGuy);
   v32 = *(INIClass **)(this + 848);
   this->IsFlamingGuy = v31;
@@ -671,7 +676,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
           a2,
           (INIClass *)(this + 36),
           &unk_818418,
-          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          (INIClass *)&DataGlobal_87F8E4[42624],
           Source,
           128)
     || (Index = VocClass::FindIndex(Source), Index == -1) )
@@ -685,7 +690,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
             a2,
             (INIClass *)(this + 36),
             &unk_818410,
-            (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+            (INIClass *)&DataGlobal_87F8E4[42624],
             Source,
             128)
       || (v37 = VocClass::FindIndex(Source), v37 == -1) )
@@ -699,7 +704,7 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
           a2,
           (INIClass *)(this + 36),
           &unk_818404,
-          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          (INIClass *)&DataGlobal_87F8E4[42624],
           Source,
           128)
     || (v39 = VocClass::FindIndex(Source), v39 == -1) )
@@ -712,23 +717,23 @@ char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
          a2,
          (INIClass *)(this + 36),
          &unk_8183F8,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          Source,
          128) )
   {
     if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source[0].__pad_0) || !_strcmpi(g_Str_none, Source[0].__pad_0) )
       goto LABEL_46;
     ebp40 = 0;
-    if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] > 0 )
+    if ( *(int *)&g_CellDirectionOffsets[84688] > 0 )
     {
       while ( _strcmpi(
-                (char *)(*(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp40) + 36),
+                (char *)(*(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84676] + 4 * ebp40) + 36),
                 Source[0].__pad_0) )
       {
-        if ( ++ebp40 >= *(int *)&MEMORY[0x89F690].__pad_579C[62260] )
+        if ( ++ebp40 >= *(int *)&g_CellDirectionOffsets[84688] )
           goto LABEL_43;
       }
-      v41 = *(AnimTypeClass **)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp40);
+      v41 = *(AnimTypeClass **)(*(_DWORD *)&g_CellDirectionOffsets[84676] + 4 * ebp40);
       goto LABEL_47;
     }
 LABEL_43:
@@ -747,7 +752,7 @@ LABEL_47:
           a2,
           (INIClass *)(this + 36),
           &unk_8183EC,
-          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          (INIClass *)&DataGlobal_87F8E4[42624],
           Source,
           128) )
   {
@@ -761,7 +766,7 @@ LABEL_57:
     goto LABEL_59;
   }
   ebp51 = 0;
-  if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] <= 0 )
+  if ( *(int *)&g_CellDirectionOffsets[84688] <= 0 )
   {
 LABEL_54:
     v46 = (_DWORD *)__2_YAPAXI_Z(0x378u);
@@ -773,13 +778,13 @@ LABEL_54:
     goto LABEL_57;
   }
   while ( _strcmpi(
-            (char *)(*(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp51) + 36),
+            (char *)(*(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84676] + 4 * ebp51) + 36),
             Source[0].__pad_0) )
   {
-    if ( ++ebp51 >= *(int *)&MEMORY[0x89F690].__pad_579C[62260] )
+    if ( ++ebp51 >= *(int *)&g_CellDirectionOffsets[84688] )
       goto LABEL_54;
   }
-  v45 = *(AnimTypeClass **)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp51);
+  v45 = *(AnimTypeClass **)(*(_DWORD *)&g_CellDirectionOffsets[84676] + 4 * ebp51);
 LABEL_59:
   v48 = *(AnimTypeClass **)(this + 776);
   this->ExpireAnim = v45;
@@ -787,23 +792,23 @@ LABEL_59:
          a2,
          (INIClass *)(this + 36),
          &unk_8183E0,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          Source,
          128) )
   {
     if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source[0].__pad_0) || !_strcmpi(g_Str_none, Source[0].__pad_0) )
       goto LABEL_68;
     ebp62 = 0;
-    if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] > 0 )
+    if ( *(int *)&g_CellDirectionOffsets[84688] > 0 )
     {
       while ( _strcmpi(
-                (char *)(*(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp62) + 36),
+                (char *)(*(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84676] + 4 * ebp62) + 36),
                 Source[0].__pad_0) )
       {
-        if ( ++ebp62 >= *(int *)&MEMORY[0x89F690].__pad_579C[62260] )
+        if ( ++ebp62 >= *(int *)&g_CellDirectionOffsets[84688] )
           goto LABEL_65;
       }
-      v49 = *(AnimTypeClass **)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp62);
+      v49 = *(AnimTypeClass **)(*(_DWORD *)&g_CellDirectionOffsets[84676] + 4 * ebp62);
       goto LABEL_70;
     }
 LABEL_65:
@@ -833,7 +838,7 @@ LABEL_70:
          a2,
          (INIClass *)(this + 36),
          &unk_8183B4,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          Source,
          128) )
   {
@@ -1043,7 +1048,7 @@ AnimTypeClass *__thiscall AnimTypeClass::FindOrCreate(AbstractClass *this)
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x428b9c*/
     return 0; /*0x428bff*/
   v2 = 0; /*0x428bad*/
-  if ( *(int *)&stru_89E138.__pad_1600D[27] <= 0 ) /*0x428bb1*/
+  if ( *(int *)&stru_89E138[90152] <= 0 ) /*0x428bb1*/
   {
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x378u); /*0x428bd6*/
@@ -1051,12 +1056,12 @@ LABEL_6:
       return (AnimTypeClass *)AnimTypeClass::Construct(v3, this); /*0x428bf1*/
     return 0; /*0x428be5*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * v2) + 36), this) ) /*0x428bca*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_89E138[90140] + 4 * v2) + 36), this) ) /*0x428bca*/
   {
-    if ( ++v2 >= *(int *)&stru_89E138.__pad_1600D[27] ) /*0x428bd4*/
+    if ( ++v2 >= *(int *)&stru_89E138[90152] ) /*0x428bd4*/
       goto LABEL_6; /*0x428bd4*/
   }
-  return *(AnimTypeClass **)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * v2); /*0x428bef*/
+  return *(AnimTypeClass **)(*(_DWORD *)&stru_89E138[90140] + 4 * v2); /*0x428bef*/
 }
 }
 } // namespace gamemd
@@ -1236,11 +1241,11 @@ int AnimTypeClass::FindIndex()
     if ( !this )
     return -1;
     v2 = 0;
-    if ( *(int *)&DataGlobal_89E138.__pad_1600D[27] <= 0 )
+    if ( *(int *)&DataGlobal_89E138[90152] <= 0 )
     return -1;
-    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_89E138.__pad_1600D[15] + 4 * v2) + 36), this) )
+    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_89E138[90140] + 4 * v2) + 36), this) )
   {
-    if ( ++v2 >= *(int *)&DataGlobal_89E138.__pad_1600D[27] )
+    if ( ++v2 >= *(int *)&DataGlobal_89E138[90152] )
     return -1;
   }
     return v2;

@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/SaveGame_e4.hpp"
 
 // 0x67CEF0
 namespace gamemd {
@@ -31,13 +34,13 @@ char __fastcall SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr,
     return 0; /*0x67cf61*/
   }
   GameState::Reset(v15); /*0x67cf6b*/
-  Map_Save_681080(v15, MEMORY[0x83D560]); /*0x67cf7d*/
+  Map_Save_681080(v15, DataGlobal_83D560); /*0x67cf7d*/
   Map_Save_6810A0(v15, Source); /*0x67cf8a*/
   Map_Save(v15, 1); /*0x67cf98*/
   Map_Save_6810D0(v15, *(wchar_t **)(*((_DWORD *)HouseClass_Player + 13) + 96)); /*0x67cfb1*/
   Map_Save_681110(v15, *((_DWORD *)g_ScenarioClass_Instance + 3379)); /*0x67cfca*/
   Map_Save_681130(v15, *((_DWORD *)g_ScenarioClass_Instance + 1173)); /*0x67cfe2*/
-  Map_Save_6811C0((char *)v15, MEMORY[0x83D5BC]); /*0x67cff3*/
+  Map_Save_6811C0((char *)v15, DataGlobal_83D5BC); /*0x67cff3*/
   Map_Save_6812C0(v15, g_GameMode_Current[0]); /*0x67d006*/
   CoFileTimeNow(&FileTime); /*0x67d010*/
   Map_Save_681280(v15, &FileTime); /*0x67d022*/
@@ -47,7 +50,7 @@ char __fastcall SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr,
   v10 = 0; /*0x67d05a*/
   if ( !ppstgOpen ) /*0x67d064*/
     WinAPI::Wrapper(-2147467261); /*0x67d06b*/
-  if ( ppstgOpen->lpVtbl->CreateStream(ppstgOpen, (const OLECHAR *)&MEMORY[0x83D5A8], 4114, 0, 0, (IStream **)&v10) < 0 ) /*0x67d08d*/
+  if ( ppstgOpen->lpVtbl->CreateStream(ppstgOpen, (const OLECHAR *)&DataGlobal_83D5A8, 4114, 0, 0, (IStream **)&v10) < 0 ) /*0x67d08d*/
   {
     if ( v10 ) /*0x67d095*/
       (*(void (__stdcall **)(int))(*(_DWORD *)v10 + 8))(v10); /*0x67d09a*/
@@ -64,7 +67,7 @@ LABEL_9:
   if ( CoCreateInstance(&stru_7E9540, 0, 7u, &riid, &ppv) >= 0 ) /*0x67d0e5*/
   {
     if ( OleRun((LPUNKNOWN)ppv) >= 0 ) /*0x67d0f4*/
-      (**(void (__stdcall ***)(LPVOID, IID *, int *))ppv)(ppv, &MEMORY[0x83D598], &v9); /*0x67d107*/
+      (**(void (__stdcall ***)(LPVOID, IID *, int *))ppv)(ppv, &DataGlobal_83D598, &v9); /*0x67d107*/
     (*(void (__stdcall **)(LPVOID))(*(_DWORD *)ppv + 8))(ppv); /*0x67d110*/
   }
   if ( !v9 ) /*0x67d119*/

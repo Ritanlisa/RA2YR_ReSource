@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x43A5D0
 namespace gamemd {
@@ -97,49 +99,49 @@ _DWORD *__thiscall Power_UpdateAll(_DWORD *this)
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_UnitClassPool + m) + 52))( /*0x67c7a2*/
       *((_DWORD *)g_UnitClassPool + m),
       &v53);
-  for ( n = 0; n < MEMORY[0xA8E358]; ++n ) /*0x67c7b8*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8E34C] + n) + 52))( /*0x67c7ca*/
-      *((_DWORD *)MEMORY[0xA8E34C] + n),
+  for ( n = 0; n < g_LoadScreenProgress; ++n ) /*0x67c7b8*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)Factory_ExitCellTable + n) + 52))( /*0x67c7ca*/
+      *((_DWORD *)Factory_ExitCellTable + n),
       &v53);
-  for ( ii = 0; ii < MEMORY[0xA83DF8]; ++ii ) /*0x67c7e0*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA83DEC] + ii) + 52))( /*0x67c7f2*/
-      *((_DWORD *)MEMORY[0xA83DEC] + ii),
+  for ( ii = 0; ii < g_BuildingClass_Count; ++ii ) /*0x67c7e0*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_InfantryClassLimit + ii) + 52))( /*0x67c7f2*/
+      *((_DWORD *)g_InfantryClassLimit + ii),
       &v53);
   for ( jj = 0; jj < g_TriggerClassCount; ++jj ) /*0x67c808*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_TriggerTypeCount + jj) + 52))( /*0x67c81a*/
       *((_DWORD *)g_TriggerTypeCount + jj),
       &v53);
-  for ( kk = 0; kk < MEMORY[0xA8EB50]; ++kk ) /*0x67c830*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8EB44] + kk) + 52))( /*0x67c842*/
-      *((_DWORD *)MEMORY[0xA8EB44] + kk),
+  for ( kk = 0; kk < g_BuildingProductionState; ++kk ) /*0x67c830*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_BuildingClass_InstanceCount + kk) + 52))( /*0x67c842*/
+      *((_DWORD *)g_BuildingClass_InstanceCount + kk),
       &v53);
-  for ( mm = 0; mm < MEMORY[0xA8B228]; ++mm ) /*0x67c858*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8B21C] + mm) + 52))( /*0x67c86a*/
-      *((_DWORD *)MEMORY[0xA8B21C] + mm),
+  for ( mm = 0; mm < g_TypeClass_FindCache; ++mm ) /*0x67c858*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_AircraftTypeCount + mm) + 52))( /*0x67c86a*/
+      *((_DWORD *)g_AircraftTypeCount + mm),
       &v53);
-  for ( nn = 0; nn < MEMORY[0xA8E3A0]; ++nn ) /*0x67c880*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8E394] + nn) + 52))( /*0x67c892*/
-      *((_DWORD *)MEMORY[0xA8E394] + nn),
+  for ( nn = 0; nn < g_AircraftClassCount; ++nn ) /*0x67c880*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_A8E394 + nn) + 52))( /*0x67c892*/
+      *((_DWORD *)DataGlobal_A8E394 + nn),
       &v53);
-  for ( i1 = 0; i1 < MEMORY[0xA8B210]; ++i1 ) /*0x67c8a8*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8B204] + i1) + 52))( /*0x67c8ba*/
-      *((_DWORD *)MEMORY[0xA8B204] + i1),
+  for ( i1 = 0; i1 < g_AnimTypeInitQueue; ++i1 ) /*0x67c8a8*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_A8B204 + i1) + 52))( /*0x67c8ba*/
+      *((_DWORD *)DataGlobal_A8B204 + i1),
       &v53);
-  for ( i2 = 0; i2 < MEMORY[0xA8E9B8]; ++i2 ) /*0x67c8d0*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8E9AC] + i2) + 52))( /*0x67c8e2*/
-      *((_DWORD *)MEMORY[0xA8E9AC] + i2),
+  for ( i2 = 0; i2 < g_AnimClassCount; ++i2 ) /*0x67c8d0*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_AnimClassPool + i2) + 52))( /*0x67c8e2*/
+      *((_DWORD *)g_AnimClassPool + i2),
       &v53);
-  for ( i3 = 0; i3 < MEMORY[0x8B4160]; ++i3 ) /*0x67c8f8*/
+  for ( i3 = 0; i3 < DataGlobal_8B4160; ++i3 ) /*0x67c8f8*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_AnimTypeCount + i3) + 52))( /*0x67c90a*/
       *((_DWORD *)g_AnimTypeCount + i3),
       &v53);
-  for ( i4 = 0; i4 < MEMORY[0xA8E8E0]; ++i4 ) /*0x67c920*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8E8D4] + i4) + 52))( /*0x67c932*/
-      *((_DWORD *)MEMORY[0xA8E8D4] + i4),
+  for ( i4 = 0; i4 < g_MultiplayerLogFlags; ++i4 ) /*0x67c920*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_MultiplayerLogEntry + i4) + 52))( /*0x67c932*/
+      *((_DWORD *)g_MultiplayerLogEntry + i4),
       &v53);
-  for ( i5 = 0; i5 < MEMORY[0xA8ECB0]; ++i5 ) /*0x67c948*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8ECA4] + i5) + 52))( /*0x67c95a*/
-      *((_DWORD *)MEMORY[0xA8ECA4] + i5),
+  for ( i5 = 0; i5 < g_MultiplayerLogState; ++i5 ) /*0x67c948*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_TeamTypePool + i5) + 52))( /*0x67c95a*/
+      *((_DWORD *)g_TeamTypePool + i5),
       &v53);
   for ( i6 = 0; i6 < g_HouseClass_AIProductionState; ++i6 ) /*0x67c970*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_TeamClassPool + i6) + 52))( /*0x67c982*/
@@ -147,13 +149,13 @@ _DWORD *__thiscall Power_UpdateAll(_DWORD *this)
       &v53);
   for ( i7 = 0; i7 < dword_8B41D8; ++i7 ) /*0x67c998*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)unk_8B41CC + i7) + 52))(*((_DWORD *)unk_8B41CC + i7), &v53); /*0x67c9aa*/
-  for ( i8 = 0; i8 < MEMORY[0x8872C0]; ++i8 ) /*0x67c9c0*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0x8872B4] + i8) + 52))( /*0x67c9d2*/
-      *((_DWORD *)MEMORY[0x8872B4] + i8),
+  for ( i8 = 0; i8 < DataGlobal_8872C0; ++i8 ) /*0x67c9c0*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_8872B4 + i8) + 52))( /*0x67c9d2*/
+      *((_DWORD *)DataGlobal_8872B4 + i8),
       &v53);
   for ( i9 = 0; i9 < g_MultiplayerCleanup; ++i9 ) /*0x67c9e8*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xB0E784] + i9) + 52))( /*0x67c9fa*/
-      *((_DWORD *)MEMORY[0xB0E784] + i9),
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_B0E784 + i9) + 52))( /*0x67c9fa*/
+      *((_DWORD *)DataGlobal_B0E784 + i9),
       &v53);
   for ( i10 = 0; i10 < g_GameObjectCleanup; ++i10 ) /*0x67ca10*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_TagClassCount + i10) + 52))( /*0x67ca22*/
@@ -161,71 +163,71 @@ _DWORD *__thiscall Power_UpdateAll(_DWORD *this)
       &v53);
   for ( i11 = 0; i11 < dword_8B4188; ++i11 ) /*0x67ca38*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)unk_8B417C + i11) + 52))(*((_DWORD *)unk_8B417C + i11), &v53); /*0x67ca4a*/
-  for ( i12 = 0; i12 < MEMORY[0xA8EAF8]; ++i12 ) /*0x67ca60*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8EAEC] + i12) + 52))( /*0x67ca72*/
-      *((_DWORD *)MEMORY[0xA8EAEC] + i12),
+  for ( i12 = 0; i12 < g_ProductionQueueState; ++i12 ) /*0x67ca60*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_TriggerClassCapacity + i12) + 52))( /*0x67ca72*/
+      *((_DWORD *)g_TriggerClassCapacity + i12),
       &v53);
-  for ( i13 = 0; i13 < MEMORY[0xB0E668]; ++i13 ) /*0x67ca88*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xB0E65C] + i13) + 52))( /*0x67ca9a*/
-      *((_DWORD *)MEMORY[0xB0E65C] + i13),
+  for ( i13 = 0; i13 < DataGlobal_B0E668; ++i13 ) /*0x67ca88*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_B0E65C + i13) + 52))( /*0x67ca9a*/
+      *((_DWORD *)DataGlobal_B0E65C + i13),
       &v53);
-  for ( i14 = 0; i14 < MEMORY[0xB0F1B0]; ++i14 ) /*0x67cab0*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xB0F1A4] + i14) + 52))( /*0x67cac2*/
-      *((_DWORD *)MEMORY[0xB0F1A4] + i14),
+  for ( i14 = 0; i14 < DataGlobal_B0F1B0; ++i14 ) /*0x67cab0*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_B0F1A4 + i14) + 52))( /*0x67cac2*/
+      *((_DWORD *)DataGlobal_B0F1A4 + i14),
       &v53);
-  for ( i15 = 0; i15 < MEMORY[0xA83E40]; ++i15 ) /*0x67cad8*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA83E34] + i15) + 52))( /*0x67caea*/
-      *((_DWORD *)MEMORY[0xA83E34] + i15),
+  for ( i15 = 0; i15 < g_TeamTypeCapacity; ++i15 ) /*0x67cad8*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_TeamTypeCount + i15) + 52))( /*0x67caea*/
+      *((_DWORD *)g_TeamTypeCount + i15),
       &v53);
-  for ( i16 = 0; i16 < MEMORY[0xA8EB38]; ++i16 ) /*0x67cb00*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8EB2C] + i16) + 52))( /*0x67cb12*/
-      *((_DWORD *)MEMORY[0xA8EB2C] + i16),
+  for ( i16 = 0; i16 < g_MultiplayerPool; ++i16 ) /*0x67cb00*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_A8EB2C + i16) + 52))( /*0x67cb12*/
+      *((_DWORD *)DataGlobal_A8EB2C + i16),
       &v53);
-  for ( i17 = 0; i17 < MEMORY[0x887398]; ++i17 ) /*0x67cb28*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0x88738C] + i17) + 52))( /*0x67cb3a*/
-      *((_DWORD *)MEMORY[0x88738C] + i17),
+  for ( i17 = 0; i17 < DataGlobal_887398; ++i17 ) /*0x67cb28*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_88738C + i17) + 52))( /*0x67cb3a*/
+      *((_DWORD *)DataGlobal_88738C + i17),
       &v53);
   for ( i18 = 0; i18 < g_WarheadTypePool; ++i18 ) /*0x67cb50*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0x8874C4] + i18) + 52))( /*0x67cb62*/
-      *((_DWORD *)MEMORY[0x8874C4] + i18),
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_8874C4 + i18) + 52))( /*0x67cb62*/
+      *((_DWORD *)DataGlobal_8874C4 + i18),
       &v53);
   for ( i19 = 0; i19 < g_WeaponTypePool; ++i19 ) /*0x67cb78*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_WeaponTypeConfig + i19) + 52))( /*0x67cb8a*/
       *((_DWORD *)g_WeaponTypeConfig + i19),
       &v53);
-  for ( i20 = 0; i20 < MEMORY[0xA83DA8]; ++i20 ) /*0x67cba0*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA83D9C] + i20) + 52))( /*0x67cbb2*/
-      *((_DWORD *)MEMORY[0xA83D9C] + i20),
+  for ( i20 = 0; i20 < g_BuildingTypeInitState; ++i20 ) /*0x67cba0*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_BuildingProductionQueue + i20) + 52))( /*0x67cbb2*/
+      *((_DWORD *)g_BuildingProductionQueue + i20),
       &v53);
-  for ( i21 = 0; i21 < MEMORY[0xA83DD8]; ++i21 ) /*0x67cbc8*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA83DCC] + i21) + 52))( /*0x67cbda*/
-      *((_DWORD *)MEMORY[0xA83DCC] + i21),
+  for ( i21 = 0; i21 < DataGlobal_A83DD8; ++i21 ) /*0x67cbc8*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_A83DCC + i21) + 52))( /*0x67cbda*/
+      *((_DWORD *)DataGlobal_A83DCC + i21),
       &v53);
   for ( i22 = 0; i22 < g_GameCleanupState; ++i22 ) /*0x67cbf0*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)dword_A8020C + i22) + 52))( /*0x67cc02*/
       *((_DWORD *)dword_A8020C + i22),
       &v53);
-  for ( i23 = 0; i23 < MEMORY[0xA83D78]; ++i23 ) /*0x67cc18*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA83D6C] + i23) + 52))( /*0x67cc2a*/
-      *((_DWORD *)MEMORY[0xA83D6C] + i23),
+  for ( i23 = 0; i23 < g_InfantryTypeInitState; ++i23 ) /*0x67cc18*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_A83D6C + i23) + 52))( /*0x67cc2a*/
+      *((_DWORD *)DataGlobal_A83D6C + i23),
       &v53);
   for ( i24 = 0; i24 < g_BulletTypeInitState; ++i24 ) /*0x67cc40*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)dword_A83C84 + i24) + 52))( /*0x67cc52*/
       *((_DWORD *)dword_A83C84 + i24),
       &v53);
-  for ( i25 = 0; i25 < MEMORY[0xA8ED50]; ++i25 ) /*0x67cc68*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8ED44] + i25) + 52))( /*0x67cc7a*/
-      *((_DWORD *)MEMORY[0xA8ED44] + i25),
+  for ( i25 = 0; i25 < DataGlobal_A8ED50; ++i25 ) /*0x67cc68*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_A8ED44 + i25) + 52))( /*0x67cc7a*/
+      *((_DWORD *)DataGlobal_A8ED44 + i25),
       &v53);
   for ( i26 = 0; i26 < dword_B72618; ++i26 ) /*0x67cc90*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)dword_B7260C + i26) + 52))( /*0x67cca2*/
       *((_DWORD *)dword_B7260C + i26),
       &v53);
-  for ( i27 = 0; i27 < MEMORY[0xA8EC28]; ++i27 ) /*0x67ccb8*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8EC1C] + i27) + 52))( /*0x67ccca*/
-      *((_DWORD *)MEMORY[0xA8EC1C] + i27),
+  for ( i27 = 0; i27 < FactoryClass_Count; ++i27 ) /*0x67ccb8*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)FactoryClass_Array + i27) + 52))( /*0x67ccca*/
+      *((_DWORD *)FactoryClass_Array + i27),
       &v53);
-  for ( i28 = 0; i28 < MEMORY[0xA83D90]; ++i28 ) /*0x67cce0*/
+  for ( i28 = 0; i28 < g_ObjectTypeConfig; ++i28 ) /*0x67cce0*/
     (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)&g_BuildingTypeClass_Array->vtable0[4 * i28] + 52))( /*0x67ccf2*/
       *(_DWORD *)&g_BuildingTypeClass_Array->vtable0[4 * i28],
       &v53);
@@ -236,36 +238,36 @@ _DWORD *__thiscall Power_UpdateAll(_DWORD *this)
   for ( i30 = 0; i30 < dword_8B41A0; ++i30 ) /*0x67cd30*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)unk_8B4194 + i30) + 52))(*((_DWORD *)unk_8B4194 + i30), &v53); /*0x67cd42*/
   for ( i31 = 0; i31 < g_Tubes_Count; ++i31 ) /*0x67cd58*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0x8B413C] + i31) + 52))( /*0x67cd6a*/
-      *((_DWORD *)MEMORY[0x8B413C] + i31),
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_PathClass_State + i31) + 52))( /*0x67cd6a*/
+      *((_DWORD *)g_PathClass_State + i31),
       &v53);
-  for ( i32 = 0; i32 < MEMORY[0x8B4130]; ++i32 ) /*0x67cd80*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0x8B4124] + i32) + 52))( /*0x67cd92*/
-      *((_DWORD *)MEMORY[0x8B4124] + i32),
+  for ( i32 = 0; i32 < g_ObjectTypeList; ++i32 ) /*0x67cd80*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_8B4124 + i32) + 52))( /*0x67cd92*/
+      *((_DWORD *)DataGlobal_8B4124 + i32),
       &v53);
   for ( i33 = 0; i33 < g_CrateProcessState; ++i33 ) /*0x67cda8*/
     (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)&BuildingClass_InstanceArray->__pad_0[4 * i33] + 52))( /*0x67cdba*/
       *(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * i33],
       &v53);
-  for ( i34 = 0; i34 < MEMORY[0x8A3880]; ++i34 ) /*0x67cdd0*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0x8A3874] + i34) + 52))( /*0x67cde2*/
-      *((_DWORD *)MEMORY[0x8A3874] + i34),
+  for ( i34 = 0; i34 < DataGlobal_8A3880; ++i34 ) /*0x67cdd0*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_8A3874 + i34) + 52))( /*0x67cde2*/
+      *((_DWORD *)DataGlobal_8A3874 + i34),
       &v53);
-  for ( i35 = 0; i35 < MEMORY[0xA8E340]; ++i35 ) /*0x67cdf8*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8E334] + i35) + 52))( /*0x67ce0a*/
-      *((_DWORD *)MEMORY[0xA8E334] + i35),
+  for ( i35 = 0; i35 < g_HouseClassInitState; ++i35 ) /*0x67cdf8*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_SuperWeaponPool + i35) + 52))( /*0x67ce0a*/
+      *((_DWORD *)g_SuperWeaponPool + i35),
       &v53);
   for ( i36 = 0; i36 < dword_A83CC8; ++i36 ) /*0x67ce20*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)dword_A83CBC + i36) + 52))( /*0x67ce32*/
       *((_DWORD *)dword_A83CBC + i36),
       &v53);
-  for ( i37 = 0; i37 < MEMORY[0xA8E328]; ++i37 ) /*0x67ce48*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8E31C] + i37) + 52))( /*0x67ce5a*/
-      *((_DWORD *)MEMORY[0xA8E31C] + i37),
+  for ( i37 = 0; i37 < g_RulesClassInitState; ++i37 ) /*0x67ce48*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_A8E31C + i37) + 52))( /*0x67ce5a*/
+      *((_DWORD *)DataGlobal_A8E31C + i37),
       &v53);
-  for ( i38 = 0; i38 < MEMORY[0xA8E998]; ++i38 ) /*0x67ce70*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8E98C] + i38) + 52))( /*0x67ce82*/
-      *((_DWORD *)MEMORY[0xA8E98C] + i38),
+  for ( i38 = 0; i38 < DataGlobal_A8E998; ++i38 ) /*0x67ce70*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)DataGlobal_A8E98C + i38) + 52))( /*0x67ce82*/
+      *((_DWORD *)DataGlobal_A8E98C + i38),
       &v53);
   if ( HouseClass_Player ) /*0x67ce96*/
     Power::TimerProcess(*((_DWORD *)HouseClass_Player + 12)); /*0x67cea0*/

@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x691D50
 namespace gamemd {
@@ -115,29 +117,29 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
     int v9;
     INIClass *v10;
     char Buffer[32];
-    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&DataGlobal_830620.__pad_579C[53244]);
+    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&DataGlobal_830620[75672]);
     for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
   {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)&DataGlobal_830620.__pad_579C[53244], i);
-    INIClass::GetString( (unsigned char ***)a1, (INIClass *)&DataGlobal_830620.__pad_579C[53244], StringByIndex, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], (INIClass *)Buffer, 32);
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)&DataGlobal_830620[75672], i);
+    INIClass::GetString( (unsigned char ***)a1, (INIClass *)&DataGlobal_830620[75672], StringByIndex, (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)Buffer, 32);
     INIClass::ClearSection((int)a1, (INIClass *)Buffer, 0);
   }
-    INIClass::ClearSection((int)a1, (INIClass *)&DataGlobal_830620.__pad_579C[53244], 0);
-    result = *(TaskForceClass **)&g_NetworkPlayerBuffer.__pad_1258[76];
+    INIClass::ClearSection((int)a1, (INIClass *)&DataGlobal_830620[75672], 0);
+    result = *(TaskForceClass **)&g_NetworkPlayerBuffer[4772];
     v7 = 0;
-    for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer.__pad_1258[76]; ++j )
+    for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer[4772]; ++j )
   {
-    v9 = *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_1258[64] + 4 * j);
+    v9 = *(int *)(*(int *)&g_NetworkPlayerBuffer[4760] + 4 * j);
     if ( *(int *)(v9 + 160) == a2 )
     {
     v10 = v7;
     v7 = (INIClass *)((char *)(v7) + 1);
     sprintf(Buffer, g_Str_Trace__d, v10);
     String::Trim(Buffer);
-    INIClass::SetString(a1, (INIClass *)&DataGlobal_830620.__pad_579C[53244], (INIClass *)Buffer, (INIClass *)(v9 + 36));
+    INIClass::SetString(a1, (INIClass *)&DataGlobal_830620[75672], (INIClass *)Buffer, (INIClass *)(v9 + 36));
     (*(void (__thiscall **)(int, char *))(*(int *)(v9) + 104))(v9, a1);
     }
-    result = *(TaskForceClass **)&g_NetworkPlayerBuffer.__pad_1258[76];
+    result = *(TaskForceClass **)&g_NetworkPlayerBuffer[4772];
   }
     return result;
 }

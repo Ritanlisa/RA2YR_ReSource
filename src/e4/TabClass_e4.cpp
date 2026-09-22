@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
 
 // 0x4A2350
 unsigned int * TabClass::initStripClass()
@@ -52,8 +53,8 @@ LRESULT __stdcall TabClass::DrawPower(HWND hDlg, void *a1, AbstractClass *aP2)
   int nIDDlgItem; // [esp+1Ch] [ebp-CCh]
   wchar_t lParam[100]; // [esp+20h] [ebp-C8h] BYREF
 
-  v3 = *(_DWORD *)&stru_830620.__pad_579C[4 * (_DWORD)a1 + 13408]; /*0x658346*/
-  v4 = *(_DWORD *)&stru_830620.__pad_579C[4 * (_DWORD)a1 + 13376]; /*0x65834f*/
+  v3 = *(_DWORD *)&stru_830620[22428][4 * (_DWORD)a1 + 13408]; /*0x658346*/
+  v4 = *(_DWORD *)&stru_830620[22428][4 * (_DWORD)a1 + 13376]; /*0x65834f*/
   nIDDlgItem = v3; /*0x658358*/
   lParam[0] = 0; /*0x65835c*/
   if ( aP2 && *(_BYTE *)(aP2[1].uniqueId + 421) ) /*0x65836c*/
@@ -61,7 +62,7 @@ LRESULT __stdcall TabClass::DrawPower(HWND hDlg, void *a1, AbstractClass *aP2)
     wcscpy(lParam, (const wchar_t *)&aP2[2504].__pad_0[10]); /*0x658386*/
     if ( aP2 == (AbstractClass *)*(&g_MatrixTransformState + 2274) ) /*0x658395*/
     {
-      BuildingAnimByName = FindBuildingAnimByName((AbstractClass *)&stru_830620.__pad_579C[4368], 1); /*0x6583a1*/
+      BuildingAnimByName = FindBuildingAnimByName((AbstractClass *)&stru_830620[26796], 1); /*0x6583a1*/
     }
     else if ( BYTE1(aP2[13].NeedsSaveOrLink) ) /*0x6583a8*/
     {
@@ -86,11 +87,11 @@ LRESULT __stdcall TabClass::DrawPower(HWND hDlg, void *a1, AbstractClass *aP2)
     if ( aP2 == (AbstractClass *)*(&g_MatrixTransformState + 2274) ) /*0x65847e*/
       Default = (HWND)BuildingType::FindDefault((void *)0xFFFFFFFD); /*0x658485*/
     CacheDialogInvalidate((HWND)hWnd, Default); /*0x658490*/
-    if ( *(_DWORD *)&stru_830620.__pad_579C[4 * (_DWORD)a1 + 13440] != -1 ) /*0x65849f*/
+    if ( *(_DWORD *)&stru_830620[22428][4 * (_DWORD)a1 + 13440] != -1 ) /*0x65849f*/
     {
-      v13 = (wchar_t *)GetDlgItem(hDlg, *(_DWORD *)&stru_830620.__pad_579C[4 * (_DWORD)a1 + 13440]); /*0x6584ae*/
+      v13 = (wchar_t *)GetDlgItem(hDlg, *(_DWORD *)&stru_830620[22428][4 * (_DWORD)a1 + 13440]); /*0x6584ae*/
       hWnd = v13; /*0x6584ba*/
-      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8836] ) /*0x6584c0*/
+      if ( *(_DWORD *)&HouseClass_Player[30700] ) /*0x6584c0*/
       {
         EnableWindow((HWND)v13, 0); /*0x6584c5*/
         v13 = hWnd; /*0x6584cb*/
@@ -109,12 +110,12 @@ LRESULT __stdcall TabClass::DrawPower(HWND hDlg, void *a1, AbstractClass *aP2)
     }
     if ( aP2[16].__pad_0[8] ) /*0x658525*/
     {
-      eax18 = GetDlgItem(hDlg, *(_DWORD *)&stru_830620.__pad_579C[4 * (_DWORD)a1 + 13472]); /*0x65853f*/
+      eax18 = GetDlgItem(hDlg, *(_DWORD *)&stru_830620[22428][4 * (_DWORD)a1 + 13472]); /*0x65853f*/
       ShowWindow(eax18, 0); /*0x658548*/
     }
-    else if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8836] ) /*0x658557*/
+    else if ( *(_DWORD *)&HouseClass_Player[30700] ) /*0x658557*/
     {
-      v15 = (IUnknown *)GetDlgItem(hDlg, *(_DWORD *)&stru_830620.__pad_579C[4 * (_DWORD)a1 + 13472]); /*0x658571*/
+      v15 = (IUnknown *)GetDlgItem(hDlg, *(_DWORD *)&stru_830620[22428][4 * (_DWORD)a1 + 13472]); /*0x658571*/
       SendMessageA((HWND)v15, 0xF1u, 1u, 0); /*0x65857b*/
       EnableWindow((HWND)v15, 0); /*0x658580*/
     }

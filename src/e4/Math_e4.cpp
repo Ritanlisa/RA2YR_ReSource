@@ -15,7 +15,7 @@ int __usercall Math_InitDegToRad@<eax>(char a1@<cf>, char a2@<zf>)
 
   if ( a1 | a2 ) /*0x40ffff*/
     return sub_40FF90(); /*0x40ff8f*/
-  MEMORY[0x887648] = 0.0174532925199433 * 90.0; /*0x41001c*/
+  DataGlobal_887648 = 0.0174532925199433 * 90.0; /*0x41001c*/
   return result; /*0x410022*/
 }
 }
@@ -80,7 +80,7 @@ double __cdecl Math::SinCos(IUnknown *aP0)
     v3 = (((_WORD)v3 - 1) | 0xFFFFE000) + 1 + ((int)((((_WORD)v3 - 1) | 0xFFFFE000) + 1) < 0 ? 0x2000 : 0);
   if ( v2 && v3 < 0x1FFF ) /*0x4cace7*/
     ++v3; /*0x4cace9*/
-  return *(float *)&stru_84DD9C.__pad_1258[4 * v3 + 144]; /*0x4cacf1*/
+  return *(float *)&stru_84DD9C[4696][4 * v3 + 144]; /*0x4cacf1*/
 }
 }
 } // namespace gamemd
@@ -107,7 +107,7 @@ double __cdecl Math::ArcTan2(IUnknown *aP0)
     v4 = v3 + 10240; /*0x4cad29*/
   if ( v2 && v4 < 10239 ) /*0x4cad3e*/
     ++v4; /*0x4cad40*/
-  return *(float *)&stru_84DD9C.__pad_1258[4 * v4 + 144]; /*0x4cad48*/
+  return *(float *)&stru_84DD9C[4696][4 * v4 + 144]; /*0x4cad48*/
 }
 }
 } // namespace gamemd
@@ -124,7 +124,7 @@ double __cdecl Math_Sin(double a1)
   v1 = Math::RoundToInt(a1 * 651.8986469044033) & 0x80000FFF; /*0x4cad5f*/
   if ( v1 < 0 )
     v1 = (((_WORD)v1 - 1) | 0xFFFFF000) + 1 + ((int)((((_WORD)v1 - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
-  return MEMORY[0x85D0A4][v1]; /*0x4cad7b*/
+  return DataGlobal_85D0A4[v1]; /*0x4cad7b*/
 }
 }
 } // namespace gamemd
@@ -169,7 +169,7 @@ double __cdecl Math::CalcAngle(AbstractClass *aP0, double a2)
     if ( v6 >= 4097 ) /*0x4caea5*/
       result = 1.5707964; /*0x4caeb0*/
     else
-      result = *(float *)&stru_84DD9C.__pad_579C[4 * v6 + 56188]; /*0x4caea7*/
+      result = *(float *)&stru_84DD9C[22428][4 * v6 + 56188]; /*0x4caea7*/
     if ( v7 < 0.0 ) /*0x4caec5*/
       result = 3.141592653589793 - result; /*0x4caec7*/
     if ( v9 < 0.0 ) /*0x4caedc*/

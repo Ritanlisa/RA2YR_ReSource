@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x5FB320
 int HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
@@ -294,11 +296,11 @@ LABEL_127:
           v18 = GetDlgItem; /*0x5fb5c1*/
         }
         v25 = ((int (__stdcall *)(int, int))v18)(hWnd, 1227); /*0x5fb5cd*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v25, 1202, 0, &MEMORY[0x87F7E8][8147]); /*0x5fb5dc*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v25, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb5dc*/
         v26 = ((int (__stdcall *)(int, int))v18)(hWnd, 1596); /*0x5fb5e4*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v26, 1202, 0, &MEMORY[0x87F7E8][8147]); /*0x5fb5f3*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v26, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb5f3*/
         v27 = ((int (__stdcall *)(int, int))v18)(hWnd, 1595); /*0x5fb602*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v27, 1202, 0, &MEMORY[0x87F7E8][8147]); /*0x5fb60c*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v27, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb60c*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v27, 390, 0, 0); /*0x5fb618*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1125, 0, 0); /*0x5fb624*/
         return 1; /*0x5fb635*/
@@ -358,7 +360,7 @@ LABEL_16:
         v16 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fb4b5*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v16, 1025, 0, 0); /*0x5fb4c1*/
         v17 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1595); /*0x5fb4c9*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v17, 1202, 0, &MEMORY[0x87F7E8][8147]); /*0x5fb4d8*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v17, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb4d8*/
         return 1; /*0x5fb4e9*/
       }
       return 1; /*0x5fb3ba*/
@@ -460,7 +462,7 @@ LABEL_16:
   if ( HIWORD(a3) != 768 ) /*0x5fb707*/
     return 1; /*0x5fbed7*/
   v29 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1597); /*0x5fb713*/
-  ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v29, 1202, 0, &MEMORY[0x87F7E8][8147]); /*0x5fb72c*/
+  ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v29, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb72c*/
   v30 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(a4, 1026, 0, 0); /*0x5fb738*/
   v31 = (unsigned __int8)v30; /*0x5fb740*/
   if ( (v30 & 0x400) != 0 ) /*0x5fb749*/
@@ -558,7 +560,7 @@ LABEL_80:
   v41 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)*v40 + 8))(*v40); /*0x5fb88c*/
   if ( !v41 ) /*0x5fb897*/
 LABEL_81:
-    v41 = &MEMORY[0x87F7E8][8147]; /*0x5fb899*/
+    v41 = &DataGlobal_87F7E8[8147]; /*0x5fb899*/
   v42 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1595); /*0x5fb8a4*/
   ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v42, 1202, 0, v41); /*0x5fb8b3*/
   return 1; /*0x5fb4da*/

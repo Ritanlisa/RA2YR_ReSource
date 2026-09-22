@@ -9,6 +9,12 @@
 #include "e4/classes/E4Recv_476EA0_e4.hpp"
 #include "e4/classes/E4Recv_479740_e4.hpp"
 #include "e4/classes/E4Recv_47AA00_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x472A80
 namespace gamemd {
@@ -69,11 +75,11 @@ VectorClass *__fastcall LoadBuildingTypeClassPrerequisites(
   void *v16; // eax
   DynamicVector aP1; // [esp+2Ch] [ebp-A0h] BYREF
 
-  if ( INIClass::GetString(edx0, a3, a2, (INIClass *)&stru_87C374.__pad_579C[33876], (INIClass *)aP1.__pad_20, 128) ) /*0x47710a*/
+  if ( INIClass::GetString(edx0, a3, a2, (INIClass *)&stru_87C374[56304], (INIClass *)aP1[32], 128) ) /*0x47710a*/
   {
     DynamicVectorClass::Construct(&aP1, 0, 0); /*0x477121*/
-    *(_DWORD *)aP1.__pad_0 = &vt_TypeList_int; /*0x47712a*/
-    for ( i = (CCINIClass *)strtok(aP1.__pad_20, (ObjectClass *)&stru_817F40.nextObject); /*0x477144*/
+    *(_DWORD *)aP1[0] = &vt_TypeList_int; /*0x47712a*/
+    for ( i = (CCINIClass *)strtok(aP1[32], (ObjectClass *)&stru_817F40.nextObject); /*0x477144*/
           i;
           i = (CCINIClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
     {
@@ -83,11 +89,11 @@ VectorClass *__fastcall LoadBuildingTypeClassPrerequisites(
       if ( !_strcmpi(i->__pad_0, aPower) ) /*0x47715b*/
       {
         if ( (int)aP1.field_10 < aP1.field_8 /*0x477194*/
-          || (aP1.__pad_C[1] || !aP1.field_8)
-          && *(int *)aP1.__pad_14 > 0
-          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1.__pad_0 + 8))(
+          || (aP1[13] || !aP1.field_8)
+          && *(int *)aP1[20] > 0
+          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1[0] + 8))(
                &aP1,
-               aP1.field_8 + *(_DWORD *)aP1.__pad_14,
+               aP1.field_8 + *(_DWORD *)aP1[20],
                0) )
         {
           v11 = aP1.field_10++; /*0x47719f*/
@@ -98,11 +104,11 @@ VectorClass *__fastcall LoadBuildingTypeClassPrerequisites(
       if ( !_strcmpi(i->__pad_0, aFactory) ) /*0x4771b9*/
       {
         if ( (int)aP1.field_10 < aP1.field_8 /*0x4771f2*/
-          || (aP1.__pad_C[1] || !aP1.field_8)
-          && *(int *)aP1.__pad_14 > 0
-          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1.__pad_0 + 8))(
+          || (aP1[13] || !aP1.field_8)
+          && *(int *)aP1[20] > 0
+          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1[0] + 8))(
                &aP1,
-               aP1.field_8 + *(_DWORD *)aP1.__pad_14,
+               aP1.field_8 + *(_DWORD *)aP1[20],
                0) )
         {
           v12 = aP1.field_10++; /*0x4771fd*/
@@ -113,11 +119,11 @@ VectorClass *__fastcall LoadBuildingTypeClassPrerequisites(
       if ( !_strcmpi(i->__pad_0, (char *)&g_INI_Key_Digest.INIClass_field_3C) ) /*0x477217*/
       {
         if ( (int)aP1.field_10 < aP1.field_8 /*0x477250*/
-          || (aP1.__pad_C[1] || !aP1.field_8)
-          && *(int *)aP1.__pad_14 > 0
-          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1.__pad_0 + 8))(
+          || (aP1[13] || !aP1.field_8)
+          && *(int *)aP1[20] > 0
+          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1[0] + 8))(
                &aP1,
-               aP1.field_8 + *(_DWORD *)aP1.__pad_14,
+               aP1.field_8 + *(_DWORD *)aP1[20],
                0) )
         {
           v13 = aP1.field_10++; /*0x47725b*/
@@ -128,11 +134,11 @@ VectorClass *__fastcall LoadBuildingTypeClassPrerequisites(
       if ( !_strcmpi(i->__pad_0, &g_INI_Key_Digest.needsSave_flag) ) /*0x477275*/
       {
         if ( (int)aP1.field_10 < aP1.field_8 /*0x4772ae*/
-          || (aP1.__pad_C[1] || !aP1.field_8)
-          && *(int *)aP1.__pad_14 > 0
-          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1.__pad_0 + 8))(
+          || (aP1[13] || !aP1.field_8)
+          && *(int *)aP1[20] > 0
+          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1[0] + 8))(
                &aP1,
-               aP1.field_8 + *(_DWORD *)aP1.__pad_14,
+               aP1.field_8 + *(_DWORD *)aP1[20],
                0) )
         {
           v14 = aP1.field_10++; /*0x4772b9*/
@@ -143,11 +149,11 @@ VectorClass *__fastcall LoadBuildingTypeClassPrerequisites(
       if ( !_strcmpi(i->__pad_0, aTech) ) /*0x4772d3*/
       {
         if ( (int)aP1.field_10 < aP1.field_8 /*0x47730c*/
-          || (aP1.__pad_C[1] || !aP1.field_8)
-          && *(int *)aP1.__pad_14 > 0
-          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1.__pad_0 + 8))(
+          || (aP1[13] || !aP1.field_8)
+          && *(int *)aP1[20] > 0
+          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1[0] + 8))(
                &aP1,
-               aP1.field_8 + *(_DWORD *)aP1.__pad_14,
+               aP1.field_8 + *(_DWORD *)aP1[20],
                0) )
         {
           v15 = aP1.field_10++; /*0x477317*/
@@ -165,11 +171,11 @@ VectorClass *__fastcall LoadBuildingTypeClassPrerequisites(
         }
       }
       else if ( (int)aP1.field_10 < aP1.field_8 /*0x47736a*/
-             || (aP1.__pad_C[1] || !aP1.field_8)
-             && *(int *)aP1.__pad_14 > 0
-             && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1.__pad_0 + 8))(
+             || (aP1[13] || !aP1.field_8)
+             && *(int *)aP1[20] > 0
+             && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)aP1[0] + 8))(
                   &aP1,
-                  aP1.field_8 + *(_DWORD *)aP1.__pad_14,
+                  aP1.field_8 + *(_DWORD *)aP1[20],
                   0) )
       {
         v16 = aP1.field_10++; /*0x477375*/
@@ -178,7 +184,7 @@ VectorClass *__fastcall LoadBuildingTypeClassPrerequisites(
     }
     DynamicVectorClass::Copy(a1, &aP1); /*0x4773cb*/
     *a1 = &vt_TypeList_int; /*0x4773d9*/
-    *(_DWORD *)aP1.__pad_0 = &vt_VectorClass_int; /*0x4773df*/
+    *(_DWORD *)aP1[0] = &vt_VectorClass_int; /*0x4773df*/
     VectorClass::Destroy((int)&aP1); /*0x4773e3*/
     a5.vtable0 = &vt_VectorClass_int; /*0x4773ef*/
     VectorClass::Destroy((int)&a5); /*0x4773f6*/
@@ -202,7 +208,7 @@ void SoundWarning_Set(int a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall SoundWarning_Set(int a1)
 {
-  if ( MEMORY[0x89E3A0] == 1 ) /*0x4790b7*/
+  if ( DataGlobal_89E3A0 == 1 ) /*0x4790b7*/
   {
     dword_81C1D0 = -2; /*0x4790b9*/
   }
@@ -231,13 +237,13 @@ void __thiscall sub_479740(void *this, DWORD BytesReturned)
   DWORD Buffer[2]; // [esp+8h] [ebp-10h] BYREF
   CHAR FileName[8]; // [esp+10h] [ebp-8h] BYREF
 
-  if ( MEMORY[0x887624] ) /*0x47974c*/
+  if ( DataGlobal_887624 ) /*0x47974c*/
   {
     sub_47A080(this, BytesReturned); /*0x479753*/
     return; /*0x47975d*/
   }
   v2 = (char)BytesReturned + 65; /*0x479769*/
-  sprintf((char *const)Buffer, MEMORY[0x81C4B4], v2); /*0x479773*/
+  sprintf((char *const)Buffer, g_Str_Trace__c__, v2); /*0x479773*/
   v3 = GetDriveTypeA((LPCSTR)Buffer) - 2; /*0x479786*/
   if ( v3 ) /*0x479789*/
   {
@@ -297,7 +303,7 @@ char __stdcall sub_479BA0(DWORD BytesReturned)
 
   v1 = (char)BytesReturned + 65; /*0x479baa*/
   v7 = 0; /*0x479bb8*/
-  sprintf((char *const)Buffer, MEMORY[0x81C4B4], v1); /*0x479bbd*/
+  sprintf((char *const)Buffer, g_Str_Trace__c__, v1); /*0x479bbd*/
   v2 = GetDriveTypeA((LPCSTR)Buffer) - 2; /*0x479bd0*/
   if ( v2 ) /*0x479bd3*/
   {
@@ -361,7 +367,7 @@ char __stdcall sub_479D60(DWORD BytesReturned)
   CHAR FileName[8]; // [esp+14h] [ebp-8h] BYREF
 
   v1 = (char)BytesReturned + 65; /*0x479d6a*/
-  sprintf((char *const)Buffer, MEMORY[0x81C4B4], v1); /*0x479d79*/
+  sprintf((char *const)Buffer, g_Str_Trace__c__, v1); /*0x479d79*/
   v2 = GetDriveTypeA((LPCSTR)Buffer) - 2; /*0x479d8c*/
   if ( v2 ) /*0x479d8f*/
   {
@@ -428,7 +434,7 @@ char __stdcall sub_479EF0(DWORD BytesReturned)
   CHAR FileName[8]; // [esp+14h] [ebp-8h] BYREF
 
   v1 = (char)BytesReturned + 65; /*0x479efa*/
-  sprintf((char *const)Buffer, MEMORY[0x81C4B4], v1); /*0x479f09*/
+  sprintf((char *const)Buffer, g_Str_Trace__c__, v1); /*0x479f09*/
   v2 = GetDriveTypeA((LPCSTR)Buffer) - 2; /*0x479f1c*/
   if ( v2 ) /*0x479f1f*/
   {
@@ -677,13 +683,13 @@ char __fastcall CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3,
     CellClass::UpdateAnimations(a1); /*0x47e114*/
   }
   v46 = v4 + 9; /*0x47e122*/
-  BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], (int)(v4 + 9)); /*0x47e126*/
+  BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)(v4 + 9)); /*0x47e126*/
   if ( a3 < 8 ) /*0x47e132*/
   {
-    LOWORD(v42) = *v46 + LOWORD(MEMORY[0x89F688][a3 & 7]); /*0x47e157*/
-    HIWORD(v42) = HIWORD(*v46) + HIWORD(MEMORY[0x89F688][a3 & 7]); /*0x47e166*/
+    LOWORD(v42) = *v46 + LOWORD(Direction_X_Offsets[a3 & 7]); /*0x47e157*/
+    HIWORD(v42) = HIWORD(*v46) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e166*/
     v49 = v42; /*0x47e16f*/
-    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v49); /*0x47e17d*/
+    v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v49); /*0x47e17d*/
   }
   v13 = v4[80]; /*0x47e18f*/
   BYTE1(v13) &= ~1u; /*0x47e195*/
@@ -707,16 +713,16 @@ char __fastcall CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3,
     *((_BYTE *)v4 + 286) = 0; /*0x47e1e8*/
     CellClass::UpdateAnimations((int)v4); /*0x47e1ef*/
   }
-  BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], (int)(v4 + 9)); /*0x47e201*/
+  BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)(v4 + 9)); /*0x47e201*/
   v18 = a3; /*0x47e206*/
   if ( a3 < 8 ) /*0x47e20d*/
   {
-    v19 = MEMORY[0x89F688][a3 & 7]; /*0x47e218*/
+    v19 = Direction_X_Offsets[a3 & 7]; /*0x47e218*/
     v50 = v4[9]; /*0x47e227*/
     LOWORD(v43) = v50 + v19; /*0x47e232*/
-    HIWORD(v43) = HIWORD(v50) + HIWORD(MEMORY[0x89F688][a3 & 7]); /*0x47e241*/
+    HIWORD(v43) = HIWORD(v50) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e241*/
     v50 = v43; /*0x47e24a*/
-    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v50); /*0x47e258*/
+    v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v50); /*0x47e258*/
     v18 = a3; /*0x47e25a*/
   }
   v20 = v4[80]; /*0x47e262*/
@@ -738,15 +744,15 @@ char __fastcall CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3,
     *((_BYTE *)v4 + 286) = 0; /*0x47e2ae*/
     CellClass::UpdateAnimations((int)v4); /*0x47e2b5*/
   }
-  BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], (int)(v4 + 9)); /*0x47e2c7*/
+  BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)(v4 + 9)); /*0x47e2c7*/
   v24 = a3; /*0x47e2cc*/
   if ( a3 < 8 ) /*0x47e2d3*/
   {
     v51 = v4[9]; /*0x47e2e9*/
-    LOWORD(v44) = v51 + LOWORD(MEMORY[0x89F688][a3 & 7]); /*0x47e2fc*/
-    HIWORD(v44) = HIWORD(v51) + HIWORD(MEMORY[0x89F688][a3 & 7]); /*0x47e305*/
+    LOWORD(v44) = v51 + LOWORD(Direction_X_Offsets[a3 & 7]); /*0x47e2fc*/
+    HIWORD(v44) = HIWORD(v51) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e305*/
     v51 = v44; /*0x47e314*/
-    v25 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v51); /*0x47e318*/
+    v25 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v51); /*0x47e318*/
     v24 = a3; /*0x47e31d*/
   }
   else
@@ -759,12 +765,12 @@ char __fastcall CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3,
   v27 = ((_BYTE)v24 - 4) & 7; /*0x47e335*/
   if ( v27 < 8 ) /*0x47e33b*/
   {
-    v29 = MEMORY[0x89F688][v27]; /*0x47e34c*/
+    v29 = Direction_X_Offsets[v27]; /*0x47e34c*/
     v51 = *v46; /*0x47e35b*/
     LOWORD(v47) = v51 + v29; /*0x47e366*/
-    HIWORD(v47) = HIWORD(v51) + HIWORD(MEMORY[0x89F688][v27]); /*0x47e375*/
+    HIWORD(v47) = HIWORD(v51) + HIWORD(Direction_X_Offsets[v27]); /*0x47e375*/
     v51 = v47; /*0x47e37e*/
-    v30 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v51); /*0x47e387*/
+    v30 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v51); /*0x47e387*/
     v24 = a3; /*0x47e38c*/
     v28 = (int)v30; /*0x47e390*/
   }
@@ -792,13 +798,13 @@ char __fastcall CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3,
     CellClass::UpdateAnimations(v28); /*0x47e3ec*/
   }
   v35 = (int *)(v28 + 36); /*0x47e3f1*/
-  LOBYTE(v36) = BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], (int)v35); /*0x47e3fa*/
+  LOBYTE(v36) = BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)v35); /*0x47e3fa*/
   if ( a3 == 6 ) /*0x47e404*/
   {
     a4 = *v35; /*0x47e40e*/
-    LOWORD(a3) = MEMORY[0x89F690] + a4; /*0x47e424*/
-    HIWORD(a3) = HIWORD(MEMORY[0x89F690]) + HIWORD(a4); /*0x47e429*/
-    v36 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a3); /*0x47e43c*/
+    LOWORD(a3) = g_CellDirectionOffsets + a4; /*0x47e424*/
+    HIWORD(a3) = HIWORD(g_CellDirectionOffsets) + HIWORD(a4); /*0x47e429*/
+    v36 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a3); /*0x47e43c*/
     v37 = v36[80]; /*0x47e441*/
     v36[11] = v48; /*0x47e447*/
     v36[80] = v8 | v37 & 0xFFFEFFFF; /*0x47e452*/
@@ -894,13 +900,13 @@ char __fastcall CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int
     CellClass::UpdateAnimations(a1); /*0x47e544*/
   }
   v46 = v4 + 9; /*0x47e552*/
-  BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], (int)(v4 + 9)); /*0x47e556*/
+  BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)(v4 + 9)); /*0x47e556*/
   if ( a3 < 8 ) /*0x47e562*/
   {
-    LOWORD(v42) = *v46 + LOWORD(MEMORY[0x89F688][a3 & 7]); /*0x47e587*/
-    HIWORD(v42) = HIWORD(*v46) + HIWORD(MEMORY[0x89F688][a3 & 7]); /*0x47e596*/
+    LOWORD(v42) = *v46 + LOWORD(Direction_X_Offsets[a3 & 7]); /*0x47e587*/
+    HIWORD(v42) = HIWORD(*v46) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e596*/
     v49 = v42; /*0x47e59f*/
-    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v49); /*0x47e5ad*/
+    v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v49); /*0x47e5ad*/
   }
   v13 = v4[80]; /*0x47e5bf*/
   BYTE1(v13) &= ~1u; /*0x47e5c5*/
@@ -924,16 +930,16 @@ char __fastcall CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int
     *((_BYTE *)v4 + 286) = 0; /*0x47e618*/
     CellClass::UpdateAnimations((int)v4); /*0x47e61f*/
   }
-  BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], (int)(v4 + 9)); /*0x47e631*/
+  BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)(v4 + 9)); /*0x47e631*/
   v18 = a3; /*0x47e636*/
   if ( a3 < 8 ) /*0x47e63d*/
   {
-    v19 = MEMORY[0x89F688][a3 & 7]; /*0x47e648*/
+    v19 = Direction_X_Offsets[a3 & 7]; /*0x47e648*/
     v50 = v4[9]; /*0x47e657*/
     LOWORD(v43) = v50 + v19; /*0x47e662*/
-    HIWORD(v43) = HIWORD(v50) + HIWORD(MEMORY[0x89F688][a3 & 7]); /*0x47e671*/
+    HIWORD(v43) = HIWORD(v50) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e671*/
     v50 = v43; /*0x47e67a*/
-    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v50); /*0x47e688*/
+    v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v50); /*0x47e688*/
     v18 = a3; /*0x47e68a*/
   }
   v20 = v4[80]; /*0x47e692*/
@@ -955,15 +961,15 @@ char __fastcall CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int
     *((_BYTE *)v4 + 286) = 0; /*0x47e6de*/
     CellClass::UpdateAnimations((int)v4); /*0x47e6e5*/
   }
-  BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], (int)(v4 + 9)); /*0x47e6f7*/
+  BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)(v4 + 9)); /*0x47e6f7*/
   v24 = a3; /*0x47e6fc*/
   if ( a3 < 8 ) /*0x47e703*/
   {
     v51 = v4[9]; /*0x47e719*/
-    LOWORD(v44) = v51 + LOWORD(MEMORY[0x89F688][a3 & 7]); /*0x47e72c*/
-    HIWORD(v44) = HIWORD(v51) + HIWORD(MEMORY[0x89F688][a3 & 7]); /*0x47e735*/
+    LOWORD(v44) = v51 + LOWORD(Direction_X_Offsets[a3 & 7]); /*0x47e72c*/
+    HIWORD(v44) = HIWORD(v51) + HIWORD(Direction_X_Offsets[a3 & 7]); /*0x47e735*/
     v51 = v44; /*0x47e744*/
-    v25 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v51); /*0x47e748*/
+    v25 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v51); /*0x47e748*/
     v24 = a3; /*0x47e74d*/
   }
   else
@@ -976,12 +982,12 @@ char __fastcall CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int
   v27 = ((_BYTE)v24 - 4) & 7; /*0x47e765*/
   if ( v27 < 8 ) /*0x47e76b*/
   {
-    v29 = MEMORY[0x89F688][v27]; /*0x47e77c*/
+    v29 = Direction_X_Offsets[v27]; /*0x47e77c*/
     v51 = *v46; /*0x47e78b*/
     LOWORD(v47) = v51 + v29; /*0x47e796*/
-    HIWORD(v47) = HIWORD(v51) + HIWORD(MEMORY[0x89F688][v27]); /*0x47e7a5*/
+    HIWORD(v47) = HIWORD(v51) + HIWORD(Direction_X_Offsets[v27]); /*0x47e7a5*/
     v51 = v47; /*0x47e7ae*/
-    v30 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v51); /*0x47e7b7*/
+    v30 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v51); /*0x47e7b7*/
     v24 = a3; /*0x47e7bc*/
     v28 = (int)v30; /*0x47e7c0*/
   }
@@ -1009,13 +1015,13 @@ char __fastcall CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int
     CellClass::UpdateAnimations(v28); /*0x47e81c*/
   }
   v35 = (int *)(v28 + 36); /*0x47e821*/
-  LOBYTE(v36) = BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], (int)v35); /*0x47e82a*/
+  LOBYTE(v36) = BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)v35); /*0x47e82a*/
   if ( a3 == 6 ) /*0x47e834*/
   {
     a4 = *v35; /*0x47e83e*/
-    LOWORD(a3) = MEMORY[0x89F690] + a4; /*0x47e854*/
-    HIWORD(a3) = HIWORD(MEMORY[0x89F690]) + HIWORD(a4); /*0x47e859*/
-    v36 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a3); /*0x47e86c*/
+    LOWORD(a3) = g_CellDirectionOffsets + a4; /*0x47e854*/
+    HIWORD(a3) = HIWORD(g_CellDirectionOffsets) + HIWORD(a4); /*0x47e859*/
+    v36 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a3); /*0x47e86c*/
     v37 = v36[80]; /*0x47e871*/
     v36[11] = v48; /*0x47e877*/
     v36[80] = v8 | v37 & 0xFFFEFFFF; /*0x47e882*/
@@ -1070,16 +1076,16 @@ unsigned int __stdcall sub_47EFE0(unsigned int *a1, int *a2, unsigned int a3)
   int SubFile; // [esp+44h] [ebp+10h]
   unsigned __int8 *v41; // [esp+44h] [ebp+10h]
 
-  if ( !MEMORY[0x89E7C5] ) /*0x47efed*/
+  if ( !DataGlobal_89E7C5 ) /*0x47efed*/
   {
-    MEMORY[0x89E7C5] = 1; /*0x47eff6*/
-    MEMORY[0x89E794] = SearchMIXFile(aShroudShp, 0); /*0x47f009*/
-    MEMORY[0x89E790] = SearchMIXFile(aFogShp, 0); /*0x47f013*/
+    DataGlobal_89E7C5 = 1; /*0x47eff6*/
+    DataGlobal_89E794 = SearchMIXFile(aShroudShp, 0); /*0x47f009*/
+    DataGlobal_89E790 = SearchMIXFile(aFogShp, 0); /*0x47f013*/
   }
   if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) != 0 ) /*0x47f022*/
-    v33 = (char **)MEMORY[0x89E790]; /*0x47f02a*/
+    v33 = (char **)DataGlobal_89E790; /*0x47f02a*/
   else
-    v33 = (char **)MEMORY[0x89E794]; /*0x47f035*/
+    v33 = (char **)DataGlobal_89E794; /*0x47f035*/
   FoundationSize = Building::GetFoundationSize(v25, a3); /*0x47f046*/
   v26 = *FoundationSize; /*0x47f053*/
   v5 = a2[1]; /*0x47f059*/
@@ -1245,10 +1251,10 @@ _WORD *__stdcall RenderFogOfWarOverlay(int a1, int *a2, unsigned int a3)
   int SubFileMixFileClass; // [esp+38h] [ebp+Ch]
   unsigned __int8 *v41; // [esp+38h] [ebp+Ch]
 
-  if ( !MEMORY[0x89E7C6] ) /*0x47f25a*/
+  if ( !DataGlobal_89E7C6 ) /*0x47f25a*/
   {
-    MEMORY[0x89E7C6] = 1; /*0x47f263*/
-    MEMORY[0x89E760] = SearchMIXFile(aFogShp, 0); /*0x47f26f*/
+    DataGlobal_89E7C6 = 1; /*0x47f263*/
+    DataGlobal_89E760 = SearchMIXFile(aFogShp, 0); /*0x47f26f*/
   }
   FoundationSizeBuilding = Building::GetFoundationSize(v33, a3); /*0x47f288*/
   v31 = *FoundationSizeBuilding; /*0x47f293*/
@@ -1290,7 +1296,7 @@ _WORD *__stdcall RenderFogOfWarOverlay(int a1, int *a2, unsigned int a3)
           v39 = v9; /*0x47f350*/
           v28 = v32 + v14 - v9; /*0x47f362*/
           v30 = v14 + *((_DWORD *)g_VisibleSurfaceDescriptor + 10) - v9; /*0x47f373*/
-          SubFileMixFileClass = MixFileClass::GetSubFile((char **)MEMORY[0x89E760], a3); /*0x47f38d*/
+          SubFileMixFileClass = MixFileClass::GetSubFile((char **)DataGlobal_89E760, a3); /*0x47f38d*/
           result = (_WORD *)StreamClass::ReadAndSeek((int)g_VisibleSurfaceDescriptor, v14, v12 - g_Map_VisibleRect); /*0x47f397*/
           v16 = g_VisibleSurfaceDescriptor; /*0x47f3a5*/
           v41 = (unsigned __int8 *)(v15 + v32 * v13 + SubFileMixFileClass); /*0x47f3b4*/
@@ -2160,16 +2166,16 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
     memset(v6.headNode, 0, 9);
     v6.unknown38 = 0;
     v6.INIClass_field_3C = 0;
-    *(int *)&v6.__pad_20[4] = 1732584193;
-    *(int *)&v6.__pad_20[8] = -271733879;
+    *(int *)&v6[36] = 1732584193;
+    *(int *)&v6[40] = -271733879;
     v6.INIClass_field_2C = -1732584194;
     v6.unknown30 = 271733878;
     *(int *)&v6.needsSave_flag = -1009589776;
-    *(int *)v6.__pad_0 = &vt_SHAPipe;
+    *(int *)v6[0] = &vt_SHAPipe;
     INIClass::WriteToString((int *)this, &v6);
     SHA1::ComputeThunk(&v6, (ObjectClass *)(this + 65));
     this->M64 = 1;
-    Pipe::Dtor((int *)v6.__pad_0);
+    Pipe::Dtor((int *)v6[0]);
     INIClass::ReadBase64Data( (char *)this, (unsigned char *)&g_INI_Key_Digest, (ObjectClass *)(this + 65), (ObjectClass *)0x14);
     v5 = (CCINIClass *)INIClass::WriteToString((int *)this, aP1);
     INIClass::ClearSection(this, &g_INI_Key_Digest, 0);

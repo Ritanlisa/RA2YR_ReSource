@@ -5,6 +5,7 @@
 #include "type/building_type.hpp"
 
 #include <cstring>
+#include "e4/e4_globals.hpp"
 
 namespace ra2 {
 namespace game {
@@ -1298,12 +1299,12 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
   if ( *(_BYTE *)(this->missionTimer + 883) )
   {
     v3 = (_DWORD *)(*(int (__thiscall **)(#361 *, int *))(this->q048)(this, &v122);
-    v4 = Coord::To_Cell(MEMORY[0x87F7E8], v3);
+    v4 = Coord::To_Cell(DataGlobal_87F7E8, v3);
     this->q674 = Cell::CanPlaceBuilding(*((#375 **)this + 96), v4) == 0;
   }
-  if ( this->missionTimer == *(_DWORD *)(MEMORY[0x87F7E8][7806] + 184) )
+  if ( this->missionTimer == *(_DWORD *)(DataGlobal_87F7E8[7806] + 184) )
   {
-    if ( HIBYTE(MEMORY[0x87F7E8][539877]) )
+    if ( HIBYTE(DataGlobal_87F7E8[539877]) )
       this->q674 = 0;
     else
       this->q674 = 1;
@@ -1332,7 +1333,7 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
       v122 = this->q027;
       v123 = this->owningHouseIndex;
       v124 = this->q029;
-      v9 = *((_DWORD *)Coord::To_Cell(MEMORY[0x87F7E8], &v122) + 59);
+      v9 = *((_DWORD *)Coord::To_Cell(DataGlobal_87F7E8, &v122) + 59);
       v122 = this->q027;
       v123 = this->owningHouseIndex;
       v10 = this->q029;
@@ -1340,7 +1341,7 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
       v123 = this->owningHouseIndex;
       v11 = v9 == 2;
       v124 = this->q029;
-      v12 = v10 >= MEMORY[0x87F7E8][27251] + Cell::GetGroundHeight(&v122);
+      v12 = v10 >= DataGlobal_87F7E8[27251] + Cell::GetGroundHeight(&v122);
       v114 = v12;
       if ( !v11 || v12 )
       {
@@ -1383,7 +1384,7 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
           v124 = v16 + 3;
           AnimClass::ctor(
             v13,
-            *(void **)(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 3012) + 4 * *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3024) - 4),
+            *(void **)(*(_DWORD *)(DataGlobal_87F7E8[7806] + 3012) + 4 * *(_DWORD *)(DataGlobal_87F7E8[7806] + 3024) - 4),
             &v122,
             0,
             1,
@@ -1400,7 +1401,7 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
           v122 = *v8;
           v123 = this->owningHouseIndex;
           v124 = this->q029;
-          AnimClass::ctor(v17, *(void **)(MEMORY[0x87F7E8][7806] + 148), &v122, 0, 1, (void *)0x600, 0, 0);
+          AnimClass::ctor(v17, *(void **)(DataGlobal_87F7E8[7806] + 148), &v122, 0, 1, (void *)0x600, 0, 0);
         }
         v18 = (void **)__2_YAPAXI_Z(456);
         if ( v18 )
@@ -1411,7 +1412,7 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
           v122 = v19;
           v123 = v20;
           v124 = v21 + 3;
-          AnimClass::ctor(v18, **(void ***)(MEMORY[0x87F7E8][7806] + 3012), &v122, 0, 1, (void *)0x600, 0, 0);
+          AnimClass::ctor(v18, **(void ***)(DataGlobal_87F7E8[7806] + 3012), &v122, 0, 1, (void *)0x600, 0, 0);
         }
       }
       if ( !v11 || v114 )
@@ -1426,10 +1427,10 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
           v33 = *(_DWORD *)(v32 + 756);
           if ( v33 > 0 )
           {
-            v34 = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, v33);
+            v34 = Random::Range((_DWORD *)(DataGlobal_87F7E8[536210] + 536), 0, v33);
             v35 = v34
                 + Random::Range(
-                    (_DWORD *)(MEMORY[0x87F7E8][536210] + 536),
+                    (_DWORD *)(DataGlobal_87F7E8[536210] + 536),
                     0,
                     *(_DWORD *)(this->missionTimer + 756));
             if ( v35 > 0 )
@@ -1468,10 +1469,10 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
                 if ( (int)Math::RoundToInt(v43) <= *(_DWORD *)(this->missionTimer + 828) )
                 {
                   v44 = i & 7;
-                  LOWORD(v117) = v122 / 256 + LOWORD(MEMORY[0x87F7E8][v44 + 32680]);
-                  HIWORD(v117) = v123 / 256 + HIWORD(MEMORY[0x87F7E8][v44 + 32680]);
+                  LOWORD(v117) = v122 / 256 + LOWORD(DataGlobal_87F7E8[v44 + 32680]);
+                  HIWORD(v117) = v123 / 256 + HIWORD(DataGlobal_87F7E8[v44 + 32680]);
                   v118 = v117;
-                  v45 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v118);
+                  v45 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v118);
                   if ( IsCoordValidMap((int)v45, 0) )
                   {
                     if ( *(_DWORD *)(this->missionTimer + 824) )
@@ -1480,18 +1481,18 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
                       if ( v46 )
                       {
                         v119 = v45[9];
-                        v47 = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 3);
+                        v47 = Random::Range((_DWORD *)(DataGlobal_87F7E8[536210] + 536), 0, 3);
                         Object::SpawnAtCell(
                           v46,
-                          *(_DWORD *)(MEMORY[0x87F7E8][528743]
+                          *(_DWORD *)(DataGlobal_87F7E8[528743]
                                     + 4 * (v47 + *(_DWORD *)(*(_DWORD *)(this->missionTimer + 824) + 660))),
                           (__int16 *)&v119,
                           -1);
                       }
-                      *((_BYTE *)v45 + 286) = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 2);
+                      *((_BYTE *)v45 + 286) = Random::Range((_DWORD *)(DataGlobal_87F7E8[536210] + 536), 0, 2);
                       StartCoords = House::GetStartCoords((int)v45, v132);
                       v49 = *StartCoords;
-                      v50 = StartCoords[1] - MEMORY[0x87F7E8][7663];
+                      v50 = StartCoords[1] - DataGlobal_87F7E8[7663];
                       v51 = StartCoords[2];
                       v52 = StartCoords[3];
                       v130 = v51;
@@ -1572,10 +1573,10 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
       }
     }
   }
-  if ( this->missionTimer == *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5244) )
+  if ( this->missionTimer == *(_DWORD *)(DataGlobal_87F7E8[7806] + 5244) )
   {
     v61 = (_DWORD *)(*(int (__thiscall **)(#361 *, int *))(this->q048)(this, &v122);
-    v62 = Coord::To_Cell(MEMORY[0x87F7E8], v61);
+    v62 = Coord::To_Cell(DataGlobal_87F7E8, v61);
     if ( Cell::IsBridge(v62) )
       *((_BYTE *)this + 411) = 1;
   }
@@ -1608,8 +1609,8 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
       v122 = v65 - 384;
       v123 = v66 - 384;
       v124 = v67;
-      v68 = *((_DWORD *)Coord::To_Cell(MEMORY[0x87F7E8], &v122) + 17);
-      if ( v68 == -1 || *(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][528743] + 4 * v68) + 668) != this->missionTimer )
+      v68 = *((_DWORD *)Coord::To_Cell(DataGlobal_87F7E8, &v122) + 17);
+      if ( v68 == -1 || *(_DWORD *)(*(_DWORD *)(DataGlobal_87F7E8[528743] + 4 * v68) + 668) != this->missionTimer )
         *((_BYTE *)this + 411) = 1;
     }
     v69 = (_DWORD *)this->missionTimer;
@@ -1659,8 +1660,8 @@ bool __thiscall TechnoClass::CreateUnit(#361 *this)
         v119 = v77;
         *((double *)this + 49) = *((double *)this + 49) - (double)v77;
         v113 = !strcmp((const char *)(v78 + 36), aInviso)
-             ? *(_DWORD *)(MEMORY[0x87F7E8][7806] + 4008)
-             : *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3976);
+             ? *(_DWORD *)(DataGlobal_87F7E8[7806] + 4008)
+             : *(_DWORD *)(DataGlobal_87F7E8[7806] + 3976);
         v79 = (_DWORD *)(*(int (__thiscall **)(#361 *, int *))(this->q048)(this, &v122);
         PlaySoundEffectAt(v79, v77, 0, v113, 1, 0);
         LOBYTE(Speed) = this->isAliveFlag;
@@ -1732,7 +1733,7 @@ LABEL_143:
             v85 = *(_DWORD *)(Speed + 732);
             if ( v85 || *(_DWORD *)(Speed + 736) )
             {
-              Speed = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), v85, *(_DWORD *)(Speed + 736));
+              Speed = Random::Range((_DWORD *)(DataGlobal_87F7E8[536210] + 536), v85, *(_DWORD *)(Speed + 736));
               this->q184 = Speed;
             }
             return Speed;
@@ -1763,11 +1764,11 @@ LABEL_143:
             ProductionTimeMult = *(char **)(v89 + 688);
             if ( v92 || *(_DWORD *)(v91 + 744) )
               ProductionTimeMult = (char *)Random::Range(
-                                             (_DWORD *)(MEMORY[0x87F7E8][536210] + 536),
+                                             (_DWORD *)(DataGlobal_87F7E8[536210] + 536),
                                              v92,
                                              *(_DWORD *)(v91 + 744));
             if ( *(_BYTE *)(this->missionTimer + 866) )
-              ProductionTimeMult = Rules::GetProductionTimeMult(&MEMORY[0x87F7E8][539870], (int)ProductionTimeMult);
+              ProductionTimeMult = Rules::GetProductionTimeMult(&DataGlobal_87F7E8[539870], (int)ProductionTimeMult);
             this->queuedMission = dword_A8ED54[12];
             this->missionQueued = v123;
             this->missionStatus = ProductionTimeMult;
@@ -1784,17 +1785,17 @@ LABEL_143:
             v123 = this->owningHouseIndex;
             v124 = this->q029;
             (*(void (__thiscall **)(#361 *, int *))(v95 + 244))(this, &v122);
-            if ( *(_DWORD *)(this->missionTimer + 844) <= *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3316) )
+            if ( *(_DWORD *)(this->missionTimer + 844) <= *(_DWORD *)(DataGlobal_87F7E8[7806] + 3316) )
             {
               v96 = this->q060;
               if ( !v96 || *(_BYTE *)(v96 + 501) )
               {
-                v97 = MEMORY[0x87F7E8][524948];
+                v97 = DataGlobal_87F7E8[524948];
                 v98 = HouseTypeClass::Find(g_INI_Key_Civilian);
                 v99 = 0;
                 if ( v97 > 0 )
                 {
-                  v100 = MEMORY[0x87F7E8][524945];
+                  v100 = DataGlobal_87F7E8[524945];
                   while ( *(_DWORD *)(*(_DWORD *)(*(_DWORD *)v100 + 52) + 188) != v98 )
                   {
                     ++v99;
@@ -1802,15 +1803,15 @@ LABEL_143:
                     if ( v99 >= v97 )
                       goto LABEL_176;
                   }
-                  this->q060 = *(_DWORD *)(MEMORY[0x87F7E8][524945] + 4 * v99);
+                  this->q060 = *(_DWORD *)(DataGlobal_87F7E8[524945] + 4 * v99);
                 }
               }
 LABEL_176:
               if ( this->q060 )
               {
-                v101 = *(_DWORD *)(MEMORY[0x87F7E8][539353]
+                v101 = *(_DWORD *)(DataGlobal_87F7E8[539353]
                                  + 4
-                                 * *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 3304)
+                                 * *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(DataGlobal_87F7E8[7806] + 3304)
                                                          + 4 * *(_DWORD *)(this->missionTimer + 844))
                                              + 3576));
                 v102 = (_BYTE *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v101 + 140))(
@@ -1830,7 +1831,7 @@ LABEL_176:
                 LOWORD(v117) = *v104 / 256;
                 HIWORD(v117) = v104[1] / 256;
                 v119 = v117;
-                v105 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v119);
+                v105 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v119);
                 if ( v105 )
                 {
                   if ( (v105[80] & 0x100) != 0 )
@@ -3906,7 +3907,7 @@ int __thiscall TechnoClass::CreateDestructionEffect(#374 *this)
     {
       v24 = 2;
     }
-    v8 = (double)v2 * *(double *)(MEMORY[0x87F7E8][7806] + 5896);
+    v8 = (double)v2 * *(double *)(DataGlobal_87F7E8[7806] + 5896);
     if ( (double)v25 > v8 && (double)(v25 - *v27) < v8 )
       v24 = 3;
     v9 = v25 - *v27;
@@ -3927,7 +3928,7 @@ int __thiscall TechnoClass::CreateDestructionEffect(#374 *this)
         v26[0] = this->q027;
         v26[1] = this->owningHouseIndex;
         v26[2] = this->q029;
-        AnimClass::ctor(v10, *(void **)(MEMORY[0x87F7E8][7806] + 156), v26, 0, 1, (void *)0x600, 0, 0);
+        AnimClass::ctor(v10, *(void **)(DataGlobal_87F7E8[7806] + 156), v26, 0, 1, (void *)0x600, 0, 0);
       }
       v11 = Math::RoundToInt((double)*(int *)(this->airstrikeTimer + 160) * 0.25);
       this->health = v11;

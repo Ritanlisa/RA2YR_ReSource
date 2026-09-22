@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x539EB0
 namespace gamemd {
@@ -20,7 +23,7 @@ int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
   result = a3; /*0x539eb1*/
   if ( a3 == unk_A9F9F8 ) /*0x539ec3*/
   {
-    for ( ; !LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&a3); a3 = v12 ) /*0x539edd*/
+    for ( ; !LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&a3); a3 = v12 ) /*0x539edd*/
     {
       v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, g_AircraftTrackerState); /*0x539f04*/
       LOWORD(v12) = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, g_AircraftTrackerPool); /*0x539f1e*/
@@ -51,7 +54,7 @@ int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
           || !(unsigned __int8)HouseClass::IsAlliedWith(unk_A9FACC, *(#375 **)&HouseClass_Array->__pad_0[4 * v8]) )
         {
           v9 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v8]; /*0x539fd3*/
-          if ( !*(_BYTE *)(v9 + 501) && !MEMORY[0xA8B538] ) /*0x539fe7*/
+          if ( !*(_BYTE *)(v9 + 501) && !MuteSWLaunches ) /*0x539fe7*/
             HouseClass::CreateRadarOutage(v9, a1); /*0x539fea*/
         }
       }
@@ -65,9 +68,9 @@ int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
           v10 = *((_DWORD *)HouseClass_Player + 22549); /*0x53a02c*/
         PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x53a044*/
         StringCSF = GetStringCSF(aTxtLightningSt, 0, g_Str_File_Ion_cpp, 531); /*0x53a067*/
-        MessageListClass::AddMessage(MEMORY[0xA8BC60], 0, 0, StringCSF, v10, 16454, 150, 0); /*0x53a076*/
+        MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v10, 16454, 150, 0); /*0x53a076*/
       }
-      return MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 1); /*0x53a082*/
+      return MapClass::MarkForRedraw(&DataGlobal_87F7E8, 1); /*0x53a082*/
     }
   }
   return result; /*0x539f76*/
@@ -104,8 +107,8 @@ int __stdcall LightningStorm::Strike(IUnknown *aP0)
   AnimClass *v8; // eax
   CoordStruct aP2; // [esp+4h] [ebp-Ch] BYREF
 
-  v1 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP0); /*0x53a159*/
-  v2 = (*(int (__thiscall **)(_DWORD))(***(_DWORD ***)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 732) + 156))(**(_DWORD **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 732)); /*0x53a165*/
+  v1 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0); /*0x53a159*/
+  v2 = (*(int (__thiscall **)(_DWORD))(***(_DWORD ***)(*(_DWORD *)&stru_87C374[44652] + 732) + 156))(**(_DWORD **)(*(_DWORD *)&stru_87C374[44652] + 732)); /*0x53a165*/
   v3 = ((v1[80] & 0x100) != 0 ? unk_A9FA84 : 0)
      + Coord::ScaleToScreenY((void *)(*(__int16 *)(v2 + 4) / 2))
      + unk_A9FA90 * *((char *)v1 + 283);
@@ -115,10 +118,10 @@ int __stdcall LightningStorm::Strike(IUnknown *aP0)
   aP2.Z = v3; /*0x53a1d0*/
   if ( result != unk_A9FA30 || __PAIR64__(v3, (SHIWORD(aP0) << 8) + 128) != qword_A9FA34 ) /*0x53a1dc*/
   {
-    v5 = *(CoordStruct **)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 704) /*0x53a213*/
+    v5 = *(CoordStruct **)(*(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 704) /*0x53a213*/
                          + 4
-                         * ((unsigned int)Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536))
-                          % *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 716)));
+                         * ((unsigned int)Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536))
+                          % *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 716)));
     v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a216*/
     if ( v6 ) /*0x53a220*/
       v7 = AnimClass::ctor(v6, v5, &aP2, 0, (CoordStruct *)1, (void *)0x600, 0, 0); /*0x53a23c*/
@@ -193,7 +196,7 @@ char __stdcall LightningStorm::Strike2(int a1, int a2, int a3)
   void **v33; // [esp+30h] [ebp-10h]
   int v34[3]; // [esp+34h] [ebp-Ch] BYREF
 
-  v3 = Coord::To_Cell(&MEMORY[0x87F7E8], &a1); /*0x53a31a*/
+  v3 = Coord::To_Cell(&DataGlobal_87F7E8, &a1); /*0x53a31a*/
   Coords = CellClass::GetCoords(v3, &v29); /*0x53a31f*/
   v5 = Coords[1]; /*0x53a328*/
   v6 = Coords[2]; /*0x53a32b*/

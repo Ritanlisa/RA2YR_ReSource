@@ -28,7 +28,7 @@ wchar_t *__thiscall GameOption::SetDescriptionWStr(wchar_t *this, CampaignScore 
   }
   else
   {
-    StringCSF = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[38652], 0, &stru_830620.__pad_579C[37116], 2845); /*0x69ad02*/
+    StringCSF = GetStringCSF((wchar_t *)&stru_830620[61080], 0, &stru_830620[59544], 2845); /*0x69ad02*/
     return wcscpy(this, StringCSF); /*0x69ad09*/
   }
   return result; /*0x69aced*/
@@ -50,8 +50,8 @@ char *__thiscall GameOption::SetDigest(char *this, CCINIClass *aP1)
   }
   else
   {
-    result = (char *)(strlen(&stru_830620.__pad_579C[38440]) + 1); /*0x69adb3*/
-    qmemcpy(this + 348, &stru_830620.__pad_579C[38440], (unsigned int)result); /*0x69adc8*/
+    result = (char *)(strlen(&stru_830620[60868]) + 1); /*0x69adb3*/
+    qmemcpy(this + 348, &stru_830620[60868], (unsigned int)result); /*0x69adc8*/
   }
   return result; /*0x69ada4*/
 }

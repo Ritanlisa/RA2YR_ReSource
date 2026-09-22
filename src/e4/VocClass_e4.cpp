@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
 
 // 0x4052F0
 int VocClass::Release()
@@ -78,11 +79,11 @@ int VocClass::FindByName()
     if ( !this )
     return -1;
     v3 = 0;
-    if ( *(int *)&DataGlobal_B1D188.__pad_2B8[112] <= 0 )
+    if ( *(int *)&DataGlobal_B1D188[808] <= 0 )
     return -1;
-    while ( _strcmpi(this, *(const void **)(*(int *)&DataGlobal_B1D188.__pad_2B8[100] + 4 * v3)) )
+    while ( _strcmpi(this, *(const void **)(*(int *)&DataGlobal_B1D188[796] + 4 * v3)) )
   {
-    if ( ++v3 >= *(int *)&DataGlobal_B1D188.__pad_2B8[112] )
+    if ( ++v3 >= *(int *)&DataGlobal_B1D188[808] )
     return -1;
   }
     return v3;

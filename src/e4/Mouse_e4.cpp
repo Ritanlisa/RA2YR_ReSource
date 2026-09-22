@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x4A8BF0
 namespace gamemd {
@@ -29,21 +31,21 @@ int __thiscall Mouse::SetBounds(int this, IUnknown *aP1)
   }
   v5 = (Tactical *)aP1; /*0x4a8c3d*/
   v6 = aP1 == 0; /*0x4a8c47*/
-  *(_DWORD *)(this + 4472) = *(_DWORD *)&MEMORY[0x89F690].__pad_BC0[424]; /*0x4a8c49*/
+  *(_DWORD *)(this + 4472) = *(_DWORD *)&g_CellDirectionOffsets[3432]; /*0x4a8c49*/
   if ( v6 ) /*0x4a8c4f*/
   {
     *(_DWORD *)(this + 4476) = 0; /*0x4a8d1f*/
   }
   else
   {
-    if ( (MEMORY[0x89F690].__pad_DFC[396] & 1) == 0 ) /*0x4a8c5c*/
+    if ( (g_CellDirectionOffsets[3976] & 1) == 0 ) /*0x4a8c5c*/
     {
-      MEMORY[0x89F690].__pad_DFC[396] |= 1u; /*0x4a8c68*/
+      g_CellDirectionOffsets[3976] |= 1u; /*0x4a8c68*/
       atexit(nullsub_10); /*0x4a8c6e*/
     }
-    qmemcpy(&MEMORY[0x89F690].__pad_BC0[460], v5, 0x1E0u); /*0x4a8c85*/
-    *(_DWORD *)(this + 4476) = &MEMORY[0x89F690].__pad_BC0[460]; /*0x4a8c8f*/
-    v7 = *CoordList::GetBounds(&aP1, (__int16 *)&MEMORY[0x89F690].__pad_BC0[460]); /*0x4a8c9e*/
+    qmemcpy(&g_CellDirectionOffsets[3468], v5, 0x1E0u); /*0x4a8c85*/
+    *(_DWORD *)(this + 4476) = &g_CellDirectionOffsets[3468]; /*0x4a8c8f*/
+    v7 = *CoordList::GetBounds(&aP1, (__int16 *)&g_CellDirectionOffsets[3468]); /*0x4a8c9e*/
     v9 = v7 - 1; /*0x4a8ca6*/
     v10 = HIWORD(v7) - 1; /*0x4a8cab*/
     LOWORD(aP1) = (__int16)(1 - v7) / 2; /*0x4a8cc4*/
@@ -78,7 +80,7 @@ char __thiscall Mouse::SetCursor(int this, ObjectClass *aP1, ObjectClass *aP2)
   int v13; // [esp+10h] [ebp-Ch] BYREF
   CoordStruct *v14; // [esp+14h] [ebp-8h]
 
-  if ( MEMORY[0x82D034][7 * (_DWORD)aP1] == -1 ) /*0x5bdca6*/
+  if ( DataGlobal_82D034[7 * (_DWORD)aP1] == -1 ) /*0x5bdca6*/
   {
     v4 = 0; /*0x5bdca8*/
     LOBYTE(aP2) = 0; /*0x5bdcaa*/
@@ -93,30 +95,30 @@ char __thiscall Mouse::SetCursor(int this, ObjectClass *aP1, ObjectClass *aP2)
     return 0; /*0x5bdcda*/
   }
   *((_BYTE *)&g_MatrixTransformState + 1229) = 1; /*0x5bdce4*/
-  v6 = (MPCooperative *)MEMORY[0x82D030][7 * (_DWORD)aP1]; /*0x5bdceb*/
+  v6 = (MPCooperative *)DataGlobal_82D030[7 * (_DWORD)aP1]; /*0x5bdceb*/
   Ticks = (CoordStruct *)Timer::GetTicks(); /*0x5bdcf2*/
   Y_low = 0; /*0x5bdcfb*/
   *(&g_MatrixTransformState + 292) = Ticks; /*0x5bdcfd*/
   *(&g_MatrixTransformState + 293) = v14; /*0x5bdd02*/
   *(&g_MatrixTransformState + 294) = (CoordStruct *)v6; /*0x5bdd08*/
   *(_DWORD *)(this + 21864) = 0; /*0x5bdd0e*/
-  if ( !v4 || (v9 = MEMORY[0x82D034][7 * (_DWORD)aP1], v9 == -1) ) /*0x5bdd1e*/
-    v9 = MEMORY[0x82D028][7 * (_DWORD)aP1]; /*0x5bdd20*/
-  v10 = MEMORY[0x82D03C][7 * (_DWORD)aP1]; /*0x5bdd22*/
+  if ( !v4 || (v9 = DataGlobal_82D034[7 * (_DWORD)aP1], v9 == -1) ) /*0x5bdd1e*/
+    v9 = MouseClass_Cursors[7 * (_DWORD)aP1]; /*0x5bdd20*/
+  v10 = DataGlobal_82D03C[7 * (_DWORD)aP1]; /*0x5bdd22*/
   X_high = 0; /*0x5bdd25*/
   if ( v10 == 12345 ) /*0x5bdd31*/
     X_high = SHIWORD((*(&g_MatrixTransformState + 289))->X) / 2; /*0x5bdd42*/
   if ( v10 == 54321 ) /*0x5bdd50*/
     X_high = SHIWORD((*(&g_MatrixTransformState + 289))->X); /*0x5bdd52*/
-  v12 = MEMORY[0x82D040][7 * (_DWORD)aP1]; /*0x5bdd56*/
+  v12 = DataGlobal_82D040[7 * (_DWORD)aP1]; /*0x5bdd56*/
   if ( v12 == 12345 ) /*0x5bdd5f*/
     Y_low = SLOWORD((*(&g_MatrixTransformState + 289))->Y) / 2; /*0x5bdd6a*/
   if ( v12 == 54321 ) /*0x5bdd72*/
     Y_low = SLOWORD((*(&g_MatrixTransformState + 289))->Y); /*0x5bdd74*/
   v14 = (CoordStruct *)Y_low; /*0x5bdd7c*/
   v13 = X_high; /*0x5bdd87*/
-  (*(void (__thiscall **)(_DWORD, int *, _DWORD, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 4))( /*0x5bdd93*/
-    *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228],
+  (*(void (__thiscall **)(_DWORD, int *, _DWORD, int))(**(_DWORD **)&DataGlobal_87F8E4[32092] + 4))( /*0x5bdd93*/
+    *(_DWORD *)&DataGlobal_87F8E4[32092],
     &v13,
     *(&g_MatrixTransformState + 289),
     v9);
@@ -167,7 +169,7 @@ void __thiscall Mouse::DrawCursor(_DWORD *this, IUnknown *aP1, WWMouseClass *aP2
   _DWORD v17[3]; // [esp+40h] [ebp-Ch] BYREF
 
   v5 = (char **)*(this + 1); /*0x7b93f9*/
-  if ( v5 && aP1 && MEMORY[0x87F6C8] ) /*0x7b9418*/
+  if ( v5 && aP1 && DataGlobal_87F6C8 ) /*0x7b9418*/
   {
     v6 = *(this + 20); /*0x7b942e*/
     v7 = *(this + 21); /*0x7b9431*/

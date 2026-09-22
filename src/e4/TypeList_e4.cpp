@@ -8,6 +8,7 @@
 #include "e4/classes/TypeList_VoxelAnim_e4.hpp"
 #include "e4/classes/TypeList_cptr_ParticleSystemTypeClass_e4.hpp"
 #include "e4/classes/TypeList_cptr_TerrainTypeClass_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x459F90
 namespace gamemd {

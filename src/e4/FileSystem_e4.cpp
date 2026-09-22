@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x626DA0
 int FileSystem::ProcessNextFileExtension()
@@ -38,8 +39,8 @@ int FileSystem::ProcessNextFileExtension()
   _DWORD *v29; // [esp+18h] [ebp-10h]
   int v30; // [esp+1Ch] [ebp-Ch]
 
-  v0 = MEMORY[0xAC48F0]; /*0x626da7*/
-  if ( !MEMORY[0xAC48F0] ) /*0x626db1*/
+  v0 = g_FileExtensionState; /*0x626da7*/
+  if ( !g_FileExtensionState ) /*0x626db1*/
   {
     v1 = __2_YAPAXI_Z(0x10u); /*0x626db9*/
     v0 = v1; /*0x626dbe*/
@@ -75,7 +76,7 @@ int FileSystem::ProcessNextFileExtension()
     {
       v0 = 0; /*0x626e45*/
     }
-    MEMORY[0xAC48F0] = v0; /*0x626e47*/
+    g_FileExtensionState = v0; /*0x626e47*/
   }
   v6 = (_DWORD *)v0[3]; /*0x626e4d*/
   v7 = 0; /*0x626e50*/
@@ -104,7 +105,7 @@ LABEL_19:
     }
     if ( v10 ) /*0x626ec0*/
     {
-      v13 = *((_DWORD *)MEMORY[0xAC48F0] + 3); /*0x626ece*/
+      v13 = *((_DWORD *)g_FileExtensionState + 3); /*0x626ece*/
       v14 = *(_DWORD *)v13 + 24 * ((*(int (__thiscall **)(char *))(v13 + 4))(v10) % *(_DWORD *)(v13 + 8)); /*0x626ee1*/
       v15 = *(_DWORD *)(v14 + 16) - 1; /*0x626ee4*/
       v28 = v14; /*0x626ee5*/
@@ -127,7 +128,7 @@ LABEL_19:
         {
           do /*0x626fd6*/
           {
-            v19 = (_DWORD *)*((_DWORD *)MEMORY[0xAC48F0] + 3); /*0x626f63*/
+            v19 = (_DWORD *)*((_DWORD *)g_FileExtensionState + 3); /*0x626f63*/
             ++v27; /*0x626f66*/
             v29 = v19; /*0x626f6a*/
             if ( v30 >= v19[2] ) /*0x626f71*/

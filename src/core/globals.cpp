@@ -10,6 +10,7 @@
 #include "core/math.hpp"
 #include "object/object.hpp"
 #include "type/building_type.hpp"
+#include "e4/e4_globals.hpp"
 
 namespace gamemd {
 
@@ -59,12 +60,12 @@ int __thiscall sub_734F50(void *this)
 {
   int result; // eax
 
-  result = MEMORY[0xB1CF84];
-  if ( (void *)MEMORY[0xB1CF84] != this )
+  result = DataGlobal_B1CF84;
+  if ( (void *)DataGlobal_B1CF84 != this )
   {
     WinMain::ShutdownCleanup();
-    MEMORY[0xB1CF84] = (int)this;
-    return CSFClass::LoadFile((const char *)MEMORY[0xB1CF68]);
+    DataGlobal_B1CF84 = (int)this;
+    return CSFClass::LoadFile((const char *)DataGlobal_B1CF68);
   }
   return result;
 }
@@ -93,12 +94,12 @@ int __thiscall sub_734F80(void *this)
 {
   int result; // eax
 
-  result = MEMORY[0xB1CF60];
-  if ( (void *)MEMORY[0xB1CF60] != this )
+  result = DataGlobal_B1CF60;
+  if ( (void *)DataGlobal_B1CF60 != this )
   {
     WinMain::ShutdownCleanup();
-    MEMORY[0xB1CF60] = (int)this;
-    return CSFClass::LoadFile((const char *)MEMORY[0xB1CF68]);
+    DataGlobal_B1CF60 = (int)this;
+    return CSFClass::LoadFile((const char *)DataGlobal_B1CF68);
   }
   return result;
 }
@@ -161,10 +162,10 @@ BOOL __thiscall Game::FindGameDirectoryCD(char *Source)
   if ( !Source )
     return 0;
   v3 = _strdup(Source);
-  if ( v3 != (char *)&MEMORY[0x87F7E8][31501] )
+  if ( v3 != (char *)&DataGlobal_87F7E8[31501] )
   {
-    strcat((char *)&MEMORY[0x87F7E8][31501], asc_81C8FC);
-    strcat((char *)&MEMORY[0x87F7E8][31501], v3);
+    strcat((char *)&DataGlobal_87F7E8[31501], asc_81C8FC);
+    strcat((char *)&DataGlobal_87F7E8[31501], v3);
   }
   for ( i = strtok(v3, asc_81C8FC); i; i = strtok(0, asc_81C8FC) )
   {
@@ -176,20 +177,20 @@ BOOL __thiscall Game::FindGameDirectoryCD(char *Source)
         strcat(Str1, asc_815E74);
       if ( !strncmp(Str1, Str2, 2) )
       {
-        if ( !MEMORY[0x87F7E8][31499] )
+        if ( !DataGlobal_87F7E8[31499] )
           continue;
         v1 = 1;
         if ( AlwaysFindYRCD() <= -1 )
           continue;
-        Str1[0] = LOBYTE(MEMORY[0x87F7E8][31499]) + 65;
+        Str1[0] = LOBYTE(DataGlobal_87F7E8[31499]) + 65;
         v6 = (_DWORD *)__2_YAPAXI_Z(8);
         v6[1] = _strdup(Str1);
         *v6 = 0;
-        v7 = (_DWORD *)MEMORY[0x87F7E8][31498];
-        if ( MEMORY[0x87F7E8][31498] )
+        v7 = (_DWORD *)DataGlobal_87F7E8[31498];
+        if ( DataGlobal_87F7E8[31498] )
         {
-          v8 = *(_DWORD **)MEMORY[0x87F7E8][31498];
-          if ( *(_DWORD *)MEMORY[0x87F7E8][31498] )
+          v8 = *(_DWORD **)DataGlobal_87F7E8[31498];
+          if ( *(_DWORD *)DataGlobal_87F7E8[31498] )
           {
             do
             {
@@ -202,7 +203,7 @@ LABEL_24:
           *v7 = v6;
           continue;
         }
-        MEMORY[0x87F7E8][31498] = v6;
+        DataGlobal_87F7E8[31498] = v6;
       }
       else
       {
@@ -212,11 +213,11 @@ LABEL_24:
         v6 = (_DWORD *)__2_YAPAXI_Z(8);
         v6[1] = _strdup(Str1);
         *v6 = 0;
-        v7 = (_DWORD *)MEMORY[0x87F7E8][31498];
-        if ( MEMORY[0x87F7E8][31498] )
+        v7 = (_DWORD *)DataGlobal_87F7E8[31498];
+        if ( DataGlobal_87F7E8[31498] )
         {
-          v9 = *(_DWORD **)MEMORY[0x87F7E8][31498];
-          if ( *(_DWORD *)MEMORY[0x87F7E8][31498] )
+          v9 = *(_DWORD **)DataGlobal_87F7E8[31498];
+          if ( *(_DWORD *)DataGlobal_87F7E8[31498] )
           {
             do
             {
@@ -227,7 +228,7 @@ LABEL_24:
           }
           goto LABEL_24;
         }
-        MEMORY[0x87F7E8][31498] = v6;
+        DataGlobal_87F7E8[31498] = v6;
       }
     }
   }
@@ -644,22 +645,22 @@ char __thiscall WTFMode::Init(_BYTE *this)
   result = this->q30D8;
   if ( !result )
   {
-    result = MEMORY[0x87F7E8][539758];
-    if ( LOBYTE(MEMORY[0x87F7E8][539758]) )
+    result = DataGlobal_87F7E8[539758];
+    if ( LOBYTE(DataGlobal_87F7E8[539758]) )
     {
       this->q30D8 = 1;
       if ( dword_83ED20 == -1 )
-        dword_83ED20 = MEMORY[0x87F7E8][539870];
+        dword_83ED20 = DataGlobal_87F7E8[539870];
       if ( !*(_DWORD *)this )
-        MEMORY[0x87F7E8][539870] = 2;
-      if ( !*(_BYTE *)(MEMORY[0x87F7E8][536210] + 13730) )
+        DataGlobal_87F7E8[539870] = 2;
+      if ( !*(_BYTE *)(DataGlobal_87F7E8[536210] + 13730) )
       {
         Scenario::ClearScreen();
         dword_A8ED54[123532] = dword_A8ED54[12] + 3;
       }
-      if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][8086] + 28))(MEMORY[0x87F7E8][8086]) )
-        (*(void (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][8086] + 24))(MEMORY[0x87F7E8][8086]);
-      return EndBufferMixer(MEMORY[0x87E758], 0x4000);
+      if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[8086] + 28))(DataGlobal_87F7E8[8086]) )
+        (*(void (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[8086] + 24))(DataGlobal_87F7E8[8086]);
+      return EndBufferMixer(g_MixerState, 0x4000);
     }
   }
   return result;
@@ -730,31 +731,31 @@ char CleanupCampaignResources()
   __int16 v5; // [esp+74h] [ebp-4h]
   char v6; // [esp+76h] [ebp-2h]
 
-  LOBYTE(v0) = MEMORY[0x87F7E8][538500];
+  LOBYTE(v0) = DataGlobal_87F7E8[538500];
   v4[0] = 0;
-  if ( (MEMORY[0x87F7E8][538500] & 2) == 0 )
+  if ( (DataGlobal_87F7E8[538500] & 2) == 0 )
   {
     memset(v4, 0, sizeof(v4));
     v5 = 0;
     v6 = 0;
     v4[0] = 19;
-    Stream::WriteBlock((int)&MEMORY[0x87F7E8][539810], (int)v4, 111, 0);
-    Stream::WriteBlock((int)&MEMORY[0x87F7E8][539810], (int)v4, 111, 0);
-    v1 = MEMORY[0x87F7E8][7894];
-    if ( MEMORY[0x87F7E8][7892] != -1 )
-      v1 += Timer::GetTicks(&MEMORY[0x87F7E8][7893]) - MEMORY[0x87F7E8][7892];
+    Stream::WriteBlock((int)&DataGlobal_87F7E8[539810], (int)v4, 111, 0);
+    Stream::WriteBlock((int)&DataGlobal_87F7E8[539810], (int)v4, 111, 0);
+    v1 = DataGlobal_87F7E8[7894];
+    if ( DataGlobal_87F7E8[7892] != -1 )
+      v1 += Timer::GetTicks(&DataGlobal_87F7E8[7893]) - DataGlobal_87F7E8[7892];
     while ( 1 )
     {
-      LOBYTE(v0) = MEMORY[0x87F7E8][7892];
-      v2 = MEMORY[0x87F7E8][7894];
-      if ( MEMORY[0x87F7E8][7892] != -1 )
+      LOBYTE(v0) = DataGlobal_87F7E8[7892];
+      v2 = DataGlobal_87F7E8[7894];
+      if ( DataGlobal_87F7E8[7892] != -1 )
       {
-        v0 = Timer::GetTicks(&MEMORY[0x87F7E8][7893]) - MEMORY[0x87F7E8][7892];
+        v0 = Timer::GetTicks(&DataGlobal_87F7E8[7893]) - DataGlobal_87F7E8[7892];
         v2 += v0;
       }
       if ( (unsigned int)(v2 - v1) >= 0x1E )
         break;
-      Stream::ReadPacket((int)&MEMORY[0x87F7E8][539810]);
+      Stream::ReadPacket((int)&DataGlobal_87F7E8[539810]);
     }
   }
   return v0;
@@ -833,10 +834,10 @@ int Network::ShutdownInterface()
 {
   int result; // eax
 
-  LOWORD(MEMORY[0x87F7E8][538506]) = 0;
-  if ( MEMORY[0x87F7E8][8080] )
-    result = (**(int (__thiscall ***)(_DWORD, int))MEMORY[0x87F7E8][8080])(MEMORY[0x87F7E8][8080], 1);
-  MEMORY[0x87F7E8][8080] = 0;
+  LOWORD(DataGlobal_87F7E8[538506]) = 0;
+  if ( DataGlobal_87F7E8[8080] )
+    result = (**(int (__thiscall ***)(_DWORD, int))DataGlobal_87F7E8[8080])(DataGlobal_87F7E8[8080], 1);
+  DataGlobal_87F7E8[8080] = 0;
   return result;
 }
 

@@ -2,6 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/WebBrowser_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x773600
 namespace gamemd {
@@ -22,7 +25,7 @@ char __thiscall WebBrowser::LoadURLFromRegistry(int this, const char *a2)
   BYTE Data[512]; // [esp+160h] [ebp-408h] BYREF
   wchar_t Destination[260]; // [esp+360h] [ebp-208h] BYREF
 
-  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, MEMORY[0x849690], 0, 0x20019u, &phkResult) ) /*0x773628*/
+  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_WOL_URL_RegKey, 0, 0x20019u, &phkResult) ) /*0x773628*/
     return 0; /*0x773628*/
   strcpy(ValueName, a2); /*0x77364f*/
   if ( !this->WebBrowser_field_0x8 ) /*0x773653*/
@@ -36,10 +39,10 @@ char __thiscall WebBrowser::LoadURLFromRegistry(int this, const char *a2)
   if ( !this->WebBrowser_field_0x8 ) /*0x7736f2*/
     return WebBrowser::OpenURL(Data); /*0x773843*/
   mbstowcs((wchar_t *)(this + 12), (const char *)Data, 0x200u); /*0x773709*/
-  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, MEMORY[0x84964C], 0, 0x20019u, &phkResult) ) /*0x773726*/
+  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_Software_Westwood_Yuri_s_Reven, 0, 0x20019u, &phkResult) ) /*0x773726*/
     return 0; /*0x773726*/
   cbData = 260; /*0x77374a*/
-  v4 = RegQueryValueExA(phkResult, MEMORY[0x849640], 0, &Type, v12, &cbData); /*0x773754*/
+  v4 = RegQueryValueExA(phkResult, g_INI_Key_HTMLPath, 0, &Type, v12, &cbData); /*0x773754*/
   RegCloseKey(phkResult); /*0x77375b*/
   if ( v4 ) /*0x773763*/
     return 0; /*0x773763*/
@@ -202,7 +205,7 @@ bool WebBrowser::OpenURL()
     FileA = CreateFileA(TempFileName, 0x40000000u, 0, 0, 2u, 0x80u, 0);
     if ( FileA == (HANDLE)-1 )
     return 0;
-    WriteFile(FileA, &DataGlobal_829748.__pad_0[12], strlen(&DataGlobal_829748.__pad_0[12]), &NumberOfBytesWritten, 0);
+    WriteFile(FileA, &DataGlobal_829748[12], strlen(&DataGlobal_829748[12]), &NumberOfBytesWritten, 0);
     CloseHandle(FileA);
     ExecutableA = FindExecutableA(TempFileName, 0, Result);
     DeleteFileA(TempFileName);

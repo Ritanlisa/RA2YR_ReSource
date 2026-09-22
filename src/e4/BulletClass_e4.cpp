@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x466380
 namespace gamemd {
@@ -46,16 +47,16 @@ int __thiscall sub_466380(int this)
   this->BulletClass_field_0x140 = 0; /*0x466456*/
   this->q144 = 0; /*0x46645c*/
   this->DamageMultiplier = 0; /*0x466462*/
-  if ( MEMORY[0xA8ED50] < MEMORY[0xA8ED48] /*0x46649b*/
-    || (MEMORY[0xA8ED4D] || !MEMORY[0xA8ED48])
+  if ( DataGlobal_A8ED50 < DataGlobal_A8ED48 /*0x46649b*/
+    || (DataGlobal_A8ED4D || !DataGlobal_A8ED48)
     && dword_A8ED54 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA8ED40] + 8))(
-         &MEMORY[0xA8ED40],
-         MEMORY[0xA8ED48] + dword_A8ED54,
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(BulletClass_Array + 8))(
+         &BulletClass_Array,
+         DataGlobal_A8ED48 + dword_A8ED54,
          0) )
   {
-    v2 = MEMORY[0xA8ED50]++; /*0x4664a8*/
-    *((_DWORD *)MEMORY[0xA8ED44] + v2) = this; /*0x4664b7*/
+    v2 = DataGlobal_A8ED50++; /*0x4664a8*/
+    *((_DWORD *)DataGlobal_A8ED44 + v2) = this; /*0x4664b7*/
   }
   return this; /*0x4664bc*/
 }
@@ -98,15 +99,15 @@ int __thiscall BulletClass::Dtor(#374 *this)
   this->BulletClass_field_0xB0 = 0; /*0x4665f3*/
   this->BulletClass_field_0x154 = 0; /*0x4665fd*/
   v5 = this; /*0x466617*/
-  v3 = (*(int (__thiscall **)(int *, #374 **))(MEMORY[0xA8ED40] + 16))(&MEMORY[0xA8ED40], &v5); /*0x46661b*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8ED50] && v3 < --MEMORY[0xA8ED50] ) /*0x466636*/
+  v3 = (*(int (__thiscall **)(int *, #374 **))(BulletClass_Array + 16))(&BulletClass_Array, &v5); /*0x46661b*/
+  if ( v3 != -1 && v3 < DataGlobal_A8ED50 && v3 < --DataGlobal_A8ED50 ) /*0x466636*/
   {
     do /*0x46664e*/
     {
       ++v3; /*0x46663e*/
-      *((_DWORD *)MEMORY[0xA8ED44] + v3 - 1) = *((_DWORD *)MEMORY[0xA8ED44] + v3); /*0x466642*/
+      *((_DWORD *)DataGlobal_A8ED44 + v3 - 1) = *((_DWORD *)DataGlobal_A8ED44 + v3); /*0x466642*/
     }
-    while ( v3 < MEMORY[0xA8ED50] ); /*0x46664e*/
+    while ( v3 < DataGlobal_A8ED50 ); /*0x46664e*/
   }
   return ObjectClass::Dtor(this); /*0x466657*/
 }

@@ -24,6 +24,7 @@
 #include "e4/classes/E4Recv_7AC670_e4.hpp"
 #include "e4/classes/E4Recv_7AC680_e4.hpp"
 #include "e4/classes/E4Recv_7AD410_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x52A9E0
 namespace gamemd {
@@ -136,8 +137,8 @@ int sub_6269A0()
   int v8; // esi
   int v9; // edi
 
-  v0 = MEMORY[0xAC48F0]; /*0x6269a0*/
-  if ( !MEMORY[0xAC48F0] ) /*0x6269a9*/
+  v0 = g_FileExtensionState; /*0x6269a0*/
+  if ( !g_FileExtensionState ) /*0x6269a9*/
   {
     v1 = __2_YAPAXI_Z(0x10u); /*0x6269b1*/
     v2 = v1; /*0x6269b6*/
@@ -183,7 +184,7 @@ int sub_6269A0()
     {
       v0 = 0; /*0x626a63*/
     }
-    MEMORY[0xAC48F0] = v0; /*0x626a65*/
+    g_FileExtensionState = v0; /*0x626a65*/
   }
   v8 = 0; /*0x626a6d*/
   v9 = *(_DWORD *)(v0[1] + 16); /*0x626a6f*/
@@ -192,13 +193,13 @@ int sub_6269A0()
     do /*0x626a90*/
     {
       __3_YAXPAX_Z(*(void **)(*(_DWORD *)(v0[1] + 4) + 4 * v8)); /*0x626a80*/
-      v0 = MEMORY[0xAC48F0]; /*0x626a85*/
+      v0 = g_FileExtensionState; /*0x626a85*/
       ++v8; /*0x626a8d*/
     }
     while ( v8 < v9 ); /*0x626a90*/
   }
   (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v0[1] + 12))(v0[1]); /*0x626a99*/
-  return (*(int (__thiscall **)(_DWORD))(**((_DWORD **)MEMORY[0xAC48F0] + 2) + 12))(*((_DWORD *)MEMORY[0xAC48F0] + 2)); /*0x626aa9*/
+  return (*(int (__thiscall **)(_DWORD))(**((_DWORD **)g_FileExtensionState + 2) + 12))(*((_DWORD *)g_FileExtensionState + 2)); /*0x626aa9*/
 }
 }
 } // namespace gamemd
@@ -231,7 +232,7 @@ char __fastcall sub_626AB0(const char *a1, int a2)
   int v20; // edx
   int v21; // edx
 
-  if ( !MEMORY[0xAC48F0] ) /*0x626ac5*/
+  if ( !g_FileExtensionState ) /*0x626ac5*/
   {
     v2 = __2_YAPAXI_Z(0x10u); /*0x626acd*/
     v3 = v2; /*0x626ad2*/
@@ -271,16 +272,16 @@ char __fastcall sub_626AB0(const char *a1, int a2)
         v3[3] = DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31); /*0x626b6c*/
       else
         v3[3] = 0; /*0x626b79*/
-      MEMORY[0xAC48F0] = v3; /*0x626b6f*/
+      g_FileExtensionState = v3; /*0x626b6f*/
     }
     else
     {
-      MEMORY[0xAC48F0] = 0; /*0x626b84*/
+      g_FileExtensionState = 0; /*0x626b84*/
     }
   }
   v9 = (char *)__2_YAPAXI_Z(0x100u); /*0x626b9c*/
   strcpy(v9, a1); /*0x626bb5*/
-  v10 = *((_DWORD *)MEMORY[0xAC48F0] + 1); /*0x626bc4*/
+  v10 = *((_DWORD *)g_FileExtensionState + 1); /*0x626bc4*/
   v11 = *(_DWORD *)(v10 + 8); /*0x626bc7*/
   if ( *(_DWORD *)(v10 + 16) < v11 /*0x626bec*/
     || (*(_BYTE *)(v10 + 13) || !v11)
@@ -292,7 +293,7 @@ char __fastcall sub_626AB0(const char *a1, int a2)
     *(_DWORD *)(v10 + 16) = v13 + 1; /*0x626bfc*/
     *(_DWORD *)(v14 + 4 * v13) = v9; /*0x626bff*/
   }
-  v15 = *((_DWORD *)MEMORY[0xAC48F0] + 2); /*0x626c07*/
+  v15 = *((_DWORD *)g_FileExtensionState + 2); /*0x626c07*/
   v16 = *(_DWORD *)(v15 + 8); /*0x626c0a*/
   if ( *(_DWORD *)(v15 + 16) < v16 /*0x626c34*/
     || ((LOBYTE(v17) = *(_BYTE *)(v15 + 13), (_BYTE)v17) || !v16)
@@ -378,7 +379,7 @@ int __fastcall System_Read_68C9C0(BlowStraw *aP0, ObjectClass *a1, ObjectClass *
   while ( 1 ) /*0x68c9d8*/
   {
     v6 = 0; /*0x68c9d8*/
-    if ( *(int *)stru_B05488.__pad_58 > 0 ) /*0x68c9dc*/
+    if ( *(int *)stru_B05488[88] > 0 ) /*0x68c9dc*/
       break; /*0x68c9dc*/
 LABEL_6:
     v9 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x68ca15*/
@@ -392,7 +393,7 @@ LABEL_6:
     v7 = (IUnknown *)stru_B05488.field_4C; /*0x68c9f8*/
     if ( v8 && *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * v6) + 784) == a5 ) /*0x68ca08*/
       return v6; /*0x68ca40*/
-    if ( ++v6 >= *(int *)stru_B05488.__pad_58 ) /*0x68ca13*/
+    if ( ++v6 >= *(int *)stru_B05488[88] ) /*0x68ca13*/
       goto LABEL_6; /*0x68ca13*/
   }
 }

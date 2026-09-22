@@ -10,6 +10,7 @@
 #include "e4/classes/DynamicVectorClass_cptr_VoxelAnimTypeClass_e4.hpp"
 #include "e4/classes/DynamicVectorClass_ptr_NodeNameType_e4.hpp"
 #include "e4/classes/DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x525110
 namespace gamemd {

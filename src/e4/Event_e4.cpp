@@ -8,6 +8,11 @@
 #include "e4/classes/E4Recv_77A890_e4.hpp"
 #include "e4/classes/E4Recv_77A8B0_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Waypoint_e4.hpp"
 
 // 0x48D080
 namespace gamemd {
@@ -32,23 +37,23 @@ char Event::Dispatch()
   }
   if ( v0 == (CellStruct *)1 ) /*0x48d0c6*/
   {
-    if ( (MEMORY[0xA8DAB8] & 1) == 0 ) /*0x48d0da*/
+    if ( (GameFlags_Campaign & 1) == 0 ) /*0x48d0da*/
       return (char)v0; /*0x48d0da*/
     goto LABEL_11; /*0x48d0da*/
   }
   if ( v0 == (CellStruct *)2 ) /*0x48d0cb*/
   {
 LABEL_11:
-    Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x48d0e0*/
+    Stream::ReadPacket((int)&g_EventManager); /*0x48d0e0*/
     if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) /*0x48d10f*/
-      && ObjectTypeClass::CreateInstance((int)&MEMORY[0xA8EA70], (int)v3, (int)v2) > 0 )
+      && ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v3, (int)v2) > 0 )
     {
       do /*0x48d15f*/
       {
-        if ( v3[0] == 108 && v4[0] != MEMORY[0xA8DB30] ) /*0x48d129*/
-          Network::UpdateLatencyDisplay((int)MEMORY[0xAC4F58], 1, (double)*(int *)&v4[1], NAN); /*0x48d144*/
+        if ( v3[0] == 108 && v4[0] != g_EventDispatchState ) /*0x48d129*/
+          Network::UpdateLatencyDisplay((int)g_UIManager, 1, (double)*(int *)&v4[1], NAN); /*0x48d144*/
       }
-      while ( ObjectTypeClass::CreateInstance((int)&MEMORY[0xA8EA70], (int)v3, (int)v2) > 0 ); /*0x48d15f*/
+      while ( ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v3, (int)v2) > 0 ); /*0x48d15f*/
     }
     v0 = (CellStruct *)g_GameMode_Current[0]; /*0x48d161*/
   }
@@ -58,14 +63,14 @@ LABEL_11:
     if ( !byte_B77DC2 ) /*0x48d172*/
     {
       v0 = (CellStruct *)time(0); /*0x48d176*/
-      if ( v0 != (CellStruct *)MEMORY[0x89E9B0] ) /*0x48d186*/
+      if ( v0 != (CellStruct *)DataGlobal_89E9B0 ) /*0x48d186*/
       {
-        if ( MEMORY[0xAC116C] && !dword_B77DCC ) /*0x48d199*/
-          (*(void (__stdcall **)(LPVOID))(*(_DWORD *)MEMORY[0xAC116C] + 12))(MEMORY[0xAC116C]); /*0x48d19e*/
-        if ( MEMORY[0xAC1170] ) /*0x48d1a8*/
-          (*(void (__stdcall **)(LPVOID))(*(_DWORD *)MEMORY[0xAC1170] + 28))(MEMORY[0xAC1170]); /*0x48d1ad*/
+        if ( ppv && !dword_B77DCC ) /*0x48d199*/
+          (*(void (__stdcall **)(LPVOID))(*(_DWORD *)ppv + 12))(ppv); /*0x48d19e*/
+        if ( g_UIPointerTable ) /*0x48d1a8*/
+          (*(void (__stdcall **)(LPVOID))(*(_DWORD *)g_UIPointerTable + 28))(g_UIPointerTable); /*0x48d1ad*/
         v0 = (CellStruct *)time(0); /*0x48d1b2*/
-        MEMORY[0x89E9B0] = (int)v0; /*0x48d1ba*/
+        DataGlobal_89E9B0 = (int)v0; /*0x48d1ba*/
       }
     }
   }
@@ -96,9 +101,9 @@ WPARAM sub_5E2FA0()
         return (*(int (__thiscall **)(WPARAM))(*(_DWORD *)result + 148))(result); /*0x5e2fe7*/
     }
   }
-  else if ( MEMORY[0xA8B23C] ) /*0x5e2ff8*/
+  else if ( g_GameStateFlags ) /*0x5e2ff8*/
   {
-    return (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 148))(MEMORY[0xA8B23C]); /*0x5e2ffc*/
+    return (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 148))(g_GameStateFlags); /*0x5e2ffc*/
   }
   return result; /*0x5e2fed*/
 }
@@ -118,21 +123,21 @@ char sub_5E95E0()
   unsigned __int8 v4; // [esp+0h] [ebp-Ch]
   int v5; // [esp+4h] [ebp-8h]
 
-  v5 = MEMORY[0xA8B548]; /*0x5e95f0*/
-  if ( MEMORY[0xA8B548] >= MEMORY[0xA8BB0C] ) /*0x5e95f4*/
-    v5 = MEMORY[0xA8BB0C]; /*0x5e95f6*/
+  v5 = DataGlobal_A8B548; /*0x5e95f0*/
+  if ( DataGlobal_A8B548 >= DataGlobal_A8BB0C ) /*0x5e95f4*/
+    v5 = DataGlobal_A8BB0C; /*0x5e95f6*/
   v0 = 0; /*0x5e9618*/
-  v1 = &MEMORY[0xA8DA90]; /*0x5e961a*/
+  v1 = &g_NetworkPlayerName; /*0x5e961a*/
   while ( 1 ) /*0x5e961f*/
   {
     v2 = *v1; /*0x5e961f*/
     if ( *v1 ) /*0x5e961f*/
     {
       if ( v2 != g_HouseClass_ObserverFlags /*0x5e9645*/
-        && v2 != MEMORY[0xAC11A0]
-        && v2 != MEMORY[0xAC11B4]
-        && (wchar_t *)v2 != MEMORY[0xAC11B0]
-        && v0 == MEMORY[0x8316A4]
+        && v2 != g_Lobby_PlayerCount
+        && v2 != g_Lobby_MaxPlayers
+        && (wchar_t *)v2 != g_Lobby_PlayerReady
+        && v0 == g_MPCooperativeState
         && *(_DWORD *)(v2 + 107) == -1 )
       {
         break; /*0x5e9645*/
@@ -140,7 +145,7 @@ char sub_5E95E0()
     }
     ++v1; /*0x5e9647*/
     ++v0; /*0x5e964a*/
-    if ( (int)v1 >= (int)&MEMORY[0xA8DAB0] ) /*0x5e9651*/
+    if ( (int)v1 >= (int)&g_PlayerNameListEnd ) /*0x5e9651*/
     {
       v4 = 0; /*0x5e9653*/
       goto LABEL_13; /*0x5e9653*/
@@ -148,7 +153,7 @@ char sub_5E95E0()
   }
   v4 = 1; /*0x5e968d*/
 LABEL_13:
-  if ( MEMORY[0xA8DA84] - v4 <= v5 ) /*0x5e9671*/
+  if ( Game_PlayerCount - v4 <= v5 ) /*0x5e9671*/
     return 0; /*0x5e9694*/
   Debug::Log(); /*0x5e967f*/
   return 1; /*0x5e9689*/
@@ -206,14 +211,14 @@ LABEL_10:
       v8[8] = 0; /*0x796a21*/
       Network::SyncPlayerList(); /*0x796a29*/
       Event::Dispatch(); /*0x796a2e*/
-      Network::SetConnectionParams(MEMORY[0xA8E9C0], 50, -1, 5000, 1); /*0x796a42*/
-      Network::FormatAddress((unsigned __int16 *)&MEMORY[0xA8BB1C], 0); /*0x796a4e*/
+      Network::SetConnectionParams(g_NetworkManager, 50, -1, 5000, 1); /*0x796a42*/
+      Network::FormatAddress((unsigned __int16 *)&g_NetworkRematchObject, 0); /*0x796a4e*/
       Debug::Log(); /*0x796a59*/
       memset(v9, 0, sizeof(v9)); /*0x796a6f*/
       v10 = 0; /*0x796a79*/
       v11 = 0; /*0x796a7b*/
       v9[0] = 13; /*0x796a7c*/
-      CopyWideToChar(&v9[1], *(char **)MEMORY[0xA8DA78], -1); /*0x796a90*/
+      CopyWideToChar(&v9[1], *(char **)Game_PlayerInfoArray, -1); /*0x796a90*/
       v3 = 0; /*0x796a9b*/
       if ( (int)g_WOL_State > 0 ) /*0x796a9f*/
       {
@@ -232,7 +237,7 @@ LABEL_10:
         if ( &g_IsMultiplayerSession ) /*0x796ae4*/
         {
           v5 = CharToWideString(byte_B777D4); /*0x796aeb*/
-          Network::SendToPlayer((int)MEMORY[0xA8E9C0], (int)v9, 455, 1, (wchar_t *)v5); /*0x796b04*/
+          Network::SendToPlayer((int)g_NetworkManager, (int)v9, 455, 1, (wchar_t *)v5); /*0x796b04*/
         }
       }
 LABEL_24:
@@ -282,7 +287,7 @@ int sub_7A0F40()
       {
         if ( v2 >= 0 && v1 < (int)g_WOL_State ) /*0x7a0f96*/
           qmemcpy(v11, (char *)g_WOL_ConnectionFlags + v2, sizeof(v11)); /*0x7a0faa*/
-        (*(void (__stdcall **)(LPVOID, _DWORD, int *))(*(_DWORD *)MEMORY[0xAC1170] + 32))(MEMORY[0xAC1170], v11[6], &v9); /*0x7a0fbe*/
+        (*(void (__stdcall **)(LPVOID, _DWORD, int *))(*(_DWORD *)g_UIPointerTable + 32))(g_UIPointerTable, v11[6], &v9); /*0x7a0fbe*/
         sprintf(Buffer, stru_84D24C, (const char *)&v11[9], v9); /*0x7a0fd8*/
         v3 = strlen(Buffer) + 1; /*0x7a0ffd*/
         v4 = &Source[strlen(Source)]; /*0x7a1006*/
@@ -320,11 +325,11 @@ char sub_786270()
   CHAR SubKey[256]; // [esp+14h] [ebp-100h] BYREF
 
   *(_DWORD *)Data = 0; /*0x78627e*/
-  if ( MEMORY[0x8313B0] ) /*0x786286*/
+  if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven ) /*0x786286*/
   {
-    if ( strlen(MEMORY[0x8313B0]) ) /*0x78628e*/
+    if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) ) /*0x78628e*/
     {
-      strcpy(SubKey, MEMORY[0x8313B0]); /*0x7862b6*/
+      strcpy(SubKey, g_Str_SOFTWARE_Westwood_Yuri_s_Reven); /*0x7862b6*/
       if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) ) /*0x7862d5*/
       {
         cbData = 4; /*0x7862fb*/
@@ -334,14 +339,14 @@ char sub_786270()
     }
   }
   dword_B77E50 = Data[0]; /*0x786328*/
-  if ( MEMORY[0xAC116C] ) /*0x78632e*/
-    (*(void (__stdcall **)(LPVOID, _DWORD))(*(_DWORD *)MEMORY[0xAC116C] + 140))(MEMORY[0xAC116C], *(_DWORD *)Data); /*0x786334*/
-  if ( !MEMORY[0xAC1170] ) /*0x786341*/
+  if ( ppv ) /*0x78632e*/
+    (*(void (__stdcall **)(LPVOID, _DWORD))(*(_DWORD *)ppv + 140))(ppv, *(_DWORD *)Data); /*0x786334*/
+  if ( !g_UIPointerTable ) /*0x786341*/
     return 0; /*0x78637d*/
   Debug::Log(); /*0x786353*/
-  (*(void (__stdcall **)(LPVOID, char *, int, int))(*(_DWORD *)MEMORY[0xAC1170] + 44))( /*0x786371*/
-    MEMORY[0xAC1170],
-    MEMORY[0xB73B34],
+  (*(void (__stdcall **)(LPVOID, char *, int, int))(*(_DWORD *)g_UIPointerTable + 44))( /*0x786371*/
+    g_UIPointerTable,
+    DataGlobal_B73B34,
     dword_B76B0C,
     3);
   return 1; /*0x78631f*/
@@ -361,7 +366,7 @@ int sub_7C5F3D()
   unsigned int v2; // kr08_4
   char v19; // [esp+6h] [ebp-2h]
 
-  MEMORY[0x84E864] = 0; /*0x7c5f46*/
+  DataGlobal_84E864 = 0; /*0x7c5f46*/
   v0 = __readeflags(); /*0x7c5f51*/
   __writeeflags(v0 ^ 0x40000); /*0x7c5f5b*/
   v1 = __readeflags(); /*0x7c5f5c*/
@@ -376,33 +381,33 @@ int sub_7C5F3D()
     {
       _EAX = 0; /*0x7c5f7f*/
       __asm { cpuid } /*0x7c5f81*/
-      *(_DWORD *)MEMORY[0x84E865] = _EBX; /*0x7c5f83*/
-      *(_DWORD *)&MEMORY[0x84E865][4] = _EDX; /*0x7c5f89*/
-      *(_DWORD *)&MEMORY[0x84E865][8] = _ECX; /*0x7c5f8f*/
-      *(_DWORD *)&MEMORY[0x84E865][12] = 32; /*0x7c5f95*/
+      *(_DWORD *)Source = _EBX; /*0x7c5f83*/
+      *(_DWORD *)&Source[4] = _EDX; /*0x7c5f89*/
+      *(_DWORD *)&Source[8] = _ECX; /*0x7c5f8f*/
+      *(_DWORD *)&Source[12] = 32; /*0x7c5f95*/
       if ( _EAX >= 1 ) /*0x7c5fa2*/
       {
         _EAX = 1; /*0x7c5fa6*/
         __asm { cpuid } /*0x7c5fa7*/
-        MEMORY[0x84E864] = (unsigned __int8)(_EAX & 0xF0) >> 4; /*0x7c5fb4*/
+        DataGlobal_84E864 = (unsigned __int8)(_EAX & 0xF0) >> 4; /*0x7c5fb4*/
         v19 = (unsigned __int16)(_EAX & 0xF00) >> 8; /*0x7c5fc2*/
       }
     }
   }
-  MEMORY[0x84E863] = v19; /*0x7c5fc8*/
+  DataGlobal_84E863 = v19; /*0x7c5fc8*/
   if ( (unsigned __int8)v19 < 5u ) /*0x7c5fcf*/
     goto LABEL_8; /*0x7c5fcf*/
   _EAX = 1; /*0x7c5fd1*/
   __asm { cpuid } /*0x7c5fd6*/
   if ( ((unsigned int)&unk_800000 & _EDX) != 0 ) /*0x7c5fde*/
   {
-    MEMORY[0x84E862] = 1; /*0x7c5fe5*/
+    DataGlobal_84E862 = 1; /*0x7c5fe5*/
     return 1; /*0x7c5fe0*/
   }
   else
   {
 LABEL_8:
-    MEMORY[0x84E862] = 0; /*0x7c5ff3*/
+    DataGlobal_84E862 = 0; /*0x7c5ff3*/
     return 0; /*0x7c5ff1*/
   }
 }
@@ -416,21 +421,21 @@ int sub_7C5FFF()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_7C5FFF()
 {
-  if ( (unsigned __int8)MEMORY[0x84E863] < 5u ) /*0x7c6008*/
+  if ( (unsigned __int8)DataGlobal_84E863 < 5u ) /*0x7c6008*/
     goto LABEL_4; /*0x7c6008*/
   _EAX = 1; /*0x7c600a*/
   __asm { cpuid } /*0x7c600f*/
   if ( (_EDX & 0x8000) != 0 ) /*0x7c6017*/
   {
-    MEMORY[0x84E860] = (unsigned __int8)MEMORY[0x84E863] > 5u; /*0x7c6020*/
-    MEMORY[0x84E861] = 1; /*0x7c6029*/
+    DataGlobal_84E860 = (unsigned __int8)DataGlobal_84E863 > 5u; /*0x7c6020*/
+    DataGlobal_84E861 = 1; /*0x7c6029*/
     return 1; /*0x7c6030*/
   }
   else
   {
 LABEL_4:
-    MEMORY[0x84E860] = 0; /*0x7c604e*/
-    MEMORY[0x84E861] = 0; /*0x7c6055*/
+    DataGlobal_84E860 = 0; /*0x7c604e*/
+    DataGlobal_84E861 = 0; /*0x7c6055*/
     return 0; /*0x7c605c*/
   }
 }

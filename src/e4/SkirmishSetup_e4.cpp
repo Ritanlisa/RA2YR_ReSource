@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Session_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x5D6130
 namespace gamemd {
@@ -22,32 +26,32 @@ char __fastcall SkirmishSetup_Setup(HWND hWnd, int a2)
   v3 = 0; /*0x5d615b*/
   for ( i = 0; ; v3 = i ) /*0x5d615d*/
   {
-    result = MEMORY[0xABFD70]; /*0x5d6161*/
-    if ( (MEMORY[0xABFD70] & 1) == 0 ) /*0x5d6168*/
+    result = g_MultiplayerMode; /*0x5d6161*/
+    if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d6168*/
     {
-      MEMORY[0xABFD70] |= 1u; /*0x5d6171*/
-      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&MEMORY[0xABFDA0], 0, 0); /*0x5d617c*/
-      MEMORY[0xABFDA0] = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d6181*/
-      MEMORY[0xABFDB4] = 10; /*0x5d618b*/
-      MEMORY[0xABFDB0] = 0; /*0x5d619a*/
+      g_MultiplayerMode |= 1u; /*0x5d6171*/
+      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d617c*/
+      g_MultiplayerModeConfig = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d6181*/
+      DataGlobal_ABFDB4 = 10; /*0x5d618b*/
+      g_MultiplayerGameList = 0; /*0x5d619a*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d61a0*/
     }
-    if ( v3 >= MEMORY[0xABFDB0] ) /*0x5d61ae*/
+    if ( v3 >= g_MultiplayerGameList ) /*0x5d61ae*/
       break; /*0x5d61ae*/
-    if ( (MEMORY[0xABFD70] & 1) == 0 ) /*0x5d61bb*/
+    if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d61bb*/
     {
-      MEMORY[0xABFD70] |= 1u; /*0x5d61c4*/
-      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&MEMORY[0xABFDA0], 0, 0); /*0x5d61cf*/
-      MEMORY[0xABFDA0] = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d61d4*/
-      MEMORY[0xABFDB4] = 10; /*0x5d61de*/
-      MEMORY[0xABFDB0] = 0; /*0x5d61ed*/
+      g_MultiplayerMode |= 1u; /*0x5d61c4*/
+      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d61cf*/
+      g_MultiplayerModeConfig = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d61d4*/
+      DataGlobal_ABFDB4 = 10; /*0x5d61de*/
+      g_MultiplayerGameList = 0; /*0x5d61ed*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d61f3*/
     }
-    v5 = *((_DWORD *)MEMORY[0xABFDA4] + v3); /*0x5d6200*/
+    v5 = *((_DWORD *)Src + v3); /*0x5d6200*/
     if ( (*(_BYTE *)(v5 + 61) || g_GameMode_Current[0] != 4 || !Network::IsMultiplayerActive()) /*0x5d6267*/
       && (*(_BYTE *)(v5 + 62) || g_GameMode_Current[0] != 4 || !Network::IsLobbyFeature())
-      && (MEMORY[0x8316A4]
-       || *(_DWORD *)(MEMORY[0xA8DA90] + 107) != -1
+      && (g_MPCooperativeState
+       || *(_DWORD *)(g_NetworkPlayerName + 107) != -1
        || (*(unsigned __int8 (__thiscall **)(LPARAM))(*(_DWORD *)v5 + 188))(v5))
       && (!v8 || (*(unsigned __int8 (__thiscall **)(LPARAM))(*(_DWORD *)v5 + 64))(v5)) )
     {
@@ -166,13 +170,13 @@ LABEL_5:
             if ( v13 ) /*0x5e6a59*/
             {
               MultiMissionVector::Constructor(var18, 0, 0); /*0x5e6a67*/
-              ebp0 = *(_DWORD *)&HouseClass_Player.__pad_5568[9764]; /*0x5e6a6c*/
+              ebp0 = *(_DWORD *)&HouseClass_Player[31628]; /*0x5e6a6c*/
               v14 = 0; /*0x5e6a72*/
               var18[0] = &vt_DynamicVectorClass_MultiMission_const; /*0x5e6a76*/
               v46 = (CCINIClass *)10; /*0x5e6a7e*/
               for ( i = 0; v14 < ebp0; ++v14 ) /*0x5e6a8e*/
               {
-                aP0 = *(SkirmishDialog **)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752] + 4 * v14); /*0x5e6a9c*/
+                aP0 = *(SkirmishDialog **)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v14); /*0x5e6a9c*/
                 if ( MapPreview::Check(v13, (int)aP0) ) /*0x5e6aa0*/
                   SkirmishVector::PushBack(var18, &aP0); /*0x5e6ab2*/
               }
@@ -183,12 +187,12 @@ LABEL_5:
               v11 = a4; /*0x5e6ae8*/
             }
           }
-          if ( v11 < *(int *)&HouseClass_Player.__pad_5568[9764] ) /*0x5e6af2*/
-            SkirmishSetup_Setup_5E70D0((HWND)v8, *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752] + 4 * v11)); /*0x5e6aff*/
+          if ( v11 < *(int *)&HouseClass_Player[31628] ) /*0x5e6af2*/
+            SkirmishSetup_Setup_5E70D0((HWND)v8, *(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v11)); /*0x5e6aff*/
           LoadScenarioClassByIndex(v11); /*0x5e6b06*/
           if ( !(*(&g_MatrixTransformState + 2257))->X ) /*0x5e6b10*/
             Session::PrepareGame((HWND)v8); /*0x5e6b17*/
-          *(_DWORD *)&HouseClass_Player.__pad_5568[8096] = *(&g_MatrixTransformState + 2228); /*0x5e6b22*/
+          *(_DWORD *)&HouseClass_Player[29960] = *(&g_MatrixTransformState + 2228); /*0x5e6b22*/
           LoadScenarioClassByIndex((int)*(&g_MatrixTransformState + 2228)); /*0x5e6b28*/
           LOBYTE(v11) = HandleMultiplayerMapSelection((HWND)v8); /*0x5e6b38*/
           Screen::Capture(1, 0, v11, ebp0); /*0x5e6b3a*/
@@ -211,9 +215,9 @@ LABEL_28:
       v16 = aP0; /*0x5e6b9c*/
       v17 = 0; /*0x5e6ba6*/
       v18 = SendDlgItemMessageA((HWND)aP0, 1771, 0x188u, 0, 0); /*0x5e6bb5*/
-      if ( v18 != *(_DWORD *)&stru_830620.__pad_DFC[736] && v18 != -1 ) /*0x5e6bc6*/
+      if ( v18 != *(_DWORD *)&stru_830620[4316] && v18 != -1 ) /*0x5e6bc6*/
       {
-        *(_DWORD *)&stru_830620.__pad_DFC[736] = v18; /*0x5e6bd9*/
+        *(_DWORD *)&stru_830620[4316] = v18; /*0x5e6bd9*/
         v19 = SendDlgItemMessageA((HWND)v16, 1771, 0x188u, 0, 0); /*0x5e6bde*/
         if ( v19 != -1 ) /*0x5e6be3*/
         {
@@ -228,12 +232,12 @@ LABEL_28:
               var18[0] = &vt_DynamicVectorClass_MultiMission_const; /*0x5e6c36*/
               v46 = (CCINIClass *)10; /*0x5e6c40*/
               i = 0; /*0x5e6c48*/
-              a2 = *(_DWORD *)&HouseClass_Player.__pad_5568[9764]; /*0x5e6c4c*/
-              if ( *(int *)&HouseClass_Player.__pad_5568[9764] > 0 ) /*0x5e6c50*/
+              a2 = *(_DWORD *)&HouseClass_Player[31628]; /*0x5e6c4c*/
+              if ( *(int *)&HouseClass_Player[31628] > 0 ) /*0x5e6c50*/
               {
                 do /*0x5e6c7f*/
                 {
-                  a4 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752] + 4 * v17); /*0x5e6c5d*/
+                  a4 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v17); /*0x5e6c5d*/
                   if ( MapPreview::Check(v20, a4) ) /*0x5e6c61*/
                     SkirmishVector::PushBack(var18, &a4); /*0x5e6c73*/
                   ++v17; /*0x5e6c7c*/
@@ -304,7 +308,7 @@ LABEL_28:
   if ( a2 == 1175 ) /*0x5e6e12*/
   {
     *((_BYTE *)&g_MatrixTransformState + 9144) = 1; /*0x5e6eac*/
-    First = MultiplayerGameMode::Find(*(void **)&HouseClass_Player.__pad_5568[8092]); /*0x5e6eb8*/
+    First = MultiplayerGameMode::Find(*(void **)&HouseClass_Player[29956]); /*0x5e6eb8*/
     v37 = 0; /*0x5e6eba*/
     if ( !First ) /*0x5e6ebe*/
       First = MultiplayerGameMode::GetFirst(); /*0x5e6ec5*/
@@ -317,12 +321,12 @@ LABEL_28:
       var18[0] = &vt_DynamicVectorClass_MultiMission_const; /*0x5e6efb*/
       v46 = (CCINIClass *)10; /*0x5e6f05*/
       i = 0; /*0x5e6f0d*/
-      a4 = *(_DWORD *)&HouseClass_Player.__pad_5568[9764]; /*0x5e6f11*/
-      if ( *(int *)&HouseClass_Player.__pad_5568[9764] > 0 ) /*0x5e6f15*/
+      a4 = *(_DWORD *)&HouseClass_Player[31628]; /*0x5e6f11*/
+      if ( *(int *)&HouseClass_Player[31628] > 0 ) /*0x5e6f15*/
       {
         do /*0x5e6f45*/
         {
-          aP0 = *(SkirmishDialog **)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752] + 4 * v37); /*0x5e6f23*/
+          aP0 = *(SkirmishDialog **)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v37); /*0x5e6f23*/
           if ( MapPreview::Check((char *)First, (int)aP0) ) /*0x5e6f27*/
             SkirmishVector::PushBack(var18, &aP0); /*0x5e6f39*/
           ++v37; /*0x5e6f42*/
@@ -337,12 +341,12 @@ LABEL_28:
     LOBYTE(aP0) = (*(int (__thiscall **)(int))(*(_DWORD *)First + 60))(First); /*0x5e6f7c*/
     v41 = GetDlgItem((HWND)v38, 1411); /*0x5e6f80*/
     EnableWindow(v41, (unsigned __int8)aP0); /*0x5e6f8e*/
-    v40 = *(CCINIClass **)&HouseClass_Player.__pad_5568[8096]; /*0x5e6f94*/
-    if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8096] != -1 /*0x5e6fa8*/
-      && *(int *)&HouseClass_Player.__pad_5568[8096] < *(int *)&HouseClass_Player.__pad_5568[9764] )
+    v40 = *(CCINIClass **)&HouseClass_Player[29960]; /*0x5e6f94*/
+    if ( *(_DWORD *)&HouseClass_Player[29960] != -1 /*0x5e6fa8*/
+      && *(int *)&HouseClass_Player[29960] < *(int *)&HouseClass_Player[31628] )
     {
-      aP0 = *(SkirmishDialog **)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752] /*0x5e6fb5*/
-                               + 4 * *(_DWORD *)&HouseClass_Player.__pad_5568[8096]);
+      aP0 = *(SkirmishDialog **)(*(_DWORD *)&HouseClass_Player[31616] /*0x5e6fb5*/
+                               + 4 * *(_DWORD *)&HouseClass_Player[29960]);
       if ( aP0 ) /*0x5e6fb9*/
       {
         v43 = 0; /*0x5e6fc1*/
@@ -361,7 +365,7 @@ LABEL_28:
         }
         SendDlgItemMessageA((HWND)v38, 1363, 0x186u, v43, 0); /*0x5e700b*/
         SendDlgItemMessageA((HWND)v38, 1363, 0x197u, v43, 0); /*0x5e701b*/
-        v40 = *(CCINIClass **)&HouseClass_Player.__pad_5568[8096]; /*0x5e701d*/
+        v40 = *(CCINIClass **)&HouseClass_Player[29960]; /*0x5e701d*/
       }
     }
     *(&g_MatrixTransformState + 2228) = (CoordStruct *)v40; /*0x5e7022*/
@@ -415,9 +419,9 @@ char __thiscall SkirmishSetup::PlayButtonClickAnim(HWND this)
   if ( SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x60826a*/
     return 0; /*0x60826a*/
   v7 = this; /*0x608278*/
-  if ( !MEMORY[0xAC1B04] ) /*0x60827e*/
+  if ( !g_DialogHashMap_Count ) /*0x60827e*/
     return 0; /*0x60827e*/
-  v2 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v7) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60829f*/
+  v2 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60829f*/
   if ( !v2 ) /*0x6082a4*/
     return 0; /*0x6082a4*/
   while ( *v2 != v7 ) /*0x6082ac*/
@@ -464,22 +468,22 @@ ObjectClass *SkirmishSetup_Setup_5E8590()
   char **v10; // esi
   CCINIClass *v11; // eax
 
-  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 3 ) /*0x5e8598*/
+  if ( *(_DWORD *)&HouseClass_Player[29932] == 3 ) /*0x5e8598*/
   {
     v0 = (char (*)())sub_5DAF20; /*0x5e859a*/
   }
-  else if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 ) /*0x5e85a4*/
+  else if ( *(_DWORD *)&HouseClass_Player[29932] == 4 ) /*0x5e85a4*/
   {
     v0 = (char (*)())Game::ProcessIdle; /*0x5e85a6*/
   }
-  else if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 1 /*0x5e85ba*/
-         || (v0 = Event_Dispatch::Return0, *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 2) )
+  else if ( *(_DWORD *)&HouseClass_Player[29932] == 1 /*0x5e85ba*/
+         || (v0 = Event_Dispatch::Return0, *(_DWORD *)&HouseClass_Player[29932] == 2) )
   {
     v0 = (char (*)())&loc_5BB260; /*0x5e85bc*/
   }
   if ( CCFileClass::Load(v0) != 1 ) /*0x5e85c9*/
     return (ObjectClass *)-1; /*0x5e85cb*/
-  stru_830620.__pad_DFC[696] = 1; /*0x5e85db*/
+  stru_830620[4276] = 1; /*0x5e85db*/
   MapSeed::ValidateName((char *)dword_ABDFD8, (int)aRandmapSed); /*0x5e85e2*/
   v2 = (ObjectClass *)*(&g_MatrixTransformState + 2257); /*0x5e85e7*/
   if ( *(&g_MatrixTransformState + 2257) ) /*0x5e85ef*/
@@ -493,9 +497,9 @@ ObjectClass *SkirmishSetup_Setup_5E8590()
   else
     v4 = 0; /*0x5e8618*/
   *(&g_MatrixTransformState + 2257) = (CoordStruct *)v4; /*0x5e8621*/
-  Surface::LoadToSurfaceSHP((char **)v4, stru_829ABC.__pad_0); /*0x5e8626*/
+  Surface::LoadToSurfaceSHP((char **)v4, stru_829ABC[0]); /*0x5e8626*/
   v5 = 0; /*0x5e8630*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[9764] <= 0 ) /*0x5e8634*/
+  if ( *(int *)&HouseClass_Player[31628] <= 0 ) /*0x5e8634*/
   {
 LABEL_18:
     v6 = (CCINIClass *)GameConfig::ComputeCRC(); /*0x5e8655*/
@@ -512,31 +516,31 @@ LABEL_18:
              4);
     else
       v8 = 0; /*0x5e868c*/
-    if ( *(int *)&HouseClass_Player.__pad_5568[9764] < *(int *)&HouseClass_Player.__pad_5568[9756] /*0x5e86c5*/
-      || (HouseClass_Player.__pad_5568[9761] || !*(_DWORD *)&HouseClass_Player.__pad_5568[9756])
-      && *(int *)&HouseClass_Player.__pad_5568[9768] > 0
-      && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_5568[9748] + 8))(
-           &HouseClass_Player.__pad_5568[9748],
-           *(_DWORD *)&HouseClass_Player.__pad_5568[9756] + *(_DWORD *)&HouseClass_Player.__pad_5568[9768],
+    if ( *(int *)&HouseClass_Player[31628] < *(int *)&HouseClass_Player[31620] /*0x5e86c5*/
+      || (HouseClass_Player[31625] || !*(_DWORD *)&HouseClass_Player[31620])
+      && *(int *)&HouseClass_Player[31632] > 0
+      && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player[31612] + 8))(
+           &HouseClass_Player[31612],
+           *(_DWORD *)&HouseClass_Player[31620] + *(_DWORD *)&HouseClass_Player[31632],
            0) )
     {
-      v9 = (*(_DWORD *)&HouseClass_Player.__pad_5568[9764])++; /*0x5e86d2*/
-      *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752] + 4 * v9) = v8; /*0x5e86e1*/
+      v9 = (*(_DWORD *)&HouseClass_Player[31628])++; /*0x5e86d2*/
+      *(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v9) = v8; /*0x5e86e1*/
     }
     __3_YAXPAX_Z(v6); /*0x5e86e5*/
     return (ObjectClass *)v5; /*0x5e86ed*/
   }
   else
   {
-    while ( !IsRandMap::Sed(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752] + 4 * v5)) ) /*0x5e8645*/
+    while ( !IsRandMap::Sed(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v5)) ) /*0x5e8645*/
     {
-      if ( ++v5 >= *(int *)&HouseClass_Player.__pad_5568[9764] ) /*0x5e8653*/
+      if ( ++v5 >= *(int *)&HouseClass_Player[31628] ) /*0x5e8653*/
         goto LABEL_18; /*0x5e8653*/
     }
     GameOption::SetDescriptionWStr( /*0x5e8701*/
-      *(wchar_t **)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752] + 4 * v5),
+      *(wchar_t **)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v5),
       (CampaignScore *)&word_ABE050);
-    v10 = (char **)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752] + 4 * v5); /*0x5e870b*/
+    v10 = (char **)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v5); /*0x5e870b*/
     v11 = (CCINIClass *)GameConfig::ComputeCRC(); /*0x5e870e*/
     GameOption::SetDigest(*v10, v11); /*0x5e8716*/
     return (ObjectClass *)v5; /*0x5e871b*/

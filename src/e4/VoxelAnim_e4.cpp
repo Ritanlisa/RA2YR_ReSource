@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
+#include "e4/classes/Voxel_e4.hpp"
 
 // 0x7586F0
 char VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
@@ -250,8 +256,8 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
 
   v3 = (_DWORD *)(this + 40);
   if ( this->q0A0 != g_AsyncMovieState
-    || *(_DWORD *)(this + 44) != MEMORY[0xB45BEC]
-    || this->q00C != MEMORY[0xB45BF0] )
+    || *(_DWORD *)(this + 44) != g_MovieFrameState1
+    || this->q00C != g_MovieFrameState2 )
   {
     v107 = this->q00C;
     v108 = (_DWORD *)*v3;
@@ -295,8 +301,8 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
           if ( !(_BYTE)v9 )
           {
             if ( *(_DWORD *)(this + 28) == g_AsyncMovieState
-              && this->matrices == MEMORY[0xB45BEC]
-              && this->q090 == MEMORY[0xB45BF0]
+              && this->matrices == g_MovieFrameState1
+              && this->q090 == g_MovieFrameState2
               || (v118 = *(_DWORD *)(this + 28) / 256,
                   v119 = this->matrices / 256,
                   a2 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, int *, _DWORD))(*(_DWORD *)v117 + 76))(v117, &v160, 0),
@@ -308,7 +314,7 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
                                        0)
                                    + 8)
                        - this->q090,
-                  (int)((HIDWORD(v120) ^ v120) - HIDWORD(v120)) < 2 * MEMORY[0xB45C28]) )
+                  (int)((HIDWORD(v120) ^ v120) - HIDWORD(v120)) < 2 * DataGlobal_B45C28) )
             {
               (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1152))(
                 this->q00C,
@@ -319,9 +325,9 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
                 0,
                 0);
               *v3 = g_AsyncMovieState;
-              *(_DWORD *)(this + 44) = MEMORY[0xB45BEC];
+              *(_DWORD *)(this + 44) = g_MovieFrameState1;
               v121 = this->num_sections;
-              this->q00C = MEMORY[0xB45BF0];
+              this->q00C = g_MovieFrameState2;
               (*(void (__stdcall **)(int))(v121 + 72))(this + 4);
               *(_BYTE *)(this + 54) = 0;
             }
@@ -394,8 +400,8 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
     }
     (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 292))(this->q00C, 0);
     (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 12) + 436))(this->q00C, &v157);
-    v137 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
-    v138 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v152);
+    v137 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
+    v138 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152);
     if ( *((char *)v138 + 283) == *((char *)v137 + 283) - 4 )
     {
       if ( (v138[80] & 0x100) == 0 )
@@ -411,7 +417,7 @@ LABEL_122:
       v160 = *v139;
       v161 = v139[1];
       v162 = v139[2];
-      v140 = Coord::To_Cell(&MEMORY[0x87F7E8], &v160);
+      v140 = Coord::To_Cell(&DataGlobal_87F7E8, &v160);
       BuildingClass::CreateIdleAnim(v140);
       goto LABEL_123;
     }
@@ -422,8 +428,8 @@ LABEL_120:
   }
   v4 = (_DWORD *)(this + 28);
   if ( *(_DWORD *)(this + 28) == g_AsyncMovieState
-    && this->matrices == MEMORY[0xB45BEC]
-    && this->q090 == MEMORY[0xB45BF0] )
+    && this->matrices == g_MovieFrameState1
+    && this->q090 == g_MovieFrameState2 )
   {
     v106 = *(double **)(this + 12);
     if ( v106[175] > 0.0 )
@@ -507,7 +513,7 @@ LABEL_11:
             LODWORD(v154) = a2;
             v152 = v20;
             v149 = (*(int (__thiscall **)(_DWORD *))(*v20 + 800))(v20);
-            v22 = *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v153) + 80) >> 8;
+            v22 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v153) + 80) >> 8;
             LOBYTE(v22) = v22 & 1;
             v146 = v22;
             v23 = (*(int (__thiscall **)(_DWORD *))(*v21 + 188))(v21);
@@ -543,7 +549,7 @@ LABEL_11:
                 LODWORD(v155) = a2;
                 v152 = v29;
                 v150 = (*(int (__thiscall **)(_DWORD *))(*v29 + 800))(v29);
-                v31 = *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v154) + 80) >> 8;
+                v31 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v154) + 80) >> 8;
                 LOBYTE(v31) = v31 & 1;
                 v147 = v31;
                 v32 = (*(int (__thiscall **)(_DWORD *))(*v30 + 188))(v30);
@@ -583,7 +589,7 @@ LABEL_32:
     v157 = *v35;
     v158 = v35[1];
     v159 = v35[2];
-    v36 = *((__int16 *)Coord::To_Cell(&MEMORY[0x87F7E8], &v157) + 139);
+    v36 = *((__int16 *)Coord::To_Cell(&DataGlobal_87F7E8, &v157) + 139);
     a2 = (_DWORD *)v36;
     if ( v36 >= 0 && v36 < g_Tubes_Count )
     {
@@ -592,7 +598,7 @@ LABEL_32:
       v155 = *(double *)(v37 + 156);
       v156 = *(_DWORD *)(v37 + 164);
       (*(void (__thiscall **)(int, double *))(*(_DWORD *)v37 + 244))(v37, &v155);
-      v38 = (_DWORD *)*((_DWORD *)MEMORY[0x8B413C] + (_DWORD)a2);
+      v38 = (_DWORD *)*((_DWORD *)g_PathClass_State + (_DWORD)a2);
       LODWORD(v154) = v38;
       LODWORD(v155) = v38[10];
       v39 = SWORD1(v155) << 8;
@@ -609,11 +615,11 @@ LABEL_32:
       a2 = v41;
       v43 = v42 & 7;
       LODWORD(v155) = v41;
-      LOWORD(a2) = LOWORD(MEMORY[0x89F688][v43]) + (_WORD)v41;
-      HIWORD(a2) = HIWORD(v41) + HIWORD(MEMORY[0x89F688][v43]);
+      LOWORD(a2) = LOWORD(Direction_X_Offsets[v43]) + (_WORD)v41;
+      HIWORD(a2) = HIWORD(v41) + HIWORD(Direction_X_Offsets[v43]);
       v44 = ((__int16)v41 << 8) + 128;
       v45 = (SHIWORD(v41) << 8) + 128;
-      CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+      CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
       v46 = (_DWORD *)CellClass::GetCoords(&v160);
       v47 = *v46 - v44;
       v48 = *(_DWORD **)(this + 12);
@@ -645,16 +651,16 @@ LABEL_32:
     }
     *(_DWORD *)(this->q00C + 1504) = -1;
     *v3 = g_AsyncMovieState;
-    *(_DWORD *)(this + 44) = MEMORY[0xB45BEC];
+    *(_DWORD *)(this + 44) = g_MovieFrameState1;
     v58 = this->num_sections;
-    this->q00C = MEMORY[0xB45BF0];
+    this->q00C = g_MovieFrameState2;
     (*(void (__stdcall **)(int))(v58 + 72))(this + 4);
     goto LABEL_37;
   }
   v59 = Coord::Subtract(
           &v157,
-          MEMORY[0x89F6D8][2 * (LOBYTE(v153) & 7)] + v34[39],
-          v34[40] + MEMORY[0x89F6DC][2 * (LOBYTE(v153) & 7)],
+          DataGlobal_89F6D8[2 * (LOBYTE(v153) & 7)] + v34[39],
+          v34[40] + DataGlobal_89F6DC[2 * (LOBYTE(v153) & 7)],
           v34[41]);
   v160 = *v59;
   v161 = v59[1];
@@ -664,18 +670,18 @@ LABEL_32:
   WORD1(v154) = v161 / 256;
   v152 = (_DWORD *)LODWORD(v154);
   v61 = v60[2];
-  v62 = v60[1] + MEMORY[0x89F6DC][2 * (LOBYTE(v153) & 7)];
-  v157 = *v60 + MEMORY[0x89F6D8][2 * (LOBYTE(v153) & 7)];
+  v62 = v60[1] + DataGlobal_89F6DC[2 * (LOBYTE(v153) & 7)];
+  v157 = *v60 + DataGlobal_89F6D8[2 * (LOBYTE(v153) & 7)];
   v158 = v62;
   v159 = v61;
-  v63 = Coord::To_Cell(&MEMORY[0x87F7E8], &v157);
+  v63 = Coord::To_Cell(&DataGlobal_87F7E8, &v157);
   v64 = this->q00C;
   if ( *(_BYTE *)(v64 + 140) != ((v63[80] >> 8) & 1) )
     *(_BYTE *)(v64 + 1675) = 1;
   v65 = **(_DWORD **)(this + 12);
   v145 = ObjectClass::GetLandHeight(0, 1);
   v144 = LODWORD(v153);
-  v66 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v152);
+  v66 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152);
   v67 = (*(int (__thiscall **)(_DWORD, void *, int, int, int, int))(v65 + 428))(
           this->q00C,
           v66,
@@ -690,13 +696,13 @@ LABEL_32:
     (*(void (__thiscall **)(int))(*(_DWORD *)v68 + 1352))(v68);
     if ( v67 == 6 )
     {
-      v69 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v152);
+      v69 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152);
       if ( (_BYTE)a2 )
       {
         *(_DWORD *)(this->q00C + 1504) = -1;
         *v3 = g_AsyncMovieState;
-        *(_DWORD *)(this + 44) = MEMORY[0xB45BEC];
-        this->q00C = MEMORY[0xB45BF0];
+        *(_DWORD *)(this + 44) = g_MovieFrameState1;
+        this->q00C = g_MovieFrameState2;
         v70 = (_DWORD *)(this->q00C + 1600);
         *v70 = g_CurrentFrame;
         v70[1] = v161;
@@ -720,10 +726,10 @@ LABEL_32:
               v157 = *v75,
               v158 = v75[1],
               v76 = this->q090 - v75[2],
-              (int)((HIDWORD(v76) ^ v76) - HIDWORD(v76)) >= 2 * MEMORY[0xB45C28])
+              (int)((HIDWORD(v76) ^ v76) - HIDWORD(v76)) >= 2 * DataGlobal_B45C28)
           || (v157 = *v75, v158 = v75[1],
                            v159 = v75[2],
-                           *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v157) + 59) == 10) )
+                           *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v157) + 59) == 10) )
         {
           if ( (v69[80] & 0x100) == 0
             || (v78 = *(int **)(this + 12),
@@ -731,7 +737,7 @@ LABEL_32:
                 v78 += 39,
                 v157 = *v78,
                 v158 = v78[1],
-                v79 = v78[2] / MEMORY[0xB45C28] - *((char *)v69 + 283),
+                v79 = v78[2] / DataGlobal_B45C28 - *((char *)v69 + 283),
                 (int)((HIDWORD(v79) ^ v79) - HIDWORD(v79)) <= 2) )
           {
             LOBYTE(a2) = 0;
@@ -742,8 +748,8 @@ LABEL_32:
         {
           *v3 = g_AsyncMovieState;
           v77 = this->num_sections;
-          *(_DWORD *)(this + 44) = MEMORY[0xB45BEC];
-          this->q00C = MEMORY[0xB45BF0];
+          *(_DWORD *)(this + 44) = g_MovieFrameState1;
+          this->q00C = g_MovieFrameState2;
           (*(void (__stdcall **)(int))(v77 + 72))(this + 4);
           (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(**(_DWORD **)(this + 12) + 1348))(
             this->q00C,
@@ -838,15 +844,15 @@ LABEL_67:
       if ( v67 == 5 || v67 == 4 )
       {
         v155 = 0.0;
-        CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v152);
+        CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152);
         v94 = Object::FindObjectCell(&v155, 0);
         if ( (_BYTE)a2 )
         {
           *(_DWORD *)(this->q00C + 1504) = -1;
           *v3 = g_AsyncMovieState;
-          *(_DWORD *)(this + 44) = MEMORY[0xB45BEC];
+          *(_DWORD *)(this + 44) = g_MovieFrameState1;
           v95 = *(_DWORD **)(this + 12);
-          this->q00C = MEMORY[0xB45BF0];
+          this->q00C = g_MovieFrameState2;
           v95 += 400;
           *v95 = g_CurrentFrame;
           v95[1] = v161;
@@ -863,19 +869,19 @@ LABEL_67:
               v94,
               0);
         }
-        else if ( *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v152) + 17) != -1
+        else if ( *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152) + 17) != -1
                && *(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array
-                             + *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v152) + 17))
+                             + *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152) + 17))
                            + 680) )
         {
           v96 = **(_DWORD **)(this + 12);
-          v97 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v152);
+          v97 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152);
           (*(void (__thiscall **)(_DWORD, int, void *, _DWORD))(v96 + 500))(this->q00C, 1, v97, 0);
         }
       }
       if ( v67 == 1 )
       {
-        v98 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v152);
+        v98 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152);
         CellClass::DamageAllObjects(v98);
       }
       else if ( v67 != 7 )
@@ -894,9 +900,9 @@ LABEL_67:
         *(_DWORD *)(this->q00C + 1504) = -1;
         *v3 = g_AsyncMovieState;
         v99 = *(_DWORD **)(this + 12);
-        *(_DWORD *)(this + 44) = MEMORY[0xB45BEC];
+        *(_DWORD *)(this + 44) = g_MovieFrameState1;
         v99 += 400;
-        this->q00C = MEMORY[0xB45BF0];
+        this->q00C = g_MovieFrameState2;
         *v99 = g_CurrentFrame;
         v99[1] = v161;
         v99[2] = 0;

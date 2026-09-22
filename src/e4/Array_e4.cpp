@@ -399,11 +399,11 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
   {
     if ( (*(int (__thiscall **)(AbstractClass *))(*(int *)aP0->__pad_0 + 44))(aP0) == 44 )
     {
-    v2 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67588];
+    v2 = *(ParticleSystemClass **)&DataGlobal_89E138[90016];
     v3 = 0;
-    if ( *(int *)&DataGlobal_89E138.__pad_579C[67588] > 0 )
+    if ( *(int *)&DataGlobal_89E138[90016] > 0 )
       {
-    v4 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67576];
+    v4 = *(ParticleSystemClass **)&DataGlobal_89E138[90004];
     do
         {
     if ( aP0 == *(AbstractClass **)&v4->__pad_0[4 * v3] )
@@ -412,17 +412,17 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
             {
     v2 = (ParticleSystemClass *)((char *)v2 - 1);
     v5 = v3;
-    *(int *)&DataGlobal_89E138.__pad_579C[67588] = v2;
+    *(int *)&DataGlobal_89E138[90016] = v2;
     if ( v3 < (int)v2 )
               {
     do
                 {
     *(int *)&v4->__pad_0[4 * v5] = *(int *)&v4->__pad_0[4 * v5 + 4];
-    v2 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67588];
-    v4 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67576];
+    v2 = *(ParticleSystemClass **)&DataGlobal_89E138[90016];
+    v4 = *(ParticleSystemClass **)&DataGlobal_89E138[90004];
     ++v5;
                 }
-    while ( v5 < *(int *)&DataGlobal_89E138.__pad_579C[67588] );
+    while ( v5 < *(int *)&DataGlobal_89E138[90016] );
               }
             }
     --v3;

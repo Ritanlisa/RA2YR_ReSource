@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/House_e4.hpp"
 
 // 0x4CC9A0
 int FlyLocomotionClass::LocomotionClass()
@@ -12,12 +13,12 @@ int __thiscall FlyLocomotionClass::LocomotionClass(int this)
 
   LocomotionClass::Init((_DWORD *)this); /*0x4cc9a3*/
   this->AirportBound = 0; /*0x4cc9ad*/
-  this->MovingDestination = MEMORY[0x8B3C78]; /*0x4cc9b6*/
-  this->Owner = MEMORY[0x8B3C7C]; /*0x4cc9be*/
-  this->q090 = MEMORY[0x8B3C80]; /*0x4cc9c7*/
-  this->XYZ2 = MEMORY[0x8B3C78]; /*0x4cc9d3*/
-  *(_DWORD *)(this + 44) = MEMORY[0x8B3C7C]; /*0x4cc9dc*/
-  v2 = MEMORY[0x8B3C80]; /*0x4cc9df*/
+  this->MovingDestination = DataGlobal_8B3C78; /*0x4cc9b6*/
+  this->Owner = DataGlobal_8B3C7C; /*0x4cc9be*/
+  this->q090 = DataGlobal_8B3C80; /*0x4cc9c7*/
+  this->XYZ2 = DataGlobal_8B3C78; /*0x4cc9d3*/
+  *(_DWORD *)(this + 44) = DataGlobal_8B3C7C; /*0x4cc9dc*/
+  v2 = DataGlobal_8B3C80; /*0x4cc9df*/
   this->Powered = 0; /*0x4cc9e5*/
   this->q012 = 0; /*0x4cc9e8*/
   this->HasMoveOrder = 0; /*0x4cc9eb*/
@@ -82,9 +83,9 @@ void __stdcall FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   {
     v22 = 0; /*0x4cfefd*/
   }
-  for ( i = MEMORY[0xA8EC88] - 1; i >= 0; --i ) /*0x4cff0c*/
+  for ( i = g_SidebarState - 1; i >= 0; --i ) /*0x4cff0c*/
   {
-    v4 = *((_DWORD *)MEMORY[0xA8EC7C] + i); /*0x4cff17*/
+    v4 = *((_DWORD *)g_TechnoClass_Count + i); /*0x4cff17*/
     if ( v22 ) /*0x4cff20*/
     {
       if ( *(_DWORD *)(v4 + 540) != *(_DWORD *)&HouseClass_Array->__pad_0[4 /*0x4cff5e*/

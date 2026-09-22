@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x549B70
 int IsometricTileTypeClass::ProcessPower(int * a2)
@@ -52,9 +54,9 @@ int __stdcall IsometricTileTypeClass::_vt05(int *a1, int a2)
   int result; // eax
   int j; // eax
 
-  for ( i = 0; i < g_SurfaceAnimState; *((_DWORD *)MEMORY[0x87F69C] + i - 1) = 0 ) /*0x549c8a*/
+  for ( i = 0; i < g_SurfaceAnimState; *((_DWORD *)DataGlobal_87F69C + i - 1) = 0 ) /*0x549c8a*/
   {
-    v3 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)MEMORY[0x87F69C] + i); /*0x549c91*/
+    v3 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)DataGlobal_87F69C + i); /*0x549c91*/
     if ( v3 ) /*0x549c96*/
       (**v3)(v3, 1); /*0x549c9c*/
     ++i; /*0x549ca3*/
@@ -75,7 +77,7 @@ int __stdcall IsometricTileTypeClass::_vt05(int *a1, int a2)
       a1[3] = (int)&vt_IsometricTileTypeClass; /*0x549d16*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 175); /*0x549d2a*/
-    for ( j = 0; j < g_SurfaceAnimState; *((_DWORD *)MEMORY[0x87F69C] + j - 1) = 0 ) /*0x549d39*/
+    for ( j = 0; j < g_SurfaceAnimState; *((_DWORD *)DataGlobal_87F69C + j - 1) = 0 ) /*0x549d39*/
       ++j; /*0x549d41*/
     TerrainClass::InitTheatre(a1); /*0x549d56*/
     return 0; /*0x549d5b*/

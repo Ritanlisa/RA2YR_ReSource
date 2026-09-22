@@ -737,7 +737,7 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
     gindex = {}
     gtxt = (EXPORT / "globals.hpp").read_text(encoding="utf-8", errors="replace")
     for gm in re.finditer(
-            r"extern\s+[\w\s\*]+?\s+([A-Za-z_]\w*)\s*(?:\[(\d+)\])?\s*;\s*//\s*0x([0-9A-Fa-f]+)",
+            r"extern\s+.*?[\s\*]([A-Za-z_]\w*)\s*(?:=|;|\[)\s*(?:\[(\d+)\])?\s*;\s*//\s*0x([0-9A-Fa-f]+)",
             gtxt):
         gindex[gm.group(1)] = (int(gm.group(3), 16), int(gm.group(2) or 0))
     # targeted: collect declared names once (concat all src hpp)
@@ -945,13 +945,13 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
     if refresh and gh.exists():
         new_names = set()
         for ln in missing_globals:
-            gm2 = re.match(r"extern\s+[\w\s\*]+?\s+([A-Za-z_]\w*)", ln)
+            gm2 = re.match(r"extern\s+.*?[\s\*]([A-Za-z_]\w*)\s*(?:=|;|\[)", ln)
             if gm2:
                 new_names.add(gm2.group(1))
         for ln in gh.read_text(encoding="latin-1").split("\n"):
             gm = re.match(r"extern\s+.*;\s*//\s*data:\s*(0x[0-9A-Fa-f]+)", ln.strip())
             if gm:
-                gname = re.match(r"extern\s+[\w\s\*]+?\s+([A-Za-z_]\w*)", ln.strip())
+                gname = re.match(r"extern\s+.*?[\s\*]([A-Za-z_]\w*)\s*(?:=|;|\[)", ln.strip())
                 # dedup BY NAME: the old line-in-list check compared a bare
                 # name against declaration LINES (always true), so stale
                 # declarations with conflicting types were re-appended forever
@@ -962,7 +962,7 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
     # declarations are emitted before refreshed legacy lines)
     _by_name = {}
     for ln in missing_globals:
-        gname = re.match(r"extern\s+[\w\s\*]+?\s+([A-Za-z_]\w*)", ln.strip())
+        gname = re.match(r"extern\s+.*?[\s\*]([A-Za-z_]\w*)\s*(?:=|;|\[)", ln.strip())
         if gname:
             _by_name.setdefault(gname.group(1), ln)
     missing_globals = sorted(_by_name.values(), key=lambda s: s.lower())

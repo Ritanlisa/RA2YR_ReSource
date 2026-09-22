@@ -38,6 +38,10 @@
 #include "e4/classes/E4Recv_6EF700_e4.hpp"
 #include "e4/classes/E4Recv_6EFC70_e4.hpp"
 #include "e4/classes/Tactical_42_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Super_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x6E0250
 namespace gamemd {
@@ -104,10 +108,10 @@ char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
   v8[1] = (SHIWORD(v6) << 8) + 128; /*0x6e27d0*/
   v8[0] = ((__int16)v6 << 8) + 128; /*0x6e27da*/
   GroundHeight = Cell::GetGroundHeight(v8); /*0x6e27e3*/
-  if ( (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v6) + 80) & 0x100) != 0 /*0x6e2819*/
-    || (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v6) + 80) & 0x400) != 0 )
+  if ( (*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v6) + 80) & 0x100) != 0 /*0x6e2819*/
+    || (*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v6) + 80) & 0x400) != 0 )
   {
-    GroundHeight += MEMORY[0xB0E6D4]; /*0x6e2827*/
+    GroundHeight += DataGlobal_B0E6D4; /*0x6e2827*/
   }
   Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, v8); /*0x6e2836*/
   return 1; /*0x6e283d*/
@@ -162,10 +166,10 @@ char __thiscall sub_6E37F0(int this, int a2, int a3, int a4, ObjectClass *aP4)
   int v7; // ecx
   char result; // al
 
-  v5 = *(_DWORD *)&HouseClass_Player.__pad_5568[22620] - 1; /*0x6e37fa*/
-  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[22620] - 1 >= 0 ) /*0x6e3803*/
+  v5 = *(_DWORD *)&HouseClass_Player[44484] - 1; /*0x6e37fa*/
+  if ( *(_DWORD *)&HouseClass_Player[44484] - 1 >= 0 ) /*0x6e3803*/
   {
-    v6 = *(_DWORD *)&HouseClass_Player.__pad_5568[22608] + 4 * v5; /*0x6e380b*/
+    v6 = *(_DWORD *)&HouseClass_Player[44472] + 4 * v5; /*0x6e380b*/
     while ( strcmp((const char *)(*(_DWORD *)v6 + 36), (const char *)(this + 84)) ) /*0x6e3845*/
     {
       --v5; /*0x6e3847*/
@@ -196,11 +200,11 @@ char __stdcall sub_6E4090(int a1, int a2, int a3, int a4)
   _DWORD *v6; // ecx
 
   v4 = 0; /*0x6e409b*/
-  if ( MEMORY[0xA8EB50] <= 0 ) /*0x6e409f*/
+  if ( g_BuildingProductionState <= 0 ) /*0x6e409f*/
     return 0; /*0x6e40e3*/
   while ( 1 ) /*0x6e40aa*/
   {
-    v5 = *((_DWORD *)MEMORY[0xA8EB44] + v4); /*0x6e40aa*/
+    v5 = *((_DWORD *)g_BuildingClass_InstanceCount + v4); /*0x6e40aa*/
     if ( *(_BYTE *)(v5 + 144) ) /*0x6e40ad*/
     {
       if ( *(_BYTE *)(v5 + 116) ) /*0x6e40b7*/
@@ -216,7 +220,7 @@ char __stdcall sub_6E4090(int a1, int a2, int a3, int a4)
         }
       }
     }
-    if ( ++v4 >= MEMORY[0xA8EB50] ) /*0x6e40e1*/
+    if ( ++v4 >= g_BuildingProductionState ) /*0x6e40e1*/
       return 0; /*0x6e40e1*/
   }
   BuildingClass::UnloadUnits((int *)v5, 0, 0); /*0x6e40f2*/
@@ -367,7 +371,7 @@ _DWORD *__fastcall DamageMapClassArea(int ecx0, void *a1, FootClass *aP2, int a4
   v36 = 0; /*0x6eebfb*/
   v37 = 0; /*0x6eebff*/
   v35 = 0; /*0x6eec03*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[22684] <= 0 ) /*0x6eec07*/
+  if ( *(int *)&HouseClass_Player[44548] <= 0 ) /*0x6eec07*/
   {
 LABEL_22:
     if ( !a5 ) /*0x6eee74*/
@@ -376,7 +380,7 @@ LABEL_22:
   }
   do /*0x6eee55*/
   {
-    v7 = *(_DWORD **)(*(_DWORD *)&HouseClass_Player.__pad_5568[22672] + 4 * v5); /*0x6eec1a*/
+    v7 = *(_DWORD **)(*(_DWORD *)&HouseClass_Player[44536] + 4 * v5); /*0x6eec1a*/
     v8 = (HouseClass *)v7[135]; /*0x6eec1d*/
     v30 = v8 == a1; /*0x6eec30*/
     if ( v7[328] != ecx0 ) /*0x6eec34*/
@@ -465,7 +469,7 @@ LABEL_13:
 LABEL_19:
     v5 = ++v35; /*0x6eee45*/
   }
-  while ( v35 < *(int *)&HouseClass_Player.__pad_5568[22684] ); /*0x6eee55*/
+  while ( v35 < *(int *)&HouseClass_Player[44548] ); /*0x6eee55*/
   result = v36; /*0x6eee5b*/
   if ( !v36 || v31 <= v32 ) /*0x6eee6d*/
     goto LABEL_22; /*0x6eee6d*/
@@ -556,9 +560,9 @@ LABEL_16:
   v16 = *(_DWORD *)(v11 + 56); /*0x6efdcc*/
   if ( v15 == -1 ) /*0x6efdd2*/
     goto LABEL_23; /*0x6efdd2*/
-  if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v15 < v16 ) /*0x6efddd*/
+  if ( *(_DWORD *)&g_NetworkPlayerBuffer[5960] - v15 < v16 ) /*0x6efddd*/
   {
-    v16 -= *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v15; /*0x6efddf*/
+    v16 -= *(_DWORD *)&g_NetworkPlayerBuffer[5960] - v15; /*0x6efddf*/
 LABEL_23:
     v18 = v16; /*0x6efde1*/
     goto LABEL_24; /*0x6efde1*/
@@ -568,7 +572,7 @@ LABEL_24:
   DefaultTimer = Super::GetDefaultTimer((_DWORD *)v11); /*0x6efde5*/
   if ( *(_BYTE *)(v11 + 109) ) /*0x6efdf0*/
   {
-    if ( 1.0 - *(float *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3440) < (double)v18 / (double)DefaultTimer ) /*0x6efe1c*/
+    if ( 1.0 - *(float *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 3440) < (double)v18 / (double)DefaultTimer ) /*0x6efe1c*/
       *((_BYTE *)v17 + 128) = 1; /*0x6efe25*/
   }
   else
@@ -638,11 +642,11 @@ char globalHelper_0E01C0(int a1, int a2, int aP1, IUnknown * aP3)
     char *v5;
     int *v6;
     v4 = 0;
-    if ( *(int *)&HouseClass_Player.__pad_5568[22996] <= 0 )
+    if ( *(int *)&HouseClass_Player[44860] <= 0 )
     return 1;
     do
   {
-    v5 = *(char **)(*(int *)&HouseClass_Player.__pad_5568[22984] + 4 * v4);
+    v5 = *(char **)(*(int *)&HouseClass_Player[44848] + 4 * v4);
     if ( (*(int (__thiscall **)(char *))(*(int *)(v5) + 44))(v5) != 6 )
     {
     if ( v5[144] )
@@ -662,7 +666,7 @@ char globalHelper_0E01C0(int a1, int a2, int aP1, IUnknown * aP3)
     }
     ++v4;
   }
-    while ( v4 < *(int *)&HouseClass_Player.__pad_5568[22996] );
+    while ( v4 < *(int *)&HouseClass_Player[44860] );
     return 1;
 }
 }
@@ -781,8 +785,8 @@ namespace gamemd {
 char globalHelper_0E2C20(int a1, int a2, int a3, IUnknown * aP3)
 {
 {
-    LayerClass::ClearFactoryCellAssignments(&DataGlobal_87C374.__pad_14B0[8132]);
-    MapClass::MarkForRedraw(&DataGlobal_87C374.__pad_14B0[8132], 1);
+    LayerClass::ClearFactoryCellAssignments(&DataGlobal_87C374[13428]);
+    MapClass::MarkForRedraw(&DataGlobal_87C374[13428], 1);
     return 1;
 }
 }

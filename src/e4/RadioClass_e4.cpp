@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x65A750
 namespace ra2 {
@@ -130,7 +133,7 @@ LABEL_8:
         if ( (int)v8 > 0 ) /*0x65ac18*/
         {
           do /*0x65ac33*/
-            ObjectPtr::RegisterForTracking((int)&g_OverlayTypeConfig.__pad_14B0[13416], (int *)v3[1].attachedBomb + v9++); /*0x65ac29*/
+            ObjectPtr::RegisterForTracking((int)&g_OverlayTypeConfig[18712], (int *)v3[1].attachedBomb + v9++); /*0x65ac29*/
           while ( v9 < (int)aP2 ); /*0x65ac33*/
         }
         return 0; /*0x65ac35*/

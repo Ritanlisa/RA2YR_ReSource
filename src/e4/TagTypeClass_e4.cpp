@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x6E5B60
 namespace gamemd {
@@ -36,28 +38,28 @@ char *__thiscall TagTypeClass::Construct(char *this, ObjectClass *aP1)
     qmemcpy(this + 100, Destination, 0x30u); /*0x6e5bdc*/
     this->q094 = v7; /*0x6e5bde*/
   }
-  this->q098 = *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6140]; /*0x6e5be6*/
-  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[6140] < *(int *)&g_OverlayTypeConfig.__pad_579C[6132] /*0x6e5c1e*/
-    || (g_OverlayTypeConfig.__pad_579C[6137] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6132])
-    && *(int *)&g_OverlayTypeConfig.__pad_579C[6144] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6124] + 8))(
-         &g_OverlayTypeConfig.__pad_579C[6124],
-         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6132] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6144],
+  this->q098 = *(_DWORD *)&g_OverlayTypeConfig[28568]; /*0x6e5be6*/
+  if ( *(int *)&g_OverlayTypeConfig[28568] < *(int *)&g_OverlayTypeConfig[28560] /*0x6e5c1e*/
+    || (g_OverlayTypeConfig[28565] || !*(_DWORD *)&g_OverlayTypeConfig[28560])
+    && *(int *)&g_OverlayTypeConfig[28572] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig[28552] + 8))(
+         &g_OverlayTypeConfig[28552],
+         *(_DWORD *)&g_OverlayTypeConfig[28560] + *(_DWORD *)&g_OverlayTypeConfig[28572],
          0) )
   {
-    v3 = (AbstractTypeClass *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6140])++; /*0x6e5c2b*/
-    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6128] + 4 * (_DWORD)v3) = this; /*0x6e5c3a*/
+    v3 = (AbstractTypeClass *)(*(_DWORD *)&g_OverlayTypeConfig[28568])++; /*0x6e5c2b*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[28556] + 4 * (_DWORD)v3) = this; /*0x6e5c3a*/
   }
-  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[9964] < *(int *)&g_OverlayTypeConfig.__pad_579C[9956] /*0x6e5c71*/
-    || (g_OverlayTypeConfig.__pad_579C[9961] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956])
-    && *(int *)&g_OverlayTypeConfig.__pad_579C[9968] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9948] + 8))(
-         &g_OverlayTypeConfig.__pad_579C[9948],
-         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9968],
+  if ( *(int *)&g_OverlayTypeConfig[32392] < *(int *)&g_OverlayTypeConfig[32384] /*0x6e5c71*/
+    || (g_OverlayTypeConfig[32389] || !*(_DWORD *)&g_OverlayTypeConfig[32384])
+    && *(int *)&g_OverlayTypeConfig[32396] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig[32376] + 8))(
+         &g_OverlayTypeConfig[32376],
+         *(_DWORD *)&g_OverlayTypeConfig[32384] + *(_DWORD *)&g_OverlayTypeConfig[32396],
          0) )
   {
-    v4 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9964])++; /*0x6e5c7e*/
-    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952] + 4 * v4) = this; /*0x6e5c8d*/
+    v4 = (*(_DWORD *)&g_OverlayTypeConfig[32392])++; /*0x6e5c7e*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[32380] + 4 * v4) = this; /*0x6e5c8d*/
   }
   return this; /*0x6e5c92*/
 }
@@ -131,13 +133,13 @@ int __thiscall sub_6E5CA0(int this)
     while ( v7 < g_AnimManager ); /*0x6e5d77*/
   }
   v10 = this; /*0x6e5d89*/
-  v8 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0E780] + 16))(&MEMORY[0xB0E780], &v10); /*0x6e5d8d*/
+  v8 = (*(int (__thiscall **)(int *, int *))(DataGlobal_B0E780 + 16))(&DataGlobal_B0E780, &v10); /*0x6e5d8d*/
   if ( v8 != -1 && v8 < g_MultiplayerCleanup && v8 < --g_MultiplayerCleanup ) /*0x6e5da8*/
   {
     do /*0x6e5dc0*/
     {
       ++v8; /*0x6e5db0*/
-      *((_DWORD *)MEMORY[0xB0E784] + v8 - 1) = *((_DWORD *)MEMORY[0xB0E784] + v8); /*0x6e5db4*/
+      *((_DWORD *)DataGlobal_B0E784 + v8 - 1) = *((_DWORD *)DataGlobal_B0E784 + v8); /*0x6e5db4*/
     }
     while ( v8 < g_MultiplayerCleanup ); /*0x6e5dc0*/
   }
@@ -182,15 +184,15 @@ char __thiscall TagTypeClass::_vt25(int this, unsigned __int8 ***a2)
   INIClass::ResetSection(a2); /*0x6e6093*/
   if ( !INIClass::GetString( /*0x6e60b4*/
           a2,
-          (unsigned __int8 *)MEMORY[0x842C3C],
+          (unsigned __int8 *)DataGlobal_842C3C,
           (unsigned __int8 *)(this + 36),
           &g_INI_DefaultBuffer,
           String,
           128) )
     return 0; /*0x6e6151*/
-  strtok(String, MEMORY[0x817F70]); /*0x6e60cb*/
+  strtok(String, Delimiter); /*0x6e60cb*/
   this->q09C = atoi(String); /*0x6e60e1*/
-  v3 = strtok(0, MEMORY[0x817F70]); /*0x6e60e7*/
+  v3 = strtok(0, Delimiter); /*0x6e60e7*/
   if ( v3 ) /*0x6e60f1*/
   {
     strncpy(Destination, v3, 0x30u); /*0x6e6101*/
@@ -205,7 +207,7 @@ char __thiscall TagTypeClass::_vt25(int this, unsigned __int8 ***a2)
     qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x6e6123*/
     this->q094 = v7; /*0x6e6125*/
   }
-  v4 = strtok(0, MEMORY[0x817F70]); /*0x6e612d*/
+  v4 = strtok(0, Delimiter); /*0x6e612d*/
   this->q0A0 = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
   return 1; /*0x6e6143*/
 }
@@ -224,10 +226,10 @@ char __thiscall TagTypeClass::_vt26(int this, char *a2)
 
   v3 = this->q0A0; /*0x6e6169*/
   if ( v3 ) /*0x6e6171*/
-    wsprintfA(Source, MEMORY[0x842CCC], this->q09C, (const char *)(this + 100), (const char *)(v3 + 36)); /*0x6e61b4*/
+    wsprintfA(Source, DataGlobal_842CCC, this->q09C, (const char *)(this + 100), (const char *)(v3 + 36)); /*0x6e61b4*/
   else
-    wsprintfA(Source, MEMORY[0x842CD8], (const char *)(this + 100)); /*0x6e6181*/
-  INIClass::SetString(a2, (unsigned __int8 *)MEMORY[0x842C3C], (char *)(this + 36), Source); /*0x6e6199*/
+    wsprintfA(Source, DataGlobal_842CD8, (const char *)(this + 100)); /*0x6e6181*/
+  INIClass::SetString(a2, (unsigned __int8 *)DataGlobal_842C3C, (char *)(this + 36), Source); /*0x6e6199*/
   return 1; /*0x6e61db*/
 }
 }
@@ -246,7 +248,7 @@ char *__thiscall TagTypeClass::FindOrCreate(ObjectClass *this)
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6e632c*/
     return 0; /*0x6e638f*/
   v2 = 0; /*0x6e633d*/
-  if ( *(int *)&stru_B05488.__pad_579C[15212] <= 0 ) /*0x6e6341*/
+  if ( *(int *)&stru_B05488[37640] <= 0 ) /*0x6e6341*/
   {
 LABEL_6:
     v3 = (char *)__2_YAPAXI_Z(0xA4u); /*0x6e6366*/
@@ -254,12 +256,12 @@ LABEL_6:
       return TagTypeClass::Construct(v3, this); /*0x6e6381*/
     return 0; /*0x6e6375*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15200] + 4 * v2) + 36), this) ) /*0x6e635a*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_B05488[37628] + 4 * v2) + 36), this) ) /*0x6e635a*/
   {
-    if ( ++v2 >= *(int *)&stru_B05488.__pad_579C[15212] ) /*0x6e6364*/
+    if ( ++v2 >= *(int *)&stru_B05488[37640] ) /*0x6e6364*/
       goto LABEL_6; /*0x6e6364*/
   }
-  return *(char **)(*(_DWORD *)&stru_B05488.__pad_579C[15200] + 4 * v2); /*0x6e637f*/
+  return *(char **)(*(_DWORD *)&stru_B05488[37628] + 4 * v2); /*0x6e637f*/
 }
 }
 } // namespace gamemd
@@ -351,7 +353,7 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TagTypeClass;
     *(int *)&aP0->__pad_0[12] = &vt_TagTypeClass;
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[8]);
     return 0;
   }
     return result;

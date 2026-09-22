@@ -2,6 +2,13 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Options_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x4F11B0
 namespace gamemd {
@@ -61,7 +68,7 @@ int __stdcall Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND
         v5 = HIWORD(a3); /*0x4f1232*/
         if ( a4 == GetDlgItem(hDlg, 1321) ) /*0x4f1239*/
         {
-          v6 = *(wchar_t **)&g_INI_Key_Grey.__pad_0[4 * v5 + 8]; /*0x4f123b*/
+          v6 = *(wchar_t **)&g_INI_Key_Grey[0][4 * v5 + 8]; /*0x4f123b*/
           DlgItem = GetDlgItem(hDlg, 1649); /*0x4f1247*/
           goto LABEL_11; /*0x4f1247*/
         }
@@ -84,17 +91,17 @@ LABEL_11:
     }
     v10 = HIWORD(a3); /*0x4f12a8*/
     WindowLongA = (_DWORD *)GetWindowLongA(hDlg, 8); /*0x4f12b1*/
-    if ( (HouseClass_Player.__pad_5568[23364] & 1) == 0 ) /*0x4f12be*/
+    if ( (HouseClass_Player[45228] & 1) == 0 ) /*0x4f12be*/
     {
-      HouseClass_Player.__pad_5568[23364] |= 1u; /*0x4f12ca*/
-      *(_DWORD *)&HouseClass_Player.__pad_5568[23420] = Timer::GetTicks(); /*0x4f12da*/
-      *(_DWORD *)&HouseClass_Player.__pad_5568[23428] = 0; /*0x4f12df*/
+      HouseClass_Player[45228] |= 1u; /*0x4f12ca*/
+      *(_DWORD *)&HouseClass_Player[45284] = Timer::GetTicks(); /*0x4f12da*/
+      *(_DWORD *)&HouseClass_Player[45292] = 0; /*0x4f12df*/
       atexit(nullsub_14); /*0x4f12e9*/
     }
-    if ( (HouseClass_Player.__pad_5568[23364] & 2) == 0 ) /*0x4f12f8*/
+    if ( (HouseClass_Player[45228] & 2) == 0 ) /*0x4f12f8*/
     {
-      HouseClass_Player.__pad_5568[23364] |= 2u; /*0x4f1303*/
-      Timer::Init((DWORD *)&HouseClass_Player.__pad_5568[23436], 0); /*0x4f1308*/
+      HouseClass_Player[45228] |= 2u; /*0x4f1303*/
+      Timer::Init((DWORD *)&HouseClass_Player[45300], 0); /*0x4f1308*/
       atexit(nullsub_13); /*0x4f1312*/
     }
     if ( (unsigned __int16)a3 <= 0x521u ) /*0x4f1326*/
@@ -103,7 +110,7 @@ LABEL_11:
       {
         if ( !v10 ) /*0x4f14dc*/
         {
-          *(_DWORD *)&HouseClass_Player.__pad_5568[23276] = 5; /*0x4f14e2*/
+          *(_DWORD *)&HouseClass_Player[45140] = 5; /*0x4f14e2*/
           *WindowLongA = 1; /*0x4f14ed*/
           return 0; /*0x4f14ff*/
         }
@@ -151,7 +158,7 @@ LABEL_39:
         }
         if ( v10 ) /*0x4f13bf*/
           return 0; /*0x4f13bf*/
-        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] && *(_DWORD *)&HouseClass_Player.__pad_5568[8068] != 5 ) /*0x4f13d1*/
+        if ( *(_DWORD *)&HouseClass_Player[29932] && *(_DWORD *)&HouseClass_Player[29932] != 5 ) /*0x4f13d1*/
         {
           v15 = EventClass::AddEvent(v31, *(_DWORD *)(HouseClass_Player.field_0 + 48), 0x1Du); /*0x4f13e5*/
           OptionQueue::PushEntry(&Networking_LastEventIndex, (IUnknown *)v15); /*0x4f13f0*/
@@ -160,17 +167,17 @@ LABEL_39:
         }
         v12 = (void (__stdcall *)(HWND, int))ShowWindow; /*0x4f140b*/
         ShowWindow(hDlg, 0); /*0x4f1414*/
-        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] ) /*0x4f141d*/
+        if ( *(_DWORD *)&HouseClass_Player[29932] ) /*0x4f141d*/
           swprintf( /*0x4f1455*/
             (wchar_t *const)Buffer,
             (const size_t)&off_8240B4,
-            (const wchar_t *const)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 4960),
+            (const wchar_t *const)(*(_DWORD *)&HouseClass_Player[29924] + 4960),
             v25);
         else
           swprintf( /*0x4f1439*/
             (wchar_t *const)Buffer,
             (const size_t)&off_8240B4,
-            (const wchar_t *const)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 5082),
+            (const wchar_t *const)(*(_DWORD *)&HouseClass_Player[29924] + 5082),
             v25);
         v16 = LoadOptions::LoadOptions(v28); /*0x4f1469*/
         ShowSaveLoadDialog((int)v16, Buffer); /*0x4f1470*/
@@ -184,10 +191,10 @@ LABEL_39:
     {
       if ( !v10 ) /*0x4f16c2*/
       {
-        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] != 4 /*0x4f16de*/
-          || (*(_DWORD *)&HouseClass_Player.__pad_5568[23276] = 2, !dword_B779C4) )
+        if ( *(_DWORD *)&HouseClass_Player[29932] != 4 /*0x4f16de*/
+          || (*(_DWORD *)&HouseClass_Player[45140] = 2, !dword_B779C4) )
         {
-          *(_DWORD *)&HouseClass_Player.__pad_5568[23276] = 3; /*0x4f16e0*/
+          *(_DWORD *)&HouseClass_Player[45140] = 3; /*0x4f16e0*/
         }
         *WindowLongA = 2; /*0x4f16ea*/
       }
@@ -195,24 +202,24 @@ LABEL_39:
     }
     if ( (unsigned __int16)a3 != 1653 && (unsigned __int16)a3 != 1670 || v10 ) /*0x4f1521*/
       return 0; /*0x4f16f1*/
-    if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 && !*(_DWORD *)&HouseClass_Player.__pad_5568[8836] ) /*0x4f153b*/
+    if ( *(_DWORD *)&HouseClass_Player[29932] == 4 && !*(_DWORD *)&HouseClass_Player[30700] ) /*0x4f153b*/
     {
       eax48 = GetDlgItem(hDlg, 1007); /*0x4f154d*/
       if ( eax48 ) /*0x4f1557*/
       {
         v19 = (IUnknown *)(3 - SendMessageA(eax48, 0x400u, 0, 0)); /*0x4f156e*/
-        if ( v19 != *(IUnknown **)&HouseClass_Player.__pad_5568[18664] ) /*0x4f1577*/
+        if ( v19 != *(IUnknown **)&HouseClass_Player[40528] ) /*0x4f1577*/
         {
-          if ( Timer::GetRemainingMs((signed int *)&HouseClass_Player.__pad_5568[23436]) ) /*0x4f157e*/
+          if ( Timer::GetRemainingMs((signed int *)&HouseClass_Player[45300]) ) /*0x4f157e*/
           {
             Debug::Log(); /*0x4f15eb*/
           }
           else
           {
             Timer::Init(v26, 0x384u); /*0x4f1590*/
-            *(_DWORD *)&HouseClass_Player.__pad_5568[23436] = v26[0]; /*0x4f15a4*/
-            *(_DWORD *)&HouseClass_Player.__pad_5568[23440] = v26[1]; /*0x4f15b0*/
-            *(_DWORD *)&HouseClass_Player.__pad_5568[23444] = v26[2]; /*0x4f15b6*/
+            *(_DWORD *)&HouseClass_Player[45300] = v26[0]; /*0x4f15a4*/
+            *(_DWORD *)&HouseClass_Player[45304] = v26[1]; /*0x4f15b0*/
+            *(_DWORD *)&HouseClass_Player[45308] = v26[2]; /*0x4f15b6*/
             v21 = EventClass::Add2(v33, *(AnimClass **)(HouseClass_Player.field_0 + 48), 0x24u, v19); /*0x4f15c6*/
             OptionQueue::PushEntry(&Networking_LastEventIndex, (IUnknown *)v21); /*0x4f15d1*/
             Debug::Log(); /*0x4f15dc*/
@@ -223,14 +230,14 @@ LABEL_39:
       if ( eax53 ) /*0x4f15fd*/
       {
         v22 = (AnimClass *)(6 - SendMessageA(eax53, 0x400u, 0, 0)); /*0x4f1614*/
-        if ( *(AnimClass **)&HouseClass_Player.__pad_5568[22700] != v22 ) /*0x4f161d*/
+        if ( *(AnimClass **)&HouseClass_Player[44564] != v22 ) /*0x4f161d*/
         {
-          if ( !Timer::GetRemainingMs((signed int *)&HouseClass_Player.__pad_5568[23420]) ) /*0x4f1628*/
+          if ( !Timer::GetRemainingMs((signed int *)&HouseClass_Player[45284]) ) /*0x4f1628*/
           {
             Timer::Init(v27, 0x384u); /*0x4f163a*/
-            *(_DWORD *)&HouseClass_Player.__pad_5568[23420] = v27[0]; /*0x4f164e*/
-            *(_DWORD *)&HouseClass_Player.__pad_5568[23424] = v27[1]; /*0x4f1658*/
-            *(_DWORD *)&HouseClass_Player.__pad_5568[23428] = v27[2]; /*0x4f165e*/
+            *(_DWORD *)&HouseClass_Player[45284] = v27[0]; /*0x4f164e*/
+            *(_DWORD *)&HouseClass_Player[45288] = v27[1]; /*0x4f1658*/
+            *(_DWORD *)&HouseClass_Player[45292] = v27[2]; /*0x4f165e*/
             v24 = EventClass::Add2(v32, *(AnimClass **)(HouseClass_Player.field_0 + 48), 0xDu, (IUnknown *)v22); /*0x4f166f*/
             OptionQueue::PushEntry(&Networking_LastEventIndex, (IUnknown *)v24); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
@@ -291,33 +298,33 @@ void __thiscall Options::Screen_Save(HWND this)
     if ( g_lParam != v3 ) /*0x55fad9*/
     {
       g_lParam = v3; /*0x55fae0*/
-      TacticalClass::Initialize(&MEMORY[0x87F7E8]); /*0x55fae5*/
+      TacticalClass::Initialize(&DataGlobal_87F7E8); /*0x55fae5*/
     }
   }
   v4 = GetDlgItem(this, 1295); /*0x55faf0*/
   if ( v4 ) /*0x55faf4*/
-    MEMORY[0xA8EB64] = SendMessageA(v4, 0x400u, 0, 0); /*0x55fb02*/
+    DataGlobal_A8EB64 = SendMessageA(v4, 0x400u, 0, 0); /*0x55fb02*/
   v5 = GetDlgItem(this, 1537); /*0x55fb0d*/
   if ( v5 ) /*0x55fb11*/
   {
-    MEMORY[0xA8EB7E] = SendMessageA(v5, 0xF0u, 0, 0) == 1; /*0x55fb25*/
-    SetGlobalFlag(MEMORY[0xA8EB7E]); /*0x55fb2b*/
+    DataGlobal_A8EB7E = SendMessageA(v5, 0xF0u, 0, 0) == 1; /*0x55fb25*/
+    SetGlobalFlag(DataGlobal_A8EB7E); /*0x55fb2b*/
   }
   v6 = GetDlgItem(this, 1540); /*0x55fb36*/
   if ( v6 ) /*0x55fb3a*/
-    MEMORY[0xA8EB7F] = SendMessageA(v6, 0xF0u, 0, 0) == 1; /*0x55fb4e*/
+    MCV_DeployModeEnabled = SendMessageA(v6, 0xF0u, 0, 0) == 1; /*0x55fb4e*/
   v7 = GetDlgItem(this, 1538); /*0x55fb59*/
   if ( v7 ) /*0x55fb5d*/
-    MEMORY[0xA8EB80] = SendMessageA(v7, 0xF0u, 0, 0) == 1; /*0x55fb71*/
+    DataGlobal_A8EB80 = SendMessageA(v7, 0xF0u, 0, 0) == 1; /*0x55fb71*/
   v8 = GetDlgItem(this, 1322); /*0x55fb7d*/
   if ( v8 ) /*0x55fb81*/
-    MEMORY[0xA8EB70] = 6 - SendMessageA(v8, 0x400u, 0, 0); /*0x55fb96*/
+    DataGlobal_A8EB70 = 6 - SendMessageA(v8, 0x400u, 0, 0); /*0x55fb96*/
   v9 = GetDlgItem(this, 1327); /*0x55fba2*/
   if ( v9 ) /*0x55fba6*/
   {
     v13 = (double)SendMessageA(v9, 0x400u, 0, 0) * 0.1; /*0x55fbca*/
     Options::SetScoreVolume((float *)g_GameModeOptions, v13, 0); /*0x55fbcd*/
-    if ( MEMORY[0xA8EBA0] == 0.0 ) /*0x55fbe3*/
+    if ( DataGlobal_A8EBA0 == 0.0 ) /*0x55fbe3*/
     {
       v10 = dword_A83D14; /*0x55fbe5*/
       if ( dword_A83D14 == -1 ) /*0x55fbed*/
@@ -820,7 +827,7 @@ void Options::SetScoreVolume(float volume, int pad)
     v4 = volume;
     *(float *)&this->__pad_34[12] = v4;
     v5 = Math::RoundToInt(v4 * 16384.0);
-    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3872], v5);
+    EndBufferMixer(*(int **)&DataGlobal_87C374[9168], v5);
     v6 = Math::RoundToInt(*(float *)&this->__pad_34[12] * 255.0);
     GameSettings::SetScoreVolume(&g_BuildingTypeClass_Count, v6);
     Debug::Log();
@@ -841,9 +848,9 @@ void Options::SetSoundVolume(float volume, int pad)
     v3 = volume;
     *(float *)&this->__pad_34[4] = v3;
     v4 = Math::RoundToInt(v3 * 16384.0);
-    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3876], v4);
+    EndBufferMixer(*(int **)&DataGlobal_87C374[9172], v4);
     if ( (char)pad )
-    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 1808), 0x2000, 1.0, 0);
+    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374[44652] + 1808), 0x2000, 1.0, 0);
     Debug::Log();
 }
 }
@@ -865,9 +872,9 @@ void Options::SetVoiceVolume(float volume, int pad)
     v5 = Math::RoundToInt(v4 * 255.0);
     ThemeClass::GetField(v5);
     v6 = Math::RoundToInt(*(float *)&this->__pad_34[8] * 16384.0);
-    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3868], v6);
+    EndBufferMixer(*(int **)&DataGlobal_87C374[9164], v6);
     if ( (char)pad )
-    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 1808), 0x2000, *(float *)&this->__pad_34[8], 0);
+    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374[44652] + 1808), 0x2000, *(float *)&this->__pad_34[8], 0);
     Debug::Log();
 }
 }

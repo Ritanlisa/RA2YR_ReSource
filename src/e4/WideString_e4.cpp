@@ -102,8 +102,8 @@ char __thiscall WideString::Replace(void **this, CampaignScore *aP1, wchar_t *St
   v5 = 0; /*0x7b73fa*/
   if ( !*this ) /*0x7b73f8*/
   {
-    v4 = (const wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472]; /*0x7b7404*/
-    if ( &MEMORY[0x87F8E4] == (MouseClass *)-32336 ) /*0x7b740b*/
+    v4 = (const wchar_t *)&DataGlobal_87F8E4[32336]; /*0x7b7404*/
+    if ( &DataGlobal_87F8E4 == (MouseClass *)-32336 ) /*0x7b740b*/
       goto LABEL_33; /*0x7b740b*/
   }
   while ( *v4 ) /*0x7b7416*/
@@ -171,7 +171,7 @@ char __thiscall WideString::Replace(void **this, CampaignScore *aP1, wchar_t *St
   {
     v3 = (GameSetup *)this; /*0x7b7583*/
 LABEL_33:
-    v16 = (CampaignScore *)&MEMORY[0x87F8E4].__pad_5568[10472]; /*0x7b7587*/
+    v16 = (CampaignScore *)&DataGlobal_87F8E4[32336]; /*0x7b7587*/
     goto LABEL_35; /*0x7b758c*/
   }
   v3 = (GameSetup *)this; /*0x7b758e*/
@@ -410,7 +410,7 @@ wchar_t ** WideString::Append(CampaignScore * aP1)
     size_t v5;
     wchar_t *v6;
     v2 = *(const wchar_t **)aP1->__pad_0;
-    if ( *(int *)aP1->__pad_0 || (v2 = (const wchar_t *)&DataGlobal_87F8E4.__pad_5568[10472], &DataGlobal_87F8E4 != (MouseClass *)-32336) )
+    if ( *(int *)aP1->__pad_0 || (v2 = (const wchar_t *)&DataGlobal_87F8E4[32336], &DataGlobal_87F8E4 != (MouseClass *)-32336) )
   {
     v4 = (CampaignScore *)*(void**)this;
     v5 = wcslen(v2) + 1;
@@ -501,7 +501,7 @@ wchar_t ** WideString::ConcatAlloc(wchar_t ** a1, ObjectClass * aP2)
     wcscpy(v4, *(void**)this);
   }
     v6 = *(const wchar_t **)aP2->__pad_0;
-    if ( *(int *)aP2->__pad_0 || (v6 = (const wchar_t *)&DataGlobal_87F8E4.__pad_5568[10472], &DataGlobal_87F8E4 != (MouseClass *)-32336) )
+    if ( *(int *)aP2->__pad_0 || (v6 = (const wchar_t *)&DataGlobal_87F8E4[32336], &DataGlobal_87F8E4 != (MouseClass *)-32336) )
   {
     v7 = (CCINIClass *)v4;
     v8 = wcslen(v6) + 1;
@@ -612,7 +612,7 @@ CampaignScore * WideString::GetOrEmpty()
     CampaignScore *result;
     result = (CampaignScore *)*(void**)this;
     if ( !*(void**)this )
-    return (CampaignScore *)&DataGlobal_87C374.__pad_579C[23588];
+    return (CampaignScore *)&DataGlobal_87C374[46016];
     return result;
 }
 }
@@ -626,7 +626,7 @@ CampaignScore * WideString::GetOrEmpty_Alt()
     CampaignScore *result;
     result = (CampaignScore *)*(void**)this;
     if ( !*(void**)this )
-    return (CampaignScore *)&DataGlobal_87C374.__pad_579C[23588];
+    return (CampaignScore *)&DataGlobal_87C374[46016];
     return result;
 }
 }

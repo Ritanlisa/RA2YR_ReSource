@@ -54,9 +54,9 @@ unsigned int __stdcall ListBox_EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wPar
 
   v4 = 0; /*0x6141a2*/
   lpPrevWndFunc = 0; /*0x6141a7*/
-  if ( MEMORY[0xAC1B4C] ) /*0x6141ab*/
+  if ( g_DialogHashMap_Grow ) /*0x6141ab*/
   {
-    v5 = *((_DWORD *)MEMORY[0xAC1B48] + (MEMORY[0xAC1B60](&hWnd) & ((1 << MEMORY[0xAC1B54]) - 1))); /*0x6141cf*/
+    v5 = *((_DWORD *)g_DialogHashMap_Entries + (g_DialogHashMap_Insert(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1))); /*0x6141cf*/
     if ( v5 ) /*0x6141d4*/
     {
       while ( *(HWND *)v5 != hWnd ) /*0x6141df*/
@@ -75,9 +75,9 @@ unsigned int __stdcall ListBox_EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wPar
   }
 LABEL_8:
   v40 = hWnd; /*0x6141fb*/
-  if ( !MEMORY[0xAC1B04] ) /*0x61420d*/
+  if ( !g_DialogHashMap_Count ) /*0x61420d*/
     return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x61420d*/
-  v7 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v40) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x61422e*/
+  v7 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v40) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x61422e*/
   if ( !v7 ) /*0x614233*/
     return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614233*/
   while ( *v7 != v40 ) /*0x61423b*/
@@ -128,7 +128,7 @@ LABEL_47:
 LABEL_70:
     v29 = GetParent(hWnd); /*0x6147ee*/
     GetClassNameA(v29, ClassName, 32); /*0x614806*/
-    if ( !strcmp(ClassName, MEMORY[0x83370C]) ) /*0x61481d*/
+    if ( !strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x61481d*/
     {
       v30 = GetParent(hWnd); /*0x614858*/
       InvalidateRect(v30, 0, 0); /*0x61485b*/
@@ -192,7 +192,7 @@ LABEL_70:
         ScreenDialogToClient(hWnd, &v42); /*0x6145d5*/
         v24 = GetParent(hWnd); /*0x6145e9*/
         GetClassNameA(v24, ClassName, 16); /*0x6145f0*/
-        v25 = strcmp(ClassName, MEMORY[0x83370C]) == 0; /*0x61462e*/
+        v25 = strcmp(ClassName, g_INI_Key_ComboBox) == 0; /*0x61462e*/
         if ( v12 == 15 && GetUpdateRect(hWnd, &v39, 0) ) /*0x614645*/
         {
           left = v42.left; /*0x61464f*/
@@ -225,10 +225,10 @@ LABEL_70:
         DrawTextRendererMultiline( /*0x614760*/
           (_DWORD *)DSurface_Alternate,
           &v44.left,
-          &MEMORY[0xAC1E04],
+          &DataGlobal_AC1E04,
           v41,
           (_DWORD *)v8[25],
-          MEMORY[0xAC18A4],
+          yTop,
           v8 + 17,
           v8[14],
           (v28 >> 5) & 1,

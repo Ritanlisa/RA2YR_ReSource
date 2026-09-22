@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x52FEC0
 namespace gamemd {
@@ -241,10 +244,10 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
       break; /*0x68f307*/
     if ( v75 > 0 && v76 > 0 ) /*0x68f31b*/
     {
-      (*(void (__thiscall **)(_DWORD, int *, _DWORD, int *, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 8))( /*0x68f33a*/
-        *(_DWORD *)&stru_87C374.__pad_579C[22524],
+      (*(void (__thiscall **)(_DWORD, int *, _DWORD, int *, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] + 8))( /*0x68f33a*/
+        *(_DWORD *)&stru_87C374[44952],
         &v73,
-        *(_DWORD *)&stru_87C374.__pad_579C[22528],
+        *(_DWORD *)&stru_87C374[44956],
         &v73,
         0,
         1);
@@ -253,7 +256,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     }
     if ( v18 > v19 ) /*0x68f347*/
     {
-      v59 = *(_DWORD *)&stru_87C374.__pad_579C[22524]; /*0x68f414*/
+      v59 = *(_DWORD *)&stru_87C374[44952]; /*0x68f414*/
       swprintf(v84, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v17, v53); /*0x68f418*/
       v28 = (_DWORD *)this->q003; /*0x68f41d*/
       v29 = (CampaignScore *)(v7 - v28[2] - v66); /*0x68f430*/
@@ -279,16 +282,16 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
       v61 = v58; /*0x68f361*/
       v60 = (wchar_t *)v6; /*0x68f36c*/
       var24C = 15; /*0x68f370*/
-      (*(void (__thiscall **)(_DWORD, wchar_t **, int, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22524] /*0x68f37f*/
+      (*(void (__thiscall **)(_DWORD, wchar_t **, int, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] /*0x68f37f*/
                                                                                + 8))(
-        *(_DWORD *)&stru_87C374.__pad_579C[22524],
+        *(_DWORD *)&stru_87C374[44952],
         &v60,
         v21,
         &v60,
         0,
         1);
       v22 = (CampaignScore *)((int)v80 / v65); /*0x68f38d*/
-      v59 = *(_DWORD *)&stru_87C374.__pad_579C[22524]; /*0x68f391*/
+      v59 = *(_DWORD *)&stru_87C374[44952]; /*0x68f391*/
       if ( (int)v80 / v65 >= (int)v17 ) /*0x68f397*/
         v22 = v17; /*0x68f399*/
       swprintf(Buffer, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v22, v53); /*0x68f3a9*/
@@ -311,17 +314,17 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
       v76 = v59; /*0x68f3fa*/
     }
     if ( v71 > 0 && v72 > 0 ) /*0x68f47f*/
-      (*(void (__thiscall **)(_DWORD, wchar_t **, _DWORD, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22524] /*0x68f49d*/
+      (*(void (__thiscall **)(_DWORD, wchar_t **, _DWORD, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] /*0x68f49d*/
                                                                                   + 8))(
-        *(_DWORD *)&stru_87C374.__pad_579C[22524],
+        *(_DWORD *)&stru_87C374[44952],
         &v69,
-        *(_DWORD *)&stru_87C374.__pad_579C[22528],
+        *(_DWORD *)&stru_87C374[44956],
         &v69,
         0,
         1);
     if ( v68 > v64 ) /*0x68f4aa*/
     {
-      v59 = *(_DWORD *)&stru_87C374.__pad_579C[22524]; /*0x68f585*/
+      v59 = *(_DWORD *)&stru_87C374[44952]; /*0x68f585*/
       swprintf(v81, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)aP2, v54); /*0x68f589*/
       v41 = (_DWORD *)this->q003; /*0x68f58e*/
       v42 = v7 - v41[2] - v64; /*0x68f5a3*/
@@ -343,16 +346,16 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
       v60 = v62; /*0x68f4c8*/
       v61 = v58; /*0x68f4d3*/
       var24C = 15; /*0x68f4d7*/
-      (*(void (__thiscall **)(_DWORD, wchar_t **, int, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22524] /*0x68f4e6*/
+      (*(void (__thiscall **)(_DWORD, wchar_t **, int, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] /*0x68f4e6*/
                                                                                + 8))(
-        *(_DWORD *)&stru_87C374.__pad_579C[22524],
+        *(_DWORD *)&stru_87C374[44952],
         &v60,
         v33,
         &v60,
         0,
         1);
       v34 = (AnimClass *)((int)v79 / v65); /*0x68f4f4*/
-      v59 = *(_DWORD *)&stru_87C374.__pad_579C[22524]; /*0x68f4f8*/
+      v59 = *(_DWORD *)&stru_87C374[44952]; /*0x68f4f8*/
       if ( (int)v79 / v65 >= (int)aP2 ) /*0x68f505*/
         v34 = aP2; /*0x68f507*/
       swprintf(v83, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v34, v54); /*0x68f517*/
@@ -375,7 +378,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
       {
         for ( i = 0; i < this->q011; ++i ) /*0x68f5fd*/
         {
-          if ( !_strcmpi(&stru_830620.__pad_579C[34356], **(const void ***)(this->q00E + 4 * i)) ) /*0x68f60d*/
+          if ( !_strcmpi(&stru_830620[56784], **(const void ***)(this->q00E + 4 * i)) ) /*0x68f60d*/
             break; /*0x68f617*/
         }
       }
@@ -390,10 +393,10 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   }
   if ( v75 > 0 && v76 > 0 ) /*0x68f688*/
   {
-    (*(void (__thiscall **)(_DWORD, int *, _DWORD, int *, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 8))( /*0x68f6a6*/
-      *(_DWORD *)&stru_87C374.__pad_579C[22524],
+    (*(void (__thiscall **)(_DWORD, int *, _DWORD, int *, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] + 8))( /*0x68f6a6*/
+      *(_DWORD *)&stru_87C374[44952],
       &v73,
-      *(_DWORD *)&stru_87C374.__pad_579C[22528],
+      *(_DWORD *)&stru_87C374[44956],
       &v73,
       0,
       1);
@@ -404,15 +407,15 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   v63 = v19; /*0x68f6c1*/
   v60 = (wchar_t *)v6; /*0x68f6cc*/
   var24C = 15; /*0x68f6d0*/
-  (*(void (__thiscall **)(_DWORD, wchar_t **, int, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22528] /*0x68f6df*/
+  (*(void (__thiscall **)(_DWORD, wchar_t **, int, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374[44956] /*0x68f6df*/
                                                                            + 8))(
-    *(_DWORD *)&stru_87C374.__pad_579C[22528],
+    *(_DWORD *)&stru_87C374[44956],
     &v60,
     v47,
     &v60,
     0,
     1);
-  v59 = *(_DWORD *)&stru_87C374.__pad_579C[22524]; /*0x68f6f2*/
+  v59 = *(_DWORD *)&stru_87C374[44952]; /*0x68f6f2*/
   swprintf(v81, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v17, v53); /*0x68f6f6*/
   (*(void (__thiscall **)(_DWORD, int, wchar_t *, int, int, int))(*(_DWORD *)this->q003 + 12))( /*0x68f71f*/
     this->q003,
@@ -422,7 +425,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     v7 - *(_DWORD *)(this->q003 + 8) - v66,
     2);
   (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)this->q003 + 8))(this->q003, v81); /*0x68f72c*/
-  v59 = *(_DWORD *)&stru_87C374.__pad_579C[22528]; /*0x68f740*/
+  v59 = *(_DWORD *)&stru_87C374[44956]; /*0x68f740*/
   swprintf(v81, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v17, v55); /*0x68f744*/
   (*(void (__stdcall **)(int, wchar_t *, int, int, int))(*(_DWORD *)this->q003 + 12))( /*0x68f76c*/
     v59,
@@ -432,11 +435,11 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     2);
   (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)this->q003 + 8))(this->q003, v81); /*0x68f779*/
   if ( v71 > 0 && v72 > 0 ) /*0x68f78a*/
-    (*(void (__thiscall **)(_DWORD, wchar_t **, _DWORD, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22524] /*0x68f7a9*/
+    (*(void (__thiscall **)(_DWORD, wchar_t **, _DWORD, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] /*0x68f7a9*/
                                                                                 + 8))(
-      *(_DWORD *)&stru_87C374.__pad_579C[22524],
+      *(_DWORD *)&stru_87C374[44952],
       &v69,
-      *(_DWORD *)&stru_87C374.__pad_579C[22528],
+      *(_DWORD *)&stru_87C374[44956],
       &v69,
       0,
       1);
@@ -446,15 +449,15 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   v63 = v64; /*0x68f7c8*/
   v60 = v62; /*0x68f7d3*/
   var24C = 15; /*0x68f7d7*/
-  (*(void (__thiscall **)(_DWORD, wchar_t **, int, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22528] /*0x68f7e6*/
+  (*(void (__thiscall **)(_DWORD, wchar_t **, int, wchar_t **, _DWORD, int))(**(_DWORD **)&stru_87C374[44956] /*0x68f7e6*/
                                                                            + 8))(
-    *(_DWORD *)&stru_87C374.__pad_579C[22528],
+    *(_DWORD *)&stru_87C374[44956],
     &v60,
     v49,
     &v60,
     0,
     1);
-  v50 = *(ObjectClass **)&stru_87C374.__pad_579C[22524]; /*0x68f7f0*/
+  v50 = *(ObjectClass **)&stru_87C374[44952]; /*0x68f7f0*/
   swprintf(v81, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)aP2, v56); /*0x68f801*/
   (*(void (__thiscall **)(_DWORD, ObjectClass *, wchar_t *, wchar_t *, int, int))(*(_DWORD *)this->q003 + 12))( /*0x68f821*/
     this->q003,
@@ -464,7 +467,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     v7 - *(_DWORD *)(this->q003 + 8) - v64,
     2);
   (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)this->q003 + 8))(this->q003, v81); /*0x68f82e*/
-  v51 = *(ObjectClass **)&stru_87C374.__pad_579C[22528]; /*0x68f838*/
+  v51 = *(ObjectClass **)&stru_87C374[44956]; /*0x68f838*/
   swprintf(v81, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)aP2, v57); /*0x68f849*/
   (*(void (__stdcall **)(ObjectClass *, wchar_t *, wchar_t *, int, int))(*(_DWORD *)this->q003 + 12))( /*0x68f86b*/
     v51,
@@ -536,19 +539,19 @@ int __thiscall Screen::TransitionLoop(MPCooperative *this, int a2)
     {
       Event::Dispatch(); /*0x690240*/
       MessageLoop(); /*0x690245*/
-      if ( !MEMORY[0xA8EA70].__pad_310[0] )
+      if ( !g_EventManager[784] )
       {
         if ( Ticks == -1
           || ((v5 = Timer::GetTicks() - Ticks, v5 >= v16) ? (v6 = 0) : (v6 = v16 - v5),
               v16 = v6,
-              MEMORY[0xA8EA70].__pad_310[0] != 1) )
+              g_EventManager[784] != 1) )
         {
           for ( i = 0; i < (int)this->field_2C; ++i ) /*0x690292*/
           {
             v8 = *(_DWORD *)(*(_DWORD *)&this->__pad_18[8] + 4 * i); /*0x690297*/
             (*(void (__thiscall **)(int))(*(_DWORD *)v8 + 4))(v8); /*0x69029c*/
           }
-          while ( !MEMORY[0xA8EA70].__pad_310[0] ) /*0x6902ae*/
+          while ( !g_EventManager[784] ) /*0x6902ae*/
           {
             Sleep(0x1F4u); /*0x6902b5*/
             MessageLoop(); /*0x6902b7*/

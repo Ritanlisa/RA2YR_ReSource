@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/BSurface_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
 
 // 0x7B9040
 unsigned int * WWMouseClass::initSurface()

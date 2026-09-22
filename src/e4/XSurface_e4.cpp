@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
 
 // 0x7BA8C0
 int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
@@ -861,11 +863,11 @@ char __thiscall XSurface::BlitPart(XSurface *this, void **a2, XSurface *a3, void
   v6 = a3; /*0x7bbb96*/
   v8 = (*(int (__thiscall **)(XSurface *, _BYTE *))(*(_DWORD *)a3->__pad_0 + 120))(a3, v14); /*0x7bbbaa*/
   v9 = (*(int (__thiscall **)(XSurface *, _BYTE *))(*(_DWORD *)this->__pad_0 + 120))(this, v15); /*0x7bbbb3*/
-  *(_DWORD *)aP1.__pad_0 = *a2; /*0x7bbbbd*/
+  *(_DWORD *)aP1[0] = *a2; /*0x7bbbbd*/
   aP1.Width = (int)a2[1]; /*0x7bbbc4*/
   aP1.Height = (int)a2[2]; /*0x7bbbcb*/
   aP1.LockCount = (int)a2[3]; /*0x7bbbd6*/
-  *(_DWORD *)aP2.__pad_0 = *arg8; /*0x7bbbdc*/
+  *(_DWORD *)aP2[0] = *arg8; /*0x7bbbdc*/
   aP2.Width = (int)arg8[1]; /*0x7bbbe3*/
   aP2.Height = (int)arg8[2]; /*0x7bbbea*/
   aP2.LockCount = (int)arg8[3]; /*0x7bbbf6*/
@@ -915,11 +917,11 @@ char __thiscall XSurface::Blit(
   XSurface aP2; // [esp+4h] [ebp-20h] BYREF
   XSurface aP1; // [esp+14h] [ebp-10h] BYREF
 
-  *(_DWORD *)aP1.__pad_0 = *a3; /*0x7bbcfc*/
+  *(_DWORD *)aP1[0] = *a3; /*0x7bbcfc*/
   aP1.Width = (int)a3[1]; /*0x7bbd03*/
   aP1.Height = (int)a3[2]; /*0x7bbd0a*/
   aP1.LockCount = (int)a3[3]; /*0x7bbd15*/
-  *(_DWORD *)aP2.__pad_0 = *a6; /*0x7bbd1b*/
+  *(_DWORD *)aP2[0] = *a6; /*0x7bbd1b*/
   aP2.Width = a6[1]; /*0x7bbd22*/
   aP2.Height = a6[2]; /*0x7bbd29*/
   aP2.LockCount = a6[3]; /*0x7bbd39*/

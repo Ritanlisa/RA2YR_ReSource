@@ -3,6 +3,9 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Campaign_WorldDominationTour_16_e4.hpp"
 #include "e4/classes/Campaign_WorldDominationTour_24_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x765840
 namespace gamemd {

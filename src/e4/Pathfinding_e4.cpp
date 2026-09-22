@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x5A5360
 unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
@@ -141,8 +144,8 @@ _DWORD *__stdcall Pathfinding_ExpandNode(__int16 *a1, int a2)
     while ( v10 <= *v6 ); /*0x5a53fd*/
   }
   *v6 = 0; /*0x5a5404*/
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x5a5406*/
-  for ( i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); i; i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x5a5417*/
+  LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x5a5406*/
+  for ( i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); i; i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) ) /*0x5a5417*/
   {
     v80 = *(int *)(i + 36); /*0x5a541c*/
     *((_DWORD *)g_MapTileArray + 20 * (__int16)v80 + 20 * unk_89C2DC * SHIWORD(v80) + 15) = 0; /*0x5a5441*/
@@ -209,7 +212,7 @@ _DWORD *__stdcall Pathfinding_ExpandNode(__int16 *a1, int a2)
   {
     while ( v20 ) /*0x5a5565*/
     {
-      *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v20) + 14) = dword_ABC2B0; /*0x5a557c*/
+      *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v20) + 14) = dword_ABC2B0; /*0x5a557c*/
       v26 = v24[2]; /*0x5a557f*/
       if ( v24[4] < v26 /*0x5a55a2*/
         || (*((_BYTE *)v24 + 13) || !v26)
@@ -233,7 +236,7 @@ _DWORD *__stdcall Pathfinding_ExpandNode(__int16 *a1, int a2)
           && SHIWORD(v80) - (__int16)v80 < g_MapCellHeight_Value
           && v31 <= g_MapCellCount )
         {
-          v32 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v73); /*0x5a563b*/
+          v32 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v73); /*0x5a563b*/
           if ( Cell::IsEmpty(v32) && v32[17] == -1 ) /*0x5a5650*/
           {
             v33 = SHIWORD(v73); /*0x5a5656*/
@@ -330,7 +333,7 @@ _DWORD *__stdcall Pathfinding_ExpandNode(__int16 *a1, int a2)
   if ( v75 <= 100 || (v54 = v24[4], a2 = v52 * v53, a1 = (__int16 *)v54, (double)v54 * 1.6 <= (double)(v52 * v53)) ) /*0x5a5853*/
   {
     for ( j = v24[4] - 1; j >= 0; v72[14] = 0xFFFF ) /*0x5a5aa3*/
-      v72 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)(v24[1] + 4 * j--)); /*0x5a5ab6*/
+      v72 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)(v24[1] + 4 * j--)); /*0x5a5ab6*/
     if ( v24 ) /*0x5a5ac3*/
       (*(void (__thiscall **)(_DWORD *, int))*v24)(v24, 1); /*0x5a5acb*/
     return 0; /*0x5a5ad0*/
@@ -355,7 +358,7 @@ _DWORD *__stdcall Pathfinding_ExpandNode(__int16 *a1, int a2)
             && SLOWORD(v81[0]) - SWORD1(v81[0]) < g_MapCellHeight_Value
             && SWORD1(v81[0]) - SLOWORD(v81[0]) < g_MapCellHeight_Value
             && v58 <= g_MapCellCount
-            && *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v80) + 14) != dword_ABC2B0 )
+            && *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v80) + 14) != dword_ABC2B0 )
           {
             v59 = v24[4]; /*0x5a58df*/
             if ( v55 < v59 ) /*0x5a58e4*/
@@ -413,7 +416,7 @@ _DWORD *__stdcall Pathfinding_ExpandNode(__int16 *a1, int a2)
             HIWORD(a1) = WORD1(v82) + n; /*0x5a5a09*/
             LODWORD(v81[0]) = a1; /*0x5a5a21*/
             if ( !*((_BYTE *)g_MapTileArray + 80 * (__int16)(m + v82) + 80 * unk_89C2DC * (__int16)(WORD1(v82) + n) + 69) /*0x5a5a51*/
-              || *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)v81) + 14) != dword_ABC2B0 )
+              || *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)v81) + 14) != dword_ABC2B0 )
             {
               LOBYTE(a2) = 0; /*0x5a5a53*/
             }

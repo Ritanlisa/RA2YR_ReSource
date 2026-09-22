@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x420DA0
 int AlphaShapeClass::SD_vt13(int a2)
@@ -91,7 +93,7 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AlphaShapeClass;
     *(int *)&aP0->__pad_0[12] = &vt_AlphaShapeClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
     aP0[1].abstractFlags = 0;
   }
     return (int)Prefix_0->__pad_0;

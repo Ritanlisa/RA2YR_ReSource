@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x5BF450
 char AsyncIO::Shutdown()
@@ -29,10 +30,10 @@ char AsyncIO_Shutdown()
     __3_YAXPAX_Z(i); /*0x5bf498*/
     AsyncIO_Instance = 0; /*0x5bf4a0*/
   }
-  result = MEMORY[0xABF35C]; /*0x5bf4a6*/
+  result = DataGlobal_ABF35C; /*0x5bf4a6*/
   byte_B45B65 = 0; /*0x5bf4ab*/
   dword_B45B60 = 0; /*0x5bf4b3*/
-  if ( MEMORY[0xABF35C] ) /*0x5bf4b9*/
+  if ( DataGlobal_ABF35C ) /*0x5bf4b9*/
   {
     AudioTimer::DecrementAll(); /*0x5bf4bb*/
     ProcessAudioTimer(); /*0x5bf4c0*/
@@ -40,7 +41,7 @@ char AsyncIO_Shutdown()
     RequestBufferMixer((unsigned int *)g_MixerState, 0x4000); /*0x5bf4d5*/
     RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000); /*0x5bf4e5*/
     result = AudioMixer::Pump(); /*0x5bf4ea*/
-    MEMORY[0xABF35C] = 0; /*0x5bf4ef*/
+    DataGlobal_ABF35C = 0; /*0x5bf4ef*/
   }
   return result; /*0x5bf4f5*/
 }

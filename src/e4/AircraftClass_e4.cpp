@@ -1,6 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
 
 // 0x413F80
 namespace gamemd {
@@ -108,12 +115,12 @@ int __thiscall AircraftClass::FindLandingCell(_DWORD *this, int *a2, int a3)
     v7 = (_WORD *)(*(int (__thiscall **)(_DWORD *, char *))(*this + 440))(this, v20); /*0x415b3e*/
     v8 = v6 & 7; /*0x415b44*/
     v9 = 4 * v8 + 9041544; /*0x415b55*/
-    v10 = *v7 + LOWORD(MEMORY[0x89F688][v8]); /*0x415b5c*/
+    v10 = *v7 + LOWORD(Direction_X_Offsets[v8]); /*0x415b5c*/
     v11 = *a2; /*0x415b5f*/
     LOWORD(v22) = v10; /*0x415b6b*/
     HIWORD(v22) = v7[1] + *(_WORD *)(v9 + 2); /*0x415b74*/
     v18 = v22; /*0x415b83*/
-    v12 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v18); /*0x415b87*/
+    v12 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v18); /*0x415b87*/
     if ( !(*(int (__thiscall **)(int *, void *, int, int, _DWORD, int))(v11 + 428))(a2, v12, -1, -1, 0, 1) ) /*0x415b8f*/
       break; /*0x415b97*/
     ++v5; /*0x415b9d*/
@@ -133,7 +140,7 @@ int __thiscall AircraftClass::FindLandingCell(_DWORD *this, int *a2, int a3)
     return 0; /*0x415c57*/
   (*(void (__thiscall **)(int *, int, _DWORD))(*a2 + 488))(a2, 2, 0); /*0x415c05*/
   v15 = *a2; /*0x415c0b*/
-  v16 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v18); /*0x415c19*/
+  v16 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v18); /*0x415c19*/
   (*(void (__thiscall **)(int *, void *, int))(v15 + 1152))(a2, v16, 1); /*0x415c21*/
   if ( (*(int (__thiscall **)(_DWORD *, int, int *))(*this + 632))(this, 2, a2) == 1 ) /*0x415c37*/
     (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 9); /*0x415c3f*/
@@ -176,7 +183,7 @@ int __userpurge AircraftClass::DeployWithAnim@<eax>(
       {
         v14 = *(CoordStruct **)(*(_DWORD *)(a1[433] + 1840) /*0x416671*/
                               + 4
-                              * ((unsigned int)Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060]
+                              * ((unsigned int)Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924]
                                                                       + 536))
                                % *(_DWORD *)(a1[433] + 1852)));
         v15 = (CoordStruct *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*a1 + 164))(a1, v17); /*0x41667b*/
@@ -299,9 +306,9 @@ LABEL_36:
   if ( *(_BYTE *)(*(_DWORD *)&this->__pad_690[52] + 3580) && v7 == 17 ) /*0x417e90*/
   {
     a3 = *(IUnknown **)(*(int (__thiscall **)(IUnknown *, IUnknown **))(v4->field_0 + 440))(v4, &aP1); /*0x417eaa*/
-    if ( a3 != *(IUnknown **)&MEMORY[0x87F8E4].__pad_5568[20508] ) /*0x417eae*/
+    if ( a3 != *(IUnknown **)&DataGlobal_87F8E4[42372] ) /*0x417eae*/
     {
-      v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a3); /*0x417ecc*/
+      v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a3); /*0x417ecc*/
       v16 = Cell::IsBridge(v15); /*0x417ed3*/
       if ( v16 ) /*0x417eda*/
       {
@@ -344,7 +351,7 @@ int __thiscall AircraftClass::ValidateLandingCell(int this, _DWORD *a2, int a3, 
   _BYTE v11[12]; // [esp+Ch] [ebp-Ch] BYREF
 
   v7 = this->team; /*0x4196bc*/
-  if ( v7 && TechnoClass::IsWaypointHidden(v7) && !Type::CheckAmbiguity(&MEMORY[0x87F7E8], (int)a2, 1) ) /*0x4196d7*/
+  if ( v7 && TechnoClass::IsWaypointHidden(v7) && !Type::CheckAmbiguity(&DataGlobal_87F7E8, (int)a2, 1) ) /*0x4196d7*/
     return 0; /*0x4196d7*/
   v8 = a2[57]; /*0x4196e4*/
   if ( (!v8 /*0x41974d*/
@@ -669,25 +676,25 @@ int __stdcall AircraftClass::LoadFromStream(_DWORD *a0, FootClass *aP1)
   v2 = (FootClass *)a0; /*0x41b432*/
   v3 = a0 + 1; /*0x41b43a*/
   a0 = (_DWORD *)(*(int (__stdcall **)(_DWORD *))(a0[1] + 16))(a0 + 1); /*0x41b44b*/
-  v4 = BuildingTypeClass::Dequeue((char **)&stru_B05488.__pad_579C[15388], (BuildingClass *)&a0); /*0x41b44f*/
+  v4 = BuildingTypeClass::Dequeue((char **)&stru_B05488[37816], (BuildingClass *)&a0); /*0x41b44f*/
   if ( v4 ) /*0x41b456*/
   {
-    v5 = (int)(v4 - *(_DWORD *)&stru_B05488.__pad_579C[15388]) >> 3; /*0x41b45e*/
+    v5 = (int)(v4 - *(_DWORD *)&stru_B05488[37816]) >> 3; /*0x41b45e*/
     if ( v5 != -1 ) /*0x41b464*/
     {
       v6 = v5 + 1; /*0x41b466*/
-      for ( i = *(IUnknown **)&stru_B05488.__pad_579C[15392]; /*0x41b470*/
-            v6 < *(int *)&stru_B05488.__pad_579C[15392];
-            i = *(IUnknown **)&stru_B05488.__pad_579C[15392] )
+      for ( i = *(IUnknown **)&stru_B05488[37820]; /*0x41b470*/
+            v6 < *(int *)&stru_B05488[37820];
+            i = *(IUnknown **)&stru_B05488[37820] )
       {
-        v8 = (_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15388] + 8 * v6++); /*0x41b478*/
+        v8 = (_DWORD *)(*(_DWORD *)&stru_B05488[37816] + 8 * v6++); /*0x41b478*/
         *(v8 - 2) = *v8; /*0x41b47e*/
         *(v8 - 1) = v8[1]; /*0x41b484*/
       }
-      *(_DWORD *)&stru_B05488.__pad_579C[15392] = (char *)i - 1; /*0x41b499*/
-      *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15388] + 8 * *(_DWORD *)&stru_B05488.__pad_579C[15392]) = 0; /*0x41b49e*/
-      *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15388] + 8 * *(_DWORD *)&stru_B05488.__pad_579C[15392] + 4) = 0; /*0x41b4ae*/
-      *(_DWORD *)&stru_B05488.__pad_579C[15404] = 0; /*0x41b4b2*/
+      *(_DWORD *)&stru_B05488[37820] = (char *)i - 1; /*0x41b499*/
+      *(_DWORD *)(*(_DWORD *)&stru_B05488[37816] + 8 * *(_DWORD *)&stru_B05488[37820]) = 0; /*0x41b49e*/
+      *(_DWORD *)(*(_DWORD *)&stru_B05488[37816] + 8 * *(_DWORD *)&stru_B05488[37820] + 4) = 0; /*0x41b4ae*/
+      *(_DWORD *)&stru_B05488[37832] = 0; /*0x41b4b2*/
     }
   }
   result = ObjectClass::LoadFromStream_Common(v2, (LPSTREAM)aP1); /*0x41b4be*/
@@ -714,24 +721,24 @@ int __stdcall AircraftClass::LoadFromStream(_DWORD *a0, FootClass *aP1)
     }
     (*(void (__stdcall **)(int))(*(_DWORD *)v10 + 8))(v10); /*0x41b52e*/
     v12 = (*(int (__stdcall **)(_DWORD *))(*v3 + 16))(v3); /*0x41b53d*/
-    v13 = *(AbstractClass **)&stru_B05488.__pad_579C[15396]; /*0x41b53f*/
-    if ( *(_DWORD *)&stru_B05488.__pad_579C[15392] + 1 <= *(int *)&stru_B05488.__pad_579C[15396] ) /*0x41b548*/
+    v13 = *(AbstractClass **)&stru_B05488[37824]; /*0x41b53f*/
+    if ( *(_DWORD *)&stru_B05488[37820] + 1 <= *(int *)&stru_B05488[37824] ) /*0x41b548*/
       goto LABEL_18; /*0x41b548*/
-    if ( !*(_DWORD *)&stru_B05488.__pad_579C[15396] ) /*0x41b54c*/
+    if ( !*(_DWORD *)&stru_B05488[37824] ) /*0x41b54c*/
       v13 = (AbstractClass *)10; /*0x41b54e*/
-    if ( BuildingTypeClass::Enqueue((int)&stru_B05488.__pad_579C[15388], (int)v13) ) /*0x41b559*/
+    if ( BuildingTypeClass::Enqueue((int)&stru_B05488[37816], (int)v13) ) /*0x41b559*/
     {
 LABEL_18:
-      *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15388] + 8 * *(_DWORD *)&stru_B05488.__pad_579C[15392]) = v12; /*0x41b56d*/
-      *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15388] + 8 * *(_DWORD *)&stru_B05488.__pad_579C[15392] + 4) = v2; /*0x41b57b*/
-      stru_B05488.__pad_579C[15400] = 0; /*0x41b585*/
-      ++*(_DWORD *)&stru_B05488.__pad_579C[15392]; /*0x41b58c*/
+      *(_DWORD *)(*(_DWORD *)&stru_B05488[37816] + 8 * *(_DWORD *)&stru_B05488[37820]) = v12; /*0x41b56d*/
+      *(_DWORD *)(*(_DWORD *)&stru_B05488[37816] + 8 * *(_DWORD *)&stru_B05488[37820] + 4) = v2; /*0x41b57b*/
+      stru_B05488[37828] = 0; /*0x41b585*/
+      ++*(_DWORD *)&stru_B05488[37820]; /*0x41b58c*/
     }
     ObjectPtr::RegisterForTracking( /*0x41b59d*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&v2[1].__pad_0[4]);
     ObjectPtr::RegisterForTracking( /*0x41b5ae*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&v2[1].__pad_0[12]);
     return 0; /*0x41b5b3*/
   }

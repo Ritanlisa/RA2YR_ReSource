@@ -9,6 +9,7 @@ namespace gamemd
 } // namespace gamemd
 
 #include "system/factory.hpp"
+#include "e4/e4_globals.hpp"
 
 namespace gamemd {
 
@@ -49,7 +50,7 @@ char __thiscall BuildingClass_AbandonProduction(int this)
   this->balance = 0;
   if ( v6 )
     this->specialItem = -1;
-  v7 = MEMORY[0xA8ED84];
+  v7 = g_CurrentFrame;
   this->queuedCapacity = 0;
   this->q02C = v7;
   this->queuedObjects = v11;
@@ -69,12 +70,12 @@ char __thiscall BuildingClass_AbandonProduction(int this)
     if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(this->q058) == 6 )
       *(_DWORD *)(this->owner + 22092) = -1;
   }
-  ++MEMORY[0xA8E7AC];
+  ++g_IKnowWhatImDoing;
   v9 = this->q058;
   if ( v9 )
     (*(void (__thiscall **)(int, int))(*(_DWORD *)v9 + 32))(v9, 1);
   this->q058 = 0;
-  --MEMORY[0xA8E7AC];
+  --g_IKnowWhatImDoing;
   return 1;
 }
 

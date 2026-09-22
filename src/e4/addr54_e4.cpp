@@ -15,6 +15,17 @@
 #include "e4/classes/E4Recv_54E690_e4.hpp"
 #include "e4/classes/E4Recv_54EBF0_e4.hpp"
 #include "e4/classes/E4Recv_54F6D0_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/WinsockInterface_e4.hpp"
 
 // 0x540C50
 namespace gamemd {
@@ -46,18 +57,18 @@ int __thiscall sub_541170(int this, int a2, int a3, int a4, int a5)
   _DWORD v15[3]; // [esp+10h] [ebp-Ch] BYREF
 
   HIWORD(v5) = HIWORD(a5); /*0x541174*/
-  if ( MEMORY[0xA8DA84] && *(_DWORD *)(*(_DWORD *)MEMORY[0xA8DA78] + 111) == a5 ) /*0x541192*/
+  if ( Game_PlayerCount && *(_DWORD *)(*(_DWORD *)Game_PlayerInfoArray + 111) == a5 ) /*0x541192*/
     return 0; /*0x541192*/
   v7 = 1; /*0x541194*/
-  if ( MEMORY[0xA8DA84] <= 1 ) /*0x54119b*/
+  if ( Game_PlayerCount <= 1 ) /*0x54119b*/
     return 0; /*0x54119b*/
-  for ( i = MEMORY[0xA8DA78] + 4; *(_DWORD *)(*(_DWORD *)i + 111) != a5; i += 4 ) /*0x54119d*/
+  for ( i = Game_PlayerInfoArray + 4; *(_DWORD *)(*(_DWORD *)i + 111) != a5; i += 4 ) /*0x54119d*/
   {
-    if ( ++v7 >= MEMORY[0xA8DA84] ) /*0x5411ad*/
+    if ( ++v7 >= Game_PlayerCount ) /*0x5411ad*/
       return 0; /*0x5411ad*/
   }
-  LOWORD(v5) = *((_WORD *)&MEMORY[0xA8E2B2] + v7); /*0x5411be*/
-  v10 = (_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v7) + 40); /*0x5411c6*/
+  LOWORD(v5) = *((_WORD *)&Network_PlayerPorts + v7); /*0x5411be*/
+  v10 = (_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * v7) + 40); /*0x5411c6*/
   v11 = (unsigned char)this->M4; /*0x5411c9*/
   v12 = a4; /*0x5411cc*/
   v15[0] = *v10; /*0x5411d2*/
@@ -164,7 +175,7 @@ int __fastcall SurfaceClass_CreatePrimary(int a1, int a2, int a3)
   if ( !g_DSurface_Primary ) /*0x544e86*/
     return 0; /*0x544e8b*/
   if ( a1 == 1000 && a2 == 1000 && a3 == 1000 && g_SurfaceAnimState ) /*0x544ead*/
-    return *(_DWORD *)MEMORY[0x87F69C]; /*0x544eb7*/
+    return *(_DWORD *)DataGlobal_87F69C; /*0x544eb7*/
   QuantizeColorRGB(&a3); /*0x544ecd*/
   v4 = 1; /*0x544ee4*/
   if ( g_SurfaceAnimState <= 1 ) /*0x544eeb*/
@@ -186,22 +197,22 @@ LABEL_14:
              v6);
     else
       v7 = 0; /*0x544f7d*/
-    if ( g_SurfaceAnimState < MEMORY[0x87F6A0] /*0x544fb6*/
-      || (MEMORY[0x87F6A5] || !MEMORY[0x87F6A0])
-      && MEMORY[0x87F6AC] > 0
-      && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0x87F698] + 8))(
-           &MEMORY[0x87F698],
-           MEMORY[0x87F6A0] + MEMORY[0x87F6AC],
+    if ( g_SurfaceAnimState < DataGlobal_87F6A0 /*0x544fb6*/
+      || (DataGlobal_87F6A5 || !DataGlobal_87F6A0)
+      && DataGlobal_87F6AC > 0
+      && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_87F698 + 8))(
+           &DataGlobal_87F698,
+           DataGlobal_87F6A0 + DataGlobal_87F6AC,
            0) )
     {
       v8 = g_SurfaceAnimState++; /*0x544fc3*/
-      *((_DWORD *)MEMORY[0x87F69C] + v8) = v7; /*0x544fd2*/
+      *((_DWORD *)DataGlobal_87F69C + v8) = v7; /*0x544fd2*/
     }
     return v7; /*0x544fd5*/
   }
   else
   {
-    v5 = (char *)MEMORY[0x87F69C] + 4; /*0x544ef3*/
+    v5 = (char *)DataGlobal_87F69C + 4; /*0x544ef3*/
     while ( 1 ) /*0x544ef6*/
     {
       result = *(_DWORD *)v5; /*0x544ef6*/
@@ -421,14 +432,14 @@ char *__fastcall LoadTerrainTypeClassTheatre(AbstractClass *a1, char a2)
   var998 = 0;
   v77[0] = (unsigned __int8 **)&CCINIClass_Vtable;
   Ticks = (INIClass *)Timer::GetTicks();
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57940] = 0;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57944] = 0;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80368] = 0;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80372] = 0;
   var978 = 0;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57948] = 0;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80376] = 0;
   v89 = 0;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57952] = 0;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57956] = 0;
-  CCFileClass::Construct(v158, MEMORY[0x82960C]);
+  *(_DWORD *)&g_NetworkPlayerBuffer[80380] = 0;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80384] = 0;
+  CCFileClass::Construct(v158, DataGlobal_0082960C);
   if ( lpBuffer )
   {
     __3_YAXPAX_Z(lpBuffer);
@@ -438,29 +449,29 @@ char *__fastcall LoadTerrainTypeClassTheatre(AbstractClass *a1, char a2)
   lpBuffer = (MapClass *)__2_YAPAXI_Z(Size);
   v5 = CCFileClass::GetSize(v158);
   CCFileClass::Read(v158, (CampaignScore *)lpBuffer, v5);
-  if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58032] )
+  if ( *(_DWORD *)&g_NetworkPlayerBuffer[80460] )
   {
-    for ( i = *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58032] - 1; i >= 0; --i )
+    for ( i = *(_DWORD *)&g_NetworkPlayerBuffer[80460] - 1; i >= 0; --i )
     {
-      __3_YAXPAX_Z(*(void **)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58020] + 4 * i));
-      if ( i < *(int *)&MEMORY[0xA8D63C].__pad_579C[58032] )
+      __3_YAXPAX_Z(*(void **)(*(_DWORD *)&g_NetworkPlayerBuffer[80448] + 4 * i));
+      if ( i < *(int *)&g_NetworkPlayerBuffer[80460] )
       {
         v7 = i;
-        --*(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58032];
-        if ( i < *(int *)&MEMORY[0xA8D63C].__pad_579C[58032] )
+        --*(_DWORD *)&g_NetworkPlayerBuffer[80460];
+        if ( i < *(int *)&g_NetworkPlayerBuffer[80460] )
         {
           do
           {
             ++v7;
-            *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58020] + 4 * v7 - 4) = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58020]
+            *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[80448] + 4 * v7 - 4) = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[80448]
                                                                                                  + 4 * v7);
           }
-          while ( v7 < *(int *)&MEMORY[0xA8D63C].__pad_579C[58032] );
+          while ( v7 < *(int *)&g_NetworkPlayerBuffer[80460] );
         }
       }
     }
   }
-  v8 = (void **)&MEMORY[0xA8D63C].__pad_579C[57992];
+  v8 = (void **)&g_NetworkPlayerBuffer[80420];
   do
   {
     if ( *v8 )
@@ -470,41 +481,41 @@ char *__fastcall LoadTerrainTypeClassTheatre(AbstractClass *a1, char a2)
     }
     ++v8;
   }
-  while ( (int)v8 < (int)&MEMORY[0xA8D63C].__pad_579C[58008] );
+  while ( (int)v8 < (int)&g_NetworkPlayerBuffer[80436] );
   v9 = 112 * (_DWORD)a1;
   var904 = 112 * (_DWORD)a1;
-  sprintf(Buffer, MEMORY[0x829600], (const char *)&off_7E1BC6 + 112 * (_DWORD)a1);
+  sprintf(Buffer, DataGlobal_00829600, (const char *)&off_7E1BC6 + 112 * (_DWORD)a1);
   CCFileClass::Construct(v149, Buffer);
   v10 = CCFileClass::GetSize(v149);
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57992] = __2_YAPAXI_Z(v10);
+  *(_DWORD *)&g_NetworkPlayerBuffer[80420] = __2_YAPAXI_Z(v10);
   v11 = CCFileClass::GetSize(v149);
-  CCFileClass::Read(v149, *(CampaignScore **)&MEMORY[0xA8D63C].__pad_579C[57992], v11);
+  CCFileClass::Read(v149, *(CampaignScore **)&g_NetworkPlayerBuffer[80420], v11);
   v148 = 50;
   FileClass::SetFileName(v149, (IUnknown *)Buffer);
   v12 = CCFileClass::GetSize(v149);
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57996] = __2_YAPAXI_Z(v12);
+  *(_DWORD *)&g_NetworkPlayerBuffer[80424] = __2_YAPAXI_Z(v12);
   v13 = CCFileClass::GetSize(v149);
-  CCFileClass::Read(v149, *(CampaignScore **)&MEMORY[0xA8D63C].__pad_579C[57996], v13);
+  CCFileClass::Read(v149, *(CampaignScore **)&g_NetworkPlayerBuffer[80424], v13);
   v148 = 51;
   FileClass::SetFileName(v149, (IUnknown *)Buffer);
   v14 = CCFileClass::GetSize(v149);
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58000] = __2_YAPAXI_Z(v14);
+  *(_DWORD *)&g_NetworkPlayerBuffer[80428] = __2_YAPAXI_Z(v14);
   v15 = CCFileClass::GetSize(v149);
-  CCFileClass::Read(v149, *(CampaignScore **)&MEMORY[0xA8D63C].__pad_579C[58000], v15);
+  CCFileClass::Read(v149, *(CampaignScore **)&g_NetworkPlayerBuffer[80428], v15);
   v148 = 52;
   FileClass::SetFileName(v149, (IUnknown *)Buffer);
   v16 = CCFileClass::GetSize(v149);
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58004] = __2_YAPAXI_Z(v16);
+  *(_DWORD *)&g_NetworkPlayerBuffer[80432] = __2_YAPAXI_Z(v16);
   v17 = CCFileClass::GetSize(v149);
-  CCFileClass::Read(v149, *(CampaignScore **)&MEMORY[0xA8D63C].__pad_579C[58004], v17);
-  while ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[588] )
+  CCFileClass::Read(v149, *(CampaignScore **)&g_NetworkPlayerBuffer[80432], v17);
+  while ( *(_DWORD *)&g_NetworkPlayerBuffer[5884] )
   {
-    if ( **(_DWORD **)&MEMORY[0xA8D63C].__pad_14B0[576] )
-      (*(void (__thiscall **)(_DWORD, int))(***(_DWORD ***)&MEMORY[0xA8D63C].__pad_14B0[576] + 32))(
-        **(_DWORD **)&MEMORY[0xA8D63C].__pad_14B0[576],
+    if ( **(_DWORD **)&g_NetworkPlayerBuffer[5872] )
+      (*(void (__thiscall **)(_DWORD, int))(***(_DWORD ***)&g_NetworkPlayerBuffer[5872] + 32))(
+        **(_DWORD **)&g_NetworkPlayerBuffer[5872],
         1);
   }
-  sprintf(v180, MEMORY[0x8295F4], (const char *)&off_7E1BC6 + v9);
+  sprintf(v180, DataGlobal_008295F4, (const char *)&off_7E1BC6 + v9);
   CCFileClass::Construct(v161, v180);
   if ( CCFileClass::Open(v161, 0) )
   {
@@ -759,101 +770,101 @@ char *__fastcall LoadTerrainTypeClassTheatre(AbstractClass *a1, char a2)
                            &unk_829364,
                            (INIClass *)0xFFFFFFFF);
   g_CellTileLookup = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57984] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80412] = -1;
   v107 = v22;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58052] = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58072] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80480] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80500] = -1;
   dword_ABC2B8 = -1;
   dword_ABB104 = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57408] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[79836] = -1;
   dword_ABC2B0 = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58060] = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58204] = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57420] = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55664] = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58064] = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55660] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80488] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80632] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[79848] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[78092] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80492] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[78088] = -1;
   dword_ABC2CC = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57424] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[79852] = -1;
   g_TerrainBridgeIndex = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57928] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80356] = -1;
   dword_ABAD28 = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55648] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[78076] = -1;
   g_TerrainTypeTable2 = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58048] = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57932] = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57980] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80476] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80360] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80408] = -1;
   dword_ABB108 = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58076] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80504] = -1;
   dword_ABAD2C = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55652] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[78080] = -1;
   dword_ABB110 = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58056] = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57976] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80484] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80404] = -1;
   dword_ABBEBC = (CCINIClass *)-1;
   g_CellTileTypeCache = (CCINIClass *)-1;
   dword_ABBEC4 = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57416] = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57412] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[79844] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[79840] = -1;
   dword_ABAD20 = (CCINIClass *)-1;
   dword_ABC1D4 = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58068] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80496] = -1;
   dword_ABC2C8 = -2;
   dword_ABAD24 = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57924] = -1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58044] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80352] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80472] = -1;
   dword_ABBEC0 = (CCINIClass *)-1;
   dword_ABB10C = (CCINIClass *)-1;
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58040] = -1;
+  *(_DWORD *)&g_NetworkPlayerBuffer[80468] = -1;
   dword_ABC2B4 = INIClass::ReadInt_Overwrite(
                    (int)v77,
                    (unsigned __int8 *)&g_INI_Key_General,
                    &unk_829354,
                    (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58200] = INIClass::ReadInt_Overwrite(
+  *(_DWORD *)&g_NetworkPlayerBuffer[80628] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
                                                      (unsigned __int8 *)&g_INI_Key_General,
-                                                     &MEMORY[0x829344],
+                                                     &DataGlobal_00829344,
                                                      (INIClass *)0xFFFFFFFF);
   dword_ABC1E8 = INIClass::ReadInt_Overwrite(
                    (int)v77,
                    (unsigned __int8 *)&g_INI_Key_General,
-                   &MEMORY[0x829330],
+                   &DataGlobal_00829330,
                    (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57440] = INIClass::ReadInt_Overwrite(
+  *(_DWORD *)&g_NetworkPlayerBuffer[79868] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
                                                      (unsigned __int8 *)&g_INI_Key_General,
-                                                     &MEMORY[0x82931C],
+                                                     &DataGlobal_0082931C,
                                                      (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[59248] = INIClass::ReadInt_Overwrite(
+  *(_DWORD *)&g_NetworkPlayerBuffer[81676] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
                                                      (unsigned __int8 *)&g_INI_Key_General,
-                                                     &MEMORY[0x82930C],
+                                                     &DataGlobal_0082930C,
                                                      (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55656] = INIClass::ReadInt_Overwrite(
+  *(_DWORD *)&g_NetworkPlayerBuffer[78084] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
                                                      (unsigned __int8 *)&g_INI_Key_General,
-                                                     &MEMORY[0x8292FC],
+                                                     &DataGlobal_008292FC,
                                                      (INIClass *)0xFFFFFFFF);
   dword_ABC1D0 = INIClass::ReadInt_Overwrite(
                    (int)v77,
                    (unsigned __int8 *)&g_INI_Key_General,
-                   &MEMORY[0x8292E8],
+                   &DataGlobal_008292E8,
                    (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[59240] = INIClass::ReadInt_Overwrite(
+  *(_DWORD *)&g_NetworkPlayerBuffer[81668] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
                                                      (unsigned __int8 *)&g_INI_Key_General,
-                                                     &MEMORY[0x8292D4],
+                                                     &DataGlobal_008292D4,
                                                      (INIClass *)0xFFFFFFFF);
   g_TerrainSoundTable2 = INIClass::ReadInt_Overwrite(
                            (int)v77,
                            (unsigned __int8 *)&g_INI_Key_General,
-                           &MEMORY[0x8292C4],
+                           &DataGlobal_008292C4,
                            (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57936] = INIClass::ReadInt_Overwrite(
+  *(_DWORD *)&g_NetworkPlayerBuffer[80364] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
                                                      (unsigned __int8 *)&g_INI_Key_General,
-                                                     &MEMORY[0x8292B4],
+                                                     &DataGlobal_008292B4,
                                                      (INIClass *)0xFFFFFFFF);
   dword_ABC558 = 0;
   Ticks = (INIClass *)Timer::GetTicks();
@@ -881,70 +892,70 @@ LABEL_24:
     var978 = 4;
 LABEL_26:
     v25 = dword_ABC558;
-    *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[4 * dword_ABC558 + 58216] = v21;
+    *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * dword_ABC558 + 58216] = v21;
     dword_ABC558 = v25 + 1;
     if ( v20 == (INIClass *)Int_Overwrite )
       g_CellTileLookup = v21;
     if ( v20 == var8A0 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57984] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80412] = v21;
     if ( v20 == (INIClass *)v129 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58052] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80480] = v21;
     if ( v20 == (INIClass *)v94 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58072] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80500] = v21;
     if ( v20 == (INIClass *)v115 )
       dword_ABC2B8 = (int)v21;
     if ( v20 == (INIClass *)v96 )
       dword_ABB104 = v21;
     if ( v20 == (INIClass *)v116 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57408] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[79836] = v21;
     if ( v20 == (INIClass *)v98 )
       dword_ABC2B0 = v21;
     if ( v20 == (INIClass *)v118 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58060] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80488] = v21;
     if ( v20 == (INIClass *)v100 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58204] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80632] = v21;
     if ( v20 == (INIClass *)v120 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57420] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[79848] = v21;
     if ( v20 == var930 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55664] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[78092] = v21;
     if ( v20 == (INIClass *)v122 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58064] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80492] = v21;
     if ( v20 == v104 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55660] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[78088] = v21;
     if ( v20 == (INIClass *)v124 )
       dword_ABC2CC = v21;
     if ( v20 == v108 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57424] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[79852] = v21;
     if ( v20 == (INIClass *)v126 )
       g_TerrainBridgeIndex = (int)v21;
     if ( v20 == var918 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57928] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80356] = v21;
     if ( v20 == (INIClass *)v128 )
       dword_ABAD28 = (int)v21;
     if ( v20 == (INIClass *)v110 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55648] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[78076] = v21;
     if ( v20 == (INIClass *)v130 )
       g_TerrainTypeTable2 = v21;
     if ( v20 == (INIClass *)v112 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58048] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80476] = v21;
     if ( v20 == (INIClass *)v132 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57932] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80360] = v21;
     if ( v20 == (INIClass *)v114 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58076] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80504] = v21;
     if ( v20 == (INIClass *)v92 )
       dword_ABAD2C = v21;
     if ( v20 == v138 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57980] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80408] = v21;
     if ( v20 == (INIClass *)v117 )
       dword_ABB108 = v21;
     if ( v20 == v141 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55652] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[78080] = v21;
     if ( v20 == (INIClass *)v119 )
       dword_ABB110 = v21;
     if ( v20 == (INIClass *)v131 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58056] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80484] = v21;
     if ( v20 == (INIClass *)v121 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57976] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80404] = v21;
     if ( v20 == (INIClass *)v139 )
       dword_ABBEBC = v21;
     if ( v20 == (INIClass *)v123 )
@@ -952,29 +963,29 @@ LABEL_26:
     if ( v20 == (INIClass *)v133 )
       dword_ABBEC4 = v21;
     if ( v20 == (INIClass *)v125 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57416] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[79844] = v21;
     if ( v20 == v145 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57412] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[79840] = v21;
     if ( v20 == var8CC )
       dword_ABAD20 = v21;
     if ( v20 == v137 )
       dword_ABC1D4 = v21;
     if ( v20 == (INIClass *)v93 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58068] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80496] = v21;
     if ( v20 == (INIClass *)v95 )
       dword_ABC2C8 = (int)v21;
     if ( v20 == (INIClass *)v97 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57924] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80352] = v21;
     if ( v20 == (INIClass *)v99 )
       dword_ABAD24 = v21;
     if ( v20 == (INIClass *)v101 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58044] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80472] = v21;
     if ( v20 == (INIClass *)v103 )
       dword_ABBEC0 = v21;
     if ( v20 == (INIClass *)v105 )
       dword_ABB10C = v21;
     if ( v20 == (INIClass *)v107 )
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58040] = v21;
+      *(_DWORD *)&g_NetworkPlayerBuffer[80468] = v21;
     sprintf((char *const)&aP2.INIClass_field_2C, stru_8292A8, v20);
     INIClass::ResetSection(v77);
     v71 = (ObjectClass *)INIClass::ReadInt_Overwrite(
@@ -1002,16 +1013,16 @@ LABEL_26:
       v75 = (CCINIClass *)((char *)v72 + (_DWORD)v27);
       v28->field_0 = (int)&v72->__pad_0[(_DWORD)v27];
       v28->field_4 = (void *)v29;
-      if ( *(int *)&MEMORY[0xA8D63C].__pad_579C[58032] < *(int *)&MEMORY[0xA8D63C].__pad_579C[58024]
-        || (MEMORY[0xA8D63C].__pad_579C[58029] || !*(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58024])
-        && *(int *)&MEMORY[0xA8D63C].__pad_579C[58036] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58016] + 8))(
-             &MEMORY[0xA8D63C].__pad_579C[58016],
-             *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58036] + *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58024],
+      if ( *(int *)&g_NetworkPlayerBuffer[80460] < *(int *)&g_NetworkPlayerBuffer[80452]
+        || (g_NetworkPlayerBuffer[80457] || !*(_DWORD *)&g_NetworkPlayerBuffer[80452])
+        && *(int *)&g_NetworkPlayerBuffer[80464] > 0
+        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_NetworkPlayerBuffer[80444] + 8))(
+             &g_NetworkPlayerBuffer[80444],
+             *(_DWORD *)&g_NetworkPlayerBuffer[80464] + *(_DWORD *)&g_NetworkPlayerBuffer[80452],
              0) )
       {
-        v30 = (*(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58032])++;
-        *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58020] + 4 * v30) = v76;
+        v30 = (*(_DWORD *)&g_NetworkPlayerBuffer[80460])++;
+        *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[80448] + 4 * v30) = v76;
       }
       v31 = v75;
     }
@@ -1034,33 +1045,33 @@ LABEL_26:
     v62 = INIClass::ReadBool_Overwrite(
             (int)v77,
             (unsigned __int8 *)&aP2.INIClass_field_2C,
-            (CCINIClass *)&MEMORY[0x8291B8].unknown50,
+            (CCINIClass *)&DataGlobal_008291B8.unknown50,
             0);
     var9FC_2 = INIClass::ReadBool_Overwrite(
                  (int)v77,
                  (unsigned __int8 *)&aP2.INIClass_field_2C,
-                 (CCINIClass *)&MEMORY[0x8291B8].ownsFile,
+                 (CCINIClass *)&DataGlobal_008291B8.ownsFile,
                  0);
     v109 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                               (int)v77,
                               (unsigned __int8 *)&aP2.INIClass_field_2C,
-                              (CCINIClass *)&MEMORY[0x8291B8].unknown30,
+                              (CCINIClass *)&DataGlobal_008291B8.unknown30,
                               (INIClass *)0xFFFFFFFF);
     v111 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                               (int)v77,
                               (unsigned __int8 *)&aP2.INIClass_field_2C,
-                              (CCINIClass *)&MEMORY[0x8291B8].sectionCount,
+                              (CCINIClass *)&DataGlobal_008291B8.sectionCount,
                               (INIClass *)0xFFFFFFFF);
     v32 = INIClass::ReadBool_Overwrite(
             (int)v77,
             (unsigned __int8 *)&aP2.INIClass_field_2C,
-            (CCINIClass *)&MEMORY[0x8291B8].headNode[2],
+            (CCINIClass *)&DataGlobal_008291B8.headNode[2],
             0);
     v63 = v32;
     if ( v32 )
     {
       v33 = (INIClass *)v89;
-      *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[4 * (_DWORD)v89 + 57940] = v70;
+      *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * (_DWORD)v89 + 57940] = v70;
       v89 = (AbstractClass *)&v33->__pad_0[1];
     }
     v88 = 0;
@@ -1068,7 +1079,7 @@ LABEL_26:
       v88 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                                (int)v77,
                                (unsigned __int8 *)&aP2.INIClass_field_2C,
-                               &MEMORY[0x8291B8],
+                               &DataGlobal_008291B8,
                                0);
     v34 = INIClass::BinarySearchSection((int)v77, &aP4);
     v69 = 0;
@@ -1088,11 +1099,11 @@ LABEL_26:
           else
             LOBYTE(var9F4_2) = 0;
           v35 = (INIClass *)((char *)&v69->field_0 + 1);
-          sprintf(aP2.__pad_20, MEMORY[0x8291B0], (char *)&v69->field_0 + 1);
-          strcat(aP2.__pad_20, (const char *)&var9F4_2);
-          strcpy(Filename, v183.__pad_0);
-          strcat(Filename, aP2.__pad_20);
-          sprintf(Source, MEMORY[0x8291A4], aP4.__pad_0, v35);
+          sprintf(aP2[32], DataGlobal_008291B0, (char *)&v69->field_0 + 1);
+          strcat(aP2[32], (const char *)&var9F4_2);
+          strcpy(Filename, v183[0]);
+          strcat(Filename, aP2[32]);
+          sprintf(Source, DataGlobal_008291A4, aP4[0], v35);
           if ( !v65 )
           {
             v36 = (_DWORD *)__2_YAPAXI_Z(0x30Cu);
@@ -1140,16 +1151,16 @@ LABEL_26:
             if ( a2 )
               *((_BYTE *)v3 + 756) = 1;
             v41 = v3[169];
-            v3[168] = *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[4 * dword_ABC558 + 58212];
+            v3[168] = *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * dword_ABC558 + 58212];
             (*(void (__thiscall **)(_DWORD *))(v41 + 12))(v3 + 169);
             if ( var9F4_1 )
             {
-              sprintf(aP2.__pad_0, MEMORY[0x829194], v35);
+              sprintf(aP2[0], DataGlobal_00829194, v35);
               if ( INIClass::GetString(
                      v77,
                      &aP4,
                      (unsigned __int8 *)&aP2,
-                     (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+                     (INIClass *)&DataGlobal_87F8E4[42624],
                      &v184,
                      128) )
               {
@@ -1157,13 +1168,13 @@ LABEL_26:
                 if ( v42 )
                 {
                   v3[178] = (*(int (__thiscall **)(AnimTypeClass *))(*(_DWORD *)v42->__pad_0 + 64))(v42);
-                  sprintf(aP2.__pad_0, MEMORY[0x829184], v35);
+                  sprintf(aP2[0], DataGlobal_00829184, v35);
                   v3[179] = INIClass::ReadInt_Overwrite((int)v77, (unsigned __int8 *)&aP4, &aP2, (INIClass *)v3[179]);
-                  sprintf(aP2.__pad_0, MEMORY[0x829174], v35);
+                  sprintf(aP2[0], DataGlobal_00829174, v35);
                   v3[180] = INIClass::ReadInt_Overwrite((int)v77, (unsigned __int8 *)&aP4, &aP2, (INIClass *)v3[180]);
-                  sprintf(aP2.__pad_0, MEMORY[0x829160], v35);
+                  sprintf(aP2[0], DataGlobal_00829160, v35);
                   v3[181] = INIClass::ReadInt_Overwrite((int)v77, (unsigned __int8 *)&aP4, &aP2, (INIClass *)v3[181]);
-                  sprintf(aP2.__pad_0, stru_829150, v35);
+                  sprintf(aP2[0], stru_829150, v35);
                   v3[182] = INIClass::ReadInt_Overwrite((int)v77, (unsigned __int8 *)&aP4, &aP2, (INIClass *)v3[182]);
                 }
               }
@@ -1301,7 +1312,7 @@ LABEL_190:
           if ( v63 && v88 )
             *((_BYTE *)v3 + 737) = v63;
           v45 = var974;
-          v3[168] = *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[4 * dword_ABC558 + 58212];
+          v3[168] = *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * dword_ABC558 + 58212];
           *(_DWORD *)&v45->__pad_298[36] = v3;
           (*(void (__thiscall **)(_DWORD *))(v3[169] + 12))(v3 + 169);
           var974 = (MapClass *)v3;
@@ -1370,31 +1381,31 @@ LABEL_217:
     v20 = (INIClass *)((char *)v20 + 1);
     v90 = (AbstractClass *)v20;
   }
-  for ( j = 0; j < *(int *)&MEMORY[0xA8D63C].__pad_14B0[588]; ++j )
+  for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer[5884]; ++j )
   {
-    v55 = *(_DWORD **)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576] + 4 * j);
+    v55 = *(_DWORD **)(*(_DWORD *)&g_NetworkPlayerBuffer[5872] + 4 * j);
     v56 = v55[165] - v55[168];
     v57 = v55[166];
     if ( v57 != 0xFFFF )
-      v55[166] = v56 + *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[4 * v57 + 58216];
+      v55[166] = v56 + *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * v57 + 58216];
     v58 = v55[167];
     if ( v58 != 0xFFFF )
-      v55[167] = v56 + *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[4 * v58 + 58216];
+      v55[167] = v56 + *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * v58 + 58216];
   }
   if ( v91 == (AbstractClass *)5 )
   {
     dword_ABAD28 = -1;
-    *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[55648] = -1;
-    *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57928] = -1;
-    *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57924] = -1;
-    *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[58040] = -1;
-    *(_DWORD *)&MEMORY[0xA8D63C].__pad_579C[57424] = -1;
+    *(_DWORD *)&g_NetworkPlayerBuffer[78076] = -1;
+    *(_DWORD *)&g_NetworkPlayerBuffer[80356] = -1;
+    *(_DWORD *)&g_NetworkPlayerBuffer[80352] = -1;
+    *(_DWORD *)&g_NetworkPlayerBuffer[80468] = -1;
+    *(_DWORD *)&g_NetworkPlayerBuffer[79852] = -1;
     g_TerrainBridgeIndex = -1;
   }
-  *(_DWORD *)aP1.__pad_0 = &vt_CCFileClass;
+  *(_DWORD *)aP1[0] = &vt_CCFileClass;
   v170 = 0;
   Vector::Clear((int)v169);
-  *(_DWORD *)aP1.__pad_0 = &off_7E1668;
+  *(_DWORD *)aP1[0] = &off_7E1668;
   BufferIOFileClass::Dtor(&aP1);
   v161[0] = &vt_CCFileClass;
   v163 = 0;
@@ -1446,24 +1457,24 @@ void __fastcall MapClass_LoadIsometricTiles(char a1, char a2)
   Timer::GetTicks(); /*0x546db5*/
   if ( !a1 ) /*0x546dc8*/
   {
-    LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x546dd3*/
-    for ( i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); i; i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x546de6*/
+    LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x546dd3*/
+    for ( i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); i; i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) ) /*0x546de6*/
     {
       v4 = *(_DWORD *)(i + 56); /*0x546dec*/
       inited = 0; /*0x546def*/
-      if ( v4 == 0xFFFF || v4 >= MEMORY[0xA8ED38] ) /*0x546dff*/
+      if ( v4 == 0xFFFF || v4 >= g_TechnoClassCount ) /*0x546dff*/
       {
-        v6 = (_DWORD *)*((_DWORD *)MEMORY[0xA8ED2C] + unk_AA10B0); /*0x546e6f*/
+        v6 = (_DWORD *)*((_DWORD *)g_FrameCounter + unk_AA10B0); /*0x546e6f*/
         inited = CellClass::InitRandomOffsets(i, unk_AA10B0, v6[188]); /*0x546e7c*/
       }
       else
       {
-        v6 = (_DWORD *)*((_DWORD *)MEMORY[0xA8ED2C] + v4); /*0x546e07*/
+        v6 = (_DWORD *)*((_DWORD *)g_FrameCounter + v4); /*0x546e07*/
         if ( (int)v6[188] > 1 ) /*0x546e11*/
         {
           LOBYTE(inited) = *(_BYTE *)(i + 282); /*0x546e13*/
           v7 = inited; /*0x546e1d*/
-          v8 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(*v6 + 156))(*((_DWORD *)MEMORY[0xA8ED2C] + v4)); /*0x546e1f*/
+          v8 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(*v6 + 156))(*((_DWORD *)g_FrameCounter + v4)); /*0x546e1f*/
           if ( v8 && (v9 = v8[v7 % (*v8 * v8[1]) + 4]) != 0 && (*(_DWORD *)(v9 + 36) & 4) != 0 ) /*0x546e48*/
             inited = (*(_DWORD *)(i + 320) >> 13) & 1; /*0x546e53*/
           else
@@ -1486,7 +1497,7 @@ void __fastcall MapClass_LoadIsometricTiles(char a1, char a2)
   v15 = 0; /*0x546ee2*/
   v22 = 1; /*0x546eea*/
   v20 = 0; /*0x546eee*/
-  if ( MEMORY[0xA8ED38] > 0 ) /*0x546ef2*/
+  if ( g_TechnoClassCount > 0 ) /*0x546ef2*/
   {
     while ( 1 ) /*0x546efe*/
     {
@@ -1500,7 +1511,7 @@ LABEL_24:
       Ticks = Timer::GetTicks(); /*0x546f2e*/
       v22 = 4; /*0x546f43*/
 LABEL_25:
-      v17 = *((_DWORD *)MEMORY[0xA8ED2C] + v15); /*0x546f47*/
+      v17 = *((_DWORD *)g_FrameCounter + v15); /*0x546f47*/
       if ( v17 ) /*0x546f52*/
       {
         do /*0x546fdc*/
@@ -1528,7 +1539,7 @@ LABEL_25:
         v15 = v20; /*0x546fe2*/
       }
       v20 = ++v15; /*0x546fee*/
-      if ( v15 >= MEMORY[0xA8ED38] ) /*0x546ff2*/
+      if ( v15 >= g_TechnoClassCount ) /*0x546ff2*/
         goto LABEL_39; /*0x546ff2*/
       v14 = v22; /*0x546efa*/
     }
@@ -1555,12 +1566,12 @@ int ResetAllTechnoField776()
   int i; // ecx
   int j; // eax
 
-  result = MEMORY[0xA8ED38]; /*0x547110*/
-  for ( i = 0; i < MEMORY[0xA8ED38]; ++i ) /*0x54711b*/
+  result = g_TechnoClassCount; /*0x547110*/
+  for ( i = 0; i < g_TechnoClassCount; ++i ) /*0x54711b*/
   {
-    for ( j = *((_DWORD *)MEMORY[0xA8ED2C] + i); j; j = *(_DWORD *)(j + 700) ) /*0x547127*/
+    for ( j = *((_DWORD *)g_FrameCounter + i); j; j = *(_DWORD *)(j + 700) ) /*0x547127*/
       *(_DWORD *)(j + 776) = 0; /*0x547129*/
-    result = MEMORY[0xA8ED38]; /*0x547139*/
+    result = g_TechnoClassCount; /*0x547139*/
   }
   return result; /*0x547143*/
 }
@@ -2048,7 +2059,7 @@ int __thiscall UpdateFootMovement(int this)
     v29 = *v4; /*0x54ba59*/
     v30 = v4[1]; /*0x54ba65*/
     v31 = v4[2]; /*0x54ba71*/
-    if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v29) + 80) & 0x100) != 0 && v2 >= dword_ABC5DC ) /*0x54ba8c*/
+    if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v29) + 80) & 0x100) != 0 && v2 >= dword_ABC5DC ) /*0x54ba8c*/
       v2 -= dword_ABC5DC; /*0x54ba8e*/
   }
   v5 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 12) + 440))(this->M12, &v28); /*0x54baa0*/
@@ -2117,7 +2128,7 @@ int __thiscall UpdateFootMovement(int this)
   else if ( ObjectClass::HasLinkedObject(this->M12) ) /*0x54baea*/
   {
     v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x54bb08*/
-    v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v26); /*0x54bb14*/
+    v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v26); /*0x54bb14*/
     v9 = **(_DWORD **)(this + 12); /*0x54bb1f*/
     NeighbourContentCell = Cell::GetNeighbourContent(v8, v7); /*0x54bb23*/
     (*(void (__thiscall **)(_DWORD, void *, int))(v9 + 1152))(this->M12, NeighbourContentCell, 1); /*0x54bb2c*/

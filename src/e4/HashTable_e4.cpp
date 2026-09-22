@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x624760
 char HashTable::Get(IUnknown * aP1, IUnknown * aP2)
@@ -607,13 +608,13 @@ int __thiscall HashTable::Find(_DWORD *this, const char *a1, ConvertClass *aP2)
   int v7; // esi
 
   String::Assign((char **)&a1, a1); /*0x6ba14c*/
-  if ( (g_OverlayTypeConfig.__pad_14B0[11400] & 1) == 0 ) /*0x6ba158*/
+  if ( (g_OverlayTypeConfig[16696] & 1) == 0 ) /*0x6ba158*/
   {
-    *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[11424] = 0; /*0x6ba164*/
-    g_OverlayTypeConfig.__pad_14B0[11400] |= 1u; /*0x6ba16e*/
+    *(_DWORD *)&g_OverlayTypeConfig[16720] = 0; /*0x6ba164*/
+    g_OverlayTypeConfig[16696] |= 1u; /*0x6ba16e*/
     atexit(nullsub_39); /*0x6ba174*/
   }
-  *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[11424] = 0; /*0x6ba17c*/
+  *(_DWORD *)&g_OverlayTypeConfig[16720] = 0; /*0x6ba17c*/
   if ( this->q004 /*0x6ba1a8*/
     && (v4 = *(ObjectClass **)(*this
                              + 4 * (((int (__thiscall *)(const char **))this->q018)(&a1) & ((1 << this->q00C) - 1)))) != 0 )
@@ -626,10 +627,10 @@ int __thiscall HashTable::Find(_DWORD *this, const char *a1, ConvertClass *aP2)
     }
     v6 = &v4->__pad_0[4]; /*0x6ba1d7*/
     if ( v6 ) /*0x6ba1dd*/
-      qmemcpy(&g_OverlayTypeConfig.__pad_14B0[11424], v6, 0x304u); /*0x6ba1e9*/
+      qmemcpy(&g_OverlayTypeConfig[16720], v6, 0x304u); /*0x6ba1e9*/
     if ( aP2 ) /*0x6ba1f1*/
-      qmemcpy(aP2, &g_OverlayTypeConfig.__pad_14B0[11428], 0x300u); /*0x6ba1fd*/
-    v7 = *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[11424]; /*0x6ba1ff*/
+      qmemcpy(aP2, &g_OverlayTypeConfig[16724], 0x300u); /*0x6ba1fd*/
+    v7 = *(_DWORD *)&g_OverlayTypeConfig[16720]; /*0x6ba1ff*/
     DeleteAndZero((void **)&a1); /*0x6ba209*/
     return v7; /*0x6ba20e*/
   }

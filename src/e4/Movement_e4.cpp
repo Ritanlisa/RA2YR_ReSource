@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x5B20F0
 long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, char a7, char a8, char a9)
@@ -209,11 +213,11 @@ __int64 Movement::CalcVelocity(
   aP1.nextArrayIndex = v47->field_0; /*0x5b2433*/
   aP1.referenceCount = v47->field_4; /*0x5b243a*/
   aP1.NeedsSaveOrLink = (void *)v47->field_8; /*0x5b2449*/
-  *(double *)aP1.__pad_0 = (double)aP1.nextArrayIndex; /*0x5b2454*/
-  v80[0] = *(double *)aP1.__pad_0; /*0x5b2464*/
-  *(double *)&aP1.__pad_0[8] = (double)aP1.referenceCount; /*0x5b246c*/
+  *(double *)aP1[0] = (double)aP1.nextArrayIndex; /*0x5b2454*/
+  v80[0] = *(double *)aP1[0]; /*0x5b2464*/
+  *(double *)&aP1[8] = (double)aP1.referenceCount; /*0x5b246c*/
   v80[2] = (double)(int)aP1.NeedsSaveOrLink; /*0x5b247c*/
-  v80[1] = *(double *)&aP1.__pad_0[8]; /*0x5b2489*/
+  v80[1] = *(double *)&aP1[8]; /*0x5b2489*/
   qmemcpy(v86, v80, sizeof(v86)); /*0x5b248d*/
   v48 = (BuildingTypeClass *)v81; /*0x5b248f*/
   *(_DWORD *)&v73[8] = *(_DWORD *)v81; /*0x5b249c*/
@@ -269,28 +273,28 @@ __int64 Movement::CalcVelocity(
     goto LABEL_48; /*0x5b28e0*/
   }
   v59 = *(double *)&v48->uniqueId; /*0x5b2640*/
-  *(_QWORD *)aP1.__pad_0 = *(_QWORD *)v48->vtable0; /*0x5b2645*/
+  *(_QWORD *)aP1[0] = *(_QWORD *)v48->vtable0; /*0x5b2645*/
   ecx20 = *(_DWORD *)&v48->vtable0[12]; /*0x5b2657*/
-  *(_DWORD *)&aP1.__pad_0[8] = *(_DWORD *)&v48->vtable0[8]; /*0x5b265a*/
-  *(_DWORD *)&aP1.__pad_0[12] = ecx20; /*0x5b265e*/
+  *(_DWORD *)&aP1[8] = *(_DWORD *)&v48->vtable0[8]; /*0x5b265a*/
+  *(_DWORD *)&aP1[12] = ecx20; /*0x5b265e*/
   edi20a = Math::RoundToInt(v59); /*0x5b266b*/
-  *(_DWORD *)&aP1.__pad_0[4] = Math::RoundToInt(v59); /*0x5b2672*/
+  *(_DWORD *)&aP1[4] = Math::RoundToInt(v59); /*0x5b2672*/
   v62 = Math::RoundToInt(v59); /*0x5b2676*/
   v60 = Coord::Subtract( /*0x5b2695*/
           v82,
           (IUnknown *)(6 * edi20a),
-          (IUnknown *)(6 * *(_DWORD *)&aP1.__pad_0[4]),
+          (IUnknown *)(6 * *(_DWORD *)&aP1[4]),
           (IUnknown *)(6 * v62));
   v61 = Coord::Subtract( /*0x5b26b9*/
           v80,
           (IUnknown *)(*v12 + v60->field_0),
           (IUnknown *)(v12[1] + v60->field_4),
           (IUnknown *)(v12[2] + v60->field_8));
-  *(_DWORD *)aP1.__pad_0 = v61->field_0; /*0x5b26c0*/
-  *(_DWORD *)&aP1.__pad_0[4] = v61->field_4; /*0x5b26cc*/
-  *(_DWORD *)&aP1.__pad_0[8] = v61->field_8; /*0x5b26d8*/
+  *(_DWORD *)aP1[0] = v61->field_0; /*0x5b26c0*/
+  *(_DWORD *)&aP1[4] = v61->field_4; /*0x5b26cc*/
+  *(_DWORD *)&aP1[8] = v61->field_8; /*0x5b26d8*/
   GroundHeight = Cell::GetGroundHeight((IUnknown *)&aP1); /*0x5b26eb*/
-  if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&aP1) + 80) & 0x100) != 0 ) /*0x5b26fb*/
+  if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)&aP1) + 80) & 0x100) != 0 ) /*0x5b26fb*/
     GroundHeight += (int)*(&g_MatrixTransformState + 77); /*0x5b26fd*/
   v66 = (int)v83[0] / 256; /*0x5b2713*/
   if ( BYTE4(a3) || (_BYTE)aP3 ) /*0x5b271f*/

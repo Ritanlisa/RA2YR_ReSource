@@ -7,6 +7,10 @@
 #include "e4/classes/E4Recv_41FD30_e4.hpp"
 #include "e4/classes/E4Recv_41FD40_e4.hpp"
 #include "e4/classes/E4Recv_41FD50_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x4116A0
 namespace gamemd {
@@ -38,12 +42,12 @@ int __cdecl sub_4116A0(unsigned int a1)
   v1 = a1; /*0x4116a5*/
   v2 = *(_DWORD *)(a1 + 52); /*0x4116a9*/
   v3 = 188 * v2 + 8943480; /*0x4116bd*/
-  if ( (MEMORY[0x8877A0][47 * v2] & 1) != 0 ) /*0x4116c4*/
+  if ( (DataGlobal_8877A0[47 * v2] & 1) != 0 ) /*0x4116c4*/
   {
     Debug::Log(); /*0x4116cf*/
     return *(_DWORD *)(v3 + 32); /*0x4116df*/
   }
-  v5 = Time::GetElapsedMS() - *((_DWORD *)&MEMORY[0x887794] + 47 * v2); /*0x4116f2*/
+  v5 = Time::GetElapsedMS() - *((_DWORD *)&DataGlobal_887794 + 47 * v2); /*0x4116f2*/
   v17 = *(_DWORD *)(v3 + 144); /*0x4116f4*/
   EnterCriticalSection((LPCRITICAL_SECTION)(v3 + 160)); /*0x4116ff*/
   v6 = *(_DWORD *)(v3 + 140); /*0x41170b*/
@@ -146,13 +150,13 @@ int __cdecl ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION *dwUser, int a2, 
       Debug::Log(); /*0x411874*/
       LockCount = dwUser[2].LockCount; /*0x411880*/
       v6 = 188 * LockCount + 8943480; /*0x411894*/
-      if ( MEMORY[0x887778][188 * LockCount] == 1 ) /*0x41189b*/
+      if ( DataGlobal_887778[188 * LockCount] == 1 ) /*0x41189b*/
       {
-        if ( MEMORY[0x887804][47 * LockCount] ) /*0x4118a1*/
+        if ( DataGlobal_887804[47 * LockCount] ) /*0x4118a1*/
         {
           Debug::Log(); /*0x4118b2*/
           v7 = 188 * dwUser[2].LockCount + 8943480; /*0x4118ce*/
-          if ( MEMORY[0x887804][47 * dwUser[2].LockCount] ) /*0x4118c5*/
+          if ( DataGlobal_887804[47 * dwUser[2].LockCount] ) /*0x4118c5*/
           {
             EnterCriticalSection((LPCRITICAL_SECTION)(188 * dwUser[2].LockCount + 8943640)); /*0x4118de*/
             (*(void (__stdcall **)(_DWORD))(**(_DWORD **)(v7 + 140) + 72))(*(_DWORD *)(v7 + 140)); /*0x4118ed*/
@@ -200,7 +204,7 @@ int __cdecl ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION *dwUser, int a2, 
       break; /*0x4119f7*/
     case 7: /*0x411835*/
       v15 = 188 * dwUser[2].LockCount + 8943480; /*0x411aad*/
-      if ( MEMORY[0x887804][47 * dwUser[2].LockCount] ) /*0x411aa4*/
+      if ( DataGlobal_887804[47 * dwUser[2].LockCount] ) /*0x411aa4*/
       {
         EnterCriticalSection((LPCRITICAL_SECTION)(188 * dwUser[2].LockCount + 8943640)); /*0x411abd*/
         (*(void (__stdcall **)(_DWORD))(**(_DWORD **)(v15 + 140) + 72))(*(_DWORD *)(v15 + 140)); /*0x411acc*/
@@ -217,7 +221,7 @@ int __cdecl ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION *dwUser, int a2, 
     case 8: /*0x411835*/
       v12 = dwUser[2].LockCount; /*0x4119fe*/
       v13 = 188 * v12 + 8943480; /*0x411a12*/
-      if ( MEMORY[0x887778][188 * v12] && MEMORY[0x887804][47 * v12] ) /*0x411a1b*/
+      if ( DataGlobal_887778[188 * v12] && DataGlobal_887804[47 * v12] ) /*0x411a1b*/
       {
         EnterCriticalSection((LPCRITICAL_SECTION)(188 * v12 + 8943640)); /*0x411a2a*/
         if ( (*(int (__stdcall **)(_DWORD, _DWORD, _DWORD, int))(**(_DWORD **)(v13 + 140) + 48))( /*0x411a3d*/
@@ -276,7 +280,7 @@ int __cdecl sub_411B20(DWORD_PTR dwUser, AnimClass *aP1, int a3)
   if ( !Audio::IsSoundEnabled() ) /*0x411b4f*/
     return -13; /*0x411b4f*/
   v3 = 0; /*0x411b5c*/
-  v4 = &stru_87C374.__pad_579C[23656]; /*0x411b5e*/
+  v4 = &stru_87C374[46084]; /*0x411b5e*/
   do /*0x411b75*/
   {
     if ( !*v4 ) /*0x411b63*/
@@ -284,7 +288,7 @@ int __cdecl sub_411B20(DWORD_PTR dwUser, AnimClass *aP1, int a3)
     v4 += 188; /*0x411b68*/
     ++v3; /*0x411b6e*/
   }
-  while ( (int)v4 < (int)&stru_87C374.__pad_579C[23844] ); /*0x411b75*/
+  while ( (int)v4 < (int)&stru_87C374[46272] ); /*0x411b75*/
   if ( v3 == 1 || a3 != 16 ) /*0x411b85*/
     return -13; /*0x411b85*/
   *(_DWORD *)(dwUser + 52) = v3; /*0x411b99*/
@@ -316,8 +320,8 @@ int __cdecl sub_411B20(DWORD_PTR dwUser, AnimClass *aP1, int a3)
   v5[10] = BYTE2(aP1->field_0); /*0x411c5a*/
   v5[11] = HIBYTE(aP1->field_0); /*0x411c60*/
   *((_DWORD *)v5 + 9) = aP1->field_4; /*0x411c66*/
-  *(_DWORD *)&stru_87C374.__pad_579C[23644] = aP1->field_8; /*0x411c6c*/
-  *(_DWORD *)&stru_87C374.__pad_579C[23648] = *(_DWORD *)aP1->__pad_C; /*0x411c75*/
+  *(_DWORD *)&stru_87C374[46072] = aP1->field_8; /*0x411c6c*/
+  *(_DWORD *)&stru_87C374[46076] = *(_DWORD *)aP1->__pad_C; /*0x411c75*/
   Debug::Log(); /*0x411c7b*/
   if ( timeBeginPeriod(0x10u) == 97 ) /*0x411c90*/
     return -13; /*0x411cd5*/
@@ -357,7 +361,7 @@ int __cdecl InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
 
   LockCount = lpCriticalSection[2].LockCount; /*0x411df7*/
   v3 = 188 * LockCount + 8943480; /*0x411e0c*/
-  if ( (MEMORY[0x8877A0][47 * LockCount] & 1) == 0 ) /*0x411e13*/
+  if ( (DataGlobal_8877A0[47 * LockCount] & 1) == 0 ) /*0x411e13*/
   {
     lpCriticalSectiona = (struct _RTL_CRITICAL_SECTION *)(188 * LockCount + 8943640); /*0x411e9b*/
     EnterCriticalSection(lpCriticalSectiona); /*0x411e9f*/
@@ -402,14 +406,14 @@ int __cdecl InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
       0);
     if ( *v7 ) /*0x411f66*/
     {
-      MEMORY[0x88776C](lpCriticalSection); /*0x411f84*/
-      MEMORY[0x88776C](lpCriticalSection); /*0x411f8b*/
+      DataGlobal_88776C(lpCriticalSection); /*0x411f84*/
+      DataGlobal_88776C(lpCriticalSection); /*0x411f8b*/
       v13 = *v7; /*0x411f91*/
       *(_DWORD *)(v3 + 68) = 0; /*0x411f96*/
       *(_DWORD *)(v3 + 156) = 0; /*0x411f99*/
       *(_DWORD *)(v3 + 148) = 0; /*0x411f9f*/
       (*(void (__stdcall **)(int *, _DWORD))(*v13 + 52))(v13, 0); /*0x411fa9*/
-      v14 = Math::RoundToInt(*(float *)&MEMORY[0xA8EB9C] * 255.0); /*0x411fb8*/
+      v14 = Math::RoundToInt(*(float *)&DataGlobal_A8EB9C * 255.0); /*0x411fb8*/
       v15 = *v7; /*0x411fbd*/
       *(_DWORD *)(v3 + 4) = v14; /*0x411fc1*/
       v16 = *v15; /*0x411fca*/
@@ -424,7 +428,7 @@ int __cdecl InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     LeaveCriticalSection(lpCriticalSectiona); /*0x411f73*/
     return -13; /*0x411f82*/
   }
-  if ( !MEMORY[0x887778][188 * LockCount] || !MEMORY[0x887804][47 * LockCount] ) /*0x411e1e*/
+  if ( !DataGlobal_887778[188 * LockCount] || !DataGlobal_887804[47 * LockCount] ) /*0x411e1e*/
     return -13; /*0x411e26*/
   EnterCriticalSection((LPCRITICAL_SECTION)(188 * LockCount + 8943640)); /*0x411e33*/
   if ( (*(int (__stdcall **)(_DWORD, _DWORD, _DWORD, int))(**(_DWORD **)(v3 + 140) + 48))( /*0x411e48*/
@@ -508,9 +512,9 @@ int __cdecl SubmitDirectSoundBufferData(unsigned int a1, char *a2, char *a3)
     if ( v6 ) /*0x412052*/
     {
       v40 = *(unsigned int *)(v5 + 4); /*0x41205f*/
-      if ( *(float *)&MEMORY[0xA8EB9C] * 256.0 != (double)v40 ) /*0x41207a*/
+      if ( *(float *)&DataGlobal_A8EB9C * 256.0 != (double)v40 ) /*0x41207a*/
       {
-        v7 = Math::RoundToInt(*(float *)&MEMORY[0xA8EB9C] * 255.0); /*0x412088*/
+        v7 = Math::RoundToInt(*(float *)&DataGlobal_A8EB9C * 255.0); /*0x412088*/
         *(_DWORD *)(v5 + 4) = v7; /*0x41208f*/
         v8 = *v6; /*0x412092*/
         v9 = sub_40A900((unsigned __int8)v7); /*0x41209a*/
@@ -529,11 +533,11 @@ int __cdecl SubmitDirectSoundBufferData(unsigned int a1, char *a2, char *a3)
   *(_DWORD *)(v5 + 4 * v10 + 80) = v4; /*0x4120d8*/
   *(_DWORD *)(v5 + 4 * v10 + 88) = v12; /*0x4120dc*/
   *(_DWORD *)(v5 + 4 * v10 + 72) = 1; /*0x4120e0*/
-  v13 = MEMORY[0x887804][47 * *(_DWORD *)(v3 + 52)]; /*0x4120ef*/
+  v13 = DataGlobal_887804[47 * *(_DWORD *)(v3 + 52)]; /*0x4120ef*/
   v14 = 188 * *(_DWORD *)(v3 + 52) + 8943480; /*0x4120f8*/
   if ( v13 ) /*0x4120ff*/
   {
-    v37 = *((_DWORD *)&MEMORY[0x887814] + 47 * *(_DWORD *)(v3 + 52)); /*0x41210d*/
+    v37 = *((_DWORD *)&DataGlobal_887814 + 47 * *(_DWORD *)(v3 + 52)); /*0x41210d*/
     if ( !(*(int (__stdcall **)(int, int, _DWORD, char **, unsigned int *, char **, unsigned int *, _DWORD))(*(_DWORD *)v13 + 44))( /*0x412134*/
             v13,
             v37,
@@ -669,7 +673,7 @@ LABEL_21:
   v11 = *(_DWORD *)(v6 + 156); /*0x412483*/
   if ( v16 < v11 || v16 >= *(_DWORD *)(v6 + 144) >> 1 && !v11 || v10 == 1 ) /*0x4124a4*/
   {
-    (*(void (__cdecl **)(DWORD_PTR, _DWORD))&MEMORY[0x87F8E4].__pad_5568[10532])( /*0x4124af*/
+    (*(void (__cdecl **)(DWORD_PTR, _DWORD))&DataGlobal_87F8E4[32396])( /*0x4124af*/
       dwUser,
       *(_DWORD *)(v6 + 4 * *(_DWORD *)(v6 + 68) + 80));
     v12 = *(_DWORD *)(v6 + 68); /*0x4124b5*/
@@ -678,7 +682,7 @@ LABEL_21:
     if ( v12 + 1 >= 2 ) /*0x4124ce*/
       v13 = 0; /*0x4124d0*/
     *(_DWORD *)(v6 + 4 * v12 + 72) = 0; /*0x4124d3*/
-    (*(void (__cdecl **)(DWORD_PTR))&MEMORY[0x87F8E4].__pad_5568[10528])(dwUser); /*0x4124db*/
+    (*(void (__cdecl **)(DWORD_PTR))&DataGlobal_87F8E4[32392])(dwUser); /*0x4124db*/
     if ( *(_DWORD *)(v6 + 4 * v13 + 72) ) /*0x4124e1*/
       *(_DWORD *)(v6 + 68) = v13; /*0x4124ec*/
     if ( v14 == 1 ) /*0x4124f4*/
@@ -770,11 +774,11 @@ CCINIClass *__usercall PlaceAircraftFromINI@<eax>(char *a1@<ecx>, int a2@<edi>)
   {
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, &stru_817460, v4); /*0x41b14a*/
     INIClass::GetString((unsigned __int8 ***)a1, (INIClass *)&stru_817460, StringByIndex, 0, String, 128); /*0x41b164*/
-    v6 = strtok(String[0].__pad_0, MEMORY[0x817F70].__pad_0); /*0x41b173*/
+    v6 = strtok(String[0].__pad_0, Delimiter[0]); /*0x41b173*/
     v7 = (INIClass *)HouseClass::FindByName(v6); /*0x41b182*/
     if ( v7 != (INIClass *)-1 ) /*0x41b187*/
     {
-      v8 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b194*/
+      v8 = strtok(0, Delimiter[0]); /*0x41b194*/
       v9 = (INIClass *)TypeClass::FindByName(v8); /*0x41b1a3*/
       if ( v9 != (INIClass *)-1 ) /*0x41b1a8*/
       {
@@ -784,15 +788,15 @@ CCINIClass *__usercall PlaceAircraftFromINI@<eax>(char *a1@<ecx>, int a2@<edi>)
         {
           v12 = (FootClass *)AircraftClass::Construct( /*0x41b1de*/
                                v11,
-                               *(IUnknown **)&MEMORY[0xA8B21C]->__pad_0[4 * (_DWORD)v9],
+                               *(IUnknown **)&g_AircraftTypeCount->__pad_0[4 * (_DWORD)v9],
                                v10);
           if ( v12 ) /*0x41b1e2*/
           {
-            v13 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b1ef*/
+            v13 = strtok(0, Delimiter[0]); /*0x41b1ef*/
             atoi(v13); /*0x41b1f5*/
-            if ( *(int *)&MEMORY[0xA8D63C].__pad_14B0[656] < 4 ) /*0x41b210*/
+            if ( *(int *)&g_NetworkPlayerBuffer[5952] < 4 ) /*0x41b210*/
             {
-              v17 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b242*/
+              v17 = strtok(0, Delimiter[0]); /*0x41b242*/
               v18 = atoi(v17); /*0x41b248*/
               LOWORD(v37) = v18 % 128; /*0x41b263*/
               HIWORD(v37) = v18 / 128; /*0x41b26d*/
@@ -800,20 +804,20 @@ CCINIClass *__usercall PlaceAircraftFromINI@<eax>(char *a1@<ecx>, int a2@<edi>)
             }
             else
             {
-              v14 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b212*/
+              v14 = strtok(0, Delimiter[0]); /*0x41b212*/
               LOWORD(v38) = atoi(v14); /*0x41b224*/
-              v15 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b229*/
+              v15 = strtok(0, Delimiter[0]); /*0x41b229*/
               HIWORD(v38) = atoi(v15); /*0x41b234*/
               v16 = v38; /*0x41b239*/
             }
             v40[0] = ((__int16)v16 << 8) + 128; /*0x41b29b*/
             v40[1] = (SHIWORD(v16) << 8) + 128; /*0x41b29f*/
             v40[2] = 0; /*0x41b2a3*/
-            v19 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b2a7*/
+            v19 = strtok(0, Delimiter[0]); /*0x41b2a7*/
             v20 = (CCINIClass *)atoi(v19); /*0x41b2b9*/
-            v21 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b2bb*/
+            v21 = strtok(0, Delimiter[0]); /*0x41b2bb*/
             v22 = (CCINIClass *)LookupWaypointName(v21); /*0x41b2ca*/
-            v23 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b2d3*/
+            v23 = strtok(0, Delimiter[0]); /*0x41b2d3*/
             v24 = (void *)ObjectTypeClass::FindByName(v23); /*0x41b2dd*/
             if ( v24 ) /*0x41b2e4*/
             {
@@ -821,19 +825,19 @@ CCINIClass *__usercall PlaceAircraftFromINI@<eax>(char *a1@<ecx>, int a2@<edi>)
               if ( v25 ) /*0x41b2ef*/
                 ObjectClass::SetReference(v12, v25); /*0x41b2f4*/
             }
-            v26 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b300*/
+            v26 = strtok(0, Delimiter[0]); /*0x41b300*/
             if ( v26 ) /*0x41b30a*/
             {
               v27 = (CCINIClass *)atoi(v26); /*0x41b30d*/
               FootClass::SetField((float *)&v12->initialOwner, v27); /*0x41b31c*/
             }
-            v28 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b328*/
+            v28 = strtok(0, Delimiter[0]); /*0x41b328*/
             if ( v28 ) /*0x41b332*/
               v12->displayProductionTo[0] = atoi(v28); /*0x41b33d*/
-            v29 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b34a*/
+            v29 = strtok(0, Delimiter[0]); /*0x41b34a*/
             if ( v29 ) /*0x41b354*/
               v12->__pad_3F7[42] = atoi(v29) != 0; /*0x41b364*/
-            v30 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x41b371*/
+            v30 = strtok(0, Delimiter[0]); /*0x41b371*/
             if ( v30 ) /*0x41b37b*/
               v12->__pad_3F7[43] = atoi(v30) != 0; /*0x41b38b*/
             if ( (*(unsigned __int8 (__thiscall **)(FootClass *, _DWORD *, CCINIClass *, int))(*(_DWORD *)v12->__pad_0 /*0x41b39b*/
@@ -2318,14 +2322,14 @@ bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
     aP0 = *(IUnknown **)CurrentOption->__pad_0;
     if ( !v3->__pad_EC[5] )
       {
-    TileIndex = (MouseClass *)MapClass::GetTileIndex( &DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP0, (IUnknown *)v6, 0);
-    return MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)v6, 0) == (int)TileIndex;
+    TileIndex = (MouseClass *)MapClass::GetTileIndex( &DataGlobal_87C374[13428], (IUnknown *)&aP0, (IUnknown *)v6, 0);
+    return MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&a2, (IUnknown *)v6, 0) == (int)TileIndex;
       }
-    v7 = MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP0, (IUnknown *)v6, 0);
-    if ( MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)v6, 0) == v7 )
+    v7 = MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&aP0, (IUnknown *)v6, 0);
+    if ( MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&a2, (IUnknown *)v6, 0) == v7 )
     return 0;
-    v8 = (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP0, (IUnknown *)5, 0);
-    if ( (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)5, 0) != v8 )
+    v8 = (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&aP0, (IUnknown *)5, 0);
+    if ( (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&a2, (IUnknown *)5, 0) != v8 )
     return 0;
     }
   }

@@ -3,6 +3,7 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_765380_e4.hpp"
 #include "e4/classes/E4Recv_766060_e4.hpp"
+#include "e4/classes/Campaign_WorldDominationTour_24_e4.hpp"
 
 // 0x765380
 namespace gamemd {

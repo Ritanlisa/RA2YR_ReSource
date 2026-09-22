@@ -2,6 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/SpawnManagerClass_25_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x6B6C90
 namespace ra2 {
@@ -31,10 +34,10 @@ int __thiscall SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, 
   this->spawns = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6cb0*/
   this->q04C = 10; /*0x6b6cb6*/
   this->q048 = 0; /*0x6b6cbd*/
-  v7 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b6cc0*/
+  v7 = *(IUnknown **)&g_NetworkPlayerBuffer[5960]; /*0x6b6cc0*/
   this->SpawnManagerClass_field_58 = 0; /*0x6b6cc5*/
   this->q050 = v7; /*0x6b6cc8*/
-  this->SpawnManagerClass_field_5C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b6cd5*/
+  this->SpawnManagerClass_field_5C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6b6cd5*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6cdc*/
   this->spawnOwner = a3; /*0x6b6cdf*/
   this->owner = aP1; /*0x6b6ce6*/
@@ -50,7 +53,7 @@ int __thiscall SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, 
     v8 = (int *)__2_YAPAXI_Z(0x18u); /*0x6b6d24*/
     if ( !v8 ) /*0x6b6d2b*/
       break; /*0x6b6d2b*/
-    v9 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b6d31*/
+    v9 = *(IUnknown **)&g_NetworkPlayerBuffer[5960]; /*0x6b6d31*/
     v8[4] = 0; /*0x6b6d36*/
     v8[2] = (int)v9; /*0x6b6d39*/
     v10 = **(_DWORD **)(this + 40); /*0x6b6d44*/
@@ -60,13 +63,13 @@ int __thiscall SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, 
     if ( v12 ) /*0x6b6d5a*/
     {
       v13 = *(HouseClass **)(this + 40); /*0x6b6d66*/
-      v8[5] = v13 == *(HouseClass **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1248) /*0x6b6d86*/
-           || v13 == *(HouseClass **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1300)
-           || v13 == *(HouseClass **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1352);
+      v8[5] = v13 == *(HouseClass **)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 1248) /*0x6b6d86*/
+           || v13 == *(HouseClass **)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 1300)
+           || v13 == *(HouseClass **)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 1352);
       (*(void (__thiscall **)(int))(*(_DWORD *)v12 + 212))(v12); /*0x6b6d91*/
       *(_DWORD *)(*v8 + 724) = this->owner; /*0x6b6da1*/
       v8[1] = 0; /*0x6b6da7*/
-      v8[2] = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b6db1*/
+      v8[2] = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6b6db1*/
       v8[3] = v20; /*0x6b6db4*/
       v8[4] = 0; /*0x6b6db7*/
       v14 = this->spawnVectorCapacity; /*0x6b6dba*/
@@ -82,25 +85,25 @@ int __thiscall SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, 
       }
     }
   }
-  this->q050 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b6e0d*/
+  this->q050 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6b6e0d*/
   this->SpawnManagerClass_field_54 = v20; /*0x6b6e19*/
   this->SpawnManagerClass_field_58 = 20; /*0x6b6e1c*/
   this->SpawnManagerClass_field_68 = 0; /*0x6b6e1f*/
   this->SpawnManagerClass_field_6C = 0; /*0x6b6e22*/
   this->SpawnManagerClass_field_70 = 0; /*0x6b6e25*/
-  this->SpawnManagerClass_field_5C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b6e2f*/
+  this->SpawnManagerClass_field_5C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6b6e2f*/
   this->SpawnManagerClass_field_60 = v20; /*0x6b6e32*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6e35*/
-  if ( *(int *)&g_OverlayTypeConfig.__pad_14B0[11240] < *(int *)&g_OverlayTypeConfig.__pad_14B0[11232] /*0x6b6e69*/
-    || (g_OverlayTypeConfig.__pad_14B0[11237] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[11232])
-    && *(int *)&g_OverlayTypeConfig.__pad_14B0[11244] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[11224] + 8))(
-         &g_OverlayTypeConfig.__pad_14B0[11224],
-         *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[11232] + *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[11244],
+  if ( *(int *)&g_OverlayTypeConfig[16536] < *(int *)&g_OverlayTypeConfig[16528] /*0x6b6e69*/
+    || (g_OverlayTypeConfig[16533] || !*(_DWORD *)&g_OverlayTypeConfig[16528])
+    && *(int *)&g_OverlayTypeConfig[16540] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig[16520] + 8))(
+         &g_OverlayTypeConfig[16520],
+         *(_DWORD *)&g_OverlayTypeConfig[16528] + *(_DWORD *)&g_OverlayTypeConfig[16540],
          0) )
   {
-    v18 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[11240])++; /*0x6b6e76*/
-    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[11228] + 4 * v18) = this; /*0x6b6e85*/
+    v18 = (*(_DWORD *)&g_OverlayTypeConfig[16536])++; /*0x6b6e76*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[16524] + 4 * v18) = this; /*0x6b6e85*/
   }
   return this; /*0x6b6e8a*/
 }
@@ -144,16 +147,16 @@ int __thiscall sub_6B6EA0(int this)
   this->SpawnManagerClass_field_5C = g_CurrentFrame; /*0x6b6f28*/
   this->SpawnManagerClass_field_60 = v4; /*0x6b6f2f*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6f32*/
-  if ( MEMORY[0xB0B890] < MEMORY[0xB0B888] /*0x6b6f69*/
-    || (MEMORY[0xB0B88D] || !MEMORY[0xB0B888])
-    && MEMORY[0xB0B894] > 0
+  if ( DataGlobal_B0B890 < DataGlobal_B0B888 /*0x6b6f69*/
+    || (DataGlobal_B0B88D || !DataGlobal_B0B888)
+    && DataGlobal_B0B894 > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(SpawnManagerClass_Array + 8))(
          &SpawnManagerClass_Array,
-         MEMORY[0xB0B888] + MEMORY[0xB0B894],
+         DataGlobal_B0B888 + DataGlobal_B0B894,
          0) )
   {
-    v2 = MEMORY[0xB0B890]++; /*0x6b6f76*/
-    *((_DWORD *)MEMORY[0xB0B884] + v2) = this; /*0x6b6f85*/
+    v2 = DataGlobal_B0B890++; /*0x6b6f76*/
+    *((_DWORD *)DataGlobal_B0B884 + v2) = this; /*0x6b6f85*/
   }
   return this; /*0x6b6f8a*/
 }
@@ -191,14 +194,14 @@ void __thiscall sub_6B7010(int this)
   (*(void (__thiscall **)(int, int, _DWORD))(this->spawns + 8))(this + 56, v3, 0); /*0x6b7070*/
   v6 = this; /*0x6b7083*/
   v4 = (*(int (__thiscall **)(int *, int *))(SpawnManagerClass_Array + 16))(&SpawnManagerClass_Array, &v6); /*0x6b7087*/
-  if ( v4 != -1 && v4 < MEMORY[0xB0B890] && v4 < --MEMORY[0xB0B890] ) /*0x6b70a3*/
+  if ( v4 != -1 && v4 < DataGlobal_B0B890 && v4 < --DataGlobal_B0B890 ) /*0x6b70a3*/
   {
     do /*0x6b70bb*/
     {
       ++v4; /*0x6b70ab*/
-      *((_DWORD *)MEMORY[0xB0B884] + v4 - 1) = *((_DWORD *)MEMORY[0xB0B884] + v4); /*0x6b70af*/
+      *((_DWORD *)DataGlobal_B0B884 + v4 - 1) = *((_DWORD *)DataGlobal_B0B884 + v4); /*0x6b70af*/
     }
-    while ( v4 < MEMORY[0xB0B890] ); /*0x6b70bb*/
+    while ( v4 < DataGlobal_B0B890 ); /*0x6b70bb*/
   }
   v5 = *(void **)(this + 60); /*0x6b70bd*/
   this->spawns = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b70c0*/
@@ -408,7 +411,7 @@ int __stdcall SpawnManagerClass::LoadFromStream(int aP1, AbstractClass *aP1_4)
     {
       AbstractClass::InitVtables(v2, (IUnknown *)&aP1); /*0x6b7f3b*/
       SpawnManagerClass::Constructor_6B83A0(&v2[1].abstractFlags, 0, 0); /*0x6b7f45*/
-      *(_DWORD *)&v2[2].__pad_0[8] = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x6b7f51*/
+      *(_DWORD *)&v2[2].__pad_0[8] = *(_DWORD *)&HouseClass_Player[45112]; /*0x6b7f51*/
       v2[2].uniqueId = 0; /*0x6b7f57*/
       Timer::Start(&v2[2].abstractFlags, 0); /*0x6b7f5a*/
       *(_DWORD *)v2->__pad_0 = &SpawnManagerClass::`vftable'; /*0x6b7f5f*/
@@ -437,18 +440,18 @@ LABEL_20:
         {
           do /*0x6b8069*/
             ObjectPtr::RegisterForTracking( /*0x6b805f*/
-              (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+              (SwizzleManagerClass *)&stru_B05488[27784],
               *(MouseClass **)(v2[1].nextArrayIndex + 4 * v14++));
           while ( v14 < v16 ); /*0x6b8069*/
         }
-        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&v2[1]); /*0x6b8074*/
+        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&v2[1]); /*0x6b8074*/
         ObjectPtr::RegisterForTracking( /*0x6b8082*/
-          (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+          (SwizzleManagerClass *)&stru_B05488[27784],
           (MouseClass *)&v2[1].__pad_0[4]);
         ObjectPtr::RegisterForTracking( /*0x6b8090*/
-          (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+          (SwizzleManagerClass *)&stru_B05488[27784],
           (MouseClass *)&v2[2].NeedsSaveOrLink);
-        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&v2[3]); /*0x6b809e*/
+        ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&v2[3]); /*0x6b809e*/
       }
       else
       {
@@ -457,7 +460,7 @@ LABEL_20:
           v8 = (DynamicVector *)__2_YAPAXI_Z(0x18u); /*0x6b7fc8*/
           if ( v8 ) /*0x6b7fd2*/
           {
-            v9 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x6b7fd4*/
+            v9 = *(IUnknown **)&HouseClass_Player[45112]; /*0x6b7fd4*/
             v8->field_10 = 0; /*0x6b7fda*/
             v8->field_8 = (int)v9; /*0x6b7fdd*/
             v5 = v8; /*0x6b7fe0*/

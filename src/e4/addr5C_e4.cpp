@@ -22,6 +22,16 @@
 #include "e4/classes/E4Recv_5CE330_e4.hpp"
 #include "e4/classes/E4Recv_5CE3A0_e4.hpp"
 #include "e4/classes/E4Recv_5CF840_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/BinkMovie_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x5C00E0
 namespace gamemd {
@@ -40,8 +50,8 @@ char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
   int v10; // [esp+10h] [ebp-14h]
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
 
-  result = MEMORY[0xABF3F4]; /*0x5c00e0*/
-  if ( MEMORY[0xABF3F4] ) /*0x5c00ea*/
+  result = g_BigIntPool; /*0x5c00e0*/
+  if ( g_BigIntPool ) /*0x5c00ea*/
   {
     (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Alternate + 24))(DSurface_Alternate, 0); /*0x5c00fa*/
     Frame::Present(DSurface_Alternate, a1, a2, a3, 0, v7, v8, v9); /*0x5c0107*/
@@ -50,18 +60,18 @@ char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
     {
       GetClientRect(g_hWnd, &Rect); /*0x5c0129*/
       ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5c013b*/
-      v4 = *(_DWORD *)(MEMORY[0xABF3F4] + 64); /*0x5c0156*/
-      v5 = Rect.top + *(_DWORD *)(MEMORY[0xABF3F4] + 56); /*0x5c0159*/
-      v6 = *(_DWORD *)(MEMORY[0xABF3F4] + 52); /*0x5c015b*/
-      v9 = *(int **)(MEMORY[0xABF3F4] + 60); /*0x5c015e*/
+      v4 = *(_DWORD *)(g_BigIntPool + 64); /*0x5c0156*/
+      v5 = Rect.top + *(_DWORD *)(g_BigIntPool + 56); /*0x5c0159*/
+      v6 = *(_DWORD *)(g_BigIntPool + 52); /*0x5c015b*/
+      v9 = *(int **)(g_BigIntPool + 60); /*0x5c015e*/
       v8 = v5; /*0x5c0164*/
       v7 = Rect.left + v6; /*0x5c016e*/
       v10 = v4; /*0x5c0172*/
       return (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x5c0187*/
                g_DSurface_Primary,
                &v7,
-               *(_DWORD *)(MEMORY[0xABF3F4] + 8),
-               MEMORY[0xABF3F4] + 36,
+               *(_DWORD *)(g_BigIntPool + 8),
+               g_BigIntPool + 36,
                0,
                1);
     }
@@ -2210,7 +2220,7 @@ char __fastcall sub_5C8980(char *a1, unsigned int edx0, int a3)
   for ( i = (unsigned __int16 *)&unk_82E174; ; ++i ) /*0x5c89f2*/
   {
     memset(&aP1, 0, v4 * 4); /*0x5c8a0a*/
-    *(_DWORD *)aP1.__pad_0 = *i; /*0x5c8a25*/
+    *(_DWORD *)aP1[0] = *i; /*0x5c8a25*/
     ModBigIntExp(a0, &aP1, a2, v3, a3); /*0x5c8a38*/
     if ( a0[0] != 1 ) /*0x5c8a45*/
       break; /*0x5c8a45*/
@@ -2680,7 +2690,7 @@ LABEL_17:
         while ( 1 ) /*0x5c9145*/
         {
           memset(&aP1, 0, 4 * ((unsigned int)(4 * edx0) >> 2)); /*0x5c9145*/
-          *(_DWORD *)aP1.__pad_0 = *v19; /*0x5c916b*/
+          *(_DWORD *)aP1[0] = *v19; /*0x5c916b*/
           ModBigIntExp(a0, &aP1, a2, a1, edx0); /*0x5c9172*/
           if ( a0[0] != 1 ) /*0x5c917f*/
             break; /*0x5c917f*/
@@ -3103,7 +3113,7 @@ LABEL_5:
   this->M24 = v6; /*0x5ce112*/
   if ( this->M32 >= (unsigned int)WideString::Length((const wchar_t **)(this + 28)) ) /*0x5ce122*/
   {
-    v7 = Math::RoundToInt(MEMORY[0xA8EB98] * 64.0); /*0x5ce130*/
+    v7 = Math::RoundToInt(DataGlobal_A8EB98 * 64.0); /*0x5ce130*/
     sub_406670(aBleep1, v7); /*0x5ce13c*/
     return 1; /*0x5ce149*/
   }
@@ -3159,7 +3169,7 @@ LABEL_5:
     this->M32 = v10; /*0x5ce217*/
     if ( (_WORD)v12 == 10 ) /*0x5ce21a*/
     {
-      v16 = Math::RoundToInt(MEMORY[0xA8EB98] * 64.0); /*0x5ce228*/
+      v16 = Math::RoundToInt(DataGlobal_A8EB98 * 64.0); /*0x5ce228*/
       sub_406670(aBleep1, v16); /*0x5ce234*/
       this->M80 += *(_DWORD *)(this->M52 + 8); /*0x5ce244*/
     }

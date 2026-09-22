@@ -1,6 +1,7 @@
 #include "object/foot.hpp"
 
 #include <cstring>
+#include "e4/e4_globals.hpp"
 
 namespace ra2 {
 namespace game {
@@ -147,7 +148,7 @@ char __fastcall FootClass_MovementAI(int a1)
   if ( !result )
     return result;
   *(_BYTE *)(a1 + 1715) = 0;
-  if ( !((int)MEMORY[0xA8ED84] % *((_DWORD *)MEMORY[0x8871E0] + 1538))
+  if ( !((int)g_CurrentFrame % *((_DWORD *)g_RulesClass_Instance + 1538))
     && !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3383)
     && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 84))(a1)
     && !*(_BYTE *)(a1 + 129) )
@@ -160,8 +161,8 @@ char __fastcall FootClass_MovementAI(int a1)
     v36 = Cell::GetTraversability(v4);
     if ( v36 > 0 )
     {
-      v5 = MEMORY[0x8871E0];
-      v36 = Math::RoundToInt((double)v36 * *((double *)MEMORY[0x8871E0] + 771));
+      v5 = g_RulesClass_Instance;
+      v36 = Math::RoundToInt((double)v36 * *((double *)g_RulesClass_Instance + 771));
       result = (*(int (__thiscall **)(int, int *, _DWORD, _DWORD, _DWORD, _DWORD, int, _DWORD))(*(_DWORD *)a1 + 364))(
                  a1,
                  &v36,
@@ -188,13 +189,13 @@ char __fastcall FootClass_MovementAI(int a1)
     WinAPI::Wrapper(-2147467261);
   if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 128))(*(_DWORD *)(a1 + 1652))
     && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 84))(a1)
-    && (unsigned __int8)HouseClass::IsAlliedWith(MEMORY[0xA83D4C]) )
+    && (unsigned __int8)HouseClass::IsAlliedWith(HouseClass_Player) )
   {
     v7 = *(_DWORD *)(a1 + 1628);
     v8 = *(_DWORD *)(a1 + 1636);
     if ( v7 != -1 )
     {
-      if ( (int)MEMORY[0xA8ED84] - v7 >= v8 )
+      if ( (int)g_CurrentFrame - v7 >= v8 )
       {
 LABEL_21:
         (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)a1 + 1164))(a1, 0, 0, 0, 0);
@@ -220,19 +221,19 @@ LABEL_21:
         v13 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1);
         v14 = v39;
         *(_DWORD *)(a1 + 612) = v13;
-        *(_DWORD *)(a1 + 1628) = MEMORY[0xA8ED84];
+        *(_DWORD *)(a1 + 1628) = g_CurrentFrame;
         *(_DWORD *)(a1 + 1632) = v14;
         *(_DWORD *)(a1 + 1636) = 15;
         goto LABEL_25;
       }
-      v8 -= (int)MEMORY[0xA8ED84] - v7;
+      v8 -= (int)g_CurrentFrame - v7;
     }
     if ( v8 )
       goto LABEL_25;
     goto LABEL_21;
   }
 LABEL_25:
-  if ( !((int)MEMORY[0xA8ED84] % 16)
+  if ( !((int)g_CurrentFrame % 16)
     && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 84))(a1)
     && *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) + 60) )
   {
@@ -266,7 +267,7 @@ LABEL_25:
        && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 912)
        && v17
        && !(unsigned __int8)FootClass::updateScanRange(v17))
-      && !((int)MEMORY[0xA8ED84] % *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 660))
+      && !((int)g_CurrentFrame % *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 660))
       && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 468))(a1)
       && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 472))(a1)
       && !*(_BYTE *)(a1 + 1709) )
@@ -278,7 +279,7 @@ LABEL_25:
       if ( !*(_DWORD *)(a1 + 1652) )
         WinAPI::Wrapper(-2147467261);
       if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 128))(*(_DWORD *)(a1 + 1652))
-        && !((int)MEMORY[0xA8ED84] % *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 664))
+        && !((int)g_CurrentFrame % *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 664))
         && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 468))(a1)
         && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 472))(a1)
         && !*(_BYTE *)(a1 + 1709) )
@@ -333,7 +334,7 @@ LABEL_136:
         v39 = *(_DWORD *)(a1 + 160);
         v40 = *(_DWORD *)(a1 + 164);
         (*(int (__thiscall **)(int))(v18 + 132))(a1);
-        Random::State(&MEMORY[0x886B88]);
+        Random::State(&Randomizer_Global);
         StartAudioControllerAt(a1 + 1348);
         *(_BYTE *)(a1 + 1340) = 1;
       }
@@ -375,7 +376,7 @@ LABEL_136:
         }
         if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1352) == -1 )
         {
-          if ( *((_DWORD *)MEMORY[0x8871E0] + 130) != -1 )
+          if ( *((_DWORD *)g_RulesClass_Instance + 130) != -1 )
           {
             v38 = *(_DWORD *)(a1 + 156);
             v39 = *(_DWORD *)(a1 + 160);
@@ -435,7 +436,7 @@ LABEL_136:
     v39 = *(_DWORD *)(a1 + 160);
     v40 = *(_DWORD *)(a1 + 164);
     StartAudioController(&v38, a1 + 1348);
-    if ( ((unsigned __int8)MEMORY[0xA8ED84] & 0x3F) == 0x3F
+    if ( ((unsigned __int8)g_CurrentFrame & 0x3F) == 0x3F
       && !*(_DWORD *)(a1 + 1444)
       && !*(_BYTE *)(a1 + 140)
       && !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) + 284)

@@ -18,6 +18,17 @@
 #include "e4/classes/E4Recv_4CB6A0_e4.hpp"
 #include "e4/classes/E4Recv_4CB8B0_e4.hpp"
 #include "e4/classes/E4Recv_4CCA70_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x4C1440
 namespace gamemd {
@@ -31,7 +42,7 @@ int sub_4C1440()
 
   memset(v1, 0, sizeof(v1)); /*0x4c1452*/
   v1[0] = 316; /*0x4c145d*/
-  result = (*(int (__stdcall **)(int, _DWORD *, _DWORD))(*(_DWORD *)MEMORY[0x8A0E00] + 44))(MEMORY[0x8A0E00], v1, 0); /*0x4c146b*/
+  result = (*(int (__stdcall **)(int, _DWORD *, _DWORD))(*(_DWORD *)DataGlobal_8A0E00 + 44))(DataGlobal_8A0E00, v1, 0); /*0x4c146b*/
   if ( !result ) /*0x4c1471*/
   {
     if ( (v1[1] & 1) != 0 ) /*0x4c1478*/
@@ -80,8 +91,8 @@ int sub_4C14D0()
   memset(v2, 0, sizeof(v2)); /*0x4c14f5*/
   v1[0] = 252; /*0x4c14fc*/
   v2[0] = 252; /*0x4c1500*/
-  result = (*(int (__stdcall **)(_DWORD, _DWORD *, _DWORD *))(*(_DWORD *)MEMORY[0x8A0DF8] + 12))( /*0x4c1517*/
-             MEMORY[0x8A0DF8],
+  result = (*(int (__stdcall **)(_DWORD, _DWORD *, _DWORD *))(*(_DWORD *)g_DrawColorState + 12))( /*0x4c1517*/
+             g_DrawColorState,
              v1,
              v2);
   if ( !result ) /*0x4c151d*/
@@ -169,21 +180,21 @@ int sub_4C1600()
   int result; // eax
   _DWORD v1[79]; // [esp+20h] [ebp-13Ch] BYREF
 
-  result = MEMORY[0x8A0094]->lpVtbl->QueryInterface( /*0x4c1618*/
-             MEMORY[0x8A0094],
+  result = g_lpDirectDraw7->lpVtbl->QueryInterface( /*0x4c1618*/
+             g_lpDirectDraw7,
              (const IID *const)&unk_7F7D50,
-             (LPVOID *)&MEMORY[0x8A0E00]);
+             (LPVOID *)&DataGlobal_8A0E00);
   if ( !result ) /*0x4c161c*/
   {
-    result = (**(int (__stdcall ***)(int, void *, int *))MEMORY[0x8A0E00])( /*0x4c1630*/
-               MEMORY[0x8A0E00],
+    result = (**(int (__stdcall ***)(int, void *, int *))DataGlobal_8A0E00)( /*0x4c1630*/
+               DataGlobal_8A0E00,
                &unk_7F8070,
-               &MEMORY[0x8A0DF4]);
+               &DataGlobal_8A0DF4);
     if ( !result ) /*0x4c1634*/
     {
       memset(v1, 0, sizeof(v1)); /*0x4c1644*/
       v1[0] = 316; /*0x4c164b*/
-      if ( !(*(int (__stdcall **)(int, _DWORD *, _DWORD))(*(_DWORD *)MEMORY[0x8A0E00] + 44))(MEMORY[0x8A0E00], v1, 0) /*0x4c1687*/
+      if ( !(*(int (__stdcall **)(int, _DWORD *, _DWORD))(*(_DWORD *)DataGlobal_8A0E00 + 44))(DataGlobal_8A0E00, v1, 0) /*0x4c1687*/
         && (v1[1] & 1) != 0
         && (v1[14] & 0x400) != 0
         && (v1[33] & 0x2000) != 0
@@ -230,24 +241,24 @@ int InitializeRadialGradientTexture()
 
   v0 = *(_DWORD **)(DSurface_Composite + 28); /*0x4c16b4*/
   v14 = v0; /*0x4c16cb*/
-  result = (*(int (__stdcall **)(int, void *, _DWORD *, __int64 *))(*(_DWORD *)MEMORY[0x8A0DF4] + 32))( /*0x4c16cf*/
-             MEMORY[0x8A0DF4],
+  result = (*(int (__stdcall **)(int, void *, _DWORD *, __int64 *))(*(_DWORD *)DataGlobal_8A0DF4 + 32))( /*0x4c16cf*/
+             DataGlobal_8A0DF4,
              &unk_7F80B0,
              v0,
-             &MEMORY[0x8A0DF8]);
+             &g_DrawColorState);
   if ( !result ) /*0x4c16d6*/
   {
     if ( sub_4C14D0() ) /*0x4c16dc*/
       return -1; /*0x4c16ef*/
-    result = (*(int (__stdcall **)(int, char *, _DWORD))(*(_DWORD *)MEMORY[0x8A0DF4] + 24))( /*0x4c16fe*/
-               MEMORY[0x8A0DF4],
-               (char *)&MEMORY[0x8A0DF8] + 4,
+    result = (*(int (__stdcall **)(int, char *, _DWORD))(*(_DWORD *)DataGlobal_8A0DF4 + 24))( /*0x4c16fe*/
+               DataGlobal_8A0DF4,
+               (char *)&g_DrawColorState + 4,
                0);
     if ( !result ) /*0x4c1703*/
     {
-      result = (*(int (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)MEMORY[0x8A0DF8] + 24))( /*0x4c1718*/
-                 MEMORY[0x8A0DF8],
-                 HIDWORD(MEMORY[0x8A0DF8]));
+      result = (*(int (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)g_DrawColorState + 24))( /*0x4c1718*/
+                 g_DrawColorState,
+                 HIDWORD(g_DrawColorState));
       if ( !result ) /*0x4c171d*/
       {
         memset(v16, 0, sizeof(v16)); /*0x4c172e*/
@@ -263,20 +274,20 @@ int InitializeRadialGradientTexture()
           v15[0] = 44; /*0x4c178d*/
           v15[10] = 1065353216; /*0x4c1795*/
           *(float *)&v15[8] = (float)v16[2]; /*0x4c179e*/
-          result = (*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)HIDWORD(MEMORY[0x8A0DF8]) + 68))( /*0x4c17a5*/
-                     HIDWORD(MEMORY[0x8A0DF8]),
+          result = (*(int (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)HIDWORD(g_DrawColorState) + 68))( /*0x4c17a5*/
+                     HIDWORD(g_DrawColorState),
                      v15);
           if ( !result ) /*0x4c17aa*/
           {
-            result = (*(int (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)MEMORY[0x8A0DF8] + 52))( /*0x4c17bf*/
-                       MEMORY[0x8A0DF8],
-                       HIDWORD(MEMORY[0x8A0DF8]));
+            result = (*(int (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)g_DrawColorState + 52))( /*0x4c17bf*/
+                       g_DrawColorState,
+                       HIDWORD(g_DrawColorState));
             if ( !result ) /*0x4c17c4*/
             {
               if ( __2_YAPAXI_Z(0x78u) ) /*0x4c17cc*/
               {
-                MEMORY[0x8A0E04] = (void *)sub_4A3270(256, 256, 0); /*0x4c17ec*/
-                if ( MEMORY[0x8A0E04] ) /*0x4c17f1*/
+                DataGlobal_8A0E04 = (void *)sub_4A3270(256, 256, 0); /*0x4c17ec*/
+                if ( DataGlobal_8A0E04 ) /*0x4c17f1*/
                 {
                   v3 = malloc(0x20000u); /*0x4c17f8*/
                   v12 = v3; /*0x4c1802*/
@@ -304,16 +315,16 @@ int InitializeRadialGradientTexture()
                       }
                       ++v5; /*0x4c1886*/
                       ++v7; /*0x4c18af*/
-                      *(v5 - 1) = (v9 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x4c18b0*/
-                                | (v9 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                                | (v9 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
+                      *(v5 - 1) = (v9 >> g_BitShift_Green_0 << g_DDraw_BlueMask) /*0x4c18b0*/
+                                | (v9 >> g_BitMask_Blue << g_BitMask_Green)
+                                | (v9 >> g_BitShift_Blue << g_BitShift_Blue);
                     }
                     while ( v7 + 128 < 256 ); /*0x4c18c0*/
                     v4 = v13 + 1; /*0x4c18ca*/
                     v13 = v4; /*0x4c18cb*/
                   }
                   while ( v4 + 128 < 256 ); /*0x4c18db*/
-                  if ( AudioStream::ReadSamples(MEMORY[0x8A0E04], v12) ) /*0x4c18ec*/
+                  if ( AudioStream::ReadSamples(DataGlobal_8A0E04, v12) ) /*0x4c18ec*/
                     return 3; /*0x4c18f5*/
                   memset(v16, 0, sizeof(v16)); /*0x4c1911*/
                   v16[0] = 108; /*0x4c1919*/
@@ -321,16 +332,16 @@ int InitializeRadialGradientTexture()
                   if ( !result ) /*0x4c1928*/
                   {
                     if ( __2_YAPAXI_Z(0x78u) ) /*0x4c1930*/
-                      MEMORY[0x8A0E08] = (void *)sub_4A3270(v16[3], v16[2], 1); /*0x4c194f*/
+                      DataGlobal_8A0E08 = (void *)sub_4A3270(v16[3], v16[2], 1); /*0x4c194f*/
                     else
-                      MEMORY[0x8A0E08] = 0; /*0x4c1956*/
+                      DataGlobal_8A0E08 = 0; /*0x4c1956*/
                     v10 = __2_YAPAXI_Z(0x18004u); /*0x4c1965*/
                     if ( v10 ) /*0x4c196f*/
                       v11 = (void *)sub_4A3630(v10); /*0x4c1973*/
                     else
                       v11 = 0; /*0x4c197a*/
-                    MEMORY[0x8A0E10] = v11; /*0x4c1982*/
-                    if ( !MEMORY[0x8A0E08] || !v11 ) /*0x4c1991*/
+                    DataGlobal_8A0E10 = v11; /*0x4c1982*/
+                    if ( !DataGlobal_8A0E08 || !v11 ) /*0x4c1991*/
                       return -1; /*0x4c1991*/
                     return 0; /*0x4c1997*/
                   }
@@ -339,7 +350,7 @@ int InitializeRadialGradientTexture()
               }
               else
               {
-                MEMORY[0x8A0E04] = 0; /*0x4c1854*/
+                DataGlobal_8A0E04 = 0; /*0x4c1854*/
               }
               return 1; /*0x4c185a*/
             }
@@ -404,9 +415,9 @@ int __thiscall sub_4C2790(int this)
 
   if ( this->M40 )
   {
-    Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], (_DWORD *)this, (IUnknown *)v4); /*0x4c27aa*/
-    Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], (_DWORD *)(this + 12), (IUnknown *)v3); /*0x4c27be*/
-    if ( ClipLine(v4, v3, (int *)&MEMORY[0x87F8E4].__pad_5568[8532]) )
+    Coord::To_Screen(*(_DWORD **)&DataGlobal_87F8E4[31296], (_DWORD *)this, (IUnknown *)v4); /*0x4c27aa*/
+    Coord::To_Screen(*(_DWORD **)&DataGlobal_87F8E4[31296], (_DWORD *)(this + 12), (IUnknown *)v3); /*0x4c27be*/
+    if ( ClipLine(v4, v3, (int *)&DataGlobal_87F8E4[30396]) )
       Lightning::Draw(
         (_DWORD *)this,
         *(_DWORD *)this,
@@ -453,10 +464,10 @@ int sub_4C2830()
   int v18[2]; // [esp+28h] [ebp-14h] BYREF
   char v19[12]; // [esp+30h] [ebp-Ch] BYREF
 
-  result = MEMORY[0x8A0E98] - 1; /*0x4c2839*/
-  for ( i = MEMORY[0x8A0E98] - 1; i >= 0; --i ) /*0x4c2843*/
+  result = DataGlobal_8A0E98 - 1; /*0x4c2839*/
+  for ( i = DataGlobal_8A0E98 - 1; i >= 0; --i ) /*0x4c2843*/
   {
-    v1 = (int *)*((_DWORD *)MEMORY[0x8A0E8C] + result); /*0x4c284f*/
+    v1 = (int *)*((_DWORD *)DataGlobal_8A0E8C + result); /*0x4c284f*/
     Block = v1; /*0x4c2852*/
     v2 = v1[8]; /*0x4c2856*/
     if ( v2 ) /*0x4c285b*/
@@ -471,7 +482,7 @@ int sub_4C2830()
       v4 = *v3; /*0x4c288a*/
       v5 = v3[1]; /*0x4c288e*/
       v6 = v3[2]; /*0x4c2891*/
-      if ( v4 != MEMORY[0x8A0E50] || v5 != MEMORY[0x8A0E54] || v6 != MEMORY[0x8A0E58] ) /*0x4c28a4*/
+      if ( v4 != DataGlobal_8A0E50 || v5 != DataGlobal_8A0E54 || v6 != DataGlobal_8A0E58 ) /*0x4c28a4*/
       {
         v7 = Block; /*0x4c28a6*/
         *(_DWORD *)Block = v4; /*0x4c28aa*/
@@ -497,15 +508,15 @@ int sub_4C2830()
     *v8 >>= 1; /*0x4c2944*/
     if ( !*((_DWORD *)Block + 10) ) /*0x4c294a*/
     {
-      v11 = (*(int (__thiscall **)(int *, void **))(MEMORY[0x8A0E88] + 16))(&MEMORY[0x8A0E88], &Block); /*0x4c2960*/
-      if ( v11 != -1 && v11 < MEMORY[0x8A0E98] && v11 < --MEMORY[0x8A0E98] ) /*0x4c297b*/
+      v11 = (*(int (__thiscall **)(int *, void **))(DataGlobal_8A0E88 + 16))(&DataGlobal_8A0E88, &Block); /*0x4c2960*/
+      if ( v11 != -1 && v11 < DataGlobal_8A0E98 && v11 < --DataGlobal_8A0E98 ) /*0x4c297b*/
       {
         do /*0x4c2993*/
         {
           ++v11; /*0x4c2983*/
-          *((_DWORD *)MEMORY[0x8A0E8C] + v11 - 1) = *((_DWORD *)MEMORY[0x8A0E8C] + v11); /*0x4c2987*/
+          *((_DWORD *)DataGlobal_8A0E8C + v11 - 1) = *((_DWORD *)DataGlobal_8A0E8C + v11); /*0x4c2987*/
         }
-        while ( v11 < MEMORY[0x8A0E98] ); /*0x4c2993*/
+        while ( v11 < DataGlobal_8A0E98 ); /*0x4c2993*/
       }
       v12 = Block; /*0x4c299b*/
       if ( Block ) /*0x4c299d*/
@@ -538,9 +549,9 @@ void sub_4C29E0()
   _DWORD *v1; // eax
   int v2; // ecx
 
-  for ( i = 0; i < MEMORY[0x8A0E98]; ++i ) /*0x4c29ed*/
+  for ( i = 0; i < DataGlobal_8A0E98; ++i ) /*0x4c29ed*/
   {
-    v1 = (_DWORD *)*((_DWORD *)MEMORY[0x8A0E8C] + i); /*0x4c29f4*/
+    v1 = (_DWORD *)*((_DWORD *)DataGlobal_8A0E8C + i); /*0x4c29f4*/
     if ( v1 ) /*0x4c29f9*/
     {
       v2 = v1[8]; /*0x4c29fb*/
@@ -552,14 +563,14 @@ void sub_4C29E0()
       __3_YAXPAX_Z(v1); /*0x4c2a0c*/
     }
   }
-  MEMORY[0x8A0E98] = 0; /*0x4c2a23*/
-  if ( MEMORY[0x8A0E8C] && MEMORY[0x8A0E95] ) /*0x4c2a33*/
+  DataGlobal_8A0E98 = 0; /*0x4c2a23*/
+  if ( DataGlobal_8A0E8C && DataGlobal_8A0E95 ) /*0x4c2a33*/
   {
-    __3_YAXPAX_Z(MEMORY[0x8A0E8C]); /*0x4c2a36*/
-    MEMORY[0x8A0E8C] = 0; /*0x4c2a3e*/
+    __3_YAXPAX_Z(DataGlobal_8A0E8C); /*0x4c2a36*/
+    DataGlobal_8A0E8C = 0; /*0x4c2a3e*/
   }
-  MEMORY[0x8A0E95] = 0; /*0x4c2a44*/
-  MEMORY[0x8A0E90] = 0; /*0x4c2a4a*/
+  DataGlobal_8A0E95 = 0; /*0x4c2a44*/
+  DataGlobal_8A0E90 = 0; /*0x4c2a4a*/
 }
 }
 } // namespace gamemd
@@ -649,7 +660,7 @@ int __thiscall sub_4C3DD0(int *this, int a2)
   TextRenderer::GetInstance(); /*0x4c3dd9*/
   Text::MeasureWidth(*this, 0); /*0x4c3de5*/
   v3 = *(this + 2); /*0x4c3def*/
-  v5[2] = MEMORY[0x8A00A4]; /*0x4c3df8*/
+  v5[2] = g_DDraw_Active; /*0x4c3df8*/
   v5[0] = 0; /*0x4c3e09*/
   v5[1] = v3; /*0x4c3e12*/
   v5[3] = 18; /*0x4c3e16*/
@@ -700,7 +711,7 @@ INT_PTR __stdcall DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
   if ( a2 != 272 ) /*0x4c83fc*/
     return 0; /*0x4c84c1*/
   Debug::Log(aWmInitdialog); /*0x4c8407*/
-  SetDlgItemTextA(hDlg, 1156, MEMORY[0x8A3A08]); /*0x4c841e*/
+  SetDlgItemTextA(hDlg, 1156, Buffer); /*0x4c841e*/
   SetFocus(hDlg); /*0x4c8425*/
   if ( g_hWnd ) /*0x4c8433*/
     SetDialogParent(hDlg, g_hWnd); /*0x4c8437*/
@@ -794,9 +805,9 @@ double __stdcall ComputeDistortionVariant(float a1)
   if ( v3 < 0 )
     v3 = (((_WORD)v3 - 1) | 0xFFFFE000) + 1 + ((int)((((_WORD)v3 - 1) | 0xFFFFE000) + 1) < 0 ? 0x2000 : 0);
   if ( v2 && v3 < 0x1FFF ) /*0x4cb187*/
-    return MEMORY[0x84F088][v3]; /*0x4cb189*/
+    return DataGlobal_84F088[v3]; /*0x4cb189*/
   else
-    return MEMORY[0x84F084][v3]; /*0x4cb193*/
+    return DataGlobal_84F084[v3]; /*0x4cb193*/
 }
 }
 } // namespace gamemd
@@ -1018,7 +1029,7 @@ int __fastcall FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a
   v12 = a5; /*0x4cf072*/
   LOWORD(v56) = SLODWORD(a4) / 256; /*0x4cf08c*/
   HIWORD(v56) = a5 / 256; /*0x4cf09f*/
-  v13 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v56); /*0x4cf0ac*/
+  v13 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v56); /*0x4cf0ac*/
   v14 = Cell::IsBridge(v13); /*0x4cf0b8*/
   if ( v14 && !*(_BYTE *)((*(int (__thiscall **)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf0cc*/
   {
@@ -1045,9 +1056,9 @@ int __fastcall FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a
         }
         else
         {
-          v11 = MEMORY[0x8B3C78]; /*0x4cf10a*/
-          v12 = MEMORY[0x8B3C7C]; /*0x4cf110*/
-          v62 = MEMORY[0x8B3C80]; /*0x4cf116*/
+          v11 = DataGlobal_8B3C78; /*0x4cf10a*/
+          v12 = DataGlobal_8B3C7C; /*0x4cf110*/
+          v62 = DataGlobal_8B3C80; /*0x4cf116*/
         }
       }
     }
@@ -2697,7 +2708,7 @@ char * AnimClass::sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int
   {
     BYTE2(this->field_0) = -1;
     LOBYTE(this->field_0) = 0;
-    *(int *)((char *)&this->field_0 + 3) = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664];
+    *(int *)((char *)&this->field_0 + 3) = *(int *)&g_NetworkPlayerBuffer[5960];
     return (char *)this;
   }
     else
@@ -2713,7 +2724,7 @@ char * AnimClass::sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int
     *(int *)&this->__pad_18[3] = a11;
     BYTE2(this->field_14) = a9;
     *(int *)((char *)&this->field_14 + 3) = a10;
-    *(int *)((char *)&this->field_0 + 3) = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664];
+    *(int *)((char *)&this->field_0 + 3) = *(int *)&g_NetworkPlayerBuffer[5960];
     return (char *)this;
   }
 }
@@ -3270,7 +3281,7 @@ double globalHelper_0CB3D0(AbstractClass * aP0, AbstractClass * aP1)
     if ( v6 >= 4097 )
     result = 1.5707964;
     else
-    result = *(float *)&DataGlobal_84DD9C.__pad_579C[4 * v6 + 56188];
+    result = *(float *)&DataGlobal_84DD9C[22428][4 * v6 + 56188];
     if ( *(float *)&aP1 < 0.0 )
     result = 3.141592653589793 - result;
     if ( *(float *)&aP0 < 0.0 )

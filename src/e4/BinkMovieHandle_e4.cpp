@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/BinkMovie_e4.hpp"
 
 // 0x432AB0
 int BinkMovieHandle::RenderFrameClipped(int a2, int a3)
@@ -103,7 +104,7 @@ _DWORD *__thiscall BinkMovieHandle::CopyFrameToSurface(int *this)
   struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
 
   v2 = (DSurface *)this->width; /*0x43306e*/
-  if ( v2 == *(DSurface **)&MEMORY[0x87F8E4].__pad_5568[9404] ) /*0x433073*/
+  if ( v2 == *(DSurface **)&DataGlobal_87F8E4[31268] ) /*0x433073*/
   {
     GetClientRect((HWND)g_hWnd, &Rect); /*0x433085*/
     ClientToScreen((HWND)g_hWnd, (LPPOINT)&Rect); /*0x433096*/

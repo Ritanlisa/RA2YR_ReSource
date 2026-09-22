@@ -12,6 +12,7 @@
 
 #include <cstring>
 #include <cmath>
+#include "e4/e4_globals.hpp"
 
 namespace gamemd
 {
@@ -220,10 +221,10 @@ unsigned int __thiscall TacticalClass_RenderIsometric(int this, int *a2, int a3)
   v23 = 0;
   v5 = this->visibleArea + v3;
   v6 = a2[1] + this->q0B4;
-  v24 = v5 - MEMORY[0x886FA0];
-  v25 = v6 - MEMORY[0x886FA4];
-  v21 = (float)(v5 - MEMORY[0x886FA0]);
-  v22 = (float)(v6 - MEMORY[0x886FA4]);
+  v24 = v5 - DSurface_ViewBounds;
+  v25 = v6 - g_Map_VisibleRect;
+  v21 = (float)(v5 - DSurface_ViewBounds);
+  v22 = (float)(v6 - g_Map_VisibleRect);
   v7 = TransformMatrix3x4Point(v36, (float *)(this + 3556), &v21);
   v21 = *v7;
   v22 = v7[1];
@@ -259,9 +260,9 @@ unsigned int __thiscall TacticalClass_RenderIsometric(int this, int *a2, int a3)
       v26 = v31;
       do
       {
-        if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v20) )
+        if ( LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v20) )
         {
-          v16 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v20);
+          v16 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v20);
           ScreenRect = CellClass::GetScreenRect((int)v16, v40);
           v33[0] = *ScreenRect;
           v33[1] = ScreenRect[1];
@@ -555,13 +556,13 @@ char __thiscall sub_480350(int this, _DWORD *a2, _DWORD *a3, char a4)
   if ( v6 == 0xFFFF )
   {
     v15 = 0;
-    v7 = (int *)*((_DWORD *)MEMORY[0xA8ED2C] + MEMORY[0xAA10B0]);
-    inited = CellClass::InitRandomOffsets(this, MEMORY[0xAA10B0], v7[188]);
+    v7 = (int *)*((_DWORD *)g_FrameCounter + DataGlobal_AA10B0);
+    inited = CellClass::InitRandomOffsets(this, DataGlobal_AA10B0, v7[188]);
 LABEL_10:
     v17 = inited;
     goto LABEL_11;
   }
-  v7 = (int *)*((_DWORD *)MEMORY[0xA8ED2C] + v6);
+  v7 = (int *)*((_DWORD *)g_FrameCounter + v6);
   v15 = *(unsigned __int8 *)(this + 282);
   if ( v7[188] > 1 )
   {
@@ -572,7 +573,7 @@ LABEL_10:
     goto LABEL_10;
   }
 LABEL_11:
-  ++MEMORY[0xA83ECC];
+  ++DataGlobal_00A83ECC;
   v9 = *(char *)(this + 283);
   v10 = a2[1];
   v16[0] = *a2;
@@ -582,9 +583,9 @@ LABEL_11:
     LOBYTE(v4) = TerrainClass::GenerateTexture(
                    this->field34,
                    v15,
-                   MEMORY[0x887314],
+                   g_DSurface_Hidden_2,
                    v16[0],
-                   v11 + MEMORY[0x886FA4],
+                   v11 + g_Map_VisibleRect,
                    *a3,
                    a3[1],
                    a3[2],
@@ -602,15 +603,15 @@ LABEL_11:
     v12 = a3[1];
     v16[0] = v16[0] + 30 - *a3;
     v13 = this->field48;
-    v16[1] = v11 + MEMORY[0x886FA4] - v12;
-    LOBYTE(v4) = (*(int (__thiscall **)(_DWORD, _DWORD *, _DWORD *, _DWORD, int, int))(**((_DWORD **)MEMORY[0xA8EC1C]
+    v16[1] = v11 + g_Map_VisibleRect - v12;
+    LOBYTE(v4) = (*(int (__thiscall **)(_DWORD, _DWORD *, _DWORD *, _DWORD, int, int))(**((_DWORD **)FactoryClass_Array
                                                                                         + v13)
                                                                                      + 160))(
-                   *((_DWORD *)MEMORY[0xA8EC1C] + v13),
+                   *((_DWORD *)FactoryClass_Array + v13),
                    v16,
                    a3,
                    *(unsigned __int8 *)(this + 287),
-                   MEMORY[0x89E7C0] * *(char *)(this + 283),
+                   DataGlobal_89E7C0 * *(char *)(this + 283),
                    this + 36);
   }
   return v4;
@@ -835,14 +836,14 @@ unsigned int __thiscall TacticalClass::DrawMap(int this, _DWORD *a2, int *a3)
   result = PingPongBuffer::GetWriteOffset();
   if ( dword_A8ED54[47100] >= result )
   {
-    result = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 112))(MEMORY[0x87F7E8][7883]);
+    result = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[7883] + 112))(DataGlobal_87F7E8[7883]);
     if ( result == 2 )
     {
-      result = MEMORY[0x87F7E8][539876];
-      if ( MEMORY[0x87F7E8][539876] )
+      result = DataGlobal_87F7E8[539876];
+      if ( DataGlobal_87F7E8[539876] )
       {
-        result = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 92))(
-                   MEMORY[0x87F7E8][7883],
+        result = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)DataGlobal_87F7E8[7883] + 92))(
+                   DataGlobal_87F7E8[7883],
                    0,
                    0);
         v34 = result;
@@ -854,15 +855,15 @@ unsigned int __thiscall TacticalClass::DrawMap(int this, _DWORD *a2, int *a3)
           v31 = v6;
           if ( v6 > 0x3E8 )
             v31 = 1000;
-          v7 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 116))(MEMORY[0x87F7E8][7883]);
+          v7 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[7883] + 116))(DataGlobal_87F7E8[7883]);
           v8 = this->visibleArea;
           v33 = v7;
           v9 = this->q0B4;
           v10 = v8 + *a2;
           v11 = a2[1];
-          v41 = v10 - MEMORY[0x87F7E8][7662];
-          v42 = v11 + v9 - MEMORY[0x87F7E8][7663];
-          v38 = (float)(v10 - MEMORY[0x87F7E8][7662]);
+          v41 = v10 - DataGlobal_87F7E8[7662];
+          v42 = v11 + v9 - DataGlobal_87F7E8[7663];
+          v38 = (float)(v10 - DataGlobal_87F7E8[7662]);
           v40 = 0;
           v39 = (float)v42;
           v12 = TransformMatrix3x4Point((float *)&v41, (float *)(this + 3556), &v38);
@@ -895,9 +896,9 @@ unsigned int __thiscall TacticalClass::DrawMap(int this, _DWORD *a2, int *a3)
               v32 = v19;
               do
               {
-                if ( LayerClass::CoordinatesLegal(MEMORY[0x87F7E8], (__int16 *)&v30) )
+                if ( LayerClass::CoordinatesLegal(DataGlobal_87F7E8, (__int16 *)&v30) )
                 {
-                  v21 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v30);
+                  v21 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v30);
                   NthOfType = Building::GetNthOfType((int)v21);
                   if ( (v21[75] & 0x10) != 0
                     && !CellClass::QuickPassable(v21)
@@ -939,9 +940,9 @@ unsigned int __thiscall TacticalClass::DrawMap(int this, _DWORD *a2, int *a3)
                           if ( v28 >= v29 && v28 < v29 + a3[3] )
                           {
                             TacticalClass::InterpolateColor(v23, v31);
-                            *(_WORD *)(v28 * v33 + v34 + 2 * v27) = ((int)v23[1] >> SLOBYTE(MEMORY[0x87F7E8][34171]) << SLOBYTE(MEMORY[0x87F7E8][34170]))
-                                                                  | ((int)v23[2] >> SLOBYTE(MEMORY[0x87F7E8][34175]) << SLOBYTE(MEMORY[0x87F7E8][34174]))
-                                                                  | ((int)v23[3] >> SLOBYTE(MEMORY[0x87F7E8][34173]) << SLOBYTE(MEMORY[0x87F7E8][34172]));
+                            *(_WORD *)(v28 * v33 + v34 + 2 * v27) = ((int)v23[1] >> SLOBYTE(DataGlobal_87F7E8[34171]) << SLOBYTE(DataGlobal_87F7E8[34170]))
+                                                                  | ((int)v23[2] >> SLOBYTE(DataGlobal_87F7E8[34175]) << SLOBYTE(DataGlobal_87F7E8[34174]))
+                                                                  | ((int)v23[3] >> SLOBYTE(DataGlobal_87F7E8[34173]) << SLOBYTE(DataGlobal_87F7E8[34172]));
                           }
                         }
                       }
@@ -958,7 +959,7 @@ unsigned int __thiscall TacticalClass::DrawMap(int this, _DWORD *a2, int *a3)
               v17 = v37;
             }
           }
-          return (*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 96))(MEMORY[0x87F7E8][7883]);
+          return (*(int (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[7883] + 96))(DataGlobal_87F7E8[7883]);
         }
       }
     }
@@ -1337,8 +1338,8 @@ unsigned int __thiscall TacticalClass_DrawTerrain(int this, int *a2, _DWORD *a3)
 
   v3 = a2;
   v5 = this->visibleArea;
-  v6 = a2[1] + this->q0B4 - MEMORY[0x886FA4];
-  v35 = *a2 + v5 - MEMORY[0x886FA0];
+  v6 = a2[1] + this->q0B4 - g_Map_VisibleRect;
+  v35 = *a2 + v5 - DSurface_ViewBounds;
   v36 = v6;
   *(float *)&v30 = (float)v6;
   *(float *)&v28 = (float)v35;
@@ -1356,8 +1357,8 @@ unsigned int __thiscall TacticalClass_DrawTerrain(int this, int *a2, _DWORD *a3)
   LOWORD(v34[0]) = v10 - 2;
   v12 = *v3;
   a2 = (int *)v34[0];
-  v13 = v3[1] + this->q0B4 - MEMORY[0x886FA4];
-  v35 = v11 + v12 - MEMORY[0x886FA0];
+  v13 = v3[1] + this->q0B4 - g_Map_VisibleRect;
+  v35 = v11 + v12 - DSurface_ViewBounds;
   v36 = v13;
   *(float *)&v31 = (float)v13;
   *(float *)&v29 = (float)v35;
@@ -1372,7 +1373,7 @@ unsigned int __thiscall TacticalClass_DrawTerrain(int this, int *a2, _DWORD *a3)
   v41 = v35;
   v42 = v36;
   v43 = v37;
-  v17 = *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v41) + 9);
+  v17 = *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v41) + 9);
   v18 = v3[3];
   v19 = v3[2];
   HIWORD(v34[0]) = HIWORD(v17) + 3;
@@ -1401,7 +1402,7 @@ unsigned int __thiscall TacticalClass_DrawTerrain(int this, int *a2, _DWORD *a3)
         v32 = v23;
         do
         {
-          if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&a2) )
+          if ( LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&a2) )
           {
             v27 = (float *)Coord3D::Set(
                              v45,
@@ -1413,7 +1414,7 @@ unsigned int __thiscall TacticalClass_DrawTerrain(int this, int *a2, _DWORD *a3)
             v44[2] = v27[2];
             Coord::To_Screen((_DWORD *)this, v44, (int *)&v38);
             LODWORD(v38) -= 30;
-            CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+            CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
             TacticalClass::DrawCellTerrainOverlay(&v38, v24);
           }
           LOWORD(a2) = (_WORD)a2 + 1;
@@ -1730,7 +1731,7 @@ signed int __thiscall TacticalClass::DrawTerrainPartial(_DWORD *this, int *a2, i
 
   if ( a4 )
   {
-    TacticalClass::DrawTerrain((int)this, &MEMORY[0x886FA0], &MEMORY[0x886FA0]);
+    TacticalClass::DrawTerrain((int)this, &DSurface_ViewBounds, &DSurface_ViewBounds);
   }
   else
   {
@@ -1759,9 +1760,9 @@ signed int __thiscall TacticalClass::DrawTerrainPartial(_DWORD *this, int *a2, i
       v9 = v6[1];
       v23[0] = v8 - 30;
       v23[3] = 30;
-      v23[1] = v9 - v7 + MEMORY[0x886FA4];
+      v23[1] = v9 - v7 + g_Map_VisibleRect;
       v23[2] = 60;
-      v10 = ClipRectIntersection(v27, &MEMORY[0x886FA0], v23, 0, 0);
+      v10 = ClipRectIntersection(v27, &DSurface_ViewBounds, v23, 0, 0);
       v24[0] = *v10;
       v24[1] = v10[1];
       v25 = v10[2];
@@ -1774,22 +1775,22 @@ signed int __thiscall TacticalClass::DrawTerrainPartial(_DWORD *this, int *a2, i
     }
     while ( v28 < this->visibleCellCount );
   }
-  result = MEMORY[0xB0CE88];
-  if ( MEMORY[0xB0CE88] )
+  result = g_CraterCreationState;
+  if ( g_CraterCreationState )
   {
-    result = MEMORY[0xB0CE88] - 1;
-    if ( MEMORY[0xB0CE88] - 1 >= 0 )
+    result = g_CraterCreationState - 1;
+    if ( g_CraterCreationState - 1 >= 0 )
     {
-      v13 = MEMORY[0xB0CE88];
+      v13 = g_CraterCreationState;
       v14 = 20 * result;
       do
       {
-        v19 = *(_DWORD *)((char *)MEMORY[0xB0CE7C] + v14);
-        v20 = *(_DWORD *)((char *)MEMORY[0xB0CE7C] + v14 + 4);
-        v21 = *(_DWORD *)((char *)MEMORY[0xB0CE7C] + v14 + 8);
-        v22 = *(_DWORD *)((char *)MEMORY[0xB0CE7C] + v14 + 12);
-        v20 += MEMORY[0x886FA4];
-        v15 = ClipRectIntersection(v27, &MEMORY[0x886FA0], &v19, 0, 0);
+        v19 = *(_DWORD *)((char *)g_CraterPool + v14);
+        v20 = *(_DWORD *)((char *)g_CraterPool + v14 + 4);
+        v21 = *(_DWORD *)((char *)g_CraterPool + v14 + 8);
+        v22 = *(_DWORD *)((char *)g_CraterPool + v14 + 12);
+        v20 += g_Map_VisibleRect;
+        v15 = ClipRectIntersection(v27, &DSurface_ViewBounds, &v19, 0, 0);
         v19 = *v15;
         v20 = v15[1];
         result = v15[2];
@@ -2177,26 +2178,26 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
   result = dword_A8ED54[233983];
   if ( dword_A8ED54[233983] )
   {
-    result = MEMORY[0x87F7E8][53559];
+    result = DataGlobal_87F7E8[53559];
     v3 = 0;
-    for ( i = 0; i < MEMORY[0x87F7E8][53559]; ++i )
+    for ( i = 0; i < DataGlobal_87F7E8[53559]; ++i )
     {
-      if ( !LOBYTE(MEMORY[0x87F7E8][53561]) )
+      if ( !LOBYTE(DataGlobal_87F7E8[53561]) )
       {
-        qsort((void *)MEMORY[0x87F7E8][53558], result, 8, globalHelper_0D2ED0);
-        MEMORY[0x87F7E8][53562] = 0;
-        LOBYTE(MEMORY[0x87F7E8][53561]) = 1;
+        qsort((void *)DataGlobal_87F7E8[53558], result, 8, globalHelper_0D2ED0);
+        DataGlobal_87F7E8[53562] = 0;
+        LOBYTE(DataGlobal_87F7E8[53561]) = 1;
       }
-      v4 = *(_DWORD *)(MEMORY[0x87F7E8][53558] + 8 * v3 + 4);
+      v4 = *(_DWORD *)(DataGlobal_87F7E8[53558] + 8 * v3 + 4);
       if ( *(_BYTE *)(v4 + 116) )
       {
         v93 = *(_DWORD *)(v4 + 64);
         v94 = *(_DWORD *)(v4 + 68);
         v95 = *(_DWORD *)(v4 + 72);
         v96 = *(_DWORD *)(v4 + 76);
-        v93 -= *(_DWORD *)(MEMORY[0x87F7E8][7887] + 176);
-        v94 = MEMORY[0x87F7E8][7663] + v94 - *(_DWORD *)(MEMORY[0x87F7E8][7887] + 180);
-        v93 += MEMORY[0x87F7E8][7662];
+        v93 -= *(_DWORD *)(DataGlobal_87F7E8[7887] + 176);
+        v94 = DataGlobal_87F7E8[7663] + v94 - *(_DWORD *)(DataGlobal_87F7E8[7887] + 180);
+        v93 += DataGlobal_87F7E8[7662];
         v5 = ClipRectIntersection(v112, this, &v93, 0, 0);
         v84 = *v5;
         v85 = v5[1];
@@ -2218,7 +2219,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                 {
                   if ( v18
                     && (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v18 + 44))(v18) == 5
-                    && *((_DWORD *)v18 + 181) <= MEMORY[0x87F7E8][539876]
+                    && *((_DWORD *)v18 + 181) <= DataGlobal_87F7E8[539876]
                     && v66 )
                   {
                     v36 = (_DWORD *)(v4 + 52);
@@ -2227,11 +2228,11 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                     v38 = *(_DWORD *)(v4 + 60);
                     v100[1] = v37 - 128;
                     v100[2] = v38;
-                    Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v100, &v77);
+                    Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], v100, &v77);
                     v110 = *this;
-                    v39 = MEMORY[0x87F7E8][7663] - this->q004;
+                    v39 = DataGlobal_87F7E8[7663] - this->q004;
                     v40 = 1000;
-                    v77 += MEMORY[0x87F7E8][7662] - v110;
+                    v77 += DataGlobal_87F7E8[7662] - v110;
                     v41 = v39 + v78;
                     LOBYTE(v39) = v18[861];
                     v78 = v41;
@@ -2240,12 +2241,12 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                       v102[0] = *v36;
                       v102[1] = *(_DWORD *)(v4 + 56);
                       v102[2] = *(_DWORD *)(v4 + 60);
-                      v40 = *((__int16 *)Coord::To_Cell(MEMORY[0x87F7E8], v102) + 133);
+                      v40 = *((__int16 *)Coord::To_Cell(DataGlobal_87F7E8, v102) + 133);
                     }
                     if ( v64 && v18[860] )
                       v59 = v64;
                     else
-                      v59 = (_DWORD *)MEMORY[0x87F6C0][0];
+                      v59 = (_DWORD *)DataGlobal_87F6C0[0];
                     v65 = *(_DWORD *)(*(_DWORD *)(v4 + 96) + 16 * j + 12);
                     if ( v18[873] )
                     {
@@ -2265,7 +2266,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                     }
                     v52 = v65 - ZCoordToScreenY(v42) - 2;
                     DrawToSurfaceSHP(
-                      (int *)MEMORY[0x87F7E8][7883],
+                      (int *)DataGlobal_87F7E8[7883],
                       v59,
                       v66,
                       v69,
@@ -2291,14 +2292,14 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                   v21 = *(_DWORD *)(v4 + 60);
                   v109[1] = v20 - 128;
                   v109[2] = v21;
-                  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v109, &v79);
+                  Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], v109, &v79);
                   v105[0] = *(_DWORD *)(v4 + 52);
                   v105[1] = *(_DWORD *)(v4 + 56);
                   v105[2] = *(_DWORD *)(v4 + 60);
-                  v60 = Coord::To_Cell(MEMORY[0x87F7E8], v105);
-                  v22 = MEMORY[0x87F7E8][7663] - this->q004;
+                  v60 = Coord::To_Cell(DataGlobal_87F7E8, v105);
+                  v22 = DataGlobal_87F7E8[7663] - this->q004;
                   v23 = v18[5889];
-                  v79 += MEMORY[0x87F7E8][7662] - *this;
+                  v79 += DataGlobal_87F7E8[7662] - *this;
                   v24 = v22 + v80;
                   v80 += v22;
                   if ( v23 )
@@ -2322,7 +2323,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                   v74 = v73 - *v26;
                   v27 = *v19;
                   v76 = v75 - v26[1];
-                  v92 = (char **)MEMORY[0x87F7E8][31093];
+                  v92 = (char **)DataGlobal_87F7E8[31093];
                   v28 = *(_DWORD *)(v4 + 56);
                   v84 = v27;
                   v85 = v28;
@@ -2333,7 +2334,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                   v31 = *(_DWORD *)(v4 + 60);
                   v99[1] = v30;
                   v99[2] = v31;
-                  v32 = (__int16 *)Coord::To_Cell(MEMORY[0x87F7E8], v99);
+                  v32 = (__int16 *)Coord::To_Cell(DataGlobal_87F7E8, v99);
                   v33 = v60;
                   v34 = *((__int16 *)v18 + 2724) + v32[133];
                   if ( !v60[13] )
@@ -2349,7 +2350,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                   {
                     if ( v70 )
                       DrawToSurfaceSHP(
-                        (int *)MEMORY[0x87F7E8][7883],
+                        (int *)DataGlobal_87F7E8[7883],
                         v61,
                         v66,
                         v69,
@@ -2367,7 +2368,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                         0);
                     else
                       DrawToSurfaceSHP(
-                        (int *)MEMORY[0x87F7E8][7883],
+                        (int *)DataGlobal_87F7E8[7883],
                         v61,
                         v66,
                         v69,
@@ -2384,7 +2385,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                         v74,
                         v76);
                     DrawToSurfaceSHP(
-                      (int *)MEMORY[0x87F7E8][7883],
+                      (int *)DataGlobal_87F7E8[7883],
                       v61,
                       v66,
                       v69 + *(__int16 *)(v66 + 6) / 2,
@@ -2404,7 +2405,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                   v35 = *((_DWORD *)v18 + 1350);
                   if ( v35 )
                     DrawToSurfaceSHP(
-                      (int *)MEMORY[0x87F7E8][7883],
+                      (int *)DataGlobal_87F7E8[7883],
                       v61,
                       v35,
                       v69,
@@ -2427,7 +2428,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
               v108[0] = *(_DWORD *)(v4 + 52);
               v108[1] = *(_DWORD *)(v4 + 56);
               v108[2] = *(_DWORD *)(v4 + 60);
-              v6 = (__int16 *)Coord::To_Cell(MEMORY[0x87F7E8], v108);
+              v6 = (__int16 *)Coord::To_Cell(DataGlobal_87F7E8, v108);
               v7 = *((_DWORD *)v6 + 17);
               v8 = *((_BYTE *)v6 + 286);
               *((_DWORD *)v6 + 17) = *(_DWORD *)(v4 + 36);
@@ -2437,7 +2438,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
               v101[0] = v106[0];
               v101[1] = v106[1];
               v101[2] = v106[2];
-              Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v101, v87);
+              Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], v101, v87);
               v87[0] -= 30;
               BuildingClass::Draw_0((int)v6, v87, this);
               TacticalClass::DrawBuildingPlacement((int)v6, v87, this);
@@ -2447,21 +2448,21 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
             case 0x1D:
               v43 = this->q004;
               v44 = *this;
-              v45 = *(_DWORD *)(MEMORY[0x87F7E8][7887] + 180);
-              v90 = *(_DWORD *)(MEMORY[0x87F7E8][7887] + 176);
+              v45 = *(_DWORD *)(DataGlobal_87F7E8[7887] + 180);
+              v90 = *(_DWORD *)(DataGlobal_87F7E8[7887] + 176);
               v46 = *(_DWORD *)(v4 + 68);
               v91 = v45;
-              v47 = *(_DWORD *)(v4 + 64) - v90 + MEMORY[0x87F7E8][7662] + 30;
-              v98[1] = MEMORY[0x87F7E8][7663] + v46 - v91 - v43;
+              v47 = *(_DWORD *)(v4 + 64) - v90 + DataGlobal_87F7E8[7662] + 30;
+              v98[1] = DataGlobal_87F7E8[7663] + v46 - v91 - v43;
               v48 = *(_DWORD *)(v4 + 84);
               v98[0] = v47 - v44;
-              v49 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(MEMORY[0x87F7E8][539917] + 4 * v48) + 156))(*(_DWORD *)(MEMORY[0x87F7E8][539917] + 4 * v48));
+              v49 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(DataGlobal_87F7E8[539917] + 4 * v48) + 156))(*(_DWORD *)(DataGlobal_87F7E8[539917] + 4 * v48));
               if ( v49 )
               {
                 v104[0] = *(_DWORD *)(v4 + 52);
                 v104[1] = *(_DWORD *)(v4 + 56);
                 v104[2] = *(_DWORD *)(v4 + 60);
-                v50 = (__int16 *)Coord::To_Cell(MEMORY[0x87F7E8], v104);
+                v50 = (__int16 *)Coord::To_Cell(DataGlobal_87F7E8, v104);
                 v84 = *(_DWORD *)(v4 + 52);
                 v51 = *(_DWORD *)(v4 + 60);
                 v85 = *(_DWORD *)(v4 + 56);
@@ -2469,7 +2470,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                 v56 = v50[134];
                 v53 = -(int)ZCoordToScreenY(v51);
                 DrawToSurfaceSHP(
-                  (int *)MEMORY[0x87F7E8][7883],
+                  (int *)DataGlobal_87F7E8[7883],
                   *((_DWORD **)v72 + 13),
                   v49,
                   *(_DWORD *)(v4 + 88),
@@ -2493,16 +2494,16 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
               v107[0] = *(_DWORD *)(v4 + 52);
               v107[1] = *(_DWORD *)(v4 + 56);
               v107[2] = *(_DWORD *)(v4 + 60);
-              v10 = (__int16 *)Coord::To_Cell(MEMORY[0x87F7E8], v107);
+              v10 = (__int16 *)Coord::To_Cell(DataGlobal_87F7E8, v107);
               v67 = *(_DWORD *)(*(_DWORD *)(v4 + 96) + 4);
               v11 = (*(int (__thiscall **)(int))(*(_DWORD *)v63 + 156))(v63);
               v103[0] = *v9;
               v103[1] = v9[1];
               v103[2] = v9[2];
-              Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v103, &v81);
-              v12 = MEMORY[0x87F7E8][7663] - this->q004;
+              Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], v103, &v81);
+              v12 = DataGlobal_87F7E8[7663] - this->q004;
               v13 = *v9;
-              v81 += MEMORY[0x87F7E8][7662] - *this;
+              v81 += DataGlobal_87F7E8[7662] - *this;
               v14 = v12 + v82;
               v85 = v9[1];
               v15 = v9[2];
@@ -2512,7 +2513,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
               if ( !*((_DWORD *)v10 + 13) )
                 TacticalClass::SetView((int)v10, 0, 0x10000, 0, 1000, 1000, 1000);
               DrawToSurfaceSHP(
-                (int *)MEMORY[0x87F7E8][7883],
+                (int *)DataGlobal_87F7E8[7883],
                 *((_DWORD **)v10 + 13),
                 v11,
                 v67,
@@ -2530,7 +2531,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                 0);
               if ( byte_822CF1 )
                 DrawToSurfaceSHP(
-                  (int *)MEMORY[0x87F7E8][7883],
+                  (int *)DataGlobal_87F7E8[7883],
                   *((_DWORD **)v10 + 13),
                   v11,
                   v67 + *(__int16 *)(v11 + 6) / 2,
@@ -2553,7 +2554,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
         }
       }
 LABEL_49:
-      result = MEMORY[0x87F7E8][53559];
+      result = DataGlobal_87F7E8[53559];
       v3 = i + 1;
     }
   }
@@ -3604,8 +3605,8 @@ char __thiscall TacticalClass_RenderCells(int this)
         v4 = Math::CalcAngle((double)this->field28 - (double)this->field34, (double)v44 - (double)v3);
         LOWORD(v44) = Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427);
         v5 = ((((unsigned int)v44 >> 12) + 1) >> 1) & 7;
-        Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], (_DWORD *)(this + 36), &v53);
-        Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], (_DWORD *)(this + 48), &v51);
+        Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], (_DWORD *)(this + 36), &v53);
+        Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], (_DWORD *)(this + 48), &v51);
         v6 = this->TacticalClass_field_3C - ZCoordToScreenY(this->TacticalClass_field_2C) - 2;
         v7 = ZCoordToScreenY(this->field38);
         v39 = 0;
@@ -3617,16 +3618,16 @@ char __thiscall TacticalClass_RenderCells(int this)
         if ( (_BYTE)v7 || *(_BYTE *)(this + 69) || *(_BYTE *)(this + 70) )
         {
           v44 = Random::Range(
-                  &MEMORY[0x87F7E8][7400],
+                  &DataGlobal_87F7E8[7400],
                   -*(unsigned __int8 *)(this + 71),
                   *(unsigned __int8 *)(this + 71));
           v41 = Random::Range(
-                  &MEMORY[0x87F7E8][7400],
+                  &DataGlobal_87F7E8[7400],
                   -*(unsigned __int8 *)(this + 72),
                   *(unsigned __int8 *)(this + 72));
           *(float *)&v42 = COERCE_FLOAT(
                              Random::Range(
-                               &MEMORY[0x87F7E8][7400],
+                               &DataGlobal_87F7E8[7400],
                                -*(unsigned __int8 *)(this + 73),
                                *(unsigned __int8 *)(this + 73)));
           v9 = *(unsigned __int8 *)(this + 68) + v44 < 0 ? 0 : *(unsigned __int8 *)(this + 68) + v44;
@@ -3643,10 +3644,10 @@ char __thiscall TacticalClass_RenderCells(int this)
             v42 = 255;
           }
           LOBYTE(v39) = v9;
-          v43 = (v41 >> SLOBYTE(MEMORY[0x87F7E8][34175]) << SLOBYTE(MEMORY[0x87F7E8][34174]))
-              | (v10 >> SLOBYTE(MEMORY[0x87F7E8][34173]) << SLOBYTE(MEMORY[0x87F7E8][34172]));
+          v43 = (v41 >> SLOBYTE(DataGlobal_87F7E8[34175]) << SLOBYTE(DataGlobal_87F7E8[34174]))
+              | (v10 >> SLOBYTE(DataGlobal_87F7E8[34173]) << SLOBYTE(DataGlobal_87F7E8[34172]));
           HIBYTE(v39) = v41;
-          v44 = (v9 >> SLOBYTE(MEMORY[0x87F7E8][34171]) << SLOBYTE(MEMORY[0x87F7E8][34170])) | v43;
+          v44 = (v9 >> SLOBYTE(DataGlobal_87F7E8[34171]) << SLOBYTE(DataGlobal_87F7E8[34170])) | v43;
           v40 = v42;
         }
         else
@@ -3667,13 +3668,13 @@ char __thiscall TacticalClass_RenderCells(int this)
           v41 = this->TacticalClass_field_4C;
           *(float *)&v42 = v13 * (double)(v41 - *(_DWORD *)this) / (double)v41 + this->field58;
         }
-        if ( MEMORY[0x87F7E8][539876] )
+        if ( DataGlobal_87F7E8[539876] )
         {
           if ( this->field50 )
           {
-            (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, _DWORD, int, int, int, int))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 60))(
-              MEMORY[0x87F7E8][7883],
-              &MEMORY[0x87F7E8][7662],
+            (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, _DWORD, int, int, int, int))(*(_DWORD *)DataGlobal_87F7E8[7883] + 60))(
+              DataGlobal_87F7E8[7883],
+              &DataGlobal_87F7E8[7662],
               &v53,
               &v51,
               v43,
@@ -3695,9 +3696,9 @@ char __thiscall TacticalClass_RenderCells(int this)
               v17 = dword_A8ED54[v14 + 46714];
               v47 = v16;
               v48 = v54 + v17;
-              (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, __int16 *, int, int, _DWORD, int, int, int, int))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 60))(
-                MEMORY[0x87F7E8][7883],
-                &MEMORY[0x87F7E8][7662],
+              (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, __int16 *, int, int, _DWORD, int, int, int, int))(*(_DWORD *)DataGlobal_87F7E8[7883] + 60))(
+                DataGlobal_87F7E8[7883],
+                &DataGlobal_87F7E8[7662],
                 &v47,
                 &v49,
                 &v39,
@@ -3715,9 +3716,9 @@ char __thiscall TacticalClass_RenderCells(int this)
               v47 = v53 + v19;
               v50 = v52 + v18;
               v48 = v54 + v20;
-              LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, _DWORD *, int *, int *, __int16 *, int, int, _DWORD, int, int, int, int))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 60))(
-                             MEMORY[0x87F7E8][7883],
-                             &MEMORY[0x87F7E8][7662],
+              LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, _DWORD *, int *, int *, __int16 *, int, int, _DWORD, int, int, int, int))(*(_DWORD *)DataGlobal_87F7E8[7883] + 60))(
+                             DataGlobal_87F7E8[7883],
+                             &DataGlobal_87F7E8[7662],
                              &v47,
                              &v49,
                              &v39,
@@ -3742,10 +3743,10 @@ char __thiscall TacticalClass_RenderCells(int this)
             v26 = dword_A8ED54[v21 + 46714];
             v47 = v24;
             v48 = v54 + v26;
-            (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, __int16 *, int, int, int))(*(_DWORD *)MEMORY[0x87F7E8][7883]
+            (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, __int16 *, int, int, int))(*(_DWORD *)DataGlobal_87F7E8[7883]
                                                                                              + 64))(
-              MEMORY[0x87F7E8][7883],
-              &MEMORY[0x87F7E8][7662],
+              DataGlobal_87F7E8[7883],
+              &DataGlobal_87F7E8[7662],
               &v47,
               &v49,
               &v39,
@@ -3759,19 +3760,19 @@ char __thiscall TacticalClass_RenderCells(int this)
             v47 = v53 + v28;
             v50 = v52 + v27;
             v48 = v54 + v29;
-            (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, __int16 *, int, int, int))(*(_DWORD *)MEMORY[0x87F7E8][7883]
+            (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, __int16 *, int, int, int))(*(_DWORD *)DataGlobal_87F7E8[7883]
                                                                                              + 64))(
-              MEMORY[0x87F7E8][7883],
-              &MEMORY[0x87F7E8][7662],
+              DataGlobal_87F7E8[7883],
+              &DataGlobal_87F7E8[7662],
               &v47,
               &v49,
               &v39,
               v25,
               v6,
               v8);
-            LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, int))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 64))(
-                           MEMORY[0x87F7E8][7883],
-                           &MEMORY[0x87F7E8][7662],
+            LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, int))(*(_DWORD *)DataGlobal_87F7E8[7883] + 64))(
+                           DataGlobal_87F7E8[7883],
+                           &DataGlobal_87F7E8[7662],
                            &v53,
                            &v51,
                            v43,
@@ -3781,9 +3782,9 @@ char __thiscall TacticalClass_RenderCells(int this)
           }
           else
           {
-            LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, _DWORD, int, int, int, int))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 60))(
-                           MEMORY[0x87F7E8][7883],
-                           &MEMORY[0x87F7E8][7662],
+            LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, _DWORD, int, int, int, int))(*(_DWORD *)DataGlobal_87F7E8[7883] + 60))(
+                           DataGlobal_87F7E8[7883],
+                           &DataGlobal_87F7E8[7662],
                            &v53,
                            &v51,
                            v43,
@@ -3798,15 +3799,15 @@ char __thiscall TacticalClass_RenderCells(int this)
         }
         else
         {
-          (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, _DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883]
+          (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, _DWORD))(*(_DWORD *)DataGlobal_87F7E8[7883]
                                                                                         + 52))(
-            MEMORY[0x87F7E8][7883],
-            &MEMORY[0x87F7E8][7662],
+            DataGlobal_87F7E8[7883],
+            &DataGlobal_87F7E8[7662],
             &v53,
             &v51,
-            ((unsigned __int8)v49 >> SLOBYTE(MEMORY[0x87F7E8][34171]) << SLOBYTE(MEMORY[0x87F7E8][34170]))
-          | (v11 >> SLOBYTE(MEMORY[0x87F7E8][34175]) << SLOBYTE(MEMORY[0x87F7E8][34174]))
-          | (v12 >> SLOBYTE(MEMORY[0x87F7E8][34173]) << SLOBYTE(MEMORY[0x87F7E8][34172])),
+            ((unsigned __int8)v49 >> SLOBYTE(DataGlobal_87F7E8[34171]) << SLOBYTE(DataGlobal_87F7E8[34170]))
+          | (v11 >> SLOBYTE(DataGlobal_87F7E8[34175]) << SLOBYTE(DataGlobal_87F7E8[34174]))
+          | (v12 >> SLOBYTE(DataGlobal_87F7E8[34173]) << SLOBYTE(DataGlobal_87F7E8[34172])),
             v6,
             v8,
             0);
@@ -3821,10 +3822,10 @@ char __thiscall TacticalClass_RenderCells(int this)
             v33 = dword_A8ED54[v30 + 46714];
             v47 = v53 + v32;
             v48 = v54 + v33;
-            (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, _DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883]
+            (*(void (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, _DWORD))(*(_DWORD *)DataGlobal_87F7E8[7883]
                                                                                           + 52))(
-              MEMORY[0x87F7E8][7883],
-              &MEMORY[0x87F7E8][7662],
+              DataGlobal_87F7E8[7883],
+              &DataGlobal_87F7E8[7662],
               &v47,
               &v49,
               v44,
@@ -3838,9 +3839,9 @@ char __thiscall TacticalClass_RenderCells(int this)
             v50 = v52 + v34;
             v47 = v53 + v35;
             v48 = v54 + v36;
-            LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, _DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 52))(
-                           MEMORY[0x87F7E8][7883],
-                           &MEMORY[0x87F7E8][7662],
+            LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, _DWORD *, int *, int *, int, int, int, _DWORD))(*(_DWORD *)DataGlobal_87F7E8[7883] + 52))(
+                           DataGlobal_87F7E8[7883],
+                           &DataGlobal_87F7E8[7662],
                            &v47,
                            &v49,
                            v44,
@@ -4494,10 +4495,10 @@ unsigned int __thiscall TacticalClass_CalcViewportCells(int this)
   v3 = this->TacticalClass_field_D68;
   this->visibleArea = v2;
   this->q0B4 = v3;
-  this->visibleArea = v2 - MEMORY[0xB0CE30] / 2;
+  this->visibleArea = v2 - DataGlobal_B0CE30 / 2;
   LODWORD(v10[0]) = this->visibleArea - 60;
   v4 = (double)SLODWORD(v10[0]);
-  v5 = v3 - MEMORY[0xB0CE34] / 2;
+  v5 = v3 - DataGlobal_B0CE34 / 2;
   this->q0B4 = v5;
   v11 = v4;
   LODWORD(v10[1]) = v5 - 30;
@@ -4510,9 +4511,9 @@ unsigned int __thiscall TacticalClass_CalcViewportCells(int this)
   v8 = Math::RoundToInt(v12);
   this->TacticalClass_field_D80 = v7 / 256;
   this->TacticalClass_field_D84 = v8 / 256;
-  this->TacticalClass_field_D88 = MEMORY[0xB0CE30] / 60 + 2;
-  result = (unsigned int)((unsigned __int64)(2290649225LL * MEMORY[0xB0CE34]) >> 32) >> 31;
-  this->TacticalClass_field_D8C = MEMORY[0xB0CE34] / 15 + 4;
+  this->TacticalClass_field_D88 = DataGlobal_B0CE30 / 60 + 2;
+  result = (unsigned int)((unsigned __int64)(2290649225LL * DataGlobal_B0CE34) >> 32) >> 31;
+  this->TacticalClass_field_D8C = DataGlobal_B0CE34 / 15 + 4;
   return result;
 }
 
@@ -4628,7 +4629,7 @@ _DWORD *__stdcall TacticalClass_PixelToCellCheck(_DWORD *a1, int *a2)
   }
   else
   {
-    v4 = *Tactical::PixelToCell(MEMORY[0x87F7E8][7887], &a2, v6);
+    v4 = *Tactical::PixelToCell(DataGlobal_87F7E8[7887], &a2, v6);
     *a1 = v4;
     return a1;
   }
@@ -4922,7 +4923,7 @@ __int16 __thiscall TacticalClass_SetView(int this, int a2, int a3, __int16 a4, _
   if ( a2 )
   {
     v9 = this->field34;
-    if ( v9 && MEMORY[0xA8E9A0] )
+    if ( v9 && g_WTFMode )
       --*(_DWORD *)(v9 + 404);
     this->field34 = v7;
     ++*(_DWORD *)(v7 + 404);
@@ -4961,7 +4962,7 @@ LABEL_20:
     v11 = *(_DWORD **)(this + 52);
     if ( v11[102] != v23 || v11[103] != v24 || v11[104] != v25 )
     {
-      if ( MEMORY[0xA8E9A0] )
+      if ( g_WTFMode )
         --v11[101];
       this->field34 = 0;
     }
@@ -5180,87 +5181,87 @@ void __stdcall TacticalClass::SetViewDimensions(int *a1)
   char v10; // [esp+24h] [ebp-4h]
 
   Debug::Log();
-  MEMORY[0x87F7E8][7662] = *a1;
-  MEMORY[0x87F7E8][7663] = a1[1];
-  MEMORY[0x87F7E8][7664] = a1[2];
-  MEMORY[0x87F7E8][7665] = a1[3];
-  if ( MEMORY[0x87F7E8][7887] )
+  DataGlobal_87F7E8[7662] = *a1;
+  DataGlobal_87F7E8[7663] = a1[1];
+  DataGlobal_87F7E8[7664] = a1[2];
+  DataGlobal_87F7E8[7665] = a1[3];
+  if ( DataGlobal_87F7E8[7887] )
   {
-    TacticalClass::SetViewportPosition(MEMORY[0x87F7E8][7887], &MEMORY[0x87F7E8][7662]);
-    (*(void (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][8086] + 12))(MEMORY[0x87F7E8][8086]);
-    if ( MEMORY[0x87F7E8][8087] )
+    TacticalClass::SetViewportPosition(DataGlobal_87F7E8[7887], &DataGlobal_87F7E8[7662]);
+    (*(void (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[8086] + 12))(DataGlobal_87F7E8[8086]);
+    if ( DataGlobal_87F7E8[8087] )
     {
       Debug::Log();
-      v1 = (void *)MEMORY[0x87F7E8][8087];
-      if ( MEMORY[0x87F7E8][8087] )
+      v1 = (void *)DataGlobal_87F7E8[8087];
+      if ( DataGlobal_87F7E8[8087] )
       {
-        Stream::GetField((_DWORD *)MEMORY[0x87F7E8][8087]);
+        Stream::GetField((_DWORD *)DataGlobal_87F7E8[8087]);
         __3_YAXPAX_Z(v1);
       }
-      MEMORY[0x87F7E8][8087] = 0;
+      DataGlobal_87F7E8[8087] = 0;
     }
     v2 = (_DWORD *)__2_YAPAXI_Z(48);
     if ( v2 )
       v3 = BSurface::ConstructEx(
              v2,
-             MEMORY[0x87F7E8][7662],
-             MEMORY[0x87F7E8][7663],
-             MEMORY[0x87F7E8][7664],
-             MEMORY[0x87F7E8][7665]);
+             DataGlobal_87F7E8[7662],
+             DataGlobal_87F7E8[7663],
+             DataGlobal_87F7E8[7664],
+             DataGlobal_87F7E8[7665]);
     else
       v3 = 0;
-    MEMORY[0x87F7E8][8087] = v3;
+    DataGlobal_87F7E8[8087] = v3;
     v3[9] = 0x8000;
     Debug::Log();
-    if ( MEMORY[0x87E8A4] )
+    if ( g_VisibleSurfaceDescriptor )
     {
       Debug::Log();
-      v4 = MEMORY[0x87E8A4];
-      if ( MEMORY[0x87E8A4] )
+      v4 = g_VisibleSurfaceDescriptor;
+      if ( g_VisibleSurfaceDescriptor )
       {
-        StreamObj::Release(MEMORY[0x87E8A4]);
+        StreamObj::Release(g_VisibleSurfaceDescriptor);
         __3_YAXPAX_Z(v4);
       }
-      MEMORY[0x87E8A4] = 0;
+      g_VisibleSurfaceDescriptor = 0;
     }
     v5 = (int *)__2_YAPAXI_Z(48);
     if ( v5 )
-      MEMORY[0x87E8A4] = BSurface::Construct(
+      g_VisibleSurfaceDescriptor = BSurface::Construct(
                            v5,
-                           MEMORY[0x87F7E8][7662],
-                           MEMORY[0x87F7E8][7663],
-                           MEMORY[0x87F7E8][7664],
-                           MEMORY[0x87F7E8][7665]);
+                           DataGlobal_87F7E8[7662],
+                           DataGlobal_87F7E8[7663],
+                           DataGlobal_87F7E8[7664],
+                           DataGlobal_87F7E8[7665]);
     else
-      MEMORY[0x87E8A4] = 0;
+      g_VisibleSurfaceDescriptor = 0;
     Debug::Log();
-    (*(void (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][8086] + 16))(MEMORY[0x87F7E8][8086]);
+    (*(void (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[8086] + 16))(DataGlobal_87F7E8[8086]);
   }
   SidebarClass::LoadResources();
-  v6 = MEMORY[0x87F7E8][7662];
-  v7 = MEMORY[0x87F7E8][7663];
-  v8 = MEMORY[0x87F7E8][7664];
-  MEMORY[0x87F7E8][33735] = MEMORY[0x87F7E8][7662];
-  MEMORY[0x87F7E8][33736] = MEMORY[0x87F7E8][7663];
-  MEMORY[0x87F7E8][33737] = MEMORY[0x87F7E8][7664];
-  MEMORY[0x87F7E8][33738] = MEMORY[0x87F7E8][7665];
-  if ( MEMORY[0x87F7E8][7904] )
+  v6 = DataGlobal_87F7E8[7662];
+  v7 = DataGlobal_87F7E8[7663];
+  v8 = DataGlobal_87F7E8[7664];
+  DataGlobal_87F7E8[33735] = DataGlobal_87F7E8[7662];
+  DataGlobal_87F7E8[33736] = DataGlobal_87F7E8[7663];
+  DataGlobal_87F7E8[33737] = DataGlobal_87F7E8[7664];
+  DataGlobal_87F7E8[33738] = DataGlobal_87F7E8[7665];
+  if ( DataGlobal_87F7E8[7904] )
   {
     v10 = 0;
     v9[0] = 500;
     v9[5] = 0;
-    v9[1] = MEMORY[0x87F7E8][7662];
-    v9[2] = MEMORY[0x87F7E8][7663];
-    v9[3] = MEMORY[0x87F7E8][7664];
-    v9[4] = MEMORY[0x87F7E8][7665];
-    HashTable::Remove((int *)MEMORY[0x87F7E8][7904], 500);
-    CommandClass::AddAction(MEMORY[0x87F7E8][7904], (int)v9);
-    v7 = MEMORY[0x87F7E8][7663];
-    v6 = MEMORY[0x87F7E8][7662];
-    v8 = MEMORY[0x87F7E8][7664];
+    v9[1] = DataGlobal_87F7E8[7662];
+    v9[2] = DataGlobal_87F7E8[7663];
+    v9[3] = DataGlobal_87F7E8[7664];
+    v9[4] = DataGlobal_87F7E8[7665];
+    HashTable::Remove((int *)DataGlobal_87F7E8[7904], 500);
+    CommandClass::AddAction(DataGlobal_87F7E8[7904], (int)v9);
+    v7 = DataGlobal_87F7E8[7663];
+    v6 = DataGlobal_87F7E8[7662];
+    v8 = DataGlobal_87F7E8[7664];
   }
-  MessageListClass::Init((#474 *)&MEMORY[0x87F7E8][536862], v6 + 3, v7, 6, 98, 14, -1, -1, 0, 20, 98, v8 - 6);
-  TacticalClass::processInput((int **)&MEMORY[0x87F7E8][536862], MEMORY[0x87F7E8][7664]);
+  MessageListClass::Init((#474 *)&DataGlobal_87F7E8[536862], v6 + 3, v7, 6, 98, 14, -1, -1, 0, 20, 98, v8 - 6);
+  TacticalClass::processInput((int **)&DataGlobal_87F7E8[536862], DataGlobal_87F7E8[7664]);
   Debug::Log();
 }
 
@@ -5480,15 +5481,15 @@ _DWORD *__stdcall TacticalClass_InitView(int a1)
   _DWORD v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((__int16 *)MEMORY[0xA8B230] + 6734) << 8) + 128;
-  v4[0] = (*((__int16 *)MEMORY[0xA8B230] + 6733) << 8) + 128;
+  v1 = (*((__int16 *)g_ScenarioClass_Instance + 6734) << 8) + 128;
+  v4[0] = (*((__int16 *)g_ScenarioClass_Instance + 6733) << 8) + 128;
   v4[1] = v1;
   GroundHeight = 0;
   GroundHeight = Cell::GetGroundHeight(v4);
   Tactical::SetTacticalPosition(v4);
-  result = (_DWORD *)MEMORY[0x880990];
-  if ( MEMORY[0x880990] )
-    return Tactical::MouseMove((int)&MEMORY[0x87F7E8], &v3, &MEMORY[0xA8F2F8]);
+  result = (_DWORD *)g_RadarBlipManager;
+  if ( g_RadarBlipManager )
+    return Tactical::MouseMove((int)&DataGlobal_87F7E8, &v3, &DataGlobal_A8F2F8);
   return result;
 }
 
@@ -5543,14 +5544,14 @@ unsigned int __thiscall sub_6D5F60(int this, int *a2)
   int v7; // [esp+4h] [ebp-8h] BYREF
   int v8; // [esp+8h] [ebp-4h]
 
-  MEMORY[0xB0CE28] = *a2;
-  MEMORY[0xB0CE2C] = a2[1];
-  MEMORY[0xB0CE30] = a2[2];
-  MEMORY[0xB0CE34] = a2[3];
+  DataGlobal_B0CE28 = *a2;
+  DataGlobal_B0CE2C = a2[1];
+  DataGlobal_B0CE30 = a2[2];
+  DataGlobal_B0CE34 = a2[3];
   v3 = this->TacticalClass_field_D74;
   v8 = this->TacticalClass_field_D78;
   v7 = v3;
-  if ( !ClampCoordMap(&v7) || MEMORY[0xA8ED6B] )
+  if ( !ClampCoordMap(&v7) || ArmageddonMode )
   {
     v4 = this->TacticalClass_field_D74;
     v5 = this->TacticalClass_field_D78;
@@ -5652,9 +5653,9 @@ char __thiscall TacticalClass::ScrollViewport(int this)
   int v24; // [esp+10h] [ebp-Ch] BYREF
   int v25; // [esp+14h] [ebp-8h]
 
-  LOBYTE(v1) = MEMORY[0x87F7E8][538500];
+  LOBYTE(v1) = DataGlobal_87F7E8[538500];
   v2 = 0;
-  if ( (MEMORY[0x87F7E8][538500] & 2) != 0 )
+  if ( (DataGlobal_87F7E8[538500] & 2) != 0 )
     return v1;
   if ( this->TacticalClass_field_A8 != dword_A8ED54[12] )
   {
@@ -5710,7 +5711,7 @@ char __thiscall TacticalClass::ScrollViewport(int this)
       if ( v13 >= v12 )
       {
 LABEL_20:
-        v14 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 80);
+        v14 = *(_DWORD *)(DataGlobal_87F7E8[7806] + 80);
         Ticks = Timer::GetTicks();
         v16 = v25;
         this->startTime = Ticks;
@@ -6061,21 +6062,21 @@ void __thiscall sub_74D490(int this)
     v11[0] = (v2 << 8) + 128;
     v11[1] = v5 + 128;
     v11[2] = 0;
-    if ( (*((_DWORD *)Coord::To_Cell(MEMORY[0x87F7E8], v11) + 80) & 0x400000) != 0 )
+    if ( (*((_DWORD *)Coord::To_Cell(DataGlobal_87F7E8, v11) + 80) & 0x400000) != 0 )
       v4 = 0;
-    Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v11, &v9);
-    v6 = 15 * *((char *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)(this + 248)) + 283);
+    Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], v11, &v9);
+    v6 = 15 * *((char *)CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)(this + 248)) + 283);
     v10 += -58 - v6;
-    TacticalClass::AddToDrawQueue((_DWORD *)MEMORY[0x87F7E8][7887], this, v9, MEMORY[0x87F7E8][7663] + v10 + 58);
-    v7 = *(_DWORD *)(*(_DWORD *)(dword_A8ED54[121312] + 4 * *(_DWORD *)(MEMORY[0x87F7E8][528729] + 90196)) + 780);
-    v8 = (__int16 *)Coord::To_Cell(MEMORY[0x87F7E8], v11);
+    TacticalClass::AddToDrawQueue((_DWORD *)DataGlobal_87F7E8[7887], this, v9, DataGlobal_87F7E8[7663] + v10 + 58);
+    v7 = *(_DWORD *)(*(_DWORD *)(dword_A8ED54[121312] + 4 * *(_DWORD *)(DataGlobal_87F7E8[528729] + 90196)) + 780);
+    v8 = (__int16 *)Coord::To_Cell(DataGlobal_87F7E8, v11);
     DrawToSurfaceSHP(
-      (int *)MEMORY[0x87F7E8][7883],
+      (int *)DataGlobal_87F7E8[7883],
       (_DWORD *)v7,
       v3,
       v4,
       &v9,
-      &MEMORY[0x87F7E8][7662],
+      &DataGlobal_87F7E8[7662],
       11776,
       0,
       -17 - v6,
@@ -6225,13 +6226,13 @@ char __thiscall TacticalClass_AddToDrawQueue(_DWORD *this, int a2, int a3, int a
   int v6; // eax
 
   v4 = this->floats;
-  if ( v4 == 500 || a3 < -32 || a3 > MEMORY[0x886FA8] + 32 || a4 < -32 || a4 > MEMORY[0x886FAC] + 32 )
+  if ( v4 == 500 || a3 < -32 || a3 > g_Map_VisibleRectOffset + 32 || a4 < -32 || a4 > g_DSurface_WindowOffset + 32 )
     return 0;
-  MEMORY[0xB0CEC8][3 * v4] = a2;
+  DataGlobal_B0CEC8[3 * v4] = a2;
   v5 = a4 + this->q0B4;
   v6 = 3 * this->floats;
-  MEMORY[0xB0CECC][v6] = this->visibleArea + a3;
-  MEMORY[0xB0CED0][v6] = v5;
+  DataGlobal_B0CECC[v6] = this->visibleArea + a3;
+  DataGlobal_B0CED0[v6] = v5;
   ++this->floats;
   return 1;
 }
@@ -6356,11 +6357,11 @@ _DWORD *__thiscall TacticalClass_TransformPixel(int this, _DWORD *a2, _DWORD *a3
   float v11; // [esp+18h] [ebp-8h]
   int v12; // [esp+1Ch] [ebp-4h]
 
-  if ( *a3 >= MEMORY[0xB0CE30] || (v3 = a3[1], v3 >= MEMORY[0xB0CE34] + MEMORY[0xB0CE2C]) )
+  if ( *a3 >= DataGlobal_B0CE30 || (v3 = a3[1], v3 >= DataGlobal_B0CE34 + DataGlobal_B0CE2C) )
   {
-    *a2 = MEMORY[0xB0CE08];
-    a2[1] = MEMORY[0xB0CE0C];
-    a2[2] = MEMORY[0xB0CE10];
+    *a2 = DataGlobal_B0CE08;
+    a2[1] = DataGlobal_B0CE0C;
+    a2[2] = DataGlobal_B0CE10;
     return a2;
   }
   else
@@ -6598,39 +6599,39 @@ int __thiscall TacticalClass_MouseInput(_DWORD *this, _DWORD *a2, _DWORD *a3)
   int result; // eax
 
   DisplayClass::Update(a2, a3);
-  v4 = MEMORY[0xA8EB7C] != 0 ? MEMORY[0x886FA8] : 0;
-  if ( *a3 >= v4 + MEMORY[0xB04A00] && *a3 < v4 + MEMORY[0xB04A00] + MEMORY[0xB04A08] )
+  v4 = DataGlobal_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0;
+  if ( *a3 >= v4 + DataGlobal_B04A00 && *a3 < v4 + DataGlobal_B04A00 + DataGlobal_00B04A08 )
   {
     v5 = a3[1];
-    if ( v5 >= MEMORY[0xB04A04] && v5 < MEMORY[0xB04A0C] + MEMORY[0xB04A04] )
-      Mouse::SetCursor((int)&MEMORY[0x87F7E8], 0, 0);
+    if ( v5 >= DataGlobal_B04A04 && v5 < DataGlobal_00B04A0C + DataGlobal_B04A04 )
+      Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0);
   }
-  if ( *a3 >= v4 + MEMORY[0xB048C8] && *a3 < v4 + MEMORY[0xB048C8] + MEMORY[0xB048D0] )
+  if ( *a3 >= v4 + DataGlobal_B048C8 && *a3 < v4 + DataGlobal_B048C8 + DataGlobal_B048D0 )
   {
     v6 = a3[1];
-    if ( v6 >= MEMORY[0xB048CC] && v6 < MEMORY[0xB048D4] + MEMORY[0xB048CC] )
-      Mouse::SetCursor((int)&MEMORY[0x87F7E8], 0, 0);
+    if ( v6 >= DataGlobal_B048CC && v6 < DataGlobal_B048D4 + DataGlobal_B048CC )
+      Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0);
   }
   if ( *a2 == 33010 )
   {
-    if ( !MEMORY[0xA8B238]
-      || (MEMORY[0xA8B238] == 3 || MEMORY[0xA8B238] == 4)
-      && MEMORY[0xA8B23C]
-      && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 8))(MEMORY[0xA8B23C])
-      && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 4))(MEMORY[0xA8B23C]) )
+    if ( !g_GameMode_Current
+      || (g_GameMode_Current == 3 || g_GameMode_Current == 4)
+      && g_GameStateFlags
+      && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 8))(g_GameStateFlags)
+      && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 4))(g_GameStateFlags) )
     {
-      MEMORY[0xA8EDA0] = 9;
+      DataGlobal_A8EDA0 = 9;
     }
     else
     {
-      MEMORY[0xA8EDA0] = 8;
+      DataGlobal_A8EDA0 = 8;
     }
   }
   else if ( *a2 == 33011 )
   {
-    MEMORY[0xA8EDA0] = 1;
+    DataGlobal_A8EDA0 = 1;
   }
-  if ( MEMORY[0xB45B68] > 0 )
+  if ( g_AsyncIOState > 0 )
   {
     v7 = *(this + 1324);
     if ( v7 != 3 && v7 != 4 )
@@ -6846,25 +6847,25 @@ int __thiscall TacticalClass::ProcessMouseClick(_BYTE *this, char a2, int a3, in
 
   v30 = this;
   if ( (a2 & 0x22) == 0
-    && (MEMORY[0x87F7E8][1324] != 3 || MEMORY[0x87F7E8][1323] != 1)
-    && MEMORY[0x87F7E8][1324] == 1
-    && MEMORY[0x87F7E8][1323] == 1 )
+    && (DataGlobal_87F7E8[1324] != 3 || DataGlobal_87F7E8[1323] != 1)
+    && DataGlobal_87F7E8[1324] == 1
+    && DataGlobal_87F7E8[1323] == 1 )
   {
     if ( (a2 & 0x55) != 0 )
     {
-      v4 = *(_DWORD *)MEMORY[0x87F6C0][44];
-      v5 = *(_DWORD *)(MEMORY[0x87F6C0][44] + 4);
+      v4 = *(_DWORD *)DataGlobal_87F6C0[44];
+      v5 = *(_DWORD *)(DataGlobal_87F6C0[44] + 4);
     }
     else
     {
-      v4 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][8086] + 44))(MEMORY[0x87F7E8][8086]);
-      v5 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][8086] + 48))(MEMORY[0x87F7E8][8086]);
+      v4 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[8086] + 44))(DataGlobal_87F7E8[8086]);
+      v5 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[8086] + 48))(DataGlobal_87F7E8[8086]);
     }
-    v6 = v4 - (LOBYTE(MEMORY[0x87F7E8][539877]) != 0 ? MEMORY[0x87F7E8][7664] : 0);
-    if ( v6 >= MEMORY[0x87F7E8][1319]
-      && v6 < MEMORY[0x87F7E8][1319] + MEMORY[0x87F7E8][1321]
-      && v5 >= MEMORY[0x87F7E8][1320]
-      && v5 < MEMORY[0x87F7E8][1320] + MEMORY[0x87F7E8][1322] )
+    v6 = v4 - (LOBYTE(DataGlobal_87F7E8[539877]) != 0 ? DataGlobal_87F7E8[7664] : 0);
+    if ( v6 >= DataGlobal_87F7E8[1319]
+      && v6 < DataGlobal_87F7E8[1319] + DataGlobal_87F7E8[1321]
+      && v5 >= DataGlobal_87F7E8[1320]
+      && v5 < DataGlobal_87F7E8[1320] + DataGlobal_87F7E8[1322] )
     {
       v31[1] = v5;
       v31[0] = v6;
@@ -6892,10 +6893,10 @@ LABEL_62:
           v12 = v27;
           if ( v27 )
           {
-            v13 = MEMORY[0x87F7E8][7664] / 60 + 2;
-            v14 = MEMORY[0x87F7E8][61] - v13 / 2 - 1;
-            v15 = MEMORY[0x87F7E8][7665] / 60 + MEMORY[0x87F7E8][61] + 1;
-            v16 = 2 * MEMORY[0x87F7E8][62] - MEMORY[0x87F7E8][7665] / 60 + MEMORY[0x87F7E8][61] - 1;
+            v13 = DataGlobal_87F7E8[7664] / 60 + 2;
+            v14 = DataGlobal_87F7E8[61] - v13 / 2 - 1;
+            v15 = DataGlobal_87F7E8[7665] / 60 + DataGlobal_87F7E8[61] + 1;
+            v16 = 2 * DataGlobal_87F7E8[62] - DataGlobal_87F7E8[7665] / 60 + DataGlobal_87F7E8[61] - 1;
             v17 = SHIWORD(v27) - (__int16)v27;
             if ( v17 > v14 )
             {
@@ -6906,7 +6907,7 @@ LABEL_62:
               LOWORD(v27) = v18 + v27;
             }
             v19 = v12 - v11;
-            if ( v19 > MEMORY[0x87F7E8][61] - v13 / 2 - 2 )
+            if ( v19 > DataGlobal_87F7E8[61] - v13 / 2 - 2 )
             {
               v20 = v19 - v14 + 1;
               v11 += v20;
@@ -6929,26 +6930,26 @@ LABEL_62:
               LOWORD(v27) = v12 - v23;
               HIWORD(v27) = v11 - v23;
             }
-            v24 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v27);
+            v24 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v27);
             Coords = CellClass::GetCoords(v24, v37);
             v34 = *Coords;
             v35 = Coords[1];
             v36 = Coords[2];
             ((void (__stdcall *)(int *))Tactical::SetTacticalPosition)(&v34);
-            MapClass::MarkForRedraw(MEMORY[0x87F7E8], 1);
-            if ( MEMORY[0x87F7E8][8087] )
-              *(_DWORD *)(MEMORY[0x87F7E8][8087] + 36) = 0x8000;
+            MapClass::MarkForRedraw(DataGlobal_87F7E8, 1);
+            if ( DataGlobal_87F7E8[8087] )
+              *(_DWORD *)(DataGlobal_87F7E8[8087] + 36) = 0x8000;
           }
         }
         goto LABEL_74;
       }
-      if ( MEMORY[0x87F7E8][539960] )
+      if ( DataGlobal_87F7E8[539960] )
       {
-        if ( MEMORY[0x87F7E8][1134] )
+        if ( DataGlobal_87F7E8[1134] )
         {
-          if ( MEMORY[0x87F7E8][1134] != 1 )
+          if ( DataGlobal_87F7E8[1134] != 1 )
           {
-            if ( MEMORY[0x87F7E8][1134] != 2 )
+            if ( DataGlobal_87F7E8[1134] != 2 )
               goto LABEL_35;
             goto LABEL_34;
           }
@@ -6957,26 +6958,26 @@ LABEL_32:
           goto LABEL_51;
         }
       }
-      else if ( MEMORY[0x87F7E8][1134] )
+      else if ( DataGlobal_87F7E8[1134] )
       {
-        if ( MEMORY[0x87F7E8][1134] != 1 )
+        if ( DataGlobal_87F7E8[1134] != 1 )
         {
-          if ( MEMORY[0x87F7E8][1134] != 2 )
+          if ( DataGlobal_87F7E8[1134] != 2 )
           {
-            if ( MEMORY[0x87F7E8][1134] != 5 )
+            if ( DataGlobal_87F7E8[1134] != 5 )
             {
-              if ( MEMORY[0x87F7E8][1134] != 7 )
+              if ( DataGlobal_87F7E8[1134] != 7 )
               {
-                if ( MEMORY[0x87F7E8][1134] != 8 )
+                if ( DataGlobal_87F7E8[1134] != 8 )
                 {
-                  if ( MEMORY[0x87F7E8][1134] != 9 )
+                  if ( DataGlobal_87F7E8[1134] != 9 )
                   {
-                    if ( MEMORY[0x87F7E8][1134] != 11 )
+                    if ( DataGlobal_87F7E8[1134] != 11 )
                     {
-                      if ( MEMORY[0x87F7E8][1134] != 6 )
+                      if ( DataGlobal_87F7E8[1134] != 6 )
                       {
 LABEL_61:
-                        Mission::SetAndCall(MEMORY[0x87F7E8], 0, 1);
+                        Mission::SetAndCall(DataGlobal_87F7E8, 0, 1);
                         goto LABEL_62;
                       }
                       v7 = 65;
@@ -7007,14 +7008,14 @@ LABEL_51:
                       if ( (!FactoryClass::GetFlag() || UI_Process_639DA0() == -1) && v7 )
                       {
                         if ( (a2 & 8) != 0 )
-                          TacticalClass::HandlePlayerAction((char *)MEMORY[0x87F7E8], (__int16 *)&v27, v29, v28, v7, 1);
+                          TacticalClass::HandlePlayerAction((char *)DataGlobal_87F7E8, (__int16 *)&v27, v29, v28, v7, 1);
                         if ( (a2 & 4) != 0 && !BYTE1(dword_A8ED54[18]) )
                         {
                           v34 = ((__int16)v27 << 8) + 128;
                           v35 = (SHIWORD(v27) << 8) + 128;
                           v36 = 0;
                           PlayerClass::ExecuteCommand(
-                            (char *)MEMORY[0x87F7E8],
+                            (char *)DataGlobal_87F7E8,
                             (int)&v34,
                             (__int16 *)&v27,
                             (#375 **)v28,
@@ -7034,19 +7035,19 @@ LABEL_51:
               goto LABEL_36;
             }
 LABEL_35:
-            if ( MEMORY[0x87F7E8][1134] != 7 )
+            if ( DataGlobal_87F7E8[1134] != 7 )
             {
-              if ( MEMORY[0x87F7E8][1134] != 8 )
+              if ( DataGlobal_87F7E8[1134] != 8 )
               {
-                if ( MEMORY[0x87F7E8][1134] != 9 )
+                if ( DataGlobal_87F7E8[1134] != 9 )
                 {
-                  if ( MEMORY[0x87F7E8][1134] != 11 )
+                  if ( DataGlobal_87F7E8[1134] != 11 )
                   {
-                    if ( MEMORY[0x87F7E8][1134] == 5 )
+                    if ( DataGlobal_87F7E8[1134] == 5 )
                     {
                       v7 = 41;
                     }
-                    else if ( MEMORY[0x87F7E8][1134] == 6 )
+                    else if ( DataGlobal_87F7E8[1134] == 6 )
                     {
                       v7 = 65;
                     }
@@ -7094,7 +7095,7 @@ LABEL_34:
       v7 = 20;
       goto LABEL_51;
     }
-    Mouse::SetCursor((int)MEMORY[0x87F7E8], 0, 0);
+    Mouse::SetCursor((int)DataGlobal_87F7E8, 0, 0);
   }
   return 0;
 }

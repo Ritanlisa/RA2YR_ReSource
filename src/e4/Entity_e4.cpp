@@ -25,7 +25,7 @@ int sub_53AB70()
     1000 * *((_DWORD *)g_ScenarioClass_Instance + 3418) / 100,
     1000 * *((_DWORD *)g_ScenarioClass_Instance + 3419) / 100,
     1);
-  return MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 1); /*0x53ac4a*/
+  return MapClass::MarkForRedraw(&DataGlobal_87F7E8, 1); /*0x53ac4a*/
 }
 }
 } // namespace gamemd

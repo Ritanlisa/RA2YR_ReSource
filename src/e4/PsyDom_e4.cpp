@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x53B080
 namespace gamemd {
@@ -54,7 +57,7 @@ void PsyDom::Fire()
   v0 = (_DWORD *)__2_YAPAXI_Z(0x14u); /*0x53b08e*/
   if ( v0 ) /*0x53b097*/
   {
-    v1 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], &word_A9FA48); /*0x53b0a3*/
+    v1 = CellCoord::To_CellObj(&stru_87C374[13428], &word_A9FA48); /*0x53b0a3*/
     v2 = (int *)(*(int (__thiscall **)(void *, CoordStruct *))(*(_DWORD *)v1 + 72))(v1, &v33); /*0x53b0b1*/
     v3 = ActionQueue::PushEntry(v0, *v2, v2[1], v2[2]); /*0x53b0cb*/
   }
@@ -63,8 +66,8 @@ void PsyDom::Fire()
     v3 = 0; /*0x53b0d2*/
   }
   v3[4] = 1; /*0x53b0d4*/
-  v4 = *(CoordStruct **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 768); /*0x53b0e6*/
-  v5 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], &word_A9FA48); /*0x53b0f1*/
+  v4 = *(CoordStruct **)(*(_DWORD *)&stru_87C374[44652] + 768); /*0x53b0e6*/
+  v5 = CellCoord::To_CellObj(&stru_87C374[13428], &word_A9FA48); /*0x53b0f1*/
   aP2 = *(CoordStruct *)(*(int (__thiscall **)(void *, CoordStruct *))(*(_DWORD *)v5 + 72))(v5, &v33); /*0x53b104*/
   v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53b11b*/
   if ( v6 ) /*0x53b125*/
@@ -73,12 +76,12 @@ void PsyDom::Fire()
     unk_A9FAC4 = 0; /*0x53b145*/
   PlaySoundEffectAt( /*0x53b16b*/
     (TechnoClass *)&aP2,
-    *(IUnknown **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 780),
+    *(IUnknown **)(*(_DWORD *)&stru_87C374[44652] + 780),
     0,
-    *(ObjectClass **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 760),
+    *(ObjectClass **)(*(_DWORD *)&stru_87C374[44652] + 760),
     1,
     (int)unk_A9FACC);
-  v7 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 776); /*0x53b176*/
+  v7 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 776); /*0x53b176*/
   if ( v7 >= 10 ) /*0x53b17f*/
     v7 = 10; /*0x53b181*/
   v8 = (AnimClass *)dword_7ED3D0[v7]; /*0x53b186*/
@@ -99,7 +102,7 @@ void PsyDom::Fire()
       v30 = a5; /*0x53b1f7*/
       v31[0] = 0; /*0x53b1fb*/
       v31[1] = 0; /*0x53b1ff*/
-      v11 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v30); /*0x53b203*/
+      v11 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v30); /*0x53b203*/
       for ( i = (IUnknown *)Object::FindClosestObjectCell(v11, (IUnknown *)v31, 0, 0);
             i;
             i = (*(_BYTE *)(v22 + 20) & 1) != 0 ? (IUnknown *)v22 : 0 )
@@ -127,7 +130,7 @@ void PsyDom::Fire()
           if ( v19 ) /*0x53b2e6*/
             v20 = AnimClass::ctor( /*0x53b306*/
                     v19,
-                    *(CoordStruct **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 804),
+                    *(CoordStruct **)(*(_DWORD *)&stru_87C374[44652] + 804),
                     &v33,
                     0,
                     (CoordStruct *)1,

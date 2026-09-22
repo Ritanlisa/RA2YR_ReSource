@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x75F650
 namespace gamemd {
@@ -176,7 +177,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     LOBYTE(v3) = CellClass::IsActiveOrNext(v5);
     if ( (char)v3 )
     {
-    v12 = *(int *)(*(int *)&DataGlobal_87F8E4.__pad_5568[9108] + 6092);
+    v12 = *(int *)(*(int *)&DataGlobal_87F8E4[30972] + 6092);
     v3 = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x63);
     if ( v3 < v12 )
     LOBYTE(v3) = LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v13, (int)v5);

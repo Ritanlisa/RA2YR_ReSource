@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x4717D0
 namespace ra2 {
@@ -298,7 +301,7 @@ char __thiscall CaptureManagerClass::CaptureUnit(int this, int a2)
       v12 = 0; /*0x471dd3*/
       if ( v11 ) /*0x471dda*/
       {
-        v13 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x471ddc*/
+        v13 = *(IUnknown **)&HouseClass_Player[45112]; /*0x471ddc*/
         *(_DWORD *)(v11 + 16) = 0; /*0x471de2*/
         *(_DWORD *)(v11 + 8) = v13; /*0x471de5*/
         v12 = (int *)v11; /*0x471de8*/
@@ -321,8 +324,8 @@ char __thiscall CaptureManagerClass::CaptureUnit(int this, int a2)
       }
       v18 = v12 + 2; /*0x471e31*/
       *(_DWORD *)(v5 + 704) = this->overloadCount; /*0x471e34*/
-      v19 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 784); /*0x471e45*/
-      *v18 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x471e4b*/
+      v19 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 784); /*0x471e45*/
+      *v18 = *(_DWORD *)&HouseClass_Player[45112]; /*0x471e4b*/
       v18[1] = aP2.Y; /*0x471e52*/
       v18[2] = v19; /*0x471e57*/
       if ( !v5
@@ -356,7 +359,7 @@ char __thiscall CaptureManagerClass::CaptureUnit(int this, int a2)
       if ( v27 ) /*0x471f29*/
         v28 = AnimClass::ctor( /*0x471f4c*/
                 v27,
-                *(CoordStruct **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 800),
+                *(CoordStruct **)(*(_DWORD *)&stru_87C374[44652] + 800),
                 &aP2,
                 0,
                 (CoordStruct *)1,
@@ -429,11 +432,11 @@ char CaptureManagerClass::FreeUnit(IUnknown *aP0, int _28, IUnknown *a2, IUnknow
         }
         if ( *(_DWORD *)((*(int (__thiscall **)(IUnknown *, IUnknown *, int))(aP0->field_0 + 132))(aP0, v20, v21) + 1456) == -1 ) /*0x472059*/
         {
-          if ( *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 612) != -1 ) /*0x4720a3*/
+          if ( *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 612) != -1 ) /*0x4720a3*/
           {
             v23 = aP0->field_9C; /*0x4720af*/
             retaddr = *(_UNKNOWN **)aP0->__pad_A0; /*0x4720b6*/
-            StartAudioControllerAt(*(AudioController **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 612), (int)&v23, 0); /*0x4720cb*/
+            StartAudioControllerAt(*(AudioController **)(*(_DWORD *)&stru_87C374[44652] + 612), (int)&v23, 0); /*0x4720cb*/
           }
         }
         else
@@ -636,25 +639,25 @@ void __thiscall CaptureManagerClass::DecideUnitFate(_DWORD *this, IUnknown *aP1)
   if ( *(_BYTE *)(v7 + 492) ) /*0x472431*/
     return; /*0x472439*/
   v21 = 0; /*0x472446*/
-  if ( (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 36) + 24))(v8 + 36) >= *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] /*0x472459*/
+  if ( (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 36) + 24))(v8 + 36) >= *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] /*0x472459*/
                                                                                      + 3772) )
   {
     if ( HouseClass::GetPowerRatio((int *)*(_DWORD *)(this->overloadCount + 540)) >= 1.0 ) /*0x472480*/
     {
       v23 = (float)*(int *)&aP1->__pad_68[4]; /*0x47249e*/
-      if ( v23 / (double)*(int *)((*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 132))(aP1) + 160) >= *(float *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3776) ) /*0x4724c3*/
-        v9 = (AbstractClass **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3660); /*0x4724dd*/
+      if ( v23 / (double)*(int *)((*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 132))(aP1) + 160) >= *(float *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 3776) ) /*0x4724c3*/
+        v9 = (AbstractClass **)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 3660); /*0x4724dd*/
       else
-        v9 = (AbstractClass **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3688); /*0x4724cd*/
+        v9 = (AbstractClass **)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 3688); /*0x4724cd*/
     }
     else
     {
-      v9 = (AbstractClass **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3716); /*0x47248f*/
+      v9 = (AbstractClass **)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 3716); /*0x47248f*/
     }
   }
   else
   {
-    v9 = (AbstractClass **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3744); /*0x47245f*/
+    v9 = (AbstractClass **)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 3744); /*0x47245f*/
   }
   v10 = Random::Range(&g_ScenarioClass_Instance->random[1], (IUnknown *)1, (IUnknown *)0x64); /*0x4724f7*/
   v24 = 0; /*0x4724f9*/

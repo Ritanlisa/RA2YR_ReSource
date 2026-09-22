@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ConnectionPointClass_9_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x4A0760
 int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)

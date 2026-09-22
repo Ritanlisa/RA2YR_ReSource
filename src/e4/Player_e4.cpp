@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x5E8DC0
 void Player::BuildListString()
@@ -17,7 +18,7 @@ void __thiscall Player::BuildListString(wchar_t *this)
   void *v8; // [esp+14h] [ebp-4h] BYREF
 
   *this = 0; /*0x5e8dc8*/
-  v2 = (SessionClass *)&HouseClass_Player.__pad_5568[18396]; /*0x5e8dcd*/
+  v2 = (SessionClass *)&HouseClass_Player[40260]; /*0x5e8dcd*/
   do /*0x5e8e89*/
   {
     v3 = (ReferenceCounted *)v2->GameMode[0]; /*0x5e8dd2*/
@@ -47,7 +48,7 @@ void __thiscall Player::BuildListString(wchar_t *this)
     DeleteAndZero::Alt((void **)&v6); /*0x5e8e7b*/
     v2 = (SessionClass *)((char *)v2 + 4); /*0x5e8e80*/
   }
-  while ( (int)v2 < (int)&HouseClass_Player.__pad_5568[18428] ); /*0x5e8e89*/
+  while ( (int)v2 < (int)&HouseClass_Player[40292] ); /*0x5e8e89*/
 }
 }
 

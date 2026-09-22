@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x48B750
 int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5)
@@ -138,7 +141,7 @@ int __thiscall ConnectionClass::sendAck(int this, AnimClass *aP1, AnimClass *aP2
     *(_BYTE *)(this->q020 + 2) = 1; /*0x48bf7c*/
     *(_DWORD *)(this->q020 + 4) = this->q03C; /*0x48bf86*/
   }
-  if ( g_GameMode_Current == (CellStruct *)4 && MEMORY[0xA8D63C].__pad_524[64] ) /*0x48bf99*/
+  if ( g_GameMode_Current == (CellStruct *)4 && g_NetworkPlayerBuffer[1380] ) /*0x48bf99*/
     *(_BYTE *)(this->q020 + 3) = (_BYTE)aP4; /*0x48bfa2*/
   if ( this->q01C < (int)aP2 ) /*0x48bfae*/
   {
@@ -239,13 +242,13 @@ LABEL_40:
         v25 = this->q012; /*0x48c28f*/
         v26 = 2; /*0x48c29c*/
         *(_DWORD *)&v27[1] = v23; /*0x48c2a1*/
-        if ( MEMORY[0xA8DBA0] ) /*0x48c2a5*/
+        if ( g_Network_IsHosting ) /*0x48c2a5*/
           v27[0] = *(_BYTE *)(a2 + 3); /*0x48c2aa*/
         else
           v27[0] = 0; /*0x48c2b0*/
         Debug::Log(); /*0x48c2c6*/
-        v24 = MEMORY[0xA8EA0C]; /*0x48c2cb*/
-        LOBYTE(v24) = this == (_DWORD *)MEMORY[0xA8EA0C]; /*0x48c2d7*/
+        v24 = DataGlobal_A8EA0C; /*0x48c2cb*/
+        LOBYTE(v24) = this == (_DWORD *)DataGlobal_A8EA0C; /*0x48c2d7*/
         (*(void (__thiscall **)(_DWORD *, __int16 *, int, _DWORD, _DWORD, int, _DWORD))(*this + 36))( /*0x48c2ea*/
           this,
           &v25,
@@ -447,9 +450,9 @@ int __thiscall ConnectionClass_ServiceSendQueue(unsigned int *this)
       v10 = *(_DWORD *)(v8 + 8); /*0x48c4ab*/
       if ( v9 - v10 > this->q028 ) /*0x48c4b7*/
       {
-        v11 = MEMORY[0xA8EA0C]; /*0x48c4bd*/
+        v11 = DataGlobal_A8EA0C; /*0x48c4bd*/
         LOWORD(v10) = *(_WORD *)(v8 + 32); /*0x48c4c3*/
-        LOBYTE(v11) = this == (unsigned int *)MEMORY[0xA8EA0C]; /*0x48c4cb*/
+        LOBYTE(v11) = this == (unsigned int *)DataGlobal_A8EA0C; /*0x48c4cb*/
         (*(void (__thiscall **)(unsigned int *, _DWORD, _DWORD, _DWORD, _DWORD, int, int))(*this + 36))( /*0x48c4e2*/
           this,
           *(_DWORD *)(v8 + 20),

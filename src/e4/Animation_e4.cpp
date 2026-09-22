@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4549B0
 void Animation::UpdateBuildingAnimations()
@@ -73,8 +75,8 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
         if ( *(_BYTE *)(i + this->q148 + 3983) ) /*0x454aa7*/
         {
           HealthRatio = BuildingClass::GetHealthRatio(this); /*0x454ab4*/
-          v11 = *(_DWORD *)&stru_87C374.__pad_579C[22224]; /*0x454ab9*/
-          if ( HealthRatio > *(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5888) ) /*0x454aca*/
+          v11 = *(_DWORD *)&stru_87C374[44652]; /*0x454ab9*/
+          if ( HealthRatio > *(double *)(*(_DWORD *)&stru_87C374[44652] + 5888) ) /*0x454aca*/
           {
             v11 = this->q148; /*0x454ae0*/
             v12 = 0; /*0x454ae6*/
@@ -140,14 +142,14 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
     v22 = *(_DWORD *)(v20 + 684); /*0x454c32*/
     if ( v21 != -1 ) /*0x454c3b*/
     {
-      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - v21 >= v22 ) /*0x454c47*/
+      if ( *(_DWORD *)&HouseClass_Player[45112] - v21 >= v22 ) /*0x454c47*/
         goto LABEL_51; /*0x454c47*/
-      v22 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - v21; /*0x454c49*/
+      v22 -= *(_DWORD *)&HouseClass_Player[45112] - v21; /*0x454c49*/
     }
     if ( v22 ) /*0x454c4d*/
     {
 LABEL_52:
-      if ( BuildingClass::GetHealthRatio(this) > *(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5888) ) /*0x454c71*/
+      if ( BuildingClass::GetHealthRatio(this) > *(double *)(*(_DWORD *)&stru_87C374[44652] + 5888) ) /*0x454c71*/
       {
         v23 = 0; /*0x454c8b*/
         v24 = (_BYTE *)(this->q148 + 5208); /*0x454c8d*/
@@ -160,7 +162,7 @@ LABEL_52:
       if ( v24 && *v24 ) /*0x454c96*/
         BuildingClass::PlayAnim( /*0x454ca5*/
           (ObjectClass *)this,
-          *(int *)&stru_87C374.__pad_579C[22224],
+          *(int *)&stru_87C374[44652],
           v24,
           (IUnknown *)0x13,
           (IUnknown *)v23,
@@ -248,10 +250,10 @@ void __thiscall Animation::LoadSidebarAnimations(ObjectClass *this, _DWORD *a1, 
   while ( 1 ) /*0x770574*/
   {
     v6 = *(ObjectClass **)this->__pad_0; /*0x770574*/
-    String::Assign((char **)&aP2, &stru_830620.__pad_579C[33740]); /*0x77057f*/
+    String::Assign((char **)&aP2, &stru_830620[56168]); /*0x77057f*/
     INIClass::ReadTokenizedPair((char **)v5, v4, v3, v6, 0, (ObjectClass *)&aP2); /*0x770590*/
     DeleteAndZero((void **)&aP2); /*0x770599*/
-    String::Assign((char **)&a1, &stru_830620.__pad_579C[33732]); /*0x7705a7*/
+    String::Assign((char **)&a1, &stru_830620[56160]); /*0x7705a7*/
     INIClass::ReadTokenizedPair((char **)v5, v4, v3, v6, 1, (ObjectClass *)&a1); /*0x7705b8*/
     DeleteAndZero((void **)&a1); /*0x7705c1*/
     String::Assign((char **)&v23, aDraw); /*0x7705cf*/
@@ -267,14 +269,14 @@ void __thiscall Animation::LoadSidebarAnimations(ObjectClass *this, _DWORD *a1, 
   v7 = StaticString::Factory(*(void **)v22->__pad_0); /*0x77061c*/
   ConcatStringAlloc((char **)&v24, (const char **)v7, (char **)&v23); /*0x770627*/
   unknown_libname_73(&a1); /*0x770630*/
-  String::Assign((char **)&aP2, &MEMORY[0x87F8E4].__pad_5568[20760]); /*0x77063e*/
+  String::Assign((char **)&aP2, &DataGlobal_87F8E4[42624]); /*0x77063e*/
   INIClass::ReadString(v4, v3, (ObjectClass *)&v24, (ReferenceCounted *)&aP2, (int)&a1); /*0x770655*/
   DeleteAndZero((void **)&aP2); /*0x77065e*/
   (*((void (__thiscall **)(void **))v22[5].NeedsSaveOrLink + 3))(&v22[5].NeedsSaveOrLink); /*0x770671*/
   unknown_libname_73(&aP2); /*0x770678*/
-  for ( i = (ObjectClass *)String::Tokenize((const char **)&a1, 0, &MEMORY[0x817F70], (ObjectClass *)&aP2); /*0x770697*/
+  for ( i = (ObjectClass *)String::Tokenize((const char **)&a1, 0, &Delimiter, (ObjectClass *)&aP2); /*0x770697*/
         i != (ObjectClass *)-1;
-        i = (ObjectClass *)String::Tokenize((const char **)&a1, (int)i, &MEMORY[0x817F70], (ObjectClass *)&aP2) )
+        i = (ObjectClass *)String::Tokenize((const char **)&a1, (int)i, &Delimiter, (ObjectClass *)&aP2) )
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP2); /*0x77069d*/
     owningHouseIndex = v22[5].owningHouseIndex; /*0x7706a2*/
@@ -306,14 +308,14 @@ void __thiscall Animation::LoadSidebarAnimations(ObjectClass *this, _DWORD *a1, 
   v14 = StaticString::Factory(*(void **)v22->__pad_0); /*0x77073b*/
   ConcatStringAlloc((char **)&v24, (const char **)v14, (char **)&v23); /*0x770746*/
   unknown_libname_73(&a1); /*0x77074f*/
-  String::Assign((char **)&aP2, &MEMORY[0x87F8E4].__pad_5568[20760]); /*0x77075d*/
+  String::Assign((char **)&aP2, &DataGlobal_87F8E4[42624]); /*0x77075d*/
   INIClass::ReadString(v4, v3, (ObjectClass *)&v24, (ReferenceCounted *)&aP2, (int)&a1); /*0x770774*/
   DeleteAndZero((void **)&aP2); /*0x77077d*/
   (*((void (__thiscall **)(void **))v22[5].attachedBomb + 3))(&v22[5].attachedBomb); /*0x770790*/
   unknown_libname_73(&aP2); /*0x770797*/
-  for ( j = (ObjectClass *)String::Tokenize((const char **)&a1, 0, &MEMORY[0x817F70], (ObjectClass *)&aP2); /*0x7707b6*/
+  for ( j = (ObjectClass *)String::Tokenize((const char **)&a1, 0, &Delimiter, (ObjectClass *)&aP2); /*0x7707b6*/
         j != (ObjectClass *)-1;
-        j = (ObjectClass *)String::Tokenize((const char **)&a1, (int)j, &MEMORY[0x817F70], (ObjectClass *)&aP2) )
+        j = (ObjectClass *)String::Tokenize((const char **)&a1, (int)j, &Delimiter, (ObjectClass *)&aP2) )
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP2); /*0x7707bc*/
     v16 = v22[5].ambientSoundController[1]; /*0x7707c1*/

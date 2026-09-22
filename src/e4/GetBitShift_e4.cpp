@@ -27,7 +27,7 @@ namespace gamemd {
 XSurface * GetBitShift_Blue()
 {
 {
-    return *(XSurface **)&DataGlobal_89E138.__pad_14B0[6128];
+    return *(XSurface **)&DataGlobal_89E138[11424];
 }
 }
 } // namespace gamemd

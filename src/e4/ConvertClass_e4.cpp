@@ -211,21 +211,21 @@ _DWORD *__thiscall ConvertClass::Construct(
     this->q174 = v24 + ((v25 - 1) >> 1 << 9); /*0x48eb3a*/
     if ( !(_BYTE)aP5 ) /*0x48eb46*/
       DSurface::BlitStretch(v24, v25, (int)aP1); /*0x48eb51*/
-    this->q180 = *(unsigned __int16 *)&stru_89E138.__pad_14B0[6144]; /*0x48eb60*/
-    this->q184 = *(unsigned __int16 *)&stru_89E138.__pad_14B0[6146]; /*0x48eb6d*/
+    this->q180 = *(unsigned __int16 *)&stru_89E138[11440]; /*0x48eb60*/
+    this->q184 = *(unsigned __int16 *)&stru_89E138[11442]; /*0x48eb6d*/
   }
   if ( !(_BYTE)aP5 ) /*0x48eb7a*/
     ConvertClass::InitTables((int)this); /*0x48eb7e*/
-  if ( *(int *)&stru_89E138.__pad_BC0[16] < *(int *)&stru_89E138.__pad_BC0[8] /*0x48ebb7*/
-    || (stru_89E138.__pad_BC0[13] || !*(_DWORD *)&stru_89E138.__pad_BC0[8])
-    && *(int *)&stru_89E138.__pad_BC0[20] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)stru_89E138.__pad_BC0 + 8))(
-         stru_89E138.__pad_BC0,
-         *(_DWORD *)&stru_89E138.__pad_BC0[20] + *(_DWORD *)&stru_89E138.__pad_BC0[8],
+  if ( *(int *)&stru_89E138[3024] < *(int *)&stru_89E138[3016] /*0x48ebb7*/
+    || (stru_89E138[3021] || !*(_DWORD *)&stru_89E138[3016])
+    && *(int *)&stru_89E138[3028] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)stru_89E138[3008] + 8))(
+         stru_89E138[3008],
+         *(_DWORD *)&stru_89E138[3028] + *(_DWORD *)&stru_89E138[3016],
          0) )
   {
-    v26 = (*(_DWORD *)&stru_89E138.__pad_BC0[16])++; /*0x48ebc4*/
-    *(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_BC0[4] + 4 * v26) = this; /*0x48ebd3*/
+    v26 = (*(_DWORD *)&stru_89E138[3024])++; /*0x48ebc4*/
+    *(_DWORD *)(*(_DWORD *)&stru_89E138[3012] + 4 * v26) = this; /*0x48ebd3*/
   }
   return this; /*0x48ebd8*/
 }

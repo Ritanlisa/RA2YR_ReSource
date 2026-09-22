@@ -11,12 +11,12 @@ int __thiscall TeleportLocomotionClass::TeleportLocomotionClass(int this)
   wchar_t *v2; // ecx
 
   LocomotionClass::Init((_DWORD *)this); /*0x718003*/
-  this->MovingDestination = MEMORY[0xB0EBF8]; /*0x718011*/
-  this->Owner = MEMORY[0xB0EBFC]; /*0x71801a*/
-  this->q090 = MEMORY[0xB0EC00]; /*0x718026*/
-  this->LastCoords = MEMORY[0xB0EBF8]; /*0x71802e*/
-  *(_DWORD *)(this + 44) = MEMORY[0xB0EBFC]; /*0x718036*/
-  this->LinkedTo = MEMORY[0xB0EC00]; /*0x71803e*/
+  this->MovingDestination = DataGlobal_B0EBF8; /*0x718011*/
+  this->Owner = DataGlobal_B0EBFC; /*0x71801a*/
+  this->q090 = DataGlobal_B0EC00; /*0x718026*/
+  this->LastCoords = DataGlobal_B0EBF8; /*0x71802e*/
+  *(_DWORD *)(this + 44) = DataGlobal_B0EBFC; /*0x718036*/
+  this->LinkedTo = DataGlobal_B0EC00; /*0x71803e*/
   this->Moving = 0; /*0x718043*/
   this->TeleportLocomotionClass_field_bool_35 = 0; /*0x718046*/
   this->TeleportLocomotionClass_field_bool_36 = 0; /*0x718049*/

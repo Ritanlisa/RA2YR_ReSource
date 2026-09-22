@@ -46,9 +46,9 @@ BOOL __thiscall Lobby_SetupAllCountries(HWND this)
   HWND hWnd; // [esp+1Ch] [ebp-4h]
 
   v1 = 0; /*0x46f6da*/
-  v2 = (wchar_t **)&MEMORY[0xA8DA90]; /*0x46f6dc*/
+  v2 = (wchar_t **)&g_NetworkPlayerName; /*0x46f6dc*/
   v10 = 0; /*0x46f6e2*/
-  v8 = &MEMORY[0xA8DA90]; /*0x46f6e6*/
+  v8 = &g_NetworkPlayerName; /*0x46f6e6*/
   do /*0x46f7ff*/
   {
     ResourceID2 = GetResourceID2CSF(v1); /*0x46f6ef*/
@@ -58,8 +58,8 @@ BOOL __thiscall Lobby_SetupAllCountries(HWND this)
     {
       v5 = *v2; /*0x46f718*/
       v6 = -2; /*0x46f71c*/
-      if ( MEMORY[0xA8B23C] && (g_GameMode_Current == 3 || g_GameMode_Current == 4) ) /*0x46f730*/
-        v6 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0xA8B23C] + 40))(MEMORY[0xA8B23C]); /*0x46f737*/
+      if ( g_GameStateFlags && (g_GameMode_Current == 3 || g_GameMode_Current == 4) ) /*0x46f730*/
+        v6 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 40))(g_GameStateFlags); /*0x46f737*/
       if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f73b*/
       {
         PlayerSide = (int)*(v2 - 2557); /*0x46f744*/
@@ -68,15 +68,15 @@ BOOL __thiscall Lobby_SetupAllCountries(HWND this)
       {
         PlayerSide = v6; /*0x46f754*/
       }
-      else if ( v5 == (wchar_t *)MEMORY[0xAC11A0] ) /*0x46f75e*/
+      else if ( v5 == (wchar_t *)g_Lobby_PlayerCount ) /*0x46f75e*/
       {
         PlayerSide = v6; /*0x46f760*/
       }
-      else if ( v5 == MEMORY[0xAC11B0] ) /*0x46f76a*/
+      else if ( v5 == g_Lobby_PlayerReady ) /*0x46f76a*/
       {
         PlayerSide = v6; /*0x46f76c*/
       }
-      else if ( v5 == (wchar_t *)MEMORY[0xAC11B4] ) /*0x46f776*/
+      else if ( v5 == (wchar_t *)g_Lobby_MaxPlayers ) /*0x46f776*/
       {
         PlayerSide = -3; /*0x46f778*/
       }
@@ -84,9 +84,9 @@ BOOL __thiscall Lobby_SetupAllCountries(HWND this)
       {
         PlayerSide = SessionClass::GetPlayerSide((int)v5); /*0x46f786*/
       }
-      if ( MEMORY[0xA8B23C] /*0x46f795*/
-        && !(*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)MEMORY[0xA8B23C] + 28))(
-              MEMORY[0xA8B23C],
+      if ( g_GameStateFlags /*0x46f795*/
+        && !(*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)g_GameStateFlags + 28))(
+              g_GameStateFlags,
               PlayerSide) )
       {
         PlayerSide = v6; /*0x46f79e*/
@@ -107,7 +107,7 @@ BOOL __thiscall Lobby_SetupAllCountries(HWND this)
     v1 = (void *)++v10; /*0x46f7f0*/
     v8 = (int *)v2; /*0x46f7fb*/
   }
-  while ( (int)v2 < (int)&MEMORY[0xA8DAB0] ); /*0x46f7ff*/
+  while ( (int)v2 < (int)&g_PlayerNameListEnd ); /*0x46f7ff*/
   return result; /*0x46f805*/
 }
 }

@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/CComObject_CChatEventSink___ATL_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x7AA870
 int CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
@@ -169,7 +175,7 @@ LABEL_43:
             String::Assign_Bool(&v32, v6 + 52); /*0x7aab0c*/
             CChatEventSink::EncodeString(39); /*0x7aab1f*/
             String::ToLower((const char **)&v32); /*0x7aab28*/
-            if ( g_GameMode_Current[0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x7aab41*/
+            if ( g_GameMode_Current[0] == 4 && g_GameOptionsFlags == 3 ) /*0x7aab41*/
             {
               unknown_libname_73(&v37); /*0x7aab4b*/
               v16 = g_WOL_ChatPool; /*0x7aab50*/
@@ -300,7 +306,7 @@ LABEL_72:
             {
 LABEL_87:
               strcat(v40, String::GetOrEmpty((char **)&v32)); /*0x7aad7a*/
-              strcat(v40, MEMORY[0x8318B8]); /*0x7aadd7*/
+              strcat(v40, DataGlobal_8318B8); /*0x7aadd7*/
               ++v33; /*0x7aade5*/
             }
           }
@@ -312,8 +318,8 @@ LABEL_87:
 LABEL_88:
         if ( v33 > 20 ) /*0x7aadee*/
         {
-          (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(*(_DWORD *)MEMORY[0xAC1170] + 20))( /*0x7aae1f*/
-            MEMORY[0xAC1170],
+          (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(*(_DWORD *)g_UIPointerTable + 20))( /*0x7aae1f*/
+            g_UIPointerTable,
             g_WOL_ConnectFlag,
             g_WOL_GameConfig,
             v40,
@@ -321,8 +327,8 @@ LABEL_88:
             -1,
             0,
             0);
-          (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(*(_DWORD *)MEMORY[0xAC1170] + 56))( /*0x7aae4b*/
-            MEMORY[0xAC1170],
+          (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(*(_DWORD *)g_UIPointerTable + 56))( /*0x7aae4b*/
+            g_UIPointerTable,
             g_WOL_ConnectFlag,
             g_WOL_GameConfig,
             v40,
@@ -336,8 +342,8 @@ LABEL_88:
       while ( v6 ); /*0x7aae72*/
       if ( v33 ) /*0x7aae7e*/
       {
-        (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(*(_DWORD *)MEMORY[0xAC1170] + 20))( /*0x7aaead*/
-          MEMORY[0xAC1170],
+        (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(*(_DWORD *)g_UIPointerTable + 20))( /*0x7aaead*/
+          g_UIPointerTable,
           g_WOL_ConnectFlag,
           g_WOL_GameConfig,
           v40,
@@ -345,8 +351,8 @@ LABEL_88:
           -1,
           0,
           0);
-        (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(*(_DWORD *)MEMORY[0xAC1170] + 56))( /*0x7aaed9*/
-          MEMORY[0xAC1170],
+        (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(*(_DWORD *)g_UIPointerTable + 56))( /*0x7aaed9*/
+          g_UIPointerTable,
           g_WOL_ConnectFlag,
           g_WOL_GameConfig,
           v40,
@@ -355,7 +361,7 @@ LABEL_88:
       }
     }
     SetEvent(dword_B73690); /*0x7aaef2*/
-    if ( MEMORY[0xA8B244] == 3 || MEMORY[0xA8B244] == 1 || MEMORY[0xA8B244] == 2 ) /*0x7aaf0a*/
+    if ( g_GameOptionsFlags == 3 || g_GameOptionsFlags == 1 || g_GameOptionsFlags == 2 ) /*0x7aaf0a*/
     {
       Debug::Log(); /*0x7aaf18*/
     }

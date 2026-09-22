@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x774980
 bool WinModemClass::ReadSerial()
@@ -214,7 +216,7 @@ LABEL_2:
       if ( result ) /*0x774d6e*/
         return result; /*0x774f2f*/
     }
-    if ( !HouseClass_Player.__pad_5568[23244] ) /*0x774d7b*/
+    if ( !HouseClass_Player[45108] ) /*0x774d7b*/
       return 0; /*0x774d7b*/
     Bytes = WinModemClass::ReadBytes(
               (void (**)())v5,
@@ -252,7 +254,7 @@ LABEL_2:
       {
 LABEL_20:
         Str[a4 - 1] = 0; /*0x774e31*/
-        v15 = (AbstractClass *)strstr((ObjectClass *)Str, &stru_830620.__pad_14B0[2984]); /*0x774e45*/
+        v15 = (AbstractClass *)strstr((ObjectClass *)Str, &stru_830620[8280]); /*0x774e45*/
         if ( v15 ) /*0x774e4c*/
         {
           if ( *Str == 65 && Str[1] == 84 && strchr(Str, 13) ) /*0x774e5d*/
@@ -316,17 +318,17 @@ BOOL __thiscall WinModemClass::_vt06(int this, const char *NumberOfBytesWritten)
   if ( this->q060 ) /*0x774f87*/
   {
     Debug::Log(); /*0x774fd5*/
-    strcat(Buffer, MEMORY[0x83ED58]); /*0x775002*/
+    strcat(Buffer, DataGlobal_83ED58); /*0x775002*/
   }
   else
   {
-    strcat(Buffer, MEMORY[0x83ED5C]); /*0x774fbd*/
+    strcat(Buffer, g_Str_T); /*0x774fbd*/
     Debug::Log(); /*0x774fc6*/
   }
   Debug::Log(); /*0x775010*/
   strcat(Buffer, NumberOfBytesWritten); /*0x77503e*/
   Debug::Log(); /*0x775047*/
-  strcat(Buffer, (const char *)&MEMORY[0x8327A0]); /*0x775071*/
+  strcat(Buffer, (const char *)&DataGlobal_8327A0); /*0x775071*/
   Debug::Log(); /*0x775084*/
   v3 = strlen(Buffer) + 1; /*0x775095*/
   AsyncIO::WaitCompletion(this); /*0x77509e*/
@@ -453,9 +455,9 @@ LABEL_16:
 LABEL_21:
     memset(Str, 0, sizeof(Str)); /*0x7752cf*/
     (*(void (__thiscall **)(int, int, char *, int, int))(this->q014)(this, v11, Str, 80, a8); /*0x7752e6*/
-    if ( !strcmp(Str, &g_INI_Key_Lighting.__pad_20[4]) ) /*0x77531d*/
+    if ( !strcmp(Str, &g_INI_Key_Lighting[36]) ) /*0x77531d*/
       return 3; /*0x775437*/
-    if ( strstr(Str, MEMORY[0x81FD14]) ) /*0x77532d*/
+    if ( strstr(Str, g_INI_Key_OK) ) /*0x77532d*/
       return 2; /*0x775337*/
     if ( strstr(Str, aError) ) /*0x775347*/
       return 1; /*0x775449*/
@@ -479,7 +481,7 @@ LABEL_21:
     strncpy(Destination, Str, v22); /*0x7753af*/
     Sleep(0x64u); /*0x7753bf*/
     AsyncIO::WaitCompletion(this); /*0x7753c3*/
-    if ( !WriteFile(*(HANDLE *)(this + 92), &stru_830620.__pad_14B0[3280], 1u, &v28, (LPOVERLAPPED)(this + 60)) ) /*0x7753dc*/
+    if ( !WriteFile(*(HANDLE *)(this + 92), &stru_830620[8576], 1u, &v28, (LPOVERLAPPED)(this + 60)) ) /*0x7753dc*/
     {
       if ( GetLastError() == 997 ) /*0x7753ed*/
         *(_BYTE *)(this + 81) = 1; /*0x7753ef*/

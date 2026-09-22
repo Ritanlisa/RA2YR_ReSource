@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
 
 // 0x406060
 int Mixer::ReleaseChannel()
@@ -15,7 +17,7 @@ int __thiscall Mixer_ReleaseChannel(int **this)
   result = g_AudioConfigState; /*0x406060*/
   if ( !g_AudioConfigState ) /*0x40606e*/
     goto LABEL_14; /*0x40606e*/
-  if ( *(this + 3) != &MEMORY[0x87E294] ) /*0x406077*/
+  if ( *(this + 3) != &DataGlobal_87E294 ) /*0x406077*/
     goto LABEL_14; /*0x406077*/
   v3 = *this; /*0x406079*/
   if ( !*this ) /*0x406079*/

@@ -14,6 +14,10 @@
 #include "e4/classes/E4Recv_74F730_e4.hpp"
 #include "e4/classes/E4Recv_74FAE0_e4.hpp"
 #include "e4/classes/__e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x743270
 namespace gamemd {
@@ -676,20 +680,20 @@ void CleanupVeinholeSystem()
   int i; // esi
   int v1; // ecx
 
-  for ( i = MEMORY[0xB1D2A0] - 1; i >= 0; --i ) /*0x74d76e*/
+  for ( i = g_VeinholePool - 1; i >= 0; --i ) /*0x74d76e*/
   {
-    v1 = *((_DWORD *)MEMORY[0xB1D294] + i); /*0x74d776*/
+    v1 = *((_DWORD *)g_VoxelDrawState + i); /*0x74d776*/
     if ( v1 ) /*0x74d77b*/
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v1 + 32))(v1, 1); /*0x74d781*/
   }
-  MEMORY[0xB1D2A0] = 0; /*0x74d78c*/
-  if ( MEMORY[0xB1D294] && MEMORY[0xB1D29D] ) /*0x74d79c*/
+  g_VeinholePool = 0; /*0x74d78c*/
+  if ( g_VoxelDrawState && DataGlobal_B1D29D ) /*0x74d79c*/
   {
-    __3_YAXPAX_Z(MEMORY[0xB1D294]); /*0x74d79f*/
-    MEMORY[0xB1D294] = 0; /*0x74d7a7*/
+    __3_YAXPAX_Z(g_VoxelDrawState); /*0x74d79f*/
+    g_VoxelDrawState = 0; /*0x74d7a7*/
   }
-  MEMORY[0xB1D29D] = 0; /*0x74d7ad*/
-  MEMORY[0xB1D298] = 0; /*0x74d7b3*/
+  DataGlobal_B1D29D = 0; /*0x74d7ad*/
+  DataGlobal_B1D298 = 0; /*0x74d7b3*/
 }
 }
 } // namespace gamemd
@@ -725,27 +729,27 @@ int __fastcall InitializeVeinholeSystem(char a1)
   if ( !a1 ) /*0x74dea6*/
   {
 LABEL_17:
-    v4 = MEMORY[0xB1D2F0]; /*0x74dffd*/
+    v4 = g_VeinholeMonsterPool; /*0x74dffd*/
     goto LABEL_18; /*0x74dffd*/
   }
-  for ( i = MEMORY[0xB1D2A0] - 1; i >= 0; --i ) /*0x74deb8*/
-    System_Init_74E8A0(*((_DWORD *)MEMORY[0xB1D294] + i)); /*0x74dec3*/
-  v4 = MEMORY[0xB1D2F0]; /*0x74decb*/
-  if ( MEMORY[0xB1D2F0] ) /*0x74ded2*/
+  for ( i = g_VeinholePool - 1; i >= 0; --i ) /*0x74deb8*/
+    System_Init_74E8A0(*((_DWORD *)g_VoxelDrawState + i)); /*0x74dec3*/
+  v4 = g_VeinholeMonsterPool; /*0x74decb*/
+  if ( g_VeinholeMonsterPool ) /*0x74ded2*/
   {
-    __3_YAXPAX_Z(MEMORY[0xB1D2F0]); /*0x74ded5*/
+    __3_YAXPAX_Z(g_VeinholeMonsterPool); /*0x74ded5*/
     v4 = 0; /*0x74dedd*/
-    MEMORY[0xB1D2F0] = 0; /*0x74dedf*/
+    g_VeinholeMonsterPool = 0; /*0x74dedf*/
   }
-  v5 = MEMORY[0xB1D2A0] - 1; /*0x74deea*/
-  if ( MEMORY[0xB1D2A0] - 1 >= 0 ) /*0x74deef*/
+  v5 = g_VeinholePool - 1; /*0x74deea*/
+  if ( g_VeinholePool - 1 >= 0 ) /*0x74deef*/
   {
     do /*0x74dff7*/
     {
       v6 = __2_YAPAXI_Z(8 * g_RulesClass_Instance->AircraftFogReveal); /*0x74df08*/
       if ( !v6 ) /*0x74df12*/
         v6 = 0; /*0x74df1b*/
-      *(_DWORD *)(*((_DWORD *)MEMORY[0xB1D294] + v5) + 180) = v6; /*0x74df28*/
+      *(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v5) + 180) = v6; /*0x74df28*/
       v7 = __2_YAPAXI_Z(0x14u); /*0x74df33*/
       if ( v7 ) /*0x74df3a*/
       {
@@ -772,10 +776,10 @@ LABEL_17:
       {
         v7 = 0; /*0x74df84*/
       }
-      *(_DWORD *)(*((_DWORD *)MEMORY[0xB1D294] + v5) + 176) = v7; /*0x74df90*/
-      *(_DWORD *)(*((_DWORD *)MEMORY[0xB1D294] + v5) + 196) = __2_YAPAXI_Z(v2); /*0x74dfa9*/
-      memset(*(void **)(*((_DWORD *)MEMORY[0xB1D294] + v5) + 196), 0, v2); /*0x74dfc5*/
-      v12 = *(_DWORD **)(*((_DWORD *)MEMORY[0xB1D294] + v5) + 176); /*0x74dfd6*/
+      *(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v5) + 176) = v7; /*0x74df90*/
+      *(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v5) + 196) = __2_YAPAXI_Z(v2); /*0x74dfa9*/
+      memset(*(void **)(*((_DWORD *)g_VoxelDrawState + v5) + 196), 0, v2); /*0x74dfc5*/
+      v12 = *(_DWORD **)(*((_DWORD *)g_VoxelDrawState + v5) + 176); /*0x74dfd6*/
       for ( j = 0; j <= *v12; *(_DWORD *)(v12[2] + 4 * j - 4) = 0 ) /*0x74dfe0*/
         ++j; /*0x74dfe5*/
       v2 = v19; /*0x74dff0*/
@@ -787,27 +791,27 @@ LABEL_17:
   }
 LABEL_18:
   if ( !v4 ) /*0x74e004*/
-    MEMORY[0xB1D2F0] = __2_YAPAXI_Z(v2); /*0x74e00f*/
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x74e019*/
-  for ( k = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); k; k = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x74e02f*/
+    g_VeinholeMonsterPool = __2_YAPAXI_Z(v2); /*0x74e00f*/
+  LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x74e019*/
+  for ( k = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); k; k = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) ) /*0x74e02f*/
     *(_DWORD *)(k + 320) &= ~0x8000u; /*0x74e03e*/
-  memset(MEMORY[0xB1D2F0], 0, v2); /*0x74e05c*/
-  for ( m = MEMORY[0xB1D2A0] - 1; m >= 0; --m ) /*0x74e06f*/
+  memset(g_VeinholeMonsterPool, 0, v2); /*0x74e05c*/
+  for ( m = g_VeinholePool - 1; m >= 0; --m ) /*0x74e06f*/
   {
-    v16 = *((_DWORD *)MEMORY[0xB1D294] + m); /*0x74e077*/
+    v16 = *((_DWORD *)g_VoxelDrawState + m); /*0x74e077*/
     if ( *(_BYTE *)(v16 + 256) ) /*0x74e07a*/
       RulesClass::Reset(); /*0x74e084*/
     else
       ProcessVeinholeMonster(v16); /*0x74e08b*/
   }
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x74e098*/
-  result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x74e0a2*/
+  LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x74e098*/
+  result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x74e0a2*/
   for ( n = result; result; n = result ) /*0x74e0ab*/
   {
-    if ( *(_DWORD *)(n + 68) == 126 && !*((_BYTE *)MEMORY[0xB1D2F0] + Cell::PosToIndex((__int16 *)(n + 36))) ) /*0x74e0c5*/
+    if ( *(_DWORD *)(n + 68) == 126 && !*((_BYTE *)g_VeinholeMonsterPool + Cell::PosToIndex((__int16 *)(n + 36))) ) /*0x74e0c5*/
       *(_DWORD *)(n + 68) = -1; /*0x74e0cb*/
     *(_DWORD *)(n + 320) &= ~0x8000u; /*0x74e0da*/
-    result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x74e0e5*/
+    result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x74e0e5*/
   }
   return result; /*0x74e0f0*/
 }
@@ -973,7 +977,7 @@ char *__thiscall sub_74FAE0(int this)
 
   if ( ((unsigned char)this->M68 & 8) == 0 ) /*0x74faef*/
   {
-    RawFileClass::Construct(MEMORY[0x84635C]); /*0x74fafa*/
+    RawFileClass::Construct(g_Str_File_VERSION_TXT); /*0x74fafa*/
     if ( (unsigned __int8)FileClass::Open(0) ) /*0x74fb04*/
     {
       FileClass::Read((LPVOID)(this + 42), 0x10u); /*0x74fb17*/
@@ -1005,40 +1009,40 @@ char *__thiscall sub_74FAE0(int this)
     *(_WORD *)(this + 10) = 1; /*0x74fb7d*/
     this->M68 = v3; /*0x74fb81*/
   }
-  if ( (MEMORY[0xA8ED24] & 8) == 0 ) /*0x74fb8b*/
+  if ( (DataGlobal_A8ED24 & 8) == 0 ) /*0x74fb8b*/
   {
-    RawFileClass::Construct(MEMORY[0x84635C]); /*0x74fb9a*/
+    RawFileClass::Construct(g_Str_File_VERSION_TXT); /*0x74fb9a*/
     if ( (unsigned __int8)FileClass::Open(0) ) /*0x74fba4*/
     {
-      FileClass::Read(&MEMORY[0xA8ED0A], 0x10u); /*0x74fbb8*/
-      for ( MEMORY[0xA8ED19] = 0; /*0x74fbd9*/
-            MEMORY[0xA8ED09][strlen(&MEMORY[0xA8ED0A])] == 13;
-            MEMORY[0xA8ED08][strlen(&MEMORY[0xA8ED0A]) + 1] = 0 )
+      FileClass::Read(&DataGlobal_A8ED0A, 0x10u); /*0x74fbb8*/
+      for ( DataGlobal_A8ED19 = 0; /*0x74fbd9*/
+            DataGlobal_A8ED09[strlen(&DataGlobal_A8ED0A)] == 13;
+            DataGlobal_A8ED08[strlen(&DataGlobal_A8ED0A) + 1] = 0 )
       {
         ; /*0x74fbee*/
       }
     }
     else
     {
-      MEMORY[0xA8ED0A] = 0; /*0x74fc07*/
+      DataGlobal_A8ED0A = 0; /*0x74fc07*/
     }
     RawFileClass::Dtor(v9); /*0x74fc11*/
-    v5 = MEMORY[0xA8ED24]; /*0x74fc16*/
-    LOBYTE(v5) = MEMORY[0xA8ED24] | 8; /*0x74fc1b*/
-    MEMORY[0xA8ED24] = v5; /*0x74fc1d*/
+    v5 = DataGlobal_A8ED24; /*0x74fc16*/
+    LOBYTE(v5) = DataGlobal_A8ED24 | 8; /*0x74fc1b*/
+    DataGlobal_A8ED24 = v5; /*0x74fc1d*/
   }
-  if ( (MEMORY[0xA8ED24] & 2) != 0 ) /*0x74fc2f*/
+  if ( (DataGlobal_A8ED24 & 2) != 0 ) /*0x74fc2f*/
   {
-    v6 = MEMORY[0xA8ECE8]; /*0x74fc31*/
+    v6 = DataGlobal_A8ECE8; /*0x74fc31*/
   }
   else
   {
-    LOWORD(MEMORY[0xA8ECE8]) = 1; /*0x74fc3e*/
+    LOWORD(DataGlobal_A8ECE8) = 1; /*0x74fc3e*/
     v6 = 1; /*0x74fc49*/
-    MEMORY[0xA8ED24] |= 2u; /*0x74fc4e*/
+    DataGlobal_A8ED24 |= 2u; /*0x74fc4e*/
   }
   v7 = (char *)(this + 12); /*0x74fc60*/
-  sprintf(v7, MEMORY[0x846368], v6, v4); /*0x74fc6a*/
+  sprintf(v7, DataGlobal_846368, v6, v4); /*0x74fc6a*/
   return v7; /*0x74fc74*/
 }
 }

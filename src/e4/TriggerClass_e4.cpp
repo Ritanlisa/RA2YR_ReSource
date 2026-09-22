@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x610950
 namespace gamemd {
@@ -19,19 +20,19 @@ char __fastcall sub_610950(char a1)
   _DWORD v9[2]; // [esp+38h] [ebp-10h] BYREF
   __int64 v10; // [esp+40h] [ebp-8h]
 
-  if ( !MEMORY[0xAC1DCC] ) /*0x61095d*/
+  if ( !DataGlobal_AC1DCC ) /*0x61095d*/
     return 0; /*0x61095f*/
   if ( a1 ) /*0x61096a*/
   {
-    if ( MEMORY[0xAC1CC8] ) /*0x610978*/
-      (**(void (__thiscall ***)(int, int))MEMORY[0xAC1CC8])(MEMORY[0xAC1CC8], 1); /*0x61097e*/
-    MEMORY[0xAC1CC8] = 0; /*0x610982*/
+    if ( DataGlobal_AC1CC8 ) /*0x610978*/
+      (**(void (__thiscall ***)(int, int))DataGlobal_AC1CC8)(DataGlobal_AC1CC8, 1); /*0x61097e*/
+    DataGlobal_AC1CC8 = 0; /*0x610982*/
     v2 = __2_YAPAXI_Z(0x20u); /*0x61098d*/
     if ( v2 ) /*0x610994*/
     {
-      v4 = HIDWORD(MEMORY[0xAC1CB8]); /*0x61099b*/
-      v3 = DWORD2(MEMORY[0xAC1CB8]); /*0x61099b*/
-      v2[1] = DWORD2(MEMORY[0xAC1CB8]); /*0x6109a1*/
+      v4 = HIDWORD(DataGlobal_AC1CB8); /*0x61099b*/
+      v3 = DWORD2(DataGlobal_AC1CB8); /*0x61099b*/
+      v2[1] = DWORD2(DataGlobal_AC1CB8); /*0x6109a1*/
       v2[2] = v4; /*0x6109a9*/
       v2[3] = 0; /*0x6109b1*/
       *v2 = &XSurface_Vtable; /*0x6109b4*/
@@ -44,32 +45,32 @@ char __fastcall sub_610950(char a1)
     {
       v5 = 0; /*0x6109d0*/
     }
-    MEMORY[0xAC1CC8] = v5; /*0x6109ef*/
+    DataGlobal_AC1CC8 = v5; /*0x6109ef*/
     v9[0] = 0; /*0x6109f5*/
     v9[1] = 0; /*0x6109f9*/
-    v10 = *((_QWORD *)&MEMORY[0xAC1CB8] + 1); /*0x6109fd*/
+    v10 = *((_QWORD *)&DataGlobal_AC1CB8 + 1); /*0x6109fd*/
     (*(void (__thiscall **)(int, _DWORD *, int, __int128 *, _DWORD, int))(*(_DWORD *)v5 + 8))( /*0x610a08*/
       v5,
       v9,
       g_DSurface_Primary,
-      &MEMORY[0xAC1CB8],
+      &DataGlobal_AC1CB8,
       0,
       1);
   }
-  v8 = MEMORY[0xAC1CB8]; /*0x610a25*/
-  MEMORY[0xAC1DD0] = 0; /*0x610a32*/
-  if ( MEMORY[0xAC48B0] == -1 ) /*0x610a40*/
+  v8 = DataGlobal_AC1CB8; /*0x610a25*/
+  DataGlobal_AC1DD0 = 0; /*0x610a32*/
+  if ( DataGlobal_AC48B0 == -1 ) /*0x610a40*/
     v6 = -1; /*0x610a42*/
   else
-    v6 = ((int)(unsigned __int8)MEMORY[0xAC48B0] >> g_BitShift_Green_0 << MEMORY[0x8A0DD0]) /*0x610a8d*/
-       | (BYTE1(MEMORY[0xAC48B0]) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-       | (BYTE2(MEMORY[0xAC48B0]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
+    v6 = ((int)(unsigned __int8)DataGlobal_AC48B0 >> g_BitShift_Green_0 << g_DDraw_BlueMask) /*0x610a8d*/
+       | (BYTE1(DataGlobal_AC48B0) >> g_BitMask_Blue << g_BitMask_Green)
+       | (BYTE2(DataGlobal_AC48B0) >> g_BitShift_Blue << g_BitShift_Blue);
   (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0); /*0x610a9d*/
   (*(void (__thiscall **)(int, __int128 *, int))(*(_DWORD *)g_DSurface_Primary + 20))(g_DSurface_Primary, &v8, v6); /*0x610aae*/
   (*(void (__thiscall **)(int))(*(_DWORD *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
   Team_Find((int *)&v8, g_DSurface_Primary, 8, 4); /*0x610aca*/
-  v7 = wcslen(MEMORY[0xAC1CCC]); /*0x610ae0*/
-  DrawTextRendererTextAligned(MEMORY[0xAC18A4], 0, (int *)&v8, MEMORY[0xAC1CCC], v7, 1, 1, g_DSurface_Primary, 0); /*0x610afb*/
+  v7 = wcslen(DataGlobal_AC1CCC); /*0x610ae0*/
+  DrawTextRendererTextAligned(yTop, 0, (int *)&v8, DataGlobal_AC1CCC, v7, 1, 1, g_DSurface_Primary, 0); /*0x610afb*/
   HIDWORD(v8) -= 2; /*0x610b1e*/
   LODWORD(v8) = v8 + 1; /*0x610b2a*/
   ++DWORD1(v8); /*0x610b2e*/
@@ -176,9 +177,9 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TriggerClass;
     *(int *)&aP0->__pad_0[12] = &vt_TriggerClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[8]);
     return 0;
   }
     return result;

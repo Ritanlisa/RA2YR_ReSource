@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/TypeList_cptr_TerrainTypeClass_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x48ACF0
 double RulesClass::GetFiringDistance()
@@ -1726,13 +1730,13 @@ int __thiscall sub_66D150(RulesClass *this)
   double v8; // [esp-8h] [ebp-10h]
   int v9; // [esp+Ch] [ebp+4h]
 
-  result = INIClass::BinarySearchSection(v9, (unsigned __int8 *)MEMORY[0x839E70]); /*0x66d160*/
+  result = INIClass::BinarySearchSection(v9, (unsigned __int8 *)DataGlobal_839E70); /*0x66d160*/
   if ( result ) /*0x66d16c*/
   {
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x66d183*/
                       v9,
-                      (unsigned __int8 *)MEMORY[0x839E70],
-                      (unsigned __int8 *)MEMORY[0x83B370],
+                      (unsigned __int8 *)DataGlobal_839E70,
+                      (unsigned __int8 *)DataGlobal_83B370,
                       *((_DWORD *)this + 1550));
     v4 = this->IceCrackingWeight; /*0x66d188*/
     *((_DWORD *)this + 1550) = Int_Overwrite; /*0x66d18e*/
@@ -1740,16 +1744,16 @@ int __thiscall sub_66D150(RulesClass *this)
     LODWORD(v8) = v4; /*0x66d1a1*/
     Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x66d1aa*/
                          v9,
-                         (unsigned __int8 *)MEMORY[0x839E70],
-                         (unsigned __int8 *)MEMORY[0x83B358],
+                         (unsigned __int8 *)DataGlobal_839E70,
+                         (unsigned __int8 *)DataGlobal_83B358,
                          v8);
     v6 = this->BerserkColor; /*0x66d1af*/
     v7 = this->IronCurtainColor; /*0x66d1b5*/
     *((double *)this + 776) = Double_Overwrite; /*0x66d1bb*/
     *((double *)this + 777) = INIClass::ReadDouble_Overwrite( /*0x66d1d6*/
                                 v9,
-                                (unsigned __int8 *)MEMORY[0x839E70],
-                                (unsigned __int8 *)MEMORY[0x83B344],
+                                (unsigned __int8 *)DataGlobal_839E70,
+                                (unsigned __int8 *)DataGlobal_83B344,
                                 COERCE_DOUBLE(__PAIR64__(v6, v7)));
     LOBYTE(result) = 1; /*0x66d1dd*/
   }
@@ -1781,52 +1785,52 @@ int __thiscall sub_673E80(RulesClass *this)
   char String[128]; // [esp+0h] [ebp-80h] BYREF
   unsigned __int8 ***v13; // [esp+84h] [ebp+4h]
 
-  result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)MEMORY[0x839D98]); /*0x673e90*/
+  result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)DataGlobal_839D98); /*0x673e90*/
   if ( result ) /*0x673e9c*/
   {
     v2 = 0; /*0x673ea5*/
-    v3 = MEMORY[0x89EC28]; /*0x673ea7*/
+    v3 = DataGlobal_89EC28; /*0x673ea7*/
     do /*0x673fd7*/
     {
       result = INIClass::GetString( /*0x673ed0*/
                  v13,
-                 (unsigned __int8 *)MEMORY[0x839D98],
+                 (unsigned __int8 *)DataGlobal_839D98,
                  *((unsigned __int8 **)&off_7E523C + v2),
-                 MEMORY[0x83D4AC],
+                 DataGlobal_83D4AC,
                  String,
                  128);
       if ( result ) /*0x673ed7*/
       {
-        v4 = strtok(String, MEMORY[0x817F70]); /*0x673ee7*/
+        v4 = strtok(String, Delimiter); /*0x673ee7*/
         v5 = v4; /*0x673eec*/
         if ( v4 ) /*0x673ef3*/
         {
           String::Trim(v4); /*0x673ef7*/
           dword_81DA8C[v2] = atoi(v5); /*0x673f05*/
         }
-        v6 = strtok(0, MEMORY[0x817F70]); /*0x673f13*/
+        v6 = strtok(0, Delimiter); /*0x673f13*/
         v7 = v6; /*0x673f18*/
         if ( v6 ) /*0x673f1f*/
         {
           String::Trim(v6); /*0x673f23*/
           dword_81DAD8[v2] = GlobalArray::FindString(v7); /*0x673f2f*/
         }
-        v8 = strtok(0, MEMORY[0x817F70]); /*0x673f3d*/
+        v8 = strtok(0, Delimiter); /*0x673f3d*/
         v9 = v8; /*0x673f42*/
         if ( v8 ) /*0x673f49*/
         {
           String::Trim(v8); /*0x673f4d*/
-          if ( _strcmpi(v9, MEMORY[0x825BF8]) ) /*0x673f58*/
+          if ( _strcmpi(v9, DataGlobal_825BF8) ) /*0x673f58*/
           {
-            if ( !_strcmpi(v9, MEMORY[0x825BF4]) ) /*0x673f73*/
-              MEMORY[0x89ECC0][v2] = 0; /*0x673f7f*/
+            if ( !_strcmpi(v9, g_Str_no) ) /*0x673f73*/
+              DataGlobal_89ECC0[v2] = 0; /*0x673f7f*/
           }
           else
           {
-            MEMORY[0x89ECC0][v2] = 1; /*0x673f64*/
+            DataGlobal_89ECC0[v2] = 1; /*0x673f64*/
           }
         }
-        result = (int)strtok(0, MEMORY[0x817F70]); /*0x673f8c*/
+        result = (int)strtok(0, Delimiter); /*0x673f8c*/
         v10 = (char *)result; /*0x673f91*/
         if ( result ) /*0x673f98*/
         {
@@ -1845,7 +1849,7 @@ int __thiscall sub_673E80(RulesClass *this)
       ++v3; /*0x673fcd*/
       ++v2; /*0x673fd0*/
     }
-    while ( (int)v3 < (int)MEMORY[0x89ECC0] ); /*0x673fd7*/
+    while ( (int)v3 < (int)DataGlobal_89ECC0 ); /*0x673fd7*/
     LOBYTE(result) = 1; /*0x673fdf*/
   }
   else
@@ -1878,17 +1882,17 @@ int __thiscall sub_6743D0(RulesClass *this)
   double v15; // [esp-8h] [ebp-10h]
   int v16; // [esp+Ch] [ebp+4h]
 
-  result = INIClass::BinarySearchSection(v16, (unsigned __int8 *)MEMORY[0x839D58]); /*0x6743e0*/
+  result = INIClass::BinarySearchSection(v16, (unsigned __int8 *)DataGlobal_839D58); /*0x6743e0*/
   if ( result ) /*0x6743ec*/
   {
     this->?[8] = INIClass::ReadInt_Overwrite( /*0x67440c*/
                    v16,
-                   (unsigned __int8 *)MEMORY[0x839D58],
-                   (unsigned __int8 *)MEMORY[0x83D554],
+                   (unsigned __int8 *)DataGlobal_839D58,
+                   (unsigned __int8 *)DataGlobal_83D554,
                    this->?[8]);
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x674427*/
                       v16,
-                      (unsigned __int8 *)MEMORY[0x839D58],
+                      (unsigned __int8 *)DataGlobal_839D58,
                       (unsigned __int8 *)g_INI_Key_Speed,
                       this->?[9]);
     v4 = this->?[12]; /*0x67442c*/
@@ -1897,34 +1901,34 @@ int __thiscall sub_6743D0(RulesClass *this)
     LODWORD(v15) = this->?[11]; /*0x674445*/
     Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x67444e*/
                          v16,
-                         (unsigned __int8 *)MEMORY[0x839D58],
-                         (unsigned __int8 *)MEMORY[0x83D54C],
+                         (unsigned __int8 *)DataGlobal_839D58,
+                         (unsigned __int8 *)DataGlobal_83D54C,
                          v15);
     v6 = this->?[13]; /*0x674453*/
     *(double *)&this->?[11] = Double_Overwrite; /*0x67445b*/
-    v7 = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)MEMORY[0x839D58], (unsigned __int8 *)MEMORY[0x83D53C], v6); /*0x67446d*/
+    v7 = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)DataGlobal_839D58, (unsigned __int8 *)DataGlobal_83D53C, v6); /*0x67446d*/
     v8 = this->?[2]; /*0x674472*/
     v9 = this->?[1]; /*0x674478*/
     this->?[13] = v7; /*0x67447e*/
     v10 = INIClass::ReadDouble_Overwrite( /*0x674493*/
             v16,
-            (unsigned __int8 *)MEMORY[0x839D58],
-            (unsigned __int8 *)MEMORY[0x81B140],
+            (unsigned __int8 *)DataGlobal_839D58,
+            (unsigned __int8 *)DataGlobal_81B140,
             COERCE_DOUBLE(__PAIR64__(v8, v9)));
     v11 = this->?[4]; /*0x674498*/
     v12 = this->?[3]; /*0x67449e*/
     *(double *)&this->?[1] = v10; /*0x6744a4*/
     v13 = INIClass::ReadDouble_Overwrite( /*0x6744b9*/
             v16,
-            (unsigned __int8 *)MEMORY[0x839D58],
-            (unsigned __int8 *)MEMORY[0x83D528],
+            (unsigned __int8 *)DataGlobal_839D58,
+            (unsigned __int8 *)DataGlobal_83D528,
             COERCE_DOUBLE(__PAIR64__(v11, v12)));
     v14 = this->?[5]; /*0x6744be*/
     *(double *)&this->?[3] = v13; /*0x6744c4*/
     result = INIClass::ReadInt_Overwrite( /*0x6744d9*/
                v16,
-               (unsigned __int8 *)MEMORY[0x839D58],
-               (unsigned __int8 *)MEMORY[0x83D518],
+               (unsigned __int8 *)DataGlobal_839D58,
+               (unsigned __int8 *)DataGlobal_83D518,
                v14);
     this->?[5] = result; /*0x6744de*/
     LOBYTE(result) = 1; /*0x6744e5*/
@@ -1951,19 +1955,19 @@ int __thiscall sub_674550(RulesClass *this)
   char Source[32]; // [esp+4h] [ebp-20h] BYREF
   char *v7; // [esp+28h] [ebp+4h]
 
-  result = INIClass::BinarySearchSection((int)v7, (unsigned __int8 *)MEMORY[0x839D50]); /*0x674560*/
+  result = INIClass::BinarySearchSection((int)v7, (unsigned __int8 *)DataGlobal_839D50); /*0x674560*/
   if ( result ) /*0x67456c*/
   {
-    result = INIClass::GetKeyCount(v7, (unsigned __int8 *)MEMORY[0x839D50]); /*0x67457d*/
+    result = INIClass::GetKeyCount(v7, (unsigned __int8 *)DataGlobal_839D50); /*0x67457d*/
     v2 = result; /*0x674582*/
     for ( i = 0; i < v2; ++i ) /*0x674588*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v7, (unsigned __int8 *)MEMORY[0x839D50], i); /*0x6745a4*/
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v7, (unsigned __int8 *)DataGlobal_839D50, i); /*0x6745a4*/
       result = INIClass::GetString( /*0x6745b3*/
                  (unsigned __int8 ***)v7,
-                 (unsigned __int8 *)MEMORY[0x839D50],
+                 (unsigned __int8 *)DataGlobal_839D50,
                  StringByIndex,
-                 MEMORY[0x817474],
+                 g_Str__none_,
                  Source,
                  32);
       if ( result ) /*0x6745ba*/
@@ -1972,18 +1976,18 @@ int __thiscall sub_674550(RulesClass *this)
         if ( result == -1 ) /*0x6745c8*/
         {
           v5 = _strdup(Source); /*0x6745da*/
-          result = MEMORY[0xABF398]; /*0x6745dc*/
-          if ( MEMORY[0xABF3A0] < MEMORY[0xABF398] /*0x674614*/
-            || (MEMORY[0xABF39D] || !MEMORY[0xABF398])
-            && MEMORY[0xABF3A4] > 0
-            && (result = (*(int (__thiscall **)(int *, int, _DWORD))(MEMORY[0xABF390] + 8))(
-                           &MEMORY[0xABF390],
-                           MEMORY[0xABF398] + MEMORY[0xABF3A4],
+          result = DataGlobal_ABF398; /*0x6745dc*/
+          if ( DataGlobal_ABF3A0 < DataGlobal_ABF398 /*0x674614*/
+            || (DataGlobal_ABF39D || !DataGlobal_ABF398)
+            && DataGlobal_ABF3A4 > 0
+            && (result = (*(int (__thiscall **)(int *, int, _DWORD))(MovieInfo_Array + 8))(
+                           &MovieInfo_Array,
+                           DataGlobal_ABF398 + DataGlobal_ABF3A4,
                            0),
                 (_BYTE)result) )
           {
-            result = MEMORY[0xABF3A0]++; /*0x67461c*/
-            *((_DWORD *)MEMORY[0xABF394] + result) = v5; /*0x67462b*/
+            result = DataGlobal_ABF3A0++; /*0x67461c*/
+            *((_DWORD *)DataGlobal_ABF394 + result) = v5; /*0x67462b*/
           }
         }
       }
@@ -2299,13 +2303,13 @@ VectorClass *__fastcall RulesClass::LoadTypeList(
   int v22; // [esp+20h] [ebp-88h]
   INIClass String[2]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString(edx0, aP1, a2, (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760], String, 128) ) /*0x67bdfc*/
+  if ( INIClass::GetString(edx0, aP1, a2, (INIClass *)&DataGlobal_87F8E4[42624], String, 128) ) /*0x67bdfc*/
   {
     RulesClass::readIQ(&v17, 0, 0); /*0x67be11*/
     v22 = 10; /*0x67be1a*/
     v21 = 0; /*0x67be28*/
     v17 = (VectorClass *)&vt_TypeList_TerrainTypeClass_const; /*0x67be2c*/
-    for ( i = strtok(String[0].__pad_0, MEMORY[0x817F70].__pad_0); i; i = strtok(0, MEMORY[0x817F70].__pad_0) ) /*0x67be3e*/
+    for ( i = strtok(String[0].__pad_0, Delimiter[0]); i; i = strtok(0, Delimiter[0]) ) /*0x67be3e*/
     {
       if ( !*i ) /*0x67be40*/
         break; /*0x67be42*/

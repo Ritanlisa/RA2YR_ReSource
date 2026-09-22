@@ -1,5 +1,6 @@
 #include "core/hash_table.hpp"
 #include <cstring>
+#include "e4/e4_globals.hpp"
 
 namespace gamemd {
 
@@ -34,10 +35,10 @@ char __thiscall Hash_InsertOrdered(void *this, int a2)
 {
   if ( (*(unsigned __int8 (__thiscall **)(void *, int))(*(_DWORD *)this + 44))(this, a2) )
     return 0;
-  if ( MEMORY[0xA8EF54] )
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)a2 + 16))(a2, MEMORY[0xA8EF54]);
+  if ( DataGlobal_A8EF54 )
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)a2 + 16))(a2, DataGlobal_A8EF54);
   else
-    MEMORY[0xA8EF54] = a2;
+    DataGlobal_A8EF54 = a2;
   return 1;
 }
 

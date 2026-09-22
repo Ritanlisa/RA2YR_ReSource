@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/RandomMap_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x5A0160
 namespace gamemd {
@@ -85,7 +90,7 @@ char __stdcall TiberiumClass_Spread(int a1, int a2, int a3, int a4, int a5, int 
             v17 = (char *)g_MapTileArray + 80 * v14 + 80 * unk_89C2DC * v15; /*0x5a02a4*/
             v18 = *((_DWORD *)v17 + 14); /*0x5a02a8*/
             v19 = a7 && v18 == a1 - 1; /*0x5a02b6*/
-            v20 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v30); /*0x5a02c6*/
+            v20 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v30); /*0x5a02c6*/
             v21 = v20; /*0x5a02cd*/
             if ( (!v18 || v19) && (Cell::IsEmpty(v20) || v19 && Cell::IsGroundTypeRange(v21)) ) /*0x5a02e6*/
             {
@@ -102,7 +107,7 @@ char __stdcall TiberiumClass_Spread(int a1, int a2, int a3, int a4, int a5, int 
               }
               *((_DWORD *)v17 + 14) = a1; /*0x5a0348*/
               if ( a7 && Cell::IsEmpty(v21) ) /*0x5a034f*/
-                *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v30) + 283) = a8; /*0x5a036b*/
+                *((_BYTE *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v30) + 283) = a8; /*0x5a036b*/
             }
             else if ( v18 != a1 ) /*0x5a02f3*/
             {
@@ -170,42 +175,42 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
   this->q0F4 = 0; /*0x721758*/
   this->q0F8 = 0; /*0x72175e*/
   this->q0FC = 0; /*0x721764*/
-  this->q100 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x721770*/
+  this->q100 = *(_DWORD *)&HouseClass_Player[45112]; /*0x721770*/
   this->q108 = 0; /*0x721776*/
   this->q10C = 0; /*0x72177c*/
   this->q110 = 0; /*0x721782*/
   this->q114 = 0; /*0x721788*/
   this->TiberiumClass_field_118 = 0; /*0x72178e*/
-  v3 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x721794*/
+  v3 = *(IUnknown **)&HouseClass_Player[45112]; /*0x721794*/
   this->q124 = 0; /*0x72179a*/
   this->GrowthTimer = v3; /*0x7217a0*/
   *this = &TiberiumClass::`vftable'; /*0x7217a6*/
   this->vtable2 = &TiberiumClass::`vftable'; /*0x7217ac*/
   this->vtable3 = &TiberiumClass::`vftable'; /*0x7217b3*/
   this->vtable4 = &vt_TiberiumClass; /*0x7217ba*/
-  this->isInLogic = *(_DWORD *)&stru_B05488.__pad_579C[18644]; /*0x7217c6*/
-  if ( *(int *)&stru_B05488.__pad_579C[18644] < *(int *)&stru_B05488.__pad_579C[18636] /*0x7217fe*/
-    || (stru_B05488.__pad_579C[18641] || !*(_DWORD *)&stru_B05488.__pad_579C[18636])
-    && *(int *)&stru_B05488.__pad_579C[18648] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[18628] + 8))(
-         &stru_B05488.__pad_579C[18628],
-         *(_DWORD *)&stru_B05488.__pad_579C[18636] + *(_DWORD *)&stru_B05488.__pad_579C[18648],
+  this->isInLogic = *(_DWORD *)&stru_B05488[41072]; /*0x7217c6*/
+  if ( *(int *)&stru_B05488[41072] < *(int *)&stru_B05488[41064] /*0x7217fe*/
+    || (stru_B05488[41069] || !*(_DWORD *)&stru_B05488[41064])
+    && *(int *)&stru_B05488[41076] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41056] + 8))(
+         &stru_B05488[41056],
+         *(_DWORD *)&stru_B05488[41064] + *(_DWORD *)&stru_B05488[41076],
          0) )
   {
-    v4 = (*(_DWORD *)&stru_B05488.__pad_579C[18644])++; /*0x72180b*/
-    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[18632] + 4 * v4) = this; /*0x72181a*/
+    v4 = (*(_DWORD *)&stru_B05488[41072])++; /*0x72180b*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488[41060] + 4 * v4) = this; /*0x72181a*/
   }
   (*(void (__thiscall **)(_DWORD *))(this->q0C4 + 12))(this + 49); /*0x721821*/
-  if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x721857*/
-    || (stru_B05488.__pad_579C[19033] || !*(_DWORD *)&stru_B05488.__pad_579C[19028])
-    && *(int *)&stru_B05488.__pad_579C[19040] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19020] + 8))(
-         &stru_B05488.__pad_579C[19020],
-         *(_DWORD *)&stru_B05488.__pad_579C[19028] + *(_DWORD *)&stru_B05488.__pad_579C[19040],
+  if ( *(int *)&stru_B05488[41464] < *(int *)&stru_B05488[41456] /*0x721857*/
+    || (stru_B05488[41461] || !*(_DWORD *)&stru_B05488[41456])
+    && *(int *)&stru_B05488[41468] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41448] + 8))(
+         &stru_B05488[41448],
+         *(_DWORD *)&stru_B05488[41456] + *(_DWORD *)&stru_B05488[41468],
          0) )
   {
-    v5 = (*(_DWORD *)&stru_B05488.__pad_579C[19036])++; /*0x721864*/
-    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19024] + 4 * v5) = this; /*0x721873*/
+    v5 = (*(_DWORD *)&stru_B05488[41464])++; /*0x721864*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488[41452] + 4 * v5) = this; /*0x721873*/
   }
   return this; /*0x721878*/
 }
@@ -251,35 +256,35 @@ char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x721a8b*/
                     (int)aP1,
                     (unsigned __int8 *)(this + 36),
-                    (CCINIClass *)&stru_830620.__pad_579C[60264],
+                    (CCINIClass *)&stru_830620[82692],
                     *(INIClass **)(this + 156));
   _FFFFFFF4 = *(INIClass **)(this + 160); /*0x721a9d*/
   this->location = Int_Overwrite; /*0x721aa6*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x721aac*/
                        (int)aP1,
                        (INIClass *)(this + 36),
-                       (unsigned __int8 *)&stru_830620.__pad_579C[60244],
+                       (unsigned __int8 *)&stru_830620[82672],
                        _FFFFFFF4);
   v5 = *(CCINIClass **)(this + 168); /*0x721ab1*/
   *(double *)(this + 160) = Double_Overwrite; /*0x721ab9*/
   eax2a = INIClass::ReadInt_Overwrite( /*0x721ac6*/
             (int)aP1,
             (unsigned __int8 *)(this + 36),
-            (CCINIClass *)&stru_830620.__pad_579C[60236],
+            (CCINIClass *)&stru_830620[82664],
             (INIClass *)v5);
   v19 = *(INIClass **)(this + 176); /*0x721ad8*/
   this->lineTrailer = eax2a; /*0x721ae1*/
   v8 = INIClass::ReadDouble_Overwrite( /*0x721ae7*/
          (int)aP1,
          (INIClass *)(this + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[60216],
+         (unsigned __int8 *)&stru_830620[82644],
          v19);
   v7 = *(CCINIClass **)(this + 184); /*0x721aec*/
   *(double *)(this + 176) = v8; /*0x721af4*/
   v10 = INIClass::ReadInt_Overwrite( /*0x721b01*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[60208],
+          (CCINIClass *)&stru_830620[82636],
           (INIClass *)v7);
   v11 = *(INIClass **)(this + 188); /*0x721b06*/
   this->q0B8 = v10; /*0x721b0c*/
@@ -294,16 +299,16 @@ char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   if ( INIClass::GetString( /*0x721b57*/
          aP1,
          (INIClass *)(this + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[60200],
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (unsigned __int8 *)&stru_830620[82628],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          String,
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor(v27, 0, 0); /*0x721b6c*/
     v27[0] = &vt_TypeList_AnimTypeClass_const; /*0x721b7b*/
-    for ( i = (AbstractClass *)strtok(String[0].__pad_0, MEMORY[0x817F70].__pad_0); /*0x721b8d*/
+    for ( i = (AbstractClass *)strtok(String[0].__pad_0, Delimiter[0]); /*0x721b8d*/
           i;
-          i = (AbstractClass *)strtok(0, MEMORY[0x817F70].__pad_0) )
+          i = (AbstractClass *)strtok(0, Delimiter[0]) )
     {
       if ( !i->__pad_0[0] ) /*0x721b8f*/
         break; /*0x721b92*/

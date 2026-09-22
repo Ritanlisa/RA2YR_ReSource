@@ -7,6 +7,12 @@
 #include "e4/classes/E4Recv_45DD20_e4.hpp"
 #include "e4/classes/E4Recv_45DD50_e4.hpp"
 #include "e4/classes/E4Recv_45E8B0_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Techno_e4.hpp"
 
 // 0x451400
 namespace gamemd {
@@ -66,8 +72,8 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
       while ( v5 < 1428 ); /*0x451475*/
     }
     HealthRatio = BuildingClass::GetHealthRatio((int *)a1); /*0x451479*/
-    v9 = *(_DWORD *)&stru_87C374.__pad_579C[22224]; /*0x45147e*/
-    if ( HealthRatio > *(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5888) ) /*0x45148f*/
+    v9 = *(_DWORD *)&stru_87C374[44652]; /*0x45147e*/
+    if ( HealthRatio > *(double *)(*(_DWORD *)&stru_87C374[44652] + 5888) ) /*0x45148f*/
     {
       v10 = *(_DWORD *)(a1 + 784); /*0x451491*/
       if ( v10 ) /*0x451499*/
@@ -95,7 +101,7 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
     *(_BYTE *)(a1 + 128) = 1; /*0x4514ec*/
   }
   v15 = *(_DWORD *)(a1 + 1312); /*0x4514f9*/
-  if ( v15 == *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 2172) ) /*0x451505*/
+  if ( v15 == *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 2172) ) /*0x451505*/
   {
     v16 = *(_DWORD *)(a1 + 1532); /*0x45150b*/
     v17 = v16 + 1; /*0x451511*/
@@ -129,7 +135,7 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
     else
     {
       *(_BYTE *)(a1 + 1794) = v21 + 1; /*0x45160a*/
-      v22 = BuildingClass::GetHealthRatio((int *)a1) <= *(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5888); /*0x451625*/
+      v22 = BuildingClass::GetHealthRatio((int *)a1) <= *(double *)(*(_DWORD *)&stru_87C374[44652] + 5888); /*0x451625*/
       v23 = (IUnknown *)(*(char *)(a1 + 1794) - 1); /*0x451637*/
       if ( v22 ) /*0x45163c*/
         v24 = (_BYTE *)(*(_DWORD *)(a1 + 1312) + 68 * (_DWORD)v23 + 3932); /*0x451649*/
@@ -241,10 +247,10 @@ int sub_452D40()
   int i; // edi
   int v2; // esi
 
-  result = MEMORY[0xA8EB50]; /*0x452d40*/
-  for ( i = 0; i < MEMORY[0xA8EB50]; ++i ) /*0x452d4a*/
+  result = g_BuildingProductionState; /*0x452d40*/
+  for ( i = 0; i < g_BuildingProductionState; ++i ) /*0x452d4a*/
   {
-    v2 = *((_DWORD *)MEMORY[0xA8EB44] + i); /*0x452d52*/
+    v2 = *((_DWORD *)g_BuildingClass_InstanceCount + i); /*0x452d52*/
     if ( v2 /*0x452d7c*/
       && *(_BYTE *)(*(_DWORD *)(v2 + 1312) + 5822)
       && !g_IKnowWhatImDoing
@@ -257,7 +263,7 @@ int sub_452D40()
       BuildingClass::DemolishBridge((#377 *)v2); /*0x452da5*/
       BuildingClass::RepairPlacement((_BYTE *)v2, 1); /*0x452dae*/
     }
-    result = MEMORY[0xA8EB50]; /*0x452db3*/
+    result = g_BuildingProductionState; /*0x452db3*/
   }
   return result; /*0x452dbe*/
 }
@@ -336,9 +342,9 @@ char __fastcall DrawTechnoDeployCircle(
   }
   v12 = v10; /*0x4569e1*/
   v35 = v10; /*0x4569f2*/
-  Coord::To_Screen(*(_DWORD **)&stru_87C374.__pad_579C[22548], &a1, (IUnknown *)&v38); /*0x4569f6*/
-  v38 = (Tactical *)((char *)v38 + *(_DWORD *)&stru_87C374.__pad_579C[21648]); /*0x456a11*/
-  v39 = (IUnknown *)((char *)v39 + *(_DWORD *)&stru_87C374.__pad_579C[21652]); /*0x456a20*/
+  Coord::To_Screen(*(_DWORD **)&stru_87C374[44976], &a1, (IUnknown *)&v38); /*0x4569f6*/
+  v38 = (Tactical *)((char *)v38 + *(_DWORD *)&stru_87C374[44076]); /*0x456a11*/
+  v39 = (IUnknown *)((char *)v39 + *(_DWORD *)&stru_87C374[44080]); /*0x456a20*/
   v47[1] = (char *)v39 - v12 / 2; /*0x456a2f*/
   LODWORD(v36) = v12 / 2; /*0x456a48*/
   v47[0] = (char *)v38 - v12; /*0x456a4c*/
@@ -347,7 +353,7 @@ char __fastcall DrawTechnoDeployCircle(
   v13 = (double *)ClipRectIntersection( /*0x456a66*/
                     (IUnknown *)v45,
                     (IUnknown *)v47,
-                    (IUnknown *)&stru_87C374.__pad_579C[21648],
+                    (IUnknown *)&stru_87C374[44076],
                     0,
                     0);
   v46 = *v13; /*0x456a6a*/
@@ -361,32 +367,32 @@ char __fastcall DrawTechnoDeployCircle(
     *(_WORD *)v37 = a6; /*0x456aab*/
     if ( v32 ) /*0x456ab0*/
       Color::Lerp(v37, (ObjectClass *)0x32, a2); /*0x456abd*/
-    (*(void (__thiscall **)(_DWORD, Tactical *, IUnknown *, int, int, _DWORD, _DWORD, _DWORD, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22532] + 32))( /*0x456b57*/
-      *(_DWORD *)&stru_87C374.__pad_579C[22532],
+    (*(void (__thiscall **)(_DWORD, Tactical *, IUnknown *, int, int, _DWORD, _DWORD, _DWORD, _DWORD, int))(**(_DWORD **)&stru_87C374[44960] + 32))( /*0x456b57*/
+      *(_DWORD *)&stru_87C374[44960],
       v38,
       v39,
       v12,
       v12 / 2,
-      *(_DWORD *)&stru_87C374.__pad_579C[21648],
-      *(_DWORD *)&stru_87C374.__pad_579C[21652],
-      *(_DWORD *)&stru_87C374.__pad_579C[21656],
-      *(_DWORD *)&stru_87C374.__pad_579C[21660],
-      (v37[0] >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120])
-    | (v37[1] >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136])
-    | (v37[2] >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128]));
-    (*(void (__thiscall **)(_DWORD, Tactical *, IUnknown *, int, int, _DWORD, _DWORD, _DWORD, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22532] + 32))( /*0x456beb*/
-      *(_DWORD *)&stru_87C374.__pad_579C[22532],
+      *(_DWORD *)&stru_87C374[44076],
+      *(_DWORD *)&stru_87C374[44080],
+      *(_DWORD *)&stru_87C374[44084],
+      *(_DWORD *)&stru_87C374[44088],
+      (v37[0] >> stru_89E138[11420] << stru_89E138[11416])
+    | (v37[1] >> stru_89E138[11436] << stru_89E138[11432])
+    | (v37[2] >> stru_89E138[11428] << stru_89E138[11424]));
+    (*(void (__thiscall **)(_DWORD, Tactical *, IUnknown *, int, int, _DWORD, _DWORD, _DWORD, _DWORD, int))(**(_DWORD **)&stru_87C374[44960] + 32))( /*0x456beb*/
+      *(_DWORD *)&stru_87C374[44960],
       v38,
       v39,
       v12 - 1,
       v12 / 2 - 1,
-      *(_DWORD *)&stru_87C374.__pad_579C[21648],
-      *(_DWORD *)&stru_87C374.__pad_579C[21652],
-      *(_DWORD *)&stru_87C374.__pad_579C[21656],
-      *(_DWORD *)&stru_87C374.__pad_579C[21660],
-      (v37[0] >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120])
-    | (v37[1] >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136])
-    | (v37[2] >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128]));
+      *(_DWORD *)&stru_87C374[44076],
+      *(_DWORD *)&stru_87C374[44080],
+      *(_DWORD *)&stru_87C374[44084],
+      *(_DWORD *)&stru_87C374[44088],
+      (v37[0] >> stru_89E138[11420] << stru_89E138[11416])
+    | (v37[1] >> stru_89E138[11436] << stru_89E138[11432])
+    | (v37[2] >> stru_89E138[11428] << stru_89E138[11424]));
     LOBYTE(v14) = v33; /*0x456bee*/
     if ( v33 ) /*0x456bf4*/
     {
@@ -397,8 +403,8 @@ char __fastcall DrawTechnoDeployCircle(
       v40 = (double)SLODWORD(v36); /*0x456c13*/
       do /*0x456c23*/
       {
-        LODWORD(v36) = v35 + *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x456c23*/
-        v17 = (double)(v35 + *(_DWORD *)&HouseClass_Player.__pad_5568[23248]) * 0.005; /*0x456c2b*/
+        LODWORD(v36) = v35 + *(_DWORD *)&HouseClass_Player[45112]; /*0x456c23*/
+        v17 = (double)(v35 + *(_DWORD *)&HouseClass_Player[45112]) * 0.005; /*0x456c2b*/
         v36 = v17 - (double)(int)Math::RoundToInt(v17) * 6.283185307179586; /*0x456c4e*/
         if ( fabs(v36 - 1.570796326794897) >= 0.001 ) /*0x456c6b*/
         {
@@ -433,14 +439,14 @@ char __fastcall DrawTechnoDeployCircle(
         v23 = v38; /*0x456c83*/
 LABEL_20:
         v29 = *v16; /*0x456d78*/
-        v45[0] = (char *)v23 - *(_DWORD *)&stru_87C374.__pad_579C[21648]; /*0x456d88*/
-        HIDWORD(v46) = (char *)v20 - *(_DWORD *)&stru_87C374.__pad_579C[21652]; /*0x456d91*/
-        LODWORD(v46) = (char *)v21 - *(_DWORD *)&stru_87C374.__pad_579C[21648]; /*0x456da3*/
+        v45[0] = (char *)v23 - *(_DWORD *)&stru_87C374[44076]; /*0x456d88*/
+        HIDWORD(v46) = (char *)v20 - *(_DWORD *)&stru_87C374[44080]; /*0x456d91*/
+        LODWORD(v46) = (char *)v21 - *(_DWORD *)&stru_87C374[44076]; /*0x456da3*/
         aP0_4 = v29; /*0x456da7*/
-        v45[1] = &v22[-*(_DWORD *)&stru_87C374.__pad_579C[21652]]; /*0x456dc9*/
-        LOBYTE(v14) = (*(int (__thiscall **)(_DWORD, char *, double *, _DWORD *, int *, int, int, _DWORD, int, int, int, _DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22532] + 60))( /*0x456dd8*/
-                        *(_DWORD *)&stru_87C374.__pad_579C[22532],
-                        &stru_87C374.__pad_579C[21648],
+        v45[1] = &v22[-*(_DWORD *)&stru_87C374[44080]]; /*0x456dc9*/
+        LOBYTE(v14) = (*(int (__thiscall **)(_DWORD, char *, double *, _DWORD *, int *, int, int, _DWORD, int, int, int, _DWORD))(**(_DWORD **)&stru_87C374[44960] + 60))( /*0x456dd8*/
+                        *(_DWORD *)&stru_87C374[44960],
+                        &stru_87C374[44076],
                         &v46,
                         v45,
                         &a6,
@@ -821,8 +827,8 @@ int Map_InitCellOffsets()
   unk_89DC30 = *(_DWORD *)CellStruct::Set(&v1, 0x7FFF, 0x7FFF);
   memset(&stru_89DC34, 0, 0x1Cu);
   Array::ForEach((int)&stru_89DC34, 4, 7, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2);
-  MEMORY[0x89DC50] = *(_DWORD *)CellStruct::Set(&v1, 0, 4);
-  MEMORY[0x89DC54] = *(_DWORD *)CellStruct::Set(&v1, 1, 4);
+  DataGlobal_0089DC50 = *(_DWORD *)CellStruct::Set(&v1, 0, 4);
+  DataGlobal_0089DC54 = *(_DWORD *)CellStruct::Set(&v1, 1, 4);
   unk_89DC58 = *(_DWORD *)CellStruct::Set(&v1, 2, 4);
   unk_89DC5C = *(_DWORD *)CellStruct::Set(&v1, -1, 4);
   unk_89DC60 = *(_DWORD *)CellStruct::Set(&v1, 3, 4);

@@ -50,13 +50,13 @@ int INIClass::sub_44FE60()
     int i;
     int v4;
     INIClass::ClearSection((int)this, (INIClass *)aStructures, 0);
-    result = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100];
-    for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100]; ++i )
+    result = *(int *)&g_NetworkPlayerBuffer[5396];
+    for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer[5396]; ++i )
   {
-    v4 = *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[88] + 4 * i);
+    v4 = *(int *)(*(int *)&g_NetworkPlayerBuffer[5384] + 4 * i);
     if ( !*(char *)(v4 + 129) && !*(char *)(*(int *)(v4 + 1312) + 5823) )
     BuildingClass::ReadConstructionData(v4, this);
-    result = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100];
+    result = *(int *)&g_NetworkPlayerBuffer[5396];
   }
     return result;
 }

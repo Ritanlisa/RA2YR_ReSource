@@ -269,11 +269,11 @@ char __thiscall ProcessUnitMissionAI(_DWORD *this)
             v9 = *this; /*0x5210b8*/
             v22 = v20; /*0x5210bb*/
             v19 = (*(int (__thiscall **)(_DWORD *))(v9 + 800))(this); /*0x5210c9*/
-            v10 = *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], &v21) + 80) >> 8; /*0x5210de*/
+            v10 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, &v21) + 80) >> 8; /*0x5210de*/
             LOBYTE(v10) = v10 & 1; /*0x5210e1*/
             v11 = (*(int (__thiscall **)(_DWORD *, _DWORD, int, int))(*this + 188))(this, 0, v10, v19); /*0x5210e9*/
             if ( !MapSeed::CheckTileMatch( /*0x521133*/
-                    &MEMORY[0x87F7E8],
+                    &DataGlobal_87F7E8,
                     (__int16 *)&v24,
                     (__int16 *)&v23,
                     *(_DWORD *)(*(this + 432) + 1460),
@@ -409,13 +409,13 @@ char __thiscall Mission::AssignTeamMemberMissions(int this, ScriptClass *aP1, in
     LOBYTE(v3) = i->isAliveFlag; /*0x6ed801*/
     if ( (_BYTE)v3 )
     {
-      if ( i->health && (*(_DWORD *)&HouseClass_Player.__pad_5568[21752] || !i->inLimbo) && !BYTE1(i[9].visibilityFlags) ) /*0x6ed831*/
+      if ( i->health && (*(_DWORD *)&HouseClass_Player[43616] || !i->inLimbo) && !BYTE1(i[9].visibilityFlags) ) /*0x6ed831*/
       {
-        v7 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), (IUnknown *)&v16.__pad_0[12]); /*0x6ed848*/
+        v7 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), (IUnknown *)&v16[12]); /*0x6ed848*/
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
-          v8 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5920); /*0x6ed867*/
+          v8 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5920); /*0x6ed867*/
         else
-          v8 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5916); /*0x6ed85a*/
+          v8 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5916); /*0x6ed85a*/
         if ( ObjectClass::DistanceTo(i, *(AbstractClass **)(this + 52)) <= v8 ) /*0x6ed87a*/
         {
           BYTE1(i[9].visibilityFlags) = 1; /*0x6ed8b2*/
@@ -436,7 +436,7 @@ char __thiscall Mission::AssignTeamMemberMissions(int this, ScriptClass *aP1, in
         v3 = (ScriptClass *)i->health; /*0x6ed8c7*/
         if ( v3 )
         {
-          if ( *(_DWORD *)&HouseClass_Player.__pad_5568[21752]
+          if ( *(_DWORD *)&HouseClass_Player[43616]
             || (v3 = (ScriptClass *)(unsigned __int8)i->inLimbo, !(_BYTE)v3) )
           {
             if ( BYTE1(i[9].visibilityFlags)
@@ -449,8 +449,8 @@ char __thiscall Mission::AssignTeamMemberMissions(int this, ScriptClass *aP1, in
                 if ( i[8].ambientSoundController[2]
                   || ((v9 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), (IUnknown *)&v16.abstractFlags), v9 == 54)
                    || v9 == 53
-                    ? (v10 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5920))
-                    : (v10 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5916)),
+                    ? (v10 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5920))
+                    : (v10 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5916)),
                       ObjectClass::DistanceTo(i, *(AbstractClass **)(this + 52)) <= 2 * v10 || v4 == (ScriptClass *)11) )
                 {
                   v3 = *(ScriptClass **)&i[4].__pad_0[4]; /*0x6eda11*/
@@ -494,11 +494,11 @@ char __thiscall Mission::AssignTeamMemberMissions(int this, ScriptClass *aP1, in
                                     &v16.referenceCount);
                   LOWORD(aP1a) = *v11 / 256; /*0x6ed9bb*/
                   HIWORD(aP1a) = v11[1] / 256; /*0x6ed9d7*/
-                  *(_DWORD *)v16.__pad_0 = aP1a; /*0x6ed9e4*/
-                  v12 = globalHelper_0DA020(&v16.__pad_0[8], &v16); /*0x6ed9e8*/
+                  *(_DWORD *)v16[0] = aP1a; /*0x6ed9e4*/
+                  v12 = globalHelper_0DA020(&v16[8], &v16); /*0x6ed9e8*/
                   v13 = *(_DWORD *)i->__pad_0; /*0x6ed9ef*/
-                  *(_DWORD *)&v16.__pad_0[4] = *v12; /*0x6ed9fd*/
-                  v14 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v16.__pad_0[4]); /*0x6eda01*/
+                  *(_DWORD *)&v16[4] = *v12; /*0x6ed9fd*/
+                  v14 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v16[4]); /*0x6eda01*/
                   LOBYTE(v3) = (*(int (__thiscall **)(ObjectClass *, void *, int))(v13 + 1152))(i, v14, 1); /*0x6eda09*/
                 }
               }

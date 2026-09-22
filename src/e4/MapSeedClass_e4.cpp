@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/MapSeedClass_18_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x5A5B50
 short MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
@@ -52,29 +54,29 @@ __int16 __thiscall MapSeedClass::PlaceBuildingClusters(void *this, MapSeedClass 
   if ( v5 > 5 ) /*0x5a5b91*/
   {
     v6 = v5 - 2; /*0x5a5b9a*/
-    *(_WORD *)&v23.__pad_0[6] = v4 + 2; /*0x5a5b9d*/
-    *(_WORD *)&v23.__pad_0[4] = (_WORD)v3; /*0x5a5ba9*/
+    *(_WORD *)&v23[6] = v4 + 2; /*0x5a5b9d*/
+    *(_WORD *)&v23[4] = (_WORD)v3; /*0x5a5ba9*/
     if ( v5 - 2 > 3 ) /*0x5a5bae*/
     {
       do /*0x5a5de6*/
       {
-        *(_DWORD *)&v23.__pad_0[12] = *FindClearPlacementCell( /*0x5a5bd8*/
+        *(_DWORD *)&v23[12] = *FindClearPlacementCell( /*0x5a5bd8*/
                                          &v23,
-                                         (MapSeedClass *)&v23.__pad_0[4],
+                                         (MapSeedClass *)&v23[4],
                                          (MapSeedClass *)v23.ambientSoundController,
                                          2);
         v7 = *globalHelper_0A7070( /*0x5a5bf0*/
                 (MapSeedClass *)&v23.objectTypeFlags,
-                (__int16 *)&v23.__pad_0[12],
+                (__int16 *)&v23[12],
                 (MapSeedClass *)v23.ambientSoundController,
                 2);
         v23.uniqueId = v7; /*0x5a5bf7*/
         if ( v7 /*0x5a5c28*/
-          && (*(_WORD *)&v23.__pad_0[4] || *(_WORD *)&v23.__pad_0[6])
-          && (__int16)v7 - *(__int16 *)&v23.__pad_0[4] >= 6 )
+          && (*(_WORD *)&v23[4] || *(_WORD *)&v23[6])
+          && (__int16)v7 - *(__int16 *)&v23[4] >= 6 )
         {
-          v23.customSound = *(__int16 *)&v23.__pad_0[14]; /*0x5a5c3b*/
-          v23.customSound_controller[4] = *(__int16 *)&v23.__pad_0[12] - 4; /*0x5a5c4c*/
+          v23.customSound = *(__int16 *)&v23[14]; /*0x5a5c3b*/
+          v23.customSound_controller[4] = *(__int16 *)&v23[12] - 4; /*0x5a5c4c*/
           *(_DWORD *)&v23.bombVisible = 4; /*0x5a5c53*/
           v23.health = 3; /*0x5a5c5e*/
           if ( !IsAreaClearMap((MapClass *)&v23.customSound_controller[4], 0, 0) ) /*0x5a5c65*/
@@ -87,8 +89,8 @@ __int16 __thiscall MapSeedClass::PlaceBuildingClusters(void *this, MapSeedClass 
           while ( v8 > 1 ); /*0x5a5c92*/
           if ( v8 ) /*0x5a5c96*/
           {
-            HIWORD(v23.referenceCount) = *(_WORD *)&v23.__pad_0[14]; /*0x5a5ca4*/
-            LOWORD(v23.referenceCount) = *(_WORD *)&v23.__pad_0[12] - 3; /*0x5a5cae*/
+            HIWORD(v23.referenceCount) = *(_WORD *)&v23[14]; /*0x5a5ca4*/
+            LOWORD(v23.referenceCount) = *(_WORD *)&v23[12] - 3; /*0x5a5cae*/
             v23.abstractFlags = v23.referenceCount; /*0x5a5cb9*/
             PlaceMapSeedClassBuildings( /*0x5a5cc6*/
               (ObjectClass *)((char *)&g_CellTileTypeCache->headNode[1] + 1),
@@ -101,20 +103,20 @@ __int16 __thiscall MapSeedClass::PlaceBuildingClusters(void *this, MapSeedClass 
 LABEL_11:
             PlaceMapSeedClassBuildings( /*0x5a5cd9*/
               (ObjectClass *)&dword_ABBEC4->__pad_0[2],
-              (ObjectClass *)&v23.__pad_0[12],
+              (ObjectClass *)&v23[12],
               -1,
               -1);
           }
-          v9 = *(_WORD *)&v23.__pad_0[12]; /*0x5a5cde*/
+          v9 = *(_WORD *)&v23[12]; /*0x5a5cde*/
           uniqueId = v23.uniqueId; /*0x5a5ce2*/
-          for ( i = 0; i < SLOWORD(v23.uniqueId) - *(__int16 *)&v23.__pad_0[12] - 1; ++i ) /*0x5a5cf3*/
+          for ( i = 0; i < SLOWORD(v23.uniqueId) - *(__int16 *)&v23[12] - 1; ++i ) /*0x5a5cf3*/
           {
             LOWORD(v23.NeedsSaveOrLink) = i + 1; /*0x5a5cfa*/
             LOWORD(v23.nextArrayIndex) = v9 + i + 1; /*0x5a5d0a*/
-            HIWORD(v23.nextArrayIndex) = *(_WORD *)&v23.__pad_0[14]; /*0x5a5d0f*/
+            HIWORD(v23.nextArrayIndex) = *(_WORD *)&v23[14]; /*0x5a5d0f*/
             v23.abstractFlags = v23.nextArrayIndex; /*0x5a5d1a*/
             PlaceMapSeedClassBuildings((ObjectClass *)g_CellTileTypeCache, (ObjectClass *)&v23.abstractFlags, -1, -1); /*0x5a5d28*/
-            v9 = *(_WORD *)&v23.__pad_0[12]; /*0x5a5d2d*/
+            v9 = *(_WORD *)&v23[12]; /*0x5a5d2d*/
             uniqueId = v23.uniqueId; /*0x5a5d31*/
           }
           v23.customSound_controller[1] = SHIWORD(v23.uniqueId); /*0x5a5d4b*/
@@ -139,11 +141,11 @@ LABEL_11:
 LABEL_18:
             PlaceMapSeedClassBuildings((ObjectClass *)dword_ABBEC4, (ObjectClass *)&v23.uniqueId, -1, -1); /*0x5a5dc6*/
           v6 -= 10; /*0x5a5dcb*/
-          *(_WORD *)&v23.__pad_0[6] += 10; /*0x5a5dce*/
+          *(_WORD *)&v23[6] += 10; /*0x5a5dce*/
         }
         else
         {
-          *(_WORD *)&v23.__pad_0[6] += 2; /*0x5a5ddb*/
+          *(_WORD *)&v23[6] += 2; /*0x5a5ddb*/
           v6 -= 2; /*0x5a5de1*/
         }
       }
@@ -156,27 +158,27 @@ LABEL_18:
   if ( v23.ambientSoundController[2] > 8 ) /*0x5a5e0a*/
   {
     v13 = v5 - 5; /*0x5a5e10*/
-    *(_DWORD *)&v23.__pad_0[12] = v5 - 5; /*0x5a5e18*/
-    *(_WORD *)&v23.__pad_0[4] = (_WORD)v3 + 5; /*0x5a5e1c*/
-    *(_WORD *)&v23.__pad_0[6] = v4; /*0x5a5e21*/
+    *(_DWORD *)&v23[12] = v5 - 5; /*0x5a5e18*/
+    *(_WORD *)&v23[4] = (_WORD)v3 + 5; /*0x5a5e1c*/
+    *(_WORD *)&v23[6] = v4; /*0x5a5e21*/
     while ( v13 > 3 ) /*0x5a5e26*/
     {
       *(_DWORD *)a1 = *FindClearPlacementCell( /*0x5a5e4d*/
                          v32,
-                         (MapSeedClass *)&v23.__pad_0[4],
+                         (MapSeedClass *)&v23[4],
                          (MapSeedClass *)v23.ambientSoundController,
                          4);
       v5 = *globalHelper_0A7070((MapSeedClass *)&v23.estimatedHealth, a1, (MapSeedClass *)v23.ambientSoundController, 4); /*0x5a5e68*/
       v23.uniqueId = v5; /*0x5a5e6a*/
       if ( v5 /*0x5a5ea1*/
-        && ((LOWORD(v5) = *(_WORD *)&v23.__pad_0[6], *(_WORD *)&v23.__pad_0[4]) || *(_WORD *)&v23.__pad_0[6])
-        && (LOWORD(v5) = *(_WORD *)&v23.__pad_0[6], SHIWORD(v5) - *(__int16 *)&v23.__pad_0[6] >= 6) )
+        && ((LOWORD(v5) = *(_WORD *)&v23[6], *(_WORD *)&v23[4]) || *(_WORD *)&v23[6])
+        && (LOWORD(v5) = *(_WORD *)&v23[6], SHIWORD(v5) - *(__int16 *)&v23[6] >= 6) )
       {
         LOWORD(v5) = a1[1]; /*0x5a5ea7*/
         v22 = 0; /*0x5a5eac*/
         v14 = 1; /*0x5a5eb4*/
         v21 = 0; /*0x5a5eb6*/
-        v23.__pad_0[11] = 0; /*0x5a5ebb*/
+        v23[11] = 0; /*0x5a5ebb*/
         if ( a1[1] < SHIWORD(v5) ) /*0x5a5ec0*/
         {
           while ( 1 ) /*0x5a5ec6*/
@@ -192,19 +194,19 @@ LABEL_18:
                 PlaceMapSeedClassBuildings((ObjectClass *)&g_CellTileTypeCache->__pad_0[1], (ObjectClass *)a1, -1, -1); /*0x5a60c6*/
                 if ( v21 ) /*0x5a60d1*/
                 {
-                  if ( v23.__pad_0[11] ) /*0x5a60dd*/
+                  if ( v23[11] ) /*0x5a60dd*/
                   {
                     HIWORD(v23.attachedBomb) = a1[1]; /*0x5a60e9*/
                     LOWORD(v23.attachedBomb) = a1[0] + 1; /*0x5a60ee*/
-                    *(_DWORD *)v23.__pad_0 = v23.attachedBomb; /*0x5a6108*/
+                    *(_DWORD *)v23[0] = v23.attachedBomb; /*0x5a6108*/
                     PlaceMapSeedClassBuildings((ObjectClass *)(unk_AA0E20 + 5), &v23, -1, -1); /*0x5a610c*/
-                    v23.__pad_0[11] = 0; /*0x5a6111*/
+                    v23[11] = 0; /*0x5a6111*/
                   }
                   else
                   {
                     HIWORD(v23.ambientSoundController[4]) = a1[1]; /*0x5a6125*/
                     LOWORD(v23.ambientSoundController[4]) = a1[0] + 1; /*0x5a612f*/
-                    *(_DWORD *)v23.__pad_0 = v23.ambientSoundController[4]; /*0x5a613a*/
+                    *(_DWORD *)v23[0] = v23.ambientSoundController[4]; /*0x5a613a*/
                     PlaceMapSeedClassBuildings((ObjectClass *)(unk_AA0E20 + 4), &v23, -1, -1); /*0x5a6147*/
                   }
                 }
@@ -219,7 +221,7 @@ LABEL_18:
                 {
                   LOWORD(v23.attachedTag) = a1[0] + 1; /*0x5a618d*/
                   HIWORD(v23.attachedTag) = a1[1] - 1; /*0x5a6197*/
-                  *(_DWORD *)v23.__pad_0 = v23.attachedTag; /*0x5a61a0*/
+                  *(_DWORD *)v23[0] = v23.attachedTag; /*0x5a61a0*/
                   PlaceMapSeedClassBuildings((ObjectClass *)(unk_AA0E20 + 3), &v23, -1, -1); /*0x5a61af*/
                   v21 = 0; /*0x5a61b4*/
                 }
@@ -242,7 +244,7 @@ LABEL_18:
                   if ( IsAreaClearMap((MapClass *)&v23.lineTrailer, 0, 0) && uniqueId_high - a1[1] > 5 ) /*0x5a6229*/
                   {
                     v21 = 1; /*0x5a622b*/
-                    v23.__pad_0[11] = 1; /*0x5a6230*/
+                    v23[11] = 1; /*0x5a6230*/
                   }
                   PlaceMapSeedClassBuildings((ObjectClass *)&g_CellTileTypeCache->__pad_0[3], (ObjectClass *)a1, -1, -1); /*0x5a6246*/
                   v29[0] = a1[0] - 1; /*0x5a6257*/
@@ -253,7 +255,7 @@ LABEL_18:
                   {
                     HIWORD(v23.nextObject) = a1[1]; /*0x5a628f*/
                     LOWORD(v23.nextObject) = a1[0] - 1; /*0x5a6294*/
-                    *(_DWORD *)v23.__pad_0 = v23.nextObject; /*0x5a62ae*/
+                    *(_DWORD *)v23[0] = v23.nextObject; /*0x5a62ae*/
                     PlaceMapSeedClassBuildings((ObjectClass *)(unk_AA0E20 + 12), &v23, -1, -1); /*0x5a62b2*/
                   }
                   v31[0] = a1[0] + 3; /*0x5a62c4*/
@@ -264,7 +266,7 @@ LABEL_18:
                   {
                     HIWORD(v23.fallRate) = a1[1]; /*0x5a62fe*/
                     LOWORD(v23.fallRate) = a1[0] + 3; /*0x5a6303*/
-                    *(_DWORD *)v23.__pad_0 = v23.fallRate; /*0x5a631d*/
+                    *(_DWORD *)v23[0] = v23.fallRate; /*0x5a631d*/
                     PlaceMapSeedClassBuildings((ObjectClass *)(unk_AA0E20 + 12), &v23, -1, -1); /*0x5a6321*/
                   }
                   a1[1] += 2; /*0x5a6326*/
@@ -272,14 +274,14 @@ LABEL_18:
                 else
                 {
                   v23.objectTypeFlags = *(_DWORD *)a1 - 0x10000; /*0x5a6340*/
-                  *(_DWORD *)v23.__pad_0 = *(_DWORD *)a1 - 0x10000; /*0x5a634e*/
+                  *(_DWORD *)v23[0] = *(_DWORD *)a1 - 0x10000; /*0x5a634e*/
                   PlaceMapSeedClassBuildings((ObjectClass *)&dword_ABBEC4->__pad_0[3], &v23, -1, -1); /*0x5a635d*/
                   LOWORD(v23.NeedsSaveOrLink) = a1[0] + 1; /*0x5a636e*/
                   HIWORD(v23.NeedsSaveOrLink) = a1[1] - 2; /*0x5a6377*/
-                  *(_DWORD *)v23.__pad_0 = v23.NeedsSaveOrLink; /*0x5a6386*/
+                  *(_DWORD *)v23[0] = v23.NeedsSaveOrLink; /*0x5a6386*/
                   NeighbourContent = (VectorClass *)CellCoord::To_CellObj( /*0x5a638f*/
-                                                      &stru_87C374.__pad_14B0[8132],
-                                                      (__int16 *)v23.__pad_0);
+                                                      &stru_87C374[13428],
+                                                      (__int16 *)v23[0]);
                   if ( Value::InRange((int *)NeighbourContent) && Value::InRange((int *)NeighbourContent) ) /*0x5a639e*/
                   {
                     do /*0x5a63c4*/
@@ -322,7 +324,7 @@ LABEL_18:
             if ( v15 ) /*0x5a5f9a*/
             {
               v23.nextArrayIndex = *(_DWORD *)a1 - 196608; /*0x5a5fb3*/
-              *(_DWORD *)v23.__pad_0 = *(_DWORD *)a1 - 196608; /*0x5a5fbe*/
+              *(_DWORD *)v23[0] = *(_DWORD *)a1 - 196608; /*0x5a5fbe*/
               PlaceMapSeedClassBuildings((ObjectClass *)((char *)&g_CellTileTypeCache->headNode[2] + 1), &v23, -1, -1); /*0x5a5fcb*/
             }
             else
@@ -331,7 +333,7 @@ LABEL_79:
               if ( MapSeedClass::ValidateRectBounds(v30) ) /*0x5a5fff*/
               {
                 v23.referenceCount = *(_DWORD *)a1 - 196608; /*0x5a6019*/
-                *(_DWORD *)v23.__pad_0 = *(_DWORD *)a1 - 196608; /*0x5a6027*/
+                *(_DWORD *)v23[0] = *(_DWORD *)a1 - 196608; /*0x5a6027*/
                 PlaceMapSeedClassBuildings((ObjectClass *)((char *)g_CellTileTypeCache->headNode + 1), &v23, -1, -1); /*0x5a6036*/
                 PlaceMapSeedClassBuildings((ObjectClass *)&g_CellTileTypeCache->__pad_0[1], (ObjectClass *)a1, -1, -1); /*0x5a604a*/
               }
@@ -352,7 +354,7 @@ LABEL_38:
               {
                 LOWORD(v23.abstractFlags) = a1[0] + 1; /*0x5a6403*/
                 HIWORD(v23.abstractFlags) = a1[1] - 1; /*0x5a640e*/
-                *(_DWORD *)v23.__pad_0 = v23.abstractFlags; /*0x5a6422*/
+                *(_DWORD *)v23[0] = v23.abstractFlags; /*0x5a6422*/
                 PlaceMapSeedClassBuildings((ObjectClass *)(unk_AA0E20 + 3), &v23, -1, -1); /*0x5a6426*/
               }
               break; /*0x5a6426*/
@@ -381,15 +383,15 @@ LABEL_38:
 LABEL_72:
           LOWORD(v5) = PlaceMapSeedClassBuildings((ObjectClass *)&dword_ABBEC4->__pad_0[3], (ObjectClass *)a1, -1, -1); /*0x5a64bd*/
 LABEL_73:
-        v13 = *(_DWORD *)&v23.__pad_0[12] - 10; /*0x5a64c9*/
-        *(_WORD *)&v23.__pad_0[4] += 10; /*0x5a64d4*/
-        *(_DWORD *)&v23.__pad_0[12] -= 10; /*0x5a64da*/
+        v13 = *(_DWORD *)&v23[12] - 10; /*0x5a64c9*/
+        *(_WORD *)&v23[4] += 10; /*0x5a64d4*/
+        *(_DWORD *)&v23[12] -= 10; /*0x5a64da*/
       }
       else
       {
-        *(_WORD *)&v23.__pad_0[4] += 2; /*0x5a64e0*/
+        *(_WORD *)&v23[4] += 2; /*0x5a64e0*/
         v13 -= 2; /*0x5a64e6*/
-        *(_DWORD *)&v23.__pad_0[12] = v13; /*0x5a64e9*/
+        *(_DWORD *)&v23[12] = v13; /*0x5a64e9*/
       }
     }
   }
@@ -456,7 +458,7 @@ LABEL_24:
               v9 = this->q004 + 3; /*0x5a786b*/
               LOWORD(v12) = v8; /*0x5a7874*/
               HIWORD(v12) = v9; /*0x5a7879*/
-              v10 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x5a7883*/
+              v10 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v12); /*0x5a7883*/
               if ( !CellClass::InBounds(v10) && !Cell::IsEmpty(v10) && !CellClass::InMapDataRange(v10) ) /*0x5a789d*/
                 break; /*0x5a789d*/
               if ( ++v8 >= *this + 3 ) /*0x5a78ae*/
@@ -478,7 +480,7 @@ LABEL_23:
             {
               LOWORD(v12) = v5; /*0x5a7814*/
               HIWORD(v12) = v3; /*0x5a781f*/
-              v6 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x5a7824*/
+              v6 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v12); /*0x5a7824*/
               v7 = v6[14]; /*0x5a7829*/
               if ( (v7 < g_CellTileTypeCache || v7 > g_CellTileTypeCache + 1) && !Value::InRange(v6) ) /*0x5a783d*/
                 break; /*0x5a783d*/

@@ -2,6 +2,19 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/ScriptAction_e4.hpp"
+#include "e4/classes/Sidebar_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x48B390
 namespace gamemd {
@@ -72,7 +85,7 @@ char *__thiscall EventClass::Add(char *this, AbstractClass *aP1, unsigned __int8
   {
     this->q008 = -1; /*0x4c6631*/
     *this = 0; /*0x4c6635*/
-    this->q00C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c663d*/
+    this->q00C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x4c663d*/
     return this; /*0x4c6640*/
   }
   else
@@ -81,7 +94,7 @@ char *__thiscall EventClass::Add(char *this, AbstractClass *aP1, unsigned __int8
     *this = a3; /*0x4c661a*/
     this->q007 = a4; /*0x4c661c*/
     this->q00B = a5; /*0x4c6620*/
-    this->q00C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6629*/
+    this->q00C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x4c6629*/
     return this; /*0x4c661e*/
   }
 }
@@ -126,7 +139,7 @@ char *__thiscall EventClass::Add2(char *this, AnimClass *aP1, unsigned __int8 a3
   {
     this->q008 = -1; /*0x4c6767*/
     *this = 0; /*0x4c676b*/
-    this->q00C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6776*/
+    this->q00C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x4c6776*/
     return this; /*0x4c6774*/
   }
   else
@@ -134,7 +147,7 @@ char *__thiscall EventClass::Add2(char *this, AnimClass *aP1, unsigned __int8 a3
     this->q008 = (char)aP1; /*0x4c6750*/
     *this = a3; /*0x4c6753*/
     this->q007 = aP3; /*0x4c6755*/
-    this->q00C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c675d*/
+    this->q00C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x4c675d*/
     return this; /*0x4c6760*/
   }
 }
@@ -159,7 +172,7 @@ char *__thiscall EventClass::AddEventEx(
   {
     this->q008 = -1; /*0x4c69c6*/
     *this = 0; /*0x4c69ca*/
-    this->q00C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c69d2*/
+    this->q00C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x4c69d2*/
     return this; /*0x4c69d5*/
   }
   else
@@ -169,7 +182,7 @@ char *__thiscall EventClass::AddEventEx(
     this->q007 = aP3; /*0x4c69ad*/
     this->q00B = aP4; /*0x4c69b0*/
     this->q03C = aP5; /*0x4c69b3*/
-    this->q00C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c69be*/
+    this->q00C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x4c69be*/
     return this; /*0x4c69bc*/
   }
 }
@@ -188,7 +201,7 @@ char *__thiscall EventClass::Init(char *this, IUnknown *aP1, char a3, int a4, in
   {
     this->q008 = -1; /*0x4c6b49*/
     *this = 0; /*0x4c6b4d*/
-    this->q00C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6b58*/
+    this->q00C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x4c6b58*/
     return this; /*0x4c6b56*/
   }
   else
@@ -200,7 +213,7 @@ char *__thiscall EventClass::Init(char *this, IUnknown *aP1, char a3, int a4, in
     this->q03C = arg10; /*0x4c6b27*/
     this->q04C = *a6; /*0x4c6b2d*/
     this->q015 = a6[1]; /*0x4c6b35*/
-    this->q00C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6b3f*/
+    this->q00C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x4c6b3f*/
     return this; /*0x4c6b42*/
   }
 }
@@ -472,7 +485,7 @@ void __thiscall EventClass::ProcessEvent(int this)
                 || (v98.uniqueId = v46->location[0],
                     v98.abstractFlags = v46->location[1],
                     v98.nextArrayIndex = v46->location[2],
-                    *((_BYTE *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&v98.uniqueId) + 284))
+                    *((_BYTE *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)&v98.uniqueId) + 284))
                 || !(*(unsigned __int8 (__thiscall **)(TechnoClass *))(*(_DWORD *)v46->__pad_0 + 688))(v46) )
               {
                 if ( (v46->abstractFlags & 4) != 0 )
@@ -528,7 +541,7 @@ void __thiscall EventClass::ProcessEvent(int this)
         v57[2].__pad_FC[38] = 1;
         ((void (__thiscall *)(CellStruct *, char *, int, _DWORD))v58->field_174)(
           v57,
-          &stru_89E138.__pad_579C[228],
+          &stru_89E138[22656],
           1,
           0);
       }
@@ -548,15 +561,15 @@ void __thiscall EventClass::ProcessEvent(int this)
               || (v100[0] = *(_DWORD *)&v51->__pad_34[104],
                   v100[1] = *(_DWORD *)&v51->__pad_34[108],
                   v100[2] = *(_DWORD *)&v51->__pad_34[112],
-                  *((_BYTE *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v100) + 284))
+                  *((_BYTE *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v100) + 284))
               || !(*(unsigned __int8 (__thiscall **)(CellStruct *))(v51->field_0 + 688))(v51) )
             {
               v53 = *(_DWORD *)&v51->__pad_34[120];
               if ( v53 != 18 && v53 != 19 && (*(int (__thiscall **)(CellStruct *))(v51->field_0 + 44))(v51) != 2 )
               {
                 a1 = *(_DWORD *)(*(int (__thiscall **)(CellStruct *, char *))(v51->field_0 + 440))(v51, v101);
-                if ( a1 == *(_DWORD *)&stru_89E138.__pad_579C[196]
-                  || (v54 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&a1),
+                if ( a1 == *(_DWORD *)&stru_89E138[22624]
+                  || (v54 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&a1),
                       (eax144 = Cell::IsBridge(v54)) == 0)
                   || !*(_BYTE *)(eax144[328] + 5821) )
                 {
@@ -583,18 +596,18 @@ void __thiscall EventClass::ProcessEvent(int this)
       return;
     case 0xB:
       v22 = (unsigned short)this->EventClass_field_0x15;
-      *(_WORD *)&v98.__pad_0[4] = this->q04C;
+      *(_WORD *)&v98[4] = this->q04C;
       v23 = this->q03C == 0;
       v24 = *(AnimClass **)(this + 7);
-      *(_WORD *)&v98.__pad_0[6] = v22;
-      HouseClass::CompleteProduction(v5, v24, *(BuildingTypeClass **)(this + 11), !v23, (int)&v98.__pad_0[4]);
+      *(_WORD *)&v98[6] = v22;
+      HouseClass::CompleteProduction(v5, v24, *(BuildingTypeClass **)(this + 11), !v23, (int)&v98[4]);
       return;
     case 0xC:
-      if ( (HouseClass_Player.__pad_5568[17220] & 2) == 0 )
-        *(_DWORD *)&HouseClass_Player.__pad_5568[23276] = 1;
+      if ( (HouseClass_Player[39084] & 2) == 0 )
+        *(_DWORD *)&HouseClass_Player[45140] = 1;
       return;
     case 0xD:
-      *(_DWORD *)&HouseClass_Player.__pad_5568[22700] = this->q007;
+      *(_DWORD *)&HouseClass_Player[44564] = this->q007;
       v62 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * this->q008];
       if ( v62 != HouseClass_Player.field_0 )
       {
@@ -637,9 +650,9 @@ void __thiscall EventClass::ProcessEvent(int this)
       return;
     case 0x12:
       cx156 = this->IsAllocated;
-      *(_WORD *)v98.__pad_0 = this->q00B;
+      *(_WORD *)v98[0] = this->q00B;
       v60 = *(AnimClass **)(this + 7);
-      *(_WORD *)&v98.__pad_0[2] = cx156;
+      *(_WORD *)&v98[2] = cx156;
       SuperWeapon::FireSuperWeaponHouseClass((void *)v5, (AbstractClass *)v60, &v98);
       return;
     case 0x13:
@@ -652,8 +665,8 @@ void __thiscall EventClass::ProcessEvent(int this)
       v91 = v16;
       GroundHeight = 0;
       GroundHeight = (AnimClass *)Cell::GetGroundHeight((IUnknown *)&v91);
-      if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&v91) + 80) & 0x100) != 0 )
-        GroundHeight = (AnimClass *)((char *)GroundHeight + *(_DWORD *)&stru_89E138.__pad_579C[280]);
+      if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)&v91) + 80) & 0x100) != 0 )
+        GroundHeight = (AnimClass *)((char *)GroundHeight + *(_DWORD *)&stru_89E138[22708]);
       if ( this->q007 == -1 )
       {
         v17 = (void **)__2_YAPAXI_Z(0x1C8u);
@@ -661,7 +674,7 @@ void __thiscall EventClass::ProcessEvent(int this)
           return;
         v18 = AnimClass::ctor(
                 v17,
-                *(CoordStruct **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 2996),
+                *(CoordStruct **)(*(_DWORD *)&stru_87C374[44652] + 2996),
                 (CoordStruct *)&v91,
                 0,
                 (CoordStruct *)1,
@@ -676,7 +689,7 @@ void __thiscall EventClass::ProcessEvent(int this)
           return;
         v18 = AnimClass::ctor(
                 v19,
-                *(CoordStruct **)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * this->q007),
+                *(CoordStruct **)(*(_DWORD *)&stru_89E138[90140] + 4 * this->q007),
                 (CoordStruct *)&v91,
                 0,
                 (CoordStruct *)1,
@@ -710,7 +723,7 @@ void __thiscall EventClass::ProcessEvent(int this)
           || ((*(int (__thiscall **)(CellStruct *))(v12->field_0 + 44))(v12) == 1
            || (*(int (__thiscall **)(CellStruct *))(v12->field_0 + 44))(v12) == 2)
           && (v13 = (IUnknown *)(*(int (__thiscall **)(CellStruct *, char *))(v12->field_0 + 72))(v12, v102),
-              v14 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], v13),
+              v14 = Coord::To_Cell(&stru_87C374[13428], v13),
               Cell::IsBridge(v14)) )
         {
           (*(void (__thiscall **)(CellStruct *, int))(v12->field_0 + 416))(v12, -1);
@@ -719,19 +732,19 @@ void __thiscall EventClass::ProcessEvent(int this)
       return;
     case 0x17:
       v15 = this->q007;
-      *(_WORD *)&v98.__pad_0[10] = this->q024;
-      *(_WORD *)&v98.__pad_0[8] = v15;
-      BuildingClass::Capture((void *)v5, (HouseClass *)&v98.__pad_0[8], 0);
+      *(_WORD *)&v98[10] = this->q024;
+      *(_WORD *)&v98[8] = v15;
+      BuildingClass::Capture((void *)v5, (HouseClass *)&v98[8], 0);
       return;
     case 0x18:
       if ( v5 )
       {
-        *(_DWORD *)&HouseClass_Player.__pad_5568[22188] = this->q007;
-        **(_DWORD **)&HouseClass_Player.__pad_5568[8060] = this->q007;
+        *(_DWORD *)&HouseClass_Player[44052] = this->q007;
+        **(_DWORD **)&HouseClass_Player[29924] = this->q007;
         v10 = GetStringCSF(aTxtSpecialWarn, 0, g_Str_File_Event_CPP, 953);
         swprintf(Buffer, (const size_t)v10, (const wchar_t *const)(v5 + 90154), _2);
         MessageListClass::AddMessage(
-          &HouseClass_Player.__pad_5568[10668],
+          &HouseClass_Player[32532],
           0,
           0,
           (CellStruct *)Buffer,
@@ -739,14 +752,14 @@ void __thiscall EventClass::ProcessEvent(int this)
           (IUnknown *)0x4046,
           1200,
           0);
-        MapClass::MarkForRedraw(&stru_87C374.__pad_14B0[8132], 0);
+        MapClass::MarkForRedraw(&stru_87C374[13428], 0);
       }
       return;
     case 0x1B:
-      *(_DWORD *)&HouseClass_Player.__pad_5568[8860] = *(unsigned __int8 *)(this + 13);
+      *(_DWORD *)&HouseClass_Player[30724] = *(unsigned __int8 *)(this + 13);
       return;
     case 0x1D:
-      if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[23276] )
+      if ( !*(_DWORD *)&HouseClass_Player[45140] )
       {
         Timer::GetTicks();
         v99 = 60;
@@ -754,7 +767,7 @@ void __thiscall EventClass::ProcessEvent(int this)
         GroundHeight = (AnimClass *)60;
         v98.referenceCount = Timer::GetTicks();
         v91 = (HouseClass *)v98.referenceCount;
-        *(_DWORD *)&v98.__pad_0[12] = &stru_82083C;
+        *(_DWORD *)&v98[12] = &stru_82083C;
         v90 = GetStringCSF(aTxtNone, 0, g_Str_File_Event_CPP, 1460);
         v66 = GetStringCSF(aTxtSavingGame, 0, g_Str_File_Event_CPP, 1460);
         Dialog::ShowMessageBox((int)v66, v90, 0, 0, 0, (int)_2);
@@ -773,11 +786,11 @@ void __thiscall EventClass::ProcessEvent(int this)
           if ( (int)v67 <= 0 )
           {
 LABEL_173:
-            (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 24))(
-              *(_DWORD *)&stru_87C374.__pad_579C[22524],
+            (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)&stru_87C374[44952] + 24))(
+              *(_DWORD *)&stru_87C374[44952],
               0);
-            MapClass::MarkForRedraw(&stru_87C374.__pad_14B0[8132], 2);
-            TacticalMap::Redraw(&stru_87C374.__pad_14B0[8132]);
+            MapClass::MarkForRedraw(&stru_87C374[13428], 2);
+            TacticalMap::Redraw(&stru_87C374[13428]);
             return;
           }
           Event::Dispatch();
@@ -800,11 +813,11 @@ LABEL_173:
         __3_YAXPAX_Z(*(void **)(this + 7));
       return;
     case 0x20:
-      this->q024 -= (**(_DWORD **)&HouseClass_Player.__pad_5568[8060] & 0x1000) != 0 ? 0xA : 0;
-      if ( (unsigned int)*(unsigned __int16 *)(this + 9) > *(_DWORD *)&HouseClass_Player.__pad_5568[8860]
-        || (unsigned int)*(unsigned __int8 *)(this + 11) > *(_DWORD *)&HouseClass_Player.__pad_5568[8864] )
+      this->q024 -= (**(_DWORD **)&HouseClass_Player[29924] & 0x1000) != 0 ? 0xA : 0;
+      if ( (unsigned int)*(unsigned __int16 *)(this + 9) > *(_DWORD *)&HouseClass_Player[30724]
+        || (unsigned int)*(unsigned __int8 *)(this + 11) > *(_DWORD *)&HouseClass_Player[30728] )
       {
-        *(_DWORD *)&HouseClass_Player.__pad_5568[8004] = this->q00C;
+        *(_DWORD *)&HouseClass_Player[29868] = this->q00C;
         v86 = *(unsigned __int8 *)(this + 11)
             * ((*(unsigned __int8 *)(this + 11) + *(unsigned __int16 *)(this + 9) + this->q00C - 1)
              / *(unsigned __int8 *)(this + 11));
@@ -812,43 +825,43 @@ LABEL_173:
       else
       {
         v86 = 0;
-        *(_DWORD *)&HouseClass_Player.__pad_5568[8004] = 0;
+        *(_DWORD *)&HouseClass_Player[29868] = 0;
       }
-      *(_DWORD *)&HouseClass_Player.__pad_5568[7976] = v86;
+      *(_DWORD *)&HouseClass_Player[29840] = v86;
       HIWORD(v87) = 0;
-      *(_DWORD *)&HouseClass_Player.__pad_5568[8868] = *(unsigned __int16 *)(this + 7);
+      *(_DWORD *)&HouseClass_Player[30732] = *(unsigned __int16 *)(this + 7);
       LOWORD(v87) = this->q024;
-      *(_DWORD *)&HouseClass_Player.__pad_5568[8860] = (unsigned __int16)v87;
-      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8884] <= (unsigned int)(unsigned __int16)v87 )
-        *(_DWORD *)&HouseClass_Player.__pad_5568[8884] = v87;
-      *(_DWORD *)&HouseClass_Player.__pad_5568[8864] = *(unsigned __int8 *)(this + 11);
+      *(_DWORD *)&HouseClass_Player[30724] = (unsigned __int16)v87;
+      if ( *(_DWORD *)&HouseClass_Player[30748] <= (unsigned int)(unsigned __int16)v87 )
+        *(_DWORD *)&HouseClass_Player[30748] = v87;
+      *(_DWORD *)&HouseClass_Player[30728] = *(unsigned __int8 *)(this + 11);
       return;
     case 0x21:
       v88 = 0;
-      if ( *(int *)&HouseClass_Player.__pad_5568[18384] <= 0 )
+      if ( *(int *)&HouseClass_Player[40248] <= 0 )
         return;
-      for ( i = *(_DWORD *)&HouseClass_Player.__pad_5568[18372]; v4 != *(_DWORD *)(*(_DWORD *)i + 111); i += 4 )
+      for ( i = *(_DWORD *)&HouseClass_Player[40236]; v4 != *(_DWORD *)(*(_DWORD *)i + 111); i += 4 )
       {
-        if ( ++v88 >= *(int *)&HouseClass_Player.__pad_5568[18384] )
+        if ( ++v88 >= *(int *)&HouseClass_Player[40248] )
           return;
       }
-      *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * v88) + 115) = *(unsigned __int16 *)(this + 7);
+      *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[40236] + 4 * v88) + 115) = *(unsigned __int16 *)(this + 7);
       return;
     case 0x22:
-      if ( (HouseClass_Player.__pad_5568[17220] & 2) == 0 )
-        *(_DWORD *)&HouseClass_Player.__pad_5568[23276] = 7;
+      if ( (HouseClass_Player[39084] & 2) == 0 )
+        *(_DWORD *)&HouseClass_Player[45140] = 7;
       return;
     case 0x23:
       Debug::Log();
       v70 = *(AnimClass **)(this + 7);
       v5 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * (_DWORD)v70];
-      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 )
+      if ( *(_DWORD *)&HouseClass_Player[29932] == 4 )
       {
-        if ( !HouseClass_Player.__pad_5568[18668] )
+        if ( !HouseClass_Player[40532] )
           goto LABEL_182;
         if ( (unsigned __int8)House::IsCurrentPlayer(*(#375 **)&HouseClass_Array->__pad_0[4 * (_DWORD)v70]) )
           NetworkManager::RemovePlayer((int)&g_NetworkEventQueue, v70);
-        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 )
+        if ( *(_DWORD *)&HouseClass_Player[29932] == 4 )
         {
 LABEL_182:
           if ( dword_B779C4 )
@@ -861,7 +874,7 @@ LABEL_184:
       return;
     case 0x24:
       Debug::Log();
-      *(_DWORD *)&HouseClass_Player.__pad_5568[18664] = this->q007;
+      *(_DWORD *)&HouseClass_Player[40528] = this->q007;
       Debug::Log();
       v62 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * this->q008];
       if ( v62 != HouseClass_Player.field_0 )
@@ -876,9 +889,9 @@ LABEL_184:
             {
 LABEL_164:
               swprintf(v107, (const size_t)v63, (const wchar_t *const)(v62 + 90154), _2);
-              v65 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5312) * 900.0);
+              v65 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5312) * 900.0);
               MessageListClass::AddMessage(
-                &HouseClass_Player.__pad_5568[10668],
+                &HouseClass_Player[32532],
                 0,
                 0,
                 (CellStruct *)v107,
@@ -893,7 +906,7 @@ LABEL_164:
       return;
     case 0x27:
       Debug::Log();
-      if ( SessionClass::IsValidHouse((int)&HouseClass_Player.__pad_5568[8068], 0) )
+      if ( SessionClass::IsValidHouse((int)&HouseClass_Player[29932], 0) )
       {
         v77 = *(_DWORD *)(HouseClass_Player.field_0 + 48);
         Debug::Log();
@@ -907,7 +920,7 @@ LABEL_164:
           v103[2] = v77;
           v103[0] = 19;
         }
-        *(_DWORD *)&v103[3] = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+        *(_DWORD *)&v103[3] = *(_DWORD *)&HouseClass_Player[45112];
         if ( Networking_LastEventIndex < 128 )
         {
           v78 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex];
@@ -919,9 +932,9 @@ LABEL_164:
           Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F;
           ++Networking_LastEventIndex;
         }
-        HouseClass_Player.__pad_5568[20476] = 1;
+        HouseClass_Player[42340] = 1;
       }
-      HouseClass_Player.__pad_5568[20508] = 1;
+      HouseClass_Player[42372] = 1;
       v79 = EventClass::validateEventType((int *)&g_NetworkEventQueue);
       v80 = v79;
       if ( v79 == -1 )
@@ -930,53 +943,53 @@ LABEL_164:
       v96 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v80];
       if ( !v81 )
         goto LABEL_213;
-      if ( *(int *)&HouseClass_Player.__pad_5568[18384] <= 2 )
+      if ( *(int *)&HouseClass_Player[40248] <= 2 )
         goto LABEL_211;
       v82 = 0;
       v83 = 0;
-      if ( *(int *)&HouseClass_Player.__pad_5568[18384] <= 0 )
+      if ( *(int *)&HouseClass_Player[40248] <= 0 )
         goto LABEL_209;
-      v84 = *(_DWORD *)&HouseClass_Player.__pad_5568[18372];
+      v84 = *(_DWORD *)&HouseClass_Player[40236];
       while ( *(_DWORD *)(*(_DWORD *)v84 + 111) != v80 )
       {
         ++v83;
         v84 += 4;
-        if ( v83 >= *(int *)&HouseClass_Player.__pad_5568[18384] )
+        if ( v83 >= *(int *)&HouseClass_Player[40248] )
           goto LABEL_209;
       }
-      v82 = (_DWORD *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * v83) + 40);
-      *(_WORD *)&HouseClass_Player.__pad_5568[18696] = *(_WORD *)&HouseClass_Player.__pad_5568[2 * v83 + 20478];
+      v82 = (_DWORD *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[40236] + 4 * v83) + 40);
+      *(_WORD *)&HouseClass_Player[40560] = *(_WORD *)&HouseClass_Player[21864][2 * v83 + 20478];
 LABEL_209:
       Network::CopyAddress(v82, &a1, (int)&v91);
-      NetworkID::Assign(&HouseClass_Player.__pad_5568[18672], (IPXManagerClass *)&a1, (int)&v91, 0);
-      Network::FormatAddress((unsigned __int16 *)&HouseClass_Player.__pad_5568[18672], 0);
+      NetworkID::Assign(&HouseClass_Player[40536], (IPXManagerClass *)&a1, (int)&v91, 0);
+      Network::FormatAddress((unsigned __int16 *)&HouseClass_Player[40536], 0);
       Debug::Log();
       Debug::Log();
-      if ( !SessionClass::IsValidHouse((int)&HouseClass_Player.__pad_5568[8068], 0) )
+      if ( !SessionClass::IsValidHouse((int)&HouseClass_Player[29932], 0) )
         Network::SetPlayerCoords(
-          &HouseClass_Player.__pad_5568[22284],
-          (IPXManagerClass *)&HouseClass_Player.__pad_5568[18672]);
+          &HouseClass_Player[44148],
+          (IPXManagerClass *)&HouseClass_Player[40536]);
 LABEL_211:
-      wcscpy((wchar_t *)&HouseClass_Player.__pad_5568[20388], (const wchar_t *)(v96 + 90154));
+      wcscpy((wchar_t *)&HouseClass_Player[42252], (const wchar_t *)(v96 + 90154));
       Debug::Log();
-      *(_DWORD *)&HouseClass_Player.__pad_5568[20472] = v80;
-      if ( SessionClass::IsValidHouse((int)&HouseClass_Player.__pad_5568[8068], 0) )
+      *(_DWORD *)&HouseClass_Player[42336] = v80;
+      if ( SessionClass::IsValidHouse((int)&HouseClass_Player[29932], 0) )
         Network::SendMasterPlayerList((int)&g_NetworkEventQueue);
 LABEL_213:
-      *(_DWORD *)&HouseClass_Player.__pad_5568[20516] = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
-      *(_DWORD *)&HouseClass_Player.__pad_5568[20524] = v80;
-      *(_DWORD *)&HouseClass_Player.__pad_5568[20504] = -1;
-      *(_DWORD *)&HouseClass_Player.__pad_5568[20520] = 10
-                                                      * ((*(_DWORD *)&HouseClass_Player.__pad_5568[8860]
-                                                        + *(_DWORD *)&HouseClass_Player.__pad_5568[23248]
+      *(_DWORD *)&HouseClass_Player[42380] = *(_DWORD *)&HouseClass_Player[45112];
+      *(_DWORD *)&HouseClass_Player[42388] = v80;
+      *(_DWORD *)&HouseClass_Player[42368] = -1;
+      *(_DWORD *)&HouseClass_Player[42384] = 10
+                                                      * ((*(_DWORD *)&HouseClass_Player[30724]
+                                                        + *(_DWORD *)&HouseClass_Player[45112]
                                                         + 10)
                                                        / 0xAu);
 LABEL_214:
-      HouseClass_Player.__pad_5568[20508] = 0;
+      HouseClass_Player[42372] = 0;
       return;
     case 0x28:
       Debug::Log();
-      *(_DWORD *)&HouseClass_Player.__pad_5568[20504] = this->q007;
+      *(_DWORD *)&HouseClass_Player[42368] = this->q007;
       return;
     case 0x29:
       Debug::Log();
@@ -987,16 +1000,16 @@ LABEL_214:
       NetworkAddress::Assign(&v91, &a1, (IUnknown *)&v96, 0);
       Network::FormatAddress((unsigned __int16 *)&v91, (IUnknown *)&v91);
       Debug::Log();
-      EventClass::deserializeEvent(&HouseClass_Player.__pad_5568[22284], this->q007, (IUnknown *)&v91);
+      EventClass::deserializeEvent(&HouseClass_Player[44148], this->q007, (IUnknown *)&v91);
       NetworkManager::SetPlayerAddress(
         (int *)&g_NetworkEventQueue,
         (DynamicVector *)this->q007,
         (DynamicVector *)&v91);
       v73 = 0;
-      if ( *(int *)&HouseClass_Player.__pad_5568[18384] <= 0 )
+      if ( *(int *)&HouseClass_Player[40248] <= 0 )
         return;
       v74 = this->q007;
-      v75 = *(_DWORD *)&HouseClass_Player.__pad_5568[18372];
+      v75 = *(_DWORD *)&HouseClass_Player[40236];
       break;
     case 0x2A:
     case 0x2B:
@@ -1023,12 +1036,12 @@ LABEL_2:
   {
     ++v73;
     v75 += 4;
-    if ( v73 >= *(int *)&HouseClass_Player.__pad_5568[18384] )
+    if ( v73 >= *(int *)&HouseClass_Player[40248] )
       return;
   }
-  if ( v73 < *(int *)&HouseClass_Player.__pad_5568[18384] )
+  if ( v73 < *(int *)&HouseClass_Player[40248] )
   {
-    v76 = (HouseClass **)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * v73) + 40);
+    v76 = (HouseClass **)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[40236] + 4 * v73) + 40);
     *v76 = v91;
     v76[1] = aP2_4;
     v76[2] = (HouseClass *)GroundHeight;
@@ -1148,8 +1161,8 @@ int __thiscall sub_664440(int *this)
   int v13; // [esp+Ch] [ebp-Ch] BYREF
   unsigned __int8 v14[8]; // [esp+10h] [ebp-8h] BYREF
 
-  v1 = MEMORY[0xA8E2CC]; /*0x664444*/
-  if ( MEMORY[0xA8E2CC] == -1 ) /*0x664451*/
+  v1 = DataGlobal_A8E2CC; /*0x664444*/
+  if ( DataGlobal_A8E2CC == -1 ) /*0x664451*/
   {
     v3 = this->q004; /*0x664453*/
     v4 = 0; /*0x664456*/
@@ -1186,23 +1199,23 @@ int __thiscall sub_664440(int *this)
   if ( SessionClass::IsValidHouse((int)g_GameMode_Current, 0) /*0x6644d2*/
     || v1 == -1
     || v1 != *((_DWORD *)HouseClass_Player + 12)
-    || MEMORY[0xA8DA84] <= 2 )
+    || Game_PlayerCount <= 2 )
   {
     return v1; /*0x664526*/
   }
   v9 = 0; /*0x6644d4*/
   v10 = 0; /*0x6644d6*/
-  if ( MEMORY[0xA8DA84] > 0 ) /*0x6644db*/
+  if ( Game_PlayerCount > 0 ) /*0x6644db*/
   {
-    v11 = MEMORY[0xA8DA78]; /*0x6644dd*/
+    v11 = Game_PlayerInfoArray; /*0x6644dd*/
     while ( *(_DWORD *)(*(_DWORD *)v11 + 111) != v1 ) /*0x6644e8*/
     {
       ++v10; /*0x6644ea*/
       v11 += 4; /*0x6644eb*/
-      if ( v10 >= MEMORY[0xA8DA84] ) /*0x6644f0*/
+      if ( v10 >= Game_PlayerCount ) /*0x6644f0*/
         goto LABEL_23; /*0x6644f0*/
     }
-    v9 = (_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v10) + 40); /*0x6644fd*/
+    v9 = (_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * v10) + 40); /*0x6644fd*/
   }
 LABEL_23:
   Network::CopyAddress(v9, &v13, (int)v14); /*0x664500*/

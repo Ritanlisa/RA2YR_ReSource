@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Factory_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Waypoint_e4.hpp"
 
 // 0x540110
 void IPXGlobalConnClass::ReceivePacket(int a2)
@@ -113,9 +119,9 @@ int __thiscall IPXGlobalConnClass::SetAddress(
     v15 = *(IPXManagerClass **)aP4->__pad_0; /*0x540442*/
     NetworkID::Assign(&v18, (IPXManagerClass *)&v15, (int)v17, 0); /*0x54044c*/
   }
-  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 /*0x540477*/
+  if ( *(_DWORD *)&HouseClass_Player[29932] == 4 /*0x540477*/
     && !(_BYTE)a6
-    && HouseClass_Player.__pad_5568[18668]
+    && HouseClass_Player[40532]
     && v7[200] )
   {
     v8 = a2; /*0x540485*/
@@ -127,16 +133,16 @@ int __thiscall IPXGlobalConnClass::SetAddress(
       NetworkID::Assign(&v20, (IPXManagerClass *)&v15, (int)v17, (IPXManagerClass *)aP3); /*0x5404d2*/
       v9 = -1; /*0x5404dc*/
       v10 = 0; /*0x5404df*/
-      if ( *(int *)&HouseClass_Player.__pad_5568[18384] > 0 ) /*0x5404e3*/
+      if ( *(int *)&HouseClass_Player[40248] > 0 ) /*0x5404e3*/
       {
         while ( !GUID::Compare( /*0x5404fd*/
-                   (char *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * v10) + 40),
+                   (char *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[40236] + 4 * v10) + 40),
                    (int)&v20) )
         {
-          if ( ++v10 >= *(int *)&HouseClass_Player.__pad_5568[18384] ) /*0x540507*/
+          if ( ++v10 >= *(int *)&HouseClass_Player[40248] ) /*0x540507*/
             goto LABEL_13; /*0x540507*/
         }
-        v9 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * v10) + 111); /*0x540514*/
+        v9 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[40236] + 4 * v10) + 111); /*0x540514*/
       }
 LABEL_13:
       LinkedIndex = Factory::GetLinkedIndex((int *)&g_NetworkEventQueue, (DynamicVector *)v9); /*0x540517*/
@@ -145,11 +151,11 @@ LABEL_13:
       v7 = aP1_4; /*0x540528*/
       *(_BYTE *)(a2 + 3) = LinkedIndex; /*0x54052c*/
     }
-    v18 = *(IPXManagerClass *)&HouseClass_Player.__pad_5568[18672]; /*0x540540*/
-    v12 = *(_DWORD *)&stru_830620.__pad_579C[49536]; /*0x54054a*/
-    v19 = *(_DWORD *)&HouseClass_Player.__pad_5568[18680]; /*0x540554*/
-    if ( GUID::Compare(&HouseClass_Player.__pad_5568[18684], **(_DWORD **)&HouseClass_Player.__pad_5568[18372] + 40) /*0x54057b*/
-      && NetworkID::Compare((int)&v18, **(_DWORD **)&HouseClass_Player.__pad_5568[18372] + 40) )
+    v18 = *(IPXManagerClass *)&HouseClass_Player[40536]; /*0x540540*/
+    v12 = *(_DWORD *)&stru_830620[71964]; /*0x54054a*/
+    v19 = *(_DWORD *)&HouseClass_Player[40544]; /*0x540554*/
+    if ( GUID::Compare(&HouseClass_Player[40548], **(_DWORD **)&HouseClass_Player[40236] + 40) /*0x54057b*/
+      && NetworkID::Compare((int)&v18, **(_DWORD **)&HouseClass_Player[40236] + 40) )
     {
       v13 = a2 + 8; /*0x540584*/
       *(_WORD *)(a2 + 12) = 0; /*0x540587*/
@@ -157,8 +163,8 @@ LABEL_13:
     }
     else
     {
-      v12 = *(_DWORD *)&HouseClass_Player.__pad_5568[18696]; /*0x54059b*/
-      *(_WORD *)(a2 + 12) = *(_WORD *)&stru_830620.__pad_579C[49536]; /*0x5405a4*/
+      v12 = *(_DWORD *)&HouseClass_Player[40560]; /*0x54059b*/
+      *(_WORD *)(a2 + 12) = *(_WORD *)&stru_830620[71964]; /*0x5405a4*/
       *(_DWORD *)(a2 + 8) = 0; /*0x5405a8*/
     }
   }
@@ -170,12 +176,12 @@ LABEL_13:
     *(_WORD *)(a2 + 12) = 0; /*0x5405bb*/
     *(_DWORD *)(a2 + 8) = 0; /*0x5405c1*/
   }
-  if ( *(_DWORD *)&stru_87C374.__pad_579C[23320] ) /*0x5405cf*/
+  if ( *(_DWORD *)&stru_87C374[45748] ) /*0x5405cf*/
   {
     LOBYTE(v13) = v7[200] == 0; /*0x5405da*/
-    (*(void (__thiscall **)(_DWORD, int, int, IPXManagerClass *, int, int, int, int))(**(_DWORD **)&stru_87C374.__pad_579C[23320] /*0x5405f2*/
+    (*(void (__thiscall **)(_DWORD, int, int, IPXManagerClass *, int, int, int, int))(**(_DWORD **)&stru_87C374[45748] /*0x5405f2*/
                                                                                     + 12))(
-      *(_DWORD *)&stru_87C374.__pad_579C[23320],
+      *(_DWORD *)&stru_87C374[45748],
       v8,
       arg4,
       &v18,

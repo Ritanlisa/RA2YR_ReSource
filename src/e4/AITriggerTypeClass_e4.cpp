@@ -2,6 +2,11 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AITriggerTypeClass_40_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Factory_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Super_e4.hpp"
 
 // 0x41EC90
 bool AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
@@ -24,7 +29,7 @@ bool __thiscall AITriggerTypeClass::CivilianHouseOwns(_DWORD *this, int a2, int 
   v11 = 0; /*0x41eca5*/
   if ( HouseClass_Count <= 0 ) /*0x41ecaa*/
     return v11; /*0x41ecaa*/
-  while ( *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Array->__pad_0[4 * v4] + 52) + 188) != HouseTypeClass::Find(MEMORY[0x818164]) ) /*0x41eccc*/
+  while ( *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Array->__pad_0[4 * v4] + 52) + 188) != HouseTypeClass::Find(g_INI_Key_Civilian) ) /*0x41eccc*/
   {
     if ( ++v4 >= HouseClass_Count ) /*0x41ecd6*/
       return 0; /*0x41ece2*/
@@ -350,7 +355,7 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
           String,
           512) )
     return 0; /*0x41f5b9*/
-  v3 = strtok(String, MEMORY[0x817F70]); /*0x41f5d3*/
+  v3 = strtok(String, Delimiter); /*0x41f5d3*/
   if ( !v3 ) /*0x41f5df*/
     return 0; /*0x41f5df*/
   strncpy(Destination, v3, 0x30u); /*0x41f5ed*/
@@ -360,7 +365,7 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
     qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x41f60d*/
     this->q094 = v46; /*0x41f60f*/
   }
-  v4 = strtok(0, MEMORY[0x817F70]); /*0x41f616*/
+  v4 = strtok(0, Delimiter); /*0x41f616*/
   if ( !v4 ) /*0x41f620*/
     return 0; /*0x41f620*/
   strncpy(v42, v4, 0x18u); /*0x41f62e*/
@@ -369,7 +374,7 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
   this->q0DC = 0; /*0x41f643*/
   if ( _strcmpi(v42, off_818114) ) /*0x41f655*/
     this->q0DC = TeamTypeClass::FindByName(v42); /*0x41f66a*/
-  v5 = strtok(0, MEMORY[0x817F70]); /*0x41f676*/
+  v5 = strtok(0, Delimiter); /*0x41f676*/
   if ( !v5 ) /*0x41f680*/
     return 0; /*0x41f680*/
   strncpy(v42, v5, 0x18u); /*0x41f68e*/
@@ -391,14 +396,14 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
   {
     this->q0A0 = 2; /*0x41f6cb*/
   }
-  if ( !strtok(0, MEMORY[0x817F70]) ) /*0x41f712*/
+  if ( !strtok(0, Delimiter) ) /*0x41f712*/
     return 0; /*0x41f712*/
   this->q0B0 = 0; /*0x41f728*/
-  v7 = strtok(0, MEMORY[0x817F70]); /*0x41f72e*/
+  v7 = strtok(0, Delimiter); /*0x41f72e*/
   if ( !v7 ) /*0x41f738*/
     return 0; /*0x41f738*/
   this->q098 = atoi(v7); /*0x41f74a*/
-  v8 = strtok(0, MEMORY[0x817F70]); /*0x41f750*/
+  v8 = strtok(0, Delimiter); /*0x41f750*/
   if ( !v8 ) /*0x41f75a*/
     return 0; /*0x41f75a*/
   strncpy(v42, v8, 0x18u); /*0x41f768*/
@@ -408,7 +413,7 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
   ExitCellByName = Factory::FindExitCellByName(v42); /*0x41f783*/
   if ( ExitCellByName != -1 ) /*0x41f78b*/
   {
-    v9 = *((_DWORD *)MEMORY[0xA8E34C] + ExitCellByName); /*0x41f793*/
+    v9 = *((_DWORD *)Factory_ExitCellTable + ExitCellByName); /*0x41f793*/
     goto LABEL_26; /*0x41f796*/
   }
   Index = BuildingTypeClass::FindIndex(v42); /*0x41f79c*/
@@ -422,7 +427,7 @@ LABEL_25:
   v13 = TypeClass::FindByName(v42); /*0x41f7b2*/
   if ( v13 != -1 ) /*0x41f7ba*/
   {
-    v9 = *((_DWORD *)MEMORY[0xA8B21C] + v13); /*0x41f7c2*/
+    v9 = *((_DWORD *)g_AircraftTypeCount + v13); /*0x41f7c2*/
     goto LABEL_26; /*0x41f7c5*/
   }
   Index = BuildingTypeClass::FindIndexByName(v42); /*0x41f7cb*/
@@ -433,7 +438,7 @@ LABEL_25:
   }
 LABEL_26:
   this->q036 = v9; /*0x41f7de*/
-  v14 = strtok(0, MEMORY[0x817F70]); /*0x41f7ea*/
+  v14 = strtok(0, Delimiter); /*0x41f7ea*/
   if ( !v14 ) /*0x41f7f4*/
     return 0; /*0x41faf5*/
   strcpy(v40, "00"); /*0x41f807*/
@@ -470,38 +475,38 @@ LABEL_26:
     }
     while ( *v17 ); /*0x41f876*/
   }
-  v21 = strtok(0, MEMORY[0x817F70]); /*0x41f886*/
+  v21 = strtok(0, Delimiter); /*0x41f886*/
   if ( v21 ) /*0x41f890*/
   {
     v22 = atof(v21); /*0x41f893*/
     v41 = (unsigned int)Math::RoundToInt(v22); /*0x41f8a0*/
     *(double *)(this + 184) = (double)v41; /*0x41f8ac*/
   }
-  v23 = strtok(0, MEMORY[0x817F70]); /*0x41f8b8*/
+  v23 = strtok(0, Delimiter); /*0x41f8b8*/
   if ( v23 ) /*0x41f8c2*/
   {
     v24 = atof(v23); /*0x41f8c5*/
     v41 = (unsigned int)Math::RoundToInt(v24); /*0x41f8d2*/
     *(double *)(this + 192) = (double)v41; /*0x41f8de*/
   }
-  v25 = strtok(0, MEMORY[0x817F70]); /*0x41f8ea*/
+  v25 = strtok(0, Delimiter); /*0x41f8ea*/
   if ( v25 ) /*0x41f8f4*/
   {
     v26 = atof(v25); /*0x41f8f7*/
     v41 = (unsigned int)Math::RoundToInt(v26); /*0x41f904*/
     *(double *)(this + 200) = (double)v41; /*0x41f910*/
   }
-  v27 = strtok(0, MEMORY[0x817F70]); /*0x41f91c*/
+  v27 = strtok(0, Delimiter); /*0x41f91c*/
   if ( v27 ) /*0x41f926*/
     this->q0D0 = atoi(v27) != 0; /*0x41f936*/
-  strtok(0, MEMORY[0x817F70]); /*0x41f942*/
-  v28 = strtok(0, MEMORY[0x817F70]); /*0x41f94d*/
+  strtok(0, Delimiter); /*0x41f942*/
+  v28 = strtok(0, Delimiter); /*0x41f94d*/
   if ( v28 ) /*0x41f957*/
     this->q0AC = atoi(v28); /*0x41f962*/
-  v29 = strtok(0, MEMORY[0x817F70]); /*0x41f96e*/
+  v29 = strtok(0, Delimiter); /*0x41f96e*/
   if ( v29 ) /*0x41f978*/
     *(_BYTE *)(this + 209) = atoi(v29) != 0; /*0x41f988*/
-  v30 = strtok(0, MEMORY[0x817F70]); /*0x41f994*/
+  v30 = strtok(0, Delimiter); /*0x41f994*/
   if ( v30 ) /*0x41f99e*/
   {
     strncpy(v44, v30, 0x18u); /*0x41f9a8*/
@@ -511,13 +516,13 @@ LABEL_26:
     if ( _strcmpi(v44, off_818114) ) /*0x41f9cf*/
       this->q0E0 = TeamTypeClass::FindByName(v44); /*0x41f9e4*/
   }
-  v31 = strtok(0, MEMORY[0x817F70]); /*0x41f9f0*/
+  v31 = strtok(0, Delimiter); /*0x41f9f0*/
   if ( v31 ) /*0x41f9fa*/
     *(_BYTE *)(this + 210) = atoi(v31) != 0; /*0x41fa0a*/
-  v32 = strtok(0, MEMORY[0x817F70]); /*0x41fa16*/
+  v32 = strtok(0, Delimiter); /*0x41fa16*/
   if ( v32 ) /*0x41fa20*/
     *(_BYTE *)(this + 211) = atoi(v32) != 0; /*0x41fa30*/
-  v33 = strtok(0, MEMORY[0x817F70]); /*0x41fa3c*/
+  v33 = strtok(0, Delimiter); /*0x41fa3c*/
   if ( v33 ) /*0x41fa46*/
     *(_BYTE *)(this + 212) = atoi(v33) != 0; /*0x41fa56*/
   v34 = this->q0DC; /*0x41fa5c*/

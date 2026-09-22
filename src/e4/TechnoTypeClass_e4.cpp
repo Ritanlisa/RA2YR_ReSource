@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x48DCD0
 int TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
@@ -18,7 +22,7 @@ int __fastcall FactoryClass_LookupType(int a1, int a2)
       break; /*0x48dcef*/
     case 2: /*0x48dce0*/
     case 3: /*0x48dce0*/
-      result = *((_DWORD *)MEMORY[0xA8B21C] + a2); /*0x48dd09*/
+      result = *((_DWORD *)g_AircraftTypeCount + a2); /*0x48dd09*/
       break; /*0x48dd0c*/
     case 6: /*0x48dce0*/
     case 7: /*0x48dce0*/
@@ -26,7 +30,7 @@ int __fastcall FactoryClass_LookupType(int a1, int a2)
       break; /*0x48dcf9*/
     case 15: /*0x48dce0*/
     case 16: /*0x48dce0*/
-      result = *((_DWORD *)MEMORY[0xA8E34C] + a2); /*0x48dcff*/
+      result = *((_DWORD *)Factory_ExitCellTable + a2); /*0x48dcff*/
       break; /*0x48dd02*/
     default:
       result = 0; /*0x48dd0d*/
@@ -149,20 +153,20 @@ _DWORD *__thiscall TechnoTypeClass::LoadBase(_DWORD *this, ObjectClass *aP1)
   this->vtable2 = &TeamTypeClass::`vftable'; /*0x6f0803*/
   this->vtable3 = &TeamTypeClass::`vftable'; /*0x6f080a*/
   this->vtable4 = &vt_TeamTypeClass; /*0x6f0811*/
-  v3 = *(TeamTypeClass **)&HouseClass_Player.__pad_5568[23036]; /*0x6f0818*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[23036] < *(int *)&HouseClass_Player.__pad_5568[23028] /*0x6f0857*/
-    || (HouseClass_Player.__pad_5568[23033] || !*(_DWORD *)&HouseClass_Player.__pad_5568[23028])
-    && *(int *)&HouseClass_Player.__pad_5568[23040] > 0
-    && (v4 = (*(int (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_5568[23020] + 8))(
-               &HouseClass_Player.__pad_5568[23020],
-               *(_DWORD *)&HouseClass_Player.__pad_5568[23028] + *(_DWORD *)&HouseClass_Player.__pad_5568[23040],
+  v3 = *(TeamTypeClass **)&HouseClass_Player[44900]; /*0x6f0818*/
+  if ( *(int *)&HouseClass_Player[44900] < *(int *)&HouseClass_Player[44892] /*0x6f0857*/
+    || (HouseClass_Player[44897] || !*(_DWORD *)&HouseClass_Player[44892])
+    && *(int *)&HouseClass_Player[44904] > 0
+    && (v4 = (*(int (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player[44884] + 8))(
+               &HouseClass_Player[44884],
+               *(_DWORD *)&HouseClass_Player[44892] + *(_DWORD *)&HouseClass_Player[44904],
                0),
-        v3 = *(TeamTypeClass **)&HouseClass_Player.__pad_5568[23036],
+        v3 = *(TeamTypeClass **)&HouseClass_Player[44900],
         v4) )
   {
-    *(_DWORD *)&HouseClass_Player.__pad_5568[23036] = &v3->__pad_0[1]; /*0x6f085c*/
-    *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[23024] + 4 * (_DWORD)v3) = this; /*0x6f0868*/
-    v3 = *(TeamTypeClass **)&HouseClass_Player.__pad_5568[23036]; /*0x6f086b*/
+    *(_DWORD *)&HouseClass_Player[44900] = &v3->__pad_0[1]; /*0x6f085c*/
+    *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44888] + 4 * (_DWORD)v3) = this; /*0x6f0868*/
+    v3 = *(TeamTypeClass **)&HouseClass_Player[44900]; /*0x6f086b*/
   }
   v5 = 0; /*0x6f0871*/
   if ( (int)v3 <= 0 ) /*0x6f0875*/
@@ -172,7 +176,7 @@ LABEL_11:
   }
   else
   {
-    v6 = *(CCINIClass **)&HouseClass_Player.__pad_5568[23024]; /*0x6f0877*/
+    v6 = *(CCINIClass **)&HouseClass_Player[44888]; /*0x6f0877*/
     while ( *(_DWORD **)v6->__pad_0 != this ) /*0x6f087f*/
     {
       ++v5; /*0x6f0881*/
@@ -182,16 +186,16 @@ LABEL_11:
     }
   }
   *(this + 38) = v5; /*0x6f088b*/
-  if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x6f08c5*/
-    || (stru_B05488.__pad_579C[19033] || !*(_DWORD *)&stru_B05488.__pad_579C[19028])
-    && *(int *)&stru_B05488.__pad_579C[19040] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19020] + 8))(
-         &stru_B05488.__pad_579C[19020],
-         *(_DWORD *)&stru_B05488.__pad_579C[19028] + *(_DWORD *)&stru_B05488.__pad_579C[19040],
+  if ( *(int *)&stru_B05488[41464] < *(int *)&stru_B05488[41456] /*0x6f08c5*/
+    || (stru_B05488[41461] || !*(_DWORD *)&stru_B05488[41456])
+    && *(int *)&stru_B05488[41468] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41448] + 8))(
+         &stru_B05488[41448],
+         *(_DWORD *)&stru_B05488[41456] + *(_DWORD *)&stru_B05488[41468],
          0) )
   {
-    v7 = (*(_DWORD *)&stru_B05488.__pad_579C[19036])++; /*0x6f08d2*/
-    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19024] + 4 * v7) = this; /*0x6f08e1*/
+    v7 = (*(_DWORD *)&stru_B05488[41464])++; /*0x6f08d2*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488[41452] + 4 * v7) = this; /*0x6f08e1*/
   }
   return this; /*0x6f08e6*/
 }
@@ -726,16 +730,16 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
     v15 = g_AnimManager++; /*0x7117d0*/
     *((_DWORD *)g_AnimPoolCount + v15) = this; /*0x7117df*/
   }
-  if ( MEMORY[0xA8EB10] < MEMORY[0xA8EB08] /*0x711816*/
-    || (MEMORY[0xA8EB0D] || !MEMORY[0xA8EB08])
-    && MEMORY[0xA8EB14] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA8EB00] + 8))(
-         &MEMORY[0xA8EB00],
-         MEMORY[0xA8EB14] + MEMORY[0xA8EB08],
+  if ( DataGlobal_A8EB10 < DataGlobal_A8EB08 /*0x711816*/
+    || (DataGlobal_A8EB0D || !DataGlobal_A8EB08)
+    && DataGlobal_A8EB14 > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_TechnoTypes + 8))(
+         &g_TechnoTypes,
+         DataGlobal_A8EB14 + DataGlobal_A8EB08,
          0) )
   {
-    v16 = MEMORY[0xA8EB10]++; /*0x711823*/
-    *((_DWORD *)MEMORY[0xA8EB04] + v16) = this; /*0x711832*/
+    v16 = DataGlobal_A8EB10++; /*0x711823*/
+    *((_DWORD *)DataGlobal_A8EB04 + v16) = this; /*0x711832*/
   }
   return this; /*0x711837*/
 }
@@ -809,34 +813,34 @@ int __thiscall TechnoTypeClass::Construct(int this, ObjectTypeClass *aP1)
   this->vtable1 = &TechnoTypeClass::`vftable'; /*0x711a52*/
   this->vtable2 = &TechnoTypeClass::`vftable'; /*0x711a59*/
   this->vtable3 = &vt_TechnoTypeClass; /*0x711a60*/
-  v3 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[36]; /*0x711a67*/
+  v3 = *(_DWORD *)&g_NetworkPlayerBuffer[5332]; /*0x711a67*/
   v4 = 0; /*0x711a6c*/
-  if ( *(int *)&MEMORY[0xA8D63C].__pad_14B0[36] <= 0 ) /*0x711a70*/
+  if ( *(int *)&g_NetworkPlayerBuffer[5332] <= 0 ) /*0x711a70*/
   {
 LABEL_5:
-    if ( *(int *)&MEMORY[0xA8D63C].__pad_14B0[36] >= *(int *)&MEMORY[0xA8D63C].__pad_14B0[28] ) /*0x711a8c*/
+    if ( *(int *)&g_NetworkPlayerBuffer[5332] >= *(int *)&g_NetworkPlayerBuffer[5324] ) /*0x711a8c*/
     {
-      if ( !MEMORY[0xA8D63C].__pad_14B0[33] && *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[28] /*0x711ab1*/
-        || *(int *)&MEMORY[0xA8D63C].__pad_14B0[40] <= 0
-        || !(*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[20] + 8))(
-              &MEMORY[0xA8D63C].__pad_14B0[20],
-              *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[40] + *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[28],
+      if ( !g_NetworkPlayerBuffer[5329] && *(_DWORD *)&g_NetworkPlayerBuffer[5324] /*0x711ab1*/
+        || *(int *)&g_NetworkPlayerBuffer[5336] <= 0
+        || !(*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_NetworkPlayerBuffer[5316] + 8))(
+              &g_NetworkPlayerBuffer[5316],
+              *(_DWORD *)&g_NetworkPlayerBuffer[5336] + *(_DWORD *)&g_NetworkPlayerBuffer[5324],
               0) )
       {
         return this; /*0x711ab6*/
       }
-      v3 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[36]; /*0x711ab8*/
+      v3 = *(_DWORD *)&g_NetworkPlayerBuffer[5332]; /*0x711ab8*/
     }
-    *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[36] = v3 + 1; /*0x711ac6*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[24] + 4 * v3) = this; /*0x711acb*/
+    *(_DWORD *)&g_NetworkPlayerBuffer[5332] = v3 + 1; /*0x711ac6*/
+    *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5320] + 4 * v3) = this; /*0x711acb*/
     return this; /*0x711acb*/
   }
-  v5 = *(CCINIClass **)&MEMORY[0xA8D63C].__pad_14B0[24]; /*0x711a72*/
+  v5 = *(CCINIClass **)&g_NetworkPlayerBuffer[5320]; /*0x711a72*/
   while ( *(_DWORD *)v5->__pad_0 != this ) /*0x711a7a*/
   {
     ++v4; /*0x711a7c*/
     v5 = (CCINIClass *)((char *)v5 + 4); /*0x711a7d*/
-    if ( v4 >= *(int *)&MEMORY[0xA8D63C].__pad_14B0[36] ) /*0x711a82*/
+    if ( v4 >= *(int *)&g_NetworkPlayerBuffer[5332] ) /*0x711a82*/
       goto LABEL_5; /*0x711a82*/
   }
   return this; /*0x711ad0*/
@@ -1000,7 +1004,7 @@ int __thiscall TechnoTypeClass::ComputeValue(TechnoTypeClass *this, #375 *a2, fl
   float v10; // [esp+18h] [ebp+8h]
   int v11; // [esp+18h] [ebp+8h]
 
-  v7 = *(double *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 5944); /*0x711f76*/
+  v7 = *(double *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 5944); /*0x711f76*/
   if ( LOBYTE(a3) ) /*0x711f7c*/
     v7 = 1.0; /*0x711f7e*/
   if ( a2 ) /*0x711f8c*/
@@ -1100,38 +1104,38 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
   if ( result >= 0 ) /*0x716423*/
   {
     ObjectPtr::RegisterForTracking( /*0x716435*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[1].__pad_14D[35]);
     ObjectPtr::RegisterForTracking( /*0x716446*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[1].__pad_14D[39]);
     ObjectPtr::RegisterForTracking( /*0x716457*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[1].__pad_14D[43]);
     ObjectPtr::RegisterForTracking( /*0x716468*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[2].LineTrailColor[1]);
     ObjectPtr::RegisterForTracking( /*0x716479*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[2].VoxelCaches[2]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[5].Name[16]); /*0x71648a*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&aP0[5].Name[16]); /*0x71648a*/
     ObjectPtr::RegisterForTracking( /*0x71649b*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[5].UINameLabel[31]);
     ObjectPtr::RegisterForTracking( /*0x7164ac*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[5].__pad_24[16]);
     ObjectPtr::RegisterForTracking( /*0x7164bd*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[2].ChargerTurrets[16]);
     ObjectPtr::RegisterForTracking( /*0x7164ce*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[2].ChargerTurrets[17]);
     ObjectPtr::RegisterForTracking( /*0x7164df*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[2].__pad_14D[67]);
     ObjectPtr::RegisterForTracking( /*0x7164f0*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[2].__pad_14D[71]);
     if ( aP0 != (ObjectTypeClass *)-1000 ) /*0x7164f7*/
       TypeList::BuildingTypeConstructor(v3); /*0x7164fb*/
@@ -1295,29 +1299,29 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
     }
     for ( i11 = 0; i11 < *(_DWORD *)&aP0[1].__pad_14D[23]; ++i11 ) /*0x716af3*/
       ObjectPtr::RegisterForTracking( /*0x716b04*/
-        (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+        (SwizzleManagerClass *)&stru_B05488[27784],
         (MouseClass *)(*(_DWORD *)&aP0[1].__pad_14D[11] + 4 * i11));
     for ( i12 = 0; i12 < *(_DWORD *)&aP0[2].AlphaImageFile[1]; ++i12 ) /*0x716b1e*/
       ObjectPtr::RegisterForTracking( /*0x716b2f*/
-        (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+        (SwizzleManagerClass *)&stru_B05488[27784],
         (MouseClass *)(*(_DWORD *)&aP0[2].ImageFile[16] + 4 * i12));
     for ( i13 = 0; i13 < *(_DWORD *)&aP0[2].Selectable; ++i13 ) /*0x716b49*/
       ObjectPtr::RegisterForTracking( /*0x716b5a*/
-        (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+        (SwizzleManagerClass *)&stru_B05488[27784],
         (MouseClass *)(*(_DWORD *)&aP0[2].AlphaImageFile[17] + 4 * i13));
     for ( i14 = 0; i14 < *(_DWORD *)&aP0[1].Name[44]; ++i14 ) /*0x716b74*/
       ObjectPtr::RegisterForTracking( /*0x716b85*/
-        (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+        (SwizzleManagerClass *)&stru_B05488[27784],
         (MouseClass *)(*(_DWORD *)&aP0[1].Name[32] + 4 * i14));
     for ( i15 = 0; i15 < (int)aP0[2].AlphaImage; ++i15 ) /*0x716b9f*/
       ObjectPtr::RegisterForTracking( /*0x716bb0*/
-        (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+        (SwizzleManagerClass *)&stru_B05488[27784],
         (MouseClass *)(aP0[2].Strength + 4 * i15));
     v29 = (MouseClass *)&aP0[3].ChargerTurrets[8]; /*0x716bc0*/
     v30 = 18; /*0x716bc6*/
     do /*0x716bda*/
     {
-      ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], v29); /*0x716bd1*/
+      ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], v29); /*0x716bd1*/
       v29 = (MouseClass *)((char *)v29 + 28); /*0x716bd6*/
       --v30; /*0x716bd9*/
     }
@@ -1326,35 +1330,35 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
     v32 = 18; /*0x716be2*/
     do /*0x716bf6*/
     {
-      ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], v31); /*0x716bed*/
+      ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], v31); /*0x716bed*/
       v31 = (MouseClass *)((char *)v31 + 28); /*0x716bf2*/
       --v32; /*0x716bf5*/
     }
     while ( v32 ); /*0x716bf6*/
     for ( i16 = 0; i16 < aP0[2].VoxelCaches[7]; ++i16 ) /*0x716c04*/
       ObjectPtr::RegisterForTracking( /*0x716c15*/
-        (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+        (SwizzleManagerClass *)&stru_B05488[27784],
         (MouseClass *)(aP0[2].VoxelCaches[4] + 4 * i16));
     for ( i17 = 0; i17 < aP0[2].VoxelCaches[14]; ++i17 ) /*0x716c2f*/
       ObjectPtr::RegisterForTracking( /*0x716c40*/
-        (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+        (SwizzleManagerClass *)&stru_B05488[27784],
         (MouseClass *)(aP0[2].VoxelCaches[11] + 4 * i17));
     _makepath(Buffer, 0, 0, (ObjectClass *)aP0->ImageFile, Ext); /*0x716c66*/
     LOBYTE(v35) = 0; /*0x716c6e*/
     aP0->Image = (void *)SearchMIXFile(Buffer, v35); /*0x716c96*/
     INIClass::GetString( /*0x716c9c*/
-      (unsigned __int8 ***)&stru_87C374.__pad_579C[22128],
+      (unsigned __int8 ***)&stru_87C374[44556],
       (INIClass *)aP0->ImageFile,
-      (unsigned __int8 *)&stru_830620.__pad_579C[54676],
-      (INIClass *)&stru_830620.__pad_579C[59252],
+      (unsigned __int8 *)&stru_830620[77104],
+      (INIClass *)&stru_830620[81680],
       (INIClass *)&Filename,
       256);
-    if ( !_strcmpi(&Filename, &stru_830620.__pad_579C[59252]) ) /*0x716cab*/
+    if ( !_strcmpi(&Filename, &stru_830620[81680]) ) /*0x716cab*/
       INIClass::GetString( /*0x716cd4*/
-        (unsigned __int8 ***)&stru_87C374.__pad_579C[22128],
+        (unsigned __int8 ***)&stru_87C374[44556],
         (INIClass *)aP0->__pad_24,
-        (unsigned __int8 *)&stru_830620.__pad_579C[54676],
-        (INIClass *)&stru_830620.__pad_579C[59252],
+        (unsigned __int8 *)&stru_830620[77104],
+        (INIClass *)&stru_830620[81680],
         (INIClass *)&Filename,
         256);
     _makepath(Buffer, 0, 0, &Filename, Ext); /*0x716ced*/
@@ -1368,10 +1372,10 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
       *(_DWORD *)&aP0[2].__pad_14D[123] = SearchMIXFile(g_Str_File_XXICON_SHP, v38); /*0x716d1f*/
     }
     INIClass::GetString( /*0x716d3f*/
-      (unsigned __int8 ***)&stru_87C374.__pad_579C[22128],
+      (unsigned __int8 ***)&stru_87C374[44556],
       (INIClass *)aP0->ImageFile,
-      (unsigned __int8 *)&stru_830620.__pad_579C[54664],
-      (INIClass *)&stru_87C374.__pad_579C[33876],
+      (unsigned __int8 *)&stru_830620[77092],
+      (INIClass *)&stru_87C374[56304],
       (INIClass *)&Filename,
       256);
     _makepath(Buffer, 0, 0, &Filename, Ext); /*0x716d58*/
@@ -1379,10 +1383,10 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
     *(_DWORD *)&aP0[2].__pad_14D[155] = 0; /*0x716d69*/
     *(_DWORD *)&aP0[2].__pad_14D[155] = SearchMIXFile(Buffer, v39); /*0x716d8d*/
     INIClass::GetString( /*0x716d93*/
-      (unsigned __int8 ***)&stru_87C374.__pad_579C[22128],
+      (unsigned __int8 ***)&stru_87C374[44556],
       (INIClass *)aP0->ImageFile,
       (unsigned __int8 *)&stru_824238.sectionCount,
-      (INIClass *)&stru_87C374.__pad_579C[33876],
+      (INIClass *)&stru_87C374[56304],
       (INIClass *)&aP0[5].ChargerTurrets[12],
       32);
     if ( LOBYTE(aP0[5].ChargerTurrets[12]) ) /*0x716d98*/

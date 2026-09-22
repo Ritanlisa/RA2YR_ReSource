@@ -2,6 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x402AF0
 namespace gamemd {
@@ -33,7 +36,7 @@ _DWORD *__thiscall sub_402AF0(int this)
   this->q003 |= 1u; /*0x402b5e*/
   InsertAfterDListNode((int)off_815E98, v2); /*0x402b67*/
   if ( (this->q002 & 2) != 0 ) /*0x402b70*/
-    MEMORY[0x87DE28] = 1; /*0x402b72*/
+    DataGlobal_87DE28 = 1; /*0x402b72*/
   return v2; /*0x402b44*/
 }
 }
@@ -162,7 +165,7 @@ int *__thiscall AudioQueue::FindByData(void *this)
   int *result; // eax
   int *v3; // esi
 
-  result = (int *)AudioQueue::GetNext(&MEMORY[0xB1D3F0]); /*0x752689*/
+  result = (int *)AudioQueue::GetNext(&DataGlobal_B1D3F0); /*0x752689*/
   if ( result ) /*0x752690*/
   {
     while ( (void *)result[3] != this ) /*0x752695*/
@@ -178,7 +181,7 @@ LABEL_4:
     result = (int *)DataGlobal_B1D4B8; /*0x7526a2*/
     if ( !DataGlobal_B1D4B8 || *((void **)DataGlobal_B1D4B8 + 3) != this ) /*0x7526ae*/
     {
-      v3 = (int *)&MEMORY[0xB1D474]; /*0x7526b0*/
+      v3 = (int *)&DataGlobal_B1D474; /*0x7526b0*/
       while ( 1 ) /*0x7526b7*/
       {
         result = (int *)AudioQueue::GetNext(v3); /*0x7526b7*/
@@ -186,9 +189,9 @@ LABEL_4:
           break; /*0x7526be*/
 LABEL_10:
         v3 -= 3; /*0x7526d0*/
-        if ( (int)v3 < (int)MEMORY[0xB1D450] ) /*0x7526d9*/
+        if ( (int)v3 < (int)DataGlobal_B1D450 ) /*0x7526d9*/
         {
-          result = (int *)AudioQueue::GetNext(&MEMORY[0xB1D3C8]); /*0x7526e0*/
+          result = (int *)AudioQueue::GetNext(&DataGlobal_B1D3C8); /*0x7526e0*/
           if ( !result ) /*0x7526e7*/
             return 0; /*0x7526f9*/
           while ( (void *)result[3] != this ) /*0x7526ec*/

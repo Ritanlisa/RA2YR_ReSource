@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Options_e4.hpp"
 
 // 0x5FA440
 void AudioSettings::SetFlag70(char a2)
@@ -84,7 +88,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   {
     if ( a2 == 276 ) /*0x6b6348*/
     {
-      if ( MEMORY[0xB0B800] ) /*0x6b6636*/
+      if ( DataGlobal_B0B800 ) /*0x6b6636*/
       {
         if ( hWnd == GetDlgItem(hDlg, 1327) ) /*0x6b664c*/
         {
@@ -108,7 +112,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
     }
     else if ( a2 == 1175 ) /*0x6b6354*/
     {
-      MEMORY[0xB0B800] = 0; /*0x6b635a*/
+      DataGlobal_B0B800 = 0; /*0x6b635a*/
       IsSoundEnabled = Audio::IsSoundEnabled(); /*0x6b6364*/
       bEnable = IsSoundEnabled; /*0x6b636c*/
       DlgItem = GetDlgItem(hDlg, 1327); /*0x6b6370*/
@@ -117,7 +121,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
       {
         SendMessageA(DlgItem, 0x4AEu, 0, 0); /*0x6b638c*/
         SendMessageA(v7, 0x406u, 1u, 655360); /*0x6b639b*/
-        v8 = Math::RoundToInt(MEMORY[0xA8EBA0] * 10.0 + 0.5); /*0x6b63af*/
+        v8 = Math::RoundToInt(DataGlobal_A8EBA0 * 10.0 + 0.5); /*0x6b63af*/
         SendMessageA(v7, 0x405u, 1u, v8); /*0x6b63bd*/
         v9 = (void (__stdcall *)(HWND, BOOL))EnableWindow; /*0x6b63bf*/
         EnableWindow(v7, IsSoundEnabled); /*0x6b63c7*/
@@ -132,7 +136,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
       {
         SendMessageA(v10, 0x4AEu, 0, 0); /*0x6b63f4*/
         SendMessageA(v11, 0x406u, 1u, 655360); /*0x6b6403*/
-        v12 = Math::RoundToInt(MEMORY[0xA8EB98] * 10.0 + 0.5); /*0x6b6417*/
+        v12 = Math::RoundToInt(DataGlobal_A8EB98 * 10.0 + 0.5); /*0x6b6417*/
         SendMessageA(v11, 0x405u, 1u, v12); /*0x6b6425*/
         v9(v11, IsSoundEnabled); /*0x6b6429*/
       }
@@ -142,7 +146,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
       {
         SendMessageA(v13, 0x4AEu, 0, 0); /*0x6b644e*/
         SendMessageA(v14, 0x406u, 1u, 655360); /*0x6b645d*/
-        v15 = Math::RoundToInt(*(float *)&MEMORY[0xA8EB9C] * 10.0 + 0.5); /*0x6b6471*/
+        v15 = Math::RoundToInt(*(float *)&DataGlobal_A8EB9C * 10.0 + 0.5); /*0x6b6471*/
         SendMessageA(v14, 0x405u, 1u, v15); /*0x6b647f*/
         v9(v14, IsSoundEnabled); /*0x6b6483*/
       }
@@ -151,13 +155,13 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
         v16 = GetDlgItem(hDlg, 1331); /*0x6b64a5*/
         if ( v16 ) /*0x6b64a9*/
         {
-          SendMessageA(v16, 0xF1u, MEMORY[0xA8EBA6] != 0, 0); /*0x6b64c1*/
+          SendMessageA(v16, 0xF1u, DataGlobal_A8EBA6 != 0, 0); /*0x6b64c1*/
           v9(v16, IsSoundEnabled); /*0x6b64c5*/
         }
         v17 = GetDlgItem(hDlg, 1332); /*0x6b64da*/
         if ( v17 ) /*0x6b64de*/
         {
-          SendMessageA(v17, 0xF1u, MEMORY[0xA8EBA4] != 0, 0); /*0x6b64f5*/
+          SendMessageA(v17, 0xF1u, DataGlobal_A8EBA4 != 0, 0); /*0x6b64f5*/
           v9(v17, IsSoundEnabled); /*0x6b64f9*/
         }
         v18 = GetDlgItem(hDlg, 1328); /*0x6b6508*/
@@ -179,7 +183,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
                 v46 = AudioSettings::Check(v21); /*0x6b656f*/
                 swprintf( /*0x6b65a1*/
                   lParam,
-                  (const size_t)MEMORY[0x840070],
+                  (const size_t)DataGlobal_840070,
                   (const wchar_t *const)Format++,
                   v46,
                   v22 / 60,
@@ -206,7 +210,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
           EnableWindow(v19, bEnable); /*0x6b6613*/
         }
       }
-      MEMORY[0xB0B800] = 1; /*0x6b661c*/
+      DataGlobal_B0B800 = 1; /*0x6b661c*/
       return 0; /*0x6b662c*/
     }
     return 0; /*0x6b6354*/
@@ -237,7 +241,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
             {
               v30 = SendMessageA(v28, 0x199u, v29, 0); /*0x6b67f6*/
               v31 = dword_A83D14; /*0x6b67f8*/
-              MEMORY[0xA8EBA5] = 1; /*0x6b6800*/
+              DataGlobal_A8EBA5 = 1; /*0x6b6800*/
               if ( dword_A83D14 == -1 ) /*0x6b6807*/
                 v31 = dword_A83D18; /*0x6b6809*/
               if ( v31 != v30 ) /*0x6b6810*/
@@ -269,7 +273,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
     {
       Theme::Stop(&g_BuildingTypeClass_Count, 1); /*0x6b69d4*/
       Theme::QueueSong((int)&g_BuildingTypeClass_Count, -3); /*0x6b69e0*/
-      MEMORY[0xA8EBA5] = 0; /*0x6b69e5*/
+      DataGlobal_A8EBA5 = 0; /*0x6b69e5*/
     }
     return 0; /*0x6b69e5*/
   }
@@ -280,7 +284,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   {
     v40 = (double)SendMessageA(v33, 0x400u, 0, 0) * 0.1; /*0x6b68fd*/
     Options::SetScoreVolume((float *)g_GameModeOptions, v40, 0); /*0x6b6900*/
-    if ( MEMORY[0xA8EBA0] == 0.0 ) /*0x6b6916*/
+    if ( DataGlobal_A8EBA0 == 0.0 ) /*0x6b6916*/
     {
       v34 = dword_A83D14; /*0x6b6918*/
       if ( dword_A83D14 == -1 ) /*0x6b6920*/

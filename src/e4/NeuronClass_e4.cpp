@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/NeuronClass_25_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x43A350
 int NeuronClass::NeuronClass()
@@ -21,16 +22,16 @@ int __thiscall NeuronClass::NeuronClass(int this)
   this->NeuronClass_field_0x04 = &NeuronClass::`vftable'; /*0x43a37b*/
   this->NeuronClass_field_0x08 = &NeuronClass::`vftable'; /*0x43a382*/
   this->NeuronClass_field_0x0C = &vt_NeuronClass; /*0x43a389*/
-  if ( MEMORY[0xB0F5E8] < MEMORY[0xB0F5E0] /*0x43a3c5*/
-    || (MEMORY[0xB0F5E5] || !MEMORY[0xB0F5E0])
-    && MEMORY[0xB0F5EC] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F5D8] + 8))(
-         &MEMORY[0xB0F5D8],
-         MEMORY[0xB0F5E0] + MEMORY[0xB0F5EC],
+  if ( DataGlobal_B0F5E8 < DataGlobal_B0F5E0 /*0x43a3c5*/
+    || (DataGlobal_B0F5E5 || !DataGlobal_B0F5E0)
+    && DataGlobal_B0F5EC > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_B0F5D8 + 8))(
+         &DataGlobal_B0F5D8,
+         DataGlobal_B0F5E0 + DataGlobal_B0F5EC,
          0) )
   {
-    v2 = MEMORY[0xB0F5E8]++; /*0x43a3d2*/
-    *((_DWORD *)MEMORY[0xB0F5DC] + v2) = this; /*0x43a3e1*/
+    v2 = DataGlobal_B0F5E8++; /*0x43a3d2*/
+    *((_DWORD *)DataGlobal_B0F5DC + v2) = this; /*0x43a3e1*/
   }
   if ( g_AnimManager < g_AnimTypePool /*0x43a41b*/
     || (g_AnimPoolLocked || !g_AnimTypePool)
@@ -73,15 +74,15 @@ NeuronClass *__thiscall NeuronClass::Reset(_DWORD *this, char a2)
     while ( v3 < g_AnimManager ); /*0x43aa26*/
   }
   v6 = this; /*0x43aa38*/
-  v4 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F5D8] + 16))(&MEMORY[0xB0F5D8], &v6); /*0x43aa3c*/
-  if ( v4 != -1 && v4 < MEMORY[0xB0F5E8] && v4 < --MEMORY[0xB0F5E8] ) /*0x43aa57*/
+  v4 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_B0F5D8 + 16))(&DataGlobal_B0F5D8, &v6); /*0x43aa3c*/
+  if ( v4 != -1 && v4 < DataGlobal_B0F5E8 && v4 < --DataGlobal_B0F5E8 ) /*0x43aa57*/
   {
     do /*0x43aa6f*/
     {
       ++v4; /*0x43aa5f*/
-      *((_DWORD *)MEMORY[0xB0F5DC] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F5DC] + v4); /*0x43aa63*/
+      *((_DWORD *)DataGlobal_B0F5DC + v4 - 1) = *((_DWORD *)DataGlobal_B0F5DC + v4); /*0x43aa63*/
     }
-    while ( v4 < MEMORY[0xB0F5E8] ); /*0x43aa6f*/
+    while ( v4 < DataGlobal_B0F5E8 ); /*0x43aa6f*/
   }
   AbstractClass::DTOR(this); /*0x43aa73*/
   if ( (a2 & 1) != 0 ) /*0x43aa7d*/

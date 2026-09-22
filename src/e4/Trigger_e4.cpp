@@ -2,6 +2,12 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Trigger_e4.hpp"
+#include "e4/classes/CampaignProperties_WorldDominationTour_22_e4.hpp"
+#include "e4/classes/MSEngine_e4.hpp"
+#include "e4/classes/Session_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x554A60
 namespace gamemd {
@@ -157,9 +163,9 @@ void __userpurge Trigger::ProcessMapEvents(int this@<ecx>, int *a2@<ebp>, int a3
     if ( v14 != CellType ) /*0x76d5db*/
     {
       DDraw::HandleSuspend((_DWORD *)this); /*0x76d5df*/
-      while ( EventQueue::Process(*(_DWORD **)&stru_87C374.__pad_14B0[8012]) ) /*0x76d5ea*/
+      while ( EventQueue::Process(*(_DWORD **)&stru_87C374[13308]) ) /*0x76d5ea*/
       {
-        if ( EventQueue::Read(*(_DWORD **)&stru_87C374.__pad_14B0[8012]) == 27 ) /*0x76d603*/
+        if ( EventQueue::Read(*(_DWORD **)&stru_87C374[13308]) == 27 ) /*0x76d603*/
           *(_BYTE *)(this + 1092) = 1; /*0x76d605*/
       }
       ecx13 = !*(_BYTE *)(this + 1092) || a6; /*0x76d635*/
@@ -249,9 +255,9 @@ void __userpurge Trigger::ProcessMapEvents(int this@<ecx>, int *a2@<ebp>, int a3
     do /*0x76da41*/
     {
       DDraw::HandleSuspend((_DWORD *)this); /*0x76d8c0*/
-      while ( EventQueue::Process(*(_DWORD **)&stru_87C374.__pad_14B0[8012]) ) /*0x76d8cb*/
+      while ( EventQueue::Process(*(_DWORD **)&stru_87C374[13308]) ) /*0x76d8cb*/
       {
-        if ( EventQueue::Read(*(_DWORD **)&stru_87C374.__pad_14B0[8012]) == 27 ) /*0x76d8e4*/
+        if ( EventQueue::Read(*(_DWORD **)&stru_87C374[13308]) == 27 ) /*0x76d8e4*/
           *(_BYTE *)(this + 1092) = 1; /*0x76d8e6*/
       }
       if ( ((unsigned __int8 (__thiscall *)(void ***))v34[1])(&v34) ) /*0x76d905*/

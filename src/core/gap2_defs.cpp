@@ -13,6 +13,7 @@
 #include "core/load_options.hpp"
 #include "core/math.hpp"
 #include "core/stream_ext.hpp"
+#include "e4/e4_globals.hpp"
 
 // 0x41DB40
 namespace gamemd { int WTFMode::ResetUnitFlags() {
@@ -28,8 +29,8 @@ char __thiscall WTFMode_ResetUnitFlags(int this)
   _DWORD *v8; // ecx
   int v9; // edi
 
-  LOBYTE(v1) = MEMORY[0xA8E9A0]; /*0x41db40*/
-  if ( MEMORY[0xA8E9A0] ) /*0x41db4d*/
+  LOBYTE(v1) = g_WTFMode; /*0x41db40*/
+  if ( g_WTFMode ) /*0x41db4d*/
   {
     v3 = this->q05C; /*0x41db53*/
     v1 = *(_DWORD **)(this + 92); /*0x41db56*/
@@ -74,12 +75,12 @@ LABEL_8:
       v1 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*v6 + 44))(v6); /*0x41dbd8*/
       if ( v1 == (_DWORD *)6 && v6[165] == this ) /*0x41dbe6*/
       {
-        LOBYTE(v1) = MEMORY[0x889FC8]; /*0x41dbe8*/
+        LOBYTE(v1) = DataGlobal_889FC8; /*0x41dbe8*/
         v7 = 0; /*0x41dbed*/
-        if ( MEMORY[0x889FC8] > 0 ) /*0x41dbf1*/
+        if ( DataGlobal_889FC8 > 0 ) /*0x41dbf1*/
         {
-          v8 = MEMORY[0x889FBC]; /*0x41dbf3*/
-          v9 = MEMORY[0x889FC8]; /*0x41dbf9*/
+          v8 = DataGlobal_889FBC; /*0x41dbf3*/
+          v9 = DataGlobal_889FC8; /*0x41dbf9*/
           do /*0x41dc0c*/
           {
             v1 = (_DWORD *)*v8; /*0x41dbfb*/
@@ -91,7 +92,7 @@ LABEL_8:
           while ( v9 ); /*0x41dc0c*/
         }
         v6[165] = v7; /*0x41dc10*/
-        if ( !v7 && MEMORY[0xA8E9A0] ) /*0x41dc1e*/
+        if ( !v7 && g_WTFMode ) /*0x41dc1e*/
           LOBYTE(v1) = (*(int (__thiscall **)(_DWORD *, int))(*v6 + 292))(v6, 2); /*0x41dc26*/
         if ( v6[165] == this ) /*0x41dc32*/
           v6[165] = 0; /*0x41dc34*/
@@ -401,7 +402,7 @@ LABEL_11:
         else
         {
           ++this->q070; /*0x5f1e11*/
-          Debug::Log(MEMORY[0x832400]); /*0x5f1e14*/
+          Debug::Log(DataGlobal_00832400); /*0x5f1e14*/
           v14 = v4 + 2; /*0x5f1e1f*/
           memcpy(*(void **)(this + 80), (const void *)(this->q014 + v14), *(_DWORD *)(this + 88) - v14); /*0x5f1e2a*/
           v15 = this->q038; /*0x5f1e32*/
@@ -411,7 +412,7 @@ LABEL_11:
       }
       else
       {
-        Debug::Log(MEMORY[0x832420], v11 - v10); /*0x5f1d7f*/
+        Debug::Log(DataGlobal_00832420, v11 - v10); /*0x5f1d7f*/
         v12 = v4 + 2; /*0x5f1d8a*/
         memcpy(*(void **)(this + 80), (const void *)(this->q014 + v12), *(_DWORD *)(this + 88) - v12); /*0x5f1d95*/
         v13 = this->q038; /*0x5f1d9d*/

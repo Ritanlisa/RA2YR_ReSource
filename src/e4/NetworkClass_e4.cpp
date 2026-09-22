@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/NetworkClass_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/ScriptAction_e4.hpp"
 
 // 0x639FD0
 namespace gamemd {
@@ -17,10 +19,10 @@ int __thiscall sub_639FD0(char *this)
   v1 = *this; /*0x639fd0*/
   if ( *this == 9 ) /*0x639fd4*/
   {
-    if ( !MEMORY[0xAC4C08] ) /*0x639fdd*/
+    if ( !g_PlanningModeActive ) /*0x639fdd*/
     {
-      MEMORY[0xAC4C08] = 1; /*0x639fe8*/
-      StringCSF = GetStringCSF((wchar_t *)MEMORY[0x836C34], 0, MEMORY[0x836BD4], 3233); /*0x639ffb*/
+      g_PlanningModeActive = 1; /*0x639fe8*/
+      StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x639ffb*/
 LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
       PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a09e*/
@@ -28,18 +30,18 @@ LABEL_10:
   }
   else if ( v1 == 6 ) /*0x639fff*/
   {
-    if ( !MEMORY[0xAC4C08] ) /*0x63a008*/
+    if ( !g_PlanningModeActive ) /*0x63a008*/
     {
-      MEMORY[0xAC4C08] = 1; /*0x63a01f*/
-      v3 = GetStringCSF(MEMORY[0x836C1C], 0, MEMORY[0x836BD4], 3233); /*0x63a026*/
+      g_PlanningModeActive = 1; /*0x63a01f*/
+      v3 = GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a026*/
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
       PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a04f*/
     }
   }
-  else if ( v1 == 7 && !MEMORY[0xAC4C08] ) /*0x63a05c*/
+  else if ( v1 == 7 && !g_PlanningModeActive ) /*0x63a05c*/
   {
-    MEMORY[0xAC4C08] = 1; /*0x63a063*/
-    StringCSF = GetStringCSF(MEMORY[0x836C00], 0, MEMORY[0x836BD4], 3233); /*0x63a076*/
+    g_PlanningModeActive = 1; /*0x63a063*/
+    StringCSF = GetStringCSF(g_Str_MSG_PlanningModeNoScatter, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a076*/
     goto LABEL_10; /*0x63a076*/
   }
   return PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/

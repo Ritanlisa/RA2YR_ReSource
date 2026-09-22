@@ -14,7 +14,7 @@ IsometricTileClass *__thiscall IsometricTileClass::IsometricTileClass(
   int v4; // eax
 
   ObjectClass::ctor(this); /*0x543786*/
-  this->q02B = *(IsometricTileClass *)(*(_DWORD *)&HouseClass_Player.__pad_5568[23160] + 4 * (_DWORD)aP1); /*0x54379c*/
+  this->q02B = *(IsometricTileClass *)(*(_DWORD *)&HouseClass_Player[45024] + 4 * (_DWORD)aP1); /*0x54379c*/
   *this = (IsometricTileClass)&IsometricTileClass::`vftable'; /*0x5437a2*/
   this->vtable2 = &IsometricTileClass::`vftable'; /*0x5437a8*/
   this->vtable3 = &IsometricTileClass::`vftable'; /*0x5437af*/
@@ -25,16 +25,16 @@ IsometricTileClass *__thiscall IsometricTileClass::IsometricTileClass(
     ObjectClass::SetPosition((#374 *)this); /*0x54380c*/
     (*(void (__thiscall **)(IsometricTileClass *, int))(this->q124)(this, 1); /*0x543818*/
   }
-  if ( *(int *)&stru_87C374.__pad_14B0[7996] < *(int *)&stru_87C374.__pad_14B0[7988] /*0x543855*/
-    || (stru_87C374.__pad_14B0[7993] || !*(_DWORD *)&stru_87C374.__pad_14B0[7988])
-    && *(int *)&stru_87C374.__pad_14B0[8000] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_87C374.__pad_14B0[7980] + 8))(
-         &stru_87C374.__pad_14B0[7980],
-         *(_DWORD *)&stru_87C374.__pad_14B0[7988] + *(_DWORD *)&stru_87C374.__pad_14B0[8000],
+  if ( *(int *)&stru_87C374[13292] < *(int *)&stru_87C374[13284] /*0x543855*/
+    || (stru_87C374[13289] || !*(_DWORD *)&stru_87C374[13284])
+    && *(int *)&stru_87C374[13296] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_87C374[13276] + 8))(
+         &stru_87C374[13276],
+         *(_DWORD *)&stru_87C374[13284] + *(_DWORD *)&stru_87C374[13296],
          0) )
   {
-    v4 = (*(_DWORD *)&stru_87C374.__pad_14B0[7996])++; /*0x543862*/
-    *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[7984] + 4 * v4) = this; /*0x543871*/
+    v4 = (*(_DWORD *)&stru_87C374[13292])++; /*0x543862*/
+    *(_DWORD *)(*(_DWORD *)&stru_87C374[13280] + 4 * v4) = this; /*0x543871*/
   }
   return this; /*0x543876*/
 }

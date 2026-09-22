@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x4CC100
 namespace gamemd {
@@ -67,9 +69,9 @@ _DWORD *__fastcall TrajectoryHelper::FindFirstObstacle(IUnknown *aP0, int *a1, i
     v31 = 0; /*0x4cc1da*/
     v32 = 0; /*0x4cc1de*/
   }
-  v12 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v25); /*0x4cc216*/
+  v12 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v25); /*0x4cc216*/
   v28 = v12; /*0x4cc21e*/
-  v27 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v26); /*0x4cc229*/
+  v27 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v26); /*0x4cc229*/
   v13 = v12; /*0x4cc22f*/
   v24 = 0; /*0x4cc231*/
   if ( v7 <= 0 ) /*0x4cc235*/
@@ -87,7 +89,7 @@ _DWORD *__fastcall TrajectoryHelper::FindFirstObstacle(IUnknown *aP0, int *a1, i
     LOWORD(v23) = v14 / 256; /*0x4cc2a2*/
     HIWORD(v23) = v15 / 256; /*0x4cc2b5*/
     v29 = v23; /*0x4cc2be*/
-    v13 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v29); /*0x4cc2c2*/
+    v13 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v29); /*0x4cc2c2*/
     v19 += v30; /*0x4cc2dd*/
     v17 = ++v24 < v7; /*0x4cc2ee*/
     v20 += v31; /*0x4cc2f4*/
@@ -159,7 +161,7 @@ _DWORD *__fastcall TrajectoryHelper::GetObstacle(
   HIWORD(v41) = a5 / 256; /*0x4cc3a0*/
   v44 = a1; /*0x4cc3a9*/
   v43 = v41; /*0x4cc3ad*/
-  v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v43); /*0x4cc3b6*/
+  v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v43); /*0x4cc3b6*/
   v42 = v10; /*0x4cc3bc*/
   if ( *(_BYTE *)(a7 + 662) ) /*0x4cc3c0*/
   {
@@ -217,7 +219,7 @@ LABEL_16:
         if ( v31 > v30 ) /*0x4cc562*/
         {
 LABEL_22:
-          v33 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v43); /*0x4cc574*/
+          v33 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v43); /*0x4cc574*/
           if ( *(_BYTE *)(a7 + 662) ) /*0x4cc589*/
           {
             v34 = Cell::GetSlopeIndex(a3); /*0x4cc59e*/

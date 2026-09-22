@@ -21,10 +21,10 @@ ObjectClass * AddTeamCommand::AddRef()
 ObjectClass *__thiscall AddTeamCommand::AddRef(_DWORD *this)
 {
   sprintf( /*0x5360de*/
-    &HouseClass_Player.__pad_5568[25344],
+    &HouseClass_Player[47208],
     (ObjectClass *)&stru_8270D8.customSound_controller[3],
     (INIClass *)this->AddTeamCommand_field_00);
-  return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x5360eb*/
+  return (ObjectClass *)&HouseClass_Player[47208]; /*0x5360eb*/
 }
 }
 
@@ -38,9 +38,9 @@ wchar_t *__thiscall AddTeamCommand::_vt02(const wchar_t **this)
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
   v3 = this->AddTeamCommand_field_00; /*0x5360f5*/
-  StringCSF = GetStringCSF(MEMORY[0x827148], 0, g_Str_File_Init_CPP, 6326); /*0x536105*/
-  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x536110*/
-  return &MEMORY[0xA8F654]; /*0x53611d*/
+  StringCSF = GetStringCSF(DataGlobal_827148, 0, g_Str_File_Init_CPP, 6326); /*0x536105*/
+  swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x536110*/
+  return &g_TeamCommandBuffer; /*0x53611d*/
 }
 }
 

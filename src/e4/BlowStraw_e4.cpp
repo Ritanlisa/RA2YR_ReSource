@@ -2,6 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BlowStraw_29_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/CreateTeamCommand_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
 
 // 0x6D0680
 namespace gamemd {
@@ -31,9 +34,9 @@ int __thiscall BlowStraw_29_::Seek(int *this, TabClass *aP1, _DWORD *a2)
   v5 = *(this + 5456); /*0x6d0691*/
   if ( v4 != -1 ) /*0x6d069a*/
   {
-    if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v4 >= v5 ) /*0x6d06a6*/
+    if ( *(_DWORD *)&g_NetworkPlayerBuffer[5960] - v4 >= v5 ) /*0x6d06a6*/
       goto LABEL_6; /*0x6d06a6*/
-    v5 -= *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - v4; /*0x6d06a8*/
+    v5 -= *(_DWORD *)&g_NetworkPlayerBuffer[5960] - v4; /*0x6d06a8*/
   }
   if ( v5 == 1 ) /*0x6d06ac*/
   {
@@ -42,35 +45,35 @@ int __thiscall BlowStraw_29_::Seek(int *this, TabClass *aP1, _DWORD *a2)
     (*(void (__thiscall **)(int *, _DWORD))(v6 + 56))(this, 0); /*0x6d06ba*/
   }
 LABEL_6:
-  v7 = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[11460] + 4); /*0x6d06bd*/
-  if ( *a2 >= **(_DWORD **)&g_OverlayTypeConfig.__pad_579C[11460] /*0x6d06dd*/
-    && *a2 < **(_DWORD **)&g_OverlayTypeConfig.__pad_579C[11460] + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8540] )
+  v7 = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[33888] + 4); /*0x6d06bd*/
+  if ( *a2 >= **(_DWORD **)&g_OverlayTypeConfig[33888] /*0x6d06dd*/
+    && *a2 < **(_DWORD **)&g_OverlayTypeConfig[33888] + *(_DWORD *)&DataGlobal_87F8E4[30404] )
   {
     v8 = (ScrollClass *)a2[1]; /*0x6d06df*/
     if ( (int)v8 >= v7 && (int)v8 < v7 + 30 ) /*0x6d06f2*/
-      Mouse::SetCursor((int)&MEMORY[0x87F7E8], 0, 0); /*0x6d06fd*/
+      Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0); /*0x6d06fd*/
   }
   v9 = aP1->field_0; /*0x6d0706*/
   if ( aP1->field_0 < 32982 || v9 >= 33007 ) /*0x6d0718*/
   {
     if ( v9 == 33008 ) /*0x6d0842*/
     {
-      PlayVocClass(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 408), 0x2000, 1.0, 0); /*0x6d0860*/
+      PlayVocClass(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 408), 0x2000, 1.0, 0); /*0x6d0860*/
       if ( *((_BYTE *)this + 21828) ) /*0x6d0865*/
       {
         SidebarUpdateAll(this); /*0x6d0875*/
-        (*(void (__thiscall **)(int *, char *))(*this + 52))(this, &g_OverlayTypeConfig.__pad_5498[32]); /*0x6d0883*/
+        (*(void (__thiscall **)(int *, char *))(*this + 52))(this, &g_OverlayTypeConfig[21688]); /*0x6d0883*/
         for ( i = 0; i < 25; ++i ) /*0x6d0886*/
         {
           FontClassEntry = GetFontClassEntry(i); /*0x6d088a*/
           if ( FontClassEntry ) /*0x6d0891*/
-            HashTable::Remove(*(int **)&MEMORY[0x87F8E4].__pad_5568[9500], *((_DWORD *)FontClassEntry + 9)); /*0x6d089d*/
+            HashTable::Remove(*(int **)&DataGlobal_87F8E4[31364], *((_DWORD *)FontClassEntry + 9)); /*0x6d089d*/
         }
-        HashTable::Remove(*(int **)&MEMORY[0x87F8E4].__pad_5568[9500], 240); /*0x6d08b3*/
+        HashTable::Remove(*(int **)&DataGlobal_87F8E4[31364], 240); /*0x6d08b3*/
         v16 = *this; /*0x6d08b8*/
         *((_BYTE *)this + 21828) = 0; /*0x6d08c1*/
-        (*(void (__thiscall **)(int *, char *))(v16 + 48))(this, &g_OverlayTypeConfig.__pad_53E0[104]); /*0x6d08c8*/
-        PushCommandClass::Execute(&g_OverlayTypeConfig.__pad_53E0[104], (int)&stru_830620.__pad_579C[51836]); /*0x6d08d5*/
+        (*(void (__thiscall **)(int *, char *))(v16 + 48))(this, &g_OverlayTypeConfig[21576]); /*0x6d08c8*/
+        PushCommandClass::Execute(&g_OverlayTypeConfig[21576], (int)&stru_830620[74264]); /*0x6d08d5*/
         v17 = *this; /*0x6d08da*/
         *((_BYTE *)this + 21829) = 1; /*0x6d08e0*/
         (*(void (__thiscall **)(int *, _DWORD))(v17 + 56))(this, 0); /*0x6d08e6*/
@@ -78,13 +81,13 @@ LABEL_6:
     }
     else if ( v9 == 33009 ) /*0x6d08f3*/
     {
-      if ( !MEMORY[0xA8B538] ) /*0x6d08fc*/
+      if ( !MuteSWLaunches ) /*0x6d08fc*/
       {
-        PlayVocClass(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 404), 0x2000, 1.0, 0); /*0x6d091a*/
+        PlayVocClass(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 404), 0x2000, 1.0, 0); /*0x6d091a*/
         if ( !*((_BYTE *)this + 21828) ) /*0x6d091f*/
         {
-          (*(void (__thiscall **)(int *, char *))(*this + 52))(this, &g_OverlayTypeConfig.__pad_53E0[104]); /*0x6d0932*/
-          HashTable::Remove(*(int **)&MEMORY[0x87F8E4].__pad_5568[9500], 241); /*0x6d0940*/
+          (*(void (__thiscall **)(int *, char *))(*this + 52))(this, &g_OverlayTypeConfig[21576]); /*0x6d0932*/
+          HashTable::Remove(*(int **)&DataGlobal_87F8E4[31364], 241); /*0x6d0940*/
           *((_BYTE *)this + 21828) = 1; /*0x6d0947*/
           CommandClass::BuildBar(this); /*0x6d094d*/
           v18 = *this; /*0x6d0952*/
@@ -97,58 +100,58 @@ LABEL_6:
     {
       BYTE1(v9) &= 0x3Fu; /*0x6d0977*/
       v19 = v9 - 214; /*0x6d097a*/
-      if ( v19 >= *(int *)&g_OverlayTypeConfig.__pad_53E0[72] && v19 <= *(int *)&g_OverlayTypeConfig.__pad_5498[152] ) /*0x6d0989*/
-        SidebarClearReferences((char *)(v19 - *(_DWORD *)&g_OverlayTypeConfig.__pad_53E0[72] + 1)); /*0x6d0990*/
+      if ( v19 >= *(int *)&g_OverlayTypeConfig[21544] && v19 <= *(int *)&g_OverlayTypeConfig[21808] ) /*0x6d0989*/
+        SidebarClearReferences((char *)(v19 - *(_DWORD *)&g_OverlayTypeConfig[21544] + 1)); /*0x6d0990*/
     }
   }
   else
   {
     BYTE1(v9) &= ~0x80u; /*0x6d0724*/
     v10 = v9 - 214; /*0x6d0727*/
-    if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_5498[148] ) /*0x6d072e*/
+    if ( v10 == *(_DWORD *)&g_OverlayTypeConfig[21804] ) /*0x6d072e*/
     {
       BlowStraw_29_Get(); /*0x6d0730*/
     }
-    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[16020] ) /*0x6d0740*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig[21316] ) /*0x6d0740*/
     {
       UI_Create_731A30(); /*0x6d0742*/
     }
-    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[13584] ) /*0x6d0752*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig[18880] ) /*0x6d0752*/
     {
       UI_Create_730F30(); /*0x6d0754*/
     }
-    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[15992] ) /*0x6d0764*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig[21288] ) /*0x6d0764*/
     {
       ProcessSelectionExperience(); /*0x6d0766*/
     }
-    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[16064] ) /*0x6d0776*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig[21360] ) /*0x6d0776*/
     {
       GetFactoryData(); /*0x6d0778*/
     }
-    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_53E0[68] ) /*0x6d078a*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig[21540] ) /*0x6d078a*/
     {
-      v11 = *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[4 * *(_DWORD *)&g_OverlayTypeConfig.__pad_53E0[68] + 16080]; /*0x6d078c*/
+      v11 = *(_DWORD *)&g_OverlayTypeConfig[5296][4 * *(_DWORD *)&g_OverlayTypeConfig[21540] + 16080]; /*0x6d078c*/
       if ( v11 > 0x18 ) /*0x6d0795*/
         v12 = 0; /*0x6d07a9*/
       else
-        v12 = &g_OverlayTypeConfig.__pad_14B0[96 * v11 + 13592]; /*0x6d07a2*/
+        v12 = &g_OverlayTypeConfig[5296][96 * v11 + 13592]; /*0x6d07a2*/
       if ( v12[45] ) /*0x6d07ab*/
         UI_Create_731A50(1); /*0x6d07b4*/
       else
         UI_Create_731A70(1); /*0x6d07be*/
     }
-    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[16068] ) /*0x6d07ce*/
+    else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig[21364] ) /*0x6d07ce*/
     {
       UI_Create_730EA0(); /*0x6d07d0*/
     }
-    else if ( v10 < *(int *)&g_OverlayTypeConfig.__pad_53E0[72] || v10 > *(int *)&g_OverlayTypeConfig.__pad_5498[152] ) /*0x6d07ea*/
+    else if ( v10 < *(int *)&g_OverlayTypeConfig[21544] || v10 > *(int *)&g_OverlayTypeConfig[21808] ) /*0x6d07ea*/
     {
-      if ( v10 == *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[16016] ) /*0x6d082d*/
+      if ( v10 == *(_DWORD *)&g_OverlayTypeConfig[21312] ) /*0x6d082d*/
         SelectAllOfType(); /*0x6d0833*/
     }
     else
     {
-      v13 = (char *)(v10 - *(_DWORD *)&g_OverlayTypeConfig.__pad_53E0[72] + 1); /*0x6d07ef*/
+      v13 = (char *)(v10 - *(_DWORD *)&g_OverlayTypeConfig[21544] + 1); /*0x6d07ef*/
       if ( SidebarCountAvailableUnits(v13) ) /*0x6d07f3*/
       {
         if ( SidebarHasAvailableUnit(v13) ) /*0x6d0808*/
@@ -187,11 +190,11 @@ wchar_t *sub_731AF0()
   result = g_SelectionManager; /*0x731af1*/
   if ( !g_SelectionManager ) /*0x731afa*/
   {
-    StringCSF = GetStringCSF(MEMORY[0x845584], 0, MEMORY[0x845598], 856); /*0x731b0d*/
+    StringCSF = GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 856); /*0x731b0d*/
     v2 = 3; /*0x731b18*/
     if ( HouseClass_Player ) /*0x731b1f*/
       v2 = *((_DWORD *)HouseClass_Player + 22549); /*0x731b21*/
-    result = (wchar_t *)MessageListClass::AddMessage(MEMORY[0xA8BC60], 0, 0, StringCSF, v2, 16454, 240, 1); /*0x731b3e*/
+    result = (wchar_t *)MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v2, 16454, 240, 1); /*0x731b3e*/
     goto LABEL_5; /*0x731b3e*/
   }
   v3 = g_SelectionManager; /*0x731b4e*/
@@ -199,7 +202,7 @@ wchar_t *sub_731AF0()
   if ( (int)g_SelectionManager <= 0 ) /*0x731b54*/
   {
 LABEL_5:
-    MEMORY[0xB0FE58] = 1; /*0x731b43*/
+    DataGlobal_B0FE58 = 1; /*0x731b43*/
     return result; /*0x731b4d*/
   }
   while ( 1 ) /*0x731b56*/
@@ -217,15 +220,15 @@ LABEL_5:
     }
     if ( ++v4 >= (int)v3 ) /*0x731b7d*/
     {
-      MEMORY[0xB0FE58] = 1; /*0x731b80*/
+      DataGlobal_B0FE58 = 1; /*0x731b80*/
       return result; /*0x731b89*/
     }
   }
-  v6 = GetStringCSF(MEMORY[0x845568], 0, MEMORY[0x845598], 862); /*0x731b9b*/
+  v6 = GetStringCSF(DataGlobal_845568, 0, g_Str_File_UICmnds_cpp, 862); /*0x731b9b*/
   v7 = 3; /*0x731ba6*/
   if ( HouseClass_Player ) /*0x731bad*/
     v7 = *((_DWORD *)HouseClass_Player + 22549); /*0x731baf*/
-  return (wchar_t *)MessageListClass::AddMessage(MEMORY[0xA8BC60], 0, 0, v6, v7, 16454, 240, 1); /*0x731b43*/
+  return (wchar_t *)MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, v6, v7, 16454, 240, 1); /*0x731b43*/
 }
 }
 } // namespace gamemd

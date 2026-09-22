@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x42EE30
 namespace gamemd {
@@ -64,7 +65,7 @@ LABEL_24:
               {
 LABEL_34:
                 ObjectPtr::RegisterForTracking( /*0x42f044*/
-                  (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+                  (SwizzleManagerClass *)&stru_B05488[27784],
                   (MouseClass *)&aP0[7].Items);
               }
               else

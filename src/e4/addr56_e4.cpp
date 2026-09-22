@@ -9,6 +9,13 @@
 #include "e4/classes/E4Recv_56B250_e4.hpp"
 #include "e4/classes/E4Recv_56DB70_e4.hpp"
 #include "e4/classes/E4Recv_56E890_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Display_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Mission_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
 
 // 0x560BF0
 namespace gamemd {
@@ -48,71 +55,71 @@ char __fastcall ChangeVideoMode(ObjectClass *xRight, int yBottom)
   _DWORD v33[4]; // [esp+6Ch] [ebp-10h] BYREF
 
   Debug::Log(); /*0x560c00*/
-  lParam = *(_QWORD *)&stru_89E138.__pad_14B0[2748]; /*0x560c13*/
+  lParam = *(_QWORD *)&stru_89E138[8044]; /*0x560c13*/
   GetBitShift_Green(); /*0x560c1b*/
   BitShift_Red = GetBitShift_Red(); /*0x560c27*/
   aP0 = (ObjectClass *)GetBitMask_Blue(); /*0x560c30*/
   BitMask_Green = GetBitMask_Green(); /*0x560c39*/
   BitMask_Red = GetBitMask_Red(); /*0x560c42*/
   aP3 = (ObjectClass *)GetBitShift_Blue(); /*0x560c51*/
-  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[23344] + 12))(*(_DWORD *)&stru_87C374.__pad_579C[23344]); /*0x560c57*/
+  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[45772] + 12))(*(_DWORD *)&stru_87C374[45772]); /*0x560c57*/
   DDraw::WaitForIdle(); /*0x560c5a*/
-  if ( stru_89E138.__pad_14B0[912] == 1 ) /*0x560c66*/
+  if ( stru_89E138[6208] == 1 ) /*0x560c66*/
   {
-    *(_DWORD *)&stru_87C374.__pad_579C[21664] = 0; /*0x560c73*/
-    *(_DWORD *)&stru_87C374.__pad_579C[21668] = 0; /*0x560c78*/
-    *(_DWORD *)&stru_87C374.__pad_579C[21672] = xRight; /*0x560c7e*/
-    *(_DWORD *)&stru_87C374.__pad_579C[21676] = yBottom; /*0x560c84*/
-    *(_DWORD *)&stru_89E138.__pad_14B0[2748] = xRight; /*0x560c8a*/
-    *(_DWORD *)&stru_89E138.__pad_14B0[2752] = yBottom; /*0x560c90*/
+    *(_DWORD *)&stru_87C374[44092] = 0; /*0x560c73*/
+    *(_DWORD *)&stru_87C374[44096] = 0; /*0x560c78*/
+    *(_DWORD *)&stru_87C374[44100] = xRight; /*0x560c7e*/
+    *(_DWORD *)&stru_87C374[44104] = yBottom; /*0x560c84*/
+    *(_DWORD *)&stru_89E138[8044] = xRight; /*0x560c8a*/
+    *(_DWORD *)&stru_89E138[8048] = yBottom; /*0x560c90*/
     Debug::Log(); /*0x560c96*/
 LABEL_19:
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[22528] ) /*0x560e07*/
+    if ( *(_DWORD *)&stru_87C374[44956] ) /*0x560e07*/
     {
       Debug::Log(); /*0x560e0e*/
-      if ( *(_DWORD *)&stru_87C374.__pad_579C[22528] ) /*0x560e1e*/
-        (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[22528])( /*0x560e24*/
-          *(_DWORD *)&stru_87C374.__pad_579C[22528],
+      if ( *(_DWORD *)&stru_87C374[44956] ) /*0x560e1e*/
+        (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[44956])( /*0x560e24*/
+          *(_DWORD *)&stru_87C374[44956],
           1);
-      *(_DWORD *)&stru_87C374.__pad_579C[22528] = 0; /*0x560e26*/
+      *(_DWORD *)&stru_87C374[44956] = 0; /*0x560e26*/
     }
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[22524] ) /*0x560e32*/
+    if ( *(_DWORD *)&stru_87C374[44952] ) /*0x560e32*/
     {
       Debug::Log(); /*0x560e39*/
-      if ( *(_DWORD *)&stru_87C374.__pad_579C[22524] ) /*0x560e49*/
-        (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[22524])( /*0x560e4f*/
-          *(_DWORD *)&stru_87C374.__pad_579C[22524],
+      if ( *(_DWORD *)&stru_87C374[44952] ) /*0x560e49*/
+        (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[44952])( /*0x560e4f*/
+          *(_DWORD *)&stru_87C374[44952],
           1);
-      *(_DWORD *)&stru_87C374.__pad_579C[22524] = 0; /*0x560e51*/
+      *(_DWORD *)&stru_87C374[44952] = 0; /*0x560e51*/
     }
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[22508] ) /*0x560e5d*/
+    if ( *(_DWORD *)&stru_87C374[44936] ) /*0x560e5d*/
     {
       Debug::Log(); /*0x560e64*/
-      if ( *(_DWORD *)&stru_87C374.__pad_579C[22508] ) /*0x560e74*/
-        (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[22508])( /*0x560e7a*/
-          *(_DWORD *)&stru_87C374.__pad_579C[22508],
+      if ( *(_DWORD *)&stru_87C374[44936] ) /*0x560e74*/
+        (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[44936])( /*0x560e7a*/
+          *(_DWORD *)&stru_87C374[44936],
           1);
-      *(_DWORD *)&stru_87C374.__pad_579C[22508] = 0; /*0x560e7c*/
+      *(_DWORD *)&stru_87C374[44936] = 0; /*0x560e7c*/
     }
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[22512] ) /*0x560e88*/
+    if ( *(_DWORD *)&stru_87C374[44940] ) /*0x560e88*/
     {
       Debug::Log(); /*0x560e8f*/
-      if ( *(_DWORD *)&stru_87C374.__pad_579C[22512] ) /*0x560e9f*/
-        (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[22512])( /*0x560ea5*/
-          *(_DWORD *)&stru_87C374.__pad_579C[22512],
+      if ( *(_DWORD *)&stru_87C374[44940] ) /*0x560e9f*/
+        (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[44940])( /*0x560ea5*/
+          *(_DWORD *)&stru_87C374[44940],
           1);
-      *(_DWORD *)&stru_87C374.__pad_579C[22512] = 0; /*0x560ea7*/
+      *(_DWORD *)&stru_87C374[44940] = 0; /*0x560ea7*/
     }
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[22540] ) /*0x560eb3*/
+    if ( *(_DWORD *)&stru_87C374[44968] ) /*0x560eb3*/
     {
       Debug::Log(); /*0x560eba*/
-      if ( *(_DWORD *)&stru_87C374.__pad_579C[22540] ) /*0x560eca*/
-        (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[22540])( /*0x560ed0*/
-          *(_DWORD *)&stru_87C374.__pad_579C[22540],
+      if ( *(_DWORD *)&stru_87C374[44968] ) /*0x560eca*/
+        (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[44968])( /*0x560ed0*/
+          *(_DWORD *)&stru_87C374[44968],
           1);
-      *(_DWORD *)&stru_87C374.__pad_579C[22540] = 0; /*0x560ed2*/
+      *(_DWORD *)&stru_87C374[44968] = 0; /*0x560ed2*/
     }
-    if ( stru_89E138.__pad_14B0[912] ) /*0x560ee6*/
+    if ( stru_89E138[6208] ) /*0x560ee6*/
     {
       Debug::Log(); /*0x560f1f*/
       SetRect(&rc, 0, 0, (int)xRight, yBottom); /*0x560f30*/
@@ -127,7 +134,7 @@ LABEL_19:
       Debug::Log(); /*0x560ee8*/
       SetWindowPos(g_hWnd, 0, 0, 0, (int)xRight, yBottom, 2u); /*0x560efe*/
       Debug::Log(); /*0x560f09*/
-      *(_DWORD *)&stru_87C374.__pad_579C[22520] = DSurface::CreatePrimary(0); /*0x560f18*/
+      *(_DWORD *)&stru_87C374[44948] = DSurface::CreatePrimary(0); /*0x560f18*/
     }
     Viewport = (ObjectClass *)Display::GetViewport(v32); /*0x560fa1*/
     rc.left = 0; /*0x560fa3*/
@@ -145,120 +152,120 @@ LABEL_19:
     v13 = *(_DWORD *)&Viewport->__pad_0[12]; /*0x560fda*/
     v32[2] = v12; /*0x560fdd*/
     v33[3] = v13; /*0x560fe1*/
-    rc.bottom = *(_DWORD *)&stru_87C374.__pad_579C[21676]; /*0x560feb*/
-    v31[3] = *(_DWORD *)&stru_87C374.__pad_579C[21676]; /*0x560fef*/
-    v32[3] = *(_DWORD *)&stru_87C374.__pad_579C[21676]; /*0x560ff3*/
+    rc.bottom = *(_DWORD *)&stru_87C374[44104]; /*0x560feb*/
+    v31[3] = *(_DWORD *)&stru_87C374[44104]; /*0x560fef*/
+    v32[3] = *(_DWORD *)&stru_87C374[44104]; /*0x560ff3*/
     v32[0] = 0; /*0x561006*/
     v32[1] = 0; /*0x56100a*/
     AllocateSurfaceScreenSurfaces( /*0x56100e*/
-      (int)&stru_87C374.__pad_579C[21664],
+      (int)&stru_87C374[44092],
       (ObjectClass *)v32,
       (ObjectClass *)v31,
       (int)&rc,
       0);
-    *(_DWORD *)&stru_87C374.__pad_579C[22532] = *(_DWORD *)&stru_87C374.__pad_579C[22524]; /*0x56101e*/
+    *(_DWORD *)&stru_87C374[44960] = *(_DWORD *)&stru_87C374[44952]; /*0x56101e*/
     Debug::Log(); /*0x561024*/
     sub_491100(aP0, BitMask_Green, BitMask_Red, aP3, v20, v21, v22); /*0x561046*/
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[23344] ) /*0x561053*/
+    if ( *(_DWORD *)&stru_87C374[45772] ) /*0x561053*/
     {
-      MouseClass::CalcConfiningRect(*(HWND **)&stru_87C374.__pad_579C[23344]); /*0x5610dd*/
+      MouseClass::CalcConfiningRect(*(HWND **)&stru_87C374[45772]); /*0x5610dd*/
     }
     else
     {
       v14 = (_DWORD *)__2_YAPAXI_Z(0x98u); /*0x56105e*/
       if ( v14 ) /*0x561068*/
-        *(_DWORD *)&stru_87C374.__pad_579C[23344] = MouseClass::Construct( /*0x56107f*/
+        *(_DWORD *)&stru_87C374[45772] = MouseClass::Construct( /*0x56107f*/
                                                       v14,
-                                                      *(ObjectClass **)&stru_87C374.__pad_579C[22520],
+                                                      *(ObjectClass **)&stru_87C374[44948],
                                                       (IUnknown *)g_hWnd);
       else
-        *(_DWORD *)&stru_87C374.__pad_579C[23344] = 0; /*0x561086*/
+        *(_DWORD *)&stru_87C374[45772] = 0; /*0x561086*/
       LOBYTE(v15) = 0; /*0x56108c*/
-      eax46 = SearchMIXFile(g_Str_File_MOUSE_SHA.__pad_0, v15); /*0x561093*/
+      eax46 = SearchMIXFile(g_Str_File_MOUSE_SHA[0], v15); /*0x561093*/
       if ( eax46 ) /*0x56109a*/
       {
         BitShift_Red = 0; /*0x56109f*/
         v28 = 0; /*0x5610aa*/
-        (*(void (__thiscall **)(_DWORD, int *, int, _DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[23344] + 4))( /*0x5610b5*/
-          *(_DWORD *)&stru_87C374.__pad_579C[23344],
+        (*(void (__thiscall **)(_DWORD, int *, int, _DWORD))(**(_DWORD **)&stru_87C374[45772] + 4))( /*0x5610b5*/
+          *(_DWORD *)&stru_87C374[45772],
           &BitShift_Red,
           eax46,
           0);
       }
-      Mission::SetAndCall((int *)&stru_87C374.__pad_14B0[8132], 0, 0); /*0x5610bf*/
-      Mouse::SetCursor((int)&stru_87C374.__pad_14B0[8132], 0, 0); /*0x5610cb*/
-      (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[23344] + 16))(*(_DWORD *)&stru_87C374.__pad_579C[23344]); /*0x5610d8*/
+      Mission::SetAndCall((int *)&stru_87C374[13428], 0, 0); /*0x5610bf*/
+      Mouse::SetCursor((int)&stru_87C374[13428], 0, 0); /*0x5610cb*/
+      (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[45772] + 16))(*(_DWORD *)&stru_87C374[45772]); /*0x5610d8*/
     }
     TacticalClass::SetViewDimensions((MouseClass *)v33); /*0x5610ec*/
-    ChangeVideoMode_Setup(*(int *)&stru_89E138.__pad_14B0[2748], *(int *)&stru_89E138.__pad_14B0[2752]); /*0x5610fd*/
-    SidebarClass::InitButtons(&stru_87C374.__pad_14B0[8132]); /*0x561107*/
-    TacticalClass::BuildCommandBar(&stru_87C374.__pad_14B0[8132], (int)xRight, 1); /*0x561113*/
+    ChangeVideoMode_Setup(*(int *)&stru_89E138[8044], *(int *)&stru_89E138[8048]); /*0x5610fd*/
+    SidebarClass::InitButtons(&stru_87C374[13428]); /*0x561107*/
+    TacticalClass::BuildCommandBar(&stru_87C374[13428], (int)xRight, 1); /*0x561113*/
     SidebarClass::LoadResources(); /*0x56111d*/
-    MapClass::MarkForRedraw(&stru_87C374.__pad_14B0[8132], 2); /*0x561129*/
+    MapClass::MarkForRedraw(&stru_87C374[13428], 2); /*0x561129*/
     for ( i = (MouseClass *)Dialog::GetCurrent(); i; i = (MouseClass *)Dialog::FindByPtr(i) ) /*0x561137*/
     {
       DestroyDialog(i); /*0x56113b*/
       ResizeDialogAndEnum((SkirmishDialog *)i); /*0x561146*/
     }
-    (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[23344] + 16))(*(_DWORD *)&stru_87C374.__pad_579C[23344]); /*0x561160*/
+    (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[45772] + 16))(*(_DWORD *)&stru_87C374[45772]); /*0x561160*/
     Debug::Log(); /*0x561168*/
     return 1; /*0x561170*/
   }
-  if ( *(_DWORD *)&stru_87C374.__pad_579C[23344] ) /*0x560cac*/
+  if ( *(_DWORD *)&stru_87C374[45772] ) /*0x560cac*/
   {
     Debug::Log(); /*0x560cb3*/
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[23344] ) /*0x560cc3*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[23344])( /*0x560cc9*/
-        *(_DWORD *)&stru_87C374.__pad_579C[23344],
+    if ( *(_DWORD *)&stru_87C374[45772] ) /*0x560cc3*/
+      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[45772])( /*0x560cc9*/
+        *(_DWORD *)&stru_87C374[45772],
         1);
-    *(_DWORD *)&stru_87C374.__pad_579C[23344] = 0; /*0x560ccb*/
+    *(_DWORD *)&stru_87C374[45772] = 0; /*0x560ccb*/
   }
-  if ( *(_DWORD *)&stru_87C374.__pad_579C[22520] ) /*0x560cd7*/
+  if ( *(_DWORD *)&stru_87C374[44948] ) /*0x560cd7*/
   {
     Debug::Log(); /*0x560cde*/
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[22520] ) /*0x560cee*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[22520])( /*0x560cf4*/
-        *(_DWORD *)&stru_87C374.__pad_579C[22520],
+    if ( *(_DWORD *)&stru_87C374[44948] ) /*0x560cee*/
+      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[44948])( /*0x560cf4*/
+        *(_DWORD *)&stru_87C374[44948],
         1);
-    *(_DWORD *)&stru_87C374.__pad_579C[22520] = 0; /*0x560cf6*/
+    *(_DWORD *)&stru_87C374[44948] = 0; /*0x560cf6*/
   }
   if ( InitializeDDraw((int)g_hWnd, xRight, yBottom, 0x10u) ) /*0x560d07*/
   {
     Debug::Log(); /*0x560dd4*/
-    *(_DWORD *)&stru_87C374.__pad_579C[21664] = 0; /*0x560de2*/
-    *(_DWORD *)&stru_87C374.__pad_579C[21668] = 0; /*0x560de7*/
-    *(_DWORD *)&stru_87C374.__pad_579C[21672] = xRight; /*0x560ded*/
-    *(_DWORD *)&stru_87C374.__pad_579C[21676] = yBottom; /*0x560df3*/
+    *(_DWORD *)&stru_87C374[44092] = 0; /*0x560de2*/
+    *(_DWORD *)&stru_87C374[44096] = 0; /*0x560de7*/
+    *(_DWORD *)&stru_87C374[44100] = xRight; /*0x560ded*/
+    *(_DWORD *)&stru_87C374[44104] = yBottom; /*0x560df3*/
     Debug::Log(); /*0x560df9*/
     goto LABEL_19; /*0x560df9*/
   }
   Debug::Log(); /*0x560d19*/
   Debug::Log(); /*0x560d23*/
-  *(_DWORD *)&stru_87C374.__pad_579C[22520] = DSurface::CreatePrimary(0); /*0x560d32*/
+  *(_DWORD *)&stru_87C374[44948] = DSurface::CreatePrimary(0); /*0x560d32*/
   Debug::Log(); /*0x560d3c*/
   v4 = (_DWORD *)__2_YAPAXI_Z(0x98u); /*0x560d46*/
   if ( v4 ) /*0x560d50*/
-    *(_DWORD *)&stru_87C374.__pad_579C[23344] = MouseClass::Construct( /*0x560d67*/
+    *(_DWORD *)&stru_87C374[45772] = MouseClass::Construct( /*0x560d67*/
                                                   v4,
-                                                  *(ObjectClass **)&stru_87C374.__pad_579C[22520],
+                                                  *(ObjectClass **)&stru_87C374[44948],
                                                   (IUnknown *)g_hWnd);
   else
-    *(_DWORD *)&stru_87C374.__pad_579C[23344] = 0; /*0x560d6e*/
+    *(_DWORD *)&stru_87C374[45772] = 0; /*0x560d6e*/
   LOBYTE(v5) = 0; /*0x560d74*/
-  v6 = SearchMIXFile(g_Str_File_MOUSE_SHA.__pad_0, v5); /*0x560d7b*/
+  v6 = SearchMIXFile(g_Str_File_MOUSE_SHA[0], v5); /*0x560d7b*/
   if ( v6 ) /*0x560d82*/
   {
     BitShift_Red = 0; /*0x560d88*/
     v28 = 0; /*0x560d94*/
-    (*(void (__thiscall **)(_DWORD, int *, int, _DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[23344] + 4))( /*0x560d9f*/
-      *(_DWORD *)&stru_87C374.__pad_579C[23344],
+    (*(void (__thiscall **)(_DWORD, int *, int, _DWORD))(**(_DWORD **)&stru_87C374[45772] + 4))( /*0x560d9f*/
+      *(_DWORD *)&stru_87C374[45772],
       &BitShift_Red,
       v6,
       0);
   }
-  Mission::SetAndCall((int *)&stru_87C374.__pad_14B0[8132], 0, 0); /*0x560da9*/
-  Mouse::SetCursor((int)&stru_87C374.__pad_14B0[8132], 0, 0); /*0x560db5*/
-  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[23344] + 16))(*(_DWORD *)&stru_87C374.__pad_579C[23344]); /*0x560dc2*/
+  Mission::SetAndCall((int *)&stru_87C374[13428], 0, 0); /*0x560da9*/
+  Mouse::SetCursor((int)&stru_87C374[13428], 0, 0); /*0x560db5*/
+  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[45772] + 16))(*(_DWORD *)&stru_87C374[45772]); /*0x560dc2*/
   return 0; /*0x560dc7*/
 }
 }
@@ -334,7 +341,7 @@ int __stdcall VideoSettingsDialogProc(INIClass *aP0, unsigned int a2, WPARAM wPa
     }
     v18 = GetDlgItem((HWND)aP0, 1652); /*0x561698*/
     if ( v18 ) /*0x5616a1*/
-      HouseClass_Player.__pad_5568[22752] = SendMessageA(v18, 0xF0u, 0, 0) == 1; /*0x5616b4*/
+      HouseClass_Player[44616] = SendMessageA(v18, 0xF0u, 0, 0) == 1; /*0x5616b4*/
     __3_YAXPAX_Z(dword_ABCF5C); /*0x5616c1*/
     dword_ABCF5C = 0; /*0x5616c6*/
     *WindowLongA = 1; /*0x5616d3*/
@@ -343,7 +350,7 @@ int __stdcall VideoSettingsDialogProc(INIClass *aP0, unsigned int a2, WPARAM wPa
   if ( a2 != 1175 ) /*0x561447*/
     return 0; /*0x561447*/
   v6 = GetDlgItem((HWND)aP0, 1497); /*0x561459*/
-  if ( HouseClass_Player.__pad_5568[22753] ) /*0x561464*/
+  if ( HouseClass_Player[44617] ) /*0x561464*/
     v7 = sub_4A4900(0x280u, 0x1E0u, 0x1000u, 0x1000u, 16); /*0x561470*/
   else
     v7 = sub_4A4900(0x280u, 0x1E0u, 0x400u, 0x300u, 16); /*0x561486*/
@@ -359,7 +366,7 @@ int __stdcall VideoSettingsDialogProc(INIClass *aP0, unsigned int a2, WPARAM wPa
       v10 = *v9; /*0x5614b3*/
       v11 = v9[1]; /*0x5614b6*/
       v9 += 2; /*0x5614c2*/
-      if ( HouseClass_Player.__pad_5568[22753] /*0x5614dc*/
+      if ( HouseClass_Player[44617] /*0x5614dc*/
         || v10 == (INIClass *)640
         || v10 == (INIClass *)800
         || v10 == (INIClass *)1024 )
@@ -382,9 +389,9 @@ int __stdcall VideoSettingsDialogProc(INIClass *aP0, unsigned int a2, WPARAM wPa
   v13 = GetDlgItem((HWND)aP0, 1652); /*0x561567*/
   if ( !v13 ) /*0x56156b*/
     return 0; /*0x56156b*/
-  v14 = HouseClass_Player.__pad_5568[22752] == 1 && stru_89E138.__pad_14B0[6150] == 1; /*0x561581*/
+  v14 = HouseClass_Player[44616] == 1 && stru_89E138[11446] == 1; /*0x561581*/
   SendMessageA(v13, 0xF1u, v14, 0); /*0x561597*/
-  EnableWindow(v13, (unsigned __int8)stru_89E138.__pad_14B0[6150]); /*0x5615a3*/
+  EnableWindow(v13, (unsigned __int8)stru_89E138[11446]); /*0x5615a3*/
   return 0; /*0x5615aa*/
 }
 }
@@ -1057,12 +1064,12 @@ char globalHelper_06ED40(IUnknown * aP0, int a2)
     unsigned char v6;
     int v7;
     v2 = a2 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    v3 = *(short *)&DataGlobal_89E138[5296][4 * v2 + 160];
+    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138[5296][4 * v2 + 162];
     LOWORD(a2) = LOWORD(aP0->field_0) + v3;
     HIWORD(a2) = v2;
     v4 = (short)a2 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v4)) == 0 )
   {
     g_Map_GlobalCellIndex = (IUnknown *)a2;
     v5 = g_CellClassArray;
@@ -1109,12 +1116,12 @@ char globalHelper_06EE40(IUnknown * aP0, int a2)
     unsigned char v6;
     int v7;
     v2 = a2 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    v3 = *(short *)&DataGlobal_89E138[5296][4 * v2 + 160];
+    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138[5296][4 * v2 + 162];
     LOWORD(a2) = LOWORD(aP0->field_0) + v3;
     HIWORD(a2) = v2;
     v4 = (short)a2 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v4)) == 0 )
   {
     g_Map_GlobalCellIndex = (IUnknown *)a2;
     v5 = g_CellClassArray;
@@ -1161,12 +1168,12 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
     unsigned char v6;
     int v7;
     v2 = (unsigned char)aP1 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    v3 = *(short *)&DataGlobal_89E138[5296][4 * v2 + 160];
+    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138[5296][4 * v2 + 162];
     LOWORD(aP1) = LOWORD(aP0->field_0) + v3;
     HIWORD(aP1) = v2;
     v4 = (short)aP1 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v4)) == 0 )
   {
     g_Map_GlobalCellIndex = aP1;
     v5 = g_CellClassArray;

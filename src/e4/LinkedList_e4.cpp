@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x4791F0
 char LinkedList::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
@@ -43,68 +46,68 @@ char LinkedList::LoadScenarioMixFiles(INIClass *aP0, int aP2, int a3, int a4)
     v5[1] = (CD)v6; /*0x479227*/
   }
   Theme::Stop(&g_BuildingTypeClass_Count, 0); /*0x479232*/
-  if ( *(_DWORD *)&stru_87C374.__pad_579C[13084] ) /*0x47923e*/
+  if ( *(_DWORD *)&stru_87C374[35512] ) /*0x47923e*/
   {
     Debug::Log(); /*0x479249*/
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[13084] ) /*0x479259*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[13084])( /*0x47925f*/
-        *(_DWORD *)&stru_87C374.__pad_579C[13084],
+    if ( *(_DWORD *)&stru_87C374[35512] ) /*0x479259*/
+      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35512])( /*0x47925f*/
+        *(_DWORD *)&stru_87C374[35512],
         1);
-    *(_DWORD *)&stru_87C374.__pad_579C[13084] = 0; /*0x479261*/
+    *(_DWORD *)&stru_87C374[35512] = 0; /*0x479261*/
   }
-  if ( *(_DWORD *)&stru_87C374.__pad_14B0[3860] ) /*0x47926e*/
+  if ( *(_DWORD *)&stru_87C374[9156] ) /*0x47926e*/
   {
     Debug::Log(); /*0x479279*/
-    if ( *(_DWORD *)&stru_87C374.__pad_14B0[3860] ) /*0x479289*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_14B0[3860])( /*0x47928f*/
-        *(_DWORD *)&stru_87C374.__pad_14B0[3860],
+    if ( *(_DWORD *)&stru_87C374[9156] ) /*0x479289*/
+      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[9156])( /*0x47928f*/
+        *(_DWORD *)&stru_87C374[9156],
         1);
-    *(_DWORD *)&stru_87C374.__pad_14B0[3860] = 0; /*0x479291*/
+    *(_DWORD *)&stru_87C374[9156] = 0; /*0x479291*/
   }
-  if ( *(_DWORD *)&stru_87C374.__pad_579C[13004] ) /*0x47929e*/
+  if ( *(_DWORD *)&stru_87C374[35432] ) /*0x47929e*/
   {
     Debug::Log(); /*0x4792a9*/
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[13004] ) /*0x4792b9*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[13004])( /*0x4792bf*/
-        *(_DWORD *)&stru_87C374.__pad_579C[13004],
+    if ( *(_DWORD *)&stru_87C374[35432] ) /*0x4792b9*/
+      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35432])( /*0x4792bf*/
+        *(_DWORD *)&stru_87C374[35432],
         1);
-    *(_DWORD *)&stru_87C374.__pad_579C[13004] = 0; /*0x4792c1*/
+    *(_DWORD *)&stru_87C374[35432] = 0; /*0x4792c1*/
   }
-  if ( *(_DWORD *)&stru_87C374.__pad_579C[13000] ) /*0x4792ce*/
+  if ( *(_DWORD *)&stru_87C374[35428] ) /*0x4792ce*/
   {
     Debug::Log(); /*0x4792d9*/
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[13000] ) /*0x4792e9*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[13000])( /*0x4792ef*/
-        *(_DWORD *)&stru_87C374.__pad_579C[13000],
+    if ( *(_DWORD *)&stru_87C374[35428] ) /*0x4792e9*/
+      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35428])( /*0x4792ef*/
+        *(_DWORD *)&stru_87C374[35428],
         1);
-    *(_DWORD *)&stru_87C374.__pad_579C[13000] = 0; /*0x4792f1*/
+    *(_DWORD *)&stru_87C374[35428] = 0; /*0x4792f1*/
   }
-  if ( *(_DWORD *)&stru_87C374.__pad_579C[13140] ) /*0x4792fe*/
+  if ( *(_DWORD *)&stru_87C374[35568] ) /*0x4792fe*/
   {
     Debug::Log(); /*0x479309*/
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[13140] ) /*0x479319*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[13140])( /*0x47931f*/
-        *(_DWORD *)&stru_87C374.__pad_579C[13140],
+    if ( *(_DWORD *)&stru_87C374[35568] ) /*0x479319*/
+      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35568])( /*0x47931f*/
+        *(_DWORD *)&stru_87C374[35568],
         1);
-    *(_DWORD *)&stru_87C374.__pad_579C[13140] = 0; /*0x479321*/
+    *(_DWORD *)&stru_87C374[35568] = 0; /*0x479321*/
   }
-  if ( *(_DWORD *)&stru_87C374.__pad_579C[13136] ) /*0x47932e*/
+  if ( *(_DWORD *)&stru_87C374[35564] ) /*0x47932e*/
   {
     Debug::Log(); /*0x479339*/
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[13136] ) /*0x479349*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[13136])( /*0x47934f*/
-        *(_DWORD *)&stru_87C374.__pad_579C[13136],
+    if ( *(_DWORD *)&stru_87C374[35564] ) /*0x479349*/
+      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35564])( /*0x47934f*/
+        *(_DWORD *)&stru_87C374[35564],
         1);
-    *(_DWORD *)&stru_87C374.__pad_579C[13136] = 0; /*0x479351*/
+    *(_DWORD *)&stru_87C374[35564] = 0; /*0x479351*/
   }
-  if ( *(_DWORD *)&stru_87C374.__pad_579C[13092] ) /*0x47935e*/
+  if ( *(_DWORD *)&stru_87C374[35520] ) /*0x47935e*/
   {
     Debug::Log(); /*0x479369*/
-    if ( *(_DWORD *)&stru_87C374.__pad_579C[13092] ) /*0x479379*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374.__pad_579C[13092])( /*0x47937f*/
-        *(_DWORD *)&stru_87C374.__pad_579C[13092],
+    if ( *(_DWORD *)&stru_87C374[35520] ) /*0x479379*/
+      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35520])( /*0x47937f*/
+        *(_DWORD *)&stru_87C374[35520],
         1);
-    *(_DWORD *)&stru_87C374.__pad_579C[13092] = 0; /*0x479381*/
+    *(_DWORD *)&stru_87C374[35520] = 0; /*0x479381*/
   }
   if ( !Map_Load_751C30() ) /*0x479387*/
     return 1; /*0x47939b*/
@@ -113,56 +116,56 @@ char LinkedList::LoadScenarioMixFiles(INIClass *aP0, int aP2, int a3, int a4)
     v9 = MixFileClass::FromFile( /*0x4793b8*/
            v8,
            (MixFileClass *)stru_81C2C4.customSound_controller,
-           (int)&stru_87C374.__pad_579C[20080]);
+           (int)&stru_87C374[42508]);
   else
     v9 = 0; /*0x4793bf*/
-  *(_DWORD *)&stru_87C374.__pad_579C[13092] = v9; /*0x4793c1*/
+  *(_DWORD *)&stru_87C374[35520] = v9; /*0x4793c1*/
   Debug::Log(); /*0x4793cf*/
   v10 = (INIClass *)&aP0->__pad_0[1]; /*0x4793d4*/
-  sprintf(Buffer.__pad_0, (ObjectClass *)&stru_81C2C4.owningHouseIndex, (INIClass *)&aP0->__pad_0[1]); /*0x4793e7*/
+  sprintf(Buffer[0], (ObjectClass *)&stru_81C2C4.owningHouseIndex, (INIClass *)&aP0->__pad_0[1]); /*0x4793e7*/
   Debug::Log(); /*0x4793f6*/
   v11 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4793fd*/
   if ( v11 ) /*0x479407*/
-    *(_DWORD *)&stru_87C374.__pad_579C[13136] = MixFileClass::FromFile( /*0x47941a*/
+    *(_DWORD *)&stru_87C374[35564] = MixFileClass::FromFile( /*0x47941a*/
                                                   v11,
                                                   &Buffer,
-                                                  (int)&stru_87C374.__pad_579C[20080]);
+                                                  (int)&stru_87C374[42508]);
   else
-    *(_DWORD *)&stru_87C374.__pad_579C[13136] = 0; /*0x479421*/
-  sprintf(Buffer.__pad_0, &stru_81C2C4, v10); /*0x479432*/
+    *(_DWORD *)&stru_87C374[35564] = 0; /*0x479421*/
+  sprintf(Buffer[0], &stru_81C2C4, v10); /*0x479432*/
   Debug::Log(); /*0x479441*/
   v12 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x479448*/
   if ( !v12 ) /*0x479452*/
   {
-    *(_DWORD *)&stru_87C374.__pad_579C[13140] = 0; /*0x479489*/
+    *(_DWORD *)&stru_87C374[35568] = 0; /*0x479489*/
 LABEL_61:
     Debug::Log(); /*0x479664*/
     return 0; /*0x47967c*/
   }
-  *(_DWORD *)&stru_87C374.__pad_579C[13140] = MixFileClass::FromFile(v12, &Buffer, (int)&stru_87C374.__pad_579C[20080]); /*0x479467*/
-  if ( !*(_DWORD *)&stru_87C374.__pad_579C[13140] ) /*0x47946c*/
+  *(_DWORD *)&stru_87C374[35568] = MixFileClass::FromFile(v12, &Buffer, (int)&stru_87C374[42508]); /*0x479467*/
+  if ( !*(_DWORD *)&stru_87C374[35568] ) /*0x47946c*/
     goto LABEL_61; /*0x47946c*/
   Debug::Log(); /*0x479496*/
   v13 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x47949d*/
   if ( v13 ) /*0x4794a7*/
-    *(_DWORD *)&stru_87C374.__pad_579C[13000] = MixFileClass::FromFile( /*0x4794ba*/
+    *(_DWORD *)&stru_87C374[35428] = MixFileClass::FromFile( /*0x4794ba*/
                                                   v13,
                                                   (MixFileClass *)&stru_81C200.hasParachute,
-                                                  (int)&stru_87C374.__pad_579C[20080]);
+                                                  (int)&stru_87C374[42508]);
   else
-    *(_DWORD *)&stru_87C374.__pad_579C[13000] = 0; /*0x4794c1*/
+    *(_DWORD *)&stru_87C374[35428] = 0; /*0x4794c1*/
   Debug::Log(); /*0x4794cc*/
   v14 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4794d3*/
   if ( !v14 ) /*0x4794dd*/
   {
-    *(_DWORD *)&stru_87C374.__pad_579C[13004] = 0; /*0x479514*/
+    *(_DWORD *)&stru_87C374[35432] = 0; /*0x479514*/
     goto LABEL_61; /*0x47951a*/
   }
-  *(_DWORD *)&stru_87C374.__pad_579C[13004] = MixFileClass::FromFile( /*0x4794f2*/
+  *(_DWORD *)&stru_87C374[35432] = MixFileClass::FromFile( /*0x4794f2*/
                                                 v14,
                                                 (MixFileClass *)&stru_81C200.customSound_controller[2],
-                                                (int)&stru_87C374.__pad_579C[20080]);
-  if ( !*(_DWORD *)&stru_87C374.__pad_579C[13004] ) /*0x4794f7*/
+                                                (int)&stru_87C374[42508]);
+  if ( !*(_DWORD *)&stru_87C374[35432] ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
   v15 = CCFileClass::Construct(&v23, (char *)&stru_81C200.ambientSoundController[4]); /*0x479526*/
   v16 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v15->__pad_0 + 20))(v15, 0); /*0x47953f*/
@@ -177,10 +180,10 @@ LABEL_61:
     v17 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x479573*/
     if ( v17 ) /*0x47957d*/
     {
-      *(_DWORD *)&stru_87C374.__pad_14B0[3860] = MixFileClass::FromFile( /*0x479590*/
+      *(_DWORD *)&stru_87C374[9156] = MixFileClass::FromFile( /*0x479590*/
                                                    v17,
                                                    (MixFileClass *)&stru_81C200.ambientSoundController[4],
-                                                   (int)&stru_87C374.__pad_579C[20080]);
+                                                   (int)&stru_87C374[42508]);
       goto LABEL_58; /*0x479595*/
     }
   }
@@ -190,14 +193,14 @@ LABEL_61:
     v18 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x47959e*/
     if ( v18 ) /*0x4795a8*/
     {
-      *(_DWORD *)&stru_87C374.__pad_14B0[3860] = MixFileClass::FromFile( /*0x4795bb*/
+      *(_DWORD *)&stru_87C374[9156] = MixFileClass::FromFile( /*0x4795bb*/
                                                    v18,
                                                    (MixFileClass *)&stru_81C200.NeedsSaveOrLink,
-                                                   (int)&stru_87C374.__pad_579C[20080]);
+                                                   (int)&stru_87C374[42508]);
       goto LABEL_58; /*0x4795c0*/
     }
   }
-  *(_DWORD *)&stru_87C374.__pad_14B0[3860] = 0; /*0x4795c2*/
+  *(_DWORD *)&stru_87C374[9156] = 0; /*0x4795c2*/
 LABEL_58:
   Audio::LoadWAVFiles(&g_BuildingTypeClass_Count); /*0x4795c8*/
   sprintf((char *const)&Buffer.Previous, (ObjectClass *)&stru_81C200.uniqueId, (INIClass *)aP2); /*0x4795e4*/
@@ -215,17 +218,17 @@ LABEL_58:
     if ( v21 ) /*0x479648*/
       goto LABEL_60; /*0x479648*/
 LABEL_63:
-    *(_DWORD *)&stru_87C374.__pad_579C[13084] = 0; /*0x4796bf*/
+    *(_DWORD *)&stru_87C374[35512] = 0; /*0x4796bf*/
     goto LABEL_61; /*0x4796c5*/
   }
-  sprintf(Buffer.__pad_0, &stru_81C200, v10); /*0x479691*/
+  sprintf(Buffer[0], &stru_81C200, v10); /*0x479691*/
   Debug::Log(); /*0x4796a0*/
   v21 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4796a7*/
   if ( !v21 ) /*0x4796b1*/
     goto LABEL_63; /*0x4796b1*/
 LABEL_60:
-  *(_DWORD *)&stru_87C374.__pad_579C[13084] = MixFileClass::FromFile(v21, &Buffer, (int)&stru_87C374.__pad_579C[20080]); /*0x47964a*/
-  if ( !*(_DWORD *)&stru_87C374.__pad_579C[13084] ) /*0x479662*/
+  *(_DWORD *)&stru_87C374[35512] = MixFileClass::FromFile(v21, &Buffer, (int)&stru_87C374[42508]); /*0x47964a*/
+  if ( !*(_DWORD *)&stru_87C374[35512] ) /*0x479662*/
     goto LABEL_61; /*0x479662*/
   return Map_Load_751C30(); /*0x479390*/
 }

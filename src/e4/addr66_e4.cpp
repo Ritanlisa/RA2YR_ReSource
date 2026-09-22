@@ -17,6 +17,13 @@
 #include "e4/classes/E4Recv_663CD0_e4.hpp"
 #include "e4/classes/E4Recv_663DB0_e4.hpp"
 #include "e4/classes/E4Recv_664750_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Waypoint_e4.hpp"
 
 // 0x6613A0
 namespace gamemd {
@@ -337,21 +344,21 @@ char __stdcall UpdateBullets(int a1)
 
   v1 = *(ObjectClass **)(a1 + 8);
   v2 = *(_DWORD *)&v1[10].__pad_0[12];
-  if ( v2 == *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1248) )
+  if ( v2 == *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 1248) )
   {
-    v3 = (ObjectClass *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1200);
+    v3 = (ObjectClass *)(*(_DWORD *)&stru_87C374[44652] + 1200);
 LABEL_6:
     v113 = v3;
     v4 = (int)v3;
     goto LABEL_7;
   }
-  if ( v2 != *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1352) )
+  if ( v2 != *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 1352) )
   {
-    v3 = (ObjectClass *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1252);
+    v3 = (ObjectClass *)(*(_DWORD *)&stru_87C374[44652] + 1252);
     goto LABEL_6;
   }
-  v4 = *(_DWORD *)&stru_87C374.__pad_579C[22224] + 1304;
-  v113 = (ObjectClass *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1304);
+  v4 = *(_DWORD *)&stru_87C374[44652] + 1304;
+  v113 = (ObjectClass *)(*(_DWORD *)&stru_87C374[44652] + 1304);
 LABEL_7:
   switch ( *(_DWORD *)(a1 + 60) )
   {
@@ -361,7 +368,7 @@ LABEL_7:
       v5 = *(_DWORD *)(*(_DWORD *)(a1 + 8) + 724);
       v6 = v5 && VeterancyStruct::IsElite((float *)(v5 + 336));
       *(_BYTE *)(a1 + 77) = v6;
-      if ( *(_DWORD *)(v4 + 48) != *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1352) )
+      if ( *(_DWORD *)(v4 + 48) != *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 1352) )
       {
         *(_BYTE *)(a1 + 76) = 1;
 LABEL_23:
@@ -372,7 +379,7 @@ LABEL_23:
         eax24 = *(_DWORD *)(a1 + 40);
         if ( v13 != (IUnknown *)-1 )
         {
-          v14 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v13;
+          v14 = *(_DWORD *)&HouseClass_Player[45112] - (_DWORD)v13;
           if ( v14 >= eax24 )
             eax24 = 0;
           else
@@ -382,11 +389,11 @@ LABEL_23:
         {
 LABEL_29:
           v15 = v126;
-          v16 = -(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1352) != *(_DWORD *)(v4 + 48));
+          v16 = -(*(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 1352) != *(_DWORD *)(v4 + 48));
           LOBYTE(v16) = v16 & 0xFC;
           *(_DWORD *)(a1 + 60) = v16 + 6;
           v17 = *(_DWORD *)(v4 + 4);
-          *(_DWORD *)(a1 + 32) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+          *(_DWORD *)(a1 + 32) = *(_DWORD *)&HouseClass_Player[45112];
           *(_DWORD *)(a1 + 36) = v15;
           *(_DWORD *)(a1 + 40) = v17;
           *(_DWORD *)(a1 + 44) = v17;
@@ -397,9 +404,9 @@ LABEL_29:
       v8 = *(_DWORD *)(a1 + 56);
       if ( v7 == (IUnknown *)-1 )
         goto LABEL_16;
-      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (int)v7 >= v8 )
+      if ( *(_DWORD *)&HouseClass_Player[45112] - (int)v7 >= v8 )
         goto LABEL_17;
-      v8 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v7;
+      v8 -= *(_DWORD *)&HouseClass_Player[45112] - (_DWORD)v7;
 LABEL_16:
       if ( !v8 )
       {
@@ -408,10 +415,10 @@ LABEL_17:
         if ( v9 )
         {
           aP2 = *(CoordStruct *)(*(_DWORD *)(a1 + 8) + 156);
-          v11 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620.__pad_579C[15344]);
+          v11 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620[37772]);
           AnimClass::ctor(
             (void **)v9,
-            *(CoordStruct **)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * (_DWORD)v11),
+            *(CoordStruct **)(*(_DWORD *)&stru_89E138[90140] + 4 * (_DWORD)v11),
             &aP2,
             (CoordStruct *)2,
             (CoordStruct *)1,
@@ -420,7 +427,7 @@ LABEL_17:
             0);
         }
         edx19 = v126;
-        *(_DWORD *)(a1 + 48) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+        *(_DWORD *)(a1 + 48) = *(_DWORD *)&HouseClass_Player[45112];
         *(_DWORD *)(a1 + 52) = edx19;
         *(_DWORD *)(a1 + 56) = 24;
       }
@@ -445,10 +452,10 @@ LABEL_17:
       v39 = *(_DWORD *)(a1 + 40);
       if ( v40 != (IUnknown *)-1 )
       {
-        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (int)v40 >= v39 )
+        if ( *(_DWORD *)&HouseClass_Player[45112] - (int)v40 >= v39 )
           v39 = 0;
         else
-          v39 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v40;
+          v39 -= *(_DWORD *)&HouseClass_Player[45112] - (_DWORD)v40;
       }
       LODWORD(desiredFacing_4) = LODWORD(var84_4) - v39;
       if ( (double)(LODWORD(var84_4) - v39) / (double)SLODWORD(var84_4) != 1.0 )
@@ -462,10 +469,10 @@ LABEL_17:
           v49 = *(_DWORD *)(a1 + 40);
           if ( v51 != (IUnknown *)-1 )
           {
-            if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (int)v51 >= v49 )
+            if ( *(_DWORD *)&HouseClass_Player[45112] - (int)v51 >= v49 )
               v49 = 0;
             else
-              v49 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v51;
+              v49 -= *(_DWORD *)&HouseClass_Player[45112] - (_DWORD)v51;
           }
           LODWORD(var64_4) = LODWORD(desiredFacing_4) - v49;
           v47 = (double)(LODWORD(desiredFacing_4) - v49) / (double)SLODWORD(desiredFacing_4);
@@ -485,15 +492,15 @@ LABEL_63:
                            *(_DWORD *)(a1 + 8),
                            v128);
         if ( *eax63 == word_B04E18 && eax63[1] == word_B04E1A )
-          GadgetGrid::InsertItem(&stru_87C374.__pad_579C[23928], *(ObjectClass **)(a1 + 8));
+          GadgetGrid::InsertItem(&stru_87C374[46356], *(ObjectClass **)(a1 + 8));
         v43 = (AnimClass *)__2_YAPAXI_Z(0x1C8u);
         if ( v43 )
         {
           v129 = *(CoordStruct *)(*(_DWORD *)(a1 + 8) + 156);
-          v45 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620.__pad_579C[15344]);
+          v45 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620[37772]);
           AnimClass::ctor(
             (void **)v43,
-            *(CoordStruct **)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * (_DWORD)v45),
+            *(CoordStruct **)(*(_DWORD *)&stru_89E138[90140] + 4 * (_DWORD)v45),
             &v129,
             (CoordStruct *)2,
             (CoordStruct *)1,
@@ -633,9 +640,9 @@ LABEL_111:
       v95 = *(_DWORD *)(a1 + 56);
       if ( v94 == (IUnknown *)-1 )
         goto LABEL_115;
-      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (int)v94 >= v95 )
+      if ( *(_DWORD *)&HouseClass_Player[45112] - (int)v94 >= v95 )
         goto LABEL_116;
-      v95 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v94;
+      v95 -= *(_DWORD *)&HouseClass_Player[45112] - (_DWORD)v94;
 LABEL_115:
       if ( !v95 )
       {
@@ -644,10 +651,10 @@ LABEL_116:
         if ( v96 )
         {
           v124 = *(CoordStruct *)(*(_DWORD *)(a1 + 8) + 156);
-          v98 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620.__pad_579C[15348]);
+          v98 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620[37776]);
           AnimClass::ctor(
             (void **)v96,
-            *(CoordStruct **)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * (_DWORD)v98),
+            *(CoordStruct **)(*(_DWORD *)&stru_89E138[90140] + 4 * (_DWORD)v98),
             &v124,
             0,
             (CoordStruct *)1,
@@ -656,7 +663,7 @@ LABEL_116:
             0);
         }
         edx118 = v126;
-        *(_DWORD *)(a1 + 48) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+        *(_DWORD *)(a1 + 48) = *(_DWORD *)&HouseClass_Player[45112];
         *(_DWORD *)(a1 + 52) = edx118;
         *(_DWORD *)(a1 + 56) = 3;
       }
@@ -695,7 +702,7 @@ LABEL_119:
         LOWORD(v116) = v106 / 256;
         HIWORD(v116) = v129.Y / 256;
         desiredFacing = v116;
-        if ( LayerClass::CoordinatesLegal(&stru_87C374.__pad_14B0[8132], (IUnknown *)&desiredFacing) )
+        if ( LayerClass::CoordinatesLegal(&stru_87C374[13428], (IUnknown *)&desiredFacing) )
           (*(void (__thiscall **)(_DWORD, CoordStruct *))(**(_DWORD **)(a1 + 8) + 436))(*(_DWORD *)(a1 + 8), &v124);
         v108 = (VectorClass **)(*(int (__thiscall **)(_DWORD, IUnknown **))(**(_DWORD **)(a1 + 8) + 440))(
                                  *(_DWORD *)(a1 + 8),
@@ -707,7 +714,7 @@ LABEL_119:
         {
           if ( v111->isAliveFlag )
             Coord::ToGridIndex(
-              &stru_87C374.__pad_579C[23928],
+              &stru_87C374[46356],
               (VectorClass *)v111,
               *(VectorClass **)v111[8].__pad_0,
               v110);
@@ -751,14 +758,14 @@ LABEL_119:
       v19 = objectTypeFlags && VeterancyStruct::IsElite((float *)(objectTypeFlags + 336));
       v21 = (IUnknown *)(a1 + 48);
       *(_BYTE *)(a1 + 77) = v19;
-      v22 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+      v22 = *(IUnknown **)&HouseClass_Player[45112];
       edx34 = *(_DWORD *)(a1 + 48);
       v23 = *(_DWORD *)(a1 + 56);
       if ( edx34 == -1 )
         goto LABEL_37;
-      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - edx34 >= v23 )
+      if ( *(_DWORD *)&HouseClass_Player[45112] - edx34 >= v23 )
         goto LABEL_38;
-      v23 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - edx34;
+      v23 -= *(_DWORD *)&HouseClass_Player[45112] - edx34;
 LABEL_37:
       if ( !v23 )
       {
@@ -767,10 +774,10 @@ LABEL_38:
         if ( v25 )
         {
           v131 = *(CoordStruct *)(*(_DWORD *)(a1 + 8) + 156);
-          v27 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620.__pad_579C[15344]);
+          v27 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620[37772]);
           AnimClass::ctor(
             (void **)v25,
-            *(CoordStruct **)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * (_DWORD)v27),
+            *(CoordStruct **)(*(_DWORD *)&stru_89E138[90140] + 4 * (_DWORD)v27),
             &v131,
             (CoordStruct *)2,
             (CoordStruct *)1,
@@ -778,10 +785,10 @@ LABEL_38:
             (void *)0xFFFFFFF6,
             0);
         }
-        v21->field_0 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+        v21->field_0 = *(_DWORD *)&HouseClass_Player[45112];
         *(_DWORD *)(a1 + 52) = v126;
         *(_DWORD *)(a1 + 56) = 24;
-        v22 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+        v22 = *(IUnknown **)&HouseClass_Player[45112];
       }
       v26 = *(_DWORD *)(a1 + 8) + 156;
       LODWORD(var74_4) = *(_DWORD *)v26;
@@ -809,7 +816,7 @@ LABEL_38:
         LOWORD(v115) = SLODWORD(var74_4) / 256;
         HIWORD(v115) = SHIDWORD(var74_4) / 256;
         LODWORD(var64_4) = v115;
-        if ( LayerClass::CoordinatesLegal(&stru_87C374.__pad_14B0[8132], (IUnknown *)&var64_4) )
+        if ( LayerClass::CoordinatesLegal(&stru_87C374[13428], (IUnknown *)&var64_4) )
           (*(void (__thiscall **)(_DWORD, double *))(**(_DWORD **)(a1 + 8) + 436))(*(_DWORD *)(a1 + 8), &var74_4);
       }
       else
@@ -827,10 +834,10 @@ LABEL_47:
           v130[2] = v35->location[2];
           v34 = (*(int (__thiscall **)(ObjectClass *))(*(_DWORD *)v35->__pad_0 + 132))(v35);
           StartAudioControllerAt(*(AudioController **)(v34 + 1324), (int)v130, 0);
-          GadgetGrid::InsertItem(&stru_87C374.__pad_579C[23928], *(ObjectClass **)(a1 + 8));
+          GadgetGrid::InsertItem(&stru_87C374[46356], *(ObjectClass **)(a1 + 8));
         }
         edx50 = v126;
-        v21->field_0 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+        v21->field_0 = *(_DWORD *)&HouseClass_Player[45112];
         *(_DWORD *)(a1 + 52) = edx50;
         *(_DWORD *)(a1 + 56) = 0;
         *(_DWORD *)(a1 + 60) = 3;
@@ -884,46 +891,46 @@ bool __thiscall LaunchMultiplayerHost(int this, unsigned __int8 *a2)
     return 0; /*0x663e07*/
   if ( a2 ) /*0x663e15*/
   {
-    sprintf(CommandLine, MEMORY[0x839B84], *a2, a2[1], a2[2], a2[3]); /*0x663f0e*/
-    if ( *(_DWORD *)MEMORY[0xA8DA78] == -40 ) /*0x663f21*/
+    sprintf(CommandLine, g_Str_Trace_mphmd_exe__d__d__d__d, *a2, a2[1], a2[2], a2[3]); /*0x663f0e*/
+    if ( *(_DWORD *)Game_PlayerInfoArray == -40 ) /*0x663f21*/
       goto LABEL_11; /*0x663f21*/
-    Network::CopyAddress((_DWORD *)(*(_DWORD *)MEMORY[0xA8DA78] + 40), &v20, (int)&v12); /*0x663f31*/
+    Network::CopyAddress((_DWORD *)(*(_DWORD *)Game_PlayerInfoArray + 40), &v20, (int)&v12); /*0x663f31*/
     v6 = a2[2]; /*0x663f39*/
     v7 = *a2; /*0x663f3c*/
     v13 = a2[1]; /*0x663f3e*/
     v14 = v6; /*0x663f42*/
     v12 = v7; /*0x663f4a*/
     v15 = a2[3]; /*0x663f5e*/
-    NetworkID::Assign(&MEMORY[0xA8DBB0], &v20, (int)&v12, 0); /*0x663f62*/
-    Network::SetPort(&MEMORY[0xA8DBB0], *(_WORD *)(*(_DWORD *)MEMORY[0xA8DA78] + 40)); /*0x663f78*/
-    LOWORD(MEMORY[0xA8DBBC]) = *(_WORD *)(*(_DWORD *)MEMORY[0xA8DA78] + 40); /*0x663f88*/
-    v8 = (int *)(*(_DWORD *)MEMORY[0xA8DA78] + 40); /*0x663f91*/
-    MEMORY[0xA8DBA4] = *v8; /*0x663f96*/
-    MEMORY[0xA8DBA8] = v8[1]; /*0x663f9f*/
-    MEMORY[0xA8DBAC] = v8[2]; /*0x663fa8*/
+    NetworkID::Assign(&DataGlobal_A8DBB0, &v20, (int)&v12, 0); /*0x663f62*/
+    Network::SetPort(&DataGlobal_A8DBB0, *(_WORD *)(*(_DWORD *)Game_PlayerInfoArray + 40)); /*0x663f78*/
+    LOWORD(DataGlobal_A8DBBC) = *(_WORD *)(*(_DWORD *)Game_PlayerInfoArray + 40); /*0x663f88*/
+    v8 = (int *)(*(_DWORD *)Game_PlayerInfoArray + 40); /*0x663f91*/
+    DataGlobal_A8DBA4 = *v8; /*0x663f96*/
+    DataGlobal_A8DBA8 = v8[1]; /*0x663f9f*/
+    DataGlobal_A8DBAC = v8[2]; /*0x663fa8*/
     goto LABEL_10; /*0x663fa8*/
   }
-  if ( !MEMORY[0xA8DA84] ) /*0x663e22*/
+  if ( !Game_PlayerCount ) /*0x663e22*/
   {
     v4 = (unsigned __int8 *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)g_NetworkInterface + 76))(g_NetworkInterface, 0); /*0x663e2d*/
-    sprintf(CommandLine, MEMORY[0x839B84], *v4, v4[1], v4[2], v4[3]); /*0x663e54*/
+    sprintf(CommandLine, g_Str_Trace_mphmd_exe__d__d__d__d, *v4, v4[1], v4[2], v4[3]); /*0x663e54*/
     goto LABEL_11; /*0x663e5c*/
   }
-  v5 = (int *)(*(_DWORD *)MEMORY[0xA8DA78] + 40); /*0x663e69*/
-  if ( *(_DWORD *)MEMORY[0xA8DA78] != -40 ) /*0x663e6c*/
+  v5 = (int *)(*(_DWORD *)Game_PlayerInfoArray + 40); /*0x663e69*/
+  if ( *(_DWORD *)Game_PlayerInfoArray != -40 ) /*0x663e6c*/
   {
     Network::CopyAddress(v5, &v20, (int)&v12); /*0x663e7e*/
-    sprintf(CommandLine, MEMORY[0x839B84], v12, v13, v14, v15); /*0x663ebb*/
-    MEMORY[0xA8DBB0] = *v5; /*0x663ec5*/
-    MEMORY[0xA8DBB4] = v5[1]; /*0x663ecd*/
-    MEMORY[0xA8DBB8] = v5[2]; /*0x663ed6*/
-    LOWORD(MEMORY[0xA8DBBC]) = 0; /*0x663edc*/
+    sprintf(CommandLine, g_Str_Trace_mphmd_exe__d__d__d__d, v12, v13, v14, v15); /*0x663ebb*/
+    DataGlobal_A8DBB0 = *v5; /*0x663ec5*/
+    DataGlobal_A8DBB4 = v5[1]; /*0x663ecd*/
+    DataGlobal_A8DBB8 = v5[2]; /*0x663ed6*/
+    LOWORD(DataGlobal_A8DBBC) = 0; /*0x663edc*/
 LABEL_10:
-    Network::FormatAddress((unsigned __int16 *)&MEMORY[0xA8DBB0], 0); /*0x663fad*/
+    Network::FormatAddress((unsigned __int16 *)&DataGlobal_A8DBB0, 0); /*0x663fad*/
     Debug::Log(); /*0x663fbf*/
   }
 LABEL_11:
-  if ( CreateProcessA(MEMORY[0x8399EC], CommandLine, 0, 0, 0, 0x200u, 0, 0, &StartupInfo, &ProcessInformation) ) /*0x663fed*/
+  if ( CreateProcessA(ApplicationName, CommandLine, 0, 0, 0, 0x200u, 0, 0, &StartupInfo, &ProcessInformation) ) /*0x663fed*/
   {
     this->M28 = ProcessInformation.hProcess; /*0x664029*/
     Debug::Log(); /*0x66402c*/
@@ -983,7 +990,7 @@ char __thiscall sub_664750(unsigned __int8 *this, char a2)
     v4[0] = 6; /*0x664780*/
     v4[1] = a2; /*0x664785*/
     Debug::Log(); /*0x664789*/
-    LOBYTE(v2) = Network::SendPacket((int)MEMORY[0xA8E9C0], (int)v4, 338, 1u); /*0x6647a2*/
+    LOBYTE(v2) = Network::SendPacket((int)g_NetworkManager, (int)v4, 338, 1u); /*0x6647a2*/
   }
   return v2; /*0x66476f*/
 }

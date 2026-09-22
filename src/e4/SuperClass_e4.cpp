@@ -1,6 +1,16 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Super_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x53AE50
 namespace gamemd {
@@ -24,7 +34,7 @@ RulesClass *__thiscall sub_53AE50(#375 *this, int a2)
     unk_A9FAC8 = this; /*0x53ae79*/
     word_A9FA48 = a2; /*0x53ae7f*/
     v3 = (void *)g_RulesClass_Instance->?[0]; /*0x53ae85*/
-    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&word_A9FA48); /*0x53ae95*/
+    v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&word_A9FA48); /*0x53ae95*/
     v5 = (int *)(*(int (__thiscall **)(void *, _DWORD *))(*(_DWORD *)v4 + 72))(v4, v9); /*0x53aea3*/
     v8[0] = *v5; /*0x53aea8*/
     v8[1] = v5[1]; /*0x53aeb4*/
@@ -66,7 +76,7 @@ int __thiscall sub_6CAEC0(int this)
   this->q04C = 0; /*0x6caee8*/
   this->SpecialSoundDuration = -1; /*0x6caeeb*/
   this->q060 = 1; /*0x6caeee*/
-  this->ChronoMapCoords = MEMORY[0xB0C000]; /*0x6caef8*/
+  this->ChronoMapCoords = DataGlobal_B0C000; /*0x6caef8*/
   this->SuperClass_field_0x68 = 0; /*0x6caefb*/
   this->q06C = 0; /*0x6caefe*/
   this->Granted = 0; /*0x6caf01*/
@@ -111,14 +121,14 @@ int __thiscall SuperClass::Construct(int this, int a2, CCINIClass *aP2)
   this->SuperClass_field_0x28 = a2; /*0x6cafa4*/
   this->SuperClass_field_0x24 = -1; /*0x6cafa7*/
   this->SuperClass_field_0x2C = aP2; /*0x6cafaa*/
-  this->SuperClass_field_0x30 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x6cafb5*/
+  this->SuperClass_field_0x30 = *(_DWORD *)&HouseClass_Player[45112]; /*0x6cafb5*/
   this->SuperClass_field_0x38 = 0; /*0x6cafb8*/
   this->BlinkTimer = 0; /*0x6cafbb*/
   this->BlinkState = 0; /*0x6cafbe*/
   this->q04C = 0; /*0x6cafc1*/
   this->SpecialSoundDuration = -1; /*0x6cafc4*/
   this->q060 = 1; /*0x6cafc7*/
-  v4 = *(_DWORD *)&stru_B05488.__pad_579C[5084]; /*0x6cafcb*/
+  v4 = *(_DWORD *)&stru_B05488[27512]; /*0x6cafcb*/
   this->SuperClass_field_0x78 = -1; /*0x6cafd1*/
   this->SuperClass_field_0x7C = -1; /*0x6cafd4*/
   this->ChronoMapCoords = v4; /*0x6cafda*/
@@ -145,27 +155,27 @@ int __thiscall SuperClass::Construct(int this, int a2, CCINIClass *aP2)
     v5 = dword_A83CC8++; /*0x6cb056*/
     *(_DWORD *)&dword_A83CBC->__pad_0[4 * v5] = this; /*0x6cb065*/
   }
-  if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x6cb09c*/
-    || (stru_B05488.__pad_579C[19033] || !*(_DWORD *)&stru_B05488.__pad_579C[19028])
-    && *(int *)&stru_B05488.__pad_579C[19040] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19020] + 8))(
-         &stru_B05488.__pad_579C[19020],
-         *(_DWORD *)&stru_B05488.__pad_579C[19028] + *(_DWORD *)&stru_B05488.__pad_579C[19040],
+  if ( *(int *)&stru_B05488[41464] < *(int *)&stru_B05488[41456] /*0x6cb09c*/
+    || (stru_B05488[41461] || !*(_DWORD *)&stru_B05488[41456])
+    && *(int *)&stru_B05488[41468] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41448] + 8))(
+         &stru_B05488[41448],
+         *(_DWORD *)&stru_B05488[41456] + *(_DWORD *)&stru_B05488[41468],
          0) )
   {
-    v6 = (*(_DWORD *)&stru_B05488.__pad_579C[19036])++; /*0x6cb0a9*/
-    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19024] + 4 * v6) = this; /*0x6cb0b8*/
+    v6 = (*(_DWORD *)&stru_B05488[41464])++; /*0x6cb0a9*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488[41452] + 4 * v6) = this; /*0x6cb0b8*/
   }
-  if ( *(int *)&stru_B05488.__pad_579C[19124] < *(int *)&stru_B05488.__pad_579C[19116] /*0x6cb0ef*/
-    || (stru_B05488.__pad_579C[19121] || !*(_DWORD *)&stru_B05488.__pad_579C[19116])
-    && *(int *)&stru_B05488.__pad_579C[19128] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19108] + 8))(
-         &stru_B05488.__pad_579C[19108],
-         *(_DWORD *)&stru_B05488.__pad_579C[19116] + *(_DWORD *)&stru_B05488.__pad_579C[19128],
+  if ( *(int *)&stru_B05488[41552] < *(int *)&stru_B05488[41544] /*0x6cb0ef*/
+    || (stru_B05488[41549] || !*(_DWORD *)&stru_B05488[41544])
+    && *(int *)&stru_B05488[41556] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41536] + 8))(
+         &stru_B05488[41536],
+         *(_DWORD *)&stru_B05488[41544] + *(_DWORD *)&stru_B05488[41556],
          0) )
   {
-    v7 = (*(_DWORD *)&stru_B05488.__pad_579C[19124])++; /*0x6cb0fc*/
-    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19112] + 4 * v7) = this; /*0x6cb10b*/
+    v7 = (*(_DWORD *)&stru_B05488[41552])++; /*0x6cb0fc*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488[41540] + 4 * v7) = this; /*0x6cb10b*/
   }
   return this; /*0x6cb110*/
 }
@@ -211,15 +221,15 @@ void __thiscall sub_6CB120(int this)
     this->q06C = 0; /*0x6cb1a9*/
   }
   v9 = this; /*0x6cb1bd*/
-  v5 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xA83D50] + 16))(&MEMORY[0xA83D50], &v9); /*0x6cb1c1*/
-  if ( v5 != -1 && v5 < MEMORY[0xA83D60] && v5 < --MEMORY[0xA83D60] ) /*0x6cb1dc*/
+  v5 = (*(int (__thiscall **)(int *, int *))(SuperClass_ShowTimers + 16))(&SuperClass_ShowTimers, &v9); /*0x6cb1c1*/
+  if ( v5 != -1 && v5 < DataGlobal_A83D60 && v5 < --DataGlobal_A83D60 ) /*0x6cb1dc*/
   {
     do /*0x6cb1f4*/
     {
       ++v5; /*0x6cb1e4*/
-      *((_DWORD *)MEMORY[0xA83D54] + v5 - 1) = *((_DWORD *)MEMORY[0xA83D54] + v5); /*0x6cb1e8*/
+      *((_DWORD *)DataGlobal_A83D54 + v5 - 1) = *((_DWORD *)DataGlobal_A83D54 + v5); /*0x6cb1e8*/
     }
-    while ( v5 < MEMORY[0xA83D60] ); /*0x6cb1f4*/
+    while ( v5 < DataGlobal_A83D60 ); /*0x6cb1f4*/
   }
   v9 = this; /*0x6cb206*/
   v6 = (*(int (__thiscall **)(int *, int *))(dword_A83CB8 + 16))(&dword_A83CB8, &v9); /*0x6cb20a*/
@@ -244,15 +254,15 @@ void __thiscall sub_6CB120(int this)
     while ( v7 < g_AnimManager ); /*0x6cb286*/
   }
   v9 = this; /*0x6cb298*/
-  v8 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F6C8] + 16))(&MEMORY[0xB0F6C8], &v9); /*0x6cb29c*/
-  if ( v8 != -1 && v8 < MEMORY[0xB0F6D8] && v8 < --MEMORY[0xB0F6D8] ) /*0x6cb2b7*/
+  v8 = (*(int (__thiscall **)(int *, int *))(DataGlobal_B0F6C8 + 16))(&DataGlobal_B0F6C8, &v9); /*0x6cb29c*/
+  if ( v8 != -1 && v8 < DataGlobal_B0F6D8 && v8 < --DataGlobal_B0F6D8 ) /*0x6cb2b7*/
   {
     do /*0x6cb2cf*/
     {
       ++v8; /*0x6cb2bf*/
-      *((_DWORD *)MEMORY[0xB0F6CC] + v8 - 1) = *((_DWORD *)MEMORY[0xB0F6CC] + v8); /*0x6cb2c3*/
+      *((_DWORD *)DataGlobal_B0F6CC + v8 - 1) = *((_DWORD *)DataGlobal_B0F6CC + v8); /*0x6cb2c3*/
     }
-    while ( v8 < MEMORY[0xB0F6D8] ); /*0x6cb2cf*/
+    while ( v8 < DataGlobal_B0F6D8 ); /*0x6cb2cf*/
   }
   AbstractClass::DTOR((_DWORD *)this); /*0x6cb2d3*/
 }
@@ -307,22 +317,22 @@ char __thiscall SuperClass::StartTimer(int this, IUnknown *aP1, IUnknown *aP2, I
       }
       else if ( this->SuperClass_field_0x30 == -1 ) /*0x6cb5a8*/
       {
-        this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb5af*/
+        this->SuperClass_field_0x30 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6cb5af*/
       }
       this->q070 = 0; /*0x6cb5cf*/
     }
     if ( *(_BYTE *)(this->SuperClass_field_0x28 + 244) /*0x6cb61f*/
       && !*(_BYTE *)(*(_DWORD *)(this->SuperClass_field_0x2C + 52) + 422)
-      && (MEMORY[0xA83D60] < MEMORY[0xA83D58]
-       || (MEMORY[0xA83D5D] || !MEMORY[0xA83D58])
-       && MEMORY[0xA83D64] > 0
-       && ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))MEMORY[0xA83D50]->field_8)(
-            &MEMORY[0xA83D50],
-            MEMORY[0xA83D58] + MEMORY[0xA83D64],
+      && (DataGlobal_A83D60 < DataGlobal_A83D58
+       || (DataGlobal_A83D5D || !DataGlobal_A83D58)
+       && DataGlobal_A83D64 > 0
+       && ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))SuperClass_ShowTimers->field_8)(
+            &SuperClass_ShowTimers,
+            DataGlobal_A83D58 + DataGlobal_A83D64,
             0)) )
     {
-      v8 = MEMORY[0xA83D60]++; /*0x6cb62c*/
-      *(_DWORD *)&MEMORY[0xA83D54]->__pad_0[4 * v8] = this; /*0x6cb63b*/
+      v8 = DataGlobal_A83D60++; /*0x6cb62c*/
+      *(_DWORD *)&DataGlobal_A83D54->__pad_0[4 * v8] = this; /*0x6cb63b*/
     }
     v9 = this->SuperClass_field_0x28; /*0x6cb63e*/
     if ( *(_BYTE *)(v9 + 245) ) /*0x6cb641*/
@@ -332,15 +342,15 @@ char __thiscall SuperClass::StartTimer(int this, IUnknown *aP1, IUnknown *aP2, I
       if ( v10 == -1 ) /*0x6cb656*/
         v10 = *(_DWORD *)(v9 + 176); /*0x6cb658*/
       v11 = (TerrainTypeClass *)(this + 48); /*0x6cb664*/
-      this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb669*/
+      this->SuperClass_field_0x30 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6cb669*/
       *(_DWORD *)(this + 52) = v22; /*0x6cb66f*/
       this->SuperClass_field_0x38 = v10; /*0x6cb672*/
       v12 = *(IUnknown **)(this + 48); /*0x6cb675*/
       if ( v12 != (IUnknown *)-1 ) /*0x6cb67a*/
       {
         v13 = this->SuperClass_field_0x38; /*0x6cb680*/
-        v14 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - (_DWORD)v12; /*0x6cb68e*/
-        if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - (int)v12 >= v13 ) /*0x6cb692*/
+        v14 = *(_DWORD *)&g_NetworkPlayerBuffer[5960] - (_DWORD)v12; /*0x6cb68e*/
+        if ( *(_DWORD *)&g_NetworkPlayerBuffer[5960] - (int)v12 >= v13 ) /*0x6cb692*/
         {
           this->SuperClass_field_0x38 = 0; /*0x6cb6a6*/
           *(_DWORD *)v11->__pad_0 = -1; /*0x6cb6a9*/
@@ -360,12 +370,12 @@ char __thiscall SuperClass::StartTimer(int this, IUnknown *aP1, IUnknown *aP2, I
         *(_BYTE *)(v15 + 405) = 0; /*0x6cb6bf*/
         this->SuperClass_field_0x68 = 0; /*0x6cb6cb*/
         aP1 = (IUnknown *)this; /*0x6cb6ce*/
-        VectorClass::RemoveAt((int *)&g_OverlayTypeConfig.__pad_579C[9764], (int)&aP1); /*0x6cb6d2*/
+        VectorClass::RemoveAt((int *)&g_OverlayTypeConfig[32192], (int)&aP1); /*0x6cb6d2*/
       }
       if ( (unsigned char)this->SuperClass_field_0x6C ) /*0x6cb6d7*/
       {
         aP1 = (IUnknown *)this; /*0x6cb6e6*/
-        VectorClass::RemoveAt((int *)&g_OverlayTypeConfig.__pad_579C[9764], (int)&aP1); /*0x6cb6ea*/
+        VectorClass::RemoveAt((int *)&g_OverlayTypeConfig[32192], (int)&aP1); /*0x6cb6ea*/
         this->q06C = 0; /*0x6cb6ef*/
       }
       if ( !this->Granted /*0x6cb704*/
@@ -431,15 +441,15 @@ char __thiscall SuperClass::Lose(_BYTE *this)
   this->IsCharged = 0; /*0x6cb7ba*/
   this->Granted = 0; /*0x6cb7bd*/
   v3 = this; /*0x6cb7ca*/
-  v1 = (*(int (__thiscall **)(int *, _BYTE **))(MEMORY[0xA83D50] + 16))(&MEMORY[0xA83D50], &v3); /*0x6cb7d4*/
-  if ( v1 != -1 && v1 < MEMORY[0xA83D60] && v1 < --MEMORY[0xA83D60] ) /*0x6cb7ef*/
+  v1 = (*(int (__thiscall **)(int *, _BYTE **))(SuperClass_ShowTimers + 16))(&SuperClass_ShowTimers, &v3); /*0x6cb7d4*/
+  if ( v1 != -1 && v1 < DataGlobal_A83D60 && v1 < --DataGlobal_A83D60 ) /*0x6cb7ef*/
   {
     do /*0x6cb807*/
     {
       ++v1; /*0x6cb7f7*/
-      *((_DWORD *)MEMORY[0xA83D54] + v1 - 1) = *((_DWORD *)MEMORY[0xA83D54] + v1); /*0x6cb7fb*/
+      *((_DWORD *)DataGlobal_A83D54 + v1 - 1) = *((_DWORD *)DataGlobal_A83D54 + v1); /*0x6cb7fb*/
     }
-    while ( v1 < MEMORY[0xA83D60] ); /*0x6cb807*/
+    while ( v1 < DataGlobal_A83D60 ); /*0x6cb807*/
   }
   return 1; /*0x6cb80c*/
 }
@@ -465,20 +475,20 @@ char __thiscall SuperClass::StopPreclickAnim(int this, IUnknown *aP1)
     *(_BYTE *)(v3 + 405) = 0; /*0x6cb840*/
     this->SuperClass_field_0x68 = 0; /*0x6cb846*/
     v8[0] = this; /*0x6cb859*/
-    v4 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9764] + 16))( /*0x6cb85d*/
-           &g_OverlayTypeConfig.__pad_579C[9764],
+    v4 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&g_OverlayTypeConfig[32192] + 16))( /*0x6cb85d*/
+           &g_OverlayTypeConfig[32192],
            v8);
     if ( v4 != -1 ) /*0x6cb863*/
-      DynamicVector::RemoveItem(&g_OverlayTypeConfig.__pad_579C[9764], v4); /*0x6cb86b*/
+      DynamicVector::RemoveItem(&g_OverlayTypeConfig[32192], v4); /*0x6cb86b*/
   }
   if ( (unsigned char)this->SuperClass_field_0x6C ) /*0x6cb870*/
   {
     v8[0] = this; /*0x6cb885*/
-    v5 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9764] + 16))( /*0x6cb889*/
-           &g_OverlayTypeConfig.__pad_579C[9764],
+    v5 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&g_OverlayTypeConfig[32192] + 16))( /*0x6cb889*/
+           &g_OverlayTypeConfig[32192],
            v8);
     if ( v5 != -1 ) /*0x6cb88f*/
-      DynamicVector::RemoveItem(&g_OverlayTypeConfig.__pad_579C[9764], v5); /*0x6cb897*/
+      DynamicVector::RemoveItem(&g_OverlayTypeConfig[32192], v5); /*0x6cb897*/
     this->q06C = 0; /*0x6cb89c*/
   }
   if ( !this->Granted /*0x6cb8b1*/
@@ -489,11 +499,11 @@ char __thiscall SuperClass::StopPreclickAnim(int this, IUnknown *aP1)
   }
   this->SuperClass_field_0x78 = -1; /*0x6cb8b9*/
   if ( this->SuperClass_field_0x30 == -1 ) /*0x6cb8c6*/
-    this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb8ce*/
+    this->SuperClass_field_0x30 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6cb8ce*/
   v6 = this->SuperClass_field_0x24; /*0x6cb8d1*/
   if ( v6 == -1 ) /*0x6cb8d7*/
     v6 = *(_DWORD *)(this->SuperClass_field_0x28 + 176); /*0x6cb8dc*/
-  this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb8e7*/
+  this->SuperClass_field_0x30 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6cb8e7*/
   *(_DWORD *)(this + 52) = v8[2]; /*0x6cb8ee*/
   this->SuperClass_field_0x38 = v6; /*0x6cb8f1*/
   if ( *(_BYTE *)(this->SuperClass_field_0x28 + 229) ) /*0x6cb8f7*/
@@ -702,7 +712,7 @@ LABEL_11:
   this->IsCharged = 0; /*0x6cbb2f*/
   this->Granted = 0; /*0x6cbb32*/
   a2 = this; /*0x6cbb41*/
-  v22 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xA83D50] + 16))(&MEMORY[0xA83D50], &a2); /*0x6cbb45*/
+  v22 = (*(int (__thiscall **)(int *, int *))(SuperClass_ShowTimers + 16))(&SuperClass_ShowTimers, &a2); /*0x6cbb45*/
   if ( v22 != -1 ) /*0x6cbb4b*/
     SuperClass::RemoveFromPointerArray(v22); /*0x6cbb53*/
   return 1; /*0x6cb9bc*/
@@ -734,8 +744,8 @@ char __thiscall SuperClass::AnnounceReady(int this, DynamicVector *aP1)
     if ( !v5 ) /*0x6cc0b6*/
       this->IsCharged = 1; /*0x6cc0b8*/
     if ( this->SuperClass_field_0x30 == -1 ) /*0x6cc0c0*/
-      this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cc0c8*/
-    this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cc0d4*/
+      this->SuperClass_field_0x30 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6cc0c8*/
+    this->SuperClass_field_0x30 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6cc0d4*/
     *(_DWORD *)(this + 52) = v7; /*0x6cc0db*/
     this->SuperClass_field_0x38 = v5; /*0x6cc0de*/
     if ( (_BYTE)aP1 ) /*0x6cc0e4*/
@@ -743,42 +753,42 @@ char __thiscall SuperClass::AnnounceReady(int this, DynamicVector *aP1)
       switch ( *(_DWORD *)(this->SuperClass_field_0x28 + 180) ) /*0x6cc0fc*/
       {
         case 0: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[50968], -1, -1); /*0x6cc10d*/
+          VoxClass::FindAndPlay(&stru_830620[73396], -1, -1); /*0x6cc10d*/
           break; /*0x6cc10d*/
         case 1: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[50944], -1, -1); /*0x6cc119*/
+          VoxClass::FindAndPlay(&stru_830620[73372], -1, -1); /*0x6cc119*/
           break; /*0x6cc119*/
         case 2: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[50896], -1, -1); /*0x6cc131*/
+          VoxClass::FindAndPlay(&stru_830620[73324], -1, -1); /*0x6cc131*/
           break; /*0x6cc131*/
         case 3: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[50844], -1, -1); /*0x6cc149*/
+          VoxClass::FindAndPlay(&stru_830620[73272], -1, -1); /*0x6cc149*/
           break; /*0x6cc149*/
         case 5: /*0x6cc0fc*/
         case 6: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[50820], -1, -1); /*0x6cc155*/
+          VoxClass::FindAndPlay(&stru_830620[73248], -1, -1); /*0x6cc155*/
           break; /*0x6cc155*/
         case 7: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[50868], -1, -1); /*0x6cc13d*/
+          VoxClass::FindAndPlay(&stru_830620[73296], -1, -1); /*0x6cc13d*/
           break; /*0x6cc13d*/
         case 8: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[50800], -1, -1); /*0x6cc161*/
+          VoxClass::FindAndPlay(&stru_830620[73228], -1, -1); /*0x6cc161*/
           break; /*0x6cc161*/
         case 9: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[50776], -1, -1); /*0x6cc16d*/
+          VoxClass::FindAndPlay(&stru_830620[73204], -1, -1); /*0x6cc16d*/
           break; /*0x6cc16d*/
         case 0xA: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[50920], -1, -1); /*0x6cc125*/
+          VoxClass::FindAndPlay(&stru_830620[73348], -1, -1); /*0x6cc125*/
           break; /*0x6cc125*/
         case 0xB: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[50752], -1, -1); /*0x6cc179*/
+          VoxClass::FindAndPlay(&stru_830620[73180], -1, -1); /*0x6cc179*/
           break; /*0x6cc179*/
         default:
           break;
       }
     }
     v6 = this->SuperClass_field_0x28; /*0x6cc17e*/
-    this->SuperClass_field_0x74 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cc187*/
+    this->SuperClass_field_0x74 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6cc187*/
     result = *(_BYTE *)(v6 + 229); /*0x6cc18a*/
     if ( result ) /*0x6cc192*/
       this->SuperClass_field_0x7C = 1; /*0x6cc194*/
@@ -1081,11 +1091,11 @@ void __fastcall SuperClass::Launch(int ecx0, int a2, __int16 *aP3, char a4)
           a1 = (IUnknown *)(((__int16)var1C8 << 8) + 128);
           v175 = (SHIWORD(var1C8) << 8) + 128;
           GroundHeight = (IUnknown *)Cell::GetGroundHeight((IUnknown *)&a1);
-          if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&var1C8) + 80) & 0x100) != 0 )
-            GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488.__pad_579C[5208]);
-          v158 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23132]
+          if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&var1C8) + 80) & 0x100) != 0 )
+            GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488[27636]);
+          v158 = *(_DWORD *)(*(_DWORD *)&stru_87C374[45560]
                            + 4 * SuperWeaponClass::FindByName(g_INI_Key_NukePayload));
-          v159 = (AbstractClass *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&a1);
+          v159 = (AbstractClass *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)&a1);
           v189 = GroundHeight;
           v185 = a1;
           v188 = v175;
@@ -1117,14 +1127,14 @@ void __fastcall SuperClass::Launch(int ecx0, int a2, __int16 *aP3, char a4)
             v162 = *(IUnknown **)UIObject->__pad_0;
             *(double *)&v218[2] = st7_238b * -100.0;
             (*(void (__thiscall **)(BulletClass *, _DWORD *, _QWORD *))&v162->__pad_1D8[24])(UIObject, v203, v218);
-            if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[8836] )
-              VoxClass::FindAndPlay(&stru_830620.__pad_579C[51052], -1, -1);
-            PlayAudioAt2(*(IUnknown **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 372), &v185, 0);
+            if ( !*(_DWORD *)&HouseClass_Player[30700] )
+              VoxClass::FindAndPlay(&stru_830620[73480], -1, -1);
+            PlayAudioAt2(*(IUnknown **)(*(_DWORD *)&stru_87C374[44652] + 372), &v185, 0);
           }
           if ( a4 )
           {
-            *(_DWORD *)&stru_87C374.__pad_14B0[12668] = -1;
-            v163 = (AnimClass *)VocClass::FindByName(&stru_830620.__pad_579C[50968]);
+            *(_DWORD *)&stru_87C374[17964] = -1;
+            v163 = (AnimClass *)VocClass::FindByName(&stru_830620[73396]);
             ClearThemeQueuePlaylist((int)v163);
           }
           *((_BYTE *)v4->field_2C + 508) = 1;
@@ -1165,16 +1175,16 @@ void __fastcall SuperClass::Launch(int ecx0, int a2, __int16 *aP3, char a4)
               (*(void (__thiscall **)(IUnknown *))(v168->field_0 + 492))(v168);
               *((_DWORD *)v4->field_2C + 5601) = *(_DWORD *)aP3;
               *(_DWORD *)&v168->__pad_524[212] = *((_DWORD *)v4->field_28 + 45);
-              PlayAudioAt2(*(IUnknown **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 372), &v185, 0);
-              if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[8836] )
-                VoxClass::FindAndPlay(&stru_830620.__pad_579C[51052], -1, -1);
+              PlayAudioAt2(*(IUnknown **)(*(_DWORD *)&stru_87C374[44652] + 372), &v185, 0);
+              if ( !*(_DWORD *)&HouseClass_Player[30700] )
+                VoxClass::FindAndPlay(&stru_830620[73480], -1, -1);
             }
           }
 LABEL_254:
           if ( a4 )
           {
-            *(_DWORD *)&stru_87C374.__pad_14B0[12668] = -1;
-            v170 = (AnimClass *)VocClass::FindByName(&stru_830620.__pad_579C[50968]);
+            *(_DWORD *)&stru_87C374[17964] = -1;
+            v170 = (AnimClass *)VocClass::FindByName(&stru_830620[73396]);
             ClearThemeQueuePlaylist((int)v170);
           }
           *((_BYTE *)v4->field_2C + 508) = 1;
@@ -1184,13 +1194,13 @@ LABEL_254:
     case 1:
       if ( *(_BYTE *)(ecx0 + 111) )
       {
-        v76 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+        v76 = CellCoord::To_CellObj(&stru_87C374[13428], aP3);
         v77 = (int *)(*(int (__thiscall **)(void *, char *))(*(_DWORD *)v76 + 72))(v76, v222);
         v78 = *v77;
         v188 = v77[1];
         v79 = v77[2];
-        if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3) + 80) & 0x100) != 0 )
-          v79 += *(_DWORD *)&stru_B05488.__pad_579C[5208];
+        if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], aP3) + 80) & 0x100) != 0 )
+          v79 += *(_DWORD *)&stru_B05488[27636];
         v80 = (void **)__2_YAPAXI_Z(0x1C8u);
         if ( v80 )
         {
@@ -1199,7 +1209,7 @@ LABEL_254:
           v214.X = v78;
           AnimClass::ctor(
             v80,
-            *(CoordStruct **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 840),
+            *(CoordStruct **)(*(_DWORD *)&stru_87C374[44652] + 840),
             &v214,
             0,
             (CoordStruct *)1,
@@ -1207,23 +1217,23 @@ LABEL_254:
             0,
             0);
         }
-        if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[8836] )
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[51116], -1, -1);
+        if ( !*(_DWORD *)&HouseClass_Player[30700] )
+          VoxClass::FindAndPlay(&stru_830620[73544], -1, -1);
         CreateTriggerClassIfFarEnough((IUnknown *)0xD, v81, *(IUnknown **)aP3);
-        v82 = &stru_B05488.__pad_579C[5140];
+        v82 = &stru_B05488[27568];
         do
         {
           v83 = aP3[1] + *((_WORD *)v82 + 1);
           LOWORD(var1C8) = *(_WORD *)v82 + *aP3;
           HIWORD(var1C8) = v83;
           v201 = var1C8;
-          if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v201) + 80) & 0x100) != 0 )
+          if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v201) + 80) & 0x100) != 0 )
           {
             v84 = aP3[1] + *((_WORD *)v82 + 1);
             LOWORD(v177) = *(_WORD *)v82 + *aP3;
             HIWORD(v177) = v84;
             v205 = (IUnknown *)v177;
-            v85 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v205) + 58);
+            v85 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v205) + 58);
           }
           else
           {
@@ -1231,24 +1241,24 @@ LABEL_254:
             LOWORD(v178) = *(_WORD *)v82 + *aP3;
             HIWORD(v178) = v86;
             v209 = v178;
-            v85 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v209) + 57);
+            v85 = *((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v209) + 57);
           }
           for ( ; v85; v85 = *(_DWORD *)(v85 + 48) )
           {
             if ( (*(_BYTE *)(v85 + 20) & 4) == 0 || !*(_BYTE *)(v85 + 636) )
               (*(void (__thiscall **)(int, _DWORD, void *, _DWORD))(*(_DWORD *)v85 + 340))(
                 v85,
-                *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4072),
+                *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 4072),
                 v4->field_2C,
                 0);
           }
           v82 += 4;
         }
-        while ( (int)v82 < (int)&stru_B05488.__pad_579C[5176] );
+        while ( (int)v82 < (int)&stru_B05488[27604] );
         if ( a4 )
         {
-          *(_DWORD *)&stru_87C374.__pad_14B0[12668] = -1;
-          v87 = (AnimClass *)VocClass::FindByName(&stru_830620.__pad_579C[50944]);
+          *(_DWORD *)&stru_87C374[17964] = -1;
+          v87 = (AnimClass *)VocClass::FindByName(&stru_830620[73372]);
           ClearThemeQueuePlaylist((int)v87);
         }
       }
@@ -1257,16 +1267,16 @@ LABEL_254:
       if ( *(_BYTE *)(ecx0 + 111) )
       {
         LightningStorm::Start(
-          *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6044),
-          *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6036),
+          *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 6044),
+          *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 6036),
           *(_DWORD *)aP3,
           *(#375 **)(ecx0 + 44));
-        if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[8836] )
+        if ( !*(_DWORD *)&HouseClass_Player[30700] )
           VoxClass::FindAndPlay(aEvaLightningst, -1, -1);
         if ( a4 )
         {
-          *(_DWORD *)&stru_87C374.__pad_14B0[12668] = -1;
-          v72 = (AnimClass *)VocClass::FindByName(&stru_830620.__pad_579C[50896]);
+          *(_DWORD *)&stru_87C374[17964] = -1;
+          v72 = (AnimClass *)VocClass::FindByName(&stru_830620[73324]);
           ClearThemeQueuePlaylist((int)v72);
         }
       }
@@ -1275,19 +1285,19 @@ LABEL_254:
       if ( *(_BYTE *)(ecx0 + 111) )
       {
         *(_DWORD *)(ecx0 + 98) = *(_DWORD *)aP3;
-        v6 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+        v6 = CellCoord::To_CellObj(&stru_87C374[13428], aP3);
         v7 = (*(int (__thiscall **)(void *, char *))(*(_DWORD *)v6 + 72))(v6, v233);
         a1 = *(IUnknown **)v7;
         v175 = *(_DWORD *)(v7 + 4);
         GroundHeight = *(IUnknown **)(v7 + 8);
-        if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3) + 80) & 0x100) != 0 )
-          GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488.__pad_579C[5208]);
+        if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], aP3) + 80) & 0x100) != 0 )
+          GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488[27636]);
         v8 = (AnimClass *)Coord3D::Set(v235, 0, 0, 5);
         v9 = (AbstractClass **)Coord3D::Add(&a1, (IUnknown *)v236, v8);
         SuperClass::CreateChronoAnim((int)v4, *v9, (SuperClass *)v9[1], (int)v9[2]);
         if ( a4 )
         {
-          *(_DWORD *)&stru_87C374.__pad_14B0[12668] = 4;
+          *(_DWORD *)&stru_87C374[17964] = 4;
         }
         else
         {
@@ -1303,36 +1313,36 @@ LABEL_254:
     case 4:
       CreateTriggerClassIfFarEnough((IUnknown *)0xD, a2, *(IUnknown **)(ecx0 + 98));
       CreateTriggerClassIfFarEnough((IUnknown *)0xD, *(_DWORD *)aP3, *(IUnknown **)aP3);
-      v11 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+      v11 = CellCoord::To_CellObj(&stru_87C374[13428], aP3);
       v12 = (*(int (__thiscall **)(void *, char *))(*(_DWORD *)v11 + 72))(v11, v223);
       v183 = *(double *)v12;
       v13 = *(__int16 **)(v12 + 8);
-      v14 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v4->field_60 + 1);
+      v14 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v4->field_60 + 1);
       v15 = (*(int (__thiscall **)(void *, char *))(*(_DWORD *)v14 + 72))(v14, v219);
       a1 = *(IUnknown **)v15;
       v175 = *(_DWORD *)(v15 + 4);
       GroundHeight = *(IUnknown **)(v15 + 8);
-      if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3) + 80) & 0x100) != 0 )
-        v13 = (__int16 *)((char *)v13 + *(_DWORD *)&stru_B05488.__pad_579C[5208]);
+      if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], aP3) + 80) & 0x100) != 0 )
+        v13 = (__int16 *)((char *)v13 + *(_DWORD *)&stru_B05488[27636]);
       v16 = GroundHeight;
-      if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v4->field_60 + 1) + 80) & 0x100) != 0 )
-        v16 = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488.__pad_579C[5208]);
+      if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v4->field_60 + 1) + 80) & 0x100) != 0 )
+        v16 = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488[27636]);
       v17 = v4->field_68;
       if ( v17 )
       {
         v17[405] = 0;
         v4->field_68 = 0;
         var1C8 = v4;
-        v18 = (IUnknown *)(*(int (__thiscall **)(char *, SuperClass **))(*(_DWORD *)&stru_B05488.__pad_579C[18836] + 16))(
-                            &stru_B05488.__pad_579C[18836],
+        v18 = (IUnknown *)(*(int (__thiscall **)(char *, SuperClass **))(*(_DWORD *)&stru_B05488[41264] + 16))(
+                            &stru_B05488[41264],
                             &var1C8);
         if ( v18 != (IUnknown *)-1 )
-          DynamicVector::RemoveItem(&stru_B05488.__pad_579C[18836], v18);
+          DynamicVector::RemoveItem(&stru_B05488[41264], v18);
       }
       if ( LOBYTE(v4->field_6C) )
       {
         var1C8 = v4;
-        VectorClass::RemoveAt((int *)&stru_B05488.__pad_579C[18836], (int)&var1C8);
+        VectorClass::RemoveAt((int *)&stru_B05488[41264], (int)&var1C8);
         LOBYTE(v4->field_6C) = 0;
       }
       v19 = (void **)__2_YAPAXI_Z(0x1C8u);
@@ -1342,7 +1352,7 @@ LABEL_254:
         aP2.Z = (int)v13 + 5;
         AnimClass::ctor(
           v19,
-          *(CoordStruct **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 812),
+          *(CoordStruct **)(*(_DWORD *)&stru_87C374[44652] + 812),
           &aP2,
           0,
           (CoordStruct *)1,
@@ -1358,7 +1368,7 @@ LABEL_254:
         v215.Z = (int)&v16->field_4 + 1;
         AnimClass::ctor(
           v20,
-          *(CoordStruct **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 808),
+          *(CoordStruct **)(*(_DWORD *)&stru_87C374[44652] + 808),
           &v215,
           0,
           (CoordStruct *)1,
@@ -1366,21 +1376,21 @@ LABEL_254:
           0,
           0);
       }
-      v21 = &stru_B05488.__pad_579C[5140];
-      j = (int)&stru_B05488.__pad_579C[5140];
+      v21 = &stru_B05488[27568];
+      j = (int)&stru_B05488[27568];
       do
       {
         v22 = *((_WORD *)v21 + 1) + *(_WORD *)v4->__pad_64;
         LOWORD(var170) = *(_WORD *)v21 + HIWORD(v4->field_60);
         HIWORD(var170) = v22;
         v196 = var170;
-        if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v196) + 80) & 0x100) != 0 )
+        if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v196) + 80) & 0x100) != 0 )
         {
           v23 = *((_WORD *)v21 + 1) + *(_WORD *)v4->__pad_64;
           LOWORD(v195) = HIWORD(v4->field_60) + *(_WORD *)v21;
           HIWORD(v195) = v23;
           var160 = v195;
-          v24 = (int *)*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&var160) + 58);
+          v24 = (int *)*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&var160) + 58);
         }
         else
         {
@@ -1388,7 +1398,7 @@ LABEL_254:
           LOWORD(v178) = HIWORD(v4->field_60) + *(_WORD *)v21;
           HIWORD(v178) = v25;
           v199 = v178;
-          v24 = (int *)*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v199) + 57);
+          v24 = (int *)*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v199) + 57);
         }
         if ( v24 )
         {
@@ -1407,7 +1417,7 @@ LABEL_254:
                   if ( v28 )
                   {
                     v29 = (_DWORD *)(v28 + 44);
-                    *v29 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+                    *v29 = *(_DWORD *)&HouseClass_Player[45112];
                     v29[1] = v220;
                     v29[2] = 500;
                     BuildingClass::Deploy(*(_DWORD *)(v24[421] + 1692), (int)v13, (int)v21);
@@ -1429,7 +1439,7 @@ LABEL_254:
                     v212[0] = *v33;
                     v212[1] = v33[1];
                     v212[2] = v33[2];
-                    v34 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v212);
+                    v34 = Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v212);
                     v30 = Cell::IsBridge(v34) == (_DWORD *)v21;
                   }
                 }
@@ -1474,13 +1484,13 @@ LABEL_254:
                   v44 = v42 == 1 ? (unsigned int)v24 : 0;
                   v197 = v177;
                   LODWORD(v183) = v44;
-                  v45 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v197);
+                  v45 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v197);
                   v46 = (*(int (__thiscall **)(void *, char *))(*(_DWORD *)v45 + 72))(v45, v225);
                   a1 = *(IUnknown **)v46;
                   v175 = *(_DWORD *)(v46 + 4);
                   GroundHeight = *(IUnknown **)(v46 + 8);
-                  if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&a1) + 80) & 0x100) != 0 )
-                    GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488.__pad_579C[5208]);
+                  if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)&a1) + 80) & 0x100) != 0 )
+                    GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488[27636]);
                   if ( v44 )
                   {
                     if ( !*v39 )
@@ -1538,7 +1548,7 @@ LABEL_254:
                         (*(void (__stdcall **)(IUnknown *))(v51->field_0 + 8))(v51);
                     }
                   }
-                  v52 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v184->field_60 + 1);
+                  v52 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v184->field_60 + 1);
                   v53 = (_DWORD *)(*(int (__thiscall **)(void *, char *))(*(_DWORD *)v52 + 72))(v52, v231);
                   v54 = (_DWORD *)(*(int (__thiscall **)(int *, char *))(*v24 + 72))(v24, v227);
                   v55 = v53[2];
@@ -1549,7 +1559,7 @@ LABEL_254:
                   v204 = (char *)(v54[2] - v55);
                   if ( !LODWORD(v183) )
                   {
-                    v59 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+                    v59 = CellCoord::To_CellObj(&stru_87C374[13428], aP3);
                     v60 = (_DWORD *)(*(int (__thiscall **)(void *, char *))(*(_DWORD *)v59 + 72))(v59, v221);
                     v61 = (IUnknown *)(*v60 + v57);
                     v62 = v60[1];
@@ -1557,8 +1567,8 @@ LABEL_254:
                     v175 = v58 + v62;
                     a1 = v61;
                     GroundHeight = (IUnknown *)&v204[v63];
-                    if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&a1) + 80) & 0x100) != 0 )
-                      GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488.__pad_579C[5208]);
+                    if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)&a1) + 80) & 0x100) != 0 )
+                      GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488[27636]);
                   }
                   v64 = a1;
                   v65 = v175;
@@ -1576,7 +1586,7 @@ LABEL_254:
                   HIWORD(var1C8) = v69;
                   var148 = var1C8;
                   v21 = (char *)*v24;
-                  v70 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&var148);
+                  v70 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&var148);
                   (*((void (__thiscall **)(int *, void *, int))v21 + 288))(v24, v70, 1);
                   if ( ppv )
                     (*(void (__stdcall **)(IUnknown *))(ppv->field_0 + 8))(ppv);
@@ -1591,7 +1601,7 @@ LABEL_254:
                   v24,
                   &v191,
                   0,
-                  *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4008),
+                  *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 4008),
                   0,
                   1,
                   0,
@@ -1607,21 +1617,21 @@ LABEL_254:
         v21 += 4;
         j = (int)v21;
       }
-      while ( (int)v21 < (int)&stru_B05488.__pad_579C[5176] );
-      if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[8836] )
-        VoxClass::FindAndPlay(&stru_830620.__pad_579C[51176], -1, -1);
+      while ( (int)v21 < (int)&stru_B05488[27604] );
+      if ( !*(_DWORD *)&HouseClass_Player[30700] )
+        VoxClass::FindAndPlay(&stru_830620[73604], -1, -1);
       if ( a4 )
       {
-        *(_DWORD *)&stru_87C374.__pad_14B0[12668] = -1;
-        v71 = (AnimClass *)VocClass::FindByName(&stru_830620.__pad_579C[50844]);
+        *(_DWORD *)&stru_87C374[17964] = -1;
+        v71 = (AnimClass *)VocClass::FindByName(&stru_830620[73272]);
         ClearThemeQueuePlaylist((int)v71);
       }
       break;
     case 5:
       if ( *(_BYTE *)(ecx0 + 111) )
       {
-        v107 = TypeClass::FindByName(&stru_830620.__pad_579C[14668]);
-        v108 = (int *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+        v107 = TypeClass::FindByName(&stru_830620[37096]);
+        v108 = (int *)CellCoord::To_CellObj(&stru_87C374[13428], aP3);
         v109 = (IUnknown *)v108;
         if ( v108 && v108 != g_CellClassArray )
         {
@@ -1629,7 +1639,7 @@ LABEL_254:
           {
             v193 = 0;
             var1C8 = (SuperClass *)*LayerClass::Pathfinding_Find(
-                                      (IUnknown *)&stru_87C374.__pad_14B0[8132],
+                                      (IUnknown *)&stru_87C374[13428],
                                       (IUnknown *)&v193,
                                       (IUnknown *)&v217,
                                       (IUnknown *)aP3,
@@ -1646,9 +1656,9 @@ LABEL_254:
                                       (IUnknown *)&v193,
                                       0,
                                       0);
-            if ( var1C8 != *(SuperClass **)&stru_B05488.__pad_579C[5084] )
+            if ( var1C8 != *(SuperClass **)&stru_B05488[27512] )
             {
-              eax153 = (IUnknown *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&var1C8);
+              eax153 = (IUnknown *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&var1C8);
               v110 = eax153;
               if ( eax153 )
               {
@@ -1662,9 +1672,9 @@ LABEL_254:
           {
             if ( v112 == 2 )
             {
-              v117 = *(_DWORD **)&stru_87C374.__pad_579C[22224];
-              v118 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3260);
-              if ( v118 == *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3288) )
+              v117 = *(_DWORD **)&stru_87C374[44652];
+              v118 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 3260);
+              if ( v118 == *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 3288) )
               {
                 v119 = 0;
                 if ( v118 > 0 )
@@ -1683,7 +1693,7 @@ LABEL_254:
                         0,
                         v120,
                         *(_DWORD *)(v117[819] + 4 * v119));
-                      v117 = *(_DWORD **)&stru_87C374.__pad_579C[22224];
+                      v117 = *(_DWORD **)&stru_87C374[44652];
                     }
                     ++v119;
                   }
@@ -1693,7 +1703,7 @@ LABEL_254:
             }
             else
             {
-              v121 = *(_DWORD **)&stru_87C374.__pad_579C[22224];
+              v121 = *(_DWORD **)&stru_87C374[44652];
               for ( i = 0; i < v121[801]; ++i )
               {
                 v123 = *(_DWORD *)(*(_DWORD *)(v121[798] + 4 * i) + 3576);
@@ -1708,16 +1718,16 @@ LABEL_254:
                     0,
                     v123,
                     *(_DWORD *)(v121[805] + 4 * i));
-                  v121 = *(_DWORD **)&stru_87C374.__pad_579C[22224];
+                  v121 = *(_DWORD **)&stru_87C374[44652];
                 }
               }
             }
           }
           else
           {
-            v113 = *(_DWORD **)&stru_87C374.__pad_579C[22224];
-            v114 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3148);
-            if ( v114 == *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3176) )
+            v113 = *(_DWORD **)&stru_87C374[44652];
+            v114 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 3148);
+            if ( v114 == *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 3176) )
             {
               v115 = 0;
               if ( v114 > 0 )
@@ -1736,7 +1746,7 @@ LABEL_254:
                       0,
                       v116,
                       *(_DWORD *)(v113[791] + 4 * v115));
-                    v113 = *(_DWORD **)&stru_87C374.__pad_579C[22224];
+                    v113 = *(_DWORD **)&stru_87C374[44652];
                   }
                   ++v115;
                 }
@@ -1751,8 +1761,8 @@ LABEL_254:
     case 6:
       if ( *(_BYTE *)(ecx0 + 111) )
       {
-        v126 = TypeClass::FindByName(&stru_830620.__pad_579C[14668]);
-        v127 = (int *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+        v126 = TypeClass::FindByName(&stru_830620[37096]);
+        v127 = (int *)CellCoord::To_CellObj(&stru_87C374[13428], aP3);
         v128 = (IUnknown *)v127;
         if ( v127 && v127 != g_CellClassArray )
         {
@@ -1760,7 +1770,7 @@ LABEL_254:
           {
             v194 = 0;
             var1C8 = (SuperClass *)*LayerClass::Pathfinding_Find(
-                                      (IUnknown *)&stru_87C374.__pad_14B0[8132],
+                                      (IUnknown *)&stru_87C374[13428],
                                       (IUnknown *)&v194,
                                       (IUnknown *)&v216,
                                       (IUnknown *)aP3,
@@ -1777,9 +1787,9 @@ LABEL_254:
                                       (IUnknown *)&v194,
                                       0,
                                       0);
-            if ( var1C8 != *(SuperClass **)&stru_B05488.__pad_579C[5084] )
+            if ( var1C8 != *(SuperClass **)&stru_B05488[27512] )
             {
-              eax186 = (IUnknown *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&var1C8);
+              eax186 = (IUnknown *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&var1C8);
               v129 = eax186;
               if ( eax186 )
               {
@@ -1788,9 +1798,9 @@ LABEL_254:
               }
             }
           }
-          v131 = *(_DWORD **)&stru_87C374.__pad_579C[22224];
-          v132 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3092);
-          if ( v132 == *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3120) )
+          v131 = *(_DWORD **)&stru_87C374[44652];
+          v132 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 3092);
+          if ( v132 == *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 3120) )
           {
             v133 = 0;
             if ( v132 > 0 )
@@ -1809,7 +1819,7 @@ LABEL_254:
                     0,
                     v134,
                     *(_DWORD *)(v131[777] + 4 * v133));
-                  v131 = *(_DWORD **)&stru_87C374.__pad_579C[22224];
+                  v131 = *(_DWORD **)&stru_87C374[44652];
                 }
                 ++v133;
               }
@@ -1820,8 +1830,8 @@ LABEL_254:
 LABEL_178:
         if ( a4 )
         {
-          *(_DWORD *)&stru_87C374.__pad_14B0[12668] = -1;
-          ecx179 = &stru_830620.__pad_579C[50820];
+          *(_DWORD *)&stru_87C374[17964] = -1;
+          ecx179 = &stru_830620[73248];
           goto LABEL_180;
         }
       }
@@ -1831,15 +1841,15 @@ LABEL_178:
       {
         CreateTriggerClassIfFarEnough((IUnknown *)0xD, *(_DWORD *)aP3, *(IUnknown **)aP3);
         SuperClass::LaunchPsychicDominator((#375 *)v4->field_2C, *(_DWORD *)aP3);
-        if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[8836] )
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[51144], -1, -1);
-        v73 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+        if ( !*(_DWORD *)&HouseClass_Player[30700] )
+          VoxClass::FindAndPlay(&stru_830620[73572], -1, -1);
+        v73 = CellCoord::To_CellObj(&stru_87C374[13428], aP3);
         v74 = (_DWORD *)(*(int (__thiscall **)(void *, char *))(*(_DWORD *)v73 + 72))(v73, v229);
-        PlayAudioAt2(*(IUnknown **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 588), v74, 0);
+        PlayAudioAt2(*(IUnknown **)(*(_DWORD *)&stru_87C374[44652] + 588), v74, 0);
         if ( a4 )
         {
-          *(_DWORD *)&stru_87C374.__pad_14B0[12668] = -1;
-          v75 = (AnimClass *)VocClass::FindByName(&stru_830620.__pad_579C[50868]);
+          *(_DWORD *)&stru_87C374[17964] = -1;
+          v75 = (AnimClass *)VocClass::FindByName(&stru_830620[73296]);
           ClearThemeQueuePlaylist((int)v75);
         }
       }
@@ -1847,16 +1857,16 @@ LABEL_178:
     case 8:
       if ( *(_BYTE *)(ecx0 + 111) )
       {
-        v135 = TypeClass::FindByName(&stru_830620.__pad_579C[51108]);
-        eax198 = (IUnknown *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+        v135 = TypeClass::FindByName(&stru_830620[73536]);
+        eax198 = (IUnknown *)CellCoord::To_CellObj(&stru_87C374[13428], aP3);
         v136 = eax198;
         if ( eax198 )
         {
           if ( eax198 != (IUnknown *)g_CellClassArray )
           {
-            v138 = *(_DWORD *)&stru_87C374.__pad_579C[22224];
-            v139 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3148);
-            if ( v139 == *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3176) )
+            v138 = *(_DWORD *)&stru_87C374[44652];
+            v139 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 3148);
+            if ( v139 == *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 3176) )
             {
               v140 = 0;
               if ( v139 > 0 )
@@ -1866,7 +1876,7 @@ LABEL_178:
                   if ( v135 != -1 )
                   {
                     globalHelper_05EAB0((unsigned int *)v4->field_2C, v135, (IUnknown *)1, 30, (int)v136, 0);
-                    v138 = *(_DWORD *)&stru_87C374.__pad_579C[22224];
+                    v138 = *(_DWORD *)&stru_87C374[44652];
                   }
                   ++v140;
                 }
@@ -1877,8 +1887,8 @@ LABEL_178:
         }
         if ( a4 )
         {
-          *(_DWORD *)&stru_87C374.__pad_14B0[12668] = -1;
-          ecx179 = &stru_830620.__pad_579C[50800];
+          *(_DWORD *)&stru_87C374[17964] = -1;
+          ecx179 = &stru_830620[73228];
           goto LABEL_180;
         }
       }
@@ -1887,13 +1897,13 @@ LABEL_178:
       if ( *(_BYTE *)(ecx0 + 111) )
       {
         v144 = (IUnknown *)aP3;
-        v146 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+        v146 = CellCoord::To_CellObj(&stru_87C374[13428], aP3);
         v147 = (*(int (__thiscall **)(void *, char *))(*(_DWORD *)v146 + 72))(v146, v234);
         a1 = *(IUnknown **)v147;
         v175 = *(_DWORD *)(v147 + 4);
         GroundHeight = *(IUnknown **)(v147 + 8);
-        if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3) + 80) & 0x100) != 0 )
-          GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488.__pad_579C[5208]);
+        if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], aP3) + 80) & 0x100) != 0 )
+          GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488[27636]);
         v148 = (void **)__2_YAPAXI_Z(0x1C8u);
         if ( v148 )
         {
@@ -1902,7 +1912,7 @@ LABEL_178:
           v213.Z = (int)&GroundHeight->field_4 + 1;
           AnimClass::ctor(
             v148,
-            *(CoordStruct **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 664),
+            *(CoordStruct **)(*(_DWORD *)&stru_87C374[44652] + 664),
             &v213,
             0,
             (CoordStruct *)1,
@@ -1910,36 +1920,36 @@ LABEL_178:
             0,
             0);
         }
-        if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[8836] )
-          VoxClass::FindAndPlay(&stru_830620.__pad_579C[51080], -1, -1);
-        PlayAudioAt2(*(IUnknown **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 592), &a1, 0);
+        if ( !*(_DWORD *)&HouseClass_Player[30700] )
+          VoxClass::FindAndPlay(&stru_830620[73508], -1, -1);
+        PlayAudioAt2(*(IUnknown **)(*(_DWORD *)&stru_87C374[44652] + 592), &a1, 0);
         CreateTriggerClassIfFarEnough((IUnknown *)0xD, v149, *(IUnknown **)aP3);
-        if ( *(_BYTE *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6088) )
+        if ( *(_BYTE *)(*(_DWORD *)&stru_87C374[44652] + 6088) )
         {
           PlaySoundEffectAt(
             (TechnoClass *)&a1,
             (IUnknown *)0x2710,
             0,
-            *(ObjectClass **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3996),
+            *(ObjectClass **)(*(_DWORD *)&stru_87C374[44652] + 3996),
             0,
             (int)v4->field_2C);
         }
         else
         {
-          v150 = &stru_B05488.__pad_579C[5140];
+          v150 = &stru_B05488[27568];
           while ( 1 )
           {
             v151 = HIWORD(v144->field_0) + *((_WORD *)v150 + 1);
             LOWORD(var1C8) = *(_WORD *)v150 + LOWORD(v144->field_0);
             HIWORD(var1C8) = v151;
             v208 = var1C8;
-            if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v208) + 80) & 0x100) != 0 )
+            if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v208) + 80) & 0x100) != 0 )
             {
               v152 = HIWORD(v144->field_0) + *((_WORD *)v150 + 1);
               LOWORD(v177) = *(_WORD *)v150 + LOWORD(v144->field_0);
               HIWORD(v177) = v152;
               v206 = v177;
-              v153 = (_DWORD *)*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v206) + 58);
+              v153 = (_DWORD *)*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v206) + 58);
             }
             else
             {
@@ -1947,7 +1957,7 @@ LABEL_178:
               LOWORD(v178) = *(_WORD *)v150 + LOWORD(v144->field_0);
               HIWORD(v178) = v154;
               v200 = v178;
-              v153 = (_DWORD *)*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v200) + 57);
+              v153 = (_DWORD *)*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v200) + 57);
             }
             if ( v153 )
             {
@@ -1963,7 +1973,7 @@ LABEL_178:
                     v153,
                     &v183,
                     0,
-                    *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3992),
+                    *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 3992),
                     0,
                     1,
                     0,
@@ -1974,15 +1984,15 @@ LABEL_178:
               while ( v155 );
             }
             v150 += 4;
-            if ( (int)v150 >= (int)&stru_B05488.__pad_579C[5176] )
+            if ( (int)v150 >= (int)&stru_B05488[27604] )
               break;
             v144 = (IUnknown *)aP3;
           }
         }
         if ( a4 )
         {
-          *(_DWORD *)&stru_87C374.__pad_14B0[12668] = -1;
-          ecx179 = &stru_830620.__pad_579C[50776];
+          *(_DWORD *)&stru_87C374[17964] = -1;
+          ecx179 = &stru_830620[73204];
           goto LABEL_180;
         }
       }
@@ -1990,13 +2000,13 @@ LABEL_178:
     case 0xA:
       if ( *(_BYTE *)(ecx0 + 111) )
       {
-        v88 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+        v88 = CellCoord::To_CellObj(&stru_87C374[13428], aP3);
         v89 = (*(int (__thiscall **)(void *, char *))(*(_DWORD *)v88 + 72))(v88, v224);
         a1 = *(IUnknown **)v89;
         v175 = *(_DWORD *)(v89 + 4);
         GroundHeight = *(IUnknown **)(v89 + 8);
-        if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3) + 80) & 0x100) != 0 )
-          GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488.__pad_579C[5208]);
+        if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], aP3) + 80) & 0x100) != 0 )
+          GroundHeight = (IUnknown *)((char *)GroundHeight + *(_DWORD *)&stru_B05488[27636]);
         v90 = (void **)__2_YAPAXI_Z(0x1C8u);
         if ( v90 )
         {
@@ -2005,7 +2015,7 @@ LABEL_178:
           v211.Z = (int)&GroundHeight->field_4 + 1;
           AnimClass::ctor(
             v90,
-            *(CoordStruct **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 844),
+            *(CoordStruct **)(*(_DWORD *)&stru_87C374[44652] + 844),
             &v211,
             0,
             (CoordStruct *)1,
@@ -2014,8 +2024,8 @@ LABEL_178:
             0);
         }
         v91 = a1;
-        *(_DWORD *)&v4->__pad_3C[20] = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6076)
-                                     - *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6084);
+        *(_DWORD *)&v4->__pad_3C[20] = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 6076)
+                                     - *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 6084);
         v92 = v175;
         *(_DWORD *)&v4->__pad_3C[24] = v91;
         v93 = GroundHeight;
@@ -2025,25 +2035,25 @@ LABEL_178:
         v95 = (AudioController *)*((_DWORD *)v94 + 49);
         if ( v95 != (AudioController *)-1 )
           StartAudioControllerAt(v95, (int)&a1, 0);
-        HouseClass::CreatePowerOutage((int)v4->field_2C, *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6080));
-        v96 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+        HouseClass::CreatePowerOutage((int)v4->field_2C, *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 6080));
+        v96 = CellCoord::To_CellObj(&stru_87C374[13428], aP3);
         v97 = (*(int (__thiscall **)(void *, char *))(*(_DWORD *)v96 + 72))(v96, v226);
         v98 = *(_DWORD *)v97;
         v99 = *(_DWORD *)(v97 + 4);
         HIDWORD(v183) = v99;
         v100 = *(IUnknown **)(v97 + 8);
         var1A8 = v100;
-        v101 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6072) << 8;
-        if ( (v98 != *(_DWORD *)&stru_B05488.__pad_579C[5116]
-           || v99 != *(_DWORD *)&stru_B05488.__pad_579C[5120]
-           || v100 != *(IUnknown **)&stru_B05488.__pad_579C[5124])
-          && (v98 != *(_DWORD *)&stru_B05488.__pad_579C[5196]
-           || v99 != *(_DWORD *)&stru_B05488.__pad_579C[5200]
-           || v100 != *(IUnknown **)&stru_B05488.__pad_579C[5204]) )
+        v101 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 6072) << 8;
+        if ( (v98 != *(_DWORD *)&stru_B05488[27544]
+           || v99 != *(_DWORD *)&stru_B05488[27548]
+           || v100 != *(IUnknown **)&stru_B05488[27552])
+          && (v98 != *(_DWORD *)&stru_B05488[27624]
+           || v99 != *(_DWORD *)&stru_B05488[27628]
+           || v100 != *(IUnknown **)&stru_B05488[27632]) )
         {
-          for ( j = *(_DWORD *)&HouseClass_Player.__pad_5568[22684] - 1; j >= 0; --j )
+          for ( j = *(_DWORD *)&HouseClass_Player[44548] - 1; j >= 0; --j )
           {
-            v102 = *(void ***)(*(_DWORD *)&HouseClass_Player.__pad_5568[22672] + 4 * j);
+            v102 = *(void ***)(*(_DWORD *)&HouseClass_Player[44536] + 4 * j);
             if ( (unsigned __int8)HouseClass::IsAlliedWith(v102[135], (IUnknown *)v4->field_2C) )
             {
               v103 = (_DWORD *)(*((int (__thiscall **)(void **, char *))*v102 + 18))(v102, v228);
@@ -2058,7 +2068,7 @@ LABEL_178:
               if ( eax143a < v101 )
                 (*((void (__thiscall **)(void **, _DWORD, void *, int))*v102 + 85))(
                   v102,
-                  *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6076),
+                  *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 6076),
                   v4->field_2C,
                   1);
             }
@@ -2066,8 +2076,8 @@ LABEL_178:
         }
         if ( a4 )
         {
-          *(_DWORD *)&stru_87C374.__pad_14B0[12668] = -1;
-          v105 = (AnimClass *)VocClass::FindByName(&stru_830620.__pad_579C[50920]);
+          *(_DWORD *)&stru_87C374[17964] = -1;
+          v105 = (AnimClass *)VocClass::FindByName(&stru_830620[73348]);
           ClearThemeQueuePlaylist((int)v105);
         }
       }
@@ -2075,16 +2085,16 @@ LABEL_178:
     case 0xB:
       if ( *(_BYTE *)(ecx0 + 111) )
       {
-        v141 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
+        v141 = CellCoord::To_CellObj(&stru_87C374[13428], aP3);
         v142 = (int *)(*(int (__thiscall **)(void *))(*(_DWORD *)v141 + 72))(v141);
         v173 = *v142;
         v143 = (IUnknown *)v4->field_2C;
         a1 = (IUnknown *)v142[1];
         v175 = v142[2];
         MapClass::RevealArea1(
-          (int *)&stru_87C374.__pad_14B0[8132],
+          (int *)&stru_87C374[13428],
           (IUnknown *)&v173,
-          *(IUnknown **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4076),
+          *(IUnknown **)(*(_DWORD *)&stru_87C374[44652] + 4076),
           v143,
           0,
           0,
@@ -2092,9 +2102,9 @@ LABEL_178:
           0,
           0);
         MapClass::RevealArea1(
-          (int *)&stru_87C374.__pad_14B0[8132],
+          (int *)&stru_87C374[13428],
           (IUnknown *)&v173,
-          *(IUnknown **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4076),
+          *(IUnknown **)(*(_DWORD *)&stru_87C374[44652] + 4076),
           (IUnknown *)v4->field_2C,
           0,
           0,
@@ -2102,11 +2112,11 @@ LABEL_178:
           0,
           (IUnknown *)1);
         eax208a = (_DWORD *)(*(int (__thiscall **)(void *, char *, _DWORD))(*(_DWORD *)v141 + 72))(v141, v232, 0);
-        PlayAudioAt2(*(IUnknown **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 596), eax208a, (int)v230);
+        PlayAudioAt2(*(IUnknown **)(*(_DWORD *)&stru_87C374[44652] + 596), eax208a, (int)v230);
         if ( a4 )
         {
-          *(_DWORD *)&stru_87C374.__pad_14B0[12668] = -1;
-          ecx179 = &stru_830620.__pad_579C[50752];
+          *(_DWORD *)&stru_87C374[17964] = -1;
+          ecx179 = &stru_830620[73180];
 LABEL_180:
           v124 = (AnimClass *)VocClass::FindByName(ecx179);
           ClearThemeQueuePlaylist((int)v124);
@@ -2210,16 +2220,16 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     v5->__pad_194[1] = 0;
     this->SuperClass_field_0x68 = 0;
     v9 = this;
-    v6 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 16))( &DataGlobal_B05488.__pad_579C[18836], &v9);
+    v6 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(int *)&DataGlobal_B05488[41264] + 16))( &DataGlobal_B05488[41264], &v9);
     if ( v6 != (IUnknown *)-1 )
-    DynamicVector::RemoveItem(&DataGlobal_B05488.__pad_579C[18836], v6);
+    DynamicVector::RemoveItem(&DataGlobal_B05488[41264], v6);
   }
     if ( (unsigned char)this->SuperClass_field_0x6C )
   {
     v9 = this;
-    v7 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 16))( &DataGlobal_B05488.__pad_579C[18836], &v9);
+    v7 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(int *)&DataGlobal_B05488[41264] + 16))( &DataGlobal_B05488[41264], &v9);
     if ( v7 != (IUnknown *)-1 )
-    DynamicVector::RemoveItem(&DataGlobal_B05488.__pad_579C[18836], v7);
+    DynamicVector::RemoveItem(&DataGlobal_B05488[41264], v7);
     this->AnimationGotInvalid = 0;
   }
     result = (void **)__2_YAPAXI_Z(0x1C8u);
@@ -2228,15 +2238,15 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     aP2a.X = (int)aP1;
     aP2a.Y = (int)aP2;
     aP2a.Z = a4 + 5;
-    result = (void **)AnimClass::ctor( result, *(CoordStruct **)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 816), &aP2a, 0, (CoordStruct *)1, (void *)0x600, 0, 0);
+    result = (void **)AnimClass::ctor( result, *(CoordStruct **)(*(int *)&DataGlobal_87C374[44652] + 816), &aP2a, 0, (CoordStruct *)1, (void *)0x600, 0, 0);
     if ( result )
     {
     this->SuperClass_field_0x68 = result;
-    result = *(void ***)&DataGlobal_B05488.__pad_579C[18844];
-    if ( *(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (result = (void **)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0), (char)result) )
+    result = *(void ***)&DataGlobal_B05488[41272];
+    if ( *(int *)&DataGlobal_B05488[41280] < *(int *)&DataGlobal_B05488[41272] || (DataGlobal_B05488[41277] || !*(int *)&DataGlobal_B05488[41272]) && *(int *)&DataGlobal_B05488[41284] > 0 && (result = (void **)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488[41264] + 8))( &DataGlobal_B05488[41264], *(int *)&DataGlobal_B05488[41272] + *(int *)&DataGlobal_B05488[41284], 0), (char)result) )
       {
-    result = (void **)(*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
-    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * (int)result) = this;
+    result = (void **)(*(int *)&DataGlobal_B05488[41280])++;
+    *(int *)(*(int *)&DataGlobal_B05488[41268] + 4 * (int)result) = this;
       }
     }
   }
@@ -2263,17 +2273,17 @@ char SuperClass::SetOnHold(CoordStruct * aP1)
     if ( v3 != (IUnknown *)-1 )
     {
     v4 = this->SuperClass_field_0x38;
-    if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664] - (int)v3 >= v4 )
+    if ( *(int *)&g_NetworkPlayerBuffer[5960] - (int)v3 >= v4 )
     v5 = 0;
     else
-    v5 = v4 - (*(int *)&g_NetworkPlayerBuffer.__pad_14B0[664] - (int)v3);
+    v5 = v4 - (*(int *)&g_NetworkPlayerBuffer[5960] - (int)v3);
     this->SuperClass_field_0x38 = v5;
     this->SuperClass_field_0x30 = -1;
     }
   }
     else if ( this->SuperClass_field_0x30 == -1 )
   {
-    this->SuperClass_field_0x30 = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664];
+    this->SuperClass_field_0x30 = *(int *)&g_NetworkPlayerBuffer[5960];
     this->IsOnHold = 0;
     return 1;
   }
@@ -2412,14 +2422,14 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_SuperClass;
     *(int *)&aP0->__pad_0[12] = &vt_SuperClass;
     }
-    if ( aP0[2].NeedsSaveOrLink && (*(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0)) )
+    if ( aP0[2].NeedsSaveOrLink && (*(int *)&DataGlobal_B05488[41280] < *(int *)&DataGlobal_B05488[41272] || (DataGlobal_B05488[41277] || !*(int *)&DataGlobal_B05488[41272]) && *(int *)&DataGlobal_B05488[41284] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488[41264] + 8))( &DataGlobal_B05488[41264], *(int *)&DataGlobal_B05488[41272] + *(int *)&DataGlobal_B05488[41284], 0)) )
     {
-    v3 = (*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
-    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * v3) = aP0;
+    v3 = (*(int *)&DataGlobal_B05488[41280])++;
+    *(int *)(*(int *)&DataGlobal_B05488[41268] + 4 * v3) = aP0;
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].NeedsSaveOrLink);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].NeedsSaveOrLink);
     *(int *)aP0[2].__pad_0 = 0;
     *(int *)&aP0[2].__pad_0[4] = 0;
     return 0;

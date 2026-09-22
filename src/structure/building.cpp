@@ -18,6 +18,7 @@
 #include "system/cell.hpp"
 #include "system/scenario.hpp"
 #include <cstring>
+#include "e4/e4_globals.hpp"
 
 extern gamemd::SuperWeaponTypeClass* g_SuperWeaponTypeItems[];
 extern uint32_t Map_CellHeight;      // data: 0x89A1C0
@@ -186,13 +187,13 @@ int __thiscall BuildingClass::Construct(int this, int a2, int a3)
   this->q630 = 0;
   this->q634 = 0;
   this->q638 = 1;
-  this->BuildingClass_field_rect_63C = MEMORY[0x87F7E8][29704];
-  this->q640 = MEMORY[0x87F7E8][29705];
-  this->q644 = MEMORY[0x87F7E8][29706];
-  this->q648 = MEMORY[0x87F7E8][29707];
-  this->BuildingClass_field_coord_64C = MEMORY[0x87F7E8][29720];
-  this->q650 = MEMORY[0x87F7E8][29721];
-  this->q654 = MEMORY[0x87F7E8][29722];
+  this->BuildingClass_field_rect_63C = DataGlobal_87F7E8[29704];
+  this->q640 = DataGlobal_87F7E8[29705];
+  this->q644 = DataGlobal_87F7E8[29706];
+  this->q648 = DataGlobal_87F7E8[29707];
+  this->BuildingClass_field_coord_64C = DataGlobal_87F7E8[29720];
+  this->q650 = DataGlobal_87F7E8[29721];
+  this->q654 = DataGlobal_87F7E8[29722];
   this->BuildingClass_field_int_658 = 0;
   this->BuildingClass_field_65C = 0;
   this->HasPower = 1;
@@ -286,16 +287,16 @@ int __thiscall BuildingClass::Construct(int this, int a2, int a3)
   LOWORD(a3) = 0x4000;
   FacingClass::Update((char *)(this + 880), &a3);
   this->RepairProgress = 0;
-  if ( MEMORY[0x87F7E8][539866] < MEMORY[0x87F7E8][539864]
-    || (BYTE1(MEMORY[0x87F7E8][539865]) || !MEMORY[0x87F7E8][539864])
-    && MEMORY[0x87F7E8][539867] > 0
-    && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(MEMORY[0x87F7E8][539862] + 8))(
-         &MEMORY[0x87F7E8][539862],
-         MEMORY[0x87F7E8][539867] + MEMORY[0x87F7E8][539864],
+  if ( DataGlobal_87F7E8[539866] < DataGlobal_87F7E8[539864]
+    || (BYTE1(DataGlobal_87F7E8[539865]) || !DataGlobal_87F7E8[539864])
+    && DataGlobal_87F7E8[539867] > 0
+    && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(DataGlobal_87F7E8[539862] + 8))(
+         &DataGlobal_87F7E8[539862],
+         DataGlobal_87F7E8[539867] + DataGlobal_87F7E8[539864],
          0) )
   {
-    v8 = MEMORY[0x87F7E8][539866]++;
-    *(_DWORD *)(MEMORY[0x87F7E8][539863] + 4 * v8) = this;
+    v8 = DataGlobal_87F7E8[539866]++;
+    *(_DWORD *)(DataGlobal_87F7E8[539863] + 4 * v8) = this;
   }
   BuildingClass::Update((#377 *)this);
   if ( dword_A8ED54[131647] < dword_A8ED54[131645]
@@ -815,13 +816,13 @@ int __thiscall BuildingClass::Dtor(void **this)
   AbstractClass::AnnounceExpiredPointer(this, v3);
   BuildingClass::Sell((#377 *)this);
   Vtable3 = this;
-  v6 = (*(int (__thiscall **)(_DWORD *, void ***))(MEMORY[0x87F7E8][539862] + 16))(&MEMORY[0x87F7E8][539862], &Vtable3);
+  v6 = (*(int (__thiscall **)(_DWORD *, void ***))(DataGlobal_87F7E8[539862] + 16))(&DataGlobal_87F7E8[539862], &Vtable3);
   if ( v6 != -1 )
-    Vector::RemoveAt(&MEMORY[0x87F7E8][539862], v6);
+    Vector::RemoveAt(&DataGlobal_87F7E8[539862], v6);
   Vtable3 = this;
-  v7 = (*(int (__thiscall **)(_DWORD *, void ***))(MEMORY[0x87F7E8][53886] + 16))(&MEMORY[0x87F7E8][53886], &Vtable3);
+  v7 = (*(int (__thiscall **)(_DWORD *, void ***))(DataGlobal_87F7E8[53886] + 16))(&DataGlobal_87F7E8[53886], &Vtable3);
   if ( v7 != -1 )
-    Vector::RemoveAt(&MEMORY[0x87F7E8][53886], v7);
+    Vector::RemoveAt(&DataGlobal_87F7E8[53886], v7);
   BuildingClass::ClearAnims((int *)this, -2);
   BuildingTypeClass::IsPowered((int)this->gattlingValue);
   v8 = this + 370;
@@ -837,7 +838,7 @@ int __thiscall BuildingClass::Dtor(void **this)
     --v9;
   }
   while ( v9 );
-  if ( LOBYTE(MEMORY[0x87F7E8][539758]) )
+  if ( LOBYTE(DataGlobal_87F7E8[539758]) )
   {
     v10 = (int)this->gattlingValue;
     if ( v10 )
@@ -856,21 +857,21 @@ int __thiscall BuildingClass::Dtor(void **this)
   }
   v12 = *((_DWORD *)this->gattlingValue + 1468);
   if ( (v12 == -1
-     || (v13 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][528693] + 4 * v12) + 40) + 200)) == 0
+     || (v13 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(DataGlobal_87F7E8[528693] + 4 * v12) + 40) + 200)) == 0
      || DynamicVector::GetOrGrow((_DWORD *)this->owner + 5460, *(_DWORD *)(v13 + 3576)))
     && *((_DWORD *)this->gattlingValue + 1468) != -1
     || ((v14 = *((_DWORD *)this->gattlingValue + 1469), v14 == -1)
-     || (v15 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][528693] + 4 * v14) + 40) + 200)) == 0
+     || (v15 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(DataGlobal_87F7E8[528693] + 4 * v14) + 40) + 200)) == 0
      || DynamicVector::GetOrGrow((_DWORD *)this->owner + 5460, *(_DWORD *)(v15 + 3576)))
     && *((_DWORD *)this->gattlingValue + 1469) != -1 )
   {
     SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((int)this->owner);
   }
-  if ( LOBYTE(MEMORY[0x87F7E8][539758]) )
+  if ( LOBYTE(DataGlobal_87F7E8[539758]) )
   {
     if ( this->health != this->BuildingClass_field_544 )
       *((_BYTE *)this->owner + 22392) = 1;
-    if ( LOBYTE(MEMORY[0x87F7E8][539758]) && this->gattlingValue )
+    if ( LOBYTE(DataGlobal_87F7E8[539758]) && this->gattlingValue )
     {
       v16 = this->owner;
       if ( v16 )
@@ -1462,16 +1463,16 @@ char __thiscall TriggerBuildingDestruction(_DWORD *this)
       LOWORD(v23) = v22 + *v4;
       HIWORD(v23) = v5;
       v24 = v23;
-      v6 = (__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v24);
+      v6 = (__int16 *)CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v24);
       BuildingClass::CreatePlacementCrater(v6);
       *((_DWORD *)v6 + 17) = 239;
       *((_DWORD *)v6 + 16) = 0;
       House::AnnounceUpgrade((int)v6, -1);
-      Cell::SetRadar(MEMORY[0x87F7E8], v6 + 18);
-      Radar::Update(MEMORY[0x87F7E8], v6 + 18);
+      Cell::SetRadar(DataGlobal_87F7E8, v6 + 18);
+      Radar::Update(DataGlobal_87F7E8, v6 + 18);
       ((void (__thiscall *)(__int16 *))AbstractClass::ClearTargetToMeClearManagerTarget)(v6);
     }
-    v7 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v22);
+    v7 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v22);
     v7[16] = v1[328];
     PlacementRectBuildingClass = BuildingClass::GetPlacementRect((int)v7, v29);
     StartCoordsHouse = House::GetStartCoords((int)v7, v30);
@@ -1519,12 +1520,12 @@ char __thiscall TriggerBuildingDestruction(_DWORD *this)
         v16 = v13;
       }
     }
-    v26[0] = v10 - MEMORY[0x87F7E8][7662];
-    v26[1] = v12 - MEMORY[0x87F7E8][7663];
+    v26[0] = v10 - DataGlobal_87F7E8[7662];
+    v26[1] = v12 - DataGlobal_87F7E8[7663];
     v17 = Rect::Construct(v30, v26, v16, v14);
     Cell::CreateCrater(*v17, v17[1], v17[2], v17[3], 0);
-    v18 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v22);
-    Tactical::AddCellToDrawList(MEMORY[0x87F7E8][7887], (int)v18);
+    v18 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v22);
+    Tactical::AddCellToDrawList(DataGlobal_87F7E8[7887], (int)v18);
   }
   result = *(_BYTE *)(v1[328] + 5991);
   if ( result )
@@ -1534,9 +1535,9 @@ char __thiscall TriggerBuildingDestruction(_DWORD *this)
     v21 = v1[328];
     HIWORD(v22) = v20[1] / 256;
     if ( *(_BYTE *)(v21 + 5993) )
-      return BuildingClass::SearchPlacement(MEMORY[0x87F7E8], v22, 0);
+      return BuildingClass::SearchPlacement(DataGlobal_87F7E8, v22, 0);
     else
-      return BuildingClass::SearchPlacement(MEMORY[0x87F7E8], v22, 20);
+      return BuildingClass::SearchPlacement(DataGlobal_87F7E8, v22, 20);
   }
   return result;
 }
@@ -2125,7 +2126,7 @@ void __thiscall BuildingClass_ValidatePlacement(void **this, char a2)
     {
       v43 = (int)this->objectTypeFlags;
       v44 = *CellStruct::Add(&v43, &v49, (_WORD *)(4 * (v3 & 7) + 9041544));
-      v4 = (void **)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v44);
+      v4 = (void **)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v44);
     }
     else
     {
@@ -2150,10 +2151,10 @@ void __thiscall BuildingClass_ValidatePlacement(void **this, char a2)
     v9 = (_DWORD *)CellClass::GetScreenRect(v54);
     v10 = Rect::Union(v56, v9, v34);
     v11 = Rect::Union(v58, v10, v36);
-    v48[1] = MEMORY[0x886FA4];
+    v48[1] = g_Map_VisibleRect;
     v12 = *v11;
     v13 = 0;
-    v48[0] = MEMORY[0x886FA0];
+    v48[0] = DSurface_ViewBounds;
     v14 = v11[1];
     v46 = v12;
     v47 = v14;
@@ -2163,9 +2164,9 @@ void __thiscall BuildingClass_ValidatePlacement(void **this, char a2)
     v16 = Rect::Construct(v60, v15, v33, v35);
     Cell::CreateCrater(*v16, v16[1], v16[2], v16[3], 0);
     v17 = v4 + 9;
-    BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], (int)(v4 + 9));
+    BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)(v4 + 9));
     v18 = v4[17];
-    if ( v18 != (void *)-1 && *(_BYTE *)(*((_DWORD *)MEMORY[0xA83D84] + (_DWORD)v18) + 680) )
+    if ( v18 != (void *)-1 && *(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array + (_DWORD)v18) + 680) )
     {
       v38 = 0;
       v19 = &unk_81CC70;
@@ -2175,12 +2176,12 @@ void __thiscall BuildingClass_ValidatePlacement(void **this, char a2)
         {
           v20 = *v19 & 7;
           v39 = *v17;
-          v21 = MEMORY[0x89F688][v20];
-          LOWORD(v20) = HIWORD(MEMORY[0x89F688][v20]);
+          v21 = Direction_X_Offsets[v20];
+          LOWORD(v20) = HIWORD(Direction_X_Offsets[v20]);
           LOWORD(v42) = (_WORD)v39 + v21;
           HIWORD(v42) = HIWORD(v39) + v20;
           v39 = v42;
-          CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v39);
+          CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v39);
         }
         if ( (unsigned __int8)BuildingPlacement::ValidateType(v4[17], *v19) )
           v38 |= 1 << v13;
@@ -2248,23 +2249,23 @@ void __thiscall BuildingClass_ValidatePlacement(void **this, char a2)
         v37 = (__int16 *)(v4 + 9);
         if ( v26 )
         {
-          Cell::SetRadar((int *)&MEMORY[0x87F7E8], v37);
-          Radar::Update(&MEMORY[0x87F7E8], (__int16 *)v4 + 18);
+          Cell::SetRadar((int *)&DataGlobal_87F7E8, v37);
+          Radar::Update(&DataGlobal_87F7E8, (__int16 *)v4 + 18);
           for ( i = 0; i < 8; ++i )
           {
             v30 = i & 7;
-            v31 = *((_WORD *)v17 + 1) + HIWORD(MEMORY[0x89F688][v30]);
-            LOWORD(v41) = LOWORD(MEMORY[0x89F688][v30]) + *(_WORD *)v17;
+            v31 = *((_WORD *)v17 + 1) + HIWORD(Direction_X_Offsets[v30]);
+            LOWORD(v41) = LOWORD(Direction_X_Offsets[v30]) + *(_WORD *)v17;
             HIWORD(v41) = v31;
             v38 = v41;
-            v32 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v38);
+            v32 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v38);
             --v32[290];
           }
         }
         else
         {
           CellClass::DetermineTileConnectivity(v37);
-          Radar::Update(&MEMORY[0x87F7E8], (__int16 *)v4 + 18);
+          Radar::Update(&DataGlobal_87F7E8, (__int16 *)v4 + 18);
         }
       }
     }
@@ -2790,7 +2791,7 @@ int __thiscall BuildingClass_FindPlacementCells(_DWORD *this, int a2)
   LOWORD(v111) = *v4 / 256;
   HIWORD(v111) = v4[1] / 256;
   v106 = v111;
-  v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v106);
+  v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v106);
   if ( Cell::IsBuildableAdvanced((int)v5) || (v104 = 0, ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0) )
     v104 = 1;
   v6 = (void *)a2;
@@ -2798,7 +2799,7 @@ int __thiscall BuildingClass_FindPlacementCells(_DWORD *this, int a2)
   LOWORD(a2) = *v7 / 256;
   HIWORD(a2) = v7[1] / 256;
   v107 = a2;
-  v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v107);
+  v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v107);
   LOBYTE(a2) = BYTE1(v8[80]) & 1;
   IsBuildableAdvanced = Cell::IsBuildableAdvanced((int)v8);
   if ( !v105 )
@@ -2812,7 +2813,7 @@ int __thiscall BuildingClass_FindPlacementCells(_DWORD *this, int a2)
         {
           if ( a2 != v106 )
           {
-            v20 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+            v20 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
             v21 = v3[2];
             if ( v3[4] < v21 )
               goto LABEL_200;
@@ -2826,9 +2827,9 @@ LABEL_69:
           goto LABEL_40;
         }
         v112 = 0;
-        TileIndex = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&a2, 0, 0);
+        TileIndex = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&a2, 0, 0);
         v110 = *LayerClass::Pathfinding_Find(
-                  &MEMORY[0x87F7E8],
+                  &DataGlobal_87F7E8,
                   (int)&v113,
                   &v113,
                   (__int16 *)&a2,
@@ -2845,12 +2846,12 @@ LABEL_69:
                   (__int16 *)&v112,
                   0,
                   0);
-        if ( v110 != MEMORY[0xB1CFB8] )
+        if ( v110 != g_UnitSelectionState )
         {
           v46 = (__int16 *)&v110;
           goto LABEL_134;
         }
-        if ( MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)&v106, (__int16 *)&v107, 0, 0, 1, 0) )
+        if ( MapSeed::CheckTileMatch(&DataGlobal_87F7E8, (__int16 *)&v106, (__int16 *)&v107, 0, 0, 1, 0) )
         {
           if ( a2 != v106 )
           {
@@ -2861,7 +2862,7 @@ LABEL_69:
         }
         v112 = 0;
         v110 = *LayerClass::Pathfinding_Find(
-                  &MEMORY[0x87F7E8],
+                  &DataGlobal_87F7E8,
                   (int)&v112,
                   &v113,
                   (__int16 *)&v107,
@@ -2878,12 +2879,12 @@ LABEL_69:
                   (__int16 *)&v112,
                   0,
                   0);
-        if ( v110 != MEMORY[0xB1CFB8] )
+        if ( v110 != g_UnitSelectionState )
           goto LABEL_77;
         v112 = 0;
-        v66 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 0);
+        v66 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
         v111 = *LayerClass::Pathfinding_Find(
-                  &MEMORY[0x87F7E8],
+                  &DataGlobal_87F7E8,
                   (int)&v113,
                   &v113,
                   (__int16 *)&v107,
@@ -2900,7 +2901,7 @@ LABEL_69:
                   (__int16 *)&v112,
                   0,
                   0);
-        if ( v111 == MEMORY[0xB1CFB8] || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
+        if ( v111 == g_UnitSelectionState || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
           return 0;
       }
       else
@@ -2908,9 +2909,9 @@ LABEL_69:
         if ( IsBuildableAdvanced || !BuildingTypeClass::IsPlacementValid(v2, (__int16 *)&v106, (__int16 *)&v107) )
           goto LABEL_40;
         v112 = 0;
-        v67 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v107, 0, 0);
+        v67 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v107, 0, 0);
         a2 = *LayerClass::Pathfinding_Find(
-                &MEMORY[0x87F7E8],
+                &DataGlobal_87F7E8,
                 (int)&v113,
                 &v113,
                 (__int16 *)&v107,
@@ -2927,16 +2928,16 @@ LABEL_69:
                 (__int16 *)&v112,
                 0,
                 0);
-        if ( a2 != MEMORY[0xB1CFB8] )
+        if ( a2 != g_UnitSelectionState )
         {
           v46 = (__int16 *)&a2;
           goto LABEL_134;
         }
-        if ( MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)&v106, (__int16 *)&v107, 0, 1, 1, 0) )
+        if ( MapSeed::CheckTileMatch(&DataGlobal_87F7E8, (__int16 *)&v106, (__int16 *)&v107, 0, 1, 1, 0) )
           goto LABEL_40;
         v112 = 0;
         a2 = *LayerClass::Pathfinding_Find(
-                &MEMORY[0x87F7E8],
+                &DataGlobal_87F7E8,
                 (int)&v112,
                 &v113,
                 (__int16 *)&v107,
@@ -2953,15 +2954,15 @@ LABEL_69:
                 (__int16 *)&v112,
                 0,
                 0);
-        if ( a2 != MEMORY[0xB1CFB8] )
+        if ( a2 != g_UnitSelectionState )
         {
-          v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+          v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
           goto LABEL_40;
         }
         v112 = 0;
-        v68 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 0);
+        v68 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
         v111 = *LayerClass::Pathfinding_Find(
-                  &MEMORY[0x87F7E8],
+                  &DataGlobal_87F7E8,
                   (int)&v113,
                   &v113,
                   (__int16 *)&v107,
@@ -2978,11 +2979,11 @@ LABEL_69:
                   (__int16 *)&v112,
                   0,
                   0);
-        if ( v111 == MEMORY[0xB1CFB8] || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
+        if ( v111 == g_UnitSelectionState || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
           return 0;
       }
 LABEL_218:
-      v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v111);
+      v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v111);
       goto LABEL_40;
     }
     if ( (_BYTE)a2 )
@@ -2998,9 +2999,9 @@ LABEL_218:
         goto LABEL_40;
       }
       v112 = 0;
-      v69 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 0);
+      v69 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
       v109 = *LayerClass::Pathfinding_Find(
-                &MEMORY[0x87F7E8],
+                &DataGlobal_87F7E8,
                 (int)&v113,
                 &v113,
                 (__int16 *)&v106,
@@ -3018,9 +3019,9 @@ LABEL_218:
                 0,
                 0);
       v112 = 0;
-      v70 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&a2, 0, 0);
+      v70 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&a2, 0, 0);
       v71 = *LayerClass::Pathfinding_Find(
-               &MEMORY[0x87F7E8],
+               &DataGlobal_87F7E8,
                (int)&v113,
                &v113,
                (__int16 *)&a2,
@@ -3038,9 +3039,9 @@ LABEL_218:
                0,
                0);
       v110 = v71;
-      if ( v109 != MEMORY[0xB1CFB8] && __PAIR32__(HIWORD(v110), v71) != MEMORY[0xB1CFB8] )
+      if ( v109 != g_UnitSelectionState && __PAIR32__(HIWORD(v110), v71) != g_UnitSelectionState )
       {
-        v72 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v109);
+        v72 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
         v73 = v3[2];
         if ( v3[4] < v73
           || (*((_BYTE *)v3 + 13) || !v73)
@@ -3055,14 +3056,14 @@ LABEL_218:
         v18 = (__int16 *)&v110;
         goto LABEL_16;
       }
-      if ( !MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)&v106, (__int16 *)&v107, 0, 0, 1, 0) )
+      if ( !MapSeed::CheckTileMatch(&DataGlobal_87F7E8, (__int16 *)&v106, (__int16 *)&v107, 0, 0, 1, 0) )
       {
-        if ( v109 == MEMORY[0xB1CFB8] )
+        if ( v109 == g_UnitSelectionState )
         {
           v112 = 0;
-          v84 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 0);
+          v84 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
           v111 = *LayerClass::Pathfinding_Find(
-                    &MEMORY[0x87F7E8],
+                    &DataGlobal_87F7E8,
                     (int)&v113,
                     &v113,
                     (__int16 *)&v107,
@@ -3079,14 +3080,14 @@ LABEL_218:
                     (__int16 *)&v112,
                     0,
                     0);
-          if ( v111 == MEMORY[0xB1CFB8] || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
+          if ( v111 == g_UnitSelectionState || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
             return 0;
         }
         else
         {
           v112 = 0;
           v77 = *LayerClass::Pathfinding_Find(
-                   &MEMORY[0x87F7E8],
+                   &DataGlobal_87F7E8,
                    (int)&v112,
                    &v113,
                    (__int16 *)&v107,
@@ -3104,9 +3105,9 @@ LABEL_218:
                    0,
                    0);
           v110 = v77;
-          if ( v77 != MEMORY[0xB1CFB8] && v109 != v77 )
+          if ( v77 != g_UnitSelectionState && v109 != v77 )
           {
-            v78 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v109);
+            v78 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
             v79 = v3[2];
             if ( v3[4] < v79
               || (*((_BYTE *)v3 + 13) || !v79)
@@ -3121,9 +3122,9 @@ LABEL_218:
             goto LABEL_38;
           }
           v112 = 0;
-          v83 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 0);
+          v83 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
           v111 = *LayerClass::Pathfinding_Find(
-                    &MEMORY[0x87F7E8],
+                    &DataGlobal_87F7E8,
                     (int)&v113,
                     &v113,
                     (__int16 *)&v107,
@@ -3140,14 +3141,14 @@ LABEL_218:
                     (__int16 *)&v112,
                     0,
                     0);
-          if ( v111 == MEMORY[0xB1CFB8] || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
+          if ( v111 == g_UnitSelectionState || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
             return 0;
         }
         goto LABEL_218;
       }
       if ( a2 == v106 )
         goto LABEL_40;
-      v19 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+      v19 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
     }
     else
     {
@@ -3156,9 +3157,9 @@ LABEL_218:
         if ( !BuildingTypeClass::IsPlacementValid(v2, (__int16 *)&v106, (__int16 *)&v107) )
           goto LABEL_40;
         v112 = 0;
-        v87 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 0);
+        v87 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
         a2 = *LayerClass::Pathfinding_Find(
-                &MEMORY[0x87F7E8],
+                &DataGlobal_87F7E8,
                 (int)&v113,
                 &v113,
                 (__int16 *)&v106,
@@ -3176,9 +3177,9 @@ LABEL_218:
                 0,
                 0);
         v112 = 0;
-        v88 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v107, 0, 0);
+        v88 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v107, 0, 0);
         v89 = *LayerClass::Pathfinding_Find(
-                 &MEMORY[0x87F7E8],
+                 &DataGlobal_87F7E8,
                  (int)&v113,
                  &v113,
                  (__int16 *)&v107,
@@ -3196,9 +3197,9 @@ LABEL_218:
                  0,
                  0);
         v110 = v89;
-        if ( a2 != MEMORY[0xB1CFB8] && __PAIR32__(HIWORD(v110), v89) != MEMORY[0xB1CFB8] )
+        if ( a2 != g_UnitSelectionState && __PAIR32__(HIWORD(v110), v89) != g_UnitSelectionState )
         {
-          v90 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+          v90 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
           v91 = v3[2];
           if ( v3[4] < v91
             || (*((_BYTE *)v3 + 13) || !v91)
@@ -3210,7 +3211,7 @@ LABEL_218:
             v3[4] = v93 + 1;
             *(_DWORD *)(v94 + 4 * v93) = v90;
           }
-          v20 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v110);
+          v20 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v110);
           v21 = v3[2];
           if ( v3[4] < v21 )
             goto LABEL_200;
@@ -3231,14 +3232,14 @@ LABEL_39:
           v2 = v108;
           goto LABEL_40;
         }
-        if ( MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)&v106, (__int16 *)&v107, 0, 1, 1, 0) )
+        if ( MapSeed::CheckTileMatch(&DataGlobal_87F7E8, (__int16 *)&v106, (__int16 *)&v107, 0, 1, 1, 0) )
           goto LABEL_40;
-        if ( a2 == MEMORY[0xB1CFB8] )
+        if ( a2 == g_UnitSelectionState )
         {
           v112 = 0;
-          v103 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 0);
+          v103 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
           v111 = *LayerClass::Pathfinding_Find(
-                    &MEMORY[0x87F7E8],
+                    &DataGlobal_87F7E8,
                     (int)&v113,
                     &v113,
                     (__int16 *)&v107,
@@ -3255,14 +3256,14 @@ LABEL_39:
                     (__int16 *)&v112,
                     0,
                     0);
-          if ( v111 == MEMORY[0xB1CFB8] || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
+          if ( v111 == g_UnitSelectionState || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
             return 0;
         }
         else
         {
           v112 = 0;
           v96 = *LayerClass::Pathfinding_Find(
-                   &MEMORY[0x87F7E8],
+                   &DataGlobal_87F7E8,
                    (int)&v112,
                    &v113,
                    (__int16 *)&v107,
@@ -3280,9 +3281,9 @@ LABEL_39:
                    0,
                    0);
           v110 = v96;
-          if ( v96 != MEMORY[0xB1CFB8] && a2 != v96 )
+          if ( v96 != g_UnitSelectionState && a2 != v96 )
           {
-            v97 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+            v97 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
             v98 = v3[2];
             if ( v3[4] < v98
               || (*((_BYTE *)v3 + 13) || !v98)
@@ -3297,9 +3298,9 @@ LABEL_39:
             goto LABEL_38;
           }
           v112 = 0;
-          v102 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 0);
+          v102 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
           v111 = *LayerClass::Pathfinding_Find(
-                    &MEMORY[0x87F7E8],
+                    &DataGlobal_87F7E8,
                     (int)&v113,
                     &v113,
                     (__int16 *)&v107,
@@ -3316,7 +3317,7 @@ LABEL_39:
                     (__int16 *)&v112,
                     0,
                     0);
-          if ( v111 == MEMORY[0xB1CFB8] || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
+          if ( v111 == g_UnitSelectionState || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
             return 0;
         }
         goto LABEL_218;
@@ -3324,9 +3325,9 @@ LABEL_39:
       if ( !BuildingTypeClass::IsPlacementValid(v2, (__int16 *)&v106, (__int16 *)&v107) )
         goto LABEL_40;
       a2 = 0;
-      v85 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 0);
+      v85 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
       v112 = *LayerClass::Pathfinding_Find(
-                &MEMORY[0x87F7E8],
+                &DataGlobal_87F7E8,
                 (int)&v113,
                 &v113,
                 (__int16 *)&v106,
@@ -3343,14 +3344,14 @@ LABEL_39:
                 (__int16 *)&a2,
                 0,
                 0);
-      if ( v112 == MEMORY[0xB1CFB8] )
+      if ( v112 == g_UnitSelectionState )
       {
-        if ( MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)&v106, (__int16 *)&v107, 0, 0, 0, 0) )
+        if ( MapSeed::CheckTileMatch(&DataGlobal_87F7E8, (__int16 *)&v106, (__int16 *)&v107, 0, 0, 0, 0) )
           goto LABEL_40;
         a2 = 0;
-        v86 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 0);
+        v86 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 0);
         v111 = *LayerClass::Pathfinding_Find(
-                  &MEMORY[0x87F7E8],
+                  &DataGlobal_87F7E8,
                   (int)&v113,
                   &v113,
                   (__int16 *)&v107,
@@ -3367,11 +3368,11 @@ LABEL_39:
                   (__int16 *)&a2,
                   0,
                   0);
-        if ( v111 == MEMORY[0xB1CFB8] || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
+        if ( v111 == g_UnitSelectionState || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
           return 0;
         goto LABEL_218;
       }
-      v19 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v112);
+      v19 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v112);
     }
 LABEL_17:
     v20 = v19;
@@ -3396,7 +3397,7 @@ LABEL_200:
     {
       if ( a2 == v106 )
         goto LABEL_63;
-      v22 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+      v22 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
       v41 = v3[2];
       if ( v3[4] >= v41 )
       {
@@ -3413,13 +3414,13 @@ LABEL_62:
 LABEL_63:
       v18 = (__int16 *)&v111;
 LABEL_16:
-      v19 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v18);
+      v19 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v18);
       goto LABEL_17;
     }
     v112 = 0;
-    v10 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&a2, 0, 0);
+    v10 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&a2, 0, 0);
     v109 = *LayerClass::Pathfinding_Find(
-              &MEMORY[0x87F7E8],
+              &DataGlobal_87F7E8,
               (int)&v113,
               &v113,
               (__int16 *)&a2,
@@ -3437,9 +3438,9 @@ LABEL_16:
               0,
               0);
     v112 = 0;
-    v11 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&a2, 0, 0);
+    v11 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&a2, 0, 0);
     v12 = *LayerClass::Pathfinding_Find(
-             &MEMORY[0x87F7E8],
+             &DataGlobal_87F7E8,
              (int)&v113,
              &v113,
              (__int16 *)&v111,
@@ -3457,9 +3458,9 @@ LABEL_16:
              0,
              0);
     v110 = v12;
-    if ( v109 != MEMORY[0xB1CFB8] && __PAIR32__(HIWORD(v110), v12) != MEMORY[0xB1CFB8] )
+    if ( v109 != g_UnitSelectionState && __PAIR32__(HIWORD(v110), v12) != g_UnitSelectionState )
     {
-      v13 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v109);
+      v13 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
       v14 = v3[2];
       if ( v3[4] < v14
         || (*((_BYTE *)v3 + 13) || !v14)
@@ -3474,11 +3475,11 @@ LABEL_16:
       v18 = (__int16 *)&v110;
       goto LABEL_16;
     }
-    if ( MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)&v106, (__int16 *)&v107, 0, 1, 1, 0) )
+    if ( MapSeed::CheckTileMatch(&DataGlobal_87F7E8, (__int16 *)&v106, (__int16 *)&v107, 0, 1, 1, 0) )
     {
       if ( a2 == v106 )
         goto LABEL_63;
-      v22 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+      v22 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
       v23 = v3[2];
       if ( v3[4] >= v23 )
       {
@@ -3490,12 +3491,12 @@ LABEL_16:
       }
       goto LABEL_62;
     }
-    if ( v109 == MEMORY[0xB1CFB8] )
+    if ( v109 == g_UnitSelectionState )
     {
       v112 = 0;
-      v40 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 1);
+      v40 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
       v108 = (_DWORD **)*LayerClass::Pathfinding_Find(
-                           &MEMORY[0x87F7E8],
+                           &DataGlobal_87F7E8,
                            (int)&v113,
                            &v113,
                            (__int16 *)&v107,
@@ -3512,17 +3513,17 @@ LABEL_16:
                            (__int16 *)&v112,
                            0,
                            0);
-      if ( v108 != (_DWORD **)MEMORY[0xB1CFB8] && ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) >= 0 )
+      if ( v108 != (_DWORD **)g_UnitSelectionState && ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) >= 0 )
       {
 LABEL_52:
-        v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v108);
+        v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v108);
         goto LABEL_40;
       }
       return 0;
     }
     v112 = 0;
     v25 = *LayerClass::Pathfinding_Find(
-             &MEMORY[0x87F7E8],
+             &DataGlobal_87F7E8,
              (int)&v112,
              &v113,
              (__int16 *)&v107,
@@ -3540,12 +3541,12 @@ LABEL_52:
              0,
              0);
     v110 = v25;
-    if ( v25 == MEMORY[0xB1CFB8] || v109 == v25 )
+    if ( v25 == g_UnitSelectionState || v109 == v25 )
     {
       v112 = 0;
-      v39 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 1);
+      v39 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
       v108 = (_DWORD **)*LayerClass::Pathfinding_Find(
-                           &MEMORY[0x87F7E8],
+                           &DataGlobal_87F7E8,
                            (int)&v113,
                            &v113,
                            (__int16 *)&v107,
@@ -3562,11 +3563,11 @@ LABEL_52:
                            (__int16 *)&v112,
                            0,
                            0);
-      if ( v108 != (_DWORD **)MEMORY[0xB1CFB8] && ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) >= 0 )
+      if ( v108 != (_DWORD **)g_UnitSelectionState && ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) >= 0 )
         goto LABEL_52;
       return 0;
     }
-    v26 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v109);
+    v26 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
     v27 = v3[2];
     if ( v3[4] < v27
       || (*((_BYTE *)v3 + 13) || !v27)
@@ -3579,7 +3580,7 @@ LABEL_52:
       *(_DWORD *)(v30 + 4 * v29) = v26;
     }
 LABEL_38:
-    v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v110);
+    v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v110);
     goto LABEL_39;
   }
   if ( IsBuildableAdvanced )
@@ -3588,9 +3589,9 @@ LABEL_38:
     if ( BuildingTypeClass::IsPlacementValid(v2, (__int16 *)&a2, (__int16 *)&v107) )
     {
       v112 = 0;
-      v44 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&a2, 0, 0);
+      v44 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&a2, 0, 0);
       v111 = *LayerClass::Pathfinding_Find(
-                &MEMORY[0x87F7E8],
+                &DataGlobal_87F7E8,
                 (int)&v113,
                 &v113,
                 (__int16 *)&a2,
@@ -3607,9 +3608,9 @@ LABEL_38:
                 (__int16 *)&v112,
                 0,
                 0);
-      if ( v111 != MEMORY[0xB1CFB8] )
+      if ( v111 != g_UnitSelectionState )
       {
-        v20 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v111);
+        v20 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v111);
         v21 = v3[2];
         if ( v3[4] < v21 )
           goto LABEL_200;
@@ -3621,21 +3622,21 @@ LABEL_70:
           goto LABEL_39;
         goto LABEL_199;
       }
-      if ( MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)&v106, (__int16 *)&v107, 0, 1, 0, 0) )
+      if ( MapSeed::CheckTileMatch(&DataGlobal_87F7E8, (__int16 *)&v106, (__int16 *)&v107, 0, 1, 0, 0) )
       {
         if ( a2 != v106 )
         {
           v46 = (__int16 *)&a2;
 LABEL_134:
-          v48 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v46);
+          v48 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v46);
           goto LABEL_135;
         }
         goto LABEL_40;
       }
       v112 = 0;
-      v47 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 1);
+      v47 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
       v110 = *LayerClass::Pathfinding_Find(
-                &MEMORY[0x87F7E8],
+                &DataGlobal_87F7E8,
                 (int)&v113,
                 &v113,
                 (__int16 *)&v107,
@@ -3652,16 +3653,16 @@ LABEL_134:
                 (__int16 *)&v112,
                 0,
                 0);
-      if ( v110 == MEMORY[0xB1CFB8] || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
+      if ( v110 == g_UnitSelectionState || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
         return 0;
 LABEL_77:
-      v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v110);
+      v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v110);
       goto LABEL_40;
     }
     if ( a2 == v106 )
       goto LABEL_40;
 LABEL_79:
-    v48 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+    v48 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
     goto LABEL_135;
   }
   a2 = *Pathfinding::SelectRegionPath(&v113, (__int16 *)&v106, (int)&v107);
@@ -3672,9 +3673,9 @@ LABEL_79:
     goto LABEL_79;
   }
   v112 = 0;
-  v49 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&a2, 0, 0);
+  v49 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&a2, 0, 0);
   v109 = *LayerClass::Pathfinding_Find(
-            &MEMORY[0x87F7E8],
+            &DataGlobal_87F7E8,
             (int)&v113,
             &v113,
             (__int16 *)&a2,
@@ -3692,9 +3693,9 @@ LABEL_79:
             0,
             0);
   v112 = 0;
-  v50 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v107, 0, 0);
+  v50 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v107, 0, 0);
   v51 = *LayerClass::Pathfinding_Find(
-           &MEMORY[0x87F7E8],
+           &DataGlobal_87F7E8,
            (int)&v113,
            &v113,
            (__int16 *)&v107,
@@ -3712,9 +3713,9 @@ LABEL_79:
            0,
            0);
   v110 = v51;
-  if ( v109 != MEMORY[0xB1CFB8] && __PAIR32__(HIWORD(v110), v51) != MEMORY[0xB1CFB8] )
+  if ( v109 != g_UnitSelectionState && __PAIR32__(HIWORD(v110), v51) != g_UnitSelectionState )
   {
-    v52 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v109);
+    v52 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
     v53 = v3[2];
     if ( v3[4] < v53
       || (*((_BYTE *)v3 + 13) || !v53)
@@ -3726,7 +3727,7 @@ LABEL_79:
       v3[4] = v55 + 1;
       *(_DWORD *)(v56 + 4 * v55) = v52;
     }
-    v48 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v110);
+    v48 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v110);
 LABEL_135:
     v20 = v48;
     v21 = v3[2];
@@ -3736,14 +3737,14 @@ LABEL_135:
       goto LABEL_70;
     goto LABEL_69;
   }
-  if ( !MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)&v106, (__int16 *)&v107, 0, 1, 0, 0) )
+  if ( !MapSeed::CheckTileMatch(&DataGlobal_87F7E8, (__int16 *)&v106, (__int16 *)&v107, 0, 1, 0, 0) )
   {
-    if ( v109 == MEMORY[0xB1CFB8] )
+    if ( v109 == g_UnitSelectionState )
     {
       v112 = 0;
-      v64 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 1);
+      v64 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
       v111 = *LayerClass::Pathfinding_Find(
-                &MEMORY[0x87F7E8],
+                &DataGlobal_87F7E8,
                 (int)&v113,
                 &v113,
                 (__int16 *)&v107,
@@ -3760,14 +3761,14 @@ LABEL_135:
                 (__int16 *)&v112,
                 0,
                 0);
-      if ( v111 == MEMORY[0xB1CFB8] || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
+      if ( v111 == g_UnitSelectionState || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
         return 0;
     }
     else
     {
       v112 = 0;
       v57 = *LayerClass::Pathfinding_Find(
-               &MEMORY[0x87F7E8],
+               &DataGlobal_87F7E8,
                (int)&v112,
                &v113,
                (__int16 *)&v107,
@@ -3785,9 +3786,9 @@ LABEL_135:
                0,
                0);
       v110 = v57;
-      if ( v57 != MEMORY[0xB1CFB8] && v57 != v109 )
+      if ( v57 != g_UnitSelectionState && v57 != v109 )
       {
-        v58 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v109);
+        v58 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v109);
         v59 = v3[2];
         if ( v3[4] < v59
           || (*((_BYTE *)v3 + 13) || !v59)
@@ -3802,9 +3803,9 @@ LABEL_135:
         goto LABEL_38;
       }
       v112 = 0;
-      v63 = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v106, 0, 1);
+      v63 = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v106, 0, 1);
       v111 = *LayerClass::Pathfinding_Find(
-                &MEMORY[0x87F7E8],
+                &DataGlobal_87F7E8,
                 (int)&v113,
                 &v113,
                 (__int16 *)&v107,
@@ -3821,7 +3822,7 @@ LABEL_135:
                 (__int16 *)&v112,
                 0,
                 0);
-      if ( v111 == MEMORY[0xB1CFB8] || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
+      if ( v111 == g_UnitSelectionState || ((int (__thiscall *)(_DWORD **))(*v2)[114])(v2) < 0 )
         return 0;
     }
     goto LABEL_218;
@@ -6569,10 +6570,10 @@ char __thiscall BuildingClass_SearchPlacement(_DWORD *this, int a2, int a3)
   int v13; // [esp+10h] [ebp-4h] BYREF
 
   v4 = (__int16)a2 + (SHIWORD(a2) << 9);
-  if ( v4 >= 0x40000 || (v5 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v4)) == 0 )
+  if ( v4 >= 0x40000 || (v5 = *(_DWORD **)(g_Shroud_CellArray + 4 * v4)) == 0 )
   {
-    MEMORY[0xABDC74] = a2;
-    v5 = &MEMORY[0xABDC50];
+    g_Map_GlobalCellIndex = a2;
+    v5 = &g_CellClassArray;
   }
   if ( v5[59] == 2 )
     v11 = 5;
@@ -6581,7 +6582,7 @@ char __thiscall BuildingClass_SearchPlacement(_DWORD *this, int a2, int a3)
   v12[0] = 0;
   v12[1] = 0;
   a2 = *LayerClass::Pathfinding_Find(
-          &MEMORY[0x87F7E8],
+          &DataGlobal_87F7E8,
           (int)v12,
           &v13,
           (__int16 *)&a2,
@@ -6602,7 +6603,7 @@ char __thiscall BuildingClass_SearchPlacement(_DWORD *this, int a2, int a3)
   v7 = this + 89;
   do
   {
-    if ( *v7 == MEMORY[0xABD480] )
+    if ( *v7 == g_MapSeedState )
       break;
     ++v6;
     v7 += 4;
@@ -6613,10 +6614,10 @@ char __thiscall BuildingClass_SearchPlacement(_DWORD *this, int a2, int a3)
   if ( a3 != 20 )
   {
     v8 = (__int16)a2 + (SHIWORD(a2) << 9);
-    if ( v8 >= 0x40000 || (v9 = *(_BYTE **)(MEMORY[0x87F924] + 4 * v8)) == 0 )
+    if ( v8 >= 0x40000 || (v9 = *(_BYTE **)(g_Shroud_CellArray + 4 * v8)) == 0 )
     {
-      MEMORY[0xABDC74] = a2;
-      v9 = &MEMORY[0xABDC50];
+      g_Map_GlobalCellIndex = a2;
+      v9 = &g_CellClassArray;
     }
     v9[286] = a3;
   }
@@ -6908,13 +6909,13 @@ void __thiscall BuildingClass::VisualizePlacement(_BYTE *this)
   }
   v66 = v7;
 LABEL_14:
-  BuildingClass::AddUpgrade((int)MEMORY[0x87F7E8], (int)(v1 + 36));
+  BuildingClass::AddUpgrade((int)DataGlobal_87F7E8, (int)(v1 + 36));
   v8 = v1[284];
   *((_DWORD *)v1 + 17) = 126;
   if ( !v8 )
   {
     v9 = 0;
-    v1[286] = (int)abs32(Random::State((_DWORD *)(MEMORY[0x87F7E8][536210] + 536))) % 3 + 48;
+    v1[286] = (int)abs32(Random::State((_DWORD *)(DataGlobal_87F7E8[536210] + 536))) % 3 + 48;
     v56 = 0;
     while ( 1 )
     {
@@ -6925,7 +6926,7 @@ LABEL_14:
         if ( *((_BYTE *)NeighbourContent + 286) < 0x30u )
           goto LABEL_21;
       }
-      else if ( v11 == -1 || !*(_BYTE *)(*(_DWORD *)(MEMORY[0x87F7E8][528743] + 4 * v11) + 686) )
+      else if ( v11 == -1 || !*(_BYTE *)(*(_DWORD *)(DataGlobal_87F7E8[528743] + 4 * v11) + 686) )
       {
 LABEL_21:
         if ( *((_BYTE *)NeighbourContent + 284) )
@@ -6942,9 +6943,9 @@ LABEL_21:
           NeighbourContent[17] = 126;
           v60 = v40;
           *((_BYTE *)NeighbourContent + 286) = 2 * *((_BYTE *)NeighbourContent + 284)
-                                             + (abs32(Random::State((_DWORD *)(MEMORY[0x87F7E8][536210] + 536))) & 1)
+                                             + (abs32(Random::State((_DWORD *)(DataGlobal_87F7E8[536210] + 536))) & 1)
                                              + 51;
-          v52 = CellStruct::Copy(&MEMORY[0x87F7E8][7662], v74);
+          v52 = CellStruct::Copy(&DataGlobal_87F7E8[7662], v74);
           v47 = BuildingClass::GetPlacementRect((int)NeighbourContent, v77);
           House::GetStartCoords((int)NeighbourContent, v79);
           v41 = Rect::Union(v47);
@@ -7010,11 +7011,11 @@ LABEL_21:
             }
             v68 = v20;
             NeighbourContent[17] = 126;
-            v24 = Random::State((_DWORD *)(MEMORY[0x87F7E8][536210] + 536));
+            v24 = Random::State((_DWORD *)(DataGlobal_87F7E8[536210] + 536));
             *((_BYTE *)NeighbourContent + 286) = 3 * v61 + abs32(v24 % 3);
             House::AnnounceUpgrade((int)NeighbourContent, (_DWORD *)0xFFFFFFFF);
-            v69[0] = MEMORY[0x87F7E8][7662];
-            v69[1] = MEMORY[0x87F7E8][7663];
+            v69[0] = DataGlobal_87F7E8[7662];
+            v69[1] = DataGlobal_87F7E8[7663];
             v25 = House::GetStartCoords((int)NeighbourContent, v85);
             v26 = BuildingClass::GetPlacementRect((int)NeighbourContent, v86);
             if ( v25[2] <= 0 || v25[3] <= 0 )
@@ -7079,7 +7080,7 @@ LABEL_21:
             v1 = v64;
           }
         }
-        BuildingClass::AddUpgrade((int)MEMORY[0x87F7E8], (int)(NeighbourContent + 9));
+        BuildingClass::AddUpgrade((int)DataGlobal_87F7E8, (int)(NeighbourContent + 9));
       }
       v9 += 2;
       v56 = v9;
@@ -7090,9 +7091,9 @@ LABEL_21:
       }
     }
   }
-  v1[286] = 2 * v1[284] + (abs32(Random::State((_DWORD *)(MEMORY[0x87F7E8][536210] + 536))) & 1) + 51;
+  v1[286] = 2 * v1[284] + (abs32(Random::State((_DWORD *)(DataGlobal_87F7E8[536210] + 536))) & 1) + 51;
 LABEL_62:
-  v53 = CellStruct::Copy(&MEMORY[0x87F7E8][7662], v74);
+  v53 = CellStruct::Copy(&DataGlobal_87F7E8[7662], v74);
   v48 = BuildingClass::GetPlacementRect((int)v1, v81);
   House::GetStartCoords((int)v1, v79);
   v44 = Rect::Union(v48);
@@ -8259,13 +8260,13 @@ int __thiscall BuildingClass_CheckBuildability(void *this)
   int v9; // esi
   void *v11; // [esp+14h] [ebp-4h] BYREF
 
-  v1 = MEMORY[0xA8ECC8];
+  v1 = g_SelectionManager;
   v2 = 0;
-  if ( (int)MEMORY[0xA8ECC8] <= 0 )
+  if ( (int)g_SelectionManager <= 0 )
     return -1;
   while ( 1 )
   {
-    v4 = *((_DWORD *)MEMORY[0xA8ECBC] + v2);
+    v4 = *((_DWORD *)g_ObjectClass_CurrentCount + v2);
     if ( v4 )
     {
       if ( (*(_BYTE *)(v4 + 20) & 1) != 0 )
@@ -8650,7 +8651,7 @@ void __thiscall BuildingClass::SetRallyPoint(int this, __int16 *a2, char a3)
 
   v33 = 0;
   v4 = 0;
-  v5 = *((_DWORD *)CellCoord::To_CellObj(MEMORY[0x87F7E8], a2) + 80);
+  v5 = *((_DWORD *)CellCoord::To_CellObj(DataGlobal_87F7E8, a2) + 80);
   v6 = this->Type;
   v32[0] = BYTE1(v5) & 1;
   if ( *(_DWORD *)(v6 + 3768) == 3 )
@@ -8669,11 +8670,11 @@ void __thiscall BuildingClass::SetRallyPoint(int this, __int16 *a2, char a3)
   v36 = this->q0A4;
   v31[0] = v8 / 256;
   v31[1] = v9 / 256;
-  TileIndex = MapClass::GetTileIndex(MEMORY[0x87F7E8], v31, v4, v32[0]);
+  TileIndex = MapClass::GetTileIndex(DataGlobal_87F7E8, v31, v4, v32[0]);
   v31[0] = 0;
   v31[1] = 0;
   v34 = *LayerClass::Pathfinding_Find(
-           MEMORY[0x87F7E8],
+           DataGlobal_87F7E8,
            v33,
            v32,
            a2,
@@ -8690,9 +8691,9 @@ void __thiscall BuildingClass::SetRallyPoint(int this, __int16 *a2, char a3)
            v31,
            0,
            0);
-  if ( v34 != MEMORY[0x87F7E8][29708] )
+  if ( v34 != DataGlobal_87F7E8[29708] )
   {
-    v11 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v34);
+    v11 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v34);
     WaypointCoords = ScriptAction::GetWaypointCoords(v32, v11);
     v27 = *(_DWORD *)WaypointCoords;
     v29 = WaypointCoords[4];
@@ -8701,19 +8702,19 @@ void __thiscall BuildingClass::SetRallyPoint(int this, __int16 *a2, char a3)
     v25 = v13[4];
     v14 = (*(int (__thiscall **)(int))(this->attachedBomb)(this);
     v15 = ScenarioClass::SetEvent(v37, v14, 30, v23, v25, v27, v29);
-    if ( MEMORY[0x87F7E8][524984] < 128 )
+    if ( DataGlobal_87F7E8[524984] < 128 )
     {
-      qmemcpy((char *)&MEMORY[0x87F7E8][524987] + 111 * MEMORY[0x87F7E8][524986], v15, 0x6Fu);
-      MEMORY[0x87F7E8][MEMORY[0x87F7E8][524986] + 528539] = ((int (*)(void))timeGetTime)();
-      MEMORY[0x87F7E8][524986] = (LOBYTE(MEMORY[0x87F7E8][524986]) + 1) & 0x7F;
-      ++MEMORY[0x87F7E8][524984];
+      qmemcpy((char *)&DataGlobal_87F7E8[524987] + 111 * DataGlobal_87F7E8[524986], v15, 0x6Fu);
+      DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = ((int (*)(void))timeGetTime)();
+      DataGlobal_87F7E8[524986] = (LOBYTE(DataGlobal_87F7E8[524986]) + 1) & 0x7F;
+      ++DataGlobal_87F7E8[524984];
     }
     goto LABEL_8;
   }
   if ( !*(_BYTE *)(this->Type + 5817)
     || !(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540))
-    || !MEMORY[0x87F7E8][536212]
-    || !LOBYTE(MEMORY[0x87F7E8][536270])
+    || !DataGlobal_87F7E8[536212]
+    || !LOBYTE(DataGlobal_87F7E8[536270])
     || this->mindControlledBy )
   {
 LABEL_8:
@@ -8729,7 +8730,7 @@ LABEL_8:
     return;
   }
   v17 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(this->q048)(this, v35);
-  v18 = Coord::To_Cell(MEMORY[0x87F7E8], v17);
+  v18 = Coord::To_Cell(DataGlobal_87F7E8, v17);
   v19 = ScriptAction::GetWaypointCoords(v32, v18);
   v28 = *(_DWORD *)v19;
   v30 = v19[4];
@@ -8738,12 +8739,12 @@ LABEL_8:
   v26 = v20[4];
   v21 = (*(int (__thiscall **)(int))(this->attachedBomb)(this);
   v22 = ScenarioClass::SetEvent(v37, v21, 30, v24, v26, v28, v30);
-  if ( MEMORY[0x87F7E8][524984] < 128 )
+  if ( DataGlobal_87F7E8[524984] < 128 )
   {
-    qmemcpy((char *)&MEMORY[0x87F7E8][524987] + 111 * MEMORY[0x87F7E8][524986], v22, 0x6Fu);
-    MEMORY[0x87F7E8][MEMORY[0x87F7E8][524986] + 528539] = ((int (*)(void))timeGetTime)();
-    MEMORY[0x87F7E8][524986] = (LOBYTE(MEMORY[0x87F7E8][524986]) + 1) & 0x7F;
-    ++MEMORY[0x87F7E8][524984];
+    qmemcpy((char *)&DataGlobal_87F7E8[524987] + 111 * DataGlobal_87F7E8[524986], v22, 0x6Fu);
+    DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = ((int (*)(void))timeGetTime)();
+    DataGlobal_87F7E8[524986] = (LOBYTE(DataGlobal_87F7E8[524986]) + 1) & 0x7F;
+    ++DataGlobal_87F7E8[524984];
   }
 }
 
@@ -9018,7 +9019,7 @@ char __thiscall sub_4A9650(__int16 **this, _WORD *a2, _WORD *a3)
 
   v3 = a2;
   LOWORD(v5) = *a2;
-  if ( *(_DWORD *)a2 != MEMORY[0x8A03F8] )
+  if ( *(_DWORD *)a2 != DataGlobal_8A03F8 )
   {
     v6 = this->q118C;
     v7 = (char)a3;
@@ -9693,7 +9694,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
         {
           (*(void (__thiscall **)(_BYTE *, _DWORD *, int, _DWORD))(*(_DWORD *)v245 + 372))(
             v245,
-            &MEMORY[0x87F7E8][29720],
+            &DataGlobal_87F7E8[29720],
             1,
             0);
           return 0;
@@ -9703,13 +9704,13 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
         LOWORD(v209) = *v120 / 256;
         v121 = v120[1];
         v226[2] = 0;
-        LOWORD(v209) = LOWORD(MEMORY[0x87F7E8][32685]) + v209;
-        HIWORD(v209) = v121 / 256 + HIWORD(MEMORY[0x87F7E8][32685]);
-        ++MEMORY[0x87F7E8][539633];
+        LOWORD(v209) = LOWORD(DataGlobal_87F7E8[32685]) + v209;
+        HIWORD(v209) = v121 / 256 + HIWORD(DataGlobal_87F7E8[32685]);
+        ++DataGlobal_87F7E8[539633];
         v205 = v209;
         v122 = *(_DWORD *)v245;
-        v226[0] = ((__int16)(v209 + LOWORD(MEMORY[0x87F7E8][32684])) << 8) + 128;
-        v226[1] = ((__int16)(HIWORD(v209) + HIWORD(MEMORY[0x87F7E8][32684])) << 8) + 128;
+        v226[0] = ((__int16)(v209 + LOWORD(DataGlobal_87F7E8[32684])) << 8) + 128;
+        v226[1] = ((__int16)(HIWORD(v209) + HIWORD(DataGlobal_87F7E8[32684])) << 8) + 128;
         if ( (*(unsigned __int8 (__thiscall **)(_BYTE *, _DWORD *, int))(v122 + 216))(v245, v226, 160) )
         {
           v220[0] = 0x8000;
@@ -9724,11 +9725,11 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
         {
           TechnoClass::SetFocus(v245, this->q086);
           vfptr0 = *(int (__thiscall ***)(#377 *))this;
-          v201 = MEMORY[0x87F7E8][29708];
+          v201 = DataGlobal_87F7E8[29708];
           v200 = (int)v245;
           v199 = &v229;
           v203 = *(_DWORD *)vfptr0[309](this);
-          if ( v203 == MEMORY[0x87F7E8][29708] )
+          if ( v203 == DataGlobal_87F7E8[29708] )
             return 0;
           v90 = this->gattlingValue;
           if ( *(_DWORD *)(v90 + 3768) == 16 && !*(_BYTE *)(v90 + 5804) )
@@ -9745,7 +9746,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
                 v95 = *(_DWORD **)(*(_DWORD *)(v92 + 252) + 4 * v93);
                 v198 = v95[135];
                 v96 = (*(int (__thiscall **)(int *))(v94 + 140))(v91);
-                (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v95 + 256))(v95, v96, MEMORY[0x87F7E8][29708]);
+                (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v95 + 256))(v95, v96, DataGlobal_87F7E8[29708]);
                 v92 = this->owner;
                 if ( ++v93 >= *(_DWORD *)(v92 + 264) )
                   break;
@@ -9832,7 +9833,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
             v209 = v110 + v114;
             v210 += v115;
           }
-          ++MEMORY[0x87F7E8][539633];
+          ++DataGlobal_87F7E8[539633];
           if ( (*(unsigned __int8 (__thiscall **)(_BYTE *, int *, int))(*(_DWORD *)v245 + 216))(v245, &v208, v211) )
           {
             if ( *((_DWORD *)v245 + 361)
@@ -9843,7 +9844,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
                 TechnoClass::SetFocus(v245, *((_DWORD *)v245 + 361));
               (*(void (__thiscall **)(_BYTE *, int, _DWORD))(*(_DWORD *)v245 + 488))(v245, 2, 0);
               v116 = *(_DWORD *)v245;
-              v117 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v195 + 2);
+              v117 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v195 + 2);
               (*(void (__thiscall **)(_BYTE *, void *, int))(v116 + 1152))(v245, v117, 1);
             }
             if ( !(unsigned __int8)House::IsCurrentPlayer(*((#375 **)this + 135))
@@ -9851,15 +9852,15 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
             {
               (*(void (__thiscall **)(_BYTE *, int, _DWORD))(*(_DWORD *)v245 + 488))(v245, 11, 0);
               LODWORD(v194) = *BuildingPlacement::FindPosition(&v224, v245);
-              if ( (_DWORD)v194 == MEMORY[0x87F7E8][29708] || !*(_DWORD *)(this->gattlingValue + 3768) )
+              if ( (_DWORD)v194 == DataGlobal_87F7E8[29708] || !*(_DWORD *)(this->gattlingValue + 3768) )
               {
                 TechnoClass::SetFocus(v245, 0);
               }
               else
               {
-                v118 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v194);
+                v118 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v194);
                 TechnoClass::SetFocus(v245, (int)v118);
-                v119 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v194);
+                v119 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v194);
                 ((void (__stdcall *)(void *))BuildingClass::AddToProductionQueue)(v119);
               }
             }
@@ -9876,7 +9877,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
           v65 = v64;
           v203 = v64;
           v66 = HIWORD(v64);
-          if ( v64 == MEMORY[0x87F7E8][29708] )
+          if ( v64 == DataGlobal_87F7E8[29708] )
             return 0;
           v67 = *(int (__thiscall ***)(#377 *))this;
           v216 = (v65 << 8) + 128;
@@ -9959,24 +9960,24 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
             v212 = v81 + v85;
             v213 += v86;
           }
-          ++MEMORY[0x87F7E8][539633];
+          ++DataGlobal_87F7E8[539633];
           if ( (*(unsigned __int8 (__thiscall **)(_BYTE *, int *, int))(*(_DWORD *)v245 + 216))(v245, &v211, v214) )
           {
             (*(void (__thiscall **)(_BYTE *, int, _DWORD))(*(_DWORD *)v245 + 488))(v245, 2, 0);
             v87 = *(_DWORD *)v245;
-            v88 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v197);
+            v88 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v197);
             (*(void (__thiscall **)(_BYTE *, void *, int))(v87 + 1152))(v245, v88, 1);
             if ( !(unsigned __int8)House::IsCurrentPlayer(*((#375 **)this + 135)) )
             {
               (*(void (__thiscall **)(_BYTE *, int, _DWORD))(*(_DWORD *)v245 + 488))(v245, 11, 0);
               v197 = *BuildingPlacement::FindPosition(&v227, v245);
-              if ( v197 == MEMORY[0x87F7E8][29708] || !*(_DWORD *)(this->gattlingValue + 3768) )
+              if ( v197 == DataGlobal_87F7E8[29708] || !*(_DWORD *)(this->gattlingValue + 3768) )
               {
                 TechnoClass::SetFocus(v245, 0);
               }
               else
               {
-                v193 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v197);
+                v193 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v197);
                 TechnoClass::SetFocus(v245, (int)v193);
               }
             }
@@ -10011,7 +10012,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
                 result = (*(int (__thiscall **)(#377 *, _BYTE *, _DWORD))(*(_DWORD *)v57 + 256))(
                            v57,
                            v245,
-                           MEMORY[0x87F7E8][29708]);
+                           DataGlobal_87F7E8[29708]);
                 *((_DWORD *)v57 + 329) = 0;
                 this->Factory = v58;
                 return result;
@@ -10023,7 +10024,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
           }
         }
         v201 = 64;
-        ++MEMORY[0x87F7E8][539633];
+        ++DataGlobal_87F7E8[539633];
         v59 = *(_DWORD *)v245;
         v60 = (*(int (__thiscall **)(#377 *, char *, _DWORD, int))(this->queuedMission)(this, v238, 0, 64);
         if ( (*(unsigned __int8 (__thiscall **)(_BYTE *, int))(v59 + 216))(v245, v60) )
@@ -10060,7 +10061,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
         v37 = Math::CalcAngle((double)v36 - (double)(__int16)v33, (double)(__int16)v32 - (double)v35);
         LOWORD(v205) = Math::RoundToInt((v37 - 1.570796326794897) * -10430.06004058427);
         v38 = (((v205 >> 12) + 1) >> 1) & 7;
-        v39 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v204);
+        v39 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v204);
         if ( Cell::IsBridge(v39) == (_DWORD *)this )
         {
           v40 = (_WORD *)(4 * (v38 & 7) + 9041544);
@@ -10070,17 +10071,17 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
             LOWORD(v202) = *v40 + v204;
             HIWORD(v202) = v41;
             v204 = v202;
-            v42 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v204);
+            v42 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v204);
           }
           while ( Cell::IsBridge(v42) == (_DWORD *)this );
         }
       }
-      if ( this->q086 && *((_DWORD *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v204) + 59) == 2 )
+      if ( this->q086 && *((_DWORD *)CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v204) + 59) == 2 )
       {
         v196 = 0.0;
         v221 = 0;
         v222[0] = 0;
-        CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v204);
+        CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v204);
         JUMPOUT(0x444329);
       }
       v43 = *(int (__thiscall ***)(#377 *))this;
@@ -10096,7 +10097,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
       v218 = v201;
       v47 = (*(int (__thiscall **)(_BYTE *))(v46 + 132))(v245);
       v203 = *LayerClass::Pathfinding_Find(
-                MEMORY[0x87F7E8],
+                DataGlobal_87F7E8,
                 (int)&v218,
                 v231,
                 (__int16 *)&v218,
@@ -10113,7 +10114,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
                 (__int16 *)LODWORD(v195),
                 SBYTE4(v195),
                 0);
-      v48 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v203);
+      v48 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v203);
       v49 = *(_DWORD *)v245;
       v50 = (*(int (__thiscall **)(void *, _BYTE *, int))(*(_DWORD *)v48 + 72))(v48, v240, 64);
       if ( (*(unsigned __int8 (__thiscall **)(_BYTE *, int))(v49 + 216))(v245, v50) )
@@ -10126,7 +10127,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
         }
         (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v245 + 292))(v245, 0);
         v52 = *(_DWORD *)v245;
-        v53 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v196);
+        v53 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v196);
         Coords = CellClass::GetCoords(v53, v241);
         (*(void (__thiscall **)(_BYTE *, int *))(v52 + 436))(v245, Coords);
         (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)v245 + 292))(v245, 1);
@@ -10142,7 +10143,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
         || HouseClass::IonSensitivesShouldBeOffline() && !*(_BYTE *)(*((_DWORD *)v3 + 433) + 3597) )
       {
         ObjectClass::SetAnim(v3, 0);
-        ++MEMORY[0x87F7E8][539633];
+        ++DataGlobal_87F7E8[539633];
         if ( HouseClass::IonSensitivesShouldBeOffline() )
         {
           PlacementCells_Alt = MapClass::FindPlacementCellsAlt(v3, &v232, (int)this);
@@ -10155,7 +10156,7 @@ int __thiscall BuildingClass::UpdateConstruction(#377 *this)
           if ( (*(unsigned __int8 (__thiscall **)(char *, int *, int))(v16 + 216))(v3, &v227, v17) )
           {
 LABEL_99:
-            --MEMORY[0x87F7E8][539633];
+            --DataGlobal_87F7E8[539633];
             return 2;
           }
         }
@@ -10186,40 +10187,40 @@ LABEL_99:
       {
         if ( *(_BYTE *)(*((_DWORD *)v3 + 433) + 3597) )
           return 0;
-        LOWORD(v213) = MEMORY[0x87F7E8][64];
-        HIWORD(v213) = MEMORY[0x87F7E8][64];
-        HIWORD(v207) = MEMORY[0x87F7E8][61];
-        LOWORD(v219) = MEMORY[0x87F7E8][63];
-        HIWORD(v219) = -LOWORD(MEMORY[0x87F7E8][63]);
-        LOWORD(v210) = LOWORD(MEMORY[0x87F7E8][63]) + 1;
-        HIWORD(v210) = LOWORD(MEMORY[0x87F7E8][61]) - LOWORD(MEMORY[0x87F7E8][63]);
-        LOWORD(v207) = LOWORD(MEMORY[0x87F7E8][64]) + LOWORD(MEMORY[0x87F7E8][63]) + 1;
-        v6 = LOWORD(MEMORY[0x87F7E8][61]) - LOWORD(MEMORY[0x87F7E8][63]) + LOWORD(MEMORY[0x87F7E8][64]);
+        LOWORD(v213) = DataGlobal_87F7E8[64];
+        HIWORD(v213) = DataGlobal_87F7E8[64];
+        HIWORD(v207) = DataGlobal_87F7E8[61];
+        LOWORD(v219) = DataGlobal_87F7E8[63];
+        HIWORD(v219) = -LOWORD(DataGlobal_87F7E8[63]);
+        LOWORD(v210) = LOWORD(DataGlobal_87F7E8[63]) + 1;
+        HIWORD(v210) = LOWORD(DataGlobal_87F7E8[61]) - LOWORD(DataGlobal_87F7E8[63]);
+        LOWORD(v207) = LOWORD(DataGlobal_87F7E8[64]) + LOWORD(DataGlobal_87F7E8[63]) + 1;
+        v6 = LOWORD(DataGlobal_87F7E8[61]) - LOWORD(DataGlobal_87F7E8[63]) + LOWORD(DataGlobal_87F7E8[64]);
         v7 = *(int (__thiscall ***)(#377 *))this;
         HIWORD(v207) = v6;
         v8 = (_DWORD *)((int (__thiscall *)(#377 *, char *))v7[18])(this, v237);
         LOWORD(v218) = *v8 / 256;
         HIWORD(v218) = v8[1] / 256;
-        if ( (__int16)(v218 - v206) - (__int16)(HIWORD(v218) - HIWORD(v206)) <= MEMORY[0x87F7E8][65] )
+        if ( (__int16)(v218 - v206) - (__int16)(HIWORD(v218) - HIWORD(v206)) <= DataGlobal_87F7E8[65] )
         {
-          v200 = MEMORY[0x87F7E8][66];
+          v200 = DataGlobal_87F7E8[66];
           LOWORD(v206) = v206 - 1;
           HIWORD(v206) = v6;
           v199 = 0;
           v205 = v206;
-          v9 = (_DWORD *)(MEMORY[0x87F7E8][536210] + 536);
+          v9 = (_DWORD *)(DataGlobal_87F7E8[536210] + 536);
         }
         else
         {
-          LOWORD(v209) = MEMORY[0x87F7E8][65];
+          LOWORD(v209) = DataGlobal_87F7E8[65];
           HIWORD(v218) = v6;
-          HIWORD(v209) = -LOWORD(MEMORY[0x87F7E8][65]);
+          HIWORD(v209) = -LOWORD(DataGlobal_87F7E8[65]);
           LOWORD(v218) = v206 - 1;
-          LOWORD(v206) = LOWORD(MEMORY[0x87F7E8][65]) + v206 - 1;
-          HIWORD(v206) = v6 - LOWORD(MEMORY[0x87F7E8][65]);
+          LOWORD(v206) = LOWORD(DataGlobal_87F7E8[65]) + v206 - 1;
+          HIWORD(v206) = v6 - LOWORD(DataGlobal_87F7E8[65]);
           v205 = v206;
-          v9 = (_DWORD *)(MEMORY[0x87F7E8][536210] + 536);
-          v200 = MEMORY[0x87F7E8][66];
+          v9 = (_DWORD *)(DataGlobal_87F7E8[536210] + 536);
+          v200 = DataGlobal_87F7E8[66];
           v199 = 0;
         }
         v10 = Random::Range(v9, (int)v199, v200);
@@ -10227,7 +10228,7 @@ LABEL_99:
         HIWORD(v205) += v10;
         v200 = 0;
         v225[0] = ((__int16)v205 << 8) + 128;
-        ++MEMORY[0x87F7E8][539633];
+        ++DataGlobal_87F7E8[539633];
         v11 = *(_DWORD *)v3;
         v225[1] = (SHIWORD(v205) << 8) + 128;
         v225[2] = 0;
@@ -10242,7 +10243,7 @@ LABEL_99:
           else
           {
             v204 = *MapClass::FindPlacementCellsAlt(v3, &v229, (int)this);
-            if ( v204 == MEMORY[0x87F7E8][29708] )
+            if ( v204 == DataGlobal_87F7E8[29708] )
             {
               (*(void (__thiscall **)(char *, _DWORD, int))(*(_DWORD *)v3 + 1152))(v3, 0, 1);
               (*(void (__thiscall **)(char *, int))(*(_DWORD *)v3 + 496))(v3, 2);
@@ -10250,7 +10251,7 @@ LABEL_99:
             else
             {
               v13 = *(_DWORD *)v3;
-              v14 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v204);
+              v14 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v204);
               (*(void (__thiscall **)(char *, void *, int))(v13 + 1152))(v3, v14, 1);
               (*(void (__thiscall **)(char *, int))(*(_DWORD *)v3 + 496))(v3, 2);
             }
@@ -10259,7 +10260,7 @@ LABEL_99:
         }
       }
 LABEL_146:
-      --MEMORY[0x87F7E8][539633];
+      --DataGlobal_87F7E8[539633];
       result = 0;
       break;
     case 2:
@@ -10305,7 +10306,7 @@ LABEL_146:
           v130 = (v128 << 8) + 128;
           v213 = v129;
           v214 = v130;
-          if ( v129 == MEMORY[0x87F7E8][29720] && v130 == MEMORY[0x87F7E8][29721] && !MEMORY[0x87F7E8][29722] )
+          if ( v129 == DataGlobal_87F7E8[29720] && v130 == DataGlobal_87F7E8[29721] && !DataGlobal_87F7E8[29722] )
             return 0;
           LOWORD(v210) = v129 / 256;
           HIWORD(v210) = v130 / 256;
@@ -10321,7 +10322,7 @@ LABEL_146:
         {
           v138 = *(_DWORD *)((_DWORD *(__stdcall *)(char *, int))HouseClass::FindBestProductionBuilding)(v236, v209);
           v219 = v138;
-          if ( v138 == MEMORY[0x87F7E8][29708] )
+          if ( v138 == DataGlobal_87F7E8[29708] )
           {
             v131 = v214;
             v132 = v213;
@@ -10353,7 +10354,7 @@ LABEL_146:
         }
         v133 = v207;
         if ( v207
-          && (v132 != MEMORY[0x87F7E8][29720] || v131 != MEMORY[0x87F7E8][29721] || v215 != MEMORY[0x87F7E8][29722]) )
+          && (v132 != DataGlobal_87F7E8[29720] || v131 != DataGlobal_87F7E8[29721] || v215 != DataGlobal_87F7E8[29722]) )
         {
           LOWORD(v210) = v132 / 256;
           HIWORD(v210) = v131 / 256;
@@ -10362,7 +10363,7 @@ LABEL_146:
           v132 = v213;
         }
       }
-      if ( v132 == MEMORY[0x87F7E8][29720] && v131 == MEMORY[0x87F7E8][29721] && v215 == MEMORY[0x87F7E8][29722] )
+      if ( v132 == DataGlobal_87F7E8[29720] && v131 == DataGlobal_87F7E8[29721] && v215 == DataGlobal_87F7E8[29722] )
       {
         if ( *(_BYTE *)(v209 + 3720) )
         {
@@ -10413,9 +10414,9 @@ LABEL_146:
         if ( !v144 )
         {
           v145 = HouseClass::FailedToPlaceNode((int)v133);
-          if ( MEMORY[0x87F7E8][536212] )
+          if ( DataGlobal_87F7E8[536212] )
           {
-            if ( v145 > *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3656) )
+            if ( v145 > *(_DWORD *)(DataGlobal_87F7E8[7806] + 3656) )
             {
               if ( v133 )
               {
@@ -10493,7 +10494,7 @@ LABEL_146:
             }
           }
         }
-        if ( *((_DWORD *)v245 + 328) == *(_DWORD *)(MEMORY[0x87F7E8][7806] + 2172) )
+        if ( *((_DWORD *)v245 + 328) == *(_DWORD *)(DataGlobal_87F7E8[7806] + 2172) )
         {
           v158 = (*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)(this->owner + 22276) + 20))(
                    this->owner + 22276,
@@ -10505,7 +10506,7 @@ LABEL_146:
           {
             v162 = *(_DWORD *)(v159 + 22280);
             for ( i = (int *)(v162 + 16 * v160);
-                  *i < 0 || !*(_BYTE *)(*(_DWORD *)(MEMORY[0x87F7E8][528673] + 4 * *i) + 5894);
+                  *i < 0 || !*(_BYTE *)(*(_DWORD *)(DataGlobal_87F7E8[528673] + 4 * *i) + 5894);
                   i += 4 )
             {
               if ( ++v160 >= v161 )
@@ -10526,7 +10527,7 @@ LABEL_146:
       v166 = (*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)(this->owner + 22276) + 20))(
                this->owner + 22276,
                v133);
-      v167 = *(_DWORD *)(MEMORY[0x87F7E8][528673] + 4 * *v133);
+      v167 = *(_DWORD *)(DataGlobal_87F7E8[528673] + 4 * *v133);
       if ( !*(_BYTE *)(v167 + 5489) && !*(_BYTE *)(v167 + 5815) )
       {
         v168 = this->owner;
@@ -13009,7 +13010,7 @@ int __thiscall BuildingClass_SellEffects(int this, int a2)
   v3 = this->q044;
   if ( v3 == -1 )
     return 0;
-  v4 = *((_DWORD *)MEMORY[0xA83D84] + v3);
+  v4 = *((_DWORD *)g_BuildingTypeClass_Array + v3);
   *(_DWORD *)v40 = v4;
   if ( !*(_BYTE *)(v4 + 680) )
     return 0;
@@ -13017,7 +13018,7 @@ int __thiscall BuildingClass_SellEffects(int this, int a2)
   if ( a2 != -1 )
   {
     v6 = *(_DWORD *)(v4 + 676);
-    if ( a2 < v6 && !MEMORY[0xA8E7AC] && Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, v6) >= v5 )
+    if ( a2 < v6 && !g_IKnowWhatImDoing && Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v6) >= v5 )
       return 0;
   }
   PlacementRect = BuildingClass::GetPlacementRect(this, v42);
@@ -13073,7 +13074,7 @@ int __thiscall BuildingClass_SellEffects(int this, int a2)
     }
   }
   v43[1] = v17;
-  Cell::CreateCrater(v9, v17 - MEMORY[0x886FA4], v18, v13, 0);
+  Cell::CreateCrater(v9, v17 - g_Map_VisibleRect, v18, v13, 0);
   v19 = this->q11E + 16;
   this->q11E = v19;
   v20 = *(_DWORD *)(v4 + 672);
@@ -13087,7 +13088,7 @@ int __thiscall BuildingClass_SellEffects(int this, int a2)
       {
         *(_DWORD *)v40 = this->objectTypeFlags;
         v39 = *CellStruct::Add(v40, &v38, (_WORD *)(4 * (v21 & 7) + 9041544));
-        v23 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v39);
+        v23 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v39);
       }
       else
       {
@@ -13095,7 +13096,7 @@ int __thiscall BuildingClass_SellEffects(int this, int a2)
       }
       v24 = v23[17];
       if ( v24 != -1
-        && *(_BYTE *)(*((_DWORD *)MEMORY[0xA83D84] + v24) + 680)
+        && *(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array + v24) + 680)
         && v24 == this->q044
         && *((_BYTE *)v23 + 286) < 0x10u )
       {
@@ -13117,25 +13118,25 @@ int __thiscall BuildingClass_SellEffects(int this, int a2)
   this->q044 = -1;
   this->q11E = 0;
   House::AnnounceUpgrade(this, -1);
-  Cell::SetRadar((int *)&MEMORY[0x87F7E8], (__int16 *)(this + 36));
-  Radar::Update(&MEMORY[0x87F7E8], (__int16 *)(this + 36));
-  BuildingClass::AddUpgrade((int)&MEMORY[0x87F7E8], this + 36);
+  Cell::SetRadar((int *)&DataGlobal_87F7E8, (__int16 *)(this + 36));
+  Radar::Update(&DataGlobal_87F7E8, (__int16 *)(this + 36));
+  BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, this + 36);
   a2 = this->objectTypeFlags;
-  *(_DWORD *)v40 = *CellStruct::Add(&a2, &v39, MEMORY[0x89F688]);
-  v27 = (void **)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v40);
+  *(_DWORD *)v40 = *CellStruct::Add(&a2, &v39, Direction_X_Offsets);
+  v27 = (void **)CellCoord::To_CellObj(&DataGlobal_87F7E8, v40);
   BuildingClass::ValidatePlacement(v27, 0);
   a2 = this->objectTypeFlags;
-  *(_DWORD *)v40 = *CellStruct::Add(&a2, &v39, &MEMORY[0x89F6A0]);
-  v28 = (void **)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v40);
+  *(_DWORD *)v40 = *CellStruct::Add(&a2, &v39, &Direction_Y_Offsets);
+  v28 = (void **)CellCoord::To_CellObj(&DataGlobal_87F7E8, v40);
   BuildingClass::ValidatePlacement(v28, 0);
   a2 = this->objectTypeFlags;
-  *(_DWORD *)v40 = *CellStruct::Add(&a2, &v39, &MEMORY[0x89F698]);
-  v29 = (void **)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v40);
+  *(_DWORD *)v40 = *CellStruct::Add(&a2, &v39, &g_DirectionOffsetPool);
+  v29 = (void **)CellCoord::To_CellObj(&DataGlobal_87F7E8, v40);
   BuildingClass::ValidatePlacement(v29, 0);
   *(_DWORD *)v40 = this->objectTypeFlags;
-  LOWORD(a2) = MEMORY[0x89F690] + v40[0];
-  HIWORD(a2) = HIWORD(MEMORY[0x89F690]) + v40[1];
-  v30 = (void **)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2);
+  LOWORD(a2) = g_CellDirectionOffsets + v40[0];
+  HIWORD(a2) = HIWORD(g_CellDirectionOffsets) + v40[1];
+  v30 = (void **)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
   BuildingClass::ValidatePlacement(v30, 0);
   AbstractClass::AnnounceExpiredPointer((void **)this);
   v31 = 0;
@@ -13146,11 +13147,11 @@ int __thiscall BuildingClass_SellEffects(int this, int a2)
     {
       v34 = v31 & 7;
       *(_DWORD *)v40 = this->objectTypeFlags;
-      v35 = v40[1] + HIWORD(MEMORY[0x89F688][v34]);
-      LOWORD(a2) = v40[0] + LOWORD(MEMORY[0x89F688][v34]);
+      v35 = v40[1] + HIWORD(Direction_X_Offsets[v34]);
+      LOWORD(a2) = v40[0] + LOWORD(Direction_X_Offsets[v34]);
       HIWORD(a2) = v35;
       *(_DWORD *)v40 = a2;
-      v33 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v40);
+      v33 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v40);
     }
     else
     {
@@ -13546,7 +13547,7 @@ int __thiscall BuildingClass_SellUnit(#375 **this, int a2)
     if ( (unsigned __int8)House::IsHumanPlayer(this->owner) )
     {
       VoxClass::FindAndPlay(aEvaUnitsold, -1);
-      PlayVocClass(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 1700), 0x2000, 1.0, 0);
+      PlayVocClass(*(_DWORD *)(DataGlobal_87F7E8[7806] + 1700), 0x2000, 1.0, 0);
     }
     v4 = (*((int (__thiscall **)(#375 **))*this + 175))(this);
     HouseClass::AddPower(this->owner, v4);
@@ -13624,10 +13625,10 @@ int __thiscall BuildingClass::HandleSellOrRepair(#377 *this)
   if ( result == 6 ) /*0x701440*/
   {
     (*(void (__thiscall **)(#377 *, _DWORD))(this->ironTintTimer)(this, 0); /*0x701448*/
-    v4 = BuildingClass::GetHealthRatio((int *)this) <= *(double *)&MEMORY[0x8871E0][1].?; /*0x701465*/
+    v4 = BuildingClass::GetHealthRatio((int *)this) <= *(double *)&g_RulesClass_Instance[1].?; /*0x701465*/
     globalHelper_051EE0((int)this, v5, v4); /*0x701473*/
     v6 = (*(int (__thiscall **)(#377 *, _BYTE *))(this->q048)(this, v7); /*0x701483*/
-    return StartAudioControllerAt(MEMORY[0x8871E0]->PsychicRevealActivateSound, v6, 0); /*0x701494*/
+    return StartAudioControllerAt(g_RulesClass_Instance->PsychicRevealActivateSound, v6, 0); /*0x701494*/
   }
   return result; /*0x701499*/
 }
@@ -13656,10 +13657,10 @@ int __thiscall BuildingClass::HandleSellOrRepair(#377 *this)
   if ( result == 6 ) /*0x701440*/
   {
     (*(void (__thiscall **)(#377 *, _DWORD))(this->ironTintTimer)(this, 0); /*0x701448*/
-    v4 = BuildingClass::GetHealthRatio((int *)this) <= *(double *)&MEMORY[0x8871E0][1].?; /*0x701465*/
+    v4 = BuildingClass::GetHealthRatio((int *)this) <= *(double *)&g_RulesClass_Instance[1].?; /*0x701465*/
     globalHelper_051EE0((int)this, v5, v4); /*0x701473*/
     v6 = (*(int (__thiscall **)(#377 *, _BYTE *))(this->q048)(this, v7); /*0x701483*/
-    return StartAudioControllerAt(MEMORY[0x8871E0]->PsychicRevealActivateSound, v6, 0); /*0x701494*/
+    return StartAudioControllerAt(g_RulesClass_Instance->PsychicRevealActivateSound, v6, 0); /*0x701494*/
   }
   return result; /*0x701499*/
 }
@@ -14077,7 +14078,7 @@ LABEL_151:
         {
           BuildingClass::ClearAnims((int *)this, 7);
           BuildingClass::ClearAnims((int *)this, 18);
-          if ( BuildingClass::GetHealthRatio((int *)this) > *(double *)(MEMORY[0x87F7E8][7806] + 5888) )
+          if ( BuildingClass::GetHealthRatio((int *)this) > *(double *)(DataGlobal_87F7E8[7806] + 5888) )
           {
             v34 = 0;
             v35 = (_BYTE *)(this->gattlingValue + 4460);
@@ -14088,7 +14089,7 @@ LABEL_151:
             v35 = (_BYTE *)(this->gattlingValue + 4476);
           }
           if ( v35 && *v35 )
-            BuildingClass::PlayAnim(this, MEMORY[0x87F7E8][7806], v35, 8, v34, 0, 0);
+            BuildingClass::PlayAnim(this, DataGlobal_87F7E8[7806], v35, 8, v34, 0, 0);
         }
       }
 LABEL_144:
@@ -14139,7 +14140,7 @@ LABEL_144:
                               this,
                               v50,
                               v16);
-            v18 = Coord::To_Cell(MEMORY[0x87F7E8], v17);
+            v18 = Coord::To_Cell(DataGlobal_87F7E8, v17);
             v19 = *(void **)(v16 + 1444);
             if ( v19 )
             {
@@ -14178,7 +14179,7 @@ LABEL_144:
             LOWORD(v55) = *v30 + 3;
             HIWORD(v55) = v30[1] + 1;
             v56 = v55;
-            *v12 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v56);
+            *v12 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v56);
             if ( (*(int (__thiscall **)(#377 *, int, _DWORD *, _BYTE *))(this->isImmobilized)(this, 18, v12, v13) == 20 )
             {
               (*(void (__thiscall **)(#377 *, int, _BYTE *))(this->temporalTargetingMe)(this, 24, v13);
@@ -14186,7 +14187,7 @@ LABEL_144:
               {
                 (*(void (__thiscall **)(_BYTE *, _DWORD *, int, int))(*(_DWORD *)v13 + 372))(
                   v13,
-                  &MEMORY[0x87F7E8][29720],
+                  &DataGlobal_87F7E8[29720],
                   1,
                   1);
                 return 1;
@@ -14210,7 +14211,7 @@ LABEL_144:
         v49[0] = this->q027;
         v49[1] = this->owningHouseIndex;
         v49[2] = this->q029;
-        *v12 = Coord::To_Cell(MEMORY[0x87F7E8], v49);
+        *v12 = Coord::To_Cell(DataGlobal_87F7E8, v49);
         (*(void (__thiscall **)(#377 *, int, _DWORD *, int))(this->isImmobilized)(this, 18, v12, v53);
         return 1;
       }
@@ -14233,7 +14234,7 @@ LABEL_144:
         return 10;
       if ( !this->BuildingClass_field_int_534 )
         return 10;
-      if ( !MEMORY[0x87F7E8][539633] && !Array::ContainsValue((int *)this, v53) )
+      if ( !DataGlobal_87F7E8[539633] && !Array::ContainsValue((int *)this, v53) )
       {
         v4 = this->gattlingValue;
         if ( !*(_BYTE *)(v4 + 5806) && !*(_BYTE *)(v4 + 5807) )
@@ -14298,7 +14299,7 @@ LABEL_33:
         if ( !*(_BYTE *)(v8 + 5811)
           || (*(int (__thiscall **)(int))(*(_DWORD *)v53 + 44))(v53) != 1
           || !*(_BYTE *)(*(_DWORD *)(v53 + 1732) + 3598)
-          || !MEMORY[0x87F7E8][539633] && this->q118 )
+          || !DataGlobal_87F7E8[539633] && this->q118 )
         {
           if ( !*(_BYTE *)(this->gattlingValue + 5820)
             || (*(int (__thiscall **)(int))(*(_DWORD *)v53 + 44))(v53) != 1
@@ -14306,7 +14307,7 @@ LABEL_33:
           {
             return 0;
           }
-          if ( !MEMORY[0x87F7E8][539633] )
+          if ( !DataGlobal_87F7E8[539633] )
             return !this->q118;
         }
         return 1;
@@ -15666,20 +15667,20 @@ int __thiscall BuildingClass::PowerDrainUpdate(#377 *this)
   v3 = this->ammoReloadTimer;
   if ( v2 != -1 )
   {
-    if ( (int)MEMORY[0xA8ED84] - v2 >= v3 )
+    if ( (int)g_CurrentFrame - v2 >= v3 )
       v3 = 0;
     else
-      v3 -= (int)MEMORY[0xA8ED84] - v2;
+      v3 -= (int)g_CurrentFrame - v2;
   }
   Power::TimerProcess(v3);
   v4 = this->q6D0;
   v5 = this->q6D8;
   if ( v4 != -1 )
   {
-    if ( (int)MEMORY[0xA8ED84] - v4 >= v5 )
+    if ( (int)g_CurrentFrame - v4 >= v5 )
       v5 = 0;
     else
-      v5 -= (int)MEMORY[0xA8ED84] - v4;
+      v5 -= (int)g_CurrentFrame - v4;
   }
   Power::TimerProcess(v5);
   Power::TimerProcess(this->BuildingClass_field_int_534);
@@ -15702,10 +15703,10 @@ int __thiscall BuildingClass::PowerDrainUpdate(#377 *this)
   v11 = this->q558;
   if ( v10 != -1 )
   {
-    if ( (int)MEMORY[0xA8ED84] - v10 >= v11 )
+    if ( (int)g_CurrentFrame - v10 >= v11 )
       v11 = 0;
     else
-      v11 -= (int)MEMORY[0xA8ED84] - v10;
+      v11 -= (int)g_CurrentFrame - v10;
   }
   Power::TimerProcess(v11);
   Power::TimerProcess(this->BuildingClass_field_5FC);
@@ -16109,14 +16110,14 @@ int __thiscall BuildingClass::IsPoweredActive(#377 *this)
     result = *(_DWORD *)(v9 + 684); /*0x45565f*/
     if ( v10 != -1 ) /*0x455668*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v10 >= result ) /*0x455674*/
+      if ( (int)g_CurrentFrame - v10 >= result ) /*0x455674*/
       {
 LABEL_14:
         if ( *(_BYTE *)(v9 + 22395) ) /*0x45567c*/
           goto LABEL_20; /*0x455684*/
         goto LABEL_15; /*0x455684*/
       }
-      result -= (int)MEMORY[0xA8ED84] - v10; /*0x455676*/
+      result -= (int)g_CurrentFrame - v10; /*0x455676*/
     }
     if ( result ) /*0x45567a*/
       goto LABEL_20; /*0x45567a*/
@@ -16287,15 +16288,15 @@ int __thiscall BuildingClass::StartProduction(int *this, int a2)
   v4 = a2;
   v5 = this->BuildingClass_field_int_534;
   this->q14E = a2;
-  if ( v5 == -1 || !a2 || MEMORY[0x87F7E8][539633] )
+  if ( v5 == -1 || !a2 || DataGlobal_87F7E8[539633] )
   {
     v6 = this->gattlingValue;
     this->q14E = -1;
     this->BuildingClass_field_int_534 = a2;
     v7 = (int *)(v6 + 12 * a2 + 3844);
-    if ( MEMORY[0x87F7E8][539633] )
+    if ( DataGlobal_87F7E8[539633] )
     {
-      v8 = BuildingClass::GetHealthRatio(this) <= *(double *)(MEMORY[0x87F7E8][7806] + 5888);
+      v8 = BuildingClass::GetHealthRatio(this) <= *(double *)(DataGlobal_87F7E8[7806] + 5888);
       v9 = (*(int (__thiscall **)(int *))(*this + 1032))(this) > 0;
       LOBYTE(a2) = v9;
       if ( v8 )
@@ -16313,9 +16314,9 @@ int __thiscall BuildingClass::StartProduction(int *this, int a2)
       }
       if ( v11 && *v11 )
         BuildingClass::PlayAnim(this, v10, v11, 18, v8, a2, 0);
-      if ( MEMORY[0x87F7E8][539633] )
+      if ( DataGlobal_87F7E8[539633] )
       {
-        v14 = BuildingClass::GetHealthRatio(this) <= *(double *)(MEMORY[0x87F7E8][7806] + 5888);
+        v14 = BuildingClass::GetHealthRatio(this) <= *(double *)(DataGlobal_87F7E8[7806] + 5888);
         v15 = (*(int (__thiscall **)(int *))(*this + 1032))(this) > 0;
         LOBYTE(a2) = v15;
         if ( v14 )
@@ -16333,9 +16334,9 @@ int __thiscall BuildingClass::StartProduction(int *this, int a2)
         }
         if ( v17 && *v17 )
           BuildingClass::PlayAnim(this, v16, v17, 3, v14, a2, 0);
-        if ( MEMORY[0x87F7E8][539633] )
+        if ( DataGlobal_87F7E8[539633] )
         {
-          v19 = BuildingClass::GetHealthRatio(this) <= *(double *)(MEMORY[0x87F7E8][7806] + 5888);
+          v19 = BuildingClass::GetHealthRatio(this) <= *(double *)(DataGlobal_87F7E8[7806] + 5888);
           v20 = (*(int (__thiscall **)(int *))(*this + 1032))(this) > 0;
           LOBYTE(a2) = v20;
           if ( v19 )
@@ -16353,9 +16354,9 @@ int __thiscall BuildingClass::StartProduction(int *this, int a2)
           }
           if ( v22 && *v22 )
             BuildingClass::PlayAnim(this, v21, v22, 4, v19, a2, 0);
-          if ( MEMORY[0x87F7E8][539633] )
+          if ( DataGlobal_87F7E8[539633] )
           {
-            v24 = BuildingClass::GetHealthRatio(this) <= *(double *)(MEMORY[0x87F7E8][7806] + 5888);
+            v24 = BuildingClass::GetHealthRatio(this) <= *(double *)(DataGlobal_87F7E8[7806] + 5888);
             v25 = (*(int (__thiscall **)(int *))(*this + 1032))(this) > 0;
             LOBYTE(a2) = v25;
             if ( v24 )
@@ -16373,9 +16374,9 @@ int __thiscall BuildingClass::StartProduction(int *this, int a2)
             }
             if ( v27 && *v27 )
               BuildingClass::PlayAnim(this, v26, v27, 5, v24, a2, 0);
-            if ( MEMORY[0x87F7E8][539633] )
+            if ( DataGlobal_87F7E8[539633] )
             {
-              v29 = BuildingClass::GetHealthRatio(this) <= *(double *)(MEMORY[0x87F7E8][7806] + 5888);
+              v29 = BuildingClass::GetHealthRatio(this) <= *(double *)(DataGlobal_87F7E8[7806] + 5888);
               v30 = (*(int (__thiscall **)(int *))(*this + 1032))(this) > 0;
               LOBYTE(a2) = v30;
               if ( v29 )
@@ -16399,7 +16400,7 @@ int __thiscall BuildingClass::StartProduction(int *this, int a2)
     if ( *(_BYTE *)(this->gattlingValue + 3363) )
     {
       if ( v4 )
-        result = (int)Rules::GetProductionTimeMult(&MEMORY[0x87F7E8][539870], v7[2]);
+        result = (int)Rules::GetProductionTimeMult(&DataGlobal_87F7E8[539870], v7[2]);
     }
     v34 = dword_A8ED54[12];
     this->q043 = result;
@@ -16806,7 +16807,7 @@ int __thiscall CheckState1(#377 *this)
     this->BuildingClass_field_bool_6DD = 1;
     if ( *(_BYTE *)(v2 + 5827)
       || ((v3 = *(_DWORD *)(v2 + 5872), v3 == -1)
-       || (v4 = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)MEMORY[0xA83CBC] + v3) + 40) + 200)) == 0
+       || (v4 = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)DataGlobal_A83CBC + v3) + 40) + 200)) == 0
        || DynamicVector::GetOrGrow((_DWORD *)(this->owner + 21840), *(_DWORD *)(v4 + 3576)))
       && *(_DWORD *)(this->gattlingValue + 5872) != -1
       || *(_BYTE *)(this->gattlingValue + 5499)
@@ -16815,7 +16816,7 @@ int __thiscall CheckState1(#377 *this)
     {
       MissionControl = MissionClass::GetMissionControl(this);
       v7 = Math::RoundToInt(*((double *)MissionControl + 3) * 900.0);
-      return v7 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
+      return v7 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
     }
     else
     {
@@ -16845,13 +16846,13 @@ LABEL_32:
     {
       v17 = MissionClass::GetMissionControl(this);
       v18 = Math::RoundToInt(*((double *)v17 + 2) * 900.0);
-      return v18 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
+      return v18 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
     }
     else
     {
       v19 = MissionClass::GetMissionControl(this);
       v20 = Math::RoundToInt(*((double *)v19 + 2) * 900.0);
-      return 3 * v20 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
+      return 3 * v20 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
     }
   }
   if ( v9 != 1 )
@@ -17262,11 +17263,11 @@ int __fastcall sub_639740(int a1, int a2)
   *(_DWORD *)(v6 + 148) = v5;
   *(_BYTE *)(v6 + 152) = 1;
   *(_DWORD *)(v6 + 144) = v7 - v5;
-  if ( !MEMORY[0xAC4CC8] )
+  if ( !DataGlobal_AC4CC8 )
   {
     if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)(a1 + 540)) )
     {
-      MEMORY[0xAC4CC8] = 1;
+      DataGlobal_AC4CC8 = 1;
       v8 = *(_DWORD *)(v6 + 20) - 1;
       if ( v8 >= 0 )
         v9 = *(_DWORD *)(*(_DWORD *)(v6 + 8) + 4 * v8);
@@ -17863,7 +17864,7 @@ void __thiscall BuildingClass::Infiltrate(#375 **this, #375 *a2)
     }
     if ( *(int *)(v6 + 3808) > 0 )
     {
-      HouseClass::CreatePowerOutage((int)this->owner, *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3428));
+      HouseClass::CreatePowerOutage((int)this->owner, *(_DWORD *)(DataGlobal_87F7E8[7806] + 3428));
       if ( (unsigned __int8)House::IsHumanPlayer(this->owner) && v14 )
       {
         VoxClass::FindAndPlay(aEvaPowersabota, -1);
@@ -17875,7 +17876,7 @@ void __thiscall BuildingClass::Infiltrate(#375 **this, #375 *a2)
       }
       goto LABEL_64;
     }
-    v7 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 2348);
+    v7 = *(_DWORD *)(DataGlobal_87F7E8[7806] + 2348);
     v8 = 0;
     if ( v7 <= 0 )
     {
@@ -17891,7 +17892,7 @@ LABEL_26:
       if ( *(int *)(v6 + 2048) > 0 )
       {
         a2 = (#375 *)(*(int (__stdcall **)(char *))(*((_DWORD *)this->owner + 9) + 24))((char *)this->owner + 36);
-        v12 = Math::RoundToInt((double)(int)a2 * *(float *)(MEMORY[0x87F7E8][7806] + 3432));
+        v12 = Math::RoundToInt((double)(int)a2 * *(float *)(DataGlobal_87F7E8[7806] + 3432));
         HouseClass::ProcessPowerDrain((int)this->owner, v12);
         HouseClass::AddPower(v3, v12);
         if ( (unsigned __int8)House::IsHumanPlayer(this->owner) && v14 )
@@ -17908,7 +17909,7 @@ LABEL_26:
         *((_BYTE *)v3 + 703) = 1;
         *((_BYTE *)v3 + 508) = 1;
         if ( (unsigned __int8)House::IsHumanPlayer(v3) )
-          BYTE2(MEMORY[0x87F7E8][5353]) = 1;
+          BYTE2(DataGlobal_87F7E8[5353]) = 1;
         if ( (unsigned __int8)House::IsHumanPlayer(this->owner) && v14 )
           VoxClass::FindAndPlay(aEvaTechnologys, -1);
         if ( !(unsigned __int8)House::IsHumanPlayer(v3) || !v14 )
@@ -17923,13 +17924,13 @@ LABEL_64:
       *((_BYTE *)v3 + 704) = 1;
       *((_BYTE *)v3 + 508) = 1;
       if ( (unsigned __int8)House::IsHumanPlayer(v3) )
-        BYTE2(MEMORY[0x87F7E8][5353]) = 1;
+        BYTE2(DataGlobal_87F7E8[5353]) = 1;
       if ( (unsigned __int8)House::IsHumanPlayer(this->owner) && v14 )
         goto LABEL_51;
     }
     else
     {
-      v9 = *(_DWORD **)(MEMORY[0x87F7E8][7806] + 2336);
+      v9 = *(_DWORD **)(DataGlobal_87F7E8[7806] + 2336);
       while ( *v9 != v6 )
       {
         ++v8;
@@ -18334,7 +18335,7 @@ int __thiscall BuildingClass::GetCrew(#377 *this)
   }
   else
   {
-    return MEMORY[0x8871E0]->?; /*0x44eb4c*/
+    return g_RulesClass_Instance->?; /*0x44eb4c*/
   }
 }
     return {}; // TODO stub - retranslate via C-line pipeline
@@ -18365,18 +18366,18 @@ int __thiscall BuildingClass::GetCrewCount(#377 *this)
   {
     if ( v4 == 1 )
     {
-      v5 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5372);
+      v5 = *(_DWORD *)(DataGlobal_87F7E8[7806] + 5372);
     }
     else
     {
       if ( v4 != 2 )
         return 0;
-      v5 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5376);
+      v5 = *(_DWORD *)(DataGlobal_87F7E8[7806] + 5376);
     }
   }
   else
   {
-    v5 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5368);
+    v5 = *(_DWORD *)(DataGlobal_87F7E8[7806] + 5368);
   }
   if ( !v5 )
     return 0;
@@ -18487,18 +18488,18 @@ char __thiscall BuildingClass::EjectCrew(int *this, _BYTE *a2)
         v51 = ((__int16)v9 << 8) + 164;
         if ( (*(int (__thiscall **)(int))(*(_DWORD *)i + 44))(i) == 1 )
         {
-          v11 = Coord::To_Cell(MEMORY[0x87F7E8], &v50);
+          v11 = Coord::To_Cell(DataGlobal_87F7E8, &v50);
           v12 = (int *)(*(int (__thiscall **)(void *, int *))(*(_DWORD *)v11 + 72))(v11, v58);
         }
         else
         {
-          v13 = Coord::To_Cell(MEMORY[0x87F7E8], &v50);
+          v13 = Coord::To_Cell(DataGlobal_87F7E8, &v50);
           v12 = ObjectPlacement::CalcPosition(v13, v57, &v50, 0, 0, 0);
         }
         v50 = *v12;
         v51 = v12[1];
         v52 = v12[2];
-        ++MEMORY[0x87F7E8][539633];
+        ++DataGlobal_87F7E8[539633];
         *(_BYTE *)(i + 140) = this->onBridge;
         v53 = this->q027;
         v14 = *this;
@@ -18531,11 +18532,11 @@ char __thiscall BuildingClass::EjectCrew(int *this, _BYTE *a2)
           }
           v19 = *(_DWORD *)i;
           *(_BYTE *)(i + 1081) = 0;
-          (*(void (__thiscall **)(int, _DWORD *, int, _DWORD))(v19 + 372))(i, &MEMORY[0x87F7E8][29720], 1, 0);
+          (*(void (__thiscall **)(int, _DWORD *, int, _DWORD))(v19 + 372))(i, &DataGlobal_87F7E8[29720], 1, 0);
           if ( !(unsigned __int8)House::IsCurrentPlayer((#375 *)this->owner) )
             (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)i + 488))(i, 15, 0);
         }
-        --MEMORY[0x87F7E8][539633];
+        --DataGlobal_87F7E8[539633];
         v7 = LinkedList::Pop(this + 69);
       }
     }
@@ -18552,10 +18553,10 @@ char __thiscall BuildingClass::EjectCrew(int *this, _BYTE *a2)
       LOWORD(v47) = v22;
       HIWORD(v47) = v23;
       v43 = v47;
-      v24 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v43);
+      v24 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v43);
       v25 = this->owner;
       v49 = (int)v24;
-      if ( !*(_BYTE *)(v25 + 502) && v46 > 0 && Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, v45) == 1 )
+      if ( !*(_BYTE *)(v25 + 502) && v46 > 0 && Random::Range((_DWORD *)(DataGlobal_87F7E8[536210] + 536), 0, v45) == 1 )
       {
         v26 = 0;
         v27 = (*(int (__thiscall **)(int *))(*this + 780))(this);
@@ -18572,18 +18573,18 @@ char __thiscall BuildingClass::EjectCrew(int *this, _BYTE *a2)
         {
           if ( this->BuildingClass_field_bool_6E9 && *(_BYTE *)(*(_DWORD *)(v26 + 1728) + 3230) )
             *(_BYTE *)(v26 + 1753) = 1;
-          ++MEMORY[0x87F7E8][539633];
+          ++DataGlobal_87F7E8[539633];
           v52 = 0;
           v50 = ((__int16)v43 << 8) + 128;
           v51 = (SHIWORD(v43) << 8) + 164;
-          v29 = Coord::To_Cell(MEMORY[0x87F7E8], &v50);
+          v29 = Coord::To_Cell(DataGlobal_87F7E8, &v50);
           v30 = ObjectPlacement::CalcPosition(v29, v59, &v50, 0, 0, 0);
           v50 = *v30;
           v31 = v30[1];
           v51 = v31;
           v32 = v30[2];
           v52 = v32;
-          if ( v50 == MEMORY[0x87F7E8][29720] && v31 == MEMORY[0x87F7E8][29721] && v32 == MEMORY[0x87F7E8][29722]
+          if ( v50 == DataGlobal_87F7E8[29720] && v31 == DataGlobal_87F7E8[29721] && v32 == DataGlobal_87F7E8[29722]
             || !(*(unsigned __int8 (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v26 + 216))(v26, &v50, 0) )
           {
             (*(void (__thiscall **)(int, int))(*(_DWORD *)v26 + 32))(v26, 1);
@@ -18593,10 +18594,10 @@ char __thiscall BuildingClass::EjectCrew(int *this, _BYTE *a2)
             Debug::Log();
             v33 = *(_DWORD *)(*(_DWORD *)(v26 + 1728) + 160);
             --v46;
-            v34 = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 5, v33);
+            v34 = Random::Range((_DWORD *)(DataGlobal_87F7E8[536210] + 536), 5, v33);
             v35 = *(_DWORD *)v26;
             *(_DWORD *)(v26 + 108) = v34;
-            (*(void (__thiscall **)(int, _DWORD *, int, _DWORD))(v35 + 372))(v26, &MEMORY[0x87F7E8][29720], 1, 0);
+            (*(void (__thiscall **)(int, _DWORD *, int, _DWORD))(v35 + 372))(v26, &DataGlobal_87F7E8[29720], 1, 0);
             if ( !a2 || Object::IsAlliedWithObjectSimpleHouse((_DWORD *)this->owner, a2) )
             {
               if ( (unsigned __int8)House::IsCurrentPlayer((#375 *)this->owner) )
@@ -18610,14 +18611,14 @@ char __thiscall BuildingClass::EjectCrew(int *this, _BYTE *a2)
               (*(void (__thiscall **)(int, _BYTE *))(*(_DWORD *)v26 + 968))(v26, a2);
             }
           }
-          --MEMORY[0x87F7E8][539633];
+          --DataGlobal_87F7E8[539633];
         }
         v5 = v48;
       }
       LOBYTE(v7) = Cell::IsBuildable(v49, 1, 1, 1, -1, 0, -1, 1);
       if ( (_BYTE)v7 )
       {
-        if ( Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 99) >= 50 )
+        if ( Random::Range((_DWORD *)(DataGlobal_87F7E8[536210] + 536), 0, 99) >= 50 )
         {
           v57[1] = (SHIWORD(v43) << 8) + 128;
           v57[0] = ((__int16)v43 << 8) + 128;
@@ -19303,10 +19304,10 @@ int BuildingClass_FreeUpgradeQueue()
   int j; // ecx
   void **v5; // edi
 
-  result = MEMORY[0xB0F4F8];
-  for ( i = 0; i < MEMORY[0xB0F4F8]; ++i )
+  result = g_CrateProcessState;
+  for ( i = 0; i < g_CrateProcessState; ++i )
   {
-    v2 = *((_DWORD *)MEMORY[0xB0F4EC] + i);
+    v2 = *((_DWORD *)BuildingClass_InstanceArray + i);
     v3 = *(_DWORD **)(v2 + 244);
     if ( v3 )
     {
@@ -19332,7 +19333,7 @@ int BuildingClass_FreeUpgradeQueue()
       *(_DWORD *)(v2 + 248) = 0;
     }
     *(_DWORD *)(v2 + 240) = 0;
-    result = MEMORY[0xB0F4F8];
+    result = g_CrateProcessState;
   }
   return result;
 }
@@ -19627,12 +19628,12 @@ int __thiscall BuildingClass::_vt184(#377 *this)
   #377 *v8; // ecx
   _BYTE v9[12]; // [esp+8h] [ebp-Ch] BYREF
 
-  result = MEMORY[0xA83DF8];
-  for ( i = 0; i < MEMORY[0xA83DF8]; ++i )
+  result = g_BuildingClass_Count;
+  for ( i = 0; i < g_BuildingClass_Count; ++i )
   {
-    v4 = *((_DWORD *)MEMORY[0xA83DEC] + i);
+    v4 = *((_DWORD *)g_InfantryClassLimit + i);
     v5 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *, _DWORD))(*(_DWORD *)v4 + 76))(v4, v9, 0);
-    v6 = Coord::To_Cell(&MEMORY[0x87F7E8], v5);
+    v6 = Coord::To_Cell(&DataGlobal_87F7E8, v5);
     v7 = (#377 *)Cell::IsBridge(v6);
     if ( *(_BYTE *)(v4 + 144) )
     {
@@ -19642,11 +19643,11 @@ int __thiscall BuildingClass::_vt184(#377 *this)
         {
           v8 = *(#377 **)(v4 + 1444);
           if ( !v8 || v8 == v7 )
-            (*(void (__thiscall **)(int, int *, int, int))(*(_DWORD *)v4 + 372))(v4, &MEMORY[0x89C848], 1, 1);
+            (*(void (__thiscall **)(int, int *, int, int))(*(_DWORD *)v4 + 372))(v4, &g_BuildingClassPool, 1, 1);
         }
       }
     }
-    result = MEMORY[0xA83DF8];
+    result = g_BuildingClass_Count;
   }
   return result;
 }
@@ -19783,7 +19784,7 @@ int __usercall BuildingClass_Deploy@<eax>(unsigned int a1@<ecx>, int a2@<ebp>, i
     v9 = *(_DWORD *)(a1 + 52);
     if ( v8 != -1 )
     {
-      if ( (int)MEMORY[0xA8ED84] - v8 >= v9 )
+      if ( (int)g_CurrentFrame - v8 >= v9 )
       {
 LABEL_10:
         v35 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int **))(**(_DWORD **)(a1 + 40) + 440))(
@@ -19791,13 +19792,13 @@ LABEL_10:
                            &v39);
         goto LABEL_11;
       }
-      v9 -= (int)MEMORY[0xA8ED84] - v8;
+      v9 -= (int)g_CurrentFrame - v8;
     }
     if ( v9 )
     {
       *(_DWORD *)(*(_DWORD *)(a1 + 36) + 108) = 0;
       v30 = (_DWORD *)(*(_DWORD *)(a1 + 40) + 1696);
-      *v30 = MEMORY[0xA8ED84];
+      *v30 = g_CurrentFrame;
       v30[1] = v44;
       v30[2] = 0;
       *(_DWORD *)(*(_DWORD *)(a1 + 40) + 1684) = 0;
@@ -19809,31 +19810,31 @@ LABEL_10:
   }
   v5 = (_WORD *)(*(int (__thiscall **)(_DWORD, int **))(**(_DWORD **)(a1 + 40) + 440))(*(_DWORD *)(a1 + 40), &v39);
   v6 = (((v36 >> 12) + 1) >> 1) & 7;
-  v7 = LOWORD(MEMORY[0x89F688][v6]) + *v5;
-  LOWORD(v6) = HIWORD(MEMORY[0x89F688][v6]);
+  v7 = LOWORD(Direction_X_Offsets[v6]) + *v5;
+  LOWORD(v6) = HIWORD(Direction_X_Offsets[v6]);
   LOWORD(v37) = v7;
   HIWORD(v37) = v5[1] + v6;
   v35 = v37;
 LABEL_11:
-  v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v35);
+  v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v35);
   v11 = *(int **)(a1 + 36);
   v12 = *v11;
   v39 = v11;
   v32 = *(_DWORD *)((*(int (__thiscall **)(int *))(v12 + 132))(v11) + 1460);
   v13 = (*(int (__thiscall **)(int *))(*v11 + 132))(v11);
-  TileIndex = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v35, *(_DWORD *)(v13 + 1460), 0);
+  TileIndex = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v35, *(_DWORD *)(v13 + 1460), 0);
   v14 = (*(int (__thiscall **)(int *))(*v11 + 132))(v11);
   if ( !Cell::IsBuildable((int)v10, *(_DWORD *)(v14 + 1660), 0, 0, TileIndex, v32, -1, 1) )
     v35 = *(_DWORD *)MapClass::FindPlacementCellsAlt(&v39, 0);
-  v15 = MEMORY[0xAC4948];
-  v16 = MEMORY[0xAC494C];
-  v17 = MEMORY[0xAC4950];
-  v40 = MEMORY[0xAC4948];
-  v41 = MEMORY[0xAC494C];
-  v42 = MEMORY[0xAC4950];
-  if ( v35 != MEMORY[0xAC4928] )
+  v15 = DataGlobal_AC4948;
+  v16 = DataGlobal_AC494C;
+  v17 = DataGlobal_AC4950;
+  v40 = DataGlobal_AC4948;
+  v41 = DataGlobal_AC494C;
+  v42 = DataGlobal_AC4950;
+  if ( v35 != DataGlobal_AC4928 )
   {
-    v18 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v35);
+    v18 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v35);
     v19 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v18 + 72))(v18, v43);
     v15 = *v19;
     v40 = *v19;
@@ -19842,8 +19843,8 @@ LABEL_11:
     v17 = v19[2];
     v42 = v17;
   }
-  if ( v35 == MEMORY[0xAC4928]
-    || v15 == MEMORY[0xAC4948] && v16 == MEMORY[0xAC494C] && v17 == MEMORY[0xAC4950]
+  if ( v35 == DataGlobal_AC4928
+    || v15 == DataGlobal_AC4948 && v16 == DataGlobal_AC494C && v17 == DataGlobal_AC4950
     || !(unsigned __int8)ParasiteClass::CanExistOnVictimCell(a1)
     || !(*(unsigned __int8 (__thiscall **)(_DWORD, int *, _DWORD))(**(_DWORD **)(a1 + 36) + 216))(
           *(_DWORD *)(a1 + 36),
@@ -19885,7 +19886,7 @@ LABEL_11:
     v23 = (*(int (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(a1 + 36) + 1016))(*(_DWORD *)(a1 + 36), 0);
     v24 = (_DWORD *)(*(_DWORD *)(a1 + 36) + 1696);
     v25 = *(_DWORD *)(*(_DWORD *)v23 + 176);
-    *v24 = MEMORY[0xA8ED84];
+    *v24 = g_CurrentFrame;
     v24[1] = v44;
     v24[2] = 3 * v25;
     v26 = *(_DWORD *)(a1 + 68);
@@ -19900,22 +19901,22 @@ LABEL_11:
     if ( *(_BYTE *)(a1 + 84) )
     {
       v37 = a1;
-      v27 = (*(int (__thiscall **)(int *, unsigned int *))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v37);
-      if ( v27 != -1 && v27 < MEMORY[0xB0F5C8] && v27 < --MEMORY[0xB0F5C8] )
+      v27 = (*(int (__thiscall **)(int *, unsigned int *))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, &v37);
+      if ( v27 != -1 && v27 < g_BuildingTypeInstanceCount && v27 < --g_BuildingTypeInstanceCount )
       {
         do
         {
           ++v27;
-          *((_DWORD *)MEMORY[0xB0F5BC] + v27 - 1) = *((_DWORD *)MEMORY[0xB0F5BC] + v27);
+          *((_DWORD *)g_BuildingClassPoolManager + v27 - 1) = *((_DWORD *)g_BuildingClassPoolManager + v27);
         }
-        while ( v27 < MEMORY[0xB0F5C8] );
+        while ( v27 < g_BuildingTypeInstanceCount );
       }
       *(_BYTE *)(a1 + 84) = 0;
     }
   }
   *(_DWORD *)(*(_DWORD *)(a1 + 40) + 808) = 0;
   v28 = (_DWORD *)(*(_DWORD *)(a1 + 40) + 1696);
-  *v28 = MEMORY[0xA8ED84];
+  *v28 = g_CurrentFrame;
   result = v44;
   v28[1] = v44;
   v28[2] = 0;
@@ -20644,7 +20645,7 @@ int __thiscall BuildingClass::ApplyIronCurtain(#377 *this)
   if ( this->C4Applied )
   {
     this->C4Applied = 0;
-    v1 = MEMORY[0xA8ED84];
+    v1 = g_CurrentFrame;
     this->initialOwner = 0;
     this->C4Timer = v1;
     this->q52C = v3;
@@ -20721,7 +20722,7 @@ int __thiscall BuildingClass::_vt293(#377 *this)
   int v3; // edi
   int result; // eax
 
-  Field = Diplomacy::GetField((char *)&MEMORY[0x87F7E8], this->gattlingValue);
+  Field = Diplomacy::GetField((char *)&DataGlobal_87F7E8, this->gattlingValue);
   v3 = 0;
   result = *((_DWORD *)Field + 4);
   if ( result > 0 )
@@ -20729,7 +20730,7 @@ int __thiscall BuildingClass::_vt293(#377 *this)
     do
     {
       BuildingClass::ProcessFogCellOccupancy(
-        (int)&MEMORY[0x87F7E8],
+        (int)&DataGlobal_87F7E8,
         (int)this,
         *(_DWORD *)(*((_DWORD *)Field + 1) + 8 * v3) + this->inOpenToppedTransport,
         this->isSelected + *(_DWORD *)(*((_DWORD *)Field + 1) + 8 * v3 + 4));
@@ -20796,7 +20797,7 @@ int __thiscall BuildingClass::_vt294(#377 *this)
   int v3; // edi
   int result; // eax
 
-  Field = Diplomacy::GetField((char *)&MEMORY[0x87F7E8], this->gattlingValue);
+  Field = Diplomacy::GetField((char *)&DataGlobal_87F7E8, this->gattlingValue);
   v3 = 0;
   result = *((_DWORD *)Field + 4);
   if ( result > 0 )
@@ -20804,7 +20805,7 @@ int __thiscall BuildingClass::_vt294(#377 *this)
     do
     {
       BuildingClass::RemoveGapCellCoverage(
-        (int)&MEMORY[0x87F7E8],
+        (int)&DataGlobal_87F7E8,
         (int)this,
         *(_DWORD *)(*((_DWORD *)Field + 1) + 8 * v3) + this->inOpenToppedTransport,
         this->isSelected + *(_DWORD *)(*((_DWORD *)Field + 1) + 8 * v3 + 4));
@@ -21142,7 +21143,7 @@ int __thiscall BuildingClass::OnObjectExpired(#377 *this)
     this->LightSource = 0;
   if ( this->q57C == v20 )
   {
-    if ( BuildingClass::GetHealthRatio((int *)this) > *(double *)(MEMORY[0x87F7E8][7806] + 5888) )
+    if ( BuildingClass::GetHealthRatio((int *)this) > *(double *)(DataGlobal_87F7E8[7806] + 5888) )
     {
       v3 = 0;
       v4 = (_BYTE *)(this->gattlingValue + 5140);
@@ -21157,7 +21158,7 @@ int __thiscall BuildingClass::OnObjectExpired(#377 *this)
   }
   if ( *(_BYTE *)(this->gattlingValue + 5805) && this->q584 == v20 )
   {
-    if ( BuildingClass::GetHealthRatio((int *)this) > *(double *)(MEMORY[0x87F7E8][7806] + 5888) )
+    if ( BuildingClass::GetHealthRatio((int *)this) > *(double *)(DataGlobal_87F7E8[7806] + 5888) )
     {
       v6 = 0;
       v7 = (_BYTE *)(this->gattlingValue + 4120);
@@ -21221,8 +21222,8 @@ LABEL_34:
         }
       }
     }
-    result = MEMORY[0x87F7E8][539633];
-    if ( MEMORY[0x87F7E8][539633] )
+    result = DataGlobal_87F7E8[539633];
+    if ( DataGlobal_87F7E8[539633] )
     {
       v16 = this->q1A1;
       v17 = (char *)this + 1668;
@@ -21499,10 +21500,10 @@ char __thiscall sub_4A5290(int this)
     v3 = this->vtable3;
     if ( v3 != -1 )
     {
-      if ( (int)MEMORY[0xA8ED84] - v3 >= v2 )
+      if ( (int)g_CurrentFrame - v3 >= v2 )
         v2 = 0;
       else
-        v2 -= (int)MEMORY[0xA8ED84] - v3;
+        v2 -= (int)g_CurrentFrame - v3;
     }
     this->uniqueId = this->abstractFlags - v2;
     result = this->customSound == 0;
@@ -22585,7 +22586,7 @@ int __thiscall BuildingClass_ProcessUpgradeEffects(int *this)
     if ( i[11] == 13 )
     {
       v5 = 3 * i[13];
-      this->attachedTag = (int)MEMORY[0xA8ED84];
+      this->attachedTag = (int)g_CurrentFrame;
       this->attachedBomb = v8;
       this->ambientSoundController = 5 * v5;
       result = ~(1 << v2) & this->uniqueId;
@@ -22593,9 +22594,9 @@ int __thiscall BuildingClass_ProcessUpgradeEffects(int *this)
     }
     if ( i[11] == 51 )
     {
-      v6 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, i[13]);
+      v6 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, i[13]);
       v7 = i[13];
-      this->attachedTag = (int)MEMORY[0xA8ED84];
+      this->attachedTag = (int)g_CurrentFrame;
       this->attachedBomb = v8;
       this->ambientSoundController = 15 * (v6 + v7 / 2);
       result = ~(1 << v2);
@@ -22946,8 +22947,8 @@ char __thiscall sub_4852D0(int this)
   v6[2] = 0; /*0x485308*/
   v6[1] = (v3 / 256) << 8; /*0x485312*/
   v6[0] = (v2 / 256) << 8; /*0x48532c*/
-  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v6, v5); /*0x485330*/
-  return Cell::CreateCrater(v5[0] - 30, MEMORY[0x87F7E8][7663] - 15 * *(char *)(this + 283) + v5[1] - 15, 60, 30, 0); /*0x485389*/
+  Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], v6, v5); /*0x485330*/
+  return Cell::CreateCrater(v5[0] - 30, DataGlobal_87F7E8[7663] - 15 * *(char *)(this + 283) + v5[1] - 15, 60, 30, 0); /*0x485389*/
 }
 }
 
@@ -22974,7 +22975,7 @@ int __thiscall BuildingClass::MarkCellOccupied(#377 *this)
   v1 = v5; /*0x453d60*/
   LOWORD(v5) = *v5 / 256; /*0x453d72*/
   HIWORD(v5) = v1[1] / 256; /*0x453d8b*/
-  v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v5); /*0x453d9d*/
+  v2 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v5); /*0x453d9d*/
   v3 = v2[73]; /*0x453da2*/
   result = (int)(v2 + 73); /*0x453da8*/
   LOBYTE(v3) = v3 | 0x80; /*0x453dad*/
@@ -22997,7 +22998,7 @@ int __thiscall BuildingClass::ClearCellOccupied(#377 *this)
   v1 = v5; /*0x453dc0*/
   LOWORD(v5) = *v5 / 256; /*0x453dd2*/
   HIWORD(v5) = v1[1] / 256; /*0x453deb*/
-  v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v5); /*0x453dfd*/
+  v2 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v5); /*0x453dfd*/
   v3 = v2[73]; /*0x453e02*/
   result = (int)(v2 + 73); /*0x453e08*/
   LOBYTE(v3) = v3 & 0x7F; /*0x453e0d*/

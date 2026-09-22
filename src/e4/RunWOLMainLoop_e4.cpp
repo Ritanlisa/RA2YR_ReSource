@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x77E110
 namespace gamemd {
@@ -12,11 +16,11 @@ char sub_77E110()
   int v0; // eax
   int v1; // esi
 
-  if ( MEMORY[0xAC116C] ) /*0x77e117*/
+  if ( ppv ) /*0x77e117*/
   {
-    (*(void (__stdcall **)(LPVOID, int))(*(_DWORD *)MEMORY[0xAC116C] + 124))(MEMORY[0xAC116C], dword_B779BC); /*0x77e123*/
-    (*(void (__stdcall **)(LPVOID, int, int))(*(_DWORD *)MEMORY[0xAC116C] + 104))( /*0x77e13c*/
-      MEMORY[0xAC116C],
+    (*(void (__stdcall **)(LPVOID, int))(*(_DWORD *)ppv + 124))(ppv, dword_B779BC); /*0x77e123*/
+    (*(void (__stdcall **)(LPVOID, int, int))(*(_DWORD *)ppv + 104))( /*0x77e13c*/
+      ppv,
       dword_B779F0,
       dword_B76234);
   }
@@ -67,7 +71,7 @@ HWND sub_785EA0()
   void *v12; // [esp+Ch] [ebp-4h] BYREF
 
   byte_B77DC0 = 1; /*0x785eac*/
-  if ( g_GameMode_Current[0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x785ec0*/
+  if ( g_GameMode_Current[0] == 4 && g_GameOptionsFlags == 3 ) /*0x785ec0*/
   {
     v0 = g_WOL_MsgPool; /*0x785ec6*/
     for ( i = 0; i < g_WOL_MsgPool; v0 = g_WOL_MsgPool ) /*0x785ecf*/
@@ -94,15 +98,15 @@ HWND sub_785EA0()
       while ( g_WOL_MsgPool > (unsigned int)dword_B766B0 ); /*0x785f46*/
     }
   }
-  result = (HWND)MEMORY[0xAC116C]; /*0x785f48*/
-  if ( MEMORY[0xAC116C] ) /*0x785f4f*/
+  result = (HWND)ppv; /*0x785f48*/
+  if ( ppv ) /*0x785f4f*/
   {
     v5 = &Handles; /*0x785f5b*/
     do /*0x785f6e*/
       ResetEvent(*v5++); /*0x785f63*/
     while ( (int)v5 < (int)g_WOL_RequestObject ); /*0x785f6e*/
     Game::ProcessIdle(); /*0x785f70*/
-    if ( !(*(int (__stdcall **)(LPVOID))(*(_DWORD *)MEMORY[0xAC116C] + 52))(MEMORY[0xAC116C]) ) /*0x785f7d*/
+    if ( !(*(int (__stdcall **)(LPVOID))(*(_DWORD *)ppv + 52))(ppv) ) /*0x785f7d*/
     {
       StringCSF = GetStringCSF(aTxtWolLoggingO, 0, g_Str_File_wonline_cpp, 9527); /*0x785f9a*/
       WideString::Assign((wchar_t **)&v12, StringCSF); /*0x785fa4*/
@@ -166,13 +170,13 @@ BOOL __usercall sub_798DE0@<eax>(int a1@<ebx>, int a2@<ebp>)
   v11 = 0; /*0x798df1*/
   ReadRegistryOptionsWOL(&v10); /*0x798df6*/
   Screen::Capture(1, 0, a1, a2); /*0x798dff*/
-  if ( MEMORY[0xAC1170] && strlen(g_WOL_ConnectFlag) && String::Length((const char **)&g_WebBrowser) ) /*0x798e27*/
+  if ( g_UIPointerTable && strlen(g_WOL_ConnectFlag) && String::Length((const char **)&g_WebBrowser) ) /*0x798e27*/
   {
-    v2 = *(_DWORD *)MEMORY[0xAC1170]; /*0x798e3f*/
+    v2 = *(_DWORD *)g_UIPointerTable; /*0x798e3f*/
     v8 = g_NetworkRematchState & 0xFFFF00; /*0x798e49*/
     v3 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x798e4f*/
     (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(v2 + 20))( /*0x798e67*/
-      MEMORY[0xAC1170],
+      g_UIPointerTable,
       g_WOL_ConnectFlag,
       g_WOL_GameConfig,
       v3,
@@ -180,11 +184,11 @@ BOOL __usercall sub_798DE0@<eax>(int a1@<ebx>, int a2@<ebp>)
       -1,
       0,
       0);
-    v4 = *(_DWORD *)MEMORY[0xAC1170]; /*0x798e7c*/
+    v4 = *(_DWORD *)g_UIPointerTable; /*0x798e7c*/
     v9 = g_NetworkRematchState & 0xFFFF00; /*0x798e7e*/
     v5 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x798e84*/
     (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(v4 + 56))( /*0x798e9c*/
-      MEMORY[0xAC1170],
+      g_UIPointerTable,
       g_WOL_ConnectFlag,
       g_WOL_GameConfig,
       v5,
@@ -197,7 +201,7 @@ BOOL __usercall sub_798DE0@<eax>(int a1@<ebx>, int a2@<ebp>)
     v12[0] = &off_7F7624; /*0x798ece*/
     RunDialog(0x10Eu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))GameModeDlgProcMultiplayer, (LPARAM)v12); /*0x798ed2*/
     RunWOLMainLoop_Read_Read_72C830(); /*0x798ed7*/
-    v6 = MEMORY[0xA8B244] != 0; /*0x798eed*/
+    v6 = g_GameOptionsFlags != 0; /*0x798eed*/
     v12[0] = &off_7F7624; /*0x798eef*/
     OwnerDrawControl::InitVtable(v12); /*0x798ef3*/
   }
@@ -207,7 +211,7 @@ BOOL __usercall sub_798DE0@<eax>(int a1@<ebx>, int a2@<ebp>)
     v13[0] = &off_7F7624; /*0x798f1d*/
     RunDialog(0x11Cu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))Setup2DlgProcMultiplayer, (LPARAM)v13); /*0x798f21*/
     RunWOLMainLoop_Read_Read_72C830(); /*0x798f26*/
-    v6 = MEMORY[0xA8B244] != 0; /*0x798f3b*/
+    v6 = g_GameOptionsFlags != 0; /*0x798f3b*/
     v13[0] = &off_7F7624; /*0x798f3d*/
     OwnerDrawControl::InitVtable(v13); /*0x798f41*/
   }

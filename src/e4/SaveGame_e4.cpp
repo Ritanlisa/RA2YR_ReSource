@@ -2,6 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/SaveGame_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x4391C0
 namespace gamemd {
@@ -187,10 +190,10 @@ char __thiscall SaveGame::Start(LPSTREAM this)
   LPPERSISTSTREAM v60; // [esp+360h] [ebp-4h] BYREF
 
   ScenarioClass::SaveLoad_Prefix((DWORD *)g_ScenarioClass_Instance, (int *)this->__pad_0);
-  SaveGame::SaveBlock68(&MEMORY[0x89F690].__pad_14B0[11680], (int)this);
-  RulesClass::SaveLoad_Prefix(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9108], (int *)this->__pad_0);
+  SaveGame::SaveBlock68(&g_CellDirectionOffsets[16976], (int)this);
+  RulesClass::SaveLoad_Prefix(*(_DWORD **)&DataGlobal_87F8E4[30972], (int *)this->__pad_0);
   v2 = *(_DWORD *)this->__pad_0;
-  v60 = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62260];
+  v60 = *(LPPERSISTSTREAM *)&g_CellDirectionOffsets[84688];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v2 + 16))(this, &v60, 4, 0) < 0 )
     return 0;
   v3 = 0;
@@ -199,9 +202,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       pPStm = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_CellDirectionOffsets[84676]
                                                                        + 4 * v3))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * v3),
+             *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84676] + 4 * v3),
              &IID_IPersistStream,
              &pPStm) < 0
         || OleSaveToStream(pPStm, this) < 0
@@ -212,9 +215,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     }
     while ( ++v3 < (int)v60 );
   }
-  MouseClass::DrawCursor((int *)&MEMORY[0x87F7E8], this);
+  MouseClass::DrawCursor((int *)&DataGlobal_87F7E8, this);
   v4 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62236];
+  pPStm = *(LPPERSISTSTREAM *)&g_CellDirectionOffsets[84664];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v4 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v5 = 0;
@@ -223,9 +226,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62224]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_CellDirectionOffsets[84652]
                                                                        + 4 * v5))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62224] + 4 * v5),
+             *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84652] + 4 * v5),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -239,7 +242,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
   if ( SaveGame::LoadMainGameState((int *)this->__pad_0) < 0 )
     return 0;
   LayerClass::Save(&g_GameConfigManager, (RadarClass *)this);
-  if ( OleSaveToStream(*(LPPERSISTSTREAM *)&MEMORY[0x87F8E4].__pad_5568[9432], this) < 0 )
+  if ( OleSaveToStream(*(LPPERSISTSTREAM *)&DataGlobal_87F8E4[31296], this) < 0 )
     return 0;
   v7 = *(_DWORD *)this->__pad_0;
   pPStm = (LPPERSISTSTREAM)g_SuperWeaponTypeArray;
@@ -286,7 +289,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v10 < (int)pPStm );
   }
   v11 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62188];
+  pPStm = *(LPPERSISTSTREAM *)&g_CellDirectionOffsets[84616];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v11 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v12 = 0;
@@ -295,9 +298,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62176]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_CellDirectionOffsets[84604]
                                                                        + 4 * v12))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62176] + 4 * v12),
+             *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84604] + 4 * v12),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -331,7 +334,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v14 < (int)pPStm );
   }
   v15 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_BC0[348];
+  pPStm = *(LPPERSISTSTREAM *)&g_NetworkPlayerBuffer[3356];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v15 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v16 = 0;
@@ -340,9 +343,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[336]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_NetworkPlayerBuffer[3344]
                                                                        + 4 * v16))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[336] + 4 * v16),
+             *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[3344] + 4 * v16),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -354,7 +357,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v16 < (int)pPStm );
   }
   v17 = *(_DWORD *)this->__pad_0;
-  pPStm = (LPPERSISTSTREAM)MEMORY[0xA83DF8];
+  pPStm = (LPPERSISTSTREAM)g_BuildingClass_Count;
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v17 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v18 = 0;
@@ -363,8 +366,8 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))&MEMORY[0xA83DEC]->__pad_0[4 * v18])(
-             *(_DWORD *)&MEMORY[0xA83DEC]->__pad_0[4 * v18],
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))&g_InfantryClassLimit->__pad_0[4 * v18])(
+             *(_DWORD *)&g_InfantryClassLimit->__pad_0[4 * v18],
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -398,7 +401,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v20 < (int)pPStm );
   }
   v21 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_14B0[100];
+  pPStm = *(LPPERSISTSTREAM *)&g_NetworkPlayerBuffer[5396];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v21 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v22 = 0;
@@ -407,9 +410,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[88]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_NetworkPlayerBuffer[5384]
                                                                        + 4 * v22))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[88] + 4 * v22),
+             *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5384] + 4 * v22),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -421,7 +424,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v22 < (int)pPStm );
   }
   v23 = *(_DWORD *)this->__pad_0;
-  pPStm = (LPPERSISTSTREAM)MEMORY[0xA8B228];
+  pPStm = (LPPERSISTSTREAM)g_TypeClass_FindCache;
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v23 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v24 = 0;
@@ -430,8 +433,8 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))&MEMORY[0xA8B21C]->__pad_0[4 * v24])(
-             *(_DWORD *)&MEMORY[0xA8B21C]->__pad_0[4 * v24],
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))&g_AircraftTypeCount->__pad_0[4 * v24])(
+             *(_DWORD *)&g_AircraftTypeCount->__pad_0[4 * v24],
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -443,7 +446,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v24 < (int)pPStm );
   }
   v25 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_BC0[420];
+  pPStm = *(LPPERSISTSTREAM *)&g_NetworkPlayerBuffer[3428];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v25 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v26 = 0;
@@ -452,9 +455,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[408]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_NetworkPlayerBuffer[3416]
                                                                        + 4 * v26))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[408] + 4 * v26),
+             *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[3416] + 4 * v26),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -466,7 +469,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v26 < (int)pPStm );
   }
   v27 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_1258[292];
+  pPStm = *(LPPERSISTSTREAM *)&g_NetworkPlayerBuffer[4988];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v27 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v28 = 0;
@@ -475,9 +478,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_1258[280]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_NetworkPlayerBuffer[4976]
                                                                        + 4 * v28))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_1258[280] + 4 * v28),
+             *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[4976] + 4 * v28),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -489,7 +492,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v28 < (int)pPStm );
   }
   v29 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_1258[76];
+  pPStm = *(LPPERSISTSTREAM *)&g_NetworkPlayerBuffer[4772];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v29 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v30 = 0;
@@ -498,9 +501,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_1258[64]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_NetworkPlayerBuffer[4760]
                                                                        + 4 * v30))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_1258[64] + 4 * v30),
+             *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[4760] + 4 * v30),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -512,7 +515,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v30 < (int)pPStm );
   }
   v31 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_14B0[452];
+  pPStm = *(LPPERSISTSTREAM *)&g_NetworkPlayerBuffer[5748];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v31 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v32 = 0;
@@ -521,9 +524,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[440]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_NetworkPlayerBuffer[5736]
                                                                        + 4 * v32))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[440] + 4 * v32),
+             *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5736] + 4 * v32),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -535,7 +538,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v32 < (int)pPStm );
   }
   v33 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62156];
+  pPStm = *(LPPERSISTSTREAM *)&g_CellDirectionOffsets[84584];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v33 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v34 = 0;
@@ -544,9 +547,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62144]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_CellDirectionOffsets[84572]
                                                                        + 4 * v34))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62144] + 4 * v34),
+             *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84572] + 4 * v34),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -558,7 +561,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v34 < (int)pPStm );
   }
   v35 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62380];
+  pPStm = *(LPPERSISTSTREAM *)&g_CellDirectionOffsets[84808];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v35 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v36 = 0;
@@ -567,9 +570,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62368]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_CellDirectionOffsets[84796]
                                                                        + 4 * v36))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62368] + 4 * v36),
+             *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84796] + 4 * v36),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -581,7 +584,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v36 < (int)pPStm );
   }
   v37 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x87F8E4].__pad_5568[9332];
+  pPStm = *(LPPERSISTSTREAM *)&DataGlobal_87F8E4[31196];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v37 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v38 = 0;
@@ -590,9 +593,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9320]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&DataGlobal_87F8E4[31184]
                                                                        + 4 * v38))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9320] + 4 * v38),
+             *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31184] + 4 * v38),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -604,7 +607,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v38 < (int)pPStm );
   }
   v39 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&g_OverlayTypeConfig.__pad_579C[6140];
+  pPStm = *(LPPERSISTSTREAM *)&g_OverlayTypeConfig[28568];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v39 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v40 = 0;
@@ -613,9 +616,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6128]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_OverlayTypeConfig[28556]
                                                                        + 4 * v40))(
-             *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6128] + 4 * v40),
+             *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[28556] + 4 * v40),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -627,7 +630,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v40 < (int)pPStm );
   }
   v41 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&g_OverlayTypeConfig.__pad_579C[6044];
+  pPStm = *(LPPERSISTSTREAM *)&g_OverlayTypeConfig[28472];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v41 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v42 = 0;
@@ -636,9 +639,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6032]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_OverlayTypeConfig[28460]
                                                                        + 4 * v42))(
-             *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[6032] + 4 * v42),
+             *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[28460] + 4 * v42),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -650,7 +653,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v42 < (int)pPStm );
   }
   v43 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62300];
+  pPStm = *(LPPERSISTSTREAM *)&g_CellDirectionOffsets[84728];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v43 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v44 = 0;
@@ -659,9 +662,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62288]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_CellDirectionOffsets[84716]
                                                                        + 4 * v44))(
-             *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62288] + 4 * v44),
+             *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84716] + 4 * v44),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -673,7 +676,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v44 < (int)pPStm );
   }
   v45 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_14B0[12];
+  pPStm = *(LPPERSISTSTREAM *)&g_NetworkPlayerBuffer[5308];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v45 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v46 = 0;
@@ -682,8 +685,8 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)MEMORY[0xA8D63C].__pad_14B0 + 4 * v46))(
-             *(_DWORD *)(*(_DWORD *)MEMORY[0xA8D63C].__pad_14B0 + 4 * v46),
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)g_NetworkPlayerBuffer[5296] + 4 * v46))(
+             *(_DWORD *)(*(_DWORD *)g_NetworkPlayerBuffer[5296] + 4 * v46),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -695,14 +698,14 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     while ( ++v46 < (int)pPStm );
   }
   v47 = *(_DWORD *)this->__pad_0;
-  pPStm = (LPPERSISTSTREAM)MEMORY[0xA8B210];
+  pPStm = (LPPERSISTSTREAM)g_AnimTypeInitQueue;
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v47 + 16))(this, &pPStm, 4, 0) >= 0 )
   {
     for ( i = 0; i < (int)pPStm; ++i )
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))&MEMORY[0xA8B204]->__pad_0[4 * i])(
-             *(_DWORD *)&MEMORY[0xA8B204]->__pad_0[4 * i],
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))&DataGlobal_A8B204->__pad_0[4 * i])(
+             *(_DWORD *)&DataGlobal_A8B204->__pad_0[4 * i],
              &IID_IPersistStream,
              &v60) < 0 )
         break;
@@ -713,15 +716,15 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     }
   }
   v49 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&g_OverlayTypeConfig.__pad_579C[5844];
+  pPStm = *(LPPERSISTSTREAM *)&g_OverlayTypeConfig[28272];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v49 + 16))(this, &pPStm, 4, 0) >= 0 )
   {
     for ( j = 0; j < (int)pPStm; ++j )
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[5832]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_OverlayTypeConfig[28260]
                                                                        + 4 * j))(
-             *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[5832] + 4 * j),
+             *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[28260] + 4 * j),
              &IID_IPersistStream,
              &v60) < 0 )
         break;
@@ -732,7 +735,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     }
   }
   v51 = *(_DWORD *)this->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&g_OverlayTypeConfig.__pad_579C[8732];
+  pPStm = *(LPPERSISTSTREAM *)&g_OverlayTypeConfig[31160];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v51 + 16))(this, &pPStm, 4, 0) < 0 )
     return 0;
   v52 = 0;
@@ -741,9 +744,9 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v60 = 0;
-      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[8720]
+      if ( (***(int (__stdcall ****)(_DWORD, void *, LPPERSISTSTREAM *))(*(_DWORD *)&g_OverlayTypeConfig[31148]
                                                                        + 4 * v52))(
-             *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[8720] + 4 * v52),
+             *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[31148] + 4 * v52),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, this) < 0
@@ -754,50 +757,50 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     }
     while ( ++v52 < (int)pPStm );
   }
-  if ( SaveGame_Start(this, (int)&MEMORY[0xA83E30]) < 0 )
+  if ( SaveGame_Start(this, (int)&DataGlobal_A83E30) < 0 )
     return 0;
-  if ( SaveGame_Start_67FE70(this, (int)&MEMORY[0xA8D63C].__pad_14B0[60]) < 0 )
+  if ( SaveGame_Start_67FE70(this, (int)&g_NetworkPlayerBuffer[5356]) < 0 )
     return 0;
-  if ( SaveGame_Start_67FEF0(this, (int)&MEMORY[0x87F8E4].__pad_5568[9532]) < 0 )
+  if ( SaveGame_Start_67FEF0(this, (int)&DataGlobal_87F8E4[31396]) < 0 )
     return 0;
-  if ( SaveGame_Start_67FF70(this, (int)&MEMORY[0x87F8E4].__pad_5568[9844]) < 0 )
+  if ( SaveGame_Start_67FF70(this, (int)&DataGlobal_87F8E4[31708]) < 0 )
     return 0;
-  if ( SaveGame_Start_67FFF0(this, (int)&MEMORY[0x87F8E4].__pad_5568[10012]) < 0 )
+  if ( SaveGame_Start_67FFF0(this, (int)&DataGlobal_87F8E4[31876]) < 0 )
     return 0;
-  if ( SaveGame_Start_680070(this, (int)&MEMORY[0xA83D98]) < 0 )
+  if ( SaveGame_Start_680070(this, (int)&DataGlobal_A83D98) < 0 )
     return 0;
-  if ( SaveGame_Start_6800F0(this, (int)&MEMORY[0xA83DC8]) < 0 )
+  if ( SaveGame_Start_6800F0(this, (int)&DataGlobal_A83DC8) < 0 )
     return 0;
-  if ( SaveGame_Start_680170(this, (int)&MEMORY[0xA83D68]) < 0 )
+  if ( SaveGame_Start_680170(this, (int)&DataGlobal_A83D68) < 0 )
     return 0;
   if ( SaveGame_Start_6801F0(this, (int)&dword_A80208) < 0 )
     return 0;
   if ( SaveGame_Start_680270(this, (int)&BulletTypeClass_Array) < 0 )
     return 0;
-  if ( SaveGame_Start_6802F0(this, (int)&MEMORY[0xA8D63C].__pad_14B0[596]) < 0 )
+  if ( SaveGame_Start_6802F0(this, (int)&g_NetworkPlayerBuffer[5892]) < 0 )
     return 0;
   if ( SaveGame_Start_680370(this, (int)&dword_B72608) < 0 )
     return 0;
-  if ( SaveGame_Start_6803F0(this, (int)&MEMORY[0xA8D63C].__pad_14B0[300]) < 0 )
+  if ( SaveGame_Start_6803F0(this, (int)&g_NetworkPlayerBuffer[5596]) < 0 )
     return 0;
-  if ( SaveGame_Start_680470(this, (int)&MEMORY[0xA83D80]) < 0 )
+  if ( SaveGame_Start_680470(this, (int)&DataGlobal_A83D80) < 0 )
     return 0;
   if ( SaveGame_Start_6804F0(this, (int)&dword_ABCA10) < 0 )
     return 0;
-  if ( SaveGame_Start_680570(this, (int)&MEMORY[0x89F690].__pad_579C[62308]) < 0 )
+  if ( SaveGame_Start_680570(this, (int)&g_CellDirectionOffsets[84736]) < 0 )
     return 0;
-  if ( SaveGame_Start_6805F0(this, (int)&MEMORY[0x89F690].__pad_579C[62196]) < 0 )
+  if ( SaveGame_Start_6805F0(this, (int)&g_CellDirectionOffsets[84624]) < 0 )
     return 0;
-  if ( SaveGame_Start_680670(this, (int)&g_OverlayTypeConfig.__pad_579C[9556]) < 0 )
+  if ( SaveGame_Start_680670(this, (int)&g_OverlayTypeConfig[31984]) < 0 )
     return 0;
-  if ( SaveGame_Start_6806F0(this, (int)&MEMORY[0x89F690].__pad_14B0[11568]) < 0 )
+  if ( SaveGame_Start_6806F0(this, (int)&g_CellDirectionOffsets[16864]) < 0 )
     return 0;
-  if ( SaveGame_Start_680770(this, (int)&MEMORY[0xA8D63C].__pad_BC0[308]) < 0 )
+  if ( SaveGame_Start_680770(this, (int)&g_NetworkPlayerBuffer[3316]) < 0 )
     return 0;
   if ( SaveGame_Start_6807F0(this, (int)&dword_A83CB8) < 0 )
     return 0;
   v53 = *(_DWORD *)this->__pad_0;
-  v60 = (LPPERSISTSTREAM)MEMORY[0xA83D60];
+  v60 = (LPPERSISTSTREAM)DataGlobal_A83D60;
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v53 + 16))(this, &v60, 4, 0) < 0 )
     return 0;
   v54 = 0;
@@ -806,14 +809,14 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v55 = *(_DWORD *)this->__pad_0;
-      pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA83D54]->__pad_0[4 * v54];
+      pPStm = *(LPPERSISTSTREAM *)&DataGlobal_A83D54->__pad_0[4 * v54];
       if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v55 + 16))(this, &pPStm, 4, 0) < 0 )
         return 0;
     }
     while ( ++v54 < (int)v60 );
   }
   v56 = *(_DWORD *)this->__pad_0;
-  v60 = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62404];
+  v60 = *(LPPERSISTSTREAM *)&g_CellDirectionOffsets[84832];
   if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v56 + 16))(this, &v60, 4, 0) < 0 )
     return 0;
   v57 = 0;
@@ -822,21 +825,21 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     do
     {
       v58 = *(_DWORD *)this->__pad_0;
-      pPStm = *(LPPERSISTSTREAM *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62392] + 4 * v57);
+      pPStm = *(LPPERSISTSTREAM *)(*(_DWORD *)&g_CellDirectionOffsets[84820] + 4 * v57);
       if ( (*(int (__stdcall **)(LPSTREAM, LPPERSISTSTREAM *, int, _DWORD))(v58 + 16))(this, &pPStm, 4, 0) < 0 )
         return 0;
     }
     while ( ++v57 < (int)v60 );
   }
-  if ( SaveGame_Start_680870(this, (int)&MEMORY[0xA8D63C].__pad_BC0[284]) < 0 )
+  if ( SaveGame_Start_680870(this, (int)&g_NetworkPlayerBuffer[3292]) < 0 )
     return 0;
-  if ( SaveGame_Start_6808F0(this, (int)&MEMORY[0xA8D63C].__pad_1258[244]) < 0 )
+  if ( SaveGame_Start_6808F0(this, (int)&g_NetworkPlayerBuffer[4940]) < 0 )
     return 0;
-  if ( SaveGame_Start_680970(this, (int)&MEMORY[0x89F690].__pad_579C[61156]) < 0 )
+  if ( SaveGame_Start_680970(this, (int)&g_CellDirectionOffsets[83584]) < 0 )
     return 0;
-  if ( SaveGame_Start_6809F0(this, (int)&MEMORY[0x87F8E4].__pad_5568[21156]) < 0 )
+  if ( SaveGame_Start_6809F0(this, (int)&DataGlobal_87F8E4[43020]) < 0 )
     return 0;
-  if ( SaveGame_Start_680A70(this, (int)&MEMORY[0xA8D63C].__pad_14B0[332]) < 0 )
+  if ( SaveGame_Start_680A70(this, (int)&g_NetworkPlayerBuffer[5628]) < 0 )
     return 0;
   result = SaveGame::LoadVeinholeData((int *)this->__pad_0);
   if ( result )
@@ -846,23 +849,23 @@ char __thiscall SaveGame::Start(LPSTREAM this)
     {
       if ( SaveGame_Start_680AF0(this, (int)&dword_89E0F0) >= 0 )
       {
-        if ( SaveGame_Start_680B70(this, (int)&MEMORY[0x89F690].__pad_71C[1116]) >= 0 )
+        if ( SaveGame_Start_680B70(this, (int)&g_CellDirectionOffsets[2936]) >= 0 )
         {
           if ( SaveGame_Start_680BF0(this, (int)(&g_MatrixTransformState + 5824)) >= 0 )
           {
-            if ( SaveGame_Start_680C70(this, (int)&g_OverlayTypeConfig.__pad_579C[7372]) >= 0 )
+            if ( SaveGame_Start_680C70(this, (int)&g_OverlayTypeConfig[29800]) >= 0 )
             {
-              if ( SaveGame_Start_680CF0(this, (int)&MEMORY[0x87F8E4].__pad_5568[20844]) >= 0 )
+              if ( SaveGame_Start_680CF0(this, (int)&DataGlobal_87F8E4[42708]) >= 0 )
               {
-                if ( SaveGame_Start_680D70(this, (int)&g_OverlayTypeConfig.__pad_14B0[11224]) >= 0 )
+                if ( SaveGame_Start_680D70(this, (int)&g_OverlayTypeConfig[16520]) >= 0 )
                 {
-                  if ( SaveGame_Start_680DF0(this, (int)&g_OverlayTypeConfig.__pad_14B0[10568]) >= 0 )
+                  if ( SaveGame_Start_680DF0(this, (int)&g_OverlayTypeConfig[15864]) >= 0 )
                   {
-                    if ( SaveGame::SaveIteratedData(&MEMORY[0x87F8E4].__pad_5568[10812], (int)this) >= 0 )
+                    if ( SaveGame::SaveIteratedData(&DataGlobal_87F8E4[32676], (int)this) >= 0 )
                     {
                       if ( SaveGame::WriteDataArray(&g_MissionQueueFrame, (int *)this->__pad_0) >= 0 )
                       {
-                        if ( SaveGame::LoadArrayData(&MEMORY[0x87F5D8], (int *)this->__pad_0) >= 0 )
+                        if ( SaveGame::LoadArrayData(&DataGlobal_87F5D8, (int *)this->__pad_0) >= 0 )
                         {
                           if ( SaveGame_Start_680E70(this, (int)&dword_89C668) >= 0 )
                           {
@@ -873,7 +876,7 @@ char __thiscall SaveGame::Start(LPSTREAM this)
                                     && SaveGame::WriteMagicHeader((int *)this->__pad_0) >= 0
                                     && SaveGame::VtableDispatch(&g_BuildingTypeClass_Count, (int)this) >= 0;
                               Debug::Log();
-                              if ( SaveGame::SaveAudioData(&MEMORY[0xA8B250], (int)this) )
+                              if ( SaveGame::SaveAudioData(&g_ScenarioFlags, (int)this) )
                               {
                                 return SaveGame::SaveAudioQueueItems((int *)this->__pad_0) >= 0
                                     && SaveGame::WriteMagicHeader((int *)this->__pad_0) >= 0
@@ -968,7 +971,7 @@ int __thiscall sub_67F7E0(int *this)
   int v9; // eax
   wchar_t *v10; // [esp+A0h] [ebp-4h] BYREF
 
-  result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(*this + 16))(this, &MEMORY[0xA8ED78], 4, 0); /*0x67f7f1*/
+  result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(*this + 16))(this, &DataGlobal_A8ED78, 4, 0); /*0x67f7f1*/
   if ( result >= 0 )
   {
     result = (*(int (__stdcall **)(int *, #375 **, int, _DWORD))(*this + 16))(this, &HouseClass_Player, 4, 0); /*0x67f808*/
@@ -986,12 +989,12 @@ int __thiscall sub_67F7E0(int *this)
           if ( (int)v10 <= 0 )
           {
 LABEL_8:
-            result = (*(int (__stdcall **)(int *, float *, int, _DWORD))(*this + 16))(this, MEMORY[0x89EA40], 432, 0); /*0x67f879*/
+            result = (*(int (__stdcall **)(int *, float *, int, _DWORD))(*this + 16))(this, DataGlobal_89EA40, 432, 0); /*0x67f879*/
             if ( result >= 0 )
             {
               SuperWeaponClass::LoadFromSaveStream(this); /*0x67f895*/
               v5 = *this; /*0x67f8a0*/
-              v10 = (wchar_t *)MEMORY[0x8B40D8]; /*0x67f8ac*/
+              v10 = (wchar_t *)g_ScenarioUpdateState; /*0x67f8ac*/
               result = (*(int (__stdcall **)(int *, wchar_t **, int, _DWORD))(v5 + 16))(this, &v10, 4, 0); /*0x67f8b0*/
               if ( result >= 0 )
               {
@@ -1024,28 +1027,28 @@ LABEL_17:
                         {
                           result = (*(int (__stdcall **)(int *, double *, int, _DWORD))(*this + 16))( /*0x67f96f*/
                                      this,
-                                     MEMORY[0x89EC28],
+                                     DataGlobal_89EC28,
                                      152,
                                      0);
                           if ( result >= 0 )
                           {
                             result = (*(int (__stdcall **)(int *, char *, int, _DWORD))(*this + 16))( /*0x67f982*/
                                        this,
-                                       MEMORY[0x89ECC0],
+                                       DataGlobal_89ECC0,
                                        19,
                                        0);
                             if ( result >= 0 )
                             {
                               result = (*(int (__stdcall **)(int *, void *, int, _DWORD))(*this + 16))( /*0x67f998*/
                                          this,
-                                         &MEMORY[0xA8E3A8],
+                                         &DataGlobal_A8E3A8,
                                          1024,
                                          0);
                               if ( result >= 0 )
                               {
                                 v9 = (*(int (__stdcall **)(int *, int *, int, _DWORD))(*this + 16))( /*0x67f9ab*/
                                        this,
-                                       &MEMORY[0xB07784],
+                                       &DataGlobal_B07784,
                                        4,
                                        0);
                                 return v9 >= 0 ? 0 : v9;
@@ -1078,7 +1081,7 @@ LABEL_17:
                   {
                     result = (*(int (__stdcall **)(int *, char *, int, _DWORD))(*this + 16))( /*0x67f8d6*/
                                this,
-                               (char *)MEMORY[0x8B40CC] + 4 * v6,
+                               (char *)DataGlobal_8B40CC + 4 * v6,
                                4,
                                0);
                     if ( result < 0 ) /*0x67f8db*/
@@ -1138,13 +1141,13 @@ char __thiscall sub_74ED60(int *this)
   int v17; // [esp+A0h] [ebp-4h] BYREF
 
   v2 = *this; /*0x74ed74*/
-  v13 = MEMORY[0xB1D2A0]; /*0x74ed7a*/
+  v13 = g_VeinholePool; /*0x74ed7a*/
   if ( (*(int (__stdcall **)(int *, int *, int, _DWORD))(v2 + 16))(this, &v13, 4, 0) < 0 ) /*0x74ed83*/
     return 0; /*0x74ed8e*/
   v4 = Object::ComputeAllocationSize(); /*0x74ed9a*/
   v5 = *this; /*0x74ed9c*/
   v15 = v4; /*0x74eda3*/
-  if ( (*(int (__stdcall **)(int *, void *, int, _DWORD))(v5 + 16))(this, MEMORY[0xB1D2F0], v4, 0) < 0 ) /*0x74edac*/
+  if ( (*(int (__stdcall **)(int *, void *, int, _DWORD))(v5 + 16))(this, g_VeinholeMonsterPool, v4, 0) < 0 ) /*0x74edac*/
     return 0; /*0x74edac*/
   v6 = 0; /*0x74edbc*/
   v14 = 0; /*0x74edc0*/
@@ -1153,27 +1156,27 @@ char __thiscall sub_74ED60(int *this)
     while ( 1 ) /*0x74edd6*/
     {
       v7 = *this; /*0x74edd6*/
-      v16 = *((_DWORD *)MEMORY[0xB1D294] + v6); /*0x74ede5*/
+      v16 = *((_DWORD *)g_VoxelDrawState + v6); /*0x74ede5*/
       if ( (*(int (__stdcall **)(int *, int *, int, _DWORD))(v7 + 16))(this, &v16, 4, 0) < 0 /*0x74ee50*/
         || (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*this + 16))(
              this,
-             *((_DWORD *)MEMORY[0xB1D294] + v6),
+             *((_DWORD *)g_VoxelDrawState + v6),
              264,
              0) < 0
         || (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*this + 16))(
              this,
-             *(_DWORD *)(*((_DWORD *)MEMORY[0xB1D294] + v6) + 196),
+             *(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v6) + 196),
              v4,
              0) < 0
         || (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*this + 16))(
              this,
-             *(_DWORD *)(*((_DWORD *)MEMORY[0xB1D294] + v6) + 180),
+             *(_DWORD *)(*((_DWORD *)g_VoxelDrawState + v6) + 180),
              8 * g_RulesClass_Instance->AircraftFogReveal,
              0) < 0 )
       {
         break; /*0x74ee50*/
       }
-      v8 = *((_DWORD *)MEMORY[0xB1D294] + v6); /*0x74ee62*/
+      v8 = *((_DWORD *)g_VoxelDrawState + v6); /*0x74ee62*/
       v9 = *(_DWORD *)(v8 + 176); /*0x74ee65*/
       v10 = *(_DWORD *)(v8 + 180); /*0x74ee6b*/
       if ( (*(int (__stdcall **)(int *, int, int, _DWORD))(*this + 16))(this, v9, 4, 0) >= 0 /*0x74ee8a*/
@@ -1218,11 +1221,11 @@ int __thiscall sub_751620(int *this)
   int v11; // [esp+10h] [ebp-14h] BYREF
   _DWORD v12[4]; // [esp+14h] [ebp-10h] BYREF
 
-  v11 = SaveGame::CountLinkedList(MEMORY[0xB1D320]); /*0x751637*/
+  v11 = SaveGame::CountLinkedList(DataGlobal_B1D320); /*0x751637*/
   v2 = (*(int (__stdcall **)(int *, int *, int, _DWORD))(*this + 16))(this, &v11, 4, 0); /*0x751647*/
   if ( v2 >= 0 )
   {
-    for ( i = (int *)AudioQueue::GetNext(MEMORY[0xB1D320]); i; i = (int *)AudioQueue::GetNextAlt(i) )
+    for ( i = (int *)AudioQueue::GetNext(DataGlobal_B1D320); i; i = (int *)AudioQueue::GetNextAlt(i) )
     {
       v4 = -1; /*0x751665*/
       v12[0] = -1; /*0x751668*/
@@ -1233,7 +1236,7 @@ int __thiscall sub_751620(int *this)
         if ( SampleName )
         {
           v4 = 0; /*0x751683*/
-          if ( MEMORY[0xB1D388] <= 0 )
+          if ( g_VocPlayState <= 0 )
           {
 LABEL_11:
             v4 = -1; /*0x7516bc*/
@@ -1242,11 +1245,11 @@ LABEL_11:
           {
             while ( 1 )
             {
-              v7 = (char *)**((_DWORD **)MEMORY[0xB1D37C] + v4); /*0x751692*/
-              v8 = v7 ? VocClass::GetSampleName(v7) : MEMORY[0x846574];
+              v7 = (char *)**((_DWORD **)g_VocAudioConfig + v4); /*0x751692*/
+              v8 = v7 ? VocClass::GetSampleName(v7) : g_Str_Invalid_Voc;
               if ( !_strcmpi(SampleName, v8) ) /*0x7516a6*/
                 break; /*0x7516a6*/
-              if ( ++v4 >= MEMORY[0xB1D388] ) /*0x7516ba*/
+              if ( ++v4 >= g_VocPlayState ) /*0x7516ba*/
                 goto LABEL_11; /*0x7516ba*/
             }
           }

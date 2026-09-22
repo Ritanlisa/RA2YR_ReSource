@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x4C5AA0
 int EMPulseClass::StubReturn52()
@@ -24,18 +25,18 @@ EMPulseClass * EMPulseClass::CopyTo(AbstractClass * this, AbstractClass * a2, ch
     *(int *)&this->__pad_0[4] = (unsigned int)vt_EMPulseClass;
     *(int *)&this->__pad_0[8] = (unsigned int)vt_EMPulseClass;
     *(int *)&this->__pad_0[12] = &vt_EMPulseClass;
-    if ( HouseClass_Player.__pad_5568[22252] )
+    if ( HouseClass_Player[44116] )
     EMPulseClass::IterateCellsInRadius((int)this);
     LOBYTE(a2) = 1;
     AbstractClass::AnnounceExpiredPointer(this, a2);
     v6 = this;
-    v4 = (*(int (__thiscall **)(char *, AbstractClass **))(*(int *)&DataGlobal_89E138.__pad_566C[204] + 16))( &DataGlobal_89E138.__pad_566C[204], &v6);
-    if ( v4 != -1 && v4 < *(int *)&DataGlobal_89E138.__pad_566C[220] )
+    v4 = (*(int (__thiscall **)(char *, AbstractClass **))(*(int *)&DataGlobal_89E138[22328] + 16))( &DataGlobal_89E138[22328], &v6);
+    if ( v4 != -1 && v4 < *(int *)&DataGlobal_89E138[22344] )
   {
-    --*(int *)&DataGlobal_89E138.__pad_566C[220];
+    --*(int *)&DataGlobal_89E138[22344];
     for ( ;
-    v4 < *(int *)&DataGlobal_89E138.__pad_566C[220];
-    *(int *)(*(int *)&DataGlobal_89E138.__pad_566C[208] + 4 * v4 - 4) = *(int *)(*(int *)&DataGlobal_89E138.__pad_566C[208] + 4 * v4) ) {
+    v4 < *(int *)&DataGlobal_89E138[22344];
+    *(int *)(*(int *)&DataGlobal_89E138[22332] + 4 * v4 - 4) = *(int *)(*(int *)&DataGlobal_89E138[22332] + 4 * v4) ) {
     ++v4;
     }
   }

@@ -2,6 +2,10 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x401910
 namespace gamemd {
@@ -341,11 +345,11 @@ void AudioStream_CleanupChannels()
         LinkedList::Init((_DWORD **)v0); /*0x404f77*/
         v0[78] = 0; /*0x404f7c*/
         if ( *((char *)v0 + 24) >= 0 ) /*0x404f87*/
-          PushFrontLinkedListAlt(MEMORY[0x87E2A8], (int)v0); /*0x404f9c*/
+          PushFrontLinkedListAlt(DataGlobal_87E2A8, (int)v0); /*0x404f9c*/
         else
           __3_YAXPAX_Z(v0); /*0x404f8a*/
         v0 = v1; /*0x404fa7*/
-        --MEMORY[0x87E28C]; /*0x404fb0*/
+        --DataGlobal_87E28C; /*0x404fb0*/
       }
       while ( v1 != &g_AudioStreamObject ); /*0x404fb6*/
     }
@@ -505,7 +509,7 @@ int __thiscall AudioStream_ReadSamples(_DWORD *this, const void *a2)
     return -1; /*0x4a33b7*/
   if ( *this == 2 )
   {
-    if ( !MEMORY[0x8A0E08] || !*((_DWORD *)MEMORY[0x8A0E08] + 28) ) /*0x4a33d8*/
+    if ( !DataGlobal_8A0E08 || !*((_DWORD *)DataGlobal_8A0E08 + 28) ) /*0x4a33d8*/
       return -1; /*0x4a33c6*/
     v15[2] = 256; /*0x4a33e7*/
     v15[3] = 256; /*0x4a33eb*/
@@ -516,7 +520,7 @@ int __thiscall AudioStream_ReadSamples(_DWORD *this, const void *a2)
     return (*(int (__stdcall **)(int, _DWORD, _DWORD, _DWORD *, int, _DWORD *))(*(_DWORD *)v3 + 20))( /*0x4a3427*/
              v3,
              0,
-             *((_DWORD *)MEMORY[0x8A0E08] + 28),
+             *((_DWORD *)DataGlobal_8A0E08 + 28),
              v15,
              512,
              v17);
@@ -782,23 +786,23 @@ char __thiscall AudioStream::DrawWaveform(
   }
   (*(void (__thiscall **)(void *))(this->q01C)(this); /*0x4bed0b*/
   v99 = (*(int (__thiscall **)(void *, MouseClass *, int))(this->q05C)(this, aP1a, v79); /*0x4bed25*/
-  if ( !*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] ) /*0x4bed2e*/
+  if ( !*(_DWORD *)&DataGlobal_87F8E4[32096] ) /*0x4bed2e*/
     return 0; /*0x4bed2e*/
-  v28 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 4); /*0x4bed38*/
+  v28 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 4); /*0x4bed38*/
   v77 = v79; /*0x4bed3f*/
   SamplePosition = (_WORD *)Audio::GetSamplePosition( /*0x4bed56*/
-                              *(int *)&MEMORY[0x87F8E4].__pad_5568[10232],
+                              *(int *)&DataGlobal_87F8E4[32096],
                               aP1a,
                               (MouseClass *)(v79 - v28));
   v30 = g_VisibleSurfaceDescriptor->field_4; /*0x4bed5c*/
   v77 = v79; /*0x4bed5f*/
   v31 = StreamClass::ReadAndSeek((int)g_VisibleSurfaceDescriptor, aP1a, (MouseClass *)(v79 - (_DWORD)v30)); /*0x4bed67*/
   v32 = (_WORD *)v31; /*0x4bed7a*/
-  LOWORD(v31) = *(_WORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 4) /*0x4bed87*/
-              + *(_WORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 36);
+  LOWORD(v31) = *(_WORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 4) /*0x4bed87*/
+              + *(_WORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 36);
   v65 = -1; /*0x4bed8b*/
   v100 = (int)aP2a + v31 - v79 - (_DWORD)v83; /*0x4bed99*/
-  v86 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 40); /*0x4beda3*/
+  v86 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 40); /*0x4beda3*/
   if ( !v99 ) /*0x4bedb3*/
     return 0; /*0x4bf63e*/
   v33 = 256 - a6; /*0x4bedd0*/
@@ -842,23 +846,23 @@ char __thiscall AudioStream::DrawWaveform(
           if ( (unsigned __int16)v100 < *SamplePosition && *v32 ) /*0x4bf3ec*/
           {
             v55 = *(_WORD *)(v53 + v99); /*0x4bf409*/
-            LOBYTE(v76) = (unsigned __int8)(v55 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bf428*/
-            BYTE1(v76) = (unsigned __int8)(v55 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bf439*/
-            BYTE2(v76) = (unsigned __int8)(v55 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bf456*/
+            LOBYTE(v76) = (unsigned __int8)(v55 >> g_CellDirectionOffsets[5952]) << g_CellDirectionOffsets[5956]; /*0x4bf428*/
+            BYTE1(v76) = (unsigned __int8)(v55 >> g_CellDirectionOffsets[5968]) << g_CellDirectionOffsets[5972]; /*0x4bf439*/
+            BYTE2(v76) = (unsigned __int8)(v55 >> g_CellDirectionOffsets[5960]) << g_CellDirectionOffsets[5964]; /*0x4bf456*/
             v53 = v73[0]; /*0x4bf4e1*/
-            *(_WORD *)(v73[0] + v99) = ((v54 * (v68 + ((v33 * (unsigned __int8)v76) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4bf4e5*/
-                                     | ((v54 * (v67 + ((v33 * BYTE1(v76)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
-                                     | ((v54 * (v66 + ((v33 * BYTE2(v76)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]);
+            *(_WORD *)(v73[0] + v99) = ((v54 * (v68 + ((v33 * (unsigned __int8)v76) >> 8))) >> 7 >> g_CellDirectionOffsets[5956] << g_CellDirectionOffsets[5952]) /*0x4bf4e5*/
+                                     | ((v54 * (v67 + ((v33 * BYTE1(v76)) >> 8))) >> 7 >> g_CellDirectionOffsets[5972] << g_CellDirectionOffsets[5968])
+                                     | ((v54 * (v66 + ((v33 * BYTE2(v76)) >> 8))) >> 7 >> g_CellDirectionOffsets[5964] << g_CellDirectionOffsets[5960]);
           }
           if ( (int)aP4c > 0 ) /*0x4bf4f2*/
           {
             ++SamplePosition; /*0x4bf4f9*/
             v53 += 2; /*0x4bf4fc*/
-            v56 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28); /*0x4bf4ff*/
+            v56 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 28); /*0x4bf4ff*/
             v73[0] = v53; /*0x4bf502*/
             if ( (unsigned int)SamplePosition >= v56 ) /*0x4bf508*/
               SamplePosition = (_WORD *)((char *)SamplePosition /*0x4bf50a*/
-                                       - *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
+                                       - *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 32));
             if ( (unsigned int)++v32 >= *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[4] ) /*0x4bf518*/
               v32 = (_WORD *)((char *)v32 - *(_DWORD *)&g_VisibleSurfaceDescriptor->__pad_18[8]); /*0x4bf51a*/
             aP4c = (IUnknown *)((char *)aP4c - v96); /*0x4bf52d*/
@@ -875,19 +879,19 @@ char __thiscall AudioStream::DrawWaveform(
           if ( v86 <= 0 ) /*0x4bf5ab*/
           {
             v74 = (_WORD *)v57; /*0x4bf5cd*/
-            if ( v57 >= *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 24) ) /*0x4bf5d4*/
+            if ( v57 >= *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 24) ) /*0x4bf5d4*/
               v58 = (int)v74; /*0x4bf5dd*/
             else
-              v58 = v57 + *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32); /*0x4bf5d9*/
+              v58 = v57 + *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 32); /*0x4bf5d9*/
             SamplePosition = (_WORD *)v58; /*0x4bf5e1*/
           }
           else
           {
             v74 = (_WORD *)v57; /*0x4bf5b3*/
-            if ( v57 < *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4bf5ba*/
+            if ( v57 < *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 28) ) /*0x4bf5ba*/
               SamplePosition = v74; /*0x4bf5c1*/
             else
-              SamplePosition = (_WORD *)(v57 - *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32)); /*0x4bf5bc*/
+              SamplePosition = (_WORD *)(v57 - *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 32)); /*0x4bf5bc*/
           }
           v32 += v86; /*0x4bf5e7*/
           v100 += v65; /*0x4bf5e9*/
@@ -922,13 +926,13 @@ char __thiscall AudioStream::DrawWaveform(
           if ( (unsigned __int16)v100 < *SamplePosition && *v32 ) /*0x4bf188*/
           {
             v50 = *(_WORD *)(v99 + 2 * v47); /*0x4bf1ac*/
-            LOBYTE(v74) = (unsigned __int8)(v50 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bf1c4*/
-            BYTE1(v74) = (unsigned __int8)(v50 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bf1e5*/
-            BYTE2(v74) = (unsigned __int8)(v50 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bf1f1*/
+            LOBYTE(v74) = (unsigned __int8)(v50 >> g_CellDirectionOffsets[5952]) << g_CellDirectionOffsets[5956]; /*0x4bf1c4*/
+            BYTE1(v74) = (unsigned __int8)(v50 >> g_CellDirectionOffsets[5968]) << g_CellDirectionOffsets[5972]; /*0x4bf1e5*/
+            BYTE2(v74) = (unsigned __int8)(v50 >> g_CellDirectionOffsets[5960]) << g_CellDirectionOffsets[5964]; /*0x4bf1f1*/
             v47 = v73[0]; /*0x4bf27c*/
-            *(_WORD *)(v99 + 2 * v73[0]) = ((v49 * (v68 + ((v33 * (unsigned __int8)v74) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4bf280*/
-                                         | ((v49 * (v66 + ((v33 * BYTE2(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664])
-                                         | ((v49 * (v67 + ((v33 * BYTE1(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672]);
+            *(_WORD *)(v99 + 2 * v73[0]) = ((v49 * (v68 + ((v33 * (unsigned __int8)v74) >> 8))) >> 7 >> g_CellDirectionOffsets[5956] << g_CellDirectionOffsets[5952]) /*0x4bf280*/
+                                         | ((v49 * (v66 + ((v33 * BYTE2(v74)) >> 8))) >> 7 >> g_CellDirectionOffsets[5964] << g_CellDirectionOffsets[5960])
+                                         | ((v49 * (v67 + ((v33 * BYTE1(v74)) >> 8))) >> 7 >> g_CellDirectionOffsets[5972] << g_CellDirectionOffsets[5968]);
             v48 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x4bf284*/
           }
           if ( (int)aP4b > 0 ) /*0x4bf293*/
@@ -939,14 +943,14 @@ char __thiscall AudioStream::DrawWaveform(
             if ( v86 <= 0 ) /*0x4bf2cb*/
             {
               v51 = SamplePosition; /*0x4bf2e3*/
-              if ( (unsigned int)SamplePosition < *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 24) ) /*0x4bf2e8*/
-                v51 = (_WORD *)((char *)SamplePosition + *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32)); /*0x4bf2ed*/
+              if ( (unsigned int)SamplePosition < *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 24) ) /*0x4bf2e8*/
+                v51 = (_WORD *)((char *)SamplePosition + *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 32)); /*0x4bf2ed*/
               SamplePosition = v51; /*0x4bf2ef*/
             }
-            else if ( (unsigned int)SamplePosition >= *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4bf2d6*/
+            else if ( (unsigned int)SamplePosition >= *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 28) ) /*0x4bf2d6*/
             {
               SamplePosition = (_WORD *)((char *)SamplePosition /*0x4bf2d8*/
-                                       - *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
+                                       - *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 32));
             }
             v48 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x4bf2f5*/
             v100 += v65; /*0x4bf2fb*/
@@ -970,9 +974,9 @@ char __thiscall AudioStream::DrawWaveform(
           }
           aP4b = (IUnknown *)((char *)aP4b + v96); /*0x4bf360*/
           v61 += aP3b; /*0x4bf373*/
-          if ( (unsigned int)++SamplePosition >= *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4bf37d*/
+          if ( (unsigned int)++SamplePosition >= *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 28) ) /*0x4bf37d*/
             SamplePosition = (_WORD *)((char *)SamplePosition /*0x4bf37f*/
-                                     - *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
+                                     - *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 32));
           if ( (unsigned int)++v32 >= v48->referenceCount ) /*0x4bf38a*/
             v32 = (_WORD *)((char *)v32 - (unsigned int)v48->NeedsSaveOrLink); /*0x4bf38c*/
           v73[0] = ++v47; /*0x4bf396*/
@@ -997,13 +1001,13 @@ char __thiscall AudioStream::DrawWaveform(
         if ( (unsigned __int16)v100 < *SamplePosition && *v32 ) /*0x4beefb*/
         {
           v41 = *(_WORD *)(v39 + v99); /*0x4bef18*/
-          LOBYTE(v74) = (unsigned __int8)(v41 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bef37*/
-          BYTE1(v74) = (unsigned __int8)(v41 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bef58*/
-          BYTE2(v74) = (unsigned __int8)(v41 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bef68*/
+          LOBYTE(v74) = (unsigned __int8)(v41 >> g_CellDirectionOffsets[5952]) << g_CellDirectionOffsets[5956]; /*0x4bef37*/
+          BYTE1(v74) = (unsigned __int8)(v41 >> g_CellDirectionOffsets[5968]) << g_CellDirectionOffsets[5972]; /*0x4bef58*/
+          BYTE2(v74) = (unsigned __int8)(v41 >> g_CellDirectionOffsets[5960]) << g_CellDirectionOffsets[5964]; /*0x4bef68*/
           v39 = v71; /*0x4befe7*/
-          *(_WORD *)(v71 + v99) = ((v40 * (v68 + ((v33 * (unsigned __int8)v74) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4beff4*/
-                                | ((v40 * (v66 + ((v33 * BYTE2(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664])
-                                | ((v40 * (v67 + ((v33 * BYTE1(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672]);
+          *(_WORD *)(v71 + v99) = ((v40 * (v68 + ((v33 * (unsigned __int8)v74) >> 8))) >> 7 >> g_CellDirectionOffsets[5956] << g_CellDirectionOffsets[5952]) /*0x4beff4*/
+                                | ((v40 * (v66 + ((v33 * BYTE2(v74)) >> 8))) >> 7 >> g_CellDirectionOffsets[5964] << g_CellDirectionOffsets[5960])
+                                | ((v40 * (v67 + ((v33 * BYTE1(v74)) >> 8))) >> 7 >> g_CellDirectionOffsets[5972] << g_CellDirectionOffsets[5968]);
           v38 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x4beff8*/
         }
         if ( v60 <= 0 ) /*0x4bf004*/
@@ -1017,14 +1021,14 @@ char __thiscall AudioStream::DrawWaveform(
         if ( v86 <= 0 ) /*0x4bf039*/
         {
           v42 = SamplePosition; /*0x4bf050*/
-          if ( (unsigned int)SamplePosition < *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 24) ) /*0x4bf055*/
-            v42 = (_WORD *)((char *)SamplePosition + *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32)); /*0x4bf05a*/
+          if ( (unsigned int)SamplePosition < *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 24) ) /*0x4bf055*/
+            v42 = (_WORD *)((char *)SamplePosition + *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 32)); /*0x4bf05a*/
           SamplePosition = v42; /*0x4bf05c*/
         }
-        else if ( (unsigned int)SamplePosition >= *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4bf043*/
+        else if ( (unsigned int)SamplePosition >= *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 28) ) /*0x4bf043*/
         {
           SamplePosition = (_WORD *)((char *)SamplePosition /*0x4bf045*/
-                                   - *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
+                                   - *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 32));
         }
         v38 = (TacticalClass *)g_VisibleSurfaceDescriptor; /*0x4bf065*/
         v32 += v86; /*0x4bf06b*/
@@ -1040,9 +1044,9 @@ LABEL_45:
           ++SamplePosition; /*0x4bf0c1*/
           v39 += 2; /*0x4bf0c4*/
           v71 = v39; /*0x4bf0ca*/
-          if ( (unsigned int)SamplePosition >= *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4bf0ce*/
+          if ( (unsigned int)SamplePosition >= *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 28) ) /*0x4bf0ce*/
             SamplePosition = (_WORD *)((char *)SamplePosition /*0x4bf0d0*/
-                                     - *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
+                                     - *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 32));
           if ( (unsigned int)++v32 >= v38->referenceCount ) /*0x4bf0db*/
             v32 = (_WORD *)((char *)v32 - (unsigned int)v38->NeedsSaveOrLink); /*0x4bf0dd*/
           aP4a = (IUnknown *)((char *)aP4a - aP3b); /*0x4bf0e7*/

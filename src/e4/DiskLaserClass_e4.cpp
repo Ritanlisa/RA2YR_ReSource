@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x4A7A30
 int DiskLaserClass::DiskLaserClass()
@@ -22,16 +23,16 @@ int __thiscall DiskLaserClass::DiskLaserClass(int this)
   this->q0D0 = 0; /*0x4a7a61*/
   this->q038 = 0; /*0x4a7a64*/
   this->q03C = 0; /*0x4a7a67*/
-  if ( MEMORY[0x8A0218] < MEMORY[0x8A0210] /*0x4a7a9e*/
-    || (MEMORY[0x8A0215] || !MEMORY[0x8A0210])
-    && MEMORY[0x8A021C] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0x8A0208] + 8))(
-         &MEMORY[0x8A0208],
-         MEMORY[0x8A0210] + MEMORY[0x8A021C],
+  if ( DataGlobal_8A0218 < DataGlobal_8A0210 /*0x4a7a9e*/
+    || (DataGlobal_8A0215 || !DataGlobal_8A0210)
+    && DataGlobal_8A021C > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_8A0208 + 8))(
+         &DataGlobal_8A0208,
+         DataGlobal_8A0210 + DataGlobal_8A021C,
          0) )
   {
-    v2 = MEMORY[0x8A0218]++; /*0x4a7aab*/
-    *((_DWORD *)MEMORY[0x8A020C] + v2) = this; /*0x4a7aba*/
+    v2 = DataGlobal_8A0218++; /*0x4a7aab*/
+    *((_DWORD *)DataGlobal_8A020C + v2) = this; /*0x4a7aba*/
   }
   return this; /*0x4a7abf*/
 }
@@ -51,15 +52,15 @@ DiskLaserClass *__thiscall DiskLaserClass::CopyTo(_DWORD *this, char a2)
   this->vtable3 = &DiskLaserClass::`vftable'; /*0x4a7caa*/
   this->vtable4 = &vt_DiskLaserClass; /*0x4a7cb1*/
   v5 = this; /*0x4a7cbf*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x8A0208] + 16))(&MEMORY[0x8A0208], &v5); /*0x4a7cc3*/
-  if ( v3 != -1 && v3 < MEMORY[0x8A0218] && v3 < --MEMORY[0x8A0218] ) /*0x4a7cde*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_8A0208 + 16))(&DataGlobal_8A0208, &v5); /*0x4a7cc3*/
+  if ( v3 != -1 && v3 < DataGlobal_8A0218 && v3 < --DataGlobal_8A0218 ) /*0x4a7cde*/
   {
     do /*0x4a7cf6*/
     {
       ++v3; /*0x4a7ce6*/
-      *((_DWORD *)MEMORY[0x8A020C] + v3 - 1) = *((_DWORD *)MEMORY[0x8A020C] + v3); /*0x4a7cea*/
+      *((_DWORD *)DataGlobal_8A020C + v3 - 1) = *((_DWORD *)DataGlobal_8A020C + v3); /*0x4a7cea*/
     }
-    while ( v3 < MEMORY[0x8A0218] ); /*0x4a7cf6*/
+    while ( v3 < DataGlobal_8A0218 ); /*0x4a7cf6*/
   }
   AbstractClass::DTOR(this); /*0x4a7cfa*/
   if ( (a2 & 1) != 0 ) /*0x4a7d04*/
@@ -84,9 +85,9 @@ int DiskLaserClass::Write(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_DiskLaserClass;
     *(int *)&aP0->__pad_0[12] = &vt_DiskLaserClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[8]);
   }
     return (int)Prefix_0->__pad_0;
 }

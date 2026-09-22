@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x4CD600
 int DamageArea::ApplyScatter()
@@ -179,11 +183,11 @@ LABEL_34:
       v109 = v105;
       v108 = v104;
       LODWORD(v102) = *(_DWORD *)CellStruct::Set(&v104, SLODWORD(v104) / 256, SHIDWORD(v104) / 256);
-      LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102);
+      LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v102);
     }
     LOWORD(v102) = SLODWORD(v108) / 256;
     WORD1(v102) = SHIDWORD(v108) / 256;
-    if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102)
+    if ( LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v102)
       || !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 1244))(this->q00C) )
     {
       goto LABEL_50;
@@ -205,13 +209,13 @@ LABEL_34:
     LODWORD(v108) = v35;
     LOWORD(v102) = v35 / 256;
     WORD1(v102) = SHIDWORD(v108) / 256;
-    if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102)
+    if ( LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v102)
       || (v36 = RandomCoordScatter(&v110, (int *)&v108, 64, 0),
           v108 = *(double *)v36,
           v109 = v36[2],
           LOWORD(v102) = SLODWORD(v108) / 256,
           WORD1(v102) = SHIDWORD(v108) / 256,
-          LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102)) )
+          LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v102)) )
     {
 LABEL_50:
       (*(void (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 436))(this->q00C, &v108);
@@ -220,15 +224,15 @@ LABEL_50:
     LODWORD(v101) = 0;
     v38 = (*(int (__thiscall **)(int))(*(_DWORD *)v37 + 456))(v37);
     v39 = this->q00C;
-    if ( !*(_BYTE *)(v39 + 140) && v38 >= MEMORY[0x8B3CAC] )
+    if ( !*(_BYTE *)(v39 + 140) && v38 >= DataGlobal_8B3CAC )
     {
       v40 = v39 + 156;
       v106 = *(double *)v40;
       v107 = *(_DWORD *)(v40 + 8);
-      if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v106) + 80) & 0x100) != 0 )
+      if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v106) + 80) & 0x100) != 0 )
       {
-        v38 -= MEMORY[0x8B3CAC];
-        LODWORD(v101) = MEMORY[0x8B3CAC];
+        v38 -= DataGlobal_8B3CAC;
+        LODWORD(v101) = DataGlobal_8B3CAC;
       }
     }
     v41 = this->q070;
@@ -298,9 +302,9 @@ LABEL_114:
       if ( v73[27] > 0
         && !*(_BYTE *)(this + 81)
         && (!this->q050 || (*(int (__thiscall **)(int *))(*v73 + 456))(v73) >= *(_DWORD *)(this + 56) / 2)
-        && (this->q070 != MEMORY[0x8B3C78]
-         || this->q008 != MEMORY[0x8B3C7C]
-         || *(_DWORD *)(this + 36) != MEMORY[0x8B3C80]) )
+        && (this->q070 != DataGlobal_8B3C78
+         || this->q008 != DataGlobal_8B3C7C
+         || *(_DWORD *)(this + 36) != DataGlobal_8B3C80) )
       {
         v74 = *(int (__stdcall ****)(_DWORD, void *, double *))(this + 12);
         v75 = 0;
@@ -495,9 +499,9 @@ LABEL_105:
         (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 460))(this->q00C, v54 + v61);
         v62 = *(int **)(this + 12);
         if ( v62[27] > 0
-          && (this->q070 != MEMORY[0x8B3C78]
-           || this->q008 != MEMORY[0x8B3C7C]
-           || *(_DWORD *)(this + 36) != MEMORY[0x8B3C80])
+          && (this->q070 != DataGlobal_8B3C78
+           || this->q008 != DataGlobal_8B3C7C
+           || *(_DWORD *)(this + 36) != DataGlobal_8B3C80)
           && ((*(int (__thiscall **)(int *))(*v62 + 388))(v62) != 7
            || (v63 = *(_DWORD *)(this->q00C + 1444)) == 0
            || (*(int (__thiscall **)(int))(*(_DWORD *)v63 + 44))(v63) != 6
@@ -554,11 +558,11 @@ LABEL_105:
   v104 = v108;
   v109 = v105 - v9;
   Cell::GetGroundHeight(&v108);
-  Coord::To_Cell(&MEMORY[0x87F7E8], &v108);
+  Coord::To_Cell(&DataGlobal_87F7E8, &v108);
   LOWORD(v102) = SLODWORD(v108) / 256;
   WORD1(v102) = SHIDWORD(v108) / 256;
   v103 = LODWORD(v102);
-  if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v103) )
+  if ( LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v103) )
   {
     RemoveTarget(this->q00C);
     (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 292))(this->q00C, 0);
@@ -578,7 +582,7 @@ LABEL_105:
     WORD1(v102) = SHIDWORD(v108) / 256;
     v103 = LODWORD(v102);
     TechnoClass::ComputeCombatDamage(v10, 0);
-    v12 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v103);
+    v12 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v103);
     v13 = **(_DWORD **)(this + 12);
     if ( v12[59] == 2 )
     {
@@ -617,7 +621,7 @@ LABEL_23:
   v17 = (void **)__2_YAPAXI_Z(0x1C8u);
   if ( v17 )
   {
-    v18 = *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v101) + 59);
+    v18 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v101) + 59);
     v98 = v109;
     LODWORD(v98) = Return::HRESULT_Fail(SLODWORD(v108), SHIDWORD(v108), v109);
     VersusMultiplier = (void *)GetWarheadVersusMultiplier(v11, *((_DWORD *)g_RulesClass_Instance + 1002), v18, &v104);

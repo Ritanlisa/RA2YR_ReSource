@@ -2,6 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/CreateTeamCommand_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x535CF0
 namespace gamemd {
@@ -37,9 +40,9 @@ _DWORD *__thiscall CreateTeamCommand::performAction_148(View1CommandClass *this)
   result = g_RadarBlipManager; /*0x5373ab*/
   if ( g_RadarBlipManager ) /*0x5373b2*/
     return Tactical::MouseMove( /*0x5373c3*/
-             (int)&MEMORY[0x87F7E8],
+             (int)&DataGlobal_87F7E8,
              (MouseClass *)&v3,
-             (MouseClass *)&MEMORY[0xA8EA70].__pad_6A8[480]);
+             (MouseClass *)&g_EventManager[2184]);
   return &result->field_0; /*0x5373c8*/
 }
 }
@@ -67,9 +70,9 @@ _DWORD *__thiscall CreateTeamCommand::performAction_153(View2CommandClass *this)
   result = g_RadarBlipManager; /*0x53749b*/
   if ( g_RadarBlipManager ) /*0x5374a2*/
     return Tactical::MouseMove( /*0x5374b3*/
-             (int)&MEMORY[0x87F7E8],
+             (int)&DataGlobal_87F7E8,
              (MouseClass *)&v3,
-             (MouseClass *)&MEMORY[0xA8EA70].__pad_6A8[480]);
+             (MouseClass *)&g_EventManager[2184]);
   return &result->field_0; /*0x5374b8*/
 }
 }
@@ -97,9 +100,9 @@ _DWORD *__thiscall CreateTeamCommand::performAction_158(View3CommandClass *this)
   result = g_RadarBlipManager; /*0x53758b*/
   if ( g_RadarBlipManager ) /*0x537592*/
     return Tactical::MouseMove( /*0x5375a3*/
-             (int)&MEMORY[0x87F7E8],
+             (int)&DataGlobal_87F7E8,
              (MouseClass *)&v3,
-             (MouseClass *)&MEMORY[0xA8EA70].__pad_6A8[480]);
+             (MouseClass *)&g_EventManager[2184]);
   return &result->field_0; /*0x5375a8*/
 }
 }
@@ -215,7 +218,7 @@ char __thiscall sub_6A6A00(_DWORD *this, char a2, int a3)
   int v6; // eax
   int v7; // eax
 
-  if ( !MEMORY[0xA8ED8C] ) /*0x6a6a09*/
+  if ( !DataGlobal_A8ED8C ) /*0x6a6a09*/
   {
     v3 = a3; /*0x6a6a0f*/
     if ( a3 == -1 ) /*0x6a6a16*/
@@ -235,9 +238,9 @@ char __thiscall sub_6A6A00(_DWORD *this, char a2, int a3)
     if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6a6a60*/
       v6 = 18; /*0x6a6a6f*/
     v7 = (g_DSurface_ViewBounds - g_SidebarBounds - v6 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a6aa4*/
-    if ( HouseClass_Player == (#375 *)MEMORY[0xAC1198] ) /*0x6a6aae*/
+    if ( HouseClass_Player == (#375 *)HouseClass_Observer ) /*0x6a6aae*/
     {
-      if ( v4[17] + v7 / 2 < MEMORY[0x884CF8] ) /*0x6a6ac2*/
+      if ( v4[17] + v7 / 2 < DataGlobal_884CF8 ) /*0x6a6ac2*/
         goto LABEL_13; /*0x6a6ac2*/
     }
     else if ( 2 * (v7 + v4[17]) < v4[21] ) /*0x6a6ad2*/
@@ -265,10 +268,10 @@ void __thiscall sub_731060(char *this)
   int v4; // esi
   int v5; // ecx
 
-  v1 = MEMORY[0xA8EC88]; /*0x731061*/
+  v1 = g_SidebarState; /*0x731061*/
   for ( i = 0; i < v1; ++i )
   {
-    v4 = *((_DWORD *)MEMORY[0xA8EC7C] + i); /*0x731077*/
+    v4 = *((_DWORD *)g_TechnoClass_Count + i); /*0x731077*/
     if ( v4 )
     {
       v5 = *(_DWORD *)(v4 + 540); /*0x731083*/
@@ -318,8 +321,8 @@ namespace gamemd {
 ObjectClass * CreateTeamCommand::AddRef()
 {
 {
-    sprintf(&HouseClass_Player.__pad_5568[25344], &DataGlobal_826F84, (INIClass *)this->Items);
-    return (ObjectClass *)&HouseClass_Player.__pad_5568[25344];
+    sprintf(&HouseClass_Player[47208], &DataGlobal_826F84, (INIClass *)this->Items);
+    return (ObjectClass *)&HouseClass_Player[47208];
 }
 }
 } // namespace gamemd
@@ -448,7 +451,7 @@ char CreateTeamCommand::performAction_6()
     int _7342A0;
     int v2;
     int *v4;
-    LOBYTE(_7342A0) = PlayerClass::HasPlayers(&DataGlobal_87F8E4.__pad_125C[492]);
+    LOBYTE(_7342A0) = PlayerClass::HasPlayers(&DataGlobal_87F8E4[5192]);
     if ( (char)_7342A0 )
   {
     SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 0);
@@ -513,7 +516,7 @@ char CreateTeamCommand::performAction_11()
     int _7342B0;
     int v2;
     int *v4;
-    LOBYTE(_7342B0) = PlayerClass::HasPlayers(&DataGlobal_87F8E4.__pad_125C[4480]);
+    LOBYTE(_7342B0) = PlayerClass::HasPlayers(&DataGlobal_87F8E4[9180]);
     if ( (char)_7342B0 )
   {
     SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 1);
@@ -574,7 +577,7 @@ int CreateTeamCommand::performAction_16()
 {
 {
     int result;
-    result = PlayerClass::HasPlayers(&DataGlobal_87F8E4.__pad_125C[8468]);
+    result = PlayerClass::HasPlayers(&DataGlobal_87F8E4[13168]);
     if ( (char)result )
     return SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 2);
     return result;
@@ -626,7 +629,7 @@ int CreateTeamCommand::performAction_21()
 {
 {
     int result;
-    result = PlayerClass::HasPlayers(&DataGlobal_87F8E4.__pad_125C[12456]);
+    result = PlayerClass::HasPlayers(&DataGlobal_87F8E4[17156]);
     if ( (char)result )
     return SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 3);
     return result;
@@ -738,8 +741,8 @@ unsigned char * CreateTeamCommand::performAction_30()
     TacticalClass::SetDisplayMode(&DataGlobal_87F7E8, 0, 0);
     BuildingClass::TogglePower2(&DataGlobal_87F7E8, 0);
     BuildingClass::TogglePower(&DataGlobal_87F7E8, 0);
-    if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[476] )
-    v1 = **(char ***)&g_NetworkPlayerBuffer.__pad_14B0[464];
+    if ( *(int *)&g_NetworkPlayerBuffer[5772] )
+    v1 = **(char ***)&g_NetworkPlayerBuffer[5760];
     else
     v1 = 0;
     result = sub_4AA2B0(v1);
@@ -1159,8 +1162,8 @@ unsigned char * CreateTeamCommand::performAction_69()
     TacticalClass::SetDisplayMode(&DataGlobal_87F7E8, 0, 0);
     BuildingClass::TogglePower2(&DataGlobal_87F7E8, 0);
     BuildingClass::TogglePower(&DataGlobal_87F7E8, 0);
-    if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[476] )
-    v1 = **(char ***)&g_NetworkPlayerBuffer.__pad_14B0[464];
+    if ( *(int *)&g_NetworkPlayerBuffer[5772] )
+    v1 = **(char ***)&g_NetworkPlayerBuffer[5760];
     else
     v1 = 0;
     result = sub_4AA380(v1);
@@ -1466,8 +1469,8 @@ wchar_t * CreateTeamCommand::performAction_99()
 {
 {
     ParticleSystemClass *result;
-    result = *(ParticleSystemClass **)&g_NetworkPlayerBuffer.__pad_14B0[476];
-    if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[476] > 0 )
+    result = *(ParticleSystemClass **)&g_NetworkPlayerBuffer[5772];
+    if ( *(int *)&g_NetworkPlayerBuffer[5772] > 0 )
   {
     TacticalClass::InterpolateView();
     return (wchar_t *)MapClass::MarkForRedraw(&DataGlobal_87F7E8, 1);
@@ -2118,10 +2121,10 @@ void * CreateTeamCommand::performAction_167()
     ScenarioClass *result;
     int v4[2];
     int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
     v5[0] = *v1;
     v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], (AbstractClass *)v4, (IUnknown *)v5);
+    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
     result = g_ScenarioClass_Instance;
     *(int *)((char *)&g_ScenarioClass_Instance->localVariables[1024] + 2) = v2;
     return result;
@@ -2177,10 +2180,10 @@ void * CreateTeamCommand::performAction_172()
     ScenarioClass *result;
     int v4[2];
     int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
     v5[0] = *v1;
     v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], (AbstractClass *)v4, (IUnknown *)v5);
+    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
     result = g_ScenarioClass_Instance;
     *(int *)((char *)g_ScenarioClass_Instance->view1 + 2) = v2;
     return result;
@@ -2236,10 +2239,10 @@ void * CreateTeamCommand::performAction_177()
     ScenarioClass *result;
     int v4[2];
     int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
     v5[0] = *v1;
     v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], (AbstractClass *)v4, (IUnknown *)v5);
+    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
     result = g_ScenarioClass_Instance;
     *(int *)((char *)g_ScenarioClass_Instance->view2 + 2) = v2;
     return result;
@@ -2295,10 +2298,10 @@ void * CreateTeamCommand::performAction_182()
     ScenarioClass *result;
     int v4[2];
     int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
     v5[0] = *v1;
     v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], (AbstractClass *)v4, (IUnknown *)v5);
+    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
     result = g_ScenarioClass_Instance;
     *(int *)((char *)g_ScenarioClass_Instance->view3 + 2) = v2;
     return result;
@@ -2349,10 +2352,10 @@ namespace gamemd {
 bool CreateTeamCommand::performAction_187()
 {
 {
-    if ( !*(int *)&g_NetworkPlayerBuffer.__pad_14B0[476] || MapClass::GetScrollMode((int)&DataGlobal_87F7E8) )
+    if ( !*(int *)&g_NetworkPlayerBuffer[5772] || MapClass::GetScrollMode((int)&DataGlobal_87F7E8) )
     return MapClass::SetScrollMode((int)&DataGlobal_87F7E8, 0);
     else
-    return MapClass::SetScrollMode((int)&DataGlobal_87F7E8, **(MouseClass ***)&g_NetworkPlayerBuffer.__pad_14B0[464]);
+    return MapClass::SetScrollMode((int)&DataGlobal_87F7E8, **(MouseClass ***)&g_NetworkPlayerBuffer[5760]);
 }
 }
 } // namespace gamemd

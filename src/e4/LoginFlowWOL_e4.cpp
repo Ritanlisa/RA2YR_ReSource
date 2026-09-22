@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x786EF0
 namespace gamemd {
@@ -29,10 +31,10 @@ char sub_786EF0()
           v1 = aHttpApiregiste_1; /*0x786f9a*/
           goto LABEL_16; /*0x786f9f*/
         case -2147221388: /*0x786f78*/
-          sprintf(Buffer, MEMORY[0x84B4C4], dword_B77E50); /*0x786fac*/
+          sprintf(Buffer, DataGlobal_84B4C4, dword_B77E50); /*0x786fac*/
           break; /*0x786fac*/
         case -2147221387: /*0x786f78*/
-          sprintf(Buffer, MEMORY[0x84B484], dword_B77E50); /*0x786fb9*/
+          sprintf(Buffer, DataGlobal_84B484, dword_B77E50); /*0x786fb9*/
           break; /*0x786fb9*/
         case -2147221386: /*0x786f78*/
           v2 = dword_B77E50; /*0x786fbb*/

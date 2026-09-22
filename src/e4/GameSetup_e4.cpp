@@ -13,9 +13,9 @@ int __thiscall sub_60D320(void *this)
   void *v4; // [esp+0h] [ebp-4h] BYREF
 
   v4 = this; /*0x60d326*/
-  if ( !MEMORY[0xAC1B04] ) /*0x60d32c*/
+  if ( !g_DialogHashMap_Count ) /*0x60d32c*/
     return 0; /*0x60d32c*/
-  v1 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v4) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60d34d*/
+  v1 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v4) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60d34d*/
   if ( !v1 ) /*0x60d352*/
     return 0; /*0x60d352*/
   while ( (void *)*v1 != v4 ) /*0x60d35a*/
@@ -48,36 +48,36 @@ int __thiscall GameSetup::WriteINI(int this, CCINIClass *aP1, unsigned __int8 *B
   int result; // eax
   char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
 
-  INIClass::SetInt(aP1->__pad_0, (INIClass *)Block, (INIClass *)&stru_830620.__pad_579C[37396], *(_DWORD *)this, 0); /*0x698fae*/
+  INIClass::SetInt(aP1->__pad_0, (INIClass *)Block, (INIClass *)&stru_830620[59824], *(_DWORD *)this, 0); /*0x698fae*/
   INIClass::SetInt( /*0x698fc1*/
     aP1->__pad_0,
     (INIClass *)Block,
-    (INIClass *)&stru_830620.__pad_579C[37384],
+    (INIClass *)&stru_830620[59812],
     this->GameSetup_field_0x04,
     0);
-  INIClass::SetInt(aP1->__pad_0, (INIClass *)Block, (INIClass *)&stru_830620.__pad_14B0[6168], this->GameSetup_field_0x08, 0); /*0x698fd4*/
+  INIClass::SetInt(aP1->__pad_0, (INIClass *)Block, (INIClass *)&stru_830620[11464], this->GameSetup_field_0x08, 0); /*0x698fd4*/
   INIClass::SetInt(aP1->__pad_0, (INIClass *)Block, (INIClass *)aCredits, this->GameSetup_field_0x0C, 0); /*0x698fe7*/
   INIClass::SetInt( /*0x698ffa*/
     aP1->__pad_0,
     (INIClass *)Block,
-    (INIClass *)&stru_830620.__pad_579C[29360],
+    (INIClass *)&stru_830620[51788],
     this->GameSetup_field_0x10,
     0);
   LOBYTE(v4) = (unsigned char)this->GameSetup_field_0x14; /*0x698fff*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620.__pad_579C[29164], v4); /*0x69900b*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[51592], v4); /*0x69900b*/
   LOBYTE(v5) = *(_BYTE *)(this + 21); /*0x699010*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620.__pad_579C[29144], v5); /*0x69901c*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[51572], v5); /*0x69901c*/
   LOBYTE(v6) = *(_BYTE *)(this + 22); /*0x699021*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620.__pad_579C[29128], v6); /*0x69902d*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[51556], v6); /*0x69902d*/
   LOBYTE(v7) = *(_BYTE *)(this + 23); /*0x699032*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620.__pad_579C[37372], v7); /*0x69903e*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[59800], v7); /*0x69903e*/
   LOBYTE(v8) = (unsigned char)this->GameSetup_field_0x18; /*0x699043*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620.__pad_579C[37356], v8); /*0x69904f*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[59784], v8); /*0x69904f*/
   v9 = 1; /*0x699054*/
   v10 = this + 44; /*0x699059*/
   do /*0x69908e*/
   {
-    sprintf(Buffer, &stru_830620.__pad_579C[37344], v9); /*0x699067*/
+    sprintf(Buffer, &stru_830620[59772], v9); /*0x699067*/
     LOBYTE(result) = GameSetup::FormatToString( /*0x699082*/
                        aP1->__pad_0,
                        Block,

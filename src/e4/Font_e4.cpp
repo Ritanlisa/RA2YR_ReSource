@@ -150,9 +150,9 @@ LABEL_4:
           {
             v22 = (ObjectClass *)Palette::SixBitTo16Bit( /*0x434e2e*/
                                    &v44,
-                                   (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124],
-                                   (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140],
-                                   (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]);
+                                   (unsigned __int8)((unsigned __int16)v14 >> stru_89E138[11416]) << stru_89E138[11420],
+                                   (unsigned __int8)((unsigned __int16)v14 >> stru_89E138[11432]) << stru_89E138[11436],
+                                   (unsigned __int8)((unsigned __int16)v14 >> stru_89E138[11424]) << stru_89E138[11428]);
             *(_WORD *)v52 = *(_WORD *)v22->__pad_0; /*0x434e3b*/
             v52[2] = v22->__pad_0[2]; /*0x434e4c*/
             Color::Lerp(v52, (ObjectClass *)((_DWORD)v20 * (255 / (int)aP9)), &byte_A80220); /*0x434e59*/
@@ -249,15 +249,15 @@ LABEL_26:
           break; /*0x434fef*/
         if ( v31 < (int)aP9 ) /*0x434ff9*/
         {
-          LOBYTE(var30) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]; /*0x435028*/
-          HIBYTE(var30) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140]; /*0x435035*/
+          LOBYTE(var30) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138[11416]) << stru_89E138[11420]; /*0x435028*/
+          HIBYTE(var30) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138[11432]) << stru_89E138[11436]; /*0x435035*/
           *(_WORD *)v53 = var30; /*0x43504b*/
-          v53[2] = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]; /*0x435054*/
+          v53[2] = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138[11424]) << stru_89E138[11428]; /*0x435054*/
           Color::Lerp(v53, (ObjectClass *)((_DWORD)v32 * (255 / (int)aP9)), &byte_A80220); /*0x435066*/
-          HIWORD(ecx43) = *(_WORD *)&stru_89E138.__pad_14B0[6122]; /*0x4350b2*/
-          v33 = (ObjectClass *)((v53[0] >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120]) /*0x4350ba*/
-                              | (v53[2] >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128])
-                              | (v53[1] >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136]));
+          HIWORD(ecx43) = *(_WORD *)&stru_89E138[11418]; /*0x4350b2*/
+          v33 = (ObjectClass *)((v53[0] >> stru_89E138[11420] << stru_89E138[11416]) /*0x4350ba*/
+                              | (v53[2] >> stru_89E138[11428] << stru_89E138[11424])
+                              | (v53[1] >> stru_89E138[11436] << stru_89E138[11432]));
         }
       }
       if ( v33 == (ObjectClass *)-1 ) /*0x4350bf*/
@@ -337,15 +337,15 @@ LABEL_59:
             break; /*0x4351cc*/
           if ( (int)v40 < (int)aP9 ) /*0x4351d6*/
           {
-            LOBYTE(aP5a) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]; /*0x435205*/
-            HIBYTE(aP5a) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140]; /*0x435212*/
+            LOBYTE(aP5a) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138[11416]) << stru_89E138[11420]; /*0x435205*/
+            HIBYTE(aP5a) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138[11432]) << stru_89E138[11436]; /*0x435212*/
             *(_WORD *)v53 = aP5a; /*0x435228*/
-            v53[2] = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]; /*0x435231*/
+            v53[2] = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138[11424]) << stru_89E138[11428]; /*0x435231*/
             Color::Lerp(v53, (ObjectClass *)((_DWORD)v41 * (255 / (int)aP9)), &byte_A80220); /*0x435243*/
-            HIWORD(v42) = *(_WORD *)&stru_89E138.__pad_14B0[6122]; /*0x43528f*/
-            v43 = (AbstractClass *)((v53[0] >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120]) /*0x435297*/
-                                  | (v53[2] >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128])
-                                  | (v53[1] >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136]));
+            HIWORD(v42) = *(_WORD *)&stru_89E138[11418]; /*0x43528f*/
+            v43 = (AbstractClass *)((v53[0] >> stru_89E138[11420] << stru_89E138[11416]) /*0x435297*/
+                                  | (v53[2] >> stru_89E138[11428] << stru_89E138[11424])
+                                  | (v53[1] >> stru_89E138[11436] << stru_89E138[11432]));
           }
         }
         if ( v43 == (AbstractClass *)-1 ) /*0x43529c*/

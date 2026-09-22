@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x629210
 namespace ra2 {
@@ -23,16 +29,16 @@ int __thiscall sub_629210(int this)
   this->vtable1 = &ParasiteClass::`vftable'; /*0x629237*/
   this->vtable2 = &ParasiteClass::`vftable'; /*0x62923e*/
   this->vtable3 = &vt_ParasiteClass; /*0x629245*/
-  if ( MEMORY[0xAC4920] < MEMORY[0xAC4918] /*0x62927e*/
-    || (MEMORY[0xAC491D] || !MEMORY[0xAC4918])
-    && MEMORY[0xAC4924] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xAC4910] + 8))(
-         &MEMORY[0xAC4910],
-         MEMORY[0xAC4918] + MEMORY[0xAC4924],
+  if ( DataGlobal_AC4920 < DataGlobal_AC4918 /*0x62927e*/
+    || (DataGlobal_AC491D || !DataGlobal_AC4918)
+    && DataGlobal_AC4924 > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_AC4910 + 8))(
+         &DataGlobal_AC4910,
+         DataGlobal_AC4918 + DataGlobal_AC4924,
          0) )
   {
-    v3 = MEMORY[0xAC4920]++; /*0x62928b*/
-    *((_DWORD *)MEMORY[0xAC4914] + v3) = this; /*0x62929a*/
+    v3 = DataGlobal_AC4920++; /*0x62928b*/
+    *((_DWORD *)DataGlobal_AC4914 + v3) = this; /*0x62929a*/
   }
   return this; /*0x62929f*/
 }
@@ -53,9 +59,9 @@ int __thiscall ParasiteClass::ParasiteClass(int this, TechnoClass *aP1)
   int v6; // [esp+8h] [ebp-8h]
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6292b6*/
-  this->q02C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6292c4*/
+  this->q02C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6292c4*/
   this->ParasiteClass_field_34 = 0; /*0x6292c9*/
-  this->ParasiteClass_field_38 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6292d2*/
+  this->ParasiteClass_field_38 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6292d2*/
   this->ParasiteClass_field_40 = 0; /*0x6292d5*/
   *(_DWORD *)this = &ParasiteClass::`vftable'; /*0x6292d8*/
   this->vtable1 = &ParasiteClass::`vftable'; /*0x6292de*/
@@ -63,10 +69,10 @@ int __thiscall ParasiteClass::ParasiteClass(int this, TechnoClass *aP1)
   this->vtable3 = &vt_ParasiteClass; /*0x6292ec*/
   this->creationFrame = aP1; /*0x6292f3*/
   this->q028 = 0; /*0x6292f6*/
-  this->ParasiteClass_field_38 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x629303*/
+  this->ParasiteClass_field_38 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x629303*/
   this->ParasiteClass_field_3C = v6; /*0x62930a*/
   this->ParasiteClass_field_40 = 0; /*0x62930d*/
-  v3 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x629310*/
+  v3 = *(IUnknown **)&g_NetworkPlayerBuffer[5960]; /*0x629310*/
   this->q054 = 0; /*0x629316*/
   this->q02C = v3; /*0x629319*/
   this->ParasiteClass_field_30 = v6; /*0x62931c*/
@@ -207,7 +213,7 @@ void __thiscall ParasiteClass_DeploySquad(unsigned int this)
     {
       case 0: /*0x6298bc*/
         *(_DWORD *)(this->q028 + 808) = 0; /*0x6298c6*/
-        Index = AnimTypeClass::FindIndex(MEMORY[0x83665C]); /*0x6298d1*/
+        Index = AnimTypeClass::FindIndex(DataGlobal_83665C); /*0x6298d1*/
         if ( Index != -1 ) /*0x6298d9*/
         {
           v12 = (void *)*((_DWORD *)g_AnimTypeCount + Index); /*0x6298e5*/
@@ -220,12 +226,12 @@ void __thiscall ParasiteClass_DeploySquad(unsigned int this)
               if ( v14 ) /*0x62991a*/
               {
                 this->q044 = v14; /*0x62991c*/
-                if ( g_BuildingTypeInstanceCount < MEMORY[0xB0F5C0] /*0x629953*/
-                  || (MEMORY[0xB0F5C5] || !MEMORY[0xB0F5C0])
-                  && MEMORY[0xB0F5CC] > 0
+                if ( g_BuildingTypeInstanceCount < DataGlobal_B0F5C0 /*0x629953*/
+                  || (DataGlobal_B0F5C5 || !DataGlobal_B0F5C0)
+                  && DataGlobal_B0F5CC > 0
                   && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingInstanceCount + 8))(
                        &g_BuildingInstanceCount,
-                       MEMORY[0xB0F5CC] + MEMORY[0xB0F5C0],
+                       DataGlobal_B0F5CC + DataGlobal_B0F5C0,
                        0) )
                 {
                   v15 = g_BuildingTypeInstanceCount++; /*0x629960*/
@@ -540,7 +546,7 @@ LABEL_8:
   {
     v12 = __2_YAPAXI_Z(0x100u); /*0x62a0d8*/
     if ( v12 ) /*0x62a0e2*/
-      ParticleSystemClass::Constructor((int)v12, g_RulesClass_Instance->?, &v27, 0, 0, &MEMORY[0xAC4948], 0); /*0x62a103*/
+      ParticleSystemClass::Constructor((int)v12, g_RulesClass_Instance->?, &v27, 0, 0, &DataGlobal_AC4948, 0); /*0x62a103*/
     v13 = *ProgressTimer::GetValue((_WORD *)(this->q028 + 904), &v23); /*0x62a11b*/
     if ( v4[65] ) /*0x62a11d*/
     {
@@ -642,7 +648,7 @@ int __thiscall ParasiteClass::TryInfect(int this, _DWORD *a2)
   }
   else
   {
-    v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)(this->creationFrame + 1372)); /*0x62aa11*/
+    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)(this->creationFrame + 1372)); /*0x62aa11*/
     v6 = **(_DWORD **)(this + 36); /*0x62aa1f*/
     v7 = (*(int (__thiscall **)(void *, int *, _DWORD))(*(_DWORD *)v5 + 72))(v5, &v15, 0); /*0x62aa25*/
     v8 = (*(int (__thiscall **)(_DWORD, int))(v6 + 216))(this->creationFrame, v7); /*0x62aa2c*/
@@ -654,7 +660,7 @@ int __thiscall ParasiteClass::TryInfect(int this, _DWORD *a2)
       v15 = v11[39]; /*0x62aa67*/
       v16 = v11[40]; /*0x62aa6e*/
       v17 = v11[41]; /*0x62aa75*/
-      MapClass::RevealArea2(&MEMORY[0x87F7E8], &v15, v11[152] - 3, v11[152] + 2, 0); /*0x62aa91*/
+      MapClass::RevealArea2(&DataGlobal_87F7E8, &v15, v11[152] - 3, v11[152] + 2, 0); /*0x62aa91*/
       if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 1196))(this->creationFrame) ) /*0x62aa9b*/
       {
         (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 36) + 968))(this->creationFrame, 0); /*0x62aaab*/
@@ -770,15 +776,15 @@ ParasiteClass *__thiscall ParasiteClass::UpdateParasite(ParasiteClass *this, cha
     this->q054 = 0; /*0x62affb*/
   }
   v7 = this; /*0x62b00e*/
-  v5 = (*(int (__thiscall **)(int *, ParasiteClass **))(MEMORY[0xAC4910] + 16))(&MEMORY[0xAC4910], &v7); /*0x62b012*/
-  if ( v5 != -1 && v5 < MEMORY[0xAC4920] && v5 < --MEMORY[0xAC4920] ) /*0x62b02d*/
+  v5 = (*(int (__thiscall **)(int *, ParasiteClass **))(DataGlobal_AC4910 + 16))(&DataGlobal_AC4910, &v7); /*0x62b012*/
+  if ( v5 != -1 && v5 < DataGlobal_AC4920 && v5 < --DataGlobal_AC4920 ) /*0x62b02d*/
   {
     do /*0x62b045*/
     {
       ++v5; /*0x62b035*/
-      *((_DWORD *)MEMORY[0xAC4914] + v5 - 1) = *((_DWORD *)MEMORY[0xAC4914] + v5); /*0x62b039*/
+      *((_DWORD *)DataGlobal_AC4914 + v5 - 1) = *((_DWORD *)DataGlobal_AC4914 + v5); /*0x62b039*/
     }
-    while ( v5 < MEMORY[0xAC4920] ); /*0x62b045*/
+    while ( v5 < DataGlobal_AC4920 ); /*0x62b045*/
   }
   AbstractClass::DTOR(this); /*0x62b049*/
   if ( (a2 & 1) != 0 ) /*0x62b053*/
@@ -925,11 +931,11 @@ char __thiscall ParasiteClass_Update(char *this)
   v12 = Math::RoundToInt(v56); /*0x62bf09*/
   Coord3D::Set(v62, v12, v43, v46); /*0x62bf13*/
   GroundHeight = Cell::GetGroundHeight(v62); /*0x62bf2d*/
-  v59 = MEMORY[0xAC4A0C] + GroundHeight; /*0x62bf3d*/
-  v13 = Coord::To_Cell(&MEMORY[0x87F7E8], v62); /*0x62bf46*/
+  v59 = DataGlobal_AC4A0C + GroundHeight; /*0x62bf3d*/
+  v13 = Coord::To_Cell(&DataGlobal_87F7E8, v62); /*0x62bf46*/
   v50 = 0; /*0x62bf4d*/
   v49 = 0; /*0x62bf52*/
-  if ( (v13[80] & 0x100) != 0 || (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], v60) + 80) & 0x100) != 0 ) /*0x62bf74*/
+  if ( (v13[80] & 0x100) != 0 || (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v60) + 80) & 0x100) != 0 ) /*0x62bf74*/
   {
     if ( v62[2] < v59 ) /*0x62bf84*/
     {
@@ -1041,7 +1047,7 @@ LABEL_50:
       v60[0] = *((_DWORD *)this + 39); /*0x62c23f*/
       v60[1] = this->q028; /*0x62c250*/
       v61 = this->q0A4; /*0x62c257*/
-      v26 = (int *)*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], v60) + 57); /*0x62c260*/
+      v26 = (int *)*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v60) + 57); /*0x62c260*/
       if ( v26 ) /*0x62c268*/
       {
         do /*0x62c30d*/
@@ -1122,24 +1128,24 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
     if ( a0 )
     {
     AbstractClass::InitVtables(a0, (IUnknown *)&aP1);
-    v4 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+    v4 = *(IUnknown **)&HouseClass_Player[45112];
     *((int*)(a0) + 13) = 0;
     *((int*)(a0) + 11) = (int)v4;
-    *((int*)(a0) + 14) = *(int *)&HouseClass_Player.__pad_5568[23248];
+    *((int*)(a0) + 14) = *(int *)&HouseClass_Player[45112];
     *((int*)(a0) + 16) = 0;
     *a0 = (int)(unsigned int)vt_ParasiteClass;
     a0[1] = (unsigned int)vt_ParasiteClass;
     a0[2] = (unsigned int)vt_ParasiteClass;
     *((int*)(a0) + 3) = (int)&vt_ParasiteClass;
     }
-    if ( *((int*)(a0) + 17) && (*(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0)) )
+    if ( *((int*)(a0) + 17) && (*(int *)&DataGlobal_B05488[41280] < *(int *)&DataGlobal_B05488[41272] || (DataGlobal_B05488[41277] || !*(int *)&DataGlobal_B05488[41272]) && *(int *)&DataGlobal_B05488[41284] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488[41264] + 8))( &DataGlobal_B05488[41264], *(int *)&DataGlobal_B05488[41272] + *(int *)&DataGlobal_B05488[41284], 0)) )
     {
-    v5 = (*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
-    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * v5) = a0;
+    v5 = (*(int *)&DataGlobal_B05488[41280])++;
+    *(int *)(*(int *)&DataGlobal_B05488[41268] + 4 * v5) = a0;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 9));
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 10));
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 17));
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)(a0 + 9));
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)(a0 + 10));
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)(a0 + 17));
     return v3;
   }
     return result;

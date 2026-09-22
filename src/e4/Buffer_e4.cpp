@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
 
 // 0x7BCB50
 char * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4)
@@ -489,14 +490,14 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   {
     while ( 1 )
     {
-    v10 = Map_Append(v16, (int)&g_OverlayTypeConfig.__pad_14B0[12584], *(int *)(a3 + 16));
+    v10 = Map_Append(v16, (int)&g_OverlayTypeConfig[17880], *(int *)(a3 + 16));
     v11 = (char *)this->Capacity;
     if ( (unsigned int)&v11[v10] > this->Items + *(void**)this || (this->Capacity = &v11[v10], !v11) )
       {
     (*(void (__thiscall **)(AbstractClass *))(*(int *)v8->__pad_0 + 96))(v8);
     return 0;
       }
-    qmemcpy(v11, &g_OverlayTypeConfig.__pad_14B0[12584], v10);
+    qmemcpy(v11, &g_OverlayTypeConfig[17880], v10);
     v13 = *(int *)aP1->__pad_0;
     v12 = ++v14;
     v16 += (*(int (__thiscall **)(AbstractClass *))(v13 + 116))(aP1);

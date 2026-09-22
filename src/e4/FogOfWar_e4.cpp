@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x655C50
 int FogOfWar::RevealArea(RadarClass * aP1)
@@ -122,9 +126,9 @@ LABEL_26:
       (*(void (__thiscall **)(_DWORD, RadarClass *, unsigned int))(**(_DWORD **)(this + 4636) + 36))( /*0x655f40*/
         this->q487,
         aP1,
-        ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]) >> 1) >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656])
-      | ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]) >> 1) >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
-      | ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]) >> 1) >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]));
+        ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> g_CellDirectionOffsets[5952]) << g_CellDirectionOffsets[5956]) >> 1) >> g_CellDirectionOffsets[5956] << g_CellDirectionOffsets[5952])
+      | ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> g_CellDirectionOffsets[5968]) << g_CellDirectionOffsets[5972]) >> 1) >> g_CellDirectionOffsets[5972] << g_CellDirectionOffsets[5968])
+      | ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> g_CellDirectionOffsets[5960]) << g_CellDirectionOffsets[5964]) >> 1) >> g_CellDirectionOffsets[5964] << g_CellDirectionOffsets[5960]));
     }
     else if ( aP1b ) /*0x65605e*/
     {
@@ -148,18 +152,18 @@ LABEL_26:
     v16 = aP1c; /*0x655f7a*/
   }
   if ( v16 ) /*0x655f7e*/
-    v17 = ((unsigned __int8)aP1c[1].__pad_16BB[2946] >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x655fd2*/
-        | ((unsigned __int8)aP1c[1].__pad_16BB[2947] >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
-        | ((unsigned __int8)v16[1].__pad_16BB[2948] >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]);
+    v17 = ((unsigned __int8)aP1c[1].__pad_16BB[2946] >> g_CellDirectionOffsets[5956] << g_CellDirectionOffsets[5952]) /*0x655fd2*/
+        | ((unsigned __int8)aP1c[1].__pad_16BB[2947] >> g_CellDirectionOffsets[5972] << g_CellDirectionOffsets[5968])
+        | ((unsigned __int8)v16[1].__pad_16BB[2948] >> g_CellDirectionOffsets[5964] << g_CellDirectionOffsets[5960]);
   else
-    v17 = *(_DWORD *)(FindBuildingAnimByName(&stru_830620.__pad_579C[4368], 1) + 816); /*0x655fe5*/
+    v17 = *(_DWORD *)(FindBuildingAnimByName(&stru_830620[26796], 1) + 816); /*0x655fe5*/
   v18 = v13[93]; /*0x655feb*/
   v19 = (int)v13[95]; /*0x655ff1*/
   if ( v18 == (#375 *)-1 ) /*0x655ffa*/
   {
 LABEL_37:
     if ( v19 <= 0 /*0x65603a*/
-      || (v19 - 1) / *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 136) % 2 != 1
+      || (v19 - 1) / *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 136) % 2 != 1
       || v13[135] != (#375 *)HouseClass_Player )
     {
       goto LABEL_41; /*0x65603a*/
@@ -171,9 +175,9 @@ LABEL_37:
   }
   else
   {
-    if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - (int)v18 < v19 ) /*0x656006*/
+    if ( *(_DWORD *)&g_NetworkPlayerBuffer[5960] - (int)v18 < v19 ) /*0x656006*/
     {
-      v19 -= *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - (_DWORD)v18; /*0x656008*/
+      v19 -= *(_DWORD *)&g_NetworkPlayerBuffer[5960] - (_DWORD)v18; /*0x656008*/
       goto LABEL_37; /*0x656008*/
     }
 LABEL_41:
@@ -294,7 +298,7 @@ int __thiscall sub_656150(int this)
               BuildingAnimByName = *((_DWORD *)BuildingTypeClass_AnimTable /*0x656248*/
                                    + *(_DWORD *)((*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 208))(v13, 0) + 90196));
             else
-              BuildingAnimByName = FindBuildingAnimByName(MEMORY[0x836ECC], 1); /*0x65625c*/
+              BuildingAnimByName = FindBuildingAnimByName(g_INI_Key_LightGrey, 1); /*0x65625c*/
           }
           v18 = *(_DWORD *)(BuildingAnimByName + 816); /*0x65625e*/
           v19 = *(_DWORD *)(BuildingAnimByName + 780); /*0x656264*/
@@ -440,7 +444,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     v2 = v1 / 2 + 1;
     HIWORD(aP0) = aP0->field_4 / 256 - v2;
     v3 = (short)(v8 - v2) + (SHIWORD(aP0) << 9);
-    if ( v3 >= 0x40000 || (v4 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v3)) == 0 )
+    if ( v3 >= 0x40000 || (v4 = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v3)) == 0 )
     {
     LOWORD(aP0) = v8 - v2;
     g_Map_GlobalCellIndex = aP0;
@@ -456,7 +460,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     HIWORD(aP0a) = aP0->field_4 / 256 - v1 / 2;
     LOWORD(aP0a) = v9 - v1 / 2;
     v6 = (short)aP0a + (SHIWORD(aP0a) << 9);
-    if ( v6 >= 0x40000 || (NeighbourContent = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v6)) == 0 )
+    if ( v6 >= 0x40000 || (NeighbourContent = *(int **)(*(int *)&DataGlobal_87C374[13744] + 4 * v6)) == 0 )
     {
     g_Map_GlobalCellIndex = aP0a;
     NeighbourContent = g_CellClassArray;

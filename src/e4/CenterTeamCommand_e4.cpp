@@ -20,8 +20,8 @@ ObjectClass * CenterTeamCommand::AddRef()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 ObjectClass *__thiscall CenterTeamCommand::AddRef(_DWORD *this)
 {
-  sprintf(&HouseClass_Player.__pad_5568[25344], &stru_8271A0, (INIClass *)this->CenterTeamCommand_field_00); /*0x5361ce*/
-  return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x5361db*/
+  sprintf(&HouseClass_Player[47208], &stru_8271A0, (INIClass *)this->CenterTeamCommand_field_00); /*0x5361ce*/
+  return (ObjectClass *)&HouseClass_Player[47208]; /*0x5361db*/
 }
 }
 
@@ -35,8 +35,8 @@ wchar_t *__thiscall CenterTeamCommand::_vt02(const wchar_t **this)
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
   v3 = this->CenterTeamCommand_field_00; /*0x5361e5*/
-  StringCSF = GetStringCSF(MEMORY[0x8271B0], 0, g_Str_File_Init_CPP, 6361); /*0x5361f5*/
-  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x536200*/
-  return &MEMORY[0xA8F654]; /*0x53620d*/
+  StringCSF = GetStringCSF(DataGlobal_8271B0, 0, g_Str_File_Init_CPP, 6361); /*0x5361f5*/
+  swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x536200*/
+  return &g_TeamCommandBuffer; /*0x53620d*/
 }
 }

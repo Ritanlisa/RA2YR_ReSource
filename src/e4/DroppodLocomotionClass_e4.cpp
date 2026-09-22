@@ -2,6 +2,10 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/DroppodLocomotionClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/DropPodLocomotionClass_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x4B5B70
 namespace gamemd {
@@ -98,7 +102,7 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
       if ( !((int)g_CurrentFrame % 3) ) /*0x4b5f1f*/
       {
         v32 = 0.0; /*0x4b5f39*/
-        v22 = Coord::To_Cell(&MEMORY[0x87F7E8], (_DWORD *)(a1 + 28)); /*0x4b5f41*/
+        v22 = Coord::To_Cell(&DataGlobal_87F7E8, (_DWORD *)(a1 + 28)); /*0x4b5f41*/
         ClosestObjectCell = Object::FindClosestObjectCell(v22, &v32, 0, 0); /*0x4b5f48*/
         if ( !Object::IsAlliedWithObjectHouse(*(_DWORD **)(*(_DWORD *)(a1 + 8) + 540), ClosestObjectCell) ) /*0x4b5f57*/
         {
@@ -161,7 +165,7 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
       (*(void (__thiscall **)(int *, _DWORD))(*v10 + 460))(v10, 0); /*0x4b5e5e*/
       (*(void (__thiscall **)(int *, _DWORD, int))(*v10 + 1156))(v10, 0, 1); /*0x4b5e6c*/
       (*(void (__thiscall **)(int *))(*v10 + 492))(v10); /*0x4b5e76*/
-      (*(void (__thiscall **)(int *, int *, _DWORD, _DWORD))(*v10 + 372))(v10, &MEMORY[0x8A0820], 0, 0); /*0x4b5e89*/
+      (*(void (__thiscall **)(int *, int *, _DWORD, _DWORD))(*v10 + 372))(v10, &DataGlobal_8A0820, 0, 0); /*0x4b5e89*/
     }
     else
     {

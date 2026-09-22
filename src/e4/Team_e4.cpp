@@ -24,6 +24,11 @@
 #include "e4/classes/E4Recv_7AF500_e4.hpp"
 #include "e4/classes/E4Recv_7B0490_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x561180
 namespace gamemd {
@@ -107,7 +112,7 @@ LABEL_13:
     else
     {
       Debug::Log(); /*0x5612f8*/
-      ChangeVideoMode(MEMORY[0xA8EB84], MEMORY[0xA8EB88]); /*0x56130c*/
+      ChangeVideoMode(g_CommandLineFlags, DataGlobal_A8EB88); /*0x56130c*/
       g_DSurface_Hidden_2 = g_DSurface_Hidden; /*0x56131b*/
       return 0; /*0x561317*/
     }
@@ -203,12 +208,12 @@ int __fastcall sub_6219D0(int *a1, int a2, int a3, int a4)
           do /*0x621a8c*/
           {
             LOWORD(v15) = *v16++; /*0x621a4f*/
-            LOWORD(v11) = HIWORD(MEMORY[0xAC48B8]) & (HIWORD(MEMORY[0xAC48B8]) >> 1); /*0x621a5b*/
-            LOWORD(v14) = (unsigned __int16)MEMORY[0xAC48B8] >> 1; /*0x621a65*/
-            v14 &= MEMORY[0xAC48B8]; /*0x621a68*/
+            LOWORD(v11) = HIWORD(g_ScreenSaverState) & (HIWORD(g_ScreenSaverState) >> 1); /*0x621a5b*/
+            LOWORD(v14) = (unsigned __int16)g_ScreenSaverState >> 1; /*0x621a65*/
+            v14 &= g_ScreenSaverState; /*0x621a68*/
             LOWORD(v15) = (unsigned __int16)v15 >> 1; /*0x621a6e*/
             v17 = v14 | v11; /*0x621a71*/
-            LOWORD(v14) = (unsigned __int16)MEMORY[0xAC48BC] >> 1; /*0x621a7a*/
+            LOWORD(v14) = (unsigned __int16)g_CreditsScreenState >> 1; /*0x621a7a*/
             v11 = v15 & (v14 | v17); /*0x621a7f*/
             ++v13; /*0x621a81*/
             *(v16 - 1) = v11; /*0x621a82*/
@@ -244,12 +249,12 @@ int __fastcall sub_6219D0(int *a1, int a2, int a3, int a4)
           do /*0x621b35*/
           {
             LOWORD(v22) = *v23++; /*0x621af7*/
-            LOWORD(v20) = HIWORD(MEMORY[0xAC48B8]) & (HIWORD(MEMORY[0xAC48B8]) >> 1); /*0x621b03*/
-            LOWORD(v19) = (unsigned __int16)MEMORY[0xAC48B8] >> 1; /*0x621b0d*/
-            v19 &= MEMORY[0xAC48B8]; /*0x621b10*/
+            LOWORD(v20) = HIWORD(g_ScreenSaverState) & (HIWORD(g_ScreenSaverState) >> 1); /*0x621b03*/
+            LOWORD(v19) = (unsigned __int16)g_ScreenSaverState >> 1; /*0x621b0d*/
+            v19 &= g_ScreenSaverState; /*0x621b10*/
             LOWORD(v22) = (unsigned __int16)v22 >> 1; /*0x621b16*/
             v24 = v19 | v20; /*0x621b19*/
-            LOWORD(v19) = (unsigned __int16)MEMORY[0xAC48BC] >> 1; /*0x621b22*/
+            LOWORD(v19) = (unsigned __int16)g_CreditsScreenState >> 1; /*0x621b22*/
             v20 = v22 & (v19 | v24); /*0x621b27*/
             ++v21; /*0x621b29*/
             *(v23 - 1) = v20; /*0x621b2a*/
@@ -371,35 +376,35 @@ _UNKNOWN **__thiscall sub_637640(_UNKNOWN **this)
 
   v5 = this; /*0x637647*/
   v1 = (*(int (__thiscall **)(int *, _UNKNOWN ***))(g_ScriptConfig + 16))(&g_ScriptConfig, &v5); /*0x637655*/
-  if ( v1 != -1 && v1 < MEMORY[0xAC4CA8] && v1 < --MEMORY[0xAC4CA8] ) /*0x637670*/
+  if ( v1 != -1 && v1 < DataGlobal_AC4CA8 && v1 < --DataGlobal_AC4CA8 ) /*0x637670*/
   {
     do /*0x637688*/
     {
       ++v1; /*0x637678*/
-      *((_DWORD *)MEMORY[0xAC4C9C] + v1 - 1) = *((_DWORD *)MEMORY[0xAC4C9C] + v1); /*0x63767c*/
+      *((_DWORD *)DataGlobal_AC4C9C + v1 - 1) = *((_DWORD *)DataGlobal_AC4C9C + v1); /*0x63767c*/
     }
-    while ( v1 < MEMORY[0xAC4CA8] ); /*0x637688*/
+    while ( v1 < DataGlobal_AC4CA8 ); /*0x637688*/
   }
-  v2 = (*(int (__thiscall **)(int *, _UNKNOWN **))(MEMORY[0xAC4B30] + 16))(&MEMORY[0xAC4B30], &retaddr); /*0x63769a*/
-  if ( v2 != -1 && v2 < MEMORY[0xAC4B40] && v2 < --MEMORY[0xAC4B40] ) /*0x6376b5*/
+  v2 = (*(int (__thiscall **)(int *, _UNKNOWN **))(DataGlobal_AC4B30 + 16))(&DataGlobal_AC4B30, &retaddr); /*0x63769a*/
+  if ( v2 != -1 && v2 < DataGlobal_AC4B40 && v2 < --DataGlobal_AC4B40 ) /*0x6376b5*/
   {
     do /*0x6376cd*/
     {
       ++v2; /*0x6376bd*/
-      *((_DWORD *)MEMORY[0xAC4B34] + v2 - 1) = *((_DWORD *)MEMORY[0xAC4B34] + v2); /*0x6376c1*/
+      *((_DWORD *)DataGlobal_AC4B34 + v2 - 1) = *((_DWORD *)DataGlobal_AC4B34 + v2); /*0x6376c1*/
     }
-    while ( v2 < MEMORY[0xAC4B40] ); /*0x6376cd*/
+    while ( v2 < DataGlobal_AC4B40 ); /*0x6376cd*/
   }
   v5 = &retaddr; /*0x6376d9*/
-  v3 = (*(int (__thiscall **)(int *))(MEMORY[0xAC4C18] + 16))(&MEMORY[0xAC4C18]); /*0x6376df*/
-  if ( v3 != -1 && v3 < MEMORY[0xAC4C28] && v3 < --MEMORY[0xAC4C28] ) /*0x6376fa*/
+  v3 = (*(int (__thiscall **)(int *))(DataGlobal_AC4C18 + 16))(&DataGlobal_AC4C18); /*0x6376df*/
+  if ( v3 != -1 && v3 < DataGlobal_AC4C28 && v3 < --DataGlobal_AC4C28 ) /*0x6376fa*/
   {
     do /*0x637712*/
     {
       ++v3; /*0x637702*/
-      *((_DWORD *)MEMORY[0xAC4C1C] + v3 - 1) = *((_DWORD *)MEMORY[0xAC4C1C] + v3); /*0x637706*/
+      *((_DWORD *)DataGlobal_AC4C1C + v3 - 1) = *((_DWORD *)DataGlobal_AC4C1C + v3); /*0x637706*/
     }
-    while ( v3 < MEMORY[0xAC4C28] ); /*0x637712*/
+    while ( v3 < DataGlobal_AC4C28 ); /*0x637712*/
   }
   result = v5; /*0x637714*/
   if ( (_UNKNOWN **)g_ScriptPool == v5 ) /*0x637722*/
@@ -504,21 +509,21 @@ void __fastcall sub_63A1B0(int a1)
 {
   wchar_t *StringCSF; // eax
 
-  if ( MEMORY[0xAC4BF4][a1] < 1 ) /*0x63a1bb*/
+  if ( DataGlobal_AC4BF4[a1] < 1 ) /*0x63a1bb*/
   {
     if ( a1 == 3 ) /*0x63a1c0*/
     {
-      StringCSF = GetStringCSF(MEMORY[0x836D0C], 0, MEMORY[0x836BD4], 3233); /*0x63a1d3*/
+      StringCSF = GetStringCSF(DataGlobal_836D0C, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a1d3*/
     }
     else
     {
       if ( a1 != 4 ) /*0x63a1d8*/
       {
 LABEL_7:
-        ++MEMORY[0xAC4BF4][a1]; /*0x63a1fc*/
+        ++DataGlobal_AC4BF4[a1]; /*0x63a1fc*/
         return; /*0x63a1fc*/
       }
-      StringCSF = GetStringCSF(MEMORY[0x836CF0], 0, MEMORY[0x836BD4], 3233); /*0x63a1eb*/
+      StringCSF = GetStringCSF(DataGlobal_836CF0, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a1eb*/
     }
     AddMessageListPlayerMessage(StringCSF, 480); /*0x63a1f7*/
     goto LABEL_7; /*0x63a1f7*/
@@ -558,28 +563,28 @@ bool __usercall Team_Start_76ED10@<al>(int a1@<ecx>, int a2@<edx>, int a3@<ebx>)
   v7 = v10[0].ScoreScreen_field_0x18 != 0; /*0x76eda6*/
   if ( v10[0].ScoreScreen_field_0x18 ) /*0x76edab*/
   {
-    MEMORY[0xA8B240] = *(INIClass **)(v10[0].ScoreScreen_field_0x18 + 8); /*0x76edba*/
-    FindWDTTerritoryClass(&v10[0].ScoreScreen_field_0x0C, (int)MEMORY[0xA8B240]); /*0x76edbf*/
+    g_GameDifficulty = *(INIClass **)(v10[0].ScoreScreen_field_0x18 + 8); /*0x76edba*/
+    FindWDTTerritoryClass(&v10[0].ScoreScreen_field_0x0C, (int)g_GameDifficulty); /*0x76edbf*/
     if ( v10[0].ScoreScreen_field_0x10 ) /*0x76edca*/
     {
-      MEMORY[0xA8B270] = *(unsigned __int8 *)(v10[0].ScoreScreen_field_0x10 + 14); /*0x76edd7*/
+      g_Rules_MultiEngineer = *(unsigned __int8 *)(v10[0].ScoreScreen_field_0x10 + 14); /*0x76edd7*/
       g_RulesInitConfig = (ObjectClass *)*(unsigned __int8 *)(v10[0].ScoreScreen_field_0x10 + 15); /*0x76ede2*/
-      MEMORY[0xA8B25C] = *(unsigned __int16 *)(v10[0].ScoreScreen_field_0x10 + 16); /*0x76edec*/
+      g_Rules_Bases = *(unsigned __int16 *)(v10[0].ScoreScreen_field_0x10 + 16); /*0x76edec*/
       v8 = *(_DWORD *)(v10[0].ScoreScreen_field_0x10 + 56) >> 2; /*0x76edf5*/
-      LOBYTE(MEMORY[0xA8B31D]) = 0; /*0x76edfd*/
-      LOBYTE(MEMORY[0xA8B31C]) = v8 & 1; /*0x76ee06*/
-      LOBYTE(MEMORY[0xA8B258]) = (*(_DWORD *)(v10[0].ScoreScreen_field_0x10 + 56) & 0x10) != 0; /*0x76ee14*/
+      LOBYTE(HarvesterTruce) = 0; /*0x76edfd*/
+      LOBYTE(AlliesAllowed) = v8 & 1; /*0x76ee06*/
+      LOBYTE(Bases) = (*(_DWORD *)(v10[0].ScoreScreen_field_0x10 + 56) & 0x10) != 0; /*0x76ee14*/
       LOBYTE(v8) = (*(_DWORD *)(v10[0].ScoreScreen_field_0x10 + 56) & 0x20) != 0; /*0x76ee20*/
-      LOBYTE(MEMORY[0xA8B31F]) = 0; /*0x76ee22*/
-      LOBYTE(MEMORY[0xA8B320]) = v8; /*0x76ee29*/
-      LOBYTE(MEMORY[0xA8B260]) = 1; /*0x76ee2f*/
-      LOBYTE(MEMORY[0xA8B261]) = BYTE1(*(_DWORD *)(v10[0].ScoreScreen_field_0x10 + 56)) & 1; /*0x76ee3d*/
-      LOBYTE(MEMORY[0xA8B262]) = (*(_DWORD *)(v10[0].ScoreScreen_field_0x10 + 56) & 0x400) != 0; /*0x76ee4b*/
+      LOBYTE(FOW) = 0; /*0x76ee22*/
+      LOBYTE(MCVRedeploy) = v8; /*0x76ee29*/
+      LOBYTE(BridgeDestruction) = 1; /*0x76ee2f*/
+      LOBYTE(Crates) = BYTE1(*(_DWORD *)(v10[0].ScoreScreen_field_0x10 + 56)) & 1; /*0x76ee3d*/
+      LOBYTE(ShortGame) = (*(_DWORD *)(v10[0].ScoreScreen_field_0x10 + 56) & 0x400) != 0; /*0x76ee4b*/
       v9 = (*(_DWORD *)(v10[0].ScoreScreen_field_0x10 + 56) & 0x200) != 0; /*0x76ee57*/
-      LOBYTE(MEMORY[0xA8B264]) = 0; /*0x76ee59*/
-      LOBYTE(MEMORY[0xA8B263]) = v9; /*0x76ee60*/
-      MEMORY[0xA8B274] = 0; /*0x76ee65*/
-      MEMORY[0xA8B278] = (IUnknown *)1; /*0x76ee6f*/
+      LOBYTE(g_Rules_ShortGame) = 0; /*0x76ee59*/
+      LOBYTE(SWAllowed) = v9; /*0x76ee60*/
+      g_Rules_AlliesAllowed = 0; /*0x76ee65*/
+      DataGlobal_A8B278 = (IUnknown *)1; /*0x76ee6f*/
     }
     else
     {
@@ -640,10 +645,10 @@ namespace gamemd {
 ObjectClass * Team_Helper_752460(int a1)
 {
 {
-    if ( a1 < 0 || a1 >= *(int *)&DataGlobal_B1D188.__pad_2B8[112] )
+    if ( a1 < 0 || a1 >= *(int *)&DataGlobal_B1D188[808] )
     return (ObjectClass *)g_Str_none;
     else
-    return *(ObjectClass **)(*(int *)&DataGlobal_B1D188.__pad_2B8[100] + 4 * a1);
+    return *(ObjectClass **)(*(int *)&DataGlobal_B1D188[796] + 4 * a1);
 }
 }
 } // namespace gamemd

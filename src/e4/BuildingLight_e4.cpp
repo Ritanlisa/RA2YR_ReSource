@@ -2,6 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BuildingLight_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x5FF850
 namespace gamemd {
@@ -66,28 +69,28 @@ char __thiscall BuildingLight::CalculateShading(IUnknown *this)
   if ( (*(_DWORD *)&this->__pad_10[4] & 0xE) != 0 /*0x5ff879*/
     || (v3 = PingPongBuffer::GetWriteOffset(), dword_ABCD44 >= (CampaignScore *)v3) )
   {
-    LOBYTE(v3) = Coord::To_Screen(*(_DWORD **)&stru_87C374.__pad_579C[22548], this, (IUnknown *)v47); /*0x5ff88b*/
+    LOBYTE(v3) = Coord::To_Screen(*(_DWORD **)&stru_87C374[44976], this, (IUnknown *)v47); /*0x5ff88b*/
     if ( (_BYTE)v3 ) /*0x5ff892*/
     {
-      if ( (**(_DWORD **)&HouseClass_Player.__pad_5568[8060] & 0x1000) == 0 /*0x5ff8b2*/
+      if ( (**(_DWORD **)&HouseClass_Player[29924] & 0x1000) == 0 /*0x5ff8b2*/
         || (LOBYTE(v3) = Game::Stub3(this), !(_BYTE)v3) )
       {
         v52[0] = v47[0] - 128; /*0x5ff8c9*/
-        a1[0] = *(_DWORD *)&stru_87C374.__pad_579C[21648]; /*0x5ff8d9*/
-        a1[1] = *(_DWORD *)&stru_87C374.__pad_579C[21652]; /*0x5ff8e6*/
+        a1[0] = *(_DWORD *)&stru_87C374[44076]; /*0x5ff8d9*/
+        a1[1] = *(_DWORD *)&stru_87C374[44080]; /*0x5ff8e6*/
         v5 = this->field_C; /*0x5ff8ed*/
-        a1[3] = *(_DWORD *)&stru_87C374.__pad_579C[21660]; /*0x5ff8f0*/
-        v6 = stru_830620.__pad_14B0[v5 + 6844]; /*0x5ff8ff*/
+        a1[3] = *(_DWORD *)&stru_87C374[44088]; /*0x5ff8f0*/
+        v6 = stru_830620[5296][v5 + 6844]; /*0x5ff8ff*/
         v52[1] = v47[1] - 64; /*0x5ff906*/
-        v37 = *(Tactical **)&stru_87C374.__pad_579C[22532]; /*0x5ff912*/
+        v37 = *(Tactical **)&stru_87C374[44960]; /*0x5ff912*/
         v52[2] = 255; /*0x5ff916*/
         v52[3] = 127; /*0x5ff91e*/
-        a1[2] = *(_DWORD *)&stru_87C374.__pad_579C[21656]; /*0x5ff925*/
+        a1[2] = *(_DWORD *)&stru_87C374[44084]; /*0x5ff925*/
         if ( v6 < 64 ) /*0x5ff92c*/
           v6 = v6 * *(_DWORD *)this->__pad_10 / 64; /*0x5ff93d*/
-        v7 = **(_DWORD **)&stru_87C374.__pad_579C[22532]; /*0x5ff946*/
+        v7 = **(_DWORD **)&stru_87C374[44960]; /*0x5ff946*/
         v40 = (int)*(&g_MatrixTransformState + v6 + 218); /*0x5ff94a*/
-        v8 = (*(int (__thiscall **)(_DWORD))(v7 + 116))(*(_DWORD *)&stru_87C374.__pad_579C[22532]); /*0x5ff951*/
+        v8 = (*(int (__thiscall **)(_DWORD))(v7 + 116))(*(_DWORD *)&stru_87C374[44960]); /*0x5ff951*/
         v48[0] = 0; /*0x5ff95a*/
         v48[1] = 0; /*0x5ff95e*/
         a4[0] = 0; /*0x5ff962*/
@@ -125,12 +128,12 @@ LABEL_23:
                     if ( !v12 ) /*0x5ffb58*/
                     {
                       v13 = *v9; /*0x5ffb62*/
-                      v44 = (unsigned __int8)(*v9 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]; /*0x5ffb91*/
-                      v45 = (unsigned __int8)(v13 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140]; /*0x5ffba9*/
-                      v46 = (unsigned __int8)(v13 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]; /*0x5ffbc2*/
-                      *v9 = (((256 - (unsigned __int8)v35) * v44) >> 8 >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120]) /*0x5ffc1a*/
-                          | (((256 - (unsigned __int8)v35) * v46) >> 8 >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128])
-                          | (((256 - (unsigned __int8)v35) * v45) >> 8 >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136]);
+                      v44 = (unsigned __int8)(*v9 >> stru_89E138[11416]) << stru_89E138[11420]; /*0x5ffb91*/
+                      v45 = (unsigned __int8)(v13 >> stru_89E138[11432]) << stru_89E138[11436]; /*0x5ffba9*/
+                      v46 = (unsigned __int8)(v13 >> stru_89E138[11424]) << stru_89E138[11428]; /*0x5ffbc2*/
+                      *v9 = (((256 - (unsigned __int8)v35) * v44) >> 8 >> stru_89E138[11420] << stru_89E138[11416]) /*0x5ffc1a*/
+                          | (((256 - (unsigned __int8)v35) * v46) >> 8 >> stru_89E138[11428] << stru_89E138[11424])
+                          | (((256 - (unsigned __int8)v35) * v45) >> 8 >> stru_89E138[11436] << stru_89E138[11432]);
                       v11 = v49; /*0x5ffc1d*/
                       v8 = v36; /*0x5ffc21*/
                     }
@@ -162,10 +165,10 @@ LABEL_23:
                     {
                       v15 = *v9; /*0x5ffcaf*/
                       v16 = (unsigned __int8)v35 + 256; /*0x5ffcd0*/
-                      v44 = (unsigned __int8)(*v9 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]; /*0x5ffcdf*/
-                      v45 = (unsigned __int8)(v15 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140]; /*0x5ffd00*/
+                      v44 = (unsigned __int8)(*v9 >> stru_89E138[11416]) << stru_89E138[11420]; /*0x5ffcdf*/
+                      v45 = (unsigned __int8)(v15 >> stru_89E138[11432]) << stru_89E138[11436]; /*0x5ffd00*/
                       v17 = *(_DWORD *)&v43->__pad_10[4]; /*0x5ffd0a*/
-                      v46 = (unsigned __int8)(v15 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]; /*0x5ffd0d*/
+                      v46 = (unsigned __int8)(v15 >> stru_89E138[11424]) << stru_89E138[11428]; /*0x5ffd0d*/
                       v18 = v44; /*0x5ffd1d*/
                       v19 = v45; /*0x5ffd22*/
                       v20 = v46; /*0x5ffd28*/
@@ -187,10 +190,10 @@ LABEL_23:
                         if ( v20 > 255 ) /*0x5ffd6e*/
                           v20 = 255; /*0x5ffd70*/
                       }
-                      v21 = (v19 >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136]) /*0x5ffd9f*/
-                          | (v18 >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120]);
+                      v21 = (v19 >> stru_89E138[11436] << stru_89E138[11432]) /*0x5ffd9f*/
+                          | (v18 >> stru_89E138[11420] << stru_89E138[11416]);
                       v8 = v36; /*0x5ffda1*/
-                      *v9 = (v20 >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128]) | v21; /*0x5ffda9*/
+                      *v9 = (v20 >> stru_89E138[11428] << stru_89E138[11424]) | v21; /*0x5ffda9*/
                       v14 = v49; /*0x5ffdac*/
                     }
                     ++v9; /*0x5ffdb4*/
@@ -221,9 +224,9 @@ LABEL_23:
                     {
                       v23 = *v9; /*0x5ffe32*/
                       v24 = (unsigned __int8)v35 + 256; /*0x5ffe55*/
-                      v44 = (unsigned __int8)(*v9 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]; /*0x5ffe64*/
-                      v45 = (unsigned __int8)(v23 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140]; /*0x5ffe7c*/
-                      v46 = (unsigned __int8)(v23 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]; /*0x5ffe8d*/
+                      v44 = (unsigned __int8)(*v9 >> stru_89E138[11416]) << stru_89E138[11420]; /*0x5ffe64*/
+                      v45 = (unsigned __int8)(v23 >> stru_89E138[11432]) << stru_89E138[11436]; /*0x5ffe7c*/
+                      v46 = (unsigned __int8)(v23 >> stru_89E138[11424]) << stru_89E138[11428]; /*0x5ffe8d*/
                       v25 = (v24 * v46) >> 8; /*0x5ffeb7*/
                       v26 = (v24 * v44) >> 8; /*0x5ffeba*/
                       v27 = (v24 * v45) >> 8; /*0x5ffebd*/
@@ -234,9 +237,9 @@ LABEL_23:
                         v28 = v27; /*0x5ffed9*/
                       if ( v26 > 255 ) /*0x5ffee1*/
                         v26 = 255; /*0x5ffee3*/
-                      *v9 = (v25 >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128]) /*0x5fff14*/
-                          | (v28 >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136])
-                          | (v26 >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120]);
+                      *v9 = (v25 >> stru_89E138[11428] << stru_89E138[11424]) /*0x5fff14*/
+                          | (v28 >> stru_89E138[11436] << stru_89E138[11432])
+                          | (v26 >> stru_89E138[11420] << stru_89E138[11416]);
                       v22 = v49; /*0x5fff17*/
                       v8 = v36; /*0x5fff1b*/
                     }
@@ -254,7 +257,7 @@ LABEL_23:
           }
           else
           {
-            switch ( *(_DWORD *)&stru_830620.__pad_14B0[6840] ) /*0x5ff9f1*/
+            switch ( *(_DWORD *)&stru_830620[12136] ) /*0x5ff9f1*/
             {
               case 0: /*0x5ff9f1*/
                 if ( *(&g_MatrixTransformState + 2698) ) /*0x5ffa00*/

@@ -2,6 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/House_e4.hpp"
 
 // 0x4FA350
 namespace gamemd {
@@ -171,7 +174,7 @@ LABEL_55:
           if ( !v16 && g_GameMode_Current && *(_BYTE *)(this + 492) ) /*0x4fa63a*/
           {
             v17 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v10 + 88) + 132))(*(_DWORD *)(v10 + 88)); /*0x4fa649*/
-            v18 = (int)(54 * ((int)MEMORY[0xA8B558] * (int)g_ScenarioState / 0x3Cu)) /*0x4fa67b*/
+            v18 = (int)(54 * ((int)DataGlobal_A8B558 * (int)g_ScenarioState / 0x3Cu)) /*0x4fa67b*/
                 / (*(int (__thiscall **)(int))(*(_DWORD *)v17 + 136))(v17);
             if ( v18 >= 53 ) /*0x4fa680*/
               v18 = 53; /*0x4fa682*/
@@ -179,13 +182,13 @@ LABEL_55:
               *(_DWORD *)(v10 + 36) = v18; /*0x4fa68f*/
           }
           if ( HouseClass_Player == (IUnknown *)this ) /*0x4fa698*/
-            Sidebar::FindProductionType(&MEMORY[0x87F7E8], (FactoryClass *)v10, (MouseClass *)a1, (int)aP2); /*0x4fa6aa*/
+            Sidebar::FindProductionType(&DataGlobal_87F7E8, (FactoryClass *)v10, (MouseClass *)a1, (int)aP2); /*0x4fa6aa*/
           return 0; /*0x4fa6b2*/
         }
         else
         {
           Status = (IUnknown *)HouseClass::GetStatus((IUnknown *)a1, 0); /*0x4fa602*/
-          Sidebar::ActivateTab((int)&MEMORY[0x87F7E8], Status); /*0x4fa60d*/
+          Sidebar::ActivateTab((int)&DataGlobal_87F7E8, Status); /*0x4fa60d*/
           return 0; /*0x4fa615*/
         }
       }
@@ -489,7 +492,7 @@ int __thiscall Sidebar_Render(int this, char a2)
   int v17; // [esp+8h] [ebp-1Ch]
   int v18[4]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( (a2 || *(_BYTE *)(this + 5388)) && MEMORY[0x884B8D] ) /*0x63fb43*/
+  if ( (a2 || *(_BYTE *)(this + 5388)) && DataGlobal_884B8D ) /*0x63fb43*/
   {
     *(_BYTE *)(this + 5388) = 0; /*0x63fb49*/
     g_TooltipActive = 1; /*0x63fb55*/
@@ -507,9 +510,9 @@ int __thiscall Sidebar_Render(int this, char a2)
     v18[3] = v5[3]; /*0x63fbb1*/
     v7 = *(_DWORD *)(this + 5428); /*0x63fbc6*/
     v8 = *(_DWORD *)(this + 5420); /*0x63fbce*/
-    if ( (MEMORY[0xB0B504] + 3) / 3 - v7 - v6 - v8 > 0 ) /*0x63fbdc*/
+    if ( (DataGlobal_B0B504 + 3) / 3 - v7 - v6 - v8 > 0 ) /*0x63fbdc*/
     {
-      v9 = (MEMORY[0xB0B504] + 3) / 3 - v7 - v6 - v8; /*0x63fbde*/
+      v9 = (DataGlobal_B0B504 + 3) / 3 - v7 - v6 - v8; /*0x63fbde*/
       do /*0x63fc24*/
       {
         v16 = v3; /*0x63fc13*/
@@ -517,7 +520,7 @@ int __thiscall Sidebar_Render(int this, char a2)
         DrawToSurfaceSHP( /*0x63fc1b*/
           DSurface_Sidebar,
           g_SidebarConfig,
-          (int)MEMORY[0xAC4E74],
+          (int)DataGlobal_AC4E74,
           0,
           &v16,
           v18,
@@ -545,7 +548,7 @@ int __thiscall Sidebar_Render(int this, char a2)
       DrawToSurfaceSHP( /*0x63fc7d*/
         DSurface_Sidebar,
         g_SidebarConfig,
-        (int)MEMORY[0xAC4E74],
+        (int)DataGlobal_AC4E74,
         4u,
         &v16,
         v18,
@@ -574,7 +577,7 @@ int __thiscall Sidebar_Render(int this, char a2)
           DrawToSurfaceSHP( /*0x63fcd3*/
             DSurface_Sidebar,
             g_SidebarConfig,
-            (int)MEMORY[0xAC4E74],
+            (int)DataGlobal_AC4E74,
             1u,
             &v16,
             v18,
@@ -607,7 +610,7 @@ int __thiscall Sidebar_Render(int this, char a2)
           DrawToSurfaceSHP( /*0x63fd31*/
             DSurface_Sidebar,
             g_SidebarConfig,
-            (int)MEMORY[0xAC4E74],
+            (int)DataGlobal_AC4E74,
             2u,
             &v16,
             v18,
@@ -638,7 +641,7 @@ int __thiscall Sidebar_Render(int this, char a2)
         DrawToSurfaceSHP( /*0x63fd8f*/
           DSurface_Sidebar,
           g_SidebarConfig,
-          (int)MEMORY[0xAC4E74],
+          (int)DataGlobal_AC4E74,
           3u,
           &v16,
           v18,
@@ -677,7 +680,7 @@ int __thiscall Sidebar::ActivateTab(int this, IUnknown *aP1)
   {
     this->__pad_53A6 = 1; /*0x6a60b8*/
     *(_BYTE *)(this + 3988 * (_DWORD)aP1 + 5504) = 1; /*0x6a60c6*/
-    return MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a60d2*/
+    return MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0); /*0x6a60d2*/
   }
   return (int)result; /*0x6a60d8*/
 }
@@ -708,7 +711,7 @@ void __thiscall FlushSidebarTooltip(_BYTE *this, char a2)
   int v17; // [esp+40h] [ebp-14h]
   struct tagRECT Rect; // [esp+44h] [ebp-10h] BYREF
 
-  if ( !*(this + 21413) || !g_WTFMode || !MEMORY[0xA8ED5C] ) /*0x6a7109*/
+  if ( !*(this + 21413) || !g_WTFMode || !g_BounceClassInit ) /*0x6a7109*/
     goto LABEL_25; /*0x6a7109*/
   GetClientRect(g_hWnd, &Rect); /*0x6a711b*/
   Point.x = Rect.left; /*0x6a7129*/
@@ -720,28 +723,28 @@ void __thiscall FlushSidebarTooltip(_BYTE *this, char a2)
     goto LABEL_13; /*0x6a723a*/
   }
   g_TooltipActive = 0; /*0x6a7166*/
-  if ( MEMORY[0x8809F4] != MEMORY[0xB07DC8]
-    || MEMORY[0x8809F8] != MEMORY[0xB07DCC]
-    || MEMORY[0x8809FC] != MEMORY[0xB07DD0]
-    || MEMORY[0x880A00] != MEMORY[0xB07DD4] )
+  if ( DataGlobal_8809F4 != DataGlobal_B07DC8
+    || DataGlobal_8809F8 != DataGlobal_B07DCC
+    || DataGlobal_8809FC != DataGlobal_B07DD0
+    || DataGlobal_880A00 != DataGlobal_B07DD4 )
   {
 LABEL_13:
     (*(void (__thiscall **)(int, int, int))(*(_DWORD *)g_WWMouseClass_Instance + 60))(g_WWMouseClass_Instance, DSurface_Sidebar, 1); /*0x6a7241*/
-    if ( MEMORY[0x8809F4] == MEMORY[0xB07DC8]
-      && MEMORY[0x8809F8] == MEMORY[0xB07DCC]
-      && MEMORY[0x8809FC] == MEMORY[0xB07DD0]
-      && MEMORY[0x880A00] == MEMORY[0xB07DD4]
+    if ( DataGlobal_8809F4 == DataGlobal_B07DC8
+      && DataGlobal_8809F8 == DataGlobal_B07DCC
+      && DataGlobal_8809FC == DataGlobal_B07DD0
+      && DataGlobal_880A00 == DataGlobal_B07DD4
       && !a2 )
     {
       if ( *(this + 21416) )
       {
         y = Point.y; /*0x6a72d1*/
-        v10 = Point.x + (MEMORY[0xA8EB7C] != 0 ? g_Map_VisibleRectOffset : 0);
+        v10 = Point.x + (DataGlobal_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0);
         v14 = 0; /*0x6a72f3*/
         v15 = 0; /*0x6a72f7*/
-        v16 = MEMORY[0x886F98]; /*0x6a72fb*/
+        v16 = DataGlobal_886F98; /*0x6a72fb*/
         v17 = 16; /*0x6a72ff*/
-        v12 = MEMORY[0x886F98]; /*0x6a7303*/
+        v12 = DataGlobal_886F98; /*0x6a7303*/
         v13 = 16; /*0x6a7307*/
         (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a7312*/
           g_DSurface_Primary,
@@ -752,13 +755,13 @@ LABEL_13:
           1);
         *(this + 21416) = 0; /*0x6a7315*/
       }
-      v3 = MEMORY[0x886F98]; /*0x6a7332*/
+      v3 = DataGlobal_886F98; /*0x6a7332*/
       v17 = g_DSurface_ViewBounds; /*0x6a733e*/
       v14 = 0; /*0x6a7348*/
       v4 = g_DSurface_SidebarBounds + Point.y; /*0x6a734e*/
       v15 = g_DSurface_SidebarBounds; /*0x6a7357*/
-      v16 = MEMORY[0x886F98]; /*0x6a735b*/
-      v5 = (MEMORY[0xA8EB7C] != 0 ? g_Map_VisibleRectOffset : 0) + Point.x;
+      v16 = DataGlobal_886F98; /*0x6a735b*/
+      v5 = (DataGlobal_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0) + Point.x;
       v6 = (*(int (__thiscall **)(int))(*(_DWORD *)DSurface_Sidebar + 128))(DSurface_Sidebar); /*0x6a7363*/
       v10 = v5; /*0x6a7386*/
       y = v4; /*0x6a738a*/
@@ -780,7 +783,7 @@ LABEL_13:
       v16 = *(_DWORD *)(v7 + 8); /*0x6a73ec*/
       v8 = *(_DWORD *)(v7 + 12); /*0x6a73f0*/
       y = Point.y; /*0x6a73fd*/
-      v10 = Point.x + (MEMORY[0xA8EB7C] != 0 ? g_Map_VisibleRectOffset : 0);
+      v10 = Point.x + (DataGlobal_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0);
       v17 = v8; /*0x6a741b*/
       v12 = v16; /*0x6a741f*/
       v13 = v8; /*0x6a7423*/
@@ -794,15 +797,15 @@ LABEL_13:
     }
     else
     {
-      v15 = Point.y + MEMORY[0x8809F8]; /*0x6a7458*/
-      v14 = Point.x + MEMORY[0x8809F4] + (MEMORY[0xA8EB7C] != 0 ? g_Map_VisibleRectOffset : 0);
-      v16 = MEMORY[0x8809FC]; /*0x6a746f*/
-      v17 = MEMORY[0x880A00]; /*0x6a7473*/
+      v15 = Point.y + DataGlobal_8809F8; /*0x6a7458*/
+      v14 = Point.x + DataGlobal_8809F4 + (DataGlobal_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0);
+      v16 = DataGlobal_8809FC; /*0x6a746f*/
+      v17 = DataGlobal_880A00; /*0x6a7473*/
       (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a747e*/
         g_DSurface_Primary,
         &v14,
         DSurface_Sidebar,
-        &MEMORY[0x8809F4],
+        &DataGlobal_8809F4,
         0,
         1);
     }
@@ -812,12 +815,12 @@ LABEL_13:
   {
     (*(void (__thiscall **)(int, int, int))(*(_DWORD *)g_WWMouseClass_Instance + 60))(g_WWMouseClass_Instance, DSurface_Sidebar, 1); /*0x6a71c7*/
     v15 = Point.y; /*0x6a71eb*/
-    v14 = Point.x + (MEMORY[0xA8EB7C] != 0 ? g_Map_VisibleRectOffset : 0);
+    v14 = Point.x + (DataGlobal_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0);
     v10 = 0; /*0x6a720d*/
     y = 0; /*0x6a7211*/
-    v12 = MEMORY[0x886F98]; /*0x6a7215*/
+    v12 = DataGlobal_886F98; /*0x6a7215*/
     v13 = 16; /*0x6a7219*/
-    v16 = MEMORY[0x886F98]; /*0x6a721d*/
+    v16 = DataGlobal_886F98; /*0x6a721d*/
     v17 = 16; /*0x6a7221*/
     (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a722c*/
       g_DSurface_Primary,
@@ -828,7 +831,7 @@ LABEL_13:
       1);
     *(this + 21416) = 0; /*0x6a722f*/
 LABEL_24:
-    MEMORY[0xB0B519] = 1; /*0x6a7481*/
+    DataGlobal_B0B519 = 1; /*0x6a7481*/
   }
 LABEL_25:
   g_TooltipActive = 0; /*0x6a7488*/
@@ -951,14 +954,14 @@ char __userpurge Sidebar::UpdateProductionDisplay@<al>(int a1@<ecx>, CampaignSco
     {
       v70 = a2;
       *(_BYTE *)(a1 + 60) = 0;
-      stru_B05488.__pad_579C[2292] = 1;
-      *(_DWORD *)aP3.__pad_0 = 0;
+      stru_B05488[24720] = 1;
+      *(_DWORD *)aP3[0] = 0;
       *(_DWORD *)&aP3.field_2[2] = 0;
-      *(_DWORD *)&aP3.__pad_6[2] = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22512] + 124))(*(_DWORD *)&stru_87C374.__pad_579C[22512]);
-      v5 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22512] + 128))(*(_DWORD *)&stru_87C374.__pad_579C[22512]);
+      *(_DWORD *)&aP3[8] = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44940] + 124))(*(_DWORD *)&stru_87C374[44940]);
+      v5 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44940] + 128))(*(_DWORD *)&stru_87C374[44940]);
       v6 = (IUnknown *)HouseClass_Player.field_0;
       v7 = (IUnknown *)*(&g_MatrixTransformState + 2274);
-      *(_DWORD *)&aP3.__pad_6[6] = v5;
+      *(_DWORD *)&aP3[12] = v5;
       v8 = 0;
       v79 = 0;
       if ( (CoordStruct *)HouseClass_Player.field_0 == *(&g_MatrixTransformState + 2274) )
@@ -978,14 +981,14 @@ char __userpurge Sidebar::UpdateProductionDisplay@<al>(int a1@<ecx>, CampaignSco
       }
 LABEL_13:
       v11 = 26;
-      if ( *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 13496) )
+      if ( *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 13496) )
         v11 = 18;
       v85 = 0;
       v12 = (*(_BYTE *)(a1 + 63) != 0)
-          + (*(_DWORD *)&stru_87C374.__pad_579C[21644]
-           - *(_DWORD *)&stru_B05488.__pad_579C[2260]
+          + (*(_DWORD *)&stru_87C374[44072]
+           - *(_DWORD *)&stru_B05488[24688]
            - v11
-           + *(_DWORD *)&stru_87C374.__pad_579C[21636]
+           + *(_DWORD *)&stru_87C374[44064]
            - 7)
           / 50;
       v92 = v12;
@@ -1005,17 +1008,17 @@ LABEL_13:
               BufferCount = 0;
               v14 = *(_DWORD *)(v84 + 32);
               v90 = i + 2 * (v13 + v85);
-              v15 = v14 + i * *(_DWORD *)&stru_B05488.__pad_579C[2264] - *(_DWORD *)&stru_87C374.__pad_579C[21632];
+              v15 = v14 + i * *(_DWORD *)&stru_B05488[24692] - *(_DWORD *)&stru_87C374[44060];
               v16 = 0;
               v73 = 0;
-              v17 = v85 * *(_DWORD *)&stru_B05488.__pad_579C[2268] + *(_DWORD *)(v84 + 36) + 1;
+              v17 = v85 * *(_DWORD *)&stru_B05488[24696] + *(_DWORD *)(v84 + 36) + 1;
               v18 = *(_DWORD *)(v84 + 56);
               IsCliffWall = 0;
               v94 = v17;
               v19 = 56 * (i + 2 * v85 + 60 * v18) + 11566720;
               if ( *(_BYTE *)(v84 + 63) )
               {
-                v17 += *(_DWORD *)(v84 + 76) - *(_DWORD *)&stru_B05488.__pad_579C[2268];
+                v17 += *(_DWORD *)(v84 + 76) - *(_DWORD *)&stru_B05488[24696];
                 v94 = v17;
               }
               v20 = *(_DWORD *)(v84 + 84);
@@ -1027,7 +1030,7 @@ LABEL_13:
               }
               else
               {
-                if ( !*(_BYTE *)(v19 + 52) || (HIBYTE(v73) = 1, HouseClass_Player.__pad_5568[23272]) )
+                if ( !*(_BYTE *)(v19 + 52) || (HIBYTE(v73) = 1, HouseClass_Player[45136]) )
                   HIBYTE(v73) = 0;
                 v21 = *(_DWORD *)(v84 + 52 * v90 + 92);
                 v22 = (int *)(v84 + 52 * v90);
@@ -1035,9 +1038,9 @@ LABEL_13:
                 if ( v21 == 31 )
                 {
                   v31 = v22[22];
-                  v32 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20608] + 4 * v31);
+                  v32 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * v31);
                   v80 = *(int **)(v32 + 96);
-                  if ( v31 >= *(_DWORD *)&HouseClass_Player.__pad_5568[20620] )
+                  if ( v31 >= *(_DWORD *)&HouseClass_Player[42484] )
                     aP2 = 0;
                   else
                     aP2 = *(ConvertClass **)(v32 + 184);
@@ -1121,7 +1124,7 @@ LABEL_13:
                     LOBYTE(v73) = 1;
                     IsCliffWall = ObjectClass::IsCliffWall((_DWORD *)v86);
                     if ( IsCliffWall )
-                      BufferCount = (size_t)GetStringCSF(g_Str_TXT_READY, 0, &stru_830620.__pad_579C[40200], 3411);
+                      BufferCount = (size_t)GetStringCSF(g_Str_TXT_READY, 0, &stru_830620[62628], 3411);
                     else
                       v78 = 1;
                     Member09 = 0;
@@ -1142,23 +1145,23 @@ LABEL_45:
                 }
               }
 LABEL_59:
-              *(_DWORD *)&aP3.__pad_6[82] = 0;
-              *(_DWORD *)&aP3.__pad_6[86] = 0;
-              *(_DWORD *)&aP3.__pad_6[90] = v15 + 60;
-              *(_DWORD *)&aP3.__pad_6[94] = v17 + 48;
+              *(_DWORD *)&aP3[88] = 0;
+              *(_DWORD *)&aP3[92] = 0;
+              *(_DWORD *)&aP3[96] = v15 + 60;
+              *(_DWORD *)&aP3[100] = v17 + 48;
               if ( v78 )
               {
                 if ( aP2 )
                 {
-                  *(_DWORD *)&aP3.__pad_6[122] = v15;
-                  *(_DWORD *)&aP3.__pad_6[126] = v17;
+                  *(_DWORD *)&aP3[128] = v15;
+                  *(_DWORD *)&aP3[132] = v17;
                   DrawToSurfaceSHP(
-                    *(int *)&stru_87C374.__pad_579C[22512],
-                    *(int *)&stru_87C374.__pad_14B0[7820],
+                    *(int *)&stru_87C374[44940],
+                    *(int *)&stru_87C374[13116],
                     aP2,
                     0,
-                    (ConvertClass *)&aP3.__pad_6[122],
-                    (ConvertClass *)&aP3.__pad_6[82],
+                    (ConvertClass *)&aP3[128],
+                    (ConvertClass *)&aP3[88],
                     (ConvertClass *)0x400,
                     0,
                     0,
@@ -1172,32 +1175,32 @@ LABEL_59:
                 }
                 if ( HIBYTE(v73) )
                 {
-                  *(_DWORD *)&aP3.__pad_6[146] = v15;
-                  *(_DWORD *)&aP3.__pad_6[150] = v17;
-                  *(_DWORD *)&aP3.__pad_6[154] = 60;
-                  *(_DWORD *)&aP3.__pad_6[158] = 48;
-                  BYTE2(v82) = stru_B05488.__pad_579C[19962];
-                  v33 = **(_DWORD **)&stru_87C374.__pad_579C[22512];
-                  LOWORD(v82) = *(_WORD *)&stru_B05488.__pad_579C[19960];
+                  *(_DWORD *)&aP3[152] = v15;
+                  *(_DWORD *)&aP3[156] = v17;
+                  *(_DWORD *)&aP3[160] = 60;
+                  *(_DWORD *)&aP3[164] = 48;
+                  BYTE2(v82) = stru_B05488[42390];
+                  v33 = **(_DWORD **)&stru_87C374[44940];
+                  LOWORD(v82) = *(_WORD *)&stru_B05488[42388];
                   (*(void (__thiscall **)(_DWORD, char *, char *, int))(v33 + 84))(
-                    *(_DWORD *)&stru_87C374.__pad_579C[22512],
-                    &aP3.__pad_6[82],
-                    &aP3.__pad_6[146],
-                    ((unsigned __int8)stru_B05488.__pad_579C[19960] >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120])
-                  | ((unsigned __int8)stru_B05488.__pad_579C[19961] >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136])
-                  | ((unsigned __int8)stru_B05488.__pad_579C[19962] >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128]));
+                    *(_DWORD *)&stru_87C374[44940],
+                    &aP3[88],
+                    &aP3[152],
+                    ((unsigned __int8)stru_B05488[42388] >> stru_89E138[11420] << stru_89E138[11416])
+                  | ((unsigned __int8)stru_B05488[42389] >> stru_89E138[11436] << stru_89E138[11432])
+                  | ((unsigned __int8)stru_B05488[42390] >> stru_89E138[11428] << stru_89E138[11424]));
                 }
                 if ( v16 )
                 {
-                  *(_DWORD *)&aP3.__pad_6[138] = v15;
-                  *(_DWORD *)&aP3.__pad_6[142] = v17;
+                  *(_DWORD *)&aP3[144] = v15;
+                  *(_DWORD *)&aP3[148] = v17;
                   DrawToSurfaceSHP(
-                    *(int *)&stru_87C374.__pad_579C[22512],
-                    *(int *)&stru_87C374.__pad_14B0[7848],
-                    *(ConvertClass **)&stru_B05488.__pad_14B0[4744],
+                    *(int *)&stru_87C374[44940],
+                    *(int *)&stru_87C374[13144],
+                    *(ConvertClass **)&stru_B05488[10040],
                     0,
-                    (ConvertClass *)&aP3.__pad_6[138],
-                    (ConvertClass *)&aP3.__pad_6[82],
+                    (ConvertClass *)&aP3[144],
+                    (ConvertClass *)&aP3[88],
                     (ConvertClass *)0x401,
                     0,
                     0,
@@ -1209,18 +1212,18 @@ LABEL_59:
                     0,
                     0);
                 }
-                if ( *(_DWORD *)(v84 + 52 * v90 + 136) > *(int *)&HouseClass_Player.__pad_5568[23248]
-                  && *(_DWORD *)&HouseClass_Player.__pad_5568[23248] % 16 > 8 )
+                if ( *(_DWORD *)(v84 + 52 * v90 + 136) > *(int *)&HouseClass_Player[45112]
+                  && *(_DWORD *)&HouseClass_Player[45112] % 16 > 8 )
                 {
-                  *(_DWORD *)&aP3.__pad_6[114] = v15;
-                  *(_DWORD *)&aP3.__pad_6[118] = v17;
+                  *(_DWORD *)&aP3[120] = v15;
+                  *(_DWORD *)&aP3[124] = v17;
                   DrawToSurfaceSHP(
-                    *(int *)&stru_87C374.__pad_579C[22512],
-                    *(int *)&stru_87C374.__pad_14B0[7848],
-                    *(ConvertClass **)&stru_B05488.__pad_14B0[4744],
+                    *(int *)&stru_87C374[44940],
+                    *(int *)&stru_87C374[13144],
+                    *(ConvertClass **)&stru_B05488[10040],
                     0,
-                    (ConvertClass *)&aP3.__pad_6[114],
-                    (ConvertClass *)&aP3.__pad_6[82],
+                    (ConvertClass *)&aP3[120],
+                    (ConvertClass *)&aP3[88],
                     (ConvertClass *)0x404,
                     0,
                     0,
@@ -1234,15 +1237,15 @@ LABEL_59:
                 }
                 if ( v80 )
                 {
-                  *(_DWORD *)&aP3.__pad_6[134] = v17 + 36;
-                  *(_DWORD *)&aP3.__pad_6[130] = v15;
-                  UI_Update_6AC480((int)v80, (int *)&aP3.__pad_6[130], &aP3, 60);
+                  *(_DWORD *)&aP3[140] = v17 + 36;
+                  *(_DWORD *)&aP3[136] = v15;
+                  UI_Update_6AC480((int)v80, (int *)&aP3[136], &aP3, 60);
                 }
                 v75 = 0;
                 v34 = aP1;
-                v35 = ((unsigned __int8)stru_B05488.__pad_579C[19960] >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120])
-                    | ((unsigned __int8)stru_B05488.__pad_579C[19961] >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136])
-                    | ((unsigned __int8)stru_B05488.__pad_579C[19962] >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128]);
+                v35 = ((unsigned __int8)stru_B05488[42388] >> stru_89E138[11420] << stru_89E138[11416])
+                    | ((unsigned __int8)stru_B05488[42389] >> stru_89E138[11436] << stru_89E138[11432])
+                    | ((unsigned __int8)stru_B05488[42390] >> stru_89E138[11428] << stru_89E138[11424]);
                 if ( aP1 )
                 {
                   LOBYTE(v34) = aP1->__pad_BC0[270];
@@ -1260,24 +1263,24 @@ LABEL_59:
                        && (IUnknown *)(*(int (__thiscall **)(int))(*(_DWORD *)BuildLimit[22] + 132))(BuildLimit[22]) != aP1) )
                     {
                       swprintf((wchar_t *const)Buffer, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v37, v70);
-                      *(_DWORD *)&aP3.__pad_6[110] = v17 + 1;
-                      *(_DWORD *)&aP3.__pad_6[106] = v15 + 60;
-                      TextBoundingRect = GetTextBoundingRect(&aP3.__pad_6[354], Buffer, v15 + 60, v17 + 1, 578, 2, 1);
-                      *(_DWORD *)&aP3.__pad_6[162] = *TextBoundingRect;
-                      *(_DWORD *)&aP3.__pad_6[166] = TextBoundingRect[1];
-                      *(_DWORD *)&aP3.__pad_6[170] = TextBoundingRect[2];
-                      *(_DWORD *)&aP3.__pad_6[174] = TextBoundingRect[3];
+                      *(_DWORD *)&aP3[116] = v17 + 1;
+                      *(_DWORD *)&aP3[112] = v15 + 60;
+                      TextBoundingRect = GetTextBoundingRect(&aP3[360], Buffer, v15 + 60, v17 + 1, 578, 2, 1);
+                      *(_DWORD *)&aP3[168] = *TextBoundingRect;
+                      *(_DWORD *)&aP3[172] = TextBoundingRect[1];
+                      *(_DWORD *)&aP3[176] = TextBoundingRect[2];
+                      *(_DWORD *)&aP3[180] = TextBoundingRect[3];
                       DSurface::FillRectWithColor(
-                        (int *)&aP3.__pad_6[162],
-                        *(ObjectClass **)&stru_87C374.__pad_579C[22512],
+                        (int *)&aP3[168],
+                        *(ObjectClass **)&stru_87C374[44940],
                         0,
                         0xAFu);
                       TextRenderer::Printf(
-                        (ConvertClass *)&aP3.__pad_6[178],
+                        (ConvertClass *)&aP3[184],
                         (size_t)&g_Str_Fmt_PctD,
-                        *(ObjectClass **)&stru_87C374.__pad_579C[22512],
+                        *(ObjectClass **)&stru_87C374[44940],
                         &aP3,
-                        (int)&aP3.__pad_6[106],
+                        (int)&aP3[112],
                         v35,
                         0,
                         578,
@@ -1290,8 +1293,8 @@ LABEL_59:
                 {
                   if ( BufferCount )
                   {
-                    *(_DWORD *)&aP3.__pad_6[102] = v17 + 1;
-                    *(_DWORD *)&aP3.__pad_6[98] = v15 + 30;
+                    *(_DWORD *)&aP3[108] = v17 + 1;
+                    *(_DWORD *)&aP3[104] = v15 + 30;
                     v41 = GetTextBoundingRect(
                             &aP3.field_178,
                             (CampaignScore *)BufferCount,
@@ -1300,21 +1303,21 @@ LABEL_59:
                             322,
                             2,
                             1);
-                    *(_DWORD *)&aP3.__pad_6[50] = *v41;
-                    *(_DWORD *)&aP3.__pad_6[54] = v41[1];
-                    *(_DWORD *)&aP3.__pad_6[58] = v41[2];
-                    *(_DWORD *)&aP3.__pad_6[62] = v41[3];
+                    *(_DWORD *)&aP3[56] = *v41;
+                    *(_DWORD *)&aP3[60] = v41[1];
+                    *(_DWORD *)&aP3[64] = v41[2];
+                    *(_DWORD *)&aP3[68] = v41[3];
                     DSurface::FillRectWithColor(
-                      (int *)&aP3.__pad_6[50],
-                      *(ObjectClass **)&stru_87C374.__pad_579C[22512],
+                      (int *)&aP3[56],
+                      *(ObjectClass **)&stru_87C374[44940],
                       0,
                       0xAFu);
                     TextRenderer::Printf(
-                      (ConvertClass *)&aP3.__pad_6[194],
+                      (ConvertClass *)&aP3[200],
                       BufferCount,
-                      *(ObjectClass **)&stru_87C374.__pad_579C[22512],
+                      *(ObjectClass **)&stru_87C374[44940],
                       &aP3,
-                      (int)&aP3.__pad_6[98],
+                      (int)&aP3[104],
                       v35,
                       0,
                       322,
@@ -1322,15 +1325,15 @@ LABEL_59:
                   }
                   if ( !IsCliffWall )
                   {
-                    if ( (*(_DWORD *)&aP3.__pad_6[10] = v15,
-                          *(_DWORD *)&aP3.__pad_6[14] = v17,
+                    if ( (*(_DWORD *)&aP3[16] = v15,
+                          *(_DWORD *)&aP3[20] = v17,
                           DrawToSurfaceSHP(
-                            *(int *)&stru_87C374.__pad_579C[22512],
-                            *(int *)&stru_87C374.__pad_14B0[7848],
-                            *(ConvertClass **)&stru_B05488.__pad_579C[2144],
+                            *(int *)&stru_87C374[44940],
+                            *(int *)&stru_87C374[13144],
+                            *(ConvertClass **)&stru_B05488[24572],
                             ProductionState + 1,
-                            (ConvertClass *)&aP3.__pad_6[10],
-                            (ConvertClass *)&aP3.__pad_6[82],
+                            (ConvertClass *)&aP3[16],
+                            (ConvertClass *)&aP3[88],
                             (ConvertClass *)0x404,
                             0,
                             0,
@@ -1346,30 +1349,30 @@ LABEL_59:
                       || *(_DWORD *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2)) == 2 )
                     {
                       StringCSF = GetStringCSF(
-                                    (wchar_t *)&stru_830620.__pad_579C[40304],
+                                    (wchar_t *)&stru_830620[62732],
                                     0,
-                                    &stru_830620.__pad_579C[40200],
+                                    &stru_830620[62628],
                                     3636);
                       if ( v75 )
                       {
-                        *(_DWORD *)&aP3.__pad_6[18] = v15 + 2;
-                        *(_DWORD *)&aP3.__pad_6[22] = v94 + 1;
+                        *(_DWORD *)&aP3[24] = v15 + 2;
+                        *(_DWORD *)&aP3[28] = v94 + 1;
                         v43 = GetTextBoundingRect(v97, (CampaignScore *)StringCSF, v15 + 2, v94 + 1, 66, 2, 1);
-                        *(_DWORD *)&aP3.__pad_6[66] = *v43;
-                        *(_DWORD *)&aP3.__pad_6[70] = v43[1];
-                        *(_DWORD *)&aP3.__pad_6[74] = v43[2];
-                        *(_DWORD *)&aP3.__pad_6[78] = v43[3];
+                        *(_DWORD *)&aP3[72] = *v43;
+                        *(_DWORD *)&aP3[76] = v43[1];
+                        *(_DWORD *)&aP3[80] = v43[2];
+                        *(_DWORD *)&aP3[84] = v43[3];
                         DSurface::FillRectWithColor(
-                          (int *)&aP3.__pad_6[66],
-                          *(ObjectClass **)&stru_87C374.__pad_579C[22512],
+                          (int *)&aP3[72],
+                          *(ObjectClass **)&stru_87C374[44940],
                           0,
                           0xAFu);
                         TextRenderer::Printf(
-                          (ConvertClass *)&aP3.__pad_6[202],
+                          (ConvertClass *)&aP3[208],
                           (size_t)StringCSF,
-                          *(ObjectClass **)&stru_87C374.__pad_579C[22512],
+                          *(ObjectClass **)&stru_87C374[44940],
                           &aP3,
-                          (int)&aP3.__pad_6[18],
+                          (int)&aP3[24],
                           v35,
                           0,
                           66,
@@ -1377,31 +1380,31 @@ LABEL_59:
                       }
                       else
                       {
-                        *(_DWORD *)&aP3.__pad_6[26] = v15 + 30;
-                        *(_DWORD *)&aP3.__pad_6[30] = v94 + 1;
+                        *(_DWORD *)&aP3[32] = v15 + 30;
+                        *(_DWORD *)&aP3[36] = v94 + 1;
                         v44 = GetTextBoundingRect(
-                                &aP3.__pad_6[338],
+                                &aP3[344],
                                 (CampaignScore *)StringCSF,
                                 v15 + 30,
                                 v94 + 1,
                                 322,
                                 2,
                                 1);
-                        *(_DWORD *)&aP3.__pad_6[34] = *v44;
-                        *(_DWORD *)&aP3.__pad_6[38] = v44[1];
-                        *(_DWORD *)&aP3.__pad_6[42] = v44[2];
-                        *(_DWORD *)&aP3.__pad_6[46] = v44[3];
+                        *(_DWORD *)&aP3[40] = *v44;
+                        *(_DWORD *)&aP3[44] = v44[1];
+                        *(_DWORD *)&aP3[48] = v44[2];
+                        *(_DWORD *)&aP3[52] = v44[3];
                         DSurface::FillRectWithColor(
-                          (int *)&aP3.__pad_6[34],
-                          *(ObjectClass **)&stru_87C374.__pad_579C[22512],
+                          (int *)&aP3[40],
+                          *(ObjectClass **)&stru_87C374[44940],
                           0,
                           0xAFu);
                         TextRenderer::Printf(
-                          (ConvertClass *)&aP3.__pad_6[186],
+                          (ConvertClass *)&aP3[192],
                           (size_t)StringCSF,
-                          *(ObjectClass **)&stru_87C374.__pad_579C[22512],
+                          *(ObjectClass **)&stru_87C374[44940],
                           &aP3,
-                          (int)&aP3.__pad_6[26],
+                          (int)&aP3[32],
                           v35,
                           0,
                           322,
@@ -1434,11 +1437,11 @@ LABEL_135:
         while ( 1 )
         {
           v45 = *(_DWORD *)(v84 + 68) + v85;
-          v46 = *(_DWORD *)(v84 + 36) + 2 * v85 * *(_DWORD *)&stru_B05488.__pad_579C[2268] + 1;
-          v47 = *(_DWORD *)(v84 + 32) - *(_DWORD *)&stru_87C374.__pad_579C[21632];
-          if ( v45 >= *(int *)&stru_87C374.__pad_579C[12776] )
+          v46 = *(_DWORD *)(v84 + 36) + 2 * v85 * *(_DWORD *)&stru_B05488[24696] + 1;
+          v47 = *(_DWORD *)(v84 + 32) - *(_DWORD *)&stru_87C374[44060];
+          if ( v45 >= *(int *)&stru_87C374[35204] )
             goto LABEL_135;
-          v92 = *(_DWORD *)&stru_87C374.__pad_579C[4 * v45 + 12420];
+          v92 = *(_DWORD *)&stru_87C374[22428][4 * v45 + 12420];
           v48 = v92;
           if ( !v92 )
             goto LABEL_135;
@@ -1448,25 +1451,25 @@ LABEL_135:
             v50 = *(_DWORD *)(v49 + 188);
             if ( !v50 )
             {
-              v51 = *(ConvertClass **)&stru_B05488.__pad_579C[2156];
+              v51 = *(ConvertClass **)&stru_B05488[24584];
 LABEL_105:
               if ( v51 )
               {
                 v53 = v47 + *(__int16 *)v51->field_2;
-                *(_DWORD *)&aP3.__pad_6[34] = 0;
-                *(_DWORD *)&aP3.__pad_6[42] = v53;
-                *(_DWORD *)&aP3.__pad_6[38] = 0;
+                *(_DWORD *)&aP3[40] = 0;
+                *(_DWORD *)&aP3[48] = v53;
+                *(_DWORD *)&aP3[44] = 0;
                 v54 = v46 + *(__int16 *)&v51->field_2[2];
-                *(_DWORD *)&aP3.__pad_6[26] = v47;
-                *(_DWORD *)&aP3.__pad_6[46] = v54;
-                *(_DWORD *)&aP3.__pad_6[30] = v46;
+                *(_DWORD *)&aP3[32] = v47;
+                *(_DWORD *)&aP3[52] = v54;
+                *(_DWORD *)&aP3[36] = v46;
                 DrawToSurfaceSHP(
-                  *(int *)&stru_87C374.__pad_579C[22512],
-                  *(int *)&stru_87C374.__pad_14B0[7852],
+                  *(int *)&stru_87C374[44940],
+                  *(int *)&stru_87C374[13148],
                   v51,
                   0,
-                  (ConvertClass *)&aP3.__pad_6[26],
-                  (ConvertClass *)&aP3.__pad_6[34],
+                  (ConvertClass *)&aP3[32],
+                  (ConvertClass *)&aP3[40],
                   (ConvertClass *)0x400,
                   0,
                   0,
@@ -1483,12 +1486,12 @@ LABEL_105:
             eax100 = v50 - 1;
             if ( !eax100 )
             {
-              v51 = *(ConvertClass **)&stru_B05488.__pad_579C[2160];
+              v51 = *(ConvertClass **)&stru_B05488[24588];
               goto LABEL_105;
             }
             if ( eax100 == 1 )
             {
-              v51 = *(ConvertClass **)&stru_B05488.__pad_579C[2164];
+              v51 = *(ConvertClass **)&stru_B05488[24592];
               goto LABEL_105;
             }
           }
@@ -1500,40 +1503,40 @@ LABEL_107:
             switch ( eax108 )
             {
               case -3:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2172];
+                v56 = *(ConvertClass **)&stru_B05488[24600];
                 goto LABEL_121;
               case -2:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2168];
+                v56 = *(ConvertClass **)&stru_B05488[24596];
                 goto LABEL_121;
               case 0:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2176];
+                v56 = *(ConvertClass **)&stru_B05488[24604];
                 goto LABEL_121;
               case 1:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2180];
+                v56 = *(ConvertClass **)&stru_B05488[24608];
                 goto LABEL_121;
               case 2:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2184];
+                v56 = *(ConvertClass **)&stru_B05488[24612];
                 goto LABEL_121;
               case 3:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2188];
+                v56 = *(ConvertClass **)&stru_B05488[24616];
                 goto LABEL_121;
               case 4:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2192];
+                v56 = *(ConvertClass **)&stru_B05488[24620];
                 goto LABEL_121;
               case 5:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2196];
+                v56 = *(ConvertClass **)&stru_B05488[24624];
                 goto LABEL_121;
               case 6:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2200];
+                v56 = *(ConvertClass **)&stru_B05488[24628];
                 goto LABEL_121;
               case 7:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2204];
+                v56 = *(ConvertClass **)&stru_B05488[24632];
                 goto LABEL_121;
               case 8:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2208];
+                v56 = *(ConvertClass **)&stru_B05488[24636];
                 goto LABEL_121;
               case 9:
-                v56 = *(ConvertClass **)&stru_B05488.__pad_579C[2212];
+                v56 = *(ConvertClass **)&stru_B05488[24640];
 LABEL_121:
                 if ( v56 )
                 {
@@ -1541,19 +1544,19 @@ LABEL_121:
                   {
                     updated = UI_Update_72F4D0();
                     v59 = *(__int16 *)v56->field_2 + v47 + 70;
-                    *(_DWORD *)&aP3.__pad_6[66] = 0;
-                    *(_DWORD *)&aP3.__pad_6[74] = v59;
-                    *(_DWORD *)&aP3.__pad_6[70] = 0;
-                    *(_DWORD *)&aP3.__pad_6[78] = *(__int16 *)&v56->field_2[2] + v46 + 70;
-                    *(_DWORD *)&aP3.__pad_6[18] = v47 + 70;
-                    *(_DWORD *)&aP3.__pad_6[22] = v46 + 70;
+                    *(_DWORD *)&aP3[72] = 0;
+                    *(_DWORD *)&aP3[80] = v59;
+                    *(_DWORD *)&aP3[76] = 0;
+                    *(_DWORD *)&aP3[84] = *(__int16 *)&v56->field_2[2] + v46 + 70;
+                    *(_DWORD *)&aP3[24] = v47 + 70;
+                    *(_DWORD *)&aP3[28] = v46 + 70;
                     DrawToSurfaceSHP(
-                      *(int *)&stru_87C374.__pad_579C[22512],
+                      *(int *)&stru_87C374[44940],
                       updated,
                       v56,
                       0,
-                      (ConvertClass *)&aP3.__pad_6[18],
-                      (ConvertClass *)&aP3.__pad_6[66],
+                      (ConvertClass *)&aP3[24],
+                      (ConvertClass *)&aP3[72],
                       (ConvertClass *)0x400,
                       0,
                       0,
@@ -1568,20 +1571,20 @@ LABEL_121:
                   else
                   {
                     v60 = *(__int16 *)v56->field_2 + v47 + 70;
-                    *(_DWORD *)&aP3.__pad_6[50] = 0;
+                    *(_DWORD *)&aP3[56] = 0;
                     v61 = *(__int16 *)&v56->field_2[2];
-                    *(_DWORD *)&aP3.__pad_6[58] = v60;
-                    *(_DWORD *)&aP3.__pad_6[54] = 0;
-                    *(_DWORD *)&aP3.__pad_6[62] = v61 + v46 + 70;
-                    *(_DWORD *)&aP3.__pad_6[10] = v47 + 70;
-                    *(_DWORD *)&aP3.__pad_6[14] = v46 + 70;
+                    *(_DWORD *)&aP3[64] = v60;
+                    *(_DWORD *)&aP3[60] = 0;
+                    *(_DWORD *)&aP3[68] = v61 + v46 + 70;
+                    *(_DWORD *)&aP3[16] = v47 + 70;
+                    *(_DWORD *)&aP3[20] = v46 + 70;
                     DrawToSurfaceSHP(
-                      *(int *)&stru_87C374.__pad_579C[22512],
-                      *(int *)&stru_87C374.__pad_14B0[7852],
+                      *(int *)&stru_87C374[44940],
+                      *(int *)&stru_87C374[13148],
                       v56,
                       0,
-                      (ConvertClass *)&aP3.__pad_6[10],
-                      (ConvertClass *)&aP3.__pad_6[50],
+                      (ConvertClass *)&aP3[16],
+                      (ConvertClass *)&aP3[56],
                       (ConvertClass *)0x400,
                       0,
                       0,
@@ -1599,44 +1602,44 @@ LABEL_121:
                 break;
             }
           }
-          wcscpy((wchar_t *)&stru_B05488.__pad_14B0[3960], (const wchar_t *)(v92 + 90154));
-          if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 )
-            _itow(*(_DWORD *)&stru_87C374.__pad_579C[4 * v45 + 12580], Format, 10);
-          _itow(*(_DWORD *)&stru_87C374.__pad_579C[4 * v45 + 12452], v98, 10);
-          _itow(*(_DWORD *)&stru_87C374.__pad_579C[4 * v45 + 12484], v101, 10);
-          _itow(*(_DWORD *)&stru_87C374.__pad_579C[4 * v45 + 12516], v99, 10);
-          v62 = *(ObjectClass **)&stru_87C374.__pad_579C[4 * v45 + 12548];
+          wcscpy((wchar_t *)&stru_B05488[9256], (const wchar_t *)(v92 + 90154));
+          if ( *(_DWORD *)&HouseClass_Player[29932] == 4 )
+            _itow(*(_DWORD *)&stru_87C374[22428][4 * v45 + 12580], Format, 10);
+          _itow(*(_DWORD *)&stru_87C374[22428][4 * v45 + 12452], v98, 10);
+          _itow(*(_DWORD *)&stru_87C374[22428][4 * v45 + 12484], v101, 10);
+          _itow(*(_DWORD *)&stru_87C374[22428][4 * v45 + 12516], v99, 10);
+          v62 = *(ObjectClass **)&stru_87C374[22428][4 * v45 + 12548];
           if ( *(_BYTE *)(v84 + 63) )
-            v46 += *(_DWORD *)(v84 + 76) - *(_DWORD *)&stru_B05488.__pad_579C[2268];
+            v46 += *(_DWORD *)(v84 + 76) - *(_DWORD *)&stru_B05488[24696];
           v82 = v47 + 8;
           v83 = v46 + 4;
           TextRenderer::DrawText(
-            (int *)&aP3.__pad_6[186],
-            (size_t)&stru_B05488.__pad_14B0[3960],
-            *(IUnknown **)&stru_87C374.__pad_579C[22512],
+            (int *)&aP3[192],
+            (size_t)&stru_B05488[9256],
+            *(IUnknown **)&stru_87C374[44940],
             &aP3,
             (int)&v82,
             v62,
             0,
             66);
-          if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 )
+          if ( *(_DWORD *)&HouseClass_Player[29932] == 4 )
           {
-            v63 = *(_DWORD *)&stru_87C374.__pad_579C[4 * v45 + 12580];
+            v63 = *(_DWORD *)&stru_87C374[22428][4 * v45 + 12580];
             v83 += 17;
             if ( v63 >= 1 )
             {
-              v65 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[40276], 0, &stru_830620.__pad_579C[40200], 3785);
-              swprintf((wchar_t *const)&aP3.__pad_6[210], (const size_t)v65, Format, v70);
+              v65 = GetStringCSF((wchar_t *)&stru_830620[62704], 0, &stru_830620[62628], 3785);
+              swprintf((wchar_t *const)&aP3[216], (const size_t)v65, Format, v70);
             }
             else
             {
-              v64 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[40288], 0, &stru_830620.__pad_579C[40200], 3781);
-              wcscpy((wchar_t *)&aP3.__pad_6[210], v64);
+              v64 = GetStringCSF((wchar_t *)&stru_830620[62716], 0, &stru_830620[62628], 3781);
+              wcscpy((wchar_t *)&aP3[216], v64);
             }
             TextRenderer::DrawText(
-              (int *)&aP3.__pad_6[202],
-              (size_t)&aP3.__pad_6[210],
-              *(IUnknown **)&stru_87C374.__pad_579C[22512],
+              (int *)&aP3[208],
+              (size_t)&aP3[216],
+              *(IUnknown **)&stru_87C374[44940],
               &aP3,
               (int)&v82,
               v62,
@@ -1644,36 +1647,36 @@ LABEL_121:
               66);
           }
           v83 += 17;
-          v66 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[40260], 0, &stru_830620.__pad_579C[40200], 3807);
-          swprintf((wchar_t *const)&aP3.__pad_6[210], (const size_t)v66, v98, v70);
+          v66 = GetStringCSF((wchar_t *)&stru_830620[62688], 0, &stru_830620[62628], 3807);
+          swprintf((wchar_t *const)&aP3[216], (const size_t)v66, v98, v70);
           TextRenderer::DrawText(
-            (int *)&aP3.__pad_6[194],
-            (size_t)&aP3.__pad_6[210],
-            *(IUnknown **)&stru_87C374.__pad_579C[22512],
+            (int *)&aP3[200],
+            (size_t)&aP3[216],
+            *(IUnknown **)&stru_87C374[44940],
             &aP3,
             (int)&v82,
             v62,
             0,
             66);
           v83 += 17;
-          v67 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[40244], 0, &stru_830620.__pad_579C[40200], 3822);
-          swprintf((wchar_t *const)&aP3.__pad_6[210], (const size_t)v67, v101, v71);
+          v67 = GetStringCSF((wchar_t *)&stru_830620[62672], 0, &stru_830620[62628], 3822);
+          swprintf((wchar_t *const)&aP3[216], (const size_t)v67, v101, v71);
           TextRenderer::DrawText(
-            (int *)&aP3.__pad_6[178],
-            (size_t)&aP3.__pad_6[210],
-            *(IUnknown **)&stru_87C374.__pad_579C[22512],
+            (int *)&aP3[184],
+            (size_t)&aP3[216],
+            *(IUnknown **)&stru_87C374[44940],
             &aP3,
             (int)&v82,
             v62,
             0,
             66);
           v83 += 17;
-          v68 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[40228], 0, &stru_830620.__pad_579C[40200], 3835);
-          swprintf((wchar_t *const)&aP3.__pad_6[210], (const size_t)v68, v99, v72);
+          v68 = GetStringCSF((wchar_t *)&stru_830620[62656], 0, &stru_830620[62628], 3835);
+          swprintf((wchar_t *const)&aP3[216], (const size_t)v68, v99, v72);
           TextRenderer::DrawText(
-            (int *)&aP3.__pad_6[98],
-            (size_t)&aP3.__pad_6[210],
-            *(IUnknown **)&stru_87C374.__pad_579C[22512],
+            (int *)&aP3[104],
+            (size_t)&aP3[216],
+            *(IUnknown **)&stru_87C374[44940],
             &aP3,
             (int)&v82,
             v62,

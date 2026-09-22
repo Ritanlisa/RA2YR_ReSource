@@ -3,6 +3,12 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_6F03F0_e4.hpp"
 #include "e4/classes/E4Recv_6FD800_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/TeamTypeClass_28_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x6F0AB0
 namespace gamemd {
@@ -82,14 +88,14 @@ int __fastcall AISelectTeamHouseClass(IUnknown *aP0, int a2, int a3)
   v54 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
     v54 = *(CCINIClass **)&HouseClass_Array->__pad_0[4 * v5]; /*0x6f0aee*/
-  if ( Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536), (IUnknown *)1, (IUnknown *)0x64) <= *(_DWORD *)(a2 + 22108) /*0x6f0b12*/
+  if ( Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), (IUnknown *)1, (IUnknown *)0x64) <= *(_DWORD *)(a2 + 22108) /*0x6f0b12*/
     && *(_BYTE *)(a2 + 498) )
   {
     v6 = 0; /*0x6f0b26*/
-    if ( *(int *)&stru_89E138.__pad_579C[67620] > 0 ) /*0x6f0b2a*/
+    if ( *(int *)&stru_89E138[90048] > 0 ) /*0x6f0b2a*/
     {
-      v7 = *(CCINIClass **)&stru_89E138.__pad_579C[67608]; /*0x6f0b2c*/
-      v8 = *(_DWORD *)&stru_89E138.__pad_579C[67620]; /*0x6f0b32*/
+      v7 = *(CCINIClass **)&stru_89E138[90036]; /*0x6f0b2c*/
+      v8 = *(_DWORD *)&stru_89E138[90048]; /*0x6f0b32*/
       do /*0x6f0b4d*/
       {
         if ( *(_DWORD *)(*(_DWORD *)v7->__pad_0 + 44) == a2 ) /*0x6f0b39*/
@@ -104,21 +110,21 @@ int __fastcall AISelectTeamHouseClass(IUnknown *aP0, int a2, int a3)
       while ( v8 ); /*0x6f0b4d*/
     }
     v9 = 4 * *(_DWORD *)(a2 + 388); /*0x6f0b5b*/
-    v10 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5068); /*0x6f0b5e*/
+    v10 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5068); /*0x6f0b5e*/
     LOBYTE(v53[0]) = 0; /*0x6f0b64*/
     if ( v6 < *(_DWORD *)(v10 + v9) || v3 < v6 / 2 ) /*0x6f0b77*/
     {
-      if ( v3 > *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5040) + v9) ) /*0x6f0bd4*/
+      if ( v3 > *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5040) + v9) ) /*0x6f0bd4*/
         LOBYTE(v53[0]) = 1; /*0x6f0bd6*/
     }
     else
     {
       v11 = 0; /*0x6f0b79*/
       v12 = 0x7FFFFFFF; /*0x6f0b7b*/
-      if ( *(int *)&stru_89E138.__pad_579C[67620] > 0 ) /*0x6f0b82*/
+      if ( *(int *)&stru_89E138[90048] > 0 ) /*0x6f0b82*/
       {
-        v13 = *(CCINIClass **)&stru_89E138.__pad_579C[67608]; /*0x6f0b84*/
-        v14 = *(_DWORD *)&stru_89E138.__pad_579C[67620]; /*0x6f0b8a*/
+        v13 = *(CCINIClass **)&stru_89E138[90036]; /*0x6f0b84*/
+        v14 = *(_DWORD *)&stru_89E138[90048]; /*0x6f0b8a*/
         do /*0x6f0bb6*/
         {
           v15 = *(_DWORD *)v13->__pad_0; /*0x6f0b90*/
@@ -142,7 +148,7 @@ int __fastcall AISelectTeamHouseClass(IUnknown *aP0, int a2, int a3)
         }
       }
     }
-    if ( v6 < *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5068) + 4 * *(_DWORD *)(a2 + 388)) ) /*0x6f0bf4*/
+    if ( v6 < *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5068) + 4 * *(_DWORD *)(a2 + 388)) ) /*0x6f0bf4*/
     {
       v17 = 0; /*0x6f0bfa*/
       Team_Helper_6F27F0(&v62, 0, 0); /*0x6f0c02*/
@@ -152,12 +158,12 @@ int __fastcall AISelectTeamHouseClass(IUnknown *aP0, int a2, int a3)
       aP2 = 0; /*0x6f0c1f*/
       TeamTypeClass_28::ClearBuffer((int)&v62); /*0x6f0c23*/
       v51 = 0; /*0x6f0c2e*/
-      if ( *(int *)&HouseClass_Player.__pad_5568[8028] > 0 ) /*0x6f0c34*/
+      if ( *(int *)&HouseClass_Player[29892] > 0 ) /*0x6f0c34*/
       {
         v18 = v53[0]; /*0x6f0c3a*/
         while ( 1 ) /*0x6f0c44*/
         {
-          v19 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8016] + 4 * v17); /*0x6f0c44*/
+          v19 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29880] + 4 * v17); /*0x6f0c44*/
           if ( !v19 || TriggerClass::EvaluateCondition(v19, (_DWORD *)a2, (int)v54, v18) != 1 ) /*0x6f0c5f*/
             goto LABEL_34; /*0x6f0c5f*/
           v20 = Math::RoundToInt(*(double *)(v19 + 184)); /*0x6f0c6c*/
@@ -166,7 +172,7 @@ int __fastcall AISelectTeamHouseClass(IUnknown *aP0, int a2, int a3)
           if ( !v51 ) /*0x6f0c9a*/
             goto LABEL_33; /*0x6f0c9a*/
 LABEL_34:
-          if ( ++v17 >= *(int *)&HouseClass_Player.__pad_5568[8028] ) /*0x6f0cbe*/
+          if ( ++v17 >= *(int *)&HouseClass_Player[29892] ) /*0x6f0cbe*/
             goto LABEL_35; /*0x6f0cbe*/
         }
         if ( !v51 ) /*0x6f0c7c*/
@@ -188,7 +194,7 @@ LABEL_35:
         goto LABEL_58; /*0x6f0ccd*/
       if ( !v65 ) /*0x6f0cd9*/
         goto LABEL_58; /*0x6f0cd9*/
-      v22 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536), (IUnknown *)1, aP2); /*0x6f0cee*/
+      v22 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), (IUnknown *)1, aP2); /*0x6f0cee*/
       v23 = 0; /*0x6f0cf3*/
       if ( v65 <= 0 ) /*0x6f0cfb*/
         goto LABEL_58; /*0x6f0cfb*/
@@ -245,7 +251,7 @@ LABEL_58:
   }
   v31 = (CCINIClass *)Block; /*0x6f0de5*/
   v32 = 0; /*0x6f0dee*/
-  if ( *(int *)&stru_89E138.__pad_579C[67620] <= 0 ) /*0x6f0df2*/
+  if ( *(int *)&stru_89E138[90048] <= 0 ) /*0x6f0df2*/
   {
 LABEL_71:
     for ( i = 0; i < v60; v31 = (CCINIClass *)Block ) /*0x6f0e4b*/
@@ -306,7 +312,7 @@ LABEL_71:
   }
   else
   {
-    v33 = *(CCINIClass **)&stru_89E138.__pad_579C[67608]; /*0x6f0df4*/
+    v33 = *(CCINIClass **)&stru_89E138[90036]; /*0x6f0df4*/
     while ( 1 ) /*0x6f0dfa*/
     {
       v34 = *(_DWORD *)v33->__pad_0; /*0x6f0dfa*/
@@ -319,7 +325,7 @@ LABEL_71:
 LABEL_70:
       ++v32; /*0x6f0e36*/
       v33 = (CCINIClass *)((char *)v33 + 4); /*0x6f0e3c*/
-      if ( v32 >= *(int *)&stru_89E138.__pad_579C[67620] ) /*0x6f0e41*/
+      if ( v32 >= *(int *)&stru_89E138[90048] ) /*0x6f0e41*/
         goto LABEL_71; /*0x6f0e41*/
     }
     v36 = *(_DWORD *)(v34 + 36); /*0x6f0e1d*/
@@ -393,11 +399,11 @@ char __fastcall SelectTechnoClassAreaTarget(
 
   aP6->field_0 = 0; /*0x6f8972*/
   *a7 = 0; /*0x6f8979*/
-  v10 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)aP4); /*0x6f898d*/
+  v10 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)aP4); /*0x6f898d*/
   if ( a9 != -1 ) /*0x6f8992*/
   {
     v11 = (*(int (__thiscall **)(IUnknown *))(aP0->field_0 + 132))(aP0); /*0x6f899a*/
-    if ( MapClass::GetTileIndex(&stru_87C374.__pad_14B0[8132], aP4, *(IUnknown **)(v11 + 1460), (IUnknown *)1) != a9 ) /*0x6f89b4*/
+    if ( MapClass::GetTileIndex(&stru_87C374[13428], aP4, *(IUnknown **)(v11 + 1460), (IUnknown *)1) != a9 ) /*0x6f89b4*/
       return 0; /*0x6f89bc*/
   }
   v13 = v10[58]; /*0x6f89bf*/
@@ -433,7 +439,7 @@ char __fastcall SelectTechnoClassAreaTarget(
     v14 = (TechnoClass *)v13; /*0x6f8a34*/
     if ( TechnoClass::GetValue(aP0, (ObjectClass *)0xFFFFFFFF) >= 0 ) /*0x6f8a3d*/
       break; /*0x6f8a3d*/
-    if ( BuildingClass::GetHealthRatio((int *)v13) < *(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5880) /*0x6f8a64*/
+    if ( BuildingClass::GetHealthRatio((int *)v13) < *(double *)(*(_DWORD *)&stru_87C374[44652] + 5880) /*0x6f8a64*/
       && Object::IsAlliedWithObjectHouse((_DWORD *)aP0->field_21C, (IUnknown *)v13) )
     {
       goto LABEL_34; /*0x6f8a6b*/
@@ -451,7 +457,7 @@ LABEL_33:
      || !aP0->__pad_690[72]
      && (!*(_BYTE *)(*(_DWORD *)&aP0->__pad_690[48] + 3779)
       || *(_DWORD *)&aP0->__pad_A8[4] != 11
-      || BuildingClass::GetHealthRatio((int *)v13) > *(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5896)
+      || BuildingClass::GetHealthRatio((int *)v13) > *(double *)(*(_DWORD *)&stru_87C374[44652] + 5896)
       || (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13) != 6
       || (*(int (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(v13 + 1312) + 132))(
            *(_DWORD *)(v13 + 1312),
@@ -485,7 +491,7 @@ LABEL_34:
              v14,
              a7,
              (IUnknown *)0xFFFFFFFF,
-             (int)&stru_B05488.__pad_579C[15980]);
+             (int)&stru_B05488[38408]);
   }
   return v18; /*0x6f89b6*/
 }

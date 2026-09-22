@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x46B640
 namespace gamemd {
@@ -10,7 +11,7 @@ DynamicVector * Timer::Start(DynamicVector * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 DynamicVector *__thiscall Timer::Start(_DWORD *this, DynamicVector *aP1)
 {
-  *this = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x46b64c*/
+  *this = *(_DWORD *)&HouseClass_Player[45112]; /*0x46b64c*/
   *(this + 2) = aP1; /*0x46b64e*/
   return (DynamicVector *)this; /*0x46b651*/
 }
@@ -122,7 +123,7 @@ double __thiscall Timer_GetHighPrecision(double *this)
   __int64 v5; // [esp+8h] [ebp-8h]
 
   if ( dword_82C24C == -1 ) /*0x5b1e4e*/
-    GetVersionString(&dword_82C24C, MEMORY[0xABEED4], 0, 0); /*0x5b1e5e*/
+    GetVersionString(&dword_82C24C, DataGlobal_ABEED4, 0, 0); /*0x5b1e5e*/
   if ( !*(_DWORD *)this && *((_DWORD *)this + 1) == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
     return (double)timeGetTime(); /*0x5b1ecc*/
   v2 = Timer::ReadTSC(&v4); /*0x5b1e7f*/

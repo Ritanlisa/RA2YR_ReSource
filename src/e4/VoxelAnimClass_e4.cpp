@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Voxel_e4.hpp"
 
 // 0x4CAF20
 namespace gamemd {
@@ -97,14 +103,14 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x749a11*/
   v6 = (VoxelAnimClass *)this; /*0x749a26*/
   v2 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(VoxelAnimClass_Array + 16))(&VoxelAnimClass_Array, &v6); /*0x749a2a*/
-  if ( v2 != -1 && v2 < MEMORY[0x887398] && v2 < --MEMORY[0x887398] ) /*0x749a45*/
+  if ( v2 != -1 && v2 < DataGlobal_887398 && v2 < --DataGlobal_887398 ) /*0x749a45*/
   {
     do /*0x749a5d*/
     {
       ++v2; /*0x749a4d*/
-      *((_DWORD *)MEMORY[0x88738C] + v2 - 1) = *((_DWORD *)MEMORY[0x88738C] + v2); /*0x749a51*/
+      *((_DWORD *)DataGlobal_88738C + v2 - 1) = *((_DWORD *)DataGlobal_88738C + v2); /*0x749a51*/
     }
-    while ( v2 < MEMORY[0x887398] ); /*0x749a5d*/
+    while ( v2 < DataGlobal_887398 ); /*0x749a5d*/
   }
   v3 = this->VoxelAnimClass_field_0x108; /*0x749a5f*/
   if ( v3 ) /*0x749a67*/
@@ -188,14 +194,14 @@ char __thiscall VoxelAnimClass::_vt69(int *this, int *a2, _DWORD *a3)
     v31 = this->q028; /*0x749beb*/
     GroundHeight = this->q029; /*0x749bf2*/
     GroundHeight = Cell::GetGroundHeight(&v30); /*0x749c05*/
-    if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v30) + 80) & 0x100) == 0 ) /*0x749c1b*/
+    if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v30) + 80) & 0x100) == 0 ) /*0x749c1b*/
       goto LABEL_6; /*0x749c1b*/
     v25 = this->q027; /*0x749c1f*/
     v26 = this->q028; /*0x749c26*/
-    if ( this->q029 >= MEMORY[0xB1D1BC] + GroundHeight ) /*0x749c38*/
+    if ( this->q029 >= DataGlobal_B1D1BC + GroundHeight ) /*0x749c38*/
     {
-      v33 = MEMORY[0xB1D1BC] + GroundHeight; /*0x749c3e*/
-      v27 = MEMORY[0xB1D1BC] + GroundHeight + 1; /*0x749c4a*/
+      v33 = DataGlobal_B1D1BC + GroundHeight; /*0x749c3e*/
+      v27 = DataGlobal_B1D1BC + GroundHeight + 1; /*0x749c4a*/
       v25 = v30; /*0x749c4e*/
       v26 = v31; /*0x749c5b*/
       Coord::To_Screen(g_TacticalClass_Instance, &v25, v36); /*0x749c60*/
@@ -219,9 +225,9 @@ LABEL_6:
           v6,
           *(_DWORD *)(this->q104 + 664),
           0,
-          MEMORY[0x887430],
+          DataGlobal_887430,
           v38,
-          (float *)&MEMORY[0x887420],
+          (float *)&DataGlobal_887420,
           0,
           0,
           0);
@@ -229,13 +235,13 @@ LABEL_6:
         v25 = v36[0] + v29; /*0x749d15*/
         v26 = v28 + v36[1]; /*0x749d26*/
         v22 = -4 - ZCoordToScreenY(v33); /*0x749d36*/
-        SHPFrame = (int *)BuildingClass::GetSHPFrame((_DWORD *)MEMORY[0x87F6B4], 8193); /*0x749d4e*/
+        SHPFrame = (int *)BuildingClass::GetSHPFrame((_DWORD *)DataGlobal_87F6B4, 8193); /*0x749d4e*/
         v7 = Miles::DriverGet(); /*0x749d5c*/
-        BlitterDrawSHP((int *)g_DSurface_Hidden_2, MEMORY[0x87F6B4], v7, v37, &v25, a3, 0, SHPFrame, v22, 0, 1000, 0, 0); /*0x749d6e*/
+        BlitterDrawSHP((int *)g_DSurface_Hidden_2, DataGlobal_87F6B4, v7, v37, &v25, a3, 0, SHPFrame, v22, 0, 1000, 0, 0); /*0x749d6e*/
         qmemcpy(v38, VoxelAnimClass::QuaternionToMatrix((float *)this + 44, v39), sizeof(v38)); /*0x749d95*/
-        globalHelper_053C80(v6, 0, 0, v38, (float *)&MEMORY[0x887470]); /*0x749da3*/
+        globalHelper_053C80(v6, 0, 0, v38, (float *)&DataGlobal_887470); /*0x749da3*/
         Viewport::Clear(); /*0x749da8*/
-        v8 = MultiplyMatrix3x4(v39, MEMORY[0x887430], v38); /*0x749dbe*/
+        v8 = MultiplyMatrix3x4(v39, DataGlobal_887430, v38); /*0x749dbe*/
         TransformVoxelVertex(v6, *(_DWORD *)(this->q104 + 664), 0, v8); /*0x749dd4*/
         InitializeAudioOcclusion(v37, &v29, &v28); /*0x749de6*/
         v9 = 10240; /*0x749df1*/
@@ -246,7 +252,7 @@ LABEL_6:
         v25 = this->q027; /*0x749e17*/
         v27 = v10; /*0x749e1f*/
         v26 = v11; /*0x749e29*/
-        v12 = (__int16 *)Coord::To_Cell(&MEMORY[0x87F7E8], &v25); /*0x749e2d*/
+        v12 = (__int16 *)Coord::To_Cell(&DataGlobal_87F7E8, &v25); /*0x749e2d*/
         v13 = this->q043; /*0x749e32*/
         v14 = v12[133]; /*0x749e38*/
         if ( v13 ) /*0x749e41*/
@@ -259,7 +265,7 @@ LABEL_6:
         }
         else
         {
-          v15 = (_DWORD *)MEMORY[0x87F6B4]; /*0x749e72*/
+          v15 = (_DWORD *)DataGlobal_87F6B4; /*0x749e72*/
           v14 = 1000; /*0x749e78*/
         }
         v25 = v29 + v34; /*0x749e8b*/
@@ -311,13 +317,13 @@ int __thiscall VoxelAnimClass::SaveLoad_Prefix(void *this, ObjectClass *aP1, int
     AudioController::Init(&aP1[1].bombVisible); /*0x74a9b8*/
     AudioController::Init(&aP1[1].visibilityFlags); /*0x74a9c3*/
     ObjectPtr::RegisterForTracking( /*0x74a9d4*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP1[1].customSound_controller[2]);
     ObjectPtr::RegisterForTracking( /*0x74a9e5*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP1[1].customSound_controller[3]);
     ObjectPtr::RegisterForTracking( /*0x74a9f6*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+      (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP1[1].customSound_controller[4]);
   }
   return (int)Register->__pad_0; /*0x74a9fd*/
@@ -381,11 +387,11 @@ int __thiscall sub_75AA90(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x75aa93*/
   this->VoxelAnimClass_field_0x1C = g_AsyncMovieState; /*0x75aaa1*/
-  this->needsSave = MEMORY[0xB45BEC]; /*0x75aaaa*/
-  this->q024 = MEMORY[0xB45BF0]; /*0x75aab6*/
+  this->needsSave = g_MovieFrameState1; /*0x75aaaa*/
+  this->q024 = g_MovieFrameState2; /*0x75aab6*/
   this->q028 = g_AsyncMovieState; /*0x75aabe*/
-  this->q02C = MEMORY[0xB45BEC]; /*0x75aac6*/
-  this->nextObject = MEMORY[0xB45BF0]; /*0x75aace*/
+  this->q02C = g_MovieFrameState1; /*0x75aac6*/
+  this->nextObject = g_MovieFrameState2; /*0x75aace*/
   this->attachedTag = 0; /*0x75aad3*/
   this->q0D4 = 0; /*0x75aad6*/
   this->q0D8 = 0; /*0x75aad9*/
@@ -438,16 +444,16 @@ int __thiscall sub_75EBE0(int this)
   this->VoxelAnimClass_field_0x4 = &WaveClass::`vftable'; /*0x75ecb0*/
   this->VoxelAnimClass_field_0x8 = &vt_WaveClass; /*0x75ecb7*/
   this->vtable4 = &off_7F6BC8; /*0x75ecbe*/
-  if ( MEMORY[0xA8EC48] < MEMORY[0xA8EC40] /*0x75ecfb*/
-    || (MEMORY[0xA8EC45] || !MEMORY[0xA8EC40])
-    && MEMORY[0xA8EC4C] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA8EC38] + 8))(
-         &MEMORY[0xA8EC38],
-         MEMORY[0xA8EC40] + MEMORY[0xA8EC4C],
+  if ( DataGlobal_A8EC48 < DataGlobal_A8EC40 /*0x75ecfb*/
+    || (DataGlobal_A8EC45 || !DataGlobal_A8EC40)
+    && DataGlobal_A8EC4C > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_A8EC38 + 8))(
+         &DataGlobal_A8EC38,
+         DataGlobal_A8EC40 + DataGlobal_A8EC4C,
          0) )
   {
-    v2 = MEMORY[0xA8EC48]++; /*0x75ed08*/
-    *((_DWORD *)MEMORY[0xA8EC3C] + v2) = this; /*0x75ed17*/
+    v2 = DataGlobal_A8EC48++; /*0x75ed08*/
+    *((_DWORD *)DataGlobal_A8EC3C + v2) = this; /*0x75ed17*/
   }
   if ( !byte_B725CC ) /*0x75ed20*/
     Voxel::InitDistanceTable(); /*0x75ed22*/

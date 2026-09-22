@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x5CA680
 char MultiplayerSiege::Read()
@@ -15,12 +17,12 @@ char MultiplayerSiege::_vt04()
   if ( result ) /*0x5ca687*/
   {
     result = 1; /*0x5ca690*/
-    if ( MEMORY[0xA8DA84] > 0 ) /*0x5ca697*/
+    if ( Game_PlayerCount > 0 ) /*0x5ca697*/
     {
       v1 = 1; /*0x5ca6a1*/
-      for ( *(_DWORD *)(*(_DWORD *)MEMORY[0xA8DA78] + 107) = 1; /*0x5ca6ae*/
-            v1 < MEMORY[0xA8DA84];
-            *(_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4) + 107) = 2 )
+      for ( *(_DWORD *)(*(_DWORD *)Game_PlayerInfoArray + 107) = 1; /*0x5ca6ae*/
+            v1 < Game_PlayerCount;
+            *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4) + 107) = 2 )
       {
         ++v1; /*0x5ca6bc*/
       }
@@ -54,7 +56,7 @@ char __stdcall MultiplayerSiege::_vt05(void **a1)
     v2 = 0; /*0x5ca6ef*/
     v3 = 0; /*0x5ca6f1*/
     v4 = 0; /*0x5ca6f3*/
-    if ( MEMORY[0xA8DA84] <= 0 ) /*0x5ca6f7*/
+    if ( Game_PlayerCount <= 0 ) /*0x5ca6f7*/
     {
 LABEL_12:
       StringCSF = GetStringCSF(aMpNodefender, 0, g_Str_File_MPSiege_cpp, 65); /*0x5ca724*/
@@ -63,7 +65,7 @@ LABEL_12:
     }
     else
     {
-      v5 = MEMORY[0xA8DA78]; /*0x5ca6f9*/
+      v5 = Game_PlayerInfoArray; /*0x5ca6f9*/
       do /*0x5ca71e*/
       {
         v6 = *(_DWORD *)(*(_DWORD *)v5 + 107); /*0x5ca701*/
@@ -94,7 +96,7 @@ LABEL_12:
         ++v4; /*0x5ca718*/
         v5 += 4; /*0x5ca719*/
       }
-      while ( v4 < MEMORY[0xA8DA84] ); /*0x5ca71e*/
+      while ( v4 < Game_PlayerCount ); /*0x5ca71e*/
       if ( !v2 ) /*0x5ca722*/
         goto LABEL_12; /*0x5ca722*/
       if ( v3 >= 1 ) /*0x5ca793*/
@@ -136,9 +138,9 @@ char __thiscall MultiplayerSiege::_vt33(void *this, char a2)
   Multiplayer::FindStartPositions(&v14); /*0x5ca811*/
   v3 = 0; /*0x5ca81c*/
   memset(v13, 0, sizeof(v13)); /*0x5ca824*/
-  if ( MEMORY[0xA8DA84] > 0 ) /*0x5ca836*/
+  if ( Game_PlayerCount > 0 ) /*0x5ca836*/
   {
-    v4 = MEMORY[0xA8DA78]; /*0x5ca838*/
+    v4 = Game_PlayerInfoArray; /*0x5ca838*/
     do /*0x5ca848*/
     {
       if ( *(_DWORD *)(*(_DWORD *)v4 + 107) == 1 ) /*0x5ca840*/
@@ -146,9 +148,9 @@ char __thiscall MultiplayerSiege::_vt33(void *this, char a2)
       ++v3; /*0x5ca842*/
       v4 += 4; /*0x5ca843*/
     }
-    while ( v3 < MEMORY[0xA8DA84] ); /*0x5ca848*/
+    while ( v3 < Game_PlayerCount ); /*0x5ca848*/
   }
-  if ( v3 >= MEMORY[0xA8DA84] ) /*0x5ca84c*/
+  if ( v3 >= Game_PlayerCount ) /*0x5ca84c*/
   {
     v5 = Block; /*0x5ca84e*/
     v14 = &vt_VectorClass_Cell; /*0x5ca852*/
@@ -156,7 +158,7 @@ char __thiscall MultiplayerSiege::_vt33(void *this, char a2)
       return 0; /*0x5ca868*/
     goto LABEL_26; /*0x5ca868*/
   }
-  v6 = *(_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v3) + 111); /*0x5ca876*/
+  v6 = *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * v3) + 111); /*0x5ca876*/
   if ( v6 < 0 || v6 >= HouseClass_Count ) /*0x5ca887*/
   {
     v5 = Block; /*0x5ca980*/

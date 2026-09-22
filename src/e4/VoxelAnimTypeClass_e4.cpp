@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/File_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x74AD80
 namespace gamemd {
@@ -55,27 +60,27 @@ _DWORD *__thiscall VoxelAnimTypeClass::Constructor(_DWORD *this, ObjectClass *aP
   this->Insignificant = 1; /*0x74aea4*/
   this->Immune = 1; /*0x74aeaa*/
   this->AllowCellContent = 0; /*0x74aeb0*/
-  if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x74aeea*/
-    || (stru_B05488.__pad_579C[19033] || !*(_DWORD *)&stru_B05488.__pad_579C[19028])
-    && *(int *)&stru_B05488.__pad_579C[19040] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19020] + 8))(
-         &stru_B05488.__pad_579C[19020],
-         *(_DWORD *)&stru_B05488.__pad_579C[19028] + *(_DWORD *)&stru_B05488.__pad_579C[19040],
+  if ( *(int *)&stru_B05488[41464] < *(int *)&stru_B05488[41456] /*0x74aeea*/
+    || (stru_B05488[41461] || !*(_DWORD *)&stru_B05488[41456])
+    && *(int *)&stru_B05488[41468] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41448] + 8))(
+         &stru_B05488[41448],
+         *(_DWORD *)&stru_B05488[41456] + *(_DWORD *)&stru_B05488[41468],
          0) )
   {
-    v3 = (*(_DWORD *)&stru_B05488.__pad_579C[19036])++; /*0x74aef7*/
-    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19024] + 4 * v3) = this; /*0x74af06*/
+    v3 = (*(_DWORD *)&stru_B05488[41464])++; /*0x74aef7*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488[41452] + 4 * v3) = this; /*0x74af06*/
   }
-  if ( *(int *)&HouseClass_Player.__pad_5568[22660] < *(int *)&HouseClass_Player.__pad_5568[22652] /*0x74af3d*/
-    || (HouseClass_Player.__pad_5568[22657] || !*(_DWORD *)&HouseClass_Player.__pad_5568[22652])
-    && *(int *)&HouseClass_Player.__pad_5568[22664] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_5568[22644] + 8))(
-         &HouseClass_Player.__pad_5568[22644],
-         *(_DWORD *)&HouseClass_Player.__pad_5568[22652] + *(_DWORD *)&HouseClass_Player.__pad_5568[22664],
+  if ( *(int *)&HouseClass_Player[44524] < *(int *)&HouseClass_Player[44516] /*0x74af3d*/
+    || (HouseClass_Player[44521] || !*(_DWORD *)&HouseClass_Player[44516])
+    && *(int *)&HouseClass_Player[44528] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player[44508] + 8))(
+         &HouseClass_Player[44508],
+         *(_DWORD *)&HouseClass_Player[44516] + *(_DWORD *)&HouseClass_Player[44528],
          0) )
   {
-    v4 = (VoxelAnimTypeClass *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22660])++; /*0x74af4a*/
-    *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22648] + 4 * (_DWORD)v4) = this; /*0x74af59*/
+    v4 = (VoxelAnimTypeClass *)(*(_DWORD *)&HouseClass_Player[44524])++; /*0x74af4a*/
+    *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44512] + 4 * (_DWORD)v4) = this; /*0x74af59*/
   }
   return this; /*0x74af5e*/
 }
@@ -167,21 +172,21 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x74b116*/
                        (int)aP1,
                        (INIClass *)(this + 36),
-                       (unsigned __int8 *)&stru_830620.__pad_579C[65880],
+                       (unsigned __int8 *)&stru_830620[88308],
                        0);
   if ( Double_Overwrite != 0.0 ) /*0x74b126*/
     *(double *)(this + 680) = Double_Overwrite * 0.01745277777777778; /*0x74b12e*/
   v9 = INIClass::ReadDouble_Overwrite( /*0x74b147*/
          (int)aP1,
          (INIClass *)(this + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[65860],
+         (unsigned __int8 *)&stru_830620[88288],
          0);
   if ( v9 != 0.0 ) /*0x74b157*/
     *(double *)(this + 688) = v9 * 0.01745277777777778; /*0x74b15f*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x74b178*/
                     (int)aP1,
                     (unsigned __int8 *)(this + 36),
-                    (CCINIClass *)&stru_830620.__pad_579C[65848],
+                    (CCINIClass *)&stru_830620[88276],
                     *(INIClass **)(this + 668));
   v39 = *(INIClass **)(this + 696); /*0x74b18a*/
   this->Duration = Int_Overwrite; /*0x74b193*/
@@ -195,14 +200,14 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
   v13 = INIClass::ReadDouble_Overwrite( /*0x74b1ba*/
           (int)aP1,
           (INIClass *)(this + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[65840],
+          (unsigned __int8 *)&stru_830620[88268],
           ecx6);
   v14 = *(INIClass **)(this + 712); /*0x74b1c5*/
   *(double *)(this + 704) = v13; /*0x74b1cb*/
   st7_6b = INIClass::ReadDouble_Overwrite( /*0x74b1db*/
              (int)aP1,
              (INIClass *)(this + 36),
-             (unsigned __int8 *)stru_8184C8.__pad_20,
+             (unsigned __int8 *)stru_8184C8[32],
              v14);
   v12 = *(VoxelAnimTypeClass **)(this + 724); /*0x74b1e0*/
   *(double *)(this + 712) = st7_6b; /*0x74b1ea*/
@@ -211,11 +216,11 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
          aP1,
          (INIClass *)(this + 36),
          (unsigned __int8 *)&stru_8184C8,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          (INIClass *)Destination,
          128) )
   {
-    v17 = globalHelper_04BB20(Destination[0].__pad_0, (int)&MEMORY[0xA8D63C].__pad_14B0[60]); /*0x74b219*/
+    v17 = globalHelper_04BB20(Destination[0].__pad_0, (int)&g_NetworkPlayerBuffer[5356]); /*0x74b219*/
   }
   else
   {
@@ -230,22 +235,22 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
   v51 = INIClass::ReadBool_Overwrite( /*0x74b25d*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[65824],
+          (CCINIClass *)&stru_830620[88252],
           0);
   v50 = INIClass::ReadBool_Overwrite( /*0x74b270*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[65808],
+          (CCINIClass *)&stru_830620[88236],
           0);
   v49 = INIClass::ReadBool_Overwrite( /*0x74b27f*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[65792],
+          (CCINIClass *)&stru_830620[88220],
           0);
   v18 = INIClass::ReadInt_Overwrite( /*0x74b28c*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[65780],
+          (CCINIClass *)&stru_830620[88208],
           *(INIClass **)(this + 664));
   v15 = *(AbstractTypeClass **)(this + 732); /*0x74b291*/
   this->VoxelIndex = v18; /*0x74b297*/
@@ -254,7 +259,7 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
           aP1,
           (INIClass *)(this + 36),
           &unk_818418,
-          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          (INIClass *)&DataGlobal_87F8E4[42624],
           (INIClass *)Destination,
           128)
     || (Index = VocClass::FindIndex(Destination), Index == -1) )
@@ -267,7 +272,7 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
           aP1,
           (INIClass *)(this + 36),
           &unk_818404,
-          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          (INIClass *)&DataGlobal_87F8E4[42624],
           (INIClass *)Destination,
           128)
     || (v21 = VocClass::FindIndex(Destination), v21 == -1) )
@@ -280,7 +285,7 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
          aP1,
          (INIClass *)(this + 36),
          &unk_8183F8,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          (INIClass *)Destination,
          128) )
   {
@@ -297,7 +302,7 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
          aP1,
          (INIClass *)(this + 36),
          &unk_8183EC,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          (INIClass *)Destination,
          128) )
   {
@@ -313,7 +318,7 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
          aP1,
          (INIClass *)(this + 36),
          &unk_8183E0,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          (INIClass *)Destination,
          128) )
   {
@@ -335,7 +340,7 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
          aP1,
          (INIClass *)(this + 36),
          &unk_8183B4,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          (INIClass *)Destination,
          128) )
   {
@@ -350,8 +355,8 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
   if ( INIClass::GetString( /*0x74b46c*/
          aP1,
          (INIClass *)(this + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[65764],
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (unsigned __int8 *)&stru_830620[88192],
+         (INIClass *)&DataGlobal_87F8E4[42624],
          (INIClass *)Destination,
          128) )
   {
@@ -369,7 +374,7 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
     TechnoType = (_DWORD *)INIEntry::GetTechnoType( /*0x74b4c1*/
                              aP1,
                              (CCINIClass *)(this + 36),
-                             (unsigned __int8 *)&stru_830620.__pad_579C[65752]);
+                             (unsigned __int8 *)&stru_830620[88180]);
     if ( !TechnoType ) /*0x74b4ca*/
     {
       this->MainVoxel = 0; /*0x74b555*/
@@ -535,12 +540,12 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_VoxelAnimTypeClass;
     *(int *)&aP0->__pad_0[12] = &vt_VoxelAnimTypeClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)aP0[1].Name);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[19]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[23]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[27]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[3]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].Name[4]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)aP0[1].Name);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[19]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[23]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[27]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].UINameLabel[3]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].Name[4]);
     VoxelAnimType::LoadAnim(aP0->__pad_0);
     return 0;
   }

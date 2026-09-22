@@ -10,18 +10,18 @@ int __thiscall sub_5D4E70(void *this)
 {
   int result; // eax
 
-  result = MEMORY[0xABFC98]; /*0x5d4e70*/
-  if ( MEMORY[0xABFCA0] < MEMORY[0xABFC98] /*0x5d4eac*/
-    || (MEMORY[0xABFC9D] || !MEMORY[0xABFC98])
-    && MEMORY[0xABFCA4] > 0
-    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(MEMORY[0xABFC90] + 8))(
-                   &MEMORY[0xABFC90],
-                   MEMORY[0xABFC98] + MEMORY[0xABFCA4],
+  result = DataGlobal_ABFC98; /*0x5d4e70*/
+  if ( DataGlobal_ABFCA0 < DataGlobal_ABFC98 /*0x5d4eac*/
+    || (DataGlobal_ABFC9D || !DataGlobal_ABFC98)
+    && DataGlobal_ABFCA4 > 0
+    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(DataGlobal_ABFC90 + 8))(
+                   &DataGlobal_ABFC90,
+                   DataGlobal_ABFC98 + DataGlobal_ABFCA4,
                    0),
         (_BYTE)result) )
   {
-    result = MEMORY[0xABFCA0]++; /*0x5d4eb4*/
-    *((_DWORD *)MEMORY[0xABFC94] + result) = this; /*0x5d4ec3*/
+    result = DataGlobal_ABFCA0++; /*0x5d4eb4*/
+    *((_DWORD *)DataGlobal_ABFC94 + result) = this; /*0x5d4ec3*/
   }
   return result; /*0x5d4ec6*/
 }
@@ -37,15 +37,15 @@ int __thiscall DialogQueue::RemoveEntry(void *this)
   void *v2; // [esp+0h] [ebp-4h] BYREF
 
   v2 = this; /*0x5d4ed7*/
-  result = (*(int (__thiscall **)(int *, void **))(MEMORY[0xABFC90] + 16))(&MEMORY[0xABFC90], &v2); /*0x5d4ee5*/
-  if ( result != -1 && result < MEMORY[0xABFCA0] && result < --MEMORY[0xABFCA0] ) /*0x5d4f00*/
+  result = (*(int (__thiscall **)(int *, void **))(DataGlobal_ABFC90 + 16))(&DataGlobal_ABFC90, &v2); /*0x5d4ee5*/
+  if ( result != -1 && result < DataGlobal_ABFCA0 && result < --DataGlobal_ABFCA0 ) /*0x5d4f00*/
   {
     do /*0x5d4f18*/
     {
       ++result; /*0x5d4f08*/
-      *((_DWORD *)MEMORY[0xABFC94] + result - 1) = *((_DWORD *)MEMORY[0xABFC94] + result); /*0x5d4f0c*/
+      *((_DWORD *)DataGlobal_ABFC94 + result - 1) = *((_DWORD *)DataGlobal_ABFC94 + result); /*0x5d4f0c*/
     }
-    while ( result < MEMORY[0xABFCA0] ); /*0x5d4f18*/
+    while ( result < DataGlobal_ABFCA0 ); /*0x5d4f18*/
   }
   return result; /*0x5d4f1b*/
 }

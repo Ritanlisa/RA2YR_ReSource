@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x6E4F60
 namespace gamemd {
@@ -37,9 +40,9 @@ void __fastcall TagClass::Destructor(void **a1, AbstractClass *a2)
   a1[2] = &TagClass::`vftable'; /*0x6e4f76*/
   a1[3] = &vt_TagClass; /*0x6e4f7d*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, a2); /*0x6e4f84*/
-  if ( HouseClass_Player.__pad_5568[22252] ) /*0x6e4f90*/
+  if ( HouseClass_Player[44116] ) /*0x6e4f90*/
   {
-    if ( HouseClass_Player.__pad_5568[23208] ) /*0x6e4f9d*/
+    if ( HouseClass_Player[45072] ) /*0x6e4f9d*/
     {
       v2 = (TagTypeClass *)a1[9]; /*0x6e4f9f*/
       if ( v2 ) /*0x6e4fa4*/
@@ -47,19 +50,19 @@ void __fastcall TagClass::Destructor(void **a1, AbstractClass *a2)
         if ( (Debug::AccumFlags(v2) & 0x10) != 0 ) /*0x6e4fad*/
         {
           eax5 = 0; /*0x6e4fb5*/
-          if ( *(int *)&stru_89E138.__pad_579C[67588] <= 0 ) /*0x6e4fb9*/
+          if ( *(int *)&stru_89E138[90016] <= 0 ) /*0x6e4fb9*/
           {
 LABEL_9:
             eax5 = -1; /*0x6e4fcd*/
           }
           else
           {
-            v4 = *(ParticleSystemClass **)&stru_89E138.__pad_579C[67576]; /*0x6e4fbb*/
+            v4 = *(ParticleSystemClass **)&stru_89E138[90004]; /*0x6e4fbb*/
             while ( *(void ***)v4->__pad_0 != a1 ) /*0x6e4fc3*/
             {
               ++eax5; /*0x6e4fc5*/
               v4 = (ParticleSystemClass *)((char *)v4 + 4); /*0x6e4fc6*/
-              if ( eax5 >= *(int *)&stru_89E138.__pad_579C[67588] ) /*0x6e4fcb*/
+              if ( eax5 >= *(int *)&stru_89E138[90016] ) /*0x6e4fcb*/
                 goto LABEL_9; /*0x6e4fcb*/
             }
           }
@@ -67,15 +70,15 @@ LABEL_9:
           if ( dword_A83CDC >= eax5 ) /*0x6e4fd8*/
           {
             --dword_A83CDC; /*0x6e4fdd*/
-            if ( (int)&v5[-1].OwnerHouse + 3 < 0 && !*(_DWORD *)&stru_89E138.__pad_579C[67588] ) /*0x6e4fe6*/
+            if ( (int)&v5[-1].OwnerHouse + 3 < 0 && !*(_DWORD *)&stru_89E138[90016] ) /*0x6e4fe6*/
               dword_A83CDC = 0; /*0x6e4fe8*/
           }
         }
       }
     }
-    if ( HouseClass_Player.__pad_5568[22252] ) /*0x6e4ff5*/
+    if ( HouseClass_Player[44116] ) /*0x6e4ff5*/
     {
-      if ( HouseClass_Player.__pad_5568[23208] ) /*0x6e5002*/
+      if ( HouseClass_Player[45072] ) /*0x6e5002*/
       {
         v6 = (TagTypeClass *)a1[9]; /*0x6e5004*/
         if ( v6 ) /*0x6e5009*/
@@ -109,9 +112,9 @@ LABEL_22:
           }
         }
       }
-      if ( HouseClass_Player.__pad_5568[22252] ) /*0x6e505a*/
+      if ( HouseClass_Player[44116] ) /*0x6e505a*/
       {
-        if ( HouseClass_Player.__pad_5568[23208] ) /*0x6e5063*/
+        if ( HouseClass_Player[45072] ) /*0x6e5063*/
         {
           v10 = (TriggerClass *)a1[10]; /*0x6e5065*/
           if ( v10 ) /*0x6e506a*/
@@ -126,7 +129,7 @@ LABEL_22:
                 if ( v14 ) /*0x6e50a8*/
                   *(_DWORD *)(Owner + 636) = v14 - 1; /*0x6e50ab*/
                 eax35 = (_DWORD *)(Owner + 664); /*0x6e50b7*/
-                *eax35 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x6e50c1*/
+                *eax35 = *(_DWORD *)&HouseClass_Player[45112]; /*0x6e50c1*/
                 eax35[1] = v23[2]; /*0x6e50c7*/
                 eax35[2] = 60; /*0x6e50ca*/
               }
@@ -139,71 +142,71 @@ LABEL_22:
   v15 = (TriggerClass *)a1[10]; /*0x6e50cd*/
   if ( v15 ) /*0x6e50d2*/
   {
-    eax37 = *(_DWORD *)&stru_B05488.__pad_579C[19068]; /*0x6e50d4*/
+    eax37 = *(_DWORD *)&stru_B05488[41496]; /*0x6e50d4*/
     do /*0x6e50d9*/
     {
-      if ( *(int *)&stru_B05488.__pad_579C[19076] < eax37 ) /*0x6e50df*/
+      if ( *(int *)&stru_B05488[41504] < eax37 ) /*0x6e50df*/
         goto LABEL_43; /*0x6e50df*/
-      if ( !stru_B05488.__pad_579C[19073] && eax37 || *(int *)&stru_B05488.__pad_579C[19080] <= 0 ) /*0x6e50f7*/
+      if ( !stru_B05488[41501] && eax37 || *(int *)&stru_B05488[41508] <= 0 ) /*0x6e50f7*/
         goto LABEL_45; /*0x6e50f7*/
-      if ( (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19060] + 8))( /*0x6e5109*/
-             &stru_B05488.__pad_579C[19060],
-             eax37 + *(_DWORD *)&stru_B05488.__pad_579C[19080],
+      if ( (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41488] + 8))( /*0x6e5109*/
+             &stru_B05488[41488],
+             eax37 + *(_DWORD *)&stru_B05488[41508],
              0) )
       {
 LABEL_43:
-        v17 = (AbstractClass *)(*(_DWORD *)&stru_B05488.__pad_579C[19076])++; /*0x6e5116*/
-        *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19064] + 4 * (_DWORD)v17) = v15; /*0x6e5125*/
+        v17 = (AbstractClass *)(*(_DWORD *)&stru_B05488[41504])++; /*0x6e5116*/
+        *(_DWORD *)(*(_DWORD *)&stru_B05488[41492] + 4 * (_DWORD)v17) = v15; /*0x6e5125*/
       }
-      eax37 = *(_DWORD *)&stru_B05488.__pad_579C[19068]; /*0x6e5128*/
+      eax37 = *(_DWORD *)&stru_B05488[41496]; /*0x6e5128*/
 LABEL_45:
       v15 = (TriggerClass *)v15->nextTrigger; /*0x6e512d*/
     }
     while ( v15 ); /*0x6e50d9*/
   }
   v23[0] = a1; /*0x6e5134*/
-  v19 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488.__pad_579C[19020] + 16))( /*0x6e5147*/
-          &stru_B05488.__pad_579C[19020],
+  v19 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488[41448] + 16))( /*0x6e5147*/
+          &stru_B05488[41448],
           v23);
-  if ( v19 != -1 && v19 < *(int *)&stru_B05488.__pad_579C[19036] ) /*0x6e5157*/
+  if ( v19 != -1 && v19 < *(int *)&stru_B05488[41464] ) /*0x6e5157*/
   {
-    --*(_DWORD *)&stru_B05488.__pad_579C[19036]; /*0x6e515c*/
+    --*(_DWORD *)&stru_B05488[41464]; /*0x6e515c*/
     for ( ; /*0x6e5162*/
-          v19 < *(int *)&stru_B05488.__pad_579C[19036];
-          *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19024] + 4 * v19 - 4) = *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19024]
+          v19 < *(int *)&stru_B05488[41464];
+          *(_DWORD *)(*(_DWORD *)&stru_B05488[41452] + 4 * v19 - 4) = *(_DWORD *)(*(_DWORD *)&stru_B05488[41452]
                                                                                            + 4 * v19) )
     {
       ++v19; /*0x6e516a*/
     }
   }
   v23[0] = a1; /*0x6e518c*/
-  v20 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488.__pad_579C[19172] + 16))( /*0x6e5190*/
-          &stru_B05488.__pad_579C[19172],
+  v20 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488[41600] + 16))( /*0x6e5190*/
+          &stru_B05488[41600],
           v23);
-  if ( v20 != -1 && v20 < *(int *)&stru_B05488.__pad_579C[19188] ) /*0x6e51a0*/
+  if ( v20 != -1 && v20 < *(int *)&stru_B05488[41616] ) /*0x6e51a0*/
   {
-    --*(_DWORD *)&stru_B05488.__pad_579C[19188]; /*0x6e51a5*/
+    --*(_DWORD *)&stru_B05488[41616]; /*0x6e51a5*/
     for ( ; /*0x6e51ab*/
-          v20 < *(int *)&stru_B05488.__pad_579C[19188];
-          *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19176] + 4 * v20 - 4) = *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19176]
+          v20 < *(int *)&stru_B05488[41616];
+          *(_DWORD *)(*(_DWORD *)&stru_B05488[41604] + 4 * v20 - 4) = *(_DWORD *)(*(_DWORD *)&stru_B05488[41604]
                                                                                            + 4 * v20) )
     {
       ++v20; /*0x6e51b3*/
     }
   }
   v23[0] = a1; /*0x6e51d5*/
-  v21 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488.__pad_579C[15100] + 16))( /*0x6e51d9*/
-          &stru_B05488.__pad_579C[15100],
+  v21 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488[37528] + 16))( /*0x6e51d9*/
+          &stru_B05488[37528],
           v23);
-  if ( v21 != -1 && v21 < *(int *)&stru_B05488.__pad_579C[15116] ) /*0x6e51e9*/
+  if ( v21 != -1 && v21 < *(int *)&stru_B05488[37544] ) /*0x6e51e9*/
   {
-    --*(_DWORD *)&stru_B05488.__pad_579C[15116]; /*0x6e51ee*/
+    --*(_DWORD *)&stru_B05488[37544]; /*0x6e51ee*/
     for ( ; /*0x6e51f4*/
-          v21 < *(int *)&stru_B05488.__pad_579C[15116];
-          *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15104] + 4 * v21 - 4) = v22 )
+          v21 < *(int *)&stru_B05488[37544];
+          *(_DWORD *)(*(_DWORD *)&stru_B05488[37532] + 4 * v21 - 4) = v22 )
     {
       ++v21; /*0x6e51fc*/
-      v22 = *(AbstractClass **)(*(_DWORD *)&stru_B05488.__pad_579C[15104] + 4 * v21); /*0x6e51fd*/
+      v22 = *(AbstractClass **)(*(_DWORD *)&stru_B05488[37532] + 4 * v21); /*0x6e51fd*/
     }
   }
   LOBYTE(v22) = 1; /*0x6e520e*/
@@ -292,11 +295,11 @@ int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
     if ( !result )
   {
     this->destroyed = 1;
-    result = *(TagTypeClass **)&DataGlobal_B05488.__pad_579C[19068];
-    if ( *(int *)&DataGlobal_B05488.__pad_579C[19076] < *(int *)&DataGlobal_B05488.__pad_579C[19068] || (DataGlobal_B05488.__pad_579C[19073] || !*(int *)&DataGlobal_B05488.__pad_579C[19068]) && *(int *)&DataGlobal_B05488.__pad_579C[19080] > 0 && (result = (TagTypeClass *)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[19060] + 8))( &DataGlobal_B05488.__pad_579C[19060], *(int *)&DataGlobal_B05488.__pad_579C[19068] + *(int *)&DataGlobal_B05488.__pad_579C[19080], 0), (char)result) )
+    result = *(TagTypeClass **)&DataGlobal_B05488[41496];
+    if ( *(int *)&DataGlobal_B05488[41504] < *(int *)&DataGlobal_B05488[41496] || (DataGlobal_B05488[41501] || !*(int *)&DataGlobal_B05488[41496]) && *(int *)&DataGlobal_B05488[41508] > 0 && (result = (TagTypeClass *)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488[41488] + 8))( &DataGlobal_B05488[41488], *(int *)&DataGlobal_B05488[41496] + *(int *)&DataGlobal_B05488[41508], 0), (char)result) )
     {
-    result = (TagTypeClass *)(*(int *)&DataGlobal_B05488.__pad_579C[19076])++;
-    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[19064] + 4 * (int)result) = this;
+    result = (TagTypeClass *)(*(int *)&DataGlobal_B05488[41504])++;
+    *(int *)(*(int *)&DataGlobal_B05488[41492] + 4 * (int)result) = this;
     }
   }
     return (int)result->__pad_0;
@@ -358,8 +361,8 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TagClass;
     *(int *)&aP0->__pad_0[12] = &vt_TagClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
     return 0;
   }
     return result;

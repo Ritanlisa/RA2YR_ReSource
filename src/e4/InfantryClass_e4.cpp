@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x4D4DC0
 namespace gamemd {
@@ -35,7 +38,7 @@ int __fastcall InfantryClass::ScanTarget(int *a1)
   {
     v2 = *a1; /*0x4d4de8*/
     PlacementCellsAlt = (__int16 *)MapClass::FindPlacementCellsAlt((char *)a1, (IUnknown *)&v17, (IUnknown *)a1); /*0x4d4df4*/
-    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], PlacementCellsAlt); /*0x4d4dff*/
+    v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, PlacementCellsAlt); /*0x4d4dff*/
     (*(void (__thiscall **)(int *, void *, int))(v2 + 1152))(a1, v4, 1); /*0x4d4e07*/
   }
   if ( *((_BYTE *)a1 + 1678) ) /*0x4d4e0d*/
@@ -119,14 +122,14 @@ int __fastcall InfantryClass_ProcessDeploy(#375 **a1)
     }
     else
     {
-      v12 = MEMORY[0x8B3D88]; /*0x4d5510*/
+      v12 = g_FootClass_Pool; /*0x4d5510*/
       v12 = *HouseClass::GetCurrentOption(HouseClass_Player, &v13); /*0x4d5529*/
-      if ( v12 != MEMORY[0x8B3D88] ) /*0x4d552d*/
+      if ( v12 != g_FootClass_Pool ) /*0x4d552d*/
       {
         if ( a1[182] ) /*0x4d553d*/
           ((void (*)(void))FactoryClass::ResetProductionTimers)(); /*0x4d5547*/
         v7 = *a1; /*0x4d554c*/
-        v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x4d555a*/
+        v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v12); /*0x4d555a*/
         (*((void (__thiscall **)(#375 **, void *, int))v7 + 288))(a1, v8, 1); /*0x4d5562*/
         (*((void (__thiscall **)(#375 **, int, int))*a1 + 122))(a1, 2, 1); /*0x4d5570*/
       }
@@ -203,7 +206,7 @@ int __fastcall InfantryClass::Destruct(IUnknown *a1, AbstractClass *edx0)
   a1->field_8 = (int)&vt_InfantryClass; /*0x517da3*/
   a1->field_C = (int)&off_7EB02C; /*0x517daa*/
   a1->field_4 = (int)&InfantryClass::`vftable'; /*0x517db1*/
-  if ( HouseClass_Player.__pad_5568[22252] ) /*0x517dbe*/
+  if ( HouseClass_Player[44116] ) /*0x517dbe*/
   {
     v3 = *(InfantryTypeClass **)&a1->__pad_690[48]; /*0x517dc4*/
     if ( v3 ) /*0x517dcc*/
@@ -236,56 +239,56 @@ int __fastcall InfantryClass::Destruct(IUnknown *a1, AbstractClass *edx0)
   LOBYTE(edx0) = 1; /*0x517e71*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, edx0); /*0x517e75*/
   a2[0] = (int)a1; /*0x517e89*/
-  v8 = (*(int (__thiscall **)(char *, int *))(*(_DWORD *)&HouseClass_Player.__pad_74[40] + 16))( /*0x517e8d*/
-         &HouseClass_Player.__pad_74[40],
+  v8 = (*(int (__thiscall **)(char *, int *))(*(_DWORD *)&HouseClass_Player[156] + 16))( /*0x517e8d*/
+         &HouseClass_Player[156],
          a2);
-  if ( v8 != -1 && v8 < *(int *)&HouseClass_Player.__pad_74[56] ) /*0x517e9d*/
+  if ( v8 != -1 && v8 < *(int *)&HouseClass_Player[172] ) /*0x517e9d*/
   {
-    --*(_DWORD *)&HouseClass_Player.__pad_74[56]; /*0x517ea2*/
+    --*(_DWORD *)&HouseClass_Player[172]; /*0x517ea2*/
     for ( ; /*0x517ea8*/
-          v8 < *(int *)&HouseClass_Player.__pad_74[56];
-          *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_74[44] + 4 * v8 - 4) = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_74[44]
+          v8 < *(int *)&HouseClass_Player[172];
+          *(_DWORD *)(*(_DWORD *)&HouseClass_Player[160] + 4 * v8 - 4) = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[160]
                                                                                            + 4 * v8) )
     {
       ++v8; /*0x517eb0*/
     }
   }
   Vtable3 = AbstractClass::GetVtable3(edi1); /*0x517ec3*/
-  v7 = *(IUnknown **)&stru_B05488.__pad_579C[15392]; /*0x517ec8*/
+  v7 = *(IUnknown **)&stru_B05488[37820]; /*0x517ec8*/
   v11 = Vtable3; /*0x517ece*/
-  if ( *(_DWORD *)&stru_B05488.__pad_579C[15392] ) /*0x517ed2*/
+  if ( *(_DWORD *)&stru_B05488[37820] ) /*0x517ed2*/
   {
-    if ( !stru_B05488.__pad_579C[15400] ) /*0x517ede*/
+    if ( !stru_B05488[37828] ) /*0x517ede*/
     {
       qsort( /*0x517eee*/
-        *(AbstractClass **)&stru_B05488.__pad_579C[15388],
-        *(IUnknown **)&stru_B05488.__pad_579C[15392],
+        *(AbstractClass **)&stru_B05488[37816],
+        *(IUnknown **)&stru_B05488[37820],
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      v7 = *(IUnknown **)&stru_B05488.__pad_579C[15392]; /*0x517ef3*/
-      *(_DWORD *)&stru_B05488.__pad_579C[15404] = 0; /*0x517efc*/
-      stru_B05488.__pad_579C[15400] = 1; /*0x517f02*/
+      v7 = *(IUnknown **)&stru_B05488[37820]; /*0x517ef3*/
+      *(_DWORD *)&stru_B05488[37832] = 0; /*0x517efc*/
+      stru_B05488[37828] = 1; /*0x517f02*/
     }
     a2[0] = v11; /*0x517f0d*/
-    v12 = BinaryArraySearch(*(AbstractClass **)&stru_B05488.__pad_579C[15388], (int)v7, a2); /*0x517f18*/
+    v12 = BinaryArraySearch(*(AbstractClass **)&stru_B05488[37816], (int)v7, a2); /*0x517f18*/
     if ( v12 ) /*0x517f1f*/
     {
-      v13 = (v12 - *(_DWORD *)&stru_B05488.__pad_579C[15388]) >> 3; /*0x517f27*/
+      v13 = (v12 - *(_DWORD *)&stru_B05488[37816]) >> 3; /*0x517f27*/
       if ( v13 != -1 ) /*0x517f2d*/
       {
         v14 = v13 + 1; /*0x517f2f*/
-        for ( i = *(IUnknown **)&stru_B05488.__pad_579C[15392]; /*0x517f39*/
-              v14 < *(int *)&stru_B05488.__pad_579C[15392];
-              i = *(IUnknown **)&stru_B05488.__pad_579C[15392] )
+        for ( i = *(IUnknown **)&stru_B05488[37820]; /*0x517f39*/
+              v14 < *(int *)&stru_B05488[37820];
+              i = *(IUnknown **)&stru_B05488[37820] )
         {
-          v16 = (_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15388] + 8 * v14++); /*0x517f41*/
+          v16 = (_DWORD *)(*(_DWORD *)&stru_B05488[37816] + 8 * v14++); /*0x517f41*/
           *(v16 - 2) = *v16; /*0x517f47*/
           *(v16 - 1) = v16[1]; /*0x517f4d*/
         }
-        *(_DWORD *)&stru_B05488.__pad_579C[15392] = (char *)i - 1; /*0x517f62*/
-        *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15388] + 8 * *(_DWORD *)&stru_B05488.__pad_579C[15392]) = 0; /*0x517f67*/
-        *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15388] + 8 * *(_DWORD *)&stru_B05488.__pad_579C[15392] + 4) = 0; /*0x517f77*/
-        *(_DWORD *)&stru_B05488.__pad_579C[15404] = 0; /*0x517f7b*/
+        *(_DWORD *)&stru_B05488[37820] = (char *)i - 1; /*0x517f62*/
+        *(_DWORD *)(*(_DWORD *)&stru_B05488[37816] + 8 * *(_DWORD *)&stru_B05488[37820]) = 0; /*0x517f67*/
+        *(_DWORD *)(*(_DWORD *)&stru_B05488[37816] + 8 * *(_DWORD *)&stru_B05488[37820] + 4) = 0; /*0x517f77*/
+        *(_DWORD *)&stru_B05488[37832] = 0; /*0x517f7b*/
       }
     }
   }

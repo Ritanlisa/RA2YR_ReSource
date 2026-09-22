@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x5236A0
 int InfantryTypeClass::Constructor(ObjectClass * aP1)
@@ -65,20 +71,20 @@ int __thiscall InfantryTypeClass::Constructor(int this, ObjectClass *aP1)
   this->vtable2 = &InfantryTypeClass::`vftable'; /*0x5237f4*/
   this->vtable3 = &vt_InfantryTypeClass; /*0x5237fb*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x523802*/
-  v3 = *(InfantryTypeClass **)&MEMORY[0xA8D63C].__pad_BC0[348]; /*0x523807*/
-  if ( *(int *)&MEMORY[0xA8D63C].__pad_BC0[348] < *(int *)&MEMORY[0xA8D63C].__pad_BC0[340] /*0x523845*/
-    || (MEMORY[0xA8D63C].__pad_BC0[345] || !*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[340])
-    && *(int *)&MEMORY[0xA8D63C].__pad_BC0[352] > 0
-    && (v4 = (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[332] + 8))(
-               &MEMORY[0xA8D63C].__pad_BC0[332],
-               *(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[340] + *(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[352],
+  v3 = *(InfantryTypeClass **)&g_NetworkPlayerBuffer[3356]; /*0x523807*/
+  if ( *(int *)&g_NetworkPlayerBuffer[3356] < *(int *)&g_NetworkPlayerBuffer[3348] /*0x523845*/
+    || (g_NetworkPlayerBuffer[3353] || !*(_DWORD *)&g_NetworkPlayerBuffer[3348])
+    && *(int *)&g_NetworkPlayerBuffer[3360] > 0
+    && (v4 = (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_NetworkPlayerBuffer[3340] + 8))(
+               &g_NetworkPlayerBuffer[3340],
+               *(_DWORD *)&g_NetworkPlayerBuffer[3348] + *(_DWORD *)&g_NetworkPlayerBuffer[3360],
                0) == 0,
-        v3 = *(InfantryTypeClass **)&MEMORY[0xA8D63C].__pad_BC0[348],
+        v3 = *(InfantryTypeClass **)&g_NetworkPlayerBuffer[3356],
         !v4) )
   {
-    *(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[348] = &v3->vtable0[1]; /*0x52384a*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[336] + 4 * (_DWORD)v3) = this; /*0x523854*/
-    v3 = *(InfantryTypeClass **)&MEMORY[0xA8D63C].__pad_BC0[348]; /*0x523857*/
+    *(_DWORD *)&g_NetworkPlayerBuffer[3356] = &v3->vtable0[1]; /*0x52384a*/
+    *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[3344] + 4 * (_DWORD)v3) = this; /*0x523854*/
+    v3 = *(InfantryTypeClass **)&g_NetworkPlayerBuffer[3356]; /*0x523857*/
   }
   v5 = 0; /*0x52385c*/
   if ( (int)v3 <= 0 ) /*0x523860*/
@@ -88,7 +94,7 @@ LABEL_11:
   }
   else
   {
-    v6 = *(CCINIClass **)&MEMORY[0xA8D63C].__pad_BC0[336]; /*0x523862*/
+    v6 = *(CCINIClass **)&g_NetworkPlayerBuffer[3344]; /*0x523862*/
     while ( *(_DWORD *)v6->__pad_0 != this ) /*0x52386a*/
     {
       ++v5; /*0x52386c*/
@@ -182,16 +188,16 @@ char __thiscall InfantryTypeClass::CreateInfantry(AbstractClass *this, __int16 *
       v12[0] = (*a2 << 8) + 128; /*0x523b93*/
       v12[1] = v6 + 128; /*0x523b9b*/
       v12[2] = 0; /*0x523bb1*/
-      v7 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v12); /*0x523bb9*/
+      v7 = Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v12); /*0x523bb9*/
       v8 = ObjectPlacement::CalcPosition(v7, a1, (IUnknown *)v12, 0, 0, 0); /*0x523bc0*/
       v13[0] = *v8; /*0x523bcf*/
       v9 = v8[1]; /*0x523bd5*/
       v13[1] = v9; /*0x523bd9*/
       v10 = v8[2]; /*0x523bdd*/
       v13[2] = v10; /*0x523be0*/
-      if ( v13[0] != *(_DWORD *)&HouseClass_Player.__pad_5568[24524] /*0x523bf4*/
-        || v9 != *(_DWORD *)&HouseClass_Player.__pad_5568[24528]
-        || v10 != *(_DWORD *)&HouseClass_Player.__pad_5568[24532] )
+      if ( v13[0] != *(_DWORD *)&HouseClass_Player[46388] /*0x523bf4*/
+        || v9 != *(_DWORD *)&HouseClass_Player[46392]
+        || v10 != *(_DWORD *)&HouseClass_Player[46396] )
       {
         return (*(char (__thiscall **)(InfantryClass *, _DWORD *, int))(*(_DWORD *)v5->__pad_0 + 216))(v5, v13, 64); /*0x523c0b*/
       }
@@ -268,7 +274,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   v5 = *(WeaponTypeClass **)(this + 3588); /*0x524102*/
   v48 = 128; /*0x52410c*/
   p_unknown30 = (CCINIClass *)&aP1.field_1C; /*0x524111*/
-  v46 = (CCINIClass *)&stru_87C374.__pad_579C[33876]; /*0x524112*/
+  v46 = (CCINIClass *)&stru_87C374[56304]; /*0x524112*/
   v45 = (VectorClass *)&unk_825A50; /*0x524117*/
   v44 = (INIClass *)(this + 36); /*0x52411c*/
   this->OccupyPip = PipIdx; /*0x52411f*/
@@ -282,7 +288,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
          a2,
          (INIClass *)(this + 36),
          &unk_825A3C,
-         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&stru_87C374[56304],
          (INIClass *)&aP1.field_1C,
          128) )
   {
@@ -320,7 +326,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
          a2,
          (INIClass *)(this + 36),
          &unk_825A20,
-         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&stru_87C374[56304],
          (INIClass *)&aP1.field_1C,
          128) )
   {
@@ -345,18 +351,18 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
     TypeList::AnimTypeCopy(&aP1, (VectorClass *)(this + 3664)); /*0x524294*/
   }
   VectorClass::CopyDefault((_DWORD *)(this + 3664), (VectorClass *)&aP1); /*0x5242a6*/
-  v12 = *(VectorClass **)aP1.__pad_14; /*0x5242af*/
-  v13 = *(_DWORD *)&aP1.__pad_14[4]; /*0x5242b3*/
+  v12 = *(VectorClass **)aP1[20]; /*0x5242af*/
+  v13 = *(_DWORD *)&aP1[24]; /*0x5242b3*/
   this->DeadBodies.Count = aP1.field_10; /*0x5242b7*/
   this->DeadBodies.CapacityIncrement = v12; /*0x5242ba*/
   this->DeadBodies.unknown_18 = v13; /*0x5242bd*/
-  *(_DWORD *)aP1.__pad_0 = &vt_VectorClass_AnimTypeClass_const; /*0x5242c9*/
+  *(_DWORD *)aP1[0] = &vt_VectorClass_AnimTypeClass_const; /*0x5242c9*/
   DynamicVectorClass::Destroy_Alt((int)&aP1); /*0x5242cd*/
   if ( INIClass::GetString( /*0x5242e9*/
          a2,
          (INIClass *)(this + 36),
          &unk_825A14,
-         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&stru_87C374[56304],
          (INIClass *)&aP1.field_1C,
          128) )
   {
@@ -381,8 +387,8 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
     TypeList::AnimTypeCopy(&aP1, (VectorClass *)(this + 3692)); /*0x52437a*/
   }
   InfantryTypeClass::CopyDataArray((_DWORD *)(this + 3692), &aP1); /*0x52438c*/
-  this->DeathAnims.unknown_18 = *(_DWORD *)&aP1.__pad_14[4]; /*0x524399*/
-  *(_DWORD *)aP1.__pad_0 = &vt_VectorClass_AnimTypeClass_const; /*0x52439c*/
+  this->DeathAnims.unknown_18 = *(_DWORD *)&aP1[24]; /*0x524399*/
+  *(_DWORD *)aP1[0] = &vt_VectorClass_AnimTypeClass_const; /*0x52439c*/
   DynamicVectorClass::Destroy_Alt((int)&aP1); /*0x5243a4*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5243b8*/
                      (int)a2,
@@ -401,7 +407,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
           a2,
           (INIClass *)(this + 36),
           &unk_8259F0,
-          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP1.field_1C,
           128)
     || (Index = VocClass::FindIndex(&aP1.field_1C), Index == -1) )
@@ -411,7 +417,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   v18 = this->LeaveWaterSound; /*0x524424*/
   v48 = 128; /*0x52442e*/
   p_unknown30 = (CCINIClass *)&aP1.field_1C; /*0x524433*/
-  v46 = (CCINIClass *)&stru_87C374.__pad_579C[33876]; /*0x524434*/
+  v46 = (CCINIClass *)&stru_87C374[56304]; /*0x524434*/
   v45 = (VectorClass *)&unk_8259E0; /*0x524439*/
   v44 = (INIClass *)(this + 36); /*0x52443e*/
   this->EnterWaterSound = Index; /*0x524441*/
@@ -511,28 +517,28 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   if ( this->Agent ) /*0x524690*/
     this->Infiltrate = 1; /*0x52469a*/
   v38 = INIClass::ReadBool_Overwrite( /*0x5246b9*/
-          (int)&stru_87C374.__pad_579C[22128],
+          (int)&stru_87C374[44556],
           (unsigned __int8 *)(this + 504),
           (CCINIClass *)&stru_8258AC.ambientSoundController[3],
           this->Crawls);
   v48 = this->FireUp; /*0x5246c9*/
-  p_unknown30 = (CCINIClass *)stru_8257B8.__pad_20; /*0x5246ca*/
+  p_unknown30 = (CCINIClass *)stru_8257B8[32]; /*0x5246ca*/
   v46 = (CCINIClass *)(this + 504); /*0x5246cf*/
   this->Crawls = v38; /*0x5246d0*/
   this->FireUp = INIClass::ReadInt_Overwrite( /*0x5246db*/
-                               (int)&stru_87C374.__pad_579C[22128],
+                               (int)&stru_87C374[44556],
                                (unsigned __int8 *)v46,
                                p_unknown30,
                                (INIClass *)v48);
   v39 = INIClass::ReadInt_Overwrite( /*0x5246f3*/
-          (int)&stru_87C374.__pad_579C[22128],
+          (int)&stru_87C374[44556],
           (unsigned __int8 *)(this + 504),
           &stru_8257B8,
           *(INIClass **)(this + 3652));
   v40 = *(CCINIClass **)(this + 3656); /*0x5246f8*/
   this->FireProne = v39; /*0x5246fe*/
   v41 = INIClass::ReadInt_Overwrite( /*0x524710*/
-          (int)&stru_87C374.__pad_579C[22128],
+          (int)&stru_87C374[44556],
           (unsigned __int8 *)(this + 504),
           (CCINIClass *)g_INI_Key_SecondaryProne.sectionHead,
           (INIClass *)v40);
@@ -541,7 +547,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   v46 = (CCINIClass *)(this + 504); /*0x524726*/
   this->SecondaryFire = v41; /*0x524727*/
   this->SecondaryProne = INIClass::ReadInt_Overwrite( /*0x524734*/
-                               (int)&stru_87C374.__pad_579C[22128],
+                               (int)&stru_87C374[44556],
                                (unsigned __int8 *)v46,
                                p_unknown30,
                                (INIClass *)v48);
@@ -792,7 +798,7 @@ WeaponTypeClass *__thiscall InfantryTypeClass::Find(ObjectClass *this)
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x772fbc*/
     return 0; /*0x77301f*/
   v2 = 0; /*0x772fcd*/
-  if ( *(int *)&stru_87C374.__pad_579C[23144] <= 0 ) /*0x772fd1*/
+  if ( *(int *)&stru_87C374[45572] <= 0 ) /*0x772fd1*/
   {
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x160u); /*0x772ff6*/
@@ -800,12 +806,12 @@ LABEL_6:
       return (WeaponTypeClass *)WeaponTypeClass::Constructor(v3, this); /*0x773011*/
     return 0; /*0x773005*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23132] + 4 * v2) + 36), this) ) /*0x772fea*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[45560] + 4 * v2) + 36), this) ) /*0x772fea*/
   {
-    if ( ++v2 >= *(int *)&stru_87C374.__pad_579C[23144] ) /*0x772ff4*/
+    if ( ++v2 >= *(int *)&stru_87C374[45572] ) /*0x772ff4*/
       goto LABEL_6; /*0x772ff4*/
   }
-  return *(WeaponTypeClass **)(*(_DWORD *)&stru_87C374.__pad_579C[23132] + 4 * v2); /*0x77300f*/
+  return *(WeaponTypeClass **)(*(_DWORD *)&stru_87C374[45560] + 4 * v2); /*0x77300f*/
 }
 }
 

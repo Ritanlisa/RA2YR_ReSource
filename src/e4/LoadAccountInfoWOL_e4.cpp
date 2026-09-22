@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_779690_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x779690
 namespace gamemd {

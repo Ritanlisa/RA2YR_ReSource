@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x679CC0
 namespace gamemd {
@@ -77,7 +79,7 @@ int __fastcall ReadINIClassBuildingTypeList(
   int v22; // [esp+20h] [ebp-88h]
   INIClass String[2]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString(edx0, (INIClass *)aP2, a3, (INIClass *)&stru_87C374.__pad_579C[33876], String, 128) ) /*0x67b57c*/
+  if ( INIClass::GetString(edx0, (INIClass *)aP2, a3, (INIClass *)&stru_87C374[56304], String, 128) ) /*0x67b57c*/
   {
     VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
     v22 = 10; /*0x67b59a*/
@@ -196,7 +198,7 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
   int v22; // [esp+20h] [ebp-88h]
   INIClass String[2]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString(edx0, aP1, a3, (INIClass *)&stru_87C374.__pad_579C[33876], String, 128) ) /*0x67bb3c*/
+  if ( INIClass::GetString(edx0, aP1, a3, (INIClass *)&stru_87C374[56304], String, 128) ) /*0x67bb3c*/
   {
     InfantryTypeVector::Construct2(&v17, 0, 0); /*0x67bb51*/
     v22 = 10; /*0x67bb5a*/
@@ -347,7 +349,7 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 {
 {
     INIClass Destination[2];
-    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374.__pad_579C[33876], Destination, 128) )
+    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374[56304], Destination, 128) )
     return KeywordType::FindOrCreate2((ObjectClass *)Destination);
     else
     return (InfantryTypeClass *)a4;
@@ -361,7 +363,7 @@ AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, uns
 {
 {
     INIClass Destination[2];
-    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374.__pad_579C[33876], Destination, 128) )
+    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374[56304], Destination, 128) )
     return KeywordClass::FindOrCreate((ObjectClass *)Destination);
     else
     return (AircraftTypeClass *)a4;

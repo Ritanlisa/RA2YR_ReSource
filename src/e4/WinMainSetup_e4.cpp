@@ -14,7 +14,7 @@ unsigned __int8 __usercall sub_6BB8E0@<al>(int a1@<esi>)
   result = g_DDraw_Force3D; /*0x6bb8e0*/
   if ( g_DDraw_Force3D ) /*0x6bb8ea*/
     result = DDraw::CleanupSurfaces(); /*0x6bb8ec*/
-  if ( !MEMORY[0xB0BCF5] ) /*0x6bb8f7*/
+  if ( !DataGlobal_B0BCF5 ) /*0x6bb8f7*/
   {
     if ( g_DSurface_Hidden ) /*0x6bb905*/
     {
@@ -47,7 +47,7 @@ unsigned __int8 __usercall sub_6BB8E0@<al>(int a1@<esi>)
       g_DSurface_Primary = 0; /*0x6bb97b*/
     }
     result = (unsigned __int8)sub_4A44F0(a1); /*0x6bb981*/
-    MEMORY[0xB0BCF5] = 1; /*0x6bb986*/
+    DataGlobal_B0BCF5 = 1; /*0x6bb986*/
   }
   return result; /*0x6bb98d*/
 }
@@ -67,61 +67,61 @@ void sub_72B130()
   void *v3; // esi
   void *v4; // esi
 
-  if ( MEMORY[0xB0FC90] ) /*0x72b13b*/
+  if ( DataGlobal_B0FC90 ) /*0x72b13b*/
   {
-    v0 = MEMORY[0xB0FC80]; /*0x72b13d*/
-    if ( MEMORY[0xB0FC80] ) /*0x72b145*/
+    v0 = DataGlobal_B0FC80; /*0x72b13d*/
+    if ( DataGlobal_B0FC80 ) /*0x72b145*/
     {
-      FileTreeNode::Destroy(MEMORY[0xB0FC80]); /*0x72b149*/
+      FileTreeNode::Destroy(DataGlobal_B0FC80); /*0x72b149*/
       __3_YAXPAX_Z(v0); /*0x72b14f*/
     }
-    MEMORY[0xB0FC90] = 0; /*0x72b157*/
+    DataGlobal_B0FC90 = 0; /*0x72b157*/
   }
-  MEMORY[0xB0FC80] = 0; /*0x72b162*/
-  if ( MEMORY[0xB0FC91] ) /*0x72b16a*/
+  DataGlobal_B0FC80 = 0; /*0x72b162*/
+  if ( DataGlobal_B0FC91 ) /*0x72b16a*/
   {
-    v1 = MEMORY[0xB0FC84]; /*0x72b16c*/
-    if ( MEMORY[0xB0FC84] ) /*0x72b174*/
+    v1 = DataGlobal_B0FC84; /*0x72b16c*/
+    if ( DataGlobal_B0FC84 ) /*0x72b174*/
     {
-      FileTreeNode::Destroy(MEMORY[0xB0FC84]); /*0x72b178*/
+      FileTreeNode::Destroy(DataGlobal_B0FC84); /*0x72b178*/
       __3_YAXPAX_Z(v1); /*0x72b17e*/
     }
-    MEMORY[0xB0FC91] = 0; /*0x72b186*/
+    DataGlobal_B0FC91 = 0; /*0x72b186*/
   }
-  MEMORY[0xB0FC84] = 0; /*0x72b191*/
-  if ( MEMORY[0xB0FC92] ) /*0x72b199*/
+  DataGlobal_B0FC84 = 0; /*0x72b191*/
+  if ( DataGlobal_B0FC92 ) /*0x72b199*/
   {
-    v2 = MEMORY[0xB0FC88]; /*0x72b19b*/
-    if ( MEMORY[0xB0FC88] ) /*0x72b1a3*/
+    v2 = DataGlobal_B0FC88; /*0x72b19b*/
+    if ( DataGlobal_B0FC88 ) /*0x72b1a3*/
     {
-      FileTreeNode::Destroy(MEMORY[0xB0FC88]); /*0x72b1a7*/
+      FileTreeNode::Destroy(DataGlobal_B0FC88); /*0x72b1a7*/
       __3_YAXPAX_Z(v2); /*0x72b1ad*/
     }
-    MEMORY[0xB0FC92] = 0; /*0x72b1b5*/
+    DataGlobal_B0FC92 = 0; /*0x72b1b5*/
   }
-  MEMORY[0xB0FC88] = 0; /*0x72b1c0*/
-  if ( MEMORY[0xB0FC93] ) /*0x72b1c8*/
+  DataGlobal_B0FC88 = 0; /*0x72b1c0*/
+  if ( DataGlobal_B0FC93 ) /*0x72b1c8*/
   {
-    v3 = MEMORY[0xB0FC8C]; /*0x72b1ca*/
-    if ( MEMORY[0xB0FC8C] ) /*0x72b1d2*/
+    v3 = DataGlobal_B0FC8C; /*0x72b1ca*/
+    if ( DataGlobal_B0FC8C ) /*0x72b1d2*/
     {
-      FileTreeNode::Destroy(MEMORY[0xB0FC8C]); /*0x72b1d6*/
+      FileTreeNode::Destroy(DataGlobal_B0FC8C); /*0x72b1d6*/
       __3_YAXPAX_Z(v3); /*0x72b1dc*/
     }
-    MEMORY[0xB0FC93] = 0; /*0x72b1e4*/
+    DataGlobal_B0FC93 = 0; /*0x72b1e4*/
   }
-  MEMORY[0xB0FC8C] = 0; /*0x72b1ef*/
-  if ( MEMORY[0xB0FC94] ) /*0x72b1f7*/
+  DataGlobal_B0FC8C = 0; /*0x72b1ef*/
+  if ( DataGlobal_B0FC94 ) /*0x72b1f7*/
   {
-    v4 = MEMORY[0xB0FACC]; /*0x72b1f9*/
-    if ( MEMORY[0xB0FACC] ) /*0x72b201*/
+    v4 = DataGlobal_B0FACC; /*0x72b1f9*/
+    if ( DataGlobal_B0FACC ) /*0x72b201*/
     {
-      FileTreeNode::Destroy(MEMORY[0xB0FACC]); /*0x72b205*/
+      FileTreeNode::Destroy(DataGlobal_B0FACC); /*0x72b205*/
       __3_YAXPAX_Z(v4); /*0x72b20b*/
     }
-    MEMORY[0xB0FC94] = 0; /*0x72b213*/
+    DataGlobal_B0FC94 = 0; /*0x72b213*/
   }
-  MEMORY[0xB0FACC] = 0; /*0x72b219*/
+  DataGlobal_B0FACC = 0; /*0x72b219*/
 }
 }
 } // namespace gamemd

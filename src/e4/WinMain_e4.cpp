@@ -38,6 +38,9 @@
 #include "e4/classes/E4Recv_6C31C0_e4.hpp"
 #include "e4/classes/E4Recv_6C3340_e4.hpp"
 #include "e4/classes/E4Recv_6C34C0_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/VectorClass_Wstring_e4.hpp"
 #include "e4/classes/E4Recv_6C3640_e4.hpp"
 #include "e4/classes/E4Recv_6C37C0_e4.hpp"
 #include "e4/classes/E4Recv_6C3940_e4.hpp"
@@ -322,34 +325,34 @@ char sub_5D7E50()
 
   for ( i = 0; ; ++i ) /*0x5d7e56*/
   {
-    result = MEMORY[0xABFD70]; /*0x5d7e62*/
-    if ( (MEMORY[0xABFD70] & 1) == 0 ) /*0x5d7e69*/
+    result = g_MultiplayerMode; /*0x5d7e62*/
+    if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d7e69*/
     {
-      MEMORY[0xABFDA4] = 0; /*0x5d7e75*/
-      MEMORY[0xABFD70] |= 1u; /*0x5d7e7b*/
-      MEMORY[0xABFDA8] = 0; /*0x5d7e81*/
-      MEMORY[0xABFDAC] = 1; /*0x5d7e87*/
-      MEMORY[0xABFDAD] = 0; /*0x5d7e8e*/
-      MEMORY[0xABFDA0] = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d7e94*/
-      MEMORY[0xABFDB4] = 10; /*0x5d7e9a*/
-      MEMORY[0xABFDB0] = 0; /*0x5d7ea0*/
+      Src = 0; /*0x5d7e75*/
+      g_MultiplayerMode |= 1u; /*0x5d7e7b*/
+      DataGlobal_ABFDA8 = 0; /*0x5d7e81*/
+      DataGlobal_ABFDAC = 1; /*0x5d7e87*/
+      DataGlobal_ABFDAD = 0; /*0x5d7e8e*/
+      g_MultiplayerModeConfig = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d7e94*/
+      DataGlobal_ABFDB4 = 10; /*0x5d7e9a*/
+      g_MultiplayerGameList = 0; /*0x5d7ea0*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d7ea6*/
     }
-    if ( i >= MEMORY[0xABFDB0] ) /*0x5d7eb4*/
+    if ( i >= g_MultiplayerGameList ) /*0x5d7eb4*/
       break; /*0x5d7eb4*/
-    if ( (MEMORY[0xABFD70] & 1) == 0 ) /*0x5d7ebd*/
+    if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d7ebd*/
     {
-      MEMORY[0xABFDA4] = 0; /*0x5d7ec9*/
-      MEMORY[0xABFD70] |= 1u; /*0x5d7ecf*/
-      MEMORY[0xABFDA8] = 0; /*0x5d7ed5*/
-      MEMORY[0xABFDAC] = 1; /*0x5d7edb*/
-      MEMORY[0xABFDAD] = 0; /*0x5d7ee2*/
-      MEMORY[0xABFDA0] = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d7ee8*/
-      MEMORY[0xABFDB4] = 10; /*0x5d7eee*/
-      MEMORY[0xABFDB0] = 0; /*0x5d7ef4*/
+      Src = 0; /*0x5d7ec9*/
+      g_MultiplayerMode |= 1u; /*0x5d7ecf*/
+      DataGlobal_ABFDA8 = 0; /*0x5d7ed5*/
+      DataGlobal_ABFDAC = 1; /*0x5d7edb*/
+      DataGlobal_ABFDAD = 0; /*0x5d7ee2*/
+      g_MultiplayerModeConfig = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d7ee8*/
+      DataGlobal_ABFDB4 = 10; /*0x5d7eee*/
+      g_MultiplayerGameList = 0; /*0x5d7ef4*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7efa*/
     }
-    v2 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)MEMORY[0xABFDA4] + i); /*0x5d7f07*/
+    v2 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)Src + i); /*0x5d7f07*/
     if ( v2 ) /*0x5d7f0c*/
       (**v2)(v2, 1); /*0x5d7f12*/
   }

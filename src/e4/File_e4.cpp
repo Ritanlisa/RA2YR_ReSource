@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/File_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/Voxel_e4.hpp"
 
 // 0x431F10
 namespace gamemd {
@@ -496,13 +498,13 @@ LABEL_42:
           v7 = Size; /*0x734b00*/
           if ( Size ) /*0x734b06*/
           {
-            CCFileClass::Read(v23, MEMORY[0xB17F24], 2 * Size); /*0x734b15*/
+            CCFileClass::Read(v23, DataGlobal_B17F24, 2 * Size); /*0x734b15*/
             v7 = Size; /*0x734b1a*/
           }
-          MEMORY[0xB17F24][v7] = 0; /*0x734b1e*/
-          v8 = *(_DWORD *)MEMORY[0xB17F24]; /*0x734b26*/
-          v9 = MEMORY[0xB17F24]; /*0x734b2e*/
-          if ( MEMORY[0xB17F24][0] ) /*0x734b33*/
+          DataGlobal_B17F24[v7] = 0; /*0x734b1e*/
+          v8 = *(_DWORD *)DataGlobal_B17F24; /*0x734b26*/
+          v9 = DataGlobal_B17F24; /*0x734b2e*/
+          if ( DataGlobal_B17F24[0] ) /*0x734b33*/
           {
             do /*0x734b44*/
             {
@@ -512,12 +514,12 @@ LABEL_42:
               ++v9; /*0x734b3e*/
             }
             while ( (_WORD)v8 ); /*0x734b44*/
-            LOWORD(v8) = MEMORY[0xB17F24][0]; /*0x734b46*/
+            LOWORD(v8) = DataGlobal_B17F24[0]; /*0x734b46*/
           }
           v10 = 0; /*0x734b4b*/
           v11 = 1; /*0x734b50*/
-          v12 = MEMORY[0xB17F24]; /*0x734b55*/
-          v13 = MEMORY[0xB17F24] + 2; /*0x734b5a*/
+          v12 = DataGlobal_B17F24; /*0x734b55*/
+          v13 = DataGlobal_B17F24 + 2; /*0x734b5a*/
           if ( (_WORD)v8 ) /*0x734b5f*/
           {
             while ( 1 ) /*0x734b61*/
@@ -551,9 +553,9 @@ LABEL_31:
             }
           }
           *v12 = 0; /*0x734bb4*/
-          v14 = wcslen(MEMORY[0xB17F24]); /*0x734bbc*/
+          v14 = wcslen(DataGlobal_B17F24); /*0x734bbc*/
           *(_DWORD *)((char *)unk_B1CF78 + v6) = __2_YAPAXI_Z(2 * v14 + 2); /*0x734bd6*/
-          wcscpy(*(wchar_t **)((char *)unk_B1CF78 + v6), MEMORY[0xB17F24]); /*0x734be3*/
+          wcscpy(*(wchar_t **)((char *)unk_B1CF78 + v6), DataGlobal_B17F24); /*0x734be3*/
           if ( v18 == 1398035031 ) /*0x734bf4*/
           {
             CCFileClass::Read(v23, &Size, 4); /*0x734c01*/

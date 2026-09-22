@@ -27,6 +27,20 @@
 #include "e4/classes/E4Recv_76DFD0_e4.hpp"
 #include "e4/classes/E4Recv_76E090_e4.hpp"
 #include "e4/classes/WorldDominationTour__Territory_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/BufferIOFile_e4.hpp"
+#include "e4/classes/Conflict_WorldDominationTour_12_e4.hpp"
+#include "e4/classes/Conflict_WorldDominationTour_26_e4.hpp"
+#include "e4/classes/File_e4.hpp"
+#include "e4/classes/MSEngine_e4.hpp"
+#include "e4/classes/Map_WorldDominationTour_38_e4.hpp"
+#include "e4/classes/Map_WorldDominationTour_43_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Session_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x7636F0
 namespace gamemd {
@@ -240,7 +254,7 @@ char *__thiscall sub_765000(int this, ScoreScreen *aP1)
 
   this->M48 = WDTObject::GetSize(*(_DWORD **)(this + 12)); /*0x76501b*/
   *(_DWORD *)(this + 4 * (_DWORD)aP1 + 52) = Conflict::GetOwnerHouse(*(_DWORD **)(this + 12)); /*0x76502c*/
-  *(_DWORD *)&aP2.__pad_0[12] = 0; /*0x765030*/
+  *(_DWORD *)&aP2[12] = 0; /*0x765030*/
   aP2.uniqueId = 0; /*0x765034*/
   GenericNode::Constructor(&aP2.nextArrayIndex); /*0x765038*/
   GenericNode::Constructor(&aP2.objectTypeFlags); /*0x765041*/
@@ -249,7 +263,7 @@ char *__thiscall sub_765000(int this, ScoreScreen *aP1)
   memset(&aP2.nextObject, 0, 13); /*0x765068*/
   aP2.ambientSoundController[1] = 0; /*0x765078*/
   aP2.ambientSoundController[2] = 0; /*0x76507c*/
-  *(_DWORD *)&aP2.__pad_0[8] = &vt_INIClass; /*0x765080*/
+  *(_DWORD *)&aP2[8] = &vt_INIClass; /*0x765080*/
   BufferIOFile::Init(&aP2.ambientSoundController[3]); /*0x765088*/
   CCFileClass::Reopen(&aP2.ambientSoundController[3], g_Str_File_WDTHist_ini, (CDFileClass *)1); /*0x765098*/
   if ( !File::IsReady(&aP2.ambientSoundController[3], 0) ) /*0x7650a2*/
@@ -258,30 +272,30 @@ char *__thiscall sub_765000(int this, ScoreScreen *aP1)
     CCFileClass::Close(&aP2.ambientSoundController[3]); /*0x7650b8*/
     CCFileClass::Reopen(&aP2.ambientSoundController[3], g_Str_File_WDTHist_ini, (CDFileClass *)1); /*0x7650c8*/
   }
-  FileStraw::Open(&aP2.__pad_0[8], (int)&aP2.ambientSoundController[3], 0); /*0x7650d7*/
+  FileStraw::Open(&aP2[8], (int)&aP2.ambientSoundController[3], 0); /*0x7650d7*/
   CCFileClass::Close(&aP2.ambientSoundController[3]); /*0x7650e0*/
   aP2.ambientSoundController[3] = (int)&off_7E1668; /*0x7650e9*/
   BufferIOFileClass::Dtor(&aP2.ambientSoundController[3]); /*0x7650f1*/
   RegionStringWOL = (char **)GetRegionStringWOL(aP1); /*0x765101*/
   v3 = String::Assign((char **)&aP2, g_INI_Key_LastDay); /*0x76510c*/
-  String::Concat((const char **)v3, (char **)&aP2.__pad_0[4], RegionStringWOL); /*0x765113*/
+  String::Concat((const char **)v3, (char **)&aP2[4], RegionStringWOL); /*0x765113*/
   DeleteAndZero((void **)&aP2); /*0x76511c*/
   String::Assign((char **)&aP2, g_INI_Key_CampaignID); /*0x76512a*/
-  INIClass::SetIntFormat(&aP2.__pad_0[8], (char **)(this + 72), &aP2, this->M48, 0); /*0x765141*/
+  INIClass::SetIntFormat(&aP2[8], (char **)(this + 72), &aP2, this->M48, 0); /*0x765141*/
   DeleteAndZero((void **)&aP2); /*0x76514a*/
   INIClass::SetIntFormat( /*0x76515f*/
-    &aP2.__pad_0[8],
+    &aP2[8],
     (char **)(this + 72),
-    (ObjectClass *)&aP2.__pad_0[4],
+    (ObjectClass *)&aP2[4],
     *(_DWORD *)(this + 4 * (_DWORD)aP1 + 52),
     0);
   BufferIOFile::Init(&aP2.location[1]); /*0x76516b*/
   CCFileClass::Reopen(&aP2.location[1], g_Str_File_WDTHist_ini, (CDFileClass *)2); /*0x76517e*/
-  INIClass::SaveToPipe(&aP2.__pad_0[8], (int)&aP2.location[1]); /*0x76518f*/
+  INIClass::SaveToPipe(&aP2[8], (int)&aP2.location[1]); /*0x76518f*/
   aP2.location[1] = (int)&off_7E1668; /*0x76519b*/
   BufferIOFileClass::Dtor(&aP2.location[1]); /*0x7651a6*/
-  DeleteAndZero((void **)&aP2.__pad_0[4]); /*0x7651af*/
-  return HashTable::DestroyHashTableINIClass((void **)&aP2.__pad_0[8]); /*0x7651bd*/
+  DeleteAndZero((void **)&aP2[4]); /*0x7651af*/
+  return HashTable::DestroyHashTableINIClass((void **)&aP2[8]); /*0x7651bd*/
 }
 }
 } // namespace gamemd
@@ -299,7 +313,7 @@ char *__thiscall sub_7651D0(char **this)
   ObjectClass *RegionStringWOL; // [esp-4h] [ebp-108h]
   ObjectClass aP2; // [esp+Ch] [ebp-F8h] BYREF
 
-  *(_DWORD *)&aP2.__pad_0[12] = 0; /*0x7651e1*/
+  *(_DWORD *)&aP2[12] = 0; /*0x7651e1*/
   aP2.uniqueId = 0; /*0x7651e5*/
   GenericNode::Constructor(&aP2.nextArrayIndex); /*0x7651e9*/
   GenericNode::Constructor(&aP2.objectTypeFlags); /*0x7651f2*/
@@ -308,7 +322,7 @@ char *__thiscall sub_7651D0(char **this)
   memset(&aP2.nextObject, 0, 13); /*0x765219*/
   aP2.ambientSoundController[1] = 0; /*0x765229*/
   aP2.ambientSoundController[2] = 0; /*0x76522d*/
-  *(_DWORD *)&aP2.__pad_0[8] = &vt_INIClass; /*0x765231*/
+  *(_DWORD *)&aP2[8] = &vt_INIClass; /*0x765231*/
   BufferIOFile::Init(&aP2.ambientSoundController[3]); /*0x765239*/
   CCFileClass::Reopen(&aP2.ambientSoundController[3], g_Str_File_WDTHist_ini, (CDFileClass *)1); /*0x765249*/
   if ( !File::IsReady(&aP2.ambientSoundController[3], 0) ) /*0x765253*/
@@ -317,29 +331,29 @@ char *__thiscall sub_7651D0(char **this)
     CCFileClass::Close(&aP2.ambientSoundController[3]); /*0x765269*/
     CCFileClass::Reopen(&aP2.ambientSoundController[3], g_Str_File_WDTHist_ini, (CDFileClass *)1); /*0x765279*/
   }
-  FileStraw::Open(&aP2.__pad_0[8], (int)&aP2.ambientSoundController[3], 0); /*0x765288*/
+  FileStraw::Open(&aP2[8], (int)&aP2.ambientSoundController[3], 0); /*0x765288*/
   CCFileClass::Close(&aP2.ambientSoundController[3]); /*0x765291*/
   aP2.ambientSoundController[3] = (int)&off_7E1668; /*0x76529a*/
   BufferIOFileClass::Dtor(&aP2.ambientSoundController[3]); /*0x7652a2*/
   String::Assign((char **)&aP2, g_INI_Key_CampaignID); /*0x7652b0*/
   v2 = this + 18; /*0x7652ba*/
-  INIClass::SetIntFormat(&aP2.__pad_0[8], this + 18, &aP2, 0, 0); /*0x7652c4*/
+  INIClass::SetIntFormat(&aP2[8], this + 18, &aP2, 0, 0); /*0x7652c4*/
   DeleteAndZero((void **)&aP2); /*0x7652cd*/
   for ( i = 0; i < 4; ++i ) /*0x7652d2*/
   {
     RegionStringWOL = (ObjectClass *)GetRegionStringWOL((void *)i); /*0x7652db*/
-    v4 = String::Assign((char **)&aP2.__pad_0[4], g_INI_Key_LastDay); /*0x7652ea*/
+    v4 = String::Assign((char **)&aP2[4], g_INI_Key_LastDay); /*0x7652ea*/
     String::Concat((const char **)v4, (char **)&aP2, (char **)RegionStringWOL); /*0x7652f1*/
-    DeleteAndZero((void **)&aP2.__pad_0[4]); /*0x7652fa*/
-    INIClass::SetIntFormat(&aP2.__pad_0[8], v2, &aP2, 0, 0); /*0x76530b*/
+    DeleteAndZero((void **)&aP2[4]); /*0x7652fa*/
+    INIClass::SetIntFormat(&aP2[8], v2, &aP2, 0, 0); /*0x76530b*/
     DeleteAndZero((void **)&aP2); /*0x765314*/
   }
   BufferIOFile::Init(&aP2.location[1]); /*0x765326*/
   CCFileClass::Reopen(&aP2.location[1], g_Str_File_WDTHist_ini, (CDFileClass *)2); /*0x765339*/
-  INIClass::SaveToPipe(&aP2.__pad_0[8], (int)&aP2.location[1]); /*0x76534a*/
+  INIClass::SaveToPipe(&aP2[8], (int)&aP2.location[1]); /*0x76534a*/
   aP2.location[1] = (int)&off_7E1668; /*0x765356*/
   BufferIOFileClass::Dtor(&aP2.location[1]); /*0x765361*/
-  return HashTable::DestroyHashTableINIClass((void **)&aP2.__pad_0[8]); /*0x76536f*/
+  return HashTable::DestroyHashTableINIClass((void **)&aP2[8]); /*0x76536f*/
 }
 }
 } // namespace gamemd
@@ -663,7 +677,7 @@ int __fastcall WDTMap_LoadAsset(const char **a1, int a2)
 
   v73 = a1; /*0x769558*/
   BufferIOFile::Init(v77); /*0x769567*/
-  CCFileClass::Reopen(v77, MEMORY[0x848BE4], 1); /*0x76957a*/
+  CCFileClass::Reopen(v77, DataGlobal_848BE4, 1); /*0x76957a*/
   v74[1] = 0; /*0x769588*/
   v74[2] = 0; /*0x76958c*/
   GenericList::Constructor(&v75); /*0x769593*/
@@ -923,7 +937,7 @@ LABEL_68:
       v43 = FormatStringInt((char **)&v69, v41, 2); /*0x769a6a*/
       ConcatStringAlloc((char **)&v59, v73, v43); /*0x769a78*/
       DeleteAndZero(&v69); /*0x769a81*/
-      FromStringInt((char **)&v63, MEMORY[0x8A00A4]); /*0x769a90*/
+      FromStringInt((char **)&v63, g_DDraw_Active); /*0x769a90*/
       v44 = (_DWORD *)Map_Load_7694C0(&v66); /*0x769aa0*/
       v45 = v44[1]; /*0x769aa9*/
       v70[0] = *v44; /*0x769aac*/
@@ -941,7 +955,7 @@ LABEL_68:
     }
     while ( ((unsigned __int8 (__thiscall *)(void ***))v60[1])(&v60) ); /*0x769b22*/
   }
-  CCFileClass::Reopen(v77, MEMORY[0x848BE4], 2); /*0x769b3b*/
+  CCFileClass::Reopen(v77, DataGlobal_848BE4, 2); /*0x769b3b*/
   INIClass::SaveToPipe(v74, (int)v77); /*0x769b4c*/
   CCFileClass::Reopen(v77, aCodeWdtmapmdIn, 2); /*0x769b5f*/
   INIClass::SaveToPipe(v74, (int)v77); /*0x769b70*/
@@ -1088,7 +1102,7 @@ char *__thiscall WorldDominationTour::Territory::Constructor(
   *(_DWORD *)this = &vt_WorldDominationTour_Territory; /*0x76f9d0*/
   v10 = FormatStringInt((INIClass *)v35, v6, (ObjectClass *)2); /*0x76f9d6*/
   v11 = ConcatStringAlloc((ObjectClass *)&v34, a4, v10); /*0x76f9e4*/
-  v12 = String::Concat2((const char **)v11, (char **)&v33, &stru_849174.__pad_20[4]); /*0x76f9eb*/
+  v12 = String::Concat2((const char **)v11, (char **)&v33, &stru_849174[36]); /*0x76f9eb*/
   String::Reassign((char **)this + 8, (AbstractClass *)v12); /*0x76f9f4*/
   DeleteAndZero((int)&v33); /*0x76f9fd*/
   DeleteAndZero((int)&v34); /*0x76fa06*/
@@ -1099,7 +1113,7 @@ char *__thiscall WorldDominationTour::Territory::Constructor(
   v14 = String::GetOrEmpty((char **)&v32); /*0x76fa43*/
   StringCSF = GetStringCSF((wchar_t *)v14, 0, (CampaignScore *)&stru_849174.headNode[1], 39); /*0x76fa4c*/
   WideString::Assign_Alt((void **)this + 3, StringCSF); /*0x76fa55*/
-  FromStringInt((IUnknown *)&aP1, *(int *)&stru_89E138.__pad_14B0[2748]); /*0x76fa64*/
+  FromStringInt((IUnknown *)&aP1, *(int *)&stru_89E138[8044]); /*0x76fa64*/
   v16 = ProcessStringAndCopy((AbstractClass *)&a4, &stru_848BDC, (char **)&aP1); /*0x76fa78*/
   v17 = (ObjectClass *)aP3; /*0x76fa7d*/
   CoordPair = INIClass::GetCoordPair(a2, (CCINIClass *)v35, (ObjectClass *)aP3, v16, (CCINIClass *)(this + 16)); /*0x76fa8c*/
@@ -1115,7 +1129,7 @@ char *__thiscall WorldDominationTour::Territory::Constructor(
   *((_DWORD *)this + 6) = v23; /*0x76facd*/
   *((_DWORD *)this + 7) = v24; /*0x76fad3*/
   DeleteAndZero((int)&a4); /*0x76fad6*/
-  if ( *(int *)&stru_89E138.__pad_14B0[2748] > 800 ) /*0x76fae5*/
+  if ( *(int *)&stru_89E138[8044] > 800 ) /*0x76fae5*/
   {
     if ( !*(_DWORD *)v8->__pad_0 && !*((_DWORD *)this + 5) ) /*0x76faf0*/
     {

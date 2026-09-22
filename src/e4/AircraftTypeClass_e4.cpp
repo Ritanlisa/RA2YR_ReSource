@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x41C8B0
 int AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
@@ -28,20 +31,20 @@ int __thiscall AircraftTypeClass::AircraftTypeClass(int this, ObjectClass *aP1)
   this->vtable2 = &AircraftTypeClass::`vftable'; /*0x41c90c*/
   this->vtable3 = &vt_AircraftTypeClass; /*0x41c913*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x41c91a*/
-  v3 = MEMORY[0xA8B228]; /*0x41c91f*/
-  if ( (int)MEMORY[0xA8B228] < MEMORY[0xA8B220] /*0x41c95d*/
-    || (MEMORY[0xA8B225] || !MEMORY[0xA8B220])
-    && MEMORY[0xA8B22C] > 0
-    && (v4 = ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))MEMORY[0xA8B218]->field_8)(
-               &MEMORY[0xA8B218],
-               MEMORY[0xA8B220] + MEMORY[0xA8B22C],
+  v3 = g_TypeClass_FindCache; /*0x41c91f*/
+  if ( (int)g_TypeClass_FindCache < DataGlobal_A8B220 /*0x41c95d*/
+    || (DataGlobal_A8B225 || !DataGlobal_A8B220)
+    && DataGlobal_A8B22C > 0
+    && (v4 = ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))AircraftTypeClass_Array->field_8)(
+               &AircraftTypeClass_Array,
+               DataGlobal_A8B220 + DataGlobal_A8B22C,
                0) == 0,
-        v3 = MEMORY[0xA8B228],
+        v3 = g_TypeClass_FindCache,
         !v4) )
   {
-    MEMORY[0xA8B228] = (AircraftTypeClass *)&v3->vtable0[1]; /*0x41c962*/
-    *(_DWORD *)&MEMORY[0xA8B21C]->__pad_0[4 * (_DWORD)v3] = this; /*0x41c96c*/
-    v3 = MEMORY[0xA8B228]; /*0x41c96f*/
+    g_TypeClass_FindCache = (AircraftTypeClass *)&v3->vtable0[1]; /*0x41c962*/
+    *(_DWORD *)&g_AircraftTypeCount->__pad_0[4 * (_DWORD)v3] = this; /*0x41c96c*/
+    v3 = g_TypeClass_FindCache; /*0x41c96f*/
   }
   v5 = 0; /*0x41c974*/
   if ( (int)v3 <= 0 ) /*0x41c978*/
@@ -51,7 +54,7 @@ LABEL_11:
   }
   else
   {
-    v6 = MEMORY[0xA8B21C]; /*0x41c97a*/
+    v6 = g_AircraftTypeCount; /*0x41c97a*/
     while ( *(_DWORD *)v6->__pad_0 != this ) /*0x41c982*/
     {
       ++v5; /*0x41c984*/
@@ -117,7 +120,7 @@ char __userpurge AircraftTypeClass::vt_25_@<al>(int a1@<ecx>, double a2@<st0>, u
   *(_BYTE *)(a1 + 3593) = INIClass::ReadBool_Overwrite(a1 + 504, unk_818014, v15); /*0x41ccf9*/
   v17 = *(_DWORD *)(a1 + 3584); /*0x41cd15*/
   if ( INIClass::GetString( /*0x41cd19*/
-         (unsigned __int8 ***)&MEMORY[0x887180],
+         (unsigned __int8 ***)&DataGlobal_887180,
          (unsigned __int8 *)(a1 + 504),
          (unsigned __int8 *)unk_81800C,
          &g_INI_DefaultBuffer,
@@ -245,7 +248,7 @@ int AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AircraftTypeClass;
     *(int *)&aP0->__pad_0[12] = &vt_AircraftTypeClass;
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[5].ChargerBarrels[6]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[5].ChargerBarrels[6]);
     VoxelAnimType::LoadAnim(aP0->__pad_0);
     ObjectTypeClass::Load2DArt(aP0->__pad_0);
     return 0;

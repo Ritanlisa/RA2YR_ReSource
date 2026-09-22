@@ -2,6 +2,13 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/FoggedObjectClass_42_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/FoggedObject_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x4D0980
 int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
@@ -41,7 +48,7 @@ int __thiscall FoggedObjectClass::InitBuildingFog(int this, _DWORD *a2, int a3, 
   this->q034 = *a2; /*0x4d09b4*/
   this->q038 = a2[1]; /*0x4d09b9*/
   this->q03C = a2[2]; /*0x4d09c4*/
-  this->q050 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], a2) + 283); /*0x4d09da*/
+  this->q050 = *((char *)Coord::To_Cell(&DataGlobal_87F7E8, a2) + 283); /*0x4d09da*/
   this->q054 = -1; /*0x4d09dd*/
   this->q058 = 0; /*0x4d09e4*/
   FoggedObject::DrawVector_Constructor((_DWORD *)(this + 92), 0, 0); /*0x4d09e7*/
@@ -53,7 +60,7 @@ int __thiscall FoggedObjectClass::InitBuildingFog(int this, _DWORD *a2, int a3, 
   this->vtable1 = &FoggedObjectClass::`vftable'; /*0x4d0a0c*/
   this->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d0a13*/
   this->vtable3 = &vt_FoggedObjectClass; /*0x4d0a1a*/
-  v5 = Coord::To_Cell(&MEMORY[0x87F7E8], a2); /*0x4d0a2a*/
+  v5 = Coord::To_Cell(&DataGlobal_87F7E8, a2); /*0x4d0a2a*/
   PlacementRectBuildingClass = BuildingClass::GetPlacementRect((int)v5, v25); /*0x4d0a3b*/
   StartCoordsHouse = House::GetStartCoords((int)v5, v26); /*0x4d0a3d*/
   if ( StartCoordsHouse[2] <= 0 || StartCoordsHouse[3] <= 0 ) /*0x4d0a4e*/
@@ -113,33 +120,33 @@ int __thiscall FoggedObjectClass::InitBuildingFog(int this, _DWORD *a2, int a3, 
   v18 = this->q044 - g_Map_VisibleRect; /*0x4d0b33*/
   this->q040 -= DSurface_ViewBounds; /*0x4d0b35*/
   this->q044 = v18; /*0x4d0b37*/
-  if ( MEMORY[0x8B3D20] < MEMORY[0x8B3D18] /*0x4d0b6f*/
-    || (MEMORY[0x8B3D1D] || !MEMORY[0x8B3D18])
-    && MEMORY[0x8B3D24] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0x8B3D10] + 8))(
-         &MEMORY[0x8B3D10],
-         MEMORY[0x8B3D24] + MEMORY[0x8B3D18],
+  if ( g_FootClassConfig < DataGlobal_8B3D18 /*0x4d0b6f*/
+    || (DataGlobal_8B3D1D || !DataGlobal_8B3D18)
+    && DataGlobal_8B3D24 > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_8B3D10 + 8))(
+         &DataGlobal_8B3D10,
+         DataGlobal_8B3D24 + DataGlobal_8B3D18,
          0) )
   {
-    v19 = MEMORY[0x8B3D20]++; /*0x4d0b7c*/
-    *((_DWORD *)MEMORY[0x8B3D14] + v19) = this; /*0x4d0b8b*/
+    v19 = g_FootClassConfig++; /*0x4d0b7c*/
+    *((_DWORD *)DataGlobal_8B3D14 + v19) = this; /*0x4d0b8b*/
   }
   v20 = (__int16)(this->q034 / 256); /*0x4d0bb4*/
-  v21 = MEMORY[0x8B3CC8]; /*0x4d0bcd*/
+  v21 = DataGlobal_8B3CC8; /*0x4d0bcd*/
   v22 = 74 * ((__int16)(this->q038 / 256) - ((v20 + (__int16)(this->q038 / 256)) << 9) - v20) /*0x4d0bd6*/
       - this->q030
       + 0x7FFFFFFF;
-  if ( (int)(MEMORY[0x8B3CC4] + 1) <= MEMORY[0x8B3CC8] ) /*0x4d0bdf*/
+  if ( (int)(g_MissionState + 1) <= DataGlobal_8B3CC8 ) /*0x4d0bdf*/
     goto LABEL_27; /*0x4d0bdf*/
-  if ( !MEMORY[0x8B3CC8] ) /*0x4d0be3*/
+  if ( !DataGlobal_8B3CC8 ) /*0x4d0be3*/
     v21 = 10; /*0x4d0be5*/
-  if ( Vector::ReallocDynamic((int)&MEMORY[0x8B3CC0], v21) ) /*0x4d0bf0*/
+  if ( Vector::ReallocDynamic((int)&g_MissionPool, v21) ) /*0x4d0bf0*/
   {
 LABEL_27:
-    *((_DWORD *)MEMORY[0x8B3CC0] + 2 * MEMORY[0x8B3CC4]) = v22; /*0x4d0c04*/
-    *((_DWORD *)MEMORY[0x8B3CC0] + 2 * MEMORY[0x8B3CC4] + 1) = this; /*0x4d0c12*/
-    MEMORY[0x8B3CCC] = 0; /*0x4d0c1c*/
-    ++MEMORY[0x8B3CC4]; /*0x4d0c23*/
+    *((_DWORD *)g_MissionPool + 2 * g_MissionState) = v22; /*0x4d0c04*/
+    *((_DWORD *)g_MissionPool + 2 * g_MissionState + 1) = this; /*0x4d0c12*/
+    DataGlobal_8B3CCC = 0; /*0x4d0c1c*/
+    ++g_MissionState; /*0x4d0c23*/
   }
   return this; /*0x4d0c2a*/
 }
@@ -177,7 +184,7 @@ FoggedObjectClass *__thiscall FoggedObjectClass::InitTerrainFog(int this, IUnkno
   this->House = 0; /*0x4d0c61*/
   this->Cell = 0; /*0x4d0c64*/
   this->q030 = 29; /*0x4d0c67*/
-  v5 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], aP1) + 283); /*0x4d0c73*/
+  v5 = *((char *)Coord::To_Cell(&DataGlobal_87F7E8, aP1) + 283); /*0x4d0c73*/
   this->q054 = a3; /*0x4d0c85*/
   this->q050 = v5; /*0x4d0c8c*/
   this->q058 = a4; /*0x4d0c8f*/
@@ -190,18 +197,18 @@ FoggedObjectClass *__thiscall FoggedObjectClass::InitTerrainFog(int this, IUnkno
   this->vtable1 = &FoggedObjectClass::`vftable'; /*0x4d0cb8*/
   this->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d0cbf*/
   this->vtable3 = &vt_FoggedObjectClass; /*0x4d0cc6*/
-  v6 = (char *)Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x4d0ccd*/
+  v6 = (char *)Coord::To_Cell(&DataGlobal_87F7E8, aP1); /*0x4d0ccd*/
   v7 = aP1->field_4; /*0x4d0cd4*/
   v8 = aP1->field_8; /*0x4d0cd7*/
   a1[0] = aP1->field_0; /*0x4d0cda*/
   a1[1] = v7; /*0x4d0cde*/
   v24 = v8; /*0x4d0ce2*/
-  v9 = *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61244] * v6[283]; /*0x4d0ced*/
+  v9 = *(_DWORD *)&g_CellDirectionOffsets[83672] * v6[283]; /*0x4d0ced*/
   v24 = v9; /*0x4d0cf7*/
   this->q034 = a1[0]; /*0x4d0cfd*/
   this->q038 = v7; /*0x4d0d03*/
   this->q03C = v9; /*0x4d0d06*/
-  Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], a1, (IUnknown *)&v21); /*0x4d0d15*/
+  Coord::To_Screen(*(_DWORD **)&DataGlobal_87F8E4[31296], a1, (IUnknown *)&v21); /*0x4d0d15*/
   v10 = v21 - 30; /*0x4d0d25*/
   v22 -= 15; /*0x4d0d32*/
   v11 = v22; /*0x4d0d2a*/
@@ -213,18 +220,18 @@ FoggedObjectClass *__thiscall FoggedObjectClass::InitTerrainFog(int this, IUnkno
   this->q048 = 60; /*0x4d0d4b*/
   this->q04C = v12; /*0x4d0d4e*/
   v13 = this->q044; /*0x4d0d61*/
-  this->q040 += *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 176); /*0x4d0d64*/
-  this->q044 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9432] + 180) + v13; /*0x4d0d73*/
-  if ( *(int *)&MEMORY[0x89F690].__pad_579C[61172] < *(int *)&MEMORY[0x89F690].__pad_579C[61164] /*0x4d0dab*/
-    || (MEMORY[0x89F690].__pad_579C[61169] || !*(_DWORD *)&MEMORY[0x89F690].__pad_579C[61164])
-    && *(int *)&MEMORY[0x89F690].__pad_579C[61176] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[61156] + 8))(
-         &MEMORY[0x89F690].__pad_579C[61156],
-         *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61164] + *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61176],
+  this->q040 += *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 176); /*0x4d0d64*/
+  this->q044 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 180) + v13; /*0x4d0d73*/
+  if ( *(int *)&g_CellDirectionOffsets[83600] < *(int *)&g_CellDirectionOffsets[83592] /*0x4d0dab*/
+    || (g_CellDirectionOffsets[83597] || !*(_DWORD *)&g_CellDirectionOffsets[83592])
+    && *(int *)&g_CellDirectionOffsets[83604] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_CellDirectionOffsets[83584] + 8))(
+         &g_CellDirectionOffsets[83584],
+         *(_DWORD *)&g_CellDirectionOffsets[83592] + *(_DWORD *)&g_CellDirectionOffsets[83604],
          0) )
   {
-    v14 = (*(_DWORD *)&MEMORY[0x89F690].__pad_579C[61172])++; /*0x4d0db8*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[61160] + 4 * v14) = this; /*0x4d0dc7*/
+    v14 = (*(_DWORD *)&g_CellDirectionOffsets[83600])++; /*0x4d0db8*/
+    *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[83588] + 4 * v14) = this; /*0x4d0dc7*/
   }
   v15 = 74 /*0x4d0e11*/
       * ((__int16)(this->q038 / 256)
@@ -232,35 +239,35 @@ FoggedObjectClass *__thiscall FoggedObjectClass::InitTerrainFog(int this, IUnkno
        - (__int16)(this->q034 / 256))
       - this->q030
       + 0x7FFFFFFF;
-  if ( *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61080] + 1 <= *(int *)&MEMORY[0x89F690].__pad_579C[61084] ) /*0x4d0e1a*/
+  if ( *(_DWORD *)&g_CellDirectionOffsets[83508] + 1 <= *(int *)&g_CellDirectionOffsets[83512] ) /*0x4d0e1a*/
     goto LABEL_15; /*0x4d0e1a*/
-  if ( *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61084] ) /*0x4d0e22*/
+  if ( *(_DWORD *)&g_CellDirectionOffsets[83512] ) /*0x4d0e22*/
   {
-    v16 = *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61084]; /*0x4d0e2b*/
-    if ( *(int *)&MEMORY[0x89F690].__pad_579C[61084] < 0 ) /*0x4d0e2f*/
+    v16 = *(_DWORD *)&g_CellDirectionOffsets[83512]; /*0x4d0e2b*/
+    if ( *(int *)&g_CellDirectionOffsets[83512] < 0 ) /*0x4d0e2f*/
       return (FoggedObjectClass *)this; /*0x4d0e2f*/
   }
   else
   {
     v16 = 10; /*0x4d0e24*/
   }
-  v17 = (AbstractClass *)__2_YAPAXI_Z(8 * (v16 + *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61084])); /*0x4d0e44*/
+  v17 = (AbstractClass *)__2_YAPAXI_Z(8 * (v16 + *(_DWORD *)&g_CellDirectionOffsets[83512])); /*0x4d0e44*/
   if ( v17 ) /*0x4d0e4b*/
   {
-    for ( i = 0; i < *(int *)&MEMORY[0x89F690].__pad_579C[61080]; *(_DWORD *)&v17->__pad_0[8 * i - 4] = v19[1] ) /*0x4d0e64*/
+    for ( i = 0; i < *(int *)&g_CellDirectionOffsets[83508]; *(_DWORD *)&v17->__pad_0[8 * i - 4] = v19[1] ) /*0x4d0e64*/
     {
-      v19 = (_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[61076] + 8 * i++); /*0x4d0e6c*/
+      v19 = (_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[83504] + 8 * i++); /*0x4d0e6c*/
       *(_DWORD *)&v17->__pad_0[8 * i - 8] = *v19; /*0x4d0e72*/
     }
-    __3_YAXPAX_Z(*(void **)&MEMORY[0x89F690].__pad_579C[61076]); /*0x4d0e8e*/
-    *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61076] = v17; /*0x4d0e9d*/
-    *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61084] += v16; /*0x4d0ea3*/
-    *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61092] = 0; /*0x4d0ea8*/
+    __3_YAXPAX_Z(*(void **)&g_CellDirectionOffsets[83504]); /*0x4d0e8e*/
+    *(_DWORD *)&g_CellDirectionOffsets[83504] = v17; /*0x4d0e9d*/
+    *(_DWORD *)&g_CellDirectionOffsets[83512] += v16; /*0x4d0ea3*/
+    *(_DWORD *)&g_CellDirectionOffsets[83520] = 0; /*0x4d0ea8*/
 LABEL_15:
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[61076] + 8 * *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61080]) = v15; /*0x4d0eb2*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[61076] + 8 * *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61080] + 4) = this; /*0x4d0ecb*/
-    MEMORY[0x89F690].__pad_579C[61088] = 0; /*0x4d0ed5*/
-    ++*(_DWORD *)&MEMORY[0x89F690].__pad_579C[61080]; /*0x4d0edc*/
+    *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[83504] + 8 * *(_DWORD *)&g_CellDirectionOffsets[83508]) = v15; /*0x4d0eb2*/
+    *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[83504] + 8 * *(_DWORD *)&g_CellDirectionOffsets[83508] + 4) = this; /*0x4d0ecb*/
+    g_CellDirectionOffsets[83516] = 0; /*0x4d0ed5*/
+    ++*(_DWORD *)&g_CellDirectionOffsets[83508]; /*0x4d0edc*/
   }
   return (FoggedObjectClass *)this; /*0x4d0ee3*/
 }
@@ -342,7 +349,7 @@ int __thiscall FoggedObjectClass::Constructor(int this, BuildingClass *aP1, Fogg
   v49[1] = v5; /*0x4d0f4d*/
   v50 = v6; /*0x4d0f57*/
   v7 = (VectorClass *)(this + 92); /*0x4d0f67*/
-  this->q050 = *((char *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v49) + 283); /*0x4d0f6a*/
+  this->q050 = *((char *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v49) + 283); /*0x4d0f6a*/
   this->q054 = -1; /*0x4d0f73*/
   this->q058 = 0; /*0x4d0f7a*/
   FoggedObject::DrawVector_Constructor((_DWORD *)(this + 92), 0, 0); /*0x4d0f81*/
@@ -359,35 +366,35 @@ int __thiscall FoggedObjectClass::Constructor(int this, BuildingClass *aP1, Fogg
   this->q044 = v8[1]; /*0x4d0fd7*/
   this->q048 = v8[2]; /*0x4d0fdd*/
   this->q04C = v8[3]; /*0x4d0fe3*/
-  if ( *(int *)&stru_89E138.__pad_579C[66636] < *(int *)&stru_89E138.__pad_579C[66628] /*0x4d101a*/
-    || (stru_89E138.__pad_579C[66633] || !*(_DWORD *)&stru_89E138.__pad_579C[66628])
-    && *(int *)&stru_89E138.__pad_579C[66640] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_89E138.__pad_579C[66620] + 8))(
-         &stru_89E138.__pad_579C[66620],
-         *(_DWORD *)&stru_89E138.__pad_579C[66628] + *(_DWORD *)&stru_89E138.__pad_579C[66640],
+  if ( *(int *)&stru_89E138[89064] < *(int *)&stru_89E138[89056] /*0x4d101a*/
+    || (stru_89E138[89061] || !*(_DWORD *)&stru_89E138[89056])
+    && *(int *)&stru_89E138[89068] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_89E138[89048] + 8))(
+         &stru_89E138[89048],
+         *(_DWORD *)&stru_89E138[89056] + *(_DWORD *)&stru_89E138[89068],
          0) )
   {
-    v9 = (*(_DWORD *)&stru_89E138.__pad_579C[66636])++; /*0x4d1027*/
-    *(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_579C[66624] + 4 * v9) = this; /*0x4d1036*/
+    v9 = (*(_DWORD *)&stru_89E138[89064])++; /*0x4d1027*/
+    *(_DWORD *)(*(_DWORD *)&stru_89E138[89052] + 4 * v9) = this; /*0x4d1036*/
   }
-  v10 = *(_DWORD *)&stru_89E138.__pad_579C[66548]; /*0x4d107c*/
+  v10 = *(_DWORD *)&stru_89E138[88976]; /*0x4d107c*/
   v11 = 74 /*0x4d1081*/
       * ((__int16)(this->q038 / 256)
        - (((__int16)(this->q034 / 256) + (__int16)(this->q038 / 256)) << 9)
        - (__int16)(this->q034 / 256))
       - this->q030
       + 0x7FFFFFFF;
-  if ( *(_DWORD *)&stru_89E138.__pad_579C[66544] + 1 <= *(int *)&stru_89E138.__pad_579C[66548] ) /*0x4d108a*/
+  if ( *(_DWORD *)&stru_89E138[88972] + 1 <= *(int *)&stru_89E138[88976] ) /*0x4d108a*/
     goto LABEL_11; /*0x4d108a*/
-  if ( !*(_DWORD *)&stru_89E138.__pad_579C[66548] ) /*0x4d108e*/
+  if ( !*(_DWORD *)&stru_89E138[88976] ) /*0x4d108e*/
     v10 = 10; /*0x4d1090*/
-  if ( Vector::ReallocDynamic((int)&stru_89E138.__pad_579C[66540], v10) ) /*0x4d109b*/
+  if ( Vector::ReallocDynamic((int)&stru_89E138[88968], v10) ) /*0x4d109b*/
   {
 LABEL_11:
-    *(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_579C[66540] + 8 * *(_DWORD *)&stru_89E138.__pad_579C[66544]) = v11; /*0x4d10af*/
-    *(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_579C[66540] + 8 * *(_DWORD *)&stru_89E138.__pad_579C[66544] + 4) = this; /*0x4d10bd*/
-    stru_89E138.__pad_579C[66552] = 0; /*0x4d10c7*/
-    ++*(_DWORD *)&stru_89E138.__pad_579C[66544]; /*0x4d10ce*/
+    *(_DWORD *)(*(_DWORD *)&stru_89E138[88968] + 8 * *(_DWORD *)&stru_89E138[88972]) = v11; /*0x4d10af*/
+    *(_DWORD *)(*(_DWORD *)&stru_89E138[88968] + 8 * *(_DWORD *)&stru_89E138[88972] + 4) = this; /*0x4d10bd*/
+    stru_89E138[88980] = 0; /*0x4d10c7*/
+    ++*(_DWORD *)&stru_89E138[88972]; /*0x4d10ce*/
   }
   aP1->IsFogged = 1; /*0x4d10d5*/
   ProductionFrame = BuildingClass::GetProductionFrame((int *)aP1->__pad_0); /*0x4d10dc*/
@@ -509,8 +516,8 @@ LABEL_47:
   }
   while ( !v43 ); /*0x4d130a*/
   Cell::CreateCrater(this->q040, this->q044, this->q048, this->q04C, 0); /*0x4d1338*/
-  this->q040 += *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22548] + 176); /*0x4d134d*/
-  this->q044 += *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22548] + 180); /*0x4d135f*/
+  this->q040 += *(_DWORD *)(*(_DWORD *)&stru_87C374[44976] + 176); /*0x4d134d*/
+  this->q044 += *(_DWORD *)(*(_DWORD *)&stru_87C374[44976] + 180); /*0x4d135f*/
   return this; /*0x4d1364*/
 }
 }
@@ -555,7 +562,7 @@ int __thiscall FoggedObjectClass::InitDrawRecord(int this, _DWORD *a2)
   v22[0] = a2[39]; /*0x4d13bb*/
   v22[1] = v3; /*0x4d13c9*/
   v23 = v4; /*0x4d13cd*/
-  this->q050 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], v22) + 283); /*0x4d13e4*/
+  this->q050 = *((char *)Coord::To_Cell(&DataGlobal_87F7E8, v22) + 283); /*0x4d13e4*/
   this->q054 = -1; /*0x4d13e7*/
   this->q058 = 0; /*0x4d13ee*/
   FoggedObject::DrawVector_Constructor((_DWORD *)(this + 92), 0, 0); /*0x4d13f1*/
@@ -575,16 +582,16 @@ int __thiscall FoggedObjectClass::InitDrawRecord(int this, _DWORD *a2)
   v6 = this->q044; /*0x4d1460*/
   this->q040 += g_TacticalClass_Instance[44].__tail_0; /*0x4d1463*/
   this->q044 = (char *)g_TacticalClass_Instance[45].__tail_0 + v6; /*0x4d1473*/
-  if ( MEMORY[0x8B3D20] < MEMORY[0x8B3D18] /*0x4d14ab*/
-    || (MEMORY[0x8B3D1D] || !MEMORY[0x8B3D18])
-    && MEMORY[0x8B3D24] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0x8B3D10] + 8))(
-         &MEMORY[0x8B3D10],
-         MEMORY[0x8B3D18] + MEMORY[0x8B3D24],
+  if ( g_FootClassConfig < DataGlobal_8B3D18 /*0x4d14ab*/
+    || (DataGlobal_8B3D1D || !DataGlobal_8B3D18)
+    && DataGlobal_8B3D24 > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_8B3D10 + 8))(
+         &DataGlobal_8B3D10,
+         DataGlobal_8B3D18 + DataGlobal_8B3D24,
          0) )
   {
-    v7 = MEMORY[0x8B3D20]++; /*0x4d14b8*/
-    *((_DWORD *)MEMORY[0x8B3D14] + v7) = this; /*0x4d14c7*/
+    v7 = g_FootClassConfig++; /*0x4d14b8*/
+    *((_DWORD *)DataGlobal_8B3D14 + v7) = this; /*0x4d14c7*/
   }
   v8 = this->q064; /*0x4d14ca*/
   v9 = this->q06C; /*0x4d14cd*/
@@ -608,35 +615,35 @@ int __thiscall FoggedObjectClass::InitDrawRecord(int this, _DWORD *a2)
   v16 = 74 * ((__int16)(this->q038 / 256) - ((v15 + (__int16)(this->q038 / 256)) << 9) - v15) /*0x4d156f*/
       - this->q030
       + 0x7FFFFFFF;
-  if ( (int)(MEMORY[0x8B3CC4] + 1) <= MEMORY[0x8B3CC8] ) /*0x4d1578*/
+  if ( (int)(g_MissionState + 1) <= DataGlobal_8B3CC8 ) /*0x4d1578*/
     goto LABEL_21; /*0x4d1578*/
-  if ( MEMORY[0x8B3CC8] ) /*0x4d1580*/
+  if ( DataGlobal_8B3CC8 ) /*0x4d1580*/
   {
-    v17 = MEMORY[0x8B3CC8]; /*0x4d1589*/
-    if ( MEMORY[0x8B3CC8] < 0 ) /*0x4d158d*/
+    v17 = DataGlobal_8B3CC8; /*0x4d1589*/
+    if ( DataGlobal_8B3CC8 < 0 ) /*0x4d158d*/
       return this; /*0x4d158d*/
   }
   else
   {
     v17 = 10; /*0x4d1582*/
   }
-  v18 = __2_YAPAXI_Z(8 * (v17 + MEMORY[0x8B3CC8])); /*0x4d15a2*/
+  v18 = __2_YAPAXI_Z(8 * (v17 + DataGlobal_8B3CC8)); /*0x4d15a2*/
   if ( v18 ) /*0x4d15a9*/
   {
-    for ( i = 0; i < (int)MEMORY[0x8B3CC4]; v18[2 * i - 1] = v20[1] ) /*0x4d15c2*/
+    for ( i = 0; i < (int)g_MissionState; v18[2 * i - 1] = v20[1] ) /*0x4d15c2*/
     {
-      v20 = (char *)MEMORY[0x8B3CC0] + 8 * i++; /*0x4d15ca*/
+      v20 = (char *)g_MissionPool + 8 * i++; /*0x4d15ca*/
       v18[2 * i - 2] = *v20; /*0x4d15d0*/
     }
-    __3_YAXPAX_Z(MEMORY[0x8B3CC0]); /*0x4d15ec*/
-    MEMORY[0x8B3CC0] = v18; /*0x4d15fb*/
-    MEMORY[0x8B3CC8] += v17; /*0x4d1601*/
-    MEMORY[0x8B3CD0] = 0; /*0x4d1606*/
+    __3_YAXPAX_Z(g_MissionPool); /*0x4d15ec*/
+    g_MissionPool = v18; /*0x4d15fb*/
+    DataGlobal_8B3CC8 += v17; /*0x4d1601*/
+    DataGlobal_8B3CD0 = 0; /*0x4d1606*/
 LABEL_21:
-    *((_DWORD *)MEMORY[0x8B3CC0] + 2 * MEMORY[0x8B3CC4]) = v16; /*0x4d1610*/
-    *((_DWORD *)MEMORY[0x8B3CC0] + 2 * MEMORY[0x8B3CC4] + 1) = this; /*0x4d1629*/
-    MEMORY[0x8B3CCC] = 0; /*0x4d1633*/
-    ++MEMORY[0x8B3CC4]; /*0x4d163a*/
+    *((_DWORD *)g_MissionPool + 2 * g_MissionState) = v16; /*0x4d1610*/
+    *((_DWORD *)g_MissionPool + 2 * g_MissionState + 1) = this; /*0x4d1629*/
+    DataGlobal_8B3CCC = 0; /*0x4d1633*/
+    ++g_MissionState; /*0x4d163a*/
   }
   return this; /*0x4d1641*/
 }
@@ -699,39 +706,39 @@ int __stdcall FoggedObjectClass::_vt05(int *a1, int a2)
 LABEL_14:
     v17 = *(_DWORD *)(*(int (__thiscall **)(int *, int *))(*v3 + 96))(v3, &v17); /*0x4d2665*/
     v12 = 74 * (SHIWORD(v17) - (((__int16)v17 + SHIWORD(v17)) << 9) - (__int16)v17) - v3[12] + 0x7FFFFFFF; /*0x4d26a1*/
-    if ( (int)(MEMORY[0x8B3CC4] + 1) <= MEMORY[0x8B3CC8] ) /*0x4d26aa*/
+    if ( (int)(g_MissionState + 1) <= DataGlobal_8B3CC8 ) /*0x4d26aa*/
     {
 LABEL_22:
-      *((_DWORD *)MEMORY[0x8B3CC0] + 2 * MEMORY[0x8B3CC4]) = v12; /*0x4d2745*/
-      *((_DWORD *)MEMORY[0x8B3CC0] + 2 * MEMORY[0x8B3CC4] + 1) = v3; /*0x4d275f*/
-      MEMORY[0x8B3CCC] = 0; /*0x4d2769*/
-      ++MEMORY[0x8B3CC4]; /*0x4d2770*/
+      *((_DWORD *)g_MissionPool + 2 * g_MissionState) = v12; /*0x4d2745*/
+      *((_DWORD *)g_MissionPool + 2 * g_MissionState + 1) = v3; /*0x4d275f*/
+      DataGlobal_8B3CCC = 0; /*0x4d2769*/
+      ++g_MissionState; /*0x4d2770*/
       return a2; /*0x4d2770*/
     }
-    if ( MEMORY[0x8B3CC8] ) /*0x4d26b2*/
+    if ( DataGlobal_8B3CC8 ) /*0x4d26b2*/
     {
-      v13 = MEMORY[0x8B3CC8]; /*0x4d26bb*/
-      if ( MEMORY[0x8B3CC8] < 0 ) /*0x4d26bf*/
+      v13 = DataGlobal_8B3CC8; /*0x4d26bb*/
+      if ( DataGlobal_8B3CC8 < 0 ) /*0x4d26bf*/
         return a2; /*0x4d26bf*/
     }
     else
     {
       v13 = 10; /*0x4d26b4*/
     }
-    v17 = v13 + MEMORY[0x8B3CC8]; /*0x4d26c7*/
-    v14 = __2_YAPAXI_Z(8 * (v13 + MEMORY[0x8B3CC8])); /*0x4d26d8*/
+    v17 = v13 + DataGlobal_8B3CC8; /*0x4d26c7*/
+    v14 = __2_YAPAXI_Z(8 * (v13 + DataGlobal_8B3CC8)); /*0x4d26d8*/
     if ( v14 ) /*0x4d26df*/
     {
       --v17; /*0x4d26f0*/
-      for ( i = 0; i < (int)MEMORY[0x8B3CC4]; v14[2 * i - 1] = v16[1] ) /*0x4d26f8*/
+      for ( i = 0; i < (int)g_MissionState; v14[2 * i - 1] = v16[1] ) /*0x4d26f8*/
       {
-        v16 = (char *)MEMORY[0x8B3CC0] + 8 * i++; /*0x4d2700*/
+        v16 = (char *)g_MissionPool + 8 * i++; /*0x4d2700*/
         v14[2 * i - 2] = *v16; /*0x4d2706*/
       }
-      __3_YAXPAX_Z(MEMORY[0x8B3CC0]); /*0x4d2721*/
-      MEMORY[0x8B3CC0] = v14; /*0x4d2730*/
-      MEMORY[0x8B3CC8] += v13; /*0x4d2736*/
-      MEMORY[0x8B3CD0] = 0; /*0x4d273b*/
+      __3_YAXPAX_Z(g_MissionPool); /*0x4d2721*/
+      g_MissionPool = v14; /*0x4d2730*/
+      DataGlobal_8B3CC8 += v13; /*0x4d2736*/
+      DataGlobal_8B3CD0 = 0; /*0x4d273b*/
       goto LABEL_22; /*0x4d273b*/
     }
     return a2; /*0x4d2775*/

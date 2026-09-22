@@ -27,6 +27,15 @@
 #include "e4/classes/E4Recv_5AF470_e4.hpp"
 #include "e4/classes/E4Recv_5AF550_e4.hpp"
 #include "e4/classes/E4Recv_5AFF50_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Factory_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/RandomMap_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x5A1350
 namespace gamemd {
@@ -240,8 +249,8 @@ int ProcessRandomMapCellAdjacency()
   __int64 v15; // [esp+Ch] [ebp-10h]
   __int64 v16; // [esp+14h] [ebp-8h]
 
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x5a19e9*/
-  result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x5a19f3*/
+  LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x5a19e9*/
+  result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x5a19f3*/
   for ( i = result; result; i = result )
   {
     NeighbourContent = Cell::GetNeighbourContent((_DWORD *)i, 5u); /*0x5a1a12*/
@@ -314,7 +323,7 @@ int ProcessRandomMapCellAdjacency()
     }
     v7[20 * v9 + 14 + 20 * v10] = v8; /*0x5a1c45*/
 LABEL_32:
-    result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x5a1c49*/
+    result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x5a1c49*/
   }
   return result; /*0x5a1c60*/
 }
@@ -380,7 +389,7 @@ int __thiscall sub_5A1C70(_DWORD *this)
     do /*0x5a1d4f*/
     {
       v16 = *(_DWORD *)((char *)g_MapTileArray + v5); /*0x5a1d08*/
-      v7 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v16); /*0x5a1d11*/
+      v7 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v16); /*0x5a1d11*/
       if ( *(_DWORD *)((char *)g_MapTileArray + v5 + 56) == -1 /*0x5a1d3b*/
         && (*(_WORD *)((char *)g_MapTileArray + v5) || *(_WORD *)((char *)g_MapTileArray + v5 + 2))
         && (Cell::IsGroundTypeRange(v7) || Cell::IsShore(v7)) )
@@ -415,7 +424,7 @@ int __thiscall sub_5A1C70(_DWORD *this)
       result = (int)g_MapTileArray + v13; /*0x5a1dd0*/
       if ( *(_DWORD *)((char *)g_MapTileArray + v13 + 56) == -1 && (*(_WORD *)result || *(_WORD *)(result + 2)) ) /*0x5a1de2*/
       {
-        v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)((char *)g_MapTileArray + v13)); /*0x5a1def*/
+        v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)((char *)g_MapTileArray + v13)); /*0x5a1def*/
         result = RandomMap::GenerateTerrain((int)v15); /*0x5a1df6*/
         if ( result ) /*0x5a1dfd*/
           *(_BYTE *)(result + 26) = 0; /*0x5a1dff*/
@@ -457,8 +466,8 @@ int GenerateTerrainHeightMapInternal()
   int v17; // [esp+8h] [ebp-8h]
   int v18; // [esp+Ch] [ebp-4h]
 
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x5a33f9*/
-  result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x5a3403*/
+  LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x5a33f9*/
+  result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x5a3403*/
   for ( i = (int *)result; result; i = (int *)result ) /*0x5a340c*/
   {
     if ( CellClass::IsTerrainType(i) ) /*0x5a3417*/
@@ -469,15 +478,15 @@ int GenerateTerrainHeightMapInternal()
       {
         v4 = v3 & 7; /*0x5a3431*/
         v16 = i[9]; /*0x5a3434*/
-        v5 = LOWORD(MEMORY[0x89F688][v4]) + v16; /*0x5a3438*/
-        LOWORD(v4) = HIWORD(MEMORY[0x89F688][v4]); /*0x5a3447*/
+        v5 = LOWORD(Direction_X_Offsets[v4]) + v16; /*0x5a3438*/
+        LOWORD(v4) = HIWORD(Direction_X_Offsets[v4]); /*0x5a3447*/
         LOWORD(v17) = v5; /*0x5a344b*/
         HIWORD(v17) = HIWORD(v16) + v4; /*0x5a3455*/
         v16 = v17; /*0x5a345e*/
         v6 = SHIWORD(v17) + v5; /*0x5a3468*/
         if ( v6 > v2 && v5 - SHIWORD(v17) < v2 && SHIWORD(v17) - v5 < v2 && v6 <= g_MapCellCount ) /*0x5a3483*/
         {
-          v7 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v16); /*0x5a348f*/
+          v7 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v16); /*0x5a348f*/
           if ( Cell::IsEmpty(v7) ) /*0x5a3496*/
           {
             v8 = 80 * ((__int16)v16 + unk_89C2DC * SHIWORD(v16)); /*0x5a34cb*/
@@ -499,15 +508,15 @@ int GenerateTerrainHeightMapInternal()
       {
         v11 = j & 7; /*0x5a3529*/
         v16 = i[9]; /*0x5a352c*/
-        v12 = HIWORD(v16) + HIWORD(MEMORY[0x89F688][v11]); /*0x5a3543*/
-        LOWORD(v18) = v16 + LOWORD(MEMORY[0x89F688][v11]); /*0x5a354b*/
+        v12 = HIWORD(v16) + HIWORD(Direction_X_Offsets[v11]); /*0x5a3543*/
+        LOWORD(v18) = v16 + LOWORD(Direction_X_Offsets[v11]); /*0x5a354b*/
         HIWORD(v18) = v12; /*0x5a3550*/
         v16 = v18; /*0x5a3559*/
         v13 = v12; /*0x5a3560*/
         v14 = v12 + (__int16)v18; /*0x5a3563*/
         if ( v14 > v9 && (__int16)v18 - v13 < v9 && v13 - (__int16)v18 < v9 && v14 <= g_MapCellCount ) /*0x5a357e*/
         {
-          v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v16); /*0x5a358a*/
+          v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v16); /*0x5a358a*/
           if ( Cell::IsEmpty(v15) ) /*0x5a3591*/
           {
             *((_BYTE *)g_MapTileArray + 80 * (__int16)v16 + 80 * unk_89C2DC * SHIWORD(v16) + 69) = 1; /*0x5a35ca*/
@@ -518,7 +527,7 @@ int GenerateTerrainHeightMapInternal()
       }
     }
 LABEL_24:
-    result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x5a35cf*/
+    result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x5a35cf*/
   }
   return result; /*0x5a35e6*/
 }
@@ -679,7 +688,7 @@ int __stdcall ScatterTerrainTrees(IUnknown *aP0, int a2, double a3)
   {
     while ( v17 && v41 < v3 ) /*0x5a479f*/
     {
-      v20 = (Random *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], v17); /*0x5a47ba*/
+      v20 = (Random *)CellCoord::To_CellObj(&stru_87C374[13428], v17); /*0x5a47ba*/
       if ( Cell::IsEmpty(v20) /*0x5a47ec*/
         && !v20[14].Random_field_0x04
         && v20[4].Random_field_0x04 == -1
@@ -694,7 +703,7 @@ int __stdcall ScatterTerrainTrees(IUnknown *aP0, int a2, double a3)
             v21 = Math::RoundToInt((double)v51 * 0.000000005820766092701993 + 1.0); /*0x5a483e*/
           }
           while ( v21 > 0x19 ); /*0x5a4848*/
-          sprintf(Buffer, (ObjectClass *)&stru_82C090.__pad_0[12], (INIClass *)((int)v21 / 10)); /*0x5a486f*/
+          sprintf(Buffer, (ObjectClass *)&stru_82C090[12], (INIClass *)((int)v21 / 10)); /*0x5a486f*/
           v22 = (TerrainClass *)__2_YAPAXI_Z(0xE0u); /*0x5a487e*/
           if ( v22 ) /*0x5a4885*/
           {
@@ -702,7 +711,7 @@ int __stdcall ScatterTerrainTrees(IUnknown *aP0, int a2, double a3)
             v23 = Terrain::LookupByName(Buffer); /*0x5a4892*/
             TerrainClass::Construct( /*0x5a48aa*/
               (void **)v22,
-              *(TerrainTypeClass **)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584] + 4 * v23),
+              *(TerrainTypeClass **)(*(_DWORD *)&HouseClass_Player[42448] + 4 * v23),
               (TerrainClass *)&Random_field_0x04);
           }
           ++v42; /*0x5a48af*/
@@ -714,8 +723,8 @@ int __stdcall ScatterTerrainTrees(IUnknown *aP0, int a2, double a3)
       do /*0x5a4a61*/
       {
         v25 = v24 & 7; /*0x5a48cc*/
-        v26 = v39[1] + *(_WORD *)&stru_89E138.__pad_14B0[4 * v25 + 162]; /*0x5a48de*/
-        LOWORD(v25) = *v39 + *(_WORD *)&stru_89E138.__pad_14B0[4 * v25 + 160]; /*0x5a48e5*/
+        v26 = v39[1] + *(_WORD *)&stru_89E138[5296][4 * v25 + 162]; /*0x5a48de*/
+        LOWORD(v25) = *v39 + *(_WORD *)&stru_89E138[5296][4 * v25 + 160]; /*0x5a48e5*/
         HIWORD(v43) = v26; /*0x5a48ee*/
         v27 = (__int16)v25; /*0x5a48f3*/
         LOWORD(v43) = v25; /*0x5a48f9*/
@@ -951,7 +960,7 @@ void __stdcall FloodFillPathfinding(Random *aP0, int a2, CellClass *aP2, int a4,
   {
     while ( v20 ) /*0x5a4cfb*/
     {
-      v23 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], v20); /*0x5a4d07*/
+      v23 = CellCoord::To_CellObj(&stru_87C374[13428], v20); /*0x5a4d07*/
       v24 = v42; /*0x5a4d0f*/
       v23[14] = a2; /*0x5a4d13*/
       v25 = 0; /*0x5a4d16*/
@@ -966,7 +975,7 @@ void __stdcall FloodFillPathfinding(Random *aP0, int a2, CellClass *aP2, int a4,
           && SHIWORD(v39) - (__int16)v39 < g_MapCellHeight_Value
           && (int)v43 <= g_MapCellCount )
         {
-          v27 = (Random *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v39); /*0x5a4d96*/
+          v27 = (Random *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v39); /*0x5a4d96*/
           v43 = v27; /*0x5a4d9a*/
           if ( Cell::IsEmpty(v27) /*0x5a4dbf*/
             || a5 && (CellClass::InBounds((int *)v27->__pad_0) || CellClass::InMapDataRange((int *)v27->__pad_0)) )
@@ -1179,11 +1188,11 @@ LABEL_10:
           LOWORD(v31) = v19 + *v20; /*0x5a6781*/
           HIWORD(v31) = HIWORD(v19) + v20[1]; /*0x5a6790*/
           LODWORD(v35[0]) = v31; /*0x5a6799*/
-          v21 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)v35); /*0x5a67a7*/
+          v21 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)v35); /*0x5a67a7*/
           if ( !CellClass::InBounds(v21) && !CellClass::InMapDataRange(v21) /*0x5a67da*/
             || v21[57]
             || v21[59] == 3
-            || !Type::CheckAmbiguity(&MEMORY[0x87F7E8], (int)v21, 1) )
+            || !Type::CheckAmbiguity(&DataGlobal_87F7E8, (int)v21, 1) )
           {
             v26 = 0; /*0x5a67e3*/
           }
@@ -1323,7 +1332,7 @@ LABEL_13:
         if ( !v6 ) /*0x5a69d6*/
           goto LABEL_13; /*0x5a69d6*/
         ExitCellByName = Factory::FindExitCellByName(*(&off_82B180 + v5)); /*0x5a69df*/
-        v8 = (_DWORD *)InfantryClass::Construct((int)v6, *((_DWORD *)MEMORY[0xA8E34C] + ExitCellByName), Owner); /*0x5a69f6*/
+        v8 = (_DWORD *)InfantryClass::Construct((int)v6, *((_DWORD *)Factory_ExitCellTable + ExitCellByName), Owner); /*0x5a69f6*/
       }
 LABEL_14:
       v11 = 0; /*0x5a6a31*/
@@ -1340,8 +1349,8 @@ LABEL_14:
         }
         while ( v13 > v12 ); /*0x5a6a82*/
         v18 = *(_DWORD *)(*(_DWORD *)(a1 + 4) + 4 * v13); /*0x5a6a9a*/
-        if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (__int16 *)&v18, 1) /*0x5a6aba*/
-          && !*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v18) + 57) )
+        if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (__int16 *)&v18, 1) /*0x5a6aba*/
+          && !*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v18) + 57) )
         {
           do /*0x5a6aea*/
           {
@@ -1422,7 +1431,7 @@ LABEL_6:
   {
     v10[0] = v4; /*0x5a6bd2*/
     v10[1] = v7; /*0x5a6bd7*/
-    v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v10); /*0x5a6bdc*/
+    v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v10); /*0x5a6bdc*/
     if ( CellLand::IsBuildable((int)v8) ) /*0x5a6be3*/
       return 0; /*0x5a6bfa*/
     if ( ++v7 >= v6 ) /*0x5a6bef*/
@@ -1461,7 +1470,7 @@ int __fastcall PlaceMapSeedClassBuildings(ObjectClass *aP0, ObjectClass *aP1, in
   int v20; // [esp+18h] [ebp-4h]
 
   v19 = aP1; /*0x5a6c1a*/
-  v4 = *(_DWORD **)(*(_DWORD *)&HouseClass_Player.__pad_5568[23160] + 4 * (_DWORD)aP0); /*0x5a6c1e*/
+  v4 = *(_DWORD **)(*(_DWORD *)&HouseClass_Player[45024] + 4 * (_DWORD)aP0); /*0x5a6c1e*/
   result = (*(int (__thiscall **)(_DWORD *))(*v4 + 156))(v4); /*0x5a6c26*/
   v20 = result; /*0x5a6c2e*/
   if ( result ) /*0x5a6c32*/
@@ -1490,7 +1499,7 @@ int __fastcall PlaceMapSeedClassBuildings(ObjectClass *aP0, ObjectClass *aP1, in
             }
             else
             {
-              v12 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v16); /*0x5a6cc4*/
+              v12 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v16); /*0x5a6cc4*/
               v6 = v17; /*0x5a6ccf*/
               v13 = i + v17 * v4[185]; /*0x5a6cda*/
               v14 = *(_DWORD *)(v20 + 4 * v13 + 16); /*0x5a6cdc*/
@@ -1584,11 +1593,11 @@ _DWORD *__stdcall FindClearPlacementCell(_DWORD *a0, MapSeedClass *aP1, MapSeedC
       *a0 = 0; /*0x5a6e90*/
       return a0; /*0x5a6e96*/
     }
-    if ( *((CCINIClass **)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v20) + 14) == dword_ABC2B0 ) /*0x5a6e3f*/
+    if ( *((CCINIClass **)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v20) + 14) == dword_ABC2B0 ) /*0x5a6e3f*/
       break; /*0x5a6e3f*/
     v9 = a4 & 7; /*0x5a6e45*/
-    LOWORD(aP2a) = (_WORD)v20 + *(_WORD *)&stru_89E138.__pad_14B0[4 * v9 + 160]; /*0x5a6e65*/
-    HIWORD(aP2a) = HIWORD(v20) + *(_WORD *)&stru_89E138.__pad_14B0[4 * v9 + 162]; /*0x5a6e6a*/
+    LOWORD(aP2a) = (_WORD)v20 + *(_WORD *)&stru_89E138[5296][4 * v9 + 160]; /*0x5a6e65*/
+    HIWORD(aP2a) = HIWORD(v20) + *(_WORD *)&stru_89E138[5296][4 * v9 + 162]; /*0x5a6e6a*/
     v20 = aP2a; /*0x5a6e73*/
   }
   v11 = (__int16)v20; /*0x5a6e99*/
@@ -1607,8 +1616,8 @@ _DWORD *__stdcall FindClearPlacementCell(_DWORD *a0, MapSeedClass *aP1, MapSeedC
     if ( IsAreaClearMap((MapClass *)&v25, v24[0], v24[0]) ) /*0x5a6eed*/
       break; /*0x5a6eed*/
     v12 = a4 & 7; /*0x5a6efa*/
-    HIWORD(aP2b) = HIWORD(v20) + *(_WORD *)&stru_89E138.__pad_14B0[4 * v12 + 162]; /*0x5a6f23*/
-    v11 = (_WORD)v20 + *(_WORD *)&stru_89E138.__pad_14B0[4 * v12 + 160]; /*0x5a6f28*/
+    HIWORD(aP2b) = HIWORD(v20) + *(_WORD *)&stru_89E138[5296][4 * v12 + 162]; /*0x5a6f23*/
+    v11 = (_WORD)v20 + *(_WORD *)&stru_89E138[5296][4 * v12 + 160]; /*0x5a6f28*/
     LOWORD(aP2b) = v11; /*0x5a6f1e*/
     v20 = aP2b; /*0x5a6f2c*/
   }
@@ -1728,13 +1737,13 @@ _DWORD *__stdcall globalHelper_0A7070(MapSeedClass *aP0, __int16 *a1, MapSeedCla
     if ( !IsAreaClearMap((MapClass *)&v23, a4 == 4, a4 == 4) ) /*0x5a714c*/
       break; /*0x5a714c*/
     v7 = a4 & 7; /*0x5a7159*/
-    LOWORD(v4) = v4 + *(_WORD *)&stru_89E138.__pad_14B0[4 * v7 + 160]; /*0x5a7185*/
-    HIWORD(v21) += *(_WORD *)&stru_89E138.__pad_14B0[4 * v7 + 162]; /*0x5a7189*/
+    LOWORD(v4) = v4 + *(_WORD *)&stru_89E138[5296][4 * v7 + 160]; /*0x5a7185*/
+    HIWORD(v21) += *(_WORD *)&stru_89E138[5296][4 * v7 + 162]; /*0x5a7189*/
   }
   v8 = ((_BYTE)a4 - 4) & 7; /*0x5a719d*/
   v9 = (__int16 *)(4 * v8 + 9041544); /*0x5a71ac*/
-  HIWORD(v27) = HIWORD(v21) + *(_WORD *)&stru_89E138.__pad_14B0[4 * v8 + 162]; /*0x5a71c1*/
-  LOWORD(v27) = v4 + *(_WORD *)&stru_89E138.__pad_14B0[4 * v8 + 160]; /*0x5a71c6*/
+  HIWORD(v27) = HIWORD(v21) + *(_WORD *)&stru_89E138[5296][4 * v8 + 162]; /*0x5a71c1*/
+  LOWORD(v27) = v4 + *(_WORD *)&stru_89E138[5296][4 * v8 + 160]; /*0x5a71c6*/
   v10 = v27; /*0x5a71cb*/
   v11 = (__int16)v27 - *a1; /*0x5a71d7*/
   v22 = HIWORD(v27); /*0x5a71db*/
@@ -1844,7 +1853,7 @@ char __fastcall IsAreaClearMap(MapClass *aP0, char a2, char a3)
         {
           LOWORD(v15) = v11; /*0x5a73a3*/
           HIWORD(v15) = v10; /*0x5a73a8*/
-          v12 = (int *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v15); /*0x5a73b2*/
+          v12 = (int *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v15); /*0x5a73b2*/
           if ( sub_4866D0(v12) ) /*0x5a73b6*/
           {
             if ( !a2 ) /*0x5a73c5*/
@@ -1926,7 +1935,7 @@ char __fastcall MapClass_IsAreaUniform(int *a1, char a2)
         {
           LOWORD(v14) = v3; /*0x5a756f*/
           HIWORD(v14) = v4; /*0x5a7574*/
-          v7 = (char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14); /*0x5a7579*/
+          v7 = (char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v14); /*0x5a7579*/
           v8 = a1[1]; /*0x5a757e*/
           v9 = v8 + a1[3]; /*0x5a758b*/
           v16 = v7[283]; /*0x5a758d*/
@@ -1945,7 +1954,7 @@ LABEL_28:
           {
             LOWORD(v14) = v10; /*0x5a75a8*/
             HIWORD(v14) = v8; /*0x5a75b3*/
-            v11 = (char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14); /*0x5a75bd*/
+            v11 = (char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v14); /*0x5a75bd*/
             if ( v11[283] != v16 ) /*0x5a75cc*/
               break; /*0x5a75cc*/
             if ( (unsigned __int8)sub_4866D0(v11) || (unsigned __int8)sub_4866F0(v11) ) /*0x5a75db*/
@@ -2152,7 +2161,7 @@ int __fastcall IsoTile_Draw(int a1, _WORD *a2, char a3)
   int v16; // [esp+14h] [ebp-4h]
 
   v3 = a2; /*0x5a7faa*/
-  v4 = (_DWORD *)*((_DWORD *)MEMORY[0xA8ED2C] + a1); /*0x5a7fac*/
+  v4 = (_DWORD *)*((_DWORD *)g_FrameCounter + a1); /*0x5a7fac*/
   v14 = v4; /*0x5a7fb5*/
   result = (*(int (__thiscall **)(_DWORD *))(*v4 + 156))(v4); /*0x5a7fbb*/
   v16 = result; /*0x5a7fc3*/
@@ -2291,7 +2300,7 @@ LABEL_13:
         ExitCellByNameFactory = Factory::FindExitCellByName(*(&off_82B240 + v5)); /*0x5a87df*/
         v8 = (_DWORD *)InfantryClass::Construct( /*0x5a87f6*/
                          (int)v6,
-                         *((_DWORD *)MEMORY[0xA8E34C] + ExitCellByNameFactory),
+                         *((_DWORD *)Factory_ExitCellTable + ExitCellByNameFactory),
                          OwnerHouseClass);
       }
 LABEL_14:
@@ -2317,8 +2326,8 @@ LABEL_14:
         LOWORD(v25) = v15; /*0x5a88a7*/
         WORD1(v25) = v16; /*0x5a88ac*/
         v21 = v25; /*0x5a88b9*/
-        if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (__int16 *)&v21, 1) /*0x5a88df*/
-          && !*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v21) + 57) )
+        if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (__int16 *)&v21, 1) /*0x5a88df*/
+          && !*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v21) + 57) )
         {
           do /*0x5a890f*/
           {
@@ -2539,8 +2548,8 @@ bool __stdcall MapSeed_ScheduleBuildings(int *a1)
               v26 = v16[1]; /*0x5a8c4e*/
               v49 = *(_DWORD *)(v26 + 8 * v23); /*0x5a8c62*/
               v50 = *(_DWORD *)(v26 + 8 * v23 + 4); /*0x5a8c6b*/
-              v27 = HIWORD(MEMORY[0x89F688][v50 & 7]); /*0x5a8c90*/
-              LOWORD(v45) = LOWORD(v39[1]) + v49 + LOWORD(MEMORY[0x89F688][v50 & 7]); /*0x5a8c94*/
+              v27 = HIWORD(Direction_X_Offsets[v50 & 7]); /*0x5a8c90*/
+              LOWORD(v45) = LOWORD(v39[1]) + v49 + LOWORD(Direction_X_Offsets[v50 & 7]); /*0x5a8c94*/
               HIWORD(v45) = HIWORD(v39[1]) + HIWORD(v49) + v27; /*0x5a8ca0*/
               v46 = v45; /*0x5a8cae*/
               v43 = 0; /*0x5a8cbb*/

@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x6B4DD0
 char UnitTypeClass::ReadINIEntry()
@@ -21,7 +25,7 @@ char __thiscall sub_6B4DD0(char *this)
 
   v1 = 0; /*0x6b4dde*/
   v9 = this; /*0x6b4de3*/
-  INIClass::ClearSection((int)this, (int)MEMORY[0x81732C], 0); /*0x6b4de7*/
+  INIClass::ClearSection((int)this, (int)DataGlobal_81732C, 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
   do /*0x6b4e8e*/
   {
@@ -29,14 +33,14 @@ char __thiscall sub_6B4DD0(char *this)
     {
       v8[0] = i; /*0x6b4df6*/
       v8[1] = v1; /*0x6b4e01*/
-      v3 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v8); /*0x6b4e0b*/
+      v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v8); /*0x6b4e0b*/
       v4 = v3[18]; /*0x6b4e0d*/
       if ( v4 != -1 && !*((_BYTE *)v3 + 287) ) /*0x6b4e15*/
       {
-        v5 = *((_DWORD *)MEMORY[0xA8EC1C] + v4); /*0x6b4e29*/
-        sprintf(Buffer, MEMORY[0x817F6C], v7); /*0x6b4e37*/
-        sprintf(Source, MEMORY[0x83FFFC], (const char *)(v5 + 36), i, v1, *((unsigned __int8 *)v3 + 287)); /*0x6b4e55*/
-        LOBYTE(v4) = INIClass::SetString(v9, (unsigned __int8 *)MEMORY[0x81732C], Buffer, Source); /*0x6b4e71*/
+        v5 = *((_DWORD *)FactoryClass_Array + v4); /*0x6b4e29*/
+        sprintf(Buffer, g_Str_Trace__d, v7); /*0x6b4e37*/
+        sprintf(Source, DataGlobal_83FFFC, (const char *)(v5 + 36), i, v1, *((unsigned __int8 *)v3 + 287)); /*0x6b4e55*/
+        LOBYTE(v4) = INIClass::SetString(v9, (unsigned __int8 *)DataGlobal_81732C, Buffer, Source); /*0x6b4e71*/
         ++v7; /*0x6b4e76*/
       }
     }
@@ -258,30 +262,30 @@ char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, 
   if ( !ObjectTypeClass::LoadExtras(a1, a2, a3) ) /*0x74763f*/
     return 0; /*0x747ea0*/
   v4 = (unsigned __int8 *)(a1 + 36); /*0x747654*/
-  *(_BYTE *)(a1 + 3597) = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x845E20], *(_BYTE *)(a1 + 3597)); /*0x747665*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x845E10], *(_BYTE *)(a1 + 3602)); /*0x74767a*/
+  *(_BYTE *)(a1 + 3597) = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_845E20, *(_BYTE *)(a1 + 3597)); /*0x747665*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_845E10, *(_BYTE *)(a1 + 3602)); /*0x74767a*/
   v70 = *(_BYTE *)(a1 + 3603); /*0x747687*/
   *(_BYTE *)(a1 + 3602) = Bool_Overwrite; /*0x74768e*/
-  *(_BYTE *)(a1 + 3603) = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x845DFC], v70); /*0x747699*/
-  v6 = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x83D4CC], *(_BYTE *)(a1 + 3598)); /*0x7476ae*/
+  *(_BYTE *)(a1 + 3603) = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_845DFC, v70); /*0x747699*/
+  v6 = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_83D4CC, *(_BYTE *)(a1 + 3598)); /*0x7476ae*/
   v7 = *(_BYTE *)(a1 + 3599); /*0x7476b3*/
   *(_BYTE *)(a1 + 3598) = v6; /*0x7476b9*/
   *(_BYTE *)(a1 + 3599) = INIClass::ReadBool_Overwrite(a1 + 36, stru_81AC50, v7); /*0x7476cd*/
   if ( *(_DWORD *)(a1 + 1660) == -1 ) /*0x7476dc*/
     *(_DWORD *)(a1 + 1660) = 2 - (*(_BYTE *)(a1 + 3368) != 0); /*0x7476eb*/
-  v8 = ObjectTypeClass::loadTypeMember_476FC0(a1 + 36, MEMORY[0x844504], *(_DWORD *)(a1 + 1660)); /*0x747700*/
+  v8 = ObjectTypeClass::loadTypeMember_476FC0(a1 + 36, DataGlobal_844504, *(_DWORD *)(a1 + 1660)); /*0x747700*/
   v9 = *(_BYTE *)(a1 + 3604); /*0x747705*/
   *(_DWORD *)(a1 + 1660) = v8; /*0x74770b*/
-  v10 = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x845DF0], v9); /*0x74771a*/
+  v10 = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_845DF0, v9); /*0x74771a*/
   v71 = *(_BYTE *)(a1 + 3610); /*0x747727*/
   *(_BYTE *)(a1 + 3604) = v10; /*0x74772e*/
-  v11 = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x845DE0], v71); /*0x747734*/
+  v11 = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_845DE0, v71); /*0x747734*/
   v12 = *(_BYTE *)(a1 + 3233); /*0x747739*/
   *(_BYTE *)(a1 + 3610) = v11; /*0x74773f*/
   v72 = *(_BYTE *)(a1 + 3606); /*0x74774d*/
   *(_BYTE *)(a1 + 3601) = v12 == 0; /*0x747759*/
-  *(_BYTE *)(a1 + 3606) = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x845DC8], v72); /*0x747778*/
-  Point3D_Overwrite = (_DWORD *)INIClass::ReadPoint3D_Overwrite(Buffer, a1 + 36, MEMORY[0x845DB0], a1 + 3584); /*0x74777e*/
+  *(_BYTE *)(a1 + 3606) = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_845DC8, v72); /*0x747778*/
+  Point3D_Overwrite = (_DWORD *)INIClass::ReadPoint3D_Overwrite(Buffer, a1 + 36, DataGlobal_845DB0, a1 + 3584); /*0x74777e*/
   *(_DWORD *)(a1 + 3584) = *Point3D_Overwrite; /*0x747785*/
   *(_DWORD *)(a1 + 3588) = Point3D_Overwrite[1]; /*0x74778a*/
   v14 = Point3D_Overwrite[2]; /*0x74778d*/
@@ -289,38 +293,38 @@ char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, 
   *(_DWORD *)(a1 + 3592) = v14; /*0x74779a*/
   if ( *(_BYTE *)(a1 + 3598) || *(_BYTE *)(a1 + 3599) ) /*0x7477a7*/
     *(_DWORD *)(a1 + 920) = 10; /*0x7477b1*/
-  v15 = INIClass::ReadBool_Overwrite(a1 + 504, MEMORY[0x845DA0], *(_BYTE *)(a1 + 3605)); /*0x7477d3*/
+  v15 = INIClass::ReadBool_Overwrite(a1 + 504, DataGlobal_845DA0, *(_BYTE *)(a1 + 3605)); /*0x7477d3*/
   v73 = *(char *)(a1 + 3676); /*0x7477df*/
   *(_BYTE *)(a1 + 3605) = v15; /*0x7477eb*/
-  *(_BYTE *)(a1 + 3676) = INIClass::ReadInt_Overwrite(a1 + 504, MEMORY[0x845D94], v73); /*0x7477f6*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite(a1 + 504, MEMORY[0x845D84], *(char *)(a1 + 3677)); /*0x74780f*/
+  *(_BYTE *)(a1 + 3676) = INIClass::ReadInt_Overwrite(a1 + 504, DataGlobal_845D94, v73); /*0x7477f6*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite(a1 + 504, DataGlobal_845D84, *(char *)(a1 + 3677)); /*0x74780f*/
   v17 = *(_BYTE *)(a1 + 3596); /*0x747814*/
   *(_BYTE *)(a1 + 3677) = Int_Overwrite; /*0x74781a*/
-  v18 = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x845D7C], v17); /*0x747829*/
+  v18 = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_845D7C, v17); /*0x747829*/
   v74 = *(_DWORD *)(a1 + 3580); /*0x747836*/
   *(_BYTE *)(a1 + 3596) = v18; /*0x74783d*/
-  *(_DWORD *)(a1 + 3580) = OverlayTypeClass::ReadINIString(a1 + 36, MEMORY[0x845D64], v74); /*0x747848*/
-  v19 = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x845D58], *(_BYTE *)(a1 + 3607)); /*0x74785d*/
+  *(_DWORD *)(a1 + 3580) = OverlayTypeClass::ReadINIString(a1 + 36, DataGlobal_845D64, v74); /*0x747848*/
+  v19 = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_845D58, *(_BYTE *)(a1 + 3607)); /*0x74785d*/
   v20 = *(_BYTE *)(a1 + 3608); /*0x747862*/
   *(_BYTE *)(a1 + 3607) = v19; /*0x747868*/
-  v21 = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x83CC84], v20); /*0x747877*/
+  v21 = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_83CC84, v20); /*0x747877*/
   v75 = *(_BYTE *)(a1 + 3609); /*0x747884*/
   *(_BYTE *)(a1 + 3608) = v21; /*0x74788b*/
-  *(_BYTE *)(a1 + 3609) = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x83CC94], v75); /*0x747896*/
-  *(_BYTE *)(a1 + 3611) = INIClass::ReadBool_Overwrite(a1 + 36, MEMORY[0x845D4C], *(_BYTE *)(a1 + 3611)); /*0x7478b0*/
+  *(_BYTE *)(a1 + 3609) = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_83CC94, v75); /*0x747896*/
+  *(_BYTE *)(a1 + 3611) = INIClass::ReadBool_Overwrite(a1 + 36, DataGlobal_845D4C, *(_BYTE *)(a1 + 3611)); /*0x7478b0*/
   if ( *(char *)(a1 + 3677) > 0 ) /*0x7478be*/
     *(_DWORD *)(a1 + 3612) = 1; /*0x7478c0*/
-  v22 = INIClass::ReadInt_Overwrite(a1 + 504, MEMORY[0x845D3C], *(_DWORD *)(a1 + 3612)); /*0x7478dc*/
+  v22 = INIClass::ReadInt_Overwrite(a1 + 504, DataGlobal_845D3C, *(_DWORD *)(a1 + 3612)); /*0x7478dc*/
   v76 = *(_DWORD *)(a1 + 3616); /*0x7478ec*/
   *(_DWORD *)(a1 + 3612) = v22; /*0x7478f3*/
-  *(_DWORD *)(a1 + 3616) = INIClass::ReadInt_Overwrite(a1 + 504, MEMORY[0x845D30], v76); /*0x7478fe*/
-  v23 = INIClass::ReadInt_Overwrite(a1 + 504, MEMORY[0x845D20], *(_DWORD *)(a1 + 3620)); /*0x747916*/
+  *(_DWORD *)(a1 + 3616) = INIClass::ReadInt_Overwrite(a1 + 504, DataGlobal_845D30, v76); /*0x7478fe*/
+  v23 = INIClass::ReadInt_Overwrite(a1 + 504, DataGlobal_845D20, *(_DWORD *)(a1 + 3620)); /*0x747916*/
   *(_DWORD *)(a1 + 3620) = v23; /*0x747920*/
   if ( v23 < 1 ) /*0x747928*/
     *(_DWORD *)(a1 + 3620) = 1; /*0x74792a*/
   if ( !*(_BYTE *)(a1 + 3677) && !*(_BYTE *)(a1 + 3233) ) /*0x74793a*/
     *(_DWORD *)(a1 + 3644) = 1; /*0x747944*/
-  v24 = INIClass::ReadInt_Overwrite(a1 + 504, MEMORY[0x845D18], *(_DWORD *)(a1 + 3644)); /*0x74795c*/
+  v24 = INIClass::ReadInt_Overwrite(a1 + 504, DataGlobal_845D18, *(_DWORD *)(a1 + 3644)); /*0x74795c*/
   v25 = *(_DWORD *)(a1 + 3628); /*0x747961*/
   *(_DWORD *)(a1 + 3644) = v24; /*0x74796c*/
   if ( v25 == -1 ) /*0x747972*/
@@ -351,20 +355,20 @@ char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, 
     *(_DWORD *)(a1 + 3636) = v28; /*0x747a09*/
     *(_DWORD *)(a1 + 3640) = v29 + v28; /*0x747a11*/
   }
-  *(_DWORD *)(a1 + 3624) = INIClass::ReadInt_Overwrite(a1 + 504, MEMORY[0x845D08], *(_DWORD *)(a1 + 3624)); /*0x747a2e*/
-  v30 = INIClass::ReadInt_Overwrite(a1 + 504, MEMORY[0x845CF8], *(_DWORD *)(a1 + 3628)); /*0x747a46*/
+  *(_DWORD *)(a1 + 3624) = INIClass::ReadInt_Overwrite(a1 + 504, DataGlobal_845D08, *(_DWORD *)(a1 + 3624)); /*0x747a2e*/
+  v30 = INIClass::ReadInt_Overwrite(a1 + 504, DataGlobal_845CF8, *(_DWORD *)(a1 + 3628)); /*0x747a46*/
   v31 = *(_DWORD *)(a1 + 3632); /*0x747a4b*/
   *(_DWORD *)(a1 + 3628) = v30; /*0x747a51*/
-  v32 = INIClass::ReadInt_Overwrite(a1 + 504, MEMORY[0x845CE4], v31); /*0x747a63*/
+  v32 = INIClass::ReadInt_Overwrite(a1 + 504, DataGlobal_845CE4, v31); /*0x747a63*/
   v77 = *(_DWORD *)(a1 + 3636); /*0x747a73*/
   *(_DWORD *)(a1 + 3632) = v32; /*0x747a7a*/
-  *(_DWORD *)(a1 + 3636) = INIClass::ReadInt_Overwrite(a1 + 504, MEMORY[0x845CD4], v77); /*0x747a85*/
-  *(_DWORD *)(a1 + 3640) = INIClass::ReadInt_Overwrite(a1 + 504, MEMORY[0x845CC4], *(_DWORD *)(a1 + 3640)); /*0x747aa8*/
+  *(_DWORD *)(a1 + 3636) = INIClass::ReadInt_Overwrite(a1 + 504, DataGlobal_845CD4, v77); /*0x747a85*/
+  *(_DWORD *)(a1 + 3640) = INIClass::ReadInt_Overwrite(a1 + 504, DataGlobal_845CC4, *(_DWORD *)(a1 + 3640)); /*0x747aa8*/
   v80 = 0; /*0x747aae*/
   v78 = (_DWORD *)(a1 + 3648); /*0x747ab6*/
   do /*0x747b01*/
   {
-    sprintf(Buffer, MEMORY[0x845CB0], v80); /*0x747ac9*/
+    sprintf(Buffer, DataGlobal_845CB0, v80); /*0x747ac9*/
     *v78 = INIClass::ReadInt_Overwrite(a1 + 504, Buffer, *v78); /*0x747aec*/
     v33 = ++v80 < 2; /*0x747af6*/
     ++v78; /*0x747afd*/
@@ -374,67 +378,67 @@ char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, 
   v79 = (_DWORD *)(a1 + 3656); /*0x747b0b*/
   do /*0x747b47*/
   {
-    sprintf(Buffer, MEMORY[0x845CA0], v34++); /*0x747b1a*/
+    sprintf(Buffer, DataGlobal_845CA0, v34++); /*0x747b1a*/
     *v79 = INIClass::ReadInt_Overwrite(a1 + 36, Buffer, *v79); /*0x747b3b*/
     ++v79; /*0x747b43*/
   }
   while ( v34 < 4 ); /*0x747b47*/
   strcpy(Source, (const char *)(a1 + 3678)); /*0x747b6f*/
-  INIClass::GetString(a3, v4, (unsigned __int8 *)MEMORY[0x845C94], Source, (char *)(a1 + 3678), 25); /*0x747b88*/
+  INIClass::GetString(a3, v4, (unsigned __int8 *)DataGlobal_845C94, Source, (char *)(a1 + 3678), 25); /*0x747b88*/
   _makepath(v84, 0, 0, (const char *)(a1 + 3678), Ext); /*0x747ba6*/
   *(_DWORD *)(a1 + 3672) = SearchMIXFile(v84, 0); /*0x747bc4*/
-  if ( (unsigned __int8)AbstractTypeClass::NameEquals(MEMORY[0x84314C]) ) /*0x747bca*/
+  if ( (unsigned __int8)AbstractTypeClass::NameEquals(DataGlobal_84314C) ) /*0x747bca*/
   {
-    v35 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845C80], 0); /*0x747bf0*/
-    v36 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845C6C], -1); /*0x747bf2*/
+    v35 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845C80, 0); /*0x747bf0*/
+    v36 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845C6C, -1); /*0x747bf2*/
     BuildingClass::SetSlot((_DWORD *)a1, v35, v36); /*0x747bfb*/
-    v37 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845C58], 1); /*0x747c19*/
-    v38 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845C44], -1); /*0x747c1b*/
+    v37 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845C58, 1); /*0x747c19*/
+    v38 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845C44, -1); /*0x747c1b*/
     BuildingClass::SetSlot((_DWORD *)a1, v37, v38); /*0x747c24*/
-    v39 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845C2C], 2); /*0x747c42*/
-    v40 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845C14], -1); /*0x747c44*/
+    v39 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845C2C, 2); /*0x747c42*/
+    v40 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845C14, -1); /*0x747c44*/
     BuildingClass::SetSlot((_DWORD *)a1, v39, v40); /*0x747c4d*/
-    v41 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845C04], 3); /*0x747c6b*/
-    v42 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845BF0], -1); /*0x747c6d*/
+    v41 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845C04, 3); /*0x747c6b*/
+    v42 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845BF0, -1); /*0x747c6d*/
     BuildingClass::SetSlot((_DWORD *)a1, v41, v42); /*0x747c76*/
-    v43 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845BDC], 0); /*0x747c94*/
-    v44 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845BC8], -1); /*0x747c96*/
+    v43 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845BDC, 0); /*0x747c94*/
+    v44 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845BC8, -1); /*0x747c96*/
     BuildingClass::SetSlot((_DWORD *)a1, v43, v44); /*0x747c9f*/
-    v45 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845BB4], 0); /*0x747cb3*/
-    v46 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845BA0], -1); /*0x747cbf*/
+    v45 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845BB4, 0); /*0x747cb3*/
+    v46 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845BA0, -1); /*0x747cbf*/
     BuildingClass::SetSlot((_DWORD *)a1, v45, v46); /*0x747cc8*/
-    v47 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845B8C], 0); /*0x747ce6*/
-    v48 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845B78], -1); /*0x747ce8*/
+    v47 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845B8C, 0); /*0x747ce6*/
+    v48 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845B78, -1); /*0x747ce8*/
     BuildingClass::SetSlot((_DWORD *)a1, v47, v48); /*0x747cf1*/
-    v49 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845B64], 0); /*0x747d0f*/
-    v50 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845B50], -1); /*0x747d11*/
+    v49 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845B64, 0); /*0x747d0f*/
+    v50 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845B50, -1); /*0x747d11*/
     BuildingClass::SetSlot((_DWORD *)a1, v49, v50); /*0x747d1a*/
-    v51 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845B38], 0); /*0x747d38*/
-    v52 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845B20], -1); /*0x747d3a*/
+    v51 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845B38, 0); /*0x747d38*/
+    v52 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845B20, -1); /*0x747d3a*/
     BuildingClass::SetSlot((_DWORD *)a1, v51, v52); /*0x747d43*/
-    v53 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845B08], 0); /*0x747d61*/
-    v54 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845AF0], -1); /*0x747d63*/
+    v53 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845B08, 0); /*0x747d61*/
+    v54 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845AF0, -1); /*0x747d63*/
     BuildingClass::SetSlot((_DWORD *)a1, v53, v54); /*0x747d6c*/
-    v55 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845ADC], 0); /*0x747d8a*/
-    v56 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845AC8], -1); /*0x747d8c*/
+    v55 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845ADC, 0); /*0x747d8a*/
+    v56 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845AC8, -1); /*0x747d8c*/
     BuildingClass::SetSlot((_DWORD *)a1, v55, v56); /*0x747d95*/
-    v57 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845AAC], 0); /*0x747db3*/
-    v58 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845A8C], -1); /*0x747db5*/
+    v57 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845AAC, 0); /*0x747db3*/
+    v58 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845A8C, -1); /*0x747db5*/
     BuildingClass::SetSlot((_DWORD *)a1, v57, v58); /*0x747dbe*/
-    v59 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845A7C], 0); /*0x747ddc*/
-    v60 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845A6C], -1); /*0x747dde*/
+    v59 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845A7C, 0); /*0x747ddc*/
+    v60 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845A6C, -1); /*0x747dde*/
     BuildingClass::SetSlot((_DWORD *)a1, v59, v60); /*0x747de7*/
-    v61 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845A58], 0); /*0x747e05*/
-    v62 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845A40], -1); /*0x747e07*/
+    v61 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845A58, 0); /*0x747e05*/
+    v62 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845A40, -1); /*0x747e07*/
     BuildingClass::SetSlot((_DWORD *)a1, v61, v62); /*0x747e10*/
-    v63 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845A2C], 0); /*0x747e2e*/
-    v64 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845A18], -1); /*0x747e30*/
+    v63 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845A2C, 0); /*0x747e2e*/
+    v64 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845A18, -1); /*0x747e30*/
     BuildingClass::SetSlot((_DWORD *)a1, v63, v64); /*0x747e39*/
-    v65 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x845A00], 0); /*0x747e57*/
-    v66 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x8459E8], -1); /*0x747e59*/
+    v65 = INIClass::ReadInt_Overwrite(v4, DataGlobal_845A00, 0); /*0x747e57*/
+    v66 = INIClass::ReadInt_Overwrite(v4, DataGlobal_8459E8, -1); /*0x747e59*/
     BuildingClass::SetSlot((_DWORD *)a1, v65, v66); /*0x747e62*/
-    v67 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x8459D4], 0); /*0x747e80*/
-    v68 = INIClass::ReadInt_Overwrite(v4, MEMORY[0x8459BC], -1); /*0x747e82*/
+    v67 = INIClass::ReadInt_Overwrite(v4, DataGlobal_8459D4, 0); /*0x747e80*/
+    v68 = INIClass::ReadInt_Overwrite(v4, DataGlobal_8459BC, -1); /*0x747e82*/
     BuildingClass::SetSlot((_DWORD *)a1, v67, v68); /*0x747e8b*/
   }
   return 1; /*0x747e92*/
@@ -454,7 +458,7 @@ VoxelAnimTypeClass *__thiscall UnitTypeClass::FindOrCreate(ObjectClass *this)
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x74b97c*/
     return 0; /*0x74b9df*/
   v2 = 0; /*0x74b98d*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[22660] <= 0 ) /*0x74b991*/
+  if ( *(int *)&HouseClass_Player[44524] <= 0 ) /*0x74b991*/
   {
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x308u); /*0x74b9b6*/
@@ -462,12 +466,12 @@ LABEL_6:
       return (VoxelAnimTypeClass *)VoxelAnimTypeClass::Constructor(v3, this); /*0x74b9d1*/
     return 0; /*0x74b9c5*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22648] + 4 * v2) + 36), this) ) /*0x74b9aa*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[44512] + 4 * v2) + 36), this) ) /*0x74b9aa*/
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[22660] ) /*0x74b9b4*/
+    if ( ++v2 >= *(int *)&HouseClass_Player[44524] ) /*0x74b9b4*/
       goto LABEL_6; /*0x74b9b4*/
   }
-  return *(VoxelAnimTypeClass **)(*(_DWORD *)&HouseClass_Player.__pad_5568[22648] + 4 * v2); /*0x74b9cf*/
+  return *(VoxelAnimTypeClass **)(*(_DWORD *)&HouseClass_Player[44512] + 4 * v2); /*0x74b9cf*/
 }
 }
 

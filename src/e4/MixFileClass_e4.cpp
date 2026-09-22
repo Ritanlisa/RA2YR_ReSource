@@ -19,8 +19,8 @@ void sub_69E210()
   int v8; // eax
   int v9; // eax
 
-  v0 = MEMORY[0xB077B0]; /*0x69e213*/
-  if ( MEMORY[0xB077B0] ) /*0x69e21d*/
+  v0 = DataGlobal_B077B0; /*0x69e213*/
+  if ( DataGlobal_B077B0 ) /*0x69e21d*/
   {
     do /*0x69e289*/
     {
@@ -39,7 +39,7 @@ void sub_69E210()
             if ( v3 ) /*0x69e250*/
               *(_DWORD *)(v3 + 24) = *((_DWORD *)v1 + 6); /*0x69e255*/
             else
-              MEMORY[0xB077B0] = (void *)*((_DWORD *)v1 + 6); /*0x69e25d*/
+              DataGlobal_B077B0 = (void *)*((_DWORD *)v1 + 6); /*0x69e25d*/
             if ( *((_DWORD *)v1 + 2) ) /*0x69e262*/
             {
               free(*((void **)v1 + 2)); /*0x69e26a*/
@@ -55,16 +55,16 @@ void sub_69E210()
     }
     while ( v0 ); /*0x69e289*/
   }
-  v4 = MEMORY[0xB077B4]; /*0x69e28b*/
-  if ( MEMORY[0xB077B4] ) /*0x69e293*/
+  v4 = DataGlobal_B077B4; /*0x69e28b*/
+  if ( DataGlobal_B077B4 ) /*0x69e293*/
   {
-    if ( *(_WORD *)MEMORY[0xB077B4] == 0xFFFF ) /*0x69e299*/
+    if ( *(_WORD *)DataGlobal_B077B4 == 0xFFFF ) /*0x69e299*/
     {
-      v5 = (char *)MEMORY[0xB077B4] + 16; /*0x69e29f*/
-      if ( *((_BYTE *)MEMORY[0xB077B4] + 16) ) /*0x69e29b*/
+      v5 = (char *)DataGlobal_B077B4 + 16; /*0x69e29f*/
+      if ( *((_BYTE *)DataGlobal_B077B4 + 16) ) /*0x69e29b*/
       {
-        v6 = (void *)*((_DWORD *)MEMORY[0xB077B4] + 3); /*0x69e2a6*/
-        v7 = (char *)MEMORY[0xB077B4] + 12; /*0x69e2a9*/
+        v6 = (void *)*((_DWORD *)DataGlobal_B077B4 + 3); /*0x69e2a6*/
+        v7 = (char *)DataGlobal_B077B4 + 12; /*0x69e2a9*/
         if ( v6 ) /*0x69e2ae*/
           MixFileClass::CacheNode_Dtor(v6, 1); /*0x69e2b2*/
         *v7 = 0; /*0x69e2b7*/
@@ -77,7 +77,7 @@ void sub_69E210()
       if ( v9 ) /*0x69e2cf*/
         *(_DWORD *)(v9 + 24) = *((_DWORD *)v4 + 6); /*0x69e2d4*/
       else
-        MEMORY[0xB077B0] = (void *)*((_DWORD *)v4 + 6); /*0x69e2dc*/
+        DataGlobal_B077B0 = (void *)*((_DWORD *)v4 + 6); /*0x69e2dc*/
       if ( *((_DWORD *)v4 + 2) ) /*0x69e2e1*/
       {
         free(*((void **)v4 + 2)); /*0x69e2e9*/
@@ -85,9 +85,9 @@ void sub_69E210()
       }
     }
     __3_YAXPAX_Z(v4); /*0x69e2f5*/
-    MEMORY[0xB077B4] = 0; /*0x69e2fd*/
-    MEMORY[0xB077B8] = 0; /*0x69e303*/
-    MEMORY[0xB077BC] = 0; /*0x69e309*/
+    DataGlobal_B077B4 = 0; /*0x69e2fd*/
+    DataGlobal_B077B8 = 0; /*0x69e303*/
+    DataGlobal_B077BC = 0; /*0x69e309*/
   }
 }
 }

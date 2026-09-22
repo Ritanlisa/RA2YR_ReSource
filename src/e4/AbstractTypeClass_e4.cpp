@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x410800
 int AbstractTypeClass::Constructor(AbstractClass * aP1)
@@ -62,17 +63,17 @@ LABEL_9:
     qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x4108eb*/
     this->q094 = v8; /*0x4108ed*/
   }
-  this->UIName = &stru_87C374.__pad_579C[23588]; /*0x4108ee*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[22212] < *(int *)&HouseClass_Player.__pad_5568[22204] /*0x410929*/
-    || (HouseClass_Player.__pad_5568[22209] || !*(_DWORD *)&HouseClass_Player.__pad_5568[22204])
-    && *(int *)&HouseClass_Player.__pad_5568[22216] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_5568[22196] + 8))(
-         &HouseClass_Player.__pad_5568[22196],
-         *(_DWORD *)&HouseClass_Player.__pad_5568[22204] + *(_DWORD *)&HouseClass_Player.__pad_5568[22216],
+  this->UIName = &stru_87C374[46016]; /*0x4108ee*/
+  if ( *(int *)&HouseClass_Player[44076] < *(int *)&HouseClass_Player[44068] /*0x410929*/
+    || (HouseClass_Player[44073] || !*(_DWORD *)&HouseClass_Player[44068])
+    && *(int *)&HouseClass_Player[44080] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player[44060] + 8))(
+         &HouseClass_Player[44060],
+         *(_DWORD *)&HouseClass_Player[44068] + *(_DWORD *)&HouseClass_Player[44080],
          0) )
   {
-    v4 = (*(_DWORD *)&HouseClass_Player.__pad_5568[22212])++; /*0x410936*/
-    *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22200] + 4 * v4) = this; /*0x410945*/
+    v4 = (*(_DWORD *)&HouseClass_Player[44076])++; /*0x410936*/
+    *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44064] + 4 * v4) = this; /*0x410945*/
   }
   return this; /*0x410948*/
 }
@@ -92,15 +93,15 @@ int __thiscall AbstractTypeClass_Dtor(_DWORD *this)
   this->vtable3 = &AbstractTypeClass::`vftable'; /*0x4109da*/
   this->vtable4 = &vt_AbstractTypeClass; /*0x4109e1*/
   v4 = this; /*0x4109ef*/
-  v2 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xA8E968] + 16))(&MEMORY[0xA8E968], &v4); /*0x4109f3*/
-  if ( v2 != -1 && v2 < MEMORY[0xA8E978] && v2 < --MEMORY[0xA8E978] ) /*0x410a0e*/
+  v2 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_A8E968 + 16))(&DataGlobal_A8E968, &v4); /*0x4109f3*/
+  if ( v2 != -1 && v2 < g_AbstractTypePool && v2 < --g_AbstractTypePool ) /*0x410a0e*/
   {
     do /*0x410a26*/
     {
       ++v2; /*0x410a16*/
-      *((_DWORD *)MEMORY[0xA8E96C] + v2 - 1) = *((_DWORD *)MEMORY[0xA8E96C] + v2); /*0x410a1a*/
+      *((_DWORD *)DataGlobal_A8E96C + v2 - 1) = *((_DWORD *)DataGlobal_A8E96C + v2); /*0x410a1a*/
     }
-    while ( v2 < MEMORY[0xA8E978] ); /*0x410a26*/
+    while ( v2 < g_AbstractTypePool ); /*0x410a26*/
   }
   return AbstractClass::DTOR(this); /*0x410a2f*/
 }
@@ -125,7 +126,7 @@ char __thiscall AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
   INIClass::GetString( /*0x410aa0*/
     (unsigned __int8 ***)aP1,
     (INIClass *)(this + 36),
-    (unsigned __int8 *)&MEMORY[0x81784C].headNode[1],
+    (unsigned __int8 *)&g_INI_Key_UIName.headNode[1],
     (INIClass *)(this + 100),
     Source,
     49);
@@ -147,7 +148,7 @@ char __thiscall AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
   INIClass::GetString( /*0x410afb*/
     (unsigned __int8 ***)aP1,
     (INIClass *)(this + 36),
-    (unsigned __int8 *)&MEMORY[0x81784C],
+    (unsigned __int8 *)&g_INI_Key_UIName,
     (INIClass *)(this + 61),
     Source,
     32);
@@ -163,9 +164,9 @@ char __thiscall AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
   if ( Destination != v4 ) /*0x410b2d*/
     qmemcpy(v4, Destination, 0x20u); /*0x410b3a*/
   if ( *v4 ) /*0x410b3c*/
-    this->UIName = GetStringCSF((wchar_t *)(this + 61), 0, MEMORY[0x817830], 215); /*0x410b58*/
+    this->UIName = GetStringCSF((wchar_t *)(this + 61), 0, DataGlobal_817830, 215); /*0x410b58*/
   else
-    this->UIName = &MEMORY[0x87F8E4].__pad_5568[10472]; /*0x410b69*/
+    this->UIName = &DataGlobal_87F8E4[32336]; /*0x410b69*/
   return 1; /*0x410b57*/
 }
 }
@@ -206,7 +207,7 @@ int AbstractTypeClass::Init(AbstractTypeClass * aP1)
     if ( v3 )
     this->UIName = GetStringCSF((wchar_t *)(this + 61), 0, DataGlobal_817830, 127);
     else
-    this->UIName = &DataGlobal_87F8E4.__pad_5568[10472];
+    this->UIName = &DataGlobal_87F8E4[32336];
     return this;
 }
 }

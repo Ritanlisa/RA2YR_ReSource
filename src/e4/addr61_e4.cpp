@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_6107E0_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x610570
 namespace gamemd {
@@ -24,7 +26,7 @@ BOOL __stdcall DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
   __int64 v14; // [esp+8h] [ebp-208h] BYREF
   void *v15[128]; // [esp+10h] [ebp-200h] BYREF
 
-  DynamicArray::Resize(&MEMORY[0xAC1B48], (int *)&hWnd, &v14); /*0x61058a*/
+  DynamicArray::Resize(&g_DialogHashMap_Entries, (int *)&hWnd, &v14); /*0x61058a*/
   memset(v15, 0, sizeof(v15)); /*0x6105a0*/
   v15[26] = (void *)11; /*0x6105a4*/
   v15[25] = (void *)aP0; /*0x6105ac*/
@@ -37,7 +39,7 @@ BOOL __stdcall DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
   v15[16] = 0; /*0x6105df*/
   v15[23] = 0; /*0x6105e3*/
   v15[36] = (void *)-1; /*0x6105e7*/
-  Dialog::BindGadgetData(&MEMORY[0xAC1B00], (int *)&hWnd, (char *)v15); /*0x6105f2*/
+  Dialog::BindGadgetData(&g_DialogHashMap_Base, (int *)&hWnd, (char *)v15); /*0x6105f2*/
   if ( v15[10] ) /*0x6105fd*/
   {
     __3_YAXPAX_Z(v15[10]); /*0x610600*/
@@ -75,22 +77,22 @@ LABEL_16:
   }
   if ( v15[15] ) /*0x610655*/
     DeleteAndZero::OrFree((void **)v15[15], 1); /*0x610659*/
-  if ( MEMORY[0xAC18C4] ) /*0x610666*/
+  if ( g_DialogPoolCount ) /*0x610666*/
   {
-    v14 = (unsigned int)(MEMORY[0xAC18C4] - 1); /*0x610671*/
-    *(float *)&v14 = (double)v14 / (double)MEMORY[0xAC18C8]; /*0x610691*/
-    v7 = MEMORY[0xAC18D8](&hWnd) & ((1 << MEMORY[0xAC18CC]) - 1); /*0x6106af*/
-    v8 = (HWND *)*((_DWORD *)MEMORY[0xAC18C0] + v7); /*0x6106b1*/
+    v14 = (unsigned int)(g_DialogPoolCount - 1); /*0x610671*/
+    *(float *)&v14 = (double)v14 / (double)g_DialogBuffer; /*0x610691*/
+    v7 = DataGlobal_AC18D8(&hWnd) & ((1 << DataGlobal_AC18CC) - 1); /*0x6106af*/
+    v8 = (HWND *)*((_DWORD *)g_DialogPool + v7); /*0x6106b1*/
     if ( v8 ) /*0x6106b6*/
     {
       if ( *v8 == hWnd ) /*0x6106c7*/
       {
         v9 = v8[2]; /*0x6106c9*/
-        __3_YAXPAX_Z(*((void **)MEMORY[0xAC18C0] + v7)); /*0x6106cd*/
+        __3_YAXPAX_Z(*((void **)g_DialogPool + v7)); /*0x6106cd*/
         v10 = *(float *)&v14; /*0x6106db*/
-        *((_DWORD *)MEMORY[0xAC18C0] + v7) = v9; /*0x6106df*/
-        --MEMORY[0xAC18C4]; /*0x6106ee*/
-        if ( v10 > MEMORY[0xAC18E0] ) /*0x6106f8*/
+        *((_DWORD *)g_DialogPool + v7) = v9; /*0x6106df*/
+        --g_DialogPoolCount; /*0x6106ee*/
+        if ( v10 > DataGlobal_AC18E0 ) /*0x6106f8*/
           goto LABEL_31; /*0x6106f8*/
         goto LABEL_30; /*0x6106f8*/
       }
@@ -105,13 +107,13 @@ LABEL_16:
             goto LABEL_29; /*0x61070e*/
         }
         v8[2] = v11[2]; /*0x610716*/
-        --MEMORY[0xAC18C4]; /*0x610720*/
+        --g_DialogPoolCount; /*0x610720*/
         __3_YAXPAX_Z(v11); /*0x610726*/
       }
 LABEL_29:
-      if ( *(float *)&v14 <= MEMORY[0xAC18E0] ) /*0x61073d*/
+      if ( *(float *)&v14 <= DataGlobal_AC18E0 ) /*0x61073d*/
 LABEL_30:
-        HashTable::Shrink2(&MEMORY[0xAC18C0]); /*0x61073f*/
+        HashTable::Shrink2(&g_DialogPool); /*0x61073f*/
     }
   }
 LABEL_31:
@@ -156,9 +158,9 @@ LABEL_7:
       v10[0] = 0; /*0x610879*/
       v10[1] = 0; /*0x61087d*/
       v11 = *(_QWORD *)&(&g_MatrixTransformState)[249]; /*0x610881*/
-      (*(void (__thiscall **)(_DWORD, _QWORD *, _DWORD, _DWORD *, _DWORD, int))(**(_DWORD **)&stru_87C374.__pad_579C[22520] /*0x61088c*/
+      (*(void (__thiscall **)(_DWORD, _QWORD *, _DWORD, _DWORD *, _DWORD, int))(**(_DWORD **)&stru_87C374[44948] /*0x61088c*/
                                                                               + 8))(
-        *(_DWORD *)&stru_87C374.__pad_579C[22520],
+        *(_DWORD *)&stru_87C374[44948],
         v12,
         *(&g_MatrixTransformState + 2990),
         v10,
@@ -172,7 +174,7 @@ LABEL_7:
   }
 LABEL_8:
   *(&g_MatrixTransformState + 5810) = (CoordStruct *)time(0); /*0x6108bb*/
-  StringCSF = GetStringCSF((wchar_t *)&stru_830620.__pad_14B0[15768], 0, &stru_830620.__pad_14B0[7264], 7457); /*0x6108da*/
+  StringCSF = GetStringCSF((wchar_t *)&stru_830620[21064], 0, &stru_830620[12560], 7457); /*0x6108da*/
   swprintf((wchar_t *const)&g_MatrixTransformState + 5982, (const size_t)StringCSF, v8, v9); /*0x6108e5*/
   if ( a2 ) /*0x6108ef*/
     wcscpy((wchar_t *)&g_MatrixTransformState + 5982, a2); /*0x6108f7*/
@@ -198,24 +200,24 @@ char sub_610B50()
   __int64 v2; // [esp+Ch] [ebp-18h]
   __int128 v3; // [esp+14h] [ebp-10h] BYREF
 
-  if ( !MEMORY[0xAC1DCC] ) /*0x610b5d*/
+  if ( !DataGlobal_AC1DCC ) /*0x610b5d*/
     return 0; /*0x610b5f*/
-  if ( MEMORY[0xAC1DD0] == 1 ) /*0x610b6d*/
+  if ( DataGlobal_AC1DD0 == 1 ) /*0x610b6d*/
     return 0; /*0x610b6f*/
-  if ( !MEMORY[0xAC1CC8] ) /*0x610b7e*/
+  if ( !DataGlobal_AC1CC8 ) /*0x610b7e*/
     return 0; /*0x610b80*/
   v1[0] = 0; /*0x610b9e*/
   v1[1] = 0; /*0x610ba2*/
-  v3 = MEMORY[0xAC1CB8]; /*0x610bab*/
-  v2 = *((_QWORD *)&MEMORY[0xAC1CB8] + 1); /*0x610bc8*/
+  v3 = DataGlobal_AC1CB8; /*0x610bab*/
+  v2 = *((_QWORD *)&DataGlobal_AC1CB8 + 1); /*0x610bc8*/
   (*(void (__thiscall **)(int, __int128 *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x610bd3*/
     g_DSurface_Primary,
     &v3,
-    MEMORY[0xAC1CC8],
+    DataGlobal_AC1CC8,
     v1,
     0,
     1);
-  MEMORY[0xAC1DD0] = 1; /*0x610bd6*/
+  DataGlobal_AC1DD0 = 1; /*0x610bd6*/
   return 1; /*0x610b61*/
 }
 }
@@ -232,31 +234,31 @@ char sub_610BF0()
   __int64 v2; // [esp+Ch] [ebp-18h]
   __int128 v3; // [esp+14h] [ebp-10h] BYREF
 
-  if ( !MEMORY[0xAC1DCC] ) /*0x610bfd*/
+  if ( !DataGlobal_AC1DCC ) /*0x610bfd*/
     return 0; /*0x610c05*/
-  if ( MEMORY[0xAC1DD0] == 1 ) /*0x610c0d*/
+  if ( DataGlobal_AC1DD0 == 1 ) /*0x610c0d*/
     goto LABEL_6; /*0x610c0d*/
-  if ( MEMORY[0xAC1CC8] ) /*0x610c17*/
+  if ( DataGlobal_AC1CC8 ) /*0x610c17*/
   {
-    v3 = MEMORY[0xAC1CB8]; /*0x610c35*/
+    v3 = DataGlobal_AC1CB8; /*0x610c35*/
     v1[0] = 0; /*0x610c53*/
     v1[1] = 0; /*0x610c57*/
-    v2 = *((_QWORD *)&MEMORY[0xAC1CB8] + 1); /*0x610c5b*/
+    v2 = *((_QWORD *)&DataGlobal_AC1CB8 + 1); /*0x610c5b*/
     (*(void (__thiscall **)(int, __int128 *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x610c66*/
       g_DSurface_Primary,
       &v3,
-      MEMORY[0xAC1CC8],
+      DataGlobal_AC1CC8,
       v1,
       0,
       1);
-    MEMORY[0xAC1DD0] = 1; /*0x610c69*/
+    DataGlobal_AC1DD0 = 1; /*0x610c69*/
 LABEL_6:
-    if ( MEMORY[0xAC1CC8] ) /*0x610c7c*/
-      (**(void (__thiscall ***)(int, int))MEMORY[0xAC1CC8])(MEMORY[0xAC1CC8], 1); /*0x610c82*/
+    if ( DataGlobal_AC1CC8 ) /*0x610c7c*/
+      (**(void (__thiscall ***)(int, int))DataGlobal_AC1CC8)(DataGlobal_AC1CC8, 1); /*0x610c82*/
   }
-  MEMORY[0xAC1CC8] = 0; /*0x610c84*/
-  MEMORY[0xAC1DCC] = 0; /*0x610c8a*/
-  MEMORY[0xAC1DD0] = 0; /*0x610c90*/
+  DataGlobal_AC1CC8 = 0; /*0x610c84*/
+  DataGlobal_AC1DCC = 0; /*0x610c8a*/
+  DataGlobal_AC1DD0 = 0; /*0x610c90*/
   return 1; /*0x610c01*/
 }
 }
@@ -283,32 +285,32 @@ void __cdecl sub_612930()
   int v11; // ecx
   int v12; // eax
 
-  v0 = MEMORY[0xAC1860]; /*0x612930*/
-  for ( i = 0; i < MEMORY[0xAC1860]; v0 = MEMORY[0xAC1860] ) /*0x61293d*/
+  v0 = DataGlobal_AC1860; /*0x612930*/
+  for ( i = 0; i < DataGlobal_AC1860; v0 = DataGlobal_AC1860 ) /*0x61293d*/
   {
-    v2 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1858] + i); /*0x612944*/
+    v2 = (_DWORD *)*((_DWORD *)DataGlobal_AC1858 + i); /*0x612944*/
     while ( v2 ) /*0x612949*/
     {
       v3 = v2; /*0x61294b*/
       v2 = (_DWORD *)v2[3]; /*0x61294d*/
       __3_YAXPAX_Z(v3); /*0x612951*/
     }
-    *((_DWORD *)MEMORY[0xAC1858] + i++) = 0; /*0x612964*/
+    *((_DWORD *)DataGlobal_AC1858 + i++) = 0; /*0x612964*/
   }
-  v4 = MEMORY[0xAC1888]; /*0x612975*/
-  MEMORY[0xAC185C] = 0; /*0x61297b*/
-  if ( v0 > MEMORY[0xAC1888] ) /*0x612987*/
+  v4 = DataGlobal_AC1888; /*0x612975*/
+  DataGlobal_AC185C = 0; /*0x61297b*/
+  if ( v0 > DataGlobal_AC1888 ) /*0x612987*/
   {
     do /*0x612a3a*/
     {
-      if ( MEMORY[0xAC186C] || v0 <= v4 ) /*0x61299d*/
+      if ( DataGlobal_AC186C || v0 <= v4 ) /*0x61299d*/
         break; /*0x61299d*/
-      v5 = (int *)MEMORY[0xAC1858]; /*0x6129a9*/
+      v5 = (int *)DataGlobal_AC1858; /*0x6129a9*/
       v6 = v0; /*0x6129af*/
-      MEMORY[0xAC1860] = v0 >> 1; /*0x6129b4*/
-      --MEMORY[0xAC1864]; /*0x6129c0*/
-      MEMORY[0xAC1858] = __2_YAPAXI_Z(4 * (v0 >> 1)); /*0x6129d9*/
-      memset(MEMORY[0xAC1858], 0, 4 * MEMORY[0xAC1860]); /*0x6129e1*/
+      DataGlobal_AC1860 = v0 >> 1; /*0x6129b4*/
+      --DataGlobal_AC1864; /*0x6129c0*/
+      DataGlobal_AC1858 = __2_YAPAXI_Z(4 * (v0 >> 1)); /*0x6129d9*/
+      memset(DataGlobal_AC1858, 0, 4 * DataGlobal_AC1860); /*0x6129e1*/
       if ( v6 > 0 ) /*0x6129e3*/
       {
         v7 = v5; /*0x6129e5*/
@@ -320,9 +322,9 @@ void __cdecl sub_612930()
           {
             do /*0x612a1c*/
             {
-              v10 = MEMORY[0xAC1870](v9) & ((1 << MEMORY[0xAC1864]) - 1); /*0x612a05*/
-              v11 = *((_DWORD *)MEMORY[0xAC1858] + v10); /*0x612a0c*/
-              *((_DWORD *)MEMORY[0xAC1858] + v10) = v9; /*0x612a0f*/
+              v10 = DataGlobal_AC1870(v9) & ((1 << DataGlobal_AC1864) - 1); /*0x612a05*/
+              v11 = *((_DWORD *)DataGlobal_AC1858 + v10); /*0x612a0c*/
+              *((_DWORD *)DataGlobal_AC1858 + v10) = v9; /*0x612a0f*/
               v12 = *(_DWORD *)(v9 + 12); /*0x612a12*/
               *(_DWORD *)(v9 + 12) = v11; /*0x612a15*/
               v9 = v12; /*0x612a1a*/
@@ -335,12 +337,12 @@ void __cdecl sub_612930()
         while ( v8 ); /*0x612a22*/
       }
       __3_YAXPAX_Z(v5); /*0x612a25*/
-      v4 = MEMORY[0xAC1888]; /*0x612a2a*/
-      v0 = MEMORY[0xAC1860]; /*0x612a30*/
+      v4 = DataGlobal_AC1888; /*0x612a2a*/
+      v0 = DataGlobal_AC1860; /*0x612a30*/
     }
-    while ( MEMORY[0xAC1860] > (unsigned int)MEMORY[0xAC1888] ); /*0x612a3a*/
+    while ( DataGlobal_AC1860 > (unsigned int)DataGlobal_AC1888 ); /*0x612a3a*/
   }
-  __3_YAXPAX_Z(MEMORY[0xAC1858]); /*0x612a46*/
+  __3_YAXPAX_Z(DataGlobal_AC1858); /*0x612a46*/
 }
 }
 } // namespace gamemd
@@ -363,8 +365,8 @@ HGDIOBJ __stdcall sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
 
   v4 = 0; /*0x612a69*/
-  if ( MEMORY[0xAC1B4C] /*0x612a93*/
-    && (v5 = *((_DWORD *)MEMORY[0xAC1B48] + (MEMORY[0xAC1B60](&hWnd) & ((1 << MEMORY[0xAC1B54]) - 1)))) != 0 )
+  if ( g_DialogHashMap_Grow /*0x612a93*/
+    && (v5 = *((_DWORD *)g_DialogHashMap_Entries + (g_DialogHashMap_Insert(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1)))) != 0 )
   {
     v6 = hWnd; /*0x612a95*/
     while ( *(HWND *)v5 != hWnd ) /*0x612a9b*/
@@ -384,8 +386,8 @@ HGDIOBJ __stdcall sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
 LABEL_10:
   ScreenDialogToClient(v6, &v12); /*0x612ab9*/
   GetClientRect(hWnd, &Rect); /*0x612acc*/
-  if ( MEMORY[0xAC1B04] /*0x612aff*/
-    && (v8 = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&hWnd) & ((1 << MEMORY[0xAC1B0C]) - 1)))) != 0 )
+  if ( g_DialogHashMap_Count /*0x612aff*/
+    && (v8 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
     v9 = hWnd; /*0x612b01*/
     do /*0x612b11*/
@@ -403,7 +405,7 @@ LABEL_10:
   if ( Msg != 307 ) /*0x612b22*/
     return (HGDIOBJ)CallWindowProcA(v4, v9, Msg, (WPARAM)hdc, lParam); /*0x612b5b*/
   v10 = hdc; /*0x612b2a*/
-  SetTextColor(hdc, MEMORY[0xAC18A4]); /*0x612b30*/
+  SetTextColor(hdc, yTop); /*0x612b30*/
   SetBkMode(v10, 1); /*0x612b39*/
   return GetStockObject(5); /*0x612b47*/
 }
@@ -436,9 +438,9 @@ int __stdcall NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned
   v4 = hWnd; /*0x61d6d4*/
   ScreenDialogToClient(hWnd, &Rect); /*0x61d6df*/
   hWnd = v4; /*0x61d6e9*/
-  if ( !MEMORY[0xAC1B04] ) /*0x61d6ef*/
+  if ( !g_DialogHashMap_Count ) /*0x61d6ef*/
     return 0; /*0x61d6ef*/
-  result = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&hWnd) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x61d714*/
+  result = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x61d714*/
   if ( !result ) /*0x61d719*/
     return 0; /*0x61d719*/
   while ( *(HWND *)result != hWnd ) /*0x61d725*/
@@ -499,7 +501,7 @@ int __stdcall NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned
           v12 = 0; /*0x61d83a*/
         }
         v6[4] = v12; /*0x61d83c*/
-        ++MEMORY[0xAC48B4]; /*0x61d847*/
+        ++g_GameScreenState; /*0x61d847*/
         (*(void (__thiscall **)(_DWORD *, _DWORD *, int, _DWORD *, _DWORD, int))(*v12 + 8))( /*0x61d860*/
           v12,
           v16,
@@ -515,7 +517,7 @@ int __stdcall NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned
         v16,
         0,
         1);
-      UI_Helper_6217E0(255 >> g_BitShift_Green_0 << MEMORY[0x8A0DD0], (v6[60] << 16) / (v6[59] - v6[58])); /*0x61d8e3*/
+      UI_Helper_6217E0(255 >> g_BitShift_Green_0 << g_DDraw_BlueMask, (v6[60] << 16) / (v6[59] - v6[58])); /*0x61d8e3*/
       ValidateRect(v4, 0); /*0x61d8eb*/
       return 0; /*0x61d8f3*/
     case 0x401u: /*0x61d75b*/
@@ -572,9 +574,9 @@ int __stdcall RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lPa
       v22[0] = 0; /*0x61edaa*/
       v22[1] = 0; /*0x61edb2*/
       v18 = hWnd; /*0x61edba*/
-      if ( MEMORY[0xAC1B04] ) /*0x61edbe*/
+      if ( g_DialogHashMap_Count ) /*0x61edbe*/
       {
-        result = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v18) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x61ede3*/
+        result = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v18) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x61ede3*/
         if ( result ) /*0x61ede8*/
         {
           while ( *(HWND *)result != v18 ) /*0x61edf4*/
@@ -607,7 +609,7 @@ int __stdcall RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lPa
                 v14 = 0; /*0x61ee71*/
               }
               *(_DWORD *)(v10 + 16) = v14; /*0x61ee73*/
-              ++MEMORY[0xAC48B4]; /*0x61ee7e*/
+              ++g_GameScreenState; /*0x61ee7e*/
               (*(void (__thiscall **)(_DWORD *, _DWORD *, int, int *, _DWORD, int))(*v14 + 8))( /*0x61ee97*/
                 v14,
                 v22,
@@ -634,7 +636,7 @@ int __stdcall RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lPa
               Rect.right -= 4; /*0x61ef22*/
               Rect.top += 4; /*0x61ef2c*/
               Rect.bottom -= 4; /*0x61ef30*/
-              Surface_Render((int)&Rect, *(_DWORD *)(v10 + 100), MEMORY[0xAC18A4], 36); /*0x61ef4a*/
+              Surface_Render((int)&Rect, *(_DWORD *)(v10 + 100), yTop, 36); /*0x61ef4a*/
             }
             ValidateRect(hWnd, 0); /*0x61ef59*/
           }
@@ -647,8 +649,8 @@ int __stdcall RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lPa
       return 0; /*0x61ecc6*/
   }
   v5 = 0; /*0x61ecd1*/
-  if ( MEMORY[0xAC1B4C] /*0x61ecfe*/
-    && (v6 = *((_DWORD *)MEMORY[0xAC1B48] + (MEMORY[0xAC1B60](&hWnd) & ((1 << MEMORY[0xAC1B54]) - 1)))) != 0 )
+  if ( g_DialogHashMap_Grow /*0x61ecfe*/
+    && (v6 = *((_DWORD *)g_DialogHashMap_Entries + (g_DialogHashMap_Insert(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1)))) != 0 )
   {
     v7 = hWnd; /*0x61ed00*/
     while ( *(HWND *)v6 != hWnd ) /*0x61ed09*/
@@ -697,7 +699,7 @@ int __usercall FormatHotkeyDisplayString@<eax>(__int16 a1@<cx>, wchar_t *a2@<edx
       v5 = MapVirtualKeyA(0x12u, 0); /*0x61efb0*/
       GetKeyNameTextA((v5 << 16) | 0x2000001, String, 32); /*0x61efc2*/
       strcat((char *)Format, String); /*0x61efe8*/
-      strcat((char *)Format, &stru_830620.__pad_53E0[52]); /*0x61f014*/
+      strcat((char *)Format, &stru_830620[21524]); /*0x61f014*/
       LOBYTE(result) = HIBYTE(v4); /*0x61f016*/
       LOBYTE(a1) = v4; /*0x61f021*/
     }
@@ -706,7 +708,7 @@ int __usercall FormatHotkeyDisplayString@<eax>(__int16 a1@<cx>, wchar_t *a2@<edx
       v6 = MapVirtualKeyA(0x11u, 0); /*0x61f02d*/
       GetKeyNameTextA((v6 << 16) | 0x2000001, String, 32); /*0x61f03f*/
       strcat((char *)Format, String); /*0x61f065*/
-      strcat((char *)Format, &stru_830620.__pad_53E0[52]); /*0x61f091*/
+      strcat((char *)Format, &stru_830620[21524]); /*0x61f091*/
       LOBYTE(result) = HIBYTE(v4); /*0x61f093*/
       LOBYTE(a1) = v4; /*0x61f09e*/
     }
@@ -715,13 +717,13 @@ int __usercall FormatHotkeyDisplayString@<eax>(__int16 a1@<cx>, wchar_t *a2@<edx
       v7 = MapVirtualKeyA(0x10u, 0); /*0x61f0aa*/
       GetKeyNameTextA((v7 << 16) | 0x2000001, String, 32); /*0x61f0bc*/
       strcat((char *)Format, String); /*0x61f0e2*/
-      strcat((char *)Format, &stru_830620.__pad_53E0[52]); /*0x61f10e*/
+      strcat((char *)Format, &stru_830620[21524]); /*0x61f10e*/
       LOBYTE(a1) = v4; /*0x61f117*/
     }
     v8 = MapVirtualKeyA((unsigned __int8)a1, 0); /*0x61f124*/
     GetKeyNameTextA((v8 << 16) | 0x2000001, String, 32); /*0x61f136*/
     strcat((char *)Format, String); /*0x61f15c*/
-    return swprintf(a2, (const size_t)&stru_830620.__pad_14B0[15780], Format, a3); /*0x61f174*/
+    return swprintf(a2, (const size_t)&stru_830620[21076], Format, a3); /*0x61f174*/
   }
   return result; /*0x61f180*/
 }
@@ -926,198 +928,198 @@ char __fastcall Dialog_InitCountryIcons(int a1, int a2)
   int v190; // edx
   int v191; // edx
 
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], a2, MEMORY[0x833654], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v2, MEMORY[0x8363C4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v3, MEMORY[0x8363B8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v4, MEMORY[0x8363AC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v5, MEMORY[0x8363A0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v6, MEMORY[0x836394], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v7, MEMORY[0x836388], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v8, MEMORY[0x83637C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v9, MEMORY[0x836370], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v10, MEMORY[0x836364], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v11, MEMORY[0x836358], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v12, MEMORY[0x83634C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v13, MEMORY[0x836340], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v14, MEMORY[0x836334], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v15, MEMORY[0x836328], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v16, MEMORY[0x836318], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v17, MEMORY[0x836308], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v18, MEMORY[0x8362F8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v19, MEMORY[0x8362E8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v20, MEMORY[0x8362DC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v21, MEMORY[0x8362CC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v22, MEMORY[0x835A00], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v23, MEMORY[0x8359C8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v24, MEMORY[0x8359E4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v25, MEMORY[0x8359AC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v26, MEMORY[0x8359D4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v27, MEMORY[0x8359F0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v28, MEMORY[0x8359B8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v29, MEMORY[0x8362C0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v30, MEMORY[0x8362B4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v31, MEMORY[0x8362A8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v32, MEMORY[0x83629C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v33, MEMORY[0x836290], 1, 0);
-  UI_Init_6BA120(MEMORY[0x836284]);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v34, MEMORY[0x836278], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v35, MEMORY[0x83626C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v36, MEMORY[0x83625C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v37, MEMORY[0x83624C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v38, MEMORY[0x83623C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v39, MEMORY[0x83622C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v40, MEMORY[0x836220], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v41, MEMORY[0x836214], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v42, MEMORY[0x836208], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v43, MEMORY[0x8361FC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v44, MEMORY[0x8361F0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v45, MEMORY[0x8361E4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v46, MEMORY[0x8361D8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v47, MEMORY[0x8361CC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v48, MEMORY[0x8361C0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v49, MEMORY[0x8361B4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v50, MEMORY[0x8361A8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v51, MEMORY[0x83619C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v52, MEMORY[0x836190], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v53, MEMORY[0x836184], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v54, MEMORY[0x836174], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v55, MEMORY[0x836164], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v56, MEMORY[0x836158], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v57, MEMORY[0x83614C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v58, MEMORY[0x836140], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v59, MEMORY[0x836134], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v60, MEMORY[0x835944], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v61, MEMORY[0x836128], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v62, MEMORY[0x83611C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v63, MEMORY[0x836110], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v64, MEMORY[0x836104], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v65, MEMORY[0x8360F8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v66, MEMORY[0x835908], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v67, MEMORY[0x8358FC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v68, MEMORY[0x835920], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v69, MEMORY[0x8358E4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v70, MEMORY[0x8358F0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v71, MEMORY[0x835914], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v72, MEMORY[0x83592C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v73, MEMORY[0x835938], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v74, MEMORY[0x8360EC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v75, MEMORY[0x8360DC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v76, MEMORY[0x8360D0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v77, MEMORY[0x8360C4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v78, MEMORY[0x8360B4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v79, MEMORY[0x8360A8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v80, g_Str_File_wolacpt_pcx, 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v81, g_Str_File_wolhost_pcx, 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v82, MEMORY[0x83609C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v83, MEMORY[0x831DDC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v84, MEMORY[0x831DD0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v85, MEMORY[0x83608C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v86, MEMORY[0x83607C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v87, MEMORY[0x836070], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v88, MEMORY[0x836064], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v89, MEMORY[0x836054], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v90, MEMORY[0x836044], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v91, MEMORY[0x836034], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v92, MEMORY[0x836028], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v93, MEMORY[0x83601C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v94, MEMORY[0x836010], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v95, MEMORY[0x836000], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v96, MEMORY[0x835FF4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v97, MEMORY[0x835FE4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v98, MEMORY[0x835FD4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v99, MEMORY[0x835FC8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v100, MEMORY[0x835FBC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v101, MEMORY[0x835FB0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v102, MEMORY[0x835FA4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v103, MEMORY[0x835F98], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v104, MEMORY[0x835F8C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v105, MEMORY[0x835F80], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v106, MEMORY[0x835F74], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v107, MEMORY[0x835F68], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v108, MEMORY[0x835F5C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v109, MEMORY[0x835F4C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v110, MEMORY[0x835F3C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v111, MEMORY[0x835F2C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v112, MEMORY[0x835F1C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v113, MEMORY[0x835F0C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v114, MEMORY[0x835EFC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v115, MEMORY[0x835EEC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v116, MEMORY[0x835EDC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v117, MEMORY[0x835A1C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v118, MEMORY[0x835A28], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v119, MEMORY[0x835A10], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v120, MEMORY[0x835ECC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v121, MEMORY[0x835EBC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v122, MEMORY[0x835EAC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v123, MEMORY[0x835E9C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v124, MEMORY[0x835E8C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v125, MEMORY[0x835E7C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v126, MEMORY[0x835E6C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v127, MEMORY[0x835E5C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v128, MEMORY[0x835E50], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v129, MEMORY[0x835998], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v130, MEMORY[0x835E44], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v131, MEMORY[0x835974], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v132, MEMORY[0x835980], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v133, MEMORY[0x83598C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v134, MEMORY[0x835E34], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v135, MEMORY[0x835E24], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v136, MEMORY[0x835E14], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v137, MEMORY[0x835E04], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v138, MEMORY[0x835DF4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v139, MEMORY[0x835DE4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v140, MEMORY[0x835DD4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v141, MEMORY[0x835DC4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v142, MEMORY[0x835DB4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v143, MEMORY[0x835DA4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v144, MEMORY[0x835D94], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v145, MEMORY[0x835D84], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v146, MEMORY[0x835D74], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v147, MEMORY[0x835D64], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v148, MEMORY[0x835D54], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v149, MEMORY[0x835D44], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v150, MEMORY[0x835D34], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v151, MEMORY[0x835D24], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v152, MEMORY[0x835D14], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v153, MEMORY[0x835D04], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v154, MEMORY[0x835CF4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v155, MEMORY[0x835CE4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v156, MEMORY[0x835CD4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v157, MEMORY[0x835CC4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v158, MEMORY[0x835CB4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v159, MEMORY[0x835CA8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v160, MEMORY[0x835C9C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v161, MEMORY[0x835C90], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v162, MEMORY[0x835C7C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v163, MEMORY[0x835C68], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v164, MEMORY[0x835C54], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v165, MEMORY[0x835C40], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v166, MEMORY[0x835C2C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v167, MEMORY[0x835C18], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v168, MEMORY[0x835C04], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v169, MEMORY[0x835BF0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v170, MEMORY[0x835BDC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v171, MEMORY[0x835BC8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v172, MEMORY[0x835BB4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v173, MEMORY[0x835BA0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v174, MEMORY[0x835B8C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v175, MEMORY[0x835B78], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v176, MEMORY[0x835B64], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v177, MEMORY[0x835B50], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v178, MEMORY[0x835B3C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v179, MEMORY[0x835B28], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v180, MEMORY[0x835B14], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v181, MEMORY[0x835B00], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v182, MEMORY[0x835AEC], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v183, MEMORY[0x835AD8], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v184, MEMORY[0x835AC4], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v185, MEMORY[0x835AB0], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v186, MEMORY[0x835A9C], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v187, MEMORY[0x835A88], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v188, MEMORY[0x835A74], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v189, MEMORY[0x835A60], 2, 0);
-  LoadPaletteFromFile((int)MEMORY[0xAC4848], v190, MEMORY[0x835A4C], 2, 0);
-  return LoadPaletteFromFile((int)MEMORY[0xAC4848], v191, MEMORY[0x835A38], 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, a2, DataGlobal_833654, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v2, DataGlobal_008363C4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v3, DataGlobal_008363B8, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v4, DataGlobal_008363AC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v5, g_Str_File_usai_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v6, g_Str_File_japi_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v7, g_Str_File_frai_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v8, g_Str_File_geri_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v9, g_Str_File_gbri_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v10, g_Str_File_djbi_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v11, g_Str_File_arbi_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v12, g_Str_File_lati_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v13, g_Str_File_rusi_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v14, DataGlobal_00836334, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v15, DataGlobal_00836328, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v16, DataGlobal_00836318, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v17, DataGlobal_00836308, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v18, DataGlobal_008362F8, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v19, DataGlobal_008362E8, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v20, DataGlobal_008362DC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v21, DataGlobal_008362CC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v22, DataGlobal_00835A00, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v23, DataGlobal_008359C8, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v24, DataGlobal_008359E4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v25, DataGlobal_008359AC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v26, DataGlobal_008359D4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v27, DataGlobal_008359F0, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v28, DataGlobal_008359B8, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v29, DataGlobal_008362C0, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v30, DataGlobal_008362B4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v31, DataGlobal_008362A8, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v32, DataGlobal_0083629C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v33, DataGlobal_00836290, 1, 0);
+  UI_Init_6BA120(DataGlobal_00836284);
+  LoadPaletteFromFile((int)g_DialogHashTable, v34, DataGlobal_00836278, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v35, DataGlobal_0083626C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v36, DataGlobal_0083625C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v37, DataGlobal_0083624C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v38, DataGlobal_0083623C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v39, DataGlobal_0083622C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v40, DataGlobal_00836220, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v41, DataGlobal_00836214, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v42, DataGlobal_00836208, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v43, DataGlobal_008361FC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v44, DataGlobal_008361F0, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v45, DataGlobal_008361E4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v46, DataGlobal_008361D8, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v47, DataGlobal_008361CC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v48, DataGlobal_008361C0, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v49, DataGlobal_008361B4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v50, DataGlobal_008361A8, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v51, DataGlobal_0083619C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v52, DataGlobal_00836190, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v53, DataGlobal_00836184, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v54, DataGlobal_00836174, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v55, DataGlobal_00836164, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v56, g_Str_File_wouact_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v57, g_Str_File_wodact_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v58, g_Str_File_wouref_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v59, g_Str_File_wodref_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v60, g_Str_File_tab_tlu_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v61, DataGlobal_00836128, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v62, DataGlobal_0083611C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v63, DataGlobal_00836110, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v64, DataGlobal_00836104, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v65, DataGlobal_008360F8, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v66, DataGlobal_00835908, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v67, DataGlobal_008358FC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v68, DataGlobal_00835920, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v69, DataGlobal_008358E4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v70, DataGlobal_008358F0, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v71, DataGlobal_00835914, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v72, DataGlobal_0083592C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v73, DataGlobal_00835938, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v74, DataGlobal_008360EC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v75, DataGlobal_008360DC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v76, g_Str_File_woltrny_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v77, DataGlobal_008360C4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v78, DataGlobal_008360B4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v79, g_Str_File_wolpriv_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v80, g_Str_File_wolacpt_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v81, g_Str_File_wolhost_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v82, g_Str_File_wolclan_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v83, g_Str_File_wolob_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v84, DataGlobal_831DD0, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v85, g_Str_File_wolrslkob_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v86, DataGlobal_0083607C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v87, g_Str_File_gt18_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v88, DataGlobal_00836064, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v89, DataGlobal_00836054, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v90, DataGlobal_00836044, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v91, DataGlobal_00836034, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v92, DataGlobal_00836028, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v93, DataGlobal_0083601C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v94, DataGlobal_00836010, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v95, DataGlobal_00836000, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v96, DataGlobal_00835FF4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v97, g_Str_File_comchief_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v98, g_Str_File_cooperat_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v99, g_Str_File_number0_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v100, g_Str_File_number1_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v101, DataGlobal_00835FB0, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v102, DataGlobal_00835FA4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v103, DataGlobal_00835F98, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v104, DataGlobal_00835F8C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v105, DataGlobal_00835F80, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v106, DataGlobal_00835F74, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v107, DataGlobal_00835F68, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v108, DataGlobal_00835F5C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v109, DataGlobal_00835F4C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v110, DataGlobal_00835F3C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v111, DataGlobal_00835F2C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v112, DataGlobal_00835F1C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v113, DataGlobal_00835F0C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v114, DataGlobal_00835EFC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v115, DataGlobal_00835EEC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v116, DataGlobal_00835EDC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v117, DataGlobal_00835A1C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v118, DataGlobal_00835A28, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v119, DataGlobal_00835A10, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v120, DataGlobal_00835ECC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v121, DataGlobal_00835EBC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v122, DataGlobal_00835EAC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v123, DataGlobal_00835E9C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v124, DataGlobal_00835E8C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v125, DataGlobal_00835E7C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v126, DataGlobal_00835E6C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v127, DataGlobal_00835E5C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v128, DataGlobal_00835E50, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v129, DataGlobal_00835998, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v130, DataGlobal_00835E44, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v131, DataGlobal_00835974, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v132, DataGlobal_00835980, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v133, DataGlobal_0083598C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v134, DataGlobal_00835E34, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v135, DataGlobal_00835E24, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v136, DataGlobal_00835E14, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v137, DataGlobal_00835E04, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v138, DataGlobal_00835DF4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v139, DataGlobal_00835DE4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v140, DataGlobal_00835DD4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v141, DataGlobal_00835DC4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v142, DataGlobal_00835DB4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v143, DataGlobal_00835DA4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v144, DataGlobal_00835D94, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v145, DataGlobal_00835D84, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v146, DataGlobal_00835D74, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v147, DataGlobal_00835D64, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v148, DataGlobal_00835D54, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v149, DataGlobal_00835D44, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v150, DataGlobal_00835D34, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v151, DataGlobal_00835D24, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v152, g_Str_File_wolreslk_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v153, DataGlobal_00835D04, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v154, DataGlobal_00835CF4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v155, DataGlobal_00835CE4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v156, DataGlobal_00835CD4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v157, DataGlobal_00835CC4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v158, DataGlobal_00835CB4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v159, g_Str_File_pingg_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v160, g_Str_File_pingy_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v161, g_Str_File_pingr_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v162, DataGlobal_00835C7C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v163, DataGlobal_00835C68, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v164, DataGlobal_00835C54, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v165, DataGlobal_00835C40, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v166, DataGlobal_00835C2C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v167, DataGlobal_00835C18, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v168, DataGlobal_00835C04, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v169, DataGlobal_00835BF0, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v170, DataGlobal_00835BDC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v171, DataGlobal_00835BC8, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v172, DataGlobal_00835BB4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v173, DataGlobal_00835BA0, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v174, DataGlobal_00835B8C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v175, DataGlobal_00835B78, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v176, DataGlobal_00835B64, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v177, DataGlobal_00835B50, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v178, DataGlobal_00835B3C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v179, DataGlobal_00835B28, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v180, DataGlobal_00835B14, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v181, DataGlobal_00835B00, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v182, DataGlobal_00835AEC, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v183, DataGlobal_00835AD8, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v184, DataGlobal_00835AC4, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v185, DataGlobal_00835AB0, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v186, DataGlobal_00835A9C, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v187, DataGlobal_00835A88, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v188, DataGlobal_00835A74, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v189, DataGlobal_00835A60, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v190, DataGlobal_00835A4C, 2, 0);
+  return LoadPaletteFromFile((int)g_DialogHashTable, v191, DataGlobal_00835A38, 2, 0);
 }
 }
 } // namespace gamemd

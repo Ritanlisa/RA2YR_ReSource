@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x531CC0
 namespace gamemd {
@@ -35,17 +37,17 @@ LONG __usercall MainMenu_Screen@<eax>(int a1@<ebx>, int a2@<ebp>)
     DlgItem = GetDlgItem(v2, 1818); /*0x531d31*/
     if ( DlgItem ) /*0x531d35*/
     {
-      if ( MEMORY[0x8A00A4] > 800 ) /*0x531d41*/
-        v4 = (MEMORY[0x8A00A4] - 800) / 2; /*0x531d51*/
+      if ( g_DDraw_Active > 800 ) /*0x531d41*/
+        v4 = (g_DDraw_Active - 800) / 2; /*0x531d51*/
       else
         v4 = 0; /*0x531d43*/
-      if ( MEMORY[0x8A00A8] > 600 ) /*0x531d5d*/
-        v5 = (MEMORY[0x8A00A8] - 600) / 2; /*0x531d6b*/
+      if ( DataGlobal_8A00A8 > 600 ) /*0x531d5d*/
+        v5 = (DataGlobal_8A00A8 - 600) / 2; /*0x531d6b*/
       else
         v5 = 0; /*0x531d5f*/
       SetWindowPos(DlgItem, 0, v4, v5, -1, -1, 0xDu); /*0x531d78*/
       SendMessageA(DlgItem, 0x4E3u, 1u, 0); /*0x531d8e*/
-      if ( MEMORY[0x8A00A4] == 640 ) /*0x531d9a*/
+      if ( g_DDraw_Active == 640 ) /*0x531d9a*/
         SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsS); /*0x531da1*/
       else
         SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsL); /*0x531db0*/
@@ -69,31 +71,31 @@ LONG __usercall MainMenu_Screen@<eax>(int a1@<ebx>, int a2@<ebp>)
           a2 = (char)v6; /*0x531e1c*/
           if ( !isalnum((char)v6) || (_BYTE)a1 == 126 ) /*0x531e33*/
           {
-            memset(MEMORY[0xA8F7B8], 0, sizeof(MEMORY[0xA8F7B8])); /*0x531f3e*/
+            memset(Str, 0, sizeof(Str)); /*0x531f3e*/
           }
           else
           {
             v11[0] = a1; /*0x531e3d*/
             v11[1] = 0; /*0x531e42*/
             Debug::Log_0(v11); /*0x531e47*/
-            v7 = strlen(MEMORY[0xA8F7B8]); /*0x531e5e*/
+            v7 = strlen(Str); /*0x531e5e*/
             if ( v7 >= 31 ) /*0x531e63*/
             {
               v7 = 0; /*0x531e65*/
-              MEMORY[0xA8F7B8][0] = 0; /*0x531e67*/
+              Str[0] = 0; /*0x531e67*/
             }
-            MEMORY[0xA8F7B8][v7] = toupper((char)a1); /*0x531e77*/
+            Str[v7] = toupper((char)a1); /*0x531e77*/
             v8 = 0; /*0x531e7d*/
-            v9 = (const char **)MEMORY[0x825C2C]; /*0x531e7f*/
-            while ( !strstr(MEMORY[0xA8F7B8], *v9) ) /*0x531e96*/
+            v9 = (const char **)DataGlobal_825C2C; /*0x531e7f*/
+            while ( !strstr(Str, *v9) ) /*0x531e96*/
             {
               v9 += 4; /*0x531e98*/
               ++v8; /*0x531e9b*/
               if ( (int)v9 >= (int)off_825C6C ) /*0x531ea2*/
                 goto LABEL_27; /*0x531ea2*/
             }
-            *(_BYTE *)*(&MEMORY[0x825C28] + 4 * v8) = *(_BYTE *)*(&MEMORY[0x825C28] + 4 * v8) == 0; /*0x531ebf*/
-            memset(MEMORY[0xA8F7B8], 0, sizeof(MEMORY[0xA8F7B8])); /*0x531ec8*/
+            *(_BYTE *)*(&g_PlayerHouseFlags + 4 * v8) = *(_BYTE *)*(&g_PlayerHouseFlags + 4 * v8) == 0; /*0x531ebf*/
+            memset(Str, 0, sizeof(Str)); /*0x531ec8*/
             PlayVocClass(1.0, 0); /*0x531edb*/
             g_LoadScreenFlag = 0; /*0x531ee4*/
             Screen::Capture(1, 0, a1, a2); /*0x531eeb*/
@@ -179,10 +181,10 @@ int __stdcall MainMenu_DlgProc(HWND hWnd, int a2, int a3, int a4)
         break;
       case 1175: /*0x531fa1*/
         v6 = GetDlgItem(hWnd, 1821); /*0x531fcc*/
-        v7 = GetModuleInternalVersion(&MEMORY[0xA8ECE0]); /*0x531fce*/
+        v7 = GetModuleInternalVersion(&g_CoordScatterManager); /*0x531fce*/
         v10 = CharToWideString(v7); /*0x531fda*/
-        v8 = (const wchar_t *)GetStringCSF(MEMORY[0x82696C], (int)g_Str_File_Init_CPP, 5975); /*0x531fec*/
-        swprintf(lParam, (const size_t)&MEMORY[0x826960], v8, v10); /*0x531ffc*/
+        v8 = (const wchar_t *)GetStringCSF(DataGlobal_82696C, (int)g_Str_File_Init_CPP, 5975); /*0x531fec*/
+        swprintf(lParam, (const size_t)&DataGlobal_826960, v8, v10); /*0x531ffc*/
         SendMessageA(v6, 0x4B2u, 0, (LPARAM)lParam); /*0x532011*/
         return 0; /*0x532022*/
     }

@@ -8,6 +8,13 @@
 #include "e4/classes/E4Recv_594870_e4.hpp"
 #include "e4/classes/E4Recv_595400_e4.hpp"
 #include "e4/classes/E4Recv_5980A0_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Options_e4.hpp"
+#include "e4/classes/RandomMap_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/VectorClass_ptr_MapRegionClass_e4.hpp"
 
 // 0x5904B0
 namespace gamemd {
@@ -47,7 +54,7 @@ LABEL_7:
   {
     LOWORD(aP0) = v3; /*0x5904db*/
     HIWORD(aP0) = v2; /*0x5904e6*/
-    v4 = (Random *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP0); /*0x5904eb*/
+    v4 = (Random *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0); /*0x5904eb*/
     v5 = v4; /*0x5904f0*/
     if ( v4[4].Random_field_0x04 == -1 && Cell::IsEmpty(v4) && !v5[14].Random_field_0x04 ) /*0x590503*/
       break; /*0x590503*/
@@ -132,13 +139,13 @@ int __stdcall sub_594190(int *a1, int a2)
               {
                 v9 = a2; /*0x594230*/
               }
-              v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v15); /*0x59423e*/
+              v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v15); /*0x59423e*/
               v11 = 0; /*0x594249*/
               if ( g_RandomMap_TileData <= 0 ) /*0x59424d*/
               {
                 v2 = a1; /*0x594298*/
 LABEL_19:
-                v10[283] = MEMORY[0x10]; /*0x59429c*/
+                v10[283] = DataGlobal_00000010; /*0x59429c*/
                 v5 = g_MapCellHeight_Value; /*0x5942a7*/
               }
               else
@@ -286,10 +293,10 @@ void __fastcall FloodFillRandomMapTerrain(int a1, IUnknown *a2, int a3)
       while ( 1 ) /*0x594598*/
       {
         v19 = v18 & 7; /*0x594598*/
-        LOWORD(v28) = v13 + *((_WORD *)&MEMORY[0x89F688].field_0 + 2 * v19); /*0x5945ba*/
-        HIWORD(v28) = HIWORD(v26) + *((_WORD *)&MEMORY[0x89F68A] + 2 * v19); /*0x5945c3*/
+        LOWORD(v28) = v13 + *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v19); /*0x5945ba*/
+        HIWORD(v28) = HIWORD(v26) + *((_WORD *)&DataGlobal_89F68A + 2 * v19); /*0x5945c3*/
         v30 = v28; /*0x5945d2*/
-        v20 = (__int16 *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v30); /*0x5945d6*/
+        v20 = (__int16 *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v30); /*0x5945d6*/
         v21 = v20[18]; /*0x5945db*/
         v22 = v20[19]; /*0x5945df*/
         v23 = (IUnknown *)(v20 + 18); /*0x5945e3*/
@@ -300,7 +307,7 @@ void __fastcall FloodFillRandomMapTerrain(int a1, IUnknown *a2, int a3)
         {
           v24 = (char *)g_MapTileArray + 80 * v20[18] + 80 * unk_89C2DC * v20[19]; /*0x594642*/
           if ( !*((_DWORD *)v20 + 19) /*0x594664*/
-            && MapClass::GetTileIndex(&MEMORY[0x87F7E8], v23, aP2, 0) == a3
+            && MapClass::GetTileIndex(&DataGlobal_87F7E8, v23, aP2, 0) == a3
             && *((_DWORD *)v24 + 15) == -1 )
           {
             *((_DWORD *)v24 + 15) = v29; /*0x59466a*/
@@ -394,18 +401,18 @@ char RandomMap_DistributeTerrain()
   if ( v0 < 400.0 ) /*0x594b91*/
     v0 = 400.0; /*0x594b95*/
   v32 = Math::RoundToInt(v0); /*0x594ba5*/
-  v1 = Terrain::ConnectivityGraph(&MEMORY[0x87F7E8]); /*0x594ba9*/
+  v1 = Terrain::ConnectivityGraph(&DataGlobal_87F7E8); /*0x594ba9*/
   HIWORD(v3) = 0; /*0x594bb4*/
   v2 = v35[dword_ABE014]; /*0x594bb6*/
-  LOWORD(v3) = *(_WORD *)(MEMORY[0x87F800][v2] + 2 * v1); /*0x594bc1*/
+  LOWORD(v3) = *(_WORD *)(DataGlobal_87F800[v2] + 2 * v1); /*0x594bc1*/
   Map_Helper_58CE90(); /*0x594bc5*/
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x594bcf*/
-  for ( i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); i; i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x594be2*/
+  LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x594bcf*/
+  for ( i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); i; i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) ) /*0x594be2*/
   {
     if ( MapSeed::IsCellInBounds((__int16 *)(i + 36)) /*0x594c2b*/
       && *((_DWORD *)g_MapTileArray + 20 * *(__int16 *)(i + 36) + 20 * unk_89C2DC * *(__int16 *)(i + 38) + 14) == -1
       && !*(_DWORD *)(i + 76)
-      && MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)(i + 36), v2, 0) == v3 )
+      && MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)(i + 36), v2, 0) == v3 )
     {
       FloodFillRandomMapTerrain(v3); /*0x594c32*/
     }
@@ -727,9 +734,9 @@ _DWORD *__fastcall GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
 
   ComPtr::Constructor(v15); /*0x595fc2*/
   v15[0] = &vt_rc_ptr_WDTTerritory; /*0x595fd8*/
-  if ( g_GameMode_Current[0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x595fe5*/
+  if ( g_GameMode_Current[0] == 4 && g_GameOptionsFlags == 3 ) /*0x595fe5*/
   {
-    v4 = FindWDTTerritoryClass(v16, *(int *)MEMORY[0xA8B240]); /*0x595ff1*/
+    v4 = FindWDTTerritoryClass(v16, *(int *)g_GameDifficulty); /*0x595ff1*/
     ComPtr::Set(v15, v4[1]); /*0x595ffe*/
     v16[0] = &vt_rc_ptr_WDTTerritory; /*0x596007*/
     ComPtr::Release(v16); /*0x59600b*/
@@ -738,10 +745,10 @@ _DWORD *__fastcall GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     dword_ABE028 = 4; /*0x596018*/
   v5 = GameConfig::ComputeCRC(); /*0x596023*/
   memset(Destination, 0, sizeof(Destination)); /*0x596033*/
-  strncpy(Destination, MEMORY[0x82BB38], 0x80u); /*0x596047*/
+  strncpy(Destination, DataGlobal_82BB38, 0x80u); /*0x596047*/
   strncat(Destination, v5, 0x80u); /*0x59605a*/
   __3_YAXPAX_Z(v5); /*0x596060*/
-  strncat(Destination, MEMORY[0x82BB30], 0x80u); /*0x596077*/
+  strncat(Destination, DataGlobal_82BB30, 0x80u); /*0x596077*/
   CCFileClass::Construct(v18, Destination); /*0x59608b*/
   if ( CCFileClass::Open(v18, 0) ) /*0x596097*/
   {
@@ -783,7 +790,7 @@ _DWORD *__fastcall GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     dword_ABE04C = Random::Range(Randomizer_Global, 0, 0xFFFF); /*0x596175*/
   RandomMap::Generate((int *)dword_ABDFD8, 1, hDlg); /*0x596182*/
   MiniMap::Render((char **)g_Map_TiberiumConfig); /*0x59618d*/
-  if ( g_GameMode_Current[0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x5961a2*/
+  if ( g_GameMode_Current[0] == 4 && g_GameOptionsFlags == 3 ) /*0x5961a2*/
     MapPreview::Upload((int *)g_Map_TiberiumConfig); /*0x5961aa*/
   if ( dword_ABE150 ) /*0x5961b7*/
     (**(void (__thiscall ***)(int, int))dword_ABE150)(dword_ABE150, 1); /*0x5961bd*/
@@ -1084,8 +1091,8 @@ int sub_59C630()
   __int64 v11; // [esp+10h] [ebp-10h]
   __int64 v12; // [esp+18h] [ebp-8h]
 
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x59c63a*/
-  result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x59c644*/
+  LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x59c63a*/
+  result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x59c644*/
   for ( i = result; result; i = result ) /*0x59c64f*/
   {
     if ( *(_DWORD *)(i + 56) == dword_AA0738 && !*(_BYTE *)(i + 282) ) /*0x59c668*/
@@ -1138,7 +1145,7 @@ LABEL_25:
         PlaceMapSeedClassBuildings(v7 + dword_AA0738, (_WORD *)(i + 36), v8, -1); /*0x59c795*/
       }
     }
-    result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x59c7e2*/
+    result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x59c7e2*/
   }
   return result; /*0x59c7f3*/
 }

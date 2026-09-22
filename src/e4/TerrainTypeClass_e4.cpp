@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x5447C0
 unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6)
@@ -56,28 +61,28 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
   this->vtable2 = &IsometricTileTypeClass::`vftable'; /*0x5448cf*/
   this->vtable3 = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
   this->vtable4 = &vt_IsometricTileTypeClass; /*0x5448dd*/
-  if ( *(int *)&g_OverlayTypeConfig.__pad_579C[9964] < *(int *)&g_OverlayTypeConfig.__pad_579C[9956] /*0x544917*/
-    || (g_OverlayTypeConfig.__pad_579C[9961] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956])
-    && *(int *)&g_OverlayTypeConfig.__pad_579C[9968] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9948] + 8))(
-         &g_OverlayTypeConfig.__pad_579C[9948],
-         *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9956] + *(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9968],
+  if ( *(int *)&g_OverlayTypeConfig[32392] < *(int *)&g_OverlayTypeConfig[32384] /*0x544917*/
+    || (g_OverlayTypeConfig[32389] || !*(_DWORD *)&g_OverlayTypeConfig[32384])
+    && *(int *)&g_OverlayTypeConfig[32396] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig[32376] + 8))(
+         &g_OverlayTypeConfig[32376],
+         *(_DWORD *)&g_OverlayTypeConfig[32384] + *(_DWORD *)&g_OverlayTypeConfig[32396],
          0) )
   {
-    v7 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9964])++; /*0x544924*/
-    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_579C[9952] + 4 * v7) = this; /*0x544933*/
+    v7 = (*(_DWORD *)&g_OverlayTypeConfig[32392])++; /*0x544924*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[32380] + 4 * v7) = this; /*0x544933*/
   }
   if ( !a6 /*0x544970*/
-    && (*(int *)&MEMORY[0xA8D63C].__pad_14B0[588] < *(int *)&MEMORY[0xA8D63C].__pad_14B0[580]
-     || (MEMORY[0xA8D63C].__pad_14B0[585] || !*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[580])
-     && *(int *)&MEMORY[0xA8D63C].__pad_14B0[592] > 0
-     && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[572] + 8))(
-          &MEMORY[0xA8D63C].__pad_14B0[572],
-          *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[580] + *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[592],
+    && (*(int *)&g_NetworkPlayerBuffer[5884] < *(int *)&g_NetworkPlayerBuffer[5876]
+     || (g_NetworkPlayerBuffer[5881] || !*(_DWORD *)&g_NetworkPlayerBuffer[5876])
+     && *(int *)&g_NetworkPlayerBuffer[5888] > 0
+     && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_NetworkPlayerBuffer[5868] + 8))(
+          &g_NetworkPlayerBuffer[5868],
+          *(_DWORD *)&g_NetworkPlayerBuffer[5876] + *(_DWORD *)&g_NetworkPlayerBuffer[5888],
           0)) )
   {
-    v8 = (*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[588])++; /*0x54497d*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[576] + 4 * v8) = this; /*0x54498c*/
+    v8 = (*(_DWORD *)&g_NetworkPlayerBuffer[5884])++; /*0x54497d*/
+    *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872] + 4 * v8) = this; /*0x54498c*/
   }
   if ( aP4 ) /*0x544991*/
   {
@@ -141,20 +146,20 @@ _DWORD *__thiscall TerrainTypeClass::TerrainTypeClass(_DWORD *this, ObjectClass 
   this->RadarInvisible = 1; /*0x71db24*/
   this->LegalTarget = 0; /*0x71db2a*/
   this->Insignificant = 1; /*0x71db30*/
-  v3 = *(TerrainTypeClass **)&HouseClass_Player.__pad_5568[20596]; /*0x71db36*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[20596] < *(int *)&HouseClass_Player.__pad_5568[20588] /*0x71db74*/
-    || (HouseClass_Player.__pad_5568[20593] || !*(_DWORD *)&HouseClass_Player.__pad_5568[20588])
-    && *(int *)&HouseClass_Player.__pad_5568[20600] > 0
-    && (v4 = (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_5568[20580] + 8))(
-               &HouseClass_Player.__pad_5568[20580],
-               *(_DWORD *)&HouseClass_Player.__pad_5568[20588] + *(_DWORD *)&HouseClass_Player.__pad_5568[20600],
+  v3 = *(TerrainTypeClass **)&HouseClass_Player[42460]; /*0x71db36*/
+  if ( *(int *)&HouseClass_Player[42460] < *(int *)&HouseClass_Player[42452] /*0x71db74*/
+    || (HouseClass_Player[42457] || !*(_DWORD *)&HouseClass_Player[42452])
+    && *(int *)&HouseClass_Player[42464] > 0
+    && (v4 = (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player[42444] + 8))(
+               &HouseClass_Player[42444],
+               *(_DWORD *)&HouseClass_Player[42452] + *(_DWORD *)&HouseClass_Player[42464],
                0) == 0,
-        v3 = *(TerrainTypeClass **)&HouseClass_Player.__pad_5568[20596],
+        v3 = *(TerrainTypeClass **)&HouseClass_Player[42460],
         !v4) )
   {
-    *(_DWORD *)&HouseClass_Player.__pad_5568[20596] = &v3->__pad_0[1]; /*0x71db79*/
-    *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584] + 4 * (_DWORD)v3) = this; /*0x71db83*/
-    v3 = *(TerrainTypeClass **)&HouseClass_Player.__pad_5568[20596]; /*0x71db86*/
+    *(_DWORD *)&HouseClass_Player[42460] = &v3->__pad_0[1]; /*0x71db79*/
+    *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42448] + 4 * (_DWORD)v3) = this; /*0x71db83*/
+    v3 = *(TerrainTypeClass **)&HouseClass_Player[42460]; /*0x71db86*/
   }
   v5 = 0; /*0x71db8b*/
   if ( (int)v3 <= 0 ) /*0x71db8f*/
@@ -164,7 +169,7 @@ LABEL_11:
   }
   else
   {
-    v6 = *(CCINIClass **)&HouseClass_Player.__pad_5568[20584]; /*0x71db91*/
+    v6 = *(CCINIClass **)&HouseClass_Player[42448]; /*0x71db91*/
     while ( *(_DWORD **)v6->__pad_0 != this ) /*0x71db99*/
     {
       ++v5; /*0x71db9b*/
@@ -211,11 +216,11 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   if ( !ObjectTypeClass::LoadFromINI((char *)this, (CCINIClass *)aP1) ) /*0x71debb*/
     return 0; /*0x71e0b5*/
   if ( this->Strength == -1 ) /*0x71decf*/
-    this->Strength = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 4420); /*0x71dedc*/
+    this->Strength = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 4420); /*0x71dedc*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x71def6*/
                      (int)aP1,
                      (unsigned __int8 *)(this + 36),
-                     (CCINIClass *)&stru_830620.__pad_579C[59592],
+                     (CCINIClass *)&stru_830620[82020],
                      this->IsVeinhole);
   this->IsVeinhole = Bool_Overwrite; /*0x71defd*/
   if ( Bool_Overwrite ) /*0x71df03*/
@@ -229,17 +234,17 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   v6 = INIClass::ReadBool_Overwrite( /*0x71df3c*/
          (int)aP1,
          (unsigned __int8 *)(this + 36),
-         (CCINIClass *)&stru_830620.__pad_579C[59576],
+         (CCINIClass *)&stru_830620[82004],
          v5);
   aP3_4 = this->IsFlammable; /*0x71df49*/
   this->SpawnsTiberium = v6; /*0x71df50*/
   this->IsFlammable = INIClass::ReadBool_Overwrite( /*0x71df5b*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
-                             (CCINIClass *)&stru_830620.__pad_579C[59564],
+                             (CCINIClass *)&stru_830620[81992],
                              aP3_4);
   v7 = (Color *)INIClass::LookupEnum( /*0x71df79*/
-                  (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+                  (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
                   (unsigned __int8 *)(this + 504),
                   (unsigned __int8 *)g_INI_Key_Foundation,
                   this->Foundation);
@@ -263,7 +268,7 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
             aP1,
             &v23,
             (INIClass *)(this + 36),
-            (Color *)&stru_830620.__pad_14B0[6744],
+            (Color *)&stru_830620[12040],
             (Color *)(this + 668));
   v12 = this->IsAnimated; /*0x71e014*/
   this->RadarColor = *(_WORD *)Coord; /*0x71e01a*/
@@ -271,35 +276,35 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   v13 = INIClass::ReadBool_Overwrite( /*0x71e02d*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[59552],
+          (CCINIClass *)&stru_830620[81980],
           v12);
   aP3_4a = *(INIClass **)(this + 672); /*0x71e03a*/
   this->IsAnimated = v13; /*0x71e041*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x71e047*/
                     (int)aP1,
                     (unsigned __int8 *)(this + 36),
-                    (CCINIClass *)&stru_830620.__pad_579C[59536],
+                    (CCINIClass *)&stru_830620[81964],
                     aP3_4a);
   aP3 = this->AnimationProbability; /*0x71e04c*/
   this->AnimationRate = Int_Overwrite; /*0x71e057*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x71e066*/
                        (int)aP1,
                        (INIClass *)(this + 36),
-                       (unsigned __int8 *)&stru_830620.__pad_579C[59512],
+                       (unsigned __int8 *)&stru_830620[81940],
                        (INIClass *)LODWORD(aP3));
   v16 = *(CCINIClass **)(this + 680); /*0x71e06b*/
   this->AnimationProbability = Double_Overwrite; /*0x71e073*/
   v18 = INIClass::ReadInt_Overwrite( /*0x71e080*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
-          (CCINIClass *)&stru_830620.__pad_579C[59488],
+          (CCINIClass *)&stru_830620[81916],
           (INIClass *)v16);
   v19 = *(INIClass **)(this + 684); /*0x71e085*/
   this->TemperateOccupationBits = v18; /*0x71e08b*/
   this->SnowOccupationBits = INIClass::ReadInt_Overwrite( /*0x71e0a0*/
                               (int)aP1,
                               (unsigned __int8 *)(this + 36),
-                              (CCINIClass *)&stru_830620.__pad_579C[59468],
+                              (CCINIClass *)&stru_830620[81896],
                               v19);
   return 1; /*0x71e0a7*/
 }
@@ -317,7 +322,7 @@ TerrainTypeClass *__thiscall TerrainTypeClass::FindOrCreate(ObjectClass *this)
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x71e2bc*/
     return 0; /*0x71e31f*/
   v2 = 0; /*0x71e2cd*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[20596] <= 0 ) /*0x71e2d1*/
+  if ( *(int *)&HouseClass_Player[42460] <= 0 ) /*0x71e2d1*/
   {
 LABEL_6:
     v3 = (_DWORD *)__2_YAPAXI_Z(0x2BCu); /*0x71e2f6*/
@@ -325,12 +330,12 @@ LABEL_6:
       return (TerrainTypeClass *)TerrainTypeClass::TerrainTypeClass(v3, this); /*0x71e311*/
     return 0; /*0x71e305*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584] + 4 * v2) + 36), this) ) /*0x71e2ea*/
+  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[42448] + 4 * v2) + 36), this) ) /*0x71e2ea*/
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20596] ) /*0x71e2f4*/
+    if ( ++v2 >= *(int *)&HouseClass_Player[42460] ) /*0x71e2f4*/
       goto LABEL_6; /*0x71e2f4*/
   }
-  return *(TerrainTypeClass **)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584] + 4 * v2); /*0x71e30f*/
+  return *(TerrainTypeClass **)(*(_DWORD *)&HouseClass_Player[42448] + 4 * v2); /*0x71e30f*/
 }
 }
 
@@ -409,7 +414,7 @@ TerrainClass * TerrainTypeClass::GetTileIndex(int a2)
     void **v3;
     v3 = (void **)__2_YAPAXI_Z(0xE0u);
     if ( v3 )
-    return TerrainClass::Construct(v3, this, (TerrainClass *)&DataGlobal_B05488.__pad_579C[16728]);
+    return TerrainClass::Construct(v3, this, (TerrainClass *)&DataGlobal_B05488[39156]);
     else
     return 0;
 }

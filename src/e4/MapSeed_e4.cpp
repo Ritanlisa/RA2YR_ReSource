@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x597730
 char MapSeed::ValidateName(int a2)
@@ -205,7 +207,7 @@ LABEL_33:
       g_WOL_ParseState = time(0); /*0x79c864*/
       memset(v12, 0, sizeof(v12)); /*0x79c874*/
       strcpy(&v12[36], String::GetOrEmpty((char **)&g_WOL_AuthObject)); /*0x79c8a1*/
-      (*(void (__stdcall **)(LPVOID, char *))(*(_DWORD *)MEMORY[0xAC116C] + 96))(MEMORY[0xAC116C], v12); /*0x79c8b3*/
+      (*(void (__stdcall **)(LPVOID, char *))(*(_DWORD *)ppv + 96))(ppv, v12); /*0x79c8b3*/
     }
     goto LABEL_33; /*0x79c8b3*/
   }

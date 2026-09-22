@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x4AF540
 int LocomotionClass::Initialize()
@@ -19,10 +21,10 @@ int __thiscall sub_4AF540(int this)
   this->q090 = v2; /*0x4af55c*/
   this->q030 = 0; /*0x4af55f*/
   *(_DWORD *)(this + 52) = g_DDraw_ClipRect; /*0x4af568*/
-  *(_QWORD *)(this + 56) = MEMORY[0x8A0794]; /*0x4af570*/
+  *(_QWORD *)(this + 56) = DataGlobal_8A0794; /*0x4af570*/
   this->Powered = g_DDraw_ClipRect; /*0x4af585*/
-  this->Dirty = MEMORY[0x8A0794]; /*0x4af58e*/
-  v3 = HIDWORD(MEMORY[0x8A0794]); /*0x4af591*/
+  this->Dirty = DataGlobal_8A0794; /*0x4af58e*/
+  v3 = HIDWORD(DataGlobal_8A0794); /*0x4af591*/
   this->RefCount = 0; /*0x4af597*/
   *(_DWORD *)(this + 76) = 0; /*0x4af59a*/
   this->q012 = v3; /*0x4af59d*/
@@ -53,10 +55,10 @@ wchar_t *sub_4C54A0()
   int i; // esi
   _DWORD *v2; // ecx
 
-  result = (wchar_t *)MEMORY[0x8A3880]; /*0x4c54a0*/
-  for ( i = MEMORY[0x8A3880] - 1; i >= 0; --i ) /*0x4c54ab*/
+  result = (wchar_t *)DataGlobal_8A3880; /*0x4c54a0*/
+  for ( i = DataGlobal_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
-    v2 = (_DWORD *)*((_DWORD *)MEMORY[0x8A3874] + i); /*0x4c54b3*/
+    v2 = (_DWORD *)*((_DWORD *)DataGlobal_8A3874 + i); /*0x4c54b3*/
     result = g_CurrentFrame; /*0x4c54be*/
     if ( (int)g_CurrentFrame >= v2[11] + v2[12] ) /*0x4c54c5*/
     {
@@ -127,12 +129,12 @@ int LocomotionClass::ProcessData()
 int __thiscall sub_513C20(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x513c24*/
-  *(_DWORD *)(this + 24) = MEMORY[0xA8F180]; /*0x513c34*/
-  *(_DWORD *)(this + 28) = MEMORY[0xA8F184]; /*0x513c3d*/
-  this->Owner = MEMORY[0xA8F188]; /*0x513c49*/
-  this->q090 = MEMORY[0xA8F180]; /*0x513c51*/
-  *(_DWORD *)(this + 40) = MEMORY[0xA8F184]; /*0x513c59*/
-  this->q02C = MEMORY[0xA8F188]; /*0x513c64*/
+  *(_DWORD *)(this + 24) = g_ScoreDisplayState1; /*0x513c34*/
+  *(_DWORD *)(this + 28) = g_ScoreDisplayState2; /*0x513c3d*/
+  this->Owner = g_ScoreDisplayState3; /*0x513c49*/
+  this->q090 = g_ScoreDisplayState1; /*0x513c51*/
+  *(_DWORD *)(this + 40) = g_ScoreDisplayState2; /*0x513c59*/
+  this->q02C = g_ScoreDisplayState3; /*0x513c64*/
   FrameSnapshot::InitMax((_WORD *)(this + 48), 0); /*0x513c67*/
   this->q012 = 0; /*0x513c6c*/
   this->RefCount = 0; /*0x513c6f*/

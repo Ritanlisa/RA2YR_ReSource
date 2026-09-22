@@ -2,6 +2,12 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/SlaveManagerClass_25_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x522D00
 namespace ra2 {
@@ -90,7 +96,7 @@ int __thiscall SlaveManagerClass::ctor(int this, TechnoClass *aP1, int a3, int a
   this->slaves = &vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af1c3*/
   this->q04C = 10; /*0x6af1c9*/
   this->q048 = 0; /*0x6af1d0*/
-  this->q050 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6af1d8*/
+  this->q050 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6af1d8*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af1df*/
   this->master = aP1; /*0x6af1e2*/
   this->house = a3; /*0x6af1e9*/
@@ -106,7 +112,7 @@ int __thiscall SlaveManagerClass::ctor(int this, TechnoClass *aP1, int a3, int a
     v7 = __2_YAPAXI_Z(0x14u); /*0x6af223*/
     if ( v7 ) /*0x6af22d*/
     {
-      v8 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6af22f*/
+      v8 = *(IUnknown **)&g_NetworkPlayerBuffer[5960]; /*0x6af22f*/
       *(_DWORD *)(v7 + 16) = 0; /*0x6af235*/
       *(_DWORD *)(v7 + 8) = v8; /*0x6af238*/
       v9 = (int *)v7; /*0x6af23b*/
@@ -124,7 +130,7 @@ int __thiscall SlaveManagerClass::ctor(int this, TechnoClass *aP1, int a3, int a
       (*(void (__thiscall **)(int))(*(_DWORD *)v12 + 212))(v12); /*0x6af265*/
       *(_DWORD *)(*v9 + 732) = this->master; /*0x6af274*/
       v9[1] = 0; /*0x6af27a*/
-      v9[2] = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6af284*/
+      v9[2] = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6af284*/
       v9[3] = v19; /*0x6af28a*/
       v9[4] = 0; /*0x6af28d*/
     }
@@ -145,21 +151,21 @@ int __thiscall SlaveManagerClass::ctor(int this, TechnoClass *aP1, int a3, int a
     this->q048 = v15 + 1; /*0x6af2c2*/
     *(_DWORD *)(v16 + 4 * v15) = v9; /*0x6af2c5*/
   }
-  this->q050 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6af2e7*/
+  this->q050 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6af2e7*/
   this->SlaveManagerClass_field_54 = v19; /*0x6af2ee*/
   this->SlaveManagerClass_field_58 = 10; /*0x6af2f1*/
   this->SlaveManagerClass_field_5C = 0; /*0x6af2f4*/
   this->SlaveManagerClass_field_60 = 0; /*0x6af2f7*/
-  if ( *(int *)&g_OverlayTypeConfig.__pad_14B0[10584] < *(int *)&g_OverlayTypeConfig.__pad_14B0[10576] /*0x6af32e*/
-    || (g_OverlayTypeConfig.__pad_14B0[10581] || !*(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[10576])
-    && *(int *)&g_OverlayTypeConfig.__pad_14B0[10588] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[10568] + 8))(
-         &g_OverlayTypeConfig.__pad_14B0[10568],
-         *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[10576] + *(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[10588],
+  if ( *(int *)&g_OverlayTypeConfig[15880] < *(int *)&g_OverlayTypeConfig[15872] /*0x6af32e*/
+    || (g_OverlayTypeConfig[15877] || !*(_DWORD *)&g_OverlayTypeConfig[15872])
+    && *(int *)&g_OverlayTypeConfig[15884] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_OverlayTypeConfig[15864] + 8))(
+         &g_OverlayTypeConfig[15864],
+         *(_DWORD *)&g_OverlayTypeConfig[15872] + *(_DWORD *)&g_OverlayTypeConfig[15884],
          0) )
   {
-    v17 = (*(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[10584])++; /*0x6af33b*/
-    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig.__pad_14B0[10572] + 4 * v17) = this; /*0x6af34a*/
+    v17 = (*(_DWORD *)&g_OverlayTypeConfig[15880])++; /*0x6af33b*/
+    *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[15868] + 4 * v17) = this; /*0x6af34a*/
   }
   return this; /*0x6af34f*/
 }
@@ -202,16 +208,16 @@ int __thiscall sub_6AF360(int this)
   this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
   this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
   this->SlaveManagerClass_field_60 = 0; /*0x6af3d7*/
-  if ( MEMORY[0xB0B600] < MEMORY[0xB0B5F8] /*0x6af40c*/
-    || (MEMORY[0xB0B5FD] || !MEMORY[0xB0B5F8])
-    && MEMORY[0xB0B604] > 0
+  if ( DataGlobal_B0B600 < DataGlobal_B0B5F8 /*0x6af40c*/
+    || (DataGlobal_B0B5FD || !DataGlobal_B0B5F8)
+    && DataGlobal_B0B604 > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(SlaveManagerClass_Array + 8))(
          &SlaveManagerClass_Array,
-         MEMORY[0xB0B5F8] + MEMORY[0xB0B604],
+         DataGlobal_B0B5F8 + DataGlobal_B0B604,
          0) )
   {
-    v2 = MEMORY[0xB0B600]++; /*0x6af419*/
-    *((_DWORD *)MEMORY[0xB0B5F4] + v2) = this; /*0x6af428*/
+    v2 = DataGlobal_B0B600++; /*0x6af419*/
+    *((_DWORD *)DataGlobal_B0B5F4 + v2) = this; /*0x6af428*/
   }
   return this; /*0x6af42d*/
 }
@@ -247,14 +253,14 @@ void __thiscall sub_6AF4A0(int this)
   (*(void (__thiscall **)(int, int, _DWORD))(this->slaves + 8))(this + 56, v3, 0); /*0x6af4f2*/
   v6 = this; /*0x6af505*/
   v4 = (*(int (__thiscall **)(int *, int *))(SlaveManagerClass_Array + 16))(&SlaveManagerClass_Array, &v6); /*0x6af509*/
-  if ( v4 != -1 && v4 < MEMORY[0xB0B600] && v4 < --MEMORY[0xB0B600] ) /*0x6af525*/
+  if ( v4 != -1 && v4 < DataGlobal_B0B600 && v4 < --DataGlobal_B0B600 ) /*0x6af525*/
   {
     do /*0x6af53d*/
     {
       ++v4; /*0x6af52d*/
-      *((_DWORD *)MEMORY[0xB0B5F4] + v4 - 1) = *((_DWORD *)MEMORY[0xB0B5F4] + v4); /*0x6af531*/
+      *((_DWORD *)DataGlobal_B0B5F4 + v4 - 1) = *((_DWORD *)DataGlobal_B0B5F4 + v4); /*0x6af531*/
     }
-    while ( v4 < MEMORY[0xB0B600] ); /*0x6af53d*/
+    while ( v4 < DataGlobal_B0B600 ); /*0x6af53d*/
   }
   v5 = *(void **)(this + 60); /*0x6af53f*/
   this->slaves = &vt_VectorClass_SlaveManagerClass_SlaveControl; /*0x6af542*/
@@ -487,7 +493,7 @@ int __usercall SlaveManagerClass_ProcessSlaves@<eax>(int *a1@<ecx>, int *a2@<edi
                              0,
                              a2,
                              a3);
-          if ( v81 == MEMORY[0xB0B5B8] )
+          if ( v81 == DataGlobal_B0B5B8 )
           {
             TechnoClass::SetFocus(v8, 0); /*0x6af7c5*/
             v11 = a1[9]; /*0x6af7ca*/
@@ -515,7 +521,7 @@ int __usercall SlaveManagerClass_ProcessSlaves@<eax>(int *a1@<ecx>, int *a2@<edi
             v19 = *v8; /*0x6af86a*/
             v85 = *v18; /*0x6af870*/
             a3 = 1; /*0x6af874*/
-            a2 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v85); /*0x6af881*/
+            a2 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v85); /*0x6af881*/
             (*(void (__thiscall **)(int *))(v19 + 1152))(v8); /*0x6af884*/
             (*(void (__thiscall **)(int *, int, _DWORD))(*v8 + 488))(v8, 2, 0); /*0x6af892*/
             *(_DWORD *)(v7 + 4) = 4; /*0x6af898*/
@@ -524,7 +530,7 @@ int __usercall SlaveManagerClass_ProcessSlaves@<eax>(int *a1@<ecx>, int *a2@<edi
           {
             v10 = *v8; /*0x6af78c*/
             a3 = 1; /*0x6af792*/
-            a2 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v81); /*0x6af79f*/
+            a2 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v81); /*0x6af79f*/
             (*(void (__thiscall **)(int *))(v10 + 1152))(v8); /*0x6af7a2*/
             (*(void (__thiscall **)(int *, int, _DWORD))(*v8 + 488))(v8, 2, 0); /*0x6af7b0*/
             *(_DWORD *)(v7 + 4) = 2; /*0x6af7b6*/
@@ -566,7 +572,7 @@ int __usercall SlaveManagerClass_ProcessSlaves@<eax>(int *a1@<ecx>, int *a2@<edi
             }
             v29 = *v8; /*0x6af987*/
             a3 = 1; /*0x6af98d*/
-            a2 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v82); /*0x6af99a*/
+            a2 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v82); /*0x6af99a*/
             (*(void (__thiscall **)(int *))(v29 + 1152))(v8); /*0x6af99d*/
             (*(void (__thiscall **)(int *, int, _DWORD))(*v8 + 488))(v8, 2, 0); /*0x6af9ab*/
             *(_DWORD *)(v7 + 4) = 4; /*0x6af9b1*/
@@ -689,7 +695,7 @@ LABEL_48:
           v65 = *v8; /*0x6afc93*/
           v83 = *v64; /*0x6afc99*/
           a3 = 1; /*0x6afc9d*/
-          a2 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v83); /*0x6afcaa*/
+          a2 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v83); /*0x6afcaa*/
           (*(void (__thiscall **)(int *))(v65 + 1152))(v8); /*0x6afcad*/
           (*(void (__thiscall **)(int *, int, _DWORD))(*v8 + 488))(v8, 2, 0); /*0x6afcbb*/
 LABEL_62:
@@ -771,7 +777,7 @@ int __thiscall SlaveManagerClass::LostSlave(_DWORD *this, ObjectClass *aP1)
     v5[1] = 6; /*0x6b0a66*/
     v6 = this->slaveType; /*0x6b0a73*/
     result = (int)(v5 + 2); /*0x6b0a76*/
-    *(_DWORD *)result = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b0a79*/
+    *(_DWORD *)result = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6b0a79*/
     *(_DWORD *)(result + 4) = v7; /*0x6b0a7f*/
     *(_DWORD *)(result + 8) = v6; /*0x6b0a82*/
   }
@@ -806,7 +812,7 @@ bool __thiscall SlaveManagerClass::ShouldWakeUpNow(_DWORD *this)
                     &v4,
                     g_RulesClass_Instance[1].? / 256,
                     0);
-  return v4 != MEMORY[0xB0B5B8]; /*0x6b10c6*/
+  return v4 != DataGlobal_B0B5B8; /*0x6b10c6*/
 }
 }
 } // namespace game

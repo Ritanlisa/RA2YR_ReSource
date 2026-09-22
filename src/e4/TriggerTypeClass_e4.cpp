@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x6FC0B0
 namespace gamemd {
@@ -69,7 +72,7 @@ int __fastcall TriggerTypeClass::ReadINI(_DWORD *a0, TechnoClass *aP1, TechnoCla
   }
   v8 = (aP2->abstractFlags & 1) != 0 ? aP2 : 0;
   v9 = (IUnknown *)(*(int (__thiscall **)(TechnoClass *, int *))(*(_DWORD *)aP2->__pad_0 + 72))(aP2, &v39); /*0x6fc18e*/
-  v10 = (IUnknown *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], v9); /*0x6fc19e*/
+  v10 = (IUnknown *)Coord::To_Cell(&stru_87C374[13428], v9); /*0x6fc19e*/
   if ( a0 ) /*0x6fc1a0*/
   {
     if ( (a0[5] & 4) != 0 && *((_BYTE *)a0 + 1709) ) /*0x6fc1a8*/
@@ -329,9 +332,9 @@ LABEL_139:
     v31 = (HouseClass *)a0[189]; /*0x6fc955*/
     if ( v30 != (SlaveManagerClass *)-1 ) /*0x6fc95e*/
     {
-      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (int)v30 >= (int)v31 ) /*0x6fc96a*/
+      if ( *(_DWORD *)&HouseClass_Player[45112] - (int)v30 >= (int)v31 ) /*0x6fc96a*/
         goto LABEL_164; /*0x6fc96a*/
-      v31 = (HouseClass *)((char *)v31 - (*(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v30)); /*0x6fc96c*/
+      v31 = (HouseClass *)((char *)v31 - (*(_DWORD *)&HouseClass_Player[45112] - (_DWORD)v30)); /*0x6fc96c*/
     }
     if ( v31 ) /*0x6fc970*/
       return 3; /*0x6fc97e*/
@@ -363,7 +366,7 @@ LABEL_164:
     return 5; /*0x6fcac2*/
   }
   v32 = *(_BYTE *)(*(_DWORD *)(v38 + 172) + 345); /*0x6fcacb*/
-  if ( v32 && (v25->abstractFlags & 4) != 0 && *(int *)&HouseClass_Player.__pad_5568[23248] < v25[1].radarFlashTimer[0] ) /*0x6fcae9*/
+  if ( v32 && (v25->abstractFlags & 4) != 0 && *(int *)&HouseClass_Player[45112] < v25[1].radarFlashTimer[0] ) /*0x6fcae9*/
     return 5; /*0x6fcaf7*/
   if ( !v8 ) /*0x6fcafc*/
     goto LABEL_231; /*0x6fcafc*/
@@ -401,7 +404,7 @@ LABEL_164:
   v40 = location[1]; /*0x6fcc83*/
   if ( *(_BYTE *)(*(_DWORD *)(v38 + 172) + 345) ) /*0x6fcc90*/
   {
-    if ( (int)abs32(v36 - location[2]) > 2 * *(_DWORD *)&stru_B05488.__pad_579C[16144] ) /*0x6fccac*/
+    if ( (int)abs32(v36 - location[2]) > 2 * *(_DWORD *)&stru_B05488[38572] ) /*0x6fccac*/
       return 5; /*0x6fccb1*/
   }
 LABEL_231:
@@ -448,10 +451,10 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TriggerTypeClass;
     *(int *)&aP0->__pad_0[12] = &vt_TriggerTypeClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].uniqueId);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].abstractFlags);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].nextArrayIndex);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[12]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].uniqueId);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].abstractFlags);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].nextArrayIndex);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[12]);
     return 0;
   }
     return result;
