@@ -680,8 +680,8 @@ int MPCooperative::Read()
   }
   int v5 = this->q0CB; /*0x5c18d5*/
   _DWORD * v6 = this + 201; /*0x5c18db*/
-  (*(void (__thiscall **)(_DWORD *))(this->q324 + 12))(this + 201); /*0x5c18e3*/
-  (*(void (__thiscall **)(_DWORD *, int, _DWORD))(this->q324 + 8))(this + 201, v5, 0); /*0x5c18ed*/
+  this->q324->Cleanup5(); /*0x5c18e3*/
+  this->q324->Release(v5, 0); /*0x5c18ed*/
   int v15; // [esp+10h] [ebp-4h] BYREF
   CampaignClass::GetValue((int)&g_DDrawSurfaceManager, &v15); /*0x5c18fa*/
   for ( j = 0; j < v15; ++j ) /*0x5c1907*/
@@ -1251,7 +1251,7 @@ int MPCooperative::SyncState()
       if ( v34 >= v37 ) /*0x5c2815*/
       {
   int v25; // esi
-        int v20 = (*(int (__thiscall **)(_DWORD *))(*v8 + 112))(v8); /*0x5c28d2*/
+        int v20 = v8->HandleEvent(); /*0x5c28d2*/
         int v21 = *v10; /*0x5c28d4*/
         if ( v10[2] < *v10 /*0x5c28f7*/
           || (*((_BYTE *)v10 + 5) || !v21)
@@ -1293,7 +1293,7 @@ LABEL_31:
       }
       else
       {
-        int v11 = (*(int (__thiscall **)(_DWORD *))(*v8 + 108))(v8); /*0x5c2823*/
+        int v11 = v8->ReceiveMessage(); /*0x5c2823*/
         int v12 = *v10; /*0x5c2825*/
         if ( v10[2] < *v10 /*0x5c2848*/
           || (*((_BYTE *)v10 + 5) || !v12)

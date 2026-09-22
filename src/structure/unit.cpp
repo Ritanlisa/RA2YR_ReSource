@@ -148,7 +148,7 @@ int UnitClass::Mission_Harvest()
     case 1:
       if ( !this->Locomotor )
         WinAPI::Wrapper(-2147467261);
-      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))(this->Locomotor) )
+      if ( !this->Locomotor->IsInactive() )
         this->missionStatus = 2;
       if ( !this->ValidateTargetCell(this->q169) )
         this->missionStatus = 0;
@@ -156,7 +156,7 @@ int UnitClass::Mission_Harvest()
     case 2:
       if ( !this->Locomotor )
         WinAPI::Wrapper(-2147467261);
-      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))(this->Locomotor) )
+      if ( !this->Locomotor->IsInactive() )
         this->missionStatus = 3;
       return 1;
     case 3:
@@ -14004,7 +14004,7 @@ LABEL_10:
         goto LABEL_28;
       if ( !this->Locomotor )
         WinAPI::Wrapper(-2147467261);
-      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))(this->Locomotor) )
+      if ( !this->Locomotor->IsInactive() )
       {
 LABEL_28:
         this->ValidatePlacement(0, 1);

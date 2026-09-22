@@ -2505,9 +2505,9 @@ namespace gamemd { void TeamClass::CheckMemberSuperWeapon(int a1, int a2) {
   {
     do /*0x6f0188*/
     {
-      int v6 = *(_DWORD *)((*(int (__thiscall **)(int *))(*v3 + 132))(v3) + 1532); /*0x6f0151*/
+      int v6 = *(_DWORD *)(v3->Vt34Thunk() + 1532); /*0x6f0151*/
       if ( TechnoClass::IsDeployed((int)v3) /*0x6f017a*/
-        && (*((_BYTE *)v3 + 1673) || (*(int (__thiscall **)(int *))(*v3 + 44))(v3) == 2)
+        && (*((_BYTE *)v3 + 1673) || v3->getAltitude() == 2)
         && v6 > v4 )
       {
         v5 = v3; /*0x6f017c*/

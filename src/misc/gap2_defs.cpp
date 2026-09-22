@@ -8446,13 +8446,13 @@ namespace gamemd { int RulesClass::SaveLoad_Prefix_0(int a1) {
   (*(void (__thiscall **)(int *))(this->HealCrateSound + 12))(this + 435);
   (*(void (__thiscall **)(int *))(this->q734 + 12))(this + 461);
   (*(void (__thiscall **)(int *))(this->q1F1 + 12))(this + 497);
-  (*(void (__thiscall **)(int *))(this->Dig + 12))(this + 504);
-  (*(void (__thiscall **)(int *))(this->Parachute + 12))(this + 511);
+  this->Dig->GetClassIdentifier();
+  this->Parachute->GetClassIdentifier();
   (*(void (__thiscall **)(int *))(this->ChronoReinfDelay + 12))(this + 518);
-  (*(void (__thiscall **)(int *))(this->ThirdDisguise + 12))(this + 525);
+  this->ThirdDisguise->GetClassIdentifier();
   (*(void (__thiscall **)(int *))(this->ConditionRedSparkingProbability + 12))(this + 532);
-  (*(void (__thiscall **)(int *))(this->MutateWarhead + 12))(this + 544);
-  (*(void (__thiscall **)(int *))(this->IonCannonWarhead + 12))(this + 555);
+  this->MutateWarhead->vt[03]();
+  this->IonCannonWarhead->vt[03]();
   (*(void (__thiscall **)(int *))(this->CHRONOSK_SHP + 12))(this + 562);
   (*(void (__thiscall **)(int *))(this->q8E4 + 12))(this + 569);
   (*(void (__thiscall **)(int *))(this->q900 + 12))(this + 576);

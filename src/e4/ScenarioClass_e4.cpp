@@ -1566,7 +1566,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   v122 = TechnoTypeList;
   if ( (void ***)(this + 13524) != TechnoTypeList )
   {
-    (*(void (__thiscall **)(int))(this->allowableUnits + 12))(this + 13524);
+    this->allowableUnits->vt_entry_68();
     v14 = v122[2];
     this->allowableUnitMaximums = v14;
     if ( v14 )

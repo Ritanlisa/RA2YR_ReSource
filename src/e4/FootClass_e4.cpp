@@ -54,7 +54,7 @@ int FootClass::Destruct()
   AudioFileClass::Release((_DWORD *)this + 337); /*0x4d367e*/
   v7 = (ILocomotion *)this->locomotor; /*0x4d3683*/
   if ( v7 ) /*0x4d368b*/
-    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v7 + 8))(this->locomotor); /*0x4d3690*/
+    v7->ReleaseRef(this->locomotor); /*0x4d3690*/
   v8 = (CCINIClass *)this->q16C; /*0x4d3693*/
   this->FootClass_field_abstract_array_5AC = &vt_VectorClass_AbstractClass; /*0x4d36a0*/
   if ( v8 && *((_BYTE *)this + 1465) ) /*0x4d36a8*/

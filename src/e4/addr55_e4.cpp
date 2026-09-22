@@ -1200,7 +1200,7 @@ void CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
   if ( a4 == this + 70 ) /*0x557b4f*/
   {
     int v6 = *this; /*0x557b53*/
-    int v7 = (*(int (__thiscall **)(_DWORD *))(this->q118 + 144))(this + 70); /*0x557b55*/
+    int v7 = this->q118->Stub(); /*0x557b55*/
     return this->OnKeyDown(v7); /*0x557b5e*/
   }
   return result; /*0x557b64*/

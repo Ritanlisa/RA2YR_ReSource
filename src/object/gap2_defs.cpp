@@ -403,7 +403,7 @@ namespace ra2 { namespace game { int TechnoClass::SmokeUpdate() {
   }
   TemporalClass *v2 = this->temporalTargetingMe; /*0x414bdb*/
   if ( v2 ) /*0x414be3*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)v2 + 92))(v2); /*0x414be7*/
+    v2->ProcessTimeWarp(); /*0x414be7*/
   if ( ((*(unsigned __int8 (__thiscall **)(char *))(this->drainAnim)(this) /*0x414c11*/
      || (*(unsigned __int8 (__thiscall **)(char *))(this->isDisguisedFlag)(this))
     && !((int)g_CurrentFrame % 24) )
@@ -4319,7 +4319,7 @@ namespace ra2 { namespace game { int AbstractClass::ModifyCellTiles(int a1) {
       {
   _DWORD *v19; // ecx
   int v36; // [esp+30h] [ebp-1Ch] BYREF
-        _WORD * v7 = (_WORD *)(*(int (__thiscall **)(IsometricTileClass *, int *))(*(_DWORD *)v2 + 440))(v2, &v36); /*0x54339b*/
+        _WORD * v7 = (_WORD *)v2->GetCellCoords_Alt(&v36); /*0x54339b*/
   int v31; // [esp+1Ch] [ebp-30h]
         LOWORD(v31) = *v7 + v6; /*0x5433b0*/
         HIWORD(v31) = (_WORD)v27 + v7[1]; /*0x5433b9*/
@@ -11745,7 +11745,7 @@ LABEL_29:
     goto LABEL_39; /*0x73d0e9*/
   if ( !this->q674 ) /*0x73d0f7*/
     WinAPI::Wrapper(-2147467261); /*0x73d106*/
-  if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q674 + 128))(this->q674) ) /*0x73d114*/
+  if ( !this->q674->COMStub_Return0_32() ) /*0x73d114*/
   {
     v19 = (unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, (IUnknown *)&v39) >> 12) + 1) >> 1 << 13; /*0x73d145*/
     v20 = (int *)this->GetCoordsThunk2(v46); /*0x73d157*/

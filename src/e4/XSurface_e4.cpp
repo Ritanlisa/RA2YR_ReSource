@@ -331,7 +331,7 @@ int XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__thi
         }
       }
     }
-    (*(void (__thiscall **)(_DWORD *))(*v28 + 96))(v28); /*0x7bad80*/
+    v28->Unlock(); /*0x7bad80*/
     return 1; /*0x7bad86*/
   }
   return result; /*0x7bac0f*/

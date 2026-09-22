@@ -1871,9 +1871,8 @@ LABEL_32:
               if ( v8 != *(CellStruct **)&g_NetworkPlayerBuffer[6492] ) /*0x509aa8*/
               {
 LABEL_33:
-                v9 = (AbstractClass *)(*(int (__thiscall **)(int, int *))(this->supers + 16))( /*0x509aca*/
-                                        this + 596,
-                                        &v12);
+                v9 = (AbstractClass *)this->supers->IsClean(/*0x509aca*/
+                                        this + 596, &v12);
                 SuperWeapon::FireSuperWeaponHouseClass((void *)this, v9, (AbstractClass *)&v11); /*0x509acd*/
               }
               break; /*0x509acd*/

@@ -116,7 +116,7 @@ LABEL_14:
           goto LABEL_14;
         if ( !this->locomotor )
           WinAPI::Wrapper(-2147467261);
-        if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->locomotor + 128))(this->locomotor) )
+        if ( !this->locomotor->Thunk_VtableDispatch4() )
           goto LABEL_14;
       }
       if ( this->q169 )
@@ -202,8 +202,7 @@ LABEL_14:
           v103[1] = this->owningHouseIndex;
           v103[2] = this->q029;
   _DWORD *v32; // eax
-          v32 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *, _DWORD *))(*(_DWORD *)this->q2B4 + 72))(
-                            this->q2B4,
+          v32 = (_DWORD *)*(_DWORD *)this->q2B4->GetInvalidCoord(this->q2B4,
                             v120,
                             v103);
           _DWORD * v33 = Coord::To_Cell(DataGlobal_87F7E8, v32);
@@ -285,7 +284,7 @@ LABEL_54:
             v105 = this->q027;
             v106 = this->owningHouseIndex;
             int v107 = this->q029;
-            _DWORD * v46 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q2B4 + 72))(this->q2B4);
+            _DWORD * v46 = (_DWORD *)this->q2B4->GetInvalidCoord();
             _DWORD * v47 = Coord::To_Cell(DataGlobal_87F7E8, v46);
             Cell::ApplyDamage(v47, (int)v119, (int)&v105, 1, 0);
             if ( !this->q0BF )
@@ -405,9 +404,7 @@ LABEL_54:
         v108[1] = this->owningHouseIndex;
         v108[2] = this->q029;
   _DWORD *v60; // eax
-        v60 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *, _DWORD *, int, _DWORD, _DWORD))(*(_DWORD *)this->q2B4
-                                                                                              + 72))(
-                          this->q2B4,
+        v60 = (_DWORD *)*(_DWORD *)this->q2B4->GetInvalidCoord(this->q2B4,
   _BYTE v118[24]; // [esp+C8h] [ebp-44h] BYREF
                           v118,
                           v108,
@@ -453,9 +450,7 @@ LABEL_54:
         v102[1] = this->owningHouseIndex;
         v102[2] = this->q029;
   _DWORD *v67; // eax
-        v67 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *, _DWORD *, int, _DWORD, _DWORD))(*(_DWORD *)this->q2B4
-                                                                                              + 72))(
-                          this->q2B4,
+        v67 = (_DWORD *)*(_DWORD *)this->q2B4->GetInvalidCoord(this->q2B4,
                           v119,
                           v102,
                           1,

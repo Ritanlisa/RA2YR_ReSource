@@ -266,7 +266,7 @@ int VectorClass::GetAtChecked(IUnknown * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v3 = (*(int (__thiscall **)(int *, IUnknown *))(this->q028 + 20))(this + 10, aP1) + 1; /*0x763bb4*/
+  int v3 = this->q028->SaveLoad_Register(aP1) + 1; /*0x763bb4*/
   if ( this->q024 != -1 && v3 == this->tail_E ) /*0x763bbd*/
     v3 = this->q024; /*0x763bbf*/
   if ( v3 < 0 || v3 >= this->tail_E ) /*0x763bc8*/

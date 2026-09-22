@@ -126,7 +126,6 @@ unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // edx
-
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x7216ca*/
   this->owningHouseIndex = -1717986918; /*0x7216dc*/
   this->Spread = -1717986918; /*0x7216e7*/
@@ -175,7 +174,7 @@ unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
     int v4 = (*(_DWORD *)&stru_B05488[41072])++; /*0x72180b*/
     *(_DWORD *)(*(_DWORD *)&stru_B05488[41060] + 4 * v4) = this; /*0x72181a*/
   }
-  (*(void (__thiscall **)(_DWORD *))(this->q0C4 + 12))(this + 49); /*0x721821*/
+  this->q0C4->Cleanup5(); /*0x721821*/
   if ( *(int *)&stru_B05488[41464] < *(int *)&stru_B05488[41456] /*0x721857*/
     || (stru_B05488[41461] || !*(_DWORD *)&stru_B05488[41456])
     && *(int *)&stru_B05488[41468] > 0

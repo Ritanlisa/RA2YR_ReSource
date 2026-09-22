@@ -21,6 +21,33 @@ except Exception:
 _slot_cache = {}
 
 
+def _class_slots(cls):
+    if cls not in _slot_cache:
+        table = {}
+        chain = [cls] + list((cdb.get(cls) or {}).get('full_ancestors') or [])
+        for c in chain:
+            for arec in ((cdb.get(c) or {}).get('methods') or {}).values():
+                vs = arec.get('vtable_slots') or []
+                if vs:
+                    table.setdefault(vs[0]['slot'] * 4,
+                                     (arec.get('name') or '').split('::')[-1])
+        _slot_cache[cls] = table
+    return _slot_cache[cls]
+
+
+def _alias_class(cls):
+    """Interface-label -> implementation class (ILocomotion -> LocomotionClass),
+    mechanical: strip the leading I, accept an optional Class suffix."""
+    if cls in cdb and _class_slots(cls):
+        return cls
+    if cls.startswith('I') and len(cls) > 2:
+        stem = cls[1:]
+        for cand in (stem + 'Class', stem):
+            if cand in cdb:
+                return cand
+    return cls
+
+
 def slot_name(cls, slot_bytes):
     """vtable byte offset -> method name for cls (ancestors chain)."""
     if cls not in _slot_cache:
@@ -33,7 +60,18 @@ def slot_name(cls, slot_bytes):
                     table.setdefault(vs[0]['slot'] * 4,
                                      (arec.get('name') or '').split('::')[-1])
         _slot_cache[cls] = table
-    return _slot_cache[cls].get(slot_bytes)
+    name = _slot_cache[cls].get(slot_bytes)
+    if name is None:
+        # slot missing from the declared type's table: try the implementation
+        # class behind an interface label (ILocomotion -> LocomotionClass)
+        if cls.startswith('I') and len(cls) > 2:
+            stem = cls[1:]
+            for cand in (stem + 'Class', stem):
+                if cand in cdb:
+                    name = _class_slots(cand).get(slot_bytes)
+                    if name:
+                        return name
+    return name
 
 
 def load_name_ret():
@@ -129,25 +167,106 @@ def _resolve(recv, env, vt_of, cls):
     return None, None
 
 
-def rewrite_vt_text(text, cls, env=None, vt_of=None):
-    """Segment-level virtual-call rewrite (multi-line safe).
+# generalized receiver inside the slot expression:
+#   this | *this | vN | *vN | this->M | *(_DWORD *)this->M | *(_DWORD *)vN
+RECV_ALT = (
+    r'(?:'
+    r'\*\(\s*_DWORD\s*\*?\s*\)\s*this->\w+'
+    r'|\*\(\s*(?:int|unsigned int)\s*\*?\s*\)\s*this->\w+'
+    r'|\*(?:\(_DWORD\)|\(int\))?this'
+    r'|this->\w+'
+    r'|\*\(\s*_DWORD\s*\*?\s*\)\s*v\d+'
+    r'|\*(?:\(_DWORD\)|\(int\))?v\d+'
+    r'|\*this'
+    r'|this'
+    r'|[a-z]\w*'
+    r')')
+VT_OPEN_G = re.compile(
+    r'\*\*\)\s*\([^()]*\)\s*\)\s*\(\s*(' + RECV_ALT + r')\s*\+\s*'
+    r'(0x[0-9A-Fa-f]+|\d+)\s*\)\s*\)\s*\(')
 
-    Handles: (*(CC **)(RECV + SLOT))(args)          -- direct
-             (*(CC **)(*(int *)v + SLOT))(args)     -- double-indirect
-    Receiver class facts come from `cls` (this), env (typed vars) and
-    vt_of (vtable holders). Unresolvable occurrences stay untouched.
-    Returns (text, count)."""
+
+def recv_class(recv, cls, env, mtab):
+    """receiver expression -> (member-type class or None); also returns the
+    receiver OBJECT text for `->` chaining."""
+    obj = recv
+    s = recv
+    while True:
+        m = re.match(r'^\*\(\s*(?:_DWORD|int|unsigned int)\s*\*?\s*\)\s*(.+)$', s)
+        if not m:
+            break
+        s = m.group(1).strip()
+    if s in ('this', '*this'):
+        return 'this', cls
+    mm = re.match(r'^this->(\w+)$', s)
+    if mm:
+        if not cls:
+            return s, None
+        for o, info in (mtab.get(cls) or {}).get('members', {}).items():
+            if info.get('name') == mm.group(1):
+                t = (info.get('type') or '').strip().rstrip('*').strip()
+                if re.match(r'^[A-Za-z_]\w*$', t):
+                    return obj, t
+                break
+        return obj, None
+    base = s.lstrip('*').strip()
+    if base in env:
+        return base, env[base]
+    return obj, None
+
+
+
+
+def find_vt_start(text, star_pos):
+    """Left edge of the `(*(CAST)(RECV + SLOT))` construct: walk left from the
+    `**` with paren-depth accounting, then fold in the deref `*(` opener."""
+    k = star_pos
+    d = 0
+    while k >= 0:
+        ch = text[k]
+        if ch == ')':
+            d += 1
+        elif ch == '(':
+            if d == 0:
+                break
+            d -= 1
+        k -= 1
+    if k < 0:
+        return star_pos
+    while k >= 1 and (text[k - 1].isalnum() or text[k - 1] in '_ '):
+        k -= 1
+    if k >= 2 and text[k - 1] == '*' and text[k - 2] == '(':
+        k -= 2
+    return k
+
+def rewrite_vt_text(text, cls, env=None, vt_of=None, mtab=None):
+    """Segment-level virtual-call rewrite (multi-line safe, generalized
+    receivers: this / *this / vars / vtable holders / this->M /
+    *(_DWORD *)this->M). Returns (text, count)."""
     env = env or {}
     vt_of = vt_of or {}
+    mtab = mtab or {}
     pos = 0
     n = 0
     while True:
-        m = VT_OPEN.search(text, pos) or VT_OPEN2.search(text, pos)
-        if not m:
-            break
-        recv = m.group(1)
-        slot = int(m.group(2), 0)
-        obj, tgt = _resolve(recv, env, vt_of, cls)
+        m = VT_OPEN_G.search(text, pos)
+        if m:
+            recv, slot = m.group(1), int(m.group(2), 0)
+            obj, tgt = recv_class(recv, cls, env, mtab)
+            if tgt is None and recv in vt_of:
+                obj = vt_of[recv]
+                tgt = env.get(obj) or cls
+            if tgt is None and recv.lstrip('*').strip() in env:
+                obj = recv.lstrip('*').strip()
+                tgt = env[obj]
+        else:
+            m = VT_OPEN2.search(text, pos)
+            if not m:
+                break
+            recv, slot = m.group(1), int(m.group(2), 0)
+            obj, tgt = _resolve(recv, env, vt_of, cls)
+            if tgt is None and recv in env:
+                obj, tgt = recv, env[recv]
         name = slot_name(tgt, slot) if tgt else None
         if not name:
             pos = m.end()
@@ -159,7 +278,10 @@ def rewrite_vt_text(text, cls, env=None, vt_of=None):
             continue
         args = split_args(text[call_open + 1:call_close])
         first = (args[0] if args else '').strip()
-        if first == obj or first == recv:
+        # drop an implicit-this first arg: the receiver itself, `this`, or a
+        # sub-object adjust (`this + OFF`) when the receiver is this
+        if first == obj or first == recv or first == 'this' or \
+                re.fullmatch(r'this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)', first):
             args = args[1:]
         head = text.rfind('(*(', 0, m.start())
         start = head if (head >= 0 and
@@ -220,3 +342,58 @@ def merge_load_call(text, cls, env=None):
         n += 1
     out = [ln for t, ln in enumerate(lines) if t not in removed]
     return NL.join(out), n
+
+
+# static-form sub-object call: FacingClass::Update((char *)this + 904, v21)
+STATIC_SUB = re.compile(
+    r'([A-Za-z_]\w*)::([A-Za-z_]\w*)\(\s*(?:\(\s*char\s*\*\s*\))?'
+    r'this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*')
+
+
+def rewrite_static_sub(text, cls, mtab):
+    """Cls::Method(this + OFF, rest) -> ((Cls *)((char *)this + OFF)).Method(rest)
+    when the canon member at OFF of this-class has type Cls. Sound: the
+    sub-object's dynamic type is its declared member type."""
+    mtab = mtab or {}
+    n = 0
+    pos = 0
+    while True:
+        m = STATIC_SUB.search(text, pos)
+        if not m:
+            break
+        c1, meth, off = m.group(1), m.group(2), int(m.group(3), 0)
+        info = (mtab.get(cls) or {}).get('members', {}).get(str(off))
+        if not info or (info.get('type') or '').strip() != c1:
+            pos = m.end()
+            continue
+        call_open = m.end() - 1
+        call_close = balance_paren(text, call_open)
+        if call_close < 0:
+            pos = m.end()
+            continue
+        args = split_args(text[call_open + 1:call_close])
+        first = (args[0] if args else '').strip()
+        if re.fullmatch(r'(?:\(\s*char\s*\*\s*\))?this\s*\+\s*(0x[0-9A-Fa-f]+|\d+|' + re.escape(m.group(3)) + ')', first):
+            args = args[1:]
+        new_call = ('((%s *)((char *)this + %s)).%s(%s)'
+                    % (c1, m.group(3), meth, ', '.join(args)))
+        text = text[:m.start()] + new_call + text[call_close + 1:]
+        pos = m.start() + len(new_call)
+        n += 1
+    return text, n
+
+
+VT_PARTIAL = re.compile(
+    r'\*\(_DWORD\s*\*\)\s*(this->\w+->(\w+)\()\s*(this->\w+)\s*\)')
+
+
+def rewrite_partial(text):
+    """Repair half-rewritten forms left by earlier runs:
+    `*(_DWORD *)R->Thunk(R)` -> `R->Thunk()` (the leading deref and the
+    duplicated implicit-this arg were residue of a two-step virtual call)."""
+    n = 0
+    def s(m):
+        nonlocal n
+        n += 1
+        return '%s)' % m.group(1)
+    return VT_PARTIAL.sub(s, text), n

@@ -1698,7 +1698,7 @@ int MapClass::ProcessRegion()
   __int16 *i; // eax
 
   _DWORD * v2 = this + 20; /*0x56d6ef*/
-  (*(void (__thiscall **)(_DWORD *))(this->q050 + 12))(this + 20); /*0x56d6f4*/
+  this->q050->Cleanup5(); /*0x56d6f4*/
   int v3 = this->q0F4; /*0x56d6f7*/
   this->q10C = 1; /*0x56d6fd*/
   this->CellIterator_NextY = v3; /*0x56d707*/
@@ -2395,7 +2395,7 @@ int MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
       if ( v12 && (AbstractClass *)v12[15] == v3 ) /*0x57798e*/
       {
         ObjectClass::SetTriggerTarget(v12, 0); /*0x577994*/
-        int v13 = (*(int (__thiscall **)(int *, _DWORD *))(this->q115C + 16))(this + 1111, v12 + 9); /*0x5779ab*/
+        int v13 = this->q115C->IsClean(v12 + 9); /*0x5779ab*/
         if ( v13 != -1 ) /*0x5779b1*/
         {
           int v14 = this->q116C; /*0x5779b3*/

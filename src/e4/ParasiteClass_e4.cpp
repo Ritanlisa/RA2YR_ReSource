@@ -145,7 +145,7 @@ void ParasiteClass::DeploySquad()
   int v50 = v3[39]; /*0x629828*/
   int v51 = v3[40]; /*0x62982f*/
   int v52 = v3[41]; /*0x629836*/
-  int * v5 = (int *)(*(int (__thiscall **)(int *))(*v3 + 444))(v3); /*0x62983c*/
+  int * v5 = (int *)v3->GetCellCoords(); /*0x62983c*/
   double v40 = 1.0; /*0x629844*/
   if ( !v5 || Cell::IsValidHeight(v5) ) /*0x629854*/
   {
@@ -284,7 +284,7 @@ LABEL_20:
           this->q048 = 0; /*0x629c91*/
           if ( v29 ) /*0x629c94*/
           {
-            (*(void (__thiscall **)(int))(*(_DWORD *)v29 + 248))(v29); /*0x629c98*/
+            v29->ProcessCraterFormation(); /*0x629c98*/
             this->q044 = 0; /*0x629c9e*/
           }
           if ( this->q054 ) /*0x629ca1*/
@@ -337,7 +337,7 @@ LABEL_20:
             this->q048 = 0; /*0x629dfe*/
             if ( v37 ) /*0x629e01*/
             {
-              (*(void (__thiscall **)(int))(*(_DWORD *)v37 + 248))(v37); /*0x629e05*/
+              v37->ProcessCraterFormation(); /*0x629e05*/
               this->q044 = 0; /*0x629e0b*/
             }
             if ( this->q054 ) /*0x629e0e*/

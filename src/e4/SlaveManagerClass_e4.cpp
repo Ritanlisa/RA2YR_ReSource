@@ -711,7 +711,7 @@ int SlaveManagerClass::ShouldWakeUpNow()
   if ( this->SlaveManagerClass_field_60 + *(_DWORD *)g_RulesClass_Instance[1].? >= (int)g_CurrentFrame ) /*0x6b107d*/
     return 0; /*0x6b107d*/
   int v4; // [esp+Ch] [ebp-4h] BYREF
-  v4 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int *, int, _DWORD))(*(_DWORD *)this->master + 824))( /*0x6b10ad*/
+  v4 = *(_DWORD *)*(_DWORD *)this->master->FindBridgeCell(/*0x6b10ad*/
                     this->master,
                     &v4,
                     g_RulesClass_Instance[1].? / 256,

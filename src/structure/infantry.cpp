@@ -668,7 +668,7 @@ int InfantryClass::ProcessIdleDeploy()
         {
           if ( !this->Locomotor )
             WinAPI::Wrapper(-2147467261);
-          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))(this->Locomotor) )
+          if ( !this->Locomotor->IsInactive() )
           {
 LABEL_42:
             if ( !*(_BYTE *)(this->animation + 3775) )
@@ -692,7 +692,7 @@ LABEL_42:
         {
           if ( !this->Locomotor )
             WinAPI::Wrapper(-2147467261);
-          LOBYTE(v5) = (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))(this->Locomotor);
+          LOBYTE(v5) = this->Locomotor->IsInactive();
           if ( !(_BYTE)v5 )
           {
             v5 = this->q169;
@@ -3519,7 +3519,7 @@ int InfantryClass::FindNearbyCell()
               {
                 void * v13 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v16);
                 if ( v16 != LODWORD(v17)
-                  && (*(unsigned __int8 (__thiscall **)(_DWORD *, void *))(*v22 + 1360))(v22, v13)
+                  && v22->ValidateTargetCell(v13)
                   && (unsigned __int8)Cell::IsOccupied(&v16, 0) )
                 {
                   return v13;
@@ -5569,7 +5569,7 @@ int InfantryClass::EvaluateTarget()
             if ( (*(int (__thiscall **)(int))(this->q610)(this) == 11 )
             {
               AbstractClass *v33 = this->focus;
-              if ( v33 == v23 && (*(int (__thiscall **)(_DWORD *))(*v33 + 44))(v33) == 1 )
+              if ( v33 == v23 && v33->getAltitude() == 1 )
                 return 7;
             }
             if ( *(_BYTE *)(this->Type + 3782)

@@ -1404,8 +1404,8 @@ int BuildingClass::AfterDestruction()
   int v14; // eax
   int v12; // edx
   int v10; // ecx
-    _WORD * v2 = (_WORD *)(*(int (__thiscall **)(_DWORD *, _DWORD))(*v1 + 264))(v1, 0);
-    _DWORD * v3 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v1 + 172))(v1, v29);
+    _WORD * v2 = (_WORD *)v1->GetOrCreateResHandle(0);
+    _DWORD * v3 = (_DWORD *)v1->GetBuildCoordsAdjusted(v29);
     LOWORD(v23) = *v3 / 256;
     HIWORD(v23) = v3[1] / 256;
     v22 = v23;
@@ -1484,7 +1484,7 @@ int BuildingClass::AfterDestruction()
   result = *(_BYTE *)(v1[328] + 5991);
   if ( result )
   {
-    _DWORD * v20 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v1 + 172))(v1, v29);
+    _DWORD * v20 = (_DWORD *)v1->GetBuildCoordsAdjusted(v29);
     LOWORD(v22) = *v20 / 256;
     int v21 = v1[328];
     HIWORD(v22) = v20[1] / 256;
@@ -2674,7 +2674,7 @@ int BuildingClass::FindPlacementCells()
   v2 = (_DWORD **)this;
   v108 = (_DWORD **)this;
   _DWORD * v3 = this + 354;
-  (*(void (__thiscall **)(_DWORD *))(this->q588 + 12))(this + 354);
+  this->q588->vt_entry_68();
   v105 = ((int (__thiscall *)(_DWORD **, _DWORD))(*v2)[47])(v2, 0);
   _DWORD * v4 = (_DWORD *)((int (__thiscall *)(_DWORD **, _DWORD *, _DWORD))(*v2)[19])(v2, v114, 0);
   LOWORD(v111) = *v4 / 256;

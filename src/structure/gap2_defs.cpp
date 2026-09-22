@@ -107,7 +107,7 @@ namespace gamemd { int AircraftClass::Construct(int a1, void* a2) {
     p_uniqueId = (const IID *)&v4[23].uniqueId; /*0x413dc1*/
     v8 = this->locomotor; /*0x413dc7*/
     if ( v8 ) /*0x413dcb*/
-      (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v8 + 8))(this->locomotor); /*0x413dd0*/
+      v8->ReleaseRef(this->locomotor); /*0x413dd0*/
     if ( CoCreateInstance(p_uniqueId, 0, 7u, &riid, (LPVOID *)&aP2) >= 0 ) /*0x413dea*/
     {
       if ( OleRun((LPUNKNOWN)aP2) >= 0 ) /*0x413df9*/
@@ -1915,7 +1915,7 @@ namespace gamemd { int InfantryClass::Construct(int a1, void* a2) {
     p_uniqueId = (const IID *)&v5[23].uniqueId; /*0x517b54*/
     ILocomotion *v9 = this->Locomotor; /*0x517b5a*/
     if ( v9 ) /*0x517b5e*/
-      (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v9 + 8))(this->Locomotor); /*0x517b63*/
+      v9->ReleaseRef(this->Locomotor); /*0x517b63*/
     if ( CoCreateInstance(p_uniqueId, 0, 7u, &riid, (LPVOID *)&aP2) >= 0 ) /*0x517b7c*/
     {
       if ( OleRun((LPUNKNOWN)aP2) >= 0 ) /*0x517b8b*/

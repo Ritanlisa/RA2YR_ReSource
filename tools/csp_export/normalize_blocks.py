@@ -26,7 +26,8 @@ import sys as _sys, pathlib as _pathlib
 _sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
 from _blockspan import block_span, find_marker
 from _vtable import (slot_name, load_name_ret, VT_OPEN, balance_paren,
-                     split_args, rewrite_vt_text, merge_load_call)
+                     split_args, rewrite_vt_text, merge_load_call,
+                     rewrite_static_sub, rewrite_partial)
 
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'src'
@@ -262,8 +263,12 @@ def normalize(body, cls, addr):
     body = R_INDEX.sub(lambda m: rw(m, True), body)
 
     # ---- virtual calls + load/call merge (segment-level, multi-line safe)
-    body, vt_n = rewrite_vt_text(body, cls, env, vt_of)
+    body, vt_n = rewrite_partial(body)
+    stats['vt_partial'] += vt_n
+    body, vt_n = rewrite_vt_text(body, cls, env, vt_of, mtab)
     stats['vt_calls'] += vt_n
+    body, ss_n = rewrite_static_sub(body, cls, mtab)
+    stats['static_sub'] += ss_n
     body, mc_n = merge_load_call(body, cls, env)
     stats['vt_merged'] += mc_n
 
@@ -455,6 +460,8 @@ for p in sorted(SRC.rglob('*.cpp')):
 print('blocks normalized:', nblk)
 print('vt calls rewritten:', tot.get('vt_calls', 0))
 print('load+call merged:', tot.get('vt_merged', 0))
+print('static-sub calls:', tot.get('static_sub', 0))
+print('partial repairs:', tot.get('vt_partial', 0))
 print('typed vars:', tot['typed_vars'])
 print('offset rewrites (param/local receivers):', tot['offsets'])
 print('locals retyped:', tot['retyped'])

@@ -552,7 +552,7 @@ int FoggedObjectClass::InitDrawRecord(unsigned int * a2)
     || (*(_BYTE *)(this + 105) || !v8)
   int v11; // ecx
     && (v11 = this->q070, v11 > 0)
-    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->q05C + 8))(this + 92, v8 + v11, 0) )
+    && this->q05C->Release(v8 + v11, 0) )
   {
     int v12 = this->q06C; /*0x4d1503*/
     this->q06C = v12 + 1; /*0x4d1509*/
