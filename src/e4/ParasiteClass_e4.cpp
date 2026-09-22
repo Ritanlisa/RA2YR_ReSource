@@ -778,7 +778,7 @@ Coord * * ParasiteClass::Update()
   v42 = Math::RoundToInt(v57); /*0x62bed7*/
   int v11 = Math::RoundToInt(v56); /*0x62bed8*/
   Coord3D::Set(v60, v11, v42, v45); /*0x62bee2*/
-  ((Vector3 *)((char *)this + 204)).AddAssign(); /*0x62beec*/
+  this->Vector3_CC.AddAssign(); /*0x62beec*/
   v46 = Math::RoundToInt(v58); /*0x62befe*/
   v43 = Math::RoundToInt(v57); /*0x62bf08*/
   int v12 = Math::RoundToInt(v56); /*0x62bf09*/

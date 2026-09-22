@@ -184,7 +184,7 @@ signed int BuildingLightClass::UpdateOscillation()
   v22 = g_RulesClass_Instance; /*0x513e8f*/
   if ( v26 < SHIDWORD(g_RulesClass_Instance->ShakeScreen) ) /*0x513e9b*/
   {
-    if ( ((StreamClass *)((char *)this + 4)).GetDirty() ) /*0x513ea1*/
+    if ( this->StreamClass_4.GetDirty() ) /*0x513ea1*/
       this->q060 = ((double)SHIDWORD(g_RulesClass_Instance->ShakeScreen) /*0x513ec8*/
                               + (double)SHIDWORD(g_RulesClass_Instance->ShakeScreen)
                               - (double)v26)

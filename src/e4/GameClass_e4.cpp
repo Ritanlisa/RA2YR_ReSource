@@ -219,7 +219,7 @@ int GameClass::FindOpenSlot()
     {
       if ( !v4->q5F0 && Network::IsMultiplayerActive() ) /*0x5d63a8*/
         goto LABEL_8; /*0x5d63af*/
-      v5 = ((GameClass *)((char *)this + 48)).initPlayerData(); /*0x5d63b7*/
+      v5 = this->GameClass_30.initPlayerData(); /*0x5d63b7*/
     }
     if ( v5 ) /*0x5d63be*/
       return v2; /*0x5d63c5*/

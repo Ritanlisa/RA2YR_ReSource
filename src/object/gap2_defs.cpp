@@ -570,14 +570,14 @@ LABEL_70:
             LOBYTE(v4) = *(_BYTE *)(this->q1B1 + 3580); /*0x41513c*/
             if ( (_BYTE)v4 ) /*0x415144*/
             {
-              qmemcpy((void *)(((CCINIClass *)((char *)this + 276)).GetDB() + 904), this + 928, 0x18u); /*0x415168*/
-              qmemcpy((void *)(((CCINIClass *)((char *)this + 276)).GetDB() + 928), this + 928, 0x18u); /*0x415184*/
+              qmemcpy((void *)(this->passengers.GetDB() + 904), this + 928, 0x18u); /*0x415168*/
+              qmemcpy((void *)(this->passengers.GetDB() + 928), this + 928, 0x18u); /*0x415184*/
               int v24 = this->owningHouseIndex; /*0x415188*/
               v32 = this->q027; /*0x41518b*/
               int v25 = this->q029; /*0x41518f*/
               v33 = v24; /*0x415192*/
               v34 = v25; /*0x415198*/
-              int v26 = ((CCINIClass *)((char *)this + 276)).GetDB(); /*0x41519c*/
+              int v26 = this->passengers.GetDB(); /*0x41519c*/
               LOBYTE(v4) = (*(int (__thiscall **)(int, int *))(*(_DWORD *)v26 + 436))(v26, &v32); /*0x4151aa*/
             }
           }
@@ -812,7 +812,7 @@ namespace ra2 { namespace game { int ObjectClass::CleanupAirstrikeTarget(int a1)
         {
           LOBYTE(v4) = AirstrikeClass::RemoveAircraft(this, (AudioController *)v3);
         }
-        else if ( v4 && *(_DWORD *)(v4 + 660) == this && (*(int *)(v4 + 108) <= 0 || !*(_BYTE *)(v4 + 144)) )
+        else if ( v4 && *(_DWORD *)(v4 + 660) == this && (*(int *)(v4 + 108) <= 0 || !v4->q090) )
         {
           LOBYTE(v4) = WTFMode::ResetUnitFlags(this);
         }
@@ -1267,7 +1267,7 @@ LABEL_31:
         int v32 = (*(int (__thiscall **)(#377 *))(this->q1D0)(this);
         int v33 = -5 - ZCoordToScreenY(v32);
         int v34 = *((__int16 *)CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v108) + 133);
-        ((void (__thiscall *)(#377 *, _DWORD, int, _DWORD *, int *, _DWORD, int, int, _DWORD, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))loc_705E00)(
+        loc_705E00(
           this,
           *(_DWORD *)(this->gattlingValue + 5388),
           v29,
@@ -8574,7 +8574,7 @@ LABEL_4:
                    / 50)
                   + 1000 )
     {
-      return ((ObjectClass *)((char *)this + 997)).GetSidebarTooltip(this + 997 * this->q14E7 + 1361, (int)&aP1[-1].__pad_5568[67264]); /*0x6ac3cb*/
+      return this->ObjectClass_3E5.GetSidebarTooltip(this + 997 * this->q14E7 + 1361, (int)&aP1[-1].__pad_5568[67264]); /*0x6ac3cb*/
     }
   }
   return (wchar_t *)StringCSF; /*0x6ac28f*/
@@ -8985,7 +8985,7 @@ namespace ra2 { namespace game { bool TechnoClass::HasAnyMission() {
     v2 = *(std::codecvt_base **)(v1 + 36);
     if ( *((char *)(v2) + 160) )
     break;
-    v1 = *(int *)(v1 + 40);
+    v1 = v1->nextTrigger;
     if ( !v1 )
     return 0;
   }
@@ -9298,11 +9298,11 @@ namespace ra2 { namespace game { void* TechnoClass::Constructor(int a1) {
   this->currentTargetThreatValues = &vt_DynamicVectorClass_int; /*0x6f43d1*/
   this->q115 = 10; /*0x6f43d7*/
   this->secondaryTurretIndex = 0; /*0x6f43da*/
-  ((AbstractClassVector *)((char *)this + 278)).Construct(0, 0); /*0x6f43e7*/
+  this->AbstractClassVector_116.Construct(0); /*0x6f43e7*/
   this->currentTargets = &vt_DynamicVectorClass_AbstractClass; /*0x6f43ec*/
   this->q11B = 10; /*0x6f43f2*/
   this->q11A = 0; /*0x6f43f5*/
-  ((AbstractClassVector *)((char *)this + 284)).Construct(0, 0); /*0x6f4402*/
+  this->transporter.Construct(0); /*0x6f4402*/
   this->q470 = &vt_DynamicVectorClass_AbstractClass; /*0x6f4407*/
   this->q121 = 10; /*0x6f440d*/
   this->q120 = 0; /*0x6f4410*/
@@ -9325,10 +9325,10 @@ namespace ra2 { namespace game { void* TechnoClass::Constructor(int a1) {
     v8 = 1; /*0x6f4451*/
   }
 LABEL_7:
-  ((AudioController *)((char *)this + 290)).Init(); /*0x6f4456*/
-  ((AudioController *)((char *)this + 297)).Init(); /*0x6f4467*/
-  ((AudioController *)((char *)this + 304)).Init(); /*0x6f4472*/
-  ((AudioController *)((char *)this + 311)).Init(); /*0x6f447d*/
+  this->AudioController_122.Init(); /*0x6f4456*/
+  this->AudioController_129.Init(); /*0x6f4467*/
+  this->deployAnim.Init(); /*0x6f4472*/
+  this->AudioController_137.Init(); /*0x6f447d*/
   this->queuedVoiceIndex = -1; /*0x6f4485*/
   this->unknown_4F4 = -1; /*0x6f448b*/
   if ( !v8 /*0x6f44ca*/
@@ -9756,7 +9756,7 @@ namespace ra2 { namespace game { int ObjectClass::NotifyExpired(void* a1, void* 
 
   RadioClass::ExecuteAction((int)this, (TimerStruct *)aP1, aP2); /*0x7077d3*/
   if ( (_BYTE)aP2 ) /*0x7077e0*/
-    ((FootClass *)((char *)this + 69)).updateMovementAnimation((TimerStruct *)aP1); /*0x7077e9*/
+    this->FootClass_45.updateMovementAnimation((TimerStruct *)aP1); /*0x7077e9*/
   aP1a = 1; /*0x7077f4*/
   if ( aP1 == (IUnknown *)*(this + 181) ) /*0x7077fb*/
     *(this + 181) = 0; /*0x7077fd*/
@@ -10899,7 +10899,7 @@ namespace ra2 { namespace game { int ObjectClass::HasSubObject() {
       int result;
 
       result = this->q274;
-      LOBYTE(result) = result && *(_DWORD *)(result + 40);
+      LOBYTE(result) = result && result->q028;
       return result;
 }
 } } }
@@ -11233,7 +11233,7 @@ namespace ra2 { namespace game { int ObjectClass::ProcessFoggedState() {
     int v3 = DataGlobal_A8E998++; /*0x71beb5*/
     *((_DWORD *)DataGlobal_A8E98C + v3) = this; /*0x71bec4*/
   }
-  Vtable3 = ((AbstractClass *)((char *)this + 4)).GetVtable3(); /*0x71bed3*/
+  Vtable3 = this->vtable1.GetVtable3(); /*0x71bed3*/
   if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x71bedf*/
     goto LABEL_15; /*0x71bedf*/
   if ( g_BuildingLoadQueue_Capacity ) /*0x71bee7*/

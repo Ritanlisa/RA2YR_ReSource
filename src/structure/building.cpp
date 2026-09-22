@@ -249,7 +249,7 @@ AbstractClass * * BuildingClass::Construct()
   this->vtable2 = &BuildingClass_Vtable2;
   this->vtable3 = &BuildingClass_Vtable3;
   this->vtable4 = &BuildingClass_Vtable4;
-  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID();
+  this->vtable1.GenerateUniqueID();
   this->Upgrades = 0;
   LOBYTE(v6) = 0;
   this->q17C = 0;
@@ -262,7 +262,7 @@ AbstractClass * * BuildingClass::Construct()
   {
     HIBYTE(v6) = *(_BYTE *)(v7 + 5904);
     LOWORD(a3) = v6;
-    ((FacingClass *)((char *)this + 880)).Update((char *)(this + 880), &a3);
+    this->barrelFacing.Update(&a3);
   }
   memset((void *)(this + 1372), 0, 0x54u);
   memset((void *)(this + 1480), 0, 0x20u);
@@ -275,7 +275,7 @@ AbstractClass * * BuildingClass::Construct()
   AudioController::Init((_DWORD *)(this + 1696));
   AudioController::Init((_DWORD *)(this + 1716));
   LOWORD(a3) = 0x4000;
-  ((FacingClass *)((char *)this + 880)).Update((char *)(this + 880), &a3);
+  this->barrelFacing.Update(&a3);
   this->RepairProgress = 0;
   if ( DataGlobal_87F7E8[539866] < DataGlobal_87F7E8[539864]
     || (BYTE1(DataGlobal_87F7E8[539865]) || !DataGlobal_87F7E8[539864])
@@ -311,7 +311,7 @@ AbstractClass * * BuildingClass::Construct()
     int v10 = dword_A8ED54[131613]++;
     *(_DWORD *)(dword_A8ED54[131610] + 4 * v10) = this;
   }
-  Vtable3 = ((AbstractClass *)((char *)this + 4)).GetVtable3();
+  Vtable3 = this->vtable1.GetVtable3();
   if ( dword_A8ED54[130748] + 1 <= dword_A8ED54[130749] )
     goto LABEL_29;
   if ( dword_A8ED54[130749] )
@@ -767,7 +767,7 @@ int BuildingClass::Dtor()
   Mixer::ReleaseChannel((int **)this + 429);
   Mixer::ReleaseChannel((int **)this + 424);
   AudioFileClass::Release(v2);
-  ((AudioFileClass *)((char *)this + 424)).Release();
+  this->ironTintStage.Release();
   int v4 = (int)this->LightSource;
   if ( v4 )
   {
@@ -8438,7 +8438,7 @@ void BuildingClass::SetRallyPoint(CoordStruct* target)
     if ( DataGlobal_87F7E8[524984] < 128 )
     {
       qmemcpy((char *)&DataGlobal_87F7E8[524987] + 111 * DataGlobal_87F7E8[524986], v15, 0x6Fu);
-      DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = ((int (*)(void))timeGetTime)();
+      DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = timeGetTime();
       DataGlobal_87F7E8[524986] = (LOBYTE(DataGlobal_87F7E8[524986]) + 1) & 0x7F;
       ++DataGlobal_87F7E8[524984];
     }
@@ -8476,7 +8476,7 @@ LABEL_8:
   if ( DataGlobal_87F7E8[524984] < 128 )
   {
     qmemcpy((char *)&DataGlobal_87F7E8[524987] + 111 * DataGlobal_87F7E8[524986], v22, 0x6Fu);
-    DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = ((int (*)(void))timeGetTime)();
+    DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = timeGetTime();
     DataGlobal_87F7E8[524986] = (LOBYTE(DataGlobal_87F7E8[524986]) + 1) & 0x7F;
     ++DataGlobal_87F7E8[524984];
   }
@@ -17801,7 +17801,7 @@ void BuildingClass::EjectCrew()
     v7 = this->inAirFlag;
     if ( v7 > 0 )
     {
-      v7 = ((LinkedList *)((char *)this + 69)).Pop();
+      v7 = this->LinkedList_45.Pop();
       for ( i = v7; v7; i = v7 )
       {
   int *v12; // eax
@@ -17863,7 +17863,7 @@ void BuildingClass::EjectCrew()
             (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)i + 488))(i, 15, 0);
         }
         --DataGlobal_87F7E8[539633];
-        v7 = ((LinkedList *)((char *)this + 69)).Pop();
+        v7 = this->LinkedList_45.Pop();
       }
     }
   }
@@ -20814,8 +20814,8 @@ void BuildingClass::CheckSpecialUpdateFlags()
     int result;
     int v2;
     result = this->Type;
-    v2 = *(int *)(result + 3768);
-    LOBYTE(result) = v2 == 40 || v2 == 16 || *(char *)(result + 5804) || *(char *)(result + 5801);
+    v2 = result->BuildingTypeClass_field_ED8;
+    LOBYTE(result) = v2 == 40 || v2 == 16 || result->Cloning || result->UnitRepair;
     return result;
 }
 
@@ -20916,7 +20916,7 @@ int BuildingClass::GetZDrawOffset() const
     v2 = this->GetBuildAnim();
     v3 = ZCoordToScreenY(v2);
     v4 = this->Type;
-    if ( *(char *)(v4 + 5829) )
+    if ( v4->TurretAnimIsVoxel )
     return *(int *)(v4 + 4584) - v3;
     else
     return -v3;

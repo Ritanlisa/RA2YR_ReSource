@@ -31,31 +31,31 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   result = BaseDialogProc(hWnd, a2, a3, a4); /*0x5fb34c*/
   if ( result ) /*0x5fb353*/
     return result; /*0x5fb353*/
-  v73 = (_DWORD *)((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8); /*0x5fb368*/
+  v73 = (_DWORD *)GetWindowLongA(hWnd, 8); /*0x5fb368*/
   if ( a2 > 0x466 ) /*0x5fb36c*/
   {
     if ( a2 == 1127 ) /*0x5fbe06*/
     {
-      int v68 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1223); /*0x5fbe4f*/
-      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v68, 331, 0, 0); /*0x5fbe59*/
+      int v68 = GetDlgItem(hWnd, 1223); /*0x5fbe4f*/
+      SendMessageA(v68, 331, 0, 0); /*0x5fbe59*/
       for ( i = 0; i < dword_87F5D8[36]; ++i ) /*0x5fbe6a*/
       {
         int v69 = *(_DWORD *)(dword_87F5D8[33] + 4 * i); /*0x5fbe76*/
         int v70 = (*(int (__thiscall **)(int))(*(_DWORD *)v69 + 12))(v69); /*0x5fbe7d*/
-        if ( ((int (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v68, 1214, 0, v70) == -1 ) /*0x5fbe8e*/
+        if ( SendMessageA(v68, 1214, 0, v70) == -1 ) /*0x5fbe8e*/
         {
           int v71 = (*(int (__thiscall **)(int))(*(_DWORD *)v69 + 12))(v69); /*0x5fbe94*/
-          ((void (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v68, 1218, 0, v71); /*0x5fbea0*/
+          SendMessageA(v68, 1218, 0, v71); /*0x5fbea0*/
         }
       }
-      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v68, 334, 0, 0); /*0x5fbebf*/
+      SendMessageA(v68, 334, 0, 0); /*0x5fbebf*/
       dword_832D8C = -1; /*0x5fbecb*/
-      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1124, 0, 0); /*0x5fbed5*/
+      SendMessageA(hWnd, 1124, 0, 0); /*0x5fbed5*/
       return 1; /*0x5fbed5*/
     }
     if ( a2 == 1175 ) /*0x5fbe0b*/
     {
-      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1127, 0, 0); /*0x5fbe26*/
+      SendMessageA(hWnd, 1127, 0, 0); /*0x5fbe26*/
       return 0; /*0x5fbe38*/
     }
     return 0; /*0x5fbe0b*/
@@ -63,13 +63,13 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   if ( a2 == 1126 ) /*0x5fb372*/
   {
   int v51; // edi
-    int v46 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fbacc*/
-    int v47 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v46, 392, 0, 0); /*0x5fbad6*/
+    int v46 = GetDlgItem(hWnd, 1224); /*0x5fbacc*/
+    int v47 = SendMessageA(v46, 392, 0, 0); /*0x5fbad6*/
     if ( v47 == -1 ) /*0x5fbadb*/
       return 1; /*0x5fbadb*/
-    int v76 = ((int (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v46, 409, v47, 0); /*0x5fbaf2*/
-    int v48 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fbaf6*/
-    v49 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v48, 1026, 0, 0); /*0x5fbb02*/
+    int v76 = SendMessageA(v46, 409, v47, 0); /*0x5fbaf2*/
+    int v48 = GetDlgItem(hWnd, 1229); /*0x5fbaf6*/
+    v49 = SendMessageA(v48, 1026, 0, 0); /*0x5fbb02*/
     int v50 = (unsigned __int8)v49; /*0x5fbb0a*/
     if ( (v49 & 0x400) != 0 ) /*0x5fbb13*/
       v50 = (unsigned __int8)v49 | 0x400; /*0x5fbb15*/
@@ -189,15 +189,15 @@ LABEL_127:
         }
         return 1; /*0x5fbcc9*/
       }
-      v51 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1597); /*0x5fbb7c*/
+      v51 = GetDlgItem(hWnd, 1597); /*0x5fbb7c*/
       StringCSF = GetStringCSF((#72 *)aErrorCannotrem, 0, g_Str_File_Options_CPP, 1012); /*0x5fbb8a*/
     }
     else
     {
-      v51 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1597); /*0x5fbb54*/
+      v51 = GetDlgItem(hWnd, 1597); /*0x5fbb54*/
       StringCSF = GetStringCSF((#72 *)aErrorCannotmap, 0, g_Str_File_Options_CPP, 1004); /*0x5fbb62*/
     }
-    ((void (__stdcall *)(int, int, _DWORD, #72 *))SendMessageA)(v51, 1202, 0, StringCSF); /*0x5fbb98*/
+    SendMessageA(v51, 1202, 0, StringCSF); /*0x5fbb98*/
     return 1; /*0x5fbba9*/
   }
   if ( a2 != 273 ) /*0x5fb37e*/
@@ -205,13 +205,13 @@ LABEL_127:
     if ( a2 == 1124 ) /*0x5fb38a*/
     {
       v18 = GetDlgItem; /*0x5fb4ec*/
-      int v19 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1223); /*0x5fb502*/
-      if ( ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v19, 327, 0, 0) != dword_832D8C ) /*0x5fb514*/
+      int v19 = GetDlgItem(hWnd, 1223); /*0x5fb502*/
+      if ( SendMessageA(v19, 327, 0, 0) != dword_832D8C ) /*0x5fb514*/
       {
-        dword_832D8C = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v19, 327, 0, 0); /*0x5fb52d*/
-        ((void (__stdcall *)(int, int, int, _BYTE *))SendMessageA)(v19, 1203, 64, lParam); /*0x5fb53b*/
-        int v20 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fb547*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v20, 388, 0, 0); /*0x5fb551*/
+        dword_832D8C = SendMessageA(v19, 327, 0, 0); /*0x5fb52d*/
+        SendMessageA(v19, 1203, 64, lParam); /*0x5fb53b*/
+        int v20 = GetDlgItem(hWnd, 1224); /*0x5fb547*/
+        SendMessageA(v20, 388, 0, 0); /*0x5fb551*/
         int v75 = 0; /*0x5fb55a*/
         if ( dword_87F5D8[36] > 0 ) /*0x5fb562*/
         {
@@ -222,37 +222,37 @@ LABEL_127:
             if ( !_wcsicmp(v22, (const #72 *)lParam) ) /*0x5fb581*/
             {
               int v23 = (*(int (__thiscall **)(int))(*(_DWORD *)v21 + 8))(v21); /*0x5fb591*/
-              int v24 = ((int (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v20, 1229, 0, v23); /*0x5fb59d*/
+              int v24 = SendMessageA(v20, 1229, 0, v23); /*0x5fb59d*/
               if ( v24 != -1 ) /*0x5fb5a2*/
-                ((void (__stdcall *)(int, int, int, int))SendMessageA)(v20, 410, v24, v21); /*0x5fb5ac*/
+                SendMessageA(v20, 410, v24, v21); /*0x5fb5ac*/
             }
             ++v75; /*0x5fb5bb*/
           }
           while ( v75 < dword_87F5D8[36] ); /*0x5fb5bf*/
           v18 = GetDlgItem; /*0x5fb5c1*/
         }
-        int v25 = ((int (__stdcall *)(int, int))v18)(hWnd, 1227); /*0x5fb5cd*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v25, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb5dc*/
-        int v26 = ((int (__stdcall *)(int, int))v18)(hWnd, 1596); /*0x5fb5e4*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v26, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb5f3*/
-        int v27 = ((int (__stdcall *)(int, int))v18)(hWnd, 1595); /*0x5fb602*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v27, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb60c*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v27, 390, 0, 0); /*0x5fb618*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1125, 0, 0); /*0x5fb624*/
+        int v25 = v18(hWnd, 1227); /*0x5fb5cd*/
+        SendMessageA(v25, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb5dc*/
+        int v26 = v18(hWnd, 1596); /*0x5fb5e4*/
+        SendMessageA(v26, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb5f3*/
+        int v27 = v18(hWnd, 1595); /*0x5fb602*/
+        SendMessageA(v27, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb60c*/
+        SendMessageA(v27, 390, 0, 0); /*0x5fb618*/
+        SendMessageA(hWnd, 1125, 0, 0); /*0x5fb624*/
         return 1; /*0x5fb635*/
       }
       return 1; /*0x5fb514*/
     }
     if ( a2 == 1125 ) /*0x5fb391*/
     {
-      int v5 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fb3ab*/
-      int v6 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v5, 392, 0, 0); /*0x5fb3b5*/
+      int v5 = GetDlgItem(hWnd, 1224); /*0x5fb3ab*/
+      int v6 = SendMessageA(v5, 392, 0, 0); /*0x5fb3b5*/
       if ( v6 != -1 ) /*0x5fb3ba*/
       {
-        int v7 = ((int (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v5, 409, v6, 0); /*0x5fb3d1*/
-        int v8 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1227); /*0x5fb3d9*/
+        int v7 = SendMessageA(v5, 409, v6, 0); /*0x5fb3d1*/
+        int v8 = GetDlgItem(hWnd, 1227); /*0x5fb3d9*/
         int v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 16))(v7); /*0x5fb3df*/
-        ((void (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v8, 1202, 0, v9); /*0x5fb3eb*/
+        SendMessageA(v8, 1202, 0, v9); /*0x5fb3eb*/
         ObjectClass *v10 = dword_87F5D8[43]; /*0x5fb3ed*/
         int v11 = 0; /*0x5fb3f2*/
   int v74; // [esp+10h] [ebp-11Ch]
@@ -280,7 +280,7 @@ LABEL_127:
           v74 = *((_DWORD *)v13 + 2 * v11); /*0x5fb44a*/
         }
 LABEL_16:
-        LODWORD(v78) = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1596); /*0x5fb44e*/
+        LODWORD(v78) = GetDlgItem(hWnd, 1596); /*0x5fb44e*/
         char v14 = 0; /*0x5fb464*/
         if ( (v74 & 0x400) != 0 ) /*0x5fb469*/
           v14 = 4; /*0x5fb46b*/
@@ -293,11 +293,11 @@ LABEL_16:
         HIBYTE(v15) = v14; /*0x5fb48e*/
         LOBYTE(v15) = v74; /*0x5fb490*/
         FormatHotkeyDisplayString(v15, (#72 *)lParam); /*0x5fb494*/
-        ((void (__stdcall *)(_DWORD, int, _DWORD, _BYTE *))SendMessageA)(v78, 1202, 0, lParam); /*0x5fb4ad*/
-        int v16 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fb4b5*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v16, 1025, 0, 0); /*0x5fb4c1*/
-        int v17 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1595); /*0x5fb4c9*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v17, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb4d8*/
+        SendMessageA(v78, 1202, 0, lParam); /*0x5fb4ad*/
+        int v16 = GetDlgItem(hWnd, 1229); /*0x5fb4b5*/
+        SendMessageA(v16, 1025, 0, 0); /*0x5fb4c1*/
+        int v17 = GetDlgItem(hWnd, 1595); /*0x5fb4c9*/
+        SendMessageA(v17, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb4d8*/
         return 1; /*0x5fb4e9*/
       }
       return 1; /*0x5fb3ba*/
@@ -309,8 +309,8 @@ LABEL_16:
   void *v79[3]; // [esp+1Ch] [ebp-110h] BYREF
     if ( (unsigned __int16)a3 == 1231 ) /*0x5fb8df*/
     {
-      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1126, 0, 0); /*0x5fba96*/
-      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1125, 0, 0); /*0x5fbaa2*/
+      SendMessageA(hWnd, 1126, 0, 0); /*0x5fba96*/
+      SendMessageA(hWnd, 1125, 0, 0); /*0x5fbaa2*/
       return 1; /*0x5fbab3*/
     }
     if ( (unsigned __int16)a3 == 1232 ) /*0x5fb8e6*/
@@ -321,7 +321,7 @@ LABEL_16:
         CCFileClass::Construct(v79, aKeyboardmdIni); /*0x5fba24*/
         FileClass::Delete((#56 *)v79); /*0x5fba2d*/
         KeyboardConfig::LoadINI(); /*0x5fba32*/
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1127, 0, 0); /*0x5fba41*/
+        SendMessageA(hWnd, 1127, 0, 0); /*0x5fba41*/
         v79[0] = &CCFileClass::`vftable'; /*0x5fba4b*/
         int v86 = 0; /*0x5fba53*/
   _BYTE v85[12]; // [esp+74h] [ebp-B8h] BYREF
@@ -384,17 +384,17 @@ LABEL_16:
     {
       if ( HIWORD(a3) == 1 ) /*0x5fb6af*/
       {
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1124, 0, 0); /*0x5fb6bf*/
+        SendMessageA(hWnd, 1124, 0, 0); /*0x5fb6bf*/
         return 1; /*0x5fb6d1*/
       }
     }
     else if ( (unsigned __int16)a3 == 1224 && HIWORD(a3) == 1 ) /*0x5fb669*/
     {
-      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1125, 0, 0); /*0x5fb679*/
-      int v28 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fb685*/
+      SendMessageA(hWnd, 1125, 0, 0); /*0x5fb679*/
+      int v28 = GetDlgItem(hWnd, 1229); /*0x5fb685*/
       if ( v28 ) /*0x5fb68d*/
       {
-        ((void (__stdcall *)(int))SetFocus)(v28); /*0x5fb694*/
+        SetFocus(v28); /*0x5fb694*/
         return 1; /*0x5fb6a6*/
       }
     }
@@ -402,9 +402,9 @@ LABEL_16:
   }
   if ( HIWORD(a3) != 768 ) /*0x5fb707*/
     return 1; /*0x5fbed7*/
-  int v29 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1597); /*0x5fb713*/
-  ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v29, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb72c*/
-  v30 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(a4, 1026, 0, 0); /*0x5fb738*/
+  int v29 = GetDlgItem(hWnd, 1597); /*0x5fb713*/
+  SendMessageA(v29, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb72c*/
+  v30 = SendMessageA(a4, 1026, 0, 0); /*0x5fb738*/
   int v31 = (unsigned __int8)v30; /*0x5fb740*/
   if ( (v30 & 0x400) != 0 ) /*0x5fb749*/
     v31 = (unsigned __int8)v30 | 0x400; /*0x5fb74b*/
@@ -502,8 +502,8 @@ LABEL_80:
   if ( !v41 ) /*0x5fb897*/
 LABEL_81:
     v41 = &DataGlobal_87F7E8[8147]; /*0x5fb899*/
-  v42 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1595); /*0x5fb8a4*/
-  ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v42, 1202, 0, v41); /*0x5fb8b3*/
+  v42 = GetDlgItem(hWnd, 1595); /*0x5fb8a4*/
+  SendMessageA(v42, 1202, 0, v41); /*0x5fb8b3*/
   return 1; /*0x5fb4da*/
 }
 }

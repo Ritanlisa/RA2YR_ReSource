@@ -46,7 +46,7 @@ int TeamTypeClass::Construct()
   this->vtable1 = &FactoryClass::`vftable'; /*0x4c9920*/
   this->vtable2 = &FactoryClass::`vftable'; /*0x4c9926*/
   this->vtable3 = &vt_FactoryClass; /*0x4c992d*/
-  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x4c9934*/
+  this->AbstractClass_4.GenerateUniqueID(); /*0x4c9934*/
   if ( g_TeamTypeCapacity < DataGlobal_A83E38 /*0x4c996d*/
     || (DataGlobal_A83E3D || !DataGlobal_A83E38)
     && DataGlobal_A83E44 > 0

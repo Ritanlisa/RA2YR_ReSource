@@ -92,7 +92,7 @@ void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int 
 {
 
   CCFileClass::Construct3((int)(this + 4)); /*0x75926a*/
-  ((Stream *)((char *)this + 376)).CopyFromTemplate(); /*0x759275*/
+  this->Stream_178.CopyFromTemplate(); /*0x759275*/
   this->q52C = aP2; /*0x759282*/
   *((_DWORD *)this + 121) = this; /*0x759288*/
   char v19; // [esp+13h] [ebp-1h] BYREF

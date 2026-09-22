@@ -10,7 +10,7 @@ CampaignClass * * RadarClass::Destruct()
 {
 
   *this = &vt_RadarClass; /*0x652c0c*/
-  ((AudioFileClass *)((char *)this + 1328)).Release(); /*0x652c12*/
+  this->AudioFileClass_530.Release(); /*0x652c12*/
   TacticalClass::FreeResources(this); /*0x652c19*/
   MapClass *v2 = (char *)(this + 1314); /*0x652c1e*/
   int v3 = 22; /*0x652c24*/

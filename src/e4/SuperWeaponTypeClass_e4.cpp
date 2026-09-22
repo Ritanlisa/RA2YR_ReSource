@@ -61,7 +61,7 @@ LABEL_5:
     }
     v9 = *(_DWORD *)(v7 + 4 * v6); /*0x4f65f4*/
   }
-  if ( ((DynamicVector *)((char *)this + 5465)).GetOrGrow(*(DynamicVector **)(v9 + 3576)) ) /*0x4f65cc*/
+  if ( this->DynamicVector_1559.GetOrGrow(*(DynamicVector **)(v9 + 3576)) ) /*0x4f65cc*/
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
     return 1; /*0x4f65f3*/

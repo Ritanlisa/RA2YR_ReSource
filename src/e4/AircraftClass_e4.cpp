@@ -44,7 +44,7 @@ unsigned int * AircraftClass::Update()
           if ( v6 >= v8 ) /*0x413fc1*/
             goto LABEL_9; /*0x413fc1*/
         }
-        ((Power *)((char *)this + 84)).ChangedHouse(1); /*0x413fcd*/
+        this->Power_54.ChangedHouse(); /*0x413fcd*/
       }
     }
 LABEL_9:

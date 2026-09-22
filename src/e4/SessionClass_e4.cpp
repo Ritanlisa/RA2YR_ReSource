@@ -996,7 +996,7 @@ S * SessionClass::SessionClass()
   this->q1A4 = &vt_DynamicVectorClass_MultiMission; /*0x697206*/
   *((_DWORD *)this + 425) = 10; /*0x697210*/
   *((_DWORD *)this + 424) = 0; /*0x697216*/
-  ((Waypoint *)((char *)this + 2276)).InitInvalid(); /*0x69721c*/
+  this->Waypoint_8E4.InitInvalid(); /*0x69721c*/
   *((_DWORD *)this + 573) = 0; /*0x697227*/
   *((_DWORD *)this + 574) = 0; /*0x69722d*/
   this->q8FC = 1; /*0x697233*/
@@ -1004,11 +1004,11 @@ S * SessionClass::SessionClass()
   *((_DWORD *)this + 572) = &vt_DynamicVectorClass_GlobalPacketType; /*0x697240*/
   *((_DWORD *)this + 577) = 10; /*0x69724a*/
   *((_DWORD *)this + 576) = 0; /*0x697250*/
-  ((SessionClass *)((char *)this + 2600)).saveSettings(); /*0x697256*/
-  ((Waypoint *)((char *)this + 7876)).InitInvalid(); /*0x697261*/
+  this->SessionClass_A28.saveSettings(); /*0x697256*/
+  this->Waypoint_1EC4.InitInvalid(); /*0x697261*/
   CCFileClass::Construct3((int)(this + 9044)); /*0x69726c*/
-  ((Waypoint *)((char *)this + 9160)).InitInvalid(); /*0x697277*/
-  ((Waypoint *)((char *)this + 9676)).InitInvalid(); /*0x697282*/
+  this->Waypoint_23C8.InitInvalid(); /*0x697277*/
+  this->Waypoint_25CC.InitInvalid(); /*0x697282*/
   this->unknown_vector_280C.Items = 0; /*0x69728c*/
   this->unknown_vector_280C.Capacity = 0; /*0x697292*/
   this->q2818 = 1; /*0x697298*/
@@ -1051,9 +1051,9 @@ S * SessionClass::SessionClass()
   *((_DWORD *)this + 2635) = &vt_DynamicVectorClass_unsigned_short_const; /*0x69738a*/
   *((_DWORD *)this + 2640) = 10; /*0x697394*/
   *((_DWORD *)this + 2639) = 0; /*0x69739a*/
-  ((Waypoint *)((char *)this + 10604)).InitInvalid(); /*0x6973a0*/
-  ((Waypoint *)((char *)this + 10616)).InitInvalid(); /*0x6973ab*/
-  ((Waypoint *)((char *)this + 10632)).InitInvalid(); /*0x6973b6*/
+  this->Waypoint_296C.InitInvalid(); /*0x6973a0*/
+  this->Waypoint_2978.InitInvalid(); /*0x6973ab*/
+  this->Waypoint_2988.InitInvalid(); /*0x6973b6*/
   IPXManagerClass *v9 = this + 10644; /*0x6973bb*/
   int v10 = 8; /*0x6973c1*/
   do /*0x6973d1*/

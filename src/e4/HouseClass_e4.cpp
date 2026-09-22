@@ -3119,7 +3119,7 @@ char HouseClass::Set()
   {
     (*(void (__thiscall **)(int, int, int))(**(int **)(this + 12) + 1348))( this->vtable3, 0, 1072693248);
     Value = ProgressTimer::GetValue((short *)(this->vtable3 + 904), &v6);
-    FacingClass::Set_SyncLog((char *)(this + 84), Value);
+    this->repairStationsCount.Set_SyncLog(Value);
     v4 = this->relatedTags;
     this->absorbersCapacity = 0;
     this->bunkersCount = 0;

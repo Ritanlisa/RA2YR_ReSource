@@ -2310,7 +2310,7 @@ void ProcessComboBoxAddString(HWND hWnd, int a2)
       {
         while ( 1 ) /*0x5e628e*/
         {
-          if ( ((LRESULT (__stdcall *)(HWND, UINT, WPARAM, LPARAM))v2)(hWnd, 0x4CFu, v7, 0) ) /*0x5e6297*/
+          if ( v2(hWnd, 0x4CFu, v7, 0) ) /*0x5e6297*/
           {
             v2(hWnd, 0x4B6u, v7, (LPARAM)lParam); /*0x5e62a9*/
           }

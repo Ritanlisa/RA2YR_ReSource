@@ -205,7 +205,7 @@ LABEL_44:
           (*(void (__thiscall **)(IUnknown *))(Building->field_0 + 212))(Building); /*0x417283*/
           Building->__pad_8C[0] = 0; /*0x417290*/
           Building->__pad_3BC[104] = 1; /*0x417297*/
-          ((CellClass *)((char *)this + 69)).AddObject(Building); /*0x41729e*/
+          this->CellClass_45.AddObject(Building); /*0x41729e*/
         }
         else
         {

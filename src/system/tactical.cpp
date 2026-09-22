@@ -777,7 +777,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
         unsigned int v34 = result;
         if ( result )
         {
-          int v5 = ((int (*)(void))timeGetTime)();
+          int v5 = timeGetTime();
           unsigned int v6 = v5 - dword_A8ED54[130619];
           dword_A8ED54[130619] = v5;
           unsigned int v31 = v6;

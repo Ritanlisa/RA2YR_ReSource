@@ -2090,10 +2090,10 @@ int Voxel::SectionProject(int * a2, int a3)
   *(this + 72) = v39; /*0x761f77*/
   *(this + 73) = v53; /*0x761f85*/
   *(this + 74) = v40; /*0x761f88*/
-  ((Coord *)((char *)this + 63)).To_Screen(this + 55); /*0x761f91*/
-  ((Coord *)((char *)this + 66)).To_Screen(this + 57); /*0x761faa*/
-  ((Coord *)((char *)this + 69)).To_Screen(this + 59); /*0x761fc3*/
-  ((Coord *)((char *)this + 72)).To_Screen(this + 61); /*0x761fdc*/
+  this->Coord_3F.To_Screen(); /*0x761f91*/
+  this->Coord_42.To_Screen(); /*0x761faa*/
+  this->Coord_45.To_Screen(); /*0x761fc3*/
+  this->Coord_48.To_Screen(); /*0x761fdc*/
   _DWORD * v41 = (_DWORD *)*(this + 83); /*0x761fe1*/
   *v41 = *(this + 55); /*0x761fe9*/
   v41[1] = *(this + 56); /*0x761fee*/

@@ -3845,7 +3845,7 @@ LABEL_33:
         _unlock(1); /*0x7d4b50*/
       if ( Signal == 8 ) /*0x7d4b5a*/
       {
-        ((void (__cdecl *)(int, _DWORD))v2)(8, v4[22]); /*0x7d4b61*/
+        v2(8, v4[22]); /*0x7d4b61*/
       }
       else
       {

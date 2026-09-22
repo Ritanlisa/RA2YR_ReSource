@@ -73,15 +73,15 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
   this->ROF = 0; /*0x771caf*/
   this->Range = 0; /*0x771cb6*/
   this->MinimumRange = 0; /*0x771cbf*/
-  ((VectorClass *)((char *)this + 47)).Construct(0, 0); /*0x771cc5*/
+  this->VectorClass_2F.Construct(0); /*0x771cc5*/
   this->AttachedParticleSystem = 10; /*0x771cca*/
   this->OpenToppedAnim = 0; /*0x771cd1*/
   this->Report = &vt_TypeList_int; /*0x771cd4*/
-  ((VectorClass *)((char *)this + 54)).Construct(0, 0); /*0x771ce4*/
+  this->VectorClass_36.Construct(0); /*0x771ce4*/
   this->TerrainFire = 10; /*0x771ce9*/
   this->CellRangefinding = 0; /*0x771cf0*/
   this->q0D8 = &vt_TypeList_int; /*0x771cf3*/
-  ((AnimTypeVector *)((char *)this + 61)).Constructor(0, 0); /*0x771d03*/
+  this->UINameLabel.Constructor(0); /*0x771d03*/
   this->IsRadBeam = 10; /*0x771d08*/
   this->AreaFire = 0; /*0x771d0f*/
   this->q0F4 = &vt_TypeList_AnimTypeClass_const; /*0x771d12*/

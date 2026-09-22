@@ -67,7 +67,7 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
   this->vtable1 = &InfantryTypeClass::`vftable'; /*0x5237ee*/
   this->vtable2 = &InfantryTypeClass::`vftable'; /*0x5237f4*/
   this->vtable3 = &vt_InfantryTypeClass; /*0x5237fb*/
-  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x523802*/
+  this->vtable1.GenerateUniqueID(); /*0x523802*/
   v3 = *(InfantryTypeClass **)&g_NetworkPlayerBuffer[3356]; /*0x523807*/
   if ( *(int *)&g_NetworkPlayerBuffer[3356] < *(int *)&g_NetworkPlayerBuffer[3348] /*0x523845*/
     || (g_NetworkPlayerBuffer[3353] || !*(_DWORD *)&g_NetworkPlayerBuffer[3348])

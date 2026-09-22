@@ -191,7 +191,7 @@ unsigned int * TechnoClass::TechnoClass(AbstractClass * aP1)
   this->auxParticles2 = 0; /*0x6f2ebc*/
   this->firingParticles = 0; /*0x6f2ec2*/
   this->waveEffect = -1; /*0x6f2ec8*/
-  ((Delegate *)((char *)this + 207)).GetField(); /*0x6f2ece*/
+  this->Delegate_CF.GetField(); /*0x6f2ece*/
   TechnoClass::checkCloakState((int)(this + 212)); /*0x6f2ed9*/
   FrameSnapshot::InitMax((_WORD *)this + 440, 3); /*0x6f2ee6*/
   FrameSnapshot::Init((_WORD *)this + 452); /*0x6f2ef1*/
@@ -281,10 +281,10 @@ unsigned int * TechnoClass::TechnoClass(AbstractClass * aP1)
   this->vtable2 = &TechnoClass::`vftable'; /*0x6f3136*/
   this->vtable3 = &vt_TechnoClass; /*0x6f313d*/
   this->vtable4 = &off_7F4934; /*0x6f314a*/
-  ((AudioController *)((char *)this + 290)).Init(); /*0x6f3151*/
-  ((AudioController *)((char *)this + 297)).Init(); /*0x6f315c*/
-  ((AudioController *)((char *)this + 304)).Init(); /*0x6f3167*/
-  ((AudioController *)((char *)this + 311)).Init(); /*0x6f3172*/
+  this->AudioController_122.Init(); /*0x6f3151*/
+  this->AudioController_129.Init(); /*0x6f315c*/
+  this->deployAnim.Init(); /*0x6f3167*/
+  this->AudioController_137.Init(); /*0x6f3172*/
   this->queuedVoiceIndex = -1; /*0x6f3177*/
   this->unknown_4F4 = -1; /*0x6f317d*/
   if ( *(int *)&g_NetworkPlayerBuffer[5708] < *(int *)&g_NetworkPlayerBuffer[5700] /*0x6f31b6*/

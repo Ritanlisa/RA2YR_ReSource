@@ -403,7 +403,7 @@ LABEL_22:
   {
     do /*0x4f210e*/
     {
-      ((void (*)(char *const, const char *const, ...))sprintf)( /*0x4f2050*/
+      sprintf( /*0x4f2050*/
         (char *const)aP2_56,
         (const char *const)&stru_817F40.fallRate,
         v27);
@@ -606,7 +606,7 @@ int E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int) a1)
   if ( v3 ) /*0x4f264e*/
     result = UI_Load_5D1C90(this + 1, v3, a2); /*0x4f2654*/
   else
-    result = ((PriorityQueue *)((char *)this + 1)).Add((int)a2); /*0x4f2664*/
+    result = this->PriorityQueue_1.Add((int)a2); /*0x4f2664*/
   *(this + 21) = a2; /*0x4f2659*/
   return result; /*0x4f265c*/
 }

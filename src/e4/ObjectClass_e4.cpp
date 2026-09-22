@@ -1028,10 +1028,10 @@ ObjectClass * * ObjectClass::Dtor()
   }
   this->nextObject = 0; /*0x5f3d1d*/
   this->isAliveFlag = 0; /*0x5f3d26*/
-  ((AudioController *)((char *)this + 15)).Stop(); /*0x5f3d2d*/
-  ((AudioController *)((char *)this + 20)).Stop(); /*0x5f3d37*/
-  ((AudioFileClass *)((char *)this + 15)).Release(); /*0x5f3d3e*/
-  ((AudioFileClass *)((char *)this + 20)).Release(); /*0x5f3d45*/
+  this->AudioController_F.Stop(); /*0x5f3d2d*/
+  this->abstractFlags.Stop(); /*0x5f3d37*/
+  this->AudioController_F.Release(); /*0x5f3d3e*/
+  this->abstractFlags.Release(); /*0x5f3d45*/
   _DWORD * v8 = (_DWORD *)this->lineTrailer; /*0x5f3d4a*/
   if ( v8 ) /*0x5f3d54*/
   {
@@ -1903,7 +1903,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     *v30 = *v32; /*0x7186c6*/
     this->fallRate = v32[1]; /*0x7186cb*/
     this->nextObject = v32[2]; /*0x7186d1*/
-    this->nextObject = ((Cell *)((char *)this + 10)).GetGroundHeight(); /*0x7186e4*/
+    this->nextObject = this->Cell_A.GetGroundHeight(); /*0x7186e4*/
     if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, this + 10) + 80) & 0x100) == 0 /*0x7186fa*/
   int v33; // eax
       || (v33 = this->vtable4, *(_BYTE *)(v33 + 140)) )

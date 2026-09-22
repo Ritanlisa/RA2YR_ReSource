@@ -35,7 +35,7 @@ int Audio::GetChannelStatus()
     return -2146500608; /*0x40272c*/
   if ( !*(_DWORD *)(this + 360) ) /*0x402733*/
     return -2147024896; /*0x40273d*/
-  ((Audio *)((char *)this + 16)).InitChannels((char *)(this + 16)); /*0x402748*/
+  this->Audio_10.InitChannels(); /*0x402748*/
   ObjectClass::Cleanup((int *)this); /*0x40274f*/
   (*(void (__thiscall **)(int))(*(_DWORD *)(this + 212) + 40))(this); /*0x40275c*/
   int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)(this + 212) + 12))(this); /*0x40276a*/
@@ -2357,8 +2357,8 @@ int Audio::InitChannels()
 {
 {
     ((void (*)(void))AudioMixer::PlaySample)();
-    AudioMixer::PlaySample(this + 40);
-    return AudioMixer::PlaySample(this + 80);
+    this->q028.PlaySample();
+    return this->AudioMixer_50.PlaySample();
 }
 }
 } // namespace gamemd

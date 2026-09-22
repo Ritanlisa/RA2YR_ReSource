@@ -380,7 +380,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1)
   this->WarheadTypeClass_field_0x4 = &WarheadTypeClass::`vftable'; /*0x75d0c1*/
   this->WarheadTypeClass_field_0x8 = &WarheadTypeClass::`vftable'; /*0x75d0c7*/
   this->WarheadTypeClass_field_0xC = &vt_WarheadTypeClass; /*0x75d0ce*/
-  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x75d0d5*/
+  this->UIName.GenerateUniqueID(); /*0x75d0d5*/
   (*(void (__thiscall **)(int))(this->DebrisTypes + 12))(this + 396); /*0x75d0de*/
   (*(void (__thiscall **)(int))(*(_DWORD *)(this + 424) + 12))(this + 424); /*0x75d0e5*/
   if ( *(int *)&DataGlobal_87F8E4[31724] < *(int *)&DataGlobal_87F8E4[31716] /*0x75d11c*/

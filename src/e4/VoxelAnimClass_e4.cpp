@@ -437,7 +437,7 @@ char VoxelAnimClass::UpdateMatrix()
     int v7;
     int v8;
     int v9;
-    if ( this->objectTypeFlags > Cell::GetGroundHeight(this + 7) + 120 )
+    if ( this->objectTypeFlags > this->Cell_7.GetGroundHeight() + 120 )
     return 1;
     v3 = this->vtable3;
     if ( *(int *)(v3 + 692) && *(int *)(v3 + 764) )

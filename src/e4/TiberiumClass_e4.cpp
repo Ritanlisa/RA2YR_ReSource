@@ -137,7 +137,7 @@ unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->q0B8 = 0; /*0x721713*/
   this->Growth = 0; /*0x721719*/
   this->GrowthPercentage = 0; /*0x72171f*/
-  ((AnimTypeVector *)((char *)this + 49)).Constructor(0, 0); /*0x721725*/
+  this->AnimTypeVector_31.Constructor(0); /*0x721725*/
   this->Image = 10; /*0x72172a*/
   this->Debris = 0; /*0x721731*/
   this->q0C4 = &vt_TypeList_AnimTypeClass_const; /*0x721734*/

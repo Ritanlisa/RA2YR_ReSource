@@ -218,15 +218,15 @@ int NetworkOptions::DlgProc() {
   result = BaseDialogProc(hWnd, a2, a3, hCtl);
   if ( !result )
   {
-    _DWORD * v45 = (_DWORD *)((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8);
+    _DWORD * v45 = (_DWORD *)GetWindowLongA(hWnd, 8);
     if ( a2 == 273 )
     {
       switch ( (unsigned __int16)a3 )
       {
         case 1u:
-          int v16 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1489);
+          int v16 = GetDlgItem(hWnd, 1489);
           v17 = SendMessageA;
-          ((void (__stdcall *)(int, int, int, __int128 *))SendMessageA)(v16, 1205, 16, &v46);
+          SendMessageA(v16, 1205, 16, &v46);
           if ( strlen((const char *)&v46) )
           {
             v18 = atoi((const char *)&v46);
@@ -244,9 +244,9 @@ int NetworkOptions::DlgProc() {
           {
             v40 = -1;
           }
-          int v20 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1491);
+          int v20 = GetDlgItem(hWnd, 1491);
   char v52[32]; // [esp+50h] [ebp-C0h] BYREF
-          ((void (__stdcall *)(int, int, int, char *))SendMessageA)(v20, 1205, 32, v52);
+          SendMessageA(v20, 1205, 32, v52);
           strncpy(Destination, v52, 32);
           if ( strlen(v52) )
           {
@@ -284,14 +284,14 @@ int NetworkOptions::DlgProc() {
               return 0;
             }
           }
-          int v27 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1492);
-          DataGlobal_87F7E8[539891] = ((int (__stdcall *)(int, int, _DWORD, _DWORD))v17)(v27, 327, 0, 0);
+          int v27 = GetDlgItem(hWnd, 1492);
+          DataGlobal_87F7E8[539891] = v17(v27, 327, 0, 0);
           HIWORD(DataGlobal_87F7E8[539888]) = v40;
           strcpy((char *)&DataGlobal_87F7E8[539892], Destination);
-          int v28 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1495);
+          int v28 = GetDlgItem(hWnd, 1495);
   char v54[32]; // [esp+B0h] [ebp-60h] BYREF
           memset(v54, 0, sizeof(v54));
-          ((void (__stdcall *)(int, int, int, char *))SendMessageA)(v28, 1205, 8, v54);
+          SendMessageA(v28, 1205, 8, v54);
           strncpy(String, v54, 32);
           int v29 = atoi(String);
           if ( v29 > 0xFFFF )
@@ -302,7 +302,7 @@ int NetworkOptions::DlgProc() {
             Dialog::ShowMessageBox(v30, v35, 0, 0, 0);
             return 0;
           }
-          if ( ((int (__stdcall *)(int, int, int, _DWORD, _DWORD))SendDlgItemMessageA)(hWnd, 1890, 240, 0, 0) == 1 )
+          if ( SendDlgItemMessageA(hWnd, 1890, 240, 0, 0) == 1 )
           {
             if ( !LOBYTE(DataGlobal_87F7E8[539238]) )
             {
@@ -344,8 +344,8 @@ int NetworkOptions::DlgProc() {
         case 2u:
           break;
         case 0x5D4u:
-          int v15 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1492);
-          dword_82A280 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v15, 327, 0, 0);
+          int v15 = GetDlgItem(hWnd, 1492);
+          dword_82A280 = SendMessageA(v15, 327, 0, 0);
           return 0;
         default:
           return 0;
@@ -364,7 +364,7 @@ int NetworkOptions::DlgProc() {
       }
       return 0;
     }
-    int v6 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1492);
+    int v6 = GetDlgItem(hWnd, 1492);
     char v38 = 0;
     if ( DataGlobal_87F7E8[8080]
   _DWORD *v7; // eax
@@ -383,49 +383,49 @@ int NetworkOptions::DlgProc() {
         {
           Debug::Log();
           Debug::Log();
-          if ( ((int (__stdcall *)(int, int, _DWORD, int *))SendMessageA)(v6, 1208, 0, lParam) == -1 )
-            ((void (__stdcall *)(int, int, _DWORD, int *))SendMessageA)(v6, 1212, 0, lParam);
+          if ( SendMessageA(v6, 1208, 0, lParam) == -1 )
+            SendMessageA(v6, 1212, 0, lParam);
         }
       }
       if ( !v38 )
       {
 LABEL_20:
-        if ( !((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v6, 326, 0, 0) )
+        if ( !SendMessageA(v6, 326, 0, 0) )
         {
           v10 = GetStringCSF((#72 *)aTxtNoBoundNetC, 0, g_Str_File_MainOpt_cpp, 894);
-          ((void (__stdcall *)(int, int, _DWORD, #72 *))SendMessageA)(v6, 1218, 0, v10);
+          SendMessageA(v6, 1218, 0, v10);
         }
         int v11 = DataGlobal_87F7E8[539891];
         if ( DataGlobal_87F7E8[539891] < 0
-          || v11 >= ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v6, 326, 0, 0) )
+          || v11 >= SendMessageA(v6, 326, 0, 0) )
         {
           v11 = 0;
         }
-        ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v6, 334, v11, 0);
-        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1124, 0, 0);
+        SendMessageA(v6, 334, v11, 0);
+        SendMessageA(hWnd, 1124, 0, 0);
         dword_82A280 = -1;
-        int v12 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1489);
+        int v12 = GetDlgItem(hWnd, 1489);
         if ( HIWORD(DataGlobal_87F7E8[539888]) != 0xFFFF )
         {
           sprintf((char *const)&v46, "%d", HIWORD(DataGlobal_87F7E8[539888]));
-          ((void (__stdcall *)(int, int, _DWORD, __int128 *))SendMessageA)(v12, 1204, 0, &v46);
+          SendMessageA(v12, 1204, 0, &v46);
         }
-        ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v12, 197, 5, 0);
-        int v13 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1491);
+        SendMessageA(v12, 197, 5, 0);
+        int v13 = GetDlgItem(hWnd, 1491);
         if ( strlen((const char *)&DataGlobal_87F7E8[539892]) )
-          ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v13, 1204, 0, &DataGlobal_87F7E8[539892]);
-        ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v13, 197, 11, 0);
-        ((void (__stdcall *)(int, int, int, bool, _DWORD))SendDlgItemMessageA)(
+          SendMessageA(v13, 1204, 0, &DataGlobal_87F7E8[539892]);
+        SendMessageA(v13, 197, 11, 0);
+        SendDlgItemMessageA(
           hWnd,
           1890,
           241,
           LOBYTE(DataGlobal_87F7E8[539238]) != 0,
           0);
-        int v14 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1495);
+        int v14 = GetDlgItem(hWnd, 1495);
         if ( v14 != -1 && DataGlobal_87F7E8[539291] )
         {
           sprintf((char *const)&v46, "%d", DataGlobal_87F7E8[539291]);
-          ((void (__stdcall *)(int, int, _DWORD, __int128 *))SendMessageA)(v14, 1204, 0, &v46);
+          SendMessageA(v14, 1204, 0, &v46);
           return 0;
         }
         return 0;

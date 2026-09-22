@@ -131,7 +131,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
   this->SuperClass_field_0x4 = &SuperClass::`vftable'; /*0x6caffd*/
   this->SuperClass_field_0x8 = &SuperClass::`vftable'; /*0x6cb003*/
   this->vtable4 = &vt_SuperClass; /*0x6cb00a*/
-  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x6cb011*/
+  this->q004.GenerateUniqueID(); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
     || (byte_A83CC5 || !dword_A83CC0)
     && dword_A83CCC > 0

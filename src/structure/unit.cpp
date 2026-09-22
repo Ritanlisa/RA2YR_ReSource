@@ -86,7 +86,7 @@ ILocomotion * * UnitClass::Mission_Harvest()
         {
           if ( this->ValidateTargetCell(this->q169) )
           {
-            DB = ((CCINIClass *)((char *)this + 69)).GetDB();
+            DB = this->CCINIClass_45.GetDB();
             int v14 = DB;
             if ( DB
   int v15; // eax
@@ -172,7 +172,7 @@ ILocomotion * * UnitClass::Mission_Harvest()
           }
           else
           {
-            int v26 = ((LinkedList *)((char *)this + 69)).Pop();
+            int v26 = this->CCINIClass_45.Pop();
   _BYTE v33[4]; // [esp+1Ch] [ebp-14h] BYREF
             _WORD * v27 = (_WORD *)this->GetCellCoords_Alt(v33, this);
   char *v29; // [esp+0h] [ebp-30h]

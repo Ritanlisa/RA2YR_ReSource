@@ -1583,7 +1583,7 @@ void FactoryClass_ClearProduction(unsigned int * a1, int a2)
               if ( HouseClass_Player ) /*0x6387db*/
                 v13 = *((_DWORD *)HouseClass_Player + 12); /*0x6387dd*/
             }
-            ((void (__thiscall *)(int))DecFactoryClassCounter)(v13); /*0x6387e2*/
+            DecFactoryClassCounter(v13); /*0x6387e2*/
             ((void (__stdcall *)(void **))VectorClass::EraseAt)(&Block); /*0x6387f1*/
           }
           (*(void (__thiscall **)(int))(*(_DWORD *)(v6 + 4) + 12))(v6 + 4); /*0x6387fc*/

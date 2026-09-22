@@ -24,11 +24,11 @@ namespace gamemd { void* BaseClass::Constructor() {
       v2[5] = 10;
       v2[4] = 0;
       this->cells38 = 0;
-      VectorClass::CellConstructor(this + 8, 0, 0);
+      this->Capacity.CellConstructor(0, 0);
       *(this + 8) = &vt_DynamicVectorClass_Cell;
       this->q034 = 10;
       this->q030 = 0;
-      VectorClass::CellConstructor(this + 14, 0, 0);
+      this->VectorClass_E.CellConstructor(0, 0);
       *(this + 14) = &vt_DynamicVectorClass_Cell;
       this->owner = 10;
       this->q048 = 0;
@@ -122,15 +122,15 @@ namespace gamemd { void* BaseClass::Construct(int a1) {
       _DWORD *v3;
 
       v3 = this + 1;
-      BaseNodeClass::Vector_Constructor(this + 1, 0, 0);
+      this->BaseNodeClass_1.Vector_Constructor(0, 0);
       *v3 = &vt_DynamicVectorClass_BaseNodeClass;
       v3[5] = 10;
       v3[4] = 0;
-      VectorClass::CellConstructor(this + 8, 0, 0);
+      this->Capacity.CellConstructor(0, 0);
       *(this + 8) = &vt_DynamicVectorClass_Cell;
       this->q034 = 10;
       this->q030 = 0;
-      VectorClass::CellConstructor(this + 14, 0, 0);
+      this->VectorClass_E.CellConstructor(0, 0);
       *(this + 14) = &vt_DynamicVectorClass_Cell;
       this->owner = 10;
       this->q048 = 0;
@@ -1559,9 +1559,9 @@ namespace gamemd { int HouseClass::Destruct() {
       this->q5700 = &vt_BaseClass;
       (*(void (__thiscall **)(int))(v17 + 12))(this + 22276);
       this->recheckPower = &vt_VectorClass_Cell;
-      Buffer::Cleanup(this + 22328);
+      this->recheckPower.Cleanup();
       *(_DWORD *)(this + 22304) = &vt_VectorClass_Cell;
-      Buffer::Cleanup(this + 22304);
+      this->Buffer_5720.Cleanup();
       v18 = *(void **)(this + 22280);
       this->q5704 = &VectorClass<BaseNodeClass>::`vftable';
       if ( v18 && this->q5711 )
@@ -2212,7 +2212,7 @@ LABEL_135:
           return 0; /*0x4f80c6*/
       }
       v46 = (DynamicVector *)(*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 64))(aP1); /*0x4f80d1*/
-      int v47 = ((DynamicVector *)((char *)this + 5450)).GetOrGrow(v46); /*0x4f80e4*/
+      int v47 = this->DynamicVector_154A.GetOrGrow(v46); /*0x4f80e4*/
       if ( aP1->__pad_DFC[202] ) /*0x4f80e6*/
       {
         for ( i = 0; i < *(int *)&g_CellDirectionOffsets[84616]; ++i ) /*0x4f80f9*/
@@ -6172,7 +6172,7 @@ namespace gamemd { int HouseClass::FindBuildingOfType(int a1, int a2) {
   ObjectClass *v8; // ecx
   ObjectClass *v9; // eax
   ObjectClass *v11; // [esp+10h] [ebp-10h]
-  if ( ((DynamicVector *)((char *)this + 5440)).GetOrGrow(aP1) <= 0 ) /*0x4fd07b*/
+  if ( this->DynamicVector_1540.GetOrGrow(aP1) <= 0 ) /*0x4fd07b*/
     return 0; /*0x4fd07b*/
   int v4 = 0; /*0x4fd080*/
   v11 = (ObjectClass *)this->bunkersCount; /*0x4fd084*/
@@ -13052,13 +13052,13 @@ namespace gamemd { int HouseClass::ProcessPower() {
       v2 = this->relatedTagsCount;
       if ( v2 )
       {
-        v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(v2 + 4) + 16))(v2 + 4);
+        v3 = (*(int (__stdcall **)(int))(v2->vtable2 + 16))(v2 + 4);
         Power::TimerProcess(v3);
       }
       v4 = this->relatedTagsCapacity;
       if ( v4 )
       {
-        v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4);
+        v5 = (*(int (__stdcall **)(int))(v4->vtable2 + 16))(v4 + 4);
         Power::TimerProcess(v5);
       }
       Power::TimerProcess(this->absorbersCount);

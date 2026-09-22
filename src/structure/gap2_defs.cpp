@@ -95,7 +95,7 @@ namespace gamemd { int AircraftClass::Construct(int a1, void* a2) {
   this->vtable3 = &AircraftClass::`vftable'; /*0x413d94*/
   this->vtable4 = &AircraftClass::`vftable'; /*0x413d9b*/
   this->vtable5 = &vt_AircraftClass; /*0x413da2*/
-  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x413dac*/
+  this->vfptr_1.GenerateUniqueID(); /*0x413dac*/
   v4 = this->Type; /*0x413db1*/
   if ( v4 ) /*0x413db9*/
   {
@@ -127,7 +127,7 @@ namespace gamemd { int AircraftClass::Construct(int a1, void* a2) {
     int v9 = (*(_DWORD *)&g_NetworkPlayerBuffer[3428])++; /*0x413e76*/
     *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[3416] + 4 * v9) = this; /*0x413e85*/
   }
-  aP2 = (AbstractClass *)((AbstractClass *)((char *)this + 4)).GetVtable3(); /*0x413e94*/
+  aP2 = (AbstractClass *)this->vfptr_1.GetVtable3(); /*0x413e94*/
   if ( *(_DWORD *)&g_OverlayTypeConfig[28748] + 1 <= *(int *)&g_OverlayTypeConfig[28752] ) /*0x413ea0*/
     goto LABEL_25; /*0x413ea0*/
   if ( *(_DWORD *)&g_OverlayTypeConfig[28752] ) /*0x413ea8*/
@@ -1351,7 +1351,7 @@ namespace gamemd { int SuperWeapon::CreateNukePayload() {
           v25[0] = *v12;
           v25[1] = v12[1];
           v26 = v12[2];
-          v26 += *(_DWORD *)(*(_DWORD *)(v13 + 160) + 700);
+          v26 += *(_DWORD *)(v13->q0A0 + 700);
           v24 = Math::SinCos(1.570748388432313);
           v24 = Math::ArcTan2(1.570748388432313) * v24 * -1.0;
           v23 = Math::ArcTan2(1.570748388432313);
@@ -1550,7 +1550,7 @@ namespace gamemd { double BuildingClass::checkRepairEligibility(HouseClass* pHou
 {
     float *v1;
     v1 = this + 197;
-    if ( Float4::Sum(this + 197) == 0.0 )
+    if ( this->Float4_C5.Sum() == 0.0 )
     return 0.0;
     else
     return Float4::Sum(v1) / (double)g_RulesClass_Instance[1].?[1];
@@ -1853,7 +1853,7 @@ namespace gamemd { int InfantryClass::Construct(int a1, void* a2) {
   this->vtable2 = &InfantryClass::`vftable'; /*0x517ad2*/
   this->vtable3 = &vt_InfantryClass; /*0x517ad8*/
   this->vtable4 = &off_7EB02C; /*0x517adf*/
-  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x517ae6*/
+  this->vfptr_1.GenerateUniqueID(); /*0x517ae6*/
   if ( *(int *)&HouseClass_Player[172] < *(int *)&HouseClass_Player[164] /*0x517b1e*/
     || (HouseClass_Player[169] || !*(_DWORD *)&HouseClass_Player[164])
     && *(int *)&HouseClass_Player[176] > 0

@@ -26,7 +26,7 @@ A AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
   this->vtable1 = &AircraftTypeClass::`vftable'; /*0x41c906*/
   this->vtable2 = &AircraftTypeClass::`vftable'; /*0x41c90c*/
   this->vtable3 = &vt_AircraftTypeClass; /*0x41c913*/
-  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x41c91a*/
+  this->vtable1.GenerateUniqueID(); /*0x41c91a*/
   v3 = g_TypeClass_FindCache; /*0x41c91f*/
   if ( (int)g_TypeClass_FindCache < DataGlobal_A8B220 /*0x41c95d*/
     || (DataGlobal_A8B225 || !DataGlobal_A8B220)

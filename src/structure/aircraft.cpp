@@ -77,7 +77,7 @@ AbstractClass * * AircraftClass::Mission_Attack()
       if ( v7 && this->q0BF )
       {
         int v8 = *this;
-        int v9 = ((int (__stdcall *)(int))FindSpiralMoveTarget)(v7);
+        int v9 = FindSpiralMoveTarget(v7);
         this->AssignDestination(v9, 1);
         this->missionStatus = this->q169 != 0 ? 3 : 10;
       }
@@ -133,14 +133,14 @@ LABEL_14:
             LOWORD(v100) = 0;
           double v19 = Math::CalcAngle((double)v18[1] - (double)v17[1], (double)*v17 - (double)*v18);
           LOWORD(v100) = Math::RoundToInt((v19 - 1.570796326794897) * -10430.06004058427);
-          ((FacingClass *)((char *)this + 928)).Update(&v100);
+          this->secondaryFacing.Update(&v100);
           return 1;
         }
         else
         {
   int v113; // [esp+A4h] [ebp-68h] BYREF
           int * v15 = ObjectClass::CalcTargetFacing(this, &v113, this->q2B4);
-          ((FacingClass *)((char *)this + 928)).Update(v15);
+          this->secondaryFacing.Update(v15);
           if ( v14 >= 16 )
           {
             return 1;
@@ -167,10 +167,10 @@ LABEL_14:
       {
   int v109; // [esp+94h] [ebp-78h] BYREF
         int * v21 = ObjectClass::CalcTargetFacing(this, &v109, this->q2B4);
-        ((FacingClass *)((char *)this + 904)).Update(v21);
+        this->primaryFacing.Update(v21);
   int v112; // [esp+A0h] [ebp-6Ch] BYREF
         int * v22 = ObjectClass::CalcTargetFacing(this, &v112, this->q2B4);
-        ((FacingClass *)((char *)this + 928)).Update(v22);
+        this->secondaryFacing.Update(v22);
       }
       int v23 = *this;
       int v24 = this->SelectWeapon(this->q2B4, 1);
@@ -268,10 +268,10 @@ LABEL_54:
       {
   int v114; // [esp+A8h] [ebp-64h] BYREF
         int * v39 = ObjectClass::CalcTargetFacing(this, &v114, this->q2B4);
-        ((FacingClass *)((char *)this + 904)).Update(v39);
+        this->primaryFacing.Update(v39);
   int v111; // [esp+9Ch] [ebp-70h] BYREF
         int * v40 = ObjectClass::CalcTargetFacing(this, &v111, this->q2B4);
-        ((FacingClass *)((char *)this + 928)).Update(v40);
+        this->secondaryFacing.Update(v40);
         int v41 = *this;
         int v42 = this->SelectWeapon(this->q2B4, 1);
         switch ( this->ReadINI_3(this->q2B4, v42) )

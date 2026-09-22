@@ -609,7 +609,7 @@ namespace gamemd { int CampaignClass::LoadFromINI() {
           int v61 = 780; /*0x49dde8*/
           while ( 2 ) /*0x49ddf0*/
           {
-            ((void (*)(char *const, const char *const, ...))sprintf)( /*0x49ddf0*/
+            sprintf( /*0x49ddf0*/
               Buffer,
               (const char *const)&stru_81F0A8.health,
               v15);
@@ -655,7 +655,7 @@ namespace gamemd { int CampaignClass::LoadFromINI() {
               v22[4] = v24 + 1; /*0x49df6b*/
               *(_DWORD *)(v25 + 4 * v24) = v19; /*0x49df6e*/
             }
-            ((void (*)(char *const, const char *const, ...))sprintf)( /*0x49df85*/
+            sprintf( /*0x49df85*/
               Buffer,
               (const char *const)stru_81F30C.sectionHead,
               (const char *)&stru_81F30C.sectionHead[2],
@@ -745,7 +745,7 @@ LABEL_42:
                 v42[4] = v44 + 1; /*0x49e182*/
                 *(_DWORD *)(v45 + 4 * v44) = v39; /*0x49e185*/
               }
-              ((void (*)(char *const, const char *const, ...))sprintf)( /*0x49e19c*/
+              sprintf( /*0x49e19c*/
                 Buffer,
                 (const char *const)stru_81F30C.sectionHead,
                 stru_81F30C[0],
@@ -2403,7 +2403,7 @@ namespace gamemd { void TeamClass::SelectDeploymentTarget(int a1, int a2) {
       {
         v3 = this->firstUnit;
         LODWORD(v24) = -1;
-        for ( i = (_DWORD *)v3; v3; v3 = *(_DWORD *)(v3 + 1496) )
+        for ( i = (_DWORD *)v3; v3; v3 = v3->q1760 )
         {
           v5 = *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)v3 + 132))(v3) + 1532);
           if ( TechnoClass::IsDeployed(v3)
@@ -2994,7 +2994,7 @@ namespace gamemd { int TriggerClass::FireTrigger(void* a1) {
       v4 = this->nextTrigger;
       if ( v4 )
       {
-        v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4);
+        v5 = (*(int (__stdcall **)(int))(v4->vtable2 + 16))(v4 + 4);
         v4 = Power::TimerProcess(v5);
       }
       LOBYTE(v4) = this->destroyed;

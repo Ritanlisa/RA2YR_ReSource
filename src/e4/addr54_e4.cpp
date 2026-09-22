@@ -1971,7 +1971,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
       double v18 = Math::CalcAngle((double)v30 - (double)*(int *)(this + 68), (double)v28 - (double)v29); /*0x54bc26*/
       LOWORD(v28) = Math::RoundToInt((v18 - 1.570796326794897) * -10430.06004058427); /*0x54bc3f*/
       v27 = v28; /*0x54bc50*/
-      ((FacingClass *)((char *)this + 84)).Update((char *)(this + 84), &v27); /*0x54bc54*/
+      this->FacingClass_54.Update(&v27); /*0x54bc54*/
       MemberTeam = Team::GetMember(*(_DWORD **)(this + 12), 0); /*0x54bc5e*/
       int v20 = MemberTeam; /*0x54bc63*/
       if ( MemberTeam ) /*0x54bc67*/

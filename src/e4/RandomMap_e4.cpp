@@ -2525,13 +2525,13 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
     this->q17C = 0; /*0x595998*/
   }
   *(_DWORD *)(this + 736) = &vt_VectorClass_BuildingTypeClass_const; /*0x5959a4*/
-  ((DynamicVectorClass *)((char *)this + 736)).Destroy(); /*0x5959aa*/
+  this->DynamicVectorClass_2E0.Destroy(); /*0x5959aa*/
   *(_DWORD *)(this + 708) = &vt_VectorClass_BuildingTypeClass_const; /*0x5959b5*/
-  ((DynamicVectorClass *)((char *)this + 708)).Destroy(); /*0x5959bb*/
+  this->DynamicVectorClass_2C4.Destroy(); /*0x5959bb*/
   *(_DWORD *)(this + 672) = &vt_VectorClass_int; /*0x5959cb*/
-  ((VectorClass *)((char *)this + 672)).Destroy(); /*0x5959cd*/
+  this->VectorClass_2A0.Destroy(); /*0x5959cd*/
   *(_DWORD *)(this + 644) = &vt_VectorClass_int; /*0x5959d8*/
-  ((VectorClass *)((char *)this + 644)).Destroy(); /*0x5959da*/
+  this->VectorClass_284.Destroy(); /*0x5959da*/
   CampaignClass *v8 = this->q26C; /*0x5959df*/
   this->q268 = &vt_VectorClass_int; /*0x5959e5*/
   if ( v8 && *(_BYTE *)(this + 629) ) /*0x5959ef*/
@@ -2919,7 +2919,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  ((TypeList *)((char *)this + 98)).Copy(IntList); /*0x598332*/
+  this->TypeList_62.Copy(IntList); /*0x598332*/
   v8 = IntList; /*0x598337*/
   *(this + 102) = IntList[4]; /*0x59833e*/
   *(this + 103) = v8[5]; /*0x598344*/
@@ -2941,7 +2941,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  ((TypeList *)((char *)this + 161)).Copy(IntList); /*0x598397*/
+  this->TypeList_A1.Copy(IntList); /*0x598397*/
   v9 = IntList; /*0x59839c*/
   *(this + 165) = IntList[4]; /*0x5983a3*/
   *(this + 166) = v9[5]; /*0x5983a9*/
@@ -2963,7 +2963,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  ((TypeList *)((char *)this + 168)).Copy(IntList); /*0x5983fd*/
+  this->TypeList_A8.Copy(IntList); /*0x5983fd*/
   v10 = IntList; /*0x598402*/
   *(this + 172) = IntList[4]; /*0x598409*/
   *(this + 173) = v10[5]; /*0x59840f*/
@@ -2985,7 +2985,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  ((TypeList *)((char *)this + 105)).Copy(IntList); /*0x598463*/
+  this->TypeList_69.Copy(IntList); /*0x598463*/
   v11 = IntList; /*0x598468*/
   *(this + 109) = IntList[4]; /*0x59846f*/
   *(this + 110) = v11[5]; /*0x598475*/
@@ -3007,7 +3007,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  ((TypeList *)((char *)this + 112)).Copy(IntList); /*0x5984c9*/
+  this->TypeList_70.Copy(IntList); /*0x5984c9*/
   v12 = IntList; /*0x5984ce*/
   *(this + 116) = IntList[4]; /*0x5984d5*/
   *(this + 117) = v12[5]; /*0x5984db*/
@@ -3029,7 +3029,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  ((TypeList *)((char *)this + 119)).Copy(IntList); /*0x59852f*/
+  this->TypeList_77.Copy(IntList); /*0x59852f*/
   v13 = IntList; /*0x598534*/
   *(this + 123) = IntList[4]; /*0x59853b*/
   *(this + 124) = v13[5]; /*0x598541*/
@@ -3051,7 +3051,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  ((TypeList *)((char *)this + 126)).Copy(IntList); /*0x598595*/
+  this->TypeList_7E.Copy(IntList); /*0x598595*/
   v14 = IntList; /*0x59859a*/
   *(this + 130) = IntList[4]; /*0x5985a1*/
   this->q20C = v14[5]; /*0x5985a7*/
@@ -3073,7 +3073,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  ((TypeList *)((char *)this + 133)).Copy(IntList); /*0x5985fb*/
+  this->TypeList_85.Copy(IntList); /*0x5985fb*/
   v15 = IntList; /*0x598600*/
   *(this + 137) = IntList[4]; /*0x598607*/
   *(this + 138) = v15[5]; /*0x59860d*/
@@ -3095,7 +3095,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  ((TypeList *)((char *)this + 140)).Copy(IntList); /*0x598661*/
+  this->TypeList_8C.Copy(IntList); /*0x598661*/
   v16 = IntList; /*0x598666*/
   this->q024 = IntList[4]; /*0x59866d*/
   *(this + 145) = v16[5]; /*0x598673*/
@@ -3117,7 +3117,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  ((TypeList *)((char *)this + 147)).Copy(IntList); /*0x5986c7*/
+  this->TypeList_93.Copy(IntList); /*0x5986c7*/
   v17 = IntList; /*0x5986cc*/
   *(this + 151) = IntList[4]; /*0x5986d3*/
   *(this + 152) = v17[5]; /*0x5986d9*/
@@ -3140,7 +3140,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                         v28,
                         v29,
                         v30);
-  ((TypeList *)((char *)this + 154)).Copy(IntList); /*0x59873d*/
+  this->TypeList_9A.Copy(IntList); /*0x59873d*/
   v18 = IntList; /*0x598742*/
   *(this + 158) = IntList[4]; /*0x598749*/
   *(this + 159) = v18[5]; /*0x59874f*/
@@ -3859,7 +3859,7 @@ AbstractClass * * RandomMap::SetupTheater(char a2)
       v21 = (IUnknown *)off_82AF14;
     }
     if ( v21 )
-      ((void (__stdcall *)())v21)();
+      v21();
     Game::DestroyAllObjects();
     if ( off_82AF14 )
       off_82AF14();
@@ -4033,7 +4033,7 @@ LABEL_59:
       }
     }
     if ( v45 )
-      ((void (__stdcall *)())v45)();
+      v45();
     LoadObjectTypeClassTheaterSHP(*((_DWORD *)g_ScenarioClass_Instance + 1174));
     int v49 = *((_DWORD *)g_ScenarioClass_Instance + 1174);
     if ( v49 == dword_822CF8 )

@@ -3555,7 +3555,7 @@ char sub_7BE940(int a1, int * a2)
     (*(void (__cdecl **)(int, int, int, int, int, int))(a1 + 1924))(v12, v10, v9, v7, v8, v14);
     v4 = *(int *)(a1 + 72);
     if ( v4 )
-    LOBYTE(v4) = ((int (__cdecl *)(int, int, int, int))v4)(a1, 7, 0, 0);
+    LOBYTE(v4) = v4(a1, 7, 0, 0);
   }
     return v4;
 }

@@ -218,7 +218,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
   this->vtable1 = &BuildingTypeClass::`vftable'; /*0x45e2d3*/
   this->vtable2 = &BuildingTypeClass::`vftable'; /*0x45e2d9*/
   this->vtable3 = &vt_BuildingTypeClass; /*0x45e2e1*/
-  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x45e2e8*/
+  this->vtable1.GenerateUniqueID(); /*0x45e2e8*/
   BuildingTypeClass *v4 = g_TriggerClassCount; /*0x45e2ed*/
   if ( g_TriggerClassCount < dword_A83C70 /*0x45e32b*/
     || (byte_A83C75 || !dword_A83C70)
@@ -1556,7 +1556,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   this->eliteWeapon2 = 0; /*0x644c25*/
   this->ammo = 1; /*0x644c2b*/
   this->sight = 0; /*0x644c31*/
-  ((BuildingTypeClass *)((char *)this + 174)).loadBuildingProperty_b_5478850(0, 0); /*0x644c37*/
+  this->BuildingTypeClass_AE.loadBuildingProperty_b_5478850(0); /*0x644c37*/
   this->speed = 10; /*0x644c3c*/
   this->pipScale = 0; /*0x644c43*/
   this->cost = &vt_TypeList_RGBClass; /*0x644c46*/

@@ -870,8 +870,8 @@ namespace gamemd {
 void Options::ClearComboBoxes()
 {
 {
-    DeleteAndZero::Alt(this + 2);
-    DeleteAndZero::Alt(this + 1);
+    this->DeleteAndZero_2.Alt();
+    this->DeleteAndZero_1.Alt();
 }
 }
 } // namespace gamemd

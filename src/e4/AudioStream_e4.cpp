@@ -410,7 +410,7 @@ void AudioStream::InitNodeFields()
   this->q004 = 0; /*0x4084e4*/
   this->q014 = 0; /*0x4084e7*/
   this->q018 = 0; /*0x4084ea*/
-  ((DListNode *)((char *)this + 2)).Init(); /*0x4084f0*/
+  this->DListNode_2.Init(); /*0x4084f0*/
 }
 }
 } // namespace gamemd

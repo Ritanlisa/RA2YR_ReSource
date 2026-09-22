@@ -4242,7 +4242,7 @@ int E4Recv_4AECD0::sub_4AECD0()
     v8 = 0;
     v9 = 0;
     v10 = 0;
-    if ( ((int (__stdcall *)(int *))ProcAddress)(&v6) >= 0 )
+    if ( ProcAddress(&v6) >= 0 )
     v1 = (unsigned short)v8 | ((unsigned short)v7 << 16);
     }
     FreeLibrary(v3);

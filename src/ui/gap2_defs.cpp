@@ -3493,17 +3493,7 @@ namespace gamemd { void* FontClass::InitMetrics(void* a1, int a2, int a3, int a4
       this->q330 = 16;
       this->q334 = 16;
       this->q338 = 21;
-      this->q30C = FontClass::CreateGlyphColor(
-                                  this + 776,
-                                  aP3,
-                                  a5,
-                                  this + 4,
-                                  *(int *)&DataGlobal_87F8E4[31268],
-                                  a6,
-                                  1000,
-                                  1000,
-                                  1000,
-                                  (int)&stru_830620[56204]);
+      this->q30C = this->q308.CreateGlyphColor(aP3, a5, this + 4, *(int *)&DataGlobal_87F8E4[31268], a6, 1000, 1000, 1000, (int)&stru_830620[56204]);
       if ( a7 )
       {
         if ( g_AnimClass_SaveState < DataGlobal_B054D8
@@ -5172,7 +5162,7 @@ namespace gamemd { int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
           if ( DataGlobal_87F7E8[524984] < 128 )
           {
             qmemcpy((char *)&DataGlobal_87F7E8[524987] + 111 * DataGlobal_87F7E8[524986], v16, 0x6Fu);
-            DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = ((int (*)(void))timeGetTime)();
+            DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = timeGetTime();
             DataGlobal_87F7E8[524986] = (LOBYTE(DataGlobal_87F7E8[524986]) + 1) & 0x7F;
             ++DataGlobal_87F7E8[524984];
           }
@@ -5201,7 +5191,7 @@ namespace gamemd { int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             {
               qmemcpy((char *)&DataGlobal_87F7E8[524987] + 111 * DataGlobal_87F7E8[524986], v19, 0x6Fu);
               v11 = v73;
-              DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = ((int (*)(void))timeGetTime)();
+              DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = timeGetTime();
               DataGlobal_87F7E8[524986] = (LOBYTE(DataGlobal_87F7E8[524986]) + 1) & 0x7F;
               ++DataGlobal_87F7E8[524984];
             }
@@ -5239,7 +5229,7 @@ LABEL_41:
               goto LABEL_45;
 LABEL_44:
             qmemcpy((char *)&DataGlobal_87F7E8[524987] + 111 * DataGlobal_87F7E8[524986], v21, 0x6Fu);
-            DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = ((int (*)(void))timeGetTime)();
+            DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = timeGetTime();
             DataGlobal_87F7E8[524986] = (LOBYTE(DataGlobal_87F7E8[524986]) + 1) & 0x7F;
             ++DataGlobal_87F7E8[524984];
           }
@@ -5307,7 +5297,7 @@ LABEL_85:
             if ( DataGlobal_87F7E8[524984] < 128 )
             {
               qmemcpy((char *)&DataGlobal_87F7E8[524987] + 111 * DataGlobal_87F7E8[524986], v43, 0x6Fu);
-              DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = ((int (*)(void))timeGetTime)();
+              DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = timeGetTime();
               DataGlobal_87F7E8[524986] = (LOBYTE(DataGlobal_87F7E8[524986]) + 1) & 0x7F;
               ++DataGlobal_87F7E8[524984];
             }
@@ -5404,7 +5394,7 @@ LABEL_120:
           {
             qmemcpy((char *)&DataGlobal_87F7E8[524987] + 111 * DataGlobal_87F7E8[524986], v30, 0x6Fu);
             v28 = v71;
-            DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = ((int (*)(void))timeGetTime)();
+            DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = timeGetTime();
             DataGlobal_87F7E8[524986] = (LOBYTE(DataGlobal_87F7E8[524986]) + 1) & 0x7F;
             ++DataGlobal_87F7E8[524984];
           }
@@ -5453,7 +5443,7 @@ LABEL_120:
           if ( DataGlobal_87F7E8[524984] < 128 )
           {
             qmemcpy((char *)&DataGlobal_87F7E8[524987] + 111 * DataGlobal_87F7E8[524986], v25, 0x6Fu);
-            DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = ((int (*)(void))timeGetTime)();
+            DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = timeGetTime();
             DataGlobal_87F7E8[524986] = (LOBYTE(DataGlobal_87F7E8[524986]) + 1) & 0x7F;
             ++DataGlobal_87F7E8[524984];
           }
@@ -5471,7 +5461,7 @@ LABEL_60:
         if ( DataGlobal_87F7E8[524984] < 128 )
         {
           qmemcpy((char *)&DataGlobal_87F7E8[524987] + 111 * DataGlobal_87F7E8[524986], v15, 0x6Fu);
-          DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = ((int (*)(void))timeGetTime)();
+          DataGlobal_87F7E8[DataGlobal_87F7E8[524986] + 528539] = timeGetTime();
           DataGlobal_87F7E8[524986] = (LOBYTE(DataGlobal_87F7E8[524986]) + 1) & 0x7F;
           ++DataGlobal_87F7E8[524984];
         }
@@ -6964,7 +6954,7 @@ namespace gamemd { void* TabClass::Constructor() {
   int v35; // eax
   TabClass::initTabData(); /*0x6cfe2b*/
   this->q1546 = &vt_INoticeSink; /*0x6cfe3c*/
-  ((TabClass *)((char *)this + 5447)).initStripClass(); /*0x6cfe42*/
+  this->TabClass_1547.initStripClass(); /*0x6cfe42*/
   this->q552C = g_CurrentFrame; /*0x6cfe4e*/
   this->q154D = 0; /*0x6cfe54*/
   v2 = g_CurrentFrame; /*0x6cfe5a*/

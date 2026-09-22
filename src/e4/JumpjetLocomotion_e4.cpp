@@ -2451,7 +2451,7 @@ void* JumpjetLocomotion::Land()
   {
     v52 = Math::RoundToInt((double)v52 - this->q0A0); /*0x54cb0a*/
     LOWORD(v48) = *(_WORD *)ProgressTimer::GetValue((_WORD *)(this + 84), &v49) + 11520; /*0x54cb2a*/
-    ((FacingClass *)((char *)this + 84)).Update((char *)(this + 84), &v48); /*0x54cb39*/
+    this->FacingClass_54.Update(&v48); /*0x54cb39*/
   }
   int v9 = dword_ABC5DC + Cell::GetGroundHeight(&v50); /*0x54cb5e*/
   char v44; // [esp+32h] [ebp-24h]

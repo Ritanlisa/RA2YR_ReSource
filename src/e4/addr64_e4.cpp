@@ -1932,7 +1932,7 @@ LABEL_7:
     if ( (_BYTE)DataGlobal_A8D110 && g_GameMode_Current[0] == 3 || BYTE1(DataGlobal_A8D110) && g_GameMode_Current[0] == 4 ) /*0x64a759*/
     {
       LOBYTE(a1) = *(_BYTE *)(a1 + 25); /*0x64a75b*/
-      ((void (__thiscall *)(int))PlayTauntClass)(a1); /*0x64a75e*/
+      PlayTauntClass(a1); /*0x64a75e*/
       return 4; /*0x64a76a*/
     }
     return 4; /*0x64a733*/

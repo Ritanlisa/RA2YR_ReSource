@@ -3445,7 +3445,7 @@ int TeamClass::ExecuteAction(int a2, char a3)
     this->tag = 0;
     v4 = this->firstUnit;
     if ( a2 == v4 && a3 )
-    this->firstUnit = *(int *)(v4 + 1496);
+    this->firstUnit = v4->FootClass_field_5D8;
     if ( a2 == this->owner )
     this->owner = 0;
     if ( a2 == this->currentScript )

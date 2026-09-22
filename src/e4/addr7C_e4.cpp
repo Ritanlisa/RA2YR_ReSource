@@ -3568,10 +3568,10 @@ void qsort(AbstractClass * aP0, IUnknown * aP1, size_t SizeOfElements, _CoreCrtN
             v8 = &v16->__pad_0[SizeOfElements]; /*0x7c8be1*/
             v16 = (AbstractClass *)((char *)v16 + SizeOfElements); /*0x7c8be6*/
           }
-          while ( v16 <= v5 && ((int (__cdecl *)(char *))CompareFunction)(v8) <= 0 ); /*0x7c8bf4*/
+          while ( v16 <= v5 && CompareFunction(v8) <= 0 ); /*0x7c8bf4*/
           do /*0x7c8c06*/
             i -= SizeOfElements; /*0x7c8bf6*/
-          while ( i > (char *)aP0 && ((int (__cdecl *)(char *))CompareFunction)(i) >= 0 ); /*0x7c8c06*/
+          while ( i > (char *)aP0 && CompareFunction(i) >= 0 ); /*0x7c8c06*/
           if ( i < (char *)v16 ) /*0x7c8c0f*/
             break; /*0x7c8c0f*/
         }
@@ -3754,7 +3754,7 @@ void * bsearch(const void * Key, const void * Base, ObjectClass * aP2, size_t Si
     if ( !NumOfElements ) /*0x7c8e50*/
       v8 = (unsigned int)&v7[-1].lineTrailer + 3; /*0x7c8e52*/
     char * v9 = (char *)Base + SizeOfElements * v8; /*0x7c8e5c*/
-    int v10 = ((int (__cdecl *)(const void *))CompareFunction)(Key); /*0x7c8e62*/
+    int v10 = CompareFunction(Key); /*0x7c8e62*/
     if ( !v10 ) /*0x7c8e69*/
       return v9; /*0x7c8e95*/
     if ( v10 >= 0 ) /*0x7c8e6b*/

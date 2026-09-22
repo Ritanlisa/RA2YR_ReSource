@@ -202,7 +202,7 @@ void* TacticalClass::ProcessScroll(int * a2)
         if ( !v8 && !this->q11B4 ) /*0x4ac4af*/
         {
           BYTE1(g_TacticalClass_Instance[863].__tail_0) = 1; /*0x4ac4c0*/
-          ((TacticalClass *)((char *)this + 4564)).InitScrollBounds(); /*0x4ac4cc*/
+          this->TacticalClass_11D4.InitScrollBounds(); /*0x4ac4cc*/
           LOBYTE(v3) = Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0); /*0x4ac4da*/
         }
       }

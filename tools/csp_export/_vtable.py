@@ -387,23 +387,24 @@ STATIC_SUB = re.compile(
     r'(?:\(\s*)?this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)(?:\s*\))?\s*')
 
 
-def rewrite_static_sub(text, cls, mtab):
-    """Cls::Method(this + OFF, rest) -> ((Cls *)((char *)this + OFF)).Method(rest)
-    when the canon member at OFF of this-class has type Cls. Sound: the
-    sub-object's dynamic type is its declared member type."""
-    mtab = mtab or {}
-    n = 0
+def rewrite_static_sub(text, cls, mtab=None):
+    """Cls::Method(this + OFF, rest) -> this->MEMBER.Method(rest), where
+    MEMBER at OFF of cls is ensured (registered/type-corrected via the
+    callsite evidence) through the shared member registry. Also converts
+    this pass's own earlier output form
+    `((C1 *)((char *)this + OFF)).Method(...)` to the member form."""
+    import _members
     pos = 0
+    n = 0
     while True:
         m = STATIC_SUB.search(text, pos)
         if not m:
             break
-        c1, meth, off = m.group(1), m.group(2), int(m.group(3), 0)
-        info = (mtab.get(cls) or {}).get('members', {}).get(str(off))
-        if info and (info.get('type') or '').strip() != c1:
-            # member exists but carries a different declared type: trust the
-            # call site (the adjusted this IS the callee's class)
-            pass
+        c1, meth, off = (m.group(1), m.group(2), int(m.group(3), 0))
+        name = _members.ensure_member(cls, off, c1)
+        if not name:
+            pos = m.end()
+            continue
         call_open = text.index('(', m.start())
         call_close = balance_paren(text, call_open)
         if call_close < 0:
@@ -411,34 +412,106 @@ def rewrite_static_sub(text, cls, mtab):
             continue
         args = split_args(text[call_open + 1:call_close])
         first = (args[0] if args else '').strip()
-        if re.fullmatch(r'(?:\(\s*char\s*\*\s*\))?this\s*\+\s*(0x[0-9A-Fa-f]+|\d+|' + re.escape(m.group(3)) + ')', first):
+        if re.fullmatch(r'(?:\(\s*char\s*\*\s*\))?\(?\s*this\s*\+\s*'
+                        r'(0x[0-9A-Fa-f]+|\d+|' + re.escape(m.group(3)) + ')'
+                        r'(?:\s*\))?', first):
             args = args[1:]
-        new_call = ('((%s *)((char *)this + %s)).%s(%s)'
-                    % (c1, m.group(3), meth, ', '.join(args)))
+        new_call = 'this->%s.%s(%s)' % (name, meth, ', '.join(args))
+        text = text[:m.start()] + new_call + text[call_close + 1:]
+        pos = m.start() + len(new_call)
+        n += 1
+    # earlier output form of this pass: ((C1 *)((char *)this + OFF)).M(...)
+    EARLY = re.compile(
+        r'\(\(\s*([A-Za-z_]\w*)\s*\*\s*\)\s*\(\s*\(\s*char\s*\*\s*\)'
+        r'this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)\)\.\s*([A-Za-z_]\w*)\(')
+    pos = 0
+    while True:
+        m = EARLY.search(text, pos)
+        if not m:
+            break
+        c1, off, meth = m.group(1), int(m.group(2), 0), m.group(3)
+        name = _members.ensure_member(cls or '', off, c1) if cls else None
+        if not name:
+            pos = m.end()
+            continue
+        call_open = text.index('(', m.end() - len(meth) - 1)
+        call_close = balance_paren(text, call_open)
+        if call_close < 0:
+            pos = m.end()
+            continue
+        args = split_args(text[call_open + 1:call_close])
+        first = (args[0] if args else '').strip()
+        if re.fullmatch(r'\(?\s*(?:char\s*\*\s*\))?\(?\s*this\s*\+\s*'
+                        r'0x[0-9A-Fa-f]+|\d+' + r'\)?', first) or                 re.fullmatch(r'(?:\(\s*char\s*\*\s*\))?\(?this\s*\+\s*'
+                             r'(?:0x[0-9A-Fa-f]+|\d+)\)?', first):
+            args = args[1:]
+        new_call = 'this->%s.%s(%s)' % (name, meth, ', '.join(args))
         text = text[:m.start()] + new_call + text[call_close + 1:]
         pos = m.start() + len(new_call)
         n += 1
     return text, n
 
 
-VT_PARTIAL = re.compile(
-    r'\*\(_DWORD\s*\*\)\s*(this->\w+->(\w+)\()\s*(this->\w+)\s*\)')
-
-
-def rewrite_partial(text):
-    """Repair half-rewritten forms left by earlier runs:
-    `*(_DWORD *)R->Thunk(R)` -> `R->Thunk()` (the leading deref and the
-    duplicated implicit-this arg were residue of a two-step virtual call)."""
+def merge_load_call(text, cls, env=None):
+    """Cross-statement merge: `vX = *(T *)(*(int *)R + SLOT);` + a single
+    later use `vX(args)` -> `R->Method(args)` and the load line removed.
+    Returns (text, count)."""
+    env = env or {}
+    lines = text.split(NL)
+    used = {}
+    for idx, ln in enumerate(lines):
+        for m in re.finditer(r'\b(v\d+|a\d+)\s*\(', ln):
+            used.setdefault(m.group(1), []).append(idx)
+    removed = set()
     n = 0
-    def s(m):
-        nonlocal n
+    for idx, ln in enumerate(lines):
+        if idx in removed:
+            continue
+        m = VT_LOAD.match(ln)
+        if not m:
+            continue
+        var = m.group(2)
+        recv = m.group(3)
+        slot = int(m.group(4), 0)
+        obj, tgt = _resolve(recv, env, {}, cls)
+        name = slot_name(tgt, slot) if tgt else None
+        if not name:
+            continue
+        call_sites = [t for t in used.get(var, []) if t != idx
+                      and t not in removed
+                      and re.search(r'\b%s\s*\(' % re.escape(var), lines[t])]
+        if len(call_sites) != 1:
+            continue
+        ci = call_sites[0]
+        cm = re.search(r'\b%s\s*\(' % re.escape(var), lines[ci])
+        open_idx = cm.end() - 1
+        close_idx = balance_paren(lines[ci], open_idx)
+        if close_idx < 0:
+            continue
+        args = split_args(lines[ci][open_idx + 1:close_idx])
+        first = (args[0] if args else '').strip()
+        if first == obj:
+            args = args[1:]
+        new_call = '%s->%s(%s)' % (obj, name, ', '.join(args))
+        pre = lines[ci][:cm.start()]
+        post = lines[ci][close_idx + 1:]
+        lines[ci] = pre + new_call + post
+        removed.add(idx)
         n += 1
-        return '%s)' % m.group(1)
-    return VT_PARTIAL.sub(s, text), n
+    out = [ln for t, ln in enumerate(lines) if t not in removed]
+    return NL.join(out), n
+
+
+# static-form sub-object call: FacingClass::Update((char *)this + 904, v21)
+# tolerant of the parenthesized forms IDA emits:
+#   (char *)this + 928   |   (char *)(this + 928)
+STATIC_SUB = re.compile(
+    r'\b([A-Za-z_]\w*)::([A-Za-z_]\w*)\(\s*(?:\(\s*char\s*\*\s*\)\s*)?'
+    r'(?:\(\s*)?this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)(?:\s*\))?\s*')
 
 
 CAST_CALL = re.compile(
-    r'\(\s*\(\s*[A-Za-z_][\w\s]*?\)\s*([A-Za-z_][\w:>]*)\s*\)\s*\(')
+    r'\(\(\s*.*?\)\s*([A-Za-z_]\w*)\s*\)\s*\(')
 
 
 def rewrite_cast_call(text):
@@ -450,3 +523,18 @@ def rewrite_cast_call(text):
         n += 1
         return m.group(1) + '('
     return CAST_CALL.sub(s, text), n
+
+
+VT_PARTIAL = re.compile(
+    r'\*\(_DWORD\s*\*\)\s*(this->\w+->(\w+)\()\s*(this->\w+)\s*\)')
+
+def rewrite_partial(text):
+    """Repair half-rewritten forms left by earlier runs:
+    `*(_DWORD *)R->Thunk(R)` -> `R->Thunk()` (the leading deref and the
+    duplicated implicit-this arg were residue of a two-step virtual call)."""
+    n = 0
+    def s(m):
+        nonlocal n
+        n += 1
+        return '%s)' % m.group(1)
+    return VT_PARTIAL.sub(s, text), n

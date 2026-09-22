@@ -1219,7 +1219,7 @@ INIClass * * E4Recv_406760::sub_406760(void (__thiscall *this)(char *) a1)
     sprintf(Buffer, DataGlobal_81624C, DataGlobal_87E28C, DataGlobal_87E290); /*0x406789*/
     this(Buffer); /*0x406795*/
     sprintf(Buffer, stru_81622C, DataGlobal_B1D3A8, DataGlobal_B1D3AC); /*0x4067ae*/
-    return (void *)((int (__thiscall *)(char *))this)(Buffer); /*0x4067ba*/
+    return (void *)this(Buffer); /*0x4067ba*/
   }
   return result; /*0x4067bc*/
 }
@@ -3113,7 +3113,7 @@ void * sub_402440(int a1, int a2)
     (*(void (**)(int))(*(int *)(a1 + 212) + 44))(a1);
     result = *(void **)(a1 + 188);
     if ( result )
-        result = (void *)((int (*)(int))result)(a1);
+        result = (void *)result(a1);
     *(int *)(a1 + 360) = 0;
     *(int *)(a1 + 164) |= 8u;
     return result;

@@ -93,7 +93,7 @@ U UnitTypeClass::UnitTypeClass(INIClass * aP1)
   this->vtable1 = &UnitTypeClass::`vftable'; /*0x7471c5*/
   this->vtable2 = &UnitTypeClass::`vftable'; /*0x7471cb*/
   this->vtable3 = &vt_UnitTypeClass; /*0x7471d2*/
-  ((AbstractClass *)((char *)this + 4)).GenerateUniqueID(); /*0x7471d9*/
+  this->vtable1.GenerateUniqueID(); /*0x7471d9*/
   this->RotCount = 32; /*0x7471de*/
   v3 = (HouseClass *)g_CrateCount; /*0x7471e8*/
   if ( (int)g_CrateCount < dword_A83CE8 /*0x747226*/

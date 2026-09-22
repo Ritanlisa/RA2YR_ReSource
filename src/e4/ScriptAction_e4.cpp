@@ -707,11 +707,11 @@ TechnoClass * * ScriptAction::DispatchBuilding()
   }
   else if ( v2 == 42 ) /*0x637ea1*/
   {
-    BuildingLoadQueue = ((BuildingLoadQueue *)((char *)this + 7)).Find(); /*0x637eaa*/
+    BuildingLoadQueue = this->BuildingLoadQueue_7.Find(); /*0x637eaa*/
     v32 = (int)BuildingLoadQueue; /*0x637eb1*/
     if ( BuildingLoadQueue ) /*0x637eb5*/
     {
-      BuildingLoadQueue = ((BuildingLoadQueue *)((char *)this + 12)).GetNext(); /*0x637ebe*/
+      BuildingLoadQueue = this->BuildingLoadQueue_C.GetNext(); /*0x637ebe*/
       if ( BuildingLoadQueue ) /*0x637ec5*/
       {
         BuildingLoadQueue = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*BuildingLoadQueue + 88))( /*0x637ed4*/

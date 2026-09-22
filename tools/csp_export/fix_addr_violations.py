@@ -19,6 +19,8 @@ vocabulary and are NOT touched.
 Usage: python tools/csp_export/fix_addr_violations.py [--workers 6]
 """
 from _blockspan import block_span, find_marker
+import normalize_blocks as _NB
+from normalize_blocks import build_types
 from _vtable import VT_OPEN, balance_paren, split_args, slot_name
 import json, re, subprocess, sys, time
 from pathlib import Path
@@ -137,27 +139,57 @@ def mem_of(cls, off):
             return m['name']
     return None
 
-def real_mem_rewrite(text, cls):
-    """this-offset rewrites (R2/R3) for a class-typed receiver."""
+def real_mem_rewrite(text, cls, env=None):
+    """this-offset + typed-local offset rewrites (R2/R3/R5)."""
+    env = env or {}
     n = 0
-    def s1(m):
+    def rewrite_one(recv, off):
         nonlocal n
-        off = int(m.group(1), 0)
-        name = mem_of(cls, off)
-        if name:
-            n += 1
+        c = env.get(recv) if recv != 'this' else cls
+        if not c:
+            return None
+        name = mem_of(c, off)
+        if not name:
+            return None
+        n += 1
+        if recv == 'this':
             return 'this->%s' % name
+        return '%s->%s' % (recv, name)
+    def s1(m):
+        recv = m.group(2) if m.lastindex and m.lastindex >= 2 else 'this'
+        off = int(m.group(1) if recv == 'this' else m.group(2), 0) if recv == 'this' else int(m.group(1), 0)
+        # R_THIS1: *(T *)(this + N) -- only group(1)
+        off = int(m.group(1), 0)
+        r = rewrite_one('this', off)
+        if r is not None:
+            return r
         return m.group(0)
     def s2(m):
-        nonlocal n
         off = int(m.group(2), 0) * WIDTH.get(m.group(1), 4)
-        name = mem_of(cls, off)
-        if name:
-            n += 1
-            return 'this->%s' % name
+        r = rewrite_one('this', off)
+        if r is not None:
+            return r
         return m.group(0)
     text = R_THIS1.sub(s1, text)
     text = R_THIS2.sub(s2, text)
+    # R5: typed-local receivers *(T *)(vN + N)
+    if env:
+        def s3(m):
+            nonlocal n
+            recv, off = m.group(1), int(m.group(2), 0)
+            c = env.get(recv)
+            if not c or recv == 'this':
+                return m.group(0)
+            name = mem_of(c, off)
+            if not name:
+                return m.group(0)
+            n += 1
+            return '%s->%s' % (recv, name)
+        text = re.sub(
+            r'\*\(\s*[A-Za-z_][\w\s\*]*?\s*\*\s*\)\s*\(\s*([a-z]\w*)\s*\+\s*'
+            r'(0x[0-9A-Fa-f]+|\d+)\s*\)',
+            s3,
+            text)
     return text, n
 
 def glob_rewrite(text, includes, rel):
@@ -272,15 +304,22 @@ def process_file(rel):
 
     fixed = rolled = 0
     for (addr, ann_i, def_i, end_i) in spans:
+        if def_i >= len(lines) or end_i >= len(lines) or def_i > end_i:
+            continue
         seg = '\n'.join(lines[def_i:end_i + 1])
         cls = None
         dm = DEF_Q.search(lines[def_i])
         if dm:
             cls = dm.group(1)
-        nb, c_mem = (real_mem_rewrite(seg, cls) if cls else (seg, 0))
+        env_full = build_types(seg, cls, addr) if cls and addr else ({}, {}, {})
+        env = env_full[0]
+        nb, c_mem = (real_mem_rewrite(seg, cls, env) if cls else (seg, 0))
         nb, c_vt = vt_rewrite_fn(nb, cls)
+        from _vtable import rewrite_static_sub, rewrite_cast_call
+        nb, c_ss = rewrite_static_sub(nb, cls, mtab)
+        nb, c_cc = rewrite_cast_call(nb)
         nb, c_glob = glob_rewrite(nb, includes, rel)
-        if not (c_mem + c_vt + c_glob):
+        if not (c_mem + c_vt + c_ss + c_cc + c_glob):
             continue
         old = lines[def_i:end_i + 1]
         lines[def_i:end_i + 1] = nb.split('\n')

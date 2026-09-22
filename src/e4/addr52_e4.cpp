@@ -295,7 +295,7 @@ LABEL_29:
           this->M56 = v18; /*0x52833a*/
         }
         a2 = (unsigned __int8 *)v16; /*0x528341*/
-        if ( ((HashTable *)((char *)this + 40)).BinarySearch((int *)&a2) ) /*0x528348*/
+        if ( this->HashTable_28.BinarySearch((int *)&a2) ) /*0x528348*/
           int * v19 = (int *)(this->M56 + 4); /*0x528354*/
         else
           v19 = (int *)&unk_B7882C; /*0x528359*/

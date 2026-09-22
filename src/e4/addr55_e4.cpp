@@ -1992,18 +1992,18 @@ void GameFrameLoop()
   {
     while ( !DataGlobal_87F7E8[536212] || DataGlobal_87F7E8[536212] == 5 ) /*0x55d399*/
     {
-      ((void (__stdcall *)(int))Sleep)(500); /*0x55d3a0*/
+      Sleep(500); /*0x55d3a0*/
       MessageLoop(); /*0x55d3a2*/
       if ( LOBYTE(dword_A8ED54[11]) ) /*0x55d3ae*/
         goto LABEL_8; /*0x55d3ae*/
     }
-    ((void (__stdcall *)(int))Sleep)(10); /*0x55d3b4*/
+    Sleep(10); /*0x55d3b4*/
     MessageLoop(); /*0x55d3b6*/
   }
 LABEL_8:
   if ( dword_A8ED54[12] >= DataGlobal_87F7E8[539327] ) /*0x55d3c8*/
     nullsub_35(); /*0x55d3cf*/
-  DataGlobal_87F7E8[536413] = ((int (*)(void))timeGetTime)(); /*0x55d3da*/
+  DataGlobal_87F7E8[536413] = timeGetTime(); /*0x55d3da*/
   if ( DataGlobal_87F7E8[539336] ) /*0x55d3e6*/
     BYTE2(dword_A8ED54[7]) = 1; /*0x55d3e8*/
   if ( LOBYTE(DataGlobal_87F7E8[539364]) == 1 && Audio::IsSoundEnabled() ) /*0x55d3f8*/
@@ -2369,7 +2369,7 @@ LABEL_128:
       }
     }
   }
-  v40 = ((int (*)(void))timeGetTime)() - DataGlobal_87F7E8[536413]; /*0x55de13*/
+  v40 = timeGetTime() - DataGlobal_87F7E8[536413]; /*0x55de13*/
   if ( v40 > 1000 ) /*0x55de1e*/
     v40 = 1000; /*0x55de20*/
   DataGlobal_87F7E8[536414] += v40; /*0x55de34*/

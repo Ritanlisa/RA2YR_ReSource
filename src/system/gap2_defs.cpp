@@ -99,11 +99,11 @@ namespace gamemd { int TacticalClass::FillScanlinesTransparent(int a1, int a2, i
 
       v5 = this;
       v6 = (*(int (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(this + 20) + 92))(this->abstractFlags, a2, a3);
-      (*(void (__thiscall **)(_DWORD))(**(_DWORD **)(v5 + 20) + 96))(*(_DWORD *)(v5 + 20));
-      result = *(_DWORD *)(v5 + 28);
-      v8 = (char *)(v6 + *(_DWORD *)(v5 + 16));
+      (*(void (__thiscall **)(_DWORD))(*v5->abstractFlags + 96))(v5->abstractFlags);
+      result = v5->referenceCount;
+      v8 = (char *)(v6 + v5->uniqueId);
       if ( (unsigned int)v8 >= result )
-        v8 -= *(_DWORD *)(v5 + 32);
+        v8 -= v5->NeedsSaveOrLink;
       if ( a5 > 0 )
       {
         v26 = a5;
@@ -175,10 +175,10 @@ namespace gamemd { int TacticalClass::FillScanlinesTransparent(int a1, int a2, i
               *v16 = 127;
             v5 = this;
           }
-          result = *(_DWORD *)(v5 + 28);
-          v8 += 2 * *(_DWORD *)(v5 + 40);
+          result = v5->referenceCount;
+          v8 += 2 * v5->field28;
           if ( (unsigned int)v8 >= result )
-            v8 -= *(_DWORD *)(v5 + 32);
+            v8 -= v5->NeedsSaveOrLink;
           --v26;
         }
         while ( v26 );
@@ -12120,7 +12120,7 @@ LABEL_29:
           this->unknown38 = v18; /*0x5277ea*/
         }
         a1 = v16; /*0x5277f1*/
-        if ( ((HashTable *)((char *)this + 40)).BinarySearch((ObjectClass *)&a1) ) /*0x5277f8*/
+        if ( this->q028.BinarySearch((ObjectClass *)&a1) ) /*0x5277f8*/
           int * v19 = (int *)(this->unknown38 + 4); /*0x527804*/
         else
           v19 = (int *)&unk_B7882C; /*0x527809*/
@@ -12181,7 +12181,7 @@ namespace gamemd { int INIClass::ReadGUID_Overwrite(int a1, void* a2, void* a3, 
         this->unknown38 = v18; /*0x527a3f*/
       }
       aP1.sectionCount = v17; /*0x527a49*/
-      if ( ((HashTable *)((char *)this + 40)).BinarySearch((ObjectClass *)&aP1.sectionCount) ) /*0x527a4d*/
+      if ( this->q028.BinarySearch((ObjectClass *)&aP1.sectionCount) ) /*0x527a4d*/
         int * v19 = (int *)(this->unknown38 + 4); /*0x527a59*/
       else
         v19 = (int *)&unk_B7882C; /*0x527a5e*/
@@ -12338,7 +12338,7 @@ namespace gamemd { void* INIClass::ParseValue(void* a1, void* a2, void* a3, void
         this->unknown38 = v16; /*0x527de0*/
       }
       v23 = v15; /*0x527dea*/
-      if ( ((HashTable *)((char *)this + 40)).BinarySearch((ObjectClass *)&v23) ) /*0x527dee*/
+      if ( this->q028.BinarySearch((ObjectClass *)&v23) ) /*0x527dee*/
         int * v17 = (int *)(this->unknown38 + 4); /*0x527dfa*/
       else
         v17 = (int *)&unk_B7882C; /*0x527dff*/
@@ -12458,7 +12458,7 @@ namespace gamemd { void* INIClass::GetRect(void* a1, void* a2, void* a3, void* a
         this->unknown38 = v13; /*0x528053*/
       }
       v23.headNode[1] = v12; /*0x52805d*/
-      v8 = *(_DWORD *)((SortedArray *)((char *)this + 40)).FindValue((INIClass *)&v23.headNode[1]); /*0x528066*/
+      v8 = *(_DWORD *)this->q028.FindValue((INIClass *)&v23.headNode[1]); /*0x528066*/
       if ( v8 ) /*0x52806a*/
       {
         v6 = v22; /*0x52806c*/
@@ -12666,7 +12666,7 @@ LABEL_29:
           this->unknown38 = v18; /*0x5284ea*/
         }
         aP1 = v16; /*0x5284f1*/
-        if ( ((HashTable *)((char *)this + 40)).BinarySearch((ObjectClass *)&aP1) ) /*0x5284f8*/
+        if ( this->q028.BinarySearch((ObjectClass *)&aP1) ) /*0x5284f8*/
           int * v19 = (int *)(this->unknown38 + 4); /*0x528504*/
         else
           v19 = (int *)&unk_B7882C; /*0x528509*/
@@ -13095,9 +13095,9 @@ namespace gamemd { int INIClass::ParseValue_Wide() {
   *(_DWORD *)aP1[0] = v15; /*0x528fee*/
   if ( !this->INIClass_field_2C ) /*0x528ff2*/
     goto LABEL_23; /*0x528ff2*/
-  if ( ((SortedArray *)((char *)this + 10)).CheckCache(&aP1) ) /*0x529000*/
+  if ( this->SortedArray_A.CheckCache(&aP1) ) /*0x529000*/
     goto LABEL_18; /*0x529007*/
-  v16 = (char *)((SortedArray *)((char *)this + 10)).BinarySearch(&aP1); /*0x529010*/
+  v16 = (char *)this->SortedArray_A.BinarySearch(&aP1); /*0x529010*/
   if ( !v16 ) /*0x529017*/
   {
 LABEL_23:
@@ -13271,7 +13271,7 @@ LABEL_23:
           this->unknown38 = v15; /*0x529275*/
         }
         *(_DWORD *)v25[0].__pad_0 = v14; /*0x52927f*/
-        if ( ((HashTable *)((char *)this + 40)).BinarySearch(v25) ) /*0x529283*/
+        if ( this->q028.BinarySearch(v25) ) /*0x529283*/
           int * v16 = (int *)(this->unknown38 + 4); /*0x52928f*/
         else
           v16 = (int *)&unk_B7882C; /*0x529294*/
@@ -13338,9 +13338,9 @@ namespace gamemd { int INIClass::GetCSFString() {
   v22 = v15; /*0x52943a*/
   if ( !this->INIClass_field_2C ) /*0x52943e*/
     goto LABEL_23; /*0x52943e*/
-  if ( ((SortedArray *)((char *)this + 10)).CheckCache(&v22) ) /*0x52944c*/
+  if ( this->SortedArray_A.CheckCache(&v22) ) /*0x52944c*/
     goto LABEL_18; /*0x529453*/
-  v16 = ((SortedArray *)((char *)this + 10)).BinarySearch(&v22); /*0x52945c*/
+  v16 = this->SortedArray_A.BinarySearch(&v22); /*0x52945c*/
   if ( !v16 ) /*0x529463*/
   {
 LABEL_23:
@@ -13479,7 +13479,7 @@ namespace gamemd { int INIClass::ReadBool_Overwrite(void* a1, void* a2, int a3) 
         this->unknown38 = v18; /*0x529708*/
       }
       a1 = v16; /*0x52970f*/
-      if ( ((HashTable *)((char *)this + 40)).BinarySearch((ObjectClass *)&a1) ) /*0x529716*/
+      if ( this->q028.BinarySearch((ObjectClass *)&a1) ) /*0x529716*/
         int * v19 = (int *)(this->unknown38 + 4); /*0x529722*/
       else
         v19 = (int *)&unk_B7882C; /*0x529727*/
@@ -13908,7 +13908,7 @@ namespace gamemd { int INIClass::ReadTimeString(void* a1, void* a2, int a3) {
         this->unknown38 = v17; /*0x52a874*/
       }
       v23 = v15; /*0x52a87b*/
-      if ( ((HashTable *)((char *)this + 40)).BinarySearch((ObjectClass *)&v23) ) /*0x52a882*/
+      if ( this->q028.BinarySearch((ObjectClass *)&v23) ) /*0x52a882*/
         int * v18 = (int *)(this->unknown38 + 4); /*0x52a88e*/
       else
         v18 = (int *)&unk_B7882C; /*0x52a893*/
@@ -31448,7 +31448,7 @@ namespace gamemd { void* ScenarioClass::InitTimer() {
       this->q61C = 0;
       if ( this->q614 != -1 )
       {
-        v5 = Timer::GetTicks(this + 1560);
+        v5 = this->q618.GetTicks();
         v6 = this->q61C;
         v7 = v5 - *v4;
         *v4 = -1;
@@ -31463,7 +31463,7 @@ namespace gamemd { void* ScenarioClass::InitTimer() {
       if ( this->q620 != -1 )
       {
         v23 = this->q628;
-        v11 = Timer::GetTicks(this + 1572) - *v10;
+        v11 = this->q624.GetTicks() - *v10;
         if ( v11 >= v23 )
           v12 = 0;
         else
@@ -32221,9 +32221,9 @@ namespace gamemd { int ScenarioClass::SaveToINI(void* a1, int a2) {
   {
     if ( *(_BYTE *)v19 )
     {
-      ((void (*)(_DWORD *, const char *, ...))wsprintfA)(v27, "%d", v18);
+      wsprintfA(v27, "%d", v18);
   char v33[128]; // [esp+88h] [ebp-80h] BYREF
-      ((void (*)(char *, const char *, ...))wsprintfA)(v33, "%s,%d", (const char *)v19, *(_BYTE *)(v19 + 40) != 0);
+      wsprintfA(v33, "%s,%d", (const char *)v19, *(_BYTE *)(v19 + 40) != 0);
       INIClass::SetString(a2, (unsigned __int8 *)g_INI_Key_VariableNames, (char *)v27, v33);
     }
     ++v18;
@@ -36361,7 +36361,7 @@ namespace gamemd { int CCINIClass::IterateNodes(int a1) {
 {
     int result;
     int v3;
-    result = CCINIClass::GetDB(this + 69);
+    result = this->CCINIClass_45.GetDB();
     v3 = result;
     if ( result )
   {
@@ -37308,7 +37308,7 @@ LABEL_41:
   if ( !v40 )
   {
 LABEL_63:
-    ((CellClass *)((char *)this + 69)).AddObject(v19);
+    this->q045.AddObject(v19);
     if ( *(_BYTE *)(this->GetSpecialValue() + 2053) )
       this->vt_slot_1236(v19);
     (*(void (__thiscall **)(_DWORD *))(*v19 + 284))(v19);

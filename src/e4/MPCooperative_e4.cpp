@@ -455,7 +455,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     (MultiplayerGameMode *)aP4,
     0,
     (MultiplayerGameMode *)aP6);
-  ((AbstractClass *)((char *)this + 22)).updateAnimationState(0, 0); /*0x5c14a0*/
+  this->AbstractClass_16.updateAnimationState(0); /*0x5c14a0*/
   this->q058 = &vt_DynamicVectorClass_NodeNameType; /*0x5c14a5*/
   this->q06C = 10; /*0x5c14ab*/
   this->q068 = 0; /*0x5c14b2*/
@@ -493,7 +493,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   }
   while ( v13 ); /*0x5c151f*/
   v14 = (VectorClass *)(this + 201); /*0x5c1521*/
-  ((CoopCampaignVector *)((char *)this + 201)).Construct(0, 0); /*0x5c152b*/
+  this->CoopCampaignVector_C9.Construct(0); /*0x5c152b*/
   this->q324 = &vt_DynamicVectorClass_CoopCampaignClass; /*0x5c1530*/
   this->q0CE = 10; /*0x5c1536*/
   this->q0CD = 0; /*0x5c153d*/
